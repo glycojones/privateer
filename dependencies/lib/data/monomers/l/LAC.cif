@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LAC     LAC      "LACTIC ACID"     NON-POLYMER     11     6     .     
+#
+data_comp_LAC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LAC     C1      C       C       0       -2.046      12.518      7.311       
+LAC     C2      C       CH1     0       -2.904      11.506      6.542       
+LAC     C3      C       CH3     0       -4.236      12.121      6.161       
+LAC     O1      O       O       0       -1.972      12.381      8.550       
+LAC     O2      O       OH1     0       -2.238      11.053      5.381       
+LAC     OXT     O       OC      -1      -1.482      13.409      6.645       
+LAC     H2      H       H       0       -3.073      10.730      7.134       
+LAC     H31     H       H       0       -4.772      11.466      5.681       
+LAC     H32     H       H       0       -4.087      12.895      5.591       
+LAC     H33     H       H       0       -4.709      12.398      6.965       
+LAC     HO2     H       H       0       -1.618      10.526      5.617       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LAC       C1        C2        SINGLE    n         1.533     0.010     1.533     0.010     
+LAC       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+LAC       C1        OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+LAC       C2        C3        SINGLE    n         1.516     0.010     1.516     0.010     
+LAC       C2        O2        SINGLE    n         1.413     0.014     1.413     0.014     
+LAC       C2        H2        SINGLE    n         1.089     0.010     0.991     0.011     
+LAC       C3        H31       SINGLE    n         1.089     0.010     0.973     0.014     
+LAC       C3        H32       SINGLE    n         1.089     0.010     0.973     0.014     
+LAC       C3        H33       SINGLE    n         1.089     0.010     0.973     0.014     
+LAC       O2        HO2       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LAC          C2          C1          O1     117.167    1.52
+LAC          C2          C1         OXT     117.167    1.52
+LAC          O1          C1         OXT     125.666    1.50
+LAC          C1          C2          C3     111.511    2.91
+LAC          C1          C2          O2     111.343    1.72
+LAC          C1          C2          H2     108.330    1.50
+LAC          C3          C2          O2     110.101    1.75
+LAC          C3          C2          H2     108.870    1.50
+LAC          O2          C2          H2     109.094    1.50
+LAC          C2          C3         H31     109.657    1.50
+LAC          C2          C3         H32     109.657    1.50
+LAC          C2          C3         H33     109.657    1.50
+LAC         H31          C3         H32     109.425    1.50
+LAC         H31          C3         H33     109.425    1.50
+LAC         H32          C3         H33     109.425    1.50
+LAC          C2          O2         HO2     108.411    2.22
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LAC             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+LAC             sp3_sp3_1          C1          C2          C3         H31     180.000   10.00     3
+LAC            sp3_sp3_11          C1          C2          O2         HO2      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+LAC    chir_1    C2    O2    C1    C3    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LAC    plan-1          C1   0.020
+LAC    plan-1          C2   0.020
+LAC    plan-1          O1   0.020
+LAC    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LAC SMILES           ACDLabs              10.04 "O=C(O)C(O)C"
+LAC SMILES_CANONICAL CACTVS               3.341 "C[C@@H](O)C(O)=O"
+LAC SMILES           CACTVS               3.341 "C[CH](O)C(O)=O"
+LAC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@H](C(=O)O)O"
+LAC SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C(=O)O)O"
+LAC InChI            InChI                1.03  "InChI=1S/C3H6O3/c1-2(4)3(5)6/h2,4H,1H3,(H,5,6)/t2-/m1/s1"
+LAC InChIKey         InChI                1.03  JVTAAEKCZFNVCJ-UWTATZPHSA-N
+LAC ?                acedrg               202         "dictionary generator"                  
+LAC ?                acedrg_database      11          "data source"                           
+LAC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LAC ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,275 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CNU      CNU '5-CYANO-URIDINE-5'-MONOPHOSPHATE    ' non-polymer        33  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CNU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CNU           N53    N    NS        0.000      0.000    0.000    0.000
+ CNU           C52    C    CSP       0.000     -1.061    0.001   -0.408
+ CNU           C5     C    CR6       0.000     -2.398    0.003   -0.921
+ CNU           C4     C    CR6       0.000     -2.687    0.498   -2.276
+ CNU           O4     O    O         0.000     -1.795    0.918   -2.989
+ CNU           N3     N    NR16      0.000     -3.965    0.476   -2.711
+ CNU           HN3    H    H         0.000     -4.192    0.822   -3.665
+ CNU           C2     C    CR6       0.000     -4.947    0.011   -1.918
+ CNU           O2     O    O         0.000     -6.087    0.006   -2.338
+ CNU           C6     C    CR16      0.000     -3.451   -0.457   -0.157
+ CNU           H6     H    H         0.000     -3.280   -0.822    0.848
+ CNU           N1     N    NR6       0.000     -4.707   -0.446   -0.679
+ CNU           "C1'"  C    CH1       0.000     -5.825   -0.938    0.131
+ CNU           "H1'"  H    H         0.000     -5.458   -1.338    1.086
+ CNU           "O4'"  O    O2        0.000     -6.560   -1.950   -0.589
+ CNU           "C2'"  C    CH1       0.000     -6.848    0.193    0.378
+ CNU           "H2'"  H    H         0.000     -6.776    0.957   -0.409
+ CNU           "O2'"  O    OH1       0.000     -6.646    0.779    1.666
+ CNU           "HO2'" H    H         0.000     -7.331    1.441    1.829
+ CNU           "C3'"  C    CH1       0.000     -8.218   -0.520    0.318
+ CNU           "H3'"  H    H         0.000     -8.829   -0.112   -0.499
+ CNU           "O3'"  O    OH1       0.000     -8.902   -0.396    1.565
+ CNU           "HO3'" H    H         0.000     -9.118    0.533    1.723
+ CNU           "C4'"  C    CH1       0.000     -7.859   -1.997    0.041
+ CNU           "H4'"  H    H         0.000     -7.808   -2.562    0.982
+ CNU           "C5'"  C    CH2       0.000     -8.886   -2.626   -0.903
+ CNU           "H5'"  H    H         0.000     -8.832   -2.135   -1.877
+ CNU           "H5'A" H    H         0.000     -9.888   -2.499   -0.488
+ CNU           "O5'"  O    O2        0.000     -8.604   -4.019   -1.054
+ CNU           P      P    P         0.000     -9.486   -4.997   -1.980
+ CNU           O1P    O    OP       -0.666    -10.938   -4.913   -1.561
+ CNU           O2P    O    OP       -0.666     -8.997   -6.420   -1.821
+ CNU           O3P    O    OP       -0.666     -9.354   -4.577   -3.427
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CNU      N53    n/a    C52    START
+ CNU      C52    N53    C5     .
+ CNU      C5     C52    C6     .
+ CNU      C4     C5     N3     .
+ CNU      O4     C4     .      .
+ CNU      N3     C4     C2     .
+ CNU      HN3    N3     .      .
+ CNU      C2     N3     O2     .
+ CNU      O2     C2     .      .
+ CNU      C6     C5     N1     .
+ CNU      H6     C6     .      .
+ CNU      N1     C6     "C1'"  .
+ CNU      "C1'"  N1     "C2'"  .
+ CNU      "H1'"  "C1'"  .      .
+ CNU      "O4'"  "C1'"  .      .
+ CNU      "C2'"  "C1'"  "C3'"  .
+ CNU      "H2'"  "C2'"  .      .
+ CNU      "O2'"  "C2'"  "HO2'" .
+ CNU      "HO2'" "O2'"  .      .
+ CNU      "C3'"  "C2'"  "C4'"  .
+ CNU      "H3'"  "C3'"  .      .
+ CNU      "O3'"  "C3'"  "HO3'" .
+ CNU      "HO3'" "O3'"  .      .
+ CNU      "C4'"  "C3'"  "C5'"  .
+ CNU      "H4'"  "C4'"  .      .
+ CNU      "C5'"  "C4'"  "O5'"  .
+ CNU      "H5'"  "C5'"  .      .
+ CNU      "H5'A" "C5'"  .      .
+ CNU      "O5'"  "C5'"  P      .
+ CNU      P      "O5'"  O3P    .
+ CNU      O1P    P      .      .
+ CNU      O2P    P      .      .
+ CNU      O3P    P      .      END
+ CNU      "C4'"  "O4'"  .    ADD
+ CNU      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CNU       O1P       P         deloc     1.510     0.020     1.510     0.020     
+CNU       O2P       P         deloc     1.510     0.020     1.510     0.020     
+CNU       P         "O5'"     single    1.610     0.020     1.610     0.020     
+CNU       O3P       P         deloc     1.510     0.020     1.510     0.020     
+CNU       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+CNU       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+CNU       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+CNU       "H5'A"    "C5'"     single    1.089     0.010     0.989     0.005     
+CNU       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+CNU       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+CNU       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+CNU       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+CNU       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+CNU       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+CNU       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+CNU       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+CNU       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+CNU       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+CNU       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+CNU       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+CNU       "C1'"     N1        single    1.465     0.020     1.465     0.020     
+CNU       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+CNU       N1        C2        single    1.410     0.020     1.410     0.020     
+CNU       N1        C6        single    1.337     0.020     1.337     0.020     
+CNU       C2        N3        single    1.337     0.020     1.337     0.020     
+CNU       O2        C2        double    1.250     0.020     1.250     0.020     
+CNU       N3        C4        single    1.337     0.020     1.337     0.020     
+CNU       HN3       N3        single    1.016     0.010     0.899     0.007     
+CNU       O4        C4        double    1.250     0.020     1.250     0.020     
+CNU       C4        C5        single    1.487     0.020     1.487     0.020     
+CNU       C6        C5        double    1.390     0.020     1.390     0.020     
+CNU       H6        C6        single    1.082     0.013     0.975     0.010     
+CNU       C5        C52       single    1.285     0.020     1.285     0.020     
+CNU       C52       N53       triple    1.158     0.020     1.158     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CNU      N53    C52    C5      180.000    3.000
+ CNU      C52    C5     C4      120.000    3.000
+ CNU      C52    C5     C6      120.000    3.000
+ CNU      C4     C5     C6      120.000    3.000
+ CNU      C5     C4     O4      120.000    3.000
+ CNU      C5     C4     N3      120.000    3.000
+ CNU      O4     C4     N3      120.000    3.000
+ CNU      C4     N3     HN3     120.000    3.000
+ CNU      C4     N3     C2      120.000    3.000
+ CNU      HN3    N3     C2      120.000    3.000
+ CNU      N3     C2     O2      120.000    3.000
+ CNU      N3     C2     N1      120.000    3.000
+ CNU      O2     C2     N1      120.000    3.000
+ CNU      C5     C6     H6      120.000    3.000
+ CNU      C5     C6     N1      120.000    3.000
+ CNU      H6     C6     N1      120.000    3.000
+ CNU      C6     N1     "C1'"   120.000    3.000
+ CNU      C6     N1     C2      120.000    3.000
+ CNU      "C1'"  N1     C2      120.000    3.000
+ CNU      N1     "C1'"  "H1'"   109.470    3.000
+ CNU      N1     "C1'"  "O4'"   109.470    3.000
+ CNU      N1     "C1'"  "C2'"   109.470    3.000
+ CNU      "H1'"  "C1'"  "O4'"   109.470    3.000
+ CNU      "H1'"  "C1'"  "C2'"   108.340    3.000
+ CNU      "O4'"  "C1'"  "C2'"   109.470    3.000
+ CNU      "C1'"  "O4'"  "C4'"   111.800    3.000
+ CNU      "C1'"  "C2'"  "H2'"   108.340    3.000
+ CNU      "C1'"  "C2'"  "O2'"   109.470    3.000
+ CNU      "C1'"  "C2'"  "C3'"   111.000    3.000
+ CNU      "H2'"  "C2'"  "O2'"   109.470    3.000
+ CNU      "H2'"  "C2'"  "C3'"   108.340    3.000
+ CNU      "O2'"  "C2'"  "C3'"   109.470    3.000
+ CNU      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ CNU      "C2'"  "C3'"  "H3'"   108.340    3.000
+ CNU      "C2'"  "C3'"  "O3'"   109.470    3.000
+ CNU      "C2'"  "C3'"  "C4'"   111.000    3.000
+ CNU      "H3'"  "C3'"  "O3'"   109.470    3.000
+ CNU      "H3'"  "C3'"  "C4'"   108.340    3.000
+ CNU      "O3'"  "C3'"  "C4'"   109.470    3.000
+ CNU      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ CNU      "C3'"  "C4'"  "H4'"   108.340    3.000
+ CNU      "C3'"  "C4'"  "C5'"   111.000    3.000
+ CNU      "C3'"  "C4'"  "O4'"   109.470    3.000
+ CNU      "H4'"  "C4'"  "C5'"   108.340    3.000
+ CNU      "H4'"  "C4'"  "O4'"   109.470    3.000
+ CNU      "C5'"  "C4'"  "O4'"   109.470    3.000
+ CNU      "C4'"  "C5'"  "H5'"   109.470    3.000
+ CNU      "C4'"  "C5'"  "H5'A"  109.470    3.000
+ CNU      "C4'"  "C5'"  "O5'"   109.470    3.000
+ CNU      "H5'"  "C5'"  "H5'A"  107.900    3.000
+ CNU      "H5'"  "C5'"  "O5'"   109.470    3.000
+ CNU      "H5'A" "C5'"  "O5'"   109.470    3.000
+ CNU      "C5'"  "O5'"  P       120.500    3.000
+ CNU      "O5'"  P      O1P     108.200    3.000
+ CNU      "O5'"  P      O2P     108.200    3.000
+ CNU      "O5'"  P      O3P     108.200    3.000
+ CNU      O1P    P      O2P     119.900    3.000
+ CNU      O1P    P      O3P     119.900    3.000
+ CNU      O2P    P      O3P     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CNU      var_1    N53    C52    C5     C6        31.968   20.000   1
+ CNU      CONST_1  C52    C5     C4     N3       180.000    0.000   0
+ CNU      CONST_2  C5     C4     N3     C2         0.000    0.000   0
+ CNU      CONST_3  C4     N3     C2     O2       180.000    0.000   0
+ CNU      CONST_4  C52    C5     C6     N1       180.000    0.000   0
+ CNU      CONST_5  C5     C6     N1     "C1'"    180.000    0.000   0
+ CNU      CONST_6  C6     N1     C2     N3         0.000    0.000   0
+ CNU      var_2    C6     N1     "C1'"  "C2'"    118.171   20.000   1
+ CNU      var_3    N1     "C1'"  "O4'"  "C4'"   -150.000   20.000   1
+ CNU      var_4    N1     "C1'"  "C2'"  "C3'"    150.000   20.000   3
+ CNU      var_5    "C1'"  "C2'"  "O2'"  "HO2'"  -176.118   20.000   1
+ CNU      var_6    "C1'"  "C2'"  "C3'"  "C4'"      0.000   20.000   3
+ CNU      var_7    "C2'"  "C3'"  "O3'"  "HO3'"    65.351   20.000   1
+ CNU      var_8    "C2'"  "C3'"  "C4'"  "C5'"   -150.000   20.000   3
+ CNU      var_9    "C3'"  "C4'"  "O4'"  "C1'"     30.000   20.000   1
+ CNU      var_10   "C3'"  "C4'"  "C5'"  "O5'"   -174.995   20.000   3
+ CNU      var_11   "C4'"  "C5'"  "O5'"  P        179.974   20.000   1
+ CNU      var_12   "C5'"  "O5'"  P      O3P       64.998   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CNU      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ CNU      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ CNU      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ CNU      chir_04  "C1'"  "O4'"  "C2'"  N1        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CNU      plan-1    N1        0.020
+ CNU      plan-1    "C1'"     0.020
+ CNU      plan-1    C2        0.020
+ CNU      plan-1    C6        0.020
+ CNU      plan-1    N3        0.020
+ CNU      plan-1    C4        0.020
+ CNU      plan-1    C5        0.020
+ CNU      plan-1    O2        0.020
+ CNU      plan-1    HN3       0.020
+ CNU      plan-1    O4        0.020
+ CNU      plan-1    H6        0.020
+ CNU      plan-1    C52       0.020
+# ------------------------------------------------------

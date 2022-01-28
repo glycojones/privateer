@@ -1,0 +1,316 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+THZ      THZ '1-[(4S)-4-amino-5-(1,3-benzothiazol-' non-polymer        37  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_THZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ THZ           O      O    O         0.000      0.000    0.000    0.000
+ THZ           C      C    C         0.000     -1.089   -0.299    0.439
+ THZ           CA     C    CH1       0.000     -2.079    0.779    0.797
+ THZ           HA     H    H         0.000     -2.533    0.551    1.772
+ THZ           CB     C    CH2       0.000     -3.172    0.844   -0.273
+ THZ           HB     H    H         0.000     -3.625   -0.143   -0.389
+ THZ           HBA    H    H         0.000     -2.733    1.156   -1.222
+ THZ           CG     C    CH2       0.000     -4.242    1.850    0.152
+ THZ           HG     H    H         0.000     -3.788    2.836    0.270
+ THZ           HGA    H    H         0.000     -4.679    1.537    1.103
+ THZ           CD     C    CH2       0.000     -5.335    1.915   -0.917
+ THZ           HD     H    H         0.000     -5.788    0.928   -1.034
+ THZ           HDA    H    H         0.000     -4.896    2.228   -1.867
+ THZ           NE     N    NH1       0.000     -6.361    2.879   -0.511
+ THZ           HNE    H    H         0.000     -6.268    3.375    0.364
+ THZ           CZ     C    C         0.000     -7.449    3.108   -1.319
+ THZ           NH2    N    NH2       0.000     -8.411    4.012   -0.937
+ THZ           HNHA   H    H         0.000     -9.222    4.191   -1.526
+ THZ           HNH2   H    H         0.000     -8.330    4.519   -0.057
+ THZ           NH1    N    N         0.000     -7.568    2.467   -2.448
+ THZ           HNH1   H    H         0.000     -8.323    2.617   -3.023
+ THZ           N      N    NH2       0.000     -1.389    2.074    0.870
+ THZ           H2     H    H         0.000     -1.625    2.816    0.222
+ THZ           H      H    H         0.000     -0.673    2.233    1.568
+ THZ           C17    C    CR5       0.000     -1.447   -1.715    0.617
+ THZ           N11    N    NRD5      0.000     -2.580   -2.139    1.071
+ THZ           C21    C    CR56      0.000     -2.763   -3.454    1.178
+ THZ           C71    C    CR56      0.000     -1.647   -4.198    0.762
+ THZ           S1     S    S2        0.000     -0.395   -3.073    0.242
+ THZ           C61    C    CR16      0.000     -1.674   -5.592    0.810
+ THZ           H61    H    H         0.000     -0.811   -6.161    0.488
+ THZ           C51    C    CR16      0.000     -2.796   -6.243    1.265
+ THZ           H51    H    H         0.000     -2.815   -7.325    1.301
+ THZ           C41    C    CR16      0.000     -3.905   -5.515    1.678
+ THZ           H41    H    H         0.000     -4.785   -6.038    2.035
+ THZ           C31    C    CR16      0.000     -3.902   -4.156    1.641
+ THZ           H31    H    H         0.000     -4.776   -3.607    1.967
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ THZ      O      n/a    C      START
+ THZ      C      O      C17    .
+ THZ      CA     C      N      .
+ THZ      HA     CA     .      .
+ THZ      CB     CA     CG     .
+ THZ      HB     CB     .      .
+ THZ      HBA    CB     .      .
+ THZ      CG     CB     CD     .
+ THZ      HG     CG     .      .
+ THZ      HGA    CG     .      .
+ THZ      CD     CG     NE     .
+ THZ      HD     CD     .      .
+ THZ      HDA    CD     .      .
+ THZ      NE     CD     CZ     .
+ THZ      HNE    NE     .      .
+ THZ      CZ     NE     NH1    .
+ THZ      NH2    CZ     HNH2   .
+ THZ      HNHA   NH2    .      .
+ THZ      HNH2   NH2    .      .
+ THZ      NH1    CZ     HNH1   .
+ THZ      HNH1   NH1    .      .
+ THZ      N      CA     H      .
+ THZ      H2     N      .      .
+ THZ      H      N      .      .
+ THZ      C17    C      N11    .
+ THZ      N11    C17    C21    .
+ THZ      C21    N11    C71    .
+ THZ      C71    C21    C61    .
+ THZ      S1     C71    .      .
+ THZ      C61    C71    C51    .
+ THZ      H61    C61    .      .
+ THZ      C51    C61    C41    .
+ THZ      H51    C51    .      .
+ THZ      C41    C51    C31    .
+ THZ      H41    C41    .      .
+ THZ      C31    C41    H31    .
+ THZ      H31    C31    .      END
+ THZ      S1     C17    .    ADD
+ THZ      C21    C31    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+THZ       C17       C         single    1.490     0.020     1.490     0.020     
+THZ       C         O         double    1.220     0.020     1.220     0.020     
+THZ       CA        C         single    1.500     0.020     1.500     0.020     
+THZ       N         CA        single    1.450     0.020     1.450     0.020     
+THZ       H         N         single    1.036     0.016     0.914     0.007     
+THZ       H2        N         single    1.036     0.016     0.914     0.007     
+THZ       S1        C71       single    1.695     0.020     1.695     0.020     
+THZ       S1        C17       single    1.745     0.020     1.745     0.020     
+THZ       CB        CA        single    1.524     0.020     1.524     0.020     
+THZ       HA        CA        single    1.089     0.010     0.989     0.005     
+THZ       CG        CB        single    1.524     0.020     1.524     0.020     
+THZ       HB        CB        single    1.089     0.010     0.989     0.005     
+THZ       HBA       CB        single    1.089     0.010     0.989     0.005     
+THZ       CD        CG        single    1.524     0.020     1.524     0.020     
+THZ       NE        CD        single    1.450     0.020     1.450     0.020     
+THZ       HD        CD        single    1.089     0.010     0.989     0.005     
+THZ       HDA       CD        single    1.089     0.010     0.989     0.005     
+THZ       CZ        NE        single    1.330     0.020     1.330     0.020     
+THZ       HNE       NE        single    1.016     0.010     0.899     0.007     
+THZ       HG        CG        single    1.089     0.010     0.989     0.005     
+THZ       HGA       CG        single    1.089     0.010     0.989     0.005     
+THZ       NH1       CZ        double    1.260     0.020     1.260     0.020     
+THZ       NH2       CZ        single    1.332     0.020     1.332     0.020     
+THZ       C21       N11       single    1.350     0.020     1.350     0.020     
+THZ       N11       C17       double    1.350     0.020     1.350     0.020     
+THZ       C71       C21       single    1.490     0.020     1.490     0.020     
+THZ       C21       C31       double    1.390     0.020     1.390     0.020     
+THZ       C31       C41       single    1.390     0.020     1.390     0.020     
+THZ       H31       C31       single    1.082     0.013     0.975     0.010     
+THZ       C41       C51       double    1.390     0.020     1.390     0.020     
+THZ       H41       C41       single    1.082     0.013     0.975     0.010     
+THZ       C51       C61       single    1.390     0.020     1.390     0.020     
+THZ       H51       C51       single    1.082     0.013     0.975     0.010     
+THZ       C61       C71       double    1.390     0.020     1.390     0.020     
+THZ       H61       C61       single    1.082     0.013     0.975     0.010     
+THZ       HNH1      NH1       single    1.016     0.010     0.899     0.007     
+THZ       HNH2      NH2       single    1.016     0.010     0.899     0.007     
+THZ       HNHA      NH2       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ THZ      O      C      CA      120.500    3.000
+ THZ      O      C      C17     120.500    3.000
+ THZ      CA     C      C17     120.000    3.000
+ THZ      C      CA     HA      108.810    3.000
+ THZ      C      CA     CB      109.470    3.000
+ THZ      C      CA     N       109.470    3.000
+ THZ      HA     CA     CB      108.340    3.000
+ THZ      HA     CA     N       109.470    3.000
+ THZ      CB     CA     N       109.470    3.000
+ THZ      CA     CB     HB      109.470    3.000
+ THZ      CA     CB     HBA     109.470    3.000
+ THZ      CA     CB     CG      111.000    3.000
+ THZ      HB     CB     HBA     107.900    3.000
+ THZ      HB     CB     CG      109.470    3.000
+ THZ      HBA    CB     CG      109.470    3.000
+ THZ      CB     CG     HG      109.470    3.000
+ THZ      CB     CG     HGA     109.470    3.000
+ THZ      CB     CG     CD      111.000    3.000
+ THZ      HG     CG     HGA     107.900    3.000
+ THZ      HG     CG     CD      109.470    3.000
+ THZ      HGA    CG     CD      109.470    3.000
+ THZ      CG     CD     HD      109.470    3.000
+ THZ      CG     CD     HDA     109.470    3.000
+ THZ      CG     CD     NE      112.000    3.000
+ THZ      HD     CD     HDA     107.900    3.000
+ THZ      HD     CD     NE      109.470    3.000
+ THZ      HDA    CD     NE      109.470    3.000
+ THZ      CD     NE     HNE     118.500    3.000
+ THZ      CD     NE     CZ      121.500    3.000
+ THZ      HNE    NE     CZ      120.000    3.000
+ THZ      NE     CZ     NH2     120.000    3.000
+ THZ      NE     CZ     NH1     120.000    3.000
+ THZ      NH2    CZ     NH1     120.000    3.000
+ THZ      CZ     NH2    HNHA    120.000    3.000
+ THZ      CZ     NH2    HNH2    120.000    3.000
+ THZ      HNHA   NH2    HNH2    120.000    3.000
+ THZ      CZ     NH1    HNH1    120.000    3.000
+ THZ      CA     N      H2      120.000    3.000
+ THZ      CA     N      H       120.000    3.000
+ THZ      H2     N      H       120.000    3.000
+ THZ      C      C17    N11     126.000    3.000
+ THZ      C      C17    S1      108.000    3.000
+ THZ      N11    C17    S1      108.000    3.000
+ THZ      C17    N11    C21     108.000    3.000
+ THZ      N11    C21    C71     108.000    3.000
+ THZ      N11    C21    C31     132.000    3.000
+ THZ      C71    C21    C31     120.000    3.000
+ THZ      C21    C71    S1      120.000    3.000
+ THZ      C21    C71    C61     120.000    3.000
+ THZ      S1     C71    C61     120.000    3.000
+ THZ      C71    S1     C17      90.278    3.000
+ THZ      C71    C61    H61     120.000    3.000
+ THZ      C71    C61    C51     120.000    3.000
+ THZ      H61    C61    C51     120.000    3.000
+ THZ      C61    C51    H51     120.000    3.000
+ THZ      C61    C51    C41     120.000    3.000
+ THZ      H51    C51    C41     120.000    3.000
+ THZ      C51    C41    H41     120.000    3.000
+ THZ      C51    C41    C31     120.000    3.000
+ THZ      H41    C41    C31     120.000    3.000
+ THZ      C41    C31    H31     120.000    3.000
+ THZ      C41    C31    C21     120.000    3.000
+ THZ      H31    C31    C21     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ THZ      var_1    O      C      CA     N        -14.964   20.000   3
+ THZ      var_2    C      CA     CB     CG       175.026   20.000   3
+ THZ      var_3    CA     CB     CG     CD       180.000   20.000   3
+ THZ      var_4    CB     CG     CD     NE       179.981   20.000   3
+ THZ      var_5    CG     CD     NE     CZ       179.975   20.000   3
+ THZ      CONST_1  CD     NE     CZ     NH1        0.000    0.000   0
+ THZ      CONST_2  NE     CZ     NH2    HNH2       0.000    0.000   0
+ THZ      CONST_3  NE     CZ     NH1    HNH1     180.000    0.000   0
+ THZ      var_6    C      CA     N      H        -63.993   20.000   1
+ THZ      var_7    O      C      C17    N11     -179.727   20.000   1
+ THZ      CONST_4  C      C17    N11    C21      180.000    0.000   0
+ THZ      CONST_5  C17    N11    C21    C71        0.000    0.000   0
+ THZ      CONST_6  N11    C21    C31    C41      180.000    0.000   0
+ THZ      CONST_7  N11    C21    C71    C61      180.000    0.000   0
+ THZ      CONST_8  C21    C71    S1     C17        0.000    0.000   0
+ THZ      CONST_9  C71    S1     C17    C        180.000    0.000   0
+ THZ      CONST_10 C21    C71    C61    C51        0.000    0.000   0
+ THZ      CONST_11 C71    C61    C51    C41        0.000    0.000   0
+ THZ      CONST_12 C61    C51    C41    C31        0.000    0.000   0
+ THZ      CONST_13 C51    C41    C31    C21        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ THZ      chir_01  CA     C      N      CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ THZ      plan-1    C         0.020
+ THZ      plan-1    O         0.020
+ THZ      plan-1    CA        0.020
+ THZ      plan-1    C17       0.020
+ THZ      plan-2    N         0.020
+ THZ      plan-2    CA        0.020
+ THZ      plan-2    H         0.020
+ THZ      plan-2    H2        0.020
+ THZ      plan-3    NE        0.020
+ THZ      plan-3    CD        0.020
+ THZ      plan-3    CZ        0.020
+ THZ      plan-3    HNE       0.020
+ THZ      plan-4    CZ        0.020
+ THZ      plan-4    NE        0.020
+ THZ      plan-4    NH1       0.020
+ THZ      plan-4    NH2       0.020
+ THZ      plan-4    HNH1      0.020
+ THZ      plan-4    HNE       0.020
+ THZ      plan-4    HNHA      0.020
+ THZ      plan-4    HNH2      0.020
+ THZ      plan-5    N11       0.020
+ THZ      plan-5    C17       0.020
+ THZ      plan-5    C21       0.020
+ THZ      plan-5    S1        0.020
+ THZ      plan-5    C         0.020
+ THZ      plan-5    C31       0.020
+ THZ      plan-5    C71       0.020
+ THZ      plan-5    C41       0.020
+ THZ      plan-5    C51       0.020
+ THZ      plan-5    C61       0.020
+ THZ      plan-5    H31       0.020
+ THZ      plan-5    H41       0.020
+ THZ      plan-5    H51       0.020
+ THZ      plan-5    H61       0.020
+ THZ      plan-6    NH2       0.020
+ THZ      plan-6    CZ        0.020
+ THZ      plan-6    HNH2      0.020
+ THZ      plan-6    HNHA      0.020
+# ------------------------------------------------------

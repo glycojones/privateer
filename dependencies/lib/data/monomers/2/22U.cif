@@ -1,0 +1,404 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+22U      22U 'D-phenylalanyl-N-(3-chlorobenzyl)-L-' non-polymer        51  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_22U
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 22U           CL1    CL   CL        0.000      0.000    0.000    0.000
+ 22U           C12    C    CR6       0.000     -1.331    1.043    0.392
+ 22U           C11    C    CR16      0.000     -2.565    0.842   -0.202
+ 22U           H11    H    H         0.000     -2.701    0.035   -0.911
+ 22U           C13    C    CR16      0.000     -1.160    2.075    1.296
+ 22U           H13    H    H         0.000     -0.194    2.233    1.761
+ 22U           C14    C    CR16      0.000     -2.220    2.905    1.608
+ 22U           H14    H    H         0.000     -2.087    3.710    2.320
+ 22U           C15    C    CR16      0.000     -3.451    2.707    1.011
+ 22U           H15    H    H         0.000     -4.279    3.362    1.249
+ 22U           C10    C    CR6       0.000     -3.625    1.672    0.110
+ 22U           C9     C    CH2       0.000     -4.968    1.454   -0.536
+ 22U           H9     H    H         0.000     -4.828    1.025   -1.531
+ 22U           H9A    H    H         0.000     -5.489    2.410   -0.624
+ 22U           N3     N    NH1       0.000     -5.763    0.537    0.286
+ 22U           HN3    H    H         0.000     -5.376    0.162    1.140
+ 22U           C8     C    C         0.000     -7.009    0.195   -0.098
+ 22U           O2     O    O         0.000     -7.471    0.645   -1.124
+ 22U           C7     C    CH1       0.000     -7.825   -0.748    0.748
+ 22U           H7     H    H         0.000     -7.954   -0.329    1.756
+ 22U           C6     C    CH2       0.000     -7.125   -2.120    0.835
+ 22U           H6     H    H         0.000     -6.585   -2.257    1.774
+ 22U           H6A    H    H         0.000     -6.446   -2.298   -0.003
+ 22U           C5     C    CH2       0.000     -8.307   -3.122    0.765
+ 22U           H5     H    H         0.000     -8.802   -3.271    1.727
+ 22U           H5A    H    H         0.000     -8.027   -4.091    0.347
+ 22U           C4     C    CH2       0.000     -9.272   -2.397   -0.206
+ 22U           H4A    H    H         0.000    -10.307   -2.712   -0.057
+ 22U           H4     H    H         0.000     -8.990   -2.558   -1.249
+ 22U           N2     N    N         0.000     -9.139   -0.967    0.125
+ 22U           C3     C    C         0.000    -10.066   -0.017   -0.108
+ 22U           O1     O    O         0.000     -9.849    1.133    0.209
+ 22U           C2     C    CH1       0.000    -11.373   -0.385   -0.762
+ 22U           H2     H    H         0.000    -11.190   -1.117   -1.560
+ 22U           N1     N    NH2       0.000    -11.990    0.819   -1.335
+ 22U           HN1A   H    H         0.000    -11.560    1.727   -1.202
+ 22U           HN1    H    H         0.000    -12.849    0.749   -1.868
+ 22U           C1     C    CH2       0.000    -12.313   -0.992    0.281
+ 22U           H1     H    H         0.000    -12.565   -0.235    1.027
+ 22U           H1A    H    H         0.000    -11.818   -1.833    0.770
+ 22U           C16    C    CR6       0.000    -13.571   -1.471   -0.394
+ 22U           C21    C    CR16      0.000    -14.652   -0.620   -0.527
+ 22U           H21    H    H         0.000    -14.596    0.391   -0.142
+ 22U           C20    C    CR16      0.000    -15.806   -1.058   -1.151
+ 22U           H20    H    H         0.000    -16.650   -0.388   -1.260
+ 22U           C19    C    CR16      0.000    -15.881   -2.350   -1.634
+ 22U           H19    H    H         0.000    -16.785   -2.694   -2.121
+ 22U           C18    C    CR16      0.000    -14.802   -3.204   -1.497
+ 22U           H18    H    H         0.000    -14.861   -4.217   -1.875
+ 22U           C17    C    CR16      0.000    -13.647   -2.764   -0.877
+ 22U           H17    H    H         0.000    -12.802   -3.432   -0.770
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 22U      CL1    n/a    C12    START
+ 22U      C12    CL1    C13    .
+ 22U      C11    C12    H11    .
+ 22U      H11    C11    .      .
+ 22U      C13    C12    C14    .
+ 22U      H13    C13    .      .
+ 22U      C14    C13    C15    .
+ 22U      H14    C14    .      .
+ 22U      C15    C14    C10    .
+ 22U      H15    C15    .      .
+ 22U      C10    C15    C9     .
+ 22U      C9     C10    N3     .
+ 22U      H9     C9     .      .
+ 22U      H9A    C9     .      .
+ 22U      N3     C9     C8     .
+ 22U      HN3    N3     .      .
+ 22U      C8     N3     C7     .
+ 22U      O2     C8     .      .
+ 22U      C7     C8     N2     .
+ 22U      H7     C7     .      .
+ 22U      C6     C7     C5     .
+ 22U      H6     C6     .      .
+ 22U      H6A    C6     .      .
+ 22U      C5     C6     C4     .
+ 22U      H5     C5     .      .
+ 22U      H5A    C5     .      .
+ 22U      C4     C5     H4     .
+ 22U      H4A    C4     .      .
+ 22U      H4     C4     .      .
+ 22U      N2     C7     C3     .
+ 22U      C3     N2     C2     .
+ 22U      O1     C3     .      .
+ 22U      C2     C3     C1     .
+ 22U      H2     C2     .      .
+ 22U      N1     C2     HN1    .
+ 22U      HN1A   N1     .      .
+ 22U      HN1    N1     .      .
+ 22U      C1     C2     C16    .
+ 22U      H1     C1     .      .
+ 22U      H1A    C1     .      .
+ 22U      C16    C1     C21    .
+ 22U      C21    C16    C20    .
+ 22U      H21    C21    .      .
+ 22U      C20    C21    C19    .
+ 22U      H20    C20    .      .
+ 22U      C19    C20    C18    .
+ 22U      H19    C19    .      .
+ 22U      C18    C19    C17    .
+ 22U      H18    C18    .      .
+ 22U      C17    C18    H17    .
+ 22U      H17    C17    .      END
+ 22U      N2     C4     .    ADD
+ 22U      C10    C11    .    ADD
+ 22U      C16    C17    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+22U       C1        C2        single    1.524     0.020     1.524     0.020     
+22U       C16       C1        single    1.511     0.020     1.511     0.020     
+22U       N1        C2        single    1.450     0.020     1.450     0.020     
+22U       C2        C3        single    1.500     0.020     1.500     0.020     
+22U       O1        C3        double    1.220     0.020     1.220     0.020     
+22U       C3        N2        single    1.330     0.020     1.330     0.020     
+22U       N2        C4        single    1.455     0.020     1.455     0.020     
+22U       N2        C7        single    1.455     0.020     1.455     0.020     
+22U       C4        C5        single    1.524     0.020     1.524     0.020     
+22U       C5        C6        single    1.524     0.020     1.524     0.020     
+22U       C6        C7        single    1.524     0.020     1.524     0.020     
+22U       C7        C8        single    1.500     0.020     1.500     0.020     
+22U       C8        N3        single    1.330     0.020     1.330     0.020     
+22U       O2        C8        double    1.220     0.020     1.220     0.020     
+22U       N3        C9        single    1.450     0.020     1.450     0.020     
+22U       C9        C10       single    1.511     0.020     1.511     0.020     
+22U       C10       C11       double    1.390     0.020     1.390     0.020     
+22U       C10       C15       single    1.390     0.020     1.390     0.020     
+22U       C11       C12       single    1.390     0.020     1.390     0.020     
+22U       C13       C12       double    1.390     0.020     1.390     0.020     
+22U       C12       CL1       single    1.795     0.020     1.795     0.020     
+22U       C14       C13       single    1.390     0.020     1.390     0.020     
+22U       C15       C14       double    1.390     0.020     1.390     0.020     
+22U       C16       C17       double    1.390     0.020     1.390     0.020     
+22U       C21       C16       single    1.390     0.020     1.390     0.020     
+22U       C17       C18       single    1.390     0.020     1.390     0.020     
+22U       C18       C19       double    1.390     0.020     1.390     0.020     
+22U       C19       C20       single    1.390     0.020     1.390     0.020     
+22U       C20       C21       double    1.390     0.020     1.390     0.020     
+22U       H1        C1        single    1.089     0.010     0.989     0.005     
+22U       H1A       C1        single    1.089     0.010     0.989     0.005     
+22U       HN1       N1        single    1.036     0.016     0.914     0.007     
+22U       HN1A      N1        single    1.036     0.016     0.914     0.007     
+22U       H2        C2        single    1.089     0.010     0.989     0.005     
+22U       H4        C4        single    1.089     0.010     0.989     0.005     
+22U       H4A       C4        single    1.089     0.010     0.989     0.005     
+22U       H5        C5        single    1.089     0.010     0.989     0.005     
+22U       H5A       C5        single    1.089     0.010     0.989     0.005     
+22U       H6        C6        single    1.089     0.010     0.989     0.005     
+22U       H6A       C6        single    1.089     0.010     0.989     0.005     
+22U       H7        C7        single    1.089     0.010     0.989     0.005     
+22U       HN3       N3        single    1.016     0.010     0.899     0.007     
+22U       H9        C9        single    1.089     0.010     0.989     0.005     
+22U       H9A       C9        single    1.089     0.010     0.989     0.005     
+22U       H11       C11       single    1.082     0.013     0.975     0.010     
+22U       H13       C13       single    1.082     0.013     0.975     0.010     
+22U       H14       C14       single    1.082     0.013     0.975     0.010     
+22U       H15       C15       single    1.082     0.013     0.975     0.010     
+22U       H17       C17       single    1.082     0.013     0.975     0.010     
+22U       H18       C18       single    1.082     0.013     0.975     0.010     
+22U       H19       C19       single    1.082     0.013     0.975     0.010     
+22U       H20       C20       single    1.082     0.013     0.975     0.010     
+22U       H21       C21       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 22U      CL1    C12    C11     120.000    3.000
+ 22U      CL1    C12    C13     120.000    3.000
+ 22U      C11    C12    C13     120.000    3.000
+ 22U      C12    C11    H11     120.000    3.000
+ 22U      C12    C11    C10     120.000    3.000
+ 22U      H11    C11    C10     120.000    3.000
+ 22U      C12    C13    H13     120.000    3.000
+ 22U      C12    C13    C14     120.000    3.000
+ 22U      H13    C13    C14     120.000    3.000
+ 22U      C13    C14    H14     120.000    3.000
+ 22U      C13    C14    C15     120.000    3.000
+ 22U      H14    C14    C15     120.000    3.000
+ 22U      C14    C15    H15     120.000    3.000
+ 22U      C14    C15    C10     120.000    3.000
+ 22U      H15    C15    C10     120.000    3.000
+ 22U      C15    C10    C9      120.000    3.000
+ 22U      C15    C10    C11     120.000    3.000
+ 22U      C9     C10    C11     120.000    3.000
+ 22U      C10    C9     H9      109.470    3.000
+ 22U      C10    C9     H9A     109.470    3.000
+ 22U      C10    C9     N3      109.500    3.000
+ 22U      H9     C9     H9A     107.900    3.000
+ 22U      H9     C9     N3      109.470    3.000
+ 22U      H9A    C9     N3      109.470    3.000
+ 22U      C9     N3     HN3     118.500    3.000
+ 22U      C9     N3     C8      121.500    3.000
+ 22U      HN3    N3     C8      120.000    3.000
+ 22U      N3     C8     O2      123.000    3.000
+ 22U      N3     C8     C7      116.500    3.000
+ 22U      O2     C8     C7      120.500    3.000
+ 22U      C8     C7     H7      108.810    3.000
+ 22U      C8     C7     C6      109.470    3.000
+ 22U      C8     C7     N2      111.600    3.000
+ 22U      H7     C7     C6      108.340    3.000
+ 22U      H7     C7     N2      109.470    3.000
+ 22U      C6     C7     N2      105.000    3.000
+ 22U      C7     C6     H6      109.470    3.000
+ 22U      C7     C6     H6A     109.470    3.000
+ 22U      C7     C6     C5      111.000    3.000
+ 22U      H6     C6     H6A     107.900    3.000
+ 22U      H6     C6     C5      109.470    3.000
+ 22U      H6A    C6     C5      109.470    3.000
+ 22U      C6     C5     H5      109.470    3.000
+ 22U      C6     C5     H5A     109.470    3.000
+ 22U      C6     C5     C4      111.000    3.000
+ 22U      H5     C5     H5A     107.900    3.000
+ 22U      H5     C5     C4      109.470    3.000
+ 22U      H5A    C5     C4      109.470    3.000
+ 22U      C5     C4     H4A     109.470    3.000
+ 22U      C5     C4     H4      109.470    3.000
+ 22U      C5     C4     N2      105.000    3.000
+ 22U      H4A    C4     H4      107.900    3.000
+ 22U      H4A    C4     N2      109.470    3.000
+ 22U      H4     C4     N2      109.470    3.000
+ 22U      C7     N2     C3      121.000    3.000
+ 22U      C7     N2     C4      112.000    3.000
+ 22U      C3     N2     C4      127.000    3.000
+ 22U      N2     C3     O1      123.000    3.000
+ 22U      N2     C3     C2      116.500    3.000
+ 22U      O1     C3     C2      120.500    3.000
+ 22U      C3     C2     H2      108.810    3.000
+ 22U      C3     C2     N1      109.470    3.000
+ 22U      C3     C2     C1      109.470    3.000
+ 22U      H2     C2     N1      109.470    3.000
+ 22U      H2     C2     C1      108.340    3.000
+ 22U      N1     C2     C1      109.470    3.000
+ 22U      C2     N1     HN1A    120.000    3.000
+ 22U      C2     N1     HN1     120.000    3.000
+ 22U      HN1A   N1     HN1     120.000    3.000
+ 22U      C2     C1     H1      109.470    3.000
+ 22U      C2     C1     H1A     109.470    3.000
+ 22U      C2     C1     C16     109.470    3.000
+ 22U      H1     C1     H1A     107.900    3.000
+ 22U      H1     C1     C16     109.470    3.000
+ 22U      H1A    C1     C16     109.470    3.000
+ 22U      C1     C16    C21     120.000    3.000
+ 22U      C1     C16    C17     120.000    3.000
+ 22U      C21    C16    C17     120.000    3.000
+ 22U      C16    C21    H21     120.000    3.000
+ 22U      C16    C21    C20     120.000    3.000
+ 22U      H21    C21    C20     120.000    3.000
+ 22U      C21    C20    H20     120.000    3.000
+ 22U      C21    C20    C19     120.000    3.000
+ 22U      H20    C20    C19     120.000    3.000
+ 22U      C20    C19    H19     120.000    3.000
+ 22U      C20    C19    C18     120.000    3.000
+ 22U      H19    C19    C18     120.000    3.000
+ 22U      C19    C18    H18     120.000    3.000
+ 22U      C19    C18    C17     120.000    3.000
+ 22U      H18    C18    C17     120.000    3.000
+ 22U      C18    C17    H17     120.000    3.000
+ 22U      C18    C17    C16     120.000    3.000
+ 22U      H17    C17    C16     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 22U      CONST_1  CL1    C12    C11    C10      180.000    0.000   0
+ 22U      CONST_2  CL1    C12    C13    C14      180.000    0.000   0
+ 22U      CONST_3  C12    C13    C14    C15        0.000    0.000   0
+ 22U      CONST_4  C13    C14    C15    C10        0.000    0.000   0
+ 22U      CONST_5  C14    C15    C10    C9       180.000    0.000   0
+ 22U      CONST_6  C15    C10    C11    C12        0.000    0.000   0
+ 22U      var_1    C15    C10    C9     N3       -90.301   20.000   2
+ 22U      var_2    C10    C9     N3     C8       179.988   20.000   3
+ 22U      CONST_7  C9     N3     C8     C7       180.000    0.000   0
+ 22U      var_3    N3     C8     C7     N2      -179.968   20.000   3
+ 22U      var_4    C8     C7     C6     C5      -150.000   20.000   3
+ 22U      var_5    C7     C6     C5     C4        30.000   20.000   3
+ 22U      var_6    C6     C5     C4     N2       -30.000   20.000   3
+ 22U      var_7    C8     C7     N2     C3       -60.000   20.000   3
+ 22U      var_8    C7     N2     C4     C5        30.000   20.000   1
+ 22U      CONST_8  C7     N2     C3     C2       180.000    0.000   0
+ 22U      var_9    N2     C3     C2     C1        79.990   20.000   3
+ 22U      var_10   C3     C2     N1     HN1      176.073   20.000   1
+ 22U      var_11   C3     C2     C1     C16     -174.988   20.000   3
+ 22U      var_12   C2     C1     C16    C21      -90.272   20.000   2
+ 22U      CONST_9  C1     C16    C17    C18      180.000    0.000   0
+ 22U      CONST_10 C1     C16    C21    C20      180.000    0.000   0
+ 22U      CONST_11 C16    C21    C20    C19        0.000    0.000   0
+ 22U      CONST_12 C21    C20    C19    C18        0.000    0.000   0
+ 22U      CONST_13 C20    C19    C18    C17        0.000    0.000   0
+ 22U      CONST_14 C19    C18    C17    C16        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 22U      chir_01  C2     C1     N1     C3        negativ
+ 22U      chir_02  C7     N2     C6     C8        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 22U      plan-1    N1        0.020
+ 22U      plan-1    C2        0.020
+ 22U      plan-1    HN1       0.020
+ 22U      plan-1    HN1A      0.020
+ 22U      plan-2    C3        0.020
+ 22U      plan-2    C2        0.020
+ 22U      plan-2    O1        0.020
+ 22U      plan-2    N2        0.020
+ 22U      plan-3    N2        0.020
+ 22U      plan-3    C3        0.020
+ 22U      plan-3    C4        0.020
+ 22U      plan-3    C7        0.020
+ 22U      plan-4    C8        0.020
+ 22U      plan-4    C7        0.020
+ 22U      plan-4    N3        0.020
+ 22U      plan-4    O2        0.020
+ 22U      plan-4    HN3       0.020
+ 22U      plan-5    N3        0.020
+ 22U      plan-5    C8        0.020
+ 22U      plan-5    C9        0.020
+ 22U      plan-5    HN3       0.020
+ 22U      plan-6    C10       0.020
+ 22U      plan-6    C9        0.020
+ 22U      plan-6    C11       0.020
+ 22U      plan-6    C15       0.020
+ 22U      plan-6    C12       0.020
+ 22U      plan-6    C13       0.020
+ 22U      plan-6    C14       0.020
+ 22U      plan-6    H11       0.020
+ 22U      plan-6    CL1       0.020
+ 22U      plan-6    H13       0.020
+ 22U      plan-6    H14       0.020
+ 22U      plan-6    H15       0.020
+ 22U      plan-7    C16       0.020
+ 22U      plan-7    C1        0.020
+ 22U      plan-7    C17       0.020
+ 22U      plan-7    C21       0.020
+ 22U      plan-7    C18       0.020
+ 22U      plan-7    C19       0.020
+ 22U      plan-7    C20       0.020
+ 22U      plan-7    H17       0.020
+ 22U      plan-7    H18       0.020
+ 22U      plan-7    H19       0.020
+ 22U      plan-7    H20       0.020
+ 22U      plan-7    H21       0.020
+# ------------------------------------------------------

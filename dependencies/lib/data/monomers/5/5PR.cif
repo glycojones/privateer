@@ -1,0 +1,172 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5PR     5PR      "5-hydroxy-4-(hydroxymethyl)-6-methylpyridine-3-carboxylic acid"     NON-POLYMER     21     13     .     
+#
+data_comp_5PR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+5PR     N1      N       NRD6    0       1.395       1.558       -0.300      
+5PR     C2      C       CR6     0       1.710       0.260       -0.204      
+5PR     C3      C       CR6     0       0.705       -0.710      0.061       
+5PR     O3      O       OH1     0       1.069       -2.025      0.153       
+5PR     C4      C       CR6     0       -0.668      -0.274      0.227       
+5PR     C5      C       CR6     0       -0.936      1.112       0.110       
+5PR     C6      C       CR16    0       0.125       1.979       -0.152      
+5PR     C2A     C       CH3     0       3.144       -0.144      -0.379      
+5PR     C4A     C       CH2     0       -1.769      -1.278      0.507       
+5PR     O4A     O       OH1     0       -2.635      -1.431      -0.608      
+5PR     O51     O       OC      -1      -3.163      1.399       -0.615      
+5PR     O52     O       O       0       -2.552      2.402       1.247       
+5PR     C5A     C       C       0       -2.324      1.682       0.259       
+5PR     HO3     H       H       0       0.814       -2.421      -0.564      
+5PR     H6      H       H       0       -0.048      2.895       -0.229      
+5PR     H2A     H       H       0       3.202       -0.851      -1.043      
+5PR     H2AA    H       H       0       3.494       -0.468      0.467       
+5PR     H2AB    H       H       0       3.669       0.618       -0.674      
+5PR     H4A     H       H       0       -2.295      -0.986      1.279       
+5PR     H4AA    H       H       0       -1.390      -2.149      0.730       
+5PR     HO4A    H       H       0       -3.083      -2.146      -0.510      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5PR       N1        C2        DOUBLE    y         1.331     0.010     1.331     0.010     
+5PR       N1        C6        SINGLE    y         1.338     0.010     1.338     0.010     
+5PR       C2        C3        SINGLE    y         1.400     0.015     1.400     0.015     
+5PR       C2        C2A       SINGLE    n         1.497     0.010     1.497     0.010     
+5PR       C3        O3        SINGLE    n         1.364     0.013     1.364     0.013     
+5PR       C3        C4        DOUBLE    y         1.407     0.020     1.407     0.020     
+5PR       C4        C5        SINGLE    y         1.403     0.011     1.403     0.011     
+5PR       C4        C4A       SINGLE    n         1.510     0.010     1.510     0.010     
+5PR       C5        C6        DOUBLE    y         1.387     0.011     1.387     0.011     
+5PR       C5        C5A       SINGLE    n         1.498     0.020     1.498     0.020     
+5PR       C4A       O4A       SINGLE    n         1.420     0.014     1.420     0.014     
+5PR       O51       C5A       SINGLE    n         1.244     0.020     1.244     0.020     
+5PR       O52       C5A       DOUBLE    n         1.244     0.020     1.244     0.020     
+5PR       O3        HO3       SINGLE    n         0.970     0.012     0.858     0.020     
+5PR       C6        H6        SINGLE    n         1.082     0.013     0.935     0.010     
+5PR       C2A       H2A       SINGLE    n         1.089     0.010     0.971     0.014     
+5PR       C2A       H2AA      SINGLE    n         1.089     0.010     0.971     0.014     
+5PR       C2A       H2AB      SINGLE    n         1.089     0.010     0.971     0.014     
+5PR       C4A       H4A       SINGLE    n         1.089     0.010     0.979     0.018     
+5PR       C4A       H4AA      SINGLE    n         1.089     0.010     0.979     0.018     
+5PR       O4A       HO4A      SINGLE    n         0.970     0.012     0.849     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+5PR          C2          N1          C6     119.287    1.60
+5PR          N1          C2          C3     120.226    1.50
+5PR          N1          C2         C2A     119.088    1.50
+5PR          C3          C2         C2A     120.686    1.50
+5PR          C2          C3          O3     119.329    1.71
+5PR          C2          C3          C4     119.676    1.50
+5PR          O3          C3          C4     120.994    2.61
+5PR          C3          O3         HO3     108.001    2.98
+5PR          C3          C4          C5     118.764    1.50
+5PR          C3          C4         C4A     119.928    1.50
+5PR          C5          C4         C4A     121.308    1.50
+5PR          C4          C5          C6     119.600    1.50
+5PR          C4          C5         C5A     120.183    2.16
+5PR          C6          C5         C5A     120.217    1.50
+5PR          N1          C6          C5     122.447    1.50
+5PR          N1          C6          H6     118.537    1.50
+5PR          C5          C6          H6     119.016    1.50
+5PR          C2         C2A         H2A     109.484    1.50
+5PR          C2         C2A        H2AA     109.484    1.50
+5PR          C2         C2A        H2AB     109.484    1.50
+5PR         H2A         C2A        H2AA     109.339    1.66
+5PR         H2A         C2A        H2AB     109.339    1.66
+5PR        H2AA         C2A        H2AB     109.339    1.66
+5PR          C4         C4A         O4A     111.937    1.71
+5PR          C4         C4A         H4A     109.800    1.50
+5PR          C4         C4A        H4AA     109.800    1.50
+5PR         O4A         C4A         H4A     109.107    1.50
+5PR         O4A         C4A        H4AA     109.107    1.50
+5PR         H4A         C4A        H4AA     107.986    1.50
+5PR         C4A         O4A        HO4A     108.716    3.00
+5PR          C5         C5A         O51     117.793    1.50
+5PR          C5         C5A         O52     117.793    1.50
+5PR         O51         C5A         O52     124.413    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+5PR       const_sp2_sp2_2         C2A          C2          N1          C6     180.000   10.00     2
+5PR              const_19          C5          C6          N1          C2       0.000   10.00     2
+5PR       const_sp2_sp2_6         C2A          C2          C3          O3       0.000   10.00     2
+5PR             sp2_sp3_1          N1          C2         C2A         H2A     150.000   10.00     6
+5PR              const_10          O3          C3          C4         C4A       0.000   10.00     2
+5PR              const_14         C4A          C4          C5         C5A       0.000   10.00     2
+5PR            sp2_sp3_10          C3          C4         C4A         O4A     -90.000   10.00     6
+5PR             sp2_sp2_1          C4          C5         C5A         O51     180.000   10.00     2
+5PR              const_17         C5A          C5          C6          N1     180.000   10.00     2
+5PR             sp3_sp3_1          C4         C4A         O4A        HO4A     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+5PR    plan-1          C2   0.020
+5PR    plan-1         C2A   0.020
+5PR    plan-1          C3   0.020
+5PR    plan-1          C4   0.020
+5PR    plan-1         C4A   0.020
+5PR    plan-1          C5   0.020
+5PR    plan-1         C5A   0.020
+5PR    plan-1          C6   0.020
+5PR    plan-1          H6   0.020
+5PR    plan-1          N1   0.020
+5PR    plan-1          O3   0.020
+5PR    plan-2          C5   0.020
+5PR    plan-2         C5A   0.020
+5PR    plan-2         O51   0.020
+5PR    plan-2         O52   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+5PR SMILES           ACDLabs              12.01 "O=C(O)c1cnc(c(O)c1CO)C"
+5PR SMILES_CANONICAL CACTVS               3.370 "Cc1ncc(C(O)=O)c(CO)c1O"
+5PR SMILES           CACTVS               3.370 "Cc1ncc(C(O)=O)c(CO)c1O"
+5PR SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "Cc1c(c(c(cn1)C(=O)O)CO)O"
+5PR SMILES           "OpenEye OEToolkits" 1.7.0 "Cc1c(c(c(cn1)C(=O)O)CO)O"
+5PR InChI            InChI                1.03  "InChI=1S/C8H9NO4/c1-4-7(11)6(3-10)5(2-9-4)8(12)13/h2,10-11H,3H2,1H3,(H,12,13)"
+5PR InChIKey         InChI                1.03  VJZTVPVXKYQRJZ-UHFFFAOYSA-N
+5PR ?                acedrg               202         "dictionary generator"                  
+5PR ?                acedrg_database      11          "data source"                           
+5PR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+5PR ?                refmac5              5.8.0189    "optimization tool"                     

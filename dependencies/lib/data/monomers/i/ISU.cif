@@ -1,0 +1,131 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ISU     ISU      SE-ETHYL-ISOSELENOUREA     NON-POLYMER     14     6     .     
+#
+data_comp_ISU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ISU     C1      C       CH3     0       -2.270      2.681       90.707      
+ISU     C2      C       CH2     0       -2.563      1.304       91.153      
+ISU     SE      SE      SE      0       -1.296      0.020       90.379      
+ISU     C3      C       C       0       0.462       0.305       91.149      
+ISU     N1      N       NH2     0       1.246       1.243       90.621      
+ISU     N2      N       NH1     0       0.855       -0.408      92.157      
+ISU     HC11    H       H       0       -2.785      3.311       91.241      
+ISU     HC12    H       H       0       -2.511      2.777       89.770      
+ISU     HC13    H       H       0       -1.321      2.863       90.818      
+ISU     HC21    H       H       0       -3.474      1.055       90.887      
+ISU     HC22    H       H       0       -2.513      1.253       92.132      
+ISU     HN11    H       H       0       2.049       1.390       90.956      
+ISU     HN12    H       H       0       0.964       1.718       89.935      
+ISU     HN2     H       H       0       0.248       -1.004      92.427      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ISU       C1        C2        SINGLE    n         1.477     0.020     1.477     0.020     
+ISU       C2        SE        SINGLE    n         1.963     0.020     1.963     0.020     
+ISU       SE        C3        SINGLE    n         1.938     0.020     1.938     0.020     
+ISU       C3        N1        SINGLE    n         1.330     0.020     1.330     0.020     
+ISU       C3        N2        DOUBLE    n         1.291     0.020     1.291     0.020     
+ISU       C1        HC11      SINGLE    n         1.089     0.010     0.973     0.015     
+ISU       C1        HC12      SINGLE    n         1.089     0.010     0.973     0.015     
+ISU       C1        HC13      SINGLE    n         1.089     0.010     0.973     0.015     
+ISU       C2        HC21      SINGLE    n         1.089     0.010     0.981     0.017     
+ISU       C2        HC22      SINGLE    n         1.089     0.010     0.981     0.017     
+ISU       N1        HN11      SINGLE    n         1.016     0.010     0.881     0.020     
+ISU       N1        HN12      SINGLE    n         1.016     0.010     0.881     0.020     
+ISU       N2        HN2       SINGLE    n         1.016     0.010     0.892     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ISU          C2          C1        HC11     109.513    1.50
+ISU          C2          C1        HC12     109.513    1.50
+ISU          C2          C1        HC13     109.513    1.50
+ISU        HC11          C1        HC12     109.469    1.50
+ISU        HC11          C1        HC13     109.469    1.50
+ISU        HC12          C1        HC13     109.469    1.50
+ISU          C1          C2          SE     111.593    3.00
+ISU          C1          C2        HC21     109.891    1.50
+ISU          C1          C2        HC22     109.891    1.50
+ISU          SE          C2        HC21     109.134    1.50
+ISU          SE          C2        HC22     109.134    1.50
+ISU        HC21          C2        HC22     107.871    1.50
+ISU          C2          SE          C3     109.471    3.00
+ISU          SE          C3          N1     119.470    3.00
+ISU          SE          C3          N2     119.470    3.00
+ISU          N1          C3          N2     121.061    3.00
+ISU          C3          N1        HN11     120.022    1.50
+ISU          C3          N1        HN12     120.022    1.50
+ISU        HN11          N1        HN12     119.957    2.31
+ISU          C3          N2         HN2     112.238    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ISU             sp3_sp3_1        HC11          C1          C2          SE     180.000   10.00     3
+ISU            sp3_sp3_10          C1          C2          SE          C3     180.000   10.00     3
+ISU             sp2_sp2_1          SE          C3          N1        HN11     180.000   10.00     2
+ISU             sp2_sp2_5          SE          C3          N2         HN2     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ISU    plan-1          C3   0.020
+ISU    plan-1          N1   0.020
+ISU    plan-1          N2   0.020
+ISU    plan-1          SE   0.020
+ISU    plan-2          C3   0.020
+ISU    plan-2        HN11   0.020
+ISU    plan-2        HN12   0.020
+ISU    plan-2          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ISU SMILES           ACDLabs              10.04 "[N@H]=C([Se]CC)N"
+ISU SMILES_CANONICAL CACTVS               3.341 "CC[Se]C(N)=N"
+ISU SMILES           CACTVS               3.341 "CC[Se]C(N)=N"
+ISU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[H]/N=C(/N)\[Se]CC"
+ISU SMILES           "OpenEye OEToolkits" 1.5.0 "[H]N=C(N)[Se]CC"
+ISU InChI            InChI                1.03  "InChI=1S/C3H8N2Se/c1-2-6-3(4)5/h2H2,1H3,(H3,4,5)"
+ISU InChIKey         InChI                1.03  FFKYNFXDBBLWGF-UHFFFAOYSA-N
+ISU ?                acedrg               202         "dictionary generator"                  
+ISU ?                acedrg_database      11          "data source"                           
+ISU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ISU ?                refmac5              5.8.0189    "optimization tool"                     

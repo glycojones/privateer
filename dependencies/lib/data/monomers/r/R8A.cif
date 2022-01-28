@@ -1,0 +1,156 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+R8A     R8A      (2-aminopyridin-3-yl)methanol     NON-POLYMER     17     9     .     
+#
+data_comp_R8A
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+R8A     C4      C       CR16    0       2.445       0.423       -0.036      
+R8A     C5      C       CH2     0       -1.634      -0.751      0.102       
+R8A     N1      N       NH2     0       -0.673      1.982       0.443       
+R8A     O       O       OH1     0       -2.375      -0.177      -0.965      
+R8A     C2      C       CR6     0       -0.181      -0.350      0.051       
+R8A     C1      C       CR16    0       0.819       -1.297      -0.171      
+R8A     C3      C       CR6     0       0.223       1.003       0.225       
+R8A     N       N       NRD6    0       1.528       1.371       0.180       
+R8A     C       C       CR16    0       2.146       -0.915      -0.216      
+R8A     H1      H       H       0       3.350       0.687       -0.066      
+R8A     H2      H       H       0       -1.711      -1.726      0.054       
+R8A     H3      H       H       0       -2.025      -0.461      0.952       
+R8A     H4      H       H       0       -0.709      2.669       -0.100      
+R8A     H5      H       H       0       -1.218      1.930       1.128       
+R8A     H6      H       H       0       -2.156      -0.564      -1.688      
+R8A     H7      H       H       0       0.581       -2.202      -0.290      
+R8A     H8      H       H       0       2.827       -1.548      -0.365      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+R8A       C5        O         SINGLE    n         1.420     0.0138    1.420     0.0138    
+R8A       C5        C2        SINGLE    n         1.507     0.0100    1.507     0.0100    
+R8A       N1        C3        SINGLE    n         1.343     0.0151    1.343     0.0151    
+R8A       C2        C3        DOUBLE    y         1.416     0.0135    1.416     0.0135    
+R8A       C2        C1        SINGLE    y         1.392     0.0100    1.392     0.0100    
+R8A       C3        N         SINGLE    y         1.343     0.0174    1.343     0.0174    
+R8A       C1        C         DOUBLE    y         1.379     0.0100    1.379     0.0100    
+R8A       C4        N         DOUBLE    y         1.332     0.0100    1.332     0.0100    
+R8A       C4        C         SINGLE    y         1.374     0.0152    1.374     0.0152    
+R8A       C4        H1        SINGLE    n         1.082     0.013     0.943     0.0178    
+R8A       C5        H2        SINGLE    n         1.089     0.010     0.979     0.0179    
+R8A       C5        H3        SINGLE    n         1.089     0.010     0.979     0.0179    
+R8A       N1        H4        SINGLE    n         1.016     0.010     0.877     0.0200    
+R8A       N1        H5        SINGLE    n         1.016     0.010     0.877     0.0200    
+R8A       O         H6        SINGLE    n         0.970     0.012     0.849     0.0200    
+R8A       C1        H7        SINGLE    n         1.082     0.013     0.943     0.0173    
+R8A       C         H8        SINGLE    n         1.082     0.013     0.942     0.0124    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+R8A           N          C4           C     123.743    1.50
+R8A           N          C4          H1     117.794    1.50
+R8A           C          C4          H1     118.463    1.50
+R8A           O          C5          C2     111.937    1.71
+R8A           O          C5          H2     109.107    1.50
+R8A           O          C5          H3     109.107    1.50
+R8A          C2          C5          H2     109.800    1.50
+R8A          C2          C5          H3     109.800    1.50
+R8A          H2          C5          H3     107.986    1.50
+R8A          C3          N1          H4     119.860    1.50
+R8A          C3          N1          H5     119.860    1.50
+R8A          H4          N1          H5     120.280    1.85
+R8A          C5           O          H6     108.716    3.00
+R8A          C5          C2          C3     121.110    1.56
+R8A          C5          C2          C1     120.780    1.50
+R8A          C3          C2          C1     118.110    1.50
+R8A          C2          C1           C     120.693    1.50
+R8A          C2          C1          H7     119.199    1.50
+R8A           C          C1          H7     120.108    1.50
+R8A          N1          C3          C2     121.327    1.50
+R8A          N1          C3           N     116.903    1.55
+R8A          C2          C3           N     121.770    1.50
+R8A          C3           N          C4     117.350    1.50
+R8A          C1           C          C4     118.334    1.50
+R8A          C1           C          H8     120.839    1.50
+R8A          C4           C          H8     120.827    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+R8A       const_sp2_sp2_1           C          C4           N          C3       0.000   10.00     2
+R8A              const_17          C1           C          C4           N       0.000   10.00     2
+R8A             sp3_sp3_1          C2          C5           O          H6     180.000   10.00     3
+R8A             sp2_sp3_2          C3          C2          C5           O     -90.000   10.00     6
+R8A             sp2_sp2_1          C2          C3          N1          H4     180.000   10.00     2
+R8A              const_10           C          C1          C2          C5     180.000   10.00     2
+R8A       const_sp2_sp2_8          C5          C2          C3          N1       0.000   10.00     2
+R8A              const_13          C4           C          C1          C2       0.000   10.00     2
+R8A       const_sp2_sp2_4          N1          C3           N          C4     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+R8A    plan-1           C   0.020
+R8A    plan-1          C1   0.020
+R8A    plan-1          C2   0.020
+R8A    plan-1          C3   0.020
+R8A    plan-1          C4   0.020
+R8A    plan-1          C5   0.020
+R8A    plan-1          H1   0.020
+R8A    plan-1          H7   0.020
+R8A    plan-1          H8   0.020
+R8A    plan-1           N   0.020
+R8A    plan-1          N1   0.020
+R8A    plan-2          C3   0.020
+R8A    plan-2          H4   0.020
+R8A    plan-2          H5   0.020
+R8A    plan-2          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+R8A           SMILES              ACDLabs 12.01                                            c1nc(N)c(CO)cc1
+R8A            InChI                InChI  1.03 InChI=1S/C6H8N2O/c7-6-5(4-9)2-1-3-8-6/h1-3,9H,4H2,(H2,7,8)
+R8A         InChIKey                InChI  1.03                                FEIACFYXEWBKHU-UHFFFAOYSA-N
+R8A SMILES_CANONICAL               CACTVS 3.385                                                Nc1ncccc1CO
+R8A           SMILES               CACTVS 3.385                                                Nc1ncccc1CO
+R8A SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                            c1cc(c(nc1)N)CO
+R8A           SMILES "OpenEye OEToolkits" 2.0.6                                            c1cc(c(nc1)N)CO
+R8A ?                acedrg               217         "dictionary generator"                  
+R8A ?                acedrg_database      11          "data source"                           
+R8A ?                rdkit                2017.03.2   "Chemoinformatics tool"
+R8A ?                refmac5              5.8.0253    "optimization tool"                     

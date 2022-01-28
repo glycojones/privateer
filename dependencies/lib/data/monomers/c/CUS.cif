@@ -1,0 +1,293 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CUS      CUS '(N-SALICYLIDEN-L-LEUCINATO)-COPPER(I' non-polymer        33  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CUS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CUS           O3     O    O        -0.500      2.145    6.141    1.997
+ CUS           C8     C    C         0.000      1.329    6.749    2.724
+ CUS           C9     C    CH1       0.000      0.762    5.972    3.881
+ CUS           H9     H    H         0.000     -0.249    6.307    4.153
+ CUS           C10    C    CH2       0.000      1.756    6.138    5.029
+ CUS           H101   H    H         0.000      2.699    6.447    4.574
+ CUS           H102   H    H         0.000      1.876    5.148    5.475
+ CUS           C11    C    CH1       0.000      1.358    7.138    6.107
+ CUS           H11    H    H         0.000      0.395    7.592    5.836
+ CUS           C12    C    CH3       0.000      2.408    8.240    6.241
+ CUS           H123   H    H         0.000      3.280    7.965    5.705
+ CUS           H122   H    H         0.000      2.023    9.145    5.848
+ CUS           H121   H    H         0.000      2.651    8.375    7.263
+ CUS           C16    C    CH3       0.000      1.206    6.408    7.431
+ CUS           H163   H    H         0.000      2.031    6.634    8.054
+ CUS           H162   H    H         0.000      0.311    6.718    7.903
+ CUS           H161   H    H         0.000      1.170    5.365    7.256
+ CUS           N1     N    N         0.000      0.807    4.535    3.564
+ CUS           C1     C    C1        0.000      0.064    3.723    4.181
+ CUS           H1     H    H         0.000     -0.601    4.152    4.912
+ CUS           C2     C    CR6       0.000     -0.005    2.253    4.023
+ CUS           C3     C    CR16      0.000     -0.969    1.622    4.814
+ CUS           H3     H    H         0.000     -1.585    2.215    5.479
+ CUS           C4     C    CR16      0.000     -1.149    0.249    4.760
+ CUS           H4     H    H         0.000     -1.902   -0.225    5.378
+ CUS           C5     C    CR16      0.000     -0.356   -0.523    3.906
+ CUS           H5     H    H         0.000     -0.496   -1.596    3.859
+ CUS           C6     C    CR16      0.000      0.612    0.086    3.117
+ CUS           H6     H    H         0.000      1.231   -0.513    2.460
+ CUS           C7     C    CR6       0.000      0.787    1.474    3.171
+ CUS           O1     O    O2        0.000      1.757    1.972    2.349
+ CUS           CU1    CU   CU        0.000      2.140    3.933    2.133
+ CUS           O2     O    O2       -0.500      1.030    7.941    2.491
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CUS      O3     n/a    C8     START
+ CUS      C8     O3     C9     .
+ CUS      C9     C8     N1     .
+ CUS      H9     C9     .      .
+ CUS      C10    C9     C11    .
+ CUS      H101   C10    .      .
+ CUS      H102   C10    .      .
+ CUS      C11    C10    C16    .
+ CUS      H11    C11    .      .
+ CUS      C12    C11    H121   .
+ CUS      H123   C12    .      .
+ CUS      H122   C12    .      .
+ CUS      H121   C12    .      .
+ CUS      C16    C11    H161   .
+ CUS      H163   C16    .      .
+ CUS      H162   C16    .      .
+ CUS      H161   C16    .      .
+ CUS      N1     C9     C1     .
+ CUS      C1     N1     C2     .
+ CUS      H1     C1     .      .
+ CUS      C2     C1     C3     .
+ CUS      C3     C2     C4     .
+ CUS      H3     C3     .      .
+ CUS      C4     C3     C5     .
+ CUS      H4     C4     .      .
+ CUS      C5     C4     C6     .
+ CUS      H5     C5     .      .
+ CUS      C6     C5     C7     .
+ CUS      H6     C6     .      .
+ CUS      C7     C6     O1     .
+ CUS      O1     C7     CU1    .
+ CUS      CU1    O1     O2     .
+ CUS      O2     CU1    .      END
+ CUS      O2     C8     .    ADD
+ CUS      N1     CU1    .    ADD
+ CUS      C2     C7     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CUS       O2        CU1       single    2.010     0.020     2.010     0.020     
+CUS       O2        C8        deloc     1.454     0.020     1.454     0.020     
+CUS       C8        O3        deloc     1.220     0.020     1.220     0.020     
+CUS       C9        C8        single    1.500     0.020     1.500     0.020     
+CUS       N1        C9        single    1.455     0.020     1.455     0.020     
+CUS       H9        C9        single    1.089     0.010     0.989     0.005     
+CUS       C10       C9        single    1.524     0.020     1.524     0.020     
+CUS       H101      C10       single    1.089     0.010     0.989     0.005     
+CUS       H102      C10       single    1.089     0.010     0.989     0.005     
+CUS       C11       C10       single    1.524     0.020     1.524     0.020     
+CUS       H11       C11       single    1.089     0.010     0.989     0.005     
+CUS       C16       C11       single    1.524     0.020     1.524     0.020     
+CUS       C12       C11       single    1.524     0.020     1.524     0.020     
+CUS       H161      C16       single    1.089     0.010     0.989     0.005     
+CUS       H162      C16       single    1.089     0.010     0.989     0.005     
+CUS       H163      C16       single    1.089     0.010     0.989     0.005     
+CUS       H121      C12       single    1.089     0.010     0.989     0.005     
+CUS       H122      C12       single    1.089     0.010     0.989     0.005     
+CUS       H123      C12       single    1.089     0.010     0.989     0.005     
+CUS       C1        N1        double    1.260     0.020     1.260     0.020     
+CUS       N1        CU1       single    1.995     0.020     1.995     0.020     
+CUS       CU1       O1        single    2.010     0.020     2.010     0.020     
+CUS       C2        C1        single    1.480     0.020     1.480     0.020     
+CUS       H1        C1        single    1.082     0.013     0.975     0.010     
+CUS       C3        C2        double    1.390     0.020     1.390     0.020     
+CUS       C2        C7        single    1.487     0.020     1.487     0.020     
+CUS       O1        C7        single    1.370     0.020     1.370     0.020     
+CUS       C7        C6        double    1.390     0.020     1.390     0.020     
+CUS       C6        C5        single    1.390     0.020     1.390     0.020     
+CUS       H6        C6        single    1.082     0.013     0.975     0.010     
+CUS       H5        C5        single    1.082     0.013     0.975     0.010     
+CUS       C5        C4        double    1.390     0.020     1.390     0.020     
+CUS       H4        C4        single    1.082     0.013     0.975     0.010     
+CUS       C4        C3        single    1.390     0.020     1.390     0.020     
+CUS       H3        C3        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CUS      O3     C8     C9      120.500    3.000
+ CUS      O3     C8     O2      119.000    3.000
+ CUS      C9     C8     O2      120.000    3.000
+ CUS      C8     C9     H9      108.810    3.000
+ CUS      C8     C9     C10     109.470    3.000
+ CUS      C8     C9     N1      111.600    3.000
+ CUS      H9     C9     C10     108.340    3.000
+ CUS      H9     C9     N1      109.470    3.000
+ CUS      C10    C9     N1      105.000    3.000
+ CUS      C9     C10    H101    109.470    3.000
+ CUS      C9     C10    H102    109.470    3.000
+ CUS      C9     C10    C11     111.000    3.000
+ CUS      H101   C10    H102    107.900    3.000
+ CUS      H101   C10    C11     109.470    3.000
+ CUS      H102   C10    C11     109.470    3.000
+ CUS      C10    C11    H11     108.340    3.000
+ CUS      C10    C11    C12     111.000    3.000
+ CUS      C10    C11    C16     111.000    3.000
+ CUS      H11    C11    C12     108.340    3.000
+ CUS      H11    C11    C16     108.340    3.000
+ CUS      C12    C11    C16     111.000    3.000
+ CUS      C11    C12    H123    109.470    3.000
+ CUS      C11    C12    H122    109.470    3.000
+ CUS      C11    C12    H121    109.470    3.000
+ CUS      H123   C12    H122    109.470    3.000
+ CUS      H123   C12    H121    109.470    3.000
+ CUS      H122   C12    H121    109.470    3.000
+ CUS      C11    C16    H163    109.470    3.000
+ CUS      C11    C16    H162    109.470    3.000
+ CUS      C11    C16    H161    109.470    3.000
+ CUS      H163   C16    H162    109.470    3.000
+ CUS      H163   C16    H161    109.470    3.000
+ CUS      H162   C16    H161    109.470    3.000
+ CUS      C9     N1     C1      120.000    3.000
+ CUS      C9     N1     CU1     120.000    3.000
+ CUS      C1     N1     CU1     120.000    3.000
+ CUS      N1     C1     H1      120.000    3.000
+ CUS      N1     C1     C2      120.000    3.000
+ CUS      H1     C1     C2      120.000    3.000
+ CUS      C1     C2     C3      120.000    3.000
+ CUS      C1     C2     C7      120.000    3.000
+ CUS      C3     C2     C7      120.000    3.000
+ CUS      C2     C3     H3      120.000    3.000
+ CUS      C2     C3     C4      120.000    3.000
+ CUS      H3     C3     C4      120.000    3.000
+ CUS      C3     C4     H4      120.000    3.000
+ CUS      C3     C4     C5      120.000    3.000
+ CUS      H4     C4     C5      120.000    3.000
+ CUS      C4     C5     H5      120.000    3.000
+ CUS      C4     C5     C6      120.000    3.000
+ CUS      H5     C5     C6      120.000    3.000
+ CUS      C5     C6     H6      120.000    3.000
+ CUS      C5     C6     C7      120.000    3.000
+ CUS      H6     C6     C7      120.000    3.000
+ CUS      C6     C7     O1      120.000    3.000
+ CUS      C6     C7     C2      120.000    3.000
+ CUS      O1     C7     C2      120.000    3.000
+ CUS      C7     O1     CU1     120.000    3.000
+ CUS      O1     CU1    O2       90.000    3.000
+ CUS      O1     CU1    N1       90.000    3.000
+ CUS      O2     CU1    N1       90.000    3.000
+ CUS      CU1    O2     C8      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CUS      var_1    O3     C8     C9     N1       -25.678   20.000   3
+ CUS      var_2    C8     C9     C10    C11      102.254   20.000   3
+ CUS      var_3    C9     C10    C11    C16      117.687   20.000   3
+ CUS      var_4    C10    C11    C12    H121    -131.859   20.000   3
+ CUS      var_5    C10    C11    C16    H161     -14.085   20.000   3
+ CUS      var_6    C8     C9     N1     C1      -159.718   20.000   3
+ CUS      var_7    C9     N1     CU1    O1       175.767   20.000   1
+ CUS      var_8    C9     N1     C1     C2      -178.408   20.000   1
+ CUS      var_9    N1     C1     C2     C3      -177.624   20.000   1
+ CUS      CONST_1  C1     C2     C7     C6       180.000    0.000   0
+ CUS      CONST_2  C1     C2     C3     C4       180.000    0.000   0
+ CUS      CONST_3  C2     C3     C4     C5         0.000    0.000   0
+ CUS      CONST_4  C3     C4     C5     C6         0.000    0.000   0
+ CUS      CONST_5  C4     C5     C6     C7         0.000    0.000   0
+ CUS      CONST_6  C5     C6     C7     O1       180.000    0.000   0
+ CUS      var_10   C6     C7     O1     CU1      175.839   20.000   1
+ CUS      var_11   C7     O1     CU1    O2       -18.863   20.000   1
+ CUS      var_12   O1     CU1    O2     C8        62.430   20.000   1
+ CUS      var_13   CU1    O2     C8     O3        31.585   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CUS      chir_01  C9     C8     C10    N1        positiv
+ CUS      chir_02  C11    C10    C16    C12       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CUS      plan-1    C8        0.020
+ CUS      plan-1    O2        0.020
+ CUS      plan-1    O3        0.020
+ CUS      plan-1    C9        0.020
+ CUS      plan-2    N1        0.020
+ CUS      plan-2    C9        0.020
+ CUS      plan-2    CU1       0.020
+ CUS      plan-2    C1        0.020
+ CUS      plan-2    H1        0.020
+ CUS      plan-3    C1        0.020
+ CUS      plan-3    N1        0.020
+ CUS      plan-3    C2        0.020
+ CUS      plan-3    H1        0.020
+ CUS      plan-4    C2        0.020
+ CUS      plan-4    C1        0.020
+ CUS      plan-4    C7        0.020
+ CUS      plan-4    C3        0.020
+ CUS      plan-4    C6        0.020
+ CUS      plan-4    C5        0.020
+ CUS      plan-4    C4        0.020
+ CUS      plan-4    O1        0.020
+ CUS      plan-4    H6        0.020
+ CUS      plan-4    H5        0.020
+ CUS      plan-4    H4        0.020
+ CUS      plan-4    H3        0.020
+ CUS      plan-4    H1        0.020
+# ------------------------------------------------------

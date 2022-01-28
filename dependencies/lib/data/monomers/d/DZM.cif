@@ -1,0 +1,314 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DZM      DZM '3-deaza-3-methyladenine             ' DNA                38  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DZM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DZM           OP3    O    OP       -0.666      0.000    0.000    0.000
+ DZM           P      P    P         0.000     -1.004   -0.344   -1.078
+ DZM           OP2    O    OP       -0.666     -0.502   -1.529   -1.874
+ DZM           OP1    O    OP       -0.666     -1.182    0.843   -1.999
+ DZM           "O5'"  O    O2        0.000     -2.416   -0.713   -0.398
+ DZM           "C5'"  C    CH2       0.000     -3.597   -0.982   -1.155
+ DZM           "H5'"  H    H         0.000     -3.422   -1.838   -1.811
+ DZM           "H5'A" H    H         0.000     -3.849   -0.108   -1.760
+ DZM           "C4'"  C    CH1       0.000     -4.753   -1.296   -0.203
+ DZM           "H4'"  H    H         0.000     -4.465   -2.082    0.509
+ DZM           "O4'"  O    O2        0.000     -5.174   -0.105    0.495
+ DZM           "C1'"  C    CH1       0.000     -6.518   -0.338    0.950
+ DZM           "H1'"  H    H         0.000     -6.503   -0.738    1.973
+ DZM           N9     N    NR5       0.000     -7.280    0.914    0.914
+ DZM           C4     C    CR56      0.000     -8.426    1.189    1.620
+ DZM           C3     C    CR6       0.000     -9.220    0.492    2.528
+ DZM           C3M    C    CH3       0.000     -8.861   -0.915    2.933
+ DZM           H3MB   H    H         0.000     -7.807   -1.009    2.987
+ DZM           H3MA   H    H         0.000     -9.283   -1.128    3.881
+ DZM           H3M    H    H         0.000     -9.240   -1.596    2.216
+ DZM           C2     C    CR16      0.000    -10.326    1.102    3.048
+ DZM           H2     H    H         0.000    -10.945    0.562    3.755
+ DZM           C8     C    CR15      0.000     -6.982    2.019    0.175
+ DZM           H8     H    H         0.000     -6.131    2.112   -0.488
+ DZM           N7     N    NRD5      0.000     -7.871    2.947    0.385
+ DZM           C5     C    CR56      0.000     -8.794    2.500    1.270
+ DZM           C6     C    CR6       0.000     -9.947    3.050    1.852
+ DZM           N1     N    NRD6      0.000    -10.659    2.337    2.708
+ DZM           N6     N    NH2       0.000    -10.339    4.342    1.528
+ DZM           HN6A   H    H         0.000     -9.798    4.898    0.871
+ DZM           HN6    H    H         0.000    -11.173    4.749    1.943
+ DZM           "C3'"  C    CH1       0.000     -6.016   -1.716   -0.998
+ DZM           "H3'"  H    H         0.000     -6.109   -1.130   -1.923
+ DZM           "C2'"  C    CH2       0.000     -7.154   -1.365   -0.006
+ DZM           "H2'A" H    H         0.000     -7.484   -2.237    0.562
+ DZM           "H2'"  H    H         0.000     -8.011   -0.914   -0.510
+ DZM           "O3'"  O    OH1       0.000     -6.000   -3.116   -1.281
+ DZM           "HO3'" H    H         0.000     -6.809   -3.443   -1.696
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DZM      OP3    n/a    P      START
+ DZM      P      OP3    "O5'"  .
+ DZM      OP2    P      .      .
+ DZM      OP1    P      .      .
+ DZM      "O5'"  P      "C5'"  .
+ DZM      "C5'"  "O5'"  "C4'"  .
+ DZM      "H5'"  "C5'"  .      .
+ DZM      "H5'A" "C5'"  .      .
+ DZM      "C4'"  "C5'"  "C3'"  .
+ DZM      "H4'"  "C4'"  .      .
+ DZM      "O4'"  "C4'"  "C1'"  .
+ DZM      "C1'"  "O4'"  N9     .
+ DZM      "H1'"  "C1'"  .      .
+ DZM      N9     "C1'"  C8     .
+ DZM      C4     N9     C3     .
+ DZM      C3     C4     C2     .
+ DZM      C3M    C3     H3M    .
+ DZM      H3MB   C3M    .      .
+ DZM      H3MA   C3M    .      .
+ DZM      H3M    C3M    .      .
+ DZM      C2     C3     H2     .
+ DZM      H2     C2     .      .
+ DZM      C8     N9     N7     .
+ DZM      H8     C8     .      .
+ DZM      N7     C8     C5     .
+ DZM      C5     N7     C6     .
+ DZM      C6     C5     N6     .
+ DZM      N1     C6     .      .
+ DZM      N6     C6     HN6    .
+ DZM      HN6A   N6     .      .
+ DZM      HN6    N6     .      .
+ DZM      "C3'"  "C4'"  "O3'"  .
+ DZM      "H3'"  "C3'"  .      .
+ DZM      "C2'"  "C3'"  "H2'"  .
+ DZM      "H2'A" "C2'"  .      .
+ DZM      "H2'"  "C2'"  .      .
+ DZM      "O3'"  "C3'"  .      END
+ DZM      "HO3'" "O3'"  .      .
+ DZM      N1     C2     .    ADD
+ DZM      C4     C5     .    ADD
+ DZM      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DZM       OP2       P         deloc     1.510     0.020     1.510     0.020     
+DZM       OP1       P         deloc     1.510     0.020     1.510     0.020     
+DZM       "O5'"     P         single    1.610     0.020     1.610     0.020     
+DZM       N1        C2        single    1.337     0.020     1.337     0.020     
+DZM       N1        C6        double    1.350     0.020     1.350     0.020     
+DZM       C2        C3        double    1.390     0.020     1.390     0.020     
+DZM       C3        C4        single    1.490     0.020     1.490     0.020     
+DZM       C3M       C3        single    1.506     0.020     1.506     0.020     
+DZM       C4        C5        double    1.490     0.020     1.490     0.020     
+DZM       C4        N9        single    1.337     0.020     1.337     0.020     
+DZM       C6        C5        single    1.490     0.020     1.490     0.020     
+DZM       C5        N7        single    1.350     0.020     1.350     0.020     
+DZM       N6        C6        single    1.355     0.020     1.355     0.020     
+DZM       N7        C8        double    1.350     0.020     1.350     0.020     
+DZM       C8        N9        single    1.337     0.020     1.337     0.020     
+DZM       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+DZM       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+DZM       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+DZM       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+DZM       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+DZM       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+DZM       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+DZM       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+DZM       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+DZM       P         OP3       deloc     1.510     0.020     1.510     0.020     
+DZM       H2        C2        single    1.082     0.013     0.975     0.010     
+DZM       HN6       N6        single    1.016     0.010     0.899     0.007     
+DZM       HN6A      N6        single    1.016     0.010     0.899     0.007     
+DZM       H8        C8        single    1.082     0.013     0.975     0.010     
+DZM       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+DZM       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+DZM       "H2'A"    "C2'"     single    1.089     0.010     0.989     0.005     
+DZM       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+DZM       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+DZM       H3M       C3M       single    1.089     0.010     0.989     0.005     
+DZM       H3MA      C3M       single    1.089     0.010     0.989     0.005     
+DZM       H3MB      C3M       single    1.089     0.010     0.989     0.005     
+DZM       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+DZM       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+DZM       "H5'A"    "C5'"     single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DZM      OP3    P      OP2     119.900    3.000
+ DZM      OP3    P      OP1     119.900    3.000
+ DZM      OP3    P      "O5'"   108.200    3.000
+ DZM      OP2    P      OP1     119.900    3.000
+ DZM      OP2    P      "O5'"   108.200    3.000
+ DZM      OP1    P      "O5'"   108.200    3.000
+ DZM      P      "O5'"  "C5'"   120.500    3.000
+ DZM      "O5'"  "C5'"  "H5'"   109.470    3.000
+ DZM      "O5'"  "C5'"  "H5'A"  109.470    3.000
+ DZM      "O5'"  "C5'"  "C4'"   109.470    3.000
+ DZM      "H5'"  "C5'"  "H5'A"  107.900    3.000
+ DZM      "H5'"  "C5'"  "C4'"   109.470    3.000
+ DZM      "H5'A" "C5'"  "C4'"   109.470    3.000
+ DZM      "C5'"  "C4'"  "H4'"   108.340    3.000
+ DZM      "C5'"  "C4'"  "O4'"   109.470    3.000
+ DZM      "C5'"  "C4'"  "C3'"   111.000    3.000
+ DZM      "H4'"  "C4'"  "O4'"   109.470    3.000
+ DZM      "H4'"  "C4'"  "C3'"   108.340    3.000
+ DZM      "O4'"  "C4'"  "C3'"   109.470    3.000
+ DZM      "C4'"  "O4'"  "C1'"   111.800    3.000
+ DZM      "O4'"  "C1'"  "H1'"   109.470    3.000
+ DZM      "O4'"  "C1'"  N9      109.470    3.000
+ DZM      "O4'"  "C1'"  "C2'"   109.470    3.000
+ DZM      "H1'"  "C1'"  N9      109.470    3.000
+ DZM      "H1'"  "C1'"  "C2'"   108.340    3.000
+ DZM      N9     "C1'"  "C2'"   109.470    3.000
+ DZM      "C1'"  N9     C4      126.000    3.000
+ DZM      "C1'"  N9     C8      126.000    3.000
+ DZM      C4     N9     C8      108.000    3.000
+ DZM      N9     C4     C3      120.000    3.000
+ DZM      N9     C4     C5      108.000    3.000
+ DZM      C3     C4     C5      120.000    3.000
+ DZM      C4     C3     C3M     120.000    3.000
+ DZM      C4     C3     C2      120.000    3.000
+ DZM      C3M    C3     C2      120.000    3.000
+ DZM      C3     C3M    H3MB    109.470    3.000
+ DZM      C3     C3M    H3MA    109.470    3.000
+ DZM      C3     C3M    H3M     109.470    3.000
+ DZM      H3MB   C3M    H3MA    109.470    3.000
+ DZM      H3MB   C3M    H3M     109.470    3.000
+ DZM      H3MA   C3M    H3M     109.470    3.000
+ DZM      C3     C2     H2      120.000    3.000
+ DZM      C3     C2     N1      120.000    3.000
+ DZM      H2     C2     N1      120.000    3.000
+ DZM      N9     C8     H8      126.000    3.000
+ DZM      N9     C8     N7      108.000    3.000
+ DZM      H8     C8     N7      126.000    3.000
+ DZM      C8     N7     C5      108.000    3.000
+ DZM      N7     C5     C6      132.000    3.000
+ DZM      N7     C5     C4      108.000    3.000
+ DZM      C6     C5     C4      120.000    3.000
+ DZM      C5     C6     N1      120.000    3.000
+ DZM      C5     C6     N6      120.000    3.000
+ DZM      N1     C6     N6      120.000    3.000
+ DZM      C6     N1     C2      120.000    3.000
+ DZM      C6     N6     HN6A    120.000    3.000
+ DZM      C6     N6     HN6     120.000    3.000
+ DZM      HN6A   N6     HN6     120.000    3.000
+ DZM      "C4'"  "C3'"  "H3'"   108.340    3.000
+ DZM      "C4'"  "C3'"  "C2'"   111.000    3.000
+ DZM      "C4'"  "C3'"  "O3'"   109.470    3.000
+ DZM      "H3'"  "C3'"  "C2'"   108.340    3.000
+ DZM      "H3'"  "C3'"  "O3'"   109.470    3.000
+ DZM      "C2'"  "C3'"  "O3'"   109.470    3.000
+ DZM      "C3'"  "C2'"  "H2'A"  109.470    3.000
+ DZM      "C3'"  "C2'"  "H2'"   109.470    3.000
+ DZM      "C3'"  "C2'"  "C1'"   111.000    3.000
+ DZM      "H2'A" "C2'"  "H2'"   107.900    3.000
+ DZM      "H2'A" "C2'"  "C1'"   109.470    3.000
+ DZM      "H2'"  "C2'"  "C1'"   109.470    3.000
+ DZM      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DZM      var_1    OP3    P      "O5'"  "C5'"    175.008   20.000   1
+ DZM      var_2    P      "O5'"  "C5'"  "C4'"    179.983   20.000   1
+ DZM      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -174.986   20.000   3
+ DZM      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ DZM      var_5    "C4'"  "O4'"  "C1'"  N9      -150.000   20.000   1
+ DZM      var_6    "O4'"  "C1'"  "C2'"  "C3'"      0.000   20.000   3
+ DZM      var_7    "O4'"  "C1'"  N9     C8        20.726   20.000   1
+ DZM      CONST_1  "C1'"  N9     C4     C3         0.000    0.000   0
+ DZM      CONST_2  N9     C4     C5     N7         0.000    0.000   0
+ DZM      CONST_3  N9     C4     C3     C2       180.000    0.000   0
+ DZM      var_8    C4     C3     C3M    H3M      -84.065   20.000   1
+ DZM      CONST_4  C4     C3     C2     N1         0.000    0.000   0
+ DZM      CONST_5  "C1'"  N9     C8     N7       180.000    0.000   0
+ DZM      CONST_6  N9     C8     N7     C5         0.000    0.000   0
+ DZM      CONST_7  C8     N7     C5     C6       180.000    0.000   0
+ DZM      CONST_8  N7     C5     C6     N6         0.000    0.000   0
+ DZM      CONST_9  C5     C6     N1     C2         0.000    0.000   0
+ DZM      CONST_10 C6     N1     C2     C3         0.000    0.000   0
+ DZM      CONST_11 C5     C6     N6     HN6      179.949    0.000   0
+ DZM      var_9    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ DZM      var_10   "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DZM      chir_01  "C1'"  N9     "C2'"  "O4'"     negativ
+ DZM      chir_02  "C3'"  "C2'"  "O3'"  "C4'"     positiv
+ DZM      chir_03  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DZM      plan-1    N1        0.020
+ DZM      plan-1    C2        0.020
+ DZM      plan-1    C6        0.020
+ DZM      plan-1    C3        0.020
+ DZM      plan-1    H2        0.020
+ DZM      plan-1    C4        0.020
+ DZM      plan-1    C3M       0.020
+ DZM      plan-1    C5        0.020
+ DZM      plan-1    N9        0.020
+ DZM      plan-1    N7        0.020
+ DZM      plan-1    C8        0.020
+ DZM      plan-1    N6        0.020
+ DZM      plan-1    H8        0.020
+ DZM      plan-1    "C1'"     0.020
+ DZM      plan-1    HN6A      0.020
+ DZM      plan-1    HN6       0.020
+ DZM      plan-2    N6        0.020
+ DZM      plan-2    C6        0.020
+ DZM      plan-2    HN6       0.020
+ DZM      plan-2    HN6A      0.020
+# ------------------------------------------------------

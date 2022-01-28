@@ -1,0 +1,177 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5MI     5MI      "5-METHYL INDOLE"     non-polymer     19     10     .     
+#
+data_comp_5MI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+5MI     C5      C       CR6     0       18.293      -24.261     -20.270     
+5MI     C6      C       CR16    0       19.344      -24.875     -19.546     
+5MI     C7      C       CR16    0       20.213      -25.780     -20.126     
+5MI     C8      C       CR56    0       20.028      -26.085     -21.478     
+5MI     N1      N       NR5     0       20.717      -26.929     -22.313     
+5MI     C4      C       CR16    0       18.119      -24.573     -21.618     
+5MI     C9      C       CR56    0       18.987      -25.492     -22.240     
+5MI     C3      C       CR15    0       19.094      -26.026     -23.563     
+5MI     C2      C       CR15    0       20.149      -26.885     -23.558     
+5MI     CAJ     C       CH3     0       17.380      -23.281     -19.576     
+5MI     H6      H       H       0       19.453      -24.658     -18.643     
+5MI     H7      H       H       0       20.906      -26.178     -19.630     
+5MI     H1      H       H       0       21.419      -27.426     -22.085     
+5MI     H4      H       H       0       17.422      -24.172     -22.113     
+5MI     H3      H       H       0       18.537      -25.820     -24.299     
+5MI     H2      H       H       0       20.450      -27.381     -24.299     
+5MI     HAJ1    H       H       0       16.916      -23.729     -18.850     
+5MI     HAJ2    H       H       0       16.729      -22.933     -20.207     
+5MI     HAJ3    H       H       0       17.905      -22.547     -19.217     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5MI       C5        C6        DOUBLE    y         1.388     0.020     1.388     0.020     
+5MI       C5        C4        SINGLE    y         1.386     0.010     1.386     0.010     
+5MI       C5        CAJ       SINGLE    n         1.508     0.010     1.508     0.010     
+5MI       C6        C7        SINGLE    y         1.376     0.010     1.376     0.010     
+5MI       C7        C8        DOUBLE    y         1.392     0.010     1.392     0.010     
+5MI       C8        N1        SINGLE    y         1.373     0.010     1.373     0.010     
+5MI       C8        C9        SINGLE    y         1.414     0.010     1.414     0.010     
+5MI       N1        C2        SINGLE    y         1.369     0.010     1.369     0.010     
+5MI       C4        C9        DOUBLE    y         1.402     0.010     1.402     0.010     
+5MI       C9        C3        SINGLE    y         1.431     0.010     1.431     0.010     
+5MI       C3        C2        DOUBLE    y         1.360     0.010     1.360     0.010     
+5MI       C6        H6        SINGLE    n         1.082     0.013     0.935     0.010     
+5MI       C7        H7        SINGLE    n         1.082     0.013     0.941     0.018     
+5MI       N1        H1        SINGLE    n         1.016     0.010     0.890     0.020     
+5MI       C4        H4        SINGLE    n         1.082     0.013     0.944     0.010     
+5MI       C3        H3        SINGLE    n         1.082     0.013     0.946     0.017     
+5MI       C2        H2        SINGLE    n         1.082     0.013     0.941     0.015     
+5MI       CAJ       HAJ1      SINGLE    n         1.089     0.010     0.971     0.013     
+5MI       CAJ       HAJ2      SINGLE    n         1.089     0.010     0.971     0.013     
+5MI       CAJ       HAJ3      SINGLE    n         1.089     0.010     0.971     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+5MI          C6          C5          C4     119.373    1.50
+5MI          C6          C5         CAJ     119.939    1.50
+5MI          C4          C5         CAJ     120.688    1.50
+5MI          C5          C6          C7     122.433    1.50
+5MI          C5          C6          H6     118.671    1.50
+5MI          C7          C6          H6     118.905    1.50
+5MI          C6          C7          C8     117.704    1.50
+5MI          C6          C7          H7     121.245    1.50
+5MI          C8          C7          H7     121.051    1.50
+5MI          C7          C8          N1     130.639    1.50
+5MI          C7          C8          C9     122.078    1.50
+5MI          N1          C8          C9     107.283    1.50
+5MI          C8          N1          C2     108.923    1.50
+5MI          C8          N1          H1     125.696    1.60
+5MI          C2          N1          H1     125.381    2.15
+5MI          C5          C4          C9     119.239    1.50
+5MI          C5          C4          H4     120.445    1.50
+5MI          C9          C4          H4     120.315    1.50
+5MI          C8          C9          C4     119.163    1.50
+5MI          C8          C9          C3     106.791    1.50
+5MI          C4          C9          C3     134.046    1.50
+5MI          C9          C3          C2     106.920    1.50
+5MI          C9          C3          H3     126.486    1.50
+5MI          C2          C3          H3     126.594    1.50
+5MI          N1          C2          C3     110.083    1.50
+5MI          N1          C2          H2     124.530    1.59
+5MI          C3          C2          H2     125.387    1.67
+5MI          C5         CAJ        HAJ1     109.472    1.50
+5MI          C5         CAJ        HAJ2     109.472    1.50
+5MI          C5         CAJ        HAJ3     109.472    1.50
+5MI        HAJ1         CAJ        HAJ2     109.348    1.50
+5MI        HAJ1         CAJ        HAJ3     109.348    1.50
+5MI        HAJ2         CAJ        HAJ3     109.348    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+5MI              const_19         CAJ          C5          C6          C7     180.000   10.00     2
+5MI              const_38          C9          C4          C5         CAJ     180.000   10.00     2
+5MI             sp2_sp3_1          C6          C5         CAJ        HAJ1     150.000   10.00     6
+5MI              const_21          C5          C6          C7          C8       0.000   10.00     2
+5MI              const_26          C6          C7          C8          N1     180.000   10.00     2
+5MI       const_sp2_sp2_3          C7          C8          N1          C2     180.000   10.00     2
+5MI              const_29          C7          C8          C9          C4       0.000   10.00     2
+5MI       const_sp2_sp2_5          C3          C2          N1          C8       0.000   10.00     2
+5MI              const_33          C5          C4          C9          C8       0.000   10.00     2
+5MI              const_13          C2          C3          C9          C8       0.000   10.00     2
+5MI       const_sp2_sp2_9          N1          C2          C3          C9       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+5MI    plan-1          C3   0.020
+5MI    plan-1          C4   0.020
+5MI    plan-1          C5   0.020
+5MI    plan-1          C6   0.020
+5MI    plan-1          C7   0.020
+5MI    plan-1          C8   0.020
+5MI    plan-1          C9   0.020
+5MI    plan-1         CAJ   0.020
+5MI    plan-1          H4   0.020
+5MI    plan-1          H6   0.020
+5MI    plan-1          H7   0.020
+5MI    plan-1          N1   0.020
+5MI    plan-2          C2   0.020
+5MI    plan-2          C3   0.020
+5MI    plan-2          C4   0.020
+5MI    plan-2          C7   0.020
+5MI    plan-2          C8   0.020
+5MI    plan-2          C9   0.020
+5MI    plan-2          H1   0.020
+5MI    plan-2          H2   0.020
+5MI    plan-2          H3   0.020
+5MI    plan-2          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+5MI SMILES           ACDLabs              12.01 "c1c(ccc2c1ccn2)C"
+5MI InChI            InChI                1.03  "InChI=1S/C9H9N/c1-7-2-3-9-8(6-7)4-5-10-9/h2-6,10H,1H3"
+5MI InChIKey         InChI                1.03  YPKBCLZFIYBSHK-UHFFFAOYSA-N
+5MI SMILES_CANONICAL CACTVS               3.385 "Cc1ccc2[nH]ccc2c1"
+5MI SMILES           CACTVS               3.385 "Cc1ccc2[nH]ccc2c1"
+5MI SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "Cc1ccc2c(c1)cc[nH]2"
+5MI SMILES           "OpenEye OEToolkits" 1.9.2 "Cc1ccc2c(c1)cc[nH]2"
+5MI ?                acedrg               202         "dictionary generator"                  
+5MI ?                acedrg_database      11          "data source"                           
+5MI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+5MI ?                refmac5              5.8.0189    "optimization tool"                     

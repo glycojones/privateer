@@ -1,0 +1,98 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OXD     OXD      "OXALIC ACID"     NON-POLYMER     6     6     .     
+#
+data_comp_OXD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OXD     C1      C       C       0       -0.770      -0.018      -0.008      
+OXD     C2      C       C       0       0.770       0.018       0.008       
+OXD     O3      O       O       0       -1.309      -1.129      -0.014      
+OXD     O4      O       O       0       1.309       1.129       0.014       
+OXD     O5      O       OC      -1      -1.360      1.066       -0.014      
+OXD     O6      O       OC      -1      1.360       -1.066      0.014       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OXD       C1        C2        SINGLE    n         1.522     0.020     1.522     0.020     
+OXD       C1        O3        DOUBLE    n         1.230     0.020     1.230     0.020     
+OXD       C1        O5        SINGLE    n         1.230     0.020     1.230     0.020     
+OXD       C2        O4        DOUBLE    n         1.230     0.020     1.230     0.020     
+OXD       C2        O6        SINGLE    n         1.230     0.020     1.230     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OXD          C2          C1          O3     116.844    1.50
+OXD          C2          C1          O5     116.844    1.50
+OXD          O3          C1          O5     126.312    1.50
+OXD          C1          C2          O4     116.844    1.50
+OXD          C1          C2          O6     116.844    1.50
+OXD          O4          C2          O6     126.312    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OXD             sp2_sp2_1          O3          C1          C2          O4     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OXD    plan-1          C1   0.020
+OXD    plan-1          C2   0.020
+OXD    plan-1          O3   0.020
+OXD    plan-1          O5   0.020
+OXD    plan-2          C1   0.020
+OXD    plan-2          C2   0.020
+OXD    plan-2          O4   0.020
+OXD    plan-2          O6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OXD SMILES           ACDLabs              10.04 "O=C(O)C(=O)O"
+OXD SMILES_CANONICAL CACTVS               3.341 "OC(=O)C(O)=O"
+OXD SMILES           CACTVS               3.341 "OC(=O)C(O)=O"
+OXD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=O)(C(=O)O)O"
+OXD SMILES           "OpenEye OEToolkits" 1.5.0 "C(=O)(C(=O)O)O"
+OXD InChI            InChI                1.03  "InChI=1S/C2H2O4/c3-1(4)2(5)6/h(H,3,4)(H,5,6)"
+OXD InChIKey         InChI                1.03  MUBZPKHOEPUJKR-UHFFFAOYSA-N
+OXD ?                acedrg               202         "dictionary generator"                  
+OXD ?                acedrg_database      11          "data source"                           
+OXD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OXD ?                refmac5              5.8.0189    "optimization tool"                     

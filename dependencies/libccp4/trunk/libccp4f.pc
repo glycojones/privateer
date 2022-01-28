@@ -1,0 +1,11 @@
+prefix=/home/harold/Dev/privateer_python/dependencies
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libccp4f
+Description: CCP4 core FORTRAN libraries
+Version: 7.0.0
+Requires.private: libccp4c mmdb2
+Libs: -L${libdir} -lccp4f
+Cflags: -I${includedir}

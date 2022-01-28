@@ -1,0 +1,196 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BTP     BTP      "2-THIOMETHYL-3-PHENYLPROPANOIC ACID"     NON-POLYMER     24     13     .     
+#
+data_comp_BTP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BTP     C1      C       C       0       46.042      67.127      -14.617     
+BTP     O1      O       O       0       44.847      66.986      -14.950     
+BTP     O2      O       OC      -1      46.435      67.966      -13.782     
+BTP     C2      C       CH1     0       47.091      66.219      -15.274     
+BTP     C3      C       CH2     0       47.851      65.372      -14.241     
+BTP     "C1'"   C       CR6     0       46.985      64.369      -13.516     
+BTP     "C2'"   C       CR16    0       46.475      63.256      -14.183     
+BTP     "C3'"   C       CR16    0       45.676      62.330      -13.518     
+BTP     "C4'"   C       CR16    0       45.375      62.504      -12.178     
+BTP     "C5'"   C       CR16    0       45.873      63.604      -11.502     
+BTP     "C6'"   C       CR16    0       46.672      64.531      -12.166     
+BTP     "C'"    C       CH2     0       48.078      67.030      -16.102     
+BTP     "S'"    S       SH1     0       47.310      67.929      -17.476     
+BTP     H2      H       H       0       46.620      65.602      -15.882     
+BTP     H31     H       H       0       48.266      65.971      -13.584     
+BTP     H32     H       H       0       48.571      64.888      -14.697     
+BTP     "H2'"   H       H       0       46.675      63.130      -15.097     
+BTP     "H3'"   H       H       0       45.338      61.581      -13.983     
+BTP     "H4'"   H       H       0       44.834      61.876      -11.728     
+BTP     "H5'"   H       H       0       45.671      63.726      -10.588     
+BTP     "H6'"   H       H       0       47.008      65.278      -11.696     
+BTP     "H'1"   H       H       0       48.760      66.435      -16.477     
+BTP     "H'2"   H       H       0       48.528      67.682      -15.526     
+BTP     "HS'"   H       HSH1    0       48.273      68.571      -17.805     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BTP       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+BTP       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+BTP       C1        C2        SINGLE    n         1.533     0.012     1.533     0.012     
+BTP       C2        C3        SINGLE    n         1.534     0.011     1.534     0.011     
+BTP       C2        "C'"      SINGLE    n         1.520     0.015     1.520     0.015     
+BTP       C3        "C1'"     SINGLE    n         1.509     0.010     1.509     0.010     
+BTP       "C1'"     "C2'"     DOUBLE    y         1.385     0.011     1.385     0.011     
+BTP       "C1'"     "C6'"     SINGLE    y         1.385     0.011     1.385     0.011     
+BTP       "C2'"     "C3'"     SINGLE    y         1.386     0.010     1.386     0.010     
+BTP       "C3'"     "C4'"     DOUBLE    y         1.376     0.012     1.376     0.012     
+BTP       "C4'"     "C5'"     SINGLE    y         1.374     0.013     1.374     0.013     
+BTP       "C5'"     "C6'"     DOUBLE    y         1.386     0.010     1.386     0.010     
+BTP       "C'"      "S'"      SINGLE    n         1.812     0.010     1.812     0.010     
+BTP       C2        H2        SINGLE    n         1.089     0.010     0.989     0.005     
+BTP       C3        H31       SINGLE    n         1.089     0.010     0.989     0.005     
+BTP       C3        H32       SINGLE    n         1.089     0.010     0.989     0.005     
+BTP       "C2'"     "H2'"     SINGLE    n         1.082     0.013     0.975     0.010     
+BTP       "C3'"     "H3'"     SINGLE    n         1.082     0.013     0.975     0.010     
+BTP       "C4'"     "H4'"     SINGLE    n         1.082     0.013     0.975     0.010     
+BTP       "C5'"     "H5'"     SINGLE    n         1.082     0.013     0.975     0.010     
+BTP       "C6'"     "H6'"     SINGLE    n         1.082     0.013     0.975     0.010     
+BTP       "C'"      "H'1"     SINGLE    n         1.089     0.010     0.989     0.005     
+BTP       "C'"      "H'2"     SINGLE    n         1.089     0.010     0.989     0.005     
+BTP       "S'"      "HS'"     SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BTP          O1          C1          O2     123.899    1.50
+BTP          O1          C1          C2     118.051    1.50
+BTP          O2          C1          C2     118.051    1.50
+BTP          C1          C2          C3     111.500    2.27
+BTP          C1          C2        "C'"     111.425    1.50
+BTP          C1          C2          H2     107.706    1.93
+BTP          C3          C2        "C'"     109.839    1.50
+BTP          C3          C2          H2     107.967    1.50
+BTP        "C'"          C2          H2     108.078    1.50
+BTP          C2          C3       "C1'"     113.495    1.50
+BTP          C2          C3         H31     108.879    1.50
+BTP          C2          C3         H32     108.879    1.50
+BTP       "C1'"          C3         H31     108.738    1.50
+BTP       "C1'"          C3         H32     108.738    1.50
+BTP         H31          C3         H32     107.709    1.50
+BTP          C3       "C1'"       "C2'"     120.970    1.50
+BTP          C3       "C1'"       "C6'"     120.970    1.50
+BTP       "C2'"       "C1'"       "C6'"     118.060    1.50
+BTP       "C1'"       "C2'"       "C3'"     120.624    1.50
+BTP       "C1'"       "C2'"       "H2'"     119.591    1.50
+BTP       "C3'"       "C2'"       "H2'"     119.786    1.50
+BTP       "C2'"       "C3'"       "C4'"     120.325    1.50
+BTP       "C2'"       "C3'"       "H3'"     119.792    1.50
+BTP       "C4'"       "C3'"       "H3'"     119.883    1.50
+BTP       "C3'"       "C4'"       "C5'"     120.043    1.50
+BTP       "C3'"       "C4'"       "H4'"     119.979    1.50
+BTP       "C5'"       "C4'"       "H4'"     119.979    1.50
+BTP       "C4'"       "C5'"       "C6'"     120.325    1.50
+BTP       "C4'"       "C5'"       "H5'"     119.883    1.50
+BTP       "C6'"       "C5'"       "H5'"     119.792    1.50
+BTP       "C1'"       "C6'"       "C5'"     120.624    1.50
+BTP       "C1'"       "C6'"       "H6'"     119.591    1.50
+BTP       "C5'"       "C6'"       "H6'"     119.786    1.50
+BTP          C2        "C'"        "S'"     113.455    1.50
+BTP          C2        "C'"       "H'1"     109.297    1.50
+BTP          C2        "C'"       "H'2"     109.297    1.50
+BTP        "S'"        "C'"       "H'1"     107.876    2.03
+BTP        "S'"        "C'"       "H'2"     107.876    2.03
+BTP       "H'1"        "C'"       "H'2"     107.922    1.50
+BTP        "C'"        "S'"       "HS'"      97.649    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BTP             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+BTP            sp3_sp3_19          C2        "C'"        "S'"       "HS'"     180.000   10.00     3
+BTP            sp3_sp3_11        "S'"        "C'"          C2          C1     -60.000   10.00     3
+BTP             sp3_sp3_1          C1          C2          C3       "C1'"     180.000   10.00     3
+BTP             sp2_sp3_8       "C2'"       "C1'"          C3          C2     -90.000   10.00     6
+BTP              const_23          C3       "C1'"       "C6'"       "C5'"     180.000   10.00     2
+BTP       const_sp2_sp2_3          C3       "C1'"       "C2'"       "C3'"     180.000   10.00     2
+BTP       const_sp2_sp2_5       "C1'"       "C2'"       "C3'"       "C4'"       0.000   10.00     2
+BTP       const_sp2_sp2_9       "C2'"       "C3'"       "C4'"       "C5'"       0.000   10.00     2
+BTP              const_13       "C3'"       "C4'"       "C5'"       "C6'"       0.000   10.00     2
+BTP              const_17       "C4'"       "C5'"       "C6'"       "C1'"       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+BTP    chir_1    C2    "C'"    C1    C3    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BTP    plan-1       "C1'"   0.020
+BTP    plan-1       "C2'"   0.020
+BTP    plan-1          C3   0.020
+BTP    plan-1       "C3'"   0.020
+BTP    plan-1       "C4'"   0.020
+BTP    plan-1       "C5'"   0.020
+BTP    plan-1       "C6'"   0.020
+BTP    plan-1       "H2'"   0.020
+BTP    plan-1       "H3'"   0.020
+BTP    plan-1       "H4'"   0.020
+BTP    plan-1       "H5'"   0.020
+BTP    plan-1       "H6'"   0.020
+BTP    plan-2          C1   0.020
+BTP    plan-2          C2   0.020
+BTP    plan-2          O1   0.020
+BTP    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BTP SMILES           ACDLabs              10.04 "O=C(O)C(CS)Cc1ccccc1"
+BTP SMILES_CANONICAL CACTVS               3.341 "OC(=O)[C@@H](CS)Cc1ccccc1"
+BTP SMILES           CACTVS               3.341 "OC(=O)[CH](CS)Cc1ccccc1"
+BTP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)C[C@H](CS)C(=O)O"
+BTP SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)CC(CS)C(=O)O"
+BTP InChI            InChI                1.03  "InChI=1S/C10H12O2S/c11-10(12)9(7-13)6-8-4-2-1-3-5-8/h1-5,9,13H,6-7H2,(H,11,12)/t9-/m1/s1"
+BTP InChIKey         InChI                1.03  ZUEBVBPVXLQMQR-SECBINFHSA-N
+BTP ?                acedrg               202         "dictionary generator"                  
+BTP ?                acedrg_database      11          "data source"                           
+BTP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BTP ?                refmac5              5.8.0189    "optimization tool"                     

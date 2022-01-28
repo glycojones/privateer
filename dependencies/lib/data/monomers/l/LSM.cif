@@ -1,0 +1,522 @@
+global_
+_lib_name         mon_lib
+_lib_version      5.41
+_lib_update       11/02/13
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LSM      LSM 'DODECYL-BETA-D-SELENOMALTOSIDE      ' non-polymer        81  35 .
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LSM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LSM           O6B    O    OH1       0.000      4.790    2.565   -2.924
+ LSM           HO6B   H    H         0.000      4.723    3.054   -3.756
+ LSM           C6B    C    CH2       0.000      5.975    2.849   -2.178
+ LSM           H6B    H    H         0.000      6.004    3.910   -1.931
+ LSM           H6BA   H    H         0.000      6.850    2.591   -2.774
+ LSM           C5B    C    CH1       0.000      5.975    2.025   -0.888
+ LSM           H5B    H    H         0.000      5.056    2.217   -0.334
+ LSM           C4B    C    CH1       0.000      7.180    2.420   -0.030
+ LSM           H4B    H    H         0.000      8.098    2.267   -0.598
+ LSM           O4B    O    OH1       0.000      7.071    3.795    0.342
+ LSM           HO4B   H    H         0.000      7.800    4.112    0.892
+ LSM           C3B    C    CH1       0.000      7.206    1.549    1.230
+ LSM           H3B    H    H         0.000      6.312    1.739    1.824
+ LSM           O3B    O    OH1       0.000      8.368    1.860    2.001
+ LSM           HO3B   H    H         0.000      8.453    1.340    2.812
+ LSM           C2B    C    CH1       0.000      7.244    0.074    0.818
+ LSM           H2B    H    H         0.000      8.163   -0.127    0.267
+ LSM           O2B    O    OH1       0.000      7.196   -0.749    1.985
+ LSM           HO2B   H    H         0.000      7.212   -1.698    1.798
+ LSM           O5B    O    O2        0.000      6.056    0.635   -1.211
+ LSM           C1B    C    CH1       0.000      6.037   -0.230   -0.073
+ LSM           H1B    H    H         0.000      6.081   -1.267   -0.404
+ LSM           O1B    O    O2        0.000      4.833   -0.017    0.667
+ LSM           "C4'"  C    CH1       0.000      3.661   -0.532    0.031
+ LSM           "H4'"  H    H         0.000      3.755   -0.422   -1.049
+ LSM           "C3'"  C    CH1       0.000      3.498   -2.014    0.383
+ LSM           "H3'"  H    H         0.000      3.456   -2.131    1.466
+ LSM           "O3'"  O    OH1       0.000      4.606   -2.753   -0.135
+ LSM           "HO3'" H    H         0.000      4.564   -3.702    0.045
+ LSM           "C2'"  C    CH1       0.000      2.199   -2.535   -0.240
+ LSM           "H2'"  H    H         0.000      2.261   -2.466   -1.326
+ LSM           "O2'"  O    OH1       0.000      1.999   -3.898    0.142
+ LSM           "HO2'" H    H         0.000      1.191   -4.291   -0.213
+ LSM           "C5'"  C    CH1       0.000      2.433    0.239    0.521
+ LSM           "H5'"  H    H         0.000      2.364    0.162    1.606
+ LSM           "C6'"  C    CH2       0.000      2.560    1.710    0.121
+ LSM           "H6'"  H    H         0.000      3.495    2.113    0.511
+ LSM           "H6'A" H    H         0.000      2.555    1.792   -0.966
+ LSM           "O6'"  O    OH1       0.000      1.461    2.447    0.660
+ LSM           "HO6'" H    H         0.000      1.477    3.390    0.445
+ LSM           "O5'"  O    O2        0.000      1.257   -0.316   -0.072
+ LSM           "C1'"  C    CH1       0.000      1.027   -1.687    0.261
+ LSM           "H1'"  H    H         0.000      0.939   -1.789    1.342
+ LSM           SE     SE   SE        0.000     -0.631   -2.296   -0.589
+ LSM           C1     C    CH2       0.000     -1.934   -1.070    0.210
+ LSM           H1     H    H         0.000     -1.930   -1.192    1.294
+ LSM           H1A    H    H         0.000     -1.669   -0.043   -0.041
+ LSM           C2     C    CH2       0.000     -3.330   -1.384   -0.333
+ LSM           H2     H    H         0.000     -3.333   -1.262   -1.416
+ LSM           H2A    H    H         0.000     -3.595   -2.411   -0.082
+ LSM           C3     C    CH2       0.000     -4.347   -0.426    0.291
+ LSM           H3     H    H         0.000     -4.343   -0.548    1.374
+ LSM           H3A    H    H         0.000     -4.081    0.600    0.040
+ LSM           C4     C    CH2       0.000     -5.742   -0.740   -0.252
+ LSM           H4     H    H         0.000     -5.746   -0.618   -1.336
+ LSM           H4A    H    H         0.000     -6.008   -1.767   -0.001
+ LSM           C5     C    CH2       0.000     -6.760    0.217    0.372
+ LSM           H5     H    H         0.000     -6.756    0.095    1.455
+ LSM           H5A    H    H         0.000     -6.494    1.244    0.121
+ LSM           C6     C    CH2       0.000     -8.155   -0.096   -0.172
+ LSM           H6     H    H         0.000     -8.159    0.026   -1.255
+ LSM           H6A    H    H         0.000     -8.421   -1.123    0.079
+ LSM           C7     C    CH2       0.000     -9.172    0.861    0.452
+ LSM           H7     H    H         0.000     -9.169    0.739    1.536
+ LSM           H7A    H    H         0.000     -8.907    1.888    0.201
+ LSM           C8     C    CH2       0.000    -10.568    0.548   -0.091
+ LSM           H8     H    H         0.000    -10.572    0.669   -1.174
+ LSM           H8A    H    H         0.000    -10.833   -0.479    0.160
+ LSM           C9     C    CH2       0.000    -11.585    1.505    0.533
+ LSM           H9     H    H         0.000    -11.582    1.383    1.616
+ LSM           H9A    H    H         0.000    -11.320    2.532    0.282
+ LSM           C10    C    CH2       0.000    -12.981    1.191   -0.010
+ LSM           H10    H    H         0.000    -12.984    1.313   -1.094
+ LSM           H10A   H    H         0.000    -13.246    0.164    0.241
+ LSM           C11    C    CH2       0.000    -13.998    2.148    0.614
+ LSM           H11    H    H         0.000    -13.994    2.027    1.697
+ LSM           H11A   H    H         0.000    -13.732    3.175    0.363
+ LSM           C12    C    CH3       0.000    -15.393    1.835    0.070
+ LSM           H12B   H    H         0.000    -15.659    0.808    0.321
+ LSM           H12A   H    H         0.000    -15.397    1.957   -1.013
+ LSM           H12    H    H         0.000    -16.118    2.517    0.515
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LSM      O6B    n/a    C6B    START
+ LSM      HO6B   O6B    .      .
+ LSM      C6B    O6B    C5B    .
+ LSM      H6B    C6B    .      .
+ LSM      H6BA   C6B    .      .
+ LSM      C5B    C6B    O5B    .
+ LSM      H5B    C5B    .      .
+ LSM      C4B    C5B    C3B    .
+ LSM      H4B    C4B    .      .
+ LSM      O4B    C4B    HO4B   .
+ LSM      HO4B   O4B    .      .
+ LSM      C3B    C4B    C2B    .
+ LSM      H3B    C3B    .      .
+ LSM      O3B    C3B    HO3B   .
+ LSM      HO3B   O3B    .      .
+ LSM      C2B    C3B    O2B    .
+ LSM      H2B    C2B    .      .
+ LSM      O2B    C2B    HO2B   .
+ LSM      HO2B   O2B    .      .
+ LSM      O5B    C5B    C1B    .
+ LSM      C1B    O5B    O1B    .
+ LSM      H1B    C1B    .      .
+ LSM      O1B    C1B    "C4'"  .
+ LSM      "C4'"  O1B    "C5'"  .
+ LSM      "H4'"  "C4'"  .      .
+ LSM      "C3'"  "C4'"  "C2'"  .
+ LSM      "H3'"  "C3'"  .      .
+ LSM      "O3'"  "C3'"  "HO3'" .
+ LSM      "HO3'" "O3'"  .      .
+ LSM      "C2'"  "C3'"  "O2'"  .
+ LSM      "H2'"  "C2'"  .      .
+ LSM      "O2'"  "C2'"  "HO2'" .
+ LSM      "HO2'" "O2'"  .      .
+ LSM      "C5'"  "C4'"  "O5'"  .
+ LSM      "H5'"  "C5'"  .      .
+ LSM      "C6'"  "C5'"  "O6'"  .
+ LSM      "H6'"  "C6'"  .      .
+ LSM      "H6'A" "C6'"  .      .
+ LSM      "O6'"  "C6'"  "HO6'" .
+ LSM      "HO6'" "O6'"  .      .
+ LSM      "O5'"  "C5'"  "C1'"  .
+ LSM      "C1'"  "O5'"  SE     .
+ LSM      "H1'"  "C1'"  .      .
+ LSM      SE     "C1'"  C1     .
+ LSM      C1     SE     C2     .
+ LSM      H1     C1     .      .
+ LSM      H1A    C1     .      .
+ LSM      C2     C1     C3     .
+ LSM      H2     C2     .      .
+ LSM      H2A    C2     .      .
+ LSM      C3     C2     C4     .
+ LSM      H3     C3     .      .
+ LSM      H3A    C3     .      .
+ LSM      C4     C3     C5     .
+ LSM      H4     C4     .      .
+ LSM      H4A    C4     .      .
+ LSM      C5     C4     C6     .
+ LSM      H5     C5     .      .
+ LSM      H5A    C5     .      .
+ LSM      C6     C5     C7     .
+ LSM      H6     C6     .      .
+ LSM      H6A    C6     .      .
+ LSM      C7     C6     C8     .
+ LSM      H7     C7     .      .
+ LSM      H7A    C7     .      .
+ LSM      C8     C7     C9     .
+ LSM      H8     C8     .      .
+ LSM      H8A    C8     .      .
+ LSM      C9     C8     C10    .
+ LSM      H9     C9     .      .
+ LSM      H9A    C9     .      .
+ LSM      C10    C9     C11    .
+ LSM      H10    C10    .      .
+ LSM      H10A   C10    .      .
+ LSM      C11    C10    C12    .
+ LSM      H11    C11    .      .
+ LSM      H11A   C11    .      .
+ LSM      C12    C11    H12    .
+ LSM      H12B   C12    .      .
+ LSM      H12A   C12    .      .
+ LSM      H12    C12    .      END
+ LSM      "C1'"  "C2'"  .    ADD
+ LSM      C1B    C2B    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LSM       C1        SE        single    1.948     0.020     1.948     0.020     
+LSM       SE        "C1'"     single    1.948     0.020     1.948     0.020     
+LSM       C2        C1        single    1.524     0.020     1.524     0.020     
+LSM       H1        C1        single    1.089     0.010     0.989     0.005     
+LSM       H1A       C1        single    1.089     0.010     0.989     0.005     
+LSM       C3        C2        single    1.524     0.020     1.524     0.020     
+LSM       H2        C2        single    1.089     0.010     0.989     0.005     
+LSM       H2A       C2        single    1.089     0.010     0.989     0.005     
+LSM       C4        C3        single    1.524     0.020     1.524     0.020     
+LSM       H3        C3        single    1.089     0.010     0.989     0.005     
+LSM       H3A       C3        single    1.089     0.010     0.989     0.005     
+LSM       C5        C4        single    1.524     0.020     1.524     0.020     
+LSM       H4        C4        single    1.089     0.010     0.989     0.005     
+LSM       H4A       C4        single    1.089     0.010     0.989     0.005     
+LSM       C6        C5        single    1.524     0.020     1.524     0.020     
+LSM       H5        C5        single    1.089     0.010     0.989     0.005     
+LSM       H5A       C5        single    1.089     0.010     0.989     0.005     
+LSM       C7        C6        single    1.524     0.020     1.524     0.020     
+LSM       H6        C6        single    1.089     0.010     0.989     0.005     
+LSM       H6A       C6        single    1.089     0.010     0.989     0.005     
+LSM       C8        C7        single    1.524     0.020     1.524     0.020     
+LSM       H7        C7        single    1.089     0.010     0.989     0.005     
+LSM       H7A       C7        single    1.089     0.010     0.989     0.005     
+LSM       C9        C8        single    1.524     0.020     1.524     0.020     
+LSM       H8        C8        single    1.089     0.010     0.989     0.005     
+LSM       H8A       C8        single    1.089     0.010     0.989     0.005     
+LSM       H9        C9        single    1.089     0.010     0.989     0.005     
+LSM       H9A       C9        single    1.089     0.010     0.989     0.005     
+LSM       C10       C9        single    1.524     0.020     1.524     0.020     
+LSM       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+LSM       "C1'"     "O5'"     single    1.426     0.020     1.426     0.020     
+LSM       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+LSM       O1B       C1B       single    1.426     0.020     1.426     0.020     
+LSM       C1B       C2B       single    1.524     0.020     1.524     0.020     
+LSM       C1B       O5B       single    1.426     0.020     1.426     0.020     
+LSM       H1B       C1B       single    1.089     0.010     0.989     0.005     
+LSM       "C4'"     O1B       single    1.426     0.020     1.426     0.020     
+LSM       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+LSM       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+LSM       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+LSM       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+LSM       O2B       C2B       single    1.432     0.020     1.432     0.020     
+LSM       C2B       C3B       single    1.524     0.020     1.524     0.020     
+LSM       H2B       C2B       single    1.089     0.010     0.989     0.005     
+LSM       HO2B      O2B       single    0.970     0.012     0.839     0.014     
+LSM       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+LSM       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+LSM       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+LSM       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+LSM       O3B       C3B       single    1.432     0.020     1.432     0.020     
+LSM       C3B       C4B       single    1.524     0.020     1.524     0.020     
+LSM       H3B       C3B       single    1.089     0.010     0.989     0.005     
+LSM       HO3B      O3B       single    0.970     0.012     0.839     0.014     
+LSM       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+LSM       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+LSM       O4B       C4B       single    1.432     0.020     1.432     0.020     
+LSM       HO4B      O4B       single    0.970     0.012     0.839     0.014     
+LSM       C4B       C5B       single    1.524     0.020     1.524     0.020     
+LSM       H4B       C4B       single    1.089     0.010     0.989     0.005     
+LSM       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+LSM       "C6'"     "C5'"     single    1.524     0.020     1.524     0.020     
+LSM       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+LSM       O5B       C5B       single    1.426     0.020     1.426     0.020     
+LSM       C5B       C6B       single    1.524     0.020     1.524     0.020     
+LSM       H5B       C5B       single    1.089     0.010     0.989     0.005     
+LSM       "O6'"     "C6'"     single    1.432     0.020     1.432     0.020     
+LSM       "H6'"     "C6'"     single    1.089     0.010     0.989     0.005     
+LSM       "H6'A"    "C6'"     single    1.089     0.010     0.989     0.005     
+LSM       "HO6'"    "O6'"     single    0.970     0.012     0.839     0.014     
+LSM       C6B       O6B       single    1.432     0.020     1.432     0.020     
+LSM       H6B       C6B       single    1.089     0.010     0.989     0.005     
+LSM       H6BA      C6B       single    1.089     0.010     0.989     0.005     
+LSM       HO6B      O6B       single    0.970     0.012     0.839     0.014     
+LSM       C11       C10       single    1.524     0.020     1.524     0.020     
+LSM       H10       C10       single    1.089     0.010     0.989     0.005     
+LSM       H10A      C10       single    1.089     0.010     0.989     0.005     
+LSM       C12       C11       single    1.513     0.020     1.513     0.020     
+LSM       H11       C11       single    1.089     0.010     0.989     0.005     
+LSM       H11A      C11       single    1.089     0.010     0.989     0.005     
+LSM       H12       C12       single    1.089     0.010     0.989     0.005     
+LSM       H12A      C12       single    1.089     0.010     0.989     0.005     
+LSM       H12B      C12       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LSM      HO6B   O6B    C6B     109.470    3.000
+ LSM      O6B    C6B    H6B     109.470    3.000
+ LSM      O6B    C6B    H6BA    109.470    3.000
+ LSM      O6B    C6B    C5B     109.470    3.000
+ LSM      H6B    C6B    H6BA    107.900    3.000
+ LSM      H6B    C6B    C5B     109.470    3.000
+ LSM      H6BA   C6B    C5B     109.470    3.000
+ LSM      C6B    C5B    H5B     108.340    3.000
+ LSM      C6B    C5B    C4B     111.000    3.000
+ LSM      C6B    C5B    O5B     109.470    3.000
+ LSM      H5B    C5B    C4B     108.340    3.000
+ LSM      H5B    C5B    O5B     109.470    3.000
+ LSM      C4B    C5B    O5B     109.470    3.000
+ LSM      C5B    C4B    H4B     108.340    3.000
+ LSM      C5B    C4B    O4B     109.470    3.000
+ LSM      C5B    C4B    C3B     111.000    3.000
+ LSM      H4B    C4B    O4B     109.470    3.000
+ LSM      H4B    C4B    C3B     108.340    3.000
+ LSM      O4B    C4B    C3B     109.470    3.000
+ LSM      C4B    O4B    HO4B    109.470    3.000
+ LSM      C4B    C3B    H3B     108.340    3.000
+ LSM      C4B    C3B    O3B     109.470    3.000
+ LSM      C4B    C3B    C2B     111.000    3.000
+ LSM      H3B    C3B    O3B     109.470    3.000
+ LSM      H3B    C3B    C2B     108.340    3.000
+ LSM      O3B    C3B    C2B     109.470    3.000
+ LSM      C3B    O3B    HO3B    109.470    3.000
+ LSM      C3B    C2B    H2B     108.340    3.000
+ LSM      C3B    C2B    O2B     109.470    3.000
+ LSM      C3B    C2B    C1B     111.000    3.000
+ LSM      H2B    C2B    O2B     109.470    3.000
+ LSM      H2B    C2B    C1B     108.340    3.000
+ LSM      O2B    C2B    C1B     109.470    3.000
+ LSM      C2B    O2B    HO2B    109.470    3.000
+ LSM      C5B    O5B    C1B     111.800    3.000
+ LSM      O5B    C1B    H1B     109.470    3.000
+ LSM      O5B    C1B    O1B     109.470    3.000
+ LSM      O5B    C1B    C2B     109.470    3.000
+ LSM      H1B    C1B    O1B     109.470    3.000
+ LSM      H1B    C1B    C2B     108.340    3.000
+ LSM      O1B    C1B    C2B     109.470    3.000
+ LSM      C1B    O1B    "C4'"   111.800    3.000
+ LSM      O1B    "C4'"  "H4'"   109.470    3.000
+ LSM      O1B    "C4'"  "C3'"   109.470    3.000
+ LSM      O1B    "C4'"  "C5'"   109.470    3.000
+ LSM      "H4'"  "C4'"  "C3'"   108.340    3.000
+ LSM      "H4'"  "C4'"  "C5'"   108.340    3.000
+ LSM      "C3'"  "C4'"  "C5'"   111.000    3.000
+ LSM      "C4'"  "C3'"  "H3'"   108.340    3.000
+ LSM      "C4'"  "C3'"  "O3'"   109.470    3.000
+ LSM      "C4'"  "C3'"  "C2'"   111.000    3.000
+ LSM      "H3'"  "C3'"  "O3'"   109.470    3.000
+ LSM      "H3'"  "C3'"  "C2'"   108.340    3.000
+ LSM      "O3'"  "C3'"  "C2'"   109.470    3.000
+ LSM      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ LSM      "C3'"  "C2'"  "H2'"   108.340    3.000
+ LSM      "C3'"  "C2'"  "O2'"   109.470    3.000
+ LSM      "C3'"  "C2'"  "C1'"   111.000    3.000
+ LSM      "H2'"  "C2'"  "O2'"   109.470    3.000
+ LSM      "H2'"  "C2'"  "C1'"   108.340    3.000
+ LSM      "O2'"  "C2'"  "C1'"   109.470    3.000
+ LSM      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ LSM      "C4'"  "C5'"  "H5'"   108.340    3.000
+ LSM      "C4'"  "C5'"  "C6'"   111.000    3.000
+ LSM      "C4'"  "C5'"  "O5'"   109.470    3.000
+ LSM      "H5'"  "C5'"  "C6'"   108.340    3.000
+ LSM      "H5'"  "C5'"  "O5'"   109.470    3.000
+ LSM      "C6'"  "C5'"  "O5'"   109.470    3.000
+ LSM      "C5'"  "C6'"  "H6'"   109.470    3.000
+ LSM      "C5'"  "C6'"  "H6'A"  109.470    3.000
+ LSM      "C5'"  "C6'"  "O6'"   109.470    3.000
+ LSM      "H6'"  "C6'"  "H6'A"  107.900    3.000
+ LSM      "H6'"  "C6'"  "O6'"   109.470    3.000
+ LSM      "H6'A" "C6'"  "O6'"   109.470    3.000
+ LSM      "C6'"  "O6'"  "HO6'"  109.470    3.000
+ LSM      "C5'"  "O5'"  "C1'"   111.800    3.000
+ LSM      "O5'"  "C1'"  "H1'"   109.470    3.000
+ LSM      "O5'"  "C1'"  SE      109.500    3.000
+ LSM      "O5'"  "C1'"  "C2'"   109.470    3.000
+ LSM      "H1'"  "C1'"  SE      109.500    3.000
+ LSM      "H1'"  "C1'"  "C2'"   108.340    3.000
+ LSM      SE     "C1'"  "C2'"   109.500    3.000
+ LSM      "C1'"  SE     C1       98.000    3.000
+ LSM      SE     C1     H1      109.500    3.000
+ LSM      SE     C1     H1A     109.500    3.000
+ LSM      SE     C1     C2      109.500    3.000
+ LSM      H1     C1     H1A     107.900    3.000
+ LSM      H1     C1     C2      109.470    3.000
+ LSM      H1A    C1     C2      109.470    3.000
+ LSM      C1     C2     H2      109.470    3.000
+ LSM      C1     C2     H2A     109.470    3.000
+ LSM      C1     C2     C3      111.000    3.000
+ LSM      H2     C2     H2A     107.900    3.000
+ LSM      H2     C2     C3      109.470    3.000
+ LSM      H2A    C2     C3      109.470    3.000
+ LSM      C2     C3     H3      109.470    3.000
+ LSM      C2     C3     H3A     109.470    3.000
+ LSM      C2     C3     C4      111.000    3.000
+ LSM      H3     C3     H3A     107.900    3.000
+ LSM      H3     C3     C4      109.470    3.000
+ LSM      H3A    C3     C4      109.470    3.000
+ LSM      C3     C4     H4      109.470    3.000
+ LSM      C3     C4     H4A     109.470    3.000
+ LSM      C3     C4     C5      111.000    3.000
+ LSM      H4     C4     H4A     107.900    3.000
+ LSM      H4     C4     C5      109.470    3.000
+ LSM      H4A    C4     C5      109.470    3.000
+ LSM      C4     C5     H5      109.470    3.000
+ LSM      C4     C5     H5A     109.470    3.000
+ LSM      C4     C5     C6      111.000    3.000
+ LSM      H5     C5     H5A     107.900    3.000
+ LSM      H5     C5     C6      109.470    3.000
+ LSM      H5A    C5     C6      109.470    3.000
+ LSM      C5     C6     H6      109.470    3.000
+ LSM      C5     C6     H6A     109.470    3.000
+ LSM      C5     C6     C7      111.000    3.000
+ LSM      H6     C6     H6A     107.900    3.000
+ LSM      H6     C6     C7      109.470    3.000
+ LSM      H6A    C6     C7      109.470    3.000
+ LSM      C6     C7     H7      109.470    3.000
+ LSM      C6     C7     H7A     109.470    3.000
+ LSM      C6     C7     C8      111.000    3.000
+ LSM      H7     C7     H7A     107.900    3.000
+ LSM      H7     C7     C8      109.470    3.000
+ LSM      H7A    C7     C8      109.470    3.000
+ LSM      C7     C8     H8      109.470    3.000
+ LSM      C7     C8     H8A     109.470    3.000
+ LSM      C7     C8     C9      111.000    3.000
+ LSM      H8     C8     H8A     107.900    3.000
+ LSM      H8     C8     C9      109.470    3.000
+ LSM      H8A    C8     C9      109.470    3.000
+ LSM      C8     C9     H9      109.470    3.000
+ LSM      C8     C9     H9A     109.470    3.000
+ LSM      C8     C9     C10     111.000    3.000
+ LSM      H9     C9     H9A     107.900    3.000
+ LSM      H9     C9     C10     109.470    3.000
+ LSM      H9A    C9     C10     109.470    3.000
+ LSM      C9     C10    H10     109.470    3.000
+ LSM      C9     C10    H10A    109.470    3.000
+ LSM      C9     C10    C11     111.000    3.000
+ LSM      H10    C10    H10A    107.900    3.000
+ LSM      H10    C10    C11     109.470    3.000
+ LSM      H10A   C10    C11     109.470    3.000
+ LSM      C10    C11    H11     109.470    3.000
+ LSM      C10    C11    H11A    109.470    3.000
+ LSM      C10    C11    C12     111.000    3.000
+ LSM      H11    C11    H11A    107.900    3.000
+ LSM      H11    C11    C12     109.470    3.000
+ LSM      H11A   C11    C12     109.470    3.000
+ LSM      C11    C12    H12B    109.470    3.000
+ LSM      C11    C12    H12A    109.470    3.000
+ LSM      C11    C12    H12     109.470    3.000
+ LSM      H12B   C12    H12A    109.470    3.000
+ LSM      H12B   C12    H12     109.470    3.000
+ LSM      H12A   C12    H12     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LSM      var_1            HO6B   O6B    C6B    C5B              179.966           20.000   3
+ LSM      var_2            O6B    C6B    C5B    O5B              180.000           20.000   3
+ LSM      var_3            C6B    C5B    C4B    C3B              180.000           20.000   3
+ LSM      var_4            C5B    C4B    O4B    HO4B             179.676           20.000   3
+ LSM      var_5            C5B    C4B    C3B    C2B              180.000           20.000   3
+ LSM      var_6            C4B    C3B    O3B    HO3B            -179.561           20.000   3
+ LSM      var_7            C4B    C3B    C2B    O2B              180.000           20.000   3
+ LSM      var_8            C3B    C2B    O2B    HO2B             179.704           20.000   3
+ LSM      var_9            C6B    C5B    O5B    C1B             -178.860           20.000   3
+ LSM      var_10           C5B    O5B    C1B    O1B               58.832           20.000   3
+ LSM      var_11           O5B    C1B    C2B    C3B              180.000           20.000   3
+ LSM      var_12           O5B    C1B    O1B    "C4'"             72.377           20.000   3
+ LSM      var_13           C1B    O1B    "C4'"  "C5'"           -155.080           20.000   3
+ LSM      var_14           O1B    "C4'"  "C3'"  "C2'"            180.000           20.000   3
+ LSM      var_15           "C4'"  "C3'"  "O3'"  "HO3'"          -179.500           20.000   3
+ LSM      var_16           "C4'"  "C3'"  "C2'"  "O2'"            180.000           20.000   3
+ LSM      var_17           "C3'"  "C2'"  "O2'"  "HO2'"           179.641           20.000   3
+ LSM      var_18           O1B    "C4'"  "C5'"  "O5'"            180.000           20.000   3
+ LSM      var_19           "C4'"  "C5'"  "C6'"  "O6'"            180.000           20.000   3
+ LSM      var_20           "C5'"  "C6'"  "O6'"  "HO6'"          -179.972           20.000   3
+ LSM      var_21           "C4'"  "C5'"  "O5'"  "C1'"             61.202           20.000   3
+ LSM      var_22           "C5'"  "O5'"  "C1'"  SE               178.822           20.000   3
+ LSM      var_23           "O5'"  "C1'"  "C2'"  "C3'"            180.000           20.000   3
+ LSM      var_24           "O5'"  "C1'"  SE     C1               -60.067           20.000   3
+ LSM      var_25           "C1'"  SE     C1     C2              -179.952           20.000   3
+ LSM      var_26           SE     C1     C2     C3               180.000           20.000   3
+ LSM      var_27           C1     C2     C3     C4               180.000           20.000   3
+ LSM      var_28           C2     C3     C4     C5               180.000           20.000   3
+ LSM      var_29           C3     C4     C5     C6               180.000           20.000   3
+ LSM      var_30           C4     C5     C6     C7               180.000           20.000   3
+ LSM      var_31           C5     C6     C7     C8               180.000           20.000   3
+ LSM      var_32           C6     C7     C8     C9               180.000           20.000   3
+ LSM      var_33           C7     C8     C9     C10              180.000           20.000   3
+ LSM      var_34           C8     C9     C10    C11              180.000           20.000   3
+ LSM      var_35           C9     C10    C11    C12              180.000           20.000   3
+ LSM      var_36           C10    C11    C12    H12              180.000           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LSM      chir_01          "C1'"  SE     "C2'"  "O5'"     negativ
+ LSM      chir_02          C1B    O1B    C2B    O5B       positiv
+ LSM      chir_03          "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ LSM      chir_04          C2B    C1B    O2B    C3B       positiv
+ LSM      chir_05          "C3'"  "C2'"  "O3'"  "C4'"     negativ
+ LSM      chir_06          C3B    C2B    O3B    C4B       negativ
+ LSM      chir_07          "C4'"  O1B    "C3'"  "C5'"     negativ
+ LSM      chir_08          C4B    C3B    O4B    C5B       positiv
+ LSM      chir_09          "C5'"  "C4'"  "O5'"  "C6'"     positiv
+ LSM      chir_10          C5B    C4B    O5B    C6B       positiv
+# ------------------------------------------------------
+# ------------------------------------------------------
+# ------------------------------------------------------

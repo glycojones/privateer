@@ -1,0 +1,166 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BSZ     BSZ      "3-chloro-4-methoxybenzenesulfonic acid"     NON-POLYMER     20     13     .     
+#
+data_comp_BSZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BSZ     S       S       S3      0       17.974      -16.245     25.065      
+BSZ     CL      CL      CL      0       20.353      -11.580     26.498      
+BSZ     CG      C       CR6     0       19.353      -15.130     24.979      
+BSZ     CH      C       CH3     0       23.716      -12.599     24.018      
+BSZ     OH      O       O2      0       22.555      -12.441     24.834      
+BSZ     CZ      C       CR6     0       21.549      -13.367     24.828      
+BSZ     OB1     O       O       0       17.270      -15.976     26.292      
+BSZ     OB2     O       O       0       18.506      -17.581     24.985      
+BSZ     CD1     C       CR16    0       20.461      -15.451     24.203      
+BSZ     CD2     C       CR16    0       19.336      -13.931     25.679      
+BSZ     CE1     C       CR16    0       21.545      -14.585     24.129      
+BSZ     CE2     C       CR6     0       20.419      -13.066     25.604      
+BSZ     OXT     O       OH1     0       17.118      -15.951     23.891      
+BSZ     HH      H       H       0       23.450      -12.667     23.086      
+BSZ     HHA     H       H       0       24.188      -13.407     24.280      
+BSZ     HHB     H       H       0       24.300      -11.832     24.134      
+BSZ     HD1     H       H       0       20.482      -16.258     23.725      
+BSZ     HD2     H       H       0       18.606      -13.706     26.194      
+BSZ     HE1     H       H       0       22.282      -14.828     23.598      
+BSZ     HXT     H       H       0       16.615      -16.693     23.681      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BSZ       S         CG        SINGLE    n         1.772     0.013     1.772     0.013     
+BSZ       S         OB1       DOUBLE    n         1.440     0.010     1.440     0.010     
+BSZ       S         OB2       DOUBLE    n         1.440     0.010     1.440     0.010     
+BSZ       S         OXT       SINGLE    n         1.482     0.020     1.482     0.020     
+BSZ       CL        CE2       SINGLE    n         1.733     0.010     1.733     0.010     
+BSZ       CG        CD1       DOUBLE    y         1.384     0.010     1.384     0.010     
+BSZ       CG        CD2       SINGLE    y         1.384     0.010     1.384     0.010     
+BSZ       CH        OH        SINGLE    n         1.424     0.012     1.424     0.012     
+BSZ       OH        CZ        SINGLE    n         1.359     0.010     1.359     0.010     
+BSZ       CZ        CE1       DOUBLE    y         1.389     0.010     1.389     0.010     
+BSZ       CZ        CE2       SINGLE    y         1.392     0.010     1.392     0.010     
+BSZ       CD1       CE1       SINGLE    y         1.381     0.010     1.381     0.010     
+BSZ       CD2       CE2       DOUBLE    y         1.380     0.012     1.380     0.012     
+BSZ       CH        HH        SINGLE    n         1.089     0.010     0.971     0.016     
+BSZ       CH        HHA       SINGLE    n         1.089     0.010     0.971     0.016     
+BSZ       CH        HHB       SINGLE    n         1.089     0.010     0.971     0.016     
+BSZ       CD1       HD1       SINGLE    n         1.082     0.013     0.939     0.020     
+BSZ       CD2       HD2       SINGLE    n         1.082     0.013     0.921     0.011     
+BSZ       CE1       HE1       SINGLE    n         1.082     0.013     0.942     0.017     
+BSZ       OXT       HXT       SINGLE    n         0.970     0.012     0.921     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BSZ          CG           S         OB1     106.928    1.50
+BSZ          CG           S         OB2     106.928    1.50
+BSZ          CG           S         OXT     106.633    1.50
+BSZ         OB1           S         OB2     114.848    3.00
+BSZ         OB1           S         OXT     110.900    2.56
+BSZ         OB2           S         OXT     110.900    2.56
+BSZ           S          CG         CD1     120.144    1.50
+BSZ           S          CG         CD2     119.612    1.50
+BSZ         CD1          CG         CD2     120.245    1.50
+BSZ          OH          CH          HH     109.428    1.50
+BSZ          OH          CH         HHA     109.428    1.50
+BSZ          OH          CH         HHB     109.428    1.50
+BSZ          HH          CH         HHA     109.509    1.50
+BSZ          HH          CH         HHB     109.509    1.50
+BSZ         HHA          CH         HHB     109.509    1.50
+BSZ          CH          OH          CZ     117.550    1.50
+BSZ          OH          CZ         CE1     123.078    3.00
+BSZ          OH          CZ         CE2     118.701    1.50
+BSZ         CE1          CZ         CE2     118.221    1.50
+BSZ          CG         CD1         CE1     120.046    1.50
+BSZ          CG         CD1         HD1     120.175    1.50
+BSZ         CE1         CD1         HD1     119.783    1.50
+BSZ          CG         CD2         CE2     120.304    1.50
+BSZ          CG         CD2         HD2     119.789    1.50
+BSZ         CE2         CD2         HD2     119.906    1.50
+BSZ          CZ         CE1         CD1     119.858    1.50
+BSZ          CZ         CE1         HE1     119.980    1.50
+BSZ         CD1         CE1         HE1     120.161    1.50
+BSZ          CL         CE2          CZ     119.418    1.50
+BSZ          CL         CE2         CD2     119.260    1.50
+BSZ          CZ         CE2         CD2     121.322    1.50
+BSZ           S         OXT         HXT     109.599    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BSZ             sp3_sp3_2         HXT         OXT           S         OB1     -60.000   10.00     3
+BSZ             sp2_sp3_1         CD1          CG           S         OB1     150.000   10.00     6
+BSZ       const_sp2_sp2_2         CE1         CD1          CG           S     180.000   10.00     2
+BSZ              const_22         CE2         CD2          CG           S     180.000   10.00     2
+BSZ             sp3_sp3_5          HH          CH          OH          CZ     -60.000   10.00     3
+BSZ             sp2_sp2_1         CE1          CZ          OH          CH     180.000   10.00     2
+BSZ              const_10         CD1         CE1          CZ          OH     180.000   10.00     2
+BSZ              const_16          CL         CE2          CZ          OH       0.000   10.00     2
+BSZ       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+BSZ              const_18          CG         CD2         CE2          CL     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BSZ    plan-1         CD1   0.020
+BSZ    plan-1         CD2   0.020
+BSZ    plan-1         CE1   0.020
+BSZ    plan-1         CE2   0.020
+BSZ    plan-1          CG   0.020
+BSZ    plan-1          CL   0.020
+BSZ    plan-1          CZ   0.020
+BSZ    plan-1         HD1   0.020
+BSZ    plan-1         HD2   0.020
+BSZ    plan-1         HE1   0.020
+BSZ    plan-1          OH   0.020
+BSZ    plan-1           S   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BSZ SMILES           ACDLabs              12.01 "Clc1cc(ccc1OC)S(=O)(=O)O"
+BSZ InChI            InChI                1.03  "InChI=1S/C7H7ClO4S/c1-12-7-3-2-5(4-6(7)8)13(9,10)11/h2-4H,1H3,(H,9,10,11)"
+BSZ InChIKey         InChI                1.03  ZHGMKNONEQMBRL-UHFFFAOYSA-N
+BSZ SMILES_CANONICAL CACTVS               3.370 "COc1ccc(cc1Cl)[S](O)(=O)=O"
+BSZ SMILES           CACTVS               3.370 "COc1ccc(cc1Cl)[S](O)(=O)=O"
+BSZ SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "COc1ccc(cc1Cl)S(=O)(=O)O"
+BSZ SMILES           "OpenEye OEToolkits" 1.7.2 "COc1ccc(cc1Cl)S(=O)(=O)O"
+BSZ ?                acedrg               202         "dictionary generator"                  
+BSZ ?                acedrg_database      11          "data source"                           
+BSZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BSZ ?                refmac5              5.8.0189    "optimization tool"                     

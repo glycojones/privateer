@@ -1,0 +1,336 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VB1      VB1 '"N^6^-[(1R)-2-{[(1S)-1-carboxypropyl' non-polymer        44  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VB1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ VB1           O43    O    OC       -0.500      0.000    0.000    0.000
+ VB1           C31    C    C         0.000     -1.182   -0.385    0.141
+ VB1           O42    O    OC       -0.500     -1.679   -1.192   -0.676
+ VB1           CAV    C    CH1       0.000     -2.007    0.123    1.295
+ VB1           HAV    H    H         0.000     -2.090    1.217    1.233
+ VB1           C33    C    CH2       0.000     -1.333   -0.263    2.613
+ VB1           H331   H    H         0.000     -0.305    0.104    2.617
+ VB1           H332   H    H         0.000     -1.330   -1.351    2.715
+ VB1           C32    C    CH3       0.000     -2.103    0.358    3.781
+ VB1           H323   H    H         0.000     -1.638    0.092    4.696
+ VB1           H322   H    H         0.000     -2.107    1.413    3.684
+ VB1           H321   H    H         0.000     -3.102    0.002    3.779
+ VB1           N29    N    NH1       0.000     -3.345   -0.473    1.238
+ VB1           H29    H    H         0.000     -3.550   -1.305    1.772
+ VB1           C13    C    C         0.000     -4.301    0.092    0.474
+ VB1           O18    O    O         0.000     -4.055    1.091   -0.166
+ VB1           C12    C    CH1       0.000     -5.678   -0.521    0.415
+ VB1           H12    H    H         0.000     -6.116   -0.534    1.423
+ VB1           C16    C    CH2       0.000     -5.576   -1.953   -0.116
+ VB1           H161   H    H         0.000     -4.941   -2.543    0.549
+ VB1           H162   H    H         0.000     -5.139   -1.940   -1.117
+ VB1           S17    S    SH1       0.000     -7.232   -2.690   -0.186
+ VB1           H17    H    H         0.000     -6.839   -3.869   -0.660
+ VB1           N11    N    NH1       0.000     -6.527    0.271   -0.477
+ VB1           H11    H    H         0.000     -6.109    0.828   -1.209
+ VB1           C10    C    C         0.000     -7.865    0.256   -0.322
+ VB1           O15    O    O         0.000     -8.367   -0.412    0.557
+ VB1           C7     C    CH2       0.000     -8.739    1.072   -1.239
+ VB1           H7C1   H    H         0.000     -8.588    0.745   -2.270
+ VB1           H7C2   H    H         0.000     -8.473    2.127   -1.151
+ VB1           C4     C    CH2       0.000    -10.207    0.880   -0.851
+ VB1           H4C1   H    H         0.000    -10.355    1.206    0.180
+ VB1           H4C2   H    H         0.000    -10.470   -0.177   -0.939
+ VB1           C3     C    CH2       0.000    -11.094    1.707   -1.783
+ VB1           H3C1   H    H         0.000    -10.943    1.380   -2.814
+ VB1           H3C2   H    H         0.000    -10.829    2.763   -1.695
+ VB1           C2     C    CH1       0.000    -12.561    1.514   -1.395
+ VB1           H2     H    H         0.000    -12.693    1.758   -0.331
+ VB1           N14    N    NH2       0.000    -12.950    0.117   -1.628
+ VB1           H142   H    H         0.000    -13.280   -0.457   -0.860
+ VB1           H141   H    H         0.000    -12.892   -0.282   -2.557
+ VB1           C1     C    C         0.000    -13.426    2.423   -2.230
+ VB1           O19    O    OC       -0.500    -13.534    3.633   -1.932
+ VB1           O20    O    OC       -0.500    -14.031    1.967   -3.226
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VB1      O43    n/a    C31    START
+ VB1      C31    O43    CAV    .
+ VB1      O42    C31    .      .
+ VB1      CAV    C31    N29    .
+ VB1      HAV    CAV    .      .
+ VB1      C33    CAV    C32    .
+ VB1      H331   C33    .      .
+ VB1      H332   C33    .      .
+ VB1      C32    C33    H321   .
+ VB1      H323   C32    .      .
+ VB1      H322   C32    .      .
+ VB1      H321   C32    .      .
+ VB1      N29    CAV    C13    .
+ VB1      H29    N29    .      .
+ VB1      C13    N29    C12    .
+ VB1      O18    C13    .      .
+ VB1      C12    C13    N11    .
+ VB1      H12    C12    .      .
+ VB1      C16    C12    S17    .
+ VB1      H161   C16    .      .
+ VB1      H162   C16    .      .
+ VB1      S17    C16    H17    .
+ VB1      H17    S17    .      .
+ VB1      N11    C12    C10    .
+ VB1      H11    N11    .      .
+ VB1      C10    N11    C7     .
+ VB1      O15    C10    .      .
+ VB1      C7     C10    C4     .
+ VB1      H7C1   C7     .      .
+ VB1      H7C2   C7     .      .
+ VB1      C4     C7     C3     .
+ VB1      H4C1   C4     .      .
+ VB1      H4C2   C4     .      .
+ VB1      C3     C4     C2     .
+ VB1      H3C1   C3     .      .
+ VB1      H3C2   C3     .      .
+ VB1      C2     C3     C1     .
+ VB1      H2     C2     .      .
+ VB1      N14    C2     H141   .
+ VB1      H142   N14    .      .
+ VB1      H141   N14    .      .
+ VB1      C1     C2     O20    .
+ VB1      O19    C1     .      .
+ VB1      O20    C1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VB1       C32       C33       single    1.513     0.020     1.513     0.020     
+VB1       C33       CAV       single    1.524     0.020     1.524     0.020     
+VB1       CAV       C31       single    1.500     0.020     1.500     0.020     
+VB1       N29       CAV       single    1.450     0.020     1.450     0.020     
+VB1       C31       O43       deloc     1.250     0.020     1.250     0.020     
+VB1       O42       C31       deloc     1.250     0.020     1.250     0.020     
+VB1       C13       N29       single    1.330     0.020     1.330     0.020     
+VB1       O18       C13       double    1.220     0.020     1.220     0.020     
+VB1       C12       C13       single    1.500     0.020     1.500     0.020     
+VB1       C16       C12       single    1.524     0.020     1.524     0.020     
+VB1       N11       C12       single    1.450     0.020     1.450     0.020     
+VB1       S17       C16       single    1.810     0.020     1.810     0.020     
+VB1       C10       N11       single    1.330     0.020     1.330     0.020     
+VB1       O15       C10       double    1.220     0.020     1.220     0.020     
+VB1       C7        C10       single    1.510     0.020     1.510     0.020     
+VB1       C4        C7        single    1.524     0.020     1.524     0.020     
+VB1       C3        C4        single    1.524     0.020     1.524     0.020     
+VB1       C2        C3        single    1.524     0.020     1.524     0.020     
+VB1       C1        C2        single    1.500     0.020     1.500     0.020     
+VB1       N14       C2        single    1.450     0.020     1.450     0.020     
+VB1       O20       C1        deloc     1.250     0.020     1.250     0.020     
+VB1       O19       C1        deloc     1.250     0.020     1.250     0.020     
+VB1       H321      C32       single    1.089     0.010     0.989     0.005     
+VB1       H322      C32       single    1.089     0.010     0.989     0.005     
+VB1       H323      C32       single    1.089     0.010     0.989     0.005     
+VB1       H331      C33       single    1.089     0.010     0.989     0.005     
+VB1       H332      C33       single    1.089     0.010     0.989     0.005     
+VB1       HAV       CAV       single    1.089     0.010     0.989     0.005     
+VB1       H29       N29       single    1.016     0.010     0.899     0.007     
+VB1       H12       C12       single    1.089     0.010     0.989     0.005     
+VB1       H161      C16       single    1.089     0.010     0.989     0.005     
+VB1       H162      C16       single    1.089     0.010     0.989     0.005     
+VB1       H11       N11       single    1.016     0.010     0.899     0.007     
+VB1       H17       S17       single    1.338     0.010     1.171     0.208     
+VB1       H7C1      C7        single    1.089     0.010     0.989     0.005     
+VB1       H7C2      C7        single    1.089     0.010     0.989     0.005     
+VB1       H4C1      C4        single    1.089     0.010     0.989     0.005     
+VB1       H4C2      C4        single    1.089     0.010     0.989     0.005     
+VB1       H3C1      C3        single    1.089     0.010     0.989     0.005     
+VB1       H3C2      C3        single    1.089     0.010     0.989     0.005     
+VB1       H2        C2        single    1.089     0.010     0.989     0.005     
+VB1       H141      N14       single    1.036     0.016     0.914     0.007     
+VB1       H142      N14       single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VB1      O43    C31    O42     123.000    3.000
+ VB1      O43    C31    CAV     118.500    3.000
+ VB1      O42    C31    CAV     118.500    3.000
+ VB1      C31    CAV    HAV     108.810    3.000
+ VB1      C31    CAV    C33     109.470    3.000
+ VB1      C31    CAV    N29     111.600    3.000
+ VB1      HAV    CAV    C33     108.340    3.000
+ VB1      HAV    CAV    N29     108.550    3.000
+ VB1      C33    CAV    N29     110.000    3.000
+ VB1      CAV    C33    H331    109.470    3.000
+ VB1      CAV    C33    H332    109.470    3.000
+ VB1      CAV    C33    C32     111.000    3.000
+ VB1      H331   C33    H332    107.900    3.000
+ VB1      H331   C33    C32     109.470    3.000
+ VB1      H332   C33    C32     109.470    3.000
+ VB1      C33    C32    H323    109.470    3.000
+ VB1      C33    C32    H322    109.470    3.000
+ VB1      C33    C32    H321    109.470    3.000
+ VB1      H323   C32    H322    109.470    3.000
+ VB1      H323   C32    H321    109.470    3.000
+ VB1      H322   C32    H321    109.470    3.000
+ VB1      CAV    N29    H29     118.500    3.000
+ VB1      CAV    N29    C13     121.500    3.000
+ VB1      H29    N29    C13     120.000    3.000
+ VB1      N29    C13    O18     123.000    3.000
+ VB1      N29    C13    C12     116.500    3.000
+ VB1      O18    C13    C12     120.500    3.000
+ VB1      C13    C12    H12     108.810    3.000
+ VB1      C13    C12    C16     109.470    3.000
+ VB1      C13    C12    N11     111.600    3.000
+ VB1      H12    C12    C16     108.340    3.000
+ VB1      H12    C12    N11     108.550    3.000
+ VB1      C16    C12    N11     110.000    3.000
+ VB1      C12    C16    H161    109.470    3.000
+ VB1      C12    C16    H162    109.470    3.000
+ VB1      C12    C16    S17     112.500    3.000
+ VB1      H161   C16    H162    107.900    3.000
+ VB1      H161   C16    S17     109.470    3.000
+ VB1      H162   C16    S17     109.470    3.000
+ VB1      C16    S17    H17      96.000    3.000
+ VB1      C12    N11    H11     118.500    3.000
+ VB1      C12    N11    C10     121.500    3.000
+ VB1      H11    N11    C10     120.000    3.000
+ VB1      N11    C10    O15     123.000    3.000
+ VB1      N11    C10    C7      116.500    3.000
+ VB1      O15    C10    C7      120.500    3.000
+ VB1      C10    C7     H7C1    109.470    3.000
+ VB1      C10    C7     H7C2    109.470    3.000
+ VB1      C10    C7     C4      109.470    3.000
+ VB1      H7C1   C7     H7C2    107.900    3.000
+ VB1      H7C1   C7     C4      109.470    3.000
+ VB1      H7C2   C7     C4      109.470    3.000
+ VB1      C7     C4     H4C1    109.470    3.000
+ VB1      C7     C4     H4C2    109.470    3.000
+ VB1      C7     C4     C3      111.000    3.000
+ VB1      H4C1   C4     H4C2    107.900    3.000
+ VB1      H4C1   C4     C3      109.470    3.000
+ VB1      H4C2   C4     C3      109.470    3.000
+ VB1      C4     C3     H3C1    109.470    3.000
+ VB1      C4     C3     H3C2    109.470    3.000
+ VB1      C4     C3     C2      111.000    3.000
+ VB1      H3C1   C3     H3C2    107.900    3.000
+ VB1      H3C1   C3     C2      109.470    3.000
+ VB1      H3C2   C3     C2      109.470    3.000
+ VB1      C3     C2     H2      108.340    3.000
+ VB1      C3     C2     N14     109.470    3.000
+ VB1      C3     C2     C1      109.470    3.000
+ VB1      H2     C2     N14     109.470    3.000
+ VB1      H2     C2     C1      108.810    3.000
+ VB1      N14    C2     C1      109.470    3.000
+ VB1      C2     N14    H142    120.000    3.000
+ VB1      C2     N14    H141    120.000    3.000
+ VB1      H142   N14    H141    120.000    3.000
+ VB1      C2     C1     O19     118.500    3.000
+ VB1      C2     C1     O20     118.500    3.000
+ VB1      O19    C1     O20     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VB1      var_1    O43    C31    CAV    N29     -179.960   20.000   3
+ VB1      var_2    C31    CAV    C33    C32      174.998   20.000   3
+ VB1      var_3    CAV    C33    C32    H321      59.981   20.000   3
+ VB1      var_4    C31    CAV    N29    C13      -84.987   20.000   3
+ VB1      CONST_1  CAV    N29    C13    C12      180.000    0.000   0
+ VB1      var_5    N29    C13    C12    N11     -179.961   20.000   3
+ VB1      var_6    C13    C12    C16    S17      179.999   20.000   3
+ VB1      var_7    C12    C16    S17    H17      179.987   20.000   1
+ VB1      var_8    C13    C12    N11    C10     -155.012   20.000   3
+ VB1      CONST_2  C12    N11    C10    C7       180.000    0.000   0
+ VB1      var_9    N11    C10    C7     C4      -179.972   20.000   3
+ VB1      var_10   C10    C7     C4     C3      -179.966   20.000   3
+ VB1      var_11   C7     C4     C3     C2       179.972   20.000   3
+ VB1      var_12   C4     C3     C2     C1       174.969   20.000   3
+ VB1      var_13   C3     C2     N14    H141     -59.974   20.000   1
+ VB1      var_14   C3     C2     C1     O20       99.996   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ VB1      chir_01  C2     C1     C3     N14       positiv
+ VB1      chir_02  CAV    N29    C31    C33       positiv
+ VB1      chir_03  C12    N11    C13    C16       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ VB1      plan-1    C1        0.020
+ VB1      plan-1    C2        0.020
+ VB1      plan-1    O19       0.020
+ VB1      plan-1    O20       0.020
+ VB1      plan-2    C10       0.020
+ VB1      plan-2    C7        0.020
+ VB1      plan-2    N11       0.020
+ VB1      plan-2    O15       0.020
+ VB1      plan-2    H11       0.020
+ VB1      plan-3    N11       0.020
+ VB1      plan-3    C10       0.020
+ VB1      plan-3    C12       0.020
+ VB1      plan-3    H11       0.020
+ VB1      plan-4    C13       0.020
+ VB1      plan-4    C12       0.020
+ VB1      plan-4    O18       0.020
+ VB1      plan-4    N29       0.020
+ VB1      plan-4    H29       0.020
+ VB1      plan-5    N14       0.020
+ VB1      plan-5    C2        0.020
+ VB1      plan-5    H141      0.020
+ VB1      plan-5    H142      0.020
+ VB1      plan-6    N29       0.020
+ VB1      plan-6    CAV       0.020
+ VB1      plan-6    C13       0.020
+ VB1      plan-6    H29       0.020
+ VB1      plan-7    C31       0.020
+ VB1      plan-7    CAV       0.020
+ VB1      plan-7    O42       0.020
+ VB1      plan-7    O43       0.020
+# ------------------------------------------------------

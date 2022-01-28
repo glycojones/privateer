@@ -1,0 +1,349 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CAV      CAV '5-AMINO-6-CYCLOHEXYL-3,4-DIHYDROXY-2' non-polymer        48  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CAV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CAV           OXT    O    OC       -0.500      0.000    0.000    0.000
+ CAV           C      C    C         0.000      0.281    0.235   -1.196
+ CAV           O      O    OC       -0.500      1.235    0.993   -1.478
+ CAV           "CA'"  C    CH1       0.000     -0.532   -0.392   -2.298
+ CAV           "HA'"  H    H         0.000     -0.469   -1.487   -2.221
+ CAV           "CB'"  C    CH1       0.000      0.015    0.055   -3.654
+ CAV           "HB'"  H    H         0.000     -0.569   -0.415   -4.458
+ CAV           CG2    C    CH3       0.000      1.481   -0.364   -3.777
+ CAV           HG23   H    H         0.000      1.572   -1.400   -3.575
+ CAV           HG22   H    H         0.000      1.825   -0.166   -4.759
+ CAV           HG21   H    H         0.000      2.065    0.183   -3.082
+ CAV           CG1    C    CH3       0.000     -0.091    1.577   -3.770
+ CAV           HG13   H    H         0.000     -1.106    1.869   -3.685
+ CAV           HG12   H    H         0.000      0.472    2.031   -2.996
+ CAV           HG11   H    H         0.000      0.288    1.888   -4.709
+ CAV           CB1    C    CH1       0.000     -1.993    0.044   -2.167
+ CAV           HB1    H    H         0.000     -2.045    1.141   -2.133
+ CAV           OB1    O    OH1       0.000     -2.735   -0.434   -3.290
+ CAV           HOB1   H    H         0.000     -2.688   -1.399   -3.320
+ CAV           CH     C    CH1       0.000     -2.585   -0.534   -0.881
+ CAV           HH     H    H         0.000     -2.014   -0.166   -0.017
+ CAV           OH     O    OH1       0.000     -2.516   -1.960   -0.925
+ CAV           HO     H    H         0.000     -3.019   -2.284   -1.685
+ CAV           CA     C    CH1       0.000     -4.045   -0.097   -0.750
+ CAV           HA     H    H         0.000     -4.097    1.000   -0.717
+ CAV           N      N    NH2       0.000     -4.808   -0.589   -1.905
+ CAV           H2     H    H         0.000     -4.334   -1.047   -2.675
+ CAV           H      H    H         0.000     -5.815   -0.474   -1.940
+ CAV           CB     C    CH2       0.000     -4.637   -0.676    0.536
+ CAV           HB2    H    H         0.000     -4.069   -0.311    1.394
+ CAV           HB3    H    H         0.000     -4.584   -1.766    0.502
+ CAV           CG     C    CH1       0.000     -6.097   -0.239    0.666
+ CAV           HG     H    H         0.000     -6.668   -0.606   -0.198
+ CAV           CD2    C    CH2       0.000     -6.170    1.288    0.714
+ CAV           HD23   H    H         0.000     -5.746    1.701   -0.204
+ CAV           HD22   H    H         0.000     -5.602    1.653    1.572
+ CAV           CE2    C    CH2       0.000     -7.631    1.725    0.844
+ CAV           HE23   H    H         0.000     -8.197    1.360   -0.016
+ CAV           HE22   H    H         0.000     -7.683    2.815    0.876
+ CAV           CZ     C    CH2       0.000     -8.224    1.146    2.130
+ CAV           HZ2    H    H         0.000     -9.266    1.459    2.223
+ CAV           HZ3    H    H         0.000     -7.657    1.513    2.988
+ CAV           CE1    C    CH2       0.000     -8.151   -0.381    2.083
+ CAV           HE12   H    H         0.000     -8.719   -0.745    1.224
+ CAV           HE13   H    H         0.000     -8.575   -0.793    3.000
+ CAV           CD1    C    CH2       0.000     -6.690   -0.817    1.953
+ CAV           HD13   H    H         0.000     -6.638   -1.908    1.920
+ CAV           HD12   H    H         0.000     -6.123   -0.452    2.812
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CAV      OXT    n/a    C      START
+ CAV      C      OXT    "CA'"  .
+ CAV      O      C      .      .
+ CAV      "CA'"  C      CB1    .
+ CAV      "HA'"  "CA'"  .      .
+ CAV      "CB'"  "CA'"  CG1    .
+ CAV      "HB'"  "CB'"  .      .
+ CAV      CG2    "CB'"  HG21   .
+ CAV      HG23   CG2    .      .
+ CAV      HG22   CG2    .      .
+ CAV      HG21   CG2    .      .
+ CAV      CG1    "CB'"  HG11   .
+ CAV      HG13   CG1    .      .
+ CAV      HG12   CG1    .      .
+ CAV      HG11   CG1    .      .
+ CAV      CB1    "CA'"  CH     .
+ CAV      HB1    CB1    .      .
+ CAV      OB1    CB1    HOB1   .
+ CAV      HOB1   OB1    .      .
+ CAV      CH     CB1    CA     .
+ CAV      HH     CH     .      .
+ CAV      OH     CH     HO     .
+ CAV      HO     OH     .      .
+ CAV      CA     CH     CB     .
+ CAV      HA     CA     .      .
+ CAV      N      CA     H      .
+ CAV      H2     N      .      .
+ CAV      H      N      .      .
+ CAV      CB     CA     CG     .
+ CAV      HB2    CB     .      .
+ CAV      HB3    CB     .      .
+ CAV      CG     CB     CD2    .
+ CAV      HG     CG     .      .
+ CAV      CD2    CG     CE2    .
+ CAV      HD23   CD2    .      .
+ CAV      HD22   CD2    .      .
+ CAV      CE2    CD2    CZ     .
+ CAV      HE23   CE2    .      .
+ CAV      HE22   CE2    .      .
+ CAV      CZ     CE2    CE1    .
+ CAV      HZ2    CZ     .      .
+ CAV      HZ3    CZ     .      .
+ CAV      CE1    CZ     CD1    .
+ CAV      HE12   CE1    .      .
+ CAV      HE13   CE1    .      .
+ CAV      CD1    CE1    HD12   .
+ CAV      HD13   CD1    .      .
+ CAV      HD12   CD1    .      END
+ CAV      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CAV       N         CA        single    1.450     0.020     1.450     0.020     
+CAV       H         N         single    1.036     0.016     0.914     0.007     
+CAV       H2        N         single    1.036     0.016     0.914     0.007     
+CAV       CB        CA        single    1.524     0.020     1.524     0.020     
+CAV       CA        CH        single    1.524     0.020     1.524     0.020     
+CAV       HA        CA        single    1.089     0.010     0.989     0.005     
+CAV       CG        CB        single    1.524     0.020     1.524     0.020     
+CAV       HB2       CB        single    1.089     0.010     0.989     0.005     
+CAV       HB3       CB        single    1.089     0.010     0.989     0.005     
+CAV       CG        CD1       single    1.524     0.020     1.524     0.020     
+CAV       CD2       CG        single    1.524     0.020     1.524     0.020     
+CAV       HG        CG        single    1.089     0.010     0.989     0.005     
+CAV       CD1       CE1       single    1.524     0.020     1.524     0.020     
+CAV       HD12      CD1       single    1.089     0.010     0.989     0.005     
+CAV       HD13      CD1       single    1.089     0.010     0.989     0.005     
+CAV       CE2       CD2       single    1.524     0.020     1.524     0.020     
+CAV       HD23      CD2       single    1.089     0.010     0.989     0.005     
+CAV       HD22      CD2       single    1.089     0.010     0.989     0.005     
+CAV       CE1       CZ        single    1.524     0.020     1.524     0.020     
+CAV       HE12      CE1       single    1.089     0.010     0.989     0.005     
+CAV       HE13      CE1       single    1.089     0.010     0.989     0.005     
+CAV       CZ        CE2       single    1.524     0.020     1.524     0.020     
+CAV       HE23      CE2       single    1.089     0.010     0.989     0.005     
+CAV       HE22      CE2       single    1.089     0.010     0.989     0.005     
+CAV       HZ2       CZ        single    1.089     0.010     0.989     0.005     
+CAV       HZ3       CZ        single    1.089     0.010     0.989     0.005     
+CAV       OH        CH        single    1.432     0.020     1.432     0.020     
+CAV       CH        CB1       single    1.524     0.020     1.524     0.020     
+CAV       HH        CH        single    1.089     0.010     0.989     0.005     
+CAV       HO        OH        single    0.970     0.012     0.839     0.014     
+CAV       CB1       "CA'"     single    1.524     0.020     1.524     0.020     
+CAV       OB1       CB1       single    1.432     0.020     1.432     0.020     
+CAV       HB1       CB1       single    1.089     0.010     0.989     0.005     
+CAV       "CB'"     "CA'"     single    1.524     0.020     1.524     0.020     
+CAV       "CA'"     C         single    1.500     0.020     1.500     0.020     
+CAV       "HA'"     "CA'"     single    1.089     0.010     0.989     0.005     
+CAV       CG1       "CB'"     single    1.524     0.020     1.524     0.020     
+CAV       CG2       "CB'"     single    1.524     0.020     1.524     0.020     
+CAV       "HB'"     "CB'"     single    1.089     0.010     0.989     0.005     
+CAV       HG11      CG1       single    1.089     0.010     0.989     0.005     
+CAV       HG12      CG1       single    1.089     0.010     0.989     0.005     
+CAV       HG13      CG1       single    1.089     0.010     0.989     0.005     
+CAV       HG21      CG2       single    1.089     0.010     0.989     0.005     
+CAV       HG22      CG2       single    1.089     0.010     0.989     0.005     
+CAV       HG23      CG2       single    1.089     0.010     0.989     0.005     
+CAV       HOB1      OB1       single    0.970     0.012     0.839     0.014     
+CAV       O         C         deloc     1.250     0.020     1.250     0.020     
+CAV       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CAV      OXT    C      O       123.000    3.000
+ CAV      OXT    C      "CA'"   118.500    3.000
+ CAV      O      C      "CA'"   118.500    3.000
+ CAV      C      "CA'"  "HA'"   108.810    3.000
+ CAV      C      "CA'"  "CB'"   109.470    3.000
+ CAV      C      "CA'"  CB1     109.470    3.000
+ CAV      "HA'"  "CA'"  "CB'"   108.340    3.000
+ CAV      "HA'"  "CA'"  CB1     108.340    3.000
+ CAV      "CB'"  "CA'"  CB1     111.000    3.000
+ CAV      "CA'"  "CB'"  "HB'"   108.340    3.000
+ CAV      "CA'"  "CB'"  CG2     111.000    3.000
+ CAV      "CA'"  "CB'"  CG1     111.000    3.000
+ CAV      "HB'"  "CB'"  CG2     108.340    3.000
+ CAV      "HB'"  "CB'"  CG1     108.340    3.000
+ CAV      CG2    "CB'"  CG1     111.000    3.000
+ CAV      "CB'"  CG2    HG23    109.470    3.000
+ CAV      "CB'"  CG2    HG22    109.470    3.000
+ CAV      "CB'"  CG2    HG21    109.470    3.000
+ CAV      HG23   CG2    HG22    109.470    3.000
+ CAV      HG23   CG2    HG21    109.470    3.000
+ CAV      HG22   CG2    HG21    109.470    3.000
+ CAV      "CB'"  CG1    HG13    109.470    3.000
+ CAV      "CB'"  CG1    HG12    109.470    3.000
+ CAV      "CB'"  CG1    HG11    109.470    3.000
+ CAV      HG13   CG1    HG12    109.470    3.000
+ CAV      HG13   CG1    HG11    109.470    3.000
+ CAV      HG12   CG1    HG11    109.470    3.000
+ CAV      "CA'"  CB1    HB1     108.340    3.000
+ CAV      "CA'"  CB1    OB1     109.470    3.000
+ CAV      "CA'"  CB1    CH      111.000    3.000
+ CAV      HB1    CB1    OB1     109.470    3.000
+ CAV      HB1    CB1    CH      108.340    3.000
+ CAV      OB1    CB1    CH      109.470    3.000
+ CAV      CB1    OB1    HOB1    109.470    3.000
+ CAV      CB1    CH     HH      108.340    3.000
+ CAV      CB1    CH     OH      109.470    3.000
+ CAV      CB1    CH     CA      111.000    3.000
+ CAV      HH     CH     OH      109.470    3.000
+ CAV      HH     CH     CA      108.340    3.000
+ CAV      OH     CH     CA      109.470    3.000
+ CAV      CH     OH     HO      109.470    3.000
+ CAV      CH     CA     HA      108.340    3.000
+ CAV      CH     CA     N       109.470    3.000
+ CAV      CH     CA     CB      111.000    3.000
+ CAV      HA     CA     N       109.470    3.000
+ CAV      HA     CA     CB      108.340    3.000
+ CAV      N      CA     CB      109.470    3.000
+ CAV      CA     N      H2      120.000    3.000
+ CAV      CA     N      H       120.000    3.000
+ CAV      H2     N      H       120.000    3.000
+ CAV      CA     CB     HB2     109.470    3.000
+ CAV      CA     CB     HB3     109.470    3.000
+ CAV      CA     CB     CG      111.000    3.000
+ CAV      HB2    CB     HB3     107.900    3.000
+ CAV      HB2    CB     CG      109.470    3.000
+ CAV      HB3    CB     CG      109.470    3.000
+ CAV      CB     CG     HG      108.340    3.000
+ CAV      CB     CG     CD2     109.470    3.000
+ CAV      CB     CG     CD1     109.470    3.000
+ CAV      HG     CG     CD2     108.340    3.000
+ CAV      HG     CG     CD1     108.340    3.000
+ CAV      CD2    CG     CD1     109.470    3.000
+ CAV      CG     CD2    HD23    109.470    3.000
+ CAV      CG     CD2    HD22    109.470    3.000
+ CAV      CG     CD2    CE2     111.000    3.000
+ CAV      HD23   CD2    HD22    107.900    3.000
+ CAV      HD23   CD2    CE2     109.470    3.000
+ CAV      HD22   CD2    CE2     109.470    3.000
+ CAV      CD2    CE2    HE23    109.470    3.000
+ CAV      CD2    CE2    HE22    109.470    3.000
+ CAV      CD2    CE2    CZ      111.000    3.000
+ CAV      HE23   CE2    HE22    107.900    3.000
+ CAV      HE23   CE2    CZ      109.470    3.000
+ CAV      HE22   CE2    CZ      109.470    3.000
+ CAV      CE2    CZ     HZ2     109.470    3.000
+ CAV      CE2    CZ     HZ3     109.470    3.000
+ CAV      CE2    CZ     CE1     111.000    3.000
+ CAV      HZ2    CZ     HZ3     107.900    3.000
+ CAV      HZ2    CZ     CE1     109.470    3.000
+ CAV      HZ3    CZ     CE1     109.470    3.000
+ CAV      CZ     CE1    HE12    109.470    3.000
+ CAV      CZ     CE1    HE13    109.470    3.000
+ CAV      CZ     CE1    CD1     111.000    3.000
+ CAV      HE12   CE1    HE13    107.900    3.000
+ CAV      HE12   CE1    CD1     109.470    3.000
+ CAV      HE13   CE1    CD1     109.470    3.000
+ CAV      CE1    CD1    HD13    109.470    3.000
+ CAV      CE1    CD1    HD12    109.470    3.000
+ CAV      CE1    CD1    CG      111.000    3.000
+ CAV      HD13   CD1    HD12    107.900    3.000
+ CAV      HD13   CD1    CG      109.470    3.000
+ CAV      HD12   CD1    CG      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CAV      var_1    OXT    C      "CA'"  CB1       59.874   20.000   3
+ CAV      var_2    C      "CA'"  "CB'"  CG1      -60.845   20.000   3
+ CAV      var_3    "CA'"  "CB'"  CG2    HG21     -67.159   20.000   3
+ CAV      var_4    "CA'"  "CB'"  CG1    HG11    -179.987   20.000   3
+ CAV      var_5    C      "CA'"  CB1    CH       -66.050   20.000   3
+ CAV      var_6    "CA'"  CB1    OB1    HOB1      60.012   20.000   1
+ CAV      var_7    "CA'"  CB1    CH     CA       179.967   20.000   3
+ CAV      var_8    CB1    CH     OH     HO       -60.055   20.000   1
+ CAV      var_9    CB1    CH     CA     CB       179.967   20.000   3
+ CAV      var_10   CH     CA     N      H        173.760   20.000   1
+ CAV      var_11   CH     CA     CB     CG       180.000   20.000   3
+ CAV      var_12   CA     CB     CG     CD2      -60.000   20.000   3
+ CAV      var_13   CB     CG     CD1    CE1      180.000   20.000   3
+ CAV      var_14   CB     CG     CD2    CE2      180.000   20.000   3
+ CAV      var_15   CG     CD2    CE2    CZ        60.000   20.000   3
+ CAV      var_16   CD2    CE2    CZ     CE1      -60.000   20.000   3
+ CAV      var_17   CE2    CZ     CE1    CD1       60.000   20.000   3
+ CAV      var_18   CZ     CE1    CD1    CG       -60.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CAV      chir_01  CA     N      CB     CH        negativ
+ CAV      chir_02  CG     CB     CD1    CD2       negativ
+ CAV      chir_03  CH     CA     OH     CB1       negativ
+ CAV      chir_04  CB1    CH     "CA'"  OB1       negativ
+ CAV      chir_05  "CA'"  CB1    "CB'"  C         negativ
+ CAV      chir_06  "CB'"  "CA'"  CG1    CG2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CAV      plan-1    N         0.020
+ CAV      plan-1    CA        0.020
+ CAV      plan-1    H         0.020
+ CAV      plan-1    H2        0.020
+ CAV      plan-2    C         0.020
+ CAV      plan-2    "CA'"     0.020
+ CAV      plan-2    O         0.020
+ CAV      plan-2    OXT       0.020
+# ------------------------------------------------------

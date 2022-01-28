@@ -1,0 +1,90 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BSY     BSY      "BISELENITE ION"     non-polymer     5     4     .     
+#
+data_comp_BSY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BSY     O1      O       OC      -1      -10.521     -25.870     -2.913      
+BSY     O2      O       OH1     0       -8.937      -24.423     -1.136      
+BSY     O3      O       O       0       -8.091      -26.863     -2.180      
+BSY     SE      SE      SE      0       -9.428      -26.010     -1.659      
+BSY     H2      H       H       0       -8.151      -24.243     -1.456      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BSY       O1        SE        SINGLE    n         1.669     0.019     1.669     0.019     
+BSY       O2        SE        SINGLE    n         1.742     0.020     1.742     0.020     
+BSY       O3        SE        DOUBLE    n         1.669     0.019     1.669     0.019     
+BSY       O2        H2        SINGLE    n         0.970     0.012     0.867     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BSY          SE          O2          H2     109.467    3.00
+BSY          O1          SE          O2     109.471    3.00
+BSY          O1          SE          O3     109.471    3.00
+BSY          O2          SE          O3     109.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BSY             sp3_sp3_2          H2          O2          SE          O1     -60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+BSY    chir_1    SE    O3    O2    O1    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BSY SMILES           ACDLabs              12.01 "[O-][Se](=O)O"
+BSY InChI            InChI                1.03  "InChI=1S/H2O3Se/c1-4(2)3/h(H2,1,2,3)/p-1"
+BSY InChIKey         InChI                1.03  MCAHWIHFGHIESP-UHFFFAOYSA-M
+BSY SMILES_CANONICAL CACTVS               3.385 "O[Se]([O-])=O"
+BSY SMILES           CACTVS               3.385 "O[Se]([O-])=O"
+BSY SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "O[Se](=O)[O-]"
+BSY SMILES           "OpenEye OEToolkits" 1.9.2 "O[Se](=O)[O-]"
+BSY ?                acedrg               202         "dictionary generator"                  
+BSY ?                acedrg_database      11          "data source"                           
+BSY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BSY ?                refmac5              5.8.0189    "optimization tool"                     

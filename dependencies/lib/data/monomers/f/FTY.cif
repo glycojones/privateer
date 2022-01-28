@@ -1,0 +1,254 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FTY     FTY     DEOXY-DIFLUOROMETHELENE-PHOSPHOTYROSINE     peptide     29     19     .
+#
+data_comp_FTY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FTY     N       N       NT3     1       41.562      6.936       23.513
+FTY     CA      C       CH1     0       41.581      7.616       22.188
+FTY     C       C       C       0       40.434      7.087       21.318
+FTY     O       O       O       0       40.428      5.866       21.062
+FTY     OXT     O       OC      -1      39.586      7.913       20.927
+FTY     CB      C       CH2     0       42.928      7.411       21.488
+FTY     CG      C       CR6     0       44.113      8.013       22.202
+FTY     CD1     C       CR16    0       45.069      7.210       22.811
+FTY     CD2     C       CR16    0       44.279      9.390       22.274
+FTY     CE1     C       CR16    0       46.158      7.763       23.470
+FTY     CE2     C       CR16    0       45.366      9.949       22.931
+FTY     CZ      C       CR6     0       46.327      9.144       23.536
+FTY     C1      C       CT      0       47.515      9.751       24.261
+FTY     F1      F       F       0       48.605      8.947       24.168
+FTY     F2      F       F       0       47.875      10.935      23.701
+FTY     P       P       P       0       47.172      10.039      26.021
+FTY     O1P     O       O       0       48.381      10.719      26.605
+FTY     O2P     O       OP      -1      46.932      8.694       26.652
+FTY     O3P     O       OP      -1      45.951      10.915      26.099
+FTY     H       H       H       0       41.892      6.091       23.432
+FTY     H2      H       H       0       40.707      6.895       23.830
+FTY     H3      H       H       0       42.071      7.402       24.107
+FTY     HA      H       H       0       41.443      8.587       22.331
+FTY     HB2     H       H       0       42.870      7.803       20.592
+FTY     HB3     H       H       0       43.076      6.448       21.381
+FTY     HD1     H       H       0       44.977      6.273       22.776
+FTY     HD2     H       H       0       43.642      9.953       21.869
+FTY     HE1     H       H       0       46.792      7.194       23.874
+FTY     HE2     H       H       0       45.453      10.887      22.964
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+FTY      N      n/a    CA     START
+FTY      H      N      .      .
+FTY      H2     N      .      .
+FTY      H3     N      .      .
+FTY      CA     N      C      .
+FTY      HA     CA     .      .
+FTY      CB     CA     CG     .
+FTY      HB2    CB     .      .
+FTY      HB3    CB     .      .
+FTY      CG     CB     CD2    .
+FTY      CD2    CG     CE2    .
+FTY      HD2    CD2    .      .
+FTY      CE2    CD2    CZ     .
+FTY      HE2    CE2    .      .
+FTY      CZ     CE2    C1     .
+FTY      CE1    CZ     CD1    .
+FTY      HE1    CE1    .      .
+FTY      CD1    CE1    HD1    .
+FTY      HD1    CD1    .      .
+FTY      C1     CZ     P      .
+FTY      F1     C1     .      .
+FTY      F2     C1     .      .
+FTY      P      C1     O3P    .
+FTY      O1P    P      .      .
+FTY      O2P    P      .      .
+FTY      O3P    P      .      .
+FTY      C      CA     .      END
+FTY      O      C      .      .
+FTY      OXT    C      .      .
+FTY      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FTY       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+FTY       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+FTY       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+FTY       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+FTY       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+FTY       CB        CG        SINGLE    n         1.508     0.010     1.508     0.010     
+FTY       CG        CD1       DOUBLE    y         1.385     0.011     1.385     0.011     
+FTY       CG        CD2       SINGLE    y         1.385     0.011     1.385     0.011     
+FTY       CD1       CE1       SINGLE    y         1.384     0.010     1.384     0.010     
+FTY       CD2       CE2       DOUBLE    y         1.384     0.010     1.384     0.010     
+FTY       CE1       CZ        DOUBLE    y         1.387     0.010     1.387     0.010     
+FTY       CE2       CZ        SINGLE    y         1.387     0.010     1.387     0.010     
+FTY       CZ        C1        SINGLE    n         1.512     0.012     1.512     0.012     
+FTY       C1        F1        SINGLE    n         1.357     0.014     1.357     0.014     
+FTY       C1        F2        SINGLE    n         1.357     0.014     1.357     0.014     
+FTY       C1        P         SINGLE    n         1.816     0.019     1.816     0.019     
+FTY       P         O1P       DOUBLE    n         1.505     0.020     1.505     0.020     
+FTY       P         O2P       SINGLE    n         1.505     0.020     1.505     0.020     
+FTY       P         O3P       SINGLE    n         1.505     0.020     1.505     0.020     
+FTY       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+FTY       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+FTY       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+FTY       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+FTY       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+FTY       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+FTY       CD1       HD1       SINGLE    n         1.082     0.013     0.942     0.017     
+FTY       CD2       HD2       SINGLE    n         1.082     0.013     0.942     0.017     
+FTY       CE1       HE1       SINGLE    n         1.082     0.013     0.942     0.017     
+FTY       CE2       HE2       SINGLE    n         1.082     0.013     0.942     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FTY          CA           N           H     109.646    1.54
+FTY          CA           N          H2     109.646    1.54
+FTY          CA           N          H3     109.646    1.54
+FTY           H           N          H2     109.028    2.41
+FTY           H           N          H3     109.028    2.41
+FTY          H2           N          H3     109.028    2.41
+FTY           N          CA           C     109.448    1.50
+FTY           N          CA          CB     110.494    1.50
+FTY           N          CA          HA     108.601    1.50
+FTY           C          CA          CB     111.331    2.53
+FTY           C          CA          HA     108.450    1.50
+FTY          CB          CA          HA     108.690    1.50
+FTY          CA           C           O     117.228    2.13
+FTY          CA           C         OXT     117.228    2.13
+FTY           O           C         OXT     125.543    1.50
+FTY          CA          CB          CG     114.745    1.55
+FTY          CA          CB         HB2     108.434    1.50
+FTY          CA          CB         HB3     108.434    1.50
+FTY          CG          CB         HB2     108.862    1.50
+FTY          CG          CB         HB3     108.862    1.50
+FTY         HB2          CB         HB3     107.782    1.50
+FTY          CB          CG         CD1     121.079    1.50
+FTY          CB          CG         CD2     121.079    1.50
+FTY         CD1          CG         CD2     117.841    1.50
+FTY          CG         CD1         CE1     121.026    1.50
+FTY          CG         CD1         HD1     119.412    1.50
+FTY         CE1         CD1         HD1     119.562    1.50
+FTY          CG         CD2         CE2     121.026    1.50
+FTY          CG         CD2         HD2     119.412    1.50
+FTY         CE2         CD2         HD2     119.562    1.50
+FTY         CD1         CE1          CZ     120.762    1.50
+FTY         CD1         CE1         HE1     119.773    1.50
+FTY          CZ         CE1         HE1     119.465    1.50
+FTY         CD2         CE2          CZ     120.762    1.50
+FTY         CD2         CE2         HE2     119.773    1.50
+FTY          CZ         CE2         HE2     119.465    1.50
+FTY         CE1          CZ         CE2     118.584    1.50
+FTY         CE1          CZ          C1     120.708    1.50
+FTY         CE2          CZ          C1     120.708    1.50
+FTY          CZ          C1          F1     110.594    1.53
+FTY          CZ          C1          F2     110.594    1.53
+FTY          CZ          C1           P     113.602    3.00
+FTY          F1          C1          F2     106.710    1.50
+FTY          F1          C1           P     108.594    1.85
+FTY          F2          C1           P     108.594    1.85
+FTY          C1           P         O1P     110.326    3.00
+FTY          C1           P         O2P     110.326    3.00
+FTY          C1           P         O3P     110.326    3.00
+FTY         O1P           P         O2P     112.502    1.50
+FTY         O1P           P         O3P     112.502    1.50
+FTY         O2P           P         O3P     112.502    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FTY             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+FTY              const_14         CD2         CE2          CZ          C1     180.000   10.00     2
+FTY            sp2_sp3_13         CE1          CZ          C1          F1     150.000   10.00     6
+FTY            sp3_sp3_22          F1          C1           P         O1P      60.000   10.00     3
+FTY             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+FTY            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+FTY             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+FTY       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+FTY              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+FTY       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+FTY              const_17          CG         CD2         CE2          CZ       0.000   10.00     2
+FTY              const_10         CD1         CE1          CZ          C1     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+FTY    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FTY    plan-1          C1   0.020
+FTY    plan-1          CB   0.020
+FTY    plan-1         CD1   0.020
+FTY    plan-1         CD2   0.020
+FTY    plan-1         CE1   0.020
+FTY    plan-1         CE2   0.020
+FTY    plan-1          CG   0.020
+FTY    plan-1          CZ   0.020
+FTY    plan-1         HD1   0.020
+FTY    plan-1         HD2   0.020
+FTY    plan-1         HE1   0.020
+FTY    plan-1         HE2   0.020
+FTY    plan-2           C   0.020
+FTY    plan-2          CA   0.020
+FTY    plan-2           O   0.020
+FTY    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FTY SMILES           ACDLabs              10.04 "FC(F)(c1ccc(cc1)CC(N)C(=O)O)P(=O)(O)O"
+FTY SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1ccc(cc1)C(F)(F)[P](O)(O)=O)C(O)=O"
+FTY SMILES           CACTVS               3.341 "N[CH](Cc1ccc(cc1)C(F)(F)[P](O)(O)=O)C(O)=O"
+FTY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(ccc1C[C@@H](C(=O)O)N)C(F)(F)P(=O)(O)O"
+FTY SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(ccc1CC(C(=O)O)N)C(F)(F)P(=O)(O)O"
+FTY InChI            InChI                1.03  "InChI=1S/C10H12F2NO5P/c11-10(12,19(16,17)18)7-3-1-6(2-4-7)5-8(13)9(14)15/h1-4,8H,5,13H2,(H,14,15)(H2,16,17,18)/t8-/m0/s1"
+FTY InChIKey         InChI                1.03  HRDUMKHDIFUQGB-QMMMGPOBSA-N
+FTY ?                acedrg               196         "dictionary generator"
+FTY ?                acedrg_database      11          "data source"
+FTY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FTY ?                refmac5              5.8.0222    "optimization tool"

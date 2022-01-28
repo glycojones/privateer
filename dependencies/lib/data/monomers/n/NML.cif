@@ -1,0 +1,124 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NML     NML      N-METHYLACETAMIDE     NON-POLYMER     12     5     .     
+#
+data_comp_NML
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NML     C1      C       CH3     0       -7.161      -5.562      -15.983     
+NML     C2      C       C       0       -8.114      -5.233      -17.090     
+NML     O2      O       O       0       -8.070      -4.137      -17.650     
+NML     N3      N       NH1     0       -8.987      -6.196      -17.414     
+NML     C3      C       CH3     0       -9.968      -6.078      -18.481     
+NML     H11     H       H       0       -6.668      -4.765      -15.728     
+NML     H12     H       H       0       -6.537      -6.243      -16.283     
+NML     H13     H       H       0       -7.654      -5.894      -15.216     
+NML     HN3     H       H       0       -8.970      -6.945      -16.962     
+NML     H31     H       H       0       -10.320     -5.174      -18.516     
+NML     H32     H       H       0       -10.699     -6.696      -18.316     
+NML     H33     H       H       0       -9.551      -6.296      -19.331     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NML       C1        C2        SINGLE    n         1.495     0.010     1.495     0.010     
+NML       C2        N3        SINGLE    n         1.331     0.011     1.331     0.011     
+NML       C2        O2        DOUBLE    n         1.229     0.012     1.229     0.012     
+NML       N3        C3        SINGLE    n         1.450     0.011     1.450     0.011     
+NML       C1        H11       SINGLE    n         1.089     0.010     0.971     0.014     
+NML       C1        H12       SINGLE    n         1.089     0.010     0.971     0.014     
+NML       C1        H13       SINGLE    n         1.089     0.010     0.971     0.014     
+NML       N3        HN3       SINGLE    n         1.016     0.010     0.872     0.020     
+NML       C3        H31       SINGLE    n         1.089     0.010     0.971     0.020     
+NML       C3        H32       SINGLE    n         1.089     0.010     0.971     0.020     
+NML       C3        H33       SINGLE    n         1.089     0.010     0.971     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NML          C2          C1         H11     109.678    1.50
+NML          C2          C1         H12     109.678    1.50
+NML          C2          C1         H13     109.678    1.50
+NML         H11          C1         H12     109.365    1.50
+NML         H11          C1         H13     109.365    1.50
+NML         H12          C1         H13     109.365    1.50
+NML          C1          C2          N3     115.848    1.50
+NML          C1          C2          O2     121.558    1.50
+NML          N3          C2          O2     122.594    1.50
+NML          C2          N3          C3     122.359    1.50
+NML          C2          N3         HN3     118.988    1.94
+NML          C3          N3         HN3     118.653    1.58
+NML          N3          C3         H31     109.480    1.50
+NML          N3          C3         H32     109.480    1.50
+NML          N3          C3         H33     109.480    1.50
+NML         H31          C3         H32     109.279    1.79
+NML         H31          C3         H33     109.279    1.79
+NML         H32          C3         H33     109.279    1.79
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NML             sp2_sp3_1          N3          C2          C1         H11       0.000   10.00     6
+NML             sp2_sp2_1          C1          C2          N3          C3     180.000   10.00     2
+NML             sp2_sp3_7          C2          N3          C3         H31       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NML    plan-1          C1   0.020
+NML    plan-1          C2   0.020
+NML    plan-1          N3   0.020
+NML    plan-1          O2   0.020
+NML    plan-2          C2   0.020
+NML    plan-2          C3   0.020
+NML    plan-2         HN3   0.020
+NML    plan-2          N3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NML SMILES           ACDLabs              10.04 "O=C(NC)C"
+NML SMILES_CANONICAL CACTVS               3.341 "CNC(C)=O"
+NML SMILES           CACTVS               3.341 "CNC(C)=O"
+NML SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)NC"
+NML SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)NC"
+NML InChI            InChI                1.03  "InChI=1S/C3H7NO/c1-3(5)4-2/h1-2H3,(H,4,5)"
+NML InChIKey         InChI                1.03  OHLUUHNLEMFGTQ-UHFFFAOYSA-N
+NML ?                acedrg               202         "dictionary generator"                  
+NML ?                acedrg_database      11          "data source"                           
+NML ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NML ?                refmac5              5.8.0189    "optimization tool"                     

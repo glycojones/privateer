@@ -1,0 +1,452 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SPW      SPW 'N,N'-BIS(3-AMMONIOPROPYL)BUTANE-1,4-' non-polymer        64  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SPW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SPW           DXZ    N    NH2       0.000      0.000    0.000    0.000
+ SPW           HXZ1   H    H         0.000      0.775    0.443   -0.326
+ SPW           HXZ2   H    H         0.000     -0.633   -0.592   -0.391
+ SPW           N14    N    NT        1.000     -0.199    0.208    1.001
+ SPW           DXX    N    NH2       0.000     -1.098    0.728    1.068
+ SPW           HXX2   H    H         0.000     -1.466    0.947    0.220
+ SPW           HXX1   H    H         0.000     -1.373    0.882    1.965
+ SPW           DXY    N    NH2       0.000     -0.265   -0.692    1.514
+ SPW           HXY2   H    H         0.000     -0.208   -1.450    0.943
+ SPW           HXY1   H    H         0.000     -0.371   -0.579    2.452
+ SPW           C13    C    CH2       0.000      0.863    1.032    1.611
+ SPW           H131   H    H         0.000      0.934    1.971    1.060
+ SPW           H132   H    H         0.000      1.809    0.493    1.535
+ SPW           C12    C    CH2       0.000      0.558    1.324    3.082
+ SPW           H121   H    H         0.000      0.476    0.374    3.614
+ SPW           H122   H    H         0.000     -0.395    1.855    3.139
+ SPW           C11    C    CH2       0.000      1.655    2.175    3.720
+ SPW           H111   H    H         0.000      1.724    3.114    3.167
+ SPW           H112   H    H         0.000      2.599    1.633    3.634
+ SPW           N10    N    NT        1.000      1.370    2.465    5.172
+ SPW           DXT    N    NH2       0.000      0.721    3.192    5.221
+ SPW           HXT2   H    H         0.000      0.525    3.544    4.369
+ SPW           HXT1   H    H         0.000      0.452    3.362    6.107
+ SPW           DXU    N    NH2       0.000      0.979    1.672    5.581
+ SPW           HXU2   H    H         0.000      0.823    0.993    4.948
+ SPW           HXU1   H    H         0.000      0.854    1.784    6.508
+ SPW           C9     C    CH2       0.000      2.611    2.860    5.941
+ SPW           H9A    H    H         0.000      3.273    3.396    5.258
+ SPW           H9B    H    H         0.000      3.102    1.944    6.277
+ SPW           C8     C    CH2       0.000      2.296    3.747    7.152
+ SPW           H8A    H    H         0.000      1.625    3.197    7.815
+ SPW           H8B    H    H         0.000      1.794    4.649    6.795
+ SPW           C7     C    CH2       0.000      3.564    4.135    7.915
+ SPW           H7A    H    H         0.000      4.227    4.663    7.226
+ SPW           H7B    H    H         0.000      4.051    3.218    8.255
+ SPW           C6     C    CH2       0.000      3.259    5.029    9.118
+ SPW           H6A    H    H         0.000      3.228    4.417   10.022
+ SPW           H6B    H    H         0.000      2.290    5.510    8.972
+ SPW           N5     N    NT        1.000      4.332    6.083    9.258
+ SPW           D5A    N    NH2       0.000      5.198    5.633    9.398
+ SPW           H5A2   H    H         0.000      5.102    4.698    9.480
+ SPW           H5A1   H    H         0.000      5.916    6.245    9.417
+ SPW           D5B    N    NH2       0.000      4.381    6.601    8.429
+ SPW           H5B2   H    H         0.000      3.810    6.252    7.765
+ SPW           H5B1   H    H         0.000      4.986    7.319    8.500
+ SPW           C4     C    CH2       0.000      4.098    7.034   10.404
+ SPW           H4A    H    H         0.000      4.168    6.469   11.337
+ SPW           H4B    H    H         0.000      3.093    7.449   10.306
+ SPW           C3     C    CH2       0.000      5.124    8.173   10.417
+ SPW           H3A    H    H         0.000      4.651    9.068   10.826
+ SPW           H3B    H    H         0.000      5.446    8.368    9.392
+ SPW           C2     C    CH2       0.000      6.336    7.799   11.272
+ SPW           H2A    H    H         0.000      6.785    6.899   10.846
+ SPW           H2B    H    H         0.000      5.983    7.585   12.283
+ SPW           N1     N    NT        1.000      7.338    8.875   11.318
+ SPW           D1C    N    NH2       0.000      8.134    8.586   11.902
+ SPW           H1C2   H    H         0.000      7.996    7.746   12.322
+ SPW           H1C1   H    H         0.000      8.841    9.219   11.900
+ SPW           D1B    N    NH2       0.000      7.668    9.070   10.353
+ SPW           H1B2   H    H         0.000      7.309    8.471    9.709
+ SPW           H1B1   H    H         0.000      8.264    9.809   10.306
+ SPW           D1A    N    NH2       0.000      6.937    9.737   11.719
+ SPW           H1A2   H    H         0.000      6.007    9.665   11.894
+ SPW           H1A1   H    H         0.000      7.580   10.427   11.832
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SPW      DXZ    n/a    N14    START
+ SPW      HXZ1   DXZ    .      .
+ SPW      HXZ2   DXZ    .      .
+ SPW      N14    DXZ    C13    .
+ SPW      DXX    N14    HXX1   .
+ SPW      HXX2   DXX    .      .
+ SPW      HXX1   DXX    .      .
+ SPW      DXY    N14    HXY1   .
+ SPW      HXY2   DXY    .      .
+ SPW      HXY1   DXY    .      .
+ SPW      C13    N14    C12    .
+ SPW      H131   C13    .      .
+ SPW      H132   C13    .      .
+ SPW      C12    C13    C11    .
+ SPW      H121   C12    .      .
+ SPW      H122   C12    .      .
+ SPW      C11    C12    N10    .
+ SPW      H111   C11    .      .
+ SPW      H112   C11    .      .
+ SPW      N10    C11    C9     .
+ SPW      DXT    N10    HXT1   .
+ SPW      HXT2   DXT    .      .
+ SPW      HXT1   DXT    .      .
+ SPW      DXU    N10    HXU1   .
+ SPW      HXU2   DXU    .      .
+ SPW      HXU1   DXU    .      .
+ SPW      C9     N10    C8     .
+ SPW      H9A    C9     .      .
+ SPW      H9B    C9     .      .
+ SPW      C8     C9     C7     .
+ SPW      H8A    C8     .      .
+ SPW      H8B    C8     .      .
+ SPW      C7     C8     C6     .
+ SPW      H7A    C7     .      .
+ SPW      H7B    C7     .      .
+ SPW      C6     C7     N5     .
+ SPW      H6A    C6     .      .
+ SPW      H6B    C6     .      .
+ SPW      N5     C6     C4     .
+ SPW      D5A    N5     H5A1   .
+ SPW      H5A2   D5A    .      .
+ SPW      H5A1   D5A    .      .
+ SPW      D5B    N5     H5B1   .
+ SPW      H5B2   D5B    .      .
+ SPW      H5B1   D5B    .      .
+ SPW      C4     N5     C3     .
+ SPW      H4A    C4     .      .
+ SPW      H4B    C4     .      .
+ SPW      C3     C4     C2     .
+ SPW      H3A    C3     .      .
+ SPW      H3B    C3     .      .
+ SPW      C2     C3     N1     .
+ SPW      H2A    C2     .      .
+ SPW      H2B    C2     .      .
+ SPW      N1     C2     D1A    .
+ SPW      D1C    N1     H1C1   .
+ SPW      H1C2   D1C    .      .
+ SPW      H1C1   D1C    .      .
+ SPW      D1B    N1     H1B1   .
+ SPW      H1B2   D1B    .      .
+ SPW      H1B1   D1B    .      .
+ SPW      D1A    N1     H1A1   .
+ SPW      H1A2   D1A    .      .
+ SPW      H1A1   D1A    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SPW       N1        C2        single    1.469     0.020     1.469     0.020     
+SPW       D1A       N1        single    1.410     0.020     1.410     0.020     
+SPW       D1B       N1        single    1.410     0.020     1.410     0.020     
+SPW       D1C       N1        single    1.410     0.020     1.410     0.020     
+SPW       C2        C3        single    1.524     0.020     1.524     0.020     
+SPW       H2A       C2        single    1.089     0.010     0.989     0.005     
+SPW       H2B       C2        single    1.089     0.010     0.989     0.005     
+SPW       C3        C4        single    1.524     0.020     1.524     0.020     
+SPW       H3A       C3        single    1.089     0.010     0.989     0.005     
+SPW       H3B       C3        single    1.089     0.010     0.989     0.005     
+SPW       C4        N5        single    1.469     0.020     1.469     0.020     
+SPW       H4A       C4        single    1.089     0.010     0.989     0.005     
+SPW       H4B       C4        single    1.089     0.010     0.989     0.005     
+SPW       N5        C6        single    1.469     0.020     1.469     0.020     
+SPW       D5A       N5        single    1.410     0.020     1.410     0.020     
+SPW       D5B       N5        single    1.410     0.020     1.410     0.020     
+SPW       C6        C7        single    1.524     0.020     1.524     0.020     
+SPW       H6A       C6        single    1.089     0.010     0.989     0.005     
+SPW       H6B       C6        single    1.089     0.010     0.989     0.005     
+SPW       C7        C8        single    1.524     0.020     1.524     0.020     
+SPW       H7A       C7        single    1.089     0.010     0.989     0.005     
+SPW       H7B       C7        single    1.089     0.010     0.989     0.005     
+SPW       C8        C9        single    1.524     0.020     1.524     0.020     
+SPW       H8A       C8        single    1.089     0.010     0.989     0.005     
+SPW       H8B       C8        single    1.089     0.010     0.989     0.005     
+SPW       C9        N10       single    1.469     0.020     1.469     0.020     
+SPW       H9A       C9        single    1.089     0.010     0.989     0.005     
+SPW       H9B       C9        single    1.089     0.010     0.989     0.005     
+SPW       N10       C11       single    1.469     0.020     1.469     0.020     
+SPW       DXT       N10       single    1.410     0.020     1.410     0.020     
+SPW       DXU       N10       single    1.410     0.020     1.410     0.020     
+SPW       C11       C12       single    1.524     0.020     1.524     0.020     
+SPW       H111      C11       single    1.089     0.010     0.989     0.005     
+SPW       H112      C11       single    1.089     0.010     0.989     0.005     
+SPW       C12       C13       single    1.524     0.020     1.524     0.020     
+SPW       H121      C12       single    1.089     0.010     0.989     0.005     
+SPW       H122      C12       single    1.089     0.010     0.989     0.005     
+SPW       C13       N14       single    1.469     0.020     1.469     0.020     
+SPW       H131      C13       single    1.089     0.010     0.989     0.005     
+SPW       H132      C13       single    1.089     0.010     0.989     0.005     
+SPW       DXX       N14       single    1.410     0.020     1.410     0.020     
+SPW       DXY       N14       single    1.410     0.020     1.410     0.020     
+SPW       N14       DXZ       single    1.410     0.020     1.410     0.020     
+SPW       H1A1      D1A       single    1.036     0.016     0.914     0.007     
+SPW       H1A2      D1A       single    1.036     0.016     0.914     0.007     
+SPW       H1B1      D1B       single    1.036     0.016     0.914     0.007     
+SPW       H1B2      D1B       single    1.036     0.016     0.914     0.007     
+SPW       H1C1      D1C       single    1.036     0.016     0.914     0.007     
+SPW       H1C2      D1C       single    1.036     0.016     0.914     0.007     
+SPW       H5A1      D5A       single    1.036     0.016     0.914     0.007     
+SPW       H5A2      D5A       single    1.036     0.016     0.914     0.007     
+SPW       H5B1      D5B       single    1.036     0.016     0.914     0.007     
+SPW       H5B2      D5B       single    1.036     0.016     0.914     0.007     
+SPW       HXT1      DXT       single    1.036     0.016     0.914     0.007     
+SPW       HXT2      DXT       single    1.036     0.016     0.914     0.007     
+SPW       HXU1      DXU       single    1.036     0.016     0.914     0.007     
+SPW       HXU2      DXU       single    1.036     0.016     0.914     0.007     
+SPW       HXX1      DXX       single    1.036     0.016     0.914     0.007     
+SPW       HXX2      DXX       single    1.036     0.016     0.914     0.007     
+SPW       HXY1      DXY       single    1.036     0.016     0.914     0.007     
+SPW       HXY2      DXY       single    1.036     0.016     0.914     0.007     
+SPW       HXZ1      DXZ       single    1.036     0.016     0.914     0.007     
+SPW       HXZ2      DXZ       single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SPW      HXZ1   DXZ    HXZ2    120.000    3.000
+ SPW      HXZ1   DXZ    N14     120.000    3.000
+ SPW      HXZ2   DXZ    N14     120.000    3.000
+ SPW      DXZ    N14    DXX     109.500    3.000
+ SPW      DXZ    N14    DXY     109.500    3.000
+ SPW      DXZ    N14    C13     109.500    3.000
+ SPW      DXX    N14    DXY     109.500    3.000
+ SPW      DXX    N14    C13     109.500    3.000
+ SPW      DXY    N14    C13     109.500    3.000
+ SPW      N14    DXX    HXX2    120.000    3.000
+ SPW      N14    DXX    HXX1    120.000    3.000
+ SPW      HXX2   DXX    HXX1    120.000    3.000
+ SPW      N14    DXY    HXY2    120.000    3.000
+ SPW      N14    DXY    HXY1    120.000    3.000
+ SPW      HXY2   DXY    HXY1    120.000    3.000
+ SPW      N14    C13    H131    109.470    3.000
+ SPW      N14    C13    H132    109.470    3.000
+ SPW      N14    C13    C12     109.470    3.000
+ SPW      H131   C13    H132    107.900    3.000
+ SPW      H131   C13    C12     109.470    3.000
+ SPW      H132   C13    C12     109.470    3.000
+ SPW      C13    C12    H121    109.470    3.000
+ SPW      C13    C12    H122    109.470    3.000
+ SPW      C13    C12    C11     111.000    3.000
+ SPW      H121   C12    H122    107.900    3.000
+ SPW      H121   C12    C11     109.470    3.000
+ SPW      H122   C12    C11     109.470    3.000
+ SPW      C12    C11    H111    109.470    3.000
+ SPW      C12    C11    H112    109.470    3.000
+ SPW      C12    C11    N10     109.470    3.000
+ SPW      H111   C11    H112    107.900    3.000
+ SPW      H111   C11    N10     109.470    3.000
+ SPW      H112   C11    N10     109.470    3.000
+ SPW      C11    N10    DXT     109.500    3.000
+ SPW      C11    N10    DXU     109.500    3.000
+ SPW      C11    N10    C9      109.470    3.000
+ SPW      DXT    N10    DXU     109.500    3.000
+ SPW      DXT    N10    C9      109.500    3.000
+ SPW      DXU    N10    C9      109.500    3.000
+ SPW      N10    DXT    HXT2    120.000    3.000
+ SPW      N10    DXT    HXT1    120.000    3.000
+ SPW      HXT2   DXT    HXT1    120.000    3.000
+ SPW      N10    DXU    HXU2    120.000    3.000
+ SPW      N10    DXU    HXU1    120.000    3.000
+ SPW      HXU2   DXU    HXU1    120.000    3.000
+ SPW      N10    C9     H9A     109.470    3.000
+ SPW      N10    C9     H9B     109.470    3.000
+ SPW      N10    C9     C8      109.470    3.000
+ SPW      H9A    C9     H9B     107.900    3.000
+ SPW      H9A    C9     C8      109.470    3.000
+ SPW      H9B    C9     C8      109.470    3.000
+ SPW      C9     C8     H8A     109.470    3.000
+ SPW      C9     C8     H8B     109.470    3.000
+ SPW      C9     C8     C7      111.000    3.000
+ SPW      H8A    C8     H8B     107.900    3.000
+ SPW      H8A    C8     C7      109.470    3.000
+ SPW      H8B    C8     C7      109.470    3.000
+ SPW      C8     C7     H7A     109.470    3.000
+ SPW      C8     C7     H7B     109.470    3.000
+ SPW      C8     C7     C6      111.000    3.000
+ SPW      H7A    C7     H7B     107.900    3.000
+ SPW      H7A    C7     C6      109.470    3.000
+ SPW      H7B    C7     C6      109.470    3.000
+ SPW      C7     C6     H6A     109.470    3.000
+ SPW      C7     C6     H6B     109.470    3.000
+ SPW      C7     C6     N5      109.470    3.000
+ SPW      H6A    C6     H6B     107.900    3.000
+ SPW      H6A    C6     N5      109.470    3.000
+ SPW      H6B    C6     N5      109.470    3.000
+ SPW      C6     N5     D5A     109.500    3.000
+ SPW      C6     N5     D5B     109.500    3.000
+ SPW      C6     N5     C4      109.470    3.000
+ SPW      D5A    N5     D5B     109.500    3.000
+ SPW      D5A    N5     C4      109.500    3.000
+ SPW      D5B    N5     C4      109.500    3.000
+ SPW      N5     D5A    H5A2    120.000    3.000
+ SPW      N5     D5A    H5A1    120.000    3.000
+ SPW      H5A2   D5A    H5A1    120.000    3.000
+ SPW      N5     D5B    H5B2    120.000    3.000
+ SPW      N5     D5B    H5B1    120.000    3.000
+ SPW      H5B2   D5B    H5B1    120.000    3.000
+ SPW      N5     C4     H4A     109.470    3.000
+ SPW      N5     C4     H4B     109.470    3.000
+ SPW      N5     C4     C3      109.470    3.000
+ SPW      H4A    C4     H4B     107.900    3.000
+ SPW      H4A    C4     C3      109.470    3.000
+ SPW      H4B    C4     C3      109.470    3.000
+ SPW      C4     C3     H3A     109.470    3.000
+ SPW      C4     C3     H3B     109.470    3.000
+ SPW      C4     C3     C2      111.000    3.000
+ SPW      H3A    C3     H3B     107.900    3.000
+ SPW      H3A    C3     C2      109.470    3.000
+ SPW      H3B    C3     C2      109.470    3.000
+ SPW      C3     C2     H2A     109.470    3.000
+ SPW      C3     C2     H2B     109.470    3.000
+ SPW      C3     C2     N1      109.470    3.000
+ SPW      H2A    C2     H2B     107.900    3.000
+ SPW      H2A    C2     N1      109.470    3.000
+ SPW      H2B    C2     N1      109.470    3.000
+ SPW      C2     N1     D1C     109.500    3.000
+ SPW      C2     N1     D1B     109.500    3.000
+ SPW      C2     N1     D1A     109.500    3.000
+ SPW      D1C    N1     D1B     109.500    3.000
+ SPW      D1C    N1     D1A     109.500    3.000
+ SPW      D1B    N1     D1A     109.500    3.000
+ SPW      N1     D1C    H1C2    120.000    3.000
+ SPW      N1     D1C    H1C1    120.000    3.000
+ SPW      H1C2   D1C    H1C1    120.000    3.000
+ SPW      N1     D1B    H1B2    120.000    3.000
+ SPW      N1     D1B    H1B1    120.000    3.000
+ SPW      H1B2   D1B    H1B1    120.000    3.000
+ SPW      N1     D1A    H1A2    120.000    3.000
+ SPW      N1     D1A    H1A1    120.000    3.000
+ SPW      H1A2   D1A    H1A1    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SPW      var_1    HXZ2   DXZ    N14    C13      175.000   20.000   1
+ SPW      var_2    DXZ    N14    DXX    HXX1     175.000   20.000   1
+ SPW      var_3    DXZ    N14    DXY    HXY1     175.000   20.000   1
+ SPW      var_4    DXZ    N14    C13    C12     -179.833   20.000   1
+ SPW      var_5    N14    C13    C12    C11      179.880   20.000   3
+ SPW      var_6    C13    C12    C11    N10     -179.736   20.000   3
+ SPW      var_7    C12    C11    N10    C9       159.720   20.000   1
+ SPW      var_8    C11    N10    DXT    HXT1     175.000   20.000   1
+ SPW      var_9    C11    N10    DXU    HXU1     175.000   20.000   1
+ SPW      var_10   C11    N10    C9     C8       153.490   20.000   1
+ SPW      var_11   N10    C9     C8     C7      -179.971   20.000   3
+ SPW      var_12   C9     C8     C7     C6       179.556   20.000   3
+ SPW      var_13   C8     C7     C6     N5      -141.717   20.000   3
+ SPW      var_14   C7     C6     N5     C4       178.740   20.000   1
+ SPW      var_15   C6     N5     D5A    H5A1     175.000   20.000   1
+ SPW      var_16   C6     N5     D5B    H5B1     175.000   20.000   1
+ SPW      var_17   C6     N5     C4     C3      -173.835   20.000   1
+ SPW      var_18   N5     C4     C3     C2       -91.123   20.000   3
+ SPW      var_19   C4     C3     C2     N1      -179.481   20.000   3
+ SPW      var_20   C3     C2     N1     D1A       60.124   20.000   1
+ SPW      var_21   C2     N1     D1C    H1C1     175.000   20.000   1
+ SPW      var_22   C2     N1     D1B    H1B1     175.000   20.000   1
+ SPW      var_23   C2     N1     D1A    H1A1     175.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SPW      chir_01  N1     C2     D1A    D1B       positiv
+ SPW      chir_02  N5     C4     C6     D5A       positiv
+ SPW      chir_03  N10    C9     C11    DXT       positiv
+ SPW      chir_04  N14    C13    DXX    DXY       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SPW      plan-1    D1A       0.020
+ SPW      plan-1    N1        0.020
+ SPW      plan-1    H1A1      0.020
+ SPW      plan-1    H1A2      0.020
+ SPW      plan-2    D1B       0.020
+ SPW      plan-2    N1        0.020
+ SPW      plan-2    H1B1      0.020
+ SPW      plan-2    H1B2      0.020
+ SPW      plan-3    D1C       0.020
+ SPW      plan-3    N1        0.020
+ SPW      plan-3    H1C1      0.020
+ SPW      plan-3    H1C2      0.020
+ SPW      plan-4    D5A       0.020
+ SPW      plan-4    N5        0.020
+ SPW      plan-4    H5A1      0.020
+ SPW      plan-4    H5A2      0.020
+ SPW      plan-5    D5B       0.020
+ SPW      plan-5    N5        0.020
+ SPW      plan-5    H5B1      0.020
+ SPW      plan-5    H5B2      0.020
+ SPW      plan-6    DXT       0.020
+ SPW      plan-6    N10       0.020
+ SPW      plan-6    HXT1      0.020
+ SPW      plan-6    HXT2      0.020
+ SPW      plan-7    DXU       0.020
+ SPW      plan-7    N10       0.020
+ SPW      plan-7    HXU1      0.020
+ SPW      plan-7    HXU2      0.020
+ SPW      plan-8    DXX       0.020
+ SPW      plan-8    N14       0.020
+ SPW      plan-8    HXX1      0.020
+ SPW      plan-8    HXX2      0.020
+ SPW      plan-9    DXY       0.020
+ SPW      plan-9    N14       0.020
+ SPW      plan-9    HXY1      0.020
+ SPW      plan-9    HXY2      0.020
+ SPW      plan-10   DXZ       0.020
+ SPW      plan-10   N14       0.020
+ SPW      plan-10   HXZ1      0.020
+ SPW      plan-10   HXZ2      0.020
+# ------------------------------------------------------

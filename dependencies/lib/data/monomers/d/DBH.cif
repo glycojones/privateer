@@ -1,0 +1,150 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DBH     DBH      "2,3-DIHYDROXY-BENZOIC ACID"     NON-POLYMER     16     11     .     
+#
+data_comp_DBH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DBH     O17     O       OC      -1      3.244       -0.365      0.590       
+DBH     C21     C       C       0       2.456       -0.168      -0.351      
+DBH     O9      O       O       0       2.810       0.084       -1.517      
+DBH     C18     C       CR6     0       0.983       -0.239      -0.063      
+DBH     C15     C       CR16    0       0.433       -1.390      0.531       
+DBH     C12     C       CR16    0       -0.907      -1.476      0.803       
+DBH     C3      C       CR6     0       0.127       0.835       -0.377      
+DBH     O3      O       OH1     0       0.561       1.984       -0.950      
+DBH     C6      C       CR6     0       -1.247      0.741       -0.096      
+DBH     C9      C       CR16    0       -1.757      -0.409      0.490       
+DBH     O6      O       OH1     0       -2.088      1.777       -0.397      
+DBH     HC15    H       H       0       0.999       -2.111      0.744       
+DBH     HC12    H       H       0       -1.258      -2.250      1.199       
+DBH     HO3     H       H       0       1.029       2.414       -0.374      
+DBH     HC9     H       H       0       -2.678      -0.469      0.677       
+DBH     HO6     H       H       0       -2.136      1.879       -1.247      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DBH       O17       C21       SINGLE    n         1.244     0.020     1.244     0.020     
+DBH       C21       O9        DOUBLE    n         1.244     0.020     1.244     0.020     
+DBH       C21       C18       SINGLE    n         1.498     0.020     1.498     0.020     
+DBH       C18       C15       DOUBLE    y         1.401     0.010     1.401     0.010     
+DBH       C18       C3        SINGLE    y         1.399     0.010     1.399     0.010     
+DBH       C15       C12       SINGLE    y         1.364     0.011     1.364     0.011     
+DBH       C12       C9        DOUBLE    y         1.393     0.010     1.393     0.010     
+DBH       C3        O3        SINGLE    n         1.353     0.010     1.353     0.010     
+DBH       C3        C6        DOUBLE    y         1.395     0.010     1.395     0.010     
+DBH       C6        C9        SINGLE    y         1.381     0.010     1.381     0.010     
+DBH       C6        O6        SINGLE    n         1.367     0.010     1.367     0.010     
+DBH       C15       HC15      SINGLE    n         1.082     0.013     0.941     0.017     
+DBH       C12       HC12      SINGLE    n         1.082     0.013     0.938     0.015     
+DBH       O3        HO3       SINGLE    n         0.970     0.012     0.858     0.020     
+DBH       C9        HC9       SINGLE    n         1.082     0.013     0.942     0.017     
+DBH       O6        HO6       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DBH         O17         C21          O9     124.103    1.50
+DBH         O17         C21         C18     117.949    1.50
+DBH          O9         C21         C18     117.949    1.50
+DBH         C21         C18         C15     120.644    1.50
+DBH         C21         C18          C3     120.721    1.50
+DBH         C15         C18          C3     118.636    1.50
+DBH         C18         C15         C12     121.321    1.50
+DBH         C18         C15        HC15     119.061    1.50
+DBH         C12         C15        HC15     119.621    1.50
+DBH         C15         C12          C9     120.434    1.50
+DBH         C15         C12        HC12     119.922    1.50
+DBH          C9         C12        HC12     119.644    1.50
+DBH         C18          C3          O3     123.335    1.50
+DBH         C18          C3          C6     119.813    1.50
+DBH          O3          C3          C6     116.851    1.50
+DBH          C3          O3         HO3     108.401    2.99
+DBH          C3          C6          C9     119.729    1.50
+DBH          C3          C6          O6     119.038    2.36
+DBH          C9          C6          O6     121.232    2.46
+DBH         C12          C9          C6     120.058    1.50
+DBH         C12          C9         HC9     120.168    1.50
+DBH          C6          C9         HC9     119.780    1.50
+DBH          C6          O6         HO6     110.003    2.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DBH             sp2_sp2_1         C15         C18         C21         O17     180.000   10.00     2
+DBH       const_sp2_sp2_2         C12         C15         C18         C21     180.000   10.00     2
+DBH              const_24         C21         C18          C3          O3       0.000   10.00     2
+DBH       const_sp2_sp2_5          C9         C12         C15         C18       0.000   10.00     2
+DBH       const_sp2_sp2_9         C15         C12          C9          C6       0.000   10.00     2
+DBH              const_20          O3          C3          C6          O6       0.000   10.00     2
+DBH              const_15          O6          C6          C9         C12     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DBH    plan-1         C12   0.020
+DBH    plan-1         C15   0.020
+DBH    plan-1         C18   0.020
+DBH    plan-1         C21   0.020
+DBH    plan-1          C3   0.020
+DBH    plan-1          C6   0.020
+DBH    plan-1          C9   0.020
+DBH    plan-1        HC12   0.020
+DBH    plan-1        HC15   0.020
+DBH    plan-1         HC9   0.020
+DBH    plan-1          O3   0.020
+DBH    plan-1          O6   0.020
+DBH    plan-2         C18   0.020
+DBH    plan-2         C21   0.020
+DBH    plan-2         O17   0.020
+DBH    plan-2          O9   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DBH SMILES           ACDLabs              10.04 "O=C(O)c1cccc(O)c1O"
+DBH SMILES_CANONICAL CACTVS               3.341 "OC(=O)c1cccc(O)c1O"
+DBH SMILES           CACTVS               3.341 "OC(=O)c1cccc(O)c1O"
+DBH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)O)O)C(=O)O"
+DBH SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)O)O)C(=O)O"
+DBH InChI            InChI                1.03  "InChI=1S/C7H6O4/c8-5-3-1-2-4(6(5)9)7(10)11/h1-3,8-9H,(H,10,11)"
+DBH InChIKey         InChI                1.03  GLDQAMYCGOIJDV-UHFFFAOYSA-N
+DBH ?                acedrg               202         "dictionary generator"                  
+DBH ?                acedrg_database      11          "data source"                           
+DBH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DBH ?                refmac5              5.8.0189    "optimization tool"                     

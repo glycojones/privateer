@@ -1,0 +1,111 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MLA     MLA     "MALONICACID"     NON-POLYMER     9     7     .     
+#
+data_comp_MLA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MLA     C1      C       C       0       41.374      13.909      83.079      
+MLA     O1A     O       OC      -1      40.653      12.897      83.126      
+MLA     O1B     O       O       0       41.724      14.558      84.081      
+MLA     C2      C       CH2     0       41.858      14.383      81.712      
+MLA     C3      C       C       0       43.112      13.665      81.225      
+MLA     O3A     O       O       0       44.169      13.837      81.859      
+MLA     O3B     O       OC      -1      43.019      12.941      80.218      
+MLA     HC21    H       H       0       42.044      15.340      81.760      
+MLA     HC22    H       H       0       41.145      14.243      81.061      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MLA       C1        O1A       SINGLE    n         1.244     0.020     1.244     0.020     
+MLA       C1        O1B       DOUBLE    n         1.244     0.020     1.244     0.020     
+MLA       C1        C2        SINGLE    n         1.525     0.014     1.525     0.014     
+MLA       C2        C3        SINGLE    n         1.525     0.014     1.525     0.014     
+MLA       C3        O3A       DOUBLE    n         1.244     0.020     1.244     0.020     
+MLA       C3        O3B       SINGLE    n         1.244     0.020     1.244     0.020     
+MLA       C2        HC21      SINGLE    n         1.089     0.010     0.976     0.020     
+MLA       C2        HC22      SINGLE    n         1.089     0.010     0.976     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MLA         O1A          C1         O1B     123.858    1.50
+MLA         O1A          C1          C2     118.071    1.50
+MLA         O1B          C1          C2     118.071    1.50
+MLA          C1          C2          C3     111.575    3.00
+MLA          C1          C2        HC21     108.218    1.50
+MLA          C1          C2        HC22     108.218    1.50
+MLA          C3          C2        HC21     108.218    1.50
+MLA          C3          C2        HC22     108.218    1.50
+MLA        HC21          C2        HC22     107.458    1.90
+MLA          C2          C3         O3A     118.071    1.50
+MLA          C2          C3         O3B     118.071    1.50
+MLA         O3A          C3         O3B     123.858    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MLA             sp2_sp3_2         O1A          C1          C2          C3     120.000   10.00     6
+MLA             sp2_sp3_8         O3A          C3          C2          C1     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MLA    plan-1          C1   0.020
+MLA    plan-1          C2   0.020
+MLA    plan-1         O1A   0.020
+MLA    plan-1         O1B   0.020
+MLA    plan-2          C2   0.020
+MLA    plan-2          C3   0.020
+MLA    plan-2         O3A   0.020
+MLA    plan-2         O3B   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MLA SMILES           ACDLabs              10.04 "O=C(O)CC(=O)O"
+MLA SMILES_CANONICAL CACTVS               3.341 "OC(=O)CC(O)=O"
+MLA SMILES           CACTVS               3.341 "OC(=O)CC(O)=O"
+MLA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)C(=O)O"
+MLA SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)C(=O)O"
+MLA InChI            InChI                1.03  "InChI=1S/C3H4O4/c4-2(5)1-3(6)7/h1H2,(H,4,5)(H,6,7)"
+MLA InChIKey         InChI                1.03  OFOBLEOULBTSOW-UHFFFAOYSA-N
+MLA ?                acedrg               190         "dictionary generator"                  
+MLA ?                acedrg_database      11          "data source"                           
+MLA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MLA ?                refmac5              5.8.0158    "optimization tool"                     

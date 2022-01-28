@@ -1,0 +1,258 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GL5      GL5 '3,8,9,10-TETRAHYDROXY-7-HYDROXYMETHY' pyranose           30  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GL5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GL5           C1     C    CT        0.000      0.000    0.000    0.000
+ GL5           C7     C    CR5       0.000     -0.347    1.435   -0.324
+ GL5           N1     N    NR5       0.000      0.352    1.734   -1.439
+ GL5           O9     O    OH1       0.000      0.317    2.992   -2.087
+ GL5           HO9    H    H         0.000      0.843    3.133   -2.882
+ GL5           C8     C    CR5       0.000      1.082    0.694   -1.856
+ GL5           O8     O    O         0.000      1.795    0.719   -2.840
+ GL5           N2     N    NR15      0.000      0.939   -0.385   -1.063
+ GL5           HN2    H    H         0.000      1.402   -1.309   -1.179
+ GL5           O7     O    O         0.000     -1.096    2.165    0.290
+ GL5           O5     O    O2        0.000      0.625   -0.087    1.271
+ GL5           C5     C    CH1       0.000     -0.257    0.494    2.232
+ GL5           H5     H    H         0.000     -0.537    1.505    1.906
+ GL5           C6     C    CH2       0.000      0.448    0.573    3.587
+ GL5           H61    H    H         0.000      0.726   -0.432    3.912
+ GL5           H62    H    H         0.000     -0.226    1.018    4.321
+ GL5           O6     O    OH1       0.000      1.623    1.378    3.467
+ GL5           HO6    H    H         0.000      2.067    1.429    4.324
+ GL5           C4     C    CH1       0.000     -1.515   -0.366    2.364
+ GL5           H4     H    H         0.000     -1.234   -1.387    2.657
+ GL5           O4     O    OH1       0.000     -2.377    0.195    3.355
+ GL5           HO4    H    H         0.000     -1.918    0.216    4.205
+ GL5           C3     C    CH1       0.000     -2.240   -0.402    1.014
+ GL5           H3     H    H         0.000     -2.606    0.604    0.765
+ GL5           O3     O    OH1       0.000     -3.341   -1.310    1.081
+ GL5           HO3    H    H         0.000     -3.964   -1.011    1.757
+ GL5           C2     C    CH1       0.000     -1.251   -0.870   -0.059
+ GL5           H2     H    H         0.000     -0.978   -1.919    0.126
+ GL5           O2     O    OH1       0.000     -1.853   -0.755   -1.349
+ GL5           HO2    H    H         0.000     -2.646   -1.307   -1.384
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GL5      C1     n/a    O5     START
+ GL5      C7     C1     O7     .
+ GL5      N1     C7     C8     .
+ GL5      O9     N1     HO9    .
+ GL5      HO9    O9     .      .
+ GL5      C8     N1     N2     .
+ GL5      O8     C8     .      .
+ GL5      N2     C8     HN2    .
+ GL5      HN2    N2     .      .
+ GL5      O7     C7     .      .
+ GL5      O5     C1     .      END
+ GL5      C5     O5     C4     .
+ GL5      H5     C5     .      .
+ GL5      C6     C5     O6     .
+ GL5      H61    C6     .      .
+ GL5      H62    C6     .      .
+ GL5      O6     C6     HO6    .
+ GL5      HO6    O6     .      .
+ GL5      C4     C5     C3     .
+ GL5      H4     C4     .      .
+ GL5      O4     C4     HO4    .
+ GL5      HO4    O4     .      .
+ GL5      C3     C4     C2     .
+ GL5      H3     C3     .      .
+ GL5      O3     C3     HO3    .
+ GL5      HO3    O3     .      .
+ GL5      C2     C3     O2     .
+ GL5      H2     C2     .      .
+ GL5      O2     C2     HO2    .
+ GL5      HO2    O2     .      .
+ GL5      C1     C2     .    ADD
+ GL5      C1     N2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GL5       C1        C2        single    1.524     0.020     1.524     0.020     
+GL5       O5        C1        single    1.426     0.020     1.426     0.020     
+GL5       C1        N2        single    1.462     0.020     1.462     0.020     
+GL5       C7        C1        single    1.500     0.020     1.500     0.020     
+GL5       O2        C2        single    1.432     0.020     1.432     0.020     
+GL5       C2        C3        single    1.524     0.020     1.524     0.020     
+GL5       H2        C2        single    1.089     0.010     0.989     0.005     
+GL5       HO2       O2        single    0.970     0.012     0.839     0.014     
+GL5       O3        C3        single    1.432     0.020     1.432     0.020     
+GL5       C3        C4        single    1.524     0.020     1.524     0.020     
+GL5       H3        C3        single    1.089     0.010     0.989     0.005     
+GL5       HO3       O3        single    0.970     0.012     0.839     0.014     
+GL5       O4        C4        single    1.432     0.020     1.432     0.020     
+GL5       C4        C5        single    1.524     0.020     1.524     0.020     
+GL5       H4        C4        single    1.089     0.010     0.989     0.005     
+GL5       HO4       O4        single    0.970     0.012     0.839     0.014     
+GL5       C6        C5        single    1.524     0.020     1.524     0.020     
+GL5       C5        O5        single    1.426     0.020     1.426     0.020     
+GL5       H5        C5        single    1.089     0.010     0.989     0.005     
+GL5       O6        C6        single    1.432     0.020     1.432     0.020     
+GL5       H61       C6        single    1.089     0.010     0.989     0.005     
+GL5       H62       C6        single    1.089     0.010     0.989     0.005     
+GL5       HO6       O6        single    0.970     0.012     0.839     0.014     
+GL5       N2        C8        single    1.340     0.020     1.340     0.020     
+GL5       HN2       N2        single    1.016     0.010     0.899     0.007     
+GL5       O8        C8        double    1.285     0.020     1.285     0.020     
+GL5       C8        N1        single    1.337     0.020     1.337     0.020     
+GL5       N1        C7        single    1.337     0.020     1.337     0.020     
+GL5       O9        N1        single    1.434     0.020     1.434     0.020     
+GL5       O7        C7        double    1.285     0.020     1.285     0.020     
+GL5       HO9       O9        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GL5      C7     C1     O5      109.500    3.000
+ GL5      C2     C1     N2      109.500    3.000
+ GL5      C7     C1     C2      109.470    3.000
+ GL5      O5     C1     C2      109.470    3.000
+ GL5      C7     C1     N2      109.500    3.000
+ GL5      O5     C1     N2      109.500    3.000
+ GL5      C1     C7     N1      108.000    3.000
+ GL5      C1     C7     O7      108.000    3.000
+ GL5      N1     C7     O7      108.000    3.000
+ GL5      C7     N1     O9      108.000    3.000
+ GL5      C7     N1     C8      108.000    3.000
+ GL5      O9     N1     C8      108.000    3.000
+ GL5      N1     O9     HO9     120.000    3.000
+ GL5      N1     C8     O8      108.000    3.000
+ GL5      N1     C8     N2      108.000    3.000
+ GL5      O8     C8     N2      108.000    3.000
+ GL5      C8     N2     HN2     126.000    3.000
+ GL5      C8     N2     C1      108.000    3.000
+ GL5      HN2    N2     C1      108.000    3.000
+ GL5      C1     O5     C5      111.800    3.000
+ GL5      O5     C5     H5      109.470    3.000
+ GL5      O5     C5     C6      109.470    3.000
+ GL5      O5     C5     C4      109.470    3.000
+ GL5      H5     C5     C6      108.340    3.000
+ GL5      H5     C5     C4      108.340    3.000
+ GL5      C6     C5     C4      111.000    3.000
+ GL5      C5     C6     H61     109.470    3.000
+ GL5      C5     C6     H62     109.470    3.000
+ GL5      C5     C6     O6      109.470    3.000
+ GL5      H61    C6     H62     107.900    3.000
+ GL5      H61    C6     O6      109.470    3.000
+ GL5      H62    C6     O6      109.470    3.000
+ GL5      C6     O6     HO6     109.470    3.000
+ GL5      C5     C4     H4      108.340    3.000
+ GL5      C5     C4     O4      109.470    3.000
+ GL5      C5     C4     C3      111.000    3.000
+ GL5      H4     C4     O4      109.470    3.000
+ GL5      H4     C4     C3      108.340    3.000
+ GL5      O4     C4     C3      109.470    3.000
+ GL5      C4     O4     HO4     109.470    3.000
+ GL5      C4     C3     H3      108.340    3.000
+ GL5      C4     C3     O3      109.470    3.000
+ GL5      C4     C3     C2      111.000    3.000
+ GL5      H3     C3     O3      109.470    3.000
+ GL5      H3     C3     C2      108.340    3.000
+ GL5      O3     C3     C2      109.470    3.000
+ GL5      C3     O3     HO3     109.470    3.000
+ GL5      C3     C2     H2      108.340    3.000
+ GL5      C3     C2     O2      109.470    3.000
+ GL5      C3     C2     C1      111.000    3.000
+ GL5      H2     C2     O2      109.470    3.000
+ GL5      H2     C2     C1      108.340    3.000
+ GL5      O2     C2     C1      109.470    3.000
+ GL5      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GL5      var_1    O5     C1     C7     O7       -60.000   20.000   1
+ GL5      CONST_1  C1     C7     N1     C8         0.000    0.000   0
+ GL5      var_2    C7     N1     O9     HO9     -179.968   20.000   1
+ GL5      CONST_2  C7     N1     C8     N2         0.000    0.000   0
+ GL5      CONST_3  N1     C8     N2     C1         0.000    0.000   0
+ GL5      CONST_4  C8     N2     C1     O5      -120.000    0.000   0
+ GL5      var_3    C1     O5     C5     C4        60.000   20.000   1
+ GL5      var_4    O5     C5     C6     O6        59.888   20.000   3
+ GL5      var_5    C5     C6     O6     HO6      179.960   20.000   1
+ GL5      var_6    O5     C5     C4     C3       -60.000   20.000   3
+ GL5      var_7    C5     C4     O4     HO4      -60.427   20.000   1
+ GL5      var_8    C5     C4     C3     C2        60.000   20.000   3
+ GL5      var_9    C4     C3     O3     HO3       60.885   20.000   1
+ GL5      var_10   C4     C3     C2     O2       180.000   20.000   3
+ GL5      var_11   C3     C2     C1     O5        60.000   20.000   1
+ GL5      var_12   C3     C2     O2     HO2      -60.229   20.000   1
+ GL5      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GL5      chir_01  C1     C2     O5     N2        negativ
+ GL5      chir_02  C2     C1     O2     C3        positiv
+ GL5      chir_03  C3     C2     O3     C4        negativ
+ GL5      chir_04  C4     C3     O4     C5        positiv
+ GL5      chir_05  C5     C4     C6     O5        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GL5      plan-1    N2        0.020
+ GL5      plan-1    C1        0.020
+ GL5      plan-1    C8        0.020
+ GL5      plan-1    HN2       0.020
+ GL5      plan-1    N1        0.020
+ GL5      plan-1    C7        0.020
+ GL5      plan-1    O8        0.020
+ GL5      plan-1    O9        0.020
+ GL5      plan-1    O7        0.020
+# ------------------------------------------------------

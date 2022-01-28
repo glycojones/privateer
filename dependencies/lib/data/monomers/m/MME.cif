@@ -1,0 +1,198 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MME      MME 'N-METHYL METHIONINE                 ' non-polymer        22  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MME
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MME           OXT    O    OC       -0.500      0.000    0.000    0.000
+ MME           C      C    C         0.000     -0.903    0.865   -0.053
+ MME           O      O    OC       -0.500     -0.869    1.851    0.715
+ MME           CA     C    CH1       0.000     -2.029    0.717   -1.043
+ MME           HA     H    H         0.000     -2.388    1.713   -1.339
+ MME           N      N    NH1       0.000     -1.548   -0.002   -2.229
+ MME           H      H    H         0.000     -1.560   -1.001   -2.374
+ MME           CM     C    CH3       0.000     -1.046    1.013   -3.165
+ MME           HM3    H    H         0.000     -1.829    1.681   -3.423
+ MME           HM2    H    H         0.000     -0.257    1.559   -2.711
+ MME           HM1    H    H         0.000     -0.684    0.542   -4.043
+ MME           CB     C    CH2       0.000     -3.174   -0.066   -0.401
+ MME           HB2    H    H         0.000     -3.530    0.469    0.482
+ MME           HB3    H    H         0.000     -2.816   -1.055   -0.105
+ MME           CG     C    CH2       0.000     -4.317   -0.216   -1.405
+ MME           HG2    H    H         0.000     -3.958   -0.750   -2.287
+ MME           HG3    H    H         0.000     -4.673    0.774   -1.700
+ MME           SD     S    S2        0.000     -5.675   -1.145   -0.644
+ MME           CE     C    CH3       0.000     -6.854   -1.168   -2.021
+ MME           HE3    H    H         0.000     -7.115   -0.175   -2.292
+ MME           HE2    H    H         0.000     -6.422   -1.653   -2.862
+ MME           HE1    H    H         0.000     -7.734   -1.690   -1.737
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MME      OXT    n/a    C      START
+ MME      C      OXT    CA     .
+ MME      O      C      .      .
+ MME      CA     C      CB     .
+ MME      HA     CA     .      .
+ MME      N      CA     CM     .
+ MME      H      N      .      .
+ MME      CM     N      HM1    .
+ MME      HM3    CM     .      .
+ MME      HM2    CM     .      .
+ MME      HM1    CM     .      .
+ MME      CB     CA     CG     .
+ MME      HB2    CB     .      .
+ MME      HB3    CB     .      .
+ MME      CG     CB     SD     .
+ MME      HG2    CG     .      .
+ MME      HG3    CG     .      .
+ MME      SD     CG     CE     .
+ MME      CE     SD     HE1    .
+ MME      HE3    CE     .      .
+ MME      HE2    CE     .      .
+ MME      HE1    CE     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MME       N         CA        single    1.450     0.020     1.450     0.020     
+MME       CM        N         single    1.450     0.020     1.450     0.020     
+MME       H         N         single    1.036     0.016     0.914     0.007     
+MME       CA        C         single    1.500     0.020     1.500     0.020     
+MME       CB        CA        single    1.524     0.020     1.524     0.020     
+MME       HA        CA        single    1.089     0.010     0.989     0.005     
+MME       O         C         deloc     1.250     0.020     1.250     0.020     
+MME       C         OXT       deloc     1.250     0.020     1.250     0.020     
+MME       CG        CB        single    1.524     0.020     1.524     0.020     
+MME       HB2       CB        single    1.089     0.010     0.989     0.005     
+MME       HB3       CB        single    1.089     0.010     0.989     0.005     
+MME       SD        CG        single    1.762     0.020     1.762     0.020     
+MME       HG2       CG        single    1.089     0.010     0.989     0.005     
+MME       HG3       CG        single    1.089     0.010     0.989     0.005     
+MME       CE        SD        single    1.762     0.020     1.762     0.020     
+MME       HE1       CE        single    1.089     0.010     0.989     0.005     
+MME       HE2       CE        single    1.089     0.010     0.989     0.005     
+MME       HE3       CE        single    1.089     0.010     0.989     0.005     
+MME       HM1       CM        single    1.089     0.010     0.989     0.005     
+MME       HM2       CM        single    1.089     0.010     0.989     0.005     
+MME       HM3       CM        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MME      OXT    C      O       123.000    3.000
+ MME      OXT    C      CA      118.500    3.000
+ MME      O      C      CA      118.500    3.000
+ MME      C      CA     HA      108.810    3.000
+ MME      C      CA     N       111.600    3.000
+ MME      C      CA     CB      109.470    3.000
+ MME      HA     CA     N       108.550    3.000
+ MME      HA     CA     CB      108.340    3.000
+ MME      N      CA     CB      110.000    3.000
+ MME      CA     N      H       118.500    3.000
+ MME      CA     N      CM      120.000    3.000
+ MME      H      N      CM      118.500    3.000
+ MME      N      CM     HM3     109.470    3.000
+ MME      N      CM     HM2     109.470    3.000
+ MME      N      CM     HM1     109.470    3.000
+ MME      HM3    CM     HM2     109.470    3.000
+ MME      HM3    CM     HM1     109.470    3.000
+ MME      HM2    CM     HM1     109.470    3.000
+ MME      CA     CB     HB2     109.470    3.000
+ MME      CA     CB     HB3     109.470    3.000
+ MME      CA     CB     CG      111.000    3.000
+ MME      HB2    CB     HB3     107.900    3.000
+ MME      HB2    CB     CG      109.470    3.000
+ MME      HB3    CB     CG      109.470    3.000
+ MME      CB     CG     HG2     109.470    3.000
+ MME      CB     CG     HG3     109.470    3.000
+ MME      CB     CG     SD      109.500    3.000
+ MME      HG2    CG     HG3     107.900    3.000
+ MME      HG2    CG     SD      109.500    3.000
+ MME      HG3    CG     SD      109.500    3.000
+ MME      CG     SD     CE      100.059    3.000
+ MME      SD     CE     HE3     109.500    3.000
+ MME      SD     CE     HE2     109.500    3.000
+ MME      SD     CE     HE1     109.500    3.000
+ MME      HE3    CE     HE2     109.470    3.000
+ MME      HE3    CE     HE1     109.470    3.000
+ MME      HE2    CE     HE1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MME      var_1    OXT    C      CA     CB        90.076   20.000   3
+ MME      var_2    C      CA     N      CM       -89.937   20.000   3
+ MME      var_3    CA     N      CM     HM1      179.961   20.000   1
+ MME      var_4    C      CA     CB     CG       179.983   20.000   3
+ MME      var_5    CA     CB     CG     SD       179.978   20.000   3
+ MME      var_6    CB     CG     SD     CE      -179.986   20.000   1
+ MME      var_7    CG     SD     CE     HE1     -179.990   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MME      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MME      plan-1    N         0.020
+ MME      plan-1    CA        0.020
+ MME      plan-1    CM        0.020
+ MME      plan-1    H         0.020
+ MME      plan-2    C         0.020
+ MME      plan-2    CA        0.020
+ MME      plan-2    O         0.020
+ MME      plan-2    OXT       0.020
+# ------------------------------------------------------

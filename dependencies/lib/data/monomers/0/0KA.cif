@@ -1,0 +1,94 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0KA      0KA 'SILVER/IRON/SULFUR CLUSTER          ' non-polymer         8   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_0KA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+0KA   AG1    AG    AG       0      -7.224      -8.739      13.628
+0KA   FE1    FE    FE   0.000      -7.751      -5.975      14.986
+0KA   FE2    FE    FE   0.000      -5.332      -6.095      13.955
+0KA   FE3    FE    FE   0.000      -7.524      -5.986      12.408
+0KA    S1     S     S   0.000      -9.120      -7.026      13.781
+0KA    S2     S     S   0.000      -6.675      -4.314      13.764
+0KA    S3     S     S   0.000      -5.639      -7.082      12.045
+0KA    S4     S     S   0.000      -6.031      -7.348      15.700
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0KA       S3        FE3       SING      2.579     0.020     2.579     0.020     
+0KA       S3        AG1       SING      2.537     0.013     2.537     0.013     
+0KA       S3        FE2       SING      2.579     0.020     2.579     0.020     
+0KA       FE3       S2        SING      2.579     0.020     2.579     0.020     
+0KA       FE3       S1        SING      2.579     0.020     2.579     0.020     
+0KA       AG1       S1        SING      2.537     0.013     2.537     0.013     
+0KA       AG1       S4        SING      2.537     0.013     2.537     0.013     
+0KA       S2        FE2       SING      2.579     0.020     2.579     0.020     
+0KA       S2        FE1       SING      2.579     0.020     2.579     0.020     
+0KA       FE2       S4        SING      2.579     0.020     2.579     0.020     
+0KA       FE1       S4        SING      2.579     0.020     2.579     0.020     
+0KA       S1        FE1       SING      2.579     0.020     2.579     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+0KA    S3   AG1    S1     101.535      3.00
+0KA    S3   AG1    S4     101.535      3.00
+0KA    S1   AG1    S4     101.535      3.00
+0KA    S2   FE1    S4     101.535      3.00
+0KA    S2   FE1    S1     101.535      3.00
+0KA    S4   FE1    S1     101.535      3.00
+0KA    S3   FE2    S2     101.535      3.00
+0KA    S3   FE2    S4     101.535      3.00
+0KA    S2   FE2    S4     101.535      3.00
+0KA    S3   FE3    S2     101.535      3.00
+0KA    S3   FE3    S1     101.535      3.00
+0KA    S2   FE3    S1     101.535      3.00
+0KA   FE3    S1     AG1   103.008    3.00
+0KA   FE3    S1     FE1    98.857    3.00
+0KA   AG1    S1     FE1   103.008    3.00
+0KA   FE3    S2     FE2    98.857    3.00
+0KA   FE3    S2     FE1    98.857    3.00
+0KA   FE2    S2     FE1    98.857    3.00
+0KA   FE3    S3     AG1   103.008    3.00
+0KA   FE3    S3     FE2    98.857    3.00
+0KA   AG1    S3     FE2   103.008    3.00
+0KA   AG1    S4     FE2   103.008    3.00
+0KA   AG1    S4     FE1   103.008    3.00
+0KA   FE2    S4     FE1    98.857    3.00

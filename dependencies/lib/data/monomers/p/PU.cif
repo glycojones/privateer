@@ -1,0 +1,497 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PU       PU  'PUROMYCIN-N-AMINOPHOSPHONIC ACID    ' non-polymer        68  38 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PU            O      O    O         0.000      0.000    0.000    0.000
+ PU            C      C    C         0.000     -0.861   -0.148   -0.841
+ PU            CA     C    CH1       0.000     -0.491   -0.614   -2.225
+ PU            HA     H    H         0.000     -1.203   -0.201   -2.953
+ PU            CB     C    CH2       0.000     -0.535   -2.141   -2.278
+ PU            HB1    H    H         0.000     -1.543   -2.484   -2.035
+ PU            HB2    H    H         0.000      0.172   -2.551   -1.553
+ PU            CG     C    CR6       0.000     -0.164   -2.607   -3.663
+ PU            CD2    C    CR16      0.000     -1.147   -2.775   -4.620
+ PU            HD2    H    H         0.000     -2.183   -2.576   -4.373
+ PU            CE2    C    CR16      0.000     -0.809   -3.197   -5.891
+ PU            HE2    H    H         0.000     -1.578   -3.320   -6.643
+ PU            CZ     C    CR6       0.000      0.516   -3.462   -6.204
+ PU            OC     O    O2        0.000      0.851   -3.883   -7.452
+ PU            CM     C    CH3       0.000     -0.364   -3.958   -8.201
+ PU            HM3    H    H         0.000     -1.024   -4.645   -7.737
+ PU            HM2    H    H         0.000     -0.819   -3.002   -8.235
+ PU            HM1    H    H         0.000     -0.153   -4.284   -9.186
+ PU            CE1    C    CR16      0.000      1.500   -3.293   -5.242
+ PU            HE1    H    H         0.000      2.536   -3.495   -5.485
+ PU            CD1    C    CR16      0.000      1.158   -2.865   -3.973
+ PU            HD1    H    H         0.000      1.926   -2.732   -3.222
+ PU            N      N    NH1       0.000      0.865   -0.152   -2.551
+ PU            HN1    H    H         0.000      1.714   -0.376   -2.052
+ PU            P      P    P         0.000      0.730    0.821   -3.916
+ PU            OP1    O    O         0.000      2.069    1.322   -4.300
+ PU            OP2    O    OH1       0.000      0.111   -0.039   -5.129
+ PU            HOP2   H    H         0.000     -0.032    0.375   -5.991
+ PU            OP3    O    OH1       0.000     -0.237    2.067   -3.594
+ PU            HOP3   H    H         0.000     -1.153    1.911   -3.326
+ PU            "N3'"  N    NH1       0.000     -2.151    0.104   -0.537
+ PU            "HN'3" H    H         0.000     -2.868   -0.019   -1.237
+ PU            "C3'"  C    CH1       0.000     -2.510    0.557    0.809
+ PU            "H3'"  H    H         0.000     -1.681    1.121    1.259
+ PU            "C4'"  C    CH1       0.000     -2.893   -0.646    1.699
+ PU            "H4'"  H    H         0.000     -3.225   -1.490    1.079
+ PU            "C5'"  C    CH2       0.000     -1.714   -1.063    2.579
+ PU            "H5'"  H    H         0.000     -1.387   -0.211    3.177
+ PU            "H5''" H    H         0.000     -0.890   -1.400    1.946
+ PU            "O5'"  O    OH1       0.000     -2.117   -2.127    3.443
+ PU            "HO5'" H    H         0.000     -1.371   -2.391    3.998
+ PU            "C2'"  C    CH1       0.000     -3.790    1.419    0.764
+ PU            "H2'"  H    H         0.000     -3.600    2.412    1.196
+ PU            "O2'"  O    OH1       0.000     -4.267    1.540   -0.576
+ PU            "HO2'" H    H         0.000     -5.068    2.082   -0.585
+ PU            "C1'"  C    CH1       0.000     -4.800    0.637    1.633
+ PU            "H1'"  H    H         0.000     -5.427   -0.009    1.003
+ PU            "O4'"  O    O2        0.000     -3.984   -0.162    2.517
+ PU            N9     N    NR5       0.000     -5.634    1.562    2.403
+ PU            C4     C    CR56      0.000     -6.827    2.107    2.001
+ PU            C5     C    CR56      0.000     -7.258    2.922    3.061
+ PU            N7     N    NRD5      0.000     -6.319    2.843    4.034
+ PU            C8     C    CR15      0.000     -5.365    2.044    3.650
+ PU            H8     H    H         0.000     -4.487    1.800    4.234
+ PU            N3     N    NRD6      0.000     -7.585    2.007    0.914
+ PU            C2     C    CR16      0.000     -8.719    2.671    0.823
+ PU            H2     H    H         0.000     -9.310    2.570   -0.078
+ PU            N1     N    NRD6      0.000     -9.161    3.454    1.790
+ PU            C6     C    CR6       0.000     -8.475    3.611    2.917
+ PU            N6     N    NT        0.000     -8.947    4.433    3.925
+ PU            C10    C    CH3       0.000     -9.260    3.564    5.067
+ PU            H103   H    H         0.000     -9.995    2.857    4.781
+ PU            H102   H    H         0.000     -8.384    3.057    5.375
+ PU            H101   H    H         0.000     -9.628    4.152    5.867
+ PU            C9     C    CH3       0.000    -10.223    4.988    3.453
+ PU            H93    H    H         0.000    -10.062    5.539    2.563
+ PU            H92    H    H         0.000    -10.902    4.198    3.261
+ PU            H91    H    H         0.000    -10.626    5.627    4.195
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PU       O      n/a    C      START
+ PU       C      O      "N3'"  .
+ PU       CA     C      N      .
+ PU       HA     CA     .      .
+ PU       CB     CA     CG     .
+ PU       HB1    CB     .      .
+ PU       HB2    CB     .      .
+ PU       CG     CB     CD2    .
+ PU       CD2    CG     CE2    .
+ PU       HD2    CD2    .      .
+ PU       CE2    CD2    CZ     .
+ PU       HE2    CE2    .      .
+ PU       CZ     CE2    CE1    .
+ PU       OC     CZ     CM     .
+ PU       CM     OC     HM1    .
+ PU       HM3    CM     .      .
+ PU       HM2    CM     .      .
+ PU       HM1    CM     .      .
+ PU       CE1    CZ     CD1    .
+ PU       HE1    CE1    .      .
+ PU       CD1    CE1    HD1    .
+ PU       HD1    CD1    .      .
+ PU       N      CA     P      .
+ PU       HN1    N      .      .
+ PU       P      N      OP3    .
+ PU       OP1    P      .      .
+ PU       OP2    P      HOP2   .
+ PU       HOP2   OP2    .      .
+ PU       OP3    P      HOP3   .
+ PU       HOP3   OP3    .      .
+ PU       "N3'"  C      "C3'"  .
+ PU       "HN'3" "N3'"  .      .
+ PU       "C3'"  "N3'"  "C2'"  .
+ PU       "H3'"  "C3'"  .      .
+ PU       "C4'"  "C3'"  "C5'"  .
+ PU       "H4'"  "C4'"  .      .
+ PU       "C5'"  "C4'"  "O5'"  .
+ PU       "H5'"  "C5'"  .      .
+ PU       "H5''" "C5'"  .      .
+ PU       "O5'"  "C5'"  "HO5'" .
+ PU       "HO5'" "O5'"  .      .
+ PU       "C2'"  "C3'"  "C1'"  .
+ PU       "H2'"  "C2'"  .      .
+ PU       "O2'"  "C2'"  "HO2'" .
+ PU       "HO2'" "O2'"  .      .
+ PU       "C1'"  "C2'"  N9     .
+ PU       "H1'"  "C1'"  .      .
+ PU       "O4'"  "C1'"  .      .
+ PU       N9     "C1'"  C4     .
+ PU       C4     N9     N3     .
+ PU       C5     C4     N7     .
+ PU       N7     C5     C8     .
+ PU       C8     N7     H8     .
+ PU       H8     C8     .      .
+ PU       N3     C4     C2     .
+ PU       C2     N3     N1     .
+ PU       H2     C2     .      .
+ PU       N1     C2     C6     .
+ PU       C6     N1     N6     .
+ PU       N6     C6     C9     .
+ PU       C10    N6     H101   .
+ PU       H103   C10    .      .
+ PU       H102   C10    .      .
+ PU       H101   C10    .      .
+ PU       C9     N6     H91    .
+ PU       H93    C9     .      .
+ PU       H92    C9     .      .
+ PU       H91    C9     .      END
+ PU       CG     CD1    .    ADD
+ PU       "C4'"  "O4'"  .    ADD
+ PU       N9     C8     .    ADD
+ PU       C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PU        OP1       P         double    1.480     0.020     1.480     0.020     
+PU        OP2       P         single    1.610     0.020     1.610     0.020     
+PU        OP3       P         single    1.610     0.020     1.610     0.020     
+PU        P         N         single    1.750     0.020     1.750     0.020     
+PU        HOP2      OP2       single    0.970     0.012     0.839     0.014     
+PU        HOP3      OP3       single    0.970     0.012     0.839     0.014     
+PU        N         CA        single    1.450     0.020     1.450     0.020     
+PU        HN1       N         single    1.036     0.016     0.914     0.007     
+PU        CA        C         single    1.500     0.020     1.500     0.020     
+PU        CB        CA        single    1.524     0.020     1.524     0.020     
+PU        HA        CA        single    1.089     0.010     0.989     0.005     
+PU        C         O         double    1.220     0.020     1.220     0.020     
+PU        "N3'"     C         single    1.330     0.020     1.330     0.020     
+PU        CG        CB        single    1.511     0.020     1.511     0.020     
+PU        HB1       CB        single    1.089     0.010     0.989     0.005     
+PU        HB2       CB        single    1.089     0.010     0.989     0.005     
+PU        CG        CD1       double    1.390     0.020     1.390     0.020     
+PU        CD2       CG        single    1.390     0.020     1.390     0.020     
+PU        CD1       CE1       single    1.390     0.020     1.390     0.020     
+PU        HD1       CD1       single    1.082     0.013     0.975     0.010     
+PU        CE2       CD2       double    1.390     0.020     1.390     0.020     
+PU        HD2       CD2       single    1.082     0.013     0.975     0.010     
+PU        CE1       CZ        double    1.390     0.020     1.390     0.020     
+PU        HE1       CE1       single    1.082     0.013     0.975     0.010     
+PU        CZ        CE2       single    1.390     0.020     1.390     0.020     
+PU        HE2       CE2       single    1.082     0.013     0.975     0.010     
+PU        OC        CZ        single    1.370     0.020     1.370     0.020     
+PU        CM        OC        single    1.426     0.020     1.426     0.020     
+PU        HM1       CM        single    1.089     0.010     0.989     0.005     
+PU        HM2       CM        single    1.089     0.010     0.989     0.005     
+PU        HM3       CM        single    1.089     0.010     0.989     0.005     
+PU        "O5'"     "C5'"     single    1.432     0.020     1.432     0.020     
+PU        "HO5'"    "O5'"     single    0.970     0.012     0.839     0.014     
+PU        "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+PU        "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+PU        "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+PU        "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+PU        "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+PU        "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+PU        "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+PU        "C3'"     "N3'"     single    1.450     0.020     1.450     0.020     
+PU        "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+PU        "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+PU        "HN'3"    "N3'"     single    1.016     0.010     0.899     0.007     
+PU        "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+PU        "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+PU        "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+PU        "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+PU        N9        "C1'"     single    1.485     0.020     1.485     0.020     
+PU        "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+PU        N9        C8        single    1.337     0.020     1.337     0.020     
+PU        C4        N9        single    1.337     0.020     1.337     0.020     
+PU        C8        N7        double    1.350     0.020     1.350     0.020     
+PU        H8        C8        single    1.082     0.013     0.975     0.010     
+PU        N7        C5        single    1.350     0.020     1.350     0.020     
+PU        C5        C6        double    1.490     0.020     1.490     0.020     
+PU        C5        C4        single    1.490     0.020     1.490     0.020     
+PU        N6        C6        single    1.405     0.020     1.405     0.020     
+PU        C6        N1        single    1.350     0.020     1.350     0.020     
+PU        C9        N6        single    1.469     0.020     1.469     0.020     
+PU        C10       N6        single    1.469     0.020     1.469     0.020     
+PU        H91       C9        single    1.089     0.010     0.989     0.005     
+PU        H92       C9        single    1.089     0.010     0.989     0.005     
+PU        H93       C9        single    1.089     0.010     0.989     0.005     
+PU        H101      C10       single    1.089     0.010     0.989     0.005     
+PU        H102      C10       single    1.089     0.010     0.989     0.005     
+PU        H103      C10       single    1.089     0.010     0.989     0.005     
+PU        N1        C2        double    1.337     0.020     1.337     0.020     
+PU        C2        N3        single    1.337     0.020     1.337     0.020     
+PU        H2        C2        single    1.082     0.013     0.975     0.010     
+PU        N3        C4        double    1.355     0.020     1.355     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PU       O      C      CA      120.500    3.000
+ PU       O      C      "N3'"   123.000    3.000
+ PU       CA     C      "N3'"   116.500    3.000
+ PU       C      CA     HA      108.810    3.000
+ PU       C      CA     CB      109.470    3.000
+ PU       C      CA     N       111.600    3.000
+ PU       HA     CA     CB      108.340    3.000
+ PU       HA     CA     N       108.550    3.000
+ PU       CB     CA     N       110.000    3.000
+ PU       CA     CB     HB1     109.470    3.000
+ PU       CA     CB     HB2     109.470    3.000
+ PU       CA     CB     CG      109.470    3.000
+ PU       HB1    CB     HB2     107.900    3.000
+ PU       HB1    CB     CG      109.470    3.000
+ PU       HB2    CB     CG      109.470    3.000
+ PU       CB     CG     CD2     120.000    3.000
+ PU       CB     CG     CD1     120.000    3.000
+ PU       CD2    CG     CD1     120.000    3.000
+ PU       CG     CD2    HD2     120.000    3.000
+ PU       CG     CD2    CE2     120.000    3.000
+ PU       HD2    CD2    CE2     120.000    3.000
+ PU       CD2    CE2    HE2     120.000    3.000
+ PU       CD2    CE2    CZ      120.000    3.000
+ PU       HE2    CE2    CZ      120.000    3.000
+ PU       CE2    CZ     OC      120.000    3.000
+ PU       CE2    CZ     CE1     120.000    3.000
+ PU       OC     CZ     CE1     120.000    3.000
+ PU       CZ     OC     CM      120.000    3.000
+ PU       OC     CM     HM3     109.470    3.000
+ PU       OC     CM     HM2     109.470    3.000
+ PU       OC     CM     HM1     109.470    3.000
+ PU       HM3    CM     HM2     109.470    3.000
+ PU       HM3    CM     HM1     109.470    3.000
+ PU       HM2    CM     HM1     109.470    3.000
+ PU       CZ     CE1    HE1     120.000    3.000
+ PU       CZ     CE1    CD1     120.000    3.000
+ PU       HE1    CE1    CD1     120.000    3.000
+ PU       CE1    CD1    HD1     120.000    3.000
+ PU       CE1    CD1    CG      120.000    3.000
+ PU       HD1    CD1    CG      120.000    3.000
+ PU       CA     N      HN1     118.500    3.000
+ PU       CA     N      P       120.000    3.000
+ PU       HN1    N      P       120.000    3.000
+ PU       N      P      OP1     109.500    3.000
+ PU       N      P      OP2     109.500    3.000
+ PU       N      P      OP3     109.500    3.000
+ PU       OP1    P      OP2     109.500    3.000
+ PU       OP1    P      OP3     109.500    3.000
+ PU       OP2    P      OP3     109.500    3.000
+ PU       P      OP2    HOP2    120.000    3.000
+ PU       P      OP3    HOP3    120.000    3.000
+ PU       C      "N3'"  "HN'3"  120.000    3.000
+ PU       C      "N3'"  "C3'"   121.500    3.000
+ PU       "HN'3" "N3'"  "C3'"   118.500    3.000
+ PU       "N3'"  "C3'"  "H3'"   108.550    3.000
+ PU       "N3'"  "C3'"  "C4'"   110.000    3.000
+ PU       "N3'"  "C3'"  "C2'"   110.000    3.000
+ PU       "H3'"  "C3'"  "C4'"   108.340    3.000
+ PU       "H3'"  "C3'"  "C2'"   108.340    3.000
+ PU       "C4'"  "C3'"  "C2'"   111.000    3.000
+ PU       "C3'"  "C4'"  "H4'"   108.340    3.000
+ PU       "C3'"  "C4'"  "C5'"   111.000    3.000
+ PU       "C3'"  "C4'"  "O4'"   109.470    3.000
+ PU       "H4'"  "C4'"  "C5'"   108.340    3.000
+ PU       "H4'"  "C4'"  "O4'"   109.470    3.000
+ PU       "C5'"  "C4'"  "O4'"   109.470    3.000
+ PU       "C4'"  "C5'"  "H5'"   109.470    3.000
+ PU       "C4'"  "C5'"  "H5''"  109.470    3.000
+ PU       "C4'"  "C5'"  "O5'"   109.470    3.000
+ PU       "H5'"  "C5'"  "H5''"  107.900    3.000
+ PU       "H5'"  "C5'"  "O5'"   109.470    3.000
+ PU       "H5''" "C5'"  "O5'"   109.470    3.000
+ PU       "C5'"  "O5'"  "HO5'"  109.470    3.000
+ PU       "C3'"  "C2'"  "H2'"   108.340    3.000
+ PU       "C3'"  "C2'"  "O2'"   109.470    3.000
+ PU       "C3'"  "C2'"  "C1'"   111.000    3.000
+ PU       "H2'"  "C2'"  "O2'"   109.470    3.000
+ PU       "H2'"  "C2'"  "C1'"   108.340    3.000
+ PU       "O2'"  "C2'"  "C1'"   109.470    3.000
+ PU       "C2'"  "O2'"  "HO2'"  109.470    3.000
+ PU       "C2'"  "C1'"  "H1'"   108.340    3.000
+ PU       "C2'"  "C1'"  "O4'"   109.470    3.000
+ PU       "C2'"  "C1'"  N9      109.470    3.000
+ PU       "H1'"  "C1'"  "O4'"   109.470    3.000
+ PU       "H1'"  "C1'"  N9      109.470    3.000
+ PU       "O4'"  "C1'"  N9      109.470    3.000
+ PU       "C1'"  "O4'"  "C4'"   111.800    3.000
+ PU       "C1'"  N9     C4      126.000    3.000
+ PU       "C1'"  N9     C8      126.000    3.000
+ PU       C4     N9     C8      108.000    3.000
+ PU       N9     C4     C5      108.000    3.000
+ PU       N9     C4     N3      132.000    3.000
+ PU       C5     C4     N3      120.000    3.000
+ PU       C4     C5     N7      108.000    3.000
+ PU       C4     C5     C6      120.000    3.000
+ PU       N7     C5     C6      132.000    3.000
+ PU       C5     N7     C8      108.000    3.000
+ PU       N7     C8     H8      126.000    3.000
+ PU       N7     C8     N9      108.000    3.000
+ PU       H8     C8     N9      126.000    3.000
+ PU       C4     N3     C2      120.000    3.000
+ PU       N3     C2     H2      120.000    3.000
+ PU       N3     C2     N1      120.000    3.000
+ PU       H2     C2     N1      120.000    3.000
+ PU       C2     N1     C6      120.000    3.000
+ PU       N1     C6     N6      120.000    3.000
+ PU       N1     C6     C5      120.000    3.000
+ PU       N6     C6     C5      120.000    3.000
+ PU       C6     N6     C10     109.500    3.000
+ PU       C6     N6     C9      109.500    3.000
+ PU       C10    N6     C9      109.470    3.000
+ PU       N6     C10    H103    109.470    3.000
+ PU       N6     C10    H102    109.470    3.000
+ PU       N6     C10    H101    109.470    3.000
+ PU       H103   C10    H102    109.470    3.000
+ PU       H103   C10    H101    109.470    3.000
+ PU       H102   C10    H101    109.470    3.000
+ PU       N6     C9     H93     109.470    3.000
+ PU       N6     C9     H92     109.470    3.000
+ PU       N6     C9     H91     109.470    3.000
+ PU       H93    C9     H92     109.470    3.000
+ PU       H93    C9     H91     109.470    3.000
+ PU       H92    C9     H91     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PU       var_1    O      C      CA     N        -30.023   20.000   3
+ PU       var_2    C      CA     CB     CG      -179.963   20.000   3
+ PU       var_3    CA     CB     CG     CD2      -89.995   20.000   2
+ PU       CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ PU       CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ PU       CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ PU       CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ PU       var_4    CE2    CZ     OC     CM        -0.262   20.000   1
+ PU       var_5    CZ     OC     CM     HM1     -179.977   20.000   1
+ PU       CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ PU       CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+ PU       var_6    C      CA     N      P       -119.958   20.000   3
+ PU       var_7    CA     N      P      OP3       59.950   20.000   1
+ PU       var_8    N      P      OP2    HOP2    -179.977   20.000   1
+ PU       var_9    N      P      OP3    HOP3     -59.988   20.000   1
+ PU       CONST_7  O      C      "N3'"  "C3'"      0.000    0.000   0
+ PU       var_10   C      "N3'"  "C3'"  "C2'"    151.913   20.000   3
+ PU       var_11   "N3'"  "C3'"  "C4'"  "C5'"     90.000   20.000   3
+ PU       var_12   "C3'"  "C4'"  "O4'"  "C1'"     30.000   20.000   1
+ PU       var_13   "C3'"  "C4'"  "C5'"  "O5'"    176.822   20.000   3
+ PU       var_14   "C4'"  "C5'"  "O5'"  "HO5'"   179.966   20.000   1
+ PU       var_15   "N3'"  "C3'"  "C2'"  "C1'"    120.000   20.000   3
+ PU       var_16   "C3'"  "C2'"  "O2'"  "HO2'"  -179.991   20.000   1
+ PU       var_17   "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ PU       var_18   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ PU       var_19   "C2'"  "C1'"  N9     C4        89.684   20.000   1
+ PU       CONST_8  "C1'"  N9     C8     N7       180.000    0.000   0
+ PU       CONST_9  "C1'"  N9     C4     N3         0.000    0.000   0
+ PU       CONST_10 N9     C4     C5     N7         0.000    0.000   0
+ PU       CONST_11 C4     C5     C6     N1         0.000    0.000   0
+ PU       CONST_12 C4     C5     N7     C8         0.000    0.000   0
+ PU       CONST_13 C5     N7     C8     N9         0.000    0.000   0
+ PU       CONST_14 N9     C4     N3     C2       180.000    0.000   0
+ PU       CONST_15 C4     N3     C2     N1         0.000    0.000   0
+ PU       CONST_16 N3     C2     N1     C6         0.000    0.000   0
+ PU       CONST_17 C2     N1     C6     N6       180.000    0.000   0
+ PU       var_20   N1     C6     N6     C9         0.070   20.000   1
+ PU       var_21   C6     N6     C10    H101    -179.946   20.000   1
+ PU       var_22   C6     N6     C9     H91      179.937   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PU       chir_01  CA     N      C      CB        positiv
+ PU       chir_02  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ PU       chir_03  "C3'"  "C4'"  "N3'"  "C2'"     negativ
+ PU       chir_04  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ PU       chir_05  "C1'"  "O4'"  "C2'"  N9        positiv
+ PU       chir_06  N6     C6     C9     C10       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PU       plan-1    N         0.020
+ PU       plan-1    P         0.020
+ PU       plan-1    CA        0.020
+ PU       plan-1    HN1       0.020
+ PU       plan-2    C         0.020
+ PU       plan-2    CA        0.020
+ PU       plan-2    O         0.020
+ PU       plan-2    "N3'"     0.020
+ PU       plan-2    "HN'3"    0.020
+ PU       plan-3    CG        0.020
+ PU       plan-3    CB        0.020
+ PU       plan-3    CD1       0.020
+ PU       plan-3    CD2       0.020
+ PU       plan-3    CE1       0.020
+ PU       plan-3    CE2       0.020
+ PU       plan-3    CZ        0.020
+ PU       plan-3    HD1       0.020
+ PU       plan-3    HD2       0.020
+ PU       plan-3    HE1       0.020
+ PU       plan-3    HE2       0.020
+ PU       plan-3    OC        0.020
+ PU       plan-4    "N3'"     0.020
+ PU       plan-4    C         0.020
+ PU       plan-4    "C3'"     0.020
+ PU       plan-4    "HN'3"    0.020
+ PU       plan-5    N9        0.020
+ PU       plan-5    "C1'"     0.020
+ PU       plan-5    C8        0.020
+ PU       plan-5    C4        0.020
+ PU       plan-5    N7        0.020
+ PU       plan-5    H8        0.020
+ PU       plan-5    C5        0.020
+ PU       plan-5    C6        0.020
+ PU       plan-5    N1        0.020
+ PU       plan-5    C2        0.020
+ PU       plan-5    N3        0.020
+ PU       plan-5    N6        0.020
+ PU       plan-5    H2        0.020
+# ------------------------------------------------------

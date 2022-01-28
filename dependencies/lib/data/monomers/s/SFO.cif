@@ -1,0 +1,106 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SFO      SFO 'SULFONIC ACID                       ' non-polymer         7   4 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SFO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SFO           O1     O    O         0.000      0.000    0.000    0.000
+ SFO           S      S    ST        0.000      0.000    0.000    0.000
+ SFO           HS1    H    H         0.000      0.000    0.000    0.000
+ SFO           O2     O    OH1       0.000      0.000    0.000    0.000
+ SFO           HO2    H    H         0.000      0.000    0.000    0.000
+ SFO           O3     O    OH1       0.000      0.000    0.000    0.000
+ SFO           HO3    H    H         0.000      0.000    0.000    0.000
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SFO      O1     n/a    S      START
+ SFO      S      O1     O3     .
+ SFO      HS1    S      .      .
+ SFO      O2     S      HO2    .
+ SFO      HO2    O2     .      .
+ SFO      O3     S      HO3    .
+ SFO      HO3    O3     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SFO       S         O1        double    1.436     0.020     1.436     0.020     
+SFO       O2        S         single    1.635     0.020     1.635     0.020     
+SFO       O3        S         single    1.635     0.020     1.635     0.020     
+SFO       HO3       O3        single    0.970     0.012     0.839     0.014     
+SFO       HS1       S         single    1.338     0.010     1.171     0.208     
+SFO       HO2       O2        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SFO      O1     S      HS1     109.500    3.000
+ SFO      O1     S      O2      109.500    3.000
+ SFO      O1     S      O3      109.500    3.000
+ SFO      HS1    S      O2      109.500    3.000
+ SFO      HS1    S      O3      109.500    3.000
+ SFO      O2     S      O3      109.500    3.000
+ SFO      S      O2     HO2     120.000    3.000
+ SFO      S      O3     HO3     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SFO      var_1    O1     S      O2     HO2        0.000   20.000   1
+ SFO      var_2    O1     S      O3     HO3        0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SFO      chir_01  S      O1     O2     O3        positiv
+# ------------------------------------------------------

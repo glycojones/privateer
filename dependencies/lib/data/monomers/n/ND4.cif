@@ -1,0 +1,157 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ND4      ND4 'AMMONIUM CATION WITH D              ' non-polymer        13   5 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ND4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ND4           D4     N    NH2       0.000      0.000    0.000    0.000
+ ND4           HD41   H    H         0.000      0.817   -0.471   -0.076
+ ND4           HD42   H    H         0.000     -0.734    0.169   -0.571
+ ND4           N      N    NT        1.000     -0.115    0.421    0.904
+ ND4           D3     N    NH2       0.000     -0.121    1.412    0.798
+ ND4           HD32   H    H         0.000      0.057    1.677   -0.092
+ ND4           HD31   H    H         0.000     -0.302    1.857    1.611
+ ND4           D2     N    NH2       0.000     -0.974    0.103    1.302
+ ND4           HD22   H    H         0.000     -1.470   -0.433    0.702
+ ND4           HD21   H    H         0.000     -1.094    0.412    2.187
+ ND4           D1     N    NH2       0.000      0.641    0.153    1.504
+ ND4           HD12   H    H         0.000      1.217   -0.477    1.097
+ ND4           HD11   H    H         0.000      0.608    0.591    2.341
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ND4      D4     n/a    N      START
+ ND4      HD41   D4     .      .
+ ND4      HD42   D4     .      .
+ ND4      N      D4     D1     .
+ ND4      D3     N      HD31   .
+ ND4      HD32   D3     .      .
+ ND4      HD31   D3     .      .
+ ND4      D2     N      HD21   .
+ ND4      HD22   D2     .      .
+ ND4      HD21   D2     .      .
+ ND4      D1     N      HD11   .
+ ND4      HD12   D1     .      .
+ ND4      HD11   D1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ND4       D1        N         single    1.410     0.020     1.410     0.020     
+ND4       D2        N         single    1.410     0.020     1.410     0.020     
+ND4       D3        N         single    1.410     0.020     1.410     0.020     
+ND4       N         D4        single    1.410     0.020     1.410     0.020     
+ND4       HD11      D1        single    1.036     0.016     0.914     0.007     
+ND4       HD12      D1        single    1.036     0.016     0.914     0.007     
+ND4       HD21      D2        single    1.036     0.016     0.914     0.007     
+ND4       HD22      D2        single    1.036     0.016     0.914     0.007     
+ND4       HD31      D3        single    1.036     0.016     0.914     0.007     
+ND4       HD32      D3        single    1.036     0.016     0.914     0.007     
+ND4       HD41      D4        single    1.036     0.016     0.914     0.007     
+ND4       HD42      D4        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ND4      HD41   D4     HD42    120.000    3.000
+ ND4      HD41   D4     N       120.000    3.000
+ ND4      HD42   D4     N       120.000    3.000
+ ND4      D4     N      D3      109.500    3.000
+ ND4      D4     N      D2      109.500    3.000
+ ND4      D4     N      D1      109.500    3.000
+ ND4      D3     N      D2      109.500    3.000
+ ND4      D3     N      D1      109.500    3.000
+ ND4      D2     N      D1      109.500    3.000
+ ND4      N      D3     HD32    120.000    3.000
+ ND4      N      D3     HD31    120.000    3.000
+ ND4      HD32   D3     HD31    120.000    3.000
+ ND4      N      D2     HD22    120.000    3.000
+ ND4      N      D2     HD21    120.000    3.000
+ ND4      HD22   D2     HD21    120.000    3.000
+ ND4      N      D1     HD12    120.000    3.000
+ ND4      N      D1     HD11    120.000    3.000
+ ND4      HD12   D1     HD11    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ND4      var_1    HD42   D4     N      D1       175.000   20.000   1
+ ND4      var_2    D4     N      D3     HD31     175.000   20.000   1
+ ND4      var_3    D4     N      D2     HD21     175.000   20.000   1
+ ND4      var_4    D4     N      D1     HD11     175.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ND4      chir_01  N      D1     D2     D3        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ND4      plan-1    D1        0.020
+ ND4      plan-1    N         0.020
+ ND4      plan-1    HD11      0.020
+ ND4      plan-1    HD12      0.020
+ ND4      plan-2    D2        0.020
+ ND4      plan-2    N         0.020
+ ND4      plan-2    HD21      0.020
+ ND4      plan-2    HD22      0.020
+ ND4      plan-3    D3        0.020
+ ND4      plan-3    N         0.020
+ ND4      plan-3    HD31      0.020
+ ND4      plan-3    HD32      0.020
+ ND4      plan-4    D4        0.020
+ ND4      plan-4    N         0.020
+ ND4      plan-4    HD41      0.020
+ ND4      plan-4    HD42      0.020
+# ------------------------------------------------------

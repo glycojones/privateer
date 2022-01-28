@@ -1,0 +1,158 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PKU     PKU     "4-bromanyl-~{N}-methyl-1~{H}-pyrrole-2-carboxamide"     NON-POLYMER     17     10     .     
+#
+data_comp_PKU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PKU     CAA     C       CH3     0       -3.145      0.305       0.326       
+PKU     CAD     C       CR15    0       2.366       -1.001      0.902       
+PKU     CAE     C       CR15    0       1.829       0.628       -0.515      
+PKU     CAH     C       C       0       -0.733      0.589       -0.164      
+PKU     CAI     C       CR5     0       2.887       -0.104      0.021       
+PKU     CAJ     C       CR5     0       0.656       0.150       0.059       
+PKU     NAF     N       NH1     0       -1.746      -0.084      0.414       
+PKU     NAG     N       NR5     0       1.022       -0.848      0.928       
+PKU     OAB     O       O       0       -0.924      1.571       -0.886      
+PKU     BR      BR      BR      0       4.709       0.089       -0.379      
+PKU     H1      H       H       0       -3.291      0.933       -0.399      
+PKU     H2      H       H       0       -3.419      0.714       1.163       
+PKU     H3      H       H       0       -3.687      -0.485      0.168       
+PKU     H4      H       H       0       2.850       -1.629      1.416       
+PKU     H5      H       H       0       1.899       1.319       -1.154      
+PKU     H6      H       H       0       -1.583      -0.796      0.862       
+PKU     H7      H       H       0       0.478       -1.320      1.427       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PKU       CAI       BR        SINGLE    n         1.875     0.010     1.875     0.010     
+PKU       CAD       CAI       DOUBLE    y         1.366     0.019     1.366     0.019     
+PKU       CAE       CAI       SINGLE    y         1.397     0.017     1.397     0.017     
+PKU       CAD       NAG       SINGLE    y         1.352     0.014     1.352     0.014     
+PKU       CAE       CAJ       DOUBLE    y         1.386     0.020     1.386     0.020     
+PKU       CAJ       NAG       SINGLE    y         1.368     0.010     1.368     0.010     
+PKU       CAH       CAJ       SINGLE    n         1.461     0.012     1.461     0.012     
+PKU       CAH       OAB       DOUBLE    n         1.231     0.011     1.231     0.011     
+PKU       CAH       NAF       SINGLE    n         1.324     0.013     1.324     0.013     
+PKU       CAA       NAF       SINGLE    n         1.448     0.010     1.448     0.010     
+PKU       CAA       H1        SINGLE    n         1.089     0.010     0.971     0.020     
+PKU       CAA       H2        SINGLE    n         1.089     0.010     0.971     0.020     
+PKU       CAA       H3        SINGLE    n         1.089     0.010     0.971     0.020     
+PKU       CAD       H4        SINGLE    n         1.082     0.013     0.945     0.019     
+PKU       CAE       H5        SINGLE    n         1.082     0.013     0.944     0.016     
+PKU       NAF       H6        SINGLE    n         1.016     0.010     0.860     0.010     
+PKU       NAG       H7        SINGLE    n         1.016     0.010     0.881     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PKU         NAF         CAA          H1     109.483    1.50
+PKU         NAF         CAA          H2     109.483    1.50
+PKU         NAF         CAA          H3     109.483    1.50
+PKU          H1         CAA          H2     109.279    1.79
+PKU          H1         CAA          H3     109.279    1.79
+PKU          H2         CAA          H3     109.279    1.79
+PKU         CAI         CAD         NAG     108.375    1.50
+PKU         CAI         CAD          H4     126.524    1.57
+PKU         NAG         CAD          H4     125.102    1.72
+PKU         CAI         CAE         CAJ     107.280    1.50
+PKU         CAI         CAE          H5     126.181    1.50
+PKU         CAJ         CAE          H5     126.539    1.50
+PKU         CAJ         CAH         OAB     120.950    1.50
+PKU         CAJ         CAH         NAF     117.032    1.50
+PKU         OAB         CAH         NAF     122.018    1.50
+PKU          BR         CAI         CAD     125.199    1.90
+PKU          BR         CAI         CAE     126.911    1.50
+PKU         CAD         CAI         CAE     107.889    1.50
+PKU         CAE         CAJ         NAG     107.317    1.50
+PKU         CAE         CAJ         CAH     132.176    2.17
+PKU         NAG         CAJ         CAH     120.507    1.69
+PKU         CAH         NAF         CAA     121.101    1.96
+PKU         CAH         NAF          H6     120.081    1.50
+PKU         CAA         NAF          H6     118.818    1.50
+PKU         CAD         NAG         CAJ     109.139    1.50
+PKU         CAD         NAG          H7     125.643    1.94
+PKU         CAJ         NAG          H7     125.218    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PKU             sp2_sp3_1         CAH         NAF         CAA          H1       0.000   10.00     6
+PKU       const_sp2_sp2_2         NAG         CAD         CAI          BR     180.000   10.00     2
+PKU              const_17         CAI         CAD         NAG         CAJ       0.000   10.00     2
+PKU       const_sp2_sp2_6         CAJ         CAE         CAI          BR     180.000   10.00     2
+PKU              const_10         CAI         CAE         CAJ         CAH     180.000   10.00     2
+PKU             sp2_sp2_3         OAB         CAH         CAJ         CAE       0.000   10.00     2
+PKU             sp2_sp2_7         OAB         CAH         NAF         CAA       0.000   10.00     2
+PKU              const_15         CAH         CAJ         NAG         CAD     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PKU    plan-1          BR   0.020
+PKU    plan-1         CAD   0.020
+PKU    plan-1         CAE   0.020
+PKU    plan-1         CAH   0.020
+PKU    plan-1         CAI   0.020
+PKU    plan-1         CAJ   0.020
+PKU    plan-1          H4   0.020
+PKU    plan-1          H5   0.020
+PKU    plan-1          H7   0.020
+PKU    plan-1         NAG   0.020
+PKU    plan-2         CAH   0.020
+PKU    plan-2         CAJ   0.020
+PKU    plan-2         NAF   0.020
+PKU    plan-2         OAB   0.020
+PKU    plan-3         CAA   0.020
+PKU    plan-3         CAH   0.020
+PKU    plan-3          H6   0.020
+PKU    plan-3         NAF   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PKU InChI            InChI                1.03  "InChI=1S/C6H7BrN2O/c1-8-6(10)5-2-4(7)3-9-5/h2-3,9H,1H3,(H,8,10)"
+PKU InChIKey         InChI                1.03  HQGRBJIXXLIGLE-UHFFFAOYSA-N
+PKU SMILES_CANONICAL CACTVS               3.385 "CNC(=O)c1[nH]cc(Br)c1"
+PKU SMILES           CACTVS               3.385 "CNC(=O)c1[nH]cc(Br)c1"
+PKU SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "CNC(=O)c1cc(c[nH]1)Br"
+PKU SMILES           "OpenEye OEToolkits" 2.0.6 "CNC(=O)c1cc(c[nH]1)Br"
+PKU ?                acedrg               190         "dictionary generator"                  
+PKU ?                acedrg_database      11          "data source"                           
+PKU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PKU ?                refmac5              5.8.0158    "optimization tool"                     

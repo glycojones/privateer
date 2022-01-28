@@ -1,0 +1,226 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MNL      MNL '4,N-DIMETHYLNORLEUCINE              ' M-peptide          27  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MNL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MNL           OXT    O    OC       -0.500      0.000    0.000    0.000
+ MNL           C      C    C         0.000     -0.839    0.868    0.327
+ MNL           O      O    OC       -0.500     -0.459    2.015    0.650
+ MNL           CA     C    CH1       0.000     -2.308    0.533    0.333
+ MNL           HA     H    H         0.000     -2.891    1.438    0.108
+ MNL           N      N    NH1       0.000     -2.581   -0.489   -0.686
+ MNL           H      H    H         0.000     -2.559   -1.490   -0.555
+ MNL           CM1    C    CH3       0.000     -2.892    0.226   -1.930
+ MNL           HM13   H    H         0.000     -3.740    0.846   -1.784
+ MNL           HM12   H    H         0.000     -2.065    0.827   -2.213
+ MNL           HM11   H    H         0.000     -3.097   -0.472   -2.702
+ MNL           CB     C    CH2       0.000     -2.705    0.000    1.709
+ MNL           HB2    H    H         0.000     -2.501    0.760    2.466
+ MNL           HB3    H    H         0.000     -2.125   -0.898    1.932
+ MNL           CG     C    CH1       0.000     -4.196   -0.340    1.715
+ MNL           HG     H    H         0.000     -4.400   -1.105    0.952
+ MNL           CM4    C    CH3       0.000     -5.007    0.918    1.403
+ MNL           HM43   H    H         0.000     -4.733    1.289    0.449
+ MNL           HM42   H    H         0.000     -6.040    0.683    1.405
+ MNL           HM41   H    H         0.000     -4.812    1.656    2.137
+ MNL           CD     C    CH2       0.000     -4.593   -0.874    3.091
+ MNL           HD2    H    H         0.000     -4.389   -0.114    3.848
+ MNL           HD3    H    H         0.000     -4.012   -1.772    3.313
+ MNL           CE     C    CH3       0.000     -6.085   -1.215    3.097
+ MNL           HE3    H    H         0.000     -6.651   -0.345    2.882
+ MNL           HE2    H    H         0.000     -6.285   -1.953    2.363
+ MNL           HE1    H    H         0.000     -6.362   -1.586    4.051
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MNL      OXT    n/a    C      START
+ MNL      C      OXT    CA     .
+ MNL      O      C      .      .
+ MNL      CA     C      CB     .
+ MNL      HA     CA     .      .
+ MNL      N      CA     CM1    .
+ MNL      H      N      .      .
+ MNL      CM1    N      HM11   .
+ MNL      HM13   CM1    .      .
+ MNL      HM12   CM1    .      .
+ MNL      HM11   CM1    .      .
+ MNL      CB     CA     CG     .
+ MNL      HB2    CB     .      .
+ MNL      HB3    CB     .      .
+ MNL      CG     CB     CD     .
+ MNL      HG     CG     .      .
+ MNL      CM4    CG     HM41   .
+ MNL      HM43   CM4    .      .
+ MNL      HM42   CM4    .      .
+ MNL      HM41   CM4    .      .
+ MNL      CD     CG     CE     .
+ MNL      HD2    CD     .      .
+ MNL      HD3    CD     .      .
+ MNL      CE     CD     HE1    .
+ MNL      HE3    CE     .      .
+ MNL      HE2    CE     .      .
+ MNL      HE1    CE     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MNL       N         CA        single    1.450     0.020     1.450     0.020     
+MNL       CM1       N         single    1.450     0.020     1.450     0.020     
+MNL       H         N         single    1.036     0.016     0.914     0.007     
+MNL       CA        C         single    1.500     0.020     1.500     0.020     
+MNL       CB        CA        single    1.524     0.020     1.524     0.020     
+MNL       HA        CA        single    1.089     0.010     0.989     0.005     
+MNL       O         C         deloc     1.250     0.020     1.250     0.020     
+MNL       C         OXT       deloc     1.250     0.020     1.250     0.020     
+MNL       CG        CB        single    1.524     0.020     1.524     0.020     
+MNL       HB2       CB        single    1.089     0.010     0.989     0.005     
+MNL       HB3       CB        single    1.089     0.010     0.989     0.005     
+MNL       CD        CG        single    1.524     0.020     1.524     0.020     
+MNL       CM4       CG        single    1.524     0.020     1.524     0.020     
+MNL       HG        CG        single    1.089     0.010     0.989     0.005     
+MNL       CE        CD        single    1.513     0.020     1.513     0.020     
+MNL       HD2       CD        single    1.089     0.010     0.989     0.005     
+MNL       HD3       CD        single    1.089     0.010     0.989     0.005     
+MNL       HE1       CE        single    1.089     0.010     0.989     0.005     
+MNL       HE2       CE        single    1.089     0.010     0.989     0.005     
+MNL       HE3       CE        single    1.089     0.010     0.989     0.005     
+MNL       HM11      CM1       single    1.089     0.010     0.989     0.005     
+MNL       HM12      CM1       single    1.089     0.010     0.989     0.005     
+MNL       HM13      CM1       single    1.089     0.010     0.989     0.005     
+MNL       HM41      CM4       single    1.089     0.010     0.989     0.005     
+MNL       HM42      CM4       single    1.089     0.010     0.989     0.005     
+MNL       HM43      CM4       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MNL      OXT    C      O       123.000    3.000
+ MNL      OXT    C      CA      118.500    3.000
+ MNL      O      C      CA      118.500    3.000
+ MNL      C      CA     HA      108.810    3.000
+ MNL      C      CA     N       111.600    3.000
+ MNL      C      CA     CB      109.470    3.000
+ MNL      HA     CA     N       108.550    3.000
+ MNL      HA     CA     CB      108.340    3.000
+ MNL      N      CA     CB      110.000    3.000
+ MNL      CA     N      H       118.500    3.000
+ MNL      CA     N      CM1     120.000    3.000
+ MNL      H      N      CM1     118.500    3.000
+ MNL      N      CM1    HM13    109.470    3.000
+ MNL      N      CM1    HM12    109.470    3.000
+ MNL      N      CM1    HM11    109.470    3.000
+ MNL      HM13   CM1    HM12    109.470    3.000
+ MNL      HM13   CM1    HM11    109.470    3.000
+ MNL      HM12   CM1    HM11    109.470    3.000
+ MNL      CA     CB     HB2     109.470    3.000
+ MNL      CA     CB     HB3     109.470    3.000
+ MNL      CA     CB     CG      111.000    3.000
+ MNL      HB2    CB     HB3     107.900    3.000
+ MNL      HB2    CB     CG      109.470    3.000
+ MNL      HB3    CB     CG      109.470    3.000
+ MNL      CB     CG     HG      108.340    3.000
+ MNL      CB     CG     CM4     111.000    3.000
+ MNL      CB     CG     CD      109.470    3.000
+ MNL      HG     CG     CM4     108.340    3.000
+ MNL      HG     CG     CD      108.340    3.000
+ MNL      CM4    CG     CD      111.000    3.000
+ MNL      CG     CM4    HM43    109.470    3.000
+ MNL      CG     CM4    HM42    109.470    3.000
+ MNL      CG     CM4    HM41    109.470    3.000
+ MNL      HM43   CM4    HM42    109.470    3.000
+ MNL      HM43   CM4    HM41    109.470    3.000
+ MNL      HM42   CM4    HM41    109.470    3.000
+ MNL      CG     CD     HD2     109.470    3.000
+ MNL      CG     CD     HD3     109.470    3.000
+ MNL      CG     CD     CE      111.000    3.000
+ MNL      HD2    CD     HD3     107.900    3.000
+ MNL      HD2    CD     CE      109.470    3.000
+ MNL      HD3    CD     CE      109.470    3.000
+ MNL      CD     CE     HE3     109.470    3.000
+ MNL      CD     CE     HE2     109.470    3.000
+ MNL      CD     CE     HE1     109.470    3.000
+ MNL      HE3    CE     HE2     109.470    3.000
+ MNL      HE3    CE     HE1     109.470    3.000
+ MNL      HE2    CE     HE1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MNL      var_1    OXT    C      CA     CB        90.015   20.000   3
+ MNL      var_2    C      CA     N      CM1      -89.935   20.000   3
+ MNL      var_3    CA     N      CM1    HM11    -179.996   20.000   1
+ MNL      var_4    C      CA     CB     CG       179.983   20.000   3
+ MNL      var_5    CA     CB     CG     CD       179.962   20.000   3
+ MNL      var_6    CB     CG     CM4    HM41     -60.055   20.000   3
+ MNL      var_7    CB     CG     CD     CE      -179.966   20.000   3
+ MNL      var_8    CG     CD     CE     HE1     -179.989   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MNL      chir_01  CA     N      C      CB        positiv
+ MNL      chir_02  CG     CB     CD     CM4       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MNL      plan-1    N         0.020
+ MNL      plan-1    CA        0.020
+ MNL      plan-1    CM1       0.020
+ MNL      plan-1    H         0.020
+ MNL      plan-2    C         0.020
+ MNL      plan-2    CA        0.020
+ MNL      plan-2    O         0.020
+ MNL      plan-2    OXT       0.020
+# ------------------------------------------------------

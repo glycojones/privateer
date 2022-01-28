@@ -1,0 +1,336 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IME      IME 'TETRA(IMIDAZOLE)DIAQUACOPPER (II)   ' non-polymer        37  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_IME
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ IME           O2     O    OH1       0.000      0.000    0.000    0.000
+ IME           HO2    H    H         0.000      0.284   -0.836   -0.201
+ IME           CU     CU   CU        2.000     -1.257   -0.007    0.819
+ IME           O1     O    OH1       0.000     -2.513   -0.015    1.638
+ IME           HO1    H    H         0.000     -2.805   -0.854    1.813
+ IME           NE6    N    NR5       0.000     -1.265   -1.597    0.793
+ IME           CD6    C    CR15      0.000     -2.341   -2.409    1.029
+ IME           HD24   H    H         0.000     -3.349   -2.091    1.269
+ IME           CE5    C    CR15      0.000     -0.210   -2.400    0.529
+ IME           HE14   H    H         0.000      0.793   -2.067    0.294
+ IME           ND5    N    NRD5      0.000     -0.602   -3.643    0.604
+ IME           CG4    C    CR15      0.000     -1.908   -3.677    0.906
+ IME           HG4    H    H         0.000     -2.509   -4.570    1.030
+ IME           NEM    N    NR5       0.000     -2.125    0.018   -0.512
+ IME           CDM    C    CR15      0.000     -3.400   -0.458   -0.660
+ IME           HD22   H    H         0.000     -4.008   -0.924    0.106
+ IME           CEL    C    CR15      0.000     -1.745    0.519   -1.707
+ IME           HE12   H    H         0.000     -0.789    0.979   -1.923
+ IME           NDL    N    NRD5      0.000     -2.721    0.358   -2.558
+ IME           CG2    C    CR15      0.000     -3.753   -0.237   -1.940
+ IME           HG2    H    H         0.000     -4.703   -0.494   -2.392
+ IME           NEW    N    NR5       0.000     -1.249    1.582    0.845
+ IME           CDW    C    CR15      0.000     -0.271    2.382    1.373
+ IME           HD23   H    H         0.000      0.643    2.053    1.851
+ IME           CEV    C    CR15      0.000     -2.204    2.396    0.345
+ IME           HE13   H    H         0.000     -3.112    2.074   -0.149
+ IME           NDV    N    NRD5      0.000     -1.850    3.634    0.556
+ IME           CG3    C    CR15      0.000     -0.663    3.656    1.183
+ IME           HG3    H    H         0.000     -0.117    4.542    1.482
+ IME           NEC    N    NR5       0.000     -0.388   -0.033    2.151
+ IME           CDC    C    CR15      0.000     -0.864    0.035    3.432
+ IME           HD21   H    H         0.000     -1.902    0.116    3.732
+ IME           CEB    C    CR15      0.000      0.956   -0.133    2.229
+ IME           HE11   H    H         0.000      1.633   -0.212    1.388
+ IME           NDB    N    NRD5      0.000      1.305   -0.118    3.486
+ IME           CG1    C    CR15      0.000      0.205   -0.019    4.249
+ IME           HG1    H    H         0.000      0.182    0.013    5.332
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ IME      O2     n/a    CU     START
+ IME      HO2    O2     .      .
+ IME      CU     O2     NEC    .
+ IME      O1     CU     HO1    .
+ IME      HO1    O1     .      .
+ IME      NE6    CU     CE5    .
+ IME      CD6    NE6    HD24   .
+ IME      HD24   CD6    .      .
+ IME      CE5    NE6    ND5    .
+ IME      HE14   CE5    .      .
+ IME      ND5    CE5    CG4    .
+ IME      CG4    ND5    HG4    .
+ IME      HG4    CG4    .      .
+ IME      NEM    CU     CEL    .
+ IME      CDM    NEM    HD22   .
+ IME      HD22   CDM    .      .
+ IME      CEL    NEM    NDL    .
+ IME      HE12   CEL    .      .
+ IME      NDL    CEL    CG2    .
+ IME      CG2    NDL    HG2    .
+ IME      HG2    CG2    .      .
+ IME      NEW    CU     CEV    .
+ IME      CDW    NEW    HD23   .
+ IME      HD23   CDW    .      .
+ IME      CEV    NEW    NDV    .
+ IME      HE13   CEV    .      .
+ IME      NDV    CEV    CG3    .
+ IME      CG3    NDV    HG3    .
+ IME      HG3    CG3    .      .
+ IME      NEC    CU     CEB    .
+ IME      CDC    NEC    HD21   .
+ IME      HD21   CDC    .      .
+ IME      CEB    NEC    NDB    .
+ IME      HE11   CEB    .      .
+ IME      NDB    CEB    CG1    .
+ IME      CG1    NDB    HG1    .
+ IME      HG1    CG1    .      END
+ IME      CG1    CDC    .    ADD
+ IME      CG2    CDM    .    ADD
+ IME      CG3    CDW    .    ADD
+ IME      CG4    CD6    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IME       O1        CU        single    2.109     0.020     2.109     0.020     
+IME       CU        O2        single    2.109     0.020     2.109     0.020     
+IME       NEC       CU        single    2.075     0.020     2.075     0.020     
+IME       NEM       CU        single    2.075     0.020     2.075     0.020     
+IME       NEW       CU        single    2.075     0.020     2.075     0.020     
+IME       NE6       CU        single    2.075     0.020     2.075     0.020     
+IME       HO1       O1        single    0.970     0.012     0.839     0.014     
+IME       HO2       O2        single    0.970     0.012     0.839     0.014     
+IME       CG1       CDC       double    1.380     0.020     1.380     0.020     
+IME       CG1       NDB       single    1.350     0.020     1.350     0.020     
+IME       HG1       CG1       single    1.082     0.013     0.975     0.010     
+IME       CDC       NEC       single    1.337     0.020     1.337     0.020     
+IME       HD21      CDC       single    1.082     0.013     0.975     0.010     
+IME       NDB       CEB       double    1.350     0.020     1.350     0.020     
+IME       CEB       NEC       single    1.337     0.020     1.337     0.020     
+IME       HE11      CEB       single    1.082     0.013     0.975     0.010     
+IME       CG2       CDM       double    1.380     0.020     1.380     0.020     
+IME       CG2       NDL       single    1.350     0.020     1.350     0.020     
+IME       HG2       CG2       single    1.082     0.013     0.975     0.010     
+IME       CDM       NEM       single    1.337     0.020     1.337     0.020     
+IME       HD22      CDM       single    1.082     0.013     0.975     0.010     
+IME       NDL       CEL       double    1.350     0.020     1.350     0.020     
+IME       CEL       NEM       single    1.337     0.020     1.337     0.020     
+IME       HE12      CEL       single    1.082     0.013     0.975     0.010     
+IME       CG3       CDW       double    1.380     0.020     1.380     0.020     
+IME       CG3       NDV       single    1.350     0.020     1.350     0.020     
+IME       HG3       CG3       single    1.082     0.013     0.975     0.010     
+IME       CDW       NEW       single    1.337     0.020     1.337     0.020     
+IME       HD23      CDW       single    1.082     0.013     0.975     0.010     
+IME       NDV       CEV       double    1.350     0.020     1.350     0.020     
+IME       CEV       NEW       single    1.337     0.020     1.337     0.020     
+IME       HE13      CEV       single    1.082     0.013     0.975     0.010     
+IME       CG4       CD6       double    1.380     0.020     1.380     0.020     
+IME       CG4       ND5       single    1.350     0.020     1.350     0.020     
+IME       HG4       CG4       single    1.082     0.013     0.975     0.010     
+IME       CD6       NE6       single    1.337     0.020     1.337     0.020     
+IME       HD24      CD6       single    1.082     0.013     0.975     0.010     
+IME       ND5       CE5       double    1.350     0.020     1.350     0.020     
+IME       CE5       NE6       single    1.337     0.020     1.337     0.020     
+IME       HE14      CE5       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ IME      HO2    O2     CU      120.000    3.000
+ IME      O2     CU     O1      180.000    3.000
+ IME      O2     CU     NE6      90.000    3.000
+ IME      O2     CU     NEM      90.000    3.000
+ IME      O2     CU     NEW      90.000    3.000
+ IME      O2     CU     NEC      90.000    3.000
+ IME      O1     CU     NE6      90.000    3.000
+ IME      O1     CU     NEM      90.000    3.000
+ IME      NE6    CU     NEM      90.000    3.000
+ IME      O1     CU     NEW      90.000    3.000
+ IME      NE6    CU     NEW     180.000    3.000
+ IME      NEM    CU     NEW      90.000    3.000
+ IME      O1     CU     NEC      90.000    3.000
+ IME      NE6    CU     NEC      90.000    3.000
+ IME      NEM    CU     NEC     180.000    3.000
+ IME      NEW    CU     NEC      90.000    3.000
+ IME      CU     O1     HO1     120.000    3.000
+ IME      CU     NE6    CD6     108.000    3.000
+ IME      CU     NE6    CE5     108.000    3.000
+ IME      CD6    NE6    CE5     108.000    3.000
+ IME      NE6    CD6    HD24    126.000    3.000
+ IME      NE6    CD6    CG4     108.000    3.000
+ IME      HD24   CD6    CG4     126.000    3.000
+ IME      NE6    CE5    HE14    126.000    3.000
+ IME      NE6    CE5    ND5     108.000    3.000
+ IME      HE14   CE5    ND5     126.000    3.000
+ IME      CE5    ND5    CG4     108.000    3.000
+ IME      ND5    CG4    HG4     126.000    3.000
+ IME      ND5    CG4    CD6     108.000    3.000
+ IME      HG4    CG4    CD6     126.000    3.000
+ IME      CU     NEM    CDM     108.000    3.000
+ IME      CU     NEM    CEL     108.000    3.000
+ IME      CDM    NEM    CEL     108.000    3.000
+ IME      NEM    CDM    HD22    126.000    3.000
+ IME      NEM    CDM    CG2     108.000    3.000
+ IME      HD22   CDM    CG2     126.000    3.000
+ IME      NEM    CEL    HE12    126.000    3.000
+ IME      NEM    CEL    NDL     108.000    3.000
+ IME      HE12   CEL    NDL     126.000    3.000
+ IME      CEL    NDL    CG2     108.000    3.000
+ IME      NDL    CG2    HG2     126.000    3.000
+ IME      NDL    CG2    CDM     108.000    3.000
+ IME      HG2    CG2    CDM     126.000    3.000
+ IME      CU     NEW    CDW     108.000    3.000
+ IME      CU     NEW    CEV     108.000    3.000
+ IME      CDW    NEW    CEV     108.000    3.000
+ IME      NEW    CDW    HD23    126.000    3.000
+ IME      NEW    CDW    CG3     108.000    3.000
+ IME      HD23   CDW    CG3     126.000    3.000
+ IME      NEW    CEV    HE13    126.000    3.000
+ IME      NEW    CEV    NDV     108.000    3.000
+ IME      HE13   CEV    NDV     126.000    3.000
+ IME      CEV    NDV    CG3     108.000    3.000
+ IME      NDV    CG3    HG3     126.000    3.000
+ IME      NDV    CG3    CDW     108.000    3.000
+ IME      HG3    CG3    CDW     126.000    3.000
+ IME      CU     NEC    CDC     108.000    3.000
+ IME      CU     NEC    CEB     108.000    3.000
+ IME      CDC    NEC    CEB     108.000    3.000
+ IME      NEC    CDC    HD21    126.000    3.000
+ IME      NEC    CDC    CG1     108.000    3.000
+ IME      HD21   CDC    CG1     126.000    3.000
+ IME      NEC    CEB    HE11    126.000    3.000
+ IME      NEC    CEB    NDB     108.000    3.000
+ IME      HE11   CEB    NDB     126.000    3.000
+ IME      CEB    NDB    CG1     108.000    3.000
+ IME      NDB    CG1    HG1     126.000    3.000
+ IME      NDB    CG1    CDC     108.000    3.000
+ IME      HG1    CG1    CDC     126.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ IME      var_1    HO2    O2     CU     NE6        0.000   20.000   1
+ IME      var_2    HO1    O1     CU     NE6        0.000   20.000   1
+ IME      var_3    CD6    NE6    CU     O2         0.000   20.000   1
+ IME      CONST_1  CU     NE6    CD6    CG4      180.000    0.000   0
+ IME      CONST_2  CU     NE6    CE5    ND5      180.000    0.000   0
+ IME      CONST_3  NE6    CE5    ND5    CG4        0.000    0.000   0
+ IME      CONST_4  CE5    ND5    CG4    CD6        0.000    0.000   0
+ IME      CONST_5  ND5    CG4    CD6    NE6        0.000    0.000   0
+ IME      var_4    CDM    NEM    CU     O2         0.000   20.000   1
+ IME      CONST_6  CU     NEM    CDM    CG2      180.000    0.000   0
+ IME      CONST_7  CU     NEM    CEL    NDL      180.000    0.000   0
+ IME      CONST_8  NEM    CEL    NDL    CG2        0.000    0.000   0
+ IME      CONST_9  CEL    NDL    CG2    CDM        0.000    0.000   0
+ IME      CONST_10 NDL    CG2    CDM    NEM        0.000    0.000   0
+ IME      var_5    CDW    NEW    CU     O2         0.000   20.000   1
+ IME      CONST_11 CU     NEW    CDW    CG3      180.000    0.000   0
+ IME      CONST_12 CU     NEW    CEV    NDV      180.000    0.000   0
+ IME      CONST_13 NEW    CEV    NDV    CG3        0.000    0.000   0
+ IME      CONST_14 CEV    NDV    CG3    CDW        0.000    0.000   0
+ IME      CONST_15 NDV    CG3    CDW    NEW        0.000    0.000   0
+ IME      var_6    CDC    NEC    CU     O2         0.000   20.000   1
+ IME      CONST_16 CU     NEC    CDC    CG1      180.000    0.000   0
+ IME      CONST_17 CU     NEC    CEB    NDB      180.000    0.000   0
+ IME      CONST_18 NEC    CEB    NDB    CG1        0.000    0.000   0
+ IME      CONST_19 CEB    NDB    CG1    CDC        0.000    0.000   0
+ IME      CONST_20 NDB    CG1    CDC    NEC        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ IME      chir_01  CU     O2     O1     NE6       cross4
+                   NEM    NEW    NEC    .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ IME      plan-1    CG1       0.020
+ IME      plan-1    CDC       0.020
+ IME      plan-1    NDB       0.020
+ IME      plan-1    HG1       0.020
+ IME      plan-1    CEB       0.020
+ IME      plan-1    NEC       0.020
+ IME      plan-1    HD21      0.020
+ IME      plan-1    HE11      0.020
+ IME      plan-1    CU        0.020
+ IME      plan-2    CG2       0.020
+ IME      plan-2    CDM       0.020
+ IME      plan-2    NDL       0.020
+ IME      plan-2    HG2       0.020
+ IME      plan-2    CEL       0.020
+ IME      plan-2    NEM       0.020
+ IME      plan-2    HD22      0.020
+ IME      plan-2    HE12      0.020
+ IME      plan-2    CU        0.020
+ IME      plan-3    CG3       0.020
+ IME      plan-3    CDW       0.020
+ IME      plan-3    NDV       0.020
+ IME      plan-3    HG3       0.020
+ IME      plan-3    CEV       0.020
+ IME      plan-3    NEW       0.020
+ IME      plan-3    HD23      0.020
+ IME      plan-3    HE13      0.020
+ IME      plan-3    CU        0.020
+ IME      plan-4    CG4       0.020
+ IME      plan-4    CD6       0.020
+ IME      plan-4    ND5       0.020
+ IME      plan-4    HG4       0.020
+ IME      plan-4    CE5       0.020
+ IME      plan-4    NE6       0.020
+ IME      plan-4    HD24      0.020
+ IME      plan-4    HE14      0.020
+ IME      plan-4    CU        0.020
+# ------------------------------------------------------

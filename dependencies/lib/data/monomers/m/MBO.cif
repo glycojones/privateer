@@ -1,0 +1,159 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MBO      MBO 'MERCURIBENZOIC ACID                 ' non-polymer        14  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MBO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MBO           OZ2    O    OC       -0.500      0.000    0.000    0.000
+ MBO           CZ     C    C         0.000     -0.983    0.001    0.773
+ MBO           OZ1    O    OC       -0.500     -0.805    0.001    2.012
+ MBO           CE4    C    CR6       0.000     -2.354    0.001    0.224
+ MBO           CE3    C    CR16      0.000     -3.455    0.000    1.084
+ MBO           HE3    H    H         0.000     -3.305    0.000    2.157
+ MBO           CE2    C    CR16      0.000     -4.732    0.000    0.565
+ MBO           HE2    H    H         0.000     -5.586    0.000    1.231
+ MBO           CE5    C    CR16      0.000     -2.558    0.004   -1.157
+ MBO           HE5    H    H         0.000     -1.710    0.011   -1.830
+ MBO           CE6    C    CR16      0.000     -3.841    0.000   -1.662
+ MBO           HE6    H    H         0.000     -3.999   -0.003   -2.734
+ MBO           CE1    C    CR6       0.000     -4.926    0.000   -0.805
+ MBO           HG     HG   HG        0.000     -6.875    0.000   -1.585
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MBO      OZ2    n/a    CZ     START
+ MBO      CZ     OZ2    CE4    .
+ MBO      OZ1    CZ     .      .
+ MBO      CE4    CZ     CE5    .
+ MBO      CE3    CE4    CE2    .
+ MBO      HE3    CE3    .      .
+ MBO      CE2    CE3    HE2    .
+ MBO      HE2    CE2    .      .
+ MBO      CE5    CE4    CE6    .
+ MBO      HE5    CE5    .      .
+ MBO      CE6    CE5    CE1    .
+ MBO      HE6    CE6    .      .
+ MBO      CE1    CE6    HG     .
+ MBO      HG     CE1    .      END
+ MBO      CE1    CE2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MBO       HG        CE1       single    2.295     0.020     2.295     0.020     
+MBO       CE1       CE2       single    1.390     0.020     1.390     0.020     
+MBO       CE1       CE6       double    1.390     0.020     1.390     0.020     
+MBO       CE2       CE3       double    1.390     0.020     1.390     0.020     
+MBO       HE2       CE2       single    1.082     0.013     0.975     0.010     
+MBO       CE3       CE4       single    1.390     0.020     1.390     0.020     
+MBO       HE3       CE3       single    1.082     0.013     0.975     0.010     
+MBO       CE5       CE4       double    1.390     0.020     1.390     0.020     
+MBO       CE4       CZ        single    1.500     0.020     1.500     0.020     
+MBO       CE6       CE5       single    1.390     0.020     1.390     0.020     
+MBO       HE5       CE5       single    1.082     0.013     0.975     0.010     
+MBO       HE6       CE6       single    1.082     0.013     0.975     0.010     
+MBO       OZ1       CZ        deloc     1.250     0.020     1.250     0.020     
+MBO       CZ        OZ2       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MBO      OZ2    CZ     OZ1     123.000    3.000
+ MBO      OZ2    CZ     CE4     120.000    3.000
+ MBO      OZ1    CZ     CE4     120.000    3.000
+ MBO      CZ     CE4    CE3     120.000    3.000
+ MBO      CZ     CE4    CE5     120.000    3.000
+ MBO      CE3    CE4    CE5     120.000    3.000
+ MBO      CE4    CE3    HE3     120.000    3.000
+ MBO      CE4    CE3    CE2     120.000    3.000
+ MBO      HE3    CE3    CE2     120.000    3.000
+ MBO      CE3    CE2    HE2     120.000    3.000
+ MBO      CE3    CE2    CE1     120.000    3.000
+ MBO      HE2    CE2    CE1     120.000    3.000
+ MBO      CE4    CE5    HE5     120.000    3.000
+ MBO      CE4    CE5    CE6     120.000    3.000
+ MBO      HE5    CE5    CE6     120.000    3.000
+ MBO      CE5    CE6    HE6     120.000    3.000
+ MBO      CE5    CE6    CE1     120.000    3.000
+ MBO      HE6    CE6    CE1     120.000    3.000
+ MBO      CE6    CE1    HG      120.000    3.000
+ MBO      CE6    CE1    CE2     120.000    3.000
+ MBO      HG     CE1    CE2     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MBO      var_1    OZ2    CZ     CE4    CE5       -0.238   20.000   1
+ MBO      CONST_1  CZ     CE4    CE3    CE2      180.000    0.000   0
+ MBO      CONST_2  CE4    CE3    CE2    CE1        0.000    0.000   0
+ MBO      CONST_3  CZ     CE4    CE5    CE6      180.000    0.000   0
+ MBO      CONST_4  CE4    CE5    CE6    CE1        0.000    0.000   0
+ MBO      CONST_5  CE5    CE6    CE1    HG       180.000    0.000   0
+ MBO      CONST_6  CE6    CE1    CE2    CE3        0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MBO      plan-1    CE1       0.020
+ MBO      plan-1    HG        0.020
+ MBO      plan-1    CE2       0.020
+ MBO      plan-1    CE6       0.020
+ MBO      plan-1    CE3       0.020
+ MBO      plan-1    CE4       0.020
+ MBO      plan-1    CE5       0.020
+ MBO      plan-1    HE2       0.020
+ MBO      plan-1    HE3       0.020
+ MBO      plan-1    CZ        0.020
+ MBO      plan-1    HE5       0.020
+ MBO      plan-1    HE6       0.020
+ MBO      plan-2    CZ        0.020
+ MBO      plan-2    CE4       0.020
+ MBO      plan-2    OZ1       0.020
+ MBO      plan-2    OZ2       0.020
+# ------------------------------------------------------

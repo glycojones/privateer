@@ -1,0 +1,299 @@
+data_comp_list
+# 
+_chem_comp.id                  CFN 
+_chem_comp.three_letter_code   CFN 
+_chem_comp.name                'FE(7)-MO-S(9)-N CLUSTER             ' 
+_chem_comp.group               non-polymer 
+_chem_comp.number_atoms_all    24 
+_chem_comp.number_atoms_nh     18 
+_chem_comp.desc_level          . 
+# 
+data_comp_CFN
+# 
+loop_
+_chem_comp_atom.comp_id 
+_chem_comp_atom.atom_id 
+_chem_comp_atom.type_symbol 
+_chem_comp_atom.type_energy 
+_chem_comp_atom.partial_charge 
+CFN HS3B H  H  0.000 
+CFN S3B  S  ST 0.000 
+CFN MO1  MO MO 0.000 
+CFN FE6  FE FE 0.000 
+CFN NX   N  N  0.000 
+CFN FE4  FE FE 0.000 
+CFN FE3  FE FE 0.000 
+CFN FE7  FE FE 0.000 
+CFN S5A  S  S2 0.000 
+CFN FE5  FE FE 0.000 
+CFN S4B  S  ST 0.000 
+CFN HS4B H  H  0.000 
+CFN S1B  S  ST 0.000 
+CFN HS1B H  H  0.000 
+CFN S3A  S  S2 0.000 
+CFN FE2  FE FE 0.000 
+CFN S2B  S  S2 0.000 
+CFN S2A  S  ST 0.000 
+CFN HS2A H  H  0.000 
+CFN FE1  FE FE 0.000 
+CFN S4A  S  ST 0.000 
+CFN HS4A H  H  0.000 
+CFN S1A  S  ST 0.000 
+CFN HS1A H  H  0.000 
+# 
+loop_
+_chem_comp_tree.comp_id 
+_chem_comp_tree.atom_id 
+_chem_comp_tree.atom_back 
+_chem_comp_tree.atom_forward 
+_chem_comp_tree.connect_type 
+CFN HS3B n/a  S3B  START 
+CFN S3B  HS3B FE6  .     
+CFN MO1  S3B  .    .     
+CFN FE6  S3B  NX   .     
+CFN NX   FE6  FE2  .     
+CFN FE4  NX   .    .     
+CFN FE3  NX   .    .     
+CFN FE7  NX   S5A  .     
+CFN S5A  FE7  .    .     
+CFN FE5  NX   S3A  .     
+CFN S4B  FE5  HS4B .     
+CFN HS4B S4B  .    .     
+CFN S1B  FE5  HS1B .     
+CFN HS1B S1B  .    .     
+CFN S3A  FE5  .    .     
+CFN FE2  NX   S2A  .     
+CFN S2B  FE2  .    .     
+CFN S2A  FE2  FE1  .     
+CFN HS2A S2A  .    .     
+CFN FE1  S2A  S1A  .     
+CFN S4A  FE1  HS4A .     
+CFN HS4A S4A  .    .     
+CFN S1A  FE1  HS1A .     
+CFN HS1A S1A  .    END   
+CFN S3A  FE4  .    ADD   
+CFN FE4  S1A  .    ADD   
+CFN FE4  S4A  .    ADD   
+CFN S1A  FE2  .    ADD   
+CFN S4A  FE3  .    ADD   
+CFN FE3  S2A  .    ADD   
+CFN FE3  S5A  .    ADD   
+CFN FE7  S4B  .    ADD   
+CFN FE7  S3B  .    ADD   
+CFN S4B  MO1  .    ADD   
+CFN MO1  S1B  .    ADD   
+CFN S1B  FE6  .    ADD   
+CFN FE6  S2B  .    ADD   
+# 
+loop_
+_chem_comp_bond.comp_id 
+_chem_comp_bond.atom_id_1 
+_chem_comp_bond.atom_id_2 
+_chem_comp_bond.type 
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist 
+_chem_comp_bond.value_dist_esd 
+CFN       S3A       FE4       single    2.235     0.020     2.235     0.020     
+CFN       S3A       FE5       single    2.235     0.020     2.235     0.020     
+CFN       FE4       S1A       single    2.135     0.020     2.135     0.020     
+CFN       FE4       S4A       single    2.135     0.020     2.135     0.020     
+CFN       FE4       NX        single    1.855     0.020     1.855     0.020     
+CFN       S1A       FE2       single    2.135     0.020     2.135     0.020     
+CFN       S1A       FE1       single    2.135     0.020     2.135     0.020     
+CFN       S4A       FE3       single    2.135     0.020     2.135     0.020     
+CFN       S4A       FE1       single    2.135     0.020     2.135     0.020     
+CFN       FE3       S2A       single    2.135     0.020     2.135     0.020     
+CFN       FE3       S5A       single    2.235     0.020     2.235     0.020     
+CFN       FE3       NX        single    1.855     0.020     1.855     0.020     
+CFN       S2A       FE2       single    2.135     0.020     2.135     0.020     
+CFN       FE1       S2A       single    2.135     0.020     2.135     0.020     
+CFN       FE7       S4B       single    2.135     0.020     2.135     0.020     
+CFN       FE7       S3B       single    2.135     0.020     2.135     0.020     
+CFN       S5A       FE7       single    2.235     0.020     2.235     0.020     
+CFN       FE7       NX        single    1.855     0.020     1.855     0.020     
+CFN       S4B       MO1       single    2.225     0.020     2.225     0.020     
+CFN       S4B       FE5       single    2.135     0.020     2.135     0.020     
+CFN       MO1       S1B       single    2.225     0.020     2.225     0.020     
+CFN       MO1       S3B       single    2.225     0.020     2.225     0.020     
+CFN       S1B       FE6       single    2.135     0.020     2.135     0.020     
+CFN       S1B       FE5       single    2.135     0.020     2.135     0.020     
+CFN       FE6       S2B       single    2.235     0.020     2.235     0.020     
+CFN       FE6       S3B       single    2.135     0.020     2.135     0.020     
+CFN       NX        FE6       single    1.855     0.020     1.855     0.020     
+CFN       S2B       FE2       single    2.235     0.020     2.235     0.020     
+CFN       FE2       NX        single    1.855     0.020     1.855     0.020     
+CFN       FE5       NX        single    1.855     0.020     1.855     0.020     
+CFN       HS1A      S1A       single    1.338     0.010     1.171     0.208     
+CFN       HS4A      S4A       single    1.338     0.010     1.171     0.208     
+CFN       HS2A      S2A       single    1.338     0.010     1.171     0.208     
+CFN       HS4B      S4B       single    1.338     0.010     1.171     0.208     
+CFN       HS1B      S1B       single    1.338     0.010     1.171     0.208     
+CFN       S3B       HS3B      single    1.338     0.010     1.171     0.208     
+# 
+loop_
+_chem_comp_angle.comp_id 
+_chem_comp_angle.atom_id_1 
+_chem_comp_angle.atom_id_2 
+_chem_comp_angle.atom_id_3 
+_chem_comp_angle.value_angle 
+_chem_comp_angle.value_angle_esd 
+CFN HS3B S3B MO1  109.500 3.000 
+CFN HS3B S3B FE6  109.500 3.000 
+CFN HS3B S3B FE7  109.500 3.000 
+CFN MO1  S3B FE6  109.500 3.000 
+CFN MO1  S3B FE7  109.500 3.000 
+CFN FE6  S3B FE7  109.500 3.000 
+CFN S3B  MO1 S4B  90.000  3.000 
+CFN S3B  MO1 S1B  90.000  3.000 
+CFN S4B  MO1 S1B  90.000  3.000 
+CFN S3B  FE6 NX   90.000  3.000 
+CFN S3B  FE6 S1B  120.000 3.000 
+CFN S3B  FE6 S2B  120.000 3.000 
+CFN S1B  FE6 S2B  120.000 3.000 
+CFN NX   FE6 S1B  90.000  3.000 
+CFN NX   FE6 S2B  90.000  3.000 
+CFN FE6  NX  FE4  120.000 3.000 
+CFN FE6  NX  FE3  120.000 3.000 
+CFN FE6  NX  FE7  120.000 3.000 
+CFN FE6  NX  FE5  120.000 3.000 
+CFN FE6  NX  FE2  120.000 3.000 
+CFN FE4  NX  FE3  120.000 3.000 
+CFN FE4  NX  FE7  120.000 3.000 
+CFN FE3  NX  FE7  120.000 3.000 
+CFN FE4  NX  FE5  120.000 3.000 
+CFN FE3  NX  FE5  120.000 3.000 
+CFN FE7  NX  FE5  120.000 3.000 
+CFN FE4  NX  FE2  120.000 3.000 
+CFN FE3  NX  FE2  120.000 3.000 
+CFN FE7  NX  FE2  120.000 3.000 
+CFN FE5  NX  FE2  120.000 3.000 
+CFN NX   FE4 S3A  90.000  3.000 
+CFN NX   FE4 S1A  90.000  3.000 
+CFN NX   FE4 S4A  90.000  3.000 
+CFN S3A  FE4 S1A  90.000  3.000 
+CFN S3A  FE4 S4A  90.000  3.000 
+CFN S1A  FE4 S4A  90.000  3.000 
+CFN NX   FE3 S4A  90.000  3.000 
+CFN NX   FE3 S2A  90.000  3.000 
+CFN NX   FE3 S5A  90.000  3.000 
+CFN S4A  FE3 S2A  90.000  3.000 
+CFN S4A  FE3 S5A  90.000  3.000 
+CFN S2A  FE3 S5A  90.000  3.000 
+CFN NX   FE7 S5A  90.000  3.000 
+CFN NX   FE7 S4B  90.000  3.000 
+CFN NX   FE7 S3B  90.000  3.000 
+CFN S4B  FE7 S3B  90.000  3.000 
+CFN S5A  FE7 S4B  90.000  3.000 
+CFN S5A  FE7 S3B  90.000  3.000 
+CFN FE7  S5A FE3  136.340 3.000 
+CFN NX   FE5 S1B  90.000  3.000 
+CFN NX   FE5 S4B  90.000  3.000 
+CFN NX   FE5 S3A  90.000  3.000 
+CFN S1B  FE5 S4B  90.000  3.000 
+CFN S1B  FE5 S3A  90.000  3.000 
+CFN S4B  FE5 S3A  90.000  3.000 
+CFN FE5  S1B HS1B 109.500 3.000 
+CFN FE5  S1B MO1  109.500 3.000 
+CFN FE5  S1B FE6  109.500 3.000 
+CFN MO1  S1B FE6  109.500 3.000 
+CFN HS1B S1B MO1  109.500 3.000 
+CFN HS1B S1B FE6  109.500 3.000 
+CFN FE5  S4B HS4B 109.500 3.000 
+CFN FE5  S4B FE7  109.500 3.000 
+CFN FE5  S4B MO1  109.500 3.000 
+CFN FE7  S4B MO1  109.500 3.000 
+CFN HS4B S4B FE7  109.500 3.000 
+CFN HS4B S4B MO1  109.500 3.000 
+CFN FE5  S3A FE4  90.000  3.000 
+CFN NX   FE2 S2B  90.000  3.000 
+CFN NX   FE2 S2A  90.000  3.000 
+CFN NX   FE2 S1A  90.000  3.000 
+CFN S2B  FE2 S2A  90.000  3.000 
+CFN S2B  FE2 S1A  90.000  3.000 
+CFN S2A  FE2 S1A  90.000  3.000 
+CFN FE2  S2B FE6  71.861  3.000 
+CFN FE2  S2A HS2A 109.500 3.000 
+CFN FE2  S2A FE1  109.500 3.000 
+CFN FE2  S2A FE3  109.500 3.000 
+CFN HS2A S2A FE1  109.500 3.000 
+CFN HS2A S2A FE3  109.500 3.000 
+CFN FE1  S2A FE3  109.500 3.000 
+CFN S2A  FE1 S4A  90.000  3.000 
+CFN S2A  FE1 S1A  90.000  3.000 
+CFN S4A  FE1 S1A  90.000  3.000 
+CFN FE1  S4A HS4A 109.500 3.000 
+CFN FE1  S4A FE4  109.500 3.000 
+CFN FE1  S4A FE3  109.500 3.000 
+CFN FE4  S4A FE3  109.500 3.000 
+CFN HS4A S4A FE4  109.500 3.000 
+CFN HS4A S4A FE3  109.500 3.000 
+CFN FE1  S1A HS1A 109.500 3.000 
+CFN FE1  S1A FE4  109.500 3.000 
+CFN FE1  S1A FE2  109.500 3.000 
+CFN FE4  S1A FE2  109.500 3.000 
+CFN HS1A S1A FE4  109.500 3.000 
+CFN HS1A S1A FE2  109.500 3.000 
+# 
+loop_
+_chem_comp_tor.comp_id 
+_chem_comp_tor.id 
+_chem_comp_tor.atom_id_1 
+_chem_comp_tor.atom_id_2 
+_chem_comp_tor.atom_id_3 
+_chem_comp_tor.atom_id_4 
+_chem_comp_tor.value_angle 
+_chem_comp_tor.value_angle_esd 
+_chem_comp_tor.period 
+CFN var_1  FE7 S3B MO1 S4B  0.000    20.000 1 
+CFN var_2  FE6 S1B MO1 S3B  0.000    20.000 1 
+CFN var_3  FE7 S3B FE6 NX   0.000    20.000 1 
+CFN var_4  FE2 S2B FE6 NX   0.000    20.000 1 
+CFN var_5  FE3 NX  FE6 S3B  0.000    20.000 1 
+CFN var_6  FE6 NX  FE4 S3A  0.000    20.000 1 
+CFN var_7  NX  FE4 S1A FE1  0.000    20.000 1 
+CFN var_8  NX  FE4 S4A FE1  0.000    20.000 1 
+CFN var_9  FE6 NX  FE3 S4A  0.000    20.000 1 
+CFN var_10 NX  FE3 S2A FE2  15.279   20.000 1 
+CFN var_11 NX  FE3 S5A FE7  15.775   20.000 1 
+CFN var_12 FE6 NX  FE7 S5A  -139.626 20.000 1 
+CFN var_13 NX  FE7 S4B FE5  -14.917  20.000 1 
+CFN var_14 NX  FE7 S3B HS3B 175.000  20.000 1 
+CFN var_15 NX  FE7 S5A FE3  -176.553 20.000 1 
+CFN var_16 FE6 NX  FE5 S3A  -104.794 20.000 1 
+CFN var_17 NX  FE5 S1B MO1  -90.319  20.000 1 
+CFN var_18 FE5 S1B FE6 NX   0.000    20.000 1 
+CFN var_19 NX  FE5 S4B FE7  14.703   20.000 1 
+CFN var_20 FE7 S4B MO1 S3B  0.000    20.000 1 
+CFN var_21 NX  FE5 S3A FE4  0.000    20.000 1 
+CFN var_22 FE5 S3A FE4 NX   0.000    20.000 1 
+CFN var_23 FE6 NX  FE2 S2A  124.616  20.000 1 
+CFN var_24 NX  FE2 S2B FE6  -1.427   20.000 1 
+CFN var_25 NX  FE2 S2A FE1  86.378   20.000 1 
+CFN var_26 FE2 S2A FE1 S1A  -129.540 20.000 1 
+CFN var_27 S2A FE1 S4A FE4  0.000    20.000 1 
+CFN var_28 FE1 S4A FE3 NX   0.000    20.000 1 
+CFN var_29 S2A FE1 S1A FE4  0.000    20.000 1 
+CFN var_30 FE1 S1A FE2 NX   100.248  20.000 1 
+# 
+loop_
+_chem_comp_chir.comp_id 
+_chem_comp_chir.id 
+_chem_comp_chir.atom_id_centre 
+_chem_comp_chir.atom_id_1 
+_chem_comp_chir.atom_id_2 
+_chem_comp_chir.atom_id_3 
+_chem_comp_chir.volume_sign 
+_chem_comp_chir.atom_id_4 
+_chem_comp_chir.atom_id_5 
+_chem_comp_chir.atom_id_6 
+_chem_comp_chir.atom_id_7 
+_chem_comp_chir.atom_id_8 
+CFN chir_01 S2A FE3 FE2 FE1 positiv .   .   . . . 
+CFN chir_02 S4B FE7 MO1 FE5 negativ .   .   . . . 
+CFN chir_03 S1B MO1 FE6 FE5 negativ .   .   . . . 
+CFN chir_04 S3B FE7 MO1 FE6 positiv .   .   . . . 
+CFN chir_05 NX  FE4 FE3 FE7 negativ .   .   . . . 
+CFN chir_06 MO1 S3B .   S4B cross4  S1B .   . . . 
+CFN chir_07 FE6 NX  .   S3B cross3  S1B S2B . . . 
+# 

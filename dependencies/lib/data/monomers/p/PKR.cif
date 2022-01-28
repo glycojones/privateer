@@ -1,0 +1,187 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PKR      PKR '(2S)-1-methylpyrrolidine-2-carbaldeh' non-polymer        19   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PKR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PKR           OXT    O    OC       -0.500      0.000    0.000    0.000
+ PKR           C      C    C         0.000     -1.219    0.131   -0.250
+ PKR           O      O    OC       -0.500     -1.584    0.680   -1.313
+ PKR           CA     C    CH1       0.000     -2.247   -0.375    0.728
+ PKR           HA     H    H         0.000     -1.925   -0.177    1.759
+ PKR           CB     C    CH2       0.000     -2.491   -1.891    0.521
+ PKR           HB2    H    H         0.000     -1.792   -2.519    1.078
+ PKR           HB3    H    H         0.000     -2.486   -2.187   -0.530
+ PKR           CG     C    CH2       0.000     -3.919   -2.062    1.101
+ PKR           HG2    H    H         0.000     -3.921   -2.161    2.189
+ PKR           HG3    H    H         0.000     -4.453   -2.906    0.660
+ PKR           CD     C    CH2       0.000     -4.616   -0.745    0.701
+ PKR           HD2    H    H         0.000     -5.274   -0.401    1.502
+ PKR           HD3    H    H         0.000     -5.197   -0.881   -0.213
+ PKR           N      N    NT        0.000     -3.559    0.257    0.468
+ PKR           C6     C    CH3       0.000     -3.754    1.436    1.322
+ PKR           HF     H    H         0.000     -4.699    1.869    1.116
+ PKR           HE     H    H         0.000     -3.712    1.147    2.339
+ PKR           HC     H    H         0.000     -2.991    2.144    1.124
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PKR      OXT    n/a    C      START
+ PKR      C      OXT    CA     .
+ PKR      O      C      .      .
+ PKR      CA     C      CB     .
+ PKR      HA     CA     .      .
+ PKR      CB     CA     CG     .
+ PKR      HB2    CB     .      .
+ PKR      HB3    CB     .      .
+ PKR      CG     CB     CD     .
+ PKR      HG2    CG     .      .
+ PKR      HG3    CG     .      .
+ PKR      CD     CG     N      .
+ PKR      HD2    CD     .      .
+ PKR      HD3    CD     .      .
+ PKR      N      CD     C6     .
+ PKR      C6     N      HC     .
+ PKR      HF     C6     .      .
+ PKR      HE     C6     .      .
+ PKR      HC     C6     .      END
+ PKR      N      CA     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PKR       N         CA        single    1.469     0.020     1.469     0.020     
+PKR       CB        CA        single    1.524     0.020     1.524     0.020     
+PKR       HA        CA        single    1.089     0.010     0.989     0.005     
+PKR       CA        C         single    1.500     0.020     1.500     0.020     
+PKR       C         OXT       deloc     1.250     0.020     1.250     0.020     
+PKR       O         C         deloc     1.250     0.020     1.250     0.020     
+PKR       HB2       CB        single    1.089     0.010     0.989     0.005     
+PKR       HB3       CB        single    1.089     0.010     0.989     0.005     
+PKR       CG        CB        single    1.524     0.020     1.524     0.020     
+PKR       HG2       CG        single    1.089     0.010     0.989     0.005     
+PKR       HG3       CG        single    1.089     0.010     0.989     0.005     
+PKR       N         CD        single    1.469     0.020     1.469     0.020     
+PKR       CD        CG        single    1.524     0.020     1.524     0.020     
+PKR       HD2       CD        single    1.089     0.010     0.989     0.005     
+PKR       HD3       CD        single    1.089     0.010     0.989     0.005     
+PKR       C6        N         single    1.469     0.020     1.469     0.020     
+PKR       HC        C6        single    1.089     0.010     0.989     0.005     
+PKR       HE        C6        single    1.089     0.010     0.989     0.005     
+PKR       HF        C6        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PKR      OXT    C      O       123.000    3.000
+ PKR      OXT    C      CA      118.500    3.000
+ PKR      O      C      CA      118.500    3.000
+ PKR      C      CA     HA      108.810    3.000
+ PKR      C      CA     CB      109.470    3.000
+ PKR      C      CA     N       109.500    3.000
+ PKR      HA     CA     CB      108.340    3.000
+ PKR      HA     CA     N       109.500    3.000
+ PKR      CB     CA     N       109.500    3.000
+ PKR      CA     CB     HB2     109.470    3.000
+ PKR      CA     CB     HB3     109.470    3.000
+ PKR      CA     CB     CG      111.000    3.000
+ PKR      HB2    CB     HB3     107.900    3.000
+ PKR      HB2    CB     CG      109.470    3.000
+ PKR      HB3    CB     CG      109.470    3.000
+ PKR      CB     CG     HG2     109.470    3.000
+ PKR      CB     CG     HG3     109.470    3.000
+ PKR      CB     CG     CD      111.000    3.000
+ PKR      HG2    CG     HG3     107.900    3.000
+ PKR      HG2    CG     CD      109.470    3.000
+ PKR      HG3    CG     CD      109.470    3.000
+ PKR      CG     CD     HD2     109.470    3.000
+ PKR      CG     CD     HD3     109.470    3.000
+ PKR      CG     CD     N       109.470    3.000
+ PKR      HD2    CD     HD3     107.900    3.000
+ PKR      HD2    CD     N       109.470    3.000
+ PKR      HD3    CD     N       109.470    3.000
+ PKR      CD     N      C6      109.470    3.000
+ PKR      CD     N      CA      109.470    3.000
+ PKR      C6     N      CA      109.470    3.000
+ PKR      N      C6     HF      109.470    3.000
+ PKR      N      C6     HE      109.470    3.000
+ PKR      N      C6     HC      109.470    3.000
+ PKR      HF     C6     HE      109.470    3.000
+ PKR      HF     C6     HC      109.470    3.000
+ PKR      HE     C6     HC      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PKR      var_1    OXT    C      CA     CB       -83.136   20.000   3
+ PKR      var_2    C      CA     CB     CG      -150.000   20.000   3
+ PKR      var_3    CA     CB     CG     CD        30.000   20.000   3
+ PKR      var_4    CB     CG     CD     N        -30.000   20.000   3
+ PKR      var_5    CG     CD     N      C6      -120.000   20.000   1
+ PKR      var_6    CD     N      CA     C        150.000   20.000   1
+ PKR      var_7    CD     N      C6     HC      -179.151   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PKR      chir_01  N      CA     CD     C6        negativ
+ PKR      chir_02  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PKR      plan-1    C         0.020
+ PKR      plan-1    CA        0.020
+ PKR      plan-1    O         0.020
+ PKR      plan-1    OXT       0.020
+# ------------------------------------------------------

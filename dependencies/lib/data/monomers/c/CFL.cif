@@ -1,0 +1,275 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CFL      CFL '"4-amino-1-(2-deoxy-2-fluoro-5-O-pho' non-polymer        32  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CFL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CFL           F      F    F         0.000      0.000    0.000    0.000
+ CFL           "C2'"  C    CH1       0.000     -0.779   -0.824   -0.819
+ CFL           "H2'"  H    H         0.000     -0.142   -1.520   -1.382
+ CFL           "C3'"  C    CH1       0.000     -1.817   -1.600    0.024
+ CFL           "H3'"  H    H         0.000     -1.725   -1.338    1.087
+ CFL           "O3'"  O    OH1       0.000     -1.660   -3.009   -0.160
+ CFL           "HO3'" H    H         0.000     -0.804   -3.286    0.194
+ CFL           "C4'"  C    CH1       0.000     -3.180   -1.131   -0.533
+ CFL           "H4'"  H    H         0.000     -3.541   -1.830   -1.300
+ CFL           "C5'"  C    CH2       0.000     -4.204   -1.004    0.596
+ CFL           "H5'1" H    H         0.000     -3.865   -0.253    1.312
+ CFL           "H5'2" H    H         0.000     -4.308   -1.966    1.102
+ CFL           "O5'"  O    O2        0.000     -5.466   -0.612    0.053
+ CFL           P      P    P         0.000     -6.490   -0.498    1.290
+ CFL           O2P    O    OP       -0.666     -5.923    0.443    2.330
+ CFL           O1P    O    OP       -0.666     -7.819    0.034    0.798
+ CFL           O3P    O    OP       -0.666     -6.692   -1.865    1.905
+ CFL           "C1'"  C    CH1       0.000     -1.638    0.025   -1.782
+ CFL           "H1'"  H    H         0.000     -1.762   -0.495   -2.742
+ CFL           "O4'"  O    O2        0.000     -2.913    0.163   -1.118
+ CFL           N1     N    NR6       0.000     -1.026    1.339   -1.989
+ CFL           C6     C    CR16      0.000     -0.594    1.699   -3.230
+ CFL           H6     H    H         0.000     -0.696    1.016   -4.065
+ CFL           C5     C    CR16      0.000     -0.035    2.919   -3.409
+ CFL           H5     H    H         0.000      0.305    3.229   -4.390
+ CFL           C4     C    CR6       0.000      0.096    3.780   -2.300
+ CFL           N4     N    NH2       0.000      0.665    5.023   -2.454
+ CFL           HN42   H    H         0.000      0.997    5.327   -3.363
+ CFL           HN41   H    H         0.000      0.756    5.647   -1.660
+ CFL           N3     N    NRD6      0.000     -0.339    3.387   -1.111
+ CFL           C2     C    CR6       0.000     -0.892    2.186   -0.951
+ CFL           O2     O    O         0.000     -1.284    1.848    0.154
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CFL      F      n/a    "C2'"  START
+ CFL      "C2'"  F      "C1'"  .
+ CFL      "H2'"  "C2'"  .      .
+ CFL      "C3'"  "C2'"  "C4'"  .
+ CFL      "H3'"  "C3'"  .      .
+ CFL      "O3'"  "C3'"  "HO3'" .
+ CFL      "HO3'" "O3'"  .      .
+ CFL      "C4'"  "C3'"  "C5'"  .
+ CFL      "H4'"  "C4'"  .      .
+ CFL      "C5'"  "C4'"  "O5'"  .
+ CFL      "H5'1" "C5'"  .      .
+ CFL      "H5'2" "C5'"  .      .
+ CFL      "O5'"  "C5'"  P      .
+ CFL      P      "O5'"  O3P    .
+ CFL      O2P    P      .      .
+ CFL      O1P    P      .      .
+ CFL      O3P    P      .      .
+ CFL      "C1'"  "C2'"  N1     .
+ CFL      "H1'"  "C1'"  .      .
+ CFL      "O4'"  "C1'"  .      .
+ CFL      N1     "C1'"  C6     .
+ CFL      C6     N1     C5     .
+ CFL      H6     C6     .      .
+ CFL      C5     C6     C4     .
+ CFL      H5     C5     .      .
+ CFL      C4     C5     N3     .
+ CFL      N4     C4     HN41   .
+ CFL      HN42   N4     .      .
+ CFL      HN41   N4     .      .
+ CFL      N3     C4     C2     .
+ CFL      C2     N3     O2     .
+ CFL      O2     C2     .      END
+ CFL      "C4'"  "O4'"  .    ADD
+ CFL      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CFL       O3P       P         deloc     1.510     0.020     1.510     0.020     
+CFL       O1P       P         deloc     1.510     0.020     1.510     0.020     
+CFL       O2P       P         deloc     1.510     0.020     1.510     0.020     
+CFL       P         "O5'"     single    1.610     0.020     1.610     0.020     
+CFL       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+CFL       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+CFL       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+CFL       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+CFL       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+CFL       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+CFL       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+CFL       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+CFL       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+CFL       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+CFL       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+CFL       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+CFL       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+CFL       "C2'"     F         single    1.370     0.020     1.370     0.020     
+CFL       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+CFL       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+CFL       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+CFL       N1        C2        single    1.410     0.020     1.410     0.020     
+CFL       C6        N1        single    1.337     0.020     1.337     0.020     
+CFL       O2        C2        double    1.250     0.020     1.250     0.020     
+CFL       C2        N3        single    1.350     0.020     1.350     0.020     
+CFL       N3        C4        double    1.350     0.020     1.350     0.020     
+CFL       N4        C4        single    1.355     0.020     1.355     0.020     
+CFL       C4        C5        single    1.390     0.020     1.390     0.020     
+CFL       HN41      N4        single    1.016     0.010     0.899     0.007     
+CFL       HN42      N4        single    1.016     0.010     0.899     0.007     
+CFL       C5        C6        double    1.390     0.020     1.390     0.020     
+CFL       H5        C5        single    1.082     0.013     0.975     0.010     
+CFL       H6        C6        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CFL      F      "C2'"  "H2'"   109.500    3.000
+ CFL      F      "C2'"  "C3'"   109.500    3.000
+ CFL      F      "C2'"  "C1'"   109.500    3.000
+ CFL      "H2'"  "C2'"  "C3'"   108.340    3.000
+ CFL      "H2'"  "C2'"  "C1'"   108.340    3.000
+ CFL      "C3'"  "C2'"  "C1'"   111.000    3.000
+ CFL      "C2'"  "C3'"  "H3'"   108.340    3.000
+ CFL      "C2'"  "C3'"  "O3'"   109.470    3.000
+ CFL      "C2'"  "C3'"  "C4'"   111.000    3.000
+ CFL      "H3'"  "C3'"  "O3'"   109.470    3.000
+ CFL      "H3'"  "C3'"  "C4'"   108.340    3.000
+ CFL      "O3'"  "C3'"  "C4'"   109.470    3.000
+ CFL      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ CFL      "C3'"  "C4'"  "H4'"   108.340    3.000
+ CFL      "C3'"  "C4'"  "C5'"   111.000    3.000
+ CFL      "C3'"  "C4'"  "O4'"   109.470    3.000
+ CFL      "H4'"  "C4'"  "C5'"   108.340    3.000
+ CFL      "H4'"  "C4'"  "O4'"   109.470    3.000
+ CFL      "C5'"  "C4'"  "O4'"   109.470    3.000
+ CFL      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ CFL      "C4'"  "C5'"  "H5'2"  109.470    3.000
+ CFL      "C4'"  "C5'"  "O5'"   109.470    3.000
+ CFL      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ CFL      "H5'1" "C5'"  "O5'"   109.470    3.000
+ CFL      "H5'2" "C5'"  "O5'"   109.470    3.000
+ CFL      "C5'"  "O5'"  P       120.500    3.000
+ CFL      "O5'"  P      O2P     108.200    3.000
+ CFL      "O5'"  P      O1P     108.200    3.000
+ CFL      "O5'"  P      O3P     108.200    3.000
+ CFL      O2P    P      O1P     119.900    3.000
+ CFL      O2P    P      O3P     119.900    3.000
+ CFL      O1P    P      O3P     119.900    3.000
+ CFL      "C2'"  "C1'"  "H1'"   108.340    3.000
+ CFL      "C2'"  "C1'"  "O4'"   109.470    3.000
+ CFL      "C2'"  "C1'"  N1      109.470    3.000
+ CFL      "H1'"  "C1'"  "O4'"   109.470    3.000
+ CFL      "H1'"  "C1'"  N1      109.470    3.000
+ CFL      "O4'"  "C1'"  N1      109.470    3.000
+ CFL      "C1'"  "O4'"  "C4'"   111.800    3.000
+ CFL      "C1'"  N1     C6      120.000    3.000
+ CFL      "C1'"  N1     C2      120.000    3.000
+ CFL      C6     N1     C2      120.000    3.000
+ CFL      N1     C6     H6      120.000    3.000
+ CFL      N1     C6     C5      120.000    3.000
+ CFL      H6     C6     C5      120.000    3.000
+ CFL      C6     C5     H5      120.000    3.000
+ CFL      C6     C5     C4      120.000    3.000
+ CFL      H5     C5     C4      120.000    3.000
+ CFL      C5     C4     N4      120.000    3.000
+ CFL      C5     C4     N3      120.000    3.000
+ CFL      N4     C4     N3      120.000    3.000
+ CFL      C4     N4     HN42    120.000    3.000
+ CFL      C4     N4     HN41    120.000    3.000
+ CFL      HN42   N4     HN41    120.000    3.000
+ CFL      C4     N3     C2      120.000    3.000
+ CFL      N3     C2     O2      120.000    3.000
+ CFL      N3     C2     N1      120.000    3.000
+ CFL      O2     C2     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CFL      var_1    F      "C2'"  "C3'"  "C4'"    120.000   20.000   3
+ CFL      var_2    "C2'"  "C3'"  "O3'"  "HO3'"    65.347   20.000   1
+ CFL      var_3    "C2'"  "C3'"  "C4'"  "C5'"   -150.000   20.000   3
+ CFL      var_4    "C3'"  "C4'"  "O4'"  "C1'"     30.000   20.000   1
+ CFL      var_5    "C3'"  "C4'"  "C5'"  "O5'"   -178.100   20.000   3
+ CFL      var_6    "C4'"  "C5'"  "O5'"  P       -179.967   20.000   1
+ CFL      var_7    "C5'"  "O5'"  P      O3P      -64.991   20.000   1
+ CFL      var_8    F      "C2'"  "C1'"  N1        30.000   20.000   3
+ CFL      var_9    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ CFL      var_10   "C2'"  "C1'"  N1     C6       116.517   20.000   1
+ CFL      CONST_1  "C1'"  N1     C2     N3       180.000    0.000   0
+ CFL      CONST_2  "C1'"  N1     C6     C5       180.000    0.000   0
+ CFL      CONST_3  N1     C6     C5     C4         0.000    0.000   0
+ CFL      CONST_4  C6     C5     C4     N3         0.000    0.000   0
+ CFL      CONST_5  C5     C4     N4     HN41     179.713    0.000   0
+ CFL      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ CFL      CONST_7  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CFL      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ CFL      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ CFL      chir_03  "C2'"  "C3'"  "C1'"  F         negativ
+ CFL      chir_04  "C1'"  "O4'"  "C2'"  N1        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CFL      plan-1    N1        0.020
+ CFL      plan-1    "C1'"     0.020
+ CFL      plan-1    C2        0.020
+ CFL      plan-1    C6        0.020
+ CFL      plan-1    N3        0.020
+ CFL      plan-1    C4        0.020
+ CFL      plan-1    C5        0.020
+ CFL      plan-1    O2        0.020
+ CFL      plan-1    N4        0.020
+ CFL      plan-1    H5        0.020
+ CFL      plan-1    H6        0.020
+ CFL      plan-1    HN42      0.020
+ CFL      plan-1    HN41      0.020
+ CFL      plan-2    N4        0.020
+ CFL      plan-2    C4        0.020
+ CFL      plan-2    HN41      0.020
+ CFL      plan-2    HN42      0.020
+# ------------------------------------------------------

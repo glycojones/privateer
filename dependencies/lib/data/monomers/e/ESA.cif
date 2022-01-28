@@ -1,0 +1,112 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ESA     ESA      "ETHANESULFONIC ACID"     NON-POLYMER     12     6     .     
+#
+data_comp_ESA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ESA     C1      C       CH3     0       1.415       0.106       0.423       
+ESA     C2      C       CH2     0       0.356       0.280       -0.642      
+ESA     S       S       S3      0       -1.140      -0.584      -0.251      
+ESA     O1      O       O       0       -2.101      -0.224      -1.255      
+ESA     O2      O       OH1     0       -1.558      0.018       1.114       
+ESA     O3      O       O       0       -0.793      -1.967      -0.090      
+ESA     H11     H       H       0       2.232       0.544       0.141       
+ESA     H12     H       H       0       1.585       -0.838      0.559       
+ESA     H13     H       H       0       1.107       0.500       1.253       
+ESA     H21     H       H       0       0.699       -0.050      -1.493      
+ESA     H22     H       H       0       0.157       1.229       -0.745      
+ESA     HO2     H       H       0       -1.949      -0.536      1.559       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ESA       C1        C2        SINGLE    n         1.511     0.020     1.511     0.020     
+ESA       C2        S         SINGLE    n         1.771     0.013     1.771     0.013     
+ESA       S         O1        DOUBLE    n         1.435     0.010     1.435     0.010     
+ESA       S         O2        SINGLE    n         1.549     0.020     1.549     0.020     
+ESA       S         O3        DOUBLE    n         1.435     0.010     1.435     0.010     
+ESA       C1        H11       SINGLE    n         1.089     0.010     0.969     0.013     
+ESA       C1        H12       SINGLE    n         1.089     0.010     0.969     0.013     
+ESA       C1        H13       SINGLE    n         1.089     0.010     0.969     0.013     
+ESA       C2        H21       SINGLE    n         1.089     0.010     0.975     0.020     
+ESA       C2        H22       SINGLE    n         1.089     0.010     0.975     0.020     
+ESA       O2        HO2       SINGLE    n         0.970     0.012     0.811     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ESA          C2          C1         H11     109.468    1.50
+ESA          C2          C1         H12     109.468    1.50
+ESA          C2          C1         H13     109.468    1.50
+ESA         H11          C1         H12     109.451    1.50
+ESA         H11          C1         H13     109.451    1.50
+ESA         H12          C1         H13     109.451    1.50
+ESA          C1          C2           S     111.256    2.92
+ESA          C1          C2         H21     109.162    1.50
+ESA          C1          C2         H22     109.162    1.50
+ESA           S          C2         H21     108.904    1.50
+ESA           S          C2         H22     108.904    1.50
+ESA         H21          C2         H22     107.913    1.50
+ESA          C2           S          O1     106.916    1.50
+ESA          C2           S          O2     103.568    2.80
+ESA          C2           S          O3     106.916    1.50
+ESA          O1           S          O2     110.306    2.80
+ESA          O1           S          O3     119.289    2.60
+ESA          O2           S          O3     110.306    2.80
+ESA           S          O2         HO2     110.371    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ESA             sp3_sp3_1         H11          C1          C2           S     180.000   10.00     3
+ESA            sp3_sp3_10          C1          C2           S          O1     180.000   10.00     3
+ESA            sp3_sp3_19         HO2          O2           S          C2     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ESA SMILES           ACDLabs              10.04 "O=S(=O)(O)CC"
+ESA SMILES_CANONICAL CACTVS               3.341 "CC[S](O)(=O)=O"
+ESA SMILES           CACTVS               3.341 "CC[S](O)(=O)=O"
+ESA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCS(=O)(=O)O"
+ESA SMILES           "OpenEye OEToolkits" 1.5.0 "CCS(=O)(=O)O"
+ESA InChI            InChI                1.03  "InChI=1S/C2H6O3S/c1-2-6(3,4)5/h2H2,1H3,(H,3,4,5)"
+ESA InChIKey         InChI                1.03  CCIVGXIOQKPBKL-UHFFFAOYSA-N
+ESA ?                acedrg               202         "dictionary generator"                  
+ESA ?                acedrg_database      11          "data source"                           
+ESA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ESA ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,140 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XYM     XYM      "(2Z)-3-[(carboxymethyl)sulfanyl]-2-hydroxyprop-2-enoic acid"     NON-POLYMER     15     11     .     
+#
+data_comp_XYM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+XYM     OAA     O       OC      -1      -1.582      1.029       1.151       
+XYM     OAB     O       O       0       3.214       1.644       0.686       
+XYM     OAC     O       O       0       -3.460      0.835       -0.012      
+XYM     OAD     O       OC      -1      3.102       -0.456      1.231       
+XYM     OAE     O       OH1     0       0.913       1.464       -0.662      
+XYM     CAF     C       C1      0       0.771       -0.917      -0.381      
+XYM     CAG     C       CH2     0       -1.970      -1.010      0.024       
+XYM     SAH     S       S2      0       -0.741      -1.041      -1.279      
+XYM     CAI     C       C       0       -2.373      0.401       0.420       
+XYM     CAJ     C       C       0       2.669       0.535       0.641       
+XYM     CAK     C       C       0       1.475       0.376       -0.120      
+XYM     HOAE    H       H       0       1.392       1.680       -1.379      
+XYM     HAF     H       H       0       1.141       -1.711      -0.060      
+XYM     HAG     H       H       0       -1.610      -1.463      0.803       
+XYM     HAGA    H       H       0       -2.756      -1.493      -0.276      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XYM       OAA       CAI       SINGLE    n         1.247     0.019     1.247     0.019     
+XYM       OAB       CAJ       DOUBLE    n         1.230     0.020     1.230     0.020     
+XYM       OAC       CAI       DOUBLE    n         1.247     0.019     1.247     0.019     
+XYM       OAD       CAJ       SINGLE    n         1.230     0.020     1.230     0.020     
+XYM       OAE       CAK       SINGLE    n         1.330     0.020     1.330     0.020     
+XYM       CAF       SAH       SINGLE    n         1.759     0.019     1.759     0.019     
+XYM       CAF       CAK       DOUBLE    n         1.482     0.020     1.482     0.020     
+XYM       CAG       SAH       SINGLE    n         1.791     0.010     1.791     0.010     
+XYM       CAG       CAI       SINGLE    n         1.519     0.010     1.519     0.010     
+XYM       CAJ       CAK       SINGLE    n         1.403     0.020     1.403     0.020     
+XYM       OAE       HOAE      SINGLE    n         0.970     0.012     0.889     0.020     
+XYM       CAF       HAF       SINGLE    n         1.082     0.013     0.933     0.010     
+XYM       CAG       HAG       SINGLE    n         1.089     0.010     0.970     0.016     
+XYM       CAG       HAGA      SINGLE    n         1.089     0.010     0.970     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+XYM         CAK         OAE        HOAE     107.379    3.00
+XYM         SAH         CAF         CAK     122.307    3.00
+XYM         SAH         CAF         HAF     117.744    1.50
+XYM         CAK         CAF         HAF     119.949    3.00
+XYM         SAH         CAG         CAI     111.968    3.00
+XYM         SAH         CAG         HAG     108.564    1.50
+XYM         SAH         CAG        HAGA     108.564    1.50
+XYM         CAI         CAG         HAG     108.575    1.82
+XYM         CAI         CAG        HAGA     108.575    1.82
+XYM         HAG         CAG        HAGA     108.166    1.80
+XYM         CAF         SAH         CAG     102.520    1.50
+XYM         OAA         CAI         OAC     125.576    1.50
+XYM         OAA         CAI         CAG     117.212    2.93
+XYM         OAC         CAI         CAG     117.212    2.93
+XYM         OAB         CAJ         OAD     124.523    1.63
+XYM         OAB         CAJ         CAK     117.738    3.00
+XYM         OAD         CAJ         CAK     117.738    3.00
+XYM         OAE         CAK         CAF     117.202    3.00
+XYM         OAE         CAK         CAJ     117.202    3.00
+XYM         CAF         CAK         CAJ     125.595    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+XYM             sp2_sp2_2         SAH         CAF         CAK         OAE       0.000   10.00     2
+XYM             sp3_sp3_1         CAI         CAG         SAH         CAF     180.000   10.00     3
+XYM             sp2_sp3_6         OAA         CAI         CAG         SAH     120.000   10.00     6
+XYM             sp2_sp2_6         OAB         CAJ         CAK         OAE       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+XYM    plan-1         CAF   0.020
+XYM    plan-1         CAK   0.020
+XYM    plan-1         HAF   0.020
+XYM    plan-1         SAH   0.020
+XYM    plan-2         CAG   0.020
+XYM    plan-2         CAI   0.020
+XYM    plan-2         OAA   0.020
+XYM    plan-2         OAC   0.020
+XYM    plan-3         CAJ   0.020
+XYM    plan-3         CAK   0.020
+XYM    plan-3         OAB   0.020
+XYM    plan-3         OAD   0.020
+XYM    plan-4         CAF   0.020
+XYM    plan-4         CAJ   0.020
+XYM    plan-4         CAK   0.020
+XYM    plan-4         OAE   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+XYM SMILES_CANONICAL CACTVS               3.352 "OC(=O)CS\C=C(/O)C(O)=O"
+XYM SMILES           CACTVS               3.352 "OC(=O)CSC=C(O)C(O)=O"
+XYM SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(C(=O)O)S/C=C(/C(=O)O)\O"
+XYM SMILES           "OpenEye OEToolkits" 1.7.0 "C(C(=O)O)SC=C(C(=O)O)O"
+XYM InChI            InChI                1.03  "InChI=1S/C5H6O5S/c6-3(5(9)10)1-11-2-4(7)8/h1,6H,2H2,(H,7,8)(H,9,10)/b3-1-"
+XYM InChIKey         InChI                1.03  IXLZHTPCCBDKBW-IWQZZHSRSA-N
+XYM ?                acedrg               202         "dictionary generator"                  
+XYM ?                acedrg_database      11          "data source"                           
+XYM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+XYM ?                refmac5              5.8.0189    "optimization tool"                     

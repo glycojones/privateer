@@ -1,0 +1,469 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3SA      3SA 'ACARBOSE DERIVED TRISACCHARIDE      ' non-polymer        66  33 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_3SA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 3SA           O7Z    O    OH1       0.000      0.000    0.000    0.000
+ 3SA           H7Z    H    H         0.000      0.868    0.149   -0.399
+ 3SA           C7Z    C    CH2       0.000      0.130   -0.028    1.422
+ 3SA           H7Z1   H    H         0.000      0.533    0.926    1.769
+ 3SA           H7Z2   H    H         0.000      0.808   -0.834    1.709
+ 3SA           C5Z    C    C         0.000     -1.222   -0.260    2.046
+ 3SA           C4Z    C    CH1       0.000     -1.305   -0.323    3.543
+ 3SA           H4Z    H    H         0.000     -0.465   -0.917    3.930
+ 3SA           O4Z    O    OH1       0.000     -1.237    1.000    4.077
+ 3SA           H9     H    H         0.000     -0.400    1.409    3.817
+ 3SA           C3Z    C    CH1       0.000     -2.624   -0.971    3.970
+ 3SA           H3Z    H    H         0.000     -2.767   -0.839    5.052
+ 3SA           O3Z    O    OH1       0.000     -2.599   -2.365    3.656
+ 3SA           H8     H    H         0.000     -1.866   -2.787    4.124
+ 3SA           C2Z    C    CH1       0.000     -3.766   -0.285    3.213
+ 3SA           H2Z    H    H         0.000     -4.731   -0.644    3.597
+ 3SA           O2Z    O    OH1       0.000     -3.678    1.130    3.388
+ 3SA           H7     H    H         0.000     -3.743    1.342    4.328
+ 3SA           C6Z    C    C1        0.000     -2.240   -0.392    1.257
+ 3SA           H6Z    H    H         0.000     -2.069   -0.321    0.196
+ 3SA           C1Z    C    CH1       0.000     -3.643   -0.637    1.728
+ 3SA           H1Z    H    H         0.000     -3.897   -1.697    1.583
+ 3SA           N4Y    N    NH1       0.000     -4.571    0.197    0.952
+ 3SA           H4Y    H    H         0.000     -4.886    1.128    1.186
+ 3SA           C4Y    C    CH1       0.000     -4.952   -0.586   -0.231
+ 3SA           H1     H    H         0.000     -4.128   -1.258   -0.509
+ 3SA           C3Y    C    CH1       0.000     -6.204   -1.412    0.083
+ 3SA           H3Y    H    H         0.000     -6.997   -0.752    0.462
+ 3SA           O3Y    O    OH1       0.000     -5.895   -2.403    1.065
+ 3SA           H2     H    H         0.000     -6.684   -2.930    1.250
+ 3SA           C2Y    C    CH1       0.000     -6.676   -2.096   -1.206
+ 3SA           H2Y    H    H         0.000     -5.926   -2.833   -1.526
+ 3SA           O2Y    O    OH1       0.000     -7.924   -2.753   -0.972
+ 3SA           H3     H    H         0.000     -8.222   -3.177   -1.788
+ 3SA           C5Y    C    CH1       0.000     -5.258    0.360   -1.394
+ 3SA           H5Y    H    H         0.000     -6.099    1.014   -1.122
+ 3SA           C6Y    C    CH3       0.000     -4.026    1.215   -1.693
+ 3SA           H6Y3   H    H         0.000     -3.834    1.859   -0.874
+ 3SA           H6Y2   H    H         0.000     -3.188    0.586   -1.850
+ 3SA           H6Y1   H    H         0.000     -4.199    1.795   -2.563
+ 3SA           O5Y    O    O2        0.000     -5.603   -0.397   -2.554
+ 3SA           C1Y    C    CH1       0.000     -6.851   -1.037   -2.296
+ 3SA           H1Y    H    H         0.000     -7.213   -1.516   -3.216
+ 3SA           O4X    O    O2        0.000     -7.803   -0.063   -1.862
+ 3SA           C4X    C    CH1       0.000     -8.193    0.678   -3.020
+ 3SA           H4X    H    H         0.000     -7.333    0.783   -3.697
+ 3SA           C3X    C    CH1       0.000     -9.328   -0.059   -3.743
+ 3SA           H3X    H    H         0.000    -10.146   -0.259   -3.037
+ 3SA           O3X    O    OH1       0.000     -8.837   -1.292   -4.271
+ 3SA           H4     H    H         0.000     -9.554   -1.755   -4.725
+ 3SA           C2X    C    CH1       0.000     -9.839    0.828   -4.884
+ 3SA           H2X    H    H         0.000     -9.052    0.941   -5.642
+ 3SA           O2X    O    OH1       0.000    -10.991    0.226   -5.478
+ 3SA           H5     H    H         0.000    -11.312    0.786   -6.197
+ 3SA           C5X    C    CH1       0.000     -8.685    2.064   -2.599
+ 3SA           H5X    H    H         0.000     -9.558    1.957   -1.940
+ 3SA           C6X    C    CH2       0.000     -7.570    2.795   -1.850
+ 3SA           H6X1   H    H         0.000     -6.725    2.957   -2.523
+ 3SA           H6X2   H    H         0.000     -7.246    2.190   -1.000
+ 3SA           O6X    O    OH1       0.000     -8.056    4.055   -1.382
+ 3SA           H6X    H    H         0.000     -7.350    4.517   -0.909
+ 3SA           O5X    O    O2        0.000     -9.054    2.818   -3.753
+ 3SA           C1X    C    CH1       0.000    -10.208    2.202   -4.321
+ 3SA           H1X    H    H         0.000    -10.599    2.835   -5.131
+ 3SA           O1X    O    OH1       0.000    -11.209    2.050   -3.314
+ 3SA           H6     H    H         0.000    -11.442    2.918   -2.959
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 3SA      O7Z    n/a    C7Z    START
+ 3SA      H7Z    O7Z    .      .
+ 3SA      C7Z    O7Z    C5Z    .
+ 3SA      H7Z1   C7Z    .      .
+ 3SA      H7Z2   C7Z    .      .
+ 3SA      C5Z    C7Z    C6Z    .
+ 3SA      C4Z    C5Z    C3Z    .
+ 3SA      H4Z    C4Z    .      .
+ 3SA      O4Z    C4Z    H9     .
+ 3SA      H9     O4Z    .      .
+ 3SA      C3Z    C4Z    C2Z    .
+ 3SA      H3Z    C3Z    .      .
+ 3SA      O3Z    C3Z    H8     .
+ 3SA      H8     O3Z    .      .
+ 3SA      C2Z    C3Z    O2Z    .
+ 3SA      H2Z    C2Z    .      .
+ 3SA      O2Z    C2Z    H7     .
+ 3SA      H7     O2Z    .      .
+ 3SA      C6Z    C5Z    C1Z    .
+ 3SA      H6Z    C6Z    .      .
+ 3SA      C1Z    C6Z    N4Y    .
+ 3SA      H1Z    C1Z    .      .
+ 3SA      N4Y    C1Z    C4Y    .
+ 3SA      H4Y    N4Y    .      .
+ 3SA      C4Y    N4Y    C5Y    .
+ 3SA      H1     C4Y    .      .
+ 3SA      C3Y    C4Y    C2Y    .
+ 3SA      H3Y    C3Y    .      .
+ 3SA      O3Y    C3Y    H2     .
+ 3SA      H2     O3Y    .      .
+ 3SA      C2Y    C3Y    O2Y    .
+ 3SA      H2Y    C2Y    .      .
+ 3SA      O2Y    C2Y    H3     .
+ 3SA      H3     O2Y    .      .
+ 3SA      C5Y    C4Y    O5Y    .
+ 3SA      H5Y    C5Y    .      .
+ 3SA      C6Y    C5Y    H6Y1   .
+ 3SA      H6Y3   C6Y    .      .
+ 3SA      H6Y2   C6Y    .      .
+ 3SA      H6Y1   C6Y    .      .
+ 3SA      O5Y    C5Y    C1Y    .
+ 3SA      C1Y    O5Y    O4X    .
+ 3SA      H1Y    C1Y    .      .
+ 3SA      O4X    C1Y    C4X    .
+ 3SA      C4X    O4X    C5X    .
+ 3SA      H4X    C4X    .      .
+ 3SA      C3X    C4X    C2X    .
+ 3SA      H3X    C3X    .      .
+ 3SA      O3X    C3X    H4     .
+ 3SA      H4     O3X    .      .
+ 3SA      C2X    C3X    O2X    .
+ 3SA      H2X    C2X    .      .
+ 3SA      O2X    C2X    H5     .
+ 3SA      H5     O2X    .      .
+ 3SA      C5X    C4X    O5X    .
+ 3SA      H5X    C5X    .      .
+ 3SA      C6X    C5X    O6X    .
+ 3SA      H6X1   C6X    .      .
+ 3SA      H6X2   C6X    .      .
+ 3SA      O6X    C6X    H6X    .
+ 3SA      H6X    O6X    .      .
+ 3SA      O5X    C5X    C1X    .
+ 3SA      C1X    O5X    O1X    .
+ 3SA      H1X    C1X    .      .
+ 3SA      O1X    C1X    H6     .
+ 3SA      H6     O1X    .      END
+ 3SA      C1X    C2X    .    ADD
+ 3SA      C1Y    C2Y    .    ADD
+ 3SA      C1Z    C2Z    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3SA       C1X       C2X       single    1.524     0.020     1.524     0.020     
+3SA       O1X       C1X       single    1.432     0.020     1.432     0.020     
+3SA       C1X       O5X       single    1.426     0.020     1.426     0.020     
+3SA       H1X       C1X       single    1.089     0.010     0.989     0.005     
+3SA       C2X       C3X       single    1.524     0.020     1.524     0.020     
+3SA       O2X       C2X       single    1.432     0.020     1.432     0.020     
+3SA       H2X       C2X       single    1.089     0.010     0.989     0.005     
+3SA       C3X       C4X       single    1.524     0.020     1.524     0.020     
+3SA       O3X       C3X       single    1.432     0.020     1.432     0.020     
+3SA       H3X       C3X       single    1.089     0.010     0.989     0.005     
+3SA       C5X       C4X       single    1.524     0.020     1.524     0.020     
+3SA       C4X       O4X       single    1.426     0.020     1.426     0.020     
+3SA       H4X       C4X       single    1.089     0.010     0.989     0.005     
+3SA       C6X       C5X       single    1.524     0.020     1.524     0.020     
+3SA       O5X       C5X       single    1.426     0.020     1.426     0.020     
+3SA       H5X       C5X       single    1.089     0.010     0.989     0.005     
+3SA       O6X       C6X       single    1.432     0.020     1.432     0.020     
+3SA       H6X1      C6X       single    1.089     0.010     0.989     0.005     
+3SA       H6X2      C6X       single    1.089     0.010     0.989     0.005     
+3SA       H6        O1X       single    0.970     0.012     0.839     0.014     
+3SA       H5        O2X       single    0.970     0.012     0.839     0.014     
+3SA       H4        O3X       single    0.970     0.012     0.839     0.014     
+3SA       O4X       C1Y       single    1.426     0.020     1.426     0.020     
+3SA       H6X       O6X       single    0.970     0.012     0.839     0.014     
+3SA       C1Y       C2Y       single    1.524     0.020     1.524     0.020     
+3SA       C1Y       O5Y       single    1.426     0.020     1.426     0.020     
+3SA       H1Y       C1Y       single    1.089     0.010     0.989     0.005     
+3SA       C2Y       C3Y       single    1.524     0.020     1.524     0.020     
+3SA       O2Y       C2Y       single    1.432     0.020     1.432     0.020     
+3SA       H2Y       C2Y       single    1.089     0.010     0.989     0.005     
+3SA       C3Y       C4Y       single    1.524     0.020     1.524     0.020     
+3SA       O3Y       C3Y       single    1.432     0.020     1.432     0.020     
+3SA       H3Y       C3Y       single    1.089     0.010     0.989     0.005     
+3SA       C5Y       C4Y       single    1.524     0.020     1.524     0.020     
+3SA       C4Y       N4Y       single    1.450     0.020     1.450     0.020     
+3SA       H1        C4Y       single    1.089     0.010     0.989     0.005     
+3SA       C6Y       C5Y       single    1.524     0.020     1.524     0.020     
+3SA       O5Y       C5Y       single    1.426     0.020     1.426     0.020     
+3SA       H5Y       C5Y       single    1.089     0.010     0.989     0.005     
+3SA       H6Y1      C6Y       single    1.089     0.010     0.989     0.005     
+3SA       H6Y2      C6Y       single    1.089     0.010     0.989     0.005     
+3SA       H6Y3      C6Y       single    1.089     0.010     0.989     0.005     
+3SA       H3        O2Y       single    0.970     0.012     0.839     0.014     
+3SA       H2        O3Y       single    0.970     0.012     0.839     0.014     
+3SA       N4Y       C1Z       single    1.450     0.020     1.450     0.020     
+3SA       H4Y       N4Y       single    1.036     0.016     0.914     0.007     
+3SA       C1Z       C2Z       single    1.524     0.020     1.524     0.020     
+3SA       C1Z       C6Z       single    1.510     0.020     1.510     0.020     
+3SA       H1Z       C1Z       single    1.089     0.010     0.989     0.005     
+3SA       O2Z       C2Z       single    1.432     0.020     1.432     0.020     
+3SA       C2Z       C3Z       single    1.524     0.020     1.524     0.020     
+3SA       H2Z       C2Z       single    1.089     0.010     0.989     0.005     
+3SA       H7        O2Z       single    0.970     0.012     0.839     0.014     
+3SA       O3Z       C3Z       single    1.432     0.020     1.432     0.020     
+3SA       C3Z       C4Z       single    1.524     0.020     1.524     0.020     
+3SA       H3Z       C3Z       single    1.089     0.010     0.989     0.005     
+3SA       H8        O3Z       single    0.970     0.012     0.839     0.014     
+3SA       O4Z       C4Z       single    1.432     0.020     1.432     0.020     
+3SA       C4Z       C5Z       single    1.500     0.020     1.500     0.020     
+3SA       H4Z       C4Z       single    1.089     0.010     0.989     0.005     
+3SA       H9        O4Z       single    0.970     0.012     0.839     0.014     
+3SA       C6Z       C5Z       double    1.340     0.020     1.340     0.020     
+3SA       C5Z       C7Z       single    1.510     0.020     1.510     0.020     
+3SA       H6Z       C6Z       single    1.082     0.013     0.975     0.010     
+3SA       C7Z       O7Z       single    1.432     0.020     1.432     0.020     
+3SA       H7Z1      C7Z       single    1.089     0.010     0.989     0.005     
+3SA       H7Z2      C7Z       single    1.089     0.010     0.989     0.005     
+3SA       H7Z       O7Z       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 3SA      H7Z    O7Z    C7Z     109.470    3.000
+ 3SA      O7Z    C7Z    H7Z1    109.470    3.000
+ 3SA      O7Z    C7Z    H7Z2    109.470    3.000
+ 3SA      O7Z    C7Z    C5Z     109.500    3.000
+ 3SA      H7Z1   C7Z    H7Z2    107.900    3.000
+ 3SA      H7Z1   C7Z    C5Z     109.470    3.000
+ 3SA      H7Z2   C7Z    C5Z     109.470    3.000
+ 3SA      C7Z    C5Z    C4Z     120.000    3.000
+ 3SA      C7Z    C5Z    C6Z     120.000    3.000
+ 3SA      C4Z    C5Z    C6Z     120.000    3.000
+ 3SA      C5Z    C4Z    H4Z     108.810    3.000
+ 3SA      C5Z    C4Z    O4Z     109.470    3.000
+ 3SA      C5Z    C4Z    C3Z     109.470    3.000
+ 3SA      H4Z    C4Z    O4Z     109.470    3.000
+ 3SA      H4Z    C4Z    C3Z     108.340    3.000
+ 3SA      O4Z    C4Z    C3Z     109.470    3.000
+ 3SA      C4Z    O4Z    H9      109.470    3.000
+ 3SA      C4Z    C3Z    H3Z     108.340    3.000
+ 3SA      C4Z    C3Z    O3Z     109.470    3.000
+ 3SA      C4Z    C3Z    C2Z     111.000    3.000
+ 3SA      H3Z    C3Z    O3Z     109.470    3.000
+ 3SA      H3Z    C3Z    C2Z     108.340    3.000
+ 3SA      O3Z    C3Z    C2Z     109.470    3.000
+ 3SA      C3Z    O3Z    H8      109.470    3.000
+ 3SA      C3Z    C2Z    H2Z     108.340    3.000
+ 3SA      C3Z    C2Z    O2Z     109.470    3.000
+ 3SA      C3Z    C2Z    C1Z     111.000    3.000
+ 3SA      H2Z    C2Z    O2Z     109.470    3.000
+ 3SA      H2Z    C2Z    C1Z     108.340    3.000
+ 3SA      O2Z    C2Z    C1Z     109.470    3.000
+ 3SA      C2Z    O2Z    H7      109.470    3.000
+ 3SA      C5Z    C6Z    H6Z     120.000    3.000
+ 3SA      C5Z    C6Z    C1Z     120.500    3.000
+ 3SA      H6Z    C6Z    C1Z     120.000    3.000
+ 3SA      C6Z    C1Z    H1Z     108.810    3.000
+ 3SA      C6Z    C1Z    N4Y     111.600    3.000
+ 3SA      C6Z    C1Z    C2Z     109.470    3.000
+ 3SA      H1Z    C1Z    N4Y     108.550    3.000
+ 3SA      H1Z    C1Z    C2Z     108.340    3.000
+ 3SA      N4Y    C1Z    C2Z     110.000    3.000
+ 3SA      C1Z    N4Y    H4Y     118.500    3.000
+ 3SA      C1Z    N4Y    C4Y     120.000    3.000
+ 3SA      H4Y    N4Y    C4Y     118.500    3.000
+ 3SA      N4Y    C4Y    H1      108.550    3.000
+ 3SA      N4Y    C4Y    C3Y     110.000    3.000
+ 3SA      N4Y    C4Y    C5Y     110.000    3.000
+ 3SA      H1     C4Y    C3Y     108.340    3.000
+ 3SA      H1     C4Y    C5Y     108.340    3.000
+ 3SA      C3Y    C4Y    C5Y     111.000    3.000
+ 3SA      C4Y    C3Y    H3Y     108.340    3.000
+ 3SA      C4Y    C3Y    O3Y     109.470    3.000
+ 3SA      C4Y    C3Y    C2Y     111.000    3.000
+ 3SA      H3Y    C3Y    O3Y     109.470    3.000
+ 3SA      H3Y    C3Y    C2Y     108.340    3.000
+ 3SA      O3Y    C3Y    C2Y     109.470    3.000
+ 3SA      C3Y    O3Y    H2      109.470    3.000
+ 3SA      C3Y    C2Y    H2Y     108.340    3.000
+ 3SA      C3Y    C2Y    O2Y     109.470    3.000
+ 3SA      C3Y    C2Y    C1Y     111.000    3.000
+ 3SA      H2Y    C2Y    O2Y     109.470    3.000
+ 3SA      H2Y    C2Y    C1Y     108.340    3.000
+ 3SA      O2Y    C2Y    C1Y     109.470    3.000
+ 3SA      C2Y    O2Y    H3      109.470    3.000
+ 3SA      C4Y    C5Y    H5Y     108.340    3.000
+ 3SA      C4Y    C5Y    C6Y     111.000    3.000
+ 3SA      C4Y    C5Y    O5Y     109.470    3.000
+ 3SA      H5Y    C5Y    C6Y     108.340    3.000
+ 3SA      H5Y    C5Y    O5Y     109.470    3.000
+ 3SA      C6Y    C5Y    O5Y     109.470    3.000
+ 3SA      C5Y    C6Y    H6Y3    109.470    3.000
+ 3SA      C5Y    C6Y    H6Y2    109.470    3.000
+ 3SA      C5Y    C6Y    H6Y1    109.470    3.000
+ 3SA      H6Y3   C6Y    H6Y2    109.470    3.000
+ 3SA      H6Y3   C6Y    H6Y1    109.470    3.000
+ 3SA      H6Y2   C6Y    H6Y1    109.470    3.000
+ 3SA      C5Y    O5Y    C1Y     111.800    3.000
+ 3SA      O5Y    C1Y    H1Y     109.470    3.000
+ 3SA      O5Y    C1Y    O4X     109.470    3.000
+ 3SA      O5Y    C1Y    C2Y     109.470    3.000
+ 3SA      H1Y    C1Y    O4X     109.470    3.000
+ 3SA      H1Y    C1Y    C2Y     108.340    3.000
+ 3SA      O4X    C1Y    C2Y     109.470    3.000
+ 3SA      C1Y    O4X    C4X     111.800    3.000
+ 3SA      O4X    C4X    H4X     109.470    3.000
+ 3SA      O4X    C4X    C3X     109.470    3.000
+ 3SA      O4X    C4X    C5X     109.470    3.000
+ 3SA      H4X    C4X    C3X     108.340    3.000
+ 3SA      H4X    C4X    C5X     108.340    3.000
+ 3SA      C3X    C4X    C5X     111.000    3.000
+ 3SA      C4X    C3X    H3X     108.340    3.000
+ 3SA      C4X    C3X    O3X     109.470    3.000
+ 3SA      C4X    C3X    C2X     111.000    3.000
+ 3SA      H3X    C3X    O3X     109.470    3.000
+ 3SA      H3X    C3X    C2X     108.340    3.000
+ 3SA      O3X    C3X    C2X     109.470    3.000
+ 3SA      C3X    O3X    H4      109.470    3.000
+ 3SA      C3X    C2X    H2X     108.340    3.000
+ 3SA      C3X    C2X    O2X     109.470    3.000
+ 3SA      C3X    C2X    C1X     111.000    3.000
+ 3SA      H2X    C2X    O2X     109.470    3.000
+ 3SA      H2X    C2X    C1X     108.340    3.000
+ 3SA      O2X    C2X    C1X     109.470    3.000
+ 3SA      C2X    O2X    H5      109.470    3.000
+ 3SA      C4X    C5X    H5X     108.340    3.000
+ 3SA      C4X    C5X    C6X     111.000    3.000
+ 3SA      C4X    C5X    O5X     109.470    3.000
+ 3SA      H5X    C5X    C6X     108.340    3.000
+ 3SA      H5X    C5X    O5X     109.470    3.000
+ 3SA      C6X    C5X    O5X     109.470    3.000
+ 3SA      C5X    C6X    H6X1    109.470    3.000
+ 3SA      C5X    C6X    H6X2    109.470    3.000
+ 3SA      C5X    C6X    O6X     109.470    3.000
+ 3SA      H6X1   C6X    H6X2    107.900    3.000
+ 3SA      H6X1   C6X    O6X     109.470    3.000
+ 3SA      H6X2   C6X    O6X     109.470    3.000
+ 3SA      C6X    O6X    H6X     109.470    3.000
+ 3SA      C5X    O5X    C1X     111.800    3.000
+ 3SA      O5X    C1X    H1X     109.470    3.000
+ 3SA      O5X    C1X    O1X     109.470    3.000
+ 3SA      O5X    C1X    C2X     109.470    3.000
+ 3SA      H1X    C1X    O1X     109.470    3.000
+ 3SA      H1X    C1X    C2X     108.340    3.000
+ 3SA      O1X    C1X    C2X     109.470    3.000
+ 3SA      C1X    O1X    H6      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 3SA      var_1    H7Z    O7Z    C7Z    C5Z     -179.976   20.000   1
+ 3SA      var_2    O7Z    C7Z    C5Z    C6Z       -0.013   20.000   3
+ 3SA      var_3    C7Z    C5Z    C4Z    C3Z     -150.000   20.000   3
+ 3SA      var_4    C5Z    C4Z    O4Z    H9       -60.042   20.000   1
+ 3SA      var_5    C5Z    C4Z    C3Z    C2Z      -60.000   20.000   3
+ 3SA      var_6    C4Z    C3Z    O3Z    H8        59.926   20.000   1
+ 3SA      var_7    C4Z    C3Z    C2Z    O2Z      -60.000   20.000   3
+ 3SA      var_8    C3Z    C2Z    O2Z    H7       -59.961   20.000   1
+ 3SA      var_9    C7Z    C5Z    C6Z    C1Z      180.000   20.000   1
+ 3SA      var_10   C5Z    C6Z    C1Z    N4Y      150.000   20.000   1
+ 3SA      var_11   C6Z    C1Z    C2Z    C3Z      -60.000   20.000   3
+ 3SA      var_12   C6Z    C1Z    N4Y    C4Y       88.844   20.000   3
+ 3SA      var_13   C1Z    N4Y    C4Y    C5Y     -150.128   20.000   3
+ 3SA      var_14   N4Y    C4Y    C3Y    C2Y      180.000   20.000   3
+ 3SA      var_15   C4Y    C3Y    O3Y    H2      -179.177   20.000   1
+ 3SA      var_16   C4Y    C3Y    C2Y    O2Y      180.000   20.000   3
+ 3SA      var_17   C3Y    C2Y    O2Y    H3       179.565   20.000   1
+ 3SA      var_18   N4Y    C4Y    C5Y    O5Y      180.000   20.000   3
+ 3SA      var_19   C4Y    C5Y    C6Y    H6Y1     173.881   20.000   3
+ 3SA      var_20   C4Y    C5Y    O5Y    C1Y       60.000   20.000   1
+ 3SA      var_21   C5Y    O5Y    C1Y    O4X       60.000   20.000   1
+ 3SA      var_22   O5Y    C1Y    C2Y    C3Y       60.000   20.000   3
+ 3SA      var_23   O5Y    C1Y    O4X    C4X       74.824   20.000   1
+ 3SA      var_24   C1Y    O4X    C4X    C5X     -155.093   20.000   1
+ 3SA      var_25   O4X    C4X    C3X    C2X      180.000   20.000   3
+ 3SA      var_26   C4X    C3X    O3X    H4       179.950   20.000   1
+ 3SA      var_27   C4X    C3X    C2X    O2X      180.000   20.000   3
+ 3SA      var_28   C3X    C2X    O2X    H5      -179.968   20.000   1
+ 3SA      var_29   O4X    C4X    C5X    O5X      180.000   20.000   3
+ 3SA      var_30   C4X    C5X    C6X    O6X     -176.318   20.000   3
+ 3SA      var_31   C5X    C6X    O6X    H6X     -179.961   20.000   1
+ 3SA      var_32   C4X    C5X    O5X    C1X       60.000   20.000   1
+ 3SA      var_33   C5X    O5X    C1X    O1X       60.000   20.000   1
+ 3SA      var_34   O5X    C1X    C2X    C3X       60.000   20.000   3
+ 3SA      var_35   O5X    C1X    O1X    H6        59.668   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 3SA      chir_01  C1X    C2X    O1X    O5X       negativ
+ 3SA      chir_02  C2X    C1X    C3X    O2X       negativ
+ 3SA      chir_03  C3X    C2X    C4X    O3X       positiv
+ 3SA      chir_04  C4X    C3X    C5X    O4X       negativ
+ 3SA      chir_05  C5X    C4X    C6X    O5X       negativ
+ 3SA      chir_06  C1Y    O4X    C2Y    O5Y       positiv
+ 3SA      chir_07  C2Y    C1Y    C3Y    O2Y       negativ
+ 3SA      chir_08  C3Y    C2Y    C4Y    O3Y       positiv
+ 3SA      chir_09  C4Y    C3Y    C5Y    N4Y       negativ
+ 3SA      chir_10  C5Y    C4Y    C6Y    O5Y       negativ
+ 3SA      chir_11  C1Z    N4Y    C2Z    C6Z       positiv
+ 3SA      chir_12  C2Z    C1Z    O2Z    C3Z       positiv
+ 3SA      chir_13  C3Z    C2Z    O3Z    C4Z       negativ
+ 3SA      chir_14  C4Z    C3Z    O4Z    C5Z       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 3SA      plan-1    N4Y       0.020
+ 3SA      plan-1    C4Y       0.020
+ 3SA      plan-1    C1Z       0.020
+ 3SA      plan-1    H4Y       0.020
+ 3SA      plan-2    C5Z       0.020
+ 3SA      plan-2    C4Z       0.020
+ 3SA      plan-2    C6Z       0.020
+ 3SA      plan-2    C7Z       0.020
+ 3SA      plan-2    H6Z       0.020
+ 3SA      plan-3    C6Z       0.020
+ 3SA      plan-3    C1Z       0.020
+ 3SA      plan-3    C5Z       0.020
+ 3SA      plan-3    H6Z       0.020
+# ------------------------------------------------------

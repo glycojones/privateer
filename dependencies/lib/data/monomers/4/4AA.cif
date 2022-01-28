@@ -1,0 +1,159 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4AA     4AA      "4-CHLORO-3-HYDROXYANTHRANILIC ACID"     NON-POLYMER     17     12     .     
+#
+data_comp_4AA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4AA     OAB     O       OC      -1      3.257       -0.229      0.936       
+4AA     CAH     C       C       0       2.531       0.180       0.013       
+4AA     OAC     O       O       0       2.927       0.874       -0.940      
+4AA     CAL     C       CR6     0       1.074       -0.188      0.053       
+4AA     CAG     C       CR16    0       0.735       -1.532      0.254       
+4AA     CAF     C       CR16    0       -0.588      -1.956      0.303       
+4AA     CAJ     C       CR6     0       -1.609      -1.026      0.151       
+4AA     CLAE    CL      CL      0       -3.262      -1.548      0.212       
+4AA     CAK     C       CR6     0       -1.325      0.329       -0.052      
+4AA     OAD     O       OH1     0       -2.353      1.218       -0.198      
+4AA     CAI     C       CR6     0       0.022       0.764       -0.103      
+4AA     NAA     N       NH2     0       0.274       2.095       -0.302      
+4AA     HAG     H       H       0       1.424       -2.165      0.357       
+4AA     HAF     H       H       0       -0.794      -2.862      0.439       
+4AA     HAD     H       H       0       -2.733      1.091       -0.956      
+4AA     HAA1    H       H       0       -0.065      2.502       -1.001      
+4AA     HAA2    H       H       0       0.772       2.535       0.270       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4AA       OAB       CAH       SINGLE    n         1.244     0.020     1.244     0.020     
+4AA       CAH       OAC       DOUBLE    n         1.244     0.020     1.244     0.020     
+4AA       CAH       CAL       SINGLE    n         1.498     0.020     1.498     0.020     
+4AA       CAL       CAG       DOUBLE    y         1.392     0.010     1.392     0.010     
+4AA       CAL       CAI       SINGLE    y         1.414     0.012     1.414     0.012     
+4AA       CAG       CAF       SINGLE    y         1.384     0.010     1.384     0.010     
+4AA       CAF       CAJ       DOUBLE    y         1.379     0.013     1.379     0.013     
+4AA       CAJ       CLAE      SINGLE    n         1.733     0.010     1.733     0.010     
+4AA       CAJ       CAK       SINGLE    y         1.391     0.010     1.391     0.010     
+4AA       CAK       OAD       SINGLE    n         1.364     0.013     1.364     0.013     
+4AA       CAK       CAI       DOUBLE    y         1.401     0.013     1.401     0.013     
+4AA       CAI       NAA       SINGLE    n         1.363     0.019     1.363     0.019     
+4AA       CAG       HAG       SINGLE    n         1.082     0.013     0.941     0.017     
+4AA       CAF       HAF       SINGLE    n         1.082     0.013     0.939     0.015     
+4AA       OAD       HAD       SINGLE    n         0.970     0.012     0.858     0.020     
+4AA       NAA       HAA1      SINGLE    n         1.016     0.010     0.877     0.020     
+4AA       NAA       HAA2      SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4AA         OAB         CAH         OAC     124.521    1.50
+4AA         OAB         CAH         CAL     117.739    1.50
+4AA         OAC         CAH         CAL     117.739    1.50
+4AA         CAH         CAL         CAG     118.576    1.50
+4AA         CAH         CAL         CAI     123.124    1.50
+4AA         CAG         CAL         CAI     118.300    1.50
+4AA         CAL         CAG         CAF     121.686    1.50
+4AA         CAL         CAG         HAG     118.938    1.50
+4AA         CAF         CAG         HAG     119.376    1.50
+4AA         CAG         CAF         CAJ     119.368    1.50
+4AA         CAG         CAF         HAF     120.560    1.50
+4AA         CAJ         CAF         HAF     120.072    1.50
+4AA         CAF         CAJ        CLAE     119.950    1.50
+4AA         CAF         CAJ         CAK     121.331    1.50
+4AA        CLAE         CAJ         CAK     118.718    1.50
+4AA         CAJ         CAK         OAD     119.616    2.27
+4AA         CAJ         CAK         CAI     120.024    1.50
+4AA         OAD         CAK         CAI     120.360    3.00
+4AA         CAK         OAD         HAD     109.337    3.00
+4AA         CAL         CAI         CAK     119.291    1.78
+4AA         CAL         CAI         NAA     122.156    1.50
+4AA         CAK         CAI         NAA     118.553    1.50
+4AA         CAI         NAA        HAA1     119.789    2.29
+4AA         CAI         NAA        HAA2     119.789    2.29
+4AA        HAA1         NAA        HAA2     120.421    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4AA             sp2_sp2_5         CAL         CAI         NAA        HAA1     180.000   10.00     2
+4AA             sp2_sp2_1         OAB         CAH         CAL         CAG     180.000   10.00     2
+4AA              const_24         NAA         CAI         CAL         CAH       0.000   10.00     2
+4AA       const_sp2_sp2_2         CAF         CAG         CAL         CAH     180.000   10.00     2
+4AA       const_sp2_sp2_5         CAJ         CAF         CAG         CAL       0.000   10.00     2
+4AA              const_10         CAG         CAF         CAJ        CLAE     180.000   10.00     2
+4AA              const_16        CLAE         CAJ         CAK         OAD       0.000   10.00     2
+4AA              const_20         NAA         CAI         CAK         OAD       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4AA    plan-1         CAF   0.020
+4AA    plan-1         CAG   0.020
+4AA    plan-1         CAH   0.020
+4AA    plan-1         CAI   0.020
+4AA    plan-1         CAJ   0.020
+4AA    plan-1         CAK   0.020
+4AA    plan-1         CAL   0.020
+4AA    plan-1        CLAE   0.020
+4AA    plan-1         HAF   0.020
+4AA    plan-1         HAG   0.020
+4AA    plan-1         NAA   0.020
+4AA    plan-1         OAD   0.020
+4AA    plan-2         CAH   0.020
+4AA    plan-2         CAL   0.020
+4AA    plan-2         OAB   0.020
+4AA    plan-2         OAC   0.020
+4AA    plan-3         CAI   0.020
+4AA    plan-3        HAA1   0.020
+4AA    plan-3        HAA2   0.020
+4AA    plan-3         NAA   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4AA SMILES           ACDLabs              10.04 "Clc1ccc(c(N)c1O)C(=O)O"
+4AA SMILES_CANONICAL CACTVS               3.341 "Nc1c(O)c(Cl)ccc1C(O)=O"
+4AA SMILES           CACTVS               3.341 "Nc1c(O)c(Cl)ccc1C(O)=O"
+4AA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1C(=O)O)N)O)Cl"
+4AA SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1C(=O)O)N)O)Cl"
+4AA InChI            InChI                1.03  "InChI=1S/C7H6ClNO3/c8-4-2-1-3(7(11)12)5(9)6(4)10/h1-2,10H,9H2,(H,11,12)"
+4AA InChIKey         InChI                1.03  VWEPFJPQZFIOAU-UHFFFAOYSA-N
+4AA ?                acedrg               202         "dictionary generator"                  
+4AA ?                acedrg_database      11          "data source"                           
+4AA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4AA ?                refmac5              5.8.0189    "optimization tool"                     

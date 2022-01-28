@@ -1,0 +1,238 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZCY      ZCY '(S)-1'-(2',3'-DIHYDROXYPROPYL)-CYTOS' non-polymer        27  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ZCY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ZCY           OXT    O    OP       -0.666      0.000    0.000    0.000
+ ZCY           P      P    P         0.000     -1.158    0.009    0.974
+ ZCY           O2P    O    OP       -0.666     -1.032    1.202    1.897
+ ZCY           O1P    O    OP       -0.666     -1.140   -1.264    1.791
+ ZCY           O3G    O    O2        0.000     -2.543    0.105    0.160
+ ZCY           C3G    C    CH2       0.000     -3.823    0.029    0.791
+ ZCY           H3G1   H    H         0.000     -3.920    0.841    1.515
+ ZCY           H3G2   H    H         0.000     -3.919   -0.929    1.305
+ ZCY           C2G    C    CH1       0.000     -4.921    0.154   -0.267
+ ZCY           H2     H    H         0.000     -4.771    1.078   -0.844
+ ZCY           O2G    O    OH1       0.000     -4.866   -0.970   -1.147
+ ZCY           H2G    H    H         0.000     -4.999   -1.782   -0.639
+ ZCY           C1G    C    CH2       0.000     -6.288    0.200    0.418
+ ZCY           H1G1   H    H         0.000     -6.329    1.059    1.091
+ ZCY           H1G2   H    H         0.000     -6.437   -0.717    0.993
+ ZCY           N1     N    NR6       0.000     -7.340    0.319   -0.594
+ ZCY           C2     C    CR6       0.000     -7.890   -0.790   -1.123
+ ZCY           O2     O    O         0.000     -7.506   -1.886   -0.749
+ ZCY           C6     C    CR16      0.000     -7.751    1.553   -1.003
+ ZCY           H6     H    H         0.000     -7.302    2.445   -0.585
+ ZCY           C5     C    CR16      0.000     -8.728    1.650   -1.936
+ ZCY           H5     H    H         0.000     -9.073    2.620   -2.271
+ ZCY           C4     C    CR6       0.000     -9.287    0.469   -2.465
+ ZCY           N3     N    NRD6      0.000     -8.852   -0.710   -2.041
+ ZCY           N4     N    NH2       0.000    -10.281    0.539   -3.414
+ ZCY           H4N2   H    H         0.000    -10.617    1.439   -3.739
+ ZCY           H4N1   H    H         0.000    -10.685   -0.308   -3.796
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ZCY      OXT    n/a    P      START
+ ZCY      P      OXT    O3G    .
+ ZCY      O2P    P      .      .
+ ZCY      O1P    P      .      .
+ ZCY      O3G    P      C3G    .
+ ZCY      C3G    O3G    C2G    .
+ ZCY      H3G1   C3G    .      .
+ ZCY      H3G2   C3G    .      .
+ ZCY      C2G    C3G    C1G    .
+ ZCY      H2     C2G    .      .
+ ZCY      O2G    C2G    H2G    .
+ ZCY      H2G    O2G    .      .
+ ZCY      C1G    C2G    N1     .
+ ZCY      H1G1   C1G    .      .
+ ZCY      H1G2   C1G    .      .
+ ZCY      N1     C1G    C6     .
+ ZCY      C2     N1     O2     .
+ ZCY      O2     C2     .      .
+ ZCY      C6     N1     C5     .
+ ZCY      H6     C6     .      .
+ ZCY      C5     C6     C4     .
+ ZCY      H5     C5     .      .
+ ZCY      C4     C5     N4     .
+ ZCY      N3     C4     .      .
+ ZCY      N4     C4     H4N1   .
+ ZCY      H4N2   N4     .      .
+ ZCY      H4N1   N4     .      END
+ ZCY      C2     N3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZCY       O2        C2        double    1.250     0.020     1.250     0.020     
+ZCY       C2        N3        single    1.350     0.020     1.350     0.020     
+ZCY       C2        N1        single    1.410     0.020     1.410     0.020     
+ZCY       N3        C4        double    1.350     0.020     1.350     0.020     
+ZCY       N4        C4        single    1.355     0.020     1.355     0.020     
+ZCY       C4        C5        single    1.390     0.020     1.390     0.020     
+ZCY       C5        C6        double    1.390     0.020     1.390     0.020     
+ZCY       C6        N1        single    1.337     0.020     1.337     0.020     
+ZCY       N1        C1G       single    1.465     0.020     1.465     0.020     
+ZCY       C1G       C2G       single    1.524     0.020     1.524     0.020     
+ZCY       O2G       C2G       single    1.432     0.020     1.432     0.020     
+ZCY       C2G       C3G       single    1.524     0.020     1.524     0.020     
+ZCY       H2G       O2G       single    0.970     0.012     0.839     0.014     
+ZCY       C3G       O3G       single    1.426     0.020     1.426     0.020     
+ZCY       O3G       P         single    1.610     0.020     1.610     0.020     
+ZCY       O2P       P         deloc     1.510     0.020     1.510     0.020     
+ZCY       O1P       P         deloc     1.510     0.020     1.510     0.020     
+ZCY       H4N1      N4        single    1.016     0.010     0.899     0.007     
+ZCY       H4N2      N4        single    1.016     0.010     0.899     0.007     
+ZCY       H5        C5        single    1.082     0.013     0.975     0.010     
+ZCY       H6        C6        single    1.082     0.013     0.975     0.010     
+ZCY       H1G1      C1G       single    1.089     0.010     0.989     0.005     
+ZCY       H1G2      C1G       single    1.089     0.010     0.989     0.005     
+ZCY       H2        C2G       single    1.089     0.010     0.989     0.005     
+ZCY       H3G1      C3G       single    1.089     0.010     0.989     0.005     
+ZCY       H3G2      C3G       single    1.089     0.010     0.989     0.005     
+ZCY       P         OXT       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ZCY      OXT    P      O2P     119.900    3.000
+ ZCY      OXT    P      O1P     119.900    3.000
+ ZCY      OXT    P      O3G     108.200    3.000
+ ZCY      O2P    P      O1P     119.900    3.000
+ ZCY      O2P    P      O3G     108.200    3.000
+ ZCY      O1P    P      O3G     108.200    3.000
+ ZCY      P      O3G    C3G     120.500    3.000
+ ZCY      O3G    C3G    H3G1    109.470    3.000
+ ZCY      O3G    C3G    H3G2    109.470    3.000
+ ZCY      O3G    C3G    C2G     109.470    3.000
+ ZCY      H3G1   C3G    H3G2    107.900    3.000
+ ZCY      H3G1   C3G    C2G     109.470    3.000
+ ZCY      H3G2   C3G    C2G     109.470    3.000
+ ZCY      C3G    C2G    H2      108.340    3.000
+ ZCY      C3G    C2G    O2G     109.470    3.000
+ ZCY      C3G    C2G    C1G     109.470    3.000
+ ZCY      H2     C2G    O2G     109.470    3.000
+ ZCY      H2     C2G    C1G     108.340    3.000
+ ZCY      O2G    C2G    C1G     109.470    3.000
+ ZCY      C2G    O2G    H2G     109.470    3.000
+ ZCY      C2G    C1G    H1G1    109.470    3.000
+ ZCY      C2G    C1G    H1G2    109.470    3.000
+ ZCY      C2G    C1G    N1      109.470    3.000
+ ZCY      H1G1   C1G    H1G2    107.900    3.000
+ ZCY      H1G1   C1G    N1      109.470    3.000
+ ZCY      H1G2   C1G    N1      109.470    3.000
+ ZCY      C1G    N1     C2      120.000    3.000
+ ZCY      C1G    N1     C6      120.000    3.000
+ ZCY      C2     N1     C6      120.000    3.000
+ ZCY      N1     C2     O2      120.000    3.000
+ ZCY      N1     C2     N3      120.000    3.000
+ ZCY      O2     C2     N3      120.000    3.000
+ ZCY      N1     C6     H6      120.000    3.000
+ ZCY      N1     C6     C5      120.000    3.000
+ ZCY      H6     C6     C5      120.000    3.000
+ ZCY      C6     C5     H5      120.000    3.000
+ ZCY      C6     C5     C4      120.000    3.000
+ ZCY      H5     C5     C4      120.000    3.000
+ ZCY      C5     C4     N3      120.000    3.000
+ ZCY      C5     C4     N4      120.000    3.000
+ ZCY      N3     C4     N4      120.000    3.000
+ ZCY      C4     N3     C2      120.000    3.000
+ ZCY      C4     N4     H4N2    120.000    3.000
+ ZCY      C4     N4     H4N1    120.000    3.000
+ ZCY      H4N2   N4     H4N1    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ZCY      var_1    OXT    P      O3G    C3G      174.968   20.000   1
+ ZCY      var_2    P      O3G    C3G    C2G     -179.993   20.000   1
+ ZCY      var_3    O3G    C3G    C2G    C1G     -174.953   20.000   3
+ ZCY      var_4    C3G    C2G    O2G    H2G       60.058   20.000   1
+ ZCY      var_5    C3G    C2G    C1G    N1       179.993   20.000   3
+ ZCY      var_6    C2G    C1G    N1     C6       -89.723   20.000   1
+ ZCY      CONST_1  C1G    N1     C2     O2         0.000    0.000   0
+ ZCY      CONST_2  N1     C2     N3     C4         0.000    0.000   0
+ ZCY      CONST_3  C1G    N1     C6     C5       180.000    0.000   0
+ ZCY      CONST_4  N1     C6     C5     C4         0.000    0.000   0
+ ZCY      CONST_5  C6     C5     C4     N4       180.000    0.000   0
+ ZCY      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ ZCY      CONST_7  C5     C4     N4     H4N1     179.994    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ZCY      chir_01  C2G    C1G    O2G    C3G       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ZCY      plan-1    C2        0.020
+ ZCY      plan-1    O2        0.020
+ ZCY      plan-1    N3        0.020
+ ZCY      plan-1    N1        0.020
+ ZCY      plan-1    C4        0.020
+ ZCY      plan-1    C5        0.020
+ ZCY      plan-1    C6        0.020
+ ZCY      plan-1    N4        0.020
+ ZCY      plan-1    H5        0.020
+ ZCY      plan-1    H6        0.020
+ ZCY      plan-1    C1G       0.020
+ ZCY      plan-1    H4N2      0.020
+ ZCY      plan-1    H4N1      0.020
+ ZCY      plan-2    N4        0.020
+ ZCY      plan-2    C4        0.020
+ ZCY      plan-2    H4N1      0.020
+ ZCY      plan-2    H4N2      0.020
+# ------------------------------------------------------

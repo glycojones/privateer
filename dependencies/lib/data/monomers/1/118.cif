@@ -1,0 +1,368 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+118      118 'TETRAPHENYLANTIMONIUM ION           ' non-polymer        45  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_118
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 118           H2B    H    H         0.000     71.086  135.894   82.481
+ 118           C2B    C    CR16      0.000     72.058  136.262   82.177
+ 118           C3B    C    CR16      0.000     72.852  135.483   81.420
+ 118           H3B    H    H         0.000     72.525  134.496   81.116
+ 118           C4B    C    CR16      0.000     74.100  135.965   81.034
+ 118           H4B    H    H         0.000     74.746  135.345   80.425
+ 118           C5B    C    CR16      0.000     74.541  137.265   81.430
+ 118           H5B    H    H         0.000     75.514  137.627   81.123
+ 118           C1B    C    CR6       0.000     72.473  137.561   82.585
+ 118           C6B    C    CR16      0.000     73.726  138.049   82.199
+ 118           H6B    H    H         0.000     74.047  139.037   82.506
+ 118           SB     SB   SB        1.000     71.372  138.628   83.619
+ 118           C1D    C    CR6       0.000     72.102  138.944   85.327
+ 118           C2D    C    CR16      0.000     71.313  138.995   86.498
+ 118           H2D    H    H         0.000     70.243  138.845   86.430
+ 118           C3D    C    CR16      0.000     71.883  139.230   87.705
+ 118           H3D    H    H         0.000     71.272  139.268   88.599
+ 118           C4D    C    CR16      0.000     73.264  139.423   87.788
+ 118           H4D    H    H         0.000     73.720  139.610   88.752
+ 118           C5D    C    CR16      0.000     74.069  139.378   86.640
+ 118           H5D    H    H         0.000     75.139  139.526   86.718
+ 118           C6D    C    CR16      0.000     73.491  139.145   85.419
+ 118           H6D    H    H         0.000     74.103  139.116   84.526
+ 118           C1C    C    CR6       0.000     69.727  137.523   83.752
+ 118           C2C    C    CR16      0.000     69.470  136.656   84.821
+ 118           H2C    H    H         0.000     70.186  136.572   85.629
+ 118           C3C    C    CR16      0.000     68.302  135.902   84.852
+ 118           H3C    H    H         0.000     68.107  135.241   85.687
+ 118           C4C    C    CR16      0.000     67.390  135.996   83.818
+ 118           H4C    H    H         0.000     66.480  135.409   83.844
+ 118           C5C    C    CR16      0.000     67.639  136.842   82.746
+ 118           H5C    H    H         0.000     66.925  136.910   81.935
+ 118           C6C    C    CR16      0.000     68.792  137.596   82.710
+ 118           H6C    H    H         0.000     68.978  138.252   81.868
+ 118           C1A    C    CR6       0.000     70.969  140.315   82.849
+ 118           C6A    C    CR16      0.000     69.641  140.546   82.409
+ 118           H6A    H    H         0.000     68.897  139.767   82.520
+ 118           C5A    C    CR16      0.000     69.284  141.762   81.837
+ 118           H5A    H    H         0.000     68.268  141.930   81.501
+ 118           C4A    C    CR16      0.000     70.249  142.768   81.699
+ 118           H4A    H    H         0.000     69.977  143.717   81.253
+ 118           C3A    C    CR16      0.000     71.577  142.554   82.138
+ 118           H3A    H    H         0.000     72.317  143.337   82.028
+ 118           C2A    C    CR16      0.000     71.929  141.339   82.710
+ 118           H2A    H    H         0.000     72.944  141.177   83.051
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 118      H2B    n/a    C2B    START
+ 118      C2B    H2B    C1B    .
+ 118      C3B    C2B    C4B    .
+ 118      H3B    C3B    .      .
+ 118      C4B    C3B    C5B    .
+ 118      H4B    C4B    .      .
+ 118      C5B    C4B    H5B    .
+ 118      H5B    C5B    .      .
+ 118      C1B    C2B    SB     .
+ 118      C6B    C1B    H6B    .
+ 118      H6B    C6B    .      .
+ 118      SB     C1B    C1A    .
+ 118      C1D    SB     C2D    .
+ 118      C2D    C1D    C3D    .
+ 118      H2D    C2D    .      .
+ 118      C3D    C2D    C4D    .
+ 118      H3D    C3D    .      .
+ 118      C4D    C3D    C5D    .
+ 118      H4D    C4D    .      .
+ 118      C5D    C4D    C6D    .
+ 118      H5D    C5D    .      .
+ 118      C6D    C5D    H6D    .
+ 118      H6D    C6D    .      .
+ 118      C1C    SB     C2C    .
+ 118      C2C    C1C    C3C    .
+ 118      H2C    C2C    .      .
+ 118      C3C    C2C    C4C    .
+ 118      H3C    C3C    .      .
+ 118      C4C    C3C    C5C    .
+ 118      H4C    C4C    .      .
+ 118      C5C    C4C    C6C    .
+ 118      H5C    C5C    .      .
+ 118      C6C    C5C    H6C    .
+ 118      H6C    C6C    .      .
+ 118      C1A    SB     C6A    .
+ 118      C6A    C1A    C5A    .
+ 118      H6A    C6A    .      .
+ 118      C5A    C6A    C4A    .
+ 118      H5A    C5A    .      .
+ 118      C4A    C5A    C3A    .
+ 118      H4A    C4A    .      .
+ 118      C3A    C4A    C2A    .
+ 118      H3A    C3A    .      .
+ 118      C2A    C3A    H2A    .
+ 118      H2A    C2A    .      END
+ 118      C1A    C2A    .    ADD
+ 118      C1C    C6C    .    ADD
+ 118      C1D    C6D    .    ADD
+ 118      C6B    C5B    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+118       C1A       SB        single    1.898     0.020     1.898     0.020     
+118       C1C       SB        single    1.986     0.020     1.986     0.020     
+118       C1D       SB        single    1.884     0.020     1.884     0.020     
+118       SB        C1B       single    1.849     0.020     1.849     0.020     
+118       C1A       C2A       single    1.390     0.020     1.390     0.020     
+118       C6A       C1A       double    1.390     0.020     1.390     0.020     
+118       C2A       C3A       double    1.390     0.020     1.390     0.020     
+118       H2A       C2A       single    1.082     0.013     0.975     0.010     
+118       C3A       C4A       single    1.390     0.020     1.390     0.020     
+118       H3A       C3A       single    1.082     0.013     0.975     0.010     
+118       C4A       C5A       double    1.390     0.020     1.390     0.020     
+118       H4A       C4A       single    1.082     0.013     0.975     0.010     
+118       C5A       C6A       single    1.390     0.020     1.390     0.020     
+118       H5A       C5A       single    1.082     0.013     0.975     0.010     
+118       H6A       C6A       single    1.082     0.013     0.975     0.010     
+118       C1C       C6C       single    1.390     0.020     1.390     0.020     
+118       C2C       C1C       double    1.390     0.020     1.390     0.020     
+118       C6C       C5C       double    1.390     0.020     1.390     0.020     
+118       H6C       C6C       single    1.082     0.013     0.975     0.010     
+118       C5C       C4C       single    1.390     0.020     1.390     0.020     
+118       H5C       C5C       single    1.082     0.013     0.975     0.010     
+118       C4C       C3C       double    1.390     0.020     1.390     0.020     
+118       H4C       C4C       single    1.082     0.013     0.975     0.010     
+118       C3C       C2C       single    1.390     0.020     1.390     0.020     
+118       H3C       C3C       single    1.082     0.013     0.975     0.010     
+118       H2C       C2C       single    1.082     0.013     0.975     0.010     
+118       C1D       C6D       single    1.390     0.020     1.390     0.020     
+118       C2D       C1D       double    1.390     0.020     1.390     0.020     
+118       C6D       C5D       double    1.390     0.020     1.390     0.020     
+118       H6D       C6D       single    1.082     0.013     0.975     0.010     
+118       C5D       C4D       single    1.390     0.020     1.390     0.020     
+118       H5D       C5D       single    1.082     0.013     0.975     0.010     
+118       C4D       C3D       double    1.390     0.020     1.390     0.020     
+118       H4D       C4D       single    1.082     0.013     0.975     0.010     
+118       C3D       C2D       single    1.390     0.020     1.390     0.020     
+118       H3D       C3D       single    1.082     0.013     0.975     0.010     
+118       H2D       C2D       single    1.082     0.013     0.975     0.010     
+118       C6B       C5B       double    1.390     0.020     1.390     0.020     
+118       C6B       C1B       single    1.390     0.020     1.390     0.020     
+118       H6B       C6B       single    1.082     0.013     0.975     0.010     
+118       C5B       C4B       single    1.390     0.020     1.390     0.020     
+118       H5B       C5B       single    1.082     0.013     0.975     0.010     
+118       C4B       C3B       double    1.390     0.020     1.390     0.020     
+118       H4B       C4B       single    1.082     0.013     0.975     0.010     
+118       C3B       C2B       single    1.390     0.020     1.390     0.020     
+118       H3B       C3B       single    1.082     0.013     0.975     0.010     
+118       C1B       C2B       double    1.390     0.020     1.390     0.020     
+118       C2B       H2B       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 118      H2B    C2B    C3B     120.000    3.000
+ 118      H2B    C2B    C1B     120.000    3.000
+ 118      C3B    C2B    C1B     120.000    3.000
+ 118      C2B    C3B    H3B     120.000    3.000
+ 118      C2B    C3B    C4B     120.000    3.000
+ 118      H3B    C3B    C4B     120.000    3.000
+ 118      C3B    C4B    H4B     120.000    3.000
+ 118      C3B    C4B    C5B     120.000    3.000
+ 118      H4B    C4B    C5B     120.000    3.000
+ 118      C4B    C5B    H5B     120.000    3.000
+ 118      C4B    C5B    C6B     120.000    3.000
+ 118      H5B    C5B    C6B     120.000    3.000
+ 118      C2B    C1B    C6B     120.000    3.000
+ 118      C2B    C1B    SB      120.000    3.000
+ 118      C6B    C1B    SB      120.000    3.000
+ 118      C1B    C6B    H6B     120.000    3.000
+ 118      C1B    C6B    C5B     120.000    3.000
+ 118      H6B    C6B    C5B     120.000    3.000
+ 118      C1B    SB     C1D     111.898    3.000
+ 118      C1B    SB     C1C     102.095    3.000
+ 118      C1B    SB     C1A     114.361    3.000
+ 118      C1D    SB     C1C     110.702    3.000
+ 118      C1D    SB     C1A     107.518    3.000
+ 118      C1C    SB     C1A     110.235    3.000
+ 118      SB     C1D    C2D     120.000    3.000
+ 118      SB     C1D    C6D     120.000    3.000
+ 118      C2D    C1D    C6D     120.000    3.000
+ 118      C1D    C2D    H2D     120.000    3.000
+ 118      C1D    C2D    C3D     120.000    3.000
+ 118      H2D    C2D    C3D     120.000    3.000
+ 118      C2D    C3D    H3D     120.000    3.000
+ 118      C2D    C3D    C4D     120.000    3.000
+ 118      H3D    C3D    C4D     120.000    3.000
+ 118      C3D    C4D    H4D     120.000    3.000
+ 118      C3D    C4D    C5D     120.000    3.000
+ 118      H4D    C4D    C5D     120.000    3.000
+ 118      C4D    C5D    H5D     120.000    3.000
+ 118      C4D    C5D    C6D     120.000    3.000
+ 118      H5D    C5D    C6D     120.000    3.000
+ 118      C5D    C6D    H6D     120.000    3.000
+ 118      C5D    C6D    C1D     120.000    3.000
+ 118      H6D    C6D    C1D     120.000    3.000
+ 118      SB     C1C    C2C     120.000    3.000
+ 118      SB     C1C    C6C     120.000    3.000
+ 118      C2C    C1C    C6C     120.000    3.000
+ 118      C1C    C2C    H2C     120.000    3.000
+ 118      C1C    C2C    C3C     120.000    3.000
+ 118      H2C    C2C    C3C     120.000    3.000
+ 118      C2C    C3C    H3C     120.000    3.000
+ 118      C2C    C3C    C4C     120.000    3.000
+ 118      H3C    C3C    C4C     120.000    3.000
+ 118      C3C    C4C    H4C     120.000    3.000
+ 118      C3C    C4C    C5C     120.000    3.000
+ 118      H4C    C4C    C5C     120.000    3.000
+ 118      C4C    C5C    H5C     120.000    3.000
+ 118      C4C    C5C    C6C     120.000    3.000
+ 118      H5C    C5C    C6C     120.000    3.000
+ 118      C5C    C6C    H6C     120.000    3.000
+ 118      C5C    C6C    C1C     120.000    3.000
+ 118      H6C    C6C    C1C     120.000    3.000
+ 118      SB     C1A    C6A     120.000    3.000
+ 118      SB     C1A    C2A     120.000    3.000
+ 118      C6A    C1A    C2A     120.000    3.000
+ 118      C1A    C6A    H6A     120.000    3.000
+ 118      C1A    C6A    C5A     120.000    3.000
+ 118      H6A    C6A    C5A     120.000    3.000
+ 118      C6A    C5A    H5A     120.000    3.000
+ 118      C6A    C5A    C4A     120.000    3.000
+ 118      H5A    C5A    C4A     120.000    3.000
+ 118      C5A    C4A    H4A     120.000    3.000
+ 118      C5A    C4A    C3A     120.000    3.000
+ 118      H4A    C4A    C3A     120.000    3.000
+ 118      C4A    C3A    H3A     120.000    3.000
+ 118      C4A    C3A    C2A     120.000    3.000
+ 118      H3A    C3A    C2A     120.000    3.000
+ 118      C3A    C2A    H2A     120.000    3.000
+ 118      C3A    C2A    C1A     120.000    3.000
+ 118      H2A    C2A    C1A     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 118      CONST_1  H2B    C2B    C3B    C4B      180.000    0.000   0
+ 118      CONST_2  C2B    C3B    C4B    C5B        0.000    0.000   0
+ 118      CONST_3  C3B    C4B    C5B    C6B        0.000    0.000   0
+ 118      CONST_4  H2B    C2B    C1B    SB         0.000    0.000   0
+ 118      CONST_5  C2B    C1B    C6B    C5B        0.000    0.000   0
+ 118      CONST_6  C1B    C6B    C5B    C4B        0.000    0.000   0
+ 118      var_1    C2B    C1B    SB     C1A     -122.611   20.000   1
+ 118      var_2    C1B    SB     C1D    C2D     -141.999   20.000   1
+ 118      CONST_7  SB     C1D    C6D    C5D      180.000    0.000   0
+ 118      CONST_8  SB     C1D    C2D    C3D      180.000    0.000   0
+ 118      CONST_9  C1D    C2D    C3D    C4D        0.000    0.000   0
+ 118      CONST_10 C2D    C3D    C4D    C5D        0.000    0.000   0
+ 118      CONST_11 C3D    C4D    C5D    C6D        0.000    0.000   0
+ 118      CONST_12 C4D    C5D    C6D    C1D        0.000    0.000   0
+ 118      var_3    C1B    SB     C1C    C2C       94.497   20.000   1
+ 118      CONST_13 SB     C1C    C6C    C5C      180.000    0.000   0
+ 118      CONST_14 SB     C1C    C2C    C3C      180.000    0.000   0
+ 118      CONST_15 C1C    C2C    C3C    C4C        0.000    0.000   0
+ 118      CONST_16 C2C    C3C    C4C    C5C        0.000    0.000   0
+ 118      CONST_17 C3C    C4C    C5C    C6C        0.000    0.000   0
+ 118      CONST_18 C4C    C5C    C6C    C1C        0.000    0.000   0
+ 118      var_4    C1B    SB     C1A    C6A      110.707   20.000   1
+ 118      CONST_19 SB     C1A    C2A    C3A      180.000    0.000   0
+ 118      CONST_20 SB     C1A    C6A    C5A      180.000    0.000   0
+ 118      CONST_21 C1A    C6A    C5A    C4A        0.000    0.000   0
+ 118      CONST_22 C6A    C5A    C4A    C3A        0.000    0.000   0
+ 118      CONST_23 C5A    C4A    C3A    C2A        0.000    0.000   0
+ 118      CONST_24 C4A    C3A    C2A    C1A        0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 118      plan-1    C1A       0.020
+ 118      plan-1    SB        0.020
+ 118      plan-1    C2A       0.020
+ 118      plan-1    C6A       0.020
+ 118      plan-1    C3A       0.020
+ 118      plan-1    C4A       0.020
+ 118      plan-1    C5A       0.020
+ 118      plan-1    H2A       0.020
+ 118      plan-1    H3A       0.020
+ 118      plan-1    H4A       0.020
+ 118      plan-1    H5A       0.020
+ 118      plan-1    H6A       0.020
+ 118      plan-2    C1C       0.020
+ 118      plan-2    SB        0.020
+ 118      plan-2    C6C       0.020
+ 118      plan-2    C2C       0.020
+ 118      plan-2    C5C       0.020
+ 118      plan-2    C4C       0.020
+ 118      plan-2    C3C       0.020
+ 118      plan-2    H6C       0.020
+ 118      plan-2    H5C       0.020
+ 118      plan-2    H4C       0.020
+ 118      plan-2    H3C       0.020
+ 118      plan-2    H2C       0.020
+ 118      plan-3    C1D       0.020
+ 118      plan-3    SB        0.020
+ 118      plan-3    C6D       0.020
+ 118      plan-3    C2D       0.020
+ 118      plan-3    C5D       0.020
+ 118      plan-3    C4D       0.020
+ 118      plan-3    C3D       0.020
+ 118      plan-3    H6D       0.020
+ 118      plan-3    H5D       0.020
+ 118      plan-3    H4D       0.020
+ 118      plan-3    H3D       0.020
+ 118      plan-3    H2D       0.020
+ 118      plan-4    C6B       0.020
+ 118      plan-4    C5B       0.020
+ 118      plan-4    C1B       0.020
+ 118      plan-4    H6B       0.020
+ 118      plan-4    C4B       0.020
+ 118      plan-4    C3B       0.020
+ 118      plan-4    C2B       0.020
+ 118      plan-4    H5B       0.020
+ 118      plan-4    H4B       0.020
+ 118      plan-4    H3B       0.020
+ 118      plan-4    H2B       0.020
+ 118      plan-4    SB        0.020
+# ------------------------------------------------------

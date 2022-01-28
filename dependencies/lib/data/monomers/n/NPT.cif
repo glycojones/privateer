@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NPT     NPT      NEOPENTYLAMINE     NON-POLYMER     19     6     .     
+#
+data_comp_NPT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NPT     N       N       NT2     0       3.333       15.509      18.115      
+NPT     C1      C       CH2     0       2.611       14.853      17.019      
+NPT     C2      C       CT      0       1.903       15.823      16.055      
+NPT     C3      C       CH3     0       2.888       16.873      15.544      
+NPT     C4      C       CH3     0       0.742       16.513      16.768      
+NPT     C5      C       CH3     0       1.363       15.020      14.873      
+NPT     HN1     H       H       0       4.018       15.005      18.372      
+NPT     HN2     H       H       0       2.798       15.605      18.817      
+NPT     H11     H       H       0       1.938       14.250      17.401      
+NPT     H12     H       H       0       3.243       14.309      16.505      
+NPT     H31     H       H       0       2.500       17.344      14.786      
+NPT     H32     H       H       0       3.713       16.438      15.265      
+NPT     H33     H       H       0       3.083       17.510      16.254      
+NPT     H41     H       H       0       0.032       15.869      16.932      
+NPT     H42     H       H       0       0.401       17.233      16.210      
+NPT     H43     H       H       0       1.047       16.880      17.615      
+NPT     H51     H       H       0       0.793       15.588      14.327      
+NPT     H52     H       H       0       0.847       14.264      15.202      
+NPT     H53     H       H       0       2.105       14.694      14.335      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NPT       N         C1        SINGLE    n         1.464     0.020     1.464     0.020     
+NPT       C1        C2        SINGLE    n         1.538     0.010     1.538     0.010     
+NPT       C2        C3        SINGLE    n         1.527     0.010     1.527     0.010     
+NPT       C2        C4        SINGLE    n         1.527     0.010     1.527     0.010     
+NPT       C2        C5        SINGLE    n         1.527     0.010     1.527     0.010     
+NPT       N         HN1       SINGLE    n         1.036     0.016     0.888     0.020     
+NPT       N         HN2       SINGLE    n         1.036     0.016     0.888     0.020     
+NPT       C1        H11       SINGLE    n         1.089     0.010     0.980     0.015     
+NPT       C1        H12       SINGLE    n         1.089     0.010     0.980     0.015     
+NPT       C3        H31       SINGLE    n         1.089     0.010     0.973     0.015     
+NPT       C3        H32       SINGLE    n         1.089     0.010     0.973     0.015     
+NPT       C3        H33       SINGLE    n         1.089     0.010     0.973     0.015     
+NPT       C4        H41       SINGLE    n         1.089     0.010     0.973     0.015     
+NPT       C4        H42       SINGLE    n         1.089     0.010     0.973     0.015     
+NPT       C4        H43       SINGLE    n         1.089     0.010     0.973     0.015     
+NPT       C5        H51       SINGLE    n         1.089     0.010     0.973     0.015     
+NPT       C5        H52       SINGLE    n         1.089     0.010     0.973     0.015     
+NPT       C5        H53       SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NPT          C1           N         HN1     109.962    3.00
+NPT          C1           N         HN2     109.962    3.00
+NPT         HN1           N         HN2     107.243    3.00
+NPT           N          C1          C2     111.883    2.59
+NPT           N          C1         H11     108.870    1.50
+NPT           N          C1         H12     108.870    1.50
+NPT          C2          C1         H11     108.443    1.50
+NPT          C2          C1         H12     108.443    1.50
+NPT         H11          C1         H12     107.873    1.50
+NPT          C1          C2          C3     108.720    2.38
+NPT          C1          C2          C4     108.720    2.38
+NPT          C1          C2          C5     108.720    2.38
+NPT          C3          C2          C4     109.383    1.50
+NPT          C3          C2          C5     109.383    1.50
+NPT          C4          C2          C5     109.383    1.50
+NPT          C2          C3         H31     109.542    1.50
+NPT          C2          C3         H32     109.542    1.50
+NPT          C2          C3         H33     109.542    1.50
+NPT         H31          C3         H32     109.377    1.50
+NPT         H31          C3         H33     109.377    1.50
+NPT         H32          C3         H33     109.377    1.50
+NPT          C2          C4         H41     109.542    1.50
+NPT          C2          C4         H42     109.542    1.50
+NPT          C2          C4         H43     109.542    1.50
+NPT         H41          C4         H42     109.377    1.50
+NPT         H41          C4         H43     109.377    1.50
+NPT         H42          C4         H43     109.377    1.50
+NPT          C2          C5         H51     109.542    1.50
+NPT          C2          C5         H52     109.542    1.50
+NPT          C2          C5         H53     109.542    1.50
+NPT         H51          C5         H52     109.377    1.50
+NPT         H51          C5         H53     109.377    1.50
+NPT         H52          C5         H53     109.377    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NPT             sp3_sp3_1          C2          C1           N         HN1     180.000   10.00     3
+NPT             sp3_sp3_7           N          C1          C2          C3     180.000   10.00     3
+NPT            sp3_sp3_16          C1          C2          C3         H31     180.000   10.00     3
+NPT            sp3_sp3_25          C1          C2          C4         H41     180.000   10.00     3
+NPT            sp3_sp3_34          C1          C2          C5         H51     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NPT SMILES           ACDLabs              10.04 "NCC(C)(C)C"
+NPT SMILES_CANONICAL CACTVS               3.341 "CC(C)(C)CN"
+NPT SMILES           CACTVS               3.341 "CC(C)(C)CN"
+NPT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)(C)CN"
+NPT SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)(C)CN"
+NPT InChI            InChI                1.03  "InChI=1S/C5H13N/c1-5(2,3)4-6/h4,6H2,1-3H3"
+NPT InChIKey         InChI                1.03  XDIAMRVROCPPBK-UHFFFAOYSA-N
+NPT ?                acedrg               202         "dictionary generator"                  
+NPT ?                acedrg_database      11          "data source"                           
+NPT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NPT ?                refmac5              5.8.0189    "optimization tool"                     

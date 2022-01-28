@@ -1,0 +1,485 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+YG       YG  'WYBUTOSINE                          ' RNA                67  40 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_YG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ YG            OP3    O    OP       -0.666      0.000    0.000    0.000
+ YG            P      P    P         0.000     -0.971   -0.474    1.059
+ YG            OP1    O    OP       -0.666     -1.202    0.632    2.066
+ YG            OP2    O    OP       -0.666     -0.398   -1.684    1.764
+ YG            "O5'"  O    O2        0.000     -2.370   -0.868    0.367
+ YG            "C5'"  C    CH2       0.000     -2.859    0.309   -0.277
+ YG            "H5'"  H    H         0.000     -2.135    0.641   -1.025
+ YG            "H5''" H    H         0.000     -3.001    1.097    0.465
+ YG            "C4'"  C    CH1       0.000     -4.193    0.001   -0.959
+ YG            "H4'"  H    H         0.000     -4.063   -0.781   -1.720
+ YG            "O4'"  O    O2        0.000     -5.175   -0.406    0.019
+ YG            "C1'"  C    CH1       0.000     -6.455   -0.191   -0.614
+ YG            "H1'"  H    H         0.000     -6.674   -1.004   -1.320
+ YG            N9     N    NR5       0.000     -7.512   -0.093    0.394
+ YG            C4     C    CR56      0.000     -8.826   -0.402    0.215
+ YG            N3     N    NR6       0.000     -9.558   -0.863   -0.851
+ YG            C3     C    CH3       0.000     -8.901   -1.121   -2.134
+ YG            H33    H    H         0.000     -8.463   -0.226   -2.493
+ YG            H32    H    H         0.000     -8.148   -1.855   -2.004
+ YG            H31    H    H         0.000     -9.616   -1.469   -2.833
+ YG            C8     C    CR15      0.000     -7.361    0.323    1.684
+ YG            H8     H    H         0.000     -6.427    0.638    2.132
+ YG            N7     N    NRD5      0.000     -8.508    0.283    2.293
+ YG            C5     C    CR56      0.000     -9.456   -0.160    1.428
+ YG            C6     C    CR6       0.000    -10.849   -0.396    1.543
+ YG            O6     O    O         0.000    -11.420   -0.191    2.598
+ YG            N1     N    NR56      0.000    -11.538   -0.849    0.478
+ YG            C2     C    CR56      0.000    -10.913   -1.085   -0.713
+ YG            C12    C    CR5       0.000    -12.869   -1.160    0.307
+ YG            C11    C    CR5       0.000    -13.012   -1.574   -0.964
+ YG            C10    C    CH3       0.000    -14.301   -2.019   -1.605
+ YG            H103   H    H         0.000    -15.114   -1.515   -1.150
+ YG            H102   H    H         0.000    -14.279   -1.791   -2.639
+ YG            H101   H    H         0.000    -14.417   -3.064   -1.476
+ YG            N2     N    NRD5      0.000    -11.815   -1.516   -1.568
+ YG            C13    C    CH2       0.000    -13.955   -1.059    1.345
+ YG            H131   H    H         0.000    -13.526   -1.227    2.335
+ YG            H132   H    H         0.000    -14.718   -1.815    1.147
+ YG            C14    C    CH2       0.000    -14.587    0.333    1.291
+ YG            H141   H    H         0.000    -15.013    0.500    0.299
+ YG            H142   H    H         0.000    -13.822    1.087    1.488
+ YG            C15    C    CH1       0.000    -15.690    0.434    2.345
+ YG            H15    H    H         0.000    -16.459   -0.325    2.146
+ YG            C16    C    C         0.000    -16.312    1.806    2.292
+ YG            O18    O    O2       -0.500    -15.846    2.733    2.991
+ YG            C19    C    CH3       0.000    -16.412    4.121    2.990
+ YG            H193   H    H         0.000    -16.361    4.541    2.012
+ YG            H192   H    H         0.000    -17.430    4.107    3.300
+ YG            H191   H    H         0.000    -15.863    4.746    3.656
+ YG            O17    O    O        -0.500    -17.294    2.018    1.547
+ YG            N20    N    NH1       0.000    -15.116    0.210    3.674
+ YG            HN2    H    H         0.000    -14.157    0.467    3.860
+ YG            C21    C    C         0.000    -15.868   -0.338    4.648
+ YG            O22    O    O         0.000    -17.021   -0.647    4.425
+ YG            O23    O    O2        0.000    -15.340   -0.543    5.870
+ YG            C24    C    CH3       0.000    -16.150   -1.135    6.920
+ YG            H243   H    H         0.000    -16.996   -0.523    7.110
+ YG            H242   H    H         0.000    -16.479   -2.099    6.621
+ YG            H241   H    H         0.000    -15.578   -1.223    7.810
+ YG            "C3'"  C    CH1       0.000     -4.781    1.279   -1.597
+ YG            "H3'"  H    H         0.000     -4.390    2.175   -1.095
+ YG            "C2'"  C    CH1       0.000     -6.304    1.149   -1.368
+ YG            "H2'"  H    H         0.000     -6.672    1.980   -0.751
+ YG            "O2'"  O    OH1       0.000     -6.997    1.108   -2.617
+ YG            "HO2'" H    H         0.000     -6.841    1.932   -3.099
+ YG            "O3'"  O    OH1       0.000     -4.486    1.321   -2.995
+ YG            "HO3'" H    H         0.000     -4.875    2.136   -3.339
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ YG       OP3    n/a    P      START
+ YG       P      OP3    "O5'"  .
+ YG       OP1    P      .      .
+ YG       OP2    P      .      .
+ YG       "O5'"  P      "C5'"  .
+ YG       "C5'"  "O5'"  "C4'"  .
+ YG       "H5'"  "C5'"  .      .
+ YG       "H5''" "C5'"  .      .
+ YG       "C4'"  "C5'"  "C3'"  .
+ YG       "H4'"  "C4'"  .      .
+ YG       "O4'"  "C4'"  "C1'"  .
+ YG       "C1'"  "O4'"  N9     .
+ YG       "H1'"  "C1'"  .      .
+ YG       N9     "C1'"  C8     .
+ YG       C4     N9     N3     .
+ YG       N3     C4     C3     .
+ YG       C3     N3     H31    .
+ YG       H33    C3     .      .
+ YG       H32    C3     .      .
+ YG       H31    C3     .      .
+ YG       C8     N9     N7     .
+ YG       H8     C8     .      .
+ YG       N7     C8     C5     .
+ YG       C5     N7     C6     .
+ YG       C6     C5     N1     .
+ YG       O6     C6     .      .
+ YG       N1     C6     C12    .
+ YG       C2     N1     .      .
+ YG       C12    N1     C13    .
+ YG       C11    C12    N2     .
+ YG       C10    C11    H101   .
+ YG       H103   C10    .      .
+ YG       H102   C10    .      .
+ YG       H101   C10    .      .
+ YG       N2     C11    .      .
+ YG       C13    C12    C14    .
+ YG       H131   C13    .      .
+ YG       H132   C13    .      .
+ YG       C14    C13    C15    .
+ YG       H141   C14    .      .
+ YG       H142   C14    .      .
+ YG       C15    C14    N20    .
+ YG       H15    C15    .      .
+ YG       C16    C15    O17    .
+ YG       O18    C16    C19    .
+ YG       C19    O18    H191   .
+ YG       H193   C19    .      .
+ YG       H192   C19    .      .
+ YG       H191   C19    .      .
+ YG       O17    C16    .      .
+ YG       N20    C15    C21    .
+ YG       HN2    N20    .      .
+ YG       C21    N20    O23    .
+ YG       O22    C21    .      .
+ YG       O23    C21    C24    .
+ YG       C24    O23    H241   .
+ YG       H243   C24    .      .
+ YG       H242   C24    .      .
+ YG       H241   C24    .      .
+ YG       "C3'"  "C4'"  "O3'"  .
+ YG       "H3'"  "C3'"  .      .
+ YG       "C2'"  "C3'"  "O2'"  .
+ YG       "H2'"  "C2'"  .      .
+ YG       "O2'"  "C2'"  "HO2'" .
+ YG       "HO2'" "O2'"  .      .
+ YG       "O3'"  "C3'"  .      END
+ YG       "HO3'" "O3'"  .      .
+ YG       N2     C2     .    ADD
+ YG       C2     N3     .    ADD
+ YG       C4     C5     .    ADD
+ YG       "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+YG        C2        N1        single    1.337     0.020     1.337     0.020     
+YG        N1        C6        single    1.337     0.020     1.337     0.020     
+YG        C12       N1        single    1.337     0.020     1.337     0.020     
+YG        N2        C2        double    1.350     0.020     1.350     0.020     
+YG        N2        C11       single    1.350     0.020     1.350     0.020     
+YG        C2        N3        single    1.337     0.020     1.337     0.020     
+YG        C3        N3        single    1.465     0.020     1.465     0.020     
+YG        N3        C4        single    1.337     0.020     1.337     0.020     
+YG        H31       C3        single    1.089     0.010     0.989     0.005     
+YG        H32       C3        single    1.089     0.010     0.989     0.005     
+YG        H33       C3        single    1.089     0.010     0.989     0.005     
+YG        C4        C5        double    1.490     0.020     1.490     0.020     
+YG        C4        N9        single    1.337     0.020     1.337     0.020     
+YG        C6        C5        single    1.490     0.020     1.490     0.020     
+YG        C5        N7        single    1.350     0.020     1.350     0.020     
+YG        O6        C6        double    1.250     0.020     1.250     0.020     
+YG        N7        C8        double    1.350     0.020     1.350     0.020     
+YG        C8        N9        single    1.337     0.020     1.337     0.020     
+YG        H8        C8        single    1.082     0.013     0.975     0.010     
+YG        N9        "C1'"     single    1.485     0.020     1.485     0.020     
+YG        C10       C11       single    1.506     0.020     1.506     0.020     
+YG        H101      C10       single    1.089     0.010     0.989     0.005     
+YG        H102      C10       single    1.089     0.010     0.989     0.005     
+YG        H103      C10       single    1.089     0.010     0.989     0.005     
+YG        C11       C12       double    1.490     0.020     1.490     0.020     
+YG        C13       C12       single    1.510     0.020     1.510     0.020     
+YG        C14       C13       single    1.524     0.020     1.524     0.020     
+YG        H131      C13       single    1.089     0.010     0.989     0.005     
+YG        H132      C13       single    1.089     0.010     0.989     0.005     
+YG        C15       C14       single    1.524     0.020     1.524     0.020     
+YG        H141      C14       single    1.089     0.010     0.989     0.005     
+YG        H142      C14       single    1.089     0.010     0.989     0.005     
+YG        C16       C15       single    1.500     0.020     1.500     0.020     
+YG        N20       C15       single    1.450     0.020     1.450     0.020     
+YG        H15       C15       single    1.089     0.010     0.989     0.005     
+YG        O17       C16       deloc     1.220     0.020     1.220     0.020     
+YG        O18       C16       deloc     1.454     0.020     1.454     0.020     
+YG        C19       O18       single    1.426     0.020     1.426     0.020     
+YG        H191      C19       single    1.089     0.010     0.989     0.005     
+YG        H192      C19       single    1.089     0.010     0.989     0.005     
+YG        H193      C19       single    1.089     0.010     0.989     0.005     
+YG        C21       N20       single    1.330     0.020     1.330     0.020     
+YG        HN2       N20       single    1.016     0.010     0.899     0.007     
+YG        O22       C21       double    1.220     0.020     1.220     0.020     
+YG        O23       C21       single    1.454     0.020     1.454     0.020     
+YG        C24       O23       single    1.426     0.020     1.426     0.020     
+YG        H241      C24       single    1.089     0.010     0.989     0.005     
+YG        H242      C24       single    1.089     0.010     0.989     0.005     
+YG        H243      C24       single    1.089     0.010     0.989     0.005     
+YG        "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+YG        "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+YG        "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+YG        "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+YG        "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+YG        "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+YG        "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+YG        "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+YG        "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+YG        "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+YG        "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+YG        "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+YG        "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+YG        "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+YG        "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+YG        "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+YG        "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+YG        "O5'"     P         single    1.610     0.020     1.610     0.020     
+YG        OP1       P         deloc     1.510     0.020     1.510     0.020     
+YG        OP2       P         deloc     1.510     0.020     1.510     0.020     
+YG        P         OP3       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ YG       OP3    P      OP1     119.900    3.000
+ YG       OP3    P      OP2     119.900    3.000
+ YG       OP3    P      "O5'"   108.200    3.000
+ YG       OP1    P      OP2     119.900    3.000
+ YG       OP1    P      "O5'"   108.200    3.000
+ YG       OP2    P      "O5'"   108.200    3.000
+ YG       P      "O5'"  "C5'"   120.500    3.000
+ YG       "O5'"  "C5'"  "H5'"   109.470    3.000
+ YG       "O5'"  "C5'"  "H5''"  109.470    3.000
+ YG       "O5'"  "C5'"  "C4'"   109.470    3.000
+ YG       "H5'"  "C5'"  "H5''"  107.900    3.000
+ YG       "H5'"  "C5'"  "C4'"   109.470    3.000
+ YG       "H5''" "C5'"  "C4'"   109.470    3.000
+ YG       "C5'"  "C4'"  "H4'"   108.340    3.000
+ YG       "C5'"  "C4'"  "O4'"   109.470    3.000
+ YG       "C5'"  "C4'"  "C3'"   111.000    3.000
+ YG       "H4'"  "C4'"  "O4'"   109.470    3.000
+ YG       "H4'"  "C4'"  "C3'"   108.340    3.000
+ YG       "O4'"  "C4'"  "C3'"   109.470    3.000
+ YG       "C4'"  "O4'"  "C1'"   111.800    3.000
+ YG       "O4'"  "C1'"  "H1'"   109.470    3.000
+ YG       "O4'"  "C1'"  N9      109.470    3.000
+ YG       "O4'"  "C1'"  "C2'"   109.470    3.000
+ YG       "H1'"  "C1'"  N9      109.470    3.000
+ YG       "H1'"  "C1'"  "C2'"   108.340    3.000
+ YG       N9     "C1'"  "C2'"   109.470    3.000
+ YG       "C1'"  N9     C4      126.000    3.000
+ YG       "C1'"  N9     C8      126.000    3.000
+ YG       C4     N9     C8      108.000    3.000
+ YG       N9     C4     N3      132.000    3.000
+ YG       N9     C4     C5      108.000    3.000
+ YG       N3     C4     C5      120.000    3.000
+ YG       C4     N3     C3      120.000    3.000
+ YG       C4     N3     C2      120.000    3.000
+ YG       C3     N3     C2      120.000    3.000
+ YG       N3     C3     H33     109.470    3.000
+ YG       N3     C3     H32     109.470    3.000
+ YG       N3     C3     H31     109.470    3.000
+ YG       H33    C3     H32     109.470    3.000
+ YG       H33    C3     H31     109.470    3.000
+ YG       H32    C3     H31     109.470    3.000
+ YG       N9     C8     H8      126.000    3.000
+ YG       N9     C8     N7      108.000    3.000
+ YG       H8     C8     N7      126.000    3.000
+ YG       C8     N7     C5      108.000    3.000
+ YG       N7     C5     C6      132.000    3.000
+ YG       N7     C5     C4      108.000    3.000
+ YG       C6     C5     C4      120.000    3.000
+ YG       C5     C6     O6      120.000    3.000
+ YG       C5     C6     N1      120.000    3.000
+ YG       O6     C6     N1      120.000    3.000
+ YG       C6     N1     C2      120.000    3.000
+ YG       C6     N1     C12     132.000    3.000
+ YG       C2     N1     C12     108.000    3.000
+ YG       N1     C2     N2      108.000    3.000
+ YG       N1     C2     N3      120.000    3.000
+ YG       N2     C2     N3      120.000    3.000
+ YG       N1     C12    C11     108.000    3.000
+ YG       N1     C12    C13     126.000    3.000
+ YG       C11    C12    C13     126.000    3.000
+ YG       C12    C11    C10     126.000    3.000
+ YG       C12    C11    N2      108.000    3.000
+ YG       C10    C11    N2      126.000    3.000
+ YG       C11    C10    H103    109.470    3.000
+ YG       C11    C10    H102    109.470    3.000
+ YG       C11    C10    H101    109.470    3.000
+ YG       H103   C10    H102    109.470    3.000
+ YG       H103   C10    H101    109.470    3.000
+ YG       H102   C10    H101    109.470    3.000
+ YG       C11    N2     C2      108.000    3.000
+ YG       C12    C13    H131    109.470    3.000
+ YG       C12    C13    H132    109.470    3.000
+ YG       C12    C13    C14     109.470    3.000
+ YG       H131   C13    H132    107.900    3.000
+ YG       H131   C13    C14     109.470    3.000
+ YG       H132   C13    C14     109.470    3.000
+ YG       C13    C14    H141    109.470    3.000
+ YG       C13    C14    H142    109.470    3.000
+ YG       C13    C14    C15     111.000    3.000
+ YG       H141   C14    H142    107.900    3.000
+ YG       H141   C14    C15     109.470    3.000
+ YG       H142   C14    C15     109.470    3.000
+ YG       C14    C15    H15     108.340    3.000
+ YG       C14    C15    C16     109.470    3.000
+ YG       C14    C15    N20     110.000    3.000
+ YG       H15    C15    C16     108.810    3.000
+ YG       H15    C15    N20     108.550    3.000
+ YG       C16    C15    N20     111.600    3.000
+ YG       C15    C16    O18     120.000    3.000
+ YG       C15    C16    O17     120.500    3.000
+ YG       O18    C16    O17     119.000    3.000
+ YG       C16    O18    C19     120.000    3.000
+ YG       O18    C19    H193    109.470    3.000
+ YG       O18    C19    H192    109.470    3.000
+ YG       O18    C19    H191    109.470    3.000
+ YG       H193   C19    H192    109.470    3.000
+ YG       H193   C19    H191    109.470    3.000
+ YG       H192   C19    H191    109.470    3.000
+ YG       C15    N20    HN2     118.500    3.000
+ YG       C15    N20    C21     121.500    3.000
+ YG       HN2    N20    C21     120.000    3.000
+ YG       N20    C21    O22     123.000    3.000
+ YG       N20    C21    O23     118.000    3.000
+ YG       O22    C21    O23     119.000    3.000
+ YG       C21    O23    C24     120.000    3.000
+ YG       O23    C24    H243    109.470    3.000
+ YG       O23    C24    H242    109.470    3.000
+ YG       O23    C24    H241    109.470    3.000
+ YG       H243   C24    H242    109.470    3.000
+ YG       H243   C24    H241    109.470    3.000
+ YG       H242   C24    H241    109.470    3.000
+ YG       "C4'"  "C3'"  "H3'"   108.340    3.000
+ YG       "C4'"  "C3'"  "C2'"   111.000    3.000
+ YG       "C4'"  "C3'"  "O3'"   109.470    3.000
+ YG       "H3'"  "C3'"  "C2'"   108.340    3.000
+ YG       "H3'"  "C3'"  "O3'"   109.470    3.000
+ YG       "C2'"  "C3'"  "O3'"   109.470    3.000
+ YG       "C3'"  "C2'"  "H2'"   108.340    3.000
+ YG       "C3'"  "C2'"  "O2'"   109.470    3.000
+ YG       "C3'"  "C2'"  "C1'"   111.000    3.000
+ YG       "H2'"  "C2'"  "O2'"   109.470    3.000
+ YG       "H2'"  "C2'"  "C1'"   108.340    3.000
+ YG       "O2'"  "C2'"  "C1'"   109.470    3.000
+ YG       "C2'"  "O2'"  "HO2'"  109.470    3.000
+ YG       "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ YG       var_1    OP3    P      "O5'"  "C5'"    -60.024   20.000   1
+ YG       var_2    P      "O5'"  "C5'"  "C4'"    179.983   20.000   1
+ YG       var_3    "O5'"  "C5'"  "C4'"  "C3'"    176.863   20.000   3
+ YG       var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ YG       var_5    "C4'"  "O4'"  "C1'"  N9      -150.000   20.000   1
+ YG       var_6    "O4'"  "C1'"  "C2'"  "C3'"     30.000   20.000   3
+ YG       var_7    "O4'"  "C1'"  N9     C8        27.025   20.000   1
+ YG       CONST_1  "C1'"  N9     C4     N3         0.000    0.000   0
+ YG       CONST_2  N9     C4     C5     N7         0.000    0.000   0
+ YG       CONST_3  N9     C4     N3     C3         0.000    0.000   0
+ YG       var_8    C4     N3     C3     H31      179.960   20.000   1
+ YG       CONST_4  "C1'"  N9     C8     N7       180.000    0.000   0
+ YG       CONST_5  N9     C8     N7     C5         0.000    0.000   0
+ YG       CONST_6  C8     N7     C5     C6       180.000    0.000   0
+ YG       CONST_7  N7     C5     C6     N1       180.000    0.000   0
+ YG       CONST_8  C5     C6     N1     C12      180.000    0.000   0
+ YG       CONST_9  C6     N1     C2     N2       180.000    0.000   0
+ YG       CONST_10 N1     C2     N3     C4         0.000    0.000   0
+ YG       CONST_11 C6     N1     C12    C13        0.000    0.000   0
+ YG       CONST_12 N1     C12    C11    N2         0.000    0.000   0
+ YG       var_9    C12    C11    C10    H101     -90.442   20.000   1
+ YG       CONST_13 C12    C11    N2     C2         0.000    0.000   0
+ YG       CONST_14 C11    N2     C2     N1         0.000    0.000   0
+ YG       var_10   N1     C12    C13    C14       89.951   20.000   2
+ YG       var_11   C12    C13    C14    C15      179.966   20.000   3
+ YG       var_12   C13    C14    C15    N20       60.007   20.000   3
+ YG       var_13   C14    C15    C16    O17       90.055   20.000   3
+ YG       var_14   C15    C16    O18    C19     -179.992   20.000   1
+ YG       var_15   C16    O18    C19    H191    -179.984   20.000   1
+ YG       var_16   C14    C15    N20    C21     -150.076   20.000   3
+ YG       CONST_15 C15    N20    C21    O23      180.000    0.000   0
+ YG       var_17   N20    C21    O23    C24     -179.952   20.000   1
+ YG       var_18   C21    O23    C24    H241     179.968   20.000   1
+ YG       var_19   "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ YG       var_20   "C4'"  "C3'"  "C2'"  "O2'"   -120.000   20.000   3
+ YG       var_21   "C3'"  "C2'"  "O2'"  "HO2'"   -61.480   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ YG       chir_01  C15    C14    C16    N20       positiv
+ YG       chir_02  "C1'"  N9     "C2'"  "O4'"     negativ
+ YG       chir_03  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ YG       chir_04  "C3'"  "C2'"  "O3'"  "C4'"     positiv
+ YG       chir_05  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ YG       plan-1    N2        0.020
+ YG       plan-1    C2        0.020
+ YG       plan-1    C11       0.020
+ YG       plan-1    C12       0.020
+ YG       plan-1    N3        0.020
+ YG       plan-1    N1        0.020
+ YG       plan-1    C6        0.020
+ YG       plan-1    C3        0.020
+ YG       plan-1    C4        0.020
+ YG       plan-1    C5        0.020
+ YG       plan-1    N9        0.020
+ YG       plan-1    N7        0.020
+ YG       plan-1    C8        0.020
+ YG       plan-1    O6        0.020
+ YG       plan-1    H8        0.020
+ YG       plan-1    "C1'"     0.020
+ YG       plan-1    C10       0.020
+ YG       plan-1    C13       0.020
+ YG       plan-2    C16       0.020
+ YG       plan-2    C15       0.020
+ YG       plan-2    O17       0.020
+ YG       plan-2    O18       0.020
+ YG       plan-3    N20       0.020
+ YG       plan-3    C15       0.020
+ YG       plan-3    C21       0.020
+ YG       plan-3    HN2       0.020
+ YG       plan-4    C21       0.020
+ YG       plan-4    N20       0.020
+ YG       plan-4    O22       0.020
+ YG       plan-4    O23       0.020
+ YG       plan-4    HN2       0.020
+# ------------------------------------------------------

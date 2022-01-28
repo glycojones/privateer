@@ -1,0 +1,282 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LTA      LTA '4,8-DIAMINO-3-HYDROXY-OCTANOIC ACID ' non-polymer        37  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LTA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LTA           O1     O    O        -0.500      0.000    0.000    0.000
+ LTA           C1     C    C         0.000     -0.748   -0.103    0.997
+ LTA           O2     O    O2       -0.500     -0.256   -0.131    2.147
+ LTA           C9     C    CH2       0.000      1.217   -0.044    2.409
+ LTA           H91    H    H         0.000      1.578    0.897    1.989
+ LTA           H92    H    H         0.000      1.699   -0.879    1.895
+ LTA           C10    C    CH3       0.000      1.552   -0.100    3.900
+ LTA           H103   H    H         0.000      1.085    0.709    4.401
+ LTA           H102   H    H         0.000      1.203   -1.014    4.310
+ LTA           H101   H    H         0.000      2.602   -0.036    4.033
+ LTA           C2     C    CH2       0.000     -2.240   -0.195    0.812
+ LTA           H21    H    H         0.000     -2.722    0.640    1.326
+ LTA           H22    H    H         0.000     -2.601   -1.136    1.233
+ LTA           C      C    CH1       0.000     -2.575   -0.139   -0.680
+ LTA           HC     H    H         0.000     -2.090   -0.980   -1.195
+ LTA           O      O    OH1       0.000     -2.102    1.092   -1.228
+ LTA           HO     H    H         0.000     -2.529    1.831   -0.774
+ LTA           CA     C    CH1       0.000     -4.089   -0.232   -0.866
+ LTA           HA     H    H         0.000     -4.452   -1.180   -0.444
+ LTA           N      N    NH2       0.000     -4.738    0.890   -0.177
+ LTA           H2     H    H         0.000     -4.192    1.521    0.399
+ LTA           H      H    H         0.000     -5.735    1.042   -0.273
+ LTA           CB     C    CH2       0.000     -4.424   -0.177   -2.358
+ LTA           HB2    H    H         0.000     -3.940   -1.012   -2.870
+ LTA           HB3    H    H         0.000     -4.061    0.764   -2.777
+ LTA           CG     C    CH2       0.000     -5.939   -0.270   -2.546
+ LTA           HG2    H    H         0.000     -6.420    0.564   -2.032
+ LTA           HG3    H    H         0.000     -6.299   -1.211   -2.125
+ LTA           CD     C    CH2       0.000     -6.273   -0.214   -4.038
+ LTA           HD2    H    H         0.000     -5.790   -1.049   -4.550
+ LTA           HD3    H    H         0.000     -5.911    0.727   -4.456
+ LTA           CE     C    CH2       0.000     -7.788   -0.307   -4.225
+ LTA           HE2    H    H         0.000     -8.270    0.527   -3.711
+ LTA           HE3    H    H         0.000     -8.149   -1.249   -3.805
+ LTA           NZ     N    NH2       0.000     -8.110   -0.253   -5.657
+ LTA           HZ2    H    H         0.000     -7.370   -0.166   -6.344
+ LTA           HZ1    H    H         0.000     -9.073   -0.303   -5.967
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LTA      O1     n/a    C1     START
+ LTA      C1     O1     C2     .
+ LTA      O2     C1     C9     .
+ LTA      C9     O2     C10    .
+ LTA      H91    C9     .      .
+ LTA      H92    C9     .      .
+ LTA      C10    C9     H101   .
+ LTA      H103   C10    .      .
+ LTA      H102   C10    .      .
+ LTA      H101   C10    .      .
+ LTA      C2     C1     C      .
+ LTA      H21    C2     .      .
+ LTA      H22    C2     .      .
+ LTA      C      C2     CA     .
+ LTA      HC     C      .      .
+ LTA      O      C      HO     .
+ LTA      HO     O      .      .
+ LTA      CA     C      CB     .
+ LTA      HA     CA     .      .
+ LTA      N      CA     H      .
+ LTA      H2     N      .      .
+ LTA      H      N      .      .
+ LTA      CB     CA     CG     .
+ LTA      HB2    CB     .      .
+ LTA      HB3    CB     .      .
+ LTA      CG     CB     CD     .
+ LTA      HG2    CG     .      .
+ LTA      HG3    CG     .      .
+ LTA      CD     CG     CE     .
+ LTA      HD2    CD     .      .
+ LTA      HD3    CD     .      .
+ LTA      CE     CD     NZ     .
+ LTA      HE2    CE     .      .
+ LTA      HE3    CE     .      .
+ LTA      NZ     CE     HZ1    .
+ LTA      HZ2    NZ     .      .
+ LTA      HZ1    NZ     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LTA       N         CA        single    1.450     0.020     1.450     0.020     
+LTA       H         N         single    1.036     0.016     0.914     0.007     
+LTA       H2        N         single    1.036     0.016     0.914     0.007     
+LTA       CB        CA        single    1.524     0.020     1.524     0.020     
+LTA       CA        C         single    1.524     0.020     1.524     0.020     
+LTA       HA        CA        single    1.089     0.010     0.989     0.005     
+LTA       CG        CB        single    1.524     0.020     1.524     0.020     
+LTA       HB2       CB        single    1.089     0.010     0.989     0.005     
+LTA       HB3       CB        single    1.089     0.010     0.989     0.005     
+LTA       CD        CG        single    1.524     0.020     1.524     0.020     
+LTA       HG2       CG        single    1.089     0.010     0.989     0.005     
+LTA       HG3       CG        single    1.089     0.010     0.989     0.005     
+LTA       CE        CD        single    1.524     0.020     1.524     0.020     
+LTA       HD2       CD        single    1.089     0.010     0.989     0.005     
+LTA       HD3       CD        single    1.089     0.010     0.989     0.005     
+LTA       NZ        CE        single    1.450     0.020     1.450     0.020     
+LTA       HE2       CE        single    1.089     0.010     0.989     0.005     
+LTA       HE3       CE        single    1.089     0.010     0.989     0.005     
+LTA       HZ1       NZ        single    1.036     0.016     0.914     0.007     
+LTA       HZ2       NZ        single    1.036     0.016     0.914     0.007     
+LTA       O         C         single    1.432     0.020     1.432     0.020     
+LTA       C         C2        single    1.524     0.020     1.524     0.020     
+LTA       HC        C         single    1.089     0.010     0.989     0.005     
+LTA       HO        O         single    0.970     0.012     0.839     0.014     
+LTA       C2        C1        single    1.510     0.020     1.510     0.020     
+LTA       H21       C2        single    1.089     0.010     0.989     0.005     
+LTA       H22       C2        single    1.089     0.010     0.989     0.005     
+LTA       C1        O1        deloc     1.220     0.020     1.220     0.020     
+LTA       O2        C1        deloc     1.454     0.020     1.454     0.020     
+LTA       C9        O2        single    1.426     0.020     1.426     0.020     
+LTA       C10       C9        single    1.513     0.020     1.513     0.020     
+LTA       H91       C9        single    1.089     0.010     0.989     0.005     
+LTA       H92       C9        single    1.089     0.010     0.989     0.005     
+LTA       H101      C10       single    1.089     0.010     0.989     0.005     
+LTA       H102      C10       single    1.089     0.010     0.989     0.005     
+LTA       H103      C10       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LTA      O1     C1     O2      119.000    3.000
+ LTA      O1     C1     C2      120.500    3.000
+ LTA      O2     C1     C2      120.000    3.000
+ LTA      C1     O2     C9      120.000    3.000
+ LTA      O2     C9     H91     109.470    3.000
+ LTA      O2     C9     H92     109.470    3.000
+ LTA      O2     C9     C10     109.470    3.000
+ LTA      H91    C9     H92     107.900    3.000
+ LTA      H91    C9     C10     109.470    3.000
+ LTA      H92    C9     C10     109.470    3.000
+ LTA      C9     C10    H103    109.470    3.000
+ LTA      C9     C10    H102    109.470    3.000
+ LTA      C9     C10    H101    109.470    3.000
+ LTA      H103   C10    H102    109.470    3.000
+ LTA      H103   C10    H101    109.470    3.000
+ LTA      H102   C10    H101    109.470    3.000
+ LTA      C1     C2     H21     109.470    3.000
+ LTA      C1     C2     H22     109.470    3.000
+ LTA      C1     C2     C       109.470    3.000
+ LTA      H21    C2     H22     107.900    3.000
+ LTA      H21    C2     C       109.470    3.000
+ LTA      H22    C2     C       109.470    3.000
+ LTA      C2     C      HC      108.340    3.000
+ LTA      C2     C      O       109.470    3.000
+ LTA      C2     C      CA      111.000    3.000
+ LTA      HC     C      O       109.470    3.000
+ LTA      HC     C      CA      108.340    3.000
+ LTA      O      C      CA      109.470    3.000
+ LTA      C      O      HO      109.470    3.000
+ LTA      C      CA     HA      108.340    3.000
+ LTA      C      CA     N       109.470    3.000
+ LTA      C      CA     CB      111.000    3.000
+ LTA      HA     CA     N       109.470    3.000
+ LTA      HA     CA     CB      108.340    3.000
+ LTA      N      CA     CB      109.470    3.000
+ LTA      CA     N      H2      120.000    3.000
+ LTA      CA     N      H       120.000    3.000
+ LTA      H2     N      H       120.000    3.000
+ LTA      CA     CB     HB2     109.470    3.000
+ LTA      CA     CB     HB3     109.470    3.000
+ LTA      CA     CB     CG      111.000    3.000
+ LTA      HB2    CB     HB3     107.900    3.000
+ LTA      HB2    CB     CG      109.470    3.000
+ LTA      HB3    CB     CG      109.470    3.000
+ LTA      CB     CG     HG2     109.470    3.000
+ LTA      CB     CG     HG3     109.470    3.000
+ LTA      CB     CG     CD      111.000    3.000
+ LTA      HG2    CG     HG3     107.900    3.000
+ LTA      HG2    CG     CD      109.470    3.000
+ LTA      HG3    CG     CD      109.470    3.000
+ LTA      CG     CD     HD2     109.470    3.000
+ LTA      CG     CD     HD3     109.470    3.000
+ LTA      CG     CD     CE      111.000    3.000
+ LTA      HD2    CD     HD3     107.900    3.000
+ LTA      HD2    CD     CE      109.470    3.000
+ LTA      HD3    CD     CE      109.470    3.000
+ LTA      CD     CE     HE2     109.470    3.000
+ LTA      CD     CE     HE3     109.470    3.000
+ LTA      CD     CE     NZ      109.470    3.000
+ LTA      HE2    CE     HE3     107.900    3.000
+ LTA      HE2    CE     NZ      109.470    3.000
+ LTA      HE3    CE     NZ      109.470    3.000
+ LTA      CE     NZ     HZ2     120.000    3.000
+ LTA      CE     NZ     HZ1     120.000    3.000
+ LTA      HZ2    NZ     HZ1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LTA      var_1    O1     C1     O2     C9         0.028   20.000   1
+ LTA      var_2    C1     O2     C9     C10      179.988   20.000   1
+ LTA      var_3    O2     C9     C10    H101     179.988   20.000   3
+ LTA      var_4    O1     C1     C2     C         -0.002   20.000   3
+ LTA      var_5    C1     C2     C      CA      -179.999   20.000   3
+ LTA      var_6    C2     C      O      HO       -60.033   20.000   1
+ LTA      var_7    C2     C      CA     CB      -179.960   20.000   3
+ LTA      var_8    C      CA     N      H        173.781   20.000   1
+ LTA      var_9    C      CA     CB     CG      -180.000   20.000   3
+ LTA      var_10   CA     CB     CG     CD       179.960   20.000   3
+ LTA      var_11   CB     CG     CD     CE       180.000   20.000   3
+ LTA      var_12   CG     CD     CE     NZ       179.980   20.000   3
+ LTA      var_13   CD     CE     NZ     HZ1      179.959   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LTA      chir_01  CA     N      CB     C         negativ
+ LTA      chir_02  C      CA     O      C2        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LTA      plan-1    N         0.020
+ LTA      plan-1    CA        0.020
+ LTA      plan-1    H         0.020
+ LTA      plan-1    H2        0.020
+ LTA      plan-2    NZ        0.020
+ LTA      plan-2    CE        0.020
+ LTA      plan-2    HZ1       0.020
+ LTA      plan-2    HZ2       0.020
+ LTA      plan-3    C1        0.020
+ LTA      plan-3    C2        0.020
+ LTA      plan-3    O1        0.020
+ LTA      plan-3    O2        0.020
+# ------------------------------------------------------

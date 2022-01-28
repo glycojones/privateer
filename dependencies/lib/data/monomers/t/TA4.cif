@@ -1,0 +1,255 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TA4      TA4 '(S)-2-[4-(AMINOMETHYL)-1H-1,2,3-TRIA' non-polymer        30  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TA4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TA4           OXT    O    OC       -0.500      0.000    0.000    0.000
+ TA4           C      C    C         0.000     -0.855    0.772    0.488
+ TA4           O      O    OC       -0.500     -0.637    1.480    1.496
+ TA4           CA     C    CH1       0.000     -2.135    0.751   -0.337
+ TA4           HA     H    H         0.000     -2.512   -0.281   -0.317
+ TA4           CB     C    CH2       0.000     -1.855    1.101   -1.815
+ TA4           HB2    H    H         0.000     -1.103    0.390   -2.164
+ TA4           HB3    H    H         0.000     -1.431    2.107   -1.818
+ TA4           CG     C    CH1       0.000     -3.082    1.055   -2.749
+ TA4           HG     H    H         0.000     -2.748    1.271   -3.773
+ TA4           CD1    C    CH3       0.000     -4.088    2.132   -2.331
+ TA4           HD13   H    H         0.000     -4.919    2.116   -2.989
+ TA4           HD12   H    H         0.000     -4.419    1.944   -1.342
+ TA4           HD11   H    H         0.000     -3.626    3.084   -2.372
+ TA4           CD2    C    CH3       0.000     -3.765   -0.314   -2.743
+ TA4           HD23   H    H         0.000     -4.637   -0.277   -3.344
+ TA4           HD22   H    H         0.000     -3.102   -1.043   -3.131
+ TA4           HD21   H    H         0.000     -4.032   -0.572   -1.751
+ TA4           NT1    N    NR5       0.000     -3.173    1.601    0.270
+ TA4           NT2    N    NRD5      0.000     -2.990    2.913    0.330
+ TA4           NT3    N    NRD5      0.000     -4.074    3.409    0.917
+ TA4           CT4    C    CR5       0.000     -4.910    2.366    1.207
+ TA4           CT5    C    CR15      0.000     -4.337    1.190    0.793
+ TA4           HT5    H    H         0.000     -4.728    0.182    0.870
+ TA4           CT6    C    CH2       0.000     -6.203    2.586    1.866
+ TA4           HT61   H    H         0.000     -6.098    3.457    2.515
+ TA4           HT62   H    H         0.000     -6.417    1.704    2.473
+ TA4           N      N    NH2       0.000     -7.289    2.806    0.931
+ TA4           H2     H    H         0.000     -7.791    3.683    0.938
+ TA4           H      H    H         0.000     -7.544    2.083    0.273
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TA4      OXT    n/a    C      START
+ TA4      C      OXT    CA     .
+ TA4      O      C      .      .
+ TA4      CA     C      NT1    .
+ TA4      HA     CA     .      .
+ TA4      CB     CA     CG     .
+ TA4      HB2    CB     .      .
+ TA4      HB3    CB     .      .
+ TA4      CG     CB     CD2    .
+ TA4      HG     CG     .      .
+ TA4      CD1    CG     HD11   .
+ TA4      HD13   CD1    .      .
+ TA4      HD12   CD1    .      .
+ TA4      HD11   CD1    .      .
+ TA4      CD2    CG     HD21   .
+ TA4      HD23   CD2    .      .
+ TA4      HD22   CD2    .      .
+ TA4      HD21   CD2    .      .
+ TA4      NT1    CA     NT2    .
+ TA4      NT2    NT1    NT3    .
+ TA4      NT3    NT2    CT4    .
+ TA4      CT4    NT3    CT6    .
+ TA4      CT5    CT4    HT5    .
+ TA4      HT5    CT5    .      .
+ TA4      CT6    CT4    N      .
+ TA4      HT61   CT6    .      .
+ TA4      HT62   CT6    .      .
+ TA4      N      CT6    H      .
+ TA4      H2     N      .      .
+ TA4      H      N      .      END
+ TA4      NT1    CT5    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TA4       O         C         deloc     1.250     0.020     1.250     0.020     
+TA4       CA        C         single    1.500     0.020     1.500     0.020     
+TA4       C         OXT       deloc     1.250     0.020     1.250     0.020     
+TA4       CB        CA        single    1.524     0.020     1.524     0.020     
+TA4       NT1       CA        single    1.485     0.020     1.485     0.020     
+TA4       HA        CA        single    1.089     0.010     0.989     0.005     
+TA4       CG        CB        single    1.524     0.020     1.524     0.020     
+TA4       HB2       CB        single    1.089     0.010     0.989     0.005     
+TA4       HB3       CB        single    1.089     0.010     0.989     0.005     
+TA4       CD2       CG        single    1.524     0.020     1.524     0.020     
+TA4       CD1       CG        single    1.524     0.020     1.524     0.020     
+TA4       HG        CG        single    1.089     0.010     0.989     0.005     
+TA4       HD21      CD2       single    1.089     0.010     0.989     0.005     
+TA4       HD22      CD2       single    1.089     0.010     0.989     0.005     
+TA4       HD23      CD2       single    1.089     0.010     0.989     0.005     
+TA4       HD11      CD1       single    1.089     0.010     0.989     0.005     
+TA4       HD12      CD1       single    1.089     0.010     0.989     0.005     
+TA4       HD13      CD1       single    1.089     0.010     0.989     0.005     
+TA4       NT1       CT5       single    1.337     0.020     1.337     0.020     
+TA4       NT2       NT1       single    1.402     0.020     1.402     0.020     
+TA4       CT5       CT4       double    1.387     0.020     1.387     0.020     
+TA4       HT5       CT5       single    1.082     0.013     0.975     0.010     
+TA4       CT4       NT3       single    1.350     0.020     1.350     0.020     
+TA4       CT6       CT4       single    1.510     0.020     1.510     0.020     
+TA4       NT3       NT2       double    1.404     0.020     1.404     0.020     
+TA4       N         CT6       single    1.450     0.020     1.450     0.020     
+TA4       HT61      CT6       single    1.089     0.010     0.989     0.005     
+TA4       HT62      CT6       single    1.089     0.010     0.989     0.005     
+TA4       H         N         single    1.036     0.016     0.914     0.007     
+TA4       H2        N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TA4      OXT    C      O       123.000    3.000
+ TA4      OXT    C      CA      118.500    3.000
+ TA4      O      C      CA      118.500    3.000
+ TA4      C      CA     HA      108.810    3.000
+ TA4      C      CA     CB      109.470    3.000
+ TA4      C      CA     NT1     109.500    3.000
+ TA4      HA     CA     CB      108.340    3.000
+ TA4      HA     CA     NT1     109.470    3.000
+ TA4      CB     CA     NT1     109.470    3.000
+ TA4      CA     CB     HB2     109.470    3.000
+ TA4      CA     CB     HB3     109.470    3.000
+ TA4      CA     CB     CG      111.000    3.000
+ TA4      HB2    CB     HB3     107.900    3.000
+ TA4      HB2    CB     CG      109.470    3.000
+ TA4      HB3    CB     CG      109.470    3.000
+ TA4      CB     CG     HG      108.340    3.000
+ TA4      CB     CG     CD1     111.000    3.000
+ TA4      CB     CG     CD2     111.000    3.000
+ TA4      HG     CG     CD1     108.340    3.000
+ TA4      HG     CG     CD2     108.340    3.000
+ TA4      CD1    CG     CD2     111.000    3.000
+ TA4      CG     CD1    HD13    109.470    3.000
+ TA4      CG     CD1    HD12    109.470    3.000
+ TA4      CG     CD1    HD11    109.470    3.000
+ TA4      HD13   CD1    HD12    109.470    3.000
+ TA4      HD13   CD1    HD11    109.470    3.000
+ TA4      HD12   CD1    HD11    109.470    3.000
+ TA4      CG     CD2    HD23    109.470    3.000
+ TA4      CG     CD2    HD22    109.470    3.000
+ TA4      CG     CD2    HD21    109.470    3.000
+ TA4      HD23   CD2    HD22    109.470    3.000
+ TA4      HD23   CD2    HD21    109.470    3.000
+ TA4      HD22   CD2    HD21    109.470    3.000
+ TA4      CA     NT1    NT2     108.000    3.000
+ TA4      CA     NT1    CT5     126.000    3.000
+ TA4      NT2    NT1    CT5     108.000    3.000
+ TA4      NT1    NT2    NT3     108.000    3.000
+ TA4      NT2    NT3    CT4     108.000    3.000
+ TA4      NT3    CT4    CT5     108.000    3.000
+ TA4      NT3    CT4    CT6     126.000    3.000
+ TA4      CT5    CT4    CT6     126.000    3.000
+ TA4      CT4    CT5    HT5     126.000    3.000
+ TA4      CT4    CT5    NT1     108.000    3.000
+ TA4      HT5    CT5    NT1     126.000    3.000
+ TA4      CT4    CT6    HT61    109.470    3.000
+ TA4      CT4    CT6    HT62    109.470    3.000
+ TA4      CT4    CT6    N       109.500    3.000
+ TA4      HT61   CT6    HT62    107.900    3.000
+ TA4      HT61   CT6    N       109.470    3.000
+ TA4      HT62   CT6    N       109.470    3.000
+ TA4      CT6    N      H2      120.000    3.000
+ TA4      CT6    N      H       120.000    3.000
+ TA4      H2     N      H       120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TA4      var_1    OXT    C      CA     NT1      176.939   20.000   3
+ TA4      var_2    C      CA     CB     CG       177.793   20.000   3
+ TA4      var_3    CA     CB     CG     CD2      -57.402   20.000   3
+ TA4      var_4    CB     CG     CD1    HD11      58.526   20.000   3
+ TA4      var_5    CB     CG     CD2    HD21      56.077   20.000   3
+ TA4      var_6    C      CA     NT1    NT2       65.809   20.000   1
+ TA4      CONST_1  CA     NT1    CT5    CT4      180.000    0.000   0
+ TA4      CONST_2  CA     NT1    NT2    NT3      180.000    0.000   0
+ TA4      CONST_3  NT1    NT2    NT3    CT4        0.000    0.000   0
+ TA4      CONST_4  NT2    NT3    CT4    CT6      180.000    0.000   0
+ TA4      CONST_5  NT3    CT4    CT5    NT1        0.000    0.000   0
+ TA4      var_7    NT3    CT4    CT6    N         90.091   20.000   2
+ TA4      var_8    CT4    CT6    N      H         62.007   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TA4      chir_01  CA     C      CB     NT1       positiv
+ TA4      chir_02  CG     CB     CD2    CD1       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TA4      plan-1    C         0.020
+ TA4      plan-1    O         0.020
+ TA4      plan-1    CA        0.020
+ TA4      plan-1    OXT       0.020
+ TA4      plan-2    NT1       0.020
+ TA4      plan-2    CA        0.020
+ TA4      plan-2    CT5       0.020
+ TA4      plan-2    NT2       0.020
+ TA4      plan-2    CT4       0.020
+ TA4      plan-2    NT3       0.020
+ TA4      plan-2    HT5       0.020
+ TA4      plan-2    CT6       0.020
+ TA4      plan-3    N         0.020
+ TA4      plan-3    CT6       0.020
+ TA4      plan-3    H         0.020
+ TA4      plan-3    H2        0.020
+# ------------------------------------------------------

@@ -1,0 +1,252 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NAA      NAA 'N-ACETYL-D-ALLOSAMINE               ' pyranose           30  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NAA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NAA           C1     C    CH1       0.000      0.000    0.000    0.000
+ NAA           H1     H    H         0.000     -0.052   -1.092   -0.116
+ NAA           O1     O    OH1       0.000      1.168    0.343    0.748
+ NAA           HO1    H    H         0.000      1.954    0.033    0.278
+ NAA           O5     O    O2        0.000      0.066    0.610   -1.286
+ NAA           C5     C    CH1       0.000     -1.019    0.104   -2.061
+ NAA           H5     H    H         0.000     -1.003   -0.995   -2.037
+ NAA           C6     C    CH2       0.000     -0.879    0.583   -3.506
+ NAA           H61    H    H         0.000     -0.896    1.675   -3.530
+ NAA           H62    H    H         0.000     -1.711    0.195   -4.099
+ NAA           O6     O    OH1       0.000      0.355    0.112   -4.049
+ NAA           HO6    H    H         0.000      0.443    0.417   -4.962
+ NAA           C4     C    CH1       0.000     -2.345    0.604   -1.486
+ NAA           H4     H    H         0.000     -2.355    1.703   -1.488
+ NAA           O4     O    OH1       0.000     -3.426    0.115   -2.282
+ NAA           HO4    H    H         0.000     -3.327    0.435   -3.189
+ NAA           C3     C    CH1       0.000     -2.492    0.092   -0.048
+ NAA           H3     H    H         0.000     -3.383    0.541    0.415
+ NAA           O3     O    OH1       0.000     -2.621   -1.330   -0.056
+ NAA           HO3    H    H         0.000     -3.403   -1.579   -0.568
+ NAA           C2     C    CH1       0.000     -1.243    0.492    0.744
+ NAA           H2     H    H         0.000     -1.205    1.586    0.842
+ NAA           N2     N    NH1       0.000     -1.291   -0.118    2.075
+ NAA           HN2    H    H         0.000     -1.765   -1.000    2.210
+ NAA           C7     C    C         0.000     -0.704    0.497    3.120
+ NAA           C8     C    CH3       0.000     -0.754   -0.131    4.490
+ NAA           H83    H    H         0.000     -1.763   -0.241    4.793
+ NAA           H82    H    H         0.000     -0.289   -1.083    4.461
+ NAA           H81    H    H         0.000     -0.244    0.488    5.182
+ NAA           O7     O    O         0.000     -0.136    1.556    2.959
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NAA      C1     n/a    O5     START
+ NAA      H1     C1     .      .
+ NAA      O1     C1     HO1    .
+ NAA      HO1    O1     .      .
+ NAA      O5     C1     .      END
+ NAA      C5     O5     C4     .
+ NAA      H5     C5     .      .
+ NAA      C6     C5     O6     .
+ NAA      H61    C6     .      .
+ NAA      H62    C6     .      .
+ NAA      O6     C6     HO6    .
+ NAA      HO6    O6     .      .
+ NAA      C4     C5     C3     .
+ NAA      H4     C4     .      .
+ NAA      O4     C4     HO4    .
+ NAA      HO4    O4     .      .
+ NAA      C3     C4     C2     .
+ NAA      H3     C3     .      .
+ NAA      O3     C3     HO3    .
+ NAA      HO3    O3     .      .
+ NAA      C2     C3     N2     .
+ NAA      H2     C2     .      .
+ NAA      N2     C2     C7     .
+ NAA      HN2    N2     .      .
+ NAA      C7     N2     O7     .
+ NAA      C8     C7     H81    .
+ NAA      H83    C8     .      .
+ NAA      H82    C8     .      .
+ NAA      H81    C8     .      .
+ NAA      O7     C7     .      .
+ NAA      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NAA       C1        C2        single    1.524     0.020     1.524     0.020     
+NAA       O1        C1        single    1.432     0.020     1.432     0.020     
+NAA       O5        C1        single    1.426     0.020     1.426     0.020     
+NAA       H1        C1        single    1.089     0.010     0.989     0.005     
+NAA       C2        C3        single    1.524     0.020     1.524     0.020     
+NAA       N2        C2        single    1.450     0.020     1.450     0.020     
+NAA       H2        C2        single    1.089     0.010     0.989     0.005     
+NAA       C3        C4        single    1.524     0.020     1.524     0.020     
+NAA       O3        C3        single    1.432     0.020     1.432     0.020     
+NAA       H3        C3        single    1.089     0.010     0.989     0.005     
+NAA       C4        C5        single    1.524     0.020     1.524     0.020     
+NAA       O4        C4        single    1.432     0.020     1.432     0.020     
+NAA       H4        C4        single    1.089     0.010     0.989     0.005     
+NAA       C6        C5        single    1.524     0.020     1.524     0.020     
+NAA       C5        O5        single    1.426     0.020     1.426     0.020     
+NAA       H5        C5        single    1.089     0.010     0.989     0.005     
+NAA       O6        C6        single    1.432     0.020     1.432     0.020     
+NAA       H61       C6        single    1.089     0.010     0.989     0.005     
+NAA       H62       C6        single    1.089     0.010     0.989     0.005     
+NAA       C8        C7        single    1.500     0.020     1.500     0.020     
+NAA       C7        N2        single    1.330     0.020     1.330     0.020     
+NAA       O7        C7        double    1.220     0.020     1.220     0.020     
+NAA       H81       C8        single    1.089     0.010     0.989     0.005     
+NAA       H82       C8        single    1.089     0.010     0.989     0.005     
+NAA       H83       C8        single    1.089     0.010     0.989     0.005     
+NAA       HN2       N2        single    1.016     0.010     0.899     0.007     
+NAA       HO1       O1        single    0.970     0.012     0.839     0.014     
+NAA       HO3       O3        single    0.970     0.012     0.839     0.014     
+NAA       HO4       O4        single    0.970     0.012     0.839     0.014     
+NAA       HO6       O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NAA      H1     C1     O1      109.470    3.000
+ NAA      H1     C1     O5      109.470    3.000
+ NAA      O1     C1     O5      109.470    3.000
+ NAA      H1     C1     C2      108.340    3.000
+ NAA      O1     C1     C2      109.470    3.000
+ NAA      O5     C1     C2      109.470    3.000
+ NAA      C1     O1     HO1     109.470    3.000
+ NAA      C1     O5     C5      111.800    3.000
+ NAA      O5     C5     H5      109.470    3.000
+ NAA      O5     C5     C6      109.470    3.000
+ NAA      O5     C5     C4      109.470    3.000
+ NAA      H5     C5     C6      108.340    3.000
+ NAA      H5     C5     C4      108.340    3.000
+ NAA      C6     C5     C4      111.000    3.000
+ NAA      C5     C6     H61     109.470    3.000
+ NAA      C5     C6     H62     109.470    3.000
+ NAA      C5     C6     O6      109.470    3.000
+ NAA      H61    C6     H62     107.900    3.000
+ NAA      H61    C6     O6      109.470    3.000
+ NAA      H62    C6     O6      109.470    3.000
+ NAA      C6     O6     HO6     109.470    3.000
+ NAA      C5     C4     H4      108.340    3.000
+ NAA      C5     C4     O4      109.470    3.000
+ NAA      C5     C4     C3      111.000    3.000
+ NAA      H4     C4     O4      109.470    3.000
+ NAA      H4     C4     C3      108.340    3.000
+ NAA      O4     C4     C3      109.470    3.000
+ NAA      C4     O4     HO4     109.470    3.000
+ NAA      C4     C3     H3      108.340    3.000
+ NAA      C4     C3     O3      109.470    3.000
+ NAA      C4     C3     C2      111.000    3.000
+ NAA      H3     C3     O3      109.470    3.000
+ NAA      H3     C3     C2      108.340    3.000
+ NAA      O3     C3     C2      109.470    3.000
+ NAA      C3     O3     HO3     109.470    3.000
+ NAA      C3     C2     H2      108.340    3.000
+ NAA      C3     C2     N2      110.000    3.000
+ NAA      C3     C2     C1      111.000    3.000
+ NAA      H2     C2     N2      108.550    3.000
+ NAA      H2     C2     C1      108.340    3.000
+ NAA      N2     C2     C1      110.000    3.000
+ NAA      C2     N2     HN2     118.500    3.000
+ NAA      C2     N2     C7      121.500    3.000
+ NAA      HN2    N2     C7      120.000    3.000
+ NAA      N2     C7     C8      116.500    3.000
+ NAA      N2     C7     O7      123.000    3.000
+ NAA      C8     C7     O7      123.000    3.000
+ NAA      C7     C8     H83     109.470    3.000
+ NAA      C7     C8     H82     109.470    3.000
+ NAA      C7     C8     H81     109.470    3.000
+ NAA      H83    C8     H82     109.470    3.000
+ NAA      H83    C8     H81     109.470    3.000
+ NAA      H82    C8     H81     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NAA      var_1    O5     C1     O1     HO1      -59.655   20.000   1
+ NAA      var_2    C1     O5     C5     C4        60.000   20.000   1
+ NAA      var_3    O5     C5     C6     O6        59.893   20.000   3
+ NAA      var_4    C5     C6     O6     HO6     -179.907   20.000   1
+ NAA      var_5    O5     C5     C4     C3       -60.000   20.000   3
+ NAA      var_6    C5     C4     O4     HO4      -59.998   20.000   1
+ NAA      var_7    C5     C4     C3     C2        60.000   20.000   3
+ NAA      var_8    C4     C3     O3     HO3      -60.054   20.000   1
+ NAA      var_9    C4     C3     C2     N2       180.000   20.000   3
+ NAA      var_10   C3     C2     C1     O5        60.000   20.000   3
+ NAA      var_11   C3     C2     N2     C7      -150.203   20.000   3
+ NAA      CONST_1  C2     N2     C7     O7         0.000    0.000   0
+ NAA      var_12   N2     C7     C8     H81     -179.979   20.000   1
+ NAA      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NAA      chir_01  C1     C2     O1     O5        positiv
+ NAA      chir_02  C2     C1     C3     N2        negativ
+ NAA      chir_03  C3     C2     C4     O3        negativ
+ NAA      chir_04  C4     C3     C5     O4        negativ
+ NAA      chir_05  C5     C4     C6     O5        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NAA      plan-1    C7        0.020
+ NAA      plan-1    C8        0.020
+ NAA      plan-1    N2        0.020
+ NAA      plan-1    O7        0.020
+ NAA      plan-1    HN2       0.020
+ NAA      plan-2    N2        0.020
+ NAA      plan-2    C2        0.020
+ NAA      plan-2    C7        0.020
+ NAA      plan-2    HN2       0.020
+# ------------------------------------------------------

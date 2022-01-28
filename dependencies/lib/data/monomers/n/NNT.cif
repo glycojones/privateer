@@ -1,0 +1,178 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NNT     NNT      "3-(aminomethyl)-4-chloro-1-methylpyridinium"     NON-POLYMER     20     10     .     
+#
+data_comp_NNT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NNT     C12     C       CH2     0       -2.271      -0.180      -0.219      
+NNT     C13     C       CR6     0       -0.836      0.259       -0.033      
+NNT     C17     C       CR16    0       0.221       -0.521      -0.537      
+NNT     C18     C       CH3     0       2.604       -1.074      -0.750      
+NNT     C19     C       CR16    0       1.828       1.055       0.271       
+NNT     C20     C       CR16    0       0.811       1.881       0.740       
+NNT     C21     C       CR6     0       -0.513      1.461       0.661       
+NNT     N24     N       NT2     0       -2.919      -0.595      1.030       
+NNT     N25     N       NR6     1       1.526       -0.150      -0.329      
+NNT     CL28    CL      CL      0       -1.751      2.398       1.408       
+NNT     H12     H       H       0       -2.302      -0.933      -0.844      
+NNT     H12A    H       H       0       -2.785      0.557       -0.608      
+NNT     H17     H       H       0       0.040       -1.307      -1.022      
+NNT     H18     H       H       0       3.462       -0.620      -0.729      
+NNT     H18A    H       H       0       2.428       -1.384      -1.653      
+NNT     H18B    H       H       0       2.629       -1.835      -0.148      
+NNT     H19     H       H       0       2.727       1.319       0.362       
+NNT     H20     H       H       0       1.024       2.721       1.109       
+NNT     HN24    H       H       0       -3.753      -0.846      0.785       
+NNT     HN2A    H       H       0       -2.478      -1.345      1.280       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NNT       C12       C13       SINGLE    n         1.511     0.010     1.511     0.010     
+NNT       C12       N24       SINGLE    n         1.467     0.015     1.467     0.015     
+NNT       C13       C17       DOUBLE    n         1.381     0.020     1.381     0.020     
+NNT       C13       C21       SINGLE    n         1.391     0.020     1.391     0.020     
+NNT       C17       N25       SINGLE    n         1.350     0.020     1.350     0.020     
+NNT       C18       N25       SINGLE    n         1.475     0.015     1.475     0.015     
+NNT       C19       C20       SINGLE    n         1.378     0.015     1.378     0.015     
+NNT       C19       N25       DOUBLE    n         1.350     0.020     1.350     0.020     
+NNT       C20       C21       DOUBLE    n         1.378     0.014     1.378     0.014     
+NNT       C21       CL28      SINGLE    n         1.722     0.012     1.722     0.012     
+NNT       C12       H12       SINGLE    n         1.089     0.010     0.979     0.015     
+NNT       C12       H12A      SINGLE    n         1.089     0.010     0.979     0.015     
+NNT       C17       H17       SINGLE    n         1.082     0.013     0.941     0.017     
+NNT       C18       H18       SINGLE    n         1.089     0.010     0.971     0.015     
+NNT       C18       H18A      SINGLE    n         1.089     0.010     0.971     0.015     
+NNT       C18       H18B      SINGLE    n         1.089     0.010     0.971     0.015     
+NNT       C19       H19       SINGLE    n         1.082     0.013     0.941     0.017     
+NNT       C20       H20       SINGLE    n         1.082     0.013     0.942     0.016     
+NNT       N24       HN24      SINGLE    n         1.036     0.016     0.905     0.020     
+NNT       N24       HN2A      SINGLE    n         1.036     0.016     0.905     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NNT         C13         C12         N24     112.869    2.18
+NNT         C13         C12         H12     108.858    1.50
+NNT         C13         C12        H12A     108.858    1.50
+NNT         N24         C12         H12     107.542    2.93
+NNT         N24         C12        H12A     107.542    2.93
+NNT         H12         C12        H12A     107.945    1.50
+NNT         C12         C13         C17     120.734    1.80
+NNT         C12         C13         C21     120.734    1.80
+NNT         C17         C13         C21     118.532    1.50
+NNT         C13         C17         N25     120.779    1.50
+NNT         C13         C17         H17     120.101    1.91
+NNT         N25         C17         H17     119.121    1.50
+NNT         N25         C18         H18     109.533    1.50
+NNT         N25         C18        H18A     109.533    1.50
+NNT         N25         C18        H18B     109.533    1.50
+NNT         H18         C18        H18A     109.428    1.50
+NNT         H18         C18        H18B     109.428    1.50
+NNT        H18A         C18        H18B     109.428    1.50
+NNT         C20         C19         N25     120.513    1.50
+NNT         C20         C19         H19     120.042    1.50
+NNT         N25         C19         H19     119.445    1.50
+NNT         C19         C20         C21     119.525    1.50
+NNT         C19         C20         H20     119.920    1.50
+NNT         C21         C20         H20     120.555    1.50
+NNT         C13         C21         C20     119.630    1.50
+NNT         C13         C21        CL28     119.961    2.00
+NNT         C20         C21        CL28     120.410    1.50
+NNT         C12         N24        HN24     104.789    3.00
+NNT         C12         N24        HN2A     104.789    3.00
+NNT        HN24         N24        HN2A     107.163    3.00
+NNT         C17         N25         C18     119.143    1.50
+NNT         C17         N25         C19     121.023    1.50
+NNT         C18         N25         C19     119.834    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NNT             sp2_sp3_2         C17         C13         C12         N24     -90.000   10.00     6
+NNT             sp3_sp3_1         C13         C12         N24        HN24     180.000   10.00     3
+NNT             sp2_sp2_3         C12         C13         C17         N25     180.000   10.00     2
+NNT            sp2_sp2_24         C12         C13         C21        CL28       0.000   10.00     2
+NNT             sp2_sp2_6         C13         C17         N25         C18     180.000   10.00     2
+NNT             sp2_sp3_7         C17         N25         C18         H18     150.000   10.00     6
+NNT            sp2_sp2_13         N25         C19         C20         C21       0.000   10.00     2
+NNT            sp2_sp2_10         C20         C19         N25         C18     180.000   10.00     2
+NNT            sp2_sp2_18         C19         C20         C21        CL28     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NNT    plan-1         C12   0.020
+NNT    plan-1         C13   0.020
+NNT    plan-1         C17   0.020
+NNT    plan-1         C21   0.020
+NNT    plan-2         C13   0.020
+NNT    plan-2         C17   0.020
+NNT    plan-2         H17   0.020
+NNT    plan-2         N25   0.020
+NNT    plan-3         C19   0.020
+NNT    plan-3         C20   0.020
+NNT    plan-3         H19   0.020
+NNT    plan-3         N25   0.020
+NNT    plan-4         C19   0.020
+NNT    plan-4         C20   0.020
+NNT    plan-4         C21   0.020
+NNT    plan-4         H20   0.020
+NNT    plan-5         C13   0.020
+NNT    plan-5         C20   0.020
+NNT    plan-5         C21   0.020
+NNT    plan-5        CL28   0.020
+NNT    plan-6         C17   0.020
+NNT    plan-6         C18   0.020
+NNT    plan-6         C19   0.020
+NNT    plan-6         N25   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NNT SMILES           ACDLabs              12.01 "Clc1cc[n+](cc1CN)C"
+NNT SMILES_CANONICAL CACTVS               3.370 "C[n+]1ccc(Cl)c(CN)c1"
+NNT SMILES           CACTVS               3.370 "C[n+]1ccc(Cl)c(CN)c1"
+NNT SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C[n+]1ccc(c(c1)CN)Cl"
+NNT SMILES           "OpenEye OEToolkits" 1.7.0 "C[n+]1ccc(c(c1)CN)Cl"
+NNT InChI            InChI                1.03  "InChI=1S/C7H10ClN2/c1-10-3-2-7(8)6(4-9)5-10/h2-3,5H,4,9H2,1H3/q+1"
+NNT InChIKey         InChI                1.03  RRNWGKZANUHRIC-UHFFFAOYSA-N
+NNT ?                acedrg               202         "dictionary generator"                  
+NNT ?                acedrg_database      11          "data source"                           
+NNT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NNT ?                refmac5              5.8.0189    "optimization tool"                     

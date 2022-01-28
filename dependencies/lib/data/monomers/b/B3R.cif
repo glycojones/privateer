@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B3R     B3R      3-bromophenol     NON-POLYMER     13     8     .     
+#
+data_comp_B3R
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+B3R     C1      C       CR6     0       36.296      42.797      -1.900      
+B3R     C2      C       CR16    0       37.345      42.955      -0.994      
+B3R     C3      C       CR6     0       37.565      41.985      -0.023      
+B3R     C4      C       CR16    0       35.476      41.673      -1.829      
+B3R     C5      C       CR16    0       35.714      40.709      -0.846      
+B3R     C6      C       CR16    0       36.762      40.853      0.070       
+B3R     O7      O       OH1     0       36.078      43.747      -2.854      
+B3R     BR8     BR      BR      0       38.999      42.222      1.199       
+B3R     H2      H       H       0       37.898      43.717      -1.045      
+B3R     H4      H       H       0       34.767      41.565      -2.441      
+B3R     H5      H       H       0       35.157      39.949      -0.799      
+B3R     H6      H       H       0       36.919      40.205      0.729       
+B3R     HO7     H       H       0       35.302      44.099      -2.747      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B3R       C1        O7        SINGLE    n         1.365     0.011     1.365     0.011     
+B3R       C1        C4        DOUBLE    y         1.386     0.010     1.386     0.010     
+B3R       C1        C2        SINGLE    y         1.385     0.012     1.385     0.012     
+B3R       C2        C3        DOUBLE    y         1.384     0.010     1.384     0.010     
+B3R       C3        C6        SINGLE    y         1.384     0.010     1.384     0.010     
+B3R       C3        BR8       SINGLE    n         1.899     0.015     1.899     0.015     
+B3R       C4        C5        SINGLE    y         1.390     0.010     1.390     0.010     
+B3R       C5        C6        DOUBLE    y         1.384     0.015     1.384     0.015     
+B3R       C2        H2        SINGLE    n         1.082     0.013     0.942     0.010     
+B3R       C4        H4        SINGLE    n         1.082     0.013     0.942     0.016     
+B3R       C5        H5        SINGLE    n         1.082     0.013     0.944     0.010     
+B3R       C6        H6        SINGLE    n         1.082     0.013     0.938     0.014     
+B3R       O7        HO7       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+B3R          O7          C1          C4     120.260    2.50
+B3R          O7          C1          C2     119.784    2.52
+B3R          C4          C1          C2     119.956    1.50
+B3R          C1          C2          C3     119.559    1.50
+B3R          C1          C2          H2     119.819    1.50
+B3R          C3          C2          H2     120.622    1.50
+B3R          C2          C3          C6     121.909    1.50
+B3R          C2          C3         BR8     118.611    1.50
+B3R          C6          C3         BR8     119.481    1.50
+B3R          C1          C4          C5     119.261    1.50
+B3R          C1          C4          H4     120.272    1.50
+B3R          C5          C4          H4     120.467    1.50
+B3R          C4          C5          C6     121.042    1.50
+B3R          C4          C5          H5     119.386    1.50
+B3R          C6          C5          H5     119.572    1.50
+B3R          C3          C6          C5     118.273    1.50
+B3R          C3          C6          H6     120.853    1.50
+B3R          C5          C6          H6     120.874    1.50
+B3R          C1          O7         HO7     110.017    2.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+B3R              const_23          O7          C1          C2          C3     180.000   10.00     2
+B3R       const_sp2_sp2_3          O7          C1          C4          C5     180.000   10.00     2
+B3R              const_18          C1          C2          C3         BR8     180.000   10.00     2
+B3R              const_15         BR8          C3          C6          C5     180.000   10.00     2
+B3R       const_sp2_sp2_5          C1          C4          C5          C6       0.000   10.00     2
+B3R       const_sp2_sp2_9          C4          C5          C6          C3       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+B3R    plan-1         BR8   0.020
+B3R    plan-1          C1   0.020
+B3R    plan-1          C2   0.020
+B3R    plan-1          C3   0.020
+B3R    plan-1          C4   0.020
+B3R    plan-1          C5   0.020
+B3R    plan-1          C6   0.020
+B3R    plan-1          H2   0.020
+B3R    plan-1          H4   0.020
+B3R    plan-1          H5   0.020
+B3R    plan-1          H6   0.020
+B3R    plan-1          O7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+B3R SMILES           ACDLabs              12.01 "Brc1cc(O)ccc1"
+B3R SMILES_CANONICAL CACTVS               3.370 "Oc1cccc(Br)c1"
+B3R SMILES           CACTVS               3.370 "Oc1cccc(Br)c1"
+B3R SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc(cc(c1)Br)O"
+B3R SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(cc(c1)Br)O"
+B3R InChI            InChI                1.03  "InChI=1S/C6H5BrO/c7-5-2-1-3-6(8)4-5/h1-4,8H"
+B3R InChIKey         InChI                1.03  MNOJRWOWILAHAV-UHFFFAOYSA-N
+B3R ?                acedrg               202         "dictionary generator"                  
+B3R ?                acedrg_database      11          "data source"                           
+B3R ?                rdkit                2017.03.2   "Chemoinformatics tool"
+B3R ?                refmac5              5.8.0189    "optimization tool"                     

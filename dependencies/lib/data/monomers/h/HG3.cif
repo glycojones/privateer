@@ -1,0 +1,145 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HG3     HG3      "[(2~{R})-2,3,3-tris(oxidanyl)propyl] dihydrogen phosphate"     NON-POLYMER     18     11     .     
+#
+data_comp_HG3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HG3     O3P     O       OP      -1      -15.568     -27.478     -47.593     
+HG3     P       P       P       0       -14.505     -26.622     -48.254     
+HG3     O1P     O       OP      -1      -13.099     -26.984     -47.815     
+HG3     O2P     O       O       0       -14.792     -25.136     -48.145     
+HG3     O4P     O       O2      0       -14.577     -26.969     -49.829     
+HG3     C3      C       CH2     0       -13.645     -26.311     -50.732     
+HG3     C2      C       CH1     0       -13.928     -26.711     -52.164     
+HG3     O       O       OH1     0       -15.294     -26.415     -52.474     
+HG3     C1      C       CH1     0       -12.991     -26.006     -53.141     
+HG3     O1A     O       OH1     0       -11.653     -26.446     -52.930     
+HG3     O1      O       OH1     0       -13.401     -26.242     -54.486     
+HG3     H3      H       H       0       -12.730     -26.564     -50.491     
+HG3     H4      H       H       0       -13.731     -25.339     -50.639     
+HG3     H5      H       H       0       -13.802     -27.692     -52.247     
+HG3     H6      H       H       0       -15.430     -25.578     -52.438     
+HG3     H9      H       H       0       -13.029     -25.029     -52.970     
+HG3     H7      H       H       0       -11.591     -27.275     -53.098     
+HG3     H8      H       H       0       -13.377     -27.073     -54.655     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HG3       C1        O1        SINGLE    n         1.421     0.017     1.421     0.017     
+HG3       C1        O1A       SINGLE    n         1.421     0.017     1.421     0.017     
+HG3       C2        C1        SINGLE    n         1.514     0.020     1.514     0.020     
+HG3       C2        O         SINGLE    n         1.424     0.020     1.424     0.020     
+HG3       C3        C2        SINGLE    n         1.511     0.010     1.511     0.010     
+HG3       O4P       C3        SINGLE    n         1.454     0.017     1.454     0.017     
+HG3       P         O4P       SINGLE    n         1.614     0.019     1.614     0.019     
+HG3       P         O2P       DOUBLE    n         1.517     0.019     1.517     0.019     
+HG3       O3P       P         SINGLE    n         1.517     0.019     1.517     0.019     
+HG3       P         O1P       SINGLE    n         1.517     0.019     1.517     0.019     
+HG3       C3        H3        SINGLE    n         1.089     0.010     0.980     0.015     
+HG3       C3        H4        SINGLE    n         1.089     0.010     0.980     0.015     
+HG3       C2        H5        SINGLE    n         1.089     0.010     0.992     0.019     
+HG3       O         H6        SINGLE    n         0.970     0.012     0.848     0.020     
+HG3       C1        H9        SINGLE    n         1.089     0.010     0.993     0.020     
+HG3       O1A       H7        SINGLE    n         0.970     0.012     0.848     0.020     
+HG3       O1        H8        SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HG3         O4P           P         O2P     105.795    2.09
+HG3         O4P           P         O3P     105.795    2.09
+HG3         O4P           P         O1P     105.795    2.09
+HG3         O2P           P         O3P     112.864    1.69
+HG3         O2P           P         O1P     112.864    1.69
+HG3         O3P           P         O1P     112.864    1.69
+HG3          C3         O4P           P     118.671    1.50
+HG3          C2          C3         O4P     109.438    2.56
+HG3          C2          C3          H3     109.582    1.50
+HG3          C2          C3          H4     109.582    1.50
+HG3         O4P          C3          H3     109.393    1.91
+HG3         O4P          C3          H4     109.393    1.91
+HG3          H3          C3          H4     108.319    1.50
+HG3          C1          C2           O     109.482    3.00
+HG3          C1          C2          C3     111.094    2.85
+HG3          C1          C2          H5     109.155    1.50
+HG3           O          C2          C3     109.314    1.96
+HG3           O          C2          H5     108.183    1.96
+HG3          C3          C2          H5     108.656    1.50
+HG3          C2           O          H6     109.265    3.00
+HG3          O1          C1         O1A     111.904    1.92
+HG3          O1          C1          C2     109.482    3.00
+HG3          O1          C1          H9     108.816    1.50
+HG3         O1A          C1          C2     109.482    3.00
+HG3         O1A          C1          H9     108.816    1.50
+HG3          C2          C1          H9     109.155    1.50
+HG3          C1         O1A          H7     109.233    2.58
+HG3          C1          O1          H8     109.233    2.58
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HG3            sp3_sp3_31          C3         O4P           P         O2P     180.000   10.00     3
+HG3            sp3_sp3_28          C2          C3         O4P           P     180.000   10.00     3
+HG3            sp3_sp3_19          C1          C2          C3         O4P     180.000   10.00     3
+HG3            sp3_sp3_16          C1          C2           O          H6     180.000   10.00     3
+HG3             sp3_sp3_7          O1          C1          C2           O     180.000   10.00     3
+HG3             sp3_sp3_1         O1A          C1          O1          H8     180.000   10.00     3
+HG3             sp3_sp3_4          O1          C1         O1A          H7     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+HG3    chir_1    C2    O    C1    C3    negative
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HG3 InChI            InChI                1.03  "InChI=1S/C3H9O7P/c4-2(3(5)6)1-10-11(7,8)9/h2-6H,1H2,(H2,7,8,9)/t2-/m1/s1"
+HG3 InChIKey         InChI                1.03  TWWJQBIRJNUHBT-UWTATZPHSA-N
+HG3 SMILES_CANONICAL CACTVS               3.385 "OC(O)[C@H](O)CO[P](O)(O)=O"
+HG3 SMILES           CACTVS               3.385 "OC(O)[CH](O)CO[P](O)(O)=O"
+HG3 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.5 "C([C@H](C(O)O)O)OP(=O)(O)O"
+HG3 SMILES           "OpenEye OEToolkits" 2.0.5 "C(C(C(O)O)O)OP(=O)(O)O"
+HG3 ?                acedrg               202         "dictionary generator"                  
+HG3 ?                acedrg_database      11          "data source"                           
+HG3 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HG3 ?                refmac5              5.8.0189    "optimization tool"                     

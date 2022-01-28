@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3FA     3FA      3-FLUOROBENZENE-1,2-DIOL     NON-POLYMER     14     9     .     
+#
+data_comp_3FA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3FA     O1      O       OH1     0       -9.565      5.236       19.775      
+3FA     C1      C       CR6     0       -10.675     5.273       18.981      
+3FA     C3      C       CR6     0       -10.988     4.195       18.152      
+3FA     F1      F       F       0       -10.173     3.116       18.150      
+3FA     C5      C       CR16    0       -12.102     4.210       17.343      
+3FA     C6      C       CR16    0       -12.928     5.327       17.359      
+3FA     C4      C       CR16    0       -12.639     6.417       18.177      
+3FA     C2      C       CR6     0       -11.515     6.398       18.991      
+3FA     O2      O       OH1     0       -11.223     7.462       19.796      
+3FA     HO1     H       H       0       -9.805      5.187       20.597      
+3FA     H5      H       H       0       -12.295     3.471       16.791      
+3FA     H6      H       H       0       -13.697     5.348       16.807      
+3FA     H4      H       H       0       -13.206     7.170       18.179      
+3FA     HO2     H       H       0       -11.855     7.582       20.364      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3FA       O1        C1        SINGLE    n         1.364     0.013     1.364     0.013     
+3FA       C1        C3        DOUBLE    y         1.389     0.010     1.389     0.010     
+3FA       C1        C2        SINGLE    y         1.396     0.010     1.396     0.010     
+3FA       C3        F1        SINGLE    n         1.352     0.014     1.352     0.014     
+3FA       C3        C5        SINGLE    y         1.370     0.010     1.370     0.010     
+3FA       C5        C6        DOUBLE    y         1.378     0.012     1.378     0.012     
+3FA       C6        C4        SINGLE    y         1.382     0.012     1.382     0.012     
+3FA       C4        C2        DOUBLE    y         1.381     0.010     1.381     0.010     
+3FA       C2        O2        SINGLE    n         1.365     0.010     1.365     0.010     
+3FA       O1        HO1       SINGLE    n         0.970     0.012     0.858     0.020     
+3FA       C5        H5        SINGLE    n         1.082     0.013     0.942     0.013     
+3FA       C6        H6        SINGLE    n         1.082     0.013     0.947     0.014     
+3FA       C4        H4        SINGLE    n         1.082     0.013     0.942     0.017     
+3FA       O2        HO2       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3FA          C1          O1         HO1     109.337    3.00
+3FA          O1          C1          C3     121.183    2.86
+3FA          O1          C1          C2     119.155    2.54
+3FA          C3          C1          C2     119.662    1.50
+3FA          C1          C3          F1     118.732    1.50
+3FA          C1          C3          C5     121.659    1.50
+3FA          F1          C3          C5     119.609    1.50
+3FA          C3          C5          C6     118.701    1.50
+3FA          C3          C5          H5     120.196    1.50
+3FA          C6          C5          H5     121.102    1.50
+3FA          C5          C6          C4     120.654    1.50
+3FA          C5          C6          H6     119.701    1.50
+3FA          C4          C6          H6     119.645    1.50
+3FA          C6          C4          C2     119.829    1.50
+3FA          C6          C4          H4     120.279    1.50
+3FA          C2          C4          H4     119.892    1.50
+3FA          C1          C2          C4     119.494    1.50
+3FA          C1          C2          O2     119.184    2.54
+3FA          C4          C2          O2     121.322    2.46
+3FA          C2          O2         HO2     110.003    2.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3FA       const_sp2_sp2_4          O1          C1          C3          F1       0.000   10.00     2
+3FA              const_24          O1          C1          C2          O2       0.000   10.00     2
+3FA       const_sp2_sp2_7          F1          C3          C5          C6     180.000   10.00     2
+3FA       const_sp2_sp2_9          C3          C5          C6          C4       0.000   10.00     2
+3FA              const_13          C2          C4          C6          C5       0.000   10.00     2
+3FA              const_19          O2          C2          C4          C6     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3FA    plan-1          C1   0.020
+3FA    plan-1          C2   0.020
+3FA    plan-1          C3   0.020
+3FA    plan-1          C4   0.020
+3FA    plan-1          C5   0.020
+3FA    plan-1          C6   0.020
+3FA    plan-1          F1   0.020
+3FA    plan-1          H4   0.020
+3FA    plan-1          H5   0.020
+3FA    plan-1          H6   0.020
+3FA    plan-1          O1   0.020
+3FA    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3FA SMILES           ACDLabs              10.04 "Fc1cccc(O)c1O"
+3FA SMILES_CANONICAL CACTVS               3.341 "Oc1cccc(F)c1O"
+3FA SMILES           CACTVS               3.341 "Oc1cccc(F)c1O"
+3FA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)F)O)O"
+3FA SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)F)O)O"
+3FA InChI            InChI                1.03  "InChI=1S/C6H5FO2/c7-4-2-1-3-5(8)6(4)9/h1-3,8-9H"
+3FA InChIKey         InChI                1.03  DXOSJQLIRGXWCF-UHFFFAOYSA-N
+3FA ?                acedrg               202         "dictionary generator"                  
+3FA ?                acedrg_database      11          "data source"                           
+3FA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3FA ?                refmac5              5.8.0189    "optimization tool"                     

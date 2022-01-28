@@ -1,0 +1,592 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IAB      IAB 'ISO-ACARBOSE                        ' non-polymer        87  44 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_IAB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ IAB           O1W    O    OH1       0.000      0.000    0.000    0.000
+ IAB           H6     H    H         0.000     -0.600    0.394    0.648
+ IAB           C1W    C    CH1       0.000      0.295    0.958   -1.019
+ IAB           H1W    H    H         0.000      0.768    1.840   -0.565
+ IAB           O5W    O    O2        0.000     -0.915    1.350   -1.665
+ IAB           C5W    C    CH1       0.000     -0.604    2.430   -2.544
+ IAB           H5W    H    H         0.000     -0.069    3.211   -1.987
+ IAB           C4W    C    CH1       0.000      0.277    1.927   -3.690
+ IAB           H4W    H    H         0.000     -0.246    1.128   -4.233
+ IAB           O4W    O    OH1       0.000      0.562    3.006   -4.583
+ IAB           H9     H    H         0.000      1.125    2.689   -5.301
+ IAB           C3W    C    CH1       0.000      1.587    1.381   -3.110
+ IAB           H3W    H    H         0.000      2.160    2.202   -2.657
+ IAB           O3W    O    OH1       0.000      2.358    0.773   -4.148
+ IAB           H8     H    H         0.000      3.177    0.419   -3.776
+ IAB           C2W    C    CH1       0.000      1.251    0.337   -2.039
+ IAB           H2W    H    H         0.000      0.770   -0.531   -2.512
+ IAB           O2W    O    OH1       0.000      2.448   -0.080   -1.382
+ IAB           H7     H    H         0.000      2.232   -0.733   -0.703
+ IAB           C6W    C    CH2       0.000     -1.900    3.009   -3.115
+ IAB           H6W1   H    H         0.000     -2.475    2.213   -3.593
+ IAB           H6W2   H    H         0.000     -1.660    3.776   -3.854
+ IAB           O1X    O    O2        0.000     -2.670    3.587   -2.060
+ IAB           C1X    C    CH1       0.000     -3.861    4.107   -2.653
+ IAB           H1X    H    H         0.000     -3.595    4.731   -3.518
+ IAB           O5X    O    O2        0.000     -4.686    3.027   -3.084
+ IAB           C5X    C    CH1       0.000     -4.861    2.147   -1.976
+ IAB           H5X    H    H         0.000     -3.878    1.878   -1.565
+ IAB           C6X    C    CH2       0.000     -5.580    0.879   -2.442
+ IAB           H6X1   H    H         0.000     -6.531    1.150   -2.906
+ IAB           H6X2   H    H         0.000     -5.767    0.231   -1.583
+ IAB           O6X    O    OH1       0.000     -4.764    0.190   -3.392
+ IAB           H6X    H    H         0.000     -5.220   -0.610   -3.687
+ IAB           C4X    C    CH1       0.000     -5.692    2.836   -0.892
+ IAB           H4X    H    H         0.000     -6.669    3.124   -1.305
+ IAB           C3X    C    CH1       0.000     -4.950    4.087   -0.410
+ IAB           H3X    H    H         0.000     -4.022    3.791    0.100
+ IAB           O3X    O    OH1       0.000     -5.780    4.820    0.493
+ IAB           H4     H    H         0.000     -5.308    5.607    0.796
+ IAB           C2X    C    CH1       0.000     -4.613    4.957   -1.626
+ IAB           H2X    H    H         0.000     -5.541    5.339   -2.074
+ IAB           O2X    O    OH1       0.000     -3.793    6.053   -1.217
+ IAB           H5     H    H         0.000     -3.581    6.601   -1.985
+ IAB           O4X    O    O2        0.000     -5.884    1.940    0.206
+ IAB           C1Y    C    CH1       0.000     -7.079    2.354    0.871
+ IAB           H1Y    H    H         0.000     -7.072    3.447    0.988
+ IAB           O5Y    O    O2        0.000     -8.212    1.965    0.097
+ IAB           C5Y    C    CH1       0.000     -8.086    0.572   -0.183
+ IAB           H5Y    H    H         0.000     -7.098    0.376   -0.624
+ IAB           C6Y    C    CH3       0.000     -9.177    0.152   -1.171
+ IAB           H6Y3   H    H         0.000     -9.020   -0.853   -1.466
+ IAB           H6Y2   H    H         0.000    -10.126    0.239   -0.708
+ IAB           H6Y1   H    H         0.000     -9.143    0.779   -2.024
+ IAB           C4Y    C    CH1       0.000     -8.235   -0.231    1.111
+ IAB           H1     H    H         0.000     -9.212   -0.017    1.567
+ IAB           C3Y    C    CH1       0.000     -7.117    0.172    2.080
+ IAB           H3Y    H    H         0.000     -6.145   -0.136    1.670
+ IAB           O3Y    O    OH1       0.000     -7.325   -0.458    3.346
+ IAB           H2     H    H         0.000     -6.625   -0.190    3.957
+ IAB           C2Y    C    CH1       0.000     -7.144    1.695    2.252
+ IAB           H2Y    H    H         0.000     -8.073    1.992    2.758
+ IAB           O2Y    O    OH1       0.000     -6.021    2.109    3.032
+ IAB           H3     H    H         0.000     -6.036    3.071    3.133
+ IAB           N4Y    N    NH1       0.000     -8.134   -1.666    0.813
+ IAB           H4Y    H    H         0.000     -7.603   -2.091    0.066
+ IAB           C1Z    C    CH1       0.000     -8.953   -2.363    1.814
+ IAB           H1Z    H    H         0.000     -8.946   -1.792    2.753
+ IAB           C6Z    C    C1        0.000    -10.363   -2.476    1.311
+ IAB           H6Z    H    H         0.000    -10.798   -1.616    0.831
+ IAB           C5Z    C    C         0.000    -11.088   -3.543    1.419
+ IAB           C7Z    C    CH2       0.000    -12.492   -3.501    0.874
+ IAB           H7Z1   H    H         0.000    -13.201   -3.697    1.682
+ IAB           H7Z2   H    H         0.000    -12.605   -4.263    0.100
+ IAB           O7Z    O    OH1       0.000    -12.749   -2.211    0.316
+ IAB           H7Z    H    H         0.000    -13.650   -2.186   -0.034
+ IAB           C4Z    C    CH1       0.000    -10.616   -4.819    2.053
+ IAB           H4Z    H    H         0.000    -11.414   -5.226    2.689
+ IAB           O4Z    O    OH1       0.000    -10.296   -5.765    1.031
+ IAB           H12    H    H         0.000    -11.083   -5.941    0.498
+ IAB           C3Z    C    CH1       0.000     -9.372   -4.557    2.905
+ IAB           H3Z    H    H         0.000     -8.921   -5.513    3.205
+ IAB           O3Z    O    OH1       0.000     -9.736   -3.811    4.068
+ IAB           H11    H    H         0.000    -10.379   -4.314    4.585
+ IAB           C2Z    C    CH1       0.000     -8.372   -3.756    2.063
+ IAB           H2Z    H    H         0.000     -7.421   -3.667    2.607
+ IAB           O2Z    O    OH1       0.000     -8.150   -4.422    0.818
+ IAB           H10    H    H         0.000     -7.796   -5.306    0.984
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ IAB      O1W    n/a    C1W    START
+ IAB      H6     O1W    .      .
+ IAB      C1W    O1W    O5W    .
+ IAB      H1W    C1W    .      .
+ IAB      O5W    C1W    C5W    .
+ IAB      C5W    O5W    C6W    .
+ IAB      H5W    C5W    .      .
+ IAB      C4W    C5W    C3W    .
+ IAB      H4W    C4W    .      .
+ IAB      O4W    C4W    H9     .
+ IAB      H9     O4W    .      .
+ IAB      C3W    C4W    C2W    .
+ IAB      H3W    C3W    .      .
+ IAB      O3W    C3W    H8     .
+ IAB      H8     O3W    .      .
+ IAB      C2W    C3W    O2W    .
+ IAB      H2W    C2W    .      .
+ IAB      O2W    C2W    H7     .
+ IAB      H7     O2W    .      .
+ IAB      C6W    C5W    O1X    .
+ IAB      H6W1   C6W    .      .
+ IAB      H6W2   C6W    .      .
+ IAB      O1X    C6W    C1X    .
+ IAB      C1X    O1X    O5X    .
+ IAB      H1X    C1X    .      .
+ IAB      O5X    C1X    C5X    .
+ IAB      C5X    O5X    C4X    .
+ IAB      H5X    C5X    .      .
+ IAB      C6X    C5X    O6X    .
+ IAB      H6X1   C6X    .      .
+ IAB      H6X2   C6X    .      .
+ IAB      O6X    C6X    H6X    .
+ IAB      H6X    O6X    .      .
+ IAB      C4X    C5X    O4X    .
+ IAB      H4X    C4X    .      .
+ IAB      C3X    C4X    C2X    .
+ IAB      H3X    C3X    .      .
+ IAB      O3X    C3X    H4     .
+ IAB      H4     O3X    .      .
+ IAB      C2X    C3X    O2X    .
+ IAB      H2X    C2X    .      .
+ IAB      O2X    C2X    H5     .
+ IAB      H5     O2X    .      .
+ IAB      O4X    C4X    C1Y    .
+ IAB      C1Y    O4X    O5Y    .
+ IAB      H1Y    C1Y    .      .
+ IAB      O5Y    C1Y    C5Y    .
+ IAB      C5Y    O5Y    C4Y    .
+ IAB      H5Y    C5Y    .      .
+ IAB      C6Y    C5Y    H6Y1   .
+ IAB      H6Y3   C6Y    .      .
+ IAB      H6Y2   C6Y    .      .
+ IAB      H6Y1   C6Y    .      .
+ IAB      C4Y    C5Y    N4Y    .
+ IAB      H1     C4Y    .      .
+ IAB      C3Y    C4Y    C2Y    .
+ IAB      H3Y    C3Y    .      .
+ IAB      O3Y    C3Y    H2     .
+ IAB      H2     O3Y    .      .
+ IAB      C2Y    C3Y    O2Y    .
+ IAB      H2Y    C2Y    .      .
+ IAB      O2Y    C2Y    H3     .
+ IAB      H3     O2Y    .      .
+ IAB      N4Y    C4Y    C1Z    .
+ IAB      H4Y    N4Y    .      .
+ IAB      C1Z    N4Y    C6Z    .
+ IAB      H1Z    C1Z    .      .
+ IAB      C6Z    C1Z    C5Z    .
+ IAB      H6Z    C6Z    .      .
+ IAB      C5Z    C6Z    C4Z    .
+ IAB      C7Z    C5Z    O7Z    .
+ IAB      H7Z1   C7Z    .      .
+ IAB      H7Z2   C7Z    .      .
+ IAB      O7Z    C7Z    H7Z    .
+ IAB      H7Z    O7Z    .      .
+ IAB      C4Z    C5Z    C3Z    .
+ IAB      H4Z    C4Z    .      .
+ IAB      O4Z    C4Z    H12    .
+ IAB      H12    O4Z    .      .
+ IAB      C3Z    C4Z    C2Z    .
+ IAB      H3Z    C3Z    .      .
+ IAB      O3Z    C3Z    H11    .
+ IAB      H11    O3Z    .      .
+ IAB      C2Z    C3Z    O2Z    .
+ IAB      H2Z    C2Z    .      .
+ IAB      O2Z    C2Z    H10    .
+ IAB      H10    O2Z    .      END
+ IAB      C1X    C2X    .    ADD
+ IAB      C1Y    C2Y    .    ADD
+ IAB      C1Z    C2Z    .    ADD
+ IAB      C1W    C2W    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IAB       C1X       C2X       single    1.524     0.020     1.524     0.020     
+IAB       C1X       O1X       single    1.426     0.020     1.426     0.020     
+IAB       O5X       C1X       single    1.426     0.020     1.426     0.020     
+IAB       H1X       C1X       single    1.089     0.010     0.989     0.005     
+IAB       C2X       C3X       single    1.524     0.020     1.524     0.020     
+IAB       O2X       C2X       single    1.432     0.020     1.432     0.020     
+IAB       H2X       C2X       single    1.089     0.010     0.989     0.005     
+IAB       C3X       C4X       single    1.524     0.020     1.524     0.020     
+IAB       O3X       C3X       single    1.432     0.020     1.432     0.020     
+IAB       H3X       C3X       single    1.089     0.010     0.989     0.005     
+IAB       C4X       C5X       single    1.524     0.020     1.524     0.020     
+IAB       O4X       C4X       single    1.426     0.020     1.426     0.020     
+IAB       H4X       C4X       single    1.089     0.010     0.989     0.005     
+IAB       C6X       C5X       single    1.524     0.020     1.524     0.020     
+IAB       C5X       O5X       single    1.426     0.020     1.426     0.020     
+IAB       H5X       C5X       single    1.089     0.010     0.989     0.005     
+IAB       O6X       C6X       single    1.432     0.020     1.432     0.020     
+IAB       H6X1      C6X       single    1.089     0.010     0.989     0.005     
+IAB       H6X2      C6X       single    1.089     0.010     0.989     0.005     
+IAB       O1X       C6W       single    1.426     0.020     1.426     0.020     
+IAB       H5        O2X       single    0.970     0.012     0.839     0.014     
+IAB       H4        O3X       single    0.970     0.012     0.839     0.014     
+IAB       C1Y       O4X       single    1.426     0.020     1.426     0.020     
+IAB       H6X       O6X       single    0.970     0.012     0.839     0.014     
+IAB       C1Y       C2Y       single    1.524     0.020     1.524     0.020     
+IAB       O5Y       C1Y       single    1.426     0.020     1.426     0.020     
+IAB       H1Y       C1Y       single    1.089     0.010     0.989     0.005     
+IAB       C2Y       C3Y       single    1.524     0.020     1.524     0.020     
+IAB       O2Y       C2Y       single    1.432     0.020     1.432     0.020     
+IAB       H2Y       C2Y       single    1.089     0.010     0.989     0.005     
+IAB       C3Y       C4Y       single    1.524     0.020     1.524     0.020     
+IAB       O3Y       C3Y       single    1.432     0.020     1.432     0.020     
+IAB       H3Y       C3Y       single    1.089     0.010     0.989     0.005     
+IAB       C4Y       C5Y       single    1.524     0.020     1.524     0.020     
+IAB       N4Y       C4Y       single    1.450     0.020     1.450     0.020     
+IAB       H1        C4Y       single    1.089     0.010     0.989     0.005     
+IAB       C6Y       C5Y       single    1.524     0.020     1.524     0.020     
+IAB       C5Y       O5Y       single    1.426     0.020     1.426     0.020     
+IAB       H5Y       C5Y       single    1.089     0.010     0.989     0.005     
+IAB       H6Y1      C6Y       single    1.089     0.010     0.989     0.005     
+IAB       H6Y2      C6Y       single    1.089     0.010     0.989     0.005     
+IAB       H6Y3      C6Y       single    1.089     0.010     0.989     0.005     
+IAB       H3        O2Y       single    0.970     0.012     0.839     0.014     
+IAB       H2        O3Y       single    0.970     0.012     0.839     0.014     
+IAB       C1Z       N4Y       single    1.450     0.020     1.450     0.020     
+IAB       H4Y       N4Y       single    1.036     0.016     0.914     0.007     
+IAB       C1Z       C2Z       single    1.524     0.020     1.524     0.020     
+IAB       C6Z       C1Z       single    1.510     0.020     1.510     0.020     
+IAB       H1Z       C1Z       single    1.089     0.010     0.989     0.005     
+IAB       O2Z       C2Z       single    1.432     0.020     1.432     0.020     
+IAB       C2Z       C3Z       single    1.524     0.020     1.524     0.020     
+IAB       H2Z       C2Z       single    1.089     0.010     0.989     0.005     
+IAB       H10       O2Z       single    0.970     0.012     0.839     0.014     
+IAB       O3Z       C3Z       single    1.432     0.020     1.432     0.020     
+IAB       C3Z       C4Z       single    1.524     0.020     1.524     0.020     
+IAB       H3Z       C3Z       single    1.089     0.010     0.989     0.005     
+IAB       H11       O3Z       single    0.970     0.012     0.839     0.014     
+IAB       O4Z       C4Z       single    1.432     0.020     1.432     0.020     
+IAB       C4Z       C5Z       single    1.500     0.020     1.500     0.020     
+IAB       H4Z       C4Z       single    1.089     0.010     0.989     0.005     
+IAB       H12       O4Z       single    0.970     0.012     0.839     0.014     
+IAB       C5Z       C6Z       double    1.340     0.020     1.340     0.020     
+IAB       C7Z       C5Z       single    1.510     0.020     1.510     0.020     
+IAB       H6Z       C6Z       single    1.082     0.013     0.975     0.010     
+IAB       O7Z       C7Z       single    1.432     0.020     1.432     0.020     
+IAB       H7Z1      C7Z       single    1.089     0.010     0.989     0.005     
+IAB       H7Z2      C7Z       single    1.089     0.010     0.989     0.005     
+IAB       H7Z       O7Z       single    0.970     0.012     0.839     0.014     
+IAB       C1W       C2W       single    1.524     0.020     1.524     0.020     
+IAB       O5W       C1W       single    1.426     0.020     1.426     0.020     
+IAB       C1W       O1W       single    1.432     0.020     1.432     0.020     
+IAB       H1W       C1W       single    1.089     0.010     0.989     0.005     
+IAB       C2W       C3W       single    1.524     0.020     1.524     0.020     
+IAB       O2W       C2W       single    1.432     0.020     1.432     0.020     
+IAB       H2W       C2W       single    1.089     0.010     0.989     0.005     
+IAB       C3W       C4W       single    1.524     0.020     1.524     0.020     
+IAB       O3W       C3W       single    1.432     0.020     1.432     0.020     
+IAB       H3W       C3W       single    1.089     0.010     0.989     0.005     
+IAB       C4W       C5W       single    1.524     0.020     1.524     0.020     
+IAB       O4W       C4W       single    1.432     0.020     1.432     0.020     
+IAB       H4W       C4W       single    1.089     0.010     0.989     0.005     
+IAB       C6W       C5W       single    1.524     0.020     1.524     0.020     
+IAB       C5W       O5W       single    1.426     0.020     1.426     0.020     
+IAB       H5W       C5W       single    1.089     0.010     0.989     0.005     
+IAB       H6W1      C6W       single    1.089     0.010     0.989     0.005     
+IAB       H6W2      C6W       single    1.089     0.010     0.989     0.005     
+IAB       H7        O2W       single    0.970     0.012     0.839     0.014     
+IAB       H8        O3W       single    0.970     0.012     0.839     0.014     
+IAB       H9        O4W       single    0.970     0.012     0.839     0.014     
+IAB       H6        O1W       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ IAB      H6     O1W    C1W     109.470    3.000
+ IAB      O1W    C1W    H1W     109.470    3.000
+ IAB      O1W    C1W    O5W     109.470    3.000
+ IAB      O1W    C1W    C2W     109.470    3.000
+ IAB      H1W    C1W    O5W     109.470    3.000
+ IAB      H1W    C1W    C2W     108.340    3.000
+ IAB      O5W    C1W    C2W     109.470    3.000
+ IAB      C1W    O5W    C5W     111.800    3.000
+ IAB      O5W    C5W    H5W     109.470    3.000
+ IAB      O5W    C5W    C4W     109.470    3.000
+ IAB      O5W    C5W    C6W     109.470    3.000
+ IAB      H5W    C5W    C4W     108.340    3.000
+ IAB      H5W    C5W    C6W     108.340    3.000
+ IAB      C4W    C5W    C6W     111.000    3.000
+ IAB      C5W    C4W    H4W     108.340    3.000
+ IAB      C5W    C4W    O4W     109.470    3.000
+ IAB      C5W    C4W    C3W     111.000    3.000
+ IAB      H4W    C4W    O4W     109.470    3.000
+ IAB      H4W    C4W    C3W     108.340    3.000
+ IAB      O4W    C4W    C3W     109.470    3.000
+ IAB      C4W    O4W    H9      109.470    3.000
+ IAB      C4W    C3W    H3W     108.340    3.000
+ IAB      C4W    C3W    O3W     109.470    3.000
+ IAB      C4W    C3W    C2W     111.000    3.000
+ IAB      H3W    C3W    O3W     109.470    3.000
+ IAB      H3W    C3W    C2W     108.340    3.000
+ IAB      O3W    C3W    C2W     109.470    3.000
+ IAB      C3W    O3W    H8      109.470    3.000
+ IAB      C3W    C2W    H2W     108.340    3.000
+ IAB      C3W    C2W    O2W     109.470    3.000
+ IAB      C3W    C2W    C1W     111.000    3.000
+ IAB      H2W    C2W    O2W     109.470    3.000
+ IAB      H2W    C2W    C1W     108.340    3.000
+ IAB      O2W    C2W    C1W     109.470    3.000
+ IAB      C2W    O2W    H7      109.470    3.000
+ IAB      C5W    C6W    H6W1    109.470    3.000
+ IAB      C5W    C6W    H6W2    109.470    3.000
+ IAB      C5W    C6W    O1X     109.470    3.000
+ IAB      H6W1   C6W    H6W2    107.900    3.000
+ IAB      H6W1   C6W    O1X     109.470    3.000
+ IAB      H6W2   C6W    O1X     109.470    3.000
+ IAB      C6W    O1X    C1X     111.800    3.000
+ IAB      O1X    C1X    H1X     109.470    3.000
+ IAB      O1X    C1X    O5X     109.470    3.000
+ IAB      O1X    C1X    C2X     109.470    3.000
+ IAB      H1X    C1X    O5X     109.470    3.000
+ IAB      H1X    C1X    C2X     108.340    3.000
+ IAB      O5X    C1X    C2X     109.470    3.000
+ IAB      C1X    O5X    C5X     111.800    3.000
+ IAB      O5X    C5X    H5X     109.470    3.000
+ IAB      O5X    C5X    C6X     109.470    3.000
+ IAB      O5X    C5X    C4X     109.470    3.000
+ IAB      H5X    C5X    C6X     108.340    3.000
+ IAB      H5X    C5X    C4X     108.340    3.000
+ IAB      C6X    C5X    C4X     111.000    3.000
+ IAB      C5X    C6X    H6X1    109.470    3.000
+ IAB      C5X    C6X    H6X2    109.470    3.000
+ IAB      C5X    C6X    O6X     109.470    3.000
+ IAB      H6X1   C6X    H6X2    107.900    3.000
+ IAB      H6X1   C6X    O6X     109.470    3.000
+ IAB      H6X2   C6X    O6X     109.470    3.000
+ IAB      C6X    O6X    H6X     109.470    3.000
+ IAB      C5X    C4X    H4X     108.340    3.000
+ IAB      C5X    C4X    C3X     111.000    3.000
+ IAB      C5X    C4X    O4X     109.470    3.000
+ IAB      H4X    C4X    C3X     108.340    3.000
+ IAB      H4X    C4X    O4X     109.470    3.000
+ IAB      C3X    C4X    O4X     109.470    3.000
+ IAB      C4X    C3X    H3X     108.340    3.000
+ IAB      C4X    C3X    O3X     109.470    3.000
+ IAB      C4X    C3X    C2X     111.000    3.000
+ IAB      H3X    C3X    O3X     109.470    3.000
+ IAB      H3X    C3X    C2X     108.340    3.000
+ IAB      O3X    C3X    C2X     109.470    3.000
+ IAB      C3X    O3X    H4      109.470    3.000
+ IAB      C3X    C2X    H2X     108.340    3.000
+ IAB      C3X    C2X    O2X     109.470    3.000
+ IAB      C3X    C2X    C1X     111.000    3.000
+ IAB      H2X    C2X    O2X     109.470    3.000
+ IAB      H2X    C2X    C1X     108.340    3.000
+ IAB      O2X    C2X    C1X     109.470    3.000
+ IAB      C2X    O2X    H5      109.470    3.000
+ IAB      C4X    O4X    C1Y     111.800    3.000
+ IAB      O4X    C1Y    H1Y     109.470    3.000
+ IAB      O4X    C1Y    O5Y     109.470    3.000
+ IAB      O4X    C1Y    C2Y     109.470    3.000
+ IAB      H1Y    C1Y    O5Y     109.470    3.000
+ IAB      H1Y    C1Y    C2Y     108.340    3.000
+ IAB      O5Y    C1Y    C2Y     109.470    3.000
+ IAB      C1Y    O5Y    C5Y     111.800    3.000
+ IAB      O5Y    C5Y    H5Y     109.470    3.000
+ IAB      O5Y    C5Y    C6Y     109.470    3.000
+ IAB      O5Y    C5Y    C4Y     109.470    3.000
+ IAB      H5Y    C5Y    C6Y     108.340    3.000
+ IAB      H5Y    C5Y    C4Y     108.340    3.000
+ IAB      C6Y    C5Y    C4Y     111.000    3.000
+ IAB      C5Y    C6Y    H6Y3    109.470    3.000
+ IAB      C5Y    C6Y    H6Y2    109.470    3.000
+ IAB      C5Y    C6Y    H6Y1    109.470    3.000
+ IAB      H6Y3   C6Y    H6Y2    109.470    3.000
+ IAB      H6Y3   C6Y    H6Y1    109.470    3.000
+ IAB      H6Y2   C6Y    H6Y1    109.470    3.000
+ IAB      C5Y    C4Y    H1      108.340    3.000
+ IAB      C5Y    C4Y    C3Y     111.000    3.000
+ IAB      C5Y    C4Y    N4Y     110.000    3.000
+ IAB      H1     C4Y    C3Y     108.340    3.000
+ IAB      H1     C4Y    N4Y     108.550    3.000
+ IAB      C3Y    C4Y    N4Y     110.000    3.000
+ IAB      C4Y    C3Y    H3Y     108.340    3.000
+ IAB      C4Y    C3Y    O3Y     109.470    3.000
+ IAB      C4Y    C3Y    C2Y     111.000    3.000
+ IAB      H3Y    C3Y    O3Y     109.470    3.000
+ IAB      H3Y    C3Y    C2Y     108.340    3.000
+ IAB      O3Y    C3Y    C2Y     109.470    3.000
+ IAB      C3Y    O3Y    H2      109.470    3.000
+ IAB      C3Y    C2Y    H2Y     108.340    3.000
+ IAB      C3Y    C2Y    O2Y     109.470    3.000
+ IAB      C3Y    C2Y    C1Y     111.000    3.000
+ IAB      H2Y    C2Y    O2Y     109.470    3.000
+ IAB      H2Y    C2Y    C1Y     108.340    3.000
+ IAB      O2Y    C2Y    C1Y     109.470    3.000
+ IAB      C2Y    O2Y    H3      109.470    3.000
+ IAB      C4Y    N4Y    H4Y     118.500    3.000
+ IAB      C4Y    N4Y    C1Z     120.000    3.000
+ IAB      H4Y    N4Y    C1Z     118.500    3.000
+ IAB      N4Y    C1Z    H1Z     108.550    3.000
+ IAB      N4Y    C1Z    C6Z     111.600    3.000
+ IAB      N4Y    C1Z    C2Z     110.000    3.000
+ IAB      H1Z    C1Z    C6Z     108.810    3.000
+ IAB      H1Z    C1Z    C2Z     108.340    3.000
+ IAB      C6Z    C1Z    C2Z     109.470    3.000
+ IAB      C1Z    C6Z    H6Z     120.000    3.000
+ IAB      C1Z    C6Z    C5Z     120.500    3.000
+ IAB      H6Z    C6Z    C5Z     120.000    3.000
+ IAB      C6Z    C5Z    C7Z     120.000    3.000
+ IAB      C6Z    C5Z    C4Z     120.000    3.000
+ IAB      C7Z    C5Z    C4Z     120.000    3.000
+ IAB      C5Z    C7Z    H7Z1    109.470    3.000
+ IAB      C5Z    C7Z    H7Z2    109.470    3.000
+ IAB      C5Z    C7Z    O7Z     109.500    3.000
+ IAB      H7Z1   C7Z    H7Z2    107.900    3.000
+ IAB      H7Z1   C7Z    O7Z     109.470    3.000
+ IAB      H7Z2   C7Z    O7Z     109.470    3.000
+ IAB      C7Z    O7Z    H7Z     109.470    3.000
+ IAB      C5Z    C4Z    H4Z     108.810    3.000
+ IAB      C5Z    C4Z    O4Z     109.470    3.000
+ IAB      C5Z    C4Z    C3Z     109.470    3.000
+ IAB      H4Z    C4Z    O4Z     109.470    3.000
+ IAB      H4Z    C4Z    C3Z     108.340    3.000
+ IAB      O4Z    C4Z    C3Z     109.470    3.000
+ IAB      C4Z    O4Z    H12     109.470    3.000
+ IAB      C4Z    C3Z    H3Z     108.340    3.000
+ IAB      C4Z    C3Z    O3Z     109.470    3.000
+ IAB      C4Z    C3Z    C2Z     111.000    3.000
+ IAB      H3Z    C3Z    O3Z     109.470    3.000
+ IAB      H3Z    C3Z    C2Z     108.340    3.000
+ IAB      O3Z    C3Z    C2Z     109.470    3.000
+ IAB      C3Z    O3Z    H11     109.470    3.000
+ IAB      C3Z    C2Z    H2Z     108.340    3.000
+ IAB      C3Z    C2Z    O2Z     109.470    3.000
+ IAB      C3Z    C2Z    C1Z     111.000    3.000
+ IAB      H2Z    C2Z    O2Z     109.470    3.000
+ IAB      H2Z    C2Z    C1Z     108.340    3.000
+ IAB      O2Z    C2Z    C1Z     109.470    3.000
+ IAB      C2Z    O2Z    H10     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ IAB      var_1    H6     O1W    C1W    O5W      -60.020   20.000   1
+ IAB      var_2    O1W    C1W    C2W    C3W      180.000   20.000   3
+ IAB      var_3    O1W    C1W    O5W    C5W      180.000   20.000   1
+ IAB      var_4    C1W    O5W    C5W    C6W      180.000   20.000   1
+ IAB      var_5    O5W    C5W    C4W    C3W      -60.000   20.000   3
+ IAB      var_6    C5W    C4W    O4W    H9       179.495   20.000   1
+ IAB      var_7    C5W    C4W    C3W    C2W       60.000   20.000   3
+ IAB      var_8    C4W    C3W    O3W    H8      -179.147   20.000   1
+ IAB      var_9    C4W    C3W    C2W    O2W      180.000   20.000   3
+ IAB      var_10   C3W    C2W    O2W    H7       179.580   20.000   1
+ IAB      var_11   O5W    C5W    C6W    O1X       64.909   20.000   3
+ IAB      var_12   C5W    C6W    O1X    C1X     -179.984   20.000   1
+ IAB      var_13   C6W    O1X    C1X    O5X       69.678   20.000   1
+ IAB      var_14   O1X    C1X    C2X    C3X      -60.000   20.000   3
+ IAB      var_15   O1X    C1X    O5X    C5X       60.000   20.000   1
+ IAB      var_16   C1X    O5X    C5X    C4X       60.000   20.000   1
+ IAB      var_17   O5X    C5X    C6X    O6X       63.286   20.000   3
+ IAB      var_18   C5X    C6X    O6X    H6X     -179.956   20.000   1
+ IAB      var_19   O5X    C5X    C4X    O4X      180.000   20.000   3
+ IAB      var_20   C5X    C4X    C3X    C2X       60.000   20.000   3
+ IAB      var_21   C4X    C3X    O3X    H4       179.925   20.000   1
+ IAB      var_22   C4X    C3X    C2X    O2X      180.000   20.000   3
+ IAB      var_23   C3X    C2X    O2X    H5      -179.963   20.000   1
+ IAB      var_24   C5X    C4X    O4X    C1Y     -155.070   20.000   1
+ IAB      var_25   C4X    O4X    C1Y    O5Y       74.883   20.000   1
+ IAB      var_26   O4X    C1Y    C2Y    C3Y      -60.000   20.000   3
+ IAB      var_27   O4X    C1Y    O5Y    C5Y       60.000   20.000   1
+ IAB      var_28   C1Y    O5Y    C5Y    C4Y       60.000   20.000   1
+ IAB      var_29   O5Y    C5Y    C6Y    H6Y1      53.621   20.000   3
+ IAB      var_30   O5Y    C5Y    C4Y    N4Y      180.000   20.000   3
+ IAB      var_31   C5Y    C4Y    C3Y    C2Y       60.000   20.000   3
+ IAB      var_32   C4Y    C3Y    O3Y    H2      -179.155   20.000   1
+ IAB      var_33   C4Y    C3Y    C2Y    O2Y      180.000   20.000   3
+ IAB      var_34   C3Y    C2Y    O2Y    H3       179.564   20.000   1
+ IAB      var_35   C5Y    C4Y    N4Y    C1Z     -150.168   20.000   3
+ IAB      var_36   C4Y    N4Y    C1Z    C6Z       88.849   20.000   3
+ IAB      var_37   N4Y    C1Z    C2Z    C3Z      180.000   20.000   3
+ IAB      var_38   N4Y    C1Z    C6Z    C5Z      150.000   20.000   1
+ IAB      var_39   C1Z    C6Z    C5Z    C4Z        0.000   20.000   1
+ IAB      var_40   C6Z    C5Z    C7Z    O7Z        0.049   20.000   3
+ IAB      var_41   C5Z    C7Z    O7Z    H7Z      179.994   20.000   1
+ IAB      var_42   C6Z    C5Z    C4Z    C3Z       30.000   20.000   3
+ IAB      var_43   C5Z    C4Z    O4Z    H12      -60.040   20.000   1
+ IAB      var_44   C5Z    C4Z    C3Z    C2Z      -60.000   20.000   3
+ IAB      var_45   C4Z    C3Z    O3Z    H11       59.977   20.000   1
+ IAB      var_46   C4Z    C3Z    C2Z    O2Z      -60.000   20.000   3
+ IAB      var_47   C3Z    C2Z    O2Z    H10      -59.951   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ IAB      chir_01  C1X    C2X    O1X    O5X       negativ
+ IAB      chir_02  C2X    C1X    C3X    O2X       negativ
+ IAB      chir_03  C3X    C2X    C4X    O3X       positiv
+ IAB      chir_04  C4X    C3X    C5X    O4X       negativ
+ IAB      chir_05  C5X    C4X    C6X    O5X       negativ
+ IAB      chir_06  C1Y    O4X    C2Y    O5Y       positiv
+ IAB      chir_07  C2Y    C1Y    C3Y    O2Y       negativ
+ IAB      chir_08  C3Y    C2Y    C4Y    O3Y       positiv
+ IAB      chir_09  C4Y    C3Y    C5Y    N4Y       negativ
+ IAB      chir_10  C5Y    C4Y    C6Y    O5Y       negativ
+ IAB      chir_11  C1Z    N4Y    C2Z    C6Z       positiv
+ IAB      chir_12  C2Z    C1Z    O2Z    C3Z       positiv
+ IAB      chir_13  C3Z    C2Z    O3Z    C4Z       negativ
+ IAB      chir_14  C4Z    C3Z    O4Z    C5Z       positiv
+ IAB      chir_15  C1W    C2W    O5W    O1W       negativ
+ IAB      chir_16  C2W    C1W    C3W    O2W       negativ
+ IAB      chir_17  C3W    C2W    C4W    O3W       positiv
+ IAB      chir_18  C4W    C3W    C5W    O4W       negativ
+ IAB      chir_19  C5W    C4W    C6W    O5W       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ IAB      plan-1    N4Y       0.020
+ IAB      plan-1    C4Y       0.020
+ IAB      plan-1    C1Z       0.020
+ IAB      plan-1    H4Y       0.020
+ IAB      plan-2    C5Z       0.020
+ IAB      plan-2    C4Z       0.020
+ IAB      plan-2    C6Z       0.020
+ IAB      plan-2    C7Z       0.020
+ IAB      plan-2    H6Z       0.020
+ IAB      plan-3    C6Z       0.020
+ IAB      plan-3    C1Z       0.020
+ IAB      plan-3    C5Z       0.020
+ IAB      plan-3    H6Z       0.020
+# ------------------------------------------------------

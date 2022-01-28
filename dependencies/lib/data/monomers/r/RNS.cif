@@ -1,0 +1,202 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RNS      RNS 'L-RHAMNOSE                          ' non-polymer        23  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RNS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RNS           O1     O    O         0.000      0.000    0.000    0.000
+ RNS           C1     C    C1        0.000     -0.948    0.728    0.170
+ RNS           H11    H    H         0.000     -0.797    1.733    0.527
+ RNS           C2     C    CH1       0.000     -2.341    0.233   -0.118
+ RNS           H2     H    H         0.000     -2.295   -0.807   -0.470
+ RNS           O2     O    OH1       0.000     -2.939    1.051   -1.126
+ RNS           HO2    H    H         0.000     -2.979    1.966   -0.816
+ RNS           C3     C    CH1       0.000     -3.181    0.302    1.158
+ RNS           H3     H    H         0.000     -3.228    1.342    1.511
+ RNS           O3     O    OH1       0.000     -2.584   -0.516    2.166
+ RNS           HO3    H    H         0.000     -2.543   -1.430    1.855
+ RNS           C4     C    CH1       0.000     -4.595   -0.201    0.865
+ RNS           H4     H    H         0.000     -5.054    0.429    0.090
+ RNS           O4     O    OH1       0.000     -4.535   -1.553    0.407
+ RNS           HO4    H    H         0.000     -4.130   -2.106    1.089
+ RNS           C5     C    CH1       0.000     -5.435   -0.133    2.142
+ RNS           H5     H    H         0.000     -4.975   -0.762    2.917
+ RNS           O5     O    OH1       0.000     -5.496    1.219    2.600
+ RNS           HO5    H    H         0.000     -5.900    1.772    1.918
+ RNS           C6     C    CH3       0.000     -6.850   -0.636    1.850
+ RNS           H63    H    H         0.000     -7.294   -0.030    1.103
+ RNS           H62    H    H         0.000     -6.807   -1.639    1.511
+ RNS           H61    H    H         0.000     -7.432   -0.588    2.734
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RNS      O1     n/a    C1     START
+ RNS      C1     O1     C2     .
+ RNS      H11    C1     .      .
+ RNS      C2     C1     C3     .
+ RNS      H2     C2     .      .
+ RNS      O2     C2     HO2    .
+ RNS      HO2    O2     .      .
+ RNS      C3     C2     C4     .
+ RNS      H3     C3     .      .
+ RNS      O3     C3     HO3    .
+ RNS      HO3    O3     .      .
+ RNS      C4     C3     C5     .
+ RNS      H4     C4     .      .
+ RNS      O4     C4     HO4    .
+ RNS      HO4    O4     .      .
+ RNS      C5     C4     C6     .
+ RNS      H5     C5     .      .
+ RNS      O5     C5     HO5    .
+ RNS      HO5    O5     .      .
+ RNS      C6     C5     H61    .
+ RNS      H63    C6     .      .
+ RNS      H62    C6     .      .
+ RNS      H61    C6     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RNS       C2        C1        single    1.510     0.020     1.510     0.020     
+RNS       C1        O1        double    1.220     0.020     1.220     0.020     
+RNS       H11       C1        single    1.082     0.013     0.975     0.010     
+RNS       C3        C2        single    1.524     0.020     1.524     0.020     
+RNS       O2        C2        single    1.432     0.020     1.432     0.020     
+RNS       H2        C2        single    1.089     0.010     0.989     0.005     
+RNS       C4        C3        single    1.524     0.020     1.524     0.020     
+RNS       O3        C3        single    1.432     0.020     1.432     0.020     
+RNS       H3        C3        single    1.089     0.010     0.989     0.005     
+RNS       C5        C4        single    1.524     0.020     1.524     0.020     
+RNS       O4        C4        single    1.432     0.020     1.432     0.020     
+RNS       H4        C4        single    1.089     0.010     0.989     0.005     
+RNS       C6        C5        single    1.524     0.020     1.524     0.020     
+RNS       O5        C5        single    1.432     0.020     1.432     0.020     
+RNS       H5        C5        single    1.089     0.010     0.989     0.005     
+RNS       H61       C6        single    1.089     0.010     0.989     0.005     
+RNS       H62       C6        single    1.089     0.010     0.989     0.005     
+RNS       H63       C6        single    1.089     0.010     0.989     0.005     
+RNS       HO2       O2        single    0.970     0.012     0.839     0.014     
+RNS       HO3       O3        single    0.970     0.012     0.839     0.014     
+RNS       HO4       O4        single    0.970     0.012     0.839     0.014     
+RNS       HO5       O5        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RNS      O1     C1     H11     123.000    3.000
+ RNS      O1     C1     C2      120.500    3.000
+ RNS      H11    C1     C2      120.000    3.000
+ RNS      C1     C2     H2      108.810    3.000
+ RNS      C1     C2     O2      109.470    3.000
+ RNS      C1     C2     C3      109.470    3.000
+ RNS      H2     C2     O2      109.470    3.000
+ RNS      H2     C2     C3      108.340    3.000
+ RNS      O2     C2     C3      109.470    3.000
+ RNS      C2     O2     HO2     109.470    3.000
+ RNS      C2     C3     H3      108.340    3.000
+ RNS      C2     C3     O3      109.470    3.000
+ RNS      C2     C3     C4      111.000    3.000
+ RNS      H3     C3     O3      109.470    3.000
+ RNS      H3     C3     C4      108.340    3.000
+ RNS      O3     C3     C4      109.470    3.000
+ RNS      C3     O3     HO3     109.470    3.000
+ RNS      C3     C4     H4      108.340    3.000
+ RNS      C3     C4     O4      109.470    3.000
+ RNS      C3     C4     C5      111.000    3.000
+ RNS      H4     C4     O4      109.470    3.000
+ RNS      H4     C4     C5      108.340    3.000
+ RNS      O4     C4     C5      109.470    3.000
+ RNS      C4     O4     HO4     109.470    3.000
+ RNS      C4     C5     H5      108.340    3.000
+ RNS      C4     C5     O5      109.470    3.000
+ RNS      C4     C5     C6      111.000    3.000
+ RNS      H5     C5     O5      109.470    3.000
+ RNS      H5     C5     C6      108.340    3.000
+ RNS      O5     C5     C6      109.470    3.000
+ RNS      C5     O5     HO5     109.470    3.000
+ RNS      C5     C6     H63     109.470    3.000
+ RNS      C5     C6     H62     109.470    3.000
+ RNS      C5     C6     H61     109.470    3.000
+ RNS      H63    C6     H62     109.470    3.000
+ RNS      H63    C6     H61     109.470    3.000
+ RNS      H62    C6     H61     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RNS      var_1    O1     C1     C2     C3       120.040   20.000   1
+ RNS      var_2    C1     C2     O2     HO2      -60.021   20.000   1
+ RNS      var_3    C1     C2     C3     C4       179.988   20.000   3
+ RNS      var_4    C2     C3     O3     HO3      -60.033   20.000   1
+ RNS      var_5    C2     C3     C4     C5       179.962   20.000   3
+ RNS      var_6    C3     C4     O4     HO4       59.962   20.000   1
+ RNS      var_7    C3     C4     C5     C6      -179.995   20.000   3
+ RNS      var_8    C4     C5     O5     HO5       59.952   20.000   1
+ RNS      var_9    C4     C5     C6     H61     -179.939   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RNS      chir_01  C2     C1     C3     O2        negativ
+ RNS      chir_02  C3     C2     C4     O3        negativ
+ RNS      chir_03  C4     C3     C5     O4        positiv
+ RNS      chir_04  C5     C4     C6     O5        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RNS      plan-1    C1        0.020
+ RNS      plan-1    C2        0.020
+ RNS      plan-1    O1        0.020
+ RNS      plan-1    H11       0.020
+# ------------------------------------------------------

@@ -1,0 +1,141 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VA3      VA3 'TRIVANADATE                         ' non-polymer        12  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VA3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ VA3           O8     O    O         0.000      0.000    0.000    0.000
+ VA3           V3     V    V         0.000     -1.514    0.940   -0.458
+ VA3           O7     O    O         0.000     -1.172    2.744   -0.348
+ VA3           O6     O    O2        0.000     -2.880    0.502    0.695
+ VA3           V2     V    V         0.000     -3.413   -1.205    0.263
+ VA3           O4     O    O        -1.000     -2.812   -1.993   -1.287
+ VA3           O2     O    OH1       0.000     -1.966   -1.887    1.173
+ VA3           HO2    H    H         0.000     -1.390   -1.266    1.578
+ VA3           O3     O    O2        0.000     -4.860   -0.524   -0.646
+ VA3           V1     V    V         0.000     -6.290   -0.582    0.511
+ VA3           O0     O    O         0.000     -6.005    0.591    1.900
+ VA3           O9     O    O         0.000     -7.824   -0.108   -0.387
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VA3      O8     n/a    V3     START
+ VA3      V3     O8     O6     .
+ VA3      O7     V3     .      .
+ VA3      O6     V3     V2     .
+ VA3      V2     O6     O3     .
+ VA3      O4     V2     .      .
+ VA3      O2     V2     HO2    .
+ VA3      HO2    O2     .      .
+ VA3      O3     V2     V1     .
+ VA3      V1     O3     O9     .
+ VA3      O0     V1     .      .
+ VA3      O9     V1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VA3       O0        V1        double    1.910     0.020     1.910     0.020     
+VA3       V1        O3        single    2.004     0.020     2.004     0.020     
+VA3       O9        V1        double    1.910     0.020     1.910     0.020     
+VA3       O2        V2        single    2.105     0.020     2.105     0.020     
+VA3       O3        V2        single    2.004     0.020     2.004     0.020     
+VA3       O4        V2        double    1.910     0.020     1.910     0.020     
+VA3       V2        O6        single    2.004     0.020     2.004     0.020     
+VA3       O6        V3        single    2.004     0.020     2.004     0.020     
+VA3       O7        V3        double    1.910     0.020     1.910     0.020     
+VA3       V3        O8        double    1.910     0.020     1.910     0.020     
+VA3       HO2       O2        single    0.970     0.012     0.967     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VA3      O8     V3     O7      109.473    3.000
+ VA3      O8     V3     O6      109.452    3.000
+ VA3      O7     V3     O6      109.518    3.000
+ VA3      V3     O6     V2      120.000    3.000
+ VA3      O6     V2     O4      120.000    3.000
+ VA3      O6     V2     O2       90.000    3.000
+ VA3      O6     V2     O3       90.000    3.000
+ VA3      O4     V2     O2       90.000    3.000
+ VA3      O4     V2     O3       90.000    3.000
+ VA3      O2     V2     O3      180.000    3.000
+ VA3      V2     O2     HO2     120.000    3.000
+ VA3      V2     O3     V1      120.000    3.000
+ VA3      O3     V1     O0      109.501    3.000
+ VA3      O3     V1     O9      109.476    3.000
+ VA3      O0     V1     O9      109.440    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VA3      var_1    O8     V3     O6     V2       -72.374   20.000   1
+ VA3      var_2    V3     O6     V2     O2         0.000   20.000   1
+ VA3      var_3    HO2    O2     V2     O6         0.000   20.000   1
+ VA3      var_4    V1     O3     V2     O6         0.000   20.000   1
+ VA3      var_5    V2     O3     V1     O9      -173.188   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ VA3      chir_01  V1     O3     O0     O9        both
+                   .      .      .      .      .
+ VA3      chir_02  V2     O2     O3     O6        cross3
+                   O4     .      .      .      .
+ VA3      chir_03  V3     O8     O7     O6        both
+                   .      .      .      .      .
+# ------------------------------------------------------

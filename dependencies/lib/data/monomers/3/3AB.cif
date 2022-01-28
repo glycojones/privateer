@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3AB     3AB     3-aminobenzamide     NON-POLYMER     18     10     .     
+#
+data_comp_3AB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3AB     N3      N       NH2     0       -2.797      -1.138      -0.008      
+3AB     C3      C       CR6     0       -1.656      -0.350      0.015       
+3AB     C2      C       CR16    0       -0.395      -0.916      -0.238      
+3AB     C4      C       CR16    0       -1.742      1.021       0.291       
+3AB     C5      C       CR16    0       -0.602      1.807       0.314       
+3AB     C6      C       CR16    0       0.642       1.243       0.063       
+3AB     C1      C       CR6     0       0.751       -0.122      -0.212      
+3AB     "C1'"   C       C       0       2.088       -0.746      -0.487      
+3AB     "O1'"   O       O       0       2.250       -1.413      -1.522      
+3AB     "N1'"   N       NH2     0       3.068       -0.562      0.391       
+3AB     HN3     H       H       0       -2.778      -1.923      -0.399      
+3AB     HN3A    H       H       0       -3.536      -0.849      0.367       
+3AB     H2      H       H       0       -0.333      -1.835      -0.423      
+3AB     H4      H       H       0       -2.585      1.408       0.461       
+3AB     H5      H       H       0       -0.673      2.726       0.500       
+3AB     H6      H       H       0       1.413       1.782       0.081       
+3AB     "HN1'"  H       H       0       3.881       -0.888      0.225       
+3AB     HN1A    H       H       0       2.931       -0.121      1.155       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3AB       N3        C3        SINGLE    n         1.386     0.020     1.386     0.020     
+3AB       C3        C4        DOUBLE    y         1.394     0.010     1.394     0.010     
+3AB       C3        C2        SINGLE    y         1.397     0.010     1.397     0.010     
+3AB       C2        C1        DOUBLE    y         1.387     0.010     1.387     0.010     
+3AB       C4        C5        SINGLE    y         1.379     0.010     1.379     0.010     
+3AB       C5        C6        DOUBLE    y         1.384     0.010     1.384     0.010     
+3AB       C6        C1        SINGLE    y         1.390     0.010     1.390     0.010     
+3AB       C1        "C1'"     SINGLE    n         1.500     0.010     1.500     0.010     
+3AB       "C1'"     "O1'"     DOUBLE    n         1.241     0.011     1.241     0.011     
+3AB       "C1'"     "N1'"     SINGLE    n         1.326     0.010     1.326     0.010     
+3AB       N3        HN3       SINGLE    n         1.016     0.010     0.877     0.020     
+3AB       N3        HN3A      SINGLE    n         1.016     0.010     0.877     0.020     
+3AB       C2        H2        SINGLE    n         1.082     0.013     0.939     0.013     
+3AB       C4        H4        SINGLE    n         1.082     0.013     0.943     0.018     
+3AB       C5        H5        SINGLE    n         1.082     0.013     0.940     0.016     
+3AB       C6        H6        SINGLE    n         1.082     0.013     0.941     0.017     
+3AB       "N1'"     "HN1'"    SINGLE    n         1.016     0.010     0.891     0.020     
+3AB       "N1'"     HN1A      SINGLE    n         1.016     0.010     0.891     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3AB          C3          N3         HN3     119.811    2.73
+3AB          C3          N3        HN3A     119.811    2.73
+3AB         HN3          N3        HN3A     120.379    3.00
+3AB          N3          C3          C4     120.730    1.50
+3AB          N3          C3          C2     120.515    1.50
+3AB          C4          C3          C2     118.756    1.50
+3AB          C3          C2          C1     119.683    1.50
+3AB          C3          C2          H2     119.628    1.50
+3AB          C1          C2          H2     120.690    1.50
+3AB          C3          C4          C5     120.836    1.50
+3AB          C3          C4          H4     119.329    1.50
+3AB          C5          C4          H4     119.836    1.50
+3AB          C4          C5          C6     120.653    1.50
+3AB          C4          C5          H5     119.578    1.50
+3AB          C6          C5          H5     119.769    1.50
+3AB          C5          C6          C1     120.435    1.50
+3AB          C5          C6          H6     119.708    1.50
+3AB          C1          C6          H6     119.857    1.50
+3AB          C2          C1          C6     119.638    1.50
+3AB          C2          C1       "C1'"     119.724    2.66
+3AB          C6          C1       "C1'"     120.638    2.37
+3AB          C1       "C1'"       "O1'"     119.820    1.50
+3AB          C1       "C1'"       "N1'"     118.026    1.50
+3AB       "O1'"       "C1'"       "N1'"     122.155    1.50
+3AB       "C1'"       "N1'"      "HN1'"     120.236    2.75
+3AB       "C1'"       "N1'"        HN1A     120.236    2.75
+3AB      "HN1'"       "N1'"        HN1A     119.529    2.83
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3AB             sp2_sp2_1          C4          C3          N3         HN3     180.000   10.00     2
+3AB              const_22          C1          C2          C3          N3     180.000   10.00     2
+3AB       const_sp2_sp2_3          N3          C3          C4          C5     180.000   10.00     2
+3AB              const_19       "C1'"          C1          C2          C3     180.000   10.00     2
+3AB       const_sp2_sp2_5          C3          C4          C5          C6       0.000   10.00     2
+3AB       const_sp2_sp2_9          C4          C5          C6          C1       0.000   10.00     2
+3AB              const_15       "C1'"          C1          C6          C5     180.000   10.00     2
+3AB             sp2_sp2_6          C2          C1       "C1'"       "O1'"       0.000   10.00     2
+3AB            sp2_sp2_11       "O1'"       "C1'"       "N1'"      "HN1'"       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3AB    plan-1          C1   0.020
+3AB    plan-1       "C1'"   0.020
+3AB    plan-1          C2   0.020
+3AB    plan-1          C3   0.020
+3AB    plan-1          C4   0.020
+3AB    plan-1          C5   0.020
+3AB    plan-1          C6   0.020
+3AB    plan-1          H2   0.020
+3AB    plan-1          H4   0.020
+3AB    plan-1          H5   0.020
+3AB    plan-1          H6   0.020
+3AB    plan-1          N3   0.020
+3AB    plan-2          C3   0.020
+3AB    plan-2         HN3   0.020
+3AB    plan-2        HN3A   0.020
+3AB    plan-2          N3   0.020
+3AB    plan-3          C1   0.020
+3AB    plan-3       "C1'"   0.020
+3AB    plan-3       "N1'"   0.020
+3AB    plan-3       "O1'"   0.020
+3AB    plan-4       "C1'"   0.020
+3AB    plan-4      "HN1'"   0.020
+3AB    plan-4        HN1A   0.020
+3AB    plan-4       "N1'"   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3AB SMILES           ACDLabs              10.04 "O=C(c1cc(N)ccc1)N"
+3AB SMILES_CANONICAL CACTVS               3.341 "NC(=O)c1cccc(N)c1"
+3AB SMILES           CACTVS               3.341 "NC(=O)c1cccc(N)c1"
+3AB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(cc(c1)N)C(=O)N"
+3AB SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(cc(c1)N)C(=O)N"
+3AB InChI            InChI                1.03  "InChI=1S/C7H8N2O/c8-6-3-1-2-5(4-6)7(9)10/h1-4H,8H2,(H2,9,10)"
+3AB InChIKey         InChI                1.03  GSCPDZHWVNUUFI-UHFFFAOYSA-N
+3AB ?                acedrg               190         "dictionary generator"                  
+3AB ?                acedrg_database      11          "data source"                           
+3AB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3AB ?                refmac5              5.8.0158    "optimization tool"                     

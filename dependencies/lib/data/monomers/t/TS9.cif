@@ -1,0 +1,213 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TS9     TS9     "(2S,3S,4R)-2-amino-3,4-dihydroxy-3-methylpentanoicacid"     peptide     24     11     .
+#
+data_comp_TS9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TS9     N       N       NT3     1       -2.273      -0.479      1.111
+TS9     CA      C       CH1     0       -1.350      0.271       0.209
+TS9     C       C       C       0       -1.470      1.768       0.537
+TS9     CB      C       CT      0       0.118       -0.243      0.211
+TS9     OG3     O       OH1     0       0.609       -0.030      1.542
+TS9     CG2     C       CH3     0       0.158       -1.751      -0.038
+TS9     CG1     C       CH1     0       1.005       0.540       -0.807
+TS9     OD2     O       OH1     0       1.376       1.823       -0.277
+TS9     CD1     C       CH3     0       2.284       -0.136      -1.240
+TS9     OXT     O       OC      -1      -1.287      2.105       1.723
+TS9     O       O       O       0       -1.742      2.540       -0.405
+TS9     H       H       H       0       -3.002      0.028       1.316
+TS9     H2      H       H       0       -1.847      -0.706      1.885
+TS9     H3      H       H       0       -2.563      -1.237      0.697
+TS9     HA      H       H       0       -1.667      0.138       -0.715
+TS9     HG3     H       H       0       1.429       -0.248      1.590
+TS9     HG21    H       H       0       1.051       -2.090      0.140
+TS9     HG22    H       H       0       -0.079      -1.933      -0.962
+TS9     HG23    H       H       0       -0.469      -2.200      0.550
+TS9     HG1     H       H       0       0.450       0.709       -1.612
+TS9     HD2     H       H       0       1.910       1.742       0.379
+TS9     HD11    H       H       0       2.871       0.517       -1.660
+TS9     HD12    H       H       0       2.081       -0.843      -1.879
+TS9     HD13    H       H       0       2.731       -0.519      -0.463
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+TS9      N      n/a    CA     START
+TS9      H      N      .      .
+TS9      H2     N      .      .
+TS9      H3     N      .      .
+TS9      CA     N      C      .
+TS9      HA     CA     .      .
+TS9      CB     CA     CG1    .
+TS9      OG3    CB     HG3    .
+TS9      HG3    OG3    .      .
+TS9      CG2    CB     HG21   .
+TS9      HG23   CG2    .      .
+TS9      HG22   CG2    .      .
+TS9      HG21   CG2    .      .
+TS9      CG1    CB     OD2    .
+TS9      HG1    CG1    .      .
+TS9      CD1    CG1    HD11   .
+TS9      HD13   CD1    .      .
+TS9      HD12   CD1    .      .
+TS9      HD11   CD1    .      .
+TS9      OD2    CG1    HD2    .
+TS9      HD2    OD2    .      .
+TS9      C      CA     .      END
+TS9      OXT    C      .      .
+TS9      O      C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TS9       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+TS9       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+TS9       CA        CB        SINGLE    n         1.533     0.016     1.533     0.016     
+TS9       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TS9       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TS9       CB        OG3       SINGLE    n         1.428     0.020     1.428     0.020     
+TS9       CB        CG2       SINGLE    n         1.522     0.011     1.522     0.011     
+TS9       CB        CG1       SINGLE    n         1.548     0.011     1.548     0.011     
+TS9       CG1       OD2       SINGLE    n         1.424     0.020     1.424     0.020     
+TS9       CG1       CD1       SINGLE    n         1.501     0.016     1.501     0.016     
+TS9       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+TS9       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+TS9       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+TS9       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+TS9       OG3       HG3       SINGLE    n         0.970     0.012     0.848     0.020     
+TS9       CG2       HG21      SINGLE    n         1.089     0.010     0.972     0.015     
+TS9       CG2       HG22      SINGLE    n         1.089     0.010     0.972     0.015     
+TS9       CG2       HG23      SINGLE    n         1.089     0.010     0.972     0.015     
+TS9       CG1       HG1       SINGLE    n         1.089     0.010     0.992     0.019     
+TS9       OD2       HD2       SINGLE    n         0.970     0.012     0.848     0.020     
+TS9       CD1       HD11      SINGLE    n         1.089     0.010     0.974     0.015     
+TS9       CD1       HD12      SINGLE    n         1.089     0.010     0.974     0.015     
+TS9       CD1       HD13      SINGLE    n         1.089     0.010     0.974     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TS9          CA           N           H     109.853    1.85
+TS9          CA           N          H2     109.853    1.85
+TS9          CA           N          H3     109.853    1.85
+TS9           H           N          H2     109.028    2.41
+TS9           H           N          H3     109.028    2.41
+TS9          H2           N          H3     109.028    2.41
+TS9           N          CA           C     109.414    1.50
+TS9           N          CA          CB     112.810    3.00
+TS9           N          CA          HA     108.444    1.50
+TS9           C          CA          CB     111.511    2.91
+TS9           C          CA          HA     108.600    1.50
+TS9          CB          CA          HA     106.559    1.91
+TS9          CA           C         OXT     117.139    1.50
+TS9          CA           C           O     117.139    1.50
+TS9         OXT           C           O     125.721    1.50
+TS9          CA          CB         OG3     106.052    1.50
+TS9          CA          CB         CG2     112.111    2.52
+TS9          CA          CB         CG1     111.094    2.85
+TS9         OG3          CB         CG2     107.769    1.96
+TS9         OG3          CB         CG1     107.804    2.98
+TS9         CG2          CB         CG1     111.297    1.84
+TS9          CB         OG3         HG3     108.877    3.00
+TS9          CB         CG2        HG21     109.483    1.50
+TS9          CB         CG2        HG22     109.483    1.50
+TS9          CB         CG2        HG23     109.483    1.50
+TS9        HG21         CG2        HG22     109.441    1.50
+TS9        HG21         CG2        HG23     109.441    1.50
+TS9        HG22         CG2        HG23     109.441    1.50
+TS9          CB         CG1         OD2     109.035    2.40
+TS9          CB         CG1         CD1     111.094    2.85
+TS9          CB         CG1         HG1     107.955    1.50
+TS9         OD2         CG1         CD1     109.686    2.24
+TS9         OD2         CG1         HG1     108.183    1.96
+TS9         CD1         CG1         HG1     109.344    1.50
+TS9         CG1         OD2         HD2     109.265    3.00
+TS9         CG1         CD1        HD11     109.508    1.50
+TS9         CG1         CD1        HD12     109.508    1.50
+TS9         CG1         CD1        HD13     109.508    1.50
+TS9        HD11         CD1        HD12     109.425    1.50
+TS9        HD11         CD1        HD13     109.425    1.50
+TS9        HD12         CD1        HD13     109.425    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TS9             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+TS9             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+TS9            sp3_sp3_13           N          CA          CB         OG3      60.000   10.00     3
+TS9            sp3_sp3_19          CA          CB         OG3         HG3     180.000   10.00     3
+TS9            sp3_sp3_22          CA          CB         CG2        HG21     180.000   10.00     3
+TS9            sp3_sp3_31          CA          CB         CG1         OD2     180.000   10.00     3
+TS9            sp3_sp3_41          CB         CG1         OD2         HD2      60.000   10.00     3
+TS9            sp3_sp3_43        HD11         CD1         CG1          CB     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TS9    chir_1    CA    N    C    CB    both
+TS9    chir_2    CB    OG3    CG1    CA    positive
+TS9    chir_3    CG1    OD2    CB    CD1    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TS9    plan-1           C   0.020
+TS9    plan-1          CA   0.020
+TS9    plan-1           O   0.020
+TS9    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TS9 SMILES           ACDLabs              12.01 "O=C(O)C(N)C(O)(C)C(O)C"
+TS9 SMILES_CANONICAL CACTVS               3.370 "C[C@@H](O)[C@@](C)(O)[C@H](N)C(O)=O"
+TS9 SMILES           CACTVS               3.370 "C[CH](O)[C](C)(O)[CH](N)C(O)=O"
+TS9 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C[C@H]([C@](C)([C@@H](C(=O)O)N)O)O"
+TS9 SMILES           "OpenEye OEToolkits" 1.7.0 "CC(C(C)(C(C(=O)O)N)O)O"
+TS9 InChI            InChI                1.03  "InChI=1S/C6H13NO4/c1-3(8)6(2,11)4(7)5(9)10/h3-4,8,11H,7H2,1-2H3,(H,9,10)/t3-,4-,6-/m1/s1"
+TS9 InChIKey         InChI                1.03  QYQDTSNOBSCUAW-ZMIZWQJLSA-N
+TS9 ?                acedrg               196         "dictionary generator"
+TS9 ?                acedrg_database      11          "data source"
+TS9 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TS9 ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,159 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BU8     BU8      1~{H}-imidazo[4,5-b]pyridin-2-amine     NON-POLYMER     16     10     .     
+#
+data_comp_BU8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BU8     C02     C       CR5     0       -13.132     12.952      12.645      
+BU8     C04     C       CR56    0       -13.808     11.845      14.425      
+BU8     C05     C       CR16    0       -14.397     11.269      15.551      
+BU8     C06     C       CR16    0       -13.735     10.215      16.149      
+BU8     C07     C       CR16    0       -12.521     9.765       15.623      
+BU8     C09     C       CR56    0       -12.578     11.334      13.952      
+BU8     N01     N       NH2     0       -13.128     13.852      11.655      
+BU8     N03     N       NR5     0       -14.128     12.873      13.569      
+BU8     N08     N       NRD6    0       -11.939     10.304      14.543      
+BU8     N10     N       NRD5    0       -12.191     12.049      12.844      
+BU8     H1      H       H       0       -15.209     11.588      15.883      
+BU8     H2      H       H       0       -14.101     9.794       16.917      
+BU8     H3      H       H       0       -12.086     9.045       16.046      
+BU8     H4      H       H       0       -13.783     14.427      11.593      
+BU8     H5      H       H       0       -12.470     13.858      11.080      
+BU8     H6      H       H       0       -14.837     13.388      13.599      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BU8       C02       N01       SINGLE    n         1.338     0.0108    1.338     0.0108    
+BU8       C02       N10       DOUBLE    y         1.318     0.0100    1.318     0.0100    
+BU8       C02       N03       SINGLE    y         1.359     0.0116    1.359     0.0116    
+BU8       C09       N10       SINGLE    y         1.376     0.0100    1.376     0.0100    
+BU8       C04       N03       SINGLE    y         1.375     0.0100    1.375     0.0100    
+BU8       C04       C09       DOUBLE    y         1.401     0.0200    1.401     0.0200    
+BU8       C09       N08       SINGLE    y         1.344     0.0101    1.344     0.0101    
+BU8       C04       C05       SINGLE    y         1.391     0.0100    1.391     0.0100    
+BU8       C07       N08       DOUBLE    y         1.337     0.0109    1.337     0.0109    
+BU8       C05       C06       DOUBLE    y         1.378     0.0101    1.378     0.0101    
+BU8       C06       C07       SINGLE    y         1.393     0.0144    1.393     0.0144    
+BU8       C05       H1        SINGLE    n         1.082     0.013     0.933     0.0100    
+BU8       C06       H2        SINGLE    n         1.082     0.013     0.949     0.0100    
+BU8       C07       H3        SINGLE    n         1.082     0.013     0.942     0.0183    
+BU8       N01       H4        SINGLE    n         1.016     0.010     0.874     0.0194    
+BU8       N01       H5        SINGLE    n         1.016     0.010     0.874     0.0194    
+BU8       N03       H6        SINGLE    n         1.016     0.010     0.877     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BU8         N01         C02         N10     124.885    1.50
+BU8         N01         C02         N03     123.102    1.50
+BU8         N10         C02         N03     112.013    1.50
+BU8         N03         C04         C09     105.671    1.50
+BU8         N03         C04         C05     135.618    1.50
+BU8         C09         C04         C05     118.712    2.44
+BU8         C04         C05         C06     117.228    1.50
+BU8         C04         C05          H1     121.034    1.50
+BU8         C06         C05          H1     121.738    1.50
+BU8         C05         C06         C07     120.371    1.50
+BU8         C05         C06          H2     120.019    1.50
+BU8         C07         C06          H2     119.609    1.50
+BU8         N08         C07         C06     124.050    1.50
+BU8         N08         C07          H3     117.707    1.50
+BU8         C06         C07          H3     118.243    1.50
+BU8         N10         C09         C04     109.416    1.50
+BU8         N10         C09         N08     127.966    1.50
+BU8         C04         C09         N08     122.618    1.50
+BU8         C02         N01          H4     119.586    1.87
+BU8         C02         N01          H5     119.586    1.87
+BU8          H4         N01          H5     120.828    2.45
+BU8         C02         N03         C04     106.753    1.50
+BU8         C02         N03          H6     125.821    2.34
+BU8         C04         N03          H6     127.426    1.93
+BU8         C09         N08         C07     117.021    1.50
+BU8         C02         N10         C09     106.147    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BU8             sp2_sp2_3         N10         C02         N01          H4       0.000   10.00     2
+BU8              const_27         N01         C02         N03         C04     180.000   10.00     2
+BU8       const_sp2_sp2_2         N01         C02         N10         C09     180.000   10.00     2
+BU8              const_31         N03         C04         C05         C06     180.000   10.00     2
+BU8       const_sp2_sp2_5         N03         C04         C09         N10       0.000   10.00     2
+BU8       const_sp2_sp2_9         C09         C04         N03         C02       0.000   10.00     2
+BU8              const_21         C04         C05         C06         C07       0.000   10.00     2
+BU8              const_17         C05         C06         C07         N08       0.000   10.00     2
+BU8              const_15         C06         C07         N08         C09       0.000   10.00     2
+BU8              const_14         N10         C09         N08         C07     180.000   10.00     2
+BU8       const_sp2_sp2_3         C04         C09         N10         C02       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BU8    plan-1         C02   0.020
+BU8    plan-1         C04   0.020
+BU8    plan-1         C05   0.020
+BU8    plan-1         C06   0.020
+BU8    plan-1         C07   0.020
+BU8    plan-1         C09   0.020
+BU8    plan-1          H1   0.020
+BU8    plan-1          H2   0.020
+BU8    plan-1          H3   0.020
+BU8    plan-1          H6   0.020
+BU8    plan-1         N01   0.020
+BU8    plan-1         N03   0.020
+BU8    plan-1         N08   0.020
+BU8    plan-1         N10   0.020
+BU8    plan-2         C02   0.020
+BU8    plan-2          H4   0.020
+BU8    plan-2          H5   0.020
+BU8    plan-2         N01   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BU8            InChI                InChI  1.03 InChI=1S/C6H6N4/c7-6-9-4-2-1-3-8-5(4)10-6/h1-3H,(H3,7,8,9,10)
+BU8         InChIKey                InChI  1.03                                   KXQPVJRJUJJWQJ-UHFFFAOYSA-N
+BU8 SMILES_CANONICAL               CACTVS 3.385                                             Nc1[nH]c2cccnc2n1
+BU8           SMILES               CACTVS 3.385                                             Nc1[nH]c2cccnc2n1
+BU8 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                         c1cc2c(nc1)nc([nH]2)N
+BU8           SMILES "OpenEye OEToolkits" 2.0.6                                         c1cc2c(nc1)nc([nH]2)N
+BU8 ?                acedrg               217         "dictionary generator"                  
+BU8 ?                acedrg_database      11          "data source"                           
+BU8 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BU8 ?                refmac5              5.8.0253    "optimization tool"                     

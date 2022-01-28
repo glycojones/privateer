@@ -1,0 +1,225 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ERE      ERE '(1R,3S,4R,5S)-3-amino-2,3,6-trideoxy' pyranose           26  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ERE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ERE           C1     C    CH1       0.000      0.000    0.000    0.000
+ ERE           H1     H    H         0.000      0.955   -0.266   -0.474
+ ERE           O1     O    OH1       0.000     -0.045   -0.546    1.319
+ ERE           HO1    H    H         0.000      0.659   -0.229    1.900
+ ERE           O5     O    O2        0.000     -0.119    1.422    0.068
+ ERE           C5     C    CH1       0.000     -1.320    1.879    0.694
+ ERE           H5     H    H         0.000     -1.372    1.484    1.718
+ ERE           C5A    C    CH3       0.000     -1.325    3.408    0.736
+ ERE           H53    H    H         0.000     -0.488    3.749    1.289
+ ERE           H52    H    H         0.000     -1.274    3.790   -0.251
+ ERE           H51    H    H         0.000     -2.215    3.746    1.200
+ ERE           C4     C    CH1       0.000     -2.529    1.385   -0.105
+ ERE           H4     H    H         0.000     -2.500    1.813   -1.117
+ ERE           O4     O    OH1       0.000     -3.733    1.791    0.550
+ ERE           HO4    H    H         0.000     -3.759    2.756    0.605
+ ERE           C3     C    CT        0.000     -2.484   -0.143   -0.194
+ ERE           N3     N    NH2       0.000     -3.600   -0.620   -1.023
+ ERE           HN32   H    H         0.000     -4.251    0.041   -1.426
+ ERE           HN31   H    H         0.000     -3.718   -1.609   -1.193
+ ERE           C3A    C    CH3       0.000     -2.596   -0.741    1.210
+ ERE           H33    H    H         0.000     -3.577   -0.591    1.582
+ ERE           H32    H    H         0.000     -2.388   -1.779    1.171
+ ERE           H31    H    H         0.000     -1.900   -0.267    1.853
+ ERE           C2     C    CH2       0.000     -1.157   -0.568   -0.828
+ ERE           H22    H    H         0.000     -1.098   -0.185   -1.849
+ ERE           H21    H    H         0.000     -1.092   -1.658   -0.846
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ERE      C1     n/a    O5     START
+ ERE      H1     C1     .      .
+ ERE      O1     C1     .      .
+ ERE      HO1    O1     .      .
+ ERE      O5     C1     .      END
+ ERE      C5     O5     C4     .
+ ERE      H5     C5     .      .
+ ERE      C5A    C5     H51    .
+ ERE      H53    C5A    .      .
+ ERE      H52    C5A    .      .
+ ERE      H51    C5A    .      .
+ ERE      C4     C5     C3     .
+ ERE      H4     C4     .      .
+ ERE      O4     C4     HO4    .
+ ERE      HO4    O4     .      .
+ ERE      C3     C4     C2     .
+ ERE      N3     C3     HN31   .
+ ERE      HN32   N3     .      .
+ ERE      HN31   N3     .      .
+ ERE      C3A    C3     H31    .
+ ERE      H33    C3A    .      .
+ ERE      H32    C3A    .      .
+ ERE      H31    C3A    .      .
+ ERE      C2     C3     H21    .
+ ERE      H22    C2     .      .
+ ERE      H21    C2     .      .
+ ERE      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ERE       C1        C2        single    1.524     0.020     1.524     0.020     
+ERE       O5        C1        single    1.426     0.020     1.426     0.020     
+ERE       O1        C1        single    1.432     0.020     1.432     0.020     
+ERE       C2        C3        single    1.524     0.020     1.524     0.020     
+ERE       C3        C4        single    1.524     0.020     1.524     0.020     
+ERE       C3A       C3        single    1.524     0.020     1.524     0.020     
+ERE       N3        C3        single    1.462     0.020     1.462     0.020     
+ERE       C4        C5        single    1.524     0.020     1.524     0.020     
+ERE       O4        C4        single    1.432     0.020     1.432     0.020     
+ERE       C5        O5        single    1.426     0.020     1.426     0.020     
+ERE       C5A       C5        single    1.524     0.020     1.524     0.020     
+ERE       H1        C1        single    1.089     0.010     0.989     0.005     
+ERE       H21       C2        single    1.089     0.010     0.989     0.005     
+ERE       H22       C2        single    1.089     0.010     0.989     0.005     
+ERE       HO1       O1        single    0.970     0.012     0.839     0.014     
+ERE       H4        C4        single    1.089     0.010     0.989     0.005     
+ERE       H31       C3A       single    1.089     0.010     0.989     0.005     
+ERE       H32       C3A       single    1.089     0.010     0.989     0.005     
+ERE       H33       C3A       single    1.089     0.010     0.989     0.005     
+ERE       HN31      N3        single    1.036     0.016     0.914     0.007     
+ERE       HN32      N3        single    1.036     0.016     0.914     0.007     
+ERE       H5        C5        single    1.089     0.010     0.989     0.005     
+ERE       HO4       O4        single    0.970     0.012     0.839     0.014     
+ERE       H51       C5A       single    1.089     0.010     0.989     0.005     
+ERE       H52       C5A       single    1.089     0.010     0.989     0.005     
+ERE       H53       C5A       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ERE      H1     C1     O1      109.470    3.000
+ ERE      H1     C1     O5      109.470    3.000
+ ERE      O1     C1     O5      109.470    3.000
+ ERE      H1     C1     C2      108.340    3.000
+ ERE      O1     C1     C2      109.470    3.000
+ ERE      O5     C1     C2      109.470    3.000
+ ERE      C1     O1     HO1     109.470    3.000
+ ERE      C1     O5     C5      111.800    3.000
+ ERE      O5     C5     H5      109.470    3.000
+ ERE      O5     C5     C5A     109.470    3.000
+ ERE      O5     C5     C4      109.470    3.000
+ ERE      H5     C5     C5A     108.340    3.000
+ ERE      H5     C5     C4      108.340    3.000
+ ERE      C5A    C5     C4      111.000    3.000
+ ERE      C5     C5A    H53     109.470    3.000
+ ERE      C5     C5A    H52     109.470    3.000
+ ERE      C5     C5A    H51     109.470    3.000
+ ERE      H53    C5A    H52     109.470    3.000
+ ERE      H53    C5A    H51     109.470    3.000
+ ERE      H52    C5A    H51     109.470    3.000
+ ERE      C5     C4     H4      108.340    3.000
+ ERE      C5     C4     O4      109.470    3.000
+ ERE      C5     C4     C3      111.000    3.000
+ ERE      H4     C4     O4      109.470    3.000
+ ERE      H4     C4     C3      108.340    3.000
+ ERE      O4     C4     C3      109.470    3.000
+ ERE      C4     O4     HO4     109.470    3.000
+ ERE      C4     C3     N3      109.500    3.000
+ ERE      C4     C3     C3A     111.000    3.000
+ ERE      C4     C3     C2      111.000    3.000
+ ERE      N3     C3     C3A     109.500    3.000
+ ERE      N3     C3     C2      109.500    3.000
+ ERE      C3A    C3     C2      111.000    3.000
+ ERE      C3     N3     HN32    120.000    3.000
+ ERE      C3     N3     HN31    120.000    3.000
+ ERE      HN32   N3     HN31    120.000    3.000
+ ERE      C3     C3A    H33     109.470    3.000
+ ERE      C3     C3A    H32     109.470    3.000
+ ERE      C3     C3A    H31     109.470    3.000
+ ERE      H33    C3A    H32     109.470    3.000
+ ERE      H33    C3A    H31     109.470    3.000
+ ERE      H32    C3A    H31     109.470    3.000
+ ERE      C3     C2     H22     109.470    3.000
+ ERE      C3     C2     H21     109.470    3.000
+ ERE      C3     C2     C1      111.000    3.000
+ ERE      H22    C2     H21     107.900    3.000
+ ERE      H22    C2     C1      109.470    3.000
+ ERE      H21    C2     C1      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ERE      var_1    C1     O5     C5     C4       -60.000   20.000   1
+ ERE      var_2    O5     C5     C5A    H51      179.960   20.000   3
+ ERE      var_3    O5     C5     C4     C3        60.000   20.000   3
+ ERE      var_4    C5     C4     O4     HO4       60.302   20.000   1
+ ERE      var_5    C5     C4     C3     C2       -60.000   20.000   1
+ ERE      var_6    C4     C3     N3     HN31     179.614   20.000   1
+ ERE      var_7    C4     C3     C3A    H31      -49.730   20.000   1
+ ERE      var_8    C4     C3     C2     C1        60.000   20.000   1
+ ERE      var_9    C3     C2     C1     O5       -60.000   20.000   3
+ ERE      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ERE      chir_01  C1     C2     O5     O1        negativ
+ ERE      chir_02  C3     C2     C4     C3A       positiv
+ ERE      chir_03  C4     C3     C5     O4        positiv
+ ERE      chir_04  C5     C4     O5     C5A       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ERE      plan-1    N3        0.020
+ ERE      plan-1    C3        0.020
+ ERE      plan-1    HN31      0.020
+ ERE      plan-1    HN32      0.020
+# ------------------------------------------------------

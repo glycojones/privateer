@@ -1,0 +1,691 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NDL      NDL 'N-BENZOYL-L-NORLEUCYL-L-LYSYL-L-ARGI' non-polymer       100  48 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NDL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NDL           O47    O    OC       -0.500      0.000    0.000    0.000
+ NDL           C46    C    C         0.000      0.201   -0.824   -0.920
+ NDL           OXT    O    OC       -0.500      1.289   -1.437   -0.984
+ NDL           C38    C    CH1       0.000     -0.870   -1.076   -1.950
+ NDL           H38    H    H         0.000     -1.161   -2.136   -1.924
+ NDL           C39    C    CH2       0.000     -0.332   -0.728   -3.340
+ NDL           H391   H    H         0.000      0.590   -1.285   -3.522
+ NDL           H392   H    H         0.000     -0.125    0.343   -3.392
+ NDL           C40    C    CH2       0.000     -1.372   -1.101   -4.398
+ NDL           H401   H    H         0.000     -2.293   -0.545   -4.213
+ NDL           H402   H    H         0.000     -1.578   -2.172   -4.344
+ NDL           C41    C    CH2       0.000     -0.834   -0.754   -5.788
+ NDL           H411   H    H         0.000      0.088   -1.309   -5.970
+ NDL           H412   H    H         0.000     -0.628    0.318   -5.840
+ NDL           N42    N    NH1       0.000     -1.829   -1.111   -6.801
+ NDL           HN42   H    H         0.000     -2.709   -1.521   -6.521
+ NDL           C43    C    C         0.000     -1.567   -0.888   -8.132
+ NDL           N45    N    NH2       0.000     -0.369   -0.332   -8.512
+ NDL           H452   H    H         0.000      0.332   -0.080   -7.818
+ NDL           H451   H    H         0.000     -0.162   -0.162   -9.494
+ NDL           N44    N    N         0.000     -2.453   -1.206   -9.033
+ NDL           HN44   H    H         0.000     -2.282   -1.056   -9.967
+ NDL           N37    N    NH1       0.000     -2.037   -0.242   -1.657
+ NDL           HN37   H    H         0.000     -2.146    0.653   -2.113
+ NDL           C35    C    C         0.000     -2.966   -0.668   -0.778
+ NDL           O36    O    O         0.000     -2.834   -1.741   -0.229
+ NDL           C27    C    CH1       0.000     -4.168    0.190   -0.475
+ NDL           H27    H    H         0.000     -4.737    0.363   -1.399
+ NDL           C28    C    CH2       0.000     -3.705    1.532    0.097
+ NDL           H281   H    H         0.000     -2.998    1.997   -0.593
+ NDL           H282   H    H         0.000     -3.217    1.368    1.060
+ NDL           C29    C    CH2       0.000     -4.915    2.450    0.287
+ NDL           H291   H    H         0.000     -5.621    1.983    0.977
+ NDL           H292   H    H         0.000     -5.403    2.612   -0.677
+ NDL           C30    C    CH2       0.000     -4.453    3.792    0.858
+ NDL           H301   H    H         0.000     -3.747    4.257    0.167
+ NDL           H302   H    H         0.000     -3.963    3.627    1.820
+ NDL           N31    N    NH1       0.000     -5.610    4.669    1.041
+ NDL           HN31   H    H         0.000     -6.534    4.344    0.795
+ NDL           C32    C    C         0.000     -5.440    5.936    1.546
+ NDL           N34    N    N         0.000     -6.470    6.718    1.707
+ NDL           HN34   H    H         0.000     -6.364    7.607    2.060
+ NDL           N33    N    NH2       0.000     -4.182    6.380    1.879
+ NDL           H332   H    H         0.000     -3.368    5.780    1.757
+ NDL           H331   H    H         0.000     -4.042    7.316    2.255
+ NDL           N26    N    NH1       0.000     -5.019   -0.490    0.503
+ NDL           HN26   H    H         0.000     -4.619   -1.171    1.134
+ NDL           C24    C    C         0.000     -6.336   -0.208    0.563
+ NDL           O25    O    O         0.000     -6.815    0.609   -0.195
+ NDL           C18    C    CH1       0.000     -7.213   -0.908    1.569
+ NDL           H18    H    H         0.000     -6.850   -0.692    2.584
+ NDL           C19    C    CH2       0.000     -7.168   -2.417    1.322
+ NDL           H191   H    H         0.000     -6.130   -2.757    1.335
+ NDL           H192   H    H         0.000     -7.610   -2.639    0.349
+ NDL           C20    C    CH2       0.000     -7.956   -3.136    2.418
+ NDL           H201   H    H         0.000     -8.993   -2.794    2.405
+ NDL           H202   H    H         0.000     -7.513   -2.912    3.391
+ NDL           C21    C    CH2       0.000     -7.912   -4.646    2.172
+ NDL           H211   H    H         0.000     -6.875   -4.986    2.185
+ NDL           H212   H    H         0.000     -8.354   -4.868    1.198
+ NDL           C22    C    CH2       0.000     -8.701   -5.365    3.267
+ NDL           H221   H    H         0.000     -9.738   -5.023    3.253
+ NDL           H222   H    H         0.000     -8.258   -5.141    4.240
+ NDL           N23    N    NH2       0.000     -8.658   -6.814    3.030
+ NDL           H232   H    H         0.000     -9.504   -7.319    2.793
+ NDL           H231   H    H         0.000     -7.782   -7.318    3.103
+ NDL           N17    N    NH1       0.000     -8.590   -0.430    1.432
+ NDL           HN17   H    H         0.000     -8.908   -0.051    0.551
+ NDL           C15    C    C         0.000     -9.434   -0.497    2.481
+ NDL           O16    O    O         0.000     -9.052   -0.951    3.539
+ NDL           C10    C    CH1       0.000    -10.852   -0.005    2.340
+ NDL           H10    H    H         0.000    -11.361   -0.579    1.554
+ NDL           C12    C    CH2       0.000    -10.843    1.478    1.965
+ NDL           H121   H    H         0.000    -10.240    1.622    1.066
+ NDL           H122   H    H         0.000    -10.415    2.058    2.785
+ NDL           C11    C    CH2       0.000    -12.275    1.946    1.700
+ NDL           H111   H    H         0.000    -12.877    1.800    2.600
+ NDL           H112   H    H         0.000    -12.702    1.364    0.880
+ NDL           C14    C    CH2       0.000    -12.266    3.429    1.326
+ NDL           H141   H    H         0.000    -11.663    3.573    0.427
+ NDL           H142   H    H         0.000    -11.839    4.008    2.147
+ NDL           C13    C    CH3       0.000    -13.699    3.896    1.060
+ NDL           H133   H    H         0.000    -14.116    3.335    0.263
+ NDL           H132   H    H         0.000    -14.287    3.757    1.931
+ NDL           H131   H    H         0.000    -13.697    4.924    0.801
+ NDL           N9     N    NH1       0.000    -11.559   -0.184    3.611
+ NDL           HN9    H    H         0.000    -11.041   -0.217    4.477
+ NDL           C1     C    C         0.000    -12.902   -0.306    3.623
+ NDL           O2     O    O         0.000    -13.525   -0.267    2.580
+ NDL           C7     C    CR6       0.000    -13.615   -0.486    4.905
+ NDL           C8     C    CR16      0.000    -15.005   -0.612    4.922
+ NDL           H8     H    H         0.000    -15.565   -0.577    3.995
+ NDL           C3     C    CR16      0.000    -15.665   -0.781    6.121
+ NDL           H3     H    H         0.000    -16.743   -0.881    6.136
+ NDL           C4     C    CR16      0.000    -14.952   -0.824    7.306
+ NDL           H4     H    H         0.000    -15.475   -0.955    8.246
+ NDL           C5     C    CR16      0.000    -13.574   -0.700    7.297
+ NDL           H5     H    H         0.000    -13.022   -0.731    8.228
+ NDL           C6     C    CR16      0.000    -12.901   -0.536    6.103
+ NDL           H6     H    H         0.000    -11.822   -0.446    6.096
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NDL      O47    n/a    C46    START
+ NDL      C46    O47    C38    .
+ NDL      OXT    C46    .      .
+ NDL      C38    C46    N37    .
+ NDL      H38    C38    .      .
+ NDL      C39    C38    C40    .
+ NDL      H391   C39    .      .
+ NDL      H392   C39    .      .
+ NDL      C40    C39    C41    .
+ NDL      H401   C40    .      .
+ NDL      H402   C40    .      .
+ NDL      C41    C40    N42    .
+ NDL      H411   C41    .      .
+ NDL      H412   C41    .      .
+ NDL      N42    C41    C43    .
+ NDL      HN42   N42    .      .
+ NDL      C43    N42    N44    .
+ NDL      N45    C43    H451   .
+ NDL      H452   N45    .      .
+ NDL      H451   N45    .      .
+ NDL      N44    C43    HN44   .
+ NDL      HN44   N44    .      .
+ NDL      N37    C38    C35    .
+ NDL      HN37   N37    .      .
+ NDL      C35    N37    C27    .
+ NDL      O36    C35    .      .
+ NDL      C27    C35    N26    .
+ NDL      H27    C27    .      .
+ NDL      C28    C27    C29    .
+ NDL      H281   C28    .      .
+ NDL      H282   C28    .      .
+ NDL      C29    C28    C30    .
+ NDL      H291   C29    .      .
+ NDL      H292   C29    .      .
+ NDL      C30    C29    N31    .
+ NDL      H301   C30    .      .
+ NDL      H302   C30    .      .
+ NDL      N31    C30    C32    .
+ NDL      HN31   N31    .      .
+ NDL      C32    N31    N33    .
+ NDL      N34    C32    HN34   .
+ NDL      HN34   N34    .      .
+ NDL      N33    C32    H331   .
+ NDL      H332   N33    .      .
+ NDL      H331   N33    .      .
+ NDL      N26    C27    C24    .
+ NDL      HN26   N26    .      .
+ NDL      C24    N26    C18    .
+ NDL      O25    C24    .      .
+ NDL      C18    C24    N17    .
+ NDL      H18    C18    .      .
+ NDL      C19    C18    C20    .
+ NDL      H191   C19    .      .
+ NDL      H192   C19    .      .
+ NDL      C20    C19    C21    .
+ NDL      H201   C20    .      .
+ NDL      H202   C20    .      .
+ NDL      C21    C20    C22    .
+ NDL      H211   C21    .      .
+ NDL      H212   C21    .      .
+ NDL      C22    C21    N23    .
+ NDL      H221   C22    .      .
+ NDL      H222   C22    .      .
+ NDL      N23    C22    H231   .
+ NDL      H232   N23    .      .
+ NDL      H231   N23    .      .
+ NDL      N17    C18    C15    .
+ NDL      HN17   N17    .      .
+ NDL      C15    N17    C10    .
+ NDL      O16    C15    .      .
+ NDL      C10    C15    N9     .
+ NDL      H10    C10    .      .
+ NDL      C12    C10    C11    .
+ NDL      H121   C12    .      .
+ NDL      H122   C12    .      .
+ NDL      C11    C12    C14    .
+ NDL      H111   C11    .      .
+ NDL      H112   C11    .      .
+ NDL      C14    C11    C13    .
+ NDL      H141   C14    .      .
+ NDL      H142   C14    .      .
+ NDL      C13    C14    H131   .
+ NDL      H133   C13    .      .
+ NDL      H132   C13    .      .
+ NDL      H131   C13    .      .
+ NDL      N9     C10    C1     .
+ NDL      HN9    N9     .      .
+ NDL      C1     N9     C7     .
+ NDL      O2     C1     .      .
+ NDL      C7     C1     C8     .
+ NDL      C8     C7     C3     .
+ NDL      H8     C8     .      .
+ NDL      C3     C8     C4     .
+ NDL      H3     C3     .      .
+ NDL      C4     C3     C5     .
+ NDL      H4     C4     .      .
+ NDL      C5     C4     C6     .
+ NDL      H5     C5     .      .
+ NDL      C6     C5     H6     .
+ NDL      H6     C6     .      END
+ NDL      C7     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NDL       OXT       C46       deloc     1.250     0.020     1.250     0.020     
+NDL       O2        C1        double    1.220     0.020     1.220     0.020     
+NDL       C7        C1        single    1.500     0.020     1.500     0.020     
+NDL       C1        N9        single    1.330     0.020     1.330     0.020     
+NDL       C7        C6        single    1.390     0.020     1.390     0.020     
+NDL       C8        C7        double    1.390     0.020     1.390     0.020     
+NDL       C6        C5        double    1.390     0.020     1.390     0.020     
+NDL       H6        C6        single    1.082     0.013     0.975     0.010     
+NDL       C5        C4        single    1.390     0.020     1.390     0.020     
+NDL       H5        C5        single    1.082     0.013     0.975     0.010     
+NDL       C4        C3        double    1.390     0.020     1.390     0.020     
+NDL       H4        C4        single    1.082     0.013     0.975     0.010     
+NDL       C3        C8        single    1.390     0.020     1.390     0.020     
+NDL       H3        C3        single    1.082     0.013     0.975     0.010     
+NDL       H8        C8        single    1.082     0.013     0.975     0.010     
+NDL       N9        C10       single    1.450     0.020     1.450     0.020     
+NDL       HN9       N9        single    1.016     0.010     0.899     0.007     
+NDL       C12       C10       single    1.524     0.020     1.524     0.020     
+NDL       C10       C15       single    1.500     0.020     1.500     0.020     
+NDL       H10       C10       single    1.089     0.010     0.989     0.005     
+NDL       C11       C12       single    1.524     0.020     1.524     0.020     
+NDL       H121      C12       single    1.089     0.010     0.989     0.005     
+NDL       H122      C12       single    1.089     0.010     0.989     0.005     
+NDL       C14       C11       single    1.524     0.020     1.524     0.020     
+NDL       H111      C11       single    1.089     0.010     0.989     0.005     
+NDL       H112      C11       single    1.089     0.010     0.989     0.005     
+NDL       C13       C14       single    1.513     0.020     1.513     0.020     
+NDL       H141      C14       single    1.089     0.010     0.989     0.005     
+NDL       H142      C14       single    1.089     0.010     0.989     0.005     
+NDL       H131      C13       single    1.089     0.010     0.989     0.005     
+NDL       H132      C13       single    1.089     0.010     0.989     0.005     
+NDL       H133      C13       single    1.089     0.010     0.989     0.005     
+NDL       O16       C15       double    1.220     0.020     1.220     0.020     
+NDL       C15       N17       single    1.330     0.020     1.330     0.020     
+NDL       N17       C18       single    1.450     0.020     1.450     0.020     
+NDL       HN17      N17       single    1.016     0.010     0.899     0.007     
+NDL       C19       C18       single    1.524     0.020     1.524     0.020     
+NDL       C18       C24       single    1.500     0.020     1.500     0.020     
+NDL       H18       C18       single    1.089     0.010     0.989     0.005     
+NDL       C20       C19       single    1.524     0.020     1.524     0.020     
+NDL       H191      C19       single    1.089     0.010     0.989     0.005     
+NDL       H192      C19       single    1.089     0.010     0.989     0.005     
+NDL       C21       C20       single    1.524     0.020     1.524     0.020     
+NDL       H201      C20       single    1.089     0.010     0.989     0.005     
+NDL       H202      C20       single    1.089     0.010     0.989     0.005     
+NDL       C22       C21       single    1.524     0.020     1.524     0.020     
+NDL       H211      C21       single    1.089     0.010     0.989     0.005     
+NDL       H212      C21       single    1.089     0.010     0.989     0.005     
+NDL       N23       C22       single    1.450     0.020     1.450     0.020     
+NDL       H221      C22       single    1.089     0.010     0.989     0.005     
+NDL       H222      C22       single    1.089     0.010     0.989     0.005     
+NDL       H231      N23       single    1.036     0.016     0.914     0.007     
+NDL       H232      N23       single    1.036     0.016     0.914     0.007     
+NDL       O25       C24       double    1.220     0.020     1.220     0.020     
+NDL       C24       N26       single    1.330     0.020     1.330     0.020     
+NDL       N26       C27       single    1.450     0.020     1.450     0.020     
+NDL       HN26      N26       single    1.016     0.010     0.899     0.007     
+NDL       C28       C27       single    1.524     0.020     1.524     0.020     
+NDL       C27       C35       single    1.500     0.020     1.500     0.020     
+NDL       H27       C27       single    1.089     0.010     0.989     0.005     
+NDL       C29       C28       single    1.524     0.020     1.524     0.020     
+NDL       H281      C28       single    1.089     0.010     0.989     0.005     
+NDL       H282      C28       single    1.089     0.010     0.989     0.005     
+NDL       C30       C29       single    1.524     0.020     1.524     0.020     
+NDL       H291      C29       single    1.089     0.010     0.989     0.005     
+NDL       H292      C29       single    1.089     0.010     0.989     0.005     
+NDL       N31       C30       single    1.450     0.020     1.450     0.020     
+NDL       H301      C30       single    1.089     0.010     0.989     0.005     
+NDL       H302      C30       single    1.089     0.010     0.989     0.005     
+NDL       C32       N31       single    1.330     0.020     1.330     0.020     
+NDL       HN31      N31       single    1.016     0.010     0.899     0.007     
+NDL       N33       C32       single    1.332     0.020     1.332     0.020     
+NDL       N34       C32       double    1.260     0.020     1.260     0.020     
+NDL       H331      N33       single    1.016     0.010     0.899     0.007     
+NDL       H332      N33       single    1.016     0.010     0.899     0.007     
+NDL       HN34      N34       single    1.016     0.010     0.899     0.007     
+NDL       O36       C35       double    1.220     0.020     1.220     0.020     
+NDL       C35       N37       single    1.330     0.020     1.330     0.020     
+NDL       N37       C38       single    1.450     0.020     1.450     0.020     
+NDL       HN37      N37       single    1.016     0.010     0.899     0.007     
+NDL       C38       C46       single    1.500     0.020     1.500     0.020     
+NDL       C39       C38       single    1.524     0.020     1.524     0.020     
+NDL       H38       C38       single    1.089     0.010     0.989     0.005     
+NDL       C46       O47       deloc     1.250     0.020     1.250     0.020     
+NDL       C40       C39       single    1.524     0.020     1.524     0.020     
+NDL       H391      C39       single    1.089     0.010     0.989     0.005     
+NDL       H392      C39       single    1.089     0.010     0.989     0.005     
+NDL       C41       C40       single    1.524     0.020     1.524     0.020     
+NDL       H401      C40       single    1.089     0.010     0.989     0.005     
+NDL       H402      C40       single    1.089     0.010     0.989     0.005     
+NDL       N42       C41       single    1.450     0.020     1.450     0.020     
+NDL       H411      C41       single    1.089     0.010     0.989     0.005     
+NDL       H412      C41       single    1.089     0.010     0.989     0.005     
+NDL       C43       N42       single    1.330     0.020     1.330     0.020     
+NDL       HN42      N42       single    1.016     0.010     0.899     0.007     
+NDL       N44       C43       double    1.260     0.020     1.260     0.020     
+NDL       N45       C43       single    1.332     0.020     1.332     0.020     
+NDL       HN44      N44       single    1.016     0.010     0.899     0.007     
+NDL       H451      N45       single    1.016     0.010     0.899     0.007     
+NDL       H452      N45       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NDL      O47    C46    OXT     123.000    3.000
+ NDL      O47    C46    C38     118.500    3.000
+ NDL      OXT    C46    C38     118.500    3.000
+ NDL      C46    C38    H38     108.810    3.000
+ NDL      C46    C38    C39     109.470    3.000
+ NDL      C46    C38    N37     111.600    3.000
+ NDL      H38    C38    C39     108.340    3.000
+ NDL      H38    C38    N37     108.550    3.000
+ NDL      C39    C38    N37     110.000    3.000
+ NDL      C38    C39    H391    109.470    3.000
+ NDL      C38    C39    H392    109.470    3.000
+ NDL      C38    C39    C40     111.000    3.000
+ NDL      H391   C39    H392    107.900    3.000
+ NDL      H391   C39    C40     109.470    3.000
+ NDL      H392   C39    C40     109.470    3.000
+ NDL      C39    C40    H401    109.470    3.000
+ NDL      C39    C40    H402    109.470    3.000
+ NDL      C39    C40    C41     111.000    3.000
+ NDL      H401   C40    H402    107.900    3.000
+ NDL      H401   C40    C41     109.470    3.000
+ NDL      H402   C40    C41     109.470    3.000
+ NDL      C40    C41    H411    109.470    3.000
+ NDL      C40    C41    H412    109.470    3.000
+ NDL      C40    C41    N42     112.000    3.000
+ NDL      H411   C41    H412    107.900    3.000
+ NDL      H411   C41    N42     109.470    3.000
+ NDL      H412   C41    N42     109.470    3.000
+ NDL      C41    N42    HN42    118.500    3.000
+ NDL      C41    N42    C43     121.500    3.000
+ NDL      HN42   N42    C43     120.000    3.000
+ NDL      N42    C43    N45     120.000    3.000
+ NDL      N42    C43    N44     120.000    3.000
+ NDL      N45    C43    N44     120.000    3.000
+ NDL      C43    N45    H452    120.000    3.000
+ NDL      C43    N45    H451    120.000    3.000
+ NDL      H452   N45    H451    120.000    3.000
+ NDL      C43    N44    HN44    120.000    3.000
+ NDL      C38    N37    HN37    118.500    3.000
+ NDL      C38    N37    C35     121.500    3.000
+ NDL      HN37   N37    C35     120.000    3.000
+ NDL      N37    C35    O36     123.000    3.000
+ NDL      N37    C35    C27     116.500    3.000
+ NDL      O36    C35    C27     120.500    3.000
+ NDL      C35    C27    H27     108.810    3.000
+ NDL      C35    C27    C28     109.470    3.000
+ NDL      C35    C27    N26     111.600    3.000
+ NDL      H27    C27    C28     108.340    3.000
+ NDL      H27    C27    N26     108.550    3.000
+ NDL      C28    C27    N26     110.000    3.000
+ NDL      C27    C28    H281    109.470    3.000
+ NDL      C27    C28    H282    109.470    3.000
+ NDL      C27    C28    C29     111.000    3.000
+ NDL      H281   C28    H282    107.900    3.000
+ NDL      H281   C28    C29     109.470    3.000
+ NDL      H282   C28    C29     109.470    3.000
+ NDL      C28    C29    H291    109.470    3.000
+ NDL      C28    C29    H292    109.470    3.000
+ NDL      C28    C29    C30     111.000    3.000
+ NDL      H291   C29    H292    107.900    3.000
+ NDL      H291   C29    C30     109.470    3.000
+ NDL      H292   C29    C30     109.470    3.000
+ NDL      C29    C30    H301    109.470    3.000
+ NDL      C29    C30    H302    109.470    3.000
+ NDL      C29    C30    N31     112.000    3.000
+ NDL      H301   C30    H302    107.900    3.000
+ NDL      H301   C30    N31     109.470    3.000
+ NDL      H302   C30    N31     109.470    3.000
+ NDL      C30    N31    HN31    118.500    3.000
+ NDL      C30    N31    C32     121.500    3.000
+ NDL      HN31   N31    C32     120.000    3.000
+ NDL      N31    C32    N34     120.000    3.000
+ NDL      N31    C32    N33     120.000    3.000
+ NDL      N34    C32    N33     120.000    3.000
+ NDL      C32    N34    HN34    120.000    3.000
+ NDL      C32    N33    H332    120.000    3.000
+ NDL      C32    N33    H331    120.000    3.000
+ NDL      H332   N33    H331    120.000    3.000
+ NDL      C27    N26    HN26    118.500    3.000
+ NDL      C27    N26    C24     121.500    3.000
+ NDL      HN26   N26    C24     120.000    3.000
+ NDL      N26    C24    O25     123.000    3.000
+ NDL      N26    C24    C18     116.500    3.000
+ NDL      O25    C24    C18     120.500    3.000
+ NDL      C24    C18    H18     108.810    3.000
+ NDL      C24    C18    C19     109.470    3.000
+ NDL      C24    C18    N17     111.600    3.000
+ NDL      H18    C18    C19     108.340    3.000
+ NDL      H18    C18    N17     108.550    3.000
+ NDL      C19    C18    N17     110.000    3.000
+ NDL      C18    C19    H191    109.470    3.000
+ NDL      C18    C19    H192    109.470    3.000
+ NDL      C18    C19    C20     111.000    3.000
+ NDL      H191   C19    H192    107.900    3.000
+ NDL      H191   C19    C20     109.470    3.000
+ NDL      H192   C19    C20     109.470    3.000
+ NDL      C19    C20    H201    109.470    3.000
+ NDL      C19    C20    H202    109.470    3.000
+ NDL      C19    C20    C21     111.000    3.000
+ NDL      H201   C20    H202    107.900    3.000
+ NDL      H201   C20    C21     109.470    3.000
+ NDL      H202   C20    C21     109.470    3.000
+ NDL      C20    C21    H211    109.470    3.000
+ NDL      C20    C21    H212    109.470    3.000
+ NDL      C20    C21    C22     111.000    3.000
+ NDL      H211   C21    H212    107.900    3.000
+ NDL      H211   C21    C22     109.470    3.000
+ NDL      H212   C21    C22     109.470    3.000
+ NDL      C21    C22    H221    109.470    3.000
+ NDL      C21    C22    H222    109.470    3.000
+ NDL      C21    C22    N23     109.470    3.000
+ NDL      H221   C22    H222    107.900    3.000
+ NDL      H221   C22    N23     109.470    3.000
+ NDL      H222   C22    N23     109.470    3.000
+ NDL      C22    N23    H232    120.000    3.000
+ NDL      C22    N23    H231    120.000    3.000
+ NDL      H232   N23    H231    120.000    3.000
+ NDL      C18    N17    HN17    118.500    3.000
+ NDL      C18    N17    C15     121.500    3.000
+ NDL      HN17   N17    C15     120.000    3.000
+ NDL      N17    C15    O16     123.000    3.000
+ NDL      N17    C15    C10     116.500    3.000
+ NDL      O16    C15    C10     120.500    3.000
+ NDL      C15    C10    H10     108.810    3.000
+ NDL      C15    C10    C12     109.470    3.000
+ NDL      C15    C10    N9      111.600    3.000
+ NDL      H10    C10    C12     108.340    3.000
+ NDL      H10    C10    N9      108.550    3.000
+ NDL      C12    C10    N9      110.000    3.000
+ NDL      C10    C12    H121    109.470    3.000
+ NDL      C10    C12    H122    109.470    3.000
+ NDL      C10    C12    C11     111.000    3.000
+ NDL      H121   C12    H122    107.900    3.000
+ NDL      H121   C12    C11     109.470    3.000
+ NDL      H122   C12    C11     109.470    3.000
+ NDL      C12    C11    H111    109.470    3.000
+ NDL      C12    C11    H112    109.470    3.000
+ NDL      C12    C11    C14     111.000    3.000
+ NDL      H111   C11    H112    107.900    3.000
+ NDL      H111   C11    C14     109.470    3.000
+ NDL      H112   C11    C14     109.470    3.000
+ NDL      C11    C14    H141    109.470    3.000
+ NDL      C11    C14    H142    109.470    3.000
+ NDL      C11    C14    C13     111.000    3.000
+ NDL      H141   C14    H142    107.900    3.000
+ NDL      H141   C14    C13     109.470    3.000
+ NDL      H142   C14    C13     109.470    3.000
+ NDL      C14    C13    H133    109.470    3.000
+ NDL      C14    C13    H132    109.470    3.000
+ NDL      C14    C13    H131    109.470    3.000
+ NDL      H133   C13    H132    109.470    3.000
+ NDL      H133   C13    H131    109.470    3.000
+ NDL      H132   C13    H131    109.470    3.000
+ NDL      C10    N9     HN9     118.500    3.000
+ NDL      C10    N9     C1      121.500    3.000
+ NDL      HN9    N9     C1      120.000    3.000
+ NDL      N9     C1     O2      123.000    3.000
+ NDL      N9     C1     C7      120.000    3.000
+ NDL      O2     C1     C7      120.500    3.000
+ NDL      C1     C7     C8      120.000    3.000
+ NDL      C1     C7     C6      120.000    3.000
+ NDL      C8     C7     C6      120.000    3.000
+ NDL      C7     C8     H8      120.000    3.000
+ NDL      C7     C8     C3      120.000    3.000
+ NDL      H8     C8     C3      120.000    3.000
+ NDL      C8     C3     H3      120.000    3.000
+ NDL      C8     C3     C4      120.000    3.000
+ NDL      H3     C3     C4      120.000    3.000
+ NDL      C3     C4     H4      120.000    3.000
+ NDL      C3     C4     C5      120.000    3.000
+ NDL      H4     C4     C5      120.000    3.000
+ NDL      C4     C5     H5      120.000    3.000
+ NDL      C4     C5     C6      120.000    3.000
+ NDL      H5     C5     C6      120.000    3.000
+ NDL      C5     C6     H6      120.000    3.000
+ NDL      C5     C6     C7      120.000    3.000
+ NDL      H6     C6     C7      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NDL      var_1    O47    C46    C38    N37        0.007   20.000   3
+ NDL      var_2    C46    C38    C39    C40      174.991   20.000   3
+ NDL      var_3    C38    C39    C40    C41      180.000   20.000   3
+ NDL      var_4    C39    C40    C41    N42      179.970   20.000   3
+ NDL      var_5    C40    C41    N42    C43      179.961   20.000   3
+ NDL      CONST_1  C41    N42    C43    N44      180.000    0.000   0
+ NDL      CONST_2  N42    C43    N45    H451     180.000    0.000   0
+ NDL      CONST_3  N42    C43    N44    HN44     180.000    0.000   0
+ NDL      var_6    C46    C38    N37    C35      -85.056   20.000   3
+ NDL      CONST_4  C38    N37    C35    C27      180.000    0.000   0
+ NDL      var_7    N37    C35    C27    N26     -179.961   20.000   3
+ NDL      var_8    C35    C27    C28    C29      174.959   20.000   3
+ NDL      var_9    C27    C28    C29    C30     -179.973   20.000   3
+ NDL      var_10   C28    C29    C30    N31     -179.955   20.000   3
+ NDL      var_11   C29    C30    N31    C32      179.961   20.000   3
+ NDL      CONST_5  C30    N31    C32    N33        0.000    0.000   0
+ NDL      CONST_6  N31    C32    N34    HN34     180.000    0.000   0
+ NDL      CONST_7  N31    C32    N33    H331     180.000    0.000   0
+ NDL      var_12   C35    C27    N26    C24     -155.028   20.000   3
+ NDL      CONST_8  C27    N26    C24    C18      180.000    0.000   0
+ NDL      var_13   N26    C24    C18    N17     -179.987   20.000   3
+ NDL      var_14   C24    C18    C19    C20      174.962   20.000   3
+ NDL      var_15   C18    C19    C20    C21      179.988   20.000   3
+ NDL      var_16   C19    C20    C21    C22     -179.963   20.000   3
+ NDL      var_17   C20    C21    C22    N23     -179.971   20.000   3
+ NDL      var_18   C21    C22    N23    H231      66.209   20.000   1
+ NDL      var_19   C24    C18    N17    C15     -155.012   20.000   3
+ NDL      CONST_9  C18    N17    C15    C10      180.000    0.000   0
+ NDL      var_20   N17    C15    C10    N9      -179.996   20.000   3
+ NDL      var_21   C15    C10    C12    C11      174.987   20.000   3
+ NDL      var_22   C10    C12    C11    C14      179.971   20.000   3
+ NDL      var_23   C12    C11    C14    C13      179.971   20.000   3
+ NDL      var_24   C11    C14    C13    H131     179.979   20.000   3
+ NDL      var_25   C15    C10    N9     C1      -154.978   20.000   3
+ NDL      CONST_10 C10    N9     C1     C7       180.000    0.000   0
+ NDL      var_26   N9     C1     C7     C8       179.986   20.000   1
+ NDL      CONST_11 C1     C7     C6     C5       180.000    0.000   0
+ NDL      CONST_12 C1     C7     C8     C3       180.000    0.000   0
+ NDL      CONST_13 C7     C8     C3     C4         0.000    0.000   0
+ NDL      CONST_14 C8     C3     C4     C5         0.000    0.000   0
+ NDL      CONST_15 C3     C4     C5     C6         0.000    0.000   0
+ NDL      CONST_16 C4     C5     C6     C7         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NDL      chir_01  C10    N9     C12    C15       negativ
+ NDL      chir_02  C18    N17    C19    C24       negativ
+ NDL      chir_03  C27    N26    C28    C35       negativ
+ NDL      chir_04  C38    N37    C46    C39       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NDL      plan-1    C1        0.020
+ NDL      plan-1    O2        0.020
+ NDL      plan-1    C7        0.020
+ NDL      plan-1    N9        0.020
+ NDL      plan-1    HN9       0.020
+ NDL      plan-2    C7        0.020
+ NDL      plan-2    C1        0.020
+ NDL      plan-2    C6        0.020
+ NDL      plan-2    C8        0.020
+ NDL      plan-2    C5        0.020
+ NDL      plan-2    C4        0.020
+ NDL      plan-2    C3        0.020
+ NDL      plan-2    H6        0.020
+ NDL      plan-2    H5        0.020
+ NDL      plan-2    H4        0.020
+ NDL      plan-2    H3        0.020
+ NDL      plan-2    H8        0.020
+ NDL      plan-3    N9        0.020
+ NDL      plan-3    C1        0.020
+ NDL      plan-3    C10       0.020
+ NDL      plan-3    HN9       0.020
+ NDL      plan-4    C15       0.020
+ NDL      plan-4    C10       0.020
+ NDL      plan-4    O16       0.020
+ NDL      plan-4    N17       0.020
+ NDL      plan-4    HN17      0.020
+ NDL      plan-5    N17       0.020
+ NDL      plan-5    C15       0.020
+ NDL      plan-5    C18       0.020
+ NDL      plan-5    HN17      0.020
+ NDL      plan-6    N23       0.020
+ NDL      plan-6    C22       0.020
+ NDL      plan-6    H231      0.020
+ NDL      plan-6    H232      0.020
+ NDL      plan-7    C24       0.020
+ NDL      plan-7    C18       0.020
+ NDL      plan-7    O25       0.020
+ NDL      plan-7    N26       0.020
+ NDL      plan-7    HN26      0.020
+ NDL      plan-8    N26       0.020
+ NDL      plan-8    C24       0.020
+ NDL      plan-8    C27       0.020
+ NDL      plan-8    HN26      0.020
+ NDL      plan-9    N31       0.020
+ NDL      plan-9    C30       0.020
+ NDL      plan-9    C32       0.020
+ NDL      plan-9    HN31      0.020
+ NDL      plan-10   C32       0.020
+ NDL      plan-10   N31       0.020
+ NDL      plan-10   N33       0.020
+ NDL      plan-10   N34       0.020
+ NDL      plan-10   HN34      0.020
+ NDL      plan-10   HN31      0.020
+ NDL      plan-10   H332      0.020
+ NDL      plan-10   H331      0.020
+ NDL      plan-11   N33       0.020
+ NDL      plan-11   C32       0.020
+ NDL      plan-11   H331      0.020
+ NDL      plan-11   H332      0.020
+ NDL      plan-12   C35       0.020
+ NDL      plan-12   C27       0.020
+ NDL      plan-12   O36       0.020
+ NDL      plan-12   N37       0.020
+ NDL      plan-12   HN37      0.020
+ NDL      plan-13   N37       0.020
+ NDL      plan-13   C35       0.020
+ NDL      plan-13   C38       0.020
+ NDL      plan-13   HN37      0.020
+ NDL      plan-14   C46       0.020
+ NDL      plan-14   OXT       0.020
+ NDL      plan-14   C38       0.020
+ NDL      plan-14   O47       0.020
+ NDL      plan-15   N42       0.020
+ NDL      plan-15   C41       0.020
+ NDL      plan-15   C43       0.020
+ NDL      plan-15   HN42      0.020
+ NDL      plan-16   C43       0.020
+ NDL      plan-16   N42       0.020
+ NDL      plan-16   N44       0.020
+ NDL      plan-16   N45       0.020
+ NDL      plan-16   HN44      0.020
+ NDL      plan-16   HN42      0.020
+ NDL      plan-16   H452      0.020
+ NDL      plan-16   H451      0.020
+ NDL      plan-17   N45       0.020
+ NDL      plan-17   C43       0.020
+ NDL      plan-17   H451      0.020
+ NDL      plan-17   H452      0.020
+# ------------------------------------------------------

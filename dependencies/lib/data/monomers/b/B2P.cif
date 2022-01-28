@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B2P     B2P     "2-bromo-2-methylpropanoicacid"     NON-POLYMER     13     7     .     
+#
+data_comp_B2P
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+B2P     OXT     O       O       0       75.135      134.872     50.299      
+B2P     C       C       C       0       74.467      133.857     50.591      
+B2P     O       O       OC      -1      73.579      133.359     49.869      
+B2P     CA      C       CT      0       74.770      133.149     51.925      
+B2P     BR      BR      BR      0       75.959      134.272     53.079      
+B2P     CB      C       CH3     0       75.502      131.832     51.688      
+B2P     CM      C       CH3     0       73.491      132.951     52.714      
+B2P     H2      H       H       0       76.107      131.659     52.427      
+B2P     H3      H       H       0       76.012      131.880     50.864      
+B2P     H4      H       H       0       74.861      131.106     51.625      
+B2P     H5      H       H       0       73.706      132.612     53.598      
+B2P     H6      H       H       0       72.918      132.315     52.257      
+B2P     H7      H       H       0       73.027      133.799     52.799      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B2P       OXT       C         DOUBLE    n         1.247     0.019     1.247     0.019     
+B2P       C         O         SINGLE    n         1.247     0.019     1.247     0.019     
+B2P       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+B2P       CA        CB        SINGLE    n         1.507     0.019     1.507     0.019     
+B2P       CA        CM        SINGLE    n         1.507     0.019     1.507     0.019     
+B2P       CA        BR        SINGLE    n         1.997     0.013     1.997     0.013     
+B2P       CB        H2        SINGLE    n         1.089     0.010     0.970     0.010     
+B2P       CB        H3        SINGLE    n         1.089     0.010     0.970     0.010     
+B2P       CB        H4        SINGLE    n         1.089     0.010     0.970     0.010     
+B2P       CM        H5        SINGLE    n         1.089     0.010     0.970     0.010     
+B2P       CM        H6        SINGLE    n         1.089     0.010     0.970     0.010     
+B2P       CM        H7        SINGLE    n         1.089     0.010     0.970     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+B2P         OXT           C           O     125.559    1.75
+B2P         OXT           C          CA     117.220    1.50
+B2P           O           C          CA     117.220    1.50
+B2P           C          CA          CB     110.920    1.69
+B2P           C          CA          CM     110.920    1.69
+B2P           C          CA          BR     108.633    3.00
+B2P          CB          CA          CM     112.145    1.50
+B2P          CB          CA          BR     107.390    1.50
+B2P          CM          CA          BR     107.390    1.50
+B2P          CA          CB          H2     109.467    1.50
+B2P          CA          CB          H3     109.467    1.50
+B2P          CA          CB          H4     109.467    1.50
+B2P          H2          CB          H3     109.474    1.50
+B2P          H2          CB          H4     109.474    1.50
+B2P          H3          CB          H4     109.474    1.50
+B2P          CA          CM          H5     109.467    1.50
+B2P          CA          CM          H6     109.467    1.50
+B2P          CA          CM          H7     109.467    1.50
+B2P          H5          CM          H6     109.474    1.50
+B2P          H5          CM          H7     109.474    1.50
+B2P          H6          CM          H7     109.474    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+B2P             sp2_sp3_1         OXT           C          CA          CB       0.000   10.00     6
+B2P             sp3_sp3_1           C          CA          CB          H2     180.000   10.00     3
+B2P            sp3_sp3_10           C          CA          CM          H5     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+B2P    plan-1           C   0.020
+B2P    plan-1          CA   0.020
+B2P    plan-1           O   0.020
+B2P    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+B2P SMILES           ACDLabs              12.01 "BrC(C(=O)O)(C)C"
+B2P InChI            InChI                1.03  "InChI=1S/C4H7BrO2/c1-4(2,5)3(6)7/h1-2H3,(H,6,7)"
+B2P InChIKey         InChI                1.03  XXSPGBOGLXKMDU-UHFFFAOYSA-N
+B2P SMILES_CANONICAL CACTVS               3.385 "CC(C)(Br)C(O)=O"
+B2P SMILES           CACTVS               3.385 "CC(C)(Br)C(O)=O"
+B2P SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "CC(C)(C(=O)O)Br"
+B2P SMILES           "OpenEye OEToolkits" 1.7.6 "CC(C)(C(=O)O)Br"
+B2P ?                acedrg               190         "dictionary generator"                  
+B2P ?                acedrg_database      11          "data source"                           
+B2P ?                rdkit                2017.03.2   "Chemoinformatics tool"
+B2P ?                refmac5              5.8.0158    "optimization tool"                     

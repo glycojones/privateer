@@ -1,0 +1,159 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BZF     BZF      BENZOFURAN     NON-POLYMER     15     9     .     
+#
+data_comp_BZF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BZF     O1      O       O2      0       27.674      6.127       2.291       
+BZF     C2      C       CR15    0       28.403      7.293       2.374       
+BZF     C3      C       CR15    0       28.281      7.877       3.568       
+BZF     C3A     C       CR56    0       27.403      7.040       4.348       
+BZF     C4      C       CR16    0       26.873      7.076       5.656       
+BZF     C5      C       CR16    0       26.031      6.045       6.049       
+BZF     C6      C       CR16    0       25.712      4.995       5.178       
+BZF     C7      C       CR16    0       26.219      4.936       3.886       
+BZF     C7A     C       CR56    0       27.059      5.975       3.511       
+BZF     H2      H       H       0       28.922      7.621       1.655       
+BZF     H3      H       H       0       28.691      8.685       3.850       
+BZF     H4      H       H       0       27.083      7.777       6.245       
+BZF     H5      H       H       0       25.666      6.049       6.920       
+BZF     H6      H       H       0       25.136      4.310       5.475       
+BZF     H7      H       H       0       26.008      4.234       3.298       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BZF       O1        C2        SINGLE    y         1.377     0.010     1.377     0.010     
+BZF       O1        C7A       SINGLE    y         1.374     0.010     1.374     0.010     
+BZF       C2        C3        DOUBLE    y         1.335     0.012     1.335     0.012     
+BZF       C3        C3A       SINGLE    y         1.443     0.013     1.443     0.013     
+BZF       C3A       C4        SINGLE    y         1.399     0.013     1.399     0.013     
+BZF       C3A       C7A       DOUBLE    y         1.391     0.010     1.391     0.010     
+BZF       C4        C5        DOUBLE    y         1.380     0.011     1.380     0.011     
+BZF       C5        C6        SINGLE    y         1.393     0.010     1.393     0.010     
+BZF       C6        C7        DOUBLE    y         1.380     0.011     1.380     0.011     
+BZF       C7        C7A       SINGLE    y         1.380     0.010     1.380     0.010     
+BZF       C2        H2        SINGLE    n         1.082     0.013     0.946     0.020     
+BZF       C3        H3        SINGLE    n         1.082     0.013     0.949     0.020     
+BZF       C4        H4        SINGLE    n         1.082     0.013     0.939     0.010     
+BZF       C5        H5        SINGLE    n         1.082     0.013     0.944     0.018     
+BZF       C6        H6        SINGLE    n         1.082     0.013     0.943     0.016     
+BZF       C7        H7        SINGLE    n         1.082     0.013     0.940     0.012     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BZF          C2          O1         C7A     105.716    1.50
+BZF          O1          C2          C3     112.034    1.50
+BZF          O1          C2          H2     122.586    3.00
+BZF          C3          C2          H2     125.380    3.00
+BZF          C2          C3         C3A     106.872    1.50
+BZF          C2          C3          H3     126.617    1.50
+BZF         C3A          C3          H3     126.511    1.50
+BZF          C3         C3A          C4     135.476    1.50
+BZF          C3         C3A         C7A     105.768    1.50
+BZF          C4         C3A         C7A     118.757    1.50
+BZF         C3A          C4          C5     118.141    1.50
+BZF         C3A          C4          H4     121.055    1.50
+BZF          C5          C4          H4     120.804    1.50
+BZF          C4          C5          C6     121.295    1.50
+BZF          C4          C5          H5     119.430    1.50
+BZF          C6          C5          H5     119.275    1.50
+BZF          C5          C6          C7     121.665    1.50
+BZF          C5          C6          H6     119.227    1.50
+BZF          C7          C6          H6     119.108    1.50
+BZF          C6          C7         C7A     116.034    1.50
+BZF          C6          C7          H7     122.105    1.50
+BZF         C7A          C7          H7     121.861    1.50
+BZF          O1         C7A         C3A     109.610    1.50
+BZF          O1         C7A          C7     126.281    1.50
+BZF         C3A         C7A          C7     124.109    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BZF       const_sp2_sp2_1          C3          C2          O1         C7A       0.000   10.00     2
+BZF              const_35         C3A         C7A          O1          C2       0.000   10.00     2
+BZF       const_sp2_sp2_3          O1          C2          C3         C3A       0.000   10.00     2
+BZF       const_sp2_sp2_8          C2          C3         C3A          C4     180.000   10.00     2
+BZF              const_17          C3         C3A          C4          C5     180.000   10.00     2
+BZF              const_11          C3         C3A         C7A          O1       0.000   10.00     2
+BZF              const_19         C3A          C4          C5          C6       0.000   10.00     2
+BZF              const_23          C4          C5          C6          C7       0.000   10.00     2
+BZF              const_27          C5          C6          C7         C7A       0.000   10.00     2
+BZF              const_32          C6          C7         C7A          O1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BZF    plan-1          C2   0.020
+BZF    plan-1          C3   0.020
+BZF    plan-1         C3A   0.020
+BZF    plan-1          C4   0.020
+BZF    plan-1          C7   0.020
+BZF    plan-1         C7A   0.020
+BZF    plan-1          H2   0.020
+BZF    plan-1          H3   0.020
+BZF    plan-1          O1   0.020
+BZF    plan-2          C3   0.020
+BZF    plan-2         C3A   0.020
+BZF    plan-2          C4   0.020
+BZF    plan-2          C5   0.020
+BZF    plan-2          C6   0.020
+BZF    plan-2          C7   0.020
+BZF    plan-2         C7A   0.020
+BZF    plan-2          H4   0.020
+BZF    plan-2          H5   0.020
+BZF    plan-2          H6   0.020
+BZF    plan-2          H7   0.020
+BZF    plan-2          O1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BZF SMILES           ACDLabs              10.04 o2c1ccccc1cc2
+BZF SMILES_CANONICAL CACTVS               3.341 o1ccc2ccccc12
+BZF SMILES           CACTVS               3.341 o1ccc2ccccc12
+BZF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)cco2"
+BZF SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)cco2"
+BZF InChI            InChI                1.03  "InChI=1S/C8H6O/c1-2-4-8-7(3-1)5-6-9-8/h1-6H"
+BZF InChIKey         InChI                1.03  IANQTJSKSUMEQM-UHFFFAOYSA-N
+BZF ?                acedrg               202         "dictionary generator"                  
+BZF ?                acedrg_database      11          "data source"                           
+BZF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BZF ?                refmac5              5.8.0189    "optimization tool"                     

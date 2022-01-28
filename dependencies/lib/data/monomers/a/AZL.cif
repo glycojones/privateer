@@ -1,0 +1,465 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AZL      AZL '1-ETHOXYCARBONYL-D-PHE-PRO-2(4-AMINO' non-polymer        63  30 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AZL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AZL           O23    O    O         0.000      0.000    0.000    0.000
+ AZL           C23    C    C         0.000     -0.404   -0.863   -0.754
+ AZL           O24    O    O2        0.000      0.399   -1.339   -1.724
+ AZL           C24    C    CH2       0.000      1.749   -0.824   -1.867
+ AZL           H241   H    H         0.000      2.307   -1.006   -0.946
+ AZL           H242   H    H         0.000      1.710    0.249   -2.062
+ AZL           C25    C    CH3       0.000      2.442   -1.531   -3.034
+ AZL           H253   H    H         0.000      2.482   -2.574   -2.847
+ AZL           H252   H    H         0.000      1.902   -1.356   -3.929
+ AZL           H251   H    H         0.000      3.429   -1.157   -3.142
+ AZL           N9     N    NH1       0.000     -1.657   -1.341   -0.622
+ AZL           HN9    H    H         0.000     -1.994   -2.058   -1.249
+ AZL           C15    C    CH1       0.000     -2.531   -0.821    0.432
+ AZL           H15    H    H         0.000     -2.269    0.226    0.642
+ AZL           C16    C    CH2       0.000     -2.351   -1.656    1.701
+ AZL           H161   H    H         0.000     -2.515   -2.710    1.469
+ AZL           H162   H    H         0.000     -3.074   -1.334    2.454
+ AZL           C17    C    CR6       0.000     -0.953   -1.468    2.233
+ AZL           C22    C    CR16      0.000      0.062   -2.310    1.819
+ AZL           H22    H    H         0.000     -0.148   -3.107    1.115
+ AZL           C21    C    CR16      0.000      1.345   -2.136    2.303
+ AZL           H21    H    H         0.000      2.142   -2.791    1.974
+ AZL           C20    C    CR16      0.000      1.611   -1.125    3.206
+ AZL           H20    H    H         0.000      2.615   -0.990    3.588
+ AZL           C19    C    CR16      0.000      0.594   -0.286    3.624
+ AZL           H19    H    H         0.000      0.803    0.506    4.332
+ AZL           C18    C    CR16      0.000     -0.688   -0.458    3.137
+ AZL           H18    H    H         0.000     -1.484    0.199    3.465
+ AZL           C14    C    C         0.000     -3.966   -0.899   -0.021
+ AZL           O14    O    O         0.000     -4.301   -1.736   -0.833
+ AZL           N8     N    N         0.000     -4.876   -0.040    0.476
+ AZL           C12    C    CH2       0.000     -4.635    0.949    1.541
+ AZL           H121   H    H         0.000     -4.227    1.880    1.142
+ AZL           H122   H    H         0.000     -3.964    0.558    2.309
+ AZL           C11    C    CH2       0.000     -6.029    1.217    2.159
+ AZL           H111   H    H         0.000     -6.111    2.199    2.628
+ AZL           H112   H    H         0.000     -6.340    0.448    2.870
+ AZL           C10    C    CH2       0.000     -6.941    1.162    0.905
+ AZL           H101   H    H         0.000     -6.956    2.106    0.356
+ AZL           H102   H    H         0.000     -7.965    0.866    1.144
+ AZL           C9     C    CH1       0.000     -6.276    0.072    0.039
+ AZL           H9     H    H         0.000     -6.790   -0.888    0.190
+ AZL           C8     C    C         0.000     -6.341    0.461   -1.415
+ AZL           O8     O    O         0.000     -5.318    0.625   -2.044
+ AZL           N7     N    NH1       0.000     -7.536    0.628   -2.015
+ AZL           HN7    H    H         0.000     -8.388    0.493   -1.490
+ AZL           N6     N    NH1       0.000     -7.595    0.981   -3.333
+ AZL           HN6    H    H         0.000     -6.811    1.141   -3.949
+ AZL           C5     C    CH2       0.000     -9.018    1.082   -3.681
+ AZL           H51    H    H         0.000     -9.492    1.839   -3.053
+ AZL           H52    H    H         0.000     -9.502    0.117   -3.513
+ AZL           C4     C    CH2       0.000     -9.159    1.475   -5.152
+ AZL           H41    H    H         0.000     -8.683    0.717   -5.777
+ AZL           H42    H    H         0.000     -8.673    2.439   -5.317
+ AZL           C3     C    CH2       0.000    -10.642    1.580   -5.514
+ AZL           H31    H    H         0.000    -11.116    2.338   -4.886
+ AZL           H32    H    H         0.000    -11.126    0.616   -5.347
+ AZL           C2     C    CH2       0.000    -10.780    1.974   -6.985
+ AZL           H21A   H    H         0.000    -10.304    1.217   -7.611
+ AZL           H22A   H    H         0.000    -10.296    2.939   -7.151
+ AZL           N1     N    NH2       0.000    -12.204    2.074   -7.332
+ AZL           HN12   H    H         0.000    -12.610    2.971   -7.577
+ AZL           HN11   H    H         0.000    -12.791    1.248   -7.330
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AZL      O23    n/a    C23    START
+ AZL      C23    O23    N9     .
+ AZL      O24    C23    C24    .
+ AZL      C24    O24    C25    .
+ AZL      H241   C24    .      .
+ AZL      H242   C24    .      .
+ AZL      C25    C24    H251   .
+ AZL      H253   C25    .      .
+ AZL      H252   C25    .      .
+ AZL      H251   C25    .      .
+ AZL      N9     C23    C15    .
+ AZL      HN9    N9     .      .
+ AZL      C15    N9     C14    .
+ AZL      H15    C15    .      .
+ AZL      C16    C15    C17    .
+ AZL      H161   C16    .      .
+ AZL      H162   C16    .      .
+ AZL      C17    C16    C22    .
+ AZL      C22    C17    C21    .
+ AZL      H22    C22    .      .
+ AZL      C21    C22    C20    .
+ AZL      H21    C21    .      .
+ AZL      C20    C21    C19    .
+ AZL      H20    C20    .      .
+ AZL      C19    C20    C18    .
+ AZL      H19    C19    .      .
+ AZL      C18    C19    H18    .
+ AZL      H18    C18    .      .
+ AZL      C14    C15    N8     .
+ AZL      O14    C14    .      .
+ AZL      N8     C14    C12    .
+ AZL      C12    N8     C11    .
+ AZL      H121   C12    .      .
+ AZL      H122   C12    .      .
+ AZL      C11    C12    C10    .
+ AZL      H111   C11    .      .
+ AZL      H112   C11    .      .
+ AZL      C10    C11    C9     .
+ AZL      H101   C10    .      .
+ AZL      H102   C10    .      .
+ AZL      C9     C10    C8     .
+ AZL      H9     C9     .      .
+ AZL      C8     C9     N7     .
+ AZL      O8     C8     .      .
+ AZL      N7     C8     N6     .
+ AZL      HN7    N7     .      .
+ AZL      N6     N7     C5     .
+ AZL      HN6    N6     .      .
+ AZL      C5     N6     C4     .
+ AZL      H51    C5     .      .
+ AZL      H52    C5     .      .
+ AZL      C4     C5     C3     .
+ AZL      H41    C4     .      .
+ AZL      H42    C4     .      .
+ AZL      C3     C4     C2     .
+ AZL      H31    C3     .      .
+ AZL      H32    C3     .      .
+ AZL      C2     C3     N1     .
+ AZL      H21A   C2     .      .
+ AZL      H22A   C2     .      .
+ AZL      N1     C2     HN11   .
+ AZL      HN12   N1     .      .
+ AZL      HN11   N1     .      END
+ AZL      C9     N8     .    ADD
+ AZL      C17    C18    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AZL       N1        C2        single    1.450     0.020     1.450     0.020     
+AZL       HN11      N1        single    1.036     0.016     0.914     0.007     
+AZL       HN12      N1        single    1.036     0.016     0.914     0.007     
+AZL       C2        C3        single    1.524     0.020     1.524     0.020     
+AZL       H21A      C2        single    1.089     0.010     0.989     0.005     
+AZL       H22A      C2        single    1.089     0.010     0.989     0.005     
+AZL       C3        C4        single    1.524     0.020     1.524     0.020     
+AZL       H31       C3        single    1.089     0.010     0.989     0.005     
+AZL       H32       C3        single    1.089     0.010     0.989     0.005     
+AZL       C4        C5        single    1.524     0.020     1.524     0.020     
+AZL       H41       C4        single    1.089     0.010     0.989     0.005     
+AZL       H42       C4        single    1.089     0.010     0.989     0.005     
+AZL       C5        N6        single    1.450     0.020     1.450     0.020     
+AZL       H51       C5        single    1.089     0.010     0.989     0.005     
+AZL       H52       C5        single    1.089     0.010     0.989     0.005     
+AZL       N6        N7        single    1.400     0.020     1.400     0.020     
+AZL       HN6       N6        single    1.036     0.016     0.914     0.007     
+AZL       N7        C8        single    1.330     0.020     1.330     0.020     
+AZL       HN7       N7        single    1.016     0.010     0.899     0.007     
+AZL       O8        C8        double    1.220     0.020     1.220     0.020     
+AZL       C8        C9        single    1.500     0.020     1.500     0.020     
+AZL       C9        N8        single    1.455     0.020     1.455     0.020     
+AZL       C9        C10       single    1.524     0.020     1.524     0.020     
+AZL       H9        C9        single    1.089     0.010     0.989     0.005     
+AZL       C12       N8        single    1.455     0.020     1.455     0.020     
+AZL       N8        C14       single    1.330     0.020     1.330     0.020     
+AZL       C10       C11       single    1.524     0.020     1.524     0.020     
+AZL       H101      C10       single    1.089     0.010     0.989     0.005     
+AZL       H102      C10       single    1.089     0.010     0.989     0.005     
+AZL       C11       C12       single    1.524     0.020     1.524     0.020     
+AZL       H111      C11       single    1.089     0.010     0.989     0.005     
+AZL       H112      C11       single    1.089     0.010     0.989     0.005     
+AZL       H121      C12       single    1.089     0.010     0.989     0.005     
+AZL       H122      C12       single    1.089     0.010     0.989     0.005     
+AZL       O14       C14       double    1.220     0.020     1.220     0.020     
+AZL       C14       C15       single    1.500     0.020     1.500     0.020     
+AZL       C15       N9        single    1.450     0.020     1.450     0.020     
+AZL       C16       C15       single    1.524     0.020     1.524     0.020     
+AZL       H15       C15       single    1.089     0.010     0.989     0.005     
+AZL       N9        C23       single    1.330     0.020     1.330     0.020     
+AZL       HN9       N9        single    1.016     0.010     0.899     0.007     
+AZL       C17       C16       single    1.511     0.020     1.511     0.020     
+AZL       H161      C16       single    1.089     0.010     0.989     0.005     
+AZL       H162      C16       single    1.089     0.010     0.989     0.005     
+AZL       C17       C18       double    1.390     0.020     1.390     0.020     
+AZL       C22       C17       single    1.390     0.020     1.390     0.020     
+AZL       C18       C19       single    1.390     0.020     1.390     0.020     
+AZL       H18       C18       single    1.082     0.013     0.975     0.010     
+AZL       C19       C20       double    1.390     0.020     1.390     0.020     
+AZL       H19       C19       single    1.082     0.013     0.975     0.010     
+AZL       C20       C21       single    1.390     0.020     1.390     0.020     
+AZL       H20       C20       single    1.082     0.013     0.975     0.010     
+AZL       C21       C22       double    1.390     0.020     1.390     0.020     
+AZL       H21       C21       single    1.082     0.013     0.975     0.010     
+AZL       H22       C22       single    1.082     0.013     0.975     0.010     
+AZL       C23       O23       double    1.220     0.020     1.220     0.020     
+AZL       O24       C23       single    1.454     0.020     1.454     0.020     
+AZL       C24       O24       single    1.426     0.020     1.426     0.020     
+AZL       C25       C24       single    1.513     0.020     1.513     0.020     
+AZL       H241      C24       single    1.089     0.010     0.989     0.005     
+AZL       H242      C24       single    1.089     0.010     0.989     0.005     
+AZL       H251      C25       single    1.089     0.010     0.989     0.005     
+AZL       H252      C25       single    1.089     0.010     0.989     0.005     
+AZL       H253      C25       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AZL      O23    C23    O24     119.000    3.000
+ AZL      O23    C23    N9      123.000    3.000
+ AZL      O24    C23    N9      118.000    3.000
+ AZL      C23    O24    C24     120.000    3.000
+ AZL      O24    C24    H241    109.470    3.000
+ AZL      O24    C24    H242    109.470    3.000
+ AZL      O24    C24    C25     109.470    3.000
+ AZL      H241   C24    H242    107.900    3.000
+ AZL      H241   C24    C25     109.470    3.000
+ AZL      H242   C24    C25     109.470    3.000
+ AZL      C24    C25    H253    109.470    3.000
+ AZL      C24    C25    H252    109.470    3.000
+ AZL      C24    C25    H251    109.470    3.000
+ AZL      H253   C25    H252    109.470    3.000
+ AZL      H253   C25    H251    109.470    3.000
+ AZL      H252   C25    H251    109.470    3.000
+ AZL      C23    N9     HN9     120.000    3.000
+ AZL      C23    N9     C15     121.500    3.000
+ AZL      HN9    N9     C15     118.500    3.000
+ AZL      N9     C15    H15     108.550    3.000
+ AZL      N9     C15    C16     110.000    3.000
+ AZL      N9     C15    C14     111.600    3.000
+ AZL      H15    C15    C16     108.340    3.000
+ AZL      H15    C15    C14     108.810    3.000
+ AZL      C16    C15    C14     109.470    3.000
+ AZL      C15    C16    H161    109.470    3.000
+ AZL      C15    C16    H162    109.470    3.000
+ AZL      C15    C16    C17     109.470    3.000
+ AZL      H161   C16    H162    107.900    3.000
+ AZL      H161   C16    C17     109.470    3.000
+ AZL      H162   C16    C17     109.470    3.000
+ AZL      C16    C17    C22     120.000    3.000
+ AZL      C16    C17    C18     120.000    3.000
+ AZL      C22    C17    C18     120.000    3.000
+ AZL      C17    C22    H22     120.000    3.000
+ AZL      C17    C22    C21     120.000    3.000
+ AZL      H22    C22    C21     120.000    3.000
+ AZL      C22    C21    H21     120.000    3.000
+ AZL      C22    C21    C20     120.000    3.000
+ AZL      H21    C21    C20     120.000    3.000
+ AZL      C21    C20    H20     120.000    3.000
+ AZL      C21    C20    C19     120.000    3.000
+ AZL      H20    C20    C19     120.000    3.000
+ AZL      C20    C19    H19     120.000    3.000
+ AZL      C20    C19    C18     120.000    3.000
+ AZL      H19    C19    C18     120.000    3.000
+ AZL      C19    C18    H18     120.000    3.000
+ AZL      C19    C18    C17     120.000    3.000
+ AZL      H18    C18    C17     120.000    3.000
+ AZL      C15    C14    O14     120.500    3.000
+ AZL      C15    C14    N8      116.500    3.000
+ AZL      O14    C14    N8      123.000    3.000
+ AZL      C14    N8     C12     127.000    3.000
+ AZL      C14    N8     C9      121.000    3.000
+ AZL      C12    N8     C9      112.000    3.000
+ AZL      N8     C12    H121    109.470    3.000
+ AZL      N8     C12    H122    109.470    3.000
+ AZL      N8     C12    C11     105.000    3.000
+ AZL      H121   C12    H122    107.900    3.000
+ AZL      H121   C12    C11     109.470    3.000
+ AZL      H122   C12    C11     109.470    3.000
+ AZL      C12    C11    H111    109.470    3.000
+ AZL      C12    C11    H112    109.470    3.000
+ AZL      C12    C11    C10     111.000    3.000
+ AZL      H111   C11    H112    107.900    3.000
+ AZL      H111   C11    C10     109.470    3.000
+ AZL      H112   C11    C10     109.470    3.000
+ AZL      C11    C10    H101    109.470    3.000
+ AZL      C11    C10    H102    109.470    3.000
+ AZL      C11    C10    C9      111.000    3.000
+ AZL      H101   C10    H102    107.900    3.000
+ AZL      H101   C10    C9      109.470    3.000
+ AZL      H102   C10    C9      109.470    3.000
+ AZL      C10    C9     H9      108.340    3.000
+ AZL      C10    C9     C8      109.470    3.000
+ AZL      C10    C9     N8      105.000    3.000
+ AZL      H9     C9     C8      108.810    3.000
+ AZL      H9     C9     N8      109.470    3.000
+ AZL      C8     C9     N8      111.600    3.000
+ AZL      C9     C8     O8      120.500    3.000
+ AZL      C9     C8     N7      116.500    3.000
+ AZL      O8     C8     N7      123.000    3.000
+ AZL      C8     N7     HN7     120.000    3.000
+ AZL      C8     N7     N6      120.000    3.000
+ AZL      HN7    N7     N6      120.000    3.000
+ AZL      N7     N6     HN6     120.000    3.000
+ AZL      N7     N6     C5      120.000    3.000
+ AZL      HN6    N6     C5      118.500    3.000
+ AZL      N6     C5     H51     109.470    3.000
+ AZL      N6     C5     H52     109.470    3.000
+ AZL      N6     C5     C4      112.000    3.000
+ AZL      H51    C5     H52     107.900    3.000
+ AZL      H51    C5     C4      109.470    3.000
+ AZL      H52    C5     C4      109.470    3.000
+ AZL      C5     C4     H41     109.470    3.000
+ AZL      C5     C4     H42     109.470    3.000
+ AZL      C5     C4     C3      111.000    3.000
+ AZL      H41    C4     H42     107.900    3.000
+ AZL      H41    C4     C3      109.470    3.000
+ AZL      H42    C4     C3      109.470    3.000
+ AZL      C4     C3     H31     109.470    3.000
+ AZL      C4     C3     H32     109.470    3.000
+ AZL      C4     C3     C2      111.000    3.000
+ AZL      H31    C3     H32     107.900    3.000
+ AZL      H31    C3     C2      109.470    3.000
+ AZL      H32    C3     C2      109.470    3.000
+ AZL      C3     C2     H21A    109.470    3.000
+ AZL      C3     C2     H22A    109.470    3.000
+ AZL      C3     C2     N1      109.470    3.000
+ AZL      H21A   C2     H22A    107.900    3.000
+ AZL      H21A   C2     N1      109.470    3.000
+ AZL      H22A   C2     N1      109.470    3.000
+ AZL      C2     N1     HN12    120.000    3.000
+ AZL      C2     N1     HN11    120.000    3.000
+ AZL      HN12   N1     HN11    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AZL      var_1    O23    C23    O24    C24        0.063   20.000   1
+ AZL      var_2    C23    O24    C24    C25      179.933   20.000   1
+ AZL      var_3    O24    C24    C25    H251     179.988   20.000   3
+ AZL      CONST_1  O23    C23    N9     C15        0.000    0.000   0
+ AZL      var_4    C23    N9     C15    C14      150.043   20.000   3
+ AZL      var_5    N9     C15    C16    C17       65.666   20.000   3
+ AZL      var_6    C15    C16    C17    C22      -90.271   20.000   2
+ AZL      CONST_2  C16    C17    C18    C19      180.000    0.000   0
+ AZL      CONST_3  C16    C17    C22    C21      180.000    0.000   0
+ AZL      CONST_4  C17    C22    C21    C20        0.000    0.000   0
+ AZL      CONST_5  C22    C21    C20    C19        0.000    0.000   0
+ AZL      CONST_6  C21    C20    C19    C18        0.000    0.000   0
+ AZL      CONST_7  C20    C19    C18    C17        0.000    0.000   0
+ AZL      var_7    N9     C15    C14    N8      -153.158   20.000   3
+ AZL      CONST_8  C15    C14    N8     C12        0.000    0.000   0
+ AZL      var_8    C14    N8     C12    C11     -150.000   20.000   1
+ AZL      var_9    N8     C12    C11    C10      -30.000   20.000   3
+ AZL      var_10   C12    C11    C10    C9        30.000   20.000   3
+ AZL      var_11   C11    C10    C9     C8      -150.000   20.000   3
+ AZL      var_12   C10    C9     N8     C14      180.000   20.000   3
+ AZL      var_13   C10    C9     C8     N7       -61.384   20.000   3
+ AZL      CONST_9  C9     C8     N7     N6       180.000    0.000   0
+ AZL      var_14   C8     N7     N6     C5       179.998   20.000   1
+ AZL      var_15   N7     N6     C5     C4      -179.992   20.000   3
+ AZL      var_16   N6     C5     C4     C3      -179.988   20.000   3
+ AZL      var_17   C5     C4     C3     C2       179.993   20.000   3
+ AZL      var_18   C4     C3     C2     N1       179.964   20.000   3
+ AZL      var_19   C3     C2     N1     HN11     -66.238   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AZL      chir_01  C9     C8     N8     C10       negativ
+ AZL      chir_02  C15    C14    N9     C16       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AZL      plan-1    N1        0.020
+ AZL      plan-1    C2        0.020
+ AZL      plan-1    HN11      0.020
+ AZL      plan-1    HN12      0.020
+ AZL      plan-2    N6        0.020
+ AZL      plan-2    C5        0.020
+ AZL      plan-2    N7        0.020
+ AZL      plan-2    HN6       0.020
+ AZL      plan-2    HN7       0.020
+ AZL      plan-3    N7        0.020
+ AZL      plan-3    N6        0.020
+ AZL      plan-3    C8        0.020
+ AZL      plan-3    HN7       0.020
+ AZL      plan-3    HN6       0.020
+ AZL      plan-4    C8        0.020
+ AZL      plan-4    N7        0.020
+ AZL      plan-4    O8        0.020
+ AZL      plan-4    C9        0.020
+ AZL      plan-4    HN7       0.020
+ AZL      plan-5    N8        0.020
+ AZL      plan-5    C9        0.020
+ AZL      plan-5    C12       0.020
+ AZL      plan-5    C14       0.020
+ AZL      plan-6    C14       0.020
+ AZL      plan-6    N8        0.020
+ AZL      plan-6    O14       0.020
+ AZL      plan-6    C15       0.020
+ AZL      plan-7    N9        0.020
+ AZL      plan-7    C15       0.020
+ AZL      plan-7    C23       0.020
+ AZL      plan-7    HN9       0.020
+ AZL      plan-8    C17       0.020
+ AZL      plan-8    C16       0.020
+ AZL      plan-8    C18       0.020
+ AZL      plan-8    C22       0.020
+ AZL      plan-8    C19       0.020
+ AZL      plan-8    C20       0.020
+ AZL      plan-8    C21       0.020
+ AZL      plan-8    H18       0.020
+ AZL      plan-8    H19       0.020
+ AZL      plan-8    H20       0.020
+ AZL      plan-8    H21       0.020
+ AZL      plan-8    H22       0.020
+ AZL      plan-9    C23       0.020
+ AZL      plan-9    N9        0.020
+ AZL      plan-9    O23       0.020
+ AZL      plan-9    O24       0.020
+ AZL      plan-9    HN9       0.020
+# ------------------------------------------------------

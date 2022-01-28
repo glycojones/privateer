@@ -1,0 +1,95 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DCE     DCE      1,2-DICHLOROETHANE     NON-POLYMER     8     4     .     
+#
+data_comp_DCE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DCE     CL1     CL      CL      0       26.877      41.055      19.602      
+DCE     C1      C       CH2     0       28.213      40.013      20.173      
+DCE     C2      C       CH2     0       28.287      38.776      19.377      
+DCE     CL2     CL      CL      0       26.857      37.745      19.675      
+DCE     H11     H       H       0       28.072      39.784      21.120      
+DCE     H12     H       H       0       29.065      40.500      20.100      
+DCE     H21     H       H       0       29.105      38.284      19.614      
+DCE     H22     H       H       0       28.334      39.006      18.421      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DCE       CL1       C1        SINGLE    n         1.788     0.020     1.788     0.020     
+DCE       C1        C2        SINGLE    n         1.473     0.020     1.473     0.020     
+DCE       C2        CL2       SINGLE    n         1.788     0.020     1.788     0.020     
+DCE       C1        H11       SINGLE    n         1.089     0.010     0.984     0.013     
+DCE       C1        H12       SINGLE    n         1.089     0.010     0.984     0.013     
+DCE       C2        H21       SINGLE    n         1.089     0.010     0.984     0.013     
+DCE       C2        H22       SINGLE    n         1.089     0.010     0.984     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DCE         CL1          C1          C2     110.650    3.00
+DCE         CL1          C1         H11     109.572    1.50
+DCE         CL1          C1         H12     109.572    1.50
+DCE          C2          C1         H11     109.348    1.63
+DCE          C2          C1         H12     109.348    1.63
+DCE         H11          C1         H12     108.091    1.50
+DCE          C1          C2         CL2     110.650    3.00
+DCE          C1          C2         H21     109.348    1.63
+DCE          C1          C2         H22     109.348    1.63
+DCE         CL2          C2         H21     109.572    1.50
+DCE         CL2          C2         H22     109.572    1.50
+DCE         H21          C2         H22     108.091    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DCE             sp3_sp3_1         CL1          C1          C2         CL2     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DCE SMILES           ACDLabs              10.04 ClCCCl
+DCE SMILES_CANONICAL CACTVS               3.341 ClCCCl
+DCE SMILES           CACTVS               3.341 ClCCCl
+DCE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CCl)Cl"
+DCE SMILES           "OpenEye OEToolkits" 1.5.0 "C(CCl)Cl"
+DCE InChI            InChI                1.03  InChI=1S/C2H4Cl2/c3-1-2-4/h1-2H2
+DCE InChIKey         InChI                1.03  WSLDOOZREJYCGB-UHFFFAOYSA-N
+DCE ?                acedrg               202         "dictionary generator"                  
+DCE ?                acedrg_database      11          "data source"                           
+DCE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DCE ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,179 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UAL      UAL '(2Z)-2-amino-3-(carbamoylamino)prop-' non-polymer        16  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_UAL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ UAL           OXT    O    OC       -0.500      0.000    0.000    0.000
+ UAL           C      C    C         0.000     -1.131   -0.534   -0.004
+ UAL           O      O    OC       -0.500     -1.235   -1.780   -0.003
+ UAL           CA     C    C         0.000     -2.333    0.300   -0.002
+ UAL           N      N    NH2       0.000     -2.216    1.704   -0.002
+ UAL           H5     H    H         0.000     -3.044    2.308   -0.001
+ UAL           HN     H    H         0.000     -1.301    2.164   -0.003
+ UAL           CB     C    C1        0.000     -3.553   -0.276   -0.002
+ UAL           HB     H    H         0.000     -3.642   -1.349   -0.002
+ UAL           N1     N    NH1       0.000     -4.687    0.511    0.000
+ UAL           H6     H    H         0.000     -4.603    1.517    0.001
+ UAL           C1     C    C         0.000     -5.905   -0.065    0.001
+ UAL           O2     O    O         0.000     -6.006   -1.276    0.002
+ UAL           N2     N    NH2       0.000     -7.013    0.703    0.003
+ UAL           HN2A   H    H         0.000     -6.934    1.713    0.003
+ UAL           HN2    H    H         0.000     -7.931    0.276    0.003
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ UAL      OXT    n/a    C      START
+ UAL      C      OXT    CA     .
+ UAL      O      C      .      .
+ UAL      CA     C      CB     .
+ UAL      N      CA     HN     .
+ UAL      H5     N      .      .
+ UAL      HN     N      .      .
+ UAL      CB     CA     N1     .
+ UAL      HB     CB     .      .
+ UAL      N1     CB     C1     .
+ UAL      H6     N1     .      .
+ UAL      C1     N1     N2     .
+ UAL      O2     C1     .      .
+ UAL      N2     C1     HN2    .
+ UAL      HN2A   N2     .      .
+ UAL      HN2    N2     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UAL       O         C         deloc     1.250     0.020     1.250     0.020     
+UAL       C         OXT       deloc     1.250     0.020     1.250     0.020     
+UAL       N         CA        single    1.332     0.020     1.332     0.020     
+UAL       HN        N         single    1.016     0.010     0.899     0.007     
+UAL       O2        C1        double    1.220     0.020     1.220     0.020     
+UAL       C1        N1        single    1.330     0.020     1.330     0.020     
+UAL       N1        CB        single    1.330     0.020     1.330     0.020     
+UAL       N2        C1        single    1.332     0.020     1.332     0.020     
+UAL       HN2       N2        single    1.016     0.010     0.899     0.007     
+UAL       HN2A      N2        single    1.016     0.010     0.899     0.007     
+UAL       CA        C         single    1.460     0.020     1.460     0.020     
+UAL       CB        CA        double    1.340     0.020     1.340     0.020     
+UAL       HB        CB        single    1.082     0.013     0.975     0.010     
+UAL       H5        N         single    1.016     0.010     0.899     0.007     
+UAL       H6        N1        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ UAL      OXT    C      O       123.000    3.000
+ UAL      OXT    C      CA      120.000    3.000
+ UAL      O      C      CA      120.000    3.000
+ UAL      C      CA     N       120.000    3.000
+ UAL      C      CA     CB      120.000    3.000
+ UAL      N      CA     CB      120.000    3.000
+ UAL      CA     N      H5      120.000    3.000
+ UAL      CA     N      HN      120.000    3.000
+ UAL      H5     N      HN      120.000    3.000
+ UAL      CA     CB     HB      120.000    3.000
+ UAL      CA     CB     N1      120.000    3.000
+ UAL      HB     CB     N1      120.000    3.000
+ UAL      CB     N1     H6      120.000    3.000
+ UAL      CB     N1     C1      120.000    3.000
+ UAL      H6     N1     C1      120.000    3.000
+ UAL      N1     C1     O2      123.000    3.000
+ UAL      N1     C1     N2      120.000    3.000
+ UAL      O2     C1     N2      123.000    3.000
+ UAL      C1     N2     HN2A    120.000    3.000
+ UAL      C1     N2     HN2     120.000    3.000
+ UAL      HN2A   N2     HN2     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ UAL      var_1    OXT    C      CA     CB      -179.757   20.000   1
+ UAL      CONST_1  C      CA     N      HN         0.000    0.000   0
+ UAL      CONST_2  C      CA     CB     N1       179.997    0.000   0
+ UAL      var_2    CA     CB     N1     C1      -180.000   20.000   1
+ UAL      CONST_3  CB     N1     C1     N2       180.000    0.000   0
+ UAL      CONST_4  N1     C1     N2     HN2      180.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ UAL      plan-1    C         0.020
+ UAL      plan-1    O         0.020
+ UAL      plan-1    CA        0.020
+ UAL      plan-1    OXT       0.020
+ UAL      plan-2    N         0.020
+ UAL      plan-2    CA        0.020
+ UAL      plan-2    HN        0.020
+ UAL      plan-2    H5        0.020
+ UAL      plan-3    C1        0.020
+ UAL      plan-3    N1        0.020
+ UAL      plan-3    N2        0.020
+ UAL      plan-3    O2        0.020
+ UAL      plan-3    H6        0.020
+ UAL      plan-3    HN2A      0.020
+ UAL      plan-3    HN2       0.020
+ UAL      plan-4    N1        0.020
+ UAL      plan-4    C1        0.020
+ UAL      plan-4    CB        0.020
+ UAL      plan-4    H6        0.020
+ UAL      plan-4    HB        0.020
+ UAL      plan-5    N2        0.020
+ UAL      plan-5    C1        0.020
+ UAL      plan-5    HN2       0.020
+ UAL      plan-5    HN2A      0.020
+ UAL      plan-6    CA        0.020
+ UAL      plan-6    C         0.020
+ UAL      plan-6    N         0.020
+ UAL      plan-6    CB        0.020
+ UAL      plan-6    N1        0.020
+ UAL      plan-6    HB        0.020
+ UAL      plan-6    H5        0.020
+ UAL      plan-6    HN        0.020
+ UAL      plan-6    H6        0.020
+# ------------------------------------------------------

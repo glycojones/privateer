@@ -1,0 +1,617 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PTT      PTT '.                                   ' non-polymer        78  52 .
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PTT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PTT           O3P    O    OP       -0.500      0.066    4.032    4.195
+ PTT           P1     P    P         0.000     -0.718    2.978    3.450
+ PTT           O2P    O    OP       -0.500     -0.088    1.627    3.214
+ PTT           O1P    O    O2        0.000     -1.096    3.595    2.005
+ PTT           MG1    MG   MG        0.000     -2.291    2.710    0.708
+ PTT           O5P    O    O2        0.000     -0.751    1.888   -0.207
+ PTT           O4P    O    O2        0.000     -2.091    2.736    4.267
+ PTT           C1     C    CH2       0.000     -3.117    1.834    3.850
+ PTT           H10    H    H         0.000     -2.967    0.877    4.348
+ PTT           H1     H    H         0.000     -3.047    1.696    2.772
+ PTT           C2     C    CH1       0.000     -4.503    2.387    4.207
+ PTT           H2     H    H         0.000     -4.802    1.974    5.179
+ PTT           O2     O    O2        0.000     -4.388    3.794    4.333
+ PTT           C14    C    CH1       0.000     -4.902    4.639    3.302
+ PTT           H14    H    H         0.000     -5.024    5.606    3.810
+ PTT           N13    N    NH1       0.000     -3.905    4.927    2.274
+ PTT           H13    H    H         0.000     -2.928    4.858    2.494
+ PTT           C12    C    CR6       0.000     -4.286    5.284    1.034
+ PTT           N11    N    NRD6      0.000     -3.371    5.687    0.126
+ PTT           C10    C    CR6       0.000     -3.730    6.076   -1.125
+ PTT           N10    N    NH2       0.000     -2.755    6.461   -1.982
+ PTT           H101   H    H         0.000     -2.996    6.754   -2.918
+ PTT           H102   H    H         0.000     -1.791    6.454   -1.682
+ PTT           N9     N    NRD6      0.000     -5.023    6.093   -1.545
+ PTT           C8     C    CR6       0.000     -6.042    5.719   -0.734
+ PTT           O8     O    O2        0.000     -7.345    5.737   -1.168
+ PTT           CA1    C    CH3       0.000     -7.713    6.383   -2.386
+ PTT           HA11   H    H         0.000     -8.763    6.329   -2.514
+ PTT           HA12   H    H         0.000     -7.416    7.399   -2.353
+ PTT           HA13   H    H         0.000     -7.235    5.904   -3.201
+ PTT           C7     C    CR6       0.000     -5.715    5.288    0.648
+ PTT           N6     N    NH1       0.000     -6.667    4.882    1.508
+ PTT           HN6    H    H         0.000     -7.635    4.963    1.251
+ PTT           C5     C    CH1       0.000     -6.312    4.326    2.808
+ PTT           H5     H    H         0.000     -7.052    4.625    3.562
+ PTT           C4     C    C         0.000     -6.372    2.825    2.582
+ PTT           S4     S    SH1       0.000     -7.546    2.222    1.547
+ PTT           HS4    H    H         0.000     -7.440    0.898    1.478
+ PTT           C3     C    C         0.000     -5.516    1.967    3.179
+ PTT           S3     S    S2        0.000     -5.499    0.336    2.830
+ PTT           W1     W    W         0.000     -6.919   -0.094    0.837
+ PTT           S23    S    S2        0.000     -5.055    0.649   -0.651
+ PTT           C23    C    C         0.000     -4.368   -0.679   -1.409
+ PTT           C22    C    CH1       0.000     -3.556   -0.504   -2.670
+ PTT           H22    H    H         0.000     -4.257   -0.371   -3.506
+ PTT           C21    C    CH2       0.000     -2.665    0.745   -2.600
+ PTT           H21    H    H         0.000     -3.102    1.437   -1.880
+ PTT           H210   H    H         0.000     -2.649    1.210   -3.586
+ PTT           O8P    O    O2        0.000     -1.329    0.421   -2.202
+ PTT           P2     P    P         0.000     -0.840    0.347   -0.665
+ PTT           O6P    O    OP       -0.500      0.559   -0.221   -0.652
+ PTT           O7P    O    OP       -0.500     -1.910   -0.296    0.183
+ PTT           OX1    O    O         0.000     -7.396   -2.266    0.615
+ PTT           HX1    H    H         0.000     -8.133   -2.893    0.664
+ PTT           S24    S    ST        0.000     -5.665   -2.187    0.301
+ PTT           HS24   H    H         0.000     -5.067   -2.554    1.316
+ PTT           C24    C    C         0.000     -4.540   -1.901   -0.901
+ PTT           C25    C    CH1       0.000     -3.743   -3.094   -1.375
+ PTT           H25    H    H         0.000     -4.500   -3.886   -1.453
+ PTT           C34    C    CH1       0.000     -3.221   -2.966   -2.812
+ PTT           H34    H    H         0.000     -4.028   -3.161   -3.531
+ PTT           O22    O    O2        0.000     -2.719   -1.630   -2.973
+ PTT           N26    N    NH1       0.000     -2.785   -3.641   -0.406
+ PTT           H26    H    H         0.000     -2.985   -3.563    0.578
+ PTT           C27    C    CR6       0.000     -1.642   -4.246   -0.798
+ PTT           C32    C    CR6       0.000     -1.261   -4.316   -2.223
+ PTT           N33    N    NH1       0.000     -2.035   -3.737   -3.159
+ PTT           H33    H    H         0.000     -1.787   -3.840   -4.130
+ PTT           C28    C    CR6       0.000     -0.715   -4.901    0.160
+ PTT           O28    O    OH1       0.000     -0.962   -4.899    1.385
+ PTT           HO28   H    H         0.000     -0.259   -5.366    1.856
+ PTT           N29    N    NR16      0.000      0.395   -5.497   -0.309
+ PTT           H29    H    H         0.000      1.045   -5.954    0.363
+ PTT           C30    C    CR6       0.000      0.692   -5.521   -1.625
+ PTT           N31    N    NRD6      0.000     -0.111   -4.946   -2.560
+ PTT           N30    N    NH2       0.000      1.830   -6.139   -2.035
+ PTT           H301   H    H         0.000      2.441   -6.573   -1.358
+ PTT           H302   H    H         0.000      2.065   -6.165   -3.017
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PTT      O3P    n/a    P1     START
+ PTT      P1     O3P    O4P    .
+ PTT      O2P    P1     .      .
+ PTT      O1P    P1     MG1    .
+ PTT      MG1    O1P    O5P    .
+ PTT      O5P    MG1    .      .
+ PTT      O4P    P1     C1     .
+ PTT      C1     O4P    C2     .
+ PTT      H10    C1     .      .
+ PTT      H1     C1     .      .
+ PTT      C2     C1     C3     .
+ PTT      H2     C2     .      .
+ PTT      O2     C2     C14    .
+ PTT      C14    O2     N13    .
+ PTT      H14    C14    .      .
+ PTT      N13    C14    C12    .
+ PTT      H13    N13    .      .
+ PTT      C12    N13    N11    .
+ PTT      N11    C12    C10    .
+ PTT      C10    N11    N9     .
+ PTT      N10    C10    H102   .
+ PTT      H101   N10    .      .
+ PTT      H102   N10    .      .
+ PTT      N9     C10    C8     .
+ PTT      C8     N9     C7     .
+ PTT      O8     C8     CA1    .
+ PTT      CA1    O8     HA13   .
+ PTT      HA11   CA1    .      .
+ PTT      HA12   CA1    .      .
+ PTT      HA13   CA1    .      .
+ PTT      C7     C8     N6     .
+ PTT      N6     C7     C5     .
+ PTT      HN6    N6     .      .
+ PTT      C5     N6     C4     .
+ PTT      H5     C5     .      .
+ PTT      C4     C5     S4     .
+ PTT      S4     C4     HS4    .
+ PTT      HS4    S4     .      .
+ PTT      C3     C2     S3     .
+ PTT      S3     C3     W1     .
+ PTT      W1     S3     OX1    .
+ PTT      S23    W1     C23    .
+ PTT      C23    S23    C22    .
+ PTT      C22    C23    C21    .
+ PTT      H22    C22    .      .
+ PTT      C21    C22    O8P    .
+ PTT      H21    C21    .      .
+ PTT      H210   C21    .      .
+ PTT      O8P    C21    P2     .
+ PTT      P2     O8P    O7P    .
+ PTT      O6P    P2     .      .
+ PTT      O7P    P2     .      .
+ PTT      OX1    W1     S24    .
+ PTT      HX1    OX1    .      .
+ PTT      S24    OX1    C24    .
+ PTT      HS24   S24    .      .
+ PTT      C24    S24    C25    .
+ PTT      C25    C24    N26    .
+ PTT      H25    C25    .      .
+ PTT      C34    C25    O22    .
+ PTT      H34    C34    .      .
+ PTT      O22    C34    .      .
+ PTT      N26    C25    C27    .
+ PTT      H26    N26    .      .
+ PTT      C27    N26    C28    .
+ PTT      C32    C27    N33    .
+ PTT      N33    C32    H33    .
+ PTT      H33    N33    .      .
+ PTT      C28    C27    N29    .
+ PTT      O28    C28    HO28   .
+ PTT      HO28   O28    .      .
+ PTT      N29    C28    C30    .
+ PTT      H29    N29    .      .
+ PTT      C30    N29    N30    .
+ PTT      N31    C30    .      .
+ PTT      N30    C30    H302   .
+ PTT      H301   N30    .      .
+ PTT      H302   N30    .      END
+ PTT      P2     O5P    .    ADD
+ PTT      C22    O22    .    ADD
+ PTT      C34    N33    .    ADD
+ PTT      C32    N31    .    ADD
+ PTT      C24    C23    .    ADD
+ PTT      S24    W1     .    ADD
+ PTT      C4     C3     .    ADD
+ PTT      C5     C14    .    ADD
+ PTT      C12    C7     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PTT       O7P       P2        deloc     1.509     0.020     1.509     0.020     
+PTT       O6P       P2        deloc     1.510     0.020     1.510     0.020     
+PTT       P2        O5P       single    1.610     0.020     1.610     0.020     
+PTT       P2        O8P       single    1.615     0.020     1.615     0.020     
+PTT       O5P       MG1       metal     1.971     0.020     1.971     0.020     
+PTT       MG1       O1P       metal     1.973     0.020     1.973     0.020     
+PTT       O1P       P1        single    1.616     0.020     1.616     0.020     
+PTT       O2P       P1        deloc     1.509     0.020     1.509     0.020     
+PTT       P1        O3P       deloc     1.510     0.020     1.510     0.020     
+PTT       O4P       P1        single    1.616     0.020     1.616     0.020     
+PTT       C1        O4P       single    1.428     0.020     1.428     0.020     
+PTT       H10       C1        single    1.089     0.010     0.989     0.005     
+PTT       H1        C1        single    1.089     0.010     0.989     0.005     
+PTT       C2        C1        single    1.534     0.020     1.534     0.020     
+PTT       O8P       C21       single    1.431     0.020     1.431     0.020     
+PTT       H21       C21       single    1.089     0.010     0.989     0.005     
+PTT       H210      C21       single    1.089     0.010     0.989     0.005     
+PTT       C21       C22       single    1.536     0.020     1.536     0.020     
+PTT       H22       C22       single    1.089     0.010     0.989     0.005     
+PTT       C22       O22       single    1.435     0.020     1.435     0.020     
+PTT       C22       C23       single    1.510     0.020     1.510     0.020     
+PTT       O22       C34       single    1.436     0.020     1.436     0.020     
+PTT       H34       C34       single    1.089     0.010     0.989     0.005     
+PTT       C34       N33       single    1.457     0.020     1.457     0.020     
+PTT       C34       C25       single    1.534     0.020     1.534     0.020     
+PTT       H33       N33       single    1.016     0.010     0.899     0.007     
+PTT       N33       C32       deloc     1.346     0.020     1.346     0.020     
+PTT       C32       N31       aromatic  1.354     0.020     1.354     0.020     
+PTT       C32       C27       single    1.477     0.020     1.477     0.020     
+PTT       N31       C30       aromatic  1.360     0.020     1.360     0.020     
+PTT       N30       C30       single    1.358     0.020     1.358     0.020     
+PTT       C30       N29       deloc     1.349     0.020     1.349     0.020     
+PTT       H302      N30       single    1.016     0.010     0.899     0.007     
+PTT       H301      N30       single    1.016     0.010     0.899     0.007     
+PTT       H29       N29       single    1.016     0.010     0.899     0.007     
+PTT       N29       C28       double    1.344     0.020     1.344     0.020     
+PTT       O28       C28       single    1.250     0.020     1.250     0.020     
+PTT       C28       C27       single    1.485     0.020     1.485     0.020     
+PTT       C27       N26       double    1.351     0.020     1.351     0.020     
+PTT       H26       N26       single    1.016     0.010     0.899     0.007     
+PTT       N26       C25       single    1.468     0.020     1.468     0.020     
+PTT       H25       C25       single    1.089     0.010     0.989     0.005     
+PTT       C25       C24       single    1.511     0.020     1.511     0.020     
+PTT       C24       C23       double    1.335     0.020     1.335     0.020     
+PTT       C24       S24       single    1.671     0.020     1.671     0.020     
+PTT       C23       S23       single    1.676     0.020     1.676     0.020     
+PTT       S23       W1        single    2.498     0.020     2.498     0.020     
+PTT       S24       W1        metal     2.498     0.020     2.498     0.020     
+PTT       S24       OX1       single    1.761     0.020     1.761     0.020     
+PTT       W1        S3        single    2.485     0.020     2.485     0.020     
+PTT       OX1       W1        metal     2.235     0.020     2.235     0.020     
+PTT       S3        C3        single    1.668     0.020     1.668     0.020     
+PTT       HX1       OX1       single    0.970     0.012     0.839     0.014     
+PTT       S4        C4        single    1.677     0.020     1.677     0.020     
+PTT       C4        C3        double    1.351     0.020     1.351     0.020     
+PTT       C4        C5        single    1.519     0.020     1.519     0.020     
+PTT       C3        C2        single    1.503     0.020     1.503     0.020     
+PTT       H5        C5        single    1.089     0.010     0.989     0.005     
+PTT       C5        C14       single    1.526     0.020     1.526     0.020     
+PTT       C5        N6        single    1.458     0.020     1.458     0.020     
+PTT       H14       C14       single    1.089     0.010     0.989     0.005     
+PTT       C14       O2        single    1.429     0.020     1.429     0.020     
+PTT       N13       C14       single    1.461     0.020     1.461     0.020     
+PTT       O2        C2        single    1.417     0.020     1.417     0.020     
+PTT       H2        C2        single    1.089     0.010     0.989     0.005     
+PTT       H13       N13       single    1.016     0.010     0.899     0.007     
+PTT       C12       N13       deloc     1.345     0.020     1.345     0.020     
+PTT       C12       C7        single    1.480     0.020     1.480     0.020     
+PTT       N11       C12       deloc     1.351     0.020     1.351     0.020     
+PTT       N6        C7        double    1.346     0.020     1.346     0.020     
+PTT       C7        C8        single    1.484     0.020     1.484     0.020     
+PTT       HN6       N6        single    1.016     0.010     0.899     0.007     
+PTT       C10       N11       aromatic  1.358     0.020     1.358     0.020     
+PTT       N10       C10       single    1.354     0.020     1.354     0.020     
+PTT       N9        C10       aromatic  1.360     0.020     1.360     0.020     
+PTT       H102      N10       single    1.016     0.010     0.899     0.007     
+PTT       H101      N10       single    1.016     0.010     0.899     0.007     
+PTT       C8        N9        double    1.355     0.020     1.355     0.020     
+PTT       O8        C8        single    1.373     0.020     1.373     0.020     
+PTT       CA1       O8        single    1.427     0.020     1.427     0.020     
+PTT       HA13      CA1       single    1.089     0.010     0.989     0.005     
+PTT       HA12      CA1       single    1.089     0.010     0.989     0.005     
+PTT       HA11      CA1       single    1.089     0.010     0.989     0.005     
+PTT       HO28      O28       single    0.970     0.012     0.839     0.014     
+PTT       HS24      S24       single    1.338     0.010     1.171     0.208     
+PTT       HS4       S4        single    1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PTT      O3P    P1     O1P     107.222    3.000
+ PTT      O3P    P1     O2P     119.025    3.000
+ PTT      O3P    P1     O4P     107.230    3.000
+ PTT      O1P    P1     O2P     107.433    3.000
+ PTT      O1P    P1     O4P     108.090    3.000
+ PTT      O2P    P1     O4P     107.438    3.000
+ PTT      P1     O1P    MG1     123.929    3.000
+ PTT      O1P    MG1    O5P      91.089    3.000
+ PTT      MG1    O5P    P2      119.212    3.000
+ PTT      P1     O4P    C1      123.869    3.000
+ PTT      O4P    C1     H10     108.921    3.000
+ PTT      O4P    C1     H1      109.614    3.000
+ PTT      O4P    C1     C2      110.691    3.000
+ PTT      H10    C1     H1      107.657    3.000
+ PTT      H10    C1     C2      109.284    3.000
+ PTT      H1     C1     C2      110.604    3.000
+ PTT      C1     C2     H2      107.918    3.000
+ PTT      C1     C2     O2      107.769    3.000
+ PTT      C1     C2     C3      110.422    3.000
+ PTT      H2     C2     O2      109.115    3.000
+ PTT      H2     C2     C3      108.355    3.000
+ PTT      O2     C2     C3      113.133    3.000
+ PTT      C2     O2     C14     119.591    3.000
+ PTT      O2     C14    H14     103.921    3.000
+ PTT      O2     C14    N13     112.266    3.000
+ PTT      O2     C14    C5      116.396    3.000
+ PTT      H14    C14    N13     103.014    3.000
+ PTT      H14    C14    C5      102.499    3.000
+ PTT      N13    C14    C5      116.304    3.000
+ PTT      C14    N13    H13     117.100    3.000
+ PTT      C14    N13    C12     120.507    3.000
+ PTT      H13    N13    C12     122.287    3.000
+ PTT      N13    C12    N11     120.460    3.000
+ PTT      N13    C12    C7      120.960    3.000
+ PTT      N11    C12    C7      118.549    3.000
+ PTT      C12    N11    C10     121.705    3.000
+ PTT      N11    C10    N10     118.296    3.000
+ PTT      N11    C10    N9      122.643    3.000
+ PTT      N10    C10    N9      119.061    3.000
+ PTT      C10    N10    H101    120.058    3.000
+ PTT      C10    N10    H102    119.835    3.000
+ PTT      H101   N10    H102    120.107    3.000
+ PTT      C10    N9     C8      121.793    3.000
+ PTT      N9     C8     O8      121.379    3.000
+ PTT      N9     C8     C7      118.152    3.000
+ PTT      O8     C8     C7      120.469    3.000
+ PTT      C8     O8     CA1     121.352    3.000
+ PTT      O8     CA1    HA11    109.495    3.000
+ PTT      O8     CA1    HA12    109.423    3.000
+ PTT      O8     CA1    HA13    109.610    3.000
+ PTT      HA11   CA1    HA12    109.321    3.000
+ PTT      HA11   CA1    HA13    109.544    3.000
+ PTT      HA12   CA1    HA13    109.433    3.000
+ PTT      C8     C7     N6      121.794    3.000
+ PTT      C8     C7     C12     117.150    3.000
+ PTT      N6     C7     C12     121.032    3.000
+ PTT      C7     N6     HN6     121.649    3.000
+ PTT      C7     N6     C5      120.845    3.000
+ PTT      HN6    N6     C5      117.397    3.000
+ PTT      N6     C5     H5      110.182    3.000
+ PTT      N6     C5     C4      103.566    3.000
+ PTT      N6     C5     C14     115.806    3.000
+ PTT      H5     C5     C4      110.219    3.000
+ PTT      H5     C5     C14     110.063    3.000
+ PTT      C4     C5     C14     106.692    3.000
+ PTT      C5     C4     S4      118.339    3.000
+ PTT      C5     C4     C3      122.462    3.000
+ PTT      S4     C4     C3      119.199    3.000
+ PTT      C4     S4     HS4     109.500    3.000
+ PTT      C2     C3     S3      114.170    3.000
+ PTT      C2     C3     C4      123.487    3.000
+ PTT      S3     C3     C4      122.342    3.000
+ PTT      C3     S3     W1      109.344    3.000
+ PTT      S3     W1     S23      89.993    3.000
+ PTT      S3     W1     OX1     111.707    3.000
+ PTT      S3     W1     S24      91.732    3.000
+ PTT      S23    W1     OX1     112.902    3.000
+ PTT      S23    W1     S24      75.335    3.000
+ PTT      OX1    W1     S24      43.243    3.000
+ PTT      W1     S23    C23     109.847    3.000
+ PTT      S23    C23    C22     120.410    3.000
+ PTT      S23    C23    C24     120.031    3.000
+ PTT      C22    C23    C24     119.559    3.000
+ PTT      C23    C22    H22     107.745    3.000
+ PTT      C23    C22    C21     111.602    3.000
+ PTT      C23    C22    O22     113.513    3.000
+ PTT      H22    C22    C21     107.327    3.000
+ PTT      H22    C22    O22     108.421    3.000
+ PTT      C21    C22    O22     108.016    3.000
+ PTT      C22    C21    H21     108.686    3.000
+ PTT      C22    C21    H210    111.480    3.000
+ PTT      C22    C21    O8P     111.723    3.000
+ PTT      H21    C21    H210    107.082    3.000
+ PTT      H21    C21    O8P     108.684    3.000
+ PTT      H210   C21    O8P     109.038    3.000
+ PTT      C21    O8P    P2      123.905    3.000
+ PTT      O8P    P2     O6P     107.821    3.000
+ PTT      O8P    P2     O7P     109.859    3.000
+ PTT      O8P    P2     O5P     104.103    3.000
+ PTT      O6P    P2     O7P     119.459    3.000
+ PTT      O6P    P2     O5P     107.840    3.000
+ PTT      O7P    P2     O5P     106.687    3.000
+ PTT      W1     OX1    HX1     119.914    3.000
+ PTT      W1     OX1    S24      76.368    3.000
+ PTT      HX1    OX1    S24     140.920    3.000
+ PTT      OX1    S24    HS24    109.500    3.000
+ PTT      OX1    S24    C24     142.912    3.000
+ PTT      OX1    S24    W1       60.390    3.000
+ PTT      HS24   S24    C24     109.500    3.000
+ PTT      HS24   S24    W1      109.500    3.000
+ PTT      C24    S24    W1      110.420    3.000
+ PTT      S24    C24    C25     116.464    3.000
+ PTT      S24    C24    C23     121.153    3.000
+ PTT      C25    C24    C23     122.383    3.000
+ PTT      C24    C25    H25     103.629    3.000
+ PTT      C24    C25    C34     114.042    3.000
+ PTT      C24    C25    N26     115.547    3.000
+ PTT      H25    C25    C34     102.811    3.000
+ PTT      H25    C25    N26     103.104    3.000
+ PTT      C34    C25    N26     115.291    3.000
+ PTT      C25    C34    H34     110.090    3.000
+ PTT      C25    C34    O22     107.549    3.000
+ PTT      C25    C34    N33     117.131    3.000
+ PTT      H34    C34    O22     110.922    3.000
+ PTT      H34    C34    N33     110.256    3.000
+ PTT      O22    C34    N33     100.433    3.000
+ PTT      C34    O22    C22     120.148    3.000
+ PTT      C25    N26    H26     117.412    3.000
+ PTT      C25    N26    C27     121.817    3.000
+ PTT      H26    N26    C27     120.708    3.000
+ PTT      N26    C27    C32     121.290    3.000
+ PTT      N26    C27    C28     122.563    3.000
+ PTT      C32    C27    C28     116.134    3.000
+ PTT      C27    C32    N33     120.163    3.000
+ PTT      C27    C32    N31     118.778    3.000
+ PTT      N33    C32    N31     121.045    3.000
+ PTT      C32    N33    H33     120.431    3.000
+ PTT      C32    N33    C34     122.037    3.000
+ PTT      H33    N33    C34     117.481    3.000
+ PTT      C27    C28    O28     120.544    3.000
+ PTT      C27    C28    N29     119.066    3.000
+ PTT      O28    C28    N29     120.391    3.000
+ PTT      C28    O28    HO28    109.470    3.000
+ PTT      C28    N29    H29     118.858    3.000
+ PTT      C28    N29    C30     121.997    3.000
+ PTT      H29    N29    C30     119.145    3.000
+ PTT      N29    C30    N31     122.211    3.000
+ PTT      N29    C30    N30     119.136    3.000
+ PTT      N31    C30    N30     118.653    3.000
+ PTT      C30    N31    C32     121.812    3.000
+ PTT      C30    N30    H301    120.228    3.000
+ PTT      C30    N30    H302    120.006    3.000
+ PTT      H301   N30    H302    119.766    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PTT      var_1    O3P    P1     O1P    MG1     -172.899   20.000   3
+ PTT      var_2    P1     O1P    MG1    O5P      -94.321   20.000   3
+ PTT      var_3    O1P    MG1    O5P    P2       137.214   20.000   3
+ PTT      var_4    O3P    P1     O4P    C1       178.084   20.000   3
+ PTT      var_5    P1     O4P    C1     C2      -144.742   20.000   3
+ PTT      var_6    O4P    C1     C2     C3       147.200   20.000   3
+ PTT      var_7    C1     C2     O2     C14      105.374   20.000   3
+ PTT      var_8    C2     O2     C14    N13      -90.102   20.000   3
+ PTT      var_9    O2     C14    N13    C12      156.563   20.000   3
+ PTT      var_10   C14    N13    C12    N11      172.940   20.000   3
+ PTT      CONST_1  N13    C12    C7     C8       178.962    0.000   0
+ PTT      CONST_2  N13    C12    N11    C10     -178.790    0.000   0
+ PTT      CONST_3  C12    N11    C10    N9         0.317    0.000   0
+ PTT      CONST_4  N11    C10    N10    H102      -0.069    0.000   0
+ PTT      CONST_5  N11    C10    N9     C8        -0.028    0.000   0
+ PTT      CONST_6  C10    N9     C8     C7         0.251    0.000   0
+ PTT      var_11   N9     C8     O8     CA1      -12.128   20.000   3
+ PTT      var_12   C8     O8     CA1    HA13      62.976   20.000   3
+ PTT      CONST_7  N9     C8     C7     N6      -178.948    0.000   0
+ PTT      var_13   C8     C7     N6     C5       173.256   20.000   3
+ PTT      var_14   C7     N6     C5     C4       -97.623   20.000   3
+ PTT      var_15   N6     C5     C14    O2      -161.153   20.000   3
+ PTT      var_16   N6     C5     C4     S4       -35.682   20.000   3
+ PTT      var_17   C5     C4     C3     C2         5.375   20.000   3
+ PTT      var_18   C5     C4     S4     HS4      180.000   20.000   3
+ PTT      var_19   C1     C2     C3     S3        49.684   20.000   3
+ PTT      var_20   C2     C3     S3     W1      -169.526   20.000   3
+ PTT      var_21   C3     S3     W1     OX1     -164.914   20.000   3
+ PTT      var_22   S3     W1     S23    C23      106.404   20.000   3
+ PTT      var_23   W1     S23    C23    C22      159.795   20.000   3
+ PTT      var_24   S23    C23    C22    C21       40.088   20.000   3
+ PTT      var_25   C23    C22    O22    C34       41.949   20.000   3
+ PTT      var_26   C23    C22    C21    O8P       97.133   20.000   3
+ PTT      var_27   C22    C21    O8P    P2       -88.168   20.000   3
+ PTT      var_28   C21    O8P    P2     O7P       39.925   20.000   3
+ PTT      var_29   O8P    P2     O5P    MG1       94.557   20.000   3
+ PTT      var_30   S3     W1     OX1    S24      -67.925   20.000   3
+ PTT      var_31   W1     OX1    S24    C24      -85.049   20.000   3
+ PTT      var_32   OX1    S24    W1     S3       120.530   20.000   3
+ PTT      var_33   OX1    S24    C24    C25     -109.871   20.000   3
+ PTT      var_34   S24    C24    C23    S23       12.085   20.000   3
+ PTT      var_35   S24    C24    C25    N26      -68.852   20.000   3
+ PTT      var_36   C24    C25    C34    O22       42.910   20.000   3
+ PTT      var_37   C25    C34    N33    C32      -13.481   20.000   3
+ PTT      var_38   C25    C34    O22    C22      -54.215   20.000   3
+ PTT      var_39   C24    C25    N26    C27     -149.897   20.000   3
+ PTT      var_40   C25    N26    C27    C28     -174.958   20.000   3
+ PTT      CONST_8  N26    C27    C32    N33        2.013    0.000   0
+ PTT      CONST_9  C27    C32    N31    C30        0.490    0.000   0
+ PTT      var_41   C27    C32    N33    C34        3.428   20.000   3
+ PTT      CONST_10 N26    C27    C28    N29      179.166    0.000   0
+ PTT      var_42   C27    C28    O28    HO28     180.000   20.000   3
+ PTT      CONST_11 C27    C28    N29    C30       -0.137    0.000   0
+ PTT      CONST_12 C28    N29    C30    N30      179.956    0.000   0
+ PTT      CONST_13 N29    C30    N31    C32       -0.137    0.000   0
+ PTT      CONST_14 N29    C30    N30    H302     179.980    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PTT      chir_01  C22    C21    O22    C23       negativ
+ PTT      chir_02  C34    O22    N33    C25       negativ
+ PTT      chir_03  C25    C34    N26    C24       negativ
+ PTT      chir_04  S24    C24    W1     OX1       negativ
+ PTT      chir_05  C5     C4     C14    N6        negativ
+ PTT      chir_06  C14    C5     O2     N13       negativ
+ PTT      chir_07  C2     C1     C3     O2        positiv
+ PTT      chir_08  MG1    O1P    .      O5P       cross1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PTT      plan-1    N33       0.020
+ PTT      plan-1    C34       0.020
+ PTT      plan-1    C32       0.020
+ PTT      plan-1    H33       0.020
+ PTT      plan-2    C32       0.020
+ PTT      plan-2    N33       0.020
+ PTT      plan-2    N31       0.020
+ PTT      plan-2    C27       0.020
+ PTT      plan-2    C30       0.020
+ PTT      plan-2    N29       0.020
+ PTT      plan-2    C28       0.020
+ PTT      plan-2    N30       0.020
+ PTT      plan-2    H29       0.020
+ PTT      plan-2    O28       0.020
+ PTT      plan-2    N26       0.020
+ PTT      plan-2    H33       0.020
+ PTT      plan-2    H301      0.020
+ PTT      plan-2    H302      0.020
+ PTT      plan-2    H26       0.020
+ PTT      plan-3    N30       0.020
+ PTT      plan-3    C30       0.020
+ PTT      plan-3    H302      0.020
+ PTT      plan-3    H301      0.020
+ PTT      plan-4    N26       0.020
+ PTT      plan-4    C27       0.020
+ PTT      plan-4    C25       0.020
+ PTT      plan-4    H26       0.020
+ PTT      plan-5    C24       0.020
+ PTT      plan-5    C25       0.020
+ PTT      plan-5    C23       0.020
+ PTT      plan-5    S24       0.020
+ PTT      plan-6    C23       0.020
+ PTT      plan-6    C22       0.020
+ PTT      plan-6    C24       0.020
+ PTT      plan-6    S23       0.020
+ PTT      plan-7    C4        0.020
+ PTT      plan-7    S4        0.020
+ PTT      plan-7    C3        0.020
+ PTT      plan-7    C5        0.020
+ PTT      plan-8    C3        0.020
+ PTT      plan-8    S3        0.020
+ PTT      plan-8    C4        0.020
+ PTT      plan-8    C2        0.020
+ PTT      plan-9    N13       0.020
+ PTT      plan-9    C14       0.020
+ PTT      plan-9    C12       0.020
+ PTT      plan-9    H13       0.020
+ PTT      plan-10   C12       0.020
+ PTT      plan-10   N13       0.020
+ PTT      plan-10   C7        0.020
+ PTT      plan-10   N11       0.020
+ PTT      plan-10   C10       0.020
+ PTT      plan-10   N9        0.020
+ PTT      plan-10   C8        0.020
+ PTT      plan-10   N6        0.020
+ PTT      plan-10   N10       0.020
+ PTT      plan-10   O8        0.020
+ PTT      plan-10   H13       0.020
+ PTT      plan-10   HN6       0.020
+ PTT      plan-10   H101      0.020
+ PTT      plan-10   H102      0.020
+ PTT      plan-11   N6        0.020
+ PTT      plan-11   C5        0.020
+ PTT      plan-11   C7        0.020
+ PTT      plan-11   HN6       0.020
+ PTT      plan-12   N10       0.020
+ PTT      plan-12   C10       0.020
+ PTT      plan-12   H102      0.020
+ PTT      plan-12   H101      0.020
+# ------------------------------------------------------
+# ------------------------------------------------------
+# ------------------------------------------------------

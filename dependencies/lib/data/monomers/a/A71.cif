@@ -1,0 +1,275 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+A71      A71 '(6-AMINOHEXYLAMINE)(TRIAMMINE) PLATI' non-polymer        37  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_A71
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ A71           N1     N    NH2       0.000      0.000    0.000    0.000
+ A71           HN11   H    H         0.000     -0.325    0.218    0.942
+ A71           HN12   H    H         0.000     -0.558    0.327   -0.788
+ A71           C2     C    CH2       0.000      1.267   -0.782   -0.221
+ A71           H21    H    H         0.000      1.429   -0.942   -1.289
+ A71           H22    H    H         0.000      1.206   -1.748    0.286
+ A71           C3     C    CH2       0.000      2.443    0.036    0.364
+ A71           H31    H    H         0.000      2.397   -0.011    1.454
+ A71           H32    H    H         0.000      2.345    1.074    0.041
+ A71           C4     C    CH2       0.000      3.795   -0.530   -0.119
+ A71           H41    H    H         0.000      3.623   -1.541   -0.494
+ A71           H42    H    H         0.000      4.469   -0.570    0.739
+ A71           C5     C    CH2       0.000      4.424    0.331   -1.229
+ A71           H51    H    H         0.000      4.590    1.326   -0.811
+ A71           H52    H    H         0.000      3.696    0.395   -2.040
+ A71           C6     C    CH2       0.000      5.758   -0.229   -1.776
+ A71           H61    H    H         0.000      5.678   -1.315   -1.861
+ A71           H62    H    H         0.000      6.560    0.022   -1.078
+ A71           C7     C    CH2       0.000      6.072    0.375   -3.159
+ A71           H71    H    H         0.000      5.152    0.545   -3.721
+ A71           H72    H    H         0.000      6.728   -0.287   -3.728
+ A71           N8     N    NT2       0.000      6.759    1.674   -2.924
+ A71           HN81   H    H         0.000      6.120    2.283   -2.387
+ A71           HN82   H    H         0.000      6.954    2.106   -3.842
+ A71           PT     PT   PT        0.000      8.460    1.449   -1.921
+ A71           N11    N    NT3       0.000     10.214    1.307   -1.002
+ A71           H113   H    H         0.000     10.887    0.845   -1.578
+ A71           H112   H    H         0.000     10.080    0.784   -0.160
+ A71           H111   H    H         0.000     10.543    2.223   -0.775
+ A71           N10    N    NT3       0.000      9.308    0.830   -3.599
+ A71           H103   H    H         0.000      8.859   -0.007   -3.910
+ A71           H102   H    H         0.000     10.277    0.647   -3.434
+ A71           H101   H    H         0.000      9.216    1.538   -4.300
+ A71           N9     N    NT3       0.000      7.611    2.055   -0.268
+ A71           HN93   H    H         0.000      6.641    2.235   -0.438
+ A71           HN92   H    H         0.000      8.055    2.894    0.047
+ A71           HN91   H    H         0.000      7.701    1.347    0.432
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ A71      N1     n/a    C2     START
+ A71      HN11   N1     .      .
+ A71      HN12   N1     .      .
+ A71      C2     N1     C3     .
+ A71      H21    C2     .      .
+ A71      H22    C2     .      .
+ A71      C3     C2     C4     .
+ A71      H31    C3     .      .
+ A71      H32    C3     .      .
+ A71      C4     C3     C5     .
+ A71      H41    C4     .      .
+ A71      H42    C4     .      .
+ A71      C5     C4     C6     .
+ A71      H51    C5     .      .
+ A71      H52    C5     .      .
+ A71      C6     C5     C7     .
+ A71      H61    C6     .      .
+ A71      H62    C6     .      .
+ A71      C7     C6     N8     .
+ A71      H71    C7     .      .
+ A71      H72    C7     .      .
+ A71      N8     C7     PT     .
+ A71      HN81   N8     .      .
+ A71      HN82   N8     .      .
+ A71      PT     N8     N9     .
+ A71      N11    PT     H111   .
+ A71      H113   N11    .      .
+ A71      H112   N11    .      .
+ A71      H111   N11    .      .
+ A71      N10    PT     H101   .
+ A71      H103   N10    .      .
+ A71      H102   N10    .      .
+ A71      H101   N10    .      .
+ A71      N9     PT     HN91   .
+ A71      HN93   N9     .      .
+ A71      HN92   N9     .      .
+ A71      HN91   N9     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+A71       HN11      N1        single    1.036     0.016     0.914     0.007     
+A71       HN12      N1        single    1.036     0.016     0.914     0.007     
+A71       C2        N1        single    1.450     0.020     1.450     0.020     
+A71       H21       C2        single    1.089     0.010     0.989     0.005     
+A71       H22       C2        single    1.089     0.010     0.989     0.005     
+A71       C3        C2        single    1.524     0.020     1.524     0.020     
+A71       H31       C3        single    1.089     0.010     0.989     0.005     
+A71       H32       C3        single    1.089     0.010     0.989     0.005     
+A71       C4        C3        single    1.524     0.020     1.524     0.020     
+A71       H41       C4        single    1.089     0.010     0.989     0.005     
+A71       H42       C4        single    1.089     0.010     0.989     0.005     
+A71       C5        C4        single    1.524     0.020     1.524     0.020     
+A71       H51       C5        single    1.089     0.010     0.989     0.005     
+A71       H52       C5        single    1.089     0.010     0.989     0.005     
+A71       C6        C5        single    1.524     0.020     1.524     0.020     
+A71       H61       C6        single    1.089     0.010     0.989     0.005     
+A71       H62       C6        single    1.089     0.010     0.989     0.005     
+A71       C7        C6        single    1.524     0.020     1.524     0.020     
+A71       H71       C7        single    1.089     0.010     0.989     0.005     
+A71       H72       C7        single    1.089     0.010     0.989     0.005     
+A71       N8        C7        single    1.472     0.020     1.472     0.020     
+A71       HN81      N8        single    1.036     0.016     0.914     0.007     
+A71       HN82      N8        single    1.036     0.016     0.914     0.007     
+A71       PT        N8        single    2.035     0.020     2.035     0.020     
+A71       N9        PT        single    2.035     0.020     2.035     0.020     
+A71       HN91      N9        single    1.036     0.016     0.914     0.007     
+A71       HN92      N9        single    1.036     0.016     0.914     0.007     
+A71       HN93      N9        single    1.036     0.016     0.914     0.007     
+A71       N10       PT        single    2.035     0.020     2.035     0.020     
+A71       H101      N10       single    1.036     0.016     0.914     0.007     
+A71       H102      N10       single    1.036     0.016     0.914     0.007     
+A71       H103      N10       single    1.036     0.016     0.914     0.007     
+A71       N11       PT        single    2.035     0.020     2.035     0.020     
+A71       H111      N11       single    1.036     0.016     0.914     0.007     
+A71       H112      N11       single    1.036     0.016     0.914     0.007     
+A71       H113      N11       single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ A71      HN11   N1     HN12    120.000    3.000
+ A71      HN11   N1     C2      120.000    3.000
+ A71      HN12   N1     C2      120.000    3.000
+ A71      N1     C2     H21     109.470    3.000
+ A71      N1     C2     H22     109.470    3.000
+ A71      N1     C2     C3      109.470    3.000
+ A71      H21    C2     H22     107.900    3.000
+ A71      H21    C2     C3      109.470    3.000
+ A71      H22    C2     C3      109.470    3.000
+ A71      C2     C3     H31     109.470    3.000
+ A71      C2     C3     H32     109.470    3.000
+ A71      C2     C3     C4      111.000    3.000
+ A71      H31    C3     H32     107.900    3.000
+ A71      H31    C3     C4      109.470    3.000
+ A71      H32    C3     C4      109.470    3.000
+ A71      C3     C4     H41     109.470    3.000
+ A71      C3     C4     H42     109.470    3.000
+ A71      C3     C4     C5      111.000    3.000
+ A71      H41    C4     H42     107.900    3.000
+ A71      H41    C4     C5      109.470    3.000
+ A71      H42    C4     C5      109.470    3.000
+ A71      C4     C5     H51     109.470    3.000
+ A71      C4     C5     H52     109.470    3.000
+ A71      C4     C5     C6      111.000    3.000
+ A71      H51    C5     H52     107.900    3.000
+ A71      H51    C5     C6      109.470    3.000
+ A71      H52    C5     C6      109.470    3.000
+ A71      C5     C6     H61     109.470    3.000
+ A71      C5     C6     H62     109.470    3.000
+ A71      C5     C6     C7      111.000    3.000
+ A71      H61    C6     H62     107.900    3.000
+ A71      H61    C6     C7      109.470    3.000
+ A71      H62    C6     C7      109.470    3.000
+ A71      C6     C7     H71     109.470    3.000
+ A71      C6     C7     H72     109.470    3.000
+ A71      C6     C7     N8      109.500    3.000
+ A71      H71    C7     H72     107.900    3.000
+ A71      H71    C7     N8      109.500    3.000
+ A71      H72    C7     N8      109.500    3.000
+ A71      C7     N8     HN81    109.500    3.000
+ A71      C7     N8     HN82    109.500    3.000
+ A71      C7     N8     PT      109.500    3.000
+ A71      HN81   N8     HN82    109.500    3.000
+ A71      HN81   N8     PT      109.500    3.000
+ A71      HN82   N8     PT      109.500    3.000
+ A71      N8     PT     N11     180.000    3.000
+ A71      N8     PT     N10      90.000    3.000
+ A71      N8     PT     N9       90.000    3.000
+ A71      N11    PT     N10      90.000    3.000
+ A71      N11    PT     N9       90.000    3.000
+ A71      N10    PT     N9      180.000    3.000
+ A71      PT     N11    H113    109.500    3.000
+ A71      PT     N11    H112    109.500    3.000
+ A71      PT     N11    H111    109.500    3.000
+ A71      H113   N11    H112    109.470    3.000
+ A71      H113   N11    H111    109.470    3.000
+ A71      H112   N11    H111    109.470    3.000
+ A71      PT     N10    H103    109.500    3.000
+ A71      PT     N10    H102    109.500    3.000
+ A71      PT     N10    H101    109.500    3.000
+ A71      H103   N10    H102    109.470    3.000
+ A71      H103   N10    H101    109.470    3.000
+ A71      H102   N10    H101    109.470    3.000
+ A71      PT     N9     HN93    109.500    3.000
+ A71      PT     N9     HN92    109.500    3.000
+ A71      PT     N9     HN91    109.500    3.000
+ A71      HN93   N9     HN92    109.470    3.000
+ A71      HN93   N9     HN91    109.470    3.000
+ A71      HN92   N9     HN91    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ A71      var_1    HN12   N1     C2     C3       117.708   20.000   1
+ A71      var_2    N1     C2     C3     C4      -166.348   20.000   3
+ A71      var_3    C2     C3     C4     C5       103.333   20.000   3
+ A71      var_4    C3     C4     C5     C6      -178.009   20.000   3
+ A71      var_5    C4     C5     C6     C7       160.553   20.000   3
+ A71      var_6    C5     C6     C7     N8        85.084   20.000   3
+ A71      var_7    C6     C7     N8     PT        60.683   20.000   1
+ A71      var_8    C7     N8     PT     N10        0.000   20.000   1
+ A71      var_9    H113   N11    PT     N10        0.000   20.000   1
+ A71      var_10   H103   N10    PT     N8         0.000   20.000   1
+ A71      var_11   HN93   N9     PT     N8         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ A71      chir_01  PT     N8     N11    N10       cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ A71      plan-1    N1        0.020
+ A71      plan-1    C2        0.020
+ A71      plan-1    HN11      0.020
+ A71      plan-1    HN12      0.020
+# ------------------------------------------------------

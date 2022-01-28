@@ -1,0 +1,148 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NXA     NXA      N-CARBOXYALANINE     NON-POLYMER     15     9     .     
+#
+data_comp_NXA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NXA     N       N       NH1     0       0.513       -0.632      -0.469      
+NXA     CA      C       CH1     0       -0.524      0.114       0.239       
+NXA     C       C       C       0       -0.619      1.566       -0.270      
+NXA     O       O       OC      -1      -0.612      2.471       0.587       
+NXA     CB      C       CH3     0       -1.874      -0.580      0.093       
+NXA     OD1     O       OH1     0       2.257       0.399       0.610       
+NXA     OD2     O       O       0       2.551       -1.567      -0.372      
+NXA     C1      C       C       0       1.812       -0.650      -0.094      
+NXA     OXT     O       O       0       -0.697      1.738       -1.504      
+NXA     H       H       H       0       0.283       -1.088      -1.181      
+NXA     HA      H       H       0       -0.295      0.140       1.211       
+NXA     HBC1    H       H       0       -2.299      -0.313      -0.741      
+NXA     HBC2    H       H       0       -2.446      -0.335      0.839       
+NXA     HBC3    H       H       0       -1.743      -1.543      0.091       
+NXA     HD1     H       H       0       2.165       0.250       1.470       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NXA       N         CA        SINGLE    n         1.452     0.012     1.452     0.012     
+NXA       N         C1        SINGLE    n         1.345     0.011     1.345     0.011     
+NXA       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+NXA       CA        CB        SINGLE    n         1.522     0.011     1.522     0.011     
+NXA       C         O         SINGLE    n         1.247     0.019     1.247     0.019     
+NXA       C         OXT       DOUBLE    n         1.247     0.019     1.247     0.019     
+NXA       OD1       C1        SINGLE    n         1.331     0.020     1.331     0.020     
+NXA       OD2       C1        DOUBLE    n         1.210     0.012     1.210     0.012     
+NXA       N         H         SINGLE    n         1.016     0.010     0.875     0.020     
+NXA       CA        HA        SINGLE    n         1.089     0.010     0.998     0.020     
+NXA       CB        HBC1      SINGLE    n         1.089     0.010     0.972     0.015     
+NXA       CB        HBC2      SINGLE    n         1.089     0.010     0.972     0.015     
+NXA       CB        HBC3      SINGLE    n         1.089     0.010     0.972     0.015     
+NXA       OD1       HD1       SINGLE    n         0.970     0.012     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NXA          CA           N          C1     120.998    1.63
+NXA          CA           N           H     119.383    1.92
+NXA          C1           N           H     119.619    1.99
+NXA           N          CA           C     110.939    1.74
+NXA           N          CA          CB     110.277    1.50
+NXA           N          CA          HA     108.161    1.50
+NXA           C          CA          CB     109.294    1.70
+NXA           C          CA          HA     108.101    1.50
+NXA          CB          CA          HA     108.430    1.50
+NXA          CA           C           O     117.260    2.00
+NXA          CA           C         OXT     117.260    2.00
+NXA           O           C         OXT     125.481    1.50
+NXA          CA          CB        HBC1     109.550    1.50
+NXA          CA          CB        HBC2     109.550    1.50
+NXA          CA          CB        HBC3     109.550    1.50
+NXA        HBC1          CB        HBC2     109.386    1.50
+NXA        HBC1          CB        HBC3     109.386    1.50
+NXA        HBC2          CB        HBC3     109.386    1.50
+NXA          C1         OD1         HD1     110.339    3.00
+NXA           N          C1         OD1     113.719    3.00
+NXA           N          C1         OD2     123.802    1.50
+NXA         OD1          C1         OD2     122.478    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NXA             sp2_sp3_2          C1           N          CA           C     120.000   10.00     6
+NXA             sp2_sp2_1         OD1          C1           N          CA     180.000   10.00     2
+NXA             sp2_sp3_7           O           C          CA           N       0.000   10.00     6
+NXA             sp3_sp3_4           N          CA          CB        HBC1      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+NXA    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NXA    plan-1          C1   0.020
+NXA    plan-1          CA   0.020
+NXA    plan-1           H   0.020
+NXA    plan-1           N   0.020
+NXA    plan-2           C   0.020
+NXA    plan-2          CA   0.020
+NXA    plan-2           O   0.020
+NXA    plan-2         OXT   0.020
+NXA    plan-3          C1   0.020
+NXA    plan-3           N   0.020
+NXA    plan-3         OD1   0.020
+NXA    plan-3         OD2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NXA SMILES           ACDLabs              10.04 "O=C(O)C(NC(=O)O)C"
+NXA SMILES_CANONICAL CACTVS               3.341 "C[C@H](NC(O)=O)C(O)=O"
+NXA SMILES           CACTVS               3.341 "C[CH](NC(O)=O)C(O)=O"
+NXA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@@H](C(=O)O)NC(=O)O"
+NXA SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C(=O)O)NC(=O)O"
+NXA InChI            InChI                1.03  "InChI=1S/C4H7NO4/c1-2(3(6)7)5-4(8)9/h2,5H,1H3,(H,6,7)(H,8,9)/t2-/m0/s1"
+NXA InChIKey         InChI                1.03  JCVPWRQVQNVNGU-REOHCLBHSA-N
+NXA ?                acedrg               202         "dictionary generator"                  
+NXA ?                acedrg_database      11          "data source"                           
+NXA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NXA ?                refmac5              5.8.0189    "optimization tool"                     

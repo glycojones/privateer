@@ -1,0 +1,161 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ALM      ALM '1-METHYL-ALANINAL                   ' non-polymer        15   6 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ALM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ALM           O      O    O         0.000      0.000    0.000    0.000
+ ALM           C      C    C         0.000     -0.635    0.368    0.957
+ ALM           CM     C    CH3       0.000     -0.036    1.356    1.923
+ ALM           HM3    H    H         0.000     -0.637    2.229    1.956
+ ALM           HM2    H    H         0.000      0.010    0.924    2.890
+ ALM           HM1    H    H         0.000      0.941    1.614    1.607
+ ALM           CA     C    CH1       0.000     -2.028   -0.159    1.185
+ ALM           HA     H    H         0.000     -2.627    0.602    1.704
+ ALM           CB     C    CH3       0.000     -1.960   -1.426    2.039
+ ALM           HB3    H    H         0.000     -1.383   -2.160    1.540
+ ALM           HB2    H    H         0.000     -1.512   -1.200    2.972
+ ALM           HB1    H    H         0.000     -2.939   -1.797    2.200
+ ALM           N      N    NH2       0.000     -2.649   -0.474   -0.108
+ ALM           H2     H    H         0.000     -2.178   -0.238   -0.973
+ ALM           H      H    H         0.000     -3.554   -0.929   -0.143
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ALM      O      n/a    C      START
+ ALM      C      O      CA     .
+ ALM      CM     C      HM1    .
+ ALM      HM3    CM     .      .
+ ALM      HM2    CM     .      .
+ ALM      HM1    CM     .      .
+ ALM      CA     C      N      .
+ ALM      HA     CA     .      .
+ ALM      CB     CA     HB1    .
+ ALM      HB3    CB     .      .
+ ALM      HB2    CB     .      .
+ ALM      HB1    CB     .      .
+ ALM      N      CA     H      .
+ ALM      H2     N      .      .
+ ALM      H      N      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ALM       N         CA        single    1.450     0.020     1.450     0.020     
+ALM       H         N         single    1.036     0.016     0.914     0.007     
+ALM       H2        N         single    1.036     0.016     0.914     0.007     
+ALM       CA        C         single    1.500     0.020     1.500     0.020     
+ALM       CB        CA        single    1.524     0.020     1.524     0.020     
+ALM       HA        CA        single    1.089     0.010     0.989     0.005     
+ALM       C         O         double    1.220     0.020     1.220     0.020     
+ALM       CM        C         single    1.500     0.020     1.500     0.020     
+ALM       HB1       CB        single    1.089     0.010     0.989     0.005     
+ALM       HB2       CB        single    1.089     0.010     0.989     0.005     
+ALM       HB3       CB        single    1.089     0.010     0.989     0.005     
+ALM       HM1       CM        single    1.089     0.010     0.989     0.005     
+ALM       HM2       CM        single    1.089     0.010     0.989     0.005     
+ALM       HM3       CM        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ALM      O      C      CM      123.000    3.000
+ ALM      O      C      CA      120.500    3.000
+ ALM      CM     C      CA      120.000    3.000
+ ALM      C      CM     HM3     109.470    3.000
+ ALM      C      CM     HM2     109.470    3.000
+ ALM      C      CM     HM1     109.470    3.000
+ ALM      HM3    CM     HM2     109.470    3.000
+ ALM      HM3    CM     HM1     109.470    3.000
+ ALM      HM2    CM     HM1     109.470    3.000
+ ALM      C      CA     HA      108.810    3.000
+ ALM      C      CA     CB      109.470    3.000
+ ALM      C      CA     N       109.470    3.000
+ ALM      HA     CA     CB      108.340    3.000
+ ALM      HA     CA     N       109.470    3.000
+ ALM      CB     CA     N       109.470    3.000
+ ALM      CA     CB     HB3     109.470    3.000
+ ALM      CA     CB     HB2     109.470    3.000
+ ALM      CA     CB     HB1     109.470    3.000
+ ALM      HB3    CB     HB2     109.470    3.000
+ ALM      HB3    CB     HB1     109.470    3.000
+ ALM      HB2    CB     HB1     109.470    3.000
+ ALM      CA     N      H2      120.000    3.000
+ ALM      CA     N      H       120.000    3.000
+ ALM      H2     N      H       120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ALM      var_1    O      C      CM     HM1       -0.112   20.000   1
+ ALM      var_2    O      C      CA     N        -29.896   20.000   3
+ ALM      var_3    C      CA     CB     HB1      179.974   20.000   3
+ ALM      var_4    C      CA     N      H        173.725   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ALM      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ALM      plan-1    N         0.020
+ ALM      plan-1    CA        0.020
+ ALM      plan-1    H         0.020
+ ALM      plan-1    H2        0.020
+ ALM      plan-2    C         0.020
+ ALM      plan-2    CA        0.020
+ ALM      plan-2    O         0.020
+ ALM      plan-2    CM        0.020
+# ------------------------------------------------------

@@ -1,0 +1,240 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TY2     TY2     3-AMINO-L-TYROSINE     peptide    26     14     .
+#
+data_comp_TY2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TY2     N       N       NT3     1       -3.706      -0.109      0.406
+TY2     CA      C       CH1     0       -2.247      0.016       0.669
+TY2     C       C       C       0       -1.935      1.442       1.139
+TY2     O       O       O       0       -1.382      1.573       2.250
+TY2     CB      C       CH2     0       -1.448      -0.353      -0.584
+TY2     CG      C       CR6     0       0.046       -0.426      -0.385
+TY2     CD1     C       CR16    0       0.618       -1.448      0.366
+TY2     CD2     C       CR16    0       0.895       0.534       -0.949
+TY2     CE1     C       CR16    0       1.983       -1.535      0.563
+TY2     CE2     C       CR6     0       2.276       0.466       -0.763
+TY2     CZ      C       CR6     0       2.826       -0.578      0.000
+TY2     OH      O       OH1     0       4.172       -0.607      0.156
+TY2     NE2     N       NH2     0       3.111       1.424       -1.328
+TY2     OXT     O       OC      -1      -2.256      2.375       0.376
+TY2     H       H       H       0       -3.899      -0.957      0.135
+TY2     H2      H       H       0       -3.953      0.477       -0.247
+TY2     H3      H       H       0       -4.174      0.075       1.166
+TY2     HB      H       H       0       -2.005      -0.614      1.395
+TY2     HA1     H       H       0       -1.644      0.308       -1.280
+TY2     HB2     H       H       0       -1.764      -1.224      -0.905
+TY2     HA      H       H       0       0.058       -2.102      0.752
+TY2     HC      H       H       0       0.533       1.237       -1.462
+TY2     HD      H       H       0       2.348       -2.241      1.079
+TY2     HH      H       H       0       4.406       -0.006      0.722
+TY2     HE21    H       H       0       3.981       1.307       -1.321
+TY2     HE22    H       H       0       2.767       2.144       -1.691
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+TY2      N      n/a    CA     START
+TY2      H      N      .      .
+TY2      H2     N      .      .
+TY2      H3     N      .      .
+TY2      CA     N      C      .
+TY2      HB     CA     .      .
+TY2      CB     CA     CG     .
+TY2      HA1    CB     .      .
+TY2      HB2    CB     .      .
+TY2      CG     CB     CD2    .
+TY2      CD2    CG     CE2    .
+TY2      HC     CD2    .      .
+TY2      CE2    CD2    CZ     .
+TY2      NE2    CE2    HE21   .
+TY2      HE22   NE2    .      .
+TY2      HE21   NE2    .      .
+TY2      CZ     CE2    CE1    .
+TY2      OH     CZ     HH     .
+TY2      HH     OH     .      .
+TY2      CE1    CZ     CD1    .
+TY2      HD     CE1    .      .
+TY2      CD1    CE1    HA     .
+TY2      HA     CD1    .      .
+TY2      C      CA     .      END
+TY2      O      C      .      .
+TY2      OXT    C      .      .
+TY2      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TY2       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+TY2       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+TY2       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+TY2       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TY2       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TY2       CB        CG        SINGLE    n         1.508     0.010     1.508     0.010     
+TY2       CG        CD1       DOUBLE    y         1.385     0.011     1.385     0.011     
+TY2       CG        CD2       SINGLE    y         1.391     0.013     1.391     0.013     
+TY2       CD1       CE1       SINGLE    y         1.377     0.011     1.377     0.011     
+TY2       CD2       CE2       DOUBLE    y         1.391     0.011     1.391     0.011     
+TY2       CE1       CZ        DOUBLE    y         1.392     0.011     1.392     0.011     
+TY2       CE2       CZ        SINGLE    y         1.402     0.010     1.402     0.010     
+TY2       CE2       NE2       SINGLE    n         1.386     0.017     1.386     0.017     
+TY2       CZ        OH        SINGLE    n         1.355     0.010     1.355     0.010     
+TY2       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+TY2       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+TY2       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+TY2       CA        HB        SINGLE    n         1.089     0.010     0.991     0.020     
+TY2       CB        HA1       SINGLE    n         1.089     0.010     0.980     0.016     
+TY2       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+TY2       CD1       HA        SINGLE    n         1.082     0.013     0.943     0.017     
+TY2       CD2       HC        SINGLE    n         1.082     0.013     0.942     0.014     
+TY2       CE1       HD        SINGLE    n         1.082     0.013     0.947     0.020     
+TY2       OH        HH        SINGLE    n         0.970     0.012     0.858     0.020     
+TY2       NE2       HE21      SINGLE    n         1.016     0.010     0.877     0.020     
+TY2       NE2       HE22      SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TY2          CA           N           H     109.646    1.54
+TY2          CA           N          H2     109.646    1.54
+TY2          CA           N          H3     109.646    1.54
+TY2           H           N          H2     109.028    2.41
+TY2           H           N          H3     109.028    2.41
+TY2          H2           N          H3     109.028    2.41
+TY2           N          CA           C     109.448    1.50
+TY2           N          CA          CB     110.494    1.50
+TY2           N          CA          HB     108.601    1.50
+TY2           C          CA          CB     111.331    2.53
+TY2           C          CA          HB     108.450    1.50
+TY2          CB          CA          HB     108.690    1.50
+TY2          CA           C           O     117.228    2.13
+TY2          CA           C         OXT     117.228    2.13
+TY2           O           C         OXT     125.543    1.50
+TY2          CA          CB          CG     114.745    1.55
+TY2          CA          CB         HA1     108.434    1.50
+TY2          CA          CB         HB2     108.434    1.50
+TY2          CG          CB         HA1     108.862    1.50
+TY2          CG          CB         HB2     108.862    1.50
+TY2         HA1          CB         HB2     107.782    1.50
+TY2          CB          CG         CD1     121.381    1.50
+TY2          CB          CG         CD2     121.222    1.50
+TY2         CD1          CG         CD2     117.396    1.50
+TY2          CG         CD1         CE1     121.421    1.50
+TY2          CG         CD1          HA     119.343    1.50
+TY2         CE1         CD1          HA     119.236    1.50
+TY2          CG         CD2         CE2     120.353    1.50
+TY2          CG         CD2          HC     120.025    1.50
+TY2         CE2         CD2          HC     119.622    1.50
+TY2         CD1         CE1          CZ     119.904    1.50
+TY2         CD1         CE1          HD     120.281    1.50
+TY2          CZ         CE1          HD     119.815    1.50
+TY2         CD2         CE2          CZ     120.465    1.59
+TY2         CD2         CE2         NE2     120.511    1.50
+TY2          CZ         CE2         NE2     119.024    1.50
+TY2         CE1          CZ         CE2     120.460    1.50
+TY2         CE1          CZ          OH     122.420    3.00
+TY2         CE2          CZ          OH     117.120    1.50
+TY2          CZ          OH          HH     109.343    2.75
+TY2         CE2         NE2        HE21     119.866    1.50
+TY2         CE2         NE2        HE22     119.866    1.50
+TY2        HE21         NE2        HE22     120.268    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TY2             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+TY2             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+TY2            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+TY2             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+TY2       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+TY2              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+TY2       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+TY2              const_18          CG         CD2         CE2         NE2     180.000   10.00     2
+TY2              const_10         CD1         CE1          CZ          OH     180.000   10.00     2
+TY2              const_16         NE2         CE2          CZ          OH       0.000   10.00     2
+TY2             sp2_sp2_1         CD2         CE2         NE2        HE21     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TY2    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TY2    plan-1          CB   0.020
+TY2    plan-1         CD1   0.020
+TY2    plan-1         CD2   0.020
+TY2    plan-1         CE1   0.020
+TY2    plan-1         CE2   0.020
+TY2    plan-1          CG   0.020
+TY2    plan-1          CZ   0.020
+TY2    plan-1          HA   0.020
+TY2    plan-1          HC   0.020
+TY2    plan-1          HD   0.020
+TY2    plan-1         NE2   0.020
+TY2    plan-1          OH   0.020
+TY2    plan-2           C   0.020
+TY2    plan-2          CA   0.020
+TY2    plan-2           O   0.020
+TY2    plan-2         OXT   0.020
+TY2    plan-3         CE2   0.020
+TY2    plan-3        HE21   0.020
+TY2    plan-3        HE22   0.020
+TY2    plan-3         NE2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TY2 SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc1ccc(O)c(N)c1"
+TY2 SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1ccc(O)c(N)c1)C(O)=O"
+TY2 SMILES           CACTVS               3.341 "N[CH](Cc1ccc(O)c(N)c1)C(O)=O"
+TY2 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1C[C@@H](C(=O)O)N)N)O"
+TY2 SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1CC(C(=O)O)N)N)O"
+TY2 InChI            InChI                1.03  "InChI=1S/C9H12N2O3/c10-6-3-5(1-2-8(6)12)4-7(11)9(13)14/h1-3,7,12H,4,10-11H2,(H,13,14)/t7-/m0/s1"
+TY2 InChIKey         InChI                1.03  POGSZHUEECCEAP-ZETCQYMHSA-N
+TY2 ?                acedrg               202         "dictionary generator"
+TY2 ?                acedrg_database      11          "data source"
+TY2 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TY2 ?                refmac5              5.8.0222    "optimization tool"

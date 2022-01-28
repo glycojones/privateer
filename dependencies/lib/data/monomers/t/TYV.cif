@@ -1,0 +1,195 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TYV      TYV 'TYVELOSE                            ' pyranose           22  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TYV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TYV           C1     C    CH1       0.000      0.000    0.000    0.000
+ TYV           H1     H    H         0.000      0.893   -0.448   -0.458
+ TYV           O1     O    OH1       0.000      0.307    1.322    0.447
+ TYV           HO1    H    H         0.000      1.022    1.284    1.097
+ TYV           O5     O    O2        0.000     -0.410   -0.792    1.113
+ TYV           C5     C    CH1       0.000     -1.452   -0.087    1.784
+ TYV           H5     H    H         0.000     -1.117    0.936    2.006
+ TYV           C6     C    CH3       0.000     -1.791   -0.806    3.091
+ TYV           H63    H    H         0.000     -2.564   -0.283    3.593
+ TYV           H62    H    H         0.000     -2.114   -1.793    2.879
+ TYV           H61    H    H         0.000     -0.931   -0.842    3.709
+ TYV           C4     C    CH1       0.000     -2.695   -0.034    0.895
+ TYV           H4     H    H         0.000     -3.017   -1.056    0.651
+ TYV           C3     C    CH2       0.000     -2.355    0.719   -0.395
+ TYV           H31    H    H         0.000     -2.135    1.764   -0.169
+ TYV           H32    H    H         0.000     -3.198    0.667   -1.088
+ TYV           C2     C    CH1       0.000     -1.125    0.062   -1.034
+ TYV           H2     H    H         0.000     -0.797    0.658   -1.898
+ TYV           O2     O    OH1       0.000     -1.455   -1.259   -1.462
+ TYV           HO2    H    H         0.000     -0.676   -1.673   -1.858
+ TYV           O4     O    OH1       0.000     -3.746    0.648    1.583
+ TYV           HO4    H    H         0.000     -4.505    0.665    0.986
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TYV      C1     n/a    O5     START
+ TYV      H1     C1     .      .
+ TYV      O1     C1     HO1    .
+ TYV      HO1    O1     .      .
+ TYV      O5     C1     .      END
+ TYV      C5     O5     C4     .
+ TYV      H5     C5     .      .
+ TYV      C6     C5     H61    .
+ TYV      H63    C6     .      .
+ TYV      H62    C6     .      .
+ TYV      H61    C6     .      .
+ TYV      C4     C5     O4     .
+ TYV      H4     C4     .      .
+ TYV      C3     C4     C2     .
+ TYV      H31    C3     .      .
+ TYV      H32    C3     .      .
+ TYV      C2     C3     O2     .
+ TYV      H2     C2     .      .
+ TYV      O2     C2     HO2    .
+ TYV      HO2    O2     .      .
+ TYV      O4     C4     .      .
+ TYV      HO4    O4     .      .
+ TYV      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TYV       C1        C2        single    1.524     0.020     1.524     0.020     
+TYV       O1        C1        single    1.432     0.020     1.432     0.020     
+TYV       O5        C1        single    1.426     0.020     1.426     0.020     
+TYV       H1        C1        single    1.089     0.010     0.989     0.005     
+TYV       C2        C3        single    1.524     0.020     1.524     0.020     
+TYV       O2        C2        single    1.432     0.020     1.432     0.020     
+TYV       H2        C2        single    1.089     0.010     0.989     0.005     
+TYV       C3        C4        single    1.524     0.020     1.524     0.020     
+TYV       H31       C3        single    1.089     0.010     0.989     0.005     
+TYV       H32       C3        single    1.089     0.010     0.989     0.005     
+TYV       C4        C5        single    1.524     0.020     1.524     0.020     
+TYV       O4        C4        single    1.432     0.020     1.432     0.020     
+TYV       H4        C4        single    1.089     0.010     0.989     0.005     
+TYV       C6        C5        single    1.524     0.020     1.524     0.020     
+TYV       C5        O5        single    1.426     0.020     1.426     0.020     
+TYV       H5        C5        single    1.089     0.010     0.989     0.005     
+TYV       H61       C6        single    1.089     0.010     0.989     0.005     
+TYV       H62       C6        single    1.089     0.010     0.989     0.005     
+TYV       H63       C6        single    1.089     0.010     0.989     0.005     
+TYV       HO1       O1        single    0.970     0.012     0.839     0.014     
+TYV       HO2       O2        single    0.970     0.012     0.839     0.014     
+TYV       HO4       O4        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TYV      H1     C1     O1      109.470    3.000
+ TYV      H1     C1     O5      109.470    3.000
+ TYV      O1     C1     O5      109.470    3.000
+ TYV      H1     C1     C2      108.340    3.000
+ TYV      O1     C1     C2      109.470    3.000
+ TYV      O5     C1     C2      109.470    3.000
+ TYV      C1     O1     HO1     109.470    3.000
+ TYV      C1     O5     C5      111.800    3.000
+ TYV      O5     C5     H5      109.470    3.000
+ TYV      O5     C5     C6      109.470    3.000
+ TYV      O5     C5     C4      109.470    3.000
+ TYV      H5     C5     C6      108.340    3.000
+ TYV      H5     C5     C4      108.340    3.000
+ TYV      C6     C5     C4      111.000    3.000
+ TYV      C5     C6     H63     109.470    3.000
+ TYV      C5     C6     H62     109.470    3.000
+ TYV      C5     C6     H61     109.470    3.000
+ TYV      H63    C6     H62     109.470    3.000
+ TYV      H63    C6     H61     109.470    3.000
+ TYV      H62    C6     H61     109.470    3.000
+ TYV      C5     C4     H4      108.340    3.000
+ TYV      C5     C4     C3      111.000    3.000
+ TYV      C5     C4     O4      109.470    3.000
+ TYV      H4     C4     C3      108.340    3.000
+ TYV      H4     C4     O4      109.470    3.000
+ TYV      C3     C4     O4      109.470    3.000
+ TYV      C4     C3     H31     109.470    3.000
+ TYV      C4     C3     H32     109.470    3.000
+ TYV      C4     C3     C2      111.000    3.000
+ TYV      H31    C3     H32     107.900    3.000
+ TYV      H31    C3     C2      109.470    3.000
+ TYV      H32    C3     C2      109.470    3.000
+ TYV      C3     C2     H2      108.340    3.000
+ TYV      C3     C2     O2      109.470    3.000
+ TYV      C3     C2     C1      111.000    3.000
+ TYV      H2     C2     O2      109.470    3.000
+ TYV      H2     C2     C1      108.340    3.000
+ TYV      O2     C2     C1      109.470    3.000
+ TYV      C2     O2     HO2     109.470    3.000
+ TYV      C4     O4     HO4     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TYV      var_1    O5     C1     O1     HO1       60.043   20.000   1
+ TYV      var_2    C1     O5     C5     C4        60.000   20.000   1
+ TYV      var_3    O5     C5     C6     H61       59.880   20.000   3
+ TYV      var_4    O5     C5     C4     O4       180.000   20.000   3
+ TYV      var_5    C5     C4     C3     C2        60.000   20.000   3
+ TYV      var_6    C4     C3     C2     O2        60.000   20.000   3
+ TYV      var_7    C3     C2     C1     O5        60.000   20.000   3
+ TYV      var_8    C3     C2     O2     HO2     -179.533   20.000   1
+ TYV      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TYV      chir_01  C1     C2     O1     O5        negativ
+ TYV      chir_02  C2     C1     C3     O2        positiv
+ TYV      chir_03  C4     C3     C5     O4        negativ
+ TYV      chir_04  C5     C4     C6     O5        negativ
+# ------------------------------------------------------

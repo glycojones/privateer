@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+POP     POP     "PYROPHOSPHATE2-"     NON-POLYMER     9     9     .     
+#
+data_comp_POP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+POP     P1      P       P       0       -3.280      58.653      16.740      
+POP     O1      O       O       0       -2.610      59.883      17.301      
+POP     O2      O       OP      -1      -3.865      58.882      15.368      
+POP     O3      O       OP      -1      -4.270      58.039      17.700      
+POP     O       O       O2      0       -2.111      57.558      16.548      
+POP     P2      P       P       0       -1.216      56.719      17.598      
+POP     O4      O       O       0       -0.152      56.030      16.779      
+POP     O5      O       OP      -1      -0.646      57.733      18.560      
+POP     O6      O       OP      -1      -2.159      55.748      18.265      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+POP       P1        O1        DOUBLE    n         1.509     0.020     1.509     0.020     
+POP       P1        O2        SINGLE    n         1.509     0.020     1.509     0.020     
+POP       P1        O3        SINGLE    n         1.509     0.020     1.509     0.020     
+POP       P1        O         SINGLE    n         1.614     0.019     1.614     0.019     
+POP       O         P2        SINGLE    n         1.614     0.019     1.614     0.019     
+POP       P2        O4        DOUBLE    n         1.509     0.020     1.509     0.020     
+POP       P2        O5        SINGLE    n         1.509     0.020     1.509     0.020     
+POP       P2        O6        SINGLE    n         1.509     0.020     1.509     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+POP          O1          P1          O2     112.716    1.50
+POP          O1          P1          O3     112.716    1.50
+POP          O1          P1           O     105.965    2.38
+POP          O2          P1          O3     112.716    1.50
+POP          O2          P1           O     105.965    2.38
+POP          O3          P1           O     105.965    2.38
+POP          P1           O          P2     132.584    3.00
+POP           O          P2          O4     105.965    2.38
+POP           O          P2          O5     105.965    2.38
+POP           O          P2          O6     105.965    2.38
+POP          O4          P2          O5     112.716    1.50
+POP          O4          P2          O6     112.716    1.50
+POP          O5          P2          O6     112.716    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+POP             sp3_sp3_1          P2           O          P1          O1     180.000   10.00     3
+POP             sp3_sp3_4          P1           O          P2          O4     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+POP SMILES           ACDLabs              10.04 "[O-]P(=O)(O)OP([O-])(=O)O"
+POP SMILES_CANONICAL CACTVS               3.341 "O[P]([O-])(=O)O[P](O)([O-])=O"
+POP SMILES           CACTVS               3.341 "O[P]([O-])(=O)O[P](O)([O-])=O"
+POP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "O[P@@](=O)([O-])O[P@@](=O)(O)[O-]"
+POP SMILES           "OpenEye OEToolkits" 1.5.0 "OP(=O)([O-])OP(=O)(O)[O-]"
+POP InChI            InChI                1.03  "InChI=1S/H4O7P2/c1-8(2,3)7-9(4,5)6/h(H2,1,2,3)(H2,4,5,6)/p-2"
+POP InChIKey         InChI                1.03  XPPKVPWEQAFLFU-UHFFFAOYSA-L
+POP ?                acedrg               190         "dictionary generator"                  
+POP ?                acedrg_database      11          "data source"                           
+POP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+POP ?                refmac5              5.8.0158    "optimization tool"                     

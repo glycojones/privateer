@@ -1,0 +1,421 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RHX      RHX '[2,6-BIS(4-PHENYL)-1,3-OXAZOLIN-2-YL' non-polymer        48  29 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RHX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RHX           H47    H    H         0.000     -1.641    4.976    5.526
+ RHX           C47    C    CR16      0.000     -1.879    6.030    5.452
+ RHX           C48    C    CR16      0.000     -3.214    6.447    5.449
+ RHX           H48    H    H         0.000     -4.008    5.713    5.512
+ RHX           C49    C    CR16      0.000     -3.530    7.810    5.365
+ RHX           H49    H    H         0.000     -4.565    8.129    5.368
+ RHX           C50    C    CR16      0.000     -2.507    8.754    5.278
+ RHX           H50    H    H         0.000     -2.744    9.809    5.218
+ RHX           C51    C    CR16      0.000     -1.176    8.333    5.268
+ RHX           H51    H    H         0.000     -0.386    9.069    5.188
+ RHX           C17    C    CR6       0.000     -0.846    6.978    5.359
+ RHX           C9     C    CH1       0.000      0.589    6.564    5.324
+ RHX           H9     H    H         0.000      1.206    7.361    4.886
+ RHX           N1     N    N         0.000      0.726    5.336    4.552
+ RHX           C7     C    C         0.000      1.263    4.403    5.208
+ RHX           O1     O    O2        0.000      1.503    4.779    6.580
+ RHX           C8     C    CH2       0.000      1.145    6.156    6.715
+ RHX           H82    H    H         0.000      2.011    6.775    6.958
+ RHX           H81    H    H         0.000      0.372    6.299    7.473
+ RHX           C2     C    CR6       0.000      1.548    3.166    4.418
+ RHX           RH1    RH   RH        0.000      0.179    5.026    2.754
+ RHX           C1     C    CR6       0.000      1.028    3.402    3.099
+ RHX           C6     C    CR6       0.000      1.152    2.453    2.143
+ RHX           C5     C    CR16      0.000      1.764    1.221    2.378
+ RHX           H5     H    H         0.000      1.844    0.475    1.597
+ RHX           C4     C    CR16      0.000      2.269    0.987    3.657
+ RHX           H4     H    H         0.000      2.740    0.035    3.869
+ RHX           C3     C    CR16      0.000      2.186    1.951    4.683
+ RHX           H3     H    H         0.000      2.610    1.753    5.660
+ RHX           N2     N    N         0.000      0.014    4.132    1.036
+ RHX           C11    C    C         0.000      0.530    2.984    0.920
+ RHX           O2     O    O2        0.000      0.476    2.415   -0.396
+ RHX           C12    C    CH2       0.000     -0.359    3.287   -1.151
+ RHX           H122   H    H         0.000     -1.313    2.811   -1.387
+ RHX           H121   H    H         0.000      0.131    3.595   -2.077
+ RHX           C13    C    CH1       0.000     -0.606    4.526   -0.259
+ RHX           H13    H    H         0.000     -1.686    4.673   -0.122
+ RHX           C21    C    CR6       0.000     -0.034    5.679   -1.018
+ RHX           C58    C    CR16      0.000      1.262    5.646   -1.554
+ RHX           H58    H    H         0.000      1.884    4.771   -1.412
+ RHX           C59    C    CR16      0.000      1.751    6.744   -2.272
+ RHX           H59    H    H         0.000      2.757    6.720   -2.672
+ RHX           C60    C    CR16      0.000      0.947    7.874   -2.477
+ RHX           H60    H    H         0.000      1.327    8.720   -3.036
+ RHX           C61    C    CR16      0.000     -0.350    7.901   -1.954
+ RHX           H61    H    H         0.000     -0.977    8.771   -2.104
+ RHX           C62    C    CR16      0.000     -0.834    6.806   -1.240
+ RHX           H62    H    H         0.000     -1.845    6.828   -0.851
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RHX      H47    n/a    C47    START
+ RHX      C47    H47    C17    .
+ RHX      C48    C47    C49    .
+ RHX      H48    C48    .      .
+ RHX      C49    C48    C50    .
+ RHX      H49    C49    .      .
+ RHX      C50    C49    C51    .
+ RHX      H50    C50    .      .
+ RHX      C51    C50    H51    .
+ RHX      H51    C51    .      .
+ RHX      C17    C47    C9     .
+ RHX      C9     C17    N1     .
+ RHX      H9     C9     .      .
+ RHX      N1     C9     RH1    .
+ RHX      C7     N1     C2     .
+ RHX      O1     C7     C8     .
+ RHX      C8     O1     H81    .
+ RHX      H82    C8     .      .
+ RHX      H81    C8     .      .
+ RHX      C2     C7     .      .
+ RHX      RH1    N1     N2     .
+ RHX      C1     RH1    C6     .
+ RHX      C6     C1     C5     .
+ RHX      C5     C6     C4     .
+ RHX      H5     C5     .      .
+ RHX      C4     C5     C3     .
+ RHX      H4     C4     .      .
+ RHX      C3     C4     H3     .
+ RHX      H3     C3     .      .
+ RHX      N2     RH1    C13    .
+ RHX      C11    N2     O2     .
+ RHX      O2     C11    C12    .
+ RHX      C12    O2     H121   .
+ RHX      H122   C12    .      .
+ RHX      H121   C12    .      .
+ RHX      C13    N2     C21    .
+ RHX      H13    C13    .      .
+ RHX      C21    C13    C58    .
+ RHX      C58    C21    C59    .
+ RHX      H58    C58    .      .
+ RHX      C59    C58    C60    .
+ RHX      H59    C59    .      .
+ RHX      C60    C59    C61    .
+ RHX      H60    C60    .      .
+ RHX      C61    C60    C62    .
+ RHX      H61    C61    .      .
+ RHX      C62    C61    H62    .
+ RHX      H62    C62    .      END
+ RHX      C13    C12    .    ADD
+ RHX      C11    C6     .    ADD
+ RHX      C9     C8     .    ADD
+ RHX      C1     C2     .    ADD
+ RHX      C2     C3     .    ADD
+ RHX      C21    C62    .    ADD
+ RHX      C17    C51    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RHX       C13       C12       single    1.524     0.020     1.524     0.020     
+RHX       C21       C13       single    1.480     0.020     1.480     0.020     
+RHX       C13       N2        single    1.455     0.020     1.455     0.020     
+RHX       H13       C13       single    1.089     0.010     0.989     0.005     
+RHX       C12       O2        single    1.426     0.020     1.426     0.020     
+RHX       H121      C12       single    1.089     0.010     0.989     0.005     
+RHX       H122      C12       single    1.089     0.010     0.989     0.005     
+RHX       O2        C11       single    1.454     0.020     1.454     0.020     
+RHX       C11       N2        double    1.260     0.020     1.260     0.020     
+RHX       C11       C6        single    1.500     0.020     1.500     0.020     
+RHX       N1        C9        single    1.455     0.020     1.455     0.020     
+RHX       C9        C17       single    1.480     0.020     1.480     0.020     
+RHX       C9        C8        single    1.524     0.020     1.524     0.020     
+RHX       H9        C9        single    1.089     0.010     0.989     0.005     
+RHX       C6        C1        double    1.487     0.020     1.487     0.020     
+RHX       C1        RH1       single    1.865     0.020     1.865     0.020     
+RHX       C1        C2        single    1.487     0.020     1.487     0.020     
+RHX       C2        C3        double    1.390     0.020     1.390     0.020     
+RHX       C2        C7        single    1.500     0.020     1.500     0.020     
+RHX       C3        C4        single    1.390     0.020     1.390     0.020     
+RHX       H3        C3        single    1.082     0.013     0.975     0.010     
+RHX       C8        O1        single    1.426     0.020     1.426     0.020     
+RHX       H81       C8        single    1.089     0.010     0.989     0.005     
+RHX       H82       C8        single    1.089     0.010     0.989     0.005     
+RHX       C7        N1        double    1.260     0.020     1.260     0.020     
+RHX       O1        C7        single    1.454     0.020     1.454     0.020     
+RHX       C4        C5        double    1.390     0.020     1.390     0.020     
+RHX       H4        C4        single    1.082     0.013     0.975     0.010     
+RHX       C5        C6        single    1.390     0.020     1.390     0.020     
+RHX       H5        C5        single    1.082     0.013     0.975     0.010     
+RHX       N2        RH1       single    1.944     0.020     1.944     0.020     
+RHX       RH1       N1        single    1.905     0.020     1.905     0.020     
+RHX       C58       C21       double    1.390     0.020     1.390     0.020     
+RHX       C21       C62       single    1.390     0.020     1.390     0.020     
+RHX       C62       C61       double    1.390     0.020     1.390     0.020     
+RHX       H62       C62       single    1.082     0.013     0.975     0.010     
+RHX       C61       C60       single    1.390     0.020     1.390     0.020     
+RHX       H61       C61       single    1.082     0.013     0.975     0.010     
+RHX       C60       C59       double    1.390     0.020     1.390     0.020     
+RHX       H60       C60       single    1.082     0.013     0.975     0.010     
+RHX       C59       C58       single    1.390     0.020     1.390     0.020     
+RHX       H59       C59       single    1.082     0.013     0.975     0.010     
+RHX       H58       C58       single    1.082     0.013     0.975     0.010     
+RHX       C17       C51       single    1.390     0.020     1.390     0.020     
+RHX       C17       C47       double    1.390     0.020     1.390     0.020     
+RHX       C51       C50       double    1.390     0.020     1.390     0.020     
+RHX       H51       C51       single    1.082     0.013     0.975     0.010     
+RHX       C50       C49       single    1.390     0.020     1.390     0.020     
+RHX       H50       C50       single    1.082     0.013     0.975     0.010     
+RHX       C49       C48       double    1.390     0.020     1.390     0.020     
+RHX       H49       C49       single    1.082     0.013     0.975     0.010     
+RHX       C48       C47       single    1.390     0.020     1.390     0.020     
+RHX       H48       C48       single    1.082     0.013     0.975     0.010     
+RHX       C47       H47       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RHX      H47    C47    C48     120.000    3.000
+ RHX      H47    C47    C17     120.000    3.000
+ RHX      C48    C47    C17     120.000    3.000
+ RHX      C47    C48    H48     120.000    3.000
+ RHX      C47    C48    C49     120.000    3.000
+ RHX      H48    C48    C49     120.000    3.000
+ RHX      C48    C49    H49     120.000    3.000
+ RHX      C48    C49    C50     120.000    3.000
+ RHX      H49    C49    C50     120.000    3.000
+ RHX      C49    C50    H50     120.000    3.000
+ RHX      C49    C50    C51     120.000    3.000
+ RHX      H50    C50    C51     120.000    3.000
+ RHX      C50    C51    H51     120.000    3.000
+ RHX      C50    C51    C17     120.000    3.000
+ RHX      H51    C51    C17     120.000    3.000
+ RHX      C47    C17    C9      120.000    3.000
+ RHX      C47    C17    C51     120.000    3.000
+ RHX      C9     C17    C51     120.000    3.000
+ RHX      C17    C9     H9      109.470    3.000
+ RHX      C17    C9     N1      109.500    3.000
+ RHX      C17    C9     C8      109.470    3.000
+ RHX      H9     C9     N1      109.470    3.000
+ RHX      H9     C9     C8      108.340    3.000
+ RHX      N1     C9     C8      105.000    3.000
+ RHX      C9     N1     C7      121.000    3.000
+ RHX      C9     N1     RH1     120.000    3.000
+ RHX      C7     N1     RH1     120.000    3.000
+ RHX      N1     C7     O1      120.000    3.000
+ RHX      N1     C7     C2      120.000    3.000
+ RHX      O1     C7     C2      120.000    3.000
+ RHX      C7     O1     C8      120.000    3.000
+ RHX      O1     C8     H82     109.470    3.000
+ RHX      O1     C8     H81     109.470    3.000
+ RHX      O1     C8     C9      109.470    3.000
+ RHX      H82    C8     H81     107.900    3.000
+ RHX      H82    C8     C9      109.470    3.000
+ RHX      H81    C8     C9      109.470    3.000
+ RHX      C7     C2     C1      120.000    3.000
+ RHX      C7     C2     C3      120.000    3.000
+ RHX      C1     C2     C3      120.000    3.000
+ RHX      N1     RH1    C1       80.581    3.000
+ RHX      N1     RH1    N2      158.999    3.000
+ RHX      C1     RH1    N2       78.557    3.000
+ RHX      RH1    C1     C6      120.000    3.000
+ RHX      RH1    C1     C2      120.000    3.000
+ RHX      C6     C1     C2      120.000    3.000
+ RHX      C1     C6     C5      120.000    3.000
+ RHX      C1     C6     C11     120.000    3.000
+ RHX      C5     C6     C11     120.000    3.000
+ RHX      C6     C5     H5      120.000    3.000
+ RHX      C6     C5     C4      120.000    3.000
+ RHX      H5     C5     C4      120.000    3.000
+ RHX      C5     C4     H4      120.000    3.000
+ RHX      C5     C4     C3      120.000    3.000
+ RHX      H4     C4     C3      120.000    3.000
+ RHX      C4     C3     H3      120.000    3.000
+ RHX      C4     C3     C2      120.000    3.000
+ RHX      H3     C3     C2      120.000    3.000
+ RHX      RH1    N2     C11     120.000    3.000
+ RHX      RH1    N2     C13     120.000    3.000
+ RHX      C11    N2     C13     121.000    3.000
+ RHX      N2     C11    O2      120.000    3.000
+ RHX      N2     C11    C6      120.000    3.000
+ RHX      O2     C11    C6      120.000    3.000
+ RHX      C11    O2     C12     120.000    3.000
+ RHX      O2     C12    H122    109.470    3.000
+ RHX      O2     C12    H121    109.470    3.000
+ RHX      O2     C12    C13     109.470    3.000
+ RHX      H122   C12    H121    107.900    3.000
+ RHX      H122   C12    C13     109.470    3.000
+ RHX      H121   C12    C13     109.470    3.000
+ RHX      N2     C13    H13     109.470    3.000
+ RHX      N2     C13    C21     109.500    3.000
+ RHX      N2     C13    C12     105.000    3.000
+ RHX      H13    C13    C21     109.470    3.000
+ RHX      H13    C13    C12     108.340    3.000
+ RHX      C21    C13    C12     109.470    3.000
+ RHX      C13    C21    C58     120.000    3.000
+ RHX      C13    C21    C62     120.000    3.000
+ RHX      C58    C21    C62     120.000    3.000
+ RHX      C21    C58    H58     120.000    3.000
+ RHX      C21    C58    C59     120.000    3.000
+ RHX      H58    C58    C59     120.000    3.000
+ RHX      C58    C59    H59     120.000    3.000
+ RHX      C58    C59    C60     120.000    3.000
+ RHX      H59    C59    C60     120.000    3.000
+ RHX      C59    C60    H60     120.000    3.000
+ RHX      C59    C60    C61     120.000    3.000
+ RHX      H60    C60    C61     120.000    3.000
+ RHX      C60    C61    H61     120.000    3.000
+ RHX      C60    C61    C62     120.000    3.000
+ RHX      H61    C61    C62     120.000    3.000
+ RHX      C61    C62    H62     120.000    3.000
+ RHX      C61    C62    C21     120.000    3.000
+ RHX      H62    C62    C21     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RHX      CONST_1  H47    C47    C48    C49      180.000    0.000   0
+ RHX      CONST_2  C47    C48    C49    C50        0.000    0.000   0
+ RHX      CONST_3  C48    C49    C50    C51        0.000    0.000   0
+ RHX      CONST_4  C49    C50    C51    C17        0.000    0.000   0
+ RHX      CONST_5  H47    C47    C17    C9         0.000    0.000   0
+ RHX      CONST_6  C47    C17    C51    C50        0.000    0.000   0
+ RHX      var_1    C47    C17    C9     N1        37.298   20.000   1
+ RHX      var_2    C17    C9     C8     O1       117.351   20.000   3
+ RHX      var_3    C17    C9     N1     RH1       56.302   20.000   3
+ RHX      CONST_7  C9     N1     C7     C2       180.000    0.000   0
+ RHX      var_4    N1     C7     O1     C8        -4.828   20.000   1
+ RHX      var_5    C7     O1     C8     C9         3.140   20.000   1
+ RHX      var_6    N1     C7     C2     C1        -3.290   20.000   1
+ RHX      CONST_8  C7     C2     C3     C4       180.000    0.000   0
+ RHX      var_7    C9     N1     RH1    N2       168.534   20.000   1
+ RHX      var_8    N1     RH1    C1     C6      -177.071   20.000   1
+ RHX      CONST_9  RH1    C1     C2     C7         0.000    0.000   0
+ RHX      CONST_10 RH1    C1     C6     C5       180.000    0.000   0
+ RHX      CONST_11 C1     C6     C5     C4         0.000    0.000   0
+ RHX      CONST_12 C6     C5     C4     C3         0.000    0.000   0
+ RHX      CONST_13 C5     C4     C3     C2         0.000    0.000   0
+ RHX      var_9    N1     RH1    N2     C13     -173.877   20.000   1
+ RHX      CONST_14 RH1    N2     C11    O2       180.000    0.000   0
+ RHX      var_10   N2     C11    C6     C1        -1.709   20.000   1
+ RHX      var_11   N2     C11    O2     C12       -8.704   20.000   1
+ RHX      var_12   C11    O2     C12    C13        8.959   20.000   1
+ RHX      var_13   RH1    N2     C13    C21       64.936   20.000   3
+ RHX      var_14   N2     C13    C12    O2        -6.839   20.000   3
+ RHX      var_15   N2     C13    C21    C58       64.733   20.000   1
+ RHX      CONST_15 C13    C21    C62    C61      180.000    0.000   0
+ RHX      CONST_16 C13    C21    C58    C59      180.000    0.000   0
+ RHX      CONST_17 C21    C58    C59    C60        0.000    0.000   0
+ RHX      CONST_18 C58    C59    C60    C61        0.000    0.000   0
+ RHX      CONST_19 C59    C60    C61    C62        0.000    0.000   0
+ RHX      CONST_20 C60    C61    C62    C21        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RHX      chir_01  C13    C12    C21    N2        positiv
+ RHX      chir_02  C9     C8     N1     C17       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RHX      plan-1    C11       0.020
+ RHX      plan-1    C6        0.020
+ RHX      plan-1    O2        0.020
+ RHX      plan-1    N2        0.020
+ RHX      plan-2    C1        0.020
+ RHX      plan-2    C2        0.020
+ RHX      plan-2    C6        0.020
+ RHX      plan-2    RH1       0.020
+ RHX      plan-2    C3        0.020
+ RHX      plan-2    C4        0.020
+ RHX      plan-2    C5        0.020
+ RHX      plan-2    C7        0.020
+ RHX      plan-2    H3        0.020
+ RHX      plan-2    H4        0.020
+ RHX      plan-2    H5        0.020
+ RHX      plan-2    C11       0.020
+ RHX      plan-3    C7        0.020
+ RHX      plan-3    C2        0.020
+ RHX      plan-3    N1        0.020
+ RHX      plan-3    O1        0.020
+ RHX      plan-4    C21       0.020
+ RHX      plan-4    C13       0.020
+ RHX      plan-4    C62       0.020
+ RHX      plan-4    C58       0.020
+ RHX      plan-4    C61       0.020
+ RHX      plan-4    C60       0.020
+ RHX      plan-4    C59       0.020
+ RHX      plan-4    H62       0.020
+ RHX      plan-4    H61       0.020
+ RHX      plan-4    H60       0.020
+ RHX      plan-4    H59       0.020
+ RHX      plan-4    H58       0.020
+ RHX      plan-5    N2        0.020
+ RHX      plan-5    C13       0.020
+ RHX      plan-5    C11       0.020
+ RHX      plan-5    RH1       0.020
+ RHX      plan-6    N1        0.020
+ RHX      plan-6    C9        0.020
+ RHX      plan-6    C7        0.020
+ RHX      plan-6    RH1       0.020
+ RHX      plan-7    C17       0.020
+ RHX      plan-7    C9        0.020
+ RHX      plan-7    C51       0.020
+ RHX      plan-7    C47       0.020
+ RHX      plan-7    C50       0.020
+ RHX      plan-7    C49       0.020
+ RHX      plan-7    C48       0.020
+ RHX      plan-7    H51       0.020
+ RHX      plan-7    H50       0.020
+ RHX      plan-7    H49       0.020
+ RHX      plan-7    H48       0.020
+ RHX      plan-7    H47       0.020
+# ------------------------------------------------------

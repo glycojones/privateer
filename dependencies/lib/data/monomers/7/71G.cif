@@ -1,0 +1,148 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+71G     71G      3-aminobenzonitrile     NON-POLYMER     15     9     .     
+#
+data_comp_71G
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+71G     C3      C       CR6     0       56.443      43.227      73.596      
+71G     C2      C       CR16    0       56.876      44.549      73.745      
+71G     N1      N       NH2     0       58.196      46.184      74.935      
+71G     C4      C       CR16    0       56.881      42.231      74.468      
+71G     C6      C       CR16    0       58.196      43.876      75.650      
+71G     C7      C       CSP     0       55.533      42.900      72.529      
+71G     C1      C       CR6     0       57.763      44.887      74.780      
+71G     C5      C       CR16    0       57.756      42.563      75.490      
+71G     N8      N       N       0       54.798      42.670      71.685      
+71G     H1      H       H       0       56.576      45.218      73.152      
+71G     H2      H       H       0       58.939      46.347      75.372      
+71G     H3      H       H       0       57.728      46.845      74.598      
+71G     H4      H       H       0       56.588      41.342      74.367      
+71G     H5      H       H       0       58.792      44.090      76.349      
+71G     H6      H       H       0       58.056      41.899      76.080      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+71G       C7        N8        TRIPLE    n         1.143     0.010     1.143     0.010     
+71G       C3        C7        SINGLE    n         1.440     0.010     1.440     0.010     
+71G       C3        C2        DOUBLE    y         1.393     0.010     1.393     0.010     
+71G       C3        C4        SINGLE    y         1.388     0.010     1.388     0.010     
+71G       C2        C1        SINGLE    y         1.394     0.012     1.394     0.012     
+71G       C4        C5        DOUBLE    y         1.379     0.010     1.379     0.010     
+71G       N1        C1        SINGLE    n         1.376     0.019     1.376     0.019     
+71G       C6        C1        DOUBLE    y         1.396     0.010     1.396     0.010     
+71G       C6        C5        SINGLE    y         1.387     0.010     1.387     0.010     
+71G       C2        H1        SINGLE    n         1.082     0.013     0.943     0.019     
+71G       N1        H2        SINGLE    n         1.016     0.010     0.877     0.020     
+71G       N1        H3        SINGLE    n         1.016     0.010     0.877     0.020     
+71G       C4        H4        SINGLE    n         1.082     0.013     0.941     0.017     
+71G       C6        H5        SINGLE    n         1.082     0.013     0.943     0.018     
+71G       C5        H6        SINGLE    n         1.082     0.013     0.937     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+71G          C7          C3          C2     119.196    1.50
+71G          C7          C3          C4     119.897    1.50
+71G          C2          C3          C4     120.907    1.50
+71G          C3          C2          C1     120.066    1.50
+71G          C3          C2          H1     120.361    1.50
+71G          C1          C2          H1     119.573    1.50
+71G          C1          N1          H2     119.811    2.73
+71G          C1          N1          H3     119.811    2.73
+71G          H2          N1          H3     120.379    3.00
+71G          C3          C4          C5     119.209    1.50
+71G          C3          C4          H4     120.635    1.50
+71G          C5          C4          H4     120.155    1.50
+71G          C1          C6          C5     120.694    1.50
+71G          C1          C6          H5     119.400    1.50
+71G          C5          C6          H5     119.907    1.50
+71G          N8          C7          C3     178.291    1.50
+71G          C2          C1          N1     120.586    1.50
+71G          C2          C1          C6     118.614    1.50
+71G          N1          C1          C6     120.801    1.50
+71G          C4          C5          C6     120.511    1.50
+71G          C4          C5          H6     119.840    1.50
+71G          C6          C5          H6     119.649    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+71G       const_sp2_sp2_2          C1          C2          C3          C7     180.000   10.00     2
+71G              const_23          C7          C3          C4          C5     180.000   10.00     2
+71G           other_tor_1          N8          C7          C3          C2      90.000   10.00     1
+71G       const_sp2_sp2_7          N1          C1          C2          C3     180.000   10.00     2
+71G             sp2_sp2_1          C2          C1          N1          H2     180.000   10.00     2
+71G              const_17          C3          C4          C5          C6       0.000   10.00     2
+71G              const_11          N1          C1          C6          C5     180.000   10.00     2
+71G              const_13          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+71G    plan-1          C1   0.020
+71G    plan-1          C2   0.020
+71G    plan-1          C3   0.020
+71G    plan-1          C4   0.020
+71G    plan-1          C5   0.020
+71G    plan-1          C6   0.020
+71G    plan-1          C7   0.020
+71G    plan-1          H1   0.020
+71G    plan-1          H4   0.020
+71G    plan-1          H5   0.020
+71G    plan-1          H6   0.020
+71G    plan-1          N1   0.020
+71G    plan-2          C1   0.020
+71G    plan-2          H2   0.020
+71G    plan-2          H3   0.020
+71G    plan-2          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+71G SMILES           ACDLabs              12.01 "c1(cc(N)ccc1)C#N"
+71G InChI            InChI                1.03  "InChI=1S/C7H6N2/c8-5-6-2-1-3-7(9)4-6/h1-4H,9H2"
+71G InChIKey         InChI                1.03  NJXPYZHXZZCTNI-UHFFFAOYSA-N
+71G SMILES_CANONICAL CACTVS               3.385 "Nc1cccc(c1)C#N"
+71G SMILES           CACTVS               3.385 "Nc1cccc(c1)C#N"
+71G SMILES_CANONICAL "OpenEye OEToolkits" 2.0.5 "c1cc(cc(c1)N)C#N"
+71G SMILES           "OpenEye OEToolkits" 2.0.5 "c1cc(cc(c1)N)C#N"
+71G ?                acedrg               202         "dictionary generator"                  
+71G ?                acedrg_database      11          "data source"                           
+71G ?                rdkit                2017.03.2   "Chemoinformatics tool"
+71G ?                refmac5              5.8.0189    "optimization tool"                     

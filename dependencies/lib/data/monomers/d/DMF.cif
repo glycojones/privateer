@@ -1,0 +1,124 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DMF     DMF     DIMETHYLFORMAMIDE     NON-POLYMER     12     5     .     
+#
+data_comp_DMF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DMF     C1      C       CH3     0       11.898      47.203      2.973       
+DMF     C2      C       CH3     0       12.281      48.459      5.071       
+DMF     C       C       C1      0       10.230      48.827      3.781       
+DMF     O       O       O       0       9.566       48.949      2.749       
+DMF     N       N       N       0       11.404      48.190      3.933       
+DMF     H11     H       H       0       11.190      46.939      2.364       
+DMF     H12     H       H       0       12.214      46.420      3.453       
+DMF     H13     H       H       0       12.633      47.586      2.467       
+DMF     H21     H       H       0       11.954      49.220      5.579       
+DMF     H22     H       H       0       13.176      48.653      4.747       
+DMF     H23     H       H       0       12.312      47.678      5.646       
+DMF     HC      H       H       0       9.853       49.225      4.575       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DMF       C1        N         SINGLE    n         1.458     0.011     1.458     0.011     
+DMF       C2        N         SINGLE    n         1.458     0.011     1.458     0.011     
+DMF       C         O         DOUBLE    n         1.232     0.010     1.232     0.010     
+DMF       C         N         SINGLE    n         1.321     0.020     1.321     0.020     
+DMF       C1        H11       SINGLE    n         1.089     0.010     0.971     0.018     
+DMF       C1        H12       SINGLE    n         1.089     0.010     0.971     0.018     
+DMF       C1        H13       SINGLE    n         1.089     0.010     0.971     0.018     
+DMF       C2        H21       SINGLE    n         1.089     0.010     0.971     0.018     
+DMF       C2        H22       SINGLE    n         1.089     0.010     0.971     0.018     
+DMF       C2        H23       SINGLE    n         1.089     0.010     0.971     0.018     
+DMF       C         HC        SINGLE    n         1.082     0.013     0.964     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DMF           N          C1         H11     109.487    1.50
+DMF           N          C1         H12     109.487    1.50
+DMF           N          C1         H13     109.487    1.50
+DMF         H11          C1         H12     109.408    1.50
+DMF         H11          C1         H13     109.408    1.50
+DMF         H12          C1         H13     109.408    1.50
+DMF           N          C2         H21     109.487    1.50
+DMF           N          C2         H22     109.487    1.50
+DMF           N          C2         H23     109.487    1.50
+DMF         H21          C2         H22     109.408    1.50
+DMF         H21          C2         H23     109.408    1.50
+DMF         H22          C2         H23     109.408    1.50
+DMF           O           C           N     125.256    3.00
+DMF           O           C          HC     117.782    2.29
+DMF           N           C          HC     116.961    2.36
+DMF          C1           N          C2     117.627    1.82
+DMF          C1           N           C     121.186    1.84
+DMF          C2           N           C     121.186    1.84
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DMF             sp2_sp3_1          C2           N          C1         H11       0.000   10.00     6
+DMF             sp2_sp3_7          C1           N          C2         H21       0.000   10.00     6
+DMF             sp2_sp2_1           O           C           N          C1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DMF    plan-1           C   0.020
+DMF    plan-1          HC   0.020
+DMF    plan-1           N   0.020
+DMF    plan-1           O   0.020
+DMF    plan-2           C   0.020
+DMF    plan-2          C1   0.020
+DMF    plan-2          C2   0.020
+DMF    plan-2           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DMF SMILES           ACDLabs              10.04 "O=CN(C)C"
+DMF SMILES_CANONICAL CACTVS               3.341 "CN(C)C=O"
+DMF SMILES           CACTVS               3.341 "CN(C)C=O"
+DMF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CN(C)C=O"
+DMF SMILES           "OpenEye OEToolkits" 1.5.0 "CN(C)C=O"
+DMF InChI            InChI                1.03  "InChI=1S/C3H7NO/c1-4(2)3-5/h3H,1-2H3"
+DMF InChIKey         InChI                1.03  ZMXDDKWLCZADIW-UHFFFAOYSA-N
+DMF ?                acedrg               190         "dictionary generator"                  
+DMF ?                acedrg_database      11          "data source"                           
+DMF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DMF ?                refmac5              5.8.0158    "optimization tool"                     

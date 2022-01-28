@@ -1,0 +1,146 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+R67     R67      "3-(methylsulfonyl)-2-oxopropanoic acid"     non-polymer     15     10     .     
+#
+data_comp_R67
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+R67     C01     C       CH3     0       -2.438      0.296       -0.117      
+R67     C04     C       CH2     0       0.294       -0.475      -0.519      
+R67     C05     C       C       0       1.687       -0.595      0.052       
+R67     C06     C       C       0       2.602       0.353       -0.038      
+R67     O03     O       O       0       -1.020      -1.029      1.630       
+R67     O07     O       OC      -1      2.243       1.519       -0.215      
+R67     O08     O       O       0       3.795       0.056       0.084       
+R67     O09     O       O       0       1.969       -1.635      0.654       
+R67     O10     O       O       0       -0.424      1.338       1.180       
+R67     S02     S       S3      0       -0.905      0.067       0.701       
+R67     H1      H       H       0       -2.745      1.205       0.026       
+R67     H2      H       H       0       -3.089      -0.327      0.240       
+R67     H3      H       H       0       -2.322      0.137       -1.067      
+R67     H4      H       H       0       0.018       -1.347      -0.867      
+R67     H5      H       H       0       0.299       0.157       -1.267      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+R67       C01       S02       SINGLE    n         1.753     0.0100    1.753     0.0100    
+R67       O03       S02       DOUBLE    n         1.441     0.0100    1.441     0.0100    
+R67       C04       S02       SINGLE    n         1.792     0.0200    1.792     0.0200    
+R67       O10       S02       DOUBLE    n         1.441     0.0100    1.441     0.0100    
+R67       C04       C05       SINGLE    n         1.508     0.0100    1.508     0.0100    
+R67       C06       O08       DOUBLE    n         1.230     0.0200    1.230     0.0200    
+R67       C05       C06       SINGLE    n         1.299     0.0200    1.299     0.0200    
+R67       C06       O07       SINGLE    n         1.230     0.0200    1.230     0.0200    
+R67       C05       O09       DOUBLE    n         1.230     0.0184    1.230     0.0184    
+R67       C01       H1        SINGLE    n         1.089     0.010     0.970     0.0152    
+R67       C01       H2        SINGLE    n         1.089     0.010     0.970     0.0152    
+R67       C01       H3        SINGLE    n         1.089     0.010     0.970     0.0152    
+R67       C04       H4        SINGLE    n         1.089     0.010     0.979     0.0191    
+R67       C04       H5        SINGLE    n         1.089     0.010     0.979     0.0191    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+R67         S02         C01          H1     109.505    1.50
+R67         S02         C01          H2     109.505    1.50
+R67         S02         C01          H3     109.505    1.50
+R67          H1         C01          H2     109.823    1.50
+R67          H1         C01          H3     109.823    1.50
+R67          H2         C01          H3     109.823    1.50
+R67         S02         C04         C05     111.664    2.75
+R67         S02         C04          H4     108.888    1.50
+R67         S02         C04          H5     108.888    1.50
+R67         C05         C04          H4     108.973    1.50
+R67         C05         C04          H5     108.973    1.50
+R67          H4         C04          H5     107.826    1.50
+R67         C04         C05         C06     122.614    2.52
+R67         C04         C05         O09     118.730    1.52
+R67         C06         C05         O09     118.657    3.00
+R67         O08         C06         C05     118.654    3.00
+R67         O08         C06         O07     122.692    1.63
+R67         C05         C06         O07     118.654    3.00
+R67         C01         S02         O03     108.931    1.50
+R67         C01         S02         C04     106.430    3.00
+R67         C01         S02         O10     108.931    1.50
+R67         O03         S02         C04     104.582    2.45
+R67         O03         S02         O10     118.392    2.04
+R67         C04         S02         O10     104.582    2.45
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+R67             sp3_sp3_1          H1         C01         S02         O03     180.000   10.00     3
+R67             sp2_sp3_2         C06         C05         C04         S02     120.000   10.00     6
+R67            sp3_sp3_12         C05         C04         S02         C01      60.000   10.00     3
+R67             sp2_sp2_1         C04         C05         C06         O08     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+R67    chir_1    S02    O03    O10    C04    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+R67    plan-1         C04   0.020
+R67    plan-1         C05   0.020
+R67    plan-1         C06   0.020
+R67    plan-1         O09   0.020
+R67    plan-2         C05   0.020
+R67    plan-2         C06   0.020
+R67    plan-2         O07   0.020
+R67    plan-2         O08   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+R67           SMILES              ACDLabs 12.01                                  CS(CC(=O)C(O)=O)(=O)=O
+R67            InChI                InChI  1.03 InChI=1S/C4H6O5S/c1-10(8,9)2-3(5)4(6)7/h2H2,1H3,(H,6,7)
+R67         InChIKey                InChI  1.03                             KHOMRFGIBYBMCN-UHFFFAOYSA-N
+R67 SMILES_CANONICAL               CACTVS 3.385                                C[S](=O)(=O)CC(=O)C(O)=O
+R67           SMILES               CACTVS 3.385                                C[S](=O)(=O)CC(=O)C(O)=O
+R67 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                  CS(=O)(=O)CC(=O)C(=O)O
+R67           SMILES "OpenEye OEToolkits" 2.0.7                                  CS(=O)(=O)CC(=O)C(=O)O
+R67 ?                acedrg               217         "dictionary generator"                  
+R67 ?                acedrg_database      11          "data source"                           
+R67 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+R67 ?                refmac5              5.8.0253    "optimization tool"                     

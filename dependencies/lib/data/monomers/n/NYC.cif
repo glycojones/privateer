@@ -1,0 +1,347 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NYC      NYC '"[(4E)-2-[(1R,2S)-1-AMINO-2-HYDROXYP' non-polymer        42  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NYC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NYC           OXT    O    OC       -0.500      0.000    0.000    0.000
+ NYC           C      C    C         0.000     -1.241   -0.138    0.078
+ NYC           O      O    OC       -0.500     -1.807   -0.089    1.192
+ NYC           C18    C    CH2       0.000     -2.054   -0.364   -1.172
+ NYC           H181   H    H         0.000     -1.716   -1.278   -1.665
+ NYC           H182   H    H         0.000     -1.923    0.483   -1.849
+ NYC           N15    N    NR5       0.000     -3.469   -0.494   -0.817
+ NYC           C14    C    CR5       0.000     -4.370    0.530   -0.737
+ NYC           C22    C    CH1       0.000     -4.043    1.976   -1.007
+ NYC           H22    H    H         0.000     -3.171    2.036   -1.673
+ NYC           N26    N    NH2       0.000     -5.193    2.627   -1.647
+ NYC           H262   H    H         0.000     -5.100    3.042   -2.566
+ NYC           H261   H    H         0.000     -6.088    2.665   -1.172
+ NYC           C23    C    CH1       0.000     -3.727    2.682    0.313
+ NYC           H23    H    H         0.000     -2.814    2.253    0.748
+ NYC           O24    O    OH1       0.000     -4.816    2.505    1.222
+ NYC           H24    H    H         0.000     -5.619    2.881    0.838
+ NYC           C25    C    CH3       0.000     -3.517    4.175    0.055
+ NYC           H253   H    H         0.000     -2.709    4.308   -0.617
+ NYC           H252   H    H         0.000     -4.396    4.590   -0.365
+ NYC           H251   H    H         0.000     -3.298    4.665    0.969
+ NYC           C16    C    CR5       0.000     -4.104   -1.645   -0.509
+ NYC           O17    O    O         0.000     -3.627   -2.767   -0.471
+ NYC           C12    C    CR5       0.000     -5.495   -1.260   -0.235
+ NYC           N13    N    NRD5      0.000     -5.546    0.095   -0.404
+ NYC           C11    C    C1        0.000     -6.538   -2.098    0.120
+ NYC           H11    H    H         0.000     -6.369   -3.156    0.220
+ NYC           C7     C    CR5       0.000     -7.826   -1.562    0.350
+ NYC           C1     C    CR56      0.000     -9.043   -2.310    0.727
+ NYC           C6     C    CR56      0.000    -10.063   -1.353    0.844
+ NYC           N9     N    NR15      0.000     -9.518   -0.119    0.552
+ NYC           HN9    H    H         0.000    -10.046    0.777    0.555
+ NYC           C8     C    CR15      0.000     -8.202   -0.236    0.261
+ NYC           H8     H    H         0.000     -7.544    0.584   -0.002
+ NYC           C2     C    CR16      0.000     -9.310   -3.653    0.975
+ NYC           H2     H    H         0.000     -8.521   -4.389    0.895
+ NYC           C3     C    CR16      0.000    -10.587   -4.040    1.324
+ NYC           H3     H    H         0.000    -10.800   -5.085    1.513
+ NYC           C4     C    CR16      0.000    -11.598   -3.098    1.435
+ NYC           H4     H    H         0.000    -12.597   -3.413    1.709
+ NYC           C5     C    CR16      0.000    -11.344   -1.765    1.198
+ NYC           H5     H    H         0.000    -12.142   -1.037    1.288
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NYC      OXT    n/a    C      START
+ NYC      C      OXT    C18    .
+ NYC      O      C      .      .
+ NYC      C18    C      N15    .
+ NYC      H181   C18    .      .
+ NYC      H182   C18    .      .
+ NYC      N15    C18    C16    .
+ NYC      C14    N15    C22    .
+ NYC      C22    C14    C23    .
+ NYC      H22    C22    .      .
+ NYC      N26    C22    H261   .
+ NYC      H262   N26    .      .
+ NYC      H261   N26    .      .
+ NYC      C23    C22    C25    .
+ NYC      H23    C23    .      .
+ NYC      O24    C23    H24    .
+ NYC      H24    O24    .      .
+ NYC      C25    C23    H251   .
+ NYC      H253   C25    .      .
+ NYC      H252   C25    .      .
+ NYC      H251   C25    .      .
+ NYC      C16    N15    C12    .
+ NYC      O17    C16    .      .
+ NYC      C12    C16    C11    .
+ NYC      N13    C12    .      .
+ NYC      C11    C12    C7     .
+ NYC      H11    C11    .      .
+ NYC      C7     C11    C1     .
+ NYC      C1     C7     C2     .
+ NYC      C6     C1     N9     .
+ NYC      N9     C6     C8     .
+ NYC      HN9    N9     .      .
+ NYC      C8     N9     H8     .
+ NYC      H8     C8     .      .
+ NYC      C2     C1     C3     .
+ NYC      H2     C2     .      .
+ NYC      C3     C2     C4     .
+ NYC      H3     C3     .      .
+ NYC      C4     C3     C5     .
+ NYC      H4     C4     .      .
+ NYC      C5     C4     H5     .
+ NYC      H5     C5     .      END
+ NYC      C14    N13    .    ADD
+ NYC      C7     C8     .    ADD
+ NYC      C6     C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NYC       C25       C23       single    1.524     0.020     1.524     0.020     
+NYC       H251      C25       single    1.089     0.010     0.989     0.005     
+NYC       H252      C25       single    1.089     0.010     0.989     0.005     
+NYC       H253      C25       single    1.089     0.010     0.989     0.005     
+NYC       O24       C23       single    1.432     0.020     1.432     0.020     
+NYC       C23       C22       single    1.524     0.020     1.524     0.020     
+NYC       H23       C23       single    1.089     0.010     0.989     0.005     
+NYC       H24       O24       single    0.970     0.012     0.839     0.014     
+NYC       N26       C22       single    1.450     0.020     1.450     0.020     
+NYC       C22       C14       single    1.480     0.020     1.480     0.020     
+NYC       H22       C22       single    1.089     0.010     0.989     0.005     
+NYC       H261      N26       single    1.036     0.016     0.914     0.007     
+NYC       H262      N26       single    1.036     0.016     0.914     0.007     
+NYC       C14       N13       double    1.350     0.020     1.350     0.020     
+NYC       C14       N15       single    1.337     0.020     1.337     0.020     
+NYC       N13       C12       single    1.350     0.020     1.350     0.020     
+NYC       C11       C12       double    1.483     0.020     1.483     0.020     
+NYC       C12       C16       single    1.490     0.020     1.490     0.020     
+NYC       C7        C11       single    1.483     0.020     1.483     0.020     
+NYC       H11       C11       single    1.082     0.013     0.975     0.010     
+NYC       C7        C8        double    1.387     0.020     1.387     0.020     
+NYC       C1        C7        single    1.490     0.020     1.490     0.020     
+NYC       C8        N9        single    1.350     0.020     1.350     0.020     
+NYC       H8        C8        single    1.082     0.013     0.975     0.010     
+NYC       N9        C6        single    1.340     0.020     1.340     0.020     
+NYC       HN9       N9        single    1.016     0.010     0.899     0.007     
+NYC       C6        C5        double    1.390     0.020     1.390     0.020     
+NYC       C6        C1        single    1.490     0.020     1.490     0.020     
+NYC       C5        C4        single    1.390     0.020     1.390     0.020     
+NYC       H5        C5        single    1.082     0.013     0.975     0.010     
+NYC       C4        C3        double    1.390     0.020     1.390     0.020     
+NYC       H4        C4        single    1.082     0.013     0.975     0.010     
+NYC       C3        C2        single    1.390     0.020     1.390     0.020     
+NYC       H3        C3        single    1.082     0.013     0.975     0.010     
+NYC       C2        C1        double    1.390     0.020     1.390     0.020     
+NYC       H2        C2        single    1.082     0.013     0.975     0.010     
+NYC       O17       C16       double    1.285     0.020     1.285     0.020     
+NYC       C16       N15       single    1.337     0.020     1.337     0.020     
+NYC       N15       C18       single    1.462     0.020     1.462     0.020     
+NYC       C18       C         single    1.510     0.020     1.510     0.020     
+NYC       H181      C18       single    1.089     0.010     0.989     0.005     
+NYC       H182      C18       single    1.089     0.010     0.989     0.005     
+NYC       O         C         deloc     1.250     0.020     1.250     0.020     
+NYC       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NYC      OXT    C      O       123.000    3.000
+ NYC      OXT    C      C18     118.500    3.000
+ NYC      O      C      C18     118.500    3.000
+ NYC      C      C18    H181    109.470    3.000
+ NYC      C      C18    H182    109.470    3.000
+ NYC      C      C18    N15     109.500    3.000
+ NYC      H181   C18    H182    107.900    3.000
+ NYC      H181   C18    N15     109.500    3.000
+ NYC      H182   C18    N15     109.500    3.000
+ NYC      C18    N15    C14     126.000    3.000
+ NYC      C18    N15    C16     126.000    3.000
+ NYC      C14    N15    C16     108.000    3.000
+ NYC      N15    C14    C22     126.000    3.000
+ NYC      N15    C14    N13     108.000    3.000
+ NYC      C22    C14    N13     126.000    3.000
+ NYC      C14    C22    H22     109.470    3.000
+ NYC      C14    C22    N26     109.470    3.000
+ NYC      C14    C22    C23     109.470    3.000
+ NYC      H22    C22    N26     109.470    3.000
+ NYC      H22    C22    C23     108.340    3.000
+ NYC      N26    C22    C23     109.470    3.000
+ NYC      C22    N26    H262    120.000    3.000
+ NYC      C22    N26    H261    120.000    3.000
+ NYC      H262   N26    H261    120.000    3.000
+ NYC      C22    C23    H23     108.340    3.000
+ NYC      C22    C23    O24     109.470    3.000
+ NYC      C22    C23    C25     111.000    3.000
+ NYC      H23    C23    O24     109.470    3.000
+ NYC      H23    C23    C25     108.340    3.000
+ NYC      O24    C23    C25     109.470    3.000
+ NYC      C23    O24    H24     109.470    3.000
+ NYC      C23    C25    H253    109.470    3.000
+ NYC      C23    C25    H252    109.470    3.000
+ NYC      C23    C25    H251    109.470    3.000
+ NYC      H253   C25    H252    109.470    3.000
+ NYC      H253   C25    H251    109.470    3.000
+ NYC      H252   C25    H251    109.470    3.000
+ NYC      N15    C16    O17     108.000    3.000
+ NYC      N15    C16    C12     108.000    3.000
+ NYC      O17    C16    C12     108.000    3.000
+ NYC      C16    C12    N13     108.000    3.000
+ NYC      C16    C12    C11     117.000    3.000
+ NYC      N13    C12    C11     108.000    3.000
+ NYC      C12    N13    C14     108.000    3.000
+ NYC      C12    C11    H11     120.000    3.000
+ NYC      C12    C11    C7      120.000    3.000
+ NYC      H11    C11    C7      120.000    3.000
+ NYC      C11    C7     C1      108.000    3.000
+ NYC      C11    C7     C8      108.000    3.000
+ NYC      C1     C7     C8      108.000    3.000
+ NYC      C7     C1     C6      108.000    3.000
+ NYC      C7     C1     C2      126.000    3.000
+ NYC      C6     C1     C2      120.000    3.000
+ NYC      C1     C6     N9      108.000    3.000
+ NYC      C1     C6     C5      120.000    3.000
+ NYC      N9     C6     C5      132.000    3.000
+ NYC      C6     N9     HN9     126.000    3.000
+ NYC      C6     N9     C8      108.000    3.000
+ NYC      HN9    N9     C8      126.000    3.000
+ NYC      N9     C8     H8      126.000    3.000
+ NYC      N9     C8     C7      108.000    3.000
+ NYC      H8     C8     C7      126.000    3.000
+ NYC      C1     C2     H2      120.000    3.000
+ NYC      C1     C2     C3      120.000    3.000
+ NYC      H2     C2     C3      120.000    3.000
+ NYC      C2     C3     H3      120.000    3.000
+ NYC      C2     C3     C4      120.000    3.000
+ NYC      H3     C3     C4      120.000    3.000
+ NYC      C3     C4     H4      120.000    3.000
+ NYC      C3     C4     C5      120.000    3.000
+ NYC      H4     C4     C5      120.000    3.000
+ NYC      C4     C5     H5      120.000    3.000
+ NYC      C4     C5     C6      120.000    3.000
+ NYC      H5     C5     C6      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NYC      var_1    OXT    C      C18    N15      179.980   20.000   3
+ NYC      var_2    C      C18    N15    C16      -89.873   20.000   1
+ NYC      CONST_1  C18    N15    C14    C22        0.000    0.000   0
+ NYC      CONST_2  N15    C14    N13    C12        0.000    0.000   0
+ NYC      var_3    N15    C14    C22    C23      -95.287   20.000   1
+ NYC      var_4    C14    C22    N26    H261      59.945   20.000   1
+ NYC      var_5    C14    C22    C23    C25     -175.018   20.000   3
+ NYC      var_6    C22    C23    O24    H24      -59.944   20.000   1
+ NYC      var_7    C22    C23    C25    H251     179.976   20.000   3
+ NYC      CONST_3  C18    N15    C16    C12      180.000    0.000   0
+ NYC      CONST_4  N15    C16    C12    C11      180.000    0.000   0
+ NYC      CONST_5  C16    C12    N13    C14        0.000    0.000   0
+ NYC      CONST_6  C16    C12    C11    C7      -179.968    0.000   0
+ NYC      var_8    C12    C11    C7     C1       179.737   20.000   1
+ NYC      CONST_7  C11    C7     C8     N9       180.000    0.000   0
+ NYC      CONST_8  C11    C7     C1     C2         0.000    0.000   0
+ NYC      CONST_9  C7     C1     C6     N9         0.000    0.000   0
+ NYC      CONST_10 C1     C6     C5     C4         0.000    0.000   0
+ NYC      CONST_11 C1     C6     N9     C8         0.000    0.000   0
+ NYC      CONST_12 C6     N9     C8     C7         0.000    0.000   0
+ NYC      CONST_13 C7     C1     C2     C3       180.000    0.000   0
+ NYC      CONST_14 C1     C2     C3     C4         0.000    0.000   0
+ NYC      CONST_15 C2     C3     C4     C5         0.000    0.000   0
+ NYC      CONST_16 C3     C4     C5     C6         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NYC      chir_01  C23    C25    O24    C22       negativ
+ NYC      chir_02  C22    C23    N26    C14       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NYC      plan-1    N26       0.020
+ NYC      plan-1    C22       0.020
+ NYC      plan-1    H261      0.020
+ NYC      plan-1    H262      0.020
+ NYC      plan-2    C14       0.020
+ NYC      plan-2    C22       0.020
+ NYC      plan-2    N13       0.020
+ NYC      plan-2    N15       0.020
+ NYC      plan-2    C12       0.020
+ NYC      plan-2    C16       0.020
+ NYC      plan-2    C11       0.020
+ NYC      plan-2    C7        0.020
+ NYC      plan-2    H11       0.020
+ NYC      plan-2    O17       0.020
+ NYC      plan-2    C18       0.020
+ NYC      plan-3    C7        0.020
+ NYC      plan-3    C11       0.020
+ NYC      plan-3    C8        0.020
+ NYC      plan-3    C1        0.020
+ NYC      plan-3    N9        0.020
+ NYC      plan-3    H8        0.020
+ NYC      plan-3    C6        0.020
+ NYC      plan-3    HN9       0.020
+ NYC      plan-3    C5        0.020
+ NYC      plan-3    C4        0.020
+ NYC      plan-3    C3        0.020
+ NYC      plan-3    C2        0.020
+ NYC      plan-3    H5        0.020
+ NYC      plan-3    H4        0.020
+ NYC      plan-3    H3        0.020
+ NYC      plan-3    H2        0.020
+ NYC      plan-3    H11       0.020
+ NYC      plan-4    C         0.020
+ NYC      plan-4    C18       0.020
+ NYC      plan-4    O         0.020
+ NYC      plan-4    OXT       0.020
+# ------------------------------------------------------

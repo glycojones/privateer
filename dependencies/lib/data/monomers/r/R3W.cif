@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+R3W     R3W      "chloroacetic acid"     NON-POLYMER     7     5     .     
+#
+data_comp_R3W
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+R3W     C1      C       C       0       1.326       -7.175      36.416      
+R3W     O1      O       OC      -1      1.993       -6.637      37.322      
+R3W     CL1     CL      CL      0       -0.004      -9.440      37.337      
+R3W     C2      C       CH2     0       -0.033      -7.760      36.808      
+R3W     O2      O       O       0       1.664       -7.282      35.221      
+R3W     H2      H       H       0       -0.630      -7.688      36.041      
+R3W     H2A     H       H       0       -0.403      -7.216      37.528      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+R3W       C1        O2        DOUBLE    n         1.247     0.019     1.247     0.019     
+R3W       C1        C2        SINGLE    n         1.530     0.020     1.530     0.020     
+R3W       C1        O1        SINGLE    n         1.247     0.019     1.247     0.019     
+R3W       CL1       C2        SINGLE    n         1.761     0.020     1.761     0.020     
+R3W       C2        H2        SINGLE    n         1.089     0.010     0.975     0.013     
+R3W       C2        H2A       SINGLE    n         1.089     0.010     0.975     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+R3W          O2          C1          C2     116.977    3.00
+R3W          O2          C1          O1     126.041    1.50
+R3W          C2          C1          O1     116.972    3.00
+R3W          C1          C2         CL1     115.256    1.50
+R3W          C1          C2          H2     108.273    1.50
+R3W          C1          C2         H2A     108.273    1.50
+R3W         CL1          C2          H2     108.478    1.50
+R3W         CL1          C2         H2A     108.478    1.50
+R3W          H2          C2         H2A     107.851    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+R3W             sp2_sp3_2          O2          C1          C2         CL1     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+R3W    plan-1          C1   0.020
+R3W    plan-1          C2   0.020
+R3W    plan-1          O1   0.020
+R3W    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+R3W SMILES           ACDLabs              12.01 "ClCC(=O)O"
+R3W SMILES_CANONICAL CACTVS               3.370 "OC(=O)CCl"
+R3W SMILES           CACTVS               3.370 "OC(=O)CCl"
+R3W SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(C(=O)O)Cl"
+R3W SMILES           "OpenEye OEToolkits" 1.7.0 "C(C(=O)O)Cl"
+R3W InChI            InChI                1.03  "InChI=1S/C2H3ClO2/c3-1-2(4)5/h1H2,(H,4,5)"
+R3W InChIKey         InChI                1.03  FOCAUTSVDIKZOP-UHFFFAOYSA-N
+R3W ?                acedrg               202         "dictionary generator"                  
+R3W ?                acedrg_database      11          "data source"                           
+R3W ?                rdkit                2017.03.2   "Chemoinformatics tool"
+R3W ?                refmac5              5.8.0189    "optimization tool"                     

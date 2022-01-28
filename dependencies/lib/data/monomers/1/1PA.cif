@@ -1,0 +1,252 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1PA     1PA     "4-(carboxymethyl)-L-phenylalanine"     peptide     28     16     .     
+#
+data_comp_1PA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+1PA     N       N       NT3     1       -4.003      -0.913      0.791       
+1PA     CA      C       CH1     0       -2.622      -0.739      0.264       
+1PA     CB      C       CH2     0       -1.806      0.164       1.194       
+1PA     CG      C       CR6     0       -0.337      0.254       0.861       
+1PA     CD1     C       CR16    0       0.509       -0.828      1.066       
+1PA     CE1     C       CR16    0       1.860       -0.750      0.759       
+1PA     CD2     C       CR16    0       0.212       1.419       0.338       
+1PA     CE2     C       CR16    0       1.563       1.498       0.031       
+1PA     CZ      C       CR6     0       2.410       0.415       0.237       
+1PA     CH      C       CH2     0       3.880       0.501       -0.097      
+1PA     CO      C       C       0       4.193       0.149       -1.548      
+1PA     O1      O       OC      -1      4.116       -1.045      -1.890      
+1PA     O2      O       O       0       4.510       1.070       -2.322      
+1PA     C       C       C       0       -2.683      -0.169      -1.159      
+1PA     O       O       O       0       -3.279      0.915       -1.316      
+1PA     OXT     O       OC      -1      -2.131      -0.830      -2.061      
+1PA     H       H       H       0       -4.520      -1.343      0.175       
+1PA     H2      H       H       0       -4.368      -0.098      0.974       
+1PA     H3      H       H       0       -3.979      -1.408      1.556       
+1PA     HA      H       H       0       -2.187      -1.628      0.226       
+1PA     HB2     H       H       0       -1.900      -0.173      2.110       
+1PA     HB3     H       H       0       -2.194      1.064       1.169       
+1PA     HD1     H       H       0       0.159       -1.628      1.419       
+1PA     HE1     H       H       0       2.414       -1.497      0.907       
+1PA     HD2     H       H       0       -0.341      2.166       0.190       
+1PA     HE2     H       H       0       1.913       2.299       -0.322      
+1PA     HH2     H       H       0       4.374       -0.104      0.485       
+1PA     HH3     H       H       0       4.194       1.407       0.081       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 1PA      N      n/a    CA     START
+ 1PA      H      N      .      .
+ 1PA      H2     N      .      .
+ 1PA      H3     N      .      .
+ 1PA      CA     N      C      .
+ 1PA      HA     CA     .      .
+ 1PA      CB     CA     CG     .
+ 1PA      HB2    CB     .      .
+ 1PA      HB3    CB     .      .
+ 1PA      CG     CB     CD2    .
+ 1PA      CD2    CG     CE2    .
+ 1PA      HD2    CD2    .      .
+ 1PA      CE2    CD2    CZ     .
+ 1PA      HE2    CE2    .      .
+ 1PA      CZ     CE2    CH     .
+ 1PA      CE1    CZ     CD1    .
+ 1PA      HE1    CE1    .      .
+ 1PA      CD1    CE1    HD1    .
+ 1PA      HD1    CD1    .      .
+ 1PA      CH     CZ     CO     .
+ 1PA      HH2    CH     .      .
+ 1PA      HH3    CH     .      .
+ 1PA      CO     CH     O2     .
+ 1PA      O1     CO     .      .
+ 1PA      O2     CO     .      .
+ 1PA      C      CA     .      END
+ 1PA      O      C      .      .
+ 1PA      OXT    C      .      .
+ 1PA      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1PA       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+1PA       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+1PA       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+1PA       CB        CG        SINGLE    n         1.508     0.010     1.508     0.010     
+1PA       CG        CD1       DOUBLE    y         1.385     0.011     1.385     0.011     
+1PA       CG        CD2       SINGLE    y         1.385     0.011     1.385     0.011     
+1PA       CD1       CE1       SINGLE    y         1.384     0.010     1.384     0.010     
+1PA       CE1       CZ        DOUBLE    y         1.387     0.010     1.387     0.010     
+1PA       CD2       CE2       DOUBLE    y         1.384     0.010     1.384     0.010     
+1PA       CE2       CZ        SINGLE    y         1.387     0.010     1.387     0.010     
+1PA       CZ        CH        SINGLE    n         1.509     0.010     1.509     0.010     
+1PA       CH        CO        SINGLE    n         1.525     0.014     1.525     0.014     
+1PA       CO        O1        SINGLE    n         1.244     0.020     1.244     0.020     
+1PA       CO        O2        DOUBLE    n         1.244     0.020     1.244     0.020     
+1PA       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+1PA       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+1PA       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+1PA       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+1PA       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+1PA       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+1PA       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+1PA       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+1PA       CD1       HD1       SINGLE    n         1.082     0.013     0.942     0.017     
+1PA       CE1       HE1       SINGLE    n         1.082     0.013     0.942     0.017     
+1PA       CD2       HD2       SINGLE    n         1.082     0.013     0.942     0.017     
+1PA       CE2       HE2       SINGLE    n         1.082     0.013     0.942     0.017     
+1PA       CH        HH2       SINGLE    n         1.089     0.010     0.975     0.011     
+1PA       CH        HH3       SINGLE    n         1.089     0.010     0.975     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+1PA          CA           N           H     109.646    1.54
+1PA          CA           N          H2     109.646    1.54
+1PA          CA           N          H3     109.646    1.54
+1PA           H           N          H2     109.028    2.41
+1PA           H           N          H3     109.028    2.41
+1PA          H2           N          H3     109.028    2.41
+1PA           N          CA          CB     110.494    1.50
+1PA           N          CA           C     109.448    1.50
+1PA           N          CA          HA     108.601    1.50
+1PA          CB          CA           C     111.331    2.53
+1PA          CB          CA          HA     108.690    1.50
+1PA           C          CA          HA     108.450    1.50
+1PA          CA          CB          CG     114.745    1.55
+1PA          CA          CB         HB2     108.434    1.50
+1PA          CA          CB         HB3     108.434    1.50
+1PA          CG          CB         HB2     108.862    1.50
+1PA          CG          CB         HB3     108.862    1.50
+1PA         HB2          CB         HB3     107.782    1.50
+1PA          CB          CG         CD1     121.061    1.50
+1PA          CB          CG         CD2     121.061    1.50
+1PA         CD1          CG         CD2     117.877    1.50
+1PA          CG         CD1         CE1     121.062    1.50
+1PA          CG         CD1         HD1     119.394    1.50
+1PA         CE1         CD1         HD1     119.544    1.50
+1PA         CD1         CE1          CZ     121.062    1.50
+1PA         CD1         CE1         HE1     119.544    1.50
+1PA          CZ         CE1         HE1     119.394    1.50
+1PA          CG         CD2         CE2     121.062    1.50
+1PA          CG         CD2         HD2     119.394    1.50
+1PA         CE2         CD2         HD2     119.544    1.50
+1PA         CD2         CE2          CZ     121.062    1.50
+1PA         CD2         CE2         HE2     119.544    1.50
+1PA          CZ         CE2         HE2     119.394    1.50
+1PA         CE1          CZ         CE2     117.877    1.50
+1PA         CE1          CZ          CH     121.061    1.50
+1PA         CE2          CZ          CH     121.061    1.50
+1PA          CZ          CH          CO     113.444    2.96
+1PA          CZ          CH         HH2     109.081    1.50
+1PA          CZ          CH         HH3     109.081    1.50
+1PA          CO          CH         HH2     108.710    1.50
+1PA          CO          CH         HH3     108.710    1.50
+1PA         HH2          CH         HH3     107.676    1.52
+1PA          CH          CO          O1     118.115    1.50
+1PA          CH          CO          O2     118.115    1.50
+1PA          O1          CO          O2     123.770    1.50
+1PA          CA           C           O     117.228    2.13
+1PA          CA           C         OXT     117.228    2.13
+1PA           O           C         OXT     125.543    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+1PA             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+1PA             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+1PA            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+1PA             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+1PA       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+1PA              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+1PA       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+1PA              const_10         CD1         CE1          CZ          CH     180.000   10.00     2
+1PA              const_17          CG         CD2         CE2          CZ       0.000   10.00     2
+1PA              const_14         CD2         CE2          CZ          CH     180.000   10.00     2
+1PA            sp2_sp3_14         CE1          CZ          CH          CO     -90.000   10.00     6
+1PA            sp2_sp3_20          O1          CO          CH          CZ     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+1PA    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+1PA    plan-1          CB   0.020
+1PA    plan-1         CD1   0.020
+1PA    plan-1         CD2   0.020
+1PA    plan-1         CE1   0.020
+1PA    plan-1         CE2   0.020
+1PA    plan-1          CG   0.020
+1PA    plan-1          CH   0.020
+1PA    plan-1          CZ   0.020
+1PA    plan-1         HD1   0.020
+1PA    plan-1         HD2   0.020
+1PA    plan-1         HE1   0.020
+1PA    plan-1         HE2   0.020
+1PA    plan-2          CH   0.020
+1PA    plan-2          CO   0.020
+1PA    plan-2          O1   0.020
+1PA    plan-2          O2   0.020
+1PA    plan-3           C   0.020
+1PA    plan-3          CA   0.020
+1PA    plan-3           O   0.020
+1PA    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+1PA SMILES           ACDLabs              12.01 "O=C(O)C(N)Cc1ccc(cc1)CC(=O)O"
+1PA SMILES_CANONICAL CACTVS               3.370 "N[C@@H](Cc1ccc(CC(O)=O)cc1)C(O)=O"
+1PA SMILES           CACTVS               3.370 "N[CH](Cc1ccc(CC(O)=O)cc1)C(O)=O"
+1PA SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc(ccc1C[C@@H](C(=O)O)N)CC(=O)O"
+1PA SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(ccc1CC(C(=O)O)N)CC(=O)O"
+1PA InChI            InChI                1.03  "InChI=1S/C11H13NO4/c12-9(11(15)16)5-7-1-3-8(4-2-7)6-10(13)14/h1-4,9H,5-6,12H2,(H,13,14)(H,15,16)/t9-/m0/s1"
+1PA InChIKey         InChI                1.03  LJHYWUVYIKCPGU-VIFPVBQESA-N
+1PA ?                acedrg               196         "dictionary generator"                  
+1PA ?                acedrg_database      11          "data source"                           
+1PA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+1PA ?                refmac5              5.8.0222    "optimization tool"                     

@@ -1,0 +1,238 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2FP      2FP '1,6-FRUCTOSE DIPHOSPHATE (LINEAR FOR' non-polymer        30  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_2FP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 2FP           O13    O    OP       -0.666      0.000    0.000    0.000
+ 2FP           P1     P    P         0.000     -1.222    0.371    0.812
+ 2FP           O11    O    OP       -0.666     -1.541    1.835    0.601
+ 2FP           O12    O    OP       -0.666     -0.947    0.121    2.279
+ 2FP           O1     O    O2        0.000     -2.473   -0.525    0.340
+ 2FP           C1     C    CH2       0.000     -3.798   -0.339    0.843
+ 2FP           H11    H    H         0.000     -4.134    0.674    0.614
+ 2FP           H12A   H    H         0.000     -3.799   -0.486    1.925
+ 2FP           C2     C    C         0.000     -4.724   -1.336    0.197
+ 2FP           O2     O    O         0.000     -4.296   -2.124   -0.610
+ 2FP           C3     C    CH1       0.000     -6.187   -1.349    0.561
+ 2FP           H3     H    H         0.000     -6.298   -1.184    1.642
+ 2FP           O3     O    OH1       0.000     -6.753   -2.614    0.212
+ 2FP           HO3    H    H         0.000     -6.656   -2.759   -0.739
+ 2FP           C4     C    CH1       0.000     -6.913   -0.238   -0.201
+ 2FP           H4     H    H         0.000     -6.539    0.740    0.133
+ 2FP           O4     O    OH1       0.000     -6.671   -0.387   -1.603
+ 2FP           HO4    H    H         0.000     -7.000   -1.247   -1.897
+ 2FP           C5     C    CH1       0.000     -8.416   -0.331    0.070
+ 2FP           H5     H    H         0.000     -8.609   -0.128    1.132
+ 2FP           O5     O    OH1       0.000     -8.879   -1.643   -0.256
+ 2FP           HO5    H    H         0.000     -8.709   -1.821   -1.191
+ 2FP           C6     C    CH2       0.000     -9.153    0.699   -0.788
+ 2FP           H61    H    H         0.000     -9.033    0.445   -1.843
+ 2FP           H62    H    H         0.000     -8.735    1.691   -0.604
+ 2FP           O6     O    O2        0.000    -10.541    0.694   -0.451
+ 2FP           P6     P    P         0.000    -11.620    1.656   -1.159
+ 2FP           O61    O    OP       -0.666    -11.737    1.291   -2.623
+ 2FP           O62    O    OP       -0.666    -12.965    1.488   -0.488
+ 2FP           O63    O    OP       -0.666    -11.171    3.096   -1.034
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 2FP      O13    n/a    P1     START
+ 2FP      P1     O13    O1     .
+ 2FP      O11    P1     .      .
+ 2FP      O12    P1     .      .
+ 2FP      O1     P1     C1     .
+ 2FP      C1     O1     C2     .
+ 2FP      H11    C1     .      .
+ 2FP      H12A   C1     .      .
+ 2FP      C2     C1     C3     .
+ 2FP      O2     C2     .      .
+ 2FP      C3     C2     C4     .
+ 2FP      H3     C3     .      .
+ 2FP      O3     C3     HO3    .
+ 2FP      HO3    O3     .      .
+ 2FP      C4     C3     C5     .
+ 2FP      H4     C4     .      .
+ 2FP      O4     C4     HO4    .
+ 2FP      HO4    O4     .      .
+ 2FP      C5     C4     C6     .
+ 2FP      H5     C5     .      .
+ 2FP      O5     C5     HO5    .
+ 2FP      HO5    O5     .      .
+ 2FP      C6     C5     O6     .
+ 2FP      H61    C6     .      .
+ 2FP      H62    C6     .      .
+ 2FP      O6     C6     P6     .
+ 2FP      P6     O6     O63    .
+ 2FP      O61    P6     .      .
+ 2FP      O62    P6     .      .
+ 2FP      O63    P6     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2FP       P6        O6        single    1.610     0.020     1.610     0.020     
+2FP       O61       P6        deloc     1.510     0.020     1.510     0.020     
+2FP       O62       P6        deloc     1.510     0.020     1.510     0.020     
+2FP       O63       P6        deloc     1.510     0.020     1.510     0.020     
+2FP       O6        C6        single    1.426     0.020     1.426     0.020     
+2FP       C6        C5        single    1.524     0.020     1.524     0.020     
+2FP       H61       C6        single    1.089     0.010     0.989     0.005     
+2FP       H62       C6        single    1.089     0.010     0.989     0.005     
+2FP       O5        C5        single    1.432     0.020     1.432     0.020     
+2FP       C5        C4        single    1.524     0.020     1.524     0.020     
+2FP       H5        C5        single    1.089     0.010     0.989     0.005     
+2FP       HO5       O5        single    0.970     0.012     0.839     0.014     
+2FP       O4        C4        single    1.432     0.020     1.432     0.020     
+2FP       C4        C3        single    1.524     0.020     1.524     0.020     
+2FP       H4        C4        single    1.089     0.010     0.989     0.005     
+2FP       HO4       O4        single    0.970     0.012     0.839     0.014     
+2FP       O3        C3        single    1.432     0.020     1.432     0.020     
+2FP       C3        C2        single    1.500     0.020     1.500     0.020     
+2FP       H3        C3        single    1.089     0.010     0.989     0.005     
+2FP       HO3       O3        single    0.970     0.012     0.839     0.014     
+2FP       O2        C2        double    1.220     0.020     1.220     0.020     
+2FP       C2        C1        single    1.510     0.020     1.510     0.020     
+2FP       C1        O1        single    1.426     0.020     1.426     0.020     
+2FP       H11       C1        single    1.089     0.010     0.989     0.005     
+2FP       H12A      C1        single    1.089     0.010     0.989     0.005     
+2FP       O1        P1        single    1.610     0.020     1.610     0.020     
+2FP       O11       P1        deloc     1.510     0.020     1.510     0.020     
+2FP       O12       P1        deloc     1.510     0.020     1.510     0.020     
+2FP       P1        O13       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 2FP      O13    P1     O11     119.900    3.000
+ 2FP      O13    P1     O12     119.900    3.000
+ 2FP      O13    P1     O1      108.200    3.000
+ 2FP      O11    P1     O12     119.900    3.000
+ 2FP      O11    P1     O1      108.200    3.000
+ 2FP      O12    P1     O1      108.200    3.000
+ 2FP      P1     O1     C1      120.500    3.000
+ 2FP      O1     C1     H11     109.470    3.000
+ 2FP      O1     C1     H12A    109.470    3.000
+ 2FP      O1     C1     C2      109.470    3.000
+ 2FP      H11    C1     H12A    107.900    3.000
+ 2FP      H11    C1     C2      109.470    3.000
+ 2FP      H12A   C1     C2      109.470    3.000
+ 2FP      C1     C2     O2      120.500    3.000
+ 2FP      C1     C2     C3      120.000    3.000
+ 2FP      O2     C2     C3      120.500    3.000
+ 2FP      C2     C3     H3      108.810    3.000
+ 2FP      C2     C3     O3      109.470    3.000
+ 2FP      C2     C3     C4      109.470    3.000
+ 2FP      H3     C3     O3      109.470    3.000
+ 2FP      H3     C3     C4      108.340    3.000
+ 2FP      O3     C3     C4      109.470    3.000
+ 2FP      C3     O3     HO3     109.470    3.000
+ 2FP      C3     C4     H4      108.340    3.000
+ 2FP      C3     C4     O4      109.470    3.000
+ 2FP      C3     C4     C5      111.000    3.000
+ 2FP      H4     C4     O4      109.470    3.000
+ 2FP      H4     C4     C5      108.340    3.000
+ 2FP      O4     C4     C5      109.470    3.000
+ 2FP      C4     O4     HO4     109.470    3.000
+ 2FP      C4     C5     H5      108.340    3.000
+ 2FP      C4     C5     O5      109.470    3.000
+ 2FP      C4     C5     C6      111.000    3.000
+ 2FP      H5     C5     O5      109.470    3.000
+ 2FP      H5     C5     C6      108.340    3.000
+ 2FP      O5     C5     C6      109.470    3.000
+ 2FP      C5     O5     HO5     109.470    3.000
+ 2FP      C5     C6     H61     109.470    3.000
+ 2FP      C5     C6     H62     109.470    3.000
+ 2FP      C5     C6     O6      109.470    3.000
+ 2FP      H61    C6     H62     107.900    3.000
+ 2FP      H61    C6     O6      109.470    3.000
+ 2FP      H62    C6     O6      109.470    3.000
+ 2FP      C6     O6     P6      120.500    3.000
+ 2FP      O6     P6     O61     108.200    3.000
+ 2FP      O6     P6     O62     108.200    3.000
+ 2FP      O6     P6     O63     108.200    3.000
+ 2FP      O61    P6     O62     119.900    3.000
+ 2FP      O61    P6     O63     119.900    3.000
+ 2FP      O62    P6     O63     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 2FP      var_1    O13    P1     O1     C1      -174.946   20.000   1
+ 2FP      var_2    P1     O1     C1     C2       179.970   20.000   1
+ 2FP      var_3    O1     C1     C2     C3       179.976   20.000   3
+ 2FP      var_4    C1     C2     C3     C4        79.985   20.000   3
+ 2FP      var_5    C2     C3     O3     HO3      -60.023   20.000   1
+ 2FP      var_6    C2     C3     C4     C5       174.956   20.000   3
+ 2FP      var_7    C3     C4     O4     HO4       60.033   20.000   1
+ 2FP      var_8    C3     C4     C5     C6      -174.985   20.000   3
+ 2FP      var_9    C4     C5     O5     HO5      -60.050   20.000   1
+ 2FP      var_10   C4     C5     C6     O6      -174.971   20.000   3
+ 2FP      var_11   C5     C6     O6     P6       179.991   20.000   1
+ 2FP      var_12   C6     O6     P6     O63      -54.959   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 2FP      chir_01  C5     C6     O5     C4        negativ
+ 2FP      chir_02  C4     C5     O4     C3        positiv
+ 2FP      chir_03  C3     C4     O3     C2        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 2FP      plan-1    C2        0.020
+ 2FP      plan-1    C3        0.020
+ 2FP      plan-1    O2        0.020
+ 2FP      plan-1    C1        0.020
+# ------------------------------------------------------

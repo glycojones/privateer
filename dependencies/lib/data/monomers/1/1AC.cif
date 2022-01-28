@@ -1,0 +1,157 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1AC      1AC '1-AMINOCYCLOPROPANECARBOXYLIC ACID  ' non-polymer        13   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_1AC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 1AC           O      O    OC       -0.500      0.000    0.000    0.000
+ 1AC           C      C    C         0.000     -0.667   -0.003   -1.058
+ 1AC           OXT    O    OC       -0.500     -0.084   -0.036   -2.164
+ 1AC           CA     C    CT        0.000     -2.172    0.035   -0.999
+ 1AC           N      N    NH2       0.000     -2.854    0.131   -2.296
+ 1AC           H2     H    H         0.000     -3.715    0.653   -2.379
+ 1AC           H      H    H         0.000     -2.463   -0.325   -3.109
+ 1AC           CG     C    CH2       0.000     -2.815    0.750    0.191
+ 1AC           HG2    H    H         0.000     -3.833    1.143    0.211
+ 1AC           HG1    H    H         0.000     -2.293    1.048    1.102
+ 1AC           CB     C    CH2       0.000     -2.857   -0.776    0.101
+ 1AC           HB2    H    H         0.000     -2.355   -1.207    0.970
+ 1AC           HB1    H    H         0.000     -3.896   -1.112    0.079
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 1AC      O      n/a    C      START
+ 1AC      C      O      CA     .
+ 1AC      OXT    C      .      .
+ 1AC      CA     C      CB     .
+ 1AC      N      CA     H      .
+ 1AC      H2     N      .      .
+ 1AC      H      N      .      .
+ 1AC      CG     CA     HG1    .
+ 1AC      HG2    CG     .      .
+ 1AC      HG1    CG     .      .
+ 1AC      CB     CA     HB1    .
+ 1AC      HB2    CB     .      .
+ 1AC      HB1    CB     .      END
+ 1AC      CB     CG     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1AC       CB        CG        single    1.524     0.020     1.524     0.020     
+1AC       CB        CA        single    1.524     0.020     1.524     0.020     
+1AC       HB1       CB        single    1.089     0.010     0.989     0.005     
+1AC       HB2       CB        single    1.089     0.010     0.989     0.005     
+1AC       CG        CA        single    1.524     0.020     1.524     0.020     
+1AC       HG1       CG        single    1.089     0.010     0.989     0.005     
+1AC       HG2       CG        single    1.089     0.010     0.989     0.005     
+1AC       CA        C         single    1.507     0.020     1.507     0.020     
+1AC       N         CA        single    1.462     0.020     1.462     0.020     
+1AC       OXT       C         deloc     1.250     0.020     1.250     0.020     
+1AC       C         O         deloc     1.250     0.020     1.250     0.020     
+1AC       H         N         single    1.036     0.016     0.914     0.007     
+1AC       H2        N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 1AC      O      C      OXT     123.000    3.000
+ 1AC      O      C      CA      118.500    3.000
+ 1AC      OXT    C      CA      118.500    3.000
+ 1AC      C      CA     N       109.500    3.000
+ 1AC      C      CA     CG      109.470    3.000
+ 1AC      C      CA     CB      109.470    3.000
+ 1AC      N      CA     CG      109.500    3.000
+ 1AC      N      CA     CB      109.500    3.000
+ 1AC      CG     CA     CB       60.000    3.000
+ 1AC      CA     N      H2      120.000    3.000
+ 1AC      CA     N      H       120.000    3.000
+ 1AC      H2     N      H       120.000    3.000
+ 1AC      CA     CG     HG2     109.470    3.000
+ 1AC      CA     CG     HG1     109.470    3.000
+ 1AC      CA     CG     CB       60.000    3.000
+ 1AC      HG2    CG     HG1     107.900    3.000
+ 1AC      HG2    CG     CB      109.470    3.000
+ 1AC      HG1    CG     CB      109.470    3.000
+ 1AC      CA     CB     HB2     109.470    3.000
+ 1AC      CA     CB     HB1     109.470    3.000
+ 1AC      CA     CB     CG       60.000    3.000
+ 1AC      HB2    CB     HB1     107.900    3.000
+ 1AC      HB2    CB     CG      109.470    3.000
+ 1AC      HB1    CB     CG      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 1AC      var_1    O      C      CA     CB       -38.723   20.000   1
+ 1AC      var_2    C      CA     N      H         34.266   20.000   1
+ 1AC      var_3    C      CA     CG     CB      -107.561   20.000   1
+ 1AC      var_4    C      CA     CB     CG       107.530   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 1AC      chir_01  CA     CB     CG     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 1AC      plan-1    C         0.020
+ 1AC      plan-1    CA        0.020
+ 1AC      plan-1    OXT       0.020
+ 1AC      plan-1    O         0.020
+ 1AC      plan-2    N         0.020
+ 1AC      plan-2    CA        0.020
+ 1AC      plan-2    H         0.020
+ 1AC      plan-2    H2        0.020
+# ------------------------------------------------------

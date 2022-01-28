@@ -1,0 +1,108 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TME     TME      PROPANE     NON-POLYMER     11     3     .     
+#
+data_comp_TME
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TME     C1      C       CH3     0       -2.044      1.139       11.434      
+TME     C2      C       CH2     0       -2.028      2.633       11.737      
+TME     C3      C       CH3     0       -0.684      3.109       12.285      
+TME     H11     H       H       0       -2.917      0.887       11.086      
+TME     H12     H       H       0       -1.864      0.640       12.249      
+TME     H13     H       H       0       -1.361      0.934       10.772      
+TME     H21     H       H       0       -2.723      2.832       12.383      
+TME     H22     H       H       0       -2.230      3.123       10.925      
+TME     H31     H       H       0       -0.313      3.784       11.691      
+TME     H32     H       H       0       -0.064      2.361       12.349      
+TME     H33     H       H       0       -0.814      3.495       13.169      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TME       C1        C2        SINGLE    n         1.520     0.020     1.520     0.020     
+TME       C2        C3        SINGLE    n         1.520     0.020     1.520     0.020     
+TME       C1        H11       SINGLE    n         1.089     0.010     0.973     0.016     
+TME       C1        H12       SINGLE    n         1.089     0.010     0.973     0.016     
+TME       C1        H13       SINGLE    n         1.089     0.010     0.973     0.016     
+TME       C2        H21       SINGLE    n         1.089     0.010     0.970     0.010     
+TME       C2        H22       SINGLE    n         1.089     0.010     0.970     0.010     
+TME       C3        H31       SINGLE    n         1.089     0.010     0.973     0.016     
+TME       C3        H32       SINGLE    n         1.089     0.010     0.973     0.016     
+TME       C3        H33       SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TME          C2          C1         H11     109.460    1.50
+TME          C2          C1         H12     109.460    1.50
+TME          C2          C1         H13     109.460    1.50
+TME         H11          C1         H12     109.380    1.50
+TME         H11          C1         H13     109.380    1.50
+TME         H12          C1         H13     109.380    1.50
+TME          C1          C2          C3     111.517    1.93
+TME          C1          C2         H21     109.325    1.50
+TME          C1          C2         H22     109.325    1.50
+TME          C3          C2         H21     109.325    1.50
+TME          C3          C2         H22     109.325    1.50
+TME         H21          C2         H22     107.973    1.50
+TME          C2          C3         H31     109.460    1.50
+TME          C2          C3         H32     109.460    1.50
+TME          C2          C3         H33     109.460    1.50
+TME         H31          C3         H32     109.380    1.50
+TME         H31          C3         H33     109.380    1.50
+TME         H32          C3         H33     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TME             sp3_sp3_1         H11          C1          C2          C3     180.000   10.00     3
+TME            sp3_sp3_10          C1          C2          C3         H31     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TME SMILES           ACDLabs              10.04 CCC
+TME SMILES_CANONICAL CACTVS               3.341 CCC
+TME SMILES           CACTVS               3.341 CCC
+TME SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCC
+TME SMILES           "OpenEye OEToolkits" 1.5.0 CCC
+TME InChI            InChI                1.03  InChI=1S/C3H8/c1-3-2/h3H2,1-2H3
+TME InChIKey         InChI                1.03  ATUOYWHBWRKTHZ-UHFFFAOYSA-N
+TME ?                acedrg               202         "dictionary generator"                  
+TME ?                acedrg_database      11          "data source"                           
+TME ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TME ?                refmac5              5.8.0189    "optimization tool"                     

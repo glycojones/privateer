@@ -1,0 +1,353 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CGL      CGL 'CYSTINE-GLUTATHIONE                 ' non-polymer        46  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CGL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CGL           O32    O    OC       -0.500      0.000    0.000    0.000
+ CGL           C3     C    C         0.000     -1.172   -0.067   -0.434
+ CGL           O31    O    OC       -0.500     -1.417    0.243   -1.621
+ CGL           CA3    C    CH2       0.000     -2.287   -0.520    0.472
+ CGL           HA31   H    H         0.000     -2.359    0.157    1.326
+ CGL           HA32   H    H         0.000     -2.078   -1.531    0.828
+ CGL           N3     N    NH1       0.000     -3.552   -0.512   -0.268
+ CGL           HN3    H    H         0.000     -3.568   -0.228   -1.237
+ CGL           C2     C    C         0.000     -4.693   -0.883    0.345
+ CGL           O2     O    O         0.000     -4.673   -1.223    1.509
+ CGL           CA2    C    CH1       0.000     -5.993   -0.875   -0.416
+ CGL           HA2    H    H         0.000     -5.920   -1.557   -1.274
+ CGL           CB2    C    CH2       0.000     -6.285    0.543   -0.914
+ CGL           HB22   H    H         0.000     -5.476    0.871   -1.569
+ CGL           HB23   H    H         0.000     -6.357    1.220   -0.060
+ CGL           SG2    S    S2        0.000     -7.850    0.553   -1.830
+ CGL           SG     S    S2        0.000     -9.167    0.249   -0.288
+ CGL           CB     C    CH2       0.000     -9.378    1.956    0.287
+ CGL           HB2    H    H         0.000     -8.398    2.414    0.433
+ CGL           HB3    H    H         0.000     -9.923    1.956    1.233
+ CGL           CA     C    CH1       0.000    -10.164    2.752   -0.757
+ CGL           HA     H    H         0.000     -9.661    2.677   -1.731
+ CGL           C      C    C         0.000    -10.234    4.198   -0.338
+ CGL           OXT    O    OC       -0.500     -9.260    4.956   -0.541
+ CGL           O      O    OC       -0.500    -11.267    4.641    0.212
+ CGL           N      N    NH2       0.000    -11.525    2.208   -0.864
+ CGL           HN     H    H         0.000    -12.329    2.815   -0.758
+ CGL           H      H    H         0.000    -11.668    1.221   -1.045
+ CGL           N2     N    NH1       0.000     -7.078   -1.314    0.466
+ CGL           HN2    H    H         0.000     -7.639   -0.632    0.955
+ CGL           CD1    C    C         0.000     -7.327   -2.630    0.622
+ CGL           OE1    O    O         0.000     -6.654   -3.449    0.034
+ CGL           CG1    C    CH2       0.000     -8.443   -3.083    1.528
+ CGL           HG12   H    H         0.000     -9.390   -2.675    1.170
+ CGL           HG13   H    H         0.000     -8.255   -2.726    2.543
+ CGL           CB1    C    CH2       0.000     -8.511   -4.612    1.528
+ CGL           HB12   H    H         0.000     -7.562   -5.017    1.886
+ CGL           HB13   H    H         0.000     -8.698   -4.967    0.513
+ CGL           CA1    C    CH1       0.000     -9.643   -5.072    2.448
+ CGL           HA1    H    H         0.000    -10.583   -4.591    2.141
+ CGL           N1     N    NH2       0.000     -9.331   -4.697    3.834
+ CGL           HN12   H    H         0.000     -8.518   -4.127    4.040
+ CGL           HN11   H    H         0.000     -9.926   -5.005    4.594
+ CGL           C1     C    C         0.000     -9.791   -6.568    2.354
+ CGL           O11    O    OC       -0.500     -9.297   -7.303    3.237
+ CGL           O12    O    OC       -0.500    -10.409   -7.076    1.392
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CGL      O32    n/a    C3     START
+ CGL      C3     O32    CA3    .
+ CGL      O31    C3     .      .
+ CGL      CA3    C3     N3     .
+ CGL      HA31   CA3    .      .
+ CGL      HA32   CA3    .      .
+ CGL      N3     CA3    C2     .
+ CGL      HN3    N3     .      .
+ CGL      C2     N3     CA2    .
+ CGL      O2     C2     .      .
+ CGL      CA2    C2     N2     .
+ CGL      HA2    CA2    .      .
+ CGL      CB2    CA2    SG2    .
+ CGL      HB22   CB2    .      .
+ CGL      HB23   CB2    .      .
+ CGL      SG2    CB2    SG     .
+ CGL      SG     SG2    CB     .
+ CGL      CB     SG     CA     .
+ CGL      HB2    CB     .      .
+ CGL      HB3    CB     .      .
+ CGL      CA     CB     N      .
+ CGL      HA     CA     .      .
+ CGL      C      CA     O      .
+ CGL      OXT    C      .      .
+ CGL      O      C      .      .
+ CGL      N      CA     H      .
+ CGL      HN     N      .      .
+ CGL      H      N      .      .
+ CGL      N2     CA2    CD1    .
+ CGL      HN2    N2     .      .
+ CGL      CD1    N2     CG1    .
+ CGL      OE1    CD1    .      .
+ CGL      CG1    CD1    CB1    .
+ CGL      HG12   CG1    .      .
+ CGL      HG13   CG1    .      .
+ CGL      CB1    CG1    CA1    .
+ CGL      HB12   CB1    .      .
+ CGL      HB13   CB1    .      .
+ CGL      CA1    CB1    C1     .
+ CGL      HA1    CA1    .      .
+ CGL      N1     CA1    HN11   .
+ CGL      HN12   N1     .      .
+ CGL      HN11   N1     .      .
+ CGL      C1     CA1    O12    .
+ CGL      O11    C1     .      .
+ CGL      O12    C1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CGL       N         CA        single    1.450     0.020     1.450     0.020     
+CGL       H         N         single    1.036     0.016     0.914     0.007     
+CGL       HN        N         single    1.036     0.016     0.914     0.007     
+CGL       CA        CB        single    1.524     0.020     1.524     0.020     
+CGL       C         CA        single    1.500     0.020     1.500     0.020     
+CGL       HA        CA        single    1.089     0.010     0.989     0.005     
+CGL       CB        SG        single    1.762     0.020     1.762     0.020     
+CGL       HB2       CB        single    1.089     0.010     0.989     0.005     
+CGL       HB3       CB        single    1.089     0.010     0.989     0.005     
+CGL       SG        SG2       single    2.000     0.020     2.000     0.020     
+CGL       O         C         deloc     1.250     0.020     1.250     0.020     
+CGL       OXT       C         deloc     1.250     0.020     1.250     0.020     
+CGL       N1        CA1       single    1.450     0.020     1.450     0.020     
+CGL       HN11      N1        single    1.036     0.016     0.914     0.007     
+CGL       HN12      N1        single    1.036     0.016     0.914     0.007     
+CGL       C1        CA1       single    1.500     0.020     1.500     0.020     
+CGL       CA1       CB1       single    1.524     0.020     1.524     0.020     
+CGL       HA1       CA1       single    1.089     0.010     0.989     0.005     
+CGL       O11       C1        deloc     1.250     0.020     1.250     0.020     
+CGL       O12       C1        deloc     1.250     0.020     1.250     0.020     
+CGL       CB1       CG1       single    1.524     0.020     1.524     0.020     
+CGL       HB12      CB1       single    1.089     0.010     0.989     0.005     
+CGL       HB13      CB1       single    1.089     0.010     0.989     0.005     
+CGL       CG1       CD1       single    1.510     0.020     1.510     0.020     
+CGL       HG12      CG1       single    1.089     0.010     0.989     0.005     
+CGL       HG13      CG1       single    1.089     0.010     0.989     0.005     
+CGL       OE1       CD1       double    1.220     0.020     1.220     0.020     
+CGL       CD1       N2        single    1.330     0.020     1.330     0.020     
+CGL       N2        CA2       single    1.450     0.020     1.450     0.020     
+CGL       HN2       N2        single    1.016     0.010     0.899     0.007     
+CGL       CA2       C2        single    1.500     0.020     1.500     0.020     
+CGL       CB2       CA2       single    1.524     0.020     1.524     0.020     
+CGL       HA2       CA2       single    1.089     0.010     0.989     0.005     
+CGL       O2        C2        double    1.220     0.020     1.220     0.020     
+CGL       C2        N3        single    1.330     0.020     1.330     0.020     
+CGL       SG2       CB2       single    1.762     0.020     1.762     0.020     
+CGL       HB22      CB2       single    1.089     0.010     0.989     0.005     
+CGL       HB23      CB2       single    1.089     0.010     0.989     0.005     
+CGL       N3        CA3       single    1.450     0.020     1.450     0.020     
+CGL       HN3       N3        single    1.016     0.010     0.899     0.007     
+CGL       CA3       C3        single    1.510     0.020     1.510     0.020     
+CGL       HA31      CA3       single    1.089     0.010     0.989     0.005     
+CGL       HA32      CA3       single    1.089     0.010     0.989     0.005     
+CGL       O31       C3        deloc     1.250     0.020     1.250     0.020     
+CGL       C3        O32       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CGL      O32    C3     O31     123.000    3.000
+ CGL      O32    C3     CA3     118.500    3.000
+ CGL      O31    C3     CA3     118.500    3.000
+ CGL      C3     CA3    HA31    109.470    3.000
+ CGL      C3     CA3    HA32    109.470    3.000
+ CGL      C3     CA3    N3      111.600    3.000
+ CGL      HA31   CA3    HA32    107.900    3.000
+ CGL      HA31   CA3    N3      109.470    3.000
+ CGL      HA32   CA3    N3      109.470    3.000
+ CGL      CA3    N3     HN3     118.500    3.000
+ CGL      CA3    N3     C2      121.500    3.000
+ CGL      HN3    N3     C2      120.000    3.000
+ CGL      N3     C2     O2      123.000    3.000
+ CGL      N3     C2     CA2     116.500    3.000
+ CGL      O2     C2     CA2     120.500    3.000
+ CGL      C2     CA2    HA2     108.810    3.000
+ CGL      C2     CA2    CB2     109.470    3.000
+ CGL      C2     CA2    N2      111.600    3.000
+ CGL      HA2    CA2    CB2     108.340    3.000
+ CGL      HA2    CA2    N2      108.550    3.000
+ CGL      CB2    CA2    N2      110.000    3.000
+ CGL      CA2    CB2    HB22    109.470    3.000
+ CGL      CA2    CB2    HB23    109.470    3.000
+ CGL      CA2    CB2    SG2     109.500    3.000
+ CGL      HB22   CB2    HB23    107.900    3.000
+ CGL      HB22   CB2    SG2     109.500    3.000
+ CGL      HB23   CB2    SG2     109.500    3.000
+ CGL      CB2    SG2    SG       99.991    3.000
+ CGL      SG2    SG     CB       99.987    3.000
+ CGL      SG     CB     HB2     109.500    3.000
+ CGL      SG     CB     HB3     109.500    3.000
+ CGL      SG     CB     CA      109.500    3.000
+ CGL      HB2    CB     HB3     107.900    3.000
+ CGL      HB2    CB     CA      109.470    3.000
+ CGL      HB3    CB     CA      109.470    3.000
+ CGL      CB     CA     HA      108.340    3.000
+ CGL      CB     CA     C       109.470    3.000
+ CGL      CB     CA     N       109.470    3.000
+ CGL      HA     CA     C       108.810    3.000
+ CGL      HA     CA     N       109.470    3.000
+ CGL      C      CA     N       109.470    3.000
+ CGL      CA     C      OXT     118.500    3.000
+ CGL      CA     C      O       118.500    3.000
+ CGL      OXT    C      O       123.000    3.000
+ CGL      CA     N      HN      120.000    3.000
+ CGL      CA     N      H       120.000    3.000
+ CGL      HN     N      H       120.000    3.000
+ CGL      CA2    N2     HN2     118.500    3.000
+ CGL      CA2    N2     CD1     121.500    3.000
+ CGL      HN2    N2     CD1     120.000    3.000
+ CGL      N2     CD1    OE1     123.000    3.000
+ CGL      N2     CD1    CG1     116.500    3.000
+ CGL      OE1    CD1    CG1     120.500    3.000
+ CGL      CD1    CG1    HG12    109.470    3.000
+ CGL      CD1    CG1    HG13    109.470    3.000
+ CGL      CD1    CG1    CB1     109.470    3.000
+ CGL      HG12   CG1    HG13    107.900    3.000
+ CGL      HG12   CG1    CB1     109.470    3.000
+ CGL      HG13   CG1    CB1     109.470    3.000
+ CGL      CG1    CB1    HB12    109.470    3.000
+ CGL      CG1    CB1    HB13    109.470    3.000
+ CGL      CG1    CB1    CA1     111.000    3.000
+ CGL      HB12   CB1    HB13    107.900    3.000
+ CGL      HB12   CB1    CA1     109.470    3.000
+ CGL      HB13   CB1    CA1     109.470    3.000
+ CGL      CB1    CA1    HA1     108.340    3.000
+ CGL      CB1    CA1    N1      109.470    3.000
+ CGL      CB1    CA1    C1      109.470    3.000
+ CGL      HA1    CA1    N1      109.470    3.000
+ CGL      HA1    CA1    C1      108.810    3.000
+ CGL      N1     CA1    C1      109.470    3.000
+ CGL      CA1    N1     HN12    120.000    3.000
+ CGL      CA1    N1     HN11    120.000    3.000
+ CGL      HN12   N1     HN11    120.000    3.000
+ CGL      CA1    C1     O11     118.500    3.000
+ CGL      CA1    C1     O12     118.500    3.000
+ CGL      O11    C1     O12     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CGL      var_1    O32    C3     CA3    N3      -179.990   20.000   3
+ CGL      var_2    C3     CA3    N3     C2      -179.994   20.000   3
+ CGL      CONST_1  CA3    N3     C2     CA2      180.000    0.000   0
+ CGL      var_3    N3     C2     CA2    N2      -179.966   20.000   3
+ CGL      var_4    C2     CA2    CB2    SG2      179.986   20.000   3
+ CGL      var_5    CA2    CB2    SG2    SG        69.976   20.000   1
+ CGL      var_6    CB2    SG2    SG     CB        85.015   20.000   1
+ CGL      var_7    SG2    SG     CB     CA        69.971   20.000   1
+ CGL      var_8    SG     CB     CA     N         65.031   20.000   3
+ CGL      var_9    CB     CA     C      O        -99.944   20.000   3
+ CGL      var_10   CB     CA     N      H        -53.811   20.000   1
+ CGL      var_11   C2     CA2    N2     CD1      -84.994   20.000   3
+ CGL      CONST_2  CA2    N2     CD1    CG1      180.000    0.000   0
+ CGL      var_12   N2     CD1    CG1    CB1     -179.991   20.000   3
+ CGL      var_13   CD1    CG1    CB1    CA1      179.979   20.000   3
+ CGL      var_14   CG1    CB1    CA1    C1       174.972   20.000   3
+ CGL      var_15   CB1    CA1    N1     HN11    -173.767   20.000   1
+ CGL      var_16   CB1    CA1    C1     O12      -79.989   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CGL      chir_01  CA     N      CB     C         positiv
+ CGL      chir_02  CA1    N1     C1     CB1       positiv
+ CGL      chir_03  CA2    N2     C2     CB2       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CGL      plan-1    N         0.020
+ CGL      plan-1    CA        0.020
+ CGL      plan-1    H         0.020
+ CGL      plan-1    HN        0.020
+ CGL      plan-2    C         0.020
+ CGL      plan-2    CA        0.020
+ CGL      plan-2    O         0.020
+ CGL      plan-2    OXT       0.020
+ CGL      plan-3    N1        0.020
+ CGL      plan-3    CA1       0.020
+ CGL      plan-3    HN11      0.020
+ CGL      plan-3    HN12      0.020
+ CGL      plan-4    C1        0.020
+ CGL      plan-4    CA1       0.020
+ CGL      plan-4    O11       0.020
+ CGL      plan-4    O12       0.020
+ CGL      plan-5    CD1       0.020
+ CGL      plan-5    CG1       0.020
+ CGL      plan-5    OE1       0.020
+ CGL      plan-5    N2        0.020
+ CGL      plan-5    HN2       0.020
+ CGL      plan-6    N2        0.020
+ CGL      plan-6    CD1       0.020
+ CGL      plan-6    CA2       0.020
+ CGL      plan-6    HN2       0.020
+ CGL      plan-7    C2        0.020
+ CGL      plan-7    CA2       0.020
+ CGL      plan-7    O2        0.020
+ CGL      plan-7    N3        0.020
+ CGL      plan-7    HN3       0.020
+ CGL      plan-8    N3        0.020
+ CGL      plan-8    C2        0.020
+ CGL      plan-8    CA3       0.020
+ CGL      plan-8    HN3       0.020
+ CGL      plan-9    C3        0.020
+ CGL      plan-9    CA3       0.020
+ CGL      plan-9    O31       0.020
+ CGL      plan-9    O32       0.020
+# ------------------------------------------------------

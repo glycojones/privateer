@@ -1,0 +1,228 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MLZ     MLZ     N-METHYL-LYSINE     peptide     27     11     .
+#
+data_comp_MLZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MLZ     N       N       NT3     1       0.275       -2.157      -2.643
+MLZ     CA      C       CH1     0       0.116       -0.676      -2.674
+MLZ     CB      C       CH2     0       1.186       0.000       -1.810
+MLZ     CG      C       CH2     0       1.113       -0.309      -0.320
+MLZ     CD      C       CH2     0       2.083       0.502       0.512
+MLZ     CE      C       CH2     0       1.970       0.223       2.003
+MLZ     NZ      N       NT1     0       2.959       0.984       2.775
+MLZ     CM      C       CH3     0       2.779       0.837       4.227
+MLZ     C       C       C       0       0.206       -0.183      -4.124
+MLZ     O       O       O       0       1.255       -0.440      -4.747
+MLZ     OXT     O       OC      -1      -0.777      0.438       -4.575
+MLZ     H       H       H       0       -0.261      -2.547      -3.269
+MLZ     H2      H       H       0       0.043       -2.479      -1.823
+MLZ     H3      H       H       0       1.141       -2.382      -2.815
+MLZ     HA      H       H       0       -0.774      -0.451      -2.317
+MLZ     HB2     H       H       0       1.110       0.970       -1.929
+MLZ     HB3     H       H       0       2.067       -0.272      -2.141
+MLZ     HG2     H       H       0       1.300       -1.263      -0.187
+MLZ     HG3     H       H       0       0.201       -0.136      -0.006
+MLZ     HD2     H       H       0       1.918       1.456       0.355
+MLZ     HD3     H       H       0       2.998       0.304       0.220
+MLZ     HE2     H       H       0       2.102       -0.736      2.162
+MLZ     HE3     H       H       0       1.069       0.457       2.307
+MLZ     HZ      H       H       0       2.869       1.855       2.570
+MLZ     HCM1    H       H       0       3.432       1.394       4.695
+MLZ     HCM2    H       H       0       2.910       -0.098      4.480
+MLZ     HCM3    H       H       0       1.877       1.117       4.475
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+MLZ      N      n/a    CA     START
+MLZ      H      N      .      .
+MLZ      H2     N      .      .
+MLZ      H3     N      .      .
+MLZ      CA     N      C      .
+MLZ      HA     CA     .      .
+MLZ      CB     CA     CG     .
+MLZ      HB2    CB     .      .
+MLZ      HB3    CB     .      .
+MLZ      CG     CB     CD     .
+MLZ      HG2    CG     .      .
+MLZ      HG3    CG     .      .
+MLZ      CD     CG     CE     .
+MLZ      HD2    CD     .      .
+MLZ      HD3    CD     .      .
+MLZ      CE     CD     NZ     .
+MLZ      HE2    CE     .      .
+MLZ      HE3    CE     .      .
+MLZ      NZ     CE     CM     .
+MLZ      HZ     NZ     .      .
+MLZ      CM     NZ     HCM1   .
+MLZ      HCM3   CM     .      .
+MLZ      HCM2   CM     .      .
+MLZ      HCM1   CM     .      .
+MLZ      C      CA     .      END
+MLZ      O      C      .      .
+MLZ      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MLZ       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+MLZ       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+MLZ       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+MLZ       CB        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+MLZ       CG        CD        SINGLE    n         1.514     0.020     1.514     0.020     
+MLZ       CD        CE        SINGLE    n         1.521     0.010     1.521     0.010     
+MLZ       CE        NZ        SINGLE    n         1.467     0.010     1.467     0.010     
+MLZ       NZ        CM        SINGLE    n         1.470     0.013     1.470     0.013     
+MLZ       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+MLZ       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+MLZ       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+MLZ       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+MLZ       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+MLZ       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+MLZ       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+MLZ       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+MLZ       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+MLZ       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.016     
+MLZ       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.016     
+MLZ       CD        HD3       SINGLE    n         1.089     0.010     0.981     0.016     
+MLZ       CE        HE2       SINGLE    n         1.089     0.010     0.980     0.015     
+MLZ       CE        HE3       SINGLE    n         1.089     0.010     0.980     0.015     
+MLZ       NZ        HZ        SINGLE    n         1.036     0.016     0.899     0.020     
+MLZ       CM        HCM1      SINGLE    n         1.089     0.010     0.977     0.013     
+MLZ       CM        HCM2      SINGLE    n         1.089     0.010     0.977     0.013     
+MLZ       CM        HCM3      SINGLE    n         1.089     0.010     0.977     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MLZ          CA           N           H     110.062    1.93
+MLZ          CA           N          H2     110.062    1.93
+MLZ          CA           N          H3     110.062    1.93
+MLZ           H           N          H2     109.028    2.41
+MLZ           H           N          H3     109.028    2.41
+MLZ          H2           N          H3     109.028    2.41
+MLZ           N          CA          CB     110.374    1.62
+MLZ           N          CA           C     109.241    1.50
+MLZ           N          CA          HA     108.487    1.50
+MLZ          CB          CA           C     111.037    2.40
+MLZ          CB          CA          HA     108.967    1.50
+MLZ           C          CA          HA     108.824    1.50
+MLZ          CA          CB          CG     115.311    1.56
+MLZ          CA          CB         HB2     108.549    1.50
+MLZ          CA          CB         HB3     108.549    1.50
+MLZ          CG          CB         HB2     108.650    1.50
+MLZ          CG          CB         HB3     108.650    1.50
+MLZ         HB2          CB         HB3     107.844    1.50
+MLZ          CB          CG          CD     113.328    2.00
+MLZ          CB          CG         HG2     108.601    1.50
+MLZ          CB          CG         HG3     108.601    1.50
+MLZ          CD          CG         HG2     108.806    1.50
+MLZ          CD          CG         HG3     108.806    1.50
+MLZ         HG2          CG         HG3     107.646    1.50
+MLZ          CG          CD          CE     113.159    3.00
+MLZ          CG          CD         HD2     109.041    1.50
+MLZ          CG          CD         HD3     109.041    1.50
+MLZ          CE          CD         HD2     108.956    1.50
+MLZ          CE          CD         HD3     108.956    1.50
+MLZ         HD2          CD         HD3     107.927    1.57
+MLZ          CD          CE          NZ     111.754    2.01
+MLZ          CD          CE         HE2     109.197    1.51
+MLZ          CD          CE         HE3     109.197    1.51
+MLZ          NZ          CE         HE2     109.402    1.50
+MLZ          NZ          CE         HE3     109.402    1.50
+MLZ         HE2          CE         HE3     107.877    1.50
+MLZ          CE          NZ          CM     112.615    2.70
+MLZ          CE          NZ          HZ     108.280    3.00
+MLZ          CM          NZ          HZ     108.144    3.00
+MLZ          NZ          CM        HCM1     109.504    1.50
+MLZ          NZ          CM        HCM2     109.504    1.50
+MLZ          NZ          CM        HCM3     109.504    1.50
+MLZ        HCM1          CM        HCM2     109.279    1.79
+MLZ        HCM1          CM        HCM3     109.279    1.79
+MLZ        HCM2          CM        HCM3     109.279    1.79
+MLZ          CA           C           O     117.124    1.50
+MLZ          CA           C         OXT     117.124    1.50
+MLZ           O           C         OXT     125.752    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MLZ             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+MLZ            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+MLZ             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+MLZ            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+MLZ            sp3_sp3_28          CE          CD          CG          CB     180.000   10.00     3
+MLZ            sp3_sp3_37          CG          CD          CE          NZ     180.000   10.00     3
+MLZ            sp3_sp3_47          CD          CE          NZ          CM     -60.000   10.00     3
+MLZ            sp3_sp3_52        HCM1          CM          NZ          CE     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MLZ    chir_1    CA    N    C    CB    both
+MLZ    chir_2    NZ    CE    CM    HZ    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MLZ    plan-1           C   0.020
+MLZ    plan-1          CA   0.020
+MLZ    plan-1           O   0.020
+MLZ    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MLZ SMILES           ACDLabs              10.04 "O=C(O)C(N)CCCCNC"
+MLZ SMILES_CANONICAL CACTVS               3.341 "CNCCCC[C@H](N)C(O)=O"
+MLZ SMILES           CACTVS               3.341 "CNCCCC[CH](N)C(O)=O"
+MLZ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CNCCCC[C@@H](C(=O)O)N"
+MLZ SMILES           "OpenEye OEToolkits" 1.5.0 "CNCCCCC(C(=O)O)N"
+MLZ InChI            InChI                1.03  "InChI=1S/C7H16N2O2/c1-9-5-3-2-4-6(8)7(10)11/h6,9H,2-5,8H2,1H3,(H,10,11)/t6-/m0/s1"
+MLZ InChIKey         InChI                1.03  PQNASZJZHFPQLE-LURJTMIESA-N
+MLZ ?                acedrg               196         "dictionary generator"
+MLZ ?                acedrg_database      11          "data source"
+MLZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MLZ ?                refmac5              5.8.0222    "optimization tool"

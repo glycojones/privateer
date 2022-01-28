@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SEC     SEC      .              non-polymer     14     7     .     
+#
+data_comp_SEC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SEC     CB      C       CH2     0       0.972       0.092       0.684       
+SEC     CA      C       CH1     0       -0.111      -0.244      -0.332      
+SEC     C       C       C       0       -0.873      -1.513      0.074       
+SEC     O       O       O       0       -0.414      -2.602      -0.323      
+SEC     OXT     O       OC      -1      -1.896      -1.366      0.773       
+SEC     N       N       NT3     1       -1.063      0.891       -0.497      
+SEC     SE      SE      SE      0       2.100       1.595       0.114       
+SEC     HB2     H       H       0       1.538       -0.697      0.823       
+SEC     HB3     H       H       0       0.552       0.314       1.543       
+SEC     HA      H       H       0       0.327       -0.408      -1.199      
+SEC     H       H       H       0       -1.844      0.599       -0.868      
+SEC     H2      H       H       0       -0.702      1.522       -1.046      
+SEC     H3      H       H       0       -1.245      1.270       0.312       
+SEC     HE      H       H       0       2.951       1.787       0.931       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SEC          CB          CA      SINGLE       n     1.520  0.0145     1.520  0.0145
+SEC          CA           C      SINGLE       n     1.533  0.0100     1.533  0.0100
+SEC           C           O      DOUBLE       n     1.247  0.0187     1.247  0.0187
+SEC           C         OXT      SINGLE       n     1.247  0.0187     1.247  0.0187
+SEC          CA           N      SINGLE       n     1.488  0.0100     1.488  0.0100
+SEC          CB          SE      SINGLE       n     1.963  0.0200     1.963  0.0200
+SEC          CB         HB2      SINGLE       n     1.089  0.0100     0.981  0.0167
+SEC          CB         HB3      SINGLE       n     1.089  0.0100     0.981  0.0167
+SEC          CA          HA      SINGLE       n     1.089  0.0100     0.985  0.0200
+SEC           N           H      SINGLE       n     1.036  0.0160     0.911  0.0200
+SEC           N          H2      SINGLE       n     1.036  0.0160     0.911  0.0200
+SEC           N          H3      SINGLE       n     1.036  0.0160     0.911  0.0200
+SEC          SE          HE      SINGLE       n     1.195  0.0100     1.195  0.0100
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SEC          CA          CB          SE     111.593    3.00
+SEC          CA          CB         HB2     109.297    1.50
+SEC          CA          CB         HB3     109.297    1.50
+SEC          SE          CB         HB2     109.134    1.50
+SEC          SE          CB         HB3     109.134    1.50
+SEC         HB2          CB         HB3     107.871    1.50
+SEC          CB          CA           C     111.425    1.50
+SEC          CB          CA           N     110.632    1.50
+SEC          CB          CA          HA     108.078    1.50
+SEC           C          CA           N     109.414    1.50
+SEC           C          CA          HA     108.600    1.50
+SEC           N          CA          HA     108.444    1.50
+SEC          CA           C           O     117.139    1.50
+SEC          CA           C         OXT     117.139    1.50
+SEC           O           C         OXT     125.721    1.50
+SEC          CA           N           H     109.853    1.85
+SEC          CA           N          H2     109.853    1.85
+SEC          CA           N          H3     109.853    1.85
+SEC           H           N          H2     109.028    2.41
+SEC           H           N          H3     109.028    2.41
+SEC          H2           N          H3     109.028    2.41
+SEC          CB          SE          HE     109.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SEC             sp3_sp3_1           C          CA          CB          SE     180.000   10.00     3
+SEC            sp3_sp3_19          CA          CB          SE          HE     180.000   10.00     3
+SEC             sp2_sp3_1           O           C          CA          CB       0.000   10.00     6
+SEC            sp3_sp3_10          CB          CA           N           H     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SEC    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SEC    plan-1           C   0.020
+SEC    plan-1          CA   0.020
+SEC    plan-1           O   0.020
+SEC    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SEC SMILES           ACDLabs              12.01 "O=C(O)C(N)C[SeH]"
+SEC InChI            InChI                1.03  "InChI=1S/C3H7NO2Se/c4-2(1-7)3(5)6/h2,7H,1,4H2,(H,5,6)/t2-/m0/s1"
+SEC InChIKey         InChI                1.03  ZKZBPNGNEQAJSX-REOHCLBHSA-N
+SEC SMILES_CANONICAL CACTVS               3.370 "N[C@@H](C[SeH])C(O)=O"
+SEC SMILES           CACTVS               3.370 "N[CH](C[SeH])C(O)=O"
+SEC SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C([C@@H](C(=O)O)N)[SeH]"
+SEC SMILES           "OpenEye OEToolkits" 1.7.6 "C(C(C(=O)O)N)[SeH]"
+SEC ?                acedrg               196         "dictionary generator"
+SEC ?                acedrg_database      11          "data source"
+SEC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SEC ?                refmac5              5.8.0222    "optimization tool"
+SEC ?                acedrg               226         "dictionary generator"                  
+SEC ?                acedrg_database      11          "data source"                           
+SEC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SEC ?                refmac5              5.8.0267    "optimization tool"                     

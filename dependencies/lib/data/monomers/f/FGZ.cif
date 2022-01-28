@@ -1,0 +1,147 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FGZ     FGZ      "3,5-dichloro-4-hydroxybenzoic acid"     NON-POLYMER     15     12     .     
+#
+data_comp_FGZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FGZ     O01     O       O       0       -19.564     -17.230     -34.989     
+FGZ     C02     C       C       0       -20.291     -16.337     -34.518     
+FGZ     O03     O       OC      -1      -20.678     -15.338     -35.152     
+FGZ     C04     C       CR6     0       -20.729     -16.472     -33.092     
+FGZ     C05     C       CR16    0       -21.346     -17.647     -32.658     
+FGZ     C06     C       CR6     0       -21.754     -17.782     -31.345     
+FGZ     CL1     CL      CL      0       -22.518     -19.246     -30.819     
+FGZ     C08     C       CR6     0       -21.563     -16.727     -30.378     
+FGZ     O09     O       OH1     0       -21.955     -16.847     -29.103     
+FGZ     C10     C       CR6     0       -20.921     -15.535     -30.877     
+FGZ     CL2     CL      CL      0       -20.657     -14.224     -29.775     
+FGZ     C12     C       CR16    0       -20.521     -15.421     -32.195     
+FGZ     H2      H       H       0       -21.487     -18.355     -33.261     
+FGZ     H3      H       H       0       -21.322     -16.700     -28.542     
+FGZ     H4      H       H       0       -20.106     -14.629     -32.486     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FGZ       O01       C02       DOUBLE    n         1.244     0.020     1.244     0.020     
+FGZ       C02       O03       SINGLE    n         1.244     0.020     1.244     0.020     
+FGZ       C02       C04       SINGLE    n         1.498     0.020     1.498     0.020     
+FGZ       C04       C05       DOUBLE    y         1.390     0.010     1.390     0.010     
+FGZ       C04       C12       SINGLE    y         1.390     0.010     1.390     0.010     
+FGZ       C05       C06       SINGLE    y         1.375     0.010     1.375     0.010     
+FGZ       C10       C12       DOUBLE    y         1.375     0.010     1.375     0.010     
+FGZ       C06       CL1       SINGLE    n         1.733     0.010     1.733     0.010     
+FGZ       C06       C08       DOUBLE    y         1.415     0.020     1.415     0.020     
+FGZ       C08       C10       SINGLE    y         1.415     0.020     1.415     0.020     
+FGZ       C10       CL2       SINGLE    n         1.733     0.010     1.733     0.010     
+FGZ       C08       O09       SINGLE    n         1.339     0.010     1.339     0.010     
+FGZ       C05       H2        SINGLE    n         1.082     0.013     0.940     0.014     
+FGZ       O09       H3        SINGLE    n         0.970     0.012     0.858     0.020     
+FGZ       C12       H4        SINGLE    n         1.082     0.013     0.940     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FGZ         O01         C02         O03     124.418    1.50
+FGZ         O01         C02         C04     117.791    1.50
+FGZ         O03         C02         C04     117.791    1.50
+FGZ         C02         C04         C05     120.069    1.50
+FGZ         C02         C04         C12     120.069    1.50
+FGZ         C05         C04         C12     119.862    1.50
+FGZ         C04         C05         C06     120.462    1.50
+FGZ         C04         C05          H2     120.033    1.50
+FGZ         C06         C05          H2     119.506    1.50
+FGZ         C05         C06         CL1     120.071    1.50
+FGZ         C05         C06         C08     121.853    1.50
+FGZ         CL1         C06         C08     118.076    1.50
+FGZ         C06         C08         C10     115.509    1.51
+FGZ         C06         C08         O09     122.245    3.00
+FGZ         C10         C08         O09     122.245    3.00
+FGZ         C08         O09          H3     113.011    3.00
+FGZ         C12         C10         C08     121.853    1.50
+FGZ         C12         C10         CL2     120.071    1.50
+FGZ         C08         C10         CL2     118.076    1.50
+FGZ         C04         C12         C10     120.462    1.50
+FGZ         C04         C12          H4     120.033    1.50
+FGZ         C10         C12          H4     119.506    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FGZ             sp2_sp2_1         O01         C02         C04         C05     180.000   10.00     2
+FGZ              const_23         C02         C04         C12         C10     180.000   10.00     2
+FGZ       const_sp2_sp2_3         C02         C04         C05         C06     180.000   10.00     2
+FGZ       const_sp2_sp2_6         C04         C05         C06         CL1     180.000   10.00     2
+FGZ              const_12         CL1         C06         C08         O09       0.000   10.00     2
+FGZ              const_16         O09         C08         C10         CL2       0.000   10.00     2
+FGZ              const_19         CL2         C10         C12         C04     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FGZ    plan-1         C02   0.020
+FGZ    plan-1         C04   0.020
+FGZ    plan-1         C05   0.020
+FGZ    plan-1         C06   0.020
+FGZ    plan-1         C08   0.020
+FGZ    plan-1         C10   0.020
+FGZ    plan-1         C12   0.020
+FGZ    plan-1         CL1   0.020
+FGZ    plan-1         CL2   0.020
+FGZ    plan-1          H2   0.020
+FGZ    plan-1          H4   0.020
+FGZ    plan-1         O09   0.020
+FGZ    plan-2         C02   0.020
+FGZ    plan-2         C04   0.020
+FGZ    plan-2         O01   0.020
+FGZ    plan-2         O03   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FGZ SMILES           ACDLabs              12.01 "O=C(c1cc(Cl)c(O)c(Cl)c1)O"
+FGZ InChI            InChI                1.03  "InChI=1S/C7H4Cl2O3/c8-4-1-3(7(11)12)2-5(9)6(4)10/h1-2,10H,(H,11,12)"
+FGZ InChIKey         InChI                1.03  AULKDLUOQCUNOK-UHFFFAOYSA-N
+FGZ SMILES_CANONICAL CACTVS               3.385 "OC(=O)c1cc(Cl)c(O)c(Cl)c1"
+FGZ SMILES           CACTVS               3.385 "OC(=O)c1cc(Cl)c(O)c(Cl)c1"
+FGZ SMILES_CANONICAL "OpenEye OEToolkits" 2.0.4 "c1c(cc(c(c1Cl)O)Cl)C(=O)O"
+FGZ SMILES           "OpenEye OEToolkits" 2.0.4 "c1c(cc(c(c1Cl)O)Cl)C(=O)O"
+FGZ ?                acedrg               202         "dictionary generator"                  
+FGZ ?                acedrg_database      11          "data source"                           
+FGZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FGZ ?                refmac5              5.8.0189    "optimization tool"                     

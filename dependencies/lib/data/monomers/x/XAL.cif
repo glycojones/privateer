@@ -1,0 +1,317 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XAL      XAL '"[(1S,4R,6R)-6-HYDROXY-4-(ADENIN-9-Y' DNA                37  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_XAL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ XAL           OP3    O    OP       -0.666      0.000    0.000    0.000
+ XAL           P      P    P         0.000     -0.246   -1.458    0.321
+ XAL           OP1    O    OP       -0.666     -0.169   -1.665    1.818
+ XAL           OP2    O    OP       -0.666      0.804   -2.308   -0.361
+ XAL           "O5'"  O    O2        0.000     -1.707   -1.884   -0.205
+ XAL           "C5'"  C    CH2       0.000     -2.656   -1.134    0.556
+ XAL           "H5'"  H    H         0.000     -2.483   -0.067    0.402
+ XAL           "H5''" H    H         0.000     -2.540   -1.371    1.616
+ XAL           "C4'"  C    CH1       0.000     -4.071   -1.494    0.103
+ XAL           "H4'"  H    H         0.000     -4.213   -2.581    0.180
+ XAL           "C3'"  C    CH1       0.000     -5.087   -0.784    1.002
+ XAL           "H3'"  H    H         0.000     -4.834    0.282    1.076
+ XAL           "C2'"  C    CH2       0.000     -6.480   -0.942    0.378
+ XAL           "H2'"  H    H         0.000     -7.240   -0.557    1.062
+ XAL           "H2''" H    H         0.000     -6.678   -1.995    0.171
+ XAL           "C1'"  C    CH1       0.000     -6.517   -0.147   -0.929
+ XAL           "H1'"  H    H         0.000     -7.434   -0.397   -1.481
+ XAL           "C7'"  C    C1        0.000     -5.322   -0.487   -1.771
+ XAL           "H7'"  H    H         0.000     -5.353   -0.229   -2.817
+ XAL           "C6'"  C    C1        0.000     -4.258   -1.068   -1.323
+ XAL           "H6'"  H    H         0.000     -3.457   -1.258   -2.017
+ XAL           N9     N    NR5       0.000     -6.507    1.286   -0.627
+ XAL           C4     C    CR56      0.000     -7.539    2.166   -0.833
+ XAL           C5     C    CR56      0.000     -7.071    3.419   -0.403
+ XAL           N7     N    NRD5      0.000     -5.806    3.241    0.044
+ XAL           C8     C    CR15      0.000     -5.471    1.990   -0.091
+ XAL           H8     H    H         0.000     -4.511    1.570    0.184
+ XAL           N3     N    NRD6      0.000     -8.772    2.068   -1.319
+ XAL           C2     C    CR16      0.000     -9.550    3.128   -1.391
+ XAL           H2     H    H         0.000    -10.550    3.014   -1.791
+ XAL           N1     N    NRD6      0.000     -9.157    4.324   -0.994
+ XAL           C6     C    CR6       0.000     -7.941    4.519   -0.495
+ XAL           N6     N    NH2       0.000     -7.538    5.776   -0.081
+ XAL           HN62   H    H         0.000     -6.608    5.920    0.299
+ XAL           HN61   H    H         0.000     -8.168    6.569   -0.153
+ XAL           "O3'"  O    OH1       0.000     -5.075   -1.373    2.304
+ XAL           "HO3'" H    H         0.000     -5.739   -0.905    2.829
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ XAL      OP3    n/a    P      START
+ XAL      P      OP3    "O5'"  .
+ XAL      OP1    P      .      .
+ XAL      OP2    P      .      .
+ XAL      "O5'"  P      "C5'"  .
+ XAL      "C5'"  "O5'"  "C4'"  .
+ XAL      "H5'"  "C5'"  .      .
+ XAL      "H5''" "C5'"  .      .
+ XAL      "C4'"  "C5'"  "C3'"  .
+ XAL      "H4'"  "C4'"  .      .
+ XAL      "C3'"  "C4'"  "O3'"  .
+ XAL      "H3'"  "C3'"  .      .
+ XAL      "C2'"  "C3'"  "C1'"  .
+ XAL      "H2'"  "C2'"  .      .
+ XAL      "H2''" "C2'"  .      .
+ XAL      "C1'"  "C2'"  N9     .
+ XAL      "H1'"  "C1'"  .      .
+ XAL      "C7'"  "C1'"  "C6'"  .
+ XAL      "H7'"  "C7'"  .      .
+ XAL      "C6'"  "C7'"  "H6'"  .
+ XAL      "H6'"  "C6'"  .      .
+ XAL      N9     "C1'"  C4     .
+ XAL      C4     N9     N3     .
+ XAL      C5     C4     N7     .
+ XAL      N7     C5     C8     .
+ XAL      C8     N7     H8     .
+ XAL      H8     C8     .      .
+ XAL      N3     C4     C2     .
+ XAL      C2     N3     N1     .
+ XAL      H2     C2     .      .
+ XAL      N1     C2     C6     .
+ XAL      C6     N1     N6     .
+ XAL      N6     C6     HN61   .
+ XAL      HN62   N6     .      .
+ XAL      HN61   N6     .      .
+ XAL      "O3'"  "C3'"  .      END
+ XAL      "HO3'" "O3'"  .      .
+ XAL      "C4'"  "C6'"  .    ADD
+ XAL      N9     C8     .    ADD
+ XAL      C6     C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XAL       OP1       P         deloc     1.510     0.020     1.510     0.020     
+XAL       OP2       P         deloc     1.510     0.020     1.510     0.020     
+XAL       "O5'"     P         single    1.610     0.020     1.610     0.020     
+XAL       P         OP3       deloc     1.510     0.020     1.510     0.020     
+XAL       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+XAL       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+XAL       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+XAL       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+XAL       "C4'"     "C6'"     single    1.510     0.020     1.510     0.020     
+XAL       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+XAL       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+XAL       "C6'"     "C7'"     double    1.330     0.020     1.330     0.020     
+XAL       "H6'"     "C6'"     single    1.082     0.013     0.975     0.010     
+XAL       "C7'"     "C1'"     single    1.510     0.020     1.510     0.020     
+XAL       "H7'"     "C7'"     single    1.082     0.013     0.975     0.010     
+XAL       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+XAL       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+XAL       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+XAL       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+XAL       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+XAL       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+XAL       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+XAL       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+XAL       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+XAL       N9        C8        single    1.337     0.020     1.337     0.020     
+XAL       C4        N9        single    1.337     0.020     1.337     0.020     
+XAL       C8        N7        double    1.350     0.020     1.350     0.020     
+XAL       H8        C8        single    1.082     0.013     0.975     0.010     
+XAL       N7        C5        single    1.350     0.020     1.350     0.020     
+XAL       N6        C6        single    1.355     0.020     1.355     0.020     
+XAL       C6        C5        single    1.490     0.020     1.490     0.020     
+XAL       C6        N1        double    1.350     0.020     1.350     0.020     
+XAL       HN61      N6        single    1.016     0.010     0.899     0.007     
+XAL       HN62      N6        single    1.016     0.010     0.899     0.007     
+XAL       C5        C4        double    1.490     0.020     1.490     0.020     
+XAL       N3        C4        single    1.355     0.020     1.355     0.020     
+XAL       C2        N3        double    1.337     0.020     1.337     0.020     
+XAL       N1        C2        single    1.337     0.020     1.337     0.020     
+XAL       H2        C2        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ XAL      OP3    P      OP1     119.900    3.000
+ XAL      OP3    P      OP2     119.900    3.000
+ XAL      OP3    P      "O5'"   108.200    3.000
+ XAL      OP1    P      OP2     119.900    3.000
+ XAL      OP1    P      "O5'"   108.200    3.000
+ XAL      OP2    P      "O5'"   108.200    3.000
+ XAL      P      "O5'"  "C5'"   120.500    3.000
+ XAL      "O5'"  "C5'"  "H5'"   109.470    3.000
+ XAL      "O5'"  "C5'"  "H5''"  109.470    3.000
+ XAL      "O5'"  "C5'"  "C4'"   109.470    3.000
+ XAL      "H5'"  "C5'"  "H5''"  107.900    3.000
+ XAL      "H5'"  "C5'"  "C4'"   109.470    3.000
+ XAL      "H5''" "C5'"  "C4'"   109.470    3.000
+ XAL      "C5'"  "C4'"  "H4'"   108.340    3.000
+ XAL      "C5'"  "C4'"  "C3'"   111.000    3.000
+ XAL      "C5'"  "C4'"  "C6'"   109.470    3.000
+ XAL      "H4'"  "C4'"  "C3'"   108.340    3.000
+ XAL      "H4'"  "C4'"  "C6'"   108.810    3.000
+ XAL      "C3'"  "C4'"  "C6'"   109.470    3.000
+ XAL      "C4'"  "C3'"  "H3'"   108.340    3.000
+ XAL      "C4'"  "C3'"  "C2'"   111.000    3.000
+ XAL      "C4'"  "C3'"  "O3'"   109.470    3.000
+ XAL      "H3'"  "C3'"  "C2'"   108.340    3.000
+ XAL      "H3'"  "C3'"  "O3'"   109.470    3.000
+ XAL      "C2'"  "C3'"  "O3'"   109.470    3.000
+ XAL      "C3'"  "C2'"  "H2'"   109.470    3.000
+ XAL      "C3'"  "C2'"  "H2''"  109.470    3.000
+ XAL      "C3'"  "C2'"  "C1'"   111.000    3.000
+ XAL      "H2'"  "C2'"  "H2''"  107.900    3.000
+ XAL      "H2'"  "C2'"  "C1'"   109.470    3.000
+ XAL      "H2''" "C2'"  "C1'"   109.470    3.000
+ XAL      "C2'"  "C1'"  "H1'"   108.340    3.000
+ XAL      "C2'"  "C1'"  "C7'"   109.470    3.000
+ XAL      "C2'"  "C1'"  N9      109.470    3.000
+ XAL      "H1'"  "C1'"  "C7'"   108.810    3.000
+ XAL      "H1'"  "C1'"  N9      109.470    3.000
+ XAL      "C7'"  "C1'"  N9      109.500    3.000
+ XAL      "C1'"  "C7'"  "H7'"   120.000    3.000
+ XAL      "C1'"  "C7'"  "C6'"   120.000    3.000
+ XAL      "H7'"  "C7'"  "C6'"   120.000    3.000
+ XAL      "C7'"  "C6'"  "H6'"   120.000    3.000
+ XAL      "C7'"  "C6'"  "C4'"   120.000    3.000
+ XAL      "H6'"  "C6'"  "C4'"   120.000    3.000
+ XAL      "C1'"  N9     C4      126.000    3.000
+ XAL      "C1'"  N9     C8      126.000    3.000
+ XAL      C4     N9     C8      108.000    3.000
+ XAL      N9     C4     C5      108.000    3.000
+ XAL      N9     C4     N3      132.000    3.000
+ XAL      C5     C4     N3      120.000    3.000
+ XAL      C4     C5     N7      108.000    3.000
+ XAL      C4     C5     C6      120.000    3.000
+ XAL      N7     C5     C6      132.000    3.000
+ XAL      C5     N7     C8      108.000    3.000
+ XAL      N7     C8     H8      126.000    3.000
+ XAL      N7     C8     N9      108.000    3.000
+ XAL      H8     C8     N9      126.000    3.000
+ XAL      C4     N3     C2      120.000    3.000
+ XAL      N3     C2     H2      120.000    3.000
+ XAL      N3     C2     N1      120.000    3.000
+ XAL      H2     C2     N1      120.000    3.000
+ XAL      C2     N1     C6      120.000    3.000
+ XAL      N1     C6     N6      120.000    3.000
+ XAL      N1     C6     C5      120.000    3.000
+ XAL      N6     C6     C5      120.000    3.000
+ XAL      C6     N6     HN62    120.000    3.000
+ XAL      C6     N6     HN61    120.000    3.000
+ XAL      HN62   N6     HN61    120.000    3.000
+ XAL      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ XAL      var_1    OP3    P      "O5'"  "C5'"    -65.030   20.000   1
+ XAL      var_2    P      "O5'"  "C5'"  "C4'"   -179.988   20.000   1
+ XAL      var_3    "O5'"  "C5'"  "C4'"  "C3'"    175.027   20.000   3
+ XAL      var_4    "C5'"  "C4'"  "C6'"  "C7'"   -150.000   20.000   1
+ XAL      var_5    "C5'"  "C4'"  "C3'"  "O3'"    -60.000   20.000   3
+ XAL      var_6    "C4'"  "C3'"  "C2'"  "C1'"    -60.000   20.000   3
+ XAL      var_7    "C3'"  "C2'"  "C1'"  N9       -60.000   20.000   3
+ XAL      var_8    "C2'"  "C1'"  "C7'"  "C6'"    -30.000   20.000   1
+ XAL      var_9    "C1'"  "C7'"  "C6'"  "C4'"      0.000   20.000   1
+ XAL      var_10   "C2'"  "C1'"  N9     C4      -111.885   20.000   1
+ XAL      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ XAL      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ XAL      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ XAL      CONST_4  C4     C5     N7     C8         0.000    0.000   0
+ XAL      CONST_5  C5     N7     C8     N9         0.000    0.000   0
+ XAL      CONST_6  N9     C4     N3     C2       180.000    0.000   0
+ XAL      CONST_7  C4     N3     C2     N1         0.000    0.000   0
+ XAL      CONST_8  N3     C2     N1     C6         0.000    0.000   0
+ XAL      CONST_9  C2     N1     C6     N6       180.000    0.000   0
+ XAL      CONST_10 N1     C6     C5     C4         0.000    0.000   0
+ XAL      CONST_11 N1     C6     N6     HN61       0.015    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ XAL      chir_01  "C4'"  "C5'"  "C6'"  "C3'"     positiv
+ XAL      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     positiv
+ XAL      chir_03  "C1'"  "C7'"  "C2'"  N9        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ XAL      plan-1    "C6'"     0.020
+ XAL      plan-1    "C4'"     0.020
+ XAL      plan-1    "C7'"     0.020
+ XAL      plan-1    "H6'"     0.020
+ XAL      plan-1    "H7'"     0.020
+ XAL      plan-2    "C7'"     0.020
+ XAL      plan-2    "C6'"     0.020
+ XAL      plan-2    "C1'"     0.020
+ XAL      plan-2    "H7'"     0.020
+ XAL      plan-2    "H6'"     0.020
+ XAL      plan-3    N9        0.020
+ XAL      plan-3    "C1'"     0.020
+ XAL      plan-3    C8        0.020
+ XAL      plan-3    C4        0.020
+ XAL      plan-3    N7        0.020
+ XAL      plan-3    H8        0.020
+ XAL      plan-3    C5        0.020
+ XAL      plan-3    C6        0.020
+ XAL      plan-3    N6        0.020
+ XAL      plan-3    N1        0.020
+ XAL      plan-3    N3        0.020
+ XAL      plan-3    C2        0.020
+ XAL      plan-3    H2        0.020
+ XAL      plan-3    HN62      0.020
+ XAL      plan-3    HN61      0.020
+ XAL      plan-4    N6        0.020
+ XAL      plan-4    C6        0.020
+ XAL      plan-4    HN61      0.020
+ XAL      plan-4    HN62      0.020
+# ------------------------------------------------------

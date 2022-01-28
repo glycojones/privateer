@@ -1,0 +1,248 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ARO     ARO     "C-GAMMA-HYDROXYARGININE"  peptide   28     13     .     
+#
+data_comp_ARO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ARO     N       N       NT3     1       -2.869      1.302       -1.840      
+ARO     CA      C       CH1     0       -2.545      0.521       -0.614      
+ARO     C       C       C       0       -3.006      -0.929      -0.804      
+ARO     O       O       O       0       -2.602      -1.526      -1.821      
+ARO     CB      C       CH2     0       -1.040      0.588       -0.329      
+ARO     CG      C       CH1     0       -0.555      0.030       1.006       
+ARO     OH      O       OH1     0       -1.221      0.704       2.070       
+ARO     CD      C       CH2     0       0.951       0.150       1.211       
+ARO     NE      N       NH1     0       1.703       -0.775      0.373       
+ARO     CZ      C       C       0       3.037       -0.867      0.308       
+ARO     NH1     N       NH2     0       3.815       -0.141      1.100       
+ARO     NH2     N       NH2     1       3.594       -1.698      -0.561      
+ARO     OXT     O       OC      -1      -3.753      -1.407      0.073       
+ARO     H       H       H       0       -3.766      1.274       -2.001      
+ARO     H2      H       H       0       -2.428      0.954       -2.557      
+ARO     H3      H       H       0       -2.617      2.171       -1.732      
+ARO     HA      H       H       0       -3.037      0.914       0.142       
+ARO     HB2     H       H       0       -0.762      1.526       -0.381      
+ARO     HB3     H       H       0       -0.574      0.106       -1.044      
+ARO     HG      H       H       0       -0.802      -0.929      1.058       
+ARO     HH      H       H       0       -1.145      0.225       2.766       
+ARO     HD2     H       H       0       1.159       -0.029      2.158       
+ARO     HD3     H       H       0       1.229       1.074       1.006       
+ARO     HE      H       H       0       1.244       -1.320      -0.131      
+ARO     HH11    H       H       0       4.689       -0.157      0.988       
+ARO     HH12    H       H       0       3.473       0.347       1.745       
+ARO     HH21    H       H       0       4.469       -1.787      -0.590      
+ARO     HH22    H       H       0       3.093       -2.163      -1.114      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ARO      N      n/a    CA     START
+ ARO      H      N      .      .
+ ARO      H2     N      .      .
+ ARO      H3     N      .      .
+ ARO      CA     N      C      .
+ ARO      HA     CA     .      .
+ ARO      CB     CA     CG     .
+ ARO      HB2    CB     .      .
+ ARO      HB3    CB     .      .
+ ARO      CG     CB     CD     .
+ ARO      HG     CG     .      .
+ ARO      OH     CG     HH     .
+ ARO      HH     OH     .      .
+ ARO      CD     CG     NE     .
+ ARO      HD2    CD     .      .
+ ARO      HD3    CD     .      .
+ ARO      NE     CD     CZ     .
+ ARO      HE     NE     .      .
+ ARO      CZ     NE     NH1    .
+ ARO      NH2    CZ     HH21   .
+ ARO      HH22   NH2    .      .
+ ARO      HH21   NH2    .      .
+ ARO      NH1    CZ     HH11   .
+ ARO      HH12   NH1    .      .
+ ARO      HH11   NH1    .      .
+ ARO      C      CA     .      END
+ ARO      O      C      .      .
+ ARO      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ARO       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+ARO       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+ARO       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+ARO       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+ARO       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+ARO       CB        CG        SINGLE    n         1.525     0.010     1.525     0.010     
+ARO       CG        OH        SINGLE    n         1.424     0.020     1.424     0.020     
+ARO       CG        CD        SINGLE    n         1.524     0.011     1.524     0.011     
+ARO       CD        NE        SINGLE    n         1.454     0.012     1.454     0.012     
+ARO       NE        CZ        SINGLE    n         1.328     0.013     1.328     0.013     
+ARO       CZ        NH1       SINGLE    n         1.321     0.011     1.321     0.011     
+ARO       CZ        NH2       DOUBLE    n         1.322     0.010     1.322     0.010     
+ARO       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+ARO       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+ARO       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+ARO       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+ARO       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+ARO       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+ARO       CG        HG        SINGLE    n         1.089     0.010     0.992     0.019     
+ARO       OH        HH        SINGLE    n         0.970     0.012     0.848     0.020     
+ARO       CD        HD2       SINGLE    n         1.089     0.010     0.986     0.010     
+ARO       CD        HD3       SINGLE    n         1.089     0.010     0.986     0.010     
+ARO       NE        HE        SINGLE    n         1.016     0.010     0.872     0.020     
+ARO       NH1       HH11      SINGLE    n         1.016     0.010     0.881     0.020     
+ARO       NH1       HH12      SINGLE    n         1.016     0.010     0.881     0.020     
+ARO       NH2       HH21      SINGLE    n         1.016     0.010     0.879     0.020     
+ARO       NH2       HH22      SINGLE    n         1.016     0.010     0.879     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ARO          CA           N           H     110.062    1.93
+ARO          CA           N          H2     110.062    1.93
+ARO          CA           N          H3     110.062    1.93
+ARO           H           N          H2     109.028    2.41
+ARO           H           N          H3     109.028    2.41
+ARO          H2           N          H3     109.028    2.41
+ARO           N          CA           C     109.241    1.50
+ARO           N          CA          CB     110.245    1.51
+ARO           N          CA          HA     108.487    1.50
+ARO           C          CA          CB     110.728    2.07
+ARO           C          CA          HA     108.824    1.50
+ARO          CB          CA          HA     109.207    1.50
+ARO          CA           C           O     117.124    1.50
+ARO          CA           C         OXT     117.124    1.50
+ARO           O           C         OXT     125.752    1.50
+ARO          CA          CB          CG     116.901    3.00
+ARO          CA          CB         HB2     108.567    1.50
+ARO          CA          CB         HB3     108.567    1.50
+ARO          CG          CB         HB2     108.468    1.50
+ARO          CG          CB         HB3     108.468    1.50
+ARO         HB2          CB         HB3     107.824    1.50
+ARO          CB          CG          OH     109.024    2.32
+ARO          CB          CG          CD     113.883    1.50
+ARO          CB          CG          HG     108.603    1.50
+ARO          OH          CG          CD     109.290    2.07
+ARO          OH          CG          HG     107.665    2.30
+ARO          CD          CG          HG     108.552    1.50
+ARO          CG          OH          HH     107.580    2.18
+ARO          CG          CD          NE     111.308    2.28
+ARO          CG          CD         HD2     108.846    1.50
+ARO          CG          CD         HD3     108.846    1.50
+ARO          NE          CD         HD2     109.102    1.50
+ARO          NE          CD         HD3     109.102    1.50
+ARO         HD2          CD         HD3     107.997    1.50
+ARO          CD          NE          CZ     124.469    1.50
+ARO          CD          NE          HE     118.185    1.83
+ARO          CZ          NE          HE     117.345    1.50
+ARO          NE          CZ         NH1     120.052    1.50
+ARO          NE          CZ         NH2     120.052    1.50
+ARO         NH1          CZ         NH2     119.896    1.50
+ARO          CZ         NH1        HH11     119.855    2.01
+ARO          CZ         NH1        HH12     119.855    2.01
+ARO        HH11         NH1        HH12     120.290    2.09
+ARO          CZ         NH2        HH21     119.855    2.01
+ARO          CZ         NH2        HH22     119.855    2.01
+ARO        HH21         NH2        HH22     120.290    2.09
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ARO             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+ARO             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+ARO            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+ARO            sp3_sp3_20          CA          CB          CG          OH     -60.000   10.00     3
+ARO            sp3_sp3_28          CB          CG          OH          HH     180.000   10.00     3
+ARO            sp3_sp3_32          NE          CD          CG          CB     -60.000   10.00     3
+ARO             sp2_sp3_8          CZ          NE          CD          CG     120.000   10.00     6
+ARO             sp2_sp2_1         NH1          CZ          NE          CD     180.000   10.00     2
+ARO             sp2_sp2_5          NE          CZ         NH1        HH11     180.000   10.00     2
+ARO             sp2_sp2_9          NE          CZ         NH2        HH21     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ARO    chir_1    CA    N    C    CB    both
+ARO    chir_2    CG    OH    CD    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ARO    plan-1           C   0.020
+ARO    plan-1          CA   0.020
+ARO    plan-1           O   0.020
+ARO    plan-1         OXT   0.020
+ARO    plan-2          CD   0.020
+ARO    plan-2          CZ   0.020
+ARO    plan-2          HE   0.020
+ARO    plan-2          NE   0.020
+ARO    plan-3          CZ   0.020
+ARO    plan-3          NE   0.020
+ARO    plan-3         NH1   0.020
+ARO    plan-3         NH2   0.020
+ARO    plan-4          CZ   0.020
+ARO    plan-4        HH11   0.020
+ARO    plan-4        HH12   0.020
+ARO    plan-4         NH1   0.020
+ARO    plan-5          CZ   0.020
+ARO    plan-5        HH21   0.020
+ARO    plan-5        HH22   0.020
+ARO    plan-5         NH2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ARO SMILES           ACDLabs              10.04 "O=C(O)C(N)CC(O)CNC(\N)=[NH2+]"
+ARO SMILES_CANONICAL CACTVS               3.341 "N[C@@H](C[C@@H](O)CNC(N)=[NH2+])C(O)=O"
+ARO SMILES           CACTVS               3.341 "N[CH](C[CH](O)CNC(N)=[NH2+])C(O)=O"
+ARO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@H](CNC(=[NH2+])N)O)[C@@H](C(=O)O)N"
+ARO SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(CNC(=[NH2+])N)O)C(C(=O)O)N"
+ARO InChI            InChI                1.03  "InChI=1S/C6H14N4O3/c7-4(5(12)13)1-3(11)2-10-6(8)9/h3-4,11H,1-2,7H2,(H,12,13)(H4,8,9,10)/p+1/t3-,4+/m1/s1"
+ARO InChIKey         InChI                1.03  OPCBKDJCJYBGTQ-DMTCNVIQSA-O
+ARO ?                acedrg               196         "dictionary generator"                  
+ARO ?                acedrg_database      11          "data source"                           
+ARO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ARO ?                refmac5              5.8.0222    "optimization tool"                     

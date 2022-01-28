@@ -1,0 +1,305 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1DP      1DP 'N1-deaza-adenosine-5'-monophosphate ' non-polymer        36  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_1DP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 1DP           O2P    O    OP       -0.666      0.000    0.000    0.000
+ 1DP           P      P    P         0.000     -1.129    0.996    0.150
+ 1DP           O3P    O    OP       -0.666     -0.787    1.985    1.242
+ 1DP           O1P    O    OP       -0.666     -1.327    1.734   -1.156
+ 1DP           "O5'"  O    O2        0.000     -2.484    0.217    0.537
+ 1DP           "C5'"  C    CH2       0.000     -3.126   -0.711   -0.340
+ 1DP           "H5'"  H    H         0.000     -2.441   -1.531   -0.567
+ 1DP           "H5'A" H    H         0.000     -3.404   -0.203   -1.265
+ 1DP           "C4'"  C    CH1       0.000     -4.381   -1.266    0.337
+ 1DP           "H4'"  H    H         0.000     -4.122   -1.695    1.315
+ 1DP           "C3'"  C    CH1       0.000     -5.023   -2.346   -0.556
+ 1DP           "H3'"  H    H         0.000     -4.468   -2.445   -1.500
+ 1DP           "O3'"  O    OH1       0.000     -5.071   -3.599    0.130
+ 1DP           "HO3'" H    H         0.000     -5.528   -4.249   -0.419
+ 1DP           "C2'"  C    CH1       0.000     -6.454   -1.818   -0.822
+ 1DP           "H2'"  H    H         0.000     -6.508   -1.302   -1.791
+ 1DP           "O2'"  O    OH1       0.000     -7.409   -2.880   -0.756
+ 1DP           "HO2'" H    H         0.000     -7.265   -3.488   -1.494
+ 1DP           "C1'"  C    CH1       0.000     -6.655   -0.821    0.348
+ 1DP           "H1'"  H    H         0.000     -6.946   -1.353    1.264
+ 1DP           "O4'"  O    O2        0.000     -5.351   -0.218    0.503
+ 1DP           N9     N    NR5       0.000     -7.653    0.192    0.000
+ 1DP           C8     C    CR15      0.000     -7.410    1.395   -0.592
+ 1DP           H8     H    H         0.000     -6.431    1.759   -0.881
+ 1DP           N7     N    NRD5      0.000     -8.526    2.043   -0.757
+ 1DP           C5     C    CR56      0.000     -9.555    1.304   -0.276
+ 1DP           C4     C    CR56      0.000     -9.011    0.106    0.216
+ 1DP           C6     C    CR6       0.000    -10.943    1.505   -0.191
+ 1DP           N6     N    NH2       0.000    -11.527    2.674   -0.666
+ 1DP           HN6A   H    H         0.000    -10.957    3.406   -1.084
+ 1DP           HN6    H    H         0.000    -12.532    2.815   -0.602
+ 1DP           C1     C    CR16      0.000    -11.716    0.500    0.381
+ 1DP           H1     H    H         0.000    -12.789    0.617    0.465
+ 1DP           C2     C    CR16      0.000    -11.102   -0.650    0.842
+ 1DP           H2     H    H         0.000    -11.706   -1.431    1.286
+ 1DP           N3     N    NRD6      0.000     -9.798   -0.817    0.752
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 1DP      O2P    n/a    P      START
+ 1DP      P      O2P    "O5'"  .
+ 1DP      O3P    P      .      .
+ 1DP      O1P    P      .      .
+ 1DP      "O5'"  P      "C5'"  .
+ 1DP      "C5'"  "O5'"  "C4'"  .
+ 1DP      "H5'"  "C5'"  .      .
+ 1DP      "H5'A" "C5'"  .      .
+ 1DP      "C4'"  "C5'"  "C3'"  .
+ 1DP      "H4'"  "C4'"  .      .
+ 1DP      "C3'"  "C4'"  "C2'"  .
+ 1DP      "H3'"  "C3'"  .      .
+ 1DP      "O3'"  "C3'"  "HO3'" .
+ 1DP      "HO3'" "O3'"  .      .
+ 1DP      "C2'"  "C3'"  "C1'"  .
+ 1DP      "H2'"  "C2'"  .      .
+ 1DP      "O2'"  "C2'"  "HO2'" .
+ 1DP      "HO2'" "O2'"  .      .
+ 1DP      "C1'"  "C2'"  N9     .
+ 1DP      "H1'"  "C1'"  .      .
+ 1DP      "O4'"  "C1'"  .      .
+ 1DP      N9     "C1'"  C8     .
+ 1DP      C8     N9     N7     .
+ 1DP      H8     C8     .      .
+ 1DP      N7     C8     C5     .
+ 1DP      C5     N7     C6     .
+ 1DP      C4     C5     .      .
+ 1DP      C6     C5     C1     .
+ 1DP      N6     C6     HN6    .
+ 1DP      HN6A   N6     .      .
+ 1DP      HN6    N6     .      .
+ 1DP      C1     C6     C2     .
+ 1DP      H1     C1     .      .
+ 1DP      C2     C1     N3     .
+ 1DP      H2     C2     .      .
+ 1DP      N3     C2     .      END
+ 1DP      "C4'"  "O4'"  .    ADD
+ 1DP      N9     C4     .    ADD
+ 1DP      C4     N3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1DP       O3P       P         deloc     1.510     0.020     1.510     0.020     
+1DP       "O5'"     P         single    1.610     0.020     1.610     0.020     
+1DP       O1P       P         deloc     1.510     0.020     1.510     0.020     
+1DP       P         O2P       deloc     1.510     0.020     1.510     0.020     
+1DP       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+1DP       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+1DP       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+1DP       "H5'A"    "C5'"     single    1.089     0.010     0.989     0.005     
+1DP       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+1DP       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+1DP       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+1DP       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+1DP       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+1DP       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+1DP       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+1DP       N9        C4        single    1.337     0.020     1.337     0.020     
+1DP       C8        N9        single    1.337     0.020     1.337     0.020     
+1DP       C4        N3        double    1.355     0.020     1.355     0.020     
+1DP       C4        C5        single    1.490     0.020     1.490     0.020     
+1DP       N3        C2        single    1.337     0.020     1.337     0.020     
+1DP       C2        C1        double    1.390     0.020     1.390     0.020     
+1DP       H2        C2        single    1.082     0.013     0.975     0.010     
+1DP       C1        C6        single    1.390     0.020     1.390     0.020     
+1DP       H1        C1        single    1.082     0.013     0.975     0.010     
+1DP       N6        C6        single    1.355     0.020     1.355     0.020     
+1DP       C6        C5        double    1.490     0.020     1.490     0.020     
+1DP       HN6       N6        single    1.016     0.010     0.899     0.007     
+1DP       HN6A      N6        single    1.016     0.010     0.899     0.007     
+1DP       C5        N7        single    1.350     0.020     1.350     0.020     
+1DP       N7        C8        double    1.350     0.020     1.350     0.020     
+1DP       H8        C8        single    1.082     0.013     0.975     0.010     
+1DP       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+1DP       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+1DP       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+1DP       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+1DP       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+1DP       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+1DP       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 1DP      O2P    P      O3P     119.900    3.000
+ 1DP      O2P    P      O1P     119.900    3.000
+ 1DP      O2P    P      "O5'"   108.200    3.000
+ 1DP      O3P    P      O1P     119.900    3.000
+ 1DP      O3P    P      "O5'"   108.200    3.000
+ 1DP      O1P    P      "O5'"   108.200    3.000
+ 1DP      P      "O5'"  "C5'"   120.500    3.000
+ 1DP      "O5'"  "C5'"  "H5'"   109.470    3.000
+ 1DP      "O5'"  "C5'"  "H5'A"  109.470    3.000
+ 1DP      "O5'"  "C5'"  "C4'"   109.470    3.000
+ 1DP      "H5'"  "C5'"  "H5'A"  107.900    3.000
+ 1DP      "H5'"  "C5'"  "C4'"   109.470    3.000
+ 1DP      "H5'A" "C5'"  "C4'"   109.470    3.000
+ 1DP      "C5'"  "C4'"  "H4'"   108.340    3.000
+ 1DP      "C5'"  "C4'"  "C3'"   111.000    3.000
+ 1DP      "C5'"  "C4'"  "O4'"   109.470    3.000
+ 1DP      "H4'"  "C4'"  "C3'"   108.340    3.000
+ 1DP      "H4'"  "C4'"  "O4'"   109.470    3.000
+ 1DP      "C3'"  "C4'"  "O4'"   109.470    3.000
+ 1DP      "C4'"  "C3'"  "H3'"   108.340    3.000
+ 1DP      "C4'"  "C3'"  "O3'"   109.470    3.000
+ 1DP      "C4'"  "C3'"  "C2'"   111.000    3.000
+ 1DP      "H3'"  "C3'"  "O3'"   109.470    3.000
+ 1DP      "H3'"  "C3'"  "C2'"   108.340    3.000
+ 1DP      "O3'"  "C3'"  "C2'"   109.470    3.000
+ 1DP      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ 1DP      "C3'"  "C2'"  "H2'"   108.340    3.000
+ 1DP      "C3'"  "C2'"  "O2'"   109.470    3.000
+ 1DP      "C3'"  "C2'"  "C1'"   111.000    3.000
+ 1DP      "H2'"  "C2'"  "O2'"   109.470    3.000
+ 1DP      "H2'"  "C2'"  "C1'"   108.340    3.000
+ 1DP      "O2'"  "C2'"  "C1'"   109.470    3.000
+ 1DP      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ 1DP      "C2'"  "C1'"  "H1'"   108.340    3.000
+ 1DP      "C2'"  "C1'"  "O4'"   109.470    3.000
+ 1DP      "C2'"  "C1'"  N9      109.470    3.000
+ 1DP      "H1'"  "C1'"  "O4'"   109.470    3.000
+ 1DP      "H1'"  "C1'"  N9      109.470    3.000
+ 1DP      "O4'"  "C1'"  N9      109.470    3.000
+ 1DP      "C1'"  "O4'"  "C4'"   111.800    3.000
+ 1DP      "C1'"  N9     C8      126.000    3.000
+ 1DP      "C1'"  N9     C4      126.000    3.000
+ 1DP      C8     N9     C4      108.000    3.000
+ 1DP      N9     C8     H8      126.000    3.000
+ 1DP      N9     C8     N7      108.000    3.000
+ 1DP      H8     C8     N7      126.000    3.000
+ 1DP      C8     N7     C5      108.000    3.000
+ 1DP      N7     C5     C4      108.000    3.000
+ 1DP      N7     C5     C6      132.000    3.000
+ 1DP      C4     C5     C6      120.000    3.000
+ 1DP      C5     C4     N9      108.000    3.000
+ 1DP      C5     C4     N3      120.000    3.000
+ 1DP      N9     C4     N3      132.000    3.000
+ 1DP      C5     C6     N6      120.000    3.000
+ 1DP      C5     C6     C1      120.000    3.000
+ 1DP      N6     C6     C1      120.000    3.000
+ 1DP      C6     N6     HN6A    120.000    3.000
+ 1DP      C6     N6     HN6     120.000    3.000
+ 1DP      HN6A   N6     HN6     120.000    3.000
+ 1DP      C6     C1     H1      120.000    3.000
+ 1DP      C6     C1     C2      120.000    3.000
+ 1DP      H1     C1     C2      120.000    3.000
+ 1DP      C1     C2     H2      120.000    3.000
+ 1DP      C1     C2     N3      120.000    3.000
+ 1DP      H2     C2     N3      120.000    3.000
+ 1DP      C2     N3     C4      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 1DP      var_1    O2P    P      "O5'"  "C5'"    -64.987   20.000   1
+ 1DP      var_2    P      "O5'"  "C5'"  "C4'"    179.998   20.000   1
+ 1DP      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -175.746   20.000   3
+ 1DP      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ 1DP      var_5    "C5'"  "C4'"  "C3'"  "C2'"   -120.000   20.000   3
+ 1DP      var_6    "C4'"  "C3'"  "O3'"  "HO3'"   176.208   20.000   1
+ 1DP      var_7    "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ 1DP      var_8    "C3'"  "C2'"  "O2'"  "HO2'"   -67.302   20.000   1
+ 1DP      var_9    "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ 1DP      var_10   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ 1DP      var_11   "C2'"  "C1'"  N9     C8       -90.584   20.000   1
+ 1DP      CONST_1  "C1'"  N9     C4     C5       180.000    0.000   0
+ 1DP      CONST_2  "C1'"  N9     C8     N7       180.000    0.000   0
+ 1DP      CONST_3  N9     C8     N7     C5         0.000    0.000   0
+ 1DP      CONST_4  C8     N7     C5     C6       180.000    0.000   0
+ 1DP      CONST_5  N7     C5     C4     N9         0.000    0.000   0
+ 1DP      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ 1DP      CONST_7  N7     C5     C6     C1       180.000    0.000   0
+ 1DP      CONST_8  C5     C6     N6     HN6      179.973    0.000   0
+ 1DP      CONST_9  C5     C6     C1     C2         0.000    0.000   0
+ 1DP      CONST_10 C6     C1     C2     N3         0.000    0.000   0
+ 1DP      CONST_11 C1     C2     N3     C4         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 1DP      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ 1DP      chir_02  "C1'"  "O4'"  N9     "C2'"     negativ
+ 1DP      chir_03  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ 1DP      chir_04  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 1DP      plan-1    N9        0.020
+ 1DP      plan-1    "C1'"     0.020
+ 1DP      plan-1    C4        0.020
+ 1DP      plan-1    C8        0.020
+ 1DP      plan-1    N7        0.020
+ 1DP      plan-1    N3        0.020
+ 1DP      plan-1    C5        0.020
+ 1DP      plan-1    C2        0.020
+ 1DP      plan-1    C1        0.020
+ 1DP      plan-1    C6        0.020
+ 1DP      plan-1    H2        0.020
+ 1DP      plan-1    H1        0.020
+ 1DP      plan-1    N6        0.020
+ 1DP      plan-1    H8        0.020
+ 1DP      plan-1    HN6A      0.020
+ 1DP      plan-1    HN6       0.020
+ 1DP      plan-2    N6        0.020
+ 1DP      plan-2    C6        0.020
+ 1DP      plan-2    HN6       0.020
+ 1DP      plan-2    HN6A      0.020
+# ------------------------------------------------------

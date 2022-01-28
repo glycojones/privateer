@@ -1,0 +1,295 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FHU      FHU '(5S,6R)-5-FLUORO-6-HYDROXY-PSEUDOURI' RNA                35  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FHU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FHU           OP3    O    OP       -0.666      0.000    0.000    0.000
+ FHU           P      P    P         0.000     -0.771    0.341    1.256
+ FHU           OP1    O    OP       -0.666     -0.918    1.843    1.366
+ FHU           OP2    O    OP       -0.666     -0.023   -0.181    2.464
+ FHU           "O5'"  O    O2        0.000     -2.229   -0.338    1.193
+ FHU           "C5'"  C    CH2       0.000     -2.882    0.192    0.039
+ FHU           "H5'"  H    H         0.000     -2.301   -0.052   -0.852
+ FHU           "H5''" H    H         0.000     -2.963    1.277    0.134
+ FHU           "C4'"  C    CH1       0.000     -4.281   -0.416   -0.080
+ FHU           "H4'"  H    H         0.000     -4.215   -1.508   -0.189
+ FHU           "O4'"  O    O2        0.000     -5.078   -0.075    1.074
+ FHU           "C1'"  C    CH1       0.000     -6.448   -0.249    0.656
+ FHU           "H1'"  H    H         0.000     -6.717   -1.314    0.662
+ FHU           C5     C    CT        0.000     -7.388    0.542    1.567
+ FHU           C6     C    CH1       0.000     -7.300   -0.008    2.993
+ FHU           H6     H    H         0.000     -6.244   -0.133    3.273
+ FHU           O6     O    OH1       0.000     -7.927    0.906    3.895
+ FHU           HO6    H    H         0.000     -7.871    0.559    4.796
+ FHU           N1     N    NH1       0.000     -7.979   -1.302    3.061
+ FHU           HN1    H    H         0.000     -7.609   -2.029    3.657
+ FHU           C2     C    C         0.000     -9.088   -1.538    2.341
+ FHU           O2     O    O         0.000     -9.686   -2.585    2.498
+ FHU           C4     C    C         0.000     -8.805    0.405    1.071
+ FHU           O4     O    O         0.000     -9.272    1.244    0.329
+ FHU           N3     N    NH1       0.000     -9.553   -0.646    1.451
+ FHU           HN3    H    H         0.000    -10.477   -0.766    1.061
+ FHU           F5     F    F         0.000     -7.019    1.891    1.563
+ FHU           "C3'"  C    CH1       0.000     -5.038    0.199   -1.278
+ FHU           "H3'"  H    H         0.000     -4.636    1.194   -1.517
+ FHU           "C2'"  C    CH1       0.000     -6.498    0.310   -0.783
+ FHU           "H2'"  H    H         0.000     -6.823    1.360   -0.777
+ FHU           "O2'"  O    OH1       0.000     -7.366   -0.475   -1.603
+ FHU           "HO2'" H    H         0.000     -7.335   -0.146   -2.511
+ FHU           "O3'"  O    OH1       0.000     -4.958   -0.659   -2.416
+ FHU           "HO3'" H    H         0.000     -4.021   -0.739   -2.642
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FHU      OP3    n/a    P      START
+ FHU      P      OP3    "O5'"  .
+ FHU      OP1    P      .      .
+ FHU      OP2    P      .      .
+ FHU      "O5'"  P      "C5'"  .
+ FHU      "C5'"  "O5'"  "C4'"  .
+ FHU      "H5'"  "C5'"  .      .
+ FHU      "H5''" "C5'"  .      .
+ FHU      "C4'"  "C5'"  "C3'"  .
+ FHU      "H4'"  "C4'"  .      .
+ FHU      "O4'"  "C4'"  "C1'"  .
+ FHU      "C1'"  "O4'"  C5     .
+ FHU      "H1'"  "C1'"  .      .
+ FHU      C5     "C1'"  F5     .
+ FHU      C6     C5     N1     .
+ FHU      H6     C6     .      .
+ FHU      O6     C6     HO6    .
+ FHU      HO6    O6     .      .
+ FHU      N1     C6     C2     .
+ FHU      HN1    N1     .      .
+ FHU      C2     N1     O2     .
+ FHU      O2     C2     .      .
+ FHU      C4     C5     N3     .
+ FHU      O4     C4     .      .
+ FHU      N3     C4     HN3    .
+ FHU      HN3    N3     .      .
+ FHU      F5     C5     .      .
+ FHU      "C3'"  "C4'"  "O3'"  .
+ FHU      "H3'"  "C3'"  .      .
+ FHU      "C2'"  "C3'"  "O2'"  .
+ FHU      "H2'"  "C2'"  .      .
+ FHU      "O2'"  "C2'"  "HO2'" .
+ FHU      "HO2'" "O2'"  .      .
+ FHU      "O3'"  "C3'"  .      END
+ FHU      "HO3'" "O3'"  .      .
+ FHU      C2     N3     .    ADD
+ FHU      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FHU       C2        N1        single    1.330     0.020     1.330     0.020     
+FHU       N1        C6        single    1.450     0.020     1.450     0.020     
+FHU       HN1       N1        single    1.016     0.010     0.899     0.007     
+FHU       C2        N3        single    1.330     0.020     1.330     0.020     
+FHU       O2        C2        double    1.220     0.020     1.220     0.020     
+FHU       N3        C4        single    1.330     0.020     1.330     0.020     
+FHU       HN3       N3        single    1.016     0.010     0.899     0.007     
+FHU       C4        C5        single    1.507     0.020     1.507     0.020     
+FHU       O4        C4        double    1.220     0.020     1.220     0.020     
+FHU       C6        C5        single    1.524     0.020     1.524     0.020     
+FHU       C5        "C1'"     single    1.524     0.020     1.524     0.020     
+FHU       F5        C5        single    1.320     0.020     1.320     0.020     
+FHU       O6        C6        single    1.432     0.020     1.432     0.020     
+FHU       H6        C6        single    1.089     0.010     0.989     0.005     
+FHU       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+FHU       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+FHU       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+FHU       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+FHU       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+FHU       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+FHU       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+FHU       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+FHU       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+FHU       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+FHU       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+FHU       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+FHU       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+FHU       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+FHU       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+FHU       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+FHU       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+FHU       "O5'"     P         single    1.610     0.020     1.610     0.020     
+FHU       OP1       P         deloc     1.510     0.020     1.510     0.020     
+FHU       OP2       P         deloc     1.510     0.020     1.510     0.020     
+FHU       P         OP3       deloc     1.510     0.020     1.510     0.020     
+FHU       HO6       O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FHU      OP3    P      OP1     119.900    3.000
+ FHU      OP3    P      OP2     119.900    3.000
+ FHU      OP3    P      "O5'"   108.200    3.000
+ FHU      OP1    P      OP2     119.900    3.000
+ FHU      OP1    P      "O5'"   108.200    3.000
+ FHU      OP2    P      "O5'"   108.200    3.000
+ FHU      P      "O5'"  "C5'"   120.500    3.000
+ FHU      "O5'"  "C5'"  "H5'"   109.470    3.000
+ FHU      "O5'"  "C5'"  "H5''"  109.470    3.000
+ FHU      "O5'"  "C5'"  "C4'"   109.470    3.000
+ FHU      "H5'"  "C5'"  "H5''"  107.900    3.000
+ FHU      "H5'"  "C5'"  "C4'"   109.470    3.000
+ FHU      "H5''" "C5'"  "C4'"   109.470    3.000
+ FHU      "C5'"  "C4'"  "H4'"   108.340    3.000
+ FHU      "C5'"  "C4'"  "O4'"   109.470    3.000
+ FHU      "C5'"  "C4'"  "C3'"   111.000    3.000
+ FHU      "H4'"  "C4'"  "O4'"   109.470    3.000
+ FHU      "H4'"  "C4'"  "C3'"   108.340    3.000
+ FHU      "O4'"  "C4'"  "C3'"   109.470    3.000
+ FHU      "C4'"  "O4'"  "C1'"   111.800    3.000
+ FHU      "O4'"  "C1'"  "H1'"   109.470    3.000
+ FHU      "O4'"  "C1'"  C5      109.470    3.000
+ FHU      "O4'"  "C1'"  "C2'"   109.470    3.000
+ FHU      "H1'"  "C1'"  C5      108.340    3.000
+ FHU      "H1'"  "C1'"  "C2'"   108.340    3.000
+ FHU      C5     "C1'"  "C2'"   111.000    3.000
+ FHU      "C1'"  C5     C6      111.000    3.000
+ FHU      "C1'"  C5     C4      109.470    3.000
+ FHU      "C1'"  C5     F5      109.470    3.000
+ FHU      C6     C5     C4      109.470    3.000
+ FHU      C6     C5     F5      109.470    3.000
+ FHU      C4     C5     F5      109.470    3.000
+ FHU      C5     C6     H6      108.340    3.000
+ FHU      C5     C6     O6      109.470    3.000
+ FHU      C5     C6     N1      110.000    3.000
+ FHU      H6     C6     O6      109.470    3.000
+ FHU      H6     C6     N1      108.550    3.000
+ FHU      O6     C6     N1      109.470    3.000
+ FHU      C6     O6     HO6     109.470    3.000
+ FHU      C6     N1     HN1     118.500    3.000
+ FHU      C6     N1     C2      121.500    3.000
+ FHU      HN1    N1     C2      120.000    3.000
+ FHU      N1     C2     O2      123.000    3.000
+ FHU      N1     C2     N3      120.000    3.000
+ FHU      O2     C2     N3      123.000    3.000
+ FHU      C5     C4     O4      120.500    3.000
+ FHU      C5     C4     N3      116.500    3.000
+ FHU      O4     C4     N3      123.000    3.000
+ FHU      C4     N3     HN3     120.000    3.000
+ FHU      C4     N3     C2      120.000    3.000
+ FHU      HN3    N3     C2      120.000    3.000
+ FHU      "C4'"  "C3'"  "H3'"   108.340    3.000
+ FHU      "C4'"  "C3'"  "C2'"   111.000    3.000
+ FHU      "C4'"  "C3'"  "O3'"   109.470    3.000
+ FHU      "H3'"  "C3'"  "C2'"   108.340    3.000
+ FHU      "H3'"  "C3'"  "O3'"   109.470    3.000
+ FHU      "C2'"  "C3'"  "O3'"   109.470    3.000
+ FHU      "C3'"  "C2'"  "H2'"   108.340    3.000
+ FHU      "C3'"  "C2'"  "O2'"   109.470    3.000
+ FHU      "C3'"  "C2'"  "C1'"   111.000    3.000
+ FHU      "H2'"  "C2'"  "O2'"   109.470    3.000
+ FHU      "H2'"  "C2'"  "C1'"   108.340    3.000
+ FHU      "O2'"  "C2'"  "C1'"   109.470    3.000
+ FHU      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ FHU      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FHU      var_1    OP3    P      "O5'"  "C5'"    -60.044   20.000   1
+ FHU      var_2    P      "O5'"  "C5'"  "C4'"   -179.993   20.000   1
+ FHU      var_3    "O5'"  "C5'"  "C4'"  "C3'"    176.939   20.000   3
+ FHU      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ FHU      var_5    "C4'"  "O4'"  "C1'"  C5      -150.000   20.000   1
+ FHU      var_6    "O4'"  "C1'"  "C2'"  "C3'"     30.000   20.000   3
+ FHU      var_7    "O4'"  "C1'"  C5     F5        56.924   20.000   1
+ FHU      var_8    "C1'"  C5     C6     N1       -60.000   20.000   1
+ FHU      var_9    C5     C6     O6     HO6     -179.973   20.000   1
+ FHU      var_10   C5     C6     N1     C2       -30.000   20.000   3
+ FHU      CONST_1  C6     N1     C2     O2       180.000    0.000   0
+ FHU      CONST_2  N1     C2     N3     C4         0.000    0.000   0
+ FHU      var_11   "C1'"  C5     C4     N3        90.000   20.000   1
+ FHU      CONST_3  C5     C4     N3     C2         0.000    0.000   0
+ FHU      var_12   "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ FHU      var_13   "C4'"  "C3'"  "C2'"  "O2'"   -120.000   20.000   3
+ FHU      var_14   "C3'"  "C2'"  "O2'"  "HO2'"   -61.368   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FHU      chir_01  C5     C4     C6     "C1'"     negativ
+ FHU      chir_02  C6     C5     N1     O6        positiv
+ FHU      chir_03  "C1'"  C5     "C2'"  "O4'"     negativ
+ FHU      chir_04  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ FHU      chir_05  "C3'"  "C2'"  "C4'"  "O3'"     negativ
+ FHU      chir_06  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FHU      plan-1    C2        0.020
+ FHU      plan-1    N3        0.020
+ FHU      plan-1    O2        0.020
+ FHU      plan-1    N1        0.020
+ FHU      plan-1    HN3       0.020
+ FHU      plan-1    HN1       0.020
+ FHU      plan-2    N3        0.020
+ FHU      plan-2    C2        0.020
+ FHU      plan-2    C4        0.020
+ FHU      plan-2    HN3       0.020
+ FHU      plan-3    C4        0.020
+ FHU      plan-3    N3        0.020
+ FHU      plan-3    C5        0.020
+ FHU      plan-3    O4        0.020
+ FHU      plan-3    HN3       0.020
+ FHU      plan-4    N1        0.020
+ FHU      plan-4    C2        0.020
+ FHU      plan-4    C6        0.020
+ FHU      plan-4    HN1       0.020
+# ------------------------------------------------------

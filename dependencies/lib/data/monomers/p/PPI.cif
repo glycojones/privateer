@@ -1,0 +1,112 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PPI     PPI      "PROPANOIC ACID"     NON-POLYMER     10     5     .     
+#
+data_comp_PPI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PPI     C1      C       C       0       -54.627     64.249      -0.964      
+PPI     C2      C       CH2     0       -55.449     63.097      -0.414      
+PPI     C3      C       CH3     0       -55.470     62.999      1.071       
+PPI     O1      O       O       0       -55.209     65.326      -1.202      
+PPI     O2      O       OC      -1      -53.408     64.066      -1.152      
+PPI     H21     H       H       0       -55.092     62.260      -0.778      
+PPI     H22     H       H       0       -56.370     63.192      -0.734      
+PPI     H31     H       H       0       -56.009     62.235      1.340       
+PPI     H32     H       H       0       -55.852     63.812      1.445       
+PPI     H33     H       H       0       -54.562     62.887      1.402       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PPI       C1        C2        SINGLE    n         1.519     0.012     1.519     0.012     
+PPI       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+PPI       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+PPI       C2        C3        SINGLE    n         1.488     0.020     1.488     0.020     
+PPI       C2        H21       SINGLE    n         1.089     0.010     0.980     0.016     
+PPI       C2        H22       SINGLE    n         1.089     0.010     0.980     0.016     
+PPI       C3        H31       SINGLE    n         1.089     0.010     0.973     0.014     
+PPI       C3        H32       SINGLE    n         1.089     0.010     0.973     0.014     
+PPI       C3        H33       SINGLE    n         1.089     0.010     0.973     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PPI          C2          C1          O1     118.179    1.50
+PPI          C2          C1          O2     118.182    1.50
+PPI          O1          C1          O2     123.645    1.50
+PPI          C1          C2          C3     114.922    2.12
+PPI          C1          C2         H21     108.522    1.50
+PPI          C1          C2         H22     108.522    1.50
+PPI          C3          C2         H21     108.742    1.50
+PPI          C3          C2         H22     108.742    1.50
+PPI         H21          C2         H22     107.791    1.50
+PPI          C2          C3         H31     109.504    1.50
+PPI          C2          C3         H32     109.504    1.50
+PPI          C2          C3         H33     109.504    1.50
+PPI         H31          C3         H32     109.380    1.50
+PPI         H31          C3         H33     109.380    1.50
+PPI         H32          C3         H33     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PPI             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+PPI             sp3_sp3_1          C1          C2          C3         H31     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PPI    plan-1          C1   0.020
+PPI    plan-1          C2   0.020
+PPI    plan-1          O1   0.020
+PPI    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PPI SMILES           ACDLabs              10.04 "O=C(O)CC"
+PPI SMILES_CANONICAL CACTVS               3.341 "CCC(O)=O"
+PPI SMILES           CACTVS               3.341 "CCC(O)=O"
+PPI SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCC(=O)O"
+PPI SMILES           "OpenEye OEToolkits" 1.5.0 "CCC(=O)O"
+PPI InChI            InChI                1.03  "InChI=1S/C3H6O2/c1-2-3(4)5/h2H2,1H3,(H,4,5)"
+PPI InChIKey         InChI                1.03  XBDQKXXYIPTUBI-UHFFFAOYSA-N
+PPI ?                acedrg               202         "dictionary generator"                  
+PPI ?                acedrg_database      11          "data source"                           
+PPI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PPI ?                refmac5              5.8.0189    "optimization tool"                     

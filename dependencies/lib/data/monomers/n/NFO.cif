@@ -1,0 +1,139 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NFO      NFO 'NI-FE OXIDIZED ACTIVE CENTER        ' non-polymer        11   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NFO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NFO           O1     O    O         0.000      0.000    0.000    0.000
+ NFO           C1     C    C1        0.000     -1.143    0.281    0.268
+ NFO           H1     H    H         0.000     -1.383    0.704    1.229
+ NFO           FE     FE   FE        0.000     -2.549   -0.027   -1.032
+ NFO           O4     O    O2        0.000     -3.579   -0.732    0.250
+ NFO           NI     NI   NI        0.000     -5.410    0.051    0.018
+ NFO           C3     C    C1        0.000     -1.432    0.736   -2.421
+ NFO           H3     H    H         0.000     -0.893    1.650   -2.237
+ NFO           O3     O    O         0.000     -1.341    0.186   -3.493
+ NFO           C2     C    CSP       0.000     -3.954   -0.336   -2.332
+ NFO           N2     N    NS        0.000     -4.777   -0.517   -3.093
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NFO      O1     n/a    C1     START
+ NFO      C1     O1     FE     .
+ NFO      H1     C1     .      .
+ NFO      FE     C1     C2     .
+ NFO      O4     FE     NI     .
+ NFO      NI     O4     .      .
+ NFO      C3     FE     O3     .
+ NFO      H3     C3     .      .
+ NFO      O3     C3     .      .
+ NFO      C2     FE     N2     .
+ NFO      N2     C2     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NFO       NI        O4        single    2.035     0.020     2.035     0.020     
+NFO       C3        FE        single    1.900     0.020     1.900     0.020     
+NFO       C2        FE        single    1.825     0.020     1.825     0.020     
+NFO       FE        C1        single    1.900     0.020     1.900     0.020     
+NFO       O4        FE        single    1.870     0.020     1.870     0.020     
+NFO       O3        C3        double    1.220     0.020     1.220     0.020     
+NFO       H3        C3        single    1.082     0.013     0.975     0.010     
+NFO       N2        C2        triple    1.158     0.020     1.158     0.020     
+NFO       C1        O1        double    1.220     0.020     1.220     0.020     
+NFO       H1        C1        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NFO      O1     C1     H1      123.000    3.000
+ NFO      O1     C1     FE      120.000    3.000
+ NFO      H1     C1     FE      120.000    3.000
+ NFO      C1     FE     O4       90.000    3.000
+ NFO      C1     FE     C3       90.000    3.000
+ NFO      C1     FE     C2      180.000    3.000
+ NFO      O4     FE     C3      180.000    3.000
+ NFO      O4     FE     C2       90.000    3.000
+ NFO      C3     FE     C2       90.000    3.000
+ NFO      FE     O4     NI      120.000    3.000
+ NFO      FE     C3     H3      120.000    3.000
+ NFO      FE     C3     O3      120.000    3.000
+ NFO      H3     C3     O3      123.000    3.000
+ NFO      FE     C2     N2      180.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NFO      var_1    O1     C1     FE     O4         0.000   20.000   1
+ NFO      var_2    NI     O4     FE     C1         0.000   20.000   1
+ NFO      var_3    H3     C3     FE     C1         0.000   20.000   1
+ NFO      var_4    N2     C2     FE     C1       180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NFO      chir_01  FE     C1     C2     O4        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NFO      plan-1    C3        0.020
+ NFO      plan-1    FE        0.020
+ NFO      plan-1    O3        0.020
+ NFO      plan-1    H3        0.020
+ NFO      plan-2    C1        0.020
+ NFO      plan-2    FE        0.020
+ NFO      plan-2    O1        0.020
+ NFO      plan-2    H1        0.020
+# ------------------------------------------------------

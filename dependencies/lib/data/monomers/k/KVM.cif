@@ -1,0 +1,160 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KVM     KVM      "[(3S)-1-hydroxy-2,5-dioxopyrrolidin-3-yl]phosphonic acid"     NON-POLYMER     16     12     .     
+#
+data_comp_KVM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KVM     OAH     O       OP      -1      -39.479     -63.302     84.331      
+KVM     PAG     P       P       0       -38.379     -62.290     84.171      
+KVM     OAI     O       O       0       -38.681     -61.326     83.057      
+KVM     OAJ     O       OP      -1      -38.110     -61.566     85.461      
+KVM     CAF     C       CH1     0       -36.863     -63.193     83.721      
+KVM     CAE     C       CH2     0       -35.632     -62.305     83.483      
+KVM     CAB     C       CR5     0       -34.621     -62.712     84.523      
+KVM     OAA     O       O       0       -33.533     -62.244     84.719      
+KVM     NAC     N       NR5     0       -35.181     -63.752     85.234      
+KVM     OAD     O       OH1     0       -34.514     -64.390     86.262      
+KVM     CAK     C       CR5     0       -36.453     -64.113     84.852      
+KVM     OAL     O       O       0       -37.118     -65.008     85.339      
+KVM     H3      H       H       0       -37.016     -63.726     82.904      
+KVM     H4      H       H       0       -35.270     -62.447     82.582      
+KVM     H5      H       H       0       -35.861     -61.356     83.583      
+KVM     H6      H       H       0       -34.292     -65.155     85.954      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KVM       PAG       OAI       DOUBLE    n         1.507     0.0200    1.507     0.0200    
+KVM       CAF       CAE       SINGLE    n         1.530     0.0132    1.530     0.0132    
+KVM       PAG       CAF       SINGLE    n         1.820     0.0118    1.820     0.0118    
+KVM       CAF       CAK       SINGLE    n         1.517     0.0160    1.517     0.0160    
+KVM       CAE       CAB       SINGLE    n         1.502     0.0105    1.502     0.0105    
+KVM       PAG       OAJ       SINGLE    n         1.507     0.0200    1.507     0.0200    
+KVM       OAH       PAG       SINGLE    n         1.507     0.0200    1.507     0.0200    
+KVM       CAK       OAL       DOUBLE    n         1.217     0.0100    1.217     0.0100    
+KVM       NAC       CAK       SINGLE    n         1.380     0.0103    1.380     0.0103    
+KVM       CAB       NAC       SINGLE    n         1.380     0.0100    1.380     0.0100    
+KVM       CAB       OAA       DOUBLE    n         1.200     0.0103    1.200     0.0103    
+KVM       NAC       OAD       SINGLE    n         1.381     0.0100    1.381     0.0100    
+KVM       CAF       H3        SINGLE    n         1.089     0.010     0.988     0.0168    
+KVM       CAE       H4        SINGLE    n         1.089     0.010     0.982     0.0122    
+KVM       CAE       H5        SINGLE    n         1.089     0.010     0.982     0.0122    
+KVM       OAD       H6        SINGLE    n         0.970     0.012     0.854     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KVM         OAI         PAG         CAF     112.322    3.00
+KVM         OAI         PAG         OAJ     112.897    2.03
+KVM         OAI         PAG         OAH     112.897    2.03
+KVM         CAF         PAG         OAJ     112.322    3.00
+KVM         CAF         PAG         OAH     112.322    3.00
+KVM         OAJ         PAG         OAH     112.897    2.03
+KVM         CAE         CAF         PAG     112.971    2.91
+KVM         CAE         CAF         CAK     104.009    1.83
+KVM         CAE         CAF          H3     107.363    1.50
+KVM         PAG         CAF         CAK     108.865    3.00
+KVM         PAG         CAF          H3     108.982    1.97
+KVM         CAK         CAF          H3     108.578    1.87
+KVM         CAF         CAE         CAB     104.457    1.50
+KVM         CAF         CAE          H4     110.979    1.50
+KVM         CAF         CAE          H5     110.979    1.50
+KVM         CAB         CAE          H4     110.576    1.50
+KVM         CAB         CAE          H5     110.576    1.50
+KVM          H4         CAE          H5     108.871    1.50
+KVM         CAE         CAB         NAC     106.327    1.50
+KVM         CAE         CAB         OAA     128.219    1.56
+KVM         NAC         CAB         OAA     125.453    1.50
+KVM         CAK         NAC         CAB     116.462    1.50
+KVM         CAK         NAC         OAD     121.696    1.50
+KVM         CAB         NAC         OAD     121.842    1.50
+KVM         NAC         OAD          H6     105.712    3.00
+KVM         CAF         CAK         OAL     125.966    1.50
+KVM         CAF         CAK         NAC     108.940    1.71
+KVM         OAL         CAK         NAC     125.094    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KVM            sp3_sp3_12         CAE         CAF         PAG         OAI      60.000   10.00     3
+KVM            sp2_sp3_12         OAL         CAK         CAF         PAG      60.000   10.00     6
+KVM             sp3_sp3_2         CAB         CAE         CAF         PAG     180.000   10.00     3
+KVM             sp2_sp3_4         OAA         CAB         CAE         CAF     180.000   10.00     6
+KVM             sp2_sp2_4         OAA         CAB         NAC         OAD       0.000   10.00     2
+KVM             sp2_sp2_8         OAL         CAK         NAC         OAD       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+KVM    chir_1    PAG    OAJ    OAH    OAI    both
+KVM    chir_2    CAF    PAG    CAK    CAE    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KVM    plan-1         CAB   0.020
+KVM    plan-1         CAE   0.020
+KVM    plan-1         NAC   0.020
+KVM    plan-1         OAA   0.020
+KVM    plan-2         CAB   0.020
+KVM    plan-2         CAK   0.020
+KVM    plan-2         NAC   0.020
+KVM    plan-2         OAD   0.020
+KVM    plan-3         CAF   0.020
+KVM    plan-3         CAK   0.020
+KVM    plan-3         NAC   0.020
+KVM    plan-3         OAL   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KVM           SMILES              ACDLabs 12.01                                                        OP(O)(=O)C1CC(N(O)C1=O)=O
+KVM            InChI                InChI  1.03 InChI=1S/C4H6NO6P/c6-3-1-2(12(9,10)11)4(7)5(3)8/h2,8H,1H2,(H2,9,10,11)/t2-/m0/s1
+KVM         InChIKey                InChI  1.03                                                      DIVWAHZZQUETIB-REOHCLBHSA-N
+KVM SMILES_CANONICAL               CACTVS 3.385                                                 ON1C(=O)C[C@@H](C1=O)[P](O)(O)=O
+KVM           SMILES               CACTVS 3.385                                                   ON1C(=O)C[CH](C1=O)[P](O)(O)=O
+KVM SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                                 C1[C@@H](C(=O)N(C1=O)O)P(=O)(O)O
+KVM           SMILES "OpenEye OEToolkits" 2.0.6                                                      C1C(C(=O)N(C1=O)O)P(=O)(O)O
+KVM ?                acedrg               217         "dictionary generator"                  
+KVM ?                acedrg_database      11          "data source"                           
+KVM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KVM ?                refmac5              5.8.0253    "optimization tool"                     

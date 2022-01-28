@@ -1,0 +1,151 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BRT     BRT      5-BROMONICOTINAMIDE     NON-POLYMER     15     10     .     
+#
+data_comp_BRT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BRT     C2      C       CR16    0       8.815       24.146      18.197      
+BRT     N3      N       NRD6    0       8.806       24.140      19.545      
+BRT     C4      C       CR16    0       8.990       25.300      20.190      
+BRT     C5      C       CR6     0       9.188       26.492      19.519      
+BRT     BR      BR      BR      0       9.442       28.093      20.489      
+BRT     C6      C       CR16    0       9.198       26.496      18.134      
+BRT     C1      C       CR6     0       9.009       25.298      17.439      
+BRT     C7      C       C       0       9.012       25.268      15.941      
+BRT     O9      O       O       0       8.276       26.047      15.315      
+BRT     N8      N       NH2     0       9.807       24.400      15.326      
+BRT     H2      H       H       0       8.686       23.335      17.752      
+BRT     H4      H       H       0       8.984       25.301      21.135      
+BRT     H6      H       H       0       9.331       27.292      17.656      
+BRT     H8N1    H       H       0       9.796       24.341      14.436      
+BRT     H8N2    H       H       0       10.362      23.872      15.783      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BRT       C2        N3        DOUBLE    y         1.339     0.010     1.339     0.010     
+BRT       C2        C1        SINGLE    y         1.386     0.010     1.386     0.010     
+BRT       N3        C4        SINGLE    y         1.331     0.010     1.331     0.010     
+BRT       C4        C5        DOUBLE    y         1.374     0.010     1.374     0.010     
+BRT       C5        BR        SINGLE    n         1.889     0.010     1.889     0.010     
+BRT       C5        C6        SINGLE    y         1.379     0.010     1.379     0.010     
+BRT       C6        C1        DOUBLE    y         1.389     0.012     1.389     0.012     
+BRT       C1        C7        SINGLE    n         1.497     0.010     1.497     0.010     
+BRT       C7        O9        DOUBLE    n         1.241     0.011     1.241     0.011     
+BRT       C7        N8        SINGLE    n         1.326     0.010     1.326     0.010     
+BRT       C2        H2        SINGLE    n         1.082     0.013     0.935     0.010     
+BRT       C4        H4        SINGLE    n         1.082     0.013     0.945     0.018     
+BRT       C6        H6        SINGLE    n         1.082     0.013     0.938     0.013     
+BRT       N8        H8N1      SINGLE    n         1.016     0.010     0.891     0.020     
+BRT       N8        H8N2      SINGLE    n         1.016     0.010     0.891     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BRT          N3          C2          C1     123.399    1.50
+BRT          N3          C2          H2     118.094    1.50
+BRT          C1          C2          H2     118.507    1.50
+BRT          C2          N3          C4     117.253    1.50
+BRT          N3          C4          C5     121.868    1.50
+BRT          N3          C4          H4     118.918    1.50
+BRT          C5          C4          H4     119.214    1.50
+BRT          C4          C5          BR     119.873    1.50
+BRT          C4          C5          C6     119.668    1.50
+BRT          BR          C5          C6     120.459    1.50
+BRT          C5          C6          C1     119.883    1.50
+BRT          C5          C6          H6     120.724    1.50
+BRT          C1          C6          H6     119.393    1.50
+BRT          C2          C1          C6     117.929    1.50
+BRT          C2          C1          C7     121.328    2.45
+BRT          C6          C1          C7     120.743    2.89
+BRT          C1          C7          O9     119.730    1.50
+BRT          C1          C7          N8     118.032    1.50
+BRT          O9          C7          N8     122.238    1.50
+BRT          C7          N8        H8N1     120.236    2.75
+BRT          C7          N8        H8N2     120.236    2.75
+BRT        H8N1          N8        H8N2     119.529    2.83
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BRT       const_sp2_sp2_1          C1          C2          N3          C4       0.000   10.00     2
+BRT              const_19          C7          C1          C2          N3     180.000   10.00     2
+BRT       const_sp2_sp2_3          C5          C4          N3          C2       0.000   10.00     2
+BRT       const_sp2_sp2_6          N3          C4          C5          BR     180.000   10.00     2
+BRT              const_11          BR          C5          C6          C1     180.000   10.00     2
+BRT              const_15          C7          C1          C6          C5     180.000   10.00     2
+BRT             sp2_sp2_2          C2          C1          C7          O9       0.000   10.00     2
+BRT             sp2_sp2_7          O9          C7          N8        H8N1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BRT    plan-1          BR   0.020
+BRT    plan-1          C1   0.020
+BRT    plan-1          C2   0.020
+BRT    plan-1          C4   0.020
+BRT    plan-1          C5   0.020
+BRT    plan-1          C6   0.020
+BRT    plan-1          C7   0.020
+BRT    plan-1          H2   0.020
+BRT    plan-1          H4   0.020
+BRT    plan-1          H6   0.020
+BRT    plan-1          N3   0.020
+BRT    plan-2          C1   0.020
+BRT    plan-2          C7   0.020
+BRT    plan-2          N8   0.020
+BRT    plan-2          O9   0.020
+BRT    plan-3          C7   0.020
+BRT    plan-3        H8N1   0.020
+BRT    plan-3        H8N2   0.020
+BRT    plan-3          N8   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BRT SMILES           ACDLabs              10.04 "O=C(c1cncc(Br)c1)N"
+BRT SMILES_CANONICAL CACTVS               3.341 "NC(=O)c1cncc(Br)c1"
+BRT SMILES           CACTVS               3.341 "NC(=O)c1cncc(Br)c1"
+BRT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(cncc1Br)C(=O)N"
+BRT SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(cncc1Br)C(=O)N"
+BRT InChI            InChI                1.03  "InChI=1S/C6H5BrN2O/c7-5-1-4(6(8)10)2-9-3-5/h1-3H,(H2,8,10)"
+BRT InChIKey         InChI                1.03  YOQRXZIMSKLRCY-UHFFFAOYSA-N
+BRT ?                acedrg               202         "dictionary generator"                  
+BRT ?                acedrg_database      11          "data source"                           
+BRT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BRT ?                refmac5              5.8.0189    "optimization tool"                     

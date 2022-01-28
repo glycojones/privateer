@@ -1,0 +1,329 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TRE      TRE 'TREHALOSE                           ' pyranose           45  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TRE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TRE           C1     C    CH1       0.000      0.000    0.000    0.000
+ TRE           HC1    H    H         0.000     -0.208   -0.988    0.435
+ TRE           O1     O    O2        0.000     -0.984    0.298   -0.991
+ TRE           C1P    C    CH1       0.000     -0.894   -0.725   -1.984
+ TRE           HC1P   H    H         0.000      0.114   -0.723   -2.420
+ TRE           O5P    O    O2        0.000     -1.147   -1.992   -1.381
+ TRE           C5P    C    CH1       0.000     -2.382   -1.896   -0.676
+ TRE           HC5P   H    H         0.000     -2.352   -1.030   -0.001
+ TRE           C4P    C    CH1       0.000     -3.534   -1.728   -1.668
+ TRE           HC4P   H    H         0.000     -3.552   -2.582   -2.359
+ TRE           O4P    O    OH1       0.000     -4.772   -1.660   -0.958
+ TRE           HO4P   H    H         0.000     -5.498   -1.552   -1.587
+ TRE           C3P    C    CH1       0.000     -3.324   -0.432   -2.460
+ TRE           HC3P   H    H         0.000     -3.409    0.431   -1.785
+ TRE           O3P    O    OH1       0.000     -4.309   -0.335   -3.490
+ TRE           HO3P   H    H         0.000     -4.174    0.483   -3.988
+ TRE           C2P    C    CH1       0.000     -1.925   -0.461   -3.083
+ TRE           HC2P   H    H         0.000     -1.873   -1.260   -3.835
+ TRE           O2P    O    OH1       0.000     -1.651    0.798   -3.701
+ TRE           HO2P   H    H         0.000     -0.768    0.777   -4.095
+ TRE           C6P    C    CH2       0.000     -2.601   -3.171    0.142
+ TRE           H6P1   H    H         0.000     -2.631   -4.032   -0.529
+ TRE           H6P2   H    H         0.000     -3.548   -3.098    0.681
+ TRE           O6P    O    OH1       0.000     -1.531   -3.328    1.075
+ TRE           HO6P   H    H         0.000     -1.707   -4.140    1.569
+ TRE           O5     O    O2        0.000      1.293   -0.010   -0.602
+ TRE           C5     C    CH1       0.000      1.449    1.220   -1.305
+ TRE           HC5    H    H         0.000      0.593    1.367   -1.979
+ TRE           C6     C    CH2       0.000      2.742    1.175   -2.125
+ TRE           HC61   H    H         0.000      3.592    1.030   -1.456
+ TRE           HC62   H    H         0.000      2.862    2.117   -2.666
+ TRE           O6     O    OH1       0.000      2.677    0.094   -3.057
+ TRE           HO6    H    H         0.000      3.493    0.066   -3.574
+ TRE           C4     C    CH1       0.000      1.519    2.380   -0.311
+ TRE           HC4    H    H         0.000      2.359    2.223    0.380
+ TRE           O4     O    OH1       0.000      1.705    3.607   -1.020
+ TRE           HO4    H    H         0.000      1.740    4.340   -0.390
+ TRE           C3     C    CH1       0.000      0.206    2.438    0.480
+ TRE           HC3    H    H         0.000     -0.621    2.699   -0.196
+ TRE           O3     O    OH1       0.000      0.310    3.419    1.512
+ TRE           HO3    H    H         0.000     -0.515    3.444    2.016
+ TRE           C2     C    CH1       0.000     -0.051    1.061    1.102
+ TRE           HC2    H    H         0.000      0.721    0.847    1.854
+ TRE           O2     O    OH1       0.000     -1.339    1.047    1.720
+ TRE           HO2    H    H         0.000     -1.501    0.176    2.106
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TRE      C1     n/a    O5     START
+ TRE      HC1    C1     .      .
+ TRE      O1     C1     C1P    .
+ TRE      C1P    O1     O5P    .
+ TRE      HC1P   C1P    .      .
+ TRE      O5P    C1P    C5P    .
+ TRE      C5P    O5P    C6P    .
+ TRE      HC5P   C5P    .      .
+ TRE      C4P    C5P    C3P    .
+ TRE      HC4P   C4P    .      .
+ TRE      O4P    C4P    HO4P   .
+ TRE      HO4P   O4P    .      .
+ TRE      C3P    C4P    C2P    .
+ TRE      HC3P   C3P    .      .
+ TRE      O3P    C3P    HO3P   .
+ TRE      HO3P   O3P    .      .
+ TRE      C2P    C3P    O2P    .
+ TRE      HC2P   C2P    .      .
+ TRE      O2P    C2P    HO2P   .
+ TRE      HO2P   O2P    .      .
+ TRE      C6P    C5P    O6P    .
+ TRE      H6P1   C6P    .      .
+ TRE      H6P2   C6P    .      .
+ TRE      O6P    C6P    .      .
+ TRE      HO6P   O6P    .      .
+ TRE      O5     C1     .      END
+ TRE      C5     O5     C4     .
+ TRE      HC5    C5     .      .
+ TRE      C6     C5     O6     .
+ TRE      HC61   C6     .      .
+ TRE      HC62   C6     .      .
+ TRE      O6     C6     HO6    .
+ TRE      HO6    O6     .      .
+ TRE      C4     C5     C3     .
+ TRE      HC4    C4     .      .
+ TRE      O4     C4     HO4    .
+ TRE      HO4    O4     .      .
+ TRE      C3     C4     C2     .
+ TRE      HC3    C3     .      .
+ TRE      O3     C3     HO3    .
+ TRE      HO3    O3     .      .
+ TRE      C2     C3     O2     .
+ TRE      HC2    C2     .      .
+ TRE      O2     C2     HO2    .
+ TRE      HO2    O2     .      .
+ TRE      C1     C2     .    ADD
+ TRE      C1P    C2P    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TRE       C1        C2        single    1.524     0.020     1.524     0.020     
+TRE       O1        C1        single    1.426     0.020     1.426     0.020     
+TRE       O5        C1        single    1.426     0.020     1.426     0.020     
+TRE       HC1       C1        single    1.089     0.010     0.989     0.005     
+TRE       C2        C3        single    1.524     0.020     1.524     0.020     
+TRE       O2        C2        single    1.432     0.020     1.432     0.020     
+TRE       HC2       C2        single    1.089     0.010     0.989     0.005     
+TRE       C3        C4        single    1.524     0.020     1.524     0.020     
+TRE       O3        C3        single    1.432     0.020     1.432     0.020     
+TRE       HC3       C3        single    1.089     0.010     0.989     0.005     
+TRE       C4        C5        single    1.524     0.020     1.524     0.020     
+TRE       O4        C4        single    1.432     0.020     1.432     0.020     
+TRE       HC4       C4        single    1.089     0.010     0.989     0.005     
+TRE       C6        C5        single    1.524     0.020     1.524     0.020     
+TRE       C5        O5        single    1.426     0.020     1.426     0.020     
+TRE       HC5       C5        single    1.089     0.010     0.989     0.005     
+TRE       O6        C6        single    1.432     0.020     1.432     0.020     
+TRE       HC61      C6        single    1.089     0.010     0.989     0.005     
+TRE       HC62      C6        single    1.089     0.010     0.989     0.005     
+TRE       C1P       O1        single    1.426     0.020     1.426     0.020     
+TRE       HO2       O2        single    0.970     0.012     0.839     0.014     
+TRE       HO3       O3        single    0.970     0.012     0.839     0.014     
+TRE       HO4       O4        single    0.970     0.012     0.839     0.014     
+TRE       HO6       O6        single    0.970     0.012     0.839     0.014     
+TRE       C1P       C2P       single    1.524     0.020     1.524     0.020     
+TRE       O5P       C1P       single    1.426     0.020     1.426     0.020     
+TRE       HC1P      C1P       single    1.089     0.010     0.989     0.005     
+TRE       C2P       C3P       single    1.524     0.020     1.524     0.020     
+TRE       O2P       C2P       single    1.432     0.020     1.432     0.020     
+TRE       HC2P      C2P       single    1.089     0.010     0.989     0.005     
+TRE       C3P       C4P       single    1.524     0.020     1.524     0.020     
+TRE       O3P       C3P       single    1.432     0.020     1.432     0.020     
+TRE       HC3P      C3P       single    1.089     0.010     0.989     0.005     
+TRE       C4P       C5P       single    1.524     0.020     1.524     0.020     
+TRE       O4P       C4P       single    1.432     0.020     1.432     0.020     
+TRE       HC4P      C4P       single    1.089     0.010     0.989     0.005     
+TRE       C6P       C5P       single    1.524     0.020     1.524     0.020     
+TRE       C5P       O5P       single    1.426     0.020     1.426     0.020     
+TRE       HC5P      C5P       single    1.089     0.010     0.989     0.005     
+TRE       O6P       C6P       single    1.432     0.020     1.432     0.020     
+TRE       H6P1      C6P       single    1.089     0.010     0.989     0.005     
+TRE       H6P2      C6P       single    1.089     0.010     0.989     0.005     
+TRE       HO2P      O2P       single    0.970     0.012     0.839     0.014     
+TRE       HO3P      O3P       single    0.970     0.012     0.839     0.014     
+TRE       HO4P      O4P       single    0.970     0.012     0.839     0.014     
+TRE       HO6P      O6P       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TRE      HC1    C1     O1      109.470    3.000
+ TRE      HC1    C1     O5      109.470    3.000
+ TRE      O1     C1     O5      109.470    3.000
+ TRE      HC1    C1     C2      108.340    3.000
+ TRE      O1     C1     C2      109.470    3.000
+ TRE      O5     C1     C2      109.470    3.000
+ TRE      C1     O1     C1P     111.800    3.000
+ TRE      O1     C1P    HC1P    109.470    3.000
+ TRE      O1     C1P    O5P     109.470    3.000
+ TRE      O1     C1P    C2P     109.470    3.000
+ TRE      HC1P   C1P    O5P     109.470    3.000
+ TRE      HC1P   C1P    C2P     108.340    3.000
+ TRE      O5P    C1P    C2P     109.470    3.000
+ TRE      C1P    O5P    C5P     111.800    3.000
+ TRE      O5P    C5P    HC5P    109.470    3.000
+ TRE      O5P    C5P    C4P     109.470    3.000
+ TRE      O5P    C5P    C6P     109.470    3.000
+ TRE      HC5P   C5P    C4P     108.340    3.000
+ TRE      HC5P   C5P    C6P     108.340    3.000
+ TRE      C4P    C5P    C6P     111.000    3.000
+ TRE      C5P    C4P    HC4P    108.340    3.000
+ TRE      C5P    C4P    O4P     109.470    3.000
+ TRE      C5P    C4P    C3P     111.000    3.000
+ TRE      HC4P   C4P    O4P     109.470    3.000
+ TRE      HC4P   C4P    C3P     108.340    3.000
+ TRE      O4P    C4P    C3P     109.470    3.000
+ TRE      C4P    O4P    HO4P    109.470    3.000
+ TRE      C4P    C3P    HC3P    108.340    3.000
+ TRE      C4P    C3P    O3P     109.470    3.000
+ TRE      C4P    C3P    C2P     111.000    3.000
+ TRE      HC3P   C3P    O3P     109.470    3.000
+ TRE      HC3P   C3P    C2P     108.340    3.000
+ TRE      O3P    C3P    C2P     109.470    3.000
+ TRE      C3P    O3P    HO3P    109.470    3.000
+ TRE      C3P    C2P    HC2P    108.340    3.000
+ TRE      C3P    C2P    O2P     109.470    3.000
+ TRE      C3P    C2P    C1P     111.000    3.000
+ TRE      HC2P   C2P    O2P     109.470    3.000
+ TRE      HC2P   C2P    C1P     108.340    3.000
+ TRE      O2P    C2P    C1P     109.470    3.000
+ TRE      C2P    O2P    HO2P    109.470    3.000
+ TRE      C5P    C6P    H6P1    109.470    3.000
+ TRE      C5P    C6P    H6P2    109.470    3.000
+ TRE      C5P    C6P    O6P     109.470    3.000
+ TRE      H6P1   C6P    H6P2    107.900    3.000
+ TRE      H6P1   C6P    O6P     109.470    3.000
+ TRE      H6P2   C6P    O6P     109.470    3.000
+ TRE      C6P    O6P    HO6P    109.470    3.000
+ TRE      C1     O5     C5      111.800    3.000
+ TRE      O5     C5     HC5     109.470    3.000
+ TRE      O5     C5     C6      109.470    3.000
+ TRE      O5     C5     C4      109.470    3.000
+ TRE      HC5    C5     C6      108.340    3.000
+ TRE      HC5    C5     C4      108.340    3.000
+ TRE      C6     C5     C4      111.000    3.000
+ TRE      C5     C6     HC61    109.470    3.000
+ TRE      C5     C6     HC62    109.470    3.000
+ TRE      C5     C6     O6      109.470    3.000
+ TRE      HC61   C6     HC62    107.900    3.000
+ TRE      HC61   C6     O6      109.470    3.000
+ TRE      HC62   C6     O6      109.470    3.000
+ TRE      C6     O6     HO6     109.470    3.000
+ TRE      C5     C4     HC4     108.340    3.000
+ TRE      C5     C4     O4      109.470    3.000
+ TRE      C5     C4     C3      111.000    3.000
+ TRE      HC4    C4     O4      109.470    3.000
+ TRE      HC4    C4     C3      108.340    3.000
+ TRE      O4     C4     C3      109.470    3.000
+ TRE      C4     O4     HO4     109.470    3.000
+ TRE      C4     C3     HC3     108.340    3.000
+ TRE      C4     C3     O3      109.470    3.000
+ TRE      C4     C3     C2      111.000    3.000
+ TRE      HC3    C3     O3      109.470    3.000
+ TRE      HC3    C3     C2      108.340    3.000
+ TRE      O3     C3     C2      109.470    3.000
+ TRE      C3     O3     HO3     109.470    3.000
+ TRE      C3     C2     HC2     108.340    3.000
+ TRE      C3     C2     O2      109.470    3.000
+ TRE      C3     C2     C1      111.000    3.000
+ TRE      HC2    C2     O2      109.470    3.000
+ TRE      HC2    C2     C1      108.340    3.000
+ TRE      O2     C2     C1      109.470    3.000
+ TRE      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TRE      var_1    O5     C1     O1     C1P       59.999   20.000   1
+ TRE      var_2    C1     O1     C1P    O5P       59.874   20.000   1
+ TRE      var_3    O1     C1P    C2P    C3P      -60.000   20.000   3
+ TRE      var_4    O1     C1P    O5P    C5P       60.000   20.000   1
+ TRE      var_5    C1P    O5P    C5P    C6P      180.000   20.000   1
+ TRE      var_6    O5P    C5P    C4P    C3P      -60.000   20.000   3
+ TRE      var_7    C5P    C4P    O4P    HO4P     179.898   20.000   1
+ TRE      var_8    C5P    C4P    C3P    C2P       60.000   20.000   3
+ TRE      var_9    C4P    C3P    O3P    HO3P    -179.969   20.000   1
+ TRE      var_10   C4P    C3P    C2P    O2P      180.000   20.000   3
+ TRE      var_11   C3P    C2P    O2P    HO2P    -179.934   20.000   1
+ TRE      var_12   O5P    C5P    C6P    O6P       59.992   20.000   3
+ TRE      var_13   C1     O5     C5     C4        60.000   20.000   1
+ TRE      var_14   O5     C5     C6     O6        59.871   20.000   3
+ TRE      var_15   C5     C6     O6     HO6     -179.980   20.000   1
+ TRE      var_16   O5     C5     C4     C3       -60.000   20.000   3
+ TRE      var_17   C5     C4     O4     HO4      179.458   20.000   1
+ TRE      var_18   C5     C4     C3     C2        60.000   20.000   3
+ TRE      var_19   C4     C3     O3     HO3     -179.213   20.000   1
+ TRE      var_20   C4     C3     C2     O2       180.000   20.000   3
+ TRE      var_21   C3     C2     C1     O5        60.000   20.000   3
+ TRE      var_22   C3     C2     O2     HO2      179.626   20.000   1
+ TRE      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TRE      chir_01  C1     C2     O1     O5        negativ
+ TRE      chir_02  C2     C1     C3     O2        negativ
+ TRE      chir_03  C3     C2     C4     O3        positiv
+ TRE      chir_04  C4     C3     C5     O4        negativ
+ TRE      chir_05  C5     C4     C6     O5        negativ
+ TRE      chir_06  C1P    O1     C2P    O5P       positiv
+ TRE      chir_07  C2P    C1P    C3P    O2P       negativ
+ TRE      chir_08  C3P    C2P    C4P    O3P       positiv
+ TRE      chir_09  C4P    C3P    C5P    O4P       negativ
+ TRE      chir_10  C5P    C4P    C6P    O5P       negativ
+# ------------------------------------------------------

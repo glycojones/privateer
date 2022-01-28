@@ -1,0 +1,255 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IPT      IPT 'ISOPROPYL-1-BETA-D-THIOGALACTOSIDE  ' pyranose           33  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_IPT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ IPT           C1     C    CH1       0.000      0.000    0.000    0.000
+ IPT           H1     H    H         0.000      0.483   -0.984    0.074
+ IPT           S1     S    S2        0.000      0.079    0.832    1.611
+ IPT           "C1'"  C    CH1       0.000      1.876    0.907    1.839
+ IPT           "H1'"  H    H         0.000      2.326    1.481    1.017
+ IPT           "C3'"  C    CH3       0.000      2.450   -0.511    1.844
+ IPT           "H3'3" H    H         0.000      2.232   -0.985    0.921
+ IPT           "H3'2" H    H         0.000      3.500   -0.468    1.977
+ IPT           "H3'1" H    H         0.000      2.017   -1.066    2.635
+ IPT           "C2'"  C    CH3       0.000      2.193    1.590    3.171
+ IPT           "H2'3" H    H         0.000      1.796    2.572    3.168
+ IPT           "H2'2" H    H         0.000      1.759    1.037    3.964
+ IPT           "H2'1" H    H         0.000      3.243    1.634    3.305
+ IPT           O5     O    O2        0.000      0.679    0.788   -0.974
+ IPT           C5     C    CH1       0.000      0.751    0.022   -2.174
+ IPT           H5     H    H         0.000      1.183   -0.963   -1.953
+ IPT           C4     C    CH1       0.000     -0.652   -0.157   -2.760
+ IPT           H4     H    H         0.000     -0.589   -0.731   -3.695
+ IPT           O4     O    OH1       0.000     -1.228    1.122   -3.023
+ IPT           HO4    H    H         0.000     -2.113    1.006   -3.394
+ IPT           C3     C    CH1       0.000     -1.520   -0.915   -1.751
+ IPT           H3     H    H         0.000     -1.136   -1.938   -1.629
+ IPT           O3     O    OH1       0.000     -2.869   -0.962   -2.220
+ IPT           HO3    H    H         0.000     -3.415   -1.441   -1.581
+ IPT           C2     C    CH1       0.000     -1.463   -0.181   -0.408
+ IPT           H2     H    H         0.000     -1.942    0.803   -0.506
+ IPT           O2     O    OH1       0.000     -2.145   -0.948    0.586
+ IPT           HO2    H    H         0.000     -2.108   -0.482    1.433
+ IPT           C6     C    CH2       0.000      1.635    0.749   -3.190
+ IPT           H61    H    H         0.000      1.206    1.729   -3.411
+ IPT           H62    H    H         0.000      1.691    0.162   -4.109
+ IPT           O6     O    OH1       0.000      2.947    0.913   -2.647
+ IPT           HO6    H    H         0.000      3.471    1.374   -3.317
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ IPT      C1     n/a    O5     START
+ IPT      H1     C1     .      .
+ IPT      S1     C1     "C1'"  .
+ IPT      "C1'"  S1     "C2'"  .
+ IPT      "H1'"  "C1'"  .      .
+ IPT      "C3'"  "C1'"  "H3'1" .
+ IPT      "H3'3" "C3'"  .      .
+ IPT      "H3'2" "C3'"  .      .
+ IPT      "H3'1" "C3'"  .      .
+ IPT      "C2'"  "C1'"  "H2'1" .
+ IPT      "H2'3" "C2'"  .      .
+ IPT      "H2'2" "C2'"  .      .
+ IPT      "H2'1" "C2'"  .      .
+ IPT      O5     C1     .      END
+ IPT      C5     O5     C6     .
+ IPT      H5     C5     .      .
+ IPT      C4     C5     C3     .
+ IPT      H4     C4     .      .
+ IPT      O4     C4     HO4    .
+ IPT      HO4    O4     .      .
+ IPT      C3     C4     C2     .
+ IPT      H3     C3     .      .
+ IPT      O3     C3     HO3    .
+ IPT      HO3    O3     .      .
+ IPT      C2     C3     O2     .
+ IPT      H2     C2     .      .
+ IPT      O2     C2     HO2    .
+ IPT      HO2    O2     .      .
+ IPT      C6     C5     O6     .
+ IPT      H61    C6     .      .
+ IPT      H62    C6     .      .
+ IPT      O6     C6     .      .
+ IPT      HO6    O6     .      .
+ IPT      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IPT       C1        C2        single    1.524     0.020     1.524     0.020     
+IPT       O5        C1        single    1.426     0.020     1.426     0.020     
+IPT       S1        C1        single    1.765     0.020     1.765     0.020     
+IPT       H1        C1        single    1.089     0.010     0.989     0.005     
+IPT       O2        C2        single    1.432     0.020     1.432     0.020     
+IPT       C2        C3        single    1.524     0.020     1.524     0.020     
+IPT       H2        C2        single    1.089     0.010     0.989     0.005     
+IPT       HO2       O2        single    0.970     0.012     0.839     0.014     
+IPT       O3        C3        single    1.432     0.020     1.432     0.020     
+IPT       C3        C4        single    1.524     0.020     1.524     0.020     
+IPT       H3        C3        single    1.089     0.010     0.989     0.005     
+IPT       HO3       O3        single    0.970     0.012     0.839     0.014     
+IPT       O4        C4        single    1.432     0.020     1.432     0.020     
+IPT       C4        C5        single    1.524     0.020     1.524     0.020     
+IPT       H4        C4        single    1.089     0.010     0.989     0.005     
+IPT       HO4       O4        single    0.970     0.012     0.839     0.014     
+IPT       C5        O5        single    1.426     0.020     1.426     0.020     
+IPT       C6        C5        single    1.524     0.020     1.524     0.020     
+IPT       H5        C5        single    1.089     0.010     0.989     0.005     
+IPT       O6        C6        single    1.432     0.020     1.432     0.020     
+IPT       H61       C6        single    1.089     0.010     0.989     0.005     
+IPT       H62       C6        single    1.089     0.010     0.989     0.005     
+IPT       HO6       O6        single    0.970     0.012     0.839     0.014     
+IPT       "C1'"     S1        single    1.765     0.020     1.765     0.020     
+IPT       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+IPT       "C3'"     "C1'"     single    1.524     0.020     1.524     0.020     
+IPT       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+IPT       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+IPT       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+IPT       "H2'3"    "C2'"     single    1.089     0.010     0.989     0.005     
+IPT       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+IPT       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+IPT       "H3'3"    "C3'"     single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ IPT      H1     C1     S1      109.500    3.000
+ IPT      H1     C1     O5      109.470    3.000
+ IPT      S1     C1     O5      109.500    3.000
+ IPT      H1     C1     C2      108.340    3.000
+ IPT      S1     C1     C2      109.500    3.000
+ IPT      O5     C1     C2      109.470    3.000
+ IPT      C1     S1     "C1'"   100.024    3.000
+ IPT      S1     "C1'"  "H1'"   109.500    3.000
+ IPT      S1     "C1'"  "C3'"   109.500    3.000
+ IPT      S1     "C1'"  "C2'"   109.500    3.000
+ IPT      "H1'"  "C1'"  "C3'"   108.340    3.000
+ IPT      "H1'"  "C1'"  "C2'"   108.340    3.000
+ IPT      "C3'"  "C1'"  "C2'"   111.000    3.000
+ IPT      "C1'"  "C3'"  "H3'3"  109.470    3.000
+ IPT      "C1'"  "C3'"  "H3'2"  109.470    3.000
+ IPT      "C1'"  "C3'"  "H3'1"  109.470    3.000
+ IPT      "H3'3" "C3'"  "H3'2"  109.470    3.000
+ IPT      "H3'3" "C3'"  "H3'1"  109.470    3.000
+ IPT      "H3'2" "C3'"  "H3'1"  109.470    3.000
+ IPT      "C1'"  "C2'"  "H2'3"  109.470    3.000
+ IPT      "C1'"  "C2'"  "H2'2"  109.470    3.000
+ IPT      "C1'"  "C2'"  "H2'1"  109.470    3.000
+ IPT      "H2'3" "C2'"  "H2'2"  109.470    3.000
+ IPT      "H2'3" "C2'"  "H2'1"  109.470    3.000
+ IPT      "H2'2" "C2'"  "H2'1"  109.470    3.000
+ IPT      C1     O5     C5      111.800    3.000
+ IPT      O5     C5     H5      109.470    3.000
+ IPT      O5     C5     C4      109.470    3.000
+ IPT      O5     C5     C6      109.470    3.000
+ IPT      H5     C5     C4      108.340    3.000
+ IPT      H5     C5     C6      108.340    3.000
+ IPT      C4     C5     C6      111.000    3.000
+ IPT      C5     C4     H4      108.340    3.000
+ IPT      C5     C4     O4      109.470    3.000
+ IPT      C5     C4     C3      111.000    3.000
+ IPT      H4     C4     O4      109.470    3.000
+ IPT      H4     C4     C3      108.340    3.000
+ IPT      O4     C4     C3      109.470    3.000
+ IPT      C4     O4     HO4     109.470    3.000
+ IPT      C4     C3     H3      108.340    3.000
+ IPT      C4     C3     O3      109.470    3.000
+ IPT      C4     C3     C2      111.000    3.000
+ IPT      H3     C3     O3      109.470    3.000
+ IPT      H3     C3     C2      108.340    3.000
+ IPT      O3     C3     C2      109.470    3.000
+ IPT      C3     O3     HO3     109.470    3.000
+ IPT      C3     C2     H2      108.340    3.000
+ IPT      C3     C2     O2      109.470    3.000
+ IPT      C3     C2     C1      111.000    3.000
+ IPT      H2     C2     O2      109.470    3.000
+ IPT      H2     C2     C1      108.340    3.000
+ IPT      O2     C2     C1      109.470    3.000
+ IPT      C2     O2     HO2     109.470    3.000
+ IPT      C5     C6     H61     109.470    3.000
+ IPT      C5     C6     H62     109.470    3.000
+ IPT      C5     C6     O6      109.470    3.000
+ IPT      H61    C6     H62     107.900    3.000
+ IPT      H61    C6     O6      109.470    3.000
+ IPT      H62    C6     O6      109.470    3.000
+ IPT      C6     O6     HO6     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ IPT      var_1    O5     C1     S1     "C1'"    -59.842   20.000   1
+ IPT      var_2    C1     S1     "C1'"  "C2'"    179.966   20.000   1
+ IPT      var_3    S1     "C1'"  "C3'"  "H3'1"   -59.997   20.000   3
+ IPT      var_4    S1     "C1'"  "C2'"  "H2'1"   179.991   20.000   3
+ IPT      var_5    C1     O5     C5     C6       180.000   20.000   1
+ IPT      var_6    O5     C5     C4     C3       -60.000   20.000   3
+ IPT      var_7    C5     C4     O4     HO4      179.950   20.000   1
+ IPT      var_8    C5     C4     C3     C2        60.000   20.000   3
+ IPT      var_9    C4     C3     O3     HO3     -179.975   20.000   1
+ IPT      var_10   C4     C3     C2     O2       180.000   20.000   3
+ IPT      var_11   C3     C2     C1     O5        60.000   20.000   3
+ IPT      var_12   C3     C2     O2     HO2     -179.985   20.000   1
+ IPT      var_13   O5     C5     C6     O6        59.927   20.000   3
+ IPT      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ IPT      chir_01  C1     C2     O5     S1        negativ
+ IPT      chir_02  C2     C1     O2     C3        positiv
+ IPT      chir_03  C3     C2     O3     C4        negativ
+ IPT      chir_04  C4     C3     O4     C5        negativ
+ IPT      chir_05  C5     C4     O5     C6        positiv
+ IPT      chir_06  "C1'"  S1     "C2'"  "C3'"     negativ
+# ------------------------------------------------------

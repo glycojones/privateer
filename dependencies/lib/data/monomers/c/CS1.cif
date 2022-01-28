@@ -1,0 +1,246 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CS1     CS1      "S-(2-ANILINYL-SULFANYL)-CYSTEINE"   peptide  27     15     .     
+#
+data_comp_CS1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CS1     O       O       O       0       3.464       6.876       -0.030      
+CS1     C       C       C       0       4.367       7.698       -0.287      
+CS1     CA      C       CH1     0       5.813       7.254       -0.032      
+CS1     N       N       NT3     1       6.644       7.583       -1.223      
+CS1     CB      C       CH2     0       6.402       7.840       1.237       
+CS1     SG      S       S2      0       5.579       7.268       2.746       
+CS1     SD      S       S2      0       4.438       8.857       3.335       
+CS1     CE      C       CR6     0       5.520       9.838       4.352       
+CS1     C5      C       CR16    0       6.318       10.850      3.780       
+CS1     C4      C       CR16    0       7.164       11.621      4.559       
+CS1     C3      C       CR16    0       7.244       11.413      5.922       
+CS1     C2      C       CR16    0       6.476       10.430      6.520       
+CS1     C1      C       CR6     0       5.613       9.637       5.751       
+CS1     N1      N       NH2     0       4.860       8.666       6.367       
+CS1     OXT     O       OC      -1      4.197       8.849       -0.734      
+CS1     HA      H       H       0       5.822       6.275       0.076       
+CS1     H       H       H       0       7.501       7.305       -1.086      
+CS1     H2      H       H       0       6.640       8.483       -1.363      
+CS1     H3      H       H       0       6.309       7.163       -1.959      
+CS1     HB2     H       H       0       6.331       8.827       1.182       
+CS1     HB3     H       H       0       7.361       7.592       1.275       
+CS1     H5      H       H       0       6.272       11.000      2.852       
+CS1     H4      H       H       0       7.689       12.291      4.156       
+CS1     HC3     H       H       0       7.822       11.941      6.447       
+CS1     HC2     H       H       0       6.531       10.288      7.449       
+CS1     HN11    H       H       0       5.000       8.474       7.212       
+CS1     HN12    H       H       0       4.240       8.240       5.914       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CS1      N      n/a    CA     START
+ CS1      H      N      .      .
+ CS1      H2     N      .      .
+ CS1      H3     N      .      .
+ CS1      CA     N      C      .
+ CS1      HA     CA     .      .
+ CS1      CB     CA     SG     .
+ CS1      HB2    CB     .      .
+ CS1      HB3    CB     .      .
+ CS1      SG     CB     SD     .
+ CS1      SD     SG     CE     .
+ CS1      CE     SD     C1     .
+ CS1      C1     CE     C2     .
+ CS1      N1     C1     HN11   .
+ CS1      HN12   N1     .      .
+ CS1      HN11   N1     .      .
+ CS1      C2     C1     C3     .
+ CS1      HC2    C2     .      .
+ CS1      C3     C2     C4     .
+ CS1      HC3    C3     .      .
+ CS1      C4     C3     C5     .
+ CS1      H4     C4     .      .
+ CS1      C5     C4     H5     .
+ CS1      H5     C5     .      .
+ CS1      C      CA     .      END
+ CS1      O      C      .      .
+ CS1      OXT    C      .      .
+ CS1      CE     C5     .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CS1       O         C         DOUBLE    n         1.247     0.019     1.247     0.019     
+CS1       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+CS1       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+CS1       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+CS1       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+CS1       CB        SG        SINGLE    n         1.811     0.014     1.811     0.014     
+CS1       SG        SD        SINGLE    n         2.043     0.020     2.043     0.020     
+CS1       SD        CE        SINGLE    n         1.779     0.014     1.779     0.014     
+CS1       CE        C5        DOUBLE    y         1.394     0.018     1.394     0.018     
+CS1       CE        C1        SINGLE    y         1.409     0.012     1.409     0.012     
+CS1       C5        C4        SINGLE    y         1.379     0.011     1.379     0.011     
+CS1       C4        C3        DOUBLE    y         1.376     0.012     1.376     0.012     
+CS1       C3        C2        SINGLE    y         1.381     0.011     1.381     0.011     
+CS1       C2        C1        DOUBLE    y         1.396     0.015     1.396     0.015     
+CS1       C1        N1        SINGLE    n         1.371     0.015     1.371     0.015     
+CS1       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+CS1       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+CS1       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+CS1       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+CS1       CB        HB2       SINGLE    n         1.089     0.010     0.991     0.010     
+CS1       CB        HB3       SINGLE    n         1.089     0.010     0.991     0.010     
+CS1       C5        H5        SINGLE    n         1.082     0.013     0.941     0.020     
+CS1       C4        H4        SINGLE    n         1.082     0.013     0.942     0.017     
+CS1       C3        HC3       SINGLE    n         1.082     0.013     0.943     0.017     
+CS1       C2        HC2       SINGLE    n         1.082     0.013     0.942     0.019     
+CS1       N1        HN11      SINGLE    n         1.016     0.010     0.877     0.020     
+CS1       N1        HN12      SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CS1           O           C         OXT     125.732    1.50
+CS1           O           C          CA     117.134    1.50
+CS1         OXT           C          CA     117.134    1.50
+CS1           C          CA           N     109.494    1.50
+CS1           C          CA          CB     113.463    1.50
+CS1           C          CA          HA     108.606    1.50
+CS1           N          CA          CB     111.909    1.50
+CS1           N          CA          HA     107.983    1.50
+CS1          CB          CA          HA     107.198    1.50
+CS1          CA           N           H     109.671    1.50
+CS1          CA           N          H2     109.671    1.50
+CS1          CA           N          H3     109.671    1.50
+CS1           H           N          H2     109.028    2.41
+CS1           H           N          H3     109.028    2.41
+CS1          H2           N          H3     109.028    2.41
+CS1          CA          CB          SG     112.239    3.00
+CS1          CA          CB         HB2     107.935    1.50
+CS1          CA          CB         HB3     107.935    1.50
+CS1          SG          CB         HB2     109.066    1.50
+CS1          SG          CB         HB3     109.066    1.50
+CS1         HB2          CB         HB3     108.536    1.50
+CS1          CB          SG          SD     104.459    2.07
+CS1          SG          SD          CE     104.736    1.50
+CS1          SD          CE          C5     121.414    3.00
+CS1          SD          CE          C1     121.404    1.54
+CS1          C5          CE          C1     117.182    1.50
+CS1          CE          C5          C4     120.353    1.50
+CS1          CE          C5          H5     119.500    1.50
+CS1          C4          C5          H5     120.147    1.50
+CS1          C5          C4          C3     120.175    1.50
+CS1          C5          C4          H4     119.812    1.50
+CS1          C3          C4          H4     120.013    1.50
+CS1          C4          C3          C2     120.365    1.50
+CS1          C4          C3         HC3     119.959    1.50
+CS1          C2          C3         HC3     119.676    1.50
+CS1          C3          C2          C1     120.956    1.50
+CS1          C3          C2         HC2     119.876    1.50
+CS1          C1          C2         HC2     119.168    1.50
+CS1          CE          C1          C2     120.970    2.35
+CS1          CE          C1          N1     119.765    1.52
+CS1          C2          C1          N1     119.265    1.50
+CS1          C1          N1        HN11     119.764    1.50
+CS1          C1          N1        HN12     119.764    1.50
+CS1        HN11          N1        HN12     120.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CS1              const_13          C1          C2          C3          C4       0.000   10.00     2
+CS1              const_19          N1          C1          C2          C3     180.000   10.00     2
+CS1             sp2_sp2_1          CE          C1          N1        HN11     180.000   10.00     2
+CS1             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+CS1             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+CS1            sp3_sp3_10           C          CA          CB          SG     180.000   10.00     3
+CS1            sp3_sp3_19          CA          CB          SG          SD     180.000   10.00     3
+CS1            sp3_sp3_22          CE          SD          SG          CB     180.000   10.00     3
+CS1              const_24          N1          C1          CE          SD       0.000   10.00     2
+CS1       const_sp2_sp2_2          C4          C5          CE          SD     180.000   10.00     2
+CS1       const_sp2_sp2_5          C3          C4          C5          CE       0.000   10.00     2
+CS1       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+CS1    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CS1    plan-1          C1   0.020
+CS1    plan-1          C2   0.020
+CS1    plan-1          C3   0.020
+CS1    plan-1          C4   0.020
+CS1    plan-1          C5   0.020
+CS1    plan-1          CE   0.020
+CS1    plan-1          H4   0.020
+CS1    plan-1          H5   0.020
+CS1    plan-1         HC2   0.020
+CS1    plan-1         HC3   0.020
+CS1    plan-1          N1   0.020
+CS1    plan-1          SD   0.020
+CS1    plan-2           C   0.020
+CS1    plan-2          CA   0.020
+CS1    plan-2           O   0.020
+CS1    plan-2         OXT   0.020
+CS1    plan-3          C1   0.020
+CS1    plan-3        HN11   0.020
+CS1    plan-3        HN12   0.020
+CS1    plan-3          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CS1 SMILES           ACDLabs              10.04 "O=C(O)C(N)CSSc1ccccc1N"
+CS1 SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CSSc1ccccc1N)C(O)=O"
+CS1 SMILES           CACTVS               3.341 "N[CH](CSSc1ccccc1N)C(O)=O"
+CS1 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(c(c1)N)SSC[C@@H](C(=O)O)N"
+CS1 SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(c(c1)N)SSCC(C(=O)O)N"
+CS1 InChI            InChI                1.03  "InChI=1S/C9H12N2O2S2/c10-6-3-1-2-4-8(6)15-14-5-7(11)9(12)13/h1-4,7H,5,10-11H2,(H,12,13)/t7-/m0/s1"
+CS1 InChIKey         InChI                1.03  ZHCKRZMSUKPEHB-ZETCQYMHSA-N
+CS1 ?                acedrg               202         "dictionary generator"                  
+CS1 ?                acedrg_database      11          "data source"                           
+CS1 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CS1 ?                refmac5              5.8.0222    "optimization tool"                     

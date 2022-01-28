@@ -1,0 +1,494 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+8CY      8CY 'ruthenocenyl-7-aminodesacetoxycephal' non-polymer        54  32 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_8CY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 8CY           O1     O    OC       -0.500      3.642    3.088  -15.631
+ 8CY           C32    C    C         0.000      4.097    3.138  -14.467
+ 8CY           O67    O    OC       -0.500      3.505    3.661  -13.497
+ 8CY           C31    C    CH1       0.000      5.104    2.234  -13.923
+ 8CY           H11    H    H         0.000      5.767    2.238  -14.801
+ 8CY           C34    C    CH1       0.000      4.704    0.820  -14.018
+ 8CY           H12    H    H         0.000      4.330    0.595  -15.028
+ 8CY           S49    S    S2        0.000      5.933   -0.405  -13.516
+ 8CY           N33    N    NH1       0.000      3.637    0.776  -13.072
+ 8CY           H20    H    H         0.000      3.366    1.634  -12.637
+ 8CY           C51    C    C         0.000      2.997   -0.295  -12.739
+ 8CY           C63    C    C         0.000      1.636   -0.076  -12.268
+ 8CY           O64    O    OC       -0.500      0.824    0.372  -13.107
+ 8CY           O65    O    OC       -0.500      1.306   -0.372  -11.098
+ 8CY           C50    C    C         0.000      3.506   -1.528  -12.925
+ 8CY           C52    C    CH3       0.000      2.679   -2.774  -12.703
+ 8CY           H18    H    H         0.000      2.563   -3.312  -13.655
+ 8CY           H17    H    H         0.000      3.184   -3.425  -11.974
+ 8CY           H16    H    H         0.000      1.688   -2.493  -12.318
+ 8CY           C1     C    CH2       0.000      4.906   -1.828  -13.462
+ 8CY           H2     H    H         0.000      4.795   -2.241  -14.476
+ 8CY           H1     H    H         0.000      5.361   -2.586  -12.807
+ 8CY           N30    N    NH1       0.000      6.088    2.677  -12.969
+ 8CY           H21    H    H         0.000      5.672    3.157  -12.197
+ 8CY           C27    C    C         0.000      7.388    2.609  -12.859
+ 8CY           O29    O    O         0.000      8.088    2.170  -13.635
+ 8CY           C26    C    CH2       0.000      7.835    3.191  -11.538
+ 8CY           H22    H    H         0.000      7.509    2.519  -10.730
+ 8CY           H23    H    H         0.000      7.360    4.175  -11.409
+ 8CY           C25    C    CH2       0.000      9.364    3.348  -11.491
+ 8CY           H24    H    H         0.000      9.650    4.186  -12.145
+ 8CY           H25    H    H         0.000      9.823    2.420  -11.864
+ 8CY           C24    C    C         0.000      9.837    3.615  -10.103
+ 8CY           O28    O    O         0.000      9.159    3.923   -9.244
+ 8CY           C18    C    CT        0.000     11.346    3.521   -9.932
+ 8CY           C19    C    CH1       0.000     12.154    3.922   -8.842
+ 8CY           H19    H    H         0.000     11.788    4.256   -7.861
+ 8CY           C20    C    CH1       0.000     13.504    3.742   -9.196
+ 8CY           H200   H    H         0.000     14.373    3.929   -8.549
+ 8CY           RU     RU   RU        0.000     12.558    5.192  -10.530
+ 8CY           C17    C    CH1       0.000     12.245    3.094  -10.917
+ 8CY           H170   H    H         0.000     11.962    2.665  -11.889
+ 8CY           C12    C    CH1       0.000     11.499    6.720  -11.646
+ 8CY           H120   H    H         0.000     10.615    6.567  -12.281
+ 8CY           C13    C    CH1       0.000     12.812    6.731  -12.065
+ 8CY           H13    H    H         0.000     13.159    6.560  -13.094
+ 8CY           C14    C    CH1       0.000     13.622    7.058  -10.974
+ 8CY           H14    H    H         0.000     14.711    7.206  -10.986
+ 8CY           C15    C    CH1       0.000     12.774    7.265   -9.908
+ 8CY           H15    H    H         0.000     13.080    7.601   -8.907
+ 8CY           C16    C    CH1       0.000     13.538    3.217  -10.448
+ 8CY           H160   H    H         0.000     14.446    2.931  -10.997
+ 8CY           C11    C    CH1       0.000     11.495    7.078  -10.317
+ 8CY           H110   H    H         0.000     10.598    7.239   -9.702
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 8CY      O1     n/a    C32    START
+ 8CY      C32    O1     C31    .
+ 8CY      O67    C32    .      .
+ 8CY      C31    C32    N30    .
+ 8CY      H11    C31    .      .
+ 8CY      C34    C31    N33    .
+ 8CY      H12    C34    .      .
+ 8CY      S49    C34    .      .
+ 8CY      N33    C34    C51    .
+ 8CY      H20    N33    .      .
+ 8CY      C51    N33    C50    .
+ 8CY      C63    C51    O65    .
+ 8CY      O64    C63    .      .
+ 8CY      O65    C63    .      .
+ 8CY      C50    C51    C1     .
+ 8CY      C52    C50    H16    .
+ 8CY      H18    C52    .      .
+ 8CY      H17    C52    .      .
+ 8CY      H16    C52    .      .
+ 8CY      C1     C50    H1     .
+ 8CY      H2     C1     .      .
+ 8CY      H1     C1     .      .
+ 8CY      N30    C31    C27    .
+ 8CY      H21    N30    .      .
+ 8CY      C27    N30    C26    .
+ 8CY      O29    C27    .      .
+ 8CY      C26    C27    C25    .
+ 8CY      H22    C26    .      .
+ 8CY      H23    C26    .      .
+ 8CY      C25    C26    C24    .
+ 8CY      H24    C25    .      .
+ 8CY      H25    C25    .      .
+ 8CY      C24    C25    C18    .
+ 8CY      O28    C24    .      .
+ 8CY      C18    C24    C19    .
+ 8CY      C19    C18    RU     .
+ 8CY      H19    C19    .      .
+ 8CY      C20    C19    H200   .
+ 8CY      H200   C20    .      .
+ 8CY      RU     C19    C11    .
+ 8CY      C17    RU     H170   .
+ 8CY      H170   C17    .      .
+ 8CY      C12    RU     H120   .
+ 8CY      H120   C12    .      .
+ 8CY      C13    RU     H13    .
+ 8CY      H13    C13    .      .
+ 8CY      C14    RU     H14    .
+ 8CY      H14    C14    .      .
+ 8CY      C15    RU     H15    .
+ 8CY      H15    C15    .      .
+ 8CY      C16    RU     H160   .
+ 8CY      H160   C16    .      .
+ 8CY      C11    RU     H110   .
+ 8CY      H110   C11    .      END
+ 8CY      C1     S49    .    ADD
+ 8CY      C11    C12    .    ADD
+ 8CY      C11    C15    .    ADD
+ 8CY      C12    C13    .    ADD
+ 8CY      C13    C14    .    ADD
+ 8CY      C14    C15    .    ADD
+ 8CY      C16    C17    .    ADD
+ 8CY      C16    C20    .    ADD
+ 8CY      C17    C18    .    ADD
+ 8CY      C18    RU     .    ADD
+ 8CY      C20    RU     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+8CY       C1        S49       single    1.756     0.020     1.756     0.020     
+8CY       C1        C50       single    1.529     0.020     1.529     0.020     
+8CY       C11       C12       single    1.376     0.020     1.376     0.020     
+8CY       C11       C15       single    1.356     0.020     1.356     0.020     
+8CY       C11       RU        single    2.175     0.020     2.175     0.020     
+8CY       C12       C13       single    1.378     0.020     1.378     0.020     
+8CY       C12       RU        single    2.168     0.020     2.168     0.020     
+8CY       C13       C14       single    1.398     0.020     1.398     0.020     
+8CY       C13       RU        single    2.188     0.020     2.188     0.020     
+8CY       C14       C15       single    1.378     0.020     1.378     0.020     
+8CY       C14       RU        single    2.193     0.020     2.193     0.020     
+8CY       C15       RU        single    2.175     0.020     2.175     0.020     
+8CY       C16       C17       single    1.381     0.020     1.381     0.020     
+8CY       C16       C20       single    1.358     0.020     1.358     0.020     
+8CY       C16       RU        single    2.206     0.020     2.206     0.020     
+8CY       C17       C18       single    1.400     0.020     1.400     0.020     
+8CY       C17       RU        single    2.156     0.020     2.156     0.020     
+8CY       C18       C24       single    1.522     0.020     1.522     0.020     
+8CY       C18       RU        single    2.149     0.020     2.149     0.020     
+8CY       C19       C18       single    1.415     0.020     1.415     0.020     
+8CY       C20       RU        single    2.186     0.020     2.186     0.020     
+8CY       C20       C19       single    1.407     0.020     1.407     0.020     
+8CY       C34       C31       single    1.473     0.020     1.473     0.020     
+8CY       C31       C32       single    1.458     0.020     1.458     0.020     
+8CY       N30       C31       single    1.440     0.020     1.440     0.020     
+8CY       S49       C34       single    1.806     0.020     1.806     0.020     
+8CY       N33       C34       single    1.427     0.020     1.427     0.020     
+8CY       O67       C32       deloc     1.251     0.020     1.251     0.020     
+8CY       C52       C50       single    1.512     0.020     1.512     0.020     
+8CY       C50       C51       double    1.347     0.020     1.347     0.020     
+8CY       C63       C51       single    1.457     0.020     1.457     0.020     
+8CY       C51       N33       single    1.291     0.020     1.291     0.020     
+8CY       O65       C63       deloc     1.251     0.020     1.251     0.020     
+8CY       O64       C63       deloc     1.251     0.020     1.251     0.020     
+8CY       C27       N30       single    1.306     0.020     1.306     0.020     
+8CY       O29       C27       double    1.134     0.020     1.134     0.020     
+8CY       C26       C27       single    1.511     0.020     1.511     0.020     
+8CY       C25       C26       single    1.538     0.020     1.538     0.020     
+8CY       C24       C25       single    1.490     0.020     1.490     0.020     
+8CY       O28       C24       double    1.137     0.020     1.137     0.020     
+8CY       RU        C19       single    2.151     0.020     2.151     0.020     
+8CY       H1        C1        single    1.089     0.010     0.989     0.005     
+8CY       H2        C1        single    1.089     0.010     0.989     0.005     
+8CY       H11       C31       single    1.089     0.010     0.989     0.005     
+8CY       H12       C34       single    1.089     0.010     0.989     0.005     
+8CY       H16       C52       single    1.089     0.010     0.989     0.005     
+8CY       H17       C52       single    1.089     0.010     0.989     0.005     
+8CY       H18       C52       single    1.089     0.010     0.989     0.005     
+8CY       H20       N33       single    1.016     0.010     0.899     0.007     
+8CY       H21       N30       single    1.016     0.010     0.899     0.007     
+8CY       H22       C26       single    1.089     0.010     0.989     0.005     
+8CY       H23       C26       single    1.089     0.010     0.989     0.005     
+8CY       H24       C25       single    1.089     0.010     0.989     0.005     
+8CY       H25       C25       single    1.089     0.010     0.989     0.005     
+8CY       C32       O1        deloc     1.251     0.020     1.251     0.020     
+8CY       H110      C11       single    1.089     0.010     0.989     0.005     
+8CY       H120      C12       single    1.089     0.010     0.989     0.005     
+8CY       H13       C13       single    1.089     0.010     0.989     0.005     
+8CY       H14       C14       single    1.089     0.010     0.989     0.005     
+8CY       H15       C15       single    1.089     0.010     0.989     0.005     
+8CY       H160      C16       single    1.089     0.010     0.989     0.005     
+8CY       H170      C17       single    1.089     0.010     0.989     0.005     
+8CY       H200      C20       single    1.089     0.010     0.989     0.005     
+8CY       H19       C19       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 8CY      O1     C32    O67     124.500    3.000
+ 8CY      O1     C32    C31     124.985    3.000
+ 8CY      O67    C32    C31     107.239    3.000
+ 8CY      C32    C31    H11      96.646    3.000
+ 8CY      C32    C31    C34     112.554    3.000
+ 8CY      C32    C31    N30     121.877    3.000
+ 8CY      H11    C31    C34      96.575    3.000
+ 8CY      H11    C31    N30      96.733    3.000
+ 8CY      C34    C31    N30     121.576    3.000
+ 8CY      C31    C34    H12     111.665    3.000
+ 8CY      C31    C34    S49     116.644    3.000
+ 8CY      C31    C34    N33     100.952    3.000
+ 8CY      H12    C34    S49     107.488    3.000
+ 8CY      H12    C34    N33     112.340    3.000
+ 8CY      S49    C34    N33     107.677    3.000
+ 8CY      C34    S49    C1       99.219    3.000
+ 8CY      C34    N33    H20     105.560    3.000
+ 8CY      C34    N33    C51     124.558    3.000
+ 8CY      H20    N33    C51     105.594    3.000
+ 8CY      N33    C51    C63     114.944    3.000
+ 8CY      N33    C51    C50     122.436    3.000
+ 8CY      C63    C51    C50     122.368    3.000
+ 8CY      C51    C63    O64     116.332    3.000
+ 8CY      C51    C63    O65     120.880    3.000
+ 8CY      O64    C63    O65     122.738    3.000
+ 8CY      C51    C50    C52     121.836    3.000
+ 8CY      C51    C50    C1      125.037    3.000
+ 8CY      C52    C50    C1      112.997    3.000
+ 8CY      C50    C52    H18     109.471    3.000
+ 8CY      C50    C52    H17     109.475    3.000
+ 8CY      C50    C52    H16     109.498    3.000
+ 8CY      H18    C52    H17     109.485    3.000
+ 8CY      H18    C52    H16     109.441    3.000
+ 8CY      H17    C52    H16     109.458    3.000
+ 8CY      C50    C1     H2      108.639    3.000
+ 8CY      C50    C1     H1      108.611    3.000
+ 8CY      C50    C1     S49     112.788    3.000
+ 8CY      H2     C1     H1      109.498    3.000
+ 8CY      H2     C1     S49     108.619    3.000
+ 8CY      H1     C1     S49     108.647    3.000
+ 8CY      C31    N30    H21     112.016    3.000
+ 8CY      C31    N30    C27     136.019    3.000
+ 8CY      H21    N30    C27     111.965    3.000
+ 8CY      N30    C27    O29     125.241    3.000
+ 8CY      N30    C27    C26     110.359    3.000
+ 8CY      O29    C27    C26     124.398    3.000
+ 8CY      C27    C26    H22     109.054    3.000
+ 8CY      C27    C26    H23     109.050    3.000
+ 8CY      C27    C26    C25     111.110    3.000
+ 8CY      H22    C26    H23     109.448    3.000
+ 8CY      H22    C26    C25     109.073    3.000
+ 8CY      H23    C26    C25     109.086    3.000
+ 8CY      C26    C25    H24     109.031    3.000
+ 8CY      C26    C25    H25     109.005    3.000
+ 8CY      C26    C25    C24     111.241    3.000
+ 8CY      H24    C25    H25     109.490    3.000
+ 8CY      H24    C25    C24     109.025    3.000
+ 8CY      H25    C25    C24     109.028    3.000
+ 8CY      C25    C24    O28     124.257    3.000
+ 8CY      C25    C24    C18     114.099    3.000
+ 8CY      O28    C24    C18     121.553    3.000
+ 8CY      C24    C18    C19     129.453    3.000
+ 8CY      C24    C18    C17     125.205    3.000
+ 8CY      C24    C18    RU      118.684    3.000
+ 8CY      C17    C18    RU       71.295    3.000
+ 8CY      C19    C18    C17     105.171    3.000
+ 8CY      C19    C18    RU       70.848    3.000
+ 8CY      C18    C19    H19     108.340    3.000
+ 8CY      C18    C19    C20     108.531    3.000
+ 8CY      C18    C19    RU       70.730    3.000
+ 8CY      H19    C19    C20     108.340    3.000
+ 8CY      H19    C19    RU      109.500    3.000
+ 8CY      C20    C19    RU       72.415    3.000
+ 8CY      C19    C20    H200    108.340    3.000
+ 8CY      C19    C20    C16     107.781    3.000
+ 8CY      C19    C20    RU       69.723    3.000
+ 8CY      C16    C20    RU       72.819    3.000
+ 8CY      H200   C20    C16     108.340    3.000
+ 8CY      H200   C20    RU      109.500    3.000
+ 8CY      C19    RU     C17      62.551    3.000
+ 8CY      C19    RU     C12     136.747    3.000
+ 8CY      C19    RU     C13     170.963    3.000
+ 8CY      C19    RU     C14     138.794    3.000
+ 8CY      C19    RU     C15     110.917    3.000
+ 8CY      C19    RU     C16      61.684    3.000
+ 8CY      C19    RU     C11     110.079    3.000
+ 8CY      C19    RU     C18      38.422    3.000
+ 8CY      C19    RU     C20      37.862    3.000
+ 8CY      C17    RU     C12     121.492    3.000
+ 8CY      C17    RU     C13     125.114    3.000
+ 8CY      C12    RU     C13      36.881    3.000
+ 8CY      C17    RU     C14     149.522    3.000
+ 8CY      C12    RU     C14      62.176    3.000
+ 8CY      C13    RU     C14      37.199    3.000
+ 8CY      C17    RU     C15     173.256    3.000
+ 8CY      C12    RU     C15      61.580    3.000
+ 8CY      C13    RU     C15      61.237    3.000
+ 8CY      C14    RU     C15      36.766    3.000
+ 8CY      C17    RU     C16      36.885    3.000
+ 8CY      C12    RU     C16     150.097    3.000
+ 8CY      C13    RU     C16     127.159    3.000
+ 8CY      C14    RU     C16     123.614    3.000
+ 8CY      C15    RU     C16     142.980    3.000
+ 8CY      C17    RU     C11     142.204    3.000
+ 8CY      C12    RU     C11      36.946    3.000
+ 8CY      C13    RU     C11      61.034    3.000
+ 8CY      C14    RU     C11      61.269    3.000
+ 8CY      C15    RU     C11      36.316    3.000
+ 8CY      C16    RU     C11     171.686    3.000
+ 8CY      C18    RU     C20      63.796    3.000
+ 8CY      C17    RU     C18      37.960    3.000
+ 8CY      C12    RU     C18     114.563    3.000
+ 8CY      C13    RU     C18     143.844    3.000
+ 8CY      C14    RU     C18     172.453    3.000
+ 8CY      C15    RU     C18     135.846    3.000
+ 8CY      C16    RU     C18      62.880    3.000
+ 8CY      C11    RU     C18     111.794    3.000
+ 8CY      C17    RU     C20      61.762    3.000
+ 8CY      C12    RU     C20     173.231    3.000
+ 8CY      C13    RU     C20     147.610    3.000
+ 8CY      C14    RU     C20     118.553    3.000
+ 8CY      C15    RU     C20     114.505    3.000
+ 8CY      C16    RU     C20      36.020    3.000
+ 8CY      C11    RU     C20     136.628    3.000
+ 8CY      RU     C17    H170    109.500    3.000
+ 8CY      RU     C17    C16      73.528    3.000
+ 8CY      RU     C17    C18      70.746    3.000
+ 8CY      C16    C17    C18     109.577    3.000
+ 8CY      H170   C17    C16     108.340    3.000
+ 8CY      H170   C17    C18     108.340    3.000
+ 8CY      RU     C12    H120    109.500    3.000
+ 8CY      RU     C12    C11      71.805    3.000
+ 8CY      RU     C12    C13      72.352    3.000
+ 8CY      C11    C12    C13     107.111    3.000
+ 8CY      H120   C12    C11     108.340    3.000
+ 8CY      H120   C12    C13     108.340    3.000
+ 8CY      RU     C13    H13     109.500    3.000
+ 8CY      RU     C13    C12      70.767    3.000
+ 8CY      RU     C13    C14      71.595    3.000
+ 8CY      C12    C13    C14     108.462    3.000
+ 8CY      H13    C13    C12     108.340    3.000
+ 8CY      H13    C13    C14     108.340    3.000
+ 8CY      RU     C14    H14     109.500    3.000
+ 8CY      RU     C14    C13      71.206    3.000
+ 8CY      RU     C14    C15      70.891    3.000
+ 8CY      C13    C14    C15     106.404    3.000
+ 8CY      H14    C14    C13     108.340    3.000
+ 8CY      H14    C14    C15     108.340    3.000
+ 8CY      RU     C15    H15     109.500    3.000
+ 8CY      RU     C15    C11      71.856    3.000
+ 8CY      RU     C15    C14      72.343    3.000
+ 8CY      C11    C15    C14     109.056    3.000
+ 8CY      H15    C15    C11     108.340    3.000
+ 8CY      H15    C15    C14     108.340    3.000
+ 8CY      RU     C16    H160    109.500    3.000
+ 8CY      RU     C16    C17      69.587    3.000
+ 8CY      RU     C16    C20      71.161    3.000
+ 8CY      C17    C16    C20     108.911    3.000
+ 8CY      H160   C16    C17     108.340    3.000
+ 8CY      H160   C16    C20     108.340    3.000
+ 8CY      RU     C11    H110    109.500    3.000
+ 8CY      RU     C11    C12      71.249    3.000
+ 8CY      RU     C11    C15      71.829    3.000
+ 8CY      C12    C11    C15     108.931    3.000
+ 8CY      H110   C11    C12     108.340    3.000
+ 8CY      H110   C11    C15     108.340    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 8CY      var_1            O1     C32    C31    N30              145.661           20.000   3
+ 8CY      var_2            C32    C31    C34    N33              -69.143           20.000   3
+ 8CY      var_3            C31    C34    S49    C1               168.106           20.000   3
+ 8CY      var_4            C31    C34    N33    C51             -176.037           20.000   3
+ 8CY      var_5            C34    N33    C51    C50               20.690           20.000   2
+ 8CY      var_6            N33    C51    C63    O65             -116.878           20.000   3
+ 8CY      var_7            N33    C51    C50    C1                 3.809           20.000   3
+ 8CY      var_8            C51    C50    C52    H16               -3.976           20.000   3
+ 8CY      var_9            C51    C50    C1     S49               11.756           20.000   3
+ 8CY      var_10           C50    C1     S49    C34              -37.664           20.000   3
+ 8CY      var_11           C32    C31    N30    C27             -128.951           20.000   3
+ 8CY      var_12           C31    N30    C27    C26             -175.676           20.000   2
+ 8CY      var_13           N30    C27    C26    C25             -170.020           20.000   3
+ 8CY      var_14           C27    C26    C25    C24             -166.770           20.000   3
+ 8CY      var_15           C26    C25    C24    C18              169.035           20.000   3
+ 8CY      var_16           C25    C24    C18    C19              168.209           20.000   3
+ 8CY      var_17           C24    C18    RU     C19              125.223           20.000   3
+ 8CY      var_18           C24    C18    C19    RU              -111.854           20.000   3
+ 8CY      var_19           C18    C19    C20    C16               -1.432           20.000   3
+ 8CY      var_20           C18    C19    RU     C11              100.094           20.000   3
+ 8CY      var_21           C19    RU     C17    C16              -78.561           20.000   3
+ 8CY      var_22           RU     C17    C18    C24              112.414           20.000   3
+ 8CY      var_23           C19    RU     C12    C11               54.569           20.000   3
+ 8CY      var_24           C19    RU     C13    C12              -49.182           20.000   3
+ 8CY      var_25           C19    RU     C14    C13             -167.154           20.000   3
+ 8CY      var_26           C19    RU     C15    C11              -95.773           20.000   3
+ 8CY      var_27           C19    RU     C16    C17               81.120           20.000   3
+ 8CY      var_28           RU     C16    C20    C19               61.309           20.000   3
+ 8CY      var_29           C19    RU     C11    C12             -143.526           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 8CY      chir_10          C31    C34    C32    N30       negativ
+ 8CY      chir_11          C34    C31    S49    N33       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 8CY      plan-1            C32       0.020
+ 8CY      plan-1            C31       0.020
+ 8CY      plan-1            O67       0.020
+ 8CY      plan-1            O1        0.020
+ 8CY      plan-2            C50       0.020
+ 8CY      plan-2            C1        0.020
+ 8CY      plan-2            C52       0.020
+ 8CY      plan-2            C51       0.020
+ 8CY      plan-3            C51       0.020
+ 8CY      plan-3            C50       0.020
+ 8CY      plan-3            C63       0.020
+ 8CY      plan-3            N33       0.020
+ 8CY      plan-3            H20       0.020
+ 8CY      plan-4            C63       0.020
+ 8CY      plan-4            C51       0.020
+ 8CY      plan-4            O65       0.020
+ 8CY      plan-4            O64       0.020
+ 8CY      plan-5            N33       0.020
+ 8CY      plan-5            C34       0.020
+ 8CY      plan-5            C51       0.020
+ 8CY      plan-5            H20       0.020
+ 8CY      plan-6            N30       0.020
+ 8CY      plan-6            C31       0.020
+ 8CY      plan-6            C27       0.020
+ 8CY      plan-6            H21       0.020
+ 8CY      plan-7            C27       0.020
+ 8CY      plan-7            N30       0.020
+ 8CY      plan-7            O29       0.020
+ 8CY      plan-7            C26       0.020
+ 8CY      plan-7            H21       0.020
+ 8CY      plan-8            C24       0.020
+ 8CY      plan-8            C18       0.020
+ 8CY      plan-8            C25       0.020
+ 8CY      plan-8            O28       0.020
+# ------------------------------------------------------

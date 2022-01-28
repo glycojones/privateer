@@ -1,0 +1,680 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EPX      EPX 'EPOXOMICIN                          ' non-polymer       103  46 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_EPX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ EPX           O3     O    O         0.000      0.000    0.000    0.000
+ EPX           C17    C    C         0.000     -0.679   -0.889   -0.467
+ EPX           N5     N    NH1       0.000     -0.111   -1.835   -1.240
+ EPX           HN51   H    H         0.000     -0.685   -2.539   -1.681
+ EPX           C20    C    CH1       0.000      1.340   -1.842   -1.442
+ EPX           H20    H    H         0.000      1.751   -0.856   -1.182
+ EPX           C21    C    CT        0.000      1.652   -2.154   -2.907
+ EPX           O8     O    O2        0.000      0.548   -1.758   -3.720
+ EPX           C22    C    CH1       0.000      0.321   -0.371   -3.477
+ EPX           H22    H    H         0.000      0.145   -0.212   -2.404
+ EPX           C30    C    CH3       0.000     -0.906    0.090   -4.267
+ EPX           H303   H    H         0.000     -1.075    1.121   -4.088
+ EPX           H302   H    H         0.000     -0.739   -0.064   -5.302
+ EPX           H301   H    H         0.000     -1.754   -0.465   -3.960
+ EPX           C32    C    CH1       0.000      1.541    0.437   -3.919
+ EPX           H32    H    H         0.000      1.747    0.240   -4.980
+ EPX           C31    C    C1        0.000      1.269    1.907   -3.725
+ EPX           H31    H    H         0.000      0.409    2.360   -4.190
+ EPX           O5     O    O         0.000      2.013    2.576   -3.050
+ EPX           N4     N    NH1       0.000      2.707    0.046   -3.114
+ EPX           HN41   H    H         0.000      3.262    0.648   -2.524
+ EPX           C29    C    CT        0.000      2.906   -1.391   -3.334
+ EPX           C27    C    CH2       0.000      4.100   -1.872   -2.508
+ EPX           H271   H    H         0.000      4.223   -2.948   -2.641
+ EPX           H272   H    H         0.000      3.921   -1.655   -1.453
+ EPX           O7     O    OH1       0.000      5.282   -1.197   -2.941
+ EPX           HO71   H    H         0.000      6.036   -1.502   -2.418
+ EPX           C28    C    CH3       0.000      3.178   -1.646   -4.818
+ EPX           H283   H    H         0.000      3.322   -2.683   -4.979
+ EPX           H282   H    H         0.000      2.353   -1.312   -5.392
+ EPX           H281   H    H         0.000      4.049   -1.120   -5.114
+ EPX           O6     O    OH1       0.000      1.874   -3.557   -3.058
+ EPX           HO61   H    H         0.000      1.082   -4.039   -2.786
+ EPX           C26    C    CH2       0.000      1.973   -2.911   -0.549
+ EPX           H261   H    H         0.000      3.041   -2.981   -0.766
+ EPX           H262   H    H         0.000      1.499   -3.875   -0.744
+ EPX           C23    C    CH1       0.000      1.774   -2.531    0.921
+ EPX           H23    H    H         0.000      0.705   -2.366    1.115
+ EPX           C24    C    CH3       0.000      2.550   -1.249    1.226
+ EPX           H243   H    H         0.000      2.136   -0.444    0.675
+ EPX           H242   H    H         0.000      2.488   -1.036    2.262
+ EPX           H241   H    H         0.000      3.566   -1.377    0.953
+ EPX           C25    C    CH3       0.000      2.286   -3.662    1.813
+ EPX           H253   H    H         0.000      1.749   -4.551    1.603
+ EPX           H252   H    H         0.000      3.317   -3.822    1.627
+ EPX           H251   H    H         0.000      2.149   -3.401    2.831
+ EPX           C16    C    CH1       0.000     -2.158   -0.936   -0.183
+ EPX           H16    H    H         0.000     -2.435   -1.946    0.151
+ EPX           C18    C    C         0.000     -2.922   -0.595   -1.437
+ EPX           C19    C    CH3       0.000     -3.241   -1.672   -2.440
+ EPX           H193   H    H         0.000     -2.344   -2.137   -2.759
+ EPX           H192   H    H         0.000     -3.873   -2.396   -1.995
+ EPX           H191   H    H         0.000     -3.732   -1.244   -3.276
+ EPX           O4     O    O         0.000     -3.277    0.540   -1.636
+ EPX           N3     N    NH1       0.000     -2.485    0.031    0.866
+ EPX           HN31   H    H         0.000     -1.937    0.873    0.965
+ EPX           C11    C    C         0.000     -3.516   -0.203    1.701
+ EPX           O2     O    O         0.000     -4.174   -1.214    1.584
+ EPX           C10    C    CH1       0.000     -3.854    0.792    2.780
+ EPX           H10    H    H         0.000     -4.097    1.761    2.321
+ EPX           C12    C    CH1       0.000     -2.653    0.957    3.714
+ EPX           H12    H    H         0.000     -1.789    1.318    3.139
+ EPX           C14    C    CH2       0.000     -2.313   -0.391    4.352
+ EPX           H141   H    H         0.000     -2.070   -1.112    3.569
+ EPX           H142   H    H         0.000     -3.173   -0.750    4.921
+ EPX           C15    C    CH3       0.000     -1.113   -0.226    5.286
+ EPX           H153   H    H         0.000     -0.277    0.123    4.735
+ EPX           H152   H    H         0.000     -1.347    0.474    6.047
+ EPX           H151   H    H         0.000     -0.875   -1.159    5.729
+ EPX           C13    C    CH3       0.000     -2.995    1.968    4.810
+ EPX           H133   H    H         0.000     -2.164    2.083    5.457
+ EPX           H132   H    H         0.000     -3.229    2.903    4.369
+ EPX           H131   H    H         0.000     -3.828    1.621    5.365
+ EPX           N2     N    NH1       0.000     -5.005    0.311    3.546
+ EPX           HN21   H    H         0.000     -5.163   -0.681    3.650
+ EPX           C4     C    C         0.000     -5.854    1.192    4.113
+ EPX           O9     O    O         0.000     -5.663    2.384    3.990
+ EPX           C1     C    CH1       0.000     -7.038    0.698    4.901
+ EPX           H11    H    H         0.000     -6.795   -0.270    5.359
+ EPX           C5     C    CH1       0.000     -8.239    0.533    3.969
+ EPX           H51    H    H         0.000     -8.483    1.501    3.510
+ EPX           C7     C    CH2       0.000     -9.442    0.030    4.768
+ EPX           H71    H    H         0.000     -9.685    0.751    5.552
+ EPX           H72    H    H         0.000     -9.199   -0.933    5.224
+ EPX           C9     C    CH3       0.000    -10.643   -0.135    3.835
+ EPX           H93    H    H         0.000    -10.881    0.798    3.391
+ EPX           H92    H    H         0.000    -10.410   -0.835    3.073
+ EPX           H91    H    H         0.000    -11.479   -0.483    4.387
+ EPX           C6     C    CH3       0.000     -7.897   -0.479    2.872
+ EPX           H63    H    H         0.000     -8.727   -0.594    2.224
+ EPX           H62    H    H         0.000     -7.063   -0.132    2.317
+ EPX           H61    H    H         0.000     -7.662   -1.413    3.312
+ EPX           N1     N    N         0.000     -7.366    1.665    5.951
+ EPX           C8     C    CH3       0.000     -7.331    1.261    7.358
+ EPX           H83    H    H         0.000     -8.018    0.470    7.518
+ EPX           H82    H    H         0.000     -6.355    0.934    7.610
+ EPX           H81    H    H         0.000     -7.595    2.084    7.971
+ EPX           C2     C    C         0.000     -7.698    2.929    5.623
+ EPX           O1     O    O         0.000     -7.727    3.264    4.458
+ EPX           C3     C    CH3       0.000     -8.035    3.925    6.702
+ EPX           H33    H    H         0.000     -8.868    3.579    7.257
+ EPX           H32A   H    H         0.000     -7.205    4.041    7.350
+ EPX           H31A   H    H         0.000     -8.270    4.859    6.261
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ EPX      O3     n/a    C17    START
+ EPX      C17    O3     C16    .
+ EPX      N5     C17    C20    .
+ EPX      HN51   N5     .      .
+ EPX      C20    N5     C26    .
+ EPX      H20    C20    .      .
+ EPX      C21    C20    O6     .
+ EPX      O8     C21    C22    .
+ EPX      C22    O8     C32    .
+ EPX      H22    C22    .      .
+ EPX      C30    C22    H301   .
+ EPX      H303   C30    .      .
+ EPX      H302   C30    .      .
+ EPX      H301   C30    .      .
+ EPX      C32    C22    N4     .
+ EPX      H32    C32    .      .
+ EPX      C31    C32    O5     .
+ EPX      H31    C31    .      .
+ EPX      O5     C31    .      .
+ EPX      N4     C32    C29    .
+ EPX      HN41   N4     .      .
+ EPX      C29    N4     C28    .
+ EPX      C27    C29    O7     .
+ EPX      H271   C27    .      .
+ EPX      H272   C27    .      .
+ EPX      O7     C27    HO71   .
+ EPX      HO71   O7     .      .
+ EPX      C28    C29    H281   .
+ EPX      H283   C28    .      .
+ EPX      H282   C28    .      .
+ EPX      H281   C28    .      .
+ EPX      O6     C21    HO61   .
+ EPX      HO61   O6     .      .
+ EPX      C26    C20    C23    .
+ EPX      H261   C26    .      .
+ EPX      H262   C26    .      .
+ EPX      C23    C26    C25    .
+ EPX      H23    C23    .      .
+ EPX      C24    C23    H241   .
+ EPX      H243   C24    .      .
+ EPX      H242   C24    .      .
+ EPX      H241   C24    .      .
+ EPX      C25    C23    H251   .
+ EPX      H253   C25    .      .
+ EPX      H252   C25    .      .
+ EPX      H251   C25    .      .
+ EPX      C16    C17    N3     .
+ EPX      H16    C16    .      .
+ EPX      C18    C16    O4     .
+ EPX      C19    C18    H191   .
+ EPX      H193   C19    .      .
+ EPX      H192   C19    .      .
+ EPX      H191   C19    .      .
+ EPX      O4     C18    .      .
+ EPX      N3     C16    C11    .
+ EPX      HN31   N3     .      .
+ EPX      C11    N3     C10    .
+ EPX      O2     C11    .      .
+ EPX      C10    C11    N2     .
+ EPX      H10    C10    .      .
+ EPX      C12    C10    C13    .
+ EPX      H12    C12    .      .
+ EPX      C14    C12    C15    .
+ EPX      H141   C14    .      .
+ EPX      H142   C14    .      .
+ EPX      C15    C14    H151   .
+ EPX      H153   C15    .      .
+ EPX      H152   C15    .      .
+ EPX      H151   C15    .      .
+ EPX      C13    C12    H131   .
+ EPX      H133   C13    .      .
+ EPX      H132   C13    .      .
+ EPX      H131   C13    .      .
+ EPX      N2     C10    C4     .
+ EPX      HN21   N2     .      .
+ EPX      C4     N2     C1     .
+ EPX      O9     C4     .      .
+ EPX      C1     C4     N1     .
+ EPX      H11    C1     .      .
+ EPX      C5     C1     C6     .
+ EPX      H51    C5     .      .
+ EPX      C7     C5     C9     .
+ EPX      H71    C7     .      .
+ EPX      H72    C7     .      .
+ EPX      C9     C7     H91    .
+ EPX      H93    C9     .      .
+ EPX      H92    C9     .      .
+ EPX      H91    C9     .      .
+ EPX      C6     C5     H61    .
+ EPX      H63    C6     .      .
+ EPX      H62    C6     .      .
+ EPX      H61    C6     .      .
+ EPX      N1     C1     C2     .
+ EPX      C8     N1     H81    .
+ EPX      H83    C8     .      .
+ EPX      H82    C8     .      .
+ EPX      H81    C8     .      .
+ EPX      C2     N1     C3     .
+ EPX      O1     C2     .      .
+ EPX      C3     C2     H31A   .
+ EPX      H33    C3     .      .
+ EPX      H32A   C3     .      .
+ EPX      H31A   C3     .      END
+ EPX      C21    C29    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EPX       O9        C4        double    1.220     0.020     1.220     0.020     
+EPX       N1        C1        single    1.455     0.020     1.455     0.020     
+EPX       C2        N1        single    1.330     0.020     1.330     0.020     
+EPX       C8        N1        single    1.455     0.020     1.455     0.020     
+EPX       C1        C4        single    1.500     0.020     1.500     0.020     
+EPX       C5        C1        single    1.524     0.020     1.524     0.020     
+EPX       H11       C1        single    1.089     0.010     0.989     0.005     
+EPX       C3        C2        single    1.500     0.020     1.500     0.020     
+EPX       O1        C2        double    1.220     0.020     1.220     0.020     
+EPX       H31A      C3        single    1.089     0.010     0.989     0.005     
+EPX       H32A      C3        single    1.089     0.010     0.989     0.005     
+EPX       H33       C3        single    1.089     0.010     0.989     0.005     
+EPX       C4        N2        single    1.330     0.020     1.330     0.020     
+EPX       C6        C5        single    1.524     0.020     1.524     0.020     
+EPX       C7        C5        single    1.524     0.020     1.524     0.020     
+EPX       H51       C5        single    1.089     0.010     0.989     0.005     
+EPX       H61       C6        single    1.089     0.010     0.989     0.005     
+EPX       H62       C6        single    1.089     0.010     0.989     0.005     
+EPX       H63       C6        single    1.089     0.010     0.989     0.005     
+EPX       C9        C7        single    1.513     0.020     1.513     0.020     
+EPX       H71       C7        single    1.089     0.010     0.989     0.005     
+EPX       H72       C7        single    1.089     0.010     0.989     0.005     
+EPX       H81       C8        single    1.089     0.010     0.989     0.005     
+EPX       H82       C8        single    1.089     0.010     0.989     0.005     
+EPX       H83       C8        single    1.089     0.010     0.989     0.005     
+EPX       H91       C9        single    1.089     0.010     0.989     0.005     
+EPX       H92       C9        single    1.089     0.010     0.989     0.005     
+EPX       H93       C9        single    1.089     0.010     0.989     0.005     
+EPX       N2        C10       single    1.450     0.020     1.450     0.020     
+EPX       HN21      N2        single    1.016     0.010     0.899     0.007     
+EPX       C10       C11       single    1.500     0.020     1.500     0.020     
+EPX       C12       C10       single    1.524     0.020     1.524     0.020     
+EPX       H10       C10       single    1.089     0.010     0.989     0.005     
+EPX       O2        C11       double    1.220     0.020     1.220     0.020     
+EPX       C11       N3        single    1.330     0.020     1.330     0.020     
+EPX       C13       C12       single    1.524     0.020     1.524     0.020     
+EPX       C14       C12       single    1.524     0.020     1.524     0.020     
+EPX       H12       C12       single    1.089     0.010     0.989     0.005     
+EPX       H131      C13       single    1.089     0.010     0.989     0.005     
+EPX       H132      C13       single    1.089     0.010     0.989     0.005     
+EPX       H133      C13       single    1.089     0.010     0.989     0.005     
+EPX       C15       C14       single    1.513     0.020     1.513     0.020     
+EPX       H141      C14       single    1.089     0.010     0.989     0.005     
+EPX       H142      C14       single    1.089     0.010     0.989     0.005     
+EPX       H151      C15       single    1.089     0.010     0.989     0.005     
+EPX       H152      C15       single    1.089     0.010     0.989     0.005     
+EPX       H153      C15       single    1.089     0.010     0.989     0.005     
+EPX       N3        C16       single    1.450     0.020     1.450     0.020     
+EPX       HN31      N3        single    1.016     0.010     0.899     0.007     
+EPX       C16       C17       single    1.500     0.020     1.500     0.020     
+EPX       C18       C16       single    1.500     0.020     1.500     0.020     
+EPX       H16       C16       single    1.089     0.010     0.989     0.005     
+EPX       N5        C17       single    1.330     0.020     1.330     0.020     
+EPX       C17       O3        double    1.220     0.020     1.220     0.020     
+EPX       O4        C18       double    1.220     0.020     1.220     0.020     
+EPX       C19       C18       single    1.500     0.020     1.500     0.020     
+EPX       H191      C19       single    1.089     0.010     0.989     0.005     
+EPX       H192      C19       single    1.089     0.010     0.989     0.005     
+EPX       H193      C19       single    1.089     0.010     0.989     0.005     
+EPX       C20       N5        single    1.450     0.020     1.450     0.020     
+EPX       HN51      N5        single    1.016     0.010     0.899     0.007     
+EPX       C23       C26       single    1.524     0.020     1.524     0.020     
+EPX       C26       C20       single    1.524     0.020     1.524     0.020     
+EPX       H261      C26       single    1.089     0.010     0.989     0.005     
+EPX       H262      C26       single    1.089     0.010     0.989     0.005     
+EPX       C25       C23       single    1.524     0.020     1.524     0.020     
+EPX       C24       C23       single    1.524     0.020     1.524     0.020     
+EPX       H23       C23       single    1.089     0.010     0.989     0.005     
+EPX       H251      C25       single    1.089     0.010     0.989     0.005     
+EPX       H252      C25       single    1.089     0.010     0.989     0.005     
+EPX       H253      C25       single    1.089     0.010     0.989     0.005     
+EPX       H241      C24       single    1.089     0.010     0.989     0.005     
+EPX       H242      C24       single    1.089     0.010     0.989     0.005     
+EPX       H243      C24       single    1.089     0.010     0.989     0.005     
+EPX       C21       C20       single    1.524     0.020     1.524     0.020     
+EPX       H20       C20       single    1.089     0.010     0.989     0.005     
+EPX       O6        C21       single    1.432     0.020     1.432     0.020     
+EPX       C21       C29       single    1.524     0.020     1.524     0.020     
+EPX       O8        C21       single    1.426     0.020     1.426     0.020     
+EPX       HO61      O6        single    0.970     0.012     0.839     0.014     
+EPX       C29       N4        single    1.450     0.020     1.450     0.020     
+EPX       C28       C29       single    1.524     0.020     1.524     0.020     
+EPX       C27       C29       single    1.524     0.020     1.524     0.020     
+EPX       N4        C32       single    1.450     0.020     1.450     0.020     
+EPX       HN41      N4        single    1.036     0.016     0.914     0.007     
+EPX       C31       C32       single    1.510     0.020     1.510     0.020     
+EPX       C32       C22       single    1.524     0.020     1.524     0.020     
+EPX       H32       C32       single    1.089     0.010     0.989     0.005     
+EPX       O5        C31       double    1.220     0.020     1.220     0.020     
+EPX       H31       C31       single    1.082     0.013     0.975     0.010     
+EPX       C30       C22       single    1.524     0.020     1.524     0.020     
+EPX       C22       O8        single    1.426     0.020     1.426     0.020     
+EPX       H22       C22       single    1.089     0.010     0.989     0.005     
+EPX       H301      C30       single    1.089     0.010     0.989     0.005     
+EPX       H302      C30       single    1.089     0.010     0.989     0.005     
+EPX       H303      C30       single    1.089     0.010     0.989     0.005     
+EPX       H281      C28       single    1.089     0.010     0.989     0.005     
+EPX       H282      C28       single    1.089     0.010     0.989     0.005     
+EPX       H283      C28       single    1.089     0.010     0.989     0.005     
+EPX       O7        C27       single    1.432     0.020     1.432     0.020     
+EPX       H271      C27       single    1.089     0.010     0.989     0.005     
+EPX       H272      C27       single    1.089     0.010     0.989     0.005     
+EPX       HO71      O7        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ EPX      O3     C17    N5      123.000    3.000
+ EPX      O3     C17    C16     120.500    3.000
+ EPX      N5     C17    C16     116.500    3.000
+ EPX      C17    N5     HN51    120.000    3.000
+ EPX      C17    N5     C20     121.500    3.000
+ EPX      HN51   N5     C20     118.500    3.000
+ EPX      N5     C20    H20     108.550    3.000
+ EPX      N5     C20    C21     110.000    3.000
+ EPX      N5     C20    C26     110.000    3.000
+ EPX      H20    C20    C21     108.340    3.000
+ EPX      H20    C20    C26     108.340    3.000
+ EPX      C21    C20    C26     111.000    3.000
+ EPX      C20    C21    O8      109.470    3.000
+ EPX      C20    C21    O6      109.470    3.000
+ EPX      C20    C21    C29     111.000    3.000
+ EPX      O8     C21    O6      109.470    3.000
+ EPX      O8     C21    C29     109.470    3.000
+ EPX      O6     C21    C29     109.470    3.000
+ EPX      C21    O8     C22     111.800    3.000
+ EPX      O8     C22    H22     109.470    3.000
+ EPX      O8     C22    C30     109.470    3.000
+ EPX      O8     C22    C32     109.470    3.000
+ EPX      H22    C22    C30     108.340    3.000
+ EPX      H22    C22    C32     108.340    3.000
+ EPX      C30    C22    C32     111.000    3.000
+ EPX      C22    C30    H303    109.470    3.000
+ EPX      C22    C30    H302    109.470    3.000
+ EPX      C22    C30    H301    109.470    3.000
+ EPX      H303   C30    H302    109.470    3.000
+ EPX      H303   C30    H301    109.470    3.000
+ EPX      H302   C30    H301    109.470    3.000
+ EPX      C22    C32    H32     108.340    3.000
+ EPX      C22    C32    C31     109.470    3.000
+ EPX      C22    C32    N4      110.000    3.000
+ EPX      H32    C32    C31     108.810    3.000
+ EPX      H32    C32    N4      108.550    3.000
+ EPX      C31    C32    N4      111.600    3.000
+ EPX      C32    C31    H31     120.000    3.000
+ EPX      C32    C31    O5      120.500    3.000
+ EPX      H31    C31    O5      123.000    3.000
+ EPX      C32    N4     HN41    118.500    3.000
+ EPX      C32    N4     C29     120.000    3.000
+ EPX      HN41   N4     C29     118.500    3.000
+ EPX      N4     C29    C27     110.000    3.000
+ EPX      N4     C29    C28     110.000    3.000
+ EPX      N4     C29    C21     110.000    3.000
+ EPX      C27    C29    C28     111.000    3.000
+ EPX      C27    C29    C21     111.000    3.000
+ EPX      C28    C29    C21     111.000    3.000
+ EPX      C29    C27    H271    109.470    3.000
+ EPX      C29    C27    H272    109.470    3.000
+ EPX      C29    C27    O7      109.470    3.000
+ EPX      H271   C27    H272    107.900    3.000
+ EPX      H271   C27    O7      109.470    3.000
+ EPX      H272   C27    O7      109.470    3.000
+ EPX      C27    O7     HO71    109.470    3.000
+ EPX      C29    C28    H283    109.470    3.000
+ EPX      C29    C28    H282    109.470    3.000
+ EPX      C29    C28    H281    109.470    3.000
+ EPX      H283   C28    H282    109.470    3.000
+ EPX      H283   C28    H281    109.470    3.000
+ EPX      H282   C28    H281    109.470    3.000
+ EPX      C21    O6     HO61    109.470    3.000
+ EPX      C20    C26    H261    109.470    3.000
+ EPX      C20    C26    H262    109.470    3.000
+ EPX      C20    C26    C23     111.000    3.000
+ EPX      H261   C26    H262    107.900    3.000
+ EPX      H261   C26    C23     109.470    3.000
+ EPX      H262   C26    C23     109.470    3.000
+ EPX      C26    C23    H23     108.340    3.000
+ EPX      C26    C23    C24     111.000    3.000
+ EPX      C26    C23    C25     111.000    3.000
+ EPX      H23    C23    C24     108.340    3.000
+ EPX      H23    C23    C25     108.340    3.000
+ EPX      C24    C23    C25     111.000    3.000
+ EPX      C23    C24    H243    109.470    3.000
+ EPX      C23    C24    H242    109.470    3.000
+ EPX      C23    C24    H241    109.470    3.000
+ EPX      H243   C24    H242    109.470    3.000
+ EPX      H243   C24    H241    109.470    3.000
+ EPX      H242   C24    H241    109.470    3.000
+ EPX      C23    C25    H253    109.470    3.000
+ EPX      C23    C25    H252    109.470    3.000
+ EPX      C23    C25    H251    109.470    3.000
+ EPX      H253   C25    H252    109.470    3.000
+ EPX      H253   C25    H251    109.470    3.000
+ EPX      H252   C25    H251    109.470    3.000
+ EPX      C17    C16    H16     108.810    3.000
+ EPX      C17    C16    C18     111.000    3.000
+ EPX      C17    C16    N3      111.600    3.000
+ EPX      H16    C16    C18     108.810    3.000
+ EPX      H16    C16    N3      108.550    3.000
+ EPX      C18    C16    N3      111.600    3.000
+ EPX      C16    C18    C19     120.000    3.000
+ EPX      C16    C18    O4      120.500    3.000
+ EPX      C19    C18    O4      123.000    3.000
+ EPX      C18    C19    H193    109.470    3.000
+ EPX      C18    C19    H192    109.470    3.000
+ EPX      C18    C19    H191    109.470    3.000
+ EPX      H193   C19    H192    109.470    3.000
+ EPX      H193   C19    H191    109.470    3.000
+ EPX      H192   C19    H191    109.470    3.000
+ EPX      C16    N3     HN31    118.500    3.000
+ EPX      C16    N3     C11     121.500    3.000
+ EPX      HN31   N3     C11     120.000    3.000
+ EPX      N3     C11    O2      123.000    3.000
+ EPX      N3     C11    C10     116.500    3.000
+ EPX      O2     C11    C10     120.500    3.000
+ EPX      C11    C10    H10     108.810    3.000
+ EPX      C11    C10    C12     109.470    3.000
+ EPX      C11    C10    N2      111.600    3.000
+ EPX      H10    C10    C12     108.340    3.000
+ EPX      H10    C10    N2      108.550    3.000
+ EPX      C12    C10    N2      110.000    3.000
+ EPX      C10    C12    H12     108.340    3.000
+ EPX      C10    C12    C14     111.000    3.000
+ EPX      C10    C12    C13     111.000    3.000
+ EPX      H12    C12    C14     108.340    3.000
+ EPX      H12    C12    C13     108.340    3.000
+ EPX      C14    C12    C13     111.000    3.000
+ EPX      C12    C14    H141    109.470    3.000
+ EPX      C12    C14    H142    109.470    3.000
+ EPX      C12    C14    C15     111.000    3.000
+ EPX      H141   C14    H142    107.900    3.000
+ EPX      H141   C14    C15     109.470    3.000
+ EPX      H142   C14    C15     109.470    3.000
+ EPX      C14    C15    H153    109.470    3.000
+ EPX      C14    C15    H152    109.470    3.000
+ EPX      C14    C15    H151    109.470    3.000
+ EPX      H153   C15    H152    109.470    3.000
+ EPX      H153   C15    H151    109.470    3.000
+ EPX      H152   C15    H151    109.470    3.000
+ EPX      C12    C13    H133    109.470    3.000
+ EPX      C12    C13    H132    109.470    3.000
+ EPX      C12    C13    H131    109.470    3.000
+ EPX      H133   C13    H132    109.470    3.000
+ EPX      H133   C13    H131    109.470    3.000
+ EPX      H132   C13    H131    109.470    3.000
+ EPX      C10    N2     HN21    118.500    3.000
+ EPX      C10    N2     C4      121.500    3.000
+ EPX      HN21   N2     C4      120.000    3.000
+ EPX      N2     C4     O9      123.000    3.000
+ EPX      N2     C4     C1      116.500    3.000
+ EPX      O9     C4     C1      120.500    3.000
+ EPX      C4     C1     H11     108.810    3.000
+ EPX      C4     C1     C5      109.470    3.000
+ EPX      C4     C1     N1      111.600    3.000
+ EPX      H11    C1     C5      108.340    3.000
+ EPX      H11    C1     N1      109.470    3.000
+ EPX      C5     C1     N1      105.000    3.000
+ EPX      C1     C5     H51     108.340    3.000
+ EPX      C1     C5     C7      111.000    3.000
+ EPX      C1     C5     C6      111.000    3.000
+ EPX      H51    C5     C7      108.340    3.000
+ EPX      H51    C5     C6      108.340    3.000
+ EPX      C7     C5     C6      111.000    3.000
+ EPX      C5     C7     H71     109.470    3.000
+ EPX      C5     C7     H72     109.470    3.000
+ EPX      C5     C7     C9      111.000    3.000
+ EPX      H71    C7     H72     107.900    3.000
+ EPX      H71    C7     C9      109.470    3.000
+ EPX      H72    C7     C9      109.470    3.000
+ EPX      C7     C9     H93     109.470    3.000
+ EPX      C7     C9     H92     109.470    3.000
+ EPX      C7     C9     H91     109.470    3.000
+ EPX      H93    C9     H92     109.470    3.000
+ EPX      H93    C9     H91     109.470    3.000
+ EPX      H92    C9     H91     109.470    3.000
+ EPX      C5     C6     H63     109.470    3.000
+ EPX      C5     C6     H62     109.470    3.000
+ EPX      C5     C6     H61     109.470    3.000
+ EPX      H63    C6     H62     109.470    3.000
+ EPX      H63    C6     H61     109.470    3.000
+ EPX      H62    C6     H61     109.470    3.000
+ EPX      C1     N1     C8      120.000    3.000
+ EPX      C1     N1     C2      121.000    3.000
+ EPX      C8     N1     C2      127.000    3.000
+ EPX      N1     C8     H83     109.470    3.000
+ EPX      N1     C8     H82     109.470    3.000
+ EPX      N1     C8     H81     109.470    3.000
+ EPX      H83    C8     H82     109.470    3.000
+ EPX      H83    C8     H81     109.470    3.000
+ EPX      H82    C8     H81     109.470    3.000
+ EPX      N1     C2     O1      123.000    3.000
+ EPX      N1     C2     C3      116.500    3.000
+ EPX      O1     C2     C3      123.000    3.000
+ EPX      C2     C3     H33     109.470    3.000
+ EPX      C2     C3     H32A    109.470    3.000
+ EPX      C2     C3     H31A    109.470    3.000
+ EPX      H33    C3     H32A    109.470    3.000
+ EPX      H33    C3     H31A    109.470    3.000
+ EPX      H32A   C3     H31A    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ EPX      CONST_1  O3     C17    N5     C20        0.000    0.000   0
+ EPX      var_1    C17    N5     C20    C26      101.537   20.000   3
+ EPX      var_2    N5     C20    C21    O6       -93.997   20.000   1
+ EPX      var_3    C20    C21    C29    N4       -60.000   20.000   1
+ EPX      var_4    C20    C21    O8     C22       60.000   20.000   1
+ EPX      var_5    C21    O8     C22    C32       60.000   20.000   1
+ EPX      var_6    O8     C22    C30    H301      60.035   20.000   3
+ EPX      var_7    O8     C22    C32    N4       -60.000   20.000   3
+ EPX      var_8    C22    C32    C31    O5       124.009   20.000   1
+ EPX      var_9    C22    C32    N4     C29       60.000   20.000   3
+ EPX      var_10   C32    N4     C29    C28       60.000   20.000   1
+ EPX      var_11   N4     C29    C27    O7       -62.121   20.000   1
+ EPX      var_12   C29    C27    O7     HO71    -179.992   20.000   1
+ EPX      var_13   N4     C29    C28    H281      60.034   20.000   1
+ EPX      var_14   C20    C21    O6     HO61      59.966   20.000   1
+ EPX      var_15   N5     C20    C26    C23      -65.189   20.000   3
+ EPX      var_16   C20    C26    C23    C25      174.613   20.000   3
+ EPX      var_17   C26    C23    C24    H241     -54.666   20.000   3
+ EPX      var_18   C26    C23    C25    H251     179.980   20.000   3
+ EPX      var_19   O3     C17    C16    N3       -10.672   20.000   3
+ EPX      var_20   C17    C16    C18    O4       -94.334   20.000   3
+ EPX      var_21   C16    C18    C19    H191    -176.925   20.000   1
+ EPX      var_22   C17    C16    N3     C11     -149.943   20.000   3
+ EPX      CONST_2  C16    N3     C11    C10      180.000    0.000   0
+ EPX      var_23   N3     C11    C10    N2       179.985   20.000   3
+ EPX      var_24   C11    C10    C12    C13      179.996   20.000   3
+ EPX      var_25   C10    C12    C14    C15      180.000   20.000   3
+ EPX      var_26   C12    C14    C15    H151    -179.998   20.000   3
+ EPX      var_27   C10    C12    C13    H131      60.004   20.000   3
+ EPX      var_28   C11    C10    N2     C4      -150.032   20.000   3
+ EPX      CONST_3  C10    N2     C4     C1       180.000    0.000   0
+ EPX      var_29   N2     C4     C1     N1       149.965   20.000   3
+ EPX      var_30   C4     C1     C5     C6        59.913   20.000   3
+ EPX      var_31   C1     C5     C7     C9       179.960   20.000   3
+ EPX      var_32   C5     C7     C9     H91     -179.986   20.000   3
+ EPX      var_33   C1     C5     C6     H61       60.073   20.000   3
+ EPX      var_34   C4     C1     N1     C2        59.974   20.000   3
+ EPX      var_35   C1     N1     C8     H81     -179.989   20.000   1
+ EPX      CONST_4  C1     N1     C2     C3       180.000    0.000   0
+ EPX      var_36   N1     C2     C3     H31A    -179.937   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ EPX      chir_01  C1     N1     C4     C5        positiv
+ EPX      chir_02  C5     C1     C6     C7        negativ
+ EPX      chir_03  C10    N2     C11    C12       positiv
+ EPX      chir_04  C12    C10    C13    C14       negativ
+ EPX      chir_05  C16    N3     C17    C18       positiv
+ EPX      chir_06  C23    C26    C25    C24       negativ
+ EPX      chir_07  C20    N5     C26    C21       negativ
+ EPX      chir_08  C21    C20    O6     C29       positiv
+ EPX      chir_09  C29    C21    N4     C28       positiv
+ EPX      chir_10  C32    N4     C31    C22       positiv
+ EPX      chir_11  C22    C32    C30    O8        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ EPX      plan-1    N1        0.020
+ EPX      plan-1    C1        0.020
+ EPX      plan-1    C2        0.020
+ EPX      plan-1    C8        0.020
+ EPX      plan-2    C2        0.020
+ EPX      plan-2    N1        0.020
+ EPX      plan-2    C3        0.020
+ EPX      plan-2    O1        0.020
+ EPX      plan-3    C4        0.020
+ EPX      plan-3    O9        0.020
+ EPX      plan-3    C1        0.020
+ EPX      plan-3    N2        0.020
+ EPX      plan-3    HN21      0.020
+ EPX      plan-4    N2        0.020
+ EPX      plan-4    C4        0.020
+ EPX      plan-4    C10       0.020
+ EPX      plan-4    HN21      0.020
+ EPX      plan-5    C11       0.020
+ EPX      plan-5    C10       0.020
+ EPX      plan-5    O2        0.020
+ EPX      plan-5    N3        0.020
+ EPX      plan-5    HN31      0.020
+ EPX      plan-6    N3        0.020
+ EPX      plan-6    C11       0.020
+ EPX      plan-6    C16       0.020
+ EPX      plan-6    HN31      0.020
+ EPX      plan-7    C17       0.020
+ EPX      plan-7    C16       0.020
+ EPX      plan-7    N5        0.020
+ EPX      plan-7    O3        0.020
+ EPX      plan-7    HN51      0.020
+ EPX      plan-8    C18       0.020
+ EPX      plan-8    C16       0.020
+ EPX      plan-8    O4        0.020
+ EPX      plan-8    C19       0.020
+ EPX      plan-9    N5        0.020
+ EPX      plan-9    C17       0.020
+ EPX      plan-9    C20       0.020
+ EPX      plan-9    HN51      0.020
+ EPX      plan-10   N4        0.020
+ EPX      plan-10   C29       0.020
+ EPX      plan-10   C32       0.020
+ EPX      plan-10   HN41      0.020
+ EPX      plan-11   C31       0.020
+ EPX      plan-11   C32       0.020
+ EPX      plan-11   O5        0.020
+ EPX      plan-11   H31       0.020
+# ------------------------------------------------------

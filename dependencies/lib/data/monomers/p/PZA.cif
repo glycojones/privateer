@@ -1,0 +1,146 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PZA     PZA      PYRAZINE-2-CARBOXAMIDE     NON-POLYMER     14     9     .     
+#
+data_comp_PZA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PZA     C       C       C       0       -6.740      2.817       5.476       
+PZA     N1      N       NH2     0       -6.851      3.904       4.727       
+PZA     O       O       O       0       -7.544      2.548       6.379       
+PZA     C1      C       CR16    0       -3.778      1.333       3.885       
+PZA     C2      C       CR16    0       -3.530      0.231       4.692       
+PZA     N2      N       NRD6    0       -4.301      -0.050      5.749       
+PZA     C3      C       CR16    0       -5.325      0.783       5.993       
+PZA     C4      C       CR6     0       -5.582      1.892       5.187       
+PZA     N3      N       NRD6    0       -4.800      2.165       4.125       
+PZA     H1      H       H       0       -7.519      4.477       4.869       
+PZA     H2      H       H       0       -6.262      4.071       4.076       
+PZA     H3      H       H       0       -3.216      1.501       3.151       
+PZA     H5      H       H       0       -2.804      -0.331      4.495       
+PZA     H4      H       H       0       -5.886      0.604       6.738       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PZA       C         N1        SINGLE    n         1.321     0.010     1.321     0.010     
+PZA       C         O         DOUBLE    n         1.237     0.010     1.237     0.010     
+PZA       C         C4        SINGLE    n         1.501     0.010     1.501     0.010     
+PZA       C1        C2        DOUBLE    y         1.381     0.011     1.381     0.011     
+PZA       C1        N3        SINGLE    y         1.332     0.010     1.332     0.010     
+PZA       C2        N2        SINGLE    y         1.331     0.010     1.331     0.010     
+PZA       N2        C3        DOUBLE    y         1.335     0.010     1.335     0.010     
+PZA       C3        C4        SINGLE    y         1.383     0.010     1.383     0.010     
+PZA       C4        N3        DOUBLE    y         1.336     0.010     1.336     0.010     
+PZA       N1        H1        SINGLE    n         1.016     0.010     0.891     0.020     
+PZA       N1        H2        SINGLE    n         1.016     0.010     0.891     0.020     
+PZA       C1        H3        SINGLE    n         1.082     0.013     0.940     0.018     
+PZA       C2        H5        SINGLE    n         1.082     0.013     0.939     0.018     
+PZA       C3        H4        SINGLE    n         1.082     0.013     0.950     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PZA          N1           C           O     123.986    1.50
+PZA          N1           C          C4     116.251    1.50
+PZA           O           C          C4     119.762    1.50
+PZA           C          N1          H1     120.020    1.69
+PZA           C          N1          H2     120.020    1.69
+PZA          H1          N1          H2     119.960    2.83
+PZA          C2          C1          N3     122.000    1.50
+PZA          C2          C1          H3     119.149    1.50
+PZA          N3          C1          H3     118.851    1.50
+PZA          C1          C2          N2     122.003    1.50
+PZA          C1          C2          H5     119.184    1.50
+PZA          N2          C2          H5     118.812    1.50
+PZA          C2          N2          C3     115.999    1.50
+PZA          N2          C3          C4     121.955    1.50
+PZA          N2          C3          H4     118.898    1.50
+PZA          C4          C3          H4     119.147    1.50
+PZA           C          C4          C3     119.932    1.50
+PZA           C          C4          N3     118.115    1.50
+PZA          C3          C4          N3     121.953    1.50
+PZA          C1          N3          C4     116.089    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PZA             sp2_sp2_3           O           C          N1          H1       0.000   10.00     2
+PZA             sp2_sp2_5          N1           C          C4          C3     180.000   10.00     2
+PZA       const_sp2_sp2_1          N3          C1          C2          N2       0.000   10.00     2
+PZA              const_15          C2          C1          N3          C4       0.000   10.00     2
+PZA       const_sp2_sp2_5          C1          C2          N2          C3       0.000   10.00     2
+PZA       const_sp2_sp2_7          C4          C3          N2          C2       0.000   10.00     2
+PZA              const_10          N2          C3          C4           C     180.000   10.00     2
+PZA              const_14           C          C4          N3          C1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PZA    plan-1           C   0.020
+PZA    plan-1          C1   0.020
+PZA    plan-1          C2   0.020
+PZA    plan-1          C3   0.020
+PZA    plan-1          C4   0.020
+PZA    plan-1          H3   0.020
+PZA    plan-1          H4   0.020
+PZA    plan-1          H5   0.020
+PZA    plan-1          N2   0.020
+PZA    plan-1          N3   0.020
+PZA    plan-2           C   0.020
+PZA    plan-2          C4   0.020
+PZA    plan-2          N1   0.020
+PZA    plan-2           O   0.020
+PZA    plan-3           C   0.020
+PZA    plan-3          H1   0.020
+PZA    plan-3          H2   0.020
+PZA    plan-3          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PZA SMILES           ACDLabs              10.04 "O=C(N)c1nccnc1"
+PZA SMILES_CANONICAL CACTVS               3.341 "NC(=O)c1cnccn1"
+PZA SMILES           CACTVS               3.341 "NC(=O)c1cnccn1"
+PZA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cnc(cn1)C(=O)N"
+PZA SMILES           "OpenEye OEToolkits" 1.5.0 "c1cnc(cn1)C(=O)N"
+PZA InChI            InChI                1.03  "InChI=1S/C5H5N3O/c6-5(9)4-3-7-1-2-8-4/h1-3H,(H2,6,9)"
+PZA InChIKey         InChI                1.03  IPEHBUMCGVEMRF-UHFFFAOYSA-N
+PZA ?                acedrg               202         "dictionary generator"                  
+PZA ?                acedrg_database      11          "data source"                           
+PZA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PZA ?                refmac5              5.8.0189    "optimization tool"                     

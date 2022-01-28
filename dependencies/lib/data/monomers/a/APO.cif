@@ -1,0 +1,171 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+APO      APO 'D-2-AMINO-3-PHOSPHONO-PROPIONIC ACID' non-polymer        17  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_APO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ APO           O10    O    O         0.000      0.000    0.000    0.000
+ APO           P7     P    P         0.000     -0.871   -1.019   -0.625
+ APO           O8     O    OH1       0.000     -0.690   -2.423    0.144
+ APO           HO8    H    H         0.000      0.178   -2.847    0.178
+ APO           O9     O    OH1       0.000     -0.465   -1.200   -2.171
+ APO           HO9    H    H         0.000     -0.941   -1.833   -2.725
+ APO           C6     C    CH2       0.000     -2.610   -0.486   -0.511
+ APO           HC61   H    H         0.000     -2.886   -0.365    0.539
+ APO           HC62   H    H         0.000     -3.253   -1.239   -0.971
+ APO           C1     C    CH1       0.000     -2.782    0.847   -1.240
+ APO           HC1    H    H         0.000     -2.135    1.604   -0.777
+ APO           N2     N    NH2       0.000     -2.411    0.684   -2.653
+ APO           HN22   H    H         0.000     -1.658    1.232   -3.050
+ APO           HN21   H    H         0.000     -2.906    0.021   -3.239
+ APO           C3     C    C         0.000     -4.219    1.289   -1.149
+ APO           O4     O    OC       -0.500     -5.040    0.942   -2.027
+ APO           O5     O    OC       -0.500     -4.593    2.003   -0.192
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ APO      O10    n/a    P7     START
+ APO      P7     O10    C6     .
+ APO      O8     P7     HO8    .
+ APO      HO8    O8     .      .
+ APO      O9     P7     HO9    .
+ APO      HO9    O9     .      .
+ APO      C6     P7     C1     .
+ APO      HC61   C6     .      .
+ APO      HC62   C6     .      .
+ APO      C1     C6     C3     .
+ APO      HC1    C1     .      .
+ APO      N2     C1     HN21   .
+ APO      HN22   N2     .      .
+ APO      HN21   N2     .      .
+ APO      C3     C1     O5     .
+ APO      O4     C3     .      .
+ APO      O5     C3     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+APO       N2        C1        single    1.450     0.020     1.450     0.020     
+APO       C3        C1        single    1.500     0.020     1.500     0.020     
+APO       C1        C6        single    1.524     0.020     1.524     0.020     
+APO       HC1       C1        single    1.089     0.010     0.989     0.005     
+APO       HN21      N2        single    1.036     0.016     0.914     0.007     
+APO       HN22      N2        single    1.036     0.016     0.914     0.007     
+APO       O4        C3        deloc     1.250     0.020     1.250     0.020     
+APO       O5        C3        deloc     1.250     0.020     1.250     0.020     
+APO       C6        P7        single    1.812     0.020     1.812     0.020     
+APO       HC61      C6        single    1.089     0.010     0.989     0.005     
+APO       HC62      C6        single    1.089     0.010     0.989     0.005     
+APO       O8        P7        single    1.610     0.020     1.610     0.020     
+APO       O9        P7        single    1.610     0.020     1.610     0.020     
+APO       P7        O10       double    1.480     0.020     1.480     0.020     
+APO       HO8       O8        single    0.970     0.012     0.839     0.014     
+APO       HO9       O9        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ APO      O10    P7     O8      109.500    3.000
+ APO      O10    P7     O9      109.500    3.000
+ APO      O10    P7     C6      109.500    3.000
+ APO      O8     P7     O9      109.500    3.000
+ APO      O8     P7     C6      109.500    3.000
+ APO      O9     P7     C6      109.500    3.000
+ APO      P7     O8     HO8     120.000    3.000
+ APO      P7     O9     HO9     120.000    3.000
+ APO      P7     C6     HC61    109.500    3.000
+ APO      P7     C6     HC62    109.500    3.000
+ APO      P7     C6     C1      109.500    3.000
+ APO      HC61   C6     HC62    107.900    3.000
+ APO      HC61   C6     C1      109.470    3.000
+ APO      HC62   C6     C1      109.470    3.000
+ APO      C6     C1     HC1     108.340    3.000
+ APO      C6     C1     N2      109.470    3.000
+ APO      C6     C1     C3      109.470    3.000
+ APO      HC1    C1     N2      109.470    3.000
+ APO      HC1    C1     C3      108.810    3.000
+ APO      N2     C1     C3      109.470    3.000
+ APO      C1     N2     HN22    120.000    3.000
+ APO      C1     N2     HN21    120.000    3.000
+ APO      HN22   N2     HN21    120.000    3.000
+ APO      C1     C3     O4      118.500    3.000
+ APO      C1     C3     O5      118.500    3.000
+ APO      O4     C3     O5      123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ APO      var_1    O10    P7     O8     HO8      -60.032   20.000   1
+ APO      var_2    O10    P7     O9     HO9      179.985   20.000   1
+ APO      var_3    O10    P7     C6     C1        60.045   20.000   1
+ APO      var_4    P7     C6     C1     C3       179.946   20.000   3
+ APO      var_5    C6     C1     N2     HN21      59.982   20.000   1
+ APO      var_6    C6     C1     C3     O5        89.942   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ APO      chir_01  C1     N2     C3     C6        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ APO      plan-1    N2        0.020
+ APO      plan-1    C1        0.020
+ APO      plan-1    HN21      0.020
+ APO      plan-1    HN22      0.020
+ APO      plan-2    C3        0.020
+ APO      plan-2    C1        0.020
+ APO      plan-2    O4        0.020
+ APO      plan-2    O5        0.020
+# ------------------------------------------------------

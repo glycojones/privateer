@@ -1,0 +1,213 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TZB      TZB '(4S)-2-[(1E)-1-AMINOPROP-1-ENYL]-4,5' non-polymer        21  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TZB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TZB           O71    O    OC       -0.500      0.000    0.000    0.000
+ TZB           C6     C    C         0.000     -1.223    0.237    0.113
+ TZB           O7     O    OC       -0.500     -1.725    1.224   -0.469
+ TZB           C5     C    CH1       0.000     -2.092   -0.664    0.952
+ TZB           HC5    H    H         0.000     -1.708   -1.691    0.885
+ TZB           C4     C    CH2       0.000     -2.013   -0.197    2.423
+ TZB           HC42   H    H         0.000     -1.419    0.707    2.569
+ TZB           HC41   H    H         0.000     -1.672   -0.970    3.115
+ TZB           S6     S    S2        0.000     -3.780    0.173    2.741
+ TZB           N1     N    N         0.000     -3.438   -0.635    0.429
+ TZB           C2     C    C         0.000     -4.446   -0.252    1.146
+ TZB           C21    C    C         0.000     -5.861   -0.180    0.725
+ TZB           N      N    NH2       0.000     -6.223   -0.548   -0.574
+ TZB           HN2    H    H         0.000     -7.196   -0.506   -0.886
+ TZB           HN1    H    H         0.000     -5.524   -0.870   -1.248
+ TZB           C31    C    C1        0.000     -6.793    0.235    1.583
+ TZB           HC3    H    H         0.000     -6.514    0.518    2.584
+ TZB           C41    C    CH3       0.000     -8.235    0.309    1.153
+ TZB           HC3A   H    H         0.000     -8.325    0.975    0.336
+ TZB           HC2    H    H         0.000     -8.566   -0.654    0.863
+ TZB           HC1    H    H         0.000     -8.825    0.658    1.960
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TZB      O71    n/a    C6     START
+ TZB      C6     O71    C5     .
+ TZB      O7     C6     .      .
+ TZB      C5     C6     N1     .
+ TZB      HC5    C5     .      .
+ TZB      C4     C5     S6     .
+ TZB      HC42   C4     .      .
+ TZB      HC41   C4     .      .
+ TZB      S6     C4     .      .
+ TZB      N1     C5     C2     .
+ TZB      C2     N1     C21    .
+ TZB      C21    C2     C31    .
+ TZB      N      C21    HN1    .
+ TZB      HN2    N      .      .
+ TZB      HN1    N      .      .
+ TZB      C31    C21    C41    .
+ TZB      HC3    C31    .      .
+ TZB      C41    C31    HC1    .
+ TZB      HC3A   C41    .      .
+ TZB      HC2    C41    .      .
+ TZB      HC1    C41    .      END
+ TZB      C2     S6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TZB       C41       C31       single    1.510     0.020     1.510     0.020     
+TZB       C31       C21       double    1.340     0.020     1.340     0.020     
+TZB       HC3       C31       single    1.082     0.013     0.975     0.010     
+TZB       HC1       C41       single    1.089     0.010     0.989     0.005     
+TZB       HC2       C41       single    1.089     0.010     0.989     0.005     
+TZB       HC3A      C41       single    1.089     0.010     0.989     0.005     
+TZB       N         C21       single    1.332     0.020     1.332     0.020     
+TZB       C21       C2        single    1.460     0.020     1.460     0.020     
+TZB       HN1       N         single    1.016     0.010     0.899     0.007     
+TZB       HN2       N         single    1.016     0.010     0.899     0.007     
+TZB       C2        S6        single    1.665     0.020     1.665     0.020     
+TZB       C2        N1        double    1.260     0.020     1.260     0.020     
+TZB       S6        C4        single    1.762     0.020     1.762     0.020     
+TZB       C4        C5        single    1.524     0.020     1.524     0.020     
+TZB       HC41      C4        single    1.089     0.010     0.989     0.005     
+TZB       HC42      C4        single    1.089     0.010     0.989     0.005     
+TZB       C5        C6        single    1.500     0.020     1.500     0.020     
+TZB       N1        C5        single    1.455     0.020     1.455     0.020     
+TZB       HC5       C5        single    1.089     0.010     0.989     0.005     
+TZB       O7        C6        deloc     1.250     0.020     1.250     0.020     
+TZB       C6        O71       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TZB      O71    C6     O7      123.000    3.000
+ TZB      O71    C6     C5      118.500    3.000
+ TZB      O7     C6     C5      118.500    3.000
+ TZB      C6     C5     HC5     108.810    3.000
+ TZB      C6     C5     C4      109.470    3.000
+ TZB      C6     C5     N1      111.600    3.000
+ TZB      HC5    C5     C4      108.340    3.000
+ TZB      HC5    C5     N1      109.470    3.000
+ TZB      C4     C5     N1      105.000    3.000
+ TZB      C5     C4     HC42    109.470    3.000
+ TZB      C5     C4     HC41    109.470    3.000
+ TZB      C5     C4     S6      109.500    3.000
+ TZB      HC42   C4     HC41    107.900    3.000
+ TZB      HC42   C4     S6      109.500    3.000
+ TZB      HC41   C4     S6      109.500    3.000
+ TZB      C4     S6     C2       99.025    3.000
+ TZB      C5     N1     C2      121.000    3.000
+ TZB      N1     C2     C21     116.500    3.000
+ TZB      N1     C2     S6      120.000    3.000
+ TZB      C21    C2     S6      120.000    3.000
+ TZB      C2     C21    N       120.000    3.000
+ TZB      C2     C21    C31     120.000    3.000
+ TZB      N      C21    C31     120.000    3.000
+ TZB      C21    N      HN2     120.000    3.000
+ TZB      C21    N      HN1     120.000    3.000
+ TZB      HN2    N      HN1     120.000    3.000
+ TZB      C21    C31    HC3     120.000    3.000
+ TZB      C21    C31    C41     120.500    3.000
+ TZB      HC3    C31    C41     120.000    3.000
+ TZB      C31    C41    HC3A    109.470    3.000
+ TZB      C31    C41    HC2     109.470    3.000
+ TZB      C31    C41    HC1     109.470    3.000
+ TZB      HC3A   C41    HC2     109.470    3.000
+ TZB      HC3A   C41    HC1     109.470    3.000
+ TZB      HC2    C41    HC1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TZB      var_1    O71    C6     C5     N1      -151.506   20.000   3
+ TZB      var_2    C6     C5     C4     S6       120.000   20.000   3
+ TZB      var_3    C5     C4     S6     C2         0.000   20.000   1
+ TZB      var_4    C6     C5     N1     C2      -120.000   20.000   3
+ TZB      CONST_1  C5     N1     C2     C21      180.000    0.000   0
+ TZB      var_5    N1     C2     S6     C4         0.000   20.000   1
+ TZB      var_6    N1     C2     C21    C31      179.903   20.000   1
+ TZB      CONST_2  C2     C21    N      HN1        0.000    0.000   0
+ TZB      CONST_3  C2     C21    C31    C41      179.988    0.000   0
+ TZB      var_7    C21    C31    C41    HC1     -179.981   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TZB      chir_01  C5     C4     C6     N1        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TZB      plan-1    C31       0.020
+ TZB      plan-1    C41       0.020
+ TZB      plan-1    C21       0.020
+ TZB      plan-1    HC3       0.020
+ TZB      plan-1    N         0.020
+ TZB      plan-1    C2        0.020
+ TZB      plan-1    HN2       0.020
+ TZB      plan-1    HN1       0.020
+ TZB      plan-2    N         0.020
+ TZB      plan-2    C21       0.020
+ TZB      plan-2    HN1       0.020
+ TZB      plan-2    HN2       0.020
+ TZB      plan-3    C2        0.020
+ TZB      plan-3    C21       0.020
+ TZB      plan-3    S6        0.020
+ TZB      plan-3    N1        0.020
+ TZB      plan-4    C6        0.020
+ TZB      plan-4    C5        0.020
+ TZB      plan-4    O7        0.020
+ TZB      plan-4    O71       0.020
+ TZB      plan-5    N1        0.020
+ TZB      plan-5    C2        0.020
+ TZB      plan-5    C5        0.020
+# ------------------------------------------------------

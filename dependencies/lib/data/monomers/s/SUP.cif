@@ -1,0 +1,345 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SUP      SUP 'SUCROSE-6-PHOSHPATE                 ' pyranose           48  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SUP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SUP           C1     C    CH1       0.000      0.000    0.000    0.000
+ SUP           H1     H    H         0.000      0.515    0.766    0.597
+ SUP           O1     O    O2        0.000     -1.391    0.316   -0.079
+ SUP           "C2'"  C    CT        0.000     -1.726    1.006    1.127
+ SUP           "C1'"  C    CH2       0.000     -1.065    0.316    2.321
+ SUP           "H1'1" H    H         0.000     -1.234    0.909    3.223
+ SUP           "H1'2" H    H         0.000      0.008    0.227    2.142
+ SUP           "O1'"  O    OH1       0.000     -1.630   -0.985    2.492
+ SUP           "H1'"  H    H         0.000     -1.301   -1.374    3.314
+ SUP           "O2'"  O    O2        0.000     -3.148    1.020    1.300
+ SUP           "C5'"  C    CH1       0.000     -3.621    2.374    1.371
+ SUP           "H5'"  H    H         0.000     -3.698    2.697    2.418
+ SUP           "C4'"  C    CH1       0.000     -2.554    3.215    0.625
+ SUP           "H4'"  H    H         0.000     -2.705    3.171   -0.462
+ SUP           "O4'"  O    OH1       0.000     -2.547    4.566    1.090
+ SUP           H2     H    H         0.000     -3.408    4.970    0.916
+ SUP           "C3'"  C    CH1       0.000     -1.251    2.472    1.040
+ SUP           "H3'"  H    H         0.000     -0.894    2.826    2.017
+ SUP           "O3'"  O    OH1       0.000     -0.239    2.627    0.043
+ SUP           H3     H    H         0.000     -0.024    3.564   -0.054
+ SUP           "C6'"  C    CH2       0.000     -4.979    2.499    0.676
+ SUP           "H6'1" H    H         0.000     -4.893    2.149   -0.355
+ SUP           "H6'2" H    H         0.000     -5.294    3.545    0.679
+ SUP           "O6'"  O    O2        0.000     -5.944    1.708    1.370
+ SUP           P      P    P         0.000     -7.309    1.788    0.521
+ SUP           O10    O    OP       -0.666     -7.046    1.341   -0.901
+ SUP           O11    O    OP       -0.666     -8.348    0.884    1.149
+ SUP           O12    O    OP       -0.666     -7.817    3.213    0.516
+ SUP           O5     O    O2        0.000      0.162   -1.273    0.621
+ SUP           C5     C    CH1       0.000     -0.664   -2.203   -0.077
+ SUP           H5     H    H         0.000     -1.689   -1.810   -0.132
+ SUP           C6     C    CH2       0.000     -0.671   -3.538    0.670
+ SUP           H61    H    H         0.000      0.355   -3.894    0.787
+ SUP           H62    H    H         0.000     -1.246   -4.270    0.100
+ SUP           O6     O    OH1       0.000     -1.265   -3.361    1.957
+ SUP           HO6    H    H         0.000     -1.340   -4.218    2.397
+ SUP           C4     C    CH1       0.000     -0.124   -2.415   -1.492
+ SUP           H7     H    H         0.000      0.910   -2.784   -1.440
+ SUP           O4     O    OH1       0.000     -0.939   -3.368   -2.178
+ SUP           HO4    H    H         0.000     -0.600   -3.494   -3.075
+ SUP           C3     C    CH1       0.000     -0.154   -1.078   -2.244
+ SUP           H6     H    H         0.000     -1.196   -0.759   -2.388
+ SUP           O3     O    OH1       0.000      0.483   -1.224   -3.515
+ SUP           HO3    H    H         0.000      0.472   -0.376   -3.979
+ SUP           C2     C    CH1       0.000      0.594   -0.031   -1.410
+ SUP           H4     H    H         0.000      1.658   -0.297   -1.355
+ SUP           O2     O    OH1       0.000      0.453    1.255   -2.018
+ SUP           HO2    H    H         0.000      0.920    1.914   -1.486
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SUP      C1     n/a    O5     START
+ SUP      H1     C1     .      .
+ SUP      O1     C1     "C2'"  .
+ SUP      "C2'"  O1     "O2'"  .
+ SUP      "C1'"  "C2'"  "O1'"  .
+ SUP      "H1'1" "C1'"  .      .
+ SUP      "H1'2" "C1'"  .      .
+ SUP      "O1'"  "C1'"  "H1'"  .
+ SUP      "H1'"  "O1'"  .      .
+ SUP      "O2'"  "C2'"  "C5'"  .
+ SUP      "C5'"  "O2'"  "C6'"  .
+ SUP      "H5'"  "C5'"  .      .
+ SUP      "C4'"  "C5'"  "C3'"  .
+ SUP      "H4'"  "C4'"  .      .
+ SUP      "O4'"  "C4'"  H2     .
+ SUP      H2     "O4'"  .      .
+ SUP      "C3'"  "C4'"  "O3'"  .
+ SUP      "H3'"  "C3'"  .      .
+ SUP      "O3'"  "C3'"  H3     .
+ SUP      H3     "O3'"  .      .
+ SUP      "C6'"  "C5'"  "O6'"  .
+ SUP      "H6'1" "C6'"  .      .
+ SUP      "H6'2" "C6'"  .      .
+ SUP      "O6'"  "C6'"  P      .
+ SUP      P      "O6'"  O12    .
+ SUP      O10    P      .      .
+ SUP      O11    P      .      .
+ SUP      O12    P      .      .
+ SUP      O5     C1     .      END
+ SUP      C5     O5     C4     .
+ SUP      H5     C5     .      .
+ SUP      C6     C5     O6     .
+ SUP      H61    C6     .      .
+ SUP      H62    C6     .      .
+ SUP      O6     C6     HO6    .
+ SUP      HO6    O6     .      .
+ SUP      C4     C5     C3     .
+ SUP      H7     C4     .      .
+ SUP      O4     C4     HO4    .
+ SUP      HO4    O4     .      .
+ SUP      C3     C4     C2     .
+ SUP      H6     C3     .      .
+ SUP      O3     C3     HO3    .
+ SUP      HO3    O3     .      .
+ SUP      C2     C3     O2     .
+ SUP      H4     C2     .      .
+ SUP      O2     C2     HO2    .
+ SUP      HO2    O2     .      .
+ SUP      C1     C2     .    ADD
+ SUP      "C2'"  "C3'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SUP       C1        C2        single    1.524     0.020     1.524     0.020     
+SUP       O1        C1        single    1.426     0.020     1.426     0.020     
+SUP       O5        C1        single    1.426     0.020     1.426     0.020     
+SUP       H1        C1        single    1.089     0.010     0.989     0.005     
+SUP       C2        C3        single    1.524     0.020     1.524     0.020     
+SUP       O2        C2        single    1.432     0.020     1.432     0.020     
+SUP       H4        C2        single    1.089     0.010     0.989     0.005     
+SUP       C3        C4        single    1.524     0.020     1.524     0.020     
+SUP       O3        C3        single    1.432     0.020     1.432     0.020     
+SUP       H6        C3        single    1.089     0.010     0.989     0.005     
+SUP       C4        C5        single    1.524     0.020     1.524     0.020     
+SUP       O4        C4        single    1.432     0.020     1.432     0.020     
+SUP       H7        C4        single    1.089     0.010     0.989     0.005     
+SUP       C6        C5        single    1.524     0.020     1.524     0.020     
+SUP       C5        O5        single    1.426     0.020     1.426     0.020     
+SUP       H5        C5        single    1.089     0.010     0.989     0.005     
+SUP       O6        C6        single    1.432     0.020     1.432     0.020     
+SUP       H61       C6        single    1.089     0.010     0.989     0.005     
+SUP       H62       C6        single    1.089     0.010     0.989     0.005     
+SUP       "C2'"     O1        single    1.426     0.020     1.426     0.020     
+SUP       HO2       O2        single    0.970     0.012     0.839     0.014     
+SUP       HO3       O3        single    0.970     0.012     0.839     0.014     
+SUP       HO4       O4        single    0.970     0.012     0.839     0.014     
+SUP       HO6       O6        single    0.970     0.012     0.839     0.014     
+SUP       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+SUP       "O1'"     "C1'"     single    1.432     0.020     1.432     0.020     
+SUP       "H1'1"    "C1'"     single    1.089     0.010     0.989     0.005     
+SUP       "H1'2"    "C1'"     single    1.089     0.010     0.989     0.005     
+SUP       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+SUP       "O2'"     "C2'"     single    1.426     0.020     1.426     0.020     
+SUP       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+SUP       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+SUP       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+SUP       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+SUP       "O4'"     "C4'"     single    1.432     0.020     1.432     0.020     
+SUP       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+SUP       "C6'"     "C5'"     single    1.524     0.020     1.524     0.020     
+SUP       "C5'"     "O2'"     single    1.426     0.020     1.426     0.020     
+SUP       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+SUP       "O6'"     "C6'"     single    1.426     0.020     1.426     0.020     
+SUP       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+SUP       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+SUP       "H1'"     "O1'"     single    0.970     0.012     0.839     0.014     
+SUP       H3        "O3'"     single    0.970     0.012     0.839     0.014     
+SUP       H2        "O4'"     single    0.970     0.012     0.839     0.014     
+SUP       P         "O6'"     single    1.610     0.020     1.610     0.020     
+SUP       O10       P         deloc     1.510     0.020     1.510     0.020     
+SUP       O11       P         deloc     1.510     0.020     1.510     0.020     
+SUP       O12       P         deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SUP      H1     C1     O1      109.470    3.000
+ SUP      H1     C1     O5      109.470    3.000
+ SUP      O1     C1     O5      109.470    3.000
+ SUP      H1     C1     C2      108.340    3.000
+ SUP      O1     C1     C2      109.470    3.000
+ SUP      O5     C1     C2      109.470    3.000
+ SUP      C1     O1     "C2'"   111.800    3.000
+ SUP      O1     "C2'"  "C1'"   109.470    3.000
+ SUP      O1     "C2'"  "O2'"   109.500    3.000
+ SUP      O1     "C2'"  "C3'"   109.470    3.000
+ SUP      "C1'"  "C2'"  "O2'"   109.470    3.000
+ SUP      "C1'"  "C2'"  "C3'"   111.000    3.000
+ SUP      "O2'"  "C2'"  "C3'"   109.470    3.000
+ SUP      "C2'"  "C1'"  "H1'1"  109.470    3.000
+ SUP      "C2'"  "C1'"  "H1'2"  109.470    3.000
+ SUP      "C2'"  "C1'"  "O1'"   109.470    3.000
+ SUP      "H1'1" "C1'"  "H1'2"  107.900    3.000
+ SUP      "H1'1" "C1'"  "O1'"   109.470    3.000
+ SUP      "H1'2" "C1'"  "O1'"   109.470    3.000
+ SUP      "C1'"  "O1'"  "H1'"   109.470    3.000
+ SUP      "C2'"  "O2'"  "C5'"   111.800    3.000
+ SUP      "O2'"  "C5'"  "H5'"   109.470    3.000
+ SUP      "O2'"  "C5'"  "C4'"   109.470    3.000
+ SUP      "O2'"  "C5'"  "C6'"   109.470    3.000
+ SUP      "H5'"  "C5'"  "C4'"   108.340    3.000
+ SUP      "H5'"  "C5'"  "C6'"   108.340    3.000
+ SUP      "C4'"  "C5'"  "C6'"   111.000    3.000
+ SUP      "C5'"  "C4'"  "H4'"   108.340    3.000
+ SUP      "C5'"  "C4'"  "O4'"   109.470    3.000
+ SUP      "C5'"  "C4'"  "C3'"   111.000    3.000
+ SUP      "H4'"  "C4'"  "O4'"   109.470    3.000
+ SUP      "H4'"  "C4'"  "C3'"   108.340    3.000
+ SUP      "O4'"  "C4'"  "C3'"   109.470    3.000
+ SUP      "C4'"  "O4'"  H2      109.470    3.000
+ SUP      "C4'"  "C3'"  "H3'"   108.340    3.000
+ SUP      "C4'"  "C3'"  "O3'"   109.470    3.000
+ SUP      "C4'"  "C3'"  "C2'"   111.000    3.000
+ SUP      "H3'"  "C3'"  "O3'"   109.470    3.000
+ SUP      "H3'"  "C3'"  "C2'"   108.340    3.000
+ SUP      "O3'"  "C3'"  "C2'"   109.470    3.000
+ SUP      "C3'"  "O3'"  H3      109.470    3.000
+ SUP      "C5'"  "C6'"  "H6'1"  109.470    3.000
+ SUP      "C5'"  "C6'"  "H6'2"  109.470    3.000
+ SUP      "C5'"  "C6'"  "O6'"   109.470    3.000
+ SUP      "H6'1" "C6'"  "H6'2"  107.900    3.000
+ SUP      "H6'1" "C6'"  "O6'"   109.470    3.000
+ SUP      "H6'2" "C6'"  "O6'"   109.470    3.000
+ SUP      "C6'"  "O6'"  P       120.500    3.000
+ SUP      "O6'"  P      O10     108.200    3.000
+ SUP      "O6'"  P      O11     108.200    3.000
+ SUP      "O6'"  P      O12     108.200    3.000
+ SUP      O10    P      O11     119.900    3.000
+ SUP      O10    P      O12     119.900    3.000
+ SUP      O11    P      O12     119.900    3.000
+ SUP      C1     O5     C5      111.800    3.000
+ SUP      O5     C5     H5      109.470    3.000
+ SUP      O5     C5     C6      109.470    3.000
+ SUP      O5     C5     C4      109.470    3.000
+ SUP      H5     C5     C6      108.340    3.000
+ SUP      H5     C5     C4      108.340    3.000
+ SUP      C6     C5     C4      111.000    3.000
+ SUP      C5     C6     H61     109.470    3.000
+ SUP      C5     C6     H62     109.470    3.000
+ SUP      C5     C6     O6      109.470    3.000
+ SUP      H61    C6     H62     107.900    3.000
+ SUP      H61    C6     O6      109.470    3.000
+ SUP      H62    C6     O6      109.470    3.000
+ SUP      C6     O6     HO6     109.470    3.000
+ SUP      C5     C4     H7      108.340    3.000
+ SUP      C5     C4     O4      109.470    3.000
+ SUP      C5     C4     C3      111.000    3.000
+ SUP      H7     C4     O4      109.470    3.000
+ SUP      H7     C4     C3      108.340    3.000
+ SUP      O4     C4     C3      109.470    3.000
+ SUP      C4     O4     HO4     109.470    3.000
+ SUP      C4     C3     H6      108.340    3.000
+ SUP      C4     C3     O3      109.470    3.000
+ SUP      C4     C3     C2      111.000    3.000
+ SUP      H6     C3     O3      109.470    3.000
+ SUP      H6     C3     C2      108.340    3.000
+ SUP      O3     C3     C2      109.470    3.000
+ SUP      C3     O3     HO3     109.470    3.000
+ SUP      C3     C2     H4      108.340    3.000
+ SUP      C3     C2     O2      109.470    3.000
+ SUP      C3     C2     C1      111.000    3.000
+ SUP      H4     C2     O2      109.470    3.000
+ SUP      H4     C2     C1      108.340    3.000
+ SUP      O2     C2     C1      109.470    3.000
+ SUP      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SUP      var_1    O5     C1     O1     "C2'"     89.663   20.000   1
+ SUP      var_2    C1     O1     "C2'"  "O2'"   -163.635   20.000   1
+ SUP      var_3    O1     "C2'"  "C3'"  "C4'"     90.000   20.000   1
+ SUP      var_4    O1     "C2'"  "C1'"  "O1'"    -66.076   20.000   1
+ SUP      var_5    "C2'"  "C1'"  "O1'"  "H1'"   -172.400   20.000   1
+ SUP      var_6    O1     "C2'"  "O2'"  "C5'"   -120.000   20.000   1
+ SUP      var_7    "C2'"  "O2'"  "C5'"  "C6'"    150.000   20.000   1
+ SUP      var_8    "O2'"  "C5'"  "C4'"  "C3'"    -30.000   20.000   3
+ SUP      var_9    "C5'"  "C4'"  "O4'"  H2       -61.467   20.000   1
+ SUP      var_10   "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ SUP      var_11   "C4'"  "C3'"  "O3'"  H3        61.421   20.000   1
+ SUP      var_12   "O2'"  "C5'"  "C6'"  "O6'"     63.713   20.000   3
+ SUP      var_13   "C5'"  "C6'"  "O6'"  P       -175.419   20.000   1
+ SUP      var_14   "C6'"  "O6'"  P      O12      -64.186   20.000   1
+ SUP      var_15   C1     O5     C5     C4        60.000   20.000   1
+ SUP      var_16   O5     C5     C6     O6        63.872   20.000   3
+ SUP      var_17   C5     C6     O6     HO6      175.023   20.000   1
+ SUP      var_18   O5     C5     C4     C3       -60.000   20.000   3
+ SUP      var_19   C5     C4     O4     HO4      179.496   20.000   1
+ SUP      var_20   C5     C4     C3     C2        60.000   20.000   3
+ SUP      var_21   C4     C3     O3     HO3     -179.198   20.000   1
+ SUP      var_22   C4     C3     C2     O2       180.000   20.000   3
+ SUP      var_23   C3     C2     C1     O5        60.000   20.000   3
+ SUP      var_24   C3     C2     O2     HO2      179.585   20.000   1
+ SUP      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SUP      chir_01  C1     C2     O1     O5        negativ
+ SUP      chir_02  C2     C1     C3     O2        negativ
+ SUP      chir_03  C3     C2     C4     O3        positiv
+ SUP      chir_04  C4     C3     C5     O4        negativ
+ SUP      chir_05  C5     C4     C6     O5        negativ
+ SUP      chir_06  "C2'"  O1     "C1'"  "C3'"     negativ
+ SUP      chir_07  "C3'"  "C2'"  "C4'"  "O3'"     positiv
+ SUP      chir_08  "C4'"  "C3'"  "C5'"  "O4'"     negativ
+ SUP      chir_09  "C5'"  "C4'"  "C6'"  "O2'"     negativ
+# ------------------------------------------------------

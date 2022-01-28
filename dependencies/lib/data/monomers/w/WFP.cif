@@ -1,0 +1,221 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+WFP     WFP     3,5-difluoro-L-phenylalanine     peptide     23     14     .
+#
+data_comp_WFP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+WFP     C       C       C       0       -2.003      0.176       1.227
+WFP     N       N       NT3     1       -3.005      -0.805      -0.801
+WFP     O       O       O       0       -2.559      1.287       1.122
+WFP     F1      F       F       0       3.496       -1.921      0.363
+WFP     F2      F       F       0       2.965       2.695       0.949
+WFP     CA      C       CH1     0       -1.727      -0.597      -0.068
+WFP     CB      C       CH2     0       -0.717      0.134       -0.957
+WFP     CG      C       CR6     0       0.678       0.226       -0.387
+WFP     CZ      C       CR16    0       3.281       0.390       0.677
+WFP     CD1     C       CR16    0       1.468       -0.912      -0.269
+WFP     CD2     C       CR16    0       1.197       1.447       0.031
+WFP     CE1     C       CR6     0       2.738       -0.800      0.255
+WFP     CE2     C       CR6     0       2.474       1.495       0.547
+WFP     OXT     O       OC      -1      -1.651      -0.360      2.297
+WFP     H       H       H       0       -2.849      -1.276      -1.564
+WFP     H2      H       H       0       -3.372      0.001       -1.016
+WFP     H3      H       H       0       -3.589      -1.270      -0.277
+WFP     HA      H       H       0       -1.354      -1.484      0.171
+WFP     HB2     H       H       0       -1.052      1.039       -1.125
+WFP     HB3     H       H       0       -0.673      -0.330      -1.819
+WFP     HZ      H       H       0       4.154       0.445       1.034
+WFP     HD1     H       H       0       1.131       -1.767      -0.551
+WFP     HD2     H       H       0       0.671       2.248       -0.040
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+WFP      N      n/a    CA     START
+WFP      H      N      .      .
+WFP      H2     N      .      .
+WFP      H3     N      .      .
+WFP      CA     N      C      .
+WFP      HA     CA     .      .
+WFP      CB     CA     CG     .
+WFP      HB2    CB     .      .
+WFP      HB3    CB     .      .
+WFP      CG     CB     CD2    .
+WFP      CD2    CG     CE2    .
+WFP      HD2    CD2    .      .
+WFP      CE2    CD2    F2     .
+WFP      CZ     CE2    CE1    .
+WFP      HZ     CZ     .      .
+WFP      CE1    CZ     F1     .
+WFP      CD1    CE1    HD1    .
+WFP      HD1    CD1    .      .
+WFP      F1     CE1    .      .
+WFP      F2     CE2    .      .
+WFP      C      CA     OXT    .
+WFP      O      C      .      .
+WFP      OXT    C      .      END
+WFP      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+WFP       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+WFP       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+WFP       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+WFP       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+WFP       F1        CE1       SINGLE    n         1.357     0.010     1.357     0.010     
+WFP       F2        CE2       SINGLE    n         1.357     0.010     1.357     0.010     
+WFP       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+WFP       CB        CG        SINGLE    n         1.508     0.010     1.508     0.010     
+WFP       CG        CD1       DOUBLE    y         1.385     0.011     1.385     0.011     
+WFP       CG        CD2       SINGLE    y         1.385     0.011     1.385     0.011     
+WFP       CZ        CE1       DOUBLE    y         1.371     0.010     1.371     0.010     
+WFP       CZ        CE2       SINGLE    y         1.371     0.010     1.371     0.010     
+WFP       CD1       CE1       SINGLE    y         1.375     0.010     1.375     0.010     
+WFP       CD2       CE2       DOUBLE    y         1.375     0.010     1.375     0.010     
+WFP       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+WFP       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+WFP       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+WFP       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+WFP       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+WFP       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+WFP       CZ        HZ        SINGLE    n         1.082     0.013     0.945     0.018     
+WFP       CD1       HD1       SINGLE    n         1.082     0.013     0.961     0.020     
+WFP       CD2       HD2       SINGLE    n         1.082     0.013     0.961     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+WFP           O           C          CA     117.229    2.13
+WFP           O           C         OXT     125.543    1.50
+WFP          CA           C         OXT     117.229    2.13
+WFP          CA           N           H     109.646    1.54
+WFP          CA           N          H2     109.646    1.54
+WFP          CA           N          H3     109.646    1.54
+WFP           H           N          H2     109.028    2.41
+WFP           H           N          H3     109.028    2.41
+WFP          H2           N          H3     109.028    2.41
+WFP           C          CA           N     109.448    1.50
+WFP           C          CA          CB     111.331    2.53
+WFP           C          CA          HA     108.450    1.50
+WFP           N          CA          CB     110.494    1.50
+WFP           N          CA          HA     108.601    1.50
+WFP          CB          CA          HA     108.690    1.50
+WFP          CA          CB          CG     114.745    1.55
+WFP          CA          CB         HB2     108.434    1.50
+WFP          CA          CB         HB3     108.434    1.50
+WFP          CG          CB         HB2     108.862    1.50
+WFP          CG          CB         HB3     108.862    1.50
+WFP         HB2          CB         HB3     107.782    1.50
+WFP          CB          CG         CD1     120.740    1.50
+WFP          CB          CG         CD2     120.740    1.50
+WFP         CD1          CG         CD2     118.521    1.50
+WFP         CE1          CZ         CE2     115.874    1.50
+WFP         CE1          CZ          HZ     122.063    1.50
+WFP         CE2          CZ          HZ     122.063    1.50
+WFP          CG         CD1         CE1     119.254    1.50
+WFP          CG         CD1         HD1     120.307    1.50
+WFP         CE1         CD1         HD1     120.439    1.50
+WFP          CG         CD2         CE2     119.254    1.50
+WFP          CG         CD2         HD2     120.307    1.50
+WFP         CE2         CD2         HD2     120.439    1.50
+WFP          F1         CE1          CZ     117.992    1.50
+WFP          F1         CE1         CD1     118.460    1.50
+WFP          CZ         CE1         CD1     123.548    1.50
+WFP          F2         CE2          CZ     117.992    1.50
+WFP          F2         CE2         CD2     118.460    1.50
+WFP          CZ         CE2         CD2     123.548    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+WFP             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+WFP              const_18          CG         CD2         CE2          F2     180.000   10.00     2
+WFP             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+WFP            sp3_sp3_10           C          CA          CB          CG     180.000   10.00     3
+WFP             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+WFP              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+WFP       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+WFP              const_11          F1         CE1          CZ         CE2     180.000   10.00     2
+WFP              const_15          F2         CE2          CZ         CE1     180.000   10.00     2
+WFP       const_sp2_sp2_6          CG         CD1         CE1          F1     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+WFP    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+WFP    plan-1          CB   0.020
+WFP    plan-1         CD1   0.020
+WFP    plan-1         CD2   0.020
+WFP    plan-1         CE1   0.020
+WFP    plan-1         CE2   0.020
+WFP    plan-1          CG   0.020
+WFP    plan-1          CZ   0.020
+WFP    plan-1          F1   0.020
+WFP    plan-1          F2   0.020
+WFP    plan-1         HD1   0.020
+WFP    plan-1         HD2   0.020
+WFP    plan-1          HZ   0.020
+WFP    plan-2           C   0.020
+WFP    plan-2          CA   0.020
+WFP    plan-2           O   0.020
+WFP    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+WFP SMILES_CANONICAL CACTVS               3.352 "N[C@@H](Cc1cc(F)cc(F)c1)C(O)=O"
+WFP SMILES           CACTVS               3.352 "N[CH](Cc1cc(F)cc(F)c1)C(O)=O"
+WFP SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1c(cc(cc1F)F)C[C@@H](C(=O)O)N"
+WFP SMILES           "OpenEye OEToolkits" 1.7.0 "c1c(cc(cc1F)F)CC(C(=O)O)N"
+WFP InChI            InChI                1.03  "InChI=1S/C9H9F2NO2/c10-6-1-5(2-7(11)4-6)3-8(12)9(13)14/h1-2,4,8H,3,12H2,(H,13,14)/t8-/m0/s1"
+WFP InChIKey         InChI                1.03  QFGMPXZFCIHYIR-QMMMGPOBSA-N
+WFP ?                acedrg               196         "dictionary generator"
+WFP ?                acedrg_database      11          "data source"
+WFP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+WFP ?                refmac5              5.8.0222    "optimization tool"

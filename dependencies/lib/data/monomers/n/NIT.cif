@@ -1,0 +1,156 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NIT     NIT      4-NITROANILINE     NON-POLYMER     16     10     .     
+#
+data_comp_NIT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NIT     N1      N       NH2     0       55.910      44.279      19.783      
+NIT     C1      C       CR6     0       57.236      44.382      19.421      
+NIT     C2      C       CR16    0       57.646      45.331      18.472      
+NIT     C3      C       CR16    0       58.971      45.444      18.101      
+NIT     C4      C       CR6     0       59.913      44.593      18.688      
+NIT     N4      N       N       1       61.314      44.704      18.303      
+NIT     ON1     O       OC      -1      61.608      44.511      17.133      
+NIT     ON2     O       O       0       62.131      44.986      19.165      
+NIT     C5      C       CR16    0       59.535      43.637      19.637      
+NIT     C6      C       CR16    0       58.201      43.541      19.993      
+NIT     HN11    H       H       0       55.669      43.715      20.411      
+NIT     HN12    H       H       0       55.306      44.777      19.386      
+NIT     H2      H       H       0       57.002      45.901      18.083      
+NIT     H3      H       H       0       59.230      46.086      17.463      
+NIT     H5      H       H       0       60.172      43.066      20.029      
+NIT     H6      H       H       0       57.934      42.900      20.632      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NIT       N1        C1        SINGLE    n         1.375     0.018     1.375     0.018     
+NIT       C1        C2        DOUBLE    y         1.392     0.011     1.392     0.011     
+NIT       C1        C6        SINGLE    y         1.392     0.011     1.392     0.011     
+NIT       C2        C3        SINGLE    y         1.373     0.010     1.373     0.010     
+NIT       C3        C4        DOUBLE    y         1.393     0.011     1.393     0.011     
+NIT       C4        N4        SINGLE    n         1.457     0.020     1.457     0.020     
+NIT       C4        C5        SINGLE    y         1.393     0.011     1.393     0.011     
+NIT       N4        ON1       SINGLE    n         1.221     0.017     1.221     0.017     
+NIT       N4        ON2       DOUBLE    n         1.221     0.017     1.221     0.017     
+NIT       C5        C6        DOUBLE    y         1.377     0.010     1.377     0.010     
+NIT       N1        HN11      SINGLE    n         1.016     0.010     0.877     0.020     
+NIT       N1        HN12      SINGLE    n         1.016     0.010     0.877     0.020     
+NIT       C2        H2        SINGLE    n         1.082     0.013     0.944     0.020     
+NIT       C3        H3        SINGLE    n         1.082     0.013     0.941     0.020     
+NIT       C5        H5        SINGLE    n         1.082     0.013     0.941     0.020     
+NIT       C6        H6        SINGLE    n         1.082     0.013     0.944     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NIT          C1          N1        HN11     119.811    2.73
+NIT          C1          N1        HN12     119.811    2.73
+NIT        HN11          N1        HN12     120.379    3.00
+NIT          N1          C1          C2     120.863    1.50
+NIT          N1          C1          C6     120.863    1.50
+NIT          C2          C1          C6     118.274    1.50
+NIT          C1          C2          C3     120.689    1.50
+NIT          C1          C2          H2     119.459    1.50
+NIT          C3          C2          H2     119.852    1.50
+NIT          C2          C3          C4     119.088    1.50
+NIT          C2          C3          H3     120.096    1.50
+NIT          C4          C3          H3     120.816    1.50
+NIT          C3          C4          N4     118.914    1.50
+NIT          C3          C4          C5     122.171    1.50
+NIT          N4          C4          C5     118.914    1.50
+NIT          C4          N4         ON1     118.257    1.50
+NIT          C4          N4         ON2     118.257    1.50
+NIT         ON1          N4         ON2     123.486    1.50
+NIT          C4          C5          C6     119.088    1.50
+NIT          C4          C5          H5     120.816    1.50
+NIT          C6          C5          H5     120.096    1.50
+NIT          C1          C6          C5     120.689    1.50
+NIT          C1          C6          H6     119.459    1.50
+NIT          C5          C6          H6     119.852    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NIT             sp2_sp2_1          C2          C1          N1        HN11     180.000   10.00     2
+NIT       const_sp2_sp2_3          N1          C1          C2          C3     180.000   10.00     2
+NIT              const_23          N1          C1          C6          C5     180.000   10.00     2
+NIT       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+NIT              const_10          C2          C3          C4          N4     180.000   10.00     2
+NIT             sp2_sp2_5          C3          C4          N4         ON1     180.000   10.00     2
+NIT              const_15          N4          C4          C5          C6     180.000   10.00     2
+NIT              const_17          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NIT    plan-1          C1   0.020
+NIT    plan-1          C2   0.020
+NIT    plan-1          C3   0.020
+NIT    plan-1          C4   0.020
+NIT    plan-1          C5   0.020
+NIT    plan-1          C6   0.020
+NIT    plan-1          H2   0.020
+NIT    plan-1          H3   0.020
+NIT    plan-1          H5   0.020
+NIT    plan-1          H6   0.020
+NIT    plan-1          N1   0.020
+NIT    plan-1          N4   0.020
+NIT    plan-2          C1   0.020
+NIT    plan-2        HN11   0.020
+NIT    plan-2        HN12   0.020
+NIT    plan-2          N1   0.020
+NIT    plan-3          C4   0.020
+NIT    plan-3          N4   0.020
+NIT    plan-3         ON1   0.020
+NIT    plan-3         ON2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NIT SMILES           ACDLabs              12.01 "O=[N+]([O-])c1ccc(N)cc1"
+NIT SMILES_CANONICAL CACTVS               3.370 "Nc1ccc(cc1)[N+]([O-])=O"
+NIT SMILES           CACTVS               3.370 "Nc1ccc(cc1)[N+]([O-])=O"
+NIT SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc(ccc1N)[N+](=O)[O-]"
+NIT SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(ccc1N)[N+](=O)[O-]"
+NIT InChI            InChI                1.03  "InChI=1S/C6H6N2O2/c7-5-1-3-6(4-2-5)8(9)10/h1-4H,7H2"
+NIT InChIKey         InChI                1.03  TYMLOMAKGOJONV-UHFFFAOYSA-N
+NIT ?                acedrg               202         "dictionary generator"                  
+NIT ?                acedrg_database      11          "data source"                           
+NIT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NIT ?                refmac5              5.8.0189    "optimization tool"                     

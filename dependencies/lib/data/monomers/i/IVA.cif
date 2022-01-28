@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IVA     IVA      "ISOVALERIC ACID"     NON-POLYMER     16     7     .     
+#
+data_comp_IVA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+IVA     CA      C       CH2     0       0.754       -0.542      0.645       
+IVA     CB      C       CH1     0       -0.325      -0.139      -0.348      
+IVA     CG1     C       CH3     0       -1.683      -0.670      0.081       
+IVA     CG2     C       CH3     0       -0.372      1.371       -0.525      
+IVA     C       C       C       0       2.187       -0.344      0.181       
+IVA     O       O       O       0       2.570       -0.967      -0.828      
+IVA     OXT     O       OC      -1      2.913       0.433       0.832       
+IVA     HA1     H       H       0       0.634       -1.491      0.867       
+IVA     HA2     H       H       0       0.625       -0.030      1.471       
+IVA     HB      H       H       0       -0.096      -0.545      -1.221      
+IVA     HG11    H       H       0       -2.354      -0.416      -0.576      
+IVA     HG12    H       H       0       -1.920      -0.296      0.947       
+IVA     HG13    H       H       0       -1.647      -1.640      0.146       
+IVA     HG21    H       H       0       -1.165      1.614       -1.034      
+IVA     HG22    H       H       0       0.421       1.668       -1.005      
+IVA     HG23    H       H       0       -0.403      1.801       0.347       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IVA       CA        CB        SINGLE    n         1.518     0.016     1.518     0.016     
+IVA       CA        C         SINGLE    n         1.519     0.012     1.519     0.012     
+IVA       CB        CG1       SINGLE    n         1.519     0.015     1.519     0.015     
+IVA       CB        CG2       SINGLE    n         1.519     0.015     1.519     0.015     
+IVA       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+IVA       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+IVA       CA        HA1       SINGLE    n         1.089     0.010     0.981     0.019     
+IVA       CA        HA2       SINGLE    n         1.089     0.010     0.981     0.019     
+IVA       CB        HB        SINGLE    n         1.089     0.010     0.989     0.015     
+IVA       CG1       HG11      SINGLE    n         1.089     0.010     0.973     0.015     
+IVA       CG1       HG12      SINGLE    n         1.089     0.010     0.973     0.015     
+IVA       CG1       HG13      SINGLE    n         1.089     0.010     0.973     0.015     
+IVA       CG2       HG21      SINGLE    n         1.089     0.010     0.973     0.015     
+IVA       CG2       HG22      SINGLE    n         1.089     0.010     0.973     0.015     
+IVA       CG2       HG23      SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+IVA          CB          CA           C     116.005    1.98
+IVA          CB          CA         HA1     108.689    1.50
+IVA          CB          CA         HA2     108.689    1.50
+IVA           C          CA         HA1     108.462    1.50
+IVA           C          CA         HA2     108.462    1.50
+IVA         HA1          CA         HA2     107.639    1.50
+IVA          CA          CB         CG1     110.659    1.50
+IVA          CA          CB         CG2     110.659    1.50
+IVA          CA          CB          HB     107.526    1.50
+IVA         CG1          CB         CG2     110.507    1.50
+IVA         CG1          CB          HB     108.052    1.50
+IVA         CG2          CB          HB     108.052    1.50
+IVA          CB         CG1        HG11     109.488    1.50
+IVA          CB         CG1        HG12     109.488    1.50
+IVA          CB         CG1        HG13     109.488    1.50
+IVA        HG11         CG1        HG12     109.411    1.50
+IVA        HG11         CG1        HG13     109.411    1.50
+IVA        HG12         CG1        HG13     109.411    1.50
+IVA          CB         CG2        HG21     109.488    1.50
+IVA          CB         CG2        HG22     109.488    1.50
+IVA          CB         CG2        HG23     109.488    1.50
+IVA        HG21         CG2        HG22     109.411    1.50
+IVA        HG21         CG2        HG23     109.411    1.50
+IVA        HG22         CG2        HG23     109.411    1.50
+IVA          CA           C           O     118.129    1.68
+IVA          CA           C         OXT     118.129    1.68
+IVA           O           C         OXT     123.742    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+IVA             sp3_sp3_1           C          CA          CB         CG1     180.000   10.00     3
+IVA             sp2_sp3_2           O           C          CA          CB     120.000   10.00     6
+IVA            sp3_sp3_10          CA          CB         CG1        HG11     180.000   10.00     3
+IVA            sp3_sp3_19          CA          CB         CG2        HG21     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+IVA    plan-1           C   0.020
+IVA    plan-1          CA   0.020
+IVA    plan-1           O   0.020
+IVA    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+IVA SMILES           ACDLabs              12.01 "O=C(O)CC(C)C"
+IVA SMILES_CANONICAL CACTVS               3.370 "CC(C)CC(O)=O"
+IVA SMILES           CACTVS               3.370 "CC(C)CC(O)=O"
+IVA SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "CC(C)CC(=O)O"
+IVA SMILES           "OpenEye OEToolkits" 1.7.0 "CC(C)CC(=O)O"
+IVA InChI            InChI                1.03  "InChI=1S/C5H10O2/c1-4(2)3-5(6)7/h4H,3H2,1-2H3,(H,6,7)"
+IVA InChIKey         InChI                1.03  GWYFCOCPABKNJV-UHFFFAOYSA-N
+IVA ?                acedrg               202         "dictionary generator"                  
+IVA ?                acedrg_database      11          "data source"                           
+IVA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+IVA ?                refmac5              5.8.0189    "optimization tool"                     

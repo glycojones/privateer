@@ -1,0 +1,139 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XYN     XYN      "3-[(carboxymethyl)sulfanyl]-2-oxopropanoic acid"     NON-POLYMER     15     11     .     
+#
+data_comp_XYN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+XYN     OBA     O       O       0       35.890      -53.610     -33.843     
+XYN     OBB     O       O       0       31.024      -52.081     -35.552     
+XYN     OBC     O       O       0       32.323      -50.798     -38.267     
+XYN     OBD     O       OC      -1      36.192      -51.595     -34.717     
+XYN     OBE     O       OC      -1      30.040      -50.817     -36.992     
+XYN     CBF     C       CH2     0       34.231      -52.762     -35.316     
+XYN     CBG     C       CH2     0       32.742      -53.022     -37.669     
+XYN     SBH     S       S2      0       34.466      -52.874     -37.108     
+XYN     CBI     C       C       0       35.545      -52.650     -34.562     
+XYN     CBJ     C       C       0       30.996      -51.527     -36.655     
+XYN     CBK     C       C       0       31.992      -51.720     -37.511     
+XYN     HBF     H       H       0       33.751      -53.553     -35.009     
+XYN     HBFA    H       H       0       33.690      -51.978     -35.117     
+XYN     HBG     H       H       0       32.304      -53.735     -37.158     
+XYN     HBGA    H       H       0       32.746      -53.286     -38.613     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XYN       OBA       CBI       DOUBLE    n         1.247     0.019     1.247     0.019     
+XYN       OBB       CBJ       DOUBLE    n         1.230     0.020     1.230     0.020     
+XYN       OBC       CBK       DOUBLE    n         1.230     0.019     1.230     0.019     
+XYN       OBD       CBI       SINGLE    n         1.247     0.019     1.247     0.019     
+XYN       OBE       CBJ       SINGLE    n         1.230     0.020     1.230     0.020     
+XYN       CBF       SBH       SINGLE    n         1.811     0.012     1.811     0.012     
+XYN       CBF       CBI       SINGLE    n         1.519     0.010     1.519     0.010     
+XYN       CBG       SBH       SINGLE    n         1.818     0.012     1.818     0.012     
+XYN       CBG       CBK       SINGLE    n         1.498     0.020     1.498     0.020     
+XYN       CBJ       CBK       SINGLE    n         1.299     0.020     1.299     0.020     
+XYN       CBF       HBF       SINGLE    n         1.089     0.010     0.974     0.020     
+XYN       CBF       HBFA      SINGLE    n         1.089     0.010     0.974     0.020     
+XYN       CBG       HBG       SINGLE    n         1.089     0.010     0.980     0.016     
+XYN       CBG       HBGA      SINGLE    n         1.089     0.010     0.980     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+XYN         SBH         CBF         CBI     111.968    3.00
+XYN         SBH         CBF         HBF     108.718    1.65
+XYN         SBH         CBF        HBFA     108.718    1.65
+XYN         CBI         CBF         HBF     108.575    1.82
+XYN         CBI         CBF        HBFA     108.575    1.82
+XYN         HBF         CBF        HBFA     108.166    1.80
+XYN         SBH         CBG         CBK     111.474    1.50
+XYN         SBH         CBG         HBG     108.570    1.78
+XYN         SBH         CBG        HBGA     108.570    1.78
+XYN         CBK         CBG         HBG     109.672    1.50
+XYN         CBK         CBG        HBGA     109.672    1.50
+XYN         HBG         CBG        HBGA     108.193    1.80
+XYN         CBF         SBH         CBG     100.297    1.96
+XYN         OBA         CBI         OBD     125.576    1.50
+XYN         OBA         CBI         CBF     117.212    2.93
+XYN         OBD         CBI         CBF     117.212    2.93
+XYN         OBB         CBJ         OBE     122.692    1.63
+XYN         OBB         CBJ         CBK     118.654    3.00
+XYN         OBE         CBJ         CBK     118.654    3.00
+XYN         OBC         CBK         CBG     118.016    1.59
+XYN         OBC         CBK         CBJ     119.066    3.00
+XYN         CBG         CBK         CBJ     122.917    2.02
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+XYN             sp3_sp3_1         CBI         CBF         SBH         CBG     180.000   10.00     3
+XYN             sp2_sp3_2         OBA         CBI         CBF         SBH     120.000   10.00     6
+XYN             sp2_sp3_8         OBC         CBK         CBG         SBH     120.000   10.00     6
+XYN             sp3_sp3_4         CBK         CBG         SBH         CBF     180.000   10.00     3
+XYN             sp2_sp2_2         OBB         CBJ         CBK         OBC       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+XYN    plan-1         CBF   0.020
+XYN    plan-1         CBI   0.020
+XYN    plan-1         OBA   0.020
+XYN    plan-1         OBD   0.020
+XYN    plan-2         CBJ   0.020
+XYN    plan-2         CBK   0.020
+XYN    plan-2         OBB   0.020
+XYN    plan-2         OBE   0.020
+XYN    plan-3         CBG   0.020
+XYN    plan-3         CBJ   0.020
+XYN    plan-3         CBK   0.020
+XYN    plan-3         OBC   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+XYN SMILES_CANONICAL CACTVS               3.352 "OC(=O)CSCC(=O)C(O)=O"
+XYN SMILES           CACTVS               3.352 "OC(=O)CSCC(=O)C(O)=O"
+XYN SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(C(=O)C(=O)O)SCC(=O)O"
+XYN SMILES           "OpenEye OEToolkits" 1.7.0 "C(C(=O)C(=O)O)SCC(=O)O"
+XYN InChI            InChI                1.03  "InChI=1S/C5H6O5S/c6-3(5(9)10)1-11-2-4(7)8/h1-2H2,(H,7,8)(H,9,10)"
+XYN InChIKey         InChI                1.03  FDUKYMHTXNDQPD-UHFFFAOYSA-N
+XYN ?                acedrg               202         "dictionary generator"                  
+XYN ?                acedrg_database      11          "data source"                           
+XYN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+XYN ?                refmac5              5.8.0189    "optimization tool"                     

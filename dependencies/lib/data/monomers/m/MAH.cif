@@ -1,0 +1,154 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MAH     MAH      "3-HYDROXY-3-METHYL-GLUTARIC ACID"     NON-POLYMER     19     11     .     
+#
+data_comp_MAH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MAH     C1      C       C       0       13.446      -17.244     29.421      
+MAH     C2      C       CH2     0       13.477      -15.723     29.372      
+MAH     C3      C       CT      0       12.717      -15.067     28.198      
+MAH     C4      C       CH2     0       12.571      -13.556     28.477      
+MAH     C5      C       C       0       11.706      -12.788     27.488      
+MAH     C6      C       CH3     0       13.445      -15.310     26.870      
+MAH     O1      O       OC      -1      12.453      -17.794     29.938      
+MAH     O2      O       O       0       14.414      -17.867     28.942      
+MAH     O3      O       O       0       12.273      -12.060     26.648      
+MAH     O4      O       OC      -1      10.469      -12.923     27.565      
+MAH     O7      O       OH1     0       11.399      -15.650     28.095      
+MAH     H21     H       H       0       14.414      -15.435     29.330      
+MAH     H22     H       H       0       13.103      -15.387     30.214      
+MAH     H41     H       H       0       13.466      -13.154     28.486      
+MAH     H42     H       H       0       12.185      -13.439     29.370      
+MAH     H61     H       H       0       13.839      -14.482     26.547      
+MAH     H62     H       H       0       12.816      -15.640     26.205      
+MAH     H63     H       H       0       14.153      -15.965     26.987      
+MAH     HO7     H       H       0       10.972      -15.539     28.822      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MAH       C1        C2        SINGLE    n         1.519     0.012     1.519     0.012     
+MAH       C1        O1        SINGLE    n         1.247     0.019     1.247     0.019     
+MAH       C1        O2        DOUBLE    n         1.247     0.019     1.247     0.019     
+MAH       C2        C3        SINGLE    n         1.537     0.010     1.537     0.010     
+MAH       C3        C4        SINGLE    n         1.537     0.010     1.537     0.010     
+MAH       C3        C6        SINGLE    n         1.522     0.011     1.522     0.011     
+MAH       C3        O7        SINGLE    n         1.434     0.017     1.434     0.017     
+MAH       C4        C5        SINGLE    n         1.519     0.012     1.519     0.012     
+MAH       C5        O3        DOUBLE    n         1.247     0.019     1.247     0.019     
+MAH       C5        O4        SINGLE    n         1.247     0.019     1.247     0.019     
+MAH       C2        H21       SINGLE    n         1.089     0.010     0.981     0.019     
+MAH       C2        H22       SINGLE    n         1.089     0.010     0.981     0.019     
+MAH       C4        H41       SINGLE    n         1.089     0.010     0.981     0.019     
+MAH       C4        H42       SINGLE    n         1.089     0.010     0.981     0.019     
+MAH       C6        H61       SINGLE    n         1.089     0.010     0.972     0.015     
+MAH       C6        H62       SINGLE    n         1.089     0.010     0.972     0.015     
+MAH       C6        H63       SINGLE    n         1.089     0.010     0.972     0.015     
+MAH       O7        HO7       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MAH          C2          C1          O1     118.090    1.84
+MAH          C2          C1          O2     118.090    1.84
+MAH          O1          C1          O2     123.820    1.50
+MAH          C1          C2          C3     111.511    2.91
+MAH          C1          C2         H21     108.477    1.50
+MAH          C1          C2         H22     108.477    1.50
+MAH          C3          C2         H21     108.458    1.50
+MAH          C3          C2         H22     108.458    1.50
+MAH         H21          C2         H22     107.711    1.51
+MAH          C2          C3          C4     111.094    2.85
+MAH          C2          C3          C6     110.358    1.75
+MAH          C2          C3          O7     110.167    2.39
+MAH          C4          C3          C6     110.358    1.75
+MAH          C4          C3          O7     110.167    2.39
+MAH          C6          C3          O7     107.769    1.96
+MAH          C3          C4          C5     111.511    2.91
+MAH          C3          C4         H41     108.458    1.50
+MAH          C3          C4         H42     108.458    1.50
+MAH          C5          C4         H41     108.477    1.50
+MAH          C5          C4         H42     108.477    1.50
+MAH         H41          C4         H42     107.711    1.51
+MAH          C4          C5          O3     118.090    1.84
+MAH          C4          C5          O4     118.090    1.84
+MAH          O3          C5          O4     123.820    1.50
+MAH          C3          C6         H61     109.483    1.50
+MAH          C3          C6         H62     109.483    1.50
+MAH          C3          C6         H63     109.483    1.50
+MAH         H61          C6         H62     109.441    1.50
+MAH         H61          C6         H63     109.441    1.50
+MAH         H62          C6         H63     109.441    1.50
+MAH          C3          O7         HO7     108.877    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MAH             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+MAH             sp3_sp3_1          C1          C2          C3          C4     180.000   10.00     3
+MAH            sp3_sp3_28          C2          C3          O7         HO7     180.000   10.00     3
+MAH            sp3_sp3_10          C2          C3          C4          C5     180.000   10.00     3
+MAH            sp3_sp3_19          C2          C3          C6         H61     180.000   10.00     3
+MAH             sp2_sp3_8          O3          C5          C4          C3     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MAH    plan-1          C1   0.020
+MAH    plan-1          C2   0.020
+MAH    plan-1          O1   0.020
+MAH    plan-1          O2   0.020
+MAH    plan-2          C4   0.020
+MAH    plan-2          C5   0.020
+MAH    plan-2          O3   0.020
+MAH    plan-2          O4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MAH SMILES           ACDLabs              10.04 "O=C(O)CC(O)(C)CC(=O)O"
+MAH SMILES_CANONICAL CACTVS               3.341 "CC(O)(CC(O)=O)CC(O)=O"
+MAH SMILES           CACTVS               3.341 "CC(O)(CC(O)=O)CC(O)=O"
+MAH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(CC(=O)O)(CC(=O)O)O"
+MAH SMILES           "OpenEye OEToolkits" 1.5.0 "CC(CC(=O)O)(CC(=O)O)O"
+MAH InChI            InChI                1.03  "InChI=1S/C6H10O5/c1-6(11,2-4(7)8)3-5(9)10/h11H,2-3H2,1H3,(H,7,8)(H,9,10)"
+MAH InChIKey         InChI                1.03  NPOAOTPXWNWTSH-UHFFFAOYSA-N
+MAH ?                acedrg               202         "dictionary generator"                  
+MAH ?                acedrg_database      11          "data source"                           
+MAH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MAH ?                refmac5              5.8.0189    "optimization tool"                     

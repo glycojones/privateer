@@ -1,0 +1,386 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+9NF      9NF 'DANSYL-L-PHENYLALANINE              ' non-polymer        49  28 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_9NF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 9NF           O3     O    OS        0.000      0.000    0.000    0.000
+ 9NF           S1     S    ST        0.000     -1.188   -0.178   -0.760
+ 9NF           O2     O    OS        0.000     -1.264   -1.030   -1.894
+ 9NF           N      N    NH1       0.000     -1.644    1.329   -1.274
+ 9NF           H      H    H         0.000     -1.921    1.472   -2.235
+ 9NF           CA     C    CH1       0.000     -1.646    2.454   -0.336
+ 9NF           HA     H    H         0.000     -1.210    2.134    0.620
+ 9NF           CB     C    CH2       0.000     -0.818    3.603   -0.915
+ 9NF           HB1C   H    H         0.000     -0.894    4.472   -0.258
+ 9NF           HB2C   H    H         0.000     -1.198    3.863   -1.905
+ 9NF           CG     C    CR6       0.000      0.624    3.178   -1.024
+ 9NF           CD2    C    CR16      0.000      1.491    3.397    0.030
+ 9NF           HD2    H    H         0.000      1.134    3.875    0.934
+ 9NF           CE2    C    CR16      0.000      2.813    3.008   -0.070
+ 9NF           HE2    H    H         0.000      3.492    3.179    0.756
+ 9NF           CZ     C    CR16      0.000      3.269    2.398   -1.224
+ 9NF           HZ     H    H         0.000      4.304    2.090   -1.302
+ 9NF           CE1    C    CR16      0.000      2.403    2.183   -2.280
+ 9NF           HE1    H    H         0.000      2.761    1.708   -3.185
+ 9NF           CD1    C    CR16      0.000      1.080    2.572   -2.180
+ 9NF           HD1    H    H         0.000      0.402    2.404   -3.007
+ 9NF           C      C    C         0.000     -3.062    2.918   -0.112
+ 9NF           OXT    O    OC       -0.500     -3.292    3.876    0.660
+ 9NF           O      O    OC       -0.500     -4.008    2.347   -0.698
+ 9NF           C1     C    CR6       0.000     -2.420   -0.739    0.368
+ 9NF           C6     C    CR66      0.000     -3.741   -0.936   -0.070
+ 9NF           C7     C    CR16      0.000     -4.109   -0.694   -1.405
+ 9NF           H7     H    H         0.000     -3.370   -0.349   -2.117
+ 9NF           C8     C    CR16      0.000     -5.396   -0.893   -1.801
+ 9NF           H8     H    H         0.000     -5.670   -0.704   -2.832
+ 9NF           C9     C    CR16      0.000     -6.364   -1.336   -0.906
+ 9NF           H9     H    H         0.000     -7.382   -1.477   -1.245
+ 9NF           C10    C    CR6       0.000     -6.041   -1.598    0.409
+ 9NF           N1     N    NT        0.000     -7.017   -2.042    1.298
+ 9NF           C12    C    CH3       0.000     -7.521   -3.367    0.908
+ 9NF           H123   H    H         0.000     -8.260   -3.681    1.598
+ 9NF           H122   H    H         0.000     -7.943   -3.312   -0.062
+ 9NF           H121   H    H         0.000     -6.721   -4.062    0.906
+ 9NF           C11    C    CH3       0.000     -8.116   -1.072    1.402
+ 9NF           H113   H    H         0.000     -8.843   -1.433    2.081
+ 9NF           H112   H    H         0.000     -7.737   -0.146    1.749
+ 9NF           H111   H    H         0.000     -8.559   -0.937    0.449
+ 9NF           C5     C    CR66      0.000     -4.716   -1.393    0.850
+ 9NF           C4     C    CR16      0.000     -4.348   -1.629    2.184
+ 9NF           H4     H    H         0.000     -5.085   -1.974    2.899
+ 9NF           C3     C    CR16      0.000     -3.060   -1.422    2.575
+ 9NF           H3     H    H         0.000     -2.779   -1.604    3.604
+ 9NF           C2     C    CR16      0.000     -2.099   -0.978    1.669
+ 9NF           H2     H    H         0.000     -1.082   -0.821    2.005
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 9NF      O3     n/a    S1     START
+ 9NF      S1     O3     C1     .
+ 9NF      O2     S1     .      .
+ 9NF      N      S1     CA     .
+ 9NF      H      N      .      .
+ 9NF      CA     N      C      .
+ 9NF      HA     CA     .      .
+ 9NF      CB     CA     CG     .
+ 9NF      HB1C   CB     .      .
+ 9NF      HB2C   CB     .      .
+ 9NF      CG     CB     CD2    .
+ 9NF      CD2    CG     CE2    .
+ 9NF      HD2    CD2    .      .
+ 9NF      CE2    CD2    CZ     .
+ 9NF      HE2    CE2    .      .
+ 9NF      CZ     CE2    CE1    .
+ 9NF      HZ     CZ     .      .
+ 9NF      CE1    CZ     CD1    .
+ 9NF      HE1    CE1    .      .
+ 9NF      CD1    CE1    HD1    .
+ 9NF      HD1    CD1    .      .
+ 9NF      C      CA     O      .
+ 9NF      OXT    C      .      .
+ 9NF      O      C      .      .
+ 9NF      C1     S1     C6     .
+ 9NF      C6     C1     C7     .
+ 9NF      C7     C6     C8     .
+ 9NF      H7     C7     .      .
+ 9NF      C8     C7     C9     .
+ 9NF      H8     C8     .      .
+ 9NF      C9     C8     C10    .
+ 9NF      H9     C9     .      .
+ 9NF      C10    C9     C5     .
+ 9NF      N1     C10    C11    .
+ 9NF      C12    N1     H121   .
+ 9NF      H123   C12    .      .
+ 9NF      H122   C12    .      .
+ 9NF      H121   C12    .      .
+ 9NF      C11    N1     H111   .
+ 9NF      H113   C11    .      .
+ 9NF      H112   C11    .      .
+ 9NF      H111   C11    .      .
+ 9NF      C5     C10    C4     .
+ 9NF      C4     C5     C3     .
+ 9NF      H4     C4     .      .
+ 9NF      C3     C4     C2     .
+ 9NF      H3     C3     .      .
+ 9NF      C2     C3     H2     .
+ 9NF      H2     C2     .      END
+ 9NF      CG     CD1    .    ADD
+ 9NF      C1     C2     .    ADD
+ 9NF      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+9NF       CA        N         single    1.450     0.020     1.450     0.020     
+9NF       N         S1        single    1.600     0.020     1.600     0.020     
+9NF       C         CA        single    1.500     0.020     1.500     0.020     
+9NF       OXT       C         deloc     1.250     0.020     1.250     0.020     
+9NF       O         C         deloc     1.250     0.020     1.250     0.020     
+9NF       CB        CA        single    1.524     0.020     1.524     0.020     
+9NF       CG        CB        single    1.511     0.020     1.511     0.020     
+9NF       CG        CD1       single    1.390     0.020     1.390     0.020     
+9NF       CD2       CG        double    1.390     0.020     1.390     0.020     
+9NF       CD1       CE1       double    1.390     0.020     1.390     0.020     
+9NF       CE2       CD2       single    1.390     0.020     1.390     0.020     
+9NF       CE1       CZ        single    1.390     0.020     1.390     0.020     
+9NF       CZ        CE2       double    1.390     0.020     1.390     0.020     
+9NF       O2        S1        double    1.436     0.020     1.436     0.020     
+9NF       S1        O3        double    1.436     0.020     1.436     0.020     
+9NF       C1        S1        single    1.595     0.020     1.595     0.020     
+9NF       N1        C10       single    1.405     0.020     1.405     0.020     
+9NF       C11       N1        single    1.469     0.020     1.469     0.020     
+9NF       C12       N1        single    1.469     0.020     1.469     0.020     
+9NF       C1        C2        single    1.390     0.020     1.390     0.020     
+9NF       C6        C1        double    1.490     0.020     1.490     0.020     
+9NF       C2        C3        double    1.390     0.020     1.390     0.020     
+9NF       C3        C4        single    1.390     0.020     1.390     0.020     
+9NF       C4        C5        double    1.390     0.020     1.390     0.020     
+9NF       C5        C6        single    1.490     0.020     1.490     0.020     
+9NF       C5        C10       single    1.490     0.020     1.490     0.020     
+9NF       C7        C6        single    1.390     0.020     1.390     0.020     
+9NF       C8        C7        double    1.390     0.020     1.390     0.020     
+9NF       C9        C8        single    1.390     0.020     1.390     0.020     
+9NF       C10       C9        double    1.390     0.020     1.390     0.020     
+9NF       H         N         single    1.036     0.016     0.914     0.007     
+9NF       HA        CA        single    1.089     0.010     0.989     0.005     
+9NF       HB1C      CB        single    1.089     0.010     0.989     0.005     
+9NF       HB2C      CB        single    1.089     0.010     0.989     0.005     
+9NF       HD1       CD1       single    1.082     0.013     0.975     0.010     
+9NF       HD2       CD2       single    1.082     0.013     0.975     0.010     
+9NF       HE1       CE1       single    1.082     0.013     0.975     0.010     
+9NF       HE2       CE2       single    1.082     0.013     0.975     0.010     
+9NF       HZ        CZ        single    1.082     0.013     0.975     0.010     
+9NF       H111      C11       single    1.089     0.010     0.989     0.005     
+9NF       H112      C11       single    1.089     0.010     0.989     0.005     
+9NF       H113      C11       single    1.089     0.010     0.989     0.005     
+9NF       H121      C12       single    1.089     0.010     0.989     0.005     
+9NF       H122      C12       single    1.089     0.010     0.989     0.005     
+9NF       H123      C12       single    1.089     0.010     0.989     0.005     
+9NF       H2        C2        single    1.082     0.013     0.975     0.010     
+9NF       H3        C3        single    1.082     0.013     0.975     0.010     
+9NF       H4        C4        single    1.082     0.013     0.975     0.010     
+9NF       H7        C7        single    1.082     0.013     0.975     0.010     
+9NF       H8        C8        single    1.082     0.013     0.975     0.010     
+9NF       H9        C9        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 9NF      O3     S1     O2      109.500    3.000
+ 9NF      O3     S1     N       109.500    3.000
+ 9NF      O3     S1     C1      109.500    3.000
+ 9NF      O2     S1     N       109.500    3.000
+ 9NF      O2     S1     C1      109.500    3.000
+ 9NF      N      S1     C1      109.500    3.000
+ 9NF      S1     N      H       120.000    3.000
+ 9NF      S1     N      CA      120.000    3.000
+ 9NF      H      N      CA      118.500    3.000
+ 9NF      N      CA     HA      108.550    3.000
+ 9NF      N      CA     CB      110.000    3.000
+ 9NF      N      CA     C       111.600    3.000
+ 9NF      HA     CA     CB      108.340    3.000
+ 9NF      HA     CA     C       108.810    3.000
+ 9NF      CB     CA     C       109.470    3.000
+ 9NF      CA     CB     HB1C    109.470    3.000
+ 9NF      CA     CB     HB2C    109.470    3.000
+ 9NF      CA     CB     CG      109.470    3.000
+ 9NF      HB1C   CB     HB2C    107.900    3.000
+ 9NF      HB1C   CB     CG      109.470    3.000
+ 9NF      HB2C   CB     CG      109.470    3.000
+ 9NF      CB     CG     CD2     120.000    3.000
+ 9NF      CB     CG     CD1     120.000    3.000
+ 9NF      CD2    CG     CD1     120.000    3.000
+ 9NF      CG     CD2    HD2     120.000    3.000
+ 9NF      CG     CD2    CE2     120.000    3.000
+ 9NF      HD2    CD2    CE2     120.000    3.000
+ 9NF      CD2    CE2    HE2     120.000    3.000
+ 9NF      CD2    CE2    CZ      120.000    3.000
+ 9NF      HE2    CE2    CZ      120.000    3.000
+ 9NF      CE2    CZ     HZ      120.000    3.000
+ 9NF      CE2    CZ     CE1     120.000    3.000
+ 9NF      HZ     CZ     CE1     120.000    3.000
+ 9NF      CZ     CE1    HE1     120.000    3.000
+ 9NF      CZ     CE1    CD1     120.000    3.000
+ 9NF      HE1    CE1    CD1     120.000    3.000
+ 9NF      CE1    CD1    HD1     120.000    3.000
+ 9NF      CE1    CD1    CG      120.000    3.000
+ 9NF      HD1    CD1    CG      120.000    3.000
+ 9NF      CA     C      OXT     118.500    3.000
+ 9NF      CA     C      O       118.500    3.000
+ 9NF      OXT    C      O       123.000    3.000
+ 9NF      S1     C1     C6      120.000    3.000
+ 9NF      S1     C1     C2      120.000    3.000
+ 9NF      C6     C1     C2      120.000    3.000
+ 9NF      C1     C6     C7      120.000    3.000
+ 9NF      C1     C6     C5      120.000    3.000
+ 9NF      C7     C6     C5      120.000    3.000
+ 9NF      C6     C7     H7      120.000    3.000
+ 9NF      C6     C7     C8      120.000    3.000
+ 9NF      H7     C7     C8      120.000    3.000
+ 9NF      C7     C8     H8      120.000    3.000
+ 9NF      C7     C8     C9      120.000    3.000
+ 9NF      H8     C8     C9      120.000    3.000
+ 9NF      C8     C9     H9      120.000    3.000
+ 9NF      C8     C9     C10     120.000    3.000
+ 9NF      H9     C9     C10     120.000    3.000
+ 9NF      C9     C10    N1      120.000    3.000
+ 9NF      C9     C10    C5      120.000    3.000
+ 9NF      N1     C10    C5      120.000    3.000
+ 9NF      C10    N1     C12     109.500    3.000
+ 9NF      C10    N1     C11     109.500    3.000
+ 9NF      C12    N1     C11     109.470    3.000
+ 9NF      N1     C12    H123    109.470    3.000
+ 9NF      N1     C12    H122    109.470    3.000
+ 9NF      N1     C12    H121    109.470    3.000
+ 9NF      H123   C12    H122    109.470    3.000
+ 9NF      H123   C12    H121    109.470    3.000
+ 9NF      H122   C12    H121    109.470    3.000
+ 9NF      N1     C11    H113    109.470    3.000
+ 9NF      N1     C11    H112    109.470    3.000
+ 9NF      N1     C11    H111    109.470    3.000
+ 9NF      H113   C11    H112    109.470    3.000
+ 9NF      H113   C11    H111    109.470    3.000
+ 9NF      H112   C11    H111    109.470    3.000
+ 9NF      C10    C5     C4      120.000    3.000
+ 9NF      C10    C5     C6      120.000    3.000
+ 9NF      C4     C5     C6      120.000    3.000
+ 9NF      C5     C4     H4      120.000    3.000
+ 9NF      C5     C4     C3      120.000    3.000
+ 9NF      H4     C4     C3      120.000    3.000
+ 9NF      C4     C3     H3      120.000    3.000
+ 9NF      C4     C3     C2      120.000    3.000
+ 9NF      H3     C3     C2      120.000    3.000
+ 9NF      C3     C2     H2      120.000    3.000
+ 9NF      C3     C2     C1      120.000    3.000
+ 9NF      H2     C2     C1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 9NF      var_1    O3     S1     N      CA       -45.845   20.000   1
+ 9NF      var_2    S1     N      CA     C       -113.548   20.000   3
+ 9NF      var_3    N      CA     CB     CG       -64.983   20.000   3
+ 9NF      var_4    CA     CB     CG     CD2      -90.271   20.000   2
+ 9NF      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ 9NF      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ 9NF      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ 9NF      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ 9NF      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ 9NF      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+ 9NF      var_5    N      CA     C      O         -0.070   20.000   3
+ 9NF      var_6    O3     S1     C1     C6       176.417   20.000   1
+ 9NF      CONST_7  S1     C1     C2     C3       180.000    0.000   0
+ 9NF      CONST_8  S1     C1     C6     C7         0.000    0.000   0
+ 9NF      CONST_9  C1     C6     C7     C8       180.000    0.000   0
+ 9NF      CONST_10 C6     C7     C8     C9         0.000    0.000   0
+ 9NF      CONST_11 C7     C8     C9     C10        0.000    0.000   0
+ 9NF      CONST_12 C8     C9     C10    C5         0.000    0.000   0
+ 9NF      var_7    C9     C10    N1     C11      -59.106   20.000   1
+ 9NF      var_8    C10    N1     C12    H121      60.023   20.000   1
+ 9NF      var_9    C10    N1     C11    H111      59.963   20.000   1
+ 9NF      CONST_13 C9     C10    C5     C4       180.000    0.000   0
+ 9NF      CONST_14 C10    C5     C6     C1       180.000    0.000   0
+ 9NF      CONST_15 C10    C5     C4     C3       180.000    0.000   0
+ 9NF      CONST_16 C5     C4     C3     C2         0.000    0.000   0
+ 9NF      CONST_17 C4     C3     C2     C1         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 9NF      chir_01  CA     N      C      CB        positiv
+ 9NF      chir_02  S1     N      O2     O3        negativ
+ 9NF      chir_03  N1     C10    C11    C12       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 9NF      plan-1    N         0.020
+ 9NF      plan-1    CA        0.020
+ 9NF      plan-1    S1        0.020
+ 9NF      plan-1    H         0.020
+ 9NF      plan-2    C         0.020
+ 9NF      plan-2    CA        0.020
+ 9NF      plan-2    O         0.020
+ 9NF      plan-2    OXT       0.020
+ 9NF      plan-3    CG        0.020
+ 9NF      plan-3    CB        0.020
+ 9NF      plan-3    CD1       0.020
+ 9NF      plan-3    CD2       0.020
+ 9NF      plan-3    CE1       0.020
+ 9NF      plan-3    CE2       0.020
+ 9NF      plan-3    CZ        0.020
+ 9NF      plan-3    HD1       0.020
+ 9NF      plan-3    HD2       0.020
+ 9NF      plan-3    HE1       0.020
+ 9NF      plan-3    HE2       0.020
+ 9NF      plan-3    HZ        0.020
+ 9NF      plan-4    C1        0.020
+ 9NF      plan-4    S1        0.020
+ 9NF      plan-4    C2        0.020
+ 9NF      plan-4    C6        0.020
+ 9NF      plan-4    C3        0.020
+ 9NF      plan-4    C4        0.020
+ 9NF      plan-4    H2        0.020
+ 9NF      plan-4    H3        0.020
+ 9NF      plan-4    C5        0.020
+ 9NF      plan-4    H4        0.020
+ 9NF      plan-4    C10       0.020
+ 9NF      plan-4    C7        0.020
+ 9NF      plan-4    C8        0.020
+ 9NF      plan-4    C9        0.020
+ 9NF      plan-4    H7        0.020
+ 9NF      plan-4    H8        0.020
+ 9NF      plan-4    H9        0.020
+ 9NF      plan-4    N1        0.020
+# ------------------------------------------------------

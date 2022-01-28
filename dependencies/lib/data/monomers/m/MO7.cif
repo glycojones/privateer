@@ -1,0 +1,379 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MO7      MO7 'HEPTAMOLYBDATE                      ' non-polymer        31  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MO7
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MO7           O24    O    O        -2.000      0.000    0.000    0.000
+ MO7           MO7    MO   MO        6.000      1.420   -0.087    1.010
+ MO7           O5     O    O        -2.000      2.454   -1.595   -0.141
+ MO7           O23    O    O        -2.000      1.180    1.260    2.142
+ MO7           O17    O    O        -2.000      3.234   -0.639    2.227
+ MO7           MO1    MO   MO        6.000      4.274   -1.821    1.157
+ MO7           O20    O    O2       -2.000      0.848   -1.478    2.183
+ MO7           MO6    MO   MO        6.000      2.116   -1.897    3.618
+ MO7           O21    O    O        -2.000      1.245   -3.047    4.374
+ MO7           O22    O    O        -2.000      1.803   -0.446    4.556
+ MO7           O18    O    O2       -2.000      3.859   -2.169    4.525
+ MO7           MO2    MO   MO        6.000      4.623   -3.748    3.802
+ MO7           O8     O    O        -2.000      6.234   -3.668    4.509
+ MO7           O6     O    O        -2.000      3.834   -4.813    4.762
+ MO7           O4     O    O2       -2.000      5.656   -2.210    2.242
+ MO7           O2     O    O        -2.000      3.173   -3.208    2.290
+ MO7           O19    O    O2       -2.000      2.653    0.884   -0.048
+ MO7           MO5    MO   MO        6.000      3.181   -0.184   -1.547
+ MO7           O1     O    O2       -2.000      4.912   -0.744    0.134
+ MO7           O15    O    O        -2.000      1.843    0.102   -2.612
+ MO7           O16    O    O        -2.000      4.420    0.825   -2.205
+ MO7           O12    O    O2       -2.000      3.773   -1.868   -2.257
+ MO7           MO4    MO   MO        6.000      2.666   -3.236   -1.475
+ MO7           O9     O    O2       -2.000      1.965   -4.383   -0.045
+ MO7           O13    O    O        -2.000      3.495   -4.512   -2.357
+ MO7           O14    O    O        -2.000      1.142   -3.000   -2.349
+ MO7           O3     O    O        -2.000      4.335   -3.394    0.064
+ MO7           MO3    MO   MO        6.000      3.353   -5.045    1.201
+ MO7           O7     O    O2       -2.000      4.982   -4.916    2.373
+ MO7           O10    O    O        -2.000      2.324   -5.970    2.222
+ MO7           O11    O    O        -2.000      4.058   -6.249    0.191
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MO7      O24    n/a    MO7    START
+ MO7      MO7    O24    O19    .
+ MO7      O5     MO7    .      .
+ MO7      O23    MO7    .      .
+ MO7      O17    MO7    MO1    .
+ MO7      MO1    O17    .      .
+ MO7      O20    MO7    MO6    .
+ MO7      MO6    O20    O2     .
+ MO7      O21    MO6    .      .
+ MO7      O22    MO6    .      .
+ MO7      O18    MO6    MO2    .
+ MO7      MO2    O18    O4     .
+ MO7      O8     MO2    .      .
+ MO7      O6     MO2    .      .
+ MO7      O4     MO2    .      .
+ MO7      O2     MO6    .      .
+ MO7      O19    MO7    MO5    .
+ MO7      MO5    O19    O12    .
+ MO7      O1     MO5    .      .
+ MO7      O15    MO5    .      .
+ MO7      O16    MO5    .      .
+ MO7      O12    MO5    MO4    .
+ MO7      MO4    O12    O3     .
+ MO7      O9     MO4    .      .
+ MO7      O13    MO4    .      .
+ MO7      O14    MO4    .      .
+ MO7      O3     MO4    MO3    .
+ MO7      MO3    O3     O11    .
+ MO7      O7     MO3    .      .
+ MO7      O10    MO3    .      .
+ MO7      O11    MO3    .      END
+ MO7      MO1    O1     .    ADD
+ MO7      MO1    O2     .    ADD
+ MO7      MO1    O3     .    ADD
+ MO7      MO1    O4     .    ADD
+ MO7      MO1    O5     .    ADD
+ MO7      O2     MO2    .    ADD
+ MO7      O2     MO3    .    ADD
+ MO7      O5     MO4    .    ADD
+ MO7      O5     MO5    .    ADD
+ MO7      MO2    O7     .    ADD
+ MO7      MO3    O9     .    ADD
+ MO7      O17    MO6    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MO7       MO1       O1        single    1.960     0.020     1.960     0.020     
+MO7       MO1       O2        single    1.865     0.020     1.865     0.020     
+MO7       MO1       O3        single    1.865     0.020     1.865     0.020     
+MO7       MO1       O4        single    1.960     0.020     1.960     0.020     
+MO7       MO1       O5        single    1.865     0.020     1.865     0.020     
+MO7       MO1       O17       single    1.865     0.020     1.865     0.020     
+MO7       O1        MO5       single    1.960     0.020     1.960     0.020     
+MO7       O2        MO2       single    1.865     0.020     1.865     0.020     
+MO7       O2        MO3       single    1.865     0.020     1.865     0.020     
+MO7       O2        MO6       single    1.865     0.020     1.865     0.020     
+MO7       MO3       O3        single    1.865     0.020     1.865     0.020     
+MO7       O3        MO4       single    1.865     0.020     1.865     0.020     
+MO7       O4        MO2       single    1.960     0.020     1.960     0.020     
+MO7       O5        MO4       single    1.865     0.020     1.865     0.020     
+MO7       O5        MO5       single    1.865     0.020     1.865     0.020     
+MO7       O5        MO7       single    1.865     0.020     1.865     0.020     
+MO7       O6        MO2       single    1.865     0.020     1.865     0.020     
+MO7       MO2       O7        single    1.960     0.020     1.960     0.020     
+MO7       O8        MO2       single    1.865     0.020     1.865     0.020     
+MO7       MO2       O18       single    1.960     0.020     1.960     0.020     
+MO7       O7        MO3       single    1.960     0.020     1.960     0.020     
+MO7       MO3       O9        single    1.960     0.020     1.960     0.020     
+MO7       O10       MO3       single    1.865     0.020     1.865     0.020     
+MO7       O11       MO3       single    1.865     0.020     1.865     0.020     
+MO7       O9        MO4       single    1.960     0.020     1.960     0.020     
+MO7       MO4       O12       single    1.960     0.020     1.960     0.020     
+MO7       O13       MO4       single    1.865     0.020     1.865     0.020     
+MO7       O14       MO4       single    1.865     0.020     1.865     0.020     
+MO7       O12       MO5       single    1.960     0.020     1.960     0.020     
+MO7       O15       MO5       single    1.865     0.020     1.865     0.020     
+MO7       O16       MO5       single    1.865     0.020     1.865     0.020     
+MO7       MO5       O19       single    1.960     0.020     1.960     0.020     
+MO7       O17       MO6       single    1.865     0.020     1.865     0.020     
+MO7       O17       MO7       single    1.865     0.020     1.865     0.020     
+MO7       O18       MO6       single    1.960     0.020     1.960     0.020     
+MO7       O19       MO7       single    1.960     0.020     1.960     0.020     
+MO7       MO6       O20       single    1.960     0.020     1.960     0.020     
+MO7       O21       MO6       single    1.865     0.020     1.865     0.020     
+MO7       O22       MO6       single    1.865     0.020     1.865     0.020     
+MO7       O20       MO7       single    1.960     0.020     1.960     0.020     
+MO7       O23       MO7       single    1.865     0.020     1.865     0.020     
+MO7       MO7       O24       single    1.865     0.020     1.865     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MO7      O24    MO7    O5       90.000    3.000
+ MO7      O24    MO7    O17     180.000    3.000
+ MO7      O24    MO7    O23      90.000    3.000
+ MO7      O24    MO7    O20      90.000    3.000
+ MO7      O24    MO7    O19      90.000    3.000
+ MO7      O5     MO7    O17      90.000    3.000
+ MO7      O5     MO7    O23     144.000    3.000
+ MO7      O17    MO7    O23      90.000    3.000
+ MO7      O5     MO7    O20      72.000    3.000
+ MO7      O17    MO7    O20      90.000    3.000
+ MO7      O23    MO7    O20     144.000    3.000
+ MO7      O5     MO7    O19      72.000    3.000
+ MO7      O17    MO7    O19      90.000    3.000
+ MO7      O23    MO7    O19      72.000    3.000
+ MO7      O20    MO7    O19     144.000    3.000
+ MO7      MO7    O5     MO1     120.000    3.000
+ MO7      MO7    O5     MO4     120.000    3.000
+ MO7      MO7    O5     MO5     120.000    3.000
+ MO7      MO1    O5     MO4     120.000    3.000
+ MO7      MO1    O5     MO5     120.000    3.000
+ MO7      MO4    O5     MO5     120.000    3.000
+ MO7      MO7    O17    MO1     120.000    3.000
+ MO7      MO7    O17    MO6     120.000    3.000
+ MO7      MO1    O17    MO6     120.000    3.000
+ MO7      O17    MO1    O1       90.000    3.000
+ MO7      O17    MO1    O2       90.000    3.000
+ MO7      O17    MO1    O3      180.000    3.000
+ MO7      O17    MO1    O4       90.000    3.000
+ MO7      O17    MO1    O5       90.000    3.000
+ MO7      O1     MO1    O2      180.000    3.000
+ MO7      O1     MO1    O3       90.000    3.000
+ MO7      O2     MO1    O3       90.000    3.000
+ MO7      O1     MO1    O4       90.000    3.000
+ MO7      O2     MO1    O4       90.000    3.000
+ MO7      O3     MO1    O4       90.000    3.000
+ MO7      O1     MO1    O5       90.000    3.000
+ MO7      O2     MO1    O5       90.000    3.000
+ MO7      O3     MO1    O5       90.000    3.000
+ MO7      O4     MO1    O5      180.000    3.000
+ MO7      MO7    O20    MO6     120.000    3.000
+ MO7      O20    MO6    O18     144.000    3.000
+ MO7      O20    MO6    O21      90.000    3.000
+ MO7      O20    MO6    O22     144.000    3.000
+ MO7      O20    MO6    O2       72.000    3.000
+ MO7      O20    MO6    O17      90.000    3.000
+ MO7      O18    MO6    O21      90.000    3.000
+ MO7      O18    MO6    O22      72.000    3.000
+ MO7      O21    MO6    O22      90.000    3.000
+ MO7      O18    MO6    O2       72.000    3.000
+ MO7      O21    MO6    O2       90.000    3.000
+ MO7      O22    MO6    O2      144.000    3.000
+ MO7      O18    MO6    O17      90.000    3.000
+ MO7      O21    MO6    O17     180.000    3.000
+ MO7      O22    MO6    O17      90.000    3.000
+ MO7      O2     MO6    O17      90.000    3.000
+ MO7      MO6    O18    MO2     120.000    3.000
+ MO7      O18    MO2    O8      144.000    3.000
+ MO7      O18    MO2    O6       90.000    3.000
+ MO7      O18    MO2    O4       90.000    3.000
+ MO7      O18    MO2    O2       72.000    3.000
+ MO7      O18    MO2    O7      144.000    3.000
+ MO7      O8     MO2    O6       90.000    3.000
+ MO7      O8     MO2    O4       90.000    3.000
+ MO7      O6     MO2    O4      180.000    3.000
+ MO7      O2     MO2    O7       72.000    3.000
+ MO7      O8     MO2    O2      144.000    3.000
+ MO7      O6     MO2    O2       90.000    3.000
+ MO7      O4     MO2    O2       90.000    3.000
+ MO7      O8     MO2    O7       72.000    3.000
+ MO7      O6     MO2    O7       90.000    3.000
+ MO7      O4     MO2    O7       90.000    3.000
+ MO7      MO2    O4     MO1     120.000    3.000
+ MO7      MO6    O2     MO1     120.000    3.000
+ MO7      MO6    O2     MO2     120.000    3.000
+ MO7      MO6    O2     MO3     120.000    3.000
+ MO7      MO1    O2     MO2     120.000    3.000
+ MO7      MO1    O2     MO3     120.000    3.000
+ MO7      MO2    O2     MO3     120.000    3.000
+ MO7      MO7    O19    MO5     120.000    3.000
+ MO7      O19    MO5    O1       90.000    3.000
+ MO7      O19    MO5    O15      90.000    3.000
+ MO7      O19    MO5    O16      72.000    3.000
+ MO7      O19    MO5    O12     144.000    3.000
+ MO7      O19    MO5    O5       72.000    3.000
+ MO7      O1     MO5    O15     180.000    3.000
+ MO7      O1     MO5    O16      90.000    3.000
+ MO7      O15    MO5    O16      90.000    3.000
+ MO7      O1     MO5    O12      90.000    3.000
+ MO7      O15    MO5    O12      90.000    3.000
+ MO7      O16    MO5    O12     144.000    3.000
+ MO7      O1     MO5    O5       90.000    3.000
+ MO7      O15    MO5    O5       90.000    3.000
+ MO7      O16    MO5    O5      144.000    3.000
+ MO7      O12    MO5    O5       72.000    3.000
+ MO7      MO5    O1     MO1     120.000    3.000
+ MO7      MO5    O12    MO4     120.000    3.000
+ MO7      O12    MO4    O9      144.000    3.000
+ MO7      O12    MO4    O13      72.000    3.000
+ MO7      O12    MO4    O14      90.000    3.000
+ MO7      O12    MO4    O3       90.000    3.000
+ MO7      O12    MO4    O5       72.000    3.000
+ MO7      O9     MO4    O13     144.000    3.000
+ MO7      O9     MO4    O14      90.000    3.000
+ MO7      O13    MO4    O14      90.000    3.000
+ MO7      O9     MO4    O3       90.000    3.000
+ MO7      O13    MO4    O3       90.000    3.000
+ MO7      O14    MO4    O3      180.000    3.000
+ MO7      O9     MO4    O5       72.000    3.000
+ MO7      O13    MO4    O5      144.000    3.000
+ MO7      O14    MO4    O5       90.000    3.000
+ MO7      O3     MO4    O5       90.000    3.000
+ MO7      MO4    O9     MO3     120.000    3.000
+ MO7      MO4    O3     MO3     120.000    3.000
+ MO7      MO4    O3     MO1     120.000    3.000
+ MO7      MO3    O3     MO1     120.000    3.000
+ MO7      O3     MO3    O7       90.000    3.000
+ MO7      O3     MO3    O10     180.000    3.000
+ MO7      O3     MO3    O11      90.000    3.000
+ MO7      O3     MO3    O2       90.000    3.000
+ MO7      O3     MO3    O9       90.000    3.000
+ MO7      O7     MO3    O10      90.000    3.000
+ MO7      O7     MO3    O11      72.000    3.000
+ MO7      O10    MO3    O11      90.000    3.000
+ MO7      O2     MO3    O9       72.000    3.000
+ MO7      O7     MO3    O2       72.000    3.000
+ MO7      O10    MO3    O2       90.000    3.000
+ MO7      O11    MO3    O2      144.000    3.000
+ MO7      O7     MO3    O9      144.000    3.000
+ MO7      O10    MO3    O9       90.000    3.000
+ MO7      O11    MO3    O9      144.000    3.000
+ MO7      MO3    O7     MO2     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MO7      var_1    MO1    O5     MO7    O19        0.000   20.000   1
+ MO7      var_2    MO5    O5     MO4    O12        0.000   20.000   1
+ MO7      var_3    MO7    O5     MO5    O1         0.000   20.000   1
+ MO7      var_4    MO1    O17    MO7    O20        0.000   20.000   1
+ MO7      var_5    MO7    O17    MO6    O20        0.000   20.000   1
+ MO7      var_6    MO7    O17    MO1    O2         0.000   20.000   1
+ MO7      var_7    MO5    O1     MO1    O5         0.000   20.000   1
+ MO7      var_8    MO3    O2     MO1    O5         0.000   20.000   1
+ MO7      var_9    MO4    O3     MO1    O1         0.000   20.000   1
+ MO7      var_10   MO2    O4     MO1    O2         0.000   20.000   1
+ MO7      var_11   MO7    O5     MO1    O1         0.000   20.000   1
+ MO7      var_12   MO6    O20    MO7    O17        0.000   20.000   1
+ MO7      var_13   MO7    O20    MO6    O17        0.000   20.000   1
+ MO7      var_14   MO2    O18    MO6    O2         0.000   20.000   1
+ MO7      var_15   MO6    O18    MO2    O2         0.000   20.000   1
+ MO7      var_16   MO3    O7     MO2    O2         0.000   20.000   1
+ MO7      var_17   MO1    O4     MO2    O2         0.000   20.000   1
+ MO7      var_18   MO1    O2     MO6    O17        0.000   20.000   1
+ MO7      var_19   MO1    O2     MO2    O4         0.000   20.000   1
+ MO7      var_20   MO2    O2     MO3    O7         0.000   20.000   1
+ MO7      var_21   MO5    O19    MO7    O5         0.000   20.000   1
+ MO7      var_22   MO7    O19    MO5    O1         0.000   20.000   1
+ MO7      var_23   MO1    O1     MO5    O19        0.000   20.000   1
+ MO7      var_24   MO4    O12    MO5    O5         0.000   20.000   1
+ MO7      var_25   MO5    O12    MO4    O5         0.000   20.000   1
+ MO7      var_26   MO3    O9     MO4    O5         0.000   20.000   1
+ MO7      var_27   MO3    O3     MO4    O12        0.000   20.000   1
+ MO7      var_28   MO4    O3     MO3    O7         0.000   20.000   1
+ MO7      var_29   MO4    O9     MO3    O2         0.000   20.000   1
+ MO7      var_30   MO2    O7     MO3    O2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ MO7      chir_01  O2     MO1    MO2    MO3       positiv
+                   .      .      .      .      .
+ MO7      chir_02  O3     MO1    MO3    MO4       negativ
+                   .      .      .      .      .
+ MO7      chir_03  O5     MO1    MO4    MO5       positiv
+                   .      .      .      .      .
+ MO7      chir_04  O17    MO1    MO6    MO7       positiv
+                   .      .      .      .      .
+ MO7      chir_05  MO1    O1     O2     O3        cross4
+                   O5     O17    O4     .      .
+ MO7      chir_06  MO2    O6     O4     O2        cross5
+                   O7     O8     .      O18    .
+ MO7      chir_07  MO3    O10    O3     O7        cross5
+                   O2     O9     .      O11    .
+ MO7      chir_08  MO4    O14    O3     O12       cross5
+                   O13    .      O9     O5     .
+ MO7      chir_09  MO5    O15    O1     O19       cross5
+                   O16    .      O12    O5     .
+ MO7      chir_10  MO6    O21    O17    O18       cross5
+                   O22    .      O20    O2     .
+ MO7      chir_11  MO7    O24    O17    O5        cross5
+                   O20    .      O23    O19    .
+# ------------------------------------------------------

@@ -1,0 +1,98 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GXT     GXT      ethanedial     NON-POLYMER     6     4     .     
+#
+data_comp_GXT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GXT     O1      O       O       0       1.487       -0.903      -0.013      
+GXT     C1      C       C1      0       0.762       0.071       -0.027      
+GXT     C       C       C1      0       -0.752      -0.076      0.027       
+GXT     O       O       O       0       -1.477      0.899       0.013       
+GXT     H1      H       H       0       1.109       0.964       -0.072      
+GXT     H2      H       H       0       -1.099      -0.969      0.071       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GXT       O1        C1        DOUBLE    n         1.215     0.011     1.215     0.011     
+GXT       C         O         DOUBLE    n         1.215     0.011     1.215     0.011     
+GXT       C1        C         SINGLE    n         1.522     0.020     1.522     0.020     
+GXT       C1        H1        SINGLE    n         1.082     0.013     0.959     0.020     
+GXT       C         H2        SINGLE    n         1.082     0.013     0.959     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GXT          O1          C1           C     121.046    2.06
+GXT          O1          C1          H1     122.098    1.50
+GXT           C          C1          H1     116.856    3.00
+GXT           O           C          C1     121.046    2.06
+GXT           O           C          H2     122.098    1.50
+GXT          C1           C          H2     116.856    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GXT             sp2_sp2_1           O           C          C1          O1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GXT    plan-1           C   0.020
+GXT    plan-1          C1   0.020
+GXT    plan-1          H1   0.020
+GXT    plan-1          O1   0.020
+GXT    plan-2           C   0.020
+GXT    plan-2          C1   0.020
+GXT    plan-2          H2   0.020
+GXT    plan-2           O   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GXT SMILES           ACDLabs              12.01 O=CC=O
+GXT InChI            InChI                1.03  InChI=1S/C2H2O2/c3-1-2-4/h1-2H
+GXT InChIKey         InChI                1.03  LEQAOMBKQFMDFZ-UHFFFAOYSA-N
+GXT SMILES_CANONICAL CACTVS               3.385 O=CC=O
+GXT SMILES           CACTVS               3.385 O=CC=O
+GXT SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C(=O)C=O"
+GXT SMILES           "OpenEye OEToolkits" 1.7.6 "C(=O)C=O"
+GXT ?                acedrg               202         "dictionary generator"                  
+GXT ?                acedrg_database      11          "data source"                           
+GXT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GXT ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,228 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PRQ      PRQ '(3S)-3-amino-3-(2-nitrophenyl)propan' non-polymer        24  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PRQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PRQ           OXT    O    OC       -0.500      0.000    0.000    0.000
+ PRQ           CAE    C    C         0.000     -0.004   -1.229   -0.231
+ PRQ           OAB    O    OC       -0.500     -1.116   -1.740   -0.491
+ PRQ           CAJ    C    CH2       0.000      1.304   -2.007   -0.542
+ PRQ           HAJ1   H    H         0.000      1.920   -2.002    0.360
+ PRQ           HAJ2   H    H         0.000      1.827   -1.476   -1.341
+ PRQ           CAM    C    CH1       0.000      1.042   -3.449   -0.974
+ PRQ           HAM    H    H         0.000      0.287   -3.462   -1.772
+ PRQ           NAA    N    NH2       0.000      0.555   -4.219    0.176
+ PRQ           HAA2   H    H         0.000     -0.280   -4.786    0.094
+ PRQ           HAA1   H    H         0.000      1.051   -4.188    1.059
+ PRQ           CAK    C    CR6       0.000      2.349   -4.040   -1.497
+ PRQ           CAL    C    CR6       0.000      2.717   -3.855   -2.830
+ PRQ           NAN    N    N         1.000      1.944   -3.159   -3.660
+ PRQ           OAC    O    O         0.000      1.005   -3.775   -4.418
+ PRQ           OAD    O    O        -1.000      2.086   -1.809   -3.745
+ PRQ           CAI    C    CR16      0.000      3.912   -4.394   -3.296
+ PRQ           HAI    H    H         0.000      4.199   -4.250   -4.330
+ PRQ           CAG    C    CR16      0.000      4.740   -5.116   -2.444
+ PRQ           HAG    H    H         0.000      5.668   -5.534   -2.815
+ PRQ           CAF    C    CR16      0.000      4.375   -5.300   -1.116
+ PRQ           HAF    H    H         0.000      5.018   -5.860   -0.449
+ PRQ           CAH    C    CR16      0.000      3.181   -4.764   -0.646
+ PRQ           HAH    H    H         0.000      2.897   -4.910    0.389
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PRQ      OXT    n/a    CAE    START
+ PRQ      CAE    OXT    CAJ    .
+ PRQ      OAB    CAE    .      .
+ PRQ      CAJ    CAE    CAM    .
+ PRQ      HAJ1   CAJ    .      .
+ PRQ      HAJ2   CAJ    .      .
+ PRQ      CAM    CAJ    CAK    .
+ PRQ      HAM    CAM    .      .
+ PRQ      NAA    CAM    HAA1   .
+ PRQ      HAA2   NAA    .      .
+ PRQ      HAA1   NAA    .      .
+ PRQ      CAK    CAM    CAL    .
+ PRQ      CAL    CAK    CAI    .
+ PRQ      NAN    CAL    OAD    .
+ PRQ      OAC    NAN    .      .
+ PRQ      OAD    NAN    .      .
+ PRQ      CAI    CAL    CAG    .
+ PRQ      HAI    CAI    .      .
+ PRQ      CAG    CAI    CAF    .
+ PRQ      HAG    CAG    .      .
+ PRQ      CAF    CAG    CAH    .
+ PRQ      HAF    CAF    .      .
+ PRQ      CAH    CAF    HAH    .
+ PRQ      HAH    CAH    .      END
+ PRQ      CAK    CAH    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PRQ       OAB       CAE       deloc     1.250     0.020     1.250     0.020     
+PRQ       CAJ       CAE       single    1.510     0.020     1.510     0.020     
+PRQ       CAE       OXT       deloc     1.250     0.020     1.250     0.020     
+PRQ       CAM       CAJ       single    1.524     0.020     1.524     0.020     
+PRQ       NAA       CAM       single    1.450     0.020     1.450     0.020     
+PRQ       CAK       CAM       single    1.480     0.020     1.480     0.020     
+PRQ       CAK       CAH       single    1.390     0.020     1.390     0.020     
+PRQ       CAL       CAK       double    1.487     0.020     1.487     0.020     
+PRQ       CAH       CAF       double    1.390     0.020     1.390     0.020     
+PRQ       CAF       CAG       single    1.390     0.020     1.390     0.020     
+PRQ       CAG       CAI       double    1.390     0.020     1.390     0.020     
+PRQ       CAI       CAL       single    1.390     0.020     1.390     0.020     
+PRQ       NAN       CAL       single    1.400     0.020     1.400     0.020     
+PRQ       OAD       NAN       single    1.400     0.020     1.400     0.020     
+PRQ       OAC       NAN       double    1.220     0.020     1.220     0.020     
+PRQ       HAJ1      CAJ       single    1.089     0.010     0.989     0.005     
+PRQ       HAJ2      CAJ       single    1.089     0.010     0.989     0.005     
+PRQ       HAM       CAM       single    1.089     0.010     0.989     0.005     
+PRQ       HAA1      NAA       single    1.036     0.016     0.914     0.007     
+PRQ       HAA2      NAA       single    1.036     0.016     0.914     0.007     
+PRQ       HAH       CAH       single    1.082     0.013     0.975     0.010     
+PRQ       HAF       CAF       single    1.082     0.013     0.975     0.010     
+PRQ       HAG       CAG       single    1.082     0.013     0.975     0.010     
+PRQ       HAI       CAI       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PRQ      OXT    CAE    OAB     123.000    3.000
+ PRQ      OXT    CAE    CAJ     118.500    3.000
+ PRQ      OAB    CAE    CAJ     118.500    3.000
+ PRQ      CAE    CAJ    HAJ1    109.470    3.000
+ PRQ      CAE    CAJ    HAJ2    109.470    3.000
+ PRQ      CAE    CAJ    CAM     109.470    3.000
+ PRQ      HAJ1   CAJ    HAJ2    107.900    3.000
+ PRQ      HAJ1   CAJ    CAM     109.470    3.000
+ PRQ      HAJ2   CAJ    CAM     109.470    3.000
+ PRQ      CAJ    CAM    HAM     108.340    3.000
+ PRQ      CAJ    CAM    NAA     109.470    3.000
+ PRQ      CAJ    CAM    CAK     109.470    3.000
+ PRQ      HAM    CAM    NAA     109.470    3.000
+ PRQ      HAM    CAM    CAK     109.470    3.000
+ PRQ      NAA    CAM    CAK     109.470    3.000
+ PRQ      CAM    NAA    HAA2    120.000    3.000
+ PRQ      CAM    NAA    HAA1    120.000    3.000
+ PRQ      HAA2   NAA    HAA1    120.000    3.000
+ PRQ      CAM    CAK    CAL     120.000    3.000
+ PRQ      CAM    CAK    CAH     120.000    3.000
+ PRQ      CAL    CAK    CAH     120.000    3.000
+ PRQ      CAK    CAL    NAN     120.000    3.000
+ PRQ      CAK    CAL    CAI     120.000    3.000
+ PRQ      NAN    CAL    CAI     120.000    3.000
+ PRQ      CAL    NAN    OAC     120.000    3.000
+ PRQ      CAL    NAN    OAD     120.000    3.000
+ PRQ      OAC    NAN    OAD     120.000    3.000
+ PRQ      CAL    CAI    HAI     120.000    3.000
+ PRQ      CAL    CAI    CAG     120.000    3.000
+ PRQ      HAI    CAI    CAG     120.000    3.000
+ PRQ      CAI    CAG    HAG     120.000    3.000
+ PRQ      CAI    CAG    CAF     120.000    3.000
+ PRQ      HAG    CAG    CAF     120.000    3.000
+ PRQ      CAG    CAF    HAF     120.000    3.000
+ PRQ      CAG    CAF    CAH     120.000    3.000
+ PRQ      HAF    CAF    CAH     120.000    3.000
+ PRQ      CAF    CAH    HAH     120.000    3.000
+ PRQ      CAF    CAH    CAK     120.000    3.000
+ PRQ      HAH    CAH    CAK     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PRQ      var_1    OXT    CAE    CAJ    CAM     -172.322   20.000   3
+ PRQ      var_2    CAE    CAJ    CAM    CAK      169.781   20.000   3
+ PRQ      var_3    CAJ    CAM    NAA    HAA1     -49.792   20.000   1
+ PRQ      var_4    CAJ    CAM    CAK    CAL      -85.864   20.000   1
+ PRQ      CONST_1  CAM    CAK    CAH    CAF      180.000    0.000   0
+ PRQ      CONST_2  CAM    CAK    CAL    CAI      180.000    0.000   0
+ PRQ      var_5    CAK    CAL    NAN    OAD       87.264   20.000   1
+ PRQ      CONST_3  CAK    CAL    CAI    CAG        0.000    0.000   0
+ PRQ      CONST_4  CAL    CAI    CAG    CAF        0.000    0.000   0
+ PRQ      CONST_5  CAI    CAG    CAF    CAH        0.000    0.000   0
+ PRQ      CONST_6  CAG    CAF    CAH    CAK        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PRQ      chir_01  CAM    CAJ    NAA    CAK       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PRQ      plan-1    CAE       0.020
+ PRQ      plan-1    OAB       0.020
+ PRQ      plan-1    CAJ       0.020
+ PRQ      plan-1    OXT       0.020
+ PRQ      plan-2    NAA       0.020
+ PRQ      plan-2    CAM       0.020
+ PRQ      plan-2    HAA1      0.020
+ PRQ      plan-2    HAA2      0.020
+ PRQ      plan-3    CAK       0.020
+ PRQ      plan-3    CAM       0.020
+ PRQ      plan-3    CAH       0.020
+ PRQ      plan-3    CAL       0.020
+ PRQ      plan-3    CAF       0.020
+ PRQ      plan-3    CAG       0.020
+ PRQ      plan-3    CAI       0.020
+ PRQ      plan-3    HAH       0.020
+ PRQ      plan-3    HAF       0.020
+ PRQ      plan-3    HAG       0.020
+ PRQ      plan-3    HAI       0.020
+ PRQ      plan-3    NAN       0.020
+ PRQ      plan-4    NAN       0.020
+ PRQ      plan-4    CAL       0.020
+ PRQ      plan-4    OAD       0.020
+ PRQ      plan-4    OAC       0.020
+# ------------------------------------------------------

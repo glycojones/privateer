@@ -1,0 +1,172 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RU2      RU2 'pentakis(oxidaniumyl)-(oxidaniumylid' non-polymer        18   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RU2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RU2           O2     O    O         1.000     -0.262    0.080   -0.092
+ RU2           C2     C    CSP       0.000     -1.283    0.090   -0.117
+ RU2           RU     RU   RU        0.000     -3.122    0.097   -0.148
+ RU2           O6     O    O         1.000     -3.100    1.816    0.539
+ RU2           H3     H    H         0.000     -3.889    2.336    0.764
+ RU2           H2     H    H         0.000     -2.245    2.304    0.637
+ RU2           O1     O    O         1.000     -3.112   -1.613   -0.828
+ RU2           H10    H    H         0.000     -2.263   -2.002   -1.146
+ RU2           H5     H    H         0.000     -3.866   -2.231   -0.788
+ RU2           O5     O    O         1.000     -3.137   -0.568    1.575
+ RU2           H8     H    H         0.000     -3.376   -1.495    1.791
+ RU2           H6     H    H         0.000     -2.496   -0.195    2.259
+ RU2           O4     O    O         1.000     -4.963    0.125   -0.165
+ RU2           H11    H    H         0.000     -5.465    0.032   -0.989
+ RU2           H7     H    H         0.000     -5.461    0.523    0.571
+ RU2           O3     O    O         1.000     -3.082    0.798   -1.854
+ RU2           H9     H    H         0.000     -2.448    1.548   -2.071
+ RU2           H1     H    H         0.000     -3.319    0.290   -2.659
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RU2      O2     n/a    C2     START
+ RU2      C2     O2     RU     .
+ RU2      RU     C2     O3     .
+ RU2      O6     RU     H2     .
+ RU2      H3     O6     .      .
+ RU2      H2     O6     .      .
+ RU2      O1     RU     H5     .
+ RU2      H10    O1     .      .
+ RU2      H5     O1     .      .
+ RU2      O5     RU     H6     .
+ RU2      H8     O5     .      .
+ RU2      H6     O5     .      .
+ RU2      O4     RU     H7     .
+ RU2      H11    O4     .      .
+ RU2      H7     O4     .      .
+ RU2      O3     RU     H1     .
+ RU2      H9     O3     .      .
+ RU2      H1     O3     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RU2       O3        RU        single    1.841     0.020     1.841     0.020     
+RU2       RU        C2        single    1.831     0.020     1.831     0.020     
+RU2       O1        RU        single    1.840     0.020     1.840     0.020     
+RU2       O5        RU        single    1.840     0.020     1.840     0.020     
+RU2       C2        O2        triple    1.003     0.020     1.003     0.020     
+RU2       O4        RU        single    1.840     0.020     1.840     0.020     
+RU2       H1        O3        single    0.970     0.012     0.967     0.020     
+RU2       H5        O1        single    0.970     0.012     0.967     0.020     
+RU2       H6        O5        single    0.970     0.012     0.967     0.020     
+RU2       H7        O4        single    0.970     0.012     0.967     0.020     
+RU2       H10       O1        single    0.970     0.012     0.968     0.020     
+RU2       H11       O4        single    0.970     0.012     0.967     0.020     
+RU2       H9        O3        single    0.970     0.012     0.968     0.020     
+RU2       H8        O5        single    0.970     0.012     0.967     0.020     
+RU2       O6        RU        single    1.839     0.020     1.839     0.020     
+RU2       H2        O6        single    0.970     0.012     0.967     0.020     
+RU2       H3        O6        single    0.970     0.012     0.968     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RU2      O2     C2     RU      179.948    3.000
+ RU2      C2     RU     O6       90.000    3.000
+ RU2      C2     RU     O1       90.000    3.000
+ RU2      C2     RU     O5       90.000    3.000
+ RU2      C2     RU     O4      180.000    3.000
+ RU2      C2     RU     O3       90.000    3.000
+ RU2      O6     RU     O1      180.000    3.000
+ RU2      O6     RU     O5       90.000    3.000
+ RU2      O1     RU     O5       90.000    3.000
+ RU2      O6     RU     O4       90.000    3.000
+ RU2      O1     RU     O4       90.000    3.000
+ RU2      O5     RU     O4       90.000    3.000
+ RU2      O6     RU     O3       90.000    3.000
+ RU2      O1     RU     O3       90.000    3.000
+ RU2      O5     RU     O3      180.000    3.000
+ RU2      O4     RU     O3       90.000    3.000
+ RU2      RU     O6     H3      113.959    3.000
+ RU2      RU     O6     H2      114.055    3.000
+ RU2      H3     O6     H2      113.993    3.000
+ RU2      RU     O1     H10     113.979    3.000
+ RU2      RU     O1     H5      114.003    3.000
+ RU2      H10    O1     H5      114.007    3.000
+ RU2      RU     O5     H8      114.026    3.000
+ RU2      RU     O5     H6      113.995    3.000
+ RU2      H8     O5     H6      114.014    3.000
+ RU2      RU     O4     H11     114.062    3.000
+ RU2      RU     O4     H7      113.993    3.000
+ RU2      H11    O4     H7      114.028    3.000
+ RU2      RU     O3     H9      113.945    3.000
+ RU2      RU     O3     H1      114.004    3.000
+ RU2      H9     O3     H1      114.041    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RU2      var_1            O2     C2     RU     O4               180.000           20.000   3
+ RU2      var_2            H3     O6     RU     C2                 0.000           20.000   3
+ RU2      var_3            H10    O1     RU     C2                 0.000           20.000   3
+ RU2      var_4            H8     O5     RU     C2                 0.000           20.000   3
+ RU2      var_5            H11    O4     RU     O1                 0.000           20.000   3
+ RU2      var_6            H9     O3     RU     C2                 0.000           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ RU2      chir_01          RU     C2     O4     O1        cross4
+                   O3     O6     O5     .      .
+# ------------------------------------------------------

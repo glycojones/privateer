@@ -3,23 +3,51 @@
 
 // clipper-glyco.h: a set of tools for handling sugars
 // version  0.9.1
-// Library for the YSBL program Privateer (PRogramatic Identification of Various Anomalies Toothsome Entities Experience in Refinement)
-// Licence: LGPL - Please check Licence.txt for details.
+// 2013 Jon Agirre & Kevin Cowtan, The University of York
+// mailto: jon.agirre@york.ac.uk
+// mailto: kevin.cowtan@york.ac.uk
 //
-// 2013-
-// York Structural Biology Laboratory
-// The University of York
-
+//L  This library is free software and is distributed under the terms
+//L  and conditions of version 2.1 of the GNU Lesser General Public
+//L  Licence (LGPL) with the following additional clause:
+//L
+//L     `You may also combine or link a "work that uses the Library" to
+//L     produce a work containing portions of the Library, and distribute
+//L     that work under terms of your choice, provided that you give
+//L     prominent notice with each copy of the work that the specified
+//L     version of the Library is used in it, and that you include or
+//L     provide public access to the complete corresponding
+//L     machine-readable source code for the Library including whatever
+//L     changes were used in the work. (i.e. If you make changes to the
+//L     Library you must distribute those, but you do not need to
+//L     distribute source or object code to those portions of the work
+//L     not covered by this licence.)'
+//L
+//L  Note that this clause grants an additional right and does not impose
+//L  any additional restriction, and so does not affect compatibility
+//L  with the GNU General Public Licence (GPL). If you wish to negotiate
+//L  other terms, please contact the maintainer.
+//L
+//L  You can redistribute it and/or modify the library under the terms of
+//L  the GNU Lesser General Public License as published by the Free Software
+//L  Foundation; either version 2.1 of the License, or (at your option) any
+//L  later version.
+//L
+//L  This library is distributed in the hope that it will be useful, but
+//L  WITHOUT ANY WARRANTY; without even the implied warranty of
+//L  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+//L  Lesser General Public License for more details.
+//L
+//L  You should have received a copy of the CCP4 licence and/or GNU
+//L  Lesser General Public License along with this library; if not, write
+//L  to the CCP4 Secretary, Daresbury Laboratory, Warrington WA4 4AD, UK.
+//L  The GNU Lesser General Public can also be obtained by writing to the
+//L  Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+//L  MA 02111-1307 USA
 
 #ifndef CLIPPER_GLYCO_H_INCLUDED
 #define CLIPPER_GLYCO_H_INCLUDED
 
-#include <fstream>
-#include <algorithm>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <sstream>
 #include <stdlib.h>
 #include <math.h>
 #include <algorithm>
@@ -27,14 +55,10 @@
 #include <clipper/clipper-mmdb.h>
 #include <clipper/clipper-minimol.h>
 #include "clipper-glyco_data.h"
-#include <clipper/minimol/minimol_utils.h>
-#include "privateer-json.h"
 
 inline bool altconf_compatible ( char m1, char m2 )
 {
-    // OLD VERSION: if (( m1 == 'A' && m2 == 'B') || ( m1 == 'B' && m2 == 'A')) 
-    // would cause an endless while loop in is_stereocentre() when there would be altconfs like 'C'
-    if (( m1 != m2)) 
+    if (( m1 == 'A' && m2 == 'B') || ( m1 == 'B' && m2 == 'A'))
         return false;
     else
         return true;
@@ -108,7 +132,7 @@ inline clipper::ftype get_angle ( clipper::Vec3<clipper::ftype> vec1, clipper::V
     return angle;
 }
 
-//! Clipper extensions for handling sugars. All code within this namespace shall respect Clipper conventions
+//! Clipper extensions for handling sugars. All code within this namespace shall respect Clipper conventions 
 namespace clipper
 {
 
@@ -134,9 +158,9 @@ namespace clipper
         public:
 
             MSugar ();
-            MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, bool& debug_output, char alt_conf = ' ' ); //!< default constructor
-            MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, bool& debug_output, char alt_conf = ' ' );
-            MSugar ( const clipper::MiniMol& mmol, const clipper::String chainID, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, clipper::data::sugar_database_entry& validation_data, bool& debug_output, char alt_conf = ' '  );
+            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, char alt_conf = ' ' ); //!< default constructor
+            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, char alt_conf = ' ' );
+            MSugar ( const clipper::MiniMol& mmol, const clipper::MMonomer& mmon, const clipper::MAtomNonBond& manb, clipper::data::sugar_database_entry& validation_data, char alt_conf = ' '  );
             //!< provide pre-calculated (time expensive) MAtomNonBond object. This object will tipically be re-used for many MSugar objects
 
             const bool operator== ( const clipper::MSugar& m2 ) const { return ( this->id() == m2.id() ); }
@@ -147,13 +171,7 @@ namespace clipper
             const clipper::String conformation_name_iupac() const { return clipper::data::iupac_conformational_landscape[sugar_conformation]; }
             //!< get HTML-formatted, iupac-compliant codes describing the conformation of the sugar ring
 
-            const clipper::ftype puckering_amplitude() const 
-            { 
-                if(sugar_cremer_pople_params.empty())
-                    return -1;
-                else
-                    return sugar_cremer_pople_params[0]; 
-            }
+            const clipper::ftype puckering_amplitude() const { return sugar_cremer_pople_params[0]; }
             //!< convenience function for getting the puckering amplitude (in Angstroems) of the sugar ring
 
             int conformation_code() const { return sugar_conformation; }
@@ -176,8 +194,6 @@ namespace clipper
 
             clipper::String handedness() const { return sugar_handedness; }
             //!< get the sugar's handedness: "D" for dextro, "L" for laevo, "N" for undetermined and "X" for unsupported (missing from the clipper::data sugar database)
-
-            clipper::String chain_id() const { return sugar_chain_id; };
 
             clipper::String type_of_sugar() const { return sugar_denomination; }
             //!< returns a string containing an anomer-handedness-type denomination, e.g. "beta-D-aldopyranose"
@@ -206,13 +222,7 @@ namespace clipper
             bool is_sane() const { return sugar_sane; }
             //!< checks it against the internal clipper::data sugar database for correct anomer, handedness and ring members
 
-            clipper::String full_name() const { return sugar_name_full; }
-
-            clipper::String short_name() const { return sugar_name_short; }
-
-            clipper::String pdb_id() const { return sugar_pdb_id; }
-
-            int get_seqnum() const { return sugar_seqnum; }
+            clipper::String full_name() const { return sugar_name; }
 
             clipper::String full_type() const { return sugar_type; }
 
@@ -257,17 +267,7 @@ namespace clipper
 
             clipper::ftype get_rscc() const { return sugar_rscc; }
 
-            clipper::ftype get_accum() const { return sugar_accum; }
-
-            bool get_occupancy_check() const { return sugar_occupancy_check; }
-
             void set_rscc ( clipper::ftype rscc_in ) { sugar_rscc = rscc_in; }
-
-            void set_accum_score ( clipper::ftype accum_in ) { sugar_accum = accum_in; }
-
-            void override_conformation_diag ( bool is_it_ok ) { sugar_diag_conformation = is_it_ok; }
-
-            void set_occupancy_check ( bool occupancy_check_in ) { sugar_occupancy_check = occupancy_check_in; }
 
             clipper::String get_diagnostic() const { return sugar_diagnostic; }
 
@@ -326,15 +326,11 @@ namespace clipper
             std::vector<clipper::ftype>     sugar_ring_angles;                  // ring angles, starting with last_carbon-O-anomeric carbon
             std::vector<clipper::ftype>     sugar_ring_torsion;                 // torsion angles, starting with C5-O5-C1-C2
             int                             sugar_index;                        // 9999 if unchecked, 101010 if absent from the database, 0-400 if found
-            String                          sugar_chain_id;
             String                          sugar_denomination;                 // e.g. alpha-aldopyranose
             String                          sugar_anomer;                       // "alpha", "beta" or "undetermined"
             String                          sugar_handedness;                   // "D", "L" or "undetermined"
             String                          sugar_type;                         // i.e. "aldose" or "ketose"
-            String                          sugar_name_full;
-            String                          sugar_name_short;
-            String                          sugar_pdb_id;
-            int                             sugar_seqnum;
+            String                          sugar_name;
             bool                            sugar_diag_ring;
             bool                            sugar_diag_bonds_rmsd;
             bool                            sugar_diag_angles_rmsd;
@@ -342,10 +338,8 @@ namespace clipper
             bool                            sugar_diag_chirality;
             bool                            sugar_diag_conformation;
             bool                            sugar_diag_puckering;
-            bool                            sugar_occupancy_check;
             clipper::String                 sugar_diagnostic;               // full diagnostic to be used in Coot and ccp4i2
             clipper::ftype                  sugar_rscc;                     // RSCC to be used in Coot and ccp4i2
-            clipper::ftype                  sugar_accum;                     // accum score, <Fo> in Cryo-EM, <mFo> in Xray.
             clipper::ftype                  sugar_ring_bond_rmsd;
             clipper::ftype                  sugar_ring_angle_rmsd;
             clipper::ftype                  sugar_bfactor;
@@ -353,8 +347,6 @@ namespace clipper
             clipper::String                 sugar_alternate_confcode;
             std::vector < MSugar >          sugar_linked_to;                    // size: number of carbon atoms - 1
             clipper::String                 sugar_context;                  // n-glycan, o-glycan or ligand
-            int                             glycan_index;
-            bool                            debug_output;
 
             // private methods
 
@@ -387,8 +379,8 @@ namespace clipper
         public:
 
             MDisaccharide () {} //!< null constructor
-            MDisaccharide ( clipper::MSugar& sugar_one, clipper::MSugar& sugar_two, bool& debug_output) { this->sugar_one = sugar_one; this->sugar_two = sugar_two; this->debug_output = debug_output; }
-            MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, const clipper::String chainID, clipper::MMonomer& mm, bool& debug_output );
+            MDisaccharide ( clipper::MSugar& sugar_one, clipper::MSugar& sugar_two) { this->sugar_one = sugar_one; this->sugar_two = sugar_two; }
+            MDisaccharide ( clipper::MiniMol& mmol, const clipper::MAtomNonBond& manb, clipper::MMonomer& mm );
             clipper::MSugar& get_first_sugar () { return sugar_one; }
             clipper::MSugar& get_second_sugar () { return sugar_two; }
 
@@ -402,32 +394,19 @@ namespace clipper
             } //!< returns -1 if not found
 
         private:
-            bool debug_output;
             clipper::MSugar sugar_one;
             clipper::MSugar sugar_two;
 
     }; // class MDisaccharide
 
     //! Stores a tree built with Node(s) and Linkage(s), which contain references to MSugar(s)
-    // TO DO: Make this class a prototype that would be inherited both by MGlycan and MLigandGlycan. Currently, I'm just gonna add hack'ish way to work with
-    //        ligand glycans via the introduction of an alternative constructor. 
     class MGlycan
     {
         public:
 
             MGlycan () { } //!< null constructor
-            MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::MSugar& root_sugar, clipper::String& root_sugar_chain_id, bool& debug_output, std::string expression_system = "undefined" );
-            MGlycan ( clipper::String chain, clipper::MSugar& root_sugar, clipper::String& root_sugar_chain_id, bool& debug_output, std::string expression_system = "undefined" );
+            MGlycan ( clipper::String chain, clipper::MMonomer& root_aa, clipper::MSugar& root_sugar, std::string expression_system = "undefined" );
 
-            struct MGlycanTorsionSummary 
-            {
-                std::string type;
-                clipper::String first_residue_name;
-                clipper::String second_residue_name;
-                std::vector<std::pair<clipper::MAtom, clipper::MAtom>> atoms;
-                std::vector<std::pair<float, float>> torsions; // .first = Phi, .second = Psi
-            };
-            
             class Node;
 
             class Linkage
@@ -447,7 +426,6 @@ namespace clipper
                         this->index = index;
                         this->type = anomericity;
                         torsion_phi = torsion_psi = torsion_omega = 0.0;
-                        donorAtom = acceptorAtom = clipper::MAtom();
                     }
 
                     // Linkage& operator= ( const Linkage& link ) { if ( this != &link ) node = link.node; return *this;  }
@@ -456,7 +434,6 @@ namespace clipper
                     void set_order ( int order ) { index = order; }
 
                     int get_linked_node_id ( ) const { return node_id; }
-                    void modify_linked_node_id ( int modified_connect_to_id ) { node_id = modified_connect_to_id; }
 
                     std::string get_anomericity ( ) const { return type; }
                     //!< alpha or beta
@@ -496,51 +473,16 @@ namespace clipper
                     std::vector<float> get_torsions () const
                     {
                         std::vector<float> result;
-
                         result.push_back ( torsion_phi );
                         result.push_back ( torsion_psi );
 
-                        if (index == 6 || (index == 1 && torsion_omega != 0.0))
-                        {
+                        if (index == 6)
                             result.push_back ( torsion_omega );
-                        }
-                        
-                        if (index == 7)
-                        {
-                            result.push_back ( torsion_omega_six );
-                            result.push_back ( torsion_omega_seven );
-                        }
-
-                        if (index == 8)
-                        {
-                            result.push_back ( torsion_omega_seven );
-                            result.push_back ( torsion_omega_eight );
-                            result.push_back ( torsion_omega_nine );
-                            result.push_back ( torsion_phi_cone_ctwo_oeight_ceight );
-                        }
-
                         return result;
 
-                    } //!< [0]=phi, [1]=psi, { [2]=omega if 1-6 linkage }
+                    } //!< [0]=phi, [1]=psi, { [2]=omega, if 1-6 linkage }
 
-                    std::pair<clipper::MAtom, clipper::MAtom> get_linkage_atoms () const
-                    {
-                        return std::make_pair(donorAtom, acceptorAtom);
-                    } //!< .first=donorAtom, .second=acceptorAtom
-
-                    void set_torsions ( float phi, float psi, float omega, float omega_six, float omega_seven, float omega_eight, float omega_nine, float phi_cone_ctwo_oeight_ceight )
-                    { 
-                        torsion_phi         =   phi;
-                        torsion_psi         =   psi; 
-                        torsion_omega       =   omega; 
-                        torsion_omega_six   =   omega_six;
-                        torsion_omega_seven =   omega_seven;
-                        torsion_omega_eight =   omega_eight; 
-                        torsion_omega_nine  =   omega_nine;
-                        torsion_phi_cone_ctwo_oeight_ceight = phi_cone_ctwo_oeight_ceight;
-                    }
-
-                    void set_linkage_atoms( clipper::MAtom& inputDonorAtom, clipper::MAtom& inputAcceptorAtom) { donorAtom = inputDonorAtom; acceptorAtom = inputAcceptorAtom; };
+                    void set_torsions ( float phi, float psi, float omega=0.0 ) { torsion_phi = phi; torsion_psi = psi; torsion_omega=omega; }
 
                     std::string format() const
                     {
@@ -552,20 +494,14 @@ namespace clipper
                     }
 
                 private:
+
                     float torsion_phi;
                     float torsion_psi;
-                    float torsion_omega;        // for 1-6 linkages
-                    float torsion_omega_six;    // for 1-7 linkages
-                    float torsion_omega_seven;  // for 1-7 and 2-8 linkages
-                    float torsion_omega_eight;  // for 2-8 linkages
-                    float torsion_omega_nine;   // for 2-8 linkages
-                    float torsion_phi_cone_ctwo_oeight_ceight; // for 2-8 linkages
-                    int index;                  // carbon to which this is connected
-                    int node_id;                // sugar connected to by this linkage
-                    std::string type;           // anomer
-                    std::string annotation;     // include validation information
-                    clipper::MAtom donorAtom;
-                    clipper::MAtom acceptorAtom;
+                    float torsion_omega;    // for 1-6 linkages
+                    int index;              // carbon to which this is connected
+                    int node_id;            // sugar connected to by this linkage
+                    std::string type;       // anomer
+                    std::string annotation; // include validation information
 
             }; // class Linkage
 
@@ -604,15 +540,6 @@ namespace clipper
 
                     const int number_of_connections ( ) const { return connections.size(); }
 
-                    void remove_connection ( const int vectorIndex )
-                    {
-                        if ( vectorIndex > connections.size() - 1 )
-                            connections.pop_back();
-                        else
-                            connections.erase(connections.begin() + vectorIndex);
-                    }
-
-
                     Linkage& get_connection ( const int index )
                     {
                         if ( index > connections.size() -1 )
@@ -645,45 +572,23 @@ namespace clipper
 
             }; // class Node
 
-            bool link_sugars  ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar, clipper::MAtom& donorAtom, clipper::MAtom& acceptorAtom ); // true if there's been any problem
-            void add_torsions_for_plots(float Phi, float Psi, clipper::String first_residue_name, clipper::MAtom first_atom, clipper::String second_residue_name, clipper::MAtom second_atom);
-            std::vector<MGlycanTorsionSummary> return_torsion_summary_within_glycan() { return all_torsions_within_mglycan; };
+            bool link_sugars  ( int link, clipper::MSugar& first_sugar, clipper::MSugar& next_sugar ); // true if there's been any problem
+
             const std::pair < clipper::MMonomer, clipper::MSugar >& get_root () const { return this->root; }
             const clipper::String& get_type () const { return kind_of_glycan; } // n-glycan, o-glycan or s-glycan
-            // std::string get_root_by_name () const { return get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
-            std::string get_root_by_name () const { return get_root().second.type().trim() + "-" + get_root().second.id().trim() + "/" + get_root_sugar_chainID().trim().substr(0,1) + "_" + get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
-            std::string get_root_for_filename () { return  get_root().second.type().trim() + get_root().second.id().trim() + "-[" + get_root_sugar_chainID().trim().substr(0,1) + "]_[" + get_chain().trim().substr(0,1) + "]-" + get_root().first.type().trim() + get_root().first.id().trim(); }
-
-            std::string write_ring_ext_restraints ( float weight );
-            std::string write_link_ext_restraints ( float weight );
+            std::string get_root_by_name () const { return get_root().first.type().trim() + "-" + get_root().first.id().trim() + "/" + get_chain().substr(0,1); }
+            std::string get_root_for_filename () { return "[" + get_chain().trim().substr(0,1) + "]-" + get_root().first.type().trim() + get_root().first.id().trim(); }
 
             clipper::String print_linear ( const bool print_info, const bool html_format, const bool translate );
+
             clipper::String print_SVG ( bool vertical, bool print_info, bool colour_gradient );
-
-            // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION BEGIN //
-            char convertNumberToLetter(int number); // need to be relocated, doesn't really belong under ::MGlycan.
-            std::vector < std::string > obtain_unique_WURCS_residues();
-            std::vector < std::string > obtain_unique_residue_codes();
-            const int obtain_total_number_of_glycosidic_bonds();
-            clipper::String generate_wurcs ();
-            // NEW FUNCTIONS INTRODUCED DUE TO WURCS IMPLEMENTATION END //
-
 
             std::vector < clipper::MSugar >& get_sugars () { return sugars; }
 
             const Node& get_node ( int index ) const { if (index>node_list.size()-1) return node_list.back(); else return node_list[index]; }
-            std::vector<Node> get_node_list_vector() { return node_list; }; 
 
             const clipper::String& get_chain () const { return chain; }
-            const clipper::String& get_root_sugar_chainID () const { return chain_root_sugar; }
-            // const std::string get_wurcs() const { return wurcs; }
             int number_of_nodes ( ) const { return node_list.size(); }
-
-            void remove_node_at_index ( int index );
-            void replace_sugar_at_index ( int index, clipper::MSugar& donor );
-            void update_msugar_in_root ( clipper::MSugar& newmsug );
-
-            int get_number_of_connections_at_index ( int index ) const { if (index>node_list.size()-1) return node_list.back().number_of_connections(); else return node_list[index].number_of_connections(); }
 
             void set_kind_of_glycan ( clipper::String input ) { kind_of_glycan = input; }
 
@@ -694,15 +599,6 @@ namespace clipper
                 result.push_back ( torsion_psi );
                 return result;
             } //!< [0]=phi, [1]=psi
-
-            std::string print_torsions () const
-                {
-                    std::string output; 
-
-                    output = "Phi: " + std::to_string(torsion_phi) + " Psi: " + std::to_string(torsion_psi);
-
-                    return output;
-                }
 
             void set_glycosylation_torsions ( float phi, float psi ) { torsion_phi = phi; torsion_psi = psi; }
 
@@ -741,29 +637,27 @@ namespace clipper
             void set_annotations ( std::string expression_system );  // function that annotates glycobiologic validation
 
         private:
-            bool debug_output;
+
             clipper::String kind_of_glycan;                 // can be n-glycan, o-glycan or s-glycan
             std::pair < clipper::MMonomer, clipper::MSugar > root;     // this is the root, should be null if this is a ligand saccharide
             std::vector < Node > node_list;                 // interlinked nodes
             clipper::String chain;                          // Chain ID for this glycan
-            clipper::String chain_root_sugar;              // Chain ID for root sugar
             std::vector < clipper::MSugar > sugars;         // vector of sugars
             clipper::ftype torsion_psi, torsion_phi;        // Torsions of the protein-glycan link
             std::string root_annotation, link_annotation, expression_system;
-            std::vector<MGlycanTorsionSummary> all_torsions_within_mglycan;
 
     }; // class MGlycan
+
 
     class MGlycology
     {
         public:
 
             MGlycology () { } //!< null constructor
-            MGlycology ( const clipper::MiniMol&, bool debug_output, std::string expression_system = "undefined" );
-            MGlycology ( const clipper::MiniMol&, const clipper::MAtomNonBond&, bool debug_output, std::string expression_system = "undefined" );
+            MGlycology ( const clipper::MiniMol&, std::string expression_system = "undefined" );
+            MGlycology ( const clipper::MiniMol&, const clipper::MAtomNonBond&, std::string expression_system = "undefined" );
 
-            void pyinit ( const clipper::MiniMol&, const clipper::MAtomNonBond&, bool debug_output, std::string expression_system );
-            clipper::MGlycan get_glycan_by_id ( int id ) { return list_of_glycans[id]; };
+            clipper::MGlycan get_glycan_by_id ( int id );
             clipper::MGlycan get_glycan_by_root ( clipper::MMonomer& root )
             {
                 for (int i=0;i<list_of_glycans.size();i++)
@@ -773,22 +667,17 @@ namespace clipper
             }
             std::vector < clipper::MGlycan > get_list_of_glycans () const { return list_of_glycans; }
             std::vector < clipper::MSugar > get_sugar_list() { return list_of_sugars; }
-            std::string write_external_restraints ( bool restrain_rings,
-                                                    bool restrain_links,
-                                                    float weight = 0.1 );
 
         private:
 
             // private properties
-            bool debug_output;
             std::vector < clipper::MSugar >  list_of_sugars;
             std::vector < clipper::MGlycan > list_of_glycans;
             const clipper::MAtomNonBond* manb;
             const clipper::MiniMol * mmol;
 
             // private methods
-            const std::vector < std::pair< clipper::String, clipper::MMonomer > > get_overlapping_residues ( const clipper::MMonomer& mm );
-            const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > get_contacts ( const clipper::MMonomer& mm );
+            const std::vector < std::pair< clipper::MAtom, clipper::MAtomIndexSymmetry > > get_contacts ( const clipper::MMonomer& mm_one );
             int parse_order ( clipper::String str ) { const char *s = str.c_str(); return atoi(&s[2]); }
             void extend_tree ( clipper::MGlycan& mg, clipper::MSugar& msug );
             const char get_altconf ( const clipper::MAtom& ) const;

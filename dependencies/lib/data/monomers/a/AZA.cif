@@ -1,0 +1,154 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AZA     AZA      8-AZAXANTHINE     NON-POLYMER     14     11     .     
+#
+data_comp_AZA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AZA     N1      N       NR6     0       30.927      27.747      36.411      
+AZA     C2      C       CR6     0       32.190      27.452      35.923      
+AZA     O2      O       O       0       32.545      27.812      34.812      
+AZA     N3      N       NR6     0       33.052      26.734      36.728      
+AZA     C4      C       CR56    0       32.663      26.322      37.983      
+AZA     C5      C       CR56    0       31.387      26.622      38.469      
+AZA     C6      C       CR6     0       30.450      27.365      37.679      
+AZA     O6      O       O       0       29.304      27.683      38.011      
+AZA     N7      N       NRD5    0       31.288      26.088      39.733      
+AZA     N8      N       NRD5    0       32.422      25.496      40.014      
+AZA     N9      N       NR5     0       33.265      25.625      38.973      
+AZA     HN1     H       H       0       30.385      28.209      35.882      
+AZA     HN3     H       H       0       33.861      26.540      36.424      
+AZA     HN9     H       H       0       34.087      25.290      38.971      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AZA       N1        C2        SINGLE    y         1.373     0.012     1.373     0.012     
+AZA       N1        C6        SINGLE    y         1.395     0.012     1.395     0.012     
+AZA       C2        O2        DOUBLE    n         1.220     0.011     1.220     0.011     
+AZA       C2        N3        SINGLE    y         1.371     0.012     1.371     0.012     
+AZA       N3        C4        SINGLE    y         1.361     0.020     1.361     0.020     
+AZA       C4        C5        DOUBLE    y         1.403     0.020     1.403     0.020     
+AZA       C4        N9        SINGLE    y         1.352     0.010     1.352     0.010     
+AZA       C5        C6        SINGLE    y         1.422     0.014     1.422     0.014     
+AZA       C5        N7        SINGLE    y         1.377     0.011     1.377     0.011     
+AZA       C6        O6        DOUBLE    n         1.235     0.012     1.235     0.012     
+AZA       N7        N8        DOUBLE    y         1.306     0.010     1.306     0.010     
+AZA       N8        N9        SINGLE    y         1.343     0.010     1.343     0.010     
+AZA       N1        HN1       SINGLE    n         1.016     0.010     0.886     0.020     
+AZA       N3        HN3       SINGLE    n         1.016     0.010     0.885     0.020     
+AZA       N9        HN9       SINGLE    n         1.016     0.010     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AZA          C2          N1          C6     123.573    2.07
+AZA          C2          N1         HN1     117.800    1.94
+AZA          C6          N1         HN1     118.627    1.86
+AZA          N1          C2          O2     121.509    1.50
+AZA          N1          C2          N3     118.365    1.50
+AZA          O2          C2          N3     120.126    1.67
+AZA          C2          N3          C4     121.199    1.50
+AZA          C2          N3         HN3     118.507    2.15
+AZA          C4          N3         HN3     120.294    1.50
+AZA          N3          C4          C5     121.249    1.50
+AZA          N3          C4          N9     132.824    1.50
+AZA          C5          C4          N9     105.927    1.50
+AZA          C4          C5          C6     121.590    1.99
+AZA          C4          C5          N7     108.343    1.50
+AZA          C6          C5          N7     130.067    1.50
+AZA          N1          C6          C5     114.023    1.50
+AZA          N1          C6          O6     119.278    1.50
+AZA          C5          C6          O6     126.698    1.50
+AZA          C5          N7          N8     108.195    1.50
+AZA          N7          N8          N9     108.087    1.50
+AZA          C4          N9          N8     109.448    1.50
+AZA          C4          N9         HN9     127.436    3.00
+AZA          N8          N9         HN9     123.116    2.48
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AZA       const_sp2_sp2_3          O2          C2          N1          C6     180.000   10.00     2
+AZA              const_28          O6          C6          N1          C2     180.000   10.00     2
+AZA       const_sp2_sp2_7          O2          C2          N3          C4     180.000   10.00     2
+AZA       const_sp2_sp2_9          C5          C4          N3          C2       0.000   10.00     2
+AZA              const_32          N3          C4          N9          N8     180.000   10.00     2
+AZA              const_13          N3          C4          C5          C6       0.000   10.00     2
+AZA              const_18          C4          C5          C6          O6     180.000   10.00     2
+AZA              const_21          C4          C5          N7          N8       0.000   10.00     2
+AZA              const_23          C5          N7          N8          N9       0.000   10.00     2
+AZA              const_24          N7          N8          N9          C4       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AZA    plan-1          C2   0.020
+AZA    plan-1          C4   0.020
+AZA    plan-1          C5   0.020
+AZA    plan-1          C6   0.020
+AZA    plan-1         HN1   0.020
+AZA    plan-1         HN3   0.020
+AZA    plan-1          N1   0.020
+AZA    plan-1          N3   0.020
+AZA    plan-1          N7   0.020
+AZA    plan-1          N9   0.020
+AZA    plan-1          O2   0.020
+AZA    plan-1          O6   0.020
+AZA    plan-2          C4   0.020
+AZA    plan-2          C5   0.020
+AZA    plan-2          C6   0.020
+AZA    plan-2         HN9   0.020
+AZA    plan-2          N3   0.020
+AZA    plan-2          N7   0.020
+AZA    plan-2          N8   0.020
+AZA    plan-2          N9   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AZA SMILES           ACDLabs              10.04 "O=C2Nc1nnnc1C(=O)N2"
+AZA SMILES_CANONICAL CACTVS               3.341 "O=C1NC(=O)c2nn[nH]c2N1"
+AZA SMILES           CACTVS               3.341 "O=C1NC(=O)c2nn[nH]c2N1"
+AZA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c12c([nH]nn1)NC(=O)NC2=O"
+AZA SMILES           "OpenEye OEToolkits" 1.5.0 "c12c([nH]nn1)NC(=O)NC2=O"
+AZA InChI            InChI                1.03  "InChI=1S/C4H3N5O2/c10-3-1-2(8-9-7-1)5-4(11)6-3/h(H3,5,6,7,8,9,10,11)"
+AZA InChIKey         InChI                1.03  KVGVQTOQSNJTJI-UHFFFAOYSA-N
+AZA ?                acedrg               202         "dictionary generator"                  
+AZA ?                acedrg_database      11          "data source"                           
+AZA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AZA ?                refmac5              5.8.0189    "optimization tool"                     

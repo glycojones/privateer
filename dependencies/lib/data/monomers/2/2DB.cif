@@ -1,0 +1,154 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2DB     2DB      "(S)-(2,3-DIHYDROXYPROPOXY)TRIHYDROXYBORATE"     NON-POLYMER     20     10     .     
+#
+data_comp_2DB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2DB     B       B       B       -1      50.895      47.217      37.169      
+2DB     O6      O       OH1     0       50.193      47.102      35.876      
+2DB     O4      O       OH1     0       50.395      48.406      37.884      
+2DB     O5      O       OH1     0       52.343      47.370      36.931      
+2DB     C1      C       CH2     0       51.047      44.737      37.513      
+2DB     O1      O       O2      0       50.641      46.013      37.995      
+2DB     C2      C       CH1     0       50.661      43.670      38.514      
+2DB     O2      O       OH1     0       49.239      43.639      38.642      
+2DB     C3      C       CH2     0       51.182      42.295      38.148      
+2DB     O3      O       OH1     0       50.794      41.314      39.106      
+2DB     HO6     H       H       0       49.424      46.760      35.980      
+2DB     HO4     H       H       0       49.629      48.258      38.215      
+2DB     HO5     H       H       0       52.777      47.283      37.654      
+2DB     H11     H       H       0       52.019      44.725      37.379      
+2DB     H12     H       H       0       50.614      44.552      36.653      
+2DB     H2      H       H       0       51.045      43.916      39.389      
+2DB     HO2     H       H       0       48.891      43.410      37.902      
+2DB     H31     H       H       0       52.168      42.325      38.094      
+2DB     H32     H       H       0       50.831      42.041      37.260      
+2DB     HO3     H       H       0       51.176      41.493      39.839      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2DB       B         O6        SINGLE    n         1.475     0.020     1.475     0.020     
+2DB       B         O4        SINGLE    n         1.475     0.020     1.475     0.020     
+2DB       B         O5        SINGLE    n         1.475     0.020     1.475     0.020     
+2DB       B         O1        SINGLE    n         1.479     0.020     1.479     0.020     
+2DB       C1        O1        SINGLE    n         1.422     0.017     1.422     0.017     
+2DB       C1        C2        SINGLE    n         1.512     0.011     1.512     0.011     
+2DB       C2        O2        SINGLE    n         1.427     0.010     1.427     0.010     
+2DB       C2        C3        SINGLE    n         1.514     0.011     1.514     0.011     
+2DB       C3        O3        SINGLE    n         1.425     0.010     1.425     0.010     
+2DB       O6        HO6       SINGLE    n         0.970     0.012     0.848     0.020     
+2DB       O4        HO4       SINGLE    n         0.970     0.012     0.848     0.020     
+2DB       O5        HO5       SINGLE    n         0.970     0.012     0.848     0.020     
+2DB       C1        H11       SINGLE    n         1.089     0.010     0.981     0.017     
+2DB       C1        H12       SINGLE    n         1.089     0.010     0.981     0.017     
+2DB       C2        H2        SINGLE    n         1.089     0.010     0.987     0.019     
+2DB       O2        HO2       SINGLE    n         0.970     0.012     0.848     0.020     
+2DB       C3        H31       SINGLE    n         1.089     0.010     0.988     0.020     
+2DB       C3        H32       SINGLE    n         1.089     0.010     0.988     0.020     
+2DB       O3        HO3       SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2DB          O6           B          O4     110.049    3.00
+2DB          O6           B          O5     110.049    3.00
+2DB          O6           B          O1     110.049    3.00
+2DB          O4           B          O5     110.049    3.00
+2DB          O4           B          O1     110.049    3.00
+2DB          O5           B          O1     110.049    3.00
+2DB           B          O6         HO6     110.747    3.00
+2DB           B          O4         HO4     110.747    3.00
+2DB           B          O5         HO5     110.747    3.00
+2DB          O1          C1          C2     109.438    2.56
+2DB          O1          C1         H11     109.680    1.50
+2DB          O1          C1         H12     109.680    1.50
+2DB          C2          C1         H11     109.582    1.50
+2DB          C2          C1         H12     109.582    1.50
+2DB         H11          C1         H12     108.319    1.50
+2DB           B          O1          C1     118.513    2.13
+2DB          C1          C2          O2     109.314    1.96
+2DB          C1          C2          C3     113.504    1.50
+2DB          C1          C2          H2     108.656    1.50
+2DB          O2          C2          C3     110.247    1.72
+2DB          O2          C2          H2     108.721    1.50
+2DB          C3          C2          H2     108.441    1.50
+2DB          C2          O2         HO2     107.936    3.00
+2DB          C2          C3          O3     111.586    1.51
+2DB          C2          C3         H31     109.193    1.50
+2DB          C2          C3         H32     109.193    1.50
+2DB          O3          C3         H31     109.268    1.50
+2DB          O3          C3         H32     109.268    1.50
+2DB         H31          C3         H32     108.313    1.50
+2DB          C3          O3         HO3     108.280    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2DB             sp3_sp3_1          O4           B          O6         HO6     180.000   10.00     3
+2DB             sp3_sp3_4          O6           B          O4         HO4     180.000   10.00     3
+2DB             sp3_sp3_7          O6           B          O5         HO5     180.000   10.00     3
+2DB            sp3_sp3_10          O6           B          O1          C1     180.000   10.00     3
+2DB            sp3_sp3_13          C2          C1          O1           B     180.000   10.00     3
+2DB            sp3_sp3_16          O1          C1          C2          O2     180.000   10.00     3
+2DB            sp3_sp3_26          C1          C2          O2         HO2      60.000   10.00     3
+2DB            sp3_sp3_28          C1          C2          C3          O3     180.000   10.00     3
+2DB            sp3_sp3_37          C2          C3          O3         HO3     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+2DB    chir_1    C2    O2    C1    C3    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2DB SMILES           ACDLabs              10.04 "O[B-](O)(O)OCC(O)CO"
+2DB SMILES_CANONICAL CACTVS               3.341 "OC[C@H](O)CO[B-](O)(O)O"
+2DB SMILES           CACTVS               3.341 "OC[CH](O)CO[B-](O)(O)O"
+2DB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[B-](O)(O)(O)OC[C@H](CO)O"
+2DB SMILES           "OpenEye OEToolkits" 1.5.0 "[B-](O)(O)(O)OCC(CO)O"
+2DB InChI            InChI                1.03  "InChI=1S/C3H10BO6/c5-1-3(6)2-10-4(7,8)9/h3,5-9H,1-2H2/q-1/t3-/m0/s1"
+2DB InChIKey         InChI                1.03  KLKDDPLTQSQDLA-VKHMYHEASA-N
+2DB ?                acedrg               202         "dictionary generator"                  
+2DB ?                acedrg_database      11          "data source"                           
+2DB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2DB ?                refmac5              5.8.0189    "optimization tool"                     

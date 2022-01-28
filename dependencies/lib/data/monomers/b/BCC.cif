@@ -1,0 +1,334 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BCC      BCC '(3S,6S,8aR)-6-amino-6-benzyl-5-oxooc' non-polymer        40  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BCC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BCC           O3     O    OC       -0.500      0.000    0.000    0.000
+ BCC           C1     C    C         0.000     -1.165    0.453    0.063
+ BCC           O1     O    OC       -0.500     -2.008   -0.090    0.811
+ BCC           C2     C    CH1       0.000     -1.550    1.657   -0.758
+ BCC           H2     H    H         0.000     -1.411    1.442   -1.827
+ BCC           N1     N    N         0.000     -2.949    2.011   -0.497
+ BCC           C5     C    CH1       0.000     -2.999    3.423   -0.061
+ BCC           H5     H    H         0.000     -3.167    4.104   -0.907
+ BCC           C4     C    CH2       0.000     -1.624    3.663    0.604
+ BCC           H41    H    H         0.000     -1.553    3.253    1.614
+ BCC           H42    H    H         0.000     -1.326    4.714    0.618
+ BCC           C3     C    CH2       0.000     -0.687    2.870   -0.348
+ BCC           H32    H    H         0.000      0.219    2.521    0.153
+ BCC           H31    H    H         0.000     -0.413    3.441   -1.237
+ BCC           C9     C    C         0.000     -4.027    1.217   -0.592
+ BCC           O2     O    O         0.000     -3.896    0.110   -1.072
+ BCC           C8     C    CT        0.000     -5.383    1.648   -0.129
+ BCC           N2     N    NH2       0.000     -6.336    1.475   -1.233
+ BCC           HN22   H    H         0.000     -6.884    2.260   -1.558
+ BCC           HN21   H    H         0.000     -6.446    0.570   -1.671
+ BCC           C7     C    CH2       0.000     -5.427    3.095    0.332
+ BCC           H71    H    H         0.000     -6.243    3.198    1.050
+ BCC           H72    H    H         0.000     -5.629    3.723   -0.539
+ BCC           C6     C    CH2       0.000     -4.115    3.530    0.982
+ BCC           H62    H    H         0.000     -3.886    2.881    1.830
+ BCC           H61    H    H         0.000     -4.194    4.563    1.328
+ BCC           C10    C    CH2       0.000     -5.814    0.750    1.033
+ BCC           H101   H    H         0.000     -6.829    1.012    1.338
+ BCC           H102   H    H         0.000     -5.134    0.894    1.875
+ BCC           C11    C    CR6       0.000     -5.776   -0.691    0.595
+ BCC           C16    C    CR16      0.000     -6.899   -1.274    0.038
+ BCC           H16    H    H         0.000     -7.807   -0.696   -0.079
+ BCC           C15    C    CR16      0.000     -6.862   -2.594   -0.369
+ BCC           H15    H    H         0.000     -7.740   -3.049   -0.812
+ BCC           C14    C    CR16      0.000     -5.706   -3.336   -0.210
+ BCC           H14    H    H         0.000     -5.679   -4.371   -0.525
+ BCC           C13    C    CR16      0.000     -4.585   -2.754    0.351
+ BCC           H13    H    H         0.000     -3.679   -3.334    0.476
+ BCC           C12    C    CR16      0.000     -4.620   -1.432    0.754
+ BCC           H12    H    H         0.000     -3.742   -0.976    1.195
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BCC      O3     n/a    C1     START
+ BCC      C1     O3     C2     .
+ BCC      O1     C1     .      .
+ BCC      C2     C1     N1     .
+ BCC      H2     C2     .      .
+ BCC      N1     C2     C9     .
+ BCC      C5     N1     C4     .
+ BCC      H5     C5     .      .
+ BCC      C4     C5     C3     .
+ BCC      H41    C4     .      .
+ BCC      H42    C4     .      .
+ BCC      C3     C4     H31    .
+ BCC      H32    C3     .      .
+ BCC      H31    C3     .      .
+ BCC      C9     N1     C8     .
+ BCC      O2     C9     .      .
+ BCC      C8     C9     C10    .
+ BCC      N2     C8     HN21   .
+ BCC      HN22   N2     .      .
+ BCC      HN21   N2     .      .
+ BCC      C7     C8     C6     .
+ BCC      H71    C7     .      .
+ BCC      H72    C7     .      .
+ BCC      C6     C7     H61    .
+ BCC      H62    C6     .      .
+ BCC      H61    C6     .      .
+ BCC      C10    C8     C11    .
+ BCC      H101   C10    .      .
+ BCC      H102   C10    .      .
+ BCC      C11    C10    C16    .
+ BCC      C16    C11    C15    .
+ BCC      H16    C16    .      .
+ BCC      C15    C16    C14    .
+ BCC      H15    C15    .      .
+ BCC      C14    C15    C13    .
+ BCC      H14    C14    .      .
+ BCC      C13    C14    C12    .
+ BCC      H13    C13    .      .
+ BCC      C12    C13    H12    .
+ BCC      H12    C12    .      END
+ BCC      C2     C3     .    ADD
+ BCC      C5     C6     .    ADD
+ BCC      C11    C12    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BCC       O1        C1        deloc     1.250     0.020     1.250     0.020     
+BCC       C2        C1        single    1.500     0.020     1.500     0.020     
+BCC       C1        O3        deloc     1.250     0.020     1.250     0.020     
+BCC       C2        C3        single    1.524     0.020     1.524     0.020     
+BCC       N1        C2        single    1.455     0.020     1.455     0.020     
+BCC       H2        C2        single    1.089     0.010     0.989     0.005     
+BCC       C3        C4        single    1.524     0.020     1.524     0.020     
+BCC       H31       C3        single    1.089     0.010     0.989     0.005     
+BCC       H32       C3        single    1.089     0.010     0.989     0.005     
+BCC       C4        C5        single    1.524     0.020     1.524     0.020     
+BCC       H41       C4        single    1.089     0.010     0.989     0.005     
+BCC       H42       C4        single    1.089     0.010     0.989     0.005     
+BCC       C5        C6        single    1.524     0.020     1.524     0.020     
+BCC       C5        N1        single    1.455     0.020     1.455     0.020     
+BCC       H5        C5        single    1.089     0.010     0.989     0.005     
+BCC       C6        C7        single    1.524     0.020     1.524     0.020     
+BCC       H61       C6        single    1.089     0.010     0.989     0.005     
+BCC       H62       C6        single    1.089     0.010     0.989     0.005     
+BCC       C7        C8        single    1.524     0.020     1.524     0.020     
+BCC       H71       C7        single    1.089     0.010     0.989     0.005     
+BCC       H72       C7        single    1.089     0.010     0.989     0.005     
+BCC       C8        C9        single    1.507     0.020     1.507     0.020     
+BCC       N2        C8        single    1.462     0.020     1.462     0.020     
+BCC       C10       C8        single    1.524     0.020     1.524     0.020     
+BCC       O2        C9        double    1.220     0.020     1.220     0.020     
+BCC       C9        N1        single    1.330     0.020     1.330     0.020     
+BCC       HN21      N2        single    1.036     0.016     0.914     0.007     
+BCC       HN22      N2        single    1.036     0.016     0.914     0.007     
+BCC       C11       C10       single    1.511     0.020     1.511     0.020     
+BCC       H101      C10       single    1.089     0.010     0.989     0.005     
+BCC       H102      C10       single    1.089     0.010     0.989     0.005     
+BCC       C11       C12       double    1.390     0.020     1.390     0.020     
+BCC       C16       C11       single    1.390     0.020     1.390     0.020     
+BCC       C12       C13       single    1.390     0.020     1.390     0.020     
+BCC       H12       C12       single    1.082     0.013     0.975     0.010     
+BCC       C13       C14       double    1.390     0.020     1.390     0.020     
+BCC       H13       C13       single    1.082     0.013     0.975     0.010     
+BCC       C14       C15       single    1.390     0.020     1.390     0.020     
+BCC       H14       C14       single    1.082     0.013     0.975     0.010     
+BCC       C15       C16       double    1.390     0.020     1.390     0.020     
+BCC       H15       C15       single    1.082     0.013     0.975     0.010     
+BCC       H16       C16       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BCC      O3     C1     O1      123.000    3.000
+ BCC      O3     C1     C2      118.500    3.000
+ BCC      O1     C1     C2      118.500    3.000
+ BCC      C1     C2     H2      108.810    3.000
+ BCC      C1     C2     N1      111.600    3.000
+ BCC      C1     C2     C3      109.470    3.000
+ BCC      H2     C2     N1      109.470    3.000
+ BCC      H2     C2     C3      108.340    3.000
+ BCC      N1     C2     C3      105.000    3.000
+ BCC      C2     N1     C5      120.000    3.000
+ BCC      C2     N1     C9      121.000    3.000
+ BCC      C5     N1     C9      121.000    3.000
+ BCC      N1     C5     H5      109.470    3.000
+ BCC      N1     C5     C4      105.000    3.000
+ BCC      N1     C5     C6      105.000    3.000
+ BCC      H5     C5     C4      108.340    3.000
+ BCC      H5     C5     C6      108.340    3.000
+ BCC      C4     C5     C6      109.470    3.000
+ BCC      C5     C4     H41     109.470    3.000
+ BCC      C5     C4     H42     109.470    3.000
+ BCC      C5     C4     C3      111.000    3.000
+ BCC      H41    C4     H42     107.900    3.000
+ BCC      H41    C4     C3      109.470    3.000
+ BCC      H42    C4     C3      109.470    3.000
+ BCC      C4     C3     H32     109.470    3.000
+ BCC      C4     C3     H31     109.470    3.000
+ BCC      C4     C3     C2      111.000    3.000
+ BCC      H32    C3     H31     107.900    3.000
+ BCC      H32    C3     C2      109.470    3.000
+ BCC      H31    C3     C2      109.470    3.000
+ BCC      N1     C9     O2      123.000    3.000
+ BCC      N1     C9     C8      116.500    3.000
+ BCC      O2     C9     C8      120.500    3.000
+ BCC      C9     C8     C7      109.470    3.000
+ BCC      C9     C8     N2      109.500    3.000
+ BCC      C9     C8     C10     109.470    3.000
+ BCC      C7     C8     N2      109.500    3.000
+ BCC      C7     C8     C10     111.000    3.000
+ BCC      N2     C8     C10     109.500    3.000
+ BCC      C8     C7     H71     109.470    3.000
+ BCC      C8     C7     H72     109.470    3.000
+ BCC      C8     C7     C6      111.000    3.000
+ BCC      H71    C7     H72     107.900    3.000
+ BCC      H71    C7     C6      109.470    3.000
+ BCC      H72    C7     C6      109.470    3.000
+ BCC      C7     C6     H62     109.470    3.000
+ BCC      C7     C6     H61     109.470    3.000
+ BCC      C7     C6     C5      111.000    3.000
+ BCC      H62    C6     H61     107.900    3.000
+ BCC      H62    C6     C5      109.470    3.000
+ BCC      H61    C6     C5      109.470    3.000
+ BCC      C8     N2     HN22    120.000    3.000
+ BCC      C8     N2     HN21    120.000    3.000
+ BCC      HN22   N2     HN21    120.000    3.000
+ BCC      C8     C10    H101    109.470    3.000
+ BCC      C8     C10    H102    109.470    3.000
+ BCC      C8     C10    C11     109.470    3.000
+ BCC      H101   C10    H102    107.900    3.000
+ BCC      H101   C10    C11     109.470    3.000
+ BCC      H102   C10    C11     109.470    3.000
+ BCC      C10    C11    C16     120.000    3.000
+ BCC      C10    C11    C12     120.000    3.000
+ BCC      C16    C11    C12     120.000    3.000
+ BCC      C11    C16    H16     120.000    3.000
+ BCC      C11    C16    C15     120.000    3.000
+ BCC      H16    C16    C15     120.000    3.000
+ BCC      C16    C15    H15     120.000    3.000
+ BCC      C16    C15    C14     120.000    3.000
+ BCC      H15    C15    C14     120.000    3.000
+ BCC      C15    C14    H14     120.000    3.000
+ BCC      C15    C14    C13     120.000    3.000
+ BCC      H14    C14    C13     120.000    3.000
+ BCC      C14    C13    H13     120.000    3.000
+ BCC      C14    C13    C12     120.000    3.000
+ BCC      H13    C13    C12     120.000    3.000
+ BCC      C13    C12    H12     120.000    3.000
+ BCC      C13    C12    C11     120.000    3.000
+ BCC      H12    C12    C11     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BCC      var_1    O3     C1     C2     N1      -178.952   20.000   3
+ BCC      var_2    C1     C2     C3     C4       -90.000   20.000   3
+ BCC      var_3    C1     C2     N1     C9       -60.000   20.000   3
+ BCC      var_4    C2     N1     C5     C4       -30.000   20.000   3
+ BCC      var_5    N1     C5     C6     C7       -60.000   20.000   3
+ BCC      var_6    N1     C5     C4     C3        30.000   20.000   3
+ BCC      var_7    C5     C4     C3     C2       -30.000   20.000   3
+ BCC      CONST_1  C2     N1     C9     C8       180.000    0.000   0
+ BCC      var_8    N1     C9     C8     C10     -120.000   20.000   1
+ BCC      var_9    C9     C8     C7     C6       -30.000   20.000   1
+ BCC      var_10   C8     C7     C6     C5        60.000   20.000   3
+ BCC      var_11   C9     C8     N2     HN21      56.309   20.000   1
+ BCC      var_12   C9     C8     C10    C11      -56.274   20.000   1
+ BCC      var_13   C8     C10    C11    C16      -90.294   20.000   2
+ BCC      CONST_2  C10    C11    C12    C13      180.000    0.000   0
+ BCC      CONST_3  C10    C11    C16    C15      180.000    0.000   0
+ BCC      CONST_4  C11    C16    C15    C14        0.000    0.000   0
+ BCC      CONST_5  C16    C15    C14    C13        0.000    0.000   0
+ BCC      CONST_6  C15    C14    C13    C12        0.000    0.000   0
+ BCC      CONST_7  C14    C13    C12    C11        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BCC      chir_01  C2     C1     C3     N1        positiv
+ BCC      chir_02  C5     C4     C6     N1        positiv
+ BCC      chir_03  C8     C7     C9     N2        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BCC      plan-1    C1        0.020
+ BCC      plan-1    O1        0.020
+ BCC      plan-1    C2        0.020
+ BCC      plan-1    O3        0.020
+ BCC      plan-2    C9        0.020
+ BCC      plan-2    C8        0.020
+ BCC      plan-2    O2        0.020
+ BCC      plan-2    N1        0.020
+ BCC      plan-3    N1        0.020
+ BCC      plan-3    C2        0.020
+ BCC      plan-3    C5        0.020
+ BCC      plan-3    C9        0.020
+ BCC      plan-4    N2        0.020
+ BCC      plan-4    C8        0.020
+ BCC      plan-4    HN21      0.020
+ BCC      plan-4    HN22      0.020
+ BCC      plan-5    C11       0.020
+ BCC      plan-5    C10       0.020
+ BCC      plan-5    C12       0.020
+ BCC      plan-5    C16       0.020
+ BCC      plan-5    C13       0.020
+ BCC      plan-5    C14       0.020
+ BCC      plan-5    C15       0.020
+ BCC      plan-5    H12       0.020
+ BCC      plan-5    H13       0.020
+ BCC      plan-5    H14       0.020
+ BCC      plan-5    H15       0.020
+ BCC      plan-5    H16       0.020
+# ------------------------------------------------------

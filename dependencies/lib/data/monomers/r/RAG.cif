@@ -1,0 +1,631 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RAG      RAG 'ARGIFIN                             ' non-polymer        87  48 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RAG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RAG           O41    O    O         0.000      0.000    0.000    0.000
+ RAG           C42    C    C         0.000     -0.076   -1.043   -0.613
+ RAG           C40    C    CH1       0.000     -0.673   -2.270    0.026
+ RAG           H40    H    H         0.000      0.130   -2.900    0.435
+ RAG           C39    C    CH2       0.000     -1.462   -3.061   -1.020
+ RAG           H391   H    H         0.000     -0.794   -3.359   -1.830
+ RAG           H392   H    H         0.000     -2.262   -2.435   -1.421
+ RAG           C38    C    CR6       0.000     -2.055   -4.290   -0.378
+ RAG           C37    C    CR16      0.000     -1.343   -5.474   -0.365
+ RAG           H37    H    H         0.000     -0.361   -5.521   -0.819
+ RAG           C36    C    CR16      0.000     -1.886   -6.600    0.227
+ RAG           H36    H    H         0.000     -1.325   -7.526    0.246
+ RAG           C35    C    CR16      0.000     -3.145   -6.543    0.797
+ RAG           H35    H    H         0.000     -3.571   -7.425    1.257
+ RAG           C34    C    CR16      0.000     -3.859   -5.359    0.778
+ RAG           H34    H    H         0.000     -4.844   -5.315    1.224
+ RAG           C33    C    CR16      0.000     -3.314   -4.233    0.190
+ RAG           H33    H    H         0.000     -3.874   -3.306    0.175
+ RAG           N32    N    N         0.000     -1.577   -1.849    1.117
+ RAG           C31    C    CH3       0.000     -1.245   -2.069    2.526
+ RAG           H313   H    H         0.000     -1.287   -1.149    3.049
+ RAG           H312   H    H         0.000     -1.939   -2.747    2.953
+ RAG           H311   H    H         0.000     -0.268   -2.473    2.603
+ RAG           C30    C    C         0.000     -2.736   -1.245    0.738
+ RAG           O29    O    O         0.000     -2.982   -1.063   -0.436
+ RAG           N43    N    NH1       0.000      0.379   -1.133   -1.901
+ RAG           H43    H    H         0.000      0.328   -1.987   -2.440
+ RAG           C45    C    CH1       0.000      0.953    0.122   -2.444
+ RAG           H45    H    H         0.000      1.888   -0.100   -2.978
+ RAG           C46    C    C         0.000      1.229    1.085   -1.317
+ RAG           O47    O    OC       -0.500      1.575    0.652   -0.195
+ RAG           O44    O    OC       -0.500      1.112    2.316   -1.503
+ RAG           C48    C    CH2       0.000     -0.058    0.740   -3.412
+ RAG           H481   H    H         0.000     -0.837    0.009   -3.640
+ RAG           H482   H    H         0.000      0.451    1.027   -4.335
+ RAG           C50    C    C         0.000     -0.680    1.959   -2.779
+ RAG           O49    O    O         0.000     -0.613    2.137   -1.581
+ RAG           N51    N    NH1       0.000     -1.322    2.859   -3.586
+ RAG           H51    H    H         0.000     -1.394    2.741   -4.586
+ RAG           C54    C    CH1       0.000     -1.905    4.022   -2.873
+ RAG           H54    H    H         0.000     -1.789    4.926   -3.486
+ RAG           C53    C    C         0.000     -1.205    4.214   -1.551
+ RAG           O55    O    OC       -0.500     -0.044    3.777   -1.390
+ RAG           O52    O    OC       -0.500     -1.786    4.809   -0.617
+ RAG           C56    C    CH2       0.000     -3.391    3.751   -2.633
+ RAG           H561   H    H         0.000     -3.724    2.944   -3.290
+ RAG           H562   H    H         0.000     -3.965    4.654   -2.850
+ RAG           C58    C    C         0.000     -3.603    3.351   -1.196
+ RAG           O57    O    O         0.000     -2.681    3.363   -0.407
+ RAG           N11    N    NH1       0.000     -4.858    2.973   -0.800
+ RAG           H11    H    H         0.000     -5.646    2.950   -1.431
+ RAG           C13    C    CH1       0.000     -4.967    2.600    0.632
+ RAG           H13    H    H         0.000     -5.970    2.852    1.003
+ RAG           C12    C    CH3       0.000     -3.914    3.355    1.446
+ RAG           H123   H    H         0.000     -3.787    4.328    1.047
+ RAG           H122   H    H         0.000     -4.230    3.427    2.455
+ RAG           H121   H    H         0.000     -2.992    2.834    1.402
+ RAG           C15    C    C         0.000     -4.738    1.116    0.759
+ RAG           O14    O    O         0.000     -5.307    0.340    0.022
+ RAG           N16    N    NH1       0.000     -3.882    0.661    1.717
+ RAG           H16    H    H         0.000     -3.391    1.289    2.337
+ RAG           C17    C    CH1       0.000     -3.713   -0.805    1.797
+ RAG           H17    H    H         0.000     -3.326   -1.077    2.790
+ RAG           C18    C    CH2       0.000     -5.062   -1.489    1.568
+ RAG           H181   H    H         0.000     -4.911   -2.567    1.473
+ RAG           H182   H    H         0.000     -5.513   -1.104    0.651
+ RAG           C19    C    CH2       0.000     -5.986   -1.204    2.753
+ RAG           H191   H    H         0.000     -6.136   -0.127    2.847
+ RAG           H192   H    H         0.000     -5.532   -1.589    3.669
+ RAG           C20    C    CH2       0.000     -7.335   -1.890    2.524
+ RAG           H201   H    H         0.000     -7.183   -2.967    2.430
+ RAG           H202   H    H         0.000     -7.786   -1.505    1.607
+ RAG           N21    N    NH1       0.000     -8.221   -1.617    3.659
+ RAG           H21    H    H         0.000     -7.896   -1.050    4.429
+ RAG           C22    C    C         0.000     -9.495   -2.132    3.675
+ RAG           N27    N    N         0.000     -9.915   -2.863    2.683
+ RAG           H27    H    H         0.000     -9.343   -3.050    1.933
+ RAG           N23    N    NH1       0.000    -10.330   -1.875    4.744
+ RAG           H23    H    H         0.000    -10.004   -1.309    5.514
+ RAG           C24    C    C         0.000    -11.579   -2.379    4.761
+ RAG           O28    O    O         0.000    -11.971   -3.062    3.835
+ RAG           N25    N    NH1       0.000    -12.393   -2.129    5.805
+ RAG           H25    H    H         0.000    -12.067   -1.563    6.575
+ RAG           C26    C    CH3       0.000    -13.752   -2.678    5.823
+ RAG           H263   H    H         0.000    -13.709   -3.737    5.783
+ RAG           H262   H    H         0.000    -14.245   -2.381    6.713
+ RAG           H261   H    H         0.000    -14.293   -2.318    4.985
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RAG      O41    n/a    C42    START
+ RAG      C42    O41    N43    .
+ RAG      C40    C42    N32    .
+ RAG      H40    C40    .      .
+ RAG      C39    C40    C38    .
+ RAG      H391   C39    .      .
+ RAG      H392   C39    .      .
+ RAG      C38    C39    C37    .
+ RAG      C37    C38    C36    .
+ RAG      H37    C37    .      .
+ RAG      C36    C37    C35    .
+ RAG      H36    C36    .      .
+ RAG      C35    C36    C34    .
+ RAG      H35    C35    .      .
+ RAG      C34    C35    C33    .
+ RAG      H34    C34    .      .
+ RAG      C33    C34    H33    .
+ RAG      H33    C33    .      .
+ RAG      N32    C40    C30    .
+ RAG      C31    N32    H311   .
+ RAG      H313   C31    .      .
+ RAG      H312   C31    .      .
+ RAG      H311   C31    .      .
+ RAG      C30    N32    O29    .
+ RAG      O29    C30    .      .
+ RAG      N43    C42    C45    .
+ RAG      H43    N43    .      .
+ RAG      C45    N43    C48    .
+ RAG      H45    C45    .      .
+ RAG      C46    C45    O44    .
+ RAG      O47    C46    .      .
+ RAG      O44    C46    .      .
+ RAG      C48    C45    C50    .
+ RAG      H481   C48    .      .
+ RAG      H482   C48    .      .
+ RAG      C50    C48    N51    .
+ RAG      O49    C50    .      .
+ RAG      N51    C50    C54    .
+ RAG      H51    N51    .      .
+ RAG      C54    N51    C56    .
+ RAG      H54    C54    .      .
+ RAG      C53    C54    O52    .
+ RAG      O55    C53    .      .
+ RAG      O52    C53    .      .
+ RAG      C56    C54    C58    .
+ RAG      H561   C56    .      .
+ RAG      H562   C56    .      .
+ RAG      C58    C56    N11    .
+ RAG      O57    C58    .      .
+ RAG      N11    C58    C13    .
+ RAG      H11    N11    .      .
+ RAG      C13    N11    C15    .
+ RAG      H13    C13    .      .
+ RAG      C12    C13    H121   .
+ RAG      H123   C12    .      .
+ RAG      H122   C12    .      .
+ RAG      H121   C12    .      .
+ RAG      C15    C13    N16    .
+ RAG      O14    C15    .      .
+ RAG      N16    C15    C17    .
+ RAG      H16    N16    .      .
+ RAG      C17    N16    C18    .
+ RAG      H17    C17    .      .
+ RAG      C18    C17    C19    .
+ RAG      H181   C18    .      .
+ RAG      H182   C18    .      .
+ RAG      C19    C18    C20    .
+ RAG      H191   C19    .      .
+ RAG      H192   C19    .      .
+ RAG      C20    C19    N21    .
+ RAG      H201   C20    .      .
+ RAG      H202   C20    .      .
+ RAG      N21    C20    C22    .
+ RAG      H21    N21    .      .
+ RAG      C22    N21    N23    .
+ RAG      N27    C22    H27    .
+ RAG      H27    N27    .      .
+ RAG      N23    C22    C24    .
+ RAG      H23    N23    .      .
+ RAG      C24    N23    N25    .
+ RAG      O28    C24    .      .
+ RAG      N25    C24    C26    .
+ RAG      H25    N25    .      .
+ RAG      C26    N25    H261   .
+ RAG      H263   C26    .      .
+ RAG      H262   C26    .      .
+ RAG      H261   C26    .      END
+ RAG      C17    C30    .    ADD
+ RAG      C38    C33    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RAG       C26       N25       single    1.450     0.020     1.450     0.020     
+RAG       H261      C26       single    1.089     0.010     0.989     0.005     
+RAG       H262      C26       single    1.089     0.010     0.989     0.005     
+RAG       H263      C26       single    1.089     0.010     0.989     0.005     
+RAG       N25       C24       single    1.330     0.020     1.330     0.020     
+RAG       H25       N25       single    1.016     0.010     0.899     0.007     
+RAG       O28       C24       double    1.220     0.020     1.220     0.020     
+RAG       C24       N23       single    1.330     0.020     1.330     0.020     
+RAG       N23       C22       single    1.330     0.020     1.330     0.020     
+RAG       H23       N23       single    1.016     0.010     0.899     0.007     
+RAG       N27       C22       double    1.260     0.020     1.260     0.020     
+RAG       C22       N21       single    1.330     0.020     1.330     0.020     
+RAG       H27       N27       single    1.016     0.010     0.899     0.007     
+RAG       N21       C20       single    1.450     0.020     1.450     0.020     
+RAG       H21       N21       single    1.016     0.010     0.899     0.007     
+RAG       C20       C19       single    1.524     0.020     1.524     0.020     
+RAG       H201      C20       single    1.089     0.010     0.989     0.005     
+RAG       H202      C20       single    1.089     0.010     0.989     0.005     
+RAG       C19       C18       single    1.524     0.020     1.524     0.020     
+RAG       H191      C19       single    1.089     0.010     0.989     0.005     
+RAG       H192      C19       single    1.089     0.010     0.989     0.005     
+RAG       C18       C17       single    1.524     0.020     1.524     0.020     
+RAG       H181      C18       single    1.089     0.010     0.989     0.005     
+RAG       H182      C18       single    1.089     0.010     0.989     0.005     
+RAG       C17       C30       single    1.500     0.020     1.500     0.020     
+RAG       C17       N16       single    1.450     0.020     1.450     0.020     
+RAG       H17       C17       single    1.089     0.010     0.989     0.005     
+RAG       O29       C30       double    1.220     0.020     1.220     0.020     
+RAG       C30       N32       single    1.330     0.020     1.330     0.020     
+RAG       C31       N32       single    1.455     0.020     1.455     0.020     
+RAG       N32       C40       single    1.455     0.020     1.455     0.020     
+RAG       H311      C31       single    1.089     0.010     0.989     0.005     
+RAG       H312      C31       single    1.089     0.010     0.989     0.005     
+RAG       H313      C31       single    1.089     0.010     0.989     0.005     
+RAG       N16       C15       single    1.330     0.020     1.330     0.020     
+RAG       H16       N16       single    1.016     0.010     0.899     0.007     
+RAG       O14       C15       double    1.220     0.020     1.220     0.020     
+RAG       C15       C13       single    1.500     0.020     1.500     0.020     
+RAG       C12       C13       single    1.524     0.020     1.524     0.020     
+RAG       C13       N11       single    1.450     0.020     1.450     0.020     
+RAG       H13       C13       single    1.089     0.010     0.989     0.005     
+RAG       H121      C12       single    1.089     0.010     0.989     0.005     
+RAG       H122      C12       single    1.089     0.010     0.989     0.005     
+RAG       H123      C12       single    1.089     0.010     0.989     0.005     
+RAG       N11       C58       single    1.330     0.020     1.330     0.020     
+RAG       H11       N11       single    1.016     0.010     0.899     0.007     
+RAG       O57       C58       double    1.220     0.020     1.220     0.020     
+RAG       C58       C56       single    1.510     0.020     1.510     0.020     
+RAG       C56       C54       single    1.524     0.020     1.524     0.020     
+RAG       H561      C56       single    1.089     0.010     0.989     0.005     
+RAG       H562      C56       single    1.089     0.010     0.989     0.005     
+RAG       C53       C54       single    1.500     0.020     1.500     0.020     
+RAG       C54       N51       single    1.450     0.020     1.450     0.020     
+RAG       H54       C54       single    1.089     0.010     0.989     0.005     
+RAG       O52       C53       deloc     1.250     0.020     1.250     0.020     
+RAG       O55       C53       deloc     1.250     0.020     1.250     0.020     
+RAG       N51       C50       single    1.330     0.020     1.330     0.020     
+RAG       H51       N51       single    1.016     0.010     0.899     0.007     
+RAG       O49       C50       double    1.220     0.020     1.220     0.020     
+RAG       C50       C48       single    1.510     0.020     1.510     0.020     
+RAG       C48       C45       single    1.524     0.020     1.524     0.020     
+RAG       H481      C48       single    1.089     0.010     0.989     0.005     
+RAG       H482      C48       single    1.089     0.010     0.989     0.005     
+RAG       C46       C45       single    1.500     0.020     1.500     0.020     
+RAG       C45       N43       single    1.450     0.020     1.450     0.020     
+RAG       H45       C45       single    1.089     0.010     0.989     0.005     
+RAG       O44       C46       deloc     1.250     0.020     1.250     0.020     
+RAG       O47       C46       deloc     1.250     0.020     1.250     0.020     
+RAG       N43       C42       single    1.330     0.020     1.330     0.020     
+RAG       H43       N43       single    1.016     0.010     0.899     0.007     
+RAG       C42       O41       double    1.220     0.020     1.220     0.020     
+RAG       C40       C42       single    1.500     0.020     1.500     0.020     
+RAG       C39       C40       single    1.524     0.020     1.524     0.020     
+RAG       H40       C40       single    1.089     0.010     0.989     0.005     
+RAG       C38       C39       single    1.511     0.020     1.511     0.020     
+RAG       H391      C39       single    1.089     0.010     0.989     0.005     
+RAG       H392      C39       single    1.089     0.010     0.989     0.005     
+RAG       C38       C33       double    1.390     0.020     1.390     0.020     
+RAG       C37       C38       single    1.390     0.020     1.390     0.020     
+RAG       C33       C34       single    1.390     0.020     1.390     0.020     
+RAG       H33       C33       single    1.082     0.013     0.975     0.010     
+RAG       C34       C35       double    1.390     0.020     1.390     0.020     
+RAG       H34       C34       single    1.082     0.013     0.975     0.010     
+RAG       C35       C36       single    1.390     0.020     1.390     0.020     
+RAG       H35       C35       single    1.082     0.013     0.975     0.010     
+RAG       C36       C37       double    1.390     0.020     1.390     0.020     
+RAG       H36       C36       single    1.082     0.013     0.975     0.010     
+RAG       H37       C37       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RAG      O41    C42    C40     120.500    3.000
+ RAG      O41    C42    N43     123.000    3.000
+ RAG      C40    C42    N43     116.500    3.000
+ RAG      C42    C40    H40     108.810    3.000
+ RAG      C42    C40    C39     109.470    3.000
+ RAG      C42    C40    N32     111.600    3.000
+ RAG      H40    C40    C39     108.340    3.000
+ RAG      H40    C40    N32     109.470    3.000
+ RAG      C39    C40    N32     105.000    3.000
+ RAG      C40    C39    H391    109.470    3.000
+ RAG      C40    C39    H392    109.470    3.000
+ RAG      C40    C39    C38     109.470    3.000
+ RAG      H391   C39    H392    107.900    3.000
+ RAG      H391   C39    C38     109.470    3.000
+ RAG      H392   C39    C38     109.470    3.000
+ RAG      C39    C38    C37     120.000    3.000
+ RAG      C39    C38    C33     120.000    3.000
+ RAG      C37    C38    C33     120.000    3.000
+ RAG      C38    C37    H37     120.000    3.000
+ RAG      C38    C37    C36     120.000    3.000
+ RAG      H37    C37    C36     120.000    3.000
+ RAG      C37    C36    H36     120.000    3.000
+ RAG      C37    C36    C35     120.000    3.000
+ RAG      H36    C36    C35     120.000    3.000
+ RAG      C36    C35    H35     120.000    3.000
+ RAG      C36    C35    C34     120.000    3.000
+ RAG      H35    C35    C34     120.000    3.000
+ RAG      C35    C34    H34     120.000    3.000
+ RAG      C35    C34    C33     120.000    3.000
+ RAG      H34    C34    C33     120.000    3.000
+ RAG      C34    C33    H33     120.000    3.000
+ RAG      C34    C33    C38     120.000    3.000
+ RAG      H33    C33    C38     120.000    3.000
+ RAG      C40    N32    C31     120.000    3.000
+ RAG      C40    N32    C30     121.000    3.000
+ RAG      C31    N32    C30     127.000    3.000
+ RAG      N32    C31    H313    109.470    3.000
+ RAG      N32    C31    H312    109.470    3.000
+ RAG      N32    C31    H311    109.470    3.000
+ RAG      H313   C31    H312    109.470    3.000
+ RAG      H313   C31    H311    109.470    3.000
+ RAG      H312   C31    H311    109.470    3.000
+ RAG      N32    C30    O29     123.000    3.000
+ RAG      N32    C30    C17     116.500    3.000
+ RAG      O29    C30    C17     120.500    3.000
+ RAG      C42    N43    H43     120.000    3.000
+ RAG      C42    N43    C45     121.500    3.000
+ RAG      H43    N43    C45     118.500    3.000
+ RAG      N43    C45    H45     108.550    3.000
+ RAG      N43    C45    C46     111.600    3.000
+ RAG      N43    C45    C48     110.000    3.000
+ RAG      H45    C45    C46     108.810    3.000
+ RAG      H45    C45    C48     108.340    3.000
+ RAG      C46    C45    C48     109.470    3.000
+ RAG      C45    C46    O47     118.500    3.000
+ RAG      C45    C46    O44     118.500    3.000
+ RAG      O47    C46    O44     123.000    3.000
+ RAG      C45    C48    H481    109.470    3.000
+ RAG      C45    C48    H482    109.470    3.000
+ RAG      C45    C48    C50     109.470    3.000
+ RAG      H481   C48    H482    107.900    3.000
+ RAG      H481   C48    C50     109.470    3.000
+ RAG      H482   C48    C50     109.470    3.000
+ RAG      C48    C50    O49     120.500    3.000
+ RAG      C48    C50    N51     116.500    3.000
+ RAG      O49    C50    N51     123.000    3.000
+ RAG      C50    N51    H51     120.000    3.000
+ RAG      C50    N51    C54     121.500    3.000
+ RAG      H51    N51    C54     118.500    3.000
+ RAG      N51    C54    H54     108.550    3.000
+ RAG      N51    C54    C53     111.600    3.000
+ RAG      N51    C54    C56     110.000    3.000
+ RAG      H54    C54    C53     108.810    3.000
+ RAG      H54    C54    C56     108.340    3.000
+ RAG      C53    C54    C56     109.470    3.000
+ RAG      C54    C53    O55     118.500    3.000
+ RAG      C54    C53    O52     118.500    3.000
+ RAG      O55    C53    O52     123.000    3.000
+ RAG      C54    C56    H561    109.470    3.000
+ RAG      C54    C56    H562    109.470    3.000
+ RAG      C54    C56    C58     109.470    3.000
+ RAG      H561   C56    H562    107.900    3.000
+ RAG      H561   C56    C58     109.470    3.000
+ RAG      H562   C56    C58     109.470    3.000
+ RAG      C56    C58    O57     120.500    3.000
+ RAG      C56    C58    N11     116.500    3.000
+ RAG      O57    C58    N11     123.000    3.000
+ RAG      C58    N11    H11     120.000    3.000
+ RAG      C58    N11    C13     121.500    3.000
+ RAG      H11    N11    C13     118.500    3.000
+ RAG      N11    C13    H13     108.550    3.000
+ RAG      N11    C13    C12     110.000    3.000
+ RAG      N11    C13    C15     111.600    3.000
+ RAG      H13    C13    C12     108.340    3.000
+ RAG      H13    C13    C15     108.810    3.000
+ RAG      C12    C13    C15     109.470    3.000
+ RAG      C13    C12    H123    109.470    3.000
+ RAG      C13    C12    H122    109.470    3.000
+ RAG      C13    C12    H121    109.470    3.000
+ RAG      H123   C12    H122    109.470    3.000
+ RAG      H123   C12    H121    109.470    3.000
+ RAG      H122   C12    H121    109.470    3.000
+ RAG      C13    C15    O14     120.500    3.000
+ RAG      C13    C15    N16     116.500    3.000
+ RAG      O14    C15    N16     123.000    3.000
+ RAG      C15    N16    H16     120.000    3.000
+ RAG      C15    N16    C17     121.500    3.000
+ RAG      H16    N16    C17     118.500    3.000
+ RAG      N16    C17    H17     108.550    3.000
+ RAG      N16    C17    C18     110.000    3.000
+ RAG      N16    C17    C30     111.600    3.000
+ RAG      H17    C17    C18     108.340    3.000
+ RAG      H17    C17    C30     108.810    3.000
+ RAG      C18    C17    C30     109.470    3.000
+ RAG      C17    C18    H181    109.470    3.000
+ RAG      C17    C18    H182    109.470    3.000
+ RAG      C17    C18    C19     111.000    3.000
+ RAG      H181   C18    H182    107.900    3.000
+ RAG      H181   C18    C19     109.470    3.000
+ RAG      H182   C18    C19     109.470    3.000
+ RAG      C18    C19    H191    109.470    3.000
+ RAG      C18    C19    H192    109.470    3.000
+ RAG      C18    C19    C20     111.000    3.000
+ RAG      H191   C19    H192    107.900    3.000
+ RAG      H191   C19    C20     109.470    3.000
+ RAG      H192   C19    C20     109.470    3.000
+ RAG      C19    C20    H201    109.470    3.000
+ RAG      C19    C20    H202    109.470    3.000
+ RAG      C19    C20    N21     112.000    3.000
+ RAG      H201   C20    H202    107.900    3.000
+ RAG      H201   C20    N21     109.470    3.000
+ RAG      H202   C20    N21     109.470    3.000
+ RAG      C20    N21    H21     118.500    3.000
+ RAG      C20    N21    C22     121.500    3.000
+ RAG      H21    N21    C22     120.000    3.000
+ RAG      N21    C22    N27     120.000    3.000
+ RAG      N21    C22    N23     120.000    3.000
+ RAG      N27    C22    N23     120.000    3.000
+ RAG      C22    N27    H27     120.000    3.000
+ RAG      C22    N23    H23     120.000    3.000
+ RAG      C22    N23    C24     120.000    3.000
+ RAG      H23    N23    C24     120.000    3.000
+ RAG      N23    C24    O28     123.000    3.000
+ RAG      N23    C24    N25     120.000    3.000
+ RAG      O28    C24    N25     123.000    3.000
+ RAG      C24    N25    H25     120.000    3.000
+ RAG      C24    N25    C26     121.500    3.000
+ RAG      H25    N25    C26     118.500    3.000
+ RAG      N25    C26    H263    109.470    3.000
+ RAG      N25    C26    H262    109.470    3.000
+ RAG      N25    C26    H261    109.470    3.000
+ RAG      H263   C26    H262    109.470    3.000
+ RAG      H263   C26    H261    109.470    3.000
+ RAG      H262   C26    H261    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RAG      var_1    O41    C42    C40    N32       23.626   20.000   3
+ RAG      var_2    C42    C40    C39    C38      179.872   20.000   3
+ RAG      var_3    C40    C39    C38    C37      -90.286   20.000   2
+ RAG      CONST_1  C39    C38    C33    C34      180.000    0.000   0
+ RAG      CONST_2  C39    C38    C37    C36      180.000    0.000   0
+ RAG      CONST_3  C38    C37    C36    C35        0.000    0.000   0
+ RAG      CONST_4  C37    C36    C35    C34        0.000    0.000   0
+ RAG      CONST_5  C36    C35    C34    C33        0.000    0.000   0
+ RAG      CONST_6  C35    C34    C33    C38        0.000    0.000   0
+ RAG      var_4    C42    C40    N32    C30       70.374   20.000   3
+ RAG      var_5    C40    N32    C31    H311       4.994   20.000   1
+ RAG      CONST_7  C40    N32    C30    O29        0.000    0.000   0
+ RAG      CONST_8  O41    C42    N43    C45        0.000    0.000   0
+ RAG      var_6    C42    N43    C45    C48     -104.580   20.000   3
+ RAG      var_7    N43    C45    C46    O44     -146.841   20.000   3
+ RAG      var_8    N43    C45    C48    C50      107.269   20.000   3
+ RAG      var_9    C45    C48    C50    N51      162.371   20.000   3
+ RAG      CONST_9  C48    C50    N51    C54      180.000    0.000   0
+ RAG      var_10   C50    N51    C54    C56      -97.656   20.000   3
+ RAG      var_11   N51    C54    C53    O52     -156.108   20.000   3
+ RAG      var_12   N51    C54    C56    C58      102.922   20.000   3
+ RAG      var_13   C54    C56    C58    N11     -175.470   20.000   3
+ RAG      CONST_10 C56    C58    N11    C13      180.000    0.000   0
+ RAG      var_14   C58    N11    C13    C15      -91.643   20.000   3
+ RAG      var_15   N11    C13    C12    H121     -83.956   20.000   3
+ RAG      var_16   N11    C13    C15    N16      132.648   20.000   3
+ RAG      CONST_11 C13    C15    N16    C17      180.000    0.000   0
+ RAG      var_17   C15    N16    C17    C18      -38.953   20.000   3
+ RAG      var_18   N16    C17    C30    N32      118.538   20.000   3
+ RAG      var_19   N16    C17    C18    C19      -68.652   20.000   3
+ RAG      var_20   C17    C18    C19    C20     -179.965   20.000   3
+ RAG      var_21   C18    C19    C20    N21     -179.977   20.000   3
+ RAG      var_22   C19    C20    N21    C22      179.951   20.000   3
+ RAG      CONST_12 C20    N21    C22    N23      180.000    0.000   0
+ RAG      CONST_13 N21    C22    N27    H27        0.000    0.000   0
+ RAG      CONST_14 N21    C22    N23    C24      180.000    0.000   0
+ RAG      CONST_15 C22    N23    C24    N25      180.000    0.000   0
+ RAG      CONST_16 N23    C24    N25    C26      180.000    0.000   0
+ RAG      var_23   C24    N25    C26    H261     -59.958   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RAG      chir_01  C17    C18    C30    N16       negativ
+ RAG      chir_02  C13    C15    C12    N11       negativ
+ RAG      chir_03  C54    C56    C53    N51       negativ
+ RAG      chir_04  C45    C48    C46    N43       negativ
+ RAG      chir_05  C40    N32    C42    C39       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RAG      plan-1    N25       0.020
+ RAG      plan-1    C26       0.020
+ RAG      plan-1    C24       0.020
+ RAG      plan-1    H25       0.020
+ RAG      plan-2    C24       0.020
+ RAG      plan-2    N25       0.020
+ RAG      plan-2    O28       0.020
+ RAG      plan-2    N23       0.020
+ RAG      plan-2    H25       0.020
+ RAG      plan-2    H23       0.020
+ RAG      plan-3    N23       0.020
+ RAG      plan-3    C24       0.020
+ RAG      plan-3    C22       0.020
+ RAG      plan-3    H23       0.020
+ RAG      plan-4    C22       0.020
+ RAG      plan-4    N23       0.020
+ RAG      plan-4    N27       0.020
+ RAG      plan-4    N21       0.020
+ RAG      plan-4    H27       0.020
+ RAG      plan-4    H23       0.020
+ RAG      plan-4    H21       0.020
+ RAG      plan-5    N21       0.020
+ RAG      plan-5    C22       0.020
+ RAG      plan-5    C20       0.020
+ RAG      plan-5    H21       0.020
+ RAG      plan-6    C30       0.020
+ RAG      plan-6    C17       0.020
+ RAG      plan-6    O29       0.020
+ RAG      plan-6    N32       0.020
+ RAG      plan-7    N32       0.020
+ RAG      plan-7    C30       0.020
+ RAG      plan-7    C31       0.020
+ RAG      plan-7    C40       0.020
+ RAG      plan-8    N16       0.020
+ RAG      plan-8    C17       0.020
+ RAG      plan-8    C15       0.020
+ RAG      plan-8    H16       0.020
+ RAG      plan-9    C15       0.020
+ RAG      plan-9    N16       0.020
+ RAG      plan-9    O14       0.020
+ RAG      plan-9    C13       0.020
+ RAG      plan-9    H16       0.020
+ RAG      plan-10   N11       0.020
+ RAG      plan-10   C13       0.020
+ RAG      plan-10   C58       0.020
+ RAG      plan-10   H11       0.020
+ RAG      plan-11   C58       0.020
+ RAG      plan-11   N11       0.020
+ RAG      plan-11   O57       0.020
+ RAG      plan-11   C56       0.020
+ RAG      plan-11   H11       0.020
+ RAG      plan-12   C53       0.020
+ RAG      plan-12   C54       0.020
+ RAG      plan-12   O52       0.020
+ RAG      plan-12   O55       0.020
+ RAG      plan-13   N51       0.020
+ RAG      plan-13   C54       0.020
+ RAG      plan-13   C50       0.020
+ RAG      plan-13   H51       0.020
+ RAG      plan-14   C50       0.020
+ RAG      plan-14   N51       0.020
+ RAG      plan-14   O49       0.020
+ RAG      plan-14   C48       0.020
+ RAG      plan-14   H51       0.020
+ RAG      plan-15   C46       0.020
+ RAG      plan-15   C45       0.020
+ RAG      plan-15   O44       0.020
+ RAG      plan-15   O47       0.020
+ RAG      plan-16   N43       0.020
+ RAG      plan-16   C45       0.020
+ RAG      plan-16   C42       0.020
+ RAG      plan-16   H43       0.020
+ RAG      plan-17   C42       0.020
+ RAG      plan-17   N43       0.020
+ RAG      plan-17   O41       0.020
+ RAG      plan-17   C40       0.020
+ RAG      plan-17   H43       0.020
+ RAG      plan-18   C38       0.020
+ RAG      plan-18   C39       0.020
+ RAG      plan-18   C33       0.020
+ RAG      plan-18   C37       0.020
+ RAG      plan-18   C34       0.020
+ RAG      plan-18   C35       0.020
+ RAG      plan-18   C36       0.020
+ RAG      plan-18   H33       0.020
+ RAG      plan-18   H34       0.020
+ RAG      plan-18   H35       0.020
+ RAG      plan-18   H36       0.020
+ RAG      plan-18   H37       0.020
+# ------------------------------------------------------

@@ -1,0 +1,221 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PHL      PHL 'L-PHENYLALANINOL                    ' non-polymer        24  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PHL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PHL           O      O    OH1       0.000      0.000    0.000    0.000
+ PHL           HO     H    H         0.000      0.851   -0.121   -0.443
+ PHL           C      C    CH2       0.000     -1.057   -0.158   -0.949
+ PHL           HC1    H    H         0.000     -1.009   -1.159   -1.383
+ PHL           HC2    H    H         0.000     -0.948    0.586   -1.741
+ PHL           CA     C    CH1       0.000     -2.404    0.033   -0.249
+ PHL           HA     H    H         0.000     -2.475   -0.656    0.604
+ PHL           N      N    NH2       0.000     -2.515    1.417    0.230
+ PHL           H2     H    H         0.000     -2.636    1.609    1.217
+ PHL           H      H    H         0.000     -2.471    2.190   -0.425
+ PHL           CB     C    CH2       0.000     -3.537   -0.258   -1.235
+ PHL           HB2    H    H         0.000     -3.403   -1.255   -1.659
+ PHL           HB3    H    H         0.000     -3.519    0.483   -2.037
+ PHL           CG     C    CR6       0.000     -4.859   -0.190   -0.516
+ PHL           CD2    C    CR16      0.000     -5.390   -1.327    0.063
+ PHL           HD2    H    H         0.000     -4.856   -2.267    0.000
+ PHL           CE2    C    CR16      0.000     -6.603   -1.265    0.724
+ PHL           HE2    H    H         0.000     -7.018   -2.155    1.179
+ PHL           CZ     C    CR16      0.000     -7.285   -0.066    0.804
+ PHL           HZ     H    H         0.000     -8.234   -0.016    1.324
+ PHL           CE1    C    CR16      0.000     -6.757    1.071    0.220
+ PHL           HE1    H    H         0.000     -7.293    2.009    0.279
+ PHL           CD1    C    CR16      0.000     -5.544    1.008   -0.440
+ PHL           HD1    H    H         0.000     -5.130    1.899   -0.898
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PHL      O      n/a    C      START
+ PHL      HO     O      .      .
+ PHL      C      O      CA     .
+ PHL      HC1    C      .      .
+ PHL      HC2    C      .      .
+ PHL      CA     C      CB     .
+ PHL      HA     CA     .      .
+ PHL      N      CA     H      .
+ PHL      H2     N      .      .
+ PHL      H      N      .      .
+ PHL      CB     CA     CG     .
+ PHL      HB2    CB     .      .
+ PHL      HB3    CB     .      .
+ PHL      CG     CB     CD2    .
+ PHL      CD2    CG     CE2    .
+ PHL      HD2    CD2    .      .
+ PHL      CE2    CD2    CZ     .
+ PHL      HE2    CE2    .      .
+ PHL      CZ     CE2    CE1    .
+ PHL      HZ     CZ     .      .
+ PHL      CE1    CZ     CD1    .
+ PHL      HE1    CE1    .      .
+ PHL      CD1    CE1    HD1    .
+ PHL      HD1    CD1    .      END
+ PHL      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PHL       N         CA        single    1.450     0.020     1.450     0.020     
+PHL       H         N         single    1.036     0.016     0.914     0.007     
+PHL       H2        N         single    1.036     0.016     0.914     0.007     
+PHL       CA        C         single    1.524     0.020     1.524     0.020     
+PHL       CB        CA        single    1.524     0.020     1.524     0.020     
+PHL       HA        CA        single    1.089     0.010     0.989     0.005     
+PHL       C         O         single    1.432     0.020     1.432     0.020     
+PHL       HC1       C         single    1.089     0.010     0.989     0.005     
+PHL       HC2       C         single    1.089     0.010     0.989     0.005     
+PHL       HO        O         single    0.970     0.012     0.839     0.014     
+PHL       CG        CB        single    1.511     0.020     1.511     0.020     
+PHL       HB2       CB        single    1.089     0.010     0.989     0.005     
+PHL       HB3       CB        single    1.089     0.010     0.989     0.005     
+PHL       CG        CD1       double    1.390     0.020     1.390     0.020     
+PHL       CD2       CG        single    1.390     0.020     1.390     0.020     
+PHL       CD1       CE1       single    1.390     0.020     1.390     0.020     
+PHL       HD1       CD1       single    1.082     0.013     0.975     0.010     
+PHL       CE2       CD2       double    1.390     0.020     1.390     0.020     
+PHL       HD2       CD2       single    1.082     0.013     0.975     0.010     
+PHL       CE1       CZ        double    1.390     0.020     1.390     0.020     
+PHL       HE1       CE1       single    1.082     0.013     0.975     0.010     
+PHL       CZ        CE2       single    1.390     0.020     1.390     0.020     
+PHL       HE2       CE2       single    1.082     0.013     0.975     0.010     
+PHL       HZ        CZ        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PHL      HO     O      C       109.470    3.000
+ PHL      O      C      HC1     109.470    3.000
+ PHL      O      C      HC2     109.470    3.000
+ PHL      O      C      CA      109.470    3.000
+ PHL      HC1    C      HC2     107.900    3.000
+ PHL      HC1    C      CA      109.470    3.000
+ PHL      HC2    C      CA      109.470    3.000
+ PHL      C      CA     HA      108.340    3.000
+ PHL      C      CA     N       109.470    3.000
+ PHL      C      CA     CB      109.470    3.000
+ PHL      HA     CA     N       109.470    3.000
+ PHL      HA     CA     CB      108.340    3.000
+ PHL      N      CA     CB      109.470    3.000
+ PHL      CA     N      H2      120.000    3.000
+ PHL      CA     N      H       120.000    3.000
+ PHL      H2     N      H       120.000    3.000
+ PHL      CA     CB     HB2     109.470    3.000
+ PHL      CA     CB     HB3     109.470    3.000
+ PHL      CA     CB     CG      109.470    3.000
+ PHL      HB2    CB     HB3     107.900    3.000
+ PHL      HB2    CB     CG      109.470    3.000
+ PHL      HB3    CB     CG      109.470    3.000
+ PHL      CB     CG     CD2     120.000    3.000
+ PHL      CB     CG     CD1     120.000    3.000
+ PHL      CD2    CG     CD1     120.000    3.000
+ PHL      CG     CD2    HD2     120.000    3.000
+ PHL      CG     CD2    CE2     120.000    3.000
+ PHL      HD2    CD2    CE2     120.000    3.000
+ PHL      CD2    CE2    HE2     120.000    3.000
+ PHL      CD2    CE2    CZ      120.000    3.000
+ PHL      HE2    CE2    CZ      120.000    3.000
+ PHL      CE2    CZ     HZ      120.000    3.000
+ PHL      CE2    CZ     CE1     120.000    3.000
+ PHL      HZ     CZ     CE1     120.000    3.000
+ PHL      CZ     CE1    HE1     120.000    3.000
+ PHL      CZ     CE1    CD1     120.000    3.000
+ PHL      HE1    CE1    CD1     120.000    3.000
+ PHL      CE1    CD1    HD1     120.000    3.000
+ PHL      CE1    CD1    CG      120.000    3.000
+ PHL      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PHL      var_1    HO     O      C      CA       179.948   20.000   1
+ PHL      var_2    O      C      CA     CB      -175.025   20.000   3
+ PHL      var_3    C      CA     N      H         60.031   20.000   1
+ PHL      var_4    C      CA     CB     CG       175.013   20.000   3
+ PHL      var_5    CA     CB     CG     CD2      -90.248   20.000   2
+ PHL      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ PHL      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ PHL      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ PHL      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ PHL      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ PHL      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PHL      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PHL      plan-1    N         0.020
+ PHL      plan-1    CA        0.020
+ PHL      plan-1    H         0.020
+ PHL      plan-1    H2        0.020
+ PHL      plan-2    CG        0.020
+ PHL      plan-2    CB        0.020
+ PHL      plan-2    CD1       0.020
+ PHL      plan-2    CD2       0.020
+ PHL      plan-2    CE1       0.020
+ PHL      plan-2    CE2       0.020
+ PHL      plan-2    CZ        0.020
+ PHL      plan-2    HD1       0.020
+ PHL      plan-2    HD2       0.020
+ PHL      plan-2    HE1       0.020
+ PHL      plan-2    HE2       0.020
+ PHL      plan-2    HZ        0.020
+# ------------------------------------------------------

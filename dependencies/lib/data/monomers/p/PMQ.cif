@@ -1,0 +1,172 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PMQ     PMQ      "benzylcarbamic acid"     NON-POLYMER     20     11     .     
+#
+data_comp_PMQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PMQ     C17     C       C       0       -2.810      -0.042      -0.076      
+PMQ     O18     O       O       0       -3.332      -0.293      0.989       
+PMQ     N19     N       NH1     0       -1.476      0.052       -0.266      
+PMQ     C20     C       CH2     0       -0.519      -0.164      0.826       
+PMQ     C21     C       CR6     0       0.925       -0.101      0.389       
+PMQ     C22     C       CR16    0       1.496       1.114       0.018       
+PMQ     C23     C       CR16    0       2.827       1.177       -0.386      
+PMQ     C24     C       CR16    0       3.599       0.028       -0.423      
+PMQ     C25     C       CR16    0       3.043       -1.185      -0.056      
+PMQ     C26     C       CR16    0       1.711       -1.251      0.348       
+PMQ     OXT     O       OH1     0       -3.533      0.167       -1.180      
+PMQ     HN19    H       H       0       -1.167      0.250       -1.062      
+PMQ     H20     H       H       0       -0.700      -1.039      1.228       
+PMQ     H20A    H       H       0       -0.674      0.518       1.513       
+PMQ     H22     H       H       0       0.976       1.901       0.040       
+PMQ     H23     H       H       0       3.204       2.006       -0.636      
+PMQ     H24     H       H       0       4.502       0.072       -0.697      
+PMQ     H25     H       H       0       3.566       -1.970      -0.080      
+PMQ     H26     H       H       0       1.340       -2.082      0.596       
+PMQ     HXT     H       H       0       -4.062      0.857       -1.071      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PMQ       C17       O18       DOUBLE    n         1.210     0.012     1.210     0.012     
+PMQ       C17       N19       SINGLE    n         1.345     0.011     1.345     0.011     
+PMQ       N19       C20       SINGLE    n         1.455     0.020     1.455     0.020     
+PMQ       C20       C21       SINGLE    n         1.508     0.010     1.508     0.010     
+PMQ       C21       C22       DOUBLE    y         1.386     0.010     1.386     0.010     
+PMQ       C21       C26       SINGLE    y         1.386     0.010     1.386     0.010     
+PMQ       C22       C23       SINGLE    y         1.386     0.010     1.386     0.010     
+PMQ       C23       C24       DOUBLE    y         1.376     0.012     1.376     0.012     
+PMQ       C24       C25       SINGLE    y         1.374     0.013     1.374     0.013     
+PMQ       C25       C26       DOUBLE    y         1.386     0.010     1.386     0.010     
+PMQ       C17       OXT       SINGLE    n         1.331     0.020     1.331     0.020     
+PMQ       N19       HN19      SINGLE    n         1.016     0.010     0.873     0.020     
+PMQ       C20       H20       SINGLE    n         1.089     0.010     0.980     0.017     
+PMQ       C20       H20A      SINGLE    n         1.089     0.010     0.980     0.017     
+PMQ       C22       H22       SINGLE    n         1.082     0.013     0.944     0.017     
+PMQ       C23       H23       SINGLE    n         1.082     0.013     0.944     0.018     
+PMQ       C24       H24       SINGLE    n         1.082     0.013     0.944     0.016     
+PMQ       C25       H25       SINGLE    n         1.082     0.013     0.944     0.018     
+PMQ       C26       H26       SINGLE    n         1.082     0.013     0.944     0.017     
+PMQ       OXT       HXT       SINGLE    n         0.970     0.012     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PMQ         O18         C17         N19     123.802    1.50
+PMQ         O18         C17         OXT     122.478    1.50
+PMQ         N19         C17         OXT     113.719    3.00
+PMQ         C17         N19         C20     121.228    1.67
+PMQ         C17         N19        HN19     119.716    1.99
+PMQ         C20         N19        HN19     119.057    1.76
+PMQ         N19         C20         C21     112.746    1.93
+PMQ         N19         C20         H20     108.477    1.50
+PMQ         N19         C20        H20A     108.477    1.50
+PMQ         C21         C20         H20     109.073    1.50
+PMQ         C21         C20        H20A     109.073    1.50
+PMQ         H20         C20        H20A     107.860    1.50
+PMQ         C20         C21         C22     120.710    1.50
+PMQ         C20         C21         C26     120.710    1.50
+PMQ         C22         C21         C26     118.580    1.50
+PMQ         C21         C22         C23     120.442    1.50
+PMQ         C21         C22         H22     119.742    1.50
+PMQ         C23         C22         H22     119.815    1.50
+PMQ         C22         C23         C24     120.273    1.50
+PMQ         C22         C23         H23     119.818    1.50
+PMQ         C24         C23         H23     119.909    1.50
+PMQ         C23         C24         C25     119.997    1.50
+PMQ         C23         C24         H24     119.998    1.50
+PMQ         C25         C24         H24     119.998    1.50
+PMQ         C24         C25         C26     120.273    1.50
+PMQ         C24         C25         H25     119.909    1.50
+PMQ         C26         C25         H25     119.818    1.50
+PMQ         C21         C26         C25     120.442    1.50
+PMQ         C21         C26         H26     119.742    1.50
+PMQ         C25         C26         H26     119.815    1.50
+PMQ         C17         OXT         HXT     110.339    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PMQ             sp2_sp2_3         O18         C17         N19         C20       0.000   10.00     2
+PMQ             sp2_sp3_2         C17         N19         C20         C21     120.000   10.00     6
+PMQ             sp2_sp3_8         C22         C21         C20         N19     -90.000   10.00     6
+PMQ       const_sp2_sp2_3         C20         C21         C22         C23     180.000   10.00     2
+PMQ              const_23         C20         C21         C26         C25     180.000   10.00     2
+PMQ       const_sp2_sp2_5         C21         C22         C23         C24       0.000   10.00     2
+PMQ       const_sp2_sp2_9         C22         C23         C24         C25       0.000   10.00     2
+PMQ              const_13         C23         C24         C25         C26       0.000   10.00     2
+PMQ              const_17         C24         C25         C26         C21       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PMQ    plan-1         C20   0.020
+PMQ    plan-1         C21   0.020
+PMQ    plan-1         C22   0.020
+PMQ    plan-1         C23   0.020
+PMQ    plan-1         C24   0.020
+PMQ    plan-1         C25   0.020
+PMQ    plan-1         C26   0.020
+PMQ    plan-1         H22   0.020
+PMQ    plan-1         H23   0.020
+PMQ    plan-1         H24   0.020
+PMQ    plan-1         H25   0.020
+PMQ    plan-1         H26   0.020
+PMQ    plan-2         C17   0.020
+PMQ    plan-2         N19   0.020
+PMQ    plan-2         O18   0.020
+PMQ    plan-2         OXT   0.020
+PMQ    plan-3         C17   0.020
+PMQ    plan-3         C20   0.020
+PMQ    plan-3        HN19   0.020
+PMQ    plan-3         N19   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PMQ SMILES           ACDLabs              12.01 "O=C(O)NCc1ccccc1"
+PMQ InChI            InChI                1.03  "InChI=1S/C8H9NO2/c10-8(11)9-6-7-4-2-1-3-5-7/h1-5,9H,6H2,(H,10,11)"
+PMQ InChIKey         InChI                1.03  RRIWSQXXBIFKQM-UHFFFAOYSA-N
+PMQ SMILES_CANONICAL CACTVS               3.385 "OC(=O)NCc1ccccc1"
+PMQ SMILES           CACTVS               3.385 "OC(=O)NCc1ccccc1"
+PMQ SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "c1ccc(cc1)CNC(=O)O"
+PMQ SMILES           "OpenEye OEToolkits" 1.9.2 "c1ccc(cc1)CNC(=O)O"
+PMQ ?                acedrg               202         "dictionary generator"                  
+PMQ ?                acedrg_database      11          "data source"                           
+PMQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PMQ ?                refmac5              5.8.0189    "optimization tool"                     

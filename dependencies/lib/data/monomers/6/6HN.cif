@@ -1,0 +1,215 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+6HN     6HN     6-nitro-L-norleucine   peptide     24     12     .     
+#
+data_comp_6HN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+6HN     N1      N       N       1       16.889      -15.607     41.234      
+6HN     N       N       NT3     1       22.778      -12.315     40.659      
+6HN     CA      C       CH1     0       22.420      -12.493     42.096      
+6HN     C       C       C       0       23.267      -13.618     42.709      
+6HN     OXT     O       OC      -1      23.536      -13.526     43.923      
+6HN     O       O       O       0       23.624      -14.546     41.953      
+6HN     CB      C       CH2     0       20.920      -12.770     42.257      
+6HN     CG      C       CH2     0       20.362      -13.939     41.452      
+6HN     CD      C       CH2     0       18.877      -14.181     41.688      
+6HN     CE      C       CH2     0       18.339      -15.385     40.949      
+6HN     O2      O       O       0       16.592      -16.296     42.189      
+6HN     O1      O       OC      -1      16.076      -15.086     40.496      
+6HN     H       H       H       0       22.167      -11.777     40.249      
+6HN     H2      H       H       0       22.796      -13.120     40.232      
+6HN     H3      H       H       0       23.600      -11.929     40.591      
+6HN     HA      H       H       0       22.634      -11.655     42.567      
+6HN     HB      H       H       0       20.431      -11.960     42.002      
+6HN     HBA     H       H       0       20.740      -12.937     43.206      
+6HN     HG      H       H       0       20.856      -14.753     41.686      
+6HN     HGA     H       H       0       20.507      -13.765     40.497      
+6HN     HD      H       H       0       18.376      -13.388     41.404      
+6HN     HDA     H       H       0       18.724      -14.306     42.648      
+6HN     HE      H       H       0       18.462      -15.255     39.985      
+6HN     HEA     H       H       0       18.846      -16.181     41.215      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 6HN      N      n/a    CA     START
+ 6HN      H      N      .      .
+ 6HN      H2     N      .      .
+ 6HN      H3     N      .      .
+ 6HN      CA     N      C      .
+ 6HN      HA     CA     .      .
+ 6HN      CB     CA     CG     .
+ 6HN      HB     CB     .      .
+ 6HN      HBA    CB     .      .
+ 6HN      CG     CB     CD     .
+ 6HN      HG     CG     .      .
+ 6HN      HGA    CG     .      .
+ 6HN      CD     CG     CE     .
+ 6HN      HD     CD     .      .
+ 6HN      HDA    CD     .      .
+ 6HN      CE     CD     N1     .
+ 6HN      HE     CE     .      .
+ 6HN      HEA    CE     .      .
+ 6HN      N1     CE     O1     .
+ 6HN      O2     N1     .      .
+ 6HN      O1     N1     .      .
+ 6HN      C      CA     .      END
+ 6HN      OXT    C      .      .
+ 6HN      O      C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+6HN       N1        CE        SINGLE    n         1.494     0.015     1.494     0.015     
+6HN       N1        O2        DOUBLE    n         1.215     0.012     1.215     0.012     
+6HN       N1        O1        SINGLE    n         1.215     0.012     1.215     0.012     
+6HN       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+6HN       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+6HN       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+6HN       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+6HN       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+6HN       CB        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+6HN       CG        CD        SINGLE    n         1.523     0.012     1.523     0.012     
+6HN       CD        CE        SINGLE    n         1.512     0.020     1.512     0.020     
+6HN       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+6HN       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+6HN       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+6HN       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+6HN       CB        HB        SINGLE    n         1.089     0.010     0.980     0.016     
+6HN       CB        HBA       SINGLE    n         1.089     0.010     0.980     0.016     
+6HN       CG        HG        SINGLE    n         1.089     0.010     0.981     0.016     
+6HN       CG        HGA       SINGLE    n         1.089     0.010     0.981     0.016     
+6HN       CD        HD        SINGLE    n         1.089     0.010     0.980     0.016     
+6HN       CD        HDA       SINGLE    n         1.089     0.010     0.980     0.016     
+6HN       CE        HE        SINGLE    n         1.089     0.010     0.980     0.019     
+6HN       CE        HEA       SINGLE    n         1.089     0.010     0.980     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+6HN          CE          N1          O2     118.072    1.50
+6HN          CE          N1          O1     118.065    1.50
+6HN          O2          N1          O1     123.848    1.50
+6HN          CA           N           H     110.062    1.93
+6HN          CA           N          H2     110.062    1.93
+6HN          CA           N          H3     110.062    1.93
+6HN           H           N          H2     109.028    2.41
+6HN           H           N          H3     109.028    2.41
+6HN          H2           N          H3     109.028    2.41
+6HN           N          CA           C     109.241    1.50
+6HN           N          CA          CB     110.374    1.62
+6HN           N          CA          HA     108.487    1.50
+6HN           C          CA          CB     111.037    2.40
+6HN           C          CA          HA     108.824    1.50
+6HN          CB          CA          HA     108.967    1.50
+6HN          CA           C         OXT     117.124    1.50
+6HN          CA           C           O     117.124    1.50
+6HN         OXT           C           O     125.752    1.50
+6HN          CA          CB          CG     115.311    1.56
+6HN          CA          CB          HB     108.549    1.50
+6HN          CA          CB         HBA     108.549    1.50
+6HN          CG          CB          HB     108.650    1.50
+6HN          CG          CB         HBA     108.650    1.50
+6HN          HB          CB         HBA     107.844    1.50
+6HN          CB          CG          CD     113.328    2.00
+6HN          CB          CG          HG     108.601    1.50
+6HN          CB          CG         HGA     108.601    1.50
+6HN          CD          CG          HG     108.806    1.50
+6HN          CD          CG         HGA     108.806    1.50
+6HN          HG          CG         HGA     107.646    1.50
+6HN          CG          CD          CE     113.686    2.75
+6HN          CG          CD          HD     109.041    1.50
+6HN          CG          CD         HDA     109.041    1.50
+6HN          CE          CD          HD     108.805    1.50
+6HN          CE          CD         HDA     108.805    1.50
+6HN          HD          CD         HDA     107.927    1.57
+6HN          N1          CE          CD     111.308    2.28
+6HN          N1          CE          HE     109.030    1.50
+6HN          N1          CE         HEA     109.030    1.50
+6HN          CD          CE          HE     109.099    1.50
+6HN          CD          CE         HEA     109.099    1.50
+6HN          HE          CE         HEA     107.873    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+6HN             sp2_sp3_2          O2          N1          CE          CD     120.000   10.00     6
+6HN             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+6HN             sp2_sp3_7         OXT           C          CA           N       0.000   10.00     6
+6HN            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+6HN            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+6HN            sp3_sp3_28          CE          CD          CG          CB     180.000   10.00     3
+6HN            sp3_sp3_37          CG          CD          CE          N1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+6HN    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+6HN    plan-1          CE   0.020
+6HN    plan-1          N1   0.020
+6HN    plan-1          O1   0.020
+6HN    plan-1          O2   0.020
+6HN    plan-2           C   0.020
+6HN    plan-2          CA   0.020
+6HN    plan-2           O   0.020
+6HN    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+6HN SMILES           ACDLabs              10.04 "[O-][N+](=O)CCCCC(N)C(=O)O"
+6HN SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCCC[N+]([O-])=O)C(O)=O"
+6HN SMILES           CACTVS               3.341 "N[CH](CCCC[N+]([O-])=O)C(O)=O"
+6HN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CC[N+](=O)[O-])C[C@@H](C(=O)O)N"
+6HN SMILES           "OpenEye OEToolkits" 1.5.0 "C(CC[N+](=O)[O-])CC(C(=O)O)N"
+6HN InChI            InChI                1.03  "InChI=1S/C6H12N2O4/c7-5(6(9)10)3-1-2-4-8(11)12/h5H,1-4,7H2,(H,9,10)/t5-/m0/s1"
+6HN InChIKey         InChI                1.03  LMSAJWJHQUHKSX-YFKPBYRVSA-N
+6HN ?                acedrg               196         "dictionary generator"                  
+6HN ?                acedrg_database      11          "data source"                           
+6HN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+6HN ?                refmac5              5.8.0222    "optimization tool"                     

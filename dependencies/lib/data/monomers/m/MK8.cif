@@ -1,0 +1,209 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MK8      MK8 '2-methyl-L-norleucine               ' non-polymer        24  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MK8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MK8           O2     O    OC       -0.500      0.000    0.000    0.000
+ MK8           C      C    C         0.000     -1.098   -0.544    0.252
+ MK8           O      O    OC       -0.500     -1.150   -1.775    0.470
+ MK8           CA     C    CT        0.000     -2.357    0.283    0.300
+ MK8           N      N    NH2       0.000     -2.278    1.353   -0.703
+ MK8           HNA    H    H         0.000     -2.931    1.374   -1.475
+ MK8           HN     H    H         0.000     -1.571    2.072   -0.623
+ MK8           CB1    C    CH3       0.000     -2.508    0.900    1.692
+ MK8           HB1B   H    H         0.000     -3.393    1.482    1.728
+ MK8           HB1A   H    H         0.000     -2.566    0.129    2.417
+ MK8           HB1    H    H         0.000     -1.672    1.516    1.900
+ MK8           CB     C    CH2       0.000     -3.564   -0.608    0.002
+ MK8           HB     H    H         0.000     -3.674   -1.350    0.797
+ MK8           HBA    H    H         0.000     -3.413   -1.118   -0.951
+ MK8           CG     C    CH2       0.000     -4.827    0.253   -0.072
+ MK8           HG     H    H         0.000     -4.715    0.994   -0.866
+ MK8           HGA    H    H         0.000     -4.976    0.763    0.882
+ MK8           CD     C    CH2       0.000     -6.034   -0.638   -0.370
+ MK8           HD     H    H         0.000     -6.144   -1.379    0.425
+ MK8           HDA    H    H         0.000     -5.883   -1.148   -1.323
+ MK8           CE     C    CH3       0.000     -7.297    0.223   -0.445
+ MK8           HEB    H    H         0.000     -7.446    0.721    0.479
+ MK8           HEA    H    H         0.000     -7.193    0.943   -1.217
+ MK8           HE     H    H         0.000     -8.136   -0.391   -0.651
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MK8      O2     n/a    C      START
+ MK8      C      O2     CA     .
+ MK8      O      C      .      .
+ MK8      CA     C      CB     .
+ MK8      N      CA     HN     .
+ MK8      HNA    N      .      .
+ MK8      HN     N      .      .
+ MK8      CB1    CA     HB1    .
+ MK8      HB1B   CB1    .      .
+ MK8      HB1A   CB1    .      .
+ MK8      HB1    CB1    .      .
+ MK8      CB     CA     CG     .
+ MK8      HB     CB     .      .
+ MK8      HBA    CB     .      .
+ MK8      CG     CB     CD     .
+ MK8      HG     CG     .      .
+ MK8      HGA    CG     .      .
+ MK8      CD     CG     CE     .
+ MK8      HD     CD     .      .
+ MK8      HDA    CD     .      .
+ MK8      CE     CD     HE     .
+ MK8      HEB    CE     .      .
+ MK8      HEA    CE     .      .
+ MK8      HE     CE     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MK8       CA        C         single    1.507     0.020     1.507     0.020     
+MK8       C         O2        deloc     1.250     0.020     1.250     0.020     
+MK8       HN        N         single    1.036     0.016     0.914     0.007     
+MK8       HNA       N         single    1.036     0.016     0.914     0.007     
+MK8       O         C         deloc     1.250     0.020     1.250     0.020     
+MK8       N         CA        single    1.462     0.020     1.462     0.020     
+MK8       CB        CA        single    1.524     0.020     1.524     0.020     
+MK8       HB        CB        single    1.089     0.010     0.989     0.005     
+MK8       HBA       CB        single    1.089     0.010     0.989     0.005     
+MK8       CD        CG        single    1.524     0.020     1.524     0.020     
+MK8       HD        CD        single    1.089     0.010     0.989     0.005     
+MK8       HDA       CD        single    1.089     0.010     0.989     0.005     
+MK8       CE        CD        single    1.513     0.020     1.513     0.020     
+MK8       HE        CE        single    1.089     0.010     0.989     0.005     
+MK8       HEA       CE        single    1.089     0.010     0.989     0.005     
+MK8       HEB       CE        single    1.089     0.010     0.989     0.005     
+MK8       CG        CB        single    1.524     0.020     1.524     0.020     
+MK8       HG        CG        single    1.089     0.010     0.989     0.005     
+MK8       HGA       CG        single    1.089     0.010     0.989     0.005     
+MK8       CB1       CA        single    1.524     0.020     1.524     0.020     
+MK8       HB1       CB1       single    1.089     0.010     0.989     0.005     
+MK8       HB1A      CB1       single    1.089     0.010     0.989     0.005     
+MK8       HB1B      CB1       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MK8      O2     C      O       123.000    3.000
+ MK8      O2     C      CA      118.500    3.000
+ MK8      O      C      CA      118.500    3.000
+ MK8      C      CA     N       109.500    3.000
+ MK8      C      CA     CB1     109.470    3.000
+ MK8      C      CA     CB      109.470    3.000
+ MK8      N      CA     CB1     109.500    3.000
+ MK8      N      CA     CB      109.500    3.000
+ MK8      CB1    CA     CB      111.000    3.000
+ MK8      CA     N      HNA     120.000    3.000
+ MK8      CA     N      HN      120.000    3.000
+ MK8      HNA    N      HN      120.000    3.000
+ MK8      CA     CB1    HB1B    109.470    3.000
+ MK8      CA     CB1    HB1A    109.470    3.000
+ MK8      CA     CB1    HB1     109.470    3.000
+ MK8      HB1B   CB1    HB1A    109.470    3.000
+ MK8      HB1B   CB1    HB1     109.470    3.000
+ MK8      HB1A   CB1    HB1     109.470    3.000
+ MK8      CA     CB     HB      109.470    3.000
+ MK8      CA     CB     HBA     109.470    3.000
+ MK8      CA     CB     CG      111.000    3.000
+ MK8      HB     CB     HBA     107.900    3.000
+ MK8      HB     CB     CG      109.470    3.000
+ MK8      HBA    CB     CG      109.470    3.000
+ MK8      CB     CG     HG      109.470    3.000
+ MK8      CB     CG     HGA     109.470    3.000
+ MK8      CB     CG     CD      111.000    3.000
+ MK8      HG     CG     HGA     107.900    3.000
+ MK8      HG     CG     CD      109.470    3.000
+ MK8      HGA    CG     CD      109.470    3.000
+ MK8      CG     CD     HD      109.470    3.000
+ MK8      CG     CD     HDA     109.470    3.000
+ MK8      CG     CD     CE      111.000    3.000
+ MK8      HD     CD     HDA     107.900    3.000
+ MK8      HD     CD     CE      109.470    3.000
+ MK8      HDA    CD     CE      109.470    3.000
+ MK8      CD     CE     HEB     109.470    3.000
+ MK8      CD     CE     HEA     109.470    3.000
+ MK8      CD     CE     HE      109.470    3.000
+ MK8      HEB    CE     HEA     109.470    3.000
+ MK8      HEB    CE     HE      109.470    3.000
+ MK8      HEA    CE     HE      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MK8      var_1    O2     C      CA     CB       154.996   20.000   1
+ MK8      var_2    C      CA     N      HN       -63.857   20.000   1
+ MK8      var_3    C      CA     CB1    HB1       59.951   20.000   1
+ MK8      var_4    C      CA     CB     CG      -175.004   20.000   1
+ MK8      var_5    CA     CB     CG     CD       180.000   20.000   3
+ MK8      var_6    CB     CG     CD     CE      -179.961   20.000   3
+ MK8      var_7    CG     CD     CE     HE      -179.958   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MK8      chir_01  CA     C      N      CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MK8      plan-1    C         0.020
+ MK8      plan-1    O         0.020
+ MK8      plan-1    CA        0.020
+ MK8      plan-1    O2        0.020
+ MK8      plan-2    N         0.020
+ MK8      plan-2    CA        0.020
+ MK8      plan-2    HN        0.020
+ MK8      plan-2    HNA       0.020
+# ------------------------------------------------------

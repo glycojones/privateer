@@ -1,0 +1,337 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B30      B30 '"{2,2'-[(2-{[4-(AMINOSULFONYL)BENZOY' non-polymer        40  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_B30
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ B30           OXD    O    O        -0.500      0.000    0.000    0.000
+ B30           C15    C    C         0.000      0.037   -0.037    1.250
+ B30           OXC    O    O2       -0.500      0.165   -1.093    1.907
+ B30           CU     CU   CU        0.000      1.056   -0.664    3.098
+ B30           OXB    O    O2       -0.500      1.191   -0.128    4.560
+ B30           C13    C    C         0.000      0.596    0.972    4.516
+ B30           OXA    O    O        -0.500      1.124    2.098    4.648
+ B30           C12    C    CH2       0.000     -0.937    0.677    4.277
+ B30           H122   H    H         0.000     -1.577    1.105    5.051
+ B30           H121   H    H         0.000     -1.154   -0.389    4.176
+ B30           C14    C    CH2       0.000     -0.062    1.198    2.107
+ B30           H141   H    H         0.000     -0.031    2.024    1.394
+ B30           H142   H    H         0.000      0.858    1.191    2.695
+ B30           N11    N    NT        0.000     -1.196    1.360    2.985
+ B30           C10    C    CH2       0.000     -2.366    0.723    2.374
+ B30           H101   H    H         0.000     -3.174    0.668    3.107
+ B30           H102   H    H         0.000     -2.102   -0.285    2.049
+ B30           C9     C    CH2       0.000     -2.824    1.547    1.168
+ B30           H91    H    H         0.000     -2.014    1.602    0.437
+ B30           H92    H    H         0.000     -3.086    2.556    1.495
+ B30           N8     N    NH1       0.000     -3.994    0.911    0.557
+ B30           HN8    H    H         0.000     -4.367    0.058    0.949
+ B30           C7     C    C         0.000     -4.572    1.464   -0.527
+ B30           O7     O    O         0.000     -4.124    2.491   -0.998
+ B30           C1     C    CR6       0.000     -5.752    0.822   -1.144
+ B30           C6     C    CR16      0.000     -6.269   -0.359   -0.606
+ B30           H6     H    H         0.000     -5.804   -0.809    0.262
+ B30           C5     C    CR16      0.000     -7.373   -0.950   -1.183
+ B30           H5     H    H         0.000     -7.781   -1.861   -0.762
+ B30           C4     C    CR6       0.000     -7.962   -0.383   -2.300
+ B30           C3     C    CR16      0.000     -7.455    0.787   -2.838
+ B30           H3     H    H         0.000     -7.923    1.228   -3.709
+ B30           C2     C    CR16      0.000     -6.353    1.392   -2.266
+ B30           H2     H    H         0.000     -5.957    2.307   -2.688
+ B30           S      S    ST        0.000     -9.368   -1.148   -3.035
+ B30           O1     O    OS        0.000    -10.037   -0.120   -3.752
+ B30           O2     O    OS        0.000     -9.947   -1.950   -2.016
+ B30           N1     N    NH2       0.000     -8.813   -2.207   -4.180
+ B30           HN12   H    H         0.000     -9.461   -2.765   -4.734
+ B30           HN11   H    H         0.000     -7.814   -2.318   -4.349
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B30      OXD    n/a    C15    START
+ B30      C15    OXD    C14    .
+ B30      OXC    C15    CU     .
+ B30      CU     OXC    OXB    .
+ B30      OXB    CU     C13    .
+ B30      C13    OXB    C12    .
+ B30      OXA    C13    .      .
+ B30      C12    C13    H121   .
+ B30      H122   C12    .      .
+ B30      H121   C12    .      .
+ B30      C14    C15    N11    .
+ B30      H141   C14    .      .
+ B30      H142   C14    .      .
+ B30      N11    C14    C10    .
+ B30      C10    N11    C9     .
+ B30      H101   C10    .      .
+ B30      H102   C10    .      .
+ B30      C9     C10    N8     .
+ B30      H91    C9     .      .
+ B30      H92    C9     .      .
+ B30      N8     C9     C7     .
+ B30      HN8    N8     .      .
+ B30      C7     N8     C1     .
+ B30      O7     C7     .      .
+ B30      C1     C7     C6     .
+ B30      C6     C1     C5     .
+ B30      H6     C6     .      .
+ B30      C5     C6     C4     .
+ B30      H5     C5     .      .
+ B30      C4     C5     S      .
+ B30      C3     C4     C2     .
+ B30      H3     C3     .      .
+ B30      C2     C3     H2     .
+ B30      H2     C2     .      .
+ B30      S      C4     N1     .
+ B30      O1     S      .      .
+ B30      O2     S      .      .
+ B30      N1     S      HN11   .
+ B30      HN12   N1     .      .
+ B30      HN11   N1     .      END
+ B30      C1     C2     .    ADD
+ B30      N11    C12    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B30       O1        S         double    1.436     0.020     1.436     0.020     
+B30       O2        S         double    1.436     0.020     1.436     0.020     
+B30       N1        S         single    1.600     0.020     1.600     0.020     
+B30       S         C4        single    1.595     0.020     1.595     0.020     
+B30       HN11      N1        single    1.036     0.016     0.914     0.007     
+B30       HN12      N1        single    1.036     0.016     0.914     0.007     
+B30       C1        C2        single    1.390     0.020     1.390     0.020     
+B30       C6        C1        double    1.390     0.020     1.390     0.020     
+B30       C1        C7        single    1.500     0.020     1.500     0.020     
+B30       C2        C3        double    1.390     0.020     1.390     0.020     
+B30       H2        C2        single    1.082     0.013     0.975     0.010     
+B30       C3        C4        single    1.390     0.020     1.390     0.020     
+B30       H3        C3        single    1.082     0.013     0.975     0.010     
+B30       C4        C5        double    1.390     0.020     1.390     0.020     
+B30       C5        C6        single    1.390     0.020     1.390     0.020     
+B30       H5        C5        single    1.082     0.013     0.975     0.010     
+B30       H6        C6        single    1.082     0.013     0.975     0.010     
+B30       O7        C7        double    1.220     0.020     1.220     0.020     
+B30       C7        N8        single    1.330     0.020     1.330     0.020     
+B30       N8        C9        single    1.450     0.020     1.450     0.020     
+B30       HN8       N8        single    1.016     0.010     0.899     0.007     
+B30       C9        C10       single    1.524     0.020     1.524     0.020     
+B30       H91       C9        single    1.089     0.010     0.989     0.005     
+B30       H92       C9        single    1.089     0.010     0.989     0.005     
+B30       C10       N11       single    1.469     0.020     1.469     0.020     
+B30       H101      C10       single    1.089     0.010     0.989     0.005     
+B30       H102      C10       single    1.089     0.010     0.989     0.005     
+B30       N11       C12       single    1.469     0.020     1.469     0.020     
+B30       N11       C14       single    1.469     0.020     1.469     0.020     
+B30       C12       C13       single    1.510     0.020     1.510     0.020     
+B30       H121      C12       single    1.089     0.010     0.989     0.005     
+B30       H122      C12       single    1.089     0.010     0.989     0.005     
+B30       OXA       C13       deloc     1.220     0.020     1.220     0.020     
+B30       C13       OXB       deloc     1.454     0.020     1.454     0.020     
+B30       OXB       CU        single    2.010     0.020     2.010     0.020     
+B30       C14       C15       single    1.510     0.020     1.510     0.020     
+B30       H141      C14       single    1.089     0.010     0.989     0.005     
+B30       H142      C14       single    1.089     0.010     0.989     0.005     
+B30       OXC       C15       deloc     1.454     0.020     1.454     0.020     
+B30       C15       OXD       deloc     1.220     0.020     1.220     0.020     
+B30       CU        OXC       single    2.010     0.020     2.010     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ B30      OXD    C15    OXC     119.000    3.000
+ B30      OXD    C15    C14     120.500    3.000
+ B30      OXC    C15    C14     120.000    3.000
+ B30      C15    OXC    CU      120.000    3.000
+ B30      OXC    CU     OXB     144.000    3.000
+ B30      CU     OXB    C13     120.000    3.000
+ B30      OXB    C13    OXA     119.000    3.000
+ B30      OXB    C13    C12     120.000    3.000
+ B30      OXA    C13    C12     120.500    3.000
+ B30      C13    C12    H122    109.470    3.000
+ B30      C13    C12    H121    109.470    3.000
+ B30      C13    C12    N11     109.500    3.000
+ B30      H122   C12    H121    107.900    3.000
+ B30      H122   C12    N11     109.470    3.000
+ B30      H121   C12    N11     109.470    3.000
+ B30      C15    C14    H141    109.470    3.000
+ B30      C15    C14    H142    109.470    3.000
+ B30      C15    C14    N11     109.500    3.000
+ B30      H141   C14    H142    107.900    3.000
+ B30      H141   C14    N11     109.470    3.000
+ B30      H142   C14    N11     109.470    3.000
+ B30      C14    N11    C10     109.470    3.000
+ B30      C14    N11    C12     109.470    3.000
+ B30      C10    N11    C12     109.470    3.000
+ B30      N11    C10    H101    109.470    3.000
+ B30      N11    C10    H102    109.470    3.000
+ B30      N11    C10    C9      109.470    3.000
+ B30      H101   C10    H102    107.900    3.000
+ B30      H101   C10    C9      109.470    3.000
+ B30      H102   C10    C9      109.470    3.000
+ B30      C10    C9     H91     109.470    3.000
+ B30      C10    C9     H92     109.470    3.000
+ B30      C10    C9     N8      112.000    3.000
+ B30      H91    C9     H92     107.900    3.000
+ B30      H91    C9     N8      109.470    3.000
+ B30      H92    C9     N8      109.470    3.000
+ B30      C9     N8     HN8     118.500    3.000
+ B30      C9     N8     C7      121.500    3.000
+ B30      HN8    N8     C7      120.000    3.000
+ B30      N8     C7     O7      123.000    3.000
+ B30      N8     C7     C1      120.000    3.000
+ B30      O7     C7     C1      120.500    3.000
+ B30      C7     C1     C6      120.000    3.000
+ B30      C7     C1     C2      120.000    3.000
+ B30      C6     C1     C2      120.000    3.000
+ B30      C1     C6     H6      120.000    3.000
+ B30      C1     C6     C5      120.000    3.000
+ B30      H6     C6     C5      120.000    3.000
+ B30      C6     C5     H5      120.000    3.000
+ B30      C6     C5     C4      120.000    3.000
+ B30      H5     C5     C4      120.000    3.000
+ B30      C5     C4     C3      120.000    3.000
+ B30      C5     C4     S       120.000    3.000
+ B30      C3     C4     S       120.000    3.000
+ B30      C4     C3     H3      120.000    3.000
+ B30      C4     C3     C2      120.000    3.000
+ B30      H3     C3     C2      120.000    3.000
+ B30      C3     C2     H2      120.000    3.000
+ B30      C3     C2     C1      120.000    3.000
+ B30      H2     C2     C1      120.000    3.000
+ B30      C4     S      O1      109.500    3.000
+ B30      C4     S      O2      109.500    3.000
+ B30      C4     S      N1      109.500    3.000
+ B30      O1     S      O2      109.500    3.000
+ B30      O1     S      N1      109.500    3.000
+ B30      O2     S      N1      109.500    3.000
+ B30      S      N1     HN12    120.000    3.000
+ B30      S      N1     HN11    120.000    3.000
+ B30      HN12   N1     HN11    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ B30      var_1    OXD    C15    OXC    CU       143.386   20.000   1
+ B30      var_2    C15    OXC    CU     OXB        0.000   20.000   1
+ B30      var_3    C13    OXB    CU     OXC        0.000   20.000   1
+ B30      var_4    CU     OXB    C13    C12       67.308   20.000   1
+ B30      var_5    OXB    C13    C12    N11     -119.183   20.000   3
+ B30      var_6    OXD    C15    C14    N11      115.502   20.000   3
+ B30      var_7    C15    C14    N11    C10      -31.852   20.000   1
+ B30      var_8    C14    N11    C12    C13       38.089   20.000   1
+ B30      var_9    C14    N11    C10    C9       -70.907   20.000   1
+ B30      var_10   N11    C10    C9     N8      -179.976   20.000   3
+ B30      var_11   C10    C9     N8     C7      -179.990   20.000   3
+ B30      CONST_1  C9     N8     C7     C1       180.000    0.000   0
+ B30      var_12   N8     C7     C1     C6        -0.065   20.000   1
+ B30      CONST_2  C7     C1     C2     C3       180.000    0.000   0
+ B30      CONST_3  C7     C1     C6     C5       180.000    0.000   0
+ B30      CONST_4  C1     C6     C5     C4         0.000    0.000   0
+ B30      CONST_5  C6     C5     C4     S        180.000    0.000   0
+ B30      CONST_6  C5     C4     C3     C2         0.000    0.000   0
+ B30      CONST_7  C4     C3     C2     C1         0.000    0.000   0
+ B30      var_13   C5     C4     S      N1       -90.308   20.000   1
+ B30      var_14   C4     S      N1     HN11      -0.034   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ B30      chir_01  S      O1     O2     N1        negativ
+                   .      .      .      .      .
+ B30      chir_02  N11    C10    C12    C14       negativ
+                   .      .      .      .      .
+ B30      chir_03  CU     .      .      OXC       cross5
+                   .      OXB    .      .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ B30      plan-1    N1        0.020
+ B30      plan-1    S         0.020
+ B30      plan-1    HN11      0.020
+ B30      plan-1    HN12      0.020
+ B30      plan-2    C1        0.020
+ B30      plan-2    C2        0.020
+ B30      plan-2    C6        0.020
+ B30      plan-2    C7        0.020
+ B30      plan-2    C3        0.020
+ B30      plan-2    C4        0.020
+ B30      plan-2    C5        0.020
+ B30      plan-2    H2        0.020
+ B30      plan-2    H3        0.020
+ B30      plan-2    S         0.020
+ B30      plan-2    H5        0.020
+ B30      plan-2    H6        0.020
+ B30      plan-3    C7        0.020
+ B30      plan-3    C1        0.020
+ B30      plan-3    O7        0.020
+ B30      plan-3    N8        0.020
+ B30      plan-3    HN8       0.020
+ B30      plan-4    N8        0.020
+ B30      plan-4    C7        0.020
+ B30      plan-4    C9        0.020
+ B30      plan-4    HN8       0.020
+ B30      plan-5    C13       0.020
+ B30      plan-5    C12       0.020
+ B30      plan-5    OXA       0.020
+ B30      plan-5    OXB       0.020
+ B30      plan-6    C15       0.020
+ B30      plan-6    C14       0.020
+ B30      plan-6    OXC       0.020
+ B30      plan-6    OXD       0.020
+# ------------------------------------------------------

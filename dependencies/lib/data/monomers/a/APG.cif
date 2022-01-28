@@ -1,0 +1,183 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+APG     APG      "ATROLACTIC ACID (2-PHENYL-LACTIC ACID)"     NON-POLYMER     21     12     .     
+#
+data_comp_APG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+APG     C1      C       CR16    0       31.875      3.331       15.269      
+APG     C2      C       CR16    0       30.938      3.376       16.299      
+APG     C3      C       CR6     0       31.017      4.338       17.317      
+APG     C4      C       CR16    0       32.087      5.242       17.259      
+APG     C5      C       CR16    0       33.023      5.195       16.229      
+APG     C6      C       CR16    0       32.917      4.240       15.235      
+APG     C12     C       CT      0       30.001      4.411       18.474      
+APG     O17     O       OH1     0       28.955      3.458       18.363      
+APG     C13     C       C       0       29.382      5.840       18.574      
+APG     C14     C       CH3     0       30.678      4.016       19.799      
+APG     O14     O       O       0       29.983      6.688       19.268      
+APG     O15     O       OC      -1      28.333      6.044       17.931      
+APG     H1      H       H       0       31.798      2.678       14.592      
+APG     H2      H       H       0       30.237      2.747       16.299      
+APG     H4      H       H       0       32.182      5.900       17.929      
+APG     H5      H       H       0       33.733      5.817       16.210      
+APG     H6      H       H       0       33.552      4.208       14.537      
+APG     HO17    H       H       0       28.455      3.608       17.690      
+APG     H141    H       H       0       30.058      4.155       20.542      
+APG     H142    H       H       0       31.477      4.557       19.947      
+APG     H143    H       H       0       30.934      3.073       19.772      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+APG       C1        C2        DOUBLE    y         1.386     0.010     1.386     0.010     
+APG       C1        C6        SINGLE    y         1.376     0.012     1.376     0.012     
+APG       C2        C3        SINGLE    y         1.390     0.010     1.390     0.010     
+APG       C3        C4        DOUBLE    y         1.390     0.010     1.390     0.010     
+APG       C3        C12       SINGLE    n         1.528     0.011     1.528     0.011     
+APG       C4        C5        SINGLE    y         1.386     0.010     1.386     0.010     
+APG       C5        C6        DOUBLE    y         1.376     0.012     1.376     0.012     
+APG       C12       O17       SINGLE    n         1.415     0.010     1.415     0.010     
+APG       C12       C13       SINGLE    n         1.526     0.020     1.526     0.020     
+APG       C12       C14       SINGLE    n         1.537     0.010     1.537     0.010     
+APG       C13       O14       DOUBLE    n         1.244     0.020     1.244     0.020     
+APG       C13       O15       SINGLE    n         1.244     0.020     1.244     0.020     
+APG       C1        H1        SINGLE    n         1.082     0.013     0.944     0.018     
+APG       C2        H2        SINGLE    n         1.082     0.013     0.944     0.017     
+APG       C4        H4        SINGLE    n         1.082     0.013     0.944     0.017     
+APG       C5        H5        SINGLE    n         1.082     0.013     0.944     0.018     
+APG       C6        H6        SINGLE    n         1.082     0.013     0.944     0.016     
+APG       O17       HO17      SINGLE    n         0.970     0.012     0.849     0.020     
+APG       C14       H141      SINGLE    n         1.089     0.010     0.977     0.020     
+APG       C14       H142      SINGLE    n         1.089     0.010     0.977     0.020     
+APG       C14       H143      SINGLE    n         1.089     0.010     0.977     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+APG          C2          C1          C6     120.121    1.50
+APG          C2          C1          H1     119.894    1.50
+APG          C6          C1          H1     119.985    1.50
+APG          C1          C2          C3     120.878    1.50
+APG          C1          C2          H2     119.578    1.50
+APG          C3          C2          H2     119.544    1.50
+APG          C2          C3          C4     118.164    1.50
+APG          C2          C3         C12     120.918    2.17
+APG          C4          C3         C12     120.918    2.17
+APG          C3          C4          C5     120.878    1.50
+APG          C3          C4          H4     119.544    1.50
+APG          C5          C4          H4     119.578    1.50
+APG          C4          C5          C6     120.121    1.50
+APG          C4          C5          H5     119.894    1.50
+APG          C6          C5          H5     119.985    1.50
+APG          C1          C6          C5     119.838    1.50
+APG          C1          C6          H6     120.081    1.50
+APG          C5          C6          H6     120.081    1.50
+APG          C3         C12         O17     109.961    1.95
+APG          C3         C12         C13     109.133    2.23
+APG          C3         C12         C14     110.755    2.63
+APG         O17         C12         C13     110.427    2.31
+APG         O17         C12         C14     109.482    3.00
+APG         C13         C12         C14     107.619    2.45
+APG         C12         O17        HO17     110.641    2.39
+APG         C12         C13         O14     116.839    1.50
+APG         C12         C13         O15     116.839    1.50
+APG         O14         C13         O15     126.322    1.50
+APG         C12         C14        H141     110.107    1.50
+APG         C12         C14        H142     110.107    1.50
+APG         C12         C14        H143     110.107    1.50
+APG        H141         C14        H142     109.338    1.50
+APG        H141         C14        H143     109.338    1.50
+APG        H142         C14        H143     109.338    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+APG       const_sp2_sp2_1          C6          C1          C2          C3       0.000   10.00     2
+APG              const_21          C2          C1          C6          C5       0.000   10.00     2
+APG       const_sp2_sp2_6          C1          C2          C3         C12     180.000   10.00     2
+APG              const_11         C12          C3          C4          C5     180.000   10.00     2
+APG             sp2_sp3_1          C2          C3         C12         O17     150.000   10.00     6
+APG              const_13          C3          C4          C5          C6       0.000   10.00     2
+APG              const_17          C4          C5          C6          C1       0.000   10.00     2
+APG             sp3_sp3_2         C13         C12         O17        HO17      60.000   10.00     3
+APG             sp2_sp3_8         O14         C13         C12         O17     120.000   10.00     6
+APG             sp3_sp3_7         O17         C12         C14        H141      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+APG    chir_1    C12    O17    C13    C3    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+APG    plan-1          C1   0.020
+APG    plan-1         C12   0.020
+APG    plan-1          C2   0.020
+APG    plan-1          C3   0.020
+APG    plan-1          C4   0.020
+APG    plan-1          C5   0.020
+APG    plan-1          C6   0.020
+APG    plan-1          H1   0.020
+APG    plan-1          H2   0.020
+APG    plan-1          H4   0.020
+APG    plan-1          H5   0.020
+APG    plan-1          H6   0.020
+APG    plan-2         C12   0.020
+APG    plan-2         C13   0.020
+APG    plan-2         O14   0.020
+APG    plan-2         O15   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+APG SMILES           ACDLabs              10.04 "O=C(O)C(O)(c1ccccc1)C"
+APG SMILES_CANONICAL CACTVS               3.341 "C[C@@](O)(C(O)=O)c1ccccc1"
+APG SMILES           CACTVS               3.341 "C[C](O)(C(O)=O)c1ccccc1"
+APG SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@](c1ccccc1)(C(=O)O)O"
+APG SMILES           "OpenEye OEToolkits" 1.5.0 "CC(c1ccccc1)(C(=O)O)O"
+APG InChI            InChI                1.03  "InChI=1S/C9H10O3/c1-9(12,8(10)11)7-5-3-2-4-6-7/h2-6,12H,1H3,(H,10,11)/t9-/m0/s1"
+APG InChIKey         InChI                1.03  NWCHELUCVWSRRS-VIFPVBQESA-N
+APG ?                acedrg               202         "dictionary generator"                  
+APG ?                acedrg_database      11          "data source"                           
+APG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+APG ?                refmac5              5.8.0189    "optimization tool"                     

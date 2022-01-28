@@ -1,0 +1,346 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CJO      CJO '"[(2R,4R)-2-[(1R,2R)-1-amino-2-hydro' non-polymer        43  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CJO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CJO           O3     O    OC       -0.500      0.000    0.000    0.000
+ CJO           C3     C    C         0.000      0.308    0.676   -1.006
+ CJO           OXT    O    OC       -0.500      1.511    0.890   -1.273
+ CJO           CA3    C    CH2       0.000     -0.772    1.232   -1.899
+ CJO           HA3    H    H         0.000     -0.649    0.835   -2.909
+ CJO           HA3A   H    H         0.000     -0.696    2.321   -1.927
+ CJO           N3     N    N         0.000     -2.084    0.845   -1.377
+ CJO           C1     C    CH1       0.000     -2.875    1.621   -0.413
+ CJO           HC1    H    H         0.000     -2.226    2.002    0.388
+ CJO           CA1    C    CH1       0.000     -3.574    2.783   -1.121
+ CJO           HA1    H    H         0.000     -2.825    3.407   -1.628
+ CJO           CB1    C    CH1       0.000     -4.328    3.628   -0.091
+ CJO           HB1    H    H         0.000     -3.609    4.096    0.596
+ CJO           OG1    O    OH1       0.000     -5.220    2.792    0.649
+ CJO           HOG1   H    H         0.000     -5.852    2.381    0.043
+ CJO           CG1    C    CH3       0.000     -5.128    4.715   -0.811
+ CJO           HG1B   H    H         0.000     -5.651    5.300   -0.100
+ CJO           HG1A   H    H         0.000     -4.468    5.336   -1.360
+ CJO           HG1    H    H         0.000     -5.821    4.264   -1.474
+ CJO           N1     N    NH2       0.000     -4.523    2.255   -2.110
+ CJO           HN1A   H    H         0.000     -4.420    2.487   -3.091
+ CJO           HN1    H    H         0.000     -5.286    1.656   -1.818
+ CJO           C2     C    C         0.000     -2.752   -0.278   -1.708
+ CJO           O2     O    O         0.000     -2.371   -1.126   -2.487
+ CJO           CA2    C    CH1       0.000     -4.059   -0.304   -0.944
+ CJO           HA2    H    H         0.000     -4.891   -0.007   -1.598
+ CJO           N2     N    NH1       0.000     -3.878    0.686    0.145
+ CJO           HN2    H    H         0.000     -4.330    0.716    1.048
+ CJO           CB2    C    CH2       0.000     -4.308   -1.696   -0.362
+ CJO           HB2    H    H         0.000     -3.526   -1.932    0.363
+ CJO           HB2A   H    H         0.000     -4.291   -2.435   -1.166
+ CJO           CG2    C    CR6       0.000     -5.651   -1.723    0.320
+ CJO           CD2    C    CR16      0.000     -5.751   -1.402    1.661
+ CJO           HD2    H    H         0.000     -4.864   -1.132    2.221
+ CJO           CE2    C    CR16      0.000     -6.982   -1.426    2.288
+ CJO           HE2    H    H         0.000     -7.060   -1.176    3.339
+ CJO           CZ     C    CR6       0.000     -8.119   -1.772    1.571
+ CJO           OH     O    OH1       0.000     -9.330   -1.796    2.186
+ CJO           HOH    H    H         0.000     -9.745   -0.925    2.114
+ CJO           CE1    C    CR16      0.000     -8.014   -2.098    0.227
+ CJO           HE1    H    H         0.000     -8.899   -2.372   -0.334
+ CJO           CD1    C    CR16      0.000     -6.781   -2.073   -0.396
+ CJO           HD1    H    H         0.000     -6.699   -2.327   -1.445
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CJO      O3     n/a    C3     START
+ CJO      C3     O3     CA3    .
+ CJO      OXT    C3     .      .
+ CJO      CA3    C3     N3     .
+ CJO      HA3    CA3    .      .
+ CJO      HA3A   CA3    .      .
+ CJO      N3     CA3    C2     .
+ CJO      C1     N3     CA1    .
+ CJO      HC1    C1     .      .
+ CJO      CA1    C1     N1     .
+ CJO      HA1    CA1    .      .
+ CJO      CB1    CA1    CG1    .
+ CJO      HB1    CB1    .      .
+ CJO      OG1    CB1    HOG1   .
+ CJO      HOG1   OG1    .      .
+ CJO      CG1    CB1    HG1    .
+ CJO      HG1B   CG1    .      .
+ CJO      HG1A   CG1    .      .
+ CJO      HG1    CG1    .      .
+ CJO      N1     CA1    HN1    .
+ CJO      HN1A   N1     .      .
+ CJO      HN1    N1     .      .
+ CJO      C2     N3     CA2    .
+ CJO      O2     C2     .      .
+ CJO      CA2    C2     CB2    .
+ CJO      HA2    CA2    .      .
+ CJO      N2     CA2    HN2    .
+ CJO      HN2    N2     .      .
+ CJO      CB2    CA2    CG2    .
+ CJO      HB2    CB2    .      .
+ CJO      HB2A   CB2    .      .
+ CJO      CG2    CB2    CD2    .
+ CJO      CD2    CG2    CE2    .
+ CJO      HD2    CD2    .      .
+ CJO      CE2    CD2    CZ     .
+ CJO      HE2    CE2    .      .
+ CJO      CZ     CE2    CE1    .
+ CJO      OH     CZ     HOH    .
+ CJO      HOH    OH     .      .
+ CJO      CE1    CZ     CD1    .
+ CJO      HE1    CE1    .      .
+ CJO      CD1    CE1    HD1    .
+ CJO      HD1    CD1    .      END
+ CJO      C1     N2     .    ADD
+ CJO      CG2    CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CJO       N1        CA1       single    1.450     0.020     1.450     0.020     
+CJO       HN1       N1        single    1.036     0.016     0.914     0.007     
+CJO       HN1A      N1        single    1.036     0.016     0.914     0.007     
+CJO       CA1       C1        single    1.524     0.020     1.524     0.020     
+CJO       CB1       CA1       single    1.524     0.020     1.524     0.020     
+CJO       HA1       CA1       single    1.089     0.010     0.989     0.005     
+CJO       OG1       CB1       single    1.432     0.020     1.432     0.020     
+CJO       CG1       CB1       single    1.524     0.020     1.524     0.020     
+CJO       HB1       CB1       single    1.089     0.010     0.989     0.005     
+CJO       HG1       CG1       single    1.089     0.010     0.989     0.005     
+CJO       HG1A      CG1       single    1.089     0.010     0.989     0.005     
+CJO       HG1B      CG1       single    1.089     0.010     0.989     0.005     
+CJO       HOG1      OG1       single    0.970     0.012     0.839     0.014     
+CJO       C1        N3        single    1.455     0.020     1.455     0.020     
+CJO       C1        N2        single    1.450     0.020     1.450     0.020     
+CJO       N2        CA2       single    1.450     0.020     1.450     0.020     
+CJO       C2        N3        single    1.330     0.020     1.330     0.020     
+CJO       N3        CA3       single    1.455     0.020     1.455     0.020     
+CJO       O2        C2        double    1.220     0.020     1.220     0.020     
+CJO       CA2       C2        single    1.500     0.020     1.500     0.020     
+CJO       CB2       CA2       single    1.524     0.020     1.524     0.020     
+CJO       HA2       CA2       single    1.089     0.010     0.989     0.005     
+CJO       CA3       C3        single    1.510     0.020     1.510     0.020     
+CJO       HA3       CA3       single    1.089     0.010     0.989     0.005     
+CJO       HA3A      CA3       single    1.089     0.010     0.989     0.005     
+CJO       C3        O3        deloc     1.250     0.020     1.250     0.020     
+CJO       OXT       C3        deloc     1.250     0.020     1.250     0.020     
+CJO       CG2       CB2       single    1.511     0.020     1.511     0.020     
+CJO       HB2       CB2       single    1.089     0.010     0.989     0.005     
+CJO       HB2A      CB2       single    1.089     0.010     0.989     0.005     
+CJO       CD2       CG2       double    1.390     0.020     1.390     0.020     
+CJO       CG2       CD1       single    1.390     0.020     1.390     0.020     
+CJO       CD1       CE1       double    1.390     0.020     1.390     0.020     
+CJO       HD1       CD1       single    1.082     0.013     0.975     0.010     
+CJO       CE2       CD2       single    1.390     0.020     1.390     0.020     
+CJO       HD2       CD2       single    1.082     0.013     0.975     0.010     
+CJO       CE1       CZ        single    1.390     0.020     1.390     0.020     
+CJO       HE1       CE1       single    1.082     0.013     0.975     0.010     
+CJO       CZ        CE2       double    1.390     0.020     1.390     0.020     
+CJO       HE2       CE2       single    1.082     0.013     0.975     0.010     
+CJO       OH        CZ        single    1.362     0.020     1.362     0.020     
+CJO       HOH       OH        single    0.970     0.012     0.839     0.014     
+CJO       HC1       C1        single    1.089     0.010     0.989     0.005     
+CJO       HN2       N2        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CJO      O3     C3     OXT     123.000    3.000
+ CJO      O3     C3     CA3     118.500    3.000
+ CJO      OXT    C3     CA3     118.500    3.000
+ CJO      C3     CA3    HA3     109.470    3.000
+ CJO      C3     CA3    HA3A    109.470    3.000
+ CJO      C3     CA3    N3      109.500    3.000
+ CJO      HA3    CA3    HA3A    107.900    3.000
+ CJO      HA3    CA3    N3      109.470    3.000
+ CJO      HA3A   CA3    N3      109.470    3.000
+ CJO      CA3    N3     C1      112.000    3.000
+ CJO      CA3    N3     C2      127.000    3.000
+ CJO      C1     N3     C2      121.000    3.000
+ CJO      N3     C1     HC1     109.470    3.000
+ CJO      N3     C1     CA1     105.000    3.000
+ CJO      N3     C1     N2      109.500    3.000
+ CJO      HC1    C1     CA1     108.340    3.000
+ CJO      HC1    C1     N2      108.550    3.000
+ CJO      CA1    C1     N2      110.000    3.000
+ CJO      C1     CA1    HA1     108.340    3.000
+ CJO      C1     CA1    CB1     111.000    3.000
+ CJO      C1     CA1    N1      109.470    3.000
+ CJO      HA1    CA1    CB1     108.340    3.000
+ CJO      HA1    CA1    N1      109.470    3.000
+ CJO      CB1    CA1    N1      109.470    3.000
+ CJO      CA1    CB1    HB1     108.340    3.000
+ CJO      CA1    CB1    OG1     109.470    3.000
+ CJO      CA1    CB1    CG1     111.000    3.000
+ CJO      HB1    CB1    OG1     109.470    3.000
+ CJO      HB1    CB1    CG1     108.340    3.000
+ CJO      OG1    CB1    CG1     109.470    3.000
+ CJO      CB1    OG1    HOG1    109.470    3.000
+ CJO      CB1    CG1    HG1B    109.470    3.000
+ CJO      CB1    CG1    HG1A    109.470    3.000
+ CJO      CB1    CG1    HG1     109.470    3.000
+ CJO      HG1B   CG1    HG1A    109.470    3.000
+ CJO      HG1B   CG1    HG1     109.470    3.000
+ CJO      HG1A   CG1    HG1     109.470    3.000
+ CJO      CA1    N1     HN1A    120.000    3.000
+ CJO      CA1    N1     HN1     120.000    3.000
+ CJO      HN1A   N1     HN1     120.000    3.000
+ CJO      N3     C2     O2      123.000    3.000
+ CJO      N3     C2     CA2     116.500    3.000
+ CJO      O2     C2     CA2     120.500    3.000
+ CJO      C2     CA2    HA2     108.810    3.000
+ CJO      C2     CA2    N2      111.600    3.000
+ CJO      C2     CA2    CB2     109.470    3.000
+ CJO      HA2    CA2    N2      108.550    3.000
+ CJO      HA2    CA2    CB2     108.340    3.000
+ CJO      N2     CA2    CB2     110.000    3.000
+ CJO      CA2    N2     HN2     118.500    3.000
+ CJO      CA2    N2     C1      120.000    3.000
+ CJO      HN2    N2     C1      118.500    3.000
+ CJO      CA2    CB2    HB2     109.470    3.000
+ CJO      CA2    CB2    HB2A    109.470    3.000
+ CJO      CA2    CB2    CG2     109.470    3.000
+ CJO      HB2    CB2    HB2A    107.900    3.000
+ CJO      HB2    CB2    CG2     109.470    3.000
+ CJO      HB2A   CB2    CG2     109.470    3.000
+ CJO      CB2    CG2    CD2     120.000    3.000
+ CJO      CB2    CG2    CD1     120.000    3.000
+ CJO      CD2    CG2    CD1     120.000    3.000
+ CJO      CG2    CD2    HD2     120.000    3.000
+ CJO      CG2    CD2    CE2     120.000    3.000
+ CJO      HD2    CD2    CE2     120.000    3.000
+ CJO      CD2    CE2    HE2     120.000    3.000
+ CJO      CD2    CE2    CZ      120.000    3.000
+ CJO      HE2    CE2    CZ      120.000    3.000
+ CJO      CE2    CZ     OH      120.000    3.000
+ CJO      CE2    CZ     CE1     120.000    3.000
+ CJO      OH     CZ     CE1     120.000    3.000
+ CJO      CZ     OH     HOH     109.470    3.000
+ CJO      CZ     CE1    HE1     120.000    3.000
+ CJO      CZ     CE1    CD1     120.000    3.000
+ CJO      HE1    CE1    CD1     120.000    3.000
+ CJO      CE1    CD1    HD1     120.000    3.000
+ CJO      CE1    CD1    CG2     120.000    3.000
+ CJO      HD1    CD1    CG2     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CJO      var_1    O3     C3     CA3    N3         0.056   20.000   3
+ CJO      var_2    C3     CA3    N3     C2       -90.091   20.000   1
+ CJO      var_3    CA3    N3     C1     CA1       90.000   20.000   3
+ CJO      var_4    N3     C1     N2     CA2      -30.000   20.000   3
+ CJO      var_5    N3     C1     CA1    N1        63.171   20.000   3
+ CJO      var_6    C1     CA1    CB1    CG1     -174.972   20.000   3
+ CJO      var_7    CA1    CB1    OG1    HOG1     -59.959   20.000   1
+ CJO      var_8    CA1    CB1    CG1    HG1       59.949   20.000   3
+ CJO      var_9    C1     CA1    N1     HN1       59.995   20.000   1
+ CJO      CONST_1  CA3    N3     C2     CA2      180.000    0.000   0
+ CJO      var_10   N3     C2     CA2    CB2     -150.000   20.000   3
+ CJO      var_11   C2     CA2    N2     C1        30.000   20.000   3
+ CJO      var_12   C2     CA2    CB2    CG2     -176.497   20.000   3
+ CJO      var_13   CA2    CB2    CG2    CD2      -90.249   20.000   2
+ CJO      CONST_2  CB2    CG2    CD1    CE1      180.000    0.000   0
+ CJO      CONST_3  CB2    CG2    CD2    CE2      180.000    0.000   0
+ CJO      CONST_4  CG2    CD2    CE2    CZ         0.000    0.000   0
+ CJO      CONST_5  CD2    CE2    CZ     CE1        0.000    0.000   0
+ CJO      var_14   CE2    CZ     OH     HOH       89.936   20.000   1
+ CJO      CONST_6  CE2    CZ     CE1    CD1        0.000    0.000   0
+ CJO      CONST_7  CZ     CE1    CD1    CG2        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CJO      chir_01  CA1    N1     CB1    C1        negativ
+ CJO      chir_02  CB1    CA1    CG1    OG1       negativ
+ CJO      chir_03  C1     CA1    N2     N3        negativ
+ CJO      chir_04  CA2    N2     C2     CB2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CJO      plan-1    N1        0.020
+ CJO      plan-1    CA1       0.020
+ CJO      plan-1    HN1       0.020
+ CJO      plan-1    HN1A      0.020
+ CJO      plan-2    N2        0.020
+ CJO      plan-2    C1        0.020
+ CJO      plan-2    CA2       0.020
+ CJO      plan-2    HN2       0.020
+ CJO      plan-3    N3        0.020
+ CJO      plan-3    C1        0.020
+ CJO      plan-3    C2        0.020
+ CJO      plan-3    CA3       0.020
+ CJO      plan-4    C2        0.020
+ CJO      plan-4    N3        0.020
+ CJO      plan-4    O2        0.020
+ CJO      plan-4    CA2       0.020
+ CJO      plan-5    C3        0.020
+ CJO      plan-5    CA3       0.020
+ CJO      plan-5    OXT       0.020
+ CJO      plan-5    O3        0.020
+ CJO      plan-6    CG2       0.020
+ CJO      plan-6    CB2       0.020
+ CJO      plan-6    CD1       0.020
+ CJO      plan-6    CD2       0.020
+ CJO      plan-6    CE1       0.020
+ CJO      plan-6    CE2       0.020
+ CJO      plan-6    CZ        0.020
+ CJO      plan-6    HD1       0.020
+ CJO      plan-6    HD2       0.020
+ CJO      plan-6    HE1       0.020
+ CJO      plan-6    HE2       0.020
+ CJO      plan-6    OH        0.020
+# ------------------------------------------------------

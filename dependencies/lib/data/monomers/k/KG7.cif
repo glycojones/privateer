@@ -1,0 +1,119 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KG7     KG7      "(2E)-2-(hydroxyimino)propanoic acid"     NON-POLYMER     11     7     .     
+#
+data_comp_KG7
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KG7     O       O       O       0       48.008      34.466      -6.332      
+KG7     CS1     C       C       0       47.887      33.274      -6.626      
+KG7     OS1     O       OC      -1      48.836      32.488      -6.542      
+KG7     CS2     C       C       0       46.698      32.815      -7.081      
+KG7     CS3     C       CH3     0       45.813      33.681      -7.931      
+KG7     NS4     N       N       0       46.373      31.629      -6.700      
+KG7     OS4     O       OH1     0       45.010      31.321      -6.870      
+KG7     H2      H       H       0       46.311      34.443      -8.264      
+KG7     H3      H       H       0       45.063      33.994      -7.402      
+KG7     H4      H       H       0       45.482      33.166      -8.683      
+KG7     H5      H       H       0       44.981      30.859      -7.596      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KG7       CS2       CS3       SINGLE    n         1.496     0.0106    1.496     0.0106    
+KG7       NS4       OS4       SINGLE    n         1.404     0.0171    1.404     0.0171    
+KG7       CS2       NS4       DOUBLE    n         1.283     0.0100    1.283     0.0100    
+KG7       CS1       CS2       SINGLE    n         1.331     0.0200    1.331     0.0200    
+KG7       O         CS1       DOUBLE    n         1.230     0.0200    1.230     0.0200    
+KG7       CS1       OS1       SINGLE    n         1.230     0.0200    1.230     0.0200    
+KG7       CS3       H2        SINGLE    n         1.089     0.010     0.969     0.0177    
+KG7       CS3       H3        SINGLE    n         1.089     0.010     0.969     0.0177    
+KG7       CS3       H4        SINGLE    n         1.089     0.010     0.969     0.0177    
+KG7       OS4       H5        SINGLE    n         0.970     0.012     0.861     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KG7         CS2         CS1           O     118.654    3.00
+KG7         CS2         CS1         OS1     118.654    3.00
+KG7           O         CS1         OS1     122.692    1.63
+KG7         CS3         CS2         NS4     122.753    2.18
+KG7         CS3         CS2         CS1     119.753    2.28
+KG7         NS4         CS2         CS1     117.494    3.00
+KG7         CS2         CS3          H2     109.464    1.50
+KG7         CS2         CS3          H3     109.464    1.50
+KG7         CS2         CS3          H4     109.464    1.50
+KG7          H2         CS3          H3     109.402    1.50
+KG7          H2         CS3          H4     109.402    1.50
+KG7          H3         CS3          H4     109.402    1.50
+KG7         OS4         NS4         CS2     112.461    1.50
+KG7         NS4         OS4          H5     104.618    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KG7             sp2_sp2_4           O         CS1         CS2         CS3       0.000   10.00     2
+KG7             sp2_sp3_1         NS4         CS2         CS3          H2       0.000   10.00     6
+KG7             sp2_sp2_1         CS3         CS2         NS4         OS4     180.000   10.00     2
+KG7             sp2_sp3_7         CS2         NS4         OS4          H5       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KG7    plan-1         CS1   0.020
+KG7    plan-1         CS2   0.020
+KG7    plan-1           O   0.020
+KG7    plan-1         OS1   0.020
+KG7    plan-2         CS1   0.020
+KG7    plan-2         CS2   0.020
+KG7    plan-2         CS3   0.020
+KG7    plan-2         NS4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KG7           SMILES              ACDLabs 12.01                                       O=C(O)\C(=N\O)C
+KG7            InChI                InChI  1.03 InChI=1S/C3H5NO3/c1-2(4-7)3(5)6/h7H,1H3,(H,5,6)/b4-2+
+KG7         InChIKey                InChI  1.03                           MVGBKLTYYAYYGY-DUXPYHPUSA-N
+KG7 SMILES_CANONICAL               CACTVS 3.385                                       CC(=N\O)/C(O)=O
+KG7           SMILES               CACTVS 3.385                                         CC(=NO)C(O)=O
+KG7 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                      C/C(=N\O)/C(=O)O
+KG7           SMILES "OpenEye OEToolkits" 2.0.6                                         CC(=NO)C(=O)O
+KG7 ?                acedrg               217         "dictionary generator"                  
+KG7 ?                acedrg_database      11          "data source"                           
+KG7 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KG7 ?                refmac5              5.8.0253    "optimization tool"                     

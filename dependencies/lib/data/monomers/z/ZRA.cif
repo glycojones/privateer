@@ -1,0 +1,419 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZRA      ZRA 'BENZOYL-ARGININE-ALANINE-METHYL KETO' non-polymer        56  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ZRA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ZRA           OT     O    O         0.000      0.000    0.000    0.000
+ ZRA           CT     C    C         0.000      0.332    1.008    0.576
+ ZRA           CM     C    CH3       0.000      1.552    1.768    0.124
+ ZRA           HM3    H    H         0.000      1.273    2.751   -0.158
+ ZRA           HM2    H    H         0.000      2.254    1.816    0.916
+ ZRA           HM1    H    H         0.000      1.990    1.276   -0.705
+ ZRA           CA2    C    CH1       0.000     -0.475    1.507    1.747
+ ZRA           HA2    H    H         0.000     -0.403    2.603    1.801
+ ZRA           CB2    C    CH3       0.000      0.070    0.896    3.039
+ ZRA           HB23   H    H         0.000      1.084    1.177    3.164
+ ZRA           HB22   H    H         0.000     -0.496    1.245    3.863
+ ZRA           HB21   H    H         0.000      0.002   -0.160    2.987
+ ZRA           N2     N    NH1       0.000     -1.877    1.118    1.576
+ ZRA           HN2    H    H         0.000     -2.108    0.273    1.074
+ ZRA           C      C    C         0.000     -2.856    1.886    2.087
+ ZRA           O      O    O         0.000     -2.579    2.902    2.690
+ ZRA           CA1    C    CH1       0.000     -4.298    1.486    1.911
+ ZRA           HA1    H    H         0.000     -4.928    2.387    1.880
+ ZRA           CB1    C    CH2       0.000     -4.729    0.603    3.083
+ ZRA           HB11   H    H         0.000     -4.615    1.157    4.017
+ ZRA           HB12   H    H         0.000     -4.103   -0.291    3.114
+ ZRA           CG     C    CH2       0.000     -6.193    0.196    2.905
+ ZRA           HG1    H    H         0.000     -6.305   -0.358    1.971
+ ZRA           HG2    H    H         0.000     -6.817    1.092    2.873
+ ZRA           CD     C    CH2       0.000     -6.624   -0.686    4.078
+ ZRA           HD1    H    H         0.000     -6.511   -0.131    5.011
+ ZRA           HD2    H    H         0.000     -5.998   -1.580    4.109
+ ZRA           NE     N    NH1       0.000     -8.030   -1.077    3.907
+ ZRA           HE     H    H         0.000     -8.639   -0.818    3.144
+ ZRA           CZ     C    CH1       0.000     -8.378   -1.918    5.059
+ ZRA           HZ     H    H         0.000     -7.781   -1.612    5.929
+ ZRA           NH2    N    NH2       0.000     -8.095   -3.324    4.742
+ ZRA           HH22   H    H         0.000     -7.434   -3.851    5.301
+ ZRA           HH21   H    H         0.000     -8.560   -3.776    3.964
+ ZRA           NH1    N    NH2       0.000     -9.806   -1.762    5.365
+ ZRA           HH12   H    H         0.000    -10.384   -1.143    4.808
+ ZRA           HH11   H    H         0.000    -10.224   -2.272    6.134
+ ZRA           N1     N    NH1       0.000     -4.450    0.741    0.658
+ ZRA           HN1    H    H         0.000     -4.347   -0.263    0.652
+ ZRA           C1     C    C         0.000     -4.726    1.397   -0.485
+ ZRA           O1     O    O         0.000     -4.851    2.606   -0.478
+ ZRA           O2     O    O2        0.000     -4.864    0.713   -1.637
+ ZRA           C2     C    CH2       0.000     -5.162    1.419   -2.869
+ ZRA           H21    H    H         0.000     -4.364    2.135   -3.080
+ ZRA           H22    H    H         0.000     -6.109    1.953   -2.763
+ ZRA           C3     C    CR6       0.000     -5.266    0.431   -4.002
+ ZRA           C8     C    CR16      0.000     -4.143    0.106   -4.739
+ ZRA           H8     H    H         0.000     -3.190    0.564   -4.504
+ ZRA           C7     C    CR16      0.000     -4.236   -0.804   -5.776
+ ZRA           H7     H    H         0.000     -3.355   -1.064   -6.349
+ ZRA           C6     C    CR16      0.000     -5.455   -1.381   -6.081
+ ZRA           H6     H    H         0.000     -5.529   -2.092   -6.895
+ ZRA           C5     C    CR16      0.000     -6.579   -1.051   -5.348
+ ZRA           H5     H    H         0.000     -7.534   -1.502   -5.588
+ ZRA           C4     C    CR16      0.000     -6.484   -0.145   -4.308
+ ZRA           H4     H    H         0.000     -7.365    0.114   -3.734
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ZRA      OT     n/a    CT     START
+ ZRA      CT     OT     CA2    .
+ ZRA      CM     CT     HM1    .
+ ZRA      HM3    CM     .      .
+ ZRA      HM2    CM     .      .
+ ZRA      HM1    CM     .      .
+ ZRA      CA2    CT     N2     .
+ ZRA      HA2    CA2    .      .
+ ZRA      CB2    CA2    HB21   .
+ ZRA      HB23   CB2    .      .
+ ZRA      HB22   CB2    .      .
+ ZRA      HB21   CB2    .      .
+ ZRA      N2     CA2    C      .
+ ZRA      HN2    N2     .      .
+ ZRA      C      N2     CA1    .
+ ZRA      O      C      .      .
+ ZRA      CA1    C      N1     .
+ ZRA      HA1    CA1    .      .
+ ZRA      CB1    CA1    CG     .
+ ZRA      HB11   CB1    .      .
+ ZRA      HB12   CB1    .      .
+ ZRA      CG     CB1    CD     .
+ ZRA      HG1    CG     .      .
+ ZRA      HG2    CG     .      .
+ ZRA      CD     CG     NE     .
+ ZRA      HD1    CD     .      .
+ ZRA      HD2    CD     .      .
+ ZRA      NE     CD     CZ     .
+ ZRA      HE     NE     .      .
+ ZRA      CZ     NE     NH1    .
+ ZRA      HZ     CZ     .      .
+ ZRA      NH2    CZ     HH21   .
+ ZRA      HH22   NH2    .      .
+ ZRA      HH21   NH2    .      .
+ ZRA      NH1    CZ     HH11   .
+ ZRA      HH12   NH1    .      .
+ ZRA      HH11   NH1    .      .
+ ZRA      N1     CA1    C1     .
+ ZRA      HN1    N1     .      .
+ ZRA      C1     N1     O2     .
+ ZRA      O1     C1     .      .
+ ZRA      O2     C1     C2     .
+ ZRA      C2     O2     C3     .
+ ZRA      H21    C2     .      .
+ ZRA      H22    C2     .      .
+ ZRA      C3     C2     C8     .
+ ZRA      C8     C3     C7     .
+ ZRA      H8     C8     .      .
+ ZRA      C7     C8     C6     .
+ ZRA      H7     C7     .      .
+ ZRA      C6     C7     C5     .
+ ZRA      H6     C6     .      .
+ ZRA      C5     C6     C4     .
+ ZRA      H5     C5     .      .
+ ZRA      C4     C5     H4     .
+ ZRA      H4     C4     .      END
+ ZRA      C3     C4     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZRA       C1        N1        single    1.330     0.020     1.330     0.020     
+ZRA       O1        C1        double    1.220     0.020     1.220     0.020     
+ZRA       O2        C1        single    1.454     0.020     1.454     0.020     
+ZRA       C3        C2        single    1.511     0.020     1.511     0.020     
+ZRA       C2        O2        single    1.426     0.020     1.426     0.020     
+ZRA       H21       C2        single    1.089     0.010     0.989     0.005     
+ZRA       H22       C2        single    1.089     0.010     0.989     0.005     
+ZRA       C3        C4        double    1.390     0.020     1.390     0.020     
+ZRA       C8        C3        single    1.390     0.020     1.390     0.020     
+ZRA       C4        C5        single    1.390     0.020     1.390     0.020     
+ZRA       H4        C4        single    1.082     0.013     0.975     0.010     
+ZRA       C5        C6        double    1.390     0.020     1.390     0.020     
+ZRA       H5        C5        single    1.082     0.013     0.975     0.010     
+ZRA       C6        C7        single    1.390     0.020     1.390     0.020     
+ZRA       H6        C6        single    1.082     0.013     0.975     0.010     
+ZRA       C7        C8        double    1.390     0.020     1.390     0.020     
+ZRA       H7        C7        single    1.082     0.013     0.975     0.010     
+ZRA       H8        C8        single    1.082     0.013     0.975     0.010     
+ZRA       CB1       CA1       single    1.524     0.020     1.524     0.020     
+ZRA       CA1       C         single    1.500     0.020     1.500     0.020     
+ZRA       N1        CA1       single    1.450     0.020     1.450     0.020     
+ZRA       HA1       CA1       single    1.089     0.010     0.989     0.005     
+ZRA       CG        CB1       single    1.524     0.020     1.524     0.020     
+ZRA       HB11      CB1       single    1.089     0.010     0.989     0.005     
+ZRA       HB12      CB1       single    1.089     0.010     0.989     0.005     
+ZRA       CD        CG        single    1.524     0.020     1.524     0.020     
+ZRA       HG1       CG        single    1.089     0.010     0.989     0.005     
+ZRA       HG2       CG        single    1.089     0.010     0.989     0.005     
+ZRA       NE        CD        single    1.450     0.020     1.450     0.020     
+ZRA       HD1       CD        single    1.089     0.010     0.989     0.005     
+ZRA       HD2       CD        single    1.089     0.010     0.989     0.005     
+ZRA       CZ        NE        single    1.450     0.020     1.450     0.020     
+ZRA       HE        NE        single    1.036     0.016     0.914     0.007     
+ZRA       NH1       CZ        single    1.450     0.020     1.450     0.020     
+ZRA       NH2       CZ        single    1.450     0.020     1.450     0.020     
+ZRA       HZ        CZ        single    1.089     0.010     0.989     0.005     
+ZRA       HH11      NH1       single    1.036     0.016     0.914     0.007     
+ZRA       HH12      NH1       single    1.036     0.016     0.914     0.007     
+ZRA       HH21      NH2       single    1.036     0.016     0.914     0.007     
+ZRA       HH22      NH2       single    1.036     0.016     0.914     0.007     
+ZRA       C         N2        single    1.330     0.020     1.330     0.020     
+ZRA       O         C         double    1.220     0.020     1.220     0.020     
+ZRA       CB2       CA2       single    1.524     0.020     1.524     0.020     
+ZRA       CA2       CT        single    1.500     0.020     1.500     0.020     
+ZRA       N2        CA2       single    1.450     0.020     1.450     0.020     
+ZRA       HA2       CA2       single    1.089     0.010     0.989     0.005     
+ZRA       HB21      CB2       single    1.089     0.010     0.989     0.005     
+ZRA       HB22      CB2       single    1.089     0.010     0.989     0.005     
+ZRA       HB23      CB2       single    1.089     0.010     0.989     0.005     
+ZRA       CM        CT        single    1.500     0.020     1.500     0.020     
+ZRA       CT        OT        double    1.220     0.020     1.220     0.020     
+ZRA       HM1       CM        single    1.089     0.010     0.989     0.005     
+ZRA       HM2       CM        single    1.089     0.010     0.989     0.005     
+ZRA       HM3       CM        single    1.089     0.010     0.989     0.005     
+ZRA       HN1       N1        single    1.016     0.010     0.899     0.007     
+ZRA       HN2       N2        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ZRA      OT     CT     CM      123.000    3.000
+ ZRA      OT     CT     CA2     120.500    3.000
+ ZRA      CM     CT     CA2     120.000    3.000
+ ZRA      CT     CM     HM3     109.470    3.000
+ ZRA      CT     CM     HM2     109.470    3.000
+ ZRA      CT     CM     HM1     109.470    3.000
+ ZRA      HM3    CM     HM2     109.470    3.000
+ ZRA      HM3    CM     HM1     109.470    3.000
+ ZRA      HM2    CM     HM1     109.470    3.000
+ ZRA      CT     CA2    HA2     108.810    3.000
+ ZRA      CT     CA2    CB2     109.470    3.000
+ ZRA      CT     CA2    N2      111.600    3.000
+ ZRA      HA2    CA2    CB2     108.340    3.000
+ ZRA      HA2    CA2    N2      108.550    3.000
+ ZRA      CB2    CA2    N2      110.000    3.000
+ ZRA      CA2    CB2    HB23    109.470    3.000
+ ZRA      CA2    CB2    HB22    109.470    3.000
+ ZRA      CA2    CB2    HB21    109.470    3.000
+ ZRA      HB23   CB2    HB22    109.470    3.000
+ ZRA      HB23   CB2    HB21    109.470    3.000
+ ZRA      HB22   CB2    HB21    109.470    3.000
+ ZRA      CA2    N2     HN2     118.500    3.000
+ ZRA      CA2    N2     C       121.500    3.000
+ ZRA      HN2    N2     C       120.000    3.000
+ ZRA      N2     C      O       123.000    3.000
+ ZRA      N2     C      CA1     116.500    3.000
+ ZRA      O      C      CA1     120.500    3.000
+ ZRA      C      CA1    HA1     108.810    3.000
+ ZRA      C      CA1    CB1     109.470    3.000
+ ZRA      C      CA1    N1      111.600    3.000
+ ZRA      HA1    CA1    CB1     108.340    3.000
+ ZRA      HA1    CA1    N1      108.550    3.000
+ ZRA      CB1    CA1    N1      110.000    3.000
+ ZRA      CA1    CB1    HB11    109.470    3.000
+ ZRA      CA1    CB1    HB12    109.470    3.000
+ ZRA      CA1    CB1    CG      111.000    3.000
+ ZRA      HB11   CB1    HB12    107.900    3.000
+ ZRA      HB11   CB1    CG      109.470    3.000
+ ZRA      HB12   CB1    CG      109.470    3.000
+ ZRA      CB1    CG     HG1     109.470    3.000
+ ZRA      CB1    CG     HG2     109.470    3.000
+ ZRA      CB1    CG     CD      111.000    3.000
+ ZRA      HG1    CG     HG2     107.900    3.000
+ ZRA      HG1    CG     CD      109.470    3.000
+ ZRA      HG2    CG     CD      109.470    3.000
+ ZRA      CG     CD     HD1     109.470    3.000
+ ZRA      CG     CD     HD2     109.470    3.000
+ ZRA      CG     CD     NE      112.000    3.000
+ ZRA      HD1    CD     HD2     107.900    3.000
+ ZRA      HD1    CD     NE      109.470    3.000
+ ZRA      HD2    CD     NE      109.470    3.000
+ ZRA      CD     NE     HE      118.500    3.000
+ ZRA      CD     NE     CZ      120.000    3.000
+ ZRA      HE     NE     CZ      118.500    3.000
+ ZRA      NE     CZ     HZ      108.550    3.000
+ ZRA      NE     CZ     NH2     109.500    3.000
+ ZRA      NE     CZ     NH1     109.500    3.000
+ ZRA      HZ     CZ     NH2     109.470    3.000
+ ZRA      HZ     CZ     NH1     109.470    3.000
+ ZRA      NH2    CZ     NH1     109.470    3.000
+ ZRA      CZ     NH2    HH22    120.000    3.000
+ ZRA      CZ     NH2    HH21    120.000    3.000
+ ZRA      HH22   NH2    HH21    120.000    3.000
+ ZRA      CZ     NH1    HH12    120.000    3.000
+ ZRA      CZ     NH1    HH11    120.000    3.000
+ ZRA      HH12   NH1    HH11    120.000    3.000
+ ZRA      CA1    N1     HN1     118.500    3.000
+ ZRA      CA1    N1     C1      121.500    3.000
+ ZRA      HN1    N1     C1      120.000    3.000
+ ZRA      N1     C1     O1      123.000    3.000
+ ZRA      N1     C1     O2      118.000    3.000
+ ZRA      O1     C1     O2      119.000    3.000
+ ZRA      C1     O2     C2      120.000    3.000
+ ZRA      O2     C2     H21     109.470    3.000
+ ZRA      O2     C2     H22     109.470    3.000
+ ZRA      O2     C2     C3      109.470    3.000
+ ZRA      H21    C2     H22     107.900    3.000
+ ZRA      H21    C2     C3      109.470    3.000
+ ZRA      H22    C2     C3      109.470    3.000
+ ZRA      C2     C3     C8      120.000    3.000
+ ZRA      C2     C3     C4      120.000    3.000
+ ZRA      C8     C3     C4      120.000    3.000
+ ZRA      C3     C8     H8      120.000    3.000
+ ZRA      C3     C8     C7      120.000    3.000
+ ZRA      H8     C8     C7      120.000    3.000
+ ZRA      C8     C7     H7      120.000    3.000
+ ZRA      C8     C7     C6      120.000    3.000
+ ZRA      H7     C7     C6      120.000    3.000
+ ZRA      C7     C6     H6      120.000    3.000
+ ZRA      C7     C6     C5      120.000    3.000
+ ZRA      H6     C6     C5      120.000    3.000
+ ZRA      C6     C5     H5      120.000    3.000
+ ZRA      C6     C5     C4      120.000    3.000
+ ZRA      H5     C5     C4      120.000    3.000
+ ZRA      C5     C4     H4      120.000    3.000
+ ZRA      C5     C4     C3      120.000    3.000
+ ZRA      H4     C4     C3      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ZRA      var_1    OT     CT     CM     HM1       -0.009   20.000   1
+ ZRA      var_2    OT     CT     CA2    N2       -29.986   20.000   3
+ ZRA      var_3    CT     CA2    CB2    HB21     -59.976   20.000   3
+ ZRA      var_4    CT     CA2    N2     C       -150.036   20.000   3
+ ZRA      CONST_1  CA2    N2     C      CA1      180.000    0.000   0
+ ZRA      var_5    N2     C      CA1    N1       -29.970   20.000   3
+ ZRA      var_6    C      CA1    CB1    CG       179.983   20.000   3
+ ZRA      var_7    CA1    CB1    CG     CD      -179.966   20.000   3
+ ZRA      var_8    CB1    CG     CD     NE      -179.984   20.000   3
+ ZRA      var_9    CG     CD     NE     CZ       179.968   20.000   3
+ ZRA      var_10   CD     NE     CZ     NH1      149.992   20.000   3
+ ZRA      var_11   NE     CZ     NH2    HH21     -59.954   20.000   1
+ ZRA      var_12   NE     CZ     NH1    HH11     179.952   20.000   1
+ ZRA      var_13   C      CA1    N1     C1       -89.983   20.000   3
+ ZRA      CONST_2  CA1    N1     C1     O2       180.000    0.000   0
+ ZRA      var_14   N1     C1     O2     C2      -179.979   20.000   1
+ ZRA      var_15   C1     O2     C2     C3      -179.980   20.000   1
+ ZRA      var_16   O2     C2     C3     C8       -90.360   20.000   2
+ ZRA      CONST_3  C2     C3     C4     C5       180.000    0.000   0
+ ZRA      CONST_4  C2     C3     C8     C7       180.000    0.000   0
+ ZRA      CONST_5  C3     C8     C7     C6         0.000    0.000   0
+ ZRA      CONST_6  C8     C7     C6     C5         0.000    0.000   0
+ ZRA      CONST_7  C7     C6     C5     C4         0.000    0.000   0
+ ZRA      CONST_8  C6     C5     C4     C3         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ZRA      chir_01  CA1    CB1    C      N1        negativ
+ ZRA      chir_02  CZ     NE     NH1    NH2       negativ
+ ZRA      chir_03  CA2    CB2    CT     N2        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ZRA      plan-1    C1        0.020
+ ZRA      plan-1    N1        0.020
+ ZRA      plan-1    O1        0.020
+ ZRA      plan-1    O2        0.020
+ ZRA      plan-1    HN1       0.020
+ ZRA      plan-2    C3        0.020
+ ZRA      plan-2    C2        0.020
+ ZRA      plan-2    C4        0.020
+ ZRA      plan-2    C8        0.020
+ ZRA      plan-2    C5        0.020
+ ZRA      plan-2    C6        0.020
+ ZRA      plan-2    C7        0.020
+ ZRA      plan-2    H4        0.020
+ ZRA      plan-2    H5        0.020
+ ZRA      plan-2    H6        0.020
+ ZRA      plan-2    H7        0.020
+ ZRA      plan-2    H8        0.020
+ ZRA      plan-3    NE        0.020
+ ZRA      plan-3    CD        0.020
+ ZRA      plan-3    CZ        0.020
+ ZRA      plan-3    HE        0.020
+ ZRA      plan-4    NH1       0.020
+ ZRA      plan-4    CZ        0.020
+ ZRA      plan-4    HH11      0.020
+ ZRA      plan-4    HH12      0.020
+ ZRA      plan-5    NH2       0.020
+ ZRA      plan-5    CZ        0.020
+ ZRA      plan-5    HH21      0.020
+ ZRA      plan-5    HH22      0.020
+ ZRA      plan-6    C         0.020
+ ZRA      plan-6    CA1       0.020
+ ZRA      plan-6    N2        0.020
+ ZRA      plan-6    O         0.020
+ ZRA      plan-6    HN2       0.020
+ ZRA      plan-7    CT        0.020
+ ZRA      plan-7    CA2       0.020
+ ZRA      plan-7    CM        0.020
+ ZRA      plan-7    OT        0.020
+ ZRA      plan-8    N1        0.020
+ ZRA      plan-8    C1        0.020
+ ZRA      plan-8    CA1       0.020
+ ZRA      plan-8    HN1       0.020
+ ZRA      plan-9    N2        0.020
+ ZRA      plan-9    C         0.020
+ ZRA      plan-9    CA2       0.020
+ ZRA      plan-9    HN2       0.020
+# ------------------------------------------------------

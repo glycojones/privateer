@@ -1,0 +1,178 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HGB      HGB '4-(HYDROXYMERCURY)BENZOIC ACID      ' non-polymer        16  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HGB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HGB           O2     O    OC       -0.500      0.000    0.000    0.000
+ HGB           C1     C    C         0.000     -0.644    0.000    1.072
+ HGB           O1     O    OC       -0.500     -0.038   -0.001    2.166
+ HGB           C2     C    CR6       0.000     -2.121    0.000    1.046
+ HGB           C3     C    CR16      0.000     -2.802    0.000   -0.173
+ HGB           HC3    H    H         0.000     -2.247    0.000   -1.103
+ HGB           C4     C    CR16      0.000     -2.844   -0.001    2.241
+ HGB           HC4    H    H         0.000     -2.323   -0.006    3.190
+ HGB           C6     C    CR16      0.000     -4.223    0.004    2.209
+ HGB           HC6    H    H         0.000     -4.785    0.011    3.135
+ HGB           C7     C    CR6       0.000     -4.891    0.000    0.997
+ HGB           C5     C    CR16      0.000     -4.181    0.000   -0.191
+ HGB           HC5    H    H         0.000     -4.709    0.000   -1.136
+ HGB           HG     HG   HG        0.000     -6.990    0.000    0.961
+ HGB           O3     O    OH1       0.000     -8.939    0.000    0.925
+ HGB           HO31   H    H         0.000     -9.343    0.837    0.918
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HGB      O2     n/a    C1     START
+ HGB      C1     O2     C2     .
+ HGB      O1     C1     .      .
+ HGB      C2     C1     C4     .
+ HGB      C3     C2     HC3    .
+ HGB      HC3    C3     .      .
+ HGB      C4     C2     C6     .
+ HGB      HC4    C4     .      .
+ HGB      C6     C4     C7     .
+ HGB      HC6    C6     .      .
+ HGB      C7     C6     HG     .
+ HGB      C5     C7     HC5    .
+ HGB      HC5    C5     .      .
+ HGB      HG     C7     O3     .
+ HGB      O3     HG     HO31   .
+ HGB      HO31   O3     .      END
+ HGB      C3     C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HGB       O1        C1        deloc     1.250     0.020     1.250     0.020     
+HGB       C1        O2        deloc     1.250     0.020     1.250     0.020     
+HGB       C2        C1        single    1.500     0.020     1.500     0.020     
+HGB       C3        C5        double    1.390     0.020     1.390     0.020     
+HGB       C3        C2        single    1.390     0.020     1.390     0.020     
+HGB       HC3       C3        single    1.082     0.013     0.975     0.010     
+HGB       C5        C7        single    1.390     0.020     1.390     0.020     
+HGB       HC5       C5        single    1.082     0.013     0.975     0.010     
+HGB       HG        C7        single    2.295     0.020     2.295     0.020     
+HGB       C7        C6        double    1.390     0.020     1.390     0.020     
+HGB       O3        HG        single    2.335     0.020     2.335     0.020     
+HGB       C6        C4        single    1.390     0.020     1.390     0.020     
+HGB       HC6       C6        single    1.082     0.013     0.975     0.010     
+HGB       C4        C2        double    1.390     0.020     1.390     0.020     
+HGB       HC4       C4        single    1.082     0.013     0.975     0.010     
+HGB       HO31      O3        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HGB      O2     C1     O1      123.000    3.000
+ HGB      O2     C1     C2      120.000    3.000
+ HGB      O1     C1     C2      120.000    3.000
+ HGB      C1     C2     C3      120.000    3.000
+ HGB      C1     C2     C4      120.000    3.000
+ HGB      C3     C2     C4      120.000    3.000
+ HGB      C2     C3     HC3     120.000    3.000
+ HGB      C2     C3     C5      120.000    3.000
+ HGB      HC3    C3     C5      120.000    3.000
+ HGB      C2     C4     HC4     120.000    3.000
+ HGB      C2     C4     C6      120.000    3.000
+ HGB      HC4    C4     C6      120.000    3.000
+ HGB      C4     C6     HC6     120.000    3.000
+ HGB      C4     C6     C7      120.000    3.000
+ HGB      HC6    C6     C7      120.000    3.000
+ HGB      C6     C7     C5      120.000    3.000
+ HGB      C6     C7     HG      120.000    3.000
+ HGB      C5     C7     HG      120.000    3.000
+ HGB      C7     C5     HC5     120.000    3.000
+ HGB      C7     C5     C3      120.000    3.000
+ HGB      HC5    C5     C3      120.000    3.000
+ HGB      C7     HG     O3      180.000    3.000
+ HGB      HG     O3     HO31    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HGB      var_1    O2     C1     C2     C4       179.953   20.000   1
+ HGB      CONST_1  C1     C2     C3     C5       180.000    0.000   0
+ HGB      CONST_2  C2     C3     C5     C7         0.000    0.000   0
+ HGB      CONST_3  C1     C2     C4     C6       180.000    0.000   0
+ HGB      CONST_4  C2     C4     C6     C7         0.000    0.000   0
+ HGB      CONST_5  C4     C6     C7     HG       180.000    0.000   0
+ HGB      CONST_6  C6     C7     C5     C3         0.000    0.000   0
+ HGB      var_2    C6     C7     HG     O3       180.000   20.000   1
+ HGB      var_3    HO31   O3     HG     C7       180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HGB      chir_01  HG     C7     O3     .         cross0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HGB      plan-1    C1        0.020
+ HGB      plan-1    O1        0.020
+ HGB      plan-1    O2        0.020
+ HGB      plan-1    C2        0.020
+ HGB      plan-2    C3        0.020
+ HGB      plan-2    C5        0.020
+ HGB      plan-2    C2        0.020
+ HGB      plan-2    HC3       0.020
+ HGB      plan-2    C7        0.020
+ HGB      plan-2    C6        0.020
+ HGB      plan-2    C4        0.020
+ HGB      plan-2    HC5       0.020
+ HGB      plan-2    HG        0.020
+ HGB      plan-2    HC6       0.020
+ HGB      plan-2    HC4       0.020
+ HGB      plan-2    C1        0.020
+# ------------------------------------------------------

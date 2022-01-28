@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0V5     0V5      "(2R)-2-(phosphonooxy)propanoic acid"     NON-POLYMER     14     10     .     
+#
+data_comp_0V5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+0V5     C1      C       C       0       31.134      54.916      -0.778      
+0V5     O1      O       O       0       30.109      54.703      -1.458      
+0V5     "O2'"   O       OC      -1      32.093      55.638      -1.117      
+0V5     C2      C       CH1     0       31.226      54.230      0.593       
+0V5     C3      C       CH3     0       32.235      53.096      0.622       
+0V5     O2      O       O2      0       31.582      55.202      1.584       
+0V5     P       P       P       0       30.499      56.054      2.431       
+0V5     O1P     O       O       0       29.697      56.845      1.414       
+0V5     O2P     O       OP      -1      29.661      55.031      3.175       
+0V5     O3P     O       OP      -1      31.308      56.940      3.360       
+0V5     H2      H       H       0       30.332      53.865      0.813       
+0V5     H3      H       H       0       33.072      53.408      1.008       
+0V5     H4      H       H       0       32.399      52.771      -0.281      
+0V5     H5      H       H       0       31.884      52.367      1.163       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0V5       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+0V5       C1        "O2'"     SINGLE    n         1.247     0.019     1.247     0.019     
+0V5       C1        C2        SINGLE    n         1.533     0.010     1.533     0.010     
+0V5       C2        C3        SINGLE    n         1.510     0.016     1.510     0.016     
+0V5       C2        O2        SINGLE    n         1.427     0.017     1.427     0.017     
+0V5       P         O1P       DOUBLE    n         1.517     0.019     1.517     0.019     
+0V5       O2        P         SINGLE    n         1.614     0.019     1.614     0.019     
+0V5       P         O2P       SINGLE    n         1.517     0.019     1.517     0.019     
+0V5       P         O3P       SINGLE    n         1.517     0.019     1.517     0.019     
+0V5       C2        H2        SINGLE    n         1.089     0.010     0.989     0.014     
+0V5       C3        H3        SINGLE    n         1.089     0.010     0.973     0.014     
+0V5       C3        H4        SINGLE    n         1.089     0.010     0.973     0.014     
+0V5       C3        H5        SINGLE    n         1.089     0.010     0.973     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+0V5          O1          C1       "O2'"     125.666    1.50
+0V5          O1          C1          C2     117.167    1.52
+0V5       "O2'"          C1          C2     117.167    1.52
+0V5          C1          C2          C3     111.511    2.91
+0V5          C1          C2          O2     110.427    2.31
+0V5          C1          C2          H2     108.330    1.50
+0V5          C3          C2          O2     109.482    3.00
+0V5          C3          C2          H2     109.385    1.54
+0V5          O2          C2          H2     108.941    1.50
+0V5          C2          C3          H3     109.501    1.50
+0V5          C2          C3          H4     109.501    1.50
+0V5          C2          C3          H5     109.501    1.50
+0V5          H3          C3          H4     109.425    1.50
+0V5          H3          C3          H5     109.425    1.50
+0V5          H4          C3          H5     109.425    1.50
+0V5          C2          O2           P     121.496    2.55
+0V5         O1P           P          O2     105.808    2.07
+0V5         O1P           P         O2P     112.864    1.69
+0V5         O1P           P         O3P     112.864    1.69
+0V5          O2           P         O2P     105.808    2.07
+0V5          O2           P         O3P     105.808    2.07
+0V5         O2P           P         O3P     112.864    1.69
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+0V5             sp2_sp3_1          O1          C1          C2          C3       0.000   10.00     6
+0V5             sp3_sp3_1          C1          C2          C3          H3     180.000   10.00     3
+0V5            sp3_sp3_10          C1          C2          O2           P     180.000   10.00     3
+0V5            sp3_sp3_13          C2          O2           P         O1P     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+0V5    chir_1    C2    O2    C1    C3    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+0V5    plan-1          C1   0.020
+0V5    plan-1          C2   0.020
+0V5    plan-1          O1   0.020
+0V5    plan-1       "O2'"   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+0V5 SMILES           ACDLabs              12.01 "O=P(OC(C(=O)O)C)(O)O"
+0V5 InChI            InChI                1.03  "InChI=1S/C3H7O6P/c1-2(3(4)5)9-10(6,7)8/h2H,1H3,(H,4,5)(H2,6,7,8)/t2-/m1/s1"
+0V5 InChIKey         InChI                1.03  CSZRNWHGZPKNKY-UWTATZPHSA-N
+0V5 SMILES_CANONICAL CACTVS               3.370 "C[C@@H](O[P](O)(O)=O)C(O)=O"
+0V5 SMILES           CACTVS               3.370 "C[CH](O[P](O)(O)=O)C(O)=O"
+0V5 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C[C@H](C(=O)O)OP(=O)(O)O"
+0V5 SMILES           "OpenEye OEToolkits" 1.7.6 "CC(C(=O)O)OP(=O)(O)O"
+0V5 ?                acedrg               202         "dictionary generator"                  
+0V5 ?                acedrg_database      11          "data source"                           
+0V5 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+0V5 ?                refmac5              5.8.0189    "optimization tool"                     

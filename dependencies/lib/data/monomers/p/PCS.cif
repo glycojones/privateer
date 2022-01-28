@@ -1,0 +1,230 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PCS      PCS 'PHENYLALANYLMETHYLCHLORIDE          ' non-polymer        25  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PCS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PCS           CL1    CL   CL        0.000      0.000    0.000    0.000
+ PCS           CT     C    CH2       0.000     -1.743    0.415    0.200
+ PCS           HT1    H    H         0.000     -1.834    1.454    0.523
+ PCS           HT2    H    H         0.000     -2.187   -0.240    0.953
+ PCS           C      C    C         0.000     -2.458    0.230   -1.113
+ PCS           O      O    O         0.000     -1.847   -0.143   -2.085
+ PCS           CA     C    CH1       0.000     -3.934    0.513   -1.212
+ PCS           HA     H    H         0.000     -4.207    1.298   -0.493
+ PCS           N      N    NH2       0.000     -4.254    0.964   -2.574
+ PCS           H2     H    H         0.000     -4.662    1.878   -2.728
+ PCS           H      H    H         0.000     -4.069    0.363   -3.369
+ PCS           CB     C    CH2       0.000     -4.720   -0.760   -0.900
+ PCS           HB2    H    H         0.000     -4.480   -1.096    0.112
+ PCS           HB3    H    H         0.000     -4.448   -1.540   -1.614
+ PCS           CG     C    CR6       0.000     -6.196   -0.477   -1.000
+ PCS           CD2    C    CR16      0.000     -6.896   -0.054    0.114
+ PCS           HD2    H    H         0.000     -6.385    0.069    1.061
+ PCS           CE2    C    CR16      0.000     -8.250    0.210    0.021
+ PCS           HE2    H    H         0.000     -8.797    0.550    0.892
+ PCS           CZ     C    CR16      0.000     -8.905    0.042   -1.184
+ PCS           HZ     H    H         0.000     -9.967    0.245   -1.256
+ PCS           CE1    C    CR16      0.000     -8.207   -0.387   -2.297
+ PCS           HE1    H    H         0.000     -8.721   -0.519   -3.241
+ PCS           CD1    C    CR16      0.000     -6.852   -0.646   -2.204
+ PCS           HD1    H    H         0.000     -6.305   -0.983   -3.076
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PCS      CL1    n/a    CT     START
+ PCS      CT     CL1    C      .
+ PCS      HT1    CT     .      .
+ PCS      HT2    CT     .      .
+ PCS      C      CT     CA     .
+ PCS      O      C      .      .
+ PCS      CA     C      CB     .
+ PCS      HA     CA     .      .
+ PCS      N      CA     H      .
+ PCS      H2     N      .      .
+ PCS      H      N      .      .
+ PCS      CB     CA     CG     .
+ PCS      HB2    CB     .      .
+ PCS      HB3    CB     .      .
+ PCS      CG     CB     CD2    .
+ PCS      CD2    CG     CE2    .
+ PCS      HD2    CD2    .      .
+ PCS      CE2    CD2    CZ     .
+ PCS      HE2    CE2    .      .
+ PCS      CZ     CE2    CE1    .
+ PCS      HZ     CZ     .      .
+ PCS      CE1    CZ     CD1    .
+ PCS      HE1    CE1    .      .
+ PCS      CD1    CE1    HD1    .
+ PCS      HD1    CD1    .      END
+ PCS      CD1    CG     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PCS       N         CA        single    1.450     0.020     1.450     0.020     
+PCS       H         N         single    1.036     0.016     0.914     0.007     
+PCS       H2        N         single    1.036     0.016     0.914     0.007     
+PCS       CA        C         single    1.500     0.020     1.500     0.020     
+PCS       CB        CA        single    1.524     0.020     1.524     0.020     
+PCS       HA        CA        single    1.089     0.010     0.989     0.005     
+PCS       O         C         double    1.220     0.020     1.220     0.020     
+PCS       C         CT        single    1.510     0.020     1.510     0.020     
+PCS       CG        CB        single    1.511     0.020     1.511     0.020     
+PCS       HB2       CB        single    1.089     0.010     0.989     0.005     
+PCS       HB3       CB        single    1.089     0.010     0.989     0.005     
+PCS       CD1       CG        double    1.390     0.020     1.390     0.020     
+PCS       CD1       CE1       single    1.390     0.020     1.390     0.020     
+PCS       HD1       CD1       single    1.082     0.013     0.975     0.010     
+PCS       CD2       CG        single    1.390     0.020     1.390     0.020     
+PCS       CE2       CD2       double    1.390     0.020     1.390     0.020     
+PCS       HD2       CD2       single    1.082     0.013     0.975     0.010     
+PCS       CZ        CE2       single    1.390     0.020     1.390     0.020     
+PCS       HE2       CE2       single    1.082     0.013     0.975     0.010     
+PCS       CE1       CZ        double    1.390     0.020     1.390     0.020     
+PCS       HZ        CZ        single    1.082     0.013     0.975     0.010     
+PCS       HE1       CE1       single    1.082     0.013     0.975     0.010     
+PCS       CT        CL1       single    1.790     0.020     1.790     0.020     
+PCS       HT1       CT        single    1.089     0.010     0.989     0.005     
+PCS       HT2       CT        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PCS      CL1    CT     HT1     109.500    3.000
+ PCS      CL1    CT     HT2     109.500    3.000
+ PCS      CL1    CT     C       109.500    3.000
+ PCS      HT1    CT     HT2     107.900    3.000
+ PCS      HT1    CT     C       109.470    3.000
+ PCS      HT2    CT     C       109.470    3.000
+ PCS      CT     C      O       120.500    3.000
+ PCS      CT     C      CA      120.000    3.000
+ PCS      O      C      CA      120.500    3.000
+ PCS      C      CA     HA      108.810    3.000
+ PCS      C      CA     N       109.470    3.000
+ PCS      C      CA     CB      109.470    3.000
+ PCS      HA     CA     N       109.470    3.000
+ PCS      HA     CA     CB      108.340    3.000
+ PCS      N      CA     CB      109.470    3.000
+ PCS      CA     N      H2      120.000    3.000
+ PCS      CA     N      H       120.000    3.000
+ PCS      H2     N      H       120.000    3.000
+ PCS      CA     CB     HB2     109.470    3.000
+ PCS      CA     CB     HB3     109.470    3.000
+ PCS      CA     CB     CG      109.470    3.000
+ PCS      HB2    CB     HB3     107.900    3.000
+ PCS      HB2    CB     CG      109.470    3.000
+ PCS      HB3    CB     CG      109.470    3.000
+ PCS      CB     CG     CD2     120.000    3.000
+ PCS      CB     CG     CD1     120.000    3.000
+ PCS      CD2    CG     CD1     120.000    3.000
+ PCS      CG     CD2    HD2     120.000    3.000
+ PCS      CG     CD2    CE2     120.000    3.000
+ PCS      HD2    CD2    CE2     120.000    3.000
+ PCS      CD2    CE2    HE2     120.000    3.000
+ PCS      CD2    CE2    CZ      120.000    3.000
+ PCS      HE2    CE2    CZ      120.000    3.000
+ PCS      CE2    CZ     HZ      120.000    3.000
+ PCS      CE2    CZ     CE1     120.000    3.000
+ PCS      HZ     CZ     CE1     120.000    3.000
+ PCS      CZ     CE1    HE1     120.000    3.000
+ PCS      CZ     CE1    CD1     120.000    3.000
+ PCS      HE1    CE1    CD1     120.000    3.000
+ PCS      CE1    CD1    HD1     120.000    3.000
+ PCS      CE1    CD1    CG      120.000    3.000
+ PCS      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PCS      var_1    CL1    CT     C      CA      -179.964   20.000   3
+ PCS      var_2    CT     C      CA     CB       -90.078   20.000   3
+ PCS      var_3    C      CA     N      H         60.025   20.000   1
+ PCS      var_4    C      CA     CB     CG      -179.961   20.000   3
+ PCS      var_5    CA     CB     CG     CD2      -90.303   20.000   2
+ PCS      CONST_1  CB     CG     CD2    CE2      180.000    0.000   0
+ PCS      CONST_2  CG     CD2    CE2    CZ         0.000    0.000   0
+ PCS      CONST_3  CD2    CE2    CZ     CE1        0.000    0.000   0
+ PCS      CONST_4  CE2    CZ     CE1    CD1        0.000    0.000   0
+ PCS      CONST_5  CZ     CE1    CD1    CG         0.000    0.000   0
+ PCS      CONST_6  CE1    CD1    CG     CB       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PCS      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PCS      plan-1    N         0.020
+ PCS      plan-1    CA        0.020
+ PCS      plan-1    H         0.020
+ PCS      plan-1    H2        0.020
+ PCS      plan-2    C         0.020
+ PCS      plan-2    CA        0.020
+ PCS      plan-2    O         0.020
+ PCS      plan-2    CT        0.020
+ PCS      plan-3    CD1       0.020
+ PCS      plan-3    CG        0.020
+ PCS      plan-3    CE1       0.020
+ PCS      plan-3    HD1       0.020
+ PCS      plan-3    CD2       0.020
+ PCS      plan-3    CE2       0.020
+ PCS      plan-3    CZ        0.020
+ PCS      plan-3    CB        0.020
+ PCS      plan-3    HD2       0.020
+ PCS      plan-3    HE2       0.020
+ PCS      plan-3    HZ        0.020
+ PCS      plan-3    HE1       0.020
+# ------------------------------------------------------

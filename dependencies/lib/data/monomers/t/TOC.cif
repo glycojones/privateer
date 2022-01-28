@@ -1,0 +1,222 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TOC      TOC '2,3,6-TRIDEOXY-2,6-DIAMINO GLUCOSE  ' pyranose           27  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TOC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TOC           C1     C    CH1       0.000      0.000    0.000    0.000
+ TOC           H1     H    H         0.000      0.951    0.268    0.481
+ TOC           O1     O    OH1       0.000     -0.095   -1.422   -0.106
+ TOC           HO1    H    H         0.000      0.642   -1.755   -0.635
+ TOC           O5     O    O2        0.000     -0.051    0.577   -1.303
+ TOC           C5     C    CH1       0.000     -1.209    0.062   -1.959
+ TOC           H5     H    H         0.000     -1.200   -1.036   -1.907
+ TOC           C6     C    CH2       0.000     -1.202    0.502   -3.423
+ TOC           H61    H    H         0.000     -1.123    1.590   -3.475
+ TOC           H62    H    H         0.000     -2.130    0.182   -3.902
+ TOC           N6     N    NT3       1.000     -0.058   -0.108   -4.113
+ TOC           HN63   H    H         0.000     -0.138   -1.135   -4.061
+ TOC           HN62   H    H         0.000     -0.057    0.192   -5.100
+ TOC           HN61   H    H         0.000      0.815    0.197   -3.656
+ TOC           C4     C    CH1       0.000     -2.470    0.593   -1.272
+ TOC           H4     H    H         0.000     -2.469    1.692   -1.301
+ TOC           C3     C    CH2       0.000     -2.485    0.118    0.184
+ TOC           H31    H    H         0.000     -2.591   -0.969    0.219
+ TOC           H32    H    H         0.000     -3.318    0.581    0.717
+ TOC           C2     C    CH1       0.000     -1.163    0.525    0.845
+ TOC           H2     H    H         0.000     -1.106    1.620    0.909
+ TOC           N2     N    NT3       1.000     -1.088   -0.051    2.195
+ TOC           HN23   H    H         0.000     -1.874    0.305    2.761
+ TOC           HN22   H    H         0.000     -1.143   -1.079    2.130
+ TOC           HN21   H    H         0.000     -0.194    0.222    2.632
+ TOC           O4     O    OH1       0.000     -3.627    0.097   -1.949
+ TOC           HO4    H    H         0.000     -4.396    0.448   -1.481
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TOC      C1     n/a    O5     START
+ TOC      H1     C1     .      .
+ TOC      O1     C1     HO1    .
+ TOC      HO1    O1     .      .
+ TOC      O5     C1     .      END
+ TOC      C5     O5     C4     .
+ TOC      H5     C5     .      .
+ TOC      C6     C5     N6     .
+ TOC      H61    C6     .      .
+ TOC      H62    C6     .      .
+ TOC      N6     C6     HN61   .
+ TOC      HN63   N6     .      .
+ TOC      HN62   N6     .      .
+ TOC      HN61   N6     .      .
+ TOC      C4     C5     O4     .
+ TOC      H4     C4     .      .
+ TOC      C3     C4     C2     .
+ TOC      H31    C3     .      .
+ TOC      H32    C3     .      .
+ TOC      C2     C3     N2     .
+ TOC      H2     C2     .      .
+ TOC      N2     C2     HN21   .
+ TOC      HN23   N2     .      .
+ TOC      HN22   N2     .      .
+ TOC      HN21   N2     .      .
+ TOC      O4     C4     .      .
+ TOC      HO4    O4     .      .
+ TOC      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TOC       C1        C2        single    1.524     0.020     1.524     0.020     
+TOC       O1        C1        single    1.432     0.020     1.432     0.020     
+TOC       O5        C1        single    1.426     0.020     1.426     0.020     
+TOC       H1        C1        single    1.089     0.010     0.989     0.005     
+TOC       C2        C3        single    1.524     0.020     1.524     0.020     
+TOC       N2        C2        single    1.488     0.020     1.488     0.020     
+TOC       H2        C2        single    1.089     0.010     0.989     0.005     
+TOC       C3        C4        single    1.524     0.020     1.524     0.020     
+TOC       H31       C3        single    1.089     0.010     0.989     0.005     
+TOC       H32       C3        single    1.089     0.010     0.989     0.005     
+TOC       C4        C5        single    1.524     0.020     1.524     0.020     
+TOC       O4        C4        single    1.432     0.020     1.432     0.020     
+TOC       H4        C4        single    1.089     0.010     0.989     0.005     
+TOC       C6        C5        single    1.524     0.020     1.524     0.020     
+TOC       C5        O5        single    1.426     0.020     1.426     0.020     
+TOC       H5        C5        single    1.089     0.010     0.989     0.005     
+TOC       N6        C6        single    1.488     0.020     1.488     0.020     
+TOC       H61       C6        single    1.089     0.010     0.989     0.005     
+TOC       H62       C6        single    1.089     0.010     0.989     0.005     
+TOC       HN21      N2        single    1.036     0.016     0.914     0.007     
+TOC       HN22      N2        single    1.036     0.016     0.914     0.007     
+TOC       HN23      N2        single    1.036     0.016     0.914     0.007     
+TOC       HN61      N6        single    1.036     0.016     0.914     0.007     
+TOC       HN62      N6        single    1.036     0.016     0.914     0.007     
+TOC       HN63      N6        single    1.036     0.016     0.914     0.007     
+TOC       HO1       O1        single    0.970     0.012     0.839     0.014     
+TOC       HO4       O4        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TOC      H1     C1     O1      109.470    3.000
+ TOC      H1     C1     O5      109.470    3.000
+ TOC      O1     C1     O5      109.470    3.000
+ TOC      H1     C1     C2      108.340    3.000
+ TOC      O1     C1     C2      109.470    3.000
+ TOC      O5     C1     C2      109.470    3.000
+ TOC      C1     O1     HO1     109.470    3.000
+ TOC      C1     O5     C5      111.800    3.000
+ TOC      O5     C5     H5      109.470    3.000
+ TOC      O5     C5     C6      109.470    3.000
+ TOC      O5     C5     C4      109.470    3.000
+ TOC      H5     C5     C6      108.340    3.000
+ TOC      H5     C5     C4      108.340    3.000
+ TOC      C6     C5     C4      111.000    3.000
+ TOC      C5     C6     H61     109.470    3.000
+ TOC      C5     C6     H62     109.470    3.000
+ TOC      C5     C6     N6      109.470    3.000
+ TOC      H61    C6     H62     107.900    3.000
+ TOC      H61    C6     N6      109.470    3.000
+ TOC      H62    C6     N6      109.470    3.000
+ TOC      C6     N6     HN63    109.470    3.000
+ TOC      C6     N6     HN62    109.470    3.000
+ TOC      C6     N6     HN61    109.470    3.000
+ TOC      HN63   N6     HN62    109.470    3.000
+ TOC      HN63   N6     HN61    109.470    3.000
+ TOC      HN62   N6     HN61    109.470    3.000
+ TOC      C5     C4     H4      108.340    3.000
+ TOC      C5     C4     C3      111.000    3.000
+ TOC      C5     C4     O4      109.470    3.000
+ TOC      H4     C4     C3      108.340    3.000
+ TOC      H4     C4     O4      109.470    3.000
+ TOC      C3     C4     O4      109.470    3.000
+ TOC      C4     C3     H31     109.470    3.000
+ TOC      C4     C3     H32     109.470    3.000
+ TOC      C4     C3     C2      111.000    3.000
+ TOC      H31    C3     H32     107.900    3.000
+ TOC      H31    C3     C2      109.470    3.000
+ TOC      H32    C3     C2      109.470    3.000
+ TOC      C3     C2     H2      108.340    3.000
+ TOC      C3     C2     N2      110.000    3.000
+ TOC      C3     C2     C1      111.000    3.000
+ TOC      H2     C2     N2      108.550    3.000
+ TOC      H2     C2     C1      108.340    3.000
+ TOC      N2     C2     C1      110.000    3.000
+ TOC      C2     N2     HN23    109.470    3.000
+ TOC      C2     N2     HN22    109.470    3.000
+ TOC      C2     N2     HN21    109.470    3.000
+ TOC      HN23   N2     HN22    109.470    3.000
+ TOC      HN23   N2     HN21    109.470    3.000
+ TOC      HN22   N2     HN21    109.470    3.000
+ TOC      C4     O4     HO4     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TOC      var_1    O5     C1     O1     HO1       59.980   20.000   1
+ TOC      var_2    C1     O5     C5     C4        60.000   20.000   1
+ TOC      var_3    O5     C5     C6     N6        64.840   20.000   3
+ TOC      var_4    C5     C6     N6     HN61     -59.975   20.000   1
+ TOC      var_5    O5     C5     C4     O4       180.000   20.000   3
+ TOC      var_6    C5     C4     C3     C2        60.000   20.000   3
+ TOC      var_7    C4     C3     C2     N2       180.000   20.000   3
+ TOC      var_8    C3     C2     C1     O5        60.000   20.000   3
+ TOC      var_9    C3     C2     N2     HN21     179.655   20.000   1
+ TOC      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TOC      chir_01  C1     C2     O1     O5        negativ
+ TOC      chir_02  C2     C1     C3     N2        negativ
+ TOC      chir_03  C4     C3     C5     O4        negativ
+ TOC      chir_04  C5     C4     C6     O5        negativ
+# ------------------------------------------------------

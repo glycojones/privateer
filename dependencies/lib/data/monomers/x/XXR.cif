@@ -1,0 +1,210 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XXR      XXR '6-deoxy-alpha-D-mannopyranose       ' non-polymer        23  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_XXR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+XXR    O4     O    O2       0       1.669       1.813      -0.496
+XXR    C4     C   CH2   0.000       0.803       0.858       0.100
+XXR    C5     C   CH2   0.000       1.364      -0.545      -0.078
+XXR    C6     C   CH3   0.000       2.695      -0.748       0.629
+XXR    C3     C   CH2   0.000      -0.632       0.961      -0.499
+XXR    O3     O    O2   0.000      -1.178       2.267      -0.269
+XXR    C2     C   CH2   0.000      -1.540      -0.084       0.114
+XXR    O2     O    O2   0.000      -1.718       0.167       1.510
+XXR    C1     C   CH2   0.000      -0.916      -1.507      -0.041
+XXR    O5     O    O2   0.000       0.398      -1.509       0.531
+XXR    O1     O    O2   0.000      -0.793      -1.795      -1.452
+XXR    H1     H     H   0.000       2.432       1.761      -0.135
+XXR    H2     H     H   0.000       0.737       1.041       1.051
+XXR    H3     H     H   0.000       1.451      -0.781      -1.077
+XXR    H4     H     H   0.000       2.605      -0.505       1.575
+XXR    H5     H     H   0.000       2.967      -1.699       0.528
+XXR    H6     H     H   0.000       3.362      -0.142       0.199
+XXR    H7     H     H   0.000      -0.556       0.800      -1.492
+XXR    H8     H     H   0.000      -1.968       2.376      -0.640
+XXR    H9     H     H   0.000      -2.451      -0.055      -0.348
+XXR   H10     H     H   0.000      -2.236      -0.419       1.880
+XXR   H11     H     H   0.000      -1.513      -2.208       0.419
+XXR   H12     H     H   0.000      -0.405      -2.587      -1.601
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XXR       O1        C1        SING      1.401     0.015     1.401     0.015     
+XXR       O5        C5        SING      1.444     0.014     1.444     0.014     
+XXR       O5        C1        SING      1.432     0.010     1.432     0.010     
+XXR       C5        C6        SING      1.511     0.010     1.511     0.010     
+XXR       C5        C4        SING      1.520     0.014     1.520     0.014     
+XXR       C1        C2        SING      1.529     0.010     1.529     0.010     
+XXR       O4        C4        SING      1.427     0.010     1.427     0.010     
+XXR       C4        C3        SING      1.523     0.011     1.523     0.011     
+XXR       C3        C2        SING      1.524     0.016     1.524     0.016     
+XXR       C3        O3        SING      1.427     0.010     1.427     0.010     
+XXR       C2        O2        SING      1.425     0.012     1.425     0.012     
+XXR       O4        H1        SING      0.970     0.012     0.839     0.014     
+XXR       C4        H2        SING      1.089     0.010     0.989     0.005     
+XXR       C5        H3        SING      1.089     0.010     0.989     0.005     
+XXR       C6        H4        SING      1.089     0.010     0.989     0.005     
+XXR       C6        H5        SING      1.089     0.010     0.989     0.005     
+XXR       C6        H6        SING      1.089     0.010     0.989     0.005     
+XXR       C3        H7        SING      1.089     0.010     0.989     0.005     
+XXR       O3        H8        SING      0.970     0.012     0.839     0.014     
+XXR       C2        H9        SING      1.089     0.010     0.989     0.005     
+XXR       O2        H10       SING      0.970     0.012     0.839     0.014     
+XXR       C1        H11       SING      1.089     0.010     0.989     0.005     
+XXR       O1        H12       SING      0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+XXR    C4    O4      H1   108.943    2.95
+XXR    C5    C4      O4   110.072    1.61
+XXR    C5    C4      C3   109.730    1.44
+XXR    C5    C4      H2   108.706    1.01
+XXR    O4    C4      C3   110.148    1.67
+XXR    O4    C4      H2   108.787    1.25
+XXR    C3    C4      H2   108.703    1.14
+XXR    O5    C5      C6   106.594    1.07
+XXR    O5    C5      C4   109.117    0.98
+XXR    O5    C5      H3   109.216    0.72
+XXR    C6    C5      C4   113.503    0.77
+XXR    C6    C5      H3   109.230    1.47
+XXR    C4    C5      H3   108.728    1.25
+XXR    C5    C6      H4   109.475    1.09
+XXR    C5    C6      H5   109.475    1.09
+XXR    C5    C6      H6   109.475    1.09
+XXR    H4    C6      H5   109.368    1.46
+XXR    H4    C6      H6   109.368    1.46
+XXR    H5    C6      H6   109.368    1.46
+XXR    C4    C3      C2   110.710    1.51
+XXR    C4    C3      O3   110.148    1.67
+XXR    C4    C3      H7   108.703    1.14
+XXR    C2    C3      O3   109.903    2.30
+XXR    C2    C3      H7   108.614    1.41
+XXR    O3    C3      H7   108.787    1.25
+XXR    C3    O3      H8   108.943    2.95
+XXR    C1    C2      C3   110.454    1.32
+XXR    C1    C2      O2   109.840    3.00
+XXR    C1    C2      H9   108.331    1.59
+XXR    C3    C2      O2   110.646    2.21
+XXR    C3    C2      H9   108.632    1.36
+XXR    O2    C2      H9   108.665    1.37
+XXR    C2    O2     H10   109.096    2.33
+XXR    O1    C1      O5   110.455    2.82
+XXR    O1    C1      C2   107.945    2.79
+XXR    O1    C1     H11   109.267    2.12
+XXR    O5    C1      C2   110.228    1.87
+XXR    O5    C1     H11   108.850    1.72
+XXR    C2    C1     H11   109.742    2.00
+XXR    C5    O5      C1   113.280    1.71
+XXR    C1    O1     H12   108.239    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+XXR       sp3_sp3_1      C3      C4      C5      O5      60.000   10.00     3
+XXR       sp3_sp3_2      C3      C4      C5      C6     180.000   10.00     3
+XXR       sp3_sp3_3      C3      C4      C5      H3     -60.000   10.00     3
+XXR       sp3_sp3_4      O4      C4      C5      O5     -60.000   10.00     3
+XXR       sp3_sp3_5      O4      C4      C5      C6      60.000   10.00     3
+XXR       sp3_sp3_6      O4      C4      C5      H3     180.000   10.00     3
+XXR       sp3_sp3_7      H2      C4      C5      O5     180.000   10.00     3
+XXR       sp3_sp3_8      H2      C4      C5      C6     -60.000   10.00     3
+XXR       sp3_sp3_9      H2      C4      C5      H3      60.000   10.00     3
+XXR      sp3_sp3_10      C4      C5      O5      C1     -60.000   10.00     3
+XXR      sp3_sp3_11      C6      C5      O5      C1      60.000   10.00     3
+XXR      sp3_sp3_12      H3      C5      O5      C1     180.000   10.00     3
+XXR      sp3_sp3_13      C2      C1      O5      C5      60.000   10.00     3
+XXR      sp3_sp3_14      O1      C1      O5      C5     180.000   10.00     3
+XXR      sp3_sp3_15     H11      C1      O5      C5     -60.000   10.00     3
+XXR      sp3_sp3_16      O5      C1      C2      C3     -60.000   10.00     3
+XXR      sp3_sp3_17      O5      C1      C2      O2      60.000   10.00     3
+XXR      sp3_sp3_18      O5      C1      C2      H9     180.000   10.00     3
+XXR      sp3_sp3_19      O1      C1      C2      C3     180.000   10.00     3
+XXR      sp3_sp3_20      O1      C1      C2      O2     -60.000   10.00     3
+XXR      sp3_sp3_21      O1      C1      C2      H9      60.000   10.00     3
+XXR      sp3_sp3_22     H11      C1      C2      C3      60.000   10.00     3
+XXR      sp3_sp3_23     H11      C1      C2      O2     180.000   10.00     3
+XXR      sp3_sp3_24     H11      C1      C2      H9     -60.000   10.00     3
+XXR      sp3_sp3_25      C1      C2      C3      C4      60.000   10.00     3
+XXR      sp3_sp3_26      C1      C2      C3      O3     180.000   10.00     3
+XXR      sp3_sp3_27      C1      C2      C3      H7     -60.000   10.00     3
+XXR      sp3_sp3_28      O2      C2      C3      C4     -60.000   10.00     3
+XXR      sp3_sp3_29      O2      C2      C3      O3      60.000   10.00     3
+XXR      sp3_sp3_30      O2      C2      C3      H7     180.000   10.00     3
+XXR      sp3_sp3_31      H9      C2      C3      C4     180.000   10.00     3
+XXR      sp3_sp3_32      H9      C2      C3      O3     -60.000   10.00     3
+XXR      sp3_sp3_33      H9      C2      C3      H7      60.000   10.00     3
+XXR      sp3_sp3_34      O5      C1      O1     H12     180.000   10.00     3
+XXR      sp3_sp3_35      C2      C1      O1     H12     -60.000   10.00     3
+XXR      sp3_sp3_36     H11      C1      O1     H12      60.000   10.00     3
+XXR      sp3_sp3_37      O5      C5      C6      H4     180.000   10.00     3
+XXR      sp3_sp3_38      O5      C5      C6      H5     -60.000   10.00     3
+XXR      sp3_sp3_39      O5      C5      C6      H6      60.000   10.00     3
+XXR      sp3_sp3_40      C4      C5      C6      H4      60.000   10.00     3
+XXR      sp3_sp3_41      C4      C5      C6      H5     180.000   10.00     3
+XXR      sp3_sp3_42      C4      C5      C6      H6     -60.000   10.00     3
+XXR      sp3_sp3_43      H3      C5      C6      H4     -60.000   10.00     3
+XXR      sp3_sp3_44      H3      C5      C6      H5      60.000   10.00     3
+XXR      sp3_sp3_45      H3      C5      C6      H6     180.000   10.00     3
+XXR      sp3_sp3_46      C5      C4      O4      H1     180.000   10.00     3
+XXR      sp3_sp3_47      C3      C4      O4      H1     -60.000   10.00     3
+XXR      sp3_sp3_48      H2      C4      O4      H1      60.000   10.00     3
+XXR      sp3_sp3_49      C2      C3      C4      C5     180.000   10.00     3
+XXR      sp3_sp3_50      C2      C3      C4      O4     -60.000   10.00     3
+XXR      sp3_sp3_51      C2      C3      C4      H2      60.000   10.00     3
+XXR      sp3_sp3_52      O3      C3      C4      C5      60.000   10.00     3
+XXR      sp3_sp3_53      O3      C3      C4      O4     180.000   10.00     3
+XXR      sp3_sp3_54      O3      C3      C4      H2     -60.000   10.00     3
+XXR      sp3_sp3_55      H7      C3      C4      C5     -60.000   10.00     3
+XXR      sp3_sp3_56      H7      C3      C4      O4      60.000   10.00     3
+XXR      sp3_sp3_57      H7      C3      C4      H2     180.000   10.00     3
+XXR      sp3_sp3_58      C4      C3      O3      H8     180.000   10.00     3
+XXR      sp3_sp3_59      C2      C3      O3      H8     -60.000   10.00     3
+XXR      sp3_sp3_60      H7      C3      O3      H8      60.000   10.00     3
+XXR      sp3_sp3_61      C1      C2      O2     H10     180.000   10.00     3
+XXR      sp3_sp3_62      C3      C2      O2     H10     -60.000   10.00     3
+XXR      sp3_sp3_63      H9      C2      O2     H10      60.000   10.00     3

@@ -1,0 +1,175 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ASX      ASX 'ASP/ASN AMBIGUOUS                   ' peptide            17   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ASX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ASX           N      N    N1       -1.000      0.000    0.000    0.000
+ ASX           H      H    HNH1      0.000     -0.488    0.101    0.819
+ ASX           CA     C    CH1       0.000      0.979    1.092   -0.119
+ ASX           HA     H    H         0.000      1.377    1.068    0.776
+ ASX           CB     C    CH2       0.000      2.240    0.880   -0.987
+ ASX           HB2    H    H         0.000      2.415    1.452   -1.750
+ ASX           CG     C    C         0.000      3.202   -0.242   -0.625
+ ASX           XD1    N    NH2       0.000      4.109   -0.658   -1.334
+ ASX           HD11   H    H         0.000      4.755   -1.342   -1.043
+ ASX           HD12   H    H         0.000      4.149   -0.358   -2.261
+ ASX           XD2    N    NH2       0.000      3.461   -0.342    0.728
+ ASX           HD21   H    H         0.000      3.518   -1.299    1.044
+ ASX           HD22   H    H         0.000      3.370    0.329    1.520
+ ASX           HB1    H    H         0.000      3.461    1.031    1.734
+ ASX           C      C    C         0.000      0.433    2.517   -0.138
+ ASX           O      O    OC       -0.500     -0.715    2.811   -0.452
+ ASX           OXT    O    OC       -0.500      0.939    3.314    0.681
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ASX      N      n/a    CA     START
+ ASX      H      N      .      .
+ ASX      CA     N      C      .
+ ASX      HA     CA     .      .
+ ASX      CB     CA     CG     .
+ ASX      HB2    CB     .      .
+ ASX      CG     CB     XD2    .
+ ASX      XD1    CG     HD12   .
+ ASX      HD11   XD1    .      .
+ ASX      HD12   XD1    .      .
+ ASX      XD2    CG     HD22   .
+ ASX      HD21   XD2    .      .
+ ASX      HD22   XD2    .      .
+ ASX      C      CA     OXT    .
+ ASX      O      C      .      .
+ ASX      OXT    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ ASX      N      CA        single      1.491    0.021
+ ASX      CA     HA        single      0.980    0.020
+ ASX      CA     CB        single      1.530    0.020
+ ASX      CB     HB2       single      0.970    0.020
+ ASX      CB     CG        single      1.516    0.020
+ ASX      CG     XD1       deloc       1.231    0.019
+ ASX      CG     XD2       deloc       1.328    0.021
+ ASX      XD1    HD11      single      0.980    0.020
+ ASX      XD1    HD12      single      0.980    0.020
+ ASX      XD2    HD21      single      0.980    0.020
+ ASX      XD2    HD22      single      0.980    0.020
+ ASX      CA     C         single      1.525    0.021
+ ASX      C      O         deloc       1.231    0.020
+ ASX      N      H         single      1.010    0.020
+ ASX      C      OXT       deloc       1.231    0.020
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ASX      O      C      CA      121.000    3.000
+ ASX      C      CA     HA      108.810    3.000
+ ASX      C      CA     N       109.470    3.000
+ ASX      C      CA     CB      109.470    3.000
+ ASX      HA     CA     N       109.470    3.000
+ ASX      HA     CA     CB      108.340    3.000
+ ASX      N      CA     CB      109.470    3.000
+ ASX      CA     CB     HB1     109.470    3.000
+ ASX      CA     CB     HB2     109.470    3.000
+ ASX      CA     CB     CG      111.000    3.000
+ ASX      HB1    CB     HB2     107.900    3.000
+ ASX      HB1    CB     CG      109.470    3.000
+ ASX      HB2    CB     CG      109.470    3.000
+ ASX      CB     CG     XD2     120.000    3.000
+ ASX      CB     CG     XD1     120.000    3.000
+ ASX      XD2    CG     XD1     120.000    3.000
+ ASX      CG     XD2    HD22    120.000    3.000
+ ASX      CG     XD2    HD21    120.000    3.000
+ ASX      HD22   XD2    HD21    120.000    3.000
+ ASX      CG     XD1    HD12    120.000    3.000
+ ASX      CG     XD1    HD11    120.000    3.000
+ ASX      HD12   XD1    HD11    120.000    3.000
+ ASX      H      N      CA      114.470    3.000
+ ASX      CA     C      OXT     121.000    3.000
+ ASX      O      C      OXT     118.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ASX      var_1            O      C      CA     CB              -144.432           20.000   1
+ ASX      var_3            C      CA     CB     CG               163.160           20.000   3
+ ASX      var_4            CA     CB     CG     XD1              170.581           20.000   3
+ ASX      var_5            CB     CG     XD2    HD21             175.000           20.000   1
+ ASX      var_6            CB     CG     XD1    HD11             175.000           20.000   1
+ ASX      psi              N      CA     C      OXT              160.000           30.000   2
+ ASX      var_1            C      CA     N      H                180.000           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ASX      chir_01          CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ASX      plan-2            CB        0.020
+ ASX      plan-2            CG        0.020
+ ASX      plan-2            XD1       0.020
+ ASX      plan-2            XD2       0.020
+ ASX      plan-3            XD1       0.020
+ ASX      plan-3            CG        0.020
+ ASX      plan-3            HD11      0.020
+ ASX      plan-3            HD12      0.020
+ ASX      plan-4            XD2       0.020
+ ASX      plan-4            CG        0.020
+ ASX      plan-4            HD21      0.020
+ ASX      plan-4            HD22      0.020
+ ASX      oxt               C         0.020
+ ASX      oxt               CA        0.020
+ ASX      oxt               O         0.020
+ ASX      oxt               OXT       0.020
+# ------------------------------------------------------

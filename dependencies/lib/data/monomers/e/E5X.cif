@@ -1,0 +1,160 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+E5X     E5X      "4-(hydroxymethyl)benzoic acid"     non-polymer     18     11     .     
+#
+data_comp_E5X
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+E5X     CAD     C       CR6     0       -1.043      0.119       -0.165      
+E5X     CAE     C       CR6     0       1.740       0.098       0.129       
+E5X     CAF     C       CR16    0       -0.266      -0.793      -0.861      
+E5X     CAG     C       CR16    0       -0.416      1.019       0.679       
+E5X     CAH     C       CR16    0       1.113       -0.806      -0.717      
+E5X     CAI     C       CR16    0       0.963       1.012       0.828       
+E5X     CAJ     C       CH2     0       -2.541      0.130       -0.324      
+E5X     CAK     C       C       0       3.232       0.085       0.286       
+E5X     OAA     O       OH1     0       -3.184      -0.659      0.666       
+E5X     OAB     O       OC      -1      3.790       -1.018      0.429       
+E5X     OAC     O       O       0       3.829       1.177       0.262       
+E5X     H1      H       H       0       -0.680      -1.412      -1.439      
+E5X     H2      H       H       0       -0.932      1.645       1.159       
+E5X     H3      H       H       0       1.626       -1.432      -1.197      
+E5X     H4      H       H       0       1.373       1.631       1.406       
+E5X     H5      H       H       0       -2.774      -0.213      -1.210      
+E5X     H6      H       H       0       -2.865      1.051       -0.261      
+E5X     H7      H       H       0       -4.022      -0.636      0.530       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+E5X       CAJ       OAA       SINGLE    n         1.420     0.0138    1.420     0.0138    
+E5X       CAD       CAJ       SINGLE    n         1.506     0.0100    1.506     0.0100    
+E5X       CAF       CAH       SINGLE    y         1.383     0.0100    1.383     0.0100    
+E5X       CAD       CAF       DOUBLE    y         1.381     0.0100    1.381     0.0100    
+E5X       CAE       CAH       DOUBLE    y         1.385     0.0100    1.385     0.0100    
+E5X       CAD       CAG       SINGLE    y         1.381     0.0100    1.381     0.0100    
+E5X       CAK       OAC       DOUBLE    n         1.244     0.0200    1.244     0.0200    
+E5X       CAE       CAK       SINGLE    n         1.498     0.0200    1.498     0.0200    
+E5X       CAE       CAI       SINGLE    y         1.385     0.0100    1.385     0.0100    
+E5X       CAG       CAI       DOUBLE    y         1.383     0.0100    1.383     0.0100    
+E5X       CAK       OAB       SINGLE    n         1.244     0.0200    1.244     0.0200    
+E5X       CAF       H1        SINGLE    n         1.082     0.013     0.943     0.0173    
+E5X       CAG       H2        SINGLE    n         1.082     0.013     0.943     0.0173    
+E5X       CAH       H3        SINGLE    n         1.082     0.013     0.941     0.0168    
+E5X       CAI       H4        SINGLE    n         1.082     0.013     0.941     0.0168    
+E5X       CAJ       H5        SINGLE    n         1.089     0.010     0.979     0.0179    
+E5X       CAJ       H6        SINGLE    n         1.089     0.010     0.979     0.0179    
+E5X       OAA       H7        SINGLE    n         0.970     0.012     0.849     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+E5X         CAJ         CAD         CAF     120.688    1.50
+E5X         CAJ         CAD         CAG     120.688    1.50
+E5X         CAF         CAD         CAG     118.623    1.50
+E5X         CAH         CAE         CAK     120.472    1.50
+E5X         CAH         CAE         CAI     119.056    1.50
+E5X         CAK         CAE         CAI     120.472    1.50
+E5X         CAH         CAF         CAD     120.727    1.50
+E5X         CAH         CAF          H1     119.625    1.50
+E5X         CAD         CAF          H1     119.648    1.50
+E5X         CAD         CAG         CAI     120.727    1.50
+E5X         CAD         CAG          H2     119.648    1.50
+E5X         CAI         CAG          H2     119.625    1.50
+E5X         CAF         CAH         CAE     120.433    1.50
+E5X         CAF         CAH          H3     119.710    1.50
+E5X         CAE         CAH          H3     119.857    1.50
+E5X         CAE         CAI         CAG     120.433    1.50
+E5X         CAE         CAI          H4     119.857    1.50
+E5X         CAG         CAI          H4     119.710    1.50
+E5X         OAA         CAJ         CAD     111.861    1.83
+E5X         OAA         CAJ          H5     109.107    1.50
+E5X         OAA         CAJ          H6     109.107    1.50
+E5X         CAD         CAJ          H5     109.239    1.50
+E5X         CAD         CAJ          H6     109.239    1.50
+E5X          H5         CAJ          H6     107.986    1.50
+E5X         OAC         CAK         CAE     117.791    1.50
+E5X         OAC         CAK         OAB     124.418    1.50
+E5X         CAE         CAK         OAB     117.791    1.50
+E5X         CAJ         OAA          H7     108.716    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+E5X       const_sp2_sp2_3         CAJ         CAD         CAF         CAH     180.000   10.00     2
+E5X              const_23         CAJ         CAD         CAG         CAI     180.000   10.00     2
+E5X             sp2_sp3_2         CAF         CAD         CAJ         OAA     -90.000   10.00     6
+E5X              const_11         CAK         CAE         CAH         CAF     180.000   10.00     2
+E5X              const_15         CAK         CAE         CAI         CAG     180.000   10.00     2
+E5X             sp2_sp2_1         CAH         CAE         CAK         OAC     180.000   10.00     2
+E5X       const_sp2_sp2_5         CAD         CAF         CAH         CAE       0.000   10.00     2
+E5X              const_17         CAD         CAG         CAI         CAE       0.000   10.00     2
+E5X             sp3_sp3_1         CAD         CAJ         OAA          H7     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+E5X    plan-1         CAD   0.020
+E5X    plan-1         CAE   0.020
+E5X    plan-1         CAF   0.020
+E5X    plan-1         CAG   0.020
+E5X    plan-1         CAH   0.020
+E5X    plan-1         CAI   0.020
+E5X    plan-1         CAJ   0.020
+E5X    plan-1         CAK   0.020
+E5X    plan-1          H1   0.020
+E5X    plan-1          H2   0.020
+E5X    plan-1          H3   0.020
+E5X    plan-1          H4   0.020
+E5X    plan-2         CAE   0.020
+E5X    plan-2         CAK   0.020
+E5X    plan-2         OAB   0.020
+E5X    plan-2         OAC   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+E5X            InChI                InChI  1.03 InChI=1S/C8H8O3/c9-5-6-1-3-7(4-2-6)8(10)11/h1-4,9H,5H2,(H,10,11)
+E5X         InChIKey                InChI  1.03                                      WWYFPDXEIFBNKE-UHFFFAOYSA-N
+E5X SMILES_CANONICAL               CACTVS 3.385                                               OCc1ccc(cc1)C(O)=O
+E5X           SMILES               CACTVS 3.385                                               OCc1ccc(cc1)C(O)=O
+E5X SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                               c1cc(ccc1CO)C(=O)O
+E5X           SMILES "OpenEye OEToolkits" 2.0.7                                               c1cc(ccc1CO)C(=O)O
+E5X ?                acedrg               217         "dictionary generator"                  
+E5X ?                acedrg_database      11          "data source"                           
+E5X ?                rdkit                2017.03.2   "Chemoinformatics tool"
+E5X ?                refmac5              5.8.0253    "optimization tool"                     

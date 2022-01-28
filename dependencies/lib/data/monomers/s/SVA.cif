@@ -1,0 +1,185 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SVA      SVA 'SERINE VANADATE                     ' peptide            18  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SVA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SVA           N      N    NH2       0.000      0.052    0.131   -0.132
+ SVA           H      H    H         0.000      0.876    0.023   -0.705
+ SVA           H2    H    H         0.000     -0.223    1.046    0.193
+ SVA           CA     C    CH1       0.000     -0.745   -1.042    0.230
+ SVA           HA     H    H         0.000     -0.738   -1.134    1.316
+ SVA           CB     C    CH2       0.000     -2.203   -0.914   -0.229
+ SVA           HB2    H    H         0.000     -2.712   -1.865   -0.066
+ SVA           HB3    H    H         0.000     -2.221   -0.671   -1.292
+ SVA           OG     O    O2        0.000     -2.863    0.108    0.502
+ SVA           V      V    V         0.000     -4.600    0.282   -0.057
+ SVA           O1     O    O        -1.000     -6.343    0.515   -0.596
+ SVA           O2     O    O        -1.000     -4.786    1.713    1.088
+ SVA           O3     O    O        -1.000     -4.069    0.596   -1.791
+ SVA           O4     O    OH1       0.000     -5.054   -1.397    0.538
+ SVA           HO4    H    H         0.000     -5.958   -1.722    0.426
+ SVA           C      C    C         0.000     -0.169   -2.313   -0.351
+ SVA           O      O    OC       -0.500      0.444   -2.352   -1.442
+ SVA           OXT    O    OC       -0.500     -0.260   -3.379    0.304
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SVA      N      n/a    CA     START
+ SVA      H    N      .      .
+ SVA      H2    N      .      .
+ SVA      CA     N      C      .
+ SVA      HA     CA     .      .
+ SVA      CB     CA     OG     .
+ SVA      HB2    CB     .      .
+ SVA      HB3    CB     .      .
+ SVA      OG     CB     V      .
+ SVA      V      OG     O4     .
+ SVA      O1     V      .      .
+ SVA      O2     V      .      .
+ SVA      O3     V      .      .
+ SVA      O4     V      HO4    .
+ SVA      HO4    O4     .      .
+ SVA      C      CA     .      END
+ SVA      O      C      .      .
+ SVA      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SVA       CA        N         single    1.469     0.020     1.469     0.020     
+SVA       CB        CA        single    1.530     0.020     1.530     0.020     
+SVA       C         CA        single    1.507     0.020     1.507     0.020     
+SVA       HA        CA        single    1.089     0.010     0.989     0.005     
+SVA       OG        CB        single    1.429     0.020     1.429     0.020     
+SVA       HB2       CB        single    1.089     0.010     0.989     0.005     
+SVA       HB3       CB        single    1.089     0.010     0.989     0.005     
+SVA       V         OG        single    1.840     0.020     1.840     0.020     
+SVA       O         C         deloc     1.251     0.020     1.251     0.020     
+SVA       OXT       C         deloc     1.251     0.020     1.251     0.020     
+SVA       O1        V         single    1.840     0.020     1.840     0.020     
+SVA       O2        V         single    1.840     0.020     1.840     0.020     
+SVA       O3        V         single    1.840     0.020     1.840     0.020     
+SVA       O4        V         single    1.840     0.020     1.840     0.020     
+SVA       H         N         single    1.036     0.016     0.914     0.007     
+SVA       H2        N         single    1.036     0.016     0.914     0.007     
+SVA       HO4       O4        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SVA      H    N      H2     120.000    3.000
+ SVA      H    N      CA      120.000    3.000
+ SVA      H2    N      CA      120.000    3.000
+ SVA      N      CA     HA      109.485    3.000
+ SVA      N      CA     CB      109.456    3.000
+ SVA      N      CA     C       109.463    3.000
+ SVA      HA     CA     CB      109.461    3.000
+ SVA      HA     CA     C       109.478    3.000
+ SVA      CB     CA     C       109.484    3.000
+ SVA      CA     CB     HB2     109.476    3.000
+ SVA      CA     CB     HB3     109.439    3.000
+ SVA      CA     CB     OG      109.453    3.000
+ SVA      HB2    CB     HB3     109.463    3.000
+ SVA      HB2    CB     OG      109.520    3.000
+ SVA      HB3    CB     OG      109.476    3.000
+ SVA      CB     OG     V       106.757    3.000
+ SVA      OG     V      O1      179.960    3.000
+ SVA      OG     V      O2       89.996    3.000
+ SVA      OG     V      O3       90.020    3.000
+ SVA      OG     V      O4       90.022    3.000
+ SVA      O1     V      O2       89.986    3.000
+ SVA      O1     V      O3       90.008    3.000
+ SVA      O2     V      O3      120.002    3.000
+ SVA      O1     V      O4       89.968    3.000
+ SVA      O2     V      O4      119.984    3.000
+ SVA      O3     V      O4      120.014    3.000
+ SVA      V      O4     HO4     120.000    3.000
+ SVA      CA     C      O       119.974    3.000
+ SVA      CA     C      OXT     119.987    3.000
+ SVA      O      C      OXT     120.039    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SVA      var_1    H2    N      CA     C        180.000   20.000   3
+ SVA      var_2    N      CA     CB     OG       -65.043   20.000   3
+ SVA      var_3    CA     CB     OG     V       -179.972   20.000   3
+ SVA      var_4    CB     OG     V      O4        60.046   20.000   3
+ SVA      var_5    OG     V      O4     HO4      180.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ SVA      chir_01  CA     N      CB     C         negativ
+                   .      .      .      .      .
+ SVA      chir_02  V      OG     O1     O2        cross3
+                   O4     O3     .      .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SVA      plan-1    N         0.020
+ SVA      plan-1    CA        0.020
+ SVA      plan-1    H       0.020
+ SVA      plan-1    H2       0.020
+ SVA      plan-2    C         0.020
+ SVA      plan-2    CA        0.020
+ SVA      plan-2    O         0.020
+ SVA      plan-2    OXT       0.020
+# ------------------------------------------------------

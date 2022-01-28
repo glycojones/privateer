@@ -1,0 +1,151 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1RT     1RT      "4-amino-2-oxo-1,2-dihydropyrimidine-5-carboxylic acid"     NON-POLYMER     15     11     .     
+#
+data_comp_1RT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+1RT     N1      N       NR6     0       347.128     -70.216     434.373     
+1RT     C2      C       CR6     0       346.090     -71.119     434.497     
+1RT     O2      O       O       0       346.290     -72.217     435.058     
+1RT     N3      N       NRD6    0       344.845     -70.786     433.993     
+1RT     C4      C       CR6     0       344.631     -69.595     433.385     
+1RT     N4      N       NH2     0       343.389     -69.359     432.928     
+1RT     C5      C       CR6     0       345.700     -68.636     433.245     
+1RT     C6      C       CR16    0       346.947     -68.983     433.755     
+1RT     C21     C       C       0       345.523     -67.293     432.577     
+1RT     O22     O       O       0       344.525     -66.618     432.888     
+1RT     O23     O       OC      -1      346.384     -66.936     431.753     
+1RT     H6      H       H       0       347.922     -70.443     434.700     
+1RT     H1      H       H       0       342.703     -69.433     433.469     
+1RT     H2      H       H       0       343.268     -69.132     432.090     
+1RT     H4      H       H       0       347.691     -68.389     433.690     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1RT       C21       O22       DOUBLE    n         1.244     0.020     1.244     0.020     
+1RT       C21       O23       SINGLE    n         1.244     0.020     1.244     0.020     
+1RT       C4        N4        SINGLE    n         1.344     0.010     1.344     0.010     
+1RT       C5        C21       SINGLE    n         1.509     0.013     1.509     0.013     
+1RT       C4        C5        SINGLE    y         1.419     0.020     1.419     0.020     
+1RT       N3        C4        DOUBLE    y         1.342     0.013     1.342     0.013     
+1RT       C5        C6        DOUBLE    y         1.375     0.020     1.375     0.020     
+1RT       C2        N3        SINGLE    y         1.363     0.016     1.363     0.016     
+1RT       N1        C6        SINGLE    y         1.375     0.017     1.375     0.017     
+1RT       N1        C2        SINGLE    y         1.374     0.010     1.374     0.010     
+1RT       C2        O2        DOUBLE    n         1.248     0.013     1.248     0.013     
+1RT       N1        H6        SINGLE    n         1.016     0.010     0.887     0.020     
+1RT       N4        H1        SINGLE    n         1.016     0.010     0.877     0.020     
+1RT       N4        H2        SINGLE    n         1.016     0.010     0.877     0.020     
+1RT       C6        H4        SINGLE    n         1.082     0.013     0.954     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+1RT          C6          N1          C2     121.227    1.50
+1RT          C6          N1          H6     120.841    2.60
+1RT          C2          N1          H6     117.932    2.18
+1RT          N3          C2          N1     118.597    1.50
+1RT          N3          C2          O2     121.681    1.50
+1RT          N1          C2          O2     119.723    1.50
+1RT          C4          N3          C2     119.971    1.50
+1RT          N4          C4          C5     122.051    1.50
+1RT          N4          C4          N3     117.156    1.55
+1RT          C5          C4          N3     120.793    1.50
+1RT          C4          N4          H1     119.860    1.50
+1RT          C4          N4          H2     119.860    1.50
+1RT          H1          N4          H2     120.280    1.85
+1RT         C21          C5          C4     122.248    1.50
+1RT         C21          C5          C6     118.918    1.55
+1RT          C4          C5          C6     118.834    1.85
+1RT          C5          C6          N1     120.579    1.50
+1RT          C5          C6          H4     120.973    2.33
+1RT          N1          C6          H4     118.447    2.09
+1RT         O22         C21         O23     124.413    1.50
+1RT         O22         C21          C5     117.793    1.50
+1RT         O23         C21          C5     117.793    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+1RT              const_19          O2          C2          N1          C6     180.000   10.00     2
+1RT       const_sp2_sp2_1          C5          C6          N1          C2       0.000   10.00     2
+1RT              const_16          O2          C2          N3          C4     180.000   10.00     2
+1RT              const_14          N4          C4          N3          C2     180.000   10.00     2
+1RT             sp2_sp2_1          C5          C4          N4          H1     180.000   10.00     2
+1RT              const_12          N4          C4          C5         C21       0.000   10.00     2
+1RT       const_sp2_sp2_7         C21          C5          C6          N1     180.000   10.00     2
+1RT             sp2_sp2_5         O22         C21          C5          C4     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+1RT    plan-1          C2   0.020
+1RT    plan-1         C21   0.020
+1RT    plan-1          C4   0.020
+1RT    plan-1          C5   0.020
+1RT    plan-1          C6   0.020
+1RT    plan-1          H4   0.020
+1RT    plan-1          H6   0.020
+1RT    plan-1          N1   0.020
+1RT    plan-1          N3   0.020
+1RT    plan-1          N4   0.020
+1RT    plan-1          O2   0.020
+1RT    plan-2          C4   0.020
+1RT    plan-2          H1   0.020
+1RT    plan-2          H2   0.020
+1RT    plan-2          N4   0.020
+1RT    plan-3         C21   0.020
+1RT    plan-3          C5   0.020
+1RT    plan-3         O22   0.020
+1RT    plan-3         O23   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+1RT SMILES           ACDLabs              12.01 "O=C1N=C(N)C(C(=O)O)=CN1"
+1RT InChI            InChI                1.03  "InChI=1S/C5H5N3O3/c6-3-2(4(9)10)1-7-5(11)8-3/h1H,(H,9,10)(H3,6,7,8,11)"
+1RT InChIKey         InChI                1.03  BLQMCTXZEMGOJM-UHFFFAOYSA-N
+1RT SMILES_CANONICAL CACTVS               3.370 "NC1=NC(=O)NC=C1C(O)=O"
+1RT SMILES           CACTVS               3.370 "NC1=NC(=O)NC=C1C(O)=O"
+1RT SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C1=C(C(=NC(=O)N1)N)C(=O)O"
+1RT SMILES           "OpenEye OEToolkits" 1.7.6 "C1=C(C(=NC(=O)N1)N)C(=O)O"
+1RT ?                acedrg               202         "dictionary generator"                  
+1RT ?                acedrg_database      11          "data source"                           
+1RT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+1RT ?                refmac5              5.8.0189    "optimization tool"                     

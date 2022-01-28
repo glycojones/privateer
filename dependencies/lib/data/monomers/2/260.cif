@@ -1,0 +1,145 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+260     260      "2-(bromomethyl)-1,3-difluorobenzene"     NON-POLYMER     15     10     .     
+#
+data_comp_260
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+260     BRAC    BR      BR      0       -24.228     24.338      -0.884      
+260     CAG     C       CH2     0       -22.599     24.125      -1.971      
+260     CAJ     C       CR6     0       -22.577     25.101      -3.108      
+260     CAH     C       CR6     0       -23.276     24.855      -4.290      
+260     FAA     F       F       0       -23.986     23.708      -4.420      
+260     CAE     C       CR16    0       -23.280     25.733      -5.354      
+260     CAD     C       CR16    0       -22.559     26.915      -5.240      
+260     CAF     C       CR16    0       -21.848     27.213      -4.083      
+260     CAI     C       CR6     0       -21.872     26.306      -3.044      
+260     FAB     F       F       0       -21.172     26.620      -1.927      
+260     HAG1    H       H       0       -22.568     23.210      -2.321      
+260     HAG2    H       H       0       -21.814     24.251      -1.400      
+260     HAE     H       H       0       -23.760     25.534      -6.138      
+260     HAD     H       H       0       -22.552     27.528      -5.961      
+260     HAF     H       H       0       -21.361     28.013      -4.009      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+260       BRAC      CAG       SINGLE    n         1.970     0.012     1.970     0.012     
+260       CAG       CAJ       SINGLE    n         1.494     0.011     1.494     0.011     
+260       CAJ       CAH       DOUBLE    y         1.381     0.012     1.381     0.012     
+260       CAJ       CAI       SINGLE    y         1.381     0.012     1.381     0.012     
+260       CAH       FAA       SINGLE    n         1.354     0.010     1.354     0.010     
+260       CAH       CAE       SINGLE    y         1.371     0.011     1.371     0.011     
+260       CAE       CAD       DOUBLE    y         1.375     0.015     1.375     0.015     
+260       CAD       CAF       SINGLE    y         1.375     0.015     1.375     0.015     
+260       CAF       CAI       DOUBLE    y         1.371     0.011     1.371     0.011     
+260       CAI       FAB       SINGLE    n         1.354     0.010     1.354     0.010     
+260       CAG       HAG1      SINGLE    n         1.089     0.010     0.980     0.012     
+260       CAG       HAG2      SINGLE    n         1.089     0.010     0.980     0.012     
+260       CAE       HAE       SINGLE    n         1.082     0.013     0.940     0.014     
+260       CAD       HAD       SINGLE    n         1.082     0.013     0.946     0.016     
+260       CAF       HAF       SINGLE    n         1.082     0.013     0.940     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+260        BRAC         CAG         CAJ     111.182    1.50
+260        BRAC         CAG        HAG1     109.126    2.95
+260        BRAC         CAG        HAG2     109.126    2.95
+260         CAJ         CAG        HAG1     109.399    1.50
+260         CAJ         CAG        HAG2     109.399    1.50
+260        HAG1         CAG        HAG2     108.181    1.50
+260         CAG         CAJ         CAH     121.573    1.50
+260         CAG         CAJ         CAI     121.573    1.50
+260         CAH         CAJ         CAI     116.855    1.50
+260         CAJ         CAH         FAA     119.011    1.50
+260         CAJ         CAH         CAE     122.824    1.50
+260         FAA         CAH         CAE     118.165    1.50
+260         CAH         CAE         CAD     118.296    1.50
+260         CAH         CAE         HAE     120.730    1.50
+260         CAD         CAE         HAE     120.974    1.50
+260         CAE         CAD         CAF     120.903    1.50
+260         CAE         CAD         HAD     119.548    1.50
+260         CAF         CAD         HAD     119.548    1.50
+260         CAD         CAF         CAI     118.296    1.50
+260         CAD         CAF         HAF     120.974    1.50
+260         CAI         CAF         HAF     120.730    1.50
+260         CAJ         CAI         CAF     122.824    1.50
+260         CAJ         CAI         FAB     119.011    1.50
+260         CAF         CAI         FAB     118.165    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+260             sp2_sp3_2         CAH         CAJ         CAG        BRAC     -90.000   10.00     6
+260       const_sp2_sp2_4         FAA         CAH         CAJ         CAG       0.000   10.00     2
+260              const_24         FAB         CAI         CAJ         CAG       0.000   10.00     2
+260       const_sp2_sp2_6         CAD         CAE         CAH         FAA     180.000   10.00     2
+260       const_sp2_sp2_9         CAF         CAD         CAE         CAH       0.000   10.00     2
+260              const_13         CAE         CAD         CAF         CAI       0.000   10.00     2
+260              const_18         CAD         CAF         CAI         FAB     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+260    plan-1         CAD   0.020
+260    plan-1         CAE   0.020
+260    plan-1         CAF   0.020
+260    plan-1         CAG   0.020
+260    plan-1         CAH   0.020
+260    plan-1         CAI   0.020
+260    plan-1         CAJ   0.020
+260    plan-1         FAA   0.020
+260    plan-1         FAB   0.020
+260    plan-1         HAD   0.020
+260    plan-1         HAE   0.020
+260    plan-1         HAF   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+260 SMILES           ACDLabs              10.04 "BrCc1c(F)cccc1F"
+260 SMILES_CANONICAL CACTVS               3.341 "Fc1cccc(F)c1CBr"
+260 SMILES           CACTVS               3.341 "Fc1cccc(F)c1CBr"
+260 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)F)CBr)F"
+260 SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)F)CBr)F"
+260 InChI            InChI                1.03  "InChI=1S/C7H5BrF2/c8-4-5-6(9)2-1-3-7(5)10/h1-3H,4H2"
+260 InChIKey         InChI                1.03  LSXJPJGBWSZHTM-UHFFFAOYSA-N
+260 ?                acedrg               202         "dictionary generator"                  
+260 ?                acedrg_database      11          "data source"                           
+260 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+260 ?                refmac5              5.8.0189    "optimization tool"                     

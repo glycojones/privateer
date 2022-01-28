@@ -1,0 +1,206 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PG9     PG9     D-PHENYLGLYCINE     peptide     20     11     .
+#
+data_comp_PG9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PG9     N       N       NT3     1       28.932      45.047      189.853
+PG9     CA      C       CH1     0       28.774      46.410      190.445
+PG9     CB      C       CR6     0       29.505      46.546      191.768
+PG9     CG1     C       CR16    0       30.474      47.526      191.951
+PG9     CD1     C       CR16    0       31.140      47.647      193.164
+PG9     CE      C       CR16    0       30.845      46.792      194.206
+PG9     CD2     C       CR16    0       29.885      45.814      194.039
+PG9     CG2     C       CR16    0       29.217      45.692      192.826
+PG9     C       C       C       0       27.282      46.747      190.605
+PG9     O       O       O       0       26.932      47.917      190.364
+PG9     OXT     O       OC      -1      26.528      45.826      190.966
+PG9     H       H       H       0       28.590      45.040      189.001
+PG9     H2      H       H       0       28.482      44.429      190.362
+PG9     H3      H       H       0       29.822      44.823      189.822
+PG9     HA      H       H       0       29.143      47.055      189.815
+PG9     HG1     H       H       0       30.682      48.116      191.244
+PG9     HD1     H       H       0       31.796      48.317      193.276
+PG9     HE      H       H       0       31.298      46.875      195.030
+PG9     HD2     H       H       0       29.680      45.227      194.750
+PG9     HG2     H       H       0       28.562      45.021      192.720
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+PG9      N      n/a    CA     START
+PG9      H      N      .      .
+PG9      H2     N      .      .
+PG9      H3     N      .      .
+PG9      CA     N      C      .
+PG9      HA     CA     .      .
+PG9      CB     CA     CG2    .
+PG9      CG2    CB     CD2    .
+PG9      HG2    CG2    .      .
+PG9      CD2    CG2    CE     .
+PG9      HD2    CD2    .      .
+PG9      CE     CD2    CD1    .
+PG9      HE     CE     .      .
+PG9      CD1    CE     CG1    .
+PG9      HD1    CD1    .      .
+PG9      CG1    CD1    HG1    .
+PG9      HG1    CG1    .      .
+PG9      C      CA     .      END
+PG9      O      C      .      .
+PG9      OXT    C      .      .
+PG9      CB     CG1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PG9       N         CA        SINGLE    n         1.494     0.010     1.494     0.010     
+PG9       CA        CB        SINGLE    n         1.516     0.010     1.516     0.010     
+PG9       CA        C         SINGLE    n         1.536     0.015     1.536     0.015     
+PG9       CB        CG1       DOUBLE    y         1.386     0.010     1.386     0.010     
+PG9       CB        CG2       SINGLE    y         1.386     0.010     1.386     0.010     
+PG9       CG1       CD1       SINGLE    y         1.386     0.010     1.386     0.010     
+PG9       CD1       CE        DOUBLE    y         1.376     0.012     1.376     0.012     
+PG9       CE        CD2       SINGLE    y         1.376     0.012     1.376     0.012     
+PG9       CD2       CG2       DOUBLE    y         1.386     0.010     1.386     0.010     
+PG9       C         O         DOUBLE    n         1.244     0.020     1.244     0.020     
+PG9       C         OXT       SINGLE    n         1.244     0.020     1.244     0.020     
+PG9       N         H         SINGLE    n         1.036     0.016     0.918     0.020     
+PG9       N         H2        SINGLE    n         1.036     0.016     0.918     0.020     
+PG9       N         H3        SINGLE    n         1.036     0.016     0.918     0.020     
+PG9       CA        HA        SINGLE    n         1.089     0.010     0.974     0.020     
+PG9       CG1       HG1       SINGLE    n         1.082     0.013     0.944     0.017     
+PG9       CD1       HD1       SINGLE    n         1.082     0.013     0.944     0.018     
+PG9       CE        HE        SINGLE    n         1.082     0.013     0.944     0.016     
+PG9       CD2       HD2       SINGLE    n         1.082     0.013     0.944     0.018     
+PG9       CG2       HG2       SINGLE    n         1.082     0.013     0.944     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PG9          CA           N           H     109.561    2.23
+PG9          CA           N          H2     109.561    2.23
+PG9          CA           N          H3     109.561    2.23
+PG9           H           N          H2     109.073    2.83
+PG9           H           N          H3     109.073    2.83
+PG9          H2           N          H3     109.073    2.83
+PG9           N          CA          CB     111.953    1.50
+PG9           N          CA           C     109.935    2.65
+PG9           N          CA          HA     108.128    1.50
+PG9          CB          CA           C     110.945    2.64
+PG9          CB          CA          HA     108.649    1.50
+PG9           C          CA          HA     106.938    1.92
+PG9          CA          CB         CG1     120.770    1.59
+PG9          CA          CB         CG2     120.770    1.59
+PG9         CG1          CB         CG2     118.460    1.50
+PG9          CB         CG1         CD1     120.588    1.50
+PG9          CB         CG1         HG1     119.682    1.50
+PG9         CD1         CG1         HG1     119.730    1.50
+PG9         CG1         CD1          CE     120.216    1.50
+PG9         CG1         CD1         HD1     119.847    1.50
+PG9          CE         CD1         HD1     119.938    1.50
+PG9         CD1          CE         CD2     119.933    1.50
+PG9         CD1          CE          HE     120.033    1.50
+PG9         CD2          CE          HE     120.033    1.50
+PG9          CE         CD2         CG2     120.216    1.50
+PG9          CE         CD2         HD2     119.938    1.50
+PG9         CG2         CD2         HD2     119.847    1.50
+PG9          CB         CG2         CD2     120.588    1.50
+PG9          CB         CG2         HG2     119.682    1.50
+PG9         CD2         CG2         HG2     119.730    1.50
+PG9          CA           C           O     117.211    1.75
+PG9          CA           C         OXT     117.211    1.75
+PG9           O           C         OXT     125.577    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PG9             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+PG9             sp2_sp3_1         CG1          CB          CA           N     150.000   10.00     6
+PG9             sp2_sp3_7           O           C          CA           N       0.000   10.00     6
+PG9       const_sp2_sp2_3          CA          CB         CG1         CD1     180.000   10.00     2
+PG9              const_23          CA          CB         CG2         CD2     180.000   10.00     2
+PG9       const_sp2_sp2_5          CE         CD1         CG1          CB       0.000   10.00     2
+PG9       const_sp2_sp2_9         CG1         CD1          CE         CD2       0.000   10.00     2
+PG9              const_13         CG2         CD2          CE         CD1       0.000   10.00     2
+PG9              const_17          CE         CD2         CG2          CB       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PG9    chir_1    CA    N    C    CB    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PG9    plan-1          CA   0.020
+PG9    plan-1          CB   0.020
+PG9    plan-1         CD1   0.020
+PG9    plan-1         CD2   0.020
+PG9    plan-1          CE   0.020
+PG9    plan-1         CG1   0.020
+PG9    plan-1         CG2   0.020
+PG9    plan-1         HD1   0.020
+PG9    plan-1         HD2   0.020
+PG9    plan-1          HE   0.020
+PG9    plan-1         HG1   0.020
+PG9    plan-1         HG2   0.020
+PG9    plan-2           C   0.020
+PG9    plan-2          CA   0.020
+PG9    plan-2           O   0.020
+PG9    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PG9 SMILES           ACDLabs              10.04 "O=C(O)C(N)c1ccccc1"
+PG9 SMILES_CANONICAL CACTVS               3.341 "N[C@@H](C(O)=O)c1ccccc1"
+PG9 SMILES           CACTVS               3.341 "N[CH](C(O)=O)c1ccccc1"
+PG9 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)[C@H](C(=O)O)N"
+PG9 SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)C(C(=O)O)N"
+PG9 InChI            InChI                1.03  "InChI=1S/C8H9NO2/c9-7(8(10)11)6-4-2-1-3-5-6/h1-5,7H,9H2,(H,10,11)/t7-/m1/s1"
+PG9 InChIKey         InChI                1.03  ZGUNAGUHMKGQNY-SSDOTTSWSA-N
+PG9 ?                acedrg               196         "dictionary generator"
+PG9 ?                acedrg_database      11          "data source"
+PG9 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PG9 ?                refmac5              5.8.0222    "optimization tool"

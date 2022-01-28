@@ -1,0 +1,333 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+F7T      F7T 'alkylated sulphonate-N,N-pyridylbenz' non-polymer        40  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_F7T
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ F7T           CL1    CL   CL        0.000      2.815   -0.499    2.473
+ F7T           PT     PT   PT        0.000      2.234   -0.331    0.191
+ F7T           CL2    CL   CL        0.000      4.131   -0.100   -1.194
+ F7T           NAL    N    NR5       1.000      0.780    1.167   -0.168
+ F7T           CAA    C    CR56      0.000      0.451    2.449   -0.146
+ F7T           CAF    C    CR16      0.000      1.110    3.632    0.218
+ F7T           H10    H    H         0.000      2.127    3.593    0.578
+ F7T           CAE    C    CR16      0.000      0.469    4.833    0.118
+ F7T           H9     H    H         0.000      0.985    5.738    0.401
+ F7T           CAD    C    CR16      0.000     -0.838    4.903   -0.343
+ F7T           H8     H    H         0.000     -1.331    5.860   -0.416
+ F7T           CAC    C    CR16      0.000     -1.509    3.756   -0.708
+ F7T           H7     H    H         0.000     -2.526    3.816   -1.067
+ F7T           CAB    C    CR56      0.000     -0.876    2.523   -0.614
+ F7T           NAQ    N    NR6       1.000      0.947   -1.901   -0.420
+ F7T           CAI    C    CR16      0.000      1.052   -3.177   -0.514
+ F7T           H11    H    H         0.000      1.974   -3.662   -0.231
+ F7T           CAK    C    CR16      0.000     -0.016   -3.938   -0.978
+ F7T           H12    H    H         0.000      0.053   -5.013   -1.064
+ F7T           CAJ    C    CR16      0.000     -1.173   -3.256   -1.325
+ F7T           H13    H    H         0.000     -2.029   -3.803   -1.691
+ F7T           CAR    C    CR16      0.000     -1.236   -1.891   -1.206
+ F7T           H14    H    H         0.000     -2.146   -1.380   -1.481
+ F7T           CAH    C    CR6       0.000     -0.131   -1.133   -0.729
+ F7T           CAG    C    CR5       0.000     -0.201    0.361   -0.601
+ F7T           NAM    N    NR5       0.000     -1.258    1.234   -0.891
+ F7T           CAN    C    CH2       0.000     -2.569    0.832   -1.406
+ F7T           H5     H    H         0.000     -2.447    0.001   -2.102
+ F7T           H6     H    H         0.000     -3.029    1.674   -1.924
+ F7T           CAO    C    CH2       0.000     -3.462    0.397   -0.242
+ F7T           H3     H    H         0.000     -3.582    1.228    0.453
+ F7T           H4     H    H         0.000     -3.000   -0.444    0.275
+ F7T           CAP    C    CH2       0.000     -4.832   -0.022   -0.779
+ F7T           H1     H    H         0.000     -4.710   -0.851   -1.476
+ F7T           H2     H    H         0.000     -5.292    0.820   -1.295
+ F7T           SAV    S    ST        0.000     -5.890   -0.539    0.601
+ F7T           OAU    O    OS        0.000     -6.221    0.574    1.419
+ F7T           OAS    O    OS        0.000     -5.412   -1.750    1.170
+ F7T           OAT    O    OH1       0.000     -7.207   -0.927   -0.056
+ F7T           H16    H    H         0.000     -7.883   -1.229    0.567
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ F7T      CL1    n/a    PT     START
+ F7T      PT     CL1    NAQ    .
+ F7T      CL2    PT     .      .
+ F7T      NAL    PT     CAA    .
+ F7T      CAA    NAL    CAB    .
+ F7T      CAF    CAA    CAE    .
+ F7T      H10    CAF    .      .
+ F7T      CAE    CAF    CAD    .
+ F7T      H9     CAE    .      .
+ F7T      CAD    CAE    CAC    .
+ F7T      H8     CAD    .      .
+ F7T      CAC    CAD    H7     .
+ F7T      H7     CAC    .      .
+ F7T      CAB    CAA    .      .
+ F7T      NAQ    PT     CAI    .
+ F7T      CAI    NAQ    CAK    .
+ F7T      H11    CAI    .      .
+ F7T      CAK    CAI    CAJ    .
+ F7T      H12    CAK    .      .
+ F7T      CAJ    CAK    CAR    .
+ F7T      H13    CAJ    .      .
+ F7T      CAR    CAJ    CAH    .
+ F7T      H14    CAR    .      .
+ F7T      CAH    CAR    CAG    .
+ F7T      CAG    CAH    NAM    .
+ F7T      NAM    CAG    CAN    .
+ F7T      CAN    NAM    CAO    .
+ F7T      H5     CAN    .      .
+ F7T      H6     CAN    .      .
+ F7T      CAO    CAN    CAP    .
+ F7T      H3     CAO    .      .
+ F7T      H4     CAO    .      .
+ F7T      CAP    CAO    SAV    .
+ F7T      H1     CAP    .      .
+ F7T      H2     CAP    .      .
+ F7T      SAV    CAP    OAT    .
+ F7T      OAU    SAV    .      .
+ F7T      OAS    SAV    .      .
+ F7T      OAT    SAV    H16    .
+ F7T      H16    OAT    .      END
+ F7T      NAM    CAB    .    ADD
+ F7T      CAB    CAC    .    ADD
+ F7T      NAL    CAG    .    ADD
+ F7T      CAH    NAQ    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+F7T       OAU       SAV       double    1.420     0.020     1.420     0.020     
+F7T       OAS       SAV       double    1.421     0.020     1.421     0.020     
+F7T       OAT       SAV       single    1.522     0.020     1.522     0.020     
+F7T       SAV       CAP       single    1.814     0.020     1.814     0.020     
+F7T       CAP       CAO       single    1.530     0.020     1.530     0.020     
+F7T       CAO       CAN       single    1.530     0.020     1.530     0.020     
+F7T       CAN       NAM       single    1.465     0.020     1.465     0.020     
+F7T       NAM       CAB       single    1.373     0.020     1.373     0.020     
+F7T       NAM       CAG       single    1.401     0.020     1.401     0.020     
+F7T       CAB       CAC       double    1.389     0.020     1.389     0.020     
+F7T       CAB       CAA       single    1.409     0.020     1.409     0.020     
+F7T       CAC       CAD       single    1.378     0.020     1.378     0.020     
+F7T       CAD       CAE       double    1.388     0.020     1.388     0.020     
+F7T       CAE       CAF       single    1.365     0.020     1.365     0.020     
+F7T       CAF       CAA       double    1.402     0.020     1.402     0.020     
+F7T       CAA       NAL       single    1.324     0.020     1.324     0.020     
+F7T       NAL       CAG       double    1.341     0.020     1.341     0.020     
+F7T       NAL       PT        single    2.118     0.020     2.118     0.020     
+F7T       CAG       CAH       single    1.501     0.020     1.501     0.020     
+F7T       CAH       NAQ       double    1.359     0.020     1.359     0.020     
+F7T       CAH       CAR       single    1.422     0.020     1.422     0.020     
+F7T       CAI       NAQ       single    1.284     0.020     1.284     0.020     
+F7T       NAQ       PT        single    2.120     0.020     2.120     0.020     
+F7T       CAK       CAI       double    1.391     0.020     1.391     0.020     
+F7T       CAJ       CAK       single    1.387     0.020     1.387     0.020     
+F7T       CAR       CAJ       double    1.372     0.020     1.372     0.020     
+F7T       CL2       PT        single    2.360     0.020     2.360     0.020     
+F7T       H1        CAP       single    1.089     0.010     0.989     0.005     
+F7T       H2        CAP       single    1.089     0.010     0.989     0.005     
+F7T       H3        CAO       single    1.089     0.010     0.989     0.005     
+F7T       H4        CAO       single    1.089     0.010     0.989     0.005     
+F7T       H5        CAN       single    1.089     0.010     0.989     0.005     
+F7T       H6        CAN       single    1.089     0.010     0.989     0.005     
+F7T       H7        CAC       single    1.082     0.013     0.975     0.010     
+F7T       H8        CAD       single    1.082     0.013     0.975     0.010     
+F7T       H9        CAE       single    1.082     0.013     0.975     0.010     
+F7T       H10       CAF       single    1.082     0.013     0.975     0.010     
+F7T       H11       CAI       single    1.082     0.013     0.975     0.010     
+F7T       H12       CAK       single    1.082     0.013     0.975     0.010     
+F7T       H13       CAJ       single    1.082     0.013     0.975     0.010     
+F7T       H14       CAR       single    1.082     0.013     0.975     0.010     
+F7T       PT        CL1       single    2.361     0.020     2.361     0.020     
+F7T       H16       OAT       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ F7T      CL1    PT     CL2     112.111    3.000
+ F7T      CL1    PT     NAL     112.524    3.000
+ F7T      CL1    PT     NAQ     112.042    3.000
+ F7T      CL2    PT     NAL     112.523    3.000
+ F7T      CL2    PT     NAQ     113.035    3.000
+ F7T      NAL    PT     NAQ      93.335    3.000
+ F7T      PT     NAL    CAA     148.504    3.000
+ F7T      PT     NAL    CAG      97.572    3.000
+ F7T      CAA    NAL    CAG     113.923    3.000
+ F7T      NAL    CAA    CAF     134.795    3.000
+ F7T      NAL    CAA    CAB     106.225    3.000
+ F7T      CAF    CAA    CAB     118.980    3.000
+ F7T      CAA    CAF    H10     119.928    3.000
+ F7T      CAA    CAF    CAE     120.170    3.000
+ F7T      H10    CAF    CAE     119.902    3.000
+ F7T      CAF    CAE    H9      119.600    3.000
+ F7T      CAF    CAE    CAD     120.731    3.000
+ F7T      H9     CAE    CAD     119.670    3.000
+ F7T      CAE    CAD    H8      119.882    3.000
+ F7T      CAE    CAD    CAC     120.305    3.000
+ F7T      H8     CAD    CAC     119.813    3.000
+ F7T      CAD    CAC    H7      120.068    3.000
+ F7T      CAD    CAC    CAB     119.931    3.000
+ F7T      H7     CAC    CAB     120.001    3.000
+ F7T      CAA    CAB    NAM     106.248    3.000
+ F7T      CAA    CAB    CAC     119.882    3.000
+ F7T      NAM    CAB    CAC     133.870    3.000
+ F7T      PT     NAQ    CAI     135.034    3.000
+ F7T      PT     NAQ    CAH      97.386    3.000
+ F7T      CAI    NAQ    CAH     127.579    3.000
+ F7T      NAQ    CAI    H11     119.760    3.000
+ F7T      NAQ    CAI    CAK     120.357    3.000
+ F7T      H11    CAI    CAK     119.883    3.000
+ F7T      CAI    CAK    H12     121.467    3.000
+ F7T      CAI    CAK    CAJ     117.055    3.000
+ F7T      H12    CAK    CAJ     121.478    3.000
+ F7T      CAK    CAJ    H13     119.821    3.000
+ F7T      CAK    CAJ    CAR     120.390    3.000
+ F7T      H13    CAJ    CAR     119.789    3.000
+ F7T      CAJ    CAR    H14     119.196    3.000
+ F7T      CAJ    CAR    CAH     121.584    3.000
+ F7T      H14    CAR    CAH     119.220    3.000
+ F7T      CAR    CAH    CAG     121.518    3.000
+ F7T      CAR    CAH    NAQ     113.034    3.000
+ F7T      CAG    CAH    NAQ     125.448    3.000
+ F7T      CAH    CAG    NAM     129.613    3.000
+ F7T      CAH    CAG    NAL     126.258    3.000
+ F7T      NAM    CAG    NAL     104.129    3.000
+ F7T      CAG    NAM    CAN     125.234    3.000
+ F7T      CAG    NAM    CAB     109.473    3.000
+ F7T      CAN    NAM    CAB     125.292    3.000
+ F7T      NAM    CAN    H5      109.513    3.000
+ F7T      NAM    CAN    H6      109.423    3.000
+ F7T      NAM    CAN    CAO     109.444    3.000
+ F7T      H5     CAN    H6      109.515    3.000
+ F7T      H5     CAN    CAO     109.484    3.000
+ F7T      H6     CAN    CAO     109.448    3.000
+ F7T      CAN    CAO    H3      109.515    3.000
+ F7T      CAN    CAO    H4      109.447    3.000
+ F7T      CAN    CAO    CAP     109.477    3.000
+ F7T      H3     CAO    H4      109.448    3.000
+ F7T      H3     CAO    CAP     109.467    3.000
+ F7T      H4     CAO    CAP     109.473    3.000
+ F7T      CAO    CAP    H1      109.468    3.000
+ F7T      CAO    CAP    H2      109.473    3.000
+ F7T      CAO    CAP    SAV     109.468    3.000
+ F7T      H1     CAP    H2      109.477    3.000
+ F7T      H1     CAP    SAV     109.450    3.000
+ F7T      H2     CAP    SAV     109.490    3.000
+ F7T      CAP    SAV    OAU     110.529    3.000
+ F7T      CAP    SAV    OAS     110.569    3.000
+ F7T      CAP    SAV    OAT     104.414    3.000
+ F7T      OAU    SAV    OAS     121.040    3.000
+ F7T      OAU    SAV    OAT     104.282    3.000
+ F7T      OAS    SAV    OAT     104.282    3.000
+ F7T      SAV    OAT    H16     113.962    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ F7T      var_1            CL1    PT     NAL    CAA               63.858           20.000   3
+ F7T      CONST_1          PT     NAL    CAG    CAH                0.179            0.000   0
+ F7T      CONST_2          PT     NAL    CAA    CAB             -179.952            0.000   0
+ F7T      CONST_3          NAL    CAA    CAF    CAE              179.918            0.000   0
+ F7T      CONST_4          CAA    CAF    CAE    CAD               -0.028            0.000   0
+ F7T      CONST_5          CAF    CAE    CAD    CAC               -0.028            0.000   0
+ F7T      CONST_6          CAE    CAD    CAC    CAB                0.034            0.000   0
+ F7T      CONST_7          NAL    CAA    CAB    NAM                0.040            0.000   0
+ F7T      CONST_8          CAA    CAB    CAC    CAD               -0.034            0.000   0
+ F7T      var_2            CL1    PT     NAQ    CAI              -64.150           20.000   3
+ F7T      CONST_9          PT     NAQ    CAI    CAK             -179.441            0.000   0
+ F7T      CONST_10         NAQ    CAI    CAK    CAJ                0.000            0.000   0
+ F7T      CONST_11         CAI    CAK    CAJ    CAR               -0.034            0.000   0
+ F7T      CONST_12         CAK    CAJ    CAR    CAH                0.034            0.000   0
+ F7T      CONST_13         CAJ    CAR    CAH    CAG              179.921            0.000   0
+ F7T      CONST_14         CAR    CAH    NAQ    PT               179.596            0.000   0
+ F7T      CONST_15         CAR    CAH    CAG    NAM                0.115            0.000   0
+ F7T      CONST_16         CAH    CAG    NAM    CAN               -0.143            0.000   0
+ F7T      CONST_17         CAG    NAM    CAB    CAA                0.227            0.000   0
+ F7T      var_3            CAG    NAM    CAN    CAO               83.561           20.000   3
+ F7T      var_4            NAM    CAN    CAO    CAP              179.956           20.000   3
+ F7T      var_5            CAN    CAO    CAP    SAV              179.948           20.000   3
+ F7T      var_6            CAO    CAP    SAV    OAT              180.000           20.000   3
+ F7T      var_7            CAP    SAV    OAT    H16             -179.972           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ F7T      chir_01          SAV    OAU    OAS    OAT       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ F7T      plan-1            NAM       0.020
+ F7T      plan-1            CAN       0.020
+ F7T      plan-1            CAB       0.020
+ F7T      plan-1            CAG       0.020
+ F7T      plan-1            NAL       0.020
+ F7T      plan-1            CAC       0.020
+ F7T      plan-1            CAA       0.020
+ F7T      plan-1            CAD       0.020
+ F7T      plan-1            CAE       0.020
+ F7T      plan-1            CAF       0.020
+ F7T      plan-1            H7        0.020
+ F7T      plan-1            H8        0.020
+ F7T      plan-1            H9        0.020
+ F7T      plan-1            H10       0.020
+ F7T      plan-1            PT        0.020
+ F7T      plan-1            CAH       0.020
+ F7T      plan-1            NAQ       0.020
+ F7T      plan-1            CAR       0.020
+ F7T      plan-1            CAI       0.020
+ F7T      plan-1            CAK       0.020
+ F7T      plan-1            CAJ       0.020
+ F7T      plan-1            H11       0.020
+ F7T      plan-1            H12       0.020
+ F7T      plan-1            H13       0.020
+ F7T      plan-1            H14       0.020
+# ------------------------------------------------------

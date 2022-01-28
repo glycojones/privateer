@@ -1,0 +1,311 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AXP      AXP '"4-ACETAMIDO-2,4-DIDEXOY-D-GLYCERO-B' non-polymer        41  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AXP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AXP           O10    O    O         0.000      0.000    0.000    0.000
+ AXP           C10    C    C         0.000     -0.463    0.614   -0.937
+ AXP           C11    C    CH3       0.000      0.454    1.217   -1.969
+ AXP           H113   H    H         0.000      0.236    0.806   -2.920
+ AXP           H112   H    H         0.000      0.313    2.267   -1.999
+ AXP           H111   H    H         0.000      1.461    1.004   -1.716
+ AXP           N5     N    NH1       0.000     -1.798    0.759   -1.054
+ AXP           HN5    H    H         0.000     -2.183    1.272   -1.834
+ AXP           C5     C    CH1       0.000     -2.689    0.173   -0.051
+ AXP           H5     H    H         0.000     -2.179    0.145    0.923
+ AXP           C4     C    CH1       0.000     -3.070   -1.250   -0.472
+ AXP           H4     H    H         0.000     -2.159   -1.832   -0.668
+ AXP           O4     O    OH1       0.000     -3.823   -1.873    0.570
+ AXP           HO4    H    H         0.000     -4.061   -2.770    0.302
+ AXP           C3     C    CH2       0.000     -3.915   -1.174   -1.747
+ AXP           H32    H    H         0.000     -4.290   -2.169   -1.999
+ AXP           H31    H    H         0.000     -3.305   -0.797   -2.570
+ AXP           C6     C    CH1       0.000     -3.959    1.018    0.061
+ AXP           H6     H    H         0.000     -3.695    2.035    0.385
+ AXP           C7     C    CH1       0.000     -4.901    0.385    1.086
+ AXP           H7     H    H         0.000     -5.061   -0.672    0.833
+ AXP           O7     O    OH1       0.000     -6.155    1.072    1.071
+ AXP           HO7    H    H         0.000     -6.006    2.016    1.217
+ AXP           C8     C    CH1       0.000     -4.280    0.488    2.480
+ AXP           H8     H    H         0.000     -4.013    1.533    2.686
+ AXP           O8     O    OH1       0.000     -3.107   -0.324    2.541
+ AXP           HO8    H    H         0.000     -3.359   -1.257    2.505
+ AXP           C9     C    CH2       0.000     -5.289    0.004    3.525
+ AXP           H91    H    H         0.000     -5.554   -1.035    3.319
+ AXP           H92    H    H         0.000     -6.186    0.624    3.477
+ AXP           O9     O    OH1       0.000     -4.710    0.101    4.828
+ AXP           HO9    H    H         0.000     -5.348   -0.204    5.487
+ AXP           O6     O    O2        0.000     -4.611    1.078   -1.208
+ AXP           C2     C    CH1       0.000     -5.094   -0.229   -1.509
+ AXP           H2     H    H         0.000     -5.695   -0.599   -0.667
+ AXP           P1     P    P         0.000     -6.129   -0.160   -3.008
+ AXP           O1P    O    O         0.000     -6.638   -1.514   -3.319
+ AXP           O3P    O    OH1       0.000     -7.370    0.834   -2.758
+ AXP           HOP3   H    H         0.000     -8.019    0.983   -3.460
+ AXP           O2P    O    OH1       0.000     -5.250    0.378   -4.244
+ AXP           HOP2   H    H         0.000     -4.842    1.254   -4.202
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AXP      O10    n/a    C10    START
+ AXP      C10    O10    N5     .
+ AXP      C11    C10    H111   .
+ AXP      H113   C11    .      .
+ AXP      H112   C11    .      .
+ AXP      H111   C11    .      .
+ AXP      N5     C10    C5     .
+ AXP      HN5    N5     .      .
+ AXP      C5     N5     C6     .
+ AXP      H5     C5     .      .
+ AXP      C4     C5     C3     .
+ AXP      H4     C4     .      .
+ AXP      O4     C4     HO4    .
+ AXP      HO4    O4     .      .
+ AXP      C3     C4     H31    .
+ AXP      H32    C3     .      .
+ AXP      H31    C3     .      .
+ AXP      C6     C5     O6     .
+ AXP      H6     C6     .      .
+ AXP      C7     C6     C8     .
+ AXP      H7     C7     .      .
+ AXP      O7     C7     HO7    .
+ AXP      HO7    O7     .      .
+ AXP      C8     C7     C9     .
+ AXP      H8     C8     .      .
+ AXP      O8     C8     HO8    .
+ AXP      HO8    O8     .      .
+ AXP      C9     C8     O9     .
+ AXP      H91    C9     .      .
+ AXP      H92    C9     .      .
+ AXP      O9     C9     HO9    .
+ AXP      HO9    O9     .      .
+ AXP      O6     C6     C2     .
+ AXP      C2     O6     P1     .
+ AXP      H2     C2     .      .
+ AXP      P1     C2     O2P    .
+ AXP      O1P    P1     .      .
+ AXP      O3P    P1     HOP3   .
+ AXP      HOP3   O3P    .      .
+ AXP      O2P    P1     HOP2   .
+ AXP      HOP2   O2P    .      END
+ AXP      C2     C3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AXP       P1        C2        single    1.815     0.020     1.815     0.020     
+AXP       O1P       P1        double    1.480     0.020     1.480     0.020     
+AXP       O2P       P1        single    1.610     0.020     1.610     0.020     
+AXP       O3P       P1        single    1.610     0.020     1.610     0.020     
+AXP       C2        C3        single    1.524     0.020     1.524     0.020     
+AXP       C2        O6        single    1.426     0.020     1.426     0.020     
+AXP       H2        C2        single    1.089     0.010     0.989     0.005     
+AXP       C3        C4        single    1.524     0.020     1.524     0.020     
+AXP       H31       C3        single    1.089     0.010     0.989     0.005     
+AXP       H32       C3        single    1.089     0.010     0.989     0.005     
+AXP       C4        C5        single    1.524     0.020     1.524     0.020     
+AXP       O4        C4        single    1.432     0.020     1.432     0.020     
+AXP       H4        C4        single    1.089     0.010     0.989     0.005     
+AXP       C6        C5        single    1.524     0.020     1.524     0.020     
+AXP       C5        N5        single    1.450     0.020     1.450     0.020     
+AXP       H5        C5        single    1.089     0.010     0.989     0.005     
+AXP       C7        C6        single    1.524     0.020     1.524     0.020     
+AXP       O6        C6        single    1.426     0.020     1.426     0.020     
+AXP       H6        C6        single    1.089     0.010     0.989     0.005     
+AXP       C8        C7        single    1.524     0.020     1.524     0.020     
+AXP       O7        C7        single    1.432     0.020     1.432     0.020     
+AXP       H7        C7        single    1.089     0.010     0.989     0.005     
+AXP       C9        C8        single    1.524     0.020     1.524     0.020     
+AXP       O8        C8        single    1.432     0.020     1.432     0.020     
+AXP       H8        C8        single    1.089     0.010     0.989     0.005     
+AXP       O9        C9        single    1.432     0.020     1.432     0.020     
+AXP       H91       C9        single    1.089     0.010     0.989     0.005     
+AXP       H92       C9        single    1.089     0.010     0.989     0.005     
+AXP       C11       C10       single    1.500     0.020     1.500     0.020     
+AXP       N5        C10       single    1.330     0.020     1.330     0.020     
+AXP       C10       O10       double    1.220     0.020     1.220     0.020     
+AXP       H111      C11       single    1.089     0.010     0.989     0.005     
+AXP       H112      C11       single    1.089     0.010     0.989     0.005     
+AXP       H113      C11       single    1.089     0.010     0.989     0.005     
+AXP       HN5       N5        single    1.016     0.010     0.899     0.007     
+AXP       HOP2      O2P       single    0.970     0.012     0.839     0.014     
+AXP       HOP3      O3P       single    0.970     0.012     0.839     0.014     
+AXP       HO4       O4        single    0.970     0.012     0.839     0.014     
+AXP       HO7       O7        single    0.970     0.012     0.839     0.014     
+AXP       HO8       O8        single    0.970     0.012     0.839     0.014     
+AXP       HO9       O9        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AXP      O10    C10    C11     123.000    3.000
+ AXP      O10    C10    N5      123.000    3.000
+ AXP      C11    C10    N5      116.500    3.000
+ AXP      C10    C11    H113    109.470    3.000
+ AXP      C10    C11    H112    109.470    3.000
+ AXP      C10    C11    H111    109.470    3.000
+ AXP      H113   C11    H112    109.470    3.000
+ AXP      H113   C11    H111    109.470    3.000
+ AXP      H112   C11    H111    109.470    3.000
+ AXP      C10    N5     HN5     120.000    3.000
+ AXP      C10    N5     C5      121.500    3.000
+ AXP      HN5    N5     C5      118.500    3.000
+ AXP      N5     C5     H5      108.550    3.000
+ AXP      N5     C5     C4      110.000    3.000
+ AXP      N5     C5     C6      110.000    3.000
+ AXP      H5     C5     C4      108.340    3.000
+ AXP      H5     C5     C6      108.340    3.000
+ AXP      C4     C5     C6      111.000    3.000
+ AXP      C5     C4     H4      108.340    3.000
+ AXP      C5     C4     O4      109.470    3.000
+ AXP      C5     C4     C3      111.000    3.000
+ AXP      H4     C4     O4      109.470    3.000
+ AXP      H4     C4     C3      108.340    3.000
+ AXP      O4     C4     C3      109.470    3.000
+ AXP      C4     O4     HO4     109.470    3.000
+ AXP      C4     C3     H32     109.470    3.000
+ AXP      C4     C3     H31     109.470    3.000
+ AXP      C4     C3     C2      111.000    3.000
+ AXP      H32    C3     H31     107.900    3.000
+ AXP      H32    C3     C2      109.470    3.000
+ AXP      H31    C3     C2      109.470    3.000
+ AXP      C5     C6     H6      108.340    3.000
+ AXP      C5     C6     C7      111.000    3.000
+ AXP      C5     C6     O6      109.470    3.000
+ AXP      H6     C6     C7      108.340    3.000
+ AXP      H6     C6     O6      109.470    3.000
+ AXP      C7     C6     O6      109.470    3.000
+ AXP      C6     C7     H7      108.340    3.000
+ AXP      C6     C7     O7      109.470    3.000
+ AXP      C6     C7     C8      111.000    3.000
+ AXP      H7     C7     O7      109.470    3.000
+ AXP      H7     C7     C8      108.340    3.000
+ AXP      O7     C7     C8      109.470    3.000
+ AXP      C7     O7     HO7     109.470    3.000
+ AXP      C7     C8     H8      108.340    3.000
+ AXP      C7     C8     O8      109.470    3.000
+ AXP      C7     C8     C9      111.000    3.000
+ AXP      H8     C8     O8      109.470    3.000
+ AXP      H8     C8     C9      108.340    3.000
+ AXP      O8     C8     C9      109.470    3.000
+ AXP      C8     O8     HO8     109.470    3.000
+ AXP      C8     C9     H91     109.470    3.000
+ AXP      C8     C9     H92     109.470    3.000
+ AXP      C8     C9     O9      109.470    3.000
+ AXP      H91    C9     H92     107.900    3.000
+ AXP      H91    C9     O9      109.470    3.000
+ AXP      H92    C9     O9      109.470    3.000
+ AXP      C9     O9     HO9     109.470    3.000
+ AXP      C6     O6     C2      111.800    3.000
+ AXP      O6     C2     H2      109.470    3.000
+ AXP      O6     C2     P1      109.500    3.000
+ AXP      O6     C2     C3      109.470    3.000
+ AXP      H2     C2     P1      109.500    3.000
+ AXP      H2     C2     C3      108.340    3.000
+ AXP      P1     C2     C3      109.500    3.000
+ AXP      C2     P1     O1P     109.500    3.000
+ AXP      C2     P1     O3P     109.500    3.000
+ AXP      C2     P1     O2P     109.500    3.000
+ AXP      O1P    P1     O3P     109.500    3.000
+ AXP      O1P    P1     O2P     109.500    3.000
+ AXP      O3P    P1     O2P     109.500    3.000
+ AXP      P1     O3P    HOP3    120.000    3.000
+ AXP      P1     O2P    HOP2    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AXP      var_1    O10    C10    C11    H111       0.045   20.000   1
+ AXP      CONST_1  O10    C10    N5     C5         0.000    0.000   0
+ AXP      var_2    C10    N5     C5     C6       150.183   20.000   3
+ AXP      var_3    N5     C5     C4     C3       -60.000   20.000   3
+ AXP      var_4    C5     C4     O4     HO4     -179.945   20.000   1
+ AXP      var_5    C5     C4     C3     C2       -60.000   20.000   3
+ AXP      var_6    N5     C5     C6     O6        60.000   20.000   3
+ AXP      var_7    C5     C6     C7     C8        67.261   20.000   3
+ AXP      var_8    C6     C7     O7     HO7      -55.042   20.000   1
+ AXP      var_9    C6     C7     C8     C9       173.440   20.000   3
+ AXP      var_10   C7     C8     O8     HO8      -69.185   20.000   1
+ AXP      var_11   C7     C8     C9     O9      -179.944   20.000   3
+ AXP      var_12   C8     C9     O9     HO9      179.964   20.000   1
+ AXP      var_13   C5     C6     O6     C2        60.000   20.000   1
+ AXP      var_14   C6     O6     C2     P1       180.000   20.000   1
+ AXP      var_15   O6     C2     C3     C4        60.000   20.000   3
+ AXP      var_16   O6     C2     P1     O2P       60.347   20.000   1
+ AXP      var_17   C2     P1     O3P    HOP3    -179.999   20.000   1
+ AXP      var_18   C2     P1     O2P    HOP2     -60.017   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AXP      chir_01  C2     P1     C3     O6        negativ
+ AXP      chir_02  C4     C3     C5     O4        negativ
+ AXP      chir_03  C5     C4     C6     N5        positiv
+ AXP      chir_04  C6     C5     C7     O6        positiv
+ AXP      chir_05  C7     C6     C8     O7        negativ
+ AXP      chir_06  C8     C7     C9     O8        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AXP      plan-1    C10       0.020
+ AXP      plan-1    C11       0.020
+ AXP      plan-1    N5        0.020
+ AXP      plan-1    O10       0.020
+ AXP      plan-1    HN5       0.020
+ AXP      plan-2    N5        0.020
+ AXP      plan-2    C5        0.020
+ AXP      plan-2    C10       0.020
+ AXP      plan-2    HN5       0.020
+# ------------------------------------------------------

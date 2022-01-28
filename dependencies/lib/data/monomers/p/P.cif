@@ -1,0 +1,342 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+P        P   '.                                   ' DNA                42  26 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_P
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ P             OP3    O    OP       -0.666      0.000    0.000    0.000
+ P             P      P    P         0.000     -0.739    0.559    1.196
+ P             OP1    O    OP       -0.666     -0.874   -0.516    2.252
+ P             OP2    O    OP       -0.666      0.033    1.730    1.765
+ P             "O5'"  O    O2        0.000     -2.203    1.050    0.741
+ P             "C5'"  C    CH2       0.000     -3.183    1.533    1.662
+ P             "H5'"  H    H         0.000     -2.792    2.409    2.183
+ P             "H5''" H    H         0.000     -3.414    0.751    2.389
+ P             "C4'"  C    CH1       0.000     -4.454    1.914    0.901
+ P             "H4'"  H    H         0.000     -4.230    2.656    0.122
+ P             "C3'"  C    CH1       0.000     -5.532    2.453    1.875
+ P             "H3'"  H    H         0.000     -5.514    1.900    2.825
+ P             "C2'"  C    CH2       0.000     -6.841    2.172    1.098
+ P             "H2'"  H    H         0.000     -7.195    3.053    0.559
+ P             "H2''" H    H         0.000     -7.635    1.803    1.751
+ P             "C1'"  C    CH1       0.000     -6.453    1.073    0.089
+ P             "H1'"  H    H         0.000     -6.578    1.445   -0.937
+ P             "O4'"  O    O2        0.000     -5.073    0.744    0.326
+ P             N9     N    NR5       0.000     -7.290   -0.112    0.296
+ P             C4     C    CR56      0.000     -8.531   -0.330   -0.238
+ P             C5     C    CR56      0.000     -8.944   -1.580    0.236
+ P             N7     N    NRD5      0.000     -7.952   -2.059    1.025
+ P             C8     C    CR15      0.000     -6.977   -1.197    1.063
+ P             H8     H    H         0.000     -6.057   -1.323    1.619
+ P             N3     N    NRD6      0.000     -9.324    0.354   -1.068
+ P             C2     C    CR6       0.000    -10.506   -0.106   -1.432
+ P             N2     N    NH1       0.000    -11.228    0.637   -2.340
+ P             H2     H    H         0.000    -10.775    1.351   -2.892
+ P             C6A    C    CH2       0.000    -12.666    0.378   -2.496
+ P             H6A1   H    H         0.000    -13.036    0.825   -3.421
+ P             H6A2   H    H         0.000    -13.221    0.784   -1.649
+ P             C7A    C    CH2       0.000    -12.854   -1.146   -2.551
+ P             H7A1   H    H         0.000    -12.280   -1.565   -3.381
+ P             H7A2   H    H         0.000    -13.910   -1.389   -2.682
+ P             C8A    C    CH2       0.000    -12.353   -1.737   -1.233
+ P             H8A1   H    H         0.000    -12.368   -2.827   -1.306
+ P             H8A2   H    H         0.000    -13.017   -1.418   -0.427
+ P             N1     N    NR6       0.000    -10.989   -1.285   -0.951
+ P             C6     C    CR6       0.000    -10.212   -2.062   -0.157
+ P             O6     O    O         0.000    -10.602   -3.157    0.212
+ P             "O3'"  O    OH1       0.000     -5.364    3.854    2.098
+ P             "HO3'" H    H         0.000     -6.016    4.239    2.701
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ P        OP3    n/a    P      START
+ P        P      OP3    "O5'"  .
+ P        OP1    P      .      .
+ P        OP2    P      .      .
+ P        "O5'"  P      "C5'"  .
+ P        "C5'"  "O5'"  "C4'"  .
+ P        "H5'"  "C5'"  .      .
+ P        "H5''" "C5'"  .      .
+ P        "C4'"  "C5'"  "C3'"  .
+ P        "H4'"  "C4'"  .      .
+ P        "C3'"  "C4'"  "O3'"  .
+ P        "H3'"  "C3'"  .      .
+ P        "C2'"  "C3'"  "C1'"  .
+ P        "H2'"  "C2'"  .      .
+ P        "H2''" "C2'"  .      .
+ P        "C1'"  "C2'"  N9     .
+ P        "H1'"  "C1'"  .      .
+ P        "O4'"  "C1'"  .      .
+ P        N9     "C1'"  C4     .
+ P        C4     N9     N3     .
+ P        C5     C4     N7     .
+ P        N7     C5     C8     .
+ P        C8     N7     H8     .
+ P        H8     C8     .      .
+ P        N3     C4     C2     .
+ P        C2     N3     N2     .
+ P        N2     C2     C6A    .
+ P        H2     N2     .      .
+ P        C6A    N2     C7A    .
+ P        H6A1   C6A    .      .
+ P        H6A2   C6A    .      .
+ P        C7A    C6A    C8A    .
+ P        H7A1   C7A    .      .
+ P        H7A2   C7A    .      .
+ P        C8A    C7A    N1     .
+ P        H8A1   C8A    .      .
+ P        H8A2   C8A    .      .
+ P        N1     C8A    C6     .
+ P        C6     N1     O6     .
+ P        O6     C6     .      .
+ P        "O3'"  "C3'"  .      END
+ P        "HO3'" "O3'"  .      .
+ P        "C4'"  "O4'"  .    ADD
+ P        N9     C8     .    ADD
+ P        C5     C6     .    ADD
+ P        N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+P         OP1       P         deloc     1.510     0.020     1.510     0.020     
+P         OP2       P         deloc     1.510     0.020     1.510     0.020     
+P         P         OP3       deloc     1.510     0.020     1.510     0.020     
+P         "O5'"     P         single    1.610     0.020     1.610     0.020     
+P         "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+P         "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+P         "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+P         "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+P         "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+P         "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+P         "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+P         "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+P         "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+P         "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+P         "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+P         "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+P         "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+P         "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+P         "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+P         N9        "C1'"     single    1.485     0.020     1.485     0.020     
+P         "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+P         N9        C8        single    1.337     0.020     1.337     0.020     
+P         C4        N9        single    1.337     0.020     1.337     0.020     
+P         C8        N7        double    1.350     0.020     1.350     0.020     
+P         H8        C8        single    1.082     0.013     0.975     0.010     
+P         N7        C5        single    1.350     0.020     1.350     0.020     
+P         C5        C6        single    1.490     0.020     1.490     0.020     
+P         C5        C4        double    1.490     0.020     1.490     0.020     
+P         O6        C6        double    1.250     0.020     1.250     0.020     
+P         C6        N1        single    1.410     0.020     1.410     0.020     
+P         N1        C2        single    1.410     0.020     1.410     0.020     
+P         N1        C8A       single    1.465     0.020     1.465     0.020     
+P         N2        C2        single    1.350     0.020     1.350     0.020     
+P         C2        N3        double    1.350     0.020     1.350     0.020     
+P         C6A       N2        single    1.450     0.020     1.450     0.020     
+P         H2        N2        single    1.016     0.010     0.899     0.007     
+P         N3        C4        single    1.355     0.020     1.355     0.020     
+P         C7A       C6A       single    1.524     0.020     1.524     0.020     
+P         H6A1      C6A       single    1.089     0.010     0.989     0.005     
+P         H6A2      C6A       single    1.089     0.010     0.989     0.005     
+P         C8A       C7A       single    1.524     0.020     1.524     0.020     
+P         H7A1      C7A       single    1.089     0.010     0.989     0.005     
+P         H7A2      C7A       single    1.089     0.010     0.989     0.005     
+P         H8A1      C8A       single    1.089     0.010     0.989     0.005     
+P         H8A2      C8A       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ P        OP3    P      OP1     119.900    3.000
+ P        OP3    P      OP2     119.900    3.000
+ P        OP3    P      "O5'"   108.200    3.000
+ P        OP1    P      OP2     119.900    3.000
+ P        OP1    P      "O5'"   108.200    3.000
+ P        OP2    P      "O5'"   108.200    3.000
+ P        P      "O5'"  "C5'"   120.500    3.000
+ P        "O5'"  "C5'"  "H5'"   109.470    3.000
+ P        "O5'"  "C5'"  "H5''"  109.470    3.000
+ P        "O5'"  "C5'"  "C4'"   109.470    3.000
+ P        "H5'"  "C5'"  "H5''"  107.900    3.000
+ P        "H5'"  "C5'"  "C4'"   109.470    3.000
+ P        "H5''" "C5'"  "C4'"   109.470    3.000
+ P        "C5'"  "C4'"  "H4'"   108.340    3.000
+ P        "C5'"  "C4'"  "C3'"   111.000    3.000
+ P        "C5'"  "C4'"  "O4'"   109.470    3.000
+ P        "H4'"  "C4'"  "C3'"   108.340    3.000
+ P        "H4'"  "C4'"  "O4'"   109.470    3.000
+ P        "C3'"  "C4'"  "O4'"   109.470    3.000
+ P        "C4'"  "C3'"  "H3'"   108.340    3.000
+ P        "C4'"  "C3'"  "C2'"   111.000    3.000
+ P        "C4'"  "C3'"  "O3'"   109.470    3.000
+ P        "H3'"  "C3'"  "C2'"   108.340    3.000
+ P        "H3'"  "C3'"  "O3'"   109.470    3.000
+ P        "C2'"  "C3'"  "O3'"   109.470    3.000
+ P        "C3'"  "C2'"  "H2'"   109.470    3.000
+ P        "C3'"  "C2'"  "H2''"  109.470    3.000
+ P        "C3'"  "C2'"  "C1'"   111.000    3.000
+ P        "H2'"  "C2'"  "H2''"  107.900    3.000
+ P        "H2'"  "C2'"  "C1'"   109.470    3.000
+ P        "H2''" "C2'"  "C1'"   109.470    3.000
+ P        "C2'"  "C1'"  "H1'"   108.340    3.000
+ P        "C2'"  "C1'"  "O4'"   109.470    3.000
+ P        "C2'"  "C1'"  N9      109.470    3.000
+ P        "H1'"  "C1'"  "O4'"   109.470    3.000
+ P        "H1'"  "C1'"  N9      109.470    3.000
+ P        "O4'"  "C1'"  N9      109.470    3.000
+ P        "C1'"  "O4'"  "C4'"   111.800    3.000
+ P        "C1'"  N9     C4      126.000    3.000
+ P        "C1'"  N9     C8      126.000    3.000
+ P        C4     N9     C8      108.000    3.000
+ P        N9     C4     C5      108.000    3.000
+ P        N9     C4     N3      132.000    3.000
+ P        C5     C4     N3      120.000    3.000
+ P        C4     C5     N7      108.000    3.000
+ P        C4     C5     C6      120.000    3.000
+ P        N7     C5     C6      132.000    3.000
+ P        C5     N7     C8      108.000    3.000
+ P        N7     C8     H8      126.000    3.000
+ P        N7     C8     N9      108.000    3.000
+ P        H8     C8     N9      126.000    3.000
+ P        C4     N3     C2      120.000    3.000
+ P        N3     C2     N2      120.000    3.000
+ P        N3     C2     N1      120.000    3.000
+ P        N2     C2     N1      120.000    3.000
+ P        C2     N2     H2      120.000    3.000
+ P        C2     N2     C6A     120.000    3.000
+ P        H2     N2     C6A     118.500    3.000
+ P        N2     C6A    H6A1    109.470    3.000
+ P        N2     C6A    H6A2    109.470    3.000
+ P        N2     C6A    C7A     112.000    3.000
+ P        H6A1   C6A    H6A2    107.900    3.000
+ P        H6A1   C6A    C7A     109.470    3.000
+ P        H6A2   C6A    C7A     109.470    3.000
+ P        C6A    C7A    H7A1    109.470    3.000
+ P        C6A    C7A    H7A2    109.470    3.000
+ P        C6A    C7A    C8A     111.000    3.000
+ P        H7A1   C7A    H7A2    107.900    3.000
+ P        H7A1   C7A    C8A     109.470    3.000
+ P        H7A2   C7A    C8A     109.470    3.000
+ P        C7A    C8A    H8A1    109.470    3.000
+ P        C7A    C8A    H8A2    109.470    3.000
+ P        C7A    C8A    N1      109.470    3.000
+ P        H8A1   C8A    H8A2    107.900    3.000
+ P        H8A1   C8A    N1      109.470    3.000
+ P        H8A2   C8A    N1      109.470    3.000
+ P        C8A    N1     C6      120.000    3.000
+ P        C8A    N1     C2      120.000    3.000
+ P        C6     N1     C2      120.000    3.000
+ P        N1     C6     O6      120.000    3.000
+ P        N1     C6     C5      120.000    3.000
+ P        O6     C6     C5      120.000    3.000
+ P        "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ P        var_1    OP3    P      "O5'"  "C5'"    175.019   20.000   1
+ P        var_2    P      "O5'"  "C5'"  "C4'"    179.958   20.000   1
+ P        var_3    "O5'"  "C5'"  "C4'"  "C3'"   -179.516   20.000   3
+ P        var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ P        var_5    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ P        var_6    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ P        var_7    "C3'"  "C2'"  "C1'"  N9       120.000   20.000   3
+ P        var_8    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ P        var_9    "C2'"  "C1'"  N9     C4        85.401   20.000   1
+ P        CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ P        CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ P        CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ P        CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ P        CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ P        CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ P        CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ P        CONST_8  C4     N3     C2     N2       180.000    0.000   0
+ P        var_10   N3     C2     N2     C6A     -150.000   20.000   1
+ P        var_11   C2     N2     C6A    C7A      -30.000   20.000   3
+ P        var_12   N2     C6A    C7A    C8A       60.000   20.000   3
+ P        var_13   C6A    C7A    C8A    N1       -60.000   20.000   3
+ P        var_14   C7A    C8A    N1     C6      -150.000   20.000   1
+ P        CONST_9  C8A    N1     C2     N3       180.000    0.000   0
+ P        CONST_10 C8A    N1     C6     O6         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ P        chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ P        chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ P        chir_03  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ P        plan-1    N9        0.020
+ P        plan-1    "C1'"     0.020
+ P        plan-1    C8        0.020
+ P        plan-1    C4        0.020
+ P        plan-1    N7        0.020
+ P        plan-1    H8        0.020
+ P        plan-1    C5        0.020
+ P        plan-1    C6        0.020
+ P        plan-1    N1        0.020
+ P        plan-1    C2        0.020
+ P        plan-1    N3        0.020
+ P        plan-1    O6        0.020
+ P        plan-1    C8A       0.020
+ P        plan-1    N2        0.020
+ P        plan-1    H2        0.020
+ P        plan-2    N2        0.020
+ P        plan-2    C2        0.020
+ P        plan-2    C6A       0.020
+ P        plan-2    H2        0.020
+# ------------------------------------------------------

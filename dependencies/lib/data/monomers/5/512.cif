@@ -1,0 +1,166 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+512     512     "4-BROMO-3-(CARBOXYMETHOXY)THIOPHENE-2-CARBOXYLICACID"     NON-POLYMER     18     14     .     
+#
+data_comp_512
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+512     C1      C       CR15    0       45.651      13.485      0.534       
+512     C2      C       CR5     0       46.291      13.754      1.716       
+512     S3      S       S2      0       44.192      14.365      0.383       
+512     C4      C       CR5     0       44.539      15.243      1.819       
+512     C5      C       CR5     0       45.696      14.812      2.436       
+512     C6      C       C       0       43.632      16.343      2.271       
+512     O7      O       O       0       42.739      16.786      1.561       
+512     O8      O       O2      0       46.137      15.370      3.610       
+512     C9      C       CH2     0       47.458      15.905      3.697       
+512     C10     C       C       0       47.503      17.118      4.613       
+512     O13     O       O       0       48.455      17.196      5.417       
+512     O14     O       OH1     0       43.857      16.780      3.492       
+512     O15     O       OC      -1      46.587      17.957      4.494       
+512     BR19    BR      BR      0       47.801      12.775      2.249       
+512     H1      H       H       0       45.949      12.895      -0.128      
+512     H91     H       H       0       47.779      16.167      2.812       
+512     H92     H       H       0       48.063      15.222      4.043       
+512     HO14    H       H       0       43.513      16.227      4.073       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+512       C1        C2        DOUBLE    n         1.363     0.020     1.363     0.020     
+512       C1        S3        SINGLE    n         1.711     0.010     1.711     0.010     
+512       C2        C5        SINGLE    n         1.394     0.020     1.394     0.020     
+512       C2        BR19      SINGLE    n         1.875     0.015     1.875     0.015     
+512       S3        C4        SINGLE    n         1.721     0.015     1.721     0.015     
+512       C4        C5        DOUBLE    n         1.374     0.014     1.374     0.014     
+512       C4        C6        SINGLE    n         1.475     0.020     1.475     0.020     
+512       C5        O8        SINGLE    n         1.358     0.020     1.358     0.020     
+512       C6        O7        DOUBLE    n         1.221     0.017     1.221     0.017     
+512       C6        O14       SINGLE    n         1.314     0.016     1.314     0.016     
+512       O8        C9        SINGLE    n         1.423     0.011     1.423     0.011     
+512       C9        C10       SINGLE    n         1.520     0.010     1.520     0.010     
+512       C10       O13       DOUBLE    n         1.247     0.019     1.247     0.019     
+512       C10       O15       SINGLE    n         1.247     0.019     1.247     0.019     
+512       C1        H1        SINGLE    n         1.082     0.013     0.936     0.020     
+512       C9        H91       SINGLE    n         1.089     0.010     0.976     0.012     
+512       C9        H92       SINGLE    n         1.089     0.010     0.976     0.012     
+512       O14       HO14      SINGLE    n         0.970     0.012     0.873     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+512          C2          C1          S3     110.275    2.35
+512          C2          C1          H1     126.341    1.58
+512          S3          C1          H1     123.384    2.28
+512          C1          C2          C5     111.920    1.50
+512          C1          C2        BR19     122.299    1.50
+512          C5          C2        BR19     125.781    2.93
+512          C1          S3          C4      91.448    1.50
+512          S3          C4          C5     113.311    1.50
+512          S3          C4          C6     120.853    3.00
+512          C5          C4          C6     125.836    1.50
+512          C2          C5          C4     110.371    3.00
+512          C2          C5          O8     127.568    3.00
+512          C4          C5          O8     122.062    1.85
+512          C4          C6          O7     122.796    2.36
+512          C4          C6         O14     113.300    2.34
+512          O7          C6         O14     123.904    1.50
+512          C5          O8          C9     116.690    2.04
+512          O8          C9         C10     111.564    2.57
+512          O8          C9         H91     110.031    1.50
+512          O8          C9         H92     110.031    1.50
+512         C10          C9         H91     109.314    1.50
+512         C10          C9         H92     109.314    1.50
+512         H91          C9         H92     108.122    1.50
+512          C9         C10         O13     117.215    2.49
+512          C9         C10         O15     117.215    2.49
+512         O13         C10         O15     125.569    1.50
+512          C6         O14        HO14     109.884    2.65
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+512             sp2_sp2_2          S3          C1          C2        BR19     180.000   10.00     2
+512             sp2_sp2_8        BR19          C2          C5          O8       0.000   10.00     2
+512            sp2_sp2_12          C6          C4          C5          O8       0.000   10.00     2
+512            sp2_sp2_16          S3          C4          C6          O7     180.000   10.00     2
+512            sp2_sp2_17          C2          C5          O8          C9     180.000   10.00     2
+512             sp3_sp3_1         C10          C9          O8          C5     180.000   10.00     3
+512             sp2_sp3_8         O13         C10          C9          O8     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+512    plan-1          C1   0.020
+512    plan-1          C2   0.020
+512    plan-1          H1   0.020
+512    plan-1          S3   0.020
+512    plan-2        BR19   0.020
+512    plan-2          C1   0.020
+512    plan-2          C2   0.020
+512    plan-2          C5   0.020
+512    plan-3          C4   0.020
+512    plan-3          C5   0.020
+512    plan-3          C6   0.020
+512    plan-3          S3   0.020
+512    plan-4          C2   0.020
+512    plan-4          C4   0.020
+512    plan-4          C5   0.020
+512    plan-4          O8   0.020
+512    plan-5          C4   0.020
+512    plan-5          C6   0.020
+512    plan-5         O14   0.020
+512    plan-5          O7   0.020
+512    plan-6         C10   0.020
+512    plan-6          C9   0.020
+512    plan-6         O13   0.020
+512    plan-6         O15   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+512 SMILES           ACDLabs              10.04 "Brc1c(OCC(=O)O)c(sc1)C(=O)O"
+512 SMILES_CANONICAL CACTVS               3.341 "OC(=O)COc1c(Br)csc1C(O)=O"
+512 SMILES           CACTVS               3.341 "OC(=O)COc1c(Br)csc1C(O)=O"
+512 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(c(c(s1)C(=O)O)OCC(=O)O)Br"
+512 SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(c(c(s1)C(=O)O)OCC(=O)O)Br"
+512 InChI            InChI                1.03  "InChI=1S/C7H5BrO5S/c8-3-2-14-6(7(11)12)5(3)13-1-4(9)10/h2H,1H2,(H,9,10)(H,11,12)"
+512 InChIKey         InChI                1.03  VDPVVSMGWNMCBP-UHFFFAOYSA-N
+512 ?                acedrg               190         "dictionary generator"                  
+512 ?                acedrg_database      11          "data source"                           
+512 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+512 ?                refmac5              5.8.0158    "optimization tool"                     

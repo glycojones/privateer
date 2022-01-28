@@ -1,0 +1,399 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GOM      GOM 'GLUTAMOL-AMP                        ' non-polymer        53  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GOM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GOM           OP2    O    OP       -0.500      0.000    0.000    0.000
+ GOM           P      P    P         0.000     -1.425    0.411    0.007
+ GOM           OP1    O    OP       -0.500     -1.827    0.823   -1.360
+ GOM           OP3    O    O2        0.000     -1.622    1.645    1.021
+ GOM           C      C    CH2       0.000     -0.886    2.744    0.482
+ GOM           HC1    H    H         0.000     -1.273    2.990   -0.509
+ GOM           HC2    H    H         0.000      0.169    2.471    0.402
+ GOM           CA     C    CH1       0.000     -1.032    3.957    1.403
+ GOM           HA     H    H         0.000     -2.098    4.176    1.553
+ GOM           N      N    NT3       1.000     -0.405    3.667    2.699
+ GOM           H      H    H         0.000      0.595    3.461    2.554
+ GOM           HN3    H    H         0.000     -0.506    4.487    3.316
+ GOM           HN2    H    H         0.000     -0.870    2.851    3.126
+ GOM           CB     C    CH2       0.000     -0.347    5.168    0.765
+ GOM           HB1    H    H         0.000     -0.752    5.328   -0.237
+ GOM           HB2    H    H         0.000      0.727    4.984    0.697
+ GOM           CG     C    CH2       0.000     -0.601    6.408    1.624
+ GOM           HG1    H    H         0.000     -0.197    6.245    2.626
+ GOM           HG2    H    H         0.000     -1.675    6.591    1.692
+ GOM           CD     C    C         0.000      0.075    7.600    0.996
+ GOM           OE2    O    OC       -0.500     -0.008    8.724    1.540
+ GOM           OE1    O    OC       -0.500      0.716    7.466   -0.070
+ GOM           "O5'"  O    O2        0.000     -2.337   -0.828    0.484
+ GOM           "C5'"  C    CH2       0.000     -2.210   -1.843   -0.513
+ GOM           "H5'"  H    H         0.000     -1.163   -2.142   -0.596
+ GOM           "H5''" H    H         0.000     -2.554   -1.455   -1.474
+ GOM           "C4'"  C    CH1       0.000     -3.057   -3.055   -0.119
+ GOM           "H4'"  H    H         0.000     -2.771   -3.412    0.881
+ GOM           "C3'"  C    CH1       0.000     -2.900   -4.185   -1.158
+ GOM           "H3'"  H    H         0.000     -2.596   -3.774   -2.131
+ GOM           "O3'"  O    OH1       0.000     -1.951   -5.154   -0.706
+ GOM           "HO3'" H    H         0.000     -1.864   -5.853   -1.368
+ GOM           "C2'"  C    CH1       0.000     -4.311   -4.812   -1.251
+ GOM           "H2'"  H    H         0.000     -4.709   -4.712   -2.270
+ GOM           "O2'"  O    OH1       0.000     -4.276   -6.186   -0.860
+ GOM           "HO2'" H    H         0.000     -3.696   -6.676   -1.458
+ GOM           "C1'"  C    CH1       0.000     -5.154   -3.981   -0.258
+ GOM           "H1'"  H    H         0.000     -5.193   -4.480    0.721
+ GOM           "O4'"  O    O2        0.000     -4.462   -2.717   -0.149
+ GOM           N9     N    NR5       0.000     -6.506   -3.778   -0.780
+ GOM           C8     C    CR15      0.000     -6.938   -2.709   -1.508
+ GOM           H8     H    H         0.000     -6.324   -1.863   -1.794
+ GOM           N7     N    NRD5      0.000     -8.196   -2.853   -1.809
+ GOM           C5     C    CR56      0.000     -8.649   -4.025   -1.300
+ GOM           C4     C    CR56      0.000     -7.572   -4.629   -0.629
+ GOM           C6     C    CR6       0.000     -9.887   -4.688   -1.298
+ GOM           N6     N    NH2       0.000    -10.985   -4.140   -1.937
+ GOM           HN62   H    H         0.000    -10.912   -3.246   -2.413
+ GOM           HN61   H    H         0.000    -11.877   -4.625   -1.937
+ GOM           N1     N    NRD6      0.000     -9.978   -5.859   -0.674
+ GOM           C2     C    CR16      0.000     -8.935   -6.389   -0.061
+ GOM           H2     H    H         0.000     -9.054   -7.344    0.436
+ GOM           N3     N    NRD6      0.000     -7.758   -5.802   -0.033
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GOM      OP2    n/a    P      START
+ GOM      P      OP2    "O5'"  .
+ GOM      OP1    P      .      .
+ GOM      OP3    P      C      .
+ GOM      C      OP3    CA     .
+ GOM      HC1    C      .      .
+ GOM      HC2    C      .      .
+ GOM      CA     C      CB     .
+ GOM      HA     CA     .      .
+ GOM      N      CA     HN2    .
+ GOM      H      N      .      .
+ GOM      HN3    N      .      .
+ GOM      HN2    N      .      .
+ GOM      CB     CA     CG     .
+ GOM      HB1    CB     .      .
+ GOM      HB2    CB     .      .
+ GOM      CG     CB     CD     .
+ GOM      HG1    CG     .      .
+ GOM      HG2    CG     .      .
+ GOM      CD     CG     OE1    .
+ GOM      OE2    CD     .      .
+ GOM      OE1    CD     .      .
+ GOM      "O5'"  P      "C5'"  .
+ GOM      "C5'"  "O5'"  "C4'"  .
+ GOM      "H5'"  "C5'"  .      .
+ GOM      "H5''" "C5'"  .      .
+ GOM      "C4'"  "C5'"  "C3'"  .
+ GOM      "H4'"  "C4'"  .      .
+ GOM      "C3'"  "C4'"  "C2'"  .
+ GOM      "H3'"  "C3'"  .      .
+ GOM      "O3'"  "C3'"  "HO3'" .
+ GOM      "HO3'" "O3'"  .      .
+ GOM      "C2'"  "C3'"  "C1'"  .
+ GOM      "H2'"  "C2'"  .      .
+ GOM      "O2'"  "C2'"  "HO2'" .
+ GOM      "HO2'" "O2'"  .      .
+ GOM      "C1'"  "C2'"  N9     .
+ GOM      "H1'"  "C1'"  .      .
+ GOM      "O4'"  "C1'"  .      .
+ GOM      N9     "C1'"  C8     .
+ GOM      C8     N9     N7     .
+ GOM      H8     C8     .      .
+ GOM      N7     C8     C5     .
+ GOM      C5     N7     C6     .
+ GOM      C4     C5     .      .
+ GOM      C6     C5     N1     .
+ GOM      N6     C6     HN61   .
+ GOM      HN62   N6     .      .
+ GOM      HN61   N6     .      .
+ GOM      N1     C6     C2     .
+ GOM      C2     N1     N3     .
+ GOM      H2     C2     .      .
+ GOM      N3     C2     .      END
+ GOM      "C4'"  "O4'"  .    ADD
+ GOM      N9     C4     .    ADD
+ GOM      C4     N3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GOM       N         CA        single    1.488     0.020     1.488     0.020     
+GOM       HN2       N         single    1.036     0.016     0.914     0.007     
+GOM       HN3       N         single    1.036     0.016     0.914     0.007     
+GOM       H         N         single    1.036     0.016     0.914     0.007     
+GOM       CA        C         single    1.524     0.020     1.524     0.020     
+GOM       C         OP3       single    1.426     0.020     1.426     0.020     
+GOM       HC1       C         single    1.089     0.010     0.989     0.005     
+GOM       HC2       C         single    1.089     0.010     0.989     0.005     
+GOM       CB        CA        single    1.524     0.020     1.524     0.020     
+GOM       HA        CA        single    1.089     0.010     0.989     0.005     
+GOM       CG        CB        single    1.524     0.020     1.524     0.020     
+GOM       HB1       CB        single    1.089     0.010     0.989     0.005     
+GOM       HB2       CB        single    1.089     0.010     0.989     0.005     
+GOM       CD        CG        single    1.510     0.020     1.510     0.020     
+GOM       HG1       CG        single    1.089     0.010     0.989     0.005     
+GOM       HG2       CG        single    1.089     0.010     0.989     0.005     
+GOM       OE1       CD        deloc     1.250     0.020     1.250     0.020     
+GOM       OE2       CD        deloc     1.250     0.020     1.250     0.020     
+GOM       OP1       P         deloc     1.510     0.020     1.510     0.020     
+GOM       P         OP2       deloc     1.510     0.020     1.510     0.020     
+GOM       OP3       P         single    1.610     0.020     1.610     0.020     
+GOM       "O5'"     P         single    1.610     0.020     1.610     0.020     
+GOM       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+GOM       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+GOM       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+GOM       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+GOM       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+GOM       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+GOM       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+GOM       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+GOM       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+GOM       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+GOM       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+GOM       N9        C4        single    1.337     0.020     1.337     0.020     
+GOM       C8        N9        single    1.337     0.020     1.337     0.020     
+GOM       C4        N3        double    1.355     0.020     1.355     0.020     
+GOM       C4        C5        single    1.490     0.020     1.490     0.020     
+GOM       N3        C2        single    1.337     0.020     1.337     0.020     
+GOM       C2        N1        double    1.337     0.020     1.337     0.020     
+GOM       H2        C2        single    1.082     0.013     0.975     0.010     
+GOM       N1        C6        single    1.350     0.020     1.350     0.020     
+GOM       N6        C6        single    1.355     0.020     1.355     0.020     
+GOM       C6        C5        double    1.490     0.020     1.490     0.020     
+GOM       HN61      N6        single    1.016     0.010     0.899     0.007     
+GOM       HN62      N6        single    1.016     0.010     0.899     0.007     
+GOM       C5        N7        single    1.350     0.020     1.350     0.020     
+GOM       N7        C8        double    1.350     0.020     1.350     0.020     
+GOM       H8        C8        single    1.082     0.013     0.975     0.010     
+GOM       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+GOM       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+GOM       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+GOM       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+GOM       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+GOM       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+GOM       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GOM      OP2    P      OP1     119.900    3.000
+ GOM      OP2    P      OP3     108.200    3.000
+ GOM      OP2    P      "O5'"   108.200    3.000
+ GOM      OP1    P      OP3     108.200    3.000
+ GOM      OP1    P      "O5'"   108.200    3.000
+ GOM      OP3    P      "O5'"   102.600    3.000
+ GOM      P      OP3    C       120.500    3.000
+ GOM      OP3    C      HC1     109.470    3.000
+ GOM      OP3    C      HC2     109.470    3.000
+ GOM      OP3    C      CA      109.470    3.000
+ GOM      HC1    C      HC2     107.900    3.000
+ GOM      HC1    C      CA      109.470    3.000
+ GOM      HC2    C      CA      109.470    3.000
+ GOM      C      CA     HA      108.340    3.000
+ GOM      C      CA     N       110.000    3.000
+ GOM      C      CA     CB      109.470    3.000
+ GOM      HA     CA     N       108.550    3.000
+ GOM      HA     CA     CB      108.340    3.000
+ GOM      N      CA     CB      110.000    3.000
+ GOM      CA     N      H       109.470    3.000
+ GOM      CA     N      HN3     109.470    3.000
+ GOM      CA     N      HN2     109.470    3.000
+ GOM      H      N      HN3     109.470    3.000
+ GOM      H      N      HN2     109.470    3.000
+ GOM      HN3    N      HN2     109.470    3.000
+ GOM      CA     CB     HB1     109.470    3.000
+ GOM      CA     CB     HB2     109.470    3.000
+ GOM      CA     CB     CG      111.000    3.000
+ GOM      HB1    CB     HB2     107.900    3.000
+ GOM      HB1    CB     CG      109.470    3.000
+ GOM      HB2    CB     CG      109.470    3.000
+ GOM      CB     CG     HG1     109.470    3.000
+ GOM      CB     CG     HG2     109.470    3.000
+ GOM      CB     CG     CD      109.470    3.000
+ GOM      HG1    CG     HG2     107.900    3.000
+ GOM      HG1    CG     CD      109.470    3.000
+ GOM      HG2    CG     CD      109.470    3.000
+ GOM      CG     CD     OE2     118.500    3.000
+ GOM      CG     CD     OE1     118.500    3.000
+ GOM      OE2    CD     OE1     123.000    3.000
+ GOM      P      "O5'"  "C5'"   120.500    3.000
+ GOM      "O5'"  "C5'"  "H5'"   109.470    3.000
+ GOM      "O5'"  "C5'"  "H5''"  109.470    3.000
+ GOM      "O5'"  "C5'"  "C4'"   109.470    3.000
+ GOM      "H5'"  "C5'"  "H5''"  107.900    3.000
+ GOM      "H5'"  "C5'"  "C4'"   109.470    3.000
+ GOM      "H5''" "C5'"  "C4'"   109.470    3.000
+ GOM      "C5'"  "C4'"  "H4'"   108.340    3.000
+ GOM      "C5'"  "C4'"  "C3'"   111.000    3.000
+ GOM      "C5'"  "C4'"  "O4'"   109.470    3.000
+ GOM      "H4'"  "C4'"  "C3'"   108.340    3.000
+ GOM      "H4'"  "C4'"  "O4'"   109.470    3.000
+ GOM      "C3'"  "C4'"  "O4'"   109.470    3.000
+ GOM      "C4'"  "C3'"  "H3'"   108.340    3.000
+ GOM      "C4'"  "C3'"  "O3'"   109.470    3.000
+ GOM      "C4'"  "C3'"  "C2'"   111.000    3.000
+ GOM      "H3'"  "C3'"  "O3'"   109.470    3.000
+ GOM      "H3'"  "C3'"  "C2'"   108.340    3.000
+ GOM      "O3'"  "C3'"  "C2'"   109.470    3.000
+ GOM      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ GOM      "C3'"  "C2'"  "H2'"   108.340    3.000
+ GOM      "C3'"  "C2'"  "O2'"   109.470    3.000
+ GOM      "C3'"  "C2'"  "C1'"   111.000    3.000
+ GOM      "H2'"  "C2'"  "O2'"   109.470    3.000
+ GOM      "H2'"  "C2'"  "C1'"   108.340    3.000
+ GOM      "O2'"  "C2'"  "C1'"   109.470    3.000
+ GOM      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ GOM      "C2'"  "C1'"  "H1'"   108.340    3.000
+ GOM      "C2'"  "C1'"  "O4'"   109.470    3.000
+ GOM      "C2'"  "C1'"  N9      109.470    3.000
+ GOM      "H1'"  "C1'"  "O4'"   109.470    3.000
+ GOM      "H1'"  "C1'"  N9      109.470    3.000
+ GOM      "O4'"  "C1'"  N9      109.470    3.000
+ GOM      "C1'"  "O4'"  "C4'"   111.800    3.000
+ GOM      "C1'"  N9     C8      126.000    3.000
+ GOM      "C1'"  N9     C4      126.000    3.000
+ GOM      C8     N9     C4      108.000    3.000
+ GOM      N9     C8     H8      126.000    3.000
+ GOM      N9     C8     N7      108.000    3.000
+ GOM      H8     C8     N7      126.000    3.000
+ GOM      C8     N7     C5      108.000    3.000
+ GOM      N7     C5     C4      108.000    3.000
+ GOM      N7     C5     C6      132.000    3.000
+ GOM      C4     C5     C6      120.000    3.000
+ GOM      C5     C4     N9      108.000    3.000
+ GOM      C5     C4     N3      120.000    3.000
+ GOM      N9     C4     N3      132.000    3.000
+ GOM      C5     C6     N6      120.000    3.000
+ GOM      C5     C6     N1      120.000    3.000
+ GOM      N6     C6     N1      120.000    3.000
+ GOM      C6     N6     HN62    120.000    3.000
+ GOM      C6     N6     HN61    120.000    3.000
+ GOM      HN62   N6     HN61    120.000    3.000
+ GOM      C6     N1     C2      120.000    3.000
+ GOM      N1     C2     H2      120.000    3.000
+ GOM      N1     C2     N3      120.000    3.000
+ GOM      H2     C2     N3      120.000    3.000
+ GOM      C2     N3     C4      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GOM      var_1    OP2    P      OP3    C         65.089   20.000   1
+ GOM      var_2    P      OP3    C      CA       179.993   20.000   1
+ GOM      var_3    OP3    C      CA     CB      -175.037   20.000   3
+ GOM      var_4    C      CA     N      HN2      -60.037   20.000   1
+ GOM      var_5    C      CA     CB     CG       174.970   20.000   3
+ GOM      var_6    CA     CB     CG     CD       179.970   20.000   3
+ GOM      var_7    CB     CG     CD     OE1        0.040   20.000   3
+ GOM      var_8    OP2    P      "O5'"  "C5'"    -64.974   20.000   1
+ GOM      var_9    P      "O5'"  "C5'"  "C4'"   -179.988   20.000   1
+ GOM      var_10   "O5'"  "C5'"  "C4'"  "C3'"   -178.140   20.000   3
+ GOM      var_11   "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ GOM      var_12   "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ GOM      var_13   "C4'"  "C3'"  "O3'"  "HO3'"  -179.950   20.000   1
+ GOM      var_14   "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ GOM      var_15   "C3'"  "C2'"  "O2'"  "HO2'"   -61.485   20.000   1
+ GOM      var_16   "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ GOM      var_17   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ GOM      var_18   "C2'"  "C1'"  N9     C8       -93.423   20.000   1
+ GOM      CONST_1  "C1'"  N9     C4     C5       180.000    0.000   0
+ GOM      CONST_2  "C1'"  N9     C8     N7       180.000    0.000   0
+ GOM      CONST_3  N9     C8     N7     C5         0.000    0.000   0
+ GOM      CONST_4  C8     N7     C5     C6       180.000    0.000   0
+ GOM      CONST_5  N7     C5     C4     N9         0.000    0.000   0
+ GOM      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ GOM      CONST_7  N7     C5     C6     N1       180.000    0.000   0
+ GOM      CONST_8  C5     C6     N6     HN61     179.689    0.000   0
+ GOM      CONST_9  C5     C6     N1     C2         0.000    0.000   0
+ GOM      CONST_10 C6     N1     C2     N3         0.000    0.000   0
+ GOM      CONST_11 N1     C2     N3     C4         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GOM      chir_01  CA     C      CB     N         positiv
+ GOM      chir_02  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ GOM      chir_03  "C1'"  "O4'"  N9     "C2'"     negativ
+ GOM      chir_04  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ GOM      chir_05  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GOM      plan-1    CD        0.020
+ GOM      plan-1    CG        0.020
+ GOM      plan-1    OE1       0.020
+ GOM      plan-1    OE2       0.020
+ GOM      plan-2    N9        0.020
+ GOM      plan-2    "C1'"     0.020
+ GOM      plan-2    C4        0.020
+ GOM      plan-2    C8        0.020
+ GOM      plan-2    N7        0.020
+ GOM      plan-2    N3        0.020
+ GOM      plan-2    C5        0.020
+ GOM      plan-2    C2        0.020
+ GOM      plan-2    N1        0.020
+ GOM      plan-2    C6        0.020
+ GOM      plan-2    H2        0.020
+ GOM      plan-2    N6        0.020
+ GOM      plan-2    H8        0.020
+ GOM      plan-2    HN62      0.020
+ GOM      plan-2    HN61      0.020
+ GOM      plan-3    N6        0.020
+ GOM      plan-3    C6        0.020
+ GOM      plan-3    HN61      0.020
+ GOM      plan-3    HN62      0.020
+# ------------------------------------------------------

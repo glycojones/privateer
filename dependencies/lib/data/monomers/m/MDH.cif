@@ -1,0 +1,163 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MDH      MDH 'N-METHYLDEHYDROBUTYRINE             ' non-polymer        16   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MDH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MDH           OXT    O    OC       -0.500      0.000    0.000    0.000
+ MDH           C      C    C         0.000     -0.946   -0.818   -0.024
+ MDH           O      O    OC       -0.500     -0.712   -2.047   -0.034
+ MDH           CA     C    C         0.000     -2.340   -0.333   -0.041
+ MDH           CB     C    C1        0.000     -2.590    0.978   -0.031
+ MDH           HB     H    H         0.000     -1.777    1.682   -0.094
+ MDH           CG     C    CH3       0.000     -4.011    1.473    0.068
+ MDH           HG3    H    H         0.000     -4.011    2.529    0.149
+ MDH           HG2    H    H         0.000     -4.545    1.186   -0.799
+ MDH           HG1    H    H         0.000     -4.472    1.053    0.923
+ MDH           N      N    NH1       0.000     -3.398   -1.248   -0.068
+ MDH           H      H    H         0.000     -4.348   -0.918   -0.163
+ MDH           CM     C    CH3       0.000     -3.128   -2.684    0.041
+ MDH           HM3    H    H         0.000     -4.044   -3.217    0.088
+ MDH           HM2    H    H         0.000     -2.577   -3.009   -0.805
+ MDH           HM1    H    H         0.000     -2.566   -2.876    0.920
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MDH      OXT    n/a    C      START
+ MDH      C      OXT    CA     .
+ MDH      O      C      .      .
+ MDH      CA     C      N      .
+ MDH      CB     CA     CG     .
+ MDH      HB     CB     .      .
+ MDH      CG     CB     HG1    .
+ MDH      HG3    CG     .      .
+ MDH      HG2    CG     .      .
+ MDH      HG1    CG     .      .
+ MDH      N      CA     CM     .
+ MDH      H      N      .      .
+ MDH      CM     N      HM1    .
+ MDH      HM3    CM     .      .
+ MDH      HM2    CM     .      .
+ MDH      HM1    CM     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MDH       CM        N         single    1.450     0.020     1.450     0.020     
+MDH       N         CA        single    1.330     0.020     1.330     0.020     
+MDH       H         N         single    1.016     0.010     0.899     0.007     
+MDH       HM1       CM        single    1.089     0.010     0.989     0.005     
+MDH       HM2       CM        single    1.089     0.010     0.989     0.005     
+MDH       HM3       CM        single    1.089     0.010     0.989     0.005     
+MDH       CA        C         single    1.460     0.020     1.460     0.020     
+MDH       CB        CA        double    1.340     0.020     1.340     0.020     
+MDH       O         C         deloc     1.250     0.020     1.250     0.020     
+MDH       C         OXT       deloc     1.250     0.020     1.250     0.020     
+MDH       CG        CB        single    1.510     0.020     1.510     0.020     
+MDH       HB        CB        single    1.082     0.013     0.975     0.010     
+MDH       HG1       CG        single    1.089     0.010     0.989     0.005     
+MDH       HG2       CG        single    1.089     0.010     0.989     0.005     
+MDH       HG3       CG        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MDH      OXT    C      O       123.000    3.000
+ MDH      OXT    C      CA      120.000    3.000
+ MDH      O      C      CA      120.000    3.000
+ MDH      C      CA     CB      120.000    3.000
+ MDH      C      CA     N       120.000    3.000
+ MDH      CB     CA     N       120.000    3.000
+ MDH      CA     CB     HB      120.000    3.000
+ MDH      CA     CB     CG      120.500    3.000
+ MDH      HB     CB     CG      120.000    3.000
+ MDH      CB     CG     HG3     109.470    3.000
+ MDH      CB     CG     HG2     109.470    3.000
+ MDH      CB     CG     HG1     109.470    3.000
+ MDH      HG3    CG     HG2     109.470    3.000
+ MDH      HG3    CG     HG1     109.470    3.000
+ MDH      HG2    CG     HG1     109.470    3.000
+ MDH      CA     N      H       120.000    3.000
+ MDH      CA     N      CM      121.500    3.000
+ MDH      H      N      CM      118.500    3.000
+ MDH      N      CM     HM3     109.470    3.000
+ MDH      N      CM     HM2     109.470    3.000
+ MDH      N      CM     HM1     109.470    3.000
+ MDH      HM3    CM     HM2     109.470    3.000
+ MDH      HM3    CM     HM1     109.470    3.000
+ MDH      HM2    CM     HM1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MDH      var_1    OXT    C      CA     N        179.956   20.000   1
+ MDH      CONST_1  C      CA     CB     CG      -174.880    0.000   0
+ MDH      var_2    CA     CB     CG     HG1       54.968   20.000   1
+ MDH      CONST_2  C      CA     N      CM         0.000    0.000   0
+ MDH      var_3    CA     N      CM     HM1       55.061   20.000   1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MDH      plan-1    N         0.020
+ MDH      plan-1    CM        0.020
+ MDH      plan-1    CA        0.020
+ MDH      plan-1    H         0.020
+ MDH      plan-2    CA        0.020
+ MDH      plan-2    N         0.020
+ MDH      plan-2    C         0.020
+ MDH      plan-2    CB        0.020
+ MDH      plan-2    CG        0.020
+ MDH      plan-2    HB        0.020
+ MDH      plan-2    H         0.020
+ MDH      plan-3    C         0.020
+ MDH      plan-3    CA        0.020
+ MDH      plan-3    O         0.020
+ MDH      plan-3    OXT       0.020
+# ------------------------------------------------------

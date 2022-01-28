@@ -1,0 +1,510 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+8AG      8AG '.                                   ' non-polymer        66  41 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_8AG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 8AG           O44    O    O         0.000      0.000    0.000    0.000
+ 8AG           C30    C    C         0.000      0.376   -0.095   -1.149
+ 8AG           C45    C    CH3       0.000      1.722    0.449   -1.549
+ 8AG           H453   H    H         0.000      2.359    0.478   -0.702
+ 8AG           H452   H    H         0.000      2.151   -0.175   -2.290
+ 8AG           H451   H    H         0.000      1.608    1.428   -1.937
+ 8AG           N29    N    N         0.000     -0.412   -0.689   -2.068
+ 8AG           C8     C    CH1       0.000     -1.698   -1.265   -1.669
+ 8AG           H88    H    H         0.000     -2.474   -1.010   -2.404
+ 8AG           N7     N    NR15      0.000     -1.580   -2.723   -1.538
+ 8AG           H7     H    H         0.000     -1.318   -3.395   -2.287
+ 8AG           C5     C    CR56      0.000     -1.890   -3.036   -0.196
+ 8AG           C6     C    CR6       0.000     -1.939   -4.264    0.479
+ 8AG           O6     O    O         0.000     -1.686   -5.307   -0.106
+ 8AG           N1     N    NR16      0.000     -2.272   -4.274    1.787
+ 8AG           H1     H    H         0.000     -2.314   -5.175    2.306
+ 8AG           C2     C    CR6       0.000     -2.552   -3.107    2.427
+ 8AG           N2     N    NH2       0.000     -2.888   -3.137    3.757
+ 8AG           H22N   H    H         0.000     -2.926   -4.018    4.256
+ 8AG           H21N   H    H         0.000     -3.100   -2.277    4.250
+ 8AG           N3     N    NRD6      0.000     -2.508   -1.953    1.801
+ 8AG           C4     C    CR56      0.000     -2.184   -1.875    0.501
+ 8AG           N9     N    NR5       0.000     -2.080   -0.778   -0.338
+ 8AG           "C1'"  C    CH1       0.000     -2.316    0.619    0.035
+ 8AG           "H1'"  H    H         0.000     -2.067    1.279   -0.808
+ 8AG           "O4'"  O    O2        0.000     -1.516    0.961    1.179
+ 8AG           "C2'"  C    CH2       0.000     -3.792    0.812    0.435
+ 8AG           "H2'1" H    H         0.000     -4.347   -0.128    0.415
+ 8AG           "H2'2" H    H         0.000     -4.296    1.545   -0.199
+ 8AG           "C3'"  C    CH1       0.000     -3.725    1.343    1.888
+ 8AG           "H3'"  H    H         0.000     -3.868    0.527    2.610
+ 8AG           "O3'"  O    OH1       0.000     -4.685    2.381    2.096
+ 8AG           H3A    H    H         0.000     -5.576    2.010    2.045
+ 8AG           "C4'"  C    CH1       0.000     -2.281    1.901    1.963
+ 8AG           "H4'"  H    H         0.000     -2.230    2.906    1.521
+ 8AG           "C5'"  C    CH2       0.000     -1.787    1.923    3.411
+ 8AG           "H5'1" H    H         0.000     -1.788    0.907    3.811
+ 8AG           "H5'2" H    H         0.000     -2.449    2.550    4.011
+ 8AG           "O5'"  O    O2        0.000     -0.460    2.452    3.453
+ 8AG           P      P    P         0.000      0.375    2.621    4.820
+ 8AG           O3P    O    OP       -0.666      0.651    1.256    5.413
+ 8AG           O1P    O    OP       -0.666      1.685    3.319    4.528
+ 8AG           O2P    O    OP       -0.666     -0.429    3.444    5.803
+ 8AG           C32    C    CR6       0.000      0.000   -0.754   -3.403
+ 8AG           C33    C    CR16      0.000     -0.314    0.270   -4.248
+ 8AG           H33    H    H         0.000     -0.879    1.120   -3.887
+ 8AG           C34    C    CR66      0.000      0.102    0.212   -5.594
+ 8AG           C37    C    CR16      0.000     -0.196    1.244   -6.483
+ 8AG           H37    H    H         0.000     -0.752    2.110   -6.145
+ 8AG           C38    C    CR66      0.000      0.225    1.155   -7.807
+ 8AG           C40    C    CR16      0.000     -0.060    2.182   -8.734
+ 8AG           H40    H    H         0.000     -0.614    3.058   -8.423
+ 8AG           C41    C    CR16      0.000      0.366    2.063  -10.017
+ 8AG           H41    H    H         0.000      0.145    2.856  -10.721
+ 8AG           C42    C    CR16      0.000      1.082    0.947  -10.452
+ 8AG           H42    H    H         0.000      1.401    0.895  -11.485
+ 8AG           C43    C    CR16      0.000      1.389   -0.076   -9.614
+ 8AG           H43    H    H         0.000      1.946   -0.931   -9.978
+ 8AG           C39    C    CR66      0.000      0.978   -0.018   -8.265
+ 8AG           C1     C    CR16      0.000      1.276   -1.050   -7.376
+ 8AG           HA     H    H         0.000      1.831   -1.917   -7.714
+ 8AG           C35    C    CR66      0.000      0.855   -0.960   -6.052
+ 8AG           C36    C    CR16      0.000      1.141   -1.989   -5.127
+ 8AG           H36    H    H         0.000      1.694   -2.866   -5.441
+ 8AG           C31    C    CR16      0.000      0.719   -1.873   -3.843
+ 8AG           H31    H    H         0.000      0.943   -2.666   -3.141
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 8AG      O44    n/a    C30    START
+ 8AG      C30    O44    N29    .
+ 8AG      C45    C30    H451   .
+ 8AG      H453   C45    .      .
+ 8AG      H452   C45    .      .
+ 8AG      H451   C45    .      .
+ 8AG      N29    C30    C32    .
+ 8AG      C8     N29    N9     .
+ 8AG      H88    C8     .      .
+ 8AG      N7     C8     C5     .
+ 8AG      H7     N7     .      .
+ 8AG      C5     N7     C4     .
+ 8AG      C6     C5     N1     .
+ 8AG      O6     C6     .      .
+ 8AG      N1     C6     C2     .
+ 8AG      H1     N1     .      .
+ 8AG      C2     N1     N3     .
+ 8AG      N2     C2     H21N   .
+ 8AG      H22N   N2     .      .
+ 8AG      H21N   N2     .      .
+ 8AG      N3     C2     .      .
+ 8AG      C4     C5     .      .
+ 8AG      N9     C8     "C1'"  .
+ 8AG      "C1'"  N9     "C2'"  .
+ 8AG      "H1'"  "C1'"  .      .
+ 8AG      "O4'"  "C1'"  .      .
+ 8AG      "C2'"  "C1'"  "C3'"  .
+ 8AG      "H2'1" "C2'"  .      .
+ 8AG      "H2'2" "C2'"  .      .
+ 8AG      "C3'"  "C2'"  "C4'"  .
+ 8AG      "H3'"  "C3'"  .      .
+ 8AG      "O3'"  "C3'"  H3A    .
+ 8AG      H3A    "O3'"  .      .
+ 8AG      "C4'"  "C3'"  "C5'"  .
+ 8AG      "H4'"  "C4'"  .      .
+ 8AG      "C5'"  "C4'"  "O5'"  .
+ 8AG      "H5'1" "C5'"  .      .
+ 8AG      "H5'2" "C5'"  .      .
+ 8AG      "O5'"  "C5'"  P      .
+ 8AG      P      "O5'"  O2P    .
+ 8AG      O3P    P      .      .
+ 8AG      O1P    P      .      .
+ 8AG      O2P    P      .      .
+ 8AG      C32    N29    C33    .
+ 8AG      C33    C32    C34    .
+ 8AG      H33    C33    .      .
+ 8AG      C34    C33    C37    .
+ 8AG      C37    C34    C38    .
+ 8AG      H37    C37    .      .
+ 8AG      C38    C37    C40    .
+ 8AG      C40    C38    C41    .
+ 8AG      H40    C40    .      .
+ 8AG      C41    C40    C42    .
+ 8AG      H41    C41    .      .
+ 8AG      C42    C41    C43    .
+ 8AG      H42    C42    .      .
+ 8AG      C43    C42    C39    .
+ 8AG      H43    C43    .      .
+ 8AG      C39    C43    C1     .
+ 8AG      C1     C39    C35    .
+ 8AG      HA     C1     .      .
+ 8AG      C35    C1     C36    .
+ 8AG      C36    C35    C31    .
+ 8AG      H36    C36    .      .
+ 8AG      C31    C36    H31    .
+ 8AG      H31    C31    .      END
+ 8AG      "C4'"  "O4'"  .    ADD
+ 8AG      N9     C4     .    ADD
+ 8AG      C4     N3     .    ADD
+ 8AG      C32    C31    .    ADD
+ 8AG      C35    C34    .    ADD
+ 8AG      C39    C38    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+8AG       O2P       P         deloc     1.510     0.020     1.510     0.020     
+8AG       O1P       P         deloc     1.510     0.020     1.510     0.020     
+8AG       P         "O5'"     single    1.610     0.020     1.610     0.020     
+8AG       O3P       P         deloc     1.510     0.020     1.510     0.020     
+8AG       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+8AG       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+8AG       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+8AG       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+8AG       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+8AG       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+8AG       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+8AG       H3A       "O3'"     single    0.970     0.012     0.839     0.014     
+8AG       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+8AG       "C1'"     N9        single    1.485     0.020     1.485     0.020     
+8AG       N9        C4        single    1.337     0.020     1.337     0.020     
+8AG       N9        C8        single    1.485     0.020     1.485     0.020     
+8AG       C4        N3        single    1.355     0.020     1.355     0.020     
+8AG       C4        C5        double    1.490     0.020     1.490     0.020     
+8AG       N3        C2        double    1.350     0.020     1.350     0.020     
+8AG       N2        C2        single    1.355     0.020     1.355     0.020     
+8AG       C2        N1        single    1.337     0.020     1.337     0.020     
+8AG       N1        C6        single    1.337     0.020     1.337     0.020     
+8AG       O6        C6        double    1.250     0.020     1.250     0.020     
+8AG       C6        C5        single    1.490     0.020     1.490     0.020     
+8AG       C5        N7        single    1.340     0.020     1.340     0.020     
+8AG       N7        C8        single    1.465     0.020     1.465     0.020     
+8AG       C8        N29       single    1.455     0.020     1.455     0.020     
+8AG       N29       C30       single    1.330     0.020     1.330     0.020     
+8AG       C32       N29       single    1.400     0.020     1.400     0.020     
+8AG       C45       C30       single    1.500     0.020     1.500     0.020     
+8AG       C30       O44       double    1.220     0.020     1.220     0.020     
+8AG       C32       C31       single    1.390     0.020     1.390     0.020     
+8AG       C33       C32       double    1.390     0.020     1.390     0.020     
+8AG       C31       C36       double    1.390     0.020     1.390     0.020     
+8AG       C36       C35       single    1.390     0.020     1.390     0.020     
+8AG       C35       C34       single    1.490     0.020     1.490     0.020     
+8AG       C35       C1        double    1.390     0.020     1.390     0.020     
+8AG       C34       C33       single    1.390     0.020     1.390     0.020     
+8AG       C37       C34       double    1.390     0.020     1.390     0.020     
+8AG       C1        C39       single    1.390     0.020     1.390     0.020     
+8AG       C39       C38       double    1.490     0.020     1.490     0.020     
+8AG       C39       C43       single    1.390     0.020     1.390     0.020     
+8AG       C38       C37       single    1.390     0.020     1.390     0.020     
+8AG       C40       C38       single    1.390     0.020     1.390     0.020     
+8AG       C41       C40       double    1.390     0.020     1.390     0.020     
+8AG       C43       C42       double    1.390     0.020     1.390     0.020     
+8AG       C42       C41       single    1.390     0.020     1.390     0.020     
+8AG       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+8AG       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+8AG       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+8AG       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+8AG       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+8AG       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+8AG       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+8AG       H21N      N2        single    1.016     0.010     0.899     0.007     
+8AG       H22N      N2        single    1.016     0.010     0.899     0.007     
+8AG       H1        N1        single    1.016     0.010     0.899     0.007     
+8AG       H7        N7        single    1.016     0.010     0.899     0.007     
+8AG       H451      C45       single    1.089     0.010     0.989     0.005     
+8AG       H452      C45       single    1.089     0.010     0.989     0.005     
+8AG       H453      C45       single    1.089     0.010     0.989     0.005     
+8AG       H31       C31       single    1.082     0.013     0.975     0.010     
+8AG       H33       C33       single    1.082     0.013     0.975     0.010     
+8AG       H36       C36       single    1.082     0.013     0.975     0.010     
+8AG       HA        C1        single    1.082     0.013     0.975     0.010     
+8AG       H37       C37       single    1.082     0.013     0.975     0.010     
+8AG       H43       C43       single    1.082     0.013     0.975     0.010     
+8AG       H40       C40       single    1.082     0.013     0.975     0.010     
+8AG       H42       C42       single    1.082     0.013     0.975     0.010     
+8AG       H41       C41       single    1.082     0.013     0.975     0.010     
+8AG       H88       C8        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 8AG      O44    C30    C45     123.000    3.000
+ 8AG      O44    C30    N29     123.000    3.000
+ 8AG      C45    C30    N29     116.500    3.000
+ 8AG      C30    C45    H453    109.470    3.000
+ 8AG      C30    C45    H452    109.470    3.000
+ 8AG      C30    C45    H451    109.470    3.000
+ 8AG      H453   C45    H452    109.470    3.000
+ 8AG      H453   C45    H451    109.470    3.000
+ 8AG      H452   C45    H451    109.470    3.000
+ 8AG      C30    N29    C8      121.000    3.000
+ 8AG      C30    N29    C32     120.000    3.000
+ 8AG      C8     N29    C32     120.000    3.000
+ 8AG      N29    C8     H88     109.470    3.000
+ 8AG      N29    C8     N7      109.500    3.000
+ 8AG      N29    C8     N9      109.500    3.000
+ 8AG      H88    C8     N7      109.500    3.000
+ 8AG      H88    C8     N9      109.470    3.000
+ 8AG      N7     C8     N9      109.500    3.000
+ 8AG      C8     N7     H7      108.000    3.000
+ 8AG      C8     N7     C5      108.000    3.000
+ 8AG      H7     N7     C5      126.000    3.000
+ 8AG      N7     C5     C6      132.000    3.000
+ 8AG      N7     C5     C4      108.000    3.000
+ 8AG      C6     C5     C4      120.000    3.000
+ 8AG      C5     C6     O6      120.000    3.000
+ 8AG      C5     C6     N1      120.000    3.000
+ 8AG      O6     C6     N1      120.000    3.000
+ 8AG      C6     N1     H1      120.000    3.000
+ 8AG      C6     N1     C2      120.000    3.000
+ 8AG      H1     N1     C2      120.000    3.000
+ 8AG      N1     C2     N2      120.000    3.000
+ 8AG      N1     C2     N3      120.000    3.000
+ 8AG      N2     C2     N3      120.000    3.000
+ 8AG      C2     N2     H22N    120.000    3.000
+ 8AG      C2     N2     H21N    120.000    3.000
+ 8AG      H22N   N2     H21N    120.000    3.000
+ 8AG      C2     N3     C4      120.000    3.000
+ 8AG      C5     C4     N9      108.000    3.000
+ 8AG      C5     C4     N3      120.000    3.000
+ 8AG      N9     C4     N3      132.000    3.000
+ 8AG      C8     N9     "C1'"   108.000    3.000
+ 8AG      C8     N9     C4      126.000    3.000
+ 8AG      "C1'"  N9     C4      126.000    3.000
+ 8AG      N9     "C1'"  "H1'"   109.470    3.000
+ 8AG      N9     "C1'"  "O4'"   109.470    3.000
+ 8AG      N9     "C1'"  "C2'"   109.470    3.000
+ 8AG      "H1'"  "C1'"  "O4'"   109.470    3.000
+ 8AG      "H1'"  "C1'"  "C2'"   108.340    3.000
+ 8AG      "O4'"  "C1'"  "C2'"   109.470    3.000
+ 8AG      "C1'"  "O4'"  "C4'"   111.800    3.000
+ 8AG      "C1'"  "C2'"  "H2'1"  109.470    3.000
+ 8AG      "C1'"  "C2'"  "H2'2"  109.470    3.000
+ 8AG      "C1'"  "C2'"  "C3'"   111.000    3.000
+ 8AG      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ 8AG      "H2'1" "C2'"  "C3'"   109.470    3.000
+ 8AG      "H2'2" "C2'"  "C3'"   109.470    3.000
+ 8AG      "C2'"  "C3'"  "H3'"   108.340    3.000
+ 8AG      "C2'"  "C3'"  "O3'"   109.470    3.000
+ 8AG      "C2'"  "C3'"  "C4'"   111.000    3.000
+ 8AG      "H3'"  "C3'"  "O3'"   109.470    3.000
+ 8AG      "H3'"  "C3'"  "C4'"   108.340    3.000
+ 8AG      "O3'"  "C3'"  "C4'"   109.470    3.000
+ 8AG      "C3'"  "O3'"  H3A     109.470    3.000
+ 8AG      "C3'"  "C4'"  "H4'"   108.340    3.000
+ 8AG      "C3'"  "C4'"  "C5'"   111.000    3.000
+ 8AG      "C3'"  "C4'"  "O4'"   109.470    3.000
+ 8AG      "H4'"  "C4'"  "C5'"   108.340    3.000
+ 8AG      "H4'"  "C4'"  "O4'"   109.470    3.000
+ 8AG      "C5'"  "C4'"  "O4'"   109.470    3.000
+ 8AG      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ 8AG      "C4'"  "C5'"  "H5'2"  109.470    3.000
+ 8AG      "C4'"  "C5'"  "O5'"   109.470    3.000
+ 8AG      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ 8AG      "H5'1" "C5'"  "O5'"   109.470    3.000
+ 8AG      "H5'2" "C5'"  "O5'"   109.470    3.000
+ 8AG      "C5'"  "O5'"  P       120.500    3.000
+ 8AG      "O5'"  P      O3P     108.200    3.000
+ 8AG      "O5'"  P      O1P     108.200    3.000
+ 8AG      "O5'"  P      O2P     108.200    3.000
+ 8AG      O3P    P      O1P     119.900    3.000
+ 8AG      O3P    P      O2P     119.900    3.000
+ 8AG      O1P    P      O2P     119.900    3.000
+ 8AG      N29    C32    C33     120.000    3.000
+ 8AG      N29    C32    C31     120.000    3.000
+ 8AG      C33    C32    C31     120.000    3.000
+ 8AG      C32    C33    H33     120.000    3.000
+ 8AG      C32    C33    C34     120.000    3.000
+ 8AG      H33    C33    C34     120.000    3.000
+ 8AG      C33    C34    C37     120.000    3.000
+ 8AG      C33    C34    C35     120.000    3.000
+ 8AG      C37    C34    C35     120.000    3.000
+ 8AG      C34    C37    H37     120.000    3.000
+ 8AG      C34    C37    C38     120.000    3.000
+ 8AG      H37    C37    C38     120.000    3.000
+ 8AG      C37    C38    C40     120.000    3.000
+ 8AG      C37    C38    C39     120.000    3.000
+ 8AG      C40    C38    C39     120.000    3.000
+ 8AG      C38    C40    H40     120.000    3.000
+ 8AG      C38    C40    C41     120.000    3.000
+ 8AG      H40    C40    C41     120.000    3.000
+ 8AG      C40    C41    H41     120.000    3.000
+ 8AG      C40    C41    C42     120.000    3.000
+ 8AG      H41    C41    C42     120.000    3.000
+ 8AG      C41    C42    H42     120.000    3.000
+ 8AG      C41    C42    C43     120.000    3.000
+ 8AG      H42    C42    C43     120.000    3.000
+ 8AG      C42    C43    H43     120.000    3.000
+ 8AG      C42    C43    C39     120.000    3.000
+ 8AG      H43    C43    C39     120.000    3.000
+ 8AG      C43    C39    C1      120.000    3.000
+ 8AG      C43    C39    C38     120.000    3.000
+ 8AG      C1     C39    C38     120.000    3.000
+ 8AG      C39    C1     HA      120.000    3.000
+ 8AG      C39    C1     C35     120.000    3.000
+ 8AG      HA     C1     C35     120.000    3.000
+ 8AG      C1     C35    C36     120.000    3.000
+ 8AG      C1     C35    C34     120.000    3.000
+ 8AG      C36    C35    C34     120.000    3.000
+ 8AG      C35    C36    H36     120.000    3.000
+ 8AG      C35    C36    C31     120.000    3.000
+ 8AG      H36    C36    C31     120.000    3.000
+ 8AG      C36    C31    H31     120.000    3.000
+ 8AG      C36    C31    C32     120.000    3.000
+ 8AG      H31    C31    C32     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 8AG      var_1    O44    C30    C45    H451     -95.172   20.000   1
+ 8AG      CONST_1  O44    C30    N29    C32      180.000    0.000   0
+ 8AG      var_2    C30    N29    C8     N9        14.979   20.000   3
+ 8AG      CONST_2  N29    C8     N7     C5       120.000    0.000   0
+ 8AG      CONST_3  C8     N7     C5     C4         0.000    0.000   0
+ 8AG      CONST_4  N7     C5     C6     N1       180.000    0.000   0
+ 8AG      CONST_5  C5     C6     N1     C2         0.000    0.000   0
+ 8AG      CONST_6  C6     N1     C2     N3         0.000    0.000   0
+ 8AG      CONST_7  N1     C2     N2     H21N    -179.964    0.000   0
+ 8AG      CONST_8  N1     C2     N3     C4         0.000    0.000   0
+ 8AG      CONST_9  N7     C5     C4     N9         0.000    0.000   0
+ 8AG      CONST_10 C5     C4     N3     C2         0.000    0.000   0
+ 8AG      var_3    N29    C8     N9     "C1'"     60.000   20.000   1
+ 8AG      CONST_11 C8     N9     C4     C5         0.000    0.000   0
+ 8AG      var_4    C8     N9     "C1'"  "C2'"    115.429   20.000   1
+ 8AG      var_5    N9     "C1'"  "O4'"  "C4'"   -150.000   20.000   1
+ 8AG      var_6    N9     "C1'"  "C2'"  "C3'"    120.000   20.000   3
+ 8AG      var_7    "C1'"  "C2'"  "C3'"  "C4'"     30.000   20.000   3
+ 8AG      var_8    "C2'"  "C3'"  "O3'"  H3A       67.295   20.000   1
+ 8AG      var_9    "C2'"  "C3'"  "C4'"  "C5'"   -150.000   20.000   3
+ 8AG      var_10   "C3'"  "C4'"  "O4'"  "C1'"     30.000   20.000   1
+ 8AG      var_11   "C3'"  "C4'"  "C5'"  "O5'"   -179.494   20.000   3
+ 8AG      var_12   "C4'"  "C5'"  "O5'"  P       -179.990   20.000   1
+ 8AG      var_13   "C5'"  "O5'"  P      O2P      -54.941   20.000   1
+ 8AG      var_14   C30    N29    C32    C33      -88.664   20.000   1
+ 8AG      CONST_12 N29    C32    C31    C36      180.000    0.000   0
+ 8AG      CONST_13 N29    C32    C33    C34      180.000    0.000   0
+ 8AG      CONST_14 C32    C33    C34    C37      180.000    0.000   0
+ 8AG      CONST_15 C33    C34    C37    C38      180.000    0.000   0
+ 8AG      CONST_16 C34    C37    C38    C40      180.000    0.000   0
+ 8AG      CONST_17 C37    C38    C40    C41      180.000    0.000   0
+ 8AG      CONST_18 C38    C40    C41    C42        0.000    0.000   0
+ 8AG      CONST_19 C40    C41    C42    C43        0.000    0.000   0
+ 8AG      CONST_20 C41    C42    C43    C39        0.000    0.000   0
+ 8AG      CONST_21 C42    C43    C39    C1       180.000    0.000   0
+ 8AG      CONST_22 C43    C39    C38    C37      180.000    0.000   0
+ 8AG      CONST_23 C43    C39    C1     C35      180.000    0.000   0
+ 8AG      CONST_24 C39    C1     C35    C36      180.000    0.000   0
+ 8AG      CONST_25 C1     C35    C34    C33      180.000    0.000   0
+ 8AG      CONST_26 C1     C35    C36    C31      180.000    0.000   0
+ 8AG      CONST_27 C35    C36    C31    C32        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 8AG      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ 8AG      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ 8AG      chir_03  "C1'"  "O4'"  "C2'"  N9        positiv
+ 8AG      chir_04  C8     N9     N7     N29       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 8AG      plan-1    N9        0.020
+ 8AG      plan-1    "C1'"     0.020
+ 8AG      plan-1    C4        0.020
+ 8AG      plan-1    C8        0.020
+ 8AG      plan-1    N7        0.020
+ 8AG      plan-1    N3        0.020
+ 8AG      plan-1    C5        0.020
+ 8AG      plan-1    C2        0.020
+ 8AG      plan-1    N1        0.020
+ 8AG      plan-1    C6        0.020
+ 8AG      plan-1    N2        0.020
+ 8AG      plan-1    H1        0.020
+ 8AG      plan-1    O6        0.020
+ 8AG      plan-1    H7        0.020
+ 8AG      plan-1    H22N      0.020
+ 8AG      plan-1    H21N      0.020
+ 8AG      plan-2    N2        0.020
+ 8AG      plan-2    C2        0.020
+ 8AG      plan-2    H21N      0.020
+ 8AG      plan-2    H22N      0.020
+ 8AG      plan-3    N29       0.020
+ 8AG      plan-3    C8        0.020
+ 8AG      plan-3    C30       0.020
+ 8AG      plan-3    C32       0.020
+ 8AG      plan-4    C30       0.020
+ 8AG      plan-4    N29       0.020
+ 8AG      plan-4    C45       0.020
+ 8AG      plan-4    O44       0.020
+ 8AG      plan-5    C32       0.020
+ 8AG      plan-5    N29       0.020
+ 8AG      plan-5    C31       0.020
+ 8AG      plan-5    C33       0.020
+ 8AG      plan-5    C36       0.020
+ 8AG      plan-5    H31       0.020
+ 8AG      plan-5    C35       0.020
+ 8AG      plan-5    H36       0.020
+ 8AG      plan-5    C34       0.020
+ 8AG      plan-5    C1        0.020
+ 8AG      plan-5    C37       0.020
+ 8AG      plan-5    H33       0.020
+ 8AG      plan-5    C39       0.020
+ 8AG      plan-5    HA        0.020
+ 8AG      plan-5    C38       0.020
+ 8AG      plan-5    C43       0.020
+ 8AG      plan-5    C42       0.020
+ 8AG      plan-5    C40       0.020
+ 8AG      plan-5    C41       0.020
+ 8AG      plan-5    H37       0.020
+ 8AG      plan-5    H43       0.020
+ 8AG      plan-5    H42       0.020
+ 8AG      plan-5    H40       0.020
+ 8AG      plan-5    H41       0.020
+# ------------------------------------------------------

@@ -1,0 +1,319 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FOE     FOE     "2-(2-AMINO-3-OXO-PROPYLSULFANYL)-N-(4-FLUORO-PHENYL)-N-ISOPROPYL-ACETAMIDE"     peptide     40     21     .
+#
+data_comp_FOE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FOE     N       N       NT3     1       16.322      28.705      23.681
+FOE     CA      C       CH1     0       16.919      29.723      22.773
+FOE     C       C       C       0       16.327      31.104      23.082
+FOE     O       O       O       0       15.086      31.186      23.163
+FOE     CB      C       CH2     0       16.661      29.334      21.329
+FOE     SG      S       S2      0       17.605      30.281      20.113
+FOE     C1      C       CH2     0       16.779      29.829      18.559
+FOE     C2      C       C       0       17.009      30.839      17.454
+FOE     O3      O       O       0       17.916      30.657      16.649
+FOE     N4      N       N       0       16.213      31.959      17.399
+FOE     C5      C       CH3     0       15.028      33.506      15.786
+FOE     C6      C       CH1     0       16.346      32.880      16.212
+FOE     C7      C       CH3     0       17.399      33.944      16.465
+FOE     C8      C       CR16    0       14.843      33.600      20.475
+FOE     C9      C       CR16    0       15.710      33.226      19.457
+FOE     C10     C       CR6     0       15.307      32.341      18.457
+FOE     C11     C       CR16    0       14.003      31.845      18.503
+FOE     C12     C       CR16    0       13.131      32.215      19.518
+FOE     C13     C       CR6     0       13.575      33.084      20.479
+FOE     F14     F       F       0       12.722      33.449      21.475
+FOE     OXT     O       OC      -1      17.131      32.047      23.229
+FOE     H       H       H       0       16.712      27.895      23.534
+FOE     H2      H       H       0       15.427      28.640      23.525
+FOE     H3      H       H       0       16.459      28.947      24.549
+FOE     HA      H       H       0       17.890      29.750      22.937
+FOE     HB2     H       H       0       15.715      29.446      21.143
+FOE     HB3     H       H       0       16.873      28.394      21.221
+FOE     H11A    H       H       0       15.827      29.720      18.718
+FOE     H12A    H       H       0       17.129      28.967      18.269
+FOE     H51     H       H       0       15.111      33.851      14.880
+FOE     H52     H       H       0       14.802      34.238      16.387
+FOE     H53     H       H       0       14.322      32.837      15.810
+FOE     H6      H       H       0       16.657      32.345      15.445
+FOE     H71     H       H       0       17.499      34.500      15.672
+FOE     H72     H       H       0       18.250      33.520      16.670
+FOE     H73     H       H       0       17.128      34.501      17.215
+FOE     H8      H       H       0       15.122      34.195      21.147
+FOE     H9      H       H       0       16.583      33.571      19.441
+FOE     H11     H       H       0       13.714      31.249      17.837
+FOE     H12     H       H       0       12.255      31.875      19.545
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+FOE      N      n/a    CA     START
+FOE      H      N      .      .
+FOE      H2     N      .      .
+FOE      H3     N      .      .
+FOE      CA     N      C      .
+FOE      HA     CA     .      .
+FOE      CB     CA     SG     .
+FOE      HB2    CB     .      .
+FOE      HB3    CB     .      .
+FOE      SG     CB     C1     .
+FOE      C1     SG     C2     .
+FOE      H11A   C1     .      .
+FOE      H12A   C1     .      .
+FOE      C2     C1     N4     .
+FOE      O3     C2     .      .
+FOE      N4     C2     C10    .
+FOE      C6     N4     C5     .
+FOE      H6     C6     .      .
+FOE      C7     C6     H71    .
+FOE      H73    C7     .      .
+FOE      H72    C7     .      .
+FOE      H71    C7     .      .
+FOE      C5     C6     H51    .
+FOE      H53    C5     .      .
+FOE      H52    C5     .      .
+FOE      H51    C5     .      .
+FOE      C10    N4     C11    .
+FOE      C9     C10    H9     .
+FOE      H9     C9     .      .
+FOE      C11    C10    C12    .
+FOE      H11    C11    .      .
+FOE      C12    C11    C13    .
+FOE      H12    C12    .      .
+FOE      C13    C12    C8     .
+FOE      F14    C13    .      .
+FOE      C8     C13    H8     .
+FOE      H8     C8     .      .
+FOE      C      CA     .      END
+FOE      O      C      .      .
+FOE      OXT    C      .      .
+FOE      C8     C9     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FOE       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+FOE       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+FOE       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+FOE       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+FOE       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+FOE       CB        SG        SINGLE    n         1.807     0.010     1.807     0.010     
+FOE       SG        C1        SINGLE    n         1.816     0.013     1.816     0.013     
+FOE       C1        C2        SINGLE    n         1.510     0.011     1.510     0.011     
+FOE       C2        O3        DOUBLE    n         1.223     0.015     1.223     0.015     
+FOE       C2        N4        SINGLE    n         1.355     0.013     1.355     0.013     
+FOE       N4        C6        SINGLE    n         1.484     0.017     1.484     0.017     
+FOE       N4        C10       SINGLE    n         1.439     0.010     1.439     0.010     
+FOE       C5        C6        SINGLE    n         1.518     0.010     1.518     0.010     
+FOE       C6        C7        SINGLE    n         1.518     0.010     1.518     0.010     
+FOE       C8        C9        DOUBLE    y         1.385     0.010     1.385     0.010     
+FOE       C8        C13       SINGLE    y         1.367     0.010     1.367     0.010     
+FOE       C9        C10       SINGLE    y         1.389     0.011     1.389     0.011     
+FOE       C10       C11       DOUBLE    y         1.389     0.011     1.389     0.011     
+FOE       C11       C12       SINGLE    y         1.385     0.010     1.385     0.010     
+FOE       C12       C13       DOUBLE    y         1.367     0.010     1.367     0.010     
+FOE       C13       F14       SINGLE    n         1.361     0.010     1.361     0.010     
+FOE       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+FOE       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+FOE       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+FOE       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+FOE       CB        HB2       SINGLE    n         1.089     0.010     0.970     0.010     
+FOE       CB        HB3       SINGLE    n         1.089     0.010     0.970     0.010     
+FOE       C1        H11A      SINGLE    n         1.089     0.010     0.974     0.020     
+FOE       C1        H12A      SINGLE    n         1.089     0.010     0.974     0.020     
+FOE       C5        H51       SINGLE    n         1.089     0.010     0.973     0.015     
+FOE       C5        H52       SINGLE    n         1.089     0.010     0.973     0.015     
+FOE       C5        H53       SINGLE    n         1.089     0.010     0.973     0.015     
+FOE       C6        H6        SINGLE    n         1.089     0.010     0.986     0.011     
+FOE       C7        H71       SINGLE    n         1.089     0.010     0.973     0.015     
+FOE       C7        H72       SINGLE    n         1.089     0.010     0.973     0.015     
+FOE       C7        H73       SINGLE    n         1.089     0.010     0.973     0.015     
+FOE       C8        H8        SINGLE    n         1.082     0.013     0.940     0.014     
+FOE       C9        H9        SINGLE    n         1.082     0.013     0.939     0.013     
+FOE       C11       H11       SINGLE    n         1.082     0.013     0.939     0.013     
+FOE       C12       H12       SINGLE    n         1.082     0.013     0.940     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FOE          CA           N           H     109.671    1.50
+FOE          CA           N          H2     109.671    1.50
+FOE          CA           N          H3     109.671    1.50
+FOE           H           N          H2     109.028    2.41
+FOE           H           N          H3     109.028    2.41
+FOE          H2           N          H3     109.028    2.41
+FOE           N          CA           C     109.494    1.50
+FOE           N          CA          CB     109.354    1.50
+FOE           N          CA          HA     107.983    1.50
+FOE           C          CA          CB     110.419    2.31
+FOE           C          CA          HA     108.606    1.50
+FOE          CB          CA          HA     109.209    1.50
+FOE          CA           C           O     117.134    1.50
+FOE          CA           C         OXT     117.134    1.50
+FOE           O           C         OXT     125.732    1.50
+FOE          CA          CB          SG     114.974    1.55
+FOE          CA          CB         HB2     108.537    1.50
+FOE          CA          CB         HB3     108.537    1.50
+FOE          SG          CB         HB2     108.759    1.50
+FOE          SG          CB         HB3     108.759    1.50
+FOE         HB2          CB         HB3     107.812    1.50
+FOE          CB          SG          C1     101.660    1.50
+FOE          SG          C1          C2     111.968    3.00
+FOE          SG          C1        H11A     108.570    1.78
+FOE          SG          C1        H12A     108.570    1.78
+FOE          C2          C1        H11A     108.792    1.50
+FOE          C2          C1        H12A     108.792    1.50
+FOE        H11A          C1        H12A     107.880    1.50
+FOE          C1          C2          O3     122.036    1.66
+FOE          C1          C2          N4     116.593    1.50
+FOE          O3          C2          N4     121.371    1.50
+FOE          C2          N4          C6     118.176    1.50
+FOE          C2          N4         C10     122.706    1.50
+FOE          C6          N4         C10     119.118    1.50
+FOE          C6          C5         H51     109.719    1.50
+FOE          C6          C5         H52     109.719    1.50
+FOE          C6          C5         H53     109.719    1.50
+FOE         H51          C5         H52     109.386    1.50
+FOE         H51          C5         H53     109.386    1.50
+FOE         H52          C5         H53     109.386    1.50
+FOE          N4          C6          C5     111.485    1.50
+FOE          N4          C6          C7     111.485    1.50
+FOE          N4          C6          H6     106.652    2.06
+FOE          C5          C6          C7     111.342    1.50
+FOE          C5          C6          H6     107.198    1.50
+FOE          C7          C6          H6     107.198    1.50
+FOE          C6          C7         H71     109.719    1.50
+FOE          C6          C7         H72     109.719    1.50
+FOE          C6          C7         H73     109.719    1.50
+FOE         H71          C7         H72     109.386    1.50
+FOE         H71          C7         H73     109.386    1.50
+FOE         H72          C7         H73     109.386    1.50
+FOE          C9          C8         C13     118.750    1.50
+FOE          C9          C8          H8     120.588    1.50
+FOE         C13          C8          H8     120.663    1.50
+FOE          C8          C9         C10     120.787    1.50
+FOE          C8          C9          H9     119.712    1.50
+FOE         C10          C9          H9     119.502    1.50
+FOE          N4         C10          C9     121.076    1.50
+FOE          N4         C10         C11     121.076    1.50
+FOE          C9         C10         C11     117.848    1.50
+FOE         C10         C11         C12     120.787    1.50
+FOE         C10         C11         H11     119.502    1.50
+FOE         C12         C11         H11     119.712    1.50
+FOE         C11         C12         C13     118.750    1.50
+FOE         C11         C12         H12     120.588    1.50
+FOE         C13         C12         H12     120.663    1.50
+FOE          C8         C13         C12     123.080    1.50
+FOE          C8         C13         F14     118.460    1.50
+FOE         C12         C13         F14     118.460    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FOE             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+FOE            sp3_sp3_25         H51          C5          C6          N4     180.000   10.00     3
+FOE            sp3_sp3_34          N4          C6          C7         H71     180.000   10.00     3
+FOE       const_sp2_sp2_1         C13          C8          C9         C10       0.000   10.00     2
+FOE              const_23         F14         C13          C8          C9     180.000   10.00     2
+FOE       const_sp2_sp2_7          N4         C10          C9          C8     180.000   10.00     2
+FOE              const_11          N4         C10         C11         C12     180.000   10.00     2
+FOE              const_13         C10         C11         C12         C13       0.000   10.00     2
+FOE              const_18         C11         C12         C13         F14     180.000   10.00     2
+FOE             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+FOE            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+FOE            sp3_sp3_19          CA          CB          SG          C1     180.000   10.00     3
+FOE            sp3_sp3_22          C2          C1          SG          CB     180.000   10.00     3
+FOE             sp2_sp3_8          O3          C2          C1          SG     120.000   10.00     6
+FOE             sp2_sp2_1          C1          C2          N4          C6     180.000   10.00     2
+FOE            sp2_sp3_14          C2          N4          C6          C5     120.000   10.00     6
+FOE             sp2_sp2_6          C9         C10          N4          C2       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+FOE    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FOE    plan-1         C10   0.020
+FOE    plan-1         C11   0.020
+FOE    plan-1         C12   0.020
+FOE    plan-1         C13   0.020
+FOE    plan-1          C8   0.020
+FOE    plan-1          C9   0.020
+FOE    plan-1         F14   0.020
+FOE    plan-1         H11   0.020
+FOE    plan-1         H12   0.020
+FOE    plan-1          H8   0.020
+FOE    plan-1          H9   0.020
+FOE    plan-1          N4   0.020
+FOE    plan-2           C   0.020
+FOE    plan-2          CA   0.020
+FOE    plan-2           O   0.020
+FOE    plan-2         OXT   0.020
+FOE    plan-3          C1   0.020
+FOE    plan-3          C2   0.020
+FOE    plan-3          N4   0.020
+FOE    plan-3          O3   0.020
+FOE    plan-4         C10   0.020
+FOE    plan-4          C2   0.020
+FOE    plan-4          C6   0.020
+FOE    plan-4          N4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FOE SMILES           ACDLabs              10.04 "O=C(O)C(N)CSCC(=O)N(c1ccc(F)cc1)C(C)C"
+FOE SMILES_CANONICAL CACTVS               3.341 "CC(C)N(C(=O)CSC[C@H](N)C(O)=O)c1ccc(F)cc1"
+FOE SMILES           CACTVS               3.341 "CC(C)N(C(=O)CSC[CH](N)C(O)=O)c1ccc(F)cc1"
+FOE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)N(c1ccc(cc1)F)C(=O)CSC[C@@H](C(=O)O)N"
+FOE SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)N(c1ccc(cc1)F)C(=O)CSCC(C(=O)O)N"
+FOE InChI            InChI                1.03  "InChI=1S/C14H19FN2O3S/c1-9(2)17(11-5-3-10(15)4-6-11)13(18)8-21-7-12(16)14(19)20/h3-6,9,12H,7-8,16H2,1-2H3,(H,19,20)/t12-/m0/s1"
+FOE InChIKey         InChI                1.03  NYVPFDRTSVHZRO-LBPRGKRZSA-N
+FOE ?                acedrg               196         "dictionary generator"
+FOE ?                acedrg_database      11          "data source"
+FOE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FOE ?                refmac5              5.8.0222    "optimization tool"

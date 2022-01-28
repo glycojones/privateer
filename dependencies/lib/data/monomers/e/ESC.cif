@@ -1,0 +1,206 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ESC     ESC     "2-AMINO-4-ETHYLSULFANYLBUTYRICACID"     peptide     23     10     .
+#
+data_comp_ESC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ESC     N       N       NT3     1       -2.241      -1.752      0.521
+ESC     CA      C       CH1     0       -2.143      -0.420      -0.139
+ESC     CB      C       CH2     0       -0.991      0.403       0.448
+ESC     CG      C       CH2     0       0.379       -0.204      0.208
+ESC     SD      S       S2      0       1.732       0.857       0.769
+ESC     C       C       C       0       -3.459      0.345       0.055
+ESC     O       O       O       0       -4.047      0.738       -0.973
+ESC     CD      C       CH2     0       3.198       -0.064      0.215
+ESC     CE      C       CH3     0       3.520       0.247       -1.192
+ESC     OXT     O       OC      -1      -3.846      0.519       1.227
+ESC     H       H       H       0       -3.034      -2.152      0.311
+ESC     H2      H       H       0       -2.188      -1.659      1.425
+ESC     H3      H       H       0       -1.564      -2.292      0.239
+ESC     HCA1    H       H       0       -1.993      -0.560      -1.103
+ESC     HB2     H       H       0       -1.132      0.498       1.411
+ESC     HB3     H       H       0       -1.013      1.299       0.054
+ESC     HG2     H       H       0       0.491       -0.378      -0.751
+ESC     HG3     H       H       0       0.437       -1.063      0.679
+ESC     HD2     H       H       0       3.031       -1.026      0.307
+ESC     HD3     H       H       0       3.962       0.170       0.784
+ESC     HE1     H       H       0       4.267       -0.298      -1.481
+ESC     HE2     H       H       0       3.755       1.184       -1.270
+ESC     HE3     H       H       0       2.750       0.060       -1.749
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ESC      N      n/a    CA     START
+ESC      H      N      .      .
+ESC      H2     N      .      .
+ESC      H3     N      .      .
+ESC      CA     N      C      .
+ESC      HCA1   CA     .      .
+ESC      CB     CA     CG     .
+ESC      HB2    CB     .      .
+ESC      HB3    CB     .      .
+ESC      CG     CB     SD     .
+ESC      HG2    CG     .      .
+ESC      HG3    CG     .      .
+ESC      SD     CG     CD     .
+ESC      CD     SD     CE     .
+ESC      HD2    CD     .      .
+ESC      HD3    CD     .      .
+ESC      CE     CD     HE1    .
+ESC      HE3    CE     .      .
+ESC      HE2    CE     .      .
+ESC      HE1    CE     .      .
+ESC      C      CA     .      END
+ESC      O      C      .      .
+ESC      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ESC       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+ESC       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+ESC       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+ESC       CB        CG        SINGLE    n         1.517     0.020     1.517     0.020     
+ESC       CG        SD        SINGLE    n         1.809     0.020     1.809     0.020     
+ESC       SD        CD        SINGLE    n         1.817     0.015     1.817     0.015     
+ESC       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+ESC       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+ESC       CD        CE        SINGLE    n         1.477     0.020     1.477     0.020     
+ESC       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+ESC       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+ESC       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+ESC       CA        HCA1      SINGLE    n         1.089     0.010     0.985     0.020     
+ESC       CB        HB2       SINGLE    n         1.089     0.010     0.978     0.020     
+ESC       CB        HB3       SINGLE    n         1.089     0.010     0.978     0.020     
+ESC       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.013     
+ESC       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.013     
+ESC       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.013     
+ESC       CD        HD3       SINGLE    n         1.089     0.010     0.981     0.013     
+ESC       CE        HE1       SINGLE    n         1.089     0.010     0.969     0.013     
+ESC       CE        HE2       SINGLE    n         1.089     0.010     0.969     0.013     
+ESC       CE        HE3       SINGLE    n         1.089     0.010     0.969     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ESC          CA           N           H     110.062    1.93
+ESC          CA           N          H2     110.062    1.93
+ESC          CA           N          H3     110.062    1.93
+ESC           H           N          H2     109.028    2.41
+ESC           H           N          H3     109.028    2.41
+ESC          H2           N          H3     109.028    2.41
+ESC           N          CA          CB     110.906    1.50
+ESC           N          CA           C     109.241    1.50
+ESC           N          CA        HCA1     108.487    1.50
+ESC          CB          CA           C     109.344    1.50
+ESC          CB          CA        HCA1     109.670    1.50
+ESC           C          CA        HCA1     108.824    1.50
+ESC          CA          CB          CG     113.476    1.50
+ESC          CA          CB         HB2     108.666    1.50
+ESC          CA          CB         HB3     108.666    1.50
+ESC          CG          CB         HB2     108.955    1.50
+ESC          CG          CB         HB3     108.955    1.50
+ESC         HB2          CB         HB3     107.698    1.50
+ESC          CB          CG          SD     113.263    2.33
+ESC          CB          CG         HG2     109.206    1.50
+ESC          CB          CG         HG3     109.206    1.50
+ESC          SD          CG         HG2     108.801    1.50
+ESC          SD          CG         HG3     108.801    1.50
+ESC         HG2          CG         HG3     107.939    1.50
+ESC          CG          SD          CD     102.177    1.97
+ESC          CA           C           O     117.124    1.50
+ESC          CA           C         OXT     117.124    1.50
+ESC           O           C         OXT     125.752    1.50
+ESC          SD          CD          CE     111.139    2.96
+ESC          SD          CD         HD2     109.339    1.50
+ESC          SD          CD         HD3     109.339    1.50
+ESC          CE          CD         HD2     109.420    1.50
+ESC          CE          CD         HD3     109.420    1.50
+ESC         HD2          CD         HD3     108.153    1.50
+ESC          CD          CE         HE1     109.476    1.50
+ESC          CD          CE         HE2     109.476    1.50
+ESC          CD          CE         HE3     109.476    1.50
+ESC         HE1          CE         HE2     109.451    1.50
+ESC         HE1          CE         HE3     109.451    1.50
+ESC         HE2          CE         HE3     109.451    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ESC             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+ESC            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+ESC             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+ESC            sp3_sp3_19          CA          CB          CG          SD     180.000   10.00     3
+ESC            sp3_sp3_28          CB          CG          SD          CD     180.000   10.00     3
+ESC            sp3_sp3_31          CE          CD          SD          CG     180.000   10.00     3
+ESC            sp3_sp3_34          SD          CD          CE         HE1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ESC    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ESC    plan-1           C   0.020
+ESC    plan-1          CA   0.020
+ESC    plan-1           O   0.020
+ESC    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ESC SMILES           ACDLabs              10.04 "O=C(O)C(N)CCSCC"
+ESC SMILES_CANONICAL CACTVS               3.341 "CCSCC[C@H](N)C(O)=O"
+ESC SMILES           CACTVS               3.341 "CCSCC[CH](N)C(O)=O"
+ESC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCSCC[C@@H](C(=O)O)N"
+ESC SMILES           "OpenEye OEToolkits" 1.5.0 "CCSCCC(C(=O)O)N"
+ESC InChI            InChI                1.03  "InChI=1S/C6H13NO2S/c1-2-10-4-3-5(7)6(8)9/h5H,2-4,7H2,1H3,(H,8,9)/t5-/m0/s1"
+ESC InChIKey         InChI                1.03  GGLZPLKKBSSKCX-YFKPBYRVSA-N
+ESC ?                acedrg               196         "dictionary generator"
+ESC ?                acedrg_database      11          "data source"
+ESC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ESC ?                refmac5              5.8.0222    "optimization tool"

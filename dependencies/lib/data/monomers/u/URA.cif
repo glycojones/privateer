@@ -1,0 +1,132 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+URA     URA      URACIL     NON-POLYMER     12     8     .     
+#
+data_comp_URA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+URA     N1      N       NR6     0       11.100      1.919       16.987      
+URA     C2      C       CR6     0       11.662      3.149       17.213      
+URA     O2      O       O       0       12.655      3.540       16.610      
+URA     N3      N       NR6     0       11.033      3.917       18.167      
+URA     C4      C       CR6     0       9.909       3.556       18.897      
+URA     O4      O       O       0       9.445       4.341       19.724      
+URA     C5      C       CR16    0       9.388       2.249       18.594      
+URA     C6      C       CR16    0       9.990       1.477       17.659      
+URA     HN1     H       H       0       11.486      1.392       16.370      
+URA     HN3     H       H       0       11.383      4.712       18.325      
+URA     H5      H       H       0       8.631       1.934       19.044      
+URA     H6      H       H       0       9.644       0.618       17.462      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+URA       N1        C2        SINGLE    y         1.365     0.010     1.365     0.010     
+URA       N1        C6        SINGLE    y         1.356     0.015     1.356     0.015     
+URA       C2        O2        DOUBLE    n         1.225     0.010     1.225     0.010     
+URA       C2        N3        SINGLE    y         1.370     0.010     1.370     0.010     
+URA       N3        C4        SINGLE    y         1.381     0.010     1.381     0.010     
+URA       C4        O4        DOUBLE    n         1.231     0.010     1.231     0.010     
+URA       C4        C5        SINGLE    y         1.434     0.010     1.434     0.010     
+URA       C5        C6        DOUBLE    y         1.344     0.013     1.344     0.013     
+URA       N1        HN1       SINGLE    n         1.016     0.010     0.898     0.020     
+URA       N3        HN3       SINGLE    n         1.016     0.010     0.881     0.020     
+URA       C5        H5        SINGLE    n         1.082     0.013     0.935     0.010     
+URA       C6        H6        SINGLE    n         1.082     0.013     0.947     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+URA          C2          N1          C6     122.353    1.50
+URA          C2          N1         HN1     117.710    2.18
+URA          C6          N1         HN1     119.937    1.50
+URA          N1          C2          O2     122.593    1.50
+URA          N1          C2          N3     115.278    1.50
+URA          O2          C2          N3     122.129    1.50
+URA          C2          N3          C4     126.347    1.50
+URA          C2          N3         HN3     116.344    2.30
+URA          C4          N3         HN3     117.310    1.73
+URA          N3          C4          O4     119.328    1.50
+URA          N3          C4          C5     114.806    1.50
+URA          O4          C4          C5     125.866    1.50
+URA          C4          C5          C6     120.293    1.50
+URA          C4          C5          H5     119.769    1.50
+URA          C6          C5          H5     119.938    1.50
+URA          N1          C6          C5     120.923    1.50
+URA          N1          C6          H6     119.086    1.50
+URA          C5          C6          H6     119.991    1.54
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+URA       const_sp2_sp2_3          O2          C2          N1          C6     180.000   10.00     2
+URA              const_21          C5          C6          N1          C2       0.000   10.00     2
+URA       const_sp2_sp2_7          O2          C2          N3          C4     180.000   10.00     2
+URA              const_11          O4          C4          N3          C2     180.000   10.00     2
+URA              const_15          O4          C4          C5          C6     180.000   10.00     2
+URA              const_17          C4          C5          C6          N1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+URA    plan-1          C2   0.020
+URA    plan-1          C4   0.020
+URA    plan-1          C5   0.020
+URA    plan-1          C6   0.020
+URA    plan-1          H5   0.020
+URA    plan-1          H6   0.020
+URA    plan-1         HN1   0.020
+URA    plan-1         HN3   0.020
+URA    plan-1          N1   0.020
+URA    plan-1          N3   0.020
+URA    plan-1          O2   0.020
+URA    plan-1          O4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+URA SMILES           ACDLabs              10.04 "O=C1C=CNC(=O)N1"
+URA SMILES_CANONICAL CACTVS               3.341 "O=C1NC=CC(=O)N1"
+URA SMILES           CACTVS               3.341 "O=C1NC=CC(=O)N1"
+URA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1=CNC(=O)NC1=O"
+URA SMILES           "OpenEye OEToolkits" 1.5.0 "C1=CNC(=O)NC1=O"
+URA InChI            InChI                1.03  "InChI=1S/C4H4N2O2/c7-3-1-2-5-4(8)6-3/h1-2H,(H2,5,6,7,8)"
+URA InChIKey         InChI                1.03  ISAKRJDGNUQOIC-UHFFFAOYSA-N
+URA ?                acedrg               202         "dictionary generator"                  
+URA ?                acedrg_database      11          "data source"                           
+URA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+URA ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,331 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+7MG      7MG '7N-METHYL-8-HYDROGUANOSINE-5'-MONOPH' RNA                41  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_7MG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 7MG           OP3    O    OP       -0.666      0.000    0.000    0.000
+ 7MG           P      P    P         0.000     -0.915   -0.685    0.991
+ 7MG           OP1    O    OP       -0.666     -1.198    0.249    2.147
+ 7MG           OP2    O    OP       -0.666     -0.246   -1.939    1.509
+ 7MG           "O5'"  O    O2        0.000     -2.297   -1.075    0.264
+ 7MG           "C5'"  C    CH2       0.000     -2.878    0.144   -0.201
+ 7MG           "H5'"  H    H         0.000     -2.193    0.628   -0.900
+ 7MG           "H5''" H    H         0.000     -3.058    0.807    0.648
+ 7MG           "C4'"  C    CH1       0.000     -4.202   -0.156   -0.905
+ 7MG           "H4'"  H    H         0.000     -4.034   -0.812   -1.770
+ 7MG           "C3'"  C    CH1       0.000     -4.888    1.154   -1.350
+ 7MG           "H3'"  H    H         0.000     -4.550    1.996   -0.730
+ 7MG           "C2'"  C    CH1       0.000     -6.394    0.885   -1.125
+ 7MG           "H2'"  H    H         0.000     -6.805    1.594   -0.392
+ 7MG           "O2'"  O    OH1       0.000     -7.108    0.974   -2.359
+ 7MG           "HO2'" H    H         0.000     -7.017    1.866   -2.720
+ 7MG           "C1'"  C    CH1       0.000     -6.437   -0.554   -0.568
+ 7MG           "H1'"  H    H         0.000     -6.614   -1.273   -1.380
+ 7MG           "O4'"  O    O2        0.000     -5.134   -0.766    0.015
+ 7MG           N9     N    NR5       0.000     -7.478   -0.674    0.456
+ 7MG           C4     C    CR56      0.000     -7.563    0.065    1.623
+ 7MG           C5     C    CR56      0.000     -8.681   -0.315    2.347
+ 7MG           N7     N    NR5       0.000     -9.368   -1.340    1.662
+ 7MG           CM7    C    CH3       0.000    -10.595   -2.012    2.097
+ 7MG           HM73   H    H         0.000    -11.352   -1.855    1.375
+ 7MG           HM72   H    H         0.000    -10.408   -3.048    2.198
+ 7MG           HM71   H    H         0.000    -10.901   -1.613    3.027
+ 7MG           C8     C    CH2       0.000     -8.618   -1.597    0.426
+ 7MG           H82    H    H         0.000     -9.228   -1.397   -0.458
+ 7MG           H81    H    H         0.000     -8.254   -2.626    0.389
+ 7MG           N3     N    NRD6      0.000     -6.764    1.030    2.105
+ 7MG           C2     C    CR6       0.000     -7.016    1.616    3.254
+ 7MG           N2     N    NH2       0.000     -6.169    2.594    3.709
+ 7MG           HN22   H    H         0.000     -6.350    3.059    4.591
+ 7MG           HN21   H    H         0.000     -5.355    2.859    3.166
+ 7MG           N1     N    NR16      0.000     -8.103    1.278    4.001
+ 7MG           HN1    H    H         0.000     -8.283    1.759    4.905
+ 7MG           C6     C    CR6       0.000     -8.946    0.318    3.570
+ 7MG           O6     O    O         0.000     -9.925    0.007    4.232
+ 7MG           "O3'"  O    OH1       0.000     -4.625    1.413   -2.730
+ 7MG           "HO3'" H    H         0.000     -5.076    2.240   -2.950
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 7MG      OP3    n/a    P      START
+ 7MG      P      OP3    "O5'"  .
+ 7MG      OP1    P      .      .
+ 7MG      OP2    P      .      .
+ 7MG      "O5'"  P      "C5'"  .
+ 7MG      "C5'"  "O5'"  "C4'"  .
+ 7MG      "H5'"  "C5'"  .      .
+ 7MG      "H5''" "C5'"  .      .
+ 7MG      "C4'"  "C5'"  "C3'"  .
+ 7MG      "H4'"  "C4'"  .      .
+ 7MG      "C3'"  "C4'"  "O3'"  .
+ 7MG      "H3'"  "C3'"  .      .
+ 7MG      "C2'"  "C3'"  "C1'"  .
+ 7MG      "H2'"  "C2'"  .      .
+ 7MG      "O2'"  "C2'"  "HO2'" .
+ 7MG      "HO2'" "O2'"  .      .
+ 7MG      "C1'"  "C2'"  N9     .
+ 7MG      "H1'"  "C1'"  .      .
+ 7MG      "O4'"  "C1'"  .      .
+ 7MG      N9     "C1'"  C4     .
+ 7MG      C4     N9     N3     .
+ 7MG      C5     C4     N7     .
+ 7MG      N7     C5     C8     .
+ 7MG      CM7    N7     HM71   .
+ 7MG      HM73   CM7    .      .
+ 7MG      HM72   CM7    .      .
+ 7MG      HM71   CM7    .      .
+ 7MG      C8     N7     H81    .
+ 7MG      H82    C8     .      .
+ 7MG      H81    C8     .      .
+ 7MG      N3     C4     C2     .
+ 7MG      C2     N3     N1     .
+ 7MG      N2     C2     HN21   .
+ 7MG      HN22   N2     .      .
+ 7MG      HN21   N2     .      .
+ 7MG      N1     C2     C6     .
+ 7MG      HN1    N1     .      .
+ 7MG      C6     N1     O6     .
+ 7MG      O6     C6     .      .
+ 7MG      "O3'"  "C3'"  .      END
+ 7MG      "HO3'" "O3'"  .      .
+ 7MG      "C4'"  "O4'"  .    ADD
+ 7MG      N9     C8     .    ADD
+ 7MG      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+7MG       OP1       P         deloc     1.510     0.020     1.510     0.020     
+7MG       OP2       P         deloc     1.510     0.020     1.510     0.020     
+7MG       P         OP3       deloc     1.510     0.020     1.510     0.020     
+7MG       "O5'"     P         single    1.610     0.020     1.610     0.020     
+7MG       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+7MG       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+7MG       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+7MG       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+7MG       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+7MG       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+7MG       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+7MG       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+7MG       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+7MG       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+7MG       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+7MG       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+7MG       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+7MG       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+7MG       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+7MG       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+7MG       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+7MG       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+7MG       N9        C8        single    1.462     0.020     1.462     0.020     
+7MG       C4        N9        single    1.337     0.020     1.337     0.020     
+7MG       C8        N7        single    1.462     0.020     1.462     0.020     
+7MG       H81       C8        single    1.089     0.010     0.989     0.005     
+7MG       H82       C8        single    1.089     0.010     0.989     0.005     
+7MG       N7        C5        single    1.337     0.020     1.337     0.020     
+7MG       CM7       N7        single    1.485     0.020     1.485     0.020     
+7MG       C5        C6        single    1.490     0.020     1.490     0.020     
+7MG       C5        C4        double    1.490     0.020     1.490     0.020     
+7MG       O6        C6        double    1.250     0.020     1.250     0.020     
+7MG       C6        N1        single    1.337     0.020     1.337     0.020     
+7MG       N1        C2        single    1.337     0.020     1.337     0.020     
+7MG       HN1       N1        single    1.016     0.010     0.899     0.007     
+7MG       N2        C2        single    1.355     0.020     1.355     0.020     
+7MG       C2        N3        double    1.350     0.020     1.350     0.020     
+7MG       HN21      N2        single    1.016     0.010     0.899     0.007     
+7MG       HN22      N2        single    1.016     0.010     0.899     0.007     
+7MG       N3        C4        single    1.355     0.020     1.355     0.020     
+7MG       HM71      CM7       single    1.089     0.010     0.989     0.005     
+7MG       HM72      CM7       single    1.089     0.010     0.989     0.005     
+7MG       HM73      CM7       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 7MG      OP3    P      OP1     119.900    3.000
+ 7MG      OP3    P      OP2     119.900    3.000
+ 7MG      OP3    P      "O5'"   108.200    3.000
+ 7MG      OP1    P      OP2     119.900    3.000
+ 7MG      OP1    P      "O5'"   108.200    3.000
+ 7MG      OP2    P      "O5'"   108.200    3.000
+ 7MG      P      "O5'"  "C5'"   120.500    3.000
+ 7MG      "O5'"  "C5'"  "H5'"   109.470    3.000
+ 7MG      "O5'"  "C5'"  "H5''"  109.470    3.000
+ 7MG      "O5'"  "C5'"  "C4'"   109.470    3.000
+ 7MG      "H5'"  "C5'"  "H5''"  107.900    3.000
+ 7MG      "H5'"  "C5'"  "C4'"   109.470    3.000
+ 7MG      "H5''" "C5'"  "C4'"   109.470    3.000
+ 7MG      "C5'"  "C4'"  "H4'"   108.340    3.000
+ 7MG      "C5'"  "C4'"  "C3'"   111.000    3.000
+ 7MG      "C5'"  "C4'"  "O4'"   109.470    3.000
+ 7MG      "H4'"  "C4'"  "C3'"   108.340    3.000
+ 7MG      "H4'"  "C4'"  "O4'"   109.470    3.000
+ 7MG      "C3'"  "C4'"  "O4'"   109.470    3.000
+ 7MG      "C4'"  "C3'"  "H3'"   108.340    3.000
+ 7MG      "C4'"  "C3'"  "C2'"   111.000    3.000
+ 7MG      "C4'"  "C3'"  "O3'"   109.470    3.000
+ 7MG      "H3'"  "C3'"  "C2'"   108.340    3.000
+ 7MG      "H3'"  "C3'"  "O3'"   109.470    3.000
+ 7MG      "C2'"  "C3'"  "O3'"   109.470    3.000
+ 7MG      "C3'"  "C2'"  "H2'"   108.340    3.000
+ 7MG      "C3'"  "C2'"  "O2'"   109.470    3.000
+ 7MG      "C3'"  "C2'"  "C1'"   111.000    3.000
+ 7MG      "H2'"  "C2'"  "O2'"   109.470    3.000
+ 7MG      "H2'"  "C2'"  "C1'"   108.340    3.000
+ 7MG      "O2'"  "C2'"  "C1'"   109.470    3.000
+ 7MG      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ 7MG      "C2'"  "C1'"  "H1'"   108.340    3.000
+ 7MG      "C2'"  "C1'"  "O4'"   109.470    3.000
+ 7MG      "C2'"  "C1'"  N9      109.470    3.000
+ 7MG      "H1'"  "C1'"  "O4'"   109.470    3.000
+ 7MG      "H1'"  "C1'"  N9      109.470    3.000
+ 7MG      "O4'"  "C1'"  N9      109.470    3.000
+ 7MG      "C1'"  "O4'"  "C4'"   111.800    3.000
+ 7MG      "C1'"  N9     C4      126.000    3.000
+ 7MG      "C1'"  N9     C8      108.000    3.000
+ 7MG      C4     N9     C8      126.000    3.000
+ 7MG      N9     C4     C5      108.000    3.000
+ 7MG      N9     C4     N3      132.000    3.000
+ 7MG      C5     C4     N3      120.000    3.000
+ 7MG      C4     C5     N7      108.000    3.000
+ 7MG      C4     C5     C6      120.000    3.000
+ 7MG      N7     C5     C6      120.000    3.000
+ 7MG      C5     N7     CM7     126.000    3.000
+ 7MG      C5     N7     C8      126.000    3.000
+ 7MG      CM7    N7     C8      108.000    3.000
+ 7MG      N7     CM7    HM73    109.470    3.000
+ 7MG      N7     CM7    HM72    109.470    3.000
+ 7MG      N7     CM7    HM71    109.470    3.000
+ 7MG      HM73   CM7    HM72    109.470    3.000
+ 7MG      HM73   CM7    HM71    109.470    3.000
+ 7MG      HM72   CM7    HM71    109.470    3.000
+ 7MG      N7     C8     H82     109.500    3.000
+ 7MG      N7     C8     H81     109.500    3.000
+ 7MG      N7     C8     N9      109.500    3.000
+ 7MG      H82    C8     H81     107.900    3.000
+ 7MG      H82    C8     N9      109.500    3.000
+ 7MG      H81    C8     N9      109.500    3.000
+ 7MG      C4     N3     C2      120.000    3.000
+ 7MG      N3     C2     N2      120.000    3.000
+ 7MG      N3     C2     N1      120.000    3.000
+ 7MG      N2     C2     N1      120.000    3.000
+ 7MG      C2     N2     HN22    120.000    3.000
+ 7MG      C2     N2     HN21    120.000    3.000
+ 7MG      HN22   N2     HN21    120.000    3.000
+ 7MG      C2     N1     HN1     120.000    3.000
+ 7MG      C2     N1     C6      120.000    3.000
+ 7MG      HN1    N1     C6      120.000    3.000
+ 7MG      N1     C6     O6      120.000    3.000
+ 7MG      N1     C6     C5      120.000    3.000
+ 7MG      O6     C6     C5      120.000    3.000
+ 7MG      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 7MG      var_1    OP3    P      "O5'"  "C5'"    -60.105   20.000   1
+ 7MG      var_2    P      "O5'"  "C5'"  "C4'"   -179.972   20.000   1
+ 7MG      var_3    "O5'"  "C5'"  "C4'"  "C3'"    176.943   20.000   3
+ 7MG      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ 7MG      var_5    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ 7MG      var_6    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ 7MG      var_7    "C3'"  "C2'"  "O2'"  "HO2'"   -61.398   20.000   1
+ 7MG      var_8    "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ 7MG      var_9    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ 7MG      var_10   "C2'"  "C1'"  N9     C4       -58.442   20.000   1
+ 7MG      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ 7MG      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ 7MG      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ 7MG      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ 7MG      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ 7MG      var_11   C5     N7     CM7    HM71      -0.293   20.000   1
+ 7MG      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ 7MG      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ 7MG      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ 7MG      CONST_9  N3     C2     N2     HN21      -0.246    0.000   0
+ 7MG      CONST_10 N3     C2     N1     C6         0.000    0.000   0
+ 7MG      CONST_11 C2     N1     C6     O6       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 7MG      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ 7MG      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ 7MG      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ 7MG      chir_04  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 7MG      plan-1    N9        0.020
+ 7MG      plan-1    "C1'"     0.020
+ 7MG      plan-1    C8        0.020
+ 7MG      plan-1    C4        0.020
+ 7MG      plan-1    N7        0.020
+ 7MG      plan-1    C5        0.020
+ 7MG      plan-1    CM7       0.020
+ 7MG      plan-1    C6        0.020
+ 7MG      plan-1    N1        0.020
+ 7MG      plan-1    C2        0.020
+ 7MG      plan-1    N3        0.020
+ 7MG      plan-1    O6        0.020
+ 7MG      plan-1    HN1       0.020
+ 7MG      plan-1    N2        0.020
+ 7MG      plan-1    HN22      0.020
+ 7MG      plan-1    HN21      0.020
+ 7MG      plan-2    N2        0.020
+ 7MG      plan-2    C2        0.020
+ 7MG      plan-2    HN21      0.020
+ 7MG      plan-2    HN22      0.020
+# ------------------------------------------------------

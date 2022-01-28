@@ -1,0 +1,134 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+39J     39J      "(2S)-2-chlorobutanoic acid"     non-polymer     13     7     .     
+#
+data_comp_39J
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+39J     C1      C       C       0       11.235      -22.647     15.680      
+39J     O1      O       OC      -1      10.767      -23.055     14.599      
+39J     C2      C       CH1     0       11.298      -21.145     15.896      
+39J     O2      O       O       0       11.657      -23.376     16.600      
+39J     C3      C       CH2     0       12.705      -20.594     15.959      
+39J     C4      C       CH3     0       12.769      -19.085     15.840      
+39J     CL2     CL      CL      0       10.427      -20.743     17.417      
+39J     H2      H       H       0       10.829      -20.709     15.140      
+39J     H31C    H       H       0       13.232      -20.994     15.236      
+39J     H32C    H       H       0       13.109      -20.865     16.810      
+39J     H41C    H       H       0       13.697      -18.804     15.760      
+39J     H42C    H       H       0       12.375      -18.679     16.632      
+39J     H43C    H       H       0       12.276      -18.799     15.051      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+39J       C1        O1        SINGLE    n         1.247     0.019     1.247     0.019     
+39J       C1        C2        SINGLE    n         1.519     0.012     1.519     0.012     
+39J       C1        O2        DOUBLE    n         1.247     0.019     1.247     0.019     
+39J       C2        C3        SINGLE    n         1.512     0.020     1.512     0.020     
+39J       C2        CL2       SINGLE    n         1.800     0.018     1.800     0.018     
+39J       C3        C4        SINGLE    n         1.515     0.020     1.515     0.020     
+39J       C2        H2        SINGLE    n         1.089     0.010     0.990     0.016     
+39J       C3        H31C      SINGLE    n         1.089     0.010     0.980     0.012     
+39J       C3        H32C      SINGLE    n         1.089     0.010     0.980     0.012     
+39J       C4        H41C      SINGLE    n         1.089     0.010     0.973     0.016     
+39J       C4        H42C      SINGLE    n         1.089     0.010     0.973     0.016     
+39J       C4        H43C      SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+39J          O1          C1          C2     117.429    2.33
+39J          O1          C1          O2     125.142    1.75
+39J          C2          C1          O2     117.429    2.33
+39J          C1          C2          C3     114.504    2.22
+39J          C1          C2         CL2     110.491    2.68
+39J          C1          C2          H2     108.627    1.50
+39J          C3          C2         CL2     110.061    1.67
+39J          C3          C2          H2     108.964    1.50
+39J         CL2          C2          H2     109.286    1.50
+39J          C2          C3          C4     112.855    2.08
+39J          C2          C3        H31C     108.469    1.50
+39J          C2          C3        H32C     108.469    1.50
+39J          C4          C3        H31C     108.957    1.50
+39J          C4          C3        H32C     108.957    1.50
+39J        H31C          C3        H32C     107.715    1.50
+39J          C3          C4        H41C     109.483    1.50
+39J          C3          C4        H42C     109.483    1.50
+39J          C3          C4        H43C     109.483    1.50
+39J        H41C          C4        H42C     109.380    1.50
+39J        H41C          C4        H43C     109.380    1.50
+39J        H42C          C4        H43C     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+39J             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+39J             sp3_sp3_1          C1          C2          C3          C4     180.000   10.00     3
+39J            sp3_sp3_10          C2          C3          C4        H41C     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+39J    chir_1    C2    CL2    C1    C3    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+39J    plan-1          C1   0.020
+39J    plan-1          C2   0.020
+39J    plan-1          O1   0.020
+39J    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+39J SMILES           ACDLabs              12.01 "ClC(C(=O)O)CC"
+39J InChI            InChI                1.03  "InChI=1S/C4H7ClO2/c1-2-3(5)4(6)7/h3H,2H2,1H3,(H,6,7)/t3-/m0/s1"
+39J InChIKey         InChI                1.03  RVBUZBPJAGZHSQ-VKHMYHEASA-N
+39J SMILES_CANONICAL CACTVS               3.385 "CC[C@H](Cl)C(O)=O"
+39J SMILES           CACTVS               3.385 "CC[CH](Cl)C(O)=O"
+39J SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "CC[C@@H](C(=O)O)Cl"
+39J SMILES           "OpenEye OEToolkits" 1.9.2 "CCC(C(=O)O)Cl"
+39J ?                acedrg               202         "dictionary generator"                  
+39J ?                acedrg_database      11          "data source"                           
+39J ?                rdkit                2017.03.2   "Chemoinformatics tool"
+39J ?                refmac5              5.8.0189    "optimization tool"                     

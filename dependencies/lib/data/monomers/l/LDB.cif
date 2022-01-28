@@ -1,0 +1,143 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LDB     LDB      4-Thiouracil     NON-POLYMER     12     8     .     
+#
+data_comp_LDB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LDB     N01     N       NR6     0       33.147      1.933       4.664       
+LDB     N02     N       NR6     0       35.444      1.794       5.070       
+LDB     C01     C       CR6     0       34.168      1.814       5.568       
+LDB     C02     C       CR6     0       33.374      2.174       3.322       
+LDB     C03     C       CR16    0       34.721      2.112       2.869       
+LDB     C04     C       CR16    0       35.721      1.946       3.754       
+LDB     O01     O       O       0       33.940      1.731       6.764       
+LDB     S01     S       S1      0       32.072      2.521       2.322       
+LDB     H1      H       H       0       32.316      1.850       4.952       
+LDB     H2      H       H       0       36.103      1.678       5.633       
+LDB     H3      H       H       0       34.909      2.191       1.899       
+LDB     H4      H       H       0       36.622      1.934       3.474       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LDB       C02       S01       DOUBLE    n         1.677     0.0176    1.677     0.0176    
+LDB       C02       C03       SINGLE    n         1.419     0.0100    1.419     0.0100    
+LDB       C03       C04       DOUBLE    n         1.341     0.0149    1.341     0.0149    
+LDB       N01       C02       SINGLE    n         1.359     0.0200    1.359     0.0200    
+LDB       N02       C04       SINGLE    n         1.351     0.0130    1.351     0.0130    
+LDB       N01       C01       SINGLE    n         1.364     0.0110    1.364     0.0110    
+LDB       N02       C01       SINGLE    n         1.367     0.0100    1.367     0.0100    
+LDB       C01       O01       DOUBLE    n         1.220     0.0100    1.220     0.0100    
+LDB       N01       H1        SINGLE    n         1.016     0.010     0.882     0.0200    
+LDB       N02       H2        SINGLE    n         1.016     0.010     0.874     0.0200    
+LDB       C03       H3        SINGLE    n         1.082     0.013     0.991     0.0200    
+LDB       C04       H4        SINGLE    n         1.082     0.013     0.943     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LDB         C02         N01         C01     121.572    1.81
+LDB         C02         N01          H1     119.412    1.62
+LDB         C01         N01          H1     119.016    1.92
+LDB         C04         N02         C01     123.597    1.50
+LDB         C04         N02          H2     118.785    1.57
+LDB         C01         N02          H2     117.619    1.50
+LDB         N01         C01         N02     117.308    1.50
+LDB         N01         C01         O01     120.775    1.50
+LDB         N02         C01         O01     121.917    1.50
+LDB         S01         C02         C03     124.036    1.50
+LDB         S01         C02         N01     119.306    1.50
+LDB         C03         C02         N01     116.658    1.50
+LDB         C02         C03         C04     120.133    1.50
+LDB         C02         C03          H3     119.099    1.50
+LDB         C04         C03          H3     120.769    1.61
+LDB         C03         C04         N02     120.732    1.50
+LDB         C03         C04          H4     120.520    2.53
+LDB         N02         C04          H4     118.748    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LDB            sp2_sp2_23         O01         C01         N01         C02     180.000   10.00     2
+LDB             sp2_sp2_3         S01         C02         N01         C01     180.000   10.00     2
+LDB            sp2_sp2_19         O01         C01         N02         C04     180.000   10.00     2
+LDB            sp2_sp2_13         C03         C04         N02         C01       0.000   10.00     2
+LDB             sp2_sp2_7         S01         C02         C03         C04     180.000   10.00     2
+LDB             sp2_sp2_9         C02         C03         C04         N02       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LDB    plan-1         C01   0.020
+LDB    plan-1         C02   0.020
+LDB    plan-1          H1   0.020
+LDB    plan-1         N01   0.020
+LDB    plan-2         C01   0.020
+LDB    plan-2         C04   0.020
+LDB    plan-2          H2   0.020
+LDB    plan-2         N02   0.020
+LDB    plan-3         C01   0.020
+LDB    plan-3         N01   0.020
+LDB    plan-3         N02   0.020
+LDB    plan-3         O01   0.020
+LDB    plan-4         C02   0.020
+LDB    plan-4         C03   0.020
+LDB    plan-4         N01   0.020
+LDB    plan-4         S01   0.020
+LDB    plan-5         C02   0.020
+LDB    plan-5         C03   0.020
+LDB    plan-5         C04   0.020
+LDB    plan-5          H3   0.020
+LDB    plan-6         C03   0.020
+LDB    plan-6         C04   0.020
+LDB    plan-6          H4   0.020
+LDB    plan-6         N02   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LDB            InChI                InChI  1.03 InChI=1S/C4H4N2OS/c7-4-5-2-1-3(8)6-4/h1-2H,(H2,5,6,7,8)
+LDB         InChIKey                InChI  1.03                             OVONXEQGWXGFJD-UHFFFAOYSA-N
+LDB SMILES_CANONICAL               CACTVS 3.385                                         O=C1NC=CC(=S)N1
+LDB           SMILES               CACTVS 3.385                                         O=C1NC=CC(=S)N1
+LDB SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                         C1=CNC(=O)NC1=S
+LDB           SMILES "OpenEye OEToolkits" 2.0.7                                         C1=CNC(=O)NC1=S
+LDB ?                acedrg               217         "dictionary generator"                  
+LDB ?                acedrg_database      11          "data source"                           
+LDB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LDB ?                refmac5              5.8.0253    "optimization tool"                     

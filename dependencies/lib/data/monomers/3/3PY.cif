@@ -1,0 +1,115 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3PY     3PY      "3-HYDROXYPYRUVIC ACID"     NON-POLYMER     10     7     .     
+#
+data_comp_3PY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3PY     C1      C       C       0       -1.523      0.178       0.159       
+3PY     O1      O       O       0       -1.782      -0.386      -0.910      
+3PY     O2      O       OC      -1      -2.426      0.618       0.883       
+3PY     C2      C       C       0       -0.254      0.295       0.540       
+3PY     O3      O       O       0       0.054       1.103       1.428       
+3PY     C3      C       CH2     0       0.867       -0.529      -0.048      
+3PY     O4      O       OH1     0       1.214       -0.070      -1.340      
+3PY     H31     H       H       0       0.591       -1.468      -0.103      
+3PY     H32     H       H       0       1.655       -0.485      0.533       
+3PY     HO4     H       H       0       1.845       -0.541      -1.654      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3PY       C1        O1        DOUBLE    n         1.230     0.020     1.230     0.020     
+3PY       C1        O2        SINGLE    n         1.230     0.020     1.230     0.020     
+3PY       C1        C2        SINGLE    n         1.299     0.020     1.299     0.020     
+3PY       C2        O3        DOUBLE    n         1.230     0.019     1.230     0.019     
+3PY       C2        C3        SINGLE    n         1.498     0.020     1.498     0.020     
+3PY       C3        O4        SINGLE    n         1.415     0.020     1.415     0.020     
+3PY       C3        H31       SINGLE    n         1.089     0.010     0.980     0.012     
+3PY       C3        H32       SINGLE    n         1.089     0.010     0.980     0.012     
+3PY       O4        HO4       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3PY          O1          C1          O2     122.692    1.63
+3PY          O1          C1          C2     118.654    3.00
+3PY          O2          C1          C2     118.654    3.00
+3PY          C1          C2          O3     119.066    3.00
+3PY          C1          C2          C3     122.917    2.02
+3PY          O3          C2          C3     118.016    1.59
+3PY          C2          C3          O4     111.196    1.86
+3PY          C2          C3         H31     109.672    1.50
+3PY          C2          C3         H32     109.672    1.50
+3PY          O4          C3         H31     109.225    1.50
+3PY          O4          C3         H32     109.225    1.50
+3PY         H31          C3         H32     107.716    1.50
+3PY          C3          O4         HO4     109.906    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3PY             sp2_sp2_2          O1          C1          C2          O3       0.000   10.00     2
+3PY             sp2_sp3_2          C1          C2          C3          O4     120.000   10.00     6
+3PY             sp3_sp3_1          C2          C3          O4         HO4     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3PY    plan-1          C1   0.020
+3PY    plan-1          C2   0.020
+3PY    plan-1          O1   0.020
+3PY    plan-1          O2   0.020
+3PY    plan-2          C1   0.020
+3PY    plan-2          C2   0.020
+3PY    plan-2          C3   0.020
+3PY    plan-2          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3PY SMILES           ACDLabs              10.04 "O=C(O)C(=O)CO"
+3PY SMILES_CANONICAL CACTVS               3.341 "OCC(=O)C(O)=O"
+3PY SMILES           CACTVS               3.341 "OCC(=O)C(O)=O"
+3PY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)C(=O)O)O"
+3PY SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)C(=O)O)O"
+3PY InChI            InChI                1.03  "InChI=1S/C3H4O4/c4-1-2(5)3(6)7/h4H,1H2,(H,6,7)"
+3PY InChIKey         InChI                1.03  HHDDCCUIIUWNGJ-UHFFFAOYSA-N
+3PY ?                acedrg               202         "dictionary generator"                  
+3PY ?                acedrg_database      11          "data source"                           
+3PY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3PY ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,151 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B2A      B2A 'ALANINE BORONIC ACID                ' non-polymer        14   6 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_B2A
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ B2A           O2     O    OH1       0.000      0.000    0.000    0.000
+ B2A           HO2    H    H         0.000      0.892   -0.315    0.080
+ B2A           B      B    B         0.000     -1.043   -0.798    0.542
+ B2A           O1     O    OH1       0.000     -0.736   -2.027    1.182
+ B2A           HO1    H    H         0.000      0.175   -2.289    1.233
+ B2A           CA     C    CH1       0.000     -2.533   -0.320    0.433
+ B2A           HA     H    H         0.000     -3.104   -0.701    1.292
+ B2A           CB     C    CH3       0.000     -3.147   -0.854   -0.864
+ B2A           HB3    H    H         0.000     -3.116   -1.913   -0.861
+ B2A           HB2    H    H         0.000     -4.154   -0.532   -0.939
+ B2A           HB1    H    H         0.000     -2.598   -0.488   -1.693
+ B2A           N      N    NH2       0.000     -2.579    1.148    0.427
+ B2A           HN2    H    H         0.000     -3.086    1.646    1.149
+ B2A           H      H    H         0.000     -2.104    1.671   -0.299
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B2A      O2     n/a    B      START
+ B2A      HO2    O2     .      .
+ B2A      B      O2     CA     .
+ B2A      O1     B      HO1    .
+ B2A      HO1    O1     .      .
+ B2A      CA     B      N      .
+ B2A      HA     CA     .      .
+ B2A      CB     CA     HB1    .
+ B2A      HB3    CB     .      .
+ B2A      HB2    CB     .      .
+ B2A      HB1    CB     .      .
+ B2A      N      CA     H      .
+ B2A      HN2    N      .      .
+ B2A      H      N      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B2A       N         CA        single    1.450     0.020     1.450     0.020     
+B2A       H         N         single    1.036     0.016     0.914     0.007     
+B2A       HN2       N         single    1.036     0.016     0.914     0.007     
+B2A       CB        CA        single    1.524     0.020     1.524     0.020     
+B2A       CA        B         single    1.600     0.020     1.600     0.020     
+B2A       HA        CA        single    1.089     0.010     0.989     0.005     
+B2A       HB1       CB        single    1.089     0.010     0.989     0.005     
+B2A       HB2       CB        single    1.089     0.010     0.989     0.005     
+B2A       HB3       CB        single    1.089     0.010     0.989     0.005     
+B2A       O1        B         single    1.535     0.020     1.535     0.020     
+B2A       B         O2        single    1.535     0.020     1.535     0.020     
+B2A       HO1       O1        single    0.970     0.012     0.839     0.014     
+B2A       HO2       O2        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ B2A      HO2    O2     B       120.000    3.000
+ B2A      O2     B      O1      120.000    3.000
+ B2A      O2     B      CA      120.000    3.000
+ B2A      O1     B      CA      120.000    3.000
+ B2A      B      O1     HO1     120.000    3.000
+ B2A      B      CA     HA      109.470    3.000
+ B2A      B      CA     CB      109.500    3.000
+ B2A      B      CA     N       109.500    3.000
+ B2A      HA     CA     CB      108.340    3.000
+ B2A      HA     CA     N       109.470    3.000
+ B2A      CB     CA     N       109.470    3.000
+ B2A      CA     CB     HB3     109.470    3.000
+ B2A      CA     CB     HB2     109.470    3.000
+ B2A      CA     CB     HB1     109.470    3.000
+ B2A      HB3    CB     HB2     109.470    3.000
+ B2A      HB3    CB     HB1     109.470    3.000
+ B2A      HB2    CB     HB1     109.470    3.000
+ B2A      CA     N      HN2     120.000    3.000
+ B2A      CA     N      H       120.000    3.000
+ B2A      HN2    N      H       120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ B2A      var_1    HO2    O2     B      CA      -179.964   20.000   1
+ B2A      var_2    O2     B      O1     HO1        0.025   20.000   1
+ B2A      var_3    O2     B      CA     N        -29.974   20.000   1
+ B2A      var_4    B      CA     CB     HB1      -59.982   20.000   3
+ B2A      var_5    B      CA     N      H         59.984   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ B2A      chir_01  CA     N      CB     B         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ B2A      plan-1    N         0.020
+ B2A      plan-1    CA        0.020
+ B2A      plan-1    H         0.020
+ B2A      plan-1    HN2       0.020
+# ------------------------------------------------------

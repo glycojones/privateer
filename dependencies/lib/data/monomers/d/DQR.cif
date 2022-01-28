@@ -1,0 +1,450 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DQR      DQR 'ALPHA-D-FRUCTOFURANOSYL-ALPHA-D-FRUC' pyranose           66  34 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DQR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DQR           C1     C    CH1       0.000      0.000    0.000    0.000
+ DQR           H1     H    H         0.000     -0.728   -0.059   -0.821
+ DQR           O1     O    O2        0.000     -0.671    0.375    1.204
+ DQR           C20    C    CT        0.000     -1.856    1.074    0.815
+ DQR           O20    O    O2        0.000     -1.551    2.003   -0.232
+ DQR           C50    C    CH1       0.000     -1.895    3.335    0.180
+ DQR           H50    H    H         0.000     -2.905    3.593   -0.168
+ DQR           C60    C    CH2       0.000     -0.875    4.338   -0.363
+ DQR           H601   H    H         0.000      0.128    4.046   -0.043
+ DQR           H602   H    H         0.000     -1.103    5.334    0.023
+ DQR           O60    O    OH1       0.000     -0.935    4.354   -1.791
+ DQR           H60    H    H         0.000     -0.238    4.928   -2.136
+ DQR           C40    C    CH1       0.000     -1.850    3.306    1.728
+ DQR           H40    H    H         0.000     -0.820    3.409    2.096
+ DQR           O40    O    OH1       0.000     -2.699    4.310    2.287
+ DQR           H2     H    H         0.000     -2.394    5.182    2.005
+ DQR           C30    C    CH1       0.000     -2.405    1.880    2.012
+ DQR           H30    H    H         0.000     -3.504    1.881    2.012
+ DQR           O30    O    OH1       0.000     -1.898    1.374    3.249
+ DQR           H3     H    H         0.000     -2.182    1.949    3.972
+ DQR           C10    C    CH2       0.000     -2.912    0.077    0.333
+ DQR           H101   H    H         0.000     -3.816    0.616    0.044
+ DQR           H102   H    H         0.000     -3.148   -0.620    1.140
+ DQR           O10    O    O2        0.000     -2.405   -0.646   -0.791
+ DQR           C21    C    CT        0.000     -3.481   -1.448   -1.284
+ DQR           C11    C    CH2       0.000     -3.046   -2.170   -2.560
+ DQR           H111   H    H         0.000     -3.897   -2.710   -2.980
+ DQR           H112   H    H         0.000     -2.249   -2.877   -2.323
+ DQR           O11    O    OH1       0.000     -2.570   -1.214   -3.510
+ DQR           H11    H    H         0.000     -2.295   -1.672   -4.316
+ DQR           O21    O    O2        0.000     -4.618   -0.620   -1.557
+ DQR           C51    C    CH1       0.000     -5.742   -1.061   -0.780
+ DQR           H51    H    H         0.000     -6.364   -1.752   -1.366
+ DQR           C61    C    CH2       0.000     -6.572    0.139   -0.320
+ DQR           H611   H    H         0.000     -5.926    0.853    0.194
+ DQR           H612   H    H         0.000     -7.354   -0.200    0.363
+ DQR           O61    O    OH1       0.000     -7.170    0.768   -1.456
+ DQR           H61    H    H         0.000     -7.695    1.526   -1.165
+ DQR           C41    C    CH1       0.000     -5.130   -1.792    0.441
+ DQR           H41    H    H         0.000     -4.818   -1.077    1.214
+ DQR           O41    O    OH1       0.000     -6.038   -2.760    0.972
+ DQR           H4     H    H         0.000     -6.842   -2.315    1.273
+ DQR           C31    C    CH1       0.000     -3.898   -2.480   -0.214
+ DQR           H31    H    H         0.000     -4.185   -3.433   -0.682
+ DQR           O31    O    OH1       0.000     -2.857   -2.678    0.743
+ DQR           H6     H    H         0.000     -3.174   -3.257    1.449
+ DQR           O5     O    O2        0.000      0.991    0.976   -0.314
+ DQR           C5     C    CH1       0.000      1.807    1.152    0.842
+ DQR           H5     H    H         0.000      1.167    1.363    1.711
+ DQR           C4     C    CH1       0.000      2.616   -0.120    1.104
+ DQR           H9     H    H         0.000      3.238   -0.347    0.227
+ DQR           O4     O    OH1       0.000      3.451    0.071    2.246
+ DQR           HO4    H    H         0.000      3.956   -0.736    2.414
+ DQR           C3     C    CH1       0.000      1.650   -1.282    1.363
+ DQR           H8     H    H         0.000      1.101   -1.105    2.298
+ DQR           O3     O    OH1       0.000      2.383   -2.505    1.460
+ DQR           HO3    H    H         0.000      1.769   -3.236    1.611
+ DQR           C2     C    CH1       0.000      0.663   -1.367    0.193
+ DQR           H7     H    H         0.000      1.200   -1.648   -0.723
+ DQR           O2     O    OH1       0.000     -0.338   -2.346    0.480
+ DQR           HO2    H    H         0.000     -0.911   -2.457   -0.291
+ DQR           C6     C    CH2       0.000      2.762    2.326    0.618
+ DQR           H61A   H    H         0.000      3.332    2.161   -0.299
+ DQR           H62    H    H         0.000      3.448    2.403    1.463
+ DQR           O6     O    OH1       0.000      2.010    3.536    0.501
+ DQR           HO6    H    H         0.000      2.650    4.258    0.440
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DQR      C1     n/a    O5     START
+ DQR      H1     C1     .      .
+ DQR      O1     C1     C20    .
+ DQR      C20    O1     C10    .
+ DQR      O20    C20    C50    .
+ DQR      C50    O20    C40    .
+ DQR      H50    C50    .      .
+ DQR      C60    C50    O60    .
+ DQR      H601   C60    .      .
+ DQR      H602   C60    .      .
+ DQR      O60    C60    H60    .
+ DQR      H60    O60    .      .
+ DQR      C40    C50    C30    .
+ DQR      H40    C40    .      .
+ DQR      O40    C40    H2     .
+ DQR      H2     O40    .      .
+ DQR      C30    C40    O30    .
+ DQR      H30    C30    .      .
+ DQR      O30    C30    H3     .
+ DQR      H3     O30    .      .
+ DQR      C10    C20    O10    .
+ DQR      H101   C10    .      .
+ DQR      H102   C10    .      .
+ DQR      O10    C10    C21    .
+ DQR      C21    O10    O21    .
+ DQR      C11    C21    O11    .
+ DQR      H111   C11    .      .
+ DQR      H112   C11    .      .
+ DQR      O11    C11    H11    .
+ DQR      H11    O11    .      .
+ DQR      O21    C21    C51    .
+ DQR      C51    O21    C41    .
+ DQR      H51    C51    .      .
+ DQR      C61    C51    O61    .
+ DQR      H611   C61    .      .
+ DQR      H612   C61    .      .
+ DQR      O61    C61    H61    .
+ DQR      H61    O61    .      .
+ DQR      C41    C51    C31    .
+ DQR      H41    C41    .      .
+ DQR      O41    C41    H4     .
+ DQR      H4     O41    .      .
+ DQR      C31    C41    O31    .
+ DQR      H31    C31    .      .
+ DQR      O31    C31    H6     .
+ DQR      H6     O31    .      .
+ DQR      O5     C1     .      END
+ DQR      C5     O5     C6     .
+ DQR      H5     C5     .      .
+ DQR      C4     C5     C3     .
+ DQR      H9     C4     .      .
+ DQR      O4     C4     HO4    .
+ DQR      HO4    O4     .      .
+ DQR      C3     C4     C2     .
+ DQR      H8     C3     .      .
+ DQR      O3     C3     HO3    .
+ DQR      HO3    O3     .      .
+ DQR      C2     C3     O2     .
+ DQR      H7     C2     .      .
+ DQR      O2     C2     HO2    .
+ DQR      HO2    O2     .      .
+ DQR      C6     C5     O6     .
+ DQR      H61A   C6     .      .
+ DQR      H62    C6     .      .
+ DQR      O6     C6     .      .
+ DQR      HO6    O6     .      .
+ DQR      C1     C2     .    ADD
+ DQR      C20    C30    .    ADD
+ DQR      C21    C31    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DQR       C1        C2        single    1.524     0.020     1.524     0.020     
+DQR       O1        C1        single    1.426     0.020     1.426     0.020     
+DQR       O5        C1        single    1.426     0.020     1.426     0.020     
+DQR       H1        C1        single    1.089     0.010     0.989     0.005     
+DQR       C10       C20       single    1.524     0.020     1.524     0.020     
+DQR       O10       C10       single    1.426     0.020     1.426     0.020     
+DQR       H101      C10       single    1.089     0.010     0.989     0.005     
+DQR       H102      C10       single    1.089     0.010     0.989     0.005     
+DQR       C11       C21       single    1.524     0.020     1.524     0.020     
+DQR       O11       C11       single    1.432     0.020     1.432     0.020     
+DQR       H111      C11       single    1.089     0.010     0.989     0.005     
+DQR       H112      C11       single    1.089     0.010     0.989     0.005     
+DQR       C2        C3        single    1.524     0.020     1.524     0.020     
+DQR       O2        C2        single    1.432     0.020     1.432     0.020     
+DQR       H7        C2        single    1.089     0.010     0.989     0.005     
+DQR       C20       C30       single    1.524     0.020     1.524     0.020     
+DQR       C20       O1        single    1.426     0.020     1.426     0.020     
+DQR       O20       C20       single    1.426     0.020     1.426     0.020     
+DQR       C21       C31       single    1.524     0.020     1.524     0.020     
+DQR       C21       O10       single    1.426     0.020     1.426     0.020     
+DQR       O21       C21       single    1.426     0.020     1.426     0.020     
+DQR       C3        C4        single    1.524     0.020     1.524     0.020     
+DQR       O3        C3        single    1.432     0.020     1.432     0.020     
+DQR       H8        C3        single    1.089     0.010     0.989     0.005     
+DQR       C30       C40       single    1.524     0.020     1.524     0.020     
+DQR       O30       C30       single    1.432     0.020     1.432     0.020     
+DQR       H30       C30       single    1.089     0.010     0.989     0.005     
+DQR       C31       C41       single    1.524     0.020     1.524     0.020     
+DQR       O31       C31       single    1.432     0.020     1.432     0.020     
+DQR       H31       C31       single    1.089     0.010     0.989     0.005     
+DQR       C4        C5        single    1.524     0.020     1.524     0.020     
+DQR       O4        C4        single    1.432     0.020     1.432     0.020     
+DQR       H9        C4        single    1.089     0.010     0.989     0.005     
+DQR       C40       C50       single    1.524     0.020     1.524     0.020     
+DQR       O40       C40       single    1.432     0.020     1.432     0.020     
+DQR       H40       C40       single    1.089     0.010     0.989     0.005     
+DQR       C41       C51       single    1.524     0.020     1.524     0.020     
+DQR       O41       C41       single    1.432     0.020     1.432     0.020     
+DQR       H41       C41       single    1.089     0.010     0.989     0.005     
+DQR       C6        C5        single    1.524     0.020     1.524     0.020     
+DQR       C5        O5        single    1.426     0.020     1.426     0.020     
+DQR       H5        C5        single    1.089     0.010     0.989     0.005     
+DQR       C60       C50       single    1.524     0.020     1.524     0.020     
+DQR       C50       O20       single    1.426     0.020     1.426     0.020     
+DQR       H50       C50       single    1.089     0.010     0.989     0.005     
+DQR       C61       C51       single    1.524     0.020     1.524     0.020     
+DQR       C51       O21       single    1.426     0.020     1.426     0.020     
+DQR       H51       C51       single    1.089     0.010     0.989     0.005     
+DQR       O6        C6        single    1.432     0.020     1.432     0.020     
+DQR       H61A      C6        single    1.089     0.010     0.989     0.005     
+DQR       H62       C6        single    1.089     0.010     0.989     0.005     
+DQR       O60       C60       single    1.432     0.020     1.432     0.020     
+DQR       H601      C60       single    1.089     0.010     0.989     0.005     
+DQR       H602      C60       single    1.089     0.010     0.989     0.005     
+DQR       O61       C61       single    1.432     0.020     1.432     0.020     
+DQR       H611      C61       single    1.089     0.010     0.989     0.005     
+DQR       H612      C61       single    1.089     0.010     0.989     0.005     
+DQR       H11       O11       single    0.970     0.012     0.839     0.014     
+DQR       HO2       O2        single    0.970     0.012     0.839     0.014     
+DQR       HO3       O3        single    0.970     0.012     0.839     0.014     
+DQR       H3        O30       single    0.970     0.012     0.839     0.014     
+DQR       H6        O31       single    0.970     0.012     0.839     0.014     
+DQR       HO4       O4        single    0.970     0.012     0.839     0.014     
+DQR       H2        O40       single    0.970     0.012     0.839     0.014     
+DQR       H4        O41       single    0.970     0.012     0.839     0.014     
+DQR       H60       O60       single    0.970     0.012     0.839     0.014     
+DQR       H61       O61       single    0.970     0.012     0.839     0.014     
+DQR       HO6       O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DQR      H1     C1     O1      109.470    3.000
+ DQR      H1     C1     O5      109.470    3.000
+ DQR      O1     C1     O5      109.470    3.000
+ DQR      H1     C1     C2      108.340    3.000
+ DQR      O1     C1     C2      109.470    3.000
+ DQR      O5     C1     C2      109.470    3.000
+ DQR      C1     O1     C20     111.800    3.000
+ DQR      O1     C20    O20     109.500    3.000
+ DQR      O1     C20    C10     109.470    3.000
+ DQR      O1     C20    C30     109.470    3.000
+ DQR      O20    C20    C10     109.470    3.000
+ DQR      O20    C20    C30     109.470    3.000
+ DQR      C10    C20    C30     111.000    3.000
+ DQR      C20    O20    C50     111.800    3.000
+ DQR      O20    C50    H50     109.470    3.000
+ DQR      O20    C50    C60     109.470    3.000
+ DQR      O20    C50    C40     109.470    3.000
+ DQR      H50    C50    C60     108.340    3.000
+ DQR      H50    C50    C40     108.340    3.000
+ DQR      C60    C50    C40     111.000    3.000
+ DQR      C50    C60    H601    109.470    3.000
+ DQR      C50    C60    H602    109.470    3.000
+ DQR      C50    C60    O60     109.470    3.000
+ DQR      H601   C60    H602    107.900    3.000
+ DQR      H601   C60    O60     109.470    3.000
+ DQR      H602   C60    O60     109.470    3.000
+ DQR      C60    O60    H60     109.470    3.000
+ DQR      C50    C40    H40     108.340    3.000
+ DQR      C50    C40    O40     109.470    3.000
+ DQR      C50    C40    C30     111.000    3.000
+ DQR      H40    C40    O40     109.470    3.000
+ DQR      H40    C40    C30     108.340    3.000
+ DQR      O40    C40    C30     109.470    3.000
+ DQR      C40    O40    H2      109.470    3.000
+ DQR      C40    C30    H30     108.340    3.000
+ DQR      C40    C30    O30     109.470    3.000
+ DQR      C40    C30    C20     111.000    3.000
+ DQR      H30    C30    O30     109.470    3.000
+ DQR      H30    C30    C20     108.340    3.000
+ DQR      O30    C30    C20     109.470    3.000
+ DQR      C30    O30    H3      109.470    3.000
+ DQR      C20    C10    H101    109.470    3.000
+ DQR      C20    C10    H102    109.470    3.000
+ DQR      C20    C10    O10     109.500    3.000
+ DQR      H101   C10    H102    107.900    3.000
+ DQR      H101   C10    O10     109.470    3.000
+ DQR      H102   C10    O10     109.470    3.000
+ DQR      C10    O10    C21     111.800    3.000
+ DQR      O10    C21    C11     109.470    3.000
+ DQR      O10    C21    O21     109.500    3.000
+ DQR      O10    C21    C31     109.470    3.000
+ DQR      C11    C21    O21     109.470    3.000
+ DQR      C11    C21    C31     111.000    3.000
+ DQR      O21    C21    C31     109.470    3.000
+ DQR      C21    C11    H111    109.470    3.000
+ DQR      C21    C11    H112    109.470    3.000
+ DQR      C21    C11    O11     109.470    3.000
+ DQR      H111   C11    H112    107.900    3.000
+ DQR      H111   C11    O11     109.470    3.000
+ DQR      H112   C11    O11     109.470    3.000
+ DQR      C11    O11    H11     109.470    3.000
+ DQR      C21    O21    C51     111.800    3.000
+ DQR      O21    C51    H51     109.470    3.000
+ DQR      O21    C51    C61     109.470    3.000
+ DQR      O21    C51    C41     109.470    3.000
+ DQR      H51    C51    C61     108.340    3.000
+ DQR      H51    C51    C41     108.340    3.000
+ DQR      C61    C51    C41     111.000    3.000
+ DQR      C51    C61    H611    109.470    3.000
+ DQR      C51    C61    H612    109.470    3.000
+ DQR      C51    C61    O61     109.470    3.000
+ DQR      H611   C61    H612    107.900    3.000
+ DQR      H611   C61    O61     109.470    3.000
+ DQR      H612   C61    O61     109.470    3.000
+ DQR      C61    O61    H61     109.470    3.000
+ DQR      C51    C41    H41     108.340    3.000
+ DQR      C51    C41    O41     109.470    3.000
+ DQR      C51    C41    C31     111.000    3.000
+ DQR      H41    C41    O41     109.470    3.000
+ DQR      H41    C41    C31     108.340    3.000
+ DQR      O41    C41    C31     109.470    3.000
+ DQR      C41    O41    H4      109.470    3.000
+ DQR      C41    C31    H31     108.340    3.000
+ DQR      C41    C31    O31     109.470    3.000
+ DQR      C41    C31    C21     111.000    3.000
+ DQR      H31    C31    O31     109.470    3.000
+ DQR      H31    C31    C21     108.340    3.000
+ DQR      O31    C31    C21     109.470    3.000
+ DQR      C31    O31    H6      109.470    3.000
+ DQR      C1     O5     C5      111.800    3.000
+ DQR      O5     C5     H5      109.470    3.000
+ DQR      O5     C5     C4      109.470    3.000
+ DQR      O5     C5     C6      109.470    3.000
+ DQR      H5     C5     C4      108.340    3.000
+ DQR      H5     C5     C6      108.340    3.000
+ DQR      C4     C5     C6      111.000    3.000
+ DQR      C5     C4     H9      108.340    3.000
+ DQR      C5     C4     O4      109.470    3.000
+ DQR      C5     C4     C3      111.000    3.000
+ DQR      H9     C4     O4      109.470    3.000
+ DQR      H9     C4     C3      108.340    3.000
+ DQR      O4     C4     C3      109.470    3.000
+ DQR      C4     O4     HO4     109.470    3.000
+ DQR      C4     C3     H8      108.340    3.000
+ DQR      C4     C3     O3      109.470    3.000
+ DQR      C4     C3     C2      111.000    3.000
+ DQR      H8     C3     O3      109.470    3.000
+ DQR      H8     C3     C2      108.340    3.000
+ DQR      O3     C3     C2      109.470    3.000
+ DQR      C3     O3     HO3     109.470    3.000
+ DQR      C3     C2     H7      108.340    3.000
+ DQR      C3     C2     O2      109.470    3.000
+ DQR      C3     C2     C1      111.000    3.000
+ DQR      H7     C2     O2      109.470    3.000
+ DQR      H7     C2     C1      108.340    3.000
+ DQR      O2     C2     C1      109.470    3.000
+ DQR      C2     O2     HO2     109.470    3.000
+ DQR      C5     C6     H61A    109.470    3.000
+ DQR      C5     C6     H62     109.470    3.000
+ DQR      C5     C6     O6      109.470    3.000
+ DQR      H61A   C6     H62     107.900    3.000
+ DQR      H61A   C6     O6      109.470    3.000
+ DQR      H62    C6     O6      109.470    3.000
+ DQR      C6     O6     HO6     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DQR      var_1    O5     C1     O1     C20       95.451   20.000   1
+ DQR      var_2    C1     O1     C20    C10       76.509   20.000   1
+ DQR      var_3    O1     C20    C30    C40       90.000   20.000   1
+ DQR      var_4    O1     C20    O20    C50     -120.000   20.000   1
+ DQR      var_5    C20    O20    C50    C40       30.000   20.000   1
+ DQR      var_6    O20    C50    C60    O60       64.447   20.000   3
+ DQR      var_7    C50    C60    O60    H60     -175.006   20.000   1
+ DQR      var_8    O20    C50    C40    C30      -30.000   20.000   3
+ DQR      var_9    C50    C40    O40    H2       -61.504   20.000   1
+ DQR      var_10   C50    C40    C30    O30      150.000   20.000   3
+ DQR      var_11   C40    C30    O30    H3        61.446   20.000   1
+ DQR      var_12   O1     C20    C10    O10      -60.292   20.000   1
+ DQR      var_13   C20    C10    O10    C21     -173.721   20.000   1
+ DQR      var_14   C10    O10    C21    O21       54.645   20.000   1
+ DQR      var_15   O10    C21    C31    C41       90.000   20.000   1
+ DQR      var_16   O10    C21    C11    O11      -54.942   20.000   1
+ DQR      var_17   C21    C11    O11    H11      179.997   20.000   1
+ DQR      var_18   O10    C21    O21    C51     -120.000   20.000   1
+ DQR      var_19   C21    O21    C51    C41       30.000   20.000   1
+ DQR      var_20   O21    C51    C61    O61       66.439   20.000   3
+ DQR      var_21   C51    C61    O61    H61      179.996   20.000   1
+ DQR      var_22   O21    C51    C41    C31      -30.000   20.000   3
+ DQR      var_23   C51    C41    O41    H4       -61.389   20.000   1
+ DQR      var_24   C51    C41    C31    O31      150.000   20.000   3
+ DQR      var_25   C41    C31    O31    H6        61.433   20.000   1
+ DQR      var_26   C1     O5     C5     C6       180.000   20.000   1
+ DQR      var_27   O5     C5     C4     C3       -60.000   20.000   3
+ DQR      var_28   C5     C4     O4     HO4      179.535   20.000   1
+ DQR      var_29   C5     C4     C3     C2        60.000   20.000   3
+ DQR      var_30   C4     C3     O3     HO3     -179.181   20.000   1
+ DQR      var_31   C4     C3     C2     O2       180.000   20.000   3
+ DQR      var_32   C3     C2     C1     O5        60.000   20.000   3
+ DQR      var_33   C3     C2     O2     HO2     -174.783   20.000   1
+ DQR      var_34   O5     C5     C6     O6        65.164   20.000   3
+ DQR      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DQR      chir_01  C1     C2     O1     O5        negativ
+ DQR      chir_02  C2     C1     C3     O2        negativ
+ DQR      chir_03  C20    C10    C30    O1        negativ
+ DQR      chir_04  C21    C11    C31    O10       negativ
+ DQR      chir_05  C3     C2     C4     O3        positiv
+ DQR      chir_06  C30    C20    C40    O30       positiv
+ DQR      chir_07  C31    C21    C41    O31       positiv
+ DQR      chir_08  C4     C3     C5     O4        negativ
+ DQR      chir_09  C40    C30    C50    O40       negativ
+ DQR      chir_10  C41    C31    C51    O41       negativ
+ DQR      chir_11  C5     C4     C6     O5        negativ
+ DQR      chir_12  C50    C40    C60    O20       negativ
+ DQR      chir_13  C51    C41    C61    O21       negativ
+# ------------------------------------------------------

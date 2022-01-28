@@ -1,0 +1,149 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GGL      GGL 'C-delta linking GLUTAMIC-ACID                       ' .          15   9 .
+#
+data_comp_GGL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+ GGL           N      N    NH1      -0.204
+ GGL           H      H    HNH1      0.204
+ GGL           CA     C    CH1       0.058
+ GGL           HA     H    HCH1      0.046
+ GGL           CB     C    CH2      -0.078
+ GGL           HB3    H    HCH2      0.039
+ GGL           HB2    H    HCH2      0.039
+ GGL           CG     C    CH2      -0.067
+ GGL           HG3    H    HCH2      0.041
+ GGL           HG2    H    HCH2      0.041
+ GGL           CD     C    C         0.203
+ GGL           OE1    O    OC       -0.609
+ GGL           OE2    O    OC       -0.609
+ GGL           C      C    C         0.318
+ GGL           O      O    O        -0.422
+ GGL           OXT    O    OC       -0.500
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GGL      N      n/a    CA     START
+ GGL      H      N      .      .
+ GGL      CA     N      C      .
+ GGL      HA     CA     .      .
+ GGL      CB     CA     CG     .
+ GGL      HB3    CB     .      .
+ GGL      HB2    CB     .      .
+ GGL      CG     CB     CD     .
+ GGL      HG3    CG     .      .
+ GGL      HG2    CG     .      .
+ GGL      CD     CG     OE2    .
+ GGL      OE1    CD     .      .
+ GGL      OE2    CD     .      .
+ GGL      C      CA     .      END
+ GGL      O      C      .      .
+ GGL      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GGL       N         H         single    1.016     0.010     0.860     0.020     
+GGL       N         CA        single    1.458     0.019     1.458     0.019     
+GGL       CA        HA        single    1.089     0.010     0.980     0.020     
+GGL       CA        CB        single    1.530     0.020     1.530     0.020     
+GGL       CB        HB3       single    1.089     0.010     0.970     0.020     
+GGL       CB        HB2       single    1.089     0.010     0.970     0.020     
+GGL       CB        CG        single    1.520     0.020     1.520     0.020     
+GGL       CG        HG3       single    1.089     0.010     0.970     0.020     
+GGL       CG        HG2       single    1.089     0.010     0.970     0.020     
+GGL       CG        CD        single    1.516     0.020     1.516     0.020     
+GGL       CD        OE1       deloc     1.249     0.019     1.249     0.019     
+GGL       CD        OE2       deloc     1.249     0.019     1.249     0.019     
+GGL       CA        C         single    1.525     0.021     1.525     0.021     
+GGL       C         O         deloc     1.231     0.020     1.231     0.020     
+GGL       C         OXT       deloc     1.231     0.020     1.231     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GGL      H      N      CA      114.000    3.000
+ GGL      HA     CA     CB      109.000    3.000
+ GGL      CB     CA     C       110.100    1.900
+ GGL      HA     CA     C       109.000    3.000
+ GGL      N      CA     HA      110.000    3.000
+ GGL      N      CA     CB      110.500    1.700
+ GGL      HB3    CB     HB2     110.000    3.000
+ GGL      HB2    CB     CG      108.000    3.000
+ GGL      HB3    CB     CG      108.000    3.000
+ GGL      CA     CB     HB3     109.000    3.000
+ GGL      CA     CB     HB2     109.000    3.000
+ GGL      CA     CB     CG      114.100    2.000
+ GGL      HG3    CG     HG2     110.000    3.000
+ GGL      HG2    CG     CD      108.000    3.000
+ GGL      HG3    CG     CD      108.000    3.000
+ GGL      CB     CG     HG3     109.000    3.000
+ GGL      CB     CG     HG2     109.000    3.000
+ GGL      CB     CG     CD      112.600    1.700
+ GGL      OE1    CD     OE2     122.900    2.400
+ GGL      CG     CD     OE1     118.400    2.300
+ GGL      CG     CD     OE2     118.400    2.300
+ GGL      N      CA     C       111.200    2.800
+ GGL      CA     C      O       118.500    1.700
+ GGL      CA     C      OXT     118.500    1.700
+ GGL      O      C      OXT     123.000    1.700
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GGL      chi1     N      CA     CB     CG       180.000   15.000   3
+ GGL      chi2     CA     CB     CG     CD       180.000   15.000   3
+ GGL      chi3     CB     CG     CD     OE2        0.000   30.000   2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GGL      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GGL      plan-1    CD        0.020
+ GGL      plan-1    CG        0.020
+ GGL      plan-1    OE1       0.020
+ GGL      plan-1    OE2       0.020
+ GGL      plan-2    C         0.020
+ GGL      plan-2    CA        0.020
+ GGL      plan-2    O         0.020
+ GGL      plan-2    OXT       0.020

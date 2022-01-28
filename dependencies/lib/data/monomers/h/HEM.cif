@@ -1,0 +1,595 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HEM      HEM 'PROTOPORPHYRIN IX CONTAINING FE     ' non-polymer        73  43 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HEM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HEM           O2D    O    OC       -0.500     -6.891    2.752   -0.719
+ HEM           CGD    C    C         0.000     -6.032    2.706    0.189
+ HEM           O1D    O    OC       -0.500     -6.384    2.778    1.387
+ HEM           CBD    C    CH2       0.000     -4.573    2.563   -0.160
+ HEM           HBD    H    H         0.000     -4.263    3.408   -0.775
+ HEM           HBDA   H    H         0.000     -4.422    1.636   -0.715
+ HEM           CAD    C    CH2       0.000     -3.741    2.532    1.123
+ HEM           HAD    H    H         0.000     -4.054    1.687    1.737
+ HEM           HADA   H    H         0.000     -3.894    3.459    1.677
+ HEM           C3D    C    CR5       0.000     -2.283    2.389    0.774
+ HEM           C2D    C    CR5       0.000     -1.382    3.388    0.641
+ HEM           CMD    C    CH3       0.000     -1.639    4.863    0.811
+ HEM           HMDB   H    H         0.000     -2.394    5.185    0.094
+ HEM           HMDA   H    H         0.000     -1.994    5.056    1.823
+ HEM           HMD    H    H         0.000     -0.715    5.415    0.639
+ HEM           C4D    C    CR5       0.000     -1.561    1.137    0.511
+ HEM           CHA    C    C1        0.000     -2.161   -0.125    0.490
+ HEM           HHA    H    H         0.000     -3.246   -0.186    0.563
+ HEM           ND     N    NR5       1.000     -0.276    1.431    0.298
+ HEM           C1D    C    CR5       0.000     -0.102    2.753    0.298
+ HEM           CHD    C    C1        0.000      1.075    3.460    0.018
+ HEM           HHD    H    H         0.000      1.019    4.543   -0.081
+ HEM           FE     FE   FE        0.000      1.010    0.157   -0.060
+ HEM           NB     N    NR5       1.000      2.820   -1.386    0.207
+ HEM           C4B    C    CR5       0.000      4.117   -1.079    0.139
+ HEM           C3B    C    CR5       0.000      4.874   -2.341    0.314
+ HEM           CAB    C    C1        0.000      6.339   -2.497    0.365
+ HEM           HAB    H    H         0.000      6.927   -1.863    1.011
+ HEM           CBB    C    C2        0.000      6.935   -3.419   -0.385
+ HEM           HBBA   H    H         0.000      6.359   -3.986   -1.101
+ HEM           HBB    H    H         0.000      7.994   -3.600   -0.277
+ HEM           C2B    C    CR5       0.000      3.937   -3.328    0.418
+ HEM           CMB    C    CH3       0.000      4.203   -4.798    0.613
+ HEM           HMBB   H    H         0.000      4.793   -5.175   -0.222
+ HEM           HMBA   H    H         0.000      4.752   -4.948    1.543
+ HEM           HMB    H    H         0.000      3.256   -5.336    0.660
+ HEM           C1B    C    CR5       0.000      2.664   -2.707    0.308
+ HEM           CHB    C    C1        0.000      1.458   -3.419    0.306
+ HEM           HHB    H    H         0.000      1.498   -4.508    0.311
+ HEM           NC     N    NT        0.000      2.604    1.506   -0.033
+ HEM           C4C    C    CR5       0.000      2.304    2.846   -0.139
+ HEM           C3C    C    CR5       0.000      3.510    3.536   -0.437
+ HEM           CAC    C    C1        0.000      3.649    4.981   -0.692
+ HEM           HAC    H    H         0.000      3.302    5.694    0.041
+ HEM           CBC    C    C2        0.000      4.201    5.407   -1.823
+ HEM           HBCA   H    H         0.000      4.236    6.464   -2.041
+ HEM           HBC    H    H         0.000      4.614    4.696   -2.523
+ HEM           C2C    C    CR5       0.000      4.531    2.601   -0.445
+ HEM           CMC    C    CH3       0.000      5.991    2.880   -0.697
+ HEM           HMCB   H    H         0.000      6.112    3.316   -1.688
+ HEM           HMCA   H    H         0.000      6.363    3.576    0.054
+ HEM           HMC    H    H         0.000      6.554    1.949   -0.639
+ HEM           C1C    C    CR5       0.000      3.964    1.345   -0.174
+ HEM           CHC    C    C1        0.000      4.701    0.169   -0.069
+ HEM           HHC    H    H         0.000      5.786    0.227   -0.153
+ HEM           NA     N    NT        0.000     -0.068   -1.456    0.321
+ HEM           C1A    C    CR5       0.000     -1.436   -1.305    0.380
+ HEM           C4A    C    CR5       0.000      0.216   -2.803    0.298
+ HEM           C3A    C    CR5       0.000     -1.009   -3.500    0.270
+ HEM           CMA    C    CH3       0.000     -1.175   -4.996    0.197
+ HEM           HMAB   H    H         0.000     -0.328   -5.480    0.683
+ HEM           HMAA   H    H         0.000     -2.097   -5.284    0.702
+ HEM           HMA    H    H         0.000     -1.220   -5.306   -0.847
+ HEM           C2A    C    CR5       0.000     -2.015   -2.587    0.320
+ HEM           CAA    C    CH2       0.000     -3.490   -2.893    0.314
+ HEM           HAA    H    H         0.000     -4.023   -2.122    0.871
+ HEM           HAAA   H    H         0.000     -3.662   -3.862    0.783
+ HEM           CBA    C    CH2       0.000     -3.998   -2.926   -1.129
+ HEM           HBA    H    H         0.000     -3.463   -3.697   -1.684
+ HEM           HBAA   H    H         0.000     -3.825   -1.957   -1.596
+ HEM           CGA    C    C         0.000     -5.473   -3.232   -1.136
+ HEM           O1A    O    OC       -0.500     -6.080   -3.411   -0.057
+ HEM           O2A    O    OC       -0.500     -6.092   -3.306   -2.221
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HEM      O2D    n/a    CGD    START
+ HEM      CGD    O2D    CBD    .
+ HEM      O1D    CGD    .      .
+ HEM      CBD    CGD    CAD    .
+ HEM      HBD    CBD    .      .
+ HEM      HBDA   CBD    .      .
+ HEM      CAD    CBD    C3D    .
+ HEM      HAD    CAD    .      .
+ HEM      HADA   CAD    .      .
+ HEM      C3D    CAD    C4D    .
+ HEM      C2D    C3D    CMD    .
+ HEM      CMD    C2D    HMD    .
+ HEM      HMDB   CMD    .      .
+ HEM      HMDA   CMD    .      .
+ HEM      HMD    CMD    .      .
+ HEM      C4D    C3D    ND     .
+ HEM      CHA    C4D    HHA    .
+ HEM      HHA    CHA    .      .
+ HEM      ND     C4D    FE     .
+ HEM      C1D    ND     CHD    .
+ HEM      CHD    C1D    HHD    .
+ HEM      HHD    CHD    .      .
+ HEM      FE     ND     NA     .
+ HEM      NB     FE     C1B    .
+ HEM      C4B    NB     C3B    .
+ HEM      C3B    C4B    C2B    .
+ HEM      CAB    C3B    CBB    .
+ HEM      HAB    CAB    .      .
+ HEM      CBB    CAB    HBB    .
+ HEM      HBBA   CBB    .      .
+ HEM      HBB    CBB    .      .
+ HEM      C2B    C3B    CMB    .
+ HEM      CMB    C2B    HMB    .
+ HEM      HMBB   CMB    .      .
+ HEM      HMBA   CMB    .      .
+ HEM      HMB    CMB    .      .
+ HEM      C1B    NB     CHB    .
+ HEM      CHB    C1B    HHB    .
+ HEM      HHB    CHB    .      .
+ HEM      NC     FE     C1C    .
+ HEM      C4C    NC     C3C    .
+ HEM      C3C    C4C    C2C    .
+ HEM      CAC    C3C    CBC    .
+ HEM      HAC    CAC    .      .
+ HEM      CBC    CAC    HBC    .
+ HEM      HBCA   CBC    .      .
+ HEM      HBC    CBC    .      .
+ HEM      C2C    C3C    CMC    .
+ HEM      CMC    C2C    HMC    .
+ HEM      HMCB   CMC    .      .
+ HEM      HMCA   CMC    .      .
+ HEM      HMC    CMC    .      .
+ HEM      C1C    NC     CHC    .
+ HEM      CHC    C1C    HHC    .
+ HEM      HHC    CHC    .      .
+ HEM      NA     FE     C4A    .
+ HEM      C1A    NA     .      .
+ HEM      C4A    NA     C3A    .
+ HEM      C3A    C4A    C2A    .
+ HEM      CMA    C3A    HMA    .
+ HEM      HMAB   CMA    .      .
+ HEM      HMAA   CMA    .      .
+ HEM      HMA    CMA    .      .
+ HEM      C2A    C3A    CAA    .
+ HEM      CAA    C2A    CBA    .
+ HEM      HAA    CAA    .      .
+ HEM      HAAA   CAA    .      .
+ HEM      CBA    CAA    CGA    .
+ HEM      HBA    CBA    .      .
+ HEM      HBAA   CBA    .      .
+ HEM      CGA    CBA    O2A    .
+ HEM      O1A    CGA    .      .
+ HEM      O2A    CGA    .      END
+ HEM      CHA    C1A    .    ADD
+ HEM      CHB    C4A    .    ADD
+ HEM      CHC    C4B    .    ADD
+ HEM      CHD    C4C    .    ADD
+ HEM      C1A    C2A    .    ADD
+ HEM      C1B    C2B    .    ADD
+ HEM      C1C    C2C    .    ADD
+ HEM      C1D    C2D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HEM       CHA       C1A       single    1.389     0.020     1.389     0.020     
+HEM       CHA       C4D       double    1.398     0.020     1.398     0.020     
+HEM       HHA       CHA       single    1.082     0.013     0.975     0.010     
+HEM       CHB       C4A       single    1.386     0.020     1.386     0.020     
+HEM       CHB       C1B       double    1.400     0.020     1.400     0.020     
+HEM       HHB       CHB       single    1.082     0.013     0.975     0.010     
+HEM       CHC       C4B       single    1.393     0.020     1.393     0.020     
+HEM       CHC       C1C       double    1.392     0.020     1.392     0.020     
+HEM       HHC       CHC       single    1.082     0.013     0.975     0.010     
+HEM       CHD       C4C       double    1.383     0.020     1.383     0.020     
+HEM       CHD       C1D       single    1.401     0.020     1.401     0.020     
+HEM       HHD       CHD       single    1.082     0.013     0.975     0.010     
+HEM       C1A       C2A       double    1.408     0.020     1.408     0.020     
+HEM       C1A       NA        single    1.378     0.020     1.378     0.020     
+HEM       C2A       C3A       single    1.359     0.020     1.359     0.020     
+HEM       CAA       C2A       single    1.506     0.020     1.506     0.020     
+HEM       C3A       C4A       double    1.410     0.020     1.410     0.020     
+HEM       CMA       C3A       single    1.507     0.020     1.507     0.020     
+HEM       C4A       NA        single    1.377     0.020     1.377     0.020     
+HEM       HMA       CMA       single    1.089     0.010     0.989     0.005     
+HEM       HMAA      CMA       single    1.089     0.010     0.989     0.005     
+HEM       HMAB      CMA       single    1.089     0.010     0.989     0.005     
+HEM       CBA       CAA       single    1.530     0.020     1.530     0.020     
+HEM       HAA       CAA       single    1.089     0.010     0.989     0.005     
+HEM       HAAA      CAA       single    1.089     0.010     0.989     0.005     
+HEM       CGA       CBA       single    1.506     0.020     1.506     0.020     
+HEM       HBA       CBA       single    1.089     0.010     0.989     0.005     
+HEM       HBAA      CBA       single    1.089     0.010     0.989     0.005     
+HEM       O1A       CGA       deloc     1.251     0.020     1.251     0.020     
+HEM       O2A       CGA       deloc     1.251     0.020     1.251     0.020     
+HEM       C1B       C2B       single    1.421     0.020     1.421     0.020     
+HEM       C1B       NB        single    1.334     0.020     1.334     0.020     
+HEM       C2B       C3B       double    1.365     0.020     1.365     0.020     
+HEM       CMB       C2B       single    1.507     0.020     1.507     0.020     
+HEM       C3B       C4B       single    1.482     0.020     1.482     0.020     
+HEM       CAB       C3B       single    1.474     0.020     1.474     0.020     
+HEM       C4B       NB        double    1.335     0.020     1.335     0.020     
+HEM       HMB       CMB       single    1.089     0.010     0.989     0.005     
+HEM       HMBA      CMB       single    1.089     0.010     0.989     0.005     
+HEM       HMBB      CMB       single    1.089     0.010     0.989     0.005     
+HEM       CBB       CAB       double    1.330     0.020     1.330     0.020     
+HEM       HAB       CAB       single    1.082     0.013     0.975     0.010     
+HEM       HBB       CBB       single    1.082     0.013     0.975     0.010     
+HEM       HBBA      CBB       single    1.082     0.013     0.975     0.010     
+HEM       C1C       C2C       single    1.404     0.020     1.404     0.020     
+HEM       C1C       NC        single    1.377     0.020     1.377     0.020     
+HEM       C2C       C3C       double    1.384     0.020     1.384     0.020     
+HEM       CMC       C2C       single    1.508     0.020     1.508     0.020     
+HEM       C3C       C4C       single    1.421     0.020     1.421     0.020     
+HEM       CAC       C3C       single    1.474     0.020     1.474     0.020     
+HEM       C4C       NC        single    1.377     0.020     1.377     0.020     
+HEM       HMC       CMC       single    1.089     0.010     0.989     0.005     
+HEM       HMCA      CMC       single    1.089     0.010     0.989     0.005     
+HEM       HMCB      CMC       single    1.089     0.010     0.989     0.005     
+HEM       CBC       CAC       double    1.329     0.020     1.329     0.020     
+HEM       HAC       CAC       single    1.082     0.013     0.975     0.010     
+HEM       HBC       CBC       single    1.082     0.013     0.975     0.010     
+HEM       HBCA      CBC       single    1.082     0.013     0.975     0.010     
+HEM       C1D       C2D       single    1.469     0.020     1.469     0.020     
+HEM       C1D       ND        double    1.333     0.020     1.333     0.020     
+HEM       C2D       C3D       double    1.352     0.020     1.352     0.020     
+HEM       CMD       C2D       single    1.507     0.020     1.507     0.020     
+HEM       C4D       C3D       single    1.469     0.020     1.469     0.020     
+HEM       C3D       CAD       single    1.506     0.020     1.506     0.020     
+HEM       ND        C4D       single    1.335     0.020     1.335     0.020     
+HEM       HMD       CMD       single    1.089     0.010     0.989     0.005     
+HEM       HMDA      CMD       single    1.089     0.010     0.989     0.005     
+HEM       HMDB      CMD       single    1.089     0.010     0.989     0.005     
+HEM       CAD       CBD       single    1.529     0.020     1.529     0.020     
+HEM       HAD       CAD       single    1.089     0.010     0.989     0.005     
+HEM       HADA      CAD       single    1.089     0.010     0.989     0.005     
+HEM       CBD       CGD       single    1.507     0.020     1.507     0.020     
+HEM       HBD       CBD       single    1.089     0.010     0.989     0.005     
+HEM       HBDA      CBD       single    1.089     0.010     0.989     0.005     
+HEM       O1D       CGD       deloc     1.251     0.020     1.251     0.020     
+HEM       CGD       O2D       deloc     1.251     0.020     1.251     0.020     
+HEM       NA        FE        single    1.977     0.020     1.977     0.020     
+HEM       NB        FE        single    2.093     0.020     2.093     0.020     
+HEM       NC        FE        single    2.088     0.020     2.088     0.020     
+HEM       FE        ND        single    1.845     0.020     1.845     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HEM      O2D    CGD    O1D     119.993    3.000
+ HEM      O2D    CGD    CBD     120.034    3.000
+ HEM      O1D    CGD    CBD     119.974    3.000
+ HEM      CGD    CBD    HBD     109.465    3.000
+ HEM      CGD    CBD    HBDA    109.466    3.000
+ HEM      CGD    CBD    CAD     109.531    3.000
+ HEM      HBD    CBD    HBDA    109.417    3.000
+ HEM      HBD    CBD    CAD     109.492    3.000
+ HEM      HBDA   CBD    CAD     109.456    3.000
+ HEM      CBD    CAD    HAD     109.492    3.000
+ HEM      CBD    CAD    HADA    109.456    3.000
+ HEM      CBD    CAD    C3D     109.522    3.000
+ HEM      HAD    CAD    HADA    109.417    3.000
+ HEM      HAD    CAD    C3D     109.466    3.000
+ HEM      HADA   CAD    C3D     109.473    3.000
+ HEM      CAD    C3D    C2D     126.719    3.000
+ HEM      CAD    C3D    C4D     126.744    3.000
+ HEM      C2D    C3D    C4D     106.537    3.000
+ HEM      C3D    C2D    CMD     126.770    3.000
+ HEM      C3D    C2D    C1D     106.510    3.000
+ HEM      CMD    C2D    C1D     126.720    3.000
+ HEM      C2D    CMD    HMDB    109.432    3.000
+ HEM      C2D    CMD    HMDA    109.459    3.000
+ HEM      C2D    CMD    HMD     109.472    3.000
+ HEM      HMDB   CMD    HMDA    109.488    3.000
+ HEM      HMDB   CMD    HMD     109.476    3.000
+ HEM      HMDA   CMD    HMD     109.501    3.000
+ HEM      C3D    C4D    CHA     124.146    3.000
+ HEM      C3D    C4D    ND      108.293    3.000
+ HEM      CHA    C4D    ND      127.559    3.000
+ HEM      C4D    CHA    HHA     118.600    3.000
+ HEM      C4D    CHA    C1A     122.965    3.000
+ HEM      HHA    CHA    C1A     118.434    3.000
+ HEM      C4D    ND     C1D     110.113    3.000
+ HEM      C4D    ND     FE      123.339    3.000
+ HEM      C1D    ND     FE      126.410    3.000
+ HEM      ND     C1D    CHD     127.577    3.000
+ HEM      ND     C1D    C2D     108.347    3.000
+ HEM      CHD    C1D    C2D     124.075    3.000
+ HEM      C1D    CHD    HHD     118.440    3.000
+ HEM      C1D    CHD    C4C     123.038    3.000
+ HEM      HHD    CHD    C4C     118.522    3.000
+ HEM      ND     FE     NB      180.000    3.000
+ HEM      ND     FE     NC       90.000    3.000
+ HEM      ND     FE     NA       90.000    3.000
+ HEM      NB     FE     NC       90.000    3.000
+ HEM      NB     FE     NA       90.000    3.000
+ HEM      NC     FE     NA      180.000    3.000
+ HEM      FE     NB     C4B     125.519    3.000
+ HEM      FE     NB     C1B     123.947    3.000
+ HEM      C4B    NB     C1B     110.200    3.000
+ HEM      NB     C4B    C3B     107.128    3.000
+ HEM      NB     C4B    CHC     128.383    3.000
+ HEM      C3B    C4B    CHC     124.486    3.000
+ HEM      C4B    C3B    CAB     127.000    3.000
+ HEM      C4B    C3B    C2B     105.910    3.000
+ HEM      CAB    C3B    C2B     127.090    3.000
+ HEM      C3B    CAB    HAB     119.995    3.000
+ HEM      C3B    CAB    CBB     119.956    3.000
+ HEM      HAB    CAB    CBB     120.048    3.000
+ HEM      CAB    CBB    HBBA    120.022    3.000
+ HEM      CAB    CBB    HBB     119.964    3.000
+ HEM      HBBA   CBB    HBB     120.014    3.000
+ HEM      C3B    C2B    CMB     126.459    3.000
+ HEM      C3B    C2B    C1B     107.047    3.000
+ HEM      CMB    C2B    C1B     126.495    3.000
+ HEM      C2B    CMB    HMBB    109.484    3.000
+ HEM      C2B    CMB    HMBA    109.511    3.000
+ HEM      C2B    CMB    HMB     109.496    3.000
+ HEM      HMBB   CMB    HMBA    109.436    3.000
+ HEM      HMBB   CMB    HMB     109.435    3.000
+ HEM      HMBA   CMB    HMB     109.467    3.000
+ HEM      NB     C1B    CHB     127.159    3.000
+ HEM      NB     C1B    C2B     109.508    3.000
+ HEM      CHB    C1B    C2B     123.333    3.000
+ HEM      C1B    CHB    HHB     118.453    3.000
+ HEM      C1B    CHB    C4A     123.063    3.000
+ HEM      HHB    CHB    C4A     118.484    3.000
+ HEM      FE     NC     C4C     117.466    3.000
+ HEM      FE     NC     C1C     132.619    3.000
+ HEM      C4C    NC     C1C     108.728    3.000
+ HEM      NC     C4C    C3C     107.680    3.000
+ HEM      NC     C4C    CHD     128.089    3.000
+ HEM      C3C    C4C    CHD     124.229    3.000
+ HEM      C4C    C3C    CAC     126.325    3.000
+ HEM      C4C    C3C    C2C     107.407    3.000
+ HEM      CAC    C3C    C2C     126.268    3.000
+ HEM      C3C    CAC    HAC     119.957    3.000
+ HEM      C3C    CAC    CBC     120.052    3.000
+ HEM      HAC    CAC    CBC     119.991    3.000
+ HEM      CAC    CBC    HBCA    120.012    3.000
+ HEM      CAC    CBC    HBC     119.973    3.000
+ HEM      HBCA   CBC    HBC     120.015    3.000
+ HEM      C3C    C2C    CMC     126.168    3.000
+ HEM      C3C    C2C    C1C     107.766    3.000
+ HEM      CMC    C2C    C1C     126.066    3.000
+ HEM      C2C    CMC    HMCB    109.464    3.000
+ HEM      C2C    CMC    HMCA    109.380    3.000
+ HEM      C2C    CMC    HMC     109.474    3.000
+ HEM      HMCB   CMC    HMCA    109.450    3.000
+ HEM      HMCB   CMC    HMC     109.560    3.000
+ HEM      HMCA   CMC    HMC     109.500    3.000
+ HEM      NC     C1C    CHC     127.891    3.000
+ HEM      NC     C1C    C2C     108.300    3.000
+ HEM      CHC    C1C    C2C     123.808    3.000
+ HEM      C1C    CHC    HHC     118.347    3.000
+ HEM      C1C    CHC    C4B     123.097    3.000
+ HEM      HHC    CHC    C4B     118.556    3.000
+ HEM      FE     NA     C1A     117.405    3.000
+ HEM      FE     NA     C4A     133.038    3.000
+ HEM      C1A    NA     C4A     108.228    3.000
+ HEM      NA     C1A    CHA     127.931    3.000
+ HEM      NA     C1A    C2A     107.863    3.000
+ HEM      CHA    C1A    C2A     124.204    3.000
+ HEM      NA     C4A    C3A     107.747    3.000
+ HEM      NA     C4A    CHB     128.272    3.000
+ HEM      C3A    C4A    CHB     123.980    3.000
+ HEM      C4A    C3A    CMA     125.982    3.000
+ HEM      C4A    C3A    C2A     108.075    3.000
+ HEM      CMA    C3A    C2A     125.943    3.000
+ HEM      C3A    CMA    HMAB    109.504    3.000
+ HEM      C3A    CMA    HMAA    109.490    3.000
+ HEM      C3A    CMA    HMA     109.468    3.000
+ HEM      HMAB   CMA    HMAA    109.448    3.000
+ HEM      HMAB   CMA    HMA     109.472    3.000
+ HEM      HMAA   CMA    HMA     109.444    3.000
+ HEM      C3A    C2A    CAA     126.015    3.000
+ HEM      C3A    C2A    C1A     107.985    3.000
+ HEM      CAA    C2A    C1A     126.000    3.000
+ HEM      C2A    CAA    HAA     109.478    3.000
+ HEM      C2A    CAA    HAAA    109.490    3.000
+ HEM      C2A    CAA    CBA     109.463    3.000
+ HEM      HAA    CAA    HAAA    109.490    3.000
+ HEM      HAA    CAA    CBA     109.476    3.000
+ HEM      HAAA   CAA    CBA     109.430    3.000
+ HEM      CAA    CBA    HBA     109.437    3.000
+ HEM      CAA    CBA    HBAA    109.442    3.000
+ HEM      CAA    CBA    CGA     109.501    3.000
+ HEM      HBA    CBA    HBAA    109.446    3.000
+ HEM      HBA    CBA    CGA     109.508    3.000
+ HEM      HBAA   CBA    CGA     109.494    3.000
+ HEM      CBA    CGA    O1A     120.005    3.000
+ HEM      CBA    CGA    O2A     120.021    3.000
+ HEM      O1A    CGA    O2A     119.973    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HEM      var_1    O2D    CGD    CBD    CAD     -179.966   20.000   3
+ HEM      var_2    CGD    CBD    CAD    C3D      179.972   20.000   3
+ HEM      var_3    CBD    CAD    C3D    C4D      -85.027   20.000   2
+ HEM      CONST_1  CAD    C3D    C2D    CMD       -0.082    0.000   0
+ HEM      var_4    C3D    C2D    CMD    HMD      180.000   20.000   3
+ HEM      CONST_2  CAD    C3D    C4D    ND      -177.254    0.000   0
+ HEM      var_5    C3D    C4D    CHA    C1A     -172.958   20.000   3
+ HEM      var_6    C4D    CHA    C1A    NA         2.348   20.000   3
+ HEM      CONST_3  C3D    C4D    ND     FE       179.499    0.000   0
+ HEM      CONST_4  C4D    ND     C1D    CHD     -175.177    0.000   0
+ HEM      CONST_5  ND     C1D    C2D    C3D       -2.596    0.000   0
+ HEM      var_7    ND     C1D    CHD    C4C       -8.707   20.000   3
+ HEM      var_8    C1D    CHD    C4C    NC        -1.304   20.000   3
+ HEM      var_9    C4D    ND     FE     NA        -9.463   20.000   3
+ HEM      var_10   ND     FE     NB     C1B      102.711   20.000   3
+ HEM      CONST_6  FE     NB     C4B    C3B     -178.015    0.000   0
+ HEM      CONST_7  NB     C4B    C3B    C2B        2.553    0.000   0
+ HEM      var_11   C4B    C3B    CAB    CBB     -130.825   20.000   3
+ HEM      CONST_8  C3B    CAB    CBB    HBB     -173.983    0.000   0
+ HEM      CONST_9  C4B    C3B    C2B    CMB     -179.794    0.000   0
+ HEM      var_12   C3B    C2B    CMB    HMB      179.952   20.000   3
+ HEM      CONST_10 FE     NB     C1B    CHB       -1.402    0.000   0
+ HEM      CONST_11 NB     C1B    C2B    C3B       -2.914    0.000   0
+ HEM      var_13   NB     C1B    CHB    C4A       -5.172   20.000   3
+ HEM      var_14   C1B    CHB    C4A    NA        -1.598   20.000   3
+ HEM      var_15   ND     FE     NC     C1C      177.399   20.000   3
+ HEM      CONST_12 FE     NC     C4C    C3C     -165.550    0.000   0
+ HEM      CONST_13 NC     C4C    C3C    C2C       -2.684    0.000   0
+ HEM      var_16   C4C    C3C    CAC    CBC     -124.017   20.000   3
+ HEM      CONST_14 C3C    CAC    CBC    HBC       -4.518    0.000   0
+ HEM      CONST_15 C4C    C3C    C2C    CMC     -179.113    0.000   0
+ HEM      var_17   C3C    C2C    CMC    HMC      179.972   20.000   3
+ HEM      var_18   FE     NC     C1C    CHC      -16.604   20.000   3
+ HEM      CONST_16 NC     C1C    C2C    C3C        1.394    0.000   0
+ HEM      var_19   NC     C1C    CHC    C4B        3.463   20.000   3
+ HEM      var_20   C1C    CHC    C4B    NB         3.506   20.000   3
+ HEM      var_21   ND     FE     NA     C4A     -178.700   20.000   3
+ HEM      var_22   FE     NA     C1A    CHA      -15.092   20.000   3
+ HEM      CONST_17 NA     C1A    C2A    C3A        1.946    0.000   0
+ HEM      CONST_18 FE     NA     C4A    C3A     -162.893    0.000   0
+ HEM      CONST_19 NA     C4A    C3A    C2A       -1.949    0.000   0
+ HEM      var_23   C4A    C3A    CMA    HMA      -89.978   20.000   3
+ HEM      CONST_20 C4A    C3A    C2A    CAA     -179.929    0.000   0
+ HEM      var_24   C3A    C2A    CAA    CBA      -90.044   20.000   2
+ HEM      var_25   C2A    CAA    CBA    CGA      180.000   20.000   3
+ HEM      var_26   CAA    CBA    CGA    O2A      179.980   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ HEM      chir_03  FE     .      .      NB        cross5
+                   NA     ND     .      .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HEM      plan-1    CHA       0.020
+ HEM      plan-1    C1A       0.020
+ HEM      plan-1    C4D       0.020
+ HEM      plan-1    HHA       0.020
+ HEM      plan-2    CHB       0.020
+ HEM      plan-2    C4A       0.020
+ HEM      plan-2    C1B       0.020
+ HEM      plan-2    HHB       0.020
+ HEM      plan-3    CHC       0.020
+ HEM      plan-3    C4B       0.020
+ HEM      plan-3    C1C       0.020
+ HEM      plan-3    HHC       0.020
+ HEM      plan-4    CHD       0.020
+ HEM      plan-4    C4C       0.020
+ HEM      plan-4    C1D       0.020
+ HEM      plan-4    HHD       0.020
+ HEM      plan-5    C1A       0.020
+ HEM      plan-5    CHA       0.020
+ HEM      plan-5    C2A       0.020
+ HEM      plan-5    NA        0.020
+ HEM      plan-5    C3A       0.020
+ HEM      plan-5    C4A       0.020
+ HEM      plan-5    CAA       0.020
+ HEM      plan-5    CMA       0.020
+ HEM      plan-5    CHB       0.020
+ HEM      plan-5    HHA       0.020
+ HEM      plan-5    HHB       0.020
+ HEM      plan-6    CGA       0.020
+ HEM      plan-6    CBA       0.020
+ HEM      plan-6    O1A       0.020
+ HEM      plan-6    O2A       0.020
+ HEM      plan-7    C1B       0.020
+ HEM      plan-7    CHB       0.020
+ HEM      plan-7    C2B       0.020
+ HEM      plan-7    NB        0.020
+ HEM      plan-7    C3B       0.020
+ HEM      plan-7    C4B       0.020
+ HEM      plan-7    CMB       0.020
+ HEM      plan-7    CAB       0.020
+ HEM      plan-7    CHC       0.020
+ HEM      plan-7    FE        0.020
+ HEM      plan-7    HHB       0.020
+ HEM      plan-7    HAB       0.020
+ HEM      plan-7    HHC       0.020
+ HEM      plan-8    CAB       0.020
+ HEM      plan-8    C3B       0.020
+ HEM      plan-8    CBB       0.020
+ HEM      plan-8    HAB       0.020
+ HEM      plan-8    HBB       0.020
+ HEM      plan-8    HBBA      0.020
+ HEM      plan-9    C1C       0.020
+ HEM      plan-9    CHC       0.020
+ HEM      plan-9    C2C       0.020
+ HEM      plan-9    NC        0.020
+ HEM      plan-9    C3C       0.020
+ HEM      plan-9    C4C       0.020
+ HEM      plan-9    CMC       0.020
+ HEM      plan-9    CAC       0.020
+ HEM      plan-9    CHD       0.020
+ HEM      plan-9    HHC       0.020
+ HEM      plan-9    HAC       0.020
+ HEM      plan-9    HHD       0.020
+ HEM      plan-10   CAC       0.020
+ HEM      plan-10   C3C       0.020
+ HEM      plan-10   CBC       0.020
+ HEM      plan-10   HAC       0.020
+ HEM      plan-10   HBC       0.020
+ HEM      plan-10   HBCA      0.020
+ HEM      plan-11   C1D       0.020
+ HEM      plan-11   CHD       0.020
+ HEM      plan-11   C2D       0.020
+ HEM      plan-11   ND        0.020
+ HEM      plan-11   C3D       0.020
+ HEM      plan-11   C4D       0.020
+ HEM      plan-11   CMD       0.020
+ HEM      plan-11   CAD       0.020
+ HEM      plan-11   CHA       0.020
+ HEM      plan-11   FE        0.020
+ HEM      plan-11   HHD       0.020
+ HEM      plan-11   HHA       0.020
+ HEM      plan-12   CGD       0.020
+ HEM      plan-12   CBD       0.020
+ HEM      plan-12   O1D       0.020
+ HEM      plan-12   O2D       0.020
+# ------------------------------------------------------

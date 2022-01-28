@@ -1,0 +1,378 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PHF      PHF 'HF-OXO-PHOSPHATE CLUSTER PHF        ' non-polymer        40  29 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PHF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PHF           O4     O    O         0.000    -13.265  -14.826    6.958
+ PHF           P      P    P         0.000    -12.912  -13.507    7.720
+ PHF           O1     O    O2        0.000    -13.862  -12.789    8.791
+ PHF           HFE    HF   HF        0.000    -13.921  -11.199   10.204
+ PHF           OAE    O    O2        0.000    -12.170  -12.520   11.479
+ PHF           ODE    O    O2        0.000    -14.617   -9.798    8.255
+ PHF           OE2    O    OH1       0.000    -16.073  -10.979   10.131
+ PHF           HE21   H    H         0.000    -16.464  -10.140    9.852
+ PHF           OE3    O    OH1       0.000    -14.661  -12.870   12.026
+ PHF           HE31   H    H         0.000    -14.057  -13.481   12.692
+ PHF           OE1    O    OH1       0.000    -13.239   -9.314   11.836
+ PHF           HE11   H    H         0.000    -12.248   -8.975   12.130
+ PHF           O01    O    O         0.000    -12.002  -10.296    9.470
+ PHF           O3     O    O2        0.000    -11.675  -13.469    8.437
+ PHF           HFA    HF   HF        0.000    -10.501  -11.870    9.645
+ PHF           OA1    O    OH1       0.000     -9.667  -13.395   11.503
+ PHF           HA11   H    H         0.000     -8.652  -13.630   11.790
+ PHF           O2     O    O2        0.000    -12.719  -12.107    6.837
+ PHF           HFD    HF   HF        0.000    -12.341  -10.006    7.235
+ PHF           O02    O    O         0.000     -9.956   -9.953    8.205
+ PHF           OD1    O    OH1       0.000    -13.816   -9.231    5.783
+ PHF           HD11   H    H         0.000    -13.515   -8.798    4.972
+ PHF           OCD    O    O2        0.000    -11.589   -8.261    7.690
+ PHF           HFC    HF   HF        0.000     -9.716   -7.728    8.810
+ PHF           OC2    O    OH1       0.000    -11.744   -6.277    9.857
+ PHF           HC21   H    H         0.000    -11.735   -5.378   10.506
+ PHF           OC3    O    OH1       0.000    -11.139   -8.431   10.856
+ PHF           HC31   H    H         0.000    -10.822   -8.769   11.841
+ PHF           OC1    O    OH1       0.000     -9.817   -5.539    7.218
+ PHF           HC11   H    H         0.000     -9.007   -4.926    6.772
+ PHF           OBC    O    O2        0.000     -8.343   -8.519    7.275
+ PHF           OBD    O    O2        0.000    -10.586   -9.832    5.454
+ PHF           HFB    HF   HF        0.000     -8.403  -10.013    6.328
+ PHF           OAB    O    O2        0.000     -9.016  -12.344    7.790
+ PHF           OB3    O    OH1       0.000     -6.314  -10.223    5.936
+ PHF           HB31   H    H         0.000     -5.667   -9.884    6.569
+ PHF           OB2    O    OH1       0.000     -7.761   -8.191    5.154
+ PHF           HB21   H    H         0.000     -6.821   -8.001    5.032
+ PHF           OB1    O    OH1       0.000     -8.860  -11.153    4.513
+ PHF           HB11   H    H         0.000     -8.142  -11.497    3.965
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PHF      O4     n/a    P      START
+ PHF      P      O4     O2     .
+ PHF      O1     P      HFE    .
+ PHF      HFE    O1     O01    .
+ PHF      OAE    HFE    .      .
+ PHF      ODE    HFE    .      .
+ PHF      OE2    HFE    HE21   .
+ PHF      HE21   OE2    .      .
+ PHF      OE3    HFE    HE31   .
+ PHF      HE31   OE3    .      .
+ PHF      OE1    HFE    HE11   .
+ PHF      HE11   OE1    .      .
+ PHF      O01    HFE    .      .
+ PHF      O3     P      HFA    .
+ PHF      HFA    O3     OA1    .
+ PHF      OA1    HFA    HA11   .
+ PHF      HA11   OA1    .      .
+ PHF      O2     P      HFD    .
+ PHF      HFD    O2     OBD    .
+ PHF      O02    HFD    .      .
+ PHF      OD1    HFD    HD11   .
+ PHF      HD11   OD1    .      .
+ PHF      OCD    HFD    HFC    .
+ PHF      HFC    OCD    OBC    .
+ PHF      OC2    HFC    HC21   .
+ PHF      HC21   OC2    .      .
+ PHF      OC3    HFC    HC31   .
+ PHF      HC31   OC3    .      .
+ PHF      OC1    HFC    HC11   .
+ PHF      HC11   OC1    .      .
+ PHF      OBC    HFC    .      .
+ PHF      OBD    HFD    HFB    .
+ PHF      HFB    OBD    OB1    .
+ PHF      OAB    HFB    .      .
+ PHF      OB3    HFB    HB31   .
+ PHF      HB31   OB3    .      .
+ PHF      OB2    HFB    HB21   .
+ PHF      HB21   OB2    .      .
+ PHF      OB1    HFB    HB11   .
+ PHF      HB11   OB1    .      END
+ PHF      HFA    O01    .    ADD
+ PHF      HFA    O02    .    ADD
+ PHF      HFA    OAE    .    ADD
+ PHF      HFA    OAB    .    ADD
+ PHF      O01    HFD    .    ADD
+ PHF      O02    HFB    .    ADD
+ PHF      O02    HFC    .    ADD
+ PHF      HFB    OBC    .    ADD
+ PHF      HFD    ODE    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PHF       HFA       O01       single    2.182     0.020     2.182     0.020     
+PHF       HFA       O02       single    2.459     0.020     2.459     0.020     
+PHF       HFA       OAE       single    1.800     0.020     1.800     0.020     
+PHF       OA1       HFA       single    1.800     0.020     1.800     0.020     
+PHF       HFA       OAB       single    2.423     0.020     2.423     0.020     
+PHF       HFA       O3        single    2.323     0.020     2.323     0.020     
+PHF       O01       HFD       single    2.279     0.020     2.279     0.020     
+PHF       O01       HFE       single    2.244     0.020     2.244     0.020     
+PHF       O02       HFB       single    2.437     0.020     2.437     0.020     
+PHF       O02       HFC       single    2.318     0.020     2.318     0.020     
+PHF       O02       HFD       single    1.800     0.020     1.800     0.020     
+PHF       OAE       HFE       single    1.800     0.020     1.800     0.020     
+PHF       HA11      OA1       single    0.970     0.012     0.839     0.014     
+PHF       OAB       HFB       single    1.800     0.020     1.800     0.020     
+PHF       HFB       OBC       single    1.770     0.020     1.770     0.020     
+PHF       HFB       OBD       single    2.358     0.020     2.358     0.020     
+PHF       OB1       HFB       single    2.192     0.020     2.192     0.020     
+PHF       OB2       HFB       single    2.261     0.020     2.261     0.020     
+PHF       OB3       HFB       single    2.136     0.020     2.136     0.020     
+PHF       OBC       HFC       single    2.206     0.020     2.206     0.020     
+PHF       OBD       HFD       single    1.800     0.020     1.800     0.020     
+PHF       HB11      OB1       single    0.970     0.012     0.839     0.014     
+PHF       HB21      OB2       single    0.970     0.012     0.839     0.014     
+PHF       HB31      OB3       single    0.970     0.012     0.839     0.014     
+PHF       HFC       OCD       single    2.246     0.020     2.246     0.020     
+PHF       OC1       HFC       single    1.800     0.020     1.800     0.020     
+PHF       OC2       HFC       single    1.800     0.020     1.800     0.020     
+PHF       OC3       HFC       single    1.800     0.020     1.800     0.020     
+PHF       OCD       HFD       single    1.954     0.020     1.954     0.020     
+PHF       HC11      OC1       single    0.970     0.012     0.839     0.014     
+PHF       HC21      OC2       single    0.970     0.012     0.839     0.014     
+PHF       HC31      OC3       single    0.970     0.012     0.839     0.014     
+PHF       HFD       ODE       single    1.800     0.020     1.800     0.020     
+PHF       OD1       HFD       single    2.210     0.020     2.210     0.020     
+PHF       HFD       O2        single    2.172     0.020     2.172     0.020     
+PHF       ODE       HFE       single    2.499     0.020     2.499     0.020     
+PHF       HD11      OD1       single    0.970     0.012     0.839     0.014     
+PHF       OE1       HFE       single    1.800     0.020     1.800     0.020     
+PHF       OE2       HFE       single    2.164     0.020     2.164     0.020     
+PHF       OE3       HFE       single    1.800     0.020     1.800     0.020     
+PHF       HFE       O1        single    2.128     0.020     2.128     0.020     
+PHF       HE11      OE1       single    0.970     0.012     0.839     0.014     
+PHF       HE21      OE2       single    0.970     0.012     0.839     0.014     
+PHF       HE31      OE3       single    0.970     0.012     0.839     0.014     
+PHF       O1        P         single    1.610     0.020     1.610     0.020     
+PHF       O2        P         single    1.610     0.020     1.610     0.020     
+PHF       O3        P         single    1.610     0.020     1.610     0.020     
+PHF       P         O4        double    1.480     0.020     1.480     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PHF      O4     P      O1      109.500    3.000
+ PHF      O4     P      O3      109.500    3.000
+ PHF      O4     P      O2      109.500    3.000
+ PHF      O1     P      O3      102.600    3.000
+ PHF      O1     P      O2      102.600    3.000
+ PHF      O3     P      O2      102.600    3.000
+ PHF      P      O1     HFE     120.000    3.000
+ PHF      O1     HFE    OE3      89.596    3.000
+ PHF      O1     HFE    OAE      85.728    3.000
+ PHF      O1     HFE    ODE      84.764    3.000
+ PHF      O1     HFE    OE1     163.097    3.000
+ PHF      O1     HFE    OE2      94.653    3.000
+ PHF      O1     HFE    O01      93.426    3.000
+ PHF      OE3    HFE    OAE      60.392    3.000
+ PHF      OE3    HFE    ODE     146.485    3.000
+ PHF      OAE    HFE    ODE     151.165    3.000
+ PHF      OE3    HFE    OE1      95.860    3.000
+ PHF      OAE    HFE    OE1      83.126    3.000
+ PHF      ODE    HFE    OE1      99.036    3.000
+ PHF      OE3    HFE    OE2      78.727    3.000
+ PHF      OAE    HFE    OE2     139.119    3.000
+ PHF      ODE    HFE    OE2      68.889    3.000
+ PHF      OE1    HFE    OE2     102.093    3.000
+ PHF      OE3    HFE    O01     137.446    3.000
+ PHF      OAE    HFE    O01      77.509    3.000
+ PHF      ODE    HFE    O01      75.967    3.000
+ PHF      OE1    HFE    O01      71.789    3.000
+ PHF      OE2    HFE    O01     142.961    3.000
+ PHF      HFE    OE3    HE31    120.000    3.000
+ PHF      HFE    OAE    HFA     120.000    3.000
+ PHF      HFE    ODE    HFD     120.000    3.000
+ PHF      HFE    OE1    HE11    120.000    3.000
+ PHF      HFE    OE2    HE21    120.000    3.000
+ PHF      HFE    O01    HFA     120.000    3.000
+ PHF      HFE    O01    HFD     120.000    3.000
+ PHF      HFA    O01    HFD     120.000    3.000
+ PHF      P      O3     HFA     120.000    3.000
+ PHF      O3     HFA    OA1      97.635    3.000
+ PHF      O3     HFA    O01      96.154    3.000
+ PHF      O3     HFA    O02     110.133    3.000
+ PHF      O3     HFA    OAE      82.440    3.000
+ PHF      O3     HFA    OAB      77.110    3.000
+ PHF      O01    HFA    O02      62.812    3.000
+ PHF      O01    HFA    OAE      78.019    3.000
+ PHF      O02    HFA    OAE     139.552    3.000
+ PHF      O01    HFA    OAB     120.087    3.000
+ PHF      O02    HFA    OAB      64.425    3.000
+ PHF      OAE    HFA    OAB     153.783    3.000
+ PHF      OA1    HFA    O01     135.761    3.000
+ PHF      OA1    HFA    O02     145.320    3.000
+ PHF      OA1    HFA    OAE      62.547    3.000
+ PHF      OA1    HFA    OAB     103.941    3.000
+ PHF      HFA    OA1    HA11    120.000    3.000
+ PHF      P      O2     HFD     120.000    3.000
+ PHF      O2     HFD    O02     104.487    3.000
+ PHF      O2     HFD    OD1      95.894    3.000
+ PHF      O2     HFD    OCD     166.851    3.000
+ PHF      O2     HFD    OBD      93.372    3.000
+ PHF      O2     HFD    O01      94.733    3.000
+ PHF      O2     HFD    ODE      89.817    3.000
+ PHF      O02    HFD    OD1     149.129    3.000
+ PHF      O02    HFD    OCD      62.449    3.000
+ PHF      OD1    HFD    OCD      95.548    3.000
+ PHF      O02    HFD    OBD      67.527    3.000
+ PHF      OD1    HFD    OBD      88.632    3.000
+ PHF      OCD    HFD    OBD      80.444    3.000
+ PHF      O01    HFD    ODE      75.296    3.000
+ PHF      O02    HFD    O01      59.701    3.000
+ PHF      OD1    HFD    O01     142.014    3.000
+ PHF      OCD    HFD    O01      80.097    3.000
+ PHF      OBD    HFD    O01     126.978    3.000
+ PHF      O02    HFD    ODE     133.392    3.000
+ PHF      OD1    HFD    ODE      68.389    3.000
+ PHF      OCD    HFD    ODE     100.421    3.000
+ PHF      OBD    HFD    ODE     157.010    3.000
+ PHF      HFD    O02    HFA     120.000    3.000
+ PHF      HFD    O02    HFB     120.000    3.000
+ PHF      HFD    O02    HFC     120.000    3.000
+ PHF      HFA    O02    HFB     120.000    3.000
+ PHF      HFA    O02    HFC     120.000    3.000
+ PHF      HFB    O02    HFC     120.000    3.000
+ PHF      HFD    OD1    HD11    120.000    3.000
+ PHF      HFD    OCD    HFC     120.000    3.000
+ PHF      OCD    HFC    OC3      82.608    3.000
+ PHF      OCD    HFC    OC1      82.393    3.000
+ PHF      OCD    HFC    OC2      72.248    3.000
+ PHF      OCD    HFC    OBC      94.987    3.000
+ PHF      OCD    HFC    O02      63.631    3.000
+ PHF      OC3    HFC    OC1     131.554    3.000
+ PHF      OC3    HFC    OC2      55.089    3.000
+ PHF      OC1    HFC    OC2      76.466    3.000
+ PHF      OC3    HFC    OBC     142.601    3.000
+ PHF      OC1    HFC    OBC      84.492    3.000
+ PHF      OC2    HFC    OBC     158.187    3.000
+ PHF      OC3    HFC    O02      83.612    3.000
+ PHF      OC1    HFC    O02     128.201    3.000
+ PHF      OC2    HFC    O02     122.570    3.000
+ PHF      OBC    HFC    O02      62.531    3.000
+ PHF      HFC    OC3    HC31    120.000    3.000
+ PHF      HFC    OC1    HC11    120.000    3.000
+ PHF      HFC    OC2    HC21    120.000    3.000
+ PHF      HFC    OBC    HFB     120.000    3.000
+ PHF      HFD    OBD    HFB     120.000    3.000
+ PHF      OBD    HFB    OAB      93.117    3.000
+ PHF      OBD    HFB    OB3     147.657    3.000
+ PHF      OBD    HFB    OB2      90.490    3.000
+ PHF      OBD    HFB    OB1      62.612    3.000
+ PHF      OBD    HFB    O02      72.162    3.000
+ PHF      OBD    HFB    OBC      99.491    3.000
+ PHF      OAB    HFB    OB3     103.095    3.000
+ PHF      OAB    HFB    OB2     176.003    3.000
+ PHF      OB3    HFB    OB2      72.912    3.000
+ PHF      OAB    HFB    OB1      87.366    3.000
+ PHF      OB3    HFB    OB1      90.046    3.000
+ PHF      OB2    HFB    OB1      92.773    3.000
+ PHF      O02    HFB    OBC      65.713    3.000
+ PHF      OAB    HFB    O02      58.823    3.000
+ PHF      OB3    HFB    O02     140.094    3.000
+ PHF      OB2    HFB    O02     124.136    3.000
+ PHF      OB1    HFB    O02     121.186    3.000
+ PHF      OAB    HFB    OBC     115.333    3.000
+ PHF      OB3    HFB    OBC      98.514    3.000
+ PHF      OB2    HFB    OBC      65.663    3.000
+ PHF      OB1    HFB    OBC     152.788    3.000
+ PHF      HFB    OAB    HFA     120.000    3.000
+ PHF      HFB    OB3    HB31    120.000    3.000
+ PHF      HFB    OB2    HB21    120.000    3.000
+ PHF      HFB    OB1    HB11    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PHF      var_1    O4     P      O1     HFE      172.953   20.000   1
+ PHF      var_2    P      O1     HFE    O01       11.365   20.000   1
+ PHF      var_3    O1     HFE    OE3    HE31      88.220   20.000   1
+ PHF      var_4    O1     HFE    OAE    HFA       72.066   20.000   1
+ PHF      var_5    O1     HFE    ODE    HFD      -69.032   20.000   1
+ PHF      var_6    O1     HFE    OE1    HE11      -2.550   20.000   1
+ PHF      var_7    O1     HFE    OE2    HE21    -119.725   20.000   1
+ PHF      var_8    O1     HFE    O01    HFA      -57.153   20.000   1
+ PHF      var_9    HFE    O01    HFD    O2       -58.950   20.000   1
+ PHF      var_10   O4     P      O3     HFA      176.005   20.000   1
+ PHF      var_11   P      O3     HFA    OA1      141.124   20.000   1
+ PHF      var_12   O3     HFA    O01    HFE       53.567   20.000   1
+ PHF      var_13   O3     HFA    O02    HFD       43.774   20.000   1
+ PHF      var_14   O3     HFA    OAE    HFE      -74.941   20.000   1
+ PHF      var_15   O3     HFA    OAB    HFB      122.859   20.000   1
+ PHF      var_16   O3     HFA    OA1    HA11     119.558   20.000   1
+ PHF      var_17   O4     P      O2     HFD      176.327   20.000   1
+ PHF      var_18   P      O2     HFD    OBD      134.368   20.000   1
+ PHF      var_19   O2     HFD    ODE    HFE       69.453   20.000   1
+ PHF      var_20   O2     HFD    O02    HFA      -44.935   20.000   1
+ PHF      var_21   HFD    O02    HFB    OBD        5.850   20.000   1
+ PHF      var_22   HFD    O02    HFC    OCD       -6.368   20.000   1
+ PHF      var_23   O2     HFD    OD1    HD11    -109.117   20.000   1
+ PHF      var_24   O2     HFD    OCD    HFC      -16.670   20.000   1
+ PHF      var_25   HFD    OCD    HFC    OBC       66.757   20.000   1
+ PHF      var_26   OCD    HFC    OC3    HC31     157.068   20.000   1
+ PHF      var_27   OCD    HFC    OC1    HC11    -146.799   20.000   1
+ PHF      var_28   OCD    HFC    OC2    HC21    -163.815   20.000   1
+ PHF      var_29   OCD    HFC    OBC    HFB      -42.901   20.000   1
+ PHF      var_30   O2     HFD    OBD    HFB      -98.246   20.000   1
+ PHF      var_31   HFD    OBD    HFB    OB1      135.004   20.000   1
+ PHF      var_32   OBD    HFB    OBC    HFC       52.573   20.000   1
+ PHF      var_33   OBD    HFB    OAB    HFA      -69.924   20.000   1
+ PHF      var_34   OBD    HFB    OB3    HB31     153.027   20.000   1
+ PHF      var_35   OBD    HFB    OB2    HB21    -164.338   20.000   1
+ PHF      var_36   OBD    HFB    OB1    HB11     162.831   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PHF      chir_01  O01    HFA    HFD    HFE       negativ
+ PHF      chir_02  O02    HFA    HFB    HFC       positiv
+# ------------------------------------------------------

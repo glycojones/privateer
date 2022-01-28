@@ -1,0 +1,273 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AA6     AA6      "3-[4,5-DIHYDROXY-2-2-(2-HYDROXYETHYLAMINO)-PHENYL]-2-METHYLAMINO-PROPIONIC ACID"  M-peptide   33     18     .     
+#
+data_comp_AA6
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AA6     N       N       NT1     0       2.908       0.076       -0.481      
+AA6     CA      C       CH1     0       2.279       -0.780      0.537       
+AA6     C       C       C       0       2.383       -0.236      1.977       
+AA6     O       O       O       0       1.974       -0.974      2.896       
+AA6     CN      C       CH3     0       4.368       -0.037      -0.545      
+AA6     CB      C       CH2     0       0.808       -1.063      0.167       
+AA6     CG      C       CR6     0       -0.164      0.085       -0.040      
+AA6     CD1     C       CR6     0       -1.497      -0.201      -0.414      
+AA6     CD2     C       CR16    0       0.189       1.433       0.125       
+AA6     CE1     C       CR16    0       -2.421      0.832       -0.618      
+AA6     CE2     C       CR6     0       -0.728      2.455       -0.073      
+AA6     CZ1     C       CR6     0       -2.041      2.149       -0.446      
+AA6     OZ      O       OH1     0       -0.371      3.770       0.091       
+AA6     OH1     O       OH1     0       -2.938      3.156       -0.639      
+AA6     NE      N       NT1     0       -1.883      -1.532      -0.592      
+AA6     CZ2     C       CH2     0       -3.170      -2.037      -0.113      
+AA6     OH2     O       OH1     0       -3.151      -3.409      0.090       
+AA6     OXT     O       OC      -1      2.882       0.898       2.133       
+AA6     H       H       H       0       2.589       -0.151      -1.281      
+AA6     HA      H       H       0       2.745       -1.647      0.523       
+AA6     HCN1    H       H       0       4.719       0.567       -1.228      
+AA6     HCN2    H       H       0       4.622       -0.953      -0.771      
+AA6     HCN3    H       H       0       4.761       0.197       0.318       
+AA6     HB1     H       H       0       0.435       -1.641      0.864       
+AA6     HB2     H       H       0       0.815       -1.592      -0.658      
+AA6     HD2     H       H       0       1.066       1.659       0.375       
+AA6     HE1     H       H       0       -3.306      0.632       -0.870      
+AA6     HOZ     H       H       0       0.217       3.989       -0.494      
+AA6     HO1     H       H       0       -3.158      3.501       0.115       
+AA6     HNE     H       H       0       -1.672      -1.863      -1.376      
+AA6     HZ1     H       H       0       -3.863      -1.819      -0.770      
+AA6     HZ2     H       H       0       -3.397      -1.591      0.729       
+AA6     HO2     H       H       0       -3.948      -3.678      0.198       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AA6      N      n/a    CA     START
+ AA6      H      N      .      .
+ AA6      CN     N      HCN1   .
+ AA6      HCN3   CN     .      .
+ AA6      HCN2   CN     .      .
+ AA6      HCN1   CN     .      .
+ AA6      CA     N      C      .
+ AA6      HA     CA     .      .
+ AA6      CB     CA     CG     .
+ AA6      HB1    CB     .      .
+ AA6      HB2    CB     .      .
+ AA6      CG     CB     CD2    .
+ AA6      CD2    CG     CE2    .
+ AA6      HD2    CD2    .      .
+ AA6      CE2    CD2    CZ1    .
+ AA6      OZ     CE2    HOZ    .
+ AA6      HOZ    OZ     .      .
+ AA6      CZ1    CE2    CE1    .
+ AA6      OH1    CZ1    HO1    .
+ AA6      HO1    OH1    .      .
+ AA6      CE1    CZ1    CD1    .
+ AA6      HE1    CE1    .      .
+ AA6      CD1    CE1    NE     .
+ AA6      NE     CD1    CZ2    .
+ AA6      HNE    NE     .      .
+ AA6      CZ2    NE     OH2    .
+ AA6      HZ1    CZ2    .      .
+ AA6      HZ2    CZ2    .      .
+ AA6      OH2    CZ2    HO2    .
+ AA6      HO2    OH2    .      .
+ AA6      C      CA     OXT    .
+ AA6      O      C      .      .
+ AA6      OXT    C      .      END
+ AA6      CG     CD1    .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AA6       N         CA        SINGLE    n         1.463     0.013     1.463     0.013     
+AA6       N         CN        SINGLE    n         1.463     0.015     1.463     0.015     
+AA6       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+AA6       CA        CB        SINGLE    n         1.535     0.011     1.535     0.011     
+AA6       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+AA6       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+AA6       CB        CG        SINGLE    n         1.509     0.010     1.509     0.010     
+AA6       CG        CD1       DOUBLE    y         1.403     0.012     1.403     0.012     
+AA6       CG        CD2       SINGLE    y         1.391     0.012     1.391     0.012     
+AA6       CD1       CE1       SINGLE    y         1.394     0.012     1.394     0.012     
+AA6       CD1       NE        SINGLE    n         1.385     0.020     1.385     0.020     
+AA6       CD2       CE2       DOUBLE    y         1.383     0.010     1.383     0.010     
+AA6       CE1       CZ1       DOUBLE    y         1.379     0.010     1.379     0.010     
+AA6       CE2       CZ1       SINGLE    y         1.395     0.010     1.395     0.010     
+AA6       CE2       OZ        SINGLE    n         1.372     0.010     1.372     0.010     
+AA6       CZ1       OH1       SINGLE    n         1.362     0.010     1.362     0.010     
+AA6       NE        CZ2       SINGLE    n         1.459     0.017     1.459     0.017     
+AA6       CZ2       OH2       SINGLE    n         1.387     0.020     1.387     0.020     
+AA6       N         H         SINGLE    n         1.036     0.016     0.890     0.020     
+AA6       CA        HA        SINGLE    n         1.089     0.010     0.984     0.015     
+AA6       CN        HCN1      SINGLE    n         1.089     0.010     0.977     0.013     
+AA6       CN        HCN2      SINGLE    n         1.089     0.010     0.977     0.013     
+AA6       CN        HCN3      SINGLE    n         1.089     0.010     0.977     0.013     
+AA6       CB        HB1       SINGLE    n         1.089     0.010     0.980     0.016     
+AA6       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+AA6       CD2       HD2       SINGLE    n         1.082     0.013     0.945     0.016     
+AA6       CE1       HE1       SINGLE    n         1.082     0.013     0.942     0.018     
+AA6       OZ        HOZ       SINGLE    n         0.970     0.012     0.858     0.020     
+AA6       OH1       HO1       SINGLE    n         0.970     0.012     0.858     0.020     
+AA6       NE        HNE       SINGLE    n         1.016     0.010     0.876     0.020     
+AA6       CZ2       HZ1       SINGLE    n         1.089     0.010     0.979     0.015     
+AA6       CZ2       HZ2       SINGLE    n         1.089     0.010     0.979     0.015     
+AA6       OH2       HO2       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AA6          CA           N          CN     112.615    2.70
+AA6          CA           N           H     106.958    3.00
+AA6          CN           N           H     108.144    3.00
+AA6           N          CA           C     113.481    2.07
+AA6           N          CA          CB     109.450    1.50
+AA6           N          CA          HA     108.712    1.50
+AA6           C          CA          CB     108.347    3.00
+AA6           C          CA          HA     108.456    1.50
+AA6          CB          CA          HA     108.204    1.50
+AA6          CA           C           O     117.245    1.50
+AA6          CA           C         OXT     117.245    1.50
+AA6           O           C         OXT     125.509    1.50
+AA6           N          CN        HCN1     110.215    1.50
+AA6           N          CN        HCN2     110.215    1.50
+AA6           N          CN        HCN3     110.215    1.50
+AA6        HCN1          CN        HCN2     109.279    1.79
+AA6        HCN1          CN        HCN3     109.279    1.79
+AA6        HCN2          CN        HCN3     109.279    1.79
+AA6          CA          CB          CG     113.420    1.89
+AA6          CA          CB         HB1     108.745    1.50
+AA6          CA          CB         HB2     108.745    1.50
+AA6          CG          CB         HB1     108.906    1.50
+AA6          CG          CB         HB2     108.906    1.50
+AA6         HB1          CB         HB2     107.782    1.50
+AA6          CB          CG         CD1     121.440    2.37
+AA6          CB          CG         CD2     120.236    1.50
+AA6         CD1          CG         CD2     118.324    1.50
+AA6          CG         CD1         CE1     120.974    1.78
+AA6          CG         CD1          NE     118.841    1.50
+AA6         CE1         CD1          NE     120.185    1.90
+AA6          CG         CD2         CE2     121.156    1.50
+AA6          CG         CD2         HD2     119.188    1.50
+AA6         CE2         CD2         HD2     119.656    1.50
+AA6         CD1         CE1         CZ1     120.040    1.50
+AA6         CD1         CE1         HE1     120.030    1.50
+AA6         CZ1         CE1         HE1     119.931    1.50
+AA6         CD2         CE2         CZ1     119.484    1.50
+AA6         CD2         CE2          OZ     121.921    2.52
+AA6         CZ1         CE2          OZ     118.595    2.41
+AA6         CE1         CZ1         CE2     120.023    1.50
+AA6         CE1         CZ1         OH1     121.050    2.59
+AA6         CE2         CZ1         OH1     118.927    2.41
+AA6         CE2          OZ         HOZ     110.003    2.63
+AA6         CZ1         OH1         HO1     110.003    2.63
+AA6         CD1          NE         CZ2     117.868    3.00
+AA6         CD1          NE         HNE     113.883    3.00
+AA6         CZ2          NE         HNE     111.861    3.00
+AA6          NE         CZ2         OH2     112.111    1.50
+AA6          NE         CZ2         HZ1     109.140    1.50
+AA6          NE         CZ2         HZ2     109.140    1.50
+AA6         OH2         CZ2         HZ1     109.169    1.50
+AA6         OH2         CZ2         HZ2     109.169    1.50
+AA6         HZ1         CZ2         HZ2     108.188    1.50
+AA6         CZ2         OH2         HO2     108.678    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AA6             sp3_sp3_3           C          CA           N          CN      60.000   10.00     3
+AA6             sp3_sp3_7        HCN1          CN           N          CA     180.000   10.00     3
+AA6              const_16          OZ         CE2         CZ1         OH1       0.000   10.00     2
+AA6            sp2_sp3_18         CD1          NE         CZ2         OH2     120.000   10.00     6
+AA6            sp3_sp3_22          NE         CZ2         OH2         HO2     180.000   10.00     3
+AA6             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+AA6            sp3_sp3_16           N          CA          CB          CG      60.000   10.00     3
+AA6             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+AA6       const_sp2_sp2_4          NE         CD1          CG          CB       0.000   10.00     2
+AA6              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+AA6             sp2_sp2_1          CG         CD1          NE         CZ2     180.000   10.00     2
+AA6       const_sp2_sp2_7          NE         CD1         CE1         CZ1     180.000   10.00     2
+AA6              const_18          CG         CD2         CE2          OZ     180.000   10.00     2
+AA6              const_10         CD1         CE1         CZ1         OH1     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+AA6    chir_1    N    CA    CN    H    negative
+AA6    chir_2    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AA6    plan-1          CB   0.020
+AA6    plan-1         CD1   0.020
+AA6    plan-1         CD2   0.020
+AA6    plan-1         CE1   0.020
+AA6    plan-1         CE2   0.020
+AA6    plan-1          CG   0.020
+AA6    plan-1         CZ1   0.020
+AA6    plan-1         HD2   0.020
+AA6    plan-1         HE1   0.020
+AA6    plan-1          NE   0.020
+AA6    plan-1         OH1   0.020
+AA6    plan-1          OZ   0.020
+AA6    plan-2           C   0.020
+AA6    plan-2          CA   0.020
+AA6    plan-2           O   0.020
+AA6    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AA6 SMILES           ACDLabs              12.01 "O=C(O)C(NC)Cc1c(cc(O)c(O)c1)NCO"
+AA6 SMILES_CANONICAL CACTVS               3.370 "CN[C@@H](Cc1cc(O)c(O)cc1NCO)C(O)=O"
+AA6 SMILES           CACTVS               3.370 "CN[CH](Cc1cc(O)c(O)cc1NCO)C(O)=O"
+AA6 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "CN[C@@H](Cc1cc(c(cc1NCO)O)O)C(=O)O"
+AA6 SMILES           "OpenEye OEToolkits" 1.7.0 "CNC(Cc1cc(c(cc1NCO)O)O)C(=O)O"
+AA6 InChI            InChI                1.03  "InChI=1S/C11H16N2O5/c1-12-8(11(17)18)2-6-3-9(15)10(16)4-7(6)13-5-14/h3-4,8,12-16H,2,5H2,1H3,(H,17,18)/t8-/m0/s1"
+AA6 InChIKey         InChI                1.03  HMZMIBPZIFJSLM-QMMMGPOBSA-N
+AA6 ?                acedrg               202         "dictionary generator"                  
+AA6 ?                acedrg_database      11          "data source"                           
+AA6 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AA6 ?                refmac5              5.8.0222    "optimization tool"                     

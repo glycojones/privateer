@@ -1,0 +1,324 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DOM      DOM '2'-DEOXYMALTOSE                     ' saccharide         44  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DOM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DOM           "O6'"  O    OH1       0.000      0.000    0.000    0.000
+ DOM           "HO6'" H    H         0.000      0.500    0.066   -0.825
+ DOM           "C6'"  C    CH2       0.000     -1.349    0.414   -0.227
+ DOM           "H6'1" H    H         0.000     -1.804   -0.230   -0.982
+ DOM           "H6'2" H    H         0.000     -1.358    1.447   -0.578
+ DOM           "C5'"  C    CH1       0.000     -2.140    0.310    1.079
+ DOM           "H5'"  H    H         0.000     -2.097   -0.724    1.450
+ DOM           "O5'"  O    O2        0.000     -1.572    1.185    2.050
+ DOM           "C1'"  C    CH1       0.000     -2.217    0.931    3.294
+ DOM           "H1'"  H    H         0.000     -1.709    1.491    4.091
+ DOM           "O1'"  O    OH1       0.000     -2.156   -0.467    3.583
+ DOM           "HO1'" H    H         0.000     -1.231   -0.744    3.632
+ DOM           "C4'"  C    CH1       0.000     -3.598    0.695    0.822
+ DOM           "H4'"  H    H         0.000     -3.647    1.736    0.471
+ DOM           "C3'"  C    CH1       0.000     -4.389    0.557    2.127
+ DOM           "H3'"  H    H         0.000     -4.432   -0.500    2.423
+ DOM           "O3'"  O    OH1       0.000     -5.716    1.057    1.938
+ DOM           "HO3'" H    H         0.000     -6.214    0.969    2.763
+ DOM           "C2'"  C    CH2       0.000     -3.682    1.369    3.218
+ DOM           "H2'2" H    H         0.000     -4.166    1.193    4.181
+ DOM           "H2'1" H    H         0.000     -3.732    2.433    2.976
+ DOM           O1     O    O2        0.000     -4.156   -0.170   -0.169
+ DOM           C1     C    CH1       0.000     -5.257    0.525   -0.753
+ DOM           H1     H    H         0.000     -5.837    1.021    0.038
+ DOM           O5     O    O2        0.000     -4.770    1.504   -1.667
+ DOM           C5     C    CH1       0.000     -3.880    0.847   -2.568
+ DOM           H5     H    H         0.000     -3.126    0.289   -1.995
+ DOM           C6     C    CH2       0.000     -3.184    1.889   -3.446
+ DOM           H61    H    H         0.000     -3.933    2.442   -4.016
+ DOM           H62    H    H         0.000     -2.502    1.387   -4.135
+ DOM           O6     O    OH1       0.000     -2.449    2.793   -2.620
+ DOM           HO6    H    H         0.000     -2.009    3.451   -3.176
+ DOM           C4     C    CH1       0.000     -4.665   -0.122   -3.454
+ DOM           H4     H    H         0.000     -5.437    0.429   -4.010
+ DOM           O4     O    OH1       0.000     -3.774   -0.757   -4.373
+ DOM           HO4    H    H         0.000     -4.270   -1.375   -4.927
+ DOM           C3     C    CH1       0.000     -5.328   -1.183   -2.569
+ DOM           H3     H    H         0.000     -4.555   -1.802   -2.093
+ DOM           O3     O    OH1       0.000     -6.184   -2.007   -3.362
+ DOM           HO3    H    H         0.000     -6.609   -2.666   -2.796
+ DOM           C2     C    CH1       0.000     -6.154   -0.472   -1.490
+ DOM           H2     H    H         0.000     -6.990    0.064   -1.961
+ DOM           O2     O    OH1       0.000     -6.663   -1.433   -0.564
+ DOM           HO2    H    H         0.000     -7.177   -0.980    0.118
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DOM      "O6'"  n/a    "C6'"  START
+ DOM      "HO6'" "O6'"  .      .
+ DOM      "C6'"  "O6'"  "C5'"  .
+ DOM      "H6'1" "C6'"  .      .
+ DOM      "H6'2" "C6'"  .      .
+ DOM      "C5'"  "C6'"  "C4'"  .
+ DOM      "H5'"  "C5'"  .      .
+ DOM      "O5'"  "C5'"  "C1'"  .
+ DOM      "C1'"  "O5'"  "O1'"  .
+ DOM      "H1'"  "C1'"  .      .
+ DOM      "O1'"  "C1'"  "HO1'" .
+ DOM      "HO1'" "O1'"  .      .
+ DOM      "C4'"  "C5'"  O1     .
+ DOM      "H4'"  "C4'"  .      .
+ DOM      "C3'"  "C4'"  "C2'"  .
+ DOM      "H3'"  "C3'"  .      .
+ DOM      "O3'"  "C3'"  "HO3'" .
+ DOM      "HO3'" "O3'"  .      .
+ DOM      "C2'"  "C3'"  "H2'1" .
+ DOM      "H2'2" "C2'"  .      .
+ DOM      "H2'1" "C2'"  .      .
+ DOM      O1     "C4'"  C1     .
+ DOM      C1     O1     O5     .
+ DOM      H1     C1     .      .
+ DOM      O5     C1     C5     .
+ DOM      C5     O5     C4     .
+ DOM      H5     C5     .      .
+ DOM      C6     C5     O6     .
+ DOM      H61    C6     .      .
+ DOM      H62    C6     .      .
+ DOM      O6     C6     HO6    .
+ DOM      HO6    O6     .      .
+ DOM      C4     C5     C3     .
+ DOM      H4     C4     .      .
+ DOM      O4     C4     HO4    .
+ DOM      HO4    O4     .      .
+ DOM      C3     C4     C2     .
+ DOM      H3     C3     .      .
+ DOM      O3     C3     HO3    .
+ DOM      HO3    O3     .      .
+ DOM      C2     C3     O2     .
+ DOM      H2     C2     .      .
+ DOM      O2     C2     HO2    .
+ DOM      HO2    O2     .      END
+ DOM      C1     C2     .    ADD
+ DOM      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DOM       C1        C2        single    1.524     0.020     1.524     0.020     
+DOM       C1        O1        single    1.426     0.020     1.426     0.020     
+DOM       O5        C1        single    1.426     0.020     1.426     0.020     
+DOM       H1        C1        single    1.089     0.010     0.989     0.005     
+DOM       C2        C3        single    1.524     0.020     1.524     0.020     
+DOM       O2        C2        single    1.432     0.020     1.432     0.020     
+DOM       H2        C2        single    1.089     0.010     0.989     0.005     
+DOM       C3        C4        single    1.524     0.020     1.524     0.020     
+DOM       O3        C3        single    1.432     0.020     1.432     0.020     
+DOM       H3        C3        single    1.089     0.010     0.989     0.005     
+DOM       C4        C5        single    1.524     0.020     1.524     0.020     
+DOM       O4        C4        single    1.432     0.020     1.432     0.020     
+DOM       H4        C4        single    1.089     0.010     0.989     0.005     
+DOM       C6        C5        single    1.524     0.020     1.524     0.020     
+DOM       C5        O5        single    1.426     0.020     1.426     0.020     
+DOM       H5        C5        single    1.089     0.010     0.989     0.005     
+DOM       O6        C6        single    1.432     0.020     1.432     0.020     
+DOM       H61       C6        single    1.089     0.010     0.989     0.005     
+DOM       H62       C6        single    1.089     0.010     0.989     0.005     
+DOM       O1        "C4'"     single    1.426     0.020     1.426     0.020     
+DOM       HO2       O2        single    0.970     0.012     0.839     0.014     
+DOM       HO3       O3        single    0.970     0.012     0.839     0.014     
+DOM       HO4       O4        single    0.970     0.012     0.839     0.014     
+DOM       HO6       O6        single    0.970     0.012     0.839     0.014     
+DOM       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+DOM       "O1'"     "C1'"     single    1.432     0.020     1.432     0.020     
+DOM       "C1'"     "O5'"     single    1.426     0.020     1.426     0.020     
+DOM       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+DOM       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+DOM       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+DOM       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+DOM       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+DOM       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+DOM       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+DOM       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+DOM       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+DOM       "C5'"     "C6'"     single    1.524     0.020     1.524     0.020     
+DOM       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+DOM       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+DOM       "C6'"     "O6'"     single    1.432     0.020     1.432     0.020     
+DOM       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+DOM       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+DOM       "HO1'"    "O1'"     single    0.970     0.012     0.839     0.014     
+DOM       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+DOM       "HO6'"    "O6'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DOM      "HO6'" "O6'"  "C6'"   109.470    3.000
+ DOM      "O6'"  "C6'"  "H6'1"  109.470    3.000
+ DOM      "O6'"  "C6'"  "H6'2"  109.470    3.000
+ DOM      "O6'"  "C6'"  "C5'"   109.470    3.000
+ DOM      "H6'1" "C6'"  "H6'2"  107.900    3.000
+ DOM      "H6'1" "C6'"  "C5'"   109.470    3.000
+ DOM      "H6'2" "C6'"  "C5'"   109.470    3.000
+ DOM      "C6'"  "C5'"  "H5'"   108.340    3.000
+ DOM      "C6'"  "C5'"  "O5'"   109.470    3.000
+ DOM      "C6'"  "C5'"  "C4'"   111.000    3.000
+ DOM      "H5'"  "C5'"  "O5'"   109.470    3.000
+ DOM      "H5'"  "C5'"  "C4'"   108.340    3.000
+ DOM      "O5'"  "C5'"  "C4'"   109.470    3.000
+ DOM      "C5'"  "O5'"  "C1'"   111.800    3.000
+ DOM      "O5'"  "C1'"  "H1'"   109.470    3.000
+ DOM      "O5'"  "C1'"  "O1'"   109.470    3.000
+ DOM      "O5'"  "C1'"  "C2'"   109.470    3.000
+ DOM      "H1'"  "C1'"  "O1'"   109.470    3.000
+ DOM      "H1'"  "C1'"  "C2'"   108.340    3.000
+ DOM      "O1'"  "C1'"  "C2'"   109.470    3.000
+ DOM      "C1'"  "O1'"  "HO1'"  109.470    3.000
+ DOM      "C5'"  "C4'"  "H4'"   108.340    3.000
+ DOM      "C5'"  "C4'"  "C3'"   111.000    3.000
+ DOM      "C5'"  "C4'"  O1      109.470    3.000
+ DOM      "H4'"  "C4'"  "C3'"   108.340    3.000
+ DOM      "H4'"  "C4'"  O1      109.470    3.000
+ DOM      "C3'"  "C4'"  O1      109.470    3.000
+ DOM      "C4'"  "C3'"  "H3'"   108.340    3.000
+ DOM      "C4'"  "C3'"  "O3'"   109.470    3.000
+ DOM      "C4'"  "C3'"  "C2'"   111.000    3.000
+ DOM      "H3'"  "C3'"  "O3'"   109.470    3.000
+ DOM      "H3'"  "C3'"  "C2'"   108.340    3.000
+ DOM      "O3'"  "C3'"  "C2'"   109.470    3.000
+ DOM      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ DOM      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ DOM      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ DOM      "C3'"  "C2'"  "C1'"   111.000    3.000
+ DOM      "H2'2" "C2'"  "H2'1"  107.900    3.000
+ DOM      "H2'2" "C2'"  "C1'"   109.470    3.000
+ DOM      "H2'1" "C2'"  "C1'"   109.470    3.000
+ DOM      "C4'"  O1     C1      111.800    3.000
+ DOM      O1     C1     H1      109.470    3.000
+ DOM      O1     C1     O5      109.470    3.000
+ DOM      O1     C1     C2      109.470    3.000
+ DOM      H1     C1     O5      109.470    3.000
+ DOM      H1     C1     C2      108.340    3.000
+ DOM      O5     C1     C2      109.470    3.000
+ DOM      C1     O5     C5      111.800    3.000
+ DOM      O5     C5     H5      109.470    3.000
+ DOM      O5     C5     C6      109.470    3.000
+ DOM      O5     C5     C4      109.470    3.000
+ DOM      H5     C5     C6      108.340    3.000
+ DOM      H5     C5     C4      108.340    3.000
+ DOM      C6     C5     C4      111.000    3.000
+ DOM      C5     C6     H61     109.470    3.000
+ DOM      C5     C6     H62     109.470    3.000
+ DOM      C5     C6     O6      109.470    3.000
+ DOM      H61    C6     H62     107.900    3.000
+ DOM      H61    C6     O6      109.470    3.000
+ DOM      H62    C6     O6      109.470    3.000
+ DOM      C6     O6     HO6     109.470    3.000
+ DOM      C5     C4     H4      108.340    3.000
+ DOM      C5     C4     O4      109.470    3.000
+ DOM      C5     C4     C3      111.000    3.000
+ DOM      H4     C4     O4      109.470    3.000
+ DOM      H4     C4     C3      108.340    3.000
+ DOM      O4     C4     C3      109.470    3.000
+ DOM      C4     O4     HO4     109.470    3.000
+ DOM      C4     C3     H3      108.340    3.000
+ DOM      C4     C3     O3      109.470    3.000
+ DOM      C4     C3     C2      111.000    3.000
+ DOM      H3     C3     O3      109.470    3.000
+ DOM      H3     C3     C2      108.340    3.000
+ DOM      O3     C3     C2      109.470    3.000
+ DOM      C3     O3     HO3     109.470    3.000
+ DOM      C3     C2     H2      108.340    3.000
+ DOM      C3     C2     O2      109.470    3.000
+ DOM      C3     C2     C1      111.000    3.000
+ DOM      H2     C2     O2      109.470    3.000
+ DOM      H2     C2     C1      108.340    3.000
+ DOM      O2     C2     C1      109.470    3.000
+ DOM      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DOM      var_1    "HO6'" "O6'"  "C6'"  "C5'"    179.996   20.000   1
+ DOM      var_2    "O6'"  "C6'"  "C5'"  "C4'"   -177.597   20.000   3
+ DOM      var_3    "C6'"  "C5'"  "O5'"  "C1'"    180.000   20.000   1
+ DOM      var_4    "C5'"  "O5'"  "C1'"  "O1'"     60.000   20.000   1
+ DOM      var_5    "O5'"  "C1'"  "C2'"  "C3'"     60.000   20.000   3
+ DOM      var_6    "O5'"  "C1'"  "O1'"  "HO1'"    59.745   20.000   1
+ DOM      var_7    "C6'"  "C5'"  "C4'"  O1        60.000   20.000   3
+ DOM      var_8    "C5'"  "C4'"  "C3'"  "C2'"     60.000   20.000   3
+ DOM      var_9    "C4'"  "C3'"  "O3'"  "HO3'"  -179.979   20.000   1
+ DOM      var_10   "C4'"  "C3'"  "C2'"  "C1'"    -60.000   20.000   3
+ DOM      var_11   "C5'"  "C4'"  O1     C1      -156.956   20.000   1
+ DOM      var_12   "C4'"  O1     C1     O5        77.109   20.000   1
+ DOM      var_13   O1     C1     C2     C3       -60.000   20.000   3
+ DOM      var_14   O1     C1     O5     C5        60.000   20.000   1
+ DOM      var_15   C1     O5     C5     C4        60.000   20.000   1
+ DOM      var_16   O5     C5     C6     O6        59.864   20.000   3
+ DOM      var_17   C5     C6     O6     HO6      179.990   20.000   1
+ DOM      var_18   O5     C5     C4     C3       -60.000   20.000   3
+ DOM      var_19   C5     C4     O4     HO4      179.495   20.000   1
+ DOM      var_20   C5     C4     C3     C2        60.000   20.000   3
+ DOM      var_21   C4     C3     O3     HO3     -179.176   20.000   1
+ DOM      var_22   C4     C3     C2     O2       180.000   20.000   3
+ DOM      var_23   C3     C2     O2     HO2      179.572   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DOM      chir_01  C1     C2     O1     O5        negativ
+ DOM      chir_02  C2     C1     C3     O2        negativ
+ DOM      chir_03  C3     C2     C4     O3        positiv
+ DOM      chir_04  C4     C3     C5     O4        negativ
+ DOM      chir_05  C5     C4     C6     O5        negativ
+ DOM      chir_06  "C1'"  "C2'"  "O1'"  "O5'"     negativ
+ DOM      chir_07  "C3'"  "C2'"  "C4'"  "O3'"     positiv
+ DOM      chir_08  "C4'"  O1     "C3'"  "C5'"     negativ
+ DOM      chir_09  "C5'"  "C4'"  "C6'"  "O5'"     negativ
+# ------------------------------------------------------

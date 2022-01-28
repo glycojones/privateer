@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3CH     3CH      3-CHLOROPHENOL     NON-POLYMER     13     8     .     
+#
+data_comp_3CH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3CH     C4      C       CR16    0       26.728      5.182       3.284       
+3CH     C5      C       CR16    0       27.527      5.826       2.350       
+3CH     C3      C       CR6     0       26.504      5.804       4.516       
+3CH     C6      C       CR16    0       28.097      7.065       2.627       
+3CH     C2      C       CR16    0       27.061      7.038       4.814       
+3CH     C1      C       CR6     0       27.860      7.668       3.864       
+3CH     OH      O       OH1     0       28.417      8.892       4.149       
+3CH     CL      CL      CL      0       25.506      5.017       5.703       
+3CH     HC4     H       H       0       26.345      4.344       3.092       
+3CH     HC5     H       H       0       27.688      5.416       1.510       
+3CH     HC6     H       H       0       28.638      7.494       1.987       
+3CH     HC2     H       H       0       26.901      7.447       5.652       
+3CH     HO      H       H       0       28.952      8.823       4.816       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3CH       C4        C5        DOUBLE    y         1.380     0.010     1.380     0.010     
+3CH       C4        C3        SINGLE    y         1.388     0.012     1.388     0.012     
+3CH       C5        C6        SINGLE    y         1.384     0.010     1.384     0.010     
+3CH       C3        C2        DOUBLE    y         1.381     0.010     1.381     0.010     
+3CH       C3        CL        SINGLE    n         1.739     0.011     1.739     0.011     
+3CH       C6        C1        DOUBLE    y         1.389     0.010     1.389     0.010     
+3CH       C2        C1        SINGLE    y         1.385     0.010     1.385     0.010     
+3CH       C1        OH        SINGLE    n         1.375     0.010     1.375     0.010     
+3CH       C4        HC4       SINGLE    n         1.082     0.013     0.941     0.017     
+3CH       C5        HC5       SINGLE    n         1.082     0.013     0.949     0.014     
+3CH       C6        HC6       SINGLE    n         1.082     0.013     0.942     0.016     
+3CH       C2        HC2       SINGLE    n         1.082     0.013     0.947     0.010     
+3CH       OH        HO        SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3CH          C5          C4          C3     118.507    1.50
+3CH          C5          C4         HC4     120.756    1.50
+3CH          C3          C4         HC4     120.737    1.50
+3CH          C4          C5          C6     120.710    1.50
+3CH          C4          C5         HC5     119.709    1.50
+3CH          C6          C5         HC5     119.581    1.50
+3CH          C4          C3          C2     121.556    1.50
+3CH          C4          C3          CL     119.413    1.50
+3CH          C2          C3          CL     119.031    1.50
+3CH          C5          C6          C1     119.343    1.50
+3CH          C5          C6         HC6     120.425    1.50
+3CH          C1          C6         HC6     120.231    1.50
+3CH          C3          C2          C1     119.262    1.50
+3CH          C3          C2         HC2     120.348    1.50
+3CH          C1          C2         HC2     120.390    1.50
+3CH          C6          C1          C2     120.621    1.50
+3CH          C6          C1          OH     119.884    2.50
+3CH          C2          C1          OH     119.495    2.33
+3CH          C1          OH          HO     110.017    2.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3CH       const_sp2_sp2_1          C3          C4          C5          C6       0.000   10.00     2
+3CH              const_23          CL          C3          C4          C5     180.000   10.00     2
+3CH       const_sp2_sp2_5          C4          C5          C6          C1       0.000   10.00     2
+3CH              const_18          C1          C2          C3          CL     180.000   10.00     2
+3CH              const_11          OH          C1          C6          C5     180.000   10.00     2
+3CH              const_15          OH          C1          C2          C3     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3CH    plan-1          C1   0.020
+3CH    plan-1          C2   0.020
+3CH    plan-1          C3   0.020
+3CH    plan-1          C4   0.020
+3CH    plan-1          C5   0.020
+3CH    plan-1          C6   0.020
+3CH    plan-1          CL   0.020
+3CH    plan-1         HC2   0.020
+3CH    plan-1         HC4   0.020
+3CH    plan-1         HC5   0.020
+3CH    plan-1         HC6   0.020
+3CH    plan-1          OH   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3CH SMILES           ACDLabs              10.04 "Clc1cc(O)ccc1"
+3CH SMILES_CANONICAL CACTVS               3.341 "Oc1cccc(Cl)c1"
+3CH SMILES           CACTVS               3.341 "Oc1cccc(Cl)c1"
+3CH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(cc(c1)Cl)O"
+3CH SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(cc(c1)Cl)O"
+3CH InChI            InChI                1.03  "InChI=1S/C6H5ClO/c7-5-2-1-3-6(8)4-5/h1-4,8H"
+3CH InChIKey         InChI                1.03  HORNXRXVQWOLPJ-UHFFFAOYSA-N
+3CH ?                acedrg               202         "dictionary generator"                  
+3CH ?                acedrg_database      11          "data source"                           
+3CH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3CH ?                refmac5              5.8.0189    "optimization tool"                     

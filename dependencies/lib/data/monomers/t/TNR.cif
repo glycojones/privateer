@@ -1,0 +1,320 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TNR     TNR     "O-(2-ACETAMIDO-2-DEOXY-ALPHA-D-GALACTOPYRANOSYL)-L-SERINE"     peptide     41     21     .
+#
+data_comp_TNR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TNR     OXT     O       OC      -1      -30.219     58.436      -34.697
+TNR     C       C       C       0       -31.426     58.580      -34.977
+TNR     O       O       O       0       -31.933     59.589      -35.509
+TNR     CA      C       CH1     0       -32.368     57.419      -34.638
+TNR     N       N       NT3     1       -31.692     56.121      -34.908
+TNR     CB      C       CH2     0       -32.861     57.521      -33.209
+TNR     O1      O       O2      0       -31.781     57.290      -32.294
+TNR     C1      C       CH1     0       -32.176     57.096      -30.961
+TNR     C2      C       CH1     0       -30.950     57.284      -30.056
+TNR     N2      N       NH1     0       -30.283     58.554      -30.277
+TNR     C7      C       C       0       -30.370     59.633      -29.478
+TNR     C8      C       CH3     0       -29.550     60.826      -29.870
+TNR     O7      O       O       0       -31.081     59.654      -28.476
+TNR     C3      C       CH1     0       -29.957     56.138      -30.248
+TNR     O3      O       OH1     0       -28.896     56.277      -29.312
+TNR     C4      C       CH1     0       -30.638     54.782      -30.100
+TNR     O4      O       OH1     0       -31.056     54.591      -28.748
+TNR     C5      C       CH1     0       -31.838     54.711      -31.044
+TNR     O5      O       O2      0       -32.746     55.802      -30.771
+TNR     C6      C       CH2     0       -32.634     53.435      -30.893
+TNR     O6      O       OH1     0       -33.528     53.250      -31.988
+TNR     HCA     H       H       0       -33.156     57.478      -35.244
+TNR     H       H       H       0       -32.195     55.437      -34.579
+TNR     H2      H       H       0       -30.873     56.109      -34.507
+TNR     H3      H       H       0       -31.588     56.010      -35.807
+TNR     HB2     H       H       0       -33.570     56.859      -33.063
+TNR     HB3     H       H       0       -33.235     58.414      -33.056
+TNR     HC1     H       H       0       -32.850     57.782      -30.726
+TNR     HC2     H       H       0       -31.252     57.242      -29.118
+TNR     HN2     H       H       0       -29.779     58.620      -30.991
+TNR     HC81    H       H       0       -29.365     60.806      -30.823
+TNR     HC82    H       H       0       -28.713     60.819      -29.379
+TNR     HC83    H       H       0       -30.040     61.638      -29.657
+TNR     HC3     H       H       0       -29.585     56.206      -31.165
+TNR     HO3     H       H       0       -28.287     55.738      -29.527
+TNR     HC4     H       H       0       -29.997     54.067      -30.341
+TNR     HO4     H       H       0       -31.784     54.983      -28.589
+TNR     HC5     H       H       0       -31.515     54.777      -31.974
+TNR     HC61    H       H       0       -33.146     53.468      -30.058
+TNR     HC62    H       H       0       -32.020     52.673      -30.844
+TNR     HO6     H       H       0       -34.055     52.608      -31.817
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+TNR      N      n/a    CA     START
+TNR      H      N      .      .
+TNR      H2     N      .      .
+TNR      H3     N      .      .
+TNR      CA     N      C      .
+TNR      HCA    CA     .      .
+TNR      CB     CA     O1     .
+TNR      HB2    CB     .      .
+TNR      HB3    CB     .      .
+TNR      O1     CB     C1     .
+TNR      C1     O1     O5     .
+TNR      HC1    C1     .      .
+TNR      O5     C1     C5     .
+TNR      C5     O5     C4     .
+TNR      HC5    C5     .      .
+TNR      C6     C5     O6     .
+TNR      HC61   C6     .      .
+TNR      HC62   C6     .      .
+TNR      O6     C6     HO6    .
+TNR      HO6    O6     .      .
+TNR      C4     C5     C3     .
+TNR      HC4    C4     .      .
+TNR      O4     C4     HO4    .
+TNR      HO4    O4     .      .
+TNR      C3     C4     C2     .
+TNR      HC3    C3     .      .
+TNR      O3     C3     HO3    .
+TNR      HO3    O3     .      .
+TNR      C2     C3     N2     .
+TNR      HC2    C2     .      .
+TNR      N2     C2     C7     .
+TNR      HN2    N2     .      .
+TNR      C7     N2     O7     .
+TNR      C8     C7     HC81   .
+TNR      HC83   C8     .      .
+TNR      HC82   C8     .      .
+TNR      HC81   C8     .      .
+TNR      O7     C7     .      .
+TNR      C      CA     .      END
+TNR      OXT    C      .      .
+TNR      O      C      .      .
+TNR      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TNR       OXT       C         SINGLE    n         1.247     0.019     1.247     0.019     
+TNR       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TNR       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+TNR       CA        N         SINGLE    n         1.487     0.010     1.487     0.010     
+TNR       CA        CB        SINGLE    n         1.515     0.012     1.515     0.012     
+TNR       CB        O1        SINGLE    n         1.430     0.014     1.430     0.014     
+TNR       O1        C1        SINGLE    n         1.396     0.014     1.396     0.014     
+TNR       C1        C2        SINGLE    n         1.532     0.010     1.532     0.010     
+TNR       C1        O5        SINGLE    n         1.421     0.010     1.421     0.010     
+TNR       C2        N2        SINGLE    n         1.448     0.010     1.448     0.010     
+TNR       C2        C3        SINGLE    n         1.526     0.010     1.526     0.010     
+TNR       N2        C7        SINGLE    n         1.334     0.013     1.334     0.013     
+TNR       C7        C8        SINGLE    n         1.498     0.010     1.498     0.010     
+TNR       C7        O7        DOUBLE    n         1.227     0.012     1.227     0.012     
+TNR       C3        O3        SINGLE    n         1.421     0.011     1.421     0.011     
+TNR       C3        C4        SINGLE    n         1.523     0.010     1.523     0.010     
+TNR       C4        O4        SINGLE    n         1.425     0.010     1.425     0.010     
+TNR       C4        C5        SINGLE    n         1.525     0.010     1.525     0.010     
+TNR       C5        O5        SINGLE    n         1.441     0.010     1.441     0.010     
+TNR       C5        C6        SINGLE    n         1.511     0.014     1.511     0.014     
+TNR       C6        O6        SINGLE    n         1.426     0.020     1.426     0.020     
+TNR       CA        HCA       SINGLE    n         1.089     0.010     0.995     0.020     
+TNR       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+TNR       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+TNR       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+TNR       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.015     
+TNR       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.015     
+TNR       C1        HC1       SINGLE    n         1.089     0.010     0.989     0.019     
+TNR       C2        HC2       SINGLE    n         1.089     0.010     0.987     0.017     
+TNR       N2        HN2       SINGLE    n         1.016     0.010     0.876     0.020     
+TNR       C8        HC81      SINGLE    n         1.089     0.010     0.971     0.014     
+TNR       C8        HC82      SINGLE    n         1.089     0.010     0.971     0.014     
+TNR       C8        HC83      SINGLE    n         1.089     0.010     0.971     0.014     
+TNR       C3        HC3       SINGLE    n         1.089     0.010     0.992     0.010     
+TNR       O3        HO3       SINGLE    n         0.970     0.012     0.841     0.020     
+TNR       C4        HC4       SINGLE    n         1.089     0.010     0.991     0.011     
+TNR       O4        HO4       SINGLE    n         0.970     0.012     0.841     0.020     
+TNR       C5        HC5       SINGLE    n         1.089     0.010     0.988     0.018     
+TNR       C6        HC61      SINGLE    n         1.089     0.010     0.980     0.018     
+TNR       C6        HC62      SINGLE    n         1.089     0.010     0.980     0.018     
+TNR       O6        HO6       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TNR         OXT           C           O     125.637    1.50
+TNR         OXT           C          CA     117.181    1.50
+TNR           O           C          CA     117.181    1.50
+TNR           C          CA           N     109.829    1.50
+TNR           C          CA          CB     111.511    2.91
+TNR           C          CA         HCA     108.255    1.50
+TNR           N          CA          CB     112.810    3.00
+TNR           N          CA         HCA     108.049    1.50
+TNR          CB          CA         HCA     108.763    1.50
+TNR          CA           N           H     109.619    1.50
+TNR          CA           N          H2     109.619    1.50
+TNR          CA           N          H3     109.619    1.50
+TNR           H           N          H2     109.028    2.41
+TNR           H           N          H3     109.028    2.41
+TNR          H2           N          H3     109.028    2.41
+TNR          CA          CB          O1     109.482    3.00
+TNR          CA          CB         HB2     109.493    1.50
+TNR          CA          CB         HB3     109.493    1.50
+TNR          O1          CB         HB2     109.586    1.50
+TNR          O1          CB         HB3     109.586    1.50
+TNR         HB2          CB         HB3     108.500    1.50
+TNR          CB          O1          C1     113.687    1.50
+TNR          O1          C1          C2     108.375    1.50
+TNR          O1          C1          O5     110.062    2.45
+TNR          O1          C1         HC1     109.349    1.50
+TNR          C2          C1          O5     110.341    1.50
+TNR          C2          C1         HC1     109.604    1.50
+TNR          O5          C1         HC1     109.866    1.50
+TNR          C1          C2          N2     111.780    3.00
+TNR          C1          C2          C3     110.235    1.50
+TNR          C1          C2         HC2     108.347    1.50
+TNR          N2          C2          C3     110.454    2.38
+TNR          N2          C2         HC2     107.121    2.62
+TNR          C3          C2         HC2     107.579    2.24
+TNR          C2          N2          C7     123.083    2.48
+TNR          C2          N2         HN2     118.300    1.53
+TNR          C7          N2         HN2     118.617    2.66
+TNR          N2          C7          C8     115.988    1.50
+TNR          N2          C7          O7     121.945    1.50
+TNR          C8          C7          O7     122.067    1.50
+TNR          C7          C8        HC81     109.527    1.50
+TNR          C7          C8        HC82     109.527    1.50
+TNR          C7          C8        HC83     109.527    1.50
+TNR        HC81          C8        HC82     109.365    1.50
+TNR        HC81          C8        HC83     109.365    1.50
+TNR        HC82          C8        HC83     109.365    1.50
+TNR          C2          C3          O3     109.400    2.63
+TNR          C2          C3          C4     110.882    1.54
+TNR          C2          C3         HC3     108.177    2.01
+TNR          O3          C3          C4     110.984    1.55
+TNR          O3          C3         HC3     108.954    1.50
+TNR          C4          C3         HC3     108.714    1.50
+TNR          C3          O3         HO3     108.064    2.53
+TNR          C3          C4          O4     109.301    2.14
+TNR          C3          C4          C5     109.454    1.50
+TNR          C3          C4         HC4     109.514    1.50
+TNR          O4          C4          C5     109.072    2.07
+TNR          O4          C4         HC4     109.194    1.50
+TNR          C5          C4         HC4     109.223    1.50
+TNR          C4          O4         HO4     109.564    3.00
+TNR          C4          C5          O5     109.140    1.86
+TNR          C4          C5          C6     112.996    1.59
+TNR          C4          C5         HC5     108.960    1.50
+TNR          O5          C5          C6     106.879    1.50
+TNR          O5          C5         HC5     109.134    1.50
+TNR          C6          C5         HC5     109.269    1.50
+TNR          C1          O5          C5     111.681    1.50
+TNR          C5          C6          O6     111.299    2.09
+TNR          C5          C6        HC61     109.363    1.50
+TNR          C5          C6        HC62     109.363    1.50
+TNR          O6          C6        HC61     109.265    1.50
+TNR          O6          C6        HC62     109.265    1.50
+TNR        HC61          C6        HC62     108.155    1.50
+TNR          C6          O6         HO6     109.472    2.41
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TNR            sp2_sp3_13          N2          C7          C8        HC81       0.000   10.00     6
+TNR            sp3_sp3_67          C2          C3          O3         HO3     180.000   10.00     3
+TNR            sp3_sp3_26          O3          C3          C4          O4     -60.000   10.00     3
+TNR            sp3_sp3_70          C3          C4          O4         HO4     180.000   10.00     3
+TNR            sp3_sp3_32          O4          C4          C5          C6     180.000   10.00     3
+TNR            sp3_sp3_38          C6          C5          O5          C1     -60.000   10.00     3
+TNR            sp3_sp3_73          C4          C5          C6          O6     180.000   10.00     3
+TNR            sp3_sp3_82          C5          C6          O6         HO6     180.000   10.00     3
+TNR             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+TNR            sp3_sp3_40           C          CA           N           H     180.000   10.00     3
+TNR            sp3_sp3_49           C          CA          CB          O1     180.000   10.00     3
+TNR            sp3_sp3_58          CA          CB          O1          C1     180.000   10.00     3
+TNR            sp3_sp3_62          C2          C1          O1          CB      60.000   10.00     3
+TNR            sp3_sp3_65          O1          C1          O5          C5      60.000   10.00     3
+TNR             sp3_sp3_9          O1          C1          C2          N2     -60.000   10.00     3
+TNR            sp3_sp3_14          N2          C2          C3          O3     180.000   10.00     3
+TNR             sp2_sp3_8          C7          N2          C2          C1     120.000   10.00     6
+TNR             sp2_sp2_1          C8          C7          N2          C2     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TNR    chir_1    CA    N    C    CB    positive
+TNR    chir_2    C1    O5    O1    C2    both
+TNR    chir_3    C2    N2    C1    C3    both
+TNR    chir_4    C3    O3    C4    C2    both
+TNR    chir_5    C4    O4    C5    C3    negative
+TNR    chir_6    C5    O5    C4    C6    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TNR    plan-1           C   0.020
+TNR    plan-1          CA   0.020
+TNR    plan-1           O   0.020
+TNR    plan-1         OXT   0.020
+TNR    plan-2          C2   0.020
+TNR    plan-2          C7   0.020
+TNR    plan-2         HN2   0.020
+TNR    plan-2          N2   0.020
+TNR    plan-3          C7   0.020
+TNR    plan-3          C8   0.020
+TNR    plan-3          N2   0.020
+TNR    plan-3          O7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TNR SMILES           ACDLabs              10.04 "O=C(O)C(N)COC1OC(C(O)C(O)C1NC(=O)C)CO"
+TNR SMILES_CANONICAL CACTVS               3.341 "CC(=O)N[C@@H]1[C@@H](O)[C@@H](O)[C@@H](CO)O[C@@H]1OC[C@H](N)C(O)=O"
+TNR SMILES           CACTVS               3.341 "CC(=O)N[CH]1[CH](O)[CH](O)[CH](CO)O[CH]1OC[CH](N)C(O)=O"
+TNR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)N[C@@H]1[C@H]([C@H]([C@H](O[C@@H]1OC[C@@H](C(=O)O)N)CO)O)O"
+TNR SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)NC1C(C(C(OC1OCC(C(=O)O)N)CO)O)O"
+TNR InChI            InChI                1.03  "InChI=1S/C11H20N2O8/c1-4(15)13-7-9(17)8(16)6(2-14)21-11(7)20-3-5(12)10(18)19/h5-9,11,14,16-17H,2-3,12H2,1H3,(H,13,15)(H,18,19)/t5-,6+,7+,8-,9+,11-/m0/s1"
+TNR InChIKey         InChI                1.03  REDMNGDGDYFZRE-WKWISIMFSA-N
+TNR ?                acedrg               196         "dictionary generator"
+TNR ?                acedrg_database      11          "data source"
+TNR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TNR ?                refmac5              5.8.0222    "optimization tool"

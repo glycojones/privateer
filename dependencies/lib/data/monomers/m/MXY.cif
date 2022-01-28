@@ -1,0 +1,217 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MXY      MXY '2-O-METHYL FUCOSE                   ' pyranose           26  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MXY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MXY           C1     C    CH1       0.000      0.000    0.000    0.000
+ MXY           H1     H    H         0.000      0.263    1.066   -0.044
+ MXY           OGL    O    OH1       0.000      1.034   -0.716    0.679
+ MXY           HOG    H    H         0.000      1.846   -0.586    0.171
+ MXY           O5     O    O2        0.000     -0.136   -0.508   -1.325
+ MXY           C5     C    CH1       0.000     -1.042    0.343   -2.023
+ MXY           H5     H    H         0.000     -0.709    1.386   -1.929
+ MXY           C6     C    CH3       0.000     -1.073   -0.051   -3.501
+ MXY           H63    H    H         0.000     -1.391   -1.057   -3.594
+ MXY           H62    H    H         0.000     -1.746    0.580   -4.022
+ MXY           H61    H    H         0.000     -0.103    0.051   -3.916
+ MXY           C4     C    CH1       0.000     -2.445    0.203   -1.431
+ MXY           H4     H    H         0.000     -3.143    0.846   -1.985
+ MXY           O4     O    OH1       0.000     -2.870   -1.158   -1.525
+ MXY           HO4    H    H         0.000     -2.885   -1.427   -2.454
+ MXY           C3     C    CH1       0.000     -2.414    0.629    0.041
+ MXY           H3     H    H         0.000     -2.192    1.703    0.109
+ MXY           O3     O    OH1       0.000     -3.682    0.363    0.644
+ MXY           HO3    H    H         0.000     -4.369    0.861    0.181
+ MXY           C2     C    CH1       0.000     -1.318   -0.167    0.758
+ MXY           H2     H    H         0.000     -1.594   -1.231    0.784
+ MXY           O2     O    O2        0.000     -1.168    0.320    2.092
+ MXY           CM     C    CH3       0.000     -0.735   -0.784    2.889
+ MXY           HCM3   H    H         0.000     -1.461   -1.554    2.851
+ MXY           HCM2   H    H         0.000      0.187   -1.149    2.517
+ MXY           HCM1   H    H         0.000     -0.609   -0.467    3.892
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MXY      C1     n/a    O5     START
+ MXY      H1     C1     .      .
+ MXY      OGL    C1     .      .
+ MXY      HOG    OGL    .      .
+ MXY      O5     C1     .      END
+ MXY      C5     O5     C4     .
+ MXY      H5     C5     .      .
+ MXY      C6     C5     H61    .
+ MXY      H63    C6     .      .
+ MXY      H62    C6     .      .
+ MXY      H61    C6     .      .
+ MXY      C4     C5     C3     .
+ MXY      H4     C4     .      .
+ MXY      O4     C4     HO4    .
+ MXY      HO4    O4     .      .
+ MXY      C3     C4     C2     .
+ MXY      H3     C3     .      .
+ MXY      O3     C3     HO3    .
+ MXY      HO3    O3     .      .
+ MXY      C2     C3     O2     .
+ MXY      H2     C2     .      .
+ MXY      O2     C2     CM     .
+ MXY      CM     O2     HCM1   .
+ MXY      HCM3   CM     .      .
+ MXY      HCM2   CM     .      .
+ MXY      HCM1   CM     .      .
+ MXY      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MXY       C1        C2        single    1.524     0.020     1.524     0.020     
+MXY       O5        C1        single    1.426     0.020     1.426     0.020     
+MXY       OGL       C1        single    1.432     0.020     1.432     0.020     
+MXY       H1        C1        single    1.089     0.010     0.989     0.005     
+MXY       C2        C3        single    1.524     0.020     1.524     0.020     
+MXY       O2        C2        single    1.426     0.020     1.426     0.020     
+MXY       H2        C2        single    1.089     0.010     0.989     0.005     
+MXY       C3        C4        single    1.524     0.020     1.524     0.020     
+MXY       O3        C3        single    1.432     0.020     1.432     0.020     
+MXY       H3        C3        single    1.089     0.010     0.989     0.005     
+MXY       C4        C5        single    1.524     0.020     1.524     0.020     
+MXY       O4        C4        single    1.432     0.020     1.432     0.020     
+MXY       H4        C4        single    1.089     0.010     0.989     0.005     
+MXY       C5        O5        single    1.426     0.020     1.426     0.020     
+MXY       C6        C5        single    1.524     0.020     1.524     0.020     
+MXY       H5        C5        single    1.089     0.010     0.989     0.005     
+MXY       CM        O2        single    1.426     0.020     1.426     0.020     
+MXY       HO3       O3        single    0.970     0.012     0.839     0.014     
+MXY       HO4       O4        single    0.970     0.012     0.839     0.014     
+MXY       HCM1      CM        single    1.089     0.010     0.989     0.005     
+MXY       HCM2      CM        single    1.089     0.010     0.989     0.005     
+MXY       HCM3      CM        single    1.089     0.010     0.989     0.005     
+MXY       H61       C6        single    1.089     0.010     0.989     0.005     
+MXY       H62       C6        single    1.089     0.010     0.989     0.005     
+MXY       H63       C6        single    1.089     0.010     0.989     0.005     
+MXY       HOG       OGL       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MXY      H1     C1     OGL     109.470    3.000
+ MXY      H1     C1     O5      109.470    3.000
+ MXY      OGL    C1     O5      109.470    3.000
+ MXY      H1     C1     C2      108.340    3.000
+ MXY      OGL    C1     C2      109.470    3.000
+ MXY      O5     C1     C2      109.470    3.000
+ MXY      C1     OGL    HOG     109.470    3.000
+ MXY      C1     O5     C5      111.800    3.000
+ MXY      O5     C5     H5      109.470    3.000
+ MXY      O5     C5     C6      109.470    3.000
+ MXY      O5     C5     C4      109.470    3.000
+ MXY      H5     C5     C6      108.340    3.000
+ MXY      H5     C5     C4      108.340    3.000
+ MXY      C6     C5     C4      111.000    3.000
+ MXY      C5     C6     H63     109.470    3.000
+ MXY      C5     C6     H62     109.470    3.000
+ MXY      C5     C6     H61     109.470    3.000
+ MXY      H63    C6     H62     109.470    3.000
+ MXY      H63    C6     H61     109.470    3.000
+ MXY      H62    C6     H61     109.470    3.000
+ MXY      C5     C4     H4      108.340    3.000
+ MXY      C5     C4     O4      109.470    3.000
+ MXY      C5     C4     C3      111.000    3.000
+ MXY      H4     C4     O4      109.470    3.000
+ MXY      H4     C4     C3      108.340    3.000
+ MXY      O4     C4     C3      109.470    3.000
+ MXY      C4     O4     HO4     109.470    3.000
+ MXY      C4     C3     H3      108.340    3.000
+ MXY      C4     C3     O3      109.470    3.000
+ MXY      C4     C3     C2      111.000    3.000
+ MXY      H3     C3     O3      109.470    3.000
+ MXY      H3     C3     C2      108.340    3.000
+ MXY      O3     C3     C2      109.470    3.000
+ MXY      C3     O3     HO3     109.470    3.000
+ MXY      C3     C2     H2      108.340    3.000
+ MXY      C3     C2     O2      109.470    3.000
+ MXY      C3     C2     C1      111.000    3.000
+ MXY      H2     C2     O2      109.470    3.000
+ MXY      H2     C2     C1      108.340    3.000
+ MXY      O2     C2     C1      109.470    3.000
+ MXY      C2     O2     CM      111.800    3.000
+ MXY      O2     CM     HCM3    109.470    3.000
+ MXY      O2     CM     HCM2    109.470    3.000
+ MXY      O2     CM     HCM1    109.470    3.000
+ MXY      HCM3   CM     HCM2    109.470    3.000
+ MXY      HCM3   CM     HCM1    109.470    3.000
+ MXY      HCM2   CM     HCM1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MXY      var_1    C1     O5     C5     C4       -60.000   20.000   1
+ MXY      var_2    O5     C5     C6     H61      -59.996   20.000   3
+ MXY      var_3    O5     C5     C4     C3        60.000   20.000   3
+ MXY      var_4    C5     C4     O4     HO4      -60.011   20.000   1
+ MXY      var_5    C5     C4     C3     C2       -60.000   20.000   3
+ MXY      var_6    C4     C3     O3     HO3      -60.101   20.000   1
+ MXY      var_7    C4     C3     C2     O2       180.000   20.000   3
+ MXY      var_8    C3     C2     C1     O5       -60.000   20.000   3
+ MXY      var_9    C3     C2     O2     CM       150.117   20.000   1
+ MXY      var_10   C2     O2     CM     HCM1     179.951   20.000   1
+ MXY      var_1    C5     O5     C1     C2        60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MXY      chir_01  C1     C2     O5     OGL       positiv
+ MXY      chir_02  C2     C1     C3     O2        positiv
+ MXY      chir_03  C3     C2     C4     O3        negativ
+ MXY      chir_04  C4     C3     C5     O4        negativ
+ MXY      chir_05  C5     C4     O5     C6        negativ
+# ------------------------------------------------------

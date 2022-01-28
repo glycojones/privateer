@@ -1,0 +1,196 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+00B      00B '(4R)-5,5-dimethyl-1,3-thiazolidine-4' non-polymer        20  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_00B
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 00B           OXT    O    OC       -0.500      0.000    0.000    0.000
+ 00B           C      C    C         0.000     -1.000    0.712   -0.242
+ 00B           O      O    OC       -0.500     -0.936    1.601   -1.120
+ 00B           CA     C    CH1       0.000     -2.282    0.493    0.517
+ 00B           HA     H    H         0.000     -2.043    0.347    1.580
+ 00B           CB     C    CT        0.000     -2.966   -0.780   -0.017
+ 00B           CG1    C    CH3       0.000     -2.214   -1.325   -1.234
+ 00B           HG1B   H    H         0.000     -2.698   -2.199   -1.587
+ 00B           HG1A   H    H         0.000     -2.204   -0.594   -2.000
+ 00B           HG1    H    H         0.000     -1.219   -1.560   -0.959
+ 00B           CG2    C    CH3       0.000     -3.056   -1.844    1.079
+ 00B           HG2B   H    H         0.000     -3.529   -2.711    0.693
+ 00B           HG2A   H    H         0.000     -2.082   -2.093    1.412
+ 00B           HG2    H    H         0.000     -3.621   -1.468    1.892
+ 00B           SG3    S    S2        0.000     -4.642   -0.199   -0.494
+ 00B           CD     C    CH2       0.000     -4.565    1.343    0.509
+ 00B           HD     H    H         0.000     -4.814    1.192    1.561
+ 00B           HDA    H    H         0.000     -5.171    2.157    0.106
+ 00B           N      N    NH1       0.000     -3.121    1.688    0.383
+ 00B           HN     H    H         0.000     -2.767    2.621    0.227
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 00B      OXT    n/a    C      START
+ 00B      C      OXT    CA     .
+ 00B      O      C      .      .
+ 00B      CA     C      CB     .
+ 00B      HA     CA     .      .
+ 00B      CB     CA     SG3    .
+ 00B      CG1    CB     HG1    .
+ 00B      HG1B   CG1    .      .
+ 00B      HG1A   CG1    .      .
+ 00B      HG1    CG1    .      .
+ 00B      CG2    CB     HG2    .
+ 00B      HG2B   CG2    .      .
+ 00B      HG2A   CG2    .      .
+ 00B      HG2    CG2    .      .
+ 00B      SG3    CB     CD     .
+ 00B      CD     SG3    N      .
+ 00B      HD     CD     .      .
+ 00B      HDA    CD     .      .
+ 00B      N      CD     HN     .
+ 00B      HN     N      .      END
+ 00B      N      CA     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+00B       CA        C         single    1.500     0.020     1.500     0.020     
+00B       C         OXT       deloc     1.250     0.020     1.250     0.020     
+00B       HN        N         single    1.036     0.016     0.914     0.007     
+00B       O         C         deloc     1.250     0.020     1.250     0.020     
+00B       N         CA        single    1.450     0.020     1.450     0.020     
+00B       HA        CA        single    1.089     0.010     0.989     0.005     
+00B       CB        CA        single    1.524     0.020     1.524     0.020     
+00B       CG2       CB        single    1.524     0.020     1.524     0.020     
+00B       N         CD        single    1.450     0.020     1.450     0.020     
+00B       HD        CD        single    1.089     0.010     0.989     0.005     
+00B       HDA       CD        single    1.089     0.010     0.989     0.005     
+00B       CG1       CB        single    1.524     0.020     1.524     0.020     
+00B       HG1       CG1       single    1.089     0.010     0.989     0.005     
+00B       HG1A      CG1       single    1.089     0.010     0.989     0.005     
+00B       HG1B      CG1       single    1.089     0.010     0.989     0.005     
+00B       HG2       CG2       single    1.089     0.010     0.989     0.005     
+00B       HG2A      CG2       single    1.089     0.010     0.989     0.005     
+00B       HG2B      CG2       single    1.089     0.010     0.989     0.005     
+00B       SG3       CB        single    1.762     0.020     1.762     0.020     
+00B       CD        SG3       single    1.762     0.020     1.762     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 00B      OXT    C      O       123.000    3.000
+ 00B      OXT    C      CA      118.500    3.000
+ 00B      O      C      CA      118.500    3.000
+ 00B      C      CA     HA      108.810    3.000
+ 00B      C      CA     CB      109.470    3.000
+ 00B      C      CA     N       111.600    3.000
+ 00B      HA     CA     CB      108.340    3.000
+ 00B      HA     CA     N       108.550    3.000
+ 00B      CB     CA     N       110.000    3.000
+ 00B      CA     CB     CG1     111.000    3.000
+ 00B      CA     CB     CG2     111.000    3.000
+ 00B      CA     CB     SG3     109.500    3.000
+ 00B      CG1    CB     CG2     111.000    3.000
+ 00B      CG1    CB     SG3     109.500    3.000
+ 00B      CG2    CB     SG3     109.500    3.000
+ 00B      CB     CG1    HG1B    109.470    3.000
+ 00B      CB     CG1    HG1A    109.470    3.000
+ 00B      CB     CG1    HG1     109.470    3.000
+ 00B      HG1B   CG1    HG1A    109.470    3.000
+ 00B      HG1B   CG1    HG1     109.470    3.000
+ 00B      HG1A   CG1    HG1     109.470    3.000
+ 00B      CB     CG2    HG2B    109.470    3.000
+ 00B      CB     CG2    HG2A    109.470    3.000
+ 00B      CB     CG2    HG2     109.470    3.000
+ 00B      HG2B   CG2    HG2A    109.470    3.000
+ 00B      HG2B   CG2    HG2     109.470    3.000
+ 00B      HG2A   CG2    HG2     109.470    3.000
+ 00B      CB     SG3    CD       94.888    3.000
+ 00B      SG3    CD     HD      109.500    3.000
+ 00B      SG3    CD     HDA     109.500    3.000
+ 00B      SG3    CD     N       109.500    3.000
+ 00B      HD     CD     HDA     107.900    3.000
+ 00B      HD     CD     N       109.470    3.000
+ 00B      HDA    CD     N       109.470    3.000
+ 00B      CD     N      HN      118.500    3.000
+ 00B      CD     N      CA      120.000    3.000
+ 00B      HN     N      CA      118.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 00B      var_1    OXT    C      CA     CB       -75.170   20.000   3
+ 00B      var_2    C      CA     CB     SG3     -120.000   20.000   1
+ 00B      var_3    CA     CB     CG1    HG1       59.987   20.000   1
+ 00B      var_4    CA     CB     CG2    HG2       59.992   20.000   1
+ 00B      var_5    CA     CB     SG3    CD       -30.000   20.000   1
+ 00B      var_6    CB     SG3    CD     N         30.000   20.000   1
+ 00B      var_7    SG3    CD     N      CA       -30.000   20.000   3
+ 00B      var_8    CD     N      CA     C        150.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 00B      chir_01  CA     C      N      CB        negativ
+ 00B      chir_02  CB     CA     CG1    CG2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 00B      plan-1    C         0.020
+ 00B      plan-1    O         0.020
+ 00B      plan-1    CA        0.020
+ 00B      plan-1    OXT       0.020
+ 00B      plan-2    N         0.020
+ 00B      plan-2    CA        0.020
+ 00B      plan-2    CD        0.020
+ 00B      plan-2    HN        0.020
+# ------------------------------------------------------

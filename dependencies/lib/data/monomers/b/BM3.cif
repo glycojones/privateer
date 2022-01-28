@@ -1,0 +1,252 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BM3      BM3 '2-(ACETYLAMINO)-2-DEOXY-ALPHA-D-MANN' pyranose        30  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BM3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BM3           O7     O    O         0.000      0.000    0.000    0.000
+ BM3           C7     C    C         0.000     -0.416    1.039    0.497
+ BM3           C8     C    CH3       0.000      0.519    1.915    1.264
+ BM3           H8C3   H    H         0.000      1.300    2.237    0.627
+ BM3           H8C2   H    H         0.000     -0.009    2.756    1.630
+ BM3           H8C1   H    H         0.000      0.925    1.370    2.075
+ BM3           N2     N    NH1       0.000     -1.708    1.522    0.431
+ BM3           HB     H    H         0.000     -1.919    2.398    0.888
+ BM3           C2     C    CH1       0.000     -2.775    0.832   -0.265
+ BM3           H2     H    H         0.000     -2.562   -0.246   -0.237
+ BM3           C3     C    CH1       0.000     -4.129    1.069    0.410
+ BM3           H3     H    H         0.000     -4.863    0.380   -0.033
+ BM3           O3     O    OH1       0.000     -4.029    0.784    1.803
+ BM3           HC     H    H         0.000     -4.444    1.496    2.307
+ BM3           C4     C    CH1       0.000     -4.619    2.501    0.190
+ BM3           H4     H    H         0.000     -3.977    3.197    0.749
+ BM3           O4     O    OH1       0.000     -5.955    2.591    0.680
+ BM3           HD     H    H         0.000     -6.505    3.049    0.030
+ BM3           C5     C    CH1       0.000     -4.575    2.852   -1.302
+ BM3           H5     H    H         0.000     -5.299    2.223   -1.838
+ BM3           C6     C    CH2       0.000     -4.913    4.319   -1.555
+ BM3           H6C1   H    H         0.000     -4.199    4.960   -1.033
+ BM3           H6C2   H    H         0.000     -5.922    4.535   -1.198
+ BM3           O6     O    OH1       0.000     -4.841    4.565   -2.947
+ BM3           H6     H    H         0.000     -3.915    4.667   -3.205
+ BM3           O5     O    O2        0.000     -3.271    2.625   -1.846
+ BM3           C1     C    CH1       0.000     -2.815    1.273   -1.731
+ BM3           H1     H    H         0.000     -1.792    1.225   -2.128
+ BM3           O1     O    OH1       0.000     -3.620    0.364   -2.478
+ BM3           HA     H    H         0.000     -3.250    0.264   -3.365
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BM3      O7     n/a    C7     START
+ BM3      C7     O7     N2     .
+ BM3      C8     C7     H8C1   .
+ BM3      H8C3   C8     .      .
+ BM3      H8C2   C8     .      .
+ BM3      H8C1   C8     .      .
+ BM3      N2     C7     C2     .
+ BM3      HB     N2     .      .
+ BM3      C2     N2     C3     .
+ BM3      H2     C2     .      .
+ BM3      C3     C2     C4     .
+ BM3      H3     C3     .      .
+ BM3      O3     C3     HC     .
+ BM3      HC     O3     .      .
+ BM3      C4     C3     C5     .
+ BM3      H4     C4     .      .
+ BM3      O4     C4     HD     .
+ BM3      HD     O4     .      .
+ BM3      C5     C4     O5     .
+ BM3      H5     C5     .      .
+ BM3      C6     C5     O6     .
+ BM3      H6C1   C6     .      .
+ BM3      H6C2   C6     .      .
+ BM3      O6     C6     H6     .
+ BM3      H6     O6     .      .
+ BM3      O5     C5     C1     .
+ BM3      C1     O5     O1     .
+ BM3      H1     C1     .      .
+ BM3      O1     C1     HA     .
+ BM3      HA     O1     .      END
+ BM3      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BM3       O1        C1        single    1.432     0.020     1.432     0.020     
+BM3       C1        C2        single    1.524     0.020     1.524     0.020     
+BM3       C1        O5        single    1.426     0.020     1.426     0.020     
+BM3       H1        C1        single    1.089     0.010     0.989     0.005     
+BM3       HA        O1        single    0.970     0.012     0.839     0.014     
+BM3       C2        N2        single    1.450     0.020     1.450     0.020     
+BM3       C3        C2        single    1.524     0.020     1.524     0.020     
+BM3       H2        C2        single    1.089     0.010     0.989     0.005     
+BM3       N2        C7        single    1.330     0.020     1.330     0.020     
+BM3       HB        N2        single    1.016     0.010     0.899     0.007     
+BM3       C7        O7        double    1.220     0.020     1.220     0.020     
+BM3       C8        C7        single    1.500     0.020     1.500     0.020     
+BM3       H8C1      C8        single    1.089     0.010     0.989     0.005     
+BM3       H8C2      C8        single    1.089     0.010     0.989     0.005     
+BM3       H8C3      C8        single    1.089     0.010     0.989     0.005     
+BM3       O3        C3        single    1.432     0.020     1.432     0.020     
+BM3       C4        C3        single    1.524     0.020     1.524     0.020     
+BM3       H3        C3        single    1.089     0.010     0.989     0.005     
+BM3       HC        O3        single    0.970     0.012     0.839     0.014     
+BM3       O4        C4        single    1.432     0.020     1.432     0.020     
+BM3       C5        C4        single    1.524     0.020     1.524     0.020     
+BM3       H4        C4        single    1.089     0.010     0.989     0.005     
+BM3       HD        O4        single    0.970     0.012     0.839     0.014     
+BM3       C6        C5        single    1.524     0.020     1.524     0.020     
+BM3       O5        C5        single    1.426     0.020     1.426     0.020     
+BM3       H5        C5        single    1.089     0.010     0.989     0.005     
+BM3       O6        C6        single    1.432     0.020     1.432     0.020     
+BM3       H6C1      C6        single    1.089     0.010     0.989     0.005     
+BM3       H6C2      C6        single    1.089     0.010     0.989     0.005     
+BM3       H6        O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BM3      O7     C7     C8      123.000    3.000
+ BM3      O7     C7     N2      123.000    3.000
+ BM3      C8     C7     N2      116.500    3.000
+ BM3      C7     C8     H8C3    109.470    3.000
+ BM3      C7     C8     H8C2    109.470    3.000
+ BM3      C7     C8     H8C1    109.470    3.000
+ BM3      H8C3   C8     H8C2    109.470    3.000
+ BM3      H8C3   C8     H8C1    109.470    3.000
+ BM3      H8C2   C8     H8C1    109.470    3.000
+ BM3      C7     N2     HB      120.000    3.000
+ BM3      C7     N2     C2      121.500    3.000
+ BM3      HB     N2     C2      118.500    3.000
+ BM3      N2     C2     H2      108.550    3.000
+ BM3      N2     C2     C3      110.000    3.000
+ BM3      N2     C2     C1      110.000    3.000
+ BM3      H2     C2     C3      108.340    3.000
+ BM3      H2     C2     C1      108.340    3.000
+ BM3      C3     C2     C1      111.000    3.000
+ BM3      C2     C3     H3      108.340    3.000
+ BM3      C2     C3     O3      109.470    3.000
+ BM3      C2     C3     C4      111.000    3.000
+ BM3      H3     C3     O3      109.470    3.000
+ BM3      H3     C3     C4      108.340    3.000
+ BM3      O3     C3     C4      109.470    3.000
+ BM3      C3     O3     HC      109.470    3.000
+ BM3      C3     C4     H4      108.340    3.000
+ BM3      C3     C4     O4      109.470    3.000
+ BM3      C3     C4     C5      111.000    3.000
+ BM3      H4     C4     O4      109.470    3.000
+ BM3      H4     C4     C5      108.340    3.000
+ BM3      O4     C4     C5      109.470    3.000
+ BM3      C4     O4     HD      109.470    3.000
+ BM3      C4     C5     H5      108.340    3.000
+ BM3      C4     C5     C6      111.000    3.000
+ BM3      C4     C5     O5      109.470    3.000
+ BM3      H5     C5     C6      108.340    3.000
+ BM3      H5     C5     O5      109.470    3.000
+ BM3      C6     C5     O5      109.470    3.000
+ BM3      C5     C6     H6C1    109.470    3.000
+ BM3      C5     C6     H6C2    109.470    3.000
+ BM3      C5     C6     O6      109.470    3.000
+ BM3      H6C1   C6     H6C2    107.900    3.000
+ BM3      H6C1   C6     O6      109.470    3.000
+ BM3      H6C2   C6     O6      109.470    3.000
+ BM3      C6     O6     H6      109.470    3.000
+ BM3      C5     O5     C1      111.800    3.000
+ BM3      O5     C1     H1      109.470    3.000
+ BM3      O5     C1     O1      109.470    3.000
+ BM3      O5     C1     C2      109.470    3.000
+ BM3      H1     C1     O1      109.470    3.000
+ BM3      H1     C1     C2      108.340    3.000
+ BM3      O1     C1     C2      109.470    3.000
+ BM3      C1     O1     HA      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BM3      var_1    O7     C7     C8     H8C1     -59.237   20.000   1
+ BM3      CONST_1  O7     C7     N2     C2         0.000    0.000   0
+ BM3      var_2    C7     N2     C2     C3       147.850   20.000   3
+ BM3      var_3    N2     C2     C3     C4        60.000   20.000   3
+ BM3      var_4    C2     C3     O3     HC       133.509   20.000   1
+ BM3      var_5    C2     C3     C4     C5        60.000   20.000   3
+ BM3      var_6    C3     C4     O4     HD      -133.687   20.000   1
+ BM3      var_7    C3     C4     C5     O5       -60.000   20.000   3
+ BM3      var_8    C4     C5     C6     O6       179.541   20.000   3
+ BM3      var_9    C5     C6     O6     H6       -78.958   20.000   1
+ BM3      var_10   C4     C5     O5     C1        60.000   20.000   1
+ BM3      var_11   C5     O5     C1     O1        60.000   20.000   1
+ BM3      var_12   O5     C1     C2     N2       -60.000   20.000   3
+ BM3      var_13   O5     C1     O1     HA        91.336   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BM3      chir_01  C1     O1     C2     O5        positiv
+ BM3      chir_02  C2     C1     N2     C3        negativ
+ BM3      chir_03  C3     C2     O3     C4        negativ
+ BM3      chir_04  C4     C3     O4     C5        positiv
+ BM3      chir_05  C5     C4     C6     O5        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BM3      plan-1    N2        0.020
+ BM3      plan-1    C2        0.020
+ BM3      plan-1    C7        0.020
+ BM3      plan-1    HB        0.020
+ BM3      plan-2    C7        0.020
+ BM3      plan-2    N2        0.020
+ BM3      plan-2    O7        0.020
+ BM3      plan-2    C8        0.020
+ BM3      plan-2    HB        0.020
+# ------------------------------------------------------

@@ -1,0 +1,244 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SGB     SGB     "O-[(S)-METHYL(1-METHYLETHOXY)PHOSPHORYL]-L-SERINE"     peptide    30     14     .
+#
+data_comp_SGB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SGB     N       N       NT3     1       4.365       0.954       -0.489
+SGB     CA      C       CH1     0       3.070       0.814       0.229
+SGB     C       C       C       0       3.255       -0.064      1.473
+SGB     O       O       O       0       2.973       0.443       2.578
+SGB     CB      C       CH2     0       2.019       0.255       -0.712
+SGB     OG      O       O2      0       0.729       0.316       -0.058
+SGB     O1      O       O       0       -0.683      -0.314      -2.115
+SGB     P1      P       P       0       -0.526      -0.421      -0.648
+SGB     C1      C       CH3     0       -0.358      -2.138      -0.150
+SGB     O2      O       O2      0       -1.728      0.142       0.193
+SGB     C2      C       CH1     0       -3.131      0.024       -0.225
+SGB     C4      C       CH3     0       -3.572      1.378       -0.737
+SGB     C3      C       CH3     0       -3.927      -0.453      0.970
+SGB     OXT     O       OC      -1      3.676       -1.224      1.294
+SGB     H       H       H       0       4.255       1.486       -1.220
+SGB     H2      H       H       0       4.659       0.134       -0.756
+SGB     H3      H       H       0       4.984       1.329       0.064
+SGB     HA      H       H       0       2.780       1.720       0.522
+SGB     HBC1    H       H       0       2.233       -0.675      -0.942
+SGB     HBC2    H       H       0       1.997       0.779       -1.542
+SGB     H1C1    H       H       0       -1.130      -2.641      -0.447
+SGB     H1C2    H       H       0       -0.293      -2.194      0.814
+SGB     H1C3    H       H       0       0.440       -2.517      -0.546
+SGB     HC2     H       H       0       -3.203      -0.642      -0.954
+SGB     H4C1    H       H       0       -4.413      1.286       -1.219
+SGB     H4C2    H       H       0       -2.893      1.736       -1.336
+SGB     H4C3    H       H       0       -3.694      1.986       0.014
+SGB     H3C1    H       H       0       -4.833      -0.674      0.690
+SGB     H3C2    H       H       0       -3.959      0.252       1.642
+SGB     H3C3    H       H       0       -3.503      -1.243      1.349
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+SGB      N      n/a    CA     START
+SGB      H      N      .      .
+SGB      H2     N      .      .
+SGB      H3     N      .      .
+SGB      CA     N      C      .
+SGB      HA     CA     .      .
+SGB      CB     CA     OG     .
+SGB      HBC1   CB     .      .
+SGB      HBC2   CB     .      .
+SGB      OG     CB     P1     .
+SGB      P1     OG     O2     .
+SGB      O1     P1     .      .
+SGB      C1     P1     H1C1   .
+SGB      H1C3   C1     .      .
+SGB      H1C2   C1     .      .
+SGB      H1C1   C1     .      .
+SGB      O2     P1     C2     .
+SGB      C2     O2     C4     .
+SGB      HC2    C2     .      .
+SGB      C3     C2     H3C1   .
+SGB      H3C3   C3     .      .
+SGB      H3C2   C3     .      .
+SGB      H3C1   C3     .      .
+SGB      C4     C2     H4C1   .
+SGB      H4C3   C4     .      .
+SGB      H4C2   C4     .      .
+SGB      H4C1   C4     .      .
+SGB      C      CA     .      END
+SGB      O      C      .      .
+SGB      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SGB       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+SGB       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+SGB       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+SGB       CA        CB        SINGLE    n         1.515     0.017     1.515     0.017     
+SGB       CB        OG        SINGLE    n         1.447     0.017     1.447     0.017     
+SGB       OG        P1        SINGLE    n         1.570     0.013     1.570     0.013     
+SGB       O1        P1        DOUBLE    n         1.479     0.016     1.479     0.016     
+SGB       P1        C1        SINGLE    n         1.796     0.020     1.796     0.020     
+SGB       P1        O2        SINGLE    n         1.570     0.014     1.570     0.014     
+SGB       O2        C2        SINGLE    n         1.466     0.020     1.466     0.020     
+SGB       C2        C4        SINGLE    n         1.513     0.011     1.513     0.011     
+SGB       C2        C3        SINGLE    n         1.513     0.011     1.513     0.011     
+SGB       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SGB       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+SGB       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+SGB       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+SGB       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+SGB       CB        HBC1      SINGLE    n         1.089     0.010     0.982     0.018     
+SGB       CB        HBC2      SINGLE    n         1.089     0.010     0.982     0.018     
+SGB       C1        H1C1      SINGLE    n         1.089     0.010     0.968     0.013     
+SGB       C1        H1C2      SINGLE    n         1.089     0.010     0.968     0.013     
+SGB       C1        H1C3      SINGLE    n         1.089     0.010     0.968     0.013     
+SGB       C2        HC2       SINGLE    n         1.089     0.010     0.990     0.015     
+SGB       C4        H4C1      SINGLE    n         1.089     0.010     0.974     0.015     
+SGB       C4        H4C2      SINGLE    n         1.089     0.010     0.974     0.015     
+SGB       C4        H4C3      SINGLE    n         1.089     0.010     0.974     0.015     
+SGB       C3        H3C1      SINGLE    n         1.089     0.010     0.974     0.015     
+SGB       C3        H3C2      SINGLE    n         1.089     0.010     0.974     0.015     
+SGB       C3        H3C3      SINGLE    n         1.089     0.010     0.974     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SGB          CA           N           H     109.619    1.50
+SGB          CA           N          H2     109.619    1.50
+SGB          CA           N          H3     109.619    1.50
+SGB           H           N          H2     109.028    2.41
+SGB           H           N          H3     109.028    2.41
+SGB          H2           N          H3     109.028    2.41
+SGB           N          CA           C     109.829    1.50
+SGB           N          CA          CB     109.782    1.50
+SGB           N          CA          HA     108.049    1.50
+SGB           C          CA          CB     111.899    1.50
+SGB           C          CA          HA     108.255    1.50
+SGB          CB          CA          HA     108.381    1.50
+SGB          CA           C           O     117.181    1.50
+SGB          CA           C         OXT     117.181    1.50
+SGB           O           C         OXT     125.637    1.50
+SGB          CA          CB          OG     108.381    1.50
+SGB          CA          CB        HBC1     110.023    1.50
+SGB          CA          CB        HBC2     110.023    1.50
+SGB          OG          CB        HBC1     109.739    1.50
+SGB          OG          CB        HBC2     109.739    1.50
+SGB        HBC1          CB        HBC2     108.157    1.50
+SGB          CB          OG          P1     121.845    2.24
+SGB          OG          P1          O1     114.967    1.85
+SGB          OG          P1          C1     105.177    2.72
+SGB          OG          P1          O2     103.489    2.12
+SGB          O1          P1          C1     110.326    3.00
+SGB          O1          P1          O2     114.967    1.85
+SGB          C1          P1          O2     105.177    2.72
+SGB          P1          C1        H1C1     109.881    1.50
+SGB          P1          C1        H1C2     109.881    1.50
+SGB          P1          C1        H1C3     109.881    1.50
+SGB        H1C1          C1        H1C2     109.372    1.50
+SGB        H1C1          C1        H1C3     109.372    1.50
+SGB        H1C2          C1        H1C3     109.372    1.50
+SGB          P1          O2          C2     122.781    2.42
+SGB          O2          C2          C4     107.621    1.50
+SGB          O2          C2          C3     107.621    1.50
+SGB          O2          C2         HC2     109.195    1.50
+SGB          C4          C2          C3     113.304    1.50
+SGB          C4          C2         HC2     109.427    1.50
+SGB          C3          C2         HC2     109.427    1.50
+SGB          C2          C4        H4C1     109.476    1.50
+SGB          C2          C4        H4C2     109.476    1.50
+SGB          C2          C4        H4C3     109.476    1.50
+SGB        H4C1          C4        H4C2     109.425    1.50
+SGB        H4C1          C4        H4C3     109.425    1.50
+SGB        H4C2          C4        H4C3     109.425    1.50
+SGB          C2          C3        H3C1     109.476    1.50
+SGB          C2          C3        H3C2     109.476    1.50
+SGB          C2          C3        H3C3     109.476    1.50
+SGB        H3C1          C3        H3C2     109.425    1.50
+SGB        H3C1          C3        H3C3     109.425    1.50
+SGB        H3C2          C3        H3C3     109.425    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SGB             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+SGB            sp3_sp3_40          O2          C2          C4        H4C1     180.000   10.00     3
+SGB            sp3_sp3_49          O2          C2          C3        H3C1     180.000   10.00     3
+SGB             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+SGB            sp3_sp3_10           N          CA          CB          OG     180.000   10.00     3
+SGB            sp3_sp3_19          CA          CB          OG          P1     180.000   10.00     3
+SGB            sp3_sp3_22          CB          OG          P1          O1     180.000   10.00     3
+SGB            sp3_sp3_25        H1C1          C1          P1          OG     180.000   10.00     3
+SGB            sp3_sp3_34          C2          O2          P1          OG     180.000   10.00     3
+SGB            sp3_sp3_37          C4          C2          O2          P1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SGB    chir_1    CA    N    C    CB    positive
+SGB    chir_2    P1    O2    OG    O1    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SGB    plan-1           C   0.020
+SGB    plan-1          CA   0.020
+SGB    plan-1           O   0.020
+SGB    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SGB SMILES           ACDLabs              10.04 "O=P(OCC(N)C(=O)O)(OC(C)C)C"
+SGB SMILES_CANONICAL CACTVS               3.341 "CC(C)O[P@@](C)(=O)OC[C@H](N)C(O)=O"
+SGB SMILES           CACTVS               3.341 "CC(C)O[P](C)(=O)OC[CH](N)C(O)=O"
+SGB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)O[P@](=O)(C)OC[C@@H](C(=O)O)N"
+SGB SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)OP(=O)(C)OCC(C(=O)O)N"
+SGB InChI            InChI                1.03  "InChI=1S/C7H16NO5P/c1-5(2)13-14(3,11)12-4-6(8)7(9)10/h5-6H,4,8H2,1-3H3,(H,9,10)/t6-,14-/m0/s1"
+SGB InChIKey         InChI                1.03  RQYSKTURKPPJTP-MDAAJZPYSA-N
+SGB ?                acedrg               202         "dictionary generator"
+SGB ?                acedrg_database      11          "data source"
+SGB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SGB ?                refmac5              5.8.0222    "optimization tool"

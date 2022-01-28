@@ -1,0 +1,387 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+POR      POR 'PORPHYRIN FE(III)                   ' non-polymer        37  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_POR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ POR           H3D    H    H         0.000      0.008    0.006    0.002
+ POR           C3D    C    CR15      0.000     -0.964    0.449   -0.175
+ POR           C2D    C    CR15      0.000     -1.272    1.767   -0.173
+ POR           H2D    H    H         0.000     -0.597    2.593    0.013
+ POR           C1D    C    CR5       0.000     -2.676    1.851   -0.470
+ POR           CHD    C    C1        0.000     -3.346    3.016   -0.807
+ POR           HHD    H    H         0.000     -2.803    3.915   -1.044
+ POR           C4D    C    CR5       0.000     -2.187   -0.241   -0.457
+ POR           CHA    C    C1        0.000     -2.275   -1.571   -0.854
+ POR           HHA    H    H         0.000     -1.395   -2.124   -1.137
+ POR           ND     N    NR5       0.000     -3.229    0.617   -0.366
+ POR           FE     FE   FE        0.000     -5.051    0.194   -0.124
+ POR           NA     N    NR5       0.000     -4.716   -1.602   -0.502
+ POR           C4A    C    CR5       0.000     -5.579   -2.656   -0.406
+ POR           C3A    C    CR15      0.000     -5.004   -3.838   -0.975
+ POR           H3A    H    H         0.000     -5.500   -4.788   -1.136
+ POR           C2A    C    CR15      0.000     -3.726   -3.536   -1.271
+ POR           H2A    H    H         0.000     -2.988   -4.193   -1.716
+ POR           C1A    C    CR5       0.000     -3.536   -2.171   -0.877
+ POR           NC     N    NR5       0.000     -5.547    1.958   -0.467
+ POR           C4C    C    CR5       0.000     -4.741    2.998   -0.833
+ POR           C3C    C    CR15      0.000     -5.522    4.137   -1.214
+ POR           H3C    H    H         0.000     -5.157    5.057   -1.653
+ POR           C2C    C    CR15      0.000     -6.801    3.837   -0.919
+ POR           H2C    H    H         0.000     -7.668    4.466   -1.077
+ POR           C1C    C    CR5       0.000     -6.786    2.519   -0.353
+ POR           CHC    C    C1        0.000     -7.914    1.945    0.236
+ POR           HHC    H    H         0.000     -8.837    2.492    0.318
+ POR           NB     N    NR5       0.000     -6.801   -0.220    0.446
+ POR           C4B    C    CR5       0.000     -7.806    0.646    0.713
+ POR           C3B    C    CR15      0.000     -8.757    0.010    1.582
+ POR           H3B    H    H         0.000     -9.559    0.487    2.132
+ POR           C2B    C    CR15      0.000     -8.446   -1.308    1.572
+ POR           H2B    H    H         0.000     -8.942   -2.098    2.122
+ POR           C1B    C    CR5       0.000     -7.324   -1.446    0.686
+ POR           CHB    C    C1        0.000     -6.839   -2.649    0.194
+ POR           HHB    H    H         0.000     -7.419   -3.553    0.272
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ POR      H3D    n/a    C3D    START
+ POR      C3D    H3D    C4D    .
+ POR      C2D    C3D    C1D    .
+ POR      H2D    C2D    .      .
+ POR      C1D    C2D    CHD    .
+ POR      CHD    C1D    HHD    .
+ POR      HHD    CHD    .      .
+ POR      C4D    C3D    ND     .
+ POR      CHA    C4D    HHA    .
+ POR      HHA    CHA    .      .
+ POR      ND     C4D    FE     .
+ POR      FE     ND     NB     .
+ POR      NA     FE     C4A    .
+ POR      C4A    NA     C3A    .
+ POR      C3A    C4A    C2A    .
+ POR      H3A    C3A    .      .
+ POR      C2A    C3A    C1A    .
+ POR      H2A    C2A    .      .
+ POR      C1A    C2A    .      .
+ POR      NC     FE     C4C    .
+ POR      C4C    NC     C3C    .
+ POR      C3C    C4C    C2C    .
+ POR      H3C    C3C    .      .
+ POR      C2C    C3C    C1C    .
+ POR      H2C    C2C    .      .
+ POR      C1C    C2C    CHC    .
+ POR      CHC    C1C    HHC    .
+ POR      HHC    CHC    .      .
+ POR      NB     FE     C4B    .
+ POR      C4B    NB     C3B    .
+ POR      C3B    C4B    C2B    .
+ POR      H3B    C3B    .      .
+ POR      C2B    C3B    C1B    .
+ POR      H2B    C2B    .      .
+ POR      C1B    C2B    CHB    .
+ POR      CHB    C1B    HHB    .
+ POR      HHB    CHB    .      END
+ POR      CHA    C1A    .    ADD
+ POR      CHB    C4A    .    ADD
+ POR      CHC    C4B    .    ADD
+ POR      CHD    C4C    .    ADD
+ POR      NA     C1A    .    ADD
+ POR      NB     C1B    .    ADD
+ POR      NC     C1C    .    ADD
+ POR      ND     C1D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+POR       NA        FE        single    2.090     0.020     2.090     0.020     
+POR       NB        FE        single    2.090     0.020     2.090     0.020     
+POR       NC        FE        single    2.090     0.020     2.090     0.020     
+POR       FE        ND        single    2.090     0.020     2.090     0.020     
+POR       CHA       C1A       double    1.483     0.020     1.483     0.020     
+POR       CHA       C4D       single    1.483     0.020     1.483     0.020     
+POR       HHA       CHA       single    1.082     0.013     0.975     0.010     
+POR       CHB       C4A       single    1.483     0.020     1.483     0.020     
+POR       CHB       C1B       double    1.483     0.020     1.483     0.020     
+POR       HHB       CHB       single    1.082     0.013     0.975     0.010     
+POR       CHC       C4B       double    1.483     0.020     1.483     0.020     
+POR       CHC       C1C       single    1.483     0.020     1.483     0.020     
+POR       HHC       CHC       single    1.082     0.013     0.975     0.010     
+POR       CHD       C4C       double    1.483     0.020     1.483     0.020     
+POR       CHD       C1D       single    1.483     0.020     1.483     0.020     
+POR       HHD       CHD       single    1.082     0.013     0.975     0.010     
+POR       NA        C1A       single    1.337     0.020     1.337     0.020     
+POR       C4A       NA        double    1.337     0.020     1.337     0.020     
+POR       C1A       C2A       single    1.387     0.020     1.387     0.020     
+POR       C2A       C3A       double    1.380     0.020     1.380     0.020     
+POR       H2A       C2A       single    1.082     0.013     0.975     0.010     
+POR       C3A       C4A       single    1.387     0.020     1.387     0.020     
+POR       H3A       C3A       single    1.082     0.013     0.975     0.010     
+POR       NB        C1B       single    1.337     0.020     1.337     0.020     
+POR       C4B       NB        single    1.337     0.020     1.337     0.020     
+POR       C1B       C2B       single    1.387     0.020     1.387     0.020     
+POR       C2B       C3B       double    1.380     0.020     1.380     0.020     
+POR       H2B       C2B       single    1.082     0.013     0.975     0.010     
+POR       C3B       C4B       single    1.387     0.020     1.387     0.020     
+POR       H3B       C3B       single    1.082     0.013     0.975     0.010     
+POR       NC        C1C       double    1.337     0.020     1.337     0.020     
+POR       C4C       NC        single    1.337     0.020     1.337     0.020     
+POR       C1C       C2C       single    1.387     0.020     1.387     0.020     
+POR       C2C       C3C       double    1.380     0.020     1.380     0.020     
+POR       H2C       C2C       single    1.082     0.013     0.975     0.010     
+POR       C3C       C4C       single    1.387     0.020     1.387     0.020     
+POR       H3C       C3C       single    1.082     0.013     0.975     0.010     
+POR       ND        C1D       single    1.337     0.020     1.337     0.020     
+POR       ND        C4D       single    1.337     0.020     1.337     0.020     
+POR       C1D       C2D       double    1.387     0.020     1.387     0.020     
+POR       C2D       C3D       single    1.380     0.020     1.380     0.020     
+POR       H2D       C2D       single    1.082     0.013     0.975     0.010     
+POR       C4D       C3D       double    1.387     0.020     1.387     0.020     
+POR       C3D       H3D       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ POR      H3D    C3D    C2D     126.000    3.000
+ POR      H3D    C3D    C4D     126.000    3.000
+ POR      C2D    C3D    C4D     108.000    3.000
+ POR      C3D    C2D    H2D     126.000    3.000
+ POR      C3D    C2D    C1D     108.000    3.000
+ POR      H2D    C2D    C1D     126.000    3.000
+ POR      C2D    C1D    CHD     108.000    3.000
+ POR      C2D    C1D    ND      108.000    3.000
+ POR      CHD    C1D    ND      108.000    3.000
+ POR      C1D    CHD    HHD     120.000    3.000
+ POR      C1D    CHD    C4C     120.000    3.000
+ POR      HHD    CHD    C4C     120.000    3.000
+ POR      C3D    C4D    CHA     108.000    3.000
+ POR      C3D    C4D    ND      108.000    3.000
+ POR      CHA    C4D    ND      108.000    3.000
+ POR      C4D    CHA    HHA     120.000    3.000
+ POR      C4D    CHA    C1A     120.000    3.000
+ POR      HHA    CHA    C1A     120.000    3.000
+ POR      C4D    ND     FE      126.000    3.000
+ POR      C4D    ND     C1D     108.000    3.000
+ POR      FE     ND     C1D     126.000    3.000
+ POR      ND     FE     NA       90.000    3.000
+ POR      ND     FE     NC       90.000    3.000
+ POR      ND     FE     NB      180.000    3.000
+ POR      NA     FE     NC      144.000    3.000
+ POR      NA     FE     NB       90.000    3.000
+ POR      NC     FE     NB       90.000    3.000
+ POR      FE     NA     C4A     126.000    3.000
+ POR      FE     NA     C1A     126.000    3.000
+ POR      C4A    NA     C1A     108.000    3.000
+ POR      NA     C4A    C3A     108.000    3.000
+ POR      NA     C4A    CHB     108.000    3.000
+ POR      C3A    C4A    CHB     108.000    3.000
+ POR      C4A    C3A    H3A     126.000    3.000
+ POR      C4A    C3A    C2A     108.000    3.000
+ POR      H3A    C3A    C2A     126.000    3.000
+ POR      C3A    C2A    H2A     126.000    3.000
+ POR      C3A    C2A    C1A     108.000    3.000
+ POR      H2A    C2A    C1A     126.000    3.000
+ POR      C2A    C1A    CHA     108.000    3.000
+ POR      C2A    C1A    NA      108.000    3.000
+ POR      CHA    C1A    NA      108.000    3.000
+ POR      FE     NC     C4C     126.000    3.000
+ POR      FE     NC     C1C     126.000    3.000
+ POR      C4C    NC     C1C     108.000    3.000
+ POR      NC     C4C    C3C     108.000    3.000
+ POR      NC     C4C    CHD     108.000    3.000
+ POR      C3C    C4C    CHD     108.000    3.000
+ POR      C4C    C3C    H3C     126.000    3.000
+ POR      C4C    C3C    C2C     108.000    3.000
+ POR      H3C    C3C    C2C     126.000    3.000
+ POR      C3C    C2C    H2C     126.000    3.000
+ POR      C3C    C2C    C1C     108.000    3.000
+ POR      H2C    C2C    C1C     126.000    3.000
+ POR      C2C    C1C    CHC     108.000    3.000
+ POR      C2C    C1C    NC      108.000    3.000
+ POR      CHC    C1C    NC      108.000    3.000
+ POR      C1C    CHC    HHC     120.000    3.000
+ POR      C1C    CHC    C4B     120.000    3.000
+ POR      HHC    CHC    C4B     120.000    3.000
+ POR      FE     NB     C4B     126.000    3.000
+ POR      FE     NB     C1B     126.000    3.000
+ POR      C4B    NB     C1B     108.000    3.000
+ POR      NB     C4B    C3B     108.000    3.000
+ POR      NB     C4B    CHC     108.000    3.000
+ POR      C3B    C4B    CHC     108.000    3.000
+ POR      C4B    C3B    H3B     126.000    3.000
+ POR      C4B    C3B    C2B     108.000    3.000
+ POR      H3B    C3B    C2B     126.000    3.000
+ POR      C3B    C2B    H2B     126.000    3.000
+ POR      C3B    C2B    C1B     108.000    3.000
+ POR      H2B    C2B    C1B     126.000    3.000
+ POR      C2B    C1B    CHB     108.000    3.000
+ POR      C2B    C1B    NB      108.000    3.000
+ POR      CHB    C1B    NB      108.000    3.000
+ POR      C1B    CHB    HHB     120.000    3.000
+ POR      C1B    CHB    C4A     120.000    3.000
+ POR      HHB    CHB    C4A     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ POR      CONST_1  H3D    C3D    C2D    C1D      180.000    0.000   0
+ POR      CONST_2  C3D    C2D    C1D    CHD      180.000    0.000   0
+ POR      var_1    C2D    C1D    CHD    C4C      180.000   20.000   1
+ POR      var_2    C1D    CHD    C4C    NC         0.000   20.000   1
+ POR      CONST_3  H3D    C3D    C4D    ND       180.000    0.000   0
+ POR      var_3    C3D    C4D    CHA    C1A      180.000   20.000   1
+ POR      var_4    C4D    CHA    C1A    C2A      180.000   20.000   1
+ POR      CONST_4  C3D    C4D    ND     FE      -150.000    0.000   0
+ POR      CONST_5  C4D    ND     C1D    C2D      -30.000    0.000   0
+ POR      var_5    C4D    ND     FE     NA         0.000   20.000   1
+ POR      var_6    C1A    NA     FE     ND         0.000   20.000   1
+ POR      CONST_6  FE     NA     C1A    C2A      180.000    0.000   0
+ POR      CONST_7  FE     NA     C4A    C3A      180.000    0.000   0
+ POR      CONST_8  NA     C4A    C3A    C2A        0.000    0.000   0
+ POR      CONST_9  C4A    C3A    C2A    C1A        0.000    0.000   0
+ POR      CONST_10 C3A    C2A    C1A    CHA      180.000    0.000   0
+ POR      var_7    C4C    NC     FE     ND         0.000   20.000   1
+ POR      CONST_11 FE     NC     C1C    C2C      180.000    0.000   0
+ POR      CONST_12 FE     NC     C4C    C3C      180.000    0.000   0
+ POR      CONST_13 NC     C4C    C3C    C2C        0.000    0.000   0
+ POR      CONST_14 C4C    C3C    C2C    C1C        0.000    0.000   0
+ POR      CONST_15 C3C    C2C    C1C    CHC      180.000    0.000   0
+ POR      var_8    C2C    C1C    CHC    C4B      180.000   20.000   1
+ POR      var_9    C1C    CHC    C4B    NB         0.000   20.000   1
+ POR      var_10   C1B    NB     FE     NA         0.000   20.000   1
+ POR      CONST_16 FE     NB     C1B    C2B      150.000    0.000   0
+ POR      CONST_17 FE     NB     C4B    C3B     -150.000    0.000   0
+ POR      CONST_18 NB     C4B    C3B    C2B        0.000    0.000   0
+ POR      CONST_19 C4B    C3B    C2B    C1B        0.000    0.000   0
+ POR      CONST_20 C3B    C2B    C1B    CHB      180.000    0.000   0
+ POR      var_11   C2B    C1B    CHB    C4A      180.000   20.000   1
+ POR      var_12   C1B    CHB    C4A    NA         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ POR      chir_01  FE     ND     NB     NA        cross5
+                   .      NC     .      .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ POR      plan-1    CHA       0.020
+ POR      plan-1    C1A       0.020
+ POR      plan-1    C4D       0.020
+ POR      plan-1    HHA       0.020
+ POR      plan-2    CHB       0.020
+ POR      plan-2    C4A       0.020
+ POR      plan-2    C1B       0.020
+ POR      plan-2    HHB       0.020
+ POR      plan-3    CHC       0.020
+ POR      plan-3    C4B       0.020
+ POR      plan-3    C1C       0.020
+ POR      plan-3    HHC       0.020
+ POR      plan-4    CHD       0.020
+ POR      plan-4    C4C       0.020
+ POR      plan-4    C1D       0.020
+ POR      plan-4    HHD       0.020
+ POR      plan-5    NA        0.020
+ POR      plan-5    FE        0.020
+ POR      plan-5    C1A       0.020
+ POR      plan-5    C4A       0.020
+ POR      plan-5    C2A       0.020
+ POR      plan-5    C3A       0.020
+ POR      plan-5    CHA       0.020
+ POR      plan-5    H2A       0.020
+ POR      plan-5    H3A       0.020
+ POR      plan-5    CHB       0.020
+ POR      plan-5    HHA       0.020
+ POR      plan-5    HHB       0.020
+ POR      plan-6    NB        0.020
+ POR      plan-6    FE        0.020
+ POR      plan-6    C1B       0.020
+ POR      plan-6    C4B       0.020
+ POR      plan-6    C2B       0.020
+ POR      plan-6    C3B       0.020
+ POR      plan-6    CHB       0.020
+ POR      plan-6    H2B       0.020
+ POR      plan-6    H3B       0.020
+ POR      plan-6    CHC       0.020
+ POR      plan-6    HHB       0.020
+ POR      plan-6    HHC       0.020
+ POR      plan-7    NC        0.020
+ POR      plan-7    FE        0.020
+ POR      plan-7    C1C       0.020
+ POR      plan-7    C4C       0.020
+ POR      plan-7    C2C       0.020
+ POR      plan-7    C3C       0.020
+ POR      plan-7    CHC       0.020
+ POR      plan-7    H2C       0.020
+ POR      plan-7    H3C       0.020
+ POR      plan-7    CHD       0.020
+ POR      plan-7    HHC       0.020
+ POR      plan-7    HHD       0.020
+ POR      plan-8    ND        0.020
+ POR      plan-8    FE        0.020
+ POR      plan-8    C1D       0.020
+ POR      plan-8    C4D       0.020
+ POR      plan-8    C2D       0.020
+ POR      plan-8    C3D       0.020
+ POR      plan-8    CHD       0.020
+ POR      plan-8    H2D       0.020
+ POR      plan-8    H3D       0.020
+ POR      plan-8    CHA       0.020
+ POR      plan-8    HHD       0.020
+ POR      plan-8    HHA       0.020
+# ------------------------------------------------------

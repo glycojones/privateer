@@ -1,0 +1,120 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OPE     OPE     "PHOSPHORICACIDMONO-(2-AMINO-ETHYL)ESTER"     NON-POLYMER     14     8     .     
+#
+data_comp_OPE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OPE     CA      C       CH2     0       27.675      44.049      27.651      
+OPE     CB      C       CH2     0       27.141      43.907      29.052      
+OPE     O1      O       OP      -1      28.951      42.833      25.174      
+OPE     O2      O       OP      -1      31.154      42.926      26.410      
+OPE     O3      O       O       0       29.932      45.065      25.842      
+OPE     O4      O       O2      0       29.025      43.513      27.576      
+OPE     N       N       NT2     0       27.107      42.511      29.495      
+OPE     P       P       P       0       29.811      43.589      26.169      
+OPE     HA1     H       H       0       27.682      45.000      27.391      
+OPE     HA2     H       H       0       27.092      43.564      27.020      
+OPE     HB1     H       H       0       26.234      44.276      29.090      
+OPE     HB2     H       H       0       27.704      44.422      29.666      
+OPE     HN1     H       H       0       26.689      42.451      30.276      
+OPE     HN2     H       H       0       26.650      42.020      28.913      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OPE       CA        CB        SINGLE    n         1.506     0.018     1.506     0.018     
+OPE       CA        O4        SINGLE    n         1.454     0.017     1.454     0.017     
+OPE       CB        N         SINGLE    n         1.464     0.020     1.464     0.020     
+OPE       O1        P         SINGLE    n         1.517     0.019     1.517     0.019     
+OPE       O2        P         SINGLE    n         1.517     0.019     1.517     0.019     
+OPE       O3        P         DOUBLE    n         1.517     0.019     1.517     0.019     
+OPE       O4        P         SINGLE    n         1.614     0.019     1.614     0.019     
+OPE       CA        HA1       SINGLE    n         1.089     0.010     0.986     0.010     
+OPE       CA        HA2       SINGLE    n         1.089     0.010     0.986     0.010     
+OPE       CB        HB1       SINGLE    n         1.089     0.010     0.980     0.015     
+OPE       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.015     
+OPE       N         HN1       SINGLE    n         1.036     0.016     0.888     0.020     
+OPE       N         HN2       SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OPE          CB          CA          O4     109.643    2.62
+OPE          CB          CA         HA1     109.705    1.50
+OPE          CB          CA         HA2     109.705    1.50
+OPE          O4          CA         HA1     109.451    1.50
+OPE          O4          CA         HA2     109.451    1.50
+OPE         HA1          CA         HA2     107.889    1.50
+OPE          CA          CB           N     111.883    2.59
+OPE          CA          CB         HB1     109.091    1.50
+OPE          CA          CB         HB2     109.091    1.50
+OPE           N          CB         HB1     108.870    1.50
+OPE           N          CB         HB2     108.870    1.50
+OPE         HB1          CB         HB2     107.873    1.50
+OPE          CA          O4           P     118.671    1.50
+OPE          CB           N         HN1     109.962    3.00
+OPE          CB           N         HN2     109.962    3.00
+OPE         HN1           N         HN2     107.243    3.00
+OPE          O1           P          O2     112.864    1.69
+OPE          O1           P          O3     112.864    1.69
+OPE          O1           P          O4     105.795    2.09
+OPE          O2           P          O3     112.864    1.69
+OPE          O2           P          O4     105.795    2.09
+OPE          O3           P          O4     105.795    2.09
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OPE             sp3_sp3_1          O4          CA          CB           N     180.000   10.00     3
+OPE            sp3_sp3_10          CB          CA          O4           P     180.000   10.00     3
+OPE            sp3_sp3_13          CA          CB           N         HN1     180.000   10.00     3
+OPE            sp3_sp3_19          CA          O4           P          O1     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OPE SMILES           ACDLabs              10.04 "O=P(O)(O)OCCN"
+OPE SMILES_CANONICAL CACTVS               3.341 "NCCO[P](O)(O)=O"
+OPE SMILES           CACTVS               3.341 "NCCO[P](O)(O)=O"
+OPE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(COP(=O)(O)O)N"
+OPE SMILES           "OpenEye OEToolkits" 1.5.0 "C(COP(=O)(O)O)N"
+OPE InChI            InChI                1.03  "InChI=1S/C2H8NO4P/c3-1-2-7-8(4,5)6/h1-3H2,(H2,4,5,6)"
+OPE InChIKey         InChI                1.03  SUHOOTKUPISOBE-UHFFFAOYSA-N
+OPE ?                acedrg               190         "dictionary generator"                  
+OPE ?                acedrg_database      11          "data source"                           
+OPE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OPE ?                refmac5              5.8.0158    "optimization tool"                     

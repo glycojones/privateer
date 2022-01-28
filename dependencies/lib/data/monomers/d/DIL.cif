@@ -1,0 +1,202 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DIL     DIL     D-ISOLEUCINE     peptide     22     9     .
+#
+data_comp_DIL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DIL     N       N       NT3     1       -2.343      -0.251      0.473
+DIL     CA      C       CH1     0       -1.137      0.588       0.183
+DIL     C       C       C       0       -1.436      1.449       -1.052
+DIL     O       O       O       0       -1.267      2.681       -0.944
+DIL     CB      C       CH1     0       0.134       -0.275      -0.010
+DIL     CG1     C       CH2     0       1.412       0.573       -0.043
+DIL     CG2     C       CH3     0       0.232       -1.370      1.047
+DIL     CD1     C       CH3     0       2.575       -0.083      -0.758
+DIL     OXT     O       OC      -1      -1.826      0.856       -2.077
+DIL     H       H       H       0       -2.347      -0.994      -0.056
+DIL     H2      H       H       0       -3.107      0.223       0.313
+DIL     H3      H       H       0       -2.350      -0.505      1.348
+DIL     HA      H       H       0       -0.989      1.179       0.943
+DIL     HB      H       H       0       0.053       -0.721      -0.890
+DIL     HG12    H       H       0       1.682       0.766       0.880
+DIL     HG13    H       H       0       1.222       1.428       -0.482
+DIL     HG21    H       H       0       1.140       -1.717      1.080
+DIL     HG22    H       H       0       -0.379      -2.094      0.825
+DIL     HG23    H       H       0       -0.004      -1.005      1.917
+DIL     HD11    H       H       0       3.274       0.576       -0.913
+DIL     HD12    H       H       0       2.275       -0.441      -1.612
+DIL     HD13    H       H       0       2.928       -0.805      -0.211
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DIL      N      n/a    CA     START
+DIL      H      N      .      .
+DIL      H2     N      .      .
+DIL      H3     N      .      .
+DIL      CA     N      C      .
+DIL      HA     CA     .      .
+DIL      CB     CA     CG1    .
+DIL      HB     CB     .      .
+DIL      CG2    CB     HG21   .
+DIL      HG23   CG2    .      .
+DIL      HG22   CG2    .      .
+DIL      HG21   CG2    .      .
+DIL      CG1    CB     CD1    .
+DIL      HG12   CG1    .      .
+DIL      HG13   CG1    .      .
+DIL      CD1    CG1    HD11   .
+DIL      HD13   CD1    .      .
+DIL      HD12   CD1    .      .
+DIL      HD11   CD1    .      .
+DIL      C      CA     .      END
+DIL      O      C      .      .
+DIL      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DIL       N         CA        SINGLE    n         1.494     0.010     1.494     0.010     
+DIL       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DIL       CA        CB        SINGLE    n         1.542     0.011     1.542     0.011     
+DIL       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DIL       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DIL       CB        CG1       SINGLE    n         1.531     0.010     1.531     0.010     
+DIL       CB        CG2       SINGLE    n         1.521     0.014     1.521     0.014     
+DIL       CG1       CD1       SINGLE    n         1.511     0.020     1.511     0.020     
+DIL       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DIL       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DIL       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DIL       CA        HA        SINGLE    n         1.089     0.010     0.974     0.020     
+DIL       CB        HB        SINGLE    n         1.089     0.010     0.989     0.018     
+DIL       CG1       HG12      SINGLE    n         1.089     0.010     0.981     0.016     
+DIL       CG1       HG13      SINGLE    n         1.089     0.010     0.981     0.016     
+DIL       CG2       HG21      SINGLE    n         1.089     0.010     0.973     0.015     
+DIL       CG2       HG22      SINGLE    n         1.089     0.010     0.973     0.015     
+DIL       CG2       HG23      SINGLE    n         1.089     0.010     0.973     0.015     
+DIL       CD1       HD11      SINGLE    n         1.089     0.010     0.973     0.016     
+DIL       CD1       HD12      SINGLE    n         1.089     0.010     0.973     0.016     
+DIL       CD1       HD13      SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DIL          CA           N           H     110.089    1.83
+DIL          CA           N          H2     110.089    1.83
+DIL          CA           N          H3     110.089    1.83
+DIL           H           N          H2     109.028    2.41
+DIL           H           N          H3     109.028    2.41
+DIL          H2           N          H3     109.028    2.41
+DIL           N          CA           C     108.763    1.50
+DIL           N          CA          CB     110.820    1.50
+DIL           N          CA          HA     108.396    1.50
+DIL           C          CA          CB     111.764    1.50
+DIL           C          CA          HA     108.542    1.50
+DIL          CB          CA          HA     108.383    1.50
+DIL          CA           C           O     117.133    1.50
+DIL          CA           C         OXT     117.133    1.50
+DIL           O           C         OXT     125.734    1.50
+DIL          CA          CB         CG1     111.759    1.50
+DIL          CA          CB         CG2     110.782    1.50
+DIL          CA          CB          HB     107.412    1.50
+DIL         CG1          CB         CG2     111.775    1.50
+DIL         CG1          CB          HB     107.402    1.50
+DIL         CG2          CB          HB     107.601    1.50
+DIL          CB         CG1         CD1     113.965    1.50
+DIL          CB         CG1        HG12     108.703    1.50
+DIL          CB         CG1        HG13     108.703    1.50
+DIL         CD1         CG1        HG12     108.717    1.50
+DIL         CD1         CG1        HG13     108.717    1.50
+DIL        HG12         CG1        HG13     107.862    1.50
+DIL          CB         CG2        HG21     109.662    1.50
+DIL          CB         CG2        HG22     109.662    1.50
+DIL          CB         CG2        HG23     109.662    1.50
+DIL        HG21         CG2        HG22     109.411    1.50
+DIL        HG21         CG2        HG23     109.411    1.50
+DIL        HG22         CG2        HG23     109.411    1.50
+DIL         CG1         CD1        HD11     109.566    1.50
+DIL         CG1         CD1        HD12     109.566    1.50
+DIL         CG1         CD1        HD13     109.566    1.50
+DIL        HD11         CD1        HD12     109.380    1.50
+DIL        HD11         CD1        HD13     109.380    1.50
+DIL        HD12         CD1        HD13     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DIL             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+DIL             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DIL            sp3_sp3_13           N          CA          CB         CG1      60.000   10.00     3
+DIL            sp3_sp3_19          CA          CB         CG1         CD1     180.000   10.00     3
+DIL            sp3_sp3_28          CA          CB         CG2        HG21     180.000   10.00     3
+DIL            sp3_sp3_37        HD11         CD1         CG1          CB     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DIL    chir_1    CA    N    C    CB    both
+DIL    chir_2    CB    CA    CG1    CG2    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DIL    plan-1           C   0.020
+DIL    plan-1          CA   0.020
+DIL    plan-1           O   0.020
+DIL    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DIL SMILES           ACDLabs              10.04 "O=C(O)C(N)C(C)CC"
+DIL SMILES_CANONICAL CACTVS               3.341 "CC[C@@H](C)[C@@H](N)C(O)=O"
+DIL SMILES           CACTVS               3.341 "CC[CH](C)[CH](N)C(O)=O"
+DIL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC[C@@H](C)[C@H](C(=O)O)N"
+DIL SMILES           "OpenEye OEToolkits" 1.5.0 "CCC(C)C(C(=O)O)N"
+DIL InChI            InChI                1.03  "InChI=1S/C6H13NO2/c1-3-4(2)5(7)6(8)9/h4-5H,3,7H2,1-2H3,(H,8,9)/t4-,5-/m1/s1"
+DIL InChIKey         InChI                1.03  AGPKZVBTJJNPAG-RFZPGFLSSA-N
+DIL ?                acedrg               196         "dictionary generator"
+DIL ?                acedrg_database      11          "data source"
+DIL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DIL ?                refmac5              5.8.0222    "optimization tool"

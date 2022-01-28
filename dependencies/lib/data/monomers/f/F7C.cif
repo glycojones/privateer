@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+F7C     F7C      "(2~{S})-2-oxidanyl-3-oxidanylidene-butanedioic acid"     non-polymer     12     10     .     
+#
+data_comp_F7C
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+F7C     O01     O       OC      -1      29.088      -5.523      24.957      
+F7C     C02     C       C       0       29.557      -4.385      25.031      
+F7C     O03     O       O       0       29.056      -3.439      24.412      
+F7C     C04     C       C       0       30.633      -4.178      25.767      
+F7C     C05     C       CH1     0       31.088      -5.154      26.860      
+F7C     O06     O       OH1     0       31.797      -4.465      27.880      
+F7C     C07     C       C       0       31.953      -6.272      26.278      
+F7C     O08     O       O       0       31.462      -7.415      26.239      
+F7C     O09     O       OC      -1      33.091      -5.961      25.881      
+F7C     O10     O       O       0       31.302      -3.170      25.590      
+F7C     H051    H       H       0       30.286      -5.563      27.282      
+F7C     H061    H       H       0       31.824      -4.957      28.572      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+F7C       C04       O10       DOUBLE    n         1.220     0.0120    1.220     0.0120    
+F7C       C02       O03       DOUBLE    n         1.230     0.0200    1.230     0.0200    
+F7C       C02       C04       SINGLE    n         1.299     0.0200    1.299     0.0200    
+F7C       C04       C05       SINGLE    n         1.527     0.0142    1.527     0.0142    
+F7C       O01       C02       SINGLE    n         1.230     0.0200    1.230     0.0200    
+F7C       C07       O08       DOUBLE    n         1.244     0.0200    1.244     0.0200    
+F7C       C05       C07       SINGLE    n         1.526     0.0200    1.526     0.0200    
+F7C       C07       O09       SINGLE    n         1.244     0.0200    1.244     0.0200    
+F7C       C05       O06       SINGLE    n         1.420     0.0113    1.420     0.0113    
+F7C       C05       H051      SINGLE    n         1.089     0.010     0.994     0.0200    
+F7C       O06       H061      SINGLE    n         0.970     0.012     0.849     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+F7C         O03         C02         C04     118.654    3.00
+F7C         O03         C02         O01     122.692    1.63
+F7C         C04         C02         O01     118.654    3.00
+F7C         O10         C04         C02     119.904    3.00
+F7C         O10         C04         C05     118.276    1.50
+F7C         C02         C04         C05     121.820    3.00
+F7C         C04         C05         C07     111.575    3.00
+F7C         C04         C05         O06     109.232    2.48
+F7C         C04         C05        H051     108.767    1.64
+F7C         C07         C05         O06     110.459    1.64
+F7C         C07         C05        H051     108.456    1.50
+F7C         O06         C05        H051     108.586    2.82
+F7C         C05         O06        H061     108.635    1.50
+F7C         O08         C07         C05     117.233    1.50
+F7C         O08         C07         O09     125.534    1.50
+F7C         C05         C07         O09     117.233    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+F7C             sp2_sp2_2         O03         C02         C04         O10       0.000   10.00     2
+F7C             sp2_sp3_1         O10         C04         C05         C07       0.000   10.00     6
+F7C             sp3_sp3_1         C04         C05         O06        H061     180.000   10.00     3
+F7C             sp2_sp3_8         O08         C07         C05         C04     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+F7C    chir_1    C05    O06    C07    C04    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+F7C    plan-1         C02   0.020
+F7C    plan-1         C04   0.020
+F7C    plan-1         O01   0.020
+F7C    plan-1         O03   0.020
+F7C    plan-2         C02   0.020
+F7C    plan-2         C04   0.020
+F7C    plan-2         C05   0.020
+F7C    plan-2         O10   0.020
+F7C    plan-3         C05   0.020
+F7C    plan-3         C07   0.020
+F7C    plan-3         O08   0.020
+F7C    plan-3         O09   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+F7C            InChI                InChI  1.03 InChI=1S/C4H4O6/c5-1(3(7)8)2(6)4(9)10/h1,5H,(H,7,8)(H,9,10)/t1-/m0/s1
+F7C         InChIKey                InChI  1.03                                           RMHHUKGVZFVHED-SFOWXEAESA-N
+F7C SMILES_CANONICAL               CACTVS 3.385                                             O[C@H](C(O)=O)C(=O)C(O)=O
+F7C           SMILES               CACTVS 3.385                                              O[CH](C(O)=O)C(=O)C(O)=O
+F7C SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                         "[C@H](C(=O)C(=O)O)(C(=O)O)O"
+F7C           SMILES "OpenEye OEToolkits" 2.0.7                                               C(C(=O)C(=O)O)(C(=O)O)O
+F7C ?                acedrg               217         "dictionary generator"                  
+F7C ?                acedrg_database      11          "data source"                           
+F7C ?                rdkit                2017.03.2   "Chemoinformatics tool"
+F7C ?                refmac5              5.8.0253    "optimization tool"                     

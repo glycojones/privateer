@@ -1,0 +1,120 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+54L     54L      "pent-4-ynoic acid"     NON-POLYMER     12     7     .     
+#
+data_comp_54L
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+54L     C38     C       C       0       -2.071      0.070       0.255       
+54L     O39     O       O       0       -2.720      0.916       -0.392      
+54L     C40     C       CH2     0       -0.582      0.301       0.447       
+54L     C41     C       CH2     0       0.253       -0.341      -0.636      
+54L     C42     C       CSP     0       1.684       -0.107      -0.412      
+54L     C43     C       CSP     0       2.844       0.052       -0.270      
+54L     O1      O       OC      -1      -2.577      -0.955      0.752       
+54L     H2      H       H       0       -0.318      -0.060      1.318       
+54L     H3      H       H       0       -0.413      1.265       0.458       
+54L     H4      H       H       0       -0.001      0.031       -1.514      
+54L     H5      H       H       0       0.083       -1.314      -0.651      
+54L     H6      H       H       0       3.779       0.178       -0.157      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+54L       C40       C41       SINGLE    n         1.511     0.019     1.511     0.019     
+54L       C41       C42       SINGLE    n         1.467     0.019     1.467     0.019     
+54L       C38       C40       SINGLE    n         1.519     0.012     1.519     0.012     
+54L       C38       O39       DOUBLE    n         1.247     0.019     1.247     0.019     
+54L       C42       C43       TRIPLE    n         1.180     0.017     1.180     0.017     
+54L       C38       O1        SINGLE    n         1.247     0.019     1.247     0.019     
+54L       C40       H2        SINGLE    n         1.089     0.010     0.979     0.019     
+54L       C40       H3        SINGLE    n         1.089     0.010     0.979     0.019     
+54L       C41       H4        SINGLE    n         1.089     0.010     0.987     0.019     
+54L       C41       H5        SINGLE    n         1.089     0.010     0.987     0.019     
+54L       C43       H6        SINGLE    n         1.048     0.010     0.950     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+54L         C40         C38         O39     118.214    1.64
+54L         C40         C38          O1     118.214    1.64
+54L         O39         C38          O1     123.571    1.50
+54L         C41         C40         C38     111.511    2.91
+54L         C41         C40          H2     109.055    1.50
+54L         C41         C40          H3     109.055    1.50
+54L         C38         C40          H2     108.404    1.50
+54L         C38         C40          H3     108.404    1.50
+54L          H2         C40          H3     107.521    1.50
+54L         C40         C41         C42     110.326    2.62
+54L         C40         C41          H4     109.278    1.50
+54L         C40         C41          H5     109.278    1.50
+54L         C42         C41          H4     108.843    1.50
+54L         C42         C41          H5     108.843    1.50
+54L          H4         C41          H5     107.879    1.85
+54L         C41         C42         C43     177.570    1.50
+54L         C42         C43          H6     179.884    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+54L             sp2_sp3_2         O39         C38         C40         C41     120.000   10.00     6
+54L             sp3_sp3_1         C38         C40         C41         C42     180.000   10.00     3
+54L            sp3_sp3_10         C43         C42         C41         C40     180.000   10.00     3
+54L           other_tor_1         C41         C42         C43          H6     180.000   10.00     1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+54L    plan-1         C38   0.020
+54L    plan-1         C40   0.020
+54L    plan-1          O1   0.020
+54L    plan-1         O39   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+54L SMILES           ACDLabs              12.01 "C(CCC#C)(=O)O"
+54L InChI            InChI                1.03  "InChI=1S/C5H6O2/c1-2-3-4-5(6)7/h1H,3-4H2,(H,6,7)"
+54L InChIKey         InChI                1.03  MLBYLEUJXUBIJJ-UHFFFAOYSA-N
+54L SMILES_CANONICAL CACTVS               3.385 "OC(=O)CCC#C"
+54L SMILES           CACTVS               3.385 "OC(=O)CCC#C"
+54L SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "C#CCCC(=O)O"
+54L SMILES           "OpenEye OEToolkits" 1.9.2 "C#CCCC(=O)O"
+54L ?                acedrg               202         "dictionary generator"                  
+54L ?                acedrg_database      11          "data source"                           
+54L ?                rdkit                2017.03.2   "Chemoinformatics tool"
+54L ?                refmac5              5.8.0189    "optimization tool"                     

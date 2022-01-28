@@ -1,0 +1,373 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HV8      HV8 'BENZYL-2-AMINO-PARAMETHOXY-BENZYLSTA' non-polymer        48  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HV8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HV8           OXT    O    OC       -0.500      0.000    0.000    0.000
+ HV8           C      C    C         0.000     -0.965   -0.090   -0.791
+ HV8           O      O    OC       -0.500     -0.769   -0.039   -2.026
+ HV8           CA2    C    CH1       0.000     -2.364   -0.258   -0.256
+ HV8           HA2    H    H         0.000     -2.332   -0.838    0.677
+ HV8           N2     N    NH1       0.000     -3.185   -0.969   -1.246
+ HV8           HN2    H    H         0.000     -3.778   -0.517   -1.928
+ HV8           CB2    C    CH2       0.000     -3.027   -2.423   -1.114
+ HV8           HB21   H    H         0.000     -3.337   -2.733   -0.114
+ HV8           HB22   H    H         0.000     -1.980   -2.690   -1.269
+ HV8           CG2    C    CR6       0.000     -3.881   -3.116   -2.144
+ HV8           CD3    C    CR16      0.000     -5.183   -3.467   -1.837
+ HV8           HD3    H    H         0.000     -5.587   -3.243   -0.858
+ HV8           CE4    C    CR16      0.000     -5.969   -4.104   -2.779
+ HV8           HE4    H    H         0.000     -6.988   -4.380   -2.538
+ HV8           CZ2    C    CR6       0.000     -5.450   -4.389   -4.034
+ HV8           OE2    O    O2        0.000     -6.222   -5.014   -4.962
+ HV8           CM2    C    CH3       0.000     -7.559   -5.343   -4.581
+ HV8           HM23   H    H         0.000     -8.082   -4.458   -4.326
+ HV8           HM22   H    H         0.000     -8.049   -5.823   -5.388
+ HV8           HM21   H    H         0.000     -7.538   -5.993   -3.745
+ HV8           CE3    C    CR16      0.000     -4.142   -4.040   -4.338
+ HV8           HE3    H    H         0.000     -3.734   -4.266   -5.315
+ HV8           CD4    C    CR16      0.000     -3.361   -3.405   -3.392
+ HV8           HD4    H    H         0.000     -2.340   -3.133   -3.629
+ HV8           CM     C    CH1       0.000     -2.975    1.118    0.020
+ HV8           HM     H    H         0.000     -3.087    1.664   -0.927
+ HV8           OH     O    OH1       0.000     -2.116    1.852    0.895
+ HV8           HOH    H    H         0.000     -2.017    1.371    1.727
+ HV8           CA1    C    CH1       0.000     -4.345    0.945    0.675
+ HV8           HA1    H    H         0.000     -5.020    0.424   -0.018
+ HV8           N      N    NH2       0.000     -4.204    0.157    1.907
+ HV8           HN2A   H    H         0.000     -4.694   -0.723    2.010
+ HV8           HN1    H    H         0.000     -3.614    0.489    2.662
+ HV8           CB1    C    CH2       0.000     -4.925    2.321    1.014
+ HV8           HB11   H    H         0.000     -4.946    2.938    0.114
+ HV8           HB12   H    H         0.000     -4.300    2.802    1.769
+ HV8           CG1    C    CR6       0.000     -6.325    2.158    1.547
+ HV8           CD2    C    CR16      0.000     -7.402    2.180    0.681
+ HV8           HD2    H    H         0.000     -7.239    2.313   -0.382
+ HV8           CE2    C    CR16      0.000     -8.686    2.031    1.170
+ HV8           HE2    H    H         0.000     -9.530    2.048    0.491
+ HV8           CZ1    C    CR16      0.000     -8.894    1.860    2.525
+ HV8           HZ1    H    H         0.000     -9.900    1.740    2.908
+ HV8           CE1    C    CR16      0.000     -7.818    1.843    3.393
+ HV8           HE1    H    H         0.000     -7.981    1.713    4.456
+ HV8           CD1    C    CR16      0.000     -6.533    1.992    2.904
+ HV8           HD1    H    H         0.000     -5.690    1.978    3.583
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HV8      OXT    n/a    C      START
+ HV8      C      OXT    CA2    .
+ HV8      O      C      .      .
+ HV8      CA2    C      CM     .
+ HV8      HA2    CA2    .      .
+ HV8      N2     CA2    CB2    .
+ HV8      HN2    N2     .      .
+ HV8      CB2    N2     CG2    .
+ HV8      HB21   CB2    .      .
+ HV8      HB22   CB2    .      .
+ HV8      CG2    CB2    CD3    .
+ HV8      CD3    CG2    CE4    .
+ HV8      HD3    CD3    .      .
+ HV8      CE4    CD3    CZ2    .
+ HV8      HE4    CE4    .      .
+ HV8      CZ2    CE4    CE3    .
+ HV8      OE2    CZ2    CM2    .
+ HV8      CM2    OE2    HM21   .
+ HV8      HM23   CM2    .      .
+ HV8      HM22   CM2    .      .
+ HV8      HM21   CM2    .      .
+ HV8      CE3    CZ2    CD4    .
+ HV8      HE3    CE3    .      .
+ HV8      CD4    CE3    HD4    .
+ HV8      HD4    CD4    .      .
+ HV8      CM     CA2    CA1    .
+ HV8      HM     CM     .      .
+ HV8      OH     CM     HOH    .
+ HV8      HOH    OH     .      .
+ HV8      CA1    CM     CB1    .
+ HV8      HA1    CA1    .      .
+ HV8      N      CA1    HN1    .
+ HV8      HN2A   N      .      .
+ HV8      HN1    N      .      .
+ HV8      CB1    CA1    CG1    .
+ HV8      HB11   CB1    .      .
+ HV8      HB12   CB1    .      .
+ HV8      CG1    CB1    CD2    .
+ HV8      CD2    CG1    CE2    .
+ HV8      HD2    CD2    .      .
+ HV8      CE2    CD2    CZ1    .
+ HV8      HE2    CE2    .      .
+ HV8      CZ1    CE2    CE1    .
+ HV8      HZ1    CZ1    .      .
+ HV8      CE1    CZ1    CD1    .
+ HV8      HE1    CE1    .      .
+ HV8      CD1    CE1    HD1    .
+ HV8      HD1    CD1    .      END
+ HV8      CG1    CD1    .    ADD
+ HV8      CG2    CD4    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HV8       N         CA1       single    1.450     0.020     1.450     0.020     
+HV8       HN1       N         single    1.036     0.016     0.914     0.007     
+HV8       HN2A      N         single    1.036     0.016     0.914     0.007     
+HV8       CB1       CA1       single    1.524     0.020     1.524     0.020     
+HV8       CA1       CM        single    1.524     0.020     1.524     0.020     
+HV8       HA1       CA1       single    1.089     0.010     0.989     0.005     
+HV8       CG1       CB1       single    1.511     0.020     1.511     0.020     
+HV8       HB11      CB1       single    1.089     0.010     0.989     0.005     
+HV8       HB12      CB1       single    1.089     0.010     0.989     0.005     
+HV8       CG1       CD1       double    1.390     0.020     1.390     0.020     
+HV8       CD2       CG1       single    1.390     0.020     1.390     0.020     
+HV8       CD1       CE1       single    1.390     0.020     1.390     0.020     
+HV8       HD1       CD1       single    1.082     0.013     0.975     0.010     
+HV8       CE2       CD2       double    1.390     0.020     1.390     0.020     
+HV8       HD2       CD2       single    1.082     0.013     0.975     0.010     
+HV8       CE1       CZ1       double    1.390     0.020     1.390     0.020     
+HV8       HE1       CE1       single    1.082     0.013     0.975     0.010     
+HV8       CZ1       CE2       single    1.390     0.020     1.390     0.020     
+HV8       HE2       CE2       single    1.082     0.013     0.975     0.010     
+HV8       HZ1       CZ1       single    1.082     0.013     0.975     0.010     
+HV8       OH        CM        single    1.432     0.020     1.432     0.020     
+HV8       CM        CA2       single    1.524     0.020     1.524     0.020     
+HV8       HM        CM        single    1.089     0.010     0.989     0.005     
+HV8       HOH       OH        single    0.970     0.012     0.839     0.014     
+HV8       N2        CA2       single    1.450     0.020     1.450     0.020     
+HV8       CB2       N2        single    1.450     0.020     1.450     0.020     
+HV8       HN2       N2        single    1.036     0.016     0.914     0.007     
+HV8       CA2       C         single    1.500     0.020     1.500     0.020     
+HV8       HA2       CA2       single    1.089     0.010     0.989     0.005     
+HV8       CG2       CB2       single    1.511     0.020     1.511     0.020     
+HV8       HB21      CB2       single    1.089     0.010     0.989     0.005     
+HV8       HB22      CB2       single    1.089     0.010     0.989     0.005     
+HV8       CG2       CD4       double    1.390     0.020     1.390     0.020     
+HV8       CD3       CG2       single    1.390     0.020     1.390     0.020     
+HV8       CD4       CE3       single    1.390     0.020     1.390     0.020     
+HV8       HD4       CD4       single    1.082     0.013     0.975     0.010     
+HV8       CE3       CZ2       double    1.390     0.020     1.390     0.020     
+HV8       HE3       CE3       single    1.082     0.013     0.975     0.010     
+HV8       CE4       CD3       double    1.390     0.020     1.390     0.020     
+HV8       HD3       CD3       single    1.082     0.013     0.975     0.010     
+HV8       CZ2       CE4       single    1.390     0.020     1.390     0.020     
+HV8       HE4       CE4       single    1.082     0.013     0.975     0.010     
+HV8       OE2       CZ2       single    1.370     0.020     1.370     0.020     
+HV8       CM2       OE2       single    1.426     0.020     1.426     0.020     
+HV8       HM21      CM2       single    1.089     0.010     0.989     0.005     
+HV8       HM22      CM2       single    1.089     0.010     0.989     0.005     
+HV8       HM23      CM2       single    1.089     0.010     0.989     0.005     
+HV8       O         C         deloc     1.250     0.020     1.250     0.020     
+HV8       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HV8      OXT    C      O       123.000    3.000
+ HV8      OXT    C      CA2     118.500    3.000
+ HV8      O      C      CA2     118.500    3.000
+ HV8      C      CA2    HA2     108.810    3.000
+ HV8      C      CA2    N2      111.600    3.000
+ HV8      C      CA2    CM      109.470    3.000
+ HV8      HA2    CA2    N2      108.550    3.000
+ HV8      HA2    CA2    CM      108.340    3.000
+ HV8      N2     CA2    CM      110.000    3.000
+ HV8      CA2    N2     HN2     118.500    3.000
+ HV8      CA2    N2     CB2     120.000    3.000
+ HV8      HN2    N2     CB2     118.500    3.000
+ HV8      N2     CB2    HB21    109.470    3.000
+ HV8      N2     CB2    HB22    109.470    3.000
+ HV8      N2     CB2    CG2     109.500    3.000
+ HV8      HB21   CB2    HB22    107.900    3.000
+ HV8      HB21   CB2    CG2     109.470    3.000
+ HV8      HB22   CB2    CG2     109.470    3.000
+ HV8      CB2    CG2    CD3     120.000    3.000
+ HV8      CB2    CG2    CD4     120.000    3.000
+ HV8      CD3    CG2    CD4     120.000    3.000
+ HV8      CG2    CD3    HD3     120.000    3.000
+ HV8      CG2    CD3    CE4     120.000    3.000
+ HV8      HD3    CD3    CE4     120.000    3.000
+ HV8      CD3    CE4    HE4     120.000    3.000
+ HV8      CD3    CE4    CZ2     120.000    3.000
+ HV8      HE4    CE4    CZ2     120.000    3.000
+ HV8      CE4    CZ2    OE2     120.000    3.000
+ HV8      CE4    CZ2    CE3     120.000    3.000
+ HV8      OE2    CZ2    CE3     120.000    3.000
+ HV8      CZ2    OE2    CM2     120.000    3.000
+ HV8      OE2    CM2    HM23    109.470    3.000
+ HV8      OE2    CM2    HM22    109.470    3.000
+ HV8      OE2    CM2    HM21    109.470    3.000
+ HV8      HM23   CM2    HM22    109.470    3.000
+ HV8      HM23   CM2    HM21    109.470    3.000
+ HV8      HM22   CM2    HM21    109.470    3.000
+ HV8      CZ2    CE3    HE3     120.000    3.000
+ HV8      CZ2    CE3    CD4     120.000    3.000
+ HV8      HE3    CE3    CD4     120.000    3.000
+ HV8      CE3    CD4    HD4     120.000    3.000
+ HV8      CE3    CD4    CG2     120.000    3.000
+ HV8      HD4    CD4    CG2     120.000    3.000
+ HV8      CA2    CM     HM      108.340    3.000
+ HV8      CA2    CM     OH      109.470    3.000
+ HV8      CA2    CM     CA1     111.000    3.000
+ HV8      HM     CM     OH      109.470    3.000
+ HV8      HM     CM     CA1     108.340    3.000
+ HV8      OH     CM     CA1     109.470    3.000
+ HV8      CM     OH     HOH     109.470    3.000
+ HV8      CM     CA1    HA1     108.340    3.000
+ HV8      CM     CA1    N       109.470    3.000
+ HV8      CM     CA1    CB1     111.000    3.000
+ HV8      HA1    CA1    N       109.470    3.000
+ HV8      HA1    CA1    CB1     108.340    3.000
+ HV8      N      CA1    CB1     109.470    3.000
+ HV8      CA1    N      HN2A    120.000    3.000
+ HV8      CA1    N      HN1     120.000    3.000
+ HV8      HN2A   N      HN1     120.000    3.000
+ HV8      CA1    CB1    HB11    109.470    3.000
+ HV8      CA1    CB1    HB12    109.470    3.000
+ HV8      CA1    CB1    CG1     109.470    3.000
+ HV8      HB11   CB1    HB12    107.900    3.000
+ HV8      HB11   CB1    CG1     109.470    3.000
+ HV8      HB12   CB1    CG1     109.470    3.000
+ HV8      CB1    CG1    CD2     120.000    3.000
+ HV8      CB1    CG1    CD1     120.000    3.000
+ HV8      CD2    CG1    CD1     120.000    3.000
+ HV8      CG1    CD2    HD2     120.000    3.000
+ HV8      CG1    CD2    CE2     120.000    3.000
+ HV8      HD2    CD2    CE2     120.000    3.000
+ HV8      CD2    CE2    HE2     120.000    3.000
+ HV8      CD2    CE2    CZ1     120.000    3.000
+ HV8      HE2    CE2    CZ1     120.000    3.000
+ HV8      CE2    CZ1    HZ1     120.000    3.000
+ HV8      CE2    CZ1    CE1     120.000    3.000
+ HV8      HZ1    CZ1    CE1     120.000    3.000
+ HV8      CZ1    CE1    HE1     120.000    3.000
+ HV8      CZ1    CE1    CD1     120.000    3.000
+ HV8      HE1    CE1    CD1     120.000    3.000
+ HV8      CE1    CD1    HD1     120.000    3.000
+ HV8      CE1    CD1    CG1     120.000    3.000
+ HV8      HD1    CD1    CG1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HV8      var_1    OXT    C      CA2    CM        87.387   20.000   3
+ HV8      var_2    C      CA2    N2     CB2       85.036   20.000   3
+ HV8      var_3    CA2    N2     CB2    CG2      179.999   20.000   3
+ HV8      var_4    N2     CB2    CG2    CD3      -90.310   20.000   2
+ HV8      CONST_1  CB2    CG2    CD4    CE3      180.000    0.000   0
+ HV8      CONST_2  CB2    CG2    CD3    CE4      180.000    0.000   0
+ HV8      CONST_3  CG2    CD3    CE4    CZ2        0.000    0.000   0
+ HV8      CONST_4  CD3    CE4    CZ2    CE3        0.000    0.000   0
+ HV8      var_5    CE4    CZ2    OE2    CM2        0.248   20.000   1
+ HV8      var_6    CZ2    OE2    CM2    HM21     -59.993   20.000   1
+ HV8      CONST_5  CE4    CZ2    CE3    CD4        0.000    0.000   0
+ HV8      CONST_6  CZ2    CE3    CD4    CG2        0.000    0.000   0
+ HV8      var_7    C      CA2    CM     CA1     -175.130   20.000   3
+ HV8      var_8    CA2    CM     OH     HOH      -60.018   20.000   1
+ HV8      var_9    CA2    CM     CA1    CB1      177.214   20.000   3
+ HV8      var_10   CM     CA1    N      HN1       59.958   20.000   1
+ HV8      var_11   CM     CA1    CB1    CG1      175.016   20.000   3
+ HV8      var_12   CA1    CB1    CG1    CD2      -90.234   20.000   2
+ HV8      CONST_7  CB1    CG1    CD1    CE1      180.000    0.000   0
+ HV8      CONST_8  CB1    CG1    CD2    CE2      180.000    0.000   0
+ HV8      CONST_9  CG1    CD2    CE2    CZ1        0.000    0.000   0
+ HV8      CONST_10 CD2    CE2    CZ1    CE1        0.000    0.000   0
+ HV8      CONST_11 CE2    CZ1    CE1    CD1        0.000    0.000   0
+ HV8      CONST_12 CZ1    CE1    CD1    CG1        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HV8      chir_01  CA1    N      CB1    CM        negativ
+ HV8      chir_02  CM     CA1    OH     CA2       negativ
+ HV8      chir_03  CA2    CM     N2     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HV8      plan-1    N         0.020
+ HV8      plan-1    CA1       0.020
+ HV8      plan-1    HN1       0.020
+ HV8      plan-1    HN2A      0.020
+ HV8      plan-2    CG1       0.020
+ HV8      plan-2    CB1       0.020
+ HV8      plan-2    CD1       0.020
+ HV8      plan-2    CD2       0.020
+ HV8      plan-2    CE1       0.020
+ HV8      plan-2    CE2       0.020
+ HV8      plan-2    CZ1       0.020
+ HV8      plan-2    HD1       0.020
+ HV8      plan-2    HD2       0.020
+ HV8      plan-2    HE1       0.020
+ HV8      plan-2    HE2       0.020
+ HV8      plan-2    HZ1       0.020
+ HV8      plan-3    N2        0.020
+ HV8      plan-3    CA2       0.020
+ HV8      plan-3    CB2       0.020
+ HV8      plan-3    HN2       0.020
+ HV8      plan-4    CG2       0.020
+ HV8      plan-4    CB2       0.020
+ HV8      plan-4    CD4       0.020
+ HV8      plan-4    CD3       0.020
+ HV8      plan-4    CE3       0.020
+ HV8      plan-4    CE4       0.020
+ HV8      plan-4    CZ2       0.020
+ HV8      plan-4    HD4       0.020
+ HV8      plan-4    HE3       0.020
+ HV8      plan-4    HD3       0.020
+ HV8      plan-4    HE4       0.020
+ HV8      plan-4    OE2       0.020
+ HV8      plan-5    C         0.020
+ HV8      plan-5    CA2       0.020
+ HV8      plan-5    O         0.020
+ HV8      plan-5    OXT       0.020
+# ------------------------------------------------------

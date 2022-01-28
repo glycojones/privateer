@@ -1,0 +1,201 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CME     CME     "S,S-(2-HYDROXYETHYL)THIOCYSTEINE"  peptide    22     11     .     
+#
+data_comp_CME
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CME     N       N       NT3     1       -2.865      -0.804      -1.206      
+CME     CA      C       CH1     0       -2.381      -0.173      0.054       
+CME     CB      C       CH2     0       -0.996      0.419       -0.116      
+CME     SG      S       S2      0       -0.179      0.941       1.417       
+CME     SD      S       S2      0       1.656       1.527       0.798       
+CME     CE      C       CH2     0       2.576       -0.033      0.661       
+CME     CZ      C       CH2     0       3.937       0.140       0.053       
+CME     OH      O       OH1     0       4.681       -1.059      0.121       
+CME     C       C       C       0       -3.411      0.850       0.550       
+CME     O       O       O       0       -3.604      0.913       1.780       
+CME     OXT     O       OC      -1      -3.982      1.547       -0.313      
+CME     H       H       H       0       -3.753      -1.004      -1.136      
+CME     H2      H       H       0       -2.401      -1.572      -1.362      
+CME     H3      H       H       0       -2.741      -0.232      -1.905      
+CME     HA      H       H       0       -2.304      -0.885      0.731       
+CME     HB2     H       H       0       -1.072      1.206       -0.714      
+CME     HB3     H       H       0       -0.426      -0.260      -0.560      
+CME     HE2     H       H       0       2.058       -0.658      0.110       
+CME     HE3     H       H       0       2.673       -0.423      1.556       
+CME     HZ2     H       H       0       4.416       0.846       0.526       
+CME     HZ3     H       H       0       3.844       0.412       -0.879      
+CME     HH      H       H       0       5.434       -0.925      -0.241      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CME      N      n/a    CA     START
+ CME      H      N      .      .
+ CME      H2     N      .      .
+ CME      H3     N      .      .
+ CME      CA     N      C      .
+ CME      HA     CA     .      .
+ CME      CB     CA     SG     .
+ CME      HB2    CB     .      .
+ CME      HB3    CB     .      .
+ CME      SG     CB     SD     .
+ CME      SD     SG     CE     .
+ CME      CE     SD     CZ     .
+ CME      HE2    CE     .      .
+ CME      HE3    CE     .      .
+ CME      CZ     CE     OH     .
+ CME      HZ2    CZ     .      .
+ CME      HZ3    CZ     .      .
+ CME      OH     CZ     HH     .
+ CME      HH     OH     .      .
+ CME      C      CA     .      END
+ CME      O      C      .      .
+ CME      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CME       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+CME       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+CME       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+CME       CB        SG        SINGLE    n         1.814     0.010     1.814     0.010     
+CME       SG        SD        SINGLE    n         2.023     0.016     2.023     0.016     
+CME       SD        CE        SINGLE    n         1.816     0.011     1.816     0.011     
+CME       CE        CZ        SINGLE    n         1.500     0.020     1.500     0.020     
+CME       CZ        OH        SINGLE    n         1.413     0.020     1.413     0.020     
+CME       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+CME       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+CME       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+CME       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+CME       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+CME       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+CME       CB        HB2       SINGLE    n         1.089     0.010     0.991     0.010     
+CME       CB        HB3       SINGLE    n         1.089     0.010     0.991     0.010     
+CME       CE        HE2       SINGLE    n         1.089     0.010     0.981     0.013     
+CME       CE        HE3       SINGLE    n         1.089     0.010     0.981     0.013     
+CME       CZ        HZ2       SINGLE    n         1.089     0.010     0.975     0.015     
+CME       CZ        HZ3       SINGLE    n         1.089     0.010     0.975     0.015     
+CME       OH        HH        SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CME          CA           N           H     109.671    1.50
+CME          CA           N          H2     109.671    1.50
+CME          CA           N          H3     109.671    1.50
+CME           H           N          H2     109.028    2.41
+CME           H           N          H3     109.028    2.41
+CME          H2           N          H3     109.028    2.41
+CME           N          CA          CB     111.909    1.50
+CME           N          CA           C     109.494    1.50
+CME           N          CA          HA     107.983    1.50
+CME          CB          CA           C     113.463    1.50
+CME          CB          CA          HA     107.198    1.50
+CME           C          CA          HA     108.606    1.50
+CME          CA          CB          SG     115.472    1.77
+CME          CA          CB         HB2     107.935    1.50
+CME          CA          CB         HB3     107.935    1.50
+CME          SG          CB         HB2     108.472    1.50
+CME          SG          CB         HB3     108.472    1.50
+CME         HB2          CB         HB3     108.536    1.50
+CME          CB          SG          SD     103.493    1.52
+CME          SG          SD          CE     103.571    1.50
+CME          SD          CE          CZ     112.239    3.00
+CME          SD          CE         HE2     108.628    1.50
+CME          SD          CE         HE3     108.628    1.50
+CME          CZ          CE         HE2     108.815    1.50
+CME          CZ          CE         HE3     108.815    1.50
+CME         HE2          CE         HE3     107.922    1.50
+CME          CE          CZ          OH     112.505    3.00
+CME          CE          CZ         HZ2     109.785    1.50
+CME          CE          CZ         HZ3     109.785    1.50
+CME          OH          CZ         HZ2     109.715    1.50
+CME          OH          CZ         HZ3     109.715    1.50
+CME         HZ2          CZ         HZ3     108.284    1.50
+CME          CZ          OH          HH     108.328    2.23
+CME          CA           C           O     117.134    1.50
+CME          CA           C         OXT     117.134    1.50
+CME           O           C         OXT     125.732    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CME             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+CME            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+CME             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+CME            sp3_sp3_19          CA          CB          SG          SD     180.000   10.00     3
+CME            sp3_sp3_22          CE          SD          SG          CB     180.000   10.00     3
+CME            sp3_sp3_23          CZ          CE          SD          SG     180.000   10.00     3
+CME            sp3_sp3_26          SD          CE          CZ          OH     180.000   10.00     3
+CME            sp3_sp3_35          CE          CZ          OH          HH     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+CME    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CME    plan-1           C   0.020
+CME    plan-1          CA   0.020
+CME    plan-1           O   0.020
+CME    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CME SMILES           ACDLabs              10.04 "O=C(O)C(N)CSSCCO"
+CME SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CSSCCO)C(O)=O"
+CME SMILES           CACTVS               3.341 "N[CH](CSSCCO)C(O)=O"
+CME SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CSSC[C@@H](C(=O)O)N)O"
+CME SMILES           "OpenEye OEToolkits" 1.5.0 "C(CSSCC(C(=O)O)N)O"
+CME InChI            InChI                1.03  "InChI=1S/C5H11NO3S2/c6-4(5(8)9)3-11-10-2-1-7/h4,7H,1-3,6H2,(H,8,9)/t4-/m0/s1"
+CME InChIKey         InChI                1.03  YPUBRSXDQSFQBA-BYPYZUCNSA-N
+CME ?                acedrg               196         "dictionary generator"                  
+CME ?                acedrg_database      11          "data source"                           
+CME ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CME ?                refmac5              5.8.0222    "optimization tool"                     

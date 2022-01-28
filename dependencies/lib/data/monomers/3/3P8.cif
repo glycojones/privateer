@@ -1,0 +1,95 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3P8     3P8      "methylammonium ion"     NON-POLYMER     8     2     .     
+#
+data_comp_3P8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3P8     C1      C       CH3     0       0.001       0.001       54.604      
+3P8     N1      N       NT3     1       0.001       0.001       56.069      
+3P8     H1      H       H       0       0.001       0.914       54.282      
+3P8     H2      H       H       0       -0.789      -0.455      54.282      
+3P8     H3      H       H       0       0.791       -0.455      54.282      
+3P8     H4      H       H       0       -0.731      -0.423      56.373      
+3P8     H5      H       H       0       0.000       0.847       56.373      
+3P8     H6      H       H       0       0.734       -0.421      56.373      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3P8       C1        N1        SINGLE    n         1.463     0.020     1.463     0.020     
+3P8       C1        H1        SINGLE    n         1.089     0.010     0.968     0.013     
+3P8       C1        H2        SINGLE    n         1.089     0.010     0.968     0.013     
+3P8       C1        H3        SINGLE    n         1.089     0.010     0.968     0.013     
+3P8       N1        H4        SINGLE    n         1.036     0.016     0.899     0.020     
+3P8       N1        H5        SINGLE    n         1.036     0.016     0.899     0.020     
+3P8       N1        H6        SINGLE    n         1.036     0.016     0.899     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3P8          N1          C1          H1     109.424    1.50
+3P8          N1          C1          H2     109.424    1.50
+3P8          N1          C1          H3     109.424    1.50
+3P8          H1          C1          H2     109.489    1.51
+3P8          H1          C1          H3     109.489    1.51
+3P8          H2          C1          H3     109.489    1.51
+3P8          C1          N1          H4     109.746    1.87
+3P8          C1          N1          H5     109.746    1.87
+3P8          C1          N1          H6     109.746    1.87
+3P8          H4          N1          H5     109.200    2.11
+3P8          H4          N1          H6     109.200    2.11
+3P8          H5          N1          H6     109.200    2.11
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3P8             sp3_sp3_1          H1          C1          N1          H4     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3P8 SMILES           ACDLabs              12.01 "[NH3+]C"
+3P8 InChI            InChI                1.03  InChI=1S/CH5N/c1-2/h2H2,1H3/p+1
+3P8 InChIKey         InChI                1.03  BAVYZALUXZFZLV-UHFFFAOYSA-O
+3P8 SMILES_CANONICAL CACTVS               3.385 "C[NH3+]"
+3P8 SMILES           CACTVS               3.385 "C[NH3+]"
+3P8 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C[NH3+]"
+3P8 SMILES           "OpenEye OEToolkits" 1.7.6 "C[NH3+]"
+3P8 ?                acedrg               202         "dictionary generator"                  
+3P8 ?                acedrg_database      11          "data source"                           
+3P8 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3P8 ?                refmac5              5.8.0189    "optimization tool"                     

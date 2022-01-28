@@ -1,0 +1,102 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XPO     XPO      "formyl phosphate"     NON-POLYMER     8     7     .     
+#
+data_comp_XPO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+XPO     C       C       C1      0       20.788      25.087      73.353      
+XPO     O       O       O       0       20.669      24.147      72.616      
+XPO     P       P       P       0       21.783      26.351      75.414      
+XPO     O1      O       OP      -1      20.429      26.535      76.055      
+XPO     O2      O       O2      0       21.670      25.134      74.386      
+XPO     O3      O       O       0       22.188      27.574      74.629      
+XPO     O4      O       OP      -1      22.828      25.987      76.439      
+XPO     H1      H       H       0       20.233      25.851      73.209      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XPO       C         O         DOUBLE    n         1.201     0.019     1.201     0.019     
+XPO       C         O2        SINGLE    n         1.355     0.020     1.355     0.020     
+XPO       P         O3        DOUBLE    n         1.509     0.020     1.509     0.020     
+XPO       P         O2        SINGLE    n         1.595     0.020     1.595     0.020     
+XPO       P         O1        SINGLE    n         1.509     0.020     1.509     0.020     
+XPO       P         O4        SINGLE    n         1.509     0.020     1.509     0.020     
+XPO       C         H1        SINGLE    n         1.082     0.013     0.955     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+XPO           O           C          O2     124.345    3.00
+XPO           O           C          H1     118.680    2.35
+XPO          O2           C          H1     116.976    3.00
+XPO          O3           P          O2     112.304    3.00
+XPO          O3           P          O1     112.864    1.69
+XPO          O3           P          O4     112.864    1.69
+XPO          O2           P          O1     112.304    3.00
+XPO          O2           P          O4     112.304    3.00
+XPO          O1           P          O4     112.864    1.69
+XPO           C          O2           P     122.808    2.93
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+XPO             sp2_sp2_1           O           C          O2           P     180.000   10.00     2
+XPO             sp3_sp3_1          O3           P          O2           C     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+XPO    plan-1           C   0.020
+XPO    plan-1          H1   0.020
+XPO    plan-1           O   0.020
+XPO    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+XPO SMILES_CANONICAL CACTVS               3.370 "O[P](O)(=O)OC=O"
+XPO SMILES           CACTVS               3.370 "O[P](O)(=O)OC=O"
+XPO SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(=O)OP(=O)(O)O"
+XPO SMILES           "OpenEye OEToolkits" 1.7.0 "C(=O)OP(=O)(O)O"
+XPO InChI            InChI                1.03  "InChI=1S/CH3O5P/c2-1-6-7(3,4)5/h1H,(H2,3,4,5)"
+XPO InChIKey         InChI                1.03  TVISEJUYYBUVNV-UHFFFAOYSA-N
+XPO ?                acedrg               202         "dictionary generator"                  
+XPO ?                acedrg_database      11          "data source"                           
+XPO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+XPO ?                refmac5              5.8.0189    "optimization tool"                     

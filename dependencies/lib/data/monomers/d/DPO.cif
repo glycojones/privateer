@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DPO     DPO      DIPHOSPHATE     NON-POLYMER     9     9     .     
+#
+data_comp_DPO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DPO     P1      P       P       0       -1.447      -0.109      -0.224      
+DPO     O1      O       O       0       -1.811      -0.246      1.234       
+DPO     O2      O       OP      -1      -1.444      1.326       -0.692      
+DPO     O3      O       OP      -1      -2.264      -1.011      -1.116      
+DPO     O4      O       O2      0       0.078       -0.621      -0.351      
+DPO     P2      P       P       0       1.479       -0.025      0.186       
+DPO     O5      O       O       0       2.519       -1.076      -0.113      
+DPO     O6      O       OP      -1      1.707       1.255       -0.580      
+DPO     O7      O       OP      -1      1.292       0.206       1.665       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DPO       P1        O1        DOUBLE    n         1.509     0.020     1.509     0.020     
+DPO       P1        O2        SINGLE    n         1.509     0.020     1.509     0.020     
+DPO       P1        O3        SINGLE    n         1.509     0.020     1.509     0.020     
+DPO       P1        O4        SINGLE    n         1.614     0.019     1.614     0.019     
+DPO       O4        P2        SINGLE    n         1.614     0.019     1.614     0.019     
+DPO       P2        O5        DOUBLE    n         1.509     0.020     1.509     0.020     
+DPO       P2        O6        SINGLE    n         1.509     0.020     1.509     0.020     
+DPO       P2        O7        SINGLE    n         1.509     0.020     1.509     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DPO          O1          P1          O2     112.716    1.50
+DPO          O1          P1          O3     112.716    1.50
+DPO          O1          P1          O4     105.965    2.38
+DPO          O2          P1          O3     112.716    1.50
+DPO          O2          P1          O4     105.965    2.38
+DPO          O3          P1          O4     105.965    2.38
+DPO          P1          O4          P2     132.584    3.00
+DPO          O4          P2          O5     105.965    2.38
+DPO          O4          P2          O6     105.965    2.38
+DPO          O4          P2          O7     105.965    2.38
+DPO          O5          P2          O6     112.716    1.50
+DPO          O5          P2          O7     112.716    1.50
+DPO          O6          P2          O7     112.716    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DPO             sp3_sp3_1          P2          O4          P1          O1     180.000   10.00     3
+DPO             sp3_sp3_4          P1          O4          P2          O5     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DPO SMILES           ACDLabs              12.01 "[O-]P([O-])(=O)OP([O-])([O-])=O"
+DPO InChI            InChI                1.03  "InChI=1S/H4O7P2/c1-8(2,3)7-9(4,5)6/h(H2,1,2,3)(H2,4,5,6)/p-4"
+DPO InChIKey         InChI                1.03  XPPKVPWEQAFLFU-UHFFFAOYSA-J
+DPO SMILES_CANONICAL CACTVS               3.370 "[O-][P]([O-])(=O)O[P]([O-])([O-])=O"
+DPO SMILES           CACTVS               3.370 "[O-][P]([O-])(=O)O[P]([O-])([O-])=O"
+DPO SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "[O-]P(=O)([O-])OP(=O)([O-])[O-]"
+DPO SMILES           "OpenEye OEToolkits" 1.7.2 "[O-]P(=O)([O-])OP(=O)([O-])[O-]"
+DPO ?                acedrg               202         "dictionary generator"                  
+DPO ?                acedrg_database      11          "data source"                           
+DPO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DPO ?                refmac5              5.8.0189    "optimization tool"                     

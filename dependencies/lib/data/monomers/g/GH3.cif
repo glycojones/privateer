@@ -1,0 +1,341 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GH3      GH3 '3'-DEOXY-GUANOSINE-5'-TRIPHOSPHATE  ' non-polymer        43  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GH3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GH3           O6     O    O         0.000      0.000    0.000    0.000
+ GH3           C6     C    CR6       0.000     -0.682    0.919    0.424
+ GH3           N1     N    NR16      0.000     -0.124    1.924    1.133
+ GH3           HN1    H    H         0.000      0.899    1.922    1.318
+ GH3           C2     C    CR6       0.000     -0.897    2.943    1.606
+ GH3           N2     N    NH2       0.000     -0.304    3.949    2.328
+ GH3           HN22   H    H         0.000      0.693    3.931    2.508
+ GH3           HN21   H    H         0.000     -0.860    4.717    2.686
+ GH3           N3     N    NRD6      0.000     -2.191    2.993    1.387
+ GH3           C4     C    CR56      0.000     -2.812    2.035    0.689
+ GH3           C5     C    CR56      0.000     -2.074    0.959    0.180
+ GH3           N7     N    NRD5      0.000     -2.943    0.150   -0.476
+ GH3           C8     C    CR15      0.000     -4.140    0.654   -0.402
+ GH3           H8     H    H         0.000     -5.028    0.214   -0.838
+ GH3           N9     N    NR5       0.000     -4.109    1.819    0.308
+ GH3           "C1'"  C    CH1       0.000     -5.255    2.681    0.609
+ GH3           "H1'"  H    H         0.000     -5.148    3.123    1.609
+ GH3           "O4'"  O    O2        0.000     -6.485    1.931    0.520
+ GH3           "C2'"  C    CH1       0.000     -5.388    3.790   -0.458
+ GH3           "H2'"  H    H         0.000     -4.917    3.476   -1.400
+ GH3           "O2'"  O    OH1       0.000     -4.811    5.012    0.006
+ GH3           "HO2'" H    H         0.000     -4.958    5.707   -0.650
+ GH3           "C3'"  C    CH2       0.000     -6.915    3.949   -0.644
+ GH3           "H3'2" H    H         0.000     -7.232    3.715   -1.662
+ GH3           "H3'"  H    H         0.000     -7.259    4.952   -0.379
+ GH3           "C4'"  C    CH1       0.000     -7.522    2.920    0.336
+ GH3           "H4'"  H    H         0.000     -7.766    3.400    1.294
+ GH3           "C5'"  C    CH2       0.000     -8.771    2.276   -0.271
+ GH3           "H5'"  H    H         0.000     -8.497    1.740   -1.182
+ GH3           "H5''" H    H         0.000     -9.500    3.052   -0.511
+ GH3           "O5'"  O    O2        0.000     -9.339    1.361    0.669
+ GH3           PA     P    P         0.000    -10.641    0.725   -0.031
+ GH3           O1A    O    OP       -0.500    -10.261    0.127   -1.334
+ GH3           O2A    O    OP       -0.500    -11.653    1.786   -0.251
+ GH3           O3A    O    O2        0.000    -11.260   -0.416    0.923
+ GH3           PB     P    P         0.000    -12.182   -1.351   -0.008
+ GH3           O1B    O    OP       -0.500    -11.461   -1.661   -1.266
+ GH3           O2B    O    OP       -0.500    -13.446   -0.642   -0.323
+ GH3           O3B    O    O2        0.000    -12.515   -2.721    0.771
+ GH3           PG     P    P         0.000    -12.953   -3.795   -0.346
+ GH3           O1G    O    OP       -0.666    -11.994   -3.729   -1.514
+ GH3           O2G    O    OP       -0.666    -12.922   -5.185    0.252
+ GH3           O3G    O    OP       -0.666    -14.354   -3.483   -0.824
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GH3      O6     n/a    C6     START
+ GH3      C6     O6     N1     .
+ GH3      N1     C6     C2     .
+ GH3      HN1    N1     .      .
+ GH3      C2     N1     N3     .
+ GH3      N2     C2     HN21   .
+ GH3      HN22   N2     .      .
+ GH3      HN21   N2     .      .
+ GH3      N3     C2     C4     .
+ GH3      C4     N3     N9     .
+ GH3      C5     C4     N7     .
+ GH3      N7     C5     C8     .
+ GH3      C8     N7     H8     .
+ GH3      H8     C8     .      .
+ GH3      N9     C4     "C1'"  .
+ GH3      "C1'"  N9     "C2'"  .
+ GH3      "H1'"  "C1'"  .      .
+ GH3      "O4'"  "C1'"  .      .
+ GH3      "C2'"  "C1'"  "C3'"  .
+ GH3      "H2'"  "C2'"  .      .
+ GH3      "O2'"  "C2'"  "HO2'" .
+ GH3      "HO2'" "O2'"  .      .
+ GH3      "C3'"  "C2'"  "C4'"  .
+ GH3      "H3'2" "C3'"  .      .
+ GH3      "H3'"  "C3'"  .      .
+ GH3      "C4'"  "C3'"  "C5'"  .
+ GH3      "H4'"  "C4'"  .      .
+ GH3      "C5'"  "C4'"  "O5'"  .
+ GH3      "H5'"  "C5'"  .      .
+ GH3      "H5''" "C5'"  .      .
+ GH3      "O5'"  "C5'"  PA     .
+ GH3      PA     "O5'"  O3A    .
+ GH3      O1A    PA     .      .
+ GH3      O2A    PA     .      .
+ GH3      O3A    PA     PB     .
+ GH3      PB     O3A    O3B    .
+ GH3      O1B    PB     .      .
+ GH3      O2B    PB     .      .
+ GH3      O3B    PB     PG     .
+ GH3      PG     O3B    O3G    .
+ GH3      O1G    PG     .      .
+ GH3      O2G    PG     .      .
+ GH3      O3G    PG     .      END
+ GH3      "C4'"  "O4'"  .    ADD
+ GH3      N9     C8     .    ADD
+ GH3      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GH3       O1G       PG        deloc     1.510     0.020     1.510     0.020     
+GH3       O2G       PG        deloc     1.510     0.020     1.510     0.020     
+GH3       O3G       PG        deloc     1.510     0.020     1.510     0.020     
+GH3       PG        O3B       single    1.610     0.020     1.610     0.020     
+GH3       O3B       PB        single    1.610     0.020     1.610     0.020     
+GH3       O1B       PB        deloc     1.510     0.020     1.510     0.020     
+GH3       O2B       PB        deloc     1.510     0.020     1.510     0.020     
+GH3       PB        O3A       single    1.610     0.020     1.610     0.020     
+GH3       O3A       PA        single    1.610     0.020     1.610     0.020     
+GH3       O1A       PA        deloc     1.510     0.020     1.510     0.020     
+GH3       O2A       PA        deloc     1.510     0.020     1.510     0.020     
+GH3       PA        "O5'"     single    1.610     0.020     1.610     0.020     
+GH3       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+GH3       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+GH3       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+GH3       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+GH3       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+GH3       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+GH3       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+GH3       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+GH3       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+GH3       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+GH3       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+GH3       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+GH3       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+GH3       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+GH3       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+GH3       "C1'"     N9        single    1.485     0.020     1.485     0.020     
+GH3       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+GH3       N9        C8        single    1.337     0.020     1.337     0.020     
+GH3       N9        C4        single    1.337     0.020     1.337     0.020     
+GH3       C8        N7        double    1.350     0.020     1.350     0.020     
+GH3       H8        C8        single    1.082     0.013     0.975     0.010     
+GH3       N7        C5        single    1.350     0.020     1.350     0.020     
+GH3       C5        C6        single    1.490     0.020     1.490     0.020     
+GH3       C5        C4        double    1.490     0.020     1.490     0.020     
+GH3       C6        O6        double    1.250     0.020     1.250     0.020     
+GH3       N1        C6        single    1.337     0.020     1.337     0.020     
+GH3       C2        N1        single    1.337     0.020     1.337     0.020     
+GH3       HN1       N1        single    1.016     0.010     0.899     0.007     
+GH3       N2        C2        single    1.355     0.020     1.355     0.020     
+GH3       N3        C2        double    1.350     0.020     1.350     0.020     
+GH3       HN21      N2        single    1.016     0.010     0.899     0.007     
+GH3       HN22      N2        single    1.016     0.010     0.899     0.007     
+GH3       C4        N3        single    1.355     0.020     1.355     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GH3      O6     C6     N1      120.000    3.000
+ GH3      O6     C6     C5      120.000    3.000
+ GH3      N1     C6     C5      120.000    3.000
+ GH3      C6     N1     HN1     120.000    3.000
+ GH3      C6     N1     C2      120.000    3.000
+ GH3      HN1    N1     C2      120.000    3.000
+ GH3      N1     C2     N2      120.000    3.000
+ GH3      N1     C2     N3      120.000    3.000
+ GH3      N2     C2     N3      120.000    3.000
+ GH3      C2     N2     HN22    120.000    3.000
+ GH3      C2     N2     HN21    120.000    3.000
+ GH3      HN22   N2     HN21    120.000    3.000
+ GH3      C2     N3     C4      120.000    3.000
+ GH3      N3     C4     C5      120.000    3.000
+ GH3      N3     C4     N9      132.000    3.000
+ GH3      C5     C4     N9      108.000    3.000
+ GH3      C4     C5     N7      108.000    3.000
+ GH3      C4     C5     C6      120.000    3.000
+ GH3      N7     C5     C6      132.000    3.000
+ GH3      C5     N7     C8      108.000    3.000
+ GH3      N7     C8     H8      126.000    3.000
+ GH3      N7     C8     N9      108.000    3.000
+ GH3      H8     C8     N9      126.000    3.000
+ GH3      C4     N9     "C1'"   126.000    3.000
+ GH3      C4     N9     C8      108.000    3.000
+ GH3      "C1'"  N9     C8      126.000    3.000
+ GH3      N9     "C1'"  "H1'"   109.470    3.000
+ GH3      N9     "C1'"  "O4'"   109.470    3.000
+ GH3      N9     "C1'"  "C2'"   109.470    3.000
+ GH3      "H1'"  "C1'"  "O4'"   109.470    3.000
+ GH3      "H1'"  "C1'"  "C2'"   108.340    3.000
+ GH3      "O4'"  "C1'"  "C2'"   109.470    3.000
+ GH3      "C1'"  "O4'"  "C4'"   111.800    3.000
+ GH3      "C1'"  "C2'"  "H2'"   108.340    3.000
+ GH3      "C1'"  "C2'"  "O2'"   109.470    3.000
+ GH3      "C1'"  "C2'"  "C3'"   111.000    3.000
+ GH3      "H2'"  "C2'"  "O2'"   109.470    3.000
+ GH3      "H2'"  "C2'"  "C3'"   108.340    3.000
+ GH3      "O2'"  "C2'"  "C3'"   109.470    3.000
+ GH3      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ GH3      "C2'"  "C3'"  "H3'2"  109.470    3.000
+ GH3      "C2'"  "C3'"  "H3'"   109.470    3.000
+ GH3      "C2'"  "C3'"  "C4'"   111.000    3.000
+ GH3      "H3'2" "C3'"  "H3'"   107.900    3.000
+ GH3      "H3'2" "C3'"  "C4'"   109.470    3.000
+ GH3      "H3'"  "C3'"  "C4'"   109.470    3.000
+ GH3      "C3'"  "C4'"  "H4'"   108.340    3.000
+ GH3      "C3'"  "C4'"  "C5'"   109.470    3.000
+ GH3      "C3'"  "C4'"  "O4'"   109.470    3.000
+ GH3      "H4'"  "C4'"  "C5'"   108.340    3.000
+ GH3      "H4'"  "C4'"  "O4'"   109.470    3.000
+ GH3      "C5'"  "C4'"  "O4'"   109.470    3.000
+ GH3      "C4'"  "C5'"  "H5'"   109.470    3.000
+ GH3      "C4'"  "C5'"  "H5''"  109.470    3.000
+ GH3      "C4'"  "C5'"  "O5'"   109.470    3.000
+ GH3      "H5'"  "C5'"  "H5''"  107.900    3.000
+ GH3      "H5'"  "C5'"  "O5'"   109.470    3.000
+ GH3      "H5''" "C5'"  "O5'"   109.470    3.000
+ GH3      "C5'"  "O5'"  PA      120.500    3.000
+ GH3      "O5'"  PA     O1A     108.200    3.000
+ GH3      "O5'"  PA     O2A     108.200    3.000
+ GH3      "O5'"  PA     O3A     102.600    3.000
+ GH3      O1A    PA     O2A     119.900    3.000
+ GH3      O1A    PA     O3A     108.200    3.000
+ GH3      O2A    PA     O3A     108.200    3.000
+ GH3      PA     O3A    PB      120.500    3.000
+ GH3      O3A    PB     O1B     108.200    3.000
+ GH3      O3A    PB     O2B     108.200    3.000
+ GH3      O3A    PB     O3B     102.600    3.000
+ GH3      O1B    PB     O2B     119.900    3.000
+ GH3      O1B    PB     O3B     108.200    3.000
+ GH3      O2B    PB     O3B     108.200    3.000
+ GH3      PB     O3B    PG      120.500    3.000
+ GH3      O3B    PG     O1G     108.200    3.000
+ GH3      O3B    PG     O2G     108.200    3.000
+ GH3      O3B    PG     O3G     108.200    3.000
+ GH3      O1G    PG     O2G     119.900    3.000
+ GH3      O1G    PG     O3G     119.900    3.000
+ GH3      O2G    PG     O3G     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GH3      CONST_1  O6     C6     N1     C2       180.000    0.000   0
+ GH3      CONST_2  C6     N1     C2     N3         0.000    0.000   0
+ GH3      CONST_3  N1     C2     N2     HN21     179.781    0.000   0
+ GH3      CONST_4  N1     C2     N3     C4         0.000    0.000   0
+ GH3      CONST_5  C2     N3     C4     N9       180.000    0.000   0
+ GH3      CONST_6  N3     C4     C5     N7       180.000    0.000   0
+ GH3      CONST_7  C4     C5     C6     O6       180.000    0.000   0
+ GH3      CONST_8  C4     C5     N7     C8         0.000    0.000   0
+ GH3      CONST_9  C5     N7     C8     N9         0.000    0.000   0
+ GH3      CONST_10 N3     C4     N9     "C1'"      0.000    0.000   0
+ GH3      CONST_11 C4     N9     C8     N7         0.000    0.000   0
+ GH3      var_1    C4     N9     "C1'"  "C2'"     86.551   20.000   1
+ GH3      var_2    N9     "C1'"  "O4'"  "C4'"   -150.000   20.000   1
+ GH3      var_3    N9     "C1'"  "C2'"  "C3'"    150.000   20.000   3
+ GH3      var_4    "C1'"  "C2'"  "O2'"  "HO2'"  -176.186   20.000   1
+ GH3      var_5    "C1'"  "C2'"  "C3'"  "C4'"      0.000   20.000   3
+ GH3      var_6    "C2'"  "C3'"  "C4'"  "C5'"   -150.000   20.000   3
+ GH3      var_7    "C3'"  "C4'"  "O4'"  "C1'"     30.000   20.000   1
+ GH3      var_8    "C3'"  "C4'"  "C5'"  "O5'"   -178.087   20.000   3
+ GH3      var_9    "C4'"  "C5'"  "O5'"  PA       179.998   20.000   1
+ GH3      var_10   "C5'"  "O5'"  PA     O3A      174.993   20.000   1
+ GH3      var_11   "O5'"  PA     O3A    PB      -160.023   20.000   1
+ GH3      var_12   PA     O3A    PB     O3B      164.983   20.000   1
+ GH3      var_13   O3A    PB     O3B    PG      -159.999   20.000   1
+ GH3      var_14   PB     O3B    PG     O3G      -75.009   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GH3      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ GH3      chir_02  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ GH3      chir_03  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GH3      plan-1    N9        0.020
+ GH3      plan-1    "C1'"     0.020
+ GH3      plan-1    C8        0.020
+ GH3      plan-1    C4        0.020
+ GH3      plan-1    N7        0.020
+ GH3      plan-1    H8        0.020
+ GH3      plan-1    C5        0.020
+ GH3      plan-1    C6        0.020
+ GH3      plan-1    N1        0.020
+ GH3      plan-1    C2        0.020
+ GH3      plan-1    N3        0.020
+ GH3      plan-1    O6        0.020
+ GH3      plan-1    HN1       0.020
+ GH3      plan-1    N2        0.020
+ GH3      plan-1    HN22      0.020
+ GH3      plan-1    HN21      0.020
+ GH3      plan-2    N2        0.020
+ GH3      plan-2    C2        0.020
+ GH3      plan-2    HN21      0.020
+ GH3      plan-2    HN22      0.020
+# ------------------------------------------------------

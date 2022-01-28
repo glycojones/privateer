@@ -1,0 +1,121 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MO6      .   'MAGNESIUM ION, 6 WATERS COORDINATED ' non-polymer        13   7 .
+#
+#
+data_comp_MO6
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MO6           O6     O    OH1       0.000      0.027   -1.829   -0.002
+ MO6           HO6    H    H         0.000      0.625   -2.304    0.591
+ MO6           MG     MG   MG        0.000      0.015    0.010   -0.015
+ MO6           O5     O    OH1       0.000      0.002    1.850   -0.028
+ MO6           HO5    H    H         0.000      0.836    2.339   -0.031
+ MO6           O2     O    OH1       0.000      1.322    0.029    1.280
+ MO6           HO2    H    H         0.000      1.660    0.871    1.614
+ MO6           O3     O    OH1       0.000      1.309    0.010   -1.322
+ MO6           HO3    H    H         0.000      1.643    0.847   -1.671
+ MO6           O4     O    OH1       0.000     -1.280    0.011    1.293
+ MO6           HO4    H    H         0.000     -1.626    0.849    1.631
+ MO6           O1     O    OH1       0.000     -1.293   -0.008   -1.310
+ MO6           HO1    H    H         0.000     -1.642    0.825   -1.656
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MO6      O6     n/a    MG     START
+ MO6      HO6    O6     .      .
+ MO6      MG     O6     O1     .
+ MO6      O5     MG     HO5    .
+ MO6      HO5    O5     .      .
+ MO6      O2     MG     HO2    .
+ MO6      HO2    O2     .      .
+ MO6      O3     MG     HO3    .
+ MO6      HO3    O3     .      .
+ MO6      O4     MG     HO4    .
+ MO6      HO4    O4     .      .
+ MO6      O1     MG     HO1    .
+ MO6      HO1    O1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MO6       O1        MG        metal     2.180     0.020     2.180     0.020     
+MO6       O2        MG        metal     2.180     0.020     2.180     0.020     
+MO6       O3        MG        metal     2.180     0.020     2.180     0.020     
+MO6       O4        MG        metal     2.180     0.020     2.180     0.020     
+MO6       O5        MG        metal     2.180     0.020     2.180     0.020     
+MO6       MG        O6        metal     2.180     0.020     2.180     0.020     
+MO6       HO1       O1        single    0.970     0.012     0.967     0.020     
+MO6       HO2       O2        single    0.970     0.012     0.967     0.020     
+MO6       HO3       O3        single    0.970     0.012     0.967     0.020     
+MO6       HO4       O4        single    0.970     0.012     0.967     0.020     
+MO6       HO5       O5        single    0.970     0.012     0.967     0.020     
+MO6       HO6       O6        single    0.970     0.012     0.967     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MO6      HO6    O6     MG      120.000    3.000
+ MO6      O6     MG     O5      179.971    3.000
+ MO6      O6     MG     O2       90.041    3.000
+ MO6      O6     MG     O3       90.025    3.000
+ MO6      O6     MG     O4       90.006    3.000
+ MO6      O6     MG     O1       89.990    3.000
+ MO6      O5     MG     O2       89.981    3.000
+ MO6      O5     MG     O3       89.997    3.000
+ MO6      O2     MG     O3       90.022    3.000
+ MO6      O5     MG     O4       89.972    3.000
+ MO6      O2     MG     O4       89.978    3.000
+ MO6      O3     MG     O4      179.965    3.000
+ MO6      O5     MG     O1       89.988    3.000
+ MO6      O2     MG     O1      179.962    3.000
+ MO6      O3     MG     O1       90.000    3.000
+ MO6      O4     MG     O1       90.000    3.000
+ MO6      MG     O5     HO5     120.000    3.000
+ MO6      MG     O2     HO2     120.000    3.000
+ MO6      MG     O3     HO3     120.000    3.000
+ MO6      MG     O4     HO4     120.000    3.000
+ MO6      MG     O1     HO1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MO6      var_1    HO6    O6     MG     O1       180.000   20.000   1
+ MO6      var_2    O6     MG     O5     HO5      180.000   20.000   1
+ MO6      var_3    O6     MG     O2     HO2      180.000   20.000   1
+ MO6      var_4    O6     MG     O3     HO3      180.000   20.000   1
+ MO6      var_5    O6     MG     O4     HO4      180.000   20.000   1
+ MO6      var_6    O6     MG     O1     HO1      180.000   20.000   1

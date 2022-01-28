@@ -1,0 +1,1206 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VAN      VAN 'VANCOMYCIN                          ' non-polymer       177 101 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VAN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ VAN           O80    O    OC       -0.500      0.000    0.000    0.000
+ VAN           C70    C    C         0.000     -1.120    0.035    0.556
+ VAN           O71    O    OC       -0.500     -1.363   -0.451    1.682
+ VAN           C69    C    CH1       0.000     -2.118    0.739   -0.311
+ VAN           H69    H    H         0.000     -1.837    0.569   -1.360
+ VAN           C72    C    CR6       0.000     -2.230    2.245   -0.089
+ VAN           C74    C    CR16      0.000     -1.596    2.849    1.016
+ VAN           H74    H    H         0.000     -1.048    2.230    1.715
+ VAN           C77    C    CR6       0.000     -1.657    4.228    1.229
+ VAN           O78    O    OH1       0.000     -1.028    4.776    2.305
+ VAN           HO8    H    H         0.000     -0.721    4.072    2.892
+ VAN           C76    C    CR16      0.000     -2.354    5.039    0.346
+ VAN           H76    H    H         0.000     -2.396    6.109    0.507
+ VAN           C75    C    CR6       0.000     -3.000    4.471   -0.750
+ VAN           O79    O    OH1       0.000     -3.696    5.306   -1.580
+ VAN           HO7    H    H         0.000     -3.218    5.404   -2.415
+ VAN           C73    C    CR6       0.000     -2.960    3.081   -0.985
+ VAN           C50    C    CR6       0.000     -3.708    2.558   -2.140
+ VAN           C48    C    CR16      0.000     -4.932    1.901   -1.947
+ VAN           H48    H    H         0.000     -5.368    1.882   -0.956
+ VAN           C52    C    CR6       0.000     -3.226    2.686   -3.448
+ VAN           O53    O    OH1       0.000     -2.050    3.328   -3.706
+ VAN           HO3    H    H         0.000     -1.373    3.025   -3.085
+ VAN           C51    C    CR16      0.000     -3.931    2.133   -4.521
+ VAN           H51    H    H         0.000     -3.562    2.264   -5.531
+ VAN           C49    C    CR16      0.000     -5.106    1.412   -4.299
+ VAN           H49    H    H         0.000     -5.631    0.965   -5.134
+ VAN           C47    C    CR6       0.000     -5.607    1.267   -3.002
+ VAN           N68    N    NH1       0.000     -3.372    0.044   -0.061
+ VAN           HN8    H    H         0.000     -3.996    0.408    0.645
+ VAN           C56    C    C         0.000     -3.747   -1.102   -0.756
+ VAN           O57    O    O         0.000     -2.987   -1.803   -1.421
+ VAN           C55    C    CH1       0.000     -5.245   -1.371   -0.654
+ VAN           H55    H    H         0.000     -5.748   -0.419   -0.435
+ VAN           N54    N    NH1       0.000     -5.663   -1.810   -1.991
+ VAN           HN5    H    H         0.000     -5.408   -2.756   -2.234
+ VAN           C45    C    C         0.000     -6.355   -1.118   -2.965
+ VAN           O46    O    O         0.000     -6.607   -1.646   -4.052
+ VAN           C44    C    CH1       0.000     -6.751    0.332   -2.678
+ VAN           H44    H    H         0.000     -6.968    0.420   -1.604
+ VAN           N43    N    NH1       0.000     -7.980    0.607   -3.411
+ VAN           HN43   H    H         0.000     -8.184    0.072   -4.243
+ VAN           C34    C    C         0.000     -8.880    1.582   -2.999
+ VAN           O35    O    O         0.000     -8.627    2.484   -2.203
+ VAN           C33    C    CH1       0.000    -10.281    1.355   -3.563
+ VAN           H33    H    H         0.000    -10.225    0.642   -4.397
+ VAN           N32    N    NH1       0.000    -10.724    2.654   -4.066
+ VAN           HN3    H    H         0.000    -10.323    3.491   -3.668
+ VAN           C26    C    C         0.000    -11.672    2.781   -5.069
+ VAN           O27    O    O         0.000    -12.074    1.832   -5.747
+ VAN           C25    C    CH1       0.000    -12.225    4.196   -5.293
+ VAN           H25    H    H         0.000    -11.839    4.573   -6.250
+ VAN           C28    C    CH2       0.000    -11.923    5.226   -4.210
+ VAN           H281   H    H         0.000    -12.354    4.867   -3.273
+ VAN           H282   H    H         0.000    -12.403    6.165   -4.494
+ VAN           C29    C    C         0.000    -10.438    5.450   -4.032
+ VAN           N31    N    NH2       0.000    -10.123    5.825   -2.743
+ VAN           HN12   H    H         0.000     -9.158    6.011   -2.474
+ VAN           HN11   H    H         0.000    -10.849    5.924   -2.035
+ VAN           O30    O    O         0.000     -9.609    5.316   -4.925
+ VAN           N24    N    NH1       0.000    -13.671    4.000   -5.422
+ VAN           HN4    H    H         0.000    -14.061    3.127   -5.096
+ VAN           C12    C    C         0.000    -14.540    4.939   -5.963
+ VAN           O13    O    O         0.000    -14.205    6.044   -6.385
+ VAN           C11    C    CH1       0.000    -15.995    4.459   -5.944
+ VAN           H11    H    H         0.000    -16.005    3.377   -6.135
+ VAN           N10    N    NH1       0.000    -16.671    5.120   -7.036
+ VAN           HN0    H    H         0.000    -16.397    6.062   -7.276
+ VAN           C4     C    C         0.000    -17.682    4.515   -7.768
+ VAN           O5     O    O         0.000    -18.106    3.377   -7.577
+ VAN           C3     C    CH1       0.000    -18.233    5.427   -8.853
+ VAN           H3     H    H         0.000    -18.576    6.363   -8.391
+ VAN           C6     C    CH2       0.000    -17.144    5.750   -9.885
+ VAN           H61A   H    H         0.000    -16.335    6.230   -9.331
+ VAN           H62A   H    H         0.000    -17.587    6.469  -10.577
+ VAN           C7     C    CH1       0.000    -16.586    4.549  -10.677
+ VAN           H7     H    H         0.000    -15.864    4.927  -11.414
+ VAN           C9     C    CH3       0.000    -15.851    3.600   -9.725
+ VAN           H93    H    H         0.000    -16.530    3.224   -9.004
+ VAN           H92    H    H         0.000    -15.439    2.794  -10.275
+ VAN           H91    H    H         0.000    -15.072    4.124   -9.233
+ VAN           C8     C    CH3       0.000    -17.679    3.785  -11.423
+ VAN           H83    H    H         0.000    -18.429    3.481  -10.739
+ VAN           H82    H    H         0.000    -18.109    4.412  -12.161
+ VAN           H81    H    H         0.000    -17.259    2.931  -11.888
+ VAN           N2     N    NT2       1.000    -19.388    4.768   -9.526
+ VAN           HN21   H    H         0.000    -20.110    4.610   -8.804
+ VAN           HN22   H    H         0.000    -19.053    3.858   -9.881
+ VAN           C1     C    CH3       0.000    -19.968    5.554  -10.645
+ VAN           H13    H    H         0.000    -19.219    5.753  -11.368
+ VAN           H12    H    H         0.000    -20.754    5.004  -11.098
+ VAN           H11A   H    H         0.000    -20.351    6.471  -10.277
+ VAN           C58    C    CH1       0.000     -5.648   -2.383    0.433
+ VAN           H58    H    H         0.000     -5.291   -2.011    1.404
+ VAN           O59    O    OH1       0.000     -5.035   -3.645    0.183
+ VAN           HO9    H    H         0.000     -4.760   -4.040    1.021
+ VAN           C60    C    CR6       0.000     -7.169   -2.468    0.480
+ VAN           C62    C    CR16      0.000     -7.879   -3.425   -0.263
+ VAN           H62    H    H         0.000     -7.347   -4.247   -0.725
+ VAN           C64    C    CR6       0.000     -9.263   -3.327   -0.413
+ VAN           CL6    CL   CL        0.000    -10.105   -4.592   -1.232
+ VAN           C65    C    CR6       0.000     -9.942   -2.255    0.164
+ VAN           C63    C    CR16      0.000     -9.269   -1.349    0.988
+ VAN           H63    H    H         0.000     -9.817   -0.570    1.504
+ VAN           C61    C    CR16      0.000     -7.887   -1.456    1.140
+ VAN           H61    H    H         0.000     -7.362   -0.751    1.773
+ VAN           O66    O    O2        0.000    -11.282   -2.102   -0.118
+ VAN           C39    C    CR6       0.000    -11.620   -0.942   -0.796
+ VAN           C37    C    CR16      0.000    -10.853   -0.433   -1.856
+ VAN           H37    H    H         0.000     -9.991   -0.988   -2.206
+ VAN           C36    C    CR6       0.000    -11.188    0.785   -2.471
+ VAN           C41    C    CR6       0.000    -12.788   -0.293   -0.399
+ VAN           C40    C    CR6       0.000    -13.164    0.893   -1.030
+ VAN           C38    C    CR16      0.000    -12.348    1.440   -2.034
+ VAN           H38    H    H         0.000    -12.622    2.388   -2.481
+ VAN           O22    O    O2        0.000    -14.327    1.494   -0.578
+ VAN           C21    C    CR6       0.000    -14.995    2.278   -1.491
+ VAN           C19    C    CR6       0.000    -14.898    3.665   -1.392
+ VAN           CL2    CL   CL        0.000    -14.141    4.422   -0.038
+ VAN           C17    C    CR16      0.000    -15.471    4.468   -2.379
+ VAN           H17    H    H         0.000    -15.375    5.545   -2.316
+ VAN           C20    C    CR16      0.000    -15.743    1.689   -2.508
+ VAN           H20    H    H         0.000    -15.868    0.614   -2.543
+ VAN           C18    C    CR16      0.000    -16.329    2.498   -3.483
+ VAN           H18    H    H         0.000    -16.915    2.044   -4.272
+ VAN           C16    C    CR6       0.000    -16.169    3.894   -3.454
+ VAN           C14    C    CH1       0.000    -16.713    4.724   -4.603
+ VAN           H14    H    H         0.000    -17.769    4.450   -4.736
+ VAN           O15    O    OH1       0.000    -16.669    6.120   -4.301
+ VAN           HO5    H    H         0.000    -17.363    6.577   -4.794
+ VAN           O42    O    O2        0.000    -13.552   -0.805    0.609
+ VAN           "C1'"  C    CH1       0.000    -14.082   -2.114    0.418
+ VAN           "H1'"  H    H         0.000    -13.257   -2.830    0.294
+ VAN           "O5'"  O    O2        0.000    -14.910   -2.137   -0.742
+ VAN           "C5'"  C    CH1       0.000    -15.454   -3.431   -1.003
+ VAN           "H5'"  H    H         0.000    -14.634   -4.156   -1.097
+ VAN           "C6'"  C    CH2       0.000    -16.209   -3.355   -2.325
+ VAN           "H6'1" H    H         0.000    -17.021   -2.630   -2.248
+ VAN           "H6'2" H    H         0.000    -16.620   -4.336   -2.575
+ VAN           "O6'"  O    OH1       0.000    -15.306   -2.949   -3.337
+ VAN           "HO6'" H    H         0.000    -14.438   -2.788   -2.945
+ VAN           "C4'"  C    CH1       0.000    -16.369   -3.854    0.149
+ VAN           "H4'"  H    H         0.000    -17.229   -3.171    0.195
+ VAN           "O4'"  O    OH1       0.000    -16.838   -5.180   -0.083
+ VAN           "HO4'" H    H         0.000    -16.140   -5.698   -0.506
+ VAN           "C3'"  C    CH1       0.000    -15.621   -3.810    1.482
+ VAN           "H3'"  H    H         0.000    -14.885   -4.626    1.506
+ VAN           "O3'"  O    OH1       0.000    -16.550   -3.990    2.552
+ VAN           "HO3'" H    H         0.000    -16.217   -3.547    3.344
+ VAN           "C2'"  C    CH1       0.000    -14.892   -2.478    1.662
+ VAN           "H2'"  H    H         0.000    -15.634   -1.688    1.846
+ VAN           "O2'"  O    O2        0.000    -14.023   -2.567    2.791
+ VAN           C1B    C    CH1       0.000    -14.378   -1.622    3.793
+ VAN           H1B    H    H         0.000    -15.466   -1.477    3.735
+ VAN           O5B    O    O2        0.000    -13.768   -0.347    3.586
+ VAN           C5B    C    CH1       0.000    -12.345   -0.341    3.757
+ VAN           H5B    H    H         0.000    -11.896   -1.052    3.050
+ VAN           C5M    C    CH3       0.000    -11.859    1.066    3.422
+ VAN           H5M3   H    H         0.000    -10.893    1.012    2.990
+ VAN           H5M2   H    H         0.000    -12.527    1.517    2.736
+ VAN           H5M1   H    H         0.000    -11.817    1.645    4.308
+ VAN           C4B    C    CH1       0.000    -11.974   -0.759    5.191
+ VAN           H4B    H    H         0.000    -10.881   -0.791    5.293
+ VAN           O4B    O    OH1       0.000    -12.509    0.227    6.080
+ VAN           HO4A   H    H         0.000    -11.789    0.632    6.582
+ VAN           C3B    C    CT        0.000    -12.562   -2.147    5.517
+ VAN           C3M    C    CH3       0.000    -11.786   -3.275    4.822
+ VAN           H3M3   H    H         0.000    -12.222   -4.210    5.066
+ VAN           H3M2   H    H         0.000    -11.820   -3.135    3.772
+ VAN           H3M1   H    H         0.000    -10.777   -3.263    5.146
+ VAN           "N3'"  N    NT3       1.000    -12.420   -2.404    6.992
+ VAN           HN33   H    H         0.000    -11.694   -3.123    7.151
+ VAN           HN32   H    H         0.000    -12.146   -1.530    7.472
+ VAN           HN31   H    H         0.000    -13.321   -2.737    7.375
+ VAN           C2B    C    CH2       0.000    -14.066   -2.176    5.188
+ VAN           "H2'2" H    H         0.000    -14.584   -1.579    5.942
+ VAN           "H2'1" H    H         0.000    -14.402   -3.213    5.252
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VAN      O80    n/a    C70    START
+ VAN      C70    O80    C69    .
+ VAN      O71    C70    .      .
+ VAN      C69    C70    N68    .
+ VAN      H69    C69    .      .
+ VAN      C72    C69    C74    .
+ VAN      C74    C72    C77    .
+ VAN      H74    C74    .      .
+ VAN      C77    C74    C76    .
+ VAN      O78    C77    HO8    .
+ VAN      HO8    O78    .      .
+ VAN      C76    C77    C75    .
+ VAN      H76    C76    .      .
+ VAN      C75    C76    C73    .
+ VAN      O79    C75    HO7    .
+ VAN      HO7    O79    .      .
+ VAN      C73    C75    C50    .
+ VAN      C50    C73    C52    .
+ VAN      C48    C50    H48    .
+ VAN      H48    C48    .      .
+ VAN      C52    C50    C51    .
+ VAN      O53    C52    HO3    .
+ VAN      HO3    O53    .      .
+ VAN      C51    C52    C49    .
+ VAN      H51    C51    .      .
+ VAN      C49    C51    C47    .
+ VAN      H49    C49    .      .
+ VAN      C47    C49    .      .
+ VAN      N68    C69    C56    .
+ VAN      HN8    N68    .      .
+ VAN      C56    N68    C55    .
+ VAN      O57    C56    .      .
+ VAN      C55    C56    C58    .
+ VAN      H55    C55    .      .
+ VAN      N54    C55    C45    .
+ VAN      HN5    N54    .      .
+ VAN      C45    N54    C44    .
+ VAN      O46    C45    .      .
+ VAN      C44    C45    N43    .
+ VAN      H44    C44    .      .
+ VAN      N43    C44    C34    .
+ VAN      HN43   N43    .      .
+ VAN      C34    N43    C33    .
+ VAN      O35    C34    .      .
+ VAN      C33    C34    N32    .
+ VAN      H33    C33    .      .
+ VAN      N32    C33    C26    .
+ VAN      HN3    N32    .      .
+ VAN      C26    N32    C25    .
+ VAN      O27    C26    .      .
+ VAN      C25    C26    N24    .
+ VAN      H25    C25    .      .
+ VAN      C28    C25    C29    .
+ VAN      H281   C28    .      .
+ VAN      H282   C28    .      .
+ VAN      C29    C28    O30    .
+ VAN      N31    C29    HN11   .
+ VAN      HN12   N31    .      .
+ VAN      HN11   N31    .      .
+ VAN      O30    C29    .      .
+ VAN      N24    C25    C12    .
+ VAN      HN4    N24    .      .
+ VAN      C12    N24    C11    .
+ VAN      O13    C12    .      .
+ VAN      C11    C12    N10    .
+ VAN      H11    C11    .      .
+ VAN      N10    C11    C4     .
+ VAN      HN0    N10    .      .
+ VAN      C4     N10    C3     .
+ VAN      O5     C4     .      .
+ VAN      C3     C4     N2     .
+ VAN      H3     C3     .      .
+ VAN      C6     C3     C7     .
+ VAN      H61A   C6     .      .
+ VAN      H62A   C6     .      .
+ VAN      C7     C6     C8     .
+ VAN      H7     C7     .      .
+ VAN      C9     C7     H91    .
+ VAN      H93    C9     .      .
+ VAN      H92    C9     .      .
+ VAN      H91    C9     .      .
+ VAN      C8     C7     H81    .
+ VAN      H83    C8     .      .
+ VAN      H82    C8     .      .
+ VAN      H81    C8     .      .
+ VAN      N2     C3     C1     .
+ VAN      HN21   N2     .      .
+ VAN      HN22   N2     .      .
+ VAN      C1     N2     H11A   .
+ VAN      H13    C1     .      .
+ VAN      H12    C1     .      .
+ VAN      H11A   C1     .      .
+ VAN      C58    C55    C60    .
+ VAN      H58    C58    .      .
+ VAN      O59    C58    HO9    .
+ VAN      HO9    O59    .      .
+ VAN      C60    C58    C62    .
+ VAN      C62    C60    C64    .
+ VAN      H62    C62    .      .
+ VAN      C64    C62    C65    .
+ VAN      CL6    C64    .      .
+ VAN      C65    C64    O66    .
+ VAN      C63    C65    C61    .
+ VAN      H63    C63    .      .
+ VAN      C61    C63    H61    .
+ VAN      H61    C61    .      .
+ VAN      O66    C65    C39    .
+ VAN      C39    O66    C41    .
+ VAN      C37    C39    C36    .
+ VAN      H37    C37    .      .
+ VAN      C36    C37    .      .
+ VAN      C41    C39    O42    .
+ VAN      C40    C41    O22    .
+ VAN      C38    C40    H38    .
+ VAN      H38    C38    .      .
+ VAN      O22    C40    C21    .
+ VAN      C21    O22    C20    .
+ VAN      C19    C21    C17    .
+ VAN      CL2    C19    .      .
+ VAN      C17    C19    H17    .
+ VAN      H17    C17    .      .
+ VAN      C20    C21    C18    .
+ VAN      H20    C20    .      .
+ VAN      C18    C20    C16    .
+ VAN      H18    C18    .      .
+ VAN      C16    C18    C14    .
+ VAN      C14    C16    O15    .
+ VAN      H14    C14    .      .
+ VAN      O15    C14    HO5    .
+ VAN      HO5    O15    .      .
+ VAN      O42    C41    "C1'"  .
+ VAN      "C1'"  O42    "O5'"  .
+ VAN      "H1'"  "C1'"  .      .
+ VAN      "O5'"  "C1'"  "C5'"  .
+ VAN      "C5'"  "O5'"  "C4'"  .
+ VAN      "H5'"  "C5'"  .      .
+ VAN      "C6'"  "C5'"  "O6'"  .
+ VAN      "H6'1" "C6'"  .      .
+ VAN      "H6'2" "C6'"  .      .
+ VAN      "O6'"  "C6'"  "HO6'" .
+ VAN      "HO6'" "O6'"  .      .
+ VAN      "C4'"  "C5'"  "C3'"  .
+ VAN      "H4'"  "C4'"  .      .
+ VAN      "O4'"  "C4'"  "HO4'" .
+ VAN      "HO4'" "O4'"  .      .
+ VAN      "C3'"  "C4'"  "C2'"  .
+ VAN      "H3'"  "C3'"  .      .
+ VAN      "O3'"  "C3'"  "HO3'" .
+ VAN      "HO3'" "O3'"  .      .
+ VAN      "C2'"  "C3'"  "O2'"  .
+ VAN      "H2'"  "C2'"  .      .
+ VAN      "O2'"  "C2'"  C1B    .
+ VAN      C1B    "O2'"  O5B    .
+ VAN      H1B    C1B    .      .
+ VAN      O5B    C1B    C5B    .
+ VAN      C5B    O5B    C4B    .
+ VAN      H5B    C5B    .      .
+ VAN      C5M    C5B    H5M1   .
+ VAN      H5M3   C5M    .      .
+ VAN      H5M2   C5M    .      .
+ VAN      H5M1   C5M    .      .
+ VAN      C4B    C5B    C3B    .
+ VAN      H4B    C4B    .      .
+ VAN      O4B    C4B    HO4A   .
+ VAN      HO4A   O4B    .      .
+ VAN      C3B    C4B    C2B    .
+ VAN      C3M    C3B    H3M1   .
+ VAN      H3M3   C3M    .      .
+ VAN      H3M2   C3M    .      .
+ VAN      H3M1   C3M    .      .
+ VAN      "N3'"  C3B    HN31   .
+ VAN      HN33   "N3'"  .      .
+ VAN      HN32   "N3'"  .      .
+ VAN      HN31   "N3'"  .      .
+ VAN      C2B    C3B    "H2'1" .
+ VAN      "H2'2" C2B    .      .
+ VAN      "H2'1" C2B    .      END
+ VAN      C11    C14    .    ADD
+ VAN      C16    C17    .    ADD
+ VAN      C33    C36    .    ADD
+ VAN      C36    C38    .    ADD
+ VAN      C44    C47    .    ADD
+ VAN      C47    C48    .    ADD
+ VAN      C60    C61    .    ADD
+ VAN      C72    C73    .    ADD
+ VAN      "C1'"  "C2'"  .    ADD
+ VAN      C1B    C2B    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VAN       C1        N2        single    1.472     0.020     1.472     0.020     
+VAN       H11A      C1        single    1.089     0.010     0.989     0.005     
+VAN       H12       C1        single    1.089     0.010     0.989     0.005     
+VAN       H13       C1        single    1.089     0.010     0.989     0.005     
+VAN       N2        C3        single    1.475     0.020     1.475     0.020     
+VAN       HN21      N2        single    1.036     0.016     0.914     0.007     
+VAN       HN22      N2        single    1.036     0.016     0.914     0.007     
+VAN       C6        C3        single    1.524     0.020     1.524     0.020     
+VAN       C3        C4        single    1.500     0.020     1.500     0.020     
+VAN       H3        C3        single    1.089     0.010     0.989     0.005     
+VAN       C7        C6        single    1.524     0.020     1.524     0.020     
+VAN       H61A      C6        single    1.089     0.010     0.989     0.005     
+VAN       H62A      C6        single    1.089     0.010     0.989     0.005     
+VAN       C8        C7        single    1.524     0.020     1.524     0.020     
+VAN       C9        C7        single    1.524     0.020     1.524     0.020     
+VAN       H7        C7        single    1.089     0.010     0.989     0.005     
+VAN       H81       C8        single    1.089     0.010     0.989     0.005     
+VAN       H82       C8        single    1.089     0.010     0.989     0.005     
+VAN       H83       C8        single    1.089     0.010     0.989     0.005     
+VAN       H91       C9        single    1.089     0.010     0.989     0.005     
+VAN       H92       C9        single    1.089     0.010     0.989     0.005     
+VAN       H93       C9        single    1.089     0.010     0.989     0.005     
+VAN       O5        C4        double    1.220     0.020     1.220     0.020     
+VAN       C4        N10       single    1.330     0.020     1.330     0.020     
+VAN       N10       C11       single    1.450     0.020     1.450     0.020     
+VAN       HN0       N10       single    1.016     0.010     0.899     0.007     
+VAN       C11       C14       single    1.524     0.020     1.524     0.020     
+VAN       C11       C12       single    1.500     0.020     1.500     0.020     
+VAN       H11       C11       single    1.089     0.010     0.989     0.005     
+VAN       O15       C14       single    1.432     0.020     1.432     0.020     
+VAN       C14       C16       single    1.480     0.020     1.480     0.020     
+VAN       H14       C14       single    1.089     0.010     0.989     0.005     
+VAN       HO5       O15       single    0.970     0.012     0.839     0.014     
+VAN       C16       C17       double    1.390     0.020     1.390     0.020     
+VAN       C16       C18       single    1.390     0.020     1.390     0.020     
+VAN       C17       C19       single    1.390     0.020     1.390     0.020     
+VAN       H17       C17       single    1.082     0.013     0.975     0.010     
+VAN       CL2       C19       single    1.795     0.020     1.795     0.020     
+VAN       C19       C21       double    1.487     0.020     1.487     0.020     
+VAN       C21       O22       single    1.370     0.020     1.370     0.020     
+VAN       C20       C21       single    1.390     0.020     1.390     0.020     
+VAN       O22       C40       single    1.370     0.020     1.370     0.020     
+VAN       C18       C20       double    1.390     0.020     1.390     0.020     
+VAN       H20       C20       single    1.082     0.013     0.975     0.010     
+VAN       H18       C18       single    1.082     0.013     0.975     0.010     
+VAN       O13       C12       double    1.220     0.020     1.220     0.020     
+VAN       C12       N24       single    1.330     0.020     1.330     0.020     
+VAN       N24       C25       single    1.450     0.020     1.450     0.020     
+VAN       HN4       N24       single    1.016     0.010     0.899     0.007     
+VAN       C28       C25       single    1.524     0.020     1.524     0.020     
+VAN       C25       C26       single    1.500     0.020     1.500     0.020     
+VAN       H25       C25       single    1.089     0.010     0.989     0.005     
+VAN       C29       C28       single    1.510     0.020     1.510     0.020     
+VAN       H281      C28       single    1.089     0.010     0.989     0.005     
+VAN       H282      C28       single    1.089     0.010     0.989     0.005     
+VAN       O30       C29       double    1.220     0.020     1.220     0.020     
+VAN       N31       C29       single    1.332     0.020     1.332     0.020     
+VAN       HN11      N31       single    1.016     0.010     0.899     0.007     
+VAN       HN12      N31       single    1.016     0.010     0.899     0.007     
+VAN       O27       C26       double    1.220     0.020     1.220     0.020     
+VAN       C26       N32       single    1.330     0.020     1.330     0.020     
+VAN       N32       C33       single    1.450     0.020     1.450     0.020     
+VAN       HN3       N32       single    1.016     0.010     0.899     0.007     
+VAN       C33       C36       single    1.480     0.020     1.480     0.020     
+VAN       C33       C34       single    1.500     0.020     1.500     0.020     
+VAN       H33       C33       single    1.089     0.010     0.989     0.005     
+VAN       C36       C38       double    1.390     0.020     1.390     0.020     
+VAN       C36       C37       single    1.390     0.020     1.390     0.020     
+VAN       C38       C40       single    1.390     0.020     1.390     0.020     
+VAN       H38       C38       single    1.082     0.013     0.975     0.010     
+VAN       C40       C41       double    1.487     0.020     1.487     0.020     
+VAN       O42       C41       single    1.370     0.020     1.370     0.020     
+VAN       C41       C39       single    1.487     0.020     1.487     0.020     
+VAN       "C1'"     O42       single    1.426     0.020     1.426     0.020     
+VAN       C37       C39       double    1.390     0.020     1.390     0.020     
+VAN       C39       O66       single    1.370     0.020     1.370     0.020     
+VAN       H37       C37       single    1.082     0.013     0.975     0.010     
+VAN       O35       C34       double    1.220     0.020     1.220     0.020     
+VAN       C34       N43       single    1.330     0.020     1.330     0.020     
+VAN       N43       C44       single    1.450     0.020     1.450     0.020     
+VAN       HN43      N43       single    1.016     0.010     0.899     0.007     
+VAN       C44       C47       single    1.480     0.020     1.480     0.020     
+VAN       C44       C45       single    1.500     0.020     1.500     0.020     
+VAN       H44       C44       single    1.089     0.010     0.989     0.005     
+VAN       C47       C48       double    1.390     0.020     1.390     0.020     
+VAN       C47       C49       single    1.390     0.020     1.390     0.020     
+VAN       C48       C50       single    1.390     0.020     1.390     0.020     
+VAN       H48       C48       single    1.082     0.013     0.975     0.010     
+VAN       C52       C50       double    1.487     0.020     1.487     0.020     
+VAN       C50       C73       single    1.487     0.020     1.487     0.020     
+VAN       O53       C52       single    1.362     0.020     1.362     0.020     
+VAN       C51       C52       single    1.390     0.020     1.390     0.020     
+VAN       HO3       O53       single    0.970     0.012     0.839     0.014     
+VAN       C49       C51       double    1.390     0.020     1.390     0.020     
+VAN       H51       C51       single    1.082     0.013     0.975     0.010     
+VAN       H49       C49       single    1.082     0.013     0.975     0.010     
+VAN       O46       C45       double    1.220     0.020     1.220     0.020     
+VAN       C45       N54       single    1.330     0.020     1.330     0.020     
+VAN       N54       C55       single    1.450     0.020     1.450     0.020     
+VAN       HN5       N54       single    1.016     0.010     0.899     0.007     
+VAN       C58       C55       single    1.524     0.020     1.524     0.020     
+VAN       C55       C56       single    1.500     0.020     1.500     0.020     
+VAN       H55       C55       single    1.089     0.010     0.989     0.005     
+VAN       O59       C58       single    1.432     0.020     1.432     0.020     
+VAN       C60       C58       single    1.480     0.020     1.480     0.020     
+VAN       H58       C58       single    1.089     0.010     0.989     0.005     
+VAN       HO9       O59       single    0.970     0.012     0.839     0.014     
+VAN       C60       C61       double    1.390     0.020     1.390     0.020     
+VAN       C62       C60       single    1.390     0.020     1.390     0.020     
+VAN       C61       C63       single    1.390     0.020     1.390     0.020     
+VAN       H61       C61       single    1.082     0.013     0.975     0.010     
+VAN       C63       C65       double    1.390     0.020     1.390     0.020     
+VAN       H63       C63       single    1.082     0.013     0.975     0.010     
+VAN       O66       C65       single    1.370     0.020     1.370     0.020     
+VAN       C65       C64       single    1.487     0.020     1.487     0.020     
+VAN       CL6       C64       single    1.795     0.020     1.795     0.020     
+VAN       C64       C62       double    1.390     0.020     1.390     0.020     
+VAN       H62       C62       single    1.082     0.013     0.975     0.010     
+VAN       O57       C56       double    1.220     0.020     1.220     0.020     
+VAN       C56       N68       single    1.330     0.020     1.330     0.020     
+VAN       N68       C69       single    1.450     0.020     1.450     0.020     
+VAN       HN8       N68       single    1.016     0.010     0.899     0.007     
+VAN       C72       C69       single    1.480     0.020     1.480     0.020     
+VAN       C69       C70       single    1.500     0.020     1.500     0.020     
+VAN       H69       C69       single    1.089     0.010     0.989     0.005     
+VAN       C72       C73       double    1.487     0.020     1.487     0.020     
+VAN       C74       C72       single    1.390     0.020     1.390     0.020     
+VAN       C73       C75       single    1.487     0.020     1.487     0.020     
+VAN       O79       C75       single    1.362     0.020     1.362     0.020     
+VAN       C75       C76       double    1.390     0.020     1.390     0.020     
+VAN       HO7       O79       single    0.970     0.012     0.839     0.014     
+VAN       C76       C77       single    1.390     0.020     1.390     0.020     
+VAN       H76       C76       single    1.082     0.013     0.975     0.010     
+VAN       O78       C77       single    1.362     0.020     1.362     0.020     
+VAN       C77       C74       double    1.390     0.020     1.390     0.020     
+VAN       HO8       O78       single    0.970     0.012     0.839     0.014     
+VAN       H74       C74       single    1.082     0.013     0.975     0.010     
+VAN       O71       C70       deloc     1.250     0.020     1.250     0.020     
+VAN       C70       O80       deloc     1.250     0.020     1.250     0.020     
+VAN       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+VAN       "O5'"     "C1'"     single    1.426     0.020     1.426     0.020     
+VAN       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+VAN       "O2'"     "C2'"     single    1.426     0.020     1.426     0.020     
+VAN       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+VAN       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+VAN       C1B       "O2'"     single    1.426     0.020     1.426     0.020     
+VAN       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+VAN       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+VAN       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+VAN       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+VAN       "O4'"     "C4'"     single    1.432     0.020     1.432     0.020     
+VAN       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+VAN       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+VAN       "HO4'"    "O4'"     single    0.970     0.012     0.839     0.014     
+VAN       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+VAN       "C6'"     "C5'"     single    1.524     0.020     1.524     0.020     
+VAN       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+VAN       "O6'"     "C6'"     single    1.432     0.020     1.432     0.020     
+VAN       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+VAN       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+VAN       "HO6'"    "O6'"     single    0.970     0.012     0.839     0.014     
+VAN       C1B       C2B       single    1.524     0.020     1.524     0.020     
+VAN       O5B       C1B       single    1.426     0.020     1.426     0.020     
+VAN       H1B       C1B       single    1.089     0.010     0.989     0.005     
+VAN       C2B       C3B       single    1.524     0.020     1.524     0.020     
+VAN       "H2'1"    C2B       single    1.089     0.010     0.989     0.005     
+VAN       "H2'2"    C2B       single    1.089     0.010     0.989     0.005     
+VAN       "N3'"     C3B       single    1.488     0.020     1.488     0.020     
+VAN       C3M       C3B       single    1.524     0.020     1.524     0.020     
+VAN       C3B       C4B       single    1.524     0.020     1.524     0.020     
+VAN       HN31      "N3'"     single    1.036     0.016     0.914     0.007     
+VAN       HN32      "N3'"     single    1.036     0.016     0.914     0.007     
+VAN       HN33      "N3'"     single    1.036     0.016     0.914     0.007     
+VAN       H3M1      C3M       single    1.089     0.010     0.989     0.005     
+VAN       H3M2      C3M       single    1.089     0.010     0.989     0.005     
+VAN       H3M3      C3M       single    1.089     0.010     0.989     0.005     
+VAN       O4B       C4B       single    1.432     0.020     1.432     0.020     
+VAN       C4B       C5B       single    1.524     0.020     1.524     0.020     
+VAN       H4B       C4B       single    1.089     0.010     0.989     0.005     
+VAN       HO4A      O4B       single    0.970     0.012     0.839     0.014     
+VAN       C5B       O5B       single    1.426     0.020     1.426     0.020     
+VAN       C5M       C5B       single    1.524     0.020     1.524     0.020     
+VAN       H5B       C5B       single    1.089     0.010     0.989     0.005     
+VAN       H5M1      C5M       single    1.089     0.010     0.989     0.005     
+VAN       H5M2      C5M       single    1.089     0.010     0.989     0.005     
+VAN       H5M3      C5M       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VAN      O80    C70    O71     123.000    3.000
+ VAN      O80    C70    C69     118.500    3.000
+ VAN      O71    C70    C69     118.500    3.000
+ VAN      C70    C69    H69     108.810    3.000
+ VAN      C70    C69    C72     109.500    3.000
+ VAN      C70    C69    N68     111.600    3.000
+ VAN      H69    C69    C72     109.470    3.000
+ VAN      H69    C69    N68     108.550    3.000
+ VAN      C72    C69    N68     109.470    3.000
+ VAN      C69    C72    C74     120.000    3.000
+ VAN      C69    C72    C73     120.000    3.000
+ VAN      C74    C72    C73     120.000    3.000
+ VAN      C72    C74    H74     120.000    3.000
+ VAN      C72    C74    C77     120.000    3.000
+ VAN      H74    C74    C77     120.000    3.000
+ VAN      C74    C77    O78     120.000    3.000
+ VAN      C74    C77    C76     120.000    3.000
+ VAN      O78    C77    C76     120.000    3.000
+ VAN      C77    O78    HO8     109.470    3.000
+ VAN      C77    C76    H76     120.000    3.000
+ VAN      C77    C76    C75     120.000    3.000
+ VAN      H76    C76    C75     120.000    3.000
+ VAN      C76    C75    O79     120.000    3.000
+ VAN      C76    C75    C73     120.000    3.000
+ VAN      O79    C75    C73     120.000    3.000
+ VAN      C75    O79    HO7     109.470    3.000
+ VAN      C75    C73    C50     120.000    3.000
+ VAN      C75    C73    C72     120.000    3.000
+ VAN      C50    C73    C72     120.000    3.000
+ VAN      C73    C50    C48     120.000    3.000
+ VAN      C73    C50    C52     120.000    3.000
+ VAN      C48    C50    C52     120.000    3.000
+ VAN      C50    C48    H48     120.000    3.000
+ VAN      C50    C48    C47     120.000    3.000
+ VAN      H48    C48    C47     120.000    3.000
+ VAN      C50    C52    O53     120.000    3.000
+ VAN      C50    C52    C51     120.000    3.000
+ VAN      O53    C52    C51     120.000    3.000
+ VAN      C52    O53    HO3     109.470    3.000
+ VAN      C52    C51    H51     120.000    3.000
+ VAN      C52    C51    C49     120.000    3.000
+ VAN      H51    C51    C49     120.000    3.000
+ VAN      C51    C49    H49     120.000    3.000
+ VAN      C51    C49    C47     120.000    3.000
+ VAN      H49    C49    C47     120.000    3.000
+ VAN      C49    C47    C44     120.000    3.000
+ VAN      C49    C47    C48     120.000    3.000
+ VAN      C44    C47    C48     120.000    3.000
+ VAN      C69    N68    HN8     118.500    3.000
+ VAN      C69    N68    C56     121.500    3.000
+ VAN      HN8    N68    C56     120.000    3.000
+ VAN      N68    C56    O57     123.000    3.000
+ VAN      N68    C56    C55     116.500    3.000
+ VAN      O57    C56    C55     120.500    3.000
+ VAN      C56    C55    H55     108.810    3.000
+ VAN      C56    C55    N54     111.600    3.000
+ VAN      C56    C55    C58     109.470    3.000
+ VAN      H55    C55    N54     108.550    3.000
+ VAN      H55    C55    C58     108.340    3.000
+ VAN      N54    C55    C58     110.000    3.000
+ VAN      C55    N54    HN5     118.500    3.000
+ VAN      C55    N54    C45     121.500    3.000
+ VAN      HN5    N54    C45     120.000    3.000
+ VAN      N54    C45    O46     123.000    3.000
+ VAN      N54    C45    C44     116.500    3.000
+ VAN      O46    C45    C44     120.500    3.000
+ VAN      C45    C44    H44     108.810    3.000
+ VAN      C45    C44    N43     111.600    3.000
+ VAN      C45    C44    C47     109.500    3.000
+ VAN      H44    C44    N43     108.550    3.000
+ VAN      H44    C44    C47     109.470    3.000
+ VAN      N43    C44    C47     109.470    3.000
+ VAN      C44    N43    HN43    118.500    3.000
+ VAN      C44    N43    C34     121.500    3.000
+ VAN      HN43   N43    C34     120.000    3.000
+ VAN      N43    C34    O35     123.000    3.000
+ VAN      N43    C34    C33     116.500    3.000
+ VAN      O35    C34    C33     120.500    3.000
+ VAN      C34    C33    H33     108.810    3.000
+ VAN      C34    C33    N32     111.600    3.000
+ VAN      C34    C33    C36     109.500    3.000
+ VAN      H33    C33    N32     108.550    3.000
+ VAN      H33    C33    C36     109.470    3.000
+ VAN      N32    C33    C36     109.470    3.000
+ VAN      C33    N32    HN3     118.500    3.000
+ VAN      C33    N32    C26     121.500    3.000
+ VAN      HN3    N32    C26     120.000    3.000
+ VAN      N32    C26    O27     123.000    3.000
+ VAN      N32    C26    C25     116.500    3.000
+ VAN      O27    C26    C25     120.500    3.000
+ VAN      C26    C25    H25     108.810    3.000
+ VAN      C26    C25    C28     109.470    3.000
+ VAN      C26    C25    N24     111.600    3.000
+ VAN      H25    C25    C28     108.340    3.000
+ VAN      H25    C25    N24     108.550    3.000
+ VAN      C28    C25    N24     110.000    3.000
+ VAN      C25    C28    H281    109.470    3.000
+ VAN      C25    C28    H282    109.470    3.000
+ VAN      C25    C28    C29     109.470    3.000
+ VAN      H281   C28    H282    107.900    3.000
+ VAN      H281   C28    C29     109.470    3.000
+ VAN      H282   C28    C29     109.470    3.000
+ VAN      C28    C29    N31     116.500    3.000
+ VAN      C28    C29    O30     120.500    3.000
+ VAN      N31    C29    O30     123.000    3.000
+ VAN      C29    N31    HN12    120.000    3.000
+ VAN      C29    N31    HN11    120.000    3.000
+ VAN      HN12   N31    HN11    120.000    3.000
+ VAN      C25    N24    HN4     118.500    3.000
+ VAN      C25    N24    C12     121.500    3.000
+ VAN      HN4    N24    C12     120.000    3.000
+ VAN      N24    C12    O13     123.000    3.000
+ VAN      N24    C12    C11     116.500    3.000
+ VAN      O13    C12    C11     120.500    3.000
+ VAN      C12    C11    H11     108.810    3.000
+ VAN      C12    C11    N10     111.600    3.000
+ VAN      C12    C11    C14     109.470    3.000
+ VAN      H11    C11    N10     108.550    3.000
+ VAN      H11    C11    C14     108.340    3.000
+ VAN      N10    C11    C14     110.000    3.000
+ VAN      C11    N10    HN0     118.500    3.000
+ VAN      C11    N10    C4      121.500    3.000
+ VAN      HN0    N10    C4      120.000    3.000
+ VAN      N10    C4     O5      123.000    3.000
+ VAN      N10    C4     C3      116.500    3.000
+ VAN      O5     C4     C3      120.500    3.000
+ VAN      C4     C3     H3      108.810    3.000
+ VAN      C4     C3     C6      109.470    3.000
+ VAN      C4     C3     N2      109.500    3.000
+ VAN      H3     C3     C6      108.340    3.000
+ VAN      H3     C3     N2      109.500    3.000
+ VAN      C6     C3     N2      109.500    3.000
+ VAN      C3     C6     H61A    109.470    3.000
+ VAN      C3     C6     H62A    109.470    3.000
+ VAN      C3     C6     C7      111.000    3.000
+ VAN      H61A   C6     H62A    107.900    3.000
+ VAN      H61A   C6     C7      109.470    3.000
+ VAN      H62A   C6     C7      109.470    3.000
+ VAN      C6     C7     H7      108.340    3.000
+ VAN      C6     C7     C9      111.000    3.000
+ VAN      C6     C7     C8      111.000    3.000
+ VAN      H7     C7     C9      108.340    3.000
+ VAN      H7     C7     C8      108.340    3.000
+ VAN      C9     C7     C8      111.000    3.000
+ VAN      C7     C9     H93     109.470    3.000
+ VAN      C7     C9     H92     109.470    3.000
+ VAN      C7     C9     H91     109.470    3.000
+ VAN      H93    C9     H92     109.470    3.000
+ VAN      H93    C9     H91     109.470    3.000
+ VAN      H92    C9     H91     109.470    3.000
+ VAN      C7     C8     H83     109.470    3.000
+ VAN      C7     C8     H82     109.470    3.000
+ VAN      C7     C8     H81     109.470    3.000
+ VAN      H83    C8     H82     109.470    3.000
+ VAN      H83    C8     H81     109.470    3.000
+ VAN      H82    C8     H81     109.470    3.000
+ VAN      C3     N2     HN21    109.500    3.000
+ VAN      C3     N2     HN22    109.500    3.000
+ VAN      C3     N2     C1      109.500    3.000
+ VAN      HN21   N2     HN22    109.500    3.000
+ VAN      HN21   N2     C1      109.500    3.000
+ VAN      HN22   N2     C1      109.500    3.000
+ VAN      N2     C1     H13     109.500    3.000
+ VAN      N2     C1     H12     109.500    3.000
+ VAN      N2     C1     H11A    109.500    3.000
+ VAN      H13    C1     H12     109.470    3.000
+ VAN      H13    C1     H11A    109.470    3.000
+ VAN      H12    C1     H11A    109.470    3.000
+ VAN      C55    C58    H58     108.340    3.000
+ VAN      C55    C58    O59     109.470    3.000
+ VAN      C55    C58    C60     109.470    3.000
+ VAN      H58    C58    O59     109.470    3.000
+ VAN      H58    C58    C60     109.470    3.000
+ VAN      O59    C58    C60     109.470    3.000
+ VAN      C58    O59    HO9     109.470    3.000
+ VAN      C58    C60    C62     120.000    3.000
+ VAN      C58    C60    C61     120.000    3.000
+ VAN      C62    C60    C61     120.000    3.000
+ VAN      C60    C62    H62     120.000    3.000
+ VAN      C60    C62    C64     120.000    3.000
+ VAN      H62    C62    C64     120.000    3.000
+ VAN      C62    C64    CL6     120.000    3.000
+ VAN      C62    C64    C65     120.000    3.000
+ VAN      CL6    C64    C65     120.000    3.000
+ VAN      C64    C65    C63     120.000    3.000
+ VAN      C64    C65    O66     120.000    3.000
+ VAN      C63    C65    O66     120.000    3.000
+ VAN      C65    C63    H63     120.000    3.000
+ VAN      C65    C63    C61     120.000    3.000
+ VAN      H63    C63    C61     120.000    3.000
+ VAN      C63    C61    H61     120.000    3.000
+ VAN      C63    C61    C60     120.000    3.000
+ VAN      H61    C61    C60     120.000    3.000
+ VAN      C65    O66    C39     120.000    3.000
+ VAN      O66    C39    C37     120.000    3.000
+ VAN      O66    C39    C41     120.000    3.000
+ VAN      C37    C39    C41     120.000    3.000
+ VAN      C39    C37    H37     120.000    3.000
+ VAN      C39    C37    C36     120.000    3.000
+ VAN      H37    C37    C36     120.000    3.000
+ VAN      C37    C36    C33     120.000    3.000
+ VAN      C37    C36    C38     120.000    3.000
+ VAN      C33    C36    C38     120.000    3.000
+ VAN      C39    C41    C40     120.000    3.000
+ VAN      C39    C41    O42     120.000    3.000
+ VAN      C40    C41    O42     120.000    3.000
+ VAN      C41    C40    C38     120.000    3.000
+ VAN      C41    C40    O22     120.000    3.000
+ VAN      C38    C40    O22     120.000    3.000
+ VAN      C40    C38    H38     120.000    3.000
+ VAN      C40    C38    C36     120.000    3.000
+ VAN      H38    C38    C36     120.000    3.000
+ VAN      C40    O22    C21     120.000    3.000
+ VAN      O22    C21    C19     120.000    3.000
+ VAN      O22    C21    C20     120.000    3.000
+ VAN      C19    C21    C20     120.000    3.000
+ VAN      C21    C19    CL2     120.000    3.000
+ VAN      C21    C19    C17     120.000    3.000
+ VAN      CL2    C19    C17     120.000    3.000
+ VAN      C19    C17    H17     120.000    3.000
+ VAN      C19    C17    C16     120.000    3.000
+ VAN      H17    C17    C16     120.000    3.000
+ VAN      C21    C20    H20     120.000    3.000
+ VAN      C21    C20    C18     120.000    3.000
+ VAN      H20    C20    C18     120.000    3.000
+ VAN      C20    C18    H18     120.000    3.000
+ VAN      C20    C18    C16     120.000    3.000
+ VAN      H18    C18    C16     120.000    3.000
+ VAN      C18    C16    C14     120.000    3.000
+ VAN      C18    C16    C17     120.000    3.000
+ VAN      C14    C16    C17     120.000    3.000
+ VAN      C16    C14    H14     109.470    3.000
+ VAN      C16    C14    O15     109.470    3.000
+ VAN      C16    C14    C11     109.470    3.000
+ VAN      H14    C14    O15     109.470    3.000
+ VAN      H14    C14    C11     108.340    3.000
+ VAN      O15    C14    C11     109.470    3.000
+ VAN      C14    O15    HO5     109.470    3.000
+ VAN      C41    O42    "C1'"   120.000    3.000
+ VAN      O42    "C1'"  "H1'"   109.470    3.000
+ VAN      O42    "C1'"  "O5'"   109.470    3.000
+ VAN      O42    "C1'"  "C2'"   109.470    3.000
+ VAN      "H1'"  "C1'"  "O5'"   109.470    3.000
+ VAN      "H1'"  "C1'"  "C2'"   108.340    3.000
+ VAN      "O5'"  "C1'"  "C2'"   109.470    3.000
+ VAN      "C1'"  "O5'"  "C5'"   111.800    3.000
+ VAN      "O5'"  "C5'"  "H5'"   109.470    3.000
+ VAN      "O5'"  "C5'"  "C6'"   109.470    3.000
+ VAN      "O5'"  "C5'"  "C4'"   109.470    3.000
+ VAN      "H5'"  "C5'"  "C6'"   108.340    3.000
+ VAN      "H5'"  "C5'"  "C4'"   108.340    3.000
+ VAN      "C6'"  "C5'"  "C4'"   111.000    3.000
+ VAN      "C5'"  "C6'"  "H6'1"  109.470    3.000
+ VAN      "C5'"  "C6'"  "H6'2"  109.470    3.000
+ VAN      "C5'"  "C6'"  "O6'"   109.470    3.000
+ VAN      "H6'1" "C6'"  "H6'2"  107.900    3.000
+ VAN      "H6'1" "C6'"  "O6'"   109.470    3.000
+ VAN      "H6'2" "C6'"  "O6'"   109.470    3.000
+ VAN      "C6'"  "O6'"  "HO6'"  109.470    3.000
+ VAN      "C5'"  "C4'"  "H4'"   108.340    3.000
+ VAN      "C5'"  "C4'"  "O4'"   109.470    3.000
+ VAN      "C5'"  "C4'"  "C3'"   111.000    3.000
+ VAN      "H4'"  "C4'"  "O4'"   109.470    3.000
+ VAN      "H4'"  "C4'"  "C3'"   108.340    3.000
+ VAN      "O4'"  "C4'"  "C3'"   109.470    3.000
+ VAN      "C4'"  "O4'"  "HO4'"  109.470    3.000
+ VAN      "C4'"  "C3'"  "H3'"   108.340    3.000
+ VAN      "C4'"  "C3'"  "O3'"   109.470    3.000
+ VAN      "C4'"  "C3'"  "C2'"   111.000    3.000
+ VAN      "H3'"  "C3'"  "O3'"   109.470    3.000
+ VAN      "H3'"  "C3'"  "C2'"   108.340    3.000
+ VAN      "O3'"  "C3'"  "C2'"   109.470    3.000
+ VAN      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ VAN      "C3'"  "C2'"  "H2'"   108.340    3.000
+ VAN      "C3'"  "C2'"  "O2'"   109.470    3.000
+ VAN      "C3'"  "C2'"  "C1'"   111.000    3.000
+ VAN      "H2'"  "C2'"  "O2'"   109.470    3.000
+ VAN      "H2'"  "C2'"  "C1'"   108.340    3.000
+ VAN      "O2'"  "C2'"  "C1'"   109.470    3.000
+ VAN      "C2'"  "O2'"  C1B     111.800    3.000
+ VAN      "O2'"  C1B    H1B     109.470    3.000
+ VAN      "O2'"  C1B    O5B     109.470    3.000
+ VAN      "O2'"  C1B    C2B     109.470    3.000
+ VAN      H1B    C1B    O5B     109.470    3.000
+ VAN      H1B    C1B    C2B     108.340    3.000
+ VAN      O5B    C1B    C2B     109.470    3.000
+ VAN      C1B    O5B    C5B     111.800    3.000
+ VAN      O5B    C5B    H5B     109.470    3.000
+ VAN      O5B    C5B    C5M     109.470    3.000
+ VAN      O5B    C5B    C4B     109.470    3.000
+ VAN      H5B    C5B    C5M     108.340    3.000
+ VAN      H5B    C5B    C4B     108.340    3.000
+ VAN      C5M    C5B    C4B     111.000    3.000
+ VAN      C5B    C5M    H5M3    109.470    3.000
+ VAN      C5B    C5M    H5M2    109.470    3.000
+ VAN      C5B    C5M    H5M1    109.470    3.000
+ VAN      H5M3   C5M    H5M2    109.470    3.000
+ VAN      H5M3   C5M    H5M1    109.470    3.000
+ VAN      H5M2   C5M    H5M1    109.470    3.000
+ VAN      C5B    C4B    H4B     108.340    3.000
+ VAN      C5B    C4B    O4B     109.470    3.000
+ VAN      C5B    C4B    C3B     111.000    3.000
+ VAN      H4B    C4B    O4B     109.470    3.000
+ VAN      H4B    C4B    C3B     108.340    3.000
+ VAN      O4B    C4B    C3B     109.470    3.000
+ VAN      C4B    O4B    HO4A    109.470    3.000
+ VAN      C4B    C3B    C3M     111.000    3.000
+ VAN      C4B    C3B    "N3'"   110.000    3.000
+ VAN      C4B    C3B    C2B     111.000    3.000
+ VAN      C3M    C3B    "N3'"   110.000    3.000
+ VAN      C3M    C3B    C2B     111.000    3.000
+ VAN      "N3'"  C3B    C2B     110.000    3.000
+ VAN      C3B    C3M    H3M3    109.470    3.000
+ VAN      C3B    C3M    H3M2    109.470    3.000
+ VAN      C3B    C3M    H3M1    109.470    3.000
+ VAN      H3M3   C3M    H3M2    109.470    3.000
+ VAN      H3M3   C3M    H3M1    109.470    3.000
+ VAN      H3M2   C3M    H3M1    109.470    3.000
+ VAN      C3B    "N3'"  HN33    109.470    3.000
+ VAN      C3B    "N3'"  HN32    109.470    3.000
+ VAN      C3B    "N3'"  HN31    109.470    3.000
+ VAN      HN33   "N3'"  HN32    109.470    3.000
+ VAN      HN33   "N3'"  HN31    109.470    3.000
+ VAN      HN32   "N3'"  HN31    109.470    3.000
+ VAN      C3B    C2B    "H2'2"  109.470    3.000
+ VAN      C3B    C2B    "H2'1"  109.470    3.000
+ VAN      C3B    C2B    C1B     111.000    3.000
+ VAN      "H2'2" C2B    "H2'1"  107.900    3.000
+ VAN      "H2'2" C2B    C1B     109.470    3.000
+ VAN      "H2'1" C2B    C1B     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VAN      var_1    O80    C70    C69    N68      145.439   20.000   3
+ VAN      var_2    C70    C69    C72    C74      -10.367   20.000   1
+ VAN      CONST_1  C69    C72    C73    C75      180.000    0.000   0
+ VAN      CONST_2  C69    C72    C74    C77      180.000    0.000   0
+ VAN      CONST_3  C72    C74    C77    C76        0.000    0.000   0
+ VAN      var_3    C74    C77    O78    HO8       -9.679   20.000   1
+ VAN      CONST_4  C74    C77    C76    C75        0.000    0.000   0
+ VAN      CONST_5  C77    C76    C75    C73        0.000    0.000   0
+ VAN      var_4    C76    C75    O79    HO7      107.707   20.000   1
+ VAN      CONST_6  C76    C75    C73    C50      180.000    0.000   0
+ VAN      CONST_7  C75    C73    C50    C52        0.000    0.000   0
+ VAN      CONST_8  C73    C50    C48    C47      180.000    0.000   0
+ VAN      CONST_9  C73    C50    C52    C51      180.000    0.000   0
+ VAN      var_5    C50    C52    O53    HO3       46.100   20.000   1
+ VAN      CONST_10 C50    C52    C51    C49        0.000    0.000   0
+ VAN      CONST_11 C52    C51    C49    C47        0.000    0.000   0
+ VAN      CONST_12 C51    C49    C47    C44      180.000    0.000   0
+ VAN      CONST_13 C49    C47    C48    C50        0.000    0.000   0
+ VAN      var_6    C70    C69    N68    C56      -86.205   20.000   3
+ VAN      CONST_14 C69    N68    C56    C55      180.000    0.000   0
+ VAN      var_7    N68    C56    C55    C58      -96.918   20.000   3
+ VAN      var_8    C56    C55    N54    C45     -104.333   20.000   3
+ VAN      CONST_15 C55    N54    C45    C44        0.000    0.000   0
+ VAN      var_9    N54    C45    C44    N43     -150.210   20.000   3
+ VAN      var_10   C45    C44    C47    C49       63.424   20.000   1
+ VAN      var_11   C45    C44    N43    C34      154.229   20.000   3
+ VAN      CONST_16 C44    N43    C34    C33      180.000    0.000   0
+ VAN      var_12   N43    C34    C33    N32     -133.651   20.000   3
+ VAN      var_13   C34    C33    C36    C37      -59.402   20.000   1
+ VAN      var_14   C34    C33    N32    C26      154.878   20.000   3
+ VAN      CONST_17 C33    N32    C26    C25      180.000    0.000   0
+ VAN      var_15   N32    C26    C25    N24     -135.245   20.000   3
+ VAN      var_16   C26    C25    C28    C29       60.794   20.000   3
+ VAN      var_17   C25    C28    C29    O30       28.998   20.000   3
+ VAN      CONST_18 C28    C29    N31    HN11       0.000    0.000   0
+ VAN      var_18   C26    C25    N24    C12     -163.000   20.000   3
+ VAN      CONST_19 C25    N24    C12    C11      180.000    0.000   0
+ VAN      var_19   N24    C12    C11    N10     -152.640   20.000   3
+ VAN      var_20   C12    C11    C14    C16      -67.787   20.000   3
+ VAN      var_21   C12    C11    N10    C4       145.623   20.000   3
+ VAN      CONST_20 C11    N10    C4     C3       180.000    0.000   0
+ VAN      var_22   N10    C4     C3     N2      -175.238   20.000   3
+ VAN      var_23   C4     C3     C6     C7        62.815   20.000   3
+ VAN      var_24   C3     C6     C7     C8        57.142   20.000   3
+ VAN      var_25   C6     C7     C9     H91      -58.063   20.000   3
+ VAN      var_26   C6     C7     C8     H81     -175.677   20.000   3
+ VAN      var_27   C4     C3     N2     C1      -177.577   20.000   1
+ VAN      var_28   C3     N2     C1     H11A     -62.420   20.000   1
+ VAN      var_29   C56    C55    C58    C60      175.920   20.000   3
+ VAN      var_30   C55    C58    O59    HO9      141.450   20.000   1
+ VAN      var_31   C55    C58    C60    C62       92.713   20.000   1
+ VAN      CONST_21 C58    C60    C61    C63      180.000    0.000   0
+ VAN      CONST_22 C58    C60    C62    C64      180.000    0.000   0
+ VAN      CONST_23 C60    C62    C64    C65        0.000    0.000   0
+ VAN      CONST_24 C62    C64    C65    O66      180.000    0.000   0
+ VAN      CONST_25 C64    C65    C63    C61        0.000    0.000   0
+ VAN      CONST_26 C65    C63    C61    C60        0.000    0.000   0
+ VAN      var_32   C64    C65    O66    C39     -116.579   20.000   1
+ VAN      var_33   C65    O66    C39    C41     -139.661   20.000   1
+ VAN      CONST_27 O66    C39    C37    C36      180.000    0.000   0
+ VAN      CONST_28 C39    C37    C36    C33      180.000    0.000   0
+ VAN      CONST_29 C37    C36    C38    C40        0.000    0.000   0
+ VAN      CONST_30 O66    C39    C41    O42        0.000    0.000   0
+ VAN      CONST_31 C39    C41    C40    O22      180.000    0.000   0
+ VAN      CONST_32 C41    C40    C38    C36        0.000    0.000   0
+ VAN      var_34   C41    C40    O22    C21     -153.456   20.000   1
+ VAN      var_35   C40    O22    C21    C20       75.665   20.000   1
+ VAN      CONST_33 O22    C21    C19    C17      180.000    0.000   0
+ VAN      CONST_34 C21    C19    C17    C16        0.000    0.000   0
+ VAN      CONST_35 O22    C21    C20    C18      180.000    0.000   0
+ VAN      CONST_36 C21    C20    C18    C16        0.000    0.000   0
+ VAN      CONST_37 C20    C18    C16    C14      180.000    0.000   0
+ VAN      CONST_38 C18    C16    C17    C19        0.000    0.000   0
+ VAN      var_36   C18    C16    C14    O15      169.989   20.000   1
+ VAN      var_37   C16    C14    O15    HO5     -152.738   20.000   1
+ VAN      var_38   C39    C41    O42    "C1'"    -60.040   20.000   1
+ VAN      var_39   C41    O42    "C1'"  "O5'"    -59.635   20.000   1
+ VAN      var_40   O42    "C1'"  "C2'"  "C3'"    180.000   20.000   3
+ VAN      var_41   O42    "C1'"  "O5'"  "C5'"    180.000   20.000   1
+ VAN      var_42   "C1'"  "O5'"  "C5'"  "C4'"     60.000   20.000   1
+ VAN      var_43   "O5'"  "C5'"  "C6'"  "O6'"     58.743   20.000   3
+ VAN      var_44   "C5'"  "C6'"  "O6'"  "HO6'"    -1.944   20.000   1
+ VAN      var_45   "O5'"  "C5'"  "C4'"  "C3'"    -60.000   20.000   3
+ VAN      var_46   "C5'"  "C4'"  "O4'"  "HO4'"    35.666   20.000   1
+ VAN      var_47   "C5'"  "C4'"  "C3'"  "C2'"     60.000   20.000   3
+ VAN      var_48   "C4'"  "C3'"  "O3'"  "HO3'"  -152.005   20.000   1
+ VAN      var_49   "C4'"  "C3'"  "C2'"  "O2'"    180.000   20.000   3
+ VAN      var_50   "C3'"  "C2'"  "O2'"  C1B     -118.742   20.000   1
+ VAN      var_51   "C2'"  "O2'"  C1B    O5B      -86.666   20.000   1
+ VAN      var_52   "O2'"  C1B    C2B    C3B       90.000   20.000   3
+ VAN      var_53   "O2'"  C1B    O5B    C5B      -60.000   20.000   1
+ VAN      var_54   C1B    O5B    C5B    C4B      -60.000   20.000   1
+ VAN      var_55   O5B    C5B    C5M    H5M1      92.758   20.000   3
+ VAN      var_56   O5B    C5B    C4B    C3B       60.000   20.000   3
+ VAN      var_57   C5B    C4B    O4B    HO4A    -119.957   20.000   1
+ VAN      var_58   C5B    C4B    C3B    C2B      -60.000   20.000   1
+ VAN      var_59   C4B    C3B    C3M    H3M1      60.273   20.000   1
+ VAN      var_60   C4B    C3B    "N3'"  HN31     131.584   20.000   1
+ VAN      var_61   C4B    C3B    C2B    C1B       60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ VAN      chir_01  C3     N2     C6     C4        positiv
+ VAN      chir_02  C7     C6     C8     C9        positiv
+ VAN      chir_03  C11    N10    C14    C12       positiv
+ VAN      chir_04  C14    C11    O15    C16       positiv
+ VAN      chir_05  C25    N24    C28    C26       negativ
+ VAN      chir_06  C33    N32    C36    C34       positiv
+ VAN      chir_07  C44    N43    C47    C45       positiv
+ VAN      chir_08  C55    N54    C58    C56       negativ
+ VAN      chir_09  C58    C55    O59    C60       positiv
+ VAN      chir_10  C69    N68    C72    C70       negativ
+ VAN      chir_11  "C1'"  O42    "C2'"  "O5'"     negativ
+ VAN      chir_12  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ VAN      chir_13  "C3'"  "C2'"  "O3'"  "C4'"     negativ
+ VAN      chir_14  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+ VAN      chir_15  "C5'"  "C4'"  "O5'"  "C6'"     positiv
+ VAN      chir_16  C1B    "O2'"  C2B    O5B       negativ
+ VAN      chir_17  C3B    C2B    "N3'"  C3M       negativ
+ VAN      chir_18  C4B    C3B    O4B    C5B       positiv
+ VAN      chir_19  C5B    C4B    O5B    C5M       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ VAN      plan-1    C4        0.020
+ VAN      plan-1    C3        0.020
+ VAN      plan-1    O5        0.020
+ VAN      plan-1    N10       0.020
+ VAN      plan-1    HN0       0.020
+ VAN      plan-2    N10       0.020
+ VAN      plan-2    C4        0.020
+ VAN      plan-2    C11       0.020
+ VAN      plan-2    HN0       0.020
+ VAN      plan-3    C16       0.020
+ VAN      plan-3    C14       0.020
+ VAN      plan-3    C17       0.020
+ VAN      plan-3    C18       0.020
+ VAN      plan-3    C19       0.020
+ VAN      plan-3    C21       0.020
+ VAN      plan-3    C20       0.020
+ VAN      plan-3    H17       0.020
+ VAN      plan-3    CL2       0.020
+ VAN      plan-3    O22       0.020
+ VAN      plan-3    H20       0.020
+ VAN      plan-3    H18       0.020
+ VAN      plan-4    C12       0.020
+ VAN      plan-4    C11       0.020
+ VAN      plan-4    O13       0.020
+ VAN      plan-4    N24       0.020
+ VAN      plan-4    HN4       0.020
+ VAN      plan-5    N24       0.020
+ VAN      plan-5    C12       0.020
+ VAN      plan-5    C25       0.020
+ VAN      plan-5    HN4       0.020
+ VAN      plan-6    C29       0.020
+ VAN      plan-6    C28       0.020
+ VAN      plan-6    O30       0.020
+ VAN      plan-6    N31       0.020
+ VAN      plan-6    HN12      0.020
+ VAN      plan-6    HN11      0.020
+ VAN      plan-7    N31       0.020
+ VAN      plan-7    C29       0.020
+ VAN      plan-7    HN11      0.020
+ VAN      plan-7    HN12      0.020
+ VAN      plan-8    C26       0.020
+ VAN      plan-8    C25       0.020
+ VAN      plan-8    O27       0.020
+ VAN      plan-8    N32       0.020
+ VAN      plan-8    HN3       0.020
+ VAN      plan-9    N32       0.020
+ VAN      plan-9    C26       0.020
+ VAN      plan-9    C33       0.020
+ VAN      plan-9    HN3       0.020
+ VAN      plan-10   C36       0.020
+ VAN      plan-10   C33       0.020
+ VAN      plan-10   C38       0.020
+ VAN      plan-10   C37       0.020
+ VAN      plan-10   C40       0.020
+ VAN      plan-10   C41       0.020
+ VAN      plan-10   C39       0.020
+ VAN      plan-10   H38       0.020
+ VAN      plan-10   O22       0.020
+ VAN      plan-10   O42       0.020
+ VAN      plan-10   O66       0.020
+ VAN      plan-10   H37       0.020
+ VAN      plan-11   C34       0.020
+ VAN      plan-11   C33       0.020
+ VAN      plan-11   O35       0.020
+ VAN      plan-11   N43       0.020
+ VAN      plan-11   HN43      0.020
+ VAN      plan-12   N43       0.020
+ VAN      plan-12   C34       0.020
+ VAN      plan-12   C44       0.020
+ VAN      plan-12   HN43      0.020
+ VAN      plan-13   C47       0.020
+ VAN      plan-13   C44       0.020
+ VAN      plan-13   C48       0.020
+ VAN      plan-13   C49       0.020
+ VAN      plan-13   C50       0.020
+ VAN      plan-13   C52       0.020
+ VAN      plan-13   C51       0.020
+ VAN      plan-13   H48       0.020
+ VAN      plan-13   C73       0.020
+ VAN      plan-13   O53       0.020
+ VAN      plan-13   H51       0.020
+ VAN      plan-13   H49       0.020
+ VAN      plan-14   C45       0.020
+ VAN      plan-14   C44       0.020
+ VAN      plan-14   O46       0.020
+ VAN      plan-14   N54       0.020
+ VAN      plan-14   HN5       0.020
+ VAN      plan-15   N54       0.020
+ VAN      plan-15   C45       0.020
+ VAN      plan-15   C55       0.020
+ VAN      plan-15   HN5       0.020
+ VAN      plan-16   C60       0.020
+ VAN      plan-16   C58       0.020
+ VAN      plan-16   C61       0.020
+ VAN      plan-16   C62       0.020
+ VAN      plan-16   C63       0.020
+ VAN      plan-16   C65       0.020
+ VAN      plan-16   C64       0.020
+ VAN      plan-16   H61       0.020
+ VAN      plan-16   H63       0.020
+ VAN      plan-16   O66       0.020
+ VAN      plan-16   CL6       0.020
+ VAN      plan-16   H62       0.020
+ VAN      plan-17   C56       0.020
+ VAN      plan-17   C55       0.020
+ VAN      plan-17   O57       0.020
+ VAN      plan-17   N68       0.020
+ VAN      plan-17   HN8       0.020
+ VAN      plan-18   N68       0.020
+ VAN      plan-18   C56       0.020
+ VAN      plan-18   C69       0.020
+ VAN      plan-18   HN8       0.020
+ VAN      plan-19   C72       0.020
+ VAN      plan-19   C69       0.020
+ VAN      plan-19   C73       0.020
+ VAN      plan-19   C74       0.020
+ VAN      plan-19   C75       0.020
+ VAN      plan-19   C76       0.020
+ VAN      plan-19   C77       0.020
+ VAN      plan-19   C50       0.020
+ VAN      plan-19   O79       0.020
+ VAN      plan-19   H76       0.020
+ VAN      plan-19   O78       0.020
+ VAN      plan-19   H74       0.020
+ VAN      plan-20   C70       0.020
+ VAN      plan-20   C69       0.020
+ VAN      plan-20   O71       0.020
+ VAN      plan-20   O80       0.020
+# ------------------------------------------------------

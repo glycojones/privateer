@@ -1,0 +1,217 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RAO      RAO '1-O-METHYL-ALPHA-RHAMNOSE           ' pyranose           26  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RAO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RAO           C1     C    CH1       0.000      0.000    0.000    0.000
+ RAO           HC1    H    H         0.000      0.717   -0.375    0.743
+ RAO           O1     O    O2        0.000      0.225    1.394   -0.215
+ RAO           C7     C    CH3       0.000      1.565    1.528   -0.691
+ RAO           HC73   H    H         0.000      2.238    1.145    0.033
+ RAO           HC72   H    H         0.000      1.675    0.987   -1.595
+ RAO           HC71   H    H         0.000      1.779    2.551   -0.864
+ RAO           O5     O    O2        0.000      0.178   -0.703   -1.227
+ RAO           C5     C    CH1       0.000     -0.642   -0.070   -2.209
+ RAO           HC5    H    H         0.000     -0.426    1.008   -2.225
+ RAO           C6     C    CH3       0.000     -0.341   -0.669   -3.585
+ RAO           HC63   H    H         0.000     -0.546   -1.708   -3.571
+ RAO           HC62   H    H         0.000     -0.948   -0.200   -4.316
+ RAO           HC61   H    H         0.000      0.679   -0.515   -3.823
+ RAO           C4     C    CH1       0.000     -2.117   -0.288   -1.872
+ RAO           HC4    H    H         0.000     -2.330   -1.365   -1.832
+ RAO           C3     C    CH1       0.000     -2.416    0.344   -0.508
+ RAO           HC3    H    H         0.000     -2.304    1.435   -0.575
+ RAO           O3     O    OH1       0.000     -3.751    0.021   -0.113
+ RAO           HO3    H    H         0.000     -3.937    0.421    0.747
+ RAO           C2     C    CH1       0.000     -1.424   -0.212    0.517
+ RAO           HC2    H    H         0.000     -1.550    0.315    1.473
+ RAO           O2     O    OH1       0.000     -1.663   -1.608    0.705
+ RAO           HO2    H    H         0.000     -1.036   -1.958    1.352
+ RAO           O4     O    OH1       0.000     -2.932    0.324   -2.873
+ RAO           HO4    H    H         0.000     -2.706   -0.098   -3.714
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RAO      C1     n/a    O5     START
+ RAO      HC1    C1     .      .
+ RAO      O1     C1     C7     .
+ RAO      C7     O1     HC71   .
+ RAO      HC73   C7     .      .
+ RAO      HC72   C7     .      .
+ RAO      HC71   C7     .      .
+ RAO      O5     C1     .      END
+ RAO      C5     O5     C4     .
+ RAO      HC5    C5     .      .
+ RAO      C6     C5     HC61   .
+ RAO      HC63   C6     .      .
+ RAO      HC62   C6     .      .
+ RAO      HC61   C6     .      .
+ RAO      C4     C5     O4     .
+ RAO      HC4    C4     .      .
+ RAO      C3     C4     C2     .
+ RAO      HC3    C3     .      .
+ RAO      O3     C3     HO3    .
+ RAO      HO3    O3     .      .
+ RAO      C2     C3     O2     .
+ RAO      HC2    C2     .      .
+ RAO      O2     C2     HO2    .
+ RAO      HO2    O2     .      .
+ RAO      O4     C4     .      .
+ RAO      HO4    O4     .      .
+ RAO      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RAO       O1        C1        single    1.426     0.020     1.426     0.020     
+RAO       C1        C2        single    1.524     0.020     1.524     0.020     
+RAO       O5        C1        single    1.426     0.020     1.426     0.020     
+RAO       HC1       C1        single    1.089     0.010     0.989     0.005     
+RAO       C7        O1        single    1.426     0.020     1.426     0.020     
+RAO       HC71      C7        single    1.089     0.010     0.989     0.005     
+RAO       HC72      C7        single    1.089     0.010     0.989     0.005     
+RAO       HC73      C7        single    1.089     0.010     0.989     0.005     
+RAO       O2        C2        single    1.432     0.020     1.432     0.020     
+RAO       HO2       O2        single    0.970     0.012     0.839     0.014     
+RAO       C2        C3        single    1.524     0.020     1.524     0.020     
+RAO       HC2       C2        single    1.089     0.010     0.989     0.005     
+RAO       O3        C3        single    1.432     0.020     1.432     0.020     
+RAO       C3        C4        single    1.524     0.020     1.524     0.020     
+RAO       HC3       C3        single    1.089     0.010     0.989     0.005     
+RAO       HO3       O3        single    0.970     0.012     0.839     0.014     
+RAO       O4        C4        single    1.432     0.020     1.432     0.020     
+RAO       C4        C5        single    1.524     0.020     1.524     0.020     
+RAO       HC4       C4        single    1.089     0.010     0.989     0.005     
+RAO       HO4       O4        single    0.970     0.012     0.839     0.014     
+RAO       C5        O5        single    1.426     0.020     1.426     0.020     
+RAO       C6        C5        single    1.524     0.020     1.524     0.020     
+RAO       HC5       C5        single    1.089     0.010     0.989     0.005     
+RAO       HC61      C6        single    1.089     0.010     0.989     0.005     
+RAO       HC62      C6        single    1.089     0.010     0.989     0.005     
+RAO       HC63      C6        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RAO      HC1    C1     O1      109.470    3.000
+ RAO      HC1    C1     O5      109.470    3.000
+ RAO      O1     C1     O5      109.470    3.000
+ RAO      HC1    C1     C2      108.340    3.000
+ RAO      O1     C1     C2      109.470    3.000
+ RAO      O5     C1     C2      109.470    3.000
+ RAO      C1     O1     C7      111.800    3.000
+ RAO      O1     C7     HC73    109.470    3.000
+ RAO      O1     C7     HC72    109.470    3.000
+ RAO      O1     C7     HC71    109.470    3.000
+ RAO      HC73   C7     HC72    109.470    3.000
+ RAO      HC73   C7     HC71    109.470    3.000
+ RAO      HC72   C7     HC71    109.470    3.000
+ RAO      C1     O5     C5      111.800    3.000
+ RAO      O5     C5     HC5     109.470    3.000
+ RAO      O5     C5     C6      109.470    3.000
+ RAO      O5     C5     C4      109.470    3.000
+ RAO      HC5    C5     C6      108.340    3.000
+ RAO      HC5    C5     C4      108.340    3.000
+ RAO      C6     C5     C4      111.000    3.000
+ RAO      C5     C6     HC63    109.470    3.000
+ RAO      C5     C6     HC62    109.470    3.000
+ RAO      C5     C6     HC61    109.470    3.000
+ RAO      HC63   C6     HC62    109.470    3.000
+ RAO      HC63   C6     HC61    109.470    3.000
+ RAO      HC62   C6     HC61    109.470    3.000
+ RAO      C5     C4     HC4     108.340    3.000
+ RAO      C5     C4     C3      111.000    3.000
+ RAO      C5     C4     O4      109.470    3.000
+ RAO      HC4    C4     C3      108.340    3.000
+ RAO      HC4    C4     O4      109.470    3.000
+ RAO      C3     C4     O4      109.470    3.000
+ RAO      C4     C3     HC3     108.340    3.000
+ RAO      C4     C3     O3      109.470    3.000
+ RAO      C4     C3     C2      111.000    3.000
+ RAO      HC3    C3     O3      109.470    3.000
+ RAO      HC3    C3     C2      108.340    3.000
+ RAO      O3     C3     C2      109.470    3.000
+ RAO      C3     O3     HO3     109.470    3.000
+ RAO      C3     C2     HC2     108.340    3.000
+ RAO      C3     C2     O2      109.470    3.000
+ RAO      C3     C2     C1      111.000    3.000
+ RAO      HC2    C2     O2      109.470    3.000
+ RAO      HC2    C2     C1      108.340    3.000
+ RAO      O2     C2     C1      109.470    3.000
+ RAO      C2     O2     HO2     109.470    3.000
+ RAO      C4     O4     HO4     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RAO      var_1    O5     C1     O1     C7       -59.813   20.000   1
+ RAO      var_2    C1     O1     C7     HC71    -179.946   20.000   1
+ RAO      var_3    C1     O5     C5     C4       -60.000   20.000   1
+ RAO      var_4    O5     C5     C6     HC61     -59.989   20.000   3
+ RAO      var_5    O5     C5     C4     O4       180.000   20.000   3
+ RAO      var_6    C5     C4     C3     C2       -60.000   20.000   3
+ RAO      var_7    C4     C3     O3     HO3     -179.987   20.000   1
+ RAO      var_8    C4     C3     C2     O2       -60.000   20.000   3
+ RAO      var_9    C3     C2     C1     O5       -60.000   20.000   3
+ RAO      var_10   C3     C2     O2     HO2      179.949   20.000   1
+ RAO      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RAO      chir_01  C1     O1     C2     O5        negativ
+ RAO      chir_02  C2     C1     O2     C3        positiv
+ RAO      chir_03  C3     C2     O3     C4        positiv
+ RAO      chir_04  C4     C3     O4     C5        negativ
+ RAO      chir_05  C5     C4     O5     C6        negativ
+# ------------------------------------------------------

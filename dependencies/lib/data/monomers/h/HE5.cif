@@ -1,0 +1,594 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HE5      HE5 'ZINC(II)-DEUTEROPORPHYRIN DIMETHYLES' non-polymer        75  41 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HE5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HE5           O1D    O    O        -0.500      0.000    0.000    0.000
+ HE5           CGD    C    C         0.000      0.097    1.227    0.225
+ HE5           O2D    O    O2       -0.500     -0.497    1.719    1.210
+ HE5           C41    C    CH3       0.000      0.062    1.836    2.643
+ HE5           H413   H    H         0.000     -0.646    2.306    3.291
+ HE5           H412   H    H         0.000      0.288    0.871    3.045
+ HE5           H411   H    H         0.000      0.959    2.417    2.656
+ HE5           CBD    C    CH2       0.000      0.945    2.133   -0.628
+ HE5           HBD1   H    H         0.000      1.978    1.785   -0.572
+ HE5           HBD2   H    H         0.000      0.880    3.144   -0.220
+ HE5           CAD    C    CH2       0.000      0.488    2.141   -2.081
+ HE5           HAD1   H    H         0.000     -0.315    1.416   -2.230
+ HE5           HAD2   H    H         0.000      1.323    1.898   -2.743
+ HE5           C3D    C    CR5       0.000     -0.017    3.525   -2.395
+ HE5           C4D    C    CR5       0.000      0.745    4.665   -2.637
+ HE5           CHA    C    C1        0.000      2.224    4.703   -2.677
+ HE5           HHA    H    H         0.000      2.721    3.748   -2.656
+ HE5           C2D    C    CR5       0.000     -1.351    3.923   -2.481
+ HE5           CMD    C    CH3       0.000     -2.561    3.045   -2.284
+ HE5           HMD3   H    H         0.000     -3.404    3.498   -2.738
+ HE5           HMD2   H    H         0.000     -2.388    2.099   -2.727
+ HE5           HMD1   H    H         0.000     -2.743    2.921   -1.248
+ HE5           C1D    C    CR5       0.000     -1.318    5.291   -2.764
+ HE5           ND     N    NR5       0.000     -0.053    5.704   -2.882
+ HE5           CHD    C    C1        0.000     -2.504    6.151   -2.968
+ HE5           HHD    H    H         0.000     -3.457    5.651   -2.990
+ HE5           C4C    C    CR5       0.000     -2.531    7.620   -3.146
+ HE5           C3C    C    CR5       0.000     -3.651    8.446   -3.202
+ HE5           CAC    C    CH3       0.000     -5.139    8.216   -3.085
+ HE5           HAC3   H    H         0.000     -5.658    8.988   -3.592
+ HE5           HAC2   H    H         0.000     -5.388    7.281   -3.516
+ HE5           HAC1   H    H         0.000     -5.418    8.218   -2.063
+ HE5           C2C    C    CR15      0.000     -3.241    9.768   -3.390
+ HE5           H2C    H    H         0.000     -3.846   10.662   -3.479
+ HE5           NC     N    NR5       0.000     -1.451    8.377   -3.315
+ HE5           ZN     ZN   ZN        0.000      0.601    7.711   -3.329
+ HE5           NA     N    NR5       0.000      2.655    7.117   -2.982
+ HE5           C1A    C    CR5       0.000      3.098    5.885   -2.741
+ HE5           C1C    C    CR5       0.000     -1.859    9.643   -3.433
+ HE5           CHC    C    C1        0.000     -0.997   10.822   -3.648
+ HE5           HHC    H    H         0.000     -1.487   11.742   -3.920
+ HE5           C4B    C    C         0.000      0.476   10.860   -3.527
+ HE5           C3B    C    CH1       0.000      1.308   11.984   -3.545
+ HE5           H3B    H    H         0.000      1.394   11.914   -4.639
+ HE5           CAB    C    CH3       0.000      1.091   13.473   -3.645
+ HE5           HAB3   H    H         0.000      1.181   13.772   -4.655
+ HE5           HAB2   H    H         0.000      0.124   13.709   -3.288
+ HE5           HAB1   H    H         0.000      1.818   13.971   -3.060
+ HE5           C2B    C    CH2       0.000      2.631   11.588   -3.403
+ HE5           H2B2   H    H         0.000      3.100   11.964   -2.492
+ HE5           H2B1   H    H         0.000      3.254   11.841   -4.264
+ HE5           NB     N    N         0.000      1.239    9.777   -3.415
+ HE5           C1B    C    C         0.000      2.493   10.211   -3.320
+ HE5           CHB    C    C1        0.000      3.685    9.376   -3.180
+ HE5           HHB    H    H         0.000      4.636    9.877   -3.244
+ HE5           C4A    C    CR5       0.000      3.719    7.925   -2.962
+ HE5           C3A    C    CR5       0.000      4.883    7.216   -2.716
+ HE5           CMA    C    CH3       0.000      6.276    7.805   -2.632
+ HE5           HMA3   H    H         0.000      6.242    8.721   -2.100
+ HE5           HMA2   H    H         0.000      6.917    7.129   -2.128
+ HE5           HMA1   H    H         0.000      6.647    7.979   -3.609
+ HE5           C2A    C    CR5       0.000      4.488    5.879   -2.580
+ HE5           CAA    C    CH2       0.000      5.361    4.666   -2.304
+ HE5           HAA1   H    H         0.000      4.781    3.778   -2.563
+ HE5           HAA2   H    H         0.000      5.581    4.656   -1.234
+ HE5           CBA    C    CH2       0.000      6.675    4.671   -3.097
+ HE5           HBA1   H    H         0.000      7.181    3.723   -2.903
+ HE5           HBA2   H    H         0.000      7.286    5.492   -2.718
+ HE5           CGA    C    C         0.000      6.470    4.840   -4.590
+ HE5           O1A    O    O        -0.500      5.542    4.218   -5.155
+ HE5           O2A    O    O2       -0.500      7.199    5.587   -5.280
+ HE5           C40    C    CH3       0.000      8.653    5.323   -5.742
+ HE5           H403   H    H         0.000      9.076    6.195   -6.193
+ HE5           H402   H    H         0.000      9.273    5.046   -4.916
+ HE5           H401   H    H         0.000      8.689    4.531   -6.460
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HE5      O1D    n/a    CGD    START
+ HE5      CGD    O1D    CBD    .
+ HE5      O2D    CGD    C41    .
+ HE5      C41    O2D    H411   .
+ HE5      H413   C41    .      .
+ HE5      H412   C41    .      .
+ HE5      H411   C41    .      .
+ HE5      CBD    CGD    CAD    .
+ HE5      HBD1   CBD    .      .
+ HE5      HBD2   CBD    .      .
+ HE5      CAD    CBD    C3D    .
+ HE5      HAD1   CAD    .      .
+ HE5      HAD2   CAD    .      .
+ HE5      C3D    CAD    C2D    .
+ HE5      C4D    C3D    CHA    .
+ HE5      CHA    C4D    HHA    .
+ HE5      HHA    CHA    .      .
+ HE5      C2D    C3D    C1D    .
+ HE5      CMD    C2D    HMD1   .
+ HE5      HMD3   CMD    .      .
+ HE5      HMD2   CMD    .      .
+ HE5      HMD1   CMD    .      .
+ HE5      C1D    C2D    CHD    .
+ HE5      ND     C1D    .      .
+ HE5      CHD    C1D    C4C    .
+ HE5      HHD    CHD    .      .
+ HE5      C4C    CHD    NC     .
+ HE5      C3C    C4C    C2C    .
+ HE5      CAC    C3C    HAC1   .
+ HE5      HAC3   CAC    .      .
+ HE5      HAC2   CAC    .      .
+ HE5      HAC1   CAC    .      .
+ HE5      C2C    C3C    H2C    .
+ HE5      H2C    C2C    .      .
+ HE5      NC     C4C    C1C    .
+ HE5      ZN     NC     NA     .
+ HE5      NA     ZN     C1A    .
+ HE5      C1A    NA     .      .
+ HE5      C1C    NC     CHC    .
+ HE5      CHC    C1C    C4B    .
+ HE5      HHC    CHC    .      .
+ HE5      C4B    CHC    NB     .
+ HE5      C3B    C4B    C2B    .
+ HE5      H3B    C3B    .      .
+ HE5      CAB    C3B    HAB1   .
+ HE5      HAB3   CAB    .      .
+ HE5      HAB2   CAB    .      .
+ HE5      HAB1   CAB    .      .
+ HE5      C2B    C3B    H2B1   .
+ HE5      H2B2   C2B    .      .
+ HE5      H2B1   C2B    .      .
+ HE5      NB     C4B    C1B    .
+ HE5      C1B    NB     CHB    .
+ HE5      CHB    C1B    C4A    .
+ HE5      HHB    CHB    .      .
+ HE5      C4A    CHB    C3A    .
+ HE5      C3A    C4A    C2A    .
+ HE5      CMA    C3A    HMA1   .
+ HE5      HMA3   CMA    .      .
+ HE5      HMA2   CMA    .      .
+ HE5      HMA1   CMA    .      .
+ HE5      C2A    C3A    CAA    .
+ HE5      CAA    C2A    CBA    .
+ HE5      HAA1   CAA    .      .
+ HE5      HAA2   CAA    .      .
+ HE5      CBA    CAA    CGA    .
+ HE5      HBA1   CBA    .      .
+ HE5      HBA2   CBA    .      .
+ HE5      CGA    CBA    O2A    .
+ HE5      O1A    CGA    .      .
+ HE5      O2A    CGA    C40    .
+ HE5      C40    O2A    H401   .
+ HE5      H403   C40    .      .
+ HE5      H402   C40    .      .
+ HE5      H401   C40    .      END
+ HE5      C2A    C1A    .    ADD
+ HE5      C1A    CHA    .    ADD
+ HE5      C4A    NA     .    ADD
+ HE5      C1B    C2B    .    ADD
+ HE5      NB     ZN     .    ADD
+ HE5      ZN     ND     .    ADD
+ HE5      ND     C4D    .    ADD
+ HE5      C1C    C2C    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HE5       O1A       CGA       deloc     1.220     0.020     1.220     0.020     
+HE5       O2A       CGA       deloc     1.454     0.020     1.454     0.020     
+HE5       CGA       CBA       single    1.510     0.020     1.510     0.020     
+HE5       C40       O2A       single    1.426     0.020     1.426     0.020     
+HE5       H401      C40       single    1.089     0.010     0.989     0.005     
+HE5       H402      C40       single    1.089     0.010     0.989     0.005     
+HE5       H403      C40       single    1.089     0.010     0.989     0.005     
+HE5       CBA       CAA       single    1.524     0.020     1.524     0.020     
+HE5       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+HE5       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+HE5       CAA       C2A       single    1.510     0.020     1.510     0.020     
+HE5       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+HE5       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+HE5       C2A       C1A       double    1.490     0.020     1.490     0.020     
+HE5       C2A       C3A       single    1.490     0.020     1.490     0.020     
+HE5       C1A       CHA       single    1.483     0.020     1.483     0.020     
+HE5       C1A       NA        single    1.337     0.020     1.337     0.020     
+HE5       CHA       C4D       double    1.483     0.020     1.483     0.020     
+HE5       HHA       CHA       single    1.082     0.013     0.975     0.010     
+HE5       C3A       C4A       double    1.490     0.020     1.490     0.020     
+HE5       CMA       C3A       single    1.506     0.020     1.506     0.020     
+HE5       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+HE5       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+HE5       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+HE5       C4A       NA        single    1.337     0.020     1.337     0.020     
+HE5       C4A       CHB       single    1.483     0.020     1.483     0.020     
+HE5       NA        ZN        single    2.150     0.020     2.150     0.020     
+HE5       CHB       C1B       double    1.340     0.020     1.340     0.020     
+HE5       HHB       CHB       single    1.082     0.013     0.975     0.010     
+HE5       C1B       NB        single    1.330     0.020     1.330     0.020     
+HE5       C1B       C2B       single    1.510     0.020     1.510     0.020     
+HE5       C2B       C3B       single    1.524     0.020     1.524     0.020     
+HE5       H2B1      C2B       single    1.089     0.010     0.989     0.005     
+HE5       H2B2      C2B       single    1.089     0.010     0.989     0.005     
+HE5       C3B       C4B       single    1.500     0.020     1.500     0.020     
+HE5       CAB       C3B       single    1.524     0.020     1.524     0.020     
+HE5       H3B       C3B       single    1.089     0.010     0.989     0.005     
+HE5       HAB1      CAB       single    1.089     0.010     0.989     0.005     
+HE5       HAB2      CAB       single    1.089     0.010     0.989     0.005     
+HE5       HAB3      CAB       single    1.089     0.010     0.989     0.005     
+HE5       NB        ZN        single    2.070     0.020     2.070     0.020     
+HE5       NB        C4B       single    1.330     0.020     1.330     0.020     
+HE5       ZN        ND        single    2.150     0.020     2.150     0.020     
+HE5       ZN        NC        single    2.150     0.020     2.150     0.020     
+HE5       ND        C1D       single    1.337     0.020     1.337     0.020     
+HE5       ND        C4D       single    1.337     0.020     1.337     0.020     
+HE5       C4D       C3D       single    1.490     0.020     1.490     0.020     
+HE5       C4B       CHC       double    1.340     0.020     1.340     0.020     
+HE5       CHC       C1C       single    1.483     0.020     1.483     0.020     
+HE5       HHC       CHC       single    1.082     0.013     0.975     0.010     
+HE5       C1C       C2C       double    1.387     0.020     1.387     0.020     
+HE5       C1C       NC        single    1.337     0.020     1.337     0.020     
+HE5       C2C       C3C       single    1.387     0.020     1.387     0.020     
+HE5       H2C       C2C       single    1.082     0.013     0.975     0.010     
+HE5       CAC       C3C       single    1.506     0.020     1.506     0.020     
+HE5       C3C       C4C       double    1.490     0.020     1.490     0.020     
+HE5       HAC1      CAC       single    1.089     0.010     0.989     0.005     
+HE5       HAC2      CAC       single    1.089     0.010     0.989     0.005     
+HE5       HAC3      CAC       single    1.089     0.010     0.989     0.005     
+HE5       NC        C4C       single    1.337     0.020     1.337     0.020     
+HE5       C4C       CHD       single    1.483     0.020     1.483     0.020     
+HE5       CHD       C1D       double    1.483     0.020     1.483     0.020     
+HE5       HHD       CHD       single    1.082     0.013     0.975     0.010     
+HE5       C1D       C2D       single    1.490     0.020     1.490     0.020     
+HE5       CMD       C2D       single    1.506     0.020     1.506     0.020     
+HE5       C2D       C3D       double    1.490     0.020     1.490     0.020     
+HE5       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+HE5       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+HE5       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+HE5       C3D       CAD       single    1.510     0.020     1.510     0.020     
+HE5       CAD       CBD       single    1.524     0.020     1.524     0.020     
+HE5       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+HE5       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+HE5       CBD       CGD       single    1.510     0.020     1.510     0.020     
+HE5       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+HE5       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+HE5       CGD       O1D       deloc     1.220     0.020     1.220     0.020     
+HE5       O2D       CGD       deloc     1.454     0.020     1.454     0.020     
+HE5       C41       O2D       single    1.426     0.020     1.426     0.020     
+HE5       H411      C41       single    1.089     0.010     0.989     0.005     
+HE5       H412      C41       single    1.089     0.010     0.989     0.005     
+HE5       H413      C41       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HE5      O1D    CGD    O2D     119.000    3.000
+ HE5      O1D    CGD    CBD     120.500    3.000
+ HE5      O2D    CGD    CBD     120.000    3.000
+ HE5      CGD    O2D    C41     120.000    3.000
+ HE5      O2D    C41    H413    109.470    3.000
+ HE5      O2D    C41    H412    109.470    3.000
+ HE5      O2D    C41    H411    109.470    3.000
+ HE5      H413   C41    H412    109.470    3.000
+ HE5      H413   C41    H411    109.470    3.000
+ HE5      H412   C41    H411    109.470    3.000
+ HE5      CGD    CBD    HBD1    109.470    3.000
+ HE5      CGD    CBD    HBD2    109.470    3.000
+ HE5      CGD    CBD    CAD     109.470    3.000
+ HE5      HBD1   CBD    HBD2    107.900    3.000
+ HE5      HBD1   CBD    CAD     109.470    3.000
+ HE5      HBD2   CBD    CAD     109.470    3.000
+ HE5      CBD    CAD    HAD1    109.470    3.000
+ HE5      CBD    CAD    HAD2    109.470    3.000
+ HE5      CBD    CAD    C3D     109.470    3.000
+ HE5      HAD1   CAD    HAD2    107.900    3.000
+ HE5      HAD1   CAD    C3D     109.470    3.000
+ HE5      HAD2   CAD    C3D     109.470    3.000
+ HE5      CAD    C3D    C4D     126.000    3.000
+ HE5      CAD    C3D    C2D     126.000    3.000
+ HE5      C4D    C3D    C2D     108.000    3.000
+ HE5      C3D    C4D    CHA     117.000    3.000
+ HE5      C3D    C4D    ND      108.000    3.000
+ HE5      CHA    C4D    ND      108.000    3.000
+ HE5      C4D    CHA    HHA     120.000    3.000
+ HE5      C4D    CHA    C1A     120.000    3.000
+ HE5      HHA    CHA    C1A     120.000    3.000
+ HE5      C3D    C2D    CMD     126.000    3.000
+ HE5      C3D    C2D    C1D     108.000    3.000
+ HE5      CMD    C2D    C1D     126.000    3.000
+ HE5      C2D    CMD    HMD3    109.470    3.000
+ HE5      C2D    CMD    HMD2    109.470    3.000
+ HE5      C2D    CMD    HMD1    109.470    3.000
+ HE5      HMD3   CMD    HMD2    109.470    3.000
+ HE5      HMD3   CMD    HMD1    109.470    3.000
+ HE5      HMD2   CMD    HMD1    109.470    3.000
+ HE5      C2D    C1D    ND      108.000    3.000
+ HE5      C2D    C1D    CHD     117.000    3.000
+ HE5      ND     C1D    CHD     108.000    3.000
+ HE5      C1D    ND     ZN      108.000    3.000
+ HE5      C1D    ND     C4D     108.000    3.000
+ HE5      ZN     ND     C4D     108.000    3.000
+ HE5      C1D    CHD    HHD     120.000    3.000
+ HE5      C1D    CHD    C4C     120.000    3.000
+ HE5      HHD    CHD    C4C     120.000    3.000
+ HE5      CHD    C4C    C3C     117.000    3.000
+ HE5      CHD    C4C    NC      108.000    3.000
+ HE5      C3C    C4C    NC      108.000    3.000
+ HE5      C4C    C3C    CAC     126.000    3.000
+ HE5      C4C    C3C    C2C     108.000    3.000
+ HE5      CAC    C3C    C2C     108.000    3.000
+ HE5      C3C    CAC    HAC3    109.470    3.000
+ HE5      C3C    CAC    HAC2    109.470    3.000
+ HE5      C3C    CAC    HAC1    109.470    3.000
+ HE5      HAC3   CAC    HAC2    109.470    3.000
+ HE5      HAC3   CAC    HAC1    109.470    3.000
+ HE5      HAC2   CAC    HAC1    109.470    3.000
+ HE5      C3C    C2C    H2C     126.000    3.000
+ HE5      C3C    C2C    C1C     108.000    3.000
+ HE5      H2C    C2C    C1C     126.000    3.000
+ HE5      C4C    NC     ZN      108.000    3.000
+ HE5      C4C    NC     C1C     108.000    3.000
+ HE5      ZN     NC     C1C     108.000    3.000
+ HE5      NC     ZN     NA      180.000    3.000
+ HE5      NC     ZN     NB       90.000    3.000
+ HE5      NC     ZN     ND       90.000    3.000
+ HE5      NB     ZN     ND      180.000    3.000
+ HE5      NA     ZN     NB       90.000    3.000
+ HE5      NA     ZN     ND       90.000    3.000
+ HE5      ZN     NA     C1A     108.000    3.000
+ HE5      ZN     NA     C4A     108.000    3.000
+ HE5      C1A    NA     C4A     108.000    3.000
+ HE5      NA     C1A    C2A     108.000    3.000
+ HE5      NA     C1A    CHA     108.000    3.000
+ HE5      C2A    C1A    CHA     117.000    3.000
+ HE5      NC     C1C    CHC     108.000    3.000
+ HE5      NC     C1C    C2C     108.000    3.000
+ HE5      CHC    C1C    C2C     108.000    3.000
+ HE5      C1C    CHC    HHC     120.000    3.000
+ HE5      C1C    CHC    C4B     120.000    3.000
+ HE5      HHC    CHC    C4B     120.000    3.000
+ HE5      CHC    C4B    C3B     120.000    3.000
+ HE5      CHC    C4B    NB      116.500    3.000
+ HE5      C3B    C4B    NB      116.500    3.000
+ HE5      C4B    C3B    H3B     108.810    3.000
+ HE5      C4B    C3B    CAB     109.470    3.000
+ HE5      C4B    C3B    C2B     109.470    3.000
+ HE5      H3B    C3B    CAB     108.340    3.000
+ HE5      H3B    C3B    C2B     108.340    3.000
+ HE5      CAB    C3B    C2B     111.000    3.000
+ HE5      C3B    CAB    HAB3    109.470    3.000
+ HE5      C3B    CAB    HAB2    109.470    3.000
+ HE5      C3B    CAB    HAB1    109.470    3.000
+ HE5      HAB3   CAB    HAB2    109.470    3.000
+ HE5      HAB3   CAB    HAB1    109.470    3.000
+ HE5      HAB2   CAB    HAB1    109.470    3.000
+ HE5      C3B    C2B    H2B2    109.470    3.000
+ HE5      C3B    C2B    H2B1    109.470    3.000
+ HE5      C3B    C2B    C1B     109.470    3.000
+ HE5      H2B2   C2B    H2B1    107.900    3.000
+ HE5      H2B2   C2B    C1B     109.470    3.000
+ HE5      H2B1   C2B    C1B     109.470    3.000
+ HE5      C4B    NB     C1B     120.000    3.000
+ HE5      C4B    NB     ZN      120.000    3.000
+ HE5      C1B    NB     ZN      120.000    3.000
+ HE5      NB     C1B    CHB     116.500    3.000
+ HE5      NB     C1B    C2B     116.500    3.000
+ HE5      CHB    C1B    C2B     120.000    3.000
+ HE5      C1B    CHB    HHB     120.000    3.000
+ HE5      C1B    CHB    C4A     120.000    3.000
+ HE5      HHB    CHB    C4A     120.000    3.000
+ HE5      CHB    C4A    C3A     117.000    3.000
+ HE5      CHB    C4A    NA      108.000    3.000
+ HE5      C3A    C4A    NA      108.000    3.000
+ HE5      C4A    C3A    CMA     126.000    3.000
+ HE5      C4A    C3A    C2A     108.000    3.000
+ HE5      CMA    C3A    C2A     126.000    3.000
+ HE5      C3A    CMA    HMA3    109.470    3.000
+ HE5      C3A    CMA    HMA2    109.470    3.000
+ HE5      C3A    CMA    HMA1    109.470    3.000
+ HE5      HMA3   CMA    HMA2    109.470    3.000
+ HE5      HMA3   CMA    HMA1    109.470    3.000
+ HE5      HMA2   CMA    HMA1    109.470    3.000
+ HE5      C3A    C2A    CAA     126.000    3.000
+ HE5      C3A    C2A    C1A     108.000    3.000
+ HE5      CAA    C2A    C1A     126.000    3.000
+ HE5      C2A    CAA    HAA1    109.470    3.000
+ HE5      C2A    CAA    HAA2    109.470    3.000
+ HE5      C2A    CAA    CBA     109.470    3.000
+ HE5      HAA1   CAA    HAA2    107.900    3.000
+ HE5      HAA1   CAA    CBA     109.470    3.000
+ HE5      HAA2   CAA    CBA     109.470    3.000
+ HE5      CAA    CBA    HBA1    109.470    3.000
+ HE5      CAA    CBA    HBA2    109.470    3.000
+ HE5      CAA    CBA    CGA     109.470    3.000
+ HE5      HBA1   CBA    HBA2    107.900    3.000
+ HE5      HBA1   CBA    CGA     109.470    3.000
+ HE5      HBA2   CBA    CGA     109.470    3.000
+ HE5      CBA    CGA    O1A     120.500    3.000
+ HE5      CBA    CGA    O2A     120.000    3.000
+ HE5      O1A    CGA    O2A     119.000    3.000
+ HE5      CGA    O2A    C40     120.000    3.000
+ HE5      O2A    C40    H403    109.470    3.000
+ HE5      O2A    C40    H402    109.470    3.000
+ HE5      O2A    C40    H401    109.470    3.000
+ HE5      H403   C40    H402    109.470    3.000
+ HE5      H403   C40    H401    109.470    3.000
+ HE5      H402   C40    H401    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HE5      var_1    O1D    CGD    O2D    C41       88.442   20.000   1
+ HE5      var_2    CGD    O2D    C41    H411      59.327   20.000   1
+ HE5      var_3    O1D    CGD    CBD    CAD       60.267   20.000   3
+ HE5      var_4    CGD    CBD    CAD    C3D      114.638   20.000   3
+ HE5      var_5    CBD    CAD    C3D    C2D     -102.554   20.000   2
+ HE5      CONST_1  CAD    C3D    C4D    CHA        0.000    0.000   0
+ HE5      var_6    C3D    C4D    CHA    C1A      180.000   20.000   1
+ HE5      CONST_2  CAD    C3D    C2D    C1D      180.000    0.000   0
+ HE5      var_7    C3D    C2D    CMD    HMD1      80.305   20.000   1
+ HE5      CONST_3  C3D    C2D    C1D    CHD      180.000    0.000   0
+ HE5      CONST_4  C2D    C1D    ND     ZN       180.000    0.000   0
+ HE5      CONST_5  C1D    ND     C4D    C3D        0.000    0.000   0
+ HE5      var_8    C2D    C1D    CHD    C4C      180.000   20.000   1
+ HE5      var_9    C1D    CHD    C4C    NC         0.000   20.000   1
+ HE5      CONST_6  CHD    C4C    C3C    C2C      180.000    0.000   0
+ HE5      var_10   C4C    C3C    CAC    HAC1      84.910   20.000   1
+ HE5      CONST_7  C4C    C3C    C2C    C1C        0.000    0.000   0
+ HE5      CONST_8  CHD    C4C    NC     C1C      180.000    0.000   0
+ HE5      var_11   C1C    NC     ZN     NB         0.000   20.000   1
+ HE5      var_12   C1D    ND     ZN     NC         0.000   20.000   1
+ HE5      var_13   C4A    NA     ZN     NB         0.000   20.000   1
+ HE5      CONST_9  ZN     NA     C1A    C2A      180.000    0.000   0
+ HE5      var_14   NA     C1A    CHA    C4D        0.000   20.000   1
+ HE5      CONST_10 C4C    NC     C1C    CHC      180.000    0.000   0
+ HE5      CONST_11 NC     C1C    C2C    C3C        0.000    0.000   0
+ HE5      var_15   NC     C1C    CHC    C4B        0.000   20.000   1
+ HE5      var_16   C1C    CHC    C4B    NB         0.000   20.000   1
+ HE5      var_17   CHC    C4B    C3B    C2B      180.000   20.000   3
+ HE5      var_18   C4B    C3B    CAB    HAB1     145.105   20.000   3
+ HE5      var_19   C4B    C3B    C2B    C1B        0.000   20.000   3
+ HE5      CONST_12 CHC    C4B    NB     C1B      180.000    0.000   0
+ HE5      var_20   C4B    NB     ZN     NC         0.000   20.000   1
+ HE5      CONST_13 C4B    NB     C1B    CHB      180.000    0.000   0
+ HE5      var_21   NB     C1B    C2B    C3B        0.000   20.000   3
+ HE5      var_22   NB     C1B    CHB    C4A        0.000   20.000   1
+ HE5      var_23   C1B    CHB    C4A    C3A      180.000   20.000   1
+ HE5      CONST_14 CHB    C4A    NA     ZN         0.000    0.000   0
+ HE5      CONST_15 CHB    C4A    C3A    C2A      180.000    0.000   0
+ HE5      var_24   C4A    C3A    CMA    HMA1     -78.801   20.000   1
+ HE5      CONST_16 C4A    C3A    C2A    CAA      180.000    0.000   0
+ HE5      CONST_17 C3A    C2A    C1A    NA         0.000    0.000   0
+ HE5      var_25   C3A    C2A    CAA    CBA      -41.784   20.000   2
+ HE5      var_26   C2A    CAA    CBA    CGA      -53.620   20.000   3
+ HE5      var_27   CAA    CBA    CGA    O2A      137.770   20.000   3
+ HE5      var_28   CBA    CGA    O2A    C40       74.850   20.000   1
+ HE5      var_29   CGA    O2A    C40    H401      68.528   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HE5      chir_01  C3B    C2B    CAB    C4B       positiv
+ HE5      chir_02  ZN     NC     NA     NB        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HE5      plan-1    CGA       0.020
+ HE5      plan-1    O1A       0.020
+ HE5      plan-1    O2A       0.020
+ HE5      plan-1    CBA       0.020
+ HE5      plan-2    C2A       0.020
+ HE5      plan-2    CAA       0.020
+ HE5      plan-2    C1A       0.020
+ HE5      plan-2    C3A       0.020
+ HE5      plan-2    C4A       0.020
+ HE5      plan-2    NA        0.020
+ HE5      plan-2    CHA       0.020
+ HE5      plan-2    CMA       0.020
+ HE5      plan-2    CHB       0.020
+ HE5      plan-2    ZN        0.020
+ HE5      plan-2    HHA       0.020
+ HE5      plan-2    HHB       0.020
+ HE5      plan-3    CHA       0.020
+ HE5      plan-3    C1A       0.020
+ HE5      plan-3    C4D       0.020
+ HE5      plan-3    HHA       0.020
+ HE5      plan-4    CHB       0.020
+ HE5      plan-4    C4A       0.020
+ HE5      plan-4    C1B       0.020
+ HE5      plan-4    HHB       0.020
+ HE5      plan-5    C1B       0.020
+ HE5      plan-5    CHB       0.020
+ HE5      plan-5    C2B       0.020
+ HE5      plan-5    NB        0.020
+ HE5      plan-5    HHB       0.020
+ HE5      plan-6    NB        0.020
+ HE5      plan-6    C1B       0.020
+ HE5      plan-6    ZN        0.020
+ HE5      plan-6    C4B       0.020
+ HE5      plan-7    ND        0.020
+ HE5      plan-7    ZN        0.020
+ HE5      plan-7    C4D       0.020
+ HE5      plan-7    C1D       0.020
+ HE5      plan-7    C2D       0.020
+ HE5      plan-7    C3D       0.020
+ HE5      plan-7    CHA       0.020
+ HE5      plan-7    CHD       0.020
+ HE5      plan-7    CMD       0.020
+ HE5      plan-7    CAD       0.020
+ HE5      plan-7    HHA       0.020
+ HE5      plan-7    HHD       0.020
+ HE5      plan-8    C4B       0.020
+ HE5      plan-8    C3B       0.020
+ HE5      plan-8    NB        0.020
+ HE5      plan-8    CHC       0.020
+ HE5      plan-8    HHC       0.020
+ HE5      plan-9    CHC       0.020
+ HE5      plan-9    C4B       0.020
+ HE5      plan-9    C1C       0.020
+ HE5      plan-9    HHC       0.020
+ HE5      plan-10   C1C       0.020
+ HE5      plan-10   CHC       0.020
+ HE5      plan-10   C2C       0.020
+ HE5      plan-10   NC        0.020
+ HE5      plan-10   C3C       0.020
+ HE5      plan-10   C4C       0.020
+ HE5      plan-10   H2C       0.020
+ HE5      plan-10   CAC       0.020
+ HE5      plan-10   ZN        0.020
+ HE5      plan-10   CHD       0.020
+ HE5      plan-10   HHC       0.020
+ HE5      plan-10   HHD       0.020
+ HE5      plan-11   CHD       0.020
+ HE5      plan-11   C4C       0.020
+ HE5      plan-11   C1D       0.020
+ HE5      plan-11   HHD       0.020
+ HE5      plan-12   CGD       0.020
+ HE5      plan-12   CBD       0.020
+ HE5      plan-12   O1D       0.020
+ HE5      plan-12   O2D       0.020
+# ------------------------------------------------------

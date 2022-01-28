@@ -1,0 +1,256 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+APM     APM     M-AMIDINOPHENYL-3-ALANINE  peptide   28     15     .     
+#
+data_comp_APM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+APM     N       N       NT3     1       -4.017      -0.603      0.526       
+APM     CA      C       CH1     0       -2.672      -0.447      -0.089      
+APM     C       C       C       0       -2.598      0.901       -0.818      
+APM     O       O       O       0       -2.843      1.925       -0.150      
+APM     CB      C       CH2     0       -1.579      -0.569      0.977       
+APM     CG      C       CR6     0       -0.173      -0.642      0.436       
+APM     CD1     C       CR16    0       0.718       0.415       0.614       
+APM     CD2     C       CR16    0       0.264       -1.767      -0.254      
+APM     CE1     C       CR6     0       2.029       0.354       0.112       
+APM     CE2     C       CR16    0       1.556       -1.840      -0.755      
+APM     CZ      C       CR16    0       2.436       -0.786      -0.575      
+APM     CF      C       C       0       2.960       1.495       0.315       
+APM     NG1     N       NH1     0       2.696       2.689       -0.104      
+APM     NG2     N       NH2     0       4.119       1.249       0.964       
+APM     OXT     O       OC      -1      -2.298      0.879       -2.028      
+APM     H       H       H       0       -4.659      -0.559      -0.120      
+APM     H2      H       H       0       -4.157      0.061       1.134       
+APM     H3      H       H       0       -4.072      -1.410      0.946       
+APM     HA      H       H       0       -2.545      -1.169      -0.756      
+APM     HB2     H       H       0       -1.754      -1.376      1.505       
+APM     HB3     H       H       0       -1.650      0.200       1.580       
+APM     HD1     H       H       0       0.432       1.184       1.080       
+APM     HD2     H       H       0       -0.328      -2.491      -0.383      
+APM     HE2     H       H       0       1.837       -2.613      -1.222      
+APM     HZ      H       H       0       3.311       -0.843      -0.917      
+APM     HG1     H       H       0       1.976       2.790       -0.492      
+APM     HG21    H       H       0       4.299       0.433       1.262       
+APM     HG22    H       H       0       4.702       1.906       1.092       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ APM      N      n/a    CA     START
+ APM      H      N      .      .
+ APM      H2     N      .      .
+ APM      H3     N      .      .
+ APM      CA     N      C      .
+ APM      HA     CA     .      .
+ APM      CB     CA     CG     .
+ APM      HB2    CB     .      .
+ APM      HB3    CB     .      .
+ APM      CG     CB     CD2    .
+ APM      CD2    CG     CE2    .
+ APM      HD2    CD2    .      .
+ APM      CE2    CD2    CZ     .
+ APM      HE2    CE2    .      .
+ APM      CZ     CE2    CE1    .
+ APM      HZ     CZ     .      .
+ APM      CE1    CZ     CF     .
+ APM      CD1    CE1    HD1    .
+ APM      HD1    CD1    .      .
+ APM      CF     CE1    NG1    .
+ APM      NG2    CF     HG21   .
+ APM      HG22   NG2    .      .
+ APM      HG21   NG2    .      .
+ APM      NG1    CF     HG1    .
+ APM      HG1    NG1    .      .
+ APM      C      CA     .      END
+ APM      O      C      .      .
+ APM      OXT    C      .      .
+ APM      CG     CD1    .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+APM       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+APM       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+APM       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+APM       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+APM       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+APM       CB        CG        SINGLE    n         1.508     0.010     1.508     0.010     
+APM       CG        CD1       DOUBLE    y         1.388     0.011     1.388     0.011     
+APM       CG        CD2       SINGLE    y         1.385     0.011     1.385     0.011     
+APM       CD1       CE1       SINGLE    y         1.400     0.013     1.400     0.013     
+APM       CD2       CE2       DOUBLE    y         1.383     0.011     1.383     0.011     
+APM       CE1       CZ        DOUBLE    y         1.390     0.010     1.390     0.010     
+APM       CE1       CF        SINGLE    n         1.484     0.011     1.484     0.011     
+APM       CE2       CZ        SINGLE    y         1.382     0.010     1.382     0.010     
+APM       CF        NG1       DOUBLE    n         1.287     0.020     1.287     0.020     
+APM       CF        NG2       SINGLE    n         1.347     0.016     1.347     0.016     
+APM       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+APM       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+APM       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+APM       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+APM       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+APM       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+APM       CD1       HD1       SINGLE    n         1.082     0.013     0.944     0.015     
+APM       CD2       HD2       SINGLE    n         1.082     0.013     0.944     0.017     
+APM       CE2       HE2       SINGLE    n         1.082     0.013     0.945     0.018     
+APM       CZ        HZ        SINGLE    n         1.082     0.013     0.941     0.017     
+APM       NG1       HG1       SINGLE    n         1.016     0.010     0.823     0.020     
+APM       NG2       HG21      SINGLE    n         1.016     0.010     0.887     0.020     
+APM       NG2       HG22      SINGLE    n         1.016     0.010     0.887     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+APM          CA           N           H     109.646    1.54
+APM          CA           N          H2     109.646    1.54
+APM          CA           N          H3     109.646    1.54
+APM           H           N          H2     109.028    2.41
+APM           H           N          H3     109.028    2.41
+APM          H2           N          H3     109.028    2.41
+APM           N          CA           C     109.448    1.50
+APM           N          CA          CB     110.494    1.50
+APM           N          CA          HA     108.601    1.50
+APM           C          CA          CB     111.331    2.53
+APM           C          CA          HA     108.450    1.50
+APM          CB          CA          HA     108.690    1.50
+APM          CA           C           O     117.228    2.13
+APM          CA           C         OXT     117.228    2.13
+APM           O           C         OXT     125.543    1.50
+APM          CA          CB          CG     114.745    1.55
+APM          CA          CB         HB2     108.434    1.50
+APM          CA          CB         HB3     108.434    1.50
+APM          CG          CB         HB2     108.862    1.50
+APM          CG          CB         HB3     108.862    1.50
+APM         HB2          CB         HB3     107.782    1.50
+APM          CB          CG         CD1     120.821    1.50
+APM          CB          CG         CD2     120.970    1.50
+APM         CD1          CG         CD2     118.199    1.50
+APM          CG         CD1         CE1     121.233    1.50
+APM          CG         CD1         HD1     119.087    1.50
+APM         CE1         CD1         HD1     119.680    1.50
+APM          CG         CD2         CE2     120.648    1.50
+APM          CG         CD2         HD2     119.579    1.50
+APM         CE2         CD2         HD2     119.774    1.50
+APM         CD1         CE1          CZ     119.277    1.50
+APM         CD1         CE1          CF     120.052    1.66
+APM          CZ         CE1          CF     120.671    1.50
+APM         CD2         CE2          CZ     120.250    1.50
+APM         CD2         CE2         HE2     119.875    1.50
+APM          CZ         CE2         HE2     119.875    1.50
+APM         CE1          CZ         CE2     120.394    1.50
+APM         CE1          CZ          HZ     119.906    1.50
+APM         CE2          CZ          HZ     119.700    1.50
+APM         CE1          CF         NG1     121.847    3.00
+APM         CE1          CF         NG2     117.501    1.50
+APM         NG1          CF         NG2     120.652    2.66
+APM          CF         NG1         HG1     114.748    3.00
+APM          CF         NG2        HG21     119.893    1.50
+APM          CF         NG2        HG22     119.893    1.50
+APM        HG21         NG2        HG22     120.214    2.70
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+APM             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+APM             sp2_sp2_6         NG2          CF         NG1         HG1       0.000   10.00     2
+APM             sp2_sp2_9         NG1          CF         NG2        HG21       0.000   10.00     2
+APM             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+APM            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+APM             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+APM       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+APM              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+APM       const_sp2_sp2_6          CG         CD1         CE1          CF     180.000   10.00     2
+APM              const_17          CG         CD2         CE2          CZ       0.000   10.00     2
+APM              const_11          CF         CE1          CZ         CE2     180.000   10.00     2
+APM             sp2_sp2_2         CD1         CE1          CF         NG1       0.000   10.00     2
+APM              const_13         CD2         CE2          CZ         CE1       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+APM    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+APM    plan-1          CB   0.020
+APM    plan-1         CD1   0.020
+APM    plan-1         CD2   0.020
+APM    plan-1         CE1   0.020
+APM    plan-1         CE2   0.020
+APM    plan-1          CF   0.020
+APM    plan-1          CG   0.020
+APM    plan-1          CZ   0.020
+APM    plan-1         HD1   0.020
+APM    plan-1         HD2   0.020
+APM    plan-1         HE2   0.020
+APM    plan-1          HZ   0.020
+APM    plan-2           C   0.020
+APM    plan-2          CA   0.020
+APM    plan-2           O   0.020
+APM    plan-2         OXT   0.020
+APM    plan-3         CE1   0.020
+APM    plan-3          CF   0.020
+APM    plan-3         NG1   0.020
+APM    plan-3         NG2   0.020
+APM    plan-4          CF   0.020
+APM    plan-4        HG21   0.020
+APM    plan-4        HG22   0.020
+APM    plan-4         NG2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+APM SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc1cc(ccc1)C(=[N@H])N"
+APM SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1cccc(c1)C(N)=N)C(O)=O"
+APM SMILES           CACTVS               3.341 "N[CH](Cc1cccc(c1)C(N)=N)C(O)=O"
+APM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(cc(c1)C(=N)N)C[C@@H](C(=O)O)N"
+APM SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(cc(c1)C(=N)N)CC(C(=O)O)N"
+APM InChI            InChI                1.03  "InChI=1S/C10H13N3O2/c11-8(10(14)15)5-6-2-1-3-7(4-6)9(12)13/h1-4,8H,5,11H2,(H3,12,13)(H,14,15)/t8-/m0/s1"
+APM InChIKey         InChI                1.03  NIOKQPJRXDRREF-QMMMGPOBSA-N
+APM ?                acedrg               196         "dictionary generator"                  
+APM ?                acedrg_database      11          "data source"                           
+APM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+APM ?                refmac5              5.8.0222    "optimization tool"                     

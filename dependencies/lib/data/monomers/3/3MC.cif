@@ -1,0 +1,169 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3MC     3MC      3-METHYLCYTOSINE     NON-POLYMER     17     9     .     
+#
+data_comp_3MC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3MC     N3      N       NR6     1       16.878      14.596      21.809      
+3MC     CN3     C       CH3     0       16.332      15.463      22.895      
+3MC     N1      N       NR6     0       18.050      14.444      19.739      
+3MC     C2      C       CR6     0       17.487      15.234      20.709      
+3MC     O2      O       O       0       17.517      16.462      20.614      
+3MC     C4      C       CR6     0       16.803      13.181      21.840      
+3MC     N4      N       NH2     0       16.177      12.553      22.842      
+3MC     C5      C       CR16    0       17.400      12.441      20.793      
+3MC     C6      C       CR16    0       17.985      13.100      19.774      
+3MC     H31     H       H       0       15.971      14.928      23.617      
+3MC     H32     H       H       0       15.629      16.025      22.532      
+3MC     H33     H       H       0       17.043      16.025      23.243      
+3MC     HN1     H       H       0       18.468      14.843      19.071      
+3MC     HN41    H       H       0       16.621      12.006      23.357      
+3MC     HN42    H       H       0       15.328      12.693      22.979      
+3MC     H5      H       H       0       17.382      11.487      20.815      
+3MC     H6      H       H       0       18.359      12.610      19.069      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3MC       N3        CN3       SINGLE    n         1.475     0.015     1.475     0.015     
+3MC       N3        C2        SINGLE    n         1.392     0.013     1.392     0.013     
+3MC       N3        C4        DOUBLE    n         1.364     0.020     1.364     0.020     
+3MC       N1        C2        SINGLE    n         1.364     0.012     1.364     0.012     
+3MC       N1        C6        SINGLE    n         1.339     0.011     1.339     0.011     
+3MC       C2        O2        DOUBLE    n         1.226     0.015     1.226     0.015     
+3MC       C4        N4        SINGLE    n         1.332     0.018     1.332     0.018     
+3MC       C4        C5        SINGLE    n         1.401     0.015     1.401     0.015     
+3MC       C5        C6        DOUBLE    n         1.342     0.010     1.342     0.010     
+3MC       CN3       H31       SINGLE    n         1.089     0.010     0.971     0.015     
+3MC       CN3       H32       SINGLE    n         1.089     0.010     0.971     0.015     
+3MC       CN3       H33       SINGLE    n         1.089     0.010     0.971     0.015     
+3MC       N1        HN1       SINGLE    n         1.016     0.010     0.882     0.020     
+3MC       N4        HN41      SINGLE    n         1.016     0.010     0.872     0.020     
+3MC       N4        HN42      SINGLE    n         1.016     0.010     0.872     0.020     
+3MC       C5        H5        SINGLE    n         1.082     0.013     0.954     0.020     
+3MC       C6        H6        SINGLE    n         1.082     0.013     0.937     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3MC         CN3          N3          C2     118.115    1.50
+3MC         CN3          N3          C4     121.369    1.50
+3MC          C2          N3          C4     120.515    1.50
+3MC          N3         CN3         H31     109.481    1.50
+3MC          N3         CN3         H32     109.481    1.50
+3MC          N3         CN3         H33     109.481    1.50
+3MC         H31         CN3         H32     109.428    1.50
+3MC         H31         CN3         H33     109.428    1.50
+3MC         H32         CN3         H33     109.428    1.50
+3MC          C2          N1          C6     122.183    1.50
+3MC          C2          N1         HN1     117.962    1.92
+3MC          C6          N1         HN1     119.855    1.57
+3MC          N3          C2          N1     118.151    1.50
+3MC          N3          C2          O2     120.520    1.50
+3MC          N1          C2          O2     121.329    1.50
+3MC          N3          C4          N4     118.924    1.50
+3MC          N3          C4          C5     119.053    1.50
+3MC          N4          C4          C5     122.023    1.50
+3MC          C4          N4        HN41     119.914    1.50
+3MC          C4          N4        HN42     119.914    1.50
+3MC        HN41          N4        HN42     120.171    2.52
+3MC          C4          C5          C6     118.609    1.50
+3MC          C4          C5          H5     120.133    1.50
+3MC          C6          C5          H5     121.258    1.50
+3MC          N1          C6          C5     121.489    1.50
+3MC          N1          C6          H6     119.152    1.50
+3MC          C5          C6          H6     119.359    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3MC             sp2_sp3_1          C2          N3         CN3         H31     150.000   10.00     6
+3MC             sp2_sp2_4          O2          C2          N3         CN3       0.000   10.00     2
+3MC            sp2_sp2_24          N4          C4          N3         CN3       0.000   10.00     2
+3MC             sp2_sp2_7          O2          C2          N1          C6     180.000   10.00     2
+3MC             sp2_sp2_9          C5          C6          N1          C2       0.000   10.00     2
+3MC            sp2_sp2_25          N3          C4          N4        HN41     180.000   10.00     2
+3MC            sp2_sp2_19          N4          C4          C5          C6     180.000   10.00     2
+3MC            sp2_sp2_13          C4          C5          C6          N1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3MC    plan-1          C2   0.020
+3MC    plan-1          C4   0.020
+3MC    plan-1         CN3   0.020
+3MC    plan-1          N3   0.020
+3MC    plan-2          C2   0.020
+3MC    plan-2          C6   0.020
+3MC    plan-2         HN1   0.020
+3MC    plan-2          N1   0.020
+3MC    plan-3          C2   0.020
+3MC    plan-3          N1   0.020
+3MC    plan-3          N3   0.020
+3MC    plan-3          O2   0.020
+3MC    plan-4          C4   0.020
+3MC    plan-4          C5   0.020
+3MC    plan-4          N3   0.020
+3MC    plan-4          N4   0.020
+3MC    plan-5          C4   0.020
+3MC    plan-5        HN41   0.020
+3MC    plan-5        HN42   0.020
+3MC    plan-5          N4   0.020
+3MC    plan-6          C4   0.020
+3MC    plan-6          C5   0.020
+3MC    plan-6          C6   0.020
+3MC    plan-6          H5   0.020
+3MC    plan-7          C5   0.020
+3MC    plan-7          C6   0.020
+3MC    plan-7          H6   0.020
+3MC    plan-7          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3MC SMILES           ACDLabs              10.04 "O=C1[N+](=C(N)C=CN1)C"
+3MC SMILES_CANONICAL CACTVS               3.341 "C[N+]1=C(N)C=CNC1=O"
+3MC SMILES           CACTVS               3.341 "C[N+]1=C(N)C=CNC1=O"
+3MC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[N+]1=C(C=CNC1=O)N"
+3MC SMILES           "OpenEye OEToolkits" 1.5.0 "C[N+]1=C(C=CNC1=O)N"
+3MC InChI            InChI                1.03  "InChI=1S/C5H7N3O/c1-8-4(6)2-3-7-5(8)9/h2-3H,1H3,(H2,6,7,9)/p+1"
+3MC InChIKey         InChI                1.03  UPHQQDZIRIHPHU-UHFFFAOYSA-O
+3MC ?                acedrg               202         "dictionary generator"                  
+3MC ?                acedrg_database      11          "data source"                           
+3MC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3MC ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,137 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ESD     ESD      "(2-AMINO-ETHYLSULFANYL)-ACETIC ACID"     NON-POLYMER     16     8     .     
+#
+data_comp_ESD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ESD     N       N       NT2     0       1.547       -1.367      0.819       
+ESD     CG      C       CH2     0       1.902       0.310       -0.965      
+ESD     SB      S       S2      0       1.462       1.952       -1.595      
+ESD     CD      C       CH2     0       1.081       -0.109      0.234       
+ESD     CA      C       CH2     0       2.582       2.113       -3.015      
+ESD     C       C       C       0       2.410       3.430       -3.752      
+ESD     O       O       O       0       2.614       4.475       -3.103      
+ESD     OXT     O       OC      -1      2.077       3.375       -4.953      
+ESD     H       H       H       0       0.973       -1.645      1.437       
+ESD     HN2     H       H       0       1.586       -1.996      0.193       
+ESD     HG1     H       H       0       2.853       0.308       -0.716      
+ESD     HG2     H       H       0       1.777       -0.351      -1.682      
+ESD     HD2     H       H       0       1.126       0.596       0.914       
+ESD     HD1     H       H       0       0.145       -0.209      -0.038      
+ESD     HA2     H       H       0       2.415       1.380       -3.635      
+ESD     HA1     H       H       0       3.502       2.046       -2.701      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ESD       N         CD        SINGLE    n         1.464     0.020     1.464     0.020     
+ESD       CG        SB        SINGLE    n         1.813     0.012     1.813     0.012     
+ESD       CG        CD        SINGLE    n         1.512     0.016     1.512     0.016     
+ESD       SB        CA        SINGLE    n         1.816     0.013     1.816     0.013     
+ESD       CA        C         SINGLE    n         1.519     0.010     1.519     0.010     
+ESD       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+ESD       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+ESD       N         H         SINGLE    n         1.036     0.016     0.888     0.020     
+ESD       N         HN2       SINGLE    n         1.036     0.016     0.888     0.020     
+ESD       CG        HG1       SINGLE    n         1.089     0.010     0.983     0.012     
+ESD       CG        HG2       SINGLE    n         1.089     0.010     0.983     0.012     
+ESD       CD        HD2       SINGLE    n         1.089     0.010     0.980     0.015     
+ESD       CD        HD1       SINGLE    n         1.089     0.010     0.980     0.015     
+ESD       CA        HA2       SINGLE    n         1.089     0.010     0.974     0.020     
+ESD       CA        HA1       SINGLE    n         1.089     0.010     0.974     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ESD          CD           N           H     109.962    3.00
+ESD          CD           N         HN2     109.962    3.00
+ESD           H           N         HN2     107.243    3.00
+ESD          SB          CG          CD     113.178    2.37
+ESD          SB          CG         HG1     108.905    1.50
+ESD          SB          CG         HG2     108.905    1.50
+ESD          CD          CG         HG1     108.864    1.50
+ESD          CD          CG         HG2     108.864    1.50
+ESD         HG1          CG         HG2     107.807    1.50
+ESD          CG          SB          CA     101.660    1.50
+ESD           N          CD          CG     111.883    2.59
+ESD           N          CD         HD2     108.870    1.50
+ESD           N          CD         HD1     108.870    1.50
+ESD          CG          CD         HD2     108.883    1.50
+ESD          CG          CD         HD1     108.883    1.50
+ESD         HD2          CD         HD1     107.873    1.50
+ESD          SB          CA           C     111.968    3.00
+ESD          SB          CA         HA2     108.718    1.65
+ESD          SB          CA         HA1     108.718    1.65
+ESD           C          CA         HA2     108.575    1.82
+ESD           C          CA         HA1     108.575    1.82
+ESD         HA2          CA         HA1     108.166    1.80
+ESD          CA           C           O     117.212    2.93
+ESD          CA           C         OXT     117.212    2.93
+ESD           O           C         OXT     125.576    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ESD             sp3_sp3_1          CG          CD           N           H     180.000   10.00     3
+ESD             sp3_sp3_7          CD          CG          SB          CA     180.000   10.00     3
+ESD            sp3_sp3_10           N          CD          CG          SB     180.000   10.00     3
+ESD            sp3_sp3_19           C          CA          SB          CG     180.000   10.00     3
+ESD             sp2_sp3_2           O           C          CA          SB     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ESD    plan-1           C   0.020
+ESD    plan-1          CA   0.020
+ESD    plan-1           O   0.020
+ESD    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ESD SMILES           ACDLabs              10.04 "O=C(O)CSCCN"
+ESD SMILES_CANONICAL CACTVS               3.341 "NCCSCC(O)=O"
+ESD SMILES           CACTVS               3.341 "NCCSCC(O)=O"
+ESD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CSCC(=O)O)N"
+ESD SMILES           "OpenEye OEToolkits" 1.5.0 "C(CSCC(=O)O)N"
+ESD InChI            InChI                1.03  "InChI=1S/C4H9NO2S/c5-1-2-8-3-4(6)7/h1-3,5H2,(H,6,7)"
+ESD InChIKey         InChI                1.03  HMZKKJDOCRYTTH-UHFFFAOYSA-N
+ESD ?                acedrg               202         "dictionary generator"                  
+ESD ?                acedrg_database      11          "data source"                           
+ESD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ESD ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,131 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PLL      PLL 'Palladium(II) allyl complex         ' non-polymer         9   4 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PLL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PLL           H19A   H    H         0.000     -1.309    0.993    1.419
+ PLL           C19    C    CH2       0.000     -1.051    1.082    0.362
+ PLL           H19    H    H         0.000     -0.818    2.124    0.132
+ PLL           C21    C    CH1       0.000     -1.314    0.000   -0.688
+ PLL           H21    H    H         0.000     -1.750    0.000   -1.697
+ PLL           PD     PD   PD        0.000      0.452    0.000   -0.014
+ PLL           C20    C    CH2       0.000     -1.051   -1.082    0.362
+ PLL           H20A   H    H         0.000     -1.721   -0.936    1.212
+ PLL           H20    H    H         0.000     -1.229   -2.067   -0.076
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PLL      H19A   n/a    C19    START
+ PLL      C19    H19A   PD     .
+ PLL      H19    C19    .      .
+ PLL      C21    C19    H21    .
+ PLL      H21    C21    .      .
+ PLL      PD     C19    C20    .
+ PLL      C20    PD     H20    .
+ PLL      H20A   C20    .      .
+ PLL      H20    C20    .      END
+ PLL      C20    C21    .    ADD
+ PLL      C21    PD     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PLL       C20       C21       single    1.524     0.020     1.524     0.020     
+PLL       C21       C19       single    1.524     0.020     1.524     0.020     
+PLL       PD        C19       single    1.890     0.020     1.890     0.020     
+PLL       C20       PD        single    1.890     0.020     1.890     0.020     
+PLL       C21       PD        single    1.890     0.020     1.890     0.020     
+PLL       H20       C20       single    1.089     0.010     0.989     0.005     
+PLL       H20A      C20       single    1.089     0.010     0.989     0.005     
+PLL       H21       C21       single    1.089     0.010     0.989     0.005     
+PLL       H19       C19       single    1.089     0.010     0.989     0.005     
+PLL       C19       H19A      single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PLL      H19A   C19    H19     107.900    3.000
+ PLL      H19A   C19    C21     109.470    3.000
+ PLL      H19A   C19    PD      109.500    3.000
+ PLL      H19    C19    C21     109.470    3.000
+ PLL      H19    C19    PD      109.500    3.000
+ PLL      C21    C19    PD       66.241    3.000
+ PLL      C19    C21    H21     108.340    3.000
+ PLL      C19    C21    C20     109.470    3.000
+ PLL      C19    C21    PD       66.206    3.000
+ PLL      C20    C21    PD       66.206    3.000
+ PLL      H21    C21    C20     108.340    3.000
+ PLL      H21    C21    PD      109.500    3.000
+ PLL      C19    PD     C20      69.859    3.000
+ PLL      C19    PD     C21      47.554    3.000
+ PLL      C20    PD     C21      47.554    3.000
+ PLL      PD     C20    H20A    109.500    3.000
+ PLL      PD     C20    H20     109.500    3.000
+ PLL      PD     C20    C21      66.241    3.000
+ PLL      H20A   C20    H20     107.900    3.000
+ PLL      H20A   C20    C21     109.470    3.000
+ PLL      H20    C20    C21     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PLL      var_1    H19A   C19    C21    C20      -45.495   20.000   3
+ PLL      var_2    H19A   C19    PD     C20       58.468   20.000   1
+ PLL      var_3    C19    PD     C20    C21       50.659   20.000   1
+ PLL      var_4    PD     C20    C21    C19      -63.705   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PLL      chir_01  C21    C20    PD     C19       positiv
+# ------------------------------------------------------

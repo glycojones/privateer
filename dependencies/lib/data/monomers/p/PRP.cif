@@ -1,0 +1,238 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PRP      PRP 'ALPHA-PHOSPHORIBOSYLPYROPHOSPHORIC A' non-polymer        30  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PRP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PRP           O3B    O    OP       -0.666      0.000    0.000    0.000
+ PRP           PB     P    P         0.000      0.155    0.512   -1.415
+ PRP           O1B    O    OP       -0.666      0.611   -0.617   -2.314
+ PRP           O2B    O    OP       -0.666      1.182    1.623   -1.440
+ PRP           O3A    O    O2        0.000     -1.259    1.076   -1.940
+ PRP           PA     P    P         0.000     -2.298   -0.151   -1.887
+ PRP           O1A    O    OP       -0.500     -2.413   -0.643   -0.493
+ PRP           O2A    O    OP       -0.500     -1.813   -1.247   -2.760
+ PRP           O1     O    O2        0.000     -3.741    0.345   -2.400
+ PRP           C1     C    CH1       0.000     -4.615   -0.783   -2.331
+ PRP           H1     H    H         0.000     -4.045   -1.715   -2.444
+ PRP           O4     O    O2        0.000     -5.338   -0.785   -1.082
+ PRP           C4     C    CH1       0.000     -6.397    0.185   -1.250
+ PRP           H4     H    H         0.000     -6.003    1.204   -1.134
+ PRP           C3     C    CH1       0.000     -6.903   -0.034   -2.693
+ PRP           H3     H    H         0.000     -7.771   -0.709   -2.698
+ PRP           O3     O    OH1       0.000     -7.238    1.215   -3.301
+ PRP           HO3    H    H         0.000     -7.525    1.062   -4.212
+ PRP           C2     C    CH1       0.000     -5.707   -0.686   -3.419
+ PRP           H2     H    H         0.000     -5.977   -1.687   -3.783
+ PRP           O2     O    OH1       0.000     -5.268    0.139   -4.500
+ PRP           HO2    H    H         0.000     -4.520   -0.284   -4.943
+ PRP           C5     C    CH2       0.000     -7.517   -0.069   -0.240
+ PRP           H51    H    H         0.000     -7.908   -1.080   -0.376
+ PRP           H52    H    H         0.000     -8.320    0.654   -0.398
+ PRP           O5     O    O2        0.000     -7.004    0.070    1.085
+ PRP           P      P    P         0.000     -8.230   -0.208    2.092
+ PRP           O1P    O    OP       -0.666     -8.761   -1.607    1.864
+ PRP           O2P    O    OP       -0.666     -7.750   -0.077    3.521
+ PRP           O3P    O    OP       -0.666     -9.331    0.797    1.835
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PRP      O3B    n/a    PB     START
+ PRP      PB     O3B    O3A    .
+ PRP      O1B    PB     .      .
+ PRP      O2B    PB     .      .
+ PRP      O3A    PB     PA     .
+ PRP      PA     O3A    O1     .
+ PRP      O1A    PA     .      .
+ PRP      O2A    PA     .      .
+ PRP      O1     PA     C1     .
+ PRP      C1     O1     O4     .
+ PRP      H1     C1     .      .
+ PRP      O4     C1     C4     .
+ PRP      C4     O4     C5     .
+ PRP      H4     C4     .      .
+ PRP      C3     C4     C2     .
+ PRP      H3     C3     .      .
+ PRP      O3     C3     HO3    .
+ PRP      HO3    O3     .      .
+ PRP      C2     C3     O2     .
+ PRP      H2     C2     .      .
+ PRP      O2     C2     HO2    .
+ PRP      HO2    O2     .      .
+ PRP      C5     C4     O5     .
+ PRP      H51    C5     .      .
+ PRP      H52    C5     .      .
+ PRP      O5     C5     P      .
+ PRP      P      O5     O3P    .
+ PRP      O1P    P      .      .
+ PRP      O2P    P      .      .
+ PRP      O3P    P      .      END
+ PRP      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PRP       C1        C2        single    1.524     0.020     1.524     0.020     
+PRP       C1        O1        single    1.426     0.020     1.426     0.020     
+PRP       O4        C1        single    1.426     0.020     1.426     0.020     
+PRP       H1        C1        single    1.089     0.010     0.989     0.005     
+PRP       C2        C3        single    1.524     0.020     1.524     0.020     
+PRP       O2        C2        single    1.432     0.020     1.432     0.020     
+PRP       H2        C2        single    1.089     0.010     0.989     0.005     
+PRP       C3        C4        single    1.524     0.020     1.524     0.020     
+PRP       O3        C3        single    1.432     0.020     1.432     0.020     
+PRP       H3        C3        single    1.089     0.010     0.989     0.005     
+PRP       C5        C4        single    1.524     0.020     1.524     0.020     
+PRP       C4        O4        single    1.426     0.020     1.426     0.020     
+PRP       H4        C4        single    1.089     0.010     0.989     0.005     
+PRP       O5        C5        single    1.426     0.020     1.426     0.020     
+PRP       H51       C5        single    1.089     0.010     0.989     0.005     
+PRP       H52       C5        single    1.089     0.010     0.989     0.005     
+PRP       O1        PA        single    1.610     0.020     1.610     0.020     
+PRP       HO2       O2        single    0.970     0.012     0.839     0.014     
+PRP       HO3       O3        single    0.970     0.012     0.839     0.014     
+PRP       P         O5        single    1.610     0.020     1.610     0.020     
+PRP       O1P       P         deloc     1.510     0.020     1.510     0.020     
+PRP       O2P       P         deloc     1.510     0.020     1.510     0.020     
+PRP       O3P       P         deloc     1.510     0.020     1.510     0.020     
+PRP       O1A       PA        deloc     1.510     0.020     1.510     0.020     
+PRP       O2A       PA        deloc     1.510     0.020     1.510     0.020     
+PRP       PA        O3A       single    1.610     0.020     1.610     0.020     
+PRP       O3A       PB        single    1.610     0.020     1.610     0.020     
+PRP       O1B       PB        deloc     1.510     0.020     1.510     0.020     
+PRP       O2B       PB        deloc     1.510     0.020     1.510     0.020     
+PRP       PB        O3B       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PRP      O3B    PB     O1B     119.900    3.000
+ PRP      O3B    PB     O2B     119.900    3.000
+ PRP      O3B    PB     O3A     108.200    3.000
+ PRP      O1B    PB     O2B     119.900    3.000
+ PRP      O1B    PB     O3A     108.200    3.000
+ PRP      O2B    PB     O3A     108.200    3.000
+ PRP      PB     O3A    PA      120.500    3.000
+ PRP      O3A    PA     O1A     108.200    3.000
+ PRP      O3A    PA     O2A     108.200    3.000
+ PRP      O3A    PA     O1      102.600    3.000
+ PRP      O1A    PA     O2A     119.900    3.000
+ PRP      O1A    PA     O1      108.200    3.000
+ PRP      O2A    PA     O1      108.200    3.000
+ PRP      PA     O1     C1      120.500    3.000
+ PRP      O1     C1     H1      109.470    3.000
+ PRP      O1     C1     O4      109.470    3.000
+ PRP      O1     C1     C2      109.470    3.000
+ PRP      H1     C1     O4      109.470    3.000
+ PRP      H1     C1     C2      108.340    3.000
+ PRP      O4     C1     C2      109.470    3.000
+ PRP      C1     O4     C4      111.800    3.000
+ PRP      O4     C4     H4      109.470    3.000
+ PRP      O4     C4     C3      109.470    3.000
+ PRP      O4     C4     C5      109.470    3.000
+ PRP      H4     C4     C3      108.340    3.000
+ PRP      H4     C4     C5      108.340    3.000
+ PRP      C3     C4     C5      111.000    3.000
+ PRP      C4     C3     H3      108.340    3.000
+ PRP      C4     C3     O3      109.470    3.000
+ PRP      C4     C3     C2      111.000    3.000
+ PRP      H3     C3     O3      109.470    3.000
+ PRP      H3     C3     C2      108.340    3.000
+ PRP      O3     C3     C2      109.470    3.000
+ PRP      C3     O3     HO3     109.470    3.000
+ PRP      C3     C2     H2      108.340    3.000
+ PRP      C3     C2     O2      109.470    3.000
+ PRP      C3     C2     C1      111.000    3.000
+ PRP      H2     C2     O2      109.470    3.000
+ PRP      H2     C2     C1      108.340    3.000
+ PRP      O2     C2     C1      109.470    3.000
+ PRP      C2     O2     HO2     109.470    3.000
+ PRP      C4     C5     H51     109.470    3.000
+ PRP      C4     C5     H52     109.470    3.000
+ PRP      C4     C5     O5      109.470    3.000
+ PRP      H51    C5     H52     107.900    3.000
+ PRP      H51    C5     O5      109.470    3.000
+ PRP      H52    C5     O5      109.470    3.000
+ PRP      C5     O5     P       120.500    3.000
+ PRP      O5     P      O1P     108.200    3.000
+ PRP      O5     P      O2P     108.200    3.000
+ PRP      O5     P      O3P     108.200    3.000
+ PRP      O1P    P      O2P     119.900    3.000
+ PRP      O1P    P      O3P     119.900    3.000
+ PRP      O2P    P      O3P     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PRP      var_1    O3B    PB     O3A    PA       -59.943   20.000   1
+ PRP      var_2    PB     O3A    PA     O1       179.976   20.000   1
+ PRP      var_3    O3A    PA     O1     C1       179.948   20.000   1
+ PRP      var_4    PA     O1     C1     O4        94.512   20.000   1
+ PRP      var_5    O1     C1     C2     C3       -90.000   20.000   3
+ PRP      var_6    O1     C1     O4     C4        90.000   20.000   1
+ PRP      var_7    C1     O4     C4     C5       150.000   20.000   1
+ PRP      var_8    O4     C4     C3     C2       -30.000   20.000   3
+ PRP      var_9    C4     C3     O3     HO3      178.154   20.000   1
+ PRP      var_10   C4     C3     C2     O2      -120.000   20.000   3
+ PRP      var_11   C3     C2     O2     HO2     -179.976   20.000   1
+ PRP      var_12   O4     C4     C5     O5        61.463   20.000   3
+ PRP      var_13   C4     C5     O5     P        179.983   20.000   1
+ PRP      var_14   C5     O5     P      O3P      -60.006   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PRP      chir_01  C1     C2     O1     O4        negativ
+ PRP      chir_02  C2     C1     C3     O2        negativ
+ PRP      chir_03  C3     C2     C4     O3        negativ
+ PRP      chir_04  C4     C3     C5     O4        negativ
+# ------------------------------------------------------

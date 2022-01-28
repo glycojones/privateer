@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EVH     EVH      1H-imidazole-2-sulfonamide     NON-POLYMER     14     9     .     
+#
+data_comp_EVH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+EVH     S       S       S3      0       15.184      1.065       16.944      
+EVH     N1      N       NR5     0       16.681      2.328       14.996      
+EVH     O1      O       O       0       13.763      0.912       16.937      
+EVH     C2      C       CR5     0       15.563      2.275       15.752      
+EVH     O2      O       O       0       15.838      1.457       18.152      
+EVH     N3      N       NRD5    0       14.770      3.304       15.452      
+EVH     C4      C       CR15    0       15.415      4.014       14.483      
+EVH     C5      C       CR15    0       16.587      3.425       14.195      
+EVH     NH      N       NT2     0       15.825      -0.322      16.469      
+EVH     HN1     H       H       0       17.356      1.753       15.015      
+EVH     H4      H       H       0       15.083      4.799       14.080      
+EVH     H5      H       H       0       17.236      3.703       13.562      
+EVH     HNH     H       H       0       16.581      -0.462      16.798      
+EVH     HNHA    H       H       0       15.755      -0.447      15.645      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EVH       S         C2        SINGLE    n         1.740     0.015     1.740     0.015     
+EVH       S         NH        SINGLE    n         1.600     0.013     1.600     0.013     
+EVH       S         O1        DOUBLE    n         1.429     0.010     1.429     0.010     
+EVH       S         O2        DOUBLE    n         1.429     0.010     1.429     0.010     
+EVH       N1        C5        SINGLE    y         1.360     0.016     1.360     0.016     
+EVH       N1        C2        SINGLE    y         1.353     0.020     1.353     0.020     
+EVH       C2        N3        DOUBLE    y         1.337     0.020     1.337     0.020     
+EVH       N3        C4        SINGLE    y         1.364     0.014     1.364     0.014     
+EVH       C4        C5        DOUBLE    y         1.342     0.011     1.342     0.011     
+EVH       N1        HN1       SINGLE    n         1.016     0.010     0.887     0.020     
+EVH       C4        H4        SINGLE    n         1.082     0.013     0.942     0.018     
+EVH       C5        H5        SINGLE    n         1.082     0.013     0.948     0.020     
+EVH       NH        HNH       SINGLE    n         1.036     0.016     0.836     0.020     
+EVH       NH        HNHA      SINGLE    n         1.036     0.016     0.836     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+EVH          C2           S          NH     109.471    3.00
+EVH          C2           S          O1     107.103    1.50
+EVH          C2           S          O2     107.103    1.50
+EVH          NH           S          O1     108.091    1.50
+EVH          NH           S          O2     108.091    1.50
+EVH          O1           S          O2     119.673    1.50
+EVH          C5          N1          C2     107.664    1.50
+EVH          C5          N1         HN1     126.021    1.94
+EVH          C2          N1         HN1     126.315    1.92
+EVH           S          C2          N1     126.019    3.00
+EVH           S          C2          N3     124.066    1.75
+EVH          N1          C2          N3     109.915    1.50
+EVH          C2          N3          C4     106.510    1.50
+EVH          N3          C4          C5     109.513    1.50
+EVH          N3          C4          H4     124.843    1.50
+EVH          C5          C4          H4     125.644    1.50
+EVH          N1          C5          C4     106.398    1.50
+EVH          N1          C5          H5     125.676    1.72
+EVH          C4          C5          H5     127.926    2.17
+EVH           S          NH         HNH     112.822    3.00
+EVH           S          NH        HNHA     112.822    3.00
+EVH         HNH          NH        HNHA     115.991    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+EVH             sp2_sp3_1          N1          C2           S          NH     150.000   10.00     6
+EVH             sp3_sp3_2         HNH          NH           S          O1     -60.000   10.00     3
+EVH              const_15           S          C2          N1          C5     180.000   10.00     2
+EVH       const_sp2_sp2_1          C4          C5          N1          C2       0.000   10.00     2
+EVH              const_12           S          C2          N3          C4     180.000   10.00     2
+EVH       const_sp2_sp2_9          C5          C4          N3          C2       0.000   10.00     2
+EVH       const_sp2_sp2_5          N3          C4          C5          N1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+EVH    plan-1          C2   0.020
+EVH    plan-1          C4   0.020
+EVH    plan-1          C5   0.020
+EVH    plan-1          H4   0.020
+EVH    plan-1          H5   0.020
+EVH    plan-1         HN1   0.020
+EVH    plan-1          N1   0.020
+EVH    plan-1          N3   0.020
+EVH    plan-1           S   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+EVH SMILES           ACDLabs              12.01 "O=S(=O)(N)c1nccn1"
+EVH SMILES_CANONICAL CACTVS               3.370 "N[S](=O)(=O)c1[nH]ccn1"
+EVH SMILES           CACTVS               3.370 "N[S](=O)(=O)c1[nH]ccn1"
+EVH SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "c1cnc([nH]1)S(=O)(=O)N"
+EVH SMILES           "OpenEye OEToolkits" 1.7.2 "c1cnc([nH]1)S(=O)(=O)N"
+EVH InChI            InChI                1.03  "InChI=1S/C3H5N3O2S/c4-9(7,8)3-5-1-2-6-3/h1-2H,(H,5,6)(H2,4,7,8)"
+EVH InChIKey         InChI                1.03  PMTLRCDQMKXMRZ-UHFFFAOYSA-N
+EVH ?                acedrg               202         "dictionary generator"                  
+EVH ?                acedrg_database      11          "data source"                           
+EVH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+EVH ?                refmac5              5.8.0189    "optimization tool"                     

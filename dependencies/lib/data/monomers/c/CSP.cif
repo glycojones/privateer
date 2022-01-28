@@ -1,0 +1,175 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CSP     CSP     S-PHOSPHOCYSTEINE   peptide   17     11     .     
+#
+data_comp_CSP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CSP     N       N       NT3     1       -2.030      -1.042      0.685       
+CSP     CA      C       CH1     0       -1.182      0.181       0.643       
+CSP     CB      C       CH2     0       0.266       -0.177      0.351       
+CSP     SG      S       S2      0       1.449       1.181       0.545       
+CSP     C       C       C       0       -1.734      1.154       -0.405      
+CSP     O       O       O       0       -1.888      0.716       -1.563      
+CSP     OXT     O       OC      -1      -1.988      2.315       -0.026      
+CSP     P       P       P       0       3.282       0.311       0.053       
+CSP     O1P     O       O       0       3.207       -0.165      -1.378      
+CSP     O2P     O       OP      -1      4.357       1.358       0.213       
+CSP     O3P     O       OP      -1      3.519       -0.847      0.991       
+CSP     H       H       H       0       -2.889      -0.816      0.889       
+CSP     H2      H       H       0       -1.714      -1.614      1.319       
+CSP     H3      H       H       0       -2.014      -1.456      -0.127      
+CSP     HA      H       H       0       -1.225      0.612       1.527       
+CSP     HB2     H       H       0       0.327       -0.510      -0.569      
+CSP     HB3     H       H       0       0.535       -0.907      0.949       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CSP      N      n/a    CA     START
+ CSP      H      N      .      .
+ CSP      H2     N      .      .
+ CSP      H3     N      .      .
+ CSP      CA     N      C      .
+ CSP      HA     CA     .      .
+ CSP      CB     CA     SG     .
+ CSP      HB2    CB     .      .
+ CSP      HB3    CB     .      .
+ CSP      SG     CB     P      .
+ CSP      P      SG     O3P    .
+ CSP      O1P    P      .      .
+ CSP      O2P    P      .      .
+ CSP      O3P    P      .      .
+ CSP      C      CA     .      END
+ CSP      O      C      .      .
+ CSP      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CSP       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+CSP       CA        CB        SINGLE    n         1.520     0.015     1.520     0.015     
+CSP       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+CSP       CB        SG        SINGLE    n         1.811     0.015     1.811     0.015     
+CSP       SG        P         SINGLE    n         2.088     0.018     2.088     0.018     
+CSP       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+CSP       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+CSP       P         O1P       DOUBLE    n         1.509     0.020     1.509     0.020     
+CSP       P         O2P       SINGLE    n         1.509     0.020     1.509     0.020     
+CSP       P         O3P       SINGLE    n         1.509     0.020     1.509     0.020     
+CSP       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+CSP       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+CSP       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+CSP       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+CSP       CB        HB2       SINGLE    n         1.089     0.010     0.981     0.017     
+CSP       CB        HB3       SINGLE    n         1.089     0.010     0.981     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CSP          CA           N           H     109.671    1.50
+CSP          CA           N          H2     109.671    1.50
+CSP          CA           N          H3     109.671    1.50
+CSP           H           N          H2     109.028    2.41
+CSP           H           N          H3     109.028    2.41
+CSP          H2           N          H3     109.028    2.41
+CSP           N          CA          CB     110.672    1.50
+CSP           N          CA           C     109.494    1.50
+CSP           N          CA          HA     107.983    1.50
+CSP          CB          CA           C     111.067    2.40
+CSP          CB          CA          HA     108.432    1.50
+CSP           C          CA          HA     108.606    1.50
+CSP          CA          CB          SG     115.567    1.72
+CSP          CA          CB         HB2     108.885    1.50
+CSP          CA          CB         HB3     108.885    1.50
+CSP          SG          CB         HB2     108.658    1.50
+CSP          SG          CB         HB3     108.658    1.50
+CSP         HB2          CB         HB3     107.922    1.50
+CSP          CB          SG           P     103.636    3.00
+CSP          CA           C           O     117.134    1.50
+CSP          CA           C         OXT     117.134    1.50
+CSP           O           C         OXT     125.732    1.50
+CSP          SG           P         O1P     111.281    3.00
+CSP          SG           P         O2P     111.281    3.00
+CSP          SG           P         O3P     111.281    3.00
+CSP         O1P           P         O2P     113.206    2.54
+CSP         O1P           P         O3P     113.206    2.54
+CSP         O2P           P         O3P     113.206    2.54
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CSP             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+CSP            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+CSP             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+CSP            sp3_sp3_19          CA          CB          SG           P     180.000   10.00     3
+CSP            sp3_sp3_22         O1P           P          SG          CB     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+CSP    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CSP    plan-1           C   0.020
+CSP    plan-1          CA   0.020
+CSP    plan-1           O   0.020
+CSP    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CSP SMILES           ACDLabs              10.04 "O=P(O)(O)SCC(C(=O)O)N"
+CSP SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CS[P](O)(O)=O)C(O)=O"
+CSP SMILES           CACTVS               3.341 "N[CH](CS[P](O)(O)=O)C(O)=O"
+CSP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)SP(=O)(O)O"
+CSP SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)SP(=O)(O)O"
+CSP InChI            InChI                1.03  "InChI=1S/C3H8NO5PS/c4-2(3(5)6)1-11-10(7,8)9/h2H,1,4H2,(H,5,6)(H2,7,8,9)/t2-/m0/s1"
+CSP InChIKey         InChI                1.03  MNEMQJJMDDZXRO-REOHCLBHSA-N
+CSP ?                acedrg               196         "dictionary generator"                  
+CSP ?                acedrg_database      11          "data source"                           
+CSP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CSP ?                refmac5              5.8.0222    "optimization tool"                     

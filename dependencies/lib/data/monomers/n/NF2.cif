@@ -1,0 +1,285 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NF2      NF2 '(1S)-1,4-ANHYDRO-1-(2,4-DIFLUORO-5-M' RNA                35  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NF2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NF2           OP3    O    OP       -0.666      0.000    0.000    0.000
+ NF2           P      P    P         0.000     -0.411    1.383   -0.454
+ NF2           OP1    O    OP       -0.666      0.668    2.438   -0.347
+ NF2           OP2    O    OP       -0.666     -0.948    1.147   -1.849
+ NF2           "O5'"  O    O2        0.000     -1.739    1.674    0.424
+ NF2           "C5'"  C    CH2       0.000     -2.799    0.733    0.379
+ NF2           "H5'"  H    H         0.000     -2.447   -0.239    0.731
+ NF2           "H5''" H    H         0.000     -3.166    0.637   -0.645
+ NF2           "C4'"  C    CH1       0.000     -3.924    1.223    1.279
+ NF2           "H4'"  H    H         0.000     -3.547    1.360    2.302
+ NF2           "O4'"  O    O2        0.000     -4.400    2.486    0.763
+ NF2           "C3'"  C    CH1       0.000     -5.124    0.286    1.295
+ NF2           "H3'"  H    H         0.000     -4.821   -0.756    1.123
+ NF2           "C2'"  C    CH1       0.000     -5.963    0.814    0.147
+ NF2           "H2'"  H    H         0.000     -5.567    0.436   -0.806
+ NF2           "O2'"  O    OH1       0.000     -7.330    0.474    0.265
+ NF2           "HO2'" H    H         0.000     -7.641    0.110   -0.574
+ NF2           "C1'"  C    CH1       0.000     -5.738    2.320    0.239
+ NF2           "H1'"  H    H         0.000     -6.449    2.732    0.970
+ NF2           C1     C    CR6       0.000     -5.941    3.033   -1.070
+ NF2           C6     C    CR16      0.000     -4.876    3.161   -1.964
+ NF2           H6     H    H         0.000     -3.906    2.748   -1.714
+ NF2           C5     C    CR6       0.000     -5.060    3.822   -3.179
+ NF2           CM     C    CH3       0.000     -3.919    3.957   -4.131
+ NF2           HM3    H    H         0.000     -3.151    4.526   -3.679
+ NF2           HM2    H    H         0.000     -3.552    2.996   -4.376
+ NF2           HM1    H    H         0.000     -4.252    4.445   -5.009
+ NF2           C4     C    CR6       0.000     -6.307    4.355   -3.501
+ NF2           F4     F    F         0.000     -6.494    4.991   -4.666
+ NF2           C3     C    CR16      0.000     -7.372    4.228   -2.609
+ NF2           H3     H    H         0.000     -8.341    4.642   -2.859
+ NF2           C2     C    CR6       0.000     -7.188    3.567   -1.394
+ NF2           F2     F    F         0.000     -8.217    3.449   -0.543
+ NF2           "O3'"  O    OH1       0.000     -5.818    0.427    2.535
+ NF2           "HO3'" H    H         0.000     -6.760    0.324    2.335
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NF2      OP3    n/a    P      START
+ NF2      P      OP3    "O5'"  .
+ NF2      OP1    P      .      .
+ NF2      OP2    P      .      .
+ NF2      "O5'"  P      "C5'"  .
+ NF2      "C5'"  "O5'"  "C4'"  .
+ NF2      "H5'"  "C5'"  .      .
+ NF2      "H5''" "C5'"  .      .
+ NF2      "C4'"  "C5'"  "C3'"  .
+ NF2      "H4'"  "C4'"  .      .
+ NF2      "O4'"  "C4'"  .      .
+ NF2      "C3'"  "C4'"  "O3'"  .
+ NF2      "H3'"  "C3'"  .      .
+ NF2      "C2'"  "C3'"  "C1'"  .
+ NF2      "H2'"  "C2'"  .      .
+ NF2      "O2'"  "C2'"  "HO2'" .
+ NF2      "HO2'" "O2'"  .      .
+ NF2      "C1'"  "C2'"  C1     .
+ NF2      "H1'"  "C1'"  .      .
+ NF2      C1     "C1'"  C2     .
+ NF2      C6     C1     C5     .
+ NF2      H6     C6     .      .
+ NF2      C5     C6     C4     .
+ NF2      CM     C5     HM1    .
+ NF2      HM3    CM     .      .
+ NF2      HM2    CM     .      .
+ NF2      HM1    CM     .      .
+ NF2      C4     C5     C3     .
+ NF2      F4     C4     .      .
+ NF2      C3     C4     H3     .
+ NF2      H3     C3     .      .
+ NF2      C2     C1     F2     .
+ NF2      F2     C2     .      .
+ NF2      "O3'"  "C3'"  .      END
+ NF2      "HO3'" "O3'"  .      .
+ NF2      C2     C3     .    ADD
+ NF2      "C1'"  "O4'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NF2       F2        C2        single    1.345     0.020     1.345     0.020     
+NF2       C2        C3        double    1.390     0.020     1.390     0.020     
+NF2       C2        C1        single    1.487     0.020     1.487     0.020     
+NF2       C3        C4        single    1.390     0.020     1.390     0.020     
+NF2       H3        C3        single    1.082     0.013     0.975     0.010     
+NF2       F4        C4        single    1.345     0.020     1.345     0.020     
+NF2       C4        C5        double    1.487     0.020     1.487     0.020     
+NF2       C6        C1        double    1.390     0.020     1.390     0.020     
+NF2       C1        "C1'"     single    1.480     0.020     1.480     0.020     
+NF2       C5        C6        single    1.390     0.020     1.390     0.020     
+NF2       H6        C6        single    1.082     0.013     0.975     0.010     
+NF2       CM        C5        single    1.506     0.020     1.506     0.020     
+NF2       HM1       CM        single    1.089     0.010     0.989     0.005     
+NF2       HM2       CM        single    1.089     0.010     0.989     0.005     
+NF2       HM3       CM        single    1.089     0.010     0.989     0.005     
+NF2       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+NF2       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+NF2       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+NF2       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+NF2       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+NF2       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+NF2       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+NF2       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+NF2       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+NF2       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+NF2       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+NF2       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+NF2       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+NF2       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+NF2       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+NF2       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+NF2       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+NF2       "O5'"     P         single    1.610     0.020     1.610     0.020     
+NF2       OP1       P         deloc     1.510     0.020     1.510     0.020     
+NF2       OP2       P         deloc     1.510     0.020     1.510     0.020     
+NF2       P         OP3       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NF2      OP3    P      OP1     119.900    3.000
+ NF2      OP3    P      OP2     119.900    3.000
+ NF2      OP3    P      "O5'"   108.200    3.000
+ NF2      OP1    P      OP2     119.900    3.000
+ NF2      OP1    P      "O5'"   108.200    3.000
+ NF2      OP2    P      "O5'"   108.200    3.000
+ NF2      P      "O5'"  "C5'"   120.500    3.000
+ NF2      "O5'"  "C5'"  "H5'"   109.470    3.000
+ NF2      "O5'"  "C5'"  "H5''"  109.470    3.000
+ NF2      "O5'"  "C5'"  "C4'"   109.470    3.000
+ NF2      "H5'"  "C5'"  "H5''"  107.900    3.000
+ NF2      "H5'"  "C5'"  "C4'"   109.470    3.000
+ NF2      "H5''" "C5'"  "C4'"   109.470    3.000
+ NF2      "C5'"  "C4'"  "H4'"   108.340    3.000
+ NF2      "C5'"  "C4'"  "O4'"   109.470    3.000
+ NF2      "C5'"  "C4'"  "C3'"   111.000    3.000
+ NF2      "H4'"  "C4'"  "O4'"   109.470    3.000
+ NF2      "H4'"  "C4'"  "C3'"   108.340    3.000
+ NF2      "O4'"  "C4'"  "C3'"   109.470    3.000
+ NF2      "C4'"  "O4'"  "C1'"   111.800    3.000
+ NF2      "C4'"  "C3'"  "H3'"   108.340    3.000
+ NF2      "C4'"  "C3'"  "C2'"   111.000    3.000
+ NF2      "C4'"  "C3'"  "O3'"   109.470    3.000
+ NF2      "H3'"  "C3'"  "C2'"   108.340    3.000
+ NF2      "H3'"  "C3'"  "O3'"   109.470    3.000
+ NF2      "C2'"  "C3'"  "O3'"   109.470    3.000
+ NF2      "C3'"  "C2'"  "H2'"   108.340    3.000
+ NF2      "C3'"  "C2'"  "O2'"   109.470    3.000
+ NF2      "C3'"  "C2'"  "C1'"   111.000    3.000
+ NF2      "H2'"  "C2'"  "O2'"   109.470    3.000
+ NF2      "H2'"  "C2'"  "C1'"   108.340    3.000
+ NF2      "O2'"  "C2'"  "C1'"   109.470    3.000
+ NF2      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ NF2      "C2'"  "C1'"  "H1'"   108.340    3.000
+ NF2      "C2'"  "C1'"  C1      109.470    3.000
+ NF2      "C2'"  "C1'"  "O4'"   109.470    3.000
+ NF2      "H1'"  "C1'"  C1      109.470    3.000
+ NF2      "H1'"  "C1'"  "O4'"   109.470    3.000
+ NF2      C1     "C1'"  "O4'"   109.470    3.000
+ NF2      "C1'"  C1     C6      120.000    3.000
+ NF2      "C1'"  C1     C2      120.000    3.000
+ NF2      C6     C1     C2      120.000    3.000
+ NF2      C1     C6     H6      120.000    3.000
+ NF2      C1     C6     C5      120.000    3.000
+ NF2      H6     C6     C5      120.000    3.000
+ NF2      C6     C5     CM      120.000    3.000
+ NF2      C6     C5     C4      120.000    3.000
+ NF2      CM     C5     C4      120.000    3.000
+ NF2      C5     CM     HM3     109.470    3.000
+ NF2      C5     CM     HM2     109.470    3.000
+ NF2      C5     CM     HM1     109.470    3.000
+ NF2      HM3    CM     HM2     109.470    3.000
+ NF2      HM3    CM     HM1     109.470    3.000
+ NF2      HM2    CM     HM1     109.470    3.000
+ NF2      C5     C4     F4      120.000    3.000
+ NF2      C5     C4     C3      120.000    3.000
+ NF2      F4     C4     C3      120.000    3.000
+ NF2      C4     C3     H3      120.000    3.000
+ NF2      C4     C3     C2      120.000    3.000
+ NF2      H3     C3     C2      120.000    3.000
+ NF2      C1     C2     F2      120.000    3.000
+ NF2      C1     C2     C3      120.000    3.000
+ NF2      F2     C2     C3      120.000    3.000
+ NF2      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NF2      var_1    OP3    P      "O5'"  "C5'"    -54.202   20.000   1
+ NF2      var_2    P      "O5'"  "C5'"  "C4'"    179.970   20.000   1
+ NF2      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.528   20.000   3
+ NF2      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ NF2      var_5    "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ NF2      var_6    "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ NF2      var_7    "C3'"  "C2'"  "O2'"  "HO2'"  -131.493   20.000   1
+ NF2      var_8    "C3'"  "C2'"  "C1'"  C1       150.000   20.000   3
+ NF2      var_9    "C2'"  "C1'"  "O4'"  "C4'"      0.000   20.000   1
+ NF2      var_10   "C2'"  "C1'"  C1     C2        92.395   20.000   1
+ NF2      CONST_1  "C1'"  C1     C6     C5       180.000    0.000   0
+ NF2      CONST_2  C1     C6     C5     C4         0.000    0.000   0
+ NF2      var_11   C6     C5     CM     HM1      177.522   20.000   1
+ NF2      CONST_3  C6     C5     C4     C3         0.000    0.000   0
+ NF2      CONST_4  C5     C4     C3     C2         0.000    0.000   0
+ NF2      CONST_5  "C1'"  C1     C2     F2         0.000    0.000   0
+ NF2      CONST_6  C1     C2     C3     C4         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NF2      chir_01  "C1'"  C1     "O4'"  "C2'"     positiv
+ NF2      chir_02  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ NF2      chir_03  "C3'"  "C2'"  "O3'"  "C4'"     positiv
+ NF2      chir_04  "C4'"  "O4'"  "C3'"  "C5'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NF2      plan-1    C2        0.020
+ NF2      plan-1    C3        0.020
+ NF2      plan-1    C1        0.020
+ NF2      plan-1    F2        0.020
+ NF2      plan-1    C4        0.020
+ NF2      plan-1    C6        0.020
+ NF2      plan-1    C5        0.020
+ NF2      plan-1    H3        0.020
+ NF2      plan-1    F4        0.020
+ NF2      plan-1    "C1'"     0.020
+ NF2      plan-1    H6        0.020
+ NF2      plan-1    CM        0.020
+# ------------------------------------------------------

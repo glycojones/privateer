@@ -1,0 +1,124 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5OZ     5OZ      2-methylpropanal     NON-POLYMER     13     5     .     
+#
+data_comp_5OZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+5OZ     O       O       O       0       -1.530      1.796       1.050       
+5OZ     C01     C       CH1     0       -0.102      -0.018      0.383       
+5OZ     C02     C       C1      0       -0.895      1.243       0.215       
+5OZ     C03     C       CH3     0       1.393       0.207       0.124       
+5OZ     C       C       CH3     0       -0.674      -1.126      -0.493      
+5OZ     H2      H       H       0       -0.202      -0.301      1.327       
+5OZ     H3      H       H       0       -0.885      1.641       -0.666      
+5OZ     H5      H       H       0       1.563       1.147       -0.069      
+5OZ     H6      H       H       0       1.686       -0.331      -0.633      
+5OZ     H7      H       H       0       1.899       -0.052      0.914       
+5OZ     H8      H       H       0       -0.174      -1.948      -0.348      
+5OZ     H9      H       H       0       -0.607      -0.869      -1.429      
+5OZ     H10     H       H       0       -1.609      -1.272      -0.265      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5OZ       C01       C         SINGLE    n         1.521     0.017     1.521     0.017     
+5OZ       O         C02       DOUBLE    n         1.186     0.020     1.186     0.020     
+5OZ       C01       C02       SINGLE    n         1.498     0.010     1.498     0.010     
+5OZ       C01       C03       SINGLE    n         1.521     0.017     1.521     0.017     
+5OZ       C01       H2        SINGLE    n         1.089     0.010     0.990     0.015     
+5OZ       C02       H3        SINGLE    n         1.082     0.013     0.967     0.020     
+5OZ       C03       H5        SINGLE    n         1.089     0.010     0.973     0.014     
+5OZ       C03       H6        SINGLE    n         1.089     0.010     0.973     0.014     
+5OZ       C03       H7        SINGLE    n         1.089     0.010     0.973     0.014     
+5OZ       C         H8        SINGLE    n         1.089     0.010     0.973     0.014     
+5OZ       C         H9        SINGLE    n         1.089     0.010     0.973     0.014     
+5OZ       C         H10       SINGLE    n         1.089     0.010     0.973     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+5OZ           C         C01         C02     110.920    1.69
+5OZ           C         C01         C03     111.198    1.84
+5OZ           C         C01          H2     108.016    1.51
+5OZ         C02         C01         C03     110.920    1.69
+5OZ         C02         C01          H2     107.537    1.66
+5OZ         C03         C01          H2     108.016    1.51
+5OZ           O         C02         C01     126.676    1.92
+5OZ           O         C02          H3     117.045    1.69
+5OZ         C01         C02          H3     116.277    1.50
+5OZ         C01         C03          H5     109.591    1.50
+5OZ         C01         C03          H6     109.591    1.50
+5OZ         C01         C03          H7     109.591    1.50
+5OZ          H5         C03          H6     109.411    1.50
+5OZ          H5         C03          H7     109.411    1.50
+5OZ          H6         C03          H7     109.411    1.50
+5OZ         C01           C          H8     109.591    1.50
+5OZ         C01           C          H9     109.591    1.50
+5OZ         C01           C         H10     109.591    1.50
+5OZ          H8           C          H9     109.411    1.50
+5OZ          H8           C         H10     109.411    1.50
+5OZ          H9           C         H10     109.411    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+5OZ             sp2_sp3_2           O         C02         C01           C     120.000   10.00     6
+5OZ            sp3_sp3_10           C         C01         C03          H5     180.000   10.00     3
+5OZ             sp3_sp3_1          H8           C         C01         C02     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+5OZ    plan-1         C01   0.020
+5OZ    plan-1         C02   0.020
+5OZ    plan-1          H3   0.020
+5OZ    plan-1           O   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+5OZ InChI            InChI                1.03  "InChI=1S/C4H8O/c1-4(2)3-5/h3-4H,1-2H3"
+5OZ InChIKey         InChI                1.03  AMIMRNSIRUDHCM-UHFFFAOYSA-N
+5OZ SMILES_CANONICAL CACTVS               3.385 "CC(C)C=O"
+5OZ SMILES           CACTVS               3.385 "CC(C)C=O"
+5OZ SMILES_CANONICAL "OpenEye OEToolkits" 2.0.4 "CC(C)C=O"
+5OZ SMILES           "OpenEye OEToolkits" 2.0.4 "CC(C)C=O"
+5OZ ?                acedrg               202         "dictionary generator"                  
+5OZ ?                acedrg_database      11          "data source"                           
+5OZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+5OZ ?                refmac5              5.8.0189    "optimization tool"                     

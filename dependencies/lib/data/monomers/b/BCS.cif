@@ -1,0 +1,244 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BCS     BCS     BENZYLCYSTEINE   peptide   27     14     .     
+#
+data_comp_BCS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BCS     N       N       NT3     1       11.797      7.755       27.357      
+BCS     CA      C       CH1     0       10.464      7.210       27.743      
+BCS     CB      C       CH2     0       10.635      5.859       28.417      
+BCS     SG      S       S2      0       11.217      4.540       27.331      
+BCS     CD      C       CH2     0       9.659       3.904       26.648      
+BCS     CE      C       CR6     0       8.910       3.020       27.611      
+BCS     CZ1     C       CR16    0       7.694       3.421       28.148      
+BCS     CZ2     C       CR16    0       9.427       1.786       27.980      
+BCS     CT1     C       CR16    0       7.009       2.601       29.036      
+BCS     CT2     C       CR16    0       8.740       0.968       28.868      
+BCS     CH      C       CR16    0       7.533       1.377       29.394      
+BCS     C       C       C       0       9.740       8.197       28.668      
+BCS     O       O       O       0       10.311      8.499       29.735      
+BCS     OXT     O       OC      -1      8.633       8.626       28.288      
+BCS     H       H       H       0       12.201      8.135       28.082      
+BCS     H2      H       H       0       11.694      8.385       26.707      
+BCS     H3      H       H       0       12.327      7.085       27.039      
+BCS     HA      H       H       0       9.931       7.099       26.922      
+BCS     HB2     H       H       0       9.782       5.593       28.795      
+BCS     HB3     H       H       0       11.264      5.958       29.148      
+BCS     HD2     H       H       0       9.860       3.401       25.839      
+BCS     HD3     H       H       0       9.099       4.661       26.397      
+BCS     HZ1     H       H       0       7.328       4.258       27.908      
+BCS     HZ2     H       H       0       10.253      1.499       27.623      
+BCS     HT1     H       H       0       6.183       2.883       29.395      
+BCS     HT2     H       H       0       9.101       0.130       29.111      
+BCS     HH      H       H       0       7.067       0.820       29.998      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BCS      N      n/a    CA     START
+ BCS      H      N      .      .
+ BCS      H2     N      .      .
+ BCS      H3     N      .      .
+ BCS      CA     N      C      .
+ BCS      HA     CA     .      .
+ BCS      CB     CA     SG     .
+ BCS      HB2    CB     .      .
+ BCS      HB3    CB     .      .
+ BCS      SG     CB     CD     .
+ BCS      CD     SG     CE     .
+ BCS      HD2    CD     .      .
+ BCS      HD3    CD     .      .
+ BCS      CE     CD     CZ2    .
+ BCS      CZ2    CE     CT2    .
+ BCS      HZ2    CZ2    .      .
+ BCS      CT2    CZ2    CH     .
+ BCS      HT2    CT2    .      .
+ BCS      CH     CT2    CT1    .
+ BCS      HH     CH     .      .
+ BCS      CT1    CH     CZ1    .
+ BCS      HT1    CT1    .      .
+ BCS      CZ1    CT1    HZ1    .
+ BCS      HZ1    CZ1    .      .
+ BCS      C      CA     .      END
+ BCS      O      C      .      .
+ BCS      OXT    C      .      .
+ BCS      CE     CZ1    .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BCS       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+BCS       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+BCS       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+BCS       CB        SG        SINGLE    n         1.805     0.010     1.805     0.010     
+BCS       SG        CD        SINGLE    n         1.816     0.014     1.816     0.014     
+BCS       CD        CE        SINGLE    n         1.507     0.010     1.507     0.010     
+BCS       CE        CZ1       DOUBLE    y         1.383     0.011     1.383     0.011     
+BCS       CE        CZ2       SINGLE    y         1.383     0.011     1.383     0.011     
+BCS       CZ1       CT1       SINGLE    y         1.386     0.010     1.386     0.010     
+BCS       CZ2       CT2       DOUBLE    y         1.386     0.010     1.386     0.010     
+BCS       CT1       CH        DOUBLE    y         1.374     0.013     1.374     0.013     
+BCS       CT2       CH        SINGLE    y         1.374     0.013     1.374     0.013     
+BCS       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+BCS       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+BCS       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+BCS       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+BCS       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+BCS       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+BCS       CB        HB2       SINGLE    n         1.089     0.010     0.970     0.010     
+BCS       CB        HB3       SINGLE    n         1.089     0.010     0.970     0.010     
+BCS       CD        HD2       SINGLE    n         1.089     0.010     0.974     0.020     
+BCS       CD        HD3       SINGLE    n         1.089     0.010     0.974     0.020     
+BCS       CZ1       HZ1       SINGLE    n         1.082     0.013     0.944     0.017     
+BCS       CZ2       HZ2       SINGLE    n         1.082     0.013     0.944     0.017     
+BCS       CT1       HT1       SINGLE    n         1.082     0.013     0.944     0.018     
+BCS       CT2       HT2       SINGLE    n         1.082     0.013     0.944     0.018     
+BCS       CH        HH        SINGLE    n         1.082     0.013     0.944     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BCS          CA           N           H     109.671    1.50
+BCS          CA           N          H2     109.671    1.50
+BCS          CA           N          H3     109.671    1.50
+BCS           H           N          H2     109.028    2.41
+BCS           H           N          H3     109.028    2.41
+BCS          H2           N          H3     109.028    2.41
+BCS           N          CA          CB     109.354    1.50
+BCS           N          CA           C     109.494    1.50
+BCS           N          CA          HA     107.983    1.50
+BCS          CB          CA           C     110.419    2.31
+BCS          CB          CA          HA     109.209    1.50
+BCS           C          CA          HA     108.606    1.50
+BCS          CA          CB          SG     114.974    1.55
+BCS          CA          CB         HB2     108.537    1.50
+BCS          CA          CB         HB3     108.537    1.50
+BCS          SG          CB         HB2     108.648    1.50
+BCS          SG          CB         HB3     108.648    1.50
+BCS         HB2          CB         HB3     107.812    1.50
+BCS          CB          SG          CD     101.884    1.57
+BCS          SG          CD          CE     113.337    1.50
+BCS          SG          CD         HD2     108.734    1.50
+BCS          SG          CD         HD3     108.734    1.50
+BCS          CE          CD         HD2     109.511    1.50
+BCS          CE          CD         HD3     109.511    1.50
+BCS         HD2          CD         HD3     108.075    1.50
+BCS          CD          CE         CZ1     120.687    1.50
+BCS          CD          CE         CZ2     120.687    1.50
+BCS         CZ1          CE         CZ2     118.626    1.50
+BCS          CE         CZ1         CT1     120.413    1.50
+BCS          CE         CZ1         HZ1     119.793    1.50
+BCS         CT1         CZ1         HZ1     119.794    1.50
+BCS          CE         CZ2         CT2     120.413    1.50
+BCS          CE         CZ2         HZ2     119.793    1.50
+BCS         CT2         CZ2         HZ2     119.794    1.50
+BCS         CZ1         CT1          CH     120.277    1.50
+BCS         CZ1         CT1         HT1     119.816    1.50
+BCS          CH         CT1         HT1     119.907    1.50
+BCS         CZ2         CT2          CH     120.277    1.50
+BCS         CZ2         CT2         HT2     119.816    1.50
+BCS          CH         CT2         HT2     119.907    1.50
+BCS         CT1          CH         CT2     119.999    1.50
+BCS         CT1          CH          HH     119.998    1.50
+BCS         CT2          CH          HH     119.998    1.50
+BCS          CA           C           O     117.134    1.50
+BCS          CA           C         OXT     117.134    1.50
+BCS           O           C         OXT     125.732    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BCS             sp3_sp3_4          CB          CA           N           H      60.000   10.00     3
+BCS             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+BCS            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+BCS            sp3_sp3_19          CA          CB          SG          CD     180.000   10.00     3
+BCS            sp3_sp3_22          CE          CD          SG          CB     180.000   10.00     3
+BCS             sp2_sp3_8         CZ1          CE          CD          SG     -90.000   10.00     6
+BCS       const_sp2_sp2_3          CD          CE         CZ1         CT1     180.000   10.00     2
+BCS              const_23          CD          CE         CZ2         CT2     180.000   10.00     2
+BCS       const_sp2_sp2_5          CH         CT1         CZ1          CE       0.000   10.00     2
+BCS              const_17          CH         CT2         CZ2          CE       0.000   10.00     2
+BCS       const_sp2_sp2_9         CT2          CH         CT1         CZ1       0.000   10.00     2
+BCS              const_13         CT1          CH         CT2         CZ2       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+BCS    chir_1    CA    N    CB    C    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BCS    plan-1          CD   0.020
+BCS    plan-1          CE   0.020
+BCS    plan-1          CH   0.020
+BCS    plan-1         CT1   0.020
+BCS    plan-1         CT2   0.020
+BCS    plan-1         CZ1   0.020
+BCS    plan-1         CZ2   0.020
+BCS    plan-1          HH   0.020
+BCS    plan-1         HT1   0.020
+BCS    plan-1         HT2   0.020
+BCS    plan-1         HZ1   0.020
+BCS    plan-1         HZ2   0.020
+BCS    plan-2           C   0.020
+BCS    plan-2          CA   0.020
+BCS    plan-2           O   0.020
+BCS    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BCS SMILES           ACDLabs              10.04 "O=C(O)C(N)CSCc1ccccc1"
+BCS SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CSCc1ccccc1)C(O)=O"
+BCS SMILES           CACTVS               3.341 "N[CH](CSCc1ccccc1)C(O)=O"
+BCS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)CSC[C@@H](C(=O)O)N"
+BCS SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)CSCC(C(=O)O)N"
+BCS InChI            InChI                1.03  "InChI=1S/C10H13NO2S/c11-9(10(12)13)7-14-6-8-4-2-1-3-5-8/h1-5,9H,6-7,11H2,(H,12,13)/t9-/m0/s1"
+BCS InChIKey         InChI                1.03  GHBAYRBVXCRIHT-VIFPVBQESA-N
+BCS ?                acedrg               196         "dictionary generator"                  
+BCS ?                acedrg_database      11          "data source"                           
+BCS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BCS ?                refmac5              5.8.0222    "optimization tool"                     

@@ -1,0 +1,183 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HYP     HYP     4-HYDROXYPROLINE     P-peptide     17     9     .
+#
+data_comp_HYP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HYP     N       N       NT1     0       -3.249      16.764      44.210
+HYP     CA      C       CH1     0       -2.989      15.848      43.091
+HYP     C       C       C       0       -1.521      15.396      43.038
+HYP     O       O       O       0       -0.667      16.255      43.174
+HYP     CB      C       CH2     0       -3.359      16.685      41.861
+HYP     CG      C       CH1     0       -4.488      17.569      42.364
+HYP     CD      C       CH2     0       -4.067      17.909      43.778
+HYP     OD1     O       OH1     0       -5.705      16.836      42.364
+HYP     OXT     O       OC      -1      -1.317      14.208      42.863
+HYP     H       H       H       0       -3.699      16.334      44.843
+HYP     HA      H       H       0       -3.585      15.061      43.166
+HYP     HB2     H       H       0       -3.665      16.107      41.117
+HYP     HB3     H       H       0       -2.591      17.233      41.555
+HYP     HG      H       H       0       -4.574      18.397      41.814
+HYP     HD22    H       H       0       -3.538      18.735      43.800
+HYP     HD23    H       H       0       -4.848      18.012      44.363
+HYP     HD1     H       H       0       -6.349      17.388      42.328
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+HYP      N      n/a    CD     START
+HYP      H      N      .      .
+HYP      CD     N      CG     .
+HYP      HD22   CD     .      .
+HYP      HD23   CD     .      .
+HYP      CG     CD     CB     .
+HYP      HG     CG     .      .
+HYP      OD1    CG     HD1    .
+HYP      HD1    OD1    .      .
+HYP      CB     CG     CA     .
+HYP      HB2    CB     .      .
+HYP      HB3    CB     .      .
+HYP      CA     CB     C      .
+HYP      HA     CA     .      .
+HYP      C      CA     .      END
+HYP      O      C      .      .
+HYP      OXT    C      .      .
+HYP      N      CA     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HYP       N         CA        SINGLE    n         1.468     0.015     1.468     0.015     
+HYP       N         CD        SINGLE    n         1.468     0.016     1.468     0.016     
+HYP       CA        C         SINGLE    n         1.536     0.010     1.536     0.010     
+HYP       CA        CB        SINGLE    n         1.534     0.013     1.534     0.013     
+HYP       C         O         DOUBLE    n         1.218     0.020     1.218     0.020     
+HYP       C         OXT       SINGLE    n         1.218     0.020     1.218     0.020     
+HYP       CB        CG        SINGLE    n         1.520     0.010     1.520     0.010     
+HYP       CG        CD        SINGLE    n         1.512     0.016     1.512     0.016     
+HYP       CG        OD1       SINGLE    n         1.420     0.011     1.420     0.011     
+HYP       N         H         SINGLE    n         1.036     0.016     0.887     0.020     
+HYP       CA        HA        SINGLE    n         1.089     0.010     0.990     0.012     
+HYP       CB        HB2       SINGLE    n         1.089     0.010     0.991     0.020     
+HYP       CB        HB3       SINGLE    n         1.089     0.010     0.991     0.020     
+HYP       CG        HG        SINGLE    n         1.089     0.010     0.998     0.020     
+HYP       CD        HD22      SINGLE    n         1.089     0.010     0.981     0.019     
+HYP       CD        HD23      SINGLE    n         1.089     0.010     0.981     0.019     
+HYP       OD1       HD1       SINGLE    n         0.970     0.012     0.849     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HYP          CA           N          CD     109.056    3.00
+HYP          CA           N           H     109.307    3.00
+HYP          CD           N           H     107.738    2.27
+HYP           N          CA           C     111.420    2.45
+HYP           N          CA          CB     103.430    2.23
+HYP           N          CA          HA     109.296    1.50
+HYP           C          CA          CB     110.031    2.42
+HYP           C          CA          HA     110.011    1.50
+HYP          CB          CA          HA     110.393    1.50
+HYP          CA           C           O     117.013    1.95
+HYP          CA           C         OXT     117.013    1.95
+HYP           O           C         OXT     125.975    1.50
+HYP          CA          CB          CG     103.875    1.51
+HYP          CA          CB         HB2     110.853    1.50
+HYP          CA          CB         HB3     110.853    1.50
+HYP          CG          CB         HB2     110.841    1.50
+HYP          CG          CB         HB3     110.841    1.50
+HYP         HB2          CB         HB3     109.113    1.50
+HYP          CB          CG          CD     103.389    1.50
+HYP          CB          CG         OD1     109.789    1.93
+HYP          CB          CG          HG     111.491    1.54
+HYP          CD          CG         OD1     110.916    2.22
+HYP          CD          CG          HG     110.749    1.50
+HYP         OD1          CG          HG     110.852    1.50
+HYP           N          CD          CG     103.104    2.01
+HYP           N          CD        HD22     110.393    1.50
+HYP           N          CD        HD23     110.393    1.50
+HYP          CG          CD        HD22     111.050    1.50
+HYP          CG          CD        HD23     111.050    1.50
+HYP        HD22          CD        HD23     109.055    1.50
+HYP          CG         OD1         HD1     108.359    1.75
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HYP             sp3_sp3_3           C          CA           N          CD     -60.000   10.00     3
+HYP            sp3_sp3_34          CG          CD           N          CA     180.000   10.00     3
+HYP             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+HYP            sp3_sp3_13           C          CA          CB          CG      60.000   10.00     3
+HYP            sp3_sp3_17          CA          CB          CG         OD1     180.000   10.00     3
+HYP            sp3_sp3_26           N          CD          CG         OD1      60.000   10.00     3
+HYP            sp3_sp3_40          CB          CG         OD1         HD1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+HYP    chir_1    N    CA    CD    H    negative
+HYP    chir_2    CA    N    C    CB    both
+HYP    chir_3    CG    OD1    CD    CB    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HYP    plan-1           C   0.020
+HYP    plan-1          CA   0.020
+HYP    plan-1           O   0.020
+HYP    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HYP SMILES           ACDLabs              10.04 "O=C(O)C1NCC(O)C1"
+HYP SMILES_CANONICAL CACTVS               3.341 "O[C@H]1CN[C@@H](C1)C(O)=O"
+HYP SMILES           CACTVS               3.341 "O[CH]1CN[CH](C1)C(O)=O"
+HYP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1[C@H](CN[C@@H]1C(=O)O)O"
+HYP SMILES           "OpenEye OEToolkits" 1.5.0 "C1C(CNC1C(=O)O)O"
+HYP InChI            InChI                1.03  "InChI=1S/C5H9NO3/c7-3-1-4(5(8)9)6-2-3/h3-4,6-7H,1-2H2,(H,8,9)/t3-,4+/m1/s1"
+HYP InChIKey         InChI                1.03  PMMYEEVYMWASQN-DMTCNVIQSA-N
+HYP ?                acedrg               196         "dictionary generator"
+HYP ?                acedrg_database      11          "data source"
+HYP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HYP ?                refmac5              5.8.0222    "optimization tool"

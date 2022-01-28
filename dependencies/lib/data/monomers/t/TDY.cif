@@ -1,0 +1,328 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TDY      TDY '.                                   ' DNA                41  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TDY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TDY           OP3    O    OP       -0.666      0.000    0.000    0.000
+ TDY           P      P    P         0.000     -0.462    0.551   -1.331
+ TDY           OP1    O    OP       -0.666      0.130    1.927   -1.541
+ TDY           OP2    O    OP       -0.666     -0.006   -0.369   -2.443
+ TDY           "O5'"  O    O2        0.000     -2.069    0.650   -1.343
+ TDY           "C5'"  C    CH2       0.000     -2.801    1.523   -0.481
+ TDY           HA1    H    H         0.000     -2.501    2.556   -0.669
+ TDY           HB2    H    H         0.000     -2.589    1.267    0.560
+ TDY           "C4'"  C    CH1       0.000     -4.299    1.368   -0.750
+ TDY           HB     H    H         0.000     -4.524    1.561   -1.808
+ TDY           "C3'"  C    CH1       0.000     -5.119    2.314    0.164
+ TDY           HC     H    H         0.000     -4.666    2.382    1.163
+ TDY           "C2'"  C    CH2       0.000     -6.489    1.597    0.226
+ TDY           HB1    H    H         0.000     -7.203    2.016   -0.486
+ TDY           HC2    H    H         0.000     -6.920    1.623    1.229
+ TDY           "C1'"  C    CH1       0.000     -6.172    0.140   -0.160
+ TDY           HD     H    H         0.000     -6.701   -0.126   -1.087
+ TDY           "O4'"  O    O2        0.000     -4.752    0.052   -0.365
+ TDY           N1     N    N         0.000     -6.576   -0.762    0.921
+ TDY           C6     C    CH2       0.000     -7.644   -1.737    0.688
+ TDY           H61C   H    H         0.000     -7.715   -1.950   -0.381
+ TDY           H62C   H    H         0.000     -8.593   -1.329    1.041
+ TDY           C5     C    CT        0.000     -7.326   -3.029    1.448
+ TDY           C5M    C    CH3       0.000     -8.570   -3.919    1.481
+ TDY           H5M3   H    H         0.000     -8.859   -4.161    0.491
+ TDY           H5M2   H    H         0.000     -8.355   -4.810    2.012
+ TDY           H5M1   H    H         0.000     -9.361   -3.404    1.962
+ TDY           N5     N    NH1       0.000     -6.230   -3.743    0.777
+ TDY           H51N   H    H         0.000     -5.766   -3.422   -0.061
+ TDY           CM5    C    CH3       0.000     -5.899   -4.986    1.487
+ TDY           HM53   H    H         0.000     -5.107   -5.483    0.986
+ TDY           HM52   H    H         0.000     -5.598   -4.761    2.479
+ TDY           HM51   H    H         0.000     -6.748   -5.619    1.514
+ TDY           C4     C    C         0.000     -6.915   -2.686    2.857
+ TDY           O4     O    O         0.000     -7.208   -3.425    3.772
+ TDY           N3     N    NH1       0.000     -6.224   -1.557    3.099
+ TDY           H3     H    H         0.000     -5.894   -1.366    4.035
+ TDY           C2     C    C         0.000     -5.966   -0.679    2.115
+ TDY           O2     O    O         0.000     -5.162    0.211    2.309
+ TDY           "O3'"  O    OH1       0.000     -5.247    3.609   -0.427
+ TDY           "H3'"  H    H         0.000     -5.752    4.237    0.107
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TDY      OP3    n/a    P      START
+ TDY      P      OP3    "O5'"  .
+ TDY      OP1    P      .      .
+ TDY      OP2    P      .      .
+ TDY      "O5'"  P      "C5'"  .
+ TDY      "C5'"  "O5'"  "C4'"  .
+ TDY      HA1    "C5'"  .      .
+ TDY      HB2    "C5'"  .      .
+ TDY      "C4'"  "C5'"  "C3'"  .
+ TDY      HB     "C4'"  .      .
+ TDY      "C3'"  "C4'"  "O3'"  .
+ TDY      HC     "C3'"  .      .
+ TDY      "C2'"  "C3'"  "C1'"  .
+ TDY      HB1    "C2'"  .      .
+ TDY      HC2    "C2'"  .      .
+ TDY      "C1'"  "C2'"  N1     .
+ TDY      HD     "C1'"  .      .
+ TDY      "O4'"  "C1'"  .      .
+ TDY      N1     "C1'"  C6     .
+ TDY      C6     N1     C5     .
+ TDY      H61C   C6     .      .
+ TDY      H62C   C6     .      .
+ TDY      C5     C6     C4     .
+ TDY      C5M    C5     H5M1   .
+ TDY      H5M3   C5M    .      .
+ TDY      H5M2   C5M    .      .
+ TDY      H5M1   C5M    .      .
+ TDY      N5     C5     CM5    .
+ TDY      H51N   N5     .      .
+ TDY      CM5    N5     HM51   .
+ TDY      HM53   CM5    .      .
+ TDY      HM52   CM5    .      .
+ TDY      HM51   CM5    .      .
+ TDY      C4     C5     N3     .
+ TDY      O4     C4     .      .
+ TDY      N3     C4     C2     .
+ TDY      H3     N3     .      .
+ TDY      C2     N3     O2     .
+ TDY      O2     C2     .      .
+ TDY      "O3'"  "C3'"  .      END
+ TDY      "H3'"  "O3'"  .      .
+ TDY      "C4'"  "O4'"  .    ADD
+ TDY      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TDY       OP1       P         deloc     1.510     0.020     1.510     0.020     
+TDY       "O5'"     P         single    1.610     0.020     1.610     0.020     
+TDY       OP2       P         deloc     1.510     0.020     1.510     0.020     
+TDY       P         OP3       deloc     1.510     0.020     1.510     0.020     
+TDY       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+TDY       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+TDY       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+TDY       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+TDY       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+TDY       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+TDY       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+TDY       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+TDY       N1        "C1'"     single    1.455     0.020     1.455     0.020     
+TDY       N1        C2        single    1.330     0.020     1.330     0.020     
+TDY       C6        N1        single    1.455     0.020     1.455     0.020     
+TDY       O2        C2        double    1.220     0.020     1.220     0.020     
+TDY       C2        N3        single    1.330     0.020     1.330     0.020     
+TDY       N3        C4        single    1.330     0.020     1.330     0.020     
+TDY       O4        C4        double    1.220     0.020     1.220     0.020     
+TDY       C4        C5        single    1.507     0.020     1.507     0.020     
+TDY       C5M       C5        single    1.524     0.020     1.524     0.020     
+TDY       C5        C6        single    1.524     0.020     1.524     0.020     
+TDY       N5        C5        single    1.450     0.020     1.450     0.020     
+TDY       HA1       "C5'"     single    1.089     0.010     0.989     0.005     
+TDY       HB2       "C5'"     single    1.089     0.010     0.989     0.005     
+TDY       HB        "C4'"     single    1.089     0.010     0.989     0.005     
+TDY       HC        "C3'"     single    1.089     0.010     0.989     0.005     
+TDY       HD        "C1'"     single    1.089     0.010     0.989     0.005     
+TDY       "H3'"     "O3'"     single    0.970     0.012     0.839     0.014     
+TDY       HB1       "C2'"     single    1.089     0.010     0.989     0.005     
+TDY       HC2       "C2'"     single    1.089     0.010     0.989     0.005     
+TDY       H61C      C6        single    1.089     0.010     0.989     0.005     
+TDY       H62C      C6        single    1.089     0.010     0.989     0.005     
+TDY       H3        N3        single    1.016     0.010     0.899     0.007     
+TDY       H5M1      C5M       single    1.089     0.010     0.989     0.005     
+TDY       H5M2      C5M       single    1.089     0.010     0.989     0.005     
+TDY       H5M3      C5M       single    1.089     0.010     0.989     0.005     
+TDY       H51N      N5        single    1.036     0.016     0.914     0.007     
+TDY       CM5       N5        single    1.450     0.020     1.450     0.020     
+TDY       HM51      CM5       single    1.089     0.010     0.989     0.005     
+TDY       HM52      CM5       single    1.089     0.010     0.989     0.005     
+TDY       HM53      CM5       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TDY      OP3    P      OP1     119.900    3.000
+ TDY      OP3    P      OP2     119.900    3.000
+ TDY      OP3    P      "O5'"   108.200    3.000
+ TDY      OP1    P      OP2     119.900    3.000
+ TDY      OP1    P      "O5'"   108.200    3.000
+ TDY      OP2    P      "O5'"   108.200    3.000
+ TDY      P      "O5'"  "C5'"   120.500    3.000
+ TDY      "O5'"  "C5'"  HA1     109.470    3.000
+ TDY      "O5'"  "C5'"  HB2     109.470    3.000
+ TDY      "O5'"  "C5'"  "C4'"   109.470    3.000
+ TDY      HA1    "C5'"  HB2     107.900    3.000
+ TDY      HA1    "C5'"  "C4'"   109.470    3.000
+ TDY      HB2    "C5'"  "C4'"   109.470    3.000
+ TDY      "C5'"  "C4'"  HB      108.340    3.000
+ TDY      "C5'"  "C4'"  "C3'"   111.000    3.000
+ TDY      "C5'"  "C4'"  "O4'"   109.470    3.000
+ TDY      HB     "C4'"  "C3'"   108.340    3.000
+ TDY      HB     "C4'"  "O4'"   109.470    3.000
+ TDY      "C3'"  "C4'"  "O4'"   109.470    3.000
+ TDY      "C4'"  "C3'"  HC      108.340    3.000
+ TDY      "C4'"  "C3'"  "C2'"   111.000    3.000
+ TDY      "C4'"  "C3'"  "O3'"   109.470    3.000
+ TDY      HC     "C3'"  "C2'"   108.340    3.000
+ TDY      HC     "C3'"  "O3'"   109.470    3.000
+ TDY      "C2'"  "C3'"  "O3'"   109.470    3.000
+ TDY      "C3'"  "C2'"  HB1     109.470    3.000
+ TDY      "C3'"  "C2'"  HC2     109.470    3.000
+ TDY      "C3'"  "C2'"  "C1'"   111.000    3.000
+ TDY      HB1    "C2'"  HC2     107.900    3.000
+ TDY      HB1    "C2'"  "C1'"   109.470    3.000
+ TDY      HC2    "C2'"  "C1'"   109.470    3.000
+ TDY      "C2'"  "C1'"  HD      108.340    3.000
+ TDY      "C2'"  "C1'"  "O4'"   109.470    3.000
+ TDY      "C2'"  "C1'"  N1      105.000    3.000
+ TDY      HD     "C1'"  "O4'"   109.470    3.000
+ TDY      HD     "C1'"  N1      109.470    3.000
+ TDY      "O4'"  "C1'"  N1      109.500    3.000
+ TDY      "C1'"  "O4'"  "C4'"   111.800    3.000
+ TDY      "C1'"  N1     C6      112.000    3.000
+ TDY      "C1'"  N1     C2      121.000    3.000
+ TDY      C6     N1     C2      127.000    3.000
+ TDY      N1     C6     H61C    109.470    3.000
+ TDY      N1     C6     H62C    109.470    3.000
+ TDY      N1     C6     C5      109.500    3.000
+ TDY      H61C   C6     H62C    107.900    3.000
+ TDY      H61C   C6     C5      109.470    3.000
+ TDY      H62C   C6     C5      109.470    3.000
+ TDY      C6     C5     N5      110.000    3.000
+ TDY      C6     C5     C5M     111.000    3.000
+ TDY      C6     C5     C4      109.470    3.000
+ TDY      N5     C5     C5M     110.000    3.000
+ TDY      N5     C5     C4      111.600    3.000
+ TDY      C5M    C5     C4      109.470    3.000
+ TDY      C5     N5     H51N    118.500    3.000
+ TDY      C5     N5     CM5     120.000    3.000
+ TDY      H51N   N5     CM5     118.500    3.000
+ TDY      N5     CM5    HM53    109.470    3.000
+ TDY      N5     CM5    HM52    109.470    3.000
+ TDY      N5     CM5    HM51    109.470    3.000
+ TDY      HM53   CM5    HM52    109.470    3.000
+ TDY      HM53   CM5    HM51    109.470    3.000
+ TDY      HM52   CM5    HM51    109.470    3.000
+ TDY      C5     C5M    H5M3    109.470    3.000
+ TDY      C5     C5M    H5M2    109.470    3.000
+ TDY      C5     C5M    H5M1    109.470    3.000
+ TDY      H5M3   C5M    H5M2    109.470    3.000
+ TDY      H5M3   C5M    H5M1    109.470    3.000
+ TDY      H5M2   C5M    H5M1    109.470    3.000
+ TDY      C5     C4     O4      120.500    3.000
+ TDY      C5     C4     N3      116.500    3.000
+ TDY      O4     C4     N3      123.000    3.000
+ TDY      C4     N3     H3      120.000    3.000
+ TDY      C4     N3     C2      120.000    3.000
+ TDY      H3     N3     C2      120.000    3.000
+ TDY      N3     C2     O2      123.000    3.000
+ TDY      N3     C2     N1      120.000    3.000
+ TDY      O2     C2     N1      123.000    3.000
+ TDY      "C3'"  "O3'"  "H3'"   109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TDY      var_1    OP3    P      "O5'"  "C5'"     65.014   20.000   1
+ TDY      var_2    P      "O5'"  "C5'"  "C4'"   -179.995   20.000   1
+ TDY      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -179.503   20.000   3
+ TDY      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ TDY      var_5    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ TDY      var_6    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ TDY      var_7    "C3'"  "C2'"  "C1'"  N1       120.000   20.000   3
+ TDY      var_8    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ TDY      var_9    "C2'"  "C1'"  N1     C6       115.445   20.000   3
+ TDY      CONST_1  "C1'"  N1     C2     N3       180.000    0.000   0
+ TDY      var_10   "C1'"  N1     C6     C5       150.000   20.000   1
+ TDY      var_11   N1     C6     C5     C4        60.000   20.000   1
+ TDY      var_12   C6     C5     N5     CM5      179.755   20.000   1
+ TDY      var_13   C5     N5     CM5    HM51      59.968   20.000   1
+ TDY      var_14   C6     C5     C5M    H5M1     -59.572   20.000   1
+ TDY      var_15   C6     C5     C4     N3       -30.000   20.000   1
+ TDY      CONST_2  C5     C4     N3     C2         0.000    0.000   0
+ TDY      CONST_3  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TDY      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ TDY      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ TDY      chir_03  "C1'"  "O4'"  "C2'"  N1        positiv
+ TDY      chir_04  C5     C4     C5M    C6        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TDY      plan-1    N1        0.020
+ TDY      plan-1    "C1'"     0.020
+ TDY      plan-1    C2        0.020
+ TDY      plan-1    C6        0.020
+ TDY      plan-2    C2        0.020
+ TDY      plan-2    N1        0.020
+ TDY      plan-2    O2        0.020
+ TDY      plan-2    N3        0.020
+ TDY      plan-2    H3        0.020
+ TDY      plan-3    N3        0.020
+ TDY      plan-3    C2        0.020
+ TDY      plan-3    C4        0.020
+ TDY      plan-3    H3        0.020
+ TDY      plan-4    C4        0.020
+ TDY      plan-4    N3        0.020
+ TDY      plan-4    O4        0.020
+ TDY      plan-4    C5        0.020
+ TDY      plan-4    H3        0.020
+ TDY      plan-5    N5        0.020
+ TDY      plan-5    C5        0.020
+ TDY      plan-5    CM5       0.020
+ TDY      plan-5    H51N      0.020
+# ------------------------------------------------------

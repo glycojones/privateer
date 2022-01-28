@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IPH     IPH     PHENOL     NON-POLYMER     13     7     .     
+#
+data_comp_IPH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+IPH     C1      C       CR6     0       9.942       35.431      32.648      
+IPH     C2      C       CR16    0       10.549      36.465      31.944      
+IPH     C3      C       CR16    0       11.657      37.111      32.485      
+IPH     C4      C       CR16    0       12.161      36.732      33.718      
+IPH     C5      C       CR16    0       11.553      35.700      34.415      
+IPH     C6      C       CR16    0       10.445      35.045      33.886      
+IPH     O1      O       OH1     0       8.856       34.794      32.119      
+IPH     H2      H       H       0       10.211      36.727      31.105      
+IPH     H3      H       H       0       12.067      37.812      32.006      
+IPH     H4      H       H       0       12.912      37.173      34.081      
+IPH     H5      H       H       0       11.891      35.437      35.255      
+IPH     H6      H       H       0       10.035      34.345      34.364      
+IPH     HO1     H       H       0       8.195       34.829      32.667      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IPH       C1        C2        DOUBLE    y         1.383     0.010     1.383     0.010     
+IPH       C1        C6        SINGLE    y         1.383     0.010     1.383     0.010     
+IPH       C1        O1        SINGLE    n         1.365     0.012     1.365     0.012     
+IPH       C2        C3        SINGLE    y         1.385     0.010     1.385     0.010     
+IPH       C3        C4        DOUBLE    y         1.376     0.012     1.376     0.012     
+IPH       C4        C5        SINGLE    y         1.375     0.013     1.375     0.013     
+IPH       C5        C6        DOUBLE    y         1.385     0.010     1.385     0.010     
+IPH       C2        H2        SINGLE    n         1.082     0.013     0.942     0.016     
+IPH       C3        H3        SINGLE    n         1.082     0.013     0.943     0.018     
+IPH       C4        H4        SINGLE    n         1.082     0.013     0.944     0.016     
+IPH       C5        H5        SINGLE    n         1.082     0.013     0.943     0.018     
+IPH       C6        H6        SINGLE    n         1.082     0.013     0.942     0.016     
+IPH       O1        HO1       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+IPH          C2          C1          C6     119.663    1.50
+IPH          C2          C1          O1     120.168    2.50
+IPH          C6          C1          O1     120.168    2.50
+IPH          C1          C2          C3     119.521    1.50
+IPH          C1          C2          H2     120.143    1.50
+IPH          C3          C2          H2     120.337    1.50
+IPH          C2          C3          C4     120.693    1.50
+IPH          C2          C3          H3     119.469    1.50
+IPH          C4          C3          H3     119.838    1.50
+IPH          C3          C4          C5     119.910    1.50
+IPH          C3          C4          H4     120.045    1.50
+IPH          C5          C4          H4     120.045    1.50
+IPH          C4          C5          C6     120.693    1.50
+IPH          C4          C5          H5     119.838    1.50
+IPH          C6          C5          H5     119.469    1.50
+IPH          C1          C6          C5     119.521    1.50
+IPH          C1          C6          H6     120.143    1.50
+IPH          C5          C6          H6     120.337    1.50
+IPH          C1          O1         HO1     110.017    2.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+IPH       const_sp2_sp2_3          O1          C1          C2          C3     180.000   10.00     2
+IPH              const_23          O1          C1          C6          C5     180.000   10.00     2
+IPH       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+IPH       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+IPH              const_13          C3          C4          C5          C6       0.000   10.00     2
+IPH              const_17          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+IPH    plan-1          C1   0.020
+IPH    plan-1          C2   0.020
+IPH    plan-1          C3   0.020
+IPH    plan-1          C4   0.020
+IPH    plan-1          C5   0.020
+IPH    plan-1          C6   0.020
+IPH    plan-1          H2   0.020
+IPH    plan-1          H3   0.020
+IPH    plan-1          H4   0.020
+IPH    plan-1          H5   0.020
+IPH    plan-1          H6   0.020
+IPH    plan-1          O1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+IPH SMILES           ACDLabs              10.04 Oc1ccccc1
+IPH SMILES_CANONICAL CACTVS               3.341 Oc1ccccc1
+IPH SMILES           CACTVS               3.341 Oc1ccccc1
+IPH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)O"
+IPH SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)O"
+IPH InChI            InChI                1.03  InChI=1S/C6H6O/c7-6-4-2-1-3-5-6/h1-5,7H
+IPH InChIKey         InChI                1.03  ISWSIDIOOBJBQZ-UHFFFAOYSA-N
+IPH ?                acedrg               190         "dictionary generator"                  
+IPH ?                acedrg_database      11          "data source"                           
+IPH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+IPH ?                refmac5              5.8.0158    "optimization tool"                     

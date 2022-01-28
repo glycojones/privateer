@@ -1,0 +1,198 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HDL      HDL 'D-arabinohydroxamic acid            ' non-polymer        21  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HDL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HDL           O5     O    O         0.000      0.000    0.000    0.000
+ HDL           C5     C    C         0.000     -0.992   -0.423    0.553
+ HDL           N6     N    NH1       0.000     -1.009   -1.680    1.040
+ HDL           H8     H    H         0.000     -1.835   -2.033    1.501
+ HDL           O6     O    OH1       0.000      0.134   -2.506    0.904
+ HDL           H9     H    H         0.000      0.129   -3.413    1.252
+ HDL           C4     C    CH1       0.000     -2.207    0.456    0.697
+ HDL           H4     H    H         0.000     -2.495    0.514    1.757
+ HDL           O4     O    OH1       0.000     -1.908    1.767    0.212
+ HDL           HO4    H    H         0.000     -1.655    1.715   -0.720
+ HDL           C3     C    CH1       0.000     -3.363   -0.135   -0.113
+ HDL           H3     H    H         0.000     -3.076   -0.193   -1.173
+ HDL           O3     O    OH1       0.000     -3.664   -1.446    0.372
+ HDL           HO3    H    H         0.000     -3.915   -1.394    1.304
+ HDL           C2     C    CH1       0.000     -4.597    0.757    0.033
+ HDL           H2     H    H         0.000     -4.396    1.738   -0.421
+ HDL           O2     O    OH1       0.000     -4.902    0.928    1.419
+ HDL           HO2    H    H         0.000     -5.079    0.065    1.818
+ HDL           C1     C    C         0.000     -5.769    0.113   -0.662
+ HDL           O1A    O    OC       -0.500     -5.751   -0.042   -1.904
+ HDL           O1B    O    OC       -0.500     -6.759   -0.267    0.001
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HDL      O5     n/a    C5     START
+ HDL      C5     O5     C4     .
+ HDL      N6     C5     O6     .
+ HDL      H8     N6     .      .
+ HDL      O6     N6     H9     .
+ HDL      H9     O6     .      .
+ HDL      C4     C5     C3     .
+ HDL      H4     C4     .      .
+ HDL      O4     C4     HO4    .
+ HDL      HO4    O4     .      .
+ HDL      C3     C4     C2     .
+ HDL      H3     C3     .      .
+ HDL      O3     C3     HO3    .
+ HDL      HO3    O3     .      .
+ HDL      C2     C3     C1     .
+ HDL      H2     C2     .      .
+ HDL      O2     C2     HO2    .
+ HDL      HO2    O2     .      .
+ HDL      C1     C2     O1B    .
+ HDL      O1A    C1     .      .
+ HDL      O1B    C1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HDL       O1A       C1        deloc     1.250     0.020     1.250     0.020     
+HDL       C1        C2        single    1.500     0.020     1.500     0.020     
+HDL       O1B       C1        deloc     1.250     0.020     1.250     0.020     
+HDL       O2        C2        single    1.432     0.020     1.432     0.020     
+HDL       H2        C2        single    1.089     0.010     0.989     0.005     
+HDL       HO2       O2        single    0.970     0.012     0.839     0.014     
+HDL       C2        C3        single    1.524     0.020     1.524     0.020     
+HDL       O3        C3        single    1.432     0.020     1.432     0.020     
+HDL       C3        C4        single    1.524     0.020     1.524     0.020     
+HDL       H3        C3        single    1.089     0.010     0.989     0.005     
+HDL       HO3       O3        single    0.970     0.012     0.839     0.014     
+HDL       C4        C5        single    1.500     0.020     1.500     0.020     
+HDL       H4        C4        single    1.089     0.010     0.989     0.005     
+HDL       O4        C4        single    1.432     0.020     1.432     0.020     
+HDL       HO4       O4        single    0.970     0.012     0.839     0.014     
+HDL       C5        O5        double    1.220     0.020     1.220     0.020     
+HDL       N6        C5        single    1.330     0.020     1.330     0.020     
+HDL       O6        N6        single    1.392     0.020     1.392     0.020     
+HDL       H8        N6        single    1.016     0.010     0.899     0.007     
+HDL       H9        O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HDL      O5     C5     N6      123.000    3.000
+ HDL      O5     C5     C4      120.500    3.000
+ HDL      N6     C5     C4      116.500    3.000
+ HDL      C5     N6     H8      120.000    3.000
+ HDL      C5     N6     O6      120.000    3.000
+ HDL      H8     N6     O6      120.200    3.000
+ HDL      N6     O6     H9      120.000    3.000
+ HDL      C5     C4     H4      108.810    3.000
+ HDL      C5     C4     O4      109.470    3.000
+ HDL      C5     C4     C3      109.470    3.000
+ HDL      H4     C4     O4      109.470    3.000
+ HDL      H4     C4     C3      108.340    3.000
+ HDL      O4     C4     C3      109.470    3.000
+ HDL      C4     O4     HO4     109.470    3.000
+ HDL      C4     C3     H3      108.340    3.000
+ HDL      C4     C3     O3      109.470    3.000
+ HDL      C4     C3     C2      111.000    3.000
+ HDL      H3     C3     O3      109.470    3.000
+ HDL      H3     C3     C2      108.340    3.000
+ HDL      O3     C3     C2      109.470    3.000
+ HDL      C3     O3     HO3     109.470    3.000
+ HDL      C3     C2     H2      108.340    3.000
+ HDL      C3     C2     O2      109.470    3.000
+ HDL      C3     C2     C1      109.470    3.000
+ HDL      H2     C2     O2      109.470    3.000
+ HDL      H2     C2     C1      108.810    3.000
+ HDL      O2     C2     C1      109.470    3.000
+ HDL      C2     O2     HO2     109.470    3.000
+ HDL      C2     C1     O1A     118.500    3.000
+ HDL      C2     C1     O1B     118.500    3.000
+ HDL      O1A    C1     O1B     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HDL      CONST_1  O5     C5     N6     O6         0.000    0.000   0
+ HDL      var_1    C5     N6     O6     H9      -179.984   20.000   1
+ HDL      var_2    O5     C5     C4     C3       114.943   20.000   3
+ HDL      var_3    C5     C4     O4     HO4       59.969   20.000   1
+ HDL      var_4    C5     C4     C3     C2      -179.990   20.000   3
+ HDL      var_5    C4     C3     O3     HO3       59.901   20.000   1
+ HDL      var_6    C4     C3     C2     C1      -174.943   20.000   3
+ HDL      var_7    C3     C2     O2     HO2      -59.999   20.000   1
+ HDL      var_8    C3     C2     C1     O1B      115.018   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HDL      chir_01  C2     C1     O2     C3        negativ
+ HDL      chir_02  C3     C2     O3     C4        positiv
+ HDL      chir_03  C4     C3     O4     C5        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HDL      plan-1    C1        0.020
+ HDL      plan-1    O1A       0.020
+ HDL      plan-1    O1B       0.020
+ HDL      plan-1    C2        0.020
+ HDL      plan-2    C5        0.020
+ HDL      plan-2    C4        0.020
+ HDL      plan-2    O5        0.020
+ HDL      plan-2    N6        0.020
+ HDL      plan-2    H8        0.020
+ HDL      plan-3    N6        0.020
+ HDL      plan-3    C5        0.020
+ HDL      plan-3    O6        0.020
+ HDL      plan-3    H8        0.020
+# ------------------------------------------------------

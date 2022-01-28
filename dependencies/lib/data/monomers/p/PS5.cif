@@ -1,0 +1,81 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PS5     PS5      PENTASULFIDE-SULFUR     NON-POLYMER     5     5     .     
+#
+data_comp_PS5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PS5     S1      S       S1      -1      -2.367      -0.871      1.238       
+PS5     S2      S       S2      0       -1.560      -0.113      -0.465      
+PS5     S3      S       S2      0       0.019       1.108       0.011       
+PS5     S4      S       S2      0       1.552       -0.182      0.458       
+PS5     S5      S       S1      -1      2.356       -0.900      -1.263      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PS5       S1        S2        SINGLE    n         2.031     0.010     2.031     0.010     
+PS5       S2        S3        SINGLE    n         2.052     0.020     2.052     0.020     
+PS5       S3        S4        SINGLE    n         2.052     0.020     2.052     0.020     
+PS5       S4        S5        SINGLE    n         2.031     0.010     2.031     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PS5          S1          S2          S3     109.471    3.00
+PS5          S2          S3          S4     104.568    3.00
+PS5          S3          S4          S5     109.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PS5             sp3_sp3_1          S1          S2          S3          S4     180.000   10.00     3
+PS5             sp3_sp3_2          S2          S3          S4          S5     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PS5 SMILES           ACDLabs              10.04 "[S-]SSS[S-]"
+PS5 SMILES_CANONICAL CACTVS               3.341 "[S-]SSS[S-]"
+PS5 SMILES           CACTVS               3.341 "[S-]SSS[S-]"
+PS5 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[S-]SSS[S-]"
+PS5 SMILES           "OpenEye OEToolkits" 1.5.0 "[S-]SSS[S-]"
+PS5 InChI            InChI                1.03  InChI=1S/H2S5/c1-3-5-4-2/h1-2H/p-2
+PS5 InChIKey         InChI                1.03  FBNHIFPJXGPDIP-UHFFFAOYSA-L
+PS5 ?                acedrg               202         "dictionary generator"                  
+PS5 ?                acedrg_database      11          "data source"                           
+PS5 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PS5 ?                refmac5              5.8.0189    "optimization tool"                     

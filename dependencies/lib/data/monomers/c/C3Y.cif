@@ -1,0 +1,213 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+C3Y     C3Y      "S-[(1S)-1-HYDROXY-1-(HYDROXYAMINO)ETHYL]-L-CYSTEINE"  peptide     24     12     .     
+#
+data_comp_C3Y
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+C3Y     N       N       NT3     1       -3.162      0.627       -0.965      
+C3Y     CA      C       CH1     0       -2.248      0.349       0.176       
+C3Y     C       C       C       0       -2.776      -0.844      0.982       
+C3Y     O       O       O       0       -2.927      -0.683      2.210       
+C3Y     CB      C       CH2     0       -0.850      0.078       -0.347      
+C3Y     SG      S       S2      0       0.426       -0.101      0.930       
+C3Y     C1      C       CH3     0       2.317       1.336       -0.439      
+C3Y     O2      O       OH1     0       1.792       -0.826      -1.200      
+C3Y     N1      N       NT1     0       3.049       -0.637      0.810       
+C3Y     O3      O       OH1     0       2.824       -2.040      1.071       
+C3Y     C2      C       CT      0       1.969       -0.087      -0.028      
+C3Y     OXT     O       OC      -1      -3.017      -1.893      0.352       
+C3Y     H       H       H       0       -2.862      1.350       -1.432      
+C3Y     H2      H       H       0       -4.001      0.800       -0.654      
+C3Y     H3      H       H       0       -3.191      -0.096      -1.519      
+C3Y     HA      H       H       0       -2.232      1.145       0.757       
+C3Y     HBC1    H       H       0       -0.596      0.806       -0.937      
+C3Y     HBC2    H       H       0       -0.874      -0.735      -0.876      
+C3Y     H1C1    H       H       0       3.154       1.332       -0.937      
+C3Y     H1C2    H       H       0       2.414       1.887       0.357       
+C3Y     H1C3    H       H       0       1.607       1.694       -0.999      
+C3Y     H5      H       H       0       2.531       -0.967      -1.593      
+C3Y     HN1     H       H       0       3.086       -0.238      1.627       
+C3Y     HO3     H       H       0       3.308       -2.431      0.493       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ C3Y      N      n/a    CA     START
+ C3Y      H      N      .      .
+ C3Y      H2     N      .      .
+ C3Y      H3     N      .      .
+ C3Y      CA     N      C      .
+ C3Y      HA     CA     .      .
+ C3Y      CB     CA     SG     .
+ C3Y      HBC1   CB     .      .
+ C3Y      HBC2   CB     .      .
+ C3Y      SG     CB     C2     .
+ C3Y      C2     SG     N1     .
+ C3Y      C1     C2     H1C1   .
+ C3Y      H1C3   C1     .      .
+ C3Y      H1C2   C1     .      .
+ C3Y      H1C1   C1     .      .
+ C3Y      O2     C2     H5     .
+ C3Y      H5     O2     .      .
+ C3Y      N1     C2     O3     .
+ C3Y      HN1    N1     .      .
+ C3Y      O3     N1     HO3    .
+ C3Y      HO3    O3     .      .
+ C3Y      C      CA     .      END
+ C3Y      O      C      .      .
+ C3Y      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+C3Y       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+C3Y       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+C3Y       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+C3Y       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+C3Y       CB        SG        SINGLE    n         1.813     0.011     1.813     0.011     
+C3Y       N1        O3        SINGLE    n         1.442     0.020     1.442     0.020     
+C3Y       SG        C2        SINGLE    n         1.813     0.017     1.813     0.017     
+C3Y       C1        C2        SINGLE    n         1.521     0.020     1.521     0.020     
+C3Y       O2        C2        SINGLE    n         1.396     0.011     1.396     0.011     
+C3Y       N1        C2        SINGLE    n         1.470     0.017     1.470     0.017     
+C3Y       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+C3Y       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+C3Y       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+C3Y       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+C3Y       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+C3Y       CB        HBC1      SINGLE    n         1.089     0.010     0.970     0.010     
+C3Y       CB        HBC2      SINGLE    n         1.089     0.010     0.970     0.010     
+C3Y       C1        H1C1      SINGLE    n         1.089     0.010     0.973     0.015     
+C3Y       C1        H1C2      SINGLE    n         1.089     0.010     0.973     0.015     
+C3Y       C1        H1C3      SINGLE    n         1.089     0.010     0.973     0.015     
+C3Y       O2        H5        SINGLE    n         0.970     0.012     0.848     0.020     
+C3Y       N1        HN1       SINGLE    n         1.036     0.016     0.909     0.020     
+C3Y       O3        HO3       SINGLE    n         0.970     0.012     0.849     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+C3Y          CA           N           H     109.671    1.50
+C3Y          CA           N          H2     109.671    1.50
+C3Y          CA           N          H3     109.671    1.50
+C3Y           H           N          H2     109.028    2.41
+C3Y           H           N          H3     109.028    2.41
+C3Y          H2           N          H3     109.028    2.41
+C3Y           N          CA           C     109.494    1.50
+C3Y           N          CA          CB     109.354    1.50
+C3Y           N          CA          HA     107.983    1.50
+C3Y           C          CA          CB     110.419    2.31
+C3Y           C          CA          HA     108.606    1.50
+C3Y          CB          CA          HA     109.209    1.50
+C3Y          CA           C           O     117.134    1.50
+C3Y          CA           C         OXT     117.134    1.50
+C3Y           O           C         OXT     125.732    1.50
+C3Y          CA          CB          SG     114.974    1.55
+C3Y          CA          CB        HBC1     108.537    1.50
+C3Y          CA          CB        HBC2     108.537    1.50
+C3Y          SG          CB        HBC1     108.654    1.50
+C3Y          SG          CB        HBC2     108.654    1.50
+C3Y        HBC1          CB        HBC2     107.812    1.50
+C3Y          CB          SG          C2     101.840    1.86
+C3Y          C2          C1        H1C1     109.155    1.50
+C3Y          C2          C1        H1C2     109.155    1.50
+C3Y          C2          C1        H1C3     109.155    1.50
+C3Y        H1C1          C1        H1C2     109.399    1.50
+C3Y        H1C1          C1        H1C3     109.399    1.50
+C3Y        H1C2          C1        H1C3     109.399    1.50
+C3Y          C2          O2          H5     111.266    2.03
+C3Y          O3          N1          C2     108.492    3.00
+C3Y          O3          N1         HN1     105.620    3.00
+C3Y          C2          N1         HN1     111.861    3.00
+C3Y          N1          O3         HO3     103.604    3.00
+C3Y          SG          C2          C1     112.239    3.00
+C3Y          SG          C2          O2     109.471    3.00
+C3Y          SG          C2          N1     109.471    3.00
+C3Y          C1          C2          O2     109.482    3.00
+C3Y          C1          C2          N1     111.883    2.59
+C3Y          O2          C2          N1     112.111    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+C3Y             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+C3Y             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+C3Y            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+C3Y            sp3_sp3_19          CA          CB          SG          C2     180.000   10.00     3
+C3Y            sp3_sp3_24          C1          C2          SG          CB     180.000   10.00     3
+C3Y            sp3_sp3_27        H1C1          C1          C2          SG     180.000   10.00     3
+C3Y            sp3_sp3_36          SG          C2          O2          H5     180.000   10.00     3
+C3Y            sp3_sp3_39          SG          C2          N1          O3     180.000   10.00     3
+C3Y            sp3_sp3_23          C2          N1          O3         HO3      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+C3Y    chir_1    CA    N    CB    C    both
+C3Y    chir_2    N1    O3    C2    HN1    both
+C3Y    chir_3    C2    SG    O2    N1    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+C3Y    plan-1           C   0.020
+C3Y    plan-1          CA   0.020
+C3Y    plan-1           O   0.020
+C3Y    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+C3Y SMILES           ACDLabs              10.04 "O=C(O)C(N)CSC(O)(NO)C"
+C3Y SMILES_CANONICAL CACTVS               3.341 "C[C@@](O)(NO)SC[C@H](N)C(O)=O"
+C3Y SMILES           CACTVS               3.341 "C[C](O)(NO)SC[CH](N)C(O)=O"
+C3Y SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@](NO)(O)SC[C@@H](C(=O)O)N"
+C3Y SMILES           "OpenEye OEToolkits" 1.5.0 "CC(NO)(O)SCC(C(=O)O)N"
+C3Y InChI            InChI                1.03  "InChI=1S/C5H12N2O4S/c1-5(10,7-11)12-2-3(6)4(8)9/h3,7,10-11H,2,6H2,1H3,(H,8,9)/t3-,5-/m0/s1"
+C3Y InChIKey         InChI                1.03  XIYHYGCLIYYYPL-UCORVYFPSA-N
+C3Y ?                acedrg               202         "dictionary generator"                  
+C3Y ?                acedrg_database      11          "data source"                           
+C3Y ?                rdkit                2017.03.2   "Chemoinformatics tool"
+C3Y ?                refmac5              5.8.0222    "optimization tool"                     

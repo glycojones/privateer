@@ -1,0 +1,63 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+N2O     N2O      "NITROUS OXIDE"     NON-POLYMER     3     3     .     
+#
+data_comp_N2O
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+N2O     O3      O       OC      -1      0.983       -0.007      -0.268      
+N2O     N2      N       N       1       -0.052      -0.416      0.303       
+N2O     N1      N       N       0       -1.000      -0.587      -0.295      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+N2O       O3        N2        SINGLE    n         1.251     0.020     1.251     0.020     
+N2O       N2        N1        TRIPLE    n         1.134     0.016     1.134     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+N2O          O3          N2          N1     120.000    3.00
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+N2O SMILES           ACDLabs              10.04 "[O-][N+]#N"
+N2O SMILES_CANONICAL CACTVS               3.341 "[O-][N+]#N"
+N2O SMILES           CACTVS               3.341 "[O-][N+]#N"
+N2O SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "N#[N+][O-]"
+N2O SMILES           "OpenEye OEToolkits" 1.5.0 "N#[N+][O-]"
+N2O InChI            InChI                1.03  InChI=1S/N2O/c1-2-3
+N2O InChIKey         InChI                1.03  GQPLMRYTRLFLPF-UHFFFAOYSA-N
+N2O ?                acedrg               202         "dictionary generator"                  
+N2O ?                acedrg_database      11          "data source"                           
+N2O ?                rdkit                2017.03.2   "Chemoinformatics tool"
+N2O ?                refmac5              5.8.0189    "optimization tool"                     

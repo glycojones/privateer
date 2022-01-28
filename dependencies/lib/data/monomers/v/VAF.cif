@@ -1,0 +1,194 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VAF      VAF 'METHYLVALINE                        ' non-polymer        21   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VAF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ VAF           O      O    O         0.000      0.000    0.000    0.000
+ VAF           CF     C    C         0.000     -1.061   -0.467   -0.333
+ VAF           CJ     C    CH3       0.000     -1.376   -0.650   -1.796
+ VAF           HJ3    H    H         0.000     -1.556   -1.675   -1.994
+ VAF           HJ2    H    H         0.000     -2.238   -0.087   -2.046
+ VAF           HJ1    H    H         0.000     -0.557   -0.317   -2.379
+ VAF           CA     C    CH1       0.000     -2.072   -0.867    0.710
+ VAF           HA     H    H         0.000     -2.677   -1.703    0.333
+ VAF           N      N    NH2       0.000     -1.372   -1.281    1.933
+ VAF           HN2    H    H         0.000     -0.362   -1.356    1.944
+ VAF           HN1    H    H         0.000     -1.895   -1.494    2.775
+ VAF           CB     C    CH1       0.000     -2.982    0.321    1.022
+ VAF           HB     H    H         0.000     -3.505    0.631    0.106
+ VAF           CG2    C    CH3       0.000     -2.140    1.485    1.545
+ VAF           HG23   H    H         0.000     -1.429    1.767    0.811
+ VAF           HG22   H    H         0.000     -2.770    2.310    1.760
+ VAF           HG21   H    H         0.000     -1.635    1.189    2.428
+ VAF           CG1    C    CH3       0.000     -4.007   -0.084    2.082
+ VAF           HG13   H    H         0.000     -4.591   -0.891    1.721
+ VAF           HG12   H    H         0.000     -3.504   -0.382    2.966
+ VAF           HG11   H    H         0.000     -4.638    0.739    2.297
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VAF      O      n/a    CF     START
+ VAF      CF     O      CA     .
+ VAF      CJ     CF     HJ1    .
+ VAF      HJ3    CJ     .      .
+ VAF      HJ2    CJ     .      .
+ VAF      HJ1    CJ     .      .
+ VAF      CA     CF     CB     .
+ VAF      HA     CA     .      .
+ VAF      N      CA     HN1    .
+ VAF      HN2    N      .      .
+ VAF      HN1    N      .      .
+ VAF      CB     CA     CG1    .
+ VAF      HB     CB     .      .
+ VAF      CG2    CB     HG21   .
+ VAF      HG23   CG2    .      .
+ VAF      HG22   CG2    .      .
+ VAF      HG21   CG2    .      .
+ VAF      CG1    CB     HG11   .
+ VAF      HG13   CG1    .      .
+ VAF      HG12   CG1    .      .
+ VAF      HG11   CG1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VAF       N         CA        single    1.450     0.020     1.450     0.020     
+VAF       HN1       N         single    1.036     0.016     0.914     0.007     
+VAF       HN2       N         single    1.036     0.016     0.914     0.007     
+VAF       CB        CA        single    1.524     0.020     1.524     0.020     
+VAF       CA        CF        single    1.500     0.020     1.500     0.020     
+VAF       HA        CA        single    1.089     0.010     0.989     0.005     
+VAF       CG1       CB        single    1.524     0.020     1.524     0.020     
+VAF       CG2       CB        single    1.524     0.020     1.524     0.020     
+VAF       HB        CB        single    1.089     0.010     0.989     0.005     
+VAF       HG11      CG1       single    1.089     0.010     0.989     0.005     
+VAF       HG12      CG1       single    1.089     0.010     0.989     0.005     
+VAF       HG13      CG1       single    1.089     0.010     0.989     0.005     
+VAF       HG21      CG2       single    1.089     0.010     0.989     0.005     
+VAF       HG22      CG2       single    1.089     0.010     0.989     0.005     
+VAF       HG23      CG2       single    1.089     0.010     0.989     0.005     
+VAF       CJ        CF        single    1.500     0.020     1.500     0.020     
+VAF       CF        O         double    1.220     0.020     1.220     0.020     
+VAF       HJ1       CJ        single    1.089     0.010     0.989     0.005     
+VAF       HJ2       CJ        single    1.089     0.010     0.989     0.005     
+VAF       HJ3       CJ        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VAF      O      CF     CJ      123.000    3.000
+ VAF      O      CF     CA      120.500    3.000
+ VAF      CJ     CF     CA      120.000    3.000
+ VAF      CF     CJ     HJ3     109.470    3.000
+ VAF      CF     CJ     HJ2     109.470    3.000
+ VAF      CF     CJ     HJ1     109.470    3.000
+ VAF      HJ3    CJ     HJ2     109.470    3.000
+ VAF      HJ3    CJ     HJ1     109.470    3.000
+ VAF      HJ2    CJ     HJ1     109.470    3.000
+ VAF      CF     CA     HA      108.810    3.000
+ VAF      CF     CA     N       109.470    3.000
+ VAF      CF     CA     CB      109.470    3.000
+ VAF      HA     CA     N       109.470    3.000
+ VAF      HA     CA     CB      108.340    3.000
+ VAF      N      CA     CB      109.470    3.000
+ VAF      CA     N      HN2     120.000    3.000
+ VAF      CA     N      HN1     120.000    3.000
+ VAF      HN2    N      HN1     120.000    3.000
+ VAF      CA     CB     HB      108.340    3.000
+ VAF      CA     CB     CG2     111.000    3.000
+ VAF      CA     CB     CG1     111.000    3.000
+ VAF      HB     CB     CG2     108.340    3.000
+ VAF      HB     CB     CG1     108.340    3.000
+ VAF      CG2    CB     CG1     111.000    3.000
+ VAF      CB     CG2    HG23    109.470    3.000
+ VAF      CB     CG2    HG22    109.470    3.000
+ VAF      CB     CG2    HG21    109.470    3.000
+ VAF      HG23   CG2    HG22    109.470    3.000
+ VAF      HG23   CG2    HG21    109.470    3.000
+ VAF      HG22   CG2    HG21    109.470    3.000
+ VAF      CB     CG1    HG13    109.470    3.000
+ VAF      CB     CG1    HG12    109.470    3.000
+ VAF      CB     CG1    HG11    109.470    3.000
+ VAF      HG13   CG1    HG12    109.470    3.000
+ VAF      HG13   CG1    HG11    109.470    3.000
+ VAF      HG12   CG1    HG11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VAF      var_1    O      CF     CJ     HJ1       -0.005   20.000   1
+ VAF      var_2    O      CF     CA     CB        89.946   20.000   3
+ VAF      var_3    CF     CA     N      HN1      173.755   20.000   1
+ VAF      var_4    CF     CA     CB     CG1     -179.913   20.000   3
+ VAF      var_5    CA     CB     CG2    HG21     -60.081   20.000   3
+ VAF      var_6    CA     CB     CG1    HG11    -179.915   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ VAF      chir_01  CA     N      CB     CF        negativ
+ VAF      chir_02  CB     CA     CG1    CG2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ VAF      plan-1    N         0.020
+ VAF      plan-1    CA        0.020
+ VAF      plan-1    HN1       0.020
+ VAF      plan-1    HN2       0.020
+ VAF      plan-2    CF        0.020
+ VAF      plan-2    CA        0.020
+ VAF      plan-2    CJ        0.020
+ VAF      plan-2    O         0.020
+# ------------------------------------------------------

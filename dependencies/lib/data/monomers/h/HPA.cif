@@ -1,0 +1,154 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HPA     HPA      HYPOXANTHINE     NON-POLYMER     14     10     .     
+#
+data_comp_HPA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HPA     N1      N       NR6     0       26.106      89.896      73.266      
+HPA     C2      C       CR16    0       25.047      89.071      73.041      
+HPA     N3      N       NRD6    0       23.794      89.457      73.103      
+HPA     C4      C       CR56    0       23.568      90.764      73.411      
+HPA     C5      C       CR56    0       24.617      91.692      73.661      
+HPA     C6      C       CR6     0       25.987      91.254      73.590      
+HPA     O6      O       O       0       26.991      91.950      73.783      
+HPA     N7      N       NR5     0       23.988      92.884      73.932      
+HPA     C8      C       CR15    0       22.669      92.650      73.842      
+HPA     N9      N       NRD5    0       22.356      91.401      73.534      
+HPA     HN1     H       H       0       26.904      89.561      73.206      
+HPA     H2      H       H       0       25.223      88.174      72.830      
+HPA     HN7     H       H       0       24.380      93.673      74.132      
+HPA     H8      H       H       0       22.021      93.324      73.988      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HPA       N1        C2        SINGLE    y         1.347     0.018     1.347     0.018     
+HPA       N1        C6        SINGLE    y         1.392     0.012     1.392     0.012     
+HPA       C2        N3        DOUBLE    y         1.299     0.016     1.299     0.016     
+HPA       N3        C4        SINGLE    y         1.345     0.015     1.345     0.015     
+HPA       C4        C5        DOUBLE    y         1.401     0.020     1.401     0.020     
+HPA       C4        N9        SINGLE    y         1.375     0.010     1.375     0.010     
+HPA       C5        C6        SINGLE    y         1.425     0.014     1.425     0.014     
+HPA       C5        N7        SINGLE    y         1.375     0.010     1.375     0.010     
+HPA       C6        O6        DOUBLE    n         1.237     0.013     1.237     0.013     
+HPA       N7        C8        SINGLE    y         1.341     0.010     1.341     0.010     
+HPA       C8        N9        DOUBLE    y         1.322     0.010     1.322     0.010     
+HPA       N1        HN1       SINGLE    n         1.016     0.010     0.868     0.015     
+HPA       C2        H2        SINGLE    n         1.082     0.013     0.938     0.010     
+HPA       N7        HN7       SINGLE    n         1.016     0.010     0.904     0.020     
+HPA       C8        H8        SINGLE    n         1.082     0.013     0.946     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HPA          C2          N1          C6     124.821    1.50
+HPA          C2          N1         HN1     117.687    1.50
+HPA          C6          N1         HN1     117.491    1.50
+HPA          N1          C2          N3     124.928    1.50
+HPA          N1          C2          H2     117.515    1.50
+HPA          N3          C2          H2     117.558    1.50
+HPA          C2          N3          C4     116.887    1.50
+HPA          N3          C4          C5     122.484    1.50
+HPA          N3          C4          N9     127.573    1.50
+HPA          C5          C4          N9     109.943    1.50
+HPA          C4          C5          C6     118.578    2.44
+HPA          C4          C5          N7     106.198    1.50
+HPA          C6          C5          N7     135.224    1.50
+HPA          N1          C6          C5     112.301    1.50
+HPA          N1          C6          O6     121.035    1.50
+HPA          C5          C6          O6     126.663    1.50
+HPA          C5          N7          C8     106.404    1.50
+HPA          C5          N7         HN7     127.100    2.33
+HPA          C8          N7         HN7     126.496    2.71
+HPA          N7          C8          N9     113.593    1.50
+HPA          N7          C8          H8     122.961    1.50
+HPA          N9          C8          H8     123.445    1.50
+HPA          C4          N9          C8     103.862    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HPA       const_sp2_sp2_1          N3          C2          N1          C6       0.000   10.00     2
+HPA              const_29          O6          C6          N1          C2     180.000   10.00     2
+HPA       const_sp2_sp2_5          N1          C2          N3          C4       0.000   10.00     2
+HPA       const_sp2_sp2_7          C5          C4          N3          C2       0.000   10.00     2
+HPA       const_sp2_sp2_9          N3          C4          C5          C6       0.000   10.00     2
+HPA              const_32          N3          C4          N9          C8     180.000   10.00     2
+HPA              const_14          C4          C5          C6          O6     180.000   10.00     2
+HPA              const_17          C4          C5          N7          C8       0.000   10.00     2
+HPA              const_21          N9          C8          N7          C5       0.000   10.00     2
+HPA              const_25          N7          C8          N9          C4       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HPA    plan-1          C2   0.020
+HPA    plan-1          C4   0.020
+HPA    plan-1          C5   0.020
+HPA    plan-1          C6   0.020
+HPA    plan-1          H2   0.020
+HPA    plan-1         HN1   0.020
+HPA    plan-1          N1   0.020
+HPA    plan-1          N3   0.020
+HPA    plan-1          N7   0.020
+HPA    plan-1          N9   0.020
+HPA    plan-1          O6   0.020
+HPA    plan-2          C4   0.020
+HPA    plan-2          C5   0.020
+HPA    plan-2          C6   0.020
+HPA    plan-2          C8   0.020
+HPA    plan-2          H8   0.020
+HPA    plan-2         HN7   0.020
+HPA    plan-2          N3   0.020
+HPA    plan-2          N7   0.020
+HPA    plan-2          N9   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HPA SMILES           ACDLabs              10.04 "O=C1c2c(N=CN1)ncn2"
+HPA SMILES_CANONICAL CACTVS               3.341 "O=C1NC=Nc2nc[nH]c12"
+HPA SMILES           CACTVS               3.341 "O=C1NC=Nc2nc[nH]c12"
+HPA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1[nH]c2c(n1)N=CNC2=O"
+HPA SMILES           "OpenEye OEToolkits" 1.5.0 "c1[nH]c2c(n1)N=CNC2=O"
+HPA InChI            InChI                1.03  "InChI=1S/C5H4N4O/c10-5-3-4(7-1-6-3)8-2-9-5/h1-2H,(H2,6,7,8,9,10)"
+HPA InChIKey         InChI                1.03  FDGQSTZJBFJUBT-UHFFFAOYSA-N
+HPA ?                acedrg               202         "dictionary generator"                  
+HPA ?                acedrg_database      11          "data source"                           
+HPA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HPA ?                refmac5              5.8.0189    "optimization tool"                     

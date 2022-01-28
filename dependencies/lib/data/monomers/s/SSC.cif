@@ -1,0 +1,180 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SSC     SSC     "(2S,5S)-5-CARBOXYMETHYLPROLINE"     NON-POLYMER     21     12     .     
+#
+data_comp_SSC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SSC     NS      N       NT1     0       -12.439     7.903       73.239      
+SSC     C1S     C       CH1     0       -13.739     7.368       73.680      
+SSC     CS      C       C       0       -14.819     7.544       72.599      
+SSC     O1S     O       O       0       -14.934     8.649       72.098      
+SSC     O2S     O       OC      -1      -15.483     6.561       72.321      
+SSC     CSS     C       CH2     0       -14.079     8.149       74.962      
+SSC     C3S     C       CH2     0       -12.731     8.658       75.438      
+SSC     C4S     C       CH1     0       -11.977     8.971       74.146      
+SSC     C5S     C       CH2     0       -10.454     9.004       74.305      
+SSC     C6S     C       C       0       -9.957      10.237      75.041      
+SSC     O3S     O       OC      -1      -9.902      10.172      76.285      
+SSC     O4S     O       O       0       -9.641      11.225      74.349      
+SSC     HNS     H       H       0       -11.852     7.232       73.198      
+SSC     H1S     H       H       0       -13.638     6.408       73.901      
+SSC     HSS1    H       H       0       -14.487     7.562       75.634      
+SSC     HSS2    H       H       0       -14.689     8.897       74.780      
+SSC     H3S1    H       H       0       -12.262     7.972       75.962      
+SSC     H3S2    H       H       0       -12.836     9.467       75.988      
+SSC     H4S     H       H       0       -12.288     9.842       73.788      
+SSC     H5S1    H       H       0       -10.035     8.976       73.419      
+SSC     H5S2    H       H       0       -10.162     8.207       74.795      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SSC       NS        C1S       SINGLE    n         1.468     0.015     1.468     0.015     
+SSC       NS        C4S       SINGLE    n         1.474     0.010     1.474     0.010     
+SSC       C1S       CS        SINGLE    n         1.536     0.010     1.536     0.010     
+SSC       C1S       CSS       SINGLE    n         1.534     0.013     1.534     0.013     
+SSC       CS        O1S       DOUBLE    n         1.218     0.020     1.218     0.020     
+SSC       CS        O2S       SINGLE    n         1.218     0.020     1.218     0.020     
+SSC       CSS       C3S       SINGLE    n         1.519     0.013     1.519     0.013     
+SSC       C3S       C4S       SINGLE    n         1.530     0.011     1.530     0.011     
+SSC       C4S       C5S       SINGLE    n         1.530     0.013     1.530     0.013     
+SSC       C5S       C6S       SINGLE    n         1.519     0.012     1.519     0.012     
+SSC       C6S       O3S       SINGLE    n         1.247     0.019     1.247     0.019     
+SSC       C6S       O4S       DOUBLE    n         1.247     0.019     1.247     0.019     
+SSC       NS        HNS       SINGLE    n         1.036     0.016     0.890     0.020     
+SSC       C1S       H1S       SINGLE    n         1.089     0.010     0.990     0.012     
+SSC       CSS       HSS1      SINGLE    n         1.089     0.010     0.981     0.019     
+SSC       CSS       HSS2      SINGLE    n         1.089     0.010     0.981     0.019     
+SSC       C3S       H3S1      SINGLE    n         1.089     0.010     0.983     0.020     
+SSC       C3S       H3S2      SINGLE    n         1.089     0.010     0.983     0.020     
+SSC       C4S       H4S       SINGLE    n         1.089     0.010     0.992     0.011     
+SSC       C5S       H5S1      SINGLE    n         1.089     0.010     0.980     0.019     
+SSC       C5S       H5S2      SINGLE    n         1.089     0.010     0.980     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SSC         C1S          NS         C4S     109.056    3.00
+SSC         C1S          NS         HNS     109.307    3.00
+SSC         C4S          NS         HNS     110.078    2.70
+SSC          NS         C1S          CS     111.420    2.45
+SSC          NS         C1S         CSS     103.430    2.23
+SSC          NS         C1S         H1S     109.296    1.50
+SSC          CS         C1S         CSS     110.031    2.42
+SSC          CS         C1S         H1S     110.011    1.50
+SSC         CSS         C1S         H1S     109.388    1.50
+SSC         C1S          CS         O1S     117.013    1.95
+SSC         C1S          CS         O2S     117.013    1.95
+SSC         O1S          CS         O2S     125.975    1.50
+SSC         C1S         CSS         C3S     103.507    1.50
+SSC         C1S         CSS        HSS1     111.018    1.50
+SSC         C1S         CSS        HSS2     111.018    1.50
+SSC         C3S         CSS        HSS1     110.811    1.50
+SSC         C3S         CSS        HSS2     110.811    1.50
+SSC        HSS1         CSS        HSS2     108.922    1.50
+SSC         CSS         C3S         C4S     104.634    1.50
+SSC         CSS         C3S        H3S1     110.811    1.50
+SSC         CSS         C3S        H3S2     110.811    1.50
+SSC         C4S         C3S        H3S1     110.817    1.50
+SSC         C4S         C3S        H3S2     110.817    1.50
+SSC        H3S1         C3S        H3S2     108.922    1.50
+SSC          NS         C4S         C3S     103.453    1.87
+SSC          NS         C4S         C5S     111.633    2.37
+SSC          NS         C4S         H4S     108.836    1.79
+SSC         C3S         C4S         C5S     114.239    1.50
+SSC         C3S         C4S         H4S     109.529    1.50
+SSC         C5S         C4S         H4S     109.664    1.59
+SSC         C4S         C5S         C6S     112.778    2.78
+SSC         C4S         C5S        H5S1     109.175    1.50
+SSC         C4S         C5S        H5S2     109.175    1.50
+SSC         C6S         C5S        H5S1     108.627    1.50
+SSC         C6S         C5S        H5S2     108.627    1.50
+SSC        H5S1         C5S        H5S2     107.468    1.50
+SSC         C5S         C6S         O3S     117.144    2.33
+SSC         C5S         C6S         O4S     117.144    2.33
+SSC         O3S         C6S         O4S     125.713    2.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SSC             sp3_sp3_3          CS         C1S          NS         C4S     -60.000   10.00     3
+SSC            sp3_sp3_36         C5S         C4S          NS         C1S      60.000   10.00     3
+SSC             sp2_sp3_1         O1S          CS         C1S          NS       0.000   10.00     6
+SSC            sp3_sp3_13          CS         C1S         CSS         C3S      60.000   10.00     3
+SSC            sp3_sp3_16         C4S         C3S         CSS         C1S      60.000   10.00     3
+SSC            sp3_sp3_26         CSS         C3S         C4S         C5S      60.000   10.00     3
+SSC            sp3_sp3_40          NS         C4S         C5S         C6S     180.000   10.00     3
+SSC             sp2_sp3_8         O3S         C6S         C5S         C4S     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SSC    chir_1    NS    C1S    C4S    HNS    negative
+SSC    chir_2    C1S    NS    CS    CSS    both
+SSC    chir_3    C4S    NS    C5S    C3S    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SSC    plan-1         C1S   0.020
+SSC    plan-1          CS   0.020
+SSC    plan-1         O1S   0.020
+SSC    plan-1         O2S   0.020
+SSC    plan-2         C5S   0.020
+SSC    plan-2         C6S   0.020
+SSC    plan-2         O3S   0.020
+SSC    plan-2         O4S   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SSC SMILES           ACDLabs              10.04 "O=C(O)CC1NC(C(=O)O)CC1"
+SSC SMILES_CANONICAL CACTVS               3.341 "OC(=O)C[C@@H]1CC[C@H](N1)C(O)=O"
+SSC SMILES           CACTVS               3.341 "OC(=O)C[CH]1CC[CH](N1)C(O)=O"
+SSC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1C[C@H](N[C@@H]1CC(=O)O)C(=O)O"
+SSC SMILES           "OpenEye OEToolkits" 1.5.0 "C1CC(NC1CC(=O)O)C(=O)O"
+SSC InChI            InChI                1.03  "InChI=1S/C7H11NO4/c9-6(10)3-4-1-2-5(8-4)7(11)12/h4-5,8H,1-3H2,(H,9,10)(H,11,12)/t4-,5-/m0/s1"
+SSC InChIKey         InChI                1.03  LIZWYFXJOOUDNV-WHFBIAKZSA-N
+SSC ?                acedrg               190         "dictionary generator"                  
+SSC ?                acedrg_database      11          "data source"                           
+SSC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SSC ?                refmac5              5.8.0158    "optimization tool"                     

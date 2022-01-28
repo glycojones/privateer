@@ -1,0 +1,320 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AMW      AMW 'ADENOSINE MONOTUNGSTATE             ' non-polymer        37  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AMW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AMW           O1W    O    O         0.000      0.000    0.000    0.000
+ AMW           W      W    W         0.000     -0.616    0.095    1.638
+ AMW           O2W    O    OH1       0.000      1.135    0.868    2.252
+ AMW           HOW2   H    H         0.000      1.808    0.990    1.602
+ AMW           O3W    O    OH1       0.000     -0.372   -1.454    2.895
+ AMW           HOW3   H    H         0.000      0.410   -1.467    3.423
+ AMW           "O5'"  O    O2        0.000     -2.367   -0.679    1.026
+ AMW           "C5'"  C    CH2       0.000     -2.893    0.217    0.044
+ AMW           "H5'1" H    H         0.000     -2.191    0.297   -0.788
+ AMW           "H5'2" H    H         0.000     -3.040    1.202    0.492
+ AMW           "C4'"  C    CH1       0.000     -4.232   -0.316   -0.468
+ AMW           "H4'"  H    H         0.000     -4.098   -1.302   -0.934
+ AMW           "C3'"  C    CH1       0.000     -4.859    0.673   -1.473
+ AMW           "H3'"  H    H         0.000     -4.480    1.690   -1.300
+ AMW           "O3'"  O    OH1       0.000     -4.591    0.261   -2.815
+ AMW           "HO3'" H    H         0.000     -4.991    0.891   -3.430
+ AMW           "C2'"  C    CH1       0.000     -6.376    0.603   -1.176
+ AMW           "H2'"  H    H         0.000     -6.751    1.584   -0.855
+ AMW           "O2'"  O    OH1       0.000     -7.090    0.146   -2.327
+ AMW           "HO2'" H    H         0.000     -6.961    0.770   -3.054
+ AMW           "C1'"  C    CH1       0.000     -6.482   -0.420   -0.023
+ AMW           "H1'"  H    H         0.000     -6.696   -1.422   -0.420
+ AMW           "O4'"  O    O2        0.000     -5.186   -0.398    0.614
+ AMW           N9     N    NR5       0.000     -7.523   -0.014    0.923
+ AMW           C4     C    CR56      0.000     -8.843   -0.385    0.888
+ AMW           C5     C    CR56      0.000     -9.454    0.247    1.983
+ AMW           N7     N    NRD5      0.000     -8.491    0.952    2.625
+ AMW           C8     C    CR15      0.000     -7.358    0.802    2.002
+ AMW           H8     H    H         0.000     -6.422    1.260    2.298
+ AMW           N3     N    NRD6      0.000     -9.582   -1.151    0.092
+ AMW           C2     C    CR16      0.000    -10.866   -1.320    0.325
+ AMW           H2     H    H         0.000    -11.439   -1.949   -0.345
+ AMW           N1     N    NRD6      0.000    -11.482   -0.751    1.344
+ AMW           C6     C    CR6       0.000    -10.826    0.030    2.194
+ AMW           N6     N    NH2       0.000    -11.480    0.622    3.260
+ AMW           HN62   H    H         0.000    -10.975    1.219    3.908
+ AMW           HN61   H    H         0.000    -12.473    0.467    3.407
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AMW      O1W    n/a    W      START
+ AMW      W      O1W    "O5'"  .
+ AMW      O2W    W      HOW2   .
+ AMW      HOW2   O2W    .      .
+ AMW      O3W    W      HOW3   .
+ AMW      HOW3   O3W    .      .
+ AMW      "O5'"  W      "C5'"  .
+ AMW      "C5'"  "O5'"  "C4'"  .
+ AMW      "H5'1" "C5'"  .      .
+ AMW      "H5'2" "C5'"  .      .
+ AMW      "C4'"  "C5'"  "C3'"  .
+ AMW      "H4'"  "C4'"  .      .
+ AMW      "C3'"  "C4'"  "C2'"  .
+ AMW      "H3'"  "C3'"  .      .
+ AMW      "O3'"  "C3'"  "HO3'" .
+ AMW      "HO3'" "O3'"  .      .
+ AMW      "C2'"  "C3'"  "C1'"  .
+ AMW      "H2'"  "C2'"  .      .
+ AMW      "O2'"  "C2'"  "HO2'" .
+ AMW      "HO2'" "O2'"  .      .
+ AMW      "C1'"  "C2'"  N9     .
+ AMW      "H1'"  "C1'"  .      .
+ AMW      "O4'"  "C1'"  .      .
+ AMW      N9     "C1'"  C4     .
+ AMW      C4     N9     N3     .
+ AMW      C5     C4     N7     .
+ AMW      N7     C5     C8     .
+ AMW      C8     N7     H8     .
+ AMW      H8     C8     .      .
+ AMW      N3     C4     C2     .
+ AMW      C2     N3     N1     .
+ AMW      H2     C2     .      .
+ AMW      N1     C2     C6     .
+ AMW      C6     N1     N6     .
+ AMW      N6     C6     HN61   .
+ AMW      HN62   N6     .      .
+ AMW      HN61   N6     .      END
+ AMW      "C4'"  "O4'"  .    ADD
+ AMW      N9     C8     .    ADD
+ AMW      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AMW       W         O1W       double    2.040     0.020     2.040     0.020     
+AMW       O2W       W         single    2.234     0.020     2.234     0.020     
+AMW       O3W       W         single    2.234     0.020     2.234     0.020     
+AMW       "O5'"     W         single    2.135     0.020     2.135     0.020     
+AMW       HOW2      O2W       single    0.970     0.012     0.839     0.014     
+AMW       HOW3      O3W       single    0.970     0.012     0.839     0.014     
+AMW       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+AMW       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+AMW       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+AMW       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+AMW       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+AMW       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+AMW       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+AMW       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+AMW       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+AMW       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+AMW       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+AMW       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+AMW       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+AMW       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+AMW       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+AMW       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+AMW       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+AMW       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+AMW       N9        C8        single    1.337     0.020     1.337     0.020     
+AMW       C4        N9        single    1.337     0.020     1.337     0.020     
+AMW       C8        N7        double    1.350     0.020     1.350     0.020     
+AMW       H8        C8        single    1.082     0.013     0.975     0.010     
+AMW       N7        C5        single    1.350     0.020     1.350     0.020     
+AMW       C5        C6        single    1.490     0.020     1.490     0.020     
+AMW       C5        C4        double    1.490     0.020     1.490     0.020     
+AMW       N6        C6        single    1.355     0.020     1.355     0.020     
+AMW       C6        N1        double    1.350     0.020     1.350     0.020     
+AMW       HN61      N6        single    1.016     0.010     0.899     0.007     
+AMW       HN62      N6        single    1.016     0.010     0.899     0.007     
+AMW       N1        C2        single    1.337     0.020     1.337     0.020     
+AMW       C2        N3        double    1.337     0.020     1.337     0.020     
+AMW       H2        C2        single    1.082     0.013     0.975     0.010     
+AMW       N3        C4        single    1.355     0.020     1.355     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AMW      O1W    W      O2W      90.000    3.000
+ AMW      O1W    W      O3W     120.000    3.000
+ AMW      O1W    W      "O5'"    90.000    3.000
+ AMW      O2W    W      O3W      90.000    3.000
+ AMW      O2W    W      "O5'"   180.000    3.000
+ AMW      O3W    W      "O5'"    90.000    3.000
+ AMW      W      O2W    HOW2    120.000    3.000
+ AMW      W      O3W    HOW3    120.000    3.000
+ AMW      W      "O5'"  "C5'"   120.000    3.000
+ AMW      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ AMW      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ AMW      "O5'"  "C5'"  "C4'"   109.470    3.000
+ AMW      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ AMW      "H5'1" "C5'"  "C4'"   109.470    3.000
+ AMW      "H5'2" "C5'"  "C4'"   109.470    3.000
+ AMW      "C5'"  "C4'"  "H4'"   108.340    3.000
+ AMW      "C5'"  "C4'"  "C3'"   111.000    3.000
+ AMW      "C5'"  "C4'"  "O4'"   109.470    3.000
+ AMW      "H4'"  "C4'"  "C3'"   108.340    3.000
+ AMW      "H4'"  "C4'"  "O4'"   109.470    3.000
+ AMW      "C3'"  "C4'"  "O4'"   109.470    3.000
+ AMW      "C4'"  "C3'"  "H3'"   108.340    3.000
+ AMW      "C4'"  "C3'"  "O3'"   109.470    3.000
+ AMW      "C4'"  "C3'"  "C2'"   111.000    3.000
+ AMW      "H3'"  "C3'"  "O3'"   109.470    3.000
+ AMW      "H3'"  "C3'"  "C2'"   108.340    3.000
+ AMW      "O3'"  "C3'"  "C2'"   109.470    3.000
+ AMW      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ AMW      "C3'"  "C2'"  "H2'"   108.340    3.000
+ AMW      "C3'"  "C2'"  "O2'"   109.470    3.000
+ AMW      "C3'"  "C2'"  "C1'"   111.000    3.000
+ AMW      "H2'"  "C2'"  "O2'"   109.470    3.000
+ AMW      "H2'"  "C2'"  "C1'"   108.340    3.000
+ AMW      "O2'"  "C2'"  "C1'"   109.470    3.000
+ AMW      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ AMW      "C2'"  "C1'"  "H1'"   108.340    3.000
+ AMW      "C2'"  "C1'"  "O4'"   109.470    3.000
+ AMW      "C2'"  "C1'"  N9      109.470    3.000
+ AMW      "H1'"  "C1'"  "O4'"   109.470    3.000
+ AMW      "H1'"  "C1'"  N9      109.470    3.000
+ AMW      "O4'"  "C1'"  N9      109.470    3.000
+ AMW      "C1'"  "O4'"  "C4'"   111.800    3.000
+ AMW      "C1'"  N9     C4      126.000    3.000
+ AMW      "C1'"  N9     C8      126.000    3.000
+ AMW      C4     N9     C8      108.000    3.000
+ AMW      N9     C4     C5      108.000    3.000
+ AMW      N9     C4     N3      132.000    3.000
+ AMW      C5     C4     N3      120.000    3.000
+ AMW      C4     C5     N7      108.000    3.000
+ AMW      C4     C5     C6      120.000    3.000
+ AMW      N7     C5     C6      132.000    3.000
+ AMW      C5     N7     C8      108.000    3.000
+ AMW      N7     C8     H8      126.000    3.000
+ AMW      N7     C8     N9      108.000    3.000
+ AMW      H8     C8     N9      126.000    3.000
+ AMW      C4     N3     C2      120.000    3.000
+ AMW      N3     C2     H2      120.000    3.000
+ AMW      N3     C2     N1      120.000    3.000
+ AMW      H2     C2     N1      120.000    3.000
+ AMW      C2     N1     C6      120.000    3.000
+ AMW      N1     C6     N6      120.000    3.000
+ AMW      N1     C6     C5      120.000    3.000
+ AMW      N6     C6     C5      120.000    3.000
+ AMW      C6     N6     HN62    120.000    3.000
+ AMW      C6     N6     HN61    120.000    3.000
+ AMW      HN62   N6     HN61    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AMW      var_1    HOW2   O2W    W      O1W        0.000   20.000   1
+ AMW      var_2    HOW3   O3W    W      O2W        0.000   20.000   1
+ AMW      var_3    "C5'"  "O5'"  W      O1W        0.000   20.000   1
+ AMW      var_4    W      "O5'"  "C5'"  "C4'"    179.935   20.000   1
+ AMW      var_5    "O5'"  "C5'"  "C4'"  "C3'"    176.893   20.000   3
+ AMW      var_6    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ AMW      var_7    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ AMW      var_8    "C4'"  "C3'"  "O3'"  "HO3'"   179.989   20.000   1
+ AMW      var_9    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ AMW      var_10   "C3'"  "C2'"  "O2'"  "HO2'"   -61.476   20.000   1
+ AMW      var_11   "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ AMW      var_12   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ AMW      var_13   "C2'"  "C1'"  N9     C4        91.519   20.000   1
+ AMW      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ AMW      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ AMW      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ AMW      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ AMW      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ AMW      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ AMW      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ AMW      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ AMW      CONST_9  N3     C2     N1     C6         0.000    0.000   0
+ AMW      CONST_10 C2     N1     C6     N6       180.000    0.000   0
+ AMW      CONST_11 N1     C6     N6     HN61      -0.003    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ AMW      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+                   .      .      .      .      .
+ AMW      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+                   .      .      .      .      .
+ AMW      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+                   .      .      .      .      .
+ AMW      chir_04  "C1'"  "O4'"  "C2'"  N9        positiv
+                   .      .      .      .      .
+ AMW      chir_05  W      O2W    "O5'"  O1W       cross3
+                   O3W    .      .      .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AMW      plan-1    N9        0.020
+ AMW      plan-1    "C1'"     0.020
+ AMW      plan-1    C8        0.020
+ AMW      plan-1    C4        0.020
+ AMW      plan-1    N7        0.020
+ AMW      plan-1    H8        0.020
+ AMW      plan-1    C5        0.020
+ AMW      plan-1    C6        0.020
+ AMW      plan-1    N1        0.020
+ AMW      plan-1    C2        0.020
+ AMW      plan-1    N3        0.020
+ AMW      plan-1    N6        0.020
+ AMW      plan-1    H2        0.020
+ AMW      plan-1    HN62      0.020
+ AMW      plan-1    HN61      0.020
+ AMW      plan-2    N6        0.020
+ AMW      plan-2    C6        0.020
+ AMW      plan-2    HN61      0.020
+ AMW      plan-2    HN62      0.020
+# ------------------------------------------------------

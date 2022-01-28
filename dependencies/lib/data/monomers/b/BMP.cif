@@ -1,0 +1,274 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BMP      BMP '6-HYDROXYURIDINE-5'-PHOSPHATE       ' RNA                33  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BMP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BMP           OP3    O    OP       -0.666      0.000    0.000    0.000
+ BMP           P      P    P         0.000     -1.213    0.243   -0.870
+ BMP           OP1    O    OP       -0.666     -1.647   -1.059   -1.508
+ BMP           OP2    O    OP       -0.666     -0.866    1.243   -1.952
+ BMP           "O5'"  O    O2        0.000     -2.414    0.823    0.031
+ BMP           "C5'"  C    CH2       0.000     -2.695   -0.160    1.027
+ BMP           "H5'"  H    H         0.000     -1.801   -0.330    1.631
+ BMP           "H5''" H    H         0.000     -2.988   -1.094    0.543
+ BMP           "C4'"  C    CH1       0.000     -3.833    0.330    1.925
+ BMP           "H4'"  H    H         0.000     -3.545    1.264    2.429
+ BMP           "C3'"  C    CH1       0.000     -4.212   -0.745    2.965
+ BMP           "H3'"  H    H         0.000     -3.927   -1.744    2.606
+ BMP           "C2'"  C    CH1       0.000     -5.748   -0.633    3.084
+ BMP           "H2'"  H    H         0.000     -6.227   -1.575    2.783
+ BMP           "O2'"  O    OH1       0.000     -6.122   -0.286    4.419
+ BMP           "HO2'" H    H         0.000     -5.828   -0.979    5.025
+ BMP           "C1'"  C    CH1       0.000     -6.118    0.500    2.102
+ BMP           "H1'"  H    H         0.000     -6.185    1.459    2.634
+ BMP           "O4'"  O    O2        0.000     -5.037    0.530    1.147
+ BMP           N1     N    NR6       0.000     -7.385    0.200    1.432
+ BMP           C6     C    CR6       0.000     -8.451    1.053    1.576
+ BMP           O1     O    OH1       0.000     -8.333    2.169    2.326
+ BMP           HO1    H    H         0.000     -9.168    2.654    2.310
+ BMP           C5     C    CR16      0.000     -9.626    0.771    0.944
+ BMP           H51    H    H         0.000    -10.473    1.439    1.037
+ BMP           C4     C    CR6       0.000     -9.721   -0.397    0.169
+ BMP           N3     N    NR16      0.000     -8.652   -1.211    0.059
+ BMP           HN3    H    H         0.000     -8.719   -2.077   -0.513
+ BMP           C2     C    CR6       0.000     -7.500   -0.912    0.685
+ BMP           O2     O    O         0.000     -6.547   -1.659    0.574
+ BMP           O4     O    O         0.000    -10.763   -0.672   -0.401
+ BMP           "O3'"  O    OH1       0.000     -3.591   -0.469    4.221
+ BMP           "HO3'" H    H         0.000     -3.887   -1.153    4.837
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BMP      OP3    n/a    P      START
+ BMP      P      OP3    "O5'"  .
+ BMP      OP1    P      .      .
+ BMP      OP2    P      .      .
+ BMP      "O5'"  P      "C5'"  .
+ BMP      "C5'"  "O5'"  "C4'"  .
+ BMP      "H5'"  "C5'"  .      .
+ BMP      "H5''" "C5'"  .      .
+ BMP      "C4'"  "C5'"  "C3'"  .
+ BMP      "H4'"  "C4'"  .      .
+ BMP      "C3'"  "C4'"  "O3'"  .
+ BMP      "H3'"  "C3'"  .      .
+ BMP      "C2'"  "C3'"  "C1'"  .
+ BMP      "H2'"  "C2'"  .      .
+ BMP      "O2'"  "C2'"  "HO2'" .
+ BMP      "HO2'" "O2'"  .      .
+ BMP      "C1'"  "C2'"  N1     .
+ BMP      "H1'"  "C1'"  .      .
+ BMP      "O4'"  "C1'"  .      .
+ BMP      N1     "C1'"  C6     .
+ BMP      C6     N1     C5     .
+ BMP      O1     C6     HO1    .
+ BMP      HO1    O1     .      .
+ BMP      C5     C6     C4     .
+ BMP      H51    C5     .      .
+ BMP      C4     C5     O4     .
+ BMP      N3     C4     C2     .
+ BMP      HN3    N3     .      .
+ BMP      C2     N3     O2     .
+ BMP      O2     C2     .      .
+ BMP      O4     C4     .      .
+ BMP      "O3'"  "C3'"  .      END
+ BMP      "HO3'" "O3'"  .      .
+ BMP      "C4'"  "O4'"  .    ADD
+ BMP      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BMP       OP1       P         deloc     1.510     0.020     1.510     0.020     
+BMP       OP2       P         deloc     1.510     0.020     1.510     0.020     
+BMP       P         OP3       deloc     1.510     0.020     1.510     0.020     
+BMP       "O5'"     P         single    1.610     0.020     1.610     0.020     
+BMP       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+BMP       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+BMP       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+BMP       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+BMP       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+BMP       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+BMP       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+BMP       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+BMP       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+BMP       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+BMP       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+BMP       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+BMP       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+BMP       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+BMP       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+BMP       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+BMP       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+BMP       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+BMP       N1        C2        single    1.410     0.020     1.410     0.020     
+BMP       C6        N1        single    1.410     0.020     1.410     0.020     
+BMP       O2        C2        double    1.250     0.020     1.250     0.020     
+BMP       C2        N3        single    1.337     0.020     1.337     0.020     
+BMP       N3        C4        single    1.337     0.020     1.337     0.020     
+BMP       HN3       N3        single    1.016     0.010     0.899     0.007     
+BMP       O4        C4        double    1.250     0.020     1.250     0.020     
+BMP       C4        C5        single    1.390     0.020     1.390     0.020     
+BMP       C5        C6        double    1.390     0.020     1.390     0.020     
+BMP       H51       C5        single    1.082     0.013     0.975     0.010     
+BMP       O1        C6        single    1.362     0.020     1.362     0.020     
+BMP       HO1       O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BMP      OP3    P      OP1     119.900    3.000
+ BMP      OP3    P      OP2     119.900    3.000
+ BMP      OP3    P      "O5'"   108.200    3.000
+ BMP      OP1    P      OP2     119.900    3.000
+ BMP      OP1    P      "O5'"   108.200    3.000
+ BMP      OP2    P      "O5'"   108.200    3.000
+ BMP      P      "O5'"  "C5'"   120.500    3.000
+ BMP      "O5'"  "C5'"  "H5'"   109.470    3.000
+ BMP      "O5'"  "C5'"  "H5''"  109.470    3.000
+ BMP      "O5'"  "C5'"  "C4'"   109.470    3.000
+ BMP      "H5'"  "C5'"  "H5''"  107.900    3.000
+ BMP      "H5'"  "C5'"  "C4'"   109.470    3.000
+ BMP      "H5''" "C5'"  "C4'"   109.470    3.000
+ BMP      "C5'"  "C4'"  "H4'"   108.340    3.000
+ BMP      "C5'"  "C4'"  "C3'"   111.000    3.000
+ BMP      "C5'"  "C4'"  "O4'"   109.470    3.000
+ BMP      "H4'"  "C4'"  "C3'"   108.340    3.000
+ BMP      "H4'"  "C4'"  "O4'"   109.470    3.000
+ BMP      "C3'"  "C4'"  "O4'"   109.470    3.000
+ BMP      "C4'"  "C3'"  "H3'"   108.340    3.000
+ BMP      "C4'"  "C3'"  "C2'"   111.000    3.000
+ BMP      "C4'"  "C3'"  "O3'"   109.470    3.000
+ BMP      "H3'"  "C3'"  "C2'"   108.340    3.000
+ BMP      "H3'"  "C3'"  "O3'"   109.470    3.000
+ BMP      "C2'"  "C3'"  "O3'"   109.470    3.000
+ BMP      "C3'"  "C2'"  "H2'"   108.340    3.000
+ BMP      "C3'"  "C2'"  "O2'"   109.470    3.000
+ BMP      "C3'"  "C2'"  "C1'"   111.000    3.000
+ BMP      "H2'"  "C2'"  "O2'"   109.470    3.000
+ BMP      "H2'"  "C2'"  "C1'"   108.340    3.000
+ BMP      "O2'"  "C2'"  "C1'"   109.470    3.000
+ BMP      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ BMP      "C2'"  "C1'"  "H1'"   108.340    3.000
+ BMP      "C2'"  "C1'"  "O4'"   109.470    3.000
+ BMP      "C2'"  "C1'"  N1      109.470    3.000
+ BMP      "H1'"  "C1'"  "O4'"   109.470    3.000
+ BMP      "H1'"  "C1'"  N1      109.470    3.000
+ BMP      "O4'"  "C1'"  N1      109.470    3.000
+ BMP      "C1'"  "O4'"  "C4'"   111.800    3.000
+ BMP      "C1'"  N1     C6      120.000    3.000
+ BMP      "C1'"  N1     C2      120.000    3.000
+ BMP      C6     N1     C2      120.000    3.000
+ BMP      N1     C6     O1      120.000    3.000
+ BMP      N1     C6     C5      120.000    3.000
+ BMP      O1     C6     C5      120.000    3.000
+ BMP      C6     O1     HO1     109.470    3.000
+ BMP      C6     C5     H51     120.000    3.000
+ BMP      C6     C5     C4      120.000    3.000
+ BMP      H51    C5     C4      120.000    3.000
+ BMP      C5     C4     N3      120.000    3.000
+ BMP      C5     C4     O4      120.000    3.000
+ BMP      N3     C4     O4      120.000    3.000
+ BMP      C4     N3     HN3     120.000    3.000
+ BMP      C4     N3     C2      120.000    3.000
+ BMP      HN3    N3     C2      120.000    3.000
+ BMP      N3     C2     O2      120.000    3.000
+ BMP      N3     C2     N1      120.000    3.000
+ BMP      O2     C2     N1      120.000    3.000
+ BMP      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BMP      var_1    OP3    P      "O5'"  "C5'"    -60.035   20.000   1
+ BMP      var_2    P      "O5'"  "C5'"  "C4'"    179.977   20.000   1
+ BMP      var_3    "O5'"  "C5'"  "C4'"  "C3'"    176.873   20.000   3
+ BMP      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ BMP      var_5    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ BMP      var_6    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ BMP      var_7    "C3'"  "C2'"  "O2'"  "HO2'"   -61.471   20.000   1
+ BMP      var_8    "C3'"  "C2'"  "C1'"  N1       150.000   20.000   3
+ BMP      var_9    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ BMP      var_10   "C2'"  "C1'"  N1     C6       119.657   20.000   1
+ BMP      CONST_1  "C1'"  N1     C2     N3       180.000    0.000   0
+ BMP      CONST_2  "C1'"  N1     C6     C5       180.000    0.000   0
+ BMP      var_11   N1     C6     O1     HO1      179.361   20.000   1
+ BMP      CONST_3  N1     C6     C5     C4         0.000    0.000   0
+ BMP      CONST_4  C6     C5     C4     O4       180.000    0.000   0
+ BMP      CONST_5  C5     C4     N3     C2         0.000    0.000   0
+ BMP      CONST_6  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BMP      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ BMP      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ BMP      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ BMP      chir_04  "C1'"  "O4'"  "C2'"  N1        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BMP      plan-1    N1        0.020
+ BMP      plan-1    "C1'"     0.020
+ BMP      plan-1    C2        0.020
+ BMP      plan-1    C6        0.020
+ BMP      plan-1    N3        0.020
+ BMP      plan-1    C4        0.020
+ BMP      plan-1    C5        0.020
+ BMP      plan-1    O2        0.020
+ BMP      plan-1    HN3       0.020
+ BMP      plan-1    O4        0.020
+ BMP      plan-1    H51       0.020
+ BMP      plan-1    O1        0.020
+# ------------------------------------------------------

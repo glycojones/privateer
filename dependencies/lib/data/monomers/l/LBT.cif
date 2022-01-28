@@ -1,0 +1,330 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LBT      LBT 'ALPHA-LACTOSE                       ' saccharide         45  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LBT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LBT           "O6'"  O    OH1       0.000      0.000    0.000    0.000
+ LBT           "H6'"  H    H         0.000      0.335   -0.386    0.821
+ LBT           "C6'"  C    CH2       0.000     -1.407   -0.230   -0.094
+ LBT           "H6'1" H    H         0.000     -1.909    0.232    0.759
+ LBT           "H6'2" H    H         0.000     -1.601   -1.305   -0.089
+ LBT           "C5'"  C    CH1       0.000     -1.938    0.381   -1.392
+ LBT           "H5'"  H    H         0.000     -1.738    1.462   -1.396
+ LBT           "O5'"  O    O2        0.000     -1.281   -0.225   -2.504
+ LBT           "C1'"  C    CH1       0.000     -1.667    0.489   -3.677
+ LBT           "H1'"  H    H         0.000     -1.074    0.135   -4.532
+ LBT           "O1'"  O    OH1       0.000     -1.432    1.884   -3.482
+ LBT           HD     H    H         0.000     -0.493    2.030   -3.304
+ LBT           "C4'"  C    CH1       0.000     -3.446    0.143   -1.490
+ LBT           "H4'"  H    H         0.000     -3.648   -0.937   -1.508
+ LBT           "C3'"  C    CH1       0.000     -3.973    0.784   -2.777
+ LBT           "H3'"  H    H         0.000     -3.869    1.877   -2.714
+ LBT           "O3'"  O    OH1       0.000     -5.349    0.444   -2.953
+ LBT           HF     H    H         0.000     -5.679    0.850   -3.766
+ LBT           "C2'"  C    CH1       0.000     -3.153    0.258   -3.959
+ LBT           "H2'"  H    H         0.000     -3.340   -0.818   -4.085
+ LBT           "O2'"  O    OH1       0.000     -3.529    0.952   -5.149
+ LBT           HE     H    H         0.000     -3.010    0.618   -5.894
+ LBT           O1     O    O2        0.000     -4.096    0.731   -0.361
+ LBT           C1     C    CH1       0.000     -4.706   -0.336    0.367
+ LBT           H1     H    H         0.000     -3.973   -1.142    0.517
+ LBT           O5     O    O2        0.000     -5.818   -0.838   -0.369
+ LBT           C5     C    CH1       0.000     -6.286   -2.007    0.299
+ LBT           H5     H    H         0.000     -5.447   -2.699    0.455
+ LBT           C6     C    CH2       0.000     -7.356   -2.688   -0.557
+ LBT           H6C1   H    H         0.000     -8.190   -2.001   -0.711
+ LBT           H6C2   H    H         0.000     -7.713   -3.584   -0.047
+ LBT           O6     O    OH1       0.000     -6.795   -3.049   -1.821
+ LBT           H6     H    H         0.000     -7.471   -3.479   -2.361
+ LBT           C4     C    CH1       0.000     -6.887   -1.623    1.654
+ LBT           H4     H    H         0.000     -7.265   -2.524    2.157
+ LBT           O4     O    OH1       0.000     -7.959   -0.700    1.461
+ LBT           HC     H    H         0.000     -8.331   -0.456    2.319
+ LBT           C3     C    CH1       0.000     -5.799   -0.974    2.516
+ LBT           H3     H    H         0.000     -5.025   -1.717    2.754
+ LBT           O3     O    OH1       0.000     -6.375   -0.477    3.725
+ LBT           HB     H    H         0.000     -5.688   -0.058    4.260
+ LBT           C2     C    CH1       0.000     -5.177    0.183    1.729
+ LBT           H2     H    H         0.000     -5.926    0.973    1.581
+ LBT           O2     O    OH1       0.000     -4.062    0.710    2.450
+ LBT           HA     H    H         0.000     -3.667    1.436    1.948
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LBT      "O6'"  n/a    "C6'"  START
+ LBT      "H6'"  "O6'"  .      .
+ LBT      "C6'"  "O6'"  "C5'"  .
+ LBT      "H6'1" "C6'"  .      .
+ LBT      "H6'2" "C6'"  .      .
+ LBT      "C5'"  "C6'"  "C4'"  .
+ LBT      "H5'"  "C5'"  .      .
+ LBT      "O5'"  "C5'"  "C1'"  .
+ LBT      "C1'"  "O5'"  "O1'"  .
+ LBT      "H1'"  "C1'"  .      .
+ LBT      "O1'"  "C1'"  HD     .
+ LBT      HD     "O1'"  .      .
+ LBT      "C4'"  "C5'"  O1     .
+ LBT      "H4'"  "C4'"  .      .
+ LBT      "C3'"  "C4'"  "C2'"  .
+ LBT      "H3'"  "C3'"  .      .
+ LBT      "O3'"  "C3'"  HF     .
+ LBT      HF     "O3'"  .      .
+ LBT      "C2'"  "C3'"  "O2'"  .
+ LBT      "H2'"  "C2'"  .      .
+ LBT      "O2'"  "C2'"  HE     .
+ LBT      HE     "O2'"  .      .
+ LBT      O1     "C4'"  C1     .
+ LBT      C1     O1     O5     .
+ LBT      H1     C1     .      .
+ LBT      O5     C1     C5     .
+ LBT      C5     O5     C4     .
+ LBT      H5     C5     .      .
+ LBT      C6     C5     O6     .
+ LBT      H6C1   C6     .      .
+ LBT      H6C2   C6     .      .
+ LBT      O6     C6     H6     .
+ LBT      H6     O6     .      .
+ LBT      C4     C5     C3     .
+ LBT      H4     C4     .      .
+ LBT      O4     C4     HC     .
+ LBT      HC     O4     .      .
+ LBT      C3     C4     C2     .
+ LBT      H3     C3     .      .
+ LBT      O3     C3     HB     .
+ LBT      HB     O3     .      .
+ LBT      C2     C3     O2     .
+ LBT      H2     C2     .      .
+ LBT      O2     C2     HA     .
+ LBT      HA     O2     .      END
+ LBT      C1     C2     .    ADD
+ LBT      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LBT       C1        C2        single    1.524     0.020     1.524     0.020     
+LBT       C1        O1        single    1.426     0.020     1.426     0.020     
+LBT       O5        C1        single    1.426     0.020     1.426     0.020     
+LBT       H1        C1        single    1.089     0.010     0.989     0.005     
+LBT       C2        C3        single    1.524     0.020     1.524     0.020     
+LBT       O2        C2        single    1.432     0.020     1.432     0.020     
+LBT       H2        C2        single    1.089     0.010     0.989     0.005     
+LBT       C3        C4        single    1.524     0.020     1.524     0.020     
+LBT       O3        C3        single    1.432     0.020     1.432     0.020     
+LBT       H3        C3        single    1.089     0.010     0.989     0.005     
+LBT       C4        C5        single    1.524     0.020     1.524     0.020     
+LBT       O4        C4        single    1.432     0.020     1.432     0.020     
+LBT       H4        C4        single    1.089     0.010     0.989     0.005     
+LBT       C6        C5        single    1.524     0.020     1.524     0.020     
+LBT       C5        O5        single    1.426     0.020     1.426     0.020     
+LBT       H5        C5        single    1.089     0.010     0.989     0.005     
+LBT       O6        C6        single    1.432     0.020     1.432     0.020     
+LBT       H6C1      C6        single    1.089     0.010     0.989     0.005     
+LBT       H6C2      C6        single    1.089     0.010     0.989     0.005     
+LBT       O1        "C4'"     single    1.426     0.020     1.426     0.020     
+LBT       HA        O2        single    0.970     0.012     0.839     0.014     
+LBT       HB        O3        single    0.970     0.012     0.839     0.014     
+LBT       HC        O4        single    0.970     0.012     0.839     0.014     
+LBT       H6        O6        single    0.970     0.012     0.839     0.014     
+LBT       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+LBT       "O1'"     "C1'"     single    1.432     0.020     1.432     0.020     
+LBT       "C1'"     "O5'"     single    1.426     0.020     1.426     0.020     
+LBT       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+LBT       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+LBT       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+LBT       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+LBT       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+LBT       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+LBT       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+LBT       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+LBT       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+LBT       "C5'"     "C6'"     single    1.524     0.020     1.524     0.020     
+LBT       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+LBT       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+LBT       "C6'"     "O6'"     single    1.432     0.020     1.432     0.020     
+LBT       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+LBT       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+LBT       HD        "O1'"     single    0.970     0.012     0.839     0.014     
+LBT       HE        "O2'"     single    0.970     0.012     0.839     0.014     
+LBT       HF        "O3'"     single    0.970     0.012     0.839     0.014     
+LBT       "H6'"     "O6'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LBT      "H6'"  "O6'"  "C6'"   109.470    3.000
+ LBT      "O6'"  "C6'"  "H6'1"  109.470    3.000
+ LBT      "O6'"  "C6'"  "H6'2"  109.470    3.000
+ LBT      "O6'"  "C6'"  "C5'"   109.470    3.000
+ LBT      "H6'1" "C6'"  "H6'2"  107.900    3.000
+ LBT      "H6'1" "C6'"  "C5'"   109.470    3.000
+ LBT      "H6'2" "C6'"  "C5'"   109.470    3.000
+ LBT      "C6'"  "C5'"  "H5'"   108.340    3.000
+ LBT      "C6'"  "C5'"  "O5'"   109.470    3.000
+ LBT      "C6'"  "C5'"  "C4'"   111.000    3.000
+ LBT      "H5'"  "C5'"  "O5'"   109.470    3.000
+ LBT      "H5'"  "C5'"  "C4'"   108.340    3.000
+ LBT      "O5'"  "C5'"  "C4'"   109.470    3.000
+ LBT      "C5'"  "O5'"  "C1'"   111.800    3.000
+ LBT      "O5'"  "C1'"  "H1'"   109.470    3.000
+ LBT      "O5'"  "C1'"  "O1'"   109.470    3.000
+ LBT      "O5'"  "C1'"  "C2'"   109.470    3.000
+ LBT      "H1'"  "C1'"  "O1'"   109.470    3.000
+ LBT      "H1'"  "C1'"  "C2'"   108.340    3.000
+ LBT      "O1'"  "C1'"  "C2'"   109.470    3.000
+ LBT      "C1'"  "O1'"  HD      109.470    3.000
+ LBT      "C5'"  "C4'"  "H4'"   108.340    3.000
+ LBT      "C5'"  "C4'"  "C3'"   111.000    3.000
+ LBT      "C5'"  "C4'"  O1      109.470    3.000
+ LBT      "H4'"  "C4'"  "C3'"   108.340    3.000
+ LBT      "H4'"  "C4'"  O1      109.470    3.000
+ LBT      "C3'"  "C4'"  O1      109.470    3.000
+ LBT      "C4'"  "C3'"  "H3'"   108.340    3.000
+ LBT      "C4'"  "C3'"  "O3'"   109.470    3.000
+ LBT      "C4'"  "C3'"  "C2'"   111.000    3.000
+ LBT      "H3'"  "C3'"  "O3'"   109.470    3.000
+ LBT      "H3'"  "C3'"  "C2'"   108.340    3.000
+ LBT      "O3'"  "C3'"  "C2'"   109.470    3.000
+ LBT      "C3'"  "O3'"  HF      109.470    3.000
+ LBT      "C3'"  "C2'"  "H2'"   108.340    3.000
+ LBT      "C3'"  "C2'"  "O2'"   109.470    3.000
+ LBT      "C3'"  "C2'"  "C1'"   111.000    3.000
+ LBT      "H2'"  "C2'"  "O2'"   109.470    3.000
+ LBT      "H2'"  "C2'"  "C1'"   108.340    3.000
+ LBT      "O2'"  "C2'"  "C1'"   109.470    3.000
+ LBT      "C2'"  "O2'"  HE      109.470    3.000
+ LBT      "C4'"  O1     C1      111.800    3.000
+ LBT      O1     C1     H1      109.470    3.000
+ LBT      O1     C1     O5      109.470    3.000
+ LBT      O1     C1     C2      109.470    3.000
+ LBT      H1     C1     O5      109.470    3.000
+ LBT      H1     C1     C2      108.340    3.000
+ LBT      O5     C1     C2      109.470    3.000
+ LBT      C1     O5     C5      111.800    3.000
+ LBT      O5     C5     H5      109.470    3.000
+ LBT      O5     C5     C6      109.470    3.000
+ LBT      O5     C5     C4      109.470    3.000
+ LBT      H5     C5     C6      108.340    3.000
+ LBT      H5     C5     C4      108.340    3.000
+ LBT      C6     C5     C4      111.000    3.000
+ LBT      C5     C6     H6C1    109.470    3.000
+ LBT      C5     C6     H6C2    109.470    3.000
+ LBT      C5     C6     O6      109.470    3.000
+ LBT      H6C1   C6     H6C2    107.900    3.000
+ LBT      H6C1   C6     O6      109.470    3.000
+ LBT      H6C2   C6     O6      109.470    3.000
+ LBT      C6     O6     H6      109.470    3.000
+ LBT      C5     C4     H4      108.340    3.000
+ LBT      C5     C4     O4      109.470    3.000
+ LBT      C5     C4     C3      111.000    3.000
+ LBT      H4     C4     O4      109.470    3.000
+ LBT      H4     C4     C3      108.340    3.000
+ LBT      O4     C4     C3      109.470    3.000
+ LBT      C4     O4     HC      109.470    3.000
+ LBT      C4     C3     H3      108.340    3.000
+ LBT      C4     C3     O3      109.470    3.000
+ LBT      C4     C3     C2      111.000    3.000
+ LBT      H3     C3     O3      109.470    3.000
+ LBT      H3     C3     C2      108.340    3.000
+ LBT      O3     C3     C2      109.470    3.000
+ LBT      C3     O3     HB      109.470    3.000
+ LBT      C3     C2     H2      108.340    3.000
+ LBT      C3     C2     O2      109.470    3.000
+ LBT      C3     C2     C1      111.000    3.000
+ LBT      H2     C2     O2      109.470    3.000
+ LBT      H2     C2     C1      108.340    3.000
+ LBT      O2     C2     C1      109.470    3.000
+ LBT      C2     O2     HA      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LBT      var_1    "H6'"  "O6'"  "C6'"  "C5'"    179.990   20.000   1
+ LBT      var_2    "O6'"  "C6'"  "C5'"  "C4'"   -179.647   20.000   3
+ LBT      var_3    "C6'"  "C5'"  "O5'"  "C1'"    180.000   20.000   1
+ LBT      var_4    "C5'"  "O5'"  "C1'"  "O1'"     60.000   20.000   1
+ LBT      var_5    "O5'"  "C1'"  "C2'"  "C3'"     60.000   20.000   3
+ LBT      var_6    "O5'"  "C1'"  "O1'"  HD        59.726   20.000   1
+ LBT      var_7    "C6'"  "C5'"  "C4'"  O1        60.000   20.000   3
+ LBT      var_8    "C5'"  "C4'"  "C3'"  "C2'"     60.000   20.000   3
+ LBT      var_9    "C4'"  "C3'"  "O3'"  HF       179.994   20.000   1
+ LBT      var_10   "C4'"  "C3'"  "C2'"  "O2'"    180.000   20.000   3
+ LBT      var_11   "C3'"  "C2'"  "O2'"  HE       179.978   20.000   1
+ LBT      var_12   "C5'"  "C4'"  O1     C1      -116.878   20.000   1
+ LBT      var_13   "C4'"  O1     C1     O5       -71.002   20.000   1
+ LBT      var_14   O1     C1     C2     C3       180.000   20.000   3
+ LBT      var_15   O1     C1     O5     C5       180.000   20.000   1
+ LBT      var_16   C1     O5     C5     C4        60.000   20.000   1
+ LBT      var_17   O5     C5     C6     O6        59.840   20.000   3
+ LBT      var_18   C5     C6     O6     H6       179.986   20.000   1
+ LBT      var_19   O5     C5     C4     C3       -60.000   20.000   3
+ LBT      var_20   C5     C4     O4     HC      -179.614   20.000   1
+ LBT      var_21   C5     C4     C3     C2        60.000   20.000   3
+ LBT      var_22   C4     C3     O3     HB      -179.196   20.000   1
+ LBT      var_23   C4     C3     C2     O2       180.000   20.000   3
+ LBT      var_24   C3     C2     O2     HA       179.583   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LBT      chir_01  C1     C2     O1     O5        positiv
+ LBT      chir_02  C2     C1     C3     O2        negativ
+ LBT      chir_03  C3     C2     C4     O3        positiv
+ LBT      chir_04  C4     C3     C5     O4        positiv
+ LBT      chir_05  C5     C4     C6     O5        negativ
+ LBT      chir_06  "C1'"  "C2'"  "O1'"  "O5'"     negativ
+ LBT      chir_07  "C2'"  "C1'"  "C3'"  "O2'"     negativ
+ LBT      chir_08  "C3'"  "C2'"  "C4'"  "O3'"     positiv
+ LBT      chir_09  "C4'"  O1     "C3'"  "C5'"     negativ
+ LBT      chir_10  "C5'"  "C4'"  "C6'"  "O5'"     negativ
+# ------------------------------------------------------

@@ -1,0 +1,198 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B3M      B3M '(3R)-3-amino-5-(methylsulfanyl)penta' non-polymer        22  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_B3M
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ B3M           OXT    O    OC       -0.500      0.000    0.000    0.000
+ B3M           C      C    C         0.000     -1.192    0.356    0.133
+ B3M           O      O    OC       -0.500     -1.460    1.514    0.522
+ B3M           CA     C    CH2       0.000     -2.306   -0.612   -0.177
+ B3M           HA     H    H         0.000     -2.217   -1.488    0.469
+ B3M           HAA    H    H         0.000     -2.236   -0.923   -1.221
+ B3M           CB     C    CH1       0.000     -3.655    0.069    0.066
+ B3M           HB     H    H         0.000     -3.687    0.461    1.092
+ B3M           N      N    NH2       0.000     -3.824    1.174   -0.887
+ B3M           HNA    H    H         0.000     -4.567    1.146   -1.576
+ B3M           HN     H    H         0.000     -3.200    1.972   -0.862
+ B3M           CG     C    CH2       0.000     -4.781   -0.948   -0.127
+ B3M           HG     H    H         0.000     -4.605   -1.811    0.518
+ B3M           HGA    H    H         0.000     -4.803   -1.273   -1.169
+ B3M           CD     C    CH2       0.000     -6.119   -0.302    0.236
+ B3M           HD     H    H         0.000     -6.292    0.562   -0.410
+ B3M           HDA    H    H         0.000     -6.095    0.023    1.278
+ B3M           SE     S    S2        0.000     -7.455   -1.508    0.007
+ B3M           CF     C    CH3       0.000     -8.936   -0.572    0.480
+ B3M           HFB    H    H         0.000     -9.046    0.277   -0.149
+ B3M           HFA    H    H         0.000     -9.799   -1.184    0.386
+ B3M           HF     H    H         0.000     -8.854   -0.245    1.488
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B3M      OXT    n/a    C      START
+ B3M      C      OXT    CA     .
+ B3M      O      C      .      .
+ B3M      CA     C      CB     .
+ B3M      HA     CA     .      .
+ B3M      HAA    CA     .      .
+ B3M      CB     CA     CG     .
+ B3M      HB     CB     .      .
+ B3M      N      CB     HN     .
+ B3M      HNA    N      .      .
+ B3M      HN     N      .      .
+ B3M      CG     CB     CD     .
+ B3M      HG     CG     .      .
+ B3M      HGA    CG     .      .
+ B3M      CD     CG     SE     .
+ B3M      HD     CD     .      .
+ B3M      HDA    CD     .      .
+ B3M      SE     CD     CF     .
+ B3M      CF     SE     HF     .
+ B3M      HFB    CF     .      .
+ B3M      HFA    CF     .      .
+ B3M      HF     CF     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B3M       HN        N         single    1.036     0.016     0.914     0.007     
+B3M       HNA       N         single    1.036     0.016     0.914     0.007     
+B3M       HA        CA        single    1.089     0.010     0.989     0.005     
+B3M       CA        C         single    1.510     0.020     1.510     0.020     
+B3M       C         OXT       deloc     1.250     0.020     1.250     0.020     
+B3M       O         C         deloc     1.250     0.020     1.250     0.020     
+B3M       N         CB        single    1.450     0.020     1.450     0.020     
+B3M       CB        CA        single    1.524     0.020     1.524     0.020     
+B3M       CG        CB        single    1.524     0.020     1.524     0.020     
+B3M       HGA       CG        single    1.089     0.010     0.989     0.005     
+B3M       CD        CG        single    1.524     0.020     1.524     0.020     
+B3M       HDA       CD        single    1.089     0.010     0.989     0.005     
+B3M       SE        CD        single    1.762     0.020     1.762     0.020     
+B3M       CF        SE        single    1.762     0.020     1.762     0.020     
+B3M       HF        CF        single    1.089     0.010     0.989     0.005     
+B3M       HFA       CF        single    1.089     0.010     0.989     0.005     
+B3M       HAA       CA        single    1.089     0.010     0.989     0.005     
+B3M       HB        CB        single    1.089     0.010     0.989     0.005     
+B3M       HG        CG        single    1.089     0.010     0.989     0.005     
+B3M       HD        CD        single    1.089     0.010     0.989     0.005     
+B3M       HFB       CF        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ B3M      OXT    C      O       123.000    3.000
+ B3M      OXT    C      CA      118.500    3.000
+ B3M      O      C      CA      118.500    3.000
+ B3M      C      CA     HA      109.470    3.000
+ B3M      C      CA     HAA     109.470    3.000
+ B3M      C      CA     CB      109.470    3.000
+ B3M      HA     CA     HAA     107.900    3.000
+ B3M      HA     CA     CB      109.470    3.000
+ B3M      HAA    CA     CB      109.470    3.000
+ B3M      CA     CB     HB      108.340    3.000
+ B3M      CA     CB     N       109.470    3.000
+ B3M      CA     CB     CG      109.470    3.000
+ B3M      HB     CB     N       109.470    3.000
+ B3M      HB     CB     CG      108.340    3.000
+ B3M      N      CB     CG      109.470    3.000
+ B3M      CB     N      HNA     120.000    3.000
+ B3M      CB     N      HN      120.000    3.000
+ B3M      HNA    N      HN      120.000    3.000
+ B3M      CB     CG     HG      109.470    3.000
+ B3M      CB     CG     HGA     109.470    3.000
+ B3M      CB     CG     CD      111.000    3.000
+ B3M      HG     CG     HGA     107.900    3.000
+ B3M      HG     CG     CD      109.470    3.000
+ B3M      HGA    CG     CD      109.470    3.000
+ B3M      CG     CD     HD      109.470    3.000
+ B3M      CG     CD     HDA     109.470    3.000
+ B3M      CG     CD     SE      109.500    3.000
+ B3M      HD     CD     HDA     107.900    3.000
+ B3M      HD     CD     SE      109.500    3.000
+ B3M      HDA    CD     SE      109.500    3.000
+ B3M      CD     SE     CF      103.010    3.000
+ B3M      SE     CF     HFB     109.500    3.000
+ B3M      SE     CF     HFA     109.500    3.000
+ B3M      SE     CF     HF      109.500    3.000
+ B3M      HFB    CF     HFA     109.470    3.000
+ B3M      HFB    CF     HF      109.470    3.000
+ B3M      HFA    CF     HF      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ B3M      var_1    OXT    C      CA     CB      -179.976   20.000   3
+ B3M      var_2    C      CA     CB     CG      -174.957   20.000   3
+ B3M      var_3    CA     CB     N      HN       -63.923   20.000   1
+ B3M      var_4    CA     CB     CG     CD       175.021   20.000   3
+ B3M      var_5    CB     CG     CD     SE       179.985   20.000   3
+ B3M      var_6    CG     CD     SE     CF       179.966   20.000   1
+ B3M      var_7    CD     SE     CF     HF       -59.962   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ B3M      chir_01  CB     N      CA     CG        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ B3M      plan-1    N         0.020
+ B3M      plan-1    CB        0.020
+ B3M      plan-1    HN        0.020
+ B3M      plan-1    HNA       0.020
+ B3M      plan-2    C         0.020
+ B3M      plan-2    CA        0.020
+ B3M      plan-2    O         0.020
+ B3M      plan-2    OXT       0.020
+# ------------------------------------------------------

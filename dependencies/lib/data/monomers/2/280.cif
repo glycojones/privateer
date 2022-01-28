@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+280     280      1-methyl-1H-imidazole-5-carbaldehyde     NON-POLYMER     14     8     .     
+#
+data_comp_280
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+280     C1      C       CH3     0       18.535      -3.256      5.575       
+280     N2      N       NR5     0       17.097      -3.001      5.555       
+280     C3      C       CR15    0       16.271      -3.122      6.613       
+280     N4      N       NRD5    0       15.027      -2.825      6.298       
+280     C5      C       CR15    0       15.037      -2.493      4.970       
+280     C6      C       CR5     0       16.315      -2.594      4.487       
+280     C7      C       C1      0       16.767      -2.337      3.152       
+280     O8      O       O       0       17.700      -1.613      2.848       
+280     H11     H       H       0       18.858      -3.406      4.674       
+280     H12     H       H       0       18.714      -4.042      6.113       
+280     H13     H       H       0       18.992      -2.493      5.959       
+280     H3      H       H       0       16.556      -3.387      7.467       
+280     H5      H       H       0       14.270      -2.236      4.483       
+280     H7      H       H       0       16.292      -2.773      2.450       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+280       C1        N2        SINGLE    n         1.458     0.013     1.458     0.013     
+280       N2        C3        SINGLE    y         1.347     0.010     1.347     0.010     
+280       N2        C6        SINGLE    y         1.385     0.010     1.385     0.010     
+280       C3        N4        DOUBLE    y         1.314     0.011     1.314     0.011     
+280       N4        C5        SINGLE    y         1.369     0.010     1.369     0.010     
+280       C5        C6        DOUBLE    y         1.372     0.011     1.372     0.011     
+280       C6        C7        SINGLE    n         1.430     0.017     1.430     0.017     
+280       C7        O8        DOUBLE    n         1.220     0.014     1.220     0.014     
+280       C1        H11       SINGLE    n         1.089     0.010     0.969     0.016     
+280       C1        H12       SINGLE    n         1.089     0.010     0.969     0.016     
+280       C1        H13       SINGLE    n         1.089     0.010     0.969     0.016     
+280       C3        H3        SINGLE    n         1.082     0.013     0.938     0.011     
+280       C5        H5        SINGLE    n         1.082     0.013     0.944     0.020     
+280       C7        H7        SINGLE    n         1.082     0.013     0.953     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+280          N2          C1         H11     109.424    1.50
+280          N2          C1         H12     109.424    1.50
+280          N2          C1         H13     109.424    1.50
+280         H11          C1         H12     109.448    1.52
+280         H11          C1         H13     109.448    1.52
+280         H12          C1         H13     109.448    1.52
+280          C1          N2          C3     125.721    1.50
+280          C1          N2          C6     127.217    1.50
+280          C3          N2          C6     107.062    1.50
+280          N2          C3          N4     111.067    1.50
+280          N2          C3          H3     123.947    1.54
+280          N4          C3          H3     124.986    1.50
+280          C3          N4          C5     105.332    1.50
+280          N4          C5          C6     109.575    1.50
+280          N4          C5          H5     124.025    2.11
+280          C6          C5          H5     126.391    3.00
+280          N2          C6          C5     106.975    1.50
+280          N2          C6          C7     125.320    1.50
+280          C5          C6          C7     127.705    1.96
+280          C6          C7          O8     125.476    1.50
+280          C6          C7          H7     116.559    2.09
+280          O8          C7          H7     117.964    1.76
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+280             sp2_sp3_1          C3          N2          C1         H11     150.000   10.00     6
+280       const_sp2_sp2_2          N4          C3          N2          C1     180.000   10.00     2
+280              const_16          C7          C6          N2          C1       0.000   10.00     2
+280       const_sp2_sp2_5          N2          C3          N4          C5       0.000   10.00     2
+280       const_sp2_sp2_7          C6          C5          N4          C3       0.000   10.00     2
+280              const_10          N4          C5          C6          C7     180.000   10.00     2
+280             sp2_sp2_1          N2          C6          C7          O8     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+280    plan-1          C1   0.020
+280    plan-1          C3   0.020
+280    plan-1          C5   0.020
+280    plan-1          C6   0.020
+280    plan-1          C7   0.020
+280    plan-1          H3   0.020
+280    plan-1          H5   0.020
+280    plan-1          N2   0.020
+280    plan-1          N4   0.020
+280    plan-2          C6   0.020
+280    plan-2          C7   0.020
+280    plan-2          H7   0.020
+280    plan-2          O8   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+280 SMILES           ACDLabs              10.04 O=Cc1cncn1C
+280 SMILES_CANONICAL CACTVS               3.341 Cn1cncc1C=O
+280 SMILES           CACTVS               3.341 Cn1cncc1C=O
+280 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 Cn1cncc1C=O
+280 SMILES           "OpenEye OEToolkits" 1.5.0 Cn1cncc1C=O
+280 InChI            InChI                1.03  "InChI=1S/C5H6N2O/c1-7-4-6-2-5(7)3-8/h2-4H,1H3"
+280 InChIKey         InChI                1.03  BNYKZFOZWZMEJD-UHFFFAOYSA-N
+280 ?                acedrg               202         "dictionary generator"                  
+280 ?                acedrg_database      11          "data source"                           
+280 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+280 ?                refmac5              5.8.0189    "optimization tool"                     

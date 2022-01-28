@@ -1,0 +1,251 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AR7      AR7 'amino{[(4S)-4-amino-5,5-dihydroxypen' non-polymer        29  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AR7
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AR7     N     N    NT       0       2.338      -1.250       0.935
+AR7    CA     C   CH2   0.000       2.237      -0.419      -0.259
+AR7     C     C   CH2   0.000       3.462       0.476      -0.420
+AR7     O     O    O2   0.000       3.626       1.238       0.772
+AR7    CB     C   CH2   0.000       0.954       0.399      -0.212
+AR7    CG     C   CH2   0.000      -0.262      -0.461      -0.195
+AR7    CD     C   CH2   0.000      -1.523       0.363      -0.108
+AR7    NE     N   NH2   0.000      -2.720      -0.469      -0.075
+AR7    CZ     C     C   0.000      -3.967       0.049       0.035
+AR7   NH1     N   NH2   1.000      -4.113       1.383       0.094
+AR7   NH2     N   NH2   0.000      -5.033      -0.726       0.057
+AR7   OXT     O    O2   0.000       4.614      -0.318      -0.639
+AR7     H     H     H   0.000       2.434      -0.701       1.703
+AR7    H2     H     H   0.000       1.622      -1.809       1.061
+AR7    HA     H     H   0.000       2.169      -1.032      -1.064
+AR7    HF     H     H   0.000       3.328       1.094      -1.194
+AR7    H1     H     H   0.000       3.756       0.748       1.490
+AR7   HB1     H     H   0.000       0.971       0.964       0.607
+AR7   HB2     H     H   0.000       0.916       1.035      -1.024
+AR7   HG1     H     H   0.000      -0.288      -1.007      -0.995
+AR7   HG2     H     H   0.000      -0.199      -1.058       0.596
+AR7   HD1     H     H   0.000      -1.510       0.948       0.707
+AR7   HD2     H     H   0.000      -1.551       0.952      -0.889
+AR7   HNE     H     H   0.000      -2.605      -1.324      -0.089
+AR7  HN11     H     H   0.000      -3.385       1.925       0.049
+AR7  HN21     H     H   0.000      -4.931      -1.621       0.013
+AR7  HN22     H     H   0.000      -5.862      -0.376       0.120
+AR7   HXT     H     H   0.000       5.322       0.191      -0.713
+AR7  HN12     H     H   0.000      -4.929       1.749       0.129
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AR7       N         CA        SING      1.475     0.013     1.475     0.013     
+AR7       N         H         SING      1.036     0.016     0.905     0.020     
+AR7       N         H2        SING      1.036     0.016     0.905     0.020     
+AR7       CA        C         SING      1.516     0.020     1.516     0.020     
+AR7       CA        CB        SING      1.524     0.020     1.524     0.020     
+AR7       CA        HA        SING      1.089     0.010     0.987     0.019     
+AR7       C         O         SING      1.430     0.010     1.430     0.010     
+AR7       C         OXT       SING      1.430     0.010     1.430     0.010     
+AR7       C         HF        SING      1.089     0.010     0.994     0.020     
+AR7       O         H1        SING      0.970     0.012     0.881     0.020     
+AR7       CB        CG        SING      1.519     0.018     1.519     0.018     
+AR7       CB        HB1       SING      1.089     0.010     0.983     0.020     
+AR7       CB        HB2       SING      1.089     0.010     0.983     0.020     
+AR7       CG        CD        SING      1.505     0.020     1.505     0.020     
+AR7       CG        HG1       SING      1.089     0.010     0.978     0.019     
+AR7       CG        HG2       SING      1.089     0.010     0.978     0.019     
+AR7       CD        NE        SING      1.460     0.010     1.460     0.010     
+AR7       CD        HD1       SING      1.089     0.010     0.979     0.018     
+AR7       CD        HD2       SING      1.089     0.010     0.979     0.018     
+AR7       NE        CZ        SING      1.325     0.010     1.325     0.010     
+AR7       NE        HNE       SING      1.016     0.010     0.871     0.020     
+AR7       CZ        NH1       DOUB      1.319     0.011     1.319     0.011     
+AR7       CZ        NH2       SING      1.319     0.011     1.319     0.011     
+AR7       NH1       HN11      SING      1.016     0.010     0.874     0.020     
+AR7       NH2       HN21      SING      1.016     0.010     0.874     0.020     
+AR7       NH2       HN22      SING      1.016     0.010     0.874     0.020     
+AR7       OXT       HXT       SING      0.970     0.012     0.881     0.020     
+AR7       NH1       HN12      SING      1.016     0.010     0.874     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AR7    CA     N       H   110.586    3.00
+AR7    CA     N      H2   110.586    3.00
+AR7     H     N      H2   107.794    3.00
+AR7     N    CA       C   111.811    2.92
+AR7     N    CA      CB   110.020    2.23
+AR7     N    CA      HA   107.758    1.57
+AR7     C    CA      CB   110.705    3.00
+AR7     C    CA      HA   109.126    1.39
+AR7    CB    CA      HA   107.815    1.11
+AR7    CA     C       O   109.228    3.00
+AR7    CA     C     OXT   109.228    3.00
+AR7    CA     C      HF   109.126    1.39
+AR7     O     C     OXT   111.666    2.61
+AR7     O     C      HF   109.012    0.63
+AR7   OXT     C      HF   109.012    0.63
+AR7     C     O      H1   109.722    3.00
+AR7    CA    CB      CG   114.518    3.00
+AR7    CA    CB     HB1   108.316    0.83
+AR7    CA    CB     HB2   108.316    0.83
+AR7    CG    CB     HB1   108.835    0.59
+AR7    CG    CB     HB2   108.835    0.59
+AR7   HB1    CB     HB2   107.771    1.59
+AR7    CB    CG      CD   111.005    1.60
+AR7    CB    CG     HG1   109.394    0.49
+AR7    CB    CG     HG2   109.394    0.49
+AR7    CD    CG     HG1   108.764    1.73
+AR7    CD    CG     HG2   108.764    1.73
+AR7   HG1    CG     HG2   107.919    1.41
+AR7    CG    CD      NE   111.480    1.90
+AR7    CG    CD     HD1   109.333    0.97
+AR7    CG    CD     HD2   109.333    0.97
+AR7    NE    CD     HD1   109.220    0.89
+AR7    NE    CD     HD2   109.220    0.89
+AR7   HD1    CD     HD2   107.950    1.25
+AR7    CD    NE      CZ   124.177    1.67
+AR7    CD    NE     HNE   117.522    2.72
+AR7    CZ    NE     HNE   118.301    2.05
+AR7    NE    CZ     NH1   120.041    1.25
+AR7    NE    CZ     NH2   120.041    1.25
+AR7   NH1    CZ     NH2   119.919    1.16
+AR7    CZ   NH1    HN11   119.829    1.39
+AR7    CZ   NH1    HN12   119.829    1.39
+AR7  HN11   NH1    HN12   120.343    3.00
+AR7    CZ   NH2    HN21   119.829    1.39
+AR7    CZ   NH2    HN22   119.829    1.39
+AR7  HN21   NH2    HN22   120.343    3.00
+AR7     C   OXT     HXT   109.722    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AR7       sp3_sp3_1       C      CA       N       H     180.000   10.00     3
+AR7       sp3_sp3_2       C      CA       N      H2     -60.000   10.00     3
+AR7       sp3_sp3_3      CB      CA       N       H      60.000   10.00     3
+AR7       sp3_sp3_4      CB      CA       N      H2     180.000   10.00     3
+AR7       sp3_sp3_5      HA      CA       N       H     -60.000   10.00     3
+AR7       sp3_sp3_6      HA      CA       N      H2      60.000   10.00     3
+AR7       sp3_sp3_7       O       C      CA       N     180.000   10.00     3
+AR7       sp3_sp3_8       O       C      CA      CB     -60.000   10.00     3
+AR7       sp3_sp3_9       O       C      CA      HA      60.000   10.00     3
+AR7      sp3_sp3_10     OXT       C      CA       N      60.000   10.00     3
+AR7      sp3_sp3_11     OXT       C      CA      CB     180.000   10.00     3
+AR7      sp3_sp3_12     OXT       C      CA      HA     -60.000   10.00     3
+AR7      sp3_sp3_13      HF       C      CA       N     -60.000   10.00     3
+AR7      sp3_sp3_14      HF       C      CA      CB      60.000   10.00     3
+AR7      sp3_sp3_15      HF       C      CA      HA     180.000   10.00     3
+AR7      sp3_sp3_16       N      CA      CB      CG     180.000   10.00     3
+AR7      sp3_sp3_17       N      CA      CB     HB1     -60.000   10.00     3
+AR7      sp3_sp3_18       N      CA      CB     HB2      60.000   10.00     3
+AR7      sp3_sp3_19       C      CA      CB      CG      60.000   10.00     3
+AR7      sp3_sp3_20       C      CA      CB     HB1     180.000   10.00     3
+AR7      sp3_sp3_21       C      CA      CB     HB2     -60.000   10.00     3
+AR7      sp3_sp3_22      HA      CA      CB      CG     -60.000   10.00     3
+AR7      sp3_sp3_23      HA      CA      CB     HB1      60.000   10.00     3
+AR7      sp3_sp3_24      HA      CA      CB     HB2     180.000   10.00     3
+AR7      sp3_sp3_25      CA       C       O      H1     180.000   10.00     3
+AR7      sp3_sp3_26     OXT       C       O      H1     -60.000   10.00     3
+AR7      sp3_sp3_27      HF       C       O      H1      60.000   10.00     3
+AR7      sp3_sp3_28      CA       C     OXT     HXT     180.000   10.00     3
+AR7      sp3_sp3_29       O       C     OXT     HXT     -60.000   10.00     3
+AR7      sp3_sp3_30      HF       C     OXT     HXT      60.000   10.00     3
+AR7      sp3_sp3_31      CA      CB      CG      CD     180.000   10.00     3
+AR7      sp3_sp3_32      CA      CB      CG     HG1     -60.000   10.00     3
+AR7      sp3_sp3_33      CA      CB      CG     HG2      60.000   10.00     3
+AR7      sp3_sp3_34     HB1      CB      CG      CD      60.000   10.00     3
+AR7      sp3_sp3_35     HB1      CB      CG     HG1     180.000   10.00     3
+AR7      sp3_sp3_36     HB1      CB      CG     HG2     -60.000   10.00     3
+AR7      sp3_sp3_37     HB2      CB      CG      CD     -60.000   10.00     3
+AR7      sp3_sp3_38     HB2      CB      CG     HG1      60.000   10.00     3
+AR7      sp3_sp3_39     HB2      CB      CG     HG2     180.000   10.00     3
+AR7      sp3_sp3_40      NE      CD      CG      CB     180.000   10.00     3
+AR7      sp3_sp3_41      NE      CD      CG     HG1     -60.000   10.00     3
+AR7      sp3_sp3_42      NE      CD      CG     HG2      60.000   10.00     3
+AR7      sp3_sp3_43     HD1      CD      CG      CB      60.000   10.00     3
+AR7      sp3_sp3_44     HD1      CD      CG     HG1     180.000   10.00     3
+AR7      sp3_sp3_45     HD1      CD      CG     HG2     -60.000   10.00     3
+AR7      sp3_sp3_46     HD2      CD      CG      CB     -60.000   10.00     3
+AR7      sp3_sp3_47     HD2      CD      CG     HG1      60.000   10.00     3
+AR7      sp3_sp3_48     HD2      CD      CG     HG2     180.000   10.00     3
+AR7       sp2_sp3_1      CZ      NE      CD     HD1       0.000   10.00     6
+AR7       sp2_sp3_2      CZ      NE      CD      CG     120.000   10.00     6
+AR7       sp2_sp3_3      CZ      NE      CD     HD2    -120.000   10.00     6
+AR7       sp2_sp3_4     HNE      NE      CD     HD1     180.000   10.00     6
+AR7       sp2_sp3_5     HNE      NE      CD      CG     -60.000   10.00     6
+AR7       sp2_sp3_6     HNE      NE      CD     HD2      60.000   10.00     6
+AR7       sp2_sp2_1     NH1      CZ      NE      CD     180.000   10.00     2
+AR7       sp2_sp2_2     NH1      CZ      NE     HNE       0.000   10.00     2
+AR7       sp2_sp2_3     NH2      CZ      NE      CD       0.000   10.00     2
+AR7       sp2_sp2_4     NH2      CZ      NE     HNE     180.000   10.00     2
+AR7       sp2_sp2_5      NE      CZ     NH1    HN11     180.000   10.00     2
+AR7       sp2_sp2_6      NE      CZ     NH1    HN12       0.000   10.00     2
+AR7       sp2_sp2_7     NH2      CZ     NH1    HN11       0.000   10.00     2
+AR7       sp2_sp2_8     NH2      CZ     NH1    HN12     180.000   10.00     2
+AR7       sp2_sp2_9      NE      CZ     NH2    HN21     180.000   10.00     2
+AR7      sp2_sp2_10      NE      CZ     NH2    HN22       0.000   10.00     2
+AR7      sp2_sp2_11     NH1      CZ     NH2    HN21       0.000   10.00     2
+AR7      sp2_sp2_12     NH1      CZ     NH2    HN22     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AR7    plan-1    CD   0.020
+AR7    plan-1    CZ   0.020
+AR7    plan-1   HNE   0.020
+AR7    plan-1    NE   0.020
+AR7    plan-2    CZ   0.020
+AR7    plan-2    NE   0.020
+AR7    plan-2   NH1   0.020
+AR7    plan-2   NH2   0.020
+AR7    plan-3    CZ   0.020
+AR7    plan-3  HN11   0.020
+AR7    plan-3  HN12   0.020
+AR7    plan-3   NH1   0.020
+AR7    plan-4    CZ   0.020
+AR7    plan-4  HN21   0.020
+AR7    plan-4  HN22   0.020
+AR7    plan-4   NH2   0.020

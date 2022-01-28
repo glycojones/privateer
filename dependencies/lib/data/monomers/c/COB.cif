@@ -1,0 +1,1260 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+COB      COB 'CO-METHYLCOBALAMIN                  ' non-polymer       182  92 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_COB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ COB           O5     O    OP       -0.500      6.101    2.852   -1.470
+ COB           P      P    P         0.000      5.537    1.981   -0.411
+ COB           O4     O    OP       -0.500      4.094    1.757   -0.671
+ COB           O2     O    O2        0.000      6.308    0.567   -0.413
+ COB           C3R    C    CH1       0.000      6.208    0.044   -1.739
+ COB           H3R    H    H         0.000      5.634    0.728   -2.380
+ COB           C4R    C    CH1       0.000      5.556   -1.356   -1.722
+ COB           H4R    H    H         0.000      5.691   -1.828   -0.739
+ COB           C5R    C    CH2       0.000      4.068   -1.262   -2.066
+ COB           H5R1   H    H         0.000      3.953   -0.860   -3.075
+ COB           H5R2   H    H         0.000      3.571   -0.601   -1.353
+ COB           O8R    O    OH1       0.000      3.481   -2.564   -2.000
+ COB           HOR8   H    H         0.000      2.541   -2.505   -2.218
+ COB           O6R    O    O2        0.000      6.262   -2.103   -2.739
+ COB           C1R    C    CH1       0.000      7.648   -1.722   -2.601
+ COB           H1R    H    H         0.000      8.197   -1.934   -3.529
+ COB           N1B    N    NR5       0.000      8.263   -2.426   -1.474
+ COB           C2B    C    CR15      0.000      7.611   -3.140   -0.516
+ COB           H2B    H    H         0.000      6.538   -3.278   -0.468
+ COB           N3B    N    NRD5      0.000      8.465   -3.632    0.333
+ COB           C9B    C    CR56      0.000      9.724   -3.267   -0.021
+ COB           C4B    C    CR16      0.000     10.987   -3.512    0.524
+ COB           H4B    H    H         0.000     11.084   -4.111    1.421
+ COB           C5B    C    CR6       0.000     12.099   -2.994   -0.077
+ COB           C5M    C    CH3       0.000     13.460   -3.262    0.514
+ COB           HM53   H    H         0.000     14.104   -2.449    0.301
+ COB           HM52   H    H         0.000     13.373   -3.378    1.563
+ COB           HM51   H    H         0.000     13.860   -4.148    0.093
+ COB           C6B    C    CR6       0.000     11.990   -2.225   -1.227
+ COB           C6M    C    CH3       0.000     13.230   -1.664   -1.874
+ COB           HM63   H    H         0.000     12.994   -0.753   -2.359
+ COB           HM62   H    H         0.000     13.966   -1.489   -1.133
+ COB           HM61   H    H         0.000     13.602   -2.356   -2.584
+ COB           C7B    C    CR16      0.000     10.753   -1.971   -1.782
+ COB           H7B    H    H         0.000     10.673   -1.367   -2.677
+ COB           C8B    C    CR56      0.000      9.612   -2.493   -1.189
+ COB           C2R    C    CH1       0.000      7.614   -0.201   -2.332
+ COB           H2R    H    H         0.000      7.740    0.359   -3.269
+ COB           O7R    O    OH1       0.000      8.625    0.166   -1.390
+ COB           HOR7   H    H         0.000      9.497    0.007   -1.776
+ COB           O3     O    O2        0.000      5.721    2.690    1.022
+ COB           C2P    C    CH1       0.000      5.129    3.987    0.920
+ COB           H2P    H    H         0.000      4.587    4.068   -0.033
+ COB           C3P    C    CH3       0.000      6.224    5.054    0.976
+ COB           H3P3   H    H         0.000      6.747    4.977    1.894
+ COB           H3P2   H    H         0.000      6.900    4.911    0.173
+ COB           H3P1   H    H         0.000      5.786    6.016    0.900
+ COB           C1P    C    CH2       0.000      4.154    4.195    2.081
+ COB           H1P1   H    H         0.000      3.781    5.221    2.063
+ COB           H1P2   H    H         0.000      4.670    4.014    3.026
+ COB           N59    N    NH1       0.000      3.032    3.263    1.949
+ COB           H59    H    H         0.000      3.029    2.578    1.207
+ COB           C57    C    C         0.000      2.003    3.319    2.818
+ COB           O58    O    O         0.000      2.007    4.142    3.710
+ COB           C56    C    CH2       0.000      0.848    2.361    2.683
+ COB           H561   H    H         0.000      1.214    1.336    2.772
+ COB           H562   H    H         0.000      0.377    2.495    1.707
+ COB           C55    C    CH2       0.000     -0.175    2.636    3.786
+ COB           H551   H    H         0.000     -0.471    3.687    3.753
+ COB           H552   H    H         0.000      0.271    2.415    4.758
+ COB           C17    C    CT        0.000     -1.397    1.756    3.575
+ COB           C54    C    CH3       0.000     -2.426    1.953    4.678
+ COB           H543   H    H         0.000     -3.265    1.335    4.491
+ COB           H542   H    H         0.000     -1.997    1.694    5.611
+ COB           H541   H    H         0.000     -2.731    2.967    4.699
+ COB           C18    C    CH1       0.000     -0.996    0.269    3.449
+ COB           H18    H    H         0.000      0.069    0.163    3.201
+ COB           C60    C    CH2       0.000     -1.344   -0.486    4.728
+ COB           H601   H    H         0.000     -0.960   -1.506    4.664
+ COB           H602   H    H         0.000     -2.429   -0.513    4.850
+ COB           C61    C    C         0.000     -0.721    0.213    5.909
+ COB           N62    N    NH2       0.000     -1.207    0.005    7.148
+ COB           H622   H    H         0.000     -1.991   -0.620    7.291
+ COB           H621   H    H         0.000     -0.792    0.473    7.945
+ COB           O63    O    O         0.000      0.218    0.963    5.744
+ COB           C19    C    C         0.000     -1.883   -0.201    2.297
+ COB           C1     C    CT        0.000     -2.238   -1.426    1.530
+ COB           C20    C    CH3       0.000     -1.211   -1.651    0.413
+ COB           H203   H    H         0.000     -0.365   -2.156    0.804
+ COB           H202   H    H         0.000     -1.645   -2.237   -0.356
+ COB           H201   H    H         0.000     -0.909   -0.717    0.015
+ COB           N24    N    N        -1.000     -2.437    0.816    1.783
+ COB           CO     CO   CO        2.000     -3.777    0.555    0.616
+ COB           C1A    C    CH3       0.000     -5.073    1.162    1.842
+ COB           H1A3   H    H         0.000     -5.963    0.620    1.686
+ COB           H1A2   H    H         0.000     -4.713    1.001    2.819
+ COB           H1A1   H    H         0.000     -5.236    2.190    1.677
+ COB           C16    C    C         0.000     -2.010    1.989    2.209
+ COB           C15    C    C         0.000     -2.078    3.059    1.400
+ COB           C53    C    CH3       0.000     -1.619    4.406    1.905
+ COB           H533   H    H         0.000     -2.181    5.172    1.435
+ COB           H532   H    H         0.000     -1.761    4.459    2.954
+ COB           H531   H    H         0.000     -0.591    4.538    1.682
+ COB           C14    C    C         0.000     -2.554    2.947    0.083
+ COB           N23    N    N         0.000     -3.303    1.984   -0.396
+ COB           C13    C    CH1       0.000     -2.222    3.965   -1.010
+ COB           H13    H    H         0.000     -2.699    4.934   -0.805
+ COB           C48    C    CH2       0.000     -0.709    4.117   -1.143
+ COB           H481   H    H         0.000     -0.281    3.184   -1.515
+ COB           H482   H    H         0.000     -0.280    4.349   -0.166
+ COB           C49    C    CH2       0.000     -0.394    5.250   -2.122
+ COB           H491   H    H         0.000     -0.842    6.178   -1.760
+ COB           H492   H    H         0.000     -0.806    5.007   -3.104
+ COB           C50    C    C         0.000      1.099    5.420   -2.230
+ COB           N52    N    NH2       0.000      1.613    6.367   -3.040
+ COB           H522   H    H         0.000      0.999    6.967   -3.578
+ COB           H521   H    H         0.000      2.616    6.485   -3.116
+ COB           O51    O    O         0.000      1.839    4.705   -1.588
+ COB           C12    C    CT        0.000     -2.810    3.317   -2.264
+ COB           C46    C    CH3       0.000     -1.717    2.707   -3.131
+ COB           H463   H    H         0.000     -1.088    3.476   -3.498
+ COB           H462   H    H         0.000     -1.145    2.029   -2.553
+ COB           H461   H    H         0.000     -2.158    2.193   -3.945
+ COB           C47    C    CH3       0.000     -3.648    4.312   -3.055
+ COB           H473   H    H         0.000     -3.020    5.070   -3.445
+ COB           H472   H    H         0.000     -4.133    3.810   -3.852
+ COB           H471   H    H         0.000     -4.374    4.747   -2.418
+ COB           C11    C    C         0.000     -3.679    2.243   -1.665
+ COB           C10    C    C1        0.000     -4.714    1.618   -2.307
+ COB           H10    H    H         0.000     -5.019    1.941   -3.288
+ COB           C9     C    C         0.000     -5.370    0.559   -1.680
+ COB           N22    N    N         0.000     -5.051   -0.047   -0.553
+ COB           C8     C    CH1       0.000     -6.656   -0.016   -2.254
+ COB           H8     H    H         0.000     -7.419    0.766   -2.375
+ COB           C41    C    CH2       0.000     -6.377   -0.718   -3.579
+ COB           H411   H    H         0.000     -7.226   -1.353   -3.840
+ COB           H412   H    H         0.000     -5.480   -1.334   -3.482
+ COB           C42    C    CH2       0.000     -6.164    0.328   -4.675
+ COB           H421   H    H         0.000     -5.236    0.870   -4.484
+ COB           H422   H    H         0.000     -7.001    1.030   -4.675
+ COB           C43    C    C         0.000     -6.081   -0.357   -6.015
+ COB           N45    N    NH2       0.000     -5.894    0.371   -7.134
+ COB           H452   H    H         0.000     -5.809    1.379   -7.080
+ COB           H451   H    H         0.000     -5.838   -0.085   -8.037
+ COB           O44    O    O         0.000     -6.182   -1.563   -6.086
+ COB           C7     C    CT        0.000     -7.071   -1.029   -1.182
+ COB           C36    C    CH3       0.000     -7.457   -2.361   -1.812
+ COB           H363   H    H         0.000     -8.127   -2.191   -2.614
+ COB           H362   H    H         0.000     -6.588   -2.845   -2.175
+ COB           H361   H    H         0.000     -7.924   -2.973   -1.085
+ COB           C37    C    CH2       0.000     -8.195   -0.483   -0.314
+ COB           H371   H    H         0.000     -7.878    0.458    0.140
+ COB           H372   H    H         0.000     -8.430   -1.204    0.472
+ COB           C38    C    C         0.000     -9.417   -0.247   -1.163
+ COB           N40    N    NH2       0.000    -10.515    0.319   -0.623
+ COB           H402   H    H         0.000    -10.524    0.588    0.354
+ COB           H401   H    H         0.000    -11.339    0.479   -1.190
+ COB           O39    O    O         0.000     -9.414   -0.568   -2.333
+ COB           C6     C    C         0.000     -5.785   -1.160   -0.389
+ COB           C5     C    C         0.000     -5.495   -2.297    0.311
+ COB           C35    C    CH3       0.000     -6.464   -3.432    0.439
+ COB           H353   H    H         0.000     -6.225   -4.004    1.297
+ COB           H352   H    H         0.000     -7.446   -3.048    0.532
+ COB           H351   H    H         0.000     -6.404   -4.045   -0.422
+ COB           C4     C    C         0.000     -4.215   -2.336    0.887
+ COB           N21    N    N         0.000     -3.549   -1.201    0.953
+ COB           C3     C    CH1       0.000     -3.416   -3.459    1.483
+ COB           H3     H    H         0.000     -4.051   -4.119    2.091
+ COB           C30    C    CH2       0.000     -2.704   -4.241    0.382
+ COB           H301   H    H         0.000     -1.991   -4.935    0.832
+ COB           H302   H    H         0.000     -2.172   -3.546   -0.271
+ COB           C31    C    CH2       0.000     -3.734   -5.024   -0.435
+ COB           H311   H    H         0.000     -4.446   -4.329   -0.884
+ COB           H312   H    H         0.000     -4.267   -5.717    0.220
+ COB           C32    C    C         0.000     -3.031   -5.797   -1.522
+ COB           N33    N    NH2       0.000     -3.743   -6.564   -2.371
+ COB           H332   H    H         0.000     -4.750   -6.624   -2.283
+ COB           H331   H    H         0.000     -3.276   -7.085   -3.103
+ COB           O34    O    O         0.000     -1.826   -5.728   -1.632
+ COB           C2     C    CT        0.000     -2.384   -2.700    2.368
+ COB           C25    C    CH3       0.000     -1.067   -3.455    2.460
+ COB           H253   H    H         0.000     -1.190   -4.304    3.080
+ COB           H252   H    H         0.000     -0.770   -3.764    1.492
+ COB           H251   H    H         0.000     -0.326   -2.821    2.872
+ COB           C26    C    CH2       0.000     -2.953   -2.392    3.744
+ COB           H261   H    H         0.000     -3.722   -1.621    3.656
+ COB           H262   H    H         0.000     -2.154   -2.034    4.396
+ COB           C27    C    C         0.000     -3.558   -3.643    4.328
+ COB           O28    O    O         0.000     -3.425   -4.705    3.757
+ COB           N29    N    NH2       0.000     -4.246   -3.582    5.486
+ COB           H292   H    H         0.000     -4.359   -2.698    5.967
+ COB           H291   H    H         0.000     -4.655   -4.420    5.883
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ COB      O5     n/a    P      START
+ COB      P      O5     O3     .
+ COB      O4     P      .      .
+ COB      O2     P      C3R    .
+ COB      C3R    O2     C4R    .
+ COB      H3R    C3R    .      .
+ COB      C4R    C3R    O6R    .
+ COB      H4R    C4R    .      .
+ COB      C5R    C4R    O8R    .
+ COB      H5R1   C5R    .      .
+ COB      H5R2   C5R    .      .
+ COB      O8R    C5R    HOR8   .
+ COB      HOR8   O8R    .      .
+ COB      O6R    C4R    C1R    .
+ COB      C1R    O6R    C2R    .
+ COB      H1R    C1R    .      .
+ COB      N1B    C1R    C2B    .
+ COB      C2B    N1B    N3B    .
+ COB      H2B    C2B    .      .
+ COB      N3B    C2B    C9B    .
+ COB      C9B    N3B    C4B    .
+ COB      C4B    C9B    C5B    .
+ COB      H4B    C4B    .      .
+ COB      C5B    C4B    C6B    .
+ COB      C5M    C5B    HM51   .
+ COB      HM53   C5M    .      .
+ COB      HM52   C5M    .      .
+ COB      HM51   C5M    .      .
+ COB      C6B    C5B    C7B    .
+ COB      C6M    C6B    HM61   .
+ COB      HM63   C6M    .      .
+ COB      HM62   C6M    .      .
+ COB      HM61   C6M    .      .
+ COB      C7B    C6B    C8B    .
+ COB      H7B    C7B    .      .
+ COB      C8B    C7B    .      .
+ COB      C2R    C1R    O7R    .
+ COB      H2R    C2R    .      .
+ COB      O7R    C2R    HOR7   .
+ COB      HOR7   O7R    .      .
+ COB      O3     P      C2P    .
+ COB      C2P    O3     C1P    .
+ COB      H2P    C2P    .      .
+ COB      C3P    C2P    H3P1   .
+ COB      H3P3   C3P    .      .
+ COB      H3P2   C3P    .      .
+ COB      H3P1   C3P    .      .
+ COB      C1P    C2P    N59    .
+ COB      H1P1   C1P    .      .
+ COB      H1P2   C1P    .      .
+ COB      N59    C1P    C57    .
+ COB      H59    N59    .      .
+ COB      C57    N59    C56    .
+ COB      O58    C57    .      .
+ COB      C56    C57    C55    .
+ COB      H561   C56    .      .
+ COB      H562   C56    .      .
+ COB      C55    C56    C17    .
+ COB      H551   C55    .      .
+ COB      H552   C55    .      .
+ COB      C17    C55    C16    .
+ COB      C54    C17    H541   .
+ COB      H543   C54    .      .
+ COB      H542   C54    .      .
+ COB      H541   C54    .      .
+ COB      C18    C17    C19    .
+ COB      H18    C18    .      .
+ COB      C60    C18    C61    .
+ COB      H601   C60    .      .
+ COB      H602   C60    .      .
+ COB      C61    C60    O63    .
+ COB      N62    C61    H621   .
+ COB      H622   N62    .      .
+ COB      H621   N62    .      .
+ COB      O63    C61    .      .
+ COB      C19    C18    N24    .
+ COB      C1     C19    C20    .
+ COB      C20    C1     H201   .
+ COB      H203   C20    .      .
+ COB      H202   C20    .      .
+ COB      H201   C20    .      .
+ COB      N24    C19    CO     .
+ COB      CO     N24    C1A    .
+ COB      C1A    CO     H1A1   .
+ COB      H1A3   C1A    .      .
+ COB      H1A2   C1A    .      .
+ COB      H1A1   C1A    .      .
+ COB      C16    C17    C15    .
+ COB      C15    C16    C14    .
+ COB      C53    C15    H531   .
+ COB      H533   C53    .      .
+ COB      H532   C53    .      .
+ COB      H531   C53    .      .
+ COB      C14    C15    C13    .
+ COB      N23    C14    .      .
+ COB      C13    C14    C12    .
+ COB      H13    C13    .      .
+ COB      C48    C13    C49    .
+ COB      H481   C48    .      .
+ COB      H482   C48    .      .
+ COB      C49    C48    C50    .
+ COB      H491   C49    .      .
+ COB      H492   C49    .      .
+ COB      C50    C49    O51    .
+ COB      N52    C50    H521   .
+ COB      H522   N52    .      .
+ COB      H521   N52    .      .
+ COB      O51    C50    .      .
+ COB      C12    C13    C11    .
+ COB      C46    C12    H461   .
+ COB      H463   C46    .      .
+ COB      H462   C46    .      .
+ COB      H461   C46    .      .
+ COB      C47    C12    H471   .
+ COB      H473   C47    .      .
+ COB      H472   C47    .      .
+ COB      H471   C47    .      .
+ COB      C11    C12    C10    .
+ COB      C10    C11    C9     .
+ COB      H10    C10    .      .
+ COB      C9     C10    C8     .
+ COB      N22    C9     .      .
+ COB      C8     C9     C7     .
+ COB      H8     C8     .      .
+ COB      C41    C8     C42    .
+ COB      H411   C41    .      .
+ COB      H412   C41    .      .
+ COB      C42    C41    C43    .
+ COB      H421   C42    .      .
+ COB      H422   C42    .      .
+ COB      C43    C42    O44    .
+ COB      N45    C43    H451   .
+ COB      H452   N45    .      .
+ COB      H451   N45    .      .
+ COB      O44    C43    .      .
+ COB      C7     C8     C6     .
+ COB      C36    C7     H361   .
+ COB      H363   C36    .      .
+ COB      H362   C36    .      .
+ COB      H361   C36    .      .
+ COB      C37    C7     C38    .
+ COB      H371   C37    .      .
+ COB      H372   C37    .      .
+ COB      C38    C37    O39    .
+ COB      N40    C38    H401   .
+ COB      H402   N40    .      .
+ COB      H401   N40    .      .
+ COB      O39    C38    .      .
+ COB      C6     C7     C5     .
+ COB      C5     C6     C4     .
+ COB      C35    C5     H351   .
+ COB      H353   C35    .      .
+ COB      H352   C35    .      .
+ COB      H351   C35    .      .
+ COB      C4     C5     C3     .
+ COB      N21    C4     .      .
+ COB      C3     C4     C2     .
+ COB      H3     C3     .      .
+ COB      C30    C3     C31    .
+ COB      H301   C30    .      .
+ COB      H302   C30    .      .
+ COB      C31    C30    C32    .
+ COB      H311   C31    .      .
+ COB      H312   C31    .      .
+ COB      C32    C31    O34    .
+ COB      N33    C32    H331   .
+ COB      H332   N33    .      .
+ COB      H331   N33    .      .
+ COB      O34    C32    .      .
+ COB      C2     C3     C26    .
+ COB      C25    C2     H251   .
+ COB      H253   C25    .      .
+ COB      H252   C25    .      .
+ COB      H251   C25    .      .
+ COB      C26    C2     C27    .
+ COB      H261   C26    .      .
+ COB      H262   C26    .      .
+ COB      C27    C26    N29    .
+ COB      O28    C27    .      .
+ COB      N29    C27    H291   .
+ COB      H292   N29    .      .
+ COB      H291   N29    .      END
+ COB      CO     N21    .    ADD
+ COB      CO     N22    .    ADD
+ COB      CO     N23    .    ADD
+ COB      N21    C1     .    ADD
+ COB      N22    C6     .    ADD
+ COB      N23    C11    .    ADD
+ COB      N24    C16    .    ADD
+ COB      C1     C2     .    ADD
+ COB      C3R    C2R    .    ADD
+ COB      N1B    C8B    .    ADD
+ COB      C8B    C9B    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+COB       CO        N21       single    1.810     0.020     1.810     0.020     
+COB       CO        N22       single    1.810     0.020     1.810     0.020     
+COB       CO        N23       single    1.810     0.020     1.810     0.020     
+COB       CO        N24       single    1.810     0.020     1.810     0.020     
+COB       C1A       CO        single    1.980     0.020     1.980     0.020     
+COB       N21       C1        single    1.455     0.020     1.455     0.020     
+COB       N21       C4        double    1.260     0.020     1.260     0.020     
+COB       N22       C6        single    1.330     0.020     1.330     0.020     
+COB       N22       C9        double    1.260     0.020     1.260     0.020     
+COB       N23       C11       single    1.330     0.020     1.330     0.020     
+COB       N23       C14       double    1.260     0.020     1.260     0.020     
+COB       N24       C16       single    1.330     0.020     1.330     0.020     
+COB       N24       C19       double    1.260     0.020     1.260     0.020     
+COB       C20       C1        single    1.524     0.020     1.524     0.020     
+COB       C1        C2        single    1.524     0.020     1.524     0.020     
+COB       C1        C19       single    1.507     0.020     1.507     0.020     
+COB       H201      C20       single    1.089     0.010     0.989     0.005     
+COB       H202      C20       single    1.089     0.010     0.989     0.005     
+COB       H203      C20       single    1.089     0.010     0.989     0.005     
+COB       C25       C2        single    1.524     0.020     1.524     0.020     
+COB       C26       C2        single    1.524     0.020     1.524     0.020     
+COB       C2        C3        single    1.524     0.020     1.524     0.020     
+COB       H251      C25       single    1.089     0.010     0.989     0.005     
+COB       H252      C25       single    1.089     0.010     0.989     0.005     
+COB       H253      C25       single    1.089     0.010     0.989     0.005     
+COB       C27       C26       single    1.510     0.020     1.510     0.020     
+COB       H261      C26       single    1.089     0.010     0.989     0.005     
+COB       H262      C26       single    1.089     0.010     0.989     0.005     
+COB       O28       C27       double    1.220     0.020     1.220     0.020     
+COB       N29       C27       single    1.332     0.020     1.332     0.020     
+COB       H291      N29       single    1.016     0.010     0.899     0.007     
+COB       H292      N29       single    1.016     0.010     0.899     0.007     
+COB       C30       C3        single    1.524     0.020     1.524     0.020     
+COB       C3        C4        single    1.500     0.020     1.500     0.020     
+COB       H3        C3        single    1.089     0.010     0.989     0.005     
+COB       C31       C30       single    1.524     0.020     1.524     0.020     
+COB       H301      C30       single    1.089     0.010     0.989     0.005     
+COB       H302      C30       single    1.089     0.010     0.989     0.005     
+COB       C32       C31       single    1.510     0.020     1.510     0.020     
+COB       H311      C31       single    1.089     0.010     0.989     0.005     
+COB       H312      C31       single    1.089     0.010     0.989     0.005     
+COB       O34       C32       double    1.220     0.020     1.220     0.020     
+COB       N33       C32       single    1.332     0.020     1.332     0.020     
+COB       H331      N33       single    1.016     0.010     0.899     0.007     
+COB       H332      N33       single    1.016     0.010     0.899     0.007     
+COB       C4        C5        single    1.460     0.020     1.460     0.020     
+COB       C35       C5        single    1.500     0.020     1.500     0.020     
+COB       C5        C6        double    1.330     0.020     1.330     0.020     
+COB       H351      C35       single    1.089     0.010     0.989     0.005     
+COB       H352      C35       single    1.089     0.010     0.989     0.005     
+COB       H353      C35       single    1.089     0.010     0.989     0.005     
+COB       C6        C7        single    1.507     0.020     1.507     0.020     
+COB       C36       C7        single    1.524     0.020     1.524     0.020     
+COB       C37       C7        single    1.524     0.020     1.524     0.020     
+COB       C7        C8        single    1.524     0.020     1.524     0.020     
+COB       H361      C36       single    1.089     0.010     0.989     0.005     
+COB       H362      C36       single    1.089     0.010     0.989     0.005     
+COB       H363      C36       single    1.089     0.010     0.989     0.005     
+COB       C38       C37       single    1.510     0.020     1.510     0.020     
+COB       H371      C37       single    1.089     0.010     0.989     0.005     
+COB       H372      C37       single    1.089     0.010     0.989     0.005     
+COB       O39       C38       double    1.220     0.020     1.220     0.020     
+COB       N40       C38       single    1.332     0.020     1.332     0.020     
+COB       H401      N40       single    1.016     0.010     0.899     0.007     
+COB       H402      N40       single    1.016     0.010     0.899     0.007     
+COB       C41       C8        single    1.524     0.020     1.524     0.020     
+COB       C8        C9        single    1.500     0.020     1.500     0.020     
+COB       H8        C8        single    1.089     0.010     0.989     0.005     
+COB       C42       C41       single    1.524     0.020     1.524     0.020     
+COB       H411      C41       single    1.089     0.010     0.989     0.005     
+COB       H412      C41       single    1.089     0.010     0.989     0.005     
+COB       C43       C42       single    1.510     0.020     1.510     0.020     
+COB       H421      C42       single    1.089     0.010     0.989     0.005     
+COB       H422      C42       single    1.089     0.010     0.989     0.005     
+COB       O44       C43       double    1.220     0.020     1.220     0.020     
+COB       N45       C43       single    1.332     0.020     1.332     0.020     
+COB       H451      N45       single    1.016     0.010     0.899     0.007     
+COB       H452      N45       single    1.016     0.010     0.899     0.007     
+COB       C9        C10       single    1.475     0.020     1.475     0.020     
+COB       C10       C11       double    1.340     0.020     1.340     0.020     
+COB       H10       C10       single    1.082     0.013     0.975     0.010     
+COB       C11       C12       single    1.507     0.020     1.507     0.020     
+COB       C46       C12       single    1.524     0.020     1.524     0.020     
+COB       C47       C12       single    1.524     0.020     1.524     0.020     
+COB       C12       C13       single    1.524     0.020     1.524     0.020     
+COB       H461      C46       single    1.089     0.010     0.989     0.005     
+COB       H462      C46       single    1.089     0.010     0.989     0.005     
+COB       H463      C46       single    1.089     0.010     0.989     0.005     
+COB       H471      C47       single    1.089     0.010     0.989     0.005     
+COB       H472      C47       single    1.089     0.010     0.989     0.005     
+COB       H473      C47       single    1.089     0.010     0.989     0.005     
+COB       C48       C13       single    1.524     0.020     1.524     0.020     
+COB       C13       C14       single    1.500     0.020     1.500     0.020     
+COB       H13       C13       single    1.089     0.010     0.989     0.005     
+COB       C49       C48       single    1.524     0.020     1.524     0.020     
+COB       H481      C48       single    1.089     0.010     0.989     0.005     
+COB       H482      C48       single    1.089     0.010     0.989     0.005     
+COB       C50       C49       single    1.510     0.020     1.510     0.020     
+COB       H491      C49       single    1.089     0.010     0.989     0.005     
+COB       H492      C49       single    1.089     0.010     0.989     0.005     
+COB       O51       C50       double    1.220     0.020     1.220     0.020     
+COB       N52       C50       single    1.332     0.020     1.332     0.020     
+COB       H521      N52       single    1.016     0.010     0.899     0.007     
+COB       H522      N52       single    1.016     0.010     0.899     0.007     
+COB       C14       C15       single    1.460     0.020     1.460     0.020     
+COB       C53       C15       single    1.500     0.020     1.500     0.020     
+COB       C15       C16       double    1.330     0.020     1.330     0.020     
+COB       H531      C53       single    1.089     0.010     0.989     0.005     
+COB       H532      C53       single    1.089     0.010     0.989     0.005     
+COB       H533      C53       single    1.089     0.010     0.989     0.005     
+COB       C16       C17       single    1.507     0.020     1.507     0.020     
+COB       C54       C17       single    1.524     0.020     1.524     0.020     
+COB       C17       C55       single    1.524     0.020     1.524     0.020     
+COB       C18       C17       single    1.524     0.020     1.524     0.020     
+COB       H541      C54       single    1.089     0.010     0.989     0.005     
+COB       H542      C54       single    1.089     0.010     0.989     0.005     
+COB       H543      C54       single    1.089     0.010     0.989     0.005     
+COB       C55       C56       single    1.524     0.020     1.524     0.020     
+COB       H551      C55       single    1.089     0.010     0.989     0.005     
+COB       H552      C55       single    1.089     0.010     0.989     0.005     
+COB       C56       C57       single    1.510     0.020     1.510     0.020     
+COB       H561      C56       single    1.089     0.010     0.989     0.005     
+COB       H562      C56       single    1.089     0.010     0.989     0.005     
+COB       O58       C57       double    1.220     0.020     1.220     0.020     
+COB       C57       N59       single    1.330     0.020     1.330     0.020     
+COB       N59       C1P       single    1.450     0.020     1.450     0.020     
+COB       H59       N59       single    1.016     0.010     0.899     0.007     
+COB       C60       C18       single    1.524     0.020     1.524     0.020     
+COB       C19       C18       single    1.500     0.020     1.500     0.020     
+COB       H18       C18       single    1.089     0.010     0.989     0.005     
+COB       C61       C60       single    1.510     0.020     1.510     0.020     
+COB       H601      C60       single    1.089     0.010     0.989     0.005     
+COB       H602      C60       single    1.089     0.010     0.989     0.005     
+COB       O63       C61       double    1.220     0.020     1.220     0.020     
+COB       N62       C61       single    1.332     0.020     1.332     0.020     
+COB       H621      N62       single    1.016     0.010     0.899     0.007     
+COB       H622      N62       single    1.016     0.010     0.899     0.007     
+COB       C1P       C2P       single    1.524     0.020     1.524     0.020     
+COB       H1P1      C1P       single    1.089     0.010     0.989     0.005     
+COB       H1P2      C1P       single    1.089     0.010     0.989     0.005     
+COB       C3P       C2P       single    1.524     0.020     1.524     0.020     
+COB       C2P       O3        single    1.426     0.020     1.426     0.020     
+COB       H2P       C2P       single    1.089     0.010     0.989     0.005     
+COB       H3P1      C3P       single    1.089     0.010     0.989     0.005     
+COB       H3P2      C3P       single    1.089     0.010     0.989     0.005     
+COB       H3P3      C3P       single    1.089     0.010     0.989     0.005     
+COB       O3        P         single    1.610     0.020     1.610     0.020     
+COB       O4        P         deloc     1.510     0.020     1.510     0.020     
+COB       P         O5        deloc     1.510     0.020     1.510     0.020     
+COB       O2        P         single    1.610     0.020     1.610     0.020     
+COB       C3R       O2        single    1.426     0.020     1.426     0.020     
+COB       C3R       C2R       single    1.524     0.020     1.524     0.020     
+COB       C4R       C3R       single    1.524     0.020     1.524     0.020     
+COB       H3R       C3R       single    1.089     0.010     0.989     0.005     
+COB       O7R       C2R       single    1.432     0.020     1.432     0.020     
+COB       C2R       C1R       single    1.524     0.020     1.524     0.020     
+COB       H2R       C2R       single    1.089     0.010     0.989     0.005     
+COB       HOR7      O7R       single    0.970     0.012     0.839     0.014     
+COB       C1R       O6R       single    1.426     0.020     1.426     0.020     
+COB       N1B       C1R       single    1.485     0.020     1.485     0.020     
+COB       H1R       C1R       single    1.089     0.010     0.989     0.005     
+COB       O6R       C4R       single    1.426     0.020     1.426     0.020     
+COB       C5R       C4R       single    1.524     0.020     1.524     0.020     
+COB       H4R       C4R       single    1.089     0.010     0.989     0.005     
+COB       O8R       C5R       single    1.432     0.020     1.432     0.020     
+COB       H5R1      C5R       single    1.089     0.010     0.989     0.005     
+COB       H5R2      C5R       single    1.089     0.010     0.989     0.005     
+COB       HOR8      O8R       single    0.970     0.012     0.839     0.014     
+COB       N1B       C8B       single    1.337     0.020     1.337     0.020     
+COB       C2B       N1B       single    1.337     0.020     1.337     0.020     
+COB       C8B       C9B       double    1.490     0.020     1.490     0.020     
+COB       C8B       C7B       single    1.390     0.020     1.390     0.020     
+COB       N3B       C2B       double    1.350     0.020     1.350     0.020     
+COB       H2B       C2B       single    1.082     0.013     0.975     0.010     
+COB       C9B       N3B       single    1.350     0.020     1.350     0.020     
+COB       C4B       C9B       single    1.390     0.020     1.390     0.020     
+COB       C5B       C4B       double    1.390     0.020     1.390     0.020     
+COB       H4B       C4B       single    1.082     0.013     0.975     0.010     
+COB       C5M       C5B       single    1.506     0.020     1.506     0.020     
+COB       C6B       C5B       single    1.487     0.020     1.487     0.020     
+COB       HM51      C5M       single    1.089     0.010     0.989     0.005     
+COB       HM52      C5M       single    1.089     0.010     0.989     0.005     
+COB       HM53      C5M       single    1.089     0.010     0.989     0.005     
+COB       C6M       C6B       single    1.506     0.020     1.506     0.020     
+COB       C7B       C6B       double    1.390     0.020     1.390     0.020     
+COB       HM61      C6M       single    1.089     0.010     0.989     0.005     
+COB       HM62      C6M       single    1.089     0.010     0.989     0.005     
+COB       HM63      C6M       single    1.089     0.010     0.989     0.005     
+COB       H7B       C7B       single    1.082     0.013     0.975     0.010     
+COB       H1A1      C1A       single    1.089     0.010     0.989     0.005     
+COB       H1A2      C1A       single    1.089     0.010     0.989     0.005     
+COB       H1A3      C1A       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ COB      O5     P      O4      119.900    3.000
+ COB      O5     P      O2      108.200    3.000
+ COB      O5     P      O3      108.200    3.000
+ COB      O4     P      O2      108.200    3.000
+ COB      O4     P      O3      108.200    3.000
+ COB      O2     P      O3      102.600    3.000
+ COB      P      O2     C3R     120.500    3.000
+ COB      O2     C3R    H3R     109.470    3.000
+ COB      O2     C3R    C4R     109.470    3.000
+ COB      O2     C3R    C2R     109.470    3.000
+ COB      H3R    C3R    C4R     108.340    3.000
+ COB      H3R    C3R    C2R     108.340    3.000
+ COB      C4R    C3R    C2R     111.000    3.000
+ COB      C3R    C4R    H4R     108.340    3.000
+ COB      C3R    C4R    C5R     111.000    3.000
+ COB      C3R    C4R    O6R     109.470    3.000
+ COB      H4R    C4R    C5R     108.340    3.000
+ COB      H4R    C4R    O6R     109.470    3.000
+ COB      C5R    C4R    O6R     109.470    3.000
+ COB      C4R    C5R    H5R1    109.470    3.000
+ COB      C4R    C5R    H5R2    109.470    3.000
+ COB      C4R    C5R    O8R     109.470    3.000
+ COB      H5R1   C5R    H5R2    107.900    3.000
+ COB      H5R1   C5R    O8R     109.470    3.000
+ COB      H5R2   C5R    O8R     109.470    3.000
+ COB      C5R    O8R    HOR8    109.470    3.000
+ COB      C4R    O6R    C1R     111.800    3.000
+ COB      O6R    C1R    H1R     109.470    3.000
+ COB      O6R    C1R    N1B     109.470    3.000
+ COB      O6R    C1R    C2R     109.470    3.000
+ COB      H1R    C1R    N1B     109.470    3.000
+ COB      H1R    C1R    C2R     108.340    3.000
+ COB      N1B    C1R    C2R     109.470    3.000
+ COB      C1R    N1B    C2B     126.000    3.000
+ COB      C1R    N1B    C8B     126.000    3.000
+ COB      C2B    N1B    C8B     108.000    3.000
+ COB      N1B    C2B    H2B     126.000    3.000
+ COB      N1B    C2B    N3B     108.000    3.000
+ COB      H2B    C2B    N3B     126.000    3.000
+ COB      C2B    N3B    C9B     108.000    3.000
+ COB      N3B    C9B    C4B     132.000    3.000
+ COB      N3B    C9B    C8B     108.000    3.000
+ COB      C4B    C9B    C8B     120.000    3.000
+ COB      C9B    C4B    H4B     120.000    3.000
+ COB      C9B    C4B    C5B     120.000    3.000
+ COB      H4B    C4B    C5B     120.000    3.000
+ COB      C4B    C5B    C5M     120.000    3.000
+ COB      C4B    C5B    C6B     120.000    3.000
+ COB      C5M    C5B    C6B     120.000    3.000
+ COB      C5B    C5M    HM53    109.470    3.000
+ COB      C5B    C5M    HM52    109.470    3.000
+ COB      C5B    C5M    HM51    109.470    3.000
+ COB      HM53   C5M    HM52    109.470    3.000
+ COB      HM53   C5M    HM51    109.470    3.000
+ COB      HM52   C5M    HM51    109.470    3.000
+ COB      C5B    C6B    C6M     120.000    3.000
+ COB      C5B    C6B    C7B     120.000    3.000
+ COB      C6M    C6B    C7B     120.000    3.000
+ COB      C6B    C6M    HM63    109.470    3.000
+ COB      C6B    C6M    HM62    109.470    3.000
+ COB      C6B    C6M    HM61    109.470    3.000
+ COB      HM63   C6M    HM62    109.470    3.000
+ COB      HM63   C6M    HM61    109.470    3.000
+ COB      HM62   C6M    HM61    109.470    3.000
+ COB      C6B    C7B    H7B     120.000    3.000
+ COB      C6B    C7B    C8B     120.000    3.000
+ COB      H7B    C7B    C8B     120.000    3.000
+ COB      C7B    C8B    N1B     132.000    3.000
+ COB      C7B    C8B    C9B     120.000    3.000
+ COB      N1B    C8B    C9B     108.000    3.000
+ COB      C1R    C2R    H2R     108.340    3.000
+ COB      C1R    C2R    O7R     109.470    3.000
+ COB      C1R    C2R    C3R     111.000    3.000
+ COB      H2R    C2R    O7R     109.470    3.000
+ COB      H2R    C2R    C3R     108.340    3.000
+ COB      O7R    C2R    C3R     109.470    3.000
+ COB      C2R    O7R    HOR7    109.470    3.000
+ COB      P      O3     C2P     120.500    3.000
+ COB      O3     C2P    H2P     109.470    3.000
+ COB      O3     C2P    C3P     109.470    3.000
+ COB      O3     C2P    C1P     109.470    3.000
+ COB      H2P    C2P    C3P     108.340    3.000
+ COB      H2P    C2P    C1P     108.340    3.000
+ COB      C3P    C2P    C1P     111.000    3.000
+ COB      C2P    C3P    H3P3    109.470    3.000
+ COB      C2P    C3P    H3P2    109.470    3.000
+ COB      C2P    C3P    H3P1    109.470    3.000
+ COB      H3P3   C3P    H3P2    109.470    3.000
+ COB      H3P3   C3P    H3P1    109.470    3.000
+ COB      H3P2   C3P    H3P1    109.470    3.000
+ COB      C2P    C1P    H1P1    109.470    3.000
+ COB      C2P    C1P    H1P2    109.470    3.000
+ COB      C2P    C1P    N59     110.000    3.000
+ COB      H1P1   C1P    H1P2    107.900    3.000
+ COB      H1P1   C1P    N59     109.470    3.000
+ COB      H1P2   C1P    N59     109.470    3.000
+ COB      C1P    N59    H59     118.500    3.000
+ COB      C1P    N59    C57     121.500    3.000
+ COB      H59    N59    C57     120.000    3.000
+ COB      N59    C57    O58     123.000    3.000
+ COB      N59    C57    C56     116.500    3.000
+ COB      O58    C57    C56     120.500    3.000
+ COB      C57    C56    H561    109.470    3.000
+ COB      C57    C56    H562    109.470    3.000
+ COB      C57    C56    C55     109.470    3.000
+ COB      H561   C56    H562    107.900    3.000
+ COB      H561   C56    C55     109.470    3.000
+ COB      H562   C56    C55     109.470    3.000
+ COB      C56    C55    H551    109.470    3.000
+ COB      C56    C55    H552    109.470    3.000
+ COB      C56    C55    C17     111.000    3.000
+ COB      H551   C55    H552    107.900    3.000
+ COB      H551   C55    C17     109.470    3.000
+ COB      H552   C55    C17     109.470    3.000
+ COB      C55    C17    C54     111.000    3.000
+ COB      C55    C17    C18     111.000    3.000
+ COB      C55    C17    C16     109.470    3.000
+ COB      C54    C17    C18     111.000    3.000
+ COB      C54    C17    C16     109.470    3.000
+ COB      C18    C17    C16     109.470    3.000
+ COB      C17    C54    H543    109.470    3.000
+ COB      C17    C54    H542    109.470    3.000
+ COB      C17    C54    H541    109.470    3.000
+ COB      H543   C54    H542    109.470    3.000
+ COB      H543   C54    H541    109.470    3.000
+ COB      H542   C54    H541    109.470    3.000
+ COB      C17    C18    H18     108.340    3.000
+ COB      C17    C18    C60     111.000    3.000
+ COB      C17    C18    C19     109.470    3.000
+ COB      H18    C18    C60     108.340    3.000
+ COB      H18    C18    C19     108.810    3.000
+ COB      C60    C18    C19     109.470    3.000
+ COB      C18    C60    H601    109.470    3.000
+ COB      C18    C60    H602    109.470    3.000
+ COB      C18    C60    C61     109.470    3.000
+ COB      H601   C60    H602    107.900    3.000
+ COB      H601   C60    C61     109.470    3.000
+ COB      H602   C60    C61     109.470    3.000
+ COB      C60    C61    N62     116.500    3.000
+ COB      C60    C61    O63     120.500    3.000
+ COB      N62    C61    O63     123.000    3.000
+ COB      C61    N62    H622    120.000    3.000
+ COB      C61    N62    H621    120.000    3.000
+ COB      H622   N62    H621    120.000    3.000
+ COB      C18    C19    C1      120.000    3.000
+ COB      C18    C19    N24     116.500    3.000
+ COB      C1     C19    N24     116.500    3.000
+ COB      C19    C1     C20     109.470    3.000
+ COB      C19    C1     N21     111.600    3.000
+ COB      C19    C1     C2      111.000    3.000
+ COB      N21    C1     C2      111.600    3.000
+ COB      C20    C1     N21     111.600    3.000
+ COB      C20    C1     C2      111.000    3.000
+ COB      C1     C20    H203    109.470    3.000
+ COB      C1     C20    H202    109.470    3.000
+ COB      C1     C20    H201    109.470    3.000
+ COB      H203   C20    H202    109.470    3.000
+ COB      H203   C20    H201    109.470    3.000
+ COB      H202   C20    H201    109.470    3.000
+ COB      C19    N24    CO      120.000    3.000
+ COB      C19    N24    C16     120.000    3.000
+ COB      CO     N24    C16     120.000    3.000
+ COB      N24    CO     C1A      90.000    3.000
+ COB      N24    CO     N21      90.000    3.000
+ COB      N24    CO     N22     180.000    3.000
+ COB      N24    CO     N23      90.000    3.000
+ COB      N21    CO     N22      90.000    3.000
+ COB      N21    CO     N23      90.000    3.000
+ COB      N22    CO     N23      90.000    3.000
+ COB      C1A    CO     N21      90.000    3.000
+ COB      C1A    CO     N22      90.000    3.000
+ COB      C1A    CO     N23      90.000    3.000
+ COB      CO     C1A    H1A3    109.470    3.000
+ COB      CO     C1A    H1A2    109.470    3.000
+ COB      CO     C1A    H1A1    109.470    3.000
+ COB      H1A3   C1A    H1A2    109.470    3.000
+ COB      H1A3   C1A    H1A1    109.470    3.000
+ COB      H1A2   C1A    H1A1    109.470    3.000
+ COB      C17    C16    C15     120.000    3.000
+ COB      C17    C16    N24     116.500    3.000
+ COB      C15    C16    N24     116.500    3.000
+ COB      C16    C15    C53     120.000    3.000
+ COB      C16    C15    C14     120.000    3.000
+ COB      C53    C15    C14     120.000    3.000
+ COB      C15    C53    H533    109.470    3.000
+ COB      C15    C53    H532    109.470    3.000
+ COB      C15    C53    H531    109.470    3.000
+ COB      H533   C53    H532    109.470    3.000
+ COB      H533   C53    H531    109.470    3.000
+ COB      H532   C53    H531    109.470    3.000
+ COB      C15    C14    N23     116.500    3.000
+ COB      C15    C14    C13     120.000    3.000
+ COB      N23    C14    C13     116.500    3.000
+ COB      C14    N23    CO      120.000    3.000
+ COB      C14    N23    C11     120.000    3.000
+ COB      CO     N23    C11     120.000    3.000
+ COB      C14    C13    H13     108.810    3.000
+ COB      C14    C13    C48     109.470    3.000
+ COB      C14    C13    C12     109.470    3.000
+ COB      H13    C13    C48     108.340    3.000
+ COB      H13    C13    C12     108.340    3.000
+ COB      C48    C13    C12     111.000    3.000
+ COB      C13    C48    H481    109.470    3.000
+ COB      C13    C48    H482    109.470    3.000
+ COB      C13    C48    C49     111.000    3.000
+ COB      H481   C48    H482    107.900    3.000
+ COB      H481   C48    C49     109.470    3.000
+ COB      H482   C48    C49     109.470    3.000
+ COB      C48    C49    H491    109.470    3.000
+ COB      C48    C49    H492    109.470    3.000
+ COB      C48    C49    C50     109.470    3.000
+ COB      H491   C49    H492    107.900    3.000
+ COB      H491   C49    C50     109.470    3.000
+ COB      H492   C49    C50     109.470    3.000
+ COB      C49    C50    N52     116.500    3.000
+ COB      C49    C50    O51     120.500    3.000
+ COB      N52    C50    O51     123.000    3.000
+ COB      C50    N52    H522    120.000    3.000
+ COB      C50    N52    H521    120.000    3.000
+ COB      H522   N52    H521    120.000    3.000
+ COB      C13    C12    C46     111.000    3.000
+ COB      C13    C12    C47     111.000    3.000
+ COB      C13    C12    C11     109.470    3.000
+ COB      C46    C12    C47     111.000    3.000
+ COB      C46    C12    C11     109.470    3.000
+ COB      C47    C12    C11     109.470    3.000
+ COB      C12    C46    H463    109.470    3.000
+ COB      C12    C46    H462    109.470    3.000
+ COB      C12    C46    H461    109.470    3.000
+ COB      H463   C46    H462    109.470    3.000
+ COB      H463   C46    H461    109.470    3.000
+ COB      H462   C46    H461    109.470    3.000
+ COB      C12    C47    H473    109.470    3.000
+ COB      C12    C47    H472    109.470    3.000
+ COB      C12    C47    H471    109.470    3.000
+ COB      H473   C47    H472    109.470    3.000
+ COB      H473   C47    H471    109.470    3.000
+ COB      H472   C47    H471    109.470    3.000
+ COB      C12    C11    C10     120.000    3.000
+ COB      C12    C11    N23     116.500    3.000
+ COB      C10    C11    N23     116.500    3.000
+ COB      C11    C10    H10     120.000    3.000
+ COB      C11    C10    C9      120.000    3.000
+ COB      H10    C10    C9      120.000    3.000
+ COB      C10    C9     N22     116.500    3.000
+ COB      C10    C9     C8      120.000    3.000
+ COB      N22    C9     C8      116.500    3.000
+ COB      C9     N22    CO      120.000    3.000
+ COB      C9     N22    C6      120.000    3.000
+ COB      CO     N22    C6      120.000    3.000
+ COB      C9     C8     H8      108.810    3.000
+ COB      C9     C8     C41     109.470    3.000
+ COB      C9     C8     C7      109.470    3.000
+ COB      H8     C8     C41     108.340    3.000
+ COB      H8     C8     C7      108.340    3.000
+ COB      C41    C8     C7      111.000    3.000
+ COB      C8     C41    H411    109.470    3.000
+ COB      C8     C41    H412    109.470    3.000
+ COB      C8     C41    C42     111.000    3.000
+ COB      H411   C41    H412    107.900    3.000
+ COB      H411   C41    C42     109.470    3.000
+ COB      H412   C41    C42     109.470    3.000
+ COB      C41    C42    H421    109.470    3.000
+ COB      C41    C42    H422    109.470    3.000
+ COB      C41    C42    C43     109.470    3.000
+ COB      H421   C42    H422    107.900    3.000
+ COB      H421   C42    C43     109.470    3.000
+ COB      H422   C42    C43     109.470    3.000
+ COB      C42    C43    N45     116.500    3.000
+ COB      C42    C43    O44     120.500    3.000
+ COB      N45    C43    O44     123.000    3.000
+ COB      C43    N45    H452    120.000    3.000
+ COB      C43    N45    H451    120.000    3.000
+ COB      H452   N45    H451    120.000    3.000
+ COB      C8     C7     C36     111.000    3.000
+ COB      C8     C7     C37     111.000    3.000
+ COB      C8     C7     C6      109.470    3.000
+ COB      C36    C7     C37     111.000    3.000
+ COB      C36    C7     C6      109.470    3.000
+ COB      C37    C7     C6      109.470    3.000
+ COB      C7     C36    H363    109.470    3.000
+ COB      C7     C36    H362    109.470    3.000
+ COB      C7     C36    H361    109.470    3.000
+ COB      H363   C36    H362    109.470    3.000
+ COB      H363   C36    H361    109.470    3.000
+ COB      H362   C36    H361    109.470    3.000
+ COB      C7     C37    H371    109.470    3.000
+ COB      C7     C37    H372    109.470    3.000
+ COB      C7     C37    C38     109.470    3.000
+ COB      H371   C37    H372    107.900    3.000
+ COB      H371   C37    C38     109.470    3.000
+ COB      H372   C37    C38     109.470    3.000
+ COB      C37    C38    N40     116.500    3.000
+ COB      C37    C38    O39     120.500    3.000
+ COB      N40    C38    O39     123.000    3.000
+ COB      C38    N40    H402    120.000    3.000
+ COB      C38    N40    H401    120.000    3.000
+ COB      H402   N40    H401    120.000    3.000
+ COB      C7     C6     C5      120.000    3.000
+ COB      C7     C6     N22     116.500    3.000
+ COB      C5     C6     N22     116.500    3.000
+ COB      C6     C5     C35     120.000    3.000
+ COB      C6     C5     C4      120.000    3.000
+ COB      C35    C5     C4      120.000    3.000
+ COB      C5     C35    H353    109.470    3.000
+ COB      C5     C35    H352    109.470    3.000
+ COB      C5     C35    H351    109.470    3.000
+ COB      H353   C35    H352    109.470    3.000
+ COB      H353   C35    H351    109.470    3.000
+ COB      H352   C35    H351    109.470    3.000
+ COB      C5     C4     N21     116.500    3.000
+ COB      C5     C4     C3      120.000    3.000
+ COB      N21    C4     C3      116.500    3.000
+ COB      C4     N21    CO      120.000    3.000
+ COB      C4     N21    C1      121.000    3.000
+ COB      CO     N21    C1      120.000    3.000
+ COB      C4     C3     H3      108.810    3.000
+ COB      C4     C3     C30     109.470    3.000
+ COB      C4     C3     C2      109.470    3.000
+ COB      H3     C3     C30     108.340    3.000
+ COB      H3     C3     C2      108.340    3.000
+ COB      C30    C3     C2      111.000    3.000
+ COB      C3     C30    H301    109.470    3.000
+ COB      C3     C30    H302    109.470    3.000
+ COB      C3     C30    C31     111.000    3.000
+ COB      H301   C30    H302    107.900    3.000
+ COB      H301   C30    C31     109.470    3.000
+ COB      H302   C30    C31     109.470    3.000
+ COB      C30    C31    H311    109.470    3.000
+ COB      C30    C31    H312    109.470    3.000
+ COB      C30    C31    C32     109.470    3.000
+ COB      H311   C31    H312    107.900    3.000
+ COB      H311   C31    C32     109.470    3.000
+ COB      H312   C31    C32     109.470    3.000
+ COB      C31    C32    N33     116.500    3.000
+ COB      C31    C32    O34     120.500    3.000
+ COB      N33    C32    O34     123.000    3.000
+ COB      C32    N33    H332    120.000    3.000
+ COB      C32    N33    H331    120.000    3.000
+ COB      H332   N33    H331    120.000    3.000
+ COB      C3     C2     C25     111.000    3.000
+ COB      C3     C2     C26     111.000    3.000
+ COB      C3     C2     C1      111.000    3.000
+ COB      C25    C2     C26     111.000    3.000
+ COB      C25    C2     C1      111.000    3.000
+ COB      C26    C2     C1      111.000    3.000
+ COB      C2     C25    H253    109.470    3.000
+ COB      C2     C25    H252    109.470    3.000
+ COB      C2     C25    H251    109.470    3.000
+ COB      H253   C25    H252    109.470    3.000
+ COB      H253   C25    H251    109.470    3.000
+ COB      H252   C25    H251    109.470    3.000
+ COB      C2     C26    H261    109.470    3.000
+ COB      C2     C26    H262    109.470    3.000
+ COB      C2     C26    C27     109.470    3.000
+ COB      H261   C26    H262    107.900    3.000
+ COB      H261   C26    C27     109.470    3.000
+ COB      H262   C26    C27     109.470    3.000
+ COB      C26    C27    O28     120.500    3.000
+ COB      C26    C27    N29     116.500    3.000
+ COB      O28    C27    N29     123.000    3.000
+ COB      C27    N29    H292    120.000    3.000
+ COB      C27    N29    H291    120.000    3.000
+ COB      H292   N29    H291    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ COB      var_1    O5     P      O2     C3R      -55.033   20.000   3
+ COB      var_2    P      O2     C3R    C4R     -123.310   20.000   3
+ COB      var_3    O2     C3R    C2R    C1R      180.000   20.000   3
+ COB      var_4    O2     C3R    C4R    O6R      180.000   20.000   3
+ COB      var_5    C3R    C4R    C5R    O8R      180.000   20.000   3
+ COB      var_6    C4R    C5R    O8R    HOR8    -179.980   20.000   3
+ COB      var_7    C3R    C4R    O6R    C1R       40.340   20.000   3
+ COB      var_8    C4R    O6R    C1R    C2R      -40.445   20.000   3
+ COB      var_9    O6R    C1R    N1B    C2B      -11.903   20.000   3
+ COB      CONST_1  C1R    N1B    C8B    C7B      180.000    0.000   0
+ COB      CONST_2  C1R    N1B    C2B    N3B      180.000    0.000   0
+ COB      CONST_3  N1B    C2B    N3B    C9B        0.000    0.000   0
+ COB      CONST_4  C2B    N3B    C9B    C4B      180.000    0.000   0
+ COB      CONST_5  N3B    C9B    C4B    C5B      180.000    0.000   0
+ COB      CONST_6  C9B    C4B    C5B    C6B        0.000    0.000   0
+ COB      var_10   C4B    C5B    C5M    HM51      89.991   20.000   3
+ COB      CONST_7  C4B    C5B    C6B    C7B        0.000    0.000   0
+ COB      var_11   C5B    C6B    C6M    HM61      90.014   20.000   3
+ COB      CONST_8  C5B    C6B    C7B    C8B        0.000    0.000   0
+ COB      CONST_9  C6B    C7B    C8B    N1B      180.000    0.000   0
+ COB      CONST_10 C7B    C8B    C9B    N3B      180.000    0.000   0
+ COB      var_12   O6R    C1R    C2R    O7R      180.000   20.000   3
+ COB      var_13   C1R    C2R    O7R    HOR7      65.318   20.000   3
+ COB      var_14   O5     P      O3     C2P       54.603   20.000   3
+ COB      var_15   P      O3     C2P    C1P      128.859   20.000   3
+ COB      var_16   O3     C2P    C3P    H3P1     180.000   20.000   3
+ COB      var_17   O3     C2P    C1P    N59      180.000   20.000   3
+ COB      var_18   C2P    C1P    N59    C57        0.000   20.000   3
+ COB      var_19   C1P    N59    C57    C56      180.000   20.000   2
+ COB      var_20   N59    C57    C56    C55      180.000   20.000   3
+ COB      var_21   C57    C56    C55    C17      180.000   20.000   3
+ COB      var_22   C56    C55    C17    C16      -57.499   20.000   3
+ COB      var_23   C55    C17    C54    H541      59.265   20.000   3
+ COB      var_24   C55    C17    C18    C19     -137.656   20.000   3
+ COB      var_25   C17    C18    C60    C61      180.000   20.000   3
+ COB      var_26   C18    C60    C61    O63      180.000   20.000   3
+ COB      CONST_11 C60    C61    N62    H621     180.000    0.000   0
+ COB      var_27   C17    C18    C19    N24      180.000   20.000   3
+ COB      var_28   C18    C19    C1     C20      -84.455   20.000   3
+ COB      var_29   C19    C1     C2     C3       151.473   20.000   3
+ COB      var_30   C19    C1     C20    H201     -36.549   20.000   3
+ COB      var_31   C18    C19    N24    CO       180.000   20.000   2
+ COB      var_32   C19    N24    C16    C17      180.000   20.000   2
+ COB      var_33   C19    N24    CO     C1A      108.187   20.000   3
+ COB      var_34   N24    CO     N21    C4       157.344   20.000   3
+ COB      var_35   N24    CO     N22    C9      -137.894   20.000   3
+ COB      var_36   N24    CO     N23    C14      -20.129   20.000   3
+ COB      var_37   N24    CO     C1A    H1A1      93.724   20.000   3
+ COB      var_38   C55    C17    C16    C15      -30.510   20.000   3
+ COB      var_39   C17    C16    C15    C14      170.877   20.000   3
+ COB      var_40   C16    C15    C53    H531      90.751   20.000   3
+ COB      var_41   C16    C15    C14    C13     -158.433   20.000   3
+ COB      var_42   C15    C14    N23    CO       180.000   20.000   2
+ COB      var_43   C14    N23    C11    C12      180.000   20.000   2
+ COB      var_44   C15    C14    C13    C12      180.000   20.000   3
+ COB      var_45   C14    C13    C48    C49      180.000   20.000   3
+ COB      var_46   C13    C48    C49    C50      180.000   20.000   3
+ COB      var_47   C48    C49    C50    O51      180.000   20.000   3
+ COB      CONST_12 C49    C50    N52    H521     180.000    0.000   0
+ COB      var_48   C14    C13    C12    C11       14.039   20.000   3
+ COB      var_49   C13    C12    C46    H461     174.998   20.000   3
+ COB      var_50   C13    C12    C47    H471     -53.425   20.000   3
+ COB      var_51   C13    C12    C11    C10      160.331   20.000   3
+ COB      var_52   C12    C11    C10    C9       174.591   20.000   3
+ COB      var_53   C11    C10    C9     C8       170.195   20.000   3
+ COB      var_54   C10    C9     N22    CO       180.000   20.000   2
+ COB      var_55   C9     N22    C6     C7       180.000   20.000   2
+ COB      var_56   C10    C9     C8     C7       180.000   20.000   3
+ COB      var_57   C9     C8     C41    C42      180.000   20.000   3
+ COB      var_58   C8     C41    C42    C43      180.000   20.000   3
+ COB      var_59   C41    C42    C43    O44      180.000   20.000   3
+ COB      CONST_13 C42    C43    N45    H451     180.000    0.000   0
+ COB      var_60   C9     C8     C7     C6       -15.559   20.000   3
+ COB      var_61   C8     C7     C36    H361    -168.476   20.000   3
+ COB      var_62   C8     C7     C37    C38       62.991   20.000   3
+ COB      var_63   C7     C37    C38    O39      180.000   20.000   3
+ COB      CONST_14 C37    C38    N40    H401     180.000    0.000   0
+ COB      var_64   C8     C7     C6     C5      -153.583   20.000   3
+ COB      var_65   C7     C6     C5     C4       173.806   20.000   3
+ COB      var_66   C6     C5     C35    H351      82.659   20.000   3
+ COB      var_67   C6     C5     C4     C3      -166.282   20.000   3
+ COB      var_68   C5     C4     N21    CO       180.000   20.000   2
+ COB      var_69   C4     N21    C1     C19     -147.198   20.000   3
+ COB      var_70   C5     C4     C3     C2       180.000   20.000   3
+ COB      var_71   C4     C3     C30    C31      180.000   20.000   3
+ COB      var_72   C3     C30    C31    C32      180.000   20.000   3
+ COB      var_73   C30    C31    C32    O34      180.000   20.000   3
+ COB      CONST_15 C31    C32    N33    H331     180.000    0.000   0
+ COB      var_74   C4     C3     C2     C26       85.621   20.000   3
+ COB      var_75   C3     C2     C25    H251     167.046   20.000   3
+ COB      var_76   C3     C2     C26    C27       49.357   20.000   3
+ COB      var_77   C2     C26    C27    N29      180.000   20.000   3
+ COB      CONST_16 C26    C27    N29    H291     180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ COB      chir_01  C1     N21    C20    C2        positiv
+ COB      chir_02  C2     C1     C25    C26       negativ
+ COB      chir_03  C3     C2     C30    C4        positiv
+ COB      chir_04  C7     C6     C36    C37       negativ
+ COB      chir_05  C8     C7     C41    C9        positiv
+ COB      chir_06  C12    C11    C46    C47       negativ
+ COB      chir_07  C13    C12    C48    C14       positiv
+ COB      chir_08  C17    C16    C54    C55       positiv
+ COB      chir_09  C18    C17    C60    C19       negativ
+ COB      chir_10  C2P    C1P    C3P    O3        negativ
+ COB      chir_11  C3R    O2     C2R    C4R       negativ
+ COB      chir_12  C2R    C3R    O7R    C1R       negativ
+ COB      chir_13  C1R    C2R    O6R    N1B       positiv
+ COB      chir_14  C4R    C3R    O6R    C5R       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ COB      plan-1    N21       0.020
+ COB      plan-1    CO        0.020
+ COB      plan-1    C1        0.020
+ COB      plan-1    C4        0.020
+ COB      plan-2    N22       0.020
+ COB      plan-2    CO        0.020
+ COB      plan-2    C6        0.020
+ COB      plan-2    C9        0.020
+ COB      plan-3    N23       0.020
+ COB      plan-3    CO        0.020
+ COB      plan-3    C11       0.020
+ COB      plan-3    C14       0.020
+ COB      plan-4    N24       0.020
+ COB      plan-4    CO        0.020
+ COB      plan-4    C16       0.020
+ COB      plan-4    C19       0.020
+ COB      plan-5    C27       0.020
+ COB      plan-5    C26       0.020
+ COB      plan-5    O28       0.020
+ COB      plan-5    N29       0.020
+ COB      plan-5    H292      0.020
+ COB      plan-5    H291      0.020
+ COB      plan-6    N29       0.020
+ COB      plan-6    C27       0.020
+ COB      plan-6    H291      0.020
+ COB      plan-6    H292      0.020
+ COB      plan-7    C32       0.020
+ COB      plan-7    C31       0.020
+ COB      plan-7    O34       0.020
+ COB      plan-7    N33       0.020
+ COB      plan-7    H332      0.020
+ COB      plan-7    H331      0.020
+ COB      plan-8    N33       0.020
+ COB      plan-8    C32       0.020
+ COB      plan-8    H331      0.020
+ COB      plan-8    H332      0.020
+ COB      plan-9    C4        0.020
+ COB      plan-9    N21       0.020
+ COB      plan-9    C3        0.020
+ COB      plan-9    C5        0.020
+ COB      plan-10   C5        0.020
+ COB      plan-10   C4        0.020
+ COB      plan-10   C35       0.020
+ COB      plan-10   C6        0.020
+ COB      plan-11   C6        0.020
+ COB      plan-11   N22       0.020
+ COB      plan-11   C5        0.020
+ COB      plan-11   C7        0.020
+ COB      plan-12   C38       0.020
+ COB      plan-12   C37       0.020
+ COB      plan-12   O39       0.020
+ COB      plan-12   N40       0.020
+ COB      plan-12   H402      0.020
+ COB      plan-12   H401      0.020
+ COB      plan-13   N40       0.020
+ COB      plan-13   C38       0.020
+ COB      plan-13   H401      0.020
+ COB      plan-13   H402      0.020
+ COB      plan-14   C43       0.020
+ COB      plan-14   C42       0.020
+ COB      plan-14   O44       0.020
+ COB      plan-14   N45       0.020
+ COB      plan-14   H452      0.020
+ COB      plan-14   H451      0.020
+ COB      plan-15   N45       0.020
+ COB      plan-15   C43       0.020
+ COB      plan-15   H451      0.020
+ COB      plan-15   H452      0.020
+ COB      plan-16   C9        0.020
+ COB      plan-16   N22       0.020
+ COB      plan-16   C8        0.020
+ COB      plan-16   C10       0.020
+ COB      plan-16   H10       0.020
+ COB      plan-17   C10       0.020
+ COB      plan-17   C9        0.020
+ COB      plan-17   C11       0.020
+ COB      plan-17   H10       0.020
+ COB      plan-18   C11       0.020
+ COB      plan-18   N23       0.020
+ COB      plan-18   C10       0.020
+ COB      plan-18   C12       0.020
+ COB      plan-18   H10       0.020
+ COB      plan-19   C50       0.020
+ COB      plan-19   C49       0.020
+ COB      plan-19   O51       0.020
+ COB      plan-19   N52       0.020
+ COB      plan-19   H522      0.020
+ COB      plan-19   H521      0.020
+ COB      plan-20   N52       0.020
+ COB      plan-20   C50       0.020
+ COB      plan-20   H521      0.020
+ COB      plan-20   H522      0.020
+ COB      plan-21   C14       0.020
+ COB      plan-21   N23       0.020
+ COB      plan-21   C13       0.020
+ COB      plan-21   C15       0.020
+ COB      plan-22   C15       0.020
+ COB      plan-22   C14       0.020
+ COB      plan-22   C53       0.020
+ COB      plan-22   C16       0.020
+ COB      plan-23   C16       0.020
+ COB      plan-23   N24       0.020
+ COB      plan-23   C15       0.020
+ COB      plan-23   C17       0.020
+ COB      plan-24   C57       0.020
+ COB      plan-24   C56       0.020
+ COB      plan-24   O58       0.020
+ COB      plan-24   N59       0.020
+ COB      plan-24   H59       0.020
+ COB      plan-25   N59       0.020
+ COB      plan-25   C57       0.020
+ COB      plan-25   C1P       0.020
+ COB      plan-25   H59       0.020
+ COB      plan-26   C61       0.020
+ COB      plan-26   C60       0.020
+ COB      plan-26   O63       0.020
+ COB      plan-26   N62       0.020
+ COB      plan-26   H622      0.020
+ COB      plan-26   H621      0.020
+ COB      plan-27   N62       0.020
+ COB      plan-27   C61       0.020
+ COB      plan-27   H621      0.020
+ COB      plan-27   H622      0.020
+ COB      plan-28   C19       0.020
+ COB      plan-28   N24       0.020
+ COB      plan-28   C1        0.020
+ COB      plan-28   C18       0.020
+ COB      plan-29   N1B       0.020
+ COB      plan-29   C1R       0.020
+ COB      plan-29   C8B       0.020
+ COB      plan-29   C2B       0.020
+ COB      plan-29   N3B       0.020
+ COB      plan-29   C9B       0.020
+ COB      plan-29   C7B       0.020
+ COB      plan-29   C4B       0.020
+ COB      plan-29   C5B       0.020
+ COB      plan-29   C6B       0.020
+ COB      plan-29   H2B       0.020
+ COB      plan-29   H4B       0.020
+ COB      plan-29   C5M       0.020
+ COB      plan-29   C6M       0.020
+ COB      plan-29   H7B       0.020
+# ------------------------------------------------------

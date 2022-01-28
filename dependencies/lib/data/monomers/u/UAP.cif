@@ -1,0 +1,188 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UAP     UAP      "4-deoxy-2-O-sulfo-alpha-L-threo-hex-4-enopyranuronic acid"     non-polymer     22     16     .     
+#
+data_comp_UAP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+UAP     S       S       S3      0       -3.326      0.096       -0.641      
+UAP     C1      C       CH1     0       -0.316      -1.034      0.770       
+UAP     O1      O       OH1     0       -0.374      -0.551      2.076       
+UAP     C2      C       CH1     0       -0.723      0.065       -0.210      
+UAP     O2      O       O2      0       -2.026      0.598       0.136       
+UAP     C3      C       CH1     0       0.287       1.208       -0.188      
+UAP     O3      O       OH1     0       0.081       2.070       -1.320      
+UAP     C4      C       CR16    0       1.695       0.703       -0.168      
+UAP     C5      C       CR6     0       1.985       -0.543      0.199       
+UAP     O5      O       O2      0       1.026       -1.510      0.510       
+UAP     C6      C       C       0       3.404       -1.018      0.290       
+UAP     O1S     O       OS      -1      -3.171      0.552       -2.005      
+UAP     O2S     O       O       0       -4.447      0.713       0.034       
+UAP     O3S     O       O       0       -3.323      -1.345      -0.525      
+UAP     O6B     O       OC      -1      4.164       -0.350      0.968       
+UAP     O6A     O       O       0       3.682       -2.033      -0.321      
+UAP     H1      H       H       0       -0.941      -1.807      0.684       
+UAP     HO1     H       H       0       -1.187      -0.460      2.294       
+UAP     H2      H       H       0       -0.758      -0.322      -1.119      
+UAP     H3      H       H       0       0.131       1.749       0.626       
+UAP     HO3     H       H       0       0.222       1.639       -2.031      
+UAP     H4      H       H       0       2.396       1.287       -0.424      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UAP       S         O2        SINGLE    n         1.592     0.0200    1.592     0.0200    
+UAP       S         O2S       DOUBLE    n         1.446     0.0158    1.446     0.0158    
+UAP       S         O3S       DOUBLE    n         1.446     0.0158    1.446     0.0158    
+UAP       S         O1S       SINGLE    n         1.446     0.0158    1.446     0.0158    
+UAP       C1        O5        SINGLE    n         1.435     0.0200    1.435     0.0200    
+UAP       C1        O1        SINGLE    n         1.392     0.0200    1.392     0.0200    
+UAP       C1        C2        SINGLE    n         1.523     0.0149    1.523     0.0149    
+UAP       C2        C3        SINGLE    n         1.523     0.0120    1.523     0.0120    
+UAP       C2        O2        SINGLE    n         1.444     0.0200    1.444     0.0200    
+UAP       C3        C4        SINGLE    n         1.494     0.0100    1.494     0.0100    
+UAP       C3        O3        SINGLE    n         1.436     0.0108    1.436     0.0108    
+UAP       C4        C5        DOUBLE    n         1.326     0.0138    1.326     0.0138    
+UAP       C5        C6        SINGLE    n         1.498     0.0200    1.498     0.0200    
+UAP       C5        O5        SINGLE    n         1.384     0.0200    1.384     0.0200    
+UAP       C6        O6A       DOUBLE    n         1.217     0.0200    1.217     0.0200    
+UAP       C6        O6B       SINGLE    n         1.217     0.0200    1.217     0.0200    
+UAP       C1        H1        SINGLE    n         1.089     0.010     0.999     0.0168    
+UAP       O1        HO1       SINGLE    n         0.970     0.012     0.846     0.0200    
+UAP       C2        H2        SINGLE    n         1.089     0.010     0.988     0.0151    
+UAP       C3        H3        SINGLE    n         1.089     0.010     0.990     0.0121    
+UAP       O3        HO3       SINGLE    n         0.970     0.012     0.843     0.0200    
+UAP       C4        H4        SINGLE    n         1.082     0.013     0.947     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+UAP          O2           S         O2S     105.111    2.79
+UAP          O2           S         O3S     105.111    2.79
+UAP          O2           S         O1S     105.111    2.79
+UAP         O2S           S         O3S     112.746    1.47
+UAP         O2S           S         O1S     112.746    1.47
+UAP         O3S           S         O1S     112.746    1.47
+UAP          O5          C1          O1     108.935    2.07
+UAP          O5          C1          C2     110.991    2.73
+UAP          O5          C1          H1     108.277    2.39
+UAP          O1          C1          C2     109.271    2.68
+UAP          O1          C1          H1     108.897    1.73
+UAP          C2          C1          H1     109.599    1.42
+UAP          C1          O1         HO1     108.606    2.51
+UAP          C1          C2          C3     111.124    1.57
+UAP          C1          C2          O2     110.248    2.81
+UAP          C1          C2          H2     108.925    1.36
+UAP          C3          C2          O2     108.918    2.74
+UAP          C3          C2          H2     109.434    0.89
+UAP          O2          C2          H2     109.284    1.99
+UAP           S          O2          C2     119.421    1.41
+UAP          C2          C3          C4     111.632    1.08
+UAP          C2          C3          O3     110.170    1.75
+UAP          C2          C3          H3     108.836    1.48
+UAP          C4          C3          O3     110.433    2.00
+UAP          C4          C3          H3     109.070    1.41
+UAP          O3          C3          H3     108.026    2.12
+UAP          C3          O3         HO3     108.235    3.50
+UAP          C3          C4          C5     121.591    3.01
+UAP          C3          C4          H4     119.085    1.34
+UAP          C5          C4          H4     119.324    0.72
+UAP          C4          C5          C6     121.074    2.59
+UAP          C4          C5          O5     123.884    1.30
+UAP          C6          C5          O5     115.042    3.28
+UAP          C1          O5          C5     115.450    1.55
+UAP          C5          C6         O6A     116.772    1.86
+UAP          C5          C6         O6B     116.772    1.86
+UAP         O6A          C6         O6B     126.457    1.48
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+UAP            sp3_sp3_14          C2          O2           S         O2S     -60.000   10.00     3
+UAP            sp3_sp3_16          O5          C1          O1         HO1     180.000   10.00     3
+UAP            sp3_sp3_27          O1          C1          C2          O2     180.000   10.00     3
+UAP             sp3_sp3_2          O1          C1          O5          C5     180.000   10.00     3
+UAP            sp3_sp3_29          C1          C2          O2           S      60.000   10.00     3
+UAP             sp3_sp3_9          O2          C2          C3          O3     180.000   10.00     3
+UAP            sp3_sp3_32          C2          C3          O3         HO3      60.000   10.00     3
+UAP             sp2_sp3_2          C5          C4          C3          O3     120.000   10.00     6
+UAP             sp2_sp2_4          C3          C4          C5          C6     180.000   10.00     2
+UAP             sp2_sp2_7          C4          C5          C6         O6A     180.000   10.00     2
+UAP             sp2_sp2_2          C6          C5          O5          C1     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+UAP    chir_1    S    O2S    O3S    O2    both
+UAP    chir_2    C1    O5    O1    C2    both
+UAP    chir_3    C2    O2    C1    C3    both
+UAP    chir_4    C3    O3    C2    C4    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+UAP    plan-1          C3   0.020
+UAP    plan-1          C4   0.020
+UAP    plan-1          C5   0.020
+UAP    plan-1          H4   0.020
+UAP    plan-2          C4   0.020
+UAP    plan-2          C5   0.020
+UAP    plan-2          C6   0.020
+UAP    plan-2          O5   0.020
+UAP    plan-3          C5   0.020
+UAP    plan-3          C6   0.020
+UAP    plan-3         O6A   0.020
+UAP    plan-3         O6B   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+UAP SMILES           ACDLabs              12.01 "O=C(O)C=1OC(O)C(OS(=O)(=O)O)C(O)C=1"
+UAP InChI            InChI                1.03  "InChI=1S/C6H8O9S/c7-2-1-3(5(8)9)14-6(10)4(2)15-16(11,12)13/h1-2,4,6-7,10H,(H,8,9)(H,11,12,13)/t2-,4+,6+/m0/s1"
+UAP InChIKey         InChI                1.03  VJIMUKBSNUBECH-YKKSOZKNSA-N
+UAP SMILES_CANONICAL CACTVS               3.370 "O[C@@H]1OC(=C[C@H](O)[C@H]1O[S](O)(=O)=O)C(O)=O"
+UAP SMILES           CACTVS               3.370 "O[CH]1OC(=C[CH](O)[CH]1O[S](O)(=O)=O)C(O)=O"
+UAP SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C1=C(O[C@H]([C@@H]([C@H]1O)OS(=O)(=O)O)O)C(=O)O"
+UAP SMILES           "OpenEye OEToolkits" 1.7.6 "C1=C(OC(C(C1O)OS(=O)(=O)O)O)C(=O)O"
+UAP ?                acedrg               217         "dictionary generator"                  
+UAP ?                acedrg_database      11          "data source"                           
+UAP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+UAP ?                refmac5              5.8.0267    "optimization tool"                     

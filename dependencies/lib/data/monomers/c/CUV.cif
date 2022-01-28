@@ -1,0 +1,147 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CUV      CUV 'Fe(4)-Ni(1)-S(4) cluster, oxidized  ' non-polymer        10   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CUV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CUV           NI     NI   NI        0.000     -0.321    0.010    0.126
+ CUV           FE2    FE   FE        0.000     -1.274   -1.738   -1.579
+ CUV           S3     S    S2        0.000     -0.563   -3.288   -2.937
+ CUV           FE4    FE   FE        0.000     -0.685   -2.117   -4.813
+ CUV           S1     S    S2        0.000      1.207   -0.872   -4.623
+ CUV           S2     S    ST        0.000     -1.851   -0.383   -4.665
+ CUV           HS2    H    H         0.000     -2.841   -0.362   -5.401
+ CUV           FE3    FE   FE        0.000     -0.212    0.739   -5.360
+ CUV           S4     S    S2        0.000     -0.141    1.711   -3.336
+ CUV           FE1    FE   FE        0.000     -2.086    0.608   -2.867
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CUV      NI     n/a    FE2    START
+ CUV      FE2    NI     S3     .
+ CUV      S3     FE2    FE4    .
+ CUV      FE4    S3     S2     .
+ CUV      S1     FE4    .      .
+ CUV      S2     FE4    FE3    .
+ CUV      HS2    S2     .      .
+ CUV      FE3    S2     S4     .
+ CUV      S4     FE3    FE1    .
+ CUV      FE1    S4     .      END
+ CUV      S1     FE3    .    ADD
+ CUV      S2     FE1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CUV       S1        FE3       single    2.235     0.020     2.235     0.020     
+CUV       S1        FE4       single    2.235     0.020     2.235     0.020     
+CUV       S2        FE1       single    2.135     0.020     2.135     0.020     
+CUV       FE3       S2        single    2.135     0.020     2.135     0.020     
+CUV       S2        FE4       single    2.135     0.020     2.135     0.020     
+CUV       S3        FE2       single    2.235     0.020     2.235     0.020     
+CUV       FE4       S3        single    2.235     0.020     2.235     0.020     
+CUV       FE1       S4        single    2.235     0.020     2.235     0.020     
+CUV       S4        FE3       single    2.235     0.020     2.235     0.020     
+CUV       FE2       NI        single    2.635     0.020     2.635     0.020     
+CUV       HS2       S2        single    1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CUV      NI     FE2    S3      144.000    3.000
+ CUV      FE2    S3     FE4      90.250    3.000
+ CUV      S3     FE4    S1       90.000    3.000
+ CUV      S3     FE4    S2       90.000    3.000
+ CUV      S1     FE4    S2       90.000    3.000
+ CUV      FE4    S1     FE3      71.787    3.000
+ CUV      FE4    S2     HS2     109.500    3.000
+ CUV      FE4    S2     FE3     109.500    3.000
+ CUV      FE4    S2     FE1     109.500    3.000
+ CUV      HS2    S2     FE3     109.500    3.000
+ CUV      HS2    S2     FE1     109.500    3.000
+ CUV      FE3    S2     FE1     109.500    3.000
+ CUV      S2     FE3    S4       90.000    3.000
+ CUV      S2     FE3    S1       90.000    3.000
+ CUV      S4     FE3    S1       90.000    3.000
+ CUV      FE3    S4     FE1      70.969    3.000
+ CUV      S4     FE1    S2       90.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CUV      var_1            FE4    S3     FE2    NI                 0.000           20.000   3
+ CUV      var_2            FE2    S3     FE4    S2               -35.449           20.000   3
+ CUV      var_3            S3     FE4    S1     FE3             -135.091           20.000   3
+ CUV      var_4            FE4    S1     FE3    S2                -1.606           20.000   3
+ CUV      var_5            S3     FE4    S2     FE3              127.605           20.000   3
+ CUV      var_6            FE4    S2     FE1    S4                 0.000           20.000   3
+ CUV      var_7            FE4    S2     FE3    S4              -122.239           20.000   3
+ CUV      var_8            S2     FE3    S4     FE1               14.015           20.000   3
+ CUV      var_9            FE3    S4     FE1    S2                 0.000           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ CUV      chir_01          S2     FE1    FE3    FE4       negativ
+                   .      .      .      .      .
+ CUV      chir_02          FE1    S4     .      S2        cross1
+                   .      .      .      .      .
+ CUV      chir_03          FE2    .      .      NI        cross5
+                   .      S3     .      .      .
+ CUV      chir_04          FE3    S2     S4     S1        both
+                   .      .      .      .      .
+# ------------------------------------------------------

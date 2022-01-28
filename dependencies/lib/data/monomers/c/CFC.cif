@@ -1,0 +1,361 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CFC      CFC '1-CARBOXY-1'-[(DIMETHYLAMINO)-CARBON' non-polymer        33  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CFC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CFC           O3     O    OC       -0.500     36.017  -11.739   22.568
+ CFC           C14    C    C         0.000     34.946  -11.327   23.067
+ CFC           O2     O    OC       -0.500     34.979  -10.631   24.106
+ CFC           C6     C    CT        0.000     33.702  -11.706   22.396
+ CFC           FE     FE   FE        0.000     32.739  -10.609   21.006
+ CFC           C2     C    CH1       0.000     33.468   -8.738   20.999
+ CFC           H2     H    H         0.000     34.055   -8.270   21.802
+ CFC           C3     C    CH1       0.000     32.084   -8.705   20.873
+ CFC           H3     H    H         0.000     31.384   -8.213   21.563
+ CFC           C4     C    CH1       0.000     31.740   -9.406   19.726
+ CFC           H4     H    H         0.000     30.720   -9.568   19.350
+ CFC           C5     C    CH1       0.000     32.911   -9.868   19.136
+ CFC           H5     H    H         0.000     32.979  -10.458   18.211
+ CFC           C7     C    CH1       0.000     32.463  -11.298   22.877
+ CFC           H7     H    H         0.000     32.287  -10.685   23.772
+ CFC           C8     C    CH1       0.000     31.486  -11.808   22.030
+ CFC           H8     H    H         0.000     30.401  -11.668   22.137
+ CFC           C9     C    CH1       0.000     32.121  -12.529   21.026
+ CFC           H9     H    H         0.000     31.627  -13.057   20.199
+ CFC           C10    C    CH1       0.000     33.491  -12.468   21.254
+ CFC           H10    H    H         0.000     34.270  -12.937   20.637
+ CFC           C1     C    CT        0.000     33.980   -9.458   19.924
+ CFC           C11    C    C         0.000     35.360   -9.919   19.482
+ CFC           O1     O    O         0.000     35.436  -11.006   18.829
+ CFC           N1     N    N         0.000     36.433   -9.286   19.895
+ CFC           C13    C    CH3       0.000     36.672   -8.049   20.650
+ CFC           H133   H    H         0.000     36.257   -7.226   20.126
+ CFC           H132   H    H         0.000     36.218   -8.121   21.605
+ CFC           H131   H    H         0.000     37.715   -7.900   20.768
+ CFC           C12    C    CH3       0.000     37.670   -9.992   19.518
+ CFC           H123   H    H         0.000     37.674  -10.961   19.949
+ CFC           H122   H    H         0.000     37.724  -10.079   18.462
+ CFC           H121   H    H         0.000     38.512   -9.450   19.868
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CFC      O3     n/a    C14    START
+ CFC      C14    O3     C6     .
+ CFC      O2     C14    .      .
+ CFC      C6     C14    FE     .
+ CFC      FE     C6     C1     .
+ CFC      C2     FE     H2     .
+ CFC      H2     C2     .      .
+ CFC      C3     FE     H3     .
+ CFC      H3     C3     .      .
+ CFC      C4     FE     H4     .
+ CFC      H4     C4     .      .
+ CFC      C5     FE     H5     .
+ CFC      H5     C5     .      .
+ CFC      C7     FE     H7     .
+ CFC      H7     C7     .      .
+ CFC      C8     FE     H8     .
+ CFC      H8     C8     .      .
+ CFC      C9     FE     H9     .
+ CFC      H9     C9     .      .
+ CFC      C10    FE     H10    .
+ CFC      H10    C10    .      .
+ CFC      C1     FE     C11    .
+ CFC      C11    C1     N1     .
+ CFC      O1     C11    .      .
+ CFC      N1     C11    C12    .
+ CFC      C13    N1     H131   .
+ CFC      H133   C13    .      .
+ CFC      H132   C13    .      .
+ CFC      H131   C13    .      .
+ CFC      C12    N1     H121   .
+ CFC      H123   C12    .      .
+ CFC      H122   C12    .      .
+ CFC      H121   C12    .      END
+ CFC      C1     C2     .    ADD
+ CFC      C1     C5     .    ADD
+ CFC      C2     C3     .    ADD
+ CFC      C3     C4     .    ADD
+ CFC      C4     C5     .    ADD
+ CFC      C6     C7     .    ADD
+ CFC      C6     C10    .    ADD
+ CFC      C7     C8     .    ADD
+ CFC      C8     C9     .    ADD
+ CFC      C9     C10    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CFC       C1        C2        single    1.524     0.020     1.524     0.020     
+CFC       C1        C5        single    1.524     0.020     1.524     0.020     
+CFC       C11       C1        single    1.507     0.020     1.507     0.020     
+CFC       C1        FE        single    1.997     0.020     1.997     0.020     
+CFC       C2        C3        single    1.524     0.020     1.524     0.020     
+CFC       C2        FE        single    2.000     0.020     2.000     0.020     
+CFC       H2        C2        single    1.089     0.010     0.989     0.005     
+CFC       C3        C4        single    1.524     0.020     1.524     0.020     
+CFC       C3        FE        single    2.000     0.020     2.000     0.020     
+CFC       H3        C3        single    1.089     0.010     0.989     0.005     
+CFC       C4        C5        single    1.524     0.020     1.524     0.020     
+CFC       C4        FE        single    2.000     0.020     2.000     0.020     
+CFC       H4        C4        single    1.089     0.010     0.989     0.005     
+CFC       C5        FE        single    2.000     0.020     2.000     0.020     
+CFC       H5        C5        single    1.089     0.010     0.989     0.005     
+CFC       C6        C7        single    1.524     0.020     1.524     0.020     
+CFC       C6        C10       single    1.524     0.020     1.524     0.020     
+CFC       FE        C6        single    1.997     0.020     1.997     0.020     
+CFC       C6        C14       single    1.507     0.020     1.507     0.020     
+CFC       C7        C8        single    1.524     0.020     1.524     0.020     
+CFC       C7        FE        single    2.000     0.020     2.000     0.020     
+CFC       H7        C7        single    1.089     0.010     0.989     0.005     
+CFC       C8        C9        single    1.524     0.020     1.524     0.020     
+CFC       C8        FE        single    2.000     0.020     2.000     0.020     
+CFC       H8        C8        single    1.089     0.010     0.989     0.005     
+CFC       C9        C10       single    1.524     0.020     1.524     0.020     
+CFC       C9        FE        single    2.000     0.020     2.000     0.020     
+CFC       H9        C9        single    1.089     0.010     0.989     0.005     
+CFC       C10       FE        single    2.000     0.020     2.000     0.020     
+CFC       H10       C10       single    1.089     0.010     0.989     0.005     
+CFC       O1        C11       double    1.220     0.020     1.220     0.020     
+CFC       O2        C14       deloc     1.250     0.020     1.250     0.020     
+CFC       N1        C11       single    1.330     0.020     1.330     0.020     
+CFC       C14       O3        deloc     1.250     0.020     1.250     0.020     
+CFC       C12       N1        single    1.455     0.020     1.455     0.020     
+CFC       C13       N1        single    1.455     0.020     1.455     0.020     
+CFC       H121      C12       single    1.089     0.010     0.989     0.005     
+CFC       H122      C12       single    1.089     0.010     0.989     0.005     
+CFC       H123      C12       single    1.089     0.010     0.989     0.005     
+CFC       H131      C13       single    1.089     0.010     0.989     0.005     
+CFC       H132      C13       single    1.089     0.010     0.989     0.005     
+CFC       H133      C13       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CFC      O3     C14    O2      123.000    3.000
+ CFC      O3     C14    C6      118.500    3.000
+ CFC      O2     C14    C6      118.500    3.000
+ CFC      C14    C6     FE      109.500    3.000
+ CFC      C14    C6     C7      109.470    3.000
+ CFC      C14    C6     C10     109.470    3.000
+ CFC      C7     C6     C10     111.000    3.000
+ CFC      FE     C6     C7       67.691    3.000
+ CFC      FE     C6     C10      67.691    3.000
+ CFC      C6     FE     C2       90.000    3.000
+ CFC      C6     FE     C3       90.000    3.000
+ CFC      C6     FE     C4      180.000    3.000
+ CFC      C6     FE     C5       90.000    3.000
+ CFC      C6     FE     C7       44.827    3.000
+ CFC      C6     FE     C8       90.000    3.000
+ CFC      C6     FE     C9       90.000    3.000
+ CFC      C6     FE     C10      44.827    3.000
+ CFC      C6     FE     C1       90.000    3.000
+ CFC      C2     FE     C3       44.791    3.000
+ CFC      C2     FE     C4       90.000    3.000
+ CFC      C3     FE     C4       44.791    3.000
+ CFC      C2     FE     C5       90.000    3.000
+ CFC      C3     FE     C5       90.000    3.000
+ CFC      C4     FE     C5       44.791    3.000
+ CFC      C2     FE     C7       90.000    3.000
+ CFC      C3     FE     C7       90.000    3.000
+ CFC      C4     FE     C7       90.000    3.000
+ CFC      C5     FE     C7      180.000    3.000
+ CFC      C2     FE     C8       90.000    3.000
+ CFC      C3     FE     C8       90.000    3.000
+ CFC      C4     FE     C8       90.000    3.000
+ CFC      C5     FE     C8       90.000    3.000
+ CFC      C7     FE     C8       44.791    3.000
+ CFC      C2     FE     C9      180.000    3.000
+ CFC      C3     FE     C9       90.000    3.000
+ CFC      C4     FE     C9       90.000    3.000
+ CFC      C5     FE     C9       90.000    3.000
+ CFC      C7     FE     C9       90.000    3.000
+ CFC      C8     FE     C9       44.791    3.000
+ CFC      C2     FE     C10      90.000    3.000
+ CFC      C3     FE     C10     180.000    3.000
+ CFC      C4     FE     C10      90.000    3.000
+ CFC      C5     FE     C10      90.000    3.000
+ CFC      C7     FE     C10      90.000    3.000
+ CFC      C8     FE     C10      90.000    3.000
+ CFC      C9     FE     C10      44.791    3.000
+ CFC      C2     FE     C1       44.827    3.000
+ CFC      C3     FE     C1       90.000    3.000
+ CFC      C4     FE     C1       90.000    3.000
+ CFC      C5     FE     C1       44.827    3.000
+ CFC      C7     FE     C1       90.000    3.000
+ CFC      C8     FE     C1      180.000    3.000
+ CFC      C9     FE     C1       90.000    3.000
+ CFC      C10    FE     C1       90.000    3.000
+ CFC      FE     C2     H2      109.500    3.000
+ CFC      FE     C2     C1       67.482    3.000
+ CFC      FE     C2     C3       67.604    3.000
+ CFC      C1     C2     C3      111.000    3.000
+ CFC      H2     C2     C1      108.340    3.000
+ CFC      H2     C2     C3      108.340    3.000
+ CFC      FE     C3     H3      109.500    3.000
+ CFC      FE     C3     C2       67.604    3.000
+ CFC      FE     C3     C4       67.604    3.000
+ CFC      C2     C3     C4      111.000    3.000
+ CFC      H3     C3     C2      108.340    3.000
+ CFC      H3     C3     C4      108.340    3.000
+ CFC      FE     C4     H4      109.500    3.000
+ CFC      FE     C4     C3       67.604    3.000
+ CFC      FE     C4     C5       67.604    3.000
+ CFC      C3     C4     C5      111.000    3.000
+ CFC      H4     C4     C3      108.340    3.000
+ CFC      H4     C4     C5      108.340    3.000
+ CFC      FE     C5     H5      109.500    3.000
+ CFC      FE     C5     C1       67.482    3.000
+ CFC      FE     C5     C4       67.604    3.000
+ CFC      C1     C5     C4      111.000    3.000
+ CFC      H5     C5     C1      108.340    3.000
+ CFC      H5     C5     C4      108.340    3.000
+ CFC      FE     C7     H7      109.500    3.000
+ CFC      FE     C7     C6       67.482    3.000
+ CFC      FE     C7     C8       67.604    3.000
+ CFC      C6     C7     C8      111.000    3.000
+ CFC      H7     C7     C6      108.340    3.000
+ CFC      H7     C7     C8      108.340    3.000
+ CFC      FE     C8     H8      109.500    3.000
+ CFC      FE     C8     C7       67.604    3.000
+ CFC      FE     C8     C9       67.604    3.000
+ CFC      C7     C8     C9      111.000    3.000
+ CFC      H8     C8     C7      108.340    3.000
+ CFC      H8     C8     C9      108.340    3.000
+ CFC      FE     C9     H9      109.500    3.000
+ CFC      FE     C9     C8       67.604    3.000
+ CFC      FE     C9     C10      67.604    3.000
+ CFC      C8     C9     C10     111.000    3.000
+ CFC      H9     C9     C8      108.340    3.000
+ CFC      H9     C9     C10     108.340    3.000
+ CFC      FE     C10    H10     109.500    3.000
+ CFC      FE     C10    C6       67.482    3.000
+ CFC      FE     C10    C9       67.604    3.000
+ CFC      C6     C10    C9      111.000    3.000
+ CFC      H10    C10    C6      108.340    3.000
+ CFC      H10    C10    C9      108.340    3.000
+ CFC      FE     C1     C11     109.500    3.000
+ CFC      FE     C1     C2       67.691    3.000
+ CFC      FE     C1     C5       67.691    3.000
+ CFC      C2     C1     C5      111.000    3.000
+ CFC      C11    C1     C2      109.470    3.000
+ CFC      C11    C1     C5      109.470    3.000
+ CFC      C1     C11    O1      120.500    3.000
+ CFC      C1     C11    N1      116.500    3.000
+ CFC      O1     C11    N1      123.000    3.000
+ CFC      C11    N1     C13     127.000    3.000
+ CFC      C11    N1     C12     127.000    3.000
+ CFC      C13    N1     C12     120.000    3.000
+ CFC      N1     C13    H133    109.470    3.000
+ CFC      N1     C13    H132    109.470    3.000
+ CFC      N1     C13    H131    109.470    3.000
+ CFC      H133   C13    H132    109.470    3.000
+ CFC      H133   C13    H131    109.470    3.000
+ CFC      H132   C13    H131    109.470    3.000
+ CFC      N1     C12    H123    109.470    3.000
+ CFC      N1     C12    H122    109.470    3.000
+ CFC      N1     C12    H121    109.470    3.000
+ CFC      H123   C12    H122    109.470    3.000
+ CFC      H123   C12    H121    109.470    3.000
+ CFC      H122   C12    H121    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CFC      var_1    O3     C14    C6     FE       -93.638   20.000   1
+ CFC      var_2    C14    C6     C7     FE       120.022   20.000   1
+ CFC      var_3    C14    C6     C10    FE      -120.227   20.000   1
+ CFC      var_4    C14    C6     FE     C1        29.564   20.000   1
+ CFC      var_5    C6     FE     C2     C1       102.521   20.000   1
+ CFC      var_6    C6     FE     C3     C2        62.753   20.000   1
+ CFC      var_7    C6     FE     C4     C3       -48.449   20.000   1
+ CFC      var_8    C6     FE     C5     C1       -55.764   20.000   1
+ CFC      var_9    C6     FE     C8     C7        37.765   20.000   1
+ CFC      var_10   C6     FE     C9     C8        81.470   20.000   1
+ CFC      var_11   C6     FE     C1     C11       38.067   20.000   1
+ CFC      var_12   FE     C1     C11    N1      -117.778   20.000   1
+ CFC      CONST_1  C1     C11    N1     C12      180.000    0.000   0
+ CFC      var_13   C11    N1     C13    H131    -179.939   20.000   1
+ CFC      var_14   C11    N1     C12    H121     179.953   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CFC      chir_01  C1     C2     C5     C11       positiv
+ CFC      chir_02  C2     C1     C3     FE        negativ
+ CFC      chir_03  C3     C2     C4     FE        negativ
+ CFC      chir_04  C4     C3     C5     FE        negativ
+ CFC      chir_05  C5     C1     C4     FE        positiv
+ CFC      chir_06  C6     C7     C10    FE        negativ
+ CFC      chir_07  C7     C6     C8     FE        positiv
+ CFC      chir_08  C8     C7     C9     FE        positiv
+ CFC      chir_09  C9     C8     C10    FE        positiv
+ CFC      chir_10  C10    C6     C9     FE        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CFC      plan-1    C11       0.020
+ CFC      plan-1    C1        0.020
+ CFC      plan-1    O1        0.020
+ CFC      plan-1    N1        0.020
+ CFC      plan-2    N1        0.020
+ CFC      plan-2    C11       0.020
+ CFC      plan-2    C12       0.020
+ CFC      plan-2    C13       0.020
+ CFC      plan-3    C14       0.020
+ CFC      plan-3    C6        0.020
+ CFC      plan-3    O2        0.020
+ CFC      plan-3    O3        0.020
+# ------------------------------------------------------

@@ -1,0 +1,177 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MUA     MUA      "9-METHYL URIC ACID"     NON-POLYMER     19     13     .     
+#
+data_comp_MUA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MUA     N1      N       NR6     0       30.060      27.984      36.877      
+MUA     C2      C       CR6     0       29.319      27.828      38.037      
+MUA     O2      O       O       0       28.217      28.337      38.164      
+MUA     N3      N       NR6     0       29.858      27.075      39.062      
+MUA     C4      C       CR56    0       31.100      26.498      38.928      
+MUA     C5      C       CR56    0       31.839      26.663      37.749      
+MUA     C6      C       CR6     0       31.333      27.430      36.658      
+MUA     O6      O       O       0       31.912      27.630      35.583      
+MUA     N7      N       NR5     0       33.012      25.969      37.942      
+MUA     C8      C       CR5     0       33.029      25.384      39.185      
+MUA     N9      N       NT      0       31.828      25.714      39.809      
+MUA     C10     C       CH3     0       31.428      25.297      41.151      
+MUA     O8      O       O       0       33.934      24.694      39.665      
+MUA     HN1     H       H       0       29.700      28.470      36.228      
+MUA     HN3     H       H       0       29.393      26.969      39.808      
+MUA     HN7     H       H       0       33.677      25.897      37.359      
+MUA     H101    H       H       0       32.215      25.168      41.699      
+MUA     H102    H       H       0       30.933      24.467      41.097      
+MUA     H103    H       H       0       30.869      25.981      41.548      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MUA       N1        C2        SINGLE    y         1.373     0.012     1.373     0.012     
+MUA       N1        C6        SINGLE    y         1.392     0.012     1.392     0.012     
+MUA       C2        O2        DOUBLE    n         1.220     0.011     1.220     0.011     
+MUA       C2        N3        SINGLE    y         1.371     0.012     1.371     0.012     
+MUA       N3        C4        SINGLE    y         1.361     0.020     1.361     0.020     
+MUA       C4        C5        DOUBLE    y         1.419     0.020     1.419     0.020     
+MUA       C4        N9        SINGLE    y         1.404     0.020     1.404     0.020     
+MUA       C5        C6        SINGLE    y         1.419     0.011     1.419     0.011     
+MUA       C5        N7        SINGLE    y         1.376     0.011     1.376     0.011     
+MUA       C6        O6        DOUBLE    n         1.237     0.013     1.237     0.013     
+MUA       N7        C8        SINGLE    y         1.366     0.010     1.366     0.010     
+MUA       C8        N9        SINGLE    y         1.388     0.010     1.388     0.010     
+MUA       C8        O8        DOUBLE    n         1.235     0.014     1.235     0.014     
+MUA       N9        C10       SINGLE    n         1.461     0.010     1.461     0.010     
+MUA       N1        HN1       SINGLE    n         1.016     0.010     0.886     0.020     
+MUA       N3        HN3       SINGLE    n         1.016     0.010     0.885     0.020     
+MUA       N7        HN7       SINGLE    n         1.016     0.010     0.888     0.020     
+MUA       C10       H101      SINGLE    n         1.089     0.010     0.968     0.015     
+MUA       C10       H102      SINGLE    n         1.089     0.010     0.968     0.015     
+MUA       C10       H103      SINGLE    n         1.089     0.010     0.968     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MUA          C2          N1          C6     123.695    2.07
+MUA          C2          N1         HN1     117.739    1.94
+MUA          C6          N1         HN1     118.566    1.86
+MUA          N1          C2          O2     121.448    1.50
+MUA          N1          C2          N3     118.487    1.50
+MUA          O2          C2          N3     120.065    1.67
+MUA          C2          N3          C4     121.321    1.50
+MUA          C2          N3         HN3     118.446    2.15
+MUA          C4          N3         HN3     120.233    1.50
+MUA          N3          C4          C5     121.371    1.50
+MUA          N3          C4          N9     125.130    3.00
+MUA          C5          C4          N9     113.499    1.68
+MUA          C4          C5          C6     121.238    1.63
+MUA          C4          C5          N7     107.663    1.50
+MUA          C6          C5          N7     131.099    1.50
+MUA          N1          C6          C5     113.888    1.50
+MUA          N1          C6          O6     119.903    1.50
+MUA          C5          C6          O6     126.209    1.50
+MUA          C5          N7          C8     110.410    1.50
+MUA          C5          N7         HN7     126.055    1.93
+MUA          C8          N7         HN7     123.536    1.96
+MUA          N7          C8          N9     106.024    1.50
+MUA          N7          C8          O8     127.415    1.50
+MUA          N9          C8          O8     126.561    1.50
+MUA          C4          N9          C8     108.342    1.50
+MUA          C4          N9         C10     123.873    2.87
+MUA          C8          N9         C10     123.481    2.04
+MUA          N9         C10        H101     109.468    1.50
+MUA          N9         C10        H102     109.468    1.50
+MUA          N9         C10        H103     109.468    1.50
+MUA        H101         C10        H102     109.427    1.50
+MUA        H101         C10        H103     109.427    1.50
+MUA        H102         C10        H103     109.427    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MUA       const_sp2_sp2_3          O2          C2          N1          C6     180.000   10.00     2
+MUA              const_35          O6          C6          N1          C2     180.000   10.00     2
+MUA             sp2_sp3_1          C4          N9         C10        H101     150.000   10.00     6
+MUA       const_sp2_sp2_7          O2          C2          N3          C4     180.000   10.00     2
+MUA       const_sp2_sp2_9          C5          C4          N3          C2       0.000   10.00     2
+MUA              const_40          N3          C4          N9         C10       0.000   10.00     2
+MUA              const_13          N3          C4          C5          C6       0.000   10.00     2
+MUA              const_18          C4          C5          C6          O6     180.000   10.00     2
+MUA              const_21          C4          C5          N7          C8       0.000   10.00     2
+MUA              const_27          O8          C8          N7          C5     180.000   10.00     2
+MUA              const_32          O8          C8          N9         C10       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MUA    plan-1          C2   0.020
+MUA    plan-1          C4   0.020
+MUA    plan-1          C5   0.020
+MUA    plan-1          C6   0.020
+MUA    plan-1         HN1   0.020
+MUA    plan-1         HN3   0.020
+MUA    plan-1          N1   0.020
+MUA    plan-1          N3   0.020
+MUA    plan-1          N7   0.020
+MUA    plan-1          N9   0.020
+MUA    plan-1          O2   0.020
+MUA    plan-1          O6   0.020
+MUA    plan-2         C10   0.020
+MUA    plan-2          C4   0.020
+MUA    plan-2          C5   0.020
+MUA    plan-2          C6   0.020
+MUA    plan-2          C8   0.020
+MUA    plan-2         HN7   0.020
+MUA    plan-2          N3   0.020
+MUA    plan-2          N7   0.020
+MUA    plan-2          N9   0.020
+MUA    plan-2          O8   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MUA SMILES           ACDLabs              10.04 "O=C1C2=C(NC(=O)N1)N(C(=O)N2)C"
+MUA SMILES_CANONICAL CACTVS               3.341 "CN1C(=O)NC2=C1NC(=O)NC2=O"
+MUA SMILES           CACTVS               3.341 "CN1C(=O)NC2=C1NC(=O)NC2=O"
+MUA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CN1C2=C(C(=O)NC(=O)N2)NC1=O"
+MUA SMILES           "OpenEye OEToolkits" 1.5.0 "CN1C2=C(C(=O)NC(=O)N2)NC1=O"
+MUA InChI            InChI                1.03  "InChI=1S/C6H6N4O3/c1-10-3-2(7-6(10)13)4(11)9-5(12)8-3/h1H3,(H,7,13)(H2,8,9,11,12)"
+MUA InChIKey         InChI                1.03  XJEJWDFDVPDMAS-UHFFFAOYSA-N
+MUA ?                acedrg               202         "dictionary generator"                  
+MUA ?                acedrg_database      11          "data source"                           
+MUA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MUA ?                refmac5              5.8.0189    "optimization tool"                     

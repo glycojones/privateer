@@ -1,0 +1,296 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DLG      DLG 'HEXYL 3-DEOXY-BETA-D-GALACTOPYRANOSE' pyranose           41  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DLG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DLG           C1     C    CH1       0.000      0.000    0.000    0.000
+ DLG           H1     H    H         0.000      0.276   -1.062    0.065
+ DLG           O1     O    O2        0.000     -1.406    0.112   -0.222
+ DLG           C11    C    CH2       0.000     -2.050   -0.512    0.890
+ DLG           H111   H    H         0.000     -1.760   -0.001    1.811
+ DLG           H112   H    H         0.000     -1.746   -1.559    0.945
+ DLG           C12    C    CH2       0.000     -3.567   -0.427    0.715
+ DLG           H121   H    H         0.000     -3.855   -0.937   -0.207
+ DLG           H122   H    H         0.000     -3.868    0.621    0.659
+ DLG           C13    C    CH2       0.000     -4.257   -1.095    1.904
+ DLG           H131   H    H         0.000     -3.966   -0.585    2.825
+ DLG           H132   H    H         0.000     -3.955   -2.143    1.958
+ DLG           C14    C    CH2       0.000     -5.775   -1.009    1.731
+ DLG           H141   H    H         0.000     -6.064   -1.517    0.809
+ DLG           H142   H    H         0.000     -6.075    0.039    1.677
+ DLG           C15    C    CH2       0.000     -6.465   -1.678    2.921
+ DLG           H151   H    H         0.000     -6.174   -1.169    3.842
+ DLG           H152   H    H         0.000     -6.162   -2.726    2.974
+ DLG           C16    C    CH3       0.000     -7.982   -1.592    2.745
+ DLG           H163   H    H         0.000     -8.279   -0.576    2.692
+ DLG           H162   H    H         0.000     -8.267   -2.087    1.851
+ DLG           H161   H    H         0.000     -8.464   -2.055    3.569
+ DLG           O5     O    O2        0.000      0.342    0.653    1.219
+ DLG           C5     C    CH1       0.000      1.712    0.366    1.494
+ DLG           H5     H    H         0.000      1.872   -0.721    1.458
+ DLG           C4     C    CH1       0.000      2.604    1.044    0.452
+ DLG           H4     H    H         0.000      3.658    0.836    0.679
+ DLG           O4     O    OH1       0.000      2.379    2.455    0.476
+ DLG           HO4    H    H         0.000      2.944    2.882   -0.182
+ DLG           C3     C    CH2       0.000      2.260    0.493   -0.936
+ DLG           H31    H    H         0.000      2.530   -0.564   -0.993
+ DLG           H32    H    H         0.000      2.805    1.048   -1.702
+ DLG           C2     C    CH1       0.000      0.752    0.650   -1.164
+ DLG           H2     H    H         0.000      0.497    1.717   -1.216
+ DLG           O2     O    OH1       0.000      0.384    0.010   -2.388
+ DLG           HO2    H    H         0.000     -0.567    0.110   -2.530
+ DLG           C6     C    CH2       0.000      2.072    0.887    2.886
+ DLG           H61    H    H         0.000      1.914    1.967    2.923
+ DLG           H62    H    H         0.000      3.121    0.667    3.097
+ DLG           O6     O    OH1       0.000      1.245    0.249    3.862
+ DLG           HO6    H    H         0.000      1.504    0.605    4.723
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DLG      C1     n/a    O5     START
+ DLG      H1     C1     .      .
+ DLG      O1     C1     C11    .
+ DLG      C11    O1     C12    .
+ DLG      H111   C11    .      .
+ DLG      H112   C11    .      .
+ DLG      C12    C11    C13    .
+ DLG      H121   C12    .      .
+ DLG      H122   C12    .      .
+ DLG      C13    C12    C14    .
+ DLG      H131   C13    .      .
+ DLG      H132   C13    .      .
+ DLG      C14    C13    C15    .
+ DLG      H141   C14    .      .
+ DLG      H142   C14    .      .
+ DLG      C15    C14    C16    .
+ DLG      H151   C15    .      .
+ DLG      H152   C15    .      .
+ DLG      C16    C15    H161   .
+ DLG      H163   C16    .      .
+ DLG      H162   C16    .      .
+ DLG      H161   C16    .      .
+ DLG      O5     C1     .      END
+ DLG      C5     O5     C6     .
+ DLG      H5     C5     .      .
+ DLG      C4     C5     C3     .
+ DLG      H4     C4     .      .
+ DLG      O4     C4     HO4    .
+ DLG      HO4    O4     .      .
+ DLG      C3     C4     C2     .
+ DLG      H31    C3     .      .
+ DLG      H32    C3     .      .
+ DLG      C2     C3     O2     .
+ DLG      H2     C2     .      .
+ DLG      O2     C2     HO2    .
+ DLG      HO2    O2     .      .
+ DLG      C6     C5     O6     .
+ DLG      H61    C6     .      .
+ DLG      H62    C6     .      .
+ DLG      O6     C6     .      .
+ DLG      HO6    O6     .      .
+ DLG      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DLG       C1        C2        single    1.524     0.020     1.524     0.020     
+DLG       O1        C1        single    1.426     0.020     1.426     0.020     
+DLG       O5        C1        single    1.426     0.020     1.426     0.020     
+DLG       H1        C1        single    1.089     0.010     0.989     0.005     
+DLG       C2        C3        single    1.524     0.020     1.524     0.020     
+DLG       O2        C2        single    1.432     0.020     1.432     0.020     
+DLG       H2        C2        single    1.089     0.010     0.989     0.005     
+DLG       C3        C4        single    1.524     0.020     1.524     0.020     
+DLG       H31       C3        single    1.089     0.010     0.989     0.005     
+DLG       H32       C3        single    1.089     0.010     0.989     0.005     
+DLG       C4        C5        single    1.524     0.020     1.524     0.020     
+DLG       O4        C4        single    1.432     0.020     1.432     0.020     
+DLG       H4        C4        single    1.089     0.010     0.989     0.005     
+DLG       C6        C5        single    1.524     0.020     1.524     0.020     
+DLG       C5        O5        single    1.426     0.020     1.426     0.020     
+DLG       H5        C5        single    1.089     0.010     0.989     0.005     
+DLG       O6        C6        single    1.432     0.020     1.432     0.020     
+DLG       H61       C6        single    1.089     0.010     0.989     0.005     
+DLG       H62       C6        single    1.089     0.010     0.989     0.005     
+DLG       C11       O1        single    1.426     0.020     1.426     0.020     
+DLG       HO2       O2        single    0.970     0.012     0.839     0.014     
+DLG       HO4       O4        single    0.970     0.012     0.839     0.014     
+DLG       HO6       O6        single    0.970     0.012     0.839     0.014     
+DLG       C12       C11       single    1.524     0.020     1.524     0.020     
+DLG       H111      C11       single    1.089     0.010     0.989     0.005     
+DLG       H112      C11       single    1.089     0.010     0.989     0.005     
+DLG       C13       C12       single    1.524     0.020     1.524     0.020     
+DLG       H121      C12       single    1.089     0.010     0.989     0.005     
+DLG       H122      C12       single    1.089     0.010     0.989     0.005     
+DLG       C14       C13       single    1.524     0.020     1.524     0.020     
+DLG       H131      C13       single    1.089     0.010     0.989     0.005     
+DLG       H132      C13       single    1.089     0.010     0.989     0.005     
+DLG       C15       C14       single    1.524     0.020     1.524     0.020     
+DLG       H141      C14       single    1.089     0.010     0.989     0.005     
+DLG       H142      C14       single    1.089     0.010     0.989     0.005     
+DLG       C16       C15       single    1.513     0.020     1.513     0.020     
+DLG       H151      C15       single    1.089     0.010     0.989     0.005     
+DLG       H152      C15       single    1.089     0.010     0.989     0.005     
+DLG       H161      C16       single    1.089     0.010     0.989     0.005     
+DLG       H162      C16       single    1.089     0.010     0.989     0.005     
+DLG       H163      C16       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DLG      H1     C1     O1      109.470    3.000
+ DLG      H1     C1     O5      109.470    3.000
+ DLG      O1     C1     O5      109.470    3.000
+ DLG      H1     C1     C2      108.340    3.000
+ DLG      O1     C1     C2      109.470    3.000
+ DLG      O5     C1     C2      109.470    3.000
+ DLG      C1     O1     C11     111.800    3.000
+ DLG      O1     C11    H111    109.470    3.000
+ DLG      O1     C11    H112    109.470    3.000
+ DLG      O1     C11    C12     109.470    3.000
+ DLG      H111   C11    H112    107.900    3.000
+ DLG      H111   C11    C12     109.470    3.000
+ DLG      H112   C11    C12     109.470    3.000
+ DLG      C11    C12    H121    109.470    3.000
+ DLG      C11    C12    H122    109.470    3.000
+ DLG      C11    C12    C13     111.000    3.000
+ DLG      H121   C12    H122    107.900    3.000
+ DLG      H121   C12    C13     109.470    3.000
+ DLG      H122   C12    C13     109.470    3.000
+ DLG      C12    C13    H131    109.470    3.000
+ DLG      C12    C13    H132    109.470    3.000
+ DLG      C12    C13    C14     111.000    3.000
+ DLG      H131   C13    H132    107.900    3.000
+ DLG      H131   C13    C14     109.470    3.000
+ DLG      H132   C13    C14     109.470    3.000
+ DLG      C13    C14    H141    109.470    3.000
+ DLG      C13    C14    H142    109.470    3.000
+ DLG      C13    C14    C15     111.000    3.000
+ DLG      H141   C14    H142    107.900    3.000
+ DLG      H141   C14    C15     109.470    3.000
+ DLG      H142   C14    C15     109.470    3.000
+ DLG      C14    C15    H151    109.470    3.000
+ DLG      C14    C15    H152    109.470    3.000
+ DLG      C14    C15    C16     111.000    3.000
+ DLG      H151   C15    H152    107.900    3.000
+ DLG      H151   C15    C16     109.470    3.000
+ DLG      H152   C15    C16     109.470    3.000
+ DLG      C15    C16    H163    109.470    3.000
+ DLG      C15    C16    H162    109.470    3.000
+ DLG      C15    C16    H161    109.470    3.000
+ DLG      H163   C16    H162    109.470    3.000
+ DLG      H163   C16    H161    109.470    3.000
+ DLG      H162   C16    H161    109.470    3.000
+ DLG      C1     O5     C5      111.800    3.000
+ DLG      O5     C5     H5      109.470    3.000
+ DLG      O5     C5     C4      109.470    3.000
+ DLG      O5     C5     C6      109.470    3.000
+ DLG      H5     C5     C4      108.340    3.000
+ DLG      H5     C5     C6      108.340    3.000
+ DLG      C4     C5     C6      111.000    3.000
+ DLG      C5     C4     H4      108.340    3.000
+ DLG      C5     C4     O4      109.470    3.000
+ DLG      C5     C4     C3      111.000    3.000
+ DLG      H4     C4     O4      109.470    3.000
+ DLG      H4     C4     C3      108.340    3.000
+ DLG      O4     C4     C3      109.470    3.000
+ DLG      C4     O4     HO4     109.470    3.000
+ DLG      C4     C3     H31     109.470    3.000
+ DLG      C4     C3     H32     109.470    3.000
+ DLG      C4     C3     C2      111.000    3.000
+ DLG      H31    C3     H32     107.900    3.000
+ DLG      H31    C3     C2      109.470    3.000
+ DLG      H32    C3     C2      109.470    3.000
+ DLG      C3     C2     H2      108.340    3.000
+ DLG      C3     C2     O2      109.470    3.000
+ DLG      C3     C2     C1      111.000    3.000
+ DLG      H2     C2     O2      109.470    3.000
+ DLG      H2     C2     C1      108.340    3.000
+ DLG      O2     C2     C1      109.470    3.000
+ DLG      C2     O2     HO2     109.470    3.000
+ DLG      C5     C6     H61     109.470    3.000
+ DLG      C5     C6     H62     109.470    3.000
+ DLG      C5     C6     O6      109.470    3.000
+ DLG      H61    C6     H62     107.900    3.000
+ DLG      H61    C6     O6      109.470    3.000
+ DLG      H62    C6     O6      109.470    3.000
+ DLG      C6     O6     HO6     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DLG      var_1    O5     C1     O1     C11      -59.780   20.000   1
+ DLG      var_2    C1     O1     C11    C12     -179.987   20.000   1
+ DLG      var_3    O1     C11    C12    C13      179.972   20.000   3
+ DLG      var_4    C11    C12    C13    C14      179.925   20.000   3
+ DLG      var_5    C12    C13    C14    C15      179.966   20.000   3
+ DLG      var_6    C13    C14    C15    C16     -179.958   20.000   3
+ DLG      var_7    C14    C15    C16    H161    -179.954   20.000   3
+ DLG      var_8    C1     O5     C5     C6       180.000   20.000   1
+ DLG      var_9    O5     C5     C4     C3       -60.000   20.000   3
+ DLG      var_10   C5     C4     O4     HO4      179.949   20.000   1
+ DLG      var_11   C5     C4     C3     C2        60.000   20.000   3
+ DLG      var_12   C4     C3     C2     O2       180.000   20.000   3
+ DLG      var_13   C3     C2     C1     O5        60.000   20.000   3
+ DLG      var_14   C3     C2     O2     HO2     -179.994   20.000   1
+ DLG      var_15   O5     C5     C6     O6        59.929   20.000   3
+ DLG      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DLG      chir_01  C1     C2     O1     O5        positiv
+ DLG      chir_02  C2     C1     C3     O2        negativ
+ DLG      chir_03  C4     C3     C5     O4        positiv
+ DLG      chir_04  C5     C4     C6     O5        negativ
+# ------------------------------------------------------

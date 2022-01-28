@@ -1,0 +1,579 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MNH      MNH 'MANGANESE PROTOPORPHYRIN IX         ' non-polymer        73  43 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MNH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MNH           O2D    O    OC       -0.500     27.924   43.304  181.406
+ MNH           CGD    C    C         0.000     27.327   42.396  182.026
+ MNH           O1D    O    OC       -0.500     27.246   41.242  181.551
+ MNH           CBD    C    CH2       0.000     26.577   42.826  183.264
+ MNH           HBD1   H    H         0.000     26.462   43.909  183.185
+ MNH           HBD2   H    H         0.000     27.229   42.591  184.108
+ MNH           CAD    C    CH2       0.000     25.216   42.184  183.479
+ MNH           HAD1   H    H         0.000     25.385   41.139  183.748
+ MNH           HAD2   H    H         0.000     24.677   42.232  182.531
+ MNH           C3D    C    CR5       0.000     24.393   42.866  184.569
+ MNH           C2D    C    CR5       0.000     24.383   42.583  185.900
+ MNH           CMD    C    CH3       0.000     25.168   41.571  186.738
+ MNH           HMD3   H    H         0.000     25.352   40.697  186.166
+ MNH           HMD2   H    H         0.000     26.094   41.994  187.036
+ MNH           HMD1   H    H         0.000     24.610   41.311  187.602
+ MNH           C1D    C    CR5       0.000     23.362   43.496  186.393
+ MNH           CHD    C    C1        0.000     22.856   43.849  187.610
+ MNH           HHD    H    H         0.000     23.194   43.057  188.256
+ MNH           C4D    C    CR5       0.000     23.444   43.913  184.299
+ MNH           CHA    C    C1        0.000     22.950   44.536  183.165
+ MNH           HHA    H    H         0.000     23.360   44.007  182.322
+ MNH           ND     N    NT        1.000     22.822   44.333  185.444
+ MNH           MN     MN   MN        2.000     21.142   45.562  185.604
+ MNH           NB     N    NR5       1.000     20.116   47.510  185.919
+ MNH           C4B    C    CR5       0.000     19.604   48.039  187.095
+ MNH           C3B    C    CR5       0.000     18.814   49.204  186.722
+ MNH           CAB    C    C1        0.000     18.020   50.049  187.715
+ MNH           HAB    H    H         0.000     17.524   49.374  188.392
+ MNH           CBB    C    C2        0.000     17.651   51.464  188.128
+ MNH           HBB2   H    H         0.000     16.979   51.702  188.991
+ MNH           HBB1   H    H         0.000     18.022   52.380  187.602
+ MNH           C2B    C    CR5       0.000     18.798   49.472  185.366
+ MNH           CMB    C    CH3       0.000     18.159   50.469  184.373
+ MNH           HMB3   H    H         0.000     18.009   51.407  184.848
+ MNH           HMB2   H    H         0.000     18.797   50.604  183.534
+ MNH           HMB1   H    H         0.000     17.222   50.097  184.039
+ MNH           C1B    C    CR5       0.000     19.679   48.410  184.945
+ MNH           CHB    C    C1        0.000     20.040   47.997  183.673
+ MNH           HHB    H    H         0.000     19.485   48.620  182.992
+ MNH           NC     N    NT        0.000     21.420   45.587  187.746
+ MNH           C4C    C    CR5       0.000     22.149   44.667  188.459
+ MNH           C3C    C    CR5       0.000     21.881   44.769  189.878
+ MNH           CAC    C    C1        0.000     22.388   43.802  190.937
+ MNH           HAC    H    H         0.000     21.627   43.246  191.458
+ MNH           CBC    C    C2        0.000     23.811   43.511  191.361
+ MNH           HBC2   H    H         0.000     24.079   42.774  192.158
+ MNH           HBC1   H    H         0.000     24.704   44.011  190.909
+ MNH           C2C    C    CR5       0.000     21.044   45.804  190.051
+ MNH           CMC    C    CH3       0.000     20.386   46.337  191.328
+ MNH           HMC3   H    H         0.000     21.119   46.463  192.084
+ MNH           HMC2   H    H         0.000     19.925   47.272  191.131
+ MNH           HMC1   H    H         0.000     19.651   45.651  191.666
+ MNH           C1C    C    CR5       0.000     20.778   46.323  188.718
+ MNH           CHC    C    C1        0.000     19.997   47.351  188.227
+ MNH           HHC    H    H         0.000     19.489   47.796  189.066
+ MNH           NA     N    NT        0.000     21.455   46.204  183.623
+ MNH           C4A    C    CR5       0.000     20.783   47.155  182.889
+ MNH           C3A    C    CR5       0.000     20.964   47.076  181.447
+ MNH           CMA    C    CH3       0.000     20.269   47.975  180.434
+ MNH           HMA3   H    H         0.000     20.106   48.933  180.859
+ MNH           HMA2   H    H         0.000     20.875   48.074  179.570
+ MNH           HMA1   H    H         0.000     19.337   47.550  180.161
+ MNH           C2A    C    CR5       0.000     21.784   46.013  181.328
+ MNH           C1A    C    CR5       0.000     22.160   45.541  182.650
+ MNH           CAA    C    CH2       0.000     22.354   45.346  180.075
+ MNH           HAA1   H    H         0.000     23.268   44.811  180.342
+ MNH           HAA2   H    H         0.000     22.587   46.117  179.337
+ MNH           CBA    C    CH2       0.000     21.341   44.366  179.487
+ MNH           HBA1   H    H         0.000     20.401   44.917  179.552
+ MNH           HBA2   H    H         0.000     21.336   43.553  180.216
+ MNH           CGA    C    C         0.000     21.500   43.792  178.083
+ MNH           O1A    O    OC       -0.500     22.588   43.825  177.466
+ MNH           O2A    O    OC       -0.500     20.474   43.173  177.722
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MNH      O2D    n/a    CGD    START
+ MNH      CGD    O2D    CBD    .
+ MNH      O1D    CGD    .      .
+ MNH      CBD    CGD    CAD    .
+ MNH      HBD1   CBD    .      .
+ MNH      HBD2   CBD    .      .
+ MNH      CAD    CBD    C3D    .
+ MNH      HAD1   CAD    .      .
+ MNH      HAD2   CAD    .      .
+ MNH      C3D    CAD    C4D    .
+ MNH      C2D    C3D    C1D    .
+ MNH      CMD    C2D    HMD1   .
+ MNH      HMD3   CMD    .      .
+ MNH      HMD2   CMD    .      .
+ MNH      HMD1   CMD    .      .
+ MNH      C1D    C2D    CHD    .
+ MNH      CHD    C1D    HHD    .
+ MNH      HHD    CHD    .      .
+ MNH      C4D    C3D    ND     .
+ MNH      CHA    C4D    HHA    .
+ MNH      HHA    CHA    .      .
+ MNH      ND     C4D    MN     .
+ MNH      MN     ND     NA     .
+ MNH      NB     MN     C4B    .
+ MNH      C4B    NB     C3B    .
+ MNH      C3B    C4B    C2B    .
+ MNH      CAB    C3B    CBB    .
+ MNH      HAB    CAB    .      .
+ MNH      CBB    CAB    HBB1   .
+ MNH      HBB2   CBB    .      .
+ MNH      HBB1   CBB    .      .
+ MNH      C2B    C3B    C1B    .
+ MNH      CMB    C2B    HMB1   .
+ MNH      HMB3   CMB    .      .
+ MNH      HMB2   CMB    .      .
+ MNH      HMB1   CMB    .      .
+ MNH      C1B    C2B    CHB    .
+ MNH      CHB    C1B    HHB    .
+ MNH      HHB    CHB    .      .
+ MNH      NC     MN     C4C    .
+ MNH      C4C    NC     C3C    .
+ MNH      C3C    C4C    C2C    .
+ MNH      CAC    C3C    CBC    .
+ MNH      HAC    CAC    .      .
+ MNH      CBC    CAC    HBC1   .
+ MNH      HBC2   CBC    .      .
+ MNH      HBC1   CBC    .      .
+ MNH      C2C    C3C    C1C    .
+ MNH      CMC    C2C    HMC1   .
+ MNH      HMC3   CMC    .      .
+ MNH      HMC2   CMC    .      .
+ MNH      HMC1   CMC    .      .
+ MNH      C1C    C2C    CHC    .
+ MNH      CHC    C1C    HHC    .
+ MNH      HHC    CHC    .      .
+ MNH      NA     MN     C4A    .
+ MNH      C4A    NA     C3A    .
+ MNH      C3A    C4A    C2A    .
+ MNH      CMA    C3A    HMA1   .
+ MNH      HMA3   CMA    .      .
+ MNH      HMA2   CMA    .      .
+ MNH      HMA1   CMA    .      .
+ MNH      C2A    C3A    CAA    .
+ MNH      C1A    C2A    .      .
+ MNH      CAA    C2A    CBA    .
+ MNH      HAA1   CAA    .      .
+ MNH      HAA2   CAA    .      .
+ MNH      CBA    CAA    CGA    .
+ MNH      HBA1   CBA    .      .
+ MNH      HBA2   CBA    .      .
+ MNH      CGA    CBA    O2A    .
+ MNH      O1A    CGA    .      .
+ MNH      O2A    CGA    .      END
+ MNH      CHA    C1A    .    ADD
+ MNH      CHB    C4A    .    ADD
+ MNH      CHC    C4B    .    ADD
+ MNH      CHD    C4C    .    ADD
+ MNH      NA     C1A    .    ADD
+ MNH      NB     C1B    .    ADD
+ MNH      NC     C1C    .    ADD
+ MNH      ND     C1D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MNH       NA        MN        single    2.060     0.020     2.060     0.020     
+MNH       NB        MN        single    2.050     0.020     2.050     0.020     
+MNH       NC        MN        single    2.060     0.020     2.060     0.020     
+MNH       MN        ND        single    2.060     0.020     2.060     0.020     
+MNH       CHA       C1A       double    1.483     0.020     1.483     0.020     
+MNH       CHA       C4D       single    1.483     0.020     1.483     0.020     
+MNH       HHA       CHA       single    1.082     0.013     0.975     0.010     
+MNH       CHB       C4A       double    1.483     0.020     1.483     0.020     
+MNH       CHB       C1B       single    1.483     0.020     1.483     0.020     
+MNH       HHB       CHB       single    1.082     0.013     0.975     0.010     
+MNH       CHC       C4B       double    1.483     0.020     1.483     0.020     
+MNH       CHC       C1C       single    1.483     0.020     1.483     0.020     
+MNH       HHC       CHC       single    1.082     0.013     0.975     0.010     
+MNH       CHD       C4C       single    1.483     0.020     1.483     0.020     
+MNH       CHD       C1D       double    1.483     0.020     1.483     0.020     
+MNH       HHD       CHD       single    1.082     0.013     0.975     0.010     
+MNH       NA        C1A       single    1.455     0.020     1.455     0.020     
+MNH       C4A       NA        single    1.455     0.020     1.455     0.020     
+MNH       C1A       C2A       single    1.490     0.020     1.490     0.020     
+MNH       C2A       C3A       double    1.490     0.020     1.490     0.020     
+MNH       CAA       C2A       single    1.510     0.020     1.510     0.020     
+MNH       C3A       C4A       single    1.490     0.020     1.490     0.020     
+MNH       CMA       C3A       single    1.506     0.020     1.506     0.020     
+MNH       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+MNH       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+MNH       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+MNH       CBA       CAA       single    1.524     0.020     1.524     0.020     
+MNH       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+MNH       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+MNH       CGA       CBA       single    1.510     0.020     1.510     0.020     
+MNH       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+MNH       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+MNH       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+MNH       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+MNH       NB        C1B       double    1.337     0.020     1.337     0.020     
+MNH       C4B       NB        single    1.337     0.020     1.337     0.020     
+MNH       C1B       C2B       single    1.490     0.020     1.490     0.020     
+MNH       C2B       C3B       double    1.490     0.020     1.490     0.020     
+MNH       CMB       C2B       single    1.506     0.020     1.506     0.020     
+MNH       C3B       C4B       single    1.490     0.020     1.490     0.020     
+MNH       CAB       C3B       single    1.483     0.020     1.483     0.020     
+MNH       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+MNH       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+MNH       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+MNH       CBB       CAB       double    1.320     0.020     1.320     0.020     
+MNH       HAB       CAB       single    1.082     0.013     0.975     0.010     
+MNH       HBB1      CBB       single    1.082     0.013     0.975     0.010     
+MNH       HBB2      CBB       single    1.082     0.013     0.975     0.010     
+MNH       NC        C1C       single    1.455     0.020     1.455     0.020     
+MNH       C4C       NC        single    1.455     0.020     1.455     0.020     
+MNH       C1C       C2C       double    1.490     0.020     1.490     0.020     
+MNH       C2C       C3C       single    1.490     0.020     1.490     0.020     
+MNH       CMC       C2C       single    1.506     0.020     1.506     0.020     
+MNH       C3C       C4C       double    1.490     0.020     1.490     0.020     
+MNH       CAC       C3C       single    1.483     0.020     1.483     0.020     
+MNH       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+MNH       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+MNH       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+MNH       CBC       CAC       double    1.320     0.020     1.320     0.020     
+MNH       HAC       CAC       single    1.082     0.013     0.975     0.010     
+MNH       HBC1      CBC       single    1.082     0.013     0.975     0.010     
+MNH       HBC2      CBC       single    1.082     0.013     0.975     0.010     
+MNH       ND        C1D       single    1.455     0.020     1.455     0.020     
+MNH       ND        C4D       double    1.455     0.020     1.455     0.020     
+MNH       C1D       C2D       single    1.490     0.020     1.490     0.020     
+MNH       C2D       C3D       double    1.490     0.020     1.490     0.020     
+MNH       CMD       C2D       single    1.506     0.020     1.506     0.020     
+MNH       C4D       C3D       single    1.490     0.020     1.490     0.020     
+MNH       C3D       CAD       single    1.510     0.020     1.510     0.020     
+MNH       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+MNH       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+MNH       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+MNH       CAD       CBD       single    1.524     0.020     1.524     0.020     
+MNH       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+MNH       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+MNH       CBD       CGD       single    1.510     0.020     1.510     0.020     
+MNH       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+MNH       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+MNH       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+MNH       CGD       O2D       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MNH      O2D    CGD    O1D     123.000    3.000
+ MNH      O2D    CGD    CBD     118.500    3.000
+ MNH      O1D    CGD    CBD     118.500    3.000
+ MNH      CGD    CBD    HBD1    109.470    3.000
+ MNH      CGD    CBD    HBD2    109.470    3.000
+ MNH      CGD    CBD    CAD     109.470    3.000
+ MNH      HBD1   CBD    HBD2    107.900    3.000
+ MNH      HBD1   CBD    CAD     109.470    3.000
+ MNH      HBD2   CBD    CAD     109.470    3.000
+ MNH      CBD    CAD    HAD1    109.470    3.000
+ MNH      CBD    CAD    HAD2    109.470    3.000
+ MNH      CBD    CAD    C3D     109.470    3.000
+ MNH      HAD1   CAD    HAD2    107.900    3.000
+ MNH      HAD1   CAD    C3D     109.470    3.000
+ MNH      HAD2   CAD    C3D     109.470    3.000
+ MNH      CAD    C3D    C2D     126.000    3.000
+ MNH      CAD    C3D    C4D     126.000    3.000
+ MNH      C2D    C3D    C4D     108.000    3.000
+ MNH      C3D    C2D    CMD     126.000    3.000
+ MNH      C3D    C2D    C1D     108.000    3.000
+ MNH      CMD    C2D    C1D     126.000    3.000
+ MNH      C2D    CMD    HMD3    109.470    3.000
+ MNH      C2D    CMD    HMD2    109.470    3.000
+ MNH      C2D    CMD    HMD1    109.470    3.000
+ MNH      HMD3   CMD    HMD2    109.470    3.000
+ MNH      HMD3   CMD    HMD1    109.470    3.000
+ MNH      HMD2   CMD    HMD1    109.470    3.000
+ MNH      C2D    C1D    CHD     117.000    3.000
+ MNH      C2D    C1D    ND      108.000    3.000
+ MNH      CHD    C1D    ND      108.000    3.000
+ MNH      C1D    CHD    HHD     120.000    3.000
+ MNH      C1D    CHD    C4C     120.000    3.000
+ MNH      HHD    CHD    C4C     120.000    3.000
+ MNH      C3D    C4D    CHA     117.000    3.000
+ MNH      C3D    C4D    ND      108.000    3.000
+ MNH      CHA    C4D    ND      108.000    3.000
+ MNH      C4D    CHA    HHA     120.000    3.000
+ MNH      C4D    CHA    C1A     120.000    3.000
+ MNH      HHA    CHA    C1A     120.000    3.000
+ MNH      C4D    ND     MN      109.500    3.000
+ MNH      C4D    ND     C1D     109.500    3.000
+ MNH      MN     ND     C1D     109.500    3.000
+ MNH      ND     MN     NB       90.000    3.000
+ MNH      ND     MN     NC       90.000    3.000
+ MNH      ND     MN     NA       90.000    3.000
+ MNH      NB     MN     NC       90.000    3.000
+ MNH      NB     MN     NA       90.000    3.000
+ MNH      NC     MN     NA       90.000    3.000
+ MNH      MN     NB     C4B     108.000    3.000
+ MNH      MN     NB     C1B     108.000    3.000
+ MNH      C4B    NB     C1B     108.000    3.000
+ MNH      NB     C4B    C3B     108.000    3.000
+ MNH      NB     C4B    CHC     108.000    3.000
+ MNH      C3B    C4B    CHC     117.000    3.000
+ MNH      C4B    C3B    CAB     117.000    3.000
+ MNH      C4B    C3B    C2B     108.000    3.000
+ MNH      CAB    C3B    C2B     117.000    3.000
+ MNH      C3B    CAB    HAB     120.000    3.000
+ MNH      C3B    CAB    CBB     120.000    3.000
+ MNH      HAB    CAB    CBB     120.000    3.000
+ MNH      CAB    CBB    HBB2    120.000    3.000
+ MNH      CAB    CBB    HBB1    120.000    3.000
+ MNH      HBB2   CBB    HBB1    120.000    3.000
+ MNH      C3B    C2B    CMB     126.000    3.000
+ MNH      C3B    C2B    C1B     108.000    3.000
+ MNH      CMB    C2B    C1B     126.000    3.000
+ MNH      C2B    CMB    HMB3    109.470    3.000
+ MNH      C2B    CMB    HMB2    109.470    3.000
+ MNH      C2B    CMB    HMB1    109.470    3.000
+ MNH      HMB3   CMB    HMB2    109.470    3.000
+ MNH      HMB3   CMB    HMB1    109.470    3.000
+ MNH      HMB2   CMB    HMB1    109.470    3.000
+ MNH      C2B    C1B    CHB     117.000    3.000
+ MNH      C2B    C1B    NB      108.000    3.000
+ MNH      CHB    C1B    NB      108.000    3.000
+ MNH      C1B    CHB    HHB     120.000    3.000
+ MNH      C1B    CHB    C4A     120.000    3.000
+ MNH      HHB    CHB    C4A     120.000    3.000
+ MNH      MN     NC     C4C     109.500    3.000
+ MNH      MN     NC     C1C     109.500    3.000
+ MNH      C4C    NC     C1C     109.500    3.000
+ MNH      NC     C4C    C3C     108.000    3.000
+ MNH      NC     C4C    CHD     108.000    3.000
+ MNH      C3C    C4C    CHD     117.000    3.000
+ MNH      C4C    C3C    CAC     117.000    3.000
+ MNH      C4C    C3C    C2C     108.000    3.000
+ MNH      CAC    C3C    C2C     117.000    3.000
+ MNH      C3C    CAC    HAC     120.000    3.000
+ MNH      C3C    CAC    CBC     120.000    3.000
+ MNH      HAC    CAC    CBC     120.000    3.000
+ MNH      CAC    CBC    HBC2    120.000    3.000
+ MNH      CAC    CBC    HBC1    120.000    3.000
+ MNH      HBC2   CBC    HBC1    120.000    3.000
+ MNH      C3C    C2C    CMC     126.000    3.000
+ MNH      C3C    C2C    C1C     108.000    3.000
+ MNH      CMC    C2C    C1C     126.000    3.000
+ MNH      C2C    CMC    HMC3    109.470    3.000
+ MNH      C2C    CMC    HMC2    109.470    3.000
+ MNH      C2C    CMC    HMC1    109.470    3.000
+ MNH      HMC3   CMC    HMC2    109.470    3.000
+ MNH      HMC3   CMC    HMC1    109.470    3.000
+ MNH      HMC2   CMC    HMC1    109.470    3.000
+ MNH      C2C    C1C    CHC     117.000    3.000
+ MNH      C2C    C1C    NC      108.000    3.000
+ MNH      CHC    C1C    NC      108.000    3.000
+ MNH      C1C    CHC    HHC     120.000    3.000
+ MNH      C1C    CHC    C4B     120.000    3.000
+ MNH      HHC    CHC    C4B     120.000    3.000
+ MNH      MN     NA     C4A     109.500    3.000
+ MNH      MN     NA     C1A     109.500    3.000
+ MNH      C4A    NA     C1A     109.500    3.000
+ MNH      NA     C4A    C3A     108.000    3.000
+ MNH      NA     C4A    CHB     108.000    3.000
+ MNH      C3A    C4A    CHB     117.000    3.000
+ MNH      C4A    C3A    CMA     126.000    3.000
+ MNH      C4A    C3A    C2A     108.000    3.000
+ MNH      CMA    C3A    C2A     126.000    3.000
+ MNH      C3A    CMA    HMA3    109.470    3.000
+ MNH      C3A    CMA    HMA2    109.470    3.000
+ MNH      C3A    CMA    HMA1    109.470    3.000
+ MNH      HMA3   CMA    HMA2    109.470    3.000
+ MNH      HMA3   CMA    HMA1    109.470    3.000
+ MNH      HMA2   CMA    HMA1    109.470    3.000
+ MNH      C3A    C2A    C1A     108.000    3.000
+ MNH      C3A    C2A    CAA     126.000    3.000
+ MNH      C1A    C2A    CAA     126.000    3.000
+ MNH      C2A    C1A    CHA     117.000    3.000
+ MNH      C2A    C1A    NA      108.000    3.000
+ MNH      CHA    C1A    NA      108.000    3.000
+ MNH      C2A    CAA    HAA1    109.470    3.000
+ MNH      C2A    CAA    HAA2    109.470    3.000
+ MNH      C2A    CAA    CBA     109.470    3.000
+ MNH      HAA1   CAA    HAA2    107.900    3.000
+ MNH      HAA1   CAA    CBA     109.470    3.000
+ MNH      HAA2   CAA    CBA     109.470    3.000
+ MNH      CAA    CBA    HBA1    109.470    3.000
+ MNH      CAA    CBA    HBA2    109.470    3.000
+ MNH      CAA    CBA    CGA     109.470    3.000
+ MNH      HBA1   CBA    HBA2    107.900    3.000
+ MNH      HBA1   CBA    CGA     109.470    3.000
+ MNH      HBA2   CBA    CGA     109.470    3.000
+ MNH      CBA    CGA    O1A     118.500    3.000
+ MNH      CBA    CGA    O2A     118.500    3.000
+ MNH      O1A    CGA    O2A     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MNH      var_1    O2D    CGD    CBD    CAD      139.221   20.000   3
+ MNH      var_2    CGD    CBD    CAD    C3D     -167.884   20.000   3
+ MNH      var_3    CBD    CAD    C3D    C4D       93.036   20.000   2
+ MNH      CONST_1  CAD    C3D    C2D    C1D      180.000    0.000   0
+ MNH      var_4    C3D    C2D    CMD    HMD1    -153.366   20.000   1
+ MNH      CONST_2  C3D    C2D    C1D    CHD      180.000    0.000   0
+ MNH      var_5    C2D    C1D    CHD    C4C      163.631   20.000   1
+ MNH      var_6    C1D    CHD    C4C    NC        12.266   20.000   1
+ MNH      CONST_3  CAD    C3D    C4D    ND       180.000    0.000   0
+ MNH      var_7    C3D    C4D    CHA    C1A     -174.267   20.000   1
+ MNH      var_8    C4D    CHA    C1A    C2A      179.969   20.000   1
+ MNH      CONST_4  C3D    C4D    ND     MN         0.000    0.000   0
+ MNH      CONST_5  C4D    ND     C1D    C2D        3.239    0.000   0
+ MNH      var_9    C4D    ND     MN     NA       -18.009   20.000   1
+ MNH      var_10   ND     MN     NB     C4B      -94.334   20.000   1
+ MNH      CONST_6  MN     NB     C1B    C2B      167.460    0.000   0
+ MNH      CONST_7  MN     NB     C4B    C3B     -169.199    0.000   0
+ MNH      CONST_8  NB     C4B    C3B    C2B        0.000    0.000   0
+ MNH      var_11   C4B    C3B    CAB    CBB      137.272   20.000   1
+ MNH      CONST_9  C3B    CAB    CBB    HBB1      -0.016    0.000   0
+ MNH      CONST_10 C4B    C3B    C2B    C1B        0.000    0.000   0
+ MNH      var_12   C3B    C2B    CMB    HMB1     -89.247   20.000   1
+ MNH      CONST_11 C3B    C2B    C1B    CHB      180.000    0.000   0
+ MNH      var_13   C2B    C1B    CHB    C4A      177.726   20.000   1
+ MNH      var_14   C1B    CHB    C4A    NA         5.864   20.000   1
+ MNH      var_15   ND     MN     NC     C4C      -19.721   20.000   1
+ MNH      CONST_12 MN     NC     C1C    C2C        0.000    0.000   0
+ MNH      CONST_13 MN     NC     C4C    C3C        0.000    0.000   0
+ MNH      CONST_14 NC     C4C    C3C    C2C        0.000    0.000   0
+ MNH      var_16   C4C    C3C    CAC    CBC       64.176   20.000   1
+ MNH      CONST_15 C3C    CAC    CBC    HBC1      -0.008    0.000   0
+ MNH      CONST_16 C4C    C3C    C2C    C1C        0.000    0.000   0
+ MNH      var_17   C3C    C2C    CMC    HMC1     -70.276   20.000   1
+ MNH      CONST_17 C3C    C2C    C1C    CHC      180.000    0.000   0
+ MNH      var_18   C2C    C1C    CHC    C4B      178.047   20.000   1
+ MNH      var_19   C1C    CHC    C4B    NB         4.136   20.000   1
+ MNH      var_20   ND     MN     NA     C4A     -175.829   20.000   1
+ MNH      CONST_18 MN     NA     C1A    C2A        0.000    0.000   0
+ MNH      CONST_19 MN     NA     C4A    C3A        0.000    0.000   0
+ MNH      CONST_20 NA     C4A    C3A    C2A        0.000    0.000   0
+ MNH      var_21   C4A    C3A    CMA    HMA1     -88.206   20.000   1
+ MNH      CONST_21 C4A    C3A    C2A    CAA      180.000    0.000   0
+ MNH      CONST_22 C3A    C2A    C1A    CHA      180.000    0.000   0
+ MNH      var_22   C3A    C2A    CAA    CBA      -83.023   20.000   2
+ MNH      var_23   C2A    CAA    CBA    CGA      166.161   20.000   3
+ MNH      var_24   CAA    CBA    CGA    O2A     -170.192   20.000   3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MNH      plan-1    CHA       0.020
+ MNH      plan-1    C1A       0.020
+ MNH      plan-1    C4D       0.020
+ MNH      plan-1    HHA       0.020
+ MNH      plan-2    CHB       0.020
+ MNH      plan-2    C4A       0.020
+ MNH      plan-2    C1B       0.020
+ MNH      plan-2    HHB       0.020
+ MNH      plan-3    CHC       0.020
+ MNH      plan-3    C4B       0.020
+ MNH      plan-3    C1C       0.020
+ MNH      plan-3    HHC       0.020
+ MNH      plan-4    CHD       0.020
+ MNH      plan-4    C4C       0.020
+ MNH      plan-4    C1D       0.020
+ MNH      plan-4    HHD       0.020
+ MNH      plan-5    C1A       0.020
+ MNH      plan-5    CHA       0.020
+ MNH      plan-5    NA        0.020
+ MNH      plan-5    C2A       0.020
+ MNH      plan-5    C3A       0.020
+ MNH      plan-5    C4A       0.020
+ MNH      plan-5    CAA       0.020
+ MNH      plan-5    CMA       0.020
+ MNH      plan-5    CHB       0.020
+ MNH      plan-5    HHA       0.020
+ MNH      plan-5    HHB       0.020
+ MNH      plan-6    CGA       0.020
+ MNH      plan-6    CBA       0.020
+ MNH      plan-6    O1A       0.020
+ MNH      plan-6    O2A       0.020
+ MNH      plan-7    NB        0.020
+ MNH      plan-7    MN        0.020
+ MNH      plan-7    C1B       0.020
+ MNH      plan-7    C4B       0.020
+ MNH      plan-7    C2B       0.020
+ MNH      plan-7    C3B       0.020
+ MNH      plan-7    CHB       0.020
+ MNH      plan-7    CMB       0.020
+ MNH      plan-7    CAB       0.020
+ MNH      plan-7    CHC       0.020
+ MNH      plan-7    HHB       0.020
+ MNH      plan-7    HAB       0.020
+ MNH      plan-7    HHC       0.020
+ MNH      plan-8    CAB       0.020
+ MNH      plan-8    C3B       0.020
+ MNH      plan-8    CBB       0.020
+ MNH      plan-8    HAB       0.020
+ MNH      plan-8    HBB1      0.020
+ MNH      plan-8    HBB2      0.020
+ MNH      plan-9    C1C       0.020
+ MNH      plan-9    CHC       0.020
+ MNH      plan-9    NC        0.020
+ MNH      plan-9    C2C       0.020
+ MNH      plan-9    C3C       0.020
+ MNH      plan-9    C4C       0.020
+ MNH      plan-9    CMC       0.020
+ MNH      plan-9    CAC       0.020
+ MNH      plan-9    CHD       0.020
+ MNH      plan-9    HHC       0.020
+ MNH      plan-9    HAC       0.020
+ MNH      plan-9    HHD       0.020
+ MNH      plan-10   CAC       0.020
+ MNH      plan-10   C3C       0.020
+ MNH      plan-10   CBC       0.020
+ MNH      plan-10   HAC       0.020
+ MNH      plan-10   HBC1      0.020
+ MNH      plan-10   HBC2      0.020
+ MNH      plan-11   C1D       0.020
+ MNH      plan-11   CHD       0.020
+ MNH      plan-11   ND        0.020
+ MNH      plan-11   C2D       0.020
+ MNH      plan-11   C3D       0.020
+ MNH      plan-11   C4D       0.020
+ MNH      plan-11   CMD       0.020
+ MNH      plan-11   CAD       0.020
+ MNH      plan-11   CHA       0.020
+ MNH      plan-11   HHD       0.020
+ MNH      plan-11   HHA       0.020
+ MNH      plan-12   CGD       0.020
+ MNH      plan-12   CBD       0.020
+ MNH      plan-12   O1D       0.020
+ MNH      plan-12   O2D       0.020
+# ------------------------------------------------------

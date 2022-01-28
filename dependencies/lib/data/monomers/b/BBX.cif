@@ -1,0 +1,95 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BBX     BBX      1-BROMOETHANE     NON-POLYMER     8     3     .     
+#
+data_comp_BBX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BBX     BR1     BR      BR      0       90.081      76.181      41.549      
+BBX     C1      C       CH2     0       90.460      75.270      43.234      
+BBX     C2      C       CH3     0       89.802      73.940      43.304      
+BBX     H11     H       H       0       90.147      75.826      43.974      
+BBX     H12     H       H       0       91.426      75.159      43.327      
+BBX     H21     H       H       0       90.480      73.251      43.414      
+BBX     H22     H       H       0       89.302      73.774      42.485      
+BBX     H23     H       H       0       89.194      73.921      44.064      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BBX       BR1       C1        SINGLE    n         1.950     0.016     1.950     0.016     
+BBX       C1        C2        SINGLE    n         1.482     0.020     1.482     0.020     
+BBX       C1        H11       SINGLE    n         1.089     0.010     0.977     0.020     
+BBX       C1        H12       SINGLE    n         1.089     0.010     0.977     0.020     
+BBX       C2        H21       SINGLE    n         1.089     0.010     0.973     0.015     
+BBX       C2        H22       SINGLE    n         1.089     0.010     0.973     0.015     
+BBX       C2        H23       SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BBX         BR1          C1          C2     109.720    2.68
+BBX         BR1          C1         H11     109.034    1.50
+BBX         BR1          C1         H12     109.034    1.50
+BBX          C2          C1         H11     109.260    1.85
+BBX          C2          C1         H12     109.260    1.85
+BBX         H11          C1         H12     108.016    1.50
+BBX          C1          C2         H21     109.260    1.85
+BBX          C1          C2         H22     109.260    1.85
+BBX          C1          C2         H23     109.260    1.85
+BBX         H21          C2         H22     109.399    1.50
+BBX         H21          C2         H23     109.399    1.50
+BBX         H22          C2         H23     109.399    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BBX             sp3_sp3_1         BR1          C1          C2         H21     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BBX SMILES           ACDLabs              10.04 BrCC
+BBX SMILES_CANONICAL CACTVS               3.341 CCBr
+BBX SMILES           CACTVS               3.341 CCBr
+BBX SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCBr
+BBX SMILES           "OpenEye OEToolkits" 1.5.0 CCBr
+BBX InChI            InChI                1.03  InChI=1S/C2H5Br/c1-2-3/h2H2,1H3
+BBX InChIKey         InChI                1.03  RDHPKYGYEGBMSE-UHFFFAOYSA-N
+BBX ?                acedrg               202         "dictionary generator"                  
+BBX ?                acedrg_database      11          "data source"                           
+BBX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BBX ?                refmac5              5.8.0189    "optimization tool"                     

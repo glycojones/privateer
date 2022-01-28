@@ -1,0 +1,204 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DMW     DMW      2,3-DIMETHYL-1,4-NAPHTHOQUINONE     NON-POLYMER     24     14     .     
+#
+data_comp_DMW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DMW     C5      C       CR6     0       19.448      -11.696     -49.725     
+DMW     C5M     C       CH3     0       19.388      -12.091     -48.273     
+DMW     C4      C       CR6     0       20.743      -11.969     -50.435     
+DMW     O4      O       O       0       21.689      -12.445     -49.806     
+DMW     C3      C       CR66    0       20.873      -11.658     -51.890     
+DMW     C2      C       CR66    0       19.786      -11.118     -52.603     
+DMW     C1      C       CR6     0       18.484      -10.861     -51.916     
+DMW     O1      O       O       0       17.504      -10.489     -52.563     
+DMW     C6      C       CR6     0       18.368      -11.087     -50.431     
+DMW     C3A     C       CR16    0       22.085      -11.896     -52.558     
+DMW     C3B     C       CR16    0       22.214      -11.606     -53.907     
+DMW     C3C     C       CR16    0       21.135      -11.073     -54.615     
+DMW     C3D     C       CR16    0       19.933      -10.832     -53.970     
+DMW     C6M     C       CH3     0       17.092      -10.681     -49.741     
+DMW     H5M1    H       H       0       18.498      -11.976     -47.915     
+DMW     H5M2    H       H       0       20.007      -11.544     -47.766     
+DMW     H5M3    H       H       0       19.642      -13.022     -48.182     
+DMW     H3A     H       H       0       22.820      -12.253     -52.094     
+DMW     H3B     H       H       0       23.032      -11.770     -54.346     
+DMW     H3C     H       H       0       21.224      -10.877     -55.533     
+DMW     H3D     H       H       0       19.215      -10.473     -54.459     
+DMW     H6M1    H       H       0       16.557      -10.108     -50.307     
+DMW     H6M2    H       H       0       17.305      -10.202     -48.926     
+DMW     H6M3    H       H       0       16.582      -11.475     -49.517     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DMW       C5        C5M       SINGLE    n         1.499     0.010     1.499     0.010     
+DMW       C5        C4        SINGLE    n         1.485     0.013     1.485     0.013     
+DMW       C5        C6        DOUBLE    n         1.376     0.020     1.376     0.020     
+DMW       C4        O4        DOUBLE    n         1.229     0.010     1.229     0.010     
+DMW       C4        C3        SINGLE    n         1.484     0.010     1.484     0.010     
+DMW       C3        C2        DOUBLE    y         1.396     0.010     1.396     0.010     
+DMW       C3        C3A       SINGLE    y         1.392     0.010     1.392     0.010     
+DMW       C2        C1        SINGLE    n         1.484     0.010     1.484     0.010     
+DMW       C2        C3D       SINGLE    y         1.392     0.010     1.392     0.010     
+DMW       C1        O1        DOUBLE    n         1.229     0.010     1.229     0.010     
+DMW       C1        C6        SINGLE    n         1.485     0.013     1.485     0.013     
+DMW       C6        C6M       SINGLE    n         1.499     0.010     1.499     0.010     
+DMW       C3A       C3B       DOUBLE    y         1.380     0.010     1.380     0.010     
+DMW       C3B       C3C       SINGLE    y         1.389     0.014     1.389     0.014     
+DMW       C3C       C3D       DOUBLE    y         1.380     0.010     1.380     0.010     
+DMW       C5M       H5M1      SINGLE    n         1.089     0.010     0.969     0.013     
+DMW       C5M       H5M2      SINGLE    n         1.089     0.010     0.969     0.013     
+DMW       C5M       H5M3      SINGLE    n         1.089     0.010     0.969     0.013     
+DMW       C3A       H3A       SINGLE    n         1.082     0.013     0.941     0.016     
+DMW       C3B       H3B       SINGLE    n         1.082     0.013     0.943     0.020     
+DMW       C3C       H3C       SINGLE    n         1.082     0.013     0.943     0.020     
+DMW       C3D       H3D       SINGLE    n         1.082     0.013     0.941     0.016     
+DMW       C6M       H6M1      SINGLE    n         1.089     0.010     0.969     0.013     
+DMW       C6M       H6M2      SINGLE    n         1.089     0.010     0.969     0.013     
+DMW       C6M       H6M3      SINGLE    n         1.089     0.010     0.969     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DMW         C5M          C5          C4     117.824    1.50
+DMW         C5M          C5          C6     122.497    2.03
+DMW          C4          C5          C6     119.679    1.50
+DMW          C5         C5M        H5M1     109.593    1.50
+DMW          C5         C5M        H5M2     109.593    1.50
+DMW          C5         C5M        H5M3     109.593    1.50
+DMW        H5M1         C5M        H5M2     109.339    1.50
+DMW        H5M1         C5M        H5M3     109.339    1.50
+DMW        H5M2         C5M        H5M3     109.339    1.50
+DMW          C5          C4          O4     119.936    1.50
+DMW          C5          C4          C3     119.523    1.50
+DMW          O4          C4          C3     120.541    1.50
+DMW          C4          C3          C2     120.798    1.50
+DMW          C4          C3         C3A     119.428    1.50
+DMW          C2          C3         C3A     119.773    1.50
+DMW          C3          C2          C1     120.798    1.50
+DMW          C3          C2         C3D     119.773    1.50
+DMW          C1          C2         C3D     119.428    1.50
+DMW          C2          C1          O1     120.541    1.50
+DMW          C2          C1          C6     119.523    1.50
+DMW          O1          C1          C6     119.936    1.50
+DMW          C5          C6          C1     119.679    1.50
+DMW          C5          C6         C6M     122.497    2.03
+DMW          C1          C6         C6M     117.824    1.50
+DMW          C3         C3A         C3B     120.102    1.50
+DMW          C3         C3A         H3A     119.921    1.50
+DMW         C3B         C3A         H3A     119.977    1.50
+DMW         C3A         C3B         C3C     120.125    1.50
+DMW         C3A         C3B         H3B     119.901    1.50
+DMW         C3C         C3B         H3B     119.974    1.50
+DMW         C3B         C3C         C3D     120.125    1.50
+DMW         C3B         C3C         H3C     119.974    1.50
+DMW         C3D         C3C         H3C     119.901    1.50
+DMW          C2         C3D         C3C     120.102    1.50
+DMW          C2         C3D         H3D     119.921    1.50
+DMW         C3C         C3D         H3D     119.977    1.50
+DMW          C6         C6M        H6M1     109.593    1.50
+DMW          C6         C6M        H6M2     109.593    1.50
+DMW          C6         C6M        H6M3     109.593    1.50
+DMW        H6M1         C6M        H6M2     109.339    1.50
+DMW        H6M1         C6M        H6M3     109.339    1.50
+DMW        H6M2         C6M        H6M3     109.339    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DMW             sp2_sp3_1          C4          C5         C5M        H5M1     150.000   10.00     6
+DMW             sp2_sp2_4          O4          C4          C5         C5M       0.000   10.00     2
+DMW            sp2_sp2_20         C5M          C5          C6         C6M       0.000   10.00     2
+DMW              const_13         C3A         C3B         C3C         C3D       0.000   10.00     2
+DMW       const_sp2_sp2_9         C3B         C3C         C3D          C2       0.000   10.00     2
+DMW             sp2_sp2_6          C2          C3          C4          O4     180.000   10.00     2
+DMW       const_sp2_sp2_1          C1          C2          C3          C4       0.000   10.00     2
+DMW              const_23          C4          C3         C3A         C3B     180.000   10.00     2
+DMW       const_sp2_sp2_5          C3          C2         C3D         C3C       0.000   10.00     2
+DMW            sp2_sp2_11          O1          C1          C2          C3     180.000   10.00     2
+DMW            sp2_sp2_16          O1          C1          C6         C6M       0.000   10.00     2
+DMW             sp2_sp3_7          C5          C6         C6M        H6M1     150.000   10.00     6
+DMW              const_17          C3         C3A         C3B         C3C       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DMW    plan-1          C1   0.020
+DMW    plan-1          C2   0.020
+DMW    plan-1          C3   0.020
+DMW    plan-1         C3A   0.020
+DMW    plan-1         C3B   0.020
+DMW    plan-1         C3C   0.020
+DMW    plan-1         C3D   0.020
+DMW    plan-1          C4   0.020
+DMW    plan-1         H3A   0.020
+DMW    plan-1         H3B   0.020
+DMW    plan-1         H3C   0.020
+DMW    plan-1         H3D   0.020
+DMW    plan-2          C4   0.020
+DMW    plan-2          C5   0.020
+DMW    plan-2         C5M   0.020
+DMW    plan-2          C6   0.020
+DMW    plan-3          C3   0.020
+DMW    plan-3          C4   0.020
+DMW    plan-3          C5   0.020
+DMW    plan-3          O4   0.020
+DMW    plan-4          C1   0.020
+DMW    plan-4          C2   0.020
+DMW    plan-4          C6   0.020
+DMW    plan-4          O1   0.020
+DMW    plan-5          C1   0.020
+DMW    plan-5          C5   0.020
+DMW    plan-5          C6   0.020
+DMW    plan-5         C6M   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DMW SMILES           ACDLabs              10.04 "O=C2c1c(cccc1)C(=O)C(=C2C)C"
+DMW SMILES_CANONICAL CACTVS               3.341 "CC1=C(C)C(=O)c2ccccc2C1=O"
+DMW SMILES           CACTVS               3.341 "CC1=C(C)C(=O)c2ccccc2C1=O"
+DMW SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC1=C(C(=O)c2ccccc2C1=O)C"
+DMW SMILES           "OpenEye OEToolkits" 1.5.0 "CC1=C(C(=O)c2ccccc2C1=O)C"
+DMW InChI            InChI                1.03  "InChI=1S/C12H10O2/c1-7-8(2)12(14)10-6-4-3-5-9(10)11(7)13/h3-6H,1-2H3"
+DMW InChIKey         InChI                1.03  LGFDNUSAWCHVJN-UHFFFAOYSA-N
+DMW ?                acedrg               202         "dictionary generator"                  
+DMW ?                acedrg_database      11          "data source"                           
+DMW ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DMW ?                refmac5              5.8.0189    "optimization tool"                     

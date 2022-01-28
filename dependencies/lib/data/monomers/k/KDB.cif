@@ -1,0 +1,200 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KDB     KDB      "3,4,5-trideoxy-alpha-D-erythro-oct-3-en-2-ulopyranosonic acid"     NON-POLYMER     25     14     .     
+#
+data_comp_KDB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KDB     O2      O       OH1     0       3.116       -0.500      1.267       
+KDB     C2      C       CT      0       2.155       0.217       0.486       
+KDB     C1      C       C       0       2.427       1.729       0.583       
+KDB     O1B     O       O       0       1.984       2.485       -0.262      
+KDB     O1A     O       OC      -1      3.072       2.172       1.514       
+KDB     C3      C       CR16    0       2.301       -0.279      -0.952      
+KDB     C4      C       CR16    0       1.260       -0.671      -1.658      
+KDB     C5      C       CH2     0       -0.129      -0.770      -1.100      
+KDB     C6      C       CH1     0       -0.290      0.135       0.119       
+KDB     O6      O       O2      0       0.828       -0.028      1.023       
+KDB     C7      C       CH1     0       -1.548      -0.133      0.944       
+KDB     O7      O       OH1     0       -1.557      -1.475      1.446       
+KDB     C8      C       CH2     0       -2.829      0.168       0.175       
+KDB     O8      O       OH1     0       -3.245      -0.928      -0.637      
+KDB     HO2     H       H       0       3.002       -0.342      2.091       
+KDB     H3      H       H       0       3.165       -0.302      -1.341      
+KDB     H4      H       H       0       1.390       -0.904      -2.567      
+KDB     H5      H       H       0       -0.319      -1.699      -0.852      
+KDB     H5A     H       H       0       -0.783      -0.509      -1.782      
+KDB     H6      H       H       0       -0.320      1.083       -0.192      
+KDB     H7      H       H       0       -1.527      0.477       1.729       
+KDB     HO7     H       H       0       -0.910      -1.564      1.987       
+KDB     H8      H       H       0       -2.690      0.959       -0.396      
+KDB     H8A     H       H       0       -3.547      0.384       0.815       
+KDB     HO8     H       H       0       -3.831      -0.677      -1.193      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KDB       O2        C2        SINGLE    n         1.427     0.016     1.427     0.016     
+KDB       C2        C1        SINGLE    n         1.526     0.017     1.526     0.017     
+KDB       C2        C3        SINGLE    n         1.506     0.020     1.506     0.020     
+KDB       C2        O6        SINGLE    n         1.429     0.017     1.429     0.017     
+KDB       C1        O1B       DOUBLE    n         1.213     0.020     1.213     0.020     
+KDB       C1        O1A       SINGLE    n         1.213     0.020     1.213     0.020     
+KDB       C3        C4        DOUBLE    n         1.314     0.010     1.314     0.010     
+KDB       C4        C5        SINGLE    n         1.493     0.014     1.493     0.014     
+KDB       C5        C6        SINGLE    n         1.520     0.010     1.520     0.010     
+KDB       C6        O6        SINGLE    n         1.435     0.012     1.435     0.012     
+KDB       C6        C7        SINGLE    n         1.524     0.010     1.524     0.010     
+KDB       C7        C8        SINGLE    n         1.520     0.010     1.520     0.010     
+KDB       C7        O7        SINGLE    n         1.430     0.011     1.430     0.011     
+KDB       C8        O8        SINGLE    n         1.424     0.010     1.424     0.010     
+KDB       O2        HO2       SINGLE    n         0.970     0.012     0.845     0.020     
+KDB       C3        H3        SINGLE    n         1.082     0.013     0.948     0.020     
+KDB       C4        H4        SINGLE    n         1.082     0.013     0.948     0.020     
+KDB       C5        H5        SINGLE    n         1.089     0.010     0.980     0.010     
+KDB       C5        H5A       SINGLE    n         1.089     0.010     0.980     0.010     
+KDB       C6        H6        SINGLE    n         1.089     0.010     0.998     0.020     
+KDB       C7        H7        SINGLE    n         1.089     0.010     0.995     0.017     
+KDB       O7        HO7       SINGLE    n         0.970     0.012     0.848     0.020     
+KDB       C8        H8        SINGLE    n         1.089     0.010     0.986     0.010     
+KDB       C8        H8A       SINGLE    n         1.089     0.010     0.986     0.010     
+KDB       O8        HO8       SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KDB          C2          O2         HO2     109.130    3.00
+KDB          O2          C2          C1     108.672    2.53
+KDB          O2          C2          C3     109.527    2.40
+KDB          O2          C2          O6     110.254    2.24
+KDB          C1          C2          C3     109.919    2.81
+KDB          C1          C2          O6     107.807    2.54
+KDB          C3          C2          O6     111.921    2.19
+KDB          C2          C1         O1B     119.643    2.54
+KDB          C2          C1         O1A     119.643    2.54
+KDB         O1B          C1         O1A     120.713    1.50
+KDB          C2          C3          C4     121.774    3.00
+KDB          C2          C3          H3     118.792    1.79
+KDB          C4          C3          H3     119.435    1.54
+KDB          C3          C4          C5     123.528    1.50
+KDB          C3          C4          H4     118.622    1.54
+KDB          C5          C4          H4     117.850    1.50
+KDB          C4          C5          C6     111.133    1.62
+KDB          C4          C5          H5     110.344    1.50
+KDB          C4          C5         H5A     110.344    1.50
+KDB          C6          C5          H5     109.568    1.70
+KDB          C6          C5         H5A     109.568    1.70
+KDB          H5          C5         H5A     107.815    1.50
+KDB          C5          C6          O6     109.439    1.50
+KDB          C5          C6          C7     111.163    2.25
+KDB          C5          C6          H6     108.907    1.50
+KDB          O6          C6          C7     106.618    1.87
+KDB          O6          C6          H6     108.995    1.50
+KDB          C7          C6          H6     108.632    1.50
+KDB          C2          O6          C6     111.559    2.21
+KDB          C6          C7          C8     112.146    1.54
+KDB          C6          C7          O7     109.970    1.76
+KDB          C6          C7          H7     108.382    1.50
+KDB          C8          C7          O7     109.862    1.84
+KDB          C8          C7          H7     108.098    1.50
+KDB          O7          C7          H7     108.207    1.50
+KDB          C7          O7         HO7     108.522    3.00
+KDB          C7          C8          O8     110.825    1.74
+KDB          C7          C8          H8     109.580    1.50
+KDB          C7          C8         H8A     109.580    1.50
+KDB          O8          C8          H8     109.469    1.50
+KDB          O8          C8         H8A     109.469    1.50
+KDB          H8          C8         H8A     108.056    1.50
+KDB          C8          O8         HO8     110.424    1.97
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KDB            sp3_sp3_14          C1          C2          O2         HO2      60.000   10.00     3
+KDB            sp3_sp3_38          C8          C7          O7         HO7      60.000   10.00     3
+KDB            sp3_sp3_31          O7          C7          C8          O8      60.000   10.00     3
+KDB            sp3_sp3_40          C7          C8          O8         HO8     180.000   10.00     3
+KDB            sp2_sp3_13         O1B          C1          C2          O2       0.000   10.00     6
+KDB             sp2_sp3_2          C4          C3          C2          O2     120.000   10.00     6
+KDB            sp3_sp3_18          O2          C2          O6          C6     -60.000   10.00     3
+KDB             sp2_sp2_1          C2          C3          C4          C5       0.000   10.00     2
+KDB             sp2_sp3_7          C3          C4          C5          C6       0.000   10.00     6
+KDB             sp3_sp3_2          C4          C5          C6          C7      60.000   10.00     3
+KDB            sp3_sp3_19          C5          C6          C7          C8     180.000   10.00     3
+KDB            sp3_sp3_11          C7          C6          O6          C2     -60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+KDB    chir_1    C2    O6    O2    C1    both
+KDB    chir_2    C6    O6    C7    C5    positive
+KDB    chir_3    C7    O7    C6    C8    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KDB    plan-1          C1   0.020
+KDB    plan-1          C2   0.020
+KDB    plan-1         O1A   0.020
+KDB    plan-1         O1B   0.020
+KDB    plan-2          C2   0.020
+KDB    plan-2          C3   0.020
+KDB    plan-2          C4   0.020
+KDB    plan-2          H3   0.020
+KDB    plan-3          C3   0.020
+KDB    plan-3          C4   0.020
+KDB    plan-3          C5   0.020
+KDB    plan-3          H4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KDB SMILES           ACDLabs              10.04 "O=C(O)C1(O)OC(C(O)CO)CC=C1"
+KDB SMILES_CANONICAL CACTVS               3.341 "OC[C@@H](O)[C@@H]1CC=C[C@@](O)(O1)C(O)=O"
+KDB SMILES           CACTVS               3.341 "OC[CH](O)[CH]1CC=C[C](O)(O1)C(O)=O"
+KDB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1C=C[C@@](O[C@@H]1[C@@H](CO)O)(C(=O)O)O"
+KDB SMILES           "OpenEye OEToolkits" 1.5.0 "C1C=CC(OC1C(CO)O)(C(=O)O)O"
+KDB InChI            InChI                1.03  "InChI=1S/C8H12O6/c9-4-5(10)6-2-1-3-8(13,14-6)7(11)12/h1,3,5-6,9-10,13H,2,4H2,(H,11,12)/t5-,6+,8-/m1/s1"
+KDB InChIKey         InChI                1.03  ITFIFEKDEVIBCW-GKROBHDKSA-N
+KDB ?                acedrg               202         "dictionary generator"                  
+KDB ?                acedrg_database      11          "data source"                           
+KDB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KDB ?                refmac5              5.8.0189    "optimization tool"                     

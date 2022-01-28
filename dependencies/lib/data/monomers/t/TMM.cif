@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TMM     TMM      "1,3,5-BENZENETRICARBOXYLIC ACID"     NON-POLYMER     18     15     .     
+#
+data_comp_TMM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TMM     C1      C       CR6     0       -0.767      1.121       0.328       
+TMM     C2      C       CR16    0       0.623       1.172       0.446       
+TMM     C3      C       CR6     0       1.400       0.058       0.123       
+TMM     C4      C       CR16    0       0.779       -1.111      -0.319      
+TMM     C5      C       CR6     0       -0.611      -1.171      -0.440      
+TMM     C6      C       CR16    0       -1.379      -0.052      -0.114      
+TMM     C1A     C       C       0       -1.598      2.319       0.676       
+TMM     C3A     C       C       0       2.892       0.117       0.250       
+TMM     C5A     C       C       0       -1.274      -2.429      -0.915      
+TMM     O1A     O       O       0       -1.302      3.405       0.146       
+TMM     O2A     O       OC      -1      -2.538      2.160       1.475       
+TMM     O3A     O       O       0       3.486       1.052       -0.316      
+TMM     O4A     O       OC      -1      3.453       -0.773      0.914       
+TMM     O5A     O       O       0       -0.853      -2.948      -1.964      
+TMM     O6A     O       OC      -1      -2.211      -2.883      -0.233      
+TMM     H2      H       H       0       1.041       1.966       0.745       
+TMM     H4      H       H       0       1.303       -1.868      -0.539      
+TMM     H6      H       H       0       -2.321      -0.090      -0.195      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TMM       C1        C2        DOUBLE    y         1.389     0.010     1.389     0.010     
+TMM       C1        C6        SINGLE    y         1.389     0.010     1.389     0.010     
+TMM       C1        C1A       SINGLE    n         1.498     0.020     1.498     0.020     
+TMM       C2        C3        SINGLE    y         1.389     0.010     1.389     0.010     
+TMM       C3        C4        DOUBLE    y         1.389     0.010     1.389     0.010     
+TMM       C3        C3A       SINGLE    n         1.498     0.020     1.498     0.020     
+TMM       C4        C5        SINGLE    y         1.389     0.010     1.389     0.010     
+TMM       C5        C6        DOUBLE    y         1.389     0.010     1.389     0.010     
+TMM       C5        C5A       SINGLE    n         1.498     0.020     1.498     0.020     
+TMM       C1A       O1A       DOUBLE    n         1.244     0.020     1.244     0.020     
+TMM       C1A       O2A       SINGLE    n         1.244     0.020     1.244     0.020     
+TMM       C3A       O3A       DOUBLE    n         1.244     0.020     1.244     0.020     
+TMM       C3A       O4A       SINGLE    n         1.244     0.020     1.244     0.020     
+TMM       C5A       O5A       DOUBLE    n         1.244     0.020     1.244     0.020     
+TMM       C5A       O6A       SINGLE    n         1.244     0.020     1.244     0.020     
+TMM       C2        H2        SINGLE    n         1.082     0.013     0.946     0.020     
+TMM       C4        H4        SINGLE    n         1.082     0.013     0.946     0.020     
+TMM       C6        H6        SINGLE    n         1.082     0.013     0.946     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TMM          C2          C1          C6     119.573    1.50
+TMM          C2          C1         C1A     120.214    1.50
+TMM          C6          C1         C1A     120.214    1.50
+TMM          C1          C2          C3     120.427    1.50
+TMM          C1          C2          H2     119.786    1.50
+TMM          C3          C2          H2     119.786    1.50
+TMM          C2          C3          C4     119.573    1.50
+TMM          C2          C3         C3A     120.214    1.50
+TMM          C4          C3         C3A     120.214    1.50
+TMM          C3          C4          C5     120.427    1.50
+TMM          C3          C4          H4     119.786    1.50
+TMM          C5          C4          H4     119.786    1.50
+TMM          C4          C5          C6     119.573    1.50
+TMM          C4          C5         C5A     120.214    1.50
+TMM          C6          C5         C5A     120.214    1.50
+TMM          C1          C6          C5     120.427    1.50
+TMM          C1          C6          H6     119.786    1.50
+TMM          C5          C6          H6     119.786    1.50
+TMM          C1         C1A         O1A     117.791    1.50
+TMM          C1         C1A         O2A     117.791    1.50
+TMM         O1A         C1A         O2A     124.418    1.50
+TMM          C3         C3A         O3A     117.791    1.50
+TMM          C3         C3A         O4A     117.791    1.50
+TMM         O3A         C3A         O4A     124.418    1.50
+TMM          C5         C5A         O5A     117.791    1.50
+TMM          C5         C5A         O6A     117.791    1.50
+TMM         O5A         C5A         O6A     124.418    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TMM       const_sp2_sp2_3         C1A          C1          C2          C3     180.000   10.00     2
+TMM              const_23         C1A          C1          C6          C5     180.000   10.00     2
+TMM             sp2_sp2_1          C2          C1         C1A         O1A     180.000   10.00     2
+TMM       const_sp2_sp2_6          C1          C2          C3         C3A     180.000   10.00     2
+TMM              const_11         C3A          C3          C4          C5     180.000   10.00     2
+TMM             sp2_sp2_5          C2          C3         C3A         O3A     180.000   10.00     2
+TMM              const_14          C3          C4          C5         C5A     180.000   10.00     2
+TMM              const_19         C5A          C5          C6          C1     180.000   10.00     2
+TMM             sp2_sp2_9          C4          C5         C5A         O5A     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TMM    plan-1          C1   0.020
+TMM    plan-1         C1A   0.020
+TMM    plan-1          C2   0.020
+TMM    plan-1          C3   0.020
+TMM    plan-1         C3A   0.020
+TMM    plan-1          C4   0.020
+TMM    plan-1          C5   0.020
+TMM    plan-1         C5A   0.020
+TMM    plan-1          C6   0.020
+TMM    plan-1          H2   0.020
+TMM    plan-1          H4   0.020
+TMM    plan-1          H6   0.020
+TMM    plan-2          C1   0.020
+TMM    plan-2         C1A   0.020
+TMM    plan-2         O1A   0.020
+TMM    plan-2         O2A   0.020
+TMM    plan-3          C3   0.020
+TMM    plan-3         C3A   0.020
+TMM    plan-3         O3A   0.020
+TMM    plan-3         O4A   0.020
+TMM    plan-4          C5   0.020
+TMM    plan-4         C5A   0.020
+TMM    plan-4         O5A   0.020
+TMM    plan-4         O6A   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TMM SMILES           ACDLabs              10.04 "O=C(O)c1cc(cc(C(=O)O)c1)C(=O)O"
+TMM SMILES_CANONICAL CACTVS               3.341 "OC(=O)c1cc(cc(c1)C(O)=O)C(O)=O"
+TMM SMILES           CACTVS               3.341 "OC(=O)c1cc(cc(c1)C(O)=O)C(O)=O"
+TMM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(cc(cc1C(=O)O)C(=O)O)C(=O)O"
+TMM SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(cc(cc1C(=O)O)C(=O)O)C(=O)O"
+TMM InChI            InChI                1.03  "InChI=1S/C9H6O6/c10-7(11)4-1-5(8(12)13)3-6(2-4)9(14)15/h1-3H,(H,10,11)(H,12,13)(H,14,15)"
+TMM InChIKey         InChI                1.03  QMKYBPDZANOJGF-UHFFFAOYSA-N
+TMM ?                acedrg               202         "dictionary generator"                  
+TMM ?                acedrg_database      11          "data source"                           
+TMM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TMM ?                refmac5              5.8.0189    "optimization tool"                     

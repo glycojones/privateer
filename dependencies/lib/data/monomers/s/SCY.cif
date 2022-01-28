@@ -1,0 +1,187 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SCY     SCY     S-ACETYL-CYSTEINE     peptide     19     10     .
+#
+data_comp_SCY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SCY     N       N       NT3     1       23.645      -10.500     8.831
+SCY     CA      C       CH1     0       24.394      -11.715     8.397
+SCY     CB      C       CH2     0       23.692      -12.969     8.900
+SCY     SG      S       S2      0       23.653      -13.070     10.708
+SCY     CD      C       C       0       22.927      -14.659     10.948
+SCY     OCD     O       O       0       23.574      -15.671     11.065
+SCY     CE      C       CH3     0       21.437      -14.624     10.992
+SCY     C       C       C       0       24.524      -11.749     6.867
+SCY     O       O       O       0       25.499      -12.367     6.395
+SCY     OXT     O       OC      -1      23.646      -11.159     6.205
+SCY     H       H       H       0       23.075      -10.228     8.173
+SCY     H2      H       H       0       24.232      -9.827      9.014
+SCY     H3      H       H       0       23.162      -10.681     9.584
+SCY     HA      H       H       0       25.297      -11.671     8.788
+SCY     HB2     H       H       0       24.157      -13.756     8.544
+SCY     HB3     H       H       0       22.773      -12.976     8.557
+SCY     HE1     H       H       0       21.130      -13.710     11.108
+SCY     HE2     H       H       0       21.124      -15.165     11.736
+SCY     HE3     H       H       0       21.081      -14.981     10.163
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+SCY      N      n/a    CA     START
+SCY      H      N      .      .
+SCY      H2     N      .      .
+SCY      H3     N      .      .
+SCY      CA     N      C      .
+SCY      HA     CA     .      .
+SCY      CB     CA     SG     .
+SCY      HB2    CB     .      .
+SCY      HB3    CB     .      .
+SCY      SG     CB     CD     .
+SCY      CD     SG     CE     .
+SCY      OCD    CD     .      .
+SCY      CE     CD     HE1    .
+SCY      HE3    CE     .      .
+SCY      HE2    CE     .      .
+SCY      HE1    CE     .      .
+SCY      C      CA     .      END
+SCY      O      C      .      .
+SCY      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SCY       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+SCY       CA        CB        SINGLE    n         1.520     0.015     1.520     0.015     
+SCY       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+SCY       CB        SG        SINGLE    n         1.811     0.010     1.811     0.010     
+SCY       SG        CD        SINGLE    n         1.761     0.015     1.761     0.015     
+SCY       CD        OCD       DOUBLE    n         1.207     0.010     1.207     0.010     
+SCY       CD        CE        SINGLE    n         1.487     0.017     1.487     0.017     
+SCY       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+SCY       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SCY       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+SCY       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+SCY       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+SCY       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+SCY       CB        HB2       SINGLE    n         1.089     0.010     0.981     0.017     
+SCY       CB        HB3       SINGLE    n         1.089     0.010     0.981     0.017     
+SCY       CE        HE1       SINGLE    n         1.089     0.010     0.971     0.014     
+SCY       CE        HE2       SINGLE    n         1.089     0.010     0.971     0.014     
+SCY       CE        HE3       SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SCY          CA           N           H     109.671    1.50
+SCY          CA           N          H2     109.671    1.50
+SCY          CA           N          H3     109.671    1.50
+SCY           H           N          H2     109.028    2.41
+SCY           H           N          H3     109.028    2.41
+SCY          H2           N          H3     109.028    2.41
+SCY           N          CA          CB     109.354    1.50
+SCY           N          CA           C     109.494    1.50
+SCY           N          CA          HA     107.983    1.50
+SCY          CB          CA           C     110.419    2.31
+SCY          CB          CA          HA     109.209    1.50
+SCY           C          CA          HA     108.606    1.50
+SCY          CA          CB          SG     112.239    3.00
+SCY          CA          CB         HB2     108.537    1.50
+SCY          CA          CB         HB3     108.537    1.50
+SCY          SG          CB         HB2     108.897    1.50
+SCY          SG          CB         HB3     108.897    1.50
+SCY         HB2          CB         HB3     107.812    1.50
+SCY          CB          SG          CD     101.145    1.50
+SCY          SG          CD         OCD     123.512    1.50
+SCY          SG          CD          CE     112.717    1.50
+SCY         OCD          CD          CE     123.771    1.50
+SCY          CD          CE         HE1     109.460    1.50
+SCY          CD          CE         HE2     109.460    1.50
+SCY          CD          CE         HE3     109.460    1.50
+SCY         HE1          CE         HE2     109.377    1.50
+SCY         HE1          CE         HE3     109.377    1.50
+SCY         HE2          CE         HE3     109.377    1.50
+SCY          CA           C           O     117.134    1.50
+SCY          CA           C         OXT     117.134    1.50
+SCY           O           C         OXT     125.732    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SCY             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+SCY            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+SCY             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+SCY            sp3_sp3_19          CA          CB          SG          CD     180.000   10.00     3
+SCY             sp2_sp3_9          SG          CD          CE         HE1       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SCY    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SCY    plan-1          CD   0.020
+SCY    plan-1          CE   0.020
+SCY    plan-1         OCD   0.020
+SCY    plan-1          SG   0.020
+SCY    plan-2           C   0.020
+SCY    plan-2          CA   0.020
+SCY    plan-2           O   0.020
+SCY    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SCY SMILES           ACDLabs              10.04 "O=C(O)C(N)CSC(=O)C"
+SCY SMILES_CANONICAL CACTVS               3.341 "CC(=O)SC[C@H](N)C(O)=O"
+SCY SMILES           CACTVS               3.341 "CC(=O)SC[CH](N)C(O)=O"
+SCY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)SC[C@@H](C(=O)O)N"
+SCY SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)SCC(C(=O)O)N"
+SCY InChI            InChI                1.03  "InChI=1S/C5H9NO3S/c1-3(7)10-2-4(6)5(8)9/h4H,2,6H2,1H3,(H,8,9)/t4-/m0/s1"
+SCY InChIKey         InChI                1.03  XCIRMLHOFVDUDP-BYPYZUCNSA-N
+SCY ?                acedrg               196         "dictionary generator"
+SCY ?                acedrg_database      11          "data source"
+SCY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SCY ?                refmac5              5.8.0222    "optimization tool"

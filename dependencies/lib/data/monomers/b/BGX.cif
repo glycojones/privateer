@@ -1,0 +1,169 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BGX     BGX      "4-METHYL-PYRROLINE-5-CARBOXYLIC ACID"     NON-POLYMER     17     9     .     
+#
+data_comp_BGX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BGX     C1      C       C       0       -1.466      -4.038      1.036       
+BGX     C2      C       CH1     0       -1.960      -2.693      0.479       
+BGX     C3      C       CH1     0       -2.430      -1.683      1.558       
+BGX     C4      C       CR15    0       -1.543      -0.492      1.319       
+BGX     C5      C       CR15    0       -0.783      -0.676      0.196       
+BGX     C6      C       CH3     0       -3.911      -1.329      1.504       
+BGX     O1      O       O       0       -0.492      -4.014      1.769       
+BGX     N1      N       NR5     0       -0.875      -1.958      -0.164      
+BGX     O2      O       OC      -1      -2.085      -5.033      0.704       
+BGX     HC2     H       H       0       -2.691      -2.847      -0.166      
+BGX     HC3     H       H       0       -2.235      -2.058      2.453       
+BGX     HC4     H       H       0       -1.526      0.268       1.877       
+BGX     HC5     H       H       0       -0.282      -0.012      -0.241      
+BGX     HC61    H       H       0       -4.063      -0.662      0.816       
+BGX     HC62    H       H       0       -4.192      -0.976      2.362       
+BGX     HC63    H       H       0       -4.428      -2.124      1.300       
+BGX     HN1     H       H       0       -0.346      -2.347      -0.733      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BGX       C1        C2        SINGLE    n         1.536     0.010     1.536     0.010     
+BGX       C1        O1        DOUBLE    n         1.218     0.020     1.218     0.020     
+BGX       C1        O2        SINGLE    n         1.218     0.020     1.218     0.020     
+BGX       C2        C3        SINGLE    n         1.544     0.019     1.544     0.019     
+BGX       C2        N1        SINGLE    n         1.459     0.012     1.459     0.012     
+BGX       C3        C4        SINGLE    n         1.504     0.010     1.504     0.010     
+BGX       C3        C6        SINGLE    n         1.520     0.016     1.520     0.016     
+BGX       C4        C5        DOUBLE    n         1.365     0.020     1.365     0.020     
+BGX       C5        N1        SINGLE    n         1.333     0.011     1.333     0.011     
+BGX       C2        HC2       SINGLE    n         1.089     0.010     0.986     0.018     
+BGX       C3        HC3       SINGLE    n         1.089     0.010     0.989     0.018     
+BGX       C4        HC4       SINGLE    n         1.082     0.013     0.943     0.017     
+BGX       C5        HC5       SINGLE    n         1.082     0.013     0.940     0.013     
+BGX       C6        HC61      SINGLE    n         1.089     0.010     0.970     0.017     
+BGX       C6        HC62      SINGLE    n         1.089     0.010     0.970     0.017     
+BGX       C6        HC63      SINGLE    n         1.089     0.010     0.970     0.017     
+BGX       N1        HN1       SINGLE    n         1.016     0.010     0.869     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BGX          C2          C1          O1     117.013    1.95
+BGX          C2          C1          O2     117.013    1.95
+BGX          O1          C1          O2     125.975    1.50
+BGX          C1          C2          C3     112.424    2.46
+BGX          C1          C2          N1     111.417    2.02
+BGX          C1          C2         HC2     110.011    1.50
+BGX          C3          C2          N1     102.354    1.84
+BGX          C3          C2         HC2     109.251    1.50
+BGX          N1          C2         HC2     110.210    1.50
+BGX          C2          C3          C4     104.009    1.83
+BGX          C2          C3          C6     113.745    2.48
+BGX          C2          C3         HC3     108.189    1.50
+BGX          C4          C3          C6     112.425    2.51
+BGX          C4          C3         HC3     109.348    1.69
+BGX          C6          C3         HC3     108.374    1.50
+BGX          C3          C4          C5     110.260    2.22
+BGX          C3          C4         HC4     123.849    1.50
+BGX          C5          C4         HC4     125.891    1.50
+BGX          C4          C5          N1     107.560    1.57
+BGX          C4          C5         HC5     125.956    1.50
+BGX          N1          C5         HC5     126.484    1.50
+BGX          C3          C6        HC61     109.611    1.50
+BGX          C3          C6        HC62     109.611    1.50
+BGX          C3          C6        HC63     109.611    1.50
+BGX        HC61          C6        HC62     109.347    1.50
+BGX        HC61          C6        HC63     109.347    1.50
+BGX        HC62          C6        HC63     109.347    1.50
+BGX          C2          N1          C5     113.741    2.00
+BGX          C2          N1         HN1     121.646    3.00
+BGX          C5          N1         HN1     124.613    1.96
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BGX             sp2_sp3_7          O1          C1          C2          C3       0.000   10.00     6
+BGX             sp3_sp3_5          C1          C2          C3          C6      60.000   10.00     3
+BGX            sp2_sp3_14          C5          N1          C2          C1     120.000   10.00     6
+BGX             sp2_sp3_2          C5          C4          C3          C6     120.000   10.00     6
+BGX            sp3_sp3_10          C2          C3          C6        HC61     180.000   10.00     3
+BGX             sp2_sp2_1          C3          C4          C5          N1       0.000   10.00     2
+BGX             sp2_sp2_5          C4          C5          N1          C2       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+BGX    chir_1    C2    N1    C1    C3    negative
+BGX    chir_2    C3    C2    C4    C6    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BGX    plan-1          C1   0.020
+BGX    plan-1          C2   0.020
+BGX    plan-1          O1   0.020
+BGX    plan-1          O2   0.020
+BGX    plan-2          C3   0.020
+BGX    plan-2          C4   0.020
+BGX    plan-2          C5   0.020
+BGX    plan-2         HC4   0.020
+BGX    plan-3          C4   0.020
+BGX    plan-3          C5   0.020
+BGX    plan-3         HC5   0.020
+BGX    plan-3          N1   0.020
+BGX    plan-4          C2   0.020
+BGX    plan-4          C5   0.020
+BGX    plan-4         HN1   0.020
+BGX    plan-4          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BGX SMILES           ACDLabs              10.04 "O=C(O)C1NC=CC1C"
+BGX SMILES_CANONICAL CACTVS               3.341 "C[C@@H]1C=CN[C@H]1C(O)=O"
+BGX SMILES           CACTVS               3.341 "C[CH]1C=CN[CH]1C(O)=O"
+BGX SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@@H]1C=CN[C@H]1C(=O)O"
+BGX SMILES           "OpenEye OEToolkits" 1.5.0 "CC1C=CNC1C(=O)O"
+BGX InChI            InChI                1.03  "InChI=1S/C6H9NO2/c1-4-2-3-7-5(4)6(8)9/h2-5,7H,1H3,(H,8,9)/t4-,5-/m1/s1"
+BGX InChIKey         InChI                1.03  ZVJPMCWYCLEWPG-RFZPGFLSSA-N
+BGX ?                acedrg               202         "dictionary generator"                  
+BGX ?                acedrg_database      11          "data source"                           
+BGX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BGX ?                refmac5              5.8.0189    "optimization tool"                     

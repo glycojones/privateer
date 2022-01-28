@@ -1,0 +1,129 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SGM     SGM     MONOTHIOGLYCEROL     NON-POLYMER     14     6     .     
+#
+data_comp_SGM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SGM     C1      C       CH2     0       14.635      25.818      76.231      
+SGM     C2      C       CH1     0       14.665      24.311      76.376      
+SGM     O2      O       OH1     0       14.445      23.711      75.104      
+SGM     C3      C       CH2     0       13.642      23.781      77.359      
+SGM     O3      O       OH1     0       12.313      24.076      76.936      
+SGM     S1      S       SH1     0       15.947      26.459      75.158      
+SGM     H11     H       H       0       14.731      26.236      77.113      
+SGM     H12     H       H       0       13.772      26.096      75.855      
+SGM     H2      H       H       0       15.568      24.043      76.688      
+SGM     HO2     H       H       0       14.663      22.893      75.139      
+SGM     H31     H       H       0       13.797      24.187      78.246      
+SGM     H32     H       H       0       13.745      22.803      77.445      
+SGM     HO3     H       H       0       11.776      23.751      77.503      
+SGM     HS1     H       HSH1    0       16.474      25.411      74.889      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SGM       C1        C2        SINGLE    n         1.514     0.010     1.514     0.010     
+SGM       C1        S1        SINGLE    n         1.811     0.010     1.811     0.010     
+SGM       C2        O2        SINGLE    n         1.424     0.020     1.424     0.020     
+SGM       C2        C3        SINGLE    n         1.514     0.010     1.514     0.010     
+SGM       C3        O3        SINGLE    n         1.425     0.010     1.425     0.010     
+SGM       C1        H11       SINGLE    n         1.089     0.010     0.989     0.005     
+SGM       C1        H12       SINGLE    n         1.089     0.010     0.989     0.005     
+SGM       C2        H2        SINGLE    n         1.089     0.010     0.989     0.005     
+SGM       O2        HO2       SINGLE    n         0.970     0.012     0.839     0.014     
+SGM       C3        H31       SINGLE    n         1.089     0.010     0.989     0.005     
+SGM       C3        H32       SINGLE    n         1.089     0.010     0.989     0.005     
+SGM       O3        HO3       SINGLE    n         0.970     0.012     0.839     0.014     
+SGM       S1        HS1       SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SGM          C2          C1          S1     112.239    3.00
+SGM          C2          C1         H11     109.473    1.50
+SGM          C2          C1         H12     109.473    1.50
+SGM          S1          C1         H11     107.876    2.03
+SGM          S1          C1         H12     107.876    2.03
+SGM         H11          C1         H12     107.922    1.50
+SGM          C1          C2          O2     109.489    1.87
+SGM          C1          C2          C3     113.504    1.50
+SGM          C1          C2          H2     108.682    1.50
+SGM          O2          C2          C3     109.314    1.96
+SGM          O2          C2          H2     108.183    1.96
+SGM          C3          C2          H2     108.656    1.50
+SGM          C2          O2         HO2     109.265    3.00
+SGM          C2          C3          O3     111.469    1.50
+SGM          C2          C3         H31     109.582    1.50
+SGM          C2          C3         H32     109.582    1.50
+SGM          O3          C3         H31     109.268    1.50
+SGM          O3          C3         H32     109.268    1.50
+SGM         H31          C3         H32     108.313    1.50
+SGM          C3          O3         HO3     108.280    3.00
+SGM          C1          S1         HS1      97.649    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SGM             sp3_sp3_1          S1          C1          C2          O2     180.000   10.00     3
+SGM            sp3_sp3_10          C2          C1          S1         HS1     180.000   10.00     3
+SGM            sp3_sp3_13          C1          C2          O2         HO2     180.000   10.00     3
+SGM            sp3_sp3_16          C1          C2          C3          O3     180.000   10.00     3
+SGM            sp3_sp3_25          C2          C3          O3         HO3     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SGM    chir_1    C2    O2    C1    C3    negative
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SGM SMILES           ACDLabs              11.02 "OCC(O)CS"
+SGM SMILES_CANONICAL CACTVS               3.352 "OC[C@@H](O)CS"
+SGM SMILES           CACTVS               3.352 "OC[CH](O)CS"
+SGM SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C([C@H](CS)O)O"
+SGM SMILES           "OpenEye OEToolkits" 1.7.0 "C(C(CS)O)O"
+SGM InChI            InChI                1.03  "InChI=1S/C3H8O2S/c4-1-3(5)2-6/h3-6H,1-2H2/t3-/m1/s1"
+SGM InChIKey         InChI                1.03  PJUIMOJAAPLTRJ-GSVOUGTGSA-N
+SGM ?                acedrg               190         "dictionary generator"                  
+SGM ?                acedrg_database      11          "data source"                           
+SGM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SGM ?                refmac5              5.8.0158    "optimization tool"                     

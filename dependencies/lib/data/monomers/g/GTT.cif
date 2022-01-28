@@ -1,0 +1,289 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GTT      GTT 'GLUTATHIONE                         ' non-polymer        36  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GTT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GTT           O32    O    OC       -0.500      0.000    0.000    0.000
+ GTT           C3     C    C         0.000     -1.176    0.387   -0.180
+ GTT           O31    O    OC       -0.500     -1.396    1.460   -0.785
+ GTT           CA3    C    CH2       0.000     -2.327   -0.439    0.333
+ GTT           HA31   H    H         0.000     -2.244   -0.545    1.416
+ GTT           HA32   H    H         0.000     -2.299   -1.428   -0.131
+ GTT           N3     N    NH1       0.000     -3.591    0.224   -0.001
+ GTT           HN3    H    H         0.000     -3.584    1.101   -0.501
+ GTT           C2     C    C         0.000     -4.761   -0.338    0.360
+ GTT           O2     O    O         0.000     -4.769   -1.391    0.962
+ GTT           CA2    C    CH1       0.000     -6.060    0.344    0.017
+ GTT           HA2    H    H         0.000     -6.142    0.450   -1.074
+ GTT           CB2    C    CH2       0.000     -6.098    1.728    0.667
+ GTT           HB21   H    H         0.000     -5.263    2.327    0.297
+ GTT           HB22   H    H         0.000     -6.017    1.623    1.751
+ GTT           SG2    S    SH1       0.000     -7.662    2.549    0.253
+ GTT           HSG    H    H         0.000     -7.413    3.670    0.924
+ GTT           N2     N    NH1       0.000     -7.180   -0.459    0.515
+ GTT           HN2    H    H         0.000     -7.044   -1.086    1.294
+ GTT           CD1    C    C         0.000     -8.391   -0.361   -0.067
+ GTT           OE1    O    O         0.000     -8.556    0.393   -1.003
+ GTT           CG1    C    CH2       0.000     -9.543   -1.187    0.445
+ GTT           HG11   H    H         0.000     -9.731   -0.939    1.492
+ GTT           HG12   H    H         0.000     -9.295   -2.247    0.363
+ GTT           CB1    C    CH2       0.000    -10.794   -0.889   -0.384
+ GTT           HB11   H    H         0.000    -10.604   -1.137   -1.430
+ GTT           HB12   H    H         0.000    -11.040    0.172   -0.301
+ GTT           CA1    C    CH1       0.000    -11.963   -1.727    0.137
+ GTT           HA1    H    H         0.000    -12.095   -1.543    1.212
+ GTT           N1     N    NT3       1.000    -11.681   -3.152   -0.086
+ GTT           HN13   H    H         0.000    -12.471   -3.714    0.266
+ GTT           HN12   H    H         0.000    -11.557   -3.320   -1.096
+ GTT           HN11   H    H         0.000    -10.819   -3.411    0.418
+ GTT           C1     C    C         0.000    -13.222   -1.344   -0.597
+ GTT           O11    O    OC       -0.500    -13.636   -2.054   -1.540
+ GTT           O12    O    OC       -0.500    -13.853   -0.316   -0.265
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GTT      O32    n/a    C3     START
+ GTT      C3     O32    CA3    .
+ GTT      O31    C3     .      .
+ GTT      CA3    C3     N3     .
+ GTT      HA31   CA3    .      .
+ GTT      HA32   CA3    .      .
+ GTT      N3     CA3    C2     .
+ GTT      HN3    N3     .      .
+ GTT      C2     N3     CA2    .
+ GTT      O2     C2     .      .
+ GTT      CA2    C2     N2     .
+ GTT      HA2    CA2    .      .
+ GTT      CB2    CA2    SG2    .
+ GTT      HB21   CB2    .      .
+ GTT      HB22   CB2    .      .
+ GTT      SG2    CB2    HSG    .
+ GTT      HSG    SG2    .      .
+ GTT      N2     CA2    CD1    .
+ GTT      HN2    N2     .      .
+ GTT      CD1    N2     CG1    .
+ GTT      OE1    CD1    .      .
+ GTT      CG1    CD1    CB1    .
+ GTT      HG11   CG1    .      .
+ GTT      HG12   CG1    .      .
+ GTT      CB1    CG1    CA1    .
+ GTT      HB11   CB1    .      .
+ GTT      HB12   CB1    .      .
+ GTT      CA1    CB1    C1     .
+ GTT      HA1    CA1    .      .
+ GTT      N1     CA1    HN11   .
+ GTT      HN13   N1     .      .
+ GTT      HN12   N1     .      .
+ GTT      HN11   N1     .      .
+ GTT      C1     CA1    O12    .
+ GTT      O11    C1     .      .
+ GTT      O12    C1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GTT       N1        CA1       single    1.488     0.020     1.488     0.020     
+GTT       HN11      N1        single    1.036     0.016     0.914     0.007     
+GTT       HN12      N1        single    1.036     0.016     0.914     0.007     
+GTT       HN13      N1        single    1.036     0.016     0.914     0.007     
+GTT       C1        CA1       single    1.500     0.020     1.500     0.020     
+GTT       CA1       CB1       single    1.524     0.020     1.524     0.020     
+GTT       HA1       CA1       single    1.089     0.010     0.989     0.005     
+GTT       O11       C1        deloc     1.250     0.020     1.250     0.020     
+GTT       O12       C1        deloc     1.250     0.020     1.250     0.020     
+GTT       CB1       CG1       single    1.524     0.020     1.524     0.020     
+GTT       HB11      CB1       single    1.089     0.010     0.989     0.005     
+GTT       HB12      CB1       single    1.089     0.010     0.989     0.005     
+GTT       CG1       CD1       single    1.510     0.020     1.510     0.020     
+GTT       HG11      CG1       single    1.089     0.010     0.989     0.005     
+GTT       HG12      CG1       single    1.089     0.010     0.989     0.005     
+GTT       OE1       CD1       double    1.220     0.020     1.220     0.020     
+GTT       CD1       N2        single    1.330     0.020     1.330     0.020     
+GTT       N2        CA2       single    1.450     0.020     1.450     0.020     
+GTT       HN2       N2        single    1.016     0.010     0.899     0.007     
+GTT       CA2       C2        single    1.500     0.020     1.500     0.020     
+GTT       CB2       CA2       single    1.524     0.020     1.524     0.020     
+GTT       HA2       CA2       single    1.089     0.010     0.989     0.005     
+GTT       O2        C2        double    1.220     0.020     1.220     0.020     
+GTT       C2        N3        single    1.330     0.020     1.330     0.020     
+GTT       SG2       CB2       single    1.810     0.020     1.810     0.020     
+GTT       HB21      CB2       single    1.089     0.010     0.989     0.005     
+GTT       HB22      CB2       single    1.089     0.010     0.989     0.005     
+GTT       HSG       SG2       single    1.338     0.010     1.171     0.208     
+GTT       N3        CA3       single    1.450     0.020     1.450     0.020     
+GTT       HN3       N3        single    1.016     0.010     0.899     0.007     
+GTT       CA3       C3        single    1.510     0.020     1.510     0.020     
+GTT       HA31      CA3       single    1.089     0.010     0.989     0.005     
+GTT       HA32      CA3       single    1.089     0.010     0.989     0.005     
+GTT       O31       C3        deloc     1.250     0.020     1.250     0.020     
+GTT       C3        O32       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GTT      O32    C3     O31     123.000    3.000
+ GTT      O32    C3     CA3     118.500    3.000
+ GTT      O31    C3     CA3     118.500    3.000
+ GTT      C3     CA3    HA31    109.470    3.000
+ GTT      C3     CA3    HA32    109.470    3.000
+ GTT      C3     CA3    N3      111.600    3.000
+ GTT      HA31   CA3    HA32    107.900    3.000
+ GTT      HA31   CA3    N3      109.470    3.000
+ GTT      HA32   CA3    N3      109.470    3.000
+ GTT      CA3    N3     HN3     118.500    3.000
+ GTT      CA3    N3     C2      121.500    3.000
+ GTT      HN3    N3     C2      120.000    3.000
+ GTT      N3     C2     O2      123.000    3.000
+ GTT      N3     C2     CA2     116.500    3.000
+ GTT      O2     C2     CA2     120.500    3.000
+ GTT      C2     CA2    HA2     108.810    3.000
+ GTT      C2     CA2    CB2     109.470    3.000
+ GTT      C2     CA2    N2      111.600    3.000
+ GTT      HA2    CA2    CB2     108.340    3.000
+ GTT      HA2    CA2    N2      108.550    3.000
+ GTT      CB2    CA2    N2      110.000    3.000
+ GTT      CA2    CB2    HB21    109.470    3.000
+ GTT      CA2    CB2    HB22    109.470    3.000
+ GTT      CA2    CB2    SG2     112.500    3.000
+ GTT      HB21   CB2    HB22    107.900    3.000
+ GTT      HB21   CB2    SG2     109.470    3.000
+ GTT      HB22   CB2    SG2     109.470    3.000
+ GTT      CB2    SG2    HSG      96.000    3.000
+ GTT      CA2    N2     HN2     118.500    3.000
+ GTT      CA2    N2     CD1     121.500    3.000
+ GTT      HN2    N2     CD1     120.000    3.000
+ GTT      N2     CD1    OE1     123.000    3.000
+ GTT      N2     CD1    CG1     116.500    3.000
+ GTT      OE1    CD1    CG1     120.500    3.000
+ GTT      CD1    CG1    HG11    109.470    3.000
+ GTT      CD1    CG1    HG12    109.470    3.000
+ GTT      CD1    CG1    CB1     109.470    3.000
+ GTT      HG11   CG1    HG12    107.900    3.000
+ GTT      HG11   CG1    CB1     109.470    3.000
+ GTT      HG12   CG1    CB1     109.470    3.000
+ GTT      CG1    CB1    HB11    109.470    3.000
+ GTT      CG1    CB1    HB12    109.470    3.000
+ GTT      CG1    CB1    CA1     111.000    3.000
+ GTT      HB11   CB1    HB12    107.900    3.000
+ GTT      HB11   CB1    CA1     109.470    3.000
+ GTT      HB12   CB1    CA1     109.470    3.000
+ GTT      CB1    CA1    HA1     108.340    3.000
+ GTT      CB1    CA1    N1      110.000    3.000
+ GTT      CB1    CA1    C1      109.470    3.000
+ GTT      HA1    CA1    N1      108.550    3.000
+ GTT      HA1    CA1    C1      108.810    3.000
+ GTT      N1     CA1    C1      111.600    3.000
+ GTT      CA1    N1     HN13    109.470    3.000
+ GTT      CA1    N1     HN12    109.470    3.000
+ GTT      CA1    N1     HN11    109.470    3.000
+ GTT      HN13   N1     HN12    109.470    3.000
+ GTT      HN13   N1     HN11    109.470    3.000
+ GTT      HN12   N1     HN11    109.470    3.000
+ GTT      CA1    C1     O11     118.500    3.000
+ GTT      CA1    C1     O12     118.500    3.000
+ GTT      O11    C1     O12     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GTT      var_1    O32    C3     CA3    N3       179.980   20.000   3
+ GTT      var_2    C3     CA3    N3     C2       179.985   20.000   3
+ GTT      CONST_1  CA3    N3     C2     CA2      180.000    0.000   0
+ GTT      var_3    N3     C2     CA2    N2      -179.988   20.000   3
+ GTT      var_4    C2     CA2    CB2    SG2     -179.977   20.000   3
+ GTT      var_5    CA2    CB2    SG2    HSG     -179.943   20.000   1
+ GTT      var_6    C2     CA2    N2     CD1     -154.981   20.000   3
+ GTT      CONST_2  CA2    N2     CD1    CG1      180.000    0.000   0
+ GTT      var_7    N2     CD1    CG1    CB1     -179.996   20.000   3
+ GTT      var_8    CD1    CG1    CB1    CA1     -179.980   20.000   3
+ GTT      var_9    CG1    CB1    CA1    C1       174.964   20.000   3
+ GTT      var_10   CB1    CA1    N1     HN11      60.028   20.000   1
+ GTT      var_11   CB1    CA1    C1     O12      -79.993   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GTT      chir_01  CA1    N1     C1     CB1       positiv
+ GTT      chir_02  CA2    N2     C2     CB2       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GTT      plan-1    C1        0.020
+ GTT      plan-1    CA1       0.020
+ GTT      plan-1    O11       0.020
+ GTT      plan-1    O12       0.020
+ GTT      plan-2    CD1       0.020
+ GTT      plan-2    CG1       0.020
+ GTT      plan-2    OE1       0.020
+ GTT      plan-2    N2        0.020
+ GTT      plan-2    HN2       0.020
+ GTT      plan-3    N2        0.020
+ GTT      plan-3    CD1       0.020
+ GTT      plan-3    CA2       0.020
+ GTT      plan-3    HN2       0.020
+ GTT      plan-4    C2        0.020
+ GTT      plan-4    CA2       0.020
+ GTT      plan-4    O2        0.020
+ GTT      plan-4    N3        0.020
+ GTT      plan-4    HN3       0.020
+ GTT      plan-5    N3        0.020
+ GTT      plan-5    C2        0.020
+ GTT      plan-5    CA3       0.020
+ GTT      plan-5    HN3       0.020
+ GTT      plan-6    C3        0.020
+ GTT      plan-6    CA3       0.020
+ GTT      plan-6    O31       0.020
+ GTT      plan-6    O32       0.020
+# ------------------------------------------------------

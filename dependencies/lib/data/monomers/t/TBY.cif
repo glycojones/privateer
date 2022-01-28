@@ -1,0 +1,288 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TBY      TBY 'tributylstannanyl                   ' non-polymer        40  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TBY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TBY           C13    C    CH3       0.000      0.000    0.000    0.000
+ TBY           H13    H    H         0.000     -0.105    0.605   -0.865
+ TBY           H13A   H    H         0.000     -0.105    0.605    0.865
+ TBY           H13B   H    H         0.000      0.961   -0.447    0.000
+ TBY           C12    C    CH2       0.000     -1.075   -1.089    0.000
+ TBY           H12    H    H         0.000     -0.962   -1.710    0.891
+ TBY           H12A   H    H         0.000     -0.962   -1.710   -0.891
+ TBY           C11    C    CH2       0.000     -2.460   -0.439    0.000
+ TBY           H11    H    H         0.000     -2.569    0.182   -0.891
+ TBY           H11A   H    H         0.000     -2.569    0.182    0.891
+ TBY           C10    C    CH2       0.000     -3.534   -1.528    0.000
+ TBY           H10    H    H         0.000     -3.422   -2.149    0.891
+ TBY           H10A   H    H         0.000     -3.422   -2.149   -0.891
+ TBY           SN1    SN   SN        0.000     -5.481   -0.616    0.000
+ TBY           C6     C    CH2       0.000     -5.663    1.527    0.000
+ TBY           H6     H    H         0.000     -5.180    1.932   -0.891
+ TBY           H6A    H    H         0.000     -5.180    1.932    0.891
+ TBY           C7     C    CH2       0.000     -7.144    1.912    0.000
+ TBY           H7     H    H         0.000     -7.625    1.505    0.891
+ TBY           H7A    H    H         0.000     -7.625    1.505   -0.891
+ TBY           C8     C    CH2       0.000     -7.273    3.437    0.000
+ TBY           H8     H    H         0.000     -6.790    3.843   -0.891
+ TBY           H8A    H    H         0.000     -6.790    3.843    0.891
+ TBY           C9     C    CH3       0.000     -8.754    3.823    0.000
+ TBY           H9B    H    H         0.000     -9.225    3.430   -0.865
+ TBY           H9A    H    H         0.000     -9.225    3.430    0.865
+ TBY           H9     H    H         0.000     -8.848    4.879    0.000
+ TBY           C2     C    CH2       0.000     -7.245   -1.845    0.000
+ TBY           H2     H    H         0.000     -7.248   -2.476    0.891
+ TBY           H2A    H    H         0.000     -7.248   -2.476   -0.891
+ TBY           C3     C    CH2       0.000     -8.487   -0.953    0.000
+ TBY           H3     H    H         0.000     -8.482   -0.322   -0.891
+ TBY           H3A    H    H         0.000     -8.482   -0.322    0.891
+ TBY           C4     C    CH2       0.000     -9.743   -1.827    0.000
+ TBY           H4     H    H         0.000     -9.747   -2.458    0.891
+ TBY           H4A    H    H         0.000     -9.747   -2.458   -0.891
+ TBY           C5     C    CH3       0.000    -10.986   -0.935    0.000
+ TBY           H5B    H    H         0.000    -10.984   -0.320   -0.864
+ TBY           H5A    H    H         0.000    -11.858   -1.537   -0.001
+ TBY           H5     H    H         0.000    -10.985   -0.322    0.865
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TBY      C13    n/a    C12    START
+ TBY      H13    C13    .      .
+ TBY      H13A   C13    .      .
+ TBY      H13B   C13    .      .
+ TBY      C12    C13    C11    .
+ TBY      H12    C12    .      .
+ TBY      H12A   C12    .      .
+ TBY      C11    C12    C10    .
+ TBY      H11    C11    .      .
+ TBY      H11A   C11    .      .
+ TBY      C10    C11    SN1    .
+ TBY      H10    C10    .      .
+ TBY      H10A   C10    .      .
+ TBY      SN1    C10    C2     .
+ TBY      C6     SN1    C7     .
+ TBY      H6     C6     .      .
+ TBY      H6A    C6     .      .
+ TBY      C7     C6     C8     .
+ TBY      H7     C7     .      .
+ TBY      H7A    C7     .      .
+ TBY      C8     C7     C9     .
+ TBY      H8     C8     .      .
+ TBY      H8A    C8     .      .
+ TBY      C9     C8     H9     .
+ TBY      H9B    C9     .      .
+ TBY      H9A    C9     .      .
+ TBY      H9     C9     .      .
+ TBY      C2     SN1    C3     .
+ TBY      H2     C2     .      .
+ TBY      H2A    C2     .      .
+ TBY      C3     C2     C4     .
+ TBY      H3     C3     .      .
+ TBY      H3A    C3     .      .
+ TBY      C4     C3     C5     .
+ TBY      H4     C4     .      .
+ TBY      H4A    C4     .      .
+ TBY      C5     C4     H5     .
+ TBY      H5B    C5     .      .
+ TBY      H5A    C5     .      .
+ TBY      H5     C5     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TBY       C10       C11       single    1.524     0.020     1.524     0.020     
+TBY       C11       C12       single    1.524     0.020     1.524     0.020     
+TBY       SN1       C10       single    2.137     0.020     2.137     0.020     
+TBY       C2        SN1       single    2.137     0.020     2.137     0.020     
+TBY       C6        SN1       single    2.137     0.020     2.137     0.020     
+TBY       C3        C2        single    1.524     0.020     1.524     0.020     
+TBY       C4        C3        single    1.524     0.020     1.524     0.020     
+TBY       C5        C4        single    1.513     0.020     1.513     0.020     
+TBY       C7        C6        single    1.524     0.020     1.524     0.020     
+TBY       C8        C7        single    1.524     0.020     1.524     0.020     
+TBY       C9        C8        single    1.513     0.020     1.513     0.020     
+TBY       C12       C13       single    1.513     0.020     1.513     0.020     
+TBY       H11       C11       single    1.089     0.010     0.989     0.005     
+TBY       H11A      C11       single    1.089     0.010     0.989     0.005     
+TBY       H10       C10       single    1.089     0.010     0.989     0.005     
+TBY       H10A      C10       single    1.089     0.010     0.989     0.005     
+TBY       H2        C2        single    1.089     0.010     0.989     0.005     
+TBY       H2A       C2        single    1.089     0.010     0.989     0.005     
+TBY       H3        C3        single    1.089     0.010     0.989     0.005     
+TBY       H3A       C3        single    1.089     0.010     0.989     0.005     
+TBY       H4        C4        single    1.089     0.010     0.989     0.005     
+TBY       H4A       C4        single    1.089     0.010     0.989     0.005     
+TBY       H5        C5        single    1.089     0.010     0.989     0.005     
+TBY       H5A       C5        single    1.089     0.010     0.989     0.005     
+TBY       H5B       C5        single    1.089     0.010     0.989     0.005     
+TBY       H6        C6        single    1.089     0.010     0.989     0.005     
+TBY       H6A       C6        single    1.089     0.010     0.989     0.005     
+TBY       H7        C7        single    1.089     0.010     0.989     0.005     
+TBY       H7A       C7        single    1.089     0.010     0.989     0.005     
+TBY       H8        C8        single    1.089     0.010     0.989     0.005     
+TBY       H8A       C8        single    1.089     0.010     0.989     0.005     
+TBY       H9        C9        single    1.089     0.010     0.989     0.005     
+TBY       H9A       C9        single    1.089     0.010     0.989     0.005     
+TBY       H9B       C9        single    1.089     0.010     0.989     0.005     
+TBY       H12       C12       single    1.089     0.010     0.989     0.005     
+TBY       H12A      C12       single    1.089     0.010     0.989     0.005     
+TBY       H13       C13       single    1.089     0.010     0.989     0.005     
+TBY       H13A      C13       single    1.089     0.010     0.989     0.005     
+TBY       H13B      C13       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TBY      H13    C13    H13A    109.470    3.000
+ TBY      H13    C13    H13B    109.470    3.000
+ TBY      H13A   C13    H13B    109.470    3.000
+ TBY      H13    C13    C12     109.470    3.000
+ TBY      H13A   C13    C12     109.470    3.000
+ TBY      H13B   C13    C12     109.470    3.000
+ TBY      C13    C12    H12     109.470    3.000
+ TBY      C13    C12    H12A    109.470    3.000
+ TBY      C13    C12    C11     111.000    3.000
+ TBY      H12    C12    H12A    107.900    3.000
+ TBY      H12    C12    C11     109.470    3.000
+ TBY      H12A   C12    C11     109.470    3.000
+ TBY      C12    C11    H11     109.470    3.000
+ TBY      C12    C11    H11A    109.470    3.000
+ TBY      C12    C11    C10     111.000    3.000
+ TBY      H11    C11    H11A    107.900    3.000
+ TBY      H11    C11    C10     109.470    3.000
+ TBY      H11A   C11    C10     109.470    3.000
+ TBY      C11    C10    H10     109.470    3.000
+ TBY      C11    C10    H10A    109.470    3.000
+ TBY      C11    C10    SN1     109.500    3.000
+ TBY      H10    C10    H10A    107.900    3.000
+ TBY      H10    C10    SN1     109.500    3.000
+ TBY      H10A   C10    SN1     109.500    3.000
+ TBY      C10    SN1    C6      120.000    3.000
+ TBY      C10    SN1    C2      120.000    3.000
+ TBY      C6     SN1    C2      120.000    3.000
+ TBY      SN1    C6     H6      109.500    3.000
+ TBY      SN1    C6     H6A     109.500    3.000
+ TBY      SN1    C6     C7      109.500    3.000
+ TBY      H6     C6     H6A     107.900    3.000
+ TBY      H6     C6     C7      109.470    3.000
+ TBY      H6A    C6     C7      109.470    3.000
+ TBY      C6     C7     H7      109.470    3.000
+ TBY      C6     C7     H7A     109.470    3.000
+ TBY      C6     C7     C8      111.000    3.000
+ TBY      H7     C7     H7A     107.900    3.000
+ TBY      H7     C7     C8      109.470    3.000
+ TBY      H7A    C7     C8      109.470    3.000
+ TBY      C7     C8     H8      109.470    3.000
+ TBY      C7     C8     H8A     109.470    3.000
+ TBY      C7     C8     C9      111.000    3.000
+ TBY      H8     C8     H8A     107.900    3.000
+ TBY      H8     C8     C9      109.470    3.000
+ TBY      H8A    C8     C9      109.470    3.000
+ TBY      C8     C9     H9B     109.470    3.000
+ TBY      C8     C9     H9A     109.470    3.000
+ TBY      C8     C9     H9      109.470    3.000
+ TBY      H9B    C9     H9A     109.470    3.000
+ TBY      H9B    C9     H9      109.470    3.000
+ TBY      H9A    C9     H9      109.470    3.000
+ TBY      SN1    C2     H2      109.500    3.000
+ TBY      SN1    C2     H2A     109.500    3.000
+ TBY      SN1    C2     C3      109.500    3.000
+ TBY      H2     C2     H2A     107.900    3.000
+ TBY      H2     C2     C3      109.470    3.000
+ TBY      H2A    C2     C3      109.470    3.000
+ TBY      C2     C3     H3      109.470    3.000
+ TBY      C2     C3     H3A     109.470    3.000
+ TBY      C2     C3     C4      111.000    3.000
+ TBY      H3     C3     H3A     107.900    3.000
+ TBY      H3     C3     C4      109.470    3.000
+ TBY      H3A    C3     C4      109.470    3.000
+ TBY      C3     C4     H4      109.470    3.000
+ TBY      C3     C4     H4A     109.470    3.000
+ TBY      C3     C4     C5      111.000    3.000
+ TBY      H4     C4     H4A     107.900    3.000
+ TBY      H4     C4     C5      109.470    3.000
+ TBY      H4A    C4     C5      109.470    3.000
+ TBY      C4     C5     H5B     109.470    3.000
+ TBY      C4     C5     H5A     109.470    3.000
+ TBY      C4     C5     H5      109.470    3.000
+ TBY      H5B    C5     H5A     109.470    3.000
+ TBY      H5B    C5     H5      109.470    3.000
+ TBY      H5A    C5     H5      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TBY      var_1    H13B   C13    C12    C11      180.000   20.000   3
+ TBY      var_2    C13    C12    C11    C10      180.000   20.000   3
+ TBY      var_3    C12    C11    C10    SN1      180.000   20.000   3
+ TBY      var_4    C11    C10    SN1    C6         0.000   20.000   1
+ TBY      var_5    H6     C6     SN1    C10        0.000   20.000   1
+ TBY      var_6    SN1    C6     C7     C8       180.000   20.000   3
+ TBY      var_7    C6     C7     C8     C9       180.000   20.000   3
+ TBY      var_8    C7     C8     C9     H9       180.000   20.000   3
+ TBY      var_9    H2     C2     SN1    C10        0.000   20.000   1
+ TBY      var_10   SN1    C2     C3     C4       180.000   20.000   3
+ TBY      var_11   C2     C3     C4     C5       180.000   20.000   3
+ TBY      var_12   C3     C4     C5     H5       -60.045   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ TBY      chir_01  SN1    .      .      C10       cross3
+                   C6     C2     .      .      .
+# ------------------------------------------------------

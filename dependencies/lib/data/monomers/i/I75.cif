@@ -1,0 +1,177 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+I75     I75      "1-(4-hydroxy-3-methoxyphenyl)ethanone"     NON-POLYMER     22     12     .     
+#
+data_comp_I75
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+I75     CAA     C       CH3     0       46.981      0.150       49.164      
+I75     CAB     C       CH3     0       51.987      -1.043      48.167      
+I75     OAC     O       O       0       53.503      0.176       49.479      
+I75     OAD     O       OH1     0       48.264      2.756       52.055      
+I75     CAE     C       CR16    0       50.548      2.299       51.659      
+I75     CAF     C       CR16    0       51.545      1.617       50.969      
+I75     CAG     C       CR16    0       49.870      0.473       49.675      
+I75     OAH     O       O2      0       47.508      1.021       50.166      
+I75     CAI     C       C       0       52.323      -0.038      49.228      
+I75     CAJ     C       CR6     0       49.216      2.071       51.360      
+I75     CAK     C       CR6     0       51.236      0.695       49.970      
+I75     CAL     C       CR6     0       48.865      1.147       50.355      
+I75     HAA     H       H       0       47.252      -0.763      49.354      
+I75     HAAA    H       H       0       47.321      0.415       48.294      
+I75     HAAB    H       H       0       46.012      0.207       49.164      
+I75     HAB     H       H       0       52.802      -1.430      47.808      
+I75     HABA    H       H       0       51.496      -0.609      47.452      
+I75     HABB    H       H       0       51.440      -1.748      48.549      
+I75     HOAD    H       H       0       47.830      3.274       51.526      
+I75     HAE     H       H       0       50.777      2.917       52.330      
+I75     HAF     H       H       0       52.442      1.788       51.189      
+I75     HAG     H       H       0       49.637      -0.141      49.008      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+I75       CAA       OAH       SINGLE    n         1.424     0.012     1.424     0.012     
+I75       CAB       CAI       SINGLE    n         1.496     0.010     1.496     0.010     
+I75       OAC       CAI       DOUBLE    n         1.222     0.013     1.222     0.013     
+I75       OAD       CAJ       SINGLE    n         1.361     0.010     1.361     0.010     
+I75       CAE       CAF       DOUBLE    y         1.386     0.010     1.386     0.010     
+I75       CAE       CAJ       SINGLE    y         1.379     0.010     1.379     0.010     
+I75       CAF       CAK       SINGLE    y         1.384     0.010     1.384     0.010     
+I75       CAG       CAK       DOUBLE    y         1.403     0.010     1.403     0.010     
+I75       CAG       CAL       SINGLE    y         1.374     0.010     1.374     0.010     
+I75       OAH       CAL       SINGLE    n         1.367     0.010     1.367     0.010     
+I75       CAI       CAK       SINGLE    n         1.492     0.011     1.492     0.011     
+I75       CAJ       CAL       DOUBLE    y         1.397     0.011     1.397     0.011     
+I75       CAA       HAA       SINGLE    n         1.089     0.010     0.971     0.016     
+I75       CAA       HAAA      SINGLE    n         1.089     0.010     0.971     0.016     
+I75       CAA       HAAB      SINGLE    n         1.089     0.010     0.971     0.016     
+I75       CAB       HAB       SINGLE    n         1.089     0.010     0.970     0.020     
+I75       CAB       HABA      SINGLE    n         1.089     0.010     0.970     0.020     
+I75       CAB       HABB      SINGLE    n         1.089     0.010     0.970     0.020     
+I75       OAD       HOAD      SINGLE    n         0.970     0.012     0.858     0.020     
+I75       CAE       HAE       SINGLE    n         1.082     0.013     0.940     0.020     
+I75       CAF       HAF       SINGLE    n         1.082     0.013     0.941     0.017     
+I75       CAG       HAG       SINGLE    n         1.082     0.013     0.941     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+I75         OAH         CAA         HAA     109.428    1.50
+I75         OAH         CAA        HAAA     109.428    1.50
+I75         OAH         CAA        HAAB     109.428    1.50
+I75         HAA         CAA        HAAA     109.509    1.50
+I75         HAA         CAA        HAAB     109.509    1.50
+I75        HAAA         CAA        HAAB     109.509    1.50
+I75         CAI         CAB         HAB     109.610    1.50
+I75         CAI         CAB        HABA     109.610    1.50
+I75         CAI         CAB        HABB     109.610    1.50
+I75         HAB         CAB        HABA     109.315    1.55
+I75         HAB         CAB        HABB     109.315    1.55
+I75        HABA         CAB        HABB     109.315    1.55
+I75         CAJ         OAD        HOAD     110.003    2.63
+I75         CAF         CAE         CAJ     119.716    1.50
+I75         CAF         CAE         HAE     120.320    1.50
+I75         CAJ         CAE         HAE     119.964    1.50
+I75         CAE         CAF         CAK     121.373    1.50
+I75         CAE         CAF         HAF     119.137    1.50
+I75         CAK         CAF         HAF     119.490    1.50
+I75         CAK         CAG         CAL     120.576    1.50
+I75         CAK         CAG         HAG     119.760    1.50
+I75         CAL         CAG         HAG     119.664    1.50
+I75         CAA         OAH         CAL     117.276    1.50
+I75         CAB         CAI         OAC     120.252    1.50
+I75         CAB         CAI         CAK     119.347    1.50
+I75         OAC         CAI         CAK     120.401    1.50
+I75         OAD         CAJ         CAE     120.760    2.46
+I75         OAD         CAJ         CAL     119.593    2.21
+I75         CAE         CAJ         CAL     119.647    1.50
+I75         CAF         CAK         CAG     119.175    1.50
+I75         CAF         CAK         CAI     121.114    1.70
+I75         CAG         CAK         CAI     119.711    1.50
+I75         CAG         CAL         OAH     125.416    1.50
+I75         CAG         CAL         CAJ     119.513    1.50
+I75         OAH         CAL         CAJ     115.071    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+I75             sp3_sp3_2         HAA         CAA         OAH         CAL     -60.000   10.00     3
+I75             sp2_sp3_1         OAC         CAI         CAB         HAB       0.000   10.00     6
+I75       const_sp2_sp2_1         CAJ         CAE         CAF         CAK       0.000   10.00     2
+I75              const_22         CAF         CAE         CAJ         OAD     180.000   10.00     2
+I75       const_sp2_sp2_6         CAE         CAF         CAK         CAI     180.000   10.00     2
+I75              const_10         CAL         CAG         CAK         CAI     180.000   10.00     2
+I75              const_14         CAK         CAG         CAL         OAH     180.000   10.00     2
+I75             sp2_sp2_1         CAG         CAL         OAH         CAA     180.000   10.00     2
+I75             sp2_sp2_3         CAB         CAI         CAK         CAF     180.000   10.00     2
+I75              const_20         OAD         CAJ         CAL         OAH       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+I75    plan-1         CAE   0.020
+I75    plan-1         CAF   0.020
+I75    plan-1         CAG   0.020
+I75    plan-1         CAI   0.020
+I75    plan-1         CAJ   0.020
+I75    plan-1         CAK   0.020
+I75    plan-1         CAL   0.020
+I75    plan-1         HAE   0.020
+I75    plan-1         HAF   0.020
+I75    plan-1         HAG   0.020
+I75    plan-1         OAD   0.020
+I75    plan-1         OAH   0.020
+I75    plan-2         CAB   0.020
+I75    plan-2         CAI   0.020
+I75    plan-2         CAK   0.020
+I75    plan-2         OAC   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+I75 SMILES           ACDLabs              12.01 "O=C(c1cc(OC)c(O)cc1)C"
+I75 InChI            InChI                1.03  "InChI=1S/C9H10O3/c1-6(10)7-3-4-8(11)9(5-7)12-2/h3-5,11H,1-2H3"
+I75 InChIKey         InChI                1.03  DFYRUELUNQRZTB-UHFFFAOYSA-N
+I75 SMILES_CANONICAL CACTVS               3.370 "COc1cc(ccc1O)C(C)=O"
+I75 SMILES           CACTVS               3.370 "COc1cc(ccc1O)C(C)=O"
+I75 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "CC(=O)c1ccc(c(c1)OC)O"
+I75 SMILES           "OpenEye OEToolkits" 1.7.2 "CC(=O)c1ccc(c(c1)OC)O"
+I75 ?                acedrg               202         "dictionary generator"                  
+I75 ?                acedrg_database      11          "data source"                           
+I75 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+I75 ?                refmac5              5.8.0189    "optimization tool"                     

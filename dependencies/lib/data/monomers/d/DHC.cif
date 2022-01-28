@@ -1,0 +1,174 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DHC     DHC      "CAFFEIC ACID"     NON-POLYMER     20     13     .     
+#
+data_comp_DHC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DHC     C1      C       C       0       4.184       -0.295      0.257       
+DHC     O1      O       O       0       4.970       -1.134      -0.178      
+DHC     C2      C       C1      0       2.731       -0.450      -0.106      
+DHC     C3      C       C1      0       1.759       0.386       0.248       
+DHC     "C1'"   C       CR6     0       0.319       0.177       0.115       
+DHC     "C2'"   C       CR16    0       -0.523      1.247       -0.242      
+DHC     "C3'"   C       CR6     0       -1.902      1.073       -0.376      
+DHC     "C4'"   C       CR6     0       -2.459      -0.198      -0.150      
+DHC     "C5'"   C       CR16    0       -1.640      -1.260      0.201       
+DHC     "C6'"   C       CR16    0       -0.266      -1.070      0.332       
+DHC     "O4'"   O       OH1     0       -3.803      -0.378      -0.279      
+DHC     "O3'"   O       OH1     0       -2.714      2.117       -0.722      
+DHC     O2      O       OC      -1      4.526       0.652       0.970       
+DHC     HC2     H       H       0       2.498       -1.200      -0.623      
+DHC     HC3     H       H       0       2.022       1.215       0.615       
+DHC     "H2'"   H       H       0       -0.149      2.097       -0.393      
+DHC     "H5'"   H       H       0       -2.015      -2.109      0.352       
+DHC     "H6'"   H       H       0       0.278       -1.800      0.571       
+DHC     "H4'"   H       H       0       -3.966      -0.918      -0.925      
+DHC     "H3'"   H       H       0       -3.035      1.992       -1.508      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DHC       C1        O1        DOUBLE    n         1.230     0.020     1.230     0.020     
+DHC       C1        C2        SINGLE    n         1.492     0.020     1.492     0.020     
+DHC       C1        O2        SINGLE    n         1.230     0.020     1.230     0.020     
+DHC       C2        C3        DOUBLE    n         1.318     0.020     1.318     0.020     
+DHC       C3        "C1'"     SINGLE    n         1.461     0.010     1.461     0.010     
+DHC       "C1'"     "C2'"     DOUBLE    y         1.402     0.010     1.402     0.010     
+DHC       "C1'"     "C6'"     SINGLE    y         1.388     0.010     1.388     0.010     
+DHC       "C2'"     "C3'"     SINGLE    y         1.381     0.015     1.381     0.015     
+DHC       "C3'"     "C4'"     DOUBLE    y         1.396     0.010     1.396     0.010     
+DHC       "C3'"     "O3'"     SINGLE    n         1.367     0.010     1.367     0.010     
+DHC       "C4'"     "C5'"     SINGLE    y         1.379     0.010     1.379     0.010     
+DHC       "C4'"     "O4'"     SINGLE    n         1.361     0.010     1.361     0.010     
+DHC       "C5'"     "C6'"     DOUBLE    y         1.386     0.010     1.386     0.010     
+DHC       C2        HC2       SINGLE    n         1.082     0.013     0.940     0.018     
+DHC       C3        HC3       SINGLE    n         1.082     0.013     0.945     0.020     
+DHC       "C2'"     "H2'"     SINGLE    n         1.082     0.013     0.941     0.017     
+DHC       "C5'"     "H5'"     SINGLE    n         1.082     0.013     0.940     0.020     
+DHC       "C6'"     "H6'"     SINGLE    n         1.082     0.013     0.941     0.017     
+DHC       "O4'"     "H4'"     SINGLE    n         0.970     0.012     0.858     0.020     
+DHC       "O3'"     "H3'"     SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DHC          O1          C1          C2     118.013    1.50
+DHC          O1          C1          O2     123.974    1.50
+DHC          C2          C1          O2     118.013    1.50
+DHC          C1          C2          C3     123.568    1.67
+DHC          C1          C2         HC2     117.792    1.50
+DHC          C3          C2         HC2     118.640    1.50
+DHC          C2          C3       "C1'"     127.349    1.50
+DHC          C2          C3         HC3     116.403    1.50
+DHC       "C1'"          C3         HC3     116.250    1.50
+DHC          C3       "C1'"       "C2'"     120.390    1.93
+DHC          C3       "C1'"       "C6'"     121.120    2.00
+DHC       "C2'"       "C1'"       "C6'"     118.484    1.50
+DHC       "C1'"       "C2'"       "C3'"     121.381    1.50
+DHC       "C1'"       "C2'"       "H2'"     119.326    1.50
+DHC       "C3'"       "C2'"       "H2'"     119.293    1.50
+DHC       "C2'"       "C3'"       "C4'"     119.213    1.50
+DHC       "C2'"       "C3'"       "O3'"     122.056    2.52
+DHC       "C4'"       "C3'"       "O3'"     118.730    2.41
+DHC       "C3'"       "C4'"       "C5'"     119.647    1.50
+DHC       "C3'"       "C4'"       "O4'"     118.875    2.41
+DHC       "C5'"       "C4'"       "O4'"     121.477    2.46
+DHC       "C4'"       "C5'"       "C6'"     119.684    1.50
+DHC       "C4'"       "C5'"       "H5'"     119.980    1.50
+DHC       "C6'"       "C5'"       "H5'"     120.336    1.50
+DHC       "C1'"       "C6'"       "C5'"     121.590    1.50
+DHC       "C1'"       "C6'"       "H6'"     119.240    1.50
+DHC       "C5'"       "C6'"       "H6'"     119.170    1.50
+DHC       "C4'"       "O4'"       "H4'"     110.003    2.63
+DHC       "C3'"       "O3'"       "H3'"     110.003    2.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DHC             sp2_sp2_1          O1          C1          C2          C3     180.000   10.00     2
+DHC             sp2_sp2_5          C1          C2          C3       "C1'"     180.000   10.00     2
+DHC             sp2_sp2_9       "C2'"       "C1'"          C3          C2     180.000   10.00     2
+DHC       const_sp2_sp2_3          C3       "C1'"       "C2'"       "C3'"     180.000   10.00     2
+DHC              const_23          C3       "C1'"       "C6'"       "C5'"     180.000   10.00     2
+DHC       const_sp2_sp2_6       "C1'"       "C2'"       "C3'"       "O3'"     180.000   10.00     2
+DHC              const_12       "O3'"       "C3'"       "C4'"       "O4'"       0.000   10.00     2
+DHC              const_15       "O4'"       "C4'"       "C5'"       "C6'"     180.000   10.00     2
+DHC              const_17       "C4'"       "C5'"       "C6'"       "C1'"       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DHC    plan-1       "C1'"   0.020
+DHC    plan-1       "C2'"   0.020
+DHC    plan-1          C3   0.020
+DHC    plan-1       "C3'"   0.020
+DHC    plan-1       "C4'"   0.020
+DHC    plan-1       "C5'"   0.020
+DHC    plan-1       "C6'"   0.020
+DHC    plan-1       "H2'"   0.020
+DHC    plan-1       "H5'"   0.020
+DHC    plan-1       "H6'"   0.020
+DHC    plan-1       "O3'"   0.020
+DHC    plan-1       "O4'"   0.020
+DHC    plan-2          C1   0.020
+DHC    plan-2          C2   0.020
+DHC    plan-2          O1   0.020
+DHC    plan-2          O2   0.020
+DHC    plan-3          C1   0.020
+DHC    plan-3          C2   0.020
+DHC    plan-3          C3   0.020
+DHC    plan-3         HC2   0.020
+DHC    plan-4       "C1'"   0.020
+DHC    plan-4          C2   0.020
+DHC    plan-4          C3   0.020
+DHC    plan-4         HC3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DHC SMILES           ACDLabs              10.04 "O=C(O)\C=C\c1cc(O)c(O)cc1"
+DHC SMILES_CANONICAL CACTVS               3.341 "OC(=O)\C=C\c1ccc(O)c(O)c1"
+DHC SMILES           CACTVS               3.341 "OC(=O)C=Cc1ccc(O)c(O)c1"
+DHC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1\C=C\C(=O)O)O)O"
+DHC SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1C=CC(=O)O)O)O"
+DHC InChI            InChI                1.03  "InChI=1S/C9H8O4/c10-7-3-1-6(5-8(7)11)2-4-9(12)13/h1-5,10-11H,(H,12,13)/b4-2+"
+DHC InChIKey         InChI                1.03  QAIPRVGONGVQAS-DUXPYHPUSA-N
+DHC ?                acedrg               202         "dictionary generator"                  
+DHC ?                acedrg_database      11          "data source"                           
+DHC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DHC ?                refmac5              5.8.0189    "optimization tool"                     

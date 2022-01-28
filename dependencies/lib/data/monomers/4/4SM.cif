@@ -1,0 +1,86 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4SM      4SM 'TETRATHIOMOLYBDATE                  ' non-polymer         5   5 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_4SM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 4SM           S4     S    S1        0.000      0.000    0.000    0.000
+ 4SM           MO1    MO   MO        0.000     -2.112    0.000   -0.838
+ 4SM           S1     S    S1       -1.000     -3.211   -1.855   -0.121
+ 4SM           S2     S    S1       -1.000     -2.026    0.000   -3.108
+ 4SM           S3     S    S1        0.000     -3.211    1.855   -0.121
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 4SM      S4     n/a    MO1    START
+ 4SM      MO1    S4     S3     .
+ 4SM      S1     MO1    .      .
+ 4SM      S2     MO1    .      .
+ 4SM      S3     MO1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4SM       S1        MO1       single    2.225     0.020     2.225     0.020     
+4SM       S3        MO1       double    2.225     0.020     2.225     0.020     
+4SM       MO1       S4        double    2.225     0.020     2.225     0.020     
+4SM       S2        MO1       single    2.225     0.020     2.225     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 4SM      S4     MO1    S1       90.000    3.000
+ 4SM      S4     MO1    S2       90.000    3.000
+ 4SM      S4     MO1    S3       90.000    3.000
+ 4SM      S1     MO1    S2       90.000    3.000
+ 4SM      S1     MO1    S3       90.000    3.000
+ 4SM      S2     MO1    S3       90.000    3.000
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 4SM      chir_01  MO1    S4     S1     S2        both
+# ------------------------------------------------------

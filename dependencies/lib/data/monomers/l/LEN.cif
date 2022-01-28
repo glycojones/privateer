@@ -1,0 +1,179 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LEN      LEN '3-METHYLBUTAN-1-AMINE               ' non-polymer        19   6 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LEN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LEN           N      N    NH2       0.000      0.000    0.000    0.000
+ LEN           HN1    H    H         0.000      0.089   -0.814   -0.597
+ LEN           HN2    H    H         0.000      0.834    0.502    0.283
+ LEN           CA     C    CH2       0.000     -1.325    0.449    0.451
+ LEN           HA1    H    H         0.000     -1.501    1.468    0.102
+ LEN           HA2    H    H         0.000     -1.363    0.427    1.542
+ LEN           CB     C    CH2       0.000     -2.399   -0.479   -0.117
+ LEN           HB1    H    H         0.000     -2.220   -1.498    0.232
+ LEN           HB2    H    H         0.000     -2.359   -0.457   -1.208
+ LEN           CG     C    CH1       0.000     -3.778   -0.012    0.354
+ LEN           HG     H    H         0.000     -3.789    0.051    1.451
+ LEN           CD1    C    CH3       0.000     -4.841   -1.009   -0.111
+ LEN           HD13   H    H         0.000     -4.635   -1.964    0.299
+ LEN           HD12   H    H         0.000     -5.796   -0.686    0.214
+ LEN           HD11   H    H         0.000     -4.832   -1.071   -1.168
+ LEN           CD2    C    CH3       0.000     -4.078    1.366   -0.239
+ LEN           HD23   H    H         0.000     -4.067    1.307   -1.297
+ LEN           HD22   H    H         0.000     -5.033    1.692    0.085
+ LEN           HD21   H    H         0.000     -3.343    2.058    0.081
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LEN      N      n/a    CA     START
+ LEN      HN1    N      .      .
+ LEN      HN2    N      .      .
+ LEN      CA     N      CB     .
+ LEN      HA1    CA     .      .
+ LEN      HA2    CA     .      .
+ LEN      CB     CA     CG     .
+ LEN      HB1    CB     .      .
+ LEN      HB2    CB     .      .
+ LEN      CG     CB     CD2    .
+ LEN      HG     CG     .      .
+ LEN      CD1    CG     HD11   .
+ LEN      HD13   CD1    .      .
+ LEN      HD12   CD1    .      .
+ LEN      HD11   CD1    .      .
+ LEN      CD2    CG     HD21   .
+ LEN      HD23   CD2    .      .
+ LEN      HD22   CD2    .      .
+ LEN      HD21   CD2    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LEN       CD2       CG        single    1.524     0.020     1.524     0.020     
+LEN       HD21      CD2       single    1.089     0.010     0.989     0.005     
+LEN       HD22      CD2       single    1.089     0.010     0.989     0.005     
+LEN       HD23      CD2       single    1.089     0.010     0.989     0.005     
+LEN       CD1       CG        single    1.524     0.020     1.524     0.020     
+LEN       CG        CB        single    1.524     0.020     1.524     0.020     
+LEN       HG        CG        single    1.089     0.010     0.989     0.005     
+LEN       HD11      CD1       single    1.089     0.010     0.989     0.005     
+LEN       HD12      CD1       single    1.089     0.010     0.989     0.005     
+LEN       HD13      CD1       single    1.089     0.010     0.989     0.005     
+LEN       CB        CA        single    1.524     0.020     1.524     0.020     
+LEN       HB1       CB        single    1.089     0.010     0.989     0.005     
+LEN       HB2       CB        single    1.089     0.010     0.989     0.005     
+LEN       CA        N         single    1.450     0.020     1.450     0.020     
+LEN       HA1       CA        single    1.089     0.010     0.989     0.005     
+LEN       HA2       CA        single    1.089     0.010     0.989     0.005     
+LEN       HN1       N         single    1.036     0.016     0.914     0.007     
+LEN       HN2       N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LEN      HN1    N      HN2     120.000    3.000
+ LEN      HN1    N      CA      120.000    3.000
+ LEN      HN2    N      CA      120.000    3.000
+ LEN      N      CA     HA1     109.470    3.000
+ LEN      N      CA     HA2     109.470    3.000
+ LEN      N      CA     CB      109.470    3.000
+ LEN      HA1    CA     HA2     107.900    3.000
+ LEN      HA1    CA     CB      109.470    3.000
+ LEN      HA2    CA     CB      109.470    3.000
+ LEN      CA     CB     HB1     109.470    3.000
+ LEN      CA     CB     HB2     109.470    3.000
+ LEN      CA     CB     CG      111.000    3.000
+ LEN      HB1    CB     HB2     107.900    3.000
+ LEN      HB1    CB     CG      109.470    3.000
+ LEN      HB2    CB     CG      109.470    3.000
+ LEN      CB     CG     HG      108.340    3.000
+ LEN      CB     CG     CD1     111.000    3.000
+ LEN      CB     CG     CD2     111.000    3.000
+ LEN      HG     CG     CD1     108.340    3.000
+ LEN      HG     CG     CD2     108.340    3.000
+ LEN      CD1    CG     CD2     111.000    3.000
+ LEN      CG     CD1    HD13    109.470    3.000
+ LEN      CG     CD1    HD12    109.470    3.000
+ LEN      CG     CD1    HD11    109.470    3.000
+ LEN      HD13   CD1    HD12    109.470    3.000
+ LEN      HD13   CD1    HD11    109.470    3.000
+ LEN      HD12   CD1    HD11    109.470    3.000
+ LEN      CG     CD2    HD23    109.470    3.000
+ LEN      CG     CD2    HD22    109.470    3.000
+ LEN      CG     CD2    HD21    109.470    3.000
+ LEN      HD23   CD2    HD22    109.470    3.000
+ LEN      HD23   CD2    HD21    109.470    3.000
+ LEN      HD22   CD2    HD21    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LEN      var_1    HN2    N      CA     CB       179.984   20.000   1
+ LEN      var_2    N      CA     CB     CG       179.962   20.000   3
+ LEN      var_3    CA     CB     CG     CD2       65.014   20.000   3
+ LEN      var_4    CB     CG     CD1    HD11     -59.955   20.000   3
+ LEN      var_5    CB     CG     CD2    HD21     -60.022   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LEN      chir_01  CG     CD2    CD1    CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LEN      plan-1    N         0.020
+ LEN      plan-1    CA        0.020
+ LEN      plan-1    HN1       0.020
+ LEN      plan-1    HN2       0.020
+# ------------------------------------------------------

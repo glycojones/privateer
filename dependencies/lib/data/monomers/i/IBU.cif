@@ -1,0 +1,145 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IBU     IBU      "2-methylpropyl hydrogen carbonate"     NON-POLYMER     18     8     .     
+#
+data_comp_IBU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+IBU     C       C       C       0       12.570      -9.300      -3.907      
+IBU     OA2     O       O       0       11.764      -9.850      -3.219      
+IBU     OA1     O       O2      0       13.377      -9.958      -4.746      
+IBU     CB      C       CH2     0       14.808      -9.744      -4.582      
+IBU     CG      C       CH1     0       15.553      -10.827     -5.297      
+IBU     CD1     C       CH3     0       16.978      -10.407     -5.609      
+IBU     CD2     C       CH3     0       15.524      -12.122     -4.504      
+IBU     O3      O       OH1     0       12.667      -7.991      -3.863      
+IBU     H2B     H       H       0       15.049      -9.752      -3.630      
+IBU     H1B     H       H       0       15.053      -8.871      -4.954      
+IBU     HG      H       H       0       15.088      -10.987     -6.159      
+IBU     H3D1    H       H       0       17.443      -11.137     -6.052      
+IBU     H2D1    H       H       0       17.440      -10.185     -4.781      
+IBU     H1D1    H       H       0       16.967      -9.628      -6.192      
+IBU     H3D2    H       H       0       16.029      -12.805     -4.979      
+IBU     H1D2    H       H       0       14.603      -12.416     -4.396      
+IBU     H2D2    H       H       0       15.922      -11.976     -3.628      
+IBU     H10     H       H       0       13.068      -7.762      -3.116      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IBU       C         OA2       DOUBLE    n         1.193     0.012     1.193     0.012     
+IBU       C         O3        SINGLE    n         1.309     0.018     1.309     0.018     
+IBU       C         OA1       SINGLE    n         1.332     0.012     1.332     0.012     
+IBU       OA1       CB        SINGLE    n         1.450     0.012     1.450     0.012     
+IBU       CB        CG        SINGLE    n         1.492     0.014     1.492     0.014     
+IBU       CG        CD1       SINGLE    n         1.517     0.016     1.517     0.016     
+IBU       CG        CD2       SINGLE    n         1.517     0.016     1.517     0.016     
+IBU       CB        H2B       SINGLE    n         1.089     0.010     0.980     0.015     
+IBU       CB        H1B       SINGLE    n         1.089     0.010     0.980     0.015     
+IBU       CG        HG        SINGLE    n         1.089     0.010     0.992     0.019     
+IBU       CD1       H3D1      SINGLE    n         1.089     0.010     0.973     0.015     
+IBU       CD1       H2D1      SINGLE    n         1.089     0.010     0.973     0.015     
+IBU       CD1       H1D1      SINGLE    n         1.089     0.010     0.973     0.015     
+IBU       CD2       H3D2      SINGLE    n         1.089     0.010     0.973     0.015     
+IBU       CD2       H1D2      SINGLE    n         1.089     0.010     0.973     0.015     
+IBU       CD2       H2D2      SINGLE    n         1.089     0.010     0.973     0.015     
+IBU       O3        H10       SINGLE    n         0.970     0.012     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+IBU         OA2           C          O3     120.000    1.60
+IBU         OA2           C         OA1     123.481    1.50
+IBU          O3           C         OA1     116.519    3.00
+IBU           C         OA1          CB     114.906    1.50
+IBU         OA1          CB          CG     109.296    2.27
+IBU         OA1          CB         H2B     109.852    1.50
+IBU         OA1          CB         H1B     109.852    1.50
+IBU          CG          CB         H2B     109.694    1.50
+IBU          CG          CB         H1B     109.694    1.50
+IBU         H2B          CB         H1B     108.408    1.50
+IBU          CB          CG         CD1     110.948    2.22
+IBU          CB          CG         CD2     110.948    2.22
+IBU          CB          CG          HG     107.485    1.50
+IBU         CD1          CG         CD2     111.532    1.50
+IBU         CD1          CG          HG     108.179    1.50
+IBU         CD2          CG          HG     108.179    1.50
+IBU          CG         CD1        H3D1     109.473    1.50
+IBU          CG         CD1        H2D1     109.473    1.50
+IBU          CG         CD1        H1D1     109.473    1.50
+IBU        H3D1         CD1        H2D1     109.411    1.50
+IBU        H3D1         CD1        H1D1     109.411    1.50
+IBU        H2D1         CD1        H1D1     109.411    1.50
+IBU          CG         CD2        H3D2     109.473    1.50
+IBU          CG         CD2        H1D2     109.473    1.50
+IBU          CG         CD2        H2D2     109.473    1.50
+IBU        H3D2         CD2        H1D2     109.411    1.50
+IBU        H3D2         CD2        H2D2     109.411    1.50
+IBU        H1D2         CD2        H2D2     109.411    1.50
+IBU           C          O3         H10     108.839    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+IBU             sp2_sp2_1         OA2           C         OA1          CB     180.000   10.00     2
+IBU             sp3_sp3_1          CG          CB         OA1           C     180.000   10.00     3
+IBU             sp3_sp3_4         OA1          CB          CG         CD1     180.000   10.00     3
+IBU            sp3_sp3_13        H3D1         CD1          CG          CB     180.000   10.00     3
+IBU            sp3_sp3_22        H3D2         CD2          CG          CB     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+IBU    plan-1           C   0.020
+IBU    plan-1          O3   0.020
+IBU    plan-1         OA1   0.020
+IBU    plan-1         OA2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+IBU SMILES           ACDLabs              10.04 "O=C(O)OCC(C)C"
+IBU SMILES_CANONICAL CACTVS               3.341 "CC(C)COC(O)=O"
+IBU SMILES           CACTVS               3.341 "CC(C)COC(O)=O"
+IBU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)COC(=O)O"
+IBU SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)COC(=O)O"
+IBU InChI            InChI                1.03  "InChI=1S/C5H10O3/c1-4(2)3-8-5(6)7/h4H,3H2,1-2H3,(H,6,7)"
+IBU InChIKey         InChI                1.03  QRAFJHXNLQTXQW-UHFFFAOYSA-N
+IBU ?                acedrg               202         "dictionary generator"                  
+IBU ?                acedrg_database      11          "data source"                           
+IBU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+IBU ?                refmac5              5.8.0189    "optimization tool"                     

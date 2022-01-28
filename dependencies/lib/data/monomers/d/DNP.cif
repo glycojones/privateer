@@ -1,0 +1,169 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DNP     DNP     3-AMINO-ALANINE     peptide     16     7     .
+#
+data_comp_DNP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DNP     N       N       NT3     1       1.744       -0.395      -0.605
+DNP     CA      C       CH1     0       0.552       -0.125      0.244
+DNP     CB      C       CH2     0       -0.731      -0.328      -0.560
+DNP     NG      N       NT3     1       -1.966      -0.295      0.264
+DNP     C       C       C       0       0.628       1.300       0.806
+DNP     O       O       O       0       0.786       2.227       -0.014
+DNP     OXT     O       OC      -1      0.527       1.431       2.042
+DNP     H       H       H       0       2.507       -0.211      -0.142
+DNP     H2      H       H       0       1.716       0.125       -1.352
+DNP     H3      H       H       0       1.753       -1.272      -0.854
+DNP     HA      H       H       0       0.551       -0.762      0.996
+DNP     HB2     H       H       0       -0.677      -1.191      -1.018
+DNP     HB3     H       H       0       -0.785      0.374       -1.241
+DNP     HG1     H       H       0       -2.647      -0.688      -0.188
+DNP     HG2     H       H       0       -2.190      0.565       0.448
+DNP     HG3     H       H       0       -1.829      -0.741      1.042
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DNP      N      n/a    CA     START
+DNP      H      N      .      .
+DNP      H2     N      .      .
+DNP      H3     N      .      .
+DNP      CA     N      C      .
+DNP      HA     CA     .      .
+DNP      CB     CA     NG     .
+DNP      HB2    CB     .      .
+DNP      HB3    CB     .      .
+DNP      NG     CB     HG1    .
+DNP      HG3    NG     .      .
+DNP      HG2    NG     .      .
+DNP      HG1    NG     .      .
+DNP      C      CA     .      END
+DNP      O      C      .      .
+DNP      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DNP       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+DNP       CA        CB        SINGLE    n         1.527     0.012     1.527     0.012     
+DNP       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DNP       CB        NG        SINGLE    n         1.484     0.014     1.484     0.014     
+DNP       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DNP       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DNP       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DNP       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DNP       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DNP       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+DNP       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.015     
+DNP       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.015     
+DNP       NG        HG1       SINGLE    n         1.036     0.016     0.907     0.020     
+DNP       NG        HG2       SINGLE    n         1.036     0.016     0.907     0.020     
+DNP       NG        HG3       SINGLE    n         1.036     0.016     0.907     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DNP          CA           N           H     109.853    1.85
+DNP          CA           N          H2     109.853    1.85
+DNP          CA           N          H3     109.853    1.85
+DNP           H           N          H2     109.028    2.41
+DNP           H           N          H3     109.028    2.41
+DNP          H2           N          H3     109.028    2.41
+DNP           N          CA          CB     110.361    1.54
+DNP           N          CA           C     109.414    1.50
+DNP           N          CA          HA     108.444    1.50
+DNP          CB          CA           C     110.778    2.06
+DNP          CB          CA          HA     108.236    1.50
+DNP           C          CA          HA     108.600    1.50
+DNP          CA          CB          NG     112.810    3.00
+DNP          CA          CB         HB2     108.507    1.50
+DNP          CA          CB         HB3     108.507    1.50
+DNP          NG          CB         HB2     108.999    1.50
+DNP          NG          CB         HB3     108.999    1.50
+DNP         HB2          CB         HB3     108.086    1.50
+DNP          CB          NG         HG1     109.716    1.50
+DNP          CB          NG         HG2     109.716    1.50
+DNP          CB          NG         HG3     109.716    1.50
+DNP         HG1          NG         HG2     109.021    2.83
+DNP         HG1          NG         HG3     109.021    2.83
+DNP         HG2          NG         HG3     109.021    2.83
+DNP          CA           C           O     117.139    1.50
+DNP          CA           C         OXT     117.139    1.50
+DNP           O           C         OXT     125.721    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DNP             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+DNP            sp3_sp3_13           N          CA          CB          NG      60.000   10.00     3
+DNP             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DNP            sp3_sp3_19          CA          CB          NG         HG1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DNP    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DNP    plan-1           C   0.020
+DNP    plan-1          CA   0.020
+DNP    plan-1           O   0.020
+DNP    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DNP SMILES           ACDLabs              10.04 "O=C(O)C(N)C[NH3+]"
+DNP SMILES_CANONICAL CACTVS               3.341 "N[C@@H](C[NH3+])C(O)=O"
+DNP SMILES           CACTVS               3.341 "N[CH](C[NH3+])C(O)=O"
+DNP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)[NH3+]"
+DNP SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)[NH3+]"
+DNP InChI            InChI                1.03  "InChI=1S/C3H8N2O2/c4-1-2(5)3(6)7/h2H,1,4-5H2,(H,6,7)/p+1/t2-/m0/s1"
+DNP InChIKey         InChI                1.03  PECYZEOJVXMISF-REOHCLBHSA-O
+DNP ?                acedrg               196         "dictionary generator"
+DNP ?                acedrg_database      11          "data source"
+DNP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DNP ?                refmac5              5.8.0222    "optimization tool"

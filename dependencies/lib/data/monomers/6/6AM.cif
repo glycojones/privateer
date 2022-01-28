@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+6AM     6AM     4,6-diamino-1,3,5-triazin-2-ol     NON-POLYMER     14     9     .     
+#
+data_comp_6AM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+6AM     OAC     O       OH1     0       32.051      39.094      27.092      
+6AM     CAI     C       CR6     0       32.807      37.964      27.074      
+6AM     NAF     N       NRD6    0       33.781      37.868      27.987      
+6AM     NAE     N       NRD6    0       32.512      37.048      26.146      
+6AM     CAG     C       CR6     0       33.295      35.931      26.163      
+6AM     NAA     N       NH2     0       33.042      34.982      25.256      
+6AM     NAD     N       NRD6    0       34.305      35.728      27.039      
+6AM     CAH     C       CR6     0       34.515      36.721      27.933      
+6AM     NAB     N       NH2     0       35.502      36.573      28.824      
+6AM     H3      H       H       0       31.262      38.902      27.370      
+6AM     H1      H       H       0       33.572      34.282      25.191      
+6AM     H2      H       H       0       32.347      35.055      24.722      
+6AM     H4      H       H       0       35.667      37.207      29.410      
+6AM     H5      H       H       0       35.989      35.840      28.824      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+6AM       CAG       NAA       SINGLE    n         1.334     0.010     1.334     0.010     
+6AM       NAE       CAG       SINGLE    y         1.348     0.013     1.348     0.013     
+6AM       CAG       NAD       DOUBLE    y         1.343     0.010     1.343     0.010     
+6AM       CAI       NAE       DOUBLE    y         1.328     0.012     1.328     0.012     
+6AM       NAD       CAH       SINGLE    y         1.343     0.010     1.343     0.010     
+6AM       OAC       CAI       SINGLE    n         1.360     0.015     1.360     0.015     
+6AM       CAI       NAF       SINGLE    y         1.328     0.012     1.328     0.012     
+6AM       NAF       CAH       DOUBLE    y         1.348     0.013     1.348     0.013     
+6AM       CAH       NAB       SINGLE    n         1.334     0.010     1.334     0.010     
+6AM       OAC       H3        SINGLE    n         0.970     0.012     0.858     0.020     
+6AM       NAA       H1        SINGLE    n         1.016     0.010     0.877     0.020     
+6AM       NAA       H2        SINGLE    n         1.016     0.010     0.877     0.020     
+6AM       NAB       H4        SINGLE    n         1.016     0.010     0.877     0.020     
+6AM       NAB       H5        SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+6AM         CAI         OAC          H3     109.291    3.00
+6AM         NAE         CAI         OAC     116.943    1.66
+6AM         NAE         CAI         NAF     126.113    1.50
+6AM         OAC         CAI         NAF     116.943    1.66
+6AM         CAI         NAF         CAH     115.082    1.50
+6AM         CAG         NAE         CAI     115.082    1.50
+6AM         NAA         CAG         NAE     117.495    1.50
+6AM         NAA         CAG         NAD     118.130    1.50
+6AM         NAE         CAG         NAD     124.375    1.50
+6AM         CAG         NAA          H1     119.826    1.50
+6AM         CAG         NAA          H2     119.826    1.50
+6AM          H1         NAA          H2     120.348    1.96
+6AM         CAG         NAD         CAH     114.972    1.50
+6AM         NAD         CAH         NAF     124.375    1.50
+6AM         NAD         CAH         NAB     118.130    1.50
+6AM         NAF         CAH         NAB     117.495    1.50
+6AM         CAH         NAB          H4     119.826    1.50
+6AM         CAH         NAB          H5     119.826    1.50
+6AM          H4         NAB          H5     120.348    1.96
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+6AM              const_12         OAC         CAI         NAF         CAH     180.000   10.00     2
+6AM       const_sp2_sp2_2         OAC         CAI         NAE         CAG     180.000   10.00     2
+6AM              const_10         NAB         CAH         NAF         CAI     180.000   10.00     2
+6AM       const_sp2_sp2_4         NAA         CAG         NAE         CAI     180.000   10.00     2
+6AM             sp2_sp2_1         NAE         CAG         NAA          H1     180.000   10.00     2
+6AM       const_sp2_sp2_6         NAA         CAG         NAD         CAH     180.000   10.00     2
+6AM       const_sp2_sp2_8         NAB         CAH         NAD         CAG     180.000   10.00     2
+6AM             sp2_sp2_5         NAD         CAH         NAB          H4     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+6AM    plan-1         CAG   0.020
+6AM    plan-1         CAH   0.020
+6AM    plan-1         CAI   0.020
+6AM    plan-1         NAA   0.020
+6AM    plan-1         NAB   0.020
+6AM    plan-1         NAD   0.020
+6AM    plan-1         NAE   0.020
+6AM    plan-1         NAF   0.020
+6AM    plan-1         OAC   0.020
+6AM    plan-2         CAG   0.020
+6AM    plan-2          H1   0.020
+6AM    plan-2          H2   0.020
+6AM    plan-2         NAA   0.020
+6AM    plan-3         CAH   0.020
+6AM    plan-3          H4   0.020
+6AM    plan-3          H5   0.020
+6AM    plan-3         NAB   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+6AM SMILES           ACDLabs              12.01 "Oc1nc(nc(n1)N)N"
+6AM InChI            InChI                1.03  "InChI=1S/C3H5N5O/c4-1-6-2(5)8-3(9)7-1/h(H5,4,5,6,7,8,9)"
+6AM InChIKey         InChI                1.03  MASBWURJQFFLOO-UHFFFAOYSA-N
+6AM SMILES_CANONICAL CACTVS               3.385 "Nc1nc(N)nc(O)n1"
+6AM SMILES           CACTVS               3.385 "Nc1nc(N)nc(O)n1"
+6AM SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1(nc(nc(n1)O)N)N"
+6AM SMILES           "OpenEye OEToolkits" 1.7.6 "c1(nc(nc(n1)O)N)N"
+6AM ?                acedrg               190         "dictionary generator"                  
+6AM ?                acedrg_database      11          "data source"                           
+6AM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+6AM ?                refmac5              5.8.0158    "optimization tool"                     

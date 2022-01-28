@@ -1,0 +1,217 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2ML     2ML     2-METHYLLEUCINE     peptide     25     10     .     
+#
+data_comp_2ML
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2ML     N       N       NT3     1       63.047      3.728       14.734      
+2ML     CA      C       CT      0       64.431      3.696       14.180      
+2ML     CB1     C       CH2     0       64.681      4.886       13.220      
+2ML     CB2     C       CH3     0       64.567      2.403       13.365      
+2ML     CG      C       CH1     0       64.396      6.288       13.779      
+2ML     CD1     C       CH3     0       65.498      7.269       13.404      
+2ML     CD2     C       CH3     0       63.046      6.812       13.307      
+2ML     C       C       C       0       65.469      3.679       15.329      
+2ML     O       O       O       0       66.666      3.531       15.006      
+2ML     OXT     O       OC      -1      65.030      3.816       16.490      
+2ML     H2      H       H       0       62.958      4.399       15.343      
+2ML     H       H       H       0       62.849      2.941       15.149      
+2ML     H3      H       H       0       62.441      3.861       14.068      
+2ML     HB11    H       H       0       64.126      4.750       12.423      
+2ML     HB12    H       H       0       65.618      4.848       12.935      
+2ML     HB21    H       H       0       64.757      1.657       13.961      
+2ML     HB22    H       H       0       65.293      2.494       12.723      
+2ML     HB23    H       H       0       63.736      2.231       12.890      
+2ML     HG      H       H       0       64.368      6.230       14.766      
+2ML     HD11    H       H       0       65.281      8.151       13.754      
+2ML     HD12    H       H       0       65.577      7.316       12.436      
+2ML     HD13    H       H       0       66.343      6.969       13.784      
+2ML     HD21    H       H       0       62.884      7.689       13.695      
+2ML     HD22    H       H       0       62.344      6.200       13.587      
+2ML     HD23    H       H       0       63.046      6.883       12.336      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 2ML      N      n/a    CA     START
+ 2ML      H      N      .      .
+ 2ML      H2     N      .      .
+ 2ML      H3     N      .      .
+ 2ML      CA     N      C      .
+ 2ML      CB2    CA     HB21   .
+ 2ML      HB23   CB2    .      .
+ 2ML      HB22   CB2    .      .
+ 2ML      HB21   CB2    .      .
+ 2ML      CB1    CA     CG     .
+ 2ML      HB11   CB1    .      .
+ 2ML      HB12   CB1    .      .
+ 2ML      CG     CB1    CD1    .
+ 2ML      HG     CG     .      .
+ 2ML      CD2    CG     HD21   .
+ 2ML      HD23   CD2    .      .
+ 2ML      HD22   CD2    .      .
+ 2ML      HD21   CD2    .      .
+ 2ML      CD1    CG     HD11   .
+ 2ML      HD13   CD1    .      .
+ 2ML      HD12   CD1    .      .
+ 2ML      HD11   CD1    .      .
+ 2ML      C      CA     .      END
+ 2ML      O      C      .      .
+ 2ML      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2ML       N         CA        SINGLE    n         1.487     0.015     1.487     0.015     
+2ML       CA        CB1       SINGLE    n         1.545     0.011     1.545     0.011     
+2ML       CA        CB2       SINGLE    n         1.529     0.013     1.529     0.013     
+2ML       CA        C         SINGLE    n         1.545     0.010     1.545     0.010     
+2ML       CB1       CG        SINGLE    n         1.527     0.013     1.527     0.013     
+2ML       CG        CD1       SINGLE    n         1.521     0.015     1.521     0.015     
+2ML       CG        CD2       SINGLE    n         1.521     0.015     1.521     0.015     
+2ML       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+2ML       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+2ML       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+2ML       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+2ML       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+2ML       CB1       HB11      SINGLE    n         1.089     0.010     0.980     0.016     
+2ML       CB1       HB12      SINGLE    n         1.089     0.010     0.980     0.016     
+2ML       CB2       HB21      SINGLE    n         1.089     0.010     0.973     0.014     
+2ML       CB2       HB22      SINGLE    n         1.089     0.010     0.973     0.014     
+2ML       CB2       HB23      SINGLE    n         1.089     0.010     0.973     0.014     
+2ML       CG        HG        SINGLE    n         1.089     0.010     0.989     0.016     
+2ML       CD1       HD11      SINGLE    n         1.089     0.010     0.973     0.015     
+2ML       CD1       HD12      SINGLE    n         1.089     0.010     0.973     0.015     
+2ML       CD1       HD13      SINGLE    n         1.089     0.010     0.973     0.015     
+2ML       CD2       HD21      SINGLE    n         1.089     0.010     0.973     0.015     
+2ML       CD2       HD22      SINGLE    n         1.089     0.010     0.973     0.015     
+2ML       CD2       HD23      SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2ML          CA           N          H2     110.710    2.00
+2ML          CA           N           H     110.710    2.00
+2ML          CA           N          H3     110.710    2.00
+2ML          H2           N           H     108.826    2.42
+2ML          H2           N          H3     108.826    2.42
+2ML           H           N          H3     108.826    2.42
+2ML           N          CA         CB1     112.810    3.00
+2ML           N          CA         CB2     108.258    1.50
+2ML           N          CA           C     109.935    2.65
+2ML         CB1          CA         CB2     108.945    2.34
+2ML         CB1          CA           C     111.511    2.91
+2ML         CB2          CA           C     109.414    1.74
+2ML          CA         CB1          CG     111.094    2.85
+2ML          CA         CB1        HB11     108.001    1.50
+2ML          CA         CB1        HB12     108.001    1.50
+2ML          CG         CB1        HB11     108.471    1.50
+2ML          CG         CB1        HB12     108.471    1.50
+2ML        HB11         CB1        HB12     107.715    1.50
+2ML          CA         CB2        HB21     109.477    1.50
+2ML          CA         CB2        HB22     109.477    1.50
+2ML          CA         CB2        HB23     109.477    1.50
+2ML        HB21         CB2        HB22     109.412    1.50
+2ML        HB21         CB2        HB23     109.412    1.50
+2ML        HB22         CB2        HB23     109.412    1.50
+2ML         CB1          CG         CD1     111.118    1.50
+2ML         CB1          CG         CD2     111.118    1.50
+2ML         CB1          CG          HG     107.675    1.50
+2ML         CD1          CG         CD2     110.507    1.50
+2ML         CD1          CG          HG     108.052    1.50
+2ML         CD2          CG          HG     108.052    1.50
+2ML          CG         CD1        HD11     109.488    1.50
+2ML          CG         CD1        HD12     109.488    1.50
+2ML          CG         CD1        HD13     109.488    1.50
+2ML        HD11         CD1        HD12     109.411    1.50
+2ML        HD11         CD1        HD13     109.411    1.50
+2ML        HD12         CD1        HD13     109.411    1.50
+2ML          CG         CD2        HD21     109.488    1.50
+2ML          CG         CD2        HD22     109.488    1.50
+2ML          CG         CD2        HD23     109.488    1.50
+2ML        HD21         CD2        HD22     109.411    1.50
+2ML        HD21         CD2        HD23     109.411    1.50
+2ML        HD22         CD2        HD23     109.411    1.50
+2ML          CA           C           O     116.758    1.50
+2ML          CA           C         OXT     116.758    1.50
+2ML           O           C         OXT     126.483    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2ML             sp3_sp3_1         CB1          CA           N          H2     180.000   10.00     3
+2ML            sp3_sp3_13           N          CA         CB1          CG      60.000   10.00     3
+2ML            sp3_sp3_19           N          CA         CB2        HB21     180.000   10.00     3
+2ML             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+2ML            sp3_sp3_28          CA         CB1          CG         CD1     180.000   10.00     3
+2ML            sp3_sp3_37        HD11         CD1          CG         CB1     180.000   10.00     3
+2ML            sp3_sp3_46        HD21         CD2          CG         CB1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+2ML    chir_1    CA    N    C    CB1    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+2ML    plan-1           C   0.020
+2ML    plan-1          CA   0.020
+2ML    plan-1           O   0.020
+2ML    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2ML SMILES           ACDLabs              10.04 "O=C(O)C(N)(C)CC(C)C"
+2ML SMILES_CANONICAL CACTVS               3.341 "CC(C)C[C@](C)(N)C(O)=O"
+2ML SMILES           CACTVS               3.341 "CC(C)C[C](C)(N)C(O)=O"
+2ML SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)C[C@@](C)(C(=O)O)N"
+2ML SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)CC(C)(C(=O)O)N"
+2ML InChI            InChI                1.03  "InChI=1S/C7H15NO2/c1-5(2)4-7(3,8)6(9)10/h5H,4,8H2,1-3H3,(H,9,10)/t7-/m0/s1"
+2ML InChIKey         InChI                1.03  ARSWQPLPYROOBG-ZETCQYMHSA-N
+2ML ?                acedrg               196         "dictionary generator"                  
+2ML ?                acedrg_database      11          "data source"                           
+2ML ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2ML ?                refmac5              5.8.0222    "optimization tool"                     

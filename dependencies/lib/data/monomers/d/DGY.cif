@@ -1,0 +1,129 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DGY     DGY      "(2R)-2,3-DIHYDROXYPROPANOIC ACID"     NON-POLYMER     12     7     .     
+#
+data_comp_DGY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DGY     C1      C       C       0       -13.774     67.599      41.541      
+DGY     O1      O       OC      -1      -14.644     66.974      40.901      
+DGY     O2      O       O       0       -13.697     68.841      41.633      
+DGY     C2      C       CH1     0       -12.715     66.769      42.276      
+DGY     O3      O       OH1     0       -12.207     65.742      41.439      
+DGY     C3      C       CH2     0       -13.279     66.195      43.566      
+DGY     O4      O       OH1     0       -13.440     67.244      44.512      
+DGY     H2      H       H       0       -11.967     67.369      42.514      
+DGY     H3      H       H       0       -11.709     66.090      40.848      
+DGY     H3C1    H       H       0       -12.673     65.518      43.936      
+DGY     H3C2    H       H       0       -14.150     65.771      43.404      
+DGY     H4      H       H       0       -13.934     66.963      45.138      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DGY       C1        O1        SINGLE    n         1.247     0.019     1.247     0.019     
+DGY       C1        O2        DOUBLE    n         1.247     0.019     1.247     0.019     
+DGY       C1        C2        SINGLE    n         1.533     0.010     1.533     0.010     
+DGY       C2        O3        SINGLE    n         1.419     0.017     1.419     0.017     
+DGY       C2        C3        SINGLE    n         1.520     0.010     1.520     0.010     
+DGY       C3        O4        SINGLE    n         1.421     0.020     1.421     0.020     
+DGY       C2        H2        SINGLE    n         1.089     0.010     0.988     0.014     
+DGY       O3        H3        SINGLE    n         0.970     0.012     0.848     0.020     
+DGY       C3        H3C1      SINGLE    n         1.089     0.010     0.982     0.020     
+DGY       C3        H3C2      SINGLE    n         1.089     0.010     0.982     0.020     
+DGY       O4        H4        SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DGY          O1          C1          O2     125.546    1.50
+DGY          O1          C1          C2     117.227    1.50
+DGY          O2          C1          C2     117.227    1.50
+DGY          C1          C2          O3     111.343    1.72
+DGY          C1          C2          C3     111.511    2.91
+DGY          C1          C2          H2     108.330    1.50
+DGY          O3          C2          C3     111.584    1.50
+DGY          O3          C2          H2     108.675    1.50
+DGY          C3          C2          H2     108.282    1.50
+DGY          C2          O3          H3     108.894    3.00
+DGY          C2          C3          O4     109.482    3.00
+DGY          C2          C3        H3C1     110.652    1.50
+DGY          C2          C3        H3C2     110.652    1.50
+DGY          O4          C3        H3C1     109.268    1.50
+DGY          O4          C3        H3C2     109.268    1.50
+DGY        H3C1          C3        H3C2     108.313    1.50
+DGY          C3          O4          H4     108.280    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DGY             sp2_sp3_1          O1          C1          C2          O3       0.000   10.00     6
+DGY             sp3_sp3_2          C1          C2          O3          H3      60.000   10.00     3
+DGY             sp3_sp3_4          C1          C2          C3          O4     180.000   10.00     3
+DGY            sp3_sp3_13          C2          C3          O4          H4     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DGY    chir_1    C2    O3    C1    C3    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DGY    plan-1          C1   0.020
+DGY    plan-1          C2   0.020
+DGY    plan-1          O1   0.020
+DGY    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DGY SMILES           ACDLabs              10.04 "O=C(O)C(O)CO"
+DGY SMILES_CANONICAL CACTVS               3.341 "OC[C@@H](O)C(O)=O"
+DGY SMILES           CACTVS               3.341 "OC[CH](O)C(O)=O"
+DGY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@H](C(=O)O)O)O"
+DGY SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)O)O"
+DGY InChI            InChI                1.03  "InChI=1S/C3H6O4/c4-1-2(5)3(6)7/h2,4-5H,1H2,(H,6,7)/t2-/m1/s1"
+DGY InChIKey         InChI                1.03  RBNPOMFGQQGHHO-UWTATZPHSA-N
+DGY ?                acedrg               202         "dictionary generator"                  
+DGY ?                acedrg_database      11          "data source"                           
+DGY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DGY ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,190 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MSE     MSE     SELENOMETHIONINE     peptide    20     9     .
+#
+data_comp_MSE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MSE     N       N       NT3     1       -1.458      0.442       -1.900
+MSE     CA      C       CH1     0       -1.219      0.385       -0.432
+MSE     C       C       C       0       -2.553      0.138       0.284
+MSE     O       O       O       0       -2.852      0.913       1.215
+MSE     OXT     O       OC      -1      -3.243      -0.821      -0.115
+MSE     CB      C       CH2     0       -0.202      -0.716      -0.106
+MSE     CG      C       CH2     0       0.403       -0.633      1.284
+MSE     SE      SE      SE      0       1.705       0.829       1.439
+MSE     CE      C       CH3     0       3.436       0.257       0.713
+MSE     H       H       H       0       -2.059      1.099       -2.095
+MSE     H2      H       H       0       -1.785      -0.355      -2.195
+MSE     H3      H       H       0       -0.678      0.621       -2.337
+MSE     HA      H       H       0       -0.859      1.254       -0.143
+MSE     HB2     H       H       0       0.508       -0.676      -0.742
+MSE     HB3     H       H       0       -0.627      -1.566      -0.197
+MSE     HG2     H       H       0       0.851       -1.481      1.493
+MSE     HG3     H       H       0       -0.308      -0.500      1.946
+MSE     HE1     H       H       0       4.077       0.979       0.800
+MSE     HE2     H       H       0       3.332       0.027       -0.224
+MSE     HE3     H       H       0       3.751       -0.518      1.204
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+MSE      N      n/a    CA     START
+MSE      H      N      .      .
+MSE      H2     N      .      .
+MSE      H3     N      .      .
+MSE      CA     N      C      .
+MSE      HA     CA     .      .
+MSE      CB     CA     CG     .
+MSE      HB2    CB     .      .
+MSE      HB3    CB     .      .
+MSE      CG     CB     SE     .
+MSE      HG2    CG     .      .
+MSE      HG3    CG     .      .
+MSE      SE     CG     CE     .
+MSE      CE     SE     HE1    .
+MSE      HE3    CE     .      .
+MSE      HE2    CE     .      .
+MSE      HE1    CE     .      .
+MSE      C      CA     .      END
+MSE      O      C      .      .
+MSE      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MSE       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+MSE       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+MSE       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+MSE       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+MSE       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+MSE       CB        CG        SINGLE    n         1.514     0.020     1.514     0.020     
+MSE       CG        SE        SINGLE    n         1.963     0.020     1.963     0.020     
+MSE       SE        CE        SINGLE    n         1.963     0.020     1.963     0.020     
+MSE       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+MSE       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+MSE       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+MSE       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+MSE       CB        HB2       SINGLE    n         1.089     0.010     0.954     0.020     
+MSE       CB        HB3       SINGLE    n         1.089     0.010     0.954     0.020     
+MSE       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.017     
+MSE       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.017     
+MSE       CE        HE1       SINGLE    n         1.089     0.010     0.970     0.016     
+MSE       CE        HE2       SINGLE    n         1.089     0.010     0.970     0.016     
+MSE       CE        HE3       SINGLE    n         1.089     0.010     0.970     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MSE          CA           N           H     110.062    1.93
+MSE          CA           N          H2     110.062    1.93
+MSE          CA           N          H3     110.062    1.93
+MSE           H           N          H2     109.028    2.41
+MSE           H           N          H3     109.028    2.41
+MSE          H2           N          H3     109.028    2.41
+MSE           N          CA           C     109.241    1.50
+MSE           N          CA          CB     110.245    1.51
+MSE           N          CA          HA     108.487    1.50
+MSE           C          CA          CB     110.728    2.07
+MSE           C          CA          HA     108.824    1.50
+MSE          CB          CA          HA     109.207    1.50
+MSE          CA           C           O     117.124    1.50
+MSE          CA           C         OXT     117.124    1.50
+MSE           O           C         OXT     125.752    1.50
+MSE          CA          CB          CG     113.897    1.50
+MSE          CA          CB         HB2     108.567    1.50
+MSE          CA          CB         HB3     108.567    1.50
+MSE          CG          CB         HB2     108.056    1.50
+MSE          CG          CB         HB3     108.056    1.50
+MSE         HB2          CB         HB3     107.715    1.50
+MSE          CB          CG          SE     111.593    3.00
+MSE          CB          CG         HG2     109.535    1.63
+MSE          CB          CG         HG3     109.535    1.63
+MSE          SE          CG         HG2     109.134    1.50
+MSE          SE          CG         HG3     109.134    1.50
+MSE         HG2          CG         HG3     108.011    1.50
+MSE          CG          SE          CE     109.471    3.00
+MSE          SE          CE         HE1     109.134    1.50
+MSE          SE          CE         HE2     109.134    1.50
+MSE          SE          CE         HE3     109.134    1.50
+MSE         HE1          CE         HE2     109.290    1.50
+MSE         HE1          CE         HE3     109.290    1.50
+MSE         HE2          CE         HE3     109.290    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MSE             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+MSE             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+MSE            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+MSE            sp3_sp3_19          CA          CB          CG          SE     180.000   10.00     3
+MSE            sp3_sp3_28          CB          CG          SE          CE     180.000   10.00     3
+MSE            sp3_sp3_31         HE1          CE          SE          CG     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MSE    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MSE    plan-1           C   0.020
+MSE    plan-1          CA   0.020
+MSE    plan-1           O   0.020
+MSE    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MSE SMILES           ACDLabs              10.04 "O=C(O)C(N)CC[Se]C"
+MSE SMILES_CANONICAL CACTVS               3.341 "C[Se]CC[C@H](N)C(O)=O"
+MSE SMILES           CACTVS               3.341 "C[Se]CC[CH](N)C(O)=O"
+MSE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[Se]CC[C@@H](C(=O)O)N"
+MSE SMILES           "OpenEye OEToolkits" 1.5.0 "C[Se]CCC(C(=O)O)N"
+MSE InChI            InChI                1.03  "InChI=1S/C5H11NO2Se/c1-9-3-2-4(6)5(7)8/h4H,2-3,6H2,1H3,(H,7,8)/t4-/m0/s1"
+MSE InChIKey         InChI                1.03  RJFAYQIBOAGBLC-BYPYZUCNSA-N
+MSE ?                acedrg               202         "dictionary generator"
+MSE ?                acedrg_database      11          "data source"
+MSE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MSE ?                refmac5              5.8.0222    "optimization tool"

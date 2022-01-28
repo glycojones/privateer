@@ -1,0 +1,226 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MHB     MHB      .              NON-POLYMER     30     19     .     
+#
+data_comp_MHB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MHB     C1      C       CR6     0       2.365       0.164       -0.043      
+MHB     C2      C       CR6     0       3.039       -0.680      -0.956      
+MHB     C3      C       CR16    0       4.392       -0.430      -1.230      
+MHB     C4      C       CR16    0       5.067       0.618       -0.626      
+MHB     C5      C       CR16    0       4.399       1.441       0.271       
+MHB     C6      C       CR16    0       3.064       1.218       0.564       
+MHB     "C1'"   C       CR6     0       -1.171      0.672       0.205       
+MHB     "C2'"   C       CR16    0       -1.920      -0.382      -0.339      
+MHB     "C3'"   C       CR6     0       -3.259      -0.582      -0.029      
+MHB     "C4'"   C       CR6     0       -3.861      0.325       0.863       
+MHB     "C5'"   C       CR16    0       -3.137      1.384       1.410       
+MHB     "C6'"   C       CR16    0       -1.797      1.560       1.082       
+MHB     C       C       C       0       2.358       -1.839      -1.647      
+MHB     CM3     C       CH3     0       -4.011      -1.735      -0.635      
+MHB     N1      N       N       0       0.987       -0.062      0.263       
+MHB     "N1'"   N       N       0       0.208       0.831       -0.163      
+MHB     O       O       O       0       1.519       -1.576      -2.527      
+MHB     OXT     O       OC      -1      2.675       -2.990      -1.297      
+MHB     "O4'"   O       OH1     0       -5.174      0.195       1.220       
+MHB     H3      H       H       0       4.846       -0.987      -1.838      
+MHB     H4      H       H       0       5.976       0.771       -0.822      
+MHB     H5      H       H       0       4.856       2.155       0.685       
+MHB     H6      H       H       0       2.616       1.781       1.171       
+MHB     "H2'"   H       H       0       -1.501      -0.978      -0.931      
+MHB     "H5'"   H       H       0       -3.559      1.982       2.007       
+MHB     "H6'"   H       H       0       -1.311      2.275       1.452       
+MHB     HM31    H       H       0       -4.966      -1.566      -0.617      
+MHB     HM32    H       H       0       -3.819      -2.546      -0.136      
+MHB     HM33    H       H       0       -3.728      -1.854      -1.557      
+MHB     "HO4'"  H       H       0       -5.210      -0.223      1.969       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MHB       C1        C2        DOUBLE    y         1.403     0.010     1.403     0.010     
+MHB       C1        C6        SINGLE    y         1.395     0.010     1.395     0.010     
+MHB       C1        N1        SINGLE    n         1.425     0.010     1.425     0.010     
+MHB       C2        C3        SINGLE    y         1.394     0.011     1.394     0.011     
+MHB       C2        C         SINGLE    n         1.508     0.013     1.508     0.013     
+MHB       C3        C4        DOUBLE    y         1.380     0.010     1.380     0.010     
+MHB       C4        C5        SINGLE    y         1.382     0.010     1.382     0.010     
+MHB       C5        C6        DOUBLE    y         1.378     0.010     1.378     0.010     
+MHB       "C1'"     "C2'"     DOUBLE    y         1.396     0.010     1.396     0.010     
+MHB       "C1'"     "C6'"     SINGLE    y         1.391     0.010     1.391     0.010     
+MHB       "C1'"     "N1'"     SINGLE    n         1.432     0.015     1.432     0.015     
+MHB       "C2'"     "C3'"     SINGLE    y         1.379     0.010     1.379     0.010     
+MHB       "C3'"     "C4'"     DOUBLE    y         1.394     0.010     1.394     0.010     
+MHB       "C3'"     CM3       SINGLE    n         1.501     0.010     1.501     0.010     
+MHB       "C4'"     "C5'"     SINGLE    y         1.387     0.010     1.387     0.010     
+MHB       "C4'"     "O4'"     SINGLE    n         1.364     0.013     1.364     0.013     
+MHB       "C5'"     "C6'"     DOUBLE    y         1.383     0.012     1.383     0.012     
+MHB       C         O         DOUBLE    n         1.244     0.020     1.244     0.020     
+MHB       C         OXT       SINGLE    n         1.244     0.020     1.244     0.020     
+MHB       N1        "N1'"     DOUBLE    n         1.250     0.019     1.250     0.019     
+MHB       C3        H3        SINGLE    n         1.082     0.013     0.941     0.017     
+MHB       C4        H4        SINGLE    n         1.082     0.013     0.943     0.018     
+MHB       C5        H5        SINGLE    n         1.082     0.013     0.944     0.020     
+MHB       C6        H6        SINGLE    n         1.082     0.013     0.941     0.020     
+MHB       "C2'"     "H2'"     SINGLE    n         1.082     0.013     0.939     0.013     
+MHB       "C5'"     "H5'"     SINGLE    n         1.082     0.013     0.944     0.010     
+MHB       "C6'"     "H6'"     SINGLE    n         1.082     0.013     0.941     0.020     
+MHB       CM3       HM31      SINGLE    n         1.089     0.010     0.971     0.013     
+MHB       CM3       HM32      SINGLE    n         1.089     0.010     0.971     0.013     
+MHB       CM3       HM33      SINGLE    n         1.089     0.010     0.971     0.013     
+MHB       "O4'"     "HO4'"    SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MHB          C2          C1          C6     119.624    1.50
+MHB          C2          C1          N1     118.489    2.07
+MHB          C6          C1          N1     121.887    2.02
+MHB          C1          C2          C3     118.998    1.58
+MHB          C1          C2           C     121.508    1.50
+MHB          C3          C2           C     119.494    1.50
+MHB          C2          C3          C4     121.322    1.50
+MHB          C2          C3          H3     119.035    1.50
+MHB          C4          C3          H3     119.644    1.50
+MHB          C3          C4          C5     119.853    1.50
+MHB          C3          C4          H4     120.028    1.50
+MHB          C5          C4          H4     120.119    1.50
+MHB          C4          C5          C6     120.179    1.50
+MHB          C4          C5          H5     120.051    1.50
+MHB          C6          C5          H5     119.769    1.50
+MHB          C1          C6          C5     120.024    1.50
+MHB          C1          C6          H6     119.725    1.50
+MHB          C5          C6          H6     120.251    1.50
+MHB       "C2'"       "C1'"       "C6'"     119.840    1.50
+MHB       "C2'"       "C1'"       "N1'"     119.441    3.00
+MHB       "C6'"       "C1'"       "N1'"     120.719    3.00
+MHB       "C1'"       "C2'"       "C3'"     121.494    1.50
+MHB       "C1'"       "C2'"       "H2'"     119.386    1.50
+MHB       "C3'"       "C2'"       "H2'"     119.120    1.50
+MHB       "C2'"       "C3'"       "C4'"     116.618    1.50
+MHB       "C2'"       "C3'"         CM3     122.157    1.50
+MHB       "C4'"       "C3'"         CM3     121.225    1.50
+MHB       "C3'"       "C4'"       "C5'"     121.065    1.50
+MHB       "C3'"       "C4'"       "O4'"     119.200    2.35
+MHB       "C5'"       "C4'"       "O4'"     119.735    1.65
+MHB       "C4'"       "C5'"       "C6'"     120.260    1.50
+MHB       "C4'"       "C5'"       "H5'"     119.736    1.50
+MHB       "C6'"       "C5'"       "H5'"     120.005    1.50
+MHB       "C1'"       "C6'"       "C5'"     120.722    1.50
+MHB       "C1'"       "C6'"       "H6'"     119.578    1.50
+MHB       "C5'"       "C6'"       "H6'"     119.699    1.50
+MHB          C2           C           O     117.739    1.50
+MHB          C2           C         OXT     117.739    1.50
+MHB           O           C         OXT     124.521    1.50
+MHB       "C3'"         CM3        HM31     109.597    1.50
+MHB       "C3'"         CM3        HM32     109.597    1.50
+MHB       "C3'"         CM3        HM33     109.597    1.50
+MHB        HM31         CM3        HM32     109.348    1.50
+MHB        HM31         CM3        HM33     109.348    1.50
+MHB        HM32         CM3        HM33     109.348    1.50
+MHB          C1          N1       "N1'"     113.859    1.50
+MHB       "C1'"       "N1'"          N1     113.763    2.05
+MHB       "C4'"       "O4'"      "HO4'"     108.378    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MHB              const_24          N1          C1          C2           C       0.000   10.00     2
+MHB             sp2_sp2_1          C2          C1          N1       "N1'"     180.000   10.00     2
+MHB              const_43          N1          C1          C6          C5     180.000   10.00     2
+MHB              const_17       "C4'"       "C5'"       "C6'"       "C1'"       0.000   10.00     2
+MHB             sp2_sp2_9          C1          N1       "N1'"       "C1'"     180.000   10.00     2
+MHB             sp2_sp2_3           O           C          C2          C1     180.000   10.00     2
+MHB              const_27           C          C2          C3          C4     180.000   10.00     2
+MHB              const_29          C2          C3          C4          C5       0.000   10.00     2
+MHB              const_33          C3          C4          C5          C6       0.000   10.00     2
+MHB              const_37          C4          C5          C6          C1       0.000   10.00     2
+MHB              const_47       "N1'"       "C1'"       "C6'"       "C5'"     180.000   10.00     2
+MHB             sp2_sp2_7       "C2'"       "C1'"       "N1'"          N1     180.000   10.00     2
+MHB       const_sp2_sp2_3       "N1'"       "C1'"       "C2'"       "C3'"     180.000   10.00     2
+MHB       const_sp2_sp2_6       "C1'"       "C2'"       "C3'"         CM3     180.000   10.00     2
+MHB             sp2_sp3_1       "C2'"       "C3'"         CM3        HM31     150.000   10.00     6
+MHB              const_12         CM3       "C3'"       "C4'"       "O4'"       0.000   10.00     2
+MHB              const_15       "O4'"       "C4'"       "C5'"       "C6'"     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MHB    plan-1           C   0.020
+MHB    plan-1          C1   0.020
+MHB    plan-1          C2   0.020
+MHB    plan-1          C3   0.020
+MHB    plan-1          C4   0.020
+MHB    plan-1          C5   0.020
+MHB    plan-1          C6   0.020
+MHB    plan-1          H3   0.020
+MHB    plan-1          H4   0.020
+MHB    plan-1          H5   0.020
+MHB    plan-1          H6   0.020
+MHB    plan-1          N1   0.020
+MHB    plan-2       "C1'"   0.020
+MHB    plan-2       "C2'"   0.020
+MHB    plan-2       "C3'"   0.020
+MHB    plan-2       "C4'"   0.020
+MHB    plan-2       "C5'"   0.020
+MHB    plan-2       "C6'"   0.020
+MHB    plan-2         CM3   0.020
+MHB    plan-2       "H2'"   0.020
+MHB    plan-2       "H5'"   0.020
+MHB    plan-2       "H6'"   0.020
+MHB    plan-2       "N1'"   0.020
+MHB    plan-2       "O4'"   0.020
+MHB    plan-3           C   0.020
+MHB    plan-3          C2   0.020
+MHB    plan-3           O   0.020
+MHB    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MHB SMILES           ACDLabs              10.04 "O=C(O)c2ccccc2/N=N/c1ccc(O)c(c1)C"
+MHB SMILES_CANONICAL CACTVS               3.341 "Cc1cc(ccc1O)N=Nc2ccccc2C(O)=O"
+MHB SMILES           CACTVS               3.341 "Cc1cc(ccc1O)N=Nc2ccccc2C(O)=O"
+MHB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "Cc1cc(ccc1O)/N=N/c2ccccc2C(=O)O"
+MHB SMILES           "OpenEye OEToolkits" 1.5.0 "Cc1cc(ccc1O)N=Nc2ccccc2C(=O)O"
+MHB InChI            InChI                1.03  "InChI=1S/C14H12N2O3/c1-9-8-10(6-7-13(9)17)15-16-12-5-3-2-4-11(12)14(18)19/h2-8,17H,1H3,(H,18,19)/b16-15+"
+MHB InChIKey         InChI                1.03  SBSCJWJICRGLIV-FOCLMDBBSA-N
+MHB ?                acedrg               202         "dictionary generator"                  
+MHB ?                acedrg_database      11          "data source"                           
+MHB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MHB ?                refmac5              5.8.0189    "optimization tool"                     

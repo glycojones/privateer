@@ -1,0 +1,123 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NAK     NAK      AMINO-ACRYLATE     NON-POLYMER     11     6     .     
+#
+data_comp_NAK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NAK     OAC     O       OC      -1      11.442      30.933      110.552     
+NAK     CAF     C       C       0       11.077      32.030      110.119     
+NAK     OAD     O       O       0       11.512      33.058      110.649     
+NAK     CAG     C       C       0       10.183      32.091      109.068     
+NAK     CAE     C       CH3     0       9.765       33.361      108.380     
+NAK     NAB     N       NH2     1       9.627       30.941      108.617     
+NAK     HAE1    H       H       0       10.356      34.088      108.619     
+NAK     HAE2    H       H       0       8.859       33.585      108.642     
+NAK     HAE3    H       H       0       9.795       33.230      107.421     
+NAK     HAB1    H       H       0       9.831       30.161      108.978     
+NAK     HAB2    H       H       0       9.050       30.961      107.953     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NAK       OAC       CAF       SINGLE    n         1.230     0.020     1.230     0.020     
+NAK       CAF       OAD       DOUBLE    n         1.230     0.020     1.230     0.020     
+NAK       CAF       CAG       SINGLE    n         1.346     0.020     1.346     0.020     
+NAK       CAG       CAE       SINGLE    n         1.484     0.020     1.484     0.020     
+NAK       CAG       NAB       DOUBLE    n         1.335     0.020     1.335     0.020     
+NAK       CAE       HAE1      SINGLE    n         1.089     0.010     0.969     0.018     
+NAK       CAE       HAE2      SINGLE    n         1.089     0.010     0.969     0.018     
+NAK       CAE       HAE3      SINGLE    n         1.089     0.010     0.969     0.018     
+NAK       NAB       HAB1      SINGLE    n         1.016     0.010     0.879     0.020     
+NAK       NAB       HAB2      SINGLE    n         1.016     0.010     0.879     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NAK         OAC         CAF         OAD     120.233    1.63
+NAK         OAC         CAF         CAG     119.884    1.50
+NAK         OAD         CAF         CAG     119.884    1.50
+NAK         CAF         CAG         CAE     122.782    1.90
+NAK         CAF         CAG         NAB     118.784    3.00
+NAK         CAE         CAG         NAB     118.435    1.50
+NAK         CAG         CAE        HAE1     109.559    1.50
+NAK         CAG         CAE        HAE2     109.559    1.50
+NAK         CAG         CAE        HAE3     109.559    1.50
+NAK        HAE1         CAE        HAE2     109.402    1.50
+NAK        HAE1         CAE        HAE3     109.402    1.50
+NAK        HAE2         CAE        HAE3     109.402    1.50
+NAK         CAG         NAB        HAB1     120.188    2.46
+NAK         CAG         NAB        HAB2     120.186    2.46
+NAK        HAB1         NAB        HAB2     119.624    2.06
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NAK             sp2_sp2_1         OAC         CAF         CAG         CAE     180.000   10.00     2
+NAK             sp2_sp3_1         CAF         CAG         CAE        HAE1       0.000   10.00     6
+NAK             sp2_sp2_7         CAF         CAG         NAB        HAB1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NAK    plan-1         CAF   0.020
+NAK    plan-1         CAG   0.020
+NAK    plan-1         OAC   0.020
+NAK    plan-1         OAD   0.020
+NAK    plan-2         CAE   0.020
+NAK    plan-2         CAF   0.020
+NAK    plan-2         CAG   0.020
+NAK    plan-2         NAB   0.020
+NAK    plan-3         CAG   0.020
+NAK    plan-3        HAB1   0.020
+NAK    plan-3        HAB2   0.020
+NAK    plan-3         NAB   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NAK SMILES           ACDLabs              10.04 "[O-]C(=O)\C(=[NH2+])C"
+NAK SMILES_CANONICAL CACTVS               3.341 "CC(=[NH2+])C([O-])=O"
+NAK SMILES           CACTVS               3.341 "CC(=[NH2+])C([O-])=O"
+NAK SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=[NH2+])C(=O)[O-]"
+NAK SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=[NH2+])C(=O)[O-]"
+NAK InChI            InChI                1.03  "InChI=1S/C3H5NO2/c1-2(4)3(5)6/h4H,1H3,(H,5,6)"
+NAK InChIKey         InChI                1.03  DUAWRLXHCUAWMK-UHFFFAOYSA-N
+NAK ?                acedrg               202         "dictionary generator"                  
+NAK ?                acedrg_database      11          "data source"                           
+NAK ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NAK ?                refmac5              5.8.0189    "optimization tool"                     

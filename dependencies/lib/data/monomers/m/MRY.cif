@@ -1,0 +1,147 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MRY     MRY      MESO-ERYTHRITOL     NON-POLYMER     18     8     .     
+#
+data_comp_MRY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MRY     OAB     O       OH1     0       138.908     62.513      10.219      
+MRY     CAA     C       CH2     0       137.620     62.872      9.726       
+MRY     CAC     C       CH1     0       136.826     61.645      9.321       
+MRY     OAD     O       OH1     0       136.627     60.812      10.465      
+MRY     CAE     C       CH1     0       135.454     61.942      8.676       
+MRY     OAF     O       OH1     0       134.660     62.746      9.555       
+MRY     CAG     C       CH2     0       135.545     62.594      7.310       
+MRY     OAH     O       OH1     0       134.271     62.649      6.675       
+MRY     HAB     H       H       0       139.307     63.221      10.456      
+MRY     HAA1    H       H       0       137.726     63.468      8.946       
+MRY     HAA2    H       H       0       137.129     63.362      10.428      
+MRY     HAC     H       H       0       137.376     61.135      8.653       
+MRY     HAD     H       H       0       136.156     61.199      11.055      
+MRY     HAE     H       H       0       134.985     61.063      8.555       
+MRY     HAF     H       H       0       134.860     63.572      9.546       
+MRY     HAG1    H       H       0       136.169     62.076      6.744       
+MRY     HAG2    H       H       0       135.902     63.510      7.406       
+MRY     HAH     H       H       0       133.776     63.174      7.118       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MRY       OAB       CAA       SINGLE    n         1.425     0.010     1.425     0.010     
+MRY       CAA       CAC       SINGLE    n         1.514     0.010     1.514     0.010     
+MRY       CAC       OAD       SINGLE    n         1.429     0.010     1.429     0.010     
+MRY       CAC       CAE       SINGLE    n         1.535     0.020     1.535     0.020     
+MRY       CAE       OAF       SINGLE    n         1.429     0.010     1.429     0.010     
+MRY       CAE       CAG       SINGLE    n         1.514     0.010     1.514     0.010     
+MRY       CAG       OAH       SINGLE    n         1.425     0.010     1.425     0.010     
+MRY       OAB       HAB       SINGLE    n         0.970     0.012     0.839     0.014     
+MRY       CAA       HAA1      SINGLE    n         1.089     0.010     0.989     0.005     
+MRY       CAA       HAA2      SINGLE    n         1.089     0.010     0.989     0.005     
+MRY       CAC       HAC       SINGLE    n         1.089     0.010     0.989     0.005     
+MRY       OAD       HAD       SINGLE    n         0.970     0.012     0.839     0.014     
+MRY       CAE       HAE       SINGLE    n         1.089     0.010     0.989     0.005     
+MRY       OAF       HAF       SINGLE    n         0.970     0.012     0.839     0.014     
+MRY       CAG       HAG1      SINGLE    n         1.089     0.010     0.989     0.005     
+MRY       CAG       HAG2      SINGLE    n         1.089     0.010     0.989     0.005     
+MRY       OAH       HAH       SINGLE    n         0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MRY         CAA         OAB         HAB     108.280    3.00
+MRY         OAB         CAA         CAC     111.364    1.50
+MRY         OAB         CAA        HAA1     109.268    1.50
+MRY         OAB         CAA        HAA2     109.268    1.50
+MRY         CAC         CAA        HAA1     109.234    1.50
+MRY         CAC         CAA        HAA2     109.234    1.50
+MRY        HAA1         CAA        HAA2     108.313    1.50
+MRY         CAA         CAC         OAD     109.623    1.60
+MRY         CAA         CAC         CAE     113.761    1.50
+MRY         CAA         CAC         HAC     107.986    1.50
+MRY         OAD         CAC         CAE     109.320    2.01
+MRY         OAD         CAC         HAC     108.591    1.50
+MRY         CAE         CAC         HAC     108.450    1.83
+MRY         CAC         OAD         HAD     111.202    3.00
+MRY         CAC         CAE         OAF     109.320    2.01
+MRY         CAC         CAE         CAG     113.761    1.50
+MRY         CAC         CAE         HAE     108.450    1.83
+MRY         OAF         CAE         CAG     109.623    1.60
+MRY         OAF         CAE         HAE     108.591    1.50
+MRY         CAG         CAE         HAE     107.986    1.50
+MRY         CAE         OAF         HAF     111.202    3.00
+MRY         CAE         CAG         OAH     111.364    1.50
+MRY         CAE         CAG        HAG1     109.234    1.50
+MRY         CAE         CAG        HAG2     109.234    1.50
+MRY         OAH         CAG        HAG1     109.268    1.50
+MRY         OAH         CAG        HAG2     109.268    1.50
+MRY        HAG1         CAG        HAG2     108.313    1.50
+MRY         CAG         OAH         HAH     108.280    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MRY             sp3_sp3_1         CAC         CAA         OAB         HAB     180.000   10.00     3
+MRY             sp3_sp3_5         OAB         CAA         CAC         OAD     -60.000   10.00     3
+MRY            sp3_sp3_13         CAA         CAC         OAD         HAD     180.000   10.00     3
+MRY            sp3_sp3_19         CAA         CAC         CAE         OAF      60.000   10.00     3
+MRY            sp3_sp3_25         CAC         CAE         OAF         HAF     180.000   10.00     3
+MRY            sp3_sp3_28         CAC         CAE         CAG         OAH     180.000   10.00     3
+MRY            sp3_sp3_37         CAE         CAG         OAH         HAH     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MRY    chir_1    CAC    OAD    CAE    CAA    both
+MRY    chir_2    CAE    OAF    CAC    CAG    positive
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MRY SMILES           ACDLabs              10.04 "OCC(O)C(O)CO"
+MRY SMILES_CANONICAL CACTVS               3.341 "OC[C@@H](O)[C@@H](O)CO"
+MRY SMILES           CACTVS               3.341 "OC[CH](O)[CH](O)CO"
+MRY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@H]([C@H](CO)O)O)O"
+MRY SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(CO)O)O)O"
+MRY InChI            InChI                1.03  "InChI=1S/C4H10O4/c5-1-3(7)4(8)2-6/h3-8H,1-2H2/t3-,4+"
+MRY InChIKey         InChI                1.03  UNXHWFMMPAWVPI-ZXZARUISSA-N
+MRY ?                acedrg               202         "dictionary generator"                  
+MRY ?                acedrg_database      11          "data source"                           
+MRY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MRY ?                refmac5              5.8.0189    "optimization tool"                     

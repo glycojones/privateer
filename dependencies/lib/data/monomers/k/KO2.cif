@@ -1,0 +1,290 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KO2      KO2 'prop-2-en-1-yl D-glycero-alpha-D-tal' non-polymer        37  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_KO2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ KO2           O1A    O    OC       -0.500      0.000    0.000    0.000
+ KO2           C1     C    C         0.000     -1.056    0.582   -0.335
+ KO2           O1B    O    OC       -0.500     -1.001    1.684   -0.924
+ KO2           C2     C    CT        0.000     -2.392   -0.046   -0.033
+ KO2           O2     O    O2        0.000     -2.191   -1.282    0.656
+ KO2           C9     C    CH2       0.000     -1.568   -2.295   -0.135
+ KO2           H9     H    H         0.000     -0.549   -1.989   -0.380
+ KO2           H9A    H    H         0.000     -2.136   -2.436   -1.057
+ KO2           C10    C    C1        0.000     -1.534   -3.587    0.638
+ KO2           H10    H    H         0.000     -1.234   -3.588    1.673
+ KO2           C11    C    C2        0.000     -1.869   -4.710    0.052
+ KO2           H11A   H    H         0.000     -1.843   -5.630    0.607
+ KO2           H11    H    H         0.000     -2.167   -4.705   -0.980
+ KO2           C3     C    CH1       0.000     -3.215    0.901    0.844
+ KO2           H3     H    H         0.000     -2.700    1.055    1.803
+ KO2           O3     O    OH1       0.000     -3.370    2.155    0.178
+ KO2           HO3    H    H         0.000     -3.889    2.752    0.734
+ KO2           C4     C    CH1       0.000     -4.593    0.282    1.097
+ KO2           H4     H    H         0.000     -4.477   -0.658    1.654
+ KO2           O4     O    OH1       0.000     -5.395    1.190    1.855
+ KO2           HO4    H    H         0.000     -4.966    1.366    2.704
+ KO2           C5     C    CH1       0.000     -5.269    0.002   -0.249
+ KO2           H5     H    H         0.000     -6.235   -0.494   -0.078
+ KO2           O5     O    OH1       0.000     -5.479    1.231   -0.944
+ KO2           HO5    H    H         0.000     -6.049    1.806   -0.416
+ KO2           C6     C    CH1       0.000     -4.366   -0.910   -1.084
+ KO2           H6     H    H         0.000     -4.239   -1.872   -0.567
+ KO2           O6     O    O2        0.000     -3.091   -0.289   -1.255
+ KO2           C7     C    CH1       0.000     -5.007   -1.147   -2.453
+ KO2           H7     H    H         0.000     -5.134   -0.185   -2.969
+ KO2           O7     O    OH1       0.000     -6.282   -1.769   -2.282
+ KO2           HO7    H    H         0.000     -6.169   -2.615   -1.828
+ KO2           C8     C    CH2       0.000     -4.104   -2.058   -3.288
+ KO2           H8     H    H         0.000     -4.049   -3.043   -2.820
+ KO2           H8A    H    H         0.000     -3.103   -1.625   -3.342
+ KO2           O8     O    OH1       0.000     -4.642   -2.184   -4.606
+ KO2           HO8    H    H         0.000     -4.072   -2.760   -5.132
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ KO2      O1A    n/a    C1     START
+ KO2      C1     O1A    C2     .
+ KO2      O1B    C1     .      .
+ KO2      C2     C1     C3     .
+ KO2      O2     C2     C9     .
+ KO2      C9     O2     C10    .
+ KO2      H9     C9     .      .
+ KO2      H9A    C9     .      .
+ KO2      C10    C9     C11    .
+ KO2      H10    C10    .      .
+ KO2      C11    C10    H11    .
+ KO2      H11A   C11    .      .
+ KO2      H11    C11    .      .
+ KO2      C3     C2     C4     .
+ KO2      H3     C3     .      .
+ KO2      O3     C3     HO3    .
+ KO2      HO3    O3     .      .
+ KO2      C4     C3     C5     .
+ KO2      H4     C4     .      .
+ KO2      O4     C4     HO4    .
+ KO2      HO4    O4     .      .
+ KO2      C5     C4     C6     .
+ KO2      H5     C5     .      .
+ KO2      O5     C5     HO5    .
+ KO2      HO5    O5     .      .
+ KO2      C6     C5     C7     .
+ KO2      H6     C6     .      .
+ KO2      O6     C6     .      .
+ KO2      C7     C6     C8     .
+ KO2      H7     C7     .      .
+ KO2      O7     C7     HO7    .
+ KO2      HO7    O7     .      .
+ KO2      C8     C7     O8     .
+ KO2      H8     C8     .      .
+ KO2      H8A    C8     .      .
+ KO2      O8     C8     HO8    .
+ KO2      HO8    O8     .      END
+ KO2      C2     O6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KO2       C1        O1A       deloc     1.250     0.020     1.250     0.020     
+KO2       O1B       C1        deloc     1.250     0.020     1.250     0.020     
+KO2       C2        C1        single    1.507     0.020     1.507     0.020     
+KO2       C3        C2        single    1.524     0.020     1.524     0.020     
+KO2       C2        O6        single    1.426     0.020     1.426     0.020     
+KO2       O2        C2        single    1.426     0.020     1.426     0.020     
+KO2       O6        C6        single    1.426     0.020     1.426     0.020     
+KO2       C6        C5        single    1.524     0.020     1.524     0.020     
+KO2       C7        C6        single    1.524     0.020     1.524     0.020     
+KO2       H6        C6        single    1.089     0.010     0.989     0.005     
+KO2       O7        C7        single    1.432     0.020     1.432     0.020     
+KO2       C8        C7        single    1.524     0.020     1.524     0.020     
+KO2       H7        C7        single    1.089     0.010     0.989     0.005     
+KO2       O8        C8        single    1.432     0.020     1.432     0.020     
+KO2       H8        C8        single    1.089     0.010     0.989     0.005     
+KO2       H8A       C8        single    1.089     0.010     0.989     0.005     
+KO2       HO8       O8        single    0.970     0.012     0.839     0.014     
+KO2       HO7       O7        single    0.970     0.012     0.839     0.014     
+KO2       O5        C5        single    1.432     0.020     1.432     0.020     
+KO2       C5        C4        single    1.524     0.020     1.524     0.020     
+KO2       H5        C5        single    1.089     0.010     0.989     0.005     
+KO2       HO5       O5        single    0.970     0.012     0.839     0.014     
+KO2       O4        C4        single    1.432     0.020     1.432     0.020     
+KO2       C4        C3        single    1.524     0.020     1.524     0.020     
+KO2       H4        C4        single    1.089     0.010     0.989     0.005     
+KO2       HO4       O4        single    0.970     0.012     0.839     0.014     
+KO2       O3        C3        single    1.432     0.020     1.432     0.020     
+KO2       H3        C3        single    1.089     0.010     0.989     0.005     
+KO2       HO3       O3        single    0.970     0.012     0.839     0.014     
+KO2       C9        O2        single    1.426     0.020     1.426     0.020     
+KO2       C11       C10       double    1.320     0.020     1.320     0.020     
+KO2       H11       C11       single    1.082     0.013     0.975     0.010     
+KO2       H11A      C11       single    1.082     0.013     0.975     0.010     
+KO2       C10       C9        single    1.510     0.020     1.510     0.020     
+KO2       H10       C10       single    1.082     0.013     0.975     0.010     
+KO2       H9        C9        single    1.089     0.010     0.989     0.005     
+KO2       H9A       C9        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ KO2      O1A    C1     O1B     123.000    3.000
+ KO2      O1A    C1     C2      118.500    3.000
+ KO2      O1B    C1     C2      118.500    3.000
+ KO2      C1     C2     O2      109.470    3.000
+ KO2      C1     C2     C3      109.470    3.000
+ KO2      C1     C2     O6      109.470    3.000
+ KO2      O2     C2     C3      109.470    3.000
+ KO2      O2     C2     O6      109.500    3.000
+ KO2      C3     C2     O6      109.470    3.000
+ KO2      C2     O2     C9      111.800    3.000
+ KO2      O2     C9     H9      109.470    3.000
+ KO2      O2     C9     H9A     109.470    3.000
+ KO2      O2     C9     C10     109.500    3.000
+ KO2      H9     C9     H9A     107.900    3.000
+ KO2      H9     C9     C10     109.470    3.000
+ KO2      H9A    C9     C10     109.470    3.000
+ KO2      C9     C10    H10     120.000    3.000
+ KO2      C9     C10    C11     120.000    3.000
+ KO2      H10    C10    C11     120.000    3.000
+ KO2      C10    C11    H11A    120.000    3.000
+ KO2      C10    C11    H11     120.000    3.000
+ KO2      H11A   C11    H11     120.000    3.000
+ KO2      C2     C3     H3      108.340    3.000
+ KO2      C2     C3     O3      109.470    3.000
+ KO2      C2     C3     C4      111.000    3.000
+ KO2      H3     C3     O3      109.470    3.000
+ KO2      H3     C3     C4      108.340    3.000
+ KO2      O3     C3     C4      109.470    3.000
+ KO2      C3     O3     HO3     109.470    3.000
+ KO2      C3     C4     H4      108.340    3.000
+ KO2      C3     C4     O4      109.470    3.000
+ KO2      C3     C4     C5      111.000    3.000
+ KO2      H4     C4     O4      109.470    3.000
+ KO2      H4     C4     C5      108.340    3.000
+ KO2      O4     C4     C5      109.470    3.000
+ KO2      C4     O4     HO4     109.470    3.000
+ KO2      C4     C5     H5      108.340    3.000
+ KO2      C4     C5     O5      109.470    3.000
+ KO2      C4     C5     C6      111.000    3.000
+ KO2      H5     C5     O5      109.470    3.000
+ KO2      H5     C5     C6      108.340    3.000
+ KO2      O5     C5     C6      109.470    3.000
+ KO2      C5     O5     HO5     109.470    3.000
+ KO2      C5     C6     H6      108.340    3.000
+ KO2      C5     C6     O6      109.470    3.000
+ KO2      C5     C6     C7      111.000    3.000
+ KO2      H6     C6     O6      109.470    3.000
+ KO2      H6     C6     C7      108.340    3.000
+ KO2      O6     C6     C7      109.470    3.000
+ KO2      C6     O6     C2      111.800    3.000
+ KO2      C6     C7     H7      108.340    3.000
+ KO2      C6     C7     O7      109.470    3.000
+ KO2      C6     C7     C8      111.000    3.000
+ KO2      H7     C7     O7      109.470    3.000
+ KO2      H7     C7     C8      108.340    3.000
+ KO2      O7     C7     C8      109.470    3.000
+ KO2      C7     O7     HO7     109.470    3.000
+ KO2      C7     C8     H8      109.470    3.000
+ KO2      C7     C8     H8A     109.470    3.000
+ KO2      C7     C8     O8      109.470    3.000
+ KO2      H8     C8     H8A     107.900    3.000
+ KO2      H8     C8     O8      109.470    3.000
+ KO2      H8A    C8     O8      109.470    3.000
+ KO2      C8     O8     HO8     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ KO2      var_1    O1A    C1     C2     C3       121.076   20.000   1
+ KO2      var_2    C1     C2     O6     C6       180.000   20.000   1
+ KO2      var_3    C1     C2     O2     C9       -66.902   20.000   1
+ KO2      var_4    C2     O2     C9     C10     -174.289   20.000   1
+ KO2      var_5    O2     C9     C10    C11      134.994   20.000   1
+ KO2      CONST_1  C9     C10    C11    H11        0.014    0.000   0
+ KO2      var_6    C1     C2     C3     C4       180.000   20.000   1
+ KO2      var_7    C2     C3     O3     HO3     -179.976   20.000   1
+ KO2      var_8    C2     C3     C4     C5       -60.000   20.000   3
+ KO2      var_9    C3     C4     O4     HO4      -60.382   20.000   1
+ KO2      var_10   C3     C4     C5     C6        60.000   20.000   3
+ KO2      var_11   C4     C5     O5     HO5      -60.313   20.000   1
+ KO2      var_12   C4     C5     C6     C7       180.000   20.000   3
+ KO2      var_13   C5     C6     O6     C2        60.000   20.000   1
+ KO2      var_14   C5     C6     C7     C8       179.939   20.000   3
+ KO2      var_15   C6     C7     O7     HO7      -59.996   20.000   1
+ KO2      var_16   C6     C7     C8     O8      -174.970   20.000   3
+ KO2      var_17   C7     C8     O8     HO8     -179.980   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ KO2      chir_01  C2     C1     O6     C3        positiv
+ KO2      chir_02  C6     O6     C7     C5        positiv
+ KO2      chir_03  C7     C6     C8     O7        negativ
+ KO2      chir_04  C5     C6     O5     C4        positiv
+ KO2      chir_05  C4     C5     O4     C3        positiv
+ KO2      chir_06  C3     C2     C4     O3        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ KO2      plan-1    C1        0.020
+ KO2      plan-1    O1B       0.020
+ KO2      plan-1    C2        0.020
+ KO2      plan-1    O1A       0.020
+ KO2      plan-2    C11       0.020
+ KO2      plan-2    C10       0.020
+ KO2      plan-2    H11       0.020
+ KO2      plan-2    H11A      0.020
+ KO2      plan-2    C9        0.020
+ KO2      plan-2    H10       0.020
+# ------------------------------------------------------

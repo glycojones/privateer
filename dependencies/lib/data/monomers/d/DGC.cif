@@ -1,0 +1,195 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DGC      DGC '4-DEOXY-ALPHA-L-THREO-HEX-4-ENOPYRAN' non-polymer        19  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DGC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DGC           O6B    O    OC       -0.500      0.000    0.000    0.000
+ DGC           C6     C    C         0.000     -0.674   -0.178   -1.039
+ DGC           O6A    O    OC       -0.500     -0.101   -0.454   -2.116
+ DGC           C5     C    C         0.000     -2.142   -0.060   -0.993
+ DGC           O5     O    O2        0.000     -2.801   -0.263   -2.146
+ DGC           C1     C    CH1       0.000     -4.063    0.392   -2.112
+ DGC           H1     H    H         0.000     -3.911    1.477   -2.023
+ DGC           O1     O    OH1       0.000     -4.782    0.108   -3.315
+ DGC           HA     H    H         0.000     -4.275    0.426   -4.075
+ DGC           C4     C    C1        0.000     -2.679    0.235    0.175
+ DGC           H4     H    H         0.000     -2.032    0.361    1.028
+ DGC           C3     C    CH1       0.000     -4.165    0.402    0.359
+ DGC           H3     H    H         0.000     -4.402    1.465    0.506
+ DGC           O3     O    OH1       0.000     -4.598   -0.349    1.493
+ DGC           HC     H    H         0.000     -4.140   -0.032    2.283
+ DGC           C2     C    CH1       0.000     -4.864   -0.113   -0.906
+ DGC           H2     H    H         0.000     -4.878   -1.212   -0.903
+ DGC           O2     O    OH1       0.000     -6.201    0.387   -0.961
+ DGC           HB     H    H         0.000     -6.635    0.058   -1.759
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DGC      O6B    n/a    C6     START
+ DGC      C6     O6B    C5     .
+ DGC      O6A    C6     .      .
+ DGC      C5     C6     C4     .
+ DGC      O5     C5     C1     .
+ DGC      C1     O5     O1     .
+ DGC      H1     C1     .      .
+ DGC      O1     C1     HA     .
+ DGC      HA     O1     .      .
+ DGC      C4     C5     C3     .
+ DGC      H4     C4     .      .
+ DGC      C3     C4     C2     .
+ DGC      H3     C3     .      .
+ DGC      O3     C3     HC     .
+ DGC      HC     O3     .      .
+ DGC      C2     C3     O2     .
+ DGC      H2     C2     .      .
+ DGC      O2     C2     HB     .
+ DGC      HB     O2     .      END
+ DGC      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DGC       C1        C2        single    1.524     0.020     1.524     0.020     
+DGC       C1        O5        single    1.426     0.020     1.426     0.020     
+DGC       O1        C1        single    1.432     0.020     1.432     0.020     
+DGC       H1        C1        single    1.089     0.010     0.989     0.005     
+DGC       O2        C2        single    1.432     0.020     1.432     0.020     
+DGC       C2        C3        single    1.524     0.020     1.524     0.020     
+DGC       H2        C2        single    1.089     0.010     0.989     0.005     
+DGC       HB        O2        single    0.970     0.012     0.839     0.014     
+DGC       O3        C3        single    1.432     0.020     1.432     0.020     
+DGC       C3        C4        single    1.510     0.020     1.510     0.020     
+DGC       H3        C3        single    1.089     0.010     0.989     0.005     
+DGC       HC        O3        single    0.970     0.012     0.839     0.014     
+DGC       C4        C5        double    1.340     0.020     1.340     0.020     
+DGC       H4        C4        single    1.082     0.013     0.975     0.010     
+DGC       O5        C5        single    1.454     0.020     1.454     0.020     
+DGC       C5        C6        single    1.460     0.020     1.460     0.020     
+DGC       O6A       C6        deloc     1.250     0.020     1.250     0.020     
+DGC       C6        O6B       deloc     1.250     0.020     1.250     0.020     
+DGC       HA        O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DGC      O6B    C6     O6A     123.000    3.000
+ DGC      O6B    C6     C5      120.000    3.000
+ DGC      O6A    C6     C5      120.000    3.000
+ DGC      C6     C5     O5      120.000    3.000
+ DGC      C6     C5     C4      120.000    3.000
+ DGC      O5     C5     C4      120.000    3.000
+ DGC      C5     O5     C1      111.800    3.000
+ DGC      O5     C1     H1      109.470    3.000
+ DGC      O5     C1     O1      109.470    3.000
+ DGC      O5     C1     C2      109.470    3.000
+ DGC      H1     C1     O1      109.470    3.000
+ DGC      H1     C1     C2      108.340    3.000
+ DGC      O1     C1     C2      109.470    3.000
+ DGC      C1     O1     HA      109.470    3.000
+ DGC      C5     C4     H4      120.000    3.000
+ DGC      C5     C4     C3      120.500    3.000
+ DGC      H4     C4     C3      120.000    3.000
+ DGC      C4     C3     H3      108.810    3.000
+ DGC      C4     C3     O3      109.470    3.000
+ DGC      C4     C3     C2      109.470    3.000
+ DGC      H3     C3     O3      109.470    3.000
+ DGC      H3     C3     C2      108.340    3.000
+ DGC      O3     C3     C2      109.470    3.000
+ DGC      C3     O3     HC      109.470    3.000
+ DGC      C3     C2     H2      108.340    3.000
+ DGC      C3     C2     O2      109.470    3.000
+ DGC      C3     C2     C1      111.000    3.000
+ DGC      H2     C2     O2      109.470    3.000
+ DGC      H2     C2     C1      108.340    3.000
+ DGC      O2     C2     C1      109.470    3.000
+ DGC      C2     O2     HB      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DGC      var_1    O6B    C6     C5     C4        -0.023   20.000   1
+ DGC      var_2    C6     C5     O5     C1      -150.000   20.000   1
+ DGC      var_3    C5     O5     C1     O1       180.000   20.000   1
+ DGC      var_4    O5     C1     C2     C3        60.000   20.000   3
+ DGC      var_5    O5     C1     O1     HA       -60.084   20.000   1
+ DGC      var_6    C6     C5     C4     C3       180.000   20.000   1
+ DGC      var_7    C5     C4     C3     C2         0.000   20.000   1
+ DGC      var_8    C4     C3     O3     HC        59.976   20.000   1
+ DGC      var_9    C4     C3     C2     O2      -150.000   20.000   3
+ DGC      var_10   C3     C2     O2     HB      -179.987   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DGC      chir_01  C1     C2     O5     O1        negativ
+ DGC      chir_02  C2     C1     O2     C3        positiv
+ DGC      chir_03  C3     C2     O3     C4        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DGC      plan-1    C4        0.020
+ DGC      plan-1    C3        0.020
+ DGC      plan-1    C5        0.020
+ DGC      plan-1    H4        0.020
+ DGC      plan-2    C5        0.020
+ DGC      plan-2    C4        0.020
+ DGC      plan-2    O5        0.020
+ DGC      plan-2    C6        0.020
+ DGC      plan-2    H4        0.020
+ DGC      plan-3    C6        0.020
+ DGC      plan-3    C5        0.020
+ DGC      plan-3    O6A       0.020
+ DGC      plan-3    O6B       0.020
+# ------------------------------------------------------

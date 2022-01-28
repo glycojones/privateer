@@ -1,0 +1,236 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PPN     PPN     PARA-NITROPHENYLALANINE     peptide     25     15     .
+#
+data_comp_PPN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PPN     N       N       NT3     1       -17.982     -0.767      -0.272
+PPN     CA      C       CH1     0       -18.709     -2.021      -0.621
+PPN     C       C       C       0       -19.704     -1.753      -1.759
+PPN     O       O       O       0       -20.590     -0.900      -1.555
+PPN     OXT     O       OC      -1      -19.557     -2.408      -2.810
+PPN     CB      C       CH2     0       -19.416     -2.597      0.611
+PPN     CG      C       CR6     0       -20.048     -3.952      0.406
+PPN     CD1     C       CR16    0       -19.261     -5.079      0.194
+PPN     CD2     C       CR16    0       -21.431     -4.108      0.424
+PPN     CE1     C       CR16    0       -19.816     -6.334      0.003
+PPN     CE2     C       CR16    0       -22.030     -5.343      0.238
+PPN     CZ      C       CR6     0       -21.206     -6.450      0.027
+PPN     N1      N       N       1       -21.813     -7.761      -0.171
+PPN     O1      O       O       0       -22.599     -7.903      -1.095
+PPN     O2      O       OC      -1      -21.506     -8.661      0.596
+PPN     H       H       H       0       -18.354     -0.385      0.468
+PPN     H2      H       H       0       -18.024     -0.173      -0.964
+PPN     H3      H       H       0       -17.108     -0.957      -0.101
+PPN     HA      H       H       0       -18.046     -2.685      -0.940
+PPN     HB2     H       H       0       -20.107     -1.963      0.894
+PPN     HB3     H       H       0       -18.760     -2.664      1.336
+PPN     HD1     H       H       0       -18.322     -4.986      0.179
+PPN     HD2     H       H       0       -21.977     -3.352      0.566
+PPN     HE1     H       H       0       -19.267     -7.084      -0.139
+PPN     HE2     H       H       0       -22.967     -5.429      0.253
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+PPN      N      n/a    CA     START
+PPN      H      N      .      .
+PPN      H2     N      .      .
+PPN      H3     N      .      .
+PPN      CA     N      C      .
+PPN      HA     CA     .      .
+PPN      CB     CA     CG     .
+PPN      HB2    CB     .      .
+PPN      HB3    CB     .      .
+PPN      CG     CB     CD2    .
+PPN      CD2    CG     CE2    .
+PPN      HD2    CD2    .      .
+PPN      CE2    CD2    CZ     .
+PPN      HE2    CE2    .      .
+PPN      CZ     CE2    N1     .
+PPN      CE1    CZ     CD1    .
+PPN      HE1    CE1    .      .
+PPN      CD1    CE1    HD1    .
+PPN      HD1    CD1    .      .
+PPN      N1     CZ     O2     .
+PPN      O1     N1     .      .
+PPN      O2     N1     .      .
+PPN      C      CA     .      END
+PPN      O      C      .      .
+PPN      OXT    C      .      .
+PPN      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PPN       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+PPN       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+PPN       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+PPN       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+PPN       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+PPN       CB        CG        SINGLE    n         1.508     0.010     1.508     0.010     
+PPN       CG        CD1       DOUBLE    y         1.385     0.011     1.385     0.011     
+PPN       CG        CD2       SINGLE    y         1.385     0.011     1.385     0.011     
+PPN       CD1       CE1       SINGLE    y         1.382     0.010     1.382     0.010     
+PPN       CD2       CE2       DOUBLE    y         1.382     0.010     1.382     0.010     
+PPN       CE1       CZ        DOUBLE    y         1.393     0.011     1.393     0.011     
+PPN       CE2       CZ        SINGLE    y         1.393     0.011     1.393     0.011     
+PPN       CZ        N1        SINGLE    n         1.457     0.020     1.457     0.020     
+PPN       N1        O1        DOUBLE    n         1.221     0.017     1.221     0.017     
+PPN       N1        O2        SINGLE    n         1.221     0.017     1.221     0.017     
+PPN       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+PPN       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+PPN       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+PPN       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+PPN       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+PPN       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+PPN       CD1       HD1       SINGLE    n         1.082     0.013     0.943     0.017     
+PPN       CD2       HD2       SINGLE    n         1.082     0.013     0.943     0.017     
+PPN       CE1       HE1       SINGLE    n         1.082     0.013     0.941     0.020     
+PPN       CE2       HE2       SINGLE    n         1.082     0.013     0.941     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PPN          CA           N           H     109.646    1.54
+PPN          CA           N          H2     109.646    1.54
+PPN          CA           N          H3     109.646    1.54
+PPN           H           N          H2     109.028    2.41
+PPN           H           N          H3     109.028    2.41
+PPN          H2           N          H3     109.028    2.41
+PPN           N          CA           C     109.448    1.50
+PPN           N          CA          CB     110.494    1.50
+PPN           N          CA          HA     108.601    1.50
+PPN           C          CA          CB     111.331    2.53
+PPN           C          CA          HA     108.450    1.50
+PPN          CB          CA          HA     108.690    1.50
+PPN          CA           C           O     117.228    2.13
+PPN          CA           C         OXT     117.228    2.13
+PPN           O           C         OXT     125.543    1.50
+PPN          CA          CB          CG     114.745    1.55
+PPN          CA          CB         HB2     108.434    1.50
+PPN          CA          CB         HB3     108.434    1.50
+PPN          CG          CB         HB2     108.862    1.50
+PPN          CG          CB         HB3     108.862    1.50
+PPN         HB2          CB         HB3     107.782    1.50
+PPN          CB          CG         CD1     121.057    1.50
+PPN          CB          CG         CD2     121.057    1.50
+PPN         CD1          CG         CD2     117.886    1.50
+PPN          CG         CD1         CE1     121.482    1.50
+PPN          CG         CD1         HD1     119.303    1.50
+PPN         CE1         CD1         HD1     119.216    1.50
+PPN          CG         CD2         CE2     121.482    1.50
+PPN          CG         CD2         HD2     119.303    1.50
+PPN         CE2         CD2         HD2     119.216    1.50
+PPN         CD1         CE1          CZ     118.419    1.50
+PPN         CD1         CE1         HE1     120.522    1.50
+PPN          CZ         CE1         HE1     121.060    1.50
+PPN         CD2         CE2          CZ     118.419    1.50
+PPN         CD2         CE2         HE2     120.522    1.50
+PPN          CZ         CE2         HE2     121.060    1.50
+PPN         CE1          CZ         CE2     122.314    1.50
+PPN         CE1          CZ          N1     118.843    1.50
+PPN         CE2          CZ          N1     118.843    1.50
+PPN          CZ          N1          O1     118.257    1.50
+PPN          CZ          N1          O2     118.257    1.50
+PPN          O1          N1          O2     123.486    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PPN             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+PPN              const_14         CD2         CE2          CZ          N1     180.000   10.00     2
+PPN             sp2_sp2_1         CE1          CZ          N1          O1     180.000   10.00     2
+PPN             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+PPN            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+PPN             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+PPN       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+PPN              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+PPN       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+PPN              const_17          CG         CD2         CE2          CZ       0.000   10.00     2
+PPN              const_10         CD1         CE1          CZ          N1     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PPN    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PPN    plan-1          CB   0.020
+PPN    plan-1         CD1   0.020
+PPN    plan-1         CD2   0.020
+PPN    plan-1         CE1   0.020
+PPN    plan-1         CE2   0.020
+PPN    plan-1          CG   0.020
+PPN    plan-1          CZ   0.020
+PPN    plan-1         HD1   0.020
+PPN    plan-1         HD2   0.020
+PPN    plan-1         HE1   0.020
+PPN    plan-1         HE2   0.020
+PPN    plan-1          N1   0.020
+PPN    plan-2           C   0.020
+PPN    plan-2          CA   0.020
+PPN    plan-2           O   0.020
+PPN    plan-2         OXT   0.020
+PPN    plan-3          CZ   0.020
+PPN    plan-3          N1   0.020
+PPN    plan-3          O1   0.020
+PPN    plan-3          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PPN SMILES           ACDLabs              10.04 "[O-][N+](=O)c1ccc(cc1)CC(N)C(=O)O"
+PPN SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1ccc(cc1)[N+]([O-])=O)C(O)=O"
+PPN SMILES           CACTVS               3.341 "N[CH](Cc1ccc(cc1)[N+]([O-])=O)C(O)=O"
+PPN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(ccc1C[C@@H](C(=O)O)N)[N+](=O)[O-]"
+PPN SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(ccc1CC(C(=O)O)N)[N+](=O)[O-]"
+PPN InChI            InChI                1.03  "InChI=1S/C9H10N2O4/c10-8(9(12)13)5-6-1-3-7(4-2-6)11(14)15/h1-4,8H,5,10H2,(H,12,13)/t8-/m0/s1"
+PPN InChIKey         InChI                1.03  GTVVZTAFGPQSPC-QMMMGPOBSA-N
+PPN ?                acedrg               196         "dictionary generator"
+PPN ?                acedrg_database      11          "data source"
+PPN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PPN ?                refmac5              5.8.0222    "optimization tool"

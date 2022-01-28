@@ -1,0 +1,200 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B2I      B2I 'ISOLEUCINE BORONIC ACID             ' non-polymer        23   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_B2I
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ B2I           O2     O    OH1       0.000      0.000    0.000    0.000
+ B2I           HO2    H    H         0.000      0.709   -0.630   -0.038
+ B2I           B      B    B         0.000     -1.118   -0.300    0.821
+ B2I           O1     O    OH1       0.000     -1.154   -1.514    1.556
+ B2I           HO1    H    H         0.000     -0.416   -2.106    1.478
+ B2I           CA     C    CH1       0.000     -2.316    0.712    0.917
+ B2I           HA     H    H         0.000     -2.786    0.630    1.907
+ B2I           N      N    NH2       0.000     -1.818    2.080    0.722
+ B2I           HN2    H    H         0.000     -2.120    2.625   -0.077
+ B2I           HN1    H    H         0.000     -1.170    2.488    1.386
+ B2I           CB     C    CH1       0.000     -3.346    0.385   -0.165
+ B2I           HB     H    H         0.000     -2.855    0.378   -1.149
+ B2I           CG2    C    CH3       0.000     -4.451    1.444   -0.154
+ B2I           HG23   H    H         0.000     -5.165    1.219   -0.903
+ B2I           HG22   H    H         0.000     -4.925    1.451    0.793
+ B2I           HG21   H    H         0.000     -4.030    2.397   -0.344
+ B2I           CG1    C    CH2       0.000     -3.956   -0.992    0.108
+ B2I           HG11   H    H         0.000     -4.518   -0.960    1.044
+ B2I           HG12   H    H         0.000     -3.158   -1.733    0.189
+ B2I           CD1    C    CH3       0.000     -4.894   -1.372   -1.039
+ B2I           HD13   H    H         0.000     -4.350   -1.404   -1.949
+ B2I           HD12   H    H         0.000     -5.318   -2.326   -0.852
+ B2I           HD11   H    H         0.000     -5.669   -0.654   -1.120
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B2I      O2     n/a    B      START
+ B2I      HO2    O2     .      .
+ B2I      B      O2     CA     .
+ B2I      O1     B      HO1    .
+ B2I      HO1    O1     .      .
+ B2I      CA     B      CB     .
+ B2I      HA     CA     .      .
+ B2I      N      CA     HN1    .
+ B2I      HN2    N      .      .
+ B2I      HN1    N      .      .
+ B2I      CB     CA     CG1    .
+ B2I      HB     CB     .      .
+ B2I      CG2    CB     HG21   .
+ B2I      HG23   CG2    .      .
+ B2I      HG22   CG2    .      .
+ B2I      HG21   CG2    .      .
+ B2I      CG1    CB     CD1    .
+ B2I      HG11   CG1    .      .
+ B2I      HG12   CG1    .      .
+ B2I      CD1    CG1    HD11   .
+ B2I      HD13   CD1    .      .
+ B2I      HD12   CD1    .      .
+ B2I      HD11   CD1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B2I       N         CA        single    1.450     0.020     1.450     0.020     
+B2I       HN1       N         single    1.036     0.016     0.914     0.007     
+B2I       HN2       N         single    1.036     0.016     0.914     0.007     
+B2I       CB        CA        single    1.524     0.020     1.524     0.020     
+B2I       CA        B         single    1.600     0.020     1.600     0.020     
+B2I       HA        CA        single    1.089     0.010     0.989     0.005     
+B2I       CG1       CB        single    1.524     0.020     1.524     0.020     
+B2I       CG2       CB        single    1.524     0.020     1.524     0.020     
+B2I       HB        CB        single    1.089     0.010     0.989     0.005     
+B2I       CD1       CG1       single    1.513     0.020     1.513     0.020     
+B2I       HG11      CG1       single    1.089     0.010     0.989     0.005     
+B2I       HG12      CG1       single    1.089     0.010     0.989     0.005     
+B2I       HG21      CG2       single    1.089     0.010     0.989     0.005     
+B2I       HG22      CG2       single    1.089     0.010     0.989     0.005     
+B2I       HG23      CG2       single    1.089     0.010     0.989     0.005     
+B2I       HD11      CD1       single    1.089     0.010     0.989     0.005     
+B2I       HD12      CD1       single    1.089     0.010     0.989     0.005     
+B2I       HD13      CD1       single    1.089     0.010     0.989     0.005     
+B2I       O1        B         single    1.535     0.020     1.535     0.020     
+B2I       B         O2        single    1.535     0.020     1.535     0.020     
+B2I       HO1       O1        single    0.970     0.012     0.839     0.014     
+B2I       HO2       O2        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ B2I      HO2    O2     B       120.000    3.000
+ B2I      O2     B      O1      120.000    3.000
+ B2I      O2     B      CA      120.000    3.000
+ B2I      O1     B      CA      120.000    3.000
+ B2I      B      O1     HO1     120.000    3.000
+ B2I      B      CA     HA      109.470    3.000
+ B2I      B      CA     N       109.500    3.000
+ B2I      B      CA     CB      109.500    3.000
+ B2I      HA     CA     N       109.470    3.000
+ B2I      HA     CA     CB      108.340    3.000
+ B2I      N      CA     CB      109.470    3.000
+ B2I      CA     N      HN2     120.000    3.000
+ B2I      CA     N      HN1     120.000    3.000
+ B2I      HN2    N      HN1     120.000    3.000
+ B2I      CA     CB     HB      108.340    3.000
+ B2I      CA     CB     CG2     111.000    3.000
+ B2I      CA     CB     CG1     111.000    3.000
+ B2I      HB     CB     CG2     108.340    3.000
+ B2I      HB     CB     CG1     108.340    3.000
+ B2I      CG2    CB     CG1     111.000    3.000
+ B2I      CB     CG2    HG23    109.470    3.000
+ B2I      CB     CG2    HG22    109.470    3.000
+ B2I      CB     CG2    HG21    109.470    3.000
+ B2I      HG23   CG2    HG22    109.470    3.000
+ B2I      HG23   CG2    HG21    109.470    3.000
+ B2I      HG22   CG2    HG21    109.470    3.000
+ B2I      CB     CG1    HG11    109.470    3.000
+ B2I      CB     CG1    HG12    109.470    3.000
+ B2I      CB     CG1    CD1     111.000    3.000
+ B2I      HG11   CG1    HG12    107.900    3.000
+ B2I      HG11   CG1    CD1     109.470    3.000
+ B2I      HG12   CG1    CD1     109.470    3.000
+ B2I      CG1    CD1    HD13    109.470    3.000
+ B2I      CG1    CD1    HD12    109.470    3.000
+ B2I      CG1    CD1    HD11    109.470    3.000
+ B2I      HD13   CD1    HD12    109.470    3.000
+ B2I      HD13   CD1    HD11    109.470    3.000
+ B2I      HD12   CD1    HD11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ B2I      var_1    HO2    O2     B      CA      -180.000   20.000   1
+ B2I      var_2    O2     B      O1     HO1       -0.052   20.000   1
+ B2I      var_3    O2     B      CA     CB        90.037   20.000   1
+ B2I      var_4    B      CA     N      HN1      -63.988   20.000   1
+ B2I      var_5    B      CA     CB     CG1       64.967   20.000   3
+ B2I      var_6    CA     CB     CG2    HG21      59.952   20.000   3
+ B2I      var_7    CA     CB     CG1    CD1     -174.998   20.000   3
+ B2I      var_8    CB     CG1    CD1    HD11     -59.980   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ B2I      chir_01  CA     N      CB     B         negativ
+ B2I      chir_02  CB     CA     CG1    CG2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ B2I      plan-1    N         0.020
+ B2I      plan-1    CA        0.020
+ B2I      plan-1    HN1       0.020
+ B2I      plan-1    HN2       0.020
+# ------------------------------------------------------

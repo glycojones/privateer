@@ -62,24 +62,11 @@ file(COPY ${PRIVATEERDATA}/linkage_torsions/privateer_torsion_database.json
     DESTINATION ${CLIBDENV})
 
 add_library(privateer_lib
-            ${PRIVATEER_SOURCE_DIR}/cpp/third-party/gemmi_compilation_unit.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-error.h
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-json.h
             ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco.cpp
             ${PRIVATEER_SOURCE_DIR}/cpp/clipper-glyco_data.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-blobs.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-composition.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-dbquery.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-cryo_em.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-xray.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-modelling.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-interactions.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-lib.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
-            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pymodelling.cpp)
+            ${PRIVATEER_SOURCE_DIR}/cpp/privateer-lib.cpp)
+            # ${PRIVATEER_SOURCE_DIR}/cpp/privateer-pybind11.cpp)
+            # ${PRIVATEER_SOURCE_DIR}/cpp/privateer-restraints.cpp)
 
 target_link_libraries ( privateer_lib
                         ${MMDB2DEP} 
@@ -115,46 +102,22 @@ target_link_libraries ( privateer_exec
 
 set_target_properties ( privateer_exec   PROPERTIES OUTPUT_NAME privateer )
 
-pybind11_add_module(privateer_core          ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
-                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
-                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
-                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
-                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pymodelling.cpp)
+# ${PRIVATEER_SOURCE_DIR}/cpp/privateer-restraints.cpp
+# pybind11_add_module(privateer_core ${PRIVATEER_SOURCE_DIR}/cpp/privateer-pybind11.cpp)
 
-pybind11_add_module(privateer_modelling     ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pybind11.cpp
-                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-ccp4mg.cpp
-                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-restraints.cpp
-                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pyanalysis.cpp
-                                            ${PRIVATEER_SOURCE_DIR}/cpp/pybind11/privateer-pymodelling.cpp)
 
-target_link_libraries ( privateer_core PRIVATE 
-                        privateer_lib 
-                        ${MMDB2DEP} 
-                        ${CCP4CDEP} 
-                        ${CCP4SRSDEP}
-                        ${CLIPPERCOREDEP}
-                        ${CLIPPERMMDBDEP}
-                        ${CLIPPERMINIMOLDEP}
-                        ${CLIPPERCONTRIBDEP}
-                        ${CLIPPERCCP4DEP}
-                        ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY})
-
-target_link_libraries ( privateer_modelling PRIVATE
-                        privateer_lib 
-                        ${MMDB2DEP} 
-                        ${CCP4CDEP} 
-                        ${CCP4SRSDEP}
-                        ${CLIPPERCOREDEP}
-                        ${CLIPPERMMDBDEP}
-                        ${CLIPPERMINIMOLDEP}
-                        ${CLIPPERCONTRIBDEP}
-                        ${CLIPPERCCP4DEP}
-                        ${CLIPPERCIFDEP}
-                        ${PYTHON_LIBRARY})
-
+# target_link_libraries ( privateer_lib PRIVATE 
+#                         ${MMDB2DEP} 
+#                         ${CCP4CDEP} 
+#                         ${CCP4SRSDEP}
+#                         ${CLIPPERCOREDEP}
+#                         ${CLIPPERMMDBDEP}
+#                         ${CLIPPERMINIMOLDEP}
+#                         ${CLIPPERCONTRIBDEP}
+#                         ${CLIPPERCCP4DEP}
+#                         ${CLIPPERCIFDEP}
+#                         ${PYTHON_LIBRARY})
 
 install ( TARGETS privateer_lib LIBRARY DESTINATION ${PROJECT_SOURCE_DIR})
 install ( TARGETS privateer_exec DESTINATION ${PROJECT_SOURCE_DIR})
-install ( TARGETS privateer_core DESTINATION ${PROJECT_SOURCE_DIR} )
-install ( TARGETS privateer_modelling DESTINATION ${PROJECT_SOURCE_DIR} )
+# install ( TARGETS privateer_core DESTINATION ${PROJECT_SOURCE_DIR} )

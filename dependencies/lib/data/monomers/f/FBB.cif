@@ -1,0 +1,160 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FBB     FBB     6-fluoro-1,3-benzothiazol-2-amine     NON-POLYMER     16     11     .     
+#
+data_comp_FBB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FBB     F10     F       F       0       9.707       18.098      32.413      
+FBB     C5      C       CR6     0       9.327       18.923      33.423      
+FBB     C6      C       CR16    0       10.224      19.155      34.457      
+FBB     C1      C       CR16    0       9.856       19.996      35.500      
+FBB     C4      C       CR16    0       8.063       19.485      33.359      
+FBB     C3      C       CR56    0       7.711       20.327      34.416      
+FBB     S9      S       S2      0       6.222       21.190      34.656      
+FBB     C8      C       CR5     0       6.869       21.834      36.160      
+FBB     N11     N       NH2     0       6.135       22.654      36.915      
+FBB     N7      N       NRD5    0       8.088       21.453      36.463      
+FBB     C2      C       CR56    0       8.587       20.593      35.487      
+FBB     H1      H       H       0       11.063      18.751      34.450      
+FBB     H2      H       H       0       10.449      20.166      36.210      
+FBB     H3      H       H       0       7.481       19.309      32.649      
+FBB     H4      H       H       0       6.460       22.971      37.656      
+FBB     H5      H       H       0       5.332       22.870      36.667      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FBB       F10       C5        SINGLE    n         1.359     0.010     1.359     0.010     
+FBB       C5        C4        DOUBLE    y         1.377     0.010     1.377     0.010     
+FBB       C5        C6        SINGLE    y         1.382     0.010     1.382     0.010     
+FBB       C4        C3        SINGLE    y         1.389     0.010     1.389     0.010     
+FBB       C6        C1        DOUBLE    y         1.383     0.010     1.383     0.010     
+FBB       C3        S9        SINGLE    n         1.738     0.010     1.738     0.010     
+FBB       C3        C2        DOUBLE    y         1.403     0.010     1.403     0.010     
+FBB       S9        C8        SINGLE    n         1.758     0.012     1.758     0.012     
+FBB       C1        C2        SINGLE    y         1.395     0.010     1.395     0.010     
+FBB       N7        C2        SINGLE    n         1.393     0.010     1.393     0.010     
+FBB       C8        N7        DOUBLE    n         1.310     0.018     1.310     0.018     
+FBB       C8        N11       SINGLE    n         1.334     0.010     1.334     0.010     
+FBB       C6        H1        SINGLE    n         1.082     0.013     0.931     0.014     
+FBB       C1        H2        SINGLE    n         1.082     0.013     0.941     0.019     
+FBB       C4        H3        SINGLE    n         1.082     0.013     0.935     0.010     
+FBB       N11       H4        SINGLE    n         1.016     0.010     0.868     0.020     
+FBB       N11       H5        SINGLE    n         1.016     0.010     0.868     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FBB         F10          C5          C4     117.757    1.50
+FBB         F10          C5          C6     118.100    1.50
+FBB          C4          C5          C6     124.144    1.50
+FBB          C5          C6          C1     119.459    1.50
+FBB          C5          C6          H1     120.212    1.50
+FBB          C1          C6          H1     120.338    1.50
+FBB          C6          C1          C2     119.253    1.50
+FBB          C6          C1          H2     120.635    1.50
+FBB          C2          C1          H2     120.112    1.50
+FBB          C5          C4          C3     115.671    1.50
+FBB          C5          C4          H3     121.997    1.50
+FBB          C3          C4          H3     122.331    1.50
+FBB          C4          C3          S9     128.094    1.87
+FBB          C4          C3          C2     122.033    1.50
+FBB          S9          C3          C2     109.873    1.50
+FBB          C3          S9          C8      89.031    1.50
+FBB          S9          C8          N7     115.632    1.50
+FBB          S9          C8         N11     120.452    1.50
+FBB          N7          C8         N11     123.916    1.50
+FBB          C8         N11          H4     119.996    1.50
+FBB          C8         N11          H5     119.996    1.50
+FBB          H4         N11          H5     120.009    2.21
+FBB          C2          N7          C8     110.577    1.50
+FBB          C3          C2          C1     119.433    1.50
+FBB          C3          C2          N7     115.359    1.50
+FBB          C1          C2          N7     125.209    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FBB              const_23         F10          C5          C6          C1     180.000   10.00     2
+FBB       const_sp2_sp2_2          C3          C4          C5         F10     180.000   10.00     2
+FBB              const_17          C2          C1          C6          C5       0.000   10.00     2
+FBB              const_13          C6          C1          C2          C3       0.000   10.00     2
+FBB       const_sp2_sp2_7          S9          C3          C4          C5     180.000   10.00     2
+FBB       const_sp2_sp2_9          C1          C2          C3          C4       0.000   10.00     2
+FBB             sp2_sp2_5          S9          C8         N11          H4     180.000   10.00     2
+FBB             sp2_sp2_2         N11          C8          N7          C2     180.000   10.00     2
+FBB             sp2_sp2_3          C3          C2          N7          C8       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FBB    plan-1          C1   0.020
+FBB    plan-1          C2   0.020
+FBB    plan-1          C3   0.020
+FBB    plan-1          C4   0.020
+FBB    plan-1          C5   0.020
+FBB    plan-1          C6   0.020
+FBB    plan-1         F10   0.020
+FBB    plan-1          H1   0.020
+FBB    plan-1          H2   0.020
+FBB    plan-1          H3   0.020
+FBB    plan-1          N7   0.020
+FBB    plan-1          S9   0.020
+FBB    plan-2          C8   0.020
+FBB    plan-2         N11   0.020
+FBB    plan-2          N7   0.020
+FBB    plan-2          S9   0.020
+FBB    plan-3          C8   0.020
+FBB    plan-3          H4   0.020
+FBB    plan-3          H5   0.020
+FBB    plan-3         N11   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FBB SMILES           ACDLabs              12.01 "Fc1ccc2nc(sc2c1)N"
+FBB InChI            InChI                1.03  "InChI=1S/C7H5FN2S/c8-4-1-2-5-6(3-4)11-7(9)10-5/h1-3H,(H2,9,10)"
+FBB InChIKey         InChI                1.03  CJLUXPZQUXVJNF-UHFFFAOYSA-N
+FBB SMILES_CANONICAL CACTVS               3.370 "Nc1sc2cc(F)ccc2n1"
+FBB SMILES           CACTVS               3.370 "Nc1sc2cc(F)ccc2n1"
+FBB SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1cc2c(cc1F)sc(n2)N"
+FBB SMILES           "OpenEye OEToolkits" 1.7.6 "c1cc2c(cc1F)sc(n2)N"
+FBB ?                acedrg               190         "dictionary generator"                  
+FBB ?                acedrg_database      11          "data source"                           
+FBB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FBB ?                refmac5              5.8.0158    "optimization tool"                     

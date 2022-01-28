@@ -1,0 +1,195 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MAW      MAW '4-deoxy-alpha-L-erythro-hex-4-enopyr' non-polymer        19  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MAW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MAW           O6B    O    OC       -0.500      0.000    0.000    0.000
+ MAW           C6     C    C         0.000     -0.902    0.865   -0.057
+ MAW           O6A    O    OC       -0.500     -0.608    2.060   -0.282
+ MAW           C5     C    C         0.000     -2.309    0.477    0.141
+ MAW           O5     O    O2        0.000     -3.261    1.439    0.072
+ MAW           C1     C    CH1       0.000     -4.548    1.135    0.616
+ MAW           H1     H    H         0.000     -4.491    1.110    1.713
+ MAW           O1     O    OH1       0.000     -5.491    2.129    0.205
+ MAW           H9     H    H         0.000     -5.214    2.993    0.539
+ MAW           C4     C    C1        0.000     -2.585   -0.797    0.379
+ MAW           H4     H    H         0.000     -1.775   -1.507    0.414
+ MAW           C3     C    CH1       0.000     -3.990   -1.286    0.602
+ MAW           H3     H    H         0.000     -4.155   -1.451    1.676
+ MAW           O3     O    OH1       0.000     -4.186   -2.514   -0.102
+ MAW           HO3    H    H         0.000     -3.559   -3.174    0.222
+ MAW           C2     C    CH1       0.000     -4.984   -0.239    0.088
+ MAW           H2     H    H         0.000     -5.993   -0.474    0.454
+ MAW           O2     O    OH1       0.000     -4.978   -0.230   -1.341
+ MAW           HO2    H    H         0.000     -5.592    0.445   -1.661
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MAW      O6B    n/a    C6     START
+ MAW      C6     O6B    C5     .
+ MAW      O6A    C6     .      .
+ MAW      C5     C6     C4     .
+ MAW      O5     C5     C1     .
+ MAW      C1     O5     O1     .
+ MAW      H1     C1     .      .
+ MAW      O1     C1     H9     .
+ MAW      H9     O1     .      .
+ MAW      C4     C5     C3     .
+ MAW      H4     C4     .      .
+ MAW      C3     C4     C2     .
+ MAW      H3     C3     .      .
+ MAW      O3     C3     HO3    .
+ MAW      HO3    O3     .      .
+ MAW      C2     C3     O2     .
+ MAW      H2     C2     .      .
+ MAW      O2     C2     HO2    .
+ MAW      HO2    O2     .      END
+ MAW      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MAW       O1        C1        single    1.432     0.020     1.432     0.020     
+MAW       C1        C2        single    1.524     0.020     1.524     0.020     
+MAW       C1        O5        single    1.426     0.020     1.426     0.020     
+MAW       H1        C1        single    1.089     0.010     0.989     0.005     
+MAW       O2        C2        single    1.432     0.020     1.432     0.020     
+MAW       C2        C3        single    1.524     0.020     1.524     0.020     
+MAW       H2        C2        single    1.089     0.010     0.989     0.005     
+MAW       HO2       O2        single    0.970     0.012     0.839     0.014     
+MAW       O3        C3        single    1.432     0.020     1.432     0.020     
+MAW       C3        C4        single    1.510     0.020     1.510     0.020     
+MAW       H3        C3        single    1.089     0.010     0.989     0.005     
+MAW       HO3       O3        single    0.970     0.012     0.839     0.014     
+MAW       C4        C5        double    1.340     0.020     1.340     0.020     
+MAW       H4        C4        single    1.082     0.013     0.975     0.010     
+MAW       O5        C5        single    1.454     0.020     1.454     0.020     
+MAW       C5        C6        single    1.460     0.020     1.460     0.020     
+MAW       O6A       C6        deloc     1.250     0.020     1.250     0.020     
+MAW       C6        O6B       deloc     1.250     0.020     1.250     0.020     
+MAW       H9        O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MAW      O6B    C6     O6A     123.000    3.000
+ MAW      O6B    C6     C5      120.000    3.000
+ MAW      O6A    C6     C5      120.000    3.000
+ MAW      C6     C5     O5      120.000    3.000
+ MAW      C6     C5     C4      120.000    3.000
+ MAW      O5     C5     C4      120.000    3.000
+ MAW      C5     O5     C1      111.800    3.000
+ MAW      O5     C1     H1      109.470    3.000
+ MAW      O5     C1     O1      109.470    3.000
+ MAW      O5     C1     C2      109.470    3.000
+ MAW      H1     C1     O1      109.470    3.000
+ MAW      H1     C1     C2      108.340    3.000
+ MAW      O1     C1     C2      109.470    3.000
+ MAW      C1     O1     H9      109.470    3.000
+ MAW      C5     C4     H4      120.000    3.000
+ MAW      C5     C4     C3      120.500    3.000
+ MAW      H4     C4     C3      120.000    3.000
+ MAW      C4     C3     H3      108.810    3.000
+ MAW      C4     C3     O3      109.470    3.000
+ MAW      C4     C3     C2      109.470    3.000
+ MAW      H3     C3     O3      109.470    3.000
+ MAW      H3     C3     C2      108.340    3.000
+ MAW      O3     C3     C2      109.470    3.000
+ MAW      C3     O3     HO3     109.470    3.000
+ MAW      C3     C2     H2      108.340    3.000
+ MAW      C3     C2     O2      109.470    3.000
+ MAW      C3     C2     C1      111.000    3.000
+ MAW      H2     C2     O2      109.470    3.000
+ MAW      H2     C2     C1      108.340    3.000
+ MAW      O2     C2     C1      109.470    3.000
+ MAW      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MAW      var_1    O6B    C6     C5     C4         0.122   20.000   1
+ MAW      var_2    C6     C5     O5     C1      -150.000   20.000   1
+ MAW      var_3    C5     O5     C1     O1       180.000   20.000   1
+ MAW      var_4    O5     C1     C2     C3        60.000   20.000   3
+ MAW      var_5    O5     C1     O1     H9       -61.136   20.000   1
+ MAW      var_6    C6     C5     C4     C3       180.000   20.000   1
+ MAW      var_7    C5     C4     C3     C2        30.000   20.000   1
+ MAW      var_8    C4     C3     O3     HO3       59.949   20.000   1
+ MAW      var_9    C4     C3     C2     O2        60.000   20.000   3
+ MAW      var_10   C3     C2     O2     HO2     -178.825   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MAW      chir_01  C1     O1     C2     O5        negativ
+ MAW      chir_02  C2     C1     O2     C3        negativ
+ MAW      chir_03  C3     C2     O3     C4        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MAW      plan-1    C4        0.020
+ MAW      plan-1    C3        0.020
+ MAW      plan-1    C5        0.020
+ MAW      plan-1    H4        0.020
+ MAW      plan-2    C5        0.020
+ MAW      plan-2    C4        0.020
+ MAW      plan-2    O5        0.020
+ MAW      plan-2    C6        0.020
+ MAW      plan-2    H4        0.020
+ MAW      plan-3    C6        0.020
+ MAW      plan-3    C5        0.020
+ MAW      plan-3    O6A       0.020
+ MAW      plan-3    O6B       0.020
+# ------------------------------------------------------

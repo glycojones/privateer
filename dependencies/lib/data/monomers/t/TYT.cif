@@ -1,0 +1,359 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TYT      TYT 'TYROSINE DERIVATIVE                 ' non-polymer        43  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TYT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TYT           O3     O    O         0.000      0.000    0.000    0.000
+ TYT           C5     C    C         0.000     -1.189    0.233   -0.072
+ TYT           C6     C    C1        0.000     -1.702    1.356    0.593
+ TYT           H7     H    H         0.000     -1.048    1.947    1.211
+ TYT           C7     C    C         0.000     -3.011    1.714    0.472
+ TYT           O4     O    OH1       0.000     -3.497    2.791    1.129
+ TYT           H20    H    H         0.000     -2.790    3.206    1.646
+ TYT           C8     C    C         0.000     -3.890    0.893   -0.396
+ TYT           C18    C    CH2       0.000     -3.223    0.092   -1.495
+ TYT           H17    H    H         0.000     -2.837    0.760   -2.268
+ TYT           H18    H    H         0.000     -3.937   -0.604   -1.940
+ TYT           C4     C    CH1       0.000     -2.064   -0.693   -0.871
+ TYT           H6     H    H         0.000     -1.469   -1.160   -1.668
+ TYT           C3     C    CH2       0.000     -2.624   -1.781    0.048
+ TYT           H4     H    H         0.000     -3.324   -2.405   -0.512
+ TYT           H5     H    H         0.000     -3.146   -1.315    0.887
+ TYT           C1     C    CH1       0.000     -1.476   -2.645    0.575
+ TYT           H3     H    H         0.000     -0.728   -2.003    1.061
+ TYT           C2     C    C         0.000     -2.012   -3.637    1.575
+ TYT           O2     O    OC       -0.500     -2.229   -4.819    1.228
+ TYT           O1     O    OC       -0.500     -2.242   -3.278    2.751
+ TYT           N1     N    NH2       0.000     -0.852   -3.364   -0.543
+ TYT           H2     H    H         0.000     -1.135   -3.172   -1.497
+ TYT           H1     H    H         0.000     -0.133   -4.057   -0.368
+ TYT           N2     N    N         0.000     -5.170    0.864   -0.223
+ TYT           C9     C    CH1       0.000     -5.769    1.543    0.929
+ TYT           H8     H    H         0.000     -5.165    1.582    1.847
+ TYT           C11    C    CH1       0.000     -7.283    1.426    1.109
+ TYT           H11    H    H         0.000     -7.655    1.389    2.143
+ TYT           C10    C    CH2       0.000     -6.669    2.749    0.649
+ TYT           H10    H    H         0.000     -6.390    3.574    1.306
+ TYT           H9     H    H         0.000     -6.551    3.058   -0.392
+ TYT           C12    C    CR6       0.000     -8.045    0.620    0.088
+ TYT           C17    C    CR16      0.000     -8.023    0.992   -1.242
+ TYT           H16    H    H         0.000     -7.460    1.865   -1.551
+ TYT           C16    C    CR16      0.000     -8.719    0.251   -2.180
+ TYT           H15    H    H         0.000     -8.696    0.538   -3.224
+ TYT           C15    C    CR16      0.000     -9.443   -0.858   -1.784
+ TYT           H14    H    H         0.000     -9.990   -1.437   -2.517
+ TYT           C14    C    CR16      0.000     -9.469   -1.228   -0.453
+ TYT           H13    H    H         0.000    -10.036   -2.097   -0.143
+ TYT           C13    C    CR16      0.000     -8.770   -0.488    0.484
+ TYT           H12    H    H         0.000     -8.791   -0.777    1.528
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TYT      O3     n/a    C5     START
+ TYT      C5     O3     C6     .
+ TYT      C6     C5     C7     .
+ TYT      H7     C6     .      .
+ TYT      C7     C6     C8     .
+ TYT      O4     C7     H20    .
+ TYT      H20    O4     .      .
+ TYT      C8     C7     N2     .
+ TYT      C18    C8     C4     .
+ TYT      H17    C18    .      .
+ TYT      H18    C18    .      .
+ TYT      C4     C18    C3     .
+ TYT      H6     C4     .      .
+ TYT      C3     C4     C1     .
+ TYT      H4     C3     .      .
+ TYT      H5     C3     .      .
+ TYT      C1     C3     N1     .
+ TYT      H3     C1     .      .
+ TYT      C2     C1     O1     .
+ TYT      O2     C2     .      .
+ TYT      O1     C2     .      .
+ TYT      N1     C1     H1     .
+ TYT      H2     N1     .      .
+ TYT      H1     N1     .      .
+ TYT      N2     C8     C9     .
+ TYT      C9     N2     C11    .
+ TYT      H8     C9     .      .
+ TYT      C11    C9     C12    .
+ TYT      H11    C11    .      .
+ TYT      C10    C11    H9     .
+ TYT      H10    C10    .      .
+ TYT      H9     C10    .      .
+ TYT      C12    C11    C17    .
+ TYT      C17    C12    C16    .
+ TYT      H16    C17    .      .
+ TYT      C16    C17    C15    .
+ TYT      H15    C16    .      .
+ TYT      C15    C16    C14    .
+ TYT      H14    C15    .      .
+ TYT      C14    C15    C13    .
+ TYT      H13    C14    .      .
+ TYT      C13    C14    H12    .
+ TYT      H12    C13    .      END
+ TYT      C4     C5     .    ADD
+ TYT      C9     C10    .    ADD
+ TYT      C12    C13    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TYT       N1        C1        single    1.450     0.020     1.450     0.020     
+TYT       H1        N1        single    1.036     0.016     0.914     0.007     
+TYT       H2        N1        single    1.036     0.016     0.914     0.007     
+TYT       C2        C1        single    1.500     0.020     1.500     0.020     
+TYT       C1        C3        single    1.524     0.020     1.524     0.020     
+TYT       H3        C1        single    1.089     0.010     0.989     0.005     
+TYT       O1        C2        deloc     1.250     0.020     1.250     0.020     
+TYT       O2        C2        deloc     1.250     0.020     1.250     0.020     
+TYT       C3        C4        single    1.524     0.020     1.524     0.020     
+TYT       H4        C3        single    1.089     0.010     0.989     0.005     
+TYT       H5        C3        single    1.089     0.010     0.989     0.005     
+TYT       C4        C5        single    1.500     0.020     1.500     0.020     
+TYT       C4        C18       single    1.524     0.020     1.524     0.020     
+TYT       H6        C4        single    1.089     0.010     0.989     0.005     
+TYT       C5        O3        double    1.220     0.020     1.220     0.020     
+TYT       C6        C5        single    1.475     0.020     1.475     0.020     
+TYT       C7        C6        double    1.340     0.020     1.340     0.020     
+TYT       H7        C6        single    1.082     0.013     0.975     0.010     
+TYT       O4        C7        single    1.330     0.020     1.330     0.020     
+TYT       C8        C7        single    1.460     0.020     1.460     0.020     
+TYT       H20       O4        single    0.970     0.012     0.839     0.014     
+TYT       N2        C8        double    1.260     0.020     1.260     0.020     
+TYT       C18       C8        single    1.510     0.020     1.510     0.020     
+TYT       C9        N2        single    1.455     0.020     1.455     0.020     
+TYT       C9        C10       single    1.524     0.020     1.524     0.020     
+TYT       C11       C9        single    1.524     0.020     1.524     0.020     
+TYT       H8        C9        single    1.089     0.010     0.989     0.005     
+TYT       C10       C11       single    1.524     0.020     1.524     0.020     
+TYT       H9        C10       single    1.089     0.010     0.989     0.005     
+TYT       H10       C10       single    1.089     0.010     0.989     0.005     
+TYT       C12       C11       single    1.480     0.020     1.480     0.020     
+TYT       H11       C11       single    1.089     0.010     0.989     0.005     
+TYT       C12       C13       double    1.390     0.020     1.390     0.020     
+TYT       C17       C12       single    1.390     0.020     1.390     0.020     
+TYT       C13       C14       single    1.390     0.020     1.390     0.020     
+TYT       H12       C13       single    1.082     0.013     0.975     0.010     
+TYT       C14       C15       double    1.390     0.020     1.390     0.020     
+TYT       H13       C14       single    1.082     0.013     0.975     0.010     
+TYT       C15       C16       single    1.390     0.020     1.390     0.020     
+TYT       H14       C15       single    1.082     0.013     0.975     0.010     
+TYT       C16       C17       double    1.390     0.020     1.390     0.020     
+TYT       H15       C16       single    1.082     0.013     0.975     0.010     
+TYT       H16       C17       single    1.082     0.013     0.975     0.010     
+TYT       H17       C18       single    1.089     0.010     0.989     0.005     
+TYT       H18       C18       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TYT      O3     C5     C6      120.500    3.000
+ TYT      O3     C5     C4      120.500    3.000
+ TYT      C6     C5     C4      120.000    3.000
+ TYT      C5     C6     H7      120.000    3.000
+ TYT      C5     C6     C7      120.000    3.000
+ TYT      H7     C6     C7      120.000    3.000
+ TYT      C6     C7     O4      120.000    3.000
+ TYT      C6     C7     C8      120.000    3.000
+ TYT      O4     C7     C8      120.000    3.000
+ TYT      C7     O4     H20     109.470    3.000
+ TYT      C7     C8     C18     120.000    3.000
+ TYT      C7     C8     N2      116.500    3.000
+ TYT      C18    C8     N2      116.500    3.000
+ TYT      C8     C18    H17     109.470    3.000
+ TYT      C8     C18    H18     109.470    3.000
+ TYT      C8     C18    C4      109.470    3.000
+ TYT      H17    C18    H18     107.900    3.000
+ TYT      H17    C18    C4      109.470    3.000
+ TYT      H18    C18    C4      109.470    3.000
+ TYT      C18    C4     H6      108.340    3.000
+ TYT      C18    C4     C3      109.470    3.000
+ TYT      C18    C4     C5      109.470    3.000
+ TYT      H6     C4     C3      108.340    3.000
+ TYT      H6     C4     C5      108.810    3.000
+ TYT      C3     C4     C5      109.470    3.000
+ TYT      C4     C3     H4      109.470    3.000
+ TYT      C4     C3     H5      109.470    3.000
+ TYT      C4     C3     C1      111.000    3.000
+ TYT      H4     C3     H5      107.900    3.000
+ TYT      H4     C3     C1      109.470    3.000
+ TYT      H5     C3     C1      109.470    3.000
+ TYT      C3     C1     H3      108.340    3.000
+ TYT      C3     C1     C2      109.470    3.000
+ TYT      C3     C1     N1      109.470    3.000
+ TYT      H3     C1     C2      108.810    3.000
+ TYT      H3     C1     N1      109.470    3.000
+ TYT      C2     C1     N1      109.470    3.000
+ TYT      C1     C2     O2      118.500    3.000
+ TYT      C1     C2     O1      118.500    3.000
+ TYT      O2     C2     O1      123.000    3.000
+ TYT      C1     N1     H2      120.000    3.000
+ TYT      C1     N1     H1      120.000    3.000
+ TYT      H2     N1     H1      120.000    3.000
+ TYT      C8     N2     C9      121.000    3.000
+ TYT      N2     C9     H8      109.470    3.000
+ TYT      N2     C9     C11     105.000    3.000
+ TYT      N2     C9     C10     105.000    3.000
+ TYT      H8     C9     C11     108.340    3.000
+ TYT      H8     C9     C10     108.340    3.000
+ TYT      C11    C9     C10      60.000    3.000
+ TYT      C9     C11    H11     108.340    3.000
+ TYT      C9     C11    C10      60.000    3.000
+ TYT      C9     C11    C12     109.470    3.000
+ TYT      H11    C11    C10     108.340    3.000
+ TYT      H11    C11    C12     109.470    3.000
+ TYT      C10    C11    C12     109.470    3.000
+ TYT      C11    C10    H10     109.470    3.000
+ TYT      C11    C10    H9      109.470    3.000
+ TYT      C11    C10    C9       60.000    3.000
+ TYT      H10    C10    H9      107.900    3.000
+ TYT      H10    C10    C9      109.470    3.000
+ TYT      H9     C10    C9      109.470    3.000
+ TYT      C11    C12    C17     120.000    3.000
+ TYT      C11    C12    C13     120.000    3.000
+ TYT      C17    C12    C13     120.000    3.000
+ TYT      C12    C17    H16     120.000    3.000
+ TYT      C12    C17    C16     120.000    3.000
+ TYT      H16    C17    C16     120.000    3.000
+ TYT      C17    C16    H15     120.000    3.000
+ TYT      C17    C16    C15     120.000    3.000
+ TYT      H15    C16    C15     120.000    3.000
+ TYT      C16    C15    H14     120.000    3.000
+ TYT      C16    C15    C14     120.000    3.000
+ TYT      H14    C15    C14     120.000    3.000
+ TYT      C15    C14    H13     120.000    3.000
+ TYT      C15    C14    C13     120.000    3.000
+ TYT      H13    C14    C13     120.000    3.000
+ TYT      C14    C13    H12     120.000    3.000
+ TYT      C14    C13    C12     120.000    3.000
+ TYT      H12    C13    C12     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TYT      var_1    O3     C5     C6     C7       180.000   20.000   1
+ TYT      var_2    C5     C6     C7     C8         0.000   20.000   1
+ TYT      var_3    C6     C7     O4     H20        0.019   20.000   1
+ TYT      var_4    C6     C7     C8     N2       150.000   20.000   1
+ TYT      var_5    C7     C8     C18    C4        60.000   20.000   3
+ TYT      var_6    C8     C18    C4     C3        60.000   20.000   3
+ TYT      var_7    C18    C4     C5     O3      -150.000   20.000   3
+ TYT      var_8    C18    C4     C3     C1       174.995   20.000   3
+ TYT      var_9    C4     C3     C1     N1       -64.978   20.000   3
+ TYT      var_10   C3     C1     C2     O1       -79.952   20.000   3
+ TYT      var_11   C3     C1     N1     H1      -173.779   20.000   1
+ TYT      CONST_1  C7     C8     N2     C9         0.000    0.000   0
+ TYT      var_12   C8     N2     C9     C11     -177.670   20.000   3
+ TYT      var_13   N2     C9     C10    C11      107.457   20.000   3
+ TYT      var_14   N2     C9     C11    C12        0.011   20.000   3
+ TYT      var_15   C9     C11    C12    C17      -60.278   20.000   1
+ TYT      CONST_2  C11    C12    C13    C14      180.000    0.000   0
+ TYT      CONST_3  C11    C12    C17    C16      180.000    0.000   0
+ TYT      CONST_4  C12    C17    C16    C15        0.000    0.000   0
+ TYT      CONST_5  C17    C16    C15    C14        0.000    0.000   0
+ TYT      CONST_6  C16    C15    C14    C13        0.000    0.000   0
+ TYT      CONST_7  C15    C14    C13    C12        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TYT      chir_01  C1     N1     C2     C3        positiv
+ TYT      chir_02  C4     C3     C5     C18       positiv
+ TYT      chir_03  C9     N2     C10    C11       negativ
+ TYT      chir_04  C11    C9     C10    C12       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TYT      plan-1    N1        0.020
+ TYT      plan-1    C1        0.020
+ TYT      plan-1    H1        0.020
+ TYT      plan-1    H2        0.020
+ TYT      plan-2    C2        0.020
+ TYT      plan-2    C1        0.020
+ TYT      plan-2    O1        0.020
+ TYT      plan-2    O2        0.020
+ TYT      plan-3    C5        0.020
+ TYT      plan-3    C4        0.020
+ TYT      plan-3    O3        0.020
+ TYT      plan-3    C6        0.020
+ TYT      plan-3    H7        0.020
+ TYT      plan-4    C6        0.020
+ TYT      plan-4    C5        0.020
+ TYT      plan-4    C7        0.020
+ TYT      plan-4    H7        0.020
+ TYT      plan-5    C7        0.020
+ TYT      plan-5    C6        0.020
+ TYT      plan-5    O4        0.020
+ TYT      plan-5    C8        0.020
+ TYT      plan-5    H7        0.020
+ TYT      plan-6    C8        0.020
+ TYT      plan-6    C7        0.020
+ TYT      plan-6    N2        0.020
+ TYT      plan-6    C18       0.020
+ TYT      plan-6    C9        0.020
+ TYT      plan-7    C12       0.020
+ TYT      plan-7    C11       0.020
+ TYT      plan-7    C13       0.020
+ TYT      plan-7    C17       0.020
+ TYT      plan-7    C14       0.020
+ TYT      plan-7    C15       0.020
+ TYT      plan-7    C16       0.020
+ TYT      plan-7    H12       0.020
+ TYT      plan-7    H13       0.020
+ TYT      plan-7    H14       0.020
+ TYT      plan-7    H15       0.020
+ TYT      plan-7    H16       0.020
+# ------------------------------------------------------

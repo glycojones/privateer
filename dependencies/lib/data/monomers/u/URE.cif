@@ -1,0 +1,110 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+URE     URE      UREA     NON-POLYMER     8     4     .     
+#
+data_comp_URE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+URE     C       C       C       0       -4.748      0.700       15.239      
+URE     O       O       O       0       -4.883      1.861       15.702      
+URE     N1      N       NH2     0       -4.710      -0.363      16.058      
+URE     N2      N       NH2     0       -4.640      0.499       13.916      
+URE     HN11    H       H       0       -4.780      -0.245      16.929      
+URE     HN12    H       H       0       -4.616      -1.178      15.734      
+URE     HN21    H       H       0       -4.664      1.188       13.366      
+URE     HN22    H       H       0       -4.545      -0.315      13.590      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+URE       C         O         DOUBLE    n         1.255     0.016     1.255     0.016     
+URE       C         N1        SINGLE    n         1.333     0.018     1.333     0.018     
+URE       C         N2        SINGLE    n         1.333     0.018     1.333     0.018     
+URE       N1        HN11      SINGLE    n         1.016     0.010     0.881     0.020     
+URE       N1        HN12      SINGLE    n         1.016     0.010     0.881     0.020     
+URE       N2        HN21      SINGLE    n         1.016     0.010     0.881     0.020     
+URE       N2        HN22      SINGLE    n         1.016     0.010     0.881     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+URE           O           C          N1     121.093    1.50
+URE           O           C          N2     121.093    1.50
+URE          N1           C          N2     117.815    1.50
+URE           C          N1        HN11     119.768    2.04
+URE           C          N1        HN12     119.768    2.04
+URE        HN11          N1        HN12     120.464    2.62
+URE           C          N2        HN21     119.768    2.04
+URE           C          N2        HN22     119.768    2.04
+URE        HN21          N2        HN22     120.464    2.62
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+URE             sp2_sp2_3           O           C          N1        HN11       0.000   10.00     2
+URE             sp2_sp2_7           O           C          N2        HN21       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+URE    plan-1           C   0.020
+URE    plan-1          N1   0.020
+URE    plan-1          N2   0.020
+URE    plan-1           O   0.020
+URE    plan-2           C   0.020
+URE    plan-2        HN11   0.020
+URE    plan-2        HN12   0.020
+URE    plan-2          N1   0.020
+URE    plan-3           C   0.020
+URE    plan-3        HN21   0.020
+URE    plan-3        HN22   0.020
+URE    plan-3          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+URE SMILES           ACDLabs              10.04 "O=C(N)N"
+URE SMILES_CANONICAL CACTVS               3.341 "NC(N)=O"
+URE SMILES           CACTVS               3.341 "NC(N)=O"
+URE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=O)(N)N"
+URE SMILES           "OpenEye OEToolkits" 1.5.0 "C(=O)(N)N"
+URE InChI            InChI                1.03  "InChI=1S/CH4N2O/c2-1(3)4/h(H4,2,3,4)"
+URE InChIKey         InChI                1.03  XSQUKJJJFZCRTK-UHFFFAOYSA-N
+URE ?                acedrg               202         "dictionary generator"                  
+URE ?                acedrg_database      11          "data source"                           
+URE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+URE ?                refmac5              5.8.0189    "optimization tool"                     

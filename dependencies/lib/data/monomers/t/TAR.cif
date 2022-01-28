@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TAR     TAR     "D(-)-TARTARICACID"     NON-POLYMER     14     10     .     
+#
+data_comp_TAR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TAR     O1      O       O       0       -2.665      0.423       0.812       
+TAR     O11     O       OC      -1      -2.248      -0.111      -1.301      
+TAR     C1      C       C       0       -1.933      -0.019      -0.097      
+TAR     C2      C       CH1     0       -0.526      -0.487      0.297       
+TAR     O2      O       OH1     0       -0.193      -1.713      -0.330      
+TAR     C3      C       CH1     0       0.507       0.593       -0.054      
+TAR     O3      O       OH1     0       0.620       0.727       -1.458      
+TAR     C4      C       C       0       1.862       0.255       0.582       
+TAR     O4      O       O       0       2.274       1.006       1.490       
+TAR     O41     O       OC      -1      2.457       -0.750      0.145       
+TAR     H2      H       H       0       -0.509      -0.625      1.278       
+TAR     HO2     H       H       0       -0.162      -1.616      -1.174      
+TAR     H3      H       H       0       0.193       1.456       0.319       
+TAR     HO3     H       H       0       1.028       1.450       -1.633      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TAR       O1        C1        DOUBLE    n         1.247     0.019     1.247     0.019     
+TAR       O11       C1        SINGLE    n         1.247     0.019     1.247     0.019     
+TAR       C1        C2        SINGLE    n         1.533     0.010     1.533     0.010     
+TAR       C2        O2        SINGLE    n         1.414     0.010     1.414     0.010     
+TAR       C2        C3        SINGLE    n         1.532     0.010     1.532     0.010     
+TAR       C3        O3        SINGLE    n         1.414     0.010     1.414     0.010     
+TAR       C3        C4        SINGLE    n         1.533     0.010     1.533     0.010     
+TAR       C4        O4        DOUBLE    n         1.247     0.019     1.247     0.019     
+TAR       C4        O41       SINGLE    n         1.247     0.019     1.247     0.019     
+TAR       C2        H2        SINGLE    n         1.089     0.010     0.990     0.017     
+TAR       O2        HO2       SINGLE    n         0.970     0.012     0.848     0.020     
+TAR       C3        H3        SINGLE    n         1.089     0.010     0.990     0.017     
+TAR       O3        HO3       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TAR          O1          C1         O11     125.683    1.50
+TAR          O1          C1          C2     117.159    1.50
+TAR         O11          C1          C2     117.159    1.50
+TAR          C1          C2          O2     111.490    1.56
+TAR          C1          C2          C3     109.935    1.50
+TAR          C1          C2          H2     108.467    1.50
+TAR          O2          C2          C3     110.075    1.51
+TAR          O2          C2          H2     108.747    1.50
+TAR          C3          C2          H2     108.465    1.50
+TAR          C2          O2         HO2     108.941    3.00
+TAR          C2          C3          O3     110.075    1.51
+TAR          C2          C3          C4     109.935    1.50
+TAR          C2          C3          H3     108.465    1.50
+TAR          O3          C3          C4     111.490    1.56
+TAR          O3          C3          H3     108.747    1.50
+TAR          C4          C3          H3     108.467    1.50
+TAR          C3          O3         HO3     108.941    3.00
+TAR          C3          C4          O4     117.159    1.50
+TAR          C3          C4         O41     117.159    1.50
+TAR          O4          C4         O41     125.683    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TAR             sp2_sp3_1          O1          C1          C2          O2       0.000   10.00     6
+TAR             sp3_sp3_1          C1          C2          O2         HO2     180.000   10.00     3
+TAR             sp3_sp3_4          C1          C2          C3          O3     180.000   10.00     3
+TAR            sp3_sp3_13          C2          C3          O3         HO3     180.000   10.00     3
+TAR             sp2_sp3_7          O4          C4          C3          C2       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TAR    chir_1    C2    O2    C1    C3    positive
+TAR    chir_2    C3    O3    C4    C2    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TAR    plan-1          C1   0.020
+TAR    plan-1          C2   0.020
+TAR    plan-1          O1   0.020
+TAR    plan-1         O11   0.020
+TAR    plan-2          C3   0.020
+TAR    plan-2          C4   0.020
+TAR    plan-2          O4   0.020
+TAR    plan-2         O41   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TAR SMILES           ACDLabs              11.02 "O=C(O)C(O)C(O)C(=O)O"
+TAR SMILES_CANONICAL CACTVS               3.352 "O[C@@H]([C@H](O)C(O)=O)C(O)=O"
+TAR SMILES           CACTVS               3.352 "O[CH]([CH](O)C(O)=O)C(O)=O"
+TAR SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "[C@H]([C@@H](C(=O)O)O)(C(=O)O)O"
+TAR SMILES           "OpenEye OEToolkits" 1.7.0 "C(C(C(=O)O)O)(C(=O)O)O"
+TAR InChI            InChI                1.03  "InChI=1S/C4H6O6/c5-1(3(7)8)2(6)4(9)10/h1-2,5-6H,(H,7,8)(H,9,10)/t1-,2-/m0/s1"
+TAR InChIKey         InChI                1.03  FEWJPZIEWOKRBE-LWMBPPNESA-N
+TAR ?                acedrg               190         "dictionary generator"                  
+TAR ?                acedrg_database      11          "data source"                           
+TAR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TAR ?                refmac5              5.8.0158    "optimization tool"                     

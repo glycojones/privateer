@@ -1,0 +1,124 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SIN     SIN      "SUCCINIC ACID"     NON-POLYMER     12     8     .     
+#
+data_comp_SIN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SIN     C1      C       C       0       -1.948      -0.114      0.191       
+SIN     O1      O       O       0       -2.559      -0.844      -0.614      
+SIN     O2      O       OC      -1      -2.478      0.836       0.800       
+SIN     C2      C       CH2     0       -0.478      -0.398      0.445       
+SIN     C3      C       CH2     0       0.474       0.358       -0.460      
+SIN     C4      C       C       0       1.945       0.105       -0.180      
+SIN     O3      O       O       0       2.377       -1.058      -0.302      
+SIN     O4      O       OC      -1      2.656       1.072       0.159       
+SIN     H21     H       H       0       -0.328      -1.360      0.336       
+SIN     H22     H       H       0       -0.279      -0.176      1.377       
+SIN     H31     H       H       0       0.306       1.319       -0.371      
+SIN     H32     H       H       0       0.293       0.115       -1.391      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SIN       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+SIN       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+SIN       C1        C2        SINGLE    n         1.519     0.012     1.519     0.012     
+SIN       C2        C3        SINGLE    n         1.516     0.020     1.516     0.020     
+SIN       C3        C4        SINGLE    n         1.519     0.012     1.519     0.012     
+SIN       C4        O3        DOUBLE    n         1.247     0.019     1.247     0.019     
+SIN       C4        O4        SINGLE    n         1.247     0.019     1.247     0.019     
+SIN       C2        H21       SINGLE    n         1.089     0.010     0.979     0.016     
+SIN       C2        H22       SINGLE    n         1.089     0.010     0.979     0.016     
+SIN       C3        H31       SINGLE    n         1.089     0.010     0.979     0.016     
+SIN       C3        H32       SINGLE    n         1.089     0.010     0.979     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SIN          O1          C1          O2     123.571    1.50
+SIN          O1          C1          C2     118.214    1.64
+SIN          O2          C1          C2     118.214    1.64
+SIN          C1          C2          C3     114.787    1.92
+SIN          C1          C2         H21     108.404    1.50
+SIN          C1          C2         H22     108.404    1.50
+SIN          C3          C2         H21     109.308    1.50
+SIN          C3          C2         H22     109.308    1.50
+SIN         H21          C2         H22     107.521    1.50
+SIN          C2          C3          C4     114.787    1.92
+SIN          C2          C3         H31     109.308    1.50
+SIN          C2          C3         H32     109.308    1.50
+SIN          C4          C3         H31     108.404    1.50
+SIN          C4          C3         H32     108.404    1.50
+SIN         H31          C3         H32     107.521    1.50
+SIN          C3          C4          O3     118.214    1.64
+SIN          C3          C4          O4     118.214    1.64
+SIN          O3          C4          O4     123.571    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SIN             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+SIN             sp3_sp3_1          C1          C2          C3          C4     180.000   10.00     3
+SIN             sp2_sp3_8          O3          C4          C3          C2     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SIN    plan-1          C1   0.020
+SIN    plan-1          C2   0.020
+SIN    plan-1          O1   0.020
+SIN    plan-1          O2   0.020
+SIN    plan-2          C3   0.020
+SIN    plan-2          C4   0.020
+SIN    plan-2          O3   0.020
+SIN    plan-2          O4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SIN SMILES           ACDLabs              12.01 "O=C(O)CCC(=O)O"
+SIN SMILES_CANONICAL CACTVS               3.370 "OC(=O)CCC(O)=O"
+SIN SMILES           CACTVS               3.370 "OC(=O)CCC(O)=O"
+SIN SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(CC(=O)O)C(=O)O"
+SIN SMILES           "OpenEye OEToolkits" 1.7.0 "C(CC(=O)O)C(=O)O"
+SIN InChI            InChI                1.03  "InChI=1S/C4H6O4/c5-3(6)1-2-4(7)8/h1-2H2,(H,5,6)(H,7,8)"
+SIN InChIKey         InChI                1.03  KDYFGRWQOYBRFD-UHFFFAOYSA-N
+SIN ?                acedrg               202         "dictionary generator"                  
+SIN ?                acedrg_database      11          "data source"                           
+SIN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SIN ?                refmac5              5.8.0189    "optimization tool"                     

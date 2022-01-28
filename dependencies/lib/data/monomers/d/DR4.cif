@@ -1,0 +1,375 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DR4      DR4 'METHYL 9-(BETA-D-TALOPYRANOSYLOXY)NO' pyranose           54  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DR4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DR4           C1     C    CH1       0.000      0.000    0.000    0.000
+ DR4           H1     H    H         0.000      0.009   -0.111   -1.093
+ DR4           O1     O    O2        0.000     -1.059    0.881    0.379
+ DR4           CAM    C    CH2       0.000     -2.261    0.348   -0.182
+ DR4           HAM1   H    H         0.000     -2.431   -0.656    0.211
+ DR4           HAM2   H    H         0.000     -2.164    0.301   -1.268
+ DR4           CAK    C    CH2       0.000     -3.440    1.249    0.189
+ DR4           HAK1   H    H         0.000     -3.267    2.254   -0.204
+ DR4           HAK2   H    H         0.000     -3.534    1.296    1.276
+ DR4           CAI    C    CH2       0.000     -4.727    0.680   -0.412
+ DR4           HAI1   H    H         0.000     -4.897   -0.325   -0.019
+ DR4           HAI2   H    H         0.000     -4.630    0.633   -1.498
+ DR4           CAG    C    CH2       0.000     -5.906    1.581   -0.041
+ DR4           HAG1   H    H         0.000     -5.734    2.585   -0.434
+ DR4           HAG2   H    H         0.000     -6.000    1.628    1.046
+ DR4           CAH    C    CH2       0.000     -7.193    1.010   -0.642
+ DR4           HAH1   H    H         0.000     -7.363    0.006   -0.249
+ DR4           HAH2   H    H         0.000     -7.097    0.963   -1.729
+ DR4           CAJ    C    CH2       0.000     -8.372    1.912   -0.271
+ DR4           HAJ1   H    H         0.000     -8.199    2.916   -0.664
+ DR4           HAJ2   H    H         0.000     -8.466    1.960    0.816
+ DR4           CAL    C    CH2       0.000     -9.659    1.342   -0.872
+ DR4           HAL1   H    H         0.000     -9.829    0.337   -0.479
+ DR4           HAL2   H    H         0.000     -9.563    1.295   -1.959
+ DR4           CAO    C    CH2       0.000    -10.837    2.243   -0.501
+ DR4           HAO1   H    H         0.000    -10.664    3.247   -0.894
+ DR4           HAO2   H    H         0.000    -10.931    2.289    0.586
+ DR4           CAS    C    C         0.000    -12.104    1.681   -1.093
+ DR4           OAP    O    O2       -0.500    -13.194    2.268   -0.910
+ DR4           CAA    C    CH3       0.000    -14.495    1.770   -1.466
+ DR4           HAA3   H    H         0.000    -14.717    0.802   -1.082
+ DR4           HAA2   H    H         0.000    -15.289    2.430   -1.202
+ DR4           HAA1   H    H         0.000    -14.445    1.709   -2.529
+ DR4           OAB    O    O        -0.500    -12.067    0.628   -1.768
+ DR4           C2     C    CH1       0.000      1.337    0.583    0.463
+ DR4           H2     H    H         0.000      1.340    0.673    1.558
+ DR4           O2     O    OH1       0.000      1.525    1.872   -0.123
+ DR4           HO2    H    H         0.000      0.810    2.460    0.156
+ DR4           C3     C    CH1       0.000      2.469   -0.351    0.021
+ DR4           H3     H    H         0.000      2.532   -0.359   -1.077
+ DR4           O3     O    OH1       0.000      3.708    0.098    0.569
+ DR4           HO3    H    H         0.000      3.898    0.989    0.247
+ DR4           C4     C    CH1       0.000      2.163   -1.765    0.528
+ DR4           H4     H    H         0.000      2.904   -2.469    0.124
+ DR4           O4     O    OH1       0.000      2.215   -1.783    1.957
+ DR4           HO4    H    H         0.000      3.101   -1.527    2.249
+ DR4           C5     C    CH1       0.000      0.764   -2.171    0.062
+ DR4           H5     H    H         0.000      0.720   -2.136   -1.035
+ DR4           C6     C    CH2       0.000      0.464   -3.594    0.538
+ DR4           H61    H    H         0.000      0.419   -3.611    1.629
+ DR4           H62    H    H         0.000      1.255   -4.265    0.197
+ DR4           O6     O    OH1       0.000     -0.790   -4.021    0.001
+ DR4           HO6    H    H         0.000     -0.979   -4.920    0.302
+ DR4           O5     O    O2        0.000     -0.205   -1.276    0.604
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DR4      C1     n/a    C2     START
+ DR4      H1     C1     .      .
+ DR4      O1     C1     CAM    .
+ DR4      CAM    O1     CAK    .
+ DR4      HAM1   CAM    .      .
+ DR4      HAM2   CAM    .      .
+ DR4      CAK    CAM    CAI    .
+ DR4      HAK1   CAK    .      .
+ DR4      HAK2   CAK    .      .
+ DR4      CAI    CAK    CAG    .
+ DR4      HAI1   CAI    .      .
+ DR4      HAI2   CAI    .      .
+ DR4      CAG    CAI    CAH    .
+ DR4      HAG1   CAG    .      .
+ DR4      HAG2   CAG    .      .
+ DR4      CAH    CAG    CAJ    .
+ DR4      HAH1   CAH    .      .
+ DR4      HAH2   CAH    .      .
+ DR4      CAJ    CAH    CAL    .
+ DR4      HAJ1   CAJ    .      .
+ DR4      HAJ2   CAJ    .      .
+ DR4      CAL    CAJ    CAO    .
+ DR4      HAL1   CAL    .      .
+ DR4      HAL2   CAL    .      .
+ DR4      CAO    CAL    CAS    .
+ DR4      HAO1   CAO    .      .
+ DR4      HAO2   CAO    .      .
+ DR4      CAS    CAO    OAB    .
+ DR4      OAP    CAS    CAA    .
+ DR4      CAA    OAP    HAA1   .
+ DR4      HAA3   CAA    .      .
+ DR4      HAA2   CAA    .      .
+ DR4      HAA1   CAA    .      .
+ DR4      OAB    CAS    .      .
+ DR4      C2     C1     C3     .
+ DR4      H2     C2     .      .
+ DR4      O2     C2     HO2    .
+ DR4      HO2    O2     .      .
+ DR4      C3     C2     C4     .
+ DR4      H3     C3     .      .
+ DR4      O3     C3     HO3    .
+ DR4      HO3    O3     .      .
+ DR4      C4     C3     C5     .
+ DR4      H4     C4     .      .
+ DR4      O4     C4     HO4    .
+ DR4      HO4    O4     .      .
+ DR4      C5     C4     O5     .
+ DR4      H5     C5     .      .
+ DR4      C6     C5     O6     .
+ DR4      H61    C6     .      .
+ DR4      H62    C6     .      .
+ DR4      O6     C6     HO6    .
+ DR4      HO6    O6     .      .
+ DR4      O5     C5     .      END
+ DR4      C1     O5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DR4       CAA       OAP       single    1.426     0.020     1.426     0.020     
+DR4       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+DR4       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+DR4       HAA3      CAA       single    1.089     0.010     0.989     0.005     
+DR4       OAP       CAS       deloc     1.454     0.020     1.454     0.020     
+DR4       OAB       CAS       deloc     1.220     0.020     1.220     0.020     
+DR4       CAS       CAO       single    1.510     0.020     1.510     0.020     
+DR4       CAO       CAL       single    1.524     0.020     1.524     0.020     
+DR4       HAO1      CAO       single    1.089     0.010     0.989     0.005     
+DR4       HAO2      CAO       single    1.089     0.010     0.989     0.005     
+DR4       CAL       CAJ       single    1.524     0.020     1.524     0.020     
+DR4       HAL1      CAL       single    1.089     0.010     0.989     0.005     
+DR4       HAL2      CAL       single    1.089     0.010     0.989     0.005     
+DR4       CAJ       CAH       single    1.524     0.020     1.524     0.020     
+DR4       HAJ1      CAJ       single    1.089     0.010     0.989     0.005     
+DR4       HAJ2      CAJ       single    1.089     0.010     0.989     0.005     
+DR4       CAH       CAG       single    1.524     0.020     1.524     0.020     
+DR4       HAH1      CAH       single    1.089     0.010     0.989     0.005     
+DR4       HAH2      CAH       single    1.089     0.010     0.989     0.005     
+DR4       CAG       CAI       single    1.524     0.020     1.524     0.020     
+DR4       HAG1      CAG       single    1.089     0.010     0.989     0.005     
+DR4       HAG2      CAG       single    1.089     0.010     0.989     0.005     
+DR4       CAI       CAK       single    1.524     0.020     1.524     0.020     
+DR4       HAI1      CAI       single    1.089     0.010     0.989     0.005     
+DR4       HAI2      CAI       single    1.089     0.010     0.989     0.005     
+DR4       CAK       CAM       single    1.524     0.020     1.524     0.020     
+DR4       HAK1      CAK       single    1.089     0.010     0.989     0.005     
+DR4       HAK2      CAK       single    1.089     0.010     0.989     0.005     
+DR4       CAM       O1        single    1.426     0.020     1.426     0.020     
+DR4       HAM1      CAM       single    1.089     0.010     0.989     0.005     
+DR4       HAM2      CAM       single    1.089     0.010     0.989     0.005     
+DR4       O1        C1        single    1.426     0.020     1.426     0.020     
+DR4       C1        O5        single    1.426     0.020     1.426     0.020     
+DR4       C2        C1        single    1.524     0.020     1.524     0.020     
+DR4       H1        C1        single    1.089     0.010     0.989     0.005     
+DR4       O5        C5        single    1.426     0.020     1.426     0.020     
+DR4       C6        C5        single    1.524     0.020     1.524     0.020     
+DR4       C5        C4        single    1.524     0.020     1.524     0.020     
+DR4       H5        C5        single    1.089     0.010     0.989     0.005     
+DR4       O6        C6        single    1.432     0.020     1.432     0.020     
+DR4       H61       C6        single    1.089     0.010     0.989     0.005     
+DR4       H62       C6        single    1.089     0.010     0.989     0.005     
+DR4       HO6       O6        single    0.970     0.012     0.839     0.014     
+DR4       O4        C4        single    1.432     0.020     1.432     0.020     
+DR4       C4        C3        single    1.524     0.020     1.524     0.020     
+DR4       H4        C4        single    1.089     0.010     0.989     0.005     
+DR4       HO4       O4        single    0.970     0.012     0.839     0.014     
+DR4       O3        C3        single    1.432     0.020     1.432     0.020     
+DR4       C3        C2        single    1.524     0.020     1.524     0.020     
+DR4       H3        C3        single    1.089     0.010     0.989     0.005     
+DR4       HO3       O3        single    0.970     0.012     0.839     0.014     
+DR4       O2        C2        single    1.432     0.020     1.432     0.020     
+DR4       H2        C2        single    1.089     0.010     0.989     0.005     
+DR4       HO2       O2        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DR4      H1     C1     O1      109.470    3.000
+ DR4      H1     C1     C2      108.340    3.000
+ DR4      O1     C1     C2      109.470    3.000
+ DR4      H1     C1     O5      109.470    3.000
+ DR4      O1     C1     O5      109.470    3.000
+ DR4      C2     C1     O5      109.470    3.000
+ DR4      C1     O1     CAM     111.800    3.000
+ DR4      O1     CAM    HAM1    109.470    3.000
+ DR4      O1     CAM    HAM2    109.470    3.000
+ DR4      O1     CAM    CAK     109.470    3.000
+ DR4      HAM1   CAM    HAM2    107.900    3.000
+ DR4      HAM1   CAM    CAK     109.470    3.000
+ DR4      HAM2   CAM    CAK     109.470    3.000
+ DR4      CAM    CAK    HAK1    109.470    3.000
+ DR4      CAM    CAK    HAK2    109.470    3.000
+ DR4      CAM    CAK    CAI     111.000    3.000
+ DR4      HAK1   CAK    HAK2    107.900    3.000
+ DR4      HAK1   CAK    CAI     109.470    3.000
+ DR4      HAK2   CAK    CAI     109.470    3.000
+ DR4      CAK    CAI    HAI1    109.470    3.000
+ DR4      CAK    CAI    HAI2    109.470    3.000
+ DR4      CAK    CAI    CAG     111.000    3.000
+ DR4      HAI1   CAI    HAI2    107.900    3.000
+ DR4      HAI1   CAI    CAG     109.470    3.000
+ DR4      HAI2   CAI    CAG     109.470    3.000
+ DR4      CAI    CAG    HAG1    109.470    3.000
+ DR4      CAI    CAG    HAG2    109.470    3.000
+ DR4      CAI    CAG    CAH     111.000    3.000
+ DR4      HAG1   CAG    HAG2    107.900    3.000
+ DR4      HAG1   CAG    CAH     109.470    3.000
+ DR4      HAG2   CAG    CAH     109.470    3.000
+ DR4      CAG    CAH    HAH1    109.470    3.000
+ DR4      CAG    CAH    HAH2    109.470    3.000
+ DR4      CAG    CAH    CAJ     111.000    3.000
+ DR4      HAH1   CAH    HAH2    107.900    3.000
+ DR4      HAH1   CAH    CAJ     109.470    3.000
+ DR4      HAH2   CAH    CAJ     109.470    3.000
+ DR4      CAH    CAJ    HAJ1    109.470    3.000
+ DR4      CAH    CAJ    HAJ2    109.470    3.000
+ DR4      CAH    CAJ    CAL     111.000    3.000
+ DR4      HAJ1   CAJ    HAJ2    107.900    3.000
+ DR4      HAJ1   CAJ    CAL     109.470    3.000
+ DR4      HAJ2   CAJ    CAL     109.470    3.000
+ DR4      CAJ    CAL    HAL1    109.470    3.000
+ DR4      CAJ    CAL    HAL2    109.470    3.000
+ DR4      CAJ    CAL    CAO     111.000    3.000
+ DR4      HAL1   CAL    HAL2    107.900    3.000
+ DR4      HAL1   CAL    CAO     109.470    3.000
+ DR4      HAL2   CAL    CAO     109.470    3.000
+ DR4      CAL    CAO    HAO1    109.470    3.000
+ DR4      CAL    CAO    HAO2    109.470    3.000
+ DR4      CAL    CAO    CAS     109.470    3.000
+ DR4      HAO1   CAO    HAO2    107.900    3.000
+ DR4      HAO1   CAO    CAS     109.470    3.000
+ DR4      HAO2   CAO    CAS     109.470    3.000
+ DR4      CAO    CAS    OAP     120.000    3.000
+ DR4      CAO    CAS    OAB     120.500    3.000
+ DR4      OAP    CAS    OAB     119.000    3.000
+ DR4      CAS    OAP    CAA     120.000    3.000
+ DR4      OAP    CAA    HAA3    109.470    3.000
+ DR4      OAP    CAA    HAA2    109.470    3.000
+ DR4      OAP    CAA    HAA1    109.470    3.000
+ DR4      HAA3   CAA    HAA2    109.470    3.000
+ DR4      HAA3   CAA    HAA1    109.470    3.000
+ DR4      HAA2   CAA    HAA1    109.470    3.000
+ DR4      C1     C2     H2      108.340    3.000
+ DR4      C1     C2     O2      109.470    3.000
+ DR4      C1     C2     C3      111.000    3.000
+ DR4      H2     C2     O2      109.470    3.000
+ DR4      H2     C2     C3      108.340    3.000
+ DR4      O2     C2     C3      109.470    3.000
+ DR4      C2     O2     HO2     109.470    3.000
+ DR4      C2     C3     H3      108.340    3.000
+ DR4      C2     C3     O3      109.470    3.000
+ DR4      C2     C3     C4      111.000    3.000
+ DR4      H3     C3     O3      109.470    3.000
+ DR4      H3     C3     C4      108.340    3.000
+ DR4      O3     C3     C4      109.470    3.000
+ DR4      C3     O3     HO3     109.470    3.000
+ DR4      C3     C4     H4      108.340    3.000
+ DR4      C3     C4     O4      109.470    3.000
+ DR4      C3     C4     C5      111.000    3.000
+ DR4      H4     C4     O4      109.470    3.000
+ DR4      H4     C4     C5      108.340    3.000
+ DR4      O4     C4     C5      109.470    3.000
+ DR4      C4     O4     HO4     109.470    3.000
+ DR4      C4     C5     H5      108.340    3.000
+ DR4      C4     C5     C6      111.000    3.000
+ DR4      C4     C5     O5      109.470    3.000
+ DR4      H5     C5     C6      108.340    3.000
+ DR4      H5     C5     O5      109.470    3.000
+ DR4      C6     C5     O5      109.470    3.000
+ DR4      C5     C6     H61     109.470    3.000
+ DR4      C5     C6     H62     109.470    3.000
+ DR4      C5     C6     O6      109.470    3.000
+ DR4      H61    C6     H62     107.900    3.000
+ DR4      H61    C6     O6      109.470    3.000
+ DR4      H62    C6     O6      109.470    3.000
+ DR4      C6     O6     HO6     109.470    3.000
+ DR4      C5     O5     C1      111.800    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DR4      var_1    C2     C1     O1     CAM      174.892   20.000   1
+ DR4      var_2    C1     O1     CAM    CAK     -179.997   20.000   1
+ DR4      var_3    O1     CAM    CAK    CAI      179.982   20.000   3
+ DR4      var_4    CAM    CAK    CAI    CAG      180.000   20.000   3
+ DR4      var_5    CAK    CAI    CAG    CAH     -179.978   20.000   3
+ DR4      var_6    CAI    CAG    CAH    CAJ     -179.978   20.000   3
+ DR4      var_7    CAG    CAH    CAJ    CAL      180.000   20.000   3
+ DR4      var_8    CAH    CAJ    CAL    CAO      179.976   20.000   3
+ DR4      var_9    CAJ    CAL    CAO    CAS      179.981   20.000   3
+ DR4      var_10   CAL    CAO    CAS    OAB        0.011   20.000   3
+ DR4      var_11   CAO    CAS    OAP    CAA     -179.988   20.000   1
+ DR4      var_12   CAS    OAP    CAA    HAA1     -59.095   20.000   1
+ DR4      var_13   O1     C1     C2     C3       180.000   20.000   3
+ DR4      var_14   C1     C2     O2     HO2       60.496   20.000   1
+ DR4      var_15   C1     C2     C3     C4       -60.000   20.000   3
+ DR4      var_16   C2     C3     O3     HO3      -60.807   20.000   1
+ DR4      var_17   C2     C3     C4     C5        60.000   20.000   3
+ DR4      var_18   C3     C4     O4     HO4      -60.467   20.000   1
+ DR4      var_19   C3     C4     C5     O5       -60.000   20.000   3
+ DR4      var_20   C4     C5     C6     O6      -174.711   20.000   3
+ DR4      var_21   C5     C6     O6     HO6     -179.969   20.000   1
+ DR4      var_22   C4     C5     O5     C1        60.000   20.000   1
+ DR4      var_23   C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DR4      chir_01  C1     O1     O5     C2        positiv
+ DR4      chir_02  C5     O5     C6     C4        positiv
+ DR4      chir_03  C4     C5     O4     C3        positiv
+ DR4      chir_04  C3     C4     O3     C2        positiv
+ DR4      chir_05  C2     C1     C3     O2        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DR4      plan-1    CAS       0.020
+ DR4      plan-1    OAP       0.020
+ DR4      plan-1    OAB       0.020
+ DR4      plan-1    CAO       0.020
+# ------------------------------------------------------

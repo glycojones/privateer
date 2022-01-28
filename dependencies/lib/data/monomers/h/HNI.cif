@@ -1,0 +1,591 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HNI      HNI 'PROTOPORPHYRIN IX CONTAINING NI(II) ' non-polymer        73  43 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HNI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HNI           O2D    O    OC       -0.500      0.000    0.000    0.000
+ HNI           CGD    C    C         0.000     -0.077   -0.216   -1.230
+ HNI           O1D    O    OC       -0.500      0.926   -0.221   -1.977
+ HNI           CBD    C    CH2       0.000     -1.415   -0.495   -1.877
+ HNI           HBD1   H    H         0.000     -1.218   -1.169   -2.714
+ HNI           HBD2   H    H         0.000     -1.779    0.460   -2.259
+ HNI           CAD    C    CH2       0.000     -2.457   -1.107   -0.969
+ HNI           HAD1   H    H         0.000     -2.512   -0.566   -0.022
+ HNI           HAD2   H    H         0.000     -2.233   -2.158   -0.774
+ HNI           C3D    C    CR5       0.000     -3.774   -0.999   -1.689
+ HNI           C2D    C    CR5       0.000     -4.593    0.063   -1.746
+ HNI           CMD    C    CH3       0.000     -4.595    1.286   -0.864
+ HNI           HMD3   H    H         0.000     -4.565    2.157   -1.467
+ HNI           HMD2   H    H         0.000     -5.475    1.296   -0.275
+ HNI           HMD1   H    H         0.000     -3.747    1.267   -0.230
+ HNI           C1D    C    CR5       0.000     -5.591   -0.249   -2.733
+ HNI           CHD    C    C1        0.000     -6.613    0.613   -3.026
+ HNI           HHD    H    H         0.000     -6.643    1.576   -2.546
+ HNI           C4D    C    CR5       0.000     -4.260   -1.966   -2.636
+ HNI           CHA    C    C1        0.000     -3.580   -3.179   -2.826
+ HNI           HHA    H    H         0.000     -2.846   -3.498   -2.106
+ HNI           ND     N    NR5       0.000     -5.388   -1.510   -3.354
+ HNI           NI     NI   NI        0.000     -6.250   -2.445   -4.674
+ HNI           NB     N    NR5       0.000     -7.223   -3.243   -6.115
+ HNI           C4B    C    CR5       0.000     -8.429   -2.936   -6.652
+ HNI           C3B    C    CR5       0.000     -8.849   -3.879   -7.686
+ HNI           CAB    C    C1        0.000    -10.276   -4.121   -8.121
+ HNI           HAB    H    H         0.000    -11.055   -4.170   -7.378
+ HNI           CBB    C    C2        0.000    -10.610   -4.286   -9.488
+ HNI           HBB2   H    H         0.000    -11.643   -4.462   -9.814
+ HNI           HBB1   H    H         0.000     -9.849   -4.244  -10.278
+ HNI           C2B    C    CR5       0.000     -7.802   -4.744   -7.784
+ HNI           CMB    C    CH3       0.000     -7.604   -5.955   -8.644
+ HNI           HMB3   H    H         0.000     -6.745   -5.820   -9.248
+ HNI           HMB2   H    H         0.000     -7.474   -6.806   -8.028
+ HNI           HMB1   H    H         0.000     -8.453   -6.090   -9.261
+ HNI           C1B    C    CR5       0.000     -6.819   -4.306   -6.842
+ HNI           CHB    C    C1        0.000     -5.649   -4.967   -6.697
+ HNI           HHB    H    H         0.000     -5.387   -5.716   -7.425
+ HNI           NC     N    NR5       0.000     -7.580   -0.908   -4.625
+ HNI           C4C    C    CR5       0.000     -7.596    0.278   -3.915
+ HNI           C3C    C    CR5       0.000     -8.721    1.109   -4.276
+ HNI           CAC    C    C1        0.000     -8.991    2.459   -3.708
+ HNI           HAC    H    H         0.000     -8.777    2.659   -2.672
+ HNI           CBC    C    C2        0.000     -9.519    3.459   -4.512
+ HNI           HBC2   H    H         0.000     -9.724    4.455   -4.116
+ HNI           HBC1   H    H         0.000     -9.746    3.279   -5.564
+ HNI           C2C    C    CR5       0.000     -9.433    0.379   -5.187
+ HNI           CMC    C    CH3       0.000    -10.797    0.564   -5.789
+ HNI           HMC3   H    H         0.000    -10.739    0.435   -6.839
+ HNI           HMC2   H    H         0.000    -11.462   -0.151   -5.381
+ HNI           HMC1   H    H         0.000    -11.149    1.539   -5.572
+ HNI           C1C    C    CR5       0.000     -8.739   -0.874   -5.346
+ HNI           CHC    C    C1        0.000     -9.186   -1.865   -6.223
+ HNI           HHC    H    H         0.000    -10.195   -1.788   -6.591
+ HNI           NA     N    NR5       0.000     -4.934   -3.720   -4.751
+ HNI           C4A    C    CR5       0.000     -4.791   -4.729   -5.678
+ HNI           C3A    C    CR5       0.000     -3.584   -5.512   -5.506
+ HNI           CMA    C    CH3       0.000     -3.125   -6.605   -6.435
+ HNI           HMA3   H    H         0.000     -2.195   -6.336   -6.863
+ HNI           HMA2   H    H         0.000     -3.016   -7.508   -5.892
+ HNI           HMA1   H    H         0.000     -3.842   -6.739   -7.203
+ HNI           C2A    C    CR5       0.000     -2.984   -5.016   -4.399
+ HNI           C1A    C    CR5       0.000     -3.843   -3.962   -3.921
+ HNI           CAA    C    CH2       0.000     -1.642   -5.310   -3.824
+ HNI           HAA1   H    H         0.000     -1.392   -4.501   -3.134
+ HNI           HAA2   H    H         0.000     -0.923   -5.321   -4.646
+ HNI           CBA    C    CH2       0.000     -1.595   -6.605   -3.108
+ HNI           HBA1   H    H         0.000     -1.429   -7.432   -3.801
+ HNI           HBA2   H    H         0.000     -2.517   -6.779   -2.549
+ HNI           CGA    C    C         0.000     -0.431   -6.510   -2.146
+ HNI           O1A    O    OC       -0.500      0.272   -5.478   -2.074
+ HNI           O2A    O    OC       -0.500     -0.229   -7.522   -1.439
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HNI      O2D    n/a    CGD    START
+ HNI      CGD    O2D    CBD    .
+ HNI      O1D    CGD    .      .
+ HNI      CBD    CGD    CAD    .
+ HNI      HBD1   CBD    .      .
+ HNI      HBD2   CBD    .      .
+ HNI      CAD    CBD    C3D    .
+ HNI      HAD1   CAD    .      .
+ HNI      HAD2   CAD    .      .
+ HNI      C3D    CAD    C4D    .
+ HNI      C2D    C3D    C1D    .
+ HNI      CMD    C2D    HMD1   .
+ HNI      HMD3   CMD    .      .
+ HNI      HMD2   CMD    .      .
+ HNI      HMD1   CMD    .      .
+ HNI      C1D    C2D    CHD    .
+ HNI      CHD    C1D    HHD    .
+ HNI      HHD    CHD    .      .
+ HNI      C4D    C3D    ND     .
+ HNI      CHA    C4D    HHA    .
+ HNI      HHA    CHA    .      .
+ HNI      ND     C4D    NI     .
+ HNI      NI     ND     NA     .
+ HNI      NB     NI     C4B    .
+ HNI      C4B    NB     C3B    .
+ HNI      C3B    C4B    C2B    .
+ HNI      CAB    C3B    CBB    .
+ HNI      HAB    CAB    .      .
+ HNI      CBB    CAB    HBB1   .
+ HNI      HBB2   CBB    .      .
+ HNI      HBB1   CBB    .      .
+ HNI      C2B    C3B    C1B    .
+ HNI      CMB    C2B    HMB1   .
+ HNI      HMB3   CMB    .      .
+ HNI      HMB2   CMB    .      .
+ HNI      HMB1   CMB    .      .
+ HNI      C1B    C2B    CHB    .
+ HNI      CHB    C1B    HHB    .
+ HNI      HHB    CHB    .      .
+ HNI      NC     NI     C4C    .
+ HNI      C4C    NC     C3C    .
+ HNI      C3C    C4C    C2C    .
+ HNI      CAC    C3C    CBC    .
+ HNI      HAC    CAC    .      .
+ HNI      CBC    CAC    HBC1   .
+ HNI      HBC2   CBC    .      .
+ HNI      HBC1   CBC    .      .
+ HNI      C2C    C3C    C1C    .
+ HNI      CMC    C2C    HMC1   .
+ HNI      HMC3   CMC    .      .
+ HNI      HMC2   CMC    .      .
+ HNI      HMC1   CMC    .      .
+ HNI      C1C    C2C    CHC    .
+ HNI      CHC    C1C    HHC    .
+ HNI      HHC    CHC    .      .
+ HNI      NA     NI     C4A    .
+ HNI      C4A    NA     C3A    .
+ HNI      C3A    C4A    C2A    .
+ HNI      CMA    C3A    HMA1   .
+ HNI      HMA3   CMA    .      .
+ HNI      HMA2   CMA    .      .
+ HNI      HMA1   CMA    .      .
+ HNI      C2A    C3A    CAA    .
+ HNI      C1A    C2A    .      .
+ HNI      CAA    C2A    CBA    .
+ HNI      HAA1   CAA    .      .
+ HNI      HAA2   CAA    .      .
+ HNI      CBA    CAA    CGA    .
+ HNI      HBA1   CBA    .      .
+ HNI      HBA2   CBA    .      .
+ HNI      CGA    CBA    O2A    .
+ HNI      O1A    CGA    .      .
+ HNI      O2A    CGA    .      END
+ HNI      CHA    C1A    .    ADD
+ HNI      CHB    C4A    .    ADD
+ HNI      CHC    C4B    .    ADD
+ HNI      CHD    C4C    .    ADD
+ HNI      NA     C1A    .    ADD
+ HNI      NB     C1B    .    ADD
+ HNI      NC     C1C    .    ADD
+ HNI      ND     C1D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HNI       NA        NI        single    2.100     0.020     2.100     0.020     
+HNI       NB        NI        single    2.100     0.020     2.100     0.020     
+HNI       NC        NI        single    2.100     0.020     2.100     0.020     
+HNI       NI        ND        single    2.100     0.020     2.100     0.020     
+HNI       CHA       C1A       double    1.483     0.020     1.483     0.020     
+HNI       CHA       C4D       single    1.483     0.020     1.483     0.020     
+HNI       HHA       CHA       single    1.082     0.013     0.975     0.010     
+HNI       CHB       C4A       single    1.483     0.020     1.483     0.020     
+HNI       CHB       C1B       double    1.483     0.020     1.483     0.020     
+HNI       HHB       CHB       single    1.082     0.013     0.975     0.010     
+HNI       CHC       C4B       double    1.483     0.020     1.483     0.020     
+HNI       CHC       C1C       single    1.483     0.020     1.483     0.020     
+HNI       HHC       CHC       single    1.082     0.013     0.975     0.010     
+HNI       CHD       C4C       double    1.483     0.020     1.483     0.020     
+HNI       CHD       C1D       single    1.483     0.020     1.483     0.020     
+HNI       HHD       CHD       single    1.082     0.013     0.975     0.010     
+HNI       NA        C1A       single    1.337     0.020     1.337     0.020     
+HNI       C4A       NA        double    1.337     0.020     1.337     0.020     
+HNI       C1A       C2A       single    1.490     0.020     1.490     0.020     
+HNI       C2A       C3A       double    1.490     0.020     1.490     0.020     
+HNI       CAA       C2A       single    1.510     0.020     1.510     0.020     
+HNI       C3A       C4A       single    1.490     0.020     1.490     0.020     
+HNI       CMA       C3A       single    1.506     0.020     1.506     0.020     
+HNI       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+HNI       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+HNI       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+HNI       CBA       CAA       single    1.524     0.020     1.524     0.020     
+HNI       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+HNI       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+HNI       CGA       CBA       single    1.510     0.020     1.510     0.020     
+HNI       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+HNI       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+HNI       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+HNI       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+HNI       NB        C1B       single    1.337     0.020     1.337     0.020     
+HNI       C4B       NB        single    1.337     0.020     1.337     0.020     
+HNI       C1B       C2B       single    1.490     0.020     1.490     0.020     
+HNI       C2B       C3B       double    1.490     0.020     1.490     0.020     
+HNI       CMB       C2B       single    1.506     0.020     1.506     0.020     
+HNI       C3B       C4B       single    1.490     0.020     1.490     0.020     
+HNI       CAB       C3B       single    1.483     0.020     1.483     0.020     
+HNI       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+HNI       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+HNI       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+HNI       CBB       CAB       double    1.320     0.020     1.320     0.020     
+HNI       HAB       CAB       single    1.082     0.013     0.975     0.010     
+HNI       HBB1      CBB       single    1.082     0.013     0.975     0.010     
+HNI       HBB2      CBB       single    1.082     0.013     0.975     0.010     
+HNI       NC        C1C       double    1.337     0.020     1.337     0.020     
+HNI       C4C       NC        single    1.337     0.020     1.337     0.020     
+HNI       C1C       C2C       single    1.490     0.020     1.490     0.020     
+HNI       C2C       C3C       double    1.490     0.020     1.490     0.020     
+HNI       CMC       C2C       single    1.506     0.020     1.506     0.020     
+HNI       C3C       C4C       single    1.490     0.020     1.490     0.020     
+HNI       CAC       C3C       single    1.483     0.020     1.483     0.020     
+HNI       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+HNI       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+HNI       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+HNI       CBC       CAC       double    1.320     0.020     1.320     0.020     
+HNI       HAC       CAC       single    1.082     0.013     0.975     0.010     
+HNI       HBC1      CBC       single    1.082     0.013     0.975     0.010     
+HNI       HBC2      CBC       single    1.082     0.013     0.975     0.010     
+HNI       ND        C1D       single    1.337     0.020     1.337     0.020     
+HNI       ND        C4D       single    1.337     0.020     1.337     0.020     
+HNI       C1D       C2D       double    1.490     0.020     1.490     0.020     
+HNI       C2D       C3D       single    1.490     0.020     1.490     0.020     
+HNI       CMD       C2D       single    1.506     0.020     1.506     0.020     
+HNI       C4D       C3D       double    1.490     0.020     1.490     0.020     
+HNI       C3D       CAD       single    1.510     0.020     1.510     0.020     
+HNI       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+HNI       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+HNI       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+HNI       CAD       CBD       single    1.524     0.020     1.524     0.020     
+HNI       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+HNI       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+HNI       CBD       CGD       single    1.510     0.020     1.510     0.020     
+HNI       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+HNI       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+HNI       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+HNI       CGD       O2D       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HNI      O2D    CGD    O1D     123.000    3.000
+ HNI      O2D    CGD    CBD     118.500    3.000
+ HNI      O1D    CGD    CBD     118.500    3.000
+ HNI      CGD    CBD    HBD1    109.470    3.000
+ HNI      CGD    CBD    HBD2    109.470    3.000
+ HNI      CGD    CBD    CAD     109.470    3.000
+ HNI      HBD1   CBD    HBD2    107.900    3.000
+ HNI      HBD1   CBD    CAD     109.470    3.000
+ HNI      HBD2   CBD    CAD     109.470    3.000
+ HNI      CBD    CAD    HAD1    109.470    3.000
+ HNI      CBD    CAD    HAD2    109.470    3.000
+ HNI      CBD    CAD    C3D     109.470    3.000
+ HNI      HAD1   CAD    HAD2    107.900    3.000
+ HNI      HAD1   CAD    C3D     109.470    3.000
+ HNI      HAD2   CAD    C3D     109.470    3.000
+ HNI      CAD    C3D    C2D     126.000    3.000
+ HNI      CAD    C3D    C4D     126.000    3.000
+ HNI      C2D    C3D    C4D     108.000    3.000
+ HNI      C3D    C2D    CMD     126.000    3.000
+ HNI      C3D    C2D    C1D     108.000    3.000
+ HNI      CMD    C2D    C1D     126.000    3.000
+ HNI      C2D    CMD    HMD3    109.470    3.000
+ HNI      C2D    CMD    HMD2    109.470    3.000
+ HNI      C2D    CMD    HMD1    109.470    3.000
+ HNI      HMD3   CMD    HMD2    109.470    3.000
+ HNI      HMD3   CMD    HMD1    109.470    3.000
+ HNI      HMD2   CMD    HMD1    109.470    3.000
+ HNI      C2D    C1D    CHD     117.000    3.000
+ HNI      C2D    C1D    ND      108.000    3.000
+ HNI      CHD    C1D    ND      108.000    3.000
+ HNI      C1D    CHD    HHD     120.000    3.000
+ HNI      C1D    CHD    C4C     120.000    3.000
+ HNI      HHD    CHD    C4C     120.000    3.000
+ HNI      C3D    C4D    CHA     117.000    3.000
+ HNI      C3D    C4D    ND      108.000    3.000
+ HNI      CHA    C4D    ND      108.000    3.000
+ HNI      C4D    CHA    HHA     120.000    3.000
+ HNI      C4D    CHA    C1A     120.000    3.000
+ HNI      HHA    CHA    C1A     120.000    3.000
+ HNI      C4D    ND     NI      108.000    3.000
+ HNI      C4D    ND     C1D     108.000    3.000
+ HNI      NI     ND     C1D     108.000    3.000
+ HNI      ND     NI     NB      180.000    3.000
+ HNI      ND     NI     NC       90.000    3.000
+ HNI      ND     NI     NA       90.000    3.000
+ HNI      NB     NI     NC       90.000    3.000
+ HNI      NB     NI     NA       90.000    3.000
+ HNI      NC     NI     NA      180.000    3.000
+ HNI      NI     NB     C4B     108.000    3.000
+ HNI      NI     NB     C1B     108.000    3.000
+ HNI      C4B    NB     C1B     108.000    3.000
+ HNI      NB     C4B    C3B     108.000    3.000
+ HNI      NB     C4B    CHC     108.000    3.000
+ HNI      C3B    C4B    CHC     117.000    3.000
+ HNI      C4B    C3B    CAB     117.000    3.000
+ HNI      C4B    C3B    C2B     108.000    3.000
+ HNI      CAB    C3B    C2B     117.000    3.000
+ HNI      C3B    CAB    HAB     120.000    3.000
+ HNI      C3B    CAB    CBB     120.000    3.000
+ HNI      HAB    CAB    CBB     120.000    3.000
+ HNI      CAB    CBB    HBB2    120.000    3.000
+ HNI      CAB    CBB    HBB1    120.000    3.000
+ HNI      HBB2   CBB    HBB1    120.000    3.000
+ HNI      C3B    C2B    CMB     126.000    3.000
+ HNI      C3B    C2B    C1B     108.000    3.000
+ HNI      CMB    C2B    C1B     126.000    3.000
+ HNI      C2B    CMB    HMB3    109.470    3.000
+ HNI      C2B    CMB    HMB2    109.470    3.000
+ HNI      C2B    CMB    HMB1    109.470    3.000
+ HNI      HMB3   CMB    HMB2    109.470    3.000
+ HNI      HMB3   CMB    HMB1    109.470    3.000
+ HNI      HMB2   CMB    HMB1    109.470    3.000
+ HNI      C2B    C1B    CHB     117.000    3.000
+ HNI      C2B    C1B    NB      108.000    3.000
+ HNI      CHB    C1B    NB      108.000    3.000
+ HNI      C1B    CHB    HHB     120.000    3.000
+ HNI      C1B    CHB    C4A     120.000    3.000
+ HNI      HHB    CHB    C4A     120.000    3.000
+ HNI      NI     NC     C4C     108.000    3.000
+ HNI      NI     NC     C1C     108.000    3.000
+ HNI      C4C    NC     C1C     108.000    3.000
+ HNI      NC     C4C    C3C     108.000    3.000
+ HNI      NC     C4C    CHD     108.000    3.000
+ HNI      C3C    C4C    CHD     117.000    3.000
+ HNI      C4C    C3C    CAC     117.000    3.000
+ HNI      C4C    C3C    C2C     108.000    3.000
+ HNI      CAC    C3C    C2C     117.000    3.000
+ HNI      C3C    CAC    HAC     120.000    3.000
+ HNI      C3C    CAC    CBC     120.000    3.000
+ HNI      HAC    CAC    CBC     120.000    3.000
+ HNI      CAC    CBC    HBC2    120.000    3.000
+ HNI      CAC    CBC    HBC1    120.000    3.000
+ HNI      HBC2   CBC    HBC1    120.000    3.000
+ HNI      C3C    C2C    CMC     126.000    3.000
+ HNI      C3C    C2C    C1C     108.000    3.000
+ HNI      CMC    C2C    C1C     126.000    3.000
+ HNI      C2C    CMC    HMC3    109.470    3.000
+ HNI      C2C    CMC    HMC2    109.470    3.000
+ HNI      C2C    CMC    HMC1    109.470    3.000
+ HNI      HMC3   CMC    HMC2    109.470    3.000
+ HNI      HMC3   CMC    HMC1    109.470    3.000
+ HNI      HMC2   CMC    HMC1    109.470    3.000
+ HNI      C2C    C1C    CHC     117.000    3.000
+ HNI      C2C    C1C    NC      108.000    3.000
+ HNI      CHC    C1C    NC      108.000    3.000
+ HNI      C1C    CHC    HHC     120.000    3.000
+ HNI      C1C    CHC    C4B     120.000    3.000
+ HNI      HHC    CHC    C4B     120.000    3.000
+ HNI      NI     NA     C4A     108.000    3.000
+ HNI      NI     NA     C1A     108.000    3.000
+ HNI      C4A    NA     C1A     108.000    3.000
+ HNI      NA     C4A    C3A     108.000    3.000
+ HNI      NA     C4A    CHB     108.000    3.000
+ HNI      C3A    C4A    CHB     117.000    3.000
+ HNI      C4A    C3A    CMA     126.000    3.000
+ HNI      C4A    C3A    C2A     108.000    3.000
+ HNI      CMA    C3A    C2A     126.000    3.000
+ HNI      C3A    CMA    HMA3    109.470    3.000
+ HNI      C3A    CMA    HMA2    109.470    3.000
+ HNI      C3A    CMA    HMA1    109.470    3.000
+ HNI      HMA3   CMA    HMA2    109.470    3.000
+ HNI      HMA3   CMA    HMA1    109.470    3.000
+ HNI      HMA2   CMA    HMA1    109.470    3.000
+ HNI      C3A    C2A    C1A     108.000    3.000
+ HNI      C3A    C2A    CAA     126.000    3.000
+ HNI      C1A    C2A    CAA     126.000    3.000
+ HNI      C2A    C1A    CHA     117.000    3.000
+ HNI      C2A    C1A    NA      108.000    3.000
+ HNI      CHA    C1A    NA      108.000    3.000
+ HNI      C2A    CAA    HAA1    109.470    3.000
+ HNI      C2A    CAA    HAA2    109.470    3.000
+ HNI      C2A    CAA    CBA     109.470    3.000
+ HNI      HAA1   CAA    HAA2    107.900    3.000
+ HNI      HAA1   CAA    CBA     109.470    3.000
+ HNI      HAA2   CAA    CBA     109.470    3.000
+ HNI      CAA    CBA    HBA1    109.470    3.000
+ HNI      CAA    CBA    HBA2    109.470    3.000
+ HNI      CAA    CBA    CGA     109.470    3.000
+ HNI      HBA1   CBA    HBA2    107.900    3.000
+ HNI      HBA1   CBA    CGA     109.470    3.000
+ HNI      HBA2   CBA    CGA     109.470    3.000
+ HNI      CBA    CGA    O1A     118.500    3.000
+ HNI      CBA    CGA    O2A     118.500    3.000
+ HNI      O1A    CGA    O2A     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HNI      var_1    O2D    CGD    CBD    CAD      -26.808   20.000   3
+ HNI      var_2    CGD    CBD    CAD    C3D      166.760   20.000   3
+ HNI      var_3    CBD    CAD    C3D    C4D       86.272   20.000   2
+ HNI      CONST_1  CAD    C3D    C2D    C1D      180.000    0.000   0
+ HNI      var_4    C3D    C2D    CMD    HMD1       7.422   20.000   1
+ HNI      CONST_2  C3D    C2D    C1D    CHD      180.000    0.000   0
+ HNI      var_5    C2D    C1D    CHD    C4C      180.000   20.000   1
+ HNI      var_6    C1D    CHD    C4C    NC         0.000   20.000   1
+ HNI      CONST_3  CAD    C3D    C4D    ND       180.000    0.000   0
+ HNI      var_7    C3D    C4D    CHA    C1A     -150.000   20.000   1
+ HNI      var_8    C4D    CHA    C1A    C2A      150.000   20.000   1
+ HNI      CONST_4  C3D    C4D    ND     NI       180.000    0.000   0
+ HNI      CONST_5  C4D    ND     C1D    C2D        0.000    0.000   0
+ HNI      var_9    C1D    ND     NI     NC         0.000   20.000   1
+ HNI      var_10   C4B    NB     NI     NC         0.000   20.000   1
+ HNI      CONST_6  NI     NB     C1B    C2B      180.000    0.000   0
+ HNI      CONST_7  NI     NB     C4B    C3B      180.000    0.000   0
+ HNI      CONST_8  NB     C4B    C3B    C2B        0.000    0.000   0
+ HNI      var_11   C4B    C3B    CAB    CBB      138.871   20.000   1
+ HNI      CONST_9  C3B    CAB    CBB    HBB1       0.022    0.000   0
+ HNI      CONST_10 C4B    C3B    C2B    C1B        0.000    0.000   0
+ HNI      var_12   C3B    C2B    CMB    HMB1       0.973   20.000   1
+ HNI      CONST_11 C3B    C2B    C1B    CHB      180.000    0.000   0
+ HNI      var_13   C2B    C1B    CHB    C4A      180.000   20.000   1
+ HNI      var_14   C1B    CHB    C4A    NA         0.000   20.000   1
+ HNI      var_15   C4C    NC     NI     ND         0.000   20.000   1
+ HNI      CONST_12 NI     NC     C1C    C2C      180.000    0.000   0
+ HNI      CONST_13 NI     NC     C4C    C3C      180.000    0.000   0
+ HNI      CONST_14 NC     C4C    C3C    C2C        0.000    0.000   0
+ HNI      var_16   C4C    C3C    CAC    CBC      143.289   20.000   1
+ HNI      CONST_15 C3C    CAC    CBC    HBC1       0.052    0.000   0
+ HNI      CONST_16 C4C    C3C    C2C    C1C        0.000    0.000   0
+ HNI      var_17   C3C    C2C    CMC    HMC1      12.743   20.000   1
+ HNI      CONST_17 C3C    C2C    C1C    CHC      180.000    0.000   0
+ HNI      var_18   C2C    C1C    CHC    C4B      150.000   20.000   1
+ HNI      var_19   C1C    CHC    C4B    NB         0.000   20.000   1
+ HNI      var_20   C1A    NA     NI     ND         0.000   20.000   1
+ HNI      CONST_18 NI     NA     C1A    C2A      180.000    0.000   0
+ HNI      CONST_19 NI     NA     C4A    C3A      180.000    0.000   0
+ HNI      CONST_20 NA     C4A    C3A    C2A        0.000    0.000   0
+ HNI      var_21   C4A    C3A    CMA    HMA1      -2.596   20.000   1
+ HNI      CONST_21 C4A    C3A    C2A    CAA      180.000    0.000   0
+ HNI      CONST_22 C3A    C2A    C1A    CHA      180.000    0.000   0
+ HNI      var_22   C3A    C2A    CAA    CBA      -76.857   20.000   2
+ HNI      var_23   C2A    CAA    CBA    CGA     -157.603   20.000   3
+ HNI      var_24   CAA    CBA    CGA    O2A      179.862   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HNI      chir_01  NI     ND     NB     NC        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HNI      plan-1    CHA       0.020
+ HNI      plan-1    C1A       0.020
+ HNI      plan-1    C4D       0.020
+ HNI      plan-1    HHA       0.020
+ HNI      plan-2    CHB       0.020
+ HNI      plan-2    C4A       0.020
+ HNI      plan-2    C1B       0.020
+ HNI      plan-2    HHB       0.020
+ HNI      plan-3    CHC       0.020
+ HNI      plan-3    C4B       0.020
+ HNI      plan-3    C1C       0.020
+ HNI      plan-3    HHC       0.020
+ HNI      plan-4    CHD       0.020
+ HNI      plan-4    C4C       0.020
+ HNI      plan-4    C1D       0.020
+ HNI      plan-4    HHD       0.020
+ HNI      plan-5    NA        0.020
+ HNI      plan-5    NI        0.020
+ HNI      plan-5    C1A       0.020
+ HNI      plan-5    C4A       0.020
+ HNI      plan-5    C2A       0.020
+ HNI      plan-5    C3A       0.020
+ HNI      plan-5    CHA       0.020
+ HNI      plan-5    CAA       0.020
+ HNI      plan-5    CMA       0.020
+ HNI      plan-5    CHB       0.020
+ HNI      plan-5    HHA       0.020
+ HNI      plan-5    HHB       0.020
+ HNI      plan-6    CGA       0.020
+ HNI      plan-6    CBA       0.020
+ HNI      plan-6    O1A       0.020
+ HNI      plan-6    O2A       0.020
+ HNI      plan-7    NB        0.020
+ HNI      plan-7    NI        0.020
+ HNI      plan-7    C1B       0.020
+ HNI      plan-7    C4B       0.020
+ HNI      plan-7    C2B       0.020
+ HNI      plan-7    C3B       0.020
+ HNI      plan-7    CHB       0.020
+ HNI      plan-7    CMB       0.020
+ HNI      plan-7    CAB       0.020
+ HNI      plan-7    CHC       0.020
+ HNI      plan-7    HHB       0.020
+ HNI      plan-7    HAB       0.020
+ HNI      plan-7    HHC       0.020
+ HNI      plan-8    CAB       0.020
+ HNI      plan-8    C3B       0.020
+ HNI      plan-8    CBB       0.020
+ HNI      plan-8    HAB       0.020
+ HNI      plan-8    HBB1      0.020
+ HNI      plan-8    HBB2      0.020
+ HNI      plan-9    NC        0.020
+ HNI      plan-9    NI        0.020
+ HNI      plan-9    C1C       0.020
+ HNI      plan-9    C4C       0.020
+ HNI      plan-9    C2C       0.020
+ HNI      plan-9    C3C       0.020
+ HNI      plan-9    CHC       0.020
+ HNI      plan-9    CMC       0.020
+ HNI      plan-9    CAC       0.020
+ HNI      plan-9    CHD       0.020
+ HNI      plan-9    HHC       0.020
+ HNI      plan-9    HAC       0.020
+ HNI      plan-9    HHD       0.020
+ HNI      plan-10   CAC       0.020
+ HNI      plan-10   C3C       0.020
+ HNI      plan-10   CBC       0.020
+ HNI      plan-10   HAC       0.020
+ HNI      plan-10   HBC1      0.020
+ HNI      plan-10   HBC2      0.020
+ HNI      plan-11   ND        0.020
+ HNI      plan-11   NI        0.020
+ HNI      plan-11   C1D       0.020
+ HNI      plan-11   C4D       0.020
+ HNI      plan-11   C2D       0.020
+ HNI      plan-11   C3D       0.020
+ HNI      plan-11   CHD       0.020
+ HNI      plan-11   CMD       0.020
+ HNI      plan-11   CAD       0.020
+ HNI      plan-11   CHA       0.020
+ HNI      plan-11   HHD       0.020
+ HNI      plan-11   HHA       0.020
+ HNI      plan-12   CGD       0.020
+ HNI      plan-12   CBD       0.020
+ HNI      plan-12   O1D       0.020
+ HNI      plan-12   O2D       0.020
+# ------------------------------------------------------

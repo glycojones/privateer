@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UVW     UVW      ACETYLPHOSPHATE     NON-POLYMER     11     8     .     
+#
+data_comp_UVW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+UVW     C1      C       C       0       0.646       -0.230      -0.461      
+UVW     O1      O       O       0       0.482       -0.486      -1.626      
+UVW     C1M     C       CH3     0       1.944       0.241       0.114       
+UVW     O2      O       O2      0       -0.304      -0.355      0.477       
+UVW     P       P       P       0       -1.883      -0.166      0.275       
+UVW     O1P     O       O       0       -2.448      -1.510      -0.113      
+UVW     O2P     O       OP      -1      -2.456      0.309       1.588       
+UVW     O3P     O       OP      -1      -2.101      0.854       -0.816      
+UVW     H1M1    H       H       0       1.804       0.601       1.005       
+UVW     H1M2    H       H       0       2.318       0.932       -0.457      
+UVW     H1M3    H       H       0       2.564       -0.505      0.162       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UVW       C1        O1        DOUBLE    n         1.200     0.020     1.200     0.020     
+UVW       C1        C1M       SINGLE    n         1.492     0.013     1.492     0.013     
+UVW       C1        O2        SINGLE    n         1.333     0.016     1.333     0.016     
+UVW       O2        P         SINGLE    n         1.595     0.020     1.595     0.020     
+UVW       P         O1P       DOUBLE    n         1.509     0.020     1.509     0.020     
+UVW       P         O2P       SINGLE    n         1.509     0.020     1.509     0.020     
+UVW       P         O3P       SINGLE    n         1.509     0.020     1.509     0.020     
+UVW       C1M       H1M1      SINGLE    n         1.089     0.010     0.971     0.014     
+UVW       C1M       H1M2      SINGLE    n         1.089     0.010     0.971     0.014     
+UVW       C1M       H1M3      SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+UVW          O1          C1         C1M     125.123    2.35
+UVW          O1          C1          O2     123.645    1.74
+UVW         C1M          C1          O2     111.232    1.81
+UVW          C1         C1M        H1M1     109.502    1.50
+UVW          C1         C1M        H1M2     109.502    1.50
+UVW          C1         C1M        H1M3     109.502    1.50
+UVW        H1M1         C1M        H1M2     109.424    1.50
+UVW        H1M1         C1M        H1M3     109.424    1.50
+UVW        H1M2         C1M        H1M3     109.424    1.50
+UVW          C1          O2           P     122.808    2.93
+UVW          O2           P         O1P     112.304    3.00
+UVW          O2           P         O2P     112.304    3.00
+UVW          O2           P         O3P     112.304    3.00
+UVW         O1P           P         O2P     112.864    1.69
+UVW         O1P           P         O3P     112.864    1.69
+UVW         O2P           P         O3P     112.864    1.69
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+UVW             sp2_sp3_1          O1          C1         C1M        H1M1       0.000   10.00     6
+UVW             sp2_sp2_1          O1          C1          O2           P     180.000   10.00     2
+UVW             sp3_sp3_1         O1P           P          O2          C1     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+UVW    plan-1          C1   0.020
+UVW    plan-1         C1M   0.020
+UVW    plan-1          O1   0.020
+UVW    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+UVW SMILES           ACDLabs              10.04 "O=C(OP(=O)(O)O)C"
+UVW SMILES_CANONICAL CACTVS               3.341 "CC(=O)O[P](O)(O)=O"
+UVW SMILES           CACTVS               3.341 "CC(=O)O[P](O)(O)=O"
+UVW SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)OP(=O)(O)O"
+UVW SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)OP(=O)(O)O"
+UVW InChI            InChI                1.03  "InChI=1S/C2H5O5P/c1-2(3)7-8(4,5)6/h1H3,(H2,4,5,6)"
+UVW InChIKey         InChI                1.03  LIPOUNRJVLNBCD-UHFFFAOYSA-N
+UVW ?                acedrg               202         "dictionary generator"                  
+UVW ?                acedrg_database      11          "data source"                           
+UVW ?                rdkit                2017.03.2   "Chemoinformatics tool"
+UVW ?                refmac5              5.8.0189    "optimization tool"                     

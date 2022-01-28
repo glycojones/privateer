@@ -1,0 +1,200 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MEG     MEG     "(2S,3S)-2-azanyl-3-methyl-pentanedioicacid"     peptide     21     11     .
+#
+data_comp_MEG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MEG     N       N       NT3     1       -4.325      3.246       1.239
+MEG     CA      C       CH1     0       -4.534      2.568       2.557
+MEG     CB      C       CH1     0       -5.960      2.810       3.110
+MEG     CG      C       CH2     0       -6.338      4.299       3.196
+MEG     CD      C       C       0       -7.814      4.607       3.387
+MEG     OE1     O       O       0       -8.618      4.192       2.530
+MEG     OE2     O       OC      -1      -8.151      5.261       4.394
+MEG     C       C       C       0       -4.231      1.072       2.389
+MEG     O       O       O       0       -4.921      0.441       1.563
+MEG     C1      C       CH3     0       -6.130      2.135       4.471
+MEG     OXT     O       OC      -1      -3.317      0.594       3.090
+MEG     H       H       H       0       -3.674      2.825       0.759
+MEG     H2      H       H       0       -4.067      4.109       1.371
+MEG     H3      H       H       0       -5.097      3.239       0.754
+MEG     HA      H       H       0       -3.896      2.939       3.193
+MEG     HB      H       H       0       -6.596      2.379       2.483
+MEG     HG2     H       H       0       -6.046      4.747       2.378
+MEG     HG3     H       H       0       -5.843      4.700       3.941
+MEG     H11     H       H       0       -6.877      2.531       4.951
+MEG     H12     H       H       0       -5.318      2.250       4.995
+MEG     H13     H       H       0       -6.300      1.186       4.347
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+MEG      N      n/a    CA     START
+MEG      H      N      .      .
+MEG      H2     N      .      .
+MEG      H3     N      .      .
+MEG      CA     N      C      .
+MEG      HA     CA     .      .
+MEG      CB     CA     CG     .
+MEG      HB     CB     .      .
+MEG      C1     CB     H11    .
+MEG      H13    C1     .      .
+MEG      H12    C1     .      .
+MEG      H11    C1     .      .
+MEG      CG     CB     CD     .
+MEG      HG2    CG     .      .
+MEG      HG3    CG     .      .
+MEG      CD     CG     OE2    .
+MEG      OE1    CD     .      .
+MEG      OE2    CD     .      .
+MEG      C      CA     .      END
+MEG      O      C      .      .
+MEG      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MEG       N         CA        SINGLE    n         1.494     0.010     1.494     0.010     
+MEG       CA        CB        SINGLE    n         1.543     0.010     1.543     0.010     
+MEG       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+MEG       CB        CG        SINGLE    n         1.534     0.010     1.534     0.010     
+MEG       CB        C1        SINGLE    n         1.525     0.010     1.525     0.010     
+MEG       CG        CD        SINGLE    n         1.519     0.012     1.519     0.012     
+MEG       CD        OE1       DOUBLE    n         1.247     0.019     1.247     0.019     
+MEG       CD        OE2       SINGLE    n         1.247     0.019     1.247     0.019     
+MEG       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+MEG       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+MEG       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+MEG       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+MEG       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+MEG       CA        HA        SINGLE    n         1.089     0.010     0.974     0.020     
+MEG       CB        HB        SINGLE    n         1.089     0.010     0.991     0.020     
+MEG       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.019     
+MEG       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.019     
+MEG       C1        H11       SINGLE    n         1.089     0.010     0.973     0.015     
+MEG       C1        H12       SINGLE    n         1.089     0.010     0.973     0.015     
+MEG       C1        H13       SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MEG          CA           N           H     110.089    1.83
+MEG          CA           N          H2     110.089    1.83
+MEG          CA           N          H3     110.089    1.83
+MEG           H           N          H2     109.028    2.41
+MEG           H           N          H3     109.028    2.41
+MEG          H2           N          H3     109.028    2.41
+MEG           N          CA          CB     110.820    1.50
+MEG           N          CA           C     108.763    1.50
+MEG           N          CA          HA     108.396    1.50
+MEG          CB          CA           C     111.764    1.50
+MEG          CB          CA          HA     108.383    1.50
+MEG           C          CA          HA     108.542    1.50
+MEG          CA          CB          CG     111.094    2.85
+MEG          CA          CB          C1     110.782    1.50
+MEG          CA          CB          HB     107.412    1.50
+MEG          CG          CB          C1     110.659    1.50
+MEG          CG          CB          HB     107.526    1.50
+MEG          C1          CB          HB     107.601    1.50
+MEG          CB          CG          CD     116.005    1.98
+MEG          CB          CG         HG2     108.689    1.50
+MEG          CB          CG         HG3     108.689    1.50
+MEG          CD          CG         HG2     108.462    1.50
+MEG          CD          CG         HG3     108.462    1.50
+MEG         HG2          CG         HG3     107.639    1.50
+MEG          CG          CD         OE1     118.129    1.68
+MEG          CG          CD         OE2     118.129    1.68
+MEG         OE1          CD         OE2     123.742    1.50
+MEG          CA           C           O     117.133    1.50
+MEG          CA           C         OXT     117.133    1.50
+MEG           O           C         OXT     125.734    1.50
+MEG          CB          C1         H11     109.662    1.50
+MEG          CB          C1         H12     109.662    1.50
+MEG          CB          C1         H13     109.662    1.50
+MEG         H11          C1         H12     109.411    1.50
+MEG         H11          C1         H13     109.411    1.50
+MEG         H12          C1         H13     109.411    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MEG             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+MEG            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+MEG             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+MEG            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+MEG            sp3_sp3_28         H11          C1          CB          CA     180.000   10.00     3
+MEG             sp2_sp3_8         OE1          CD          CG          CB     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MEG    chir_1    CA    N    C    CB    both
+MEG    chir_2    CB    CA    CG    C1    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MEG    plan-1          CD   0.020
+MEG    plan-1          CG   0.020
+MEG    plan-1         OE1   0.020
+MEG    plan-1         OE2   0.020
+MEG    plan-2           C   0.020
+MEG    plan-2          CA   0.020
+MEG    plan-2           O   0.020
+MEG    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MEG SMILES           ACDLabs              12.01 "O=C(O)C(N)C(CC(=O)O)C"
+MEG SMILES_CANONICAL CACTVS               3.370 "C[C@@H](CC(O)=O)[C@H](N)C(O)=O"
+MEG SMILES           CACTVS               3.370 "C[CH](CC(O)=O)[CH](N)C(O)=O"
+MEG SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C[C@@H](CC(=O)O)[C@@H](C(=O)O)N"
+MEG SMILES           "OpenEye OEToolkits" 1.7.0 "CC(CC(=O)O)C(C(=O)O)N"
+MEG InChI            InChI                1.03  "InChI=1S/C6H11NO4/c1-3(2-4(8)9)5(7)6(10)11/h3,5H,2,7H2,1H3,(H,8,9)(H,10,11)/t3-,5-/m0/s1"
+MEG InChIKey         InChI                1.03  FHJNAFIJPFGZRI-UCORVYFPSA-N
+MEG ?                acedrg               196         "dictionary generator"
+MEG ?                acedrg_database      11          "data source"
+MEG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MEG ?                refmac5              5.8.0222    "optimization tool"

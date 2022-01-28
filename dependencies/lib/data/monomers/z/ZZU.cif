@@ -1,0 +1,247 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZZU     ZZU     "(2S,3S)-3-HYDROXYARGININE"     peptide   28     13     .
+#
+data_comp_ZZU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ZZU     OXT     O       OC      -1      12.682      7.695       21.024
+ZZU     C       C       C       0       12.038      6.879       20.336
+ZZU     O       O       O       0       11.818      5.686       20.628
+ZZU     CA      C       CH1     0       11.464      7.388       19.007
+ZZU     N       N       NT3     1       11.865      6.455       17.918
+ZZU     CB      C       CH1     0       9.940       7.565       19.022
+ZZU     OB      O       OH1     0       9.340       6.288       19.239
+ZZU     CG      C       CH2     0       9.400       8.582       20.062
+ZZU     CD      C       CH2     0       9.852       10.012      19.842
+ZZU     NE      N       NH1     0       9.192       10.960      20.737
+ZZU     CZ      C       C       0       9.279       10.962      22.070
+ZZU     NH2     N       NH2     1       10.269      10.336      22.690
+ZZU     NH1     N       NH2     0       8.364       11.597      22.787
+ZZU     HA      H       H       0       11.873      8.262       18.812
+ZZU     H       H       H       0       11.540      5.621       18.087
+ZZU     H2      H       H       0       12.773      6.416       17.861
+ZZU     H3      H       H       0       11.531      6.747       17.122
+ZZU     HB      H       H       0       9.668       7.879       18.128
+ZZU     HC      H       H       0       9.281       6.127       20.071
+ZZU     HG1C    H       H       0       9.680       8.294       20.961
+ZZU     HG2C    H       H       0       8.416       8.556       20.036
+ZZU     HD1C    H       H       0       9.662       10.266      18.914
+ZZU     HD2C    H       H       0       10.822      10.066      19.972
+ZZU     HE      H       H       0       8.707       11.583      20.366
+ZZU     HH2     H       H       0       10.181      10.107      23.534
+ZZU     HH3     H       H       0       11.029      10.188      22.278
+ZZU     HH11    H       H       0       8.449       11.649      23.662
+ZZU     HH12    H       H       0       7.667       11.964      22.392
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ZZU      N      n/a    CA     START
+ZZU      H      N      .      .
+ZZU      H2     N      .      .
+ZZU      H3     N      .      .
+ZZU      CA     N      C      .
+ZZU      HA     CA     .      .
+ZZU      CB     CA     CG     .
+ZZU      HB     CB     .      .
+ZZU      OB     CB     HC     .
+ZZU      HC     OB     .      .
+ZZU      CG     CB     CD     .
+ZZU      HG1C   CG     .      .
+ZZU      HG2C   CG     .      .
+ZZU      CD     CG     NE     .
+ZZU      HD1C   CD     .      .
+ZZU      HD2C   CD     .      .
+ZZU      NE     CD     CZ     .
+ZZU      HE     NE     .      .
+ZZU      CZ     NE     NH2    .
+ZZU      NH1    CZ     HH11   .
+ZZU      HH12   NH1    .      .
+ZZU      HH11   NH1    .      .
+ZZU      NH2    CZ     HH2    .
+ZZU      HH3    NH2    .      .
+ZZU      HH2    NH2    .      .
+ZZU      C      CA     .      END
+ZZU      OXT    C      .      .
+ZZU      O      C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZZU       OXT       C         SINGLE    n         1.247     0.019     1.247     0.019     
+ZZU       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+ZZU       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+ZZU       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+ZZU       CA        CB        SINGLE    n         1.530     0.012     1.530     0.012     
+ZZU       CB        OB        SINGLE    n         1.425     0.011     1.425     0.011     
+ZZU       CB        CG        SINGLE    n         1.541     0.020     1.541     0.020     
+ZZU       CG        CD        SINGLE    n         1.515     0.014     1.515     0.014     
+ZZU       CD        NE        SINGLE    n         1.456     0.014     1.456     0.014     
+ZZU       NE        CZ        SINGLE    n         1.328     0.013     1.328     0.013     
+ZZU       CZ        NH2       DOUBLE    n         1.322     0.010     1.322     0.010     
+ZZU       CZ        NH1       SINGLE    n         1.321     0.011     1.321     0.011     
+ZZU       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+ZZU       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+ZZU       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+ZZU       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+ZZU       CB        HB        SINGLE    n         1.089     0.010     0.986     0.010     
+ZZU       OB        HC        SINGLE    n         0.970     0.012     0.848     0.020     
+ZZU       CG        HG1C      SINGLE    n         1.089     0.010     0.985     0.010     
+ZZU       CG        HG2C      SINGLE    n         1.089     0.010     0.985     0.010     
+ZZU       CD        HD1C      SINGLE    n         1.089     0.010     0.981     0.015     
+ZZU       CD        HD2C      SINGLE    n         1.089     0.010     0.981     0.015     
+ZZU       NE        HE        SINGLE    n         1.016     0.010     0.872     0.020     
+ZZU       NH2       HH2       SINGLE    n         1.016     0.010     0.879     0.020     
+ZZU       NH2       HH3       SINGLE    n         1.016     0.010     0.879     0.020     
+ZZU       NH1       HH11      SINGLE    n         1.016     0.010     0.881     0.020     
+ZZU       NH1       HH12      SINGLE    n         1.016     0.010     0.881     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ZZU         OXT           C           O     125.994    1.50
+ZZU         OXT           C          CA     117.003    1.50
+ZZU           O           C          CA     117.003    1.50
+ZZU           C          CA           N     109.414    1.50
+ZZU           C          CA          CB     111.511    2.91
+ZZU           C          CA          HA     108.600    1.50
+ZZU           N          CA          CB     111.007    1.50
+ZZU           N          CA          HA     108.031    1.50
+ZZU          CB          CA          HA     108.678    1.50
+ZZU          CA           N           H     109.889    1.50
+ZZU          CA           N          H2     109.889    1.50
+ZZU          CA           N          H3     109.889    1.50
+ZZU           H           N          H2     109.028    2.41
+ZZU           H           N          H3     109.028    2.41
+ZZU          H2           N          H3     109.028    2.41
+ZZU          CA          CB          OB     108.269    2.42
+ZZU          CA          CB          CG     114.793    1.69
+ZZU          CA          CB          HB     108.492    1.50
+ZZU          OB          CB          CG     109.024    2.32
+ZZU          OB          CB          HB     108.700    1.50
+ZZU          CG          CB          HB     108.603    1.50
+ZZU          CB          OB          HC     108.640    2.32
+ZZU          CB          CG          CD     114.702    1.76
+ZZU          CB          CG        HG1C     108.468    1.50
+ZZU          CB          CG        HG2C     108.468    1.50
+ZZU          CD          CG        HG1C     108.805    1.50
+ZZU          CD          CG        HG2C     108.805    1.50
+ZZU        HG1C          CG        HG2C     107.742    1.50
+ZZU          CG          CD          NE     112.309    1.89
+ZZU          CG          CD        HD1C     109.099    1.50
+ZZU          CG          CD        HD2C     109.099    1.50
+ZZU          NE          CD        HD1C     109.183    1.50
+ZZU          NE          CD        HD2C     109.183    1.50
+ZZU        HD1C          CD        HD2C     107.877    1.50
+ZZU          CD          NE          CZ     124.510    1.50
+ZZU          CD          NE          HE     117.883    1.50
+ZZU          CZ          NE          HE     117.606    1.50
+ZZU          NE          CZ         NH2     120.052    1.50
+ZZU          NE          CZ         NH1     120.052    1.50
+ZZU         NH2          CZ         NH1     119.896    1.50
+ZZU          CZ         NH2         HH2     119.855    2.01
+ZZU          CZ         NH2         HH3     119.855    2.01
+ZZU         HH2         NH2         HH3     120.290    2.09
+ZZU          CZ         NH1        HH11     119.855    2.01
+ZZU          CZ         NH1        HH12     119.855    2.01
+ZZU        HH11         NH1        HH12     120.290    2.09
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ZZU             sp2_sp2_5          NE          CZ         NH2         HH2     180.000   10.00     2
+ZZU             sp2_sp2_9          NE          CZ         NH1        HH11     180.000   10.00     2
+ZZU             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+ZZU             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+ZZU            sp3_sp3_10           C          CA          CB          OB     180.000   10.00     3
+ZZU            sp3_sp3_20          CA          CB          OB          HC      60.000   10.00     3
+ZZU            sp3_sp3_22          CA          CB          CG          CD     180.000   10.00     3
+ZZU            sp3_sp3_31          NE          CD          CG          CB     180.000   10.00     3
+ZZU             sp2_sp3_8          CZ          NE          CD          CG     120.000   10.00     6
+ZZU             sp2_sp2_1         NH2          CZ          NE          CD     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ZZU    chir_1    CA    N    C    CB    both
+ZZU    chir_2    CB    OB    CA    CG    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ZZU    plan-1           C   0.020
+ZZU    plan-1          CA   0.020
+ZZU    plan-1           O   0.020
+ZZU    plan-1         OXT   0.020
+ZZU    plan-2          CD   0.020
+ZZU    plan-2          CZ   0.020
+ZZU    plan-2          HE   0.020
+ZZU    plan-2          NE   0.020
+ZZU    plan-3          CZ   0.020
+ZZU    plan-3          NE   0.020
+ZZU    plan-3         NH1   0.020
+ZZU    plan-3         NH2   0.020
+ZZU    plan-4          CZ   0.020
+ZZU    plan-4         HH2   0.020
+ZZU    plan-4         HH3   0.020
+ZZU    plan-4         NH2   0.020
+ZZU    plan-5          CZ   0.020
+ZZU    plan-5        HH11   0.020
+ZZU    plan-5        HH12   0.020
+ZZU    plan-5         NH1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ZZU SMILES           ACDLabs              10.04 "O=C(O)C(N)C(O)CCNC(=[N@H])N"
+ZZU SMILES_CANONICAL CACTVS               3.352 "N[C@@H]([C@@H](O)CCNC(N)=N)C(O)=O"
+ZZU SMILES           CACTVS               3.352 "N[CH]([CH](O)CCNC(N)=N)C(O)=O"
+ZZU SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "C(CNC(=N)N)[C@@H]([C@@H](C(=O)O)N)O"
+ZZU SMILES           "OpenEye OEToolkits" 1.6.1 "C(CNC(=N)N)C(C(C(=O)O)N)O"
+ZZU InChI            InChI                1.03  "InChI=1S/C6H14N4O3/c7-4(5(12)13)3(11)1-2-10-6(8)9/h3-4,11H,1-2,7H2,(H,12,13)(H4,8,9,10)/t3-,4-/m0/s1"
+ZZU InChIKey         InChI                1.03  VIDUVSPOWYVZIC-IMJSIDKUSA-N
+ZZU ?                acedrg               202         "dictionary generator"
+ZZU ?                acedrg_database      11          "data source"
+ZZU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ZZU ?                refmac5              5.8.0222    "optimization tool"

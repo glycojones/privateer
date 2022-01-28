@@ -1,0 +1,274 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SVY      SVY 'O-[BIS(1-METHYLETHOXY)PHOSPHORYL]-L-' non-polymer        36  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SVY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SVY           OXT    O    OC       -0.500      0.000    0.000    0.000
+ SVY           C      C    C         0.000     -0.382    1.143   -0.336
+ SVY           O      O    OC       -0.500      0.373    2.141   -0.330
+ SVY           CA     C    CH1       0.000     -1.827    1.146   -0.790
+ SVY           HA     H    H         0.000     -2.365    0.334   -0.281
+ SVY           N      N    NH2       0.000     -2.399    2.409   -0.396
+ SVY           HN2    H    H         0.000     -2.308    2.727    0.557
+ SVY           HN1    H    H         0.000     -2.889    2.972   -1.074
+ SVY           CB     C    CH2       0.000     -1.915    0.934   -2.294
+ SVY           HBC1   H    H         0.000     -1.400    1.747   -2.810
+ SVY           HBC2   H    H         0.000     -2.963    0.915   -2.601
+ SVY           OG     O    O2        0.000     -1.302   -0.301   -2.626
+ SVY           P      P    P         0.000     -1.270   -0.751   -4.183
+ SVY           O3P    O    O         0.000     -0.601   -2.072   -4.438
+ SVY           O2P    O    O2        0.000     -0.592    0.503   -4.954
+ SVY           "C1'"  C    CH1       0.000      0.762    0.841   -4.707
+ SVY           "H1'"  H    H         0.000      0.885    1.058   -3.637
+ SVY           "C3'"  C    CH3       0.000      1.121    2.086   -5.504
+ SVY           "H3'3" H    H         0.000      1.010    1.886   -6.538
+ SVY           "H3'2" H    H         0.000      0.477    2.880   -5.227
+ SVY           "H3'1" H    H         0.000      2.124    2.357   -5.302
+ SVY           "C2'"  C    CH3       0.000      1.648   -0.340   -5.073
+ SVY           "H2'3" H    H         0.000      1.359   -1.186   -4.506
+ SVY           "H2'2" H    H         0.000      1.542   -0.554   -6.105
+ SVY           "H2'1" H    H         0.000      2.658   -0.102   -4.864
+ SVY           O1P    O    O2        0.000     -2.832   -0.692   -4.610
+ SVY           C1     C    CH1       0.000     -3.169   -0.925   -5.968
+ SVY           H1     H    H         0.000     -2.651   -0.186   -6.594
+ SVY           C3     C    CH3       0.000     -4.670   -0.754   -6.147
+ SVY           H3C3   H    H         0.000     -5.180   -1.466   -5.550
+ SVY           H3C2   H    H         0.000     -4.952    0.222   -5.850
+ SVY           H3C1   H    H         0.000     -4.923   -0.901   -7.165
+ SVY           C2     C    CH3       0.000     -2.705   -2.317   -6.366
+ SVY           H2C3   H    H         0.000     -1.659   -2.396   -6.217
+ SVY           H2C2   H    H         0.000     -3.202   -3.038   -5.772
+ SVY           H2C1   H    H         0.000     -2.930   -2.485   -7.387
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SVY      OXT    n/a    C      START
+ SVY      C      OXT    CA     .
+ SVY      O      C      .      .
+ SVY      CA     C      CB     .
+ SVY      HA     CA     .      .
+ SVY      N      CA     HN1    .
+ SVY      HN2    N      .      .
+ SVY      HN1    N      .      .
+ SVY      CB     CA     OG     .
+ SVY      HBC1   CB     .      .
+ SVY      HBC2   CB     .      .
+ SVY      OG     CB     P      .
+ SVY      P      OG     O1P    .
+ SVY      O3P    P      .      .
+ SVY      O2P    P      "C1'"  .
+ SVY      "C1'"  O2P    "C2'"  .
+ SVY      "H1'"  "C1'"  .      .
+ SVY      "C3'"  "C1'"  "H3'1" .
+ SVY      "H3'3" "C3'"  .      .
+ SVY      "H3'2" "C3'"  .      .
+ SVY      "H3'1" "C3'"  .      .
+ SVY      "C2'"  "C1'"  "H2'1" .
+ SVY      "H2'3" "C2'"  .      .
+ SVY      "H2'2" "C2'"  .      .
+ SVY      "H2'1" "C2'"  .      .
+ SVY      O1P    P      C1     .
+ SVY      C1     O1P    C2     .
+ SVY      H1     C1     .      .
+ SVY      C3     C1     H3C1   .
+ SVY      H3C3   C3     .      .
+ SVY      H3C2   C3     .      .
+ SVY      H3C1   C3     .      .
+ SVY      C2     C1     H2C1   .
+ SVY      H2C3   C2     .      .
+ SVY      H2C2   C2     .      .
+ SVY      H2C1   C2     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SVY       N         CA        single    1.450     0.020     1.450     0.020     
+SVY       CA        C         single    1.500     0.020     1.500     0.020     
+SVY       O         C         deloc     1.250     0.020     1.250     0.020     
+SVY       CB        CA        single    1.524     0.020     1.524     0.020     
+SVY       OG        CB        single    1.426     0.020     1.426     0.020     
+SVY       C2        C1        single    1.524     0.020     1.524     0.020     
+SVY       C3        C1        single    1.524     0.020     1.524     0.020     
+SVY       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+SVY       "C3'"     "C1'"     single    1.524     0.020     1.524     0.020     
+SVY       P         OG        single    1.610     0.020     1.610     0.020     
+SVY       C1        O1P       single    1.426     0.020     1.426     0.020     
+SVY       O1P       P         single    1.610     0.020     1.610     0.020     
+SVY       "C1'"     O2P       single    1.426     0.020     1.426     0.020     
+SVY       O2P       P         single    1.610     0.020     1.610     0.020     
+SVY       O3P       P         double    1.480     0.020     1.480     0.020     
+SVY       C         OXT       deloc     1.250     0.020     1.250     0.020     
+SVY       HN1       N         single    1.036     0.016     0.914     0.007     
+SVY       HN2       N         single    1.036     0.016     0.914     0.007     
+SVY       HA        CA        single    1.089     0.010     0.989     0.005     
+SVY       HBC1      CB        single    1.089     0.010     0.989     0.005     
+SVY       HBC2      CB        single    1.089     0.010     0.989     0.005     
+SVY       H1        C1        single    1.089     0.010     0.989     0.005     
+SVY       H2C1      C2        single    1.089     0.010     0.989     0.005     
+SVY       H2C2      C2        single    1.089     0.010     0.989     0.005     
+SVY       H2C3      C2        single    1.089     0.010     0.989     0.005     
+SVY       H3C1      C3        single    1.089     0.010     0.989     0.005     
+SVY       H3C2      C3        single    1.089     0.010     0.989     0.005     
+SVY       H3C3      C3        single    1.089     0.010     0.989     0.005     
+SVY       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+SVY       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+SVY       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+SVY       "H2'3"    "C2'"     single    1.089     0.010     0.989     0.005     
+SVY       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+SVY       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+SVY       "H3'3"    "C3'"     single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SVY      OXT    C      O       123.000    3.000
+ SVY      OXT    C      CA      118.500    3.000
+ SVY      O      C      CA      118.500    3.000
+ SVY      C      CA     HA      108.810    3.000
+ SVY      C      CA     N       109.470    3.000
+ SVY      C      CA     CB      109.470    3.000
+ SVY      HA     CA     N       109.470    3.000
+ SVY      HA     CA     CB      108.340    3.000
+ SVY      N      CA     CB      109.470    3.000
+ SVY      CA     N      HN2     120.000    3.000
+ SVY      CA     N      HN1     120.000    3.000
+ SVY      HN2    N      HN1     120.000    3.000
+ SVY      CA     CB     HBC1    109.470    3.000
+ SVY      CA     CB     HBC2    109.470    3.000
+ SVY      CA     CB     OG      109.470    3.000
+ SVY      HBC1   CB     HBC2    107.900    3.000
+ SVY      HBC1   CB     OG      109.470    3.000
+ SVY      HBC2   CB     OG      109.470    3.000
+ SVY      CB     OG     P       120.500    3.000
+ SVY      OG     P      O3P     109.500    3.000
+ SVY      OG     P      O2P     102.600    3.000
+ SVY      OG     P      O1P     102.600    3.000
+ SVY      O3P    P      O2P     109.500    3.000
+ SVY      O3P    P      O1P     109.500    3.000
+ SVY      O2P    P      O1P     102.600    3.000
+ SVY      P      O2P    "C1'"   120.500    3.000
+ SVY      O2P    "C1'"  "H1'"   109.470    3.000
+ SVY      O2P    "C1'"  "C3'"   109.470    3.000
+ SVY      O2P    "C1'"  "C2'"   109.470    3.000
+ SVY      "H1'"  "C1'"  "C3'"   108.340    3.000
+ SVY      "H1'"  "C1'"  "C2'"   108.340    3.000
+ SVY      "C3'"  "C1'"  "C2'"   111.000    3.000
+ SVY      "C1'"  "C3'"  "H3'3"  109.470    3.000
+ SVY      "C1'"  "C3'"  "H3'2"  109.470    3.000
+ SVY      "C1'"  "C3'"  "H3'1"  109.470    3.000
+ SVY      "H3'3" "C3'"  "H3'2"  109.470    3.000
+ SVY      "H3'3" "C3'"  "H3'1"  109.470    3.000
+ SVY      "H3'2" "C3'"  "H3'1"  109.470    3.000
+ SVY      "C1'"  "C2'"  "H2'3"  109.470    3.000
+ SVY      "C1'"  "C2'"  "H2'2"  109.470    3.000
+ SVY      "C1'"  "C2'"  "H2'1"  109.470    3.000
+ SVY      "H2'3" "C2'"  "H2'2"  109.470    3.000
+ SVY      "H2'3" "C2'"  "H2'1"  109.470    3.000
+ SVY      "H2'2" "C2'"  "H2'1"  109.470    3.000
+ SVY      P      O1P    C1      120.500    3.000
+ SVY      O1P    C1     H1      109.470    3.000
+ SVY      O1P    C1     C3      109.470    3.000
+ SVY      O1P    C1     C2      109.470    3.000
+ SVY      H1     C1     C3      108.340    3.000
+ SVY      H1     C1     C2      108.340    3.000
+ SVY      C3     C1     C2      111.000    3.000
+ SVY      C1     C3     H3C3    109.470    3.000
+ SVY      C1     C3     H3C2    109.470    3.000
+ SVY      C1     C3     H3C1    109.470    3.000
+ SVY      H3C3   C3     H3C2    109.470    3.000
+ SVY      H3C3   C3     H3C1    109.470    3.000
+ SVY      H3C2   C3     H3C1    109.470    3.000
+ SVY      C1     C2     H2C3    109.470    3.000
+ SVY      C1     C2     H2C2    109.470    3.000
+ SVY      C1     C2     H2C1    109.470    3.000
+ SVY      H2C3   C2     H2C2    109.470    3.000
+ SVY      H2C3   C2     H2C1    109.470    3.000
+ SVY      H2C2   C2     H2C1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SVY      var_1    OXT    C      CA     CB       -91.636   20.000   3
+ SVY      var_2    C      CA     N      HN1      128.711   20.000   1
+ SVY      var_3    C      CA     CB     OG        58.752   20.000   3
+ SVY      var_4    CA     CB     OG     P       -179.994   20.000   1
+ SVY      var_5    CB     OG     P      O1P      -54.878   20.000   1
+ SVY      var_6    OG     P      O2P    "C1'"     66.048   20.000   1
+ SVY      var_7    P      O2P    "C1'"  "C2'"     60.035   20.000   1
+ SVY      var_8    O2P    "C1'"  "C3'"  "H3'1"   178.452   20.000   3
+ SVY      var_9    O2P    "C1'"  "C2'"  "H2'1"  -178.347   20.000   3
+ SVY      var_10   OG     P      O1P    C1       174.857   20.000   1
+ SVY      var_11   P      O1P    C1     C2        60.007   20.000   1
+ SVY      var_12   O1P    C1     C3     H3C1     178.426   20.000   3
+ SVY      var_13   O1P    C1     C2     H2C1    -178.385   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SVY      chir_01  CA     N      C      CB        positiv
+ SVY      chir_02  C1     C2     C3     O1P       negativ
+ SVY      chir_03  "C1'"  "C2'"  "C3'"  O2P       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SVY      plan-1    N         0.020
+ SVY      plan-1    CA        0.020
+ SVY      plan-1    HN1       0.020
+ SVY      plan-1    HN2       0.020
+ SVY      plan-2    C         0.020
+ SVY      plan-2    CA        0.020
+ SVY      plan-2    O         0.020
+ SVY      plan-2    OXT       0.020
+# ------------------------------------------------------

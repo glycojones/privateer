@@ -1,0 +1,285 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HAQ      HAQ '5-AMINO-4-OXO-1,2,4,5,6,7-HEXAHYDRO-' non-polymer        31  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HAQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HAQ           OXT    O    OC       -0.500      0.000    0.000    0.000
+ HAQ           C2     C    C         0.000     -1.153    0.478   -0.082
+ HAQ           O2     O    OC       -0.500     -1.407    1.353   -0.938
+ HAQ           CA2    C    CH1       0.000     -2.236   -0.001    0.851
+ HAQ           HA2    H    H         0.000     -1.937    0.160    1.896
+ HAQ           CB2    C    CH2       0.000     -2.527   -1.482    0.606
+ HAQ           HB23   H    H         0.000     -2.388   -2.080    1.509
+ HAQ           HB22   H    H         0.000     -1.913   -1.892   -0.198
+ HAQ           CG2    C    CR6       0.000     -3.984   -1.514    0.198
+ HAQ           CD2    C    CR16      0.000     -4.762   -2.606   -0.138
+ HAQ           HD2    H    H         0.000     -4.332   -3.600   -0.131
+ HAQ           CE2    C    CR16      0.000     -6.087   -2.431   -0.483
+ HAQ           HE2    H    H         0.000     -6.704   -3.279   -0.749
+ HAQ           CZ     C    CR16      0.000     -6.609   -1.156   -0.481
+ HAQ           HZ     H    H         0.000     -7.648   -1.010   -0.747
+ HAQ           CE1    C    CR6       0.000     -5.833   -0.055   -0.145
+ HAQ           CG     C    CH2       0.000     -6.522    1.270   -0.180
+ HAQ           HG2    H    H         0.000     -6.902    1.449    0.828
+ HAQ           HG3    H    H         0.000     -7.361    1.166   -0.871
+ HAQ           CB     C    CH2       0.000     -5.664    2.422   -0.604
+ HAQ           HB3    H    H         0.000     -6.330    3.233   -0.906
+ HAQ           HB2    H    H         0.000     -5.077    2.095   -1.465
+ HAQ           CD1    C    CR6       0.000     -4.490   -0.217    0.198
+ HAQ           N2     N    N         0.000     -3.506    0.703    0.565
+ HAQ           C      C    C         0.000     -3.558    2.040    0.675
+ HAQ           O      O    O         0.000     -2.520    2.597    0.966
+ HAQ           CA     C    CH1       0.000     -4.738    2.908    0.480
+ HAQ           HA1    H    H         0.000     -5.298    2.957    1.425
+ HAQ           N      N    NH2       0.000     -4.277    4.259    0.135
+ HAQ           H2     H    H         0.000     -4.591    4.704   -0.719
+ HAQ           H      H    H         0.000     -3.642    4.755    0.749
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HAQ      OXT    n/a    C2     START
+ HAQ      C2     OXT    CA2    .
+ HAQ      O2     C2     .      .
+ HAQ      CA2    C2     CB2    .
+ HAQ      HA2    CA2    .      .
+ HAQ      CB2    CA2    CG2    .
+ HAQ      HB23   CB2    .      .
+ HAQ      HB22   CB2    .      .
+ HAQ      CG2    CB2    CD2    .
+ HAQ      CD2    CG2    CE2    .
+ HAQ      HD2    CD2    .      .
+ HAQ      CE2    CD2    CZ     .
+ HAQ      HE2    CE2    .      .
+ HAQ      CZ     CE2    CE1    .
+ HAQ      HZ     CZ     .      .
+ HAQ      CE1    CZ     CD1    .
+ HAQ      CG     CE1    CB     .
+ HAQ      HG2    CG     .      .
+ HAQ      HG3    CG     .      .
+ HAQ      CB     CG     HB2    .
+ HAQ      HB3    CB     .      .
+ HAQ      HB2    CB     .      .
+ HAQ      CD1    CE1    N2     .
+ HAQ      N2     CD1    C      .
+ HAQ      C      N2     CA     .
+ HAQ      O      C      .      .
+ HAQ      CA     C      N      .
+ HAQ      HA1    CA     .      .
+ HAQ      N      CA     H      .
+ HAQ      H2     N      .      .
+ HAQ      H      N      .      END
+ HAQ      CA     CB     .    ADD
+ HAQ      N2     CA2    .    ADD
+ HAQ      CG2    CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HAQ       N         CA        single    1.450     0.020     1.450     0.020     
+HAQ       H         N         single    1.036     0.016     0.914     0.007     
+HAQ       H2        N         single    1.036     0.016     0.914     0.007     
+HAQ       CA        CB        single    1.524     0.020     1.524     0.020     
+HAQ       CA        C         single    1.500     0.020     1.500     0.020     
+HAQ       HA1       CA        single    1.089     0.010     0.989     0.005     
+HAQ       CB        CG        single    1.524     0.020     1.524     0.020     
+HAQ       HB2       CB        single    1.089     0.010     0.989     0.005     
+HAQ       HB3       CB        single    1.089     0.010     0.989     0.005     
+HAQ       CG        CE1       single    1.511     0.020     1.511     0.020     
+HAQ       HG2       CG        single    1.089     0.010     0.989     0.005     
+HAQ       HG3       CG        single    1.089     0.010     0.989     0.005     
+HAQ       O         C         double    1.220     0.020     1.220     0.020     
+HAQ       C         N2        single    1.330     0.020     1.330     0.020     
+HAQ       N2        CA2       single    1.455     0.020     1.455     0.020     
+HAQ       N2        CD1       single    1.400     0.020     1.400     0.020     
+HAQ       CB2       CA2       single    1.524     0.020     1.524     0.020     
+HAQ       CA2       C2        single    1.500     0.020     1.500     0.020     
+HAQ       HA2       CA2       single    1.089     0.010     0.989     0.005     
+HAQ       CG2       CB2       single    1.511     0.020     1.511     0.020     
+HAQ       HB23      CB2       single    1.089     0.010     0.989     0.005     
+HAQ       HB22      CB2       single    1.089     0.010     0.989     0.005     
+HAQ       CG2       CD1       double    1.487     0.020     1.487     0.020     
+HAQ       CD2       CG2       single    1.390     0.020     1.390     0.020     
+HAQ       CD1       CE1       single    1.487     0.020     1.487     0.020     
+HAQ       CE2       CD2       double    1.390     0.020     1.390     0.020     
+HAQ       HD2       CD2       single    1.082     0.013     0.975     0.010     
+HAQ       CE1       CZ        double    1.390     0.020     1.390     0.020     
+HAQ       CZ        CE2       single    1.390     0.020     1.390     0.020     
+HAQ       HE2       CE2       single    1.082     0.013     0.975     0.010     
+HAQ       HZ        CZ        single    1.082     0.013     0.975     0.010     
+HAQ       O2        C2        deloc     1.250     0.020     1.250     0.020     
+HAQ       C2        OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HAQ      OXT    C2     O2      123.000    3.000
+ HAQ      OXT    C2     CA2     118.500    3.000
+ HAQ      O2     C2     CA2     118.500    3.000
+ HAQ      C2     CA2    HA2     108.810    3.000
+ HAQ      C2     CA2    CB2     109.470    3.000
+ HAQ      C2     CA2    N2      111.600    3.000
+ HAQ      HA2    CA2    CB2     108.340    3.000
+ HAQ      HA2    CA2    N2      109.470    3.000
+ HAQ      CB2    CA2    N2      105.000    3.000
+ HAQ      CA2    CB2    HB23    109.470    3.000
+ HAQ      CA2    CB2    HB22    109.470    3.000
+ HAQ      CA2    CB2    CG2     109.470    3.000
+ HAQ      HB23   CB2    HB22    107.900    3.000
+ HAQ      HB23   CB2    CG2     109.470    3.000
+ HAQ      HB22   CB2    CG2     109.470    3.000
+ HAQ      CB2    CG2    CD2     120.000    3.000
+ HAQ      CB2    CG2    CD1     120.000    3.000
+ HAQ      CD2    CG2    CD1     120.000    3.000
+ HAQ      CG2    CD2    HD2     120.000    3.000
+ HAQ      CG2    CD2    CE2     120.000    3.000
+ HAQ      HD2    CD2    CE2     120.000    3.000
+ HAQ      CD2    CE2    HE2     120.000    3.000
+ HAQ      CD2    CE2    CZ      120.000    3.000
+ HAQ      HE2    CE2    CZ      120.000    3.000
+ HAQ      CE2    CZ     HZ      120.000    3.000
+ HAQ      CE2    CZ     CE1     120.000    3.000
+ HAQ      HZ     CZ     CE1     120.000    3.000
+ HAQ      CZ     CE1    CG      120.000    3.000
+ HAQ      CZ     CE1    CD1     120.000    3.000
+ HAQ      CG     CE1    CD1     120.000    3.000
+ HAQ      CE1    CG     HG2     109.470    3.000
+ HAQ      CE1    CG     HG3     109.470    3.000
+ HAQ      CE1    CG     CB      109.470    3.000
+ HAQ      HG2    CG     HG3     107.900    3.000
+ HAQ      HG2    CG     CB      109.470    3.000
+ HAQ      HG3    CG     CB      109.470    3.000
+ HAQ      CG     CB     HB3     109.470    3.000
+ HAQ      CG     CB     HB2     109.470    3.000
+ HAQ      CG     CB     CA      111.000    3.000
+ HAQ      HB3    CB     HB2     107.900    3.000
+ HAQ      HB3    CB     CA      109.470    3.000
+ HAQ      HB2    CB     CA      109.470    3.000
+ HAQ      CE1    CD1    N2      120.000    3.000
+ HAQ      CE1    CD1    CG2     120.000    3.000
+ HAQ      N2     CD1    CG2     120.000    3.000
+ HAQ      CD1    N2     C       120.000    3.000
+ HAQ      CD1    N2     CA2     120.000    3.000
+ HAQ      C      N2     CA2     121.000    3.000
+ HAQ      N2     C      O       123.000    3.000
+ HAQ      N2     C      CA      116.500    3.000
+ HAQ      O      C      CA      120.500    3.000
+ HAQ      C      CA     HA1     108.810    3.000
+ HAQ      C      CA     N       109.470    3.000
+ HAQ      C      CA     CB      109.470    3.000
+ HAQ      HA1    CA     N       109.470    3.000
+ HAQ      HA1    CA     CB      108.340    3.000
+ HAQ      N      CA     CB      109.470    3.000
+ HAQ      CA     N      H2      120.000    3.000
+ HAQ      CA     N      H       120.000    3.000
+ HAQ      H2     N      H       120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HAQ      var_1    OXT    C2     CA2    CB2      -63.940   20.000   3
+ HAQ      var_2    C2     CA2    CB2    CG2     -120.000   20.000   3
+ HAQ      var_3    CA2    CB2    CG2    CD2      180.000   20.000   2
+ HAQ      CONST_1  CB2    CG2    CD1    CE1      180.000    0.000   0
+ HAQ      CONST_2  CB2    CG2    CD2    CE2      180.000    0.000   0
+ HAQ      CONST_3  CG2    CD2    CE2    CZ         0.000    0.000   0
+ HAQ      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ HAQ      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ HAQ      var_4    CZ     CE1    CG     CB      -146.134   20.000   2
+ HAQ      var_5    CE1    CG     CB     CA       -77.316   20.000   3
+ HAQ      CONST_6  CZ     CE1    CD1    N2       180.000    0.000   0
+ HAQ      var_6    CE1    CD1    N2     C          0.000   20.000   1
+ HAQ      var_7    CD1    N2     CA2    C2       120.000   20.000   3
+ HAQ      CONST_7  CD1    N2     C      CA         0.000    0.000   0
+ HAQ      var_8    N2     C      CA     N       -156.372   20.000   3
+ HAQ      var_9    C      CA     CB     CG        77.111   20.000   3
+ HAQ      var_10   C      CA     N      H        -56.203   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HAQ      chir_01  CA     N      CB     C         negativ
+ HAQ      chir_02  CA2    N2     CB2    C2        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HAQ      plan-1    N         0.020
+ HAQ      plan-1    CA        0.020
+ HAQ      plan-1    H         0.020
+ HAQ      plan-1    H2        0.020
+ HAQ      plan-2    C         0.020
+ HAQ      plan-2    CA        0.020
+ HAQ      plan-2    O         0.020
+ HAQ      plan-2    N2        0.020
+ HAQ      plan-3    N2        0.020
+ HAQ      plan-3    C         0.020
+ HAQ      plan-3    CA2       0.020
+ HAQ      plan-3    CD1       0.020
+ HAQ      plan-4    CG2       0.020
+ HAQ      plan-4    CB2       0.020
+ HAQ      plan-4    CD1       0.020
+ HAQ      plan-4    CD2       0.020
+ HAQ      plan-4    CE1       0.020
+ HAQ      plan-4    CE2       0.020
+ HAQ      plan-4    CZ        0.020
+ HAQ      plan-4    N2        0.020
+ HAQ      plan-4    HD2       0.020
+ HAQ      plan-4    CG        0.020
+ HAQ      plan-4    HE2       0.020
+ HAQ      plan-4    HZ        0.020
+ HAQ      plan-5    C2        0.020
+ HAQ      plan-5    CA2       0.020
+ HAQ      plan-5    O2        0.020
+ HAQ      plan-5    OXT       0.020
+# ------------------------------------------------------

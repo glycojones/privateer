@@ -1,0 +1,277 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MDR      MDR '9-(2-DEOXY-BETA-D-RIBOFURANOSYL)-6-M' non-polymer        32  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MDR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MDR           "O5'"  O    OH1       0.000      0.000    0.000    0.000
+ MDR           "H5'"  H    H         0.000      0.842    0.409    0.240
+ MDR           "C5'"  C    CH2       0.000     -0.896    1.004   -0.482
+ MDR           "H5'1" H    H         0.000     -0.462    1.487   -1.359
+ MDR           "H5'2" H    H         0.000     -1.060    1.749    0.299
+ MDR           "C4'"  C    CH1       0.000     -2.229    0.357   -0.861
+ MDR           "H4'"  H    H         0.000     -2.076   -0.431   -1.611
+ MDR           "C3'"  C    CH1       0.000     -3.222    1.423   -1.387
+ MDR           "H3'"  H    H         0.000     -3.122    2.363   -0.826
+ MDR           "O3'"  O    OH1       0.000     -3.040    1.644   -2.787
+ MDR           H1     H    H         0.000     -3.727    2.242   -3.111
+ MDR           "C2'"  C    CH2       0.000     -4.592    0.757   -1.106
+ MDR           "H2'2" H    H         0.000     -4.992    0.257   -1.990
+ MDR           "H2'1" H    H         0.000     -5.326    1.472   -0.730
+ MDR           "O4'"  O    O2        0.000     -2.892   -0.176    0.308
+ MDR           "C1'"  C    CH1       0.000     -4.287   -0.289   -0.018
+ MDR           "H1'"  H    H         0.000     -4.501   -1.297   -0.397
+ MDR           N9     N    NR5       0.000     -5.099   -0.021    1.171
+ MDR           C4     C    CR56      0.000     -6.347   -0.527    1.433
+ MDR           N3     N    NRD6      0.000     -7.181   -1.339    0.798
+ MDR           C2     C    CR16      0.000     -8.348   -1.645    1.328
+ MDR           H2     H    H         0.000     -9.009   -2.310    0.786
+ MDR           N1     N    NRD6      0.000     -8.740   -1.170    2.496
+ MDR           C8     C    CR15      0.000     -4.753    0.775    2.221
+ MDR           H8     H    H         0.000     -3.820    1.317    2.307
+ MDR           N7     N    NRD5      0.000     -5.708    0.789    3.105
+ MDR           C5     C    CR56      0.000     -6.730    0.006    2.679
+ MDR           C6     C    CR6       0.000     -7.973   -0.354    3.198
+ MDR           "C6'"  C    CH3       0.000     -8.436    0.180    4.529
+ MDR           "H6'3" H    H         0.000     -8.010    1.136    4.693
+ MDR           "H6'2" H    H         0.000     -9.492    0.259    4.530
+ MDR           "H6'1" H    H         0.000     -8.130   -0.479    5.300
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MDR      "O5'"  n/a    "C5'"  START
+ MDR      "H5'"  "O5'"  .      .
+ MDR      "C5'"  "O5'"  "C4'"  .
+ MDR      "H5'1" "C5'"  .      .
+ MDR      "H5'2" "C5'"  .      .
+ MDR      "C4'"  "C5'"  "O4'"  .
+ MDR      "H4'"  "C4'"  .      .
+ MDR      "C3'"  "C4'"  "C2'"  .
+ MDR      "H3'"  "C3'"  .      .
+ MDR      "O3'"  "C3'"  H1     .
+ MDR      H1     "O3'"  .      .
+ MDR      "C2'"  "C3'"  "H2'1" .
+ MDR      "H2'2" "C2'"  .      .
+ MDR      "H2'1" "C2'"  .      .
+ MDR      "O4'"  "C4'"  "C1'"  .
+ MDR      "C1'"  "O4'"  N9     .
+ MDR      "H1'"  "C1'"  .      .
+ MDR      N9     "C1'"  C8     .
+ MDR      C4     N9     N3     .
+ MDR      N3     C4     C2     .
+ MDR      C2     N3     N1     .
+ MDR      H2     C2     .      .
+ MDR      N1     C2     .      .
+ MDR      C8     N9     N7     .
+ MDR      H8     C8     .      .
+ MDR      N7     C8     C5     .
+ MDR      C5     N7     C6     .
+ MDR      C6     C5     "C6'"  .
+ MDR      "C6'"  C6     "H6'1" .
+ MDR      "H6'3" "C6'"  .      .
+ MDR      "H6'2" "C6'"  .      .
+ MDR      "H6'1" "C6'"  .      END
+ MDR      C6     N1     .    ADD
+ MDR      C4     C5     .    ADD
+ MDR      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MDR       "C6'"     C6        single    1.506     0.020     1.506     0.020     
+MDR       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+MDR       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+MDR       "H6'3"    "C6'"     single    1.089     0.010     0.989     0.005     
+MDR       C6        N1        double    1.350     0.020     1.350     0.020     
+MDR       C6        C5        single    1.490     0.020     1.490     0.020     
+MDR       N1        C2        single    1.337     0.020     1.337     0.020     
+MDR       C2        N3        double    1.337     0.020     1.337     0.020     
+MDR       H2        C2        single    1.082     0.013     0.975     0.010     
+MDR       N3        C4        single    1.355     0.020     1.355     0.020     
+MDR       C4        C5        double    1.490     0.020     1.490     0.020     
+MDR       C4        N9        single    1.337     0.020     1.337     0.020     
+MDR       C5        N7        single    1.350     0.020     1.350     0.020     
+MDR       N7        C8        double    1.350     0.020     1.350     0.020     
+MDR       C8        N9        single    1.337     0.020     1.337     0.020     
+MDR       H8        C8        single    1.082     0.013     0.975     0.010     
+MDR       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+MDR       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+MDR       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+MDR       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+MDR       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+MDR       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+MDR       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+MDR       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+MDR       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+MDR       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+MDR       H1        "O3'"     single    0.970     0.012     0.839     0.014     
+MDR       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+MDR       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+MDR       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+MDR       "C5'"     "O5'"     single    1.432     0.020     1.432     0.020     
+MDR       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+MDR       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+MDR       "H5'"     "O5'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MDR      "H5'"  "O5'"  "C5'"   109.470    3.000
+ MDR      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ MDR      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ MDR      "O5'"  "C5'"  "C4'"   109.470    3.000
+ MDR      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ MDR      "H5'1" "C5'"  "C4'"   109.470    3.000
+ MDR      "H5'2" "C5'"  "C4'"   109.470    3.000
+ MDR      "C5'"  "C4'"  "H4'"   108.340    3.000
+ MDR      "C5'"  "C4'"  "C3'"   111.000    3.000
+ MDR      "C5'"  "C4'"  "O4'"   109.470    3.000
+ MDR      "H4'"  "C4'"  "C3'"   108.340    3.000
+ MDR      "H4'"  "C4'"  "O4'"   109.470    3.000
+ MDR      "C3'"  "C4'"  "O4'"   109.470    3.000
+ MDR      "C4'"  "C3'"  "H3'"   108.340    3.000
+ MDR      "C4'"  "C3'"  "O3'"   109.470    3.000
+ MDR      "C4'"  "C3'"  "C2'"   111.000    3.000
+ MDR      "H3'"  "C3'"  "O3'"   109.470    3.000
+ MDR      "H3'"  "C3'"  "C2'"   108.340    3.000
+ MDR      "O3'"  "C3'"  "C2'"   109.470    3.000
+ MDR      "C3'"  "O3'"  H1      109.470    3.000
+ MDR      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ MDR      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ MDR      "C3'"  "C2'"  "C1'"   111.000    3.000
+ MDR      "H2'2" "C2'"  "H2'1"  107.900    3.000
+ MDR      "H2'2" "C2'"  "C1'"   109.470    3.000
+ MDR      "H2'1" "C2'"  "C1'"   109.470    3.000
+ MDR      "C4'"  "O4'"  "C1'"   111.800    3.000
+ MDR      "O4'"  "C1'"  "H1'"   109.470    3.000
+ MDR      "O4'"  "C1'"  N9      109.470    3.000
+ MDR      "O4'"  "C1'"  "C2'"   109.470    3.000
+ MDR      "H1'"  "C1'"  N9      109.470    3.000
+ MDR      "H1'"  "C1'"  "C2'"   108.340    3.000
+ MDR      N9     "C1'"  "C2'"   109.470    3.000
+ MDR      "C1'"  N9     C4      126.000    3.000
+ MDR      "C1'"  N9     C8      126.000    3.000
+ MDR      C4     N9     C8      108.000    3.000
+ MDR      N9     C4     N3      132.000    3.000
+ MDR      N9     C4     C5      108.000    3.000
+ MDR      N3     C4     C5      120.000    3.000
+ MDR      C4     N3     C2      120.000    3.000
+ MDR      N3     C2     H2      120.000    3.000
+ MDR      N3     C2     N1      120.000    3.000
+ MDR      H2     C2     N1      120.000    3.000
+ MDR      C2     N1     C6      120.000    3.000
+ MDR      N9     C8     H8      126.000    3.000
+ MDR      N9     C8     N7      108.000    3.000
+ MDR      H8     C8     N7      126.000    3.000
+ MDR      C8     N7     C5      108.000    3.000
+ MDR      N7     C5     C6      132.000    3.000
+ MDR      N7     C5     C4      108.000    3.000
+ MDR      C6     C5     C4      120.000    3.000
+ MDR      C5     C6     "C6'"   120.000    3.000
+ MDR      C5     C6     N1      120.000    3.000
+ MDR      "C6'"  C6     N1      120.000    3.000
+ MDR      C6     "C6'"  "H6'3"  109.470    3.000
+ MDR      C6     "C6'"  "H6'2"  109.470    3.000
+ MDR      C6     "C6'"  "H6'1"  109.470    3.000
+ MDR      "H6'3" "C6'"  "H6'2"  109.470    3.000
+ MDR      "H6'3" "C6'"  "H6'1"  109.470    3.000
+ MDR      "H6'2" "C6'"  "H6'1"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MDR      var_1    "H5'"  "O5'"  "C5'"  "C4'"   -179.934   20.000   1
+ MDR      var_2    "O5'"  "C5'"  "C4'"  "O4'"     65.726   20.000   3
+ MDR      var_3    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ MDR      var_4    "C4'"  "C3'"  "O3'"  H1       174.155   20.000   1
+ MDR      var_5    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ MDR      var_6    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ MDR      var_7    "C4'"  "O4'"  "C1'"  N9      -150.000   20.000   1
+ MDR      var_8    "O4'"  "C1'"  "C2'"  "C3'"      0.000   20.000   3
+ MDR      var_9    "O4'"  "C1'"  N9     C8        28.178   20.000   1
+ MDR      CONST_1  "C1'"  N9     C4     N3         0.000    0.000   0
+ MDR      CONST_2  N9     C4     C5     N7         0.000    0.000   0
+ MDR      CONST_3  N9     C4     N3     C2       180.000    0.000   0
+ MDR      CONST_4  C4     N3     C2     N1         0.000    0.000   0
+ MDR      CONST_5  N3     C2     N1     C6         0.000    0.000   0
+ MDR      CONST_6  "C1'"  N9     C8     N7       180.000    0.000   0
+ MDR      CONST_7  N9     C8     N7     C5         0.000    0.000   0
+ MDR      CONST_8  C8     N7     C5     C6       180.000    0.000   0
+ MDR      CONST_9  N7     C5     C6     "C6'"      0.000    0.000   0
+ MDR      CONST_10 C5     C6     N1     C2         0.000    0.000   0
+ MDR      var_10   C5     C6     "C6'"  "H6'1"   -90.284   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MDR      chir_01  "C1'"  N9     "C2'"  "O4'"     negativ
+ MDR      chir_02  "C3'"  "C2'"  "O3'"  "C4'"     positiv
+ MDR      chir_03  "C4'"  "C3'"  "C5'"  "O4'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MDR      plan-1    C6        0.020
+ MDR      plan-1    "C6'"     0.020
+ MDR      plan-1    N1        0.020
+ MDR      plan-1    C5        0.020
+ MDR      plan-1    C2        0.020
+ MDR      plan-1    N3        0.020
+ MDR      plan-1    H2        0.020
+ MDR      plan-1    C4        0.020
+ MDR      plan-1    N9        0.020
+ MDR      plan-1    N7        0.020
+ MDR      plan-1    C8        0.020
+ MDR      plan-1    H8        0.020
+ MDR      plan-1    "C1'"     0.020
+# ------------------------------------------------------

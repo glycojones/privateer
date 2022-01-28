@@ -1,0 +1,272 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RU7      RU7 'PARA-CYMENE RUTHENIUM CHLORIDE      ' non-polymer        27  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RU7
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RU7           CL2    CL   CL        0.000     -8.724   11.829   12.328
+ RU7           RU1    RU   RU        0.000     -8.097   10.201   13.885
+ RU7           CL1    CL   CL        0.000     -5.803   10.860   13.429
+ RU7           C5     C    CH1       0.000     -8.866    8.692   15.566
+ RU7           H5     H    H         0.000     -8.803    8.987   16.623
+ RU7           C6     C    CH1       0.000     -7.739    8.142   14.939
+ RU7           H6     H    H         0.000     -6.820    7.987   15.521
+ RU7           C3     C    CH1       0.000     -9.915    8.973   13.420
+ RU7           H3     H    H         0.000    -10.717    9.409   12.808
+ RU7           C2     C    CH1       0.000     -8.794    8.419   12.788
+ RU7           H2     H    H         0.000     -8.739    8.394   11.691
+ RU7           C1     C    CT        0.000     -7.700    8.007   13.550
+ RU7           C7     C    CH3       0.000     -6.490    7.426   12.854
+ RU7           H73    H    H         0.000     -5.673    8.090   12.960
+ RU7           H72    H    H         0.000     -6.249    6.493   13.291
+ RU7           H71    H    H         0.000     -6.708    7.292   11.827
+ RU7           C4     C    CT        0.000     -9.961    9.113   14.801
+ RU7           C8     C    CH1       0.000    -11.195    9.679   15.413
+ RU7           H8     H    H         0.000    -11.843   10.039   14.601
+ RU7           C9     C    CH3       0.000    -10.940   10.838   16.359
+ RU7           H93    H    H         0.000    -10.029   11.310   16.099
+ RU7           H92    H    H         0.000    -11.733   11.535   16.283
+ RU7           H91    H    H         0.000    -10.881   10.475   17.352
+ RU7           C10    C    CH3       0.000    -11.931    8.552   16.141
+ RU7           H103   H    H         0.000    -11.343    8.212   16.954
+ RU7           H102   H    H         0.000    -12.859    8.911   16.504
+ RU7           H101   H    H         0.000    -12.102    7.749   15.471
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RU7      CL2    n/a    RU1    START
+ RU7      RU1    CL2    C4     .
+ RU7      CL1    RU1    .      .
+ RU7      C5     RU1    H5     .
+ RU7      H5     C5     .      .
+ RU7      C6     RU1    H6     .
+ RU7      H6     C6     .      .
+ RU7      C3     RU1    H3     .
+ RU7      H3     C3     .      .
+ RU7      C2     RU1    H2     .
+ RU7      H2     C2     .      .
+ RU7      C1     RU1    C7     .
+ RU7      C7     C1     H71    .
+ RU7      H73    C7     .      .
+ RU7      H72    C7     .      .
+ RU7      H71    C7     .      .
+ RU7      C4     RU1    C8     .
+ RU7      C8     C4     C10    .
+ RU7      H8     C8     .      .
+ RU7      C9     C8     H91    .
+ RU7      H93    C9     .      .
+ RU7      H92    C9     .      .
+ RU7      H91    C9     .      .
+ RU7      C10    C8     H101   .
+ RU7      H103   C10    .      .
+ RU7      H102   C10    .      .
+ RU7      H101   C10    .      END
+ RU7      C4     C5     .    ADD
+ RU7      C4     C3     .    ADD
+ RU7      C5     C6     .    ADD
+ RU7      C6     C1     .    ADD
+ RU7      C3     C2     .    ADD
+ RU7      C2     C1     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RU7       C10       C8        single    1.524     0.020     1.524     0.020     
+RU7       H101      C10       single    1.089     0.010     0.989     0.005     
+RU7       H102      C10       single    1.089     0.010     0.989     0.005     
+RU7       H103      C10       single    1.089     0.010     0.989     0.005     
+RU7       C9        C8        single    1.524     0.020     1.524     0.020     
+RU7       C8        C4        single    1.524     0.020     1.524     0.020     
+RU7       H8        C8        single    1.089     0.010     0.989     0.005     
+RU7       H91       C9        single    1.089     0.010     0.989     0.005     
+RU7       H92       C9        single    1.089     0.010     0.989     0.005     
+RU7       H93       C9        single    1.089     0.010     0.989     0.005     
+RU7       C4        C5        single    1.524     0.020     1.524     0.020     
+RU7       C4        C3        double    1.524     0.020     1.524     0.020     
+RU7       C4        RU1       single    2.345     0.020     2.345     0.020     
+RU7       C5        C6        double    1.524     0.020     1.524     0.020     
+RU7       C5        RU1       single    2.386     0.020     2.386     0.020     
+RU7       H5        C5        single    1.089     0.010     0.989     0.005     
+RU7       C6        C1        single    1.524     0.020     1.524     0.020     
+RU7       C6        RU1       single    2.341     0.020     2.341     0.020     
+RU7       H6        C6        single    1.089     0.010     0.989     0.005     
+RU7       C3        C2        single    1.524     0.020     1.524     0.020     
+RU7       C3        RU1       single    2.243     0.020     2.243     0.020     
+RU7       H3        C3        single    1.089     0.010     0.989     0.005     
+RU7       C2        C1        double    1.524     0.020     1.524     0.020     
+RU7       C2        RU1       single    2.206     0.020     2.206     0.020     
+RU7       H2        C2        single    1.089     0.010     0.989     0.005     
+RU7       C7        C1        single    1.524     0.020     1.524     0.020     
+RU7       C1        RU1       single    2.255     0.020     2.255     0.020     
+RU7       H71       C7        single    1.089     0.010     0.989     0.005     
+RU7       H72       C7        single    1.089     0.010     0.989     0.005     
+RU7       H73       C7        single    1.089     0.010     0.989     0.005     
+RU7       CL1       RU1       single    2.430     0.020     2.430     0.020     
+RU7       RU1       CL2       single    2.338     0.020     2.338     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RU7      CL2    RU1    CL1      86.524    3.000
+ RU7      CL2    RU1    C5      145.379    3.000
+ RU7      CL2    RU1    C6      162.422    3.000
+ RU7      CL2    RU1    C3       91.478    3.000
+ RU7      CL2    RU1    C2       98.430    3.000
+ RU7      CL2    RU1    C1      128.739    3.000
+ RU7      CL2    RU1    C4      111.718    3.000
+ RU7      CL1    RU1    C5      127.440    3.000
+ RU7      CL1    RU1    C6      100.293    3.000
+ RU7      C5     RU1    C6       37.602    3.000
+ RU7      CL1    RU1    C3      151.033    3.000
+ RU7      C5     RU1    C3       62.519    3.000
+ RU7      C6     RU1    C3       74.673    3.000
+ RU7      CL1    RU1    C2      115.094    3.000
+ RU7      C5     RU1    C2       74.788    3.000
+ RU7      C6     RU1    C2       63.997    3.000
+ RU7      C3     RU1    C2       40.061    3.000
+ RU7      CL1    RU1    C1       94.002    3.000
+ RU7      C5     RU1    C1       63.003    3.000
+ RU7      C6     RU1    C1       38.680    3.000
+ RU7      C3     RU1    C1       65.108    3.000
+ RU7      C2     RU1    C1       39.940    3.000
+ RU7      CL1    RU1    C4      161.748    3.000
+ RU7      C5     RU1    C4       37.572    3.000
+ RU7      C6     RU1    C4       62.449    3.000
+ RU7      C3     RU1    C4       38.727    3.000
+ RU7      C2     RU1    C4       64.416    3.000
+ RU7      C1     RU1    C4       75.314    3.000
+ RU7      RU1    C5     H5      109.500    3.000
+ RU7      RU1    C5     C4       69.733    3.000
+ RU7      RU1    C5     C6       69.575    3.000
+ RU7      C4     C5     C6      111.000    3.000
+ RU7      H5     C5     C4      108.340    3.000
+ RU7      H5     C5     C6      108.340    3.000
+ RU7      RU1    C6     H6      109.500    3.000
+ RU7      RU1    C6     C5       72.823    3.000
+ RU7      RU1    C6     C1       67.609    3.000
+ RU7      C5     C6     C1      111.000    3.000
+ RU7      H6     C6     C5      108.340    3.000
+ RU7      H6     C6     C1      108.340    3.000
+ RU7      RU1    C3     H3      109.500    3.000
+ RU7      RU1    C3     C4       74.257    3.000
+ RU7      RU1    C3     C2       68.663    3.000
+ RU7      C4     C3     C2      111.000    3.000
+ RU7      H3     C3     C4      108.340    3.000
+ RU7      H3     C3     C2      108.340    3.000
+ RU7      RU1    C2     H2      109.500    3.000
+ RU7      RU1    C2     C3       71.277    3.000
+ RU7      RU1    C2     C1       71.763    3.000
+ RU7      C3     C2     C1      111.000    3.000
+ RU7      H2     C2     C3      108.340    3.000
+ RU7      H2     C2     C1      108.340    3.000
+ RU7      RU1    C1     C7      109.500    3.000
+ RU7      RU1    C1     C6       73.711    3.000
+ RU7      RU1    C1     C2       68.297    3.000
+ RU7      C6     C1     C2      111.000    3.000
+ RU7      C7     C1     C6      111.000    3.000
+ RU7      C7     C1     C2      111.000    3.000
+ RU7      C1     C7     H73     109.470    3.000
+ RU7      C1     C7     H72     109.470    3.000
+ RU7      C1     C7     H71     109.470    3.000
+ RU7      H73    C7     H72     109.470    3.000
+ RU7      H73    C7     H71     109.470    3.000
+ RU7      H72    C7     H71     109.470    3.000
+ RU7      RU1    C4     C8      109.500    3.000
+ RU7      RU1    C4     C5       72.696    3.000
+ RU7      RU1    C4     C3       67.016    3.000
+ RU7      C5     C4     C3      111.000    3.000
+ RU7      C8     C4     C5      111.000    3.000
+ RU7      C8     C4     C3      111.000    3.000
+ RU7      C4     C8     H8      108.340    3.000
+ RU7      C4     C8     C9      111.000    3.000
+ RU7      C4     C8     C10     111.000    3.000
+ RU7      H8     C8     C9      108.340    3.000
+ RU7      H8     C8     C10     108.340    3.000
+ RU7      C9     C8     C10     111.000    3.000
+ RU7      C8     C9     H93     109.470    3.000
+ RU7      C8     C9     H92     109.470    3.000
+ RU7      C8     C9     H91     109.470    3.000
+ RU7      H93    C9     H92     109.470    3.000
+ RU7      H93    C9     H91     109.470    3.000
+ RU7      H92    C9     H91     109.470    3.000
+ RU7      C8     C10    H103    109.470    3.000
+ RU7      C8     C10    H102    109.470    3.000
+ RU7      C8     C10    H101    109.470    3.000
+ RU7      H103   C10    H102    109.470    3.000
+ RU7      H103   C10    H101    109.470    3.000
+ RU7      H102   C10    H101    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RU7      var_1    CL2    RU1    C5     C4        15.992   20.000   1
+ RU7      var_2    CL2    RU1    C6     C5      -102.564   20.000   1
+ RU7      var_3    CL2    RU1    C3     C4      -127.315   20.000   1
+ RU7      var_4    CL2    RU1    C2     C3       -81.075   20.000   1
+ RU7      var_5    CL2    RU1    C1     C7        72.610   20.000   1
+ RU7      var_6    RU1    C1     C7     H71      -92.884   20.000   1
+ RU7      var_7    CL2    RU1    C4     C8       -50.656   20.000   1
+ RU7      var_8    RU1    C4     C8     C10     -166.824   20.000   1
+ RU7      var_9    C4     C8     C9     H91      -94.886   20.000   3
+ RU7      var_10   C4     C8     C10    H101     -54.506   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RU7      chir_01  C8     C10    C9     C4        negativ
+ RU7      chir_02  C4     C8     C5     C3        negativ
+ RU7      chir_03  C5     C4     C6     RU1       negativ
+ RU7      chir_04  C6     C5     C1     RU1       negativ
+ RU7      chir_05  C3     C4     C2     RU1       positiv
+ RU7      chir_06  C2     C3     C1     RU1       positiv
+ RU7      chir_07  C1     C6     C2     C7        negativ
+# ------------------------------------------------------

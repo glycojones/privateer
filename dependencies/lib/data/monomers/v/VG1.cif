@@ -1,0 +1,245 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VG1      VG1 'ALPHA-D-GLUCOSE-1-PHOSPHATE-6-VANADA' pyranose           31  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VG1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ VG1           C1     C    CH1       0.000      0.000    0.000    0.000
+ VG1           H1     H    H         0.000      0.317   -0.724    0.763
+ VG1           O1     O    O2        0.000     -0.495    1.178    0.639
+ VG1           P      P    P         0.000     -1.116    0.714    2.051
+ VG1           OP1    O    OP       -0.666     -1.660    1.922    2.783
+ VG1           OP2    O    OP       -0.666     -2.235   -0.276    1.809
+ VG1           OP3    O    OP       -0.666     -0.036    0.063    2.888
+ VG1           O5     O    O2        0.000     -1.033   -0.575   -0.798
+ VG1           C5     C    CH1       0.000     -1.539    0.448   -1.652
+ VG1           H5     H    H         0.000     -1.817    1.323   -1.048
+ VG1           C4     C    CH1       0.000     -0.469    0.852   -2.669
+ VG1           H4     H    H         0.000     -0.173   -0.026   -3.260
+ VG1           O4     O    OH1       0.000     -0.989    1.859   -3.539
+ VG1           HO4    H    H         0.000     -0.309    2.116   -4.176
+ VG1           C3     C    CH1       0.000      0.751    1.401   -1.921
+ VG1           H3     H    H         0.000      0.482    2.341   -1.418
+ VG1           O3     O    OH1       0.000      1.814    1.639   -2.846
+ VG1           HO3    H    H         0.000      2.583    1.980   -2.370
+ VG1           C2     C    CH1       0.000      1.196    0.369   -0.879
+ VG1           H2     H    H         0.000      1.567   -0.531   -1.390
+ VG1           O2     O    OH1       0.000      2.236    0.918   -0.066
+ VG1           HO2    H    H         0.000      2.509    0.264    0.591
+ VG1           C6     C    CH2       0.000     -2.773   -0.071   -2.390
+ VG1           H61    H    H         0.000     -2.497   -0.938   -2.994
+ VG1           H62    H    H         0.000     -3.164    0.715   -3.041
+ VG1           O6     O    O2        0.000     -3.772   -0.447   -1.442
+ VG1           V      V    V         0.000     -5.217   -1.056   -2.404
+ VG1           OV2    O    O         0.000     -5.747    0.097   -3.349
+ VG1           OV1    O    OH1       0.000     -6.555   -1.564   -1.248
+ VG1           HTV    H    H         0.000     -7.344   -1.893   -1.633
+ VG1           OV3    O    O         0.000     -4.780   -2.299   -3.281
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VG1      C1     n/a    O5     START
+ VG1      H1     C1     .      .
+ VG1      O1     C1     P      .
+ VG1      P      O1     OP3    .
+ VG1      OP1    P      .      .
+ VG1      OP2    P      .      .
+ VG1      OP3    P      .      .
+ VG1      O5     C1     .      END
+ VG1      C5     O5     C6     .
+ VG1      H5     C5     .      .
+ VG1      C4     C5     C3     .
+ VG1      H4     C4     .      .
+ VG1      O4     C4     HO4    .
+ VG1      HO4    O4     .      .
+ VG1      C3     C4     C2     .
+ VG1      H3     C3     .      .
+ VG1      O3     C3     HO3    .
+ VG1      HO3    O3     .      .
+ VG1      C2     C3     O2     .
+ VG1      H2     C2     .      .
+ VG1      O2     C2     HO2    .
+ VG1      HO2    O2     .      .
+ VG1      C6     C5     O6     .
+ VG1      H61    C6     .      .
+ VG1      H62    C6     .      .
+ VG1      O6     C6     V      .
+ VG1      V      O6     OV3    .
+ VG1      OV2    V      .      .
+ VG1      OV1    V      HTV    .
+ VG1      HTV    OV1    .      .
+ VG1      OV3    V      .      .
+ VG1      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VG1       C1        C2        single    1.524     0.020     1.524     0.020     
+VG1       O1        C1        single    1.426     0.020     1.426     0.020     
+VG1       O5        C1        single    1.426     0.020     1.426     0.020     
+VG1       H1        C1        single    1.089     0.010     0.989     0.005     
+VG1       C2        C3        single    1.524     0.020     1.524     0.020     
+VG1       O2        C2        single    1.432     0.020     1.432     0.020     
+VG1       H2        C2        single    1.089     0.010     0.989     0.005     
+VG1       C3        C4        single    1.524     0.020     1.524     0.020     
+VG1       O3        C3        single    1.432     0.020     1.432     0.020     
+VG1       H3        C3        single    1.089     0.010     0.989     0.005     
+VG1       C4        C5        single    1.524     0.020     1.524     0.020     
+VG1       O4        C4        single    1.432     0.020     1.432     0.020     
+VG1       H4        C4        single    1.089     0.010     0.989     0.005     
+VG1       C6        C5        single    1.524     0.020     1.524     0.020     
+VG1       C5        O5        single    1.426     0.020     1.426     0.020     
+VG1       H5        C5        single    1.089     0.010     0.989     0.005     
+VG1       O6        C6        single    1.426     0.020     1.426     0.020     
+VG1       H61       C6        single    1.089     0.010     0.989     0.005     
+VG1       H62       C6        single    1.089     0.010     0.989     0.005     
+VG1       P         O1        single    1.610     0.020     1.610     0.020     
+VG1       HO2       O2        single    0.970     0.012     0.839     0.014     
+VG1       HO3       O3        single    0.970     0.012     0.839     0.014     
+VG1       HO4       O4        single    0.970     0.012     0.839     0.014     
+VG1       V         O6        single    2.004     0.020     2.004     0.020     
+VG1       OP1       P         deloc     1.510     0.020     1.510     0.020     
+VG1       OP2       P         deloc     1.510     0.020     1.510     0.020     
+VG1       OP3       P         deloc     1.510     0.020     1.510     0.020     
+VG1       OV1       V         single    2.105     0.020     2.105     0.020     
+VG1       OV2       V         double    1.910     0.020     1.910     0.020     
+VG1       OV3       V         double    1.910     0.020     1.910     0.020     
+VG1       HTV       OV1       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VG1      H1     C1     O1      109.470    3.000
+ VG1      H1     C1     O5      109.470    3.000
+ VG1      O1     C1     O5      109.470    3.000
+ VG1      H1     C1     C2      108.340    3.000
+ VG1      O1     C1     C2      109.470    3.000
+ VG1      O5     C1     C2      109.470    3.000
+ VG1      C1     O1     P       120.500    3.000
+ VG1      O1     P      OP1     108.200    3.000
+ VG1      O1     P      OP2     108.200    3.000
+ VG1      O1     P      OP3     108.200    3.000
+ VG1      OP1    P      OP2     119.900    3.000
+ VG1      OP1    P      OP3     119.900    3.000
+ VG1      OP2    P      OP3     119.900    3.000
+ VG1      C1     O5     C5      111.800    3.000
+ VG1      O5     C5     H5      109.470    3.000
+ VG1      O5     C5     C4      109.470    3.000
+ VG1      O5     C5     C6      109.470    3.000
+ VG1      H5     C5     C4      108.340    3.000
+ VG1      H5     C5     C6      108.340    3.000
+ VG1      C4     C5     C6      111.000    3.000
+ VG1      C5     C4     H4      108.340    3.000
+ VG1      C5     C4     O4      109.470    3.000
+ VG1      C5     C4     C3      111.000    3.000
+ VG1      H4     C4     O4      109.470    3.000
+ VG1      H4     C4     C3      108.340    3.000
+ VG1      O4     C4     C3      109.470    3.000
+ VG1      C4     O4     HO4     109.470    3.000
+ VG1      C4     C3     H3      108.340    3.000
+ VG1      C4     C3     O3      109.470    3.000
+ VG1      C4     C3     C2      111.000    3.000
+ VG1      H3     C3     O3      109.470    3.000
+ VG1      H3     C3     C2      108.340    3.000
+ VG1      O3     C3     C2      109.470    3.000
+ VG1      C3     O3     HO3     109.470    3.000
+ VG1      C3     C2     H2      108.340    3.000
+ VG1      C3     C2     O2      109.470    3.000
+ VG1      C3     C2     C1      111.000    3.000
+ VG1      H2     C2     O2      109.470    3.000
+ VG1      H2     C2     C1      108.340    3.000
+ VG1      O2     C2     C1      109.470    3.000
+ VG1      C2     O2     HO2     109.470    3.000
+ VG1      C5     C6     H61     109.470    3.000
+ VG1      C5     C6     H62     109.470    3.000
+ VG1      C5     C6     O6      109.470    3.000
+ VG1      H61    C6     H62     107.900    3.000
+ VG1      H61    C6     O6      109.470    3.000
+ VG1      H62    C6     O6      109.470    3.000
+ VG1      C6     O6     V       120.000    3.000
+ VG1      O6     V      OV2     109.554    3.000
+ VG1      O6     V      OV1     109.487    3.000
+ VG1      O6     V      OV3     109.449    3.000
+ VG1      OV2    V      OV1     109.442    3.000
+ VG1      OV2    V      OV3     109.496    3.000
+ VG1      OV1    V      OV3     109.399    3.000
+ VG1      V      OV1    HTV     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VG1      var_1    O5     C1     O1     P         89.951   20.000   1
+ VG1      var_2    C1     O1     P      OP3       60.073   20.000   1
+ VG1      var_3    C1     O5     C5     C6       180.000   20.000   1
+ VG1      var_4    O5     C5     C4     C3       -60.000   20.000   3
+ VG1      var_5    C5     C4     O4     HO4      179.641   20.000   1
+ VG1      var_6    C5     C4     C3     C2        60.000   20.000   3
+ VG1      var_7    C4     C3     O3     HO3     -179.633   20.000   1
+ VG1      var_8    C4     C3     C2     O2       180.000   20.000   3
+ VG1      var_9    C3     C2     C1     O5        60.000   20.000   3
+ VG1      var_10   C3     C2     O2     HO2      179.746   20.000   1
+ VG1      var_11   O5     C5     C6     O6        59.653   20.000   3
+ VG1      var_12   C5     C6     O6     V        179.943   20.000   1
+ VG1      var_13   C6     O6     V      OV3       60.083   20.000   1
+ VG1      var_14   O6     V      OV1    HTV     -179.959   20.000   1
+ VG1      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ VG1      chir_01  C1     C2     O1     O5        negativ
+ VG1      chir_02  C2     C1     C3     O2        negativ
+ VG1      chir_03  C3     C2     C4     O3        positiv
+ VG1      chir_04  C4     C3     C5     O4        negativ
+ VG1      chir_05  C5     C4     C6     O5        negativ
+ VG1      chir_06  V      O6     OV2    OV1       both
+# ------------------------------------------------------

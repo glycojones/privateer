@@ -1,0 +1,210 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IAR      IAR '(2E)-5-[(diaminomethylidene)amino]-2' non-polymer        23  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_IAR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ IAR           OXT    O    OC       -0.500      0.000    0.000    0.000
+ IAR           C      C    C         0.000     -1.096   -0.577    0.174
+ IAR           O      O    OC       -0.500     -1.126   -1.805    0.407
+ IAR           CA     C    C         0.000     -2.359    0.197    0.112
+ IAR           N      N    N         0.000     -2.327    1.455   -0.121
+ IAR           HN     H    H         0.000     -3.139    1.960   -0.163
+ IAR           CB     C    CH2       0.000     -3.680   -0.498    0.323
+ IAR           HB     H    H         0.000     -3.697   -0.953    1.315
+ IAR           HBA    H    H         0.000     -3.807   -1.274   -0.435
+ IAR           CG     C    CH2       0.000     -4.816    0.520    0.207
+ IAR           HG     H    H         0.000     -4.797    0.975   -0.786
+ IAR           HGA    H    H         0.000     -4.687    1.296    0.964
+ IAR           CD     C    CH2       0.000     -6.156   -0.184    0.420
+ IAR           HD     H    H         0.000     -6.173   -0.639    1.413
+ IAR           HDA    H    H         0.000     -6.283   -0.961   -0.337
+ IAR           NE     N    N         0.000     -7.244    0.790    0.310
+ IAR           CZ     C    C         0.000     -8.130    0.674   -0.639
+ IAR           NH2    N    NH2       0.000     -8.121   -0.432   -1.456
+ IAR           HNHA   H    H         0.000     -8.807   -0.536   -2.202
+ IAR           HNH2   H    H         0.000     -7.427   -1.167   -1.331
+ IAR           NH1    N    NH2       0.000     -9.073    1.657   -0.824
+ IAR           H12    H    H         0.000     -9.771    1.578   -1.561
+ IAR           HNH1   H    H         0.000     -9.091    2.481   -0.226
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ IAR      OXT    n/a    C      START
+ IAR      C      OXT    CA     .
+ IAR      O      C      .      .
+ IAR      CA     C      CB     .
+ IAR      N      CA     HN     .
+ IAR      HN     N      .      .
+ IAR      CB     CA     CG     .
+ IAR      HB     CB     .      .
+ IAR      HBA    CB     .      .
+ IAR      CG     CB     CD     .
+ IAR      HG     CG     .      .
+ IAR      HGA    CG     .      .
+ IAR      CD     CG     NE     .
+ IAR      HD     CD     .      .
+ IAR      HDA    CD     .      .
+ IAR      NE     CD     CZ     .
+ IAR      CZ     NE     NH1    .
+ IAR      NH2    CZ     HNH2   .
+ IAR      HNHA   NH2    .      .
+ IAR      HNH2   NH2    .      .
+ IAR      NH1    CZ     HNH1   .
+ IAR      H12    NH1    .      .
+ IAR      HNH1   NH1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IAR       C         OXT       deloc     1.250     0.020     1.250     0.020     
+IAR       CA        C         single    1.460     0.020     1.460     0.020     
+IAR       HN        N         single    1.016     0.010     0.899     0.007     
+IAR       O         C         deloc     1.250     0.020     1.250     0.020     
+IAR       N         CA        double    1.260     0.020     1.260     0.020     
+IAR       CB        CA        single    1.510     0.020     1.510     0.020     
+IAR       CG        CB        single    1.524     0.020     1.524     0.020     
+IAR       HB        CB        single    1.089     0.010     0.989     0.005     
+IAR       HBA       CB        single    1.089     0.010     0.989     0.005     
+IAR       NE        CD        single    1.455     0.020     1.455     0.020     
+IAR       HD        CD        single    1.089     0.010     0.989     0.005     
+IAR       HDA       CD        single    1.089     0.010     0.989     0.005     
+IAR       CZ        NE        double    1.260     0.020     1.260     0.020     
+IAR       CD        CG        single    1.524     0.020     1.524     0.020     
+IAR       HG        CG        single    1.089     0.010     0.989     0.005     
+IAR       HGA       CG        single    1.089     0.010     0.989     0.005     
+IAR       NH2       CZ        single    1.332     0.020     1.332     0.020     
+IAR       NH1       CZ        single    1.332     0.020     1.332     0.020     
+IAR       HNH1      NH1       single    1.016     0.010     0.899     0.007     
+IAR       HNH2      NH2       single    1.016     0.010     0.899     0.007     
+IAR       HNHA      NH2       single    1.016     0.010     0.899     0.007     
+IAR       H12       NH1       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ IAR      OXT    C      O       123.000    3.000
+ IAR      OXT    C      CA      120.000    3.000
+ IAR      O      C      CA      120.000    3.000
+ IAR      C      CA     N       116.500    3.000
+ IAR      C      CA     CB      120.000    3.000
+ IAR      N      CA     CB      116.500    3.000
+ IAR      CA     N      HN      120.000    3.000
+ IAR      CA     CB     HB      109.470    3.000
+ IAR      CA     CB     HBA     109.470    3.000
+ IAR      CA     CB     CG      109.470    3.000
+ IAR      HB     CB     HBA     107.900    3.000
+ IAR      HB     CB     CG      109.470    3.000
+ IAR      HBA    CB     CG      109.470    3.000
+ IAR      CB     CG     HG      109.470    3.000
+ IAR      CB     CG     HGA     109.470    3.000
+ IAR      CB     CG     CD      111.000    3.000
+ IAR      HG     CG     HGA     107.900    3.000
+ IAR      HG     CG     CD      109.470    3.000
+ IAR      HGA    CG     CD      109.470    3.000
+ IAR      CG     CD     HD      109.470    3.000
+ IAR      CG     CD     HDA     109.470    3.000
+ IAR      CG     CD     NE      105.000    3.000
+ IAR      HD     CD     HDA     107.900    3.000
+ IAR      HD     CD     NE      109.470    3.000
+ IAR      HDA    CD     NE      109.470    3.000
+ IAR      CD     NE     CZ      127.000    3.000
+ IAR      NE     CZ     NH2     120.000    3.000
+ IAR      NE     CZ     NH1     120.000    3.000
+ IAR      NH2    CZ     NH1     120.000    3.000
+ IAR      CZ     NH2    HNHA    120.000    3.000
+ IAR      CZ     NH2    HNH2    120.000    3.000
+ IAR      HNHA   NH2    HNH2    120.000    3.000
+ IAR      CZ     NH1    H12     120.000    3.000
+ IAR      CZ     NH1    HNH1    120.000    3.000
+ IAR      H12    NH1    HNH1    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ IAR      var_1    OXT    C      CA     CB      -179.984   20.000   1
+ IAR      CONST_1  C      CA     N      HN       180.000    0.000   0
+ IAR      var_2    C      CA     CB     CG      -179.976   20.000   3
+ IAR      var_3    CA     CB     CG     CD      -179.994   20.000   3
+ IAR      var_4    CB     CG     CD     NE       179.997   20.000   3
+ IAR      var_5    CG     CD     NE     CZ       116.803   20.000   1
+ IAR      CONST_2  CD     NE     CZ     NH1      180.000    0.000   0
+ IAR      CONST_3  NE     CZ     NH2    HNH2       0.000    0.000   0
+ IAR      CONST_4  NE     CZ     NH1    HNH1       0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ IAR      plan-1    C         0.020
+ IAR      plan-1    O         0.020
+ IAR      plan-1    CA        0.020
+ IAR      plan-1    OXT       0.020
+ IAR      plan-2    N         0.020
+ IAR      plan-2    CA        0.020
+ IAR      plan-2    HN        0.020
+ IAR      plan-2    C         0.020
+ IAR      plan-2    CB        0.020
+ IAR      plan-3    NE        0.020
+ IAR      plan-3    CD        0.020
+ IAR      plan-3    CZ        0.020
+ IAR      plan-3    NH1       0.020
+ IAR      plan-3    NH2       0.020
+ IAR      plan-3    H12       0.020
+ IAR      plan-3    HNH1      0.020
+ IAR      plan-3    HNHA      0.020
+ IAR      plan-3    HNH2      0.020
+ IAR      plan-4    NH1       0.020
+ IAR      plan-4    CZ        0.020
+ IAR      plan-4    HNH1      0.020
+ IAR      plan-4    H12       0.020
+ IAR      plan-5    NH2       0.020
+ IAR      plan-5    CZ        0.020
+ IAR      plan-5    HNH2      0.020
+ IAR      plan-5    HNHA      0.020
+# ------------------------------------------------------

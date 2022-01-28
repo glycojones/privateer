@@ -1,0 +1,572 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KYS      KYS 'N-(4-{[(2-AMINOETHYL)AMINO]SULFONYL}' non-polymer        68  37 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_KYS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ KYS           CL2    CL   CL        0.000     28.477   28.023  -17.394
+ KYS           RU1    RU   RU        0.000     26.644   29.231  -18.100
+ KYS           C5     C    CH1       0.000     25.152   30.774  -18.445
+ KYS           H5     H    H         0.000     24.089   30.498  -18.470
+ KYS           C10    C    CH1       0.000     25.917   30.635  -19.595
+ KYS           H10    H    H         0.000     25.459   30.267  -20.524
+ KYS           C9     C    CH1       0.000     27.396   30.733  -19.477
+ KYS           H9     H    H         0.000     28.033   30.432  -20.320
+ KYS           C8     C    CH1       0.000     27.961   30.959  -18.232
+ KYS           H8     H    H         0.000     29.043   30.821  -18.100
+ KYS           C7     C    CH1       0.000     27.150   31.098  -17.108
+ KYS           H7     H    H         0.000     27.610   31.065  -16.110
+ KYS           C6     C    CH1       0.000     25.766   31.011  -17.217
+ KYS           H6     H    H         0.000     25.170   30.906  -16.300
+ KYS           N27    N    NH1       0.000     26.530   27.645  -19.508
+ KYS           HN27   H    H         0.000     27.283   27.282  -20.075
+ KYS           C29    C    CH2       0.000     25.142   27.184  -19.491
+ KYS           H291   H    H         0.000     25.027   26.289  -20.106
+ KYS           H292   H    H         0.000     24.473   27.965  -19.858
+ KYS           C28    C    CH2       0.000     24.792   26.852  -18.029
+ KYS           H281   H    H         0.000     25.235   25.883  -17.790
+ KYS           H282   H    H         0.000     23.705   26.783  -17.952
+ KYS           N26    N    NT        0.000     25.295   27.879  -17.074
+ KYS           S30    S    ST        0.000     25.766   27.123  -15.688
+ KYS           O31    O    OS        0.000     26.134   28.170  -14.712
+ KYS           O32    O    OS        0.000     26.898   26.189  -15.883
+ KYS           C33    C    CR6       0.000     24.477   26.293  -15.214
+ KYS           C23    C    CR16      0.000     23.536   26.869  -14.590
+ KYS           H23    H    H         0.000     23.621   27.924  -14.360
+ KYS           C22    C    CR16      0.000     22.424   26.194  -14.204
+ KYS           H22    H    H         0.000     21.661   26.735  -13.657
+ KYS           C24    C    CR16      0.000     24.312   24.970  -15.502
+ KYS           H24    H    H         0.000     25.086   24.443  -16.047
+ KYS           C20    C    CR16      0.000     23.197   24.305  -15.118
+ KYS           H20    H    H         0.000     23.084   23.252  -15.347
+ KYS           C21    C    CR6       0.000     22.228   24.961  -14.449
+ KYS           N19    N    NH1       0.000     21.075   24.376  -14.027
+ KYS           HN19   H    H         0.000     21.111   23.533  -13.473
+ KYS           C39    C    C         0.000     19.889   24.919  -14.347
+ KYS           O41    O    O         0.000     19.777   25.932  -15.038
+ KYS           C40    C    CH2       0.000     18.612   24.306  -13.798
+ KYS           H401   H    H         0.000     18.886   23.566  -13.043
+ KYS           H402   H    H         0.000     18.091   23.810  -14.620
+ KYS           C45    C    CH2       0.000     17.691   25.364  -13.170
+ KYS           H451   H    H         0.000     16.756   24.876  -12.887
+ KYS           H452   H    H         0.000     17.488   26.128  -13.923
+ KYS           C46    C    CH2       0.000     18.322   26.015  -11.937
+ KYS           H461   H    H         0.000     19.275   26.446  -12.250
+ KYS           H462   H    H         0.000     18.505   25.222  -11.209
+ KYS           C47    C    CH2       0.000     17.454   27.100  -11.303
+ KYS           H471   H    H         0.000     16.510   26.633  -11.016
+ KYS           H472   H    H         0.000     17.267   27.854  -12.070
+ KYS           C48    C    CH1       0.000     18.092   27.763  -10.076
+ KYS           H48    H    H         0.000     19.161   27.913  -10.284
+ KYS           S52    S    S2        0.000     17.947   26.757   -8.615
+ KYS           C51    C    CH2       0.000     18.542   28.150   -7.694
+ KYS           H512   H    H         0.000     19.615   28.286   -7.843
+ KYS           H511   H    H         0.000     18.336   28.029   -6.628
+ KYS           C49    C    CH1       0.000     17.483   29.119   -9.698
+ KYS           H49    H    H         0.000     17.897   29.921  -10.325
+ KYS           C50    C    CH1       0.000     17.796   29.368   -8.222
+ KYS           H50    H    H         0.000     18.391   30.283   -8.093
+ KYS           N55    N    NH1       0.000     16.488   29.512   -7.630
+ KYS           HN55   H    H         0.000     16.343   29.702   -6.649
+ KYS           N53    N    NH1       0.000     16.031   29.156   -9.707
+ KYS           HN53   H    H         0.000     15.481   29.032  -10.545
+ KYS           C54    C    C         0.000     15.490   29.370   -8.501
+ KYS           O56    O    O         0.000     14.294   29.446   -8.237
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ KYS      CL2    n/a    RU1    START
+ KYS      RU1    CL2    N27    .
+ KYS      C5     RU1    C6     .
+ KYS      H5     C5     .      .
+ KYS      C10    C5     C9     .
+ KYS      H10    C10    .      .
+ KYS      C9     C10    C8     .
+ KYS      H9     C9     .      .
+ KYS      C8     C9     C7     .
+ KYS      H8     C8     .      .
+ KYS      C7     C8     H7     .
+ KYS      H7     C7     .      .
+ KYS      C6     C5     H6     .
+ KYS      H6     C6     .      .
+ KYS      N27    RU1    C29    .
+ KYS      HN27   N27    .      .
+ KYS      C29    N27    C28    .
+ KYS      H291   C29    .      .
+ KYS      H292   C29    .      .
+ KYS      C28    C29    N26    .
+ KYS      H281   C28    .      .
+ KYS      H282   C28    .      .
+ KYS      N26    C28    S30    .
+ KYS      S30    N26    C33    .
+ KYS      O31    S30    .      .
+ KYS      O32    S30    .      .
+ KYS      C33    S30    C24    .
+ KYS      C23    C33    C22    .
+ KYS      H23    C23    .      .
+ KYS      C22    C23    H22    .
+ KYS      H22    C22    .      .
+ KYS      C24    C33    C20    .
+ KYS      H24    C24    .      .
+ KYS      C20    C24    C21    .
+ KYS      H20    C20    .      .
+ KYS      C21    C20    N19    .
+ KYS      N19    C21    C39    .
+ KYS      HN19   N19    .      .
+ KYS      C39    N19    C40    .
+ KYS      O41    C39    .      .
+ KYS      C40    C39    C45    .
+ KYS      H401   C40    .      .
+ KYS      H402   C40    .      .
+ KYS      C45    C40    C46    .
+ KYS      H451   C45    .      .
+ KYS      H452   C45    .      .
+ KYS      C46    C45    C47    .
+ KYS      H461   C46    .      .
+ KYS      H462   C46    .      .
+ KYS      C47    C46    C48    .
+ KYS      H471   C47    .      .
+ KYS      H472   C47    .      .
+ KYS      C48    C47    C49    .
+ KYS      H48    C48    .      .
+ KYS      S52    C48    C51    .
+ KYS      C51    S52    H511   .
+ KYS      H512   C51    .      .
+ KYS      H511   C51    .      .
+ KYS      C49    C48    N53    .
+ KYS      H49    C49    .      .
+ KYS      C50    C49    N55    .
+ KYS      H50    C50    .      .
+ KYS      N55    C50    HN55   .
+ KYS      HN55   N55    .      .
+ KYS      N53    C49    C54    .
+ KYS      HN53   N53    .      .
+ KYS      C54    N53    O56    .
+ KYS      O56    C54    .      END
+ KYS      C54    N55    .    ADD
+ KYS      C50    C51    .    ADD
+ KYS      C21    C22    .    ADD
+ KYS      N26    RU1    .    ADD
+ KYS      RU1    C6     .    ADD
+ KYS      RU1    C7     .    ADD
+ KYS      RU1    C8     .    ADD
+ KYS      RU1    C9     .    ADD
+ KYS      RU1    C10    .    ADD
+ KYS      C6     C7     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KYS       O56       C54       double    1.220     0.020     1.220     0.020     
+KYS       C54       N53       single    1.330     0.020     1.330     0.020     
+KYS       C54       N55       single    1.330     0.020     1.330     0.020     
+KYS       N55       C50       single    1.450     0.020     1.450     0.020     
+KYS       HN55      N55       single    1.016     0.010     0.899     0.007     
+KYS       C50       C49       single    1.524     0.020     1.524     0.020     
+KYS       C50       C51       single    1.524     0.020     1.524     0.020     
+KYS       H50       C50       single    1.089     0.010     0.989     0.005     
+KYS       C51       S52       single    1.762     0.020     1.762     0.020     
+KYS       H511      C51       single    1.089     0.010     0.989     0.005     
+KYS       H512      C51       single    1.089     0.010     0.989     0.005     
+KYS       S52       C48       single    1.765     0.020     1.765     0.020     
+KYS       N53       C49       single    1.450     0.020     1.450     0.020     
+KYS       HN53      N53       single    1.016     0.010     0.899     0.007     
+KYS       C49       C48       single    1.524     0.020     1.524     0.020     
+KYS       H49       C49       single    1.089     0.010     0.989     0.005     
+KYS       C48       C47       single    1.524     0.020     1.524     0.020     
+KYS       H48       C48       single    1.089     0.010     0.989     0.005     
+KYS       C47       C46       single    1.524     0.020     1.524     0.020     
+KYS       H471      C47       single    1.089     0.010     0.989     0.005     
+KYS       H472      C47       single    1.089     0.010     0.989     0.005     
+KYS       C46       C45       single    1.524     0.020     1.524     0.020     
+KYS       H461      C46       single    1.089     0.010     0.989     0.005     
+KYS       H462      C46       single    1.089     0.010     0.989     0.005     
+KYS       C45       C40       single    1.524     0.020     1.524     0.020     
+KYS       H451      C45       single    1.089     0.010     0.989     0.005     
+KYS       H452      C45       single    1.089     0.010     0.989     0.005     
+KYS       C40       C39       single    1.510     0.020     1.510     0.020     
+KYS       H401      C40       single    1.089     0.010     0.989     0.005     
+KYS       H402      C40       single    1.089     0.010     0.989     0.005     
+KYS       O41       C39       double    1.220     0.020     1.220     0.020     
+KYS       C39       N19       single    1.330     0.020     1.330     0.020     
+KYS       N19       C21       single    1.350     0.020     1.350     0.020     
+KYS       HN19      N19       single    1.016     0.010     0.899     0.007     
+KYS       C21       C20       double    1.390     0.020     1.390     0.020     
+KYS       C21       C22       single    1.390     0.020     1.390     0.020     
+KYS       C22       C23       double    1.390     0.020     1.390     0.020     
+KYS       H22       C22       single    1.082     0.013     0.975     0.010     
+KYS       C23       C33       single    1.390     0.020     1.390     0.020     
+KYS       H23       C23       single    1.082     0.013     0.975     0.010     
+KYS       C20       C24       single    1.390     0.020     1.390     0.020     
+KYS       H20       C20       single    1.082     0.013     0.975     0.010     
+KYS       C24       C33       double    1.390     0.020     1.390     0.020     
+KYS       H24       C24       single    1.082     0.013     0.975     0.010     
+KYS       C33       S30       single    1.595     0.020     1.595     0.020     
+KYS       S30       N26       single    1.610     0.020     1.610     0.020     
+KYS       O32       S30       double    1.436     0.020     1.436     0.020     
+KYS       O31       S30       double    1.436     0.020     1.436     0.020     
+KYS       N26       RU1       single    2.168     0.020     2.168     0.020     
+KYS       N26       C28       single    1.469     0.020     1.469     0.020     
+KYS       RU1       C10       single    2.176     0.020     2.176     0.020     
+KYS       N27       RU1       single    2.124     0.020     2.124     0.020     
+KYS       RU1       C9        single    2.172     0.020     2.172     0.020     
+KYS       C5        RU1       single    2.174     0.020     2.174     0.020     
+KYS       RU1       C8        single    2.177     0.020     2.177     0.020     
+KYS       RU1       CL2       single    2.306     0.020     2.306     0.020     
+KYS       RU1       C6        single    2.172     0.020     2.172     0.020     
+KYS       RU1       C7        single    2.174     0.020     2.174     0.020     
+KYS       C6        C5        single    1.524     0.020     1.524     0.020     
+KYS       C6        C7        double    1.524     0.020     1.524     0.020     
+KYS       H6        C6        single    1.089     0.010     0.989     0.005     
+KYS       C7        C8        single    1.524     0.020     1.524     0.020     
+KYS       H7        C7        single    1.089     0.010     0.989     0.005     
+KYS       C8        C9        double    1.524     0.020     1.524     0.020     
+KYS       H8        C8        single    1.089     0.010     0.989     0.005     
+KYS       C9        C10       single    1.524     0.020     1.524     0.020     
+KYS       H9        C9        single    1.089     0.010     0.989     0.005     
+KYS       C10       C5        double    1.524     0.020     1.524     0.020     
+KYS       H10       C10       single    1.089     0.010     0.989     0.005     
+KYS       H5        C5        single    1.089     0.010     0.989     0.005     
+KYS       C28       C29       single    1.524     0.020     1.524     0.020     
+KYS       H281      C28       single    1.089     0.010     0.989     0.005     
+KYS       H282      C28       single    1.089     0.010     0.989     0.005     
+KYS       C29       N27       single    1.450     0.020     1.450     0.020     
+KYS       H291      C29       single    1.089     0.010     0.989     0.005     
+KYS       H292      C29       single    1.089     0.010     0.989     0.005     
+KYS       HN27      N27       single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ KYS      CL2    RU1    C5      165.005    3.000
+ KYS      CL2    RU1    N27      81.631    3.000
+ KYS      CL2    RU1    N26      91.320    3.000
+ KYS      CL2    RU1    C6      128.761    3.000
+ KYS      CL2    RU1    C7       97.191    3.000
+ KYS      CL2    RU1    C8       87.334    3.000
+ KYS      CL2    RU1    C9      106.329    3.000
+ KYS      CL2    RU1    C10     144.482    3.000
+ KYS      C5     RU1    N27     112.829    3.000
+ KYS      N26    RU1    C6       93.849    3.000
+ KYS      N26    RU1    C7      117.675    3.000
+ KYS      C6     RU1    C7       41.054    3.000
+ KYS      N26    RU1    C8      154.190    3.000
+ KYS      C6     RU1    C8       67.586    3.000
+ KYS      C7     RU1    C8       41.011    3.000
+ KYS      N26    RU1    C9      161.207    3.000
+ KYS      C6     RU1    C9       80.270    3.000
+ KYS      C7     RU1    C9       67.344    3.000
+ KYS      C8     RU1    C9       41.030    3.000
+ KYS      N26    RU1    C10     121.307    3.000
+ KYS      C6     RU1    C10      67.389    3.000
+ KYS      C7     RU1    C10      80.627    3.000
+ KYS      C8     RU1    C10      69.406    3.000
+ KYS      C9     RU1    C10      41.037    3.000
+ KYS      C5     RU1    N26      95.203    3.000
+ KYS      N27    RU1    N26      79.319    3.000
+ KYS      C5     RU1    C6       41.054    3.000
+ KYS      N27    RU1    C6      149.279    3.000
+ KYS      C5     RU1    C7       67.827    3.000
+ KYS      N27    RU1    C7      163.007    3.000
+ KYS      C5     RU1    C8       80.919    3.000
+ KYS      N27    RU1    C8      125.810    3.000
+ KYS      C5     RU1    C9       69.279    3.000
+ KYS      N27    RU1    C9       96.586    3.000
+ KYS      C5     RU1    C10      41.018    3.000
+ KYS      N27    RU1    C10      90.482    3.000
+ KYS      RU1    C5     H5      109.500    3.000
+ KYS      RU1    C5     C10      69.562    3.000
+ KYS      RU1    C5     C6       69.417    3.000
+ KYS      H5     C5     C10     108.340    3.000
+ KYS      H5     C5     C6      108.340    3.000
+ KYS      C10    C5     C6      111.000    3.000
+ KYS      C5     C10    H10     108.340    3.000
+ KYS      C5     C10    C9      111.000    3.000
+ KYS      C5     C10    RU1      69.419    3.000
+ KYS      H10    C10    C9      108.340    3.000
+ KYS      H10    C10    RU1     109.500    3.000
+ KYS      C9     C10    RU1      69.343    3.000
+ KYS      C10    C9     H9      108.340    3.000
+ KYS      C10    C9     C8      111.000    3.000
+ KYS      C10    C9     RU1      69.620    3.000
+ KYS      H9     C9     C8      108.340    3.000
+ KYS      H9     C9     RU1     109.500    3.000
+ KYS      C8     C9     RU1      69.649    3.000
+ KYS      C9     C8     H8      108.340    3.000
+ KYS      C9     C8     C7      111.000    3.000
+ KYS      C9     C8     RU1      69.321    3.000
+ KYS      H8     C8     C7      108.340    3.000
+ KYS      H8     C8     RU1     109.500    3.000
+ KYS      C7     C8     RU1      69.396    3.000
+ KYS      C8     C7     H7      108.340    3.000
+ KYS      C8     C7     RU1      69.592    3.000
+ KYS      C8     C7     C6      111.000    3.000
+ KYS      RU1    C7     C6       69.418    3.000
+ KYS      H7     C7     RU1     109.500    3.000
+ KYS      H7     C7     C6      108.340    3.000
+ KYS      C5     C6     H6      108.340    3.000
+ KYS      C5     C6     RU1      69.529    3.000
+ KYS      C5     C6     C7      111.000    3.000
+ KYS      RU1    C6     C7       69.528    3.000
+ KYS      H6     C6     RU1     109.500    3.000
+ KYS      H6     C6     C7      108.340    3.000
+ KYS      RU1    N27    HN27    120.000    3.000
+ KYS      RU1    N27    C29     120.000    3.000
+ KYS      HN27   N27    C29     118.500    3.000
+ KYS      N27    C29    H291    109.470    3.000
+ KYS      N27    C29    H292    109.470    3.000
+ KYS      N27    C29    C28     112.000    3.000
+ KYS      H291   C29    H292    107.900    3.000
+ KYS      H291   C29    C28     109.470    3.000
+ KYS      H292   C29    C28     109.470    3.000
+ KYS      C29    C28    H281    109.470    3.000
+ KYS      C29    C28    H282    109.470    3.000
+ KYS      C29    C28    N26     109.470    3.000
+ KYS      H281   C28    H282    107.900    3.000
+ KYS      H281   C28    N26     109.470    3.000
+ KYS      H282   C28    N26     109.470    3.000
+ KYS      C28    N26    S30     109.500    3.000
+ KYS      C28    N26    RU1     109.500    3.000
+ KYS      S30    N26    RU1     109.500    3.000
+ KYS      N26    S30    O31     109.500    3.000
+ KYS      N26    S30    O32     109.500    3.000
+ KYS      N26    S30    C33     109.500    3.000
+ KYS      O31    S30    O32     109.500    3.000
+ KYS      O31    S30    C33     109.500    3.000
+ KYS      O32    S30    C33     109.500    3.000
+ KYS      S30    C33    C23     120.000    3.000
+ KYS      S30    C33    C24     120.000    3.000
+ KYS      C23    C33    C24     120.000    3.000
+ KYS      C33    C23    H23     120.000    3.000
+ KYS      C33    C23    C22     120.000    3.000
+ KYS      H23    C23    C22     120.000    3.000
+ KYS      C23    C22    H22     120.000    3.000
+ KYS      C23    C22    C21     120.000    3.000
+ KYS      H22    C22    C21     120.000    3.000
+ KYS      C33    C24    H24     120.000    3.000
+ KYS      C33    C24    C20     120.000    3.000
+ KYS      H24    C24    C20     120.000    3.000
+ KYS      C24    C20    H20     120.000    3.000
+ KYS      C24    C20    C21     120.000    3.000
+ KYS      H20    C20    C21     120.000    3.000
+ KYS      C20    C21    N19     120.000    3.000
+ KYS      C20    C21    C22     120.000    3.000
+ KYS      N19    C21    C22     120.000    3.000
+ KYS      C21    N19    HN19    120.000    3.000
+ KYS      C21    N19    C39     120.000    3.000
+ KYS      HN19   N19    C39     120.000    3.000
+ KYS      N19    C39    O41     123.000    3.000
+ KYS      N19    C39    C40     116.500    3.000
+ KYS      O41    C39    C40     120.500    3.000
+ KYS      C39    C40    H401    109.470    3.000
+ KYS      C39    C40    H402    109.470    3.000
+ KYS      C39    C40    C45     109.470    3.000
+ KYS      H401   C40    H402    107.900    3.000
+ KYS      H401   C40    C45     109.470    3.000
+ KYS      H402   C40    C45     109.470    3.000
+ KYS      C40    C45    H451    109.470    3.000
+ KYS      C40    C45    H452    109.470    3.000
+ KYS      C40    C45    C46     111.000    3.000
+ KYS      H451   C45    H452    107.900    3.000
+ KYS      H451   C45    C46     109.470    3.000
+ KYS      H452   C45    C46     109.470    3.000
+ KYS      C45    C46    H461    109.470    3.000
+ KYS      C45    C46    H462    109.470    3.000
+ KYS      C45    C46    C47     111.000    3.000
+ KYS      H461   C46    H462    107.900    3.000
+ KYS      H461   C46    C47     109.470    3.000
+ KYS      H462   C46    C47     109.470    3.000
+ KYS      C46    C47    H471    109.470    3.000
+ KYS      C46    C47    H472    109.470    3.000
+ KYS      C46    C47    C48     111.000    3.000
+ KYS      H471   C47    H472    107.900    3.000
+ KYS      H471   C47    C48     109.470    3.000
+ KYS      H472   C47    C48     109.470    3.000
+ KYS      C47    C48    H48     108.340    3.000
+ KYS      C47    C48    S52     109.500    3.000
+ KYS      C47    C48    C49     111.000    3.000
+ KYS      H48    C48    S52     109.500    3.000
+ KYS      H48    C48    C49     108.340    3.000
+ KYS      S52    C48    C49     109.500    3.000
+ KYS      C48    S52    C51      87.420    3.000
+ KYS      S52    C51    H512    109.500    3.000
+ KYS      S52    C51    H511    109.500    3.000
+ KYS      S52    C51    C50     109.500    3.000
+ KYS      H512   C51    H511    107.900    3.000
+ KYS      H512   C51    C50     109.470    3.000
+ KYS      H511   C51    C50     109.470    3.000
+ KYS      C48    C49    H49     108.340    3.000
+ KYS      C48    C49    C50     111.000    3.000
+ KYS      C48    C49    N53     110.000    3.000
+ KYS      H49    C49    C50     108.340    3.000
+ KYS      H49    C49    N53     108.550    3.000
+ KYS      C50    C49    N53     110.000    3.000
+ KYS      C49    C50    H50     108.340    3.000
+ KYS      C49    C50    N55     110.000    3.000
+ KYS      C49    C50    C51     111.000    3.000
+ KYS      H50    C50    N55     108.550    3.000
+ KYS      H50    C50    C51     108.340    3.000
+ KYS      N55    C50    C51     110.000    3.000
+ KYS      C50    N55    HN55    118.500    3.000
+ KYS      C50    N55    C54     121.500    3.000
+ KYS      HN55   N55    C54     120.000    3.000
+ KYS      C49    N53    HN53    118.500    3.000
+ KYS      C49    N53    C54     121.500    3.000
+ KYS      HN53   N53    C54     120.000    3.000
+ KYS      N53    C54    O56     123.000    3.000
+ KYS      N53    C54    N55     120.000    3.000
+ KYS      O56    C54    N55     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ KYS      var_1    CL2    RU1    C6     C5       171.669   20.000   1
+ KYS      var_2    CL2    RU1    C7     C8        75.960   20.000   1
+ KYS      var_3    CL2    RU1    C8     C9       121.825   20.000   1
+ KYS      var_4    CL2    RU1    C9     C10      166.026   20.000   1
+ KYS      var_5    CL2    RU1    C10    C5      -154.738   20.000   1
+ KYS      var_6    CL2    RU1    C5     C6       -25.891   20.000   1
+ KYS      var_7    RU1    C5     C10    C9       -53.397   20.000   3
+ KYS      var_8    C5     C10    C9     C8        -0.029   20.000   3
+ KYS      var_9    C10    C9     C8     C7        -0.279   20.000   3
+ KYS      var_10   C9     C8     C7     RU1       53.721   20.000   3
+ KYS      var_11   C5     C6     C7     C8         0.462   20.000   3
+ KYS      var_12   CL2    RU1    N27    C29      131.226   20.000   1
+ KYS      var_13   RU1    N27    C29    C28      -54.078   20.000   3
+ KYS      var_14   N27    C29    C28    N26       43.221   20.000   3
+ KYS      var_15   C29    C28    N26    S30     -144.260   20.000   1
+ KYS      var_16   C28    N26    RU1    CL2      -95.838   20.000   1
+ KYS      var_17   C28    N26    S30    C33      -55.393   20.000   1
+ KYS      var_18   N26    S30    C33    C24       96.718   20.000   1
+ KYS      CONST_1  S30    C33    C23    C22      180.000    0.000   0
+ KYS      CONST_2  C33    C23    C22    C21        0.000    0.000   0
+ KYS      CONST_3  S30    C33    C24    C20      180.000    0.000   0
+ KYS      CONST_4  C33    C24    C20    C21        0.000    0.000   0
+ KYS      CONST_5  C24    C20    C21    N19      180.000    0.000   0
+ KYS      CONST_6  C20    C21    C22    C23        0.000    0.000   0
+ KYS      var_19   C20    C21    N19    C39     -127.220   20.000   1
+ KYS      CONST_7  C21    N19    C39    C40      180.000    0.000   0
+ KYS      var_20   N19    C39    C40    C45      130.671   20.000   3
+ KYS      var_21   C39    C40    C45    C46      -64.724   20.000   3
+ KYS      var_22   C40    C45    C46    C47      178.473   20.000   3
+ KYS      var_23   C45    C46    C47    C48     -179.397   20.000   3
+ KYS      var_24   C46    C47    C48    C49      161.318   20.000   3
+ KYS      var_25   C47    C48    S52    C51     -170.505   20.000   1
+ KYS      var_26   C48    S52    C51    C50       44.427   20.000   1
+ KYS      var_27   C47    C48    C49    N53       45.178   20.000   3
+ KYS      var_28   C48    C49    C50    N55     -121.194   20.000   3
+ KYS      var_29   C49    C50    C51    S52      -30.780   20.000   3
+ KYS      var_30   C49    C50    N55    C54        0.929   20.000   3
+ KYS      var_31   C48    C49    N53    C54      115.307   20.000   3
+ KYS      CONST_8  C49    N53    C54    O56      180.000    0.000   0
+ KYS      CONST_9  N53    C54    N55    C50        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ KYS      chir_01  C50    N55    C51    C49       negativ
+ KYS      chir_02  C49    C50    N53    C48       positiv
+ KYS      chir_03  C48    S52    C49    C47       positiv
+ KYS      chir_04  S30    C33    O31    O32       negativ
+ KYS      chir_05  N26    S30    RU1    C28       negativ
+ KYS      chir_06  C6     RU1    C7     C5        negativ
+ KYS      chir_07  C7     RU1    C6     C8        positiv
+ KYS      chir_08  C8     RU1    C7     C9        positiv
+ KYS      chir_09  C9     RU1    C8     C10       positiv
+ KYS      chir_10  C10    RU1    C9     C5        positiv
+ KYS      chir_11  C5     RU1    C6     C10       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ KYS      plan-1    C54       0.020
+ KYS      plan-1    O56       0.020
+ KYS      plan-1    N55       0.020
+ KYS      plan-1    N53       0.020
+ KYS      plan-1    HN55      0.020
+ KYS      plan-1    HN53      0.020
+ KYS      plan-2    N55       0.020
+ KYS      plan-2    C54       0.020
+ KYS      plan-2    C50       0.020
+ KYS      plan-2    HN55      0.020
+ KYS      plan-3    N53       0.020
+ KYS      plan-3    C54       0.020
+ KYS      plan-3    C49       0.020
+ KYS      plan-3    HN53      0.020
+ KYS      plan-4    C39       0.020
+ KYS      plan-4    C40       0.020
+ KYS      plan-4    O41       0.020
+ KYS      plan-4    N19       0.020
+ KYS      plan-4    HN19      0.020
+ KYS      plan-5    N19       0.020
+ KYS      plan-5    C39       0.020
+ KYS      plan-5    C21       0.020
+ KYS      plan-5    HN19      0.020
+ KYS      plan-6    C21       0.020
+ KYS      plan-6    N19       0.020
+ KYS      plan-6    C22       0.020
+ KYS      plan-6    C20       0.020
+ KYS      plan-6    C23       0.020
+ KYS      plan-6    C24       0.020
+ KYS      plan-6    C33       0.020
+ KYS      plan-6    H22       0.020
+ KYS      plan-6    H23       0.020
+ KYS      plan-6    H20       0.020
+ KYS      plan-6    H24       0.020
+ KYS      plan-6    S30       0.020
+ KYS      plan-6    HN19      0.020
+ KYS      plan-7    N27       0.020
+ KYS      plan-7    RU1       0.020
+ KYS      plan-7    C29       0.020
+ KYS      plan-7    HN27      0.020
+# ------------------------------------------------------

@@ -1,0 +1,267 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TMD     TMD     "(6,7-DIHYDRO)4-[(E)-BUTENYL]-4,N-DIMETHYL-THREONINE"     M-peptide     34     14     .
+#
+data_comp_TMD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TMD     N       N       NT1     0       5.397       34.650      19.771
+TMD     CN      C       CH3     0       4.931       36.042      19.780
+TMD     CA      C       CH1     0       6.664       34.329      19.082
+TMD     C       C       C       0       7.892       34.999      19.738
+TMD     O       O       O       0       7.815       35.271      20.954
+TMD     OXT     O       OC      -1      8.892       35.216      19.022
+TMD     CB      C       CH1     0       6.621       34.614      17.564
+TMD     CD1     C       CH2     0       5.218       34.582      15.387
+TMD     CD2     C       CH3     0       5.212       32.602      16.952
+TMD     CE      C       CH2     0       6.382       34.249      14.480
+TMD     CZ      C       CH2     0       6.139       34.635      13.044
+TMD     CH      C       CH3     0       7.292       34.310      12.124
+TMD     OG2     O       OH1     0       6.802       36.019      17.331
+TMD     CG1     C       CH1     0       5.341       34.118      16.854
+TMD     H       H       H       0       5.486       34.378      20.616
+TMD     HN1     H       H       0       4.172       36.133      20.388
+TMD     HN2     H       H       0       4.649       36.307      18.883
+TMD     HN3     H       H       0       5.644       36.639      20.077
+TMD     HA      H       H       0       6.807       33.355      19.181
+TMD     HB      H       H       0       7.393       34.137      17.152
+TMD     HD13    H       H       0       4.409       34.181      15.002
+TMD     HD12    H       H       0       5.092       35.554      15.378
+TMD     HD21    H       H       0       5.006       32.350      17.869
+TMD     HD22    H       H       0       6.051       32.186      16.685
+TMD     HD23    H       H       0       4.499       32.294      16.367
+TMD     HE2     H       H       0       6.558       33.285      14.523
+TMD     HE3     H       H       0       7.183       34.715      14.800
+TMD     HZ2     H       H       0       5.963       35.600      13.003
+TMD     HZ3     H       H       0       5.336       34.170      12.723
+TMD     HH1     H       H       0       7.094       34.631      11.228
+TMD     HH2     H       H       0       7.427       33.346      12.100
+TMD     HH3     H       H       0       8.101       34.741      12.451
+TMD     HG2     H       H       0       7.590       36.169      17.054
+TMD     HG1     H       H       0       4.573       34.504      17.339
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+TMD      N      n/a    CA     START
+TMD      H      N      .      .
+TMD      CN     N      HN1    .
+TMD      HN3    CN     .      .
+TMD      HN2    CN     .      .
+TMD      HN1    CN     .      .
+TMD      CA     N      C      .
+TMD      HA     CA     .      .
+TMD      CB     CA     CG1    .
+TMD      HB     CB     .      .
+TMD      OG2    CB     HG2    .
+TMD      HG2    OG2    .      .
+TMD      CG1    CB     CD1    .
+TMD      HG1    CG1    .      .
+TMD      CD2    CG1    HD21   .
+TMD      HD23   CD2    .      .
+TMD      HD22   CD2    .      .
+TMD      HD21   CD2    .      .
+TMD      CD1    CG1    CE     .
+TMD      HD13   CD1    .      .
+TMD      HD12   CD1    .      .
+TMD      CE     CD1    CZ     .
+TMD      HE2    CE     .      .
+TMD      HE3    CE     .      .
+TMD      CZ     CE     CH     .
+TMD      HZ2    CZ     .      .
+TMD      HZ3    CZ     .      .
+TMD      CH     CZ     HH1    .
+TMD      HH3    CH     .      .
+TMD      HH2    CH     .      .
+TMD      HH1    CH     .      .
+TMD      C      CA     .      END
+TMD      O      C      .      .
+TMD      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TMD       N         CN        SINGLE    n         1.463     0.015     1.463     0.015     
+TMD       N         CA        SINGLE    n         1.468     0.014     1.468     0.014     
+TMD       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+TMD       CA        CB        SINGLE    n         1.516     0.020     1.516     0.020     
+TMD       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TMD       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TMD       CB        OG2       SINGLE    n         1.426     0.019     1.426     0.019     
+TMD       CB        CG1       SINGLE    n         1.539     0.012     1.539     0.012     
+TMD       CD1       CE        SINGLE    n         1.509     0.020     1.509     0.020     
+TMD       CD1       CG1       SINGLE    n         1.541     0.010     1.541     0.010     
+TMD       CD2       CG1       SINGLE    n         1.521     0.015     1.521     0.015     
+TMD       CE        CZ        SINGLE    n         1.507     0.020     1.507     0.020     
+TMD       CZ        CH        SINGLE    n         1.510     0.020     1.510     0.020     
+TMD       N         H         SINGLE    n         1.036     0.016     0.890     0.020     
+TMD       CN        HN1       SINGLE    n         1.089     0.010     0.977     0.013     
+TMD       CN        HN2       SINGLE    n         1.089     0.010     0.977     0.013     
+TMD       CN        HN3       SINGLE    n         1.089     0.010     0.977     0.013     
+TMD       CA        HA        SINGLE    n         1.089     0.010     0.990     0.020     
+TMD       CB        HB        SINGLE    n         1.089     0.010     0.995     0.020     
+TMD       CD1       HD13      SINGLE    n         1.089     0.010     0.981     0.016     
+TMD       CD1       HD12      SINGLE    n         1.089     0.010     0.981     0.016     
+TMD       CD2       HD21      SINGLE    n         1.089     0.010     0.973     0.015     
+TMD       CD2       HD22      SINGLE    n         1.089     0.010     0.973     0.015     
+TMD       CD2       HD23      SINGLE    n         1.089     0.010     0.973     0.015     
+TMD       CE        HE2       SINGLE    n         1.089     0.010     0.981     0.016     
+TMD       CE        HE3       SINGLE    n         1.089     0.010     0.981     0.016     
+TMD       CZ        HZ2       SINGLE    n         1.089     0.010     0.982     0.015     
+TMD       CZ        HZ3       SINGLE    n         1.089     0.010     0.982     0.015     
+TMD       CH        HH1       SINGLE    n         1.089     0.010     0.973     0.016     
+TMD       CH        HH2       SINGLE    n         1.089     0.010     0.973     0.016     
+TMD       CH        HH3       SINGLE    n         1.089     0.010     0.973     0.016     
+TMD       OG2       HG2       SINGLE    n         0.970     0.012     0.848     0.020     
+TMD       CG1       HG1       SINGLE    n         1.089     0.010     0.989     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TMD          CN           N          CA     112.615    2.70
+TMD          CN           N           H     108.144    3.00
+TMD          CA           N           H     106.958    3.00
+TMD           N          CN         HN1     110.215    1.50
+TMD           N          CN         HN2     110.215    1.50
+TMD           N          CN         HN3     110.215    1.50
+TMD         HN1          CN         HN2     109.279    1.79
+TMD         HN1          CN         HN3     109.279    1.79
+TMD         HN2          CN         HN3     109.279    1.79
+TMD           N          CA           C     113.481    2.07
+TMD           N          CA          CB     111.883    2.59
+TMD           N          CA          HA     108.712    1.50
+TMD           C          CA          CB     110.275    1.50
+TMD           C          CA          HA     107.601    1.50
+TMD          CB          CA          HA     108.179    1.50
+TMD          CA           C           O     117.371    1.50
+TMD          CA           C         OXT     117.371    1.50
+TMD           O           C         OXT     125.259    1.50
+TMD          CA          CB         OG2     108.919    1.50
+TMD          CA          CB         CG1     111.094    2.85
+TMD          CA          CB          HB     108.267    2.06
+TMD         OG2          CB         CG1     109.580    2.17
+TMD         OG2          CB          HB     108.183    1.96
+TMD         CG1          CB          HB     108.131    1.50
+TMD          CE         CD1         CG1     115.586    1.50
+TMD          CE         CD1        HD13     108.469    1.50
+TMD          CE         CD1        HD12     108.469    1.50
+TMD         CG1         CD1        HD13     108.647    1.58
+TMD         CG1         CD1        HD12     108.647    1.58
+TMD        HD13         CD1        HD12     107.657    1.50
+TMD         CG1         CD2        HD21     109.636    1.50
+TMD         CG1         CD2        HD22     109.636    1.50
+TMD         CG1         CD2        HD23     109.636    1.50
+TMD        HD21         CD2        HD22     109.411    1.50
+TMD        HD21         CD2        HD23     109.411    1.50
+TMD        HD22         CD2        HD23     109.411    1.50
+TMD         CD1          CE          CZ     112.909    2.09
+TMD         CD1          CE         HE2     108.762    1.50
+TMD         CD1          CE         HE3     108.762    1.50
+TMD          CZ          CE         HE2     108.653    1.50
+TMD          CZ          CE         HE3     108.653    1.50
+TMD         HE2          CE         HE3     107.646    1.50
+TMD          CE          CZ          CH     113.719    3.00
+TMD          CE          CZ         HZ2     108.758    1.50
+TMD          CE          CZ         HZ3     108.758    1.50
+TMD          CH          CZ         HZ2     108.918    1.50
+TMD          CH          CZ         HZ3     108.918    1.50
+TMD         HZ2          CZ         HZ3     107.763    1.50
+TMD          CZ          CH         HH1     109.554    1.50
+TMD          CZ          CH         HH2     109.554    1.50
+TMD          CZ          CH         HH3     109.554    1.50
+TMD         HH1          CH         HH2     109.380    1.50
+TMD         HH1          CH         HH3     109.380    1.50
+TMD         HH2          CH         HH3     109.380    1.50
+TMD          CB         OG2         HG2     109.265    3.00
+TMD          CB         CG1         CD1     112.564    2.99
+TMD          CB         CG1         CD2     111.475    1.50
+TMD          CB         CG1         HG1     107.173    1.50
+TMD         CD1         CG1         CD2     111.118    1.50
+TMD         CD1         CG1         HG1     107.675    1.50
+TMD         CD2         CG1         HG1     107.528    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TMD             sp3_sp3_1         HN1          CN           N          CA     180.000   10.00     3
+TMD             sp3_sp3_7           C          CA           N          CN     180.000   10.00     3
+TMD            sp3_sp3_70         HH1          CH          CZ          CE     180.000   10.00     3
+TMD             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+TMD            sp3_sp3_13           N          CA          CB         OG2     180.000   10.00     3
+TMD            sp3_sp3_23          CA          CB         OG2         HG2      60.000   10.00     3
+TMD            sp3_sp3_26          CA          CB         CG1         CD1     -60.000   10.00     3
+TMD            sp3_sp3_43          CE         CD1         CG1          CB     180.000   10.00     3
+TMD            sp3_sp3_34         CG1         CD1          CE          CZ     180.000   10.00     3
+TMD            sp3_sp3_53        HD21         CD2         CG1          CB     -60.000   10.00     3
+TMD            sp3_sp3_61         CD1          CE          CZ          CH     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TMD    chir_1    N    CA    CN    H    positive
+TMD    chir_2    CA    N    C    CB    positive
+TMD    chir_3    CB    OG2    CA    CG1    both
+TMD    chir_4    CG1    CB    CD1    CD2    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TMD    plan-1           C   0.020
+TMD    plan-1          CA   0.020
+TMD    plan-1           O   0.020
+TMD    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TMD SMILES           ACDLabs              10.04 "O=C(O)C(NC)C(O)C(CCCC)C"
+TMD SMILES_CANONICAL CACTVS               3.341 "CCCC[C@@H](C)[C@@H](O)[C@H](NC)C(O)=O"
+TMD SMILES           CACTVS               3.341 "CCCC[CH](C)[CH](O)[CH](NC)C(O)=O"
+TMD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCCC[C@@H](C)[C@H]([C@@H](C(=O)O)NC)O"
+TMD SMILES           "OpenEye OEToolkits" 1.5.0 "CCCCC(C)C(C(C(=O)O)NC)O"
+TMD InChI            InChI                1.03  "InChI=1S/C10H21NO3/c1-4-5-6-7(2)9(12)8(11-3)10(13)14/h7-9,11-12H,4-6H2,1-3H3,(H,13,14)/t7-,8+,9-/m1/s1"
+TMD InChIKey         InChI                1.03  HGBRSLPVPAQWHK-HRDYMLBCSA-N
+TMD ?                acedrg               196         "dictionary generator"
+TMD ?                acedrg_database      11          "data source"
+TMD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TMD ?                refmac5              5.8.0222    "optimization tool"

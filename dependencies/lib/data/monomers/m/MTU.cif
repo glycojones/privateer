@@ -1,0 +1,299 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MTU      MTU '9-BETA-D-RIBOFURANOSYL-9H-PURIN-2-AM' non-polymer        35  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MTU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MTU           O1     O    OP       -0.666      0.000    0.000    0.000
+ MTU           P      P    P         0.000     -0.502    0.926   -1.086
+ MTU           OP1    O    OP       -0.666      0.355    2.149   -1.328
+ MTU           OP2    O    OP       -0.666     -0.670    0.007   -2.276
+ MTU           "O5'"  O    O2        0.000     -2.022    1.236   -0.623
+ MTU           "C5'"  C    CH2       0.000     -2.890    0.145   -0.375
+ MTU           "H5'"  H    H         0.000     -2.484   -0.477    0.426
+ MTU           "H5''" H    H         0.000     -2.999   -0.456   -1.281
+ MTU           "C4'"  C    CH1       0.000     -4.246    0.686    0.041
+ MTU           "H4'"  H    H         0.000     -4.128    1.319    0.931
+ MTU           "C3'"  C    CH1       0.000     -5.270   -0.400    0.325
+ MTU           "H3'"  H    H         0.000     -5.180   -1.196   -0.427
+ MTU           "O3'"  O    OH1       0.000     -5.119   -0.949    1.616
+ MTU           "HO3'" H    H         0.000     -4.183   -0.955    1.852
+ MTU           "C2'"  C    CH1       0.000     -6.582    0.337    0.130
+ MTU           "H2'"  H    H         0.000     -7.377   -0.349   -0.194
+ MTU           "O2'"  O    OH1       0.000     -6.961    1.039    1.313
+ MTU           "HO2'" H    H         0.000     -7.681    1.649    1.107
+ MTU           "C1'"  C    CH1       0.000     -6.246    1.346   -0.969
+ MTU           "H1'"  H    H         0.000     -6.668    2.322   -0.691
+ MTU           "O4'"  O    O2        0.000     -4.808    1.465   -1.028
+ MTU           N9     N    NR5       0.000     -6.758    0.971   -2.288
+ MTU           C8     C    CR15      0.000     -7.954    1.364   -2.831
+ MTU           H8     H    H         0.000     -8.663    2.009   -2.329
+ MTU           N7     N    NRD5      0.000     -8.140    0.864   -4.036
+ MTU           C5     C    CR56      0.000     -7.017    0.114   -4.284
+ MTU           C4     C    CR56      0.000     -6.145    0.168   -3.209
+ MTU           C6     C    CR16      0.000     -6.623   -0.651   -5.376
+ MTU           H6     H    H         0.000     -7.261   -0.732   -6.248
+ MTU           N1     N    NRD6      0.000     -5.431   -1.294   -5.335
+ MTU           C2     C    CR6       0.000     -4.682   -1.150   -4.215
+ MTU           N3     N    NRD6      0.000     -4.953   -0.439   -3.099
+ MTU           N2     N    NH2       0.000     -3.446   -1.837   -4.216
+ MTU           HN22   H    H         0.000     -3.365   -2.776   -4.611
+ MTU           HN21   H    H         0.000     -2.606   -1.411   -3.823
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MTU      O1     n/a    P      START
+ MTU      P      O1     "O5'"  .
+ MTU      OP1    P      .      .
+ MTU      OP2    P      .      .
+ MTU      "O5'"  P      "C5'"  .
+ MTU      "C5'"  "O5'"  "C4'"  .
+ MTU      "H5'"  "C5'"  .      .
+ MTU      "H5''" "C5'"  .      .
+ MTU      "C4'"  "C5'"  "C3'"  .
+ MTU      "H4'"  "C4'"  .      .
+ MTU      "C3'"  "C4'"  "C2'"  .
+ MTU      "H3'"  "C3'"  .      .
+ MTU      "O3'"  "C3'"  "HO3'" .
+ MTU      "HO3'" "O3'"  .      .
+ MTU      "C2'"  "C3'"  "C1'"  .
+ MTU      "H2'"  "C2'"  .      .
+ MTU      "O2'"  "C2'"  "HO2'" .
+ MTU      "HO2'" "O2'"  .      .
+ MTU      "C1'"  "C2'"  N9     .
+ MTU      "H1'"  "C1'"  .      .
+ MTU      "O4'"  "C1'"  .      .
+ MTU      N9     "C1'"  C8     .
+ MTU      C8     N9     N7     .
+ MTU      H8     C8     .      .
+ MTU      N7     C8     C5     .
+ MTU      C5     N7     C6     .
+ MTU      C4     C5     .      .
+ MTU      C6     C5     N1     .
+ MTU      H6     C6     .      .
+ MTU      N1     C6     C2     .
+ MTU      C2     N1     N2     .
+ MTU      N3     C2     .      .
+ MTU      N2     C2     HN21   .
+ MTU      HN22   N2     .      .
+ MTU      HN21   N2     .      END
+ MTU      "C4'"  "O4'"  .    ADD
+ MTU      N9     C4     .    ADD
+ MTU      C4     N3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MTU       OP1       P         deloc     1.510     0.020     1.510     0.020     
+MTU       OP2       P         deloc     1.510     0.020     1.510     0.020     
+MTU       "O5'"     P         single    1.610     0.020     1.610     0.020     
+MTU       P         O1        deloc     1.510     0.020     1.510     0.020     
+MTU       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+MTU       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+MTU       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+MTU       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+MTU       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+MTU       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+MTU       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+MTU       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+MTU       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+MTU       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+MTU       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+MTU       N9        C4        single    1.337     0.020     1.337     0.020     
+MTU       C8        N9        single    1.337     0.020     1.337     0.020     
+MTU       C4        N3        double    1.355     0.020     1.355     0.020     
+MTU       C4        C5        single    1.490     0.020     1.490     0.020     
+MTU       N3        C2        single    1.350     0.020     1.350     0.020     
+MTU       N2        C2        single    1.355     0.020     1.355     0.020     
+MTU       C2        N1        double    1.350     0.020     1.350     0.020     
+MTU       HN21      N2        single    1.016     0.010     0.899     0.007     
+MTU       HN22      N2        single    1.016     0.010     0.899     0.007     
+MTU       N1        C6        single    1.337     0.020     1.337     0.020     
+MTU       C6        C5        double    1.390     0.020     1.390     0.020     
+MTU       H6        C6        single    1.082     0.013     0.975     0.010     
+MTU       C5        N7        single    1.350     0.020     1.350     0.020     
+MTU       N7        C8        double    1.350     0.020     1.350     0.020     
+MTU       H8        C8        single    1.082     0.013     0.975     0.010     
+MTU       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+MTU       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+MTU       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+MTU       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+MTU       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+MTU       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+MTU       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MTU      O1     P      OP1     119.900    3.000
+ MTU      O1     P      OP2     119.900    3.000
+ MTU      O1     P      "O5'"   108.200    3.000
+ MTU      OP1    P      OP2     119.900    3.000
+ MTU      OP1    P      "O5'"   108.200    3.000
+ MTU      OP2    P      "O5'"   108.200    3.000
+ MTU      P      "O5'"  "C5'"   120.500    3.000
+ MTU      "O5'"  "C5'"  "H5'"   109.470    3.000
+ MTU      "O5'"  "C5'"  "H5''"  109.470    3.000
+ MTU      "O5'"  "C5'"  "C4'"   109.470    3.000
+ MTU      "H5'"  "C5'"  "H5''"  107.900    3.000
+ MTU      "H5'"  "C5'"  "C4'"   109.470    3.000
+ MTU      "H5''" "C5'"  "C4'"   109.470    3.000
+ MTU      "C5'"  "C4'"  "H4'"   108.340    3.000
+ MTU      "C5'"  "C4'"  "C3'"   111.000    3.000
+ MTU      "C5'"  "C4'"  "O4'"   109.470    3.000
+ MTU      "H4'"  "C4'"  "C3'"   108.340    3.000
+ MTU      "H4'"  "C4'"  "O4'"   109.470    3.000
+ MTU      "C3'"  "C4'"  "O4'"   109.470    3.000
+ MTU      "C4'"  "C3'"  "H3'"   108.340    3.000
+ MTU      "C4'"  "C3'"  "O3'"   109.470    3.000
+ MTU      "C4'"  "C3'"  "C2'"   111.000    3.000
+ MTU      "H3'"  "C3'"  "O3'"   109.470    3.000
+ MTU      "H3'"  "C3'"  "C2'"   108.340    3.000
+ MTU      "O3'"  "C3'"  "C2'"   109.470    3.000
+ MTU      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ MTU      "C3'"  "C2'"  "H2'"   108.340    3.000
+ MTU      "C3'"  "C2'"  "O2'"   109.470    3.000
+ MTU      "C3'"  "C2'"  "C1'"   111.000    3.000
+ MTU      "H2'"  "C2'"  "O2'"   109.470    3.000
+ MTU      "H2'"  "C2'"  "C1'"   108.340    3.000
+ MTU      "O2'"  "C2'"  "C1'"   109.470    3.000
+ MTU      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ MTU      "C2'"  "C1'"  "H1'"   108.340    3.000
+ MTU      "C2'"  "C1'"  "O4'"   109.470    3.000
+ MTU      "C2'"  "C1'"  N9      109.470    3.000
+ MTU      "H1'"  "C1'"  "O4'"   109.470    3.000
+ MTU      "H1'"  "C1'"  N9      109.470    3.000
+ MTU      "O4'"  "C1'"  N9      109.470    3.000
+ MTU      "C1'"  "O4'"  "C4'"   111.800    3.000
+ MTU      "C1'"  N9     C8      126.000    3.000
+ MTU      "C1'"  N9     C4      126.000    3.000
+ MTU      C8     N9     C4      108.000    3.000
+ MTU      N9     C8     H8      126.000    3.000
+ MTU      N9     C8     N7      108.000    3.000
+ MTU      H8     C8     N7      126.000    3.000
+ MTU      C8     N7     C5      108.000    3.000
+ MTU      N7     C5     C4      108.000    3.000
+ MTU      N7     C5     C6      132.000    3.000
+ MTU      C4     C5     C6      120.000    3.000
+ MTU      C5     C4     N9      108.000    3.000
+ MTU      C5     C4     N3      120.000    3.000
+ MTU      N9     C4     N3      132.000    3.000
+ MTU      C5     C6     H6      120.000    3.000
+ MTU      C5     C6     N1      120.000    3.000
+ MTU      H6     C6     N1      120.000    3.000
+ MTU      C6     N1     C2      120.000    3.000
+ MTU      N1     C2     N3      120.000    3.000
+ MTU      N1     C2     N2      120.000    3.000
+ MTU      N3     C2     N2      120.000    3.000
+ MTU      C2     N3     C4      120.000    3.000
+ MTU      C2     N2     HN22    120.000    3.000
+ MTU      C2     N2     HN21    120.000    3.000
+ MTU      HN22   N2     HN21    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MTU      var_1    O1     P      "O5'"  "C5'"    -54.200   20.000   1
+ MTU      var_2    P      "O5'"  "C5'"  "C4'"   -179.979   20.000   1
+ MTU      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.549   20.000   3
+ MTU      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ MTU      var_5    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ MTU      var_6    "C4'"  "C3'"  "O3'"  "HO3'"   -33.671   20.000   1
+ MTU      var_7    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ MTU      var_8    "C3'"  "C2'"  "O2'"  "HO2'"   167.522   20.000   1
+ MTU      var_9    "C3'"  "C2'"  "C1'"  N9        90.000   20.000   3
+ MTU      var_10   "C2'"  "C1'"  "O4'"  "C4'"      0.000   20.000   1
+ MTU      var_11   "C2'"  "C1'"  N9     C8        93.515   20.000   1
+ MTU      CONST_1  "C1'"  N9     C4     C5       180.000    0.000   0
+ MTU      CONST_2  "C1'"  N9     C8     N7       180.000    0.000   0
+ MTU      CONST_3  N9     C8     N7     C5         0.000    0.000   0
+ MTU      CONST_4  C8     N7     C5     C6       180.000    0.000   0
+ MTU      CONST_5  N7     C5     C4     N9         0.000    0.000   0
+ MTU      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ MTU      CONST_7  N7     C5     C6     N1       180.000    0.000   0
+ MTU      CONST_8  C5     C6     N1     C2         0.000    0.000   0
+ MTU      CONST_9  C6     N1     C2     N2       180.000    0.000   0
+ MTU      CONST_10 N1     C2     N3     C4         0.000    0.000   0
+ MTU      CONST_11 N1     C2     N2     HN21     140.406    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MTU      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ MTU      chir_02  "C1'"  "O4'"  N9     "C2'"     negativ
+ MTU      chir_03  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ MTU      chir_04  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MTU      plan-1    N9        0.020
+ MTU      plan-1    "C1'"     0.020
+ MTU      plan-1    C4        0.020
+ MTU      plan-1    C8        0.020
+ MTU      plan-1    N7        0.020
+ MTU      plan-1    N3        0.020
+ MTU      plan-1    C5        0.020
+ MTU      plan-1    C2        0.020
+ MTU      plan-1    N1        0.020
+ MTU      plan-1    C6        0.020
+ MTU      plan-1    N2        0.020
+ MTU      plan-1    H6        0.020
+ MTU      plan-1    H8        0.020
+ MTU      plan-1    HN22      0.020
+ MTU      plan-1    HN21      0.020
+ MTU      plan-2    N2        0.020
+ MTU      plan-2    C2        0.020
+ MTU      plan-2    HN21      0.020
+ MTU      plan-2    HN22      0.020
+# ------------------------------------------------------

@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PGO     PGO      S-1,2-PROPANEDIOL     NON-POLYMER     13     5     .     
+#
+data_comp_PGO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PGO     C1      C       CH2     0       -0.810      -0.735      0.440       
+PGO     C2      C       CH1     0       0.073       0.488       0.289       
+PGO     C3      C       CH3     0       1.481       0.136       -0.139      
+PGO     O1      O       OH1     0       -1.007      -1.393      -0.808      
+PGO     O2      O       OH1     0       -0.532      1.392       -0.644      
+PGO     H11     H       H       0       -1.688      -0.464      0.805       
+PGO     H12     H       H       0       -0.393      -1.365      1.076       
+PGO     H2      H       H       0       0.112       0.951       1.165       
+PGO     H31     H       H       0       1.677       0.540       -1.004      
+PGO     H32     H       H       0       1.579       -0.832      -0.207      
+PGO     H33     H       H       0       2.111       0.475       0.522       
+PGO     HO1     H       H       0       -1.427      -2.114      -0.665      
+PGO     HO2     H       H       0       -0.611      1.026       -1.406      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PGO       C1        C2        SINGLE    n         1.514     0.010     1.514     0.010     
+PGO       C1        O1        SINGLE    n         1.425     0.010     1.425     0.010     
+PGO       C2        C3        SINGLE    n         1.501     0.016     1.501     0.016     
+PGO       C2        O2        SINGLE    n         1.424     0.020     1.424     0.020     
+PGO       C1        H11       SINGLE    n         1.089     0.010     0.988     0.020     
+PGO       C1        H12       SINGLE    n         1.089     0.010     0.988     0.020     
+PGO       C2        H2        SINGLE    n         1.089     0.010     0.992     0.019     
+PGO       C3        H31       SINGLE    n         1.089     0.010     0.974     0.015     
+PGO       C3        H32       SINGLE    n         1.089     0.010     0.974     0.015     
+PGO       C3        H33       SINGLE    n         1.089     0.010     0.974     0.015     
+PGO       O1        HO1       SINGLE    n         0.970     0.012     0.846     0.020     
+PGO       O2        HO2       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PGO          C2          C1          O1     111.469    1.50
+PGO          C2          C1         H11     109.582    1.50
+PGO          C2          C1         H12     109.582    1.50
+PGO          O1          C1         H11     109.268    1.50
+PGO          O1          C1         H12     109.268    1.50
+PGO         H11          C1         H12     108.313    1.50
+PGO          C1          C2          C3     111.415    1.74
+PGO          C1          C2          O2     109.314    1.96
+PGO          C1          C2          H2     108.656    1.50
+PGO          C3          C2          O2     109.686    2.24
+PGO          C3          C2          H2     109.344    1.50
+PGO          O2          C2          H2     108.183    1.96
+PGO          C2          C3         H31     109.508    1.50
+PGO          C2          C3         H32     109.508    1.50
+PGO          C2          C3         H33     109.508    1.50
+PGO         H31          C3         H32     109.425    1.50
+PGO         H31          C3         H33     109.425    1.50
+PGO         H32          C3         H33     109.425    1.50
+PGO          C1          O1         HO1     108.280    3.00
+PGO          C2          O2         HO2     109.265    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PGO             sp3_sp3_2          O1          C1          C2          C3     -60.000   10.00     3
+PGO            sp3_sp3_10          C2          C1          O1         HO1     180.000   10.00     3
+PGO            sp3_sp3_13          C1          C2          C3         H31     180.000   10.00     3
+PGO            sp3_sp3_23          C1          C2          O2         HO2      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PGO    chir_1    C2    O2    C1    C3    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PGO SMILES           ACDLabs              10.04 "OCC(O)C"
+PGO SMILES_CANONICAL CACTVS               3.341 "C[C@H](O)CO"
+PGO SMILES           CACTVS               3.341 "C[CH](O)CO"
+PGO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@@H](CO)O"
+PGO SMILES           "OpenEye OEToolkits" 1.5.0 "CC(CO)O"
+PGO InChI            InChI                1.03  "InChI=1S/C3H8O2/c1-3(5)2-4/h3-5H,2H2,1H3/t3-/m0/s1"
+PGO InChIKey         InChI                1.03  DNIAPMSPPWPWGF-VKHMYHEASA-N
+PGO ?                acedrg               202         "dictionary generator"                  
+PGO ?                acedrg_database      11          "data source"                           
+PGO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PGO ?                refmac5              5.8.0189    "optimization tool"                     

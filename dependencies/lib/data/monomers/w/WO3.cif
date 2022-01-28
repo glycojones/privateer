@@ -1,0 +1,201 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+WO3      WO3 'TRI-TUNGSTEN(VI) OXIDE COMPLEX      ' non-polymer        16  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_WO3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ WO3           O4C    O    O         0.000      0.000    0.000    0.000
+ WO3           WC     W    W         0.000     -1.993    0.785    0.359
+ WO3           O      O    O         0.000     -1.423    2.472    1.766
+ WO3           O1C    O    O         0.000     -2.770   -0.087   -0.981
+ WO3           O2C    O    O         0.000     -2.100   -0.242    1.808
+ WO3           O3C    O    O2        0.000     -3.764    1.730    0.801
+ WO3           WA     W    W         0.000     -3.428    3.437    1.974
+ WO3           O4A    O    O         0.000     -4.312    1.933    3.296
+ WO3           O2A    O    O         0.000     -2.741    4.236    3.401
+ WO3           O1A    O    O         0.000     -4.931    4.235    1.607
+ WO3           O3B    O    O2        0.000     -1.031    2.201   -0.852
+ WO3           WB     W    W         0.000     -0.551    3.870    0.219
+ WO3           O3A    O    O2        0.000     -2.431    4.668    0.735
+ WO3           O1B    O    O         0.000     -0.311    4.800   -1.215
+ WO3           O2B    O    O         0.000      1.065    3.218    0.687
+ WO3           O4B    O    O         0.000     -0.148    5.530    1.591
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ WO3      O4C    n/a    WC     START
+ WO3      WC     O4C    O3B    .
+ WO3      O      WC     .      .
+ WO3      O1C    WC     .      .
+ WO3      O2C    WC     .      .
+ WO3      O3C    WC     WA     .
+ WO3      WA     O3C    O1A    .
+ WO3      O4A    WA     .      .
+ WO3      O2A    WA     .      .
+ WO3      O1A    WA     .      .
+ WO3      O3B    WC     WB     .
+ WO3      WB     O3B    O4B    .
+ WO3      O3A    WB     .      .
+ WO3      O1B    WB     .      .
+ WO3      O2B    WB     .      .
+ WO3      O4B    WB     .      END
+ WO3      WA     O      .    ADD
+ WO3      WA     O3A    .    ADD
+ WO3      WB     O      .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+WO3       O1A       WA        double    2.040     0.020     2.040     0.020     
+WO3       WA        O3A       double    2.135     0.020     2.135     0.020     
+WO3       WA        O3C       double    2.135     0.020     2.135     0.020     
+WO3       O4A       WA        double    2.040     0.020     2.040     0.020     
+WO3       WA        O         double    2.040     0.020     2.040     0.020     
+WO3       O2A       WA        double    2.040     0.020     2.040     0.020     
+WO3       O1B       WB        double    2.040     0.020     2.040     0.020     
+WO3       WB        O3B       double    2.135     0.020     2.135     0.020     
+WO3       O3A       WB        double    2.135     0.020     2.135     0.020     
+WO3       O4B       WB        double    2.040     0.020     2.040     0.020     
+WO3       WB        O         double    2.040     0.020     2.040     0.020     
+WO3       O2B       WB        double    2.040     0.020     2.040     0.020     
+WO3       O1C       WC        double    2.040     0.020     2.040     0.020     
+WO3       O3B       WC        double    2.135     0.020     2.135     0.020     
+WO3       O3C       WC        double    2.135     0.020     2.135     0.020     
+WO3       WC        O4C       double    2.040     0.020     2.040     0.020     
+WO3       O         WC        double    2.040     0.020     2.040     0.020     
+WO3       O2C       WC        double    2.040     0.020     2.040     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ WO3      O4C    WC     O        90.000    3.000
+ WO3      O4C    WC     O1C      90.000    3.000
+ WO3      O4C    WC     O2C      90.000    3.000
+ WO3      O4C    WC     O3C     180.000    3.000
+ WO3      O4C    WC     O3B      90.000    3.000
+ WO3      O      WC     O1C     144.000    3.000
+ WO3      O      WC     O2C      72.000    3.000
+ WO3      O1C    WC     O2C     144.000    3.000
+ WO3      O      WC     O3C      90.000    3.000
+ WO3      O1C    WC     O3C      90.000    3.000
+ WO3      O2C    WC     O3C      90.000    3.000
+ WO3      O      WC     O3B      72.000    3.000
+ WO3      O1C    WC     O3B      72.000    3.000
+ WO3      O2C    WC     O3B     144.000    3.000
+ WO3      O3C    WC     O3B      90.000    3.000
+ WO3      WC     O      WA      120.000    3.000
+ WO3      WC     O      WB      120.000    3.000
+ WO3      WA     O      WB      120.000    3.000
+ WO3      WC     O3C    WA      120.000    3.000
+ WO3      O3C    WA     O4A      90.000    3.000
+ WO3      O3C    WA     O2A     180.000    3.000
+ WO3      O3C    WA     O1A      90.000    3.000
+ WO3      O3C    WA     O        90.000    3.000
+ WO3      O3C    WA     O3A      90.000    3.000
+ WO3      O4A    WA     O2A      90.000    3.000
+ WO3      O4A    WA     O1A      90.000    3.000
+ WO3      O2A    WA     O1A      90.000    3.000
+ WO3      O      WA     O3A      90.000    3.000
+ WO3      O4A    WA     O        90.000    3.000
+ WO3      O2A    WA     O        90.000    3.000
+ WO3      O1A    WA     O       180.000    3.000
+ WO3      O4A    WA     O3A     180.000    3.000
+ WO3      O2A    WA     O3A      90.000    3.000
+ WO3      O1A    WA     O3A      90.000    3.000
+ WO3      WC     O3B    WB      120.000    3.000
+ WO3      O3B    WB     O3A      90.000    3.000
+ WO3      O3B    WB     O1B      90.000    3.000
+ WO3      O3B    WB     O2B      90.000    3.000
+ WO3      O3B    WB     O4B     180.000    3.000
+ WO3      O3B    WB     O        90.000    3.000
+ WO3      O3A    WB     O1B      90.000    3.000
+ WO3      O3A    WB     O2B     180.000    3.000
+ WO3      O1B    WB     O2B      90.000    3.000
+ WO3      O3A    WB     O4B      90.000    3.000
+ WO3      O1B    WB     O4B      90.000    3.000
+ WO3      O2B    WB     O4B      90.000    3.000
+ WO3      O3A    WB     O        90.000    3.000
+ WO3      O1B    WB     O       180.000    3.000
+ WO3      O2B    WB     O        90.000    3.000
+ WO3      O4B    WB     O        90.000    3.000
+ WO3      WB     O3A    WA      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ WO3      var_1    WA     O      WC     O3B        0.000   20.000   1
+ WO3      var_2    WA     O3C    WC     O          0.000   20.000   1
+ WO3      var_3    WC     O3C    WA     O4A        0.000   20.000   1
+ WO3      var_4    WC     O      WA     O3A        0.000   20.000   1
+ WO3      var_5    WB     O3A    WA     O          0.000   20.000   1
+ WO3      var_6    WB     O3B    WC     O          0.000   20.000   1
+ WO3      var_7    WC     O3B    WB     O3A        0.000   20.000   1
+ WO3      var_8    WC     O      WB     O3B        0.000   20.000   1
+ WO3      var_9    WA     O3A    WB     O3B        0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ WO3      chir_01  O      WA     WB     WC        positiv
+                   .      .      .      .      .
+ WO3      chir_02  WA     O4A    O3A    O3C       cross4
+                   O      O2A    O1A    .      .
+ WO3      chir_03  WB     O3B    O4B    O3A       cross4
+                   O1B    O2B    O      .      .
+ WO3      chir_04  WC     O4C    O3C    O         cross5
+                   O2C    .      O1C    O3B    .
+# ------------------------------------------------------

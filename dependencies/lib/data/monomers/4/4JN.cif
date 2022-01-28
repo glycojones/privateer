@@ -1,0 +1,139 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4JN     4JN      6-bromopyridin-3-amine     NON-POLYMER     13     8     .     
+#
+data_comp_4JN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4JN     C2      C       CR16    0       13.692      -8.408      32.762      
+4JN     C3      C       CR6     0       12.437      -7.930      33.089      
+4JN     C4      C       CR16    0       12.823      -8.010      35.351      
+4JN     N1      N       NRD6    0       12.000      -7.731      34.325      
+4JN     C1      C       CR16    0       14.562      -8.704      33.805      
+4JN     BR      BR      BR      0       11.208      -7.509      31.691      
+4JN     C       C       CR6     0       14.151      -8.512      35.155      
+4JN     N       N       NH2     0       14.976      -8.791      36.217      
+4JN     H1      H       H       0       13.961      -8.534      31.874      
+4JN     H2      H       H       0       12.509      -7.868      36.240      
+4JN     H3      H       H       0       15.425      -9.032      33.618      
+4JN     H4      H       H       0       14.687      -8.672      37.036      
+4JN     H5      H       H       0       15.789      -9.087      36.071      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4JN       C3        BR        SINGLE    n         1.908     0.011     1.908     0.011     
+4JN       C2        C3        DOUBLE    y         1.376     0.010     1.376     0.010     
+4JN       C2        C1        SINGLE    y         1.382     0.011     1.382     0.011     
+4JN       C3        N1        SINGLE    y         1.319     0.010     1.319     0.010     
+4JN       C1        C         DOUBLE    y         1.403     0.018     1.403     0.018     
+4JN       C4        N1        DOUBLE    y         1.336     0.011     1.336     0.011     
+4JN       C4        C         SINGLE    y         1.406     0.020     1.406     0.020     
+4JN       C         N         SINGLE    n         1.373     0.020     1.373     0.020     
+4JN       C2        H1        SINGLE    n         1.082     0.013     0.936     0.020     
+4JN       C4        H2        SINGLE    n         1.082     0.013     0.953     0.020     
+4JN       C1        H3        SINGLE    n         1.082     0.013     0.942     0.019     
+4JN       N         H4        SINGLE    n         1.016     0.010     0.877     0.020     
+4JN       N         H5        SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4JN          C3          C2          C1     117.703    1.50
+4JN          C3          C2          H1     122.050    1.50
+4JN          C1          C2          H1     120.246    1.50
+4JN          BR          C3          C2     119.005    1.50
+4JN          BR          C3          N1     115.762    1.50
+4JN          C2          C3          N1     125.233    1.50
+4JN          N1          C4           C     122.293    1.50
+4JN          N1          C4          H2     118.647    1.50
+4JN           C          C4          H2     119.060    1.50
+4JN          C3          N1          C4     118.208    1.50
+4JN          C2          C1           C     119.907    1.50
+4JN          C2          C1          H3     119.972    1.50
+4JN           C          C1          H3     120.121    1.50
+4JN          C1           C          C4     116.656    1.50
+4JN          C1           C           N     122.011    1.50
+4JN          C4           C           N     121.333    1.86
+4JN           C           N          H4     119.789    2.29
+4JN           C           N          H5     119.789    2.29
+4JN          H4           N          H5     120.421    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4JN       const_sp2_sp2_2          C1          C2          C3          BR     180.000   10.00     2
+4JN              const_17           C          C1          C2          C3       0.000   10.00     2
+4JN       const_sp2_sp2_6          BR          C3          N1          C4     180.000   10.00     2
+4JN       const_sp2_sp2_7           C          C4          N1          C3       0.000   10.00     2
+4JN              const_11           N           C          C4          N1     180.000   10.00     2
+4JN              const_15           N           C          C1          C2     180.000   10.00     2
+4JN             sp2_sp2_1          C1           C           N          H4     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4JN    plan-1          BR   0.020
+4JN    plan-1           C   0.020
+4JN    plan-1          C1   0.020
+4JN    plan-1          C2   0.020
+4JN    plan-1          C3   0.020
+4JN    plan-1          C4   0.020
+4JN    plan-1          H1   0.020
+4JN    plan-1          H2   0.020
+4JN    plan-1          H3   0.020
+4JN    plan-1           N   0.020
+4JN    plan-1          N1   0.020
+4JN    plan-2           C   0.020
+4JN    plan-2          H4   0.020
+4JN    plan-2          H5   0.020
+4JN    plan-2           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4JN SMILES           ACDLabs              12.01 "c1c(ncc(c1)N)Br"
+4JN InChI            InChI                1.03  "InChI=1S/C5H5BrN2/c6-5-2-1-4(7)3-8-5/h1-3H,7H2"
+4JN InChIKey         InChI                1.03  XTHKRYHULUJQHN-UHFFFAOYSA-N
+4JN SMILES_CANONICAL CACTVS               3.385 "Nc1ccc(Br)nc1"
+4JN SMILES           CACTVS               3.385 "Nc1ccc(Br)nc1"
+4JN SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "c1cc(ncc1N)Br"
+4JN SMILES           "OpenEye OEToolkits" 1.9.2 "c1cc(ncc1N)Br"
+4JN ?                acedrg               202         "dictionary generator"                  
+4JN ?                acedrg_database      11          "data source"                           
+4JN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4JN ?                refmac5              5.8.0189    "optimization tool"                     

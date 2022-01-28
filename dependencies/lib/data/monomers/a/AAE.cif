@@ -1,0 +1,124 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AAE     AAE      "ACETOACETIC ACID"     NON-POLYMER     12     7     .     
+#
+data_comp_AAE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AAE     O1      O       OC      -1      8.007       45.438      34.267      
+AAE     C2      C       C       0       8.928       44.780      34.783      
+AAE     O3      O       O       0       9.242       43.630      34.426      
+AAE     C4      C       CH2     0       9.719       45.420      35.919      
+AAE     C5      C       C       0       9.292       44.950      37.259      
+AAE     O8      O       O       0       9.988       44.200      37.913      
+AAE     C9      C       CH3     0       7.971       45.433      37.777      
+AAE     H41     H       H       0       9.603       46.388      35.872      
+AAE     H42     H       H       0       10.665      45.214      35.795      
+AAE     H91     H       H       0       7.832       45.101      38.679      
+AAE     H92     H       H       0       7.258       45.109      37.202      
+AAE     H93     H       H       0       7.960       46.404      37.786      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AAE       O1        C2        SINGLE    n         1.244     0.020     1.244     0.020     
+AAE       C2        O3        DOUBLE    n         1.244     0.020     1.244     0.020     
+AAE       C2        C4        SINGLE    n         1.525     0.014     1.525     0.014     
+AAE       C4        C5        SINGLE    n         1.481     0.020     1.481     0.020     
+AAE       C5        O8        DOUBLE    n         1.212     0.020     1.212     0.020     
+AAE       C5        C9        SINGLE    n         1.498     0.020     1.498     0.020     
+AAE       C4        H41       SINGLE    n         1.089     0.010     0.976     0.020     
+AAE       C4        H42       SINGLE    n         1.089     0.010     0.976     0.020     
+AAE       C9        H91       SINGLE    n         1.089     0.010     0.971     0.015     
+AAE       C9        H92       SINGLE    n         1.089     0.010     0.971     0.015     
+AAE       C9        H93       SINGLE    n         1.089     0.010     0.971     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AAE          O1          C2          O3     123.857    1.50
+AAE          O1          C2          C4     118.071    1.50
+AAE          O3          C2          C4     118.071    1.50
+AAE          C2          C4          C5     111.575    3.00
+AAE          C2          C4         H41     108.236    1.50
+AAE          C2          C4         H42     108.236    1.50
+AAE          C5          C4         H41     108.453    1.62
+AAE          C5          C4         H42     108.453    1.62
+AAE         H41          C4         H42     108.195    1.50
+AAE          C4          C5          O8     120.971    1.57
+AAE          C4          C5          C9     117.837    2.93
+AAE          O8          C5          C9     121.192    1.50
+AAE          C5          C9         H91     109.690    1.50
+AAE          C5          C9         H92     109.690    1.50
+AAE          C5          C9         H93     109.690    1.50
+AAE         H91          C9         H92     109.400    1.50
+AAE         H91          C9         H93     109.400    1.50
+AAE         H92          C9         H93     109.400    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AAE             sp2_sp3_2          O1          C2          C4          C5     120.000   10.00     6
+AAE             sp2_sp3_8          O8          C5          C4          C2     120.000   10.00     6
+AAE            sp2_sp3_13          C4          C5          C9         H91       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AAE    plan-1          C2   0.020
+AAE    plan-1          C4   0.020
+AAE    plan-1          O1   0.020
+AAE    plan-1          O3   0.020
+AAE    plan-2          C4   0.020
+AAE    plan-2          C5   0.020
+AAE    plan-2          C9   0.020
+AAE    plan-2          O8   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AAE SMILES           ACDLabs              10.04 "O=C(C)CC(=O)O"
+AAE SMILES_CANONICAL CACTVS               3.341 "CC(=O)CC(O)=O"
+AAE SMILES           CACTVS               3.341 "CC(=O)CC(O)=O"
+AAE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)CC(=O)O"
+AAE SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)CC(=O)O"
+AAE InChI            InChI                1.03  "InChI=1S/C4H6O3/c1-3(5)2-4(6)7/h2H2,1H3,(H,6,7)"
+AAE InChIKey         InChI                1.03  WDJHALXBUFZDSR-UHFFFAOYSA-N
+AAE ?                acedrg               202         "dictionary generator"                  
+AAE ?                acedrg_database      11          "data source"                           
+AAE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AAE ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,124 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EOM      EOM 'ETHYLOXYMETHOXYL                    ' non-polymer        12   5 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_EOM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ EOM           "CD'"  C    CH3       0.000      0.000    0.000    0.000
+ EOM           "HD'1" H    H         0.000      0.059   -0.257    1.027
+ EOM           "HD'2" H    H         0.000      0.639   -0.637   -0.557
+ EOM           "HD'3" H    H         0.000      0.311    1.006   -0.127
+ EOM           "CC'"  C    CH2       0.000     -1.441   -0.160   -0.490
+ EOM           "HC'1" H    H         0.000     -1.756   -1.197   -0.359
+ EOM           "HC'2" H    H         0.000     -1.496    0.105   -1.548
+ EOM           "OB'"  O    O2        0.000     -2.298    0.699    0.264
+ EOM           "CA'"  C    CH2       0.000     -3.623    0.504   -0.237
+ EOM           "HA'2" H    H         0.000     -3.601    0.500   -1.329
+ EOM           "HA'1" H    H         0.000     -4.265    1.316    0.110
+ EOM           "O2'"  O    O        -1.000     -4.132   -0.745    0.236
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ EOM      "CD'"  n/a    "CC'"  START
+ EOM      "HD'1" "CD'"  .      .
+ EOM      "HD'2" "CD'"  .      .
+ EOM      "HD'3" "CD'"  .      .
+ EOM      "CC'"  "CD'"  "OB'"  .
+ EOM      "HC'1" "CC'"  .      .
+ EOM      "HC'2" "CC'"  .      .
+ EOM      "OB'"  "CC'"  "CA'"  .
+ EOM      "CA'"  "OB'"  "O2'"  .
+ EOM      "HA'2" "CA'"  .      .
+ EOM      "HA'1" "CA'"  .      .
+ EOM      "O2'"  "CA'"  .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EOM       "O2'"     "CA'"     single    1.420     0.020     1.420     0.020     
+EOM       "CA'"     "OB'"     single    1.426     0.020     1.426     0.020     
+EOM       "HA'1"    "CA'"     single    1.089     0.010     0.989     0.005     
+EOM       "HA'2"    "CA'"     single    1.089     0.010     0.989     0.005     
+EOM       "OB'"     "CC'"     single    1.426     0.020     1.426     0.020     
+EOM       "CC'"     "CD'"     single    1.513     0.020     1.513     0.020     
+EOM       "HC'1"    "CC'"     single    1.089     0.010     0.989     0.005     
+EOM       "HC'2"    "CC'"     single    1.089     0.010     0.989     0.005     
+EOM       "HD'1"    "CD'"     single    1.089     0.010     0.989     0.005     
+EOM       "HD'2"    "CD'"     single    1.089     0.010     0.989     0.005     
+EOM       "HD'3"    "CD'"     single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ EOM      "HD'1" "CD'"  "HD'2"  109.470    3.000
+ EOM      "HD'1" "CD'"  "HD'3"  109.470    3.000
+ EOM      "HD'2" "CD'"  "HD'3"  109.470    3.000
+ EOM      "HD'1" "CD'"  "CC'"   109.470    3.000
+ EOM      "HD'2" "CD'"  "CC'"   109.470    3.000
+ EOM      "HD'3" "CD'"  "CC'"   109.470    3.000
+ EOM      "CD'"  "CC'"  "HC'1"  109.470    3.000
+ EOM      "CD'"  "CC'"  "HC'2"  109.470    3.000
+ EOM      "CD'"  "CC'"  "OB'"   109.470    3.000
+ EOM      "HC'1" "CC'"  "HC'2"  107.900    3.000
+ EOM      "HC'1" "CC'"  "OB'"   109.470    3.000
+ EOM      "HC'2" "CC'"  "OB'"   109.470    3.000
+ EOM      "CC'"  "OB'"  "CA'"   111.800    3.000
+ EOM      "OB'"  "CA'"  "HA'2"  109.470    3.000
+ EOM      "OB'"  "CA'"  "HA'1"  109.470    3.000
+ EOM      "OB'"  "CA'"  "O2'"   109.500    3.000
+ EOM      "HA'2" "CA'"  "HA'1"  107.900    3.000
+ EOM      "HA'2" "CA'"  "O2'"   109.470    3.000
+ EOM      "HA'1" "CA'"  "O2'"   109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ EOM      var_1    "HD'3" "CD'"  "CC'"  "OB'"    -60.034   20.000   3
+ EOM      var_2    "CD'"  "CC'"  "OB'"  "CA'"   -179.976   20.000   1
+ EOM      var_3    "CC'"  "OB'"  "CA'"  "O2'"     75.023   20.000   1
+# ------------------------------------------------------

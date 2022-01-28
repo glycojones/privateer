@@ -1,0 +1,391 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+7HA      7HA 'N-(3-{[2-(4-chlorophenyl)-5-methyl-1' non-polymer        51  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_7HA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 7HA           O29    O    O         0.000      0.000    0.000    0.000
+ 7HA           C28    C    C         0.000     -0.539    0.773   -0.767
+ 7HA           O30    O    O2        0.000      0.026    1.040   -1.960
+ 7HA           C31    C    CH3       0.000      1.278    0.370   -2.262
+ 7HA           H31B   H    H         0.000      2.009    0.631   -1.539
+ 7HA           H31A   H    H         0.000      1.135   -0.682   -2.249
+ 7HA           H31    H    H         0.000      1.619    0.662   -3.224
+ 7HA           N23    N    N         0.000     -1.701    1.363   -0.425
+ 7HA           C24    C    CH2       0.000     -2.351    2.294   -1.350
+ 7HA           H24    H    H         0.000     -3.432    2.256   -1.205
+ 7HA           H24A   H    H         0.000     -2.113    2.011   -2.378
+ 7HA           C25    C    C         0.000     -1.855    3.692   -1.085
+ 7HA           O27    O    OC       -0.500     -2.284    4.648   -1.769
+ 7HA           O26    O    OC       -0.500     -1.014    3.898   -0.182
+ 7HA           C22    C    CH2       0.000     -2.315    1.072    0.873
+ 7HA           H22    H    H         0.000     -2.878    1.944    1.212
+ 7HA           H22A   H    H         0.000     -1.534    0.839    1.600
+ 7HA           C20    C    CR6       0.000     -3.245   -0.107    0.736
+ 7HA           C19    C    CR16      0.000     -2.767   -1.390    0.934
+ 7HA           H19    H    H         0.000     -1.726   -1.546    1.186
+ 7HA           C18    C    CR16      0.000     -3.617   -2.474    0.810
+ 7HA           H18    H    H         0.000     -3.242   -3.477    0.966
+ 7HA           C17    C    CR16      0.000     -4.946   -2.277    0.486
+ 7HA           H17    H    H         0.000     -5.612   -3.125    0.389
+ 7HA           C21    C    CR16      0.000     -4.571    0.093    0.406
+ 7HA           H21    H    H         0.000     -4.943    1.097    0.242
+ 7HA           C16    C    CR6       0.000     -5.427   -0.991    0.286
+ 7HA           O15    O    O2        0.000     -6.733   -0.795   -0.033
+ 7HA           C14    C    CH2       0.000     -7.557   -1.959   -0.139
+ 7HA           H14    H    H         0.000     -7.563   -2.488    0.816
+ 7HA           H14A   H    H         0.000     -7.159   -2.616   -0.916
+ 7HA           C3     C    CR5       0.000     -8.962   -1.548   -0.497
+ 7HA           N4     N    NRD5      0.000     -9.945   -1.257    0.369
+ 7HA           C5     C    CR5       0.000    -11.023   -0.945   -0.310
+ 7HA           O6     O    O2        0.000    -10.741   -1.026   -1.622
+ 7HA           C2     C    CR5       0.000     -9.455   -1.410   -1.741
+ 7HA           C1     C    CH3       0.000     -8.705   -1.635   -3.030
+ 7HA           H1B    H    H         0.000     -9.099   -1.003   -3.783
+ 7HA           H1A    H    H         0.000     -7.679   -1.414   -2.885
+ 7HA           H1     H    H         0.000     -8.809   -2.646   -3.327
+ 7HA           C7     C    CR6       0.000    -12.327   -0.561    0.271
+ 7HA           C12    C    CR16      0.000    -12.491   -0.513    1.656
+ 7HA           H12    H    H         0.000    -11.664   -0.762    2.309
+ 7HA           C11    C    CR16      0.000    -13.709   -0.149    2.192
+ 7HA           H11    H    H         0.000    -13.835   -0.103    3.267
+ 7HA           C10    C    CR6       0.000    -14.771    0.158    1.357
+ 7HA           CL13   CL   CL        0.000    -16.303    0.608    2.039
+ 7HA           C9     C    CR16      0.000    -14.616    0.107   -0.017
+ 7HA           H9     H    H         0.000    -15.450    0.349   -0.665
+ 7HA           C8     C    CR16      0.000    -13.401   -0.250   -0.564
+ 7HA           H8     H    H         0.000    -13.281   -0.290   -1.640
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 7HA      O29    n/a    C28    START
+ 7HA      C28    O29    N23    .
+ 7HA      O30    C28    C31    .
+ 7HA      C31    O30    H31    .
+ 7HA      H31B   C31    .      .
+ 7HA      H31A   C31    .      .
+ 7HA      H31    C31    .      .
+ 7HA      N23    C28    C22    .
+ 7HA      C24    N23    C25    .
+ 7HA      H24    C24    .      .
+ 7HA      H24A   C24    .      .
+ 7HA      C25    C24    O26    .
+ 7HA      O27    C25    .      .
+ 7HA      O26    C25    .      .
+ 7HA      C22    N23    C20    .
+ 7HA      H22    C22    .      .
+ 7HA      H22A   C22    .      .
+ 7HA      C20    C22    C21    .
+ 7HA      C19    C20    C18    .
+ 7HA      H19    C19    .      .
+ 7HA      C18    C19    C17    .
+ 7HA      H18    C18    .      .
+ 7HA      C17    C18    H17    .
+ 7HA      H17    C17    .      .
+ 7HA      C21    C20    C16    .
+ 7HA      H21    C21    .      .
+ 7HA      C16    C21    O15    .
+ 7HA      O15    C16    C14    .
+ 7HA      C14    O15    C3     .
+ 7HA      H14    C14    .      .
+ 7HA      H14A   C14    .      .
+ 7HA      C3     C14    N4     .
+ 7HA      N4     C3     C5     .
+ 7HA      C5     N4     C7     .
+ 7HA      O6     C5     C2     .
+ 7HA      C2     O6     C1     .
+ 7HA      C1     C2     H1     .
+ 7HA      H1B    C1     .      .
+ 7HA      H1A    C1     .      .
+ 7HA      H1     C1     .      .
+ 7HA      C7     C5     C12    .
+ 7HA      C12    C7     C11    .
+ 7HA      H12    C12    .      .
+ 7HA      C11    C12    C10    .
+ 7HA      H11    C11    .      .
+ 7HA      C10    C11    C9     .
+ 7HA      CL13   C10    .      .
+ 7HA      C9     C10    C8     .
+ 7HA      H9     C9     .      .
+ 7HA      C8     C9     H8     .
+ 7HA      H8     C8     .      END
+ 7HA      C2     C3     .    ADD
+ 7HA      C7     C8     .    ADD
+ 7HA      C16    C17    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+7HA       C1        C2        single    1.506     0.020     1.506     0.020     
+7HA       H1        C1        single    1.089     0.010     0.989     0.005     
+7HA       H1A       C1        single    1.089     0.010     0.989     0.005     
+7HA       H1B       C1        single    1.089     0.010     0.989     0.005     
+7HA       C2        O6        single    1.370     0.020     1.370     0.020     
+7HA       C2        C3        double    1.490     0.020     1.490     0.020     
+7HA       N4        C3        single    1.350     0.020     1.350     0.020     
+7HA       C3        C14       single    1.510     0.020     1.510     0.020     
+7HA       C5        N4        double    1.350     0.020     1.350     0.020     
+7HA       C7        C5        single    1.490     0.020     1.490     0.020     
+7HA       O6        C5        single    1.370     0.020     1.370     0.020     
+7HA       C7        C8        double    1.390     0.020     1.390     0.020     
+7HA       C12       C7        single    1.390     0.020     1.390     0.020     
+7HA       C8        C9        single    1.390     0.020     1.390     0.020     
+7HA       H8        C8        single    1.082     0.013     0.975     0.010     
+7HA       C9        C10       double    1.390     0.020     1.390     0.020     
+7HA       H9        C9        single    1.082     0.013     0.975     0.010     
+7HA       CL13      C10       single    1.795     0.020     1.795     0.020     
+7HA       C10       C11       single    1.390     0.020     1.390     0.020     
+7HA       C11       C12       double    1.390     0.020     1.390     0.020     
+7HA       H11       C11       single    1.082     0.013     0.975     0.010     
+7HA       H12       C12       single    1.082     0.013     0.975     0.010     
+7HA       C14       O15       single    1.426     0.020     1.426     0.020     
+7HA       H14       C14       single    1.089     0.010     0.989     0.005     
+7HA       H14A      C14       single    1.089     0.010     0.989     0.005     
+7HA       O15       C16       single    1.370     0.020     1.370     0.020     
+7HA       C16       C21       double    1.390     0.020     1.390     0.020     
+7HA       C16       C17       single    1.390     0.020     1.390     0.020     
+7HA       C17       C18       double    1.390     0.020     1.390     0.020     
+7HA       H17       C17       single    1.082     0.013     0.975     0.010     
+7HA       C18       C19       single    1.390     0.020     1.390     0.020     
+7HA       H18       C18       single    1.082     0.013     0.975     0.010     
+7HA       C19       C20       double    1.390     0.020     1.390     0.020     
+7HA       H19       C19       single    1.082     0.013     0.975     0.010     
+7HA       C21       C20       single    1.390     0.020     1.390     0.020     
+7HA       C20       C22       single    1.511     0.020     1.511     0.020     
+7HA       H21       C21       single    1.082     0.013     0.975     0.010     
+7HA       C22       N23       single    1.455     0.020     1.455     0.020     
+7HA       H22       C22       single    1.089     0.010     0.989     0.005     
+7HA       H22A      C22       single    1.089     0.010     0.989     0.005     
+7HA       C24       N23       single    1.455     0.020     1.455     0.020     
+7HA       N23       C28       single    1.330     0.020     1.330     0.020     
+7HA       C25       C24       single    1.510     0.020     1.510     0.020     
+7HA       H24       C24       single    1.089     0.010     0.989     0.005     
+7HA       H24A      C24       single    1.089     0.010     0.989     0.005     
+7HA       O26       C25       deloc     1.250     0.020     1.250     0.020     
+7HA       O27       C25       deloc     1.250     0.020     1.250     0.020     
+7HA       O30       C28       single    1.454     0.020     1.454     0.020     
+7HA       C28       O29       double    1.220     0.020     1.220     0.020     
+7HA       C31       O30       single    1.426     0.020     1.426     0.020     
+7HA       H31       C31       single    1.089     0.010     0.989     0.005     
+7HA       H31A      C31       single    1.089     0.010     0.989     0.005     
+7HA       H31B      C31       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 7HA      O29    C28    O30     119.000    3.000
+ 7HA      O29    C28    N23     123.000    3.000
+ 7HA      O30    C28    N23     120.000    3.000
+ 7HA      C28    O30    C31     120.000    3.000
+ 7HA      O30    C31    H31B    109.470    3.000
+ 7HA      O30    C31    H31A    109.470    3.000
+ 7HA      O30    C31    H31     109.470    3.000
+ 7HA      H31B   C31    H31A    109.470    3.000
+ 7HA      H31B   C31    H31     109.470    3.000
+ 7HA      H31A   C31    H31     109.470    3.000
+ 7HA      C28    N23    C24     127.000    3.000
+ 7HA      C28    N23    C22     127.000    3.000
+ 7HA      C24    N23    C22     120.000    3.000
+ 7HA      N23    C24    H24     109.470    3.000
+ 7HA      N23    C24    H24A    109.470    3.000
+ 7HA      N23    C24    C25     109.500    3.000
+ 7HA      H24    C24    H24A    107.900    3.000
+ 7HA      H24    C24    C25     109.470    3.000
+ 7HA      H24A   C24    C25     109.470    3.000
+ 7HA      C24    C25    O27     118.500    3.000
+ 7HA      C24    C25    O26     118.500    3.000
+ 7HA      O27    C25    O26     123.000    3.000
+ 7HA      N23    C22    H22     109.470    3.000
+ 7HA      N23    C22    H22A    109.470    3.000
+ 7HA      N23    C22    C20     109.470    3.000
+ 7HA      H22    C22    H22A    107.900    3.000
+ 7HA      H22    C22    C20     109.470    3.000
+ 7HA      H22A   C22    C20     109.470    3.000
+ 7HA      C22    C20    C19     120.000    3.000
+ 7HA      C22    C20    C21     120.000    3.000
+ 7HA      C19    C20    C21     120.000    3.000
+ 7HA      C20    C19    H19     120.000    3.000
+ 7HA      C20    C19    C18     120.000    3.000
+ 7HA      H19    C19    C18     120.000    3.000
+ 7HA      C19    C18    H18     120.000    3.000
+ 7HA      C19    C18    C17     120.000    3.000
+ 7HA      H18    C18    C17     120.000    3.000
+ 7HA      C18    C17    H17     120.000    3.000
+ 7HA      C18    C17    C16     120.000    3.000
+ 7HA      H17    C17    C16     120.000    3.000
+ 7HA      C20    C21    H21     120.000    3.000
+ 7HA      C20    C21    C16     120.000    3.000
+ 7HA      H21    C21    C16     120.000    3.000
+ 7HA      C21    C16    O15     120.000    3.000
+ 7HA      C21    C16    C17     120.000    3.000
+ 7HA      O15    C16    C17     120.000    3.000
+ 7HA      C16    O15    C14     120.000    3.000
+ 7HA      O15    C14    H14     109.470    3.000
+ 7HA      O15    C14    H14A    109.470    3.000
+ 7HA      O15    C14    C3      109.500    3.000
+ 7HA      H14    C14    H14A    107.900    3.000
+ 7HA      H14    C14    C3      109.470    3.000
+ 7HA      H14A   C14    C3      109.470    3.000
+ 7HA      C14    C3     N4      126.000    3.000
+ 7HA      C14    C3     C2      126.000    3.000
+ 7HA      N4     C3     C2      108.000    3.000
+ 7HA      C3     N4     C5      108.000    3.000
+ 7HA      N4     C5     O6      108.000    3.000
+ 7HA      N4     C5     C7      126.000    3.000
+ 7HA      O6     C5     C7      126.000    3.000
+ 7HA      C5     O6     C2      108.000    3.000
+ 7HA      O6     C2     C1      108.000    3.000
+ 7HA      O6     C2     C3      108.000    3.000
+ 7HA      C1     C2     C3      126.000    3.000
+ 7HA      C2     C1     H1B     109.470    3.000
+ 7HA      C2     C1     H1A     109.470    3.000
+ 7HA      C2     C1     H1      109.470    3.000
+ 7HA      H1B    C1     H1A     109.470    3.000
+ 7HA      H1B    C1     H1      109.470    3.000
+ 7HA      H1A    C1     H1      109.470    3.000
+ 7HA      C5     C7     C12     120.000    3.000
+ 7HA      C5     C7     C8      120.000    3.000
+ 7HA      C12    C7     C8      120.000    3.000
+ 7HA      C7     C12    H12     120.000    3.000
+ 7HA      C7     C12    C11     120.000    3.000
+ 7HA      H12    C12    C11     120.000    3.000
+ 7HA      C12    C11    H11     120.000    3.000
+ 7HA      C12    C11    C10     120.000    3.000
+ 7HA      H11    C11    C10     120.000    3.000
+ 7HA      C11    C10    CL13    120.000    3.000
+ 7HA      C11    C10    C9      120.000    3.000
+ 7HA      CL13   C10    C9      120.000    3.000
+ 7HA      C10    C9     H9      120.000    3.000
+ 7HA      C10    C9     C8      120.000    3.000
+ 7HA      H9     C9     C8      120.000    3.000
+ 7HA      C9     C8     H8      120.000    3.000
+ 7HA      C9     C8     C7      120.000    3.000
+ 7HA      H8     C8     C7      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 7HA      var_1    O29    C28    O30    C31       -0.076   20.000   1
+ 7HA      var_2    C28    O30    C31    H31     -179.930   20.000   1
+ 7HA      CONST_1  O29    C28    N23    C22        0.000    0.000   0
+ 7HA      var_3    C28    N23    C24    C25      -89.999   20.000   1
+ 7HA      var_4    N23    C24    C25    O26       -0.010   20.000   3
+ 7HA      var_5    C28    N23    C22    C20      -90.043   20.000   1
+ 7HA      var_6    N23    C22    C20    C21      -89.665   20.000   2
+ 7HA      CONST_2  C22    C20    C19    C18      180.000    0.000   0
+ 7HA      CONST_3  C20    C19    C18    C17        0.000    0.000   0
+ 7HA      CONST_4  C19    C18    C17    C16        0.000    0.000   0
+ 7HA      CONST_5  C22    C20    C21    C16      180.000    0.000   0
+ 7HA      CONST_6  C20    C21    C16    O15      180.000    0.000   0
+ 7HA      CONST_7  C21    C16    C17    C18        0.000    0.000   0
+ 7HA      var_7    C21    C16    O15    C14     -179.954   20.000   1
+ 7HA      var_8    C16    O15    C14    C3       179.982   20.000   1
+ 7HA      var_9    O15    C14    C3     N4       -90.090   20.000   2
+ 7HA      CONST_8  C14    C3     N4     C5       180.000    0.000   0
+ 7HA      CONST_9  C3     N4     C5     C7       180.000    0.000   0
+ 7HA      CONST_10 N4     C5     O6     C2         0.000    0.000   0
+ 7HA      CONST_11 C5     O6     C2     C1       180.000    0.000   0
+ 7HA      CONST_12 O6     C2     C3     C14      180.000    0.000   0
+ 7HA      var_10   O6     C2     C1     H1       -90.344   20.000   1
+ 7HA      var_11   N4     C5     C7     C12       -0.338   20.000   1
+ 7HA      CONST_13 C5     C7     C8     C9       180.000    0.000   0
+ 7HA      CONST_14 C5     C7     C12    C11      180.000    0.000   0
+ 7HA      CONST_15 C7     C12    C11    C10        0.000    0.000   0
+ 7HA      CONST_16 C12    C11    C10    C9         0.000    0.000   0
+ 7HA      CONST_17 C11    C10    C9     C8         0.000    0.000   0
+ 7HA      CONST_18 C10    C9     C8     C7         0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 7HA      plan-1    C2        0.020
+ 7HA      plan-1    C1        0.020
+ 7HA      plan-1    C3        0.020
+ 7HA      plan-1    O6        0.020
+ 7HA      plan-1    N4        0.020
+ 7HA      plan-1    C5        0.020
+ 7HA      plan-1    C14       0.020
+ 7HA      plan-1    C7        0.020
+ 7HA      plan-2    C7        0.020
+ 7HA      plan-2    C5        0.020
+ 7HA      plan-2    C8        0.020
+ 7HA      plan-2    C12       0.020
+ 7HA      plan-2    C9        0.020
+ 7HA      plan-2    C10       0.020
+ 7HA      plan-2    C11       0.020
+ 7HA      plan-2    H8        0.020
+ 7HA      plan-2    H9        0.020
+ 7HA      plan-2    CL13      0.020
+ 7HA      plan-2    H11       0.020
+ 7HA      plan-2    H12       0.020
+ 7HA      plan-3    C16       0.020
+ 7HA      plan-3    O15       0.020
+ 7HA      plan-3    C17       0.020
+ 7HA      plan-3    C21       0.020
+ 7HA      plan-3    C18       0.020
+ 7HA      plan-3    C19       0.020
+ 7HA      plan-3    C20       0.020
+ 7HA      plan-3    H17       0.020
+ 7HA      plan-3    H18       0.020
+ 7HA      plan-3    H19       0.020
+ 7HA      plan-3    C22       0.020
+ 7HA      plan-3    H21       0.020
+ 7HA      plan-4    N23       0.020
+ 7HA      plan-4    C22       0.020
+ 7HA      plan-4    C24       0.020
+ 7HA      plan-4    C28       0.020
+ 7HA      plan-5    C25       0.020
+ 7HA      plan-5    C24       0.020
+ 7HA      plan-5    O26       0.020
+ 7HA      plan-5    O27       0.020
+ 7HA      plan-6    C28       0.020
+ 7HA      plan-6    N23       0.020
+ 7HA      plan-6    O29       0.020
+ 7HA      plan-6    O30       0.020
+# ------------------------------------------------------

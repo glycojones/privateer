@@ -1,0 +1,217 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DLY     DLY     D-LYSINE     peptide     25     10     .
+#
+data_comp_DLY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DLY     N       N       NT3     1       -2.931      -1.193      -1.462
+DLY     CA      C       CH1     0       -2.127      -0.361      -0.525
+DLY     C       C       C       0       -2.452      1.120       -0.761
+DLY     O       O       O       0       -2.364      1.542       -1.931
+DLY     CB      C       CH2     0       -0.632      -0.637      -0.716
+DLY     CG      C       CH2     0       0.276       -0.092      0.379
+DLY     CD      C       CH2     0       1.727       -0.494      0.217
+DLY     CE      C       CH2     0       2.608       -0.018      1.354
+DLY     NZ      N       NT3     1       2.803       1.452       1.332
+DLY     OXT     O       OC      -1      -2.780      1.795       0.235
+DLY     H       H       H       0       -2.710      -0.995      -2.323
+DLY     H2      H       H       0       -3.820      -1.033      -1.340
+DLY     H3      H       H       0       -2.770      -2.077      -1.311
+DLY     HA      H       H       0       -2.380      -0.597      0.397
+DLY     HB2     H       H       0       -0.352      -0.251      -1.572
+DLY     HB3     H       H       0       -0.502      -1.607      -0.771
+DLY     HG2     H       H       0       -0.049      -0.413      1.247
+DLY     HG3     H       H       0       0.216       0.887       0.380
+DLY     HD2     H       H       0       2.068       -0.126      -0.625
+DLY     HD3     H       H       0       1.782       -1.472      0.163
+DLY     HE2     H       H       0       3.480       -0.453      1.294
+DLY     HE3     H       H       0       2.204       -0.270      2.206
+DLY     HZ1     H       H       0       3.457       1.683       1.915
+DLY     HZ2     H       H       0       2.034       1.868       1.571
+DLY     HZ3     H       H       0       3.041       1.720       0.499
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DLY      N      n/a    CA     START
+DLY      H      N      .      .
+DLY      H2     N      .      .
+DLY      H3     N      .      .
+DLY      CA     N      C      .
+DLY      HA     CA     .      .
+DLY      CB     CA     CG     .
+DLY      HB2    CB     .      .
+DLY      HB3    CB     .      .
+DLY      CG     CB     CD     .
+DLY      HG2    CG     .      .
+DLY      HG3    CG     .      .
+DLY      CD     CG     CE     .
+DLY      HD2    CD     .      .
+DLY      HD3    CD     .      .
+DLY      CE     CD     NZ     .
+DLY      HE2    CE     .      .
+DLY      HE3    CE     .      .
+DLY      NZ     CE     HZ1    .
+DLY      HZ3    NZ     .      .
+DLY      HZ2    NZ     .      .
+DLY      HZ1    NZ     .      .
+DLY      C      CA     .      END
+DLY      O      C      .      .
+DLY      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DLY       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+DLY       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DLY       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+DLY       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DLY       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DLY       CB        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+DLY       CG        CD        SINGLE    n         1.514     0.020     1.514     0.020     
+DLY       CD        CE        SINGLE    n         1.514     0.012     1.514     0.012     
+DLY       CE        NZ        SINGLE    n         1.482     0.012     1.482     0.012     
+DLY       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DLY       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DLY       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DLY       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+DLY       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+DLY       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+DLY       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+DLY       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.016     
+DLY       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.016     
+DLY       CD        HD3       SINGLE    n         1.089     0.010     0.981     0.016     
+DLY       CE        HE2       SINGLE    n         1.089     0.010     0.976     0.017     
+DLY       CE        HE3       SINGLE    n         1.089     0.010     0.976     0.017     
+DLY       NZ        HZ1       SINGLE    n         1.036     0.016     0.907     0.020     
+DLY       NZ        HZ2       SINGLE    n         1.036     0.016     0.907     0.020     
+DLY       NZ        HZ3       SINGLE    n         1.036     0.016     0.907     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DLY          CA           N           H     110.062    1.93
+DLY          CA           N          H2     110.062    1.93
+DLY          CA           N          H3     110.062    1.93
+DLY           H           N          H2     109.028    2.41
+DLY           H           N          H3     109.028    2.41
+DLY          H2           N          H3     109.028    2.41
+DLY           N          CA           C     109.241    1.50
+DLY           N          CA          CB     110.374    1.62
+DLY           N          CA          HA     108.487    1.50
+DLY           C          CA          CB     111.037    2.40
+DLY           C          CA          HA     108.824    1.50
+DLY          CB          CA          HA     108.967    1.50
+DLY          CA           C           O     117.124    1.50
+DLY          CA           C         OXT     117.124    1.50
+DLY           O           C         OXT     125.752    1.50
+DLY          CA          CB          CG     115.311    1.56
+DLY          CA          CB         HB2     108.549    1.50
+DLY          CA          CB         HB3     108.549    1.50
+DLY          CG          CB         HB2     108.650    1.50
+DLY          CG          CB         HB3     108.650    1.50
+DLY         HB2          CB         HB3     107.844    1.50
+DLY          CB          CG          CD     113.328    2.00
+DLY          CB          CG         HG2     108.601    1.50
+DLY          CB          CG         HG3     108.601    1.50
+DLY          CD          CG         HG2     108.806    1.50
+DLY          CD          CG         HG3     108.806    1.50
+DLY         HG2          CG         HG3     107.646    1.50
+DLY          CG          CD          CE     113.073    1.98
+DLY          CG          CD         HD2     109.041    1.50
+DLY          CG          CD         HD3     109.041    1.50
+DLY          CE          CD         HD2     108.889    1.50
+DLY          CE          CD         HD3     108.889    1.50
+DLY         HD2          CD         HD3     107.927    1.57
+DLY          CD          CE          NZ     111.734    1.84
+DLY          CD          CE         HE2     109.576    1.50
+DLY          CD          CE         HE3     109.576    1.50
+DLY          NZ          CE         HE2     108.989    1.50
+DLY          NZ          CE         HE3     108.989    1.50
+DLY         HE2          CE         HE3     108.067    1.50
+DLY          CE          NZ         HZ1     109.775    1.81
+DLY          CE          NZ         HZ2     109.775    1.81
+DLY          CE          NZ         HZ3     109.775    1.81
+DLY         HZ1          NZ         HZ2     109.021    2.83
+DLY         HZ1          NZ         HZ3     109.021    2.83
+DLY         HZ2          NZ         HZ3     109.021    2.83
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DLY             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+DLY             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DLY            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+DLY            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+DLY            sp3_sp3_28          CE          CD          CG          CB     180.000   10.00     3
+DLY            sp3_sp3_37          CG          CD          CE          NZ     180.000   10.00     3
+DLY            sp3_sp3_46          CD          CE          NZ         HZ1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DLY    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DLY    plan-1           C   0.020
+DLY    plan-1          CA   0.020
+DLY    plan-1           O   0.020
+DLY    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DLY SMILES           ACDLabs              10.04 "O=C(O)C(N)CCCCN"
+DLY SMILES_CANONICAL CACTVS               3.341 "NCCCC[C@@H](N)C(O)=O"
+DLY SMILES           CACTVS               3.341 "NCCCC[CH](N)C(O)=O"
+DLY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CCN)C[C@H](C(=O)O)N"
+DLY SMILES           "OpenEye OEToolkits" 1.5.0 "C(CCN)CC(C(=O)O)N"
+DLY InChI            InChI                1.03  "InChI=1S/C6H14N2O2/c7-4-2-1-3-5(8)6(9)10/h5H,1-4,7-8H2,(H,9,10)/t5-/m1/s1"
+DLY InChIKey         InChI                1.03  KDXKERNSBIXSRK-RXMQYKEDSA-N
+DLY ?                acedrg               196         "dictionary generator"
+DLY ?                acedrg_database      11          "data source"
+DLY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DLY ?                refmac5              5.8.0222    "optimization tool"

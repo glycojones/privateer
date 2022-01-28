@@ -1,0 +1,882 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DLQ      DLQ 'DIHYDROMICROCYSTIN-LA               ' non-polymer       134  65 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DLQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DLQ           O12    O    O         0.000      0.000    0.000    0.000
+ DLQ           C44    C    C         0.000     -0.971    0.749   -0.085
+ DLQ           N1     N    NH1       0.000     -1.801    0.764   -1.137
+ DLQ           HN1    H    H         0.000     -2.589    1.395   -1.099
+ DLQ           C43    C    CH1       0.000     -1.322    1.748    1.075
+ DLQ           H43    H    H         0.000     -0.901    2.721    0.787
+ DLQ           C45    C    CH3       0.000     -0.653    1.359    2.413
+ DLQ           H453   H    H         0.000      0.010    2.128    2.719
+ DLQ           H452   H    H         0.000     -1.395    1.221    3.158
+ DLQ           H451   H    H         0.000     -0.108    0.457    2.291
+ DLQ           N7     N    N         0.000     -2.791    1.962    1.271
+ DLQ           C46    C    CH3       0.000     -3.350    3.344    1.252
+ DLQ           H463   H    H         0.000     -2.681    3.997    0.749
+ DLQ           H462   H    H         0.000     -4.284    3.349    0.747
+ DLQ           H461   H    H         0.000     -3.491    3.691    2.246
+ DLQ           C42    C    C         0.000     -3.667    0.941    1.473
+ DLQ           O10    O    O         0.000     -3.351   -0.249    1.501
+ DLQ           C41    C    CH2       0.000     -5.152    1.317    1.649
+ DLQ           H411   H    H         0.000     -5.290    2.326    1.256
+ DLQ           H412   H    H         0.000     -5.375    1.310    2.718
+ DLQ           C40    C    CH2       0.000     -6.096    0.349    0.922
+ DLQ           H401   H    H         0.000     -5.572   -0.607    0.852
+ DLQ           H402   H    H         0.000     -6.248    0.752   -0.082
+ DLQ           C38    C    C         0.000     -7.462    0.140    1.606
+ DLQ           C39    C    C         0.000     -7.507   -0.034    3.145
+ DLQ           O11    O    OC       -0.500     -7.630    0.993    3.849
+ DLQ           O9     O    OC       -0.500     -7.422   -1.194    3.605
+ DLQ           N6     N    N         0.000     -8.368   -0.522    0.869
+ DLQ           C22    C    C         0.000     -9.681   -0.296    0.911
+ DLQ           O7     O    O         0.000    -10.227    0.591    1.563
+ DLQ           C23    C    CH1       0.000    -10.533   -1.242    0.059
+ DLQ           H23    H    H         0.000     -9.920   -2.104   -0.238
+ DLQ           C18    C    CH3       0.000    -11.699   -1.733    0.936
+ DLQ           H183   H    H         0.000    -12.499   -2.053    0.318
+ DLQ           H182   H    H         0.000    -11.375   -2.544    1.538
+ DLQ           H181   H    H         0.000    -12.032   -0.945    1.561
+ DLQ           C24    C    CH1       0.000    -11.011   -0.499   -1.215
+ DLQ           H24    H    H         0.000    -11.377    0.490   -0.905
+ DLQ           C25    C    CH2       0.000    -12.176   -1.234   -1.881
+ DLQ           H251   H    H         0.000    -12.536   -1.899   -1.094
+ DLQ           H252   H    H         0.000    -11.687   -1.824   -2.660
+ DLQ           C26    C    CH2       0.000    -13.246   -0.540   -2.429
+ DLQ           H261   H    H         0.000    -12.767    0.117   -3.158
+ DLQ           H262   H    H         0.000    -13.610    0.055   -1.588
+ DLQ           C27    C    CH1       0.000    -14.318   -1.204   -3.031
+ DLQ           H27    H    H         0.000    -13.804   -1.163   -4.001
+ DLQ           C28    C    CH2       0.000    -15.353   -0.405   -3.538
+ DLQ           H281   H    H         0.000    -14.781    0.263   -4.185
+ DLQ           H282   H    H         0.000    -15.645    0.130   -2.632
+ DLQ           C29    C    CH1       0.000    -16.614   -0.888   -4.281
+ DLQ           H29    H    H         0.000    -16.483   -1.948   -4.539
+ DLQ           C30    C    CH1       0.000    -17.955   -0.728   -3.513
+ DLQ           H30    H    H         0.000    -18.270    0.323   -3.573
+ DLQ           C31    C    CH2       0.000    -17.955   -1.153   -2.044
+ DLQ           H311   H    H         0.000    -17.065   -0.713   -1.588
+ DLQ           H312   H    H         0.000    -17.868   -2.241   -2.030
+ DLQ           C32    C    CR6       0.000    -19.205   -0.725   -1.251
+ DLQ           C37    C    CR16      0.000    -19.883   -1.667   -0.455
+ DLQ           H37    H    H         0.000    -19.523   -2.688   -0.413
+ DLQ           C36    C    CR16      0.000    -21.020   -1.304    0.288
+ DLQ           H36    H    H         0.000    -21.533   -2.040    0.895
+ DLQ           C35    C    CR16      0.000    -21.485    0.013    0.238
+ DLQ           H35    H    H         0.000    -22.360    0.302    0.806
+ DLQ           C34    C    CR16      0.000    -20.812    0.961   -0.554
+ DLQ           H34    H    H         0.000    -21.175    1.980   -0.596
+ DLQ           C33    C    CR16      0.000    -19.673    0.594   -1.289
+ DLQ           H33    H    H         0.000    -19.155    1.334   -1.887
+ DLQ           O8     O    O2        0.000    -18.982   -1.562   -4.160
+ DLQ           C21    C    CH3       0.000    -20.153   -0.837   -4.718
+ DLQ           H213   H    H         0.000    -19.843   -0.177   -5.493
+ DLQ           H212   H    H         0.000    -20.857   -1.527   -5.119
+ DLQ           H211   H    H         0.000    -20.630   -0.267   -3.956
+ DLQ           C20    C    CH3       0.000    -16.643   -0.066   -5.586
+ DLQ           H203   H    H         0.000    -15.661    0.016   -5.977
+ DLQ           H202   H    H         0.000    -17.264   -0.548   -6.298
+ DLQ           H201   H    H         0.000    -17.023    0.904   -5.389
+ DLQ           C19    C    CH3       0.000    -14.332   -2.750   -3.097
+ DLQ           H193   H    H         0.000    -14.031   -3.071   -4.062
+ DLQ           H192   H    H         0.000    -13.664   -3.146   -2.374
+ DLQ           H191   H    H         0.000    -15.311   -3.109   -2.900
+ DLQ           N5     N    NH1       0.000     -9.919   -0.286   -2.198
+ DLQ           HN5    H    H         0.000     -9.682   -1.025   -2.844
+ DLQ           C16    C    C         0.000     -9.243    0.869   -2.242
+ DLQ           O6     O    O         0.000     -9.449    1.805   -1.467
+ DLQ           C15    C    CH1       0.000     -8.141    1.005   -3.309
+ DLQ           H15    H    H         0.000     -7.278    1.517   -2.862
+ DLQ           C17    C    CH3       0.000     -8.647    1.834   -4.487
+ DLQ           H173   H    H         0.000     -7.835    2.083   -5.119
+ DLQ           H172   H    H         0.000     -9.360    1.273   -5.034
+ DLQ           H171   H    H         0.000     -9.098    2.722   -4.126
+ DLQ           N4     N    NH1       0.000     -7.711   -0.322   -3.785
+ DLQ           HN4    H    H         0.000     -8.285   -0.820   -4.451
+ DLQ           C10    C    C         0.000     -6.583   -0.874   -3.356
+ DLQ           O3     O    O         0.000     -5.832   -0.348   -2.535
+ DLQ           C13    C    CH1       0.000     -6.285   -2.267   -3.941
+ DLQ           H13    H    H         0.000     -7.147   -2.566   -4.553
+ DLQ           C14    C    CH3       0.000     -5.045   -2.228   -4.858
+ DLQ           H143   H    H         0.000     -5.111   -1.399   -5.515
+ DLQ           H142   H    H         0.000     -4.168   -2.138   -4.269
+ DLQ           H141   H    H         0.000     -4.993   -3.122   -5.427
+ DLQ           C12    C    CH1       0.000     -6.154   -3.278   -2.780
+ DLQ           H12    H    H         0.000     -6.050   -4.284   -3.210
+ DLQ           C11    C    C         0.000     -7.451   -3.246   -1.919
+ DLQ           O5     O    OC       -0.500     -7.333   -2.965   -0.706
+ DLQ           O4     O    OC       -0.500     -8.533   -3.490   -2.498
+ DLQ           N3     N    NH1       0.000     -4.914   -2.967   -2.011
+ DLQ           HN3    H    H         0.000     -4.652   -1.997   -1.915
+ DLQ           C9     C    C         0.000     -4.125   -3.883   -1.439
+ DLQ           O2     O    O         0.000     -4.373   -5.085   -1.470
+ DLQ           C4     C    CH1       0.000     -2.857   -3.383   -0.703
+ DLQ           H4     H    H         0.000     -2.012   -4.007   -1.027
+ DLQ           C5     C    CH2       0.000     -3.022   -3.566    0.815
+ DLQ           H51    H    H         0.000     -3.541   -4.508    1.007
+ DLQ           H52    H    H         0.000     -3.613   -2.739    1.212
+ DLQ           C6     C    CH1       0.000     -1.654   -3.589    1.494
+ DLQ           H6     H    H         0.000     -0.923   -3.108    0.830
+ DLQ           C8     C    CH3       0.000     -1.224   -5.025    1.733
+ DLQ           H83    H    H         0.000     -0.332   -5.034    2.302
+ DLQ           H82    H    H         0.000     -1.986   -5.536    2.260
+ DLQ           H81    H    H         0.000     -1.056   -5.501    0.803
+ DLQ           C7     C    CH3       0.000     -1.665   -2.853    2.822
+ DLQ           H73    H    H         0.000     -1.063   -1.985    2.747
+ DLQ           H72    H    H         0.000     -2.658   -2.576    3.062
+ DLQ           H71    H    H         0.000     -1.281   -3.487    3.578
+ DLQ           N2     N    NH1       0.000     -2.527   -1.969   -1.022
+ DLQ           HN2    H    H         0.000     -2.768   -1.259   -0.345
+ DLQ           C2     C    C         0.000     -1.927   -1.585   -2.156
+ DLQ           O1     O    O         0.000     -1.612   -2.366   -3.052
+ DLQ           C1     C    CH1       0.000     -1.655   -0.071   -2.352
+ DLQ           H1     H    H         0.000     -0.619    0.035   -2.703
+ DLQ           C3     C    CH3       0.000     -2.577    0.498   -3.451
+ DLQ           H33A   H    H         0.000     -1.993    0.819   -4.276
+ DLQ           H32    H    H         0.000     -3.255   -0.251   -3.772
+ DLQ           H31    H    H         0.000     -3.123    1.323   -3.067
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DLQ      O12    n/a    C44    START
+ DLQ      C44    O12    C43    .
+ DLQ      N1     C44    HN1    .
+ DLQ      HN1    N1     .      .
+ DLQ      C43    C44    N7     .
+ DLQ      H43    C43    .      .
+ DLQ      C45    C43    H451   .
+ DLQ      H453   C45    .      .
+ DLQ      H452   C45    .      .
+ DLQ      H451   C45    .      .
+ DLQ      N7     C43    C42    .
+ DLQ      C46    N7     H461   .
+ DLQ      H463   C46    .      .
+ DLQ      H462   C46    .      .
+ DLQ      H461   C46    .      .
+ DLQ      C42    N7     C41    .
+ DLQ      O10    C42    .      .
+ DLQ      C41    C42    C40    .
+ DLQ      H411   C41    .      .
+ DLQ      H412   C41    .      .
+ DLQ      C40    C41    C38    .
+ DLQ      H401   C40    .      .
+ DLQ      H402   C40    .      .
+ DLQ      C38    C40    N6     .
+ DLQ      C39    C38    O9     .
+ DLQ      O11    C39    .      .
+ DLQ      O9     C39    .      .
+ DLQ      N6     C38    C22    .
+ DLQ      C22    N6     C23    .
+ DLQ      O7     C22    .      .
+ DLQ      C23    C22    C24    .
+ DLQ      H23    C23    .      .
+ DLQ      C18    C23    H181   .
+ DLQ      H183   C18    .      .
+ DLQ      H182   C18    .      .
+ DLQ      H181   C18    .      .
+ DLQ      C24    C23    N5     .
+ DLQ      H24    C24    .      .
+ DLQ      C25    C24    C26    .
+ DLQ      H251   C25    .      .
+ DLQ      H252   C25    .      .
+ DLQ      C26    C25    C27    .
+ DLQ      H261   C26    .      .
+ DLQ      H262   C26    .      .
+ DLQ      C27    C26    C19    .
+ DLQ      H27    C27    .      .
+ DLQ      C28    C27    C29    .
+ DLQ      H281   C28    .      .
+ DLQ      H282   C28    .      .
+ DLQ      C29    C28    C20    .
+ DLQ      H29    C29    .      .
+ DLQ      C30    C29    O8     .
+ DLQ      H30    C30    .      .
+ DLQ      C31    C30    C32    .
+ DLQ      H311   C31    .      .
+ DLQ      H312   C31    .      .
+ DLQ      C32    C31    C37    .
+ DLQ      C37    C32    C36    .
+ DLQ      H37    C37    .      .
+ DLQ      C36    C37    C35    .
+ DLQ      H36    C36    .      .
+ DLQ      C35    C36    C34    .
+ DLQ      H35    C35    .      .
+ DLQ      C34    C35    C33    .
+ DLQ      H34    C34    .      .
+ DLQ      C33    C34    H33    .
+ DLQ      H33    C33    .      .
+ DLQ      O8     C30    C21    .
+ DLQ      C21    O8     H211   .
+ DLQ      H213   C21    .      .
+ DLQ      H212   C21    .      .
+ DLQ      H211   C21    .      .
+ DLQ      C20    C29    H201   .
+ DLQ      H203   C20    .      .
+ DLQ      H202   C20    .      .
+ DLQ      H201   C20    .      .
+ DLQ      C19    C27    H191   .
+ DLQ      H193   C19    .      .
+ DLQ      H192   C19    .      .
+ DLQ      H191   C19    .      .
+ DLQ      N5     C24    C16    .
+ DLQ      HN5    N5     .      .
+ DLQ      C16    N5     C15    .
+ DLQ      O6     C16    .      .
+ DLQ      C15    C16    N4     .
+ DLQ      H15    C15    .      .
+ DLQ      C17    C15    H171   .
+ DLQ      H173   C17    .      .
+ DLQ      H172   C17    .      .
+ DLQ      H171   C17    .      .
+ DLQ      N4     C15    C10    .
+ DLQ      HN4    N4     .      .
+ DLQ      C10    N4     C13    .
+ DLQ      O3     C10    .      .
+ DLQ      C13    C10    C12    .
+ DLQ      H13    C13    .      .
+ DLQ      C14    C13    H141   .
+ DLQ      H143   C14    .      .
+ DLQ      H142   C14    .      .
+ DLQ      H141   C14    .      .
+ DLQ      C12    C13    N3     .
+ DLQ      H12    C12    .      .
+ DLQ      C11    C12    O4     .
+ DLQ      O5     C11    .      .
+ DLQ      O4     C11    .      .
+ DLQ      N3     C12    C9     .
+ DLQ      HN3    N3     .      .
+ DLQ      C9     N3     C4     .
+ DLQ      O2     C9     .      .
+ DLQ      C4     C9     N2     .
+ DLQ      H4     C4     .      .
+ DLQ      C5     C4     C6     .
+ DLQ      H51    C5     .      .
+ DLQ      H52    C5     .      .
+ DLQ      C6     C5     C7     .
+ DLQ      H6     C6     .      .
+ DLQ      C8     C6     H81    .
+ DLQ      H83    C8     .      .
+ DLQ      H82    C8     .      .
+ DLQ      H81    C8     .      .
+ DLQ      C7     C6     H71    .
+ DLQ      H73    C7     .      .
+ DLQ      H72    C7     .      .
+ DLQ      H71    C7     .      .
+ DLQ      N2     C4     C2     .
+ DLQ      HN2    N2     .      .
+ DLQ      C2     N2     C1     .
+ DLQ      O1     C2     .      .
+ DLQ      C1     C2     C3     .
+ DLQ      H1     C1     .      .
+ DLQ      C3     C1     H31    .
+ DLQ      H33A   C3     .      .
+ DLQ      H32    C3     .      .
+ DLQ      H31    C3     .      END
+ DLQ      N1     C1     .    ADD
+ DLQ      C32    C33    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DLQ       N1        C1        single    1.450     0.020     1.450     0.020     
+DLQ       N1        C44       single    1.330     0.020     1.330     0.020     
+DLQ       HN1       N1        single    1.016     0.010     0.899     0.007     
+DLQ       C1        C2        single    1.500     0.020     1.500     0.020     
+DLQ       C3        C1        single    1.524     0.020     1.524     0.020     
+DLQ       H1        C1        single    1.089     0.010     0.989     0.005     
+DLQ       O1        C2        double    1.220     0.020     1.220     0.020     
+DLQ       C2        N2        single    1.330     0.020     1.330     0.020     
+DLQ       H31       C3        single    1.089     0.010     0.989     0.005     
+DLQ       H32       C3        single    1.089     0.010     0.989     0.005     
+DLQ       H33A      C3        single    1.089     0.010     0.989     0.005     
+DLQ       N2        C4        single    1.450     0.020     1.450     0.020     
+DLQ       HN2       N2        single    1.016     0.010     0.899     0.007     
+DLQ       C5        C4        single    1.524     0.020     1.524     0.020     
+DLQ       C4        C9        single    1.500     0.020     1.500     0.020     
+DLQ       H4        C4        single    1.089     0.010     0.989     0.005     
+DLQ       C6        C5        single    1.524     0.020     1.524     0.020     
+DLQ       H51       C5        single    1.089     0.010     0.989     0.005     
+DLQ       H52       C5        single    1.089     0.010     0.989     0.005     
+DLQ       C7        C6        single    1.524     0.020     1.524     0.020     
+DLQ       C8        C6        single    1.524     0.020     1.524     0.020     
+DLQ       H6        C6        single    1.089     0.010     0.989     0.005     
+DLQ       H71       C7        single    1.089     0.010     0.989     0.005     
+DLQ       H72       C7        single    1.089     0.010     0.989     0.005     
+DLQ       H73       C7        single    1.089     0.010     0.989     0.005     
+DLQ       H81       C8        single    1.089     0.010     0.989     0.005     
+DLQ       H82       C8        single    1.089     0.010     0.989     0.005     
+DLQ       H83       C8        single    1.089     0.010     0.989     0.005     
+DLQ       O2        C9        double    1.220     0.020     1.220     0.020     
+DLQ       C9        N3        single    1.330     0.020     1.330     0.020     
+DLQ       N3        C12       single    1.450     0.020     1.450     0.020     
+DLQ       HN3       N3        single    1.016     0.010     0.899     0.007     
+DLQ       O3        C10       double    1.220     0.020     1.220     0.020     
+DLQ       C13       C10       single    1.500     0.020     1.500     0.020     
+DLQ       C10       N4        single    1.330     0.020     1.330     0.020     
+DLQ       O4        C11       deloc     1.250     0.020     1.250     0.020     
+DLQ       O5        C11       deloc     1.250     0.020     1.250     0.020     
+DLQ       C11       C12       single    1.500     0.020     1.500     0.020     
+DLQ       C12       C13       single    1.524     0.020     1.524     0.020     
+DLQ       H12       C12       single    1.089     0.010     0.989     0.005     
+DLQ       C14       C13       single    1.524     0.020     1.524     0.020     
+DLQ       H13       C13       single    1.089     0.010     0.989     0.005     
+DLQ       H141      C14       single    1.089     0.010     0.989     0.005     
+DLQ       H142      C14       single    1.089     0.010     0.989     0.005     
+DLQ       H143      C14       single    1.089     0.010     0.989     0.005     
+DLQ       N4        C15       single    1.450     0.020     1.450     0.020     
+DLQ       HN4       N4        single    1.016     0.010     0.899     0.007     
+DLQ       C15       C16       single    1.500     0.020     1.500     0.020     
+DLQ       C17       C15       single    1.524     0.020     1.524     0.020     
+DLQ       H15       C15       single    1.089     0.010     0.989     0.005     
+DLQ       O6        C16       double    1.220     0.020     1.220     0.020     
+DLQ       C16       N5        single    1.330     0.020     1.330     0.020     
+DLQ       H171      C17       single    1.089     0.010     0.989     0.005     
+DLQ       H172      C17       single    1.089     0.010     0.989     0.005     
+DLQ       H173      C17       single    1.089     0.010     0.989     0.005     
+DLQ       C18       C23       single    1.524     0.020     1.524     0.020     
+DLQ       H181      C18       single    1.089     0.010     0.989     0.005     
+DLQ       H182      C18       single    1.089     0.010     0.989     0.005     
+DLQ       H183      C18       single    1.089     0.010     0.989     0.005     
+DLQ       C19       C27       single    1.524     0.020     1.524     0.020     
+DLQ       H191      C19       single    1.089     0.010     0.989     0.005     
+DLQ       H192      C19       single    1.089     0.010     0.989     0.005     
+DLQ       H193      C19       single    1.089     0.010     0.989     0.005     
+DLQ       C20       C29       single    1.524     0.020     1.524     0.020     
+DLQ       H201      C20       single    1.089     0.010     0.989     0.005     
+DLQ       H202      C20       single    1.089     0.010     0.989     0.005     
+DLQ       H203      C20       single    1.089     0.010     0.989     0.005     
+DLQ       C21       O8        single    1.426     0.020     1.426     0.020     
+DLQ       H211      C21       single    1.089     0.010     0.989     0.005     
+DLQ       H212      C21       single    1.089     0.010     0.989     0.005     
+DLQ       H213      C21       single    1.089     0.010     0.989     0.005     
+DLQ       C23       C22       single    1.500     0.020     1.500     0.020     
+DLQ       O7        C22       double    1.220     0.020     1.220     0.020     
+DLQ       C22       N6        single    1.330     0.020     1.330     0.020     
+DLQ       C24       C23       single    1.524     0.020     1.524     0.020     
+DLQ       H23       C23       single    1.089     0.010     0.989     0.005     
+DLQ       C25       C24       single    1.524     0.020     1.524     0.020     
+DLQ       N5        C24       single    1.450     0.020     1.450     0.020     
+DLQ       H24       C24       single    1.089     0.010     0.989     0.005     
+DLQ       C26       C25       single    1.524     0.020     1.524     0.020     
+DLQ       H251      C25       single    1.089     0.010     0.989     0.005     
+DLQ       H252      C25       single    1.089     0.010     0.989     0.005     
+DLQ       C27       C26       single    1.524     0.020     1.524     0.020     
+DLQ       H261      C26       single    1.089     0.010     0.989     0.005     
+DLQ       H262      C26       single    1.089     0.010     0.989     0.005     
+DLQ       C28       C27       single    1.524     0.020     1.524     0.020     
+DLQ       H27       C27       single    1.089     0.010     0.989     0.005     
+DLQ       C29       C28       single    1.524     0.020     1.524     0.020     
+DLQ       H281      C28       single    1.089     0.010     0.989     0.005     
+DLQ       H282      C28       single    1.089     0.010     0.989     0.005     
+DLQ       C30       C29       single    1.524     0.020     1.524     0.020     
+DLQ       H29       C29       single    1.089     0.010     0.989     0.005     
+DLQ       C31       C30       single    1.524     0.020     1.524     0.020     
+DLQ       O8        C30       single    1.426     0.020     1.426     0.020     
+DLQ       H30       C30       single    1.089     0.010     0.989     0.005     
+DLQ       C32       C31       single    1.511     0.020     1.511     0.020     
+DLQ       H311      C31       single    1.089     0.010     0.989     0.005     
+DLQ       H312      C31       single    1.089     0.010     0.989     0.005     
+DLQ       C32       C33       single    1.390     0.020     1.390     0.020     
+DLQ       C37       C32       double    1.390     0.020     1.390     0.020     
+DLQ       C33       C34       double    1.390     0.020     1.390     0.020     
+DLQ       H33       C33       single    1.082     0.013     0.975     0.010     
+DLQ       C34       C35       single    1.390     0.020     1.390     0.020     
+DLQ       H34       C34       single    1.082     0.013     0.975     0.010     
+DLQ       C35       C36       double    1.390     0.020     1.390     0.020     
+DLQ       H35       C35       single    1.082     0.013     0.975     0.010     
+DLQ       C36       C37       single    1.390     0.020     1.390     0.020     
+DLQ       H36       C36       single    1.082     0.013     0.975     0.010     
+DLQ       H37       C37       single    1.082     0.013     0.975     0.010     
+DLQ       HN5       N5        single    1.016     0.010     0.899     0.007     
+DLQ       N6        C38       double    1.260     0.020     1.260     0.020     
+DLQ       C39       C38       single    1.460     0.020     1.460     0.020     
+DLQ       C38       C40       single    1.510     0.020     1.510     0.020     
+DLQ       O9        C39       deloc     1.250     0.020     1.250     0.020     
+DLQ       O11       C39       deloc     1.250     0.020     1.250     0.020     
+DLQ       C40       C41       single    1.524     0.020     1.524     0.020     
+DLQ       H401      C40       single    1.089     0.010     0.989     0.005     
+DLQ       H402      C40       single    1.089     0.010     0.989     0.005     
+DLQ       C41       C42       single    1.510     0.020     1.510     0.020     
+DLQ       H411      C41       single    1.089     0.010     0.989     0.005     
+DLQ       H412      C41       single    1.089     0.010     0.989     0.005     
+DLQ       O10       C42       double    1.220     0.020     1.220     0.020     
+DLQ       C42       N7        single    1.330     0.020     1.330     0.020     
+DLQ       N7        C43       single    1.455     0.020     1.455     0.020     
+DLQ       C46       N7        single    1.455     0.020     1.455     0.020     
+DLQ       C43       C44       single    1.500     0.020     1.500     0.020     
+DLQ       C45       C43       single    1.524     0.020     1.524     0.020     
+DLQ       H43       C43       single    1.089     0.010     0.989     0.005     
+DLQ       C44       O12       double    1.220     0.020     1.220     0.020     
+DLQ       H451      C45       single    1.089     0.010     0.989     0.005     
+DLQ       H452      C45       single    1.089     0.010     0.989     0.005     
+DLQ       H453      C45       single    1.089     0.010     0.989     0.005     
+DLQ       H461      C46       single    1.089     0.010     0.989     0.005     
+DLQ       H462      C46       single    1.089     0.010     0.989     0.005     
+DLQ       H463      C46       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DLQ      O12    C44    N1      123.000    3.000
+ DLQ      O12    C44    C43     120.500    3.000
+ DLQ      N1     C44    C43     116.500    3.000
+ DLQ      C44    N1     HN1     120.000    3.000
+ DLQ      C44    N1     C1      121.500    3.000
+ DLQ      HN1    N1     C1      118.500    3.000
+ DLQ      C44    C43    H43     108.810    3.000
+ DLQ      C44    C43    C45     109.470    3.000
+ DLQ      C44    C43    N7      111.600    3.000
+ DLQ      H43    C43    C45     108.340    3.000
+ DLQ      H43    C43    N7      109.470    3.000
+ DLQ      C45    C43    N7      109.500    3.000
+ DLQ      C43    C45    H453    109.470    3.000
+ DLQ      C43    C45    H452    109.470    3.000
+ DLQ      C43    C45    H451    109.470    3.000
+ DLQ      H453   C45    H452    109.470    3.000
+ DLQ      H453   C45    H451    109.470    3.000
+ DLQ      H452   C45    H451    109.470    3.000
+ DLQ      C43    N7     C46     120.000    3.000
+ DLQ      C43    N7     C42     121.000    3.000
+ DLQ      C46    N7     C42     127.000    3.000
+ DLQ      N7     C46    H463    109.470    3.000
+ DLQ      N7     C46    H462    109.470    3.000
+ DLQ      N7     C46    H461    109.470    3.000
+ DLQ      H463   C46    H462    109.470    3.000
+ DLQ      H463   C46    H461    109.470    3.000
+ DLQ      H462   C46    H461    109.470    3.000
+ DLQ      N7     C42    O10     123.000    3.000
+ DLQ      N7     C42    C41     116.500    3.000
+ DLQ      O10    C42    C41     120.500    3.000
+ DLQ      C42    C41    H411    109.470    3.000
+ DLQ      C42    C41    H412    109.470    3.000
+ DLQ      C42    C41    C40     109.470    3.000
+ DLQ      H411   C41    H412    107.900    3.000
+ DLQ      H411   C41    C40     109.470    3.000
+ DLQ      H412   C41    C40     109.470    3.000
+ DLQ      C41    C40    H401    109.470    3.000
+ DLQ      C41    C40    H402    109.470    3.000
+ DLQ      C41    C40    C38     109.470    3.000
+ DLQ      H401   C40    H402    107.900    3.000
+ DLQ      H401   C40    C38     109.470    3.000
+ DLQ      H402   C40    C38     109.470    3.000
+ DLQ      C40    C38    C39     120.000    3.000
+ DLQ      C40    C38    N6      116.500    3.000
+ DLQ      C39    C38    N6      116.500    3.000
+ DLQ      C38    C39    O11     120.000    3.000
+ DLQ      C38    C39    O9      120.000    3.000
+ DLQ      O11    C39    O9      123.000    3.000
+ DLQ      C38    N6     C22     120.000    3.000
+ DLQ      N6     C22    O7      123.000    3.000
+ DLQ      N6     C22    C23     116.500    3.000
+ DLQ      O7     C22    C23     120.500    3.000
+ DLQ      C22    C23    H23     108.810    3.000
+ DLQ      C22    C23    C18     109.470    3.000
+ DLQ      C22    C23    C24     109.470    3.000
+ DLQ      H23    C23    C18     108.340    3.000
+ DLQ      H23    C23    C24     108.340    3.000
+ DLQ      C18    C23    C24     111.000    3.000
+ DLQ      C23    C18    H183    109.470    3.000
+ DLQ      C23    C18    H182    109.470    3.000
+ DLQ      C23    C18    H181    109.470    3.000
+ DLQ      H183   C18    H182    109.470    3.000
+ DLQ      H183   C18    H181    109.470    3.000
+ DLQ      H182   C18    H181    109.470    3.000
+ DLQ      C23    C24    H24     108.340    3.000
+ DLQ      C23    C24    C25     111.000    3.000
+ DLQ      C23    C24    N5      110.000    3.000
+ DLQ      H24    C24    C25     108.340    3.000
+ DLQ      H24    C24    N5      108.550    3.000
+ DLQ      C25    C24    N5      110.000    3.000
+ DLQ      C24    C25    H251    109.470    3.000
+ DLQ      C24    C25    H252    109.470    3.000
+ DLQ      C24    C25    C26     111.000    3.000
+ DLQ      H251   C25    H252    107.900    3.000
+ DLQ      H251   C25    C26     109.470    3.000
+ DLQ      H252   C25    C26     109.470    3.000
+ DLQ      C25    C26    H261    109.470    3.000
+ DLQ      C25    C26    H262    109.470    3.000
+ DLQ      C25    C26    C27     111.000    3.000
+ DLQ      H261   C26    H262    107.900    3.000
+ DLQ      H261   C26    C27     109.470    3.000
+ DLQ      H262   C26    C27     109.470    3.000
+ DLQ      C26    C27    H27     108.340    3.000
+ DLQ      C26    C27    C28     109.470    3.000
+ DLQ      C26    C27    C19     111.000    3.000
+ DLQ      H27    C27    C28     108.340    3.000
+ DLQ      H27    C27    C19     108.340    3.000
+ DLQ      C28    C27    C19     111.000    3.000
+ DLQ      C27    C28    H281    109.470    3.000
+ DLQ      C27    C28    H282    109.470    3.000
+ DLQ      C27    C28    C29     111.000    3.000
+ DLQ      H281   C28    H282    107.900    3.000
+ DLQ      H281   C28    C29     109.470    3.000
+ DLQ      H282   C28    C29     109.470    3.000
+ DLQ      C28    C29    H29     108.340    3.000
+ DLQ      C28    C29    C30     111.000    3.000
+ DLQ      C28    C29    C20     111.000    3.000
+ DLQ      H29    C29    C30     108.340    3.000
+ DLQ      H29    C29    C20     108.340    3.000
+ DLQ      C30    C29    C20     111.000    3.000
+ DLQ      C29    C30    H30     108.340    3.000
+ DLQ      C29    C30    C31     111.000    3.000
+ DLQ      C29    C30    O8      109.470    3.000
+ DLQ      H30    C30    C31     108.340    3.000
+ DLQ      H30    C30    O8      109.470    3.000
+ DLQ      C31    C30    O8      109.470    3.000
+ DLQ      C30    C31    H311    109.470    3.000
+ DLQ      C30    C31    H312    109.470    3.000
+ DLQ      C30    C31    C32     109.470    3.000
+ DLQ      H311   C31    H312    107.900    3.000
+ DLQ      H311   C31    C32     109.470    3.000
+ DLQ      H312   C31    C32     109.470    3.000
+ DLQ      C31    C32    C37     120.000    3.000
+ DLQ      C31    C32    C33     120.000    3.000
+ DLQ      C37    C32    C33     120.000    3.000
+ DLQ      C32    C37    H37     120.000    3.000
+ DLQ      C32    C37    C36     120.000    3.000
+ DLQ      H37    C37    C36     120.000    3.000
+ DLQ      C37    C36    H36     120.000    3.000
+ DLQ      C37    C36    C35     120.000    3.000
+ DLQ      H36    C36    C35     120.000    3.000
+ DLQ      C36    C35    H35     120.000    3.000
+ DLQ      C36    C35    C34     120.000    3.000
+ DLQ      H35    C35    C34     120.000    3.000
+ DLQ      C35    C34    H34     120.000    3.000
+ DLQ      C35    C34    C33     120.000    3.000
+ DLQ      H34    C34    C33     120.000    3.000
+ DLQ      C34    C33    H33     120.000    3.000
+ DLQ      C34    C33    C32     120.000    3.000
+ DLQ      H33    C33    C32     120.000    3.000
+ DLQ      C30    O8     C21     111.800    3.000
+ DLQ      O8     C21    H213    109.470    3.000
+ DLQ      O8     C21    H212    109.470    3.000
+ DLQ      O8     C21    H211    109.470    3.000
+ DLQ      H213   C21    H212    109.470    3.000
+ DLQ      H213   C21    H211    109.470    3.000
+ DLQ      H212   C21    H211    109.470    3.000
+ DLQ      C29    C20    H203    109.470    3.000
+ DLQ      C29    C20    H202    109.470    3.000
+ DLQ      C29    C20    H201    109.470    3.000
+ DLQ      H203   C20    H202    109.470    3.000
+ DLQ      H203   C20    H201    109.470    3.000
+ DLQ      H202   C20    H201    109.470    3.000
+ DLQ      C27    C19    H193    109.470    3.000
+ DLQ      C27    C19    H192    109.470    3.000
+ DLQ      C27    C19    H191    109.470    3.000
+ DLQ      H193   C19    H192    109.470    3.000
+ DLQ      H193   C19    H191    109.470    3.000
+ DLQ      H192   C19    H191    109.470    3.000
+ DLQ      C24    N5     HN5     118.500    3.000
+ DLQ      C24    N5     C16     121.500    3.000
+ DLQ      HN5    N5     C16     120.000    3.000
+ DLQ      N5     C16    O6      123.000    3.000
+ DLQ      N5     C16    C15     116.500    3.000
+ DLQ      O6     C16    C15     120.500    3.000
+ DLQ      C16    C15    H15     108.810    3.000
+ DLQ      C16    C15    C17     109.470    3.000
+ DLQ      C16    C15    N4      111.600    3.000
+ DLQ      H15    C15    C17     108.340    3.000
+ DLQ      H15    C15    N4      108.550    3.000
+ DLQ      C17    C15    N4      110.000    3.000
+ DLQ      C15    C17    H173    109.470    3.000
+ DLQ      C15    C17    H172    109.470    3.000
+ DLQ      C15    C17    H171    109.470    3.000
+ DLQ      H173   C17    H172    109.470    3.000
+ DLQ      H173   C17    H171    109.470    3.000
+ DLQ      H172   C17    H171    109.470    3.000
+ DLQ      C15    N4     HN4     118.500    3.000
+ DLQ      C15    N4     C10     121.500    3.000
+ DLQ      HN4    N4     C10     120.000    3.000
+ DLQ      N4     C10    O3      123.000    3.000
+ DLQ      N4     C10    C13     116.500    3.000
+ DLQ      O3     C10    C13     120.500    3.000
+ DLQ      C10    C13    H13     108.810    3.000
+ DLQ      C10    C13    C14     109.470    3.000
+ DLQ      C10    C13    C12     109.470    3.000
+ DLQ      H13    C13    C14     108.340    3.000
+ DLQ      H13    C13    C12     108.340    3.000
+ DLQ      C14    C13    C12     111.000    3.000
+ DLQ      C13    C14    H143    109.470    3.000
+ DLQ      C13    C14    H142    109.470    3.000
+ DLQ      C13    C14    H141    109.470    3.000
+ DLQ      H143   C14    H142    109.470    3.000
+ DLQ      H143   C14    H141    109.470    3.000
+ DLQ      H142   C14    H141    109.470    3.000
+ DLQ      C13    C12    H12     108.340    3.000
+ DLQ      C13    C12    C11     109.470    3.000
+ DLQ      C13    C12    N3      110.000    3.000
+ DLQ      H12    C12    C11     108.810    3.000
+ DLQ      H12    C12    N3      108.550    3.000
+ DLQ      C11    C12    N3      111.600    3.000
+ DLQ      C12    C11    O5      118.500    3.000
+ DLQ      C12    C11    O4      118.500    3.000
+ DLQ      O5     C11    O4      123.000    3.000
+ DLQ      C12    N3     HN3     118.500    3.000
+ DLQ      C12    N3     C9      121.500    3.000
+ DLQ      HN3    N3     C9      120.000    3.000
+ DLQ      N3     C9     O2      123.000    3.000
+ DLQ      N3     C9     C4      116.500    3.000
+ DLQ      O2     C9     C4      120.500    3.000
+ DLQ      C9     C4     H4      108.810    3.000
+ DLQ      C9     C4     C5      109.470    3.000
+ DLQ      C9     C4     N2      111.600    3.000
+ DLQ      H4     C4     C5      108.340    3.000
+ DLQ      H4     C4     N2      108.550    3.000
+ DLQ      C5     C4     N2      110.000    3.000
+ DLQ      C4     C5     H51     109.470    3.000
+ DLQ      C4     C5     H52     109.470    3.000
+ DLQ      C4     C5     C6      111.000    3.000
+ DLQ      H51    C5     H52     107.900    3.000
+ DLQ      H51    C5     C6      109.470    3.000
+ DLQ      H52    C5     C6      109.470    3.000
+ DLQ      C5     C6     H6      108.340    3.000
+ DLQ      C5     C6     C8      111.000    3.000
+ DLQ      C5     C6     C7      111.000    3.000
+ DLQ      H6     C6     C8      108.340    3.000
+ DLQ      H6     C6     C7      108.340    3.000
+ DLQ      C8     C6     C7      111.000    3.000
+ DLQ      C6     C8     H83     109.470    3.000
+ DLQ      C6     C8     H82     109.470    3.000
+ DLQ      C6     C8     H81     109.470    3.000
+ DLQ      H83    C8     H82     109.470    3.000
+ DLQ      H83    C8     H81     109.470    3.000
+ DLQ      H82    C8     H81     109.470    3.000
+ DLQ      C6     C7     H73     109.470    3.000
+ DLQ      C6     C7     H72     109.470    3.000
+ DLQ      C6     C7     H71     109.470    3.000
+ DLQ      H73    C7     H72     109.470    3.000
+ DLQ      H73    C7     H71     109.470    3.000
+ DLQ      H72    C7     H71     109.470    3.000
+ DLQ      C4     N2     HN2     118.500    3.000
+ DLQ      C4     N2     C2      121.500    3.000
+ DLQ      HN2    N2     C2      120.000    3.000
+ DLQ      N2     C2     O1      123.000    3.000
+ DLQ      N2     C2     C1      116.500    3.000
+ DLQ      O1     C2     C1      120.500    3.000
+ DLQ      C2     C1     H1      108.810    3.000
+ DLQ      C2     C1     C3      109.470    3.000
+ DLQ      C2     C1     N1      111.600    3.000
+ DLQ      H1     C1     C3      108.340    3.000
+ DLQ      H1     C1     N1      108.550    3.000
+ DLQ      C3     C1     N1      110.000    3.000
+ DLQ      C1     C3     H33A    109.470    3.000
+ DLQ      C1     C3     H32     109.470    3.000
+ DLQ      C1     C3     H31     109.470    3.000
+ DLQ      H33A   C3     H32     109.470    3.000
+ DLQ      H33A   C3     H31     109.470    3.000
+ DLQ      H32    C3     H31     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DLQ      CONST_1  O12    C44    N1     C1         0.000    0.000   0
+ DLQ      var_1    C44    N1     C1     C2        70.248   20.000   3
+ DLQ      var_2    O12    C44    C43    N7      -145.231   20.000   3
+ DLQ      var_3    C44    C43    C45    H451      -2.193   20.000   3
+ DLQ      var_4    C44    C43    N7     C42       54.489   20.000   3
+ DLQ      var_5    C43    N7     C46    H461     -99.199   20.000   1
+ DLQ      CONST_2  C43    N7     C42    C41      180.000    0.000   0
+ DLQ      var_6    N7     C42    C41    C40      139.372   20.000   3
+ DLQ      var_7    C42    C41    C40    C38      147.867   20.000   3
+ DLQ      var_8    C41    C40    C38    N6       169.409   20.000   3
+ DLQ      var_9    C40    C38    C39    O9       -90.211   20.000   1
+ DLQ      CONST_3  C40    C38    N6     C22      180.000    0.000   0
+ DLQ      CONST_4  C38    N6     C22    C23      180.000    0.000   0
+ DLQ      var_10   N6     C22    C23    C24     -104.815   20.000   3
+ DLQ      var_11   C22    C23    C18    H181      37.347   20.000   3
+ DLQ      var_12   C22    C23    C24    N5        72.767   20.000   3
+ DLQ      var_13   C23    C24    C25    C26      140.349   20.000   3
+ DLQ      var_14   C24    C25    C26    C27     -179.516   20.000   3
+ DLQ      var_15   C25    C26    C27    C19        0.106   20.000   3
+ DLQ      var_16   C26    C27    C28    C29      177.942   20.000   3
+ DLQ      var_17   C27    C28    C29    C20     -127.365   20.000   3
+ DLQ      var_18   C28    C29    C30    O8      -163.930   20.000   3
+ DLQ      var_19   C29    C30    C31    C32      168.509   20.000   3
+ DLQ      var_20   C30    C31    C32    C37      131.438   20.000   2
+ DLQ      CONST_5  C31    C32    C33    C34      180.000    0.000   0
+ DLQ      CONST_6  C31    C32    C37    C36      180.000    0.000   0
+ DLQ      CONST_7  C32    C37    C36    C35        0.000    0.000   0
+ DLQ      CONST_8  C37    C36    C35    C34        0.000    0.000   0
+ DLQ      CONST_9  C36    C35    C34    C33        0.000    0.000   0
+ DLQ      CONST_10 C35    C34    C33    C32        0.000    0.000   0
+ DLQ      var_21   C29    C30    O8     C21     -118.238   20.000   1
+ DLQ      var_22   C30    O8     C21    H211     -57.207   20.000   1
+ DLQ      var_23   C28    C29    C20    H201     -79.335   20.000   3
+ DLQ      var_24   C26    C27    C19    H191     139.476   20.000   3
+ DLQ      var_25   C23    C24    N5     C16      -96.203   20.000   3
+ DLQ      CONST_11 C24    N5     C16    C15      180.000    0.000   0
+ DLQ      var_26   N5     C16    C15    N4       -19.887   20.000   3
+ DLQ      var_27   C16    C15    C17    H171      48.870   20.000   3
+ DLQ      var_28   C16    C15    N4     C10     -101.825   20.000   3
+ DLQ      CONST_12 C15    N4     C10    C13      180.000    0.000   0
+ DLQ      var_29   N4     C10    C13    C12     -121.785   20.000   3
+ DLQ      var_30   C10    C13    C14    H141    -166.523   20.000   3
+ DLQ      var_31   C10    C13    C12    N3       -68.553   20.000   3
+ DLQ      var_32   C13    C12    C11    O4        57.801   20.000   3
+ DLQ      var_33   C13    C12    N3     C9      -144.788   20.000   3
+ DLQ      CONST_13 C12    N3     C9     C4       180.000    0.000   0
+ DLQ      var_34   N3     C9     C4     N2       -14.025   20.000   3
+ DLQ      var_35   C9     C4     C5     C6       158.672   20.000   3
+ DLQ      var_36   C4     C5     C6     C7       141.078   20.000   3
+ DLQ      var_37   C5     C6     C8     H81       66.480   20.000   3
+ DLQ      var_38   C5     C6     C7     H71      127.060   20.000   3
+ DLQ      var_39   C9     C4     N2     C2       -78.146   20.000   3
+ DLQ      CONST_14 C4     N2     C2     C1       180.000    0.000   0
+ DLQ      var_40   N2     C2     C1     C3      -109.751   20.000   3
+ DLQ      var_41   C2     C1     C3     H31      125.010   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DLQ      chir_01  C1     N1     C2     C3        negativ
+ DLQ      chir_02  C4     N2     C5     C9        negativ
+ DLQ      chir_03  C6     C5     C7     C8        negativ
+ DLQ      chir_04  C12    N3     C11    C13       negativ
+ DLQ      chir_05  C13    C10    C12    C14       positiv
+ DLQ      chir_06  C15    N4     C16    C17       positiv
+ DLQ      chir_07  C23    C18    C22    C24       positiv
+ DLQ      chir_08  C24    C23    C25    N5        positiv
+ DLQ      chir_09  C27    C19    C26    C28       positiv
+ DLQ      chir_10  C29    C20    C28    C30       negativ
+ DLQ      chir_11  C30    C29    C31    O8        positiv
+ DLQ      chir_12  C43    N7     C44    C45       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DLQ      plan-1    N1        0.020
+ DLQ      plan-1    C1        0.020
+ DLQ      plan-1    C44       0.020
+ DLQ      plan-1    HN1       0.020
+ DLQ      plan-2    C2        0.020
+ DLQ      plan-2    C1        0.020
+ DLQ      plan-2    O1        0.020
+ DLQ      plan-2    N2        0.020
+ DLQ      plan-2    HN2       0.020
+ DLQ      plan-3    N2        0.020
+ DLQ      plan-3    C2        0.020
+ DLQ      plan-3    C4        0.020
+ DLQ      plan-3    HN2       0.020
+ DLQ      plan-4    C9        0.020
+ DLQ      plan-4    C4        0.020
+ DLQ      plan-4    O2        0.020
+ DLQ      plan-4    N3        0.020
+ DLQ      plan-4    HN3       0.020
+ DLQ      plan-5    N3        0.020
+ DLQ      plan-5    C9        0.020
+ DLQ      plan-5    C12       0.020
+ DLQ      plan-5    HN3       0.020
+ DLQ      plan-6    C10       0.020
+ DLQ      plan-6    O3        0.020
+ DLQ      plan-6    C13       0.020
+ DLQ      plan-6    N4        0.020
+ DLQ      plan-6    HN4       0.020
+ DLQ      plan-7    C11       0.020
+ DLQ      plan-7    O4        0.020
+ DLQ      plan-7    O5        0.020
+ DLQ      plan-7    C12       0.020
+ DLQ      plan-8    N4        0.020
+ DLQ      plan-8    C10       0.020
+ DLQ      plan-8    C15       0.020
+ DLQ      plan-8    HN4       0.020
+ DLQ      plan-9    C16       0.020
+ DLQ      plan-9    C15       0.020
+ DLQ      plan-9    O6        0.020
+ DLQ      plan-9    N5        0.020
+ DLQ      plan-9    HN5       0.020
+ DLQ      plan-10   C22       0.020
+ DLQ      plan-10   C23       0.020
+ DLQ      plan-10   O7        0.020
+ DLQ      plan-10   N6        0.020
+ DLQ      plan-11   C32       0.020
+ DLQ      plan-11   C31       0.020
+ DLQ      plan-11   C33       0.020
+ DLQ      plan-11   C37       0.020
+ DLQ      plan-11   C34       0.020
+ DLQ      plan-11   C35       0.020
+ DLQ      plan-11   C36       0.020
+ DLQ      plan-11   H33       0.020
+ DLQ      plan-11   H34       0.020
+ DLQ      plan-11   H35       0.020
+ DLQ      plan-11   H36       0.020
+ DLQ      plan-11   H37       0.020
+ DLQ      plan-12   N5        0.020
+ DLQ      plan-12   C16       0.020
+ DLQ      plan-12   C24       0.020
+ DLQ      plan-12   HN5       0.020
+ DLQ      plan-13   N6        0.020
+ DLQ      plan-13   C22       0.020
+ DLQ      plan-13   C38       0.020
+ DLQ      plan-13   C39       0.020
+ DLQ      plan-13   C40       0.020
+ DLQ      plan-14   C39       0.020
+ DLQ      plan-14   C38       0.020
+ DLQ      plan-14   O9        0.020
+ DLQ      plan-14   O11       0.020
+ DLQ      plan-15   C42       0.020
+ DLQ      plan-15   C41       0.020
+ DLQ      plan-15   O10       0.020
+ DLQ      plan-15   N7        0.020
+ DLQ      plan-16   N7        0.020
+ DLQ      plan-16   C42       0.020
+ DLQ      plan-16   C43       0.020
+ DLQ      plan-16   C46       0.020
+ DLQ      plan-17   C44       0.020
+ DLQ      plan-17   N1        0.020
+ DLQ      plan-17   C43       0.020
+ DLQ      plan-17   O12       0.020
+ DLQ      plan-17   HN1       0.020
+# ------------------------------------------------------

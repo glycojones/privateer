@@ -1,0 +1,224 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UM2      UM2 '(2S)-2-amino-N-butyl-propanamide    ' non-polymer        26  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_UM2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ UM2           OCN    O    O         0.000      0.000    0.000    0.000
+ UM2           CCM    C    C         0.000     -1.185   -0.068   -0.252
+ UM2           CCO    C    CH1       0.000     -1.678   -1.021   -1.309
+ UM2           HCO    H    H         0.000     -2.189   -0.457   -2.102
+ UM2           NCQ    N    NH2       0.000     -0.537   -1.748   -1.883
+ UM2           HNCA   H    H         0.000      0.404   -1.568   -1.551
+ UM2           HNCQ   H    H         0.000     -0.683   -2.435   -2.613
+ UM2           CCP    C    CH3       0.000     -2.654   -2.018   -0.682
+ UM2           HCPB   H    H         0.000     -3.000   -2.690   -1.424
+ UM2           HCPA   H    H         0.000     -2.162   -2.562    0.083
+ UM2           HCP    H    H         0.000     -3.477   -1.496   -0.268
+ UM2           NCL    N    NH1       0.000     -2.061    0.710    0.415
+ UM2           HNCL   H    H         0.000     -3.047    0.653    0.206
+ UM2           CCK    C    CH2       0.000     -1.583    1.637    1.443
+ UM2           HCK    H    H         0.000     -0.885    2.348    0.995
+ UM2           HCKA   H    H         0.000     -1.074    1.076    2.230
+ UM2           CCJ    C    CH2       0.000     -2.770    2.394    2.041
+ UM2           HCJ    H    H         0.000     -3.467    1.681    2.487
+ UM2           HCJA   H    H         0.000     -3.278    2.953    1.252
+ UM2           CCI    C    CH2       0.000     -2.271    3.362    3.115
+ UM2           HCI    H    H         0.000     -1.573    4.073    2.667
+ UM2           HCIA   H    H         0.000     -1.762    2.801    3.901
+ UM2           CCH    C    CH3       0.000     -3.458    4.119    3.712
+ UM2           HCHB   H    H         0.000     -3.954    4.664    2.950
+ UM2           HCHA   H    H         0.000     -4.137    3.430    4.148
+ UM2           HCH    H    H         0.000     -3.115    4.791    4.456
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ UM2      OCN    n/a    CCM    START
+ UM2      CCM    OCN    NCL    .
+ UM2      CCO    CCM    CCP    .
+ UM2      HCO    CCO    .      .
+ UM2      NCQ    CCO    HNCQ   .
+ UM2      HNCA   NCQ    .      .
+ UM2      HNCQ   NCQ    .      .
+ UM2      CCP    CCO    HCP    .
+ UM2      HCPB   CCP    .      .
+ UM2      HCPA   CCP    .      .
+ UM2      HCP    CCP    .      .
+ UM2      NCL    CCM    CCK    .
+ UM2      HNCL   NCL    .      .
+ UM2      CCK    NCL    CCJ    .
+ UM2      HCK    CCK    .      .
+ UM2      HCKA   CCK    .      .
+ UM2      CCJ    CCK    CCI    .
+ UM2      HCJ    CCJ    .      .
+ UM2      HCJA   CCJ    .      .
+ UM2      CCI    CCJ    CCH    .
+ UM2      HCI    CCI    .      .
+ UM2      HCIA   CCI    .      .
+ UM2      CCH    CCI    HCH    .
+ UM2      HCHB   CCH    .      .
+ UM2      HCHA   CCH    .      .
+ UM2      HCH    CCH    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UM2       CCH       CCI       single    1.513     0.020     1.513     0.020     
+UM2       CCI       CCJ       single    1.524     0.020     1.524     0.020     
+UM2       CCJ       CCK       single    1.524     0.020     1.524     0.020     
+UM2       CCK       NCL       single    1.450     0.020     1.450     0.020     
+UM2       NCL       CCM       single    1.330     0.020     1.330     0.020     
+UM2       CCM       OCN       double    1.220     0.020     1.220     0.020     
+UM2       CCO       CCM       single    1.500     0.020     1.500     0.020     
+UM2       CCP       CCO       single    1.524     0.020     1.524     0.020     
+UM2       NCQ       CCO       single    1.450     0.020     1.450     0.020     
+UM2       HCH       CCH       single    1.089     0.010     0.989     0.005     
+UM2       HCHA      CCH       single    1.089     0.010     0.989     0.005     
+UM2       HCHB      CCH       single    1.089     0.010     0.989     0.005     
+UM2       HCI       CCI       single    1.089     0.010     0.989     0.005     
+UM2       HCIA      CCI       single    1.089     0.010     0.989     0.005     
+UM2       HCJ       CCJ       single    1.089     0.010     0.989     0.005     
+UM2       HCJA      CCJ       single    1.089     0.010     0.989     0.005     
+UM2       HCK       CCK       single    1.089     0.010     0.989     0.005     
+UM2       HCKA      CCK       single    1.089     0.010     0.989     0.005     
+UM2       HNCL      NCL       single    1.016     0.010     0.899     0.007     
+UM2       HCO       CCO       single    1.089     0.010     0.989     0.005     
+UM2       HCP       CCP       single    1.089     0.010     0.989     0.005     
+UM2       HCPA      CCP       single    1.089     0.010     0.989     0.005     
+UM2       HCPB      CCP       single    1.089     0.010     0.989     0.005     
+UM2       HNCQ      NCQ       single    1.036     0.016     0.914     0.007     
+UM2       HNCA      NCQ       single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ UM2      OCN    CCM    CCO     120.500    3.000
+ UM2      OCN    CCM    NCL     123.000    3.000
+ UM2      CCO    CCM    NCL     116.500    3.000
+ UM2      CCM    CCO    HCO     108.810    3.000
+ UM2      CCM    CCO    NCQ     109.470    3.000
+ UM2      CCM    CCO    CCP     109.470    3.000
+ UM2      HCO    CCO    NCQ     109.470    3.000
+ UM2      HCO    CCO    CCP     108.340    3.000
+ UM2      NCQ    CCO    CCP     109.470    3.000
+ UM2      CCO    NCQ    HNCA    120.000    3.000
+ UM2      CCO    NCQ    HNCQ    120.000    3.000
+ UM2      HNCA   NCQ    HNCQ    120.000    3.000
+ UM2      CCO    CCP    HCPB    109.470    3.000
+ UM2      CCO    CCP    HCPA    109.470    3.000
+ UM2      CCO    CCP    HCP     109.470    3.000
+ UM2      HCPB   CCP    HCPA    109.470    3.000
+ UM2      HCPB   CCP    HCP     109.470    3.000
+ UM2      HCPA   CCP    HCP     109.470    3.000
+ UM2      CCM    NCL    HNCL    120.000    3.000
+ UM2      CCM    NCL    CCK     121.500    3.000
+ UM2      HNCL   NCL    CCK     118.500    3.000
+ UM2      NCL    CCK    HCK     109.470    3.000
+ UM2      NCL    CCK    HCKA    109.470    3.000
+ UM2      NCL    CCK    CCJ     112.000    3.000
+ UM2      HCK    CCK    HCKA    107.900    3.000
+ UM2      HCK    CCK    CCJ     109.470    3.000
+ UM2      HCKA   CCK    CCJ     109.470    3.000
+ UM2      CCK    CCJ    HCJ     109.470    3.000
+ UM2      CCK    CCJ    HCJA    109.470    3.000
+ UM2      CCK    CCJ    CCI     111.000    3.000
+ UM2      HCJ    CCJ    HCJA    107.900    3.000
+ UM2      HCJ    CCJ    CCI     109.470    3.000
+ UM2      HCJA   CCJ    CCI     109.470    3.000
+ UM2      CCJ    CCI    HCI     109.470    3.000
+ UM2      CCJ    CCI    HCIA    109.470    3.000
+ UM2      CCJ    CCI    CCH     111.000    3.000
+ UM2      HCI    CCI    HCIA    107.900    3.000
+ UM2      HCI    CCI    CCH     109.470    3.000
+ UM2      HCIA   CCI    CCH     109.470    3.000
+ UM2      CCI    CCH    HCHB    109.470    3.000
+ UM2      CCI    CCH    HCHA    109.470    3.000
+ UM2      CCI    CCH    HCH     109.470    3.000
+ UM2      HCHB   CCH    HCHA    109.470    3.000
+ UM2      HCHB   CCH    HCH     109.470    3.000
+ UM2      HCHA   CCH    HCH     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ UM2      var_1    OCN    CCM    CCO    CCP      119.930   20.000   3
+ UM2      var_2    CCM    CCO    NCQ    HNCQ    -179.947   20.000   1
+ UM2      var_3    CCM    CCO    CCP    HCP       60.068   20.000   3
+ UM2      CONST_1  OCN    CCM    NCL    CCK        0.000    0.000   0
+ UM2      var_4    CCM    NCL    CCK    CCJ      179.997   20.000   3
+ UM2      var_5    NCL    CCK    CCJ    CCI      179.995   20.000   3
+ UM2      var_6    CCK    CCJ    CCI    CCH      180.000   20.000   3
+ UM2      var_7    CCJ    CCI    CCH    HCH     -179.953   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ UM2      chir_01  CCO    CCM    CCP    NCQ       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ UM2      plan-1    NCL       0.020
+ UM2      plan-1    CCK       0.020
+ UM2      plan-1    CCM       0.020
+ UM2      plan-1    HNCL      0.020
+ UM2      plan-2    CCM       0.020
+ UM2      plan-2    NCL       0.020
+ UM2      plan-2    OCN       0.020
+ UM2      plan-2    CCO       0.020
+ UM2      plan-2    HNCL      0.020
+ UM2      plan-3    NCQ       0.020
+ UM2      plan-3    CCO       0.020
+ UM2      plan-3    HNCQ      0.020
+ UM2      plan-3    HNCA      0.020
+# ------------------------------------------------------

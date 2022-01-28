@@ -1,0 +1,181 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DRL     DRL     "2-methyl-3,5,7,8-tetrahydro-4H-thiopyrano[4,3-d]pyrimidin-4-one"     NON-POLYMER     22     12     .     
+#
+data_comp_DRL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DRL     C1A     C       CH3     0       18.854      -4.647      12.967      
+DRL     C1I     C       CR6     0       17.915      -5.627      12.345      
+DRL     N1G     N       NRD6    0       18.375      -6.789      11.989      
+DRL     C1J     C       CR66    0       17.557      -7.718      11.427      
+DRL     C1D     C       CH2     0       18.238      -9.016      11.060      
+DRL     C1C     C       CH2     0       17.305      -10.196     10.925      
+DRL     S1H     S       S2      0       16.018      -9.891      9.710       
+DRL     C1E     C       CH2     0       15.264      -8.482      10.558      
+DRL     C1K     C       CR66    0       16.191      -7.462      11.182      
+DRL     C1L     C       CR6     0       15.696      -6.204      11.575      
+DRL     O1B     O       O       0       14.505      -5.864      11.424      
+DRL     N1F     N       NR6     0       16.578      -5.297      12.153      
+DRL     H1A     H       H       0       18.393      -3.820      13.149      
+DRL     H1AA    H       H       0       19.587      -4.477      12.363      
+DRL     H1AB    H       H       0       19.198      -5.009      13.791      
+DRL     H1D     H       H       0       18.714      -8.882      10.212      
+DRL     H1DA    H       H       0       18.912      -9.217      11.747      
+DRL     H1C     H       H       0       16.890      -10.381     11.782      
+DRL     H1CA    H       H       0       17.810      -10.979     10.656      
+DRL     H1E     H       H       0       14.683      -8.834      11.252      
+DRL     H1EA    H       H       0       14.691      -8.034      9.916       
+DRL     HN1F    H       H       0       16.278      -4.500      12.401      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DRL       C1A       C1I       SINGLE    n         1.490     0.017     1.490     0.017     
+DRL       C1I       N1G       DOUBLE    y         1.289     0.012     1.289     0.012     
+DRL       C1I       N1F       SINGLE    y         1.371     0.017     1.371     0.017     
+DRL       N1G       C1J       SINGLE    y         1.343     0.013     1.343     0.013     
+DRL       C1J       C1D       SINGLE    n         1.505     0.010     1.505     0.010     
+DRL       C1J       C1K       DOUBLE    y         1.397     0.010     1.397     0.010     
+DRL       C1D       C1C       SINGLE    n         1.511     0.010     1.511     0.010     
+DRL       C1C       S1H       SINGLE    n         1.799     0.012     1.799     0.012     
+DRL       S1H       C1E       SINGLE    n         1.807     0.013     1.807     0.013     
+DRL       C1E       C1K       SINGLE    n         1.502     0.012     1.502     0.012     
+DRL       C1K       C1L       SINGLE    y         1.396     0.011     1.396     0.011     
+DRL       C1L       O1B       DOUBLE    n         1.246     0.010     1.246     0.010     
+DRL       C1L       N1F       SINGLE    y         1.385     0.010     1.385     0.010     
+DRL       C1A       H1A       SINGLE    n         1.089     0.010     0.964     0.015     
+DRL       C1A       H1AA      SINGLE    n         1.089     0.010     0.964     0.015     
+DRL       C1A       H1AB      SINGLE    n         1.089     0.010     0.964     0.015     
+DRL       C1D       H1D       SINGLE    n         1.089     0.010     0.982     0.019     
+DRL       C1D       H1DA      SINGLE    n         1.089     0.010     0.982     0.019     
+DRL       C1C       H1C       SINGLE    n         1.089     0.010     0.970     0.010     
+DRL       C1C       H1CA      SINGLE    n         1.089     0.010     0.970     0.010     
+DRL       C1E       H1E       SINGLE    n         1.089     0.010     0.971     0.010     
+DRL       C1E       H1EA      SINGLE    n         1.089     0.010     0.971     0.010     
+DRL       N1F       HN1F      SINGLE    n         1.016     0.010     0.886     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DRL         C1I         C1A         H1A     109.512    1.50
+DRL         C1I         C1A        H1AA     109.512    1.50
+DRL         C1I         C1A        H1AB     109.512    1.50
+DRL         H1A         C1A        H1AA     109.397    1.50
+DRL         H1A         C1A        H1AB     109.397    1.50
+DRL        H1AA         C1A        H1AB     109.397    1.50
+DRL         C1A         C1I         N1G     119.180    1.50
+DRL         C1A         C1I         N1F     120.173    2.34
+DRL         N1G         C1I         N1F     120.647    2.80
+DRL         C1I         N1G         C1J     118.783    1.50
+DRL         N1G         C1J         C1D     116.223    1.50
+DRL         N1G         C1J         C1K     122.096    1.50
+DRL         C1D         C1J         C1K     121.681    1.50
+DRL         C1J         C1D         C1C     111.445    2.09
+DRL         C1J         C1D         H1D     108.638    1.50
+DRL         C1J         C1D        H1DA     108.638    1.50
+DRL         C1C         C1D         H1D     109.675    1.50
+DRL         C1C         C1D        H1DA     109.675    1.50
+DRL         H1D         C1D        H1DA     107.873    1.50
+DRL         C1D         C1C         S1H     112.473    1.50
+DRL         C1D         C1C         H1C     109.306    1.50
+DRL         C1D         C1C        H1CA     109.306    1.50
+DRL         S1H         C1C         H1C     108.687    1.50
+DRL         S1H         C1C        H1CA     108.687    1.50
+DRL         H1C         C1C        H1CA     107.999    1.91
+DRL         C1C         S1H         C1E      97.423    1.91
+DRL         S1H         C1E         C1K     112.962    2.21
+DRL         S1H         C1E         H1E     108.282    1.53
+DRL         S1H         C1E        H1EA     108.282    1.53
+DRL         C1K         C1E         H1E     109.796    2.08
+DRL         C1K         C1E        H1EA     109.796    2.08
+DRL         H1E         C1E        H1EA     107.266    1.51
+DRL         C1J         C1K         C1E     120.147    1.98
+DRL         C1J         C1K         C1L     118.701    1.50
+DRL         C1E         C1K         C1L     121.152    1.93
+DRL         C1K         C1L         O1B     122.165    1.50
+DRL         C1K         C1L         N1F     118.840    1.50
+DRL         O1B         C1L         N1F     118.996    1.50
+DRL         C1I         N1F         C1L     120.934    2.37
+DRL         C1I         N1F        HN1F     119.689    2.18
+DRL         C1L         N1F        HN1F     119.377    1.86
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DRL            sp2_sp3_13         N1G         C1I         C1A         H1A     150.000   10.00     6
+DRL              const_19         C1A         C1I         N1F         C1L     180.000   10.00     2
+DRL       const_sp2_sp2_2         C1A         C1I         N1G         C1J     180.000   10.00     2
+DRL       const_sp2_sp2_4         C1D         C1J         N1G         C1I     180.000   10.00     2
+DRL             sp2_sp3_4         N1G         C1J         C1D         C1C     180.000   10.00     6
+DRL       const_sp2_sp2_6         N1G         C1J         C1K         C1E     180.000   10.00     2
+DRL             sp3_sp3_1         S1H         C1C         C1D         C1J     -60.000   10.00     3
+DRL            sp3_sp3_10         C1D         C1C         S1H         C1E      60.000   10.00     3
+DRL            sp3_sp3_13         C1K         C1E         S1H         C1C     -60.000   10.00     3
+DRL             sp2_sp3_7         C1J         C1K         C1E         S1H       0.000   10.00     6
+DRL              const_10         C1J         C1K         C1L         O1B     180.000   10.00     2
+DRL              const_15         O1B         C1L         N1F         C1I     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DRL    plan-1         C1A   0.020
+DRL    plan-1         C1D   0.020
+DRL    plan-1         C1E   0.020
+DRL    plan-1         C1I   0.020
+DRL    plan-1         C1J   0.020
+DRL    plan-1         C1K   0.020
+DRL    plan-1         C1L   0.020
+DRL    plan-1        HN1F   0.020
+DRL    plan-1         N1F   0.020
+DRL    plan-1         N1G   0.020
+DRL    plan-1         O1B   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DRL SMILES           ACDLabs              10.04 "O=C1C2=C(N=C(N1)C)CCSC2"
+DRL SMILES_CANONICAL CACTVS               3.341 "CC1=NC2=C(CSCC2)C(=O)N1"
+DRL SMILES           CACTVS               3.341 "CC1=NC2=C(CSCC2)C(=O)N1"
+DRL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC1=NC2=C(CSCC2)C(=O)N1"
+DRL SMILES           "OpenEye OEToolkits" 1.5.0 "CC1=NC2=C(CSCC2)C(=O)N1"
+DRL InChI            InChI                1.03  "InChI=1S/C8H10N2OS/c1-5-9-7-2-3-12-4-6(7)8(11)10-5/h2-4H2,1H3,(H,9,10,11)"
+DRL InChIKey         InChI                1.03  HRYKZAKEAVZGJD-UHFFFAOYSA-N
+DRL ?                acedrg               190         "dictionary generator"                  
+DRL ?                acedrg_database      11          "data source"                           
+DRL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DRL ?                refmac5              5.8.0158    "optimization tool"                     

@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PGA     PGA      "2-PHOSPHOGLYCOLIC ACID"     NON-POLYMER     11     9     .     
+#
+data_comp_PGA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PGA     P       P       P       0       1.908       0.105       0.252       
+PGA     O1P     O       O2      0       0.368       0.415       -0.119      
+PGA     O2P     O       O       0       2.096       -1.383      0.025       
+PGA     O3P     O       OP      -1      2.072       0.505       1.706       
+PGA     O4P     O       OP      -1      2.739       0.955       -0.691      
+PGA     C2      C       CH2     0       -0.706      -0.186      0.600       
+PGA     C1      C       C       0       -2.043      0.223       0.005       
+PGA     O1      O       O       0       -2.819      0.895       0.715       
+PGA     O2      O       OC      -1      -2.268      -0.147      -1.165      
+PGA     H21     H       H       0       -0.687      0.086       1.543       
+PGA     H22     H       H       0       -0.641      -1.164      0.567       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PGA       P         O1P       SINGLE    n         1.614     0.019     1.614     0.019     
+PGA       P         O2P       DOUBLE    n         1.517     0.019     1.517     0.019     
+PGA       P         O3P       SINGLE    n         1.517     0.019     1.517     0.019     
+PGA       P         O4P       SINGLE    n         1.517     0.019     1.517     0.019     
+PGA       O1P       C2        SINGLE    n         1.425     0.016     1.425     0.016     
+PGA       C2        C1        SINGLE    n         1.519     0.010     1.519     0.010     
+PGA       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+PGA       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+PGA       C2        H21       SINGLE    n         1.089     0.010     0.981     0.014     
+PGA       C2        H22       SINGLE    n         1.089     0.010     0.981     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PGA         O1P           P         O2P     105.795    2.09
+PGA         O1P           P         O3P     105.795    2.09
+PGA         O1P           P         O4P     105.795    2.09
+PGA         O2P           P         O3P     112.864    1.69
+PGA         O2P           P         O4P     112.864    1.69
+PGA         O3P           P         O4P     112.864    1.69
+PGA           P         O1P          C2     121.496    2.55
+PGA         O1P          C2          C1     110.772    2.37
+PGA         O1P          C2         H21     110.955    2.77
+PGA         O1P          C2         H22     110.955    2.77
+PGA          C1          C2         H21     108.307    1.59
+PGA          C1          C2         H22     108.307    1.59
+PGA         H21          C2         H22     107.985    1.50
+PGA          C2          C1          O1     117.148    3.00
+PGA          C2          C1          O2     117.148    3.00
+PGA          O1          C1          O2     125.704    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PGA             sp3_sp3_1          C2         O1P           P         O2P     180.000   10.00     3
+PGA             sp3_sp3_4          C1          C2         O1P           P     180.000   10.00     3
+PGA             sp2_sp3_2          O1          C1          C2         O1P     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PGA    plan-1          C1   0.020
+PGA    plan-1          C2   0.020
+PGA    plan-1          O1   0.020
+PGA    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PGA SMILES           ACDLabs              10.04 "O=P(O)(O)OCC(=O)O"
+PGA SMILES_CANONICAL CACTVS               3.341 "OC(=O)CO[P](O)(O)=O"
+PGA SMILES           CACTVS               3.341 "OC(=O)CO[P](O)(O)=O"
+PGA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)OP(=O)(O)O"
+PGA SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)OP(=O)(O)O"
+PGA InChI            InChI                1.03  "InChI=1S/C2H5O6P/c3-2(4)1-8-9(5,6)7/h1H2,(H,3,4)(H2,5,6,7)"
+PGA InChIKey         InChI                1.03  ASCFNMCAHFUBCO-UHFFFAOYSA-N
+PGA ?                acedrg               202         "dictionary generator"                  
+PGA ?                acedrg_database      11          "data source"                           
+PGA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PGA ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,639 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RIG      RIG 'ARGADIN                             ' non-polymer        87  48 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RIG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RIG           OBM    O    O         0.000      0.000    0.000    0.000
+ RIG           CBO    C    C         0.000     -0.513    0.369   -1.034
+ RIG           N      N    NH1       0.000     -0.351   -0.318   -2.189
+ RIG           H      H    H         0.000     -0.509    0.120   -3.086
+ RIG           CA     C    CH1       0.000      0.065   -1.736   -2.089
+ RIG           HA     H    H         0.000     -0.042   -2.211   -3.074
+ RIG           CB     C    CH2       0.000      1.523   -1.836   -1.643
+ RIG           HBC1   H    H         0.000      1.786   -2.886   -1.493
+ RIG           HBC2   H    H         0.000      1.655   -1.291   -0.706
+ RIG           CG     C    CH2       0.000      2.428   -1.231   -2.719
+ RIG           HGC1   H    H         0.000      2.163   -0.183   -2.870
+ RIG           HGC2   H    H         0.000      2.295   -1.777   -3.656
+ RIG           CD     C    CH2       0.000      3.888   -1.331   -2.272
+ RIG           HDC1   H    H         0.000      4.151   -2.380   -2.121
+ RIG           HDC2   H    H         0.000      4.019   -0.785   -1.336
+ RIG           NE     N    NH1       0.000      4.754   -0.752   -3.302
+ RIG           HE     H    H         0.000      4.350   -0.371   -4.146
+ RIG           CZ     C    C         0.000      6.116   -0.729   -3.121
+ RIG           NH1    N    N         0.000      6.637   -1.223   -2.034
+ RIG           HNH1   H    H         0.000      6.080   -1.607   -1.351
+ RIG           NH2    N    NH1       0.000      6.933   -0.183   -4.092
+ RIG           HH2    H    H         0.000      6.529    0.200   -4.934
+ RIG           C0B    C    C         0.000      8.269   -0.161   -3.915
+ RIG           C1B    C    CH3       0.000      9.160    0.436   -4.974
+ RIG           H1B3   H    H         0.000      9.032   -0.093   -5.883
+ RIG           H1B2   H    H         0.000      8.905    1.454   -5.120
+ RIG           H1B1   H    H         0.000     10.172    0.367   -4.666
+ RIG           O0C    O    O         0.000      8.754   -0.620   -2.902
+ RIG           CBP    C    CH1       0.000     -1.382    1.605   -0.985
+ RIG           HBP    H    H         0.000     -1.963    1.699   -1.914
+ RIG           CBQ    C    CH2       0.000     -0.510    2.842   -0.779
+ RIG           HBQ1   H    H         0.000      0.256    2.880   -1.557
+ RIG           HBQ2   H    H         0.000     -0.030    2.788    0.200
+ RIG           CBR    C    CH2       0.000     -1.379    4.098   -0.854
+ RIG           HBR1   H    H         0.000     -2.145    4.057   -0.077
+ RIG           HBR2   H    H         0.000     -1.859    4.149   -1.834
+ RIG           CBN    C    CH2       0.000     -0.505    5.337   -0.647
+ RIG           HBN1   H    H         0.000      0.261    5.376   -1.425
+ RIG           HBN2   H    H         0.000     -0.025    5.284    0.332
+ RIG           CBJ    C    C         0.000     -1.361    6.574   -0.722
+ RIG           OBL    O    OC       -0.500     -0.843    7.704   -0.579
+ RIG           OBK    O    OC       -0.500     -2.591    6.473   -0.927
+ RIG           NBS    N    NH1       0.000     -2.296    1.424    0.178
+ RIG           HBS    H    H         0.000     -1.964    1.129    1.085
+ RIG           CBB    C    C         0.000     -3.614    1.686   -0.067
+ RIG           OBC    O    O         0.000     -3.975    2.064   -1.163
+ RIG           CBA    C    CH1       0.000     -4.629    1.505    1.036
+ RIG           HBA    H    H         0.000     -5.590    1.934    0.717
+ RIG           CBD    C    CH2       0.000     -4.144    2.235    2.290
+ RIG           HBD1   H    H         0.000     -4.920    2.194    3.057
+ RIG           HBD2   H    H         0.000     -3.931    3.277    2.044
+ RIG           CBE    C    CR5       0.000     -2.892    1.572    2.803
+ RIG           CBG    C    CR15      0.000     -1.703    2.173    3.003
+ RIG           HBG    H    H         0.000     -1.470    3.215    2.826
+ RIG           NBI    N    NR15      0.000     -0.848    1.213    3.473
+ RIG           HBI    H    H         0.000      0.151    1.348    3.727
+ RIG           CBH    C    CR15      0.000     -1.544    0.058    3.545
+ RIG           HBH    H    H         0.000     -1.153   -0.895    3.878
+ RIG           NBF    N    NRD5      0.000     -2.767    0.281    3.148
+ RIG           NAZ    N    N         0.000     -4.806    0.073    1.299
+ RIG           CAU    C    C         0.000     -4.457   -0.863    0.400
+ RIG           OAV    O    O         0.000     -4.073   -0.657   -0.731
+ RIG           CAX    C    C         0.000     -5.349   -0.430    2.414
+ RIG           OAY    O    O         0.000     -5.873    0.196    3.313
+ RIG           CAW    C    CH2       0.000     -5.234   -1.941    2.393
+ RIG           HAW1   H    H         0.000     -6.205   -2.433    2.483
+ RIG           HAW2   H    H         0.000     -4.564   -2.318    3.168
+ RIG           CAT    C    CH1       0.000     -4.635   -2.236    1.007
+ RIG           HAT    H    H         0.000     -5.320   -2.848    0.404
+ RIG           NAS    N    NH1       0.000     -3.317   -2.901    1.155
+ RIG           HAS    H    H         0.000     -2.691   -2.712    1.925
+ RIG           CAN    C    C         0.000     -3.024   -3.794    0.159
+ RIG           OAO    O    O         0.000     -3.835   -4.048   -0.707
+ RIG           CAM    C    CH1       0.000     -1.666   -4.446    0.146
+ RIG           HAM    H    H         0.000     -1.214   -4.417    1.148
+ RIG           CAP    C    CH2       0.000     -1.783   -5.900   -0.354
+ RIG           HAP1   H    H         0.000     -2.819   -6.186   -0.546
+ RIG           HAP2   H    H         0.000     -1.333   -6.611    0.343
+ RIG           CAQ    C    CH2       0.000     -0.987   -5.907   -1.688
+ RIG           HAQ1   H    H         0.000     -1.586   -5.623   -2.556
+ RIG           HAQ2   H    H         0.000     -0.480   -6.852   -1.891
+ RIG           CAR    C    CH2       0.000      0.075   -4.796   -1.400
+ RIG           HAR1   H    H         0.000      0.576   -4.419   -2.294
+ RIG           HAR2   H    H         0.000      0.823   -5.081   -0.657
+ RIG           NAL    N    N         0.000     -0.806   -3.733   -0.837
+ RIG           C      C    C         0.000     -0.844   -2.425   -1.112
+ RIG           O      O    O         0.000     -1.683   -1.754   -0.537
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RIG      OBM    n/a    CBO    START
+ RIG      CBO    OBM    CBP    .
+ RIG      N      CBO    CA     .
+ RIG      H      N      .      .
+ RIG      CA     N      CB     .
+ RIG      HA     CA     .      .
+ RIG      CB     CA     CG     .
+ RIG      HBC1   CB     .      .
+ RIG      HBC2   CB     .      .
+ RIG      CG     CB     CD     .
+ RIG      HGC1   CG     .      .
+ RIG      HGC2   CG     .      .
+ RIG      CD     CG     NE     .
+ RIG      HDC1   CD     .      .
+ RIG      HDC2   CD     .      .
+ RIG      NE     CD     CZ     .
+ RIG      HE     NE     .      .
+ RIG      CZ     NE     NH2    .
+ RIG      NH1    CZ     HNH1   .
+ RIG      HNH1   NH1    .      .
+ RIG      NH2    CZ     C0B    .
+ RIG      HH2    NH2    .      .
+ RIG      C0B    NH2    O0C    .
+ RIG      C1B    C0B    H1B1   .
+ RIG      H1B3   C1B    .      .
+ RIG      H1B2   C1B    .      .
+ RIG      H1B1   C1B    .      .
+ RIG      O0C    C0B    .      .
+ RIG      CBP    CBO    NBS    .
+ RIG      HBP    CBP    .      .
+ RIG      CBQ    CBP    CBR    .
+ RIG      HBQ1   CBQ    .      .
+ RIG      HBQ2   CBQ    .      .
+ RIG      CBR    CBQ    CBN    .
+ RIG      HBR1   CBR    .      .
+ RIG      HBR2   CBR    .      .
+ RIG      CBN    CBR    CBJ    .
+ RIG      HBN1   CBN    .      .
+ RIG      HBN2   CBN    .      .
+ RIG      CBJ    CBN    OBK    .
+ RIG      OBL    CBJ    .      .
+ RIG      OBK    CBJ    .      .
+ RIG      NBS    CBP    CBB    .
+ RIG      HBS    NBS    .      .
+ RIG      CBB    NBS    CBA    .
+ RIG      OBC    CBB    .      .
+ RIG      CBA    CBB    NAZ    .
+ RIG      HBA    CBA    .      .
+ RIG      CBD    CBA    CBE    .
+ RIG      HBD1   CBD    .      .
+ RIG      HBD2   CBD    .      .
+ RIG      CBE    CBD    CBG    .
+ RIG      CBG    CBE    NBI    .
+ RIG      HBG    CBG    .      .
+ RIG      NBI    CBG    CBH    .
+ RIG      HBI    NBI    .      .
+ RIG      CBH    NBI    NBF    .
+ RIG      HBH    CBH    .      .
+ RIG      NBF    CBH    .      .
+ RIG      NAZ    CBA    CAX    .
+ RIG      CAU    NAZ    OAV    .
+ RIG      OAV    CAU    .      .
+ RIG      CAX    NAZ    CAW    .
+ RIG      OAY    CAX    .      .
+ RIG      CAW    CAX    CAT    .
+ RIG      HAW1   CAW    .      .
+ RIG      HAW2   CAW    .      .
+ RIG      CAT    CAW    NAS    .
+ RIG      HAT    CAT    .      .
+ RIG      NAS    CAT    CAN    .
+ RIG      HAS    NAS    .      .
+ RIG      CAN    NAS    CAM    .
+ RIG      OAO    CAN    .      .
+ RIG      CAM    CAN    CAP    .
+ RIG      HAM    CAM    .      .
+ RIG      CAP    CAM    CAQ    .
+ RIG      HAP1   CAP    .      .
+ RIG      HAP2   CAP    .      .
+ RIG      CAQ    CAP    CAR    .
+ RIG      HAQ1   CAQ    .      .
+ RIG      HAQ2   CAQ    .      .
+ RIG      CAR    CAQ    NAL    .
+ RIG      HAR1   CAR    .      .
+ RIG      HAR2   CAR    .      .
+ RIG      NAL    CAR    C      .
+ RIG      C      NAL    O      .
+ RIG      O      C      .      END
+ RIG      C      CA     .    ADD
+ RIG      NAL    CAM    .    ADD
+ RIG      CAT    CAU    .    ADD
+ RIG      CBE    NBF    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RIG       C1B       C0B       single    1.500     0.020     1.500     0.020     
+RIG       H1B1      C1B       single    1.089     0.010     0.989     0.005     
+RIG       H1B2      C1B       single    1.089     0.010     0.989     0.005     
+RIG       H1B3      C1B       single    1.089     0.010     0.989     0.005     
+RIG       O0C       C0B       double    1.220     0.020     1.220     0.020     
+RIG       C0B       NH2       single    1.330     0.020     1.330     0.020     
+RIG       NH2       CZ        single    1.330     0.020     1.330     0.020     
+RIG       HH2       NH2       single    1.016     0.010     0.899     0.007     
+RIG       NH1       CZ        double    1.260     0.020     1.260     0.020     
+RIG       CZ        NE        single    1.330     0.020     1.330     0.020     
+RIG       HNH1      NH1       single    1.016     0.010     0.899     0.007     
+RIG       NE        CD        single    1.450     0.020     1.450     0.020     
+RIG       HE        NE        single    1.016     0.010     0.899     0.007     
+RIG       CD        CG        single    1.524     0.020     1.524     0.020     
+RIG       HDC1      CD        single    1.089     0.010     0.989     0.005     
+RIG       HDC2      CD        single    1.089     0.010     0.989     0.005     
+RIG       CG        CB        single    1.524     0.020     1.524     0.020     
+RIG       HGC1      CG        single    1.089     0.010     0.989     0.005     
+RIG       HGC2      CG        single    1.089     0.010     0.989     0.005     
+RIG       CB        CA        single    1.524     0.020     1.524     0.020     
+RIG       HBC1      CB        single    1.089     0.010     0.989     0.005     
+RIG       HBC2      CB        single    1.089     0.010     0.989     0.005     
+RIG       CA        N         single    1.450     0.020     1.450     0.020     
+RIG       C         CA        single    1.500     0.020     1.500     0.020     
+RIG       HA        CA        single    1.089     0.010     0.989     0.005     
+RIG       N         CBO       single    1.330     0.020     1.330     0.020     
+RIG       H         N         single    1.016     0.010     0.899     0.007     
+RIG       CBO       OBM       double    1.220     0.020     1.220     0.020     
+RIG       CBP       CBO       single    1.500     0.020     1.500     0.020     
+RIG       O         C         double    1.220     0.020     1.220     0.020     
+RIG       C         NAL       single    1.330     0.020     1.330     0.020     
+RIG       NAL       CAR       single    1.455     0.020     1.455     0.020     
+RIG       NAL       CAM       single    1.455     0.020     1.455     0.020     
+RIG       CAR       CAQ       single    1.524     0.020     1.524     0.020     
+RIG       HAR1      CAR       single    1.089     0.010     0.989     0.005     
+RIG       HAR2      CAR       single    1.089     0.010     0.989     0.005     
+RIG       CAQ       CAP       single    1.524     0.020     1.524     0.020     
+RIG       HAQ1      CAQ       single    1.089     0.010     0.989     0.005     
+RIG       HAQ2      CAQ       single    1.089     0.010     0.989     0.005     
+RIG       CAP       CAM       single    1.524     0.020     1.524     0.020     
+RIG       HAP1      CAP       single    1.089     0.010     0.989     0.005     
+RIG       HAP2      CAP       single    1.089     0.010     0.989     0.005     
+RIG       CAM       CAN       single    1.500     0.020     1.500     0.020     
+RIG       HAM       CAM       single    1.089     0.010     0.989     0.005     
+RIG       OAO       CAN       double    1.220     0.020     1.220     0.020     
+RIG       CAN       NAS       single    1.330     0.020     1.330     0.020     
+RIG       NAS       CAT       single    1.450     0.020     1.450     0.020     
+RIG       HAS       NAS       single    1.016     0.010     0.899     0.007     
+RIG       CAT       CAU       single    1.500     0.020     1.500     0.020     
+RIG       CAT       CAW       single    1.524     0.020     1.524     0.020     
+RIG       HAT       CAT       single    1.089     0.010     0.989     0.005     
+RIG       OAV       CAU       double    1.220     0.020     1.220     0.020     
+RIG       CAU       NAZ       single    1.330     0.020     1.330     0.020     
+RIG       CAW       CAX       single    1.510     0.020     1.510     0.020     
+RIG       HAW1      CAW       single    1.089     0.010     0.989     0.005     
+RIG       HAW2      CAW       single    1.089     0.010     0.989     0.005     
+RIG       OAY       CAX       double    1.220     0.020     1.220     0.020     
+RIG       CAX       NAZ       single    1.330     0.020     1.330     0.020     
+RIG       NAZ       CBA       single    1.455     0.020     1.455     0.020     
+RIG       CBD       CBA       single    1.524     0.020     1.524     0.020     
+RIG       CBA       CBB       single    1.500     0.020     1.500     0.020     
+RIG       HBA       CBA       single    1.089     0.010     0.989     0.005     
+RIG       CBE       CBD       single    1.510     0.020     1.510     0.020     
+RIG       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+RIG       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+RIG       CBG       CBE       double    1.387     0.020     1.387     0.020     
+RIG       CBE       NBF       single    1.350     0.020     1.350     0.020     
+RIG       NBI       CBG       single    1.350     0.020     1.350     0.020     
+RIG       HBG       CBG       single    1.082     0.013     0.975     0.010     
+RIG       CBH       NBI       single    1.350     0.020     1.350     0.020     
+RIG       HBI       NBI       single    1.016     0.010     0.899     0.007     
+RIG       NBF       CBH       double    1.350     0.020     1.350     0.020     
+RIG       HBH       CBH       single    1.082     0.013     0.975     0.010     
+RIG       OBC       CBB       double    1.220     0.020     1.220     0.020     
+RIG       CBB       NBS       single    1.330     0.020     1.330     0.020     
+RIG       NBS       CBP       single    1.450     0.020     1.450     0.020     
+RIG       HBS       NBS       single    1.016     0.010     0.899     0.007     
+RIG       CBQ       CBP       single    1.524     0.020     1.524     0.020     
+RIG       HBP       CBP       single    1.089     0.010     0.989     0.005     
+RIG       CBR       CBQ       single    1.524     0.020     1.524     0.020     
+RIG       HBQ1      CBQ       single    1.089     0.010     0.989     0.005     
+RIG       HBQ2      CBQ       single    1.089     0.010     0.989     0.005     
+RIG       CBN       CBR       single    1.524     0.020     1.524     0.020     
+RIG       HBR1      CBR       single    1.089     0.010     0.989     0.005     
+RIG       HBR2      CBR       single    1.089     0.010     0.989     0.005     
+RIG       CBJ       CBN       single    1.510     0.020     1.510     0.020     
+RIG       HBN1      CBN       single    1.089     0.010     0.989     0.005     
+RIG       HBN2      CBN       single    1.089     0.010     0.989     0.005     
+RIG       OBL       CBJ       deloc     1.250     0.020     1.250     0.020     
+RIG       OBK       CBJ       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RIG      OBM    CBO    N       123.000    3.000
+ RIG      OBM    CBO    CBP     120.500    3.000
+ RIG      N      CBO    CBP     116.500    3.000
+ RIG      CBO    N      H       120.000    3.000
+ RIG      CBO    N      CA      121.500    3.000
+ RIG      H      N      CA      118.500    3.000
+ RIG      N      CA     HA      108.550    3.000
+ RIG      N      CA     CB      110.000    3.000
+ RIG      N      CA     C       111.600    3.000
+ RIG      HA     CA     CB      108.340    3.000
+ RIG      HA     CA     C       108.810    3.000
+ RIG      CB     CA     C       109.470    3.000
+ RIG      CA     CB     HBC1    109.470    3.000
+ RIG      CA     CB     HBC2    109.470    3.000
+ RIG      CA     CB     CG      111.000    3.000
+ RIG      HBC1   CB     HBC2    107.900    3.000
+ RIG      HBC1   CB     CG      109.470    3.000
+ RIG      HBC2   CB     CG      109.470    3.000
+ RIG      CB     CG     HGC1    109.470    3.000
+ RIG      CB     CG     HGC2    109.470    3.000
+ RIG      CB     CG     CD      111.000    3.000
+ RIG      HGC1   CG     HGC2    107.900    3.000
+ RIG      HGC1   CG     CD      109.470    3.000
+ RIG      HGC2   CG     CD      109.470    3.000
+ RIG      CG     CD     HDC1    109.470    3.000
+ RIG      CG     CD     HDC2    109.470    3.000
+ RIG      CG     CD     NE      112.000    3.000
+ RIG      HDC1   CD     HDC2    107.900    3.000
+ RIG      HDC1   CD     NE      109.470    3.000
+ RIG      HDC2   CD     NE      109.470    3.000
+ RIG      CD     NE     HE      118.500    3.000
+ RIG      CD     NE     CZ      121.500    3.000
+ RIG      HE     NE     CZ      120.000    3.000
+ RIG      NE     CZ     NH1     120.000    3.000
+ RIG      NE     CZ     NH2     120.000    3.000
+ RIG      NH1    CZ     NH2     120.000    3.000
+ RIG      CZ     NH1    HNH1    120.000    3.000
+ RIG      CZ     NH2    HH2     120.000    3.000
+ RIG      CZ     NH2    C0B     120.000    3.000
+ RIG      HH2    NH2    C0B     120.000    3.000
+ RIG      NH2    C0B    C1B     116.500    3.000
+ RIG      NH2    C0B    O0C     123.000    3.000
+ RIG      C1B    C0B    O0C     123.000    3.000
+ RIG      C0B    C1B    H1B3    109.470    3.000
+ RIG      C0B    C1B    H1B2    109.470    3.000
+ RIG      C0B    C1B    H1B1    109.470    3.000
+ RIG      H1B3   C1B    H1B2    109.470    3.000
+ RIG      H1B3   C1B    H1B1    109.470    3.000
+ RIG      H1B2   C1B    H1B1    109.470    3.000
+ RIG      CBO    CBP    HBP     108.810    3.000
+ RIG      CBO    CBP    CBQ     109.470    3.000
+ RIG      CBO    CBP    NBS     111.600    3.000
+ RIG      HBP    CBP    CBQ     108.340    3.000
+ RIG      HBP    CBP    NBS     108.550    3.000
+ RIG      CBQ    CBP    NBS     110.000    3.000
+ RIG      CBP    CBQ    HBQ1    109.470    3.000
+ RIG      CBP    CBQ    HBQ2    109.470    3.000
+ RIG      CBP    CBQ    CBR     111.000    3.000
+ RIG      HBQ1   CBQ    HBQ2    107.900    3.000
+ RIG      HBQ1   CBQ    CBR     109.470    3.000
+ RIG      HBQ2   CBQ    CBR     109.470    3.000
+ RIG      CBQ    CBR    HBR1    109.470    3.000
+ RIG      CBQ    CBR    HBR2    109.470    3.000
+ RIG      CBQ    CBR    CBN     111.000    3.000
+ RIG      HBR1   CBR    HBR2    107.900    3.000
+ RIG      HBR1   CBR    CBN     109.470    3.000
+ RIG      HBR2   CBR    CBN     109.470    3.000
+ RIG      CBR    CBN    HBN1    109.470    3.000
+ RIG      CBR    CBN    HBN2    109.470    3.000
+ RIG      CBR    CBN    CBJ     109.470    3.000
+ RIG      HBN1   CBN    HBN2    107.900    3.000
+ RIG      HBN1   CBN    CBJ     109.470    3.000
+ RIG      HBN2   CBN    CBJ     109.470    3.000
+ RIG      CBN    CBJ    OBL     118.500    3.000
+ RIG      CBN    CBJ    OBK     118.500    3.000
+ RIG      OBL    CBJ    OBK     123.000    3.000
+ RIG      CBP    NBS    HBS     118.500    3.000
+ RIG      CBP    NBS    CBB     121.500    3.000
+ RIG      HBS    NBS    CBB     120.000    3.000
+ RIG      NBS    CBB    OBC     123.000    3.000
+ RIG      NBS    CBB    CBA     116.500    3.000
+ RIG      OBC    CBB    CBA     120.500    3.000
+ RIG      CBB    CBA    HBA     108.810    3.000
+ RIG      CBB    CBA    CBD     109.470    3.000
+ RIG      CBB    CBA    NAZ     111.600    3.000
+ RIG      HBA    CBA    CBD     108.340    3.000
+ RIG      HBA    CBA    NAZ     109.470    3.000
+ RIG      CBD    CBA    NAZ     105.000    3.000
+ RIG      CBA    CBD    HBD1    109.470    3.000
+ RIG      CBA    CBD    HBD2    109.470    3.000
+ RIG      CBA    CBD    CBE     109.470    3.000
+ RIG      HBD1   CBD    HBD2    107.900    3.000
+ RIG      HBD1   CBD    CBE     109.470    3.000
+ RIG      HBD2   CBD    CBE     109.470    3.000
+ RIG      CBD    CBE    CBG     126.000    3.000
+ RIG      CBD    CBE    NBF     126.000    3.000
+ RIG      CBG    CBE    NBF     108.000    3.000
+ RIG      CBE    CBG    HBG     126.000    3.000
+ RIG      CBE    CBG    NBI     108.000    3.000
+ RIG      HBG    CBG    NBI     126.000    3.000
+ RIG      CBG    NBI    HBI     126.000    3.000
+ RIG      CBG    NBI    CBH     108.000    3.000
+ RIG      HBI    NBI    CBH     126.000    3.000
+ RIG      NBI    CBH    HBH     126.000    3.000
+ RIG      NBI    CBH    NBF     108.000    3.000
+ RIG      HBH    CBH    NBF     126.000    3.000
+ RIG      CBH    NBF    CBE     108.000    3.000
+ RIG      CBA    NAZ    CAU     121.000    3.000
+ RIG      CBA    NAZ    CAX     121.000    3.000
+ RIG      CAU    NAZ    CAX     120.000    3.000
+ RIG      NAZ    CAU    OAV     123.000    3.000
+ RIG      NAZ    CAU    CAT     116.500    3.000
+ RIG      OAV    CAU    CAT     120.500    3.000
+ RIG      NAZ    CAX    OAY     123.000    3.000
+ RIG      NAZ    CAX    CAW     116.500    3.000
+ RIG      OAY    CAX    CAW     120.500    3.000
+ RIG      CAX    CAW    HAW1    109.470    3.000
+ RIG      CAX    CAW    HAW2    109.470    3.000
+ RIG      CAX    CAW    CAT     109.470    3.000
+ RIG      HAW1   CAW    HAW2    107.900    3.000
+ RIG      HAW1   CAW    CAT     109.470    3.000
+ RIG      HAW2   CAW    CAT     109.470    3.000
+ RIG      CAW    CAT    HAT     108.340    3.000
+ RIG      CAW    CAT    NAS     110.000    3.000
+ RIG      CAW    CAT    CAU     109.470    3.000
+ RIG      HAT    CAT    NAS     108.550    3.000
+ RIG      HAT    CAT    CAU     108.810    3.000
+ RIG      NAS    CAT    CAU     111.600    3.000
+ RIG      CAT    NAS    HAS     118.500    3.000
+ RIG      CAT    NAS    CAN     121.500    3.000
+ RIG      HAS    NAS    CAN     120.000    3.000
+ RIG      NAS    CAN    OAO     123.000    3.000
+ RIG      NAS    CAN    CAM     116.500    3.000
+ RIG      OAO    CAN    CAM     120.500    3.000
+ RIG      CAN    CAM    HAM     108.810    3.000
+ RIG      CAN    CAM    CAP     109.470    3.000
+ RIG      CAN    CAM    NAL     111.600    3.000
+ RIG      HAM    CAM    CAP     108.340    3.000
+ RIG      HAM    CAM    NAL     109.470    3.000
+ RIG      CAP    CAM    NAL     105.000    3.000
+ RIG      CAM    CAP    HAP1    109.470    3.000
+ RIG      CAM    CAP    HAP2    109.470    3.000
+ RIG      CAM    CAP    CAQ     111.000    3.000
+ RIG      HAP1   CAP    HAP2    107.900    3.000
+ RIG      HAP1   CAP    CAQ     109.470    3.000
+ RIG      HAP2   CAP    CAQ     109.470    3.000
+ RIG      CAP    CAQ    HAQ1    109.470    3.000
+ RIG      CAP    CAQ    HAQ2    109.470    3.000
+ RIG      CAP    CAQ    CAR     111.000    3.000
+ RIG      HAQ1   CAQ    HAQ2    107.900    3.000
+ RIG      HAQ1   CAQ    CAR     109.470    3.000
+ RIG      HAQ2   CAQ    CAR     109.470    3.000
+ RIG      CAQ    CAR    HAR1    109.470    3.000
+ RIG      CAQ    CAR    HAR2    109.470    3.000
+ RIG      CAQ    CAR    NAL     105.000    3.000
+ RIG      HAR1   CAR    HAR2    107.900    3.000
+ RIG      HAR1   CAR    NAL     109.470    3.000
+ RIG      HAR2   CAR    NAL     109.470    3.000
+ RIG      CAR    NAL    C       127.000    3.000
+ RIG      CAR    NAL    CAM     112.000    3.000
+ RIG      C      NAL    CAM     121.000    3.000
+ RIG      NAL    C      O       123.000    3.000
+ RIG      NAL    C      CA      116.500    3.000
+ RIG      O      C      CA      120.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RIG      CONST_1  OBM    CBO    N      CA         0.000    0.000   0
+ RIG      var_1    CBO    N      CA     CB       -71.482   20.000   3
+ RIG      var_2    N      CA     CB     CG       -64.748   20.000   3
+ RIG      var_3    CA     CB     CG     CD       179.951   20.000   3
+ RIG      var_4    CB     CG     CD     NE       179.987   20.000   3
+ RIG      var_5    CG     CD     NE     CZ       179.984   20.000   3
+ RIG      CONST_2  CD     NE     CZ     NH2      180.000    0.000   0
+ RIG      CONST_3  NE     CZ     NH1    HNH1       0.000    0.000   0
+ RIG      CONST_4  NE     CZ     NH2    C0B      180.000    0.000   0
+ RIG      CONST_5  CZ     NH2    C0B    O0C        0.000    0.000   0
+ RIG      var_6    NH2    C0B    C1B    H1B1     179.973   20.000   1
+ RIG      var_7    OBM    CBO    CBP    NBS      -47.611   20.000   3
+ RIG      var_8    CBO    CBP    CBQ    CBR      175.008   20.000   3
+ RIG      var_9    CBP    CBQ    CBR    CBN      179.994   20.000   3
+ RIG      var_10   CBQ    CBR    CBN    CBJ      179.996   20.000   3
+ RIG      var_11   CBR    CBN    CBJ    OBK       -0.011   20.000   3
+ RIG      var_12   CBO    CBP    NBS    CBB     -132.509   20.000   3
+ RIG      CONST_6  CBP    NBS    CBB    CBA      180.000    0.000   0
+ RIG      var_13   NBS    CBB    CBA    NAZ      -71.089   20.000   3
+ RIG      var_14   CBB    CBA    CBD    CBE      -65.742   20.000   3
+ RIG      var_15   CBA    CBD    CBE    CBG      123.309   20.000   2
+ RIG      CONST_7  CBD    CBE    NBF    CBH      180.000    0.000   0
+ RIG      CONST_8  CBD    CBE    CBG    NBI      180.000    0.000   0
+ RIG      CONST_9  CBE    CBG    NBI    CBH        0.000    0.000   0
+ RIG      CONST_10 CBG    NBI    CBH    NBF        0.000    0.000   0
+ RIG      CONST_11 NBI    CBH    NBF    CBE        0.000    0.000   0
+ RIG      var_16   CBB    CBA    NAZ    CAX      161.963   20.000   3
+ RIG      CONST_12 CBA    NAZ    CAU    OAV        0.000    0.000   0
+ RIG      CONST_13 CBA    NAZ    CAX    CAW      180.000    0.000   0
+ RIG      var_17   NAZ    CAX    CAW    CAT        0.000   20.000   3
+ RIG      var_18   CAX    CAW    CAT    NAS      120.000   20.000   3
+ RIG      var_19   CAW    CAT    CAU    NAZ        0.000   20.000   3
+ RIG      var_20   CAW    CAT    NAS    CAN      147.547   20.000   3
+ RIG      CONST_14 CAT    NAS    CAN    CAM      180.000    0.000   0
+ RIG      var_21   NAS    CAN    CAM    CAP      144.398   20.000   3
+ RIG      var_22   CAN    CAM    CAP    CAQ      120.000   20.000   3
+ RIG      var_23   CAM    CAP    CAQ    CAR       30.000   20.000   3
+ RIG      var_24   CAP    CAQ    CAR    NAL      -60.000   20.000   3
+ RIG      var_25   CAQ    CAR    NAL    C       -120.000   20.000   1
+ RIG      var_26   CAR    NAL    CAM    CAN     -150.000   20.000   3
+ RIG      CONST_15 CAR    NAL    C      O        180.000    0.000   0
+ RIG      var_27   NAL    C      CA     N        175.908   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RIG      chir_01  CA     C      N      CB        negativ
+ RIG      chir_02  CAM    NAL    CAP    CAN       positiv
+ RIG      chir_03  CAT    NAS    CAU    CAW       positiv
+ RIG      chir_04  CBA    NAZ    CBB    CBD       positiv
+ RIG      chir_05  CBP    CBO    CBQ    NBS       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RIG      plan-1    C         0.020
+ RIG      plan-1    O         0.020
+ RIG      plan-1    CA        0.020
+ RIG      plan-1    NAL       0.020
+ RIG      plan-2    N         0.020
+ RIG      plan-2    CA        0.020
+ RIG      plan-2    CBO       0.020
+ RIG      plan-2    H         0.020
+ RIG      plan-3    NE        0.020
+ RIG      plan-3    CD        0.020
+ RIG      plan-3    CZ        0.020
+ RIG      plan-3    HE        0.020
+ RIG      plan-4    CZ        0.020
+ RIG      plan-4    NE        0.020
+ RIG      plan-4    NH1       0.020
+ RIG      plan-4    NH2       0.020
+ RIG      plan-4    HNH1      0.020
+ RIG      plan-4    HE        0.020
+ RIG      plan-4    HH2       0.020
+ RIG      plan-5    C0B       0.020
+ RIG      plan-5    O0C       0.020
+ RIG      plan-5    C1B       0.020
+ RIG      plan-5    NH2       0.020
+ RIG      plan-5    HH2       0.020
+ RIG      plan-6    NH2       0.020
+ RIG      plan-6    CZ        0.020
+ RIG      plan-6    C0B       0.020
+ RIG      plan-6    HH2       0.020
+ RIG      plan-7    NAL       0.020
+ RIG      plan-7    C         0.020
+ RIG      plan-7    CAM       0.020
+ RIG      plan-7    CAR       0.020
+ RIG      plan-8    CAN       0.020
+ RIG      plan-8    CAM       0.020
+ RIG      plan-8    OAO       0.020
+ RIG      plan-8    NAS       0.020
+ RIG      plan-8    HAS       0.020
+ RIG      plan-9    NAS       0.020
+ RIG      plan-9    CAN       0.020
+ RIG      plan-9    CAT       0.020
+ RIG      plan-9    HAS       0.020
+ RIG      plan-10   CAU       0.020
+ RIG      plan-10   CAT       0.020
+ RIG      plan-10   OAV       0.020
+ RIG      plan-10   NAZ       0.020
+ RIG      plan-11   CAX       0.020
+ RIG      plan-11   CAW       0.020
+ RIG      plan-11   OAY       0.020
+ RIG      plan-11   NAZ       0.020
+ RIG      plan-12   NAZ       0.020
+ RIG      plan-12   CAU       0.020
+ RIG      plan-12   CAX       0.020
+ RIG      plan-12   CBA       0.020
+ RIG      plan-13   CBB       0.020
+ RIG      plan-13   CBA       0.020
+ RIG      plan-13   OBC       0.020
+ RIG      plan-13   NBS       0.020
+ RIG      plan-13   HBS       0.020
+ RIG      plan-14   CBE       0.020
+ RIG      plan-14   CBD       0.020
+ RIG      plan-14   NBF       0.020
+ RIG      plan-14   CBG       0.020
+ RIG      plan-14   CBH       0.020
+ RIG      plan-14   NBI       0.020
+ RIG      plan-14   HBG       0.020
+ RIG      plan-14   HBH       0.020
+ RIG      plan-14   HBI       0.020
+ RIG      plan-15   CBJ       0.020
+ RIG      plan-15   OBK       0.020
+ RIG      plan-15   OBL       0.020
+ RIG      plan-15   CBN       0.020
+ RIG      plan-16   CBO       0.020
+ RIG      plan-16   N         0.020
+ RIG      plan-16   OBM       0.020
+ RIG      plan-16   CBP       0.020
+ RIG      plan-16   H         0.020
+ RIG      plan-17   NBS       0.020
+ RIG      plan-17   CBB       0.020
+ RIG      plan-17   CBP       0.020
+ RIG      plan-17   HBS       0.020
+# ------------------------------------------------------

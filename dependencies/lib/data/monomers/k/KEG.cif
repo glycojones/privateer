@@ -1,0 +1,600 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KEG      KEG '12-TUNGSTOPHOSPHATE                 ' non-polymer        53  53 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_KEG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ KEG           O14    O    O         0.000      0.000    0.000    0.000
+ KEG           W12    W    W         0.000     -0.517    1.182    0.949
+ KEG           O37    O    O2        0.000      0.410    0.800    2.692
+ KEG           W3     W    W         0.000      1.040    1.849    4.358
+ KEG           O25    O    O2        0.000     -0.502    1.213    4.972
+ KEG           O5     O    O         0.000      2.318    1.027    5.091
+ KEG           O38    O    O2        0.000      0.852    2.525    0.604
+ KEG           W4     W    W         0.000      1.619    4.122    1.404
+ KEG           O31    O    O2        0.000      2.008    3.014    3.009
+ KEG           O26    O    O2        0.000      0.418    4.935    0.320
+ KEG           O6     O    O         0.000      3.104    4.280    0.712
+ KEG           O46    O    O2        0.000     -1.618    2.244   -0.117
+ KEG           W10    W    W         0.000     -3.019    3.548    0.102
+ KEG           O12    O    O         0.000     -3.620    3.489   -1.413
+ KEG           O28    O    O2        0.000     -1.756    4.570   -0.220
+ KEG           O42    O    O2        0.000     -4.122    2.240    0.813
+ KEG           W9     W    W         0.000     -3.960    1.208    2.199
+ KEG           O45    O    O2        0.000     -2.278    0.526    1.509
+ KEG           O27    O    O2        0.000     -3.075    0.756    3.819
+ KEG           O35    O    O2        0.000     -4.960    2.280    3.536
+ KEG           O11    O    O         0.000     -5.055    0.057    1.855
+ KEG           O36    O    O2        0.000     -4.137    4.632    0.886
+ KEG           W6     W    W         0.000     -4.142    5.824    1.918
+ KEG           O8     O    O         0.000     -5.388    6.680    1.303
+ KEG           O24    O    O2        0.000     -2.704    6.444    1.101
+ KEG           O32    O    O2        0.000     -5.115    4.747    3.303
+ KEG           O40    O    O2        0.000     -3.731    6.873    3.388
+ KEG           W11    W    W         0.000     -2.861    6.590    4.938
+ KEG           O13    O    O         0.000     -3.282    7.819    5.867
+ KEG           O19    O    O         0.000     -1.403    4.897    3.790
+ KEG           P1     P    P         0.000     -1.713    3.897    2.896
+ KEG           O21    O    O         0.000     -0.392    3.017    2.521
+ KEG           O18    O    O         0.000     -2.204    4.499    1.896
+ KEG           O17    O    O         0.000     -2.741    2.997    3.453
+ KEG           O39    O    O2        0.000     -4.006    5.221    5.559
+ KEG           W5     W    W         0.000     -4.703    3.606    4.907
+ KEG           O23    O    O2        0.000     -3.556    2.702    5.731
+ KEG           O7     O    O         0.000     -6.069    3.403    5.785
+ KEG           O43    O    O2        0.000     -1.685    5.640    5.985
+ KEG           W7     W    W         0.000     -0.461    4.191    5.823
+ KEG           O9     O    O         0.000      0.122    4.325    7.372
+ KEG           O33    O    O2        0.000      0.918    3.132    5.319
+ KEG           O29    O    O2        0.000     -1.608    2.970    6.133
+ KEG           W1     W    W         0.000     -2.199    1.783    5.232
+ KEG           O1     O    O         0.000     -2.437    0.673    6.417
+ KEG           O44    O    O2        0.000     -1.439    7.254    4.004
+ KEG           W8     W    W         0.000      0.180    6.680    3.500
+ KEG           O10    O    O         0.000      1.002    8.015    3.874
+ KEG           O34    O    O2        0.000      1.524    5.550    2.578
+ KEG           O41    O    O2        0.000      0.408    5.686    5.013
+ KEG           O30    O    O2        0.000     -0.370    6.954    1.752
+ KEG           W2     W    W         0.000     -1.158    5.815    0.487
+ KEG           O2     O    O         0.000     -0.982    6.688   -0.821
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ KEG      O14    n/a    W12    START
+ KEG      W12    O14    O46    .
+ KEG      O37    W12    W3     .
+ KEG      W3     O37    O5     .
+ KEG      O25    W3     .      .
+ KEG      O5     W3     .      .
+ KEG      O38    W12    W4     .
+ KEG      W4     O38    O6     .
+ KEG      O31    W4     .      .
+ KEG      O26    W4     .      .
+ KEG      O6     W4     .      .
+ KEG      O46    W12    W10    .
+ KEG      W10    O46    O36    .
+ KEG      O12    W10    .      .
+ KEG      O28    W10    .      .
+ KEG      O42    W10    W9     .
+ KEG      W9     O42    O11    .
+ KEG      O45    W9     .      .
+ KEG      O27    W9     .      .
+ KEG      O35    W9     .      .
+ KEG      O11    W9     .      .
+ KEG      O36    W10    W6     .
+ KEG      W6     O36    O40    .
+ KEG      O8     W6     .      .
+ KEG      O24    W6     .      .
+ KEG      O32    W6     .      .
+ KEG      O40    W6     W11    .
+ KEG      W11    O40    O44    .
+ KEG      O13    W11    .      .
+ KEG      O19    W11    P1     .
+ KEG      P1     O19    O17    .
+ KEG      O21    P1     .      .
+ KEG      O18    P1     .      .
+ KEG      O17    P1     .      .
+ KEG      O39    W11    W5     .
+ KEG      W5     O39    O7     .
+ KEG      O23    W5     .      .
+ KEG      O7     W5     .      .
+ KEG      O43    W11    W7     .
+ KEG      W7     O43    O29    .
+ KEG      O9     W7     .      .
+ KEG      O33    W7     .      .
+ KEG      O29    W7     W1     .
+ KEG      W1     O29    O1     .
+ KEG      O1     W1     .      .
+ KEG      O44    W11    W8     .
+ KEG      W8     O44    O30    .
+ KEG      O10    W8     .      .
+ KEG      O34    W8     .      .
+ KEG      O41    W8     .      .
+ KEG      O30    W8     W2     .
+ KEG      W2     O30    O2     .
+ KEG      O2     W2     .      END
+ KEG      W1     O17    .    ADD
+ KEG      W1     O23    .    ADD
+ KEG      W1     O25    .    ADD
+ KEG      W1     O27    .    ADD
+ KEG      W2     O18    .    ADD
+ KEG      W2     O24    .    ADD
+ KEG      W2     O26    .    ADD
+ KEG      W2     O28    .    ADD
+ KEG      W3     O21    .    ADD
+ KEG      W3     O31    .    ADD
+ KEG      W3     O33    .    ADD
+ KEG      W4     O21    .    ADD
+ KEG      W4     O34    .    ADD
+ KEG      W5     O17    .    ADD
+ KEG      W5     O32    .    ADD
+ KEG      W5     O35    .    ADD
+ KEG      W6     O18    .    ADD
+ KEG      W7     O19    .    ADD
+ KEG      W7     O41    .    ADD
+ KEG      W8     O19    .    ADD
+ KEG      W9     O17    .    ADD
+ KEG      W10    O18    .    ADD
+ KEG      W12    O21    .    ADD
+ KEG      W12    O45    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KEG       O1        W1        double    2.040     0.020     2.040     0.020     
+KEG       W1        O17       single    2.040     0.020     2.040     0.020     
+KEG       W1        O23       single    2.135     0.020     2.135     0.020     
+KEG       W1        O25       single    2.135     0.020     2.135     0.020     
+KEG       W1        O27       single    2.135     0.020     2.135     0.020     
+KEG       W1        O29       single    2.135     0.020     2.135     0.020     
+KEG       O2        W2        double    2.040     0.020     2.040     0.020     
+KEG       W2        O18       single    2.040     0.020     2.040     0.020     
+KEG       W2        O24       single    2.135     0.020     2.135     0.020     
+KEG       W2        O26       single    2.135     0.020     2.135     0.020     
+KEG       W2        O28       single    2.135     0.020     2.135     0.020     
+KEG       W2        O30       single    2.135     0.020     2.135     0.020     
+KEG       O5        W3        double    2.040     0.020     2.040     0.020     
+KEG       W3        O21       single    2.040     0.020     2.040     0.020     
+KEG       O25       W3        single    2.135     0.020     2.135     0.020     
+KEG       W3        O31       single    2.135     0.020     2.135     0.020     
+KEG       W3        O33       single    2.135     0.020     2.135     0.020     
+KEG       W3        O37       single    2.135     0.020     2.135     0.020     
+KEG       O6        W4        double    2.040     0.020     2.040     0.020     
+KEG       W4        O21       single    2.040     0.020     2.040     0.020     
+KEG       O26       W4        single    2.135     0.020     2.135     0.020     
+KEG       O31       W4        single    2.135     0.020     2.135     0.020     
+KEG       W4        O34       single    2.135     0.020     2.135     0.020     
+KEG       W4        O38       single    2.135     0.020     2.135     0.020     
+KEG       O7        W5        double    2.040     0.020     2.040     0.020     
+KEG       W5        O17       single    2.040     0.020     2.040     0.020     
+KEG       O23       W5        single    2.135     0.020     2.135     0.020     
+KEG       W5        O32       single    2.135     0.020     2.135     0.020     
+KEG       W5        O35       single    2.135     0.020     2.135     0.020     
+KEG       W5        O39       single    2.135     0.020     2.135     0.020     
+KEG       O8        W6        double    2.040     0.020     2.040     0.020     
+KEG       W6        O18       single    2.040     0.020     2.040     0.020     
+KEG       O24       W6        single    2.135     0.020     2.135     0.020     
+KEG       O32       W6        single    2.135     0.020     2.135     0.020     
+KEG       W6        O36       single    2.135     0.020     2.135     0.020     
+KEG       O40       W6        single    2.135     0.020     2.135     0.020     
+KEG       O9        W7        double    2.040     0.020     2.040     0.020     
+KEG       W7        O19       single    2.040     0.020     2.040     0.020     
+KEG       O29       W7        single    2.135     0.020     2.135     0.020     
+KEG       O33       W7        single    2.135     0.020     2.135     0.020     
+KEG       W7        O41       single    2.135     0.020     2.135     0.020     
+KEG       W7        O43       single    2.135     0.020     2.135     0.020     
+KEG       O10       W8        double    2.040     0.020     2.040     0.020     
+KEG       W8        O19       single    2.040     0.020     2.040     0.020     
+KEG       O30       W8        single    2.135     0.020     2.135     0.020     
+KEG       O34       W8        single    2.135     0.020     2.135     0.020     
+KEG       O41       W8        single    2.135     0.020     2.135     0.020     
+KEG       W8        O44       single    2.135     0.020     2.135     0.020     
+KEG       O11       W9        double    2.040     0.020     2.040     0.020     
+KEG       W9        O17       single    2.040     0.020     2.040     0.020     
+KEG       O27       W9        single    2.135     0.020     2.135     0.020     
+KEG       O35       W9        single    2.135     0.020     2.135     0.020     
+KEG       W9        O42       single    2.135     0.020     2.135     0.020     
+KEG       O45       W9        single    2.135     0.020     2.135     0.020     
+KEG       O12       W10       double    2.040     0.020     2.040     0.020     
+KEG       W10       O18       single    2.040     0.020     2.040     0.020     
+KEG       O28       W10       single    2.135     0.020     2.135     0.020     
+KEG       O36       W10       single    2.135     0.020     2.135     0.020     
+KEG       O42       W10       single    2.135     0.020     2.135     0.020     
+KEG       W10       O46       single    2.135     0.020     2.135     0.020     
+KEG       O13       W11       double    2.040     0.020     2.040     0.020     
+KEG       O19       W11       single    2.040     0.020     2.040     0.020     
+KEG       O39       W11       single    2.135     0.020     2.135     0.020     
+KEG       W11       O40       single    2.135     0.020     2.135     0.020     
+KEG       O43       W11       single    2.135     0.020     2.135     0.020     
+KEG       O44       W11       single    2.135     0.020     2.135     0.020     
+KEG       W12       O14       double    2.040     0.020     2.040     0.020     
+KEG       W12       O21       single    2.040     0.020     2.040     0.020     
+KEG       O37       W12       single    2.135     0.020     2.135     0.020     
+KEG       O38       W12       single    2.135     0.020     2.135     0.020     
+KEG       W12       O45       single    2.135     0.020     2.135     0.020     
+KEG       O46       W12       single    2.135     0.020     2.135     0.020     
+KEG       O17       P1        single    1.610     0.020     1.610     0.020     
+KEG       O18       P1        single    1.610     0.020     1.610     0.020     
+KEG       P1        O19       single    1.610     0.020     1.610     0.020     
+KEG       O21       P1        single    1.610     0.020     1.610     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ KEG      O14    W12    O37     102.958    3.000
+ KEG      O14    W12    O38     100.177    3.000
+ KEG      O14    W12    O46     105.829    3.000
+ KEG      O14    W12    O21     158.111    3.000
+ KEG      O14    W12    O45     102.286    3.000
+ KEG      O37    W12    O38      87.709    3.000
+ KEG      O37    W12    O46     151.154    3.000
+ KEG      O38    W12    O46      85.495    3.000
+ KEG      O21    W12    O45      96.551    3.000
+ KEG      O37    W12    O21      63.701    3.000
+ KEG      O38    W12    O21      63.647    3.000
+ KEG      O46    W12    O21      88.274    3.000
+ KEG      O37    W12    O45      95.896    3.000
+ KEG      O38    W12    O45     155.797    3.000
+ KEG      O46    W12    O45      79.840    3.000
+ KEG      W12    O37    W3      120.000    3.000
+ KEG      O37    W3     O25      80.338    3.000
+ KEG      O37    W3     O5      109.499    3.000
+ KEG      O37    W3     O21      59.445    3.000
+ KEG      O37    W3     O31      84.290    3.000
+ KEG      O37    W3     O33     149.697    3.000
+ KEG      O25    W3     O5      109.451    3.000
+ KEG      O21    W3     O31      62.346    3.000
+ KEG      O21    W3     O33      91.229    3.000
+ KEG      O31    W3     O33      88.576    3.000
+ KEG      O25    W3     O21      85.799    3.000
+ KEG      O5     W3     O21     160.225    3.000
+ KEG      O25    W3     O31     148.110    3.000
+ KEG      O5     W3     O31     101.970    3.000
+ KEG      O25    W3     O33      90.783    3.000
+ KEG      O5     W3     O33     100.787    3.000
+ KEG      W3     O25    W1      120.000    3.000
+ KEG      W12    O38    W4      120.000    3.000
+ KEG      O38    W4     O31      87.232    3.000
+ KEG      O38    W4     O26      82.015    3.000
+ KEG      O38    W4     O6      105.188    3.000
+ KEG      O38    W4     O21      60.906    3.000
+ KEG      O38    W4     O34     150.988    3.000
+ KEG      O31    W4     O26     149.671    3.000
+ KEG      O31    W4     O6      102.471    3.000
+ KEG      O26    W4     O6      107.694    3.000
+ KEG      O21    W4     O34      90.892    3.000
+ KEG      O31    W4     O21      63.893    3.000
+ KEG      O26    W4     O21      86.193    3.000
+ KEG      O6     W4     O21     159.499    3.000
+ KEG      O31    W4     O34      85.859    3.000
+ KEG      O26    W4     O34      89.946    3.000
+ KEG      O6     W4     O34     103.815    3.000
+ KEG      W4     O31    W3      120.000    3.000
+ KEG      W4     O26    W2      120.000    3.000
+ KEG      W12    O46    W10     120.000    3.000
+ KEG      O46    W10    O12     144.000    3.000
+ KEG      O46    W10    O28      90.000    3.000
+ KEG      O46    W10    O42      90.000    3.000
+ KEG      O46    W10    O36     144.000    3.000
+ KEG      O46    W10    O18      72.000    3.000
+ KEG      O12    W10    O28      90.000    3.000
+ KEG      O12    W10    O42      90.000    3.000
+ KEG      O28    W10    O42     180.000    3.000
+ KEG      O12    W10    O36      72.000    3.000
+ KEG      O28    W10    O36      90.000    3.000
+ KEG      O42    W10    O36      90.000    3.000
+ KEG      O12    W10    O18     144.000    3.000
+ KEG      O28    W10    O18      90.000    3.000
+ KEG      O42    W10    O18      90.000    3.000
+ KEG      O36    W10    O18      72.000    3.000
+ KEG      W10    O28    W2      120.000    3.000
+ KEG      W10    O42    W9      120.000    3.000
+ KEG      O42    W9     O45      90.371    3.000
+ KEG      O42    W9     O27     149.979    3.000
+ KEG      O42    W9     O35      99.772    3.000
+ KEG      O42    W9     O11     100.896    3.000
+ KEG      O42    W9     O17      91.199    3.000
+ KEG      O45    W9     O27      79.382    3.000
+ KEG      O45    W9     O35     149.966    3.000
+ KEG      O27    W9     O35      77.808    3.000
+ KEG      O45    W9     O11     105.042    3.000
+ KEG      O27    W9     O11     108.986    3.000
+ KEG      O35    W9     O11     100.702    3.000
+ KEG      O45    W9     O17      90.406    3.000
+ KEG      O27    W9     O17      61.050    3.000
+ KEG      O35    W9     O17      61.413    3.000
+ KEG      O11    W9     O17     160.161    3.000
+ KEG      W9     O45    W12     120.000    3.000
+ KEG      W9     O27    W1      120.000    3.000
+ KEG      W9     O35    W5      120.000    3.000
+ KEG      W10    O36    W6      120.000    3.000
+ KEG      O36    W6     O8       98.745    3.000
+ KEG      O36    W6     O24      87.716    3.000
+ KEG      O36    W6     O32      92.724    3.000
+ KEG      O36    W6     O40     161.280    3.000
+ KEG      O36    W6     O18      64.181    3.000
+ KEG      O8     W6     O24     105.242    3.000
+ KEG      O8     W6     O32      99.850    3.000
+ KEG      O24    W6     O32     154.543    3.000
+ KEG      O8     W6     O40      99.869    3.000
+ KEG      O24    W6     O40      89.314    3.000
+ KEG      O32    W6     O40      82.161    3.000
+ KEG      O8     W6     O18     157.310    3.000
+ KEG      O24    W6     O18      61.446    3.000
+ KEG      O32    W6     O18      95.979    3.000
+ KEG      O40    W6     O18      98.303    3.000
+ KEG      W6     O24    W2      120.000    3.000
+ KEG      W6     O32    W5      120.000    3.000
+ KEG      W6     O40    W11     120.000    3.000
+ KEG      O40    W11    O13     104.652    3.000
+ KEG      O40    W11    O19      89.595    3.000
+ KEG      O40    W11    O39      95.955    3.000
+ KEG      O40    W11    O43     151.743    3.000
+ KEG      O40    W11    O44      83.083    3.000
+ KEG      O13    W11    O19     159.638    3.000
+ KEG      O13    W11    O39     101.893    3.000
+ KEG      O19    W11    O39      90.781    3.000
+ KEG      O13    W11    O43     103.545    3.000
+ KEG      O19    W11    O43      62.699    3.000
+ KEG      O39    W11    O43      79.962    3.000
+ KEG      O13    W11    O44     102.904    3.000
+ KEG      O19    W11    O44      63.853    3.000
+ KEG      O39    W11    O44     154.590    3.000
+ KEG      O43    W11    O44      88.920    3.000
+ KEG      W11    O19    P1      120.000    3.000
+ KEG      W11    O19    W7      120.000    3.000
+ KEG      W11    O19    W8      120.000    3.000
+ KEG      W7     O19    W8      120.000    3.000
+ KEG      P1     O19    W7      120.000    3.000
+ KEG      P1     O19    W8      120.000    3.000
+ KEG      O19    P1     O21     109.500    3.000
+ KEG      O19    P1     O18     109.500    3.000
+ KEG      O19    P1     O17     109.500    3.000
+ KEG      O21    P1     O18     109.500    3.000
+ KEG      O21    P1     O17     109.500    3.000
+ KEG      O18    P1     O17     109.500    3.000
+ KEG      P1     O21    W3      120.000    3.000
+ KEG      P1     O21    W4      120.000    3.000
+ KEG      P1     O21    W12     120.000    3.000
+ KEG      W3     O21    W4      120.000    3.000
+ KEG      W3     O21    W12     120.000    3.000
+ KEG      W4     O21    W12     120.000    3.000
+ KEG      P1     O18    W2      120.000    3.000
+ KEG      P1     O18    W6      120.000    3.000
+ KEG      P1     O18    W10     120.000    3.000
+ KEG      W2     O18    W6      120.000    3.000
+ KEG      W2     O18    W10     120.000    3.000
+ KEG      W6     O18    W10     120.000    3.000
+ KEG      P1     O17    W1      120.000    3.000
+ KEG      P1     O17    W5      120.000    3.000
+ KEG      P1     O17    W9      120.000    3.000
+ KEG      W1     O17    W5      120.000    3.000
+ KEG      W1     O17    W9      120.000    3.000
+ KEG      W5     O17    W9      120.000    3.000
+ KEG      W11    O39    W5      120.000    3.000
+ KEG      O39    W5     O23      92.217    3.000
+ KEG      O39    W5     O7      103.298    3.000
+ KEG      O39    W5     O17      96.840    3.000
+ KEG      O39    W5     O32      82.212    3.000
+ KEG      O39    W5     O35     152.883    3.000
+ KEG      O23    W5     O7      103.937    3.000
+ KEG      O17    W5     O32      80.557    3.000
+ KEG      O17    W5     O35      61.684    3.000
+ KEG      O32    W5     O35      78.189    3.000
+ KEG      O23    W5     O17      67.669    3.000
+ KEG      O7     W5     O17     158.580    3.000
+ KEG      O23    W5     O32     146.884    3.000
+ KEG      O7     W5     O32     109.123    3.000
+ KEG      O23    W5     O35      94.031    3.000
+ KEG      O7     W5     O35     100.736    3.000
+ KEG      W5     O23    W1      120.000    3.000
+ KEG      W11    O43    W7      120.000    3.000
+ KEG      O43    W7     O9       90.000    3.000
+ KEG      O43    W7     O33     180.000    3.000
+ KEG      O43    W7     O29      90.000    3.000
+ KEG      O43    W7     O19      90.000    3.000
+ KEG      O43    W7     O41      90.000    3.000
+ KEG      O9     W7     O33      90.000    3.000
+ KEG      O9     W7     O29     144.000    3.000
+ KEG      O33    W7     O29      90.000    3.000
+ KEG      O19    W7     O41      72.000    3.000
+ KEG      O9     W7     O19     144.000    3.000
+ KEG      O33    W7     O19      90.000    3.000
+ KEG      O29    W7     O19      72.000    3.000
+ KEG      O9     W7     O41      72.000    3.000
+ KEG      O33    W7     O41      90.000    3.000
+ KEG      O29    W7     O41     144.000    3.000
+ KEG      W7     O33    W3      120.000    3.000
+ KEG      W7     O29    W1      120.000    3.000
+ KEG      O29    W1     O1       90.000    3.000
+ KEG      O29    W1     O17      90.000    3.000
+ KEG      O29    W1     O23      90.000    3.000
+ KEG      O29    W1     O25      90.000    3.000
+ KEG      O29    W1     O27     180.000    3.000
+ KEG      O17    W1     O23      90.000    3.000
+ KEG      O17    W1     O25      90.000    3.000
+ KEG      O23    W1     O25     180.000    3.000
+ KEG      O17    W1     O27      90.000    3.000
+ KEG      O23    W1     O27      90.000    3.000
+ KEG      O25    W1     O27      90.000    3.000
+ KEG      O1     W1     O17     180.000    3.000
+ KEG      O1     W1     O23      90.000    3.000
+ KEG      O1     W1     O25      90.000    3.000
+ KEG      O1     W1     O27      90.000    3.000
+ KEG      W11    O44    W8      120.000    3.000
+ KEG      O44    W8     O10      97.507    3.000
+ KEG      O44    W8     O34     157.880    3.000
+ KEG      O44    W8     O41      93.100    3.000
+ KEG      O44    W8     O30      87.143    3.000
+ KEG      O44    W8     O19      66.908    3.000
+ KEG      O10    W8     O34     103.547    3.000
+ KEG      O10    W8     O41     101.245    3.000
+ KEG      O34    W8     O41      89.418    3.000
+ KEG      O10    W8     O30     104.382    3.000
+ KEG      O34    W8     O30      81.187    3.000
+ KEG      O41    W8     O30     154.118    3.000
+ KEG      O10    W8     O19     157.376    3.000
+ KEG      O34    W8     O19      94.556    3.000
+ KEG      O41    W8     O19      65.039    3.000
+ KEG      O30    W8     O19      91.574    3.000
+ KEG      W8     O34    W4      120.000    3.000
+ KEG      W8     O41    W7      120.000    3.000
+ KEG      W8     O30    W2      120.000    3.000
+ KEG      O30    W2     O2       90.000    3.000
+ KEG      O30    W2     O18      90.000    3.000
+ KEG      O30    W2     O24      90.000    3.000
+ KEG      O30    W2     O26      90.000    3.000
+ KEG      O30    W2     O28     180.000    3.000
+ KEG      O18    W2     O24      60.000    3.000
+ KEG      O18    W2     O26     120.000    3.000
+ KEG      O24    W2     O26     180.000    3.000
+ KEG      O18    W2     O28      90.000    3.000
+ KEG      O24    W2     O28      90.000    3.000
+ KEG      O26    W2     O28      90.000    3.000
+ KEG      O2     W2     O18     180.000    3.000
+ KEG      O2     W2     O24     120.000    3.000
+ KEG      O2     W2     O26      60.000    3.000
+ KEG      O2     W2     O28      90.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ KEG      var_1    O14    W12    O21    P1       172.781   20.000   1
+ KEG      var_2    O14    W12    O45    W9      -158.180   20.000   1
+ KEG      var_3    O14    W12    O37    W3       154.100   20.000   1
+ KEG      var_4    W12    O37    W3     O5      -154.684   20.000   1
+ KEG      var_5    O37    W3     O21    P1       130.825   20.000   1
+ KEG      var_6    O37    W3     O31    W4        56.828   20.000   1
+ KEG      var_7    O37    W3     O33    W7        32.459   20.000   1
+ KEG      var_8    O37    W3     O25    W1      -100.282   20.000   1
+ KEG      var_9    O14    W12    O38    W4      -159.222   20.000   1
+ KEG      var_10   W12    O38    W4     O6       158.636   20.000   1
+ KEG      var_11   O38    W4     O21    P1      -128.002   20.000   1
+ KEG      var_12   O38    W4     O34    W8       -25.171   20.000   1
+ KEG      var_13   O38    W4     O31    W3       -57.217   20.000   1
+ KEG      var_14   O38    W4     O26    W2       107.138   20.000   1
+ KEG      var_15   O14    W12    O46    W10      159.876   20.000   1
+ KEG      var_16   W12    O46    W10    O42        0.000   20.000   1
+ KEG      var_17   W2     O18    W10    O28        0.000   20.000   1
+ KEG      var_18   W2     O28    W10    O36        0.000   20.000   1
+ KEG      var_19   W9     O42    W10    O46        0.000   20.000   1
+ KEG      var_20   W10    O42    W9     O11     -162.006   20.000   1
+ KEG      var_21   O42    W9     O17    P1       -41.019   20.000   1
+ KEG      var_22   O42    W9     O45    W12       57.488   20.000   1
+ KEG      var_23   O42    W9     O27    W1        33.179   20.000   1
+ KEG      var_24   O42    W9     O35    W5       -93.650   20.000   1
+ KEG      var_25   W6     O36    W10    O28        0.000   20.000   1
+ KEG      var_26   W10    O36    W6     O40      -39.659   20.000   1
+ KEG      var_27   O36    W6     O18    P1      -123.955   20.000   1
+ KEG      var_28   O36    W6     O24    W2       -45.781   20.000   1
+ KEG      var_29   O36    W6     O32    W5        94.933   20.000   1
+ KEG      var_30   O36    W6     O40    W11      -14.693   20.000   1
+ KEG      var_31   W6     O40    W11    O44       94.649   20.000   1
+ KEG      var_32   O40    W11    O19    P1       -43.340   20.000   1
+ KEG      var_33   W11    O19    P1     O17      -55.598   20.000   1
+ KEG      var_34   O19    P1     O21    W3        56.012   20.000   1
+ KEG      var_35   O19    P1     O18    W2        68.586   20.000   1
+ KEG      var_36   O19    P1     O17    W1       -65.510   20.000   1
+ KEG      var_37   O40    W11    O39    W5        51.514   20.000   1
+ KEG      var_38   W11    O39    W5     O7      -155.897   20.000   1
+ KEG      var_39   O39    W5     O17    P1       -22.147   20.000   1
+ KEG      var_40   O39    W5     O32    W6        62.449   20.000   1
+ KEG      var_41   O39    W5     O35    W9        48.521   20.000   1
+ KEG      var_42   O39    W5     O23    W1      -109.497   20.000   1
+ KEG      var_43   O40    W11    O43    W7         5.933   20.000   1
+ KEG      var_44   W11    O43    W7     O19        0.000   20.000   1
+ KEG      var_45   W11    O19    W7     O41        0.000   20.000   1
+ KEG      var_46   W8     O41    W7     O19        0.000   20.000   1
+ KEG      var_47   W3     O33    W7     O19        0.000   20.000   1
+ KEG      var_48   W1     O29    W7     O33        0.000   20.000   1
+ KEG      var_49   W7     O29    W1     O17        0.000   20.000   1
+ KEG      var_50   W5     O17    W1     O27        0.000   20.000   1
+ KEG      var_51   W5     O23    W1     O29        0.000   20.000   1
+ KEG      var_52   W3     O25    W1     O17        0.000   20.000   1
+ KEG      var_53   W9     O27    W1     O17        0.000   20.000   1
+ KEG      var_54   O40    W11    O44    W8      -119.522   20.000   1
+ KEG      var_55   W11    O44    W8     O30      120.084   20.000   1
+ KEG      var_56   O44    W8     O19    W11      -13.088   20.000   1
+ KEG      var_57   O44    W8     O34    W4         2.832   20.000   1
+ KEG      var_58   O44    W8     O41    W7        62.497   20.000   1
+ KEG      var_59   O44    W8     O30    W2       -92.945   20.000   1
+ KEG      var_60   W8     O30    W2     O18        0.000   20.000   1
+ KEG      var_61   W6     O18    W2     O28        0.000   20.000   1
+ KEG      var_62   W6     O24    W2     O30        0.000   20.000   1
+ KEG      var_63   W4     O26    W2     O18        0.000   20.000   1
+ KEG      var_64   W10    O28    W2     O18        0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ KEG      chir_01  O17    W1     W5     W9        positiv
+                   .      .      .      .      .
+ KEG      chir_02  O18    W2     W6     W10       negativ
+                   .      .      .      .      .
+ KEG      chir_03  O19    W7     W8     W11       positiv
+                   .      .      .      .      .
+ KEG      chir_04  O21    W3     W4     W12       negativ
+                   .      .      .      .      .
+ KEG      chir_05  W1     O29    O27    O17       cross4
+                   O23    O1     O25    .      .
+ KEG      chir_06  W2     O30    O28    O18       cross6
+                   O24    .      O2     O26    .
+ KEG      chir_07  W7     O33    O43    O19       cross5
+                   O41    O9     .      O29    .
+ KEG      chir_08  W10    O42    O28    O36       cross5
+                   O12    .      O46    O18    .
+# ------------------------------------------------------

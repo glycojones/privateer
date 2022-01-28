@@ -1,0 +1,132 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4HS     4HS      "5-bromopyridin-2(1H)-one"     NON-POLYMER     12     8     .     
+#
+data_comp_4HS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4HS     C1      C       CR16    0       63.982      8.831       21.118      
+4HS     C2      C       CR6     0       66.163      8.899       20.062      
+4HS     C3      C       CR16    0       65.548      8.465       18.843      
+4HS     C4      C       CR16    0       64.182      8.226       18.785      
+4HS     O       O       O       0       67.396      9.138       20.197      
+4HS     N       N       NR6     0       65.329      9.058       21.143      
+4HS     C       C       CR6     0       63.391      8.415       19.952      
+4HS     BR      BR      BR      0       61.526      8.101       19.919      
+4HS     H1      H       H       0       63.470      8.961       21.902      
+4HS     H2      H       H       0       66.080      8.342       18.072      
+4HS     H4      H       H       0       63.790      7.941       17.980      
+4HS     H3      H       H       0       65.703      9.331       21.917      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4HS       C3        C4        DOUBLE    y         1.380     0.013     1.380     0.013     
+4HS       C4        C         SINGLE    y         1.417     0.011     1.417     0.011     
+4HS       C2        C3        SINGLE    y         1.420     0.014     1.420     0.014     
+4HS       C         BR        SINGLE    n         1.892     0.010     1.892     0.010     
+4HS       C1        C         DOUBLE    y         1.349     0.020     1.349     0.020     
+4HS       C2        O         DOUBLE    n         1.263     0.010     1.263     0.010     
+4HS       C2        N         SINGLE    y         1.364     0.011     1.364     0.011     
+4HS       C1        N         SINGLE    y         1.357     0.011     1.357     0.011     
+4HS       C1        H1        SINGLE    n         1.082     0.013     0.945     0.020     
+4HS       C3        H2        SINGLE    n         1.082     0.013     0.945     0.020     
+4HS       C4        H4        SINGLE    n         1.082     0.013     0.940     0.015     
+4HS       N         H3        SINGLE    n         1.016     0.010     0.900     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4HS           C          C1           N     118.953    2.98
+4HS           C          C1          H1     121.107    1.50
+4HS           N          C1          H1     119.940    1.97
+4HS          C3          C2           O     124.917    1.50
+4HS          C3          C2           N     116.108    1.50
+4HS           O          C2           N     118.975    1.50
+4HS          C4          C3          C2     120.990    1.50
+4HS          C4          C3          H2     119.689    1.50
+4HS          C2          C3          H2     119.320    1.50
+4HS          C3          C4           C     119.878    1.50
+4HS          C3          C4          H4     119.618    1.50
+4HS           C          C4          H4     120.504    1.50
+4HS          C2           N          C1     123.495    1.50
+4HS          C2           N          H3     117.310    1.73
+4HS          C1           N          H3     119.196    2.19
+4HS          C4           C          BR     120.439    1.50
+4HS          C4           C          C1     120.577    1.50
+4HS          BR           C          C1     118.984    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4HS              const_21           C          C1           N          C2       0.000   10.00     2
+4HS       const_sp2_sp2_3          BR           C          C1           N     180.000   10.00     2
+4HS              const_15           O          C2          C3          C4     180.000   10.00     2
+4HS              const_19           O          C2           N          C1     180.000   10.00     2
+4HS       const_sp2_sp2_9          C2          C3          C4           C       0.000   10.00     2
+4HS       const_sp2_sp2_7          BR           C          C4          C3     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4HS    plan-1          BR   0.020
+4HS    plan-1           C   0.020
+4HS    plan-1          C1   0.020
+4HS    plan-1          C2   0.020
+4HS    plan-1          C3   0.020
+4HS    plan-1          C4   0.020
+4HS    plan-1          H1   0.020
+4HS    plan-1          H2   0.020
+4HS    plan-1          H3   0.020
+4HS    plan-1          H4   0.020
+4HS    plan-1           N   0.020
+4HS    plan-1           O   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4HS SMILES           ACDLabs              12.01 "C=1NC(=O)C=CC=1Br"
+4HS InChI            InChI                1.03  "InChI=1S/C5H4BrNO/c6-4-1-2-5(8)7-3-4/h1-3H,(H,7,8)"
+4HS InChIKey         InChI                1.03  NDMZZQRNZFWMEZ-UHFFFAOYSA-N
+4HS SMILES_CANONICAL CACTVS               3.385 "BrC1=CNC(=O)C=C1"
+4HS SMILES           CACTVS               3.385 "BrC1=CNC(=O)C=C1"
+4HS SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "C1=CC(=O)NC=C1Br"
+4HS SMILES           "OpenEye OEToolkits" 1.9.2 "C1=CC(=O)NC=C1Br"
+4HS ?                acedrg               202         "dictionary generator"                  
+4HS ?                acedrg_database      11          "data source"                           
+4HS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4HS ?                refmac5              5.8.0189    "optimization tool"                     

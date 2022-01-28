@@ -1,0 +1,425 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HB1      HB1 'RUTHENIUM-PYRIDOCARBAZOLE-1         ' non-polymer        43  30 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HB1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HB1           O2     O    O         0.000    -22.643  -34.516    2.807
+ HB1           C20    C    CR5       0.000    -22.809  -35.261    1.863
+ HB1           N2     N    NR15      0.000    -23.223  -36.594    1.983
+ HB1           HB     H    H         0.000    -23.409  -37.057    2.896
+ HB1           C19    C    CR5       0.000    -23.361  -37.239    0.750
+ HB1           O1     O    O         0.000    -23.725  -38.388    0.588
+ HB1           C21    C    CR56      0.000    -22.634  -35.021    0.426
+ HB1           C18    C    CR56      0.000    -22.968  -36.208   -0.259
+ HB1           C17    C    CR56      0.000    -22.944  -36.274   -1.660
+ HB1           C16    C    CR56      0.000    -23.206  -37.177   -2.729
+ HB1           C11    C    CR56      0.000    -22.937  -36.447   -3.937
+ HB1           C12    C    CR16      0.000    -23.086  -37.015   -5.185
+ HB1           H12    H    H         0.000    -22.897  -36.452   -6.091
+ HB1           C13    C    CR16      0.000    -23.487  -38.332   -5.224
+ HB1           H13    H    H         0.000    -23.604  -38.817   -6.185
+ HB1           C14    C    CR16      0.000    -23.748  -39.064   -4.057
+ HB1           H14    H    H         0.000    -24.056  -40.099   -4.144
+ HB1           C15    C    CR16      0.000    -23.624  -38.505   -2.798
+ HB1           H15    H    H         0.000    -23.842  -39.075   -1.903
+ HB1           C22    C    CR66      0.000    -22.238  -33.799   -0.240
+ HB1           C23    C    CR16      0.000    -21.859  -32.549    0.350
+ HB1           H23    H    H         0.000    -21.843  -32.433    1.427
+ HB1           C1     C    CR16      0.000    -21.514  -31.494   -0.471
+ HB1           HA     H    H         0.000    -21.239  -30.539   -0.040
+ HB1           C2     C    CR16      0.000    -21.520  -31.660   -1.871
+ HB1           H2     H    H         0.000    -21.265  -30.817   -2.501
+ HB1           C3     C    CR66      0.000    -22.192  -33.881   -1.651
+ HB1           N3     N    NR6       0.000    -21.838  -32.851   -2.455
+ HB1           C10    C    CR56      0.000    -22.557  -35.073   -2.322
+ HB1           N1     N    NT1       0.000    -22.523  -35.179   -3.651
+ HB1           H1     H    H         0.000    -21.533  -35.473   -3.633
+ HB1           RU1    RU   RU        0.000    -22.028  -33.350   -4.532
+ HB1           C4     C    CSP       0.000    -20.250  -33.709   -4.720
+ HB1           O3     O    O         0.000    -19.178  -33.893   -4.938
+ HB1           C9     C    CH1       0.000    -23.988  -33.064   -5.590
+ HB1           H9C1   H    H         0.000    -24.879  -33.697   -5.472
+ HB1           C5     C    C         0.000    -23.705  -31.890   -4.850
+ HB1           C8     C    CH1       0.000    -22.944  -33.270   -6.529
+ HB1           H8C1   H    H         0.000    -22.905  -34.059   -7.293
+ HB1           C7     C    CH1       0.000    -22.016  -32.211   -6.370
+ HB1           H7C1   H    H         0.000    -21.137  -32.032   -7.004
+ HB1           C6     C    CH1       0.000    -22.472  -31.363   -5.355
+ HB1           H6C1   H    H         0.000    -22.002  -30.419   -5.046
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HB1      O2     n/a    C20    START
+ HB1      C20    O2     C21    .
+ HB1      N2     C20    C19    .
+ HB1      HB     N2     .      .
+ HB1      C19    N2     O1     .
+ HB1      O1     C19    .      .
+ HB1      C21    C20    C22    .
+ HB1      C18    C21    C17    .
+ HB1      C17    C18    C16    .
+ HB1      C16    C17    C11    .
+ HB1      C11    C16    C12    .
+ HB1      C12    C11    C13    .
+ HB1      H12    C12    .      .
+ HB1      C13    C12    C14    .
+ HB1      H13    C13    .      .
+ HB1      C14    C13    C15    .
+ HB1      H14    C14    .      .
+ HB1      C15    C14    H15    .
+ HB1      H15    C15    .      .
+ HB1      C22    C21    C3     .
+ HB1      C23    C22    C1     .
+ HB1      H23    C23    .      .
+ HB1      C1     C23    C2     .
+ HB1      HA     C1     .      .
+ HB1      C2     C1     H2     .
+ HB1      H2     C2     .      .
+ HB1      C3     C22    C10    .
+ HB1      N3     C3     .      .
+ HB1      C10    C3     N1     .
+ HB1      N1     C10    RU1    .
+ HB1      H1     N1     .      .
+ HB1      RU1    N1     C9     .
+ HB1      C4     RU1    O3     .
+ HB1      O3     C4     .      .
+ HB1      C9     RU1    C8     .
+ HB1      H9C1   C9     .      .
+ HB1      C5     C9     .      .
+ HB1      C8     C9     C7     .
+ HB1      H8C1   C8     .      .
+ HB1      C7     C8     C6     .
+ HB1      H7C1   C7     .      .
+ HB1      C6     C7     H6C1   .
+ HB1      H6C1   C6     .      END
+ HB1      RU1    C5     .    ADD
+ HB1      RU1    C6     .    ADD
+ HB1      RU1    C7     .    ADD
+ HB1      RU1    C8     .    ADD
+ HB1      RU1    N3     .    ADD
+ HB1      C5     C6     .    ADD
+ HB1      N3     C2     .    ADD
+ HB1      N1     C11    .    ADD
+ HB1      C16    C15    .    ADD
+ HB1      C17    C10    .    ADD
+ HB1      C18    C19    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HB1       O3        C4        triple    1.130     0.020     1.130     0.020     
+HB1       C4        RU1       single    1.824     0.020     1.824     0.020     
+HB1       RU1       C5        single    2.246     0.020     2.246     0.020     
+HB1       RU1       C6        single    2.196     0.020     2.196     0.020     
+HB1       RU1       C7        single    2.162     0.020     2.162     0.020     
+HB1       RU1       C8        single    2.199     0.020     2.199     0.020     
+HB1       C9        RU1       single    2.246     0.020     2.246     0.020     
+HB1       RU1       N3        single    2.145     0.020     2.145     0.020     
+HB1       RU1       N1        single    2.090     0.020     2.090     0.020     
+HB1       C5        C6        double    1.500     0.020     1.500     0.020     
+HB1       C5        C9        double    1.500     0.020     1.500     0.020     
+HB1       C6        C7        single    1.524     0.020     1.524     0.020     
+HB1       H6C1      C6        single    1.089     0.010     0.989     0.005     
+HB1       C7        C8        double    1.524     0.020     1.524     0.020     
+HB1       H7C1      C7        single    1.089     0.010     0.989     0.005     
+HB1       C8        C9        single    1.524     0.020     1.524     0.020     
+HB1       H8C1      C8        single    1.089     0.010     0.989     0.005     
+HB1       H9C1      C9        single    1.089     0.010     0.989     0.005     
+HB1       N3        C2        double    1.337     0.020     1.337     0.020     
+HB1       N3        C3        single    1.410     0.020     1.410     0.020     
+HB1       C2        C1        single    1.390     0.020     1.390     0.020     
+HB1       H2        C2        single    1.082     0.013     0.975     0.010     
+HB1       N1        C11       single    1.405     0.020     1.405     0.020     
+HB1       N1        C10       single    1.405     0.020     1.405     0.020     
+HB1       H1        N1        single    1.036     0.016     0.914     0.007     
+HB1       C11       C16       single    1.490     0.020     1.490     0.020     
+HB1       C12       C11       double    1.390     0.020     1.390     0.020     
+HB1       C16       C15       double    1.390     0.020     1.390     0.020     
+HB1       C16       C17       single    1.490     0.020     1.490     0.020     
+HB1       C15       C14       single    1.390     0.020     1.390     0.020     
+HB1       H15       C15       single    1.082     0.013     0.975     0.010     
+HB1       C14       C13       double    1.390     0.020     1.390     0.020     
+HB1       H14       C14       single    1.082     0.013     0.975     0.010     
+HB1       C13       C12       single    1.390     0.020     1.390     0.020     
+HB1       H13       C13       single    1.082     0.013     0.975     0.010     
+HB1       H12       C12       single    1.082     0.013     0.975     0.010     
+HB1       C17       C10       single    1.490     0.020     1.490     0.020     
+HB1       C17       C18       double    1.490     0.020     1.490     0.020     
+HB1       C10       C3        double    1.390     0.020     1.390     0.020     
+HB1       C18       C19       single    1.490     0.020     1.490     0.020     
+HB1       C18       C21       single    1.490     0.020     1.490     0.020     
+HB1       O1        C19       double    1.285     0.020     1.285     0.020     
+HB1       C19       N2        single    1.340     0.020     1.340     0.020     
+HB1       C21       C20       single    1.490     0.020     1.490     0.020     
+HB1       C22       C21       double    1.390     0.020     1.390     0.020     
+HB1       N2        C20       single    1.340     0.020     1.340     0.020     
+HB1       C20       O2        double    1.285     0.020     1.285     0.020     
+HB1       HB        N2        single    1.016     0.010     0.899     0.007     
+HB1       C3        C22       single    1.490     0.020     1.490     0.020     
+HB1       C23       C22       single    1.390     0.020     1.390     0.020     
+HB1       C1        C23       double    1.390     0.020     1.390     0.020     
+HB1       H23       C23       single    1.082     0.013     0.975     0.010     
+HB1       HA        C1        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HB1      O2     C20    N2      108.000    3.000
+ HB1      O2     C20    C21     108.000    3.000
+ HB1      N2     C20    C21     108.000    3.000
+ HB1      C20    N2     HB      126.000    3.000
+ HB1      C20    N2     C19     108.000    3.000
+ HB1      HB     N2     C19     126.000    3.000
+ HB1      N2     C19    O1      108.000    3.000
+ HB1      N2     C19    C18     108.000    3.000
+ HB1      O1     C19    C18     108.000    3.000
+ HB1      C20    C21    C18     108.000    3.000
+ HB1      C20    C21    C22     120.000    3.000
+ HB1      C18    C21    C22     120.000    3.000
+ HB1      C21    C18    C17     120.000    3.000
+ HB1      C21    C18    C19     108.000    3.000
+ HB1      C17    C18    C19     108.000    3.000
+ HB1      C18    C17    C16     120.000    3.000
+ HB1      C18    C17    C10     120.000    3.000
+ HB1      C16    C17    C10     120.000    3.000
+ HB1      C17    C16    C11     120.000    3.000
+ HB1      C17    C16    C15     120.000    3.000
+ HB1      C11    C16    C15     120.000    3.000
+ HB1      C16    C11    C12     120.000    3.000
+ HB1      C16    C11    N1      120.000    3.000
+ HB1      C12    C11    N1      120.000    3.000
+ HB1      C11    C12    H12     120.000    3.000
+ HB1      C11    C12    C13     120.000    3.000
+ HB1      H12    C12    C13     120.000    3.000
+ HB1      C12    C13    H13     120.000    3.000
+ HB1      C12    C13    C14     120.000    3.000
+ HB1      H13    C13    C14     120.000    3.000
+ HB1      C13    C14    H14     120.000    3.000
+ HB1      C13    C14    C15     120.000    3.000
+ HB1      H14    C14    C15     120.000    3.000
+ HB1      C14    C15    H15     120.000    3.000
+ HB1      C14    C15    C16     120.000    3.000
+ HB1      H15    C15    C16     120.000    3.000
+ HB1      C21    C22    C23     120.000    3.000
+ HB1      C21    C22    C3      120.000    3.000
+ HB1      C23    C22    C3      120.000    3.000
+ HB1      C22    C23    H23     120.000    3.000
+ HB1      C22    C23    C1      120.000    3.000
+ HB1      H23    C23    C1      120.000    3.000
+ HB1      C23    C1     HA      120.000    3.000
+ HB1      C23    C1     C2      120.000    3.000
+ HB1      HA     C1     C2      120.000    3.000
+ HB1      C1     C2     H2      120.000    3.000
+ HB1      C1     C2     N3      120.000    3.000
+ HB1      H2     C2     N3      120.000    3.000
+ HB1      C22    C3     N3      120.000    3.000
+ HB1      C22    C3     C10     120.000    3.000
+ HB1      N3     C3     C10     120.000    3.000
+ HB1      C3     N3     RU1     120.000    3.000
+ HB1      C3     N3     C2      120.000    3.000
+ HB1      RU1    N3     C2      120.000    3.000
+ HB1      C3     C10    N1      120.000    3.000
+ HB1      C3     C10    C17     120.000    3.000
+ HB1      N1     C10    C17     120.000    3.000
+ HB1      C10    N1     H1      109.500    3.000
+ HB1      C10    N1     RU1     109.500    3.000
+ HB1      C10    N1     C11     109.500    3.000
+ HB1      H1     N1     RU1     109.500    3.000
+ HB1      H1     N1     C11     109.500    3.000
+ HB1      RU1    N1     C11     109.500    3.000
+ HB1      N1     RU1    C4       95.861    3.000
+ HB1      N1     RU1    C9       95.932    3.000
+ HB1      N1     RU1    C5      116.857    3.000
+ HB1      N1     RU1    C6      154.432    3.000
+ HB1      N1     RU1    C7      145.159    3.000
+ HB1      N1     RU1    C8      108.428    3.000
+ HB1      N1     RU1    N3       79.416    3.000
+ HB1      C4     RU1    C9      145.842    3.000
+ HB1      C5     RU1    C6       39.450    3.000
+ HB1      C5     RU1    C7       62.704    3.000
+ HB1      C6     RU1    C7       40.925    3.000
+ HB1      C5     RU1    C8       62.398    3.000
+ HB1      C6     RU1    C8       62.769    3.000
+ HB1      C7     RU1    C8       40.900    3.000
+ HB1      C5     RU1    N3       92.982    3.000
+ HB1      C6     RU1    N3       99.808    3.000
+ HB1      C7     RU1    N3      134.442    3.000
+ HB1      C8     RU1    N3      155.255    3.000
+ HB1      C4     RU1    C5      147.280    3.000
+ HB1      C9     RU1    C5       39.017    3.000
+ HB1      C4     RU1    C6      109.671    3.000
+ HB1      C9     RU1    C6       62.078    3.000
+ HB1      C4     RU1    C7       90.611    3.000
+ HB1      C9     RU1    C7       62.438    3.000
+ HB1      C4     RU1    C8      108.648    3.000
+ HB1      C9     RU1    C8       40.093    3.000
+ HB1      C4     RU1    N3       93.398    3.000
+ HB1      C9     RU1    N3      120.265    3.000
+ HB1      RU1    C4     O3      180.000    3.000
+ HB1      RU1    C9     H9C1    109.500    3.000
+ HB1      RU1    C9     C5       70.510    3.000
+ HB1      RU1    C9     C8       68.290    3.000
+ HB1      H9C1   C9     C5      108.810    3.000
+ HB1      H9C1   C9     C8      108.340    3.000
+ HB1      C5     C9     C8      109.470    3.000
+ HB1      C9     C5     RU1      70.473    3.000
+ HB1      C9     C5     C6      120.000    3.000
+ HB1      RU1    C5     C6       68.474    3.000
+ HB1      C9     C8     H8C1    108.340    3.000
+ HB1      C9     C8     C7      111.000    3.000
+ HB1      C9     C8     RU1      71.617    3.000
+ HB1      H8C1   C8     C7      108.340    3.000
+ HB1      H8C1   C8     RU1     109.500    3.000
+ HB1      C7     C8     RU1      68.276    3.000
+ HB1      C8     C7     H7C1    108.340    3.000
+ HB1      C8     C7     C6      111.000    3.000
+ HB1      C8     C7     RU1      70.825    3.000
+ HB1      H7C1   C7     C6      108.340    3.000
+ HB1      H7C1   C7     RU1     109.500    3.000
+ HB1      C6     C7     RU1      70.725    3.000
+ HB1      C7     C6     H6C1    108.340    3.000
+ HB1      C7     C6     RU1      68.350    3.000
+ HB1      C7     C6     C5      109.470    3.000
+ HB1      RU1    C6     C5       72.076    3.000
+ HB1      H6C1   C6     RU1     109.500    3.000
+ HB1      H6C1   C6     C5      108.810    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HB1      CONST_1  O2     C20    N2     C19      180.000    0.000   0
+ HB1      CONST_2  C20    N2     C19    O1       180.000    0.000   0
+ HB1      CONST_3  O2     C20    C21    C22        0.000    0.000   0
+ HB1      CONST_4  C20    C21    C18    C17      180.000    0.000   0
+ HB1      CONST_5  C21    C18    C19    N2         0.000    0.000   0
+ HB1      CONST_6  C21    C18    C17    C16      180.000    0.000   0
+ HB1      CONST_7  C18    C17    C10    C3         0.000    0.000   0
+ HB1      CONST_8  C18    C17    C16    C11      180.000    0.000   0
+ HB1      CONST_9  C17    C16    C15    C14      180.000    0.000   0
+ HB1      CONST_10 C17    C16    C11    C12      180.000    0.000   0
+ HB1      CONST_11 C16    C11    C12    C13        0.000    0.000   0
+ HB1      CONST_12 C11    C12    C13    C14        0.000    0.000   0
+ HB1      CONST_13 C12    C13    C14    C15        0.000    0.000   0
+ HB1      CONST_14 C13    C14    C15    C16        0.000    0.000   0
+ HB1      CONST_15 C20    C21    C22    C3      -178.468    0.000   0
+ HB1      CONST_16 C21    C22    C23    C1       180.000    0.000   0
+ HB1      CONST_17 C22    C23    C1     C2         0.000    0.000   0
+ HB1      CONST_18 C23    C1     C2     N3         0.000    0.000   0
+ HB1      CONST_19 C21    C22    C3     C10        2.013    0.000   0
+ HB1      CONST_20 C22    C3     N3     RU1      180.000    0.000   0
+ HB1      CONST_21 C3     N3     C2     C1         0.000    0.000   0
+ HB1      CONST_22 C22    C3     C10    N1      -179.985    0.000   0
+ HB1      CONST_23 C3     C10    N1     RU1       -4.592    0.000   0
+ HB1      CONST_24 C10    N1     C11    C16       -1.674    0.000   0
+ HB1      var_1    C10    N1     RU1    C9      -115.515   20.000   1
+ HB1      var_2    N1     RU1    C5     C9       -61.032   20.000   1
+ HB1      var_3    N1     RU1    C6     C7      -113.465   20.000   1
+ HB1      var_4    N1     RU1    C7     C8        19.255   20.000   1
+ HB1      var_5    N1     RU1    C8     C9        75.020   20.000   1
+ HB1      CONST_25 N1     RU1    N3     C3        -3.628    0.000   0
+ HB1      var_6    N1     RU1    C4     O3       131.438   20.000   1
+ HB1      var_7    N1     RU1    C9     C8      -112.866   20.000   1
+ HB1      var_8    C9     C5     C6     C7        -0.561   20.000   3
+ HB1      var_9    RU1    C9     C8     C7       -61.628   20.000   3
+ HB1      var_10   C9     C8     C7     C6        -0.045   20.000   3
+ HB1      var_11   C8     C7     C6     RU1       63.874   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HB1      chir_01  C6     RU1    C5     C7        positiv
+ HB1      chir_02  C7     RU1    C6     C8        positiv
+ HB1      chir_03  C8     RU1    C7     C9        positiv
+ HB1      chir_04  C9     RU1    C5     C8        negativ
+ HB1      chir_05  N1     RU1    C11    C10       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HB1      plan-1    C5        0.020
+ HB1      plan-1    RU1       0.020
+ HB1      plan-1    C6        0.020
+ HB1      plan-1    C9        0.020
+ HB1      plan-2    N3        0.020
+ HB1      plan-2    RU1       0.020
+ HB1      plan-2    C2        0.020
+ HB1      plan-2    C3        0.020
+ HB1      plan-2    C23       0.020
+ HB1      plan-2    C1        0.020
+ HB1      plan-2    H2        0.020
+ HB1      plan-2    C10       0.020
+ HB1      plan-2    C22       0.020
+ HB1      plan-2    H23       0.020
+ HB1      plan-2    HA        0.020
+ HB1      plan-2    C17       0.020
+ HB1      plan-2    C18       0.020
+ HB1      plan-2    C21       0.020
+ HB1      plan-2    C19       0.020
+ HB1      plan-2    C20       0.020
+ HB1      plan-2    N2        0.020
+ HB1      plan-2    C11       0.020
+ HB1      plan-2    N1        0.020
+ HB1      plan-2    C16       0.020
+ HB1      plan-2    C12       0.020
+ HB1      plan-2    C15       0.020
+ HB1      plan-2    C14       0.020
+ HB1      plan-2    C13       0.020
+ HB1      plan-2    H15       0.020
+ HB1      plan-2    H14       0.020
+ HB1      plan-2    H13       0.020
+ HB1      plan-2    H12       0.020
+ HB1      plan-2    O1        0.020
+ HB1      plan-2    O2        0.020
+ HB1      plan-2    HB        0.020
+# ------------------------------------------------------

@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MPT     MPT      "BETA-MERCAPTOPROPIONIC ACID"     NON-POLYMER     11     6     .     
+#
+data_comp_MPT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MPT     CA      C       CH2     0       0.528       -0.313      0.572       
+MPT     C       C       C       0       1.067       0.956       -0.067      
+MPT     O       O       O       0       0.941       2.032       0.554       
+MPT     CB      C       CH2     0       -0.673      -0.861      -0.149      
+MPT     SG      S       SH1     0       -2.136      0.200       -0.016      
+MPT     OXT     O       OC      -1      1.612       0.866       -1.185      
+MPT     HA1     H       H       0       0.291       -0.124      1.503       
+MPT     HA2     H       H       0       1.238       -0.987      0.579       
+MPT     HB1     H       H       0       -0.923      -1.725      0.241       
+MPT     HB2     H       H       0       -0.475      -0.938      -1.105      
+MPT     HG      H       HSH1    0       -2.890      -0.467      -0.674      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MPT       CA        C         SINGLE    n         1.519     0.012     1.519     0.012     
+MPT       CA        CB        SINGLE    n         1.504     0.020     1.504     0.020     
+MPT       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+MPT       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+MPT       CB        SG        SINGLE    n         1.812     0.010     1.812     0.010     
+MPT       CA        HA1       SINGLE    n         1.089     0.010     0.989     0.005     
+MPT       CA        HA2       SINGLE    n         1.089     0.010     0.989     0.005     
+MPT       CB        HB1       SINGLE    n         1.089     0.010     0.989     0.005     
+MPT       CB        HB2       SINGLE    n         1.089     0.010     0.989     0.005     
+MPT       SG        HG        SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MPT           C          CA          CB     111.511    2.91
+MPT           C          CA         HA1     108.416    1.50
+MPT           C          CA         HA2     108.416    1.50
+MPT          CB          CA         HA1     109.073    1.50
+MPT          CB          CA         HA2     109.073    1.50
+MPT         HA1          CA         HA2     107.269    1.50
+MPT          CA           C           O     118.187    1.67
+MPT          CA           C         OXT     118.187    1.67
+MPT           O           C         OXT     123.625    1.50
+MPT          CA          CB          SG     112.239    3.00
+MPT          CA          CB         HB1     109.263    1.50
+MPT          CA          CB         HB2     109.263    1.50
+MPT          SG          CB         HB1     105.353    2.82
+MPT          SG          CB         HB2     105.353    2.82
+MPT         HB1          CB         HB2     111.425    1.71
+MPT          CB          SG          HG      98.146    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MPT             sp2_sp3_2           O           C          CA          CB     120.000   10.00     6
+MPT             sp3_sp3_1           C          CA          CB          SG     180.000   10.00     3
+MPT            sp3_sp3_10          CA          CB          SG          HG     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MPT    plan-1           C   0.020
+MPT    plan-1          CA   0.020
+MPT    plan-1           O   0.020
+MPT    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MPT SMILES           ACDLabs              12.01 "O=C(O)CCS"
+MPT InChI            InChI                1.03  "InChI=1S/C3H6O2S/c4-3(5)1-2-6/h6H,1-2H2,(H,4,5)"
+MPT InChIKey         InChI                1.03  DKIDEFUBRARXTE-UHFFFAOYSA-N
+MPT SMILES_CANONICAL CACTVS               3.370 "OC(=O)CCS"
+MPT SMILES           CACTVS               3.370 "OC(=O)CCS"
+MPT SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C(CS)C(=O)O"
+MPT SMILES           "OpenEye OEToolkits" 1.7.6 "C(CS)C(=O)O"
+MPT ?                acedrg               202         "dictionary generator"                  
+MPT ?                acedrg_database      11          "data source"                           
+MPT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MPT ?                refmac5              5.8.0189    "optimization tool"                     

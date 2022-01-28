@@ -1,0 +1,131 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CC4     CC4      "2-(SELANYLMETHYL)PROP-2-ENOIC ACID"     non-polymer     12     7     .     
+#
+data_comp_CC4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CC4     C3      C       C2      0       0.274       0.879       1.181       
+CC4     C2      C       C       0       0.401       0.090       0.083       
+CC4     C1      C       CH2     0       -0.651      0.214       -0.991      
+CC4     SE      SE      SE      0       -2.050      -1.135      -0.713      
+CC4     C4      C       C       0       1.440       -0.784      -0.093      
+CC4     O1      O       O       0       2.525       -0.590      0.465       
+CC4     OXT     O       OC      -1      1.290       -1.788      -0.793      
+CC4     H31C    H       H       0       0.888       0.803       1.900       
+CC4     H32C    H       H       0       -0.432      1.509       1.236       
+CC4     H11C    H       H       0       -0.246      0.085       -1.874      
+CC4     H12C    H       H       0       -1.054      1.108       -0.967      
+CC4     HSE     H       H       0       -2.888      -1.019      -1.557      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CC4          C3          C2      DOUBLE       n     1.343  0.0200     1.343  0.0200
+CC4          C2          C1      SINGLE       n     1.505  0.0100     1.505  0.0100
+CC4          C1          SE      SINGLE       n     1.963  0.0200     1.963  0.0200
+CC4          C2          C4      SINGLE       n     1.347  0.0200     1.347  0.0200
+CC4          C4          O1      DOUBLE       n     1.230  0.0200     1.230  0.0200
+CC4          C4         OXT      SINGLE       n     1.230  0.0200     1.230  0.0200
+CC4          C3        H31C      SINGLE       n     1.082  0.0130     0.948  0.0200
+CC4          C3        H32C      SINGLE       n     1.082  0.0130     0.948  0.0200
+CC4          C1        H11C      SINGLE       n     1.089  0.0100     0.980  0.0156
+CC4          C1        H12C      SINGLE       n     1.089  0.0100     0.980  0.0156
+CC4          SE         HSE      SINGLE       n     1.195  0.0100     1.195  0.0100
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CC4          C2          C3        H31C     120.125    1.50
+CC4          C2          C3        H32C     120.125    1.50
+CC4        H31C          C3        H32C     119.750    1.57
+CC4          C3          C2          C1     119.539    3.00
+CC4          C3          C2          C4     120.921    3.00
+CC4          C1          C2          C4     119.539    3.00
+CC4          C2          C1          SE     108.929    3.00
+CC4          C2          C1        H11C     109.574    1.50
+CC4          C2          C1        H12C     109.574    1.50
+CC4          SE          C1        H11C     109.134    1.50
+CC4          SE          C1        H12C     109.134    1.50
+CC4        H11C          C1        H12C     108.188    1.50
+CC4          C1          SE         HSE     109.471    3.00
+CC4          C2          C4          O1     119.884    1.50
+CC4          C2          C4         OXT     119.884    1.50
+CC4          O1          C4         OXT     120.233    1.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CC4             sp2_sp2_1          C1          C2          C3        H31C     180.000   10.00     2
+CC4             sp2_sp3_2          C3          C2          C1          SE     120.000   10.00     6
+CC4             sp2_sp2_7          C3          C2          C4          O1       0.000   10.00     2
+CC4             sp3_sp3_1          C2          C1          SE         HSE     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CC4    plan-1          C2   0.020
+CC4    plan-1          C3   0.020
+CC4    plan-1        H31C   0.020
+CC4    plan-1        H32C   0.020
+CC4    plan-2          C1   0.020
+CC4    plan-2          C2   0.020
+CC4    plan-2          C3   0.020
+CC4    plan-2          C4   0.020
+CC4    plan-3          C2   0.020
+CC4    plan-3          C4   0.020
+CC4    plan-3          O1   0.020
+CC4    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CC4 SMILES           ACDLabs              12.01 "O=C(O)\C(=C)C[SeH]"
+CC4 SMILES_CANONICAL CACTVS               3.370 "OC(=O)C(=C)C[SeH]"
+CC4 SMILES           CACTVS               3.370 "OC(=O)C(=C)C[SeH]"
+CC4 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C=C(C[SeH])C(=O)O"
+CC4 SMILES           "OpenEye OEToolkits" 1.7.0 "C=C(C[SeH])C(=O)O"
+CC4 InChI            InChI                1.03  "InChI=1S/C4H6O2Se/c1-3(2-7)4(5)6/h7H,1-2H2,(H,5,6)"
+CC4 InChIKey         InChI                1.03  CHFUUCJSXSBSRN-UHFFFAOYSA-N
+CC4 ?                acedrg               202         "dictionary generator"
+CC4 ?                acedrg_database      11          "data source"
+CC4 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CC4 ?                refmac5              5.8.0189    "optimization tool"
+CC4 ?                acedrg               226         "dictionary generator"                  
+CC4 ?                acedrg_database      11          "data source"                           
+CC4 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CC4 ?                refmac5              5.8.0267    "optimization tool"                     

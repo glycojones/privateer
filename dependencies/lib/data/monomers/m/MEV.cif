@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MEV     MEV      "(R)-MEVALONATE"     NON-POLYMER     21     10     .     
+#
+data_comp_MEV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MEV     C8      C       CH2     0       85.189      127.796     109.648     
+MEV     O8      O       OH1     0       85.274      129.209     109.593     
+MEV     C2      C       CH2     0       85.735      127.191     108.378     
+MEV     C3      C       CT      0       85.711      125.653     108.273     
+MEV     O7      O       OH1     0       86.210      125.335     106.965     
+MEV     C4      C       CH2     0       86.585      124.992     109.356     
+MEV     C5      C       C       0       86.806      123.497     109.189     
+MEV     O3      O       O       0       87.517      123.110     108.240     
+MEV     O4      O       OC      -1      86.267      122.729     110.010     
+MEV     C6      C       CH3     0       84.285      125.116     108.335     
+MEV     H81     H       H       0       84.251      127.537     109.771     
+MEV     H82     H       H       0       85.699      127.475     110.421     
+MEV     HX2     H       H       0       84.899      129.528     110.281     
+MEV     H21     H       H       0       86.665      127.484     108.270     
+MEV     H22     H       H       0       85.225      127.550     107.620     
+MEV     HX      H       H       0       87.031      125.546     106.899     
+MEV     H41     H       H       0       86.169      125.146     110.230     
+MEV     H42     H       H       0       87.460      125.436     109.360     
+MEV     H61     H       H       0       83.991      125.079     109.261     
+MEV     H62     H       H       0       84.255      124.224     107.950     
+MEV     H63     H       H       0       83.696      125.704     107.833     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MEV       C8        O8        SINGLE    n         1.417     0.020     1.417     0.020     
+MEV       C8        C2        SINGLE    n         1.499     0.020     1.499     0.020     
+MEV       C2        C3        SINGLE    n         1.534     0.014     1.534     0.014     
+MEV       C3        O7        SINGLE    n         1.428     0.020     1.428     0.020     
+MEV       C3        C4        SINGLE    n         1.536     0.010     1.536     0.010     
+MEV       C3        C6        SINGLE    n         1.522     0.011     1.522     0.011     
+MEV       C4        C5        SINGLE    n         1.519     0.012     1.519     0.012     
+MEV       C5        O3        DOUBLE    n         1.247     0.019     1.247     0.019     
+MEV       C5        O4        SINGLE    n         1.247     0.019     1.247     0.019     
+MEV       C8        H81       SINGLE    n         1.089     0.010     0.981     0.017     
+MEV       C8        H82       SINGLE    n         1.089     0.010     0.981     0.017     
+MEV       O8        HX2       SINGLE    n         0.970     0.012     0.846     0.020     
+MEV       C2        H21       SINGLE    n         1.089     0.010     0.981     0.016     
+MEV       C2        H22       SINGLE    n         1.089     0.010     0.981     0.016     
+MEV       O7        HX        SINGLE    n         0.970     0.012     0.848     0.020     
+MEV       C4        H41       SINGLE    n         1.089     0.010     0.981     0.019     
+MEV       C4        H42       SINGLE    n         1.089     0.010     0.981     0.019     
+MEV       C6        H61       SINGLE    n         1.089     0.010     0.972     0.015     
+MEV       C6        H62       SINGLE    n         1.089     0.010     0.972     0.015     
+MEV       C6        H63       SINGLE    n         1.089     0.010     0.972     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MEV          O8          C8          C2     111.314    3.00
+MEV          O8          C8         H81     109.258    1.50
+MEV          O8          C8         H82     109.258    1.50
+MEV          C2          C8         H81     109.787    1.50
+MEV          C2          C8         H82     109.787    1.50
+MEV         H81          C8         H82     108.120    1.50
+MEV          C8          O8         HX2     108.576    2.78
+MEV          C8          C2          C3     111.094    2.85
+MEV          C8          C2         H21     108.802    1.50
+MEV          C8          C2         H22     108.802    1.50
+MEV          C3          C2         H21     108.201    1.50
+MEV          C3          C2         H22     108.201    1.50
+MEV         H21          C2         H22     107.715    1.50
+MEV          C2          C3          O7     107.760    2.12
+MEV          C2          C3          C4     111.094    2.85
+MEV          C2          C3          C6     111.119    1.58
+MEV          O7          C3          C4     110.167    2.39
+MEV          O7          C3          C6     107.769    1.96
+MEV          C4          C3          C6     110.358    1.75
+MEV          C3          O7          HX     108.877    3.00
+MEV          C3          C4          C5     111.511    2.91
+MEV          C3          C4         H41     108.458    1.50
+MEV          C3          C4         H42     108.458    1.50
+MEV          C5          C4         H41     108.477    1.50
+MEV          C5          C4         H42     108.477    1.50
+MEV         H41          C4         H42     107.711    1.51
+MEV          C4          C5          O3     118.090    1.84
+MEV          C4          C5          O4     118.090    1.84
+MEV          O3          C5          O4     123.820    1.50
+MEV          C3          C6         H61     109.483    1.50
+MEV          C3          C6         H62     109.483    1.50
+MEV          C3          C6         H63     109.483    1.50
+MEV         H61          C6         H62     109.441    1.50
+MEV         H61          C6         H63     109.441    1.50
+MEV         H62          C6         H63     109.441    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MEV             sp3_sp3_1          C2          C8          O8         HX2     180.000   10.00     3
+MEV             sp3_sp3_4          C3          C2          C8          O8     180.000   10.00     3
+MEV            sp3_sp3_13          C8          C2          C3          O7     180.000   10.00     3
+MEV            sp3_sp3_22          C2          C3          O7          HX     180.000   10.00     3
+MEV            sp3_sp3_25          C2          C3          C4          C5     180.000   10.00     3
+MEV            sp3_sp3_34          C2          C3          C6         H61     180.000   10.00     3
+MEV             sp2_sp3_2          O3          C5          C4          C3     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MEV    chir_1    C3    O7    C4    C2    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MEV    plan-1          C4   0.020
+MEV    plan-1          C5   0.020
+MEV    plan-1          O3   0.020
+MEV    plan-1          O4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MEV SMILES           ACDLabs              10.04 "O=C([O-])CC(O)(C)CCO"
+MEV SMILES_CANONICAL CACTVS               3.341 "C[C@@](O)(CCO)CC([O-])=O"
+MEV SMILES           CACTVS               3.341 "C[C](O)(CCO)CC([O-])=O"
+MEV SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@@](CCO)(CC(=O)[O-])O"
+MEV SMILES           "OpenEye OEToolkits" 1.5.0 "CC(CCO)(CC(=O)[O-])O"
+MEV InChI            InChI                1.03  "InChI=1S/C6H12O4/c1-6(10,2-3-7)4-5(8)9/h7,10H,2-4H2,1H3,(H,8,9)/p-1/t6-/m1/s1"
+MEV InChIKey         InChI                1.03  KJTLQQUUPVSXIM-ZCFIWIBFSA-M
+MEV ?                acedrg               202         "dictionary generator"                  
+MEV ?                acedrg_database      11          "data source"                           
+MEV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MEV ?                refmac5              5.8.0189    "optimization tool"                     

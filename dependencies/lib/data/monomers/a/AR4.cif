@@ -1,0 +1,290 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AR4     AR4     "2-azanyl-5-[3-fluoranyl-5-(hydroxymethyl)-3,4-bis(oxidanyl)oxolan-2-yl]oxy-5-oxidanylidene-pentanoicacid"  peptide    36     20     .     
+#
+data_comp_AR4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AR4     N       N       NT3     1       2.790       1.707       2.562       
+AR4     CA      C       CH1     0       3.105       1.062       1.258       
+AR4     CB      C       CH2     0       1.815       0.774       0.487       
+AR4     CG      C       CH2     0       2.039       0.409       -0.971      
+AR4     CD      C       C       0       0.778       0.342       -1.789      
+AR4     OE1     O       O       0       0.530       1.043       -2.737      
+AR4     OE2     O       O2      0       -0.050      -0.622      -1.313      
+AR4     C       C       C       0       3.901       -0.226      1.507       
+AR4     O       O       O       0       4.980       -0.357      0.895       
+AR4     "O5'"   O       OH1     0       -2.911      2.346       0.183       
+AR4     "C5'"   C       CH2     0       -2.593      1.028       0.608       
+AR4     "C4'"   C       CH1     0       -2.925      0.012       -0.461      
+AR4     "O4'"   O       O2      0       -2.164      0.293       -1.657      
+AR4     "C1'"   C       CH1     0       -1.324      -0.807      -1.955      
+AR4     "C2'"   C       CT      0       -2.044      -2.023      -1.365      
+AR4     "F2'"   F       F       0       -3.041      -2.420      -2.190      
+AR4     "C3'"   C       CH1     0       -2.619      -1.439      -0.072      
+AR4     "O3'"   O       OH1     0       -3.786      -2.115      0.384       
+AR4     OXT     O       OC      -1      3.413       -1.051      2.305       
+AR4     "O2'"   O       OH1     0       -1.199      -3.137      -1.119      
+AR4     H       H       H       0       3.548       1.802       3.060       
+AR4     H2      H       H       0       2.193       1.198       3.025       
+AR4     H3      H       H       0       2.427       2.531       2.421       
+AR4     HA      H       H       0       3.660       1.682       0.730       
+AR4     HB2     H       H       0       1.242       1.569       0.531       
+AR4     HB3     H       H       0       1.342       0.039       0.930       
+AR4     HG2     H       H       0       2.488       -0.462      -1.015      
+AR4     HG3     H       H       0       2.641       1.071       -1.374      
+AR4     "H5'"   H       H       0       -2.771      2.884       0.824       
+AR4     "H5'1"  H       H       0       -3.097      0.819       1.423       
+AR4     "H5'2"  H       H       0       -1.635      0.978       0.817       
+AR4     "H4'"   H       H       0       -3.883      0.092       -0.677      
+AR4     "H1'"   H       H       0       -1.218      -0.906      -2.945      
+AR4     "H3'"   H       H       0       -1.926      -1.462      0.633       
+AR4     "H3'1"  H       H       0       -4.395      -2.116      -0.210      
+AR4     "HO2'"  H       H       0       -0.526      -2.889      -0.665      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AR4      N      n/a    CA     START
+ AR4      H      N      .      .
+ AR4      H2     N      .      .
+ AR4      H3     N      .      .
+ AR4      CA     N      C      .
+ AR4      HA     CA     .      .
+ AR4      CB     CA     CG     .
+ AR4      HB2    CB     .      .
+ AR4      HB3    CB     .      .
+ AR4      CG     CB     CD     .
+ AR4      HG2    CG     .      .
+ AR4      HG3    CG     .      .
+ AR4      CD     CG     OE2    .
+ AR4      OE1    CD     .      .
+ AR4      OE2    CD     "C1'"  .
+ AR4      "C1'"  OE2    "C2'"  .
+ AR4      "H1'"  "C1'"  .      .
+ AR4      "O4'"  "C1'"  .      .
+ AR4      "C2'"  "C1'"  "C3'"  .
+ AR4      "F2'"  "C2'"  .      .
+ AR4      "O2'"  "C2'"  "HO2'" .
+ AR4      "HO2'" "O2'"  .      .
+ AR4      "C3'"  "C2'"  "C4'"  .
+ AR4      "H3'"  "C3'"  .      .
+ AR4      "O3'"  "C3'"  "H3'1" .
+ AR4      "H3'1" "O3'"  .      .
+ AR4      "C4'"  "C3'"  "C5'"  .
+ AR4      "H4'"  "C4'"  .      .
+ AR4      "C5'"  "C4'"  "O5'"  .
+ AR4      "H5'1" "C5'"  .      .
+ AR4      "H5'2" "C5'"  .      .
+ AR4      "O5'"  "C5'"  "H5'"  .
+ AR4      "H5'"  "O5'"  .      .
+ AR4      C      CA     .      END
+ AR4      O      C      .      .
+ AR4      OXT    C      .      .
+ AR4      "C4'"  "O4'"  .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AR4       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+AR4       CA        CB        SINGLE    n         1.530     0.011     1.530     0.011     
+AR4       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+AR4       CB        CG        SINGLE    n         1.518     0.015     1.518     0.015     
+AR4       CG        CD        SINGLE    n         1.504     0.020     1.504     0.020     
+AR4       CD        OE1       DOUBLE    n         1.204     0.010     1.204     0.010     
+AR4       CD        OE2       SINGLE    n         1.347     0.015     1.347     0.015     
+AR4       OE2       "C1'"     SINGLE    n         1.435     0.011     1.435     0.011     
+AR4       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+AR4       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+AR4       "O5'"     "C5'"     SINGLE    n         1.421     0.013     1.421     0.013     
+AR4       "C5'"     "C4'"     SINGLE    n         1.511     0.012     1.511     0.012     
+AR4       "C4'"     "O4'"     SINGLE    n         1.443     0.010     1.443     0.010     
+AR4       "C4'"     "C3'"     SINGLE    n         1.528     0.012     1.528     0.012     
+AR4       "O4'"     "C1'"     SINGLE    n         1.416     0.014     1.416     0.014     
+AR4       "C1'"     "C2'"     SINGLE    n         1.533     0.011     1.533     0.011     
+AR4       "C2'"     "F2'"     SINGLE    n         1.354     0.020     1.354     0.020     
+AR4       "C2'"     "C3'"     SINGLE    n         1.530     0.013     1.530     0.013     
+AR4       "C2'"     "O2'"     SINGLE    n         1.419     0.012     1.419     0.012     
+AR4       "C3'"     "O3'"     SINGLE    n         1.420     0.013     1.420     0.013     
+AR4       N         H         SINGLE    n         1.036     0.016     0.914     0.007     
+AR4       N         H2        SINGLE    n         1.036     0.016     0.914     0.007     
+AR4       N         H3        SINGLE    n         1.036     0.016     0.914     0.007     
+AR4       CA        HA        SINGLE    n         1.089     0.010     0.989     0.005     
+AR4       CB        HB2       SINGLE    n         1.089     0.010     0.989     0.005     
+AR4       CB        HB3       SINGLE    n         1.089     0.010     0.989     0.005     
+AR4       CG        HG2       SINGLE    n         1.089     0.010     0.989     0.005     
+AR4       CG        HG3       SINGLE    n         1.089     0.010     0.989     0.005     
+AR4       "O5'"     "H5'"     SINGLE    n         0.970     0.012     0.839     0.014     
+AR4       "C5'"     "H5'1"    SINGLE    n         1.089     0.010     0.989     0.005     
+AR4       "C5'"     "H5'2"    SINGLE    n         1.089     0.010     0.989     0.005     
+AR4       "C4'"     "H4'"     SINGLE    n         1.089     0.010     0.989     0.005     
+AR4       "C1'"     "H1'"     SINGLE    n         1.089     0.010     0.989     0.005     
+AR4       "C3'"     "H3'"     SINGLE    n         1.089     0.010     0.989     0.005     
+AR4       "O3'"     "H3'1"    SINGLE    n         0.970     0.012     0.839     0.014     
+AR4       "O2'"     "HO2'"    SINGLE    n         0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AR4          CA           N           H     110.062    1.93
+AR4          CA           N          H2     110.062    1.93
+AR4          CA           N          H3     110.062    1.93
+AR4           H           N          H2     109.028    2.41
+AR4           H           N          H3     109.028    2.41
+AR4          H2           N          H3     109.028    2.41
+AR4           N          CA          CB     110.374    1.62
+AR4           N          CA           C     109.241    1.50
+AR4           N          CA          HA     108.487    1.50
+AR4          CB          CA           C     111.037    2.40
+AR4          CB          CA          HA     108.967    1.50
+AR4           C          CA          HA     108.824    1.50
+AR4          CA          CB          CG     113.445    1.50
+AR4          CA          CB         HB2     108.549    1.50
+AR4          CA          CB         HB3     108.549    1.50
+AR4          CG          CB         HB2     108.890    1.50
+AR4          CG          CB         HB3     108.890    1.50
+AR4         HB2          CB         HB3     107.844    1.50
+AR4          CB          CG          CD     114.381    2.77
+AR4          CB          CG         HG2     108.906    1.50
+AR4          CB          CG         HG3     108.906    1.50
+AR4          CD          CG         HG2     108.762    1.50
+AR4          CD          CG         HG3     108.762    1.50
+AR4         HG2          CG         HG3     107.521    1.50
+AR4          CG          CD         OE1     125.618    1.57
+AR4          CG          CD         OE2     111.118    1.50
+AR4         OE1          CD         OE2     123.264    1.50
+AR4          CD         OE2       "C1'"     116.087    1.50
+AR4          CA           C           O     117.124    1.50
+AR4          CA           C         OXT     117.124    1.50
+AR4           O           C         OXT     125.752    1.50
+AR4       "C5'"       "O5'"       "H5'"     109.007    3.00
+AR4       "O5'"       "C5'"       "C4'"     111.279    1.98
+AR4       "O5'"       "C5'"      "H5'1"     109.280    1.50
+AR4       "O5'"       "C5'"      "H5'2"     109.280    1.50
+AR4       "C4'"       "C5'"      "H5'1"     109.326    2.00
+AR4       "C4'"       "C5'"      "H5'2"     109.326    2.00
+AR4      "H5'1"       "C5'"      "H5'2"     108.248    2.26
+AR4       "C5'"       "C4'"       "O4'"     110.385    1.64
+AR4       "C5'"       "C4'"       "C3'"     114.866    1.63
+AR4       "C5'"       "C4'"       "H4'"     109.037    1.87
+AR4       "O4'"       "C4'"       "C3'"     105.508    1.50
+AR4       "O4'"       "C4'"       "H4'"     109.199    2.08
+AR4       "C3'"       "C4'"       "H4'"     109.143    1.50
+AR4       "C4'"       "O4'"       "C1'"     108.379    1.72
+AR4         OE2       "C1'"       "O4'"     108.822    1.80
+AR4         OE2       "C1'"       "C2'"     109.403    2.79
+AR4         OE2       "C1'"       "H1'"     110.629    1.50
+AR4       "O4'"       "C1'"       "C2'"     105.831    1.55
+AR4       "O4'"       "C1'"       "H1'"     109.510    2.59
+AR4       "C2'"       "C1'"       "H1'"     110.845    2.52
+AR4       "C1'"       "C2'"       "F2'"     110.700    1.96
+AR4       "C1'"       "C2'"       "C3'"     104.443    2.26
+AR4       "C1'"       "C2'"       "O2'"     113.371    3.00
+AR4       "F2'"       "C2'"       "C3'"     110.700    1.96
+AR4       "F2'"       "C2'"       "O2'"     109.471    3.00
+AR4       "C3'"       "C2'"       "O2'"     112.409    2.72
+AR4       "C4'"       "C3'"       "C2'"     102.504    1.50
+AR4       "C4'"       "C3'"       "O3'"     110.985    2.41
+AR4       "C4'"       "C3'"       "H3'"     110.624    1.81
+AR4       "C2'"       "C3'"       "O3'"     112.409    2.72
+AR4       "C2'"       "C3'"       "H3'"     109.928    1.86
+AR4       "O3'"       "C3'"       "H3'"     110.259    1.63
+AR4       "C3'"       "O3'"      "H3'1"     109.104    3.00
+AR4       "C2'"       "O2'"      "HO2'"     109.064    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AR4            sp3_sp3_25          CB          CA           N           H     180.000   10.00     3
+AR4            sp3_sp3_58       "O4'"       "C4'"       "C5'"       "O5'"     180.000   10.00     3
+AR4             sp3_sp3_2       "C5'"       "C4'"       "O4'"       "C1'"     -60.000   10.00     3
+AR4            sp3_sp3_71       "O3'"       "C3'"       "C4'"       "C5'"     180.000   10.00     3
+AR4             sp3_sp3_6         OE2       "C1'"       "O4'"       "C4'"      60.000   10.00     3
+AR4            sp3_sp3_12         OE2       "C1'"       "C2'"       "F2'"     180.000   10.00     3
+AR4            sp3_sp3_20       "F2'"       "C2'"       "C3'"       "O3'"     -60.000   10.00     3
+AR4            sp3_sp3_76       "F2'"       "C2'"       "O2'"      "HO2'"     180.000   10.00     3
+AR4            sp3_sp3_79       "C4'"       "C3'"       "O3'"      "H3'1"     180.000   10.00     3
+AR4            sp3_sp3_37           N          CA          CB          CG      60.000   10.00     3
+AR4             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+AR4            sp3_sp3_43          CA          CB          CG          CD     180.000   10.00     3
+AR4             sp2_sp3_8         OE1          CD          CG          CB     120.000   10.00     6
+AR4             sp2_sp2_1          CG          CD         OE2       "C1'"     180.000   10.00     2
+AR4            sp3_sp3_52       "O4'"       "C1'"         OE2          CD     180.000   10.00     3
+AR4            sp3_sp3_55       "C4'"       "C5'"       "O5'"       "H5'"     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+AR4    chir_1    CA    N    C    CB    both
+AR4    chir_2    "C4'"    "O4'"    "C3'"    "C5'"    negative
+AR4    chir_3    "C1'"    OE2    "O4'"    "C2'"    both
+AR4    chir_4    "C2'"    "F2'"    "O2'"    "C1'"    both
+AR4    chir_5    "C3'"    "O3'"    "C2'"    "C4'"    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AR4    plan-1          CD   0.020
+AR4    plan-1          CG   0.020
+AR4    plan-1         OE1   0.020
+AR4    plan-1         OE2   0.020
+AR4    plan-2           C   0.020
+AR4    plan-2          CA   0.020
+AR4    plan-2           O   0.020
+AR4    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AR4 SMILES           ACDLabs              12.01 "O=C(OC1OC(C(O)C1(F)O)CO)CCC(C(=O)O)N"
+AR4 InChI            InChI                1.03  "InChI=1S/C10H16FNO8/c11-10(18)7(15)5(3-13)19-9(10)20-6(14)2-1-4(12)8(16)17/h4-5,7,9,13,15,18H,1-3,12H2,(H,16,17)/t4-,5+,7+,9+,10+/m0/s1"
+AR4 InChIKey         InChI                1.03  DAZJIIGIBQQBAL-WLUSSPCKSA-N
+AR4 SMILES_CANONICAL CACTVS               3.370 "N[C@@H](CCC(=O)O[C@H]1O[C@H](CO)[C@@H](O)[C@]1(O)F)C(O)=O"
+AR4 SMILES           CACTVS               3.370 "N[CH](CCC(=O)O[CH]1O[CH](CO)[CH](O)[C]1(O)F)C(O)=O"
+AR4 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C(CC(=O)OC1C(C(C(O1)CO)O)(O)F)C(C(=O)O)N"
+AR4 SMILES           "OpenEye OEToolkits" 1.7.6 "C(CC(=O)OC1C(C(C(O1)CO)O)(O)F)C(C(=O)O)N"
+AR4 ?                acedrg               196         "dictionary generator"                  
+AR4 ?                acedrg_database      11          "data source"                           
+AR4 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AR4 ?                refmac5              5.8.0222    "optimization tool"                     

@@ -1,0 +1,332 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+U31      U31 '.                                   ' non-polymer        43  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_U31
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ U31           O4     O    O         0.000      0.000    0.000    0.000
+ U31           C4     C    CR6       0.000     -1.179   -0.305   -0.002
+ U31           N3     N    NR16      0.000     -2.116    0.596   -0.357
+ U31           H3     H    H         0.000     -1.832    1.560   -0.627
+ U31           C2     C    CR6       0.000     -3.417    0.255   -0.364
+ U31           O2     O    O         0.000     -4.252    1.079   -0.686
+ U31           C5     C    CR16      0.000     -1.578   -1.611    0.369
+ U31           H5     H    H         0.000     -0.839   -2.349    0.658
+ U31           C6     C    CR16      0.000     -2.891   -1.925    0.359
+ U31           H6     H    H         0.000     -3.215   -2.919    0.640
+ U31           N1     N    NR6       0.000     -3.811   -0.980   -0.008
+ U31           "C1'"  C    CH1       0.000     -5.235   -1.321   -0.020
+ U31           "H1'"  H    H         0.000     -5.388   -2.357    0.314
+ U31           "O4'"  O    O2        0.000     -5.794   -1.124   -1.337
+ U31           "C2'"  C    CH1       0.000     -6.042   -0.339    0.865
+ U31           "H2'"  H    H         0.000     -5.644    0.682    0.781
+ U31           "O2'"  O    O2        0.000     -6.053   -0.770    2.228
+ U31           "CA'"  C    CH2       0.000     -6.214    0.400    3.031
+ U31           "HA'1" H    H         0.000     -7.154    0.892    2.772
+ U31           "HA'2" H    H         0.000     -5.384    1.085    2.847
+ U31           "CB'"  C    CH2       0.000     -6.234    0.005    4.508
+ U31           "HB'1" H    H         0.000     -5.294   -0.488    4.765
+ U31           "HB'2" H    H         0.000     -7.064   -0.680    4.690
+ U31           CC     C    CH2       0.000     -6.406    1.259    5.369
+ U31           HCC1   H    H         0.000     -7.346    1.750    5.110
+ U31           HCC2   H    H         0.000     -5.576    1.943    5.185
+ U31           "ND'"  N    NH2       0.000     -6.425    0.879    6.788
+ U31           "HD'2" H    H         0.000     -6.331   -0.092    7.059
+ U31           "HD'1" H    H         0.000     -6.532    1.587    7.505
+ U31           "C3'"  C    CH1       0.000     -7.458   -0.431    0.246
+ U31           "H3'"  H    H         0.000     -7.922    0.564    0.199
+ U31           "O3'"  O    OH1       0.000     -8.276   -1.330    0.997
+ U31           HA     H    H         0.000     -9.155   -1.375    0.598
+ U31           "C4'"  C    CH1       0.000     -7.214   -0.979   -1.174
+ U31           "H4'"  H    H         0.000     -7.705   -1.956   -1.286
+ U31           "C5'"  C    CH2       0.000     -7.763    0.002   -2.211
+ U31           "H5'1" H    H         0.000     -7.259    0.965   -2.103
+ U31           "H5'2" H    H         0.000     -8.835    0.135   -2.054
+ U31           "O5'"  O    O2        0.000     -7.532   -0.513   -3.523
+ U31           P      P    P         0.000     -8.131    0.562   -4.559
+ U31           O1P    O    OP       -0.666     -7.918    0.074   -5.975
+ U31           O2P    O    OP       -0.666     -7.428    1.889   -4.372
+ U31           O3P    O    OP       -0.666     -9.612    0.738   -4.304
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ U31      O4     n/a    C4     START
+ U31      C4     O4     C5     .
+ U31      N3     C4     C2     .
+ U31      H3     N3     .      .
+ U31      C2     N3     O2     .
+ U31      O2     C2     .      .
+ U31      C5     C4     C6     .
+ U31      H5     C5     .      .
+ U31      C6     C5     N1     .
+ U31      H6     C6     .      .
+ U31      N1     C6     "C1'"  .
+ U31      "C1'"  N1     "C2'"  .
+ U31      "H1'"  "C1'"  .      .
+ U31      "O4'"  "C1'"  .      .
+ U31      "C2'"  "C1'"  "C3'"  .
+ U31      "H2'"  "C2'"  .      .
+ U31      "O2'"  "C2'"  "CA'"  .
+ U31      "CA'"  "O2'"  "CB'"  .
+ U31      "HA'1" "CA'"  .      .
+ U31      "HA'2" "CA'"  .      .
+ U31      "CB'"  "CA'"  CC     .
+ U31      "HB'1" "CB'"  .      .
+ U31      "HB'2" "CB'"  .      .
+ U31      CC     "CB'"  "ND'"  .
+ U31      HCC1   CC     .      .
+ U31      HCC2   CC     .      .
+ U31      "ND'"  CC     "HD'1" .
+ U31      "HD'2" "ND'"  .      .
+ U31      "HD'1" "ND'"  .      .
+ U31      "C3'"  "C2'"  "C4'"  .
+ U31      "H3'"  "C3'"  .      .
+ U31      "O3'"  "C3'"  HA     .
+ U31      HA     "O3'"  .      .
+ U31      "C4'"  "C3'"  "C5'"  .
+ U31      "H4'"  "C4'"  .      .
+ U31      "C5'"  "C4'"  "O5'"  .
+ U31      "H5'1" "C5'"  .      .
+ U31      "H5'2" "C5'"  .      .
+ U31      "O5'"  "C5'"  P      .
+ U31      P      "O5'"  O3P    .
+ U31      O1P    P      .      .
+ U31      O2P    P      .      .
+ U31      O3P    P      .      END
+ U31      "C4'"  "O4'"  .    ADD
+ U31      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+U31       O1P       P         deloc     1.510     0.020     1.510     0.020     
+U31       O2P       P         deloc     1.510     0.020     1.510     0.020     
+U31       O3P       P         deloc     1.510     0.020     1.510     0.020     
+U31       P         "O5'"     single    1.610     0.020     1.610     0.020     
+U31       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+U31       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+U31       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+U31       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+U31       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+U31       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+U31       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+U31       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+U31       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+U31       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+U31       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+U31       HA        "O3'"     single    0.970     0.012     0.839     0.014     
+U31       "O2'"     "C2'"     single    1.426     0.020     1.426     0.020     
+U31       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+U31       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+U31       "CA'"     "O2'"     single    1.426     0.020     1.426     0.020     
+U31       "C1'"     N1        single    1.465     0.020     1.465     0.020     
+U31       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+U31       N1        C2        single    1.410     0.020     1.410     0.020     
+U31       N1        C6        single    1.337     0.020     1.337     0.020     
+U31       O2        C2        double    1.250     0.020     1.250     0.020     
+U31       C2        N3        single    1.337     0.020     1.337     0.020     
+U31       N3        C4        single    1.337     0.020     1.337     0.020     
+U31       H3        N3        single    1.016     0.010     0.899     0.007     
+U31       C4        O4        double    1.250     0.020     1.250     0.020     
+U31       C5        C4        single    1.390     0.020     1.390     0.020     
+U31       C6        C5        double    1.390     0.020     1.390     0.020     
+U31       H5        C5        single    1.082     0.013     0.975     0.010     
+U31       H6        C6        single    1.082     0.013     0.975     0.010     
+U31       "CB'"     "CA'"     single    1.524     0.020     1.524     0.020     
+U31       "HA'1"    "CA'"     single    1.089     0.010     0.989     0.005     
+U31       "HA'2"    "CA'"     single    1.089     0.010     0.989     0.005     
+U31       CC        "CB'"     single    1.524     0.020     1.524     0.020     
+U31       "HB'1"    "CB'"     single    1.089     0.010     0.989     0.005     
+U31       "HB'2"    "CB'"     single    1.089     0.010     0.989     0.005     
+U31       "ND'"     CC        single    1.450     0.020     1.450     0.020     
+U31       HCC1      CC        single    1.089     0.010     0.989     0.005     
+U31       HCC2      CC        single    1.089     0.010     0.989     0.005     
+U31       "HD'1"    "ND'"     single    1.036     0.016     0.914     0.007     
+U31       "HD'2"    "ND'"     single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ U31      O4     C4     N3      120.000    3.000
+ U31      O4     C4     C5      120.000    3.000
+ U31      N3     C4     C5      120.000    3.000
+ U31      C4     N3     H3      120.000    3.000
+ U31      C4     N3     C2      120.000    3.000
+ U31      H3     N3     C2      120.000    3.000
+ U31      N3     C2     O2      120.000    3.000
+ U31      N3     C2     N1      120.000    3.000
+ U31      O2     C2     N1      120.000    3.000
+ U31      C4     C5     H5      120.000    3.000
+ U31      C4     C5     C6      120.000    3.000
+ U31      H5     C5     C6      120.000    3.000
+ U31      C5     C6     H6      120.000    3.000
+ U31      C5     C6     N1      120.000    3.000
+ U31      H6     C6     N1      120.000    3.000
+ U31      C6     N1     "C1'"   120.000    3.000
+ U31      C6     N1     C2      120.000    3.000
+ U31      "C1'"  N1     C2      120.000    3.000
+ U31      N1     "C1'"  "H1'"   109.470    3.000
+ U31      N1     "C1'"  "O4'"   109.470    3.000
+ U31      N1     "C1'"  "C2'"   109.470    3.000
+ U31      "H1'"  "C1'"  "O4'"   109.470    3.000
+ U31      "H1'"  "C1'"  "C2'"   108.340    3.000
+ U31      "O4'"  "C1'"  "C2'"   109.470    3.000
+ U31      "C1'"  "O4'"  "C4'"   111.800    3.000
+ U31      "C1'"  "C2'"  "H2'"   108.340    3.000
+ U31      "C1'"  "C2'"  "O2'"   109.470    3.000
+ U31      "C1'"  "C2'"  "C3'"   111.000    3.000
+ U31      "H2'"  "C2'"  "O2'"   109.470    3.000
+ U31      "H2'"  "C2'"  "C3'"   108.340    3.000
+ U31      "O2'"  "C2'"  "C3'"   109.470    3.000
+ U31      "C2'"  "O2'"  "CA'"   111.800    3.000
+ U31      "O2'"  "CA'"  "HA'1"  109.470    3.000
+ U31      "O2'"  "CA'"  "HA'2"  109.470    3.000
+ U31      "O2'"  "CA'"  "CB'"   109.470    3.000
+ U31      "HA'1" "CA'"  "HA'2"  107.900    3.000
+ U31      "HA'1" "CA'"  "CB'"   109.470    3.000
+ U31      "HA'2" "CA'"  "CB'"   109.470    3.000
+ U31      "CA'"  "CB'"  "HB'1"  109.470    3.000
+ U31      "CA'"  "CB'"  "HB'2"  109.470    3.000
+ U31      "CA'"  "CB'"  CC      111.000    3.000
+ U31      "HB'1" "CB'"  "HB'2"  107.900    3.000
+ U31      "HB'1" "CB'"  CC      109.470    3.000
+ U31      "HB'2" "CB'"  CC      109.470    3.000
+ U31      "CB'"  CC     HCC1    109.470    3.000
+ U31      "CB'"  CC     HCC2    109.470    3.000
+ U31      "CB'"  CC     "ND'"   109.470    3.000
+ U31      HCC1   CC     HCC2    107.900    3.000
+ U31      HCC1   CC     "ND'"   109.470    3.000
+ U31      HCC2   CC     "ND'"   109.470    3.000
+ U31      CC     "ND'"  "HD'2"  120.000    3.000
+ U31      CC     "ND'"  "HD'1"  120.000    3.000
+ U31      "HD'2" "ND'"  "HD'1"  120.000    3.000
+ U31      "C2'"  "C3'"  "H3'"   108.340    3.000
+ U31      "C2'"  "C3'"  "O3'"   109.470    3.000
+ U31      "C2'"  "C3'"  "C4'"   111.000    3.000
+ U31      "H3'"  "C3'"  "O3'"   109.470    3.000
+ U31      "H3'"  "C3'"  "C4'"   108.340    3.000
+ U31      "O3'"  "C3'"  "C4'"   109.470    3.000
+ U31      "C3'"  "O3'"  HA      109.470    3.000
+ U31      "C3'"  "C4'"  "H4'"   108.340    3.000
+ U31      "C3'"  "C4'"  "C5'"   111.000    3.000
+ U31      "C3'"  "C4'"  "O4'"   109.470    3.000
+ U31      "H4'"  "C4'"  "C5'"   108.340    3.000
+ U31      "H4'"  "C4'"  "O4'"   109.470    3.000
+ U31      "C5'"  "C4'"  "O4'"   109.470    3.000
+ U31      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ U31      "C4'"  "C5'"  "H5'2"  109.470    3.000
+ U31      "C4'"  "C5'"  "O5'"   109.470    3.000
+ U31      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ U31      "H5'1" "C5'"  "O5'"   109.470    3.000
+ U31      "H5'2" "C5'"  "O5'"   109.470    3.000
+ U31      "C5'"  "O5'"  P       120.500    3.000
+ U31      "O5'"  P      O1P     108.200    3.000
+ U31      "O5'"  P      O2P     108.200    3.000
+ U31      "O5'"  P      O3P     108.200    3.000
+ U31      O1P    P      O2P     119.900    3.000
+ U31      O1P    P      O3P     119.900    3.000
+ U31      O2P    P      O3P     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ U31      CONST_1  O4     C4     N3     C2       180.000    0.000   0
+ U31      CONST_2  C4     N3     C2     O2       180.000    0.000   0
+ U31      CONST_3  O4     C4     C5     C6       180.000    0.000   0
+ U31      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ U31      CONST_5  C5     C6     N1     "C1'"    180.000    0.000   0
+ U31      CONST_6  C6     N1     C2     N3         0.000    0.000   0
+ U31      var_1    C6     N1     "C1'"  "C2'"    124.378   20.000   1
+ U31      var_2    N1     "C1'"  "O4'"  "C4'"   -150.000   20.000   1
+ U31      var_3    N1     "C1'"  "C2'"  "C3'"    150.000   20.000   3
+ U31      var_4    "C1'"  "C2'"  "O2'"  "CA'"    152.935   20.000   1
+ U31      var_5    "C2'"  "O2'"  "CA'"  "CB'"    179.978   20.000   1
+ U31      var_6    "O2'"  "CA'"  "CB'"  CC       179.992   20.000   3
+ U31      var_7    "CA'"  "CB'"  CC     "ND'"   -179.988   20.000   3
+ U31      var_8    "CB'"  CC     "ND'"  "HD'1"   179.993   20.000   1
+ U31      var_9    "C1'"  "C2'"  "C3'"  "C4'"    -30.000   20.000   3
+ U31      var_10   "C2'"  "C3'"  "O3'"  HA       179.984   20.000   1
+ U31      var_11   "C2'"  "C3'"  "C4'"  "C5'"   -120.000   20.000   3
+ U31      var_12   "C3'"  "C4'"  "O4'"  "C1'"     30.000   20.000   1
+ U31      var_13   "C3'"  "C4'"  "C5'"  "O5'"    179.950   20.000   3
+ U31      var_14   "C4'"  "C5'"  "O5'"  P        179.967   20.000   1
+ U31      var_15   "C5'"  "O5'"  P      O3P      -59.976   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ U31      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ U31      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ U31      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ U31      chir_04  "C1'"  "O4'"  "C2'"  N1        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ U31      plan-1    N1        0.020
+ U31      plan-1    "C1'"     0.020
+ U31      plan-1    C2        0.020
+ U31      plan-1    C6        0.020
+ U31      plan-1    N3        0.020
+ U31      plan-1    C4        0.020
+ U31      plan-1    C5        0.020
+ U31      plan-1    O2        0.020
+ U31      plan-1    H3        0.020
+ U31      plan-1    O4        0.020
+ U31      plan-1    H5        0.020
+ U31      plan-1    H6        0.020
+ U31      plan-2    "ND'"     0.020
+ U31      plan-2    CC        0.020
+ U31      plan-2    "HD'1"    0.020
+ U31      plan-2    "HD'2"    0.020
+# ------------------------------------------------------

@@ -1,0 +1,271 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ALN     ALN     NAPHTHALEN-2-YL-3-ALANINE   peptide  29     16     .     
+#
+data_comp_ALN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ALN     N       N       NT3     1       4.921       19.885      15.234      
+ALN     CA      C       CH1     0       3.844       20.183      16.216      
+ALN     C       C       C       0       2.477       20.041      15.535      
+ALN     O       O       O       0       2.255       20.768      14.546      
+ALN     CB      C       CH2     0       4.025       21.600      16.805      
+ALN     CG1     C       CR6     0       5.190       21.730      17.761      
+ALN     CD1     C       CR16    0       6.331       22.367      17.359      
+ALN     CE1     C       CR16    0       7.448       22.517      18.207      
+ALN     CD2     C       CR66    0       5.127       21.191      19.096      
+ALN     CE2     C       CR66    0       6.264       21.346      19.955      
+ALN     CZ1     C       CR16    0       7.414       22.019      19.471      
+ALN     CG2     C       CR16    0       3.997       20.506      19.631      
+ALN     CD3     C       CR16    0       3.994       20.016      20.906      
+ALN     CE3     C       CR16    0       5.118       20.176      21.735      
+ALN     CZ2     C       CR16    0       6.223       20.823      21.274      
+ALN     OXT     O       OC      -1      1.683       19.209      16.016      
+ALN     H       H       H       0       4.941       20.532      14.592      
+ALN     H2      H       H       0       4.767       19.077      14.840      
+ALN     H3      H       H       0       5.727       19.857      15.657      
+ALN     HA      H       H       0       3.897       19.520      16.951      
+ALN     HB2     H       H       0       3.201       21.855      17.272      
+ALN     HB3     H       H       0       4.148       22.230      16.064      
+ALN     HD1     H       H       0       6.372       22.720      16.484      
+ALN     HE1     H       H       0       8.223       22.966      17.896      
+ALN     HZ1     H       H       0       8.164       22.122      20.035      
+ALN     HG2     H       H       0       3.232       20.385      19.096      
+ALN     HD3     H       H       0       3.232       19.566      21.234      
+ALN     HE3     H       H       0       5.106       19.834      22.615      
+ALN     HZ2     H       H       0       6.973       20.926      21.837      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ALN      N      n/a    CA     START
+ ALN      H      N      .      .
+ ALN      H2     N      .      .
+ ALN      H3     N      .      .
+ ALN      CA     N      C      .
+ ALN      HA     CA     .      .
+ ALN      CB     CA     CG1    .
+ ALN      HB2    CB     .      .
+ ALN      HB3    CB     .      .
+ ALN      CG1    CB     CD2    .
+ ALN      CD2    CG1    CG2    .
+ ALN      CG2    CD2    CD3    .
+ ALN      HG2    CG2    .      .
+ ALN      CD3    CG2    CE3    .
+ ALN      HD3    CD3    .      .
+ ALN      CE3    CD3    CZ2    .
+ ALN      HE3    CE3    .      .
+ ALN      CZ2    CE3    CE2    .
+ ALN      HZ2    CZ2    .      .
+ ALN      CE2    CZ2    CZ1    .
+ ALN      CZ1    CE2    CE1    .
+ ALN      HZ1    CZ1    .      .
+ ALN      CE1    CZ1    CD1    .
+ ALN      HE1    CE1    .      .
+ ALN      CD1    CE1    HD1    .
+ ALN      HD1    CD1    .      .
+ ALN      C      CA     .      END
+ ALN      O      C      .      .
+ ALN      OXT    C      .      .
+ ALN      CG1    CD1    .    ADD
+ ALN      CD2    CE2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ALN       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+ALN       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+ALN       CA        CB        SINGLE    n         1.544     0.011     1.544     0.011     
+ALN       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+ALN       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+ALN       CB        CG1       SINGLE    n         1.509     0.010     1.509     0.010     
+ALN       CG1       CD1       DOUBLE    y         1.362     0.010     1.362     0.010     
+ALN       CG1       CD2       SINGLE    y         1.432     0.010     1.432     0.010     
+ALN       CD1       CE1       SINGLE    y         1.406     0.013     1.406     0.013     
+ALN       CE1       CZ1       DOUBLE    y         1.356     0.013     1.356     0.013     
+ALN       CD2       CE2       DOUBLE    y         1.424     0.011     1.424     0.011     
+ALN       CD2       CG2       SINGLE    y         1.419     0.010     1.419     0.010     
+ALN       CE2       CZ1       SINGLE    y         1.415     0.011     1.415     0.011     
+ALN       CE2       CZ2       SINGLE    y         1.415     0.011     1.415     0.011     
+ALN       CG2       CD3       DOUBLE    y         1.363     0.010     1.363     0.010     
+ALN       CD3       CE3       SINGLE    y         1.402     0.013     1.402     0.013     
+ALN       CE3       CZ2       DOUBLE    y         1.358     0.012     1.358     0.012     
+ALN       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+ALN       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+ALN       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+ALN       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+ALN       CB        HB2       SINGLE    n         1.089     0.010     0.981     0.017     
+ALN       CB        HB3       SINGLE    n         1.089     0.010     0.981     0.017     
+ALN       CD1       HD1       SINGLE    n         1.082     0.013     0.944     0.020     
+ALN       CE1       HE1       SINGLE    n         1.082     0.013     0.948     0.020     
+ALN       CZ1       HZ1       SINGLE    n         1.082     0.013     0.944     0.019     
+ALN       CG2       HG2       SINGLE    n         1.082     0.013     0.943     0.018     
+ALN       CD3       HD3       SINGLE    n         1.082     0.013     0.944     0.018     
+ALN       CE3       HE3       SINGLE    n         1.082     0.013     0.944     0.018     
+ALN       CZ2       HZ2       SINGLE    n         1.082     0.013     0.944     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ALN          CA           N           H     109.646    1.54
+ALN          CA           N          H2     109.646    1.54
+ALN          CA           N          H3     109.646    1.54
+ALN           H           N          H2     109.028    2.41
+ALN           H           N          H3     109.028    2.41
+ALN          H2           N          H3     109.028    2.41
+ALN           N          CA           C     109.448    1.50
+ALN           N          CA          CB     110.237    1.51
+ALN           N          CA          HA     108.601    1.50
+ALN           C          CA          CB     111.326    2.41
+ALN           C          CA          HA     108.450    1.50
+ALN          CB          CA          HA     108.873    1.50
+ALN          CA           C           O     117.228    2.13
+ALN          CA           C         OXT     117.228    2.13
+ALN           O           C         OXT     125.543    1.50
+ALN          CA          CB         CG1     113.900    1.50
+ALN          CA          CB         HB2     108.632    1.50
+ALN          CA          CB         HB3     108.632    1.50
+ALN         CG1          CB         HB2     108.847    1.50
+ALN         CG1          CB         HB3     108.847    1.50
+ALN         HB2          CB         HB3     107.735    1.50
+ALN          CB         CG1         CD1     120.722    1.55
+ALN          CB         CG1         CD2     120.307    1.50
+ALN         CD1         CG1         CD2     118.971    1.50
+ALN         CG1         CD1         CE1     121.776    1.50
+ALN         CG1         CD1         HD1     118.969    1.50
+ALN         CE1         CD1         HD1     119.255    1.50
+ALN         CD1         CE1         CZ1     119.987    1.50
+ALN         CD1         CE1         HE1     120.032    1.50
+ALN         CZ1         CE1         HE1     119.981    1.50
+ALN         CG1         CD2         CE2     119.147    1.50
+ALN         CG1         CD2         CG2     123.238    1.50
+ALN         CE2         CD2         CG2     117.614    1.50
+ALN         CD2         CE2         CZ1     119.229    1.50
+ALN         CD2         CE2         CZ2     119.337    1.50
+ALN         CZ1         CE2         CZ2     121.434    1.50
+ALN         CE1         CZ1         CE2     120.890    1.50
+ALN         CE1         CZ1         HZ1     119.669    1.50
+ALN         CE2         CZ1         HZ1     119.441    1.50
+ALN         CD2         CG2         CD3     121.247    1.50
+ALN         CD2         CG2         HG2     119.258    1.50
+ALN         CD3         CG2         HG2     119.494    1.50
+ALN         CG2         CD3         CE3     120.402    1.50
+ALN         CG2         CD3         HD3     119.827    1.50
+ALN         CE3         CD3         HD3     119.771    1.50
+ALN         CD3         CE3         CZ2     120.402    1.50
+ALN         CD3         CE3         HE3     119.771    1.50
+ALN         CZ2         CE3         HE3     119.827    1.50
+ALN         CE2         CZ2         CE3     120.989    1.50
+ALN         CE2         CZ2         HZ2     119.396    1.50
+ALN         CE3         CZ2         HZ2     119.624    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ALN             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+ALN              const_33         CE3         CD3         CG2         CD2       0.000   10.00     2
+ALN              const_29         CG2         CD3         CE3         CZ2       0.000   10.00     2
+ALN              const_25         CD3         CE3         CZ2         CE2       0.000   10.00     2
+ALN             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+ALN            sp3_sp3_13           N          CA          CB         CG1      60.000   10.00     3
+ALN             sp2_sp3_8         CD1         CG1          CB          CA     -90.000   10.00     6
+ALN       const_sp2_sp2_2         CE1         CD1         CG1          CB     180.000   10.00     2
+ALN              const_38         CE2         CD2         CG1          CB     180.000   10.00     2
+ALN       const_sp2_sp2_5         CG1         CD1         CE1         CZ1       0.000   10.00     2
+ALN       const_sp2_sp2_9         CD1         CE1         CZ1         CE2       0.000   10.00     2
+ALN              const_43         CG1         CD2         CG2         CD3     180.000   10.00     2
+ALN              const_17         CG1         CD2         CE2         CZ1       0.000   10.00     2
+ALN              const_13         CD2         CE2         CZ1         CE1       0.000   10.00     2
+ALN              const_21         CD2         CE2         CZ2         CE3       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ALN    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ALN    plan-1          CB   0.020
+ALN    plan-1         CD1   0.020
+ALN    plan-1         CD2   0.020
+ALN    plan-1         CE1   0.020
+ALN    plan-1         CE2   0.020
+ALN    plan-1         CG1   0.020
+ALN    plan-1         CG2   0.020
+ALN    plan-1         CZ1   0.020
+ALN    plan-1         CZ2   0.020
+ALN    plan-1         HD1   0.020
+ALN    plan-1         HE1   0.020
+ALN    plan-1         HZ1   0.020
+ALN    plan-2         CD2   0.020
+ALN    plan-2         CD3   0.020
+ALN    plan-2         CE2   0.020
+ALN    plan-2         CE3   0.020
+ALN    plan-2         CG1   0.020
+ALN    plan-2         CG2   0.020
+ALN    plan-2         CZ1   0.020
+ALN    plan-2         CZ2   0.020
+ALN    plan-2         HD3   0.020
+ALN    plan-2         HE3   0.020
+ALN    plan-2         HG2   0.020
+ALN    plan-2         HZ2   0.020
+ALN    plan-3           C   0.020
+ALN    plan-3          CA   0.020
+ALN    plan-3           O   0.020
+ALN    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ALN SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc2cccc1ccccc12"
+ALN SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1cccc2ccccc12)C(O)=O"
+ALN SMILES           CACTVS               3.341 "N[CH](Cc1cccc2ccccc12)C(O)=O"
+ALN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)cccc2C[C@@H](C(=O)O)N"
+ALN SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)cccc2CC(C(=O)O)N"
+ALN InChI            InChI                1.03  "InChI=1S/C13H13NO2/c14-12(13(15)16)8-10-6-3-5-9-4-1-2-7-11(9)10/h1-7,12H,8,14H2,(H,15,16)/t12-/m0/s1"
+ALN InChIKey         InChI                1.03  OFYAYGJCPXRNBL-LBPRGKRZSA-N
+ALN ?                acedrg               196         "dictionary generator"                  
+ALN ?                acedrg_database      11          "data source"                           
+ALN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ALN ?                refmac5              5.8.0222    "optimization tool"                     

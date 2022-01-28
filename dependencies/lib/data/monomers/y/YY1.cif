@@ -1,0 +1,128 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+YY1     YY1      5-methyl-4H-1,2,4-triazole-3-thiol     NON-POLYMER     12     7     .     
+#
+data_comp_YY1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+YY1     CAG     C       CH3     0       -1.925      -3.734      -14.849     
+YY1     CAE     C       CR5     0       -1.083      -3.096      -13.808     
+YY1     NAA     N       NR5     0       -1.574      -2.396      -12.766     
+YY1     NAD     N       NRD5    0       0.220       -3.106      -13.731     
+YY1     NAC     N       NRD5    0       0.580       -2.383      -12.594     
+YY1     CAB     C       CR5     0       -0.532      -1.965      -12.031     
+YY1     SAF     S       SH1     0       -0.682      -1.016      -10.580     
+YY1     H1      H       H       0       -2.780      -3.988      -14.465     
+YY1     H2      H       H       0       -1.476      -4.526      -15.189     
+YY1     H3      H       H       0       -2.071      -3.108      -15.577     
+YY1     H4      H       H       0       -2.430      -2.243      -12.590     
+YY1     H5      H       HSH1    0       0.441       -0.728      -10.160     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+YY1       CAG       CAE       SINGLE    n         1.483     0.010     1.483     0.010     
+YY1       CAE       NAD       DOUBLE    y         1.306     0.011     1.306     0.011     
+YY1       CAE       NAA       SINGLE    y         1.348     0.016     1.348     0.016     
+YY1       NAD       NAC       SINGLE    y         1.395     0.010     1.395     0.010     
+YY1       NAC       CAB       DOUBLE    y         1.315     0.015     1.315     0.015     
+YY1       NAA       CAB       SINGLE    y         1.347     0.016     1.347     0.016     
+YY1       CAB       SAF       SINGLE    n         1.740     0.014     1.740     0.014     
+YY1       CAG       H1        SINGLE    n         1.089     0.010     0.989     0.005     
+YY1       CAG       H2        SINGLE    n         1.089     0.010     0.989     0.005     
+YY1       CAG       H3        SINGLE    n         1.089     0.010     0.989     0.005     
+YY1       NAA       H4        SINGLE    n         1.016     0.010     0.899     0.007     
+YY1       SAF       H5        SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+YY1         CAE         CAG          H1     109.472    1.50
+YY1         CAE         CAG          H2     109.472    1.50
+YY1         CAE         CAG          H3     109.472    1.50
+YY1          H1         CAG          H2     109.308    2.38
+YY1          H1         CAG          H3     109.308    2.38
+YY1          H2         CAG          H3     109.308    2.38
+YY1         CAG         CAE         NAD     127.226    1.50
+YY1         CAG         CAE         NAA     124.046    1.50
+YY1         NAD         CAE         NAA     108.728    1.88
+YY1         CAE         NAA         CAB     107.936    2.04
+YY1         CAE         NAA          H4     126.462    2.25
+YY1         CAB         NAA          H4     125.603    3.00
+YY1         CAE         NAD         NAC     107.459    1.50
+YY1         NAD         NAC         CAB     107.149    1.58
+YY1         NAC         CAB         NAA     108.728    1.88
+YY1         NAC         CAB         SAF     127.011    3.00
+YY1         NAA         CAB         SAF     124.261    2.08
+YY1         CAB         SAF          H5     109.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+YY1             sp2_sp3_1         NAD         CAE         CAG          H1     150.000   10.00     6
+YY1              const_12         CAG         CAE         NAA         CAB     180.000   10.00     2
+YY1       const_sp2_sp2_2         CAG         CAE         NAD         NAC     180.000   10.00     2
+YY1       const_sp2_sp2_8         SAF         CAB         NAA         CAE     180.000   10.00     2
+YY1       const_sp2_sp2_3         CAB         NAC         NAD         CAE       0.000   10.00     2
+YY1       const_sp2_sp2_5         SAF         CAB         NAC         NAD     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+YY1    plan-1         CAB   0.020
+YY1    plan-1         CAE   0.020
+YY1    plan-1         CAG   0.020
+YY1    plan-1          H4   0.020
+YY1    plan-1         NAA   0.020
+YY1    plan-1         NAC   0.020
+YY1    plan-1         NAD   0.020
+YY1    plan-1         SAF   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+YY1 SMILES           ACDLabs              12.01 "Sc1nnc(n1)C"
+YY1 InChI            InChI                1.03  "InChI=1S/C3H5N3S/c1-2-4-3(7)6-5-2/h1H3,(H2,4,5,6,7)"
+YY1 InChIKey         InChI                1.03  OUZCWDMJTKYHCA-UHFFFAOYSA-N
+YY1 SMILES_CANONICAL CACTVS               3.385 "Cc1[nH]c(S)nn1"
+YY1 SMILES           CACTVS               3.385 "Cc1[nH]c(S)nn1"
+YY1 SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "Cc1[nH]c(nn1)S"
+YY1 SMILES           "OpenEye OEToolkits" 1.9.2 "Cc1[nH]c(nn1)S"
+YY1 ?                acedrg               202         "dictionary generator"                  
+YY1 ?                acedrg_database      11          "data source"                           
+YY1 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+YY1 ?                refmac5              5.8.0189    "optimization tool"                     

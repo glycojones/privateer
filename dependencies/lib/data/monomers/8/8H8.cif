@@ -1,0 +1,139 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+8H8     8H8      2-fluoro-4-hydroxybenzonitrile     NON-POLYMER     14     10     .     
+#
+data_comp_8H8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+8H8     FAG     F       F       0       1.420       -1.658      -1.674      
+8H8     CAF     C       CR6     0       0.694       -0.857      -0.861      
+8H8     CAI     C       CR16    0       -0.678      -1.071      -0.736      
+8H8     CAH     C       CR6     0       -1.424      -0.244      0.103       
+8H8     OAJ     O       OH1     0       -2.767      -0.450      0.228       
+8H8     CAE     C       CR16    0       -0.809      0.786       0.810       
+8H8     CAA     C       CR16    0       0.555       0.995       0.683       
+8H8     CAB     C       CR6     0       1.314       0.172       -0.156      
+8H8     CAC     C       CSP     0       2.731       0.399       -0.280      
+8H8     NAD     N       N       0       3.861       0.541       -0.379      
+8H8     H1      H       H       0       -1.104      -1.765      -1.210      
+8H8     H2      H       H       0       -2.958      -0.659      1.038       
+8H8     H3      H       H       0       -1.321      1.340       1.375       
+8H8     H4      H       H       0       0.967       1.692       1.163       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+8H8       CAC       NAD       TRIPLE    n         1.143     0.010     1.143     0.010     
+8H8       CAB       CAC       SINGLE    n         1.440     0.011     1.440     0.011     
+8H8       CAA       CAB       SINGLE    y         1.392     0.011     1.392     0.011     
+8H8       CAF       CAB       DOUBLE    y         1.385     0.010     1.385     0.010     
+8H8       CAE       CAA       DOUBLE    y         1.379     0.010     1.379     0.010     
+8H8       FAG       CAF       SINGLE    n         1.352     0.010     1.352     0.010     
+8H8       CAF       CAI       SINGLE    y         1.380     0.013     1.380     0.013     
+8H8       CAH       CAE       SINGLE    y         1.386     0.010     1.386     0.010     
+8H8       CAI       CAH       DOUBLE    y         1.386     0.010     1.386     0.010     
+8H8       CAH       OAJ       SINGLE    n         1.365     0.011     1.365     0.011     
+8H8       CAI       H1        SINGLE    n         1.082     0.013     0.943     0.017     
+8H8       OAJ       H2        SINGLE    n         0.970     0.012     0.858     0.020     
+8H8       CAE       H3        SINGLE    n         1.082     0.013     0.942     0.013     
+8H8       CAA       H4        SINGLE    n         1.082     0.013     0.941     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+8H8         CAB         CAF         FAG     119.952    1.50
+8H8         CAB         CAF         CAI     120.298    1.50
+8H8         FAG         CAF         CAI     119.751    1.50
+8H8         CAF         CAI         CAH     118.752    1.50
+8H8         CAF         CAI          H1     121.079    1.50
+8H8         CAH         CAI          H1     120.169    1.50
+8H8         CAE         CAH         CAI     120.421    1.50
+8H8         CAE         CAH         OAJ     120.027    2.50
+8H8         CAI         CAH         OAJ     119.552    2.52
+8H8         CAH         OAJ          H2     110.017    2.50
+8H8         CAA         CAE         CAH     120.123    1.50
+8H8         CAA         CAE          H3     120.020    1.50
+8H8         CAH         CAE          H3     119.858    1.50
+8H8         CAB         CAA         CAE     120.180    1.50
+8H8         CAB         CAA          H4     120.171    1.50
+8H8         CAE         CAA          H4     119.649    1.50
+8H8         CAC         CAB         CAA     119.561    1.50
+8H8         CAC         CAB         CAF     120.212    1.50
+8H8         CAA         CAB         CAF     120.227    1.50
+8H8         NAD         CAC         CAB     178.064    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+8H8              const_23         FAG         CAF         CAI         CAH     180.000   10.00     2
+8H8       const_sp2_sp2_4         CAC         CAB         CAF         FAG       0.000   10.00     2
+8H8              const_19         OAJ         CAH         CAI         CAF     180.000   10.00     2
+8H8              const_14         CAA         CAE         CAH         OAJ     180.000   10.00     2
+8H8       const_sp2_sp2_9         CAB         CAA         CAE         CAH       0.000   10.00     2
+8H8       const_sp2_sp2_6         CAE         CAA         CAB         CAC     180.000   10.00     2
+8H8           other_tor_1         NAD         CAC         CAB         CAA      90.000   10.00     1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+8H8    plan-1         CAA   0.020
+8H8    plan-1         CAB   0.020
+8H8    plan-1         CAC   0.020
+8H8    plan-1         CAE   0.020
+8H8    plan-1         CAF   0.020
+8H8    plan-1         CAH   0.020
+8H8    plan-1         CAI   0.020
+8H8    plan-1         FAG   0.020
+8H8    plan-1          H1   0.020
+8H8    plan-1          H3   0.020
+8H8    plan-1          H4   0.020
+8H8    plan-1         OAJ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+8H8 SMILES           ACDLabs              12.01 "Fc1c(C#N)ccc(O)c1"
+8H8 InChI            InChI                1.03  "InChI=1S/C7H4FNO/c8-7-3-6(10)2-1-5(7)4-9/h1-3,10H"
+8H8 InChIKey         InChI                1.03  REIVHYDACHXPNH-UHFFFAOYSA-N
+8H8 SMILES_CANONICAL CACTVS               3.385 "Oc1ccc(C#N)c(F)c1"
+8H8 SMILES           CACTVS               3.385 "Oc1ccc(C#N)c(F)c1"
+8H8 SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "c1cc(c(cc1O)F)C#N"
+8H8 SMILES           "OpenEye OEToolkits" 1.9.2 "c1cc(c(cc1O)F)C#N"
+8H8 ?                acedrg               202         "dictionary generator"                  
+8H8 ?                acedrg_database      11          "data source"                           
+8H8 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+8H8 ?                refmac5              5.8.0189    "optimization tool"                     

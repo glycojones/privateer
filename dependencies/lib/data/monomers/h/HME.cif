@@ -1,0 +1,588 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HME      HME 'PORPHYCENE CONTAINING FE            ' non-polymer        77  43 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HME
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HME           O2D    O    OC       -0.500      0.000    0.000    0.000
+ HME           CGD    C    C         0.000     -1.092    0.573    0.210
+ HME           O1D    O    OC       -0.500     -1.525    0.834    1.354
+ HME           CBD    C    CH2       0.000     -1.987    1.005   -1.005
+ HME           HBD1   H    H         0.000     -2.114    2.079   -0.849
+ HME           HBD2   H    H         0.000     -2.932    0.496   -0.809
+ HME           CAD    C    CH2       0.000     -1.531    0.731   -2.532
+ HME           HAD1   H    H         0.000     -1.868   -0.256   -2.855
+ HME           HAD2   H    H         0.000     -0.444    0.789   -2.618
+ HME           C3D    C    CR5       0.000     -2.155    1.775   -3.390
+ HME           C2D    C    CR5       0.000     -3.260    1.591   -4.225
+ HME           CMD    C    CH3       0.000     -4.048    0.319   -4.442
+ HME           HMD3   H    H         0.000     -5.072    0.556   -4.577
+ HME           HMD2   H    H         0.000     -3.686   -0.179   -5.304
+ HME           HMD1   H    H         0.000     -3.941   -0.313   -3.599
+ HME           C1D    C    CR5       0.000     -3.547    2.863   -4.874
+ HME           CHD    C    C1        0.000     -4.615    3.039   -5.797
+ HME           HHD    H    H         0.000     -5.148    2.113   -5.935
+ HME           CHC    C    C1        0.000     -5.191    4.063   -6.588
+ HME           HHC    H    H         0.000     -6.021    3.681   -7.159
+ HME           C4C    C    CR5       0.000     -4.998    5.428   -6.847
+ HME           ND     N    NR5       1.000     -2.647    3.750   -4.432
+ HME           FE     FE   FE        0.000     -2.502    5.758   -4.937
+ HME           C4D    C    CR5       0.000     -1.753    3.160   -3.529
+ HME           C1A    C    CR5       0.000     -0.729    4.102   -3.015
+ HME           NA     N    NR5       0.000     -0.879    5.369   -3.509
+ HME           C2A    C    CR5       0.000      0.468    4.109   -2.100
+ HME           CAA    C    CH2       0.000      1.156    3.023   -1.255
+ HME           HAA1   H    H         0.000      0.510    2.352   -0.685
+ HME           HAA2   H    H         0.000      1.996    3.335   -0.632
+ HME           CBA    C    CH2       0.000      1.717    2.247   -2.582
+ HME           HBA1   H    H         0.000      2.278    3.057   -3.053
+ HME           HBA2   H    H         0.000      0.781    2.092   -3.122
+ HME           CGA    C    C         0.000      2.497    1.039   -2.615
+ HME           O2A    O    OC       -0.500      1.940    0.159   -3.307
+ HME           O1A    O    OC       -0.500      3.588    0.864   -2.030
+ HME           C3A    C    CR5       0.000      0.940    5.399   -2.104
+ HME           CMA    C    CH3       0.000      2.136    5.928   -1.325
+ HME           HMA3   H    H         0.000      2.841    6.350   -1.996
+ HME           HMA2   H    H         0.000      1.816    6.672   -0.641
+ HME           HMA1   H    H         0.000      2.593    5.135   -0.791
+ HME           C4A    C    CR5       0.000      0.076    6.195   -3.001
+ HME           CHA    C    C1        0.000      0.256    7.573   -3.245
+ HME           HHA    H    H         0.000      1.098    7.954   -2.692
+ HME           CHB    C    C1        0.000     -0.362    8.609   -4.016
+ HME           HHB    H    H         0.000      0.147    9.545   -3.860
+ HME           C1B    C    CR5       0.000     -1.448    8.781   -4.932
+ HME           NB     N    NR5       1.000     -2.329    7.847   -5.390
+ HME           C2B    C    CR5       0.000     -1.798   10.056   -5.556
+ HME           CAB    C    CH2       0.000     -1.056   11.379   -5.298
+ HME           HAB1   H    H         0.000     -0.775   11.376   -4.243
+ HME           HAB2   H    H         0.000     -1.777   12.179   -5.479
+ HME           CBB    C    CH3       0.000      0.132   11.598   -6.118
+ HME           HBB3   H    H         0.000     -0.080   11.307   -7.109
+ HME           HBB2   H    H         0.000      0.383   12.622   -6.087
+ HME           HBB1   H    H         0.000      0.924   11.018   -5.731
+ HME           C3B    C    CR5       0.000     -2.894    9.854   -6.394
+ HME           CMB    C    CH3       0.000     -3.553   10.921   -7.217
+ HME           HMB3   H    H         0.000     -2.959   11.797   -7.198
+ HME           HMB2   H    H         0.000     -3.654   10.583   -8.215
+ HME           HMB1   H    H         0.000     -4.510   11.132   -6.817
+ HME           C4B    C    CR5       0.000     -3.237    8.449   -6.288
+ HME           C1C    C    CR5       0.000     -4.221    7.514   -6.828
+ HME           NC     N    NR5       0.000     -4.056    6.256   -6.325
+ HME           C2C    C    CR5       0.000     -5.358    7.522   -7.758
+ HME           CMC    C    CH3       0.000     -5.933    8.654   -8.558
+ HME           HMC3   H    H         0.000     -5.268    9.477   -8.533
+ HME           HMC2   H    H         0.000     -6.071    8.342   -9.560
+ HME           HMC1   H    H         0.000     -6.865    8.939   -8.145
+ HME           C3C    C    CR5       0.000     -5.837    6.229   -7.770
+ HME           CAC    C    CH2       0.000     -7.024    5.704   -8.585
+ HME           HAC1   H    H         0.000     -6.694    4.736   -8.965
+ HME           HAC2   H    H         0.000     -7.122    6.406   -9.416
+ HME           CBC    C    CH3       0.000     -8.325    5.552   -7.914
+ HME           HBC3   H    H         0.000     -8.217    5.805   -6.895
+ HME           HBC2   H    H         0.000     -9.025    6.195   -8.373
+ HME           HBC1   H    H         0.000     -8.642    4.549   -8.005
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HME      O2D    n/a    CGD    START
+ HME      CGD    O2D    CBD    .
+ HME      O1D    CGD    .      .
+ HME      CBD    CGD    CAD    .
+ HME      HBD1   CBD    .      .
+ HME      HBD2   CBD    .      .
+ HME      CAD    CBD    C3D    .
+ HME      HAD1   CAD    .      .
+ HME      HAD2   CAD    .      .
+ HME      C3D    CAD    C4D    .
+ HME      C2D    C3D    C1D    .
+ HME      CMD    C2D    HMD1   .
+ HME      HMD3   CMD    .      .
+ HME      HMD2   CMD    .      .
+ HME      HMD1   CMD    .      .
+ HME      C1D    C2D    ND     .
+ HME      CHD    C1D    CHC    .
+ HME      HHD    CHD    .      .
+ HME      CHC    CHD    C4C    .
+ HME      HHC    CHC    .      .
+ HME      C4C    CHC    .      .
+ HME      ND     C1D    FE     .
+ HME      FE     ND     .      .
+ HME      C4D    C3D    C1A    .
+ HME      C1A    C4D    C2A    .
+ HME      NA     C1A    .      .
+ HME      C2A    C1A    C3A    .
+ HME      CAA    C2A    CBA    .
+ HME      HAA1   CAA    .      .
+ HME      HAA2   CAA    .      .
+ HME      CBA    CAA    CGA    .
+ HME      HBA1   CBA    .      .
+ HME      HBA2   CBA    .      .
+ HME      CGA    CBA    O1A    .
+ HME      O2A    CGA    .      .
+ HME      O1A    CGA    .      .
+ HME      C3A    C2A    C4A    .
+ HME      CMA    C3A    HMA1   .
+ HME      HMA3   CMA    .      .
+ HME      HMA2   CMA    .      .
+ HME      HMA1   CMA    .      .
+ HME      C4A    C3A    CHA    .
+ HME      CHA    C4A    CHB    .
+ HME      HHA    CHA    .      .
+ HME      CHB    CHA    C1B    .
+ HME      HHB    CHB    .      .
+ HME      C1B    CHB    C2B    .
+ HME      NB     C1B    .      .
+ HME      C2B    C1B    C3B    .
+ HME      CAB    C2B    CBB    .
+ HME      HAB1   CAB    .      .
+ HME      HAB2   CAB    .      .
+ HME      CBB    CAB    HBB1   .
+ HME      HBB3   CBB    .      .
+ HME      HBB2   CBB    .      .
+ HME      HBB1   CBB    .      .
+ HME      C3B    C2B    C4B    .
+ HME      CMB    C3B    HMB1   .
+ HME      HMB3   CMB    .      .
+ HME      HMB2   CMB    .      .
+ HME      HMB1   CMB    .      .
+ HME      C4B    C3B    C1C    .
+ HME      C1C    C4B    C2C    .
+ HME      NC     C1C    .      .
+ HME      C2C    C1C    C3C    .
+ HME      CMC    C2C    HMC1   .
+ HME      HMC3   CMC    .      .
+ HME      HMC2   CMC    .      .
+ HME      HMC1   CMC    .      .
+ HME      C3C    C2C    CAC    .
+ HME      CAC    C3C    CBC    .
+ HME      HAC1   CAC    .      .
+ HME      HAC2   CAC    .      .
+ HME      CBC    CAC    HBC1   .
+ HME      HBC3   CBC    .      .
+ HME      HBC2   CBC    .      .
+ HME      HBC1   CBC    .      END
+ HME      FE     NC     .    ADD
+ HME      FE     NB     .    ADD
+ HME      FE     NA     .    ADD
+ HME      NC     C4C    .    ADD
+ HME      NB     C4B    .    ADD
+ HME      NA     C4A    .    ADD
+ HME      ND     C4D    .    ADD
+ HME      C4C    C3C    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HME       FE        NC        single    2.090     0.020     2.090     0.020     
+HME       FE        NB        single    2.090     0.020     2.090     0.020     
+HME       FE        NA        single    2.090     0.020     2.090     0.020     
+HME       FE        ND        single    2.090     0.020     2.090     0.020     
+HME       NC        C4C       single    1.337     0.020     1.337     0.020     
+HME       NC        C1C       single    1.337     0.020     1.337     0.020     
+HME       NB        C4B       double    1.337     0.020     1.337     0.020     
+HME       NB        C1B       single    1.337     0.020     1.337     0.020     
+HME       NA        C4A       single    1.337     0.020     1.337     0.020     
+HME       NA        C1A       single    1.337     0.020     1.337     0.020     
+HME       ND        C4D       single    1.337     0.020     1.337     0.020     
+HME       ND        C1D       double    1.337     0.020     1.337     0.020     
+HME       C4C       C3C       double    1.490     0.020     1.490     0.020     
+HME       C4C       CHC       single    1.483     0.020     1.483     0.020     
+HME       C3C       C2C       single    1.490     0.020     1.490     0.020     
+HME       CAC       C3C       single    1.510     0.020     1.510     0.020     
+HME       C2C       C1C       double    1.490     0.020     1.490     0.020     
+HME       CMC       C2C       single    1.506     0.020     1.506     0.020     
+HME       C1C       C4B       single    1.490     0.020     1.490     0.020     
+HME       C4B       C3B       single    1.490     0.020     1.490     0.020     
+HME       C3B       C2B       double    1.490     0.020     1.490     0.020     
+HME       CMB       C3B       single    1.506     0.020     1.506     0.020     
+HME       C2B       C1B       single    1.490     0.020     1.490     0.020     
+HME       CAB       C2B       single    1.510     0.020     1.510     0.020     
+HME       C1B       CHB       double    1.483     0.020     1.483     0.020     
+HME       CHB       CHA       single    1.460     0.020     1.460     0.020     
+HME       HHB       CHB       single    1.082     0.013     0.975     0.010     
+HME       CHA       C4A       double    1.483     0.020     1.483     0.020     
+HME       HHA       CHA       single    1.082     0.013     0.975     0.010     
+HME       C4A       C3A       single    1.490     0.020     1.490     0.020     
+HME       C3A       C2A       double    1.490     0.020     1.490     0.020     
+HME       CMA       C3A       single    1.506     0.020     1.506     0.020     
+HME       C2A       C1A       single    1.490     0.020     1.490     0.020     
+HME       CAA       C2A       single    1.510     0.020     1.510     0.020     
+HME       C1A       C4D       double    1.490     0.020     1.490     0.020     
+HME       C4D       C3D       single    1.490     0.020     1.490     0.020     
+HME       C2D       C3D       double    1.490     0.020     1.490     0.020     
+HME       C3D       CAD       single    1.510     0.020     1.510     0.020     
+HME       C1D       C2D       single    1.490     0.020     1.490     0.020     
+HME       CMD       C2D       single    1.506     0.020     1.506     0.020     
+HME       CHD       C1D       single    1.483     0.020     1.483     0.020     
+HME       CHC       CHD       double    1.330     0.020     1.330     0.020     
+HME       HHD       CHD       single    1.082     0.013     0.975     0.010     
+HME       HHC       CHC       single    1.082     0.013     0.975     0.010     
+HME       CBC       CAC       single    1.513     0.020     1.513     0.020     
+HME       HAC1      CAC       single    1.089     0.010     0.989     0.005     
+HME       HAC2      CAC       single    1.089     0.010     0.989     0.005     
+HME       HBC1      CBC       single    1.089     0.010     0.989     0.005     
+HME       HBC2      CBC       single    1.089     0.010     0.989     0.005     
+HME       HBC3      CBC       single    1.089     0.010     0.989     0.005     
+HME       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+HME       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+HME       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+HME       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+HME       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+HME       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+HME       CBB       CAB       single    1.513     0.020     1.513     0.020     
+HME       HAB1      CAB       single    1.089     0.010     0.989     0.005     
+HME       HAB2      CAB       single    1.089     0.010     0.989     0.005     
+HME       HBB1      CBB       single    1.089     0.010     0.989     0.005     
+HME       HBB2      CBB       single    1.089     0.010     0.989     0.005     
+HME       HBB3      CBB       single    1.089     0.010     0.989     0.005     
+HME       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+HME       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+HME       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+HME       CBA       CAA       single    1.524     0.020     1.524     0.020     
+HME       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+HME       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+HME       CGA       CBA       single    1.510     0.020     1.510     0.020     
+HME       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+HME       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+HME       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+HME       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+HME       CAD       CBD       single    1.524     0.020     1.524     0.020     
+HME       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+HME       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+HME       CBD       CGD       single    1.510     0.020     1.510     0.020     
+HME       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+HME       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+HME       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+HME       CGD       O2D       deloc     1.250     0.020     1.250     0.020     
+HME       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+HME       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+HME       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HME      O2D    CGD    O1D     123.000    3.000
+ HME      O2D    CGD    CBD     118.500    3.000
+ HME      O1D    CGD    CBD     118.500    3.000
+ HME      CGD    CBD    HBD1    109.470    3.000
+ HME      CGD    CBD    HBD2    109.470    3.000
+ HME      CGD    CBD    CAD     109.470    3.000
+ HME      HBD1   CBD    HBD2    107.900    3.000
+ HME      HBD1   CBD    CAD     109.470    3.000
+ HME      HBD2   CBD    CAD     109.470    3.000
+ HME      CBD    CAD    HAD1    109.470    3.000
+ HME      CBD    CAD    HAD2    109.470    3.000
+ HME      CBD    CAD    C3D     109.470    3.000
+ HME      HAD1   CAD    HAD2    107.900    3.000
+ HME      HAD1   CAD    C3D     109.470    3.000
+ HME      HAD2   CAD    C3D     109.470    3.000
+ HME      CAD    C3D    C2D     126.000    3.000
+ HME      CAD    C3D    C4D     126.000    3.000
+ HME      C2D    C3D    C4D     108.000    3.000
+ HME      C3D    C2D    CMD     126.000    3.000
+ HME      C3D    C2D    C1D     108.000    3.000
+ HME      CMD    C2D    C1D     126.000    3.000
+ HME      C2D    CMD    HMD3    109.470    3.000
+ HME      C2D    CMD    HMD2    109.470    3.000
+ HME      C2D    CMD    HMD1    109.470    3.000
+ HME      HMD3   CMD    HMD2    109.470    3.000
+ HME      HMD3   CMD    HMD1    109.470    3.000
+ HME      HMD2   CMD    HMD1    109.470    3.000
+ HME      C2D    C1D    CHD     117.000    3.000
+ HME      C2D    C1D    ND      108.000    3.000
+ HME      CHD    C1D    ND      108.000    3.000
+ HME      C1D    CHD    HHD     120.000    3.000
+ HME      C1D    CHD    CHC     120.000    3.000
+ HME      HHD    CHD    CHC     120.000    3.000
+ HME      CHD    CHC    HHC     120.000    3.000
+ HME      CHD    CHC    C4C     120.000    3.000
+ HME      HHC    CHC    C4C     120.000    3.000
+ HME      CHC    C4C    NC      108.000    3.000
+ HME      CHC    C4C    C3C     117.000    3.000
+ HME      NC     C4C    C3C     108.000    3.000
+ HME      C1D    ND     FE      126.000    3.000
+ HME      C1D    ND     C4D     108.000    3.000
+ HME      FE     ND     C4D     126.000    3.000
+ HME      ND     FE     NC       90.000    3.000
+ HME      ND     FE     NB      180.000    3.000
+ HME      ND     FE     NA       90.000    3.000
+ HME      NC     FE     NB       90.000    3.000
+ HME      NC     FE     NA      180.000    3.000
+ HME      NB     FE     NA       90.000    3.000
+ HME      C3D    C4D    C1A     108.000    3.000
+ HME      C3D    C4D    ND      108.000    3.000
+ HME      C1A    C4D    ND      108.000    3.000
+ HME      C4D    C1A    NA      108.000    3.000
+ HME      C4D    C1A    C2A     108.000    3.000
+ HME      NA     C1A    C2A     108.000    3.000
+ HME      C1A    NA     FE      126.000    3.000
+ HME      C1A    NA     C4A     108.000    3.000
+ HME      FE     NA     C4A     126.000    3.000
+ HME      C1A    C2A    CAA     126.000    3.000
+ HME      C1A    C2A    C3A     108.000    3.000
+ HME      CAA    C2A    C3A     126.000    3.000
+ HME      C2A    CAA    HAA1    109.470    3.000
+ HME      C2A    CAA    HAA2    109.470    3.000
+ HME      C2A    CAA    CBA     109.470    3.000
+ HME      HAA1   CAA    HAA2    107.900    3.000
+ HME      HAA1   CAA    CBA     109.470    3.000
+ HME      HAA2   CAA    CBA     109.470    3.000
+ HME      CAA    CBA    HBA1    109.470    3.000
+ HME      CAA    CBA    HBA2    109.470    3.000
+ HME      CAA    CBA    CGA     109.470    3.000
+ HME      HBA1   CBA    HBA2    107.900    3.000
+ HME      HBA1   CBA    CGA     109.470    3.000
+ HME      HBA2   CBA    CGA     109.470    3.000
+ HME      CBA    CGA    O2A     118.500    3.000
+ HME      CBA    CGA    O1A     118.500    3.000
+ HME      O2A    CGA    O1A     123.000    3.000
+ HME      C2A    C3A    CMA     126.000    3.000
+ HME      C2A    C3A    C4A     108.000    3.000
+ HME      CMA    C3A    C4A     126.000    3.000
+ HME      C3A    CMA    HMA3    109.470    3.000
+ HME      C3A    CMA    HMA2    109.470    3.000
+ HME      C3A    CMA    HMA1    109.470    3.000
+ HME      HMA3   CMA    HMA2    109.470    3.000
+ HME      HMA3   CMA    HMA1    109.470    3.000
+ HME      HMA2   CMA    HMA1    109.470    3.000
+ HME      C3A    C4A    CHA     117.000    3.000
+ HME      C3A    C4A    NA      108.000    3.000
+ HME      CHA    C4A    NA      108.000    3.000
+ HME      C4A    CHA    HHA     120.000    3.000
+ HME      C4A    CHA    CHB     120.000    3.000
+ HME      HHA    CHA    CHB     120.000    3.000
+ HME      CHA    CHB    HHB     120.000    3.000
+ HME      CHA    CHB    C1B     120.000    3.000
+ HME      HHB    CHB    C1B     120.000    3.000
+ HME      CHB    C1B    NB      108.000    3.000
+ HME      CHB    C1B    C2B     117.000    3.000
+ HME      NB     C1B    C2B     108.000    3.000
+ HME      C1B    NB     FE      126.000    3.000
+ HME      C1B    NB     C4B     108.000    3.000
+ HME      FE     NB     C4B     126.000    3.000
+ HME      C1B    C2B    CAB     126.000    3.000
+ HME      C1B    C2B    C3B     108.000    3.000
+ HME      CAB    C2B    C3B     126.000    3.000
+ HME      C2B    CAB    HAB1    109.470    3.000
+ HME      C2B    CAB    HAB2    109.470    3.000
+ HME      C2B    CAB    CBB     109.470    3.000
+ HME      HAB1   CAB    HAB2    107.900    3.000
+ HME      HAB1   CAB    CBB     109.470    3.000
+ HME      HAB2   CAB    CBB     109.470    3.000
+ HME      CAB    CBB    HBB3    109.470    3.000
+ HME      CAB    CBB    HBB2    109.470    3.000
+ HME      CAB    CBB    HBB1    109.470    3.000
+ HME      HBB3   CBB    HBB2    109.470    3.000
+ HME      HBB3   CBB    HBB1    109.470    3.000
+ HME      HBB2   CBB    HBB1    109.470    3.000
+ HME      C2B    C3B    CMB     126.000    3.000
+ HME      C2B    C3B    C4B     108.000    3.000
+ HME      CMB    C3B    C4B     126.000    3.000
+ HME      C3B    CMB    HMB3    109.470    3.000
+ HME      C3B    CMB    HMB2    109.470    3.000
+ HME      C3B    CMB    HMB1    109.470    3.000
+ HME      HMB3   CMB    HMB2    109.470    3.000
+ HME      HMB3   CMB    HMB1    109.470    3.000
+ HME      HMB2   CMB    HMB1    109.470    3.000
+ HME      C3B    C4B    C1C     108.000    3.000
+ HME      C3B    C4B    NB      108.000    3.000
+ HME      C1C    C4B    NB      108.000    3.000
+ HME      C4B    C1C    NC      108.000    3.000
+ HME      C4B    C1C    C2C     108.000    3.000
+ HME      NC     C1C    C2C     108.000    3.000
+ HME      C1C    NC     FE      126.000    3.000
+ HME      C1C    NC     C4C     108.000    3.000
+ HME      FE     NC     C4C     126.000    3.000
+ HME      C1C    C2C    CMC     126.000    3.000
+ HME      C1C    C2C    C3C     108.000    3.000
+ HME      CMC    C2C    C3C     126.000    3.000
+ HME      C2C    CMC    HMC3    109.470    3.000
+ HME      C2C    CMC    HMC2    109.470    3.000
+ HME      C2C    CMC    HMC1    109.470    3.000
+ HME      HMC3   CMC    HMC2    109.470    3.000
+ HME      HMC3   CMC    HMC1    109.470    3.000
+ HME      HMC2   CMC    HMC1    109.470    3.000
+ HME      C2C    C3C    CAC     126.000    3.000
+ HME      C2C    C3C    C4C     108.000    3.000
+ HME      CAC    C3C    C4C     126.000    3.000
+ HME      C3C    CAC    HAC1    109.470    3.000
+ HME      C3C    CAC    HAC2    109.470    3.000
+ HME      C3C    CAC    CBC     109.470    3.000
+ HME      HAC1   CAC    HAC2    107.900    3.000
+ HME      HAC1   CAC    CBC     109.470    3.000
+ HME      HAC2   CAC    CBC     109.470    3.000
+ HME      CAC    CBC    HBC3    109.470    3.000
+ HME      CAC    CBC    HBC2    109.470    3.000
+ HME      CAC    CBC    HBC1    109.470    3.000
+ HME      HBC3   CBC    HBC2    109.470    3.000
+ HME      HBC3   CBC    HBC1    109.470    3.000
+ HME      HBC2   CBC    HBC1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HME      var_1    O2D    CGD    CBD    CAD       -0.166   20.000   3
+ HME      var_2    CGD    CBD    CAD    C3D     -152.223   20.000   3
+ HME      var_3    CBD    CAD    C3D    C4D       76.147   20.000   2
+ HME      CONST_1  CAD    C3D    C2D    C1D      180.000    0.000   0
+ HME      var_4    C3D    C2D    CMD    HMD1      24.324   20.000   1
+ HME      CONST_2  C3D    C2D    C1D    ND         0.000    0.000   0
+ HME      var_5    C2D    C1D    CHD    CHC      179.527   20.000   1
+ HME      CONST_3  C1D    CHD    CHC    C4C       -0.768    0.000   0
+ HME      var_6    CHD    CHC    C4C    NC         0.154   20.000   1
+ HME      CONST_4  CHC    C4C    C3C    C2C      180.000    0.000   0
+ HME      CONST_5  C2D    C1D    ND     FE       180.000    0.000   0
+ HME      CONST_6  C1D    ND     C4D    C3D        0.000    0.000   0
+ HME      var_7    C4D    ND     FE     NA         0.000   20.000   1
+ HME      var_8    C1C    NC     FE     NB         0.000   20.000   1
+ HME      var_9    C4B    NB     FE     NC         0.000   20.000   1
+ HME      CONST_7  C1A    NA     FE     ND         0.000    0.000   0
+ HME      CONST_8  CAD    C3D    C4D    C1A        0.000    0.000   0
+ HME      CONST_9  C3D    C4D    C1A    C2A        0.000    0.000   0
+ HME      CONST_10 C4D    C1A    NA     FE         0.000    0.000   0
+ HME      CONST_11 C1A    NA     C4A    C3A        0.000    0.000   0
+ HME      CONST_12 C4D    C1A    C2A    C3A      180.000    0.000   0
+ HME      var_10   C1A    C2A    CAA    CBA       69.762   20.000   2
+ HME      var_11   C2A    CAA    CBA    CGA     -179.157   20.000   3
+ HME      var_12   CAA    CBA    CGA    O1A      -55.963   20.000   3
+ HME      CONST_13 C1A    C2A    C3A    C4A        0.000    0.000   0
+ HME      var_13   C2A    C3A    CMA    HMA1       2.176   20.000   1
+ HME      CONST_14 C2A    C3A    C4A    CHA      180.000    0.000   0
+ HME      var_14   C3A    C4A    CHA    CHB      179.976   20.000   1
+ HME      var_15   C4A    CHA    CHB    C1B       -0.884   20.000   1
+ HME      CONST_15 CHA    CHB    C1B    C2B     -179.933    0.000   0
+ HME      CONST_16 CHB    C1B    NB     FE         0.000    0.000   0
+ HME      CONST_17 C1B    NB     C4B    C3B        0.000    0.000   0
+ HME      CONST_18 CHB    C1B    C2B    C3B      180.000    0.000   0
+ HME      var_16   C1B    C2B    CAB    CBB       84.993   20.000   2
+ HME      var_17   C2B    CAB    CBB    HBB1     -77.397   20.000   3
+ HME      CONST_19 C1B    C2B    C3B    C4B        0.000    0.000   0
+ HME      var_18   C2B    C3B    CMB    HMB1    -109.933   20.000   1
+ HME      CONST_20 C2B    C3B    C4B    C1C      180.000    0.000   0
+ HME      CONST_21 C3B    C4B    C1C    C2C        0.000    0.000   0
+ HME      CONST_22 C4B    C1C    NC     FE         0.000    0.000   0
+ HME      CONST_23 C1C    NC     C4C    CHC      180.000    0.000   0
+ HME      CONST_24 C4B    C1C    C2C    C3C      180.000    0.000   0
+ HME      var_19   C1C    C2C    CMC    HMC1    -107.912   20.000   1
+ HME      CONST_25 C1C    C2C    C3C    CAC      180.000    0.000   0
+ HME      var_20   C2C    C3C    CAC    CBC      -99.429   20.000   2
+ HME      var_21   C3C    CAC    CBC    HBC1    -122.666   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HME      chir_01  FE     NB     ND     NC        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HME      plan-1    NC        0.020
+ HME      plan-1    FE        0.020
+ HME      plan-1    C4C       0.020
+ HME      plan-1    C1C       0.020
+ HME      plan-1    C3C       0.020
+ HME      plan-1    C2C       0.020
+ HME      plan-1    CHC       0.020
+ HME      plan-1    CAC       0.020
+ HME      plan-1    CMC       0.020
+ HME      plan-1    C4B       0.020
+ HME      plan-1    NB        0.020
+ HME      plan-1    C1B       0.020
+ HME      plan-1    C3B       0.020
+ HME      plan-1    C2B       0.020
+ HME      plan-1    CMB       0.020
+ HME      plan-1    CAB       0.020
+ HME      plan-1    CHB       0.020
+ HME      plan-1    CHA       0.020
+ HME      plan-1    HHB       0.020
+ HME      plan-1    HHC       0.020
+ HME      plan-1    HHA       0.020
+ HME      plan-2    NA        0.020
+ HME      plan-2    FE        0.020
+ HME      plan-2    C4A       0.020
+ HME      plan-2    C1A       0.020
+ HME      plan-2    C3A       0.020
+ HME      plan-2    C2A       0.020
+ HME      plan-2    CHA       0.020
+ HME      plan-2    CMA       0.020
+ HME      plan-2    CAA       0.020
+ HME      plan-2    C4D       0.020
+ HME      plan-2    ND        0.020
+ HME      plan-2    C1D       0.020
+ HME      plan-2    C3D       0.020
+ HME      plan-2    C2D       0.020
+ HME      plan-2    CAD       0.020
+ HME      plan-2    CMD       0.020
+ HME      plan-2    CHD       0.020
+ HME      plan-2    HHA       0.020
+ HME      plan-2    HHD       0.020
+ HME      plan-3    CHA       0.020
+ HME      plan-3    CHB       0.020
+ HME      plan-3    C4A       0.020
+ HME      plan-3    HHA       0.020
+ HME      plan-3    HHB       0.020
+ HME      plan-4    CHD       0.020
+ HME      plan-4    C1D       0.020
+ HME      plan-4    CHC       0.020
+ HME      plan-4    HHD       0.020
+ HME      plan-4    C4C       0.020
+ HME      plan-4    HHC       0.020
+ HME      plan-5    CGA       0.020
+ HME      plan-5    CBA       0.020
+ HME      plan-5    O1A       0.020
+ HME      plan-5    O2A       0.020
+ HME      plan-6    CGD       0.020
+ HME      plan-6    CBD       0.020
+ HME      plan-6    O1D       0.020
+ HME      plan-6    O2D       0.020
+# ------------------------------------------------------

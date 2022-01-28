@@ -1,0 +1,211 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BPS     BPS     .              NON-POLYMER     25     15     .     
+#
+data_comp_BPS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BPS     CX1     C       CR16    0       -30.893     26.209      18.143      
+BPS     CX2     C       CR6     0       -31.441     27.075      17.187      
+BPS     CX3     C       CR6     0       -31.421     26.657      15.809      
+BPS     CX4     C       CR16    0       -30.871     25.418      15.462      
+BPS     CX5     C       CR16    0       -30.341     24.592      16.449      
+BPS     CX6     C       CR16    0       -30.352     24.985      17.780      
+BPS     CX7     C       CR6     0       -32.003     28.380      17.660      
+BPS     CX8     C       CR16    0       -33.378     28.638      17.621      
+BPS     CX9     C       CR16    0       -33.893     29.852      18.067      
+BPS     CXA     C       CR16    0       -33.046     30.824      18.571      
+BPS     CXB     C       CR16    0       -31.683     30.586      18.627      
+BPS     CXC     C       CR16    0       -31.165     29.374      18.178      
+BPS     SX1     S       S3      0       -32.091     27.682      14.490      
+BPS     OX1     O       OH1     0       -31.009     27.826      13.325      
+BPS     OX2     O       O       0       -33.243     26.958      13.927      
+BPS     H1      H       H       0       -30.895     26.467      19.059      
+BPS     HX4     H       H       0       -30.860     25.144      14.562      
+BPS     HX5     H       H       0       -29.971     23.758      16.210      
+BPS     HX6     H       H       0       -29.990     24.418      18.440      
+BPS     HX8     H       H       0       -33.963     27.981      17.276      
+BPS     HX9     H       H       0       -34.821     30.011      18.028      
+BPS     HX10    H       H       0       -33.397     31.646      18.875      
+BPS     HX11    H       H       0       -31.104     31.246      18.969      
+BPS     HX12    H       H       0       -30.234     29.221      18.220      
+BPS     HX1     H       H       0       -30.328     28.275      13.617      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BPS       CX1       CX2       DOUBLE    y         1.396     0.010     1.396     0.010     
+BPS       CX1       CX6       SINGLE    y         1.377     0.012     1.377     0.012     
+BPS       CX2       CX3       SINGLE    y         1.409     0.020     1.409     0.020     
+BPS       CX2       CX7       SINGLE    n         1.496     0.010     1.496     0.010     
+BPS       CX3       CX4       DOUBLE    y         1.389     0.013     1.389     0.013     
+BPS       CX3       SX1       SINGLE    n         1.798     0.011     1.798     0.011     
+BPS       CX4       CX5       SINGLE    y         1.385     0.010     1.385     0.010     
+BPS       CX5       CX6       DOUBLE    y         1.376     0.012     1.376     0.012     
+BPS       CX7       CX8       DOUBLE    y         1.392     0.010     1.392     0.010     
+BPS       CX7       CXC       SINGLE    y         1.392     0.010     1.392     0.010     
+BPS       CX8       CX9       SINGLE    y         1.386     0.010     1.386     0.010     
+BPS       CX9       CXA       DOUBLE    y         1.376     0.011     1.376     0.011     
+BPS       CXA       CXB       SINGLE    y         1.376     0.012     1.376     0.012     
+BPS       CXB       CXC       DOUBLE    y         1.386     0.010     1.386     0.010     
+BPS       SX1       OX1       SINGLE    n         1.596     0.020     1.596     0.020     
+BPS       SX1       OX2       DOUBLE    n         1.472     0.017     1.472     0.017     
+BPS       CX1       H1        SINGLE    n         1.082     0.013     0.951     0.012     
+BPS       CX4       HX4       SINGLE    n         1.082     0.013     0.941     0.017     
+BPS       CX5       HX5       SINGLE    n         1.082     0.013     0.943     0.017     
+BPS       CX6       HX6       SINGLE    n         1.082     0.013     0.943     0.018     
+BPS       CX8       HX8       SINGLE    n         1.082     0.013     0.945     0.017     
+BPS       CX9       HX9       SINGLE    n         1.082     0.013     0.943     0.018     
+BPS       CXA       HX10      SINGLE    n         1.082     0.013     0.944     0.016     
+BPS       CXB       HX11      SINGLE    n         1.082     0.013     0.943     0.018     
+BPS       CXC       HX12      SINGLE    n         1.082     0.013     0.945     0.017     
+BPS       OX1       HX1       SINGLE    n         0.970     0.012     0.867     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BPS         CX2         CX1         CX6     121.085    1.50
+BPS         CX2         CX1          H1     119.251    1.50
+BPS         CX6         CX1          H1     119.664    1.50
+BPS         CX1         CX2         CX3     119.245    1.80
+BPS         CX1         CX2         CX7     118.475    1.50
+BPS         CX3         CX2         CX7     122.280    1.91
+BPS         CX2         CX3         CX4     120.729    1.50
+BPS         CX2         CX3         SX1     119.985    2.09
+BPS         CX4         CX3         SX1     119.286    2.37
+BPS         CX3         CX4         CX5     119.445    1.50
+BPS         CX3         CX4         HX4     120.250    1.50
+BPS         CX5         CX4         HX4     120.306    1.50
+BPS         CX4         CX5         CX6     119.789    1.50
+BPS         CX4         CX5         HX5     120.005    1.50
+BPS         CX6         CX5         HX5     120.206    1.50
+BPS         CX1         CX6         CX5     119.707    1.50
+BPS         CX1         CX6         HX6     120.095    1.50
+BPS         CX5         CX6         HX6     120.198    1.50
+BPS         CX2         CX7         CX8     121.096    1.50
+BPS         CX2         CX7         CXC     121.096    1.50
+BPS         CX8         CX7         CXC     117.808    1.50
+BPS         CX7         CX8         CX9     120.887    1.50
+BPS         CX7         CX8         HX8     119.477    1.50
+BPS         CX9         CX8         HX8     119.636    1.50
+BPS         CX8         CX9         CXA     120.251    1.50
+BPS         CX8         CX9         HX9     119.823    1.50
+BPS         CXA         CX9         HX9     119.926    1.50
+BPS         CX9         CXA         CXB     119.915    1.50
+BPS         CX9         CXA        HX10     120.043    1.50
+BPS         CXB         CXA        HX10     120.043    1.50
+BPS         CXA         CXB         CXC     120.251    1.50
+BPS         CXA         CXB        HX11     119.926    1.50
+BPS         CXC         CXB        HX11     119.823    1.50
+BPS         CX7         CXC         CXB     120.887    1.50
+BPS         CX7         CXC        HX12     119.477    1.50
+BPS         CXB         CXC        HX12     119.636    1.50
+BPS         CX3         SX1         OX1     109.471    3.00
+BPS         CX3         SX1         OX2     106.942    1.76
+BPS         OX1         SX1         OX2     107.227    3.00
+BPS         SX1         OX1         HX1     109.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BPS       const_sp2_sp2_1         CX6         CX1         CX2         CX3       0.000   10.00     2
+BPS              const_41         CX2         CX1         CX6         CX5       0.000   10.00     2
+BPS              const_37         CXA         CXB         CXC         CX7       0.000   10.00     2
+BPS             sp3_sp3_1         HX1         OX1         SX1         OX2     180.000   10.00     3
+BPS       const_sp2_sp2_6         CX1         CX2         CX3         SX1     180.000   10.00     2
+BPS             sp2_sp2_1         CX1         CX2         CX7         CX8     180.000   10.00     2
+BPS             sp2_sp3_1         CX2         CX3         SX1         OX1     150.000   10.00     6
+BPS              const_11         SX1         CX3         CX4         CX5     180.000   10.00     2
+BPS              const_13         CX3         CX4         CX5         CX6       0.000   10.00     2
+BPS              const_17         CX4         CX5         CX6         CX1       0.000   10.00     2
+BPS              const_47         CX2         CX7         CXC         CXB     180.000   10.00     2
+BPS              const_23         CX2         CX7         CX8         CX9     180.000   10.00     2
+BPS              const_25         CX7         CX8         CX9         CXA       0.000   10.00     2
+BPS              const_29         CX8         CX9         CXA         CXB       0.000   10.00     2
+BPS              const_33         CX9         CXA         CXB         CXC       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+BPS    chir_1    SX1    OX2    OX1    CX3    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BPS    plan-1         CX1   0.020
+BPS    plan-1         CX2   0.020
+BPS    plan-1         CX3   0.020
+BPS    plan-1         CX4   0.020
+BPS    plan-1         CX5   0.020
+BPS    plan-1         CX6   0.020
+BPS    plan-1         CX7   0.020
+BPS    plan-1          H1   0.020
+BPS    plan-1         HX4   0.020
+BPS    plan-1         HX5   0.020
+BPS    plan-1         HX6   0.020
+BPS    plan-1         SX1   0.020
+BPS    plan-2         CX2   0.020
+BPS    plan-2         CX7   0.020
+BPS    plan-2         CX8   0.020
+BPS    plan-2         CX9   0.020
+BPS    plan-2         CXA   0.020
+BPS    plan-2         CXB   0.020
+BPS    plan-2         CXC   0.020
+BPS    plan-2        HX10   0.020
+BPS    plan-2        HX11   0.020
+BPS    plan-2        HX12   0.020
+BPS    plan-2         HX8   0.020
+BPS    plan-2         HX9   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BPS SMILES           ACDLabs              10.04 "O=S(O)c2ccccc2c1ccccc1"
+BPS SMILES_CANONICAL CACTVS               3.341 "O[S@@](=O)c1ccccc1c2ccccc2"
+BPS SMILES           CACTVS               3.341 "O[S](=O)c1ccccc1c2ccccc2"
+BPS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)c2ccccc2[S@](=O)O"
+BPS SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)c2ccccc2S(=O)O"
+BPS InChI            InChI                1.03  "InChI=1S/C12H10O2S/c13-15(14)12-9-5-4-8-11(12)10-6-2-1-3-7-10/h1-9H,(H,13,14)"
+BPS InChIKey         InChI                1.03  LZCLZDCSBDVAOV-UHFFFAOYSA-N
+BPS ?                acedrg               190         "dictionary generator"                  
+BPS ?                acedrg_database      11          "data source"                           
+BPS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BPS ?                refmac5              5.8.0158    "optimization tool"                     

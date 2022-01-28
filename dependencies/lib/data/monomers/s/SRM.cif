@@ -1,0 +1,729 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SRM      SRM 'SIROHEME                            ' non-polymer        97  63 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SRM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SRM           O4D    O    OC       -0.500      0.000    0.000    0.000
+ SRM           CED    C    C         0.000      0.625    1.042   -0.297
+ SRM           O3D    O    OC       -0.500      1.816    1.008   -0.678
+ SRM           CDD    C    CH2       0.000     -0.094    2.375   -0.193
+ SRM           HDD1   H    H         0.000     -0.739    2.320    0.687
+ SRM           HDD2   H    H         0.000     -0.711    2.473   -1.089
+ SRM           C3D    C    CR5       0.000      0.831    3.587   -0.075
+ SRM           C2D    C    CR5       0.000      1.478    4.048    1.063
+ SRM           CAD    C    CH2       0.000      1.444    3.490    2.483
+ SRM           HAD1   H    H         0.000      0.524    2.923    2.643
+ SRM           HAD2   H    H         0.000      1.500    4.303    3.210
+ SRM           CBD    C    CH2       0.000      2.645    2.570    2.655
+ SRM           HBD1   H    H         0.000      3.540    3.187    2.556
+ SRM           HBD2   H    H         0.000      2.613    1.843    1.841
+ SRM           CCD    C    C         0.000      2.676    1.840    3.985
+ SRM           O2D    O    OC       -0.500      1.612    1.411    4.483
+ SRM           O1D    O    OC       -0.500      3.787    1.680    4.539
+ SRM           C1D    C    CR5       0.000      2.141    5.265    0.639
+ SRM           CHD    C    C1        0.000      2.848    6.140    1.464
+ SRM           HHD    H    H         0.000      2.850    5.888    2.511
+ SRM           C4D    C    CR5       0.000      1.152    4.439   -1.186
+ SRM           CHA    C    C1        0.000      0.548    4.443   -2.438
+ SRM           HHA    H    H         0.000     -0.014    3.553   -2.666
+ SRM           ND     N    NR5       0.000      1.958    5.440   -0.702
+ SRM           FE     FE   FE        0.000      2.687    7.011   -1.857
+ SRM           NA     N    NR5       0.000      1.229    6.603   -3.342
+ SRM           C4A    C    CR5       0.000      0.781    7.461   -4.310
+ SRM           C3A    C    CR5       0.000     -0.431    6.846   -5.010
+ SRM           CAA    C    CH2       0.000     -0.570    7.254   -6.432
+ SRM           HAA1   H    H         0.000     -0.964    6.395   -6.979
+ SRM           HAA2   H    H         0.000      0.430    7.490   -6.801
+ SRM           CBA    C    CH2       0.000     -1.485    8.452   -6.638
+ SRM           HBA1   H    H         0.000     -1.120    9.266   -6.008
+ SRM           HBA2   H    H         0.000     -2.489    8.167   -6.317
+ SRM           CCA    C    C         0.000     -1.526    8.911   -8.090
+ SRM           O2A    O    OC       -0.500     -0.522    9.493   -8.558
+ SRM           O1A    O    OC       -0.500     -2.559    8.713   -8.768
+ SRM           C2A    C    CT        0.000     -0.180    5.363   -4.796
+ SRM           CDA    C    CH2       0.000     -1.581    4.637   -4.788
+ SRM           HDA1   H    H         0.000     -2.199    5.186   -5.502
+ SRM           HDA2   H    H         0.000     -1.978    4.780   -3.781
+ SRM           CEA    C    C         0.000     -1.595    3.149   -5.137
+ SRM           O4A    O    OC       -0.500     -2.288    2.759   -6.103
+ SRM           O3A    O    OC       -0.500     -0.909    2.355   -4.455
+ SRM           CMA    C    CH3       0.000      0.873    4.731   -5.745
+ SRM           HMA3   H    H         0.000      1.743    5.338   -5.772
+ SRM           HMA2   H    H         0.000      1.134    3.763   -5.399
+ SRM           HMA1   H    H         0.000      0.473    4.654   -6.725
+ SRM           C1A    C    CR5       0.000      0.546    5.402   -3.444
+ SRM           NB     N    NR5       0.000      2.956    8.840   -2.790
+ SRM           C4B    C    CR5       0.000      4.019    9.668   -2.456
+ SRM           C3B    C    CR5       0.000      4.299   10.544   -3.688
+ SRM           CAB    C    CH2       0.000      5.147    9.756   -4.696
+ SRM           HAB1   H    H         0.000      5.147   10.282   -5.653
+ SRM           HAB2   H    H         0.000      4.714    8.762   -4.829
+ SRM           CBB    C    CH2       0.000      6.578    9.625   -4.186
+ SRM           HBB1   H    H         0.000      6.542    9.126   -3.216
+ SRM           HBB2   H    H         0.000      6.981   10.633   -4.061
+ SRM           CCB    C    C         0.000      7.474    8.831   -5.137
+ SRM           O2B    O    OC       -0.500      7.738    7.642   -4.855
+ SRM           O1B    O    OC       -0.500      7.912    9.392   -6.166
+ SRM           C2B    C    CT        0.000      2.879   10.730   -4.245
+ SRM           CMB    C    CH3       0.000      2.791   10.926   -5.822
+ SRM           HMB3   H    H         0.000      3.296   10.133   -6.321
+ SRM           HMB2   H    H         0.000      1.774   10.932   -6.136
+ SRM           HMB1   H    H         0.000      3.240   11.848   -6.105
+ SRM           CDB    C    CH2       0.000      2.209   11.838   -3.462
+ SRM           HDB1   H    H         0.000      2.549   11.701   -2.434
+ SRM           HDB2   H    H         0.000      1.141   11.620   -3.524
+ SRM           CEB    C    C         0.000      2.458   13.271   -3.891
+ SRM           O4B    O    OC       -0.500      3.631   13.652   -4.101
+ SRM           O3B    O    OC       -0.500      1.465   14.022   -4.006
+ SRM           C1B    C    CR5       0.000      2.239    9.411   -3.802
+ SRM           CHB    C    C1        0.000      1.226    8.764   -4.481
+ SRM           HHB    H    H         0.000      0.719    9.341   -5.235
+ SRM           NC     N    NR5       0.000      3.661    7.738   -0.143
+ SRM           C4C    C    CR5       0.000      3.548    7.287    1.126
+ SRM           C3C    C    CR5       0.000      4.289    8.129    2.012
+ SRM           C2C    C    CR5       0.000      4.888    9.046    1.187
+ SRM           CDC    C    CH2       0.000      5.764   10.218    1.592
+ SRM           HCD1   H    H         0.000      5.570   10.392    2.652
+ SRM           HCD2   H    H         0.000      5.414   11.075    1.013
+ SRM           CEC    C    C         0.000      7.254   10.033    1.373
+ SRM           O4C    O    OC       -0.500      8.012   11.013    1.548
+ SRM           O3C    O    OC       -0.500      7.683    8.913    1.015
+ SRM           C1C    C    CR5       0.000      4.568    8.748   -0.189
+ SRM           CHC    C    C1        0.000      4.755    9.597   -1.282
+ SRM           HHC    H    H         0.000      5.578   10.287   -1.204
+ SRM           CAC    C    CH2       0.000      4.243    8.167    3.524
+ SRM           HAC1   H    H         0.000      3.400    7.540    3.822
+ SRM           HAC2   H    H         0.000      4.040    9.203    3.800
+ SRM           CBC    C    CH2       0.000      5.511    7.688    4.233
+ SRM           HBC1   H    H         0.000      5.551    8.179    5.208
+ SRM           HBC2   H    H         0.000      6.366    8.006    3.632
+ SRM           CCC    C    C         0.000      5.554    6.178    4.421
+ SRM           O1C    O    OC       -0.500      5.760    5.443    3.430
+ SRM           O2C    O    OC       -0.500      5.396    5.717    5.573
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SRM      O4D    n/a    CED    START
+ SRM      CED    O4D    CDD    .
+ SRM      O3D    CED    .      .
+ SRM      CDD    CED    C3D    .
+ SRM      HDD1   CDD    .      .
+ SRM      HDD2   CDD    .      .
+ SRM      C3D    CDD    C4D    .
+ SRM      C2D    C3D    C1D    .
+ SRM      CAD    C2D    CBD    .
+ SRM      HAD1   CAD    .      .
+ SRM      HAD2   CAD    .      .
+ SRM      CBD    CAD    CCD    .
+ SRM      HBD1   CBD    .      .
+ SRM      HBD2   CBD    .      .
+ SRM      CCD    CBD    O1D    .
+ SRM      O2D    CCD    .      .
+ SRM      O1D    CCD    .      .
+ SRM      C1D    C2D    CHD    .
+ SRM      CHD    C1D    HHD    .
+ SRM      HHD    CHD    .      .
+ SRM      C4D    C3D    ND     .
+ SRM      CHA    C4D    HHA    .
+ SRM      HHA    CHA    .      .
+ SRM      ND     C4D    FE     .
+ SRM      FE     ND     NC     .
+ SRM      NA     FE     C4A    .
+ SRM      C4A    NA     C3A    .
+ SRM      C3A    C4A    C2A    .
+ SRM      CAA    C3A    CBA    .
+ SRM      HAA1   CAA    .      .
+ SRM      HAA2   CAA    .      .
+ SRM      CBA    CAA    CCA    .
+ SRM      HBA1   CBA    .      .
+ SRM      HBA2   CBA    .      .
+ SRM      CCA    CBA    O1A    .
+ SRM      O2A    CCA    .      .
+ SRM      O1A    CCA    .      .
+ SRM      C2A    C3A    C1A    .
+ SRM      CDA    C2A    CEA    .
+ SRM      HDA1   CDA    .      .
+ SRM      HDA2   CDA    .      .
+ SRM      CEA    CDA    O3A    .
+ SRM      O4A    CEA    .      .
+ SRM      O3A    CEA    .      .
+ SRM      CMA    C2A    HMA1   .
+ SRM      HMA3   CMA    .      .
+ SRM      HMA2   CMA    .      .
+ SRM      HMA1   CMA    .      .
+ SRM      C1A    C2A    .      .
+ SRM      NB     FE     C4B    .
+ SRM      C4B    NB     C3B    .
+ SRM      C3B    C4B    C2B    .
+ SRM      CAB    C3B    CBB    .
+ SRM      HAB1   CAB    .      .
+ SRM      HAB2   CAB    .      .
+ SRM      CBB    CAB    CCB    .
+ SRM      HBB1   CBB    .      .
+ SRM      HBB2   CBB    .      .
+ SRM      CCB    CBB    O1B    .
+ SRM      O2B    CCB    .      .
+ SRM      O1B    CCB    .      .
+ SRM      C2B    C3B    C1B    .
+ SRM      CMB    C2B    HMB1   .
+ SRM      HMB3   CMB    .      .
+ SRM      HMB2   CMB    .      .
+ SRM      HMB1   CMB    .      .
+ SRM      CDB    C2B    CEB    .
+ SRM      HDB1   CDB    .      .
+ SRM      HDB2   CDB    .      .
+ SRM      CEB    CDB    O3B    .
+ SRM      O4B    CEB    .      .
+ SRM      O3B    CEB    .      .
+ SRM      C1B    C2B    CHB    .
+ SRM      CHB    C1B    HHB    .
+ SRM      HHB    CHB    .      .
+ SRM      NC     FE     C4C    .
+ SRM      C4C    NC     C3C    .
+ SRM      C3C    C4C    CAC    .
+ SRM      C2C    C3C    C1C    .
+ SRM      CDC    C2C    CEC    .
+ SRM      HCD1   CDC    .      .
+ SRM      HCD2   CDC    .      .
+ SRM      CEC    CDC    O3C    .
+ SRM      O4C    CEC    .      .
+ SRM      O3C    CEC    .      .
+ SRM      C1C    C2C    CHC    .
+ SRM      CHC    C1C    HHC    .
+ SRM      HHC    CHC    .      .
+ SRM      CAC    C3C    CBC    .
+ SRM      HAC1   CAC    .      .
+ SRM      HAC2   CAC    .      .
+ SRM      CBC    CAC    CCC    .
+ SRM      HBC1   CBC    .      .
+ SRM      HBC2   CBC    .      .
+ SRM      CCC    CBC    O2C    .
+ SRM      O1C    CCC    .      .
+ SRM      O2C    CCC    .      END
+ SRM      CHA    C1A    .    ADD
+ SRM      CHB    C4A    .    ADD
+ SRM      CHC    C4B    .    ADD
+ SRM      CHD    C4C    .    ADD
+ SRM      NA     C1A    .    ADD
+ SRM      NB     C1B    .    ADD
+ SRM      NC     C1C    .    ADD
+ SRM      ND     C1D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SRM       NA        FE        single    2.090     0.020     2.090     0.020     
+SRM       NB        FE        single    2.090     0.020     2.090     0.020     
+SRM       NC        FE        single    2.090     0.020     2.090     0.020     
+SRM       FE        ND        single    2.090     0.020     2.090     0.020     
+SRM       CHA       C1A       double    1.483     0.020     1.483     0.020     
+SRM       CHA       C4D       single    1.483     0.020     1.483     0.020     
+SRM       HHA       CHA       single    1.082     0.013     0.975     0.010     
+SRM       CHB       C4A       single    1.483     0.020     1.483     0.020     
+SRM       CHB       C1B       double    1.483     0.020     1.483     0.020     
+SRM       HHB       CHB       single    1.082     0.013     0.975     0.010     
+SRM       CHC       C4B       single    1.483     0.020     1.483     0.020     
+SRM       CHC       C1C       double    1.483     0.020     1.483     0.020     
+SRM       HHC       CHC       single    1.082     0.013     0.975     0.010     
+SRM       CHD       C4C       double    1.483     0.020     1.483     0.020     
+SRM       CHD       C1D       single    1.483     0.020     1.483     0.020     
+SRM       HHD       CHD       single    1.082     0.013     0.975     0.010     
+SRM       NA        C1A       single    1.337     0.020     1.337     0.020     
+SRM       C4A       NA        single    1.337     0.020     1.337     0.020     
+SRM       C1A       C2A       single    1.500     0.020     1.500     0.020     
+SRM       CMA       C2A       single    1.524     0.020     1.524     0.020     
+SRM       CDA       C2A       single    1.524     0.020     1.524     0.020     
+SRM       C2A       C3A       single    1.500     0.020     1.500     0.020     
+SRM       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+SRM       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+SRM       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+SRM       CEA       CDA       single    1.510     0.020     1.510     0.020     
+SRM       HDA1      CDA       single    1.089     0.010     0.989     0.005     
+SRM       HDA2      CDA       single    1.089     0.010     0.989     0.005     
+SRM       O3A       CEA       deloc     1.250     0.020     1.250     0.020     
+SRM       O4A       CEA       deloc     1.250     0.020     1.250     0.020     
+SRM       CAA       C3A       single    1.510     0.020     1.510     0.020     
+SRM       C3A       C4A       double    1.490     0.020     1.490     0.020     
+SRM       CBA       CAA       single    1.524     0.020     1.524     0.020     
+SRM       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+SRM       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+SRM       CCA       CBA       single    1.510     0.020     1.510     0.020     
+SRM       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+SRM       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+SRM       O1A       CCA       deloc     1.250     0.020     1.250     0.020     
+SRM       O2A       CCA       deloc     1.250     0.020     1.250     0.020     
+SRM       NB        C1B       single    1.337     0.020     1.337     0.020     
+SRM       C4B       NB        single    1.337     0.020     1.337     0.020     
+SRM       C1B       C2B       single    1.500     0.020     1.500     0.020     
+SRM       CMB       C2B       single    1.524     0.020     1.524     0.020     
+SRM       CDB       C2B       single    1.524     0.020     1.524     0.020     
+SRM       C2B       C3B       single    1.500     0.020     1.500     0.020     
+SRM       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+SRM       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+SRM       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+SRM       CEB       CDB       single    1.510     0.020     1.510     0.020     
+SRM       HDB1      CDB       single    1.089     0.010     0.989     0.005     
+SRM       HDB2      CDB       single    1.089     0.010     0.989     0.005     
+SRM       O3B       CEB       deloc     1.250     0.020     1.250     0.020     
+SRM       O4B       CEB       deloc     1.250     0.020     1.250     0.020     
+SRM       CAB       C3B       single    1.510     0.020     1.510     0.020     
+SRM       C3B       C4B       double    1.490     0.020     1.490     0.020     
+SRM       CBB       CAB       single    1.524     0.020     1.524     0.020     
+SRM       HAB1      CAB       single    1.089     0.010     0.989     0.005     
+SRM       HAB2      CAB       single    1.089     0.010     0.989     0.005     
+SRM       CCB       CBB       single    1.510     0.020     1.510     0.020     
+SRM       HBB1      CBB       single    1.089     0.010     0.989     0.005     
+SRM       HBB2      CBB       single    1.089     0.010     0.989     0.005     
+SRM       O1B       CCB       deloc     1.250     0.020     1.250     0.020     
+SRM       O2B       CCB       deloc     1.250     0.020     1.250     0.020     
+SRM       NC        C1C       single    1.337     0.020     1.337     0.020     
+SRM       C4C       NC        single    1.337     0.020     1.337     0.020     
+SRM       C1C       C2C       single    1.490     0.020     1.490     0.020     
+SRM       CDC       C2C       single    1.510     0.020     1.510     0.020     
+SRM       C2C       C3C       double    1.490     0.020     1.490     0.020     
+SRM       CEC       CDC       single    1.510     0.020     1.510     0.020     
+SRM       HCD1      CDC       single    1.089     0.010     0.989     0.005     
+SRM       HCD2      CDC       single    1.089     0.010     0.989     0.005     
+SRM       O3C       CEC       deloc     1.250     0.020     1.250     0.020     
+SRM       O4C       CEC       deloc     1.250     0.020     1.250     0.020     
+SRM       CAC       C3C       single    1.510     0.020     1.510     0.020     
+SRM       C3C       C4C       single    1.490     0.020     1.490     0.020     
+SRM       CBC       CAC       single    1.524     0.020     1.524     0.020     
+SRM       HAC1      CAC       single    1.089     0.010     0.989     0.005     
+SRM       HAC2      CAC       single    1.089     0.010     0.989     0.005     
+SRM       CCC       CBC       single    1.510     0.020     1.510     0.020     
+SRM       HBC1      CBC       single    1.089     0.010     0.989     0.005     
+SRM       HBC2      CBC       single    1.089     0.010     0.989     0.005     
+SRM       O1C       CCC       deloc     1.250     0.020     1.250     0.020     
+SRM       O2C       CCC       deloc     1.250     0.020     1.250     0.020     
+SRM       ND        C1D       single    1.337     0.020     1.337     0.020     
+SRM       ND        C4D       single    1.337     0.020     1.337     0.020     
+SRM       C1D       C2D       double    1.490     0.020     1.490     0.020     
+SRM       CAD       C2D       single    1.510     0.020     1.510     0.020     
+SRM       C2D       C3D       single    1.490     0.020     1.490     0.020     
+SRM       CBD       CAD       single    1.524     0.020     1.524     0.020     
+SRM       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+SRM       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+SRM       CCD       CBD       single    1.510     0.020     1.510     0.020     
+SRM       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+SRM       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+SRM       O1D       CCD       deloc     1.250     0.020     1.250     0.020     
+SRM       O2D       CCD       deloc     1.250     0.020     1.250     0.020     
+SRM       C3D       CDD       single    1.510     0.020     1.510     0.020     
+SRM       C4D       C3D       double    1.490     0.020     1.490     0.020     
+SRM       CDD       CED       single    1.510     0.020     1.510     0.020     
+SRM       HDD1      CDD       single    1.089     0.010     0.989     0.005     
+SRM       HDD2      CDD       single    1.089     0.010     0.989     0.005     
+SRM       O3D       CED       deloc     1.250     0.020     1.250     0.020     
+SRM       CED       O4D       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SRM      O4D    CED    O3D     123.000    3.000
+ SRM      O4D    CED    CDD     118.500    3.000
+ SRM      O3D    CED    CDD     118.500    3.000
+ SRM      CED    CDD    HDD1    109.470    3.000
+ SRM      CED    CDD    HDD2    109.470    3.000
+ SRM      CED    CDD    C3D     109.500    3.000
+ SRM      HDD1   CDD    HDD2    107.900    3.000
+ SRM      HDD1   CDD    C3D     109.470    3.000
+ SRM      HDD2   CDD    C3D     109.470    3.000
+ SRM      CDD    C3D    C2D     126.000    3.000
+ SRM      CDD    C3D    C4D     126.000    3.000
+ SRM      C2D    C3D    C4D     108.000    3.000
+ SRM      C3D    C2D    CAD     126.000    3.000
+ SRM      C3D    C2D    C1D     108.000    3.000
+ SRM      CAD    C2D    C1D     126.000    3.000
+ SRM      C2D    CAD    HAD1    109.470    3.000
+ SRM      C2D    CAD    HAD2    109.470    3.000
+ SRM      C2D    CAD    CBD     109.470    3.000
+ SRM      HAD1   CAD    HAD2    107.900    3.000
+ SRM      HAD1   CAD    CBD     109.470    3.000
+ SRM      HAD2   CAD    CBD     109.470    3.000
+ SRM      CAD    CBD    HBD1    109.470    3.000
+ SRM      CAD    CBD    HBD2    109.470    3.000
+ SRM      CAD    CBD    CCD     109.470    3.000
+ SRM      HBD1   CBD    HBD2    107.900    3.000
+ SRM      HBD1   CBD    CCD     109.470    3.000
+ SRM      HBD2   CBD    CCD     109.470    3.000
+ SRM      CBD    CCD    O2D     118.500    3.000
+ SRM      CBD    CCD    O1D     118.500    3.000
+ SRM      O2D    CCD    O1D     123.000    3.000
+ SRM      C2D    C1D    CHD     117.000    3.000
+ SRM      C2D    C1D    ND      108.000    3.000
+ SRM      CHD    C1D    ND      108.000    3.000
+ SRM      C1D    CHD    HHD     120.000    3.000
+ SRM      C1D    CHD    C4C     120.000    3.000
+ SRM      HHD    CHD    C4C     120.000    3.000
+ SRM      C3D    C4D    CHA     117.000    3.000
+ SRM      C3D    C4D    ND      108.000    3.000
+ SRM      CHA    C4D    ND      108.000    3.000
+ SRM      C4D    CHA    HHA     120.000    3.000
+ SRM      C4D    CHA    C1A     120.000    3.000
+ SRM      HHA    CHA    C1A     120.000    3.000
+ SRM      C4D    ND     FE      126.000    3.000
+ SRM      C4D    ND     C1D     108.000    3.000
+ SRM      FE     ND     C1D     126.000    3.000
+ SRM      ND     FE     NA       90.000    3.000
+ SRM      ND     FE     NB      180.000    3.000
+ SRM      ND     FE     NC       90.000    3.000
+ SRM      NA     FE     NB       90.000    3.000
+ SRM      NA     FE     NC      180.000    3.000
+ SRM      NB     FE     NC       90.000    3.000
+ SRM      FE     NA     C4A     126.000    3.000
+ SRM      FE     NA     C1A     126.000    3.000
+ SRM      C4A    NA     C1A     108.000    3.000
+ SRM      NA     C4A    C3A     108.000    3.000
+ SRM      NA     C4A    CHB     108.000    3.000
+ SRM      C3A    C4A    CHB     117.000    3.000
+ SRM      C4A    C3A    CAA     126.000    3.000
+ SRM      C4A    C3A    C2A     126.000    3.000
+ SRM      CAA    C3A    C2A     108.000    3.000
+ SRM      C3A    CAA    HAA1    109.470    3.000
+ SRM      C3A    CAA    HAA2    109.470    3.000
+ SRM      C3A    CAA    CBA     109.470    3.000
+ SRM      HAA1   CAA    HAA2    107.900    3.000
+ SRM      HAA1   CAA    CBA     109.470    3.000
+ SRM      HAA2   CAA    CBA     109.470    3.000
+ SRM      CAA    CBA    HBA1    109.470    3.000
+ SRM      CAA    CBA    HBA2    109.470    3.000
+ SRM      CAA    CBA    CCA     109.470    3.000
+ SRM      HBA1   CBA    HBA2    107.900    3.000
+ SRM      HBA1   CBA    CCA     109.470    3.000
+ SRM      HBA2   CBA    CCA     109.470    3.000
+ SRM      CBA    CCA    O2A     118.500    3.000
+ SRM      CBA    CCA    O1A     118.500    3.000
+ SRM      O2A    CCA    O1A     123.000    3.000
+ SRM      C3A    C2A    CDA     109.470    3.000
+ SRM      C3A    C2A    CMA     109.470    3.000
+ SRM      C3A    C2A    C1A     109.500    3.000
+ SRM      CDA    C2A    CMA     111.000    3.000
+ SRM      CDA    C2A    C1A     109.470    3.000
+ SRM      CMA    C2A    C1A     109.470    3.000
+ SRM      C2A    CDA    HDA1    109.470    3.000
+ SRM      C2A    CDA    HDA2    109.470    3.000
+ SRM      C2A    CDA    CEA     109.470    3.000
+ SRM      HDA1   CDA    HDA2    107.900    3.000
+ SRM      HDA1   CDA    CEA     109.470    3.000
+ SRM      HDA2   CDA    CEA     109.470    3.000
+ SRM      CDA    CEA    O4A     118.500    3.000
+ SRM      CDA    CEA    O3A     118.500    3.000
+ SRM      O4A    CEA    O3A     123.000    3.000
+ SRM      C2A    CMA    HMA3    109.470    3.000
+ SRM      C2A    CMA    HMA2    109.470    3.000
+ SRM      C2A    CMA    HMA1    109.470    3.000
+ SRM      HMA3   CMA    HMA2    109.470    3.000
+ SRM      HMA3   CMA    HMA1    109.470    3.000
+ SRM      HMA2   CMA    HMA1    109.470    3.000
+ SRM      C2A    C1A    CHA     108.000    3.000
+ SRM      C2A    C1A    NA      108.000    3.000
+ SRM      CHA    C1A    NA      108.000    3.000
+ SRM      FE     NB     C4B     126.000    3.000
+ SRM      FE     NB     C1B     126.000    3.000
+ SRM      C4B    NB     C1B     108.000    3.000
+ SRM      NB     C4B    C3B     108.000    3.000
+ SRM      NB     C4B    CHC     108.000    3.000
+ SRM      C3B    C4B    CHC     117.000    3.000
+ SRM      C4B    C3B    CAB     126.000    3.000
+ SRM      C4B    C3B    C2B     126.000    3.000
+ SRM      CAB    C3B    C2B     108.000    3.000
+ SRM      C3B    CAB    HAB1    109.470    3.000
+ SRM      C3B    CAB    HAB2    109.470    3.000
+ SRM      C3B    CAB    CBB     109.470    3.000
+ SRM      HAB1   CAB    HAB2    107.900    3.000
+ SRM      HAB1   CAB    CBB     109.470    3.000
+ SRM      HAB2   CAB    CBB     109.470    3.000
+ SRM      CAB    CBB    HBB1    109.470    3.000
+ SRM      CAB    CBB    HBB2    109.470    3.000
+ SRM      CAB    CBB    CCB     109.470    3.000
+ SRM      HBB1   CBB    HBB2    107.900    3.000
+ SRM      HBB1   CBB    CCB     109.470    3.000
+ SRM      HBB2   CBB    CCB     109.470    3.000
+ SRM      CBB    CCB    O2B     118.500    3.000
+ SRM      CBB    CCB    O1B     118.500    3.000
+ SRM      O2B    CCB    O1B     123.000    3.000
+ SRM      C3B    C2B    CDB     109.470    3.000
+ SRM      C3B    C2B    CMB     109.470    3.000
+ SRM      C3B    C2B    C1B     109.500    3.000
+ SRM      CDB    C2B    CMB     111.000    3.000
+ SRM      CDB    C2B    C1B     109.470    3.000
+ SRM      CMB    C2B    C1B     109.470    3.000
+ SRM      C2B    CDB    HDB1    109.470    3.000
+ SRM      C2B    CDB    HDB2    109.470    3.000
+ SRM      C2B    CDB    CEB     109.470    3.000
+ SRM      HDB1   CDB    HDB2    107.900    3.000
+ SRM      HDB1   CDB    CEB     109.470    3.000
+ SRM      HDB2   CDB    CEB     109.470    3.000
+ SRM      CDB    CEB    O4B     118.500    3.000
+ SRM      CDB    CEB    O3B     118.500    3.000
+ SRM      O4B    CEB    O3B     123.000    3.000
+ SRM      C2B    CMB    HMB3    109.470    3.000
+ SRM      C2B    CMB    HMB2    109.470    3.000
+ SRM      C2B    CMB    HMB1    109.470    3.000
+ SRM      HMB3   CMB    HMB2    109.470    3.000
+ SRM      HMB3   CMB    HMB1    109.470    3.000
+ SRM      HMB2   CMB    HMB1    109.470    3.000
+ SRM      C2B    C1B    CHB     108.000    3.000
+ SRM      C2B    C1B    NB      108.000    3.000
+ SRM      CHB    C1B    NB      108.000    3.000
+ SRM      C1B    CHB    HHB     120.000    3.000
+ SRM      C1B    CHB    C4A     120.000    3.000
+ SRM      HHB    CHB    C4A     120.000    3.000
+ SRM      FE     NC     C4C     126.000    3.000
+ SRM      FE     NC     C1C     126.000    3.000
+ SRM      C4C    NC     C1C     108.000    3.000
+ SRM      NC     C4C    C3C     108.000    3.000
+ SRM      NC     C4C    CHD     108.000    3.000
+ SRM      C3C    C4C    CHD     117.000    3.000
+ SRM      C4C    C3C    C2C     108.000    3.000
+ SRM      C4C    C3C    CAC     126.000    3.000
+ SRM      C2C    C3C    CAC     126.000    3.000
+ SRM      C3C    C2C    CDC     126.000    3.000
+ SRM      C3C    C2C    C1C     108.000    3.000
+ SRM      CDC    C2C    C1C     126.000    3.000
+ SRM      C2C    CDC    HCD1    109.470    3.000
+ SRM      C2C    CDC    HCD2    109.470    3.000
+ SRM      C2C    CDC    CEC     109.500    3.000
+ SRM      HCD1   CDC    HCD2    107.900    3.000
+ SRM      HCD1   CDC    CEC     109.470    3.000
+ SRM      HCD2   CDC    CEC     109.470    3.000
+ SRM      CDC    CEC    O4C     118.500    3.000
+ SRM      CDC    CEC    O3C     118.500    3.000
+ SRM      O4C    CEC    O3C     123.000    3.000
+ SRM      C2C    C1C    CHC     117.000    3.000
+ SRM      C2C    C1C    NC      108.000    3.000
+ SRM      CHC    C1C    NC      108.000    3.000
+ SRM      C1C    CHC    HHC     120.000    3.000
+ SRM      C1C    CHC    C4B     120.000    3.000
+ SRM      HHC    CHC    C4B     120.000    3.000
+ SRM      C3C    CAC    HAC1    109.470    3.000
+ SRM      C3C    CAC    HAC2    109.470    3.000
+ SRM      C3C    CAC    CBC     109.470    3.000
+ SRM      HAC1   CAC    HAC2    107.900    3.000
+ SRM      HAC1   CAC    CBC     109.470    3.000
+ SRM      HAC2   CAC    CBC     109.470    3.000
+ SRM      CAC    CBC    HBC1    109.470    3.000
+ SRM      CAC    CBC    HBC2    109.470    3.000
+ SRM      CAC    CBC    CCC     109.470    3.000
+ SRM      HBC1   CBC    HBC2    107.900    3.000
+ SRM      HBC1   CBC    CCC     109.470    3.000
+ SRM      HBC2   CBC    CCC     109.470    3.000
+ SRM      CBC    CCC    O1C     118.500    3.000
+ SRM      CBC    CCC    O2C     118.500    3.000
+ SRM      O1C    CCC    O2C     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SRM      var_1    O4D    CED    CDD    C3D      158.942   20.000   3
+ SRM      var_2    CED    CDD    C3D    C4D      100.258   20.000   2
+ SRM      CONST_1  CDD    C3D    C2D    C1D      180.000    0.000   0
+ SRM      var_3    C3D    C2D    CAD    CBD       95.043   20.000   2
+ SRM      var_4    C2D    CAD    CBD    CCD     -174.811   20.000   3
+ SRM      var_5    CAD    CBD    CCD    O1D     -142.076   20.000   3
+ SRM      CONST_2  C3D    C2D    C1D    CHD      180.000    0.000   0
+ SRM      var_6    C2D    C1D    CHD    C4C      180.000   20.000   1
+ SRM      var_7    C1D    CHD    C4C    NC         0.000   20.000   1
+ SRM      CONST_3  CDD    C3D    C4D    ND       180.000    0.000   0
+ SRM      var_8    C3D    C4D    CHA    C1A      150.000   20.000   1
+ SRM      var_9    C4D    CHA    C1A    C2A      180.000   20.000   1
+ SRM      CONST_4  C3D    C4D    ND     FE       180.000    0.000   0
+ SRM      CONST_5  C4D    ND     C1D    C2D        0.000    0.000   0
+ SRM      var_10   C4D    ND     FE     NA         0.000   20.000   1
+ SRM      var_11   C1A    NA     FE     ND         0.000   20.000   1
+ SRM      CONST_6  FE     NA     C1A    C2A      180.000    0.000   0
+ SRM      CONST_7  FE     NA     C4A    C3A      180.000    0.000   0
+ SRM      CONST_8  NA     C4A    C3A    C2A      -30.000    0.000   0
+ SRM      var_12   C4A    C3A    CAA    CBA      -94.099   20.000   2
+ SRM      var_13   C3A    CAA    CBA    CCA      175.744   20.000   3
+ SRM      var_14   CAA    CBA    CCA    O1A      108.637   20.000   3
+ SRM      CONST_9  C4A    C3A    C2A    C1A       30.000    0.000   0
+ SRM      var_15   C3A    C2A    CDA    CEA      156.580   20.000   1
+ SRM      var_16   C2A    CDA    CEA    O3A       57.865   20.000   3
+ SRM      var_17   C3A    C2A    CMA    HMA1     -71.939   20.000   1
+ SRM      CONST_10 C3A    C2A    C1A    CHA      150.000    0.000   0
+ SRM      var_18   C1B    NB     FE     NA         0.000   20.000   1
+ SRM      CONST_11 FE     NB     C1B    C2B      180.000    0.000   0
+ SRM      CONST_12 FE     NB     C4B    C3B      150.000    0.000   0
+ SRM      CONST_13 NB     C4B    C3B    C2B       30.000    0.000   0
+ SRM      var_19   C4B    C3B    CAB    CBB      -72.895   20.000   2
+ SRM      var_20   C3B    CAB    CBB    CCB      179.179   20.000   3
+ SRM      var_21   CAB    CBB    CCB    O1B       77.714   20.000   3
+ SRM      CONST_14 C4B    C3B    C2B    C1B      -30.000    0.000   0
+ SRM      var_22   C3B    C2B    CDB    CEB       84.408   20.000   1
+ SRM      var_23   C2B    CDB    CEB    O3B      132.237   20.000   3
+ SRM      var_24   C3B    C2B    CMB    HMB1     -66.625   20.000   1
+ SRM      CONST_15 C3B    C2B    C1B    CHB     -150.000    0.000   0
+ SRM      var_25   C2B    C1B    CHB    C4A      180.000   20.000   1
+ SRM      var_26   C1B    CHB    C4A    NA         0.000   20.000   1
+ SRM      var_27   C4C    NC     FE     ND         0.000   20.000   1
+ SRM      CONST_16 FE     NC     C1C    C2C      180.000    0.000   0
+ SRM      CONST_17 FE     NC     C4C    C3C      180.000    0.000   0
+ SRM      CONST_18 NC     C4C    C3C    CAC      180.000    0.000   0
+ SRM      CONST_19 C4C    C3C    C2C    C1C        0.000    0.000   0
+ SRM      var_28   C3C    C2C    CDC    CEC      103.768   20.000   2
+ SRM      var_29   C2C    CDC    CEC    O3C       -7.223   20.000   3
+ SRM      CONST_20 C3C    C2C    C1C    CHC      180.000    0.000   0
+ SRM      var_30   C2C    C1C    CHC    C4B     -150.000   20.000   1
+ SRM      var_31   C1C    CHC    C4B    NB         0.000   20.000   1
+ SRM      var_32   C4C    C3C    CAC    CBC      112.043   20.000   2
+ SRM      var_33   C3C    CAC    CBC    CCC      -85.158   20.000   3
+ SRM      var_34   CAC    CBC    CCC    O2C     -108.107   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SRM      chir_01  C2A    C1A    CMA    CDA       negativ
+ SRM      chir_02  C2B    C1B    CMB    CDB       negativ
+ SRM      chir_03  FE     ND     NB     NA        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SRM      plan-1    CHA       0.020
+ SRM      plan-1    C1A       0.020
+ SRM      plan-1    C4D       0.020
+ SRM      plan-1    HHA       0.020
+ SRM      plan-2    CHB       0.020
+ SRM      plan-2    C4A       0.020
+ SRM      plan-2    C1B       0.020
+ SRM      plan-2    HHB       0.020
+ SRM      plan-3    CHC       0.020
+ SRM      plan-3    C4B       0.020
+ SRM      plan-3    C1C       0.020
+ SRM      plan-3    HHC       0.020
+ SRM      plan-4    CHD       0.020
+ SRM      plan-4    C4C       0.020
+ SRM      plan-4    C1D       0.020
+ SRM      plan-4    HHD       0.020
+ SRM      plan-5    NA        0.020
+ SRM      plan-5    FE        0.020
+ SRM      plan-5    C1A       0.020
+ SRM      plan-5    C4A       0.020
+ SRM      plan-5    C2A       0.020
+ SRM      plan-5    C3A       0.020
+ SRM      plan-5    CHA       0.020
+ SRM      plan-5    CAA       0.020
+ SRM      plan-5    CHB       0.020
+ SRM      plan-5    HHA       0.020
+ SRM      plan-5    HHB       0.020
+ SRM      plan-6    CEA       0.020
+ SRM      plan-6    CDA       0.020
+ SRM      plan-6    O3A       0.020
+ SRM      plan-6    O4A       0.020
+ SRM      plan-7    CCA       0.020
+ SRM      plan-7    CBA       0.020
+ SRM      plan-7    O1A       0.020
+ SRM      plan-7    O2A       0.020
+ SRM      plan-8    NB        0.020
+ SRM      plan-8    FE        0.020
+ SRM      plan-8    C1B       0.020
+ SRM      plan-8    C4B       0.020
+ SRM      plan-8    C2B       0.020
+ SRM      plan-8    C3B       0.020
+ SRM      plan-8    CHB       0.020
+ SRM      plan-8    CAB       0.020
+ SRM      plan-8    CHC       0.020
+ SRM      plan-8    HHB       0.020
+ SRM      plan-8    HHC       0.020
+ SRM      plan-9    CEB       0.020
+ SRM      plan-9    CDB       0.020
+ SRM      plan-9    O3B       0.020
+ SRM      plan-9    O4B       0.020
+ SRM      plan-10   CCB       0.020
+ SRM      plan-10   CBB       0.020
+ SRM      plan-10   O1B       0.020
+ SRM      plan-10   O2B       0.020
+ SRM      plan-11   NC        0.020
+ SRM      plan-11   FE        0.020
+ SRM      plan-11   C1C       0.020
+ SRM      plan-11   C4C       0.020
+ SRM      plan-11   C2C       0.020
+ SRM      plan-11   C3C       0.020
+ SRM      plan-11   CHC       0.020
+ SRM      plan-11   CDC       0.020
+ SRM      plan-11   CAC       0.020
+ SRM      plan-11   CHD       0.020
+ SRM      plan-11   HHC       0.020
+ SRM      plan-11   HHD       0.020
+ SRM      plan-12   CEC       0.020
+ SRM      plan-12   CDC       0.020
+ SRM      plan-12   O3C       0.020
+ SRM      plan-12   O4C       0.020
+ SRM      plan-13   CCC       0.020
+ SRM      plan-13   CBC       0.020
+ SRM      plan-13   O1C       0.020
+ SRM      plan-13   O2C       0.020
+ SRM      plan-14   ND        0.020
+ SRM      plan-14   FE        0.020
+ SRM      plan-14   C1D       0.020
+ SRM      plan-14   C4D       0.020
+ SRM      plan-14   C2D       0.020
+ SRM      plan-14   C3D       0.020
+ SRM      plan-14   CHD       0.020
+ SRM      plan-14   CAD       0.020
+ SRM      plan-14   CDD       0.020
+ SRM      plan-14   CHA       0.020
+ SRM      plan-14   HHD       0.020
+ SRM      plan-14   HHA       0.020
+ SRM      plan-15   CCD       0.020
+ SRM      plan-15   CBD       0.020
+ SRM      plan-15   O1D       0.020
+ SRM      plan-15   O2D       0.020
+ SRM      plan-16   CED       0.020
+ SRM      plan-16   CDD       0.020
+ SRM      plan-16   O3D       0.020
+ SRM      plan-16   O4D       0.020
+# ------------------------------------------------------

@@ -1,0 +1,219 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B3U     B3U     2-amino-L-histidine    peptide     22     12     .     
+#
+data_comp_B3U
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+B3U     N       N       NT3     1       -2.942      0.728       0.608       
+B3U     CA      C       CH1     0       -1.607      0.553       -0.029      
+B3U     CB      C       CH2     0       -0.810      -0.546      0.699       
+B3U     CG      C       CR5     0       0.603       -0.703      0.248       
+B3U     CD2     C       CR15    0       1.240       -1.727      -0.384      
+B3U     NE2     N       NRD5    0       2.555       -1.399      -0.593      
+B3U     CE1     C       CR5     0       2.721       -0.178      -0.090      
+B3U     ND1     N       NR5     0       1.550       0.274       0.429       
+B3U     NT      N       NH2     0       3.854       0.533       -0.078      
+B3U     C       C       C       0       -1.779      0.230       -1.519      
+B3U     OXT     O       OC      -1      -1.265      1.020       -2.335      
+B3U     O       O       O       0       -2.422      -0.800      -1.808      
+B3U     H       H       H       0       -3.463      1.272       0.093       
+B3U     H2      H       H       0       -2.838      1.105       1.431       
+B3U     H3      H       H       0       -3.347      -0.083      0.696       
+B3U     HA      H       H       0       -1.116      1.403       0.057       
+B3U     HB      H       H       0       -1.274      -1.403      0.575       
+B3U     HBA     H       H       0       -0.809      -0.345      1.661       
+B3U     HD2     H       H       0       0.843       -2.542      -0.641      
+B3U     HND1    H       H       0       1.391       1.053       0.822       
+B3U     HNT     H       H       0       3.861       1.328       0.287       
+B3U     HNTA    H       H       0       4.578       0.198       -0.434      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B3U      N      n/a    CA     START
+ B3U      H      N      .      .
+ B3U      H2     N      .      .
+ B3U      H3     N      .      .
+ B3U      CA     N      C      .
+ B3U      HA     CA     .      .
+ B3U      CB     CA     CG     .
+ B3U      HB     CB     .      .
+ B3U      HBA    CB     .      .
+ B3U      CG     CB     ND1    .
+ B3U      ND1    CG     CE1    .
+ B3U      HND1   ND1    .      .
+ B3U      CE1    ND1    NE2    .
+ B3U      NT     CE1    HNT    .
+ B3U      HNTA   NT     .      .
+ B3U      HNT    NT     .      .
+ B3U      NE2    CE1    CD2    .
+ B3U      CD2    NE2    HD2    .
+ B3U      HD2    CD2    .      .
+ B3U      C      CA     OXT    .
+ B3U      O      C      .      .
+ B3U      OXT    C      .      END
+ B3U      CG     CD2    .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B3U       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+B3U       CA        CB        SINGLE    n         1.540     0.010     1.540     0.010     
+B3U       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+B3U       CB        CG        SINGLE    n         1.491     0.010     1.491     0.010     
+B3U       CG        CD2       DOUBLE    y         1.361     0.012     1.361     0.012     
+B3U       CG        ND1       SINGLE    y         1.373     0.010     1.373     0.010     
+B3U       CD2       NE2       SINGLE    y         1.371     0.014     1.371     0.014     
+B3U       NE2       CE1       DOUBLE    y         1.332     0.012     1.332     0.012     
+B3U       CE1       ND1       SINGLE    y         1.359     0.013     1.359     0.013     
+B3U       CE1       NT        SINGLE    n         1.338     0.012     1.338     0.012     
+B3U       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+B3U       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+B3U       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+B3U       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+B3U       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+B3U       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+B3U       CB        HB        SINGLE    n         1.089     0.010     0.982     0.011     
+B3U       CB        HBA       SINGLE    n         1.089     0.010     0.982     0.011     
+B3U       CD2       HD2       SINGLE    n         1.082     0.013     0.942     0.018     
+B3U       ND1       HND1      SINGLE    n         1.016     0.010     0.887     0.020     
+B3U       NT        HNT       SINGLE    n         1.016     0.010     0.874     0.019     
+B3U       NT        HNTA      SINGLE    n         1.016     0.010     0.874     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+B3U          CA           N           H     109.321    1.91
+B3U          CA           N          H2     109.321    1.91
+B3U          CA           N          H3     109.321    1.91
+B3U           H           N          H2     109.028    2.41
+B3U           H           N          H3     109.028    2.41
+B3U          H2           N          H3     109.028    2.41
+B3U           N          CA          CB     110.324    1.50
+B3U           N          CA           C     109.666    1.50
+B3U           N          CA          HA     108.030    1.50
+B3U          CB          CA           C     111.332    1.67
+B3U          CB          CA          HA     108.492    1.50
+B3U           C          CA          HA     108.922    1.50
+B3U          CA          CB          CG     114.435    1.50
+B3U          CA          CB          HB     108.290    1.50
+B3U          CA          CB         HBA     108.290    1.50
+B3U          CG          CB          HB     108.305    1.50
+B3U          CG          CB         HBA     108.305    1.50
+B3U          HB          CB         HBA     107.541    1.50
+B3U          CB          CG         CD2     131.655    1.50
+B3U          CB          CG         ND1     122.593    1.50
+B3U         CD2          CG         ND1     105.752    1.50
+B3U          CG         CD2         NE2     109.709    1.50
+B3U          CG         CD2         HD2     125.487    1.50
+B3U         NE2         CD2         HD2     124.804    1.50
+B3U         CD2         NE2         CE1     106.393    1.50
+B3U         NE2         CE1         ND1     110.123    1.50
+B3U         NE2         CE1          NT     126.578    1.50
+B3U         ND1         CE1          NT     123.299    1.50
+B3U          CG         ND1         CE1     108.023    2.04
+B3U          CG         ND1        HND1     123.988    1.79
+B3U         CE1         ND1        HND1     127.989    1.84
+B3U         CE1          NT         HNT     119.586    1.87
+B3U         CE1          NT        HNTA     119.586    1.87
+B3U         HNT          NT        HNTA     120.828    2.45
+B3U          CA           C         OXT     117.134    1.50
+B3U          CA           C           O     117.134    1.50
+B3U         OXT           C           O     125.731    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+B3U             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+B3U            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+B3U             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+B3U             sp2_sp3_8         CD2          CG          CB          CA     -90.000   10.00     6
+B3U       const_sp2_sp2_2         NE2         CD2          CG          CB     180.000   10.00     2
+B3U              const_15          CB          CG         ND1         CE1     180.000   10.00     2
+B3U       const_sp2_sp2_5          CG         CD2         NE2         CE1       0.000   10.00     2
+B3U       const_sp2_sp2_8          NT         CE1         NE2         CD2     180.000   10.00     2
+B3U              const_11          NT         CE1         ND1          CG     180.000   10.00     2
+B3U             sp2_sp2_3         NE2         CE1          NT         HNT       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+B3U    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+B3U    plan-1          CB   0.020
+B3U    plan-1         CD2   0.020
+B3U    plan-1         CE1   0.020
+B3U    plan-1          CG   0.020
+B3U    plan-1         HD2   0.020
+B3U    plan-1        HND1   0.020
+B3U    plan-1         ND1   0.020
+B3U    plan-1         NE2   0.020
+B3U    plan-1          NT   0.020
+B3U    plan-2         CE1   0.020
+B3U    plan-2         HNT   0.020
+B3U    plan-2        HNTA   0.020
+B3U    plan-2          NT   0.020
+B3U    plan-3           C   0.020
+B3U    plan-3          CA   0.020
+B3U    plan-3           O   0.020
+B3U    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+B3U SMILES           ACDLabs              12.01 "O=C(O)C(N)Cc1cnc(N)n1"
+B3U SMILES_CANONICAL CACTVS               3.370 "N[C@@H](Cc1[nH]c(N)nc1)C(O)=O"
+B3U SMILES           CACTVS               3.370 "N[CH](Cc1[nH]c(N)nc1)C(O)=O"
+B3U SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1c([nH]c(n1)N)C[C@@H](C(=O)O)N"
+B3U SMILES           "OpenEye OEToolkits" 1.7.0 "c1c([nH]c(n1)N)CC(C(=O)O)N"
+B3U InChI            InChI                1.03  "InChI=1S/C6H10N4O2/c7-4(5(11)12)1-3-2-9-6(8)10-3/h2,4H,1,7H2,(H,11,12)(H3,8,9,10)/t4-/m0/s1"
+B3U InChIKey         InChI                1.03  UYEGXSNFZXWSDV-BYPYZUCNSA-N
+B3U ?                acedrg               196         "dictionary generator"                  
+B3U ?                acedrg_database      11          "data source"                           
+B3U ?                rdkit                2017.03.2   "Chemoinformatics tool"
+B3U ?                refmac5              5.8.0222    "optimization tool"                     

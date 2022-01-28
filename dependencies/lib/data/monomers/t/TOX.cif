@@ -1,0 +1,262 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TOX      TOX '2-AMINO-3-(1-HYDROPEROXY-1H-INDOL-3-' non-polymer        30  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TOX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TOX           O2     O    OH1       0.000      0.000    0.000    0.000
+ TOX           HO2    H    H         0.000     -0.394   -0.245    0.867
+ TOX           O1     O    O2        0.000     -0.554   -0.489   -1.256
+ TOX           NE1    N    NR5       0.000     -1.395    0.448   -1.839
+ TOX           CD1    C    CR15      0.000     -0.991    1.412   -2.724
+ TOX           HD1    H    H         0.000      0.021    1.566   -3.078
+ TOX           CE2    C    CR56      0.000     -2.751    0.546   -1.617
+ TOX           CZ2    C    CR16      0.000     -3.591   -0.217   -0.799
+ TOX           HZ2    H    H         0.000     -3.204   -1.038   -0.208
+ TOX           CH2    C    CR16      0.000     -4.946    0.119   -0.771
+ TOX           HH2    H    H         0.000     -5.625   -0.453   -0.149
+ TOX           CZ3    C    CR16      0.000     -5.440    1.177   -1.531
+ TOX           HZ3    H    H         0.000     -6.495    1.418   -1.491
+ TOX           CE3    C    CR16      0.000     -4.589    1.933   -2.345
+ TOX           HE3    H    H         0.000     -4.979    2.754   -2.934
+ TOX           CD2    C    CR56      0.000     -3.217    1.612   -2.389
+ TOX           CG     C    CR5       0.000     -2.095    2.149   -3.083
+ TOX           CB     C    CH2       0.000     -2.105    3.290   -4.020
+ TOX           HB2    H    H         0.000     -3.078    3.288   -4.515
+ TOX           HB3    H    H         0.000     -1.322    3.104   -4.758
+ TOX           CA     C    CH1       0.000     -1.868    4.666   -3.347
+ TOX           HA     H    H         0.000     -2.645    4.816   -2.584
+ TOX           N      N    NH2       0.000     -1.978    5.729   -4.324
+ TOX           H2     H    H         0.000     -2.858    6.208   -4.451
+ TOX           H      H    H         0.000     -1.175    5.992   -4.877
+ TOX           C      C    CH2       0.000     -0.502    4.735   -2.662
+ TOX           HC1    H    H         0.000      0.284    4.548   -3.397
+ TOX           HC2    H    H         0.000     -0.451    3.978   -1.876
+ TOX           O      O    OH1       0.000     -0.323    6.026   -2.091
+ TOX           HO     H    H         0.000      0.569    6.094   -1.726
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TOX      O2     n/a    O1     START
+ TOX      HO2    O2     .      .
+ TOX      O1     O2     NE1    .
+ TOX      NE1    O1     CE2    .
+ TOX      CD1    NE1    HD1    .
+ TOX      HD1    CD1    .      .
+ TOX      CE2    NE1    CZ2    .
+ TOX      CZ2    CE2    CH2    .
+ TOX      HZ2    CZ2    .      .
+ TOX      CH2    CZ2    CZ3    .
+ TOX      HH2    CH2    .      .
+ TOX      CZ3    CH2    CE3    .
+ TOX      HZ3    CZ3    .      .
+ TOX      CE3    CZ3    CD2    .
+ TOX      HE3    CE3    .      .
+ TOX      CD2    CE3    CG     .
+ TOX      CG     CD2    CB     .
+ TOX      CB     CG     CA     .
+ TOX      HB2    CB     .      .
+ TOX      HB3    CB     .      .
+ TOX      CA     CB     C      .
+ TOX      HA     CA     .      .
+ TOX      N      CA     H      .
+ TOX      H2     N      .      .
+ TOX      H      N      .      .
+ TOX      C      CA     O      .
+ TOX      HC1    C      .      .
+ TOX      HC2    C      .      .
+ TOX      O      C      HO     .
+ TOX      HO     O      .      END
+ TOX      CG     CD1    .    ADD
+ TOX      CE2    CD2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TOX       N         CA        single    1.450     0.020     1.450     0.020     
+TOX       H         N         single    1.036     0.016     0.914     0.007     
+TOX       H2        N         single    1.036     0.016     0.914     0.007     
+TOX       C         CA        single    1.524     0.020     1.524     0.020     
+TOX       CA        CB        single    1.524     0.020     1.524     0.020     
+TOX       HA        CA        single    1.089     0.010     0.989     0.005     
+TOX       CB        CG        single    1.510     0.020     1.510     0.020     
+TOX       HB2       CB        single    1.089     0.010     0.989     0.005     
+TOX       HB3       CB        single    1.089     0.010     0.989     0.005     
+TOX       CG        CD1       double    1.387     0.020     1.387     0.020     
+TOX       CG        CD2       single    1.490     0.020     1.490     0.020     
+TOX       CD1       NE1       single    1.337     0.020     1.337     0.020     
+TOX       HD1       CD1       single    1.082     0.013     0.975     0.010     
+TOX       NE1       O1        single    1.335     0.020     1.335     0.020     
+TOX       CE2       NE1       single    1.337     0.020     1.337     0.020     
+TOX       CZ2       CE2       single    1.390     0.020     1.390     0.020     
+TOX       CE2       CD2       double    1.490     0.020     1.490     0.020     
+TOX       CD2       CE3       single    1.390     0.020     1.390     0.020     
+TOX       CE3       CZ3       double    1.390     0.020     1.390     0.020     
+TOX       HE3       CE3       single    1.082     0.013     0.975     0.010     
+TOX       CZ3       CH2       single    1.390     0.020     1.390     0.020     
+TOX       HZ3       CZ3       single    1.082     0.013     0.975     0.010     
+TOX       CH2       CZ2       double    1.390     0.020     1.390     0.020     
+TOX       HH2       CH2       single    1.082     0.013     0.975     0.010     
+TOX       HZ2       CZ2       single    1.082     0.013     0.975     0.010     
+TOX       O         C         single    1.432     0.020     1.432     0.020     
+TOX       HC1       C         single    1.089     0.010     0.989     0.005     
+TOX       HC2       C         single    1.089     0.010     0.989     0.005     
+TOX       HO        O         single    0.970     0.012     0.839     0.014     
+TOX       O1        O2        single    1.369     0.020     1.369     0.020     
+TOX       HO2       O2        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TOX      HO2    O2     O1      120.000    3.000
+ TOX      O2     O1     NE1     120.000    3.000
+ TOX      O1     NE1    CD1     108.000    3.000
+ TOX      O1     NE1    CE2     108.000    3.000
+ TOX      CD1    NE1    CE2     108.000    3.000
+ TOX      NE1    CD1    HD1     126.000    3.000
+ TOX      NE1    CD1    CG      108.000    3.000
+ TOX      HD1    CD1    CG      126.000    3.000
+ TOX      NE1    CE2    CZ2     132.000    3.000
+ TOX      NE1    CE2    CD2     108.000    3.000
+ TOX      CZ2    CE2    CD2     120.000    3.000
+ TOX      CE2    CZ2    HZ2     120.000    3.000
+ TOX      CE2    CZ2    CH2     120.000    3.000
+ TOX      HZ2    CZ2    CH2     120.000    3.000
+ TOX      CZ2    CH2    HH2     120.000    3.000
+ TOX      CZ2    CH2    CZ3     120.000    3.000
+ TOX      HH2    CH2    CZ3     120.000    3.000
+ TOX      CH2    CZ3    HZ3     120.000    3.000
+ TOX      CH2    CZ3    CE3     120.000    3.000
+ TOX      HZ3    CZ3    CE3     120.000    3.000
+ TOX      CZ3    CE3    HE3     120.000    3.000
+ TOX      CZ3    CE3    CD2     120.000    3.000
+ TOX      HE3    CE3    CD2     120.000    3.000
+ TOX      CE3    CD2    CG      126.000    3.000
+ TOX      CE3    CD2    CE2     120.000    3.000
+ TOX      CG     CD2    CE2     108.000    3.000
+ TOX      CD2    CG     CB      126.000    3.000
+ TOX      CD2    CG     CD1     108.000    3.000
+ TOX      CB     CG     CD1     126.000    3.000
+ TOX      CG     CB     HB2     109.470    3.000
+ TOX      CG     CB     HB3     109.470    3.000
+ TOX      CG     CB     CA      109.470    3.000
+ TOX      HB2    CB     HB3     107.900    3.000
+ TOX      HB2    CB     CA      109.470    3.000
+ TOX      HB3    CB     CA      109.470    3.000
+ TOX      CB     CA     HA      108.340    3.000
+ TOX      CB     CA     N       109.470    3.000
+ TOX      CB     CA     C       109.470    3.000
+ TOX      HA     CA     N       109.470    3.000
+ TOX      HA     CA     C       108.340    3.000
+ TOX      N      CA     C       109.470    3.000
+ TOX      CA     N      H2      120.000    3.000
+ TOX      CA     N      H       120.000    3.000
+ TOX      H2     N      H       120.000    3.000
+ TOX      CA     C      HC1     109.470    3.000
+ TOX      CA     C      HC2     109.470    3.000
+ TOX      CA     C      O       109.470    3.000
+ TOX      HC1    C      HC2     107.900    3.000
+ TOX      HC1    C      O       109.470    3.000
+ TOX      HC2    C      O       109.470    3.000
+ TOX      C      O      HO      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TOX      var_1    HO2    O2     O1     NE1       97.545   20.000   1
+ TOX      var_2    O2     O1     NE1    CE2      -90.029   20.000   1
+ TOX      CONST_1  O1     NE1    CD1    CG       180.000    0.000   0
+ TOX      CONST_2  O1     NE1    CE2    CZ2        0.000    0.000   0
+ TOX      CONST_3  NE1    CE2    CD2    CE3      180.000    0.000   0
+ TOX      CONST_4  NE1    CE2    CZ2    CH2      180.000    0.000   0
+ TOX      CONST_5  CE2    CZ2    CH2    CZ3        0.000    0.000   0
+ TOX      CONST_6  CZ2    CH2    CZ3    CE3        0.000    0.000   0
+ TOX      CONST_7  CH2    CZ3    CE3    CD2        0.000    0.000   0
+ TOX      CONST_8  CZ3    CE3    CD2    CG       180.000    0.000   0
+ TOX      CONST_9  CE3    CD2    CG     CB         0.000    0.000   0
+ TOX      CONST_10 CD2    CG     CD1    NE1        0.000    0.000   0
+ TOX      var_3    CD2    CG     CB     CA        89.977   20.000   2
+ TOX      var_4    CG     CB     CA     C         61.252   20.000   3
+ TOX      var_5    CB     CA     N      H        -85.833   20.000   1
+ TOX      var_6    CB     CA     C      O        178.570   20.000   3
+ TOX      var_7    CA     C      O      HO      -175.120   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TOX      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TOX      plan-1    N         0.020
+ TOX      plan-1    CA        0.020
+ TOX      plan-1    H         0.020
+ TOX      plan-1    H2        0.020
+ TOX      plan-2    CG        0.020
+ TOX      plan-2    CB        0.020
+ TOX      plan-2    CD1       0.020
+ TOX      plan-2    CD2       0.020
+ TOX      plan-2    NE1       0.020
+ TOX      plan-2    HD1       0.020
+ TOX      plan-2    CE2       0.020
+ TOX      plan-2    O1        0.020
+ TOX      plan-2    CZ2       0.020
+ TOX      plan-2    CE3       0.020
+ TOX      plan-2    CZ3       0.020
+ TOX      plan-2    CH2       0.020
+ TOX      plan-2    HE3       0.020
+ TOX      plan-2    HZ3       0.020
+ TOX      plan-2    HH2       0.020
+ TOX      plan-2    HZ2       0.020
+# ------------------------------------------------------

@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LXN     LXN     ALLOXAN     non-polymer     12     10     .     
+#
+data_comp_LXN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LXN     OAB     O       O       0       2.085       -1.623      0.030       
+LXN     CAH     C       CR6     0       1.129       -0.842      -0.000      
+LXN     CAJ     C       CR6     0       1.299       0.606       0.040       
+LXN     OAD     O       O       0       2.434       1.131       0.081       
+LXN     CAI     C       CR6     0       0.084       1.414       0.037       
+LXN     OAC     O       O       0       0.108       2.647       0.100       
+LXN     NAF     N       NR6     0       -1.142      0.766       -0.043      
+LXN     CAG     C       CR6     0       -1.301      -0.598      0.039       
+LXN     OAA     O       O       0       -2.403      -1.111      0.208       
+LXN     NAE     N       NR6     0       -0.159      -1.356      -0.076      
+LXN     HAF     H       H       0       -1.858      1.253       -0.153      
+LXN     HAE     H       H       0       -0.253      -2.214      -0.207      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LXN       OAB       CAH       DOUBLE    n         1.232     0.015     1.232     0.015     
+LXN       CAH       CAJ       SINGLE    n         1.442     0.020     1.442     0.020     
+LXN       CAH       NAE       SINGLE    n         1.382     0.010     1.382     0.010     
+LXN       CAJ       OAD       DOUBLE    n         1.246     0.020     1.246     0.020     
+LXN       CAJ       CAI       SINGLE    n         1.442     0.020     1.442     0.020     
+LXN       CAI       OAC       DOUBLE    n         1.232     0.015     1.232     0.015     
+LXN       CAI       NAF       SINGLE    n         1.382     0.010     1.382     0.010     
+LXN       NAF       CAG       SINGLE    n         1.365     0.011     1.365     0.011     
+LXN       CAG       OAA       DOUBLE    n         1.227     0.011     1.227     0.011     
+LXN       CAG       NAE       SINGLE    n         1.365     0.011     1.365     0.011     
+LXN       NAF       HAF       SINGLE    n         1.016     0.010     0.871     0.020     
+LXN       NAE       HAE       SINGLE    n         1.016     0.010     0.871     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LXN         OAB         CAH         CAJ     121.749    2.72
+LXN         OAB         CAH         NAE     118.958    1.50
+LXN         CAJ         CAH         NAE     119.293    1.50
+LXN         CAH         CAJ         OAD     120.593    2.72
+LXN         CAH         CAJ         CAI     118.814    1.50
+LXN         OAD         CAJ         CAI     120.593    2.72
+LXN         CAJ         CAI         OAC     121.749    2.72
+LXN         CAJ         CAI         NAF     119.293    1.50
+LXN         OAC         CAI         NAF     118.958    1.50
+LXN         CAI         NAF         CAG     123.555    1.50
+LXN         CAI         NAF         HAF     118.255    1.97
+LXN         CAG         NAF         HAF     118.190    1.91
+LXN         NAF         CAG         OAA     122.255    1.50
+LXN         NAF         CAG         NAE     115.489    1.50
+LXN         OAA         CAG         NAE     122.255    1.50
+LXN         CAH         NAE         CAG     123.555    1.50
+LXN         CAH         NAE         HAE     118.255    1.97
+LXN         CAG         NAE         HAE     118.190    1.91
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LXN             sp2_sp2_4         OAB         CAH         CAJ         OAD       0.000   10.00     2
+LXN            sp2_sp2_23         OAB         CAH         NAE         CAG     180.000   10.00     2
+LXN             sp2_sp2_8         OAC         CAI         CAJ         OAD       0.000   10.00     2
+LXN            sp2_sp2_11         OAC         CAI         NAF         CAG     180.000   10.00     2
+LXN            sp2_sp2_15         OAA         CAG         NAF         CAI     180.000   10.00     2
+LXN            sp2_sp2_19         OAA         CAG         NAE         CAH     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LXN    plan-1         CAH   0.020
+LXN    plan-1         CAJ   0.020
+LXN    plan-1         NAE   0.020
+LXN    plan-1         OAB   0.020
+LXN    plan-2         CAH   0.020
+LXN    plan-2         CAI   0.020
+LXN    plan-2         CAJ   0.020
+LXN    plan-2         OAD   0.020
+LXN    plan-3         CAI   0.020
+LXN    plan-3         CAJ   0.020
+LXN    plan-3         NAF   0.020
+LXN    plan-3         OAC   0.020
+LXN    plan-4         CAG   0.020
+LXN    plan-4         CAI   0.020
+LXN    plan-4         HAF   0.020
+LXN    plan-4         NAF   0.020
+LXN    plan-5         CAG   0.020
+LXN    plan-5         NAE   0.020
+LXN    plan-5         NAF   0.020
+LXN    plan-5         OAA   0.020
+LXN    plan-6         CAG   0.020
+LXN    plan-6         CAH   0.020
+LXN    plan-6         HAE   0.020
+LXN    plan-6         NAE   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LXN SMILES           ACDLabs              10.04 "O=C1C(=O)NC(=O)NC1=O"
+LXN SMILES_CANONICAL CACTVS               3.352 "O=C1NC(=O)C(=O)C(=O)N1"
+LXN SMILES           CACTVS               3.352 "O=C1NC(=O)C(=O)C(=O)N1"
+LXN SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "C1(=O)C(=O)NC(=O)NC1=O"
+LXN SMILES           "OpenEye OEToolkits" 1.6.1 "C1(=O)C(=O)NC(=O)NC1=O"
+LXN InChI            InChI                1.03  "InChI=1S/C4H2N2O4/c7-1-2(8)5-4(10)6-3(1)9/h(H2,5,6,8,9,10)"
+LXN InChIKey         InChI                1.03  HIMXGTXNXJYFGB-UHFFFAOYSA-N
+LXN ?                acedrg               190         "dictionary generator"                  
+LXN ?                acedrg_database      11          "data source"                           
+LXN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LXN ?                refmac5              5.8.0158    "optimization tool"                     

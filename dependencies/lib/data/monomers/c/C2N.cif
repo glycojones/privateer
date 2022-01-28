@@ -1,0 +1,134 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+C2N     C2N      3-chloro-D-alanine     "D-PEPTIDE LINKING"     13     7     .     
+#
+data_comp_C2N
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+C2N     CB      C       CH2     0       1.270       0.291       0.388       
+C2N     CA      C       CH1     0       -0.012      0.063       -0.381      
+C2N     C       C       C       0       -1.087      1.083       0.012       
+C2N     OXT     O       O       0       -1.530      1.022       1.176       
+C2N     O       O       OC      -1      -1.442      1.900       -0.860      
+C2N     N       N       NT3     1       -0.516      -1.317      -0.145      
+C2N     CL      CL      CL      0       2.011       1.855       -0.065      
+C2N     HB1     H       H       0       1.902       -0.434      0.198       
+C2N     HB2     H       H       0       1.081       0.289       1.350       
+C2N     HA      H       H       0       0.191       0.166       -1.340      
+C2N     H       H       H       0       -0.716      -1.428      0.737       
+C2N     H2      H       H       0       0.120       -1.925      -0.383      
+C2N     H3      H       H       0       -1.266      -1.463      -0.641      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+C2N       CB        CA        SINGLE    n         1.512     0.0135    1.512     0.0135    
+C2N       CA        C         SINGLE    n         1.533     0.0100    1.533     0.0100    
+C2N       C         OXT       DOUBLE    n         1.247     0.0187    1.247     0.0187    
+C2N       C         O         SINGLE    n         1.247     0.0187    1.247     0.0187    
+C2N       CA        N         SINGLE    n         1.488     0.0100    1.488     0.0100    
+C2N       CB        CL        SINGLE    n         1.789     0.0162    1.789     0.0162    
+C2N       CB        HB1       SINGLE    n         1.089     0.010     0.980     0.0200    
+C2N       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.0200    
+C2N       CA        HA        SINGLE    n         1.089     0.010     0.985     0.0200    
+C2N       N         H         SINGLE    n         1.036     0.016     0.911     0.0200    
+C2N       N         H2        SINGLE    n         1.036     0.016     0.911     0.0200    
+C2N       N         H3        SINGLE    n         1.036     0.016     0.911     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+C2N          CA          CB          CL     110.334    2.69
+C2N          CA          CB         HB1     109.550    1.50
+C2N          CA          CB         HB2     109.550    1.50
+C2N          CL          CB         HB1     109.148    1.62
+C2N          CL          CB         HB2     109.148    1.62
+C2N         HB1          CB         HB2     108.190    1.50
+C2N          CB          CA           C     110.920    1.69
+C2N          CB          CA           N     109.949    1.50
+C2N          CB          CA          HA     107.425    1.50
+C2N           C          CA           N     109.414    1.50
+C2N           C          CA          HA     108.600    1.50
+C2N           N          CA          HA     108.444    1.50
+C2N          CA           C         OXT     117.139    1.50
+C2N          CA           C           O     117.139    1.50
+C2N         OXT           C           O     125.721    1.50
+C2N          CA           N           H     109.853    1.85
+C2N          CA           N          H2     109.853    1.85
+C2N          CA           N          H3     109.853    1.85
+C2N           H           N          H2     109.028    2.41
+C2N           H           N          H3     109.028    2.41
+C2N          H2           N          H3     109.028    2.41
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+C2N             sp3_sp3_4           C          CA          CB          CL      60.000   10.00     3
+C2N             sp2_sp3_1         OXT           C          CA          CB       0.000   10.00     6
+C2N            sp3_sp3_13          CB          CA           N           H      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+C2N    chir_1    CA    N    CB    C    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+C2N    plan-1           C   0.020
+C2N    plan-1          CA   0.020
+C2N    plan-1           O   0.020
+C2N    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+C2N SMILES           ACDLabs              12.01 "ClCC(N)C(=O)O"
+C2N SMILES_CANONICAL CACTVS               3.370 "N[C@H](CCl)C(O)=O"
+C2N SMILES           CACTVS               3.370 "N[CH](CCl)C(O)=O"
+C2N SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "C([C@H](C(=O)O)N)Cl"
+C2N SMILES           "OpenEye OEToolkits" 1.7.2 "C(C(C(=O)O)N)Cl"
+C2N InChI            InChI                1.03  "InChI=1S/C3H6ClNO2/c4-1-2(5)3(6)7/h2H,1,5H2,(H,6,7)/t2-/m1/s1"
+C2N InChIKey         InChI                1.03  ASBJGPTTYPEMLP-UWTATZPHSA-N
+C2N ?                acedrg               212         "dictionary generator"                  
+C2N ?                acedrg_database      11          "data source"                           
+C2N ?                rdkit                2017.03.2   "Chemoinformatics tool"
+C2N ?                refmac5              5.8.0253    "optimization tool"                     

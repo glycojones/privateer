@@ -1,0 +1,226 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DTY     DTY     D-TYROSINE     peptide     24     13     .
+#
+data_comp_DTY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DTY     N       N       NT3     1       -2.117      -1.209      0.433
+DTY     CA      C       CH1     0       -2.012      -0.084      -0.535
+DTY     C       C       C       0       -3.405      0.504       -0.792
+DTY     O       O       O       0       -4.014      0.976       0.188
+DTY     CB      C       CH2     0       -1.051      0.992       -0.017
+DTY     CG      C       CR6     0       0.399       0.578       0.034
+DTY     CD1     C       CR16    0       1.120       0.355       -1.132
+DTY     CD2     C       CR16    0       1.057       0.404       1.245
+DTY     CE1     C       CR16    0       2.455       -0.028      -1.098
+DTY     CE2     C       CR16    0       2.391       0.022       1.297
+DTY     CZ      C       CR6     0       3.094       -0.195      0.121
+DTY     OH      O       OH1     0       4.405       -0.570      0.164
+DTY     OXT     O       OC      -1      -3.832      0.470       -1.963
+DTY     H       H       H       0       -1.328      -1.663      0.468
+DTY     H2      H       H       0       -2.774      -1.784      0.171
+DTY     H3      H       H       0       -2.314      -0.886      1.262
+DTY     HA      H       H       0       -1.659      -0.437      -1.391
+DTY     HB2     H       H       0       -1.339      1.255       0.882
+DTY     HB3     H       H       0       -1.131      1.779       -0.596
+DTY     HD1     H       H       0       0.695       0.466       -1.967
+DTY     HD2     H       H       0       0.589       0.549       2.051
+DTY     HE1     H       H       0       2.927       -0.174      -1.901
+DTY     HE2     H       H       0       2.820       -0.090      2.130
+DTY     HH      H       H       0       4.480       -1.334      0.549
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DTY      N      n/a    CA     START
+DTY      H      N      .      .
+DTY      H2     N      .      .
+DTY      H3     N      .      .
+DTY      CA     N      C      .
+DTY      HA     CA     .      .
+DTY      CB     CA     CG     .
+DTY      HB2    CB     .      .
+DTY      HB3    CB     .      .
+DTY      CG     CB     CD2    .
+DTY      CD2    CG     CE2    .
+DTY      HD2    CD2    .      .
+DTY      CE2    CD2    CZ     .
+DTY      HE2    CE2    .      .
+DTY      CZ     CE2    CE1    .
+DTY      OH     CZ     HH     .
+DTY      HH     OH     .      .
+DTY      CE1    CZ     CD1    .
+DTY      HE1    CE1    .      .
+DTY      CD1    CE1    HD1    .
+DTY      HD1    CD1    .      .
+DTY      C      CA     .      END
+DTY      O      C      .      .
+DTY      OXT    C      .      .
+DTY      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DTY       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+DTY       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DTY       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+DTY       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DTY       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DTY       CB        CG        SINGLE    n         1.508     0.010     1.508     0.010     
+DTY       CG        CD1       DOUBLE    y         1.385     0.011     1.385     0.011     
+DTY       CG        CD2       SINGLE    y         1.385     0.011     1.385     0.011     
+DTY       CD1       CE1       SINGLE    y         1.385     0.010     1.385     0.010     
+DTY       CD2       CE2       DOUBLE    y         1.385     0.010     1.385     0.010     
+DTY       CE1       CZ        DOUBLE    y         1.383     0.010     1.383     0.010     
+DTY       CE2       CZ        SINGLE    y         1.383     0.010     1.383     0.010     
+DTY       CZ        OH        SINGLE    n         1.365     0.012     1.365     0.012     
+DTY       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DTY       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DTY       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DTY       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+DTY       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+DTY       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+DTY       CD1       HD1       SINGLE    n         1.082     0.013     0.943     0.017     
+DTY       CD2       HD2       SINGLE    n         1.082     0.013     0.943     0.017     
+DTY       CE1       HE1       SINGLE    n         1.082     0.013     0.943     0.017     
+DTY       CE2       HE2       SINGLE    n         1.082     0.013     0.943     0.017     
+DTY       OH        HH        SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DTY          CA           N           H     109.646    1.54
+DTY          CA           N          H2     109.646    1.54
+DTY          CA           N          H3     109.646    1.54
+DTY           H           N          H2     109.028    2.41
+DTY           H           N          H3     109.028    2.41
+DTY          H2           N          H3     109.028    2.41
+DTY           N          CA           C     109.448    1.50
+DTY           N          CA          CB     110.494    1.50
+DTY           N          CA          HA     108.601    1.50
+DTY           C          CA          CB     111.331    2.53
+DTY           C          CA          HA     108.450    1.50
+DTY          CB          CA          HA     108.690    1.50
+DTY          CA           C           O     117.228    2.13
+DTY          CA           C         OXT     117.228    2.13
+DTY           O           C         OXT     125.543    1.50
+DTY          CA          CB          CG     114.745    1.55
+DTY          CA          CB         HB2     108.434    1.50
+DTY          CA          CB         HB3     108.434    1.50
+DTY          CG          CB         HB2     108.862    1.50
+DTY          CG          CB         HB3     108.862    1.50
+DTY         HB2          CB         HB3     107.782    1.50
+DTY          CB          CG         CD1     121.083    1.50
+DTY          CB          CG         CD2     121.083    1.50
+DTY         CD1          CG         CD2     117.834    1.50
+DTY          CG         CD1         CE1     121.472    1.50
+DTY          CG         CD1         HD1     119.317    1.50
+DTY         CE1         CD1         HD1     119.210    1.50
+DTY          CG         CD2         CE2     121.472    1.50
+DTY          CG         CD2         HD2     119.317    1.50
+DTY         CE2         CD2         HD2     119.210    1.50
+DTY         CD1         CE1          CZ     119.825    1.50
+DTY         CD1         CE1         HE1     120.168    1.50
+DTY          CZ         CE1         HE1     120.006    1.50
+DTY         CD2         CE2          CZ     119.825    1.50
+DTY         CD2         CE2         HE2     120.168    1.50
+DTY          CZ         CE2         HE2     120.006    1.50
+DTY         CE1          CZ         CE2     119.571    1.50
+DTY         CE1          CZ          OH     120.215    2.50
+DTY         CE2          CZ          OH     120.215    2.50
+DTY          CZ          OH          HH     110.017    2.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DTY             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+DTY             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DTY            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+DTY             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+DTY       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+DTY              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+DTY       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+DTY              const_17          CG         CD2         CE2          CZ       0.000   10.00     2
+DTY              const_10         CD1         CE1          CZ          OH     180.000   10.00     2
+DTY              const_14         CD2         CE2          CZ          OH     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DTY    chir_1    CA    N    C    CB    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DTY    plan-1          CB   0.020
+DTY    plan-1         CD1   0.020
+DTY    plan-1         CD2   0.020
+DTY    plan-1         CE1   0.020
+DTY    plan-1         CE2   0.020
+DTY    plan-1          CG   0.020
+DTY    plan-1          CZ   0.020
+DTY    plan-1         HD1   0.020
+DTY    plan-1         HD2   0.020
+DTY    plan-1         HE1   0.020
+DTY    plan-1         HE2   0.020
+DTY    plan-1          OH   0.020
+DTY    plan-2           C   0.020
+DTY    plan-2          CA   0.020
+DTY    plan-2           O   0.020
+DTY    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DTY SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc1ccc(O)cc1"
+DTY SMILES_CANONICAL CACTVS               3.341 "N[C@H](Cc1ccc(O)cc1)C(O)=O"
+DTY SMILES           CACTVS               3.341 "N[CH](Cc1ccc(O)cc1)C(O)=O"
+DTY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(ccc1C[C@H](C(=O)O)N)O"
+DTY SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(ccc1CC(C(=O)O)N)O"
+DTY InChI            InChI                1.03  "InChI=1S/C9H11NO3/c10-8(9(12)13)5-6-1-3-7(11)4-2-6/h1-4,8,11H,5,10H2,(H,12,13)/t8-/m1/s1"
+DTY InChIKey         InChI                1.03  OUYCCCASQSFEME-MRVPVSSYSA-N
+DTY ?                acedrg               196         "dictionary generator"
+DTY ?                acedrg_database      11          "data source"
+DTY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DTY ?                refmac5              5.8.0222    "optimization tool"

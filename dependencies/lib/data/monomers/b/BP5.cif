@@ -1,0 +1,271 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BP5      BP5 '3-(2,2'-BIPYRIDIN-5-YL)-L-ALANINE   ' non-polymer        30  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BP5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BP5           O2     O    OC       -0.500      0.000    0.000    0.000
+ BP5           C14    C    C         0.000     -0.914   -0.846    0.120
+ BP5           O1     O    OC       -0.500     -0.652   -2.066    0.027
+ BP5           C13    C    CH1       0.000     -2.329   -0.396    0.378
+ BP5           H13    H    H         0.000     -2.800   -1.070    1.107
+ BP5           N      N    NH2       0.000     -2.318    0.971    0.912
+ BP5           HN2    H    H         0.000     -2.741    1.728    0.388
+ BP5           HN1    H    H         0.000     -1.889    1.167    1.808
+ BP5           C12    C    CH2       0.000     -3.119   -0.427   -0.931
+ BP5           H121   H    H         0.000     -3.051   -1.423   -1.373
+ BP5           H122   H    H         0.000     -2.704    0.307   -1.624
+ BP5           C9     C    CR6       0.000     -4.563   -0.097   -0.653
+ BP5           C11    C    CR16      0.000     -5.464   -1.102   -0.351
+ BP5           H11    H    H         0.000     -5.124   -2.129   -0.311
+ BP5           N2     N    NRD6      0.000     -6.730   -0.826   -0.112
+ BP5           C6     C    CR6       0.000     -7.188    0.418   -0.139
+ BP5           C7     C    CR16      0.000     -6.335    1.480   -0.431
+ BP5           H7     H    H         0.000     -6.710    2.496   -0.453
+ BP5           C8     C    CR16      0.000     -5.001    1.220   -0.692
+ BP5           H8     H    H         0.000     -4.314    2.025   -0.922
+ BP5           C3     C    CR6       0.000     -8.621    0.681    0.143
+ BP5           N1     N    NRD6      0.000     -9.079    1.927    0.115
+ BP5           C4     C    CR16      0.000    -10.343    2.203    0.360
+ BP5           H4     H    H         0.000    -10.681    3.232    0.329
+ BP5           C2     C    CR16      0.000     -9.474   -0.380    0.434
+ BP5           H2     H    H         0.000     -9.099   -1.395    0.457
+ BP5           C1     C    CR16      0.000    -10.808   -0.119    0.696
+ BP5           H1     H    H         0.000    -11.495   -0.924    0.926
+ BP5           C5     C    CR16      0.000    -11.246    1.197    0.656
+ BP5           H5     H    H         0.000    -12.283    1.434    0.854
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BP5      O2     n/a    C14    START
+ BP5      C14    O2     C13    .
+ BP5      O1     C14    .      .
+ BP5      C13    C14    C12    .
+ BP5      H13    C13    .      .
+ BP5      N      C13    HN1    .
+ BP5      HN2    N      .      .
+ BP5      HN1    N      .      .
+ BP5      C12    C13    C9     .
+ BP5      H121   C12    .      .
+ BP5      H122   C12    .      .
+ BP5      C9     C12    C11    .
+ BP5      C11    C9     N2     .
+ BP5      H11    C11    .      .
+ BP5      N2     C11    C6     .
+ BP5      C6     N2     C3     .
+ BP5      C7     C6     C8     .
+ BP5      H7     C7     .      .
+ BP5      C8     C7     H8     .
+ BP5      H8     C8     .      .
+ BP5      C3     C6     C2     .
+ BP5      N1     C3     C4     .
+ BP5      C4     N1     H4     .
+ BP5      H4     C4     .      .
+ BP5      C2     C3     C1     .
+ BP5      H2     C2     .      .
+ BP5      C1     C2     C5     .
+ BP5      H1     C1     .      .
+ BP5      C5     C1     H5     .
+ BP5      H5     C5     .      END
+ BP5      C9     C8     .    ADD
+ BP5      C5     C4     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BP5       C9        C12       single    1.511     0.020     1.511     0.020     
+BP5       C9        C8        double    1.390     0.020     1.390     0.020     
+BP5       C11       C9        single    1.390     0.020     1.390     0.020     
+BP5       C8        C7        single    1.390     0.020     1.390     0.020     
+BP5       H8        C8        single    1.082     0.013     0.975     0.010     
+BP5       C7        C6        double    1.390     0.020     1.390     0.020     
+BP5       H7        C7        single    1.082     0.013     0.975     0.010     
+BP5       C6        N2        single    1.350     0.020     1.350     0.020     
+BP5       C3        C6        single    1.487     0.020     1.487     0.020     
+BP5       C5        C1        double    1.390     0.020     1.390     0.020     
+BP5       C5        C4        single    1.390     0.020     1.390     0.020     
+BP5       H5        C5        single    1.082     0.013     0.975     0.010     
+BP5       C4        N1        double    1.337     0.020     1.337     0.020     
+BP5       H4        C4        single    1.082     0.013     0.975     0.010     
+BP5       C2        C3        double    1.390     0.020     1.390     0.020     
+BP5       N1        C3        single    1.350     0.020     1.350     0.020     
+BP5       C1        C2        single    1.390     0.020     1.390     0.020     
+BP5       H2        C2        single    1.082     0.013     0.975     0.010     
+BP5       H1        C1        single    1.082     0.013     0.975     0.010     
+BP5       C12       C13       single    1.524     0.020     1.524     0.020     
+BP5       H121      C12       single    1.089     0.010     0.989     0.005     
+BP5       H122      C12       single    1.089     0.010     0.989     0.005     
+BP5       N2        C11       double    1.337     0.020     1.337     0.020     
+BP5       H11       C11       single    1.082     0.013     0.975     0.010     
+BP5       C13       C14       single    1.500     0.020     1.500     0.020     
+BP5       N         C13       single    1.450     0.020     1.450     0.020     
+BP5       H13       C13       single    1.089     0.010     0.989     0.005     
+BP5       C14       O2        deloc     1.250     0.020     1.250     0.020     
+BP5       O1        C14       deloc     1.250     0.020     1.250     0.020     
+BP5       HN1       N         single    1.036     0.016     0.914     0.007     
+BP5       HN2       N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BP5      O2     C14    O1      123.000    3.000
+ BP5      O2     C14    C13     118.500    3.000
+ BP5      O1     C14    C13     118.500    3.000
+ BP5      C14    C13    H13     108.810    3.000
+ BP5      C14    C13    N       109.470    3.000
+ BP5      C14    C13    C12     109.470    3.000
+ BP5      H13    C13    N       109.470    3.000
+ BP5      H13    C13    C12     108.340    3.000
+ BP5      N      C13    C12     109.470    3.000
+ BP5      C13    N      HN2     120.000    3.000
+ BP5      C13    N      HN1     120.000    3.000
+ BP5      HN2    N      HN1     120.000    3.000
+ BP5      C13    C12    H121    109.470    3.000
+ BP5      C13    C12    H122    109.470    3.000
+ BP5      C13    C12    C9      109.470    3.000
+ BP5      H121   C12    H122    107.900    3.000
+ BP5      H121   C12    C9      109.470    3.000
+ BP5      H122   C12    C9      109.470    3.000
+ BP5      C12    C9     C11     120.000    3.000
+ BP5      C12    C9     C8      120.000    3.000
+ BP5      C11    C9     C8      120.000    3.000
+ BP5      C9     C11    H11     120.000    3.000
+ BP5      C9     C11    N2      120.000    3.000
+ BP5      H11    C11    N2      120.000    3.000
+ BP5      C11    N2     C6      120.000    3.000
+ BP5      N2     C6     C7      120.000    3.000
+ BP5      N2     C6     C3      120.000    3.000
+ BP5      C7     C6     C3      120.000    3.000
+ BP5      C6     C7     H7      120.000    3.000
+ BP5      C6     C7     C8      120.000    3.000
+ BP5      H7     C7     C8      120.000    3.000
+ BP5      C7     C8     H8      120.000    3.000
+ BP5      C7     C8     C9      120.000    3.000
+ BP5      H8     C8     C9      120.000    3.000
+ BP5      C6     C3     N1      120.000    3.000
+ BP5      C6     C3     C2      120.000    3.000
+ BP5      N1     C3     C2      120.000    3.000
+ BP5      C3     N1     C4      120.000    3.000
+ BP5      N1     C4     H4      120.000    3.000
+ BP5      N1     C4     C5      120.000    3.000
+ BP5      H4     C4     C5      120.000    3.000
+ BP5      C3     C2     H2      120.000    3.000
+ BP5      C3     C2     C1      120.000    3.000
+ BP5      H2     C2     C1      120.000    3.000
+ BP5      C2     C1     H1      120.000    3.000
+ BP5      C2     C1     C5      120.000    3.000
+ BP5      H1     C1     C5      120.000    3.000
+ BP5      C1     C5     H5      120.000    3.000
+ BP5      C1     C5     C4      120.000    3.000
+ BP5      H5     C5     C4      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BP5      var_1    O2     C14    C13    C12      100.024   20.000   3
+ BP5      var_2    C14    C13    N      HN1      -63.921   20.000   1
+ BP5      var_3    C14    C13    C12    C9       174.964   20.000   3
+ BP5      var_4    C13    C12    C9     C11      -89.739   20.000   2
+ BP5      CONST_1  C12    C9     C8     C7       180.000    0.000   0
+ BP5      CONST_2  C12    C9     C11    N2       180.000    0.000   0
+ BP5      CONST_3  C9     C11    N2     C6         0.000    0.000   0
+ BP5      CONST_4  C11    N2     C6     C3       180.000    0.000   0
+ BP5      CONST_5  N2     C6     C7     C8         0.000    0.000   0
+ BP5      CONST_6  C6     C7     C8     C9         0.000    0.000   0
+ BP5      CONST_7  N2     C6     C3     C2         0.000    0.000   0
+ BP5      CONST_8  C6     C3     N1     C4       180.000    0.000   0
+ BP5      CONST_9  C3     N1     C4     C5         0.000    0.000   0
+ BP5      CONST_10 C6     C3     C2     C1       180.000    0.000   0
+ BP5      CONST_11 C3     C2     C1     C5         0.000    0.000   0
+ BP5      CONST_12 C2     C1     C5     C4         0.000    0.000   0
+ BP5      CONST_13 C1     C5     C4     N1         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BP5      chir_01  C13    C12    C14    N         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BP5      plan-1    C9        0.020
+ BP5      plan-1    C8        0.020
+ BP5      plan-1    C12       0.020
+ BP5      plan-1    C11       0.020
+ BP5      plan-1    C7        0.020
+ BP5      plan-1    C6        0.020
+ BP5      plan-1    N2        0.020
+ BP5      plan-1    H8        0.020
+ BP5      plan-1    H7        0.020
+ BP5      plan-1    C3        0.020
+ BP5      plan-1    H11       0.020
+ BP5      plan-2    C5        0.020
+ BP5      plan-2    C4        0.020
+ BP5      plan-2    C1        0.020
+ BP5      plan-2    H5        0.020
+ BP5      plan-2    C3        0.020
+ BP5      plan-2    C2        0.020
+ BP5      plan-2    N1        0.020
+ BP5      plan-2    H4        0.020
+ BP5      plan-2    C6        0.020
+ BP5      plan-2    H2        0.020
+ BP5      plan-2    H1        0.020
+ BP5      plan-3    C14       0.020
+ BP5      plan-3    C13       0.020
+ BP5      plan-3    O1        0.020
+ BP5      plan-3    O2        0.020
+ BP5      plan-4    N         0.020
+ BP5      plan-4    C13       0.020
+ BP5      plan-4    HN1       0.020
+ BP5      plan-4    HN2       0.020
+# ------------------------------------------------------

@@ -1,0 +1,115 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TTN     TTN      TARTRONATE     NON-POLYMER     10     8     .     
+#
+data_comp_TTN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TTN     C1      C       C       0       1.260       -0.222      0.108       
+TTN     C2      C       CH1     0       -0.135      0.359       -0.146      
+TTN     C3      C       C       0       -1.154      -0.753      -0.419      
+TTN     O1      O       O       0       2.078       -0.178      -0.829      
+TTN     O2      O       OC      -1      1.480       -0.701      1.236       
+TTN     O3      O       OH1     0       -0.554      1.171       0.945       
+TTN     O4      O       O       0       -1.708      -0.764      -1.535      
+TTN     O5      O       OC      -1      -1.359      -1.571      0.496       
+TTN     H2      H       H       0       -0.087      0.948       -0.953      
+TTN     HO3     H       H       0       -0.601      0.694       1.650       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TTN       C1        C2        SINGLE    n         1.526     0.020     1.526     0.020     
+TTN       C1        O1        DOUBLE    n         1.244     0.020     1.244     0.020     
+TTN       C1        O2        SINGLE    n         1.244     0.020     1.244     0.020     
+TTN       C2        C3        SINGLE    n         1.526     0.020     1.526     0.020     
+TTN       C2        O3        SINGLE    n         1.420     0.012     1.420     0.012     
+TTN       C3        O4        DOUBLE    n         1.244     0.020     1.244     0.020     
+TTN       C3        O5        SINGLE    n         1.244     0.020     1.244     0.020     
+TTN       C2        H2        SINGLE    n         1.089     0.010     0.989     0.005     
+TTN       O3        HO3       SINGLE    n         0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TTN          C2          C1          O1     117.233    1.50
+TTN          C2          C1          O2     117.233    1.50
+TTN          O1          C1          O2     125.534    1.50
+TTN          C1          C2          C3     111.575    3.00
+TTN          C1          C2          O3     110.459    1.64
+TTN          C1          C2          H2     108.456    1.50
+TTN          C3          C2          O3     110.459    1.64
+TTN          C3          C2          H2     108.456    1.50
+TTN          O3          C2          H2     108.586    2.82
+TTN          C2          C3          O4     117.233    1.50
+TTN          C2          C3          O5     117.233    1.50
+TTN          O4          C3          O5     125.534    1.50
+TTN          C2          O3         HO3     108.635    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TTN             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+TTN             sp2_sp3_8          O4          C3          C2          C1     120.000   10.00     6
+TTN             sp3_sp3_1          C1          C2          O3         HO3     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TTN    plan-1          C1   0.020
+TTN    plan-1          C2   0.020
+TTN    plan-1          O1   0.020
+TTN    plan-1          O2   0.020
+TTN    plan-2          C2   0.020
+TTN    plan-2          C3   0.020
+TTN    plan-2          O4   0.020
+TTN    plan-2          O5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TTN SMILES           ACDLabs              10.04 "[O-]C(=O)C(O)C([O-])=O"
+TTN SMILES_CANONICAL CACTVS               3.341 "OC(C([O-])=O)C([O-])=O"
+TTN SMILES           CACTVS               3.341 "OC(C([O-])=O)C([O-])=O"
+TTN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)[O-])(C(=O)[O-])O"
+TTN SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)[O-])(C(=O)[O-])O"
+TTN InChI            InChI                1.03  "InChI=1S/C3H4O5/c4-1(2(5)6)3(7)8/h1,4H,(H,5,6)(H,7,8)/p-2"
+TTN InChIKey         InChI                1.03  ROBFUDYVXSDBQM-UHFFFAOYSA-L
+TTN ?                acedrg               202         "dictionary generator"                  
+TTN ?                acedrg_database      11          "data source"                           
+TTN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TTN ?                refmac5              5.8.0189    "optimization tool"                     

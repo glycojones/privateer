@@ -1,0 +1,523 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DVT      DVT 'DECAVANADATE                        ' non-polymer        38  38 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DVT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DVT           O10    O    O        -1.000      0.000    0.000    0.000
+ DVT           V3     V    V        -1.000     -0.001   -1.561   -0.427
+ DVT           O18    O    O2        0.000     -1.571   -2.050    0.376
+ DVT           O2     O    O         4.000     -0.072   -3.650   -1.161
+ DVT           O3     O    O2        0.000      1.501   -2.184    0.403
+ DVT           V1     V    V        -1.000      1.553   -4.105    0.455
+ DVT           O5     O    O        -1.000      2.710   -4.451    1.497
+ DVT           O15    O    O2        0.000     -0.063   -4.282    1.417
+ DVT           O17    O    O         1.000     -1.276   -1.461   -2.035
+ DVT           V8     V    V        -1.000     -1.613   -3.303   -2.504
+ DVT           O20    O    O2        0.000     -2.697   -2.963   -3.776
+ DVT           O24    O    O         1.000     -1.307   -5.148   -3.009
+ DVT           V9     V    V        -1.000     -0.077   -5.822   -1.567
+ DVT           O26    O    O        -1.000     -0.088   -7.388   -1.909
+ DVT           O4     O    O2        0.000      1.456   -5.715   -0.571
+ DVT           O27    O    O2        0.000     -1.602   -5.623   -0.519
+ DVT           O23    O    O2        0.000     -2.714   -3.596   -1.257
+ DVT           V10    V    V        -1.000     -1.618   -3.977    0.455
+ DVT           O28    O    O        -1.000     -2.825   -4.245    1.483
+ DVT           O9     O    O         1.000      1.211   -1.498   -2.029
+ DVT           V2     V    V        -1.000      1.510   -3.356   -2.503
+ DVT           O1     O    O2        0.000      2.608   -3.661   -1.219
+ DVT           O16    O    O2        0.000     -0.040   -3.013   -3.840
+ DVT           O8     O    O         1.000      1.216   -5.190   -2.971
+ DVT           V4     V    V        -1.000     -0.020   -0.811   -3.478
+ DVT           O19    O    O2        0.000     -1.529   -0.929   -4.527
+ DVT           O12    O    O        -1.000     -0.003    0.783   -3.112
+ DVT           O7     O    O         4.000      2.600   -3.059   -3.750
+ DVT           V6     V    V        -1.000     -1.633   -2.599   -5.478
+ DVT           O22    O    O        -1.000     -2.796   -2.344   -6.549
+ DVT           O21    O    O2        0.000     -1.537   -4.508   -5.411
+ DVT           V7     V    V        -1.000     -0.029   -5.106   -4.592
+ DVT           O25    O    O        -1.000      0.010   -6.667   -4.973
+ DVT           O13    O    O2        0.000      1.521   -1.010   -4.463
+ DVT           V5     V    V        -1.000      1.498   -2.636   -5.456
+ DVT           O11    O    O2        0.000      1.453   -4.531   -5.466
+ DVT           O6     O    O2        0.000     -0.039   -2.360   -6.429
+ DVT           O14    O    O        -1.000      2.698   -2.303   -6.494
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DVT      O10    n/a    V3     START
+ DVT      V3     O10    O9     .
+ DVT      O18    V3     .      .
+ DVT      O2     V3     .      .
+ DVT      O3     V3     V1     .
+ DVT      V1     O3     O15    .
+ DVT      O5     V1     .      .
+ DVT      O15    V1     .      .
+ DVT      O17    V3     V8     .
+ DVT      V8     O17    O23    .
+ DVT      O20    V8     .      .
+ DVT      O24    V8     V9     .
+ DVT      V9     O24    O27    .
+ DVT      O26    V9     .      .
+ DVT      O4     V9     .      .
+ DVT      O27    V9     .      .
+ DVT      O23    V8     V10    .
+ DVT      V10    O23    O28    .
+ DVT      O28    V10    .      .
+ DVT      O9     V3     V4     .
+ DVT      V2     O9     O8     .
+ DVT      O1     V2     .      .
+ DVT      O16    V2     .      .
+ DVT      O8     V2     .      .
+ DVT      V4     O9     O13    .
+ DVT      O19    V4     .      .
+ DVT      O12    V4     .      .
+ DVT      O7     V4     V7     .
+ DVT      V6     O7     O21    .
+ DVT      O22    V6     .      .
+ DVT      O21    V6     .      .
+ DVT      V7     O7     O25    .
+ DVT      O25    V7     .      .
+ DVT      O13    V4     V5     .
+ DVT      V5     O13    O14    .
+ DVT      O11    V5     .      .
+ DVT      O6     V5     .      .
+ DVT      O14    V5     .      END
+ DVT      V10    O18    .    ADD
+ DVT      V10    O15    .    ADD
+ DVT      V10    O27    .    ADD
+ DVT      V10    O2     .    ADD
+ DVT      V1     O2     .    ADD
+ DVT      V1     O4     .    ADD
+ DVT      V1     O1     .    ADD
+ DVT      V9     O2     .    ADD
+ DVT      V9     O8     .    ADD
+ DVT      O2     V8     .    ADD
+ DVT      O2     V2     .    ADD
+ DVT      O8     V7     .    ADD
+ DVT      O24    V7     .    ADD
+ DVT      V7     O11    .    ADD
+ DVT      V7     O21    .    ADD
+ DVT      V6     O19    .    ADD
+ DVT      V6     O6     .    ADD
+ DVT      V6     O20    .    ADD
+ DVT      V8     O7     .    ADD
+ DVT      O16    V5     .    ADD
+ DVT      V5     O7     .    ADD
+ DVT      O7     V2     .    ADD
+ DVT      O17    V4     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DVT       O28       V10       single    1.910     0.020     1.910     0.020     
+DVT       V10       O18       single    2.004     0.020     2.004     0.020     
+DVT       V10       O15       single    2.004     0.020     2.004     0.020     
+DVT       V10       O27       single    2.004     0.020     2.004     0.020     
+DVT       V10       O2        single    1.910     0.020     1.910     0.020     
+DVT       V10       O23       single    2.004     0.020     2.004     0.020     
+DVT       O18       V3        single    2.004     0.020     2.004     0.020     
+DVT       O15       V1        single    2.004     0.020     2.004     0.020     
+DVT       O5        V1        single    1.910     0.020     1.910     0.020     
+DVT       V1        O2        single    1.910     0.020     1.910     0.020     
+DVT       V1        O4        single    2.004     0.020     2.004     0.020     
+DVT       V1        O1        single    2.004     0.020     2.004     0.020     
+DVT       V1        O3        single    2.004     0.020     2.004     0.020     
+DVT       O27       V9        single    2.004     0.020     2.004     0.020     
+DVT       V9        O2        single    1.910     0.020     1.910     0.020     
+DVT       O4        V9        single    2.004     0.020     2.004     0.020     
+DVT       V9        O8        single    1.910     0.020     1.910     0.020     
+DVT       O26       V9        single    1.910     0.020     1.910     0.020     
+DVT       V9        O24       single    1.910     0.020     1.910     0.020     
+DVT       O2        V8        single    1.910     0.020     1.910     0.020     
+DVT       O2        V2        single    1.910     0.020     1.910     0.020     
+DVT       O2        V3        single    1.910     0.020     1.910     0.020     
+DVT       O8        V7        single    1.910     0.020     1.910     0.020     
+DVT       O8        V2        single    1.910     0.020     1.910     0.020     
+DVT       O24       V7        single    1.910     0.020     1.910     0.020     
+DVT       O24       V8        single    1.910     0.020     1.910     0.020     
+DVT       V7        O11       single    2.004     0.020     2.004     0.020     
+DVT       O25       V7        single    1.910     0.020     1.910     0.020     
+DVT       V7        O21       single    2.004     0.020     2.004     0.020     
+DVT       V7        O7        single    1.910     0.020     1.910     0.020     
+DVT       O11       V5        single    2.004     0.020     2.004     0.020     
+DVT       O21       V6        single    2.004     0.020     2.004     0.020     
+DVT       V6        O19       single    2.004     0.020     2.004     0.020     
+DVT       O22       V6        single    1.910     0.020     1.910     0.020     
+DVT       V6        O6        single    2.004     0.020     2.004     0.020     
+DVT       V6        O20       single    2.004     0.020     2.004     0.020     
+DVT       V6        O7        single    1.910     0.020     1.910     0.020     
+DVT       O19       V4        single    2.004     0.020     2.004     0.020     
+DVT       O6        V5        single    2.004     0.020     2.004     0.020     
+DVT       O20       V8        single    2.004     0.020     2.004     0.020     
+DVT       O23       V8        single    2.004     0.020     2.004     0.020     
+DVT       V8        O7        single    1.910     0.020     1.910     0.020     
+DVT       V8        O17       single    1.910     0.020     1.910     0.020     
+DVT       O16       V5        single    2.004     0.020     2.004     0.020     
+DVT       O16       V2        single    2.004     0.020     2.004     0.020     
+DVT       O14       V5        single    1.910     0.020     1.910     0.020     
+DVT       V5        O7        single    1.910     0.020     1.910     0.020     
+DVT       V5        O13       single    2.004     0.020     2.004     0.020     
+DVT       O7        V2        single    1.910     0.020     1.910     0.020     
+DVT       O7        V4        single    1.910     0.020     1.910     0.020     
+DVT       O1        V2        single    2.004     0.020     2.004     0.020     
+DVT       V2        O9        single    1.910     0.020     1.910     0.020     
+DVT       O17       V4        single    1.910     0.020     1.910     0.020     
+DVT       O17       V3        single    1.910     0.020     1.910     0.020     
+DVT       O13       V4        single    2.004     0.020     2.004     0.020     
+DVT       O12       V4        single    1.910     0.020     1.910     0.020     
+DVT       V4        O9        single    1.910     0.020     1.910     0.020     
+DVT       O9        V3        single    1.910     0.020     1.910     0.020     
+DVT       O3        V3        single    2.004     0.020     2.004     0.020     
+DVT       V3        O10       single    1.910     0.020     1.910     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DVT      O10    V3     O18      90.000    3.000
+ DVT      O10    V3     O2      180.000    3.000
+ DVT      O10    V3     O17      90.000    3.000
+ DVT      O10    V3     O3       90.000    3.000
+ DVT      O10    V3     O9       90.000    3.000
+ DVT      O18    V3     O2       90.000    3.000
+ DVT      O18    V3     O17      72.000    3.000
+ DVT      O2     V3     O17      90.000    3.000
+ DVT      O18    V3     O3      144.000    3.000
+ DVT      O2     V3     O3       90.000    3.000
+ DVT      O17    V3     O3      144.000    3.000
+ DVT      O18    V3     O9      144.000    3.000
+ DVT      O2     V3     O9       90.000    3.000
+ DVT      O17    V3     O9       72.000    3.000
+ DVT      O3     V3     O9       72.000    3.000
+ DVT      V3     O18    V10     120.000    3.000
+ DVT      V3     O2     V10     120.000    3.000
+ DVT      V3     O2     V1      120.000    3.000
+ DVT      V3     O2     V9      120.000    3.000
+ DVT      V3     O2     V8      120.000    3.000
+ DVT      V3     O2     V2      120.000    3.000
+ DVT      V10    O2     V1      120.000    3.000
+ DVT      V10    O2     V9      120.000    3.000
+ DVT      V1     O2     V9      120.000    3.000
+ DVT      V10    O2     V8      120.000    3.000
+ DVT      V1     O2     V8      120.000    3.000
+ DVT      V9     O2     V8      120.000    3.000
+ DVT      V10    O2     V2      120.000    3.000
+ DVT      V1     O2     V2      120.000    3.000
+ DVT      V9     O2     V2      120.000    3.000
+ DVT      V8     O2     V2      120.000    3.000
+ DVT      V3     O17    V8      120.000    3.000
+ DVT      V3     O17    V4      120.000    3.000
+ DVT      V8     O17    V4      120.000    3.000
+ DVT      O17    V8     O20      95.842    3.000
+ DVT      O17    V8     O24     160.837    3.000
+ DVT      O17    V8     O23      95.750    3.000
+ DVT      O17    V8     O2       82.693    3.000
+ DVT      O17    V8     O7       81.306    3.000
+ DVT      O20    V8     O24      60.000    3.000
+ DVT      O20    V8     O23      99.851    3.000
+ DVT      O24    V8     O23      97.490    3.000
+ DVT      O2     V8     O7       60.000    3.000
+ DVT      O20    V8     O2      180.000    3.000
+ DVT      O24    V8     O2      120.000    3.000
+ DVT      O23    V8     O2       88.692    3.000
+ DVT      O20    V8     O7      120.000    3.000
+ DVT      O24    V8     O7       60.000    3.000
+ DVT      O23    V8     O7      147.427    3.000
+ DVT      V8     O20    V6      120.000    3.000
+ DVT      V8     O24    V9      120.000    3.000
+ DVT      V8     O24    V7      120.000    3.000
+ DVT      V9     O24    V7      120.000    3.000
+ DVT      O24    V9     O26      90.000    3.000
+ DVT      O24    V9     O4      144.000    3.000
+ DVT      O24    V9     O27      72.000    3.000
+ DVT      O24    V9     O2       90.000    3.000
+ DVT      O24    V9     O8       72.000    3.000
+ DVT      O26    V9     O4       90.000    3.000
+ DVT      O26    V9     O27      90.000    3.000
+ DVT      O4     V9     O27     144.000    3.000
+ DVT      O2     V9     O8       90.000    3.000
+ DVT      O26    V9     O2      180.000    3.000
+ DVT      O4     V9     O2       90.000    3.000
+ DVT      O27    V9     O2       90.000    3.000
+ DVT      O26    V9     O8       90.000    3.000
+ DVT      O4     V9     O8       72.000    3.000
+ DVT      O27    V9     O8      144.000    3.000
+ DVT      V9     O4     V1      120.000    3.000
+ DVT      V9     O27    V10     120.000    3.000
+ DVT      V8     O23    V10     120.000    3.000
+ DVT      O23    V10    O28      90.000    3.000
+ DVT      O23    V10    O18      72.000    3.000
+ DVT      O23    V10    O15     144.000    3.000
+ DVT      O23    V10    O27      72.000    3.000
+ DVT      O23    V10    O2       90.000    3.000
+ DVT      O18    V10    O15     144.000    3.000
+ DVT      O18    V10    O27     144.000    3.000
+ DVT      O15    V10    O27      72.000    3.000
+ DVT      O18    V10    O2       90.000    3.000
+ DVT      O15    V10    O2       90.000    3.000
+ DVT      O27    V10    O2       90.000    3.000
+ DVT      O28    V10    O18      90.000    3.000
+ DVT      O28    V10    O15      90.000    3.000
+ DVT      O28    V10    O27      90.000    3.000
+ DVT      O28    V10    O2      180.000    3.000
+ DVT      V3     O3     V1      120.000    3.000
+ DVT      O3     V1     O5       90.000    3.000
+ DVT      O3     V1     O15     144.000    3.000
+ DVT      O3     V1     O2       90.000    3.000
+ DVT      O3     V1     O4      144.000    3.000
+ DVT      O3     V1     O1       72.000    3.000
+ DVT      O5     V1     O15      90.000    3.000
+ DVT      O2     V1     O4       90.000    3.000
+ DVT      O2     V1     O1       90.000    3.000
+ DVT      O4     V1     O1       72.000    3.000
+ DVT      O5     V1     O2      180.000    3.000
+ DVT      O15    V1     O2       90.000    3.000
+ DVT      O5     V1     O4       90.000    3.000
+ DVT      O15    V1     O4       72.000    3.000
+ DVT      O5     V1     O1       90.000    3.000
+ DVT      O15    V1     O1      144.000    3.000
+ DVT      V1     O15    V10     120.000    3.000
+ DVT      V3     O9     V2      120.000    3.000
+ DVT      V3     O9     V4      120.000    3.000
+ DVT      V2     O9     V4      120.000    3.000
+ DVT      O9     V2     O1       90.000    3.000
+ DVT      O9     V2     O16      90.000    3.000
+ DVT      O9     V2     O8      180.000    3.000
+ DVT      O9     V2     O2       90.000    3.000
+ DVT      O9     V2     O7       90.000    3.000
+ DVT      O1     V2     O16     180.000    3.000
+ DVT      O1     V2     O8       90.000    3.000
+ DVT      O16    V2     O8       90.000    3.000
+ DVT      O2     V2     O7      180.000    3.000
+ DVT      O1     V2     O2       90.000    3.000
+ DVT      O16    V2     O2       90.000    3.000
+ DVT      O8     V2     O2       90.000    3.000
+ DVT      O1     V2     O7       90.000    3.000
+ DVT      O16    V2     O7       90.000    3.000
+ DVT      O8     V2     O7       90.000    3.000
+ DVT      V2     O1     V1      120.000    3.000
+ DVT      V2     O16    V5      120.000    3.000
+ DVT      V2     O8     V9      120.000    3.000
+ DVT      V2     O8     V7      120.000    3.000
+ DVT      V9     O8     V7      120.000    3.000
+ DVT      O9     V4     O19     152.282    3.000
+ DVT      O9     V4     O12      99.475    3.000
+ DVT      O9     V4     O7       51.326    3.000
+ DVT      O9     V4     O13      80.638    3.000
+ DVT      O9     V4     O17      75.952    3.000
+ DVT      O19    V4     O12     101.455    3.000
+ DVT      O19    V4     O7      122.245    3.000
+ DVT      O12    V4     O7      129.962    3.000
+ DVT      O19    V4     O13     111.986    3.000
+ DVT      O12    V4     O13     102.497    3.000
+ DVT      O7     V4     O13      41.756    3.000
+ DVT      O19    V4     O17      82.908    3.000
+ DVT      O12    V4     O17      99.212    3.000
+ DVT      O7     V4     O17     108.539    3.000
+ DVT      O13    V4     O17     150.286    3.000
+ DVT      V4     O19    V6      120.000    3.000
+ DVT      V4     O7     V6      120.000    3.000
+ DVT      V4     O7     V7      120.000    3.000
+ DVT      V4     O7     V8      120.000    3.000
+ DVT      V4     O7     V5      120.000    3.000
+ DVT      V4     O7     V2      120.000    3.000
+ DVT      V6     O7     V7      120.000    3.000
+ DVT      V8     O7     V5      120.000    3.000
+ DVT      V8     O7     V2      120.000    3.000
+ DVT      V5     O7     V2      120.000    3.000
+ DVT      V6     O7     V8      120.000    3.000
+ DVT      V7     O7     V8      120.000    3.000
+ DVT      V6     O7     V5      120.000    3.000
+ DVT      V7     O7     V5      120.000    3.000
+ DVT      V6     O7     V2      120.000    3.000
+ DVT      V7     O7     V2      120.000    3.000
+ DVT      O7     V6     O22     159.459    3.000
+ DVT      O7     V6     O21      80.831    3.000
+ DVT      O7     V6     O19      81.467    3.000
+ DVT      O7     V6     O6       54.501    3.000
+ DVT      O7     V6     O20      98.565    3.000
+ DVT      O22    V6     O21     102.647    3.000
+ DVT      O19    V6     O6       95.417    3.000
+ DVT      O19    V6     O20      76.741    3.000
+ DVT      O6     V6     O20     153.008    3.000
+ DVT      O22    V6     O19     103.361    3.000
+ DVT      O21    V6     O19     147.793    3.000
+ DVT      O22    V6     O6      104.974    3.000
+ DVT      O21    V6     O6       95.892    3.000
+ DVT      O22    V6     O20     101.974    3.000
+ DVT      O21    V6     O20      79.564    3.000
+ DVT      V6     O21    V7      120.000    3.000
+ DVT      O7     V7     O25     128.176    3.000
+ DVT      O7     V7     O8       50.558    3.000
+ DVT      O7     V7     O24     107.576    3.000
+ DVT      O7     V7     O11      45.910    3.000
+ DVT      O7     V7     O21     123.294    3.000
+ DVT      O8     V7     O24      76.415    3.000
+ DVT      O8     V7     O11      84.121    3.000
+ DVT      O24    V7     O11     153.413    3.000
+ DVT      O8     V7     O21     151.128    3.000
+ DVT      O24    V7     O21      80.576    3.000
+ DVT      O11    V7     O21     110.856    3.000
+ DVT      O25    V7     O8       97.671    3.000
+ DVT      O25    V7     O24     100.379    3.000
+ DVT      O25    V7     O11     100.017    3.000
+ DVT      O25    V7     O21     103.468    3.000
+ DVT      V4     O13    V5      120.000    3.000
+ DVT      O13    V5     O11     144.000    3.000
+ DVT      O13    V5     O6       72.000    3.000
+ DVT      O13    V5     O14      90.000    3.000
+ DVT      O13    V5     O16      90.000    3.000
+ DVT      O13    V5     O7       72.000    3.000
+ DVT      O11    V5     O6      144.000    3.000
+ DVT      O11    V5     O14      90.000    3.000
+ DVT      O6     V5     O14      90.000    3.000
+ DVT      O16    V5     O7       90.000    3.000
+ DVT      O11    V5     O16      90.000    3.000
+ DVT      O6     V5     O16      90.000    3.000
+ DVT      O14    V5     O16     180.000    3.000
+ DVT      O11    V5     O7       72.000    3.000
+ DVT      O6     V5     O7      144.000    3.000
+ DVT      O14    V5     O7       90.000    3.000
+ DVT      V5     O11    V7      120.000    3.000
+ DVT      V5     O6     V6      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DVT      var_1    V10    O18    V3     O2         0.000   20.000   1
+ DVT      var_2    V8     O2     V3     O17        0.000   20.000   1
+ DVT      var_3    V3     O2     V8     O7         0.000   20.000   1
+ DVT      var_4    V3     O2     V2     O9         0.000   20.000   1
+ DVT      var_5    V8     O17    V3     O2         0.000   20.000   1
+ DVT      var_6    V3     O17    V4     O9        17.299   20.000   1
+ DVT      var_7    V3     O17    V8     O23       77.591   20.000   1
+ DVT      var_8    V4     O7     V8     O2         0.000   20.000   1
+ DVT      var_9    V6     O20    V8     O24        0.000   20.000   1
+ DVT      var_10   V9     O24    V8     O2         0.000   20.000   1
+ DVT      var_11   V8     O24    V7     O7        49.336   20.000   1
+ DVT      var_12   V8     O24    V9     O2         0.000   20.000   1
+ DVT      var_13   V8     O2     V9     O24        0.000   20.000   1
+ DVT      var_14   V2     O8     V9     O2         0.000   20.000   1
+ DVT      var_15   V1     O4     V9     O2         0.000   20.000   1
+ DVT      var_16   V10    O27    V9     O2         0.000   20.000   1
+ DVT      var_17   O17    V8     O23    V10      -81.088   20.000   1
+ DVT      var_18   V8     O23    V10    O2         0.000   20.000   1
+ DVT      var_19   V3     O18    V10    O2         0.000   20.000   1
+ DVT      var_20   V1     O15    V10    O2         0.000   20.000   1
+ DVT      var_21   V9     O27    V10    O2         0.000   20.000   1
+ DVT      var_22   V8     O2     V10    O23        0.000   20.000   1
+ DVT      var_23   V1     O3     V3     O10        0.000   20.000   1
+ DVT      var_24   V3     O3     V1     O5         0.000   20.000   1
+ DVT      var_25   V9     O2     V1     O4         0.000   20.000   1
+ DVT      var_26   V9     O4     V1     O2         0.000   20.000   1
+ DVT      var_27   V2     O1     V1     O2         0.000   20.000   1
+ DVT      var_28   V10    O15    V1     O2         0.000   20.000   1
+ DVT      var_29   V2     O9     V3     O2         0.000   20.000   1
+ DVT      var_30   V4     O9     V2     O16        0.000   20.000   1
+ DVT      var_31   V1     O1     V2     O2         0.000   20.000   1
+ DVT      var_32   V5     O16    V2     O9         0.000   20.000   1
+ DVT      var_33   V2     O16    V5     O7         0.000   20.000   1
+ DVT      var_34   V9     O8     V2     O2         0.000   20.000   1
+ DVT      var_35   V2     O8     V7     O7        37.918   20.000   1
+ DVT      var_36   V3     O9     V4     O13     -179.362   20.000   1
+ DVT      var_37   O9     V4     O19    V6       -55.168   20.000   1
+ DVT      var_38   O9     V4     O7     V7       115.460   20.000   1
+ DVT      var_39   V4     O7     V2     O9         0.000   20.000   1
+ DVT      var_40   V4     O7     V6     O21     -147.425   20.000   1
+ DVT      var_41   O7     V6     O19    V4        -7.708   20.000   1
+ DVT      var_42   O7     V6     O6     V5         0.683   20.000   1
+ DVT      var_43   O7     V6     O20    V8        -1.239   20.000   1
+ DVT      var_44   O7     V6     O21    V7         6.260   20.000   1
+ DVT      var_45   V4     O7     V7     O25     -179.197   20.000   1
+ DVT      var_46   O7     V7     O11    V5       -55.587   20.000   1
+ DVT      var_47   O7     V7     O21    V6        -9.913   20.000   1
+ DVT      var_48   O9     V4     O13    V5        99.353   20.000   1
+ DVT      var_49   V4     O13    V5     O6         0.000   20.000   1
+ DVT      var_50   V4     O7     V5     O16        0.000   20.000   1
+ DVT      var_51   V7     O11    V5     O7         0.000   20.000   1
+ DVT      var_52   V6     O6     V5     O13        0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ DVT      chir_01  O2     V10    V1     V9        negativ
+                   .      .      .      .      .
+ DVT      chir_02  O8     V9     V7     V2        negativ
+                   .      .      .      .      .
+ DVT      chir_03  O24    V9     V7     V8        positiv
+                   .      .      .      .      .
+ DVT      chir_04  O7     V7     V6     V8        negativ
+                   .      .      .      .      .
+ DVT      chir_05  O17    V8     V4     V3        positiv
+                   .      .      .      .      .
+ DVT      chir_06  O9     V2     V4     V3        negativ
+                   .      .      .      .      .
+ DVT      chir_07  V10    O28    O2     O23       cross5
+                   O27    O15    .      O18    .
+ DVT      chir_08  V1     O5     O2     O4        cross5
+                   O1     O3     .      O15    .
+ DVT      chir_09  V9     O26    O2     O24       cross5
+                   O8     O4     .      O27    .
+ DVT      chir_10  V8     .      .      O2        cross6
+                   O7     O24    O20    .      .
+ DVT      chir_11  V5     O14    O16    O13       cross5
+                   O7     O11    .      O6     .
+ DVT      chir_12  V2     O9     O8     O16       cross4
+                   O2     O1     O7     .      .
+ DVT      chir_13  V3     O10    O2     O17       cross5
+                   O18    .      O3     O9     .
+# ------------------------------------------------------

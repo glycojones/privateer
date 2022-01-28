@@ -1,0 +1,457 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SOY     SOY     "OXACILLIN-ACYLATED"     peptide    60     35     .
+#
+data_comp_SOY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SOY     O       O       O       0       -2.027      -2.125      6.758
+SOY     C       C       C       0       -1.987      -1.807      5.553
+SOY     CA      C       CH1     0       -3.328      -1.605      4.836
+SOY     N       N       NT3     1       -4.132      -2.854      4.915
+SOY     CB      C       CH2     0       -4.103      -0.437      5.420
+SOY     OG      O       O2      0       -3.368      0.800       5.212
+SOY     C1      C       C       0       -3.407      1.413       4.030
+SOY     O2      O       O       0       -4.107      1.090       3.102
+SOY     C3      C       CH1     0       -2.436      2.586       3.988
+SOY     C4      C       CH1     0       -0.969      2.092       4.024
+SOY     S5      S       S2      0       -0.615      0.927       2.656
+SOY     C6      C       CT      0       0.715       1.988       1.926
+SOY     C7      C       CH3     0       0.651       1.879       0.408
+SOY     C8      C       CH3     0       2.051       1.474       2.443
+SOY     C9      C       CH1     0       0.326       3.409       2.427
+SOY     C10     C       C       0       1.445       4.450       2.248
+SOY     O12     O       O       0       2.263       4.566       3.147
+SOY     O11     O       OC      -1      1.433       5.089       1.211
+SOY     N13     N       NT1     0       0.001       3.189       3.846
+SOY     N14     N       NH1     0       -2.707      3.528       5.071
+SOY     C15     C       C       0       -3.838      4.253       5.173
+SOY     O16     O       O       0       -4.716      4.232       4.300
+SOY     C17     C       CR5     0       -4.016      5.102       6.374
+SOY     C18     C       CR5     0       -4.611      6.323       6.396
+SOY     C19     C       CH3     0       -5.230      7.194       5.365
+SOY     O20     O       O2      0       -4.607      6.802       7.653
+SOY     N21     N       NRD5    0       -3.990      5.860       8.505
+SOY     C22     C       CR5     0       -3.644      4.853       7.737
+SOY     C23     C       CR6     0       -2.966      3.706       8.370
+SOY     C28     C       CR16    0       -3.355      2.399       8.080
+SOY     C24     C       CR16    0       -1.915      3.899       9.268
+SOY     C25     C       CR16    0       -1.280      2.817       9.860
+SOY     C26     C       CR16    0       -1.679      1.530       9.563
+SOY     C27     C       CR16    0       -2.715      1.321       8.674
+SOY     OXT     O       OC      -1      -0.951      -1.637      4.880
+SOY     HA      H       H       0       -3.143      -1.421      3.877
+SOY     H       H       H       0       -4.927      -2.734      4.485
+SOY     H2      H       H       0       -4.292      -3.063      5.787
+SOY     H3      H       H       0       -3.679      -3.538      4.519
+SOY     HBC1    H       H       0       -4.234      -0.581      6.381
+SOY     HBC2    H       H       0       -4.989      -0.383      5.000
+SOY     HC3     H       H       0       -2.586      3.061       3.134
+SOY     HC4     H       H       0       -0.819      1.646       4.892
+SOY     H7C1    H       H       0       0.621       2.768       0.018
+SOY     H7C2    H       H       0       -0.146      1.390       0.146
+SOY     H7C3    H       H       0       1.435       1.411       0.077
+SOY     H8C1    H       H       0       2.131       1.666       3.390
+SOY     H8C2    H       H       0       2.775       1.907       1.962
+SOY     H8C3    H       H       0       2.102       0.514       2.304
+SOY     HC9     H       H       0       -0.489      3.721       1.960
+SOY     H13     H       H       0       -0.221      3.966       4.219
+SOY     H14     H       H       0       -2.084      3.636       5.673
+SOY     H191    H       H       0       -5.502      8.035       5.768
+SOY     H192    H       H       0       -6.008      6.750       4.991
+SOY     H193    H       H       0       -4.587      7.368       4.659
+SOY     H28     H       H       0       -4.060      2.248       7.476
+SOY     H24     H       H       0       -1.637      4.773       9.477
+SOY     H25     H       H       0       -0.573      2.963       10.466
+SOY     H26     H       H       0       -1.245      0.795       9.966
+SOY     H27     H       H       0       -2.990      0.443       8.469
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+SOY      N      n/a    CA     START
+SOY      H      N      .      .
+SOY      H2     N      .      .
+SOY      H3     N      .      .
+SOY      CA     N      C      .
+SOY      HA     CA     .      .
+SOY      CB     CA     OG     .
+SOY      HBC1   CB     .      .
+SOY      HBC2   CB     .      .
+SOY      OG     CB     C1     .
+SOY      C1     OG     C3     .
+SOY      O2     C1     .      .
+SOY      C3     C1     N14    .
+SOY      HC3    C3     .      .
+SOY      C4     C3     N13    .
+SOY      HC4    C4     .      .
+SOY      N13    C4     C9     .
+SOY      H13    N13    .      .
+SOY      C9     N13    C6     .
+SOY      HC9    C9     .      .
+SOY      C10    C9     O12    .
+SOY      O11    C10    .      .
+SOY      O12    C10    .      .
+SOY      C6     C9     S5     .
+SOY      C8     C6     H8C1   .
+SOY      H8C3   C8     .      .
+SOY      H8C2   C8     .      .
+SOY      H8C1   C8     .      .
+SOY      C7     C6     H7C1   .
+SOY      H7C3   C7     .      .
+SOY      H7C2   C7     .      .
+SOY      H7C1   C7     .      .
+SOY      S5     C6     .      .
+SOY      N14    C3     C15    .
+SOY      H14    N14    .      .
+SOY      C15    N14    C17    .
+SOY      O16    C15    .      .
+SOY      C17    C15    C22    .
+SOY      C22    C17    C23    .
+SOY      N21    C22    O20    .
+SOY      O20    N21    C18    .
+SOY      C18    O20    C19    .
+SOY      C19    C18    H191   .
+SOY      H193   C19    .      .
+SOY      H192   C19    .      .
+SOY      H191   C19    .      .
+SOY      C23    C22    C24    .
+SOY      C24    C23    C25    .
+SOY      H24    C24    .      .
+SOY      C25    C24    C26    .
+SOY      H25    C25    .      .
+SOY      C26    C25    C27    .
+SOY      H26    C26    .      .
+SOY      C27    C26    C28    .
+SOY      H27    C27    .      .
+SOY      C28    C27    H28    .
+SOY      H28    C28    .      .
+SOY      C      CA     .      END
+SOY      O      C      .      .
+SOY      OXT    C      .      .
+SOY      C4     S5     .    ADD
+SOY      C17    C18    .    ADD
+SOY      C23    C28    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SOY       O         C         DOUBLE    n         1.247     0.019     1.247     0.019     
+SOY       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+SOY       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SOY       CA        N         SINGLE    n         1.487     0.010     1.487     0.010     
+SOY       CA        CB        SINGLE    n         1.515     0.017     1.515     0.017     
+SOY       CB        OG        SINGLE    n         1.450     0.010     1.450     0.010     
+SOY       OG        C1        SINGLE    n         1.327     0.011     1.327     0.011     
+SOY       C1        O2        DOUBLE    n         1.203     0.015     1.203     0.015     
+SOY       C1        C3        SINGLE    n         1.520     0.011     1.520     0.011     
+SOY       C3        C4        SINGLE    n         1.536     0.020     1.536     0.020     
+SOY       C3        N14       SINGLE    n         1.456     0.010     1.456     0.010     
+SOY       C4        S5        SINGLE    n         1.828     0.015     1.828     0.015     
+SOY       C4        N13       SINGLE    n         1.469     0.017     1.469     0.017     
+SOY       S5        C6        SINGLE    n         1.851     0.011     1.851     0.011     
+SOY       C6        C7        SINGLE    n         1.518     0.011     1.518     0.011     
+SOY       C6        C8        SINGLE    n         1.518     0.011     1.518     0.011     
+SOY       C6        C9        SINGLE    n         1.549     0.016     1.549     0.016     
+SOY       C9        C10       SINGLE    n         1.536     0.010     1.536     0.010     
+SOY       C9        N13       SINGLE    n         1.468     0.015     1.468     0.015     
+SOY       C10       O12       DOUBLE    n         1.218     0.020     1.218     0.020     
+SOY       C10       O11       SINGLE    n         1.218     0.020     1.218     0.020     
+SOY       N14       C15       SINGLE    n         1.334     0.015     1.334     0.015     
+SOY       C15       O16       DOUBLE    n         1.235     0.016     1.235     0.016     
+SOY       C15       C17       SINGLE    n         1.468     0.020     1.468     0.020     
+SOY       C17       C18       DOUBLE    y         1.357     0.010     1.357     0.010     
+SOY       C17       C22       SINGLE    y         1.432     0.011     1.432     0.011     
+SOY       C18       C19       SINGLE    n         1.484     0.010     1.484     0.010     
+SOY       C18       O20       SINGLE    y         1.345     0.010     1.345     0.010     
+SOY       O20       N21       SINGLE    y         1.413     0.010     1.413     0.010     
+SOY       N21       C22       DOUBLE    y         1.312     0.011     1.312     0.011     
+SOY       C22       C23       SINGLE    n         1.474     0.011     1.474     0.011     
+SOY       C23       C28       DOUBLE    y         1.388     0.013     1.388     0.013     
+SOY       C23       C24       SINGLE    y         1.388     0.013     1.388     0.013     
+SOY       C28       C27       SINGLE    y         1.384     0.010     1.384     0.010     
+SOY       C24       C25       DOUBLE    y         1.384     0.010     1.384     0.010     
+SOY       C25       C26       SINGLE    y         1.376     0.011     1.376     0.011     
+SOY       C26       C27       DOUBLE    y         1.376     0.012     1.376     0.012     
+SOY       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+SOY       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+SOY       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+SOY       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+SOY       CB        HBC1      SINGLE    n         1.089     0.010     0.981     0.010     
+SOY       CB        HBC2      SINGLE    n         1.089     0.010     0.981     0.010     
+SOY       C3        HC3       SINGLE    n         1.089     0.010     0.989     0.020     
+SOY       C4        HC4       SINGLE    n         1.089     0.010     0.987     0.020     
+SOY       C7        H7C1      SINGLE    n         1.089     0.010     0.971     0.017     
+SOY       C7        H7C2      SINGLE    n         1.089     0.010     0.971     0.017     
+SOY       C7        H7C3      SINGLE    n         1.089     0.010     0.971     0.017     
+SOY       C8        H8C1      SINGLE    n         1.089     0.010     0.971     0.017     
+SOY       C8        H8C2      SINGLE    n         1.089     0.010     0.971     0.017     
+SOY       C8        H8C3      SINGLE    n         1.089     0.010     0.971     0.017     
+SOY       C9        HC9       SINGLE    n         1.089     0.010     0.990     0.012     
+SOY       N13       H13       SINGLE    n         1.036     0.016     0.890     0.020     
+SOY       N14       H14       SINGLE    n         1.016     0.010     0.874     0.020     
+SOY       C19       H191      SINGLE    n         1.089     0.010     0.971     0.013     
+SOY       C19       H192      SINGLE    n         1.089     0.010     0.971     0.013     
+SOY       C19       H193      SINGLE    n         1.089     0.010     0.971     0.013     
+SOY       C28       H28       SINGLE    n         1.082     0.013     0.940     0.014     
+SOY       C24       H24       SINGLE    n         1.082     0.013     0.940     0.014     
+SOY       C25       H25       SINGLE    n         1.082     0.013     0.943     0.018     
+SOY       C26       H26       SINGLE    n         1.082     0.013     0.944     0.016     
+SOY       C27       H27       SINGLE    n         1.082     0.013     0.943     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SOY           O           C          CA     117.181    1.50
+SOY           O           C         OXT     125.637    1.50
+SOY          CA           C         OXT     117.181    1.50
+SOY           C          CA           N     109.829    1.50
+SOY           C          CA          CB     111.527    1.50
+SOY           C          CA          HA     108.255    1.50
+SOY           N          CA          CB     110.608    1.50
+SOY           N          CA          HA     108.049    1.50
+SOY          CB          CA          HA     108.597    1.50
+SOY          CA           N           H     109.619    1.50
+SOY          CA           N          H2     109.619    1.50
+SOY          CA           N          H3     109.619    1.50
+SOY           H           N          H2     109.028    2.41
+SOY           H           N          H3     109.028    2.41
+SOY          H2           N          H3     109.028    2.41
+SOY          CA          CB          OG     108.730    1.77
+SOY          CA          CB        HBC1     109.469    1.50
+SOY          CA          CB        HBC2     109.469    1.50
+SOY          OG          CB        HBC1     109.566    1.50
+SOY          OG          CB        HBC2     109.566    1.50
+SOY        HBC1          CB        HBC2     108.098    1.50
+SOY          CB          OG          C1     116.652    1.80
+SOY          OG          C1          O2     124.150    1.73
+SOY          OG          C1          C3     111.277    1.50
+SOY          O2          C1          C3     124.573    1.61
+SOY          C1          C3          C4     112.778    2.78
+SOY          C1          C3         N14     110.655    1.92
+SOY          C1          C3         HC3     107.912    1.50
+SOY          C4          C3         N14     111.113    2.62
+SOY          C4          C3         HC3     109.253    1.50
+SOY         N14          C3         HC3     108.169    1.50
+SOY          C3          C4          S5     111.156    2.31
+SOY          C3          C4         N13     111.633    2.37
+SOY          C3          C4         HC4     108.599    1.67
+SOY          S5          C4         N13     104.726    1.50
+SOY          S5          C4         HC4     111.432    2.82
+SOY         N13          C4         HC4     110.535    1.50
+SOY          C4          S5          C6      92.264    3.00
+SOY          S5          C6          C7     108.982    1.53
+SOY          S5          C6          C8     108.982    1.53
+SOY          S5          C6          C9     107.036    2.68
+SOY          C7          C6          C8     110.924    1.50
+SOY          C7          C6          C9     113.745    2.48
+SOY          C8          C6          C9     113.745    2.48
+SOY          C6          C7        H7C1     109.457    1.50
+SOY          C6          C7        H7C2     109.457    1.50
+SOY          C6          C7        H7C3     109.457    1.50
+SOY        H7C1          C7        H7C2     109.486    1.50
+SOY        H7C1          C7        H7C3     109.486    1.50
+SOY        H7C2          C7        H7C3     109.486    1.50
+SOY          C6          C8        H8C1     109.457    1.50
+SOY          C6          C8        H8C2     109.457    1.50
+SOY          C6          C8        H8C3     109.457    1.50
+SOY        H8C1          C8        H8C2     109.486    1.50
+SOY        H8C1          C8        H8C3     109.486    1.50
+SOY        H8C2          C8        H8C3     109.486    1.50
+SOY          C6          C9         C10     112.424    2.46
+SOY          C6          C9         N13     103.104    2.01
+SOY          C6          C9         HC9     110.594    1.50
+SOY         C10          C9         N13     111.420    2.45
+SOY         C10          C9         HC9     110.011    1.50
+SOY         N13          C9         HC9     109.296    1.50
+SOY          C9         C10         O12     117.013    1.95
+SOY          C9         C10         O11     117.013    1.95
+SOY         O12         C10         O11     125.975    1.50
+SOY          C4         N13          C9     109.056    3.00
+SOY          C4         N13         H13     114.884    3.00
+SOY          C9         N13         H13     109.307    3.00
+SOY          C3         N14         C15     122.401    2.50
+SOY          C3         N14         H14     118.618    1.91
+SOY         C15         N14         H14     118.981    1.50
+SOY         N14         C15         O16     122.564    1.50
+SOY         N14         C15         C17     116.374    2.63
+SOY         O16         C15         C17     121.062    1.50
+SOY         C15         C17         C18     126.471    1.50
+SOY         C15         C17         C22     128.276    3.00
+SOY         C18         C17         C22     105.253    1.50
+SOY         C17         C18         C19     134.483    1.50
+SOY         C17         C18         O20     109.251    1.50
+SOY         C19         C18         O20     116.266    1.50
+SOY         C18         C19        H191     109.499    1.50
+SOY         C18         C19        H192     109.499    1.50
+SOY         C18         C19        H193     109.499    1.50
+SOY        H191         C19        H192     109.377    1.50
+SOY        H191         C19        H193     109.377    1.50
+SOY        H192         C19        H193     109.377    1.50
+SOY         C18         O20         N21     108.991    1.50
+SOY         O20         N21         C22     105.668    1.50
+SOY         C17         C22         N21     110.837    1.50
+SOY         C17         C22         C23     131.112    1.50
+SOY         N21         C22         C23     118.051    1.50
+SOY         C22         C23         C28     120.828    1.50
+SOY         C22         C23         C24     120.828    1.50
+SOY         C28         C23         C24     118.344    1.50
+SOY         C23         C28         C27     120.590    1.50
+SOY         C23         C28         H28     119.628    1.50
+SOY         C27         C28         H28     119.782    1.50
+SOY         C23         C24         C25     120.590    1.50
+SOY         C23         C24         H24     119.628    1.50
+SOY         C25         C24         H24     119.782    1.50
+SOY         C24         C25         C26     120.307    1.50
+SOY         C24         C25         H25     119.746    1.50
+SOY         C26         C25         H25     119.947    1.50
+SOY         C25         C26         C27     119.863    1.50
+SOY         C25         C26         H26     120.069    1.50
+SOY         C27         C26         H26     120.069    1.50
+SOY         C28         C27         C26     120.307    1.50
+SOY         C28         C27         H27     119.746    1.50
+SOY         C26         C27         H27     119.947    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SOY             sp3_sp3_5          C7          C6          S5          C4     180.000   10.00     3
+SOY            sp3_sp3_61          C8          C6          C7        H7C1      60.000   10.00     3
+SOY            sp3_sp3_70          C7          C6          C8        H8C1      60.000   10.00     3
+SOY            sp3_sp3_11          C7          C6          C9         C10      60.000   10.00     3
+SOY            sp2_sp3_19         O12         C10          C9          C6       0.000   10.00     6
+SOY            sp3_sp3_18         C10          C9         N13          C4     180.000   10.00     3
+SOY             sp2_sp2_5         O16         C15         N14          C3       0.000   10.00     2
+SOY             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+SOY             sp2_sp2_7         N14         C15         C17         C18     180.000   10.00     2
+SOY       const_sp2_sp2_4         C15         C17         C18         C19       0.000   10.00     2
+SOY              const_32         C15         C17         C22         N21     180.000   10.00     2
+SOY            sp2_sp3_25         C17         C18         C19        H191     150.000   10.00     6
+SOY       const_sp2_sp2_6         C19         C18         O20         N21     180.000   10.00     2
+SOY       const_sp2_sp2_7         C22         N21         O20         C18       0.000   10.00     2
+SOY       const_sp2_sp2_8         C17         C22         N21         O20       0.000   10.00     2
+SOY            sp2_sp2_11         C17         C22         C23         C28     180.000   10.00     2
+SOY              const_12         C22         C23         C28         C27     180.000   10.00     2
+SOY              const_36         C22         C23         C24         C25     180.000   10.00     2
+SOY              const_14         C26         C27         C28         C23       0.000   10.00     2
+SOY            sp3_sp3_22           C          CA           N           H     180.000   10.00     3
+SOY            sp3_sp3_31           C          CA          CB          OG     180.000   10.00     3
+SOY              const_26         C23         C24         C25         C26       0.000   10.00     2
+SOY              const_22         C24         C25         C26         C27       0.000   10.00     2
+SOY              const_18         C25         C26         C27         C28       0.000   10.00     2
+SOY            sp3_sp3_40          CA          CB          OG          C1     180.000   10.00     3
+SOY             sp2_sp2_1          O2          C1          OG          CB     180.000   10.00     2
+SOY             sp2_sp3_8          OG          C1          C3         N14     120.000   10.00     6
+SOY            sp2_sp3_13         C15         N14          C3          C1       0.000   10.00     6
+SOY            sp3_sp3_43          C1          C3          C4          S5     180.000   10.00     3
+SOY             sp3_sp3_2          C3          C4          S5          C6     -60.000   10.00     3
+SOY            sp3_sp3_54          C3          C4         N13          C9      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SOY    chir_1    CA    N    C    CB    positive
+SOY    chir_2    C3    N14    C4    C1    negative
+SOY    chir_3    C4    S5    N13    C3    negative
+SOY    chir_4    C9    N13    C6    C10    positive
+SOY    chir_5    N13    C4    C9    H13    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SOY    plan-1         C15   0.020
+SOY    plan-1         C17   0.020
+SOY    plan-1         C18   0.020
+SOY    plan-1         C19   0.020
+SOY    plan-1         C22   0.020
+SOY    plan-1         C23   0.020
+SOY    plan-1         N21   0.020
+SOY    plan-1         O20   0.020
+SOY    plan-2         C22   0.020
+SOY    plan-2         C23   0.020
+SOY    plan-2         C24   0.020
+SOY    plan-2         C25   0.020
+SOY    plan-2         C26   0.020
+SOY    plan-2         C27   0.020
+SOY    plan-2         C28   0.020
+SOY    plan-2         H24   0.020
+SOY    plan-2         H25   0.020
+SOY    plan-2         H26   0.020
+SOY    plan-2         H27   0.020
+SOY    plan-2         H28   0.020
+SOY    plan-3           C   0.020
+SOY    plan-3          CA   0.020
+SOY    plan-3           O   0.020
+SOY    plan-3         OXT   0.020
+SOY    plan-4          C1   0.020
+SOY    plan-4          C3   0.020
+SOY    plan-4          O2   0.020
+SOY    plan-4          OG   0.020
+SOY    plan-5         C10   0.020
+SOY    plan-5          C9   0.020
+SOY    plan-5         O11   0.020
+SOY    plan-5         O12   0.020
+SOY    plan-6         C15   0.020
+SOY    plan-6          C3   0.020
+SOY    plan-6         H14   0.020
+SOY    plan-6         N14   0.020
+SOY    plan-7         C15   0.020
+SOY    plan-7         C17   0.020
+SOY    plan-7         N14   0.020
+SOY    plan-7         O16   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SOY SMILES           ACDLabs              10.04 "O=C(NC(C(=O)OCC(C(=O)O)N)C1SC(C(N1)C(=O)O)(C)C)c3c(onc3c2ccccc2)C"
+SOY SMILES_CANONICAL CACTVS               3.341 "Cc1onc(c2ccccc2)c1C(=O)N[C@@H]([C@@H]3N[C@@H](C(O)=O)C(C)(C)S3)C(=O)OC[C@H](N)C(O)=O"
+SOY SMILES           CACTVS               3.341 "Cc1onc(c2ccccc2)c1C(=O)N[CH]([CH]3N[CH](C(O)=O)C(C)(C)S3)C(=O)OC[CH](N)C(O)=O"
+SOY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "Cc1c(c(no1)c2ccccc2)C(=O)N[C@@H]([C@@H]3N[C@H](C(S3)(C)C)C(=O)O)C(=O)OC[C@@H](C(=O)O)N"
+SOY SMILES           "OpenEye OEToolkits" 1.5.0 "Cc1c(c(no1)c2ccccc2)C(=O)NC(C3NC(C(S3)(C)C)C(=O)O)C(=O)OCC(C(=O)O)N"
+SOY InChI            InChI                1.03
+"InChI=1S/C22H26N4O8S/c1-10-13(14(26-34-10)11-7-5-4-6-8-11)17(27)24-15(21(32)33-9-12(23)19(28)29)18-25-16(20(30)31)22(2,3)35-18/h4-8,12,15-16,18,25H,9,23H2,1-3H3,(H,24,27)(H,28,29)(H,30,31)/t12-,15-,16-,18+/m0/s1"
+SOY InChIKey         InChI                1.03  LOAYLVQZXPKDED-VYSRMENRSA-N
+SOY ?                acedrg               202         "dictionary generator"
+SOY ?                acedrg_database      11          "data source"
+SOY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SOY ?                refmac5              5.8.0222    "optimization tool"

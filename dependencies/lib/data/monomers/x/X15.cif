@@ -1,0 +1,159 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+X15     X15      "1,3-BISPHOSPHOGLYCERIC ACID"     non-polymer     19     15     .     
+#
+data_comp_X15
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+X15     OAG     O       OP      -1      2.626       -7.525      -20.500     
+X15     PAO     P       P       0       1.584       -8.615      -20.561     
+X15     OAH     O       O       0       2.221       -9.983      -20.536     
+X15     OAF     O       OP      -1      0.690       -8.450      -21.765     
+X15     OAK     O       O2      0       0.667       -8.479      -19.254     
+X15     CAM     C       C       0       0.978       -8.848      -18.002     
+X15     OAB     O       O       0       2.076       -9.140      -17.622     
+X15     CAL     C       CH1     0       -0.236      -8.856      -17.076     
+X15     OAA     O       OH1     0       0.094       -8.286      -15.815     
+X15     CAI     C       CH2     0       -0.792      -10.264     -16.923     
+X15     OAJ     O       O2      0       0.134       -11.079     -16.192     
+X15     PAN     P       P       0       -0.205      -12.643     -15.978     
+X15     OAD     O       OP      -1      0.926       -13.197     -15.132     
+X15     OAE     O       OP      -1      -1.546      -12.686     -15.270     
+X15     OAC     O       O       0       -0.253      -13.252     -17.367     
+X15     HAL     H       H       0       -0.943      -8.299      -17.485     
+X15     HAA     H       H       0       0.651       -8.780      -15.405     
+X15     HAI1    H       H       0       -0.949      -10.669     -17.809     
+X15     HAI2    H       H       0       -1.653      -10.242     -16.440     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+X15       OAG       PAO       SINGLE    n         1.509     0.020     1.509     0.020     
+X15       PAO       OAH       DOUBLE    n         1.509     0.020     1.509     0.020     
+X15       PAO       OAF       SINGLE    n         1.509     0.020     1.509     0.020     
+X15       PAO       OAK       SINGLE    n         1.595     0.020     1.595     0.020     
+X15       OAK       CAM       SINGLE    n         1.333     0.016     1.333     0.016     
+X15       CAM       OAB       DOUBLE    n         1.194     0.016     1.194     0.016     
+X15       CAM       CAL       SINGLE    n         1.520     0.017     1.520     0.017     
+X15       CAL       OAA       SINGLE    n         1.419     0.017     1.419     0.017     
+X15       CAL       CAI       SINGLE    n         1.520     0.010     1.520     0.010     
+X15       CAI       OAJ       SINGLE    n         1.433     0.010     1.433     0.010     
+X15       OAJ       PAN       SINGLE    n         1.614     0.019     1.614     0.019     
+X15       PAN       OAD       SINGLE    n         1.517     0.019     1.517     0.019     
+X15       PAN       OAE       SINGLE    n         1.517     0.019     1.517     0.019     
+X15       PAN       OAC       DOUBLE    n         1.517     0.019     1.517     0.019     
+X15       CAL       HAL       SINGLE    n         1.089     0.010     0.988     0.014     
+X15       OAA       HAA       SINGLE    n         0.970     0.012     0.848     0.020     
+X15       CAI       HAI1      SINGLE    n         1.089     0.010     0.987     0.016     
+X15       CAI       HAI2      SINGLE    n         1.089     0.010     0.987     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+X15         OAG         PAO         OAH     112.864    1.69
+X15         OAG         PAO         OAF     112.864    1.69
+X15         OAG         PAO         OAK     112.304    3.00
+X15         OAH         PAO         OAF     112.864    1.69
+X15         OAH         PAO         OAK     112.304    3.00
+X15         OAF         PAO         OAK     112.304    3.00
+X15         PAO         OAK         CAM     122.808    2.93
+X15         OAK         CAM         OAB     124.622    1.74
+X15         OAK         CAM         CAL     112.391    1.89
+X15         OAB         CAM         CAL     122.987    1.80
+X15         CAM         CAL         OAA     110.656    1.92
+X15         CAM         CAL         CAI     111.511    2.91
+X15         CAM         CAL         HAL     108.572    1.50
+X15         OAA         CAL         CAI     111.584    1.50
+X15         OAA         CAL         HAL     108.675    1.50
+X15         CAI         CAL         HAL     108.282    1.50
+X15         CAL         OAA         HAA     108.894    3.00
+X15         CAL         CAI         OAJ     109.482    3.00
+X15         CAL         CAI        HAI1     110.652    1.50
+X15         CAL         CAI        HAI2     110.652    1.50
+X15         OAJ         CAI        HAI1     109.393    1.91
+X15         OAJ         CAI        HAI2     109.393    1.91
+X15        HAI1         CAI        HAI2     108.319    1.50
+X15         CAI         OAJ         PAN     118.671    1.50
+X15         OAJ         PAN         OAD     105.795    2.09
+X15         OAJ         PAN         OAE     105.795    2.09
+X15         OAJ         PAN         OAC     105.795    2.09
+X15         OAD         PAN         OAE     112.864    1.69
+X15         OAD         PAN         OAC     112.864    1.69
+X15         OAE         PAN         OAC     112.864    1.69
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+X15            sp3_sp3_19         CAI         OAJ         PAN         OAD     180.000   10.00     3
+X15             sp3_sp3_1         OAG         PAO         OAK         CAM     180.000   10.00     3
+X15             sp2_sp2_1         OAB         CAM         OAK         PAO     180.000   10.00     2
+X15             sp2_sp3_1         OAK         CAM         CAL         OAA       0.000   10.00     6
+X15             sp3_sp3_4         CAM         CAL         OAA         HAA     180.000   10.00     3
+X15             sp3_sp3_7         OAJ         CAI         CAL         CAM     180.000   10.00     3
+X15            sp3_sp3_16         CAL         CAI         OAJ         PAN     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+X15    chir_1    CAL    OAA    CAM    CAI    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+X15    plan-1         CAL   0.020
+X15    plan-1         CAM   0.020
+X15    plan-1         OAB   0.020
+X15    plan-1         OAK   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+X15 SMILES           ACDLabs              10.04 "O=P(O)(O)OCC(O)C(=O)OP(=O)(O)O"
+X15 SMILES_CANONICAL CACTVS               3.352 "O[C@H](CO[P](O)(O)=O)C(=O)O[P](O)(O)=O"
+X15 SMILES           CACTVS               3.352 "O[CH](CO[P](O)(O)=O)C(=O)O[P](O)(O)=O"
+X15 SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "C([C@H](C(=O)OP(=O)(O)O)O)OP(=O)(O)O"
+X15 SMILES           "OpenEye OEToolkits" 1.6.1 "C(C(C(=O)OP(=O)(O)O)O)OP(=O)(O)O"
+X15 InChI            InChI                1.03  "InChI=1S/C3H8O10P2/c4-2(1-12-14(6,7)8)3(5)13-15(9,10)11/h2,4H,1H2,(H2,6,7,8)(H2,9,10,11)/t2-/m1/s1"
+X15 InChIKey         InChI                1.03  LJQLQCAXBUHEAZ-UWTATZPHSA-N
+X15 ?                acedrg               202         "dictionary generator"                  
+X15 ?                acedrg_database      11          "data source"                           
+X15 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+X15 ?                refmac5              5.8.0189    "optimization tool"                     

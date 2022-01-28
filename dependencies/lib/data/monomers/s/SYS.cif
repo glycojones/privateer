@@ -1,0 +1,196 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SYS      SYS '3-[(2-amino-2-oxoethyl)selanyl]-L-al' non-polymer        20  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SYS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SYS           O3     O    O         0.000      0.000    0.000    0.000
+ SYS           C5     C    C         0.000     -0.511   -0.972    0.515
+ SYS           N2     N    NH2       0.000      0.262   -1.937    1.048
+ SYS           H9     H    H         0.000      1.272   -1.856    1.021
+ SYS           H8     H    H         0.000     -0.160   -2.750    1.480
+ SYS           C4     C    CH2       0.000     -2.013   -1.099    0.558
+ SYS           H6     H    H         0.000     -2.343   -1.160    1.597
+ SYS           H7     H    H         0.000     -2.316   -2.004    0.028
+ SYS           SE     SE   SE        0.000     -2.826    0.465   -0.298
+ SYS           CB     C    CH2       0.000     -4.732    0.047   -0.105
+ SYS           HB     H    H         0.000     -4.977   -0.048    0.954
+ SYS           HBA    H    H         0.000     -4.951   -0.893   -0.615
+ SYS           CA     C    CH1       0.000     -5.565    1.171   -0.725
+ SYS           HA     H    H         0.000     -5.254    1.326   -1.767
+ SYS           N      N    NH2       0.000     -5.360    2.410    0.037
+ SYS           HNA    H    H         0.000     -4.982    3.233   -0.417
+ SYS           HN     H    H         0.000     -5.595    2.450    1.022
+ SYS           C      C    C         0.000     -7.024    0.794   -0.687
+ SYS           O      O    OC       -0.500     -7.767    1.260    0.204
+ SYS           O2     O    OC       -0.500     -7.491    0.016   -1.548
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SYS      O3     n/a    C5     START
+ SYS      C5     O3     C4     .
+ SYS      N2     C5     H8     .
+ SYS      H9     N2     .      .
+ SYS      H8     N2     .      .
+ SYS      C4     C5     SE     .
+ SYS      H6     C4     .      .
+ SYS      H7     C4     .      .
+ SYS      SE     C4     CB     .
+ SYS      CB     SE     CA     .
+ SYS      HB     CB     .      .
+ SYS      HBA    CB     .      .
+ SYS      CA     CB     C      .
+ SYS      HA     CA     .      .
+ SYS      N      CA     HN     .
+ SYS      HNA    N      .      .
+ SYS      HN     N      .      .
+ SYS      C      CA     O2     .
+ SYS      O      C      .      .
+ SYS      O2     C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SYS       N         CA        single    1.450     0.020     1.450     0.020     
+SYS       HN        N         single    1.036     0.016     0.914     0.007     
+SYS       HNA       N         single    1.036     0.016     0.914     0.007     
+SYS       CA        CB        single    1.524     0.020     1.524     0.020     
+SYS       C         CA        single    1.500     0.020     1.500     0.020     
+SYS       HA        CA        single    1.089     0.010     0.989     0.005     
+SYS       CB        SE        single    1.970     0.020     1.970     0.020     
+SYS       HB        CB        single    1.089     0.010     0.989     0.005     
+SYS       HBA       CB        single    1.089     0.010     0.989     0.005     
+SYS       O         C         deloc     1.250     0.020     1.250     0.020     
+SYS       O2        C         deloc     1.250     0.020     1.250     0.020     
+SYS       SE        C4        single    1.970     0.020     1.970     0.020     
+SYS       C4        C5        single    1.510     0.020     1.510     0.020     
+SYS       N2        C5        single    1.332     0.020     1.332     0.020     
+SYS       C5        O3        double    1.220     0.020     1.220     0.020     
+SYS       H6        C4        single    1.089     0.010     0.989     0.005     
+SYS       H7        C4        single    1.089     0.010     0.989     0.005     
+SYS       H8        N2        single    1.016     0.010     0.899     0.007     
+SYS       H9        N2        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SYS      O3     C5     N2      123.000    3.000
+ SYS      O3     C5     C4      120.500    3.000
+ SYS      N2     C5     C4      116.500    3.000
+ SYS      C5     N2     H9      120.000    3.000
+ SYS      C5     N2     H8      120.000    3.000
+ SYS      H9     N2     H8      120.000    3.000
+ SYS      C5     C4     H6      109.470    3.000
+ SYS      C5     C4     H7      109.470    3.000
+ SYS      C5     C4     SE      109.500    3.000
+ SYS      H6     C4     H7      107.900    3.000
+ SYS      H6     C4     SE      109.500    3.000
+ SYS      H7     C4     SE      109.500    3.000
+ SYS      C4     SE     CB       98.000    3.000
+ SYS      SE     CB     HB      109.500    3.000
+ SYS      SE     CB     HBA     109.500    3.000
+ SYS      SE     CB     CA      109.500    3.000
+ SYS      HB     CB     HBA     107.900    3.000
+ SYS      HB     CB     CA      109.470    3.000
+ SYS      HBA    CB     CA      109.470    3.000
+ SYS      CB     CA     HA      108.340    3.000
+ SYS      CB     CA     N       109.470    3.000
+ SYS      CB     CA     C       109.470    3.000
+ SYS      HA     CA     N       109.470    3.000
+ SYS      HA     CA     C       108.810    3.000
+ SYS      N      CA     C       109.470    3.000
+ SYS      CA     N      HNA     120.000    3.000
+ SYS      CA     N      HN      120.000    3.000
+ SYS      HNA    N      HN      120.000    3.000
+ SYS      CA     C      O       118.500    3.000
+ SYS      CA     C      O2      118.500    3.000
+ SYS      O      C      O2      123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SYS      CONST_1  O3     C5     N2     H8       180.000    0.000   0
+ SYS      var_1    O3     C5     C4     SE        -0.036   20.000   3
+ SYS      var_2    C5     C4     SE     CB      -179.992   20.000   1
+ SYS      var_3    C4     SE     CB     CA      -179.998   20.000   1
+ SYS      var_4    SE     CB     CA     C        174.993   20.000   3
+ SYS      var_5    CB     CA     N      HN       -60.037   20.000   1
+ SYS      var_6    CB     CA     C      O2       -80.027   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SYS      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SYS      plan-1    N         0.020
+ SYS      plan-1    CA        0.020
+ SYS      plan-1    HN        0.020
+ SYS      plan-1    HNA       0.020
+ SYS      plan-2    C         0.020
+ SYS      plan-2    CA        0.020
+ SYS      plan-2    O         0.020
+ SYS      plan-2    O2        0.020
+ SYS      plan-3    C5        0.020
+ SYS      plan-3    C4        0.020
+ SYS      plan-3    N2        0.020
+ SYS      plan-3    O3        0.020
+ SYS      plan-3    H9        0.020
+ SYS      plan-3    H8        0.020
+ SYS      plan-4    N2        0.020
+ SYS      plan-4    C5        0.020
+ SYS      plan-4    H8        0.020
+ SYS      plan-4    H9        0.020
+# ------------------------------------------------------

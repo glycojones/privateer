@@ -1,0 +1,221 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+S2C     S2C     "S-2-(BORONOETHYL)-L-CYSTEINE"     peptide     26     13     .
+#
+data_comp_S2C
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+S2C     OXT     O       OC      -1      -4.201      -1.824      0.081
+S2C     N       N       NT3     1       -3.533      0.852       -0.847
+S2C     CA      C       CH1     0       -3.113      0.257       0.451
+S2C     C       C       C       0       -4.094      -0.851      0.854
+S2C     O       O       O       0       -4.715      -0.702      1.926
+S2C     CB      C       CH2     0       -1.701      -0.284      0.326
+S2C     SG      S       S2      0       -0.425      0.976       0.053
+S2C     CD      C       CH2     0       1.086       -0.017      0.004
+S2C     CE      C       CH2     0       2.343       0.820       -0.162
+S2C     B       B       B       -1      3.714       -0.056      -0.219
+S2C     O1      O       OH1     0       3.647       -1.006      -1.370
+S2C     O2      O       OH1     0       4.881       0.861       -0.392
+S2C     O3      O       OH1     0       3.864       -0.823      1.055
+S2C     H       H       H       0       -2.950      1.511       -1.085
+S2C     H2      H       H       0       -4.369      1.206       -0.767
+S2C     H3      H       H       0       -3.538      0.210       -1.493
+S2C     HA      H       H       0       -3.132      0.966       1.135
+S2C     HB1     H       H       0       -1.678      -0.913      -0.411
+S2C     HB2     H       H       0       -1.485      -0.772      1.137
+S2C     HD1     H       H       0       1.017       -0.653      -0.740
+S2C     HD2     H       H       0       1.146       -0.535      0.835
+S2C     HE1     H       H       0       2.404       1.453       0.587
+S2C     HE2     H       H       0       2.269       1.343       -0.991
+S2C     HO1     H       H       0       4.326       -1.514      -1.380
+S2C     HO2     H       H       0       5.576       0.425       -0.607
+S2C     HO3     H       H       0       4.518       -1.361      1.007
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+S2C      N      n/a    CA     START
+S2C      H      N      .      .
+S2C      H2     N      .      .
+S2C      H3     N      .      .
+S2C      CA     N      C      .
+S2C      HA     CA     .      .
+S2C      CB     CA     SG     .
+S2C      HB1    CB     .      .
+S2C      HB2    CB     .      .
+S2C      SG     CB     CD     .
+S2C      CD     SG     CE     .
+S2C      HD1    CD     .      .
+S2C      HD2    CD     .      .
+S2C      CE     CD     B      .
+S2C      HE1    CE     .      .
+S2C      HE2    CE     .      .
+S2C      B      CE     O1     .
+S2C      O3     B      HO3    .
+S2C      HO3    O3     .      .
+S2C      O2     B      HO2    .
+S2C      HO2    O2     .      .
+S2C      O1     B      HO1    .
+S2C      HO1    O1     .      .
+S2C      C      CA     .      END
+S2C      OXT    C      .      .
+S2C      O      C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+S2C       OXT       C         SINGLE    n         1.247     0.019     1.247     0.019     
+S2C       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+S2C       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+S2C       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+S2C       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+S2C       CB        SG        SINGLE    n         1.814     0.010     1.814     0.010     
+S2C       SG        CD        SINGLE    n         1.809     0.012     1.809     0.012     
+S2C       CD        CE        SINGLE    n         1.519     0.018     1.519     0.018     
+S2C       CE        B         SINGLE    n         1.628     0.020     1.628     0.020     
+S2C       B         O1        SINGLE    n         1.494     0.020     1.494     0.020     
+S2C       B         O2        SINGLE    n         1.494     0.020     1.494     0.020     
+S2C       B         O3        SINGLE    n         1.494     0.020     1.494     0.020     
+S2C       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+S2C       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+S2C       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+S2C       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+S2C       CB        HB1       SINGLE    n         1.089     0.010     0.970     0.010     
+S2C       CB        HB2       SINGLE    n         1.089     0.010     0.970     0.010     
+S2C       CD        HD1       SINGLE    n         1.089     0.010     0.981     0.013     
+S2C       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.013     
+S2C       CE        HE1       SINGLE    n         1.089     0.010     0.983     0.014     
+S2C       CE        HE2       SINGLE    n         1.089     0.010     0.983     0.014     
+S2C       O1        HO1       SINGLE    n         0.970     0.012     0.848     0.020     
+S2C       O2        HO2       SINGLE    n         0.970     0.012     0.848     0.020     
+S2C       O3        HO3       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+S2C          CA           N           H     109.671    1.50
+S2C          CA           N          H2     109.671    1.50
+S2C          CA           N          H3     109.671    1.50
+S2C           H           N          H2     109.028    2.41
+S2C           H           N          H3     109.028    2.41
+S2C          H2           N          H3     109.028    2.41
+S2C           N          CA           C     109.494    1.50
+S2C           N          CA          CB     109.354    1.50
+S2C           N          CA          HA     107.983    1.50
+S2C           C          CA          CB     110.419    2.31
+S2C           C          CA          HA     108.606    1.50
+S2C          CB          CA          HA     109.209    1.50
+S2C         OXT           C          CA     117.134    1.50
+S2C         OXT           C           O     125.732    1.50
+S2C          CA           C           O     117.134    1.50
+S2C          CA          CB          SG     114.974    1.55
+S2C          CA          CB         HB1     108.537    1.50
+S2C          CA          CB         HB2     108.537    1.50
+S2C          SG          CB         HB1     108.759    1.50
+S2C          SG          CB         HB2     108.759    1.50
+S2C         HB1          CB         HB2     107.812    1.50
+S2C          CB          SG          CD     102.177    1.97
+S2C          SG          CD          CE     113.315    2.50
+S2C          SG          CD         HD1     108.654    1.50
+S2C          SG          CD         HD2     108.654    1.50
+S2C          CE          CD         HD1     109.556    1.50
+S2C          CE          CD         HD2     109.556    1.50
+S2C         HD1          CD         HD2     107.922    1.50
+S2C          CD          CE           B     114.075    3.00
+S2C          CD          CE         HE1     108.910    1.50
+S2C          CD          CE         HE2     108.910    1.50
+S2C           B          CE         HE1     108.703    1.50
+S2C           B          CE         HE2     108.703    1.50
+S2C         HE1          CE         HE2     107.715    1.50
+S2C          CE           B          O1     109.544    1.93
+S2C          CE           B          O2     109.544    1.93
+S2C          CE           B          O3     109.544    1.93
+S2C          O1           B          O2     110.049    3.00
+S2C          O1           B          O3     110.049    3.00
+S2C          O2           B          O3     110.049    3.00
+S2C           B          O1         HO1     110.747    3.00
+S2C           B          O2         HO2     110.747    3.00
+S2C           B          O3         HO3     110.747    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+S2C             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+S2C             sp2_sp3_2         OXT           C          CA           N     120.000   10.00     6
+S2C            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+S2C            sp3_sp3_19          CA          CB          SG          CD     180.000   10.00     3
+S2C            sp3_sp3_22          CE          CD          SG          CB     180.000   10.00     3
+S2C            sp3_sp3_25          SG          CD          CE           B     180.000   10.00     3
+S2C            sp3_sp3_34          O1           B          CE          CD     180.000   10.00     3
+S2C            sp3_sp3_43          CE           B          O1         HO1     180.000   10.00     3
+S2C            sp3_sp3_46          CE           B          O2         HO2     180.000   10.00     3
+S2C            sp3_sp3_49          CE           B          O3         HO3     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+S2C    chir_1    CA    N    CB    C    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+S2C    plan-1           C   0.020
+S2C    plan-1          CA   0.020
+S2C    plan-1           O   0.020
+S2C    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+S2C SMILES           ACDLabs              12.01 "O=C(O)C(N)CSCC[B-](O)(O)O"
+S2C SMILES_CANONICAL CACTVS               3.370 "N[C@@H](CSCC[B-](O)(O)O)C(O)=O"
+S2C SMILES           CACTVS               3.370 "N[CH](CSCC[B-](O)(O)O)C(O)=O"
+S2C SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "[B-](CCSC[C@@H](C(=O)O)N)(O)(O)O"
+S2C SMILES           "OpenEye OEToolkits" 1.7.0 "[B-](CCSCC(C(=O)O)N)(O)(O)O"
+S2C InChI            InChI                1.03  "InChI=1S/C5H13BNO5S/c7-4(5(8)9)3-13-2-1-6(10,11)12/h4,10-12H,1-3,7H2,(H,8,9)/q-1/t4-/m0/s1"
+S2C InChIKey         InChI                1.03  XLVRIIJULVQAMP-BYPYZUCNSA-N
+S2C ?                acedrg               202         "dictionary generator"
+S2C ?                acedrg_database      11          "data source"
+S2C ?                rdkit                2017.03.2   "Chemoinformatics tool"
+S2C ?                refmac5              5.8.0222    "optimization tool"

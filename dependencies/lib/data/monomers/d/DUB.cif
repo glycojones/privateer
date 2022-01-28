@@ -1,0 +1,134 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DUB     DUB      2,6-dichlorophenol     NON-POLYMER     13     9     .     
+#
+data_comp_DUB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DUB     CL1     CL      CL      0       -3.436      -16.446     -13.343     
+DUB     C02     C       CR6     0       -4.086      -16.391     -14.947     
+DUB     C03     C       CR16    0       -3.241      -16.164     -16.028     
+DUB     C04     C       CR16    0       -3.762      -16.120     -17.306     
+DUB     C05     C       CR16    0       -5.115      -16.301     -17.516     
+DUB     C06     C       CR6     0       -5.956      -16.527     -16.432     
+DUB     CL2     CL      CL      0       -7.653      -16.754     -16.692     
+DUB     C08     C       CR6     0       -5.470      -16.580     -15.113     
+DUB     O09     O       OH1     0       -6.282      -16.799     -14.070     
+DUB     H1      H       H       0       -2.321      -16.041     -15.885     
+DUB     H2      H       H       0       -3.192      -15.967     -18.038     
+DUB     H3      H       H       0       -5.468      -16.271     -18.385     
+DUB     H4      H       H       0       -6.887      -16.197     -13.984     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DUB       C04       C05       DOUBLE    y         1.373     0.012     1.373     0.012     
+DUB       C05       C06       SINGLE    y         1.379     0.013     1.379     0.013     
+DUB       C03       C04       SINGLE    y         1.373     0.012     1.373     0.012     
+DUB       C06       CL2       SINGLE    n         1.731     0.010     1.731     0.010     
+DUB       C06       C08       DOUBLE    y         1.384     0.015     1.384     0.015     
+DUB       C02       C03       DOUBLE    y         1.379     0.013     1.379     0.013     
+DUB       C02       C08       SINGLE    y         1.384     0.015     1.384     0.015     
+DUB       C08       O09       SINGLE    n         1.339     0.010     1.339     0.010     
+DUB       CL1       C02       SINGLE    n         1.731     0.010     1.731     0.010     
+DUB       C03       H1        SINGLE    n         1.082     0.013     0.939     0.019     
+DUB       C04       H2        SINGLE    n         1.082     0.013     0.941     0.013     
+DUB       C05       H3        SINGLE    n         1.082     0.013     0.939     0.019     
+DUB       O09       H4        SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DUB         C03         C02         C08     121.698    1.50
+DUB         C03         C02         CL1     120.215    1.50
+DUB         C08         C02         CL1     118.087    1.50
+DUB         C04         C03         C02     119.977    1.50
+DUB         C04         C03          H1     120.238    1.50
+DUB         C02         C03          H1     119.785    1.50
+DUB         C05         C04         C03     120.971    1.50
+DUB         C05         C04          H2     119.514    1.50
+DUB         C03         C04          H2     119.514    1.50
+DUB         C04         C05         C06     119.977    1.50
+DUB         C04         C05          H3     120.238    1.50
+DUB         C06         C05          H3     119.785    1.50
+DUB         C05         C06         CL2     120.215    1.50
+DUB         C05         C06         C08     121.698    1.50
+DUB         CL2         C06         C08     118.087    1.50
+DUB         C06         C08         C02     115.678    1.51
+DUB         C06         C08         O09     122.161    3.00
+DUB         C02         C08         O09     122.161    3.00
+DUB         C08         O09          H4     113.011    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DUB       const_sp2_sp2_3         CL1         C02         C03         C04     180.000   10.00     2
+DUB              const_24         CL1         C02         C08         O09       0.000   10.00     2
+DUB       const_sp2_sp2_5         C02         C03         C04         C05       0.000   10.00     2
+DUB       const_sp2_sp2_9         C03         C04         C05         C06       0.000   10.00     2
+DUB              const_14         C04         C05         C06         CL2     180.000   10.00     2
+DUB              const_20         CL2         C06         C08         O09       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DUB    plan-1         C02   0.020
+DUB    plan-1         C03   0.020
+DUB    plan-1         C04   0.020
+DUB    plan-1         C05   0.020
+DUB    plan-1         C06   0.020
+DUB    plan-1         C08   0.020
+DUB    plan-1         CL1   0.020
+DUB    plan-1         CL2   0.020
+DUB    plan-1          H1   0.020
+DUB    plan-1          H2   0.020
+DUB    plan-1          H3   0.020
+DUB    plan-1         O09   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DUB InChI            InChI                1.03  "InChI=1S/C6H4Cl2O/c7-4-2-1-3-5(8)6(4)9/h1-3,9H"
+DUB InChIKey         InChI                1.03  HOLHYSJJBXSLMV-UHFFFAOYSA-N
+DUB SMILES_CANONICAL CACTVS               3.385 "Oc1c(Cl)cccc1Cl"
+DUB SMILES           CACTVS               3.385 "Oc1c(Cl)cccc1Cl"
+DUB SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "c1cc(c(c(c1)Cl)O)Cl"
+DUB SMILES           "OpenEye OEToolkits" 2.0.6 "c1cc(c(c(c1)Cl)O)Cl"
+DUB ?                acedrg               202         "dictionary generator"                  
+DUB ?                acedrg_database      11          "data source"                           
+DUB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DUB ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,117 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HGU     HGU     N-HYDROXYGUANIDINE     NON-POLYMER     10     5     .     
+#
+data_comp_HGU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HGU     O       O       OH1     0       -3.965      16.458      0.574       
+HGU     N       N       NH1     0       -4.277      16.491      -0.782      
+HGU     C       C       C       0       -3.910      17.543      -1.578      
+HGU     NH1     N       NH1     0       -4.131      17.577      -2.866      
+HGU     NH2     N       NH2     0       -3.297      18.589      -1.005      
+HGU     HO      H       H       0       -4.524      16.977      0.986       
+HGU     HN      H       H       0       -4.723      15.802      -1.087      
+HGU     HN1     H       H       0       -4.541      16.794      -3.164      
+HGU     HN21    H       H       0       -3.048      19.281      -1.492      
+HGU     HN22    H       H       0       -3.142      18.586      -0.136      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HGU       O         N         SINGLE    n         1.389     0.013     1.389     0.013     
+HGU       N         C         SINGLE    n         1.347     0.020     1.347     0.020     
+HGU       C         NH1       DOUBLE    n         1.301     0.013     1.301     0.013     
+HGU       C         NH2       SINGLE    n         1.334     0.015     1.334     0.015     
+HGU       O         HO        SINGLE    n         0.970     0.012     0.867     0.020     
+HGU       N         HN        SINGLE    n         1.016     0.010     0.875     0.020     
+HGU       NH1       HN1       SINGLE    n         1.016     0.010     0.932     0.020     
+HGU       NH2       HN21      SINGLE    n         1.016     0.010     0.881     0.020     
+HGU       NH2       HN22      SINGLE    n         1.016     0.010     0.881     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HGU           N           O          HO     107.689    3.00
+HGU           O           N           C     120.038    2.14
+HGU           O           N          HN     117.693    3.00
+HGU           C           N          HN     122.269    2.12
+HGU           N           C         NH1     121.480    3.00
+HGU           N           C         NH2     117.684    3.00
+HGU         NH1           C         NH2     120.836    2.38
+HGU           C         NH1         HN1     110.271    1.50
+HGU           C         NH2        HN21     119.894    2.29
+HGU           C         NH2        HN22     119.894    2.29
+HGU        HN21         NH2        HN22     120.211    2.09
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HGU             sp2_sp2_3         NH1           C           N           O       0.000   10.00     2
+HGU             sp2_sp2_5           N           C         NH1         HN1     180.000   10.00     2
+HGU             sp2_sp2_7           N           C         NH2        HN21     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HGU    plan-1           C   0.020
+HGU    plan-1          HN   0.020
+HGU    plan-1           N   0.020
+HGU    plan-1           O   0.020
+HGU    plan-2           C   0.020
+HGU    plan-2           N   0.020
+HGU    plan-2         NH1   0.020
+HGU    plan-2         NH2   0.020
+HGU    plan-3           C   0.020
+HGU    plan-3        HN21   0.020
+HGU    plan-3        HN22   0.020
+HGU    plan-3         NH2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HGU SMILES           ACDLabs              10.04 "[N@H]=C(N)NO"
+HGU SMILES_CANONICAL CACTVS               3.341 "NC(=N)NO"
+HGU SMILES           CACTVS               3.341 "NC(=N)NO"
+HGU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=N)(N)NO"
+HGU SMILES           "OpenEye OEToolkits" 1.5.0 "C(=N)(N)NO"
+HGU InChI            InChI                1.03  "InChI=1S/CH5N3O/c2-1(3)4-5/h5H,(H4,2,3,4)"
+HGU InChIKey         InChI                1.03  WFBHRSAKANVBKH-UHFFFAOYSA-N
+HGU ?                acedrg               190         "dictionary generator"                  
+HGU ?                acedrg_database      11          "data source"                           
+HGU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HGU ?                refmac5              5.8.0158    "optimization tool"                     

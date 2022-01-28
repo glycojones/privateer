@@ -1,0 +1,162 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PEL     PEL      2-PHENYL-ETHANOL     NON-POLYMER     19     9     .     
+#
+data_comp_PEL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PEL     "C1'"   C       CR6     0       41.840      -54.747     1.019       
+PEL     "C2'"   C       CR16    0       42.853      -54.553     0.082       
+PEL     "C3'"   C       CR16    0       43.686      -53.439     0.154       
+PEL     "C4'"   C       CR16    0       43.515      -52.506     1.163       
+PEL     "C5'"   C       CR16    0       42.513      -52.687     2.101       
+PEL     "C6'"   C       CR16    0       41.680      -53.800     2.029       
+PEL     CA      C       CH2     0       40.937      -55.954     0.941       
+PEL     C       C       CH2     0       41.393      -57.105     1.812       
+PEL     OXT     O       OH1     0       42.635      -57.627     1.354       
+PEL     H2      H       H       0       42.976      -55.184     -0.609      
+PEL     H3      H       H       0       44.368      -53.319     -0.487      
+PEL     H4      H       H       0       44.080      -51.751     1.212       
+PEL     H5      H       H       0       42.393      -52.053     2.790       
+PEL     H6      H       H       0       40.998      -53.917     2.672       
+PEL     HA1     H       H       0       40.893      -56.259     0.014       
+PEL     HA2     H       H       0       40.035      -55.694     1.210       
+PEL     H11     H       H       0       40.718      -57.814     1.797       
+PEL     H12     H       H       0       41.493      -56.797     2.736       
+PEL     HXT     H       H       0       42.514      -57.993     0.600       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PEL       "C1'"     "C2'"     DOUBLE    y         1.385     0.011     1.385     0.011     
+PEL       "C1'"     "C6'"     SINGLE    y         1.385     0.011     1.385     0.011     
+PEL       "C1'"     CA        SINGLE    n         1.509     0.010     1.509     0.010     
+PEL       "C2'"     "C3'"     SINGLE    y         1.386     0.010     1.386     0.010     
+PEL       "C3'"     "C4'"     DOUBLE    y         1.376     0.012     1.376     0.012     
+PEL       "C4'"     "C5'"     SINGLE    y         1.374     0.013     1.374     0.013     
+PEL       "C5'"     "C6'"     DOUBLE    y         1.386     0.010     1.386     0.010     
+PEL       CA        C         SINGLE    n         1.513     0.010     1.513     0.010     
+PEL       C         OXT       SINGLE    n         1.423     0.015     1.423     0.015     
+PEL       "C2'"     H2        SINGLE    n         1.082     0.013     0.944     0.017     
+PEL       "C3'"     H3        SINGLE    n         1.082     0.013     0.944     0.018     
+PEL       "C4'"     H4        SINGLE    n         1.082     0.013     0.944     0.016     
+PEL       "C5'"     H5        SINGLE    n         1.082     0.013     0.944     0.018     
+PEL       "C6'"     H6        SINGLE    n         1.082     0.013     0.944     0.017     
+PEL       CA        HA1       SINGLE    n         1.089     0.010     0.977     0.012     
+PEL       CA        HA2       SINGLE    n         1.089     0.010     0.977     0.012     
+PEL       C         H11       SINGLE    n         1.089     0.010     0.979     0.010     
+PEL       C         H12       SINGLE    n         1.089     0.010     0.979     0.010     
+PEL       OXT       HXT       SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PEL       "C2'"       "C1'"       "C6'"     118.060    1.50
+PEL       "C2'"       "C1'"          CA     120.970    1.50
+PEL       "C6'"       "C1'"          CA     120.970    1.50
+PEL       "C1'"       "C2'"       "C3'"     120.624    1.50
+PEL       "C1'"       "C2'"          H2     119.591    1.50
+PEL       "C3'"       "C2'"          H2     119.786    1.50
+PEL       "C2'"       "C3'"       "C4'"     120.325    1.50
+PEL       "C2'"       "C3'"          H3     119.792    1.50
+PEL       "C4'"       "C3'"          H3     119.883    1.50
+PEL       "C3'"       "C4'"       "C5'"     120.043    1.50
+PEL       "C3'"       "C4'"          H4     119.979    1.50
+PEL       "C5'"       "C4'"          H4     119.979    1.50
+PEL       "C4'"       "C5'"       "C6'"     120.325    1.50
+PEL       "C4'"       "C5'"          H5     119.883    1.50
+PEL       "C6'"       "C5'"          H5     119.792    1.50
+PEL       "C1'"       "C6'"       "C5'"     120.624    1.50
+PEL       "C1'"       "C6'"          H6     119.591    1.50
+PEL       "C5'"       "C6'"          H6     119.786    1.50
+PEL       "C1'"          CA           C     113.535    1.73
+PEL       "C1'"          CA         HA1     109.076    1.50
+PEL       "C1'"          CA         HA2     109.076    1.50
+PEL           C          CA         HA1     108.860    1.50
+PEL           C          CA         HA2     108.860    1.50
+PEL         HA1          CA         HA2     107.679    1.50
+PEL          CA           C         OXT     110.820    2.53
+PEL          CA           C         H11     109.559    1.50
+PEL          CA           C         H12     109.559    1.50
+PEL         OXT           C         H11     109.298    1.50
+PEL         OXT           C         H12     109.298    1.50
+PEL         H11           C         H12     108.208    1.50
+PEL           C         OXT         HXT     108.726    2.19
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PEL       const_sp2_sp2_3          CA       "C1'"       "C2'"       "C3'"     180.000   10.00     2
+PEL              const_23          CA       "C1'"       "C6'"       "C5'"     180.000   10.00     2
+PEL             sp2_sp3_2       "C2'"       "C1'"          CA           C     -90.000   10.00     6
+PEL       const_sp2_sp2_5       "C1'"       "C2'"       "C3'"       "C4'"       0.000   10.00     2
+PEL       const_sp2_sp2_9       "C2'"       "C3'"       "C4'"       "C5'"       0.000   10.00     2
+PEL              const_13       "C3'"       "C4'"       "C5'"       "C6'"       0.000   10.00     2
+PEL              const_17       "C4'"       "C5'"       "C6'"       "C1'"       0.000   10.00     2
+PEL             sp3_sp3_1         OXT           C          CA       "C1'"     180.000   10.00     3
+PEL            sp3_sp3_10          CA           C         OXT         HXT     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PEL    plan-1       "C1'"   0.020
+PEL    plan-1       "C2'"   0.020
+PEL    plan-1       "C3'"   0.020
+PEL    plan-1       "C4'"   0.020
+PEL    plan-1       "C5'"   0.020
+PEL    plan-1       "C6'"   0.020
+PEL    plan-1          CA   0.020
+PEL    plan-1          H2   0.020
+PEL    plan-1          H3   0.020
+PEL    plan-1          H4   0.020
+PEL    plan-1          H5   0.020
+PEL    plan-1          H6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PEL SMILES           ACDLabs              10.04 OCCc1ccccc1
+PEL SMILES_CANONICAL CACTVS               3.341 OCCc1ccccc1
+PEL SMILES           CACTVS               3.341 OCCc1ccccc1
+PEL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)CCO"
+PEL SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)CCO"
+PEL InChI            InChI                1.03  InChI=1S/C8H10O/c9-7-6-8-4-2-1-3-5-8/h1-5,9H,6-7H2
+PEL InChIKey         InChI                1.03  WRMNZCZEMHIOCP-UHFFFAOYSA-N
+PEL ?                acedrg               202         "dictionary generator"                  
+PEL ?                acedrg_database      11          "data source"                           
+PEL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PEL ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,199 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BNO      BNO 'NORLEUCINE BORONIC ACID             ' non-polymer        23   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BNO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BNO           O2     O    OH1       0.000      0.000    0.000    0.000
+ BNO           HO2    H    H         0.000      0.518    0.773    0.189
+ BNO           B      B    B         0.000     -1.142    0.147   -0.831
+ BNO           O1     O    OH1       0.000     -1.481    1.423   -1.355
+ BNO           HO1    H    H         0.000     -0.925    2.160   -1.132
+ BNO           CA     C    CH1       0.000     -2.031   -1.102   -1.170
+ BNO           HA     H    H         0.000     -2.486   -0.969   -2.162
+ BNO           N      N    NH2       0.000     -1.196   -2.312   -1.173
+ BNO           HN2    H    H         0.000     -1.360   -3.049   -0.497
+ BNO           HN1    H    H         0.000     -0.450   -2.418   -1.852
+ BNO           CB     C    CH2       0.000     -3.132   -1.246   -0.118
+ BNO           HB1    H    H         0.000     -2.678   -1.379    0.867
+ BNO           HB2    H    H         0.000     -3.749   -2.116   -0.354
+ BNO           CG     C    CH2       0.000     -4.001    0.012   -0.114
+ BNO           HG1    H    H         0.000     -4.453    0.145   -1.099
+ BNO           HG2    H    H         0.000     -3.382    0.881    0.121
+ BNO           CD     C    CH2       0.000     -5.103   -0.132    0.939
+ BNO           HD1    H    H         0.000     -4.649   -0.265    1.923
+ BNO           HD2    H    H         0.000     -5.720   -1.001    0.703
+ BNO           CE     C    CH3       0.000     -5.972    1.128    0.942
+ BNO           HE3    H    H         0.000     -6.413    1.259   -0.013
+ BNO           HE2    H    H         0.000     -6.737    1.032    1.670
+ BNO           HE1    H    H         0.000     -5.375    1.973    1.171
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BNO      O2     n/a    B      START
+ BNO      HO2    O2     .      .
+ BNO      B      O2     CA     .
+ BNO      O1     B      HO1    .
+ BNO      HO1    O1     .      .
+ BNO      CA     B      CB     .
+ BNO      HA     CA     .      .
+ BNO      N      CA     HN1    .
+ BNO      HN2    N      .      .
+ BNO      HN1    N      .      .
+ BNO      CB     CA     CG     .
+ BNO      HB1    CB     .      .
+ BNO      HB2    CB     .      .
+ BNO      CG     CB     CD     .
+ BNO      HG1    CG     .      .
+ BNO      HG2    CG     .      .
+ BNO      CD     CG     CE     .
+ BNO      HD1    CD     .      .
+ BNO      HD2    CD     .      .
+ BNO      CE     CD     HE1    .
+ BNO      HE3    CE     .      .
+ BNO      HE2    CE     .      .
+ BNO      HE1    CE     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BNO       N         CA        single    1.450     0.020     1.450     0.020     
+BNO       HN1       N         single    1.036     0.016     0.914     0.007     
+BNO       HN2       N         single    1.036     0.016     0.914     0.007     
+BNO       CB        CA        single    1.524     0.020     1.524     0.020     
+BNO       CA        B         single    1.600     0.020     1.600     0.020     
+BNO       HA        CA        single    1.089     0.010     0.989     0.005     
+BNO       CG        CB        single    1.524     0.020     1.524     0.020     
+BNO       HB1       CB        single    1.089     0.010     0.989     0.005     
+BNO       HB2       CB        single    1.089     0.010     0.989     0.005     
+BNO       CD        CG        single    1.524     0.020     1.524     0.020     
+BNO       HG1       CG        single    1.089     0.010     0.989     0.005     
+BNO       HG2       CG        single    1.089     0.010     0.989     0.005     
+BNO       CE        CD        single    1.513     0.020     1.513     0.020     
+BNO       HD1       CD        single    1.089     0.010     0.989     0.005     
+BNO       HD2       CD        single    1.089     0.010     0.989     0.005     
+BNO       HE1       CE        single    1.089     0.010     0.989     0.005     
+BNO       HE2       CE        single    1.089     0.010     0.989     0.005     
+BNO       HE3       CE        single    1.089     0.010     0.989     0.005     
+BNO       O1        B         single    1.535     0.020     1.535     0.020     
+BNO       B         O2        single    1.535     0.020     1.535     0.020     
+BNO       HO1       O1        single    0.970     0.012     0.839     0.014     
+BNO       HO2       O2        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BNO      HO2    O2     B       120.000    3.000
+ BNO      O2     B      O1      120.000    3.000
+ BNO      O2     B      CA      120.000    3.000
+ BNO      O1     B      CA      120.000    3.000
+ BNO      B      O1     HO1     120.000    3.000
+ BNO      B      CA     HA      109.470    3.000
+ BNO      B      CA     N       109.500    3.000
+ BNO      B      CA     CB      109.470    3.000
+ BNO      HA     CA     N       109.470    3.000
+ BNO      HA     CA     CB      108.340    3.000
+ BNO      N      CA     CB      109.470    3.000
+ BNO      CA     N      HN2     120.000    3.000
+ BNO      CA     N      HN1     120.000    3.000
+ BNO      HN2    N      HN1     120.000    3.000
+ BNO      CA     CB     HB1     109.470    3.000
+ BNO      CA     CB     HB2     109.470    3.000
+ BNO      CA     CB     CG      111.000    3.000
+ BNO      HB1    CB     HB2     107.900    3.000
+ BNO      HB1    CB     CG      109.470    3.000
+ BNO      HB2    CB     CG      109.470    3.000
+ BNO      CB     CG     HG1     109.470    3.000
+ BNO      CB     CG     HG2     109.470    3.000
+ BNO      CB     CG     CD      111.000    3.000
+ BNO      HG1    CG     HG2     107.900    3.000
+ BNO      HG1    CG     CD      109.470    3.000
+ BNO      HG2    CG     CD      109.470    3.000
+ BNO      CG     CD     HD1     109.470    3.000
+ BNO      CG     CD     HD2     109.470    3.000
+ BNO      CG     CD     CE      111.000    3.000
+ BNO      HD1    CD     HD2     107.900    3.000
+ BNO      HD1    CD     CE      109.470    3.000
+ BNO      HD2    CD     CE      109.470    3.000
+ BNO      CD     CE     HE3     109.470    3.000
+ BNO      CD     CE     HE2     109.470    3.000
+ BNO      CD     CE     HE1     109.470    3.000
+ BNO      HE3    CE     HE2     109.470    3.000
+ BNO      HE3    CE     HE1     109.470    3.000
+ BNO      HE2    CE     HE1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BNO      var_1    HO2    O2     B      CA      -179.987   20.000   1
+ BNO      var_2    O2     B      O1     HO1       -0.039   20.000   1
+ BNO      var_3    O2     B      CA     CB        90.029   20.000   1
+ BNO      var_4    B      CA     N      HN1      -63.981   20.000   1
+ BNO      var_5    B      CA     CB     CG        60.006   20.000   3
+ BNO      var_6    CA     CB     CG     CD       180.000   20.000   3
+ BNO      var_7    CB     CG     CD     CE      -179.989   20.000   3
+ BNO      var_8    CG     CD     CE     HE1      -60.022   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BNO      chir_01  CA     N      CB     B         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BNO      plan-1    N         0.020
+ BNO      plan-1    CA        0.020
+ BNO      plan-1    HN1       0.020
+ BNO      plan-1    HN2       0.020
+# ------------------------------------------------------

@@ -1,0 +1,132 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+URF     URF      5-FLUOROURACIL     NON-POLYMER     12     9     .     
+#
+data_comp_URF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+URF     N1      N       NR6     0       -11.102     93.181      91.178      
+URF     C2      C       CR6     0       -11.882     92.459      90.318      
+URF     N3      N       NR6     0       -12.982     93.135      89.824      
+URF     C4      C       CR6     0       -13.351     94.438      90.112      
+URF     C5      C       CR6     0       -12.456     95.111      91.033      
+URF     C6      C       CR16    0       -11.379     94.481      91.531      
+URF     O2      O       O       0       -11.631     91.301      90.007      
+URF     O4      O       O       0       -14.352     94.942      89.615      
+URF     F5      F       F       0       -12.755     96.381      91.358      
+URF     HN1     H       H       0       -10.361     92.757      91.524      
+URF     HN3     H       H       0       -13.525     92.661      89.237      
+URF     H6      H       H       0       -10.772     94.926      92.150      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+URF       N1        C2        SINGLE    y         1.362     0.010     1.362     0.010     
+URF       N1        C6        SINGLE    y         1.369     0.010     1.369     0.010     
+URF       C2        N3        SINGLE    y         1.377     0.010     1.377     0.010     
+URF       C2        O2        DOUBLE    n         1.225     0.010     1.225     0.010     
+URF       N3        C4        SINGLE    y         1.378     0.010     1.378     0.010     
+URF       C4        C5        SINGLE    y         1.442     0.010     1.442     0.010     
+URF       C4        O4        DOUBLE    n         1.226     0.010     1.226     0.010     
+URF       C5        C6        DOUBLE    y         1.337     0.010     1.337     0.010     
+URF       C5        F5        SINGLE    n         1.345     0.010     1.345     0.010     
+URF       N1        HN1       SINGLE    n         1.016     0.010     0.921     0.020     
+URF       N3        HN3       SINGLE    n         1.016     0.010     0.929     0.020     
+URF       C6        H6        SINGLE    n         1.082     0.013     0.974     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+URF          C2          N1          C6     123.419    1.50
+URF          C2          N1         HN1     116.635    2.18
+URF          C6          N1         HN1     119.947    2.23
+URF          N1          C2          N3     115.544    1.50
+URF          N1          C2          O2     122.460    1.50
+URF          N3          C2          O2     121.996    1.50
+URF          C2          N3          C4     126.884    1.50
+URF          C2          N3         HN3     116.070    2.30
+URF          C4          N3         HN3     117.046    1.50
+URF          N3          C4          C5     113.145    1.50
+URF          N3          C4          O4     121.588    1.50
+URF          C5          C4          O4     125.267    1.50
+URF          C4          C5          C6     120.559    1.50
+URF          C4          C5          F5     117.184    1.50
+URF          C6          C5          F5     122.258    1.50
+URF          N1          C6          C5     120.450    1.50
+URF          N1          C6          H6     118.148    2.07
+URF          C5          C6          H6     121.402    1.52
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+URF       const_sp2_sp2_3          O2          C2          N1          C6     180.000   10.00     2
+URF              const_21          C5          C6          N1          C2       0.000   10.00     2
+URF       const_sp2_sp2_7          O2          C2          N3          C4     180.000   10.00     2
+URF              const_11          O4          C4          N3          C2     180.000   10.00     2
+URF              const_16          O4          C4          C5          F5       0.000   10.00     2
+URF              const_19          F5          C5          C6          N1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+URF    plan-1          C2   0.020
+URF    plan-1          C4   0.020
+URF    plan-1          C5   0.020
+URF    plan-1          C6   0.020
+URF    plan-1          F5   0.020
+URF    plan-1          H6   0.020
+URF    plan-1         HN1   0.020
+URF    plan-1         HN3   0.020
+URF    plan-1          N1   0.020
+URF    plan-1          N3   0.020
+URF    plan-1          O2   0.020
+URF    plan-1          O4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+URF SMILES           ACDLabs              10.04 "FC1=CNC(=O)NC1=O"
+URF SMILES_CANONICAL CACTVS               3.341 "FC1=CNC(=O)NC1=O"
+URF SMILES           CACTVS               3.341 "FC1=CNC(=O)NC1=O"
+URF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1=C(C(=O)NC(=O)N1)F"
+URF SMILES           "OpenEye OEToolkits" 1.5.0 "C1=C(C(=O)NC(=O)N1)F"
+URF InChI            InChI                1.03  "InChI=1S/C4H3FN2O2/c5-2-1-6-4(9)7-3(2)8/h1H,(H2,6,7,8,9)"
+URF InChIKey         InChI                1.03  GHASVSINZRGABV-UHFFFAOYSA-N
+URF ?                acedrg               202         "dictionary generator"                  
+URF ?                acedrg_database      11          "data source"                           
+URF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+URF ?                refmac5              5.8.0189    "optimization tool"                     

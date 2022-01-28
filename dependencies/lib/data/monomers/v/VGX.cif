@@ -1,0 +1,128 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VGX     VGX      "4-hydroxy-2-oxobutanoic acid"     NON-POLYMER     13     8     .     
+#
+data_comp_VGX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+VGX     C01     C       CH2     0       17.523      39.612      52.321      
+VGX     C02     C       CH2     0       18.350      40.397      53.300      
+VGX     C03     C       C       0       18.855      39.611      54.489      
+VGX     C04     C       C       0       19.704      38.590      54.396      
+VGX     O05     O       OC      -1      19.809      37.791      55.337      
+VGX     O06     O       O       0       20.360      38.440      53.359      
+VGX     O07     O       O       0       18.456      39.969      55.607      
+VGX     O1      O       OH1     0       16.319      39.157      52.925      
+VGX     H1      H       H       0       18.036      38.840      51.997      
+VGX     H2      H       H       0       17.304      40.179      51.549      
+VGX     H3      H       H       0       17.813      41.146      53.620      
+VGX     H4      H       H       0       19.116      40.769      52.825      
+VGX     H6      H       H       0       15.896      38.688      52.362      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VGX       C01       C02       SINGLE    n         1.501     0.020     1.501     0.020     
+VGX       C04       O06       DOUBLE    n         1.230     0.020     1.230     0.020     
+VGX       C02       C03       SINGLE    n         1.508     0.010     1.508     0.010     
+VGX       C03       C04       SINGLE    n         1.299     0.020     1.299     0.020     
+VGX       C04       O05       SINGLE    n         1.230     0.020     1.230     0.020     
+VGX       C03       O07       DOUBLE    n         1.230     0.019     1.230     0.019     
+VGX       C01       O1        SINGLE    n         1.421     0.020     1.421     0.020     
+VGX       C01       H1        SINGLE    n         1.089     0.010     0.982     0.020     
+VGX       C01       H2        SINGLE    n         1.089     0.010     0.982     0.020     
+VGX       C02       H3        SINGLE    n         1.089     0.010     0.975     0.013     
+VGX       C02       H4        SINGLE    n         1.089     0.010     0.975     0.013     
+VGX       O1        H6        SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+VGX         C02         C01          O1     110.777    1.54
+VGX         C02         C01          H1     109.480    1.94
+VGX         C02         C01          H2     109.480    1.94
+VGX          O1         C01          H1     109.258    1.50
+VGX          O1         C01          H2     109.258    1.50
+VGX          H1         C01          H2     108.120    1.50
+VGX         C01         C02         C03     114.995    3.00
+VGX         C01         C02          H3     108.485    1.50
+VGX         C01         C02          H4     108.485    1.50
+VGX         C03         C02          H3     108.680    1.71
+VGX         C03         C02          H4     108.680    1.71
+VGX          H3         C02          H4     107.705    1.50
+VGX         C02         C03         C04     122.999    2.52
+VGX         C02         C03         O07     117.958    1.51
+VGX         C04         C03         O07     119.042    3.00
+VGX         O06         C04         C03     118.654    3.00
+VGX         O06         C04         O05     122.692    1.63
+VGX         C03         C04         O05     118.654    3.00
+VGX         C01          O1          H6     108.576    2.78
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+VGX             sp3_sp3_1          O1         C01         C02         C03     180.000   10.00     3
+VGX            sp3_sp3_10         C02         C01          O1          H6     180.000   10.00     3
+VGX             sp2_sp3_2         C04         C03         C02         C01     120.000   10.00     6
+VGX             sp2_sp2_1         C02         C03         C04         O06     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+VGX    plan-1         C02   0.020
+VGX    plan-1         C03   0.020
+VGX    plan-1         C04   0.020
+VGX    plan-1         O07   0.020
+VGX    plan-2         C03   0.020
+VGX    plan-2         C04   0.020
+VGX    plan-2         O05   0.020
+VGX    plan-2         O06   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+VGX SMILES           ACDLabs              12.01 "C(CC(=O)C(O)=O)O"
+VGX InChI            InChI                1.03  "InChI=1S/C4H6O4/c5-2-1-3(6)4(7)8/h5H,1-2H2,(H,7,8)"
+VGX InChIKey         InChI                1.03  PUWWONYMIXRVQF-UHFFFAOYSA-N
+VGX SMILES_CANONICAL CACTVS               3.385 "OCCC(=O)C(O)=O"
+VGX SMILES           CACTVS               3.385 "OCCC(=O)C(O)=O"
+VGX SMILES_CANONICAL "OpenEye OEToolkits" 2.0.5 "C(CO)C(=O)C(=O)O"
+VGX SMILES           "OpenEye OEToolkits" 2.0.5 "C(CO)C(=O)C(=O)O"
+VGX ?                acedrg               202         "dictionary generator"                  
+VGX ?                acedrg_database      11          "data source"                           
+VGX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+VGX ?                refmac5              5.8.0189    "optimization tool"                     

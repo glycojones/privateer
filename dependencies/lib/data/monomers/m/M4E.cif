@@ -1,0 +1,189 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+M4E     M4E      ~{N}-methyl-2~{H}-indazole-3-carboxamide     non-polymer     22     13     .     
+#
+data_comp_M4E
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+M4E     C10     C       CR16    0       1.003       2.441       7.178       
+M4E     C01     C       CH3     0       1.383       -4.031      4.282       
+M4E     C03     C       C       0       1.412       -1.677      4.942       
+M4E     C04     C       CR5     0       1.183       -0.273      4.537       
+M4E     C07     C       CR56    0       0.870       1.942       4.468       
+M4E     C08     C       CR56    0       1.086       0.877       5.365       
+M4E     C09     C       CR16    0       1.153       1.134       6.747       
+M4E     C11     C       CR16    0       0.790       3.485       6.273       
+M4E     C12     C       CR16    0       0.719       3.264       4.913       
+M4E     N02     N       NH1     0       1.122       -2.625      4.043       
+M4E     N05     N       NRD5    0       1.041       0.074       3.249       
+M4E     N06     N       NR5     0       0.851       1.415       3.222       
+M4E     O13     O       O       0       1.862       -1.940      6.064       
+M4E     H1      H       H       0       1.045       2.633       8.101       
+M4E     H2      H       H       0       1.060       -4.281      5.163       
+M4E     H3      H       H       0       2.338       -4.199      4.227       
+M4E     H4      H       H       0       0.925       -4.563      3.611       
+M4E     H5      H       H       0       1.297       0.435       7.366       
+M4E     H6      H       H       0       0.691       4.362       6.599       
+M4E     H7      H       H       0       0.576       3.967       4.311       
+M4E     H8      H       H       0       0.770       -2.398      3.292       
+M4E     H9      H       H       0       0.735       1.835       2.462       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+M4E       N05       N06       SINGLE    y         1.352     0.0123    1.352     0.0123    
+M4E       C07       N06       SINGLE    y         1.352     0.0101    1.352     0.0101    
+M4E       C04       N05       DOUBLE    y         1.341     0.0100    1.341     0.0100    
+M4E       C01       N02       SINGLE    n         1.448     0.0100    1.448     0.0100    
+M4E       C03       N02       SINGLE    n         1.332     0.0105    1.332     0.0105    
+M4E       C07       C12       DOUBLE    y         1.400     0.0100    1.400     0.0100    
+M4E       C07       C08       SINGLE    y         1.407     0.0100    1.407     0.0100    
+M4E       C03       C04       SINGLE    n         1.474     0.0142    1.474     0.0142    
+M4E       C04       C08       SINGLE    y         1.421     0.0100    1.421     0.0100    
+M4E       C03       O13       DOUBLE    n         1.235     0.0149    1.235     0.0149    
+M4E       C11       C12       SINGLE    y         1.377     0.0100    1.377     0.0100    
+M4E       C08       C09       DOUBLE    y         1.404     0.0100    1.404     0.0100    
+M4E       C10       C11       DOUBLE    y         1.394     0.0106    1.394     0.0106    
+M4E       C10       C09       SINGLE    y         1.381     0.0100    1.381     0.0100    
+M4E       C10       H1        SINGLE    n         1.082     0.013     0.944     0.0181    
+M4E       C01       H2        SINGLE    n         1.089     0.010     0.971     0.0198    
+M4E       C01       H3        SINGLE    n         1.089     0.010     0.971     0.0198    
+M4E       C01       H4        SINGLE    n         1.089     0.010     0.971     0.0198    
+M4E       C09       H5        SINGLE    n         1.082     0.013     0.945     0.0166    
+M4E       C11       H6        SINGLE    n         1.082     0.013     0.941     0.0181    
+M4E       C12       H7        SINGLE    n         1.082     0.013     0.936     0.0156    
+M4E       N02       H8        SINGLE    n         1.016     0.010     0.860     0.0100    
+M4E       N06       H9        SINGLE    n         1.016     0.010     0.876     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+M4E         C11         C10         C09     121.433    1.50
+M4E         C11         C10          H1     119.206    1.50
+M4E         C09         C10          H1     119.361    1.50
+M4E         N02         C01          H2     109.483    1.50
+M4E         N02         C01          H3     109.483    1.50
+M4E         N02         C01          H4     109.483    1.50
+M4E          H2         C01          H3     109.279    1.79
+M4E          H2         C01          H4     109.279    1.79
+M4E          H3         C01          H4     109.279    1.79
+M4E         N02         C03         C04     116.739    1.69
+M4E         N02         C03         O13     122.102    1.50
+M4E         C04         C03         O13     121.158    1.50
+M4E         N05         C04         C03     121.096    2.60
+M4E         N05         C04         C08     110.592    1.50
+M4E         C03         C04         C08     128.313    3.00
+M4E         N06         C07         C12     130.966    1.50
+M4E         N06         C07         C08     107.171    1.50
+M4E         C12         C07         C08     121.863    1.50
+M4E         C07         C08         C04     105.181    1.50
+M4E         C07         C08         C09     119.518    1.50
+M4E         C04         C08         C09     135.301    1.50
+M4E         C08         C09         C10     118.062    1.50
+M4E         C08         C09          H5     121.128    1.50
+M4E         C10         C09          H5     120.810    1.50
+M4E         C12         C11         C10     121.849    1.50
+M4E         C12         C11          H6     119.021    1.50
+M4E         C10         C11          H6     119.130    1.50
+M4E         C07         C12         C11     117.274    1.50
+M4E         C07         C12          H7     121.368    1.50
+M4E         C11         C12          H7     121.357    1.50
+M4E         C01         N02         C03     121.467    1.80
+M4E         C01         N02          H8     119.018    1.50
+M4E         C03         N02          H8     119.515    1.50
+M4E         N06         N05         C04     106.161    1.50
+M4E         N05         N06         C07     110.896    1.50
+M4E         N05         N06          H9     121.000    3.00
+M4E         C07         N06          H9     128.104    2.98
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+M4E              const_33         C08         C09         C10         C11       0.000   10.00     2
+M4E              const_13         C09         C10         C11         C12       0.000   10.00     2
+M4E       const_sp2_sp2_3         C04         N05         N06         C07       0.000   10.00     2
+M4E             sp2_sp3_1         C03         N02         C01          H2       0.000   10.00     6
+M4E             sp2_sp2_6         N02         C03         C04         N05       0.000   10.00     2
+M4E             sp2_sp2_3         O13         C03         N02         C01       0.000   10.00     2
+M4E       const_sp2_sp2_2         C03         C04         N05         N06     180.000   10.00     2
+M4E              const_31         C03         C04         C08         C07     180.000   10.00     2
+M4E       const_sp2_sp2_7         C12         C07         N06         N05     180.000   10.00     2
+M4E       const_sp2_sp2_9         N06         C07         C08         C04       0.000   10.00     2
+M4E              const_23         N06         C07         C12         C11     180.000   10.00     2
+M4E              const_25         C07         C08         C09         C10       0.000   10.00     2
+M4E              const_17         C10         C11         C12         C07       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+M4E    plan-1         C03   0.020
+M4E    plan-1         C04   0.020
+M4E    plan-1         C07   0.020
+M4E    plan-1         C08   0.020
+M4E    plan-1         C09   0.020
+M4E    plan-1         C10   0.020
+M4E    plan-1         C11   0.020
+M4E    plan-1         C12   0.020
+M4E    plan-1          H1   0.020
+M4E    plan-1          H5   0.020
+M4E    plan-1          H6   0.020
+M4E    plan-1          H7   0.020
+M4E    plan-1          H9   0.020
+M4E    plan-1         N05   0.020
+M4E    plan-1         N06   0.020
+M4E    plan-2         C03   0.020
+M4E    plan-2         C04   0.020
+M4E    plan-2         N02   0.020
+M4E    plan-2         O13   0.020
+M4E    plan-3         C01   0.020
+M4E    plan-3         C03   0.020
+M4E    plan-3          H8   0.020
+M4E    plan-3         N02   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+M4E            InChI                InChI  1.03 InChI=1S/C9H9N3O/c1-10-9(13)8-6-4-2-3-5-7(6)11-12-8/h2-5H,1H3,(H,10,13)(H,11,12)
+M4E         InChIKey                InChI  1.03                                                      WZVBKCJHULLMHK-UHFFFAOYSA-N
+M4E SMILES_CANONICAL               CACTVS 3.385                                                          CNC(=O)c1n[nH]c2ccccc12
+M4E           SMILES               CACTVS 3.385                                                          CNC(=O)c1n[nH]c2ccccc12
+M4E SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                                          CNC(=O)c1c2ccccc2[nH]n1
+M4E           SMILES "OpenEye OEToolkits" 2.0.7                                                          CNC(=O)c1c2ccccc2[nH]n1
+M4E ?                acedrg               217         "dictionary generator"                  
+M4E ?                acedrg_database      11          "data source"                           
+M4E ?                rdkit                2017.03.2   "Chemoinformatics tool"
+M4E ?                refmac5              5.8.0253    "optimization tool"                     

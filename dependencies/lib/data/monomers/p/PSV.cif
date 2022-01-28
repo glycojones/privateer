@@ -1,0 +1,206 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PSV      PSV 'alpha-D-psicofuranose               ' non-polymer        24  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PSV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PSV           O6     O    OH1       0.000      0.000    0.000    0.000
+ PSV           HO6    H    H         0.000      0.781    0.151    0.550
+ PSV           C6     C    CH2       0.000     -1.178    0.274    0.761
+ PSV           H6     H    H         0.000     -1.162    1.314    1.094
+ PSV           H6A    H    H         0.000     -1.210   -0.385    1.631
+ PSV           C5     C    CH1       0.000     -2.413    0.033   -0.108
+ PSV           H5     H    H         0.000     -2.332    0.583   -1.056
+ PSV           C4     C    CH1       0.000     -3.702    0.442    0.651
+ PSV           H4     H    H         0.000     -3.627    0.184    1.716
+ PSV           O4     O    OH1       0.000     -3.975    1.834    0.482
+ PSV           HO4    H    H         0.000     -3.291    2.352    0.927
+ PSV           C3     C    CH1       0.000     -4.779   -0.422   -0.050
+ PSV           H3     H    H         0.000     -5.490   -0.822    0.687
+ PSV           O3     O    OH1       0.000     -5.466    0.340   -1.045
+ PSV           HO3    H    H         0.000     -5.961    1.053   -0.620
+ PSV           O5     O    O2        0.000     -2.598   -1.380   -0.352
+ PSV           C2     C    CT        0.000     -3.980   -1.566   -0.702
+ PSV           O2     O    OH1       0.000     -4.132   -1.517   -2.123
+ PSV           HO2    H    H         0.000     -3.624   -2.234   -2.526
+ PSV           C1     C    CH2       0.000     -4.474   -2.914   -0.173
+ PSV           H1     H    H         0.000     -5.531   -3.034   -0.417
+ PSV           H1A    H    H         0.000     -4.345   -2.948    0.910
+ PSV           O1     O    OH1       0.000     -3.721   -3.968   -0.778
+ PSV           HO1    H    H         0.000     -4.034   -4.819   -0.443
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PSV      O6     n/a    C6     START
+ PSV      HO6    O6     .      .
+ PSV      C6     O6     C5     .
+ PSV      H6     C6     .      .
+ PSV      H6A    C6     .      .
+ PSV      C5     C6     O5     .
+ PSV      H5     C5     .      .
+ PSV      C4     C5     C3     .
+ PSV      H4     C4     .      .
+ PSV      O4     C4     HO4    .
+ PSV      HO4    O4     .      .
+ PSV      C3     C4     O3     .
+ PSV      H3     C3     .      .
+ PSV      O3     C3     HO3    .
+ PSV      HO3    O3     .      .
+ PSV      O5     C5     C2     .
+ PSV      C2     O5     C1     .
+ PSV      O2     C2     HO2    .
+ PSV      HO2    O2     .      .
+ PSV      C1     C2     O1     .
+ PSV      H1     C1     .      .
+ PSV      H1A    C1     .      .
+ PSV      O1     C1     HO1    .
+ PSV      HO1    O1     .      END
+ PSV      C2     C3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PSV       C1        C2        single    1.524     0.020     1.524     0.020     
+PSV       O1        C1        single    1.432     0.020     1.432     0.020     
+PSV       H1        C1        single    1.089     0.010     0.989     0.005     
+PSV       H1A       C1        single    1.089     0.010     0.989     0.005     
+PSV       HO1       O1        single    0.970     0.012     0.839     0.014     
+PSV       C2        O5        single    1.426     0.020     1.426     0.020     
+PSV       C2        C3        single    1.524     0.020     1.524     0.020     
+PSV       O2        C2        single    1.432     0.020     1.432     0.020     
+PSV       HO2       O2        single    0.970     0.012     0.839     0.014     
+PSV       C3        C4        single    1.524     0.020     1.524     0.020     
+PSV       O3        C3        single    1.432     0.020     1.432     0.020     
+PSV       H3        C3        single    1.089     0.010     0.989     0.005     
+PSV       HO3       O3        single    0.970     0.012     0.839     0.014     
+PSV       O4        C4        single    1.432     0.020     1.432     0.020     
+PSV       C4        C5        single    1.524     0.020     1.524     0.020     
+PSV       H4        C4        single    1.089     0.010     0.989     0.005     
+PSV       HO4       O4        single    0.970     0.012     0.839     0.014     
+PSV       C5        C6        single    1.524     0.020     1.524     0.020     
+PSV       O5        C5        single    1.426     0.020     1.426     0.020     
+PSV       H5        C5        single    1.089     0.010     0.989     0.005     
+PSV       C6        O6        single    1.432     0.020     1.432     0.020     
+PSV       H6        C6        single    1.089     0.010     0.989     0.005     
+PSV       H6A       C6        single    1.089     0.010     0.989     0.005     
+PSV       HO6       O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PSV      HO6    O6     C6      109.470    3.000
+ PSV      O6     C6     H6      109.470    3.000
+ PSV      O6     C6     H6A     109.470    3.000
+ PSV      O6     C6     C5      109.470    3.000
+ PSV      H6     C6     H6A     107.900    3.000
+ PSV      H6     C6     C5      109.470    3.000
+ PSV      H6A    C6     C5      109.470    3.000
+ PSV      C6     C5     H5      108.340    3.000
+ PSV      C6     C5     C4      111.000    3.000
+ PSV      C6     C5     O5      109.470    3.000
+ PSV      H5     C5     C4      108.340    3.000
+ PSV      H5     C5     O5      109.470    3.000
+ PSV      C4     C5     O5      109.470    3.000
+ PSV      C5     C4     H4      108.340    3.000
+ PSV      C5     C4     O4      109.470    3.000
+ PSV      C5     C4     C3      111.000    3.000
+ PSV      H4     C4     O4      109.470    3.000
+ PSV      H4     C4     C3      108.340    3.000
+ PSV      O4     C4     C3      109.470    3.000
+ PSV      C4     O4     HO4     109.470    3.000
+ PSV      C4     C3     H3      108.340    3.000
+ PSV      C4     C3     O3      109.470    3.000
+ PSV      C4     C3     C2      111.000    3.000
+ PSV      H3     C3     O3      109.470    3.000
+ PSV      H3     C3     C2      108.340    3.000
+ PSV      O3     C3     C2      109.470    3.000
+ PSV      C3     O3     HO3     109.470    3.000
+ PSV      C5     O5     C2      111.800    3.000
+ PSV      O5     C2     O2      109.470    3.000
+ PSV      O5     C2     C1      109.470    3.000
+ PSV      O5     C2     C3      109.470    3.000
+ PSV      O2     C2     C1      109.470    3.000
+ PSV      O2     C2     C3      109.470    3.000
+ PSV      C1     C2     C3      111.000    3.000
+ PSV      C2     O2     HO2     109.470    3.000
+ PSV      C2     C1     H1      109.470    3.000
+ PSV      C2     C1     H1A     109.470    3.000
+ PSV      C2     C1     O1      109.470    3.000
+ PSV      H1     C1     H1A     107.900    3.000
+ PSV      H1     C1     O1      109.470    3.000
+ PSV      H1A    C1     O1      109.470    3.000
+ PSV      C1     O1     HO1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PSV      var_1    HO6    O6     C6     C5      -179.952   20.000   1
+ PSV      var_2    O6     C6     C5     O5        70.841   20.000   3
+ PSV      var_3    C6     C5     C4     C3      -150.000   20.000   3
+ PSV      var_4    C5     C4     O4     HO4      -67.237   20.000   1
+ PSV      var_5    C5     C4     C3     O3       -90.000   20.000   3
+ PSV      var_6    C4     C3     O3     HO3      -65.141   20.000   1
+ PSV      var_7    C6     C5     O5     C2       150.000   20.000   1
+ PSV      var_8    C5     O5     C2     C1      -150.000   20.000   1
+ PSV      var_9    O5     C2     C3     C4         0.000   20.000   1
+ PSV      var_10   O5     C2     O2     HO2       61.744   20.000   1
+ PSV      var_11   O5     C2     C1     O1       -61.628   20.000   1
+ PSV      var_12   C2     C1     O1     HO1     -179.992   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PSV      chir_01  C2     C1     O2     C3        negativ
+ PSV      chir_02  C3     C2     O3     C4        positiv
+ PSV      chir_03  C4     C3     O4     C5        positiv
+ PSV      chir_04  C5     C4     O5     C6        positiv
+# ------------------------------------------------------

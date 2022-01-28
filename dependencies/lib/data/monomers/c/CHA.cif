@@ -1,0 +1,246 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CHA      CHA '1-HYDROXY-2-AMINO-3-CYCLOHEXYLPROPAN' non-polymer        30  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CHA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CHA           O1     O    OH1       0.000      0.000    0.000    0.000
+ CHA           HO1    H    H         0.000      0.896   -0.274   -0.237
+ CHA           C1     C    CH2       0.000     -0.897   -0.345   -1.056
+ CHA           H11    H    H         0.000     -0.874   -1.425   -1.214
+ CHA           H12    H    H         0.000     -0.591    0.162   -1.973
+ CHA           C2     C    CH1       0.000     -2.317    0.087   -0.683
+ CHA           H2     H    H         0.000     -2.625   -0.425    0.240
+ CHA           N2     N    NH2       0.000     -2.347    1.540   -0.469
+ CHA           HN22   H    H         0.000     -2.623    1.919    0.430
+ CHA           HN21   H    H         0.000     -2.091    2.172   -1.218
+ CHA           C3     C    CH2       0.000     -3.278   -0.282   -1.814
+ CHA           H31    H    H         0.000     -3.255   -1.362   -1.973
+ CHA           H32    H    H         0.000     -2.972    0.226   -2.731
+ CHA           "C1'"  C    CH1       0.000     -4.696    0.149   -1.439
+ CHA           "H1'"  H    H         0.000     -4.718    1.236   -1.279
+ CHA           "C6'"  C    CH2       0.000     -5.124   -0.563   -0.155
+ CHA           "H6'1" H    H         0.000     -4.437   -0.300    0.652
+ CHA           "H6'2" H    H         0.000     -5.100   -1.643   -0.314
+ CHA           "C5'"  C    CH2       0.000     -6.543   -0.132    0.219
+ CHA           "H5'1" H    H         0.000     -6.564    0.948    0.380
+ CHA           "H5'2" H    H         0.000     -6.847   -0.641    1.136
+ CHA           "C4'"  C    CH2       0.000     -7.503   -0.500   -0.912
+ CHA           "H4'1" H    H         0.000     -8.516   -0.192   -0.643
+ CHA           "H4'2" H    H         0.000     -7.482   -1.580   -1.070
+ CHA           "C3'"  C    CH2       0.000     -7.077    0.212   -2.195
+ CHA           "H3'1" H    H         0.000     -7.101    1.292   -2.036
+ CHA           "H3'2" H    H         0.000     -7.764   -0.051   -3.002
+ CHA           "C2'"  C    CH2       0.000     -5.658   -0.219   -2.571
+ CHA           "H2'2" H    H         0.000     -5.354    0.291   -3.488
+ CHA           "H2'1" H    H         0.000     -5.637   -1.299   -2.732
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CHA      O1     n/a    C1     START
+ CHA      HO1    O1     .      .
+ CHA      C1     O1     C2     .
+ CHA      H11    C1     .      .
+ CHA      H12    C1     .      .
+ CHA      C2     C1     C3     .
+ CHA      H2     C2     .      .
+ CHA      N2     C2     HN21   .
+ CHA      HN22   N2     .      .
+ CHA      HN21   N2     .      .
+ CHA      C3     C2     "C1'"  .
+ CHA      H31    C3     .      .
+ CHA      H32    C3     .      .
+ CHA      "C1'"  C3     "C6'"  .
+ CHA      "H1'"  "C1'"  .      .
+ CHA      "C6'"  "C1'"  "C5'"  .
+ CHA      "H6'1" "C6'"  .      .
+ CHA      "H6'2" "C6'"  .      .
+ CHA      "C5'"  "C6'"  "C4'"  .
+ CHA      "H5'1" "C5'"  .      .
+ CHA      "H5'2" "C5'"  .      .
+ CHA      "C4'"  "C5'"  "C3'"  .
+ CHA      "H4'1" "C4'"  .      .
+ CHA      "H4'2" "C4'"  .      .
+ CHA      "C3'"  "C4'"  "C2'"  .
+ CHA      "H3'1" "C3'"  .      .
+ CHA      "H3'2" "C3'"  .      .
+ CHA      "C2'"  "C3'"  "H2'1" .
+ CHA      "H2'2" "C2'"  .      .
+ CHA      "H2'1" "C2'"  .      END
+ CHA      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CHA       C2        C1        single    1.524     0.020     1.524     0.020     
+CHA       C1        O1        single    1.432     0.020     1.432     0.020     
+CHA       H11       C1        single    1.089     0.010     0.989     0.005     
+CHA       H12       C1        single    1.089     0.010     0.989     0.005     
+CHA       C3        C2        single    1.524     0.020     1.524     0.020     
+CHA       N2        C2        single    1.450     0.020     1.450     0.020     
+CHA       H2        C2        single    1.089     0.010     0.989     0.005     
+CHA       "C1'"     C3        single    1.524     0.020     1.524     0.020     
+CHA       H31       C3        single    1.089     0.010     0.989     0.005     
+CHA       H32       C3        single    1.089     0.010     0.989     0.005     
+CHA       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+CHA       "C6'"     "C1'"     single    1.524     0.020     1.524     0.020     
+CHA       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+CHA       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+CHA       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+CHA       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+CHA       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+CHA       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+CHA       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+CHA       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+CHA       "H4'1"    "C4'"     single    1.089     0.010     0.989     0.005     
+CHA       "H4'2"    "C4'"     single    1.089     0.010     0.989     0.005     
+CHA       "C5'"     "C6'"     single    1.524     0.020     1.524     0.020     
+CHA       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+CHA       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+CHA       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+CHA       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+CHA       HN21      N2        single    1.036     0.016     0.914     0.007     
+CHA       HN22      N2        single    1.036     0.016     0.914     0.007     
+CHA       HO1       O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CHA      HO1    O1     C1      109.470    3.000
+ CHA      O1     C1     H11     109.470    3.000
+ CHA      O1     C1     H12     109.470    3.000
+ CHA      O1     C1     C2      109.470    3.000
+ CHA      H11    C1     H12     107.900    3.000
+ CHA      H11    C1     C2      109.470    3.000
+ CHA      H12    C1     C2      109.470    3.000
+ CHA      C1     C2     H2      108.340    3.000
+ CHA      C1     C2     N2      109.470    3.000
+ CHA      C1     C2     C3      109.470    3.000
+ CHA      H2     C2     N2      109.470    3.000
+ CHA      H2     C2     C3      108.340    3.000
+ CHA      N2     C2     C3      109.470    3.000
+ CHA      C2     N2     HN22    120.000    3.000
+ CHA      C2     N2     HN21    120.000    3.000
+ CHA      HN22   N2     HN21    120.000    3.000
+ CHA      C2     C3     H31     109.470    3.000
+ CHA      C2     C3     H32     109.470    3.000
+ CHA      C2     C3     "C1'"   111.000    3.000
+ CHA      H31    C3     H32     107.900    3.000
+ CHA      H31    C3     "C1'"   109.470    3.000
+ CHA      H32    C3     "C1'"   109.470    3.000
+ CHA      C3     "C1'"  "H1'"   108.340    3.000
+ CHA      C3     "C1'"  "C6'"   109.470    3.000
+ CHA      C3     "C1'"  "C2'"   109.470    3.000
+ CHA      "H1'"  "C1'"  "C6'"   108.340    3.000
+ CHA      "H1'"  "C1'"  "C2'"   108.340    3.000
+ CHA      "C6'"  "C1'"  "C2'"   109.470    3.000
+ CHA      "C1'"  "C6'"  "H6'1"  109.470    3.000
+ CHA      "C1'"  "C6'"  "H6'2"  109.470    3.000
+ CHA      "C1'"  "C6'"  "C5'"   111.000    3.000
+ CHA      "H6'1" "C6'"  "H6'2"  107.900    3.000
+ CHA      "H6'1" "C6'"  "C5'"   109.470    3.000
+ CHA      "H6'2" "C6'"  "C5'"   109.470    3.000
+ CHA      "C6'"  "C5'"  "H5'1"  109.470    3.000
+ CHA      "C6'"  "C5'"  "H5'2"  109.470    3.000
+ CHA      "C6'"  "C5'"  "C4'"   111.000    3.000
+ CHA      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ CHA      "H5'1" "C5'"  "C4'"   109.470    3.000
+ CHA      "H5'2" "C5'"  "C4'"   109.470    3.000
+ CHA      "C5'"  "C4'"  "H4'1"  109.470    3.000
+ CHA      "C5'"  "C4'"  "H4'2"  109.470    3.000
+ CHA      "C5'"  "C4'"  "C3'"   111.000    3.000
+ CHA      "H4'1" "C4'"  "H4'2"  107.900    3.000
+ CHA      "H4'1" "C4'"  "C3'"   109.470    3.000
+ CHA      "H4'2" "C4'"  "C3'"   109.470    3.000
+ CHA      "C4'"  "C3'"  "H3'1"  109.470    3.000
+ CHA      "C4'"  "C3'"  "H3'2"  109.470    3.000
+ CHA      "C4'"  "C3'"  "C2'"   111.000    3.000
+ CHA      "H3'1" "C3'"  "H3'2"  107.900    3.000
+ CHA      "H3'1" "C3'"  "C2'"   109.470    3.000
+ CHA      "H3'2" "C3'"  "C2'"   109.470    3.000
+ CHA      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ CHA      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ CHA      "C3'"  "C2'"  "C1'"   111.000    3.000
+ CHA      "H2'2" "C2'"  "H2'1"  107.900    3.000
+ CHA      "H2'2" "C2'"  "C1'"   109.470    3.000
+ CHA      "H2'1" "C2'"  "C1'"   109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CHA      var_1    HO1    O1     C1     C2       179.987   20.000   1
+ CHA      var_2    O1     C1     C2     C3       179.981   20.000   3
+ CHA      var_3    C1     C2     N2     HN21      60.051   20.000   1
+ CHA      var_4    C1     C2     C3     "C1'"    179.960   20.000   3
+ CHA      var_5    C2     C3     "C1'"  "C6'"    -60.003   20.000   3
+ CHA      var_6    C3     "C1'"  "C2'"  "C3'"    180.000   20.000   3
+ CHA      var_7    C3     "C1'"  "C6'"  "C5'"    180.000   20.000   3
+ CHA      var_8    "C1'"  "C6'"  "C5'"  "C4'"     60.000   20.000   3
+ CHA      var_9    "C6'"  "C5'"  "C4'"  "C3'"    -60.000   20.000   3
+ CHA      var_10   "C5'"  "C4'"  "C3'"  "C2'"     60.000   20.000   3
+ CHA      var_11   "C4'"  "C3'"  "C2'"  "C1'"    -60.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CHA      chir_01  C2     C1     C3     N2        positiv
+ CHA      chir_02  "C1'"  C3     "C2'"  "C6'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CHA      plan-1    N2        0.020
+ CHA      plan-1    C2        0.020
+ CHA      plan-1    HN21      0.020
+ CHA      plan-1    HN22      0.020
+# ------------------------------------------------------

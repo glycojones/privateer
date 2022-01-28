@@ -1,0 +1,347 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CRF      CRF '"[(4Z)-2-[(1R,2R)-1-amino-2-hydroxyp' non-polymer        42  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CRF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CRF           OXT    O    OC       -0.500      0.000    0.000    0.000
+ CRF           C3     C    C         0.000     -1.251    0.010    0.028
+ CRF           O3     O    OC       -0.500     -1.851    0.115    1.120
+ CRF           CA3    C    CH2       0.000     -2.034   -0.104   -1.254
+ CRF           HA31   H    H         0.000     -1.787   -1.046   -1.749
+ CRF           HA32   H    H         0.000     -1.777    0.729   -1.912
+ CRF           N3     N    NR5       0.000     -3.468   -0.068   -0.956
+ CRF           C1     C    CR5       0.000     -4.244    1.055   -0.895
+ CRF           CA1    C    CH1       0.000     -3.736    2.456   -1.129
+ CRF           HA1    H    H         0.000     -2.837    2.418   -1.760
+ CRF           CB1    C    CH1       0.000     -3.391    3.104    0.213
+ CRF           HB1    H    H         0.000     -2.553    2.564    0.676
+ CRF           OG1    O    OH1       0.000     -4.529    3.048    1.076
+ CRF           HOG    H    H         0.000     -5.266    3.522    0.668
+ CRF           CG1    C    CH3       0.000     -2.994    4.564   -0.013
+ CRF           HG13   H    H         0.000     -2.756    5.014    0.916
+ CRF           HG12   H    H         0.000     -2.151    4.607   -0.652
+ CRF           HG11   H    H         0.000     -3.801    5.086   -0.459
+ CRF           N1     N    NH2       0.000     -4.774    3.246   -1.803
+ CRF           HN12   H    H         0.000     -5.187    4.047   -1.341
+ CRF           HN11   H    H         0.000     -5.083    2.996   -2.735
+ CRF           C2     C    CR5       0.000     -4.249   -1.139   -0.694
+ CRF           O2     O    O         0.000     -3.911   -2.310   -0.658
+ CRF           CA2    C    CR5       0.000     -5.592   -0.593   -0.465
+ CRF           N2     N    NRD5      0.000     -5.474    0.761   -0.615
+ CRF           CB2    C    C1        0.000     -6.741   -1.303   -0.163
+ CRF           HB2    H    H         0.000     -6.703   -2.376   -0.071
+ CRF           CG2    C    CR5       0.000     -7.965   -0.620    0.024
+ CRF           CD2    C    CR56      0.000     -9.275   -1.221    0.343
+ CRF           CE3    C    CR16      0.000     -9.714   -2.526    0.546
+ CRF           HE3    H    H         0.000     -9.017   -3.352    0.478
+ CRF           CZ3    C    CR16      0.000    -11.041   -2.763    0.835
+ CRF           HZ3    H    H         0.000    -11.385   -3.777    0.995
+ CRF           CH2    C    CR16      0.000    -11.937   -1.707    0.923
+ CRF           HH2    H    H         0.000    -12.977   -1.904    1.152
+ CRF           CZ2    C    CR16      0.000    -11.516   -0.411    0.723
+ CRF           HZ2    H    H         0.000    -12.224    0.406    0.792
+ CRF           CE2    C    CR56      0.000    -10.180   -0.151    0.430
+ CRF           NE1    N    NR15      0.000     -9.481    1.013    0.181
+ CRF           HE1    H    H         0.000     -9.899    1.965    0.179
+ CRF           CD1    C    CR15      0.000     -8.176    0.742   -0.061
+ CRF           HD1    H    H         0.000     -7.416    1.480   -0.285
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CRF      OXT    n/a    C3     START
+ CRF      C3     OXT    CA3    .
+ CRF      O3     C3     .      .
+ CRF      CA3    C3     N3     .
+ CRF      HA31   CA3    .      .
+ CRF      HA32   CA3    .      .
+ CRF      N3     CA3    C2     .
+ CRF      C1     N3     CA1    .
+ CRF      CA1    C1     N1     .
+ CRF      HA1    CA1    .      .
+ CRF      CB1    CA1    CG1    .
+ CRF      HB1    CB1    .      .
+ CRF      OG1    CB1    HOG    .
+ CRF      HOG    OG1    .      .
+ CRF      CG1    CB1    HG11   .
+ CRF      HG13   CG1    .      .
+ CRF      HG12   CG1    .      .
+ CRF      HG11   CG1    .      .
+ CRF      N1     CA1    HN11   .
+ CRF      HN12   N1     .      .
+ CRF      HN11   N1     .      .
+ CRF      C2     N3     CA2    .
+ CRF      O2     C2     .      .
+ CRF      CA2    C2     CB2    .
+ CRF      N2     CA2    .      .
+ CRF      CB2    CA2    CG2    .
+ CRF      HB2    CB2    .      .
+ CRF      CG2    CB2    CD2    .
+ CRF      CD2    CG2    CE3    .
+ CRF      CE3    CD2    CZ3    .
+ CRF      HE3    CE3    .      .
+ CRF      CZ3    CE3    CH2    .
+ CRF      HZ3    CZ3    .      .
+ CRF      CH2    CZ3    CZ2    .
+ CRF      HH2    CH2    .      .
+ CRF      CZ2    CH2    CE2    .
+ CRF      HZ2    CZ2    .      .
+ CRF      CE2    CZ2    NE1    .
+ CRF      NE1    CE2    CD1    .
+ CRF      HE1    NE1    .      .
+ CRF      CD1    NE1    HD1    .
+ CRF      HD1    CD1    .      END
+ CRF      C1     N2     .    ADD
+ CRF      CG2    CD1    .    ADD
+ CRF      CD2    CE2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CRF       N1        CA1       single    1.450     0.020     1.450     0.020     
+CRF       HN11      N1        single    1.036     0.016     0.914     0.007     
+CRF       HN12      N1        single    1.036     0.016     0.914     0.007     
+CRF       CB1       CA1       single    1.524     0.020     1.524     0.020     
+CRF       CA1       C1        single    1.480     0.020     1.480     0.020     
+CRF       HA1       CA1       single    1.089     0.010     0.989     0.005     
+CRF       CG1       CB1       single    1.524     0.020     1.524     0.020     
+CRF       OG1       CB1       single    1.432     0.020     1.432     0.020     
+CRF       HB1       CB1       single    1.089     0.010     0.989     0.005     
+CRF       HG11      CG1       single    1.089     0.010     0.989     0.005     
+CRF       HG12      CG1       single    1.089     0.010     0.989     0.005     
+CRF       HG13      CG1       single    1.089     0.010     0.989     0.005     
+CRF       HOG       OG1       single    0.970     0.012     0.839     0.014     
+CRF       C1        N2        double    1.350     0.020     1.350     0.020     
+CRF       C1        N3        single    1.337     0.020     1.337     0.020     
+CRF       N2        CA2       single    1.350     0.020     1.350     0.020     
+CRF       C2        N3        single    1.337     0.020     1.337     0.020     
+CRF       N3        CA3       single    1.462     0.020     1.462     0.020     
+CRF       O2        C2        double    1.285     0.020     1.285     0.020     
+CRF       CA2       C2        single    1.490     0.020     1.490     0.020     
+CRF       CB2       CA2       double    1.483     0.020     1.483     0.020     
+CRF       CA3       C3        single    1.510     0.020     1.510     0.020     
+CRF       HA31      CA3       single    1.089     0.010     0.989     0.005     
+CRF       HA32      CA3       single    1.089     0.010     0.989     0.005     
+CRF       O3        C3        deloc     1.250     0.020     1.250     0.020     
+CRF       C3        OXT       deloc     1.250     0.020     1.250     0.020     
+CRF       CG2       CB2       single    1.483     0.020     1.483     0.020     
+CRF       HB2       CB2       single    1.082     0.013     0.975     0.010     
+CRF       CG2       CD1       double    1.387     0.020     1.387     0.020     
+CRF       CD2       CG2       single    1.490     0.020     1.490     0.020     
+CRF       CD1       NE1       single    1.350     0.020     1.350     0.020     
+CRF       HD1       CD1       single    1.082     0.013     0.975     0.010     
+CRF       CD2       CE2       double    1.490     0.020     1.490     0.020     
+CRF       CE3       CD2       single    1.390     0.020     1.390     0.020     
+CRF       NE1       CE2       single    1.340     0.020     1.340     0.020     
+CRF       CE2       CZ2       single    1.390     0.020     1.390     0.020     
+CRF       HE1       NE1       single    1.016     0.010     0.899     0.007     
+CRF       CZ3       CE3       double    1.390     0.020     1.390     0.020     
+CRF       HE3       CE3       single    1.082     0.013     0.975     0.010     
+CRF       CZ2       CH2       double    1.390     0.020     1.390     0.020     
+CRF       HZ2       CZ2       single    1.082     0.013     0.975     0.010     
+CRF       CH2       CZ3       single    1.390     0.020     1.390     0.020     
+CRF       HZ3       CZ3       single    1.082     0.013     0.975     0.010     
+CRF       HH2       CH2       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CRF      OXT    C3     O3      123.000    3.000
+ CRF      OXT    C3     CA3     118.500    3.000
+ CRF      O3     C3     CA3     118.500    3.000
+ CRF      C3     CA3    HA31    109.470    3.000
+ CRF      C3     CA3    HA32    109.470    3.000
+ CRF      C3     CA3    N3      109.500    3.000
+ CRF      HA31   CA3    HA32    107.900    3.000
+ CRF      HA31   CA3    N3      109.500    3.000
+ CRF      HA32   CA3    N3      109.500    3.000
+ CRF      CA3    N3     C1      126.000    3.000
+ CRF      CA3    N3     C2      126.000    3.000
+ CRF      C1     N3     C2      108.000    3.000
+ CRF      N3     C1     CA1     126.000    3.000
+ CRF      N3     C1     N2      108.000    3.000
+ CRF      CA1    C1     N2      126.000    3.000
+ CRF      C1     CA1    HA1     109.470    3.000
+ CRF      C1     CA1    CB1     109.470    3.000
+ CRF      C1     CA1    N1      109.470    3.000
+ CRF      HA1    CA1    CB1     108.340    3.000
+ CRF      HA1    CA1    N1      109.470    3.000
+ CRF      CB1    CA1    N1      109.470    3.000
+ CRF      CA1    CB1    HB1     108.340    3.000
+ CRF      CA1    CB1    OG1     109.470    3.000
+ CRF      CA1    CB1    CG1     111.000    3.000
+ CRF      HB1    CB1    OG1     109.470    3.000
+ CRF      HB1    CB1    CG1     108.340    3.000
+ CRF      OG1    CB1    CG1     109.470    3.000
+ CRF      CB1    OG1    HOG     109.470    3.000
+ CRF      CB1    CG1    HG13    109.470    3.000
+ CRF      CB1    CG1    HG12    109.470    3.000
+ CRF      CB1    CG1    HG11    109.470    3.000
+ CRF      HG13   CG1    HG12    109.470    3.000
+ CRF      HG13   CG1    HG11    109.470    3.000
+ CRF      HG12   CG1    HG11    109.470    3.000
+ CRF      CA1    N1     HN12    120.000    3.000
+ CRF      CA1    N1     HN11    120.000    3.000
+ CRF      HN12   N1     HN11    120.000    3.000
+ CRF      N3     C2     O2      108.000    3.000
+ CRF      N3     C2     CA2     108.000    3.000
+ CRF      O2     C2     CA2     108.000    3.000
+ CRF      C2     CA2    N2      108.000    3.000
+ CRF      C2     CA2    CB2     117.000    3.000
+ CRF      N2     CA2    CB2     108.000    3.000
+ CRF      CA2    N2     C1      108.000    3.000
+ CRF      CA2    CB2    HB2     120.000    3.000
+ CRF      CA2    CB2    CG2     120.000    3.000
+ CRF      HB2    CB2    CG2     120.000    3.000
+ CRF      CB2    CG2    CD2     108.000    3.000
+ CRF      CB2    CG2    CD1     108.000    3.000
+ CRF      CD2    CG2    CD1     108.000    3.000
+ CRF      CG2    CD2    CE3     126.000    3.000
+ CRF      CG2    CD2    CE2     108.000    3.000
+ CRF      CE3    CD2    CE2     120.000    3.000
+ CRF      CD2    CE3    HE3     120.000    3.000
+ CRF      CD2    CE3    CZ3     120.000    3.000
+ CRF      HE3    CE3    CZ3     120.000    3.000
+ CRF      CE3    CZ3    HZ3     120.000    3.000
+ CRF      CE3    CZ3    CH2     120.000    3.000
+ CRF      HZ3    CZ3    CH2     120.000    3.000
+ CRF      CZ3    CH2    HH2     120.000    3.000
+ CRF      CZ3    CH2    CZ2     120.000    3.000
+ CRF      HH2    CH2    CZ2     120.000    3.000
+ CRF      CH2    CZ2    HZ2     120.000    3.000
+ CRF      CH2    CZ2    CE2     120.000    3.000
+ CRF      HZ2    CZ2    CE2     120.000    3.000
+ CRF      CZ2    CE2    NE1     132.000    3.000
+ CRF      CZ2    CE2    CD2     120.000    3.000
+ CRF      NE1    CE2    CD2     108.000    3.000
+ CRF      CE2    NE1    HE1     126.000    3.000
+ CRF      CE2    NE1    CD1     108.000    3.000
+ CRF      HE1    NE1    CD1     126.000    3.000
+ CRF      NE1    CD1    HD1     126.000    3.000
+ CRF      NE1    CD1    CG2     108.000    3.000
+ CRF      HD1    CD1    CG2     126.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CRF      var_1    OXT    C3     CA3    N3      -179.978   20.000   3
+ CRF      var_2    C3     CA3    N3     C2       -89.965   20.000   1
+ CRF      CONST_1  CA3    N3     C1     CA1        0.000    0.000   0
+ CRF      CONST_2  N3     C1     N2     CA2        0.000    0.000   0
+ CRF      var_3    N3     C1     CA1    N1       144.732   20.000   1
+ CRF      var_4    C1     CA1    CB1    CG1     -175.010   20.000   3
+ CRF      var_5    CA1    CB1    OG1    HOG      -59.945   20.000   1
+ CRF      var_6    CA1    CB1    CG1    HG11      60.001   20.000   3
+ CRF      var_7    C1     CA1    N1     HN11     -63.938   20.000   1
+ CRF      CONST_3  CA3    N3     C2     CA2      180.000    0.000   0
+ CRF      CONST_4  N3     C2     CA2    CB2      180.000    0.000   0
+ CRF      CONST_5  C2     CA2    N2     C1         0.000    0.000   0
+ CRF      CONST_6  C2     CA2    CB2    CG2     -179.842    0.000   0
+ CRF      var_8    CA2    CB2    CG2    CD2      179.705   20.000   1
+ CRF      CONST_7  CB2    CG2    CD1    NE1      180.000    0.000   0
+ CRF      CONST_8  CB2    CG2    CD2    CE3        0.000    0.000   0
+ CRF      CONST_9  CG2    CD2    CE2    CZ2      180.000    0.000   0
+ CRF      CONST_10 CG2    CD2    CE3    CZ3      180.000    0.000   0
+ CRF      CONST_11 CD2    CE3    CZ3    CH2        0.000    0.000   0
+ CRF      CONST_12 CE3    CZ3    CH2    CZ2        0.000    0.000   0
+ CRF      CONST_13 CZ3    CH2    CZ2    CE2        0.000    0.000   0
+ CRF      CONST_14 CH2    CZ2    CE2    NE1      180.000    0.000   0
+ CRF      CONST_15 CZ2    CE2    NE1    CD1      180.000    0.000   0
+ CRF      CONST_16 CE2    NE1    CD1    CG2        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CRF      chir_01  CA1    N1     CB1    C1        negativ
+ CRF      chir_02  CB1    CA1    CG1    OG1       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CRF      plan-1    N1        0.020
+ CRF      plan-1    CA1       0.020
+ CRF      plan-1    HN11      0.020
+ CRF      plan-1    HN12      0.020
+ CRF      plan-2    C1        0.020
+ CRF      plan-2    CA1       0.020
+ CRF      plan-2    N2        0.020
+ CRF      plan-2    N3        0.020
+ CRF      plan-2    C2        0.020
+ CRF      plan-2    CA2       0.020
+ CRF      plan-2    CA3       0.020
+ CRF      plan-2    O2        0.020
+ CRF      plan-2    CB2       0.020
+ CRF      plan-2    CG2       0.020
+ CRF      plan-2    HB2       0.020
+ CRF      plan-3    C3        0.020
+ CRF      plan-3    CA3       0.020
+ CRF      plan-3    O3        0.020
+ CRF      plan-3    OXT       0.020
+ CRF      plan-4    CG2       0.020
+ CRF      plan-4    CB2       0.020
+ CRF      plan-4    CD1       0.020
+ CRF      plan-4    CD2       0.020
+ CRF      plan-4    NE1       0.020
+ CRF      plan-4    HD1       0.020
+ CRF      plan-4    CE2       0.020
+ CRF      plan-4    CE3       0.020
+ CRF      plan-4    CZ2       0.020
+ CRF      plan-4    CZ3       0.020
+ CRF      plan-4    CH2       0.020
+ CRF      plan-4    HE1       0.020
+ CRF      plan-4    HE3       0.020
+ CRF      plan-4    HZ2       0.020
+ CRF      plan-4    HZ3       0.020
+ CRF      plan-4    HH2       0.020
+ CRF      plan-4    HB2       0.020
+# ------------------------------------------------------

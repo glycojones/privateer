@@ -1,0 +1,476 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LPS      LPS '"O-{HYDROXY[((2R)-2-HYDROXY-3-{[(1S)' non-polymer        74  32 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LPS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LPS           O14    O    OP       -0.500      0.000    0.000    0.000
+ LPS           P      P    P         0.000     -0.129    1.014    1.075
+ LPS           O13    O    OP       -0.500     -0.328    2.353    0.469
+ LPS           O12    O    O2        0.000      1.209    1.024    1.968
+ LPS           C11    C    CH2       0.000      2.289    1.348    1.092
+ LPS           H111   H    H         0.000      2.112    2.329    0.646
+ LPS           H112   H    H         0.000      2.354    0.597    0.303
+ LPS           C12    C    CH1       0.000      3.599    1.374    1.883
+ LPS           H12    H    H         0.000      3.776    0.386    2.331
+ LPS           N      N    NH2       0.000      3.509    2.384    2.945
+ LPS           HN2    H    H         0.000      3.608    2.114    3.917
+ LPS           HN1    H    H         0.000      3.348    3.357    2.714
+ LPS           C      C    C         0.000      4.738    1.717    0.959
+ LPS           OT1    O    OC       -0.500      5.064    2.912    0.785
+ LPS           OT2    O    OC       -0.500      5.358    0.806    0.365
+ LPS           O11    O    O2        0.000     -1.393    0.653    2.004
+ LPS           C1     C    CH2       0.000     -2.545    0.660    1.158
+ LPS           H11    H    H         0.000     -2.418   -0.083    0.368
+ LPS           H12A   H    H         0.000     -2.660    1.649    0.710
+ LPS           C2     C    CH1       0.000     -3.788    0.323    1.982
+ LPS           H2     H    H         0.000     -3.913    1.071    2.778
+ LPS           O21    O    OH1       0.000     -3.634   -0.972    2.566
+ LPS           H21    H    H         0.000     -3.524   -1.629    1.865
+ LPS           C3     C    CH2       0.000     -5.020    0.331    1.077
+ LPS           H31A   H    H         0.000     -4.894   -0.412    0.286
+ LPS           H32A   H    H         0.000     -5.135    1.321    0.630
+ LPS           O31    O    O2        0.000     -6.181    0.016    1.847
+ LPS           C31    C    CH1       0.000     -7.291    0.039    0.950
+ LPS           H31    H    H         0.000     -7.379    1.039    0.503
+ LPS           O32    O    OH1       0.000     -7.090   -0.927   -0.083
+ LPS           H32    H    H         0.000     -7.012   -1.807    0.310
+ LPS           C32    C    CH2       0.000     -8.574   -0.291    1.715
+ LPS           H321   H    H         0.000     -8.726    0.449    2.504
+ LPS           H322   H    H         0.000     -8.485   -1.284    2.162
+ LPS           C33    C    CH2       0.000     -9.763   -0.268    0.755
+ LPS           H331   H    H         0.000     -9.608   -1.007   -0.033
+ LPS           H332   H    H         0.000     -9.850    0.725    0.309
+ LPS           C34    C    CH2       0.000    -11.045   -0.597    1.521
+ LPS           H341   H    H         0.000    -11.198    0.143    2.309
+ LPS           H342   H    H         0.000    -10.956   -1.590    1.967
+ LPS           C35    C    CH2       0.000    -12.236   -0.574    0.559
+ LPS           H351   H    H         0.000    -12.080   -1.313   -0.229
+ LPS           H352   H    H         0.000    -12.323    0.419    0.113
+ LPS           C36    C    CH2       0.000    -13.518   -0.904    1.325
+ LPS           H361   H    H         0.000    -13.670   -0.165    2.114
+ LPS           H362   H    H         0.000    -13.428   -1.897    1.770
+ LPS           C37    C    CH2       0.000    -14.707   -0.880    0.364
+ LPS           H371   H    H         0.000    -14.552   -1.619   -0.425
+ LPS           H372   H    H         0.000    -14.794    0.114   -0.081
+ LPS           C38    C    CH2       0.000    -15.989   -1.211    1.130
+ LPS           H381   H    H         0.000    -16.141   -0.471    1.919
+ LPS           H382   H    H         0.000    -15.900   -2.203    1.575
+ LPS           C39    C    CH2       0.000    -17.180   -1.186    0.169
+ LPS           H391   H    H         0.000    -17.024   -1.924   -0.620
+ LPS           H392   H    H         0.000    -17.267   -0.192   -0.275
+ LPS           C40    C    CH2       0.000    -18.461   -1.518    0.935
+ LPS           H401   H    H         0.000    -18.614   -0.779    1.725
+ LPS           H402   H    H         0.000    -18.372   -2.511    1.379
+ LPS           C41    C    CH2       0.000    -19.651   -1.492   -0.026
+ LPS           H411   H    H         0.000    -19.496   -2.230   -0.815
+ LPS           H412   H    H         0.000    -19.738   -0.498   -0.470
+ LPS           C42    C    CH2       0.000    -20.933   -1.824    0.740
+ LPS           H421   H    H         0.000    -21.085   -1.085    1.530
+ LPS           H422   H    H         0.000    -20.843   -2.817    1.184
+ LPS           C43    C    CH2       0.000    -22.124   -1.798   -0.220
+ LPS           H431   H    H         0.000    -21.969   -2.536   -1.010
+ LPS           H432   H    H         0.000    -22.210   -0.804   -0.665
+ LPS           C44    C    CH2       0.000    -23.405   -2.130    0.545
+ LPS           H441   H    H         0.000    -23.558   -1.391    1.335
+ LPS           H442   H    H         0.000    -23.316   -3.123    0.990
+ LPS           C45    C    CH3       0.000    -24.595   -2.105   -0.415
+ LPS           H453   H    H         0.000    -24.684   -1.142   -0.849
+ LPS           H452   H    H         0.000    -24.449   -2.822   -1.183
+ LPS           H451   H    H         0.000    -25.485   -2.335    0.113
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LPS      O14    n/a    P      START
+ LPS      P      O14    O11    .
+ LPS      O13    P      .      .
+ LPS      O12    P      C11    .
+ LPS      C11    O12    C12    .
+ LPS      H111   C11    .      .
+ LPS      H112   C11    .      .
+ LPS      C12    C11    C      .
+ LPS      H12    C12    .      .
+ LPS      N      C12    HN1    .
+ LPS      HN2    N      .      .
+ LPS      HN1    N      .      .
+ LPS      C      C12    OT2    .
+ LPS      OT1    C      .      .
+ LPS      OT2    C      .      .
+ LPS      O11    P      C1     .
+ LPS      C1     O11    C2     .
+ LPS      H11    C1     .      .
+ LPS      H12A   C1     .      .
+ LPS      C2     C1     C3     .
+ LPS      H2     C2     .      .
+ LPS      O21    C2     H21    .
+ LPS      H21    O21    .      .
+ LPS      C3     C2     O31    .
+ LPS      H31A   C3     .      .
+ LPS      H32A   C3     .      .
+ LPS      O31    C3     C31    .
+ LPS      C31    O31    C32    .
+ LPS      H31    C31    .      .
+ LPS      O32    C31    H32    .
+ LPS      H32    O32    .      .
+ LPS      C32    C31    C33    .
+ LPS      H321   C32    .      .
+ LPS      H322   C32    .      .
+ LPS      C33    C32    C34    .
+ LPS      H331   C33    .      .
+ LPS      H332   C33    .      .
+ LPS      C34    C33    C35    .
+ LPS      H341   C34    .      .
+ LPS      H342   C34    .      .
+ LPS      C35    C34    C36    .
+ LPS      H351   C35    .      .
+ LPS      H352   C35    .      .
+ LPS      C36    C35    C37    .
+ LPS      H361   C36    .      .
+ LPS      H362   C36    .      .
+ LPS      C37    C36    C38    .
+ LPS      H371   C37    .      .
+ LPS      H372   C37    .      .
+ LPS      C38    C37    C39    .
+ LPS      H381   C38    .      .
+ LPS      H382   C38    .      .
+ LPS      C39    C38    C40    .
+ LPS      H391   C39    .      .
+ LPS      H392   C39    .      .
+ LPS      C40    C39    C41    .
+ LPS      H401   C40    .      .
+ LPS      H402   C40    .      .
+ LPS      C41    C40    C42    .
+ LPS      H411   C41    .      .
+ LPS      H412   C41    .      .
+ LPS      C42    C41    C43    .
+ LPS      H421   C42    .      .
+ LPS      H422   C42    .      .
+ LPS      C43    C42    C44    .
+ LPS      H431   C43    .      .
+ LPS      H432   C43    .      .
+ LPS      C44    C43    C45    .
+ LPS      H441   C44    .      .
+ LPS      H442   C44    .      .
+ LPS      C45    C44    H451   .
+ LPS      H453   C45    .      .
+ LPS      H452   C45    .      .
+ LPS      H451   C45    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LPS       OT2       C         deloc     1.250     0.020     1.250     0.020     
+LPS       OT1       C         deloc     1.250     0.020     1.250     0.020     
+LPS       C         C12       single    1.500     0.020     1.500     0.020     
+LPS       N         C12       single    1.450     0.020     1.450     0.020     
+LPS       C12       C11       single    1.524     0.020     1.524     0.020     
+LPS       H12       C12       single    1.089     0.010     0.989     0.005     
+LPS       HN1       N         single    1.036     0.016     0.914     0.007     
+LPS       HN2       N         single    1.036     0.016     0.914     0.007     
+LPS       C11       O12       single    1.426     0.020     1.426     0.020     
+LPS       H111      C11       single    1.089     0.010     0.989     0.005     
+LPS       H112      C11       single    1.089     0.010     0.989     0.005     
+LPS       O12       P         single    1.610     0.020     1.610     0.020     
+LPS       O13       P         deloc     1.510     0.020     1.510     0.020     
+LPS       P         O14       deloc     1.510     0.020     1.510     0.020     
+LPS       O11       P         single    1.610     0.020     1.610     0.020     
+LPS       C1        O11       single    1.426     0.020     1.426     0.020     
+LPS       C2        C1        single    1.524     0.020     1.524     0.020     
+LPS       H11       C1        single    1.089     0.010     0.989     0.005     
+LPS       H12A      C1        single    1.089     0.010     0.989     0.005     
+LPS       O21       C2        single    1.432     0.020     1.432     0.020     
+LPS       C3        C2        single    1.524     0.020     1.524     0.020     
+LPS       H2        C2        single    1.089     0.010     0.989     0.005     
+LPS       H21       O21       single    0.970     0.012     0.839     0.014     
+LPS       O31       C3        single    1.426     0.020     1.426     0.020     
+LPS       H31A      C3        single    1.089     0.010     0.989     0.005     
+LPS       H32A      C3        single    1.089     0.010     0.989     0.005     
+LPS       C31       O31       single    1.426     0.020     1.426     0.020     
+LPS       O32       C31       single    1.432     0.020     1.432     0.020     
+LPS       C32       C31       single    1.524     0.020     1.524     0.020     
+LPS       H31       C31       single    1.089     0.010     0.989     0.005     
+LPS       H32       O32       single    0.970     0.012     0.839     0.014     
+LPS       C33       C32       single    1.524     0.020     1.524     0.020     
+LPS       H321      C32       single    1.089     0.010     0.989     0.005     
+LPS       H322      C32       single    1.089     0.010     0.989     0.005     
+LPS       C34       C33       single    1.524     0.020     1.524     0.020     
+LPS       H331      C33       single    1.089     0.010     0.989     0.005     
+LPS       H332      C33       single    1.089     0.010     0.989     0.005     
+LPS       C35       C34       single    1.524     0.020     1.524     0.020     
+LPS       H341      C34       single    1.089     0.010     0.989     0.005     
+LPS       H342      C34       single    1.089     0.010     0.989     0.005     
+LPS       C36       C35       single    1.524     0.020     1.524     0.020     
+LPS       H351      C35       single    1.089     0.010     0.989     0.005     
+LPS       H352      C35       single    1.089     0.010     0.989     0.005     
+LPS       C37       C36       single    1.524     0.020     1.524     0.020     
+LPS       H361      C36       single    1.089     0.010     0.989     0.005     
+LPS       H362      C36       single    1.089     0.010     0.989     0.005     
+LPS       C38       C37       single    1.524     0.020     1.524     0.020     
+LPS       H371      C37       single    1.089     0.010     0.989     0.005     
+LPS       H372      C37       single    1.089     0.010     0.989     0.005     
+LPS       C39       C38       single    1.524     0.020     1.524     0.020     
+LPS       H381      C38       single    1.089     0.010     0.989     0.005     
+LPS       H382      C38       single    1.089     0.010     0.989     0.005     
+LPS       C40       C39       single    1.524     0.020     1.524     0.020     
+LPS       H391      C39       single    1.089     0.010     0.989     0.005     
+LPS       H392      C39       single    1.089     0.010     0.989     0.005     
+LPS       C41       C40       single    1.524     0.020     1.524     0.020     
+LPS       H401      C40       single    1.089     0.010     0.989     0.005     
+LPS       H402      C40       single    1.089     0.010     0.989     0.005     
+LPS       C42       C41       single    1.524     0.020     1.524     0.020     
+LPS       H411      C41       single    1.089     0.010     0.989     0.005     
+LPS       H412      C41       single    1.089     0.010     0.989     0.005     
+LPS       C43       C42       single    1.524     0.020     1.524     0.020     
+LPS       H421      C42       single    1.089     0.010     0.989     0.005     
+LPS       H422      C42       single    1.089     0.010     0.989     0.005     
+LPS       C44       C43       single    1.524     0.020     1.524     0.020     
+LPS       H431      C43       single    1.089     0.010     0.989     0.005     
+LPS       H432      C43       single    1.089     0.010     0.989     0.005     
+LPS       C45       C44       single    1.513     0.020     1.513     0.020     
+LPS       H441      C44       single    1.089     0.010     0.989     0.005     
+LPS       H442      C44       single    1.089     0.010     0.989     0.005     
+LPS       H451      C45       single    1.089     0.010     0.989     0.005     
+LPS       H452      C45       single    1.089     0.010     0.989     0.005     
+LPS       H453      C45       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LPS      O14    P      O13     119.900    3.000
+ LPS      O14    P      O12     108.200    3.000
+ LPS      O14    P      O11     108.200    3.000
+ LPS      O13    P      O12     108.200    3.000
+ LPS      O13    P      O11     108.200    3.000
+ LPS      O12    P      O11     102.600    3.000
+ LPS      P      O12    C11     120.500    3.000
+ LPS      O12    C11    H111    109.470    3.000
+ LPS      O12    C11    H112    109.470    3.000
+ LPS      O12    C11    C12     109.470    3.000
+ LPS      H111   C11    H112    107.900    3.000
+ LPS      H111   C11    C12     109.470    3.000
+ LPS      H112   C11    C12     109.470    3.000
+ LPS      C11    C12    H12     108.340    3.000
+ LPS      C11    C12    N       109.470    3.000
+ LPS      C11    C12    C       109.470    3.000
+ LPS      H12    C12    N       109.470    3.000
+ LPS      H12    C12    C       108.810    3.000
+ LPS      N      C12    C       109.470    3.000
+ LPS      C12    N      HN2     120.000    3.000
+ LPS      C12    N      HN1     120.000    3.000
+ LPS      HN2    N      HN1     120.000    3.000
+ LPS      C12    C      OT1     118.500    3.000
+ LPS      C12    C      OT2     118.500    3.000
+ LPS      OT1    C      OT2     123.000    3.000
+ LPS      P      O11    C1      120.500    3.000
+ LPS      O11    C1     H11     109.470    3.000
+ LPS      O11    C1     H12A    109.470    3.000
+ LPS      O11    C1     C2      109.470    3.000
+ LPS      H11    C1     H12A    107.900    3.000
+ LPS      H11    C1     C2      109.470    3.000
+ LPS      H12A   C1     C2      109.470    3.000
+ LPS      C1     C2     H2      108.340    3.000
+ LPS      C1     C2     O21     109.470    3.000
+ LPS      C1     C2     C3      109.470    3.000
+ LPS      H2     C2     O21     109.470    3.000
+ LPS      H2     C2     C3      108.340    3.000
+ LPS      O21    C2     C3      109.470    3.000
+ LPS      C2     O21    H21     109.470    3.000
+ LPS      C2     C3     H31A    109.470    3.000
+ LPS      C2     C3     H32A    109.470    3.000
+ LPS      C2     C3     O31     109.470    3.000
+ LPS      H31A   C3     H32A    107.900    3.000
+ LPS      H31A   C3     O31     109.470    3.000
+ LPS      H32A   C3     O31     109.470    3.000
+ LPS      C3     O31    C31     111.800    3.000
+ LPS      O31    C31    H31     109.470    3.000
+ LPS      O31    C31    O32     109.470    3.000
+ LPS      O31    C31    C32     109.470    3.000
+ LPS      H31    C31    O32     109.470    3.000
+ LPS      H31    C31    C32     108.340    3.000
+ LPS      O32    C31    C32     109.470    3.000
+ LPS      C31    O32    H32     109.470    3.000
+ LPS      C31    C32    H321    109.470    3.000
+ LPS      C31    C32    H322    109.470    3.000
+ LPS      C31    C32    C33     111.000    3.000
+ LPS      H321   C32    H322    107.900    3.000
+ LPS      H321   C32    C33     109.470    3.000
+ LPS      H322   C32    C33     109.470    3.000
+ LPS      C32    C33    H331    109.470    3.000
+ LPS      C32    C33    H332    109.470    3.000
+ LPS      C32    C33    C34     111.000    3.000
+ LPS      H331   C33    H332    107.900    3.000
+ LPS      H331   C33    C34     109.470    3.000
+ LPS      H332   C33    C34     109.470    3.000
+ LPS      C33    C34    H341    109.470    3.000
+ LPS      C33    C34    H342    109.470    3.000
+ LPS      C33    C34    C35     111.000    3.000
+ LPS      H341   C34    H342    107.900    3.000
+ LPS      H341   C34    C35     109.470    3.000
+ LPS      H342   C34    C35     109.470    3.000
+ LPS      C34    C35    H351    109.470    3.000
+ LPS      C34    C35    H352    109.470    3.000
+ LPS      C34    C35    C36     111.000    3.000
+ LPS      H351   C35    H352    107.900    3.000
+ LPS      H351   C35    C36     109.470    3.000
+ LPS      H352   C35    C36     109.470    3.000
+ LPS      C35    C36    H361    109.470    3.000
+ LPS      C35    C36    H362    109.470    3.000
+ LPS      C35    C36    C37     111.000    3.000
+ LPS      H361   C36    H362    107.900    3.000
+ LPS      H361   C36    C37     109.470    3.000
+ LPS      H362   C36    C37     109.470    3.000
+ LPS      C36    C37    H371    109.470    3.000
+ LPS      C36    C37    H372    109.470    3.000
+ LPS      C36    C37    C38     111.000    3.000
+ LPS      H371   C37    H372    107.900    3.000
+ LPS      H371   C37    C38     109.470    3.000
+ LPS      H372   C37    C38     109.470    3.000
+ LPS      C37    C38    H381    109.470    3.000
+ LPS      C37    C38    H382    109.470    3.000
+ LPS      C37    C38    C39     111.000    3.000
+ LPS      H381   C38    H382    107.900    3.000
+ LPS      H381   C38    C39     109.470    3.000
+ LPS      H382   C38    C39     109.470    3.000
+ LPS      C38    C39    H391    109.470    3.000
+ LPS      C38    C39    H392    109.470    3.000
+ LPS      C38    C39    C40     111.000    3.000
+ LPS      H391   C39    H392    107.900    3.000
+ LPS      H391   C39    C40     109.470    3.000
+ LPS      H392   C39    C40     109.470    3.000
+ LPS      C39    C40    H401    109.470    3.000
+ LPS      C39    C40    H402    109.470    3.000
+ LPS      C39    C40    C41     111.000    3.000
+ LPS      H401   C40    H402    107.900    3.000
+ LPS      H401   C40    C41     109.470    3.000
+ LPS      H402   C40    C41     109.470    3.000
+ LPS      C40    C41    H411    109.470    3.000
+ LPS      C40    C41    H412    109.470    3.000
+ LPS      C40    C41    C42     111.000    3.000
+ LPS      H411   C41    H412    107.900    3.000
+ LPS      H411   C41    C42     109.470    3.000
+ LPS      H412   C41    C42     109.470    3.000
+ LPS      C41    C42    H421    109.470    3.000
+ LPS      C41    C42    H422    109.470    3.000
+ LPS      C41    C42    C43     111.000    3.000
+ LPS      H421   C42    H422    107.900    3.000
+ LPS      H421   C42    C43     109.470    3.000
+ LPS      H422   C42    C43     109.470    3.000
+ LPS      C42    C43    H431    109.470    3.000
+ LPS      C42    C43    H432    109.470    3.000
+ LPS      C42    C43    C44     111.000    3.000
+ LPS      H431   C43    H432    107.900    3.000
+ LPS      H431   C43    C44     109.470    3.000
+ LPS      H432   C43    C44     109.470    3.000
+ LPS      C43    C44    H441    109.470    3.000
+ LPS      C43    C44    H442    109.470    3.000
+ LPS      C43    C44    C45     111.000    3.000
+ LPS      H441   C44    H442    107.900    3.000
+ LPS      H441   C44    C45     109.470    3.000
+ LPS      H442   C44    C45     109.470    3.000
+ LPS      C44    C45    H453    109.470    3.000
+ LPS      C44    C45    H452    109.470    3.000
+ LPS      C44    C45    H451    109.470    3.000
+ LPS      H453   C45    H452    109.470    3.000
+ LPS      H453   C45    H451    109.470    3.000
+ LPS      H452   C45    H451    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LPS      var_1    O14    P      O12    C11       59.908   20.000   1
+ LPS      var_2    P      O12    C11    C12     -179.960   20.000   1
+ LPS      var_3    O12    C11    C12    C       -179.956   20.000   3
+ LPS      var_4    C11    C12    N      HN1      -60.038   20.000   1
+ LPS      var_5    C11    C12    C      OT2      -89.981   20.000   3
+ LPS      var_6    O14    P      O11    C1       -59.902   20.000   1
+ LPS      var_7    P      O11    C1     C2      -179.991   20.000   1
+ LPS      var_8    O11    C1     C2     C3       179.966   20.000   3
+ LPS      var_9    C1     C2     O21    H21      -60.072   20.000   1
+ LPS      var_10   C1     C2     C3     O31      179.999   20.000   3
+ LPS      var_11   C2     C3     O31    C31     -179.953   20.000   1
+ LPS      var_12   C3     O31    C31    C32     -179.969   20.000   1
+ LPS      var_13   O31    C31    O32    H32       60.037   20.000   1
+ LPS      var_14   O31    C31    C32    C33      179.996   20.000   3
+ LPS      var_15   C31    C32    C33    C34     -180.000   20.000   3
+ LPS      var_16   C32    C33    C34    C35     -179.992   20.000   3
+ LPS      var_17   C33    C34    C35    C36      179.961   20.000   3
+ LPS      var_18   C34    C35    C36    C37      179.953   20.000   3
+ LPS      var_19   C35    C36    C37    C38      180.000   20.000   3
+ LPS      var_20   C36    C37    C38    C39     -180.000   20.000   3
+ LPS      var_21   C37    C38    C39    C40      179.961   20.000   3
+ LPS      var_22   C38    C39    C40    C41      179.961   20.000   3
+ LPS      var_23   C39    C40    C41    C42      180.000   20.000   3
+ LPS      var_24   C40    C41    C42    C43     -180.000   20.000   3
+ LPS      var_25   C41    C42    C43    C44      180.000   20.000   3
+ LPS      var_26   C42    C43    C44    C45     -179.961   20.000   3
+ LPS      var_27   C43    C44    C45    H451    -179.985   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LPS      chir_01  C12    C      N      C11       negativ
+ LPS      chir_02  C2     C1     O21    C3        positiv
+ LPS      chir_03  C31    O31    O32    C32       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LPS      plan-1    C         0.020
+ LPS      plan-1    OT2       0.020
+ LPS      plan-1    OT1       0.020
+ LPS      plan-1    C12       0.020
+ LPS      plan-2    N         0.020
+ LPS      plan-2    C12       0.020
+ LPS      plan-2    HN1       0.020
+ LPS      plan-2    HN2       0.020
+# ------------------------------------------------------

@@ -1,0 +1,250 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0JC      0JC 'Di-mu-iodobis(ethylenediamine)diplat' non-polymer        28  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_0JC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+0JC   PT1    PT    PT       1      -3.916       3.982       3.434
+0JC    N1     N    NT   0.000      -4.781       3.333       5.334
+0JC    N2     N    NT   0.000      -5.146       5.750       3.820
+0JC    C1     C   CH2   0.000      -5.950       4.192       5.552
+0JC    C2     C   CH2   0.000      -5.574       5.653       5.221
+0JC    I1     I     I   0.000      -3.616       2.639       0.847
+0JC    H3     H     H   0.000      -6.773       3.867       4.899
+0JC    H4     H     H   0.000      -6.267       4.122       6.603
+0JC    H5     H     H   0.000      -4.753       5.977       5.877
+0JC    H6     H     H   0.000      -6.449       6.301       5.382
+0JC    H1     H     H   0.000      -5.058       2.374       5.281
+0JC   H14     H     H   0.000      -4.120       3.449       6.076
+0JC    H2     H     H   0.000      -4.611       6.583       3.678
+0JC   H16     H     H   0.000      -5.942       5.758       3.214
+0JC    I2     I     I   0.000      -1.196       3.540       2.432
+0JC   PT2    PT    PT   1.000      -0.901       2.192      -0.156
+0JC    N3     N    NT   0.000      -0.168       0.236      -0.801
+0JC    N4     N    NT   0.000       0.206       2.861      -1.919
+0JC    C8     C   CH2   0.000       0.871       0.495      -1.807
+0JC    C9     C   CH2   0.000       0.437       1.658      -2.727
+0JC   H51     H     H   0.000       1.810       0.762      -1.300
+0JC   H61     H     H   0.000       1.229       1.858      -3.464
+0JC    H7     H     H   0.000       1.026      -0.410      -2.412
+0JC    H8     H     H   0.000      -0.491       1.385      -3.251
+0JC    H9     H     H   0.000       0.218      -0.262      -0.025
+0JC   H10     H     H   0.000      -0.913      -0.298      -1.202
+0JC   H11     H     H   0.000      -0.331       3.529      -2.434
+0JC   H12     H     H   0.000       1.077       3.271      -1.648
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0JC       PT1       N2        SING      2.046     0.020     2.046     0.020     
+0JC       PT1       N1        SING      2.046     0.020     2.046     0.020     
+0JC       N1        C1        SING      1.480     0.020     1.480     0.020     
+0JC       N2        C2        SING      1.480     0.020     1.480     0.020     
+0JC       C1        H3        SING      1.089     0.010     0.973     0.020     
+0JC       C1        H4        SING      1.089     0.010     0.973     0.020     
+0JC       C2        C1        SING      1.505     0.019     1.505     0.019     
+0JC       C2        H5        SING      1.089     0.010     0.973     0.020     
+0JC       C2        H6        SING      1.089     0.010     0.973     0.020     
+0JC       PT1       I2        SING      2.619     0.020     2.619     0.020     
+0JC       PT1       I1        SING      2.619     0.020     2.619     0.020     
+0JC       I2        PT2       SING      2.619     0.020     2.619     0.020     
+0JC       PT2       N3        SING      2.046     0.020     2.046     0.020     
+0JC       PT2       N4        SING      2.046     0.020     2.046     0.020     
+0JC       N3        C8        SING      1.480     0.020     1.480     0.020     
+0JC       C8        C9        SING      1.505     0.019     1.505     0.019     
+0JC       N4        C9        SING      1.480     0.020     1.480     0.020     
+0JC       I1        PT2       SING      2.619     0.020     2.619     0.020     
+0JC       C8        H51       SING      1.089     0.010     0.973     0.020     
+0JC       C9        H61       SING      1.089     0.010     0.973     0.020     
+0JC       C8        H7        SING      1.089     0.010     0.973     0.020     
+0JC       C9        H8        SING      1.089     0.010     0.973     0.020     
+0JC       N3        H9        SING      1.036     0.016     0.905     0.020     
+0JC       N3        H10       SING      1.036     0.016     0.905     0.020     
+0JC       N4        H11       SING      1.036     0.016     0.905     0.020     
+0JC       N4        H12       SING      1.036     0.016     0.905     0.020     
+0JC       N1        H1        SING      1.036     0.016     0.905     0.020     
+0JC       N1        H14       SING      1.036     0.016     0.905     0.020     
+0JC       N2        H2        SING      1.036     0.016     0.905     0.020     
+0JC       N2        H16       SING      1.036     0.016     0.905     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+0JC    N2   PT1    N1 90.000      3.00
+0JC    N2   PT1    N1 180.000      3.00
+0JC    N2   PT1    I2 90.000      3.00
+0JC    N2   PT1    I2 180.000      3.00
+0JC    N2   PT1    I1 90.000      3.00
+0JC    N2   PT1    I1 180.000      3.00
+0JC    N1   PT1    I2 90.000      3.00
+0JC    N1   PT1    I2 180.000      3.00
+0JC    N1   PT1    I1 90.000      3.00
+0JC    N1   PT1    I1 180.000      3.00
+0JC    I2   PT1    I1 90.000      3.00
+0JC    I2   PT1    I1 180.000      3.00
+0JC   PT1    N1      C1   110.753    3.00
+0JC   PT1    N1      H1   109.055    2.61
+0JC   PT1    N1     H14   109.055    2.61
+0JC    C1    N1      H1   109.885    2.45
+0JC    C1    N1     H14   109.885    2.45
+0JC    H1    N1     H14   108.205    3.00
+0JC   PT1    N2      C2   110.753    3.00
+0JC   PT1    N2      H2   109.055    2.61
+0JC   PT1    N2     H16   109.055    2.61
+0JC    C2    N2      H2   109.885    2.45
+0JC    C2    N2     H16   109.885    2.45
+0JC    H2    N2     H16   108.205    3.00
+0JC    N1    C1      H3   109.801    0.52
+0JC    N1    C1      H4   109.801    0.52
+0JC    N1    C1      C2   109.274    1.32
+0JC    H3    C1      H4   108.774    1.78
+0JC    H3    C1      C2   109.967    1.06
+0JC    H4    C1      C2   109.967    1.06
+0JC    N2    C2      C1   109.274    1.32
+0JC    N2    C2      H5   109.801    0.52
+0JC    N2    C2      H6   109.801    0.52
+0JC    C1    C2      H5   109.967    1.06
+0JC    C1    C2      H6   109.967    1.06
+0JC    H5    C2      H6   108.774    1.78
+0JC   PT1    I1     PT2    90.000    3.00
+0JC   PT1    I2     PT2    90.000    3.00
+0JC    I2   PT2    N3 90.000      3.00
+0JC    I2   PT2    N3 180.000      3.00
+0JC    I2   PT2    N4 90.000      3.00
+0JC    I2   PT2    N4 180.000      3.00
+0JC    I2   PT2    I1 90.000      3.00
+0JC    I2   PT2    I1 180.000      3.00
+0JC    N3   PT2    N4 90.000      3.00
+0JC    N3   PT2    N4 180.000      3.00
+0JC    N3   PT2    I1 90.000      3.00
+0JC    N3   PT2    I1 180.000      3.00
+0JC    N4   PT2    I1 90.000      3.00
+0JC    N4   PT2    I1 180.000      3.00
+0JC   PT2    N3      C8   110.753    3.00
+0JC   PT2    N3      H9   109.055    2.61
+0JC   PT2    N3     H10   109.055    2.61
+0JC    C8    N3      H9   109.885    2.45
+0JC    C8    N3     H10   109.885    2.45
+0JC    H9    N3     H10   108.205    3.00
+0JC   PT2    N4      C9   110.753    3.00
+0JC   PT2    N4     H11   109.055    2.61
+0JC   PT2    N4     H12   109.055    2.61
+0JC    C9    N4     H11   109.885    2.45
+0JC    C9    N4     H12   109.885    2.45
+0JC   H11    N4     H12   108.205    3.00
+0JC    N3    C8      C9   109.274    1.32
+0JC    N3    C8     H51   109.801    0.52
+0JC    N3    C8      H7   109.801    0.52
+0JC    C9    C8     H51   109.967    1.06
+0JC    C9    C8      H7   109.967    1.06
+0JC   H51    C8      H7   108.774    1.78
+0JC    C8    C9      N4   109.274    1.32
+0JC    C8    C9     H61   109.967    1.06
+0JC    C8    C9      H8   109.967    1.06
+0JC    N4    C9     H61   109.801    0.52
+0JC    N4    C9      H8   109.801    0.52
+0JC   H61    C9      H8   108.774    1.78
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+0JC       sp3_sp3_1      C1      C2      N2     PT1     -60.000   10.00     3
+0JC       sp3_sp3_2      C1      C2      N2      H2      60.000   10.00     3
+0JC       sp3_sp3_3      C1      C2      N2     H16     180.000   10.00     3
+0JC       sp3_sp3_4      H5      C2      N2     PT1     180.000   10.00     3
+0JC       sp3_sp3_5      H5      C2      N2      H2     -60.000   10.00     3
+0JC       sp3_sp3_6      H5      C2      N2     H16      60.000   10.00     3
+0JC       sp3_sp3_7      H6      C2      N2     PT1      60.000   10.00     3
+0JC       sp3_sp3_8      H6      C2      N2      H2     180.000   10.00     3
+0JC       sp3_sp3_9      H6      C2      N2     H16     -60.000   10.00     3
+0JC      sp3_sp3_10      N1      C1      C2      N2      60.000   10.00     3
+0JC      sp3_sp3_11      N1      C1      C2      H5     180.000   10.00     3
+0JC      sp3_sp3_12      N1      C1      C2      H6     -60.000   10.00     3
+0JC      sp3_sp3_13      H3      C1      C2      N2     -60.000   10.00     3
+0JC      sp3_sp3_14      H3      C1      C2      H5      60.000   10.00     3
+0JC      sp3_sp3_15      H3      C1      C2      H6     180.000   10.00     3
+0JC      sp3_sp3_16      H4      C1      C2      N2     180.000   10.00     3
+0JC      sp3_sp3_17      H4      C1      C2      H5     -60.000   10.00     3
+0JC      sp3_sp3_18      H4      C1      C2      H6      60.000   10.00     3
+0JC      sp3_sp3_19      C2      C1      N1     PT1     -60.000   10.00     3
+0JC      sp3_sp3_20      C2      C1      N1      H1      60.000   10.00     3
+0JC      sp3_sp3_21      C2      C1      N1     H14     180.000   10.00     3
+0JC      sp3_sp3_22      H3      C1      N1     PT1     180.000   10.00     3
+0JC      sp3_sp3_23      H3      C1      N1      H1     -60.000   10.00     3
+0JC      sp3_sp3_24      H3      C1      N1     H14      60.000   10.00     3
+0JC      sp3_sp3_25      H4      C1      N1     PT1      60.000   10.00     3
+0JC      sp3_sp3_26      H4      C1      N1      H1     180.000   10.00     3
+0JC      sp3_sp3_27      H4      C1      N1     H14     -60.000   10.00     3
+0JC      sp3_sp3_28      C9      C8      N3     PT2     -60.000   10.00     3
+0JC      sp3_sp3_29      C9      C8      N3      H9      60.000   10.00     3
+0JC      sp3_sp3_30      C9      C8      N3     H10     180.000   10.00     3
+0JC      sp3_sp3_31     H51      C8      N3     PT2     180.000   10.00     3
+0JC      sp3_sp3_32     H51      C8      N3      H9     -60.000   10.00     3
+0JC      sp3_sp3_33     H51      C8      N3     H10      60.000   10.00     3
+0JC      sp3_sp3_34      H7      C8      N3     PT2      60.000   10.00     3
+0JC      sp3_sp3_35      H7      C8      N3      H9     180.000   10.00     3
+0JC      sp3_sp3_36      H7      C8      N3     H10     -60.000   10.00     3
+0JC      sp3_sp3_37      N3      C8      C9      N4      60.000   10.00     3
+0JC      sp3_sp3_38      N3      C8      C9     H61     180.000   10.00     3
+0JC      sp3_sp3_39      N3      C8      C9      H8     -60.000   10.00     3
+0JC      sp3_sp3_40     H51      C8      C9      N4     -60.000   10.00     3
+0JC      sp3_sp3_41     H51      C8      C9     H61      60.000   10.00     3
+0JC      sp3_sp3_42     H51      C8      C9      H8     180.000   10.00     3
+0JC      sp3_sp3_43      H7      C8      C9      N4     180.000   10.00     3
+0JC      sp3_sp3_44      H7      C8      C9     H61     -60.000   10.00     3
+0JC      sp3_sp3_45      H7      C8      C9      H8      60.000   10.00     3
+0JC      sp3_sp3_46      C8      C9      N4     PT2     -60.000   10.00     3
+0JC      sp3_sp3_47      C8      C9      N4     H11      60.000   10.00     3
+0JC      sp3_sp3_48      C8      C9      N4     H12     180.000   10.00     3
+0JC      sp3_sp3_49     H61      C9      N4     PT2     180.000   10.00     3
+0JC      sp3_sp3_50     H61      C9      N4     H11     -60.000   10.00     3
+0JC      sp3_sp3_51     H61      C9      N4     H12      60.000   10.00     3
+0JC      sp3_sp3_52      H8      C9      N4     PT2      60.000   10.00     3
+0JC      sp3_sp3_53      H8      C9      N4     H11     180.000   10.00     3
+0JC      sp3_sp3_54      H8      C9      N4     H12     -60.000   10.00     3
+0JC     other_tor_1     PT2      I2     PT1      N2     180.000   10.00     1
+0JC     other_tor_2     PT1      I2     PT2      N3     180.000   10.00     1
+0JC     other_tor_3     PT1      I1     PT2      I2     180.000   10.00     1
+0JC     other_tor_4     PT2      I1     PT1      N2     180.000   10.00     1

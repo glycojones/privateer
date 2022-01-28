@@ -1,0 +1,216 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XBP      XBP 'XYLULOSE-1,5-BISPHOSPHATE           ' non-polymer        26  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_XBP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ XBP           O6P    O    OP       -0.666      0.000    0.000    0.000
+ XBP           P2     P    P         0.000     -0.309    1.233   -0.820
+ XBP           O4P    O    OP       -0.666      0.166    1.025   -2.242
+ XBP           O5P    O    OP       -0.666      0.401    2.427   -0.221
+ XBP           O5     O    O2        0.000     -1.897    1.494   -0.819
+ XBP           C5     C    CH2       0.000     -2.507    0.338   -1.393
+ XBP           H51    H    H         0.000     -2.257   -0.540   -0.793
+ XBP           H52    H    H         0.000     -2.137    0.199   -2.411
+ XBP           C4     C    CH1       0.000     -4.026    0.523   -1.421
+ XBP           H4     H    H         0.000     -4.398    0.662   -0.396
+ XBP           O4     O    OH1       0.000     -4.351    1.672   -2.206
+ XBP           HO4    H    H         0.000     -4.024    1.548   -3.107
+ XBP           C3     C    CH1       0.000     -4.679   -0.716   -2.037
+ XBP           H3     H    H         0.000     -4.429   -1.600   -1.433
+ XBP           O3     O    OH1       0.000     -4.197   -0.897   -3.369
+ XBP           HO3    H    H         0.000     -4.417   -0.119   -3.899
+ XBP           C2     C    C         0.000     -6.175   -0.533   -2.064
+ XBP           O2     O    O         0.000     -6.703   -0.026   -3.024
+ XBP           C1     C    CH2       0.000     -7.010   -0.983   -0.894
+ XBP           H11    H    H         0.000     -6.695   -0.449    0.005
+ XBP           H12    H    H         0.000     -6.876   -2.057   -0.743
+ XBP           O1     O    O2        0.000     -8.387   -0.706   -1.156
+ XBP           P1     P    P         0.000     -9.217   -1.210    0.127
+ XBP           O1P    O    OP       -0.666     -8.744   -0.466    1.357
+ XBP           O2P    O    OP       -0.666    -10.691   -0.943   -0.088
+ XBP           O3P    O    OP       -0.666     -8.997   -2.695    0.319
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ XBP      O6P    n/a    P2     START
+ XBP      P2     O6P    O5     .
+ XBP      O4P    P2     .      .
+ XBP      O5P    P2     .      .
+ XBP      O5     P2     C5     .
+ XBP      C5     O5     C4     .
+ XBP      H51    C5     .      .
+ XBP      H52    C5     .      .
+ XBP      C4     C5     C3     .
+ XBP      H4     C4     .      .
+ XBP      O4     C4     HO4    .
+ XBP      HO4    O4     .      .
+ XBP      C3     C4     C2     .
+ XBP      H3     C3     .      .
+ XBP      O3     C3     HO3    .
+ XBP      HO3    O3     .      .
+ XBP      C2     C3     C1     .
+ XBP      O2     C2     .      .
+ XBP      C1     C2     O1     .
+ XBP      H11    C1     .      .
+ XBP      H12    C1     .      .
+ XBP      O1     C1     P1     .
+ XBP      P1     O1     O3P    .
+ XBP      O1P    P1     .      .
+ XBP      O2P    P1     .      .
+ XBP      O3P    P1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XBP       C1        C2        single    1.510     0.020     1.510     0.020     
+XBP       O1        C1        single    1.426     0.020     1.426     0.020     
+XBP       H11       C1        single    1.089     0.010     0.989     0.005     
+XBP       H12       C1        single    1.089     0.010     0.989     0.005     
+XBP       C2        C3        single    1.500     0.020     1.500     0.020     
+XBP       O2        C2        double    1.220     0.020     1.220     0.020     
+XBP       C3        C4        single    1.524     0.020     1.524     0.020     
+XBP       O3        C3        single    1.432     0.020     1.432     0.020     
+XBP       H3        C3        single    1.089     0.010     0.989     0.005     
+XBP       C4        C5        single    1.524     0.020     1.524     0.020     
+XBP       O4        C4        single    1.432     0.020     1.432     0.020     
+XBP       H4        C4        single    1.089     0.010     0.989     0.005     
+XBP       C5        O5        single    1.426     0.020     1.426     0.020     
+XBP       H51       C5        single    1.089     0.010     0.989     0.005     
+XBP       H52       C5        single    1.089     0.010     0.989     0.005     
+XBP       P1        O1        single    1.610     0.020     1.610     0.020     
+XBP       HO3       O3        single    0.970     0.012     0.839     0.014     
+XBP       HO4       O4        single    0.970     0.012     0.839     0.014     
+XBP       O5        P2        single    1.610     0.020     1.610     0.020     
+XBP       O1P       P1        deloc     1.510     0.020     1.510     0.020     
+XBP       O2P       P1        deloc     1.510     0.020     1.510     0.020     
+XBP       O3P       P1        deloc     1.510     0.020     1.510     0.020     
+XBP       O4P       P2        deloc     1.510     0.020     1.510     0.020     
+XBP       O5P       P2        deloc     1.510     0.020     1.510     0.020     
+XBP       P2        O6P       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ XBP      O6P    P2     O4P     119.900    3.000
+ XBP      O6P    P2     O5P     119.900    3.000
+ XBP      O6P    P2     O5      108.200    3.000
+ XBP      O4P    P2     O5P     119.900    3.000
+ XBP      O4P    P2     O5      108.200    3.000
+ XBP      O5P    P2     O5      108.200    3.000
+ XBP      P2     O5     C5      120.500    3.000
+ XBP      O5     C5     H51     109.470    3.000
+ XBP      O5     C5     H52     109.470    3.000
+ XBP      O5     C5     C4      109.470    3.000
+ XBP      H51    C5     H52     107.900    3.000
+ XBP      H51    C5     C4      109.470    3.000
+ XBP      H52    C5     C4      109.470    3.000
+ XBP      C5     C4     H4      108.340    3.000
+ XBP      C5     C4     O4      109.470    3.000
+ XBP      C5     C4     C3      111.000    3.000
+ XBP      H4     C4     O4      109.470    3.000
+ XBP      H4     C4     C3      108.340    3.000
+ XBP      O4     C4     C3      109.470    3.000
+ XBP      C4     O4     HO4     109.470    3.000
+ XBP      C4     C3     H3      108.340    3.000
+ XBP      C4     C3     O3      109.470    3.000
+ XBP      C4     C3     C2      109.470    3.000
+ XBP      H3     C3     O3      109.470    3.000
+ XBP      H3     C3     C2      108.810    3.000
+ XBP      O3     C3     C2      109.470    3.000
+ XBP      C3     O3     HO3     109.470    3.000
+ XBP      C3     C2     O2      120.500    3.000
+ XBP      C3     C2     C1      120.000    3.000
+ XBP      O2     C2     C1      120.500    3.000
+ XBP      C2     C1     H11     109.470    3.000
+ XBP      C2     C1     H12     109.470    3.000
+ XBP      C2     C1     O1      109.470    3.000
+ XBP      H11    C1     H12     107.900    3.000
+ XBP      H11    C1     O1      109.470    3.000
+ XBP      H12    C1     O1      109.470    3.000
+ XBP      C1     O1     P1      120.500    3.000
+ XBP      O1     P1     O1P     108.200    3.000
+ XBP      O1     P1     O2P     108.200    3.000
+ XBP      O1     P1     O3P     108.200    3.000
+ XBP      O1P    P1     O2P     119.900    3.000
+ XBP      O1P    P1     O3P     119.900    3.000
+ XBP      O2P    P1     O3P     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ XBP      var_1    O6P    P2     O5     C5       -59.962   20.000   1
+ XBP      var_2    P2     O5     C5     C4       179.980   20.000   1
+ XBP      var_3    O5     C5     C4     C3       179.940   20.000   3
+ XBP      var_4    C5     C4     O4     HO4       59.985   20.000   1
+ XBP      var_5    C5     C4     C3     C2       179.998   20.000   3
+ XBP      var_6    C4     C3     O3     HO3      -59.976   20.000   1
+ XBP      var_7    C4     C3     C2     C1       -89.986   20.000   3
+ XBP      var_8    C3     C2     C1     O1      -179.924   20.000   3
+ XBP      var_9    C2     C1     O1     P1       179.987   20.000   1
+ XBP      var_10   C1     O1     P1     O3P      -60.043   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ XBP      chir_01  C3     C2     C4     O3        positiv
+ XBP      chir_02  C4     C3     C5     O4        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ XBP      plan-1    C2        0.020
+ XBP      plan-1    C1        0.020
+ XBP      plan-1    C3        0.020
+ XBP      plan-1    O2        0.020
+# ------------------------------------------------------

@@ -1,0 +1,306 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+291      291 'prop-2-en-1-yl 7-O-carbamoyl-L-glyce' pyranose           39  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_291
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 291           C1     C    CH1       0.000      0.000    0.000    0.000
+ 291           H1     H    H         0.000      0.512   -0.286   -0.929
+ 291           O1     O    O2        0.000     -0.030   -1.117    0.891
+ 291           C9     C    CH2       0.000     -0.506   -2.325    0.294
+ 291           H9     H    H         0.000      0.140   -2.596   -0.544
+ 291           H9A    H    H         0.000     -1.525   -2.173   -0.069
+ 291           C10    C    C1        0.000     -0.495   -3.430    1.318
+ 291           H10    H    H         0.000      0.361   -3.562    1.958
+ 291           C11    C    C2        0.000     -1.525   -4.231    1.429
+ 291           H11A   H    H         0.000     -1.513   -5.019    2.160
+ 291           H11    H    H         0.000     -2.378   -4.097    0.788
+ 291           O5     O    O2        0.000     -1.337    0.407   -0.299
+ 291           C5     C    CH1       0.000     -2.104    0.777    0.849
+ 291           H5     H    H         0.000     -2.155   -0.072    1.546
+ 291           C4     C    CH1       0.000     -1.439    1.968    1.543
+ 291           H4     H    H         0.000     -1.425    2.830    0.862
+ 291           O4     O    OH1       0.000     -2.171    2.304    2.724
+ 291           HO4    H    H         0.000     -1.747    3.053    3.163
+ 291           C3     C    CH1       0.000     -0.003    1.592    1.922
+ 291           H3     H    H         0.000     -0.017    0.763    2.643
+ 291           O3     O    OH1       0.000      0.650    2.721    2.505
+ 291           HO3    H    H         0.000      1.558    2.485    2.736
+ 291           C2     C    CH1       0.000      0.750    1.160    0.660
+ 291           H2     H    H         0.000      1.765    0.835    0.930
+ 291           O2     O    OH1       0.000      0.825    2.258   -0.250
+ 291           HO2    H    H         0.000      1.296    1.983   -1.049
+ 291           C6     C    CH1       0.000     -3.518    1.165    0.415
+ 291           H6     H    H         0.000     -4.133    1.364    1.304
+ 291           O6     O    OH1       0.000     -3.462    2.339   -0.399
+ 291           HO6    H    H         0.000     -2.921    2.163   -1.181
+ 291           C7     C    CH2       0.000     -4.139    0.018   -0.388
+ 291           H7     H    H         0.000     -4.100   -0.900    0.202
+ 291           H7A    H    H         0.000     -3.578   -0.121   -1.314
+ 291           O7     O    O2        0.000     -5.520    0.337   -0.699
+ 291           C8     C    C         0.000     -6.213   -0.575   -1.406
+ 291           N1     N    NH2       0.000     -7.501   -0.341   -1.729
+ 291           HN1A   H    H         0.000     -8.027   -1.025   -2.261
+ 291           HN1    H    H         0.000     -7.952    0.519   -1.441
+ 291           O8     O    O         0.000     -5.679   -1.609   -1.754
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 291      C1     n/a    O5     START
+ 291      H1     C1     .      .
+ 291      O1     C1     C9     .
+ 291      C9     O1     C10    .
+ 291      H9     C9     .      .
+ 291      H9A    C9     .      .
+ 291      C10    C9     C11    .
+ 291      H10    C10    .      .
+ 291      C11    C10    H11    .
+ 291      H11A   C11    .      .
+ 291      H11    C11    .      .
+ 291      O5     C1     .      END
+ 291      C5     O5     C6     .
+ 291      H5     C5     .      .
+ 291      C4     C5     C3     .
+ 291      H4     C4     .      .
+ 291      O4     C4     HO4    .
+ 291      HO4    O4     .      .
+ 291      C3     C4     C2     .
+ 291      H3     C3     .      .
+ 291      O3     C3     HO3    .
+ 291      HO3    O3     .      .
+ 291      C2     C3     O2     .
+ 291      H2     C2     .      .
+ 291      O2     C2     HO2    .
+ 291      HO2    O2     .      .
+ 291      C6     C5     C7     .
+ 291      H6     C6     .      .
+ 291      O6     C6     HO6    .
+ 291      HO6    O6     .      .
+ 291      C7     C6     O7     .
+ 291      H7     C7     .      .
+ 291      H7A    C7     .      .
+ 291      O7     C7     C8     .
+ 291      C8     O7     O8     .
+ 291      N1     C8     HN1    .
+ 291      HN1A   N1     .      .
+ 291      HN1    N1     .      .
+ 291      O8     C8     .      .
+ 291      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+291       O1        C1        single    1.426     0.020     1.426     0.020     
+291       O5        C1        single    1.426     0.020     1.426     0.020     
+291       C1        C2        single    1.524     0.020     1.524     0.020     
+291       H1        C1        single    1.089     0.010     0.989     0.005     
+291       O2        C2        single    1.432     0.020     1.432     0.020     
+291       C2        C3        single    1.524     0.020     1.524     0.020     
+291       H2        C2        single    1.089     0.010     0.989     0.005     
+291       C3        C4        single    1.524     0.020     1.524     0.020     
+291       O3        C3        single    1.432     0.020     1.432     0.020     
+291       H3        C3        single    1.089     0.010     0.989     0.005     
+291       C4        C5        single    1.524     0.020     1.524     0.020     
+291       O4        C4        single    1.432     0.020     1.432     0.020     
+291       H4        C4        single    1.089     0.010     0.989     0.005     
+291       C5        O5        single    1.426     0.020     1.426     0.020     
+291       C6        C5        single    1.524     0.020     1.524     0.020     
+291       H5        C5        single    1.089     0.010     0.989     0.005     
+291       C7        C6        single    1.524     0.020     1.524     0.020     
+291       O6        C6        single    1.432     0.020     1.432     0.020     
+291       H6        C6        single    1.089     0.010     0.989     0.005     
+291       O7        C7        single    1.426     0.020     1.426     0.020     
+291       H7        C7        single    1.089     0.010     0.989     0.005     
+291       H7A       C7        single    1.089     0.010     0.989     0.005     
+291       C9        O1        single    1.426     0.020     1.426     0.020     
+291       HO2       O2        single    0.970     0.012     0.839     0.014     
+291       HO3       O3        single    0.970     0.012     0.839     0.014     
+291       HO4       O4        single    0.970     0.012     0.839     0.014     
+291       HO6       O6        single    0.970     0.012     0.839     0.014     
+291       C8        O7        single    1.454     0.020     1.454     0.020     
+291       O8        C8        double    1.220     0.020     1.220     0.020     
+291       N1        C8        single    1.332     0.020     1.332     0.020     
+291       HN1       N1        single    1.016     0.010     0.899     0.007     
+291       HN1A      N1        single    1.016     0.010     0.899     0.007     
+291       C10       C9        single    1.510     0.020     1.510     0.020     
+291       H9        C9        single    1.089     0.010     0.989     0.005     
+291       H9A       C9        single    1.089     0.010     0.989     0.005     
+291       C11       C10       double    1.320     0.020     1.320     0.020     
+291       H10       C10       single    1.082     0.013     0.975     0.010     
+291       H11       C11       single    1.082     0.013     0.975     0.010     
+291       H11A      C11       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 291      H1     C1     O1      109.470    3.000
+ 291      H1     C1     O5      109.470    3.000
+ 291      O1     C1     O5      109.470    3.000
+ 291      H1     C1     C2      108.340    3.000
+ 291      O1     C1     C2      109.470    3.000
+ 291      O5     C1     C2      109.470    3.000
+ 291      C1     O1     C9      111.800    3.000
+ 291      O1     C9     H9      109.470    3.000
+ 291      O1     C9     H9A     109.470    3.000
+ 291      O1     C9     C10     109.500    3.000
+ 291      H9     C9     H9A     107.900    3.000
+ 291      H9     C9     C10     109.470    3.000
+ 291      H9A    C9     C10     109.470    3.000
+ 291      C9     C10    H10     120.000    3.000
+ 291      C9     C10    C11     120.000    3.000
+ 291      H10    C10    C11     120.000    3.000
+ 291      C10    C11    H11A    120.000    3.000
+ 291      C10    C11    H11     120.000    3.000
+ 291      H11A   C11    H11     120.000    3.000
+ 291      C1     O5     C5      111.800    3.000
+ 291      O5     C5     H5      109.470    3.000
+ 291      O5     C5     C4      109.470    3.000
+ 291      O5     C5     C6      109.470    3.000
+ 291      H5     C5     C4      108.340    3.000
+ 291      H5     C5     C6      108.340    3.000
+ 291      C4     C5     C6      111.000    3.000
+ 291      C5     C4     H4      108.340    3.000
+ 291      C5     C4     O4      109.470    3.000
+ 291      C5     C4     C3      111.000    3.000
+ 291      H4     C4     O4      109.470    3.000
+ 291      H4     C4     C3      108.340    3.000
+ 291      O4     C4     C3      109.470    3.000
+ 291      C4     O4     HO4     109.470    3.000
+ 291      C4     C3     H3      108.340    3.000
+ 291      C4     C3     O3      109.470    3.000
+ 291      C4     C3     C2      111.000    3.000
+ 291      H3     C3     O3      109.470    3.000
+ 291      H3     C3     C2      108.340    3.000
+ 291      O3     C3     C2      109.470    3.000
+ 291      C3     O3     HO3     109.470    3.000
+ 291      C3     C2     H2      108.340    3.000
+ 291      C3     C2     O2      109.470    3.000
+ 291      C3     C2     C1      111.000    3.000
+ 291      H2     C2     O2      109.470    3.000
+ 291      H2     C2     C1      108.340    3.000
+ 291      O2     C2     C1      109.470    3.000
+ 291      C2     O2     HO2     109.470    3.000
+ 291      C5     C6     H6      108.340    3.000
+ 291      C5     C6     O6      109.470    3.000
+ 291      C5     C6     C7      111.000    3.000
+ 291      H6     C6     O6      109.470    3.000
+ 291      H6     C6     C7      108.340    3.000
+ 291      O6     C6     C7      109.470    3.000
+ 291      C6     O6     HO6     109.470    3.000
+ 291      C6     C7     H7      109.470    3.000
+ 291      C6     C7     H7A     109.470    3.000
+ 291      C6     C7     O7      109.470    3.000
+ 291      H7     C7     H7A     107.900    3.000
+ 291      H7     C7     O7      109.470    3.000
+ 291      H7A    C7     O7      109.470    3.000
+ 291      C7     O7     C8      120.000    3.000
+ 291      O7     C8     N1      120.000    3.000
+ 291      O7     C8     O8      119.000    3.000
+ 291      N1     C8     O8      123.000    3.000
+ 291      C8     N1     HN1A    120.000    3.000
+ 291      C8     N1     HN1     120.000    3.000
+ 291      HN1A   N1     HN1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 291      var_1    O5     C1     O1     C9        69.991   20.000   1
+ 291      var_2    C1     O1     C9     C10      179.992   20.000   1
+ 291      var_3    O1     C9     C10    C11      134.975   20.000   1
+ 291      CONST_1  C9     C10    C11    H11       -0.023    0.000   0
+ 291      var_4    C1     O5     C5     C6       180.000   20.000   1
+ 291      var_5    O5     C5     C4     C3       -60.000   20.000   3
+ 291      var_6    C5     C4     O4     HO4      179.723   20.000   1
+ 291      var_7    C5     C4     C3     C2        60.000   20.000   3
+ 291      var_8    C4     C3     O3     HO3     -179.503   20.000   1
+ 291      var_9    C4     C3     C2     O2        60.000   20.000   3
+ 291      var_10   C3     C2     C1     O5        60.000   20.000   3
+ 291      var_11   C3     C2     O2     HO2     -179.676   20.000   1
+ 291      var_12   O5     C5     C6     C7        55.088   20.000   3
+ 291      var_13   C5     C6     O6     HO6       60.015   20.000   1
+ 291      var_14   C5     C6     C7     O7       175.012   20.000   3
+ 291      var_15   C6     C7     O7     C8       179.992   20.000   1
+ 291      var_16   C7     O7     C8     O8        -0.005   20.000   1
+ 291      CONST_2  O7     C8     N1     HN1        0.000    0.000   0
+ 291      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 291      chir_01  C1     C2     O1     O5        negativ
+ 291      chir_02  C2     C1     C3     O2        positiv
+ 291      chir_03  C3     C2     C4     O3        positiv
+ 291      chir_04  C4     C3     C5     O4        negativ
+ 291      chir_05  C5     C4     C6     O5        negativ
+ 291      chir_06  C6     C5     C7     O6        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 291      plan-1    C8        0.020
+ 291      plan-1    O7        0.020
+ 291      plan-1    N1        0.020
+ 291      plan-1    O8        0.020
+ 291      plan-1    HN1A      0.020
+ 291      plan-1    HN1       0.020
+ 291      plan-2    N1        0.020
+ 291      plan-2    C8        0.020
+ 291      plan-2    HN1       0.020
+ 291      plan-2    HN1A      0.020
+ 291      plan-3    C10       0.020
+ 291      plan-3    C9        0.020
+ 291      plan-3    C11       0.020
+ 291      plan-3    H10       0.020
+ 291      plan-3    H11       0.020
+ 291      plan-3    H11A      0.020
+# ------------------------------------------------------

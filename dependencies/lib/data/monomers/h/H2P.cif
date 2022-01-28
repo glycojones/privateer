@@ -1,0 +1,239 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+H2P      H2P 'HEPTULOSE-2-PHOSPHATE               ' pyranose           30  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_H2P
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ H2P           C1     C    CT        0.000      0.000    0.000    0.000
+ H2P           C7     C    CH3       0.000      1.072   -0.654    0.875
+ H2P           H73    H    H         0.000      1.583   -1.395    0.315
+ H2P           H72    H    H         0.000      1.763    0.081    1.199
+ H2P           H71    H    H         0.000      0.615   -1.104    1.719
+ H2P           O1     O    O2        0.000     -0.436    1.214    0.613
+ H2P           P      P    P         0.000     -0.875    0.844    2.118
+ H2P           OP1    O    OP       -0.666      0.346    0.444    2.916
+ H2P           OP2    O    OP       -0.666     -1.527    2.047    2.763
+ H2P           OP3    O    OP       -0.666     -1.858   -0.307    2.088
+ H2P           O5     O    O2        0.000     -1.107   -0.888   -0.134
+ H2P           C5     C    CH1       0.000     -2.150   -0.177   -0.798
+ H2P           H5     H    H         0.000     -2.341    0.769   -0.272
+ H2P           C6     C    CH2       0.000     -3.423   -1.025   -0.798
+ H2P           H61    H    H         0.000     -3.233   -1.966   -1.320
+ H2P           H62    H    H         0.000     -4.222   -0.482   -1.307
+ H2P           O6     O    OH1       0.000     -3.814   -1.297    0.549
+ H2P           HO6    H    H         0.000     -4.618   -1.833    0.549
+ H2P           C4     C    CH1       0.000     -1.739    0.117   -2.243
+ H2P           H4     H    H         0.000     -1.525   -0.827   -2.764
+ H2P           O4     O    OH1       0.000     -2.799    0.804   -2.911
+ H2P           HO4    H    H         0.000     -3.592    0.251   -2.909
+ H2P           C3     C    CH1       0.000     -0.482    0.995   -2.234
+ H2P           H3     H    H         0.000     -0.722    1.978   -1.807
+ H2P           O3     O    OH1       0.000     -0.001    1.156   -3.570
+ H2P           HO3    H    H         0.000     -0.684    1.578   -4.109
+ H2P           C2     C    CH1       0.000      0.589    0.310   -1.378
+ H2P           H2     H    H         0.000      0.904   -0.625   -1.862
+ H2P           O2     O    OH1       0.000      1.714    1.178   -1.235
+ H2P           HO2    H    H         0.000      2.080    1.378   -2.107
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ H2P      C1     n/a    O5     START
+ H2P      C7     C1     H71    .
+ H2P      H73    C7     .      .
+ H2P      H72    C7     .      .
+ H2P      H71    C7     .      .
+ H2P      O1     C1     P      .
+ H2P      P      O1     OP3    .
+ H2P      OP1    P      .      .
+ H2P      OP2    P      .      .
+ H2P      OP3    P      .      .
+ H2P      O5     C1     .      END
+ H2P      C5     O5     C4     .
+ H2P      H5     C5     .      .
+ H2P      C6     C5     O6     .
+ H2P      H61    C6     .      .
+ H2P      H62    C6     .      .
+ H2P      O6     C6     HO6    .
+ H2P      HO6    O6     .      .
+ H2P      C4     C5     C3     .
+ H2P      H4     C4     .      .
+ H2P      O4     C4     HO4    .
+ H2P      HO4    O4     .      .
+ H2P      C3     C4     C2     .
+ H2P      H3     C3     .      .
+ H2P      O3     C3     HO3    .
+ H2P      HO3    O3     .      .
+ H2P      C2     C3     O2     .
+ H2P      H2     C2     .      .
+ H2P      O2     C2     HO2    .
+ H2P      HO2    O2     .      .
+ H2P      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+H2P       C1        C2        single    1.524     0.020     1.524     0.020     
+H2P       C7        C1        single    1.524     0.020     1.524     0.020     
+H2P       O1        C1        single    1.426     0.020     1.426     0.020     
+H2P       O5        C1        single    1.426     0.020     1.426     0.020     
+H2P       C2        C3        single    1.524     0.020     1.524     0.020     
+H2P       O2        C2        single    1.432     0.020     1.432     0.020     
+H2P       H2        C2        single    1.089     0.010     0.989     0.005     
+H2P       C3        C4        single    1.524     0.020     1.524     0.020     
+H2P       O3        C3        single    1.432     0.020     1.432     0.020     
+H2P       H3        C3        single    1.089     0.010     0.989     0.005     
+H2P       C4        C5        single    1.524     0.020     1.524     0.020     
+H2P       O4        C4        single    1.432     0.020     1.432     0.020     
+H2P       H4        C4        single    1.089     0.010     0.989     0.005     
+H2P       C6        C5        single    1.524     0.020     1.524     0.020     
+H2P       C5        O5        single    1.426     0.020     1.426     0.020     
+H2P       H5        C5        single    1.089     0.010     0.989     0.005     
+H2P       O6        C6        single    1.432     0.020     1.432     0.020     
+H2P       H61       C6        single    1.089     0.010     0.989     0.005     
+H2P       H62       C6        single    1.089     0.010     0.989     0.005     
+H2P       H71       C7        single    1.089     0.010     0.989     0.005     
+H2P       H72       C7        single    1.089     0.010     0.989     0.005     
+H2P       H73       C7        single    1.089     0.010     0.989     0.005     
+H2P       P         O1        single    1.610     0.020     1.610     0.020     
+H2P       HO2       O2        single    0.970     0.012     0.839     0.014     
+H2P       HO3       O3        single    0.970     0.012     0.839     0.014     
+H2P       HO4       O4        single    0.970     0.012     0.839     0.014     
+H2P       HO6       O6        single    0.970     0.012     0.839     0.014     
+H2P       OP1       P         deloc     1.510     0.020     1.510     0.020     
+H2P       OP2       P         deloc     1.510     0.020     1.510     0.020     
+H2P       OP3       P         deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ H2P      C7     C1     O1      109.470    3.000
+ H2P      C7     C1     O5      109.470    3.000
+ H2P      O1     C1     O5      109.500    3.000
+ H2P      C7     C1     C2      111.000    3.000
+ H2P      O1     C1     C2      109.470    3.000
+ H2P      O5     C1     C2      109.470    3.000
+ H2P      C1     C7     H73     109.470    3.000
+ H2P      C1     C7     H72     109.470    3.000
+ H2P      C1     C7     H71     109.470    3.000
+ H2P      H73    C7     H72     109.470    3.000
+ H2P      H73    C7     H71     109.470    3.000
+ H2P      H72    C7     H71     109.470    3.000
+ H2P      C1     O1     P       120.000    3.000
+ H2P      O1     P      OP1     108.200    3.000
+ H2P      O1     P      OP2     108.200    3.000
+ H2P      O1     P      OP3     108.200    3.000
+ H2P      OP1    P      OP2     119.900    3.000
+ H2P      OP1    P      OP3     119.900    3.000
+ H2P      OP2    P      OP3     119.900    3.000
+ H2P      C1     O5     C5      111.800    3.000
+ H2P      O5     C5     H5      109.470    3.000
+ H2P      O5     C5     C6      109.470    3.000
+ H2P      O5     C5     C4      109.470    3.000
+ H2P      H5     C5     C6      108.340    3.000
+ H2P      H5     C5     C4      108.340    3.000
+ H2P      C6     C5     C4      111.000    3.000
+ H2P      C5     C6     H61     109.470    3.000
+ H2P      C5     C6     H62     109.470    3.000
+ H2P      C5     C6     O6      109.470    3.000
+ H2P      H61    C6     H62     107.900    3.000
+ H2P      H61    C6     O6      109.470    3.000
+ H2P      H62    C6     O6      109.470    3.000
+ H2P      C6     O6     HO6     109.470    3.000
+ H2P      C5     C4     H4      108.340    3.000
+ H2P      C5     C4     O4      109.470    3.000
+ H2P      C5     C4     C3      111.000    3.000
+ H2P      H4     C4     O4      109.470    3.000
+ H2P      H4     C4     C3      108.340    3.000
+ H2P      O4     C4     C3      109.470    3.000
+ H2P      C4     O4     HO4     109.470    3.000
+ H2P      C4     C3     H3      108.340    3.000
+ H2P      C4     C3     O3      109.470    3.000
+ H2P      C4     C3     C2      111.000    3.000
+ H2P      H3     C3     O3      109.470    3.000
+ H2P      H3     C3     C2      108.340    3.000
+ H2P      O3     C3     C2      109.470    3.000
+ H2P      C3     O3     HO3     109.470    3.000
+ H2P      C3     C2     H2      108.340    3.000
+ H2P      C3     C2     O2      109.470    3.000
+ H2P      C3     C2     C1      111.000    3.000
+ H2P      H2     C2     O2      109.470    3.000
+ H2P      H2     C2     C1      108.340    3.000
+ H2P      O2     C2     C1      109.470    3.000
+ H2P      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ H2P      var_1    O5     C1     C7     H71      -44.447   20.000   1
+ H2P      var_2    O5     C1     O1     P         66.297   20.000   1
+ H2P      var_3    C1     O1     P      OP3      -52.240   20.000   1
+ H2P      var_4    C1     O5     C5     C4        60.000   20.000   1
+ H2P      var_5    O5     C5     C6     O6        60.033   20.000   3
+ H2P      var_6    C5     C6     O6     HO6      179.996   20.000   1
+ H2P      var_7    O5     C5     C4     C3       -60.000   20.000   3
+ H2P      var_8    C5     C4     O4     HO4      -60.053   20.000   1
+ H2P      var_9    C5     C4     C3     C2        60.000   20.000   3
+ H2P      var_10   C4     C3     O3     HO3       60.017   20.000   1
+ H2P      var_11   C4     C3     C2     O2       180.000   20.000   3
+ H2P      var_12   C3     C2     C1     O5        60.000   20.000   1
+ H2P      var_13   C3     C2     O2     HO2      -60.034   20.000   1
+ H2P      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ H2P      chir_01  C1     C2     C7     O1        negativ
+ H2P      chir_02  C2     C1     C3     O2        negativ
+ H2P      chir_03  C3     C2     C4     O3        positiv
+ H2P      chir_04  C4     C3     C5     O4        negativ
+ H2P      chir_05  C5     C4     C6     O5        negativ
+# ------------------------------------------------------

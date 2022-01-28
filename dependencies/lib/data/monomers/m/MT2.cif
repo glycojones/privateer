@@ -1,0 +1,228 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MT2     MT2     "[(3S)-3-amino-3-carboxypropyl](ethyl)methylsulfonium"     peptide   27     11     .
+#
+data_comp_MT2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MT2     O       O       O       0       3.488       -2.122      -1.174
+MT2     C       C       C       0       3.089       -1.057      -1.685
+MT2     OXT     O       OC      -1      3.183       -0.746      -2.889
+MT2     CA      C       CH1     0       2.425       -0.038      -0.749
+MT2     N       N       NT3     1       3.331       0.236       0.400
+MT2     CB      C       CH2     0       1.077       -0.588      -0.269
+MT2     CG      C       CH2     0       0.182       0.446       0.388
+MT2     SD      S       S3      1       -1.368      -0.321      0.914
+MT2     CE      C       CH3     0       -2.029      0.905       2.032
+MT2     C14     C       CH3     0       -3.667      -0.720      -0.494
+MT2     C15     C       CH2     0       -2.332      -0.024      -0.584
+MT2     HA      H       H       0       2.284       0.802       -1.243
+MT2     H2      H       H       0       4.148       0.506       0.099
+MT2     H       H       H       0       3.436       -0.517      0.901
+MT2     H3      H       H       0       2.982       0.894       0.924
+MT2     HB1     H       H       0       1.241       -1.310      0.369
+MT2     HB2     H       H       0       0.600       -0.969      -1.034
+MT2     HG1     H       H       0       -0.018      1.168       -0.246
+MT2     HG2     H       H       0       0.630       0.829       1.171
+MT2     HE1     H       H       0       -1.997      1.777       1.607
+MT2     HE2     H       H       0       -1.497      0.918       2.845
+MT2     HE3     H       H       0       -2.948      0.680       2.248
+MT2     H14     H       H       0       -4.151      -0.599      -1.325
+MT2     H14A    H       H       0       -4.180      -0.342      0.236
+MT2     H14B    H       H       0       -3.528      -1.666      -0.336
+MT2     H15     H       H       0       -1.833      -0.361      -1.359
+MT2     H15A    H       H       0       -2.467      0.942       -0.693
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+MT2      N      n/a    CA     START
+MT2      H      N      .      .
+MT2      H2     N      .      .
+MT2      H3     N      .      .
+MT2      CA     N      C      .
+MT2      HA     CA     .      .
+MT2      CB     CA     CG     .
+MT2      HB1    CB     .      .
+MT2      HB2    CB     .      .
+MT2      CG     CB     SD     .
+MT2      HG1    CG     .      .
+MT2      HG2    CG     .      .
+MT2      SD     CG     C15    .
+MT2      CE     SD     HE1    .
+MT2      HE3    CE     .      .
+MT2      HE2    CE     .      .
+MT2      HE1    CE     .      .
+MT2      C15    SD     C14    .
+MT2      H15    C15    .      .
+MT2      H15A   C15    .      .
+MT2      C14    C15    H14    .
+MT2      H14B   C14    .      .
+MT2      H14A   C14    .      .
+MT2      H14    C14    .      .
+MT2      C      CA     OXT    .
+MT2      O      C      .      .
+MT2      OXT    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MT2       O         C         DOUBLE    n         1.247     0.019     1.247     0.019     
+MT2       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+MT2       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+MT2       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+MT2       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+MT2       CB        CG        SINGLE    n         1.516     0.020     1.516     0.020     
+MT2       CG        SD        SINGLE    n         1.807     0.018     1.807     0.018     
+MT2       SD        CE        SINGLE    n         1.786     0.015     1.786     0.015     
+MT2       SD        C15       SINGLE    n         1.807     0.018     1.807     0.018     
+MT2       C14       C15       SINGLE    n         1.508     0.017     1.508     0.017     
+MT2       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+MT2       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+MT2       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+MT2       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+MT2       CB        HB1       SINGLE    n         1.089     0.010     0.978     0.020     
+MT2       CB        HB2       SINGLE    n         1.089     0.010     0.978     0.020     
+MT2       CG        HG1       SINGLE    n         1.089     0.010     0.981     0.015     
+MT2       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.015     
+MT2       CE        HE1       SINGLE    n         1.089     0.010     0.971     0.017     
+MT2       CE        HE2       SINGLE    n         1.089     0.010     0.971     0.017     
+MT2       CE        HE3       SINGLE    n         1.089     0.010     0.971     0.017     
+MT2       C14       H14       SINGLE    n         1.089     0.010     0.969     0.013     
+MT2       C14       H14A      SINGLE    n         1.089     0.010     0.969     0.013     
+MT2       C14       H14B      SINGLE    n         1.089     0.010     0.969     0.013     
+MT2       C15       H15       SINGLE    n         1.089     0.010     0.981     0.015     
+MT2       C15       H15A      SINGLE    n         1.089     0.010     0.981     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MT2           O           C         OXT     125.752    1.50
+MT2           O           C          CA     117.124    1.50
+MT2         OXT           C          CA     117.124    1.50
+MT2           C          CA           N     109.241    1.50
+MT2           C          CA          CB     109.344    1.50
+MT2           C          CA          HA     108.824    1.50
+MT2           N          CA          CB     110.906    1.50
+MT2           N          CA          HA     108.487    1.50
+MT2          CB          CA          HA     109.670    1.50
+MT2          CA           N          H2     110.062    1.93
+MT2          CA           N           H     110.062    1.93
+MT2          CA           N          H3     110.062    1.93
+MT2          H2           N           H     109.028    2.41
+MT2          H2           N          H3     109.028    2.41
+MT2           H           N          H3     109.028    2.41
+MT2          CA          CB          CG     113.808    1.88
+MT2          CA          CB         HB1     108.666    1.50
+MT2          CA          CB         HB2     108.666    1.50
+MT2          CG          CB         HB1     108.557    1.50
+MT2          CG          CB         HB2     108.557    1.50
+MT2         HB1          CB         HB2     107.698    1.50
+MT2          CB          CG          SD     108.220    3.00
+MT2          CB          CG         HG1     109.481    1.50
+MT2          CB          CG         HG2     109.481    1.50
+MT2          SD          CG         HG1     108.504    1.57
+MT2          SD          CG         HG2     108.504    1.57
+MT2         HG1          CG         HG2     108.193    1.50
+MT2          CG          SD          CE     102.026    1.83
+MT2          CG          SD         C15      98.345    1.79
+MT2          CE          SD         C15     102.026    1.83
+MT2          SD          CE         HE1     109.268    1.50
+MT2          SD          CE         HE2     109.268    1.50
+MT2          SD          CE         HE3     109.268    1.50
+MT2         HE1          CE         HE2     109.605    1.50
+MT2         HE1          CE         HE3     109.605    1.50
+MT2         HE2          CE         HE3     109.605    1.50
+MT2         C15         C14         H14     109.458    1.50
+MT2         C15         C14        H14A     109.458    1.50
+MT2         C15         C14        H14B     109.458    1.50
+MT2         H14         C14        H14A     109.451    1.50
+MT2         H14         C14        H14B     109.451    1.50
+MT2        H14A         C14        H14B     109.451    1.50
+MT2          SD         C15         C14     108.220    3.00
+MT2          SD         C15         H15     108.504    1.57
+MT2          SD         C15        H15A     108.504    1.57
+MT2         C14         C15         H15     109.275    1.50
+MT2         C14         C15        H15A     109.275    1.50
+MT2         H15         C15        H15A     108.193    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MT2             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+MT2             sp3_sp3_4           C          CA           N          H2      60.000   10.00     3
+MT2            sp3_sp3_10           C          CA          CB          CG     180.000   10.00     3
+MT2            sp3_sp3_19          CA          CB          CG          SD     180.000   10.00     3
+MT2            sp3_sp3_28          CB          CG          SD          CE     180.000   10.00     3
+MT2            sp3_sp3_40         C14         C15          SD          CG     180.000   10.00     3
+MT2            sp3_sp3_35         HE1          CE          SD          CG     -60.000   10.00     3
+MT2            sp3_sp3_46         H14         C14         C15          SD     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MT2    chir_1    CA    N    C    CB    both
+MT2    chir_2    SD    CG    C15    CE    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MT2    plan-1           C   0.020
+MT2    plan-1          CA   0.020
+MT2    plan-1           O   0.020
+MT2    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MT2 SMILES           ACDLabs              10.04 "O=C(O)C(N)CC[S+](C)CC"
+MT2 SMILES_CANONICAL CACTVS               3.341 "CC[S@@+](C)CC[C@H](N)C(O)=O"
+MT2 SMILES           CACTVS               3.341 "CC[S+](C)CC[CH](N)C(O)=O"
+MT2 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC[S@@+](C)CC[C@@H](C(=O)O)N"
+MT2 SMILES           "OpenEye OEToolkits" 1.5.0 "CC[S+](C)CCC(C(=O)O)N"
+MT2 InChI            InChI                1.03  "InChI=1S/C7H15NO2S/c1-3-11(2)5-4-6(8)7(9)10/h6H,3-5,8H2,1-2H3/p+1/t6-,11+/m0/s1"
+MT2 InChIKey         InChI                1.03  CHUUUZMZGJUUGS-UPONEAKYSA-O
+MT2 ?                acedrg               202         "dictionary generator"
+MT2 ?                acedrg_database      11          "data source"
+MT2 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MT2 ?                refmac5              5.8.0222    "optimization tool"

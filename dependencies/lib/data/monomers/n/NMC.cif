@@ -1,0 +1,192 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NMC     NMC     "N-CYCLOPROPYLMETHYLGLYCINE"     M-peptide     19     9     .
+#
+data_comp_NMC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NMC     N       N       NT1     0       0.986       -0.342      -0.533
+NMC     CA      C       CH2     0       1.899       -0.406      0.605
+NMC     C       C       C       0       3.233       0.284       0.328
+NMC     O       O       O       0       3.943       -0.193      -0.579
+NMC     CN      C       CH2     0       -0.373      -0.824      -0.258
+NMC     CX1     C       CH1     0       -1.210      0.258       0.357
+NMC     CX2     C       CH2     0       -1.944      1.209       -0.523
+NMC     CX3     C       CH2     0       -2.694      0.184       0.260
+NMC     OXT     O       OC      -1      3.516       1.276       1.029
+NMC     H       H       H       0       1.344       -0.843      -1.176
+NMC     HA1     H       H       0       2.068       -1.336      0.825
+NMC     HA2     H       H       0       1.482       0.016       1.373
+NMC     HCN1    H       H       0       -0.333      -1.592      0.351
+NMC     HCN2    H       H       0       -0.788      -1.120      -1.094
+NMC     HCX1    H       H       0       -0.852      0.642       1.202
+NMC     HC21    H       H       0       -2.009      2.141       -0.234
+NMC     HC22    H       H       0       -1.875      1.081       -1.490
+NMC     HC31    H       H       0       -3.217      0.491       1.028
+NMC     HC32    H       H       0       -3.082      -0.569      -0.229
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+NMC      N      n/a    CA     START
+NMC      H      N      .      .
+NMC      CN     N      CX1    .
+NMC      HCN1   CN     .      .
+NMC      HCN2   CN     .      .
+NMC      CX1    CN     CX3    .
+NMC      HCX1   CX1    .      .
+NMC      CX3    CX1    CX2    .
+NMC      HC31   CX3    .      .
+NMC      HC32   CX3    .      .
+NMC      CX2    CX3    HC21   .
+NMC      HC22   CX2    .      .
+NMC      HC21   CX2    .      .
+NMC      CA     N      C      .
+NMC      HA1    CA     .      .
+NMC      HA2    CA     .      .
+NMC      C      CA     .      END
+NMC      O      C      .      .
+NMC      OXT    C      .      .
+NMC      CX1    CX2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NMC       N         CA        SINGLE    n         1.459     0.013     1.459     0.013     
+NMC       N         CN        SINGLE    n         1.466     0.014     1.466     0.014     
+NMC       CA        C         SINGLE    n         1.527     0.012     1.527     0.012     
+NMC       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+NMC       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+NMC       CN        CX1       SINGLE    n         1.500     0.010     1.500     0.010     
+NMC       CX1       CX2       SINGLE    n         1.489     0.010     1.489     0.010     
+NMC       CX1       CX3       SINGLE    n         1.489     0.010     1.489     0.010     
+NMC       CX2       CX3       SINGLE    n         1.491     0.014     1.491     0.014     
+NMC       N         H         SINGLE    n         1.036     0.016     0.890     0.020     
+NMC       CA        HA1       SINGLE    n         1.089     0.010     0.971     0.020     
+NMC       CA        HA2       SINGLE    n         1.089     0.010     0.971     0.020     
+NMC       CN        HCN1      SINGLE    n         1.089     0.010     0.980     0.015     
+NMC       CN        HCN2      SINGLE    n         1.089     0.010     0.980     0.015     
+NMC       CX1       HCX1      SINGLE    n         1.089     0.010     0.994     0.011     
+NMC       CX2       HC21      SINGLE    n         1.089     0.010     0.978     0.017     
+NMC       CX2       HC22      SINGLE    n         1.089     0.010     0.978     0.017     
+NMC       CX3       HC31      SINGLE    n         1.089     0.010     0.978     0.017     
+NMC       CX3       HC32      SINGLE    n         1.089     0.010     0.978     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NMC          CA           N          CN     113.485    3.00
+NMC          CA           N           H     106.682    3.00
+NMC          CN           N           H     108.898    3.00
+NMC           N          CA           C     112.134    2.59
+NMC           N          CA         HA1     108.963    1.50
+NMC           N          CA         HA2     108.963    1.50
+NMC           C          CA         HA1     108.590    1.50
+NMC           C          CA         HA2     108.590    1.50
+NMC         HA1          CA         HA2     107.999    1.50
+NMC          CA           C           O     117.139    1.80
+NMC          CA           C         OXT     117.139    1.80
+NMC           O           C         OXT     125.722    1.50
+NMC           N          CN         CX1     110.674    2.42
+NMC           N          CN        HCN1     109.366    1.50
+NMC           N          CN        HCN2     109.366    1.50
+NMC         CX1          CN        HCN1     109.378    1.50
+NMC         CX1          CN        HCN2     109.378    1.50
+NMC        HCN1          CN        HCN2     108.065    1.50
+NMC          CN         CX1         CX2     119.540    1.50
+NMC          CN         CX1         CX3     119.540    1.50
+NMC          CN         CX1        HCX1     115.124    1.50
+NMC         CX2         CX1         CX3      60.105    1.50
+NMC         CX2         CX1        HCX1     115.657    1.50
+NMC         CX3         CX1        HCX1     115.657    1.50
+NMC         CX1         CX2         CX3      59.948    1.50
+NMC         CX1         CX2        HC21     117.780    1.50
+NMC         CX1         CX2        HC22     117.780    1.50
+NMC         CX3         CX2        HC21     117.759    1.50
+NMC         CX3         CX2        HC22     117.759    1.50
+NMC        HC21         CX2        HC22     114.868    1.50
+NMC         CX1         CX3         CX2      59.948    1.50
+NMC         CX1         CX3        HC31     117.780    1.50
+NMC         CX1         CX3        HC32     117.780    1.50
+NMC         CX2         CX3        HC31     117.759    1.50
+NMC         CX2         CX3        HC32     117.759    1.50
+NMC        HC31         CX3        HC32     114.868    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NMC            sp3_sp3_20           C          CA           N          CN     -60.000   10.00     3
+NMC            sp3_sp3_25         CX1          CN           N          CA     180.000   10.00     3
+NMC             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+NMC            sp3_sp3_31           N          CN         CX1         CX2     180.000   10.00     3
+NMC             sp3_sp3_1          CN         CX1         CX2         CX3      60.000   10.00     3
+NMC            sp3_sp3_40          CN         CX1         CX3         CX2     180.000   10.00     3
+NMC            sp3_sp3_10         CX1         CX2         CX3         CX1     -60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+NMC    chir_1    N    CA    CN    H    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NMC    plan-1           C   0.020
+NMC    plan-1          CA   0.020
+NMC    plan-1           O   0.020
+NMC    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NMC SMILES           ACDLabs              10.04 "O=C(O)CNCC1CC1"
+NMC SMILES_CANONICAL CACTVS               3.341 "OC(=O)CNCC1CC1"
+NMC SMILES           CACTVS               3.341 "OC(=O)CNCC1CC1"
+NMC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1CC1CNCC(=O)O"
+NMC SMILES           "OpenEye OEToolkits" 1.5.0 "C1CC1CNCC(=O)O"
+NMC InChI            InChI                1.03  "InChI=1S/C6H11NO2/c8-6(9)4-7-3-5-1-2-5/h5,7H,1-4H2,(H,8,9)"
+NMC InChIKey         InChI                1.03  JOWMUWBEMDOCKB-UHFFFAOYSA-N
+NMC ?                acedrg               196         "dictionary generator"
+NMC ?                acedrg_database      11          "data source"
+NMC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NMC ?                refmac5              5.8.0222    "optimization tool"

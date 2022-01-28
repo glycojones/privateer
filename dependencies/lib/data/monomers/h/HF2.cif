@@ -1,0 +1,205 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HF2      HF2 '(2R)-2-hydroxy-3-phenylpropanoic aci' non-polymer        21  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HF2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HF2           O3     O    OC       -0.500      0.000    0.000    0.000
+ HF2           C      C    C         0.000     -0.971   -0.768    0.178
+ HF2           O      O    OC       -0.500     -0.801   -2.007    0.151
+ HF2           CA     C    CH1       0.000     -2.344   -0.201    0.430
+ HF2           HA     H    H         0.000     -2.303    0.491    1.282
+ HF2           OA     O    OH1       0.000     -3.253   -1.265    0.722
+ HF2           HOA    H    H         0.000     -3.287   -1.874   -0.028
+ HF2           CB     C    CH2       0.000     -2.822    0.550   -0.814
+ HF2           HB     H    H         0.000     -2.945   -0.154   -1.639
+ HF2           HBA    H    H         0.000     -2.082    1.305   -1.089
+ HF2           CG     C    CR6       0.000     -4.140    1.220   -0.521
+ HF2           CD2    C    CR16      0.000     -5.325    0.549   -0.762
+ HF2           HD2    H    H         0.000     -5.306   -0.458   -1.160
+ HF2           CE2    C    CR16      0.000     -6.534    1.164   -0.493
+ HF2           HE2    H    H         0.000     -7.462    0.639   -0.682
+ HF2           CZ     C    CR16      0.000     -6.558    2.450    0.015
+ HF2           HZ     H    H         0.000     -7.505    2.930    0.229
+ HF2           CE1    C    CR16      0.000     -5.373    3.122    0.250
+ HF2           HE1    H    H         0.000     -5.391    4.130    0.645
+ HF2           CD1    C    CR16      0.000     -4.165    2.507   -0.018
+ HF2           HD1    H    H         0.000     -3.237    3.034    0.166
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HF2      O3     n/a    C      START
+ HF2      C      O3     CA     .
+ HF2      O      C      .      .
+ HF2      CA     C      CB     .
+ HF2      HA     CA     .      .
+ HF2      OA     CA     HOA    .
+ HF2      HOA    OA     .      .
+ HF2      CB     CA     CG     .
+ HF2      HB     CB     .      .
+ HF2      HBA    CB     .      .
+ HF2      CG     CB     CD2    .
+ HF2      CD2    CG     CE2    .
+ HF2      HD2    CD2    .      .
+ HF2      CE2    CD2    CZ     .
+ HF2      HE2    CE2    .      .
+ HF2      CZ     CE2    CE1    .
+ HF2      HZ     CZ     .      .
+ HF2      CE1    CZ     CD1    .
+ HF2      HE1    CE1    .      .
+ HF2      CD1    CE1    HD1    .
+ HF2      HD1    CD1    .      END
+ HF2      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HF2       O         C         deloc     1.250     0.020     1.250     0.020     
+HF2       CA        C         single    1.500     0.020     1.500     0.020     
+HF2       C         O3        deloc     1.250     0.020     1.250     0.020     
+HF2       OA        CA        single    1.432     0.020     1.432     0.020     
+HF2       CB        CA        single    1.524     0.020     1.524     0.020     
+HF2       HA        CA        single    1.089     0.010     0.989     0.005     
+HF2       HOA       OA        single    0.970     0.012     0.839     0.014     
+HF2       CG        CB        single    1.511     0.020     1.511     0.020     
+HF2       HB        CB        single    1.089     0.010     0.989     0.005     
+HF2       HBA       CB        single    1.089     0.010     0.989     0.005     
+HF2       CG        CD1       double    1.390     0.020     1.390     0.020     
+HF2       CD2       CG        single    1.390     0.020     1.390     0.020     
+HF2       CE1       CZ        double    1.390     0.020     1.390     0.020     
+HF2       CZ        CE2       single    1.390     0.020     1.390     0.020     
+HF2       HZ        CZ        single    1.082     0.013     0.975     0.010     
+HF2       CD1       CE1       single    1.390     0.020     1.390     0.020     
+HF2       HD1       CD1       single    1.082     0.013     0.975     0.010     
+HF2       CE2       CD2       double    1.390     0.020     1.390     0.020     
+HF2       HD2       CD2       single    1.082     0.013     0.975     0.010     
+HF2       HE1       CE1       single    1.082     0.013     0.975     0.010     
+HF2       HE2       CE2       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HF2      O3     C      O       123.000    3.000
+ HF2      O3     C      CA      118.500    3.000
+ HF2      O      C      CA      118.500    3.000
+ HF2      C      CA     HA      108.810    3.000
+ HF2      C      CA     OA      109.470    3.000
+ HF2      C      CA     CB      109.470    3.000
+ HF2      HA     CA     OA      109.470    3.000
+ HF2      HA     CA     CB      108.340    3.000
+ HF2      OA     CA     CB      109.470    3.000
+ HF2      CA     OA     HOA     109.470    3.000
+ HF2      CA     CB     HB      109.470    3.000
+ HF2      CA     CB     HBA     109.470    3.000
+ HF2      CA     CB     CG      109.470    3.000
+ HF2      HB     CB     HBA     107.900    3.000
+ HF2      HB     CB     CG      109.470    3.000
+ HF2      HBA    CB     CG      109.470    3.000
+ HF2      CB     CG     CD2     120.000    3.000
+ HF2      CB     CG     CD1     120.000    3.000
+ HF2      CD2    CG     CD1     120.000    3.000
+ HF2      CG     CD2    HD2     120.000    3.000
+ HF2      CG     CD2    CE2     120.000    3.000
+ HF2      HD2    CD2    CE2     120.000    3.000
+ HF2      CD2    CE2    HE2     120.000    3.000
+ HF2      CD2    CE2    CZ      120.000    3.000
+ HF2      HE2    CE2    CZ      120.000    3.000
+ HF2      CE2    CZ     HZ      120.000    3.000
+ HF2      CE2    CZ     CE1     120.000    3.000
+ HF2      HZ     CZ     CE1     120.000    3.000
+ HF2      CZ     CE1    HE1     120.000    3.000
+ HF2      CZ     CE1    CD1     120.000    3.000
+ HF2      HE1    CE1    CD1     120.000    3.000
+ HF2      CE1    CD1    HD1     120.000    3.000
+ HF2      CE1    CD1    CG      120.000    3.000
+ HF2      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HF2      var_1    O3     C      CA     CB        65.263   20.000   3
+ HF2      var_2    C      CA     OA     HOA      -59.990   20.000   1
+ HF2      var_3    C      CA     CB     CG      -175.033   20.000   3
+ HF2      var_4    CA     CB     CG     CD2      -90.258   20.000   2
+ HF2      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ HF2      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ HF2      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ HF2      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ HF2      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ HF2      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HF2      chir_01  CA     C      OA     CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HF2      plan-1    C         0.020
+ HF2      plan-1    O         0.020
+ HF2      plan-1    CA        0.020
+ HF2      plan-1    O3        0.020
+ HF2      plan-2    CG        0.020
+ HF2      plan-2    CB        0.020
+ HF2      plan-2    CD1       0.020
+ HF2      plan-2    CD2       0.020
+ HF2      plan-2    CZ        0.020
+ HF2      plan-2    CE1       0.020
+ HF2      plan-2    CE2       0.020
+ HF2      plan-2    HZ        0.020
+ HF2      plan-2    HD1       0.020
+ HF2      plan-2    HD2       0.020
+ HF2      plan-2    HE1       0.020
+ HF2      plan-2    HE2       0.020
+# ------------------------------------------------------

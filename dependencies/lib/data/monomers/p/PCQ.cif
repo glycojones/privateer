@@ -1,0 +1,196 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PCQ     PCQ      "3,5,3',5'-TETRACHLORO-BIPHENYL-4,4'-DIOL"     NON-POLYMER     24     18     .     
+#
+data_comp_PCQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PCQ     CL1     CL      CL      0       30.939      2.892       8.788       
+PCQ     CL2     CL      CL      0       30.580      5.666       4.100       
+PCQ     O1      O       OH1     0       30.994      5.343       7.056       
+PCQ     C1      C       CR6     0       30.204      1.755       4.993       
+PCQ     C2      C       CR16    0       30.418      1.747       6.386       
+PCQ     C3      C       CR6     0       30.680      2.929       7.074       
+PCQ     C4      C       CR6     0       30.743      4.202       6.400       
+PCQ     C5      C       CR6     0       30.519      4.171       4.975       
+PCQ     C6      C       CR16    0       30.258      2.981       4.300       
+PCQ     CL3     CL      CL      0       27.199      -0.877      1.631       
+PCQ     CL4     CL      CL      0       31.539      -3.193      3.998       
+PCQ     "O1'"   O       OH1     0       29.134      -3.099      2.203       
+PCQ     "C1'"   C       CR6     0       29.925      0.489       4.265       
+PCQ     "C2'"   C       CR16    0       28.825      0.395       3.389       
+PCQ     "C3'"   C       CR6     0       28.558      -0.788      2.704       
+PCQ     "C4'"   C       CR6     0       29.386      -1.959      2.858       
+PCQ     "C5'"   C       CR6     0       30.501      -1.825      3.763       
+PCQ     "C6'"   C       CR16    0       30.756      -0.635      4.442       
+PCQ     HO1     H       H       0       31.662      5.775       6.733       
+PCQ     H21     H       H       0       30.383      0.932       6.856       
+PCQ     H61     H       H       0       30.116      2.995       3.370       
+PCQ     "HO1'"  H       H       0       29.056      -3.776      2.725       
+PCQ     "H2'1"  H       H       0       28.265      1.142       3.266       
+PCQ     "H6'1"  H       H       0       31.492      -0.581      5.025       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PCQ       CL1       C3        SINGLE    n         1.733     0.010     1.733     0.010     
+PCQ       CL2       C5        SINGLE    n         1.733     0.010     1.733     0.010     
+PCQ       O1        C4        SINGLE    n         1.339     0.010     1.339     0.010     
+PCQ       C1        C2        DOUBLE    y         1.394     0.015     1.394     0.015     
+PCQ       C1        C6        SINGLE    y         1.394     0.015     1.394     0.015     
+PCQ       C1        "C1'"     SINGLE    n         1.486     0.010     1.486     0.010     
+PCQ       C2        C3        SINGLE    y         1.387     0.010     1.387     0.010     
+PCQ       C3        C4        DOUBLE    y         1.415     0.020     1.415     0.020     
+PCQ       C4        C5        SINGLE    y         1.415     0.020     1.415     0.020     
+PCQ       C5        C6        DOUBLE    y         1.387     0.010     1.387     0.010     
+PCQ       CL3       "C3'"     SINGLE    n         1.733     0.010     1.733     0.010     
+PCQ       CL4       "C5'"     SINGLE    n         1.733     0.010     1.733     0.010     
+PCQ       "O1'"     "C4'"     SINGLE    n         1.339     0.010     1.339     0.010     
+PCQ       "C1'"     "C2'"     DOUBLE    y         1.394     0.015     1.394     0.015     
+PCQ       "C1'"     "C6'"     SINGLE    y         1.394     0.015     1.394     0.015     
+PCQ       "C2'"     "C3'"     SINGLE    y         1.387     0.010     1.387     0.010     
+PCQ       "C3'"     "C4'"     DOUBLE    y         1.415     0.020     1.415     0.020     
+PCQ       "C4'"     "C5'"     SINGLE    y         1.415     0.020     1.415     0.020     
+PCQ       "C5'"     "C6'"     DOUBLE    y         1.387     0.010     1.387     0.010     
+PCQ       O1        HO1       SINGLE    n         0.970     0.012     0.858     0.020     
+PCQ       C2        H21       SINGLE    n         1.082     0.013     0.941     0.011     
+PCQ       C6        H61       SINGLE    n         1.082     0.013     0.941     0.011     
+PCQ       "O1'"     "HO1'"    SINGLE    n         0.970     0.012     0.858     0.020     
+PCQ       "C2'"     "H2'1"    SINGLE    n         1.082     0.013     0.941     0.011     
+PCQ       "C6'"     "H6'1"    SINGLE    n         1.082     0.013     0.941     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PCQ          C4          O1         HO1     113.011    3.00
+PCQ          C2          C1          C6     118.925    1.50
+PCQ          C2          C1       "C1'"     120.537    1.50
+PCQ          C6          C1       "C1'"     120.537    1.50
+PCQ          C1          C2          C3     120.808    1.50
+PCQ          C1          C2         H21     119.553    1.50
+PCQ          C3          C2         H21     119.639    1.50
+PCQ         CL1          C3          C2     119.967    1.50
+PCQ         CL1          C3          C4     118.207    1.50
+PCQ          C2          C3          C4     121.826    1.50
+PCQ          O1          C4          C3     122.097    3.00
+PCQ          O1          C4          C5     122.097    3.00
+PCQ          C3          C4          C5     115.806    1.51
+PCQ         CL2          C5          C4     118.207    1.50
+PCQ         CL2          C5          C6     119.967    1.50
+PCQ          C4          C5          C6     121.826    1.50
+PCQ          C1          C6          C5     120.808    1.50
+PCQ          C1          C6         H61     119.553    1.50
+PCQ          C5          C6         H61     119.639    1.50
+PCQ       "C4'"       "O1'"      "HO1'"     113.011    3.00
+PCQ          C1       "C1'"       "C2'"     120.537    1.50
+PCQ          C1       "C1'"       "C6'"     120.537    1.50
+PCQ       "C2'"       "C1'"       "C6'"     118.925    1.50
+PCQ       "C1'"       "C2'"       "C3'"     120.808    1.50
+PCQ       "C1'"       "C2'"      "H2'1"     119.553    1.50
+PCQ       "C3'"       "C2'"      "H2'1"     119.639    1.50
+PCQ         CL3       "C3'"       "C2'"     119.967    1.50
+PCQ         CL3       "C3'"       "C4'"     118.207    1.50
+PCQ       "C2'"       "C3'"       "C4'"     121.826    1.50
+PCQ       "O1'"       "C4'"       "C3'"     122.097    3.00
+PCQ       "O1'"       "C4'"       "C5'"     122.097    3.00
+PCQ       "C3'"       "C4'"       "C5'"     115.806    1.51
+PCQ         CL4       "C5'"       "C4'"     118.207    1.50
+PCQ         CL4       "C5'"       "C6'"     119.967    1.50
+PCQ       "C4'"       "C5'"       "C6'"     121.826    1.50
+PCQ       "C1'"       "C6'"       "C5'"     120.808    1.50
+PCQ       "C1'"       "C6'"      "H6'1"     119.553    1.50
+PCQ       "C5'"       "C6'"      "H6'1"     119.639    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PCQ       const_sp2_sp2_3          C1       "C1'"       "C2'"       "C3'"     180.000   10.00     2
+PCQ              const_47          C1       "C1'"       "C6'"       "C5'"     180.000   10.00     2
+PCQ       const_sp2_sp2_6       "C1'"       "C2'"       "C3'"         CL3     180.000   10.00     2
+PCQ              const_12         CL3       "C3'"       "C4'"       "O1'"       0.000   10.00     2
+PCQ              const_16       "O1'"       "C4'"       "C5'"         CL4       0.000   10.00     2
+PCQ              const_19         CL4       "C5'"       "C6'"       "C1'"     180.000   10.00     2
+PCQ             sp2_sp2_1          C2          C1       "C1'"       "C2'"     180.000   10.00     2
+PCQ              const_21          C6          C1          C2          C3       0.000   10.00     2
+PCQ              const_41          C2          C1          C6          C5       0.000   10.00     2
+PCQ              const_26          C1          C2          C3         CL1     180.000   10.00     2
+PCQ              const_32         CL1          C3          C4          O1       0.000   10.00     2
+PCQ              const_36          O1          C4          C5         CL2       0.000   10.00     2
+PCQ              const_39         CL2          C5          C6          C1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PCQ    plan-1          C1   0.020
+PCQ    plan-1       "C1'"   0.020
+PCQ    plan-1       "C2'"   0.020
+PCQ    plan-1       "C3'"   0.020
+PCQ    plan-1       "C4'"   0.020
+PCQ    plan-1       "C5'"   0.020
+PCQ    plan-1       "C6'"   0.020
+PCQ    plan-1         CL3   0.020
+PCQ    plan-1         CL4   0.020
+PCQ    plan-1      "H2'1"   0.020
+PCQ    plan-1      "H6'1"   0.020
+PCQ    plan-1       "O1'"   0.020
+PCQ    plan-2          C1   0.020
+PCQ    plan-2       "C1'"   0.020
+PCQ    plan-2          C2   0.020
+PCQ    plan-2          C3   0.020
+PCQ    plan-2          C4   0.020
+PCQ    plan-2          C5   0.020
+PCQ    plan-2          C6   0.020
+PCQ    plan-2         CL1   0.020
+PCQ    plan-2         CL2   0.020
+PCQ    plan-2         H21   0.020
+PCQ    plan-2         H61   0.020
+PCQ    plan-2          O1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PCQ SMILES           ACDLabs              10.04 "Clc1cc(cc(Cl)c1O)c2cc(Cl)c(O)c(Cl)c2"
+PCQ SMILES_CANONICAL CACTVS               3.341 "Oc1c(Cl)cc(cc1Cl)c2cc(Cl)c(O)c(Cl)c2"
+PCQ SMILES           CACTVS               3.341 "Oc1c(Cl)cc(cc1Cl)c2cc(Cl)c(O)c(Cl)c2"
+PCQ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(cc(c(c1Cl)O)Cl)c2cc(c(c(c2)Cl)O)Cl"
+PCQ SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(cc(c(c1Cl)O)Cl)c2cc(c(c(c2)Cl)O)Cl"
+PCQ InChI            InChI                1.03  "InChI=1S/C12H6Cl4O2/c13-7-1-5(2-8(14)11(7)17)6-3-9(15)12(18)10(16)4-6/h1-4,17-18H"
+PCQ InChIKey         InChI                1.03  YCYDXOVJXVALHY-UHFFFAOYSA-N
+PCQ ?                acedrg               202         "dictionary generator"                  
+PCQ ?                acedrg_database      11          "data source"                           
+PCQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PCQ ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,115 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BRP     BRP      2-BROMO-2-PROPENE-1-OL     NON-POLYMER     10     5     .     
+#
+data_comp_BRP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BRP     C1      C       C2      0       20.648      36.989      5.427       
+BRP     C2      C       C       0       19.446      36.734      5.008       
+BRP     C3      C       CH2     0       18.169      37.300      5.570       
+BRP     BR      BR      BR      0       19.201      35.540      3.548       
+BRP     O       O       OH1     0       18.015      36.951      6.930       
+BRP     H11     H       H       0       21.393      36.580      5.005       
+BRP     H12     H       H       0       20.779      37.584      6.155       
+BRP     H31     H       H       0       17.399      36.956      5.055       
+BRP     H32     H       H       0       18.177      38.284      5.484       
+BRP     H       H       H       0       17.321      37.333      7.232       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BRP       C1        C2        DOUBLE    n         1.299     0.020     1.299     0.020     
+BRP       C2        C3        SINGLE    n         1.505     0.014     1.505     0.014     
+BRP       C2        BR        SINGLE    n         1.902     0.020     1.902     0.020     
+BRP       C3        O         SINGLE    n         1.412     0.014     1.412     0.014     
+BRP       C1        H11       SINGLE    n         1.082     0.013     0.949     0.020     
+BRP       C1        H12       SINGLE    n         1.082     0.013     0.949     0.020     
+BRP       C3        H31       SINGLE    n         1.089     0.010     0.988     0.020     
+BRP       C3        H32       SINGLE    n         1.089     0.010     0.988     0.020     
+BRP       O         H         SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BRP          C2          C1         H11     119.878    1.50
+BRP          C2          C1         H12     119.878    1.50
+BRP         H11          C1         H12     120.243    1.50
+BRP          C1          C2          C3     126.292    2.02
+BRP          C1          C2          BR     119.388    1.50
+BRP          C3          C2          BR     114.320    2.27
+BRP          C2          C3           O     111.196    1.86
+BRP          C2          C3         H31     109.672    1.50
+BRP          C2          C3         H32     109.672    1.50
+BRP           O          C3         H31     109.407    1.50
+BRP           O          C3         H32     109.407    1.50
+BRP         H31          C3         H32     107.985    1.50
+BRP          C3           O           H     108.779    2.21
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BRP             sp2_sp2_1         H11          C1          C2          C3     180.000   10.00     2
+BRP             sp2_sp3_2          C1          C2          C3           O     120.000   10.00     6
+BRP             sp3_sp3_1          C2          C3           O           H     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BRP    plan-1          C1   0.020
+BRP    plan-1          C2   0.020
+BRP    plan-1         H11   0.020
+BRP    plan-1         H12   0.020
+BRP    plan-2          BR   0.020
+BRP    plan-2          C1   0.020
+BRP    plan-2          C2   0.020
+BRP    plan-2          C3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BRP SMILES           ACDLabs              10.04 "Br/C(=C)CO"
+BRP SMILES_CANONICAL CACTVS               3.341 "OCC(Br)=C"
+BRP SMILES           CACTVS               3.341 "OCC(Br)=C"
+BRP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C=C(CO)Br"
+BRP SMILES           "OpenEye OEToolkits" 1.5.0 "C=C(CO)Br"
+BRP InChI            InChI                1.03  "InChI=1S/C3H5BrO/c1-3(4)2-5/h5H,1-2H2"
+BRP InChIKey         InChI                1.03  MDFFZNIQPLKQSG-UHFFFAOYSA-N
+BRP ?                acedrg               202         "dictionary generator"                  
+BRP ?                acedrg_database      11          "data source"                           
+BRP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BRP ?                refmac5              5.8.0189    "optimization tool"                     

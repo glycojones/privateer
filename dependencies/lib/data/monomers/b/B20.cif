@@ -1,0 +1,132 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B20     B20      1,2-dihydro-1,2-azaborinine     NON-POLYMER     12     6     .     
+#
+data_comp_B20
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+B20     C6      C       CR16    0       27.561      6.476       2.847       
+B20     C5      C       CR16    0       26.805      5.344       2.844       
+B20     C4      C       CR16    0       25.956      5.012       3.926       
+B20     C3      C       CR16    0       25.866      5.826       5.021       
+B20     B2      B       B       0       26.705      7.086       5.030       
+B20     N1      N       NR6     0       27.533      7.346       3.902       
+B20     H6      H       H       0       28.134      6.680       2.093       
+B20     H5      H       H       0       26.853      4.769       2.096       
+B20     H4      H       H       0       25.436      4.190       3.873       
+B20     H3      H       H       0       25.281      5.576       5.743       
+B20     H61     H       H       0       26.676      7.787       5.891       
+B20     HN1     H       H       0       28.026      8.055       3.870       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B20       C6        C5        DOUBLE    y         1.353     0.010     1.353     0.010     
+B20       C6        N1        SINGLE    y         1.362     0.010     1.362     0.010     
+B20       C5        C4        SINGLE    y         1.409     0.010     1.409     0.010     
+B20       C4        C3        DOUBLE    y         1.367     0.012     1.367     0.012     
+B20       C3        B2        SINGLE    y         1.515     0.015     1.515     0.015     
+B20       B2        N1        SINGLE    y         1.421     0.010     1.421     0.010     
+B20       C6        H6        SINGLE    n         1.082     0.013     0.975     0.010     
+B20       C5        H5        SINGLE    n         1.082     0.013     0.975     0.010     
+B20       C4        H4        SINGLE    n         1.082     0.013     0.975     0.010     
+B20       C3        H3        SINGLE    n         1.082     0.013     0.975     0.010     
+B20       B2        H61       SINGLE    n         1.111     0.020     1.111     0.020     
+B20       N1        HN1       SINGLE    n         1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+B20          C5          C6          N1     118.816    2.98
+B20          C5          C6          H6     121.103    1.54
+B20          N1          C6          H6     120.082    1.90
+B20          C6          C5          C4     119.907    1.50
+B20          C6          C5          H5     119.636    1.50
+B20          C4          C5          H5     120.456    1.50
+B20          C5          C4          C3     121.048    1.50
+B20          C5          C4          H4     118.358    1.75
+B20          C3          C4          H4     120.594    1.72
+B20          C4          C3          B2     120.049    1.87
+B20          C4          C3          H3     117.813    1.65
+B20          B2          C3          H3     122.138    1.64
+B20          C3          B2          N1     119.430    1.77
+B20          C3          B2         H61     120.285    3.00
+B20          N1          B2         H61     120.285    3.00
+B20          C6          N1          B2     120.750    2.02
+B20          C6          N1         HN1     118.653    2.15
+B20          B2          N1         HN1     120.597    1.83
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+B20       const_sp2_sp2_1          C4          C5          C6          N1       0.000   10.00     2
+B20              const_21          C5          C6          N1          B2       0.000   10.00     2
+B20       const_sp2_sp2_5          C3          C4          C5          C6       0.000   10.00     2
+B20       const_sp2_sp2_9          B2          C3          C4          C5       0.000   10.00     2
+B20              const_13          N1          B2          C3          C4       0.000   10.00     2
+B20              const_17          C3          B2          N1          C6       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+B20    plan-1          B2   0.020
+B20    plan-1          C3   0.020
+B20    plan-1          C4   0.020
+B20    plan-1          C5   0.020
+B20    plan-1          C6   0.020
+B20    plan-1          H3   0.020
+B20    plan-1          H4   0.020
+B20    plan-1          H5   0.020
+B20    plan-1          H6   0.020
+B20    plan-1         H61   0.020
+B20    plan-1         HN1   0.020
+B20    plan-1          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+B20 SMILES           ACDLabs              10.04 B1C=CC=CN1
+B20 SMILES_CANONICAL CACTVS               3.341 B1NC=CC=C1
+B20 SMILES           CACTVS               3.341 B1NC=CC=C1
+B20 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 B1C=CC=CN1
+B20 SMILES           "OpenEye OEToolkits" 1.5.0 B1C=CC=CN1
+B20 InChI            InChI                1.03  InChI=1S/C4H6BN/c1-2-4-6-5-3-1/h1-6H
+B20 InChIKey         InChI                1.03  OGZZEGWWYQKMSO-UHFFFAOYSA-N
+B20 ?                acedrg               202         "dictionary generator"                  
+B20 ?                acedrg_database      11          "data source"                           
+B20 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+B20 ?                refmac5              5.8.0189    "optimization tool"                     

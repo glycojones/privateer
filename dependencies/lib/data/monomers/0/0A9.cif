@@ -1,0 +1,235 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0A9      0A9 'methyl L-phenylalaninate            ' non-polymer        26  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_0A9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 0A9           O      O    O        -0.500      0.000    0.000    0.000
+ 0A9           C      C    C         0.000     -0.921   -0.803    0.267
+ 0A9           OXT    O    O2       -0.500     -0.686   -2.031    0.316
+ 0A9           CM     C    CH3       0.000      0.695   -2.541    0.056
+ 0A9           HMC3   H    H         0.000      1.377   -2.143    0.770
+ 0A9           HMC2   H    H         0.000      0.715   -3.604    0.122
+ 0A9           HMC1   H    H         0.000      1.018   -2.256   -0.918
+ 0A9           CA     C    CH1       0.000     -2.315   -0.293    0.530
+ 0A9           HA     H    H         0.000     -2.763   -0.859    1.358
+ 0A9           N      N    NH2       0.000     -2.255    1.131    0.886
+ 0A9           HN2    H    H         0.000     -2.600    1.448    1.785
+ 0A9           HN1    H    H         0.000     -1.869    1.805    0.236
+ 0A9           CB     C    CH2       0.000     -3.168   -0.467   -0.728
+ 0A9           HBC1   H    H         0.000     -3.139   -1.512   -1.045
+ 0A9           HBC2   H    H         0.000     -2.773    0.165   -1.526
+ 0A9           CG     C    CR6       0.000     -4.591   -0.071   -0.429
+ 0A9           CD2    C    CR16      0.000     -5.491   -1.017    0.027
+ 0A9           HD2    H    H         0.000     -5.173   -2.042    0.169
+ 0A9           CE2    C    CR16      0.000     -6.796   -0.654    0.300
+ 0A9           HE2    H    H         0.000     -7.500   -1.396    0.656
+ 0A9           CZ     C    CR16      0.000     -7.202    0.655    0.120
+ 0A9           HZ     H    H         0.000     -8.223    0.940    0.339
+ 0A9           CE1    C    CR16      0.000     -6.303    1.600   -0.341
+ 0A9           HE1    H    H         0.000     -6.622    2.624   -0.486
+ 0A9           CD1    C    CR16      0.000     -4.998    1.236   -0.616
+ 0A9           HD1    H    H         0.000     -4.294    1.975   -0.977
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 0A9      O      n/a    C      START
+ 0A9      C      O      CA     .
+ 0A9      OXT    C      CM     .
+ 0A9      CM     OXT    HMC1   .
+ 0A9      HMC3   CM     .      .
+ 0A9      HMC2   CM     .      .
+ 0A9      HMC1   CM     .      .
+ 0A9      CA     C      CB     .
+ 0A9      HA     CA     .      .
+ 0A9      N      CA     HN1    .
+ 0A9      HN2    N      .      .
+ 0A9      HN1    N      .      .
+ 0A9      CB     CA     CG     .
+ 0A9      HBC1   CB     .      .
+ 0A9      HBC2   CB     .      .
+ 0A9      CG     CB     CD2    .
+ 0A9      CD2    CG     CE2    .
+ 0A9      HD2    CD2    .      .
+ 0A9      CE2    CD2    CZ     .
+ 0A9      HE2    CE2    .      .
+ 0A9      CZ     CE2    CE1    .
+ 0A9      HZ     CZ     .      .
+ 0A9      CE1    CZ     CD1    .
+ 0A9      HE1    CE1    .      .
+ 0A9      CD1    CE1    HD1    .
+ 0A9      HD1    CD1    .      END
+ 0A9      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0A9       N         CA        single    1.450     0.020     1.450     0.020     
+0A9       HN1       N         single    1.036     0.016     0.914     0.007     
+0A9       HN2       N         single    1.036     0.016     0.914     0.007     
+0A9       CA        C         single    1.500     0.020     1.500     0.020     
+0A9       CB        CA        single    1.524     0.020     1.524     0.020     
+0A9       HA        CA        single    1.089     0.010     0.989     0.005     
+0A9       C         O         deloc     1.220     0.020     1.220     0.020     
+0A9       OXT       C         deloc     1.454     0.020     1.454     0.020     
+0A9       CG        CB        single    1.511     0.020     1.511     0.020     
+0A9       HBC1      CB        single    1.089     0.010     0.989     0.005     
+0A9       HBC2      CB        single    1.089     0.010     0.989     0.005     
+0A9       CG        CD1       single    1.390     0.020     1.390     0.020     
+0A9       CD2       CG        double    1.390     0.020     1.390     0.020     
+0A9       CD1       CE1       double    1.390     0.020     1.390     0.020     
+0A9       HD1       CD1       single    1.082     0.013     0.975     0.010     
+0A9       CE2       CD2       single    1.390     0.020     1.390     0.020     
+0A9       HD2       CD2       single    1.082     0.013     0.975     0.010     
+0A9       CE1       CZ        single    1.390     0.020     1.390     0.020     
+0A9       HE1       CE1       single    1.082     0.013     0.975     0.010     
+0A9       CZ        CE2       double    1.390     0.020     1.390     0.020     
+0A9       HE2       CE2       single    1.082     0.013     0.975     0.010     
+0A9       HZ        CZ        single    1.082     0.013     0.975     0.010     
+0A9       HMC1      CM        single    1.089     0.010     0.989     0.005     
+0A9       CM        OXT       single    1.426     0.020     1.426     0.020     
+0A9       HMC2      CM        single    1.089     0.010     0.989     0.005     
+0A9       HMC3      CM        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 0A9      O      C      OXT     119.000    3.000
+ 0A9      O      C      CA      120.500    3.000
+ 0A9      OXT    C      CA      120.000    3.000
+ 0A9      C      OXT    CM      120.000    3.000
+ 0A9      OXT    CM     HMC3    109.470    3.000
+ 0A9      OXT    CM     HMC2    109.470    3.000
+ 0A9      OXT    CM     HMC1    109.470    3.000
+ 0A9      HMC3   CM     HMC2    109.470    3.000
+ 0A9      HMC3   CM     HMC1    109.470    3.000
+ 0A9      HMC2   CM     HMC1    109.470    3.000
+ 0A9      C      CA     HA      108.810    3.000
+ 0A9      C      CA     N       109.470    3.000
+ 0A9      C      CA     CB      109.470    3.000
+ 0A9      HA     CA     N       109.470    3.000
+ 0A9      HA     CA     CB      108.340    3.000
+ 0A9      N      CA     CB      109.470    3.000
+ 0A9      CA     N      HN2     120.000    3.000
+ 0A9      CA     N      HN1     120.000    3.000
+ 0A9      HN2    N      HN1     120.000    3.000
+ 0A9      CA     CB     HBC1    109.470    3.000
+ 0A9      CA     CB     HBC2    109.470    3.000
+ 0A9      CA     CB     CG      109.470    3.000
+ 0A9      HBC1   CB     HBC2    107.900    3.000
+ 0A9      HBC1   CB     CG      109.470    3.000
+ 0A9      HBC2   CB     CG      109.470    3.000
+ 0A9      CB     CG     CD2     120.000    3.000
+ 0A9      CB     CG     CD1     120.000    3.000
+ 0A9      CD2    CG     CD1     120.000    3.000
+ 0A9      CG     CD2    HD2     120.000    3.000
+ 0A9      CG     CD2    CE2     120.000    3.000
+ 0A9      HD2    CD2    CE2     120.000    3.000
+ 0A9      CD2    CE2    HE2     120.000    3.000
+ 0A9      CD2    CE2    CZ      120.000    3.000
+ 0A9      HE2    CE2    CZ      120.000    3.000
+ 0A9      CE2    CZ     HZ      120.000    3.000
+ 0A9      CE2    CZ     CE1     120.000    3.000
+ 0A9      HZ     CZ     CE1     120.000    3.000
+ 0A9      CZ     CE1    HE1     120.000    3.000
+ 0A9      CZ     CE1    CD1     120.000    3.000
+ 0A9      HE1    CE1    CD1     120.000    3.000
+ 0A9      CE1    CD1    HD1     120.000    3.000
+ 0A9      CE1    CD1    CG      120.000    3.000
+ 0A9      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 0A9      var_1    O      C      OXT    CM        -0.003   20.000   1
+ 0A9      var_2    C      OXT    CM     HMC1     -59.105   20.000   1
+ 0A9      var_3    O      C      CA     CB       100.002   20.000   3
+ 0A9      var_4    C      CA     N      HN1       59.960   20.000   1
+ 0A9      var_5    C      CA     CB     CG       175.019   20.000   3
+ 0A9      var_6    CA     CB     CG     CD2      -90.243   20.000   2
+ 0A9      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ 0A9      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ 0A9      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ 0A9      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ 0A9      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ 0A9      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 0A9      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 0A9      plan-1    N         0.020
+ 0A9      plan-1    CA        0.020
+ 0A9      plan-1    HN1       0.020
+ 0A9      plan-1    HN2       0.020
+ 0A9      plan-2    C         0.020
+ 0A9      plan-2    CA        0.020
+ 0A9      plan-2    O         0.020
+ 0A9      plan-2    OXT       0.020
+ 0A9      plan-3    CG        0.020
+ 0A9      plan-3    CB        0.020
+ 0A9      plan-3    CD1       0.020
+ 0A9      plan-3    CD2       0.020
+ 0A9      plan-3    CE1       0.020
+ 0A9      plan-3    CE2       0.020
+ 0A9      plan-3    CZ        0.020
+ 0A9      plan-3    HD1       0.020
+ 0A9      plan-3    HD2       0.020
+ 0A9      plan-3    HE1       0.020
+ 0A9      plan-3    HE2       0.020
+ 0A9      plan-3    HZ        0.020
+# ------------------------------------------------------

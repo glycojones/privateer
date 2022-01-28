@@ -1,0 +1,780 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VRS      VRS 'VIRGINIAMYCIN S1                    ' non-polymer       109  60 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VRS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ VRS           O9     O    O         0.000      0.000    0.000    0.000
+ VRS           C40    C    C         0.000     -0.852   -0.754    0.427
+ VRS           C41    C    CR6       0.000     -0.727   -1.314    1.790
+ VRS           C45    C    CR6       0.000      0.376   -0.977    2.581
+ VRS           O10    O    OH1       0.000      1.331   -0.137    2.111
+ VRS           H10    H    H         0.000      2.021   -0.649    1.669
+ VRS           C44    C    CR16      0.000      0.473   -1.512    3.864
+ VRS           H44    H    H         0.000      1.311   -1.265    4.505
+ VRS           C43    C    CR16      0.000     -0.525   -2.364    4.300
+ VRS           H43    H    H         0.000     -0.478   -2.800    5.290
+ VRS           C42    C    CR16      0.000     -1.588   -2.657    3.457
+ VRS           H42    H    H         0.000     -2.370   -3.325    3.797
+ VRS           N8     N    NRD6      0.000     -1.661   -2.138    2.252
+ VRS           N7     N    NH1       0.000     -1.910   -1.079   -0.341
+ VRS           HN7    H    H         0.000     -2.618   -1.705    0.015
+ VRS           C37    C    CH1       0.000     -2.033   -0.525   -1.691
+ VRS           H37    H    H         0.000     -1.033   -0.424   -2.136
+ VRS           C38    C    C         0.000     -2.687    0.833   -1.622
+ VRS           O8     O    O         0.000     -3.875    0.962   -1.818
+ VRS           N1     N    NH1       0.000     -1.913    1.911   -1.324
+ VRS           HN1    H    H         0.000     -0.910    1.834   -1.228
+ VRS           C36    C    CH1       0.000     -2.882   -1.454   -2.559
+ VRS           H36    H    H         0.000     -3.437   -0.837   -3.279
+ VRS           C39    C    CH3       0.000     -1.962   -2.394   -3.344
+ VRS           H393   H    H         0.000     -2.547   -3.041   -3.947
+ VRS           H392   H    H         0.000     -1.317   -1.825   -3.963
+ VRS           H391   H    H         0.000     -1.384   -2.971   -2.669
+ VRS           O7     O    O2       -0.500     -3.874   -2.224   -1.739
+ VRS           C29    C    C         0.000     -5.095   -1.952   -1.709
+ VRS           O6     O    O        -0.500     -5.532   -0.944   -2.307
+ VRS           C28    C    CH1       0.000     -6.057   -2.838   -0.954
+ VRS           H28    H    H         0.000     -5.568   -3.788   -0.698
+ VRS           C30    C    CR6       0.000     -7.243   -3.098   -1.848
+ VRS           C35    C    CR16      0.000     -7.654   -4.395   -2.092
+ VRS           H35    H    H         0.000     -7.122   -5.225   -1.643
+ VRS           C34    C    CR16      0.000     -8.744   -4.633   -2.908
+ VRS           H34    H    H         0.000     -9.070   -5.649   -3.094
+ VRS           C33    C    CR16      0.000     -9.417   -3.575   -3.488
+ VRS           H33    H    H         0.000    -10.269   -3.762   -4.130
+ VRS           C32    C    CR16      0.000     -9.003   -2.278   -3.248
+ VRS           H32    H    H         0.000     -9.531   -1.449   -3.703
+ VRS           C31    C    CR16      0.000     -7.917   -2.039   -2.429
+ VRS           H31    H    H         0.000     -7.593   -1.023   -2.242
+ VRS           N6     N    NH1       0.000     -6.476   -2.140    0.280
+ VRS           HN6    H    H         0.000     -6.036   -1.278    0.568
+ VRS           C23    C    C         0.000     -7.471   -2.699    1.013
+ VRS           O4     O    O         0.000     -7.820   -3.845    0.801
+ VRS           C22    C    CH1       0.000     -8.159   -1.960    2.112
+ VRS           H22    H    H         0.000     -7.584   -2.123    3.035
+ VRS           C27    C    CH2       0.000     -9.572   -2.536    2.332
+ VRS           H271   H    H         0.000     -9.518   -3.595    2.593
+ VRS           H272   H    H         0.000    -10.180   -2.414    1.433
+ VRS           C26    C    C         0.000    -10.200   -1.762    3.478
+ VRS           O5     O    O         0.000    -10.649   -2.326    4.443
+ VRS           C25    C    CH2       0.000    -10.238   -0.248    3.354
+ VRS           H251   H    H         0.000    -10.617    0.196    4.277
+ VRS           H252   H    H         0.000    -10.879    0.046    2.520
+ VRS           C24    C    CH2       0.000     -8.803    0.243    3.098
+ VRS           H241   H    H         0.000     -8.165    0.044    3.962
+ VRS           H242   H    H         0.000     -8.793    1.312    2.878
+ VRS           N5     N    N         0.000     -8.297   -0.512    1.923
+ VRS           C11    C    C         0.000     -8.026    0.152    0.793
+ VRS           O3     O    O         0.000     -7.893   -0.451   -0.255
+ VRS           C10    C    CH1       0.000     -7.899    1.656    0.745
+ VRS           H2     H    H         0.000     -8.742    2.115    1.280
+ VRS           C13    C    CH2       0.000     -7.924    2.092   -0.726
+ VRS           H131   H    H         0.000     -7.216    1.487   -1.296
+ VRS           H132   H    H         0.000     -7.642    3.144   -0.799
+ VRS           C14    C    CR6       0.000     -9.312    1.903   -1.283
+ VRS           C19    C    CR16      0.000     -9.611    0.779   -2.030
+ VRS           H19    H    H         0.000     -8.846    0.035   -2.218
+ VRS           C18    C    CR16      0.000    -10.884    0.603   -2.536
+ VRS           H18    H    H         0.000    -11.120   -0.281   -3.114
+ VRS           C17    C    CR16      0.000    -11.858    1.557   -2.304
+ VRS           H17    H    H         0.000    -12.856    1.422   -2.703
+ VRS           C16    C    CR16      0.000    -11.558    2.684   -1.562
+ VRS           H16    H    H         0.000    -12.320    3.432   -1.380
+ VRS           C15    C    CR16      0.000    -10.286    2.857   -1.051
+ VRS           H15    H    H         0.000    -10.051    3.740   -0.470
+ VRS           N3     N    N         0.000     -6.621    2.092    1.362
+ VRS           C12    C    CH3       0.000     -5.609    1.139    1.819
+ VRS           H123   H    H         0.000     -5.075    1.554    2.635
+ VRS           H122   H    H         0.000     -6.079    0.241    2.126
+ VRS           H121   H    H         0.000     -4.936    0.930    1.028
+ VRS           C6     C    C         0.000     -6.468    3.443    1.487
+ VRS           O2     O    O         0.000     -7.445    4.162    1.393
+ VRS           C5     C    CH1       0.000     -5.124    4.077    1.722
+ VRS           H5     H    H         0.000     -4.600    3.582    2.552
+ VRS           C7     C    CH2       0.000     -5.308    5.585    2.012
+ VRS           H71    H    H         0.000     -4.777    5.894    2.916
+ VRS           H72    H    H         0.000     -6.361    5.858    2.099
+ VRS           C8     C    CH2       0.000     -4.687    6.296    0.776
+ VRS           H81    H    H         0.000     -3.630    6.542    0.897
+ VRS           H82    H    H         0.000     -5.233    7.187    0.462
+ VRS           C9     C    CH2       0.000     -4.844    5.176   -0.307
+ VRS           H91    H    H         0.000     -4.238    5.322   -1.204
+ VRS           H92    H    H         0.000     -5.875    4.964   -0.597
+ VRS           N2     N    N         0.000     -4.303    4.032    0.478
+ VRS           C2     C    C         0.000     -3.311    3.186    0.188
+ VRS           O1     O    O         0.000     -2.936    2.387    1.026
+ VRS           C1     C    CH1       0.000     -2.613    3.200   -1.148
+ VRS           H1     H    H         0.000     -3.346    3.342   -1.954
+ VRS           C3     C    CH2       0.000     -1.583    4.333   -1.170
+ VRS           H31A   H    H         0.000     -0.809    4.137   -0.425
+ VRS           H32A   H    H         0.000     -2.078    5.279   -0.938
+ VRS           C4     C    CH3       0.000     -0.947    4.416   -2.559
+ VRS           H43A   H    H         0.000     -0.466    3.499   -2.786
+ VRS           H42A   H    H         0.000     -1.697    4.607   -3.284
+ VRS           H41    H    H         0.000     -0.233    5.200   -2.578
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VRS      O9     n/a    C40    START
+ VRS      C40    O9     N7     .
+ VRS      C41    C40    C45    .
+ VRS      C45    C41    C44    .
+ VRS      O10    C45    H10    .
+ VRS      H10    O10    .      .
+ VRS      C44    C45    C43    .
+ VRS      H44    C44    .      .
+ VRS      C43    C44    C42    .
+ VRS      H43    C43    .      .
+ VRS      C42    C43    N8     .
+ VRS      H42    C42    .      .
+ VRS      N8     C42    .      .
+ VRS      N7     C40    C37    .
+ VRS      HN7    N7     .      .
+ VRS      C37    N7     C36    .
+ VRS      H37    C37    .      .
+ VRS      C38    C37    N1     .
+ VRS      O8     C38    .      .
+ VRS      N1     C38    HN1    .
+ VRS      HN1    N1     .      .
+ VRS      C36    C37    O7     .
+ VRS      H36    C36    .      .
+ VRS      C39    C36    H391   .
+ VRS      H393   C39    .      .
+ VRS      H392   C39    .      .
+ VRS      H391   C39    .      .
+ VRS      O7     C36    C29    .
+ VRS      C29    O7     C28    .
+ VRS      O6     C29    .      .
+ VRS      C28    C29    N6     .
+ VRS      H28    C28    .      .
+ VRS      C30    C28    C35    .
+ VRS      C35    C30    C34    .
+ VRS      H35    C35    .      .
+ VRS      C34    C35    C33    .
+ VRS      H34    C34    .      .
+ VRS      C33    C34    C32    .
+ VRS      H33    C33    .      .
+ VRS      C32    C33    C31    .
+ VRS      H32    C32    .      .
+ VRS      C31    C32    H31    .
+ VRS      H31    C31    .      .
+ VRS      N6     C28    C23    .
+ VRS      HN6    N6     .      .
+ VRS      C23    N6     C22    .
+ VRS      O4     C23    .      .
+ VRS      C22    C23    C27    .
+ VRS      H22    C22    .      .
+ VRS      C27    C22    C26    .
+ VRS      H271   C27    .      .
+ VRS      H272   C27    .      .
+ VRS      C26    C27    C25    .
+ VRS      O5     C26    .      .
+ VRS      C25    C26    C24    .
+ VRS      H251   C25    .      .
+ VRS      H252   C25    .      .
+ VRS      C24    C25    N5     .
+ VRS      H241   C24    .      .
+ VRS      H242   C24    .      .
+ VRS      N5     C24    C11    .
+ VRS      C11    N5     C10    .
+ VRS      O3     C11    .      .
+ VRS      C10    C11    N3     .
+ VRS      H2     C10    .      .
+ VRS      C13    C10    C14    .
+ VRS      H131   C13    .      .
+ VRS      H132   C13    .      .
+ VRS      C14    C13    C19    .
+ VRS      C19    C14    C18    .
+ VRS      H19    C19    .      .
+ VRS      C18    C19    C17    .
+ VRS      H18    C18    .      .
+ VRS      C17    C18    C16    .
+ VRS      H17    C17    .      .
+ VRS      C16    C17    C15    .
+ VRS      H16    C16    .      .
+ VRS      C15    C16    H15    .
+ VRS      H15    C15    .      .
+ VRS      N3     C10    C6     .
+ VRS      C12    N3     H121   .
+ VRS      H123   C12    .      .
+ VRS      H122   C12    .      .
+ VRS      H121   C12    .      .
+ VRS      C6     N3     C5     .
+ VRS      O2     C6     .      .
+ VRS      C5     C6     C7     .
+ VRS      H5     C5     .      .
+ VRS      C7     C5     C8     .
+ VRS      H71    C7     .      .
+ VRS      H72    C7     .      .
+ VRS      C8     C7     C9     .
+ VRS      H81    C8     .      .
+ VRS      H82    C8     .      .
+ VRS      C9     C8     N2     .
+ VRS      H91    C9     .      .
+ VRS      H92    C9     .      .
+ VRS      N2     C9     C2     .
+ VRS      C2     N2     C1     .
+ VRS      O1     C2     .      .
+ VRS      C1     C2     C3     .
+ VRS      H1     C1     .      .
+ VRS      C3     C1     C4     .
+ VRS      H31A   C3     .      .
+ VRS      H32A   C3     .      .
+ VRS      C4     C3     H41    .
+ VRS      H43A   C4     .      .
+ VRS      H42A   C4     .      .
+ VRS      H41    C4     .      END
+ VRS      N1     C1     .    ADD
+ VRS      N2     C5     .    ADD
+ VRS      C14    C15    .    ADD
+ VRS      N5     C22    .    ADD
+ VRS      C30    C31    .    ADD
+ VRS      C41    N8     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VRS       N1        C1        single    1.450     0.020     1.450     0.020     
+VRS       N1        C38       single    1.330     0.020     1.330     0.020     
+VRS       HN1       N1        single    1.016     0.010     0.899     0.007     
+VRS       C1        C2        single    1.500     0.020     1.500     0.020     
+VRS       C3        C1        single    1.524     0.020     1.524     0.020     
+VRS       H1        C1        single    1.089     0.010     0.989     0.005     
+VRS       O1        C2        double    1.220     0.020     1.220     0.020     
+VRS       C2        N2        single    1.330     0.020     1.330     0.020     
+VRS       C4        C3        single    1.513     0.020     1.513     0.020     
+VRS       H31A      C3        single    1.089     0.010     0.989     0.005     
+VRS       H32A      C3        single    1.089     0.010     0.989     0.005     
+VRS       H41       C4        single    1.089     0.010     0.989     0.005     
+VRS       H42A      C4        single    1.089     0.010     0.989     0.005     
+VRS       H43A      C4        single    1.089     0.010     0.989     0.005     
+VRS       N2        C5        single    1.455     0.020     1.455     0.020     
+VRS       N2        C9        single    1.455     0.020     1.455     0.020     
+VRS       C5        C6        single    1.500     0.020     1.500     0.020     
+VRS       C7        C5        single    1.524     0.020     1.524     0.020     
+VRS       H5        C5        single    1.089     0.010     0.989     0.005     
+VRS       O2        C6        double    1.220     0.020     1.220     0.020     
+VRS       C6        N3        single    1.330     0.020     1.330     0.020     
+VRS       C8        C7        single    1.524     0.020     1.524     0.020     
+VRS       H71       C7        single    1.089     0.010     0.989     0.005     
+VRS       H72       C7        single    1.089     0.010     0.989     0.005     
+VRS       C9        C8        single    1.524     0.020     1.524     0.020     
+VRS       H81       C8        single    1.089     0.010     0.989     0.005     
+VRS       H82       C8        single    1.089     0.010     0.989     0.005     
+VRS       H91       C9        single    1.089     0.010     0.989     0.005     
+VRS       H92       C9        single    1.089     0.010     0.989     0.005     
+VRS       N3        C10       single    1.455     0.020     1.455     0.020     
+VRS       C12       N3        single    1.455     0.020     1.455     0.020     
+VRS       C10       C11       single    1.500     0.020     1.500     0.020     
+VRS       C13       C10       single    1.524     0.020     1.524     0.020     
+VRS       H2        C10       single    1.089     0.010     0.989     0.005     
+VRS       O3        C11       double    1.220     0.020     1.220     0.020     
+VRS       C11       N5        single    1.330     0.020     1.330     0.020     
+VRS       H121      C12       single    1.089     0.010     0.989     0.005     
+VRS       H122      C12       single    1.089     0.010     0.989     0.005     
+VRS       H123      C12       single    1.089     0.010     0.989     0.005     
+VRS       C14       C13       single    1.511     0.020     1.511     0.020     
+VRS       H131      C13       single    1.089     0.010     0.989     0.005     
+VRS       H132      C13       single    1.089     0.010     0.989     0.005     
+VRS       C14       C15       double    1.390     0.020     1.390     0.020     
+VRS       C19       C14       single    1.390     0.020     1.390     0.020     
+VRS       C15       C16       single    1.390     0.020     1.390     0.020     
+VRS       H15       C15       single    1.082     0.013     0.975     0.010     
+VRS       C16       C17       double    1.390     0.020     1.390     0.020     
+VRS       H16       C16       single    1.082     0.013     0.975     0.010     
+VRS       C17       C18       single    1.390     0.020     1.390     0.020     
+VRS       H17       C17       single    1.082     0.013     0.975     0.010     
+VRS       C18       C19       double    1.390     0.020     1.390     0.020     
+VRS       H18       C18       single    1.082     0.013     0.975     0.010     
+VRS       H19       C19       single    1.082     0.013     0.975     0.010     
+VRS       N5        C22       single    1.455     0.020     1.455     0.020     
+VRS       N5        C24       single    1.455     0.020     1.455     0.020     
+VRS       C22       C23       single    1.500     0.020     1.500     0.020     
+VRS       C27       C22       single    1.524     0.020     1.524     0.020     
+VRS       H22       C22       single    1.089     0.010     0.989     0.005     
+VRS       O4        C23       double    1.220     0.020     1.220     0.020     
+VRS       C23       N6        single    1.330     0.020     1.330     0.020     
+VRS       C24       C25       single    1.524     0.020     1.524     0.020     
+VRS       H241      C24       single    1.089     0.010     0.989     0.005     
+VRS       H242      C24       single    1.089     0.010     0.989     0.005     
+VRS       C25       C26       single    1.510     0.020     1.510     0.020     
+VRS       H251      C25       single    1.089     0.010     0.989     0.005     
+VRS       H252      C25       single    1.089     0.010     0.989     0.005     
+VRS       C26       C27       single    1.510     0.020     1.510     0.020     
+VRS       O5        C26       double    1.220     0.020     1.220     0.020     
+VRS       H271      C27       single    1.089     0.010     0.989     0.005     
+VRS       H272      C27       single    1.089     0.010     0.989     0.005     
+VRS       N6        C28       single    1.450     0.020     1.450     0.020     
+VRS       HN6       N6        single    1.016     0.010     0.899     0.007     
+VRS       C28       C29       single    1.500     0.020     1.500     0.020     
+VRS       C30       C28       single    1.480     0.020     1.480     0.020     
+VRS       H28       C28       single    1.089     0.010     0.989     0.005     
+VRS       O6        C29       deloc     1.220     0.020     1.220     0.020     
+VRS       C29       O7        deloc     1.454     0.020     1.454     0.020     
+VRS       C30       C31       double    1.390     0.020     1.390     0.020     
+VRS       C35       C30       single    1.390     0.020     1.390     0.020     
+VRS       C31       C32       single    1.390     0.020     1.390     0.020     
+VRS       H31       C31       single    1.082     0.013     0.975     0.010     
+VRS       C32       C33       double    1.390     0.020     1.390     0.020     
+VRS       H32       C32       single    1.082     0.013     0.975     0.010     
+VRS       C33       C34       single    1.390     0.020     1.390     0.020     
+VRS       H33       C33       single    1.082     0.013     0.975     0.010     
+VRS       C34       C35       double    1.390     0.020     1.390     0.020     
+VRS       H34       C34       single    1.082     0.013     0.975     0.010     
+VRS       H35       C35       single    1.082     0.013     0.975     0.010     
+VRS       O7        C36       single    1.426     0.020     1.426     0.020     
+VRS       C36       C37       single    1.524     0.020     1.524     0.020     
+VRS       C39       C36       single    1.524     0.020     1.524     0.020     
+VRS       H36       C36       single    1.089     0.010     0.989     0.005     
+VRS       C38       C37       single    1.500     0.020     1.500     0.020     
+VRS       C37       N7        single    1.450     0.020     1.450     0.020     
+VRS       H37       C37       single    1.089     0.010     0.989     0.005     
+VRS       O8        C38       double    1.220     0.020     1.220     0.020     
+VRS       H391      C39       single    1.089     0.010     0.989     0.005     
+VRS       H392      C39       single    1.089     0.010     0.989     0.005     
+VRS       H393      C39       single    1.089     0.010     0.989     0.005     
+VRS       N7        C40       single    1.330     0.020     1.330     0.020     
+VRS       HN7       N7        single    1.016     0.010     0.899     0.007     
+VRS       C40       O9        double    1.220     0.020     1.220     0.020     
+VRS       C41       C40       single    1.500     0.020     1.500     0.020     
+VRS       C41       N8        double    1.350     0.020     1.350     0.020     
+VRS       C45       C41       single    1.487     0.020     1.487     0.020     
+VRS       N8        C42       single    1.337     0.020     1.337     0.020     
+VRS       C42       C43       double    1.390     0.020     1.390     0.020     
+VRS       H42       C42       single    1.082     0.013     0.975     0.010     
+VRS       C43       C44       single    1.390     0.020     1.390     0.020     
+VRS       H43       C43       single    1.082     0.013     0.975     0.010     
+VRS       C44       C45       double    1.390     0.020     1.390     0.020     
+VRS       H44       C44       single    1.082     0.013     0.975     0.010     
+VRS       O10       C45       single    1.362     0.020     1.362     0.020     
+VRS       H10       O10       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VRS      O9     C40    C41     120.500    3.000
+ VRS      O9     C40    N7      123.000    3.000
+ VRS      C41    C40    N7      120.000    3.000
+ VRS      C40    C41    C45     120.000    3.000
+ VRS      C40    C41    N8      120.000    3.000
+ VRS      C45    C41    N8      120.000    3.000
+ VRS      C41    C45    O10     120.000    3.000
+ VRS      C41    C45    C44     120.000    3.000
+ VRS      O10    C45    C44     120.000    3.000
+ VRS      C45    O10    H10     109.470    3.000
+ VRS      C45    C44    H44     120.000    3.000
+ VRS      C45    C44    C43     120.000    3.000
+ VRS      H44    C44    C43     120.000    3.000
+ VRS      C44    C43    H43     120.000    3.000
+ VRS      C44    C43    C42     120.000    3.000
+ VRS      H43    C43    C42     120.000    3.000
+ VRS      C43    C42    H42     120.000    3.000
+ VRS      C43    C42    N8      120.000    3.000
+ VRS      H42    C42    N8      120.000    3.000
+ VRS      C42    N8     C41     120.000    3.000
+ VRS      C40    N7     HN7     120.000    3.000
+ VRS      C40    N7     C37     121.500    3.000
+ VRS      HN7    N7     C37     118.500    3.000
+ VRS      N7     C37    H37     108.550    3.000
+ VRS      N7     C37    C38     111.600    3.000
+ VRS      N7     C37    C36     110.000    3.000
+ VRS      H37    C37    C38     108.810    3.000
+ VRS      H37    C37    C36     108.340    3.000
+ VRS      C38    C37    C36     109.470    3.000
+ VRS      C37    C38    O8      120.500    3.000
+ VRS      C37    C38    N1      116.500    3.000
+ VRS      O8     C38    N1      123.000    3.000
+ VRS      C38    N1     HN1     120.000    3.000
+ VRS      C38    N1     C1      121.500    3.000
+ VRS      HN1    N1     C1      118.500    3.000
+ VRS      C37    C36    H36     108.340    3.000
+ VRS      C37    C36    C39     111.000    3.000
+ VRS      C37    C36    O7      109.470    3.000
+ VRS      H36    C36    C39     108.340    3.000
+ VRS      H36    C36    O7      109.470    3.000
+ VRS      C39    C36    O7      109.470    3.000
+ VRS      C36    C39    H393    109.470    3.000
+ VRS      C36    C39    H392    109.470    3.000
+ VRS      C36    C39    H391    109.470    3.000
+ VRS      H393   C39    H392    109.470    3.000
+ VRS      H393   C39    H391    109.470    3.000
+ VRS      H392   C39    H391    109.470    3.000
+ VRS      C36    O7     C29     111.800    3.000
+ VRS      O7     C29    O6      119.000    3.000
+ VRS      O7     C29    C28     120.000    3.000
+ VRS      O6     C29    C28     120.500    3.000
+ VRS      C29    C28    H28     108.810    3.000
+ VRS      C29    C28    C30     109.500    3.000
+ VRS      C29    C28    N6      111.600    3.000
+ VRS      H28    C28    C30     109.470    3.000
+ VRS      H28    C28    N6      108.550    3.000
+ VRS      C30    C28    N6      109.470    3.000
+ VRS      C28    C30    C35     120.000    3.000
+ VRS      C28    C30    C31     120.000    3.000
+ VRS      C35    C30    C31     120.000    3.000
+ VRS      C30    C35    H35     120.000    3.000
+ VRS      C30    C35    C34     120.000    3.000
+ VRS      H35    C35    C34     120.000    3.000
+ VRS      C35    C34    H34     120.000    3.000
+ VRS      C35    C34    C33     120.000    3.000
+ VRS      H34    C34    C33     120.000    3.000
+ VRS      C34    C33    H33     120.000    3.000
+ VRS      C34    C33    C32     120.000    3.000
+ VRS      H33    C33    C32     120.000    3.000
+ VRS      C33    C32    H32     120.000    3.000
+ VRS      C33    C32    C31     120.000    3.000
+ VRS      H32    C32    C31     120.000    3.000
+ VRS      C32    C31    H31     120.000    3.000
+ VRS      C32    C31    C30     120.000    3.000
+ VRS      H31    C31    C30     120.000    3.000
+ VRS      C28    N6     HN6     118.500    3.000
+ VRS      C28    N6     C23     121.500    3.000
+ VRS      HN6    N6     C23     120.000    3.000
+ VRS      N6     C23    O4      123.000    3.000
+ VRS      N6     C23    C22     116.500    3.000
+ VRS      O4     C23    C22     120.500    3.000
+ VRS      C23    C22    H22     108.810    3.000
+ VRS      C23    C22    C27     109.470    3.000
+ VRS      C23    C22    N5      111.600    3.000
+ VRS      H22    C22    C27     108.340    3.000
+ VRS      H22    C22    N5      109.470    3.000
+ VRS      C27    C22    N5      105.000    3.000
+ VRS      C22    C27    H271    109.470    3.000
+ VRS      C22    C27    H272    109.470    3.000
+ VRS      C22    C27    C26     109.470    3.000
+ VRS      H271   C27    H272    107.900    3.000
+ VRS      H271   C27    C26     109.470    3.000
+ VRS      H272   C27    C26     109.470    3.000
+ VRS      C27    C26    O5      120.500    3.000
+ VRS      C27    C26    C25     120.000    3.000
+ VRS      O5     C26    C25     120.500    3.000
+ VRS      C26    C25    H251    109.470    3.000
+ VRS      C26    C25    H252    109.470    3.000
+ VRS      C26    C25    C24     109.470    3.000
+ VRS      H251   C25    H252    107.900    3.000
+ VRS      H251   C25    C24     109.470    3.000
+ VRS      H252   C25    C24     109.470    3.000
+ VRS      C25    C24    H241    109.470    3.000
+ VRS      C25    C24    H242    109.470    3.000
+ VRS      C25    C24    N5      105.000    3.000
+ VRS      H241   C24    H242    107.900    3.000
+ VRS      H241   C24    N5      109.470    3.000
+ VRS      H242   C24    N5      109.470    3.000
+ VRS      C24    N5     C11     127.000    3.000
+ VRS      C24    N5     C22     112.000    3.000
+ VRS      C11    N5     C22     121.000    3.000
+ VRS      N5     C11    O3      123.000    3.000
+ VRS      N5     C11    C10     116.500    3.000
+ VRS      O3     C11    C10     120.500    3.000
+ VRS      C11    C10    H2      108.810    3.000
+ VRS      C11    C10    C13     109.470    3.000
+ VRS      C11    C10    N3      111.600    3.000
+ VRS      H2     C10    C13     108.340    3.000
+ VRS      H2     C10    N3      109.470    3.000
+ VRS      C13    C10    N3      105.000    3.000
+ VRS      C10    C13    H131    109.470    3.000
+ VRS      C10    C13    H132    109.470    3.000
+ VRS      C10    C13    C14     109.470    3.000
+ VRS      H131   C13    H132    107.900    3.000
+ VRS      H131   C13    C14     109.470    3.000
+ VRS      H132   C13    C14     109.470    3.000
+ VRS      C13    C14    C19     120.000    3.000
+ VRS      C13    C14    C15     120.000    3.000
+ VRS      C19    C14    C15     120.000    3.000
+ VRS      C14    C19    H19     120.000    3.000
+ VRS      C14    C19    C18     120.000    3.000
+ VRS      H19    C19    C18     120.000    3.000
+ VRS      C19    C18    H18     120.000    3.000
+ VRS      C19    C18    C17     120.000    3.000
+ VRS      H18    C18    C17     120.000    3.000
+ VRS      C18    C17    H17     120.000    3.000
+ VRS      C18    C17    C16     120.000    3.000
+ VRS      H17    C17    C16     120.000    3.000
+ VRS      C17    C16    H16     120.000    3.000
+ VRS      C17    C16    C15     120.000    3.000
+ VRS      H16    C16    C15     120.000    3.000
+ VRS      C16    C15    H15     120.000    3.000
+ VRS      C16    C15    C14     120.000    3.000
+ VRS      H15    C15    C14     120.000    3.000
+ VRS      C10    N3     C12     120.000    3.000
+ VRS      C10    N3     C6      121.000    3.000
+ VRS      C12    N3     C6      127.000    3.000
+ VRS      N3     C12    H123    109.470    3.000
+ VRS      N3     C12    H122    109.470    3.000
+ VRS      N3     C12    H121    109.470    3.000
+ VRS      H123   C12    H122    109.470    3.000
+ VRS      H123   C12    H121    109.470    3.000
+ VRS      H122   C12    H121    109.470    3.000
+ VRS      N3     C6     O2      123.000    3.000
+ VRS      N3     C6     C5      116.500    3.000
+ VRS      O2     C6     C5      120.500    3.000
+ VRS      C6     C5     H5      108.810    3.000
+ VRS      C6     C5     C7      109.470    3.000
+ VRS      C6     C5     N2      111.600    3.000
+ VRS      H5     C5     C7      108.340    3.000
+ VRS      H5     C5     N2      109.470    3.000
+ VRS      C7     C5     N2      105.000    3.000
+ VRS      C5     C7     H71     109.470    3.000
+ VRS      C5     C7     H72     109.470    3.000
+ VRS      C5     C7     C8      111.000    3.000
+ VRS      H71    C7     H72     107.900    3.000
+ VRS      H71    C7     C8      109.470    3.000
+ VRS      H72    C7     C8      109.470    3.000
+ VRS      C7     C8     H81     109.470    3.000
+ VRS      C7     C8     H82     109.470    3.000
+ VRS      C7     C8     C9      111.000    3.000
+ VRS      H81    C8     H82     107.900    3.000
+ VRS      H81    C8     C9      109.470    3.000
+ VRS      H82    C8     C9      109.470    3.000
+ VRS      C8     C9     H91     109.470    3.000
+ VRS      C8     C9     H92     109.470    3.000
+ VRS      C8     C9     N2      105.000    3.000
+ VRS      H91    C9     H92     107.900    3.000
+ VRS      H91    C9     N2      109.470    3.000
+ VRS      H92    C9     N2      109.470    3.000
+ VRS      C9     N2     C2      127.000    3.000
+ VRS      C9     N2     C5      112.000    3.000
+ VRS      C2     N2     C5      121.000    3.000
+ VRS      N2     C2     O1      123.000    3.000
+ VRS      N2     C2     C1      116.500    3.000
+ VRS      O1     C2     C1      120.500    3.000
+ VRS      C2     C1     H1      108.810    3.000
+ VRS      C2     C1     C3      109.470    3.000
+ VRS      C2     C1     N1      111.600    3.000
+ VRS      H1     C1     C3      108.340    3.000
+ VRS      H1     C1     N1      108.550    3.000
+ VRS      C3     C1     N1      110.000    3.000
+ VRS      C1     C3     H31A    109.470    3.000
+ VRS      C1     C3     H32A    109.470    3.000
+ VRS      C1     C3     C4      111.000    3.000
+ VRS      H31A   C3     H32A    107.900    3.000
+ VRS      H31A   C3     C4      109.470    3.000
+ VRS      H32A   C3     C4      109.470    3.000
+ VRS      C3     C4     H43A    109.470    3.000
+ VRS      C3     C4     H42A    109.470    3.000
+ VRS      C3     C4     H41     109.470    3.000
+ VRS      H43A   C4     H42A    109.470    3.000
+ VRS      H43A   C4     H41     109.470    3.000
+ VRS      H42A   C4     H41     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VRS      var_1    O9     C40    C41    C45       -0.267   20.000   1
+ VRS      CONST_1  C40    C41    N8     C42      180.000    0.000   0
+ VRS      CONST_2  C40    C41    C45    C44      180.000    0.000   0
+ VRS      var_2    C41    C45    O10    H10      -90.538   20.000   1
+ VRS      CONST_3  C41    C45    C44    C43        0.000    0.000   0
+ VRS      CONST_4  C45    C44    C43    C42        0.000    0.000   0
+ VRS      CONST_5  C44    C43    C42    N8         0.000    0.000   0
+ VRS      CONST_6  C43    C42    N8     C41        0.000    0.000   0
+ VRS      CONST_7  O9     C40    N7     C37        0.000    0.000   0
+ VRS      var_3    C40    N7     C37    C36      154.698   20.000   3
+ VRS      var_4    N7     C37    C38    N1        82.418   20.000   3
+ VRS      CONST_8  C37    C38    N1     C1       180.000    0.000   0
+ VRS      var_5    C38    N1     C1     C2        75.072   20.000   3
+ VRS      var_6    N7     C37    C36    O7        28.554   20.000   3
+ VRS      var_7    C37    C36    C39    H391      59.993   20.000   3
+ VRS      var_8    C37    C36    O7     C29      104.439   20.000   1
+ VRS      var_9    C36    O7     C29    C28      174.862   20.000   1
+ VRS      var_10   O7     C29    C28    N6       106.789   20.000   3
+ VRS      var_11   C29    C28    C30    C35      127.216   20.000   1
+ VRS      CONST_9  C28    C30    C31    C32      180.000    0.000   0
+ VRS      CONST_10 C28    C30    C35    C34      180.000    0.000   0
+ VRS      CONST_11 C30    C35    C34    C33        0.000    0.000   0
+ VRS      CONST_12 C35    C34    C33    C32        0.000    0.000   0
+ VRS      CONST_13 C34    C33    C32    C31        0.000    0.000   0
+ VRS      CONST_14 C33    C32    C31    C30        0.000    0.000   0
+ VRS      var_12   C29    C28    N6     C23      171.809   20.000   3
+ VRS      CONST_15 C28    N6     C23    C22      180.000    0.000   0
+ VRS      var_13   N6     C23    C22    C27      155.074   20.000   3
+ VRS      var_14   C23    C22    C27    C26      180.000   20.000   3
+ VRS      var_15   C22    C27    C26    C25       60.000   20.000   3
+ VRS      var_16   C27    C26    C25    C24      -60.000   20.000   3
+ VRS      var_17   C26    C25    C24    N5        60.000   20.000   3
+ VRS      var_18   C25    C24    N5     C11      120.000   20.000   1
+ VRS      var_19   C24    N5     C22    C23      180.000   20.000   3
+ VRS      CONST_16 C24    N5     C11    C10        0.000    0.000   0
+ VRS      var_20   N5     C11    C10    N3        73.839   20.000   3
+ VRS      var_21   C11    C10    C13    C14       70.808   20.000   3
+ VRS      var_22   C10    C13    C14    C19      -98.724   20.000   2
+ VRS      CONST_17 C13    C14    C15    C16      180.000    0.000   0
+ VRS      CONST_18 C13    C14    C19    C18      180.000    0.000   0
+ VRS      CONST_19 C14    C19    C18    C17        0.000    0.000   0
+ VRS      CONST_20 C19    C18    C17    C16        0.000    0.000   0
+ VRS      CONST_21 C18    C17    C16    C15        0.000    0.000   0
+ VRS      CONST_22 C17    C16    C15    C14        0.000    0.000   0
+ VRS      var_23   C11    C10    N3     C6      -173.879   20.000   3
+ VRS      var_24   C10    N3     C12    H121      89.997   20.000   1
+ VRS      CONST_23 C10    N3     C6     C5       180.000    0.000   0
+ VRS      var_25   N3     C6     C5     C7      -172.227   20.000   3
+ VRS      var_26   C6     C5     C7     C8      -120.000   20.000   3
+ VRS      var_27   C5     C7     C8     C9        30.000   20.000   3
+ VRS      var_28   C7     C8     C9     N2       -60.000   20.000   3
+ VRS      var_29   C8     C9     N2     C2      -120.000   20.000   1
+ VRS      var_30   C9     N2     C5     C6        90.000   20.000   3
+ VRS      CONST_24 C9     N2     C2     C1         0.000    0.000   0
+ VRS      var_31   N2     C2     C1     C3        79.790   20.000   3
+ VRS      var_32   C2     C1     C3     C4      -175.826   20.000   3
+ VRS      var_33   C1     C3     C4     H41      179.992   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ VRS      chir_01  C1     N1     C2     C3        negativ
+ VRS      chir_02  C5     N2     C6     C7        positiv
+ VRS      chir_03  C10    N3     C11    C13       positiv
+ VRS      chir_04  C22    N5     C23    C27       positiv
+ VRS      chir_05  C28    N6     C29    C30       positiv
+ VRS      chir_06  C36    O7     C37    C39       negativ
+ VRS      chir_07  C37    C36    C38    N7        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ VRS      plan-1    N1        0.020
+ VRS      plan-1    C1        0.020
+ VRS      plan-1    C38       0.020
+ VRS      plan-1    HN1       0.020
+ VRS      plan-2    C2        0.020
+ VRS      plan-2    C1        0.020
+ VRS      plan-2    O1        0.020
+ VRS      plan-2    N2        0.020
+ VRS      plan-3    N2        0.020
+ VRS      plan-3    C2        0.020
+ VRS      plan-3    C5        0.020
+ VRS      plan-3    C9        0.020
+ VRS      plan-4    C6        0.020
+ VRS      plan-4    C5        0.020
+ VRS      plan-4    O2        0.020
+ VRS      plan-4    N3        0.020
+ VRS      plan-5    N3        0.020
+ VRS      plan-5    C6        0.020
+ VRS      plan-5    C10       0.020
+ VRS      plan-5    C12       0.020
+ VRS      plan-6    C11       0.020
+ VRS      plan-6    C10       0.020
+ VRS      plan-6    O3        0.020
+ VRS      plan-6    N5        0.020
+ VRS      plan-7    C14       0.020
+ VRS      plan-7    C13       0.020
+ VRS      plan-7    C15       0.020
+ VRS      plan-7    C19       0.020
+ VRS      plan-7    C16       0.020
+ VRS      plan-7    C17       0.020
+ VRS      plan-7    C18       0.020
+ VRS      plan-7    H15       0.020
+ VRS      plan-7    H16       0.020
+ VRS      plan-7    H17       0.020
+ VRS      plan-7    H18       0.020
+ VRS      plan-7    H19       0.020
+ VRS      plan-8    N5        0.020
+ VRS      plan-8    C11       0.020
+ VRS      plan-8    C22       0.020
+ VRS      plan-8    C24       0.020
+ VRS      plan-9    C23       0.020
+ VRS      plan-9    C22       0.020
+ VRS      plan-9    O4        0.020
+ VRS      plan-9    N6        0.020
+ VRS      plan-9    HN6       0.020
+ VRS      plan-10   C26       0.020
+ VRS      plan-10   C25       0.020
+ VRS      plan-10   C27       0.020
+ VRS      plan-10   O5        0.020
+ VRS      plan-11   N6        0.020
+ VRS      plan-11   C23       0.020
+ VRS      plan-11   C28       0.020
+ VRS      plan-11   HN6       0.020
+ VRS      plan-12   C29       0.020
+ VRS      plan-12   C28       0.020
+ VRS      plan-12   O6        0.020
+ VRS      plan-12   O7        0.020
+ VRS      plan-13   C30       0.020
+ VRS      plan-13   C28       0.020
+ VRS      plan-13   C31       0.020
+ VRS      plan-13   C35       0.020
+ VRS      plan-13   C32       0.020
+ VRS      plan-13   C33       0.020
+ VRS      plan-13   C34       0.020
+ VRS      plan-13   H31       0.020
+ VRS      plan-13   H32       0.020
+ VRS      plan-13   H33       0.020
+ VRS      plan-13   H34       0.020
+ VRS      plan-13   H35       0.020
+ VRS      plan-14   C38       0.020
+ VRS      plan-14   N1        0.020
+ VRS      plan-14   C37       0.020
+ VRS      plan-14   O8        0.020
+ VRS      plan-14   HN1       0.020
+ VRS      plan-15   N7        0.020
+ VRS      plan-15   C37       0.020
+ VRS      plan-15   C40       0.020
+ VRS      plan-15   HN7       0.020
+ VRS      plan-16   C40       0.020
+ VRS      plan-16   N7        0.020
+ VRS      plan-16   O9        0.020
+ VRS      plan-16   C41       0.020
+ VRS      plan-16   HN7       0.020
+ VRS      plan-17   C41       0.020
+ VRS      plan-17   C40       0.020
+ VRS      plan-17   N8        0.020
+ VRS      plan-17   C45       0.020
+ VRS      plan-17   C42       0.020
+ VRS      plan-17   C43       0.020
+ VRS      plan-17   C44       0.020
+ VRS      plan-17   H42       0.020
+ VRS      plan-17   H43       0.020
+ VRS      plan-17   H44       0.020
+ VRS      plan-17   O10       0.020
+# ------------------------------------------------------

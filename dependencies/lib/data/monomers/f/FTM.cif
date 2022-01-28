@@ -1,0 +1,111 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FTM     FTM      2-fluoroacetamide     NON-POLYMER     9     5     .     
+#
+data_comp_FTM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FTM     F       F       F       0       24.095      9.936       -8.402      
+FTM     C2      C       CH2     0       25.097      10.360      -9.163      
+FTM     C1      C       C       0       25.417      11.815      -8.910      
+FTM     O       O       O       0       25.361      12.623      -9.836      
+FTM     N       N       NH2     0       25.751      12.163      -7.676      
+FTM     H1      H       H       0       24.846      10.238      -10.094     
+FTM     H2      H       H       0       25.879      9.818       -8.968      
+FTM     H3      H       H       0       25.945      13.006      -7.492      
+FTM     H4      H       H       0       25.782      11.555      -7.033      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FTM       C1        O         DOUBLE    n         1.229     0.012     1.229     0.012     
+FTM       F         C2        SINGLE    n         1.328     0.017     1.328     0.017     
+FTM       C2        C1        SINGLE    n         1.507     0.020     1.507     0.020     
+FTM       C1        N         SINGLE    n         1.323     0.011     1.323     0.011     
+FTM       C2        H1        SINGLE    n         1.089     0.010     0.971     0.015     
+FTM       C2        H2        SINGLE    n         1.089     0.010     0.971     0.015     
+FTM       N         H3        SINGLE    n         1.016     0.010     0.884     0.020     
+FTM       N         H4        SINGLE    n         1.016     0.010     0.884     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FTM           F          C2          C1     111.868    1.62
+FTM           F          C2          H1     108.415    2.17
+FTM           F          C2          H2     108.415    2.17
+FTM          C1          C2          H1     109.553    1.50
+FTM          C1          C2          H2     109.553    1.50
+FTM          H1          C2          H2     109.375    1.50
+FTM           O          C1          C2     120.104    2.48
+FTM           O          C1           N     122.761    1.50
+FTM          C2          C1           N     117.135    1.63
+FTM          C1           N          H3     119.958    1.85
+FTM          C1           N          H4     119.958    1.85
+FTM          H3           N          H4     120.084    2.38
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FTM             sp2_sp3_2           O          C1          C2           F     120.000   10.00     6
+FTM             sp2_sp2_3           O          C1           N          H3       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FTM    plan-1          C1   0.020
+FTM    plan-1          C2   0.020
+FTM    plan-1           N   0.020
+FTM    plan-1           O   0.020
+FTM    plan-2          C1   0.020
+FTM    plan-2          H3   0.020
+FTM    plan-2          H4   0.020
+FTM    plan-2           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FTM SMILES           ACDLabs              12.01 "FCC(=O)N"
+FTM InChI            InChI                1.03  "InChI=1S/C2H4FNO/c3-1-2(4)5/h1H2,(H2,4,5)"
+FTM InChIKey         InChI                1.03  FVTWJXMFYOXOKK-UHFFFAOYSA-N
+FTM SMILES_CANONICAL CACTVS               3.370 "NC(=O)CF"
+FTM SMILES           CACTVS               3.370 "NC(=O)CF"
+FTM SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C(C(=O)N)F"
+FTM SMILES           "OpenEye OEToolkits" 1.7.6 "C(C(=O)N)F"
+FTM ?                acedrg               202         "dictionary generator"                  
+FTM ?                acedrg_database      11          "data source"                           
+FTM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FTM ?                refmac5              5.8.0189    "optimization tool"                     

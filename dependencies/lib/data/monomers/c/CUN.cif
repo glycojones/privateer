@@ -1,0 +1,106 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CUN      CUN 'CU(I)-S-MO(IV)(=O)OH CLUSTER        ' non-polymer         6   5 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CUN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CUN           OM1    O    O         0.000      0.000    0.000    0.000
+ CUN           MO     MO   MO        4.000     -1.343   -0.872    0.639
+ CUN           OM2    O    OH1       0.000     -0.951   -2.842    0.632
+ CUN           HO2    H    H         0.000     -1.369   -3.404   -0.025
+ CUN           S      S    S2        0.000     -2.719   -1.381   -1.189
+ CUN           CU     CU   CU        1.000     -3.142   -3.408   -1.757
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CUN      OM1    n/a    MO     START
+ CUN      MO     OM1    S      .
+ CUN      OM2    MO     HO2    .
+ CUN      HO2    OM2    .      .
+ CUN      S      MO     CU     .
+ CUN      CU     S      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CUN       CU        S         single    2.375     0.020     2.375     0.020     
+CUN       S         MO        single    2.325     0.020     2.325     0.020     
+CUN       OM2       MO        single    2.059     0.020     2.059     0.020     
+CUN       MO        OM1       double    1.865     0.020     1.865     0.020     
+CUN       HO2       OM2       single    0.970     0.012     0.967     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CUN      OM1    MO     OM2     120.000    3.000
+ CUN      OM1    MO     S        90.000    3.000
+ CUN      OM2    MO     S        90.000    3.000
+ CUN      MO     OM2    HO2     120.000    3.000
+ CUN      MO     S      CU      121.791    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CUN      var_1    HO2    OM2    MO     S          0.000   20.000   1
+ CUN      var_2    CU     S      MO     OM1        0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ CUN      chir_01  MO     S      .      OM1       cross3
+                   OM2    .      .      .      .
+# ------------------------------------------------------

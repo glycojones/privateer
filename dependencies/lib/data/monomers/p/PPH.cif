@@ -1,0 +1,226 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PPH      PPH '[(1R)-1-amino-2-phenylethyl]phosphon' non-polymer        25  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PPH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PPH           O1     O    O         0.000      0.000    0.000    0.000
+ PPH           P1     P    P         0.000     -0.921   -0.067   -1.156
+ PPH           O2     O    OH1       0.000     -0.079    0.076   -2.521
+ PPH           H1     H    H         0.000      0.446    0.872   -2.684
+ PPH           O3     O    OH1       0.000     -1.992    1.131   -1.059
+ PPH           H12    H    H         0.000     -2.669    1.230   -1.742
+ PPH           C1     C    CH1       0.000     -1.796   -1.666   -1.146
+ PPH           H2     H    H         0.000     -2.543   -1.680   -1.951
+ PPH           N1     N    NH2       0.000     -0.829   -2.753   -1.355
+ PPH           H4     H    H         0.000     -0.669   -3.442   -0.630
+ PPH           H3     H    H         0.000     -0.316   -2.821   -2.226
+ PPH           C2     C    CH2       0.000     -2.494   -1.857    0.202
+ PPH           H5     H    H         0.000     -1.750   -1.843    1.002
+ PPH           H6     H    H         0.000     -3.016   -2.816    0.209
+ PPH           C3     C    CR6       0.000     -3.485   -0.741    0.416
+ PPH           C8     C    CR16      0.000     -3.090    0.421    1.052
+ PPH           H11    H    H         0.000     -2.070    0.528    1.400
+ PPH           C7     C    CR16      0.000     -3.998    1.446    1.245
+ PPH           H10    H    H         0.000     -3.688    2.359    1.737
+ PPH           C6     C    CR16      0.000     -5.303    1.305    0.809
+ PPH           H9     H    H         0.000     -6.015    2.106    0.963
+ PPH           C5     C    CR16      0.000     -5.698    0.140    0.177
+ PPH           H8     H    H         0.000     -6.719    0.029   -0.164
+ PPH           C4     C    CR16      0.000     -4.789   -0.883   -0.019
+ PPH           H7     H    H         0.000     -5.099   -1.795   -0.514
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PPH      O1     n/a    P1     START
+ PPH      P1     O1     C1     .
+ PPH      O2     P1     H1     .
+ PPH      H1     O2     .      .
+ PPH      O3     P1     H12    .
+ PPH      H12    O3     .      .
+ PPH      C1     P1     C2     .
+ PPH      H2     C1     .      .
+ PPH      N1     C1     H3     .
+ PPH      H4     N1     .      .
+ PPH      H3     N1     .      .
+ PPH      C2     C1     C3     .
+ PPH      H5     C2     .      .
+ PPH      H6     C2     .      .
+ PPH      C3     C2     C8     .
+ PPH      C8     C3     C7     .
+ PPH      H11    C8     .      .
+ PPH      C7     C8     C6     .
+ PPH      H10    C7     .      .
+ PPH      C6     C7     C5     .
+ PPH      H9     C6     .      .
+ PPH      C5     C6     C4     .
+ PPH      H8     C5     .      .
+ PPH      C4     C5     H7     .
+ PPH      H7     C4     .      END
+ PPH      C3     C4     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PPH       P1        O1        double    1.480     0.020     1.480     0.020     
+PPH       O2        P1        single    1.610     0.020     1.610     0.020     
+PPH       C1        P1        single    1.815     0.020     1.815     0.020     
+PPH       N1        C1        single    1.450     0.020     1.450     0.020     
+PPH       C2        C1        single    1.524     0.020     1.524     0.020     
+PPH       C3        C2        single    1.511     0.020     1.511     0.020     
+PPH       C3        C4        double    1.390     0.020     1.390     0.020     
+PPH       C4        C5        single    1.390     0.020     1.390     0.020     
+PPH       C5        C6        double    1.390     0.020     1.390     0.020     
+PPH       C6        C7        single    1.390     0.020     1.390     0.020     
+PPH       C7        C8        double    1.390     0.020     1.390     0.020     
+PPH       C8        C3        single    1.390     0.020     1.390     0.020     
+PPH       O3        P1        single    1.610     0.020     1.610     0.020     
+PPH       H1        O2        single    0.970     0.012     0.839     0.014     
+PPH       H2        C1        single    1.089     0.010     0.989     0.005     
+PPH       H3        N1        single    1.036     0.016     0.914     0.007     
+PPH       H4        N1        single    1.036     0.016     0.914     0.007     
+PPH       H5        C2        single    1.089     0.010     0.989     0.005     
+PPH       H6        C2        single    1.089     0.010     0.989     0.005     
+PPH       H7        C4        single    1.082     0.013     0.975     0.010     
+PPH       H8        C5        single    1.082     0.013     0.975     0.010     
+PPH       H9        C6        single    1.082     0.013     0.975     0.010     
+PPH       H10       C7        single    1.082     0.013     0.975     0.010     
+PPH       H11       C8        single    1.082     0.013     0.975     0.010     
+PPH       H12       O3        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PPH      O1     P1     O2      109.500    3.000
+ PPH      O1     P1     O3      109.500    3.000
+ PPH      O1     P1     C1      109.500    3.000
+ PPH      O2     P1     O3      109.500    3.000
+ PPH      O2     P1     C1      109.500    3.000
+ PPH      O3     P1     C1      109.500    3.000
+ PPH      P1     O2     H1      120.000    3.000
+ PPH      P1     O3     H12     120.000    3.000
+ PPH      P1     C1     H2      109.500    3.000
+ PPH      P1     C1     N1      109.500    3.000
+ PPH      P1     C1     C2      109.500    3.000
+ PPH      H2     C1     N1      109.470    3.000
+ PPH      H2     C1     C2      108.340    3.000
+ PPH      N1     C1     C2      109.470    3.000
+ PPH      C1     N1     H4      120.000    3.000
+ PPH      C1     N1     H3      120.000    3.000
+ PPH      H4     N1     H3      120.000    3.000
+ PPH      C1     C2     H5      109.470    3.000
+ PPH      C1     C2     H6      109.470    3.000
+ PPH      C1     C2     C3      109.470    3.000
+ PPH      H5     C2     H6      107.900    3.000
+ PPH      H5     C2     C3      109.470    3.000
+ PPH      H6     C2     C3      109.470    3.000
+ PPH      C2     C3     C8      120.000    3.000
+ PPH      C2     C3     C4      120.000    3.000
+ PPH      C8     C3     C4      120.000    3.000
+ PPH      C3     C8     H11     120.000    3.000
+ PPH      C3     C8     C7      120.000    3.000
+ PPH      H11    C8     C7      120.000    3.000
+ PPH      C8     C7     H10     120.000    3.000
+ PPH      C8     C7     C6      120.000    3.000
+ PPH      H10    C7     C6      120.000    3.000
+ PPH      C7     C6     H9      120.000    3.000
+ PPH      C7     C6     C5      120.000    3.000
+ PPH      H9     C6     C5      120.000    3.000
+ PPH      C6     C5     H8      120.000    3.000
+ PPH      C6     C5     C4      120.000    3.000
+ PPH      H8     C5     C4      120.000    3.000
+ PPH      C5     C4     H7      120.000    3.000
+ PPH      C5     C4     C3      120.000    3.000
+ PPH      H7     C4     C3      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PPH      var_1    O1     P1     O2     H1       -59.952   20.000   1
+ PPH      var_2    O1     P1     O3     H12      179.975   20.000   1
+ PPH      var_3    O1     P1     C1     C2        54.984   20.000   1
+ PPH      var_4    P1     C1     N1     H3       -63.987   20.000   1
+ PPH      var_5    P1     C1     C2     C3        60.059   20.000   3
+ PPH      var_6    C1     C2     C3     C8       -90.297   20.000   2
+ PPH      CONST_1  C2     C3     C4     C5       180.000    0.000   0
+ PPH      CONST_2  C2     C3     C8     C7       180.000    0.000   0
+ PPH      CONST_3  C3     C8     C7     C6         0.000    0.000   0
+ PPH      CONST_4  C8     C7     C6     C5         0.000    0.000   0
+ PPH      CONST_5  C7     C6     C5     C4         0.000    0.000   0
+ PPH      CONST_6  C6     C5     C4     C3         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PPH      chir_01  C1     P1     N1     C2        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PPH      plan-1    N1        0.020
+ PPH      plan-1    C1        0.020
+ PPH      plan-1    H3        0.020
+ PPH      plan-1    H4        0.020
+ PPH      plan-2    C3        0.020
+ PPH      plan-2    C2        0.020
+ PPH      plan-2    C4        0.020
+ PPH      plan-2    C8        0.020
+ PPH      plan-2    C5        0.020
+ PPH      plan-2    C6        0.020
+ PPH      plan-2    C7        0.020
+ PPH      plan-2    H7        0.020
+ PPH      plan-2    H8        0.020
+ PPH      plan-2    H9        0.020
+ PPH      plan-2    H10       0.020
+ PPH      plan-2    H11       0.020
+# ------------------------------------------------------

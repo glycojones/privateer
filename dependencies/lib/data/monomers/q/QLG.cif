@@ -1,0 +1,308 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+QLG      QLG '"[(4Z)-2-[(1Z)-4-AMINO-4-OXOBUTANIMI' non-polymer        38  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_QLG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ QLG           OXT    O    OC       -0.500      0.000    0.000    0.000
+ QLG           C      C    C         0.000     -1.018    0.679    0.262
+ QLG           O      O    OC       -0.500     -1.257    1.162    1.391
+ QLG           CA3    C    CH2       0.000     -1.873    0.810   -0.961
+ QLG           HA31   H    H         0.000     -1.767   -0.080   -1.585
+ QLG           HA32   H    H         0.000     -1.570    1.691   -1.532
+ QLG           N3     N    NR5       0.000     -3.257    0.951   -0.548
+ QLG           C2     C    CR5       0.000     -3.878    2.143   -0.280
+ QLG           O2     O    O         0.000     -3.459    3.284   -0.315
+ QLG           C1     C    CR5       0.000     -4.177   -0.030   -0.356
+ QLG           CA1    C    C         0.000     -3.836   -1.463   -0.560
+ QLG           CB1    C    CH2       0.000     -3.309   -2.242    0.614
+ QLG           HB11   H    H         0.000     -2.699   -1.577    1.229
+ QLG           HB12   H    H         0.000     -2.689   -3.060    0.240
+ QLG           CG1    C    CH2       0.000     -4.450   -2.809    1.452
+ QLG           HG11   H    H         0.000     -5.019   -3.489    0.814
+ QLG           HG12   H    H         0.000     -5.087   -1.972    1.747
+ QLG           CD3    C    C         0.000     -3.977   -3.549    2.690
+ QLG           OE1    O    O         0.000     -2.797   -3.686    3.001
+ QLG           NE1    N    NH2       0.000     -5.026   -4.051    3.431
+ QLG           HE12   H    H         0.000     -4.856   -4.571    4.291
+ QLG           HE11   H    H         0.000     -5.990   -3.911    3.134
+ QLG           N      N    N         0.000     -4.032   -1.968   -1.730
+ QLG           HN     H    H         0.000     -4.387   -1.430   -2.441
+ QLG           N2     N    NRD5      0.000     -5.362    0.345    0.010
+ QLG           CA2    C    CR5       0.000     -5.256    1.715    0.083
+ QLG           CB2    C    C1        0.000     -6.220    2.571    0.425
+ QLG           HB2    H    H         0.000     -5.982    3.621    0.436
+ QLG           CG2    C    CH1       0.000     -7.623    2.160    0.798
+ QLG           HG2    H    H         0.000     -7.694    1.065    0.735
+ QLG           CD2    C    CH3       0.000     -7.939    2.586    2.231
+ QLG           HD23   H    H         0.000     -8.917    2.268    2.488
+ QLG           HD22   H    H         0.000     -7.240    2.145    2.894
+ QLG           HD21   H    H         0.000     -7.881    3.641    2.308
+ QLG           CD1    C    CH3       0.000     -8.631    2.769   -0.178
+ QLG           HD13   H    H         0.000     -8.580    3.826   -0.126
+ QLG           HD12   H    H         0.000     -8.404    2.454   -1.164
+ QLG           HD11   H    H         0.000     -9.608    2.450    0.077
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ QLG      OXT    n/a    C      START
+ QLG      C      OXT    CA3    .
+ QLG      O      C      .      .
+ QLG      CA3    C      N3     .
+ QLG      HA31   CA3    .      .
+ QLG      HA32   CA3    .      .
+ QLG      N3     CA3    C1     .
+ QLG      C2     N3     O2     .
+ QLG      O2     C2     .      .
+ QLG      C1     N3     N2     .
+ QLG      CA1    C1     N      .
+ QLG      CB1    CA1    CG1    .
+ QLG      HB11   CB1    .      .
+ QLG      HB12   CB1    .      .
+ QLG      CG1    CB1    CD3    .
+ QLG      HG11   CG1    .      .
+ QLG      HG12   CG1    .      .
+ QLG      CD3    CG1    NE1    .
+ QLG      OE1    CD3    .      .
+ QLG      NE1    CD3    HE11   .
+ QLG      HE12   NE1    .      .
+ QLG      HE11   NE1    .      .
+ QLG      N      CA1    HN     .
+ QLG      HN     N      .      .
+ QLG      N2     C1     CA2    .
+ QLG      CA2    N2     CB2    .
+ QLG      CB2    CA2    CG2    .
+ QLG      HB2    CB2    .      .
+ QLG      CG2    CB2    CD1    .
+ QLG      HG2    CG2    .      .
+ QLG      CD2    CG2    HD21   .
+ QLG      HD23   CD2    .      .
+ QLG      HD22   CD2    .      .
+ QLG      HD21   CD2    .      .
+ QLG      CD1    CG2    HD11   .
+ QLG      HD13   CD1    .      .
+ QLG      HD12   CD1    .      .
+ QLG      HD11   CD1    .      END
+ QLG      CA2    C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+QLG       N         CA1       double    1.260     0.020     1.260     0.020     
+QLG       HN        N         single    1.016     0.010     0.899     0.007     
+QLG       CA1       C1        single    1.490     0.020     1.490     0.020     
+QLG       CB1       CA1       single    1.510     0.020     1.510     0.020     
+QLG       CB2       CA2       double    1.483     0.020     1.483     0.020     
+QLG       CA2       N2        single    1.350     0.020     1.350     0.020     
+QLG       CA2       C2        single    1.490     0.020     1.490     0.020     
+QLG       N3        CA3       single    1.462     0.020     1.462     0.020     
+QLG       CA3       C         single    1.510     0.020     1.510     0.020     
+QLG       HA31      CA3       single    1.089     0.010     0.989     0.005     
+QLG       HA32      CA3       single    1.089     0.010     0.989     0.005     
+QLG       C         OXT       deloc     1.250     0.020     1.250     0.020     
+QLG       O         C         deloc     1.250     0.020     1.250     0.020     
+QLG       CG1       CB1       single    1.524     0.020     1.524     0.020     
+QLG       HB11      CB1       single    1.089     0.010     0.989     0.005     
+QLG       HB12      CB1       single    1.089     0.010     0.989     0.005     
+QLG       CG2       CB2       single    1.510     0.020     1.510     0.020     
+QLG       HB2       CB2       single    1.082     0.013     0.975     0.010     
+QLG       CD3       CG1       single    1.510     0.020     1.510     0.020     
+QLG       HG11      CG1       single    1.089     0.010     0.989     0.005     
+QLG       HG12      CG1       single    1.089     0.010     0.989     0.005     
+QLG       CD1       CG2       single    1.524     0.020     1.524     0.020     
+QLG       CD2       CG2       single    1.524     0.020     1.524     0.020     
+QLG       HG2       CG2       single    1.089     0.010     0.989     0.005     
+QLG       HD11      CD1       single    1.089     0.010     0.989     0.005     
+QLG       HD12      CD1       single    1.089     0.010     0.989     0.005     
+QLG       HD13      CD1       single    1.089     0.010     0.989     0.005     
+QLG       HD21      CD2       single    1.089     0.010     0.989     0.005     
+QLG       HD22      CD2       single    1.089     0.010     0.989     0.005     
+QLG       HD23      CD2       single    1.089     0.010     0.989     0.005     
+QLG       NE1       CD3       single    1.332     0.020     1.332     0.020     
+QLG       OE1       CD3       double    1.220     0.020     1.220     0.020     
+QLG       HE11      NE1       single    1.016     0.010     0.899     0.007     
+QLG       HE12      NE1       single    1.016     0.010     0.899     0.007     
+QLG       N2        C1        double    1.350     0.020     1.350     0.020     
+QLG       C1        N3        single    1.337     0.020     1.337     0.020     
+QLG       C2        N3        single    1.337     0.020     1.337     0.020     
+QLG       O2        C2        double    1.285     0.020     1.285     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ QLG      OXT    C      O       123.000    3.000
+ QLG      OXT    C      CA3     118.500    3.000
+ QLG      O      C      CA3     118.500    3.000
+ QLG      C      CA3    HA31    109.470    3.000
+ QLG      C      CA3    HA32    109.470    3.000
+ QLG      C      CA3    N3      109.500    3.000
+ QLG      HA31   CA3    HA32    107.900    3.000
+ QLG      HA31   CA3    N3      109.500    3.000
+ QLG      HA32   CA3    N3      109.500    3.000
+ QLG      CA3    N3     C2      126.000    3.000
+ QLG      CA3    N3     C1      126.000    3.000
+ QLG      C2     N3     C1      108.000    3.000
+ QLG      N3     C2     O2      108.000    3.000
+ QLG      N3     C2     CA2     108.000    3.000
+ QLG      O2     C2     CA2     108.000    3.000
+ QLG      N3     C1     CA1     126.000    3.000
+ QLG      N3     C1     N2      108.000    3.000
+ QLG      CA1    C1     N2      126.000    3.000
+ QLG      C1     CA1    CB1     116.500    3.000
+ QLG      C1     CA1    N       120.000    3.000
+ QLG      CB1    CA1    N       116.500    3.000
+ QLG      CA1    CB1    HB11    109.470    3.000
+ QLG      CA1    CB1    HB12    109.470    3.000
+ QLG      CA1    CB1    CG1     109.470    3.000
+ QLG      HB11   CB1    HB12    107.900    3.000
+ QLG      HB11   CB1    CG1     109.470    3.000
+ QLG      HB12   CB1    CG1     109.470    3.000
+ QLG      CB1    CG1    HG11    109.470    3.000
+ QLG      CB1    CG1    HG12    109.470    3.000
+ QLG      CB1    CG1    CD3     109.470    3.000
+ QLG      HG11   CG1    HG12    107.900    3.000
+ QLG      HG11   CG1    CD3     109.470    3.000
+ QLG      HG12   CG1    CD3     109.470    3.000
+ QLG      CG1    CD3    OE1     120.500    3.000
+ QLG      CG1    CD3    NE1     116.500    3.000
+ QLG      OE1    CD3    NE1     123.000    3.000
+ QLG      CD3    NE1    HE12    120.000    3.000
+ QLG      CD3    NE1    HE11    120.000    3.000
+ QLG      HE12   NE1    HE11    120.000    3.000
+ QLG      CA1    N      HN      120.000    3.000
+ QLG      C1     N2     CA2     108.000    3.000
+ QLG      N2     CA2    CB2     108.000    3.000
+ QLG      N2     CA2    C2      108.000    3.000
+ QLG      CB2    CA2    C2      117.000    3.000
+ QLG      CA2    CB2    HB2     120.000    3.000
+ QLG      CA2    CB2    CG2     120.000    3.000
+ QLG      HB2    CB2    CG2     120.000    3.000
+ QLG      CB2    CG2    HG2     108.810    3.000
+ QLG      CB2    CG2    CD2     109.470    3.000
+ QLG      CB2    CG2    CD1     109.470    3.000
+ QLG      HG2    CG2    CD2     108.340    3.000
+ QLG      HG2    CG2    CD1     108.340    3.000
+ QLG      CD2    CG2    CD1     111.000    3.000
+ QLG      CG2    CD2    HD23    109.470    3.000
+ QLG      CG2    CD2    HD22    109.470    3.000
+ QLG      CG2    CD2    HD21    109.470    3.000
+ QLG      HD23   CD2    HD22    109.470    3.000
+ QLG      HD23   CD2    HD21    109.470    3.000
+ QLG      HD22   CD2    HD21    109.470    3.000
+ QLG      CG2    CD1    HD13    109.470    3.000
+ QLG      CG2    CD1    HD12    109.470    3.000
+ QLG      CG2    CD1    HD11    109.470    3.000
+ QLG      HD13   CD1    HD12    109.470    3.000
+ QLG      HD13   CD1    HD11    109.470    3.000
+ QLG      HD12   CD1    HD11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ QLG      var_1    OXT    C      CA3    N3       150.999   20.000   3
+ QLG      var_2    C      CA3    N3     C1       -90.820   20.000   1
+ QLG      CONST_1  CA3    N3     C2     O2         0.000    0.000   0
+ QLG      CONST_2  CA3    N3     C1     N2       180.000    0.000   0
+ QLG      var_3    N3     C1     CA1    N        -91.115   20.000   1
+ QLG      var_4    C1     CA1    CB1    CG1       85.894   20.000   3
+ QLG      var_5    CA1    CB1    CG1    CD3     -177.188   20.000   3
+ QLG      var_6    CB1    CG1    CD3    NE1      179.969   20.000   3
+ QLG      CONST_3  CG1    CD3    NE1    HE11       0.000    0.000   0
+ QLG      CONST_4  C1     CA1    N      HN         0.000    0.000   0
+ QLG      CONST_5  N3     C1     N2     CA2        0.000    0.000   0
+ QLG      CONST_6  C1     N2     CA2    CB2      180.000    0.000   0
+ QLG      CONST_7  N2     CA2    C2     N3         0.000    0.000   0
+ QLG      CONST_8  N2     CA2    CB2    CG2       -0.002    0.000   0
+ QLG      var_7    CA2    CB2    CG2    CD1     -118.773   20.000   1
+ QLG      var_8    CB2    CG2    CD2    HD21      61.528   20.000   3
+ QLG      var_9    CB2    CG2    CD1    HD11     178.354   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ QLG      chir_01  CG2    CB2    CD1    CD2       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ QLG      plan-1    N         0.020
+ QLG      plan-1    CA1       0.020
+ QLG      plan-1    HN        0.020
+ QLG      plan-1    CB1       0.020
+ QLG      plan-1    C1        0.020
+ QLG      plan-2    CA2       0.020
+ QLG      plan-2    CB2       0.020
+ QLG      plan-2    C2        0.020
+ QLG      plan-2    N2        0.020
+ QLG      plan-2    C1        0.020
+ QLG      plan-2    N3        0.020
+ QLG      plan-2    CG2       0.020
+ QLG      plan-2    HB2       0.020
+ QLG      plan-2    CA1       0.020
+ QLG      plan-2    O2        0.020
+ QLG      plan-2    CA3       0.020
+ QLG      plan-3    C         0.020
+ QLG      plan-3    CA3       0.020
+ QLG      plan-3    O         0.020
+ QLG      plan-3    OXT       0.020
+ QLG      plan-4    CD3       0.020
+ QLG      plan-4    CG1       0.020
+ QLG      plan-4    NE1       0.020
+ QLG      plan-4    OE1       0.020
+ QLG      plan-4    HE12      0.020
+ QLG      plan-4    HE11      0.020
+ QLG      plan-5    NE1       0.020
+ QLG      plan-5    CD3       0.020
+ QLG      plan-5    HE11      0.020
+ QLG      plan-5    HE12      0.020
+# ------------------------------------------------------

@@ -1,0 +1,296 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MDQ      MDQ '.                                   ' non-polymer        36  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MDQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MDQ           O8     O    OP       -0.666      0.000    0.000    0.000
+ MDQ           P      P    P         0.000     -0.876   -0.646   -1.051
+ MDQ           O1P    O    OP       -0.666     -0.169   -1.856   -1.621
+ MDQ           O2P    O    OP       -0.666     -1.152    0.346   -2.159
+ MDQ           "O5'"  O    O2        0.000     -2.268   -1.105   -0.382
+ MDQ           "C5'"  C    CH2       0.000     -3.266   -1.841   -1.092
+ MDQ           "H15'" H    H         0.000     -2.846   -2.789   -1.432
+ MDQ           "H25'" H    H         0.000     -3.601   -1.261   -1.955
+ MDQ           "C4'"  C    CH1       0.000     -4.454   -2.110   -0.165
+ MDQ           "H4'"  H    H         0.000     -4.125   -2.637    0.742
+ MDQ           "C3'"  C    CH1       0.000     -5.550   -2.923   -0.901
+ MDQ           "H3'"  H    H         0.000     -5.634   -2.606   -1.950
+ MDQ           "O3'"  O    OH1       0.000     -5.290   -4.325   -0.812
+ MDQ           "HO3'" H    H         0.000     -6.030   -4.815   -1.195
+ MDQ           "C2'"  C    CH2       0.000     -6.823   -2.545   -0.106
+ MDQ           "H22'" H    H         0.000     -7.074   -3.296    0.646
+ MDQ           "H12'" H    H         0.000     -7.682   -2.387   -0.760
+ MDQ           "O4'"  O    O2        0.000     -5.122   -0.874    0.178
+ MDQ           "C1'"  C    CH1       0.000     -6.455   -1.221    0.591
+ MDQ           "H1'"  H    H         0.000     -6.487   -1.352    1.682
+ MDQ           N1     N    NR6       0.000     -7.390   -0.169    0.187
+ MDQ           C6     C    CR16      0.000     -7.427    0.244   -1.111
+ MDQ           H6     H    H         0.000     -6.765   -0.197   -1.845
+ MDQ           C5     C    CR16      0.000     -8.301    1.213   -1.473
+ MDQ           H5     H    H         0.000     -8.353    1.550   -2.501
+ MDQ           C4     C    CR6       0.000     -9.142    1.777   -0.490
+ MDQ           N4     N    NH2       0.000    -10.033    2.768   -0.829
+ MDQ           H2N4   H    H         0.000    -10.092    3.099   -1.785
+ MDQ           H1N4   H    H         0.000    -10.638    3.175   -0.125
+ MDQ           N3     N    NR6       1.000     -9.067    1.346    0.762
+ MDQ           C2     C    CR6       0.000     -8.206    0.388    1.101
+ MDQ           O2     O    O         0.000     -8.157    0.010    2.260
+ MDQ           C20    C    CH2       0.000     -9.940    1.931    1.782
+ MDQ           H161   H    H         0.000     -9.941    1.293    2.668
+ MDQ           H20    H    H         0.000    -10.956    2.008    1.389
+ MDQ           O21    O    O        -1.000     -9.462    3.232    2.130
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MDQ      O8     n/a    P      START
+ MDQ      P      O8     "O5'"  .
+ MDQ      O1P    P      .      .
+ MDQ      O2P    P      .      .
+ MDQ      "O5'"  P      "C5'"  .
+ MDQ      "C5'"  "O5'"  "C4'"  .
+ MDQ      "H15'" "C5'"  .      .
+ MDQ      "H25'" "C5'"  .      .
+ MDQ      "C4'"  "C5'"  "O4'"  .
+ MDQ      "H4'"  "C4'"  .      .
+ MDQ      "C3'"  "C4'"  "C2'"  .
+ MDQ      "H3'"  "C3'"  .      .
+ MDQ      "O3'"  "C3'"  "HO3'" .
+ MDQ      "HO3'" "O3'"  .      .
+ MDQ      "C2'"  "C3'"  "H12'" .
+ MDQ      "H22'" "C2'"  .      .
+ MDQ      "H12'" "C2'"  .      .
+ MDQ      "O4'"  "C4'"  "C1'"  .
+ MDQ      "C1'"  "O4'"  N1     .
+ MDQ      "H1'"  "C1'"  .      .
+ MDQ      N1     "C1'"  C6     .
+ MDQ      C6     N1     C5     .
+ MDQ      H6     C6     .      .
+ MDQ      C5     C6     C4     .
+ MDQ      H5     C5     .      .
+ MDQ      C4     C5     N3     .
+ MDQ      N4     C4     H1N4   .
+ MDQ      H2N4   N4     .      .
+ MDQ      H1N4   N4     .      .
+ MDQ      N3     C4     C20    .
+ MDQ      C2     N3     O2     .
+ MDQ      O2     C2     .      .
+ MDQ      C20    N3     O21    .
+ MDQ      H161   C20    .      .
+ MDQ      H20    C20    .      .
+ MDQ      O21    C20    .      END
+ MDQ      N1     C2     .    ADD
+ MDQ      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MDQ       "O5'"     P         single    1.610     0.020     1.610     0.020     
+MDQ       P         O8        deloc     1.510     0.020     1.510     0.020     
+MDQ       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+MDQ       N1        C2        single    1.410     0.020     1.410     0.020     
+MDQ       O2        C2        double    1.250     0.020     1.250     0.020     
+MDQ       C2        N3        single    1.410     0.020     1.410     0.020     
+MDQ       C20       N3        single    1.465     0.020     1.465     0.020     
+MDQ       N3        C4        double    1.337     0.020     1.337     0.020     
+MDQ       N4        C4        single    1.355     0.020     1.355     0.020     
+MDQ       H1N4      N4        single    1.016     0.010     0.899     0.007     
+MDQ       H2N4      N4        single    1.016     0.010     0.899     0.007     
+MDQ       C5        C6        double    1.390     0.020     1.390     0.020     
+MDQ       C4        C5        single    1.390     0.020     1.390     0.020     
+MDQ       H5        C5        single    1.082     0.013     0.975     0.010     
+MDQ       C6        N1        single    1.337     0.020     1.337     0.020     
+MDQ       H6        C6        single    1.082     0.013     0.975     0.010     
+MDQ       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+MDQ       O1P       P         deloc     1.510     0.020     1.510     0.020     
+MDQ       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+MDQ       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+MDQ       "H12'"    "C2'"     single    1.089     0.010     0.989     0.005     
+MDQ       "H22'"    "C2'"     single    1.089     0.010     0.989     0.005     
+MDQ       O21       C20       single    1.420     0.020     1.420     0.020     
+MDQ       H20       C20       single    1.089     0.010     0.989     0.005     
+MDQ       O2P       P         deloc     1.510     0.020     1.510     0.020     
+MDQ       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+MDQ       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+MDQ       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+MDQ       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+MDQ       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+MDQ       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+MDQ       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+MDQ       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+MDQ       "H15'"    "C5'"     single    1.089     0.010     0.989     0.005     
+MDQ       "H25'"    "C5'"     single    1.089     0.010     0.989     0.005     
+MDQ       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+MDQ       H161      C20       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MDQ      O8     P      O1P     119.900    3.000
+ MDQ      O8     P      O2P     119.900    3.000
+ MDQ      O8     P      "O5'"   108.200    3.000
+ MDQ      O1P    P      O2P     119.900    3.000
+ MDQ      O1P    P      "O5'"   108.200    3.000
+ MDQ      O2P    P      "O5'"   108.200    3.000
+ MDQ      P      "O5'"  "C5'"   120.500    3.000
+ MDQ      "O5'"  "C5'"  "H15'"  109.470    3.000
+ MDQ      "O5'"  "C5'"  "H25'"  109.470    3.000
+ MDQ      "O5'"  "C5'"  "C4'"   109.470    3.000
+ MDQ      "H15'" "C5'"  "H25'"  107.900    3.000
+ MDQ      "H15'" "C5'"  "C4'"   109.470    3.000
+ MDQ      "H25'" "C5'"  "C4'"   109.470    3.000
+ MDQ      "C5'"  "C4'"  "H4'"   108.340    3.000
+ MDQ      "C5'"  "C4'"  "C3'"   111.000    3.000
+ MDQ      "C5'"  "C4'"  "O4'"   109.470    3.000
+ MDQ      "H4'"  "C4'"  "C3'"   108.340    3.000
+ MDQ      "H4'"  "C4'"  "O4'"   109.470    3.000
+ MDQ      "C3'"  "C4'"  "O4'"   109.470    3.000
+ MDQ      "C4'"  "C3'"  "H3'"   108.340    3.000
+ MDQ      "C4'"  "C3'"  "O3'"   109.470    3.000
+ MDQ      "C4'"  "C3'"  "C2'"   111.000    3.000
+ MDQ      "H3'"  "C3'"  "O3'"   109.470    3.000
+ MDQ      "H3'"  "C3'"  "C2'"   108.340    3.000
+ MDQ      "O3'"  "C3'"  "C2'"   109.470    3.000
+ MDQ      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ MDQ      "C3'"  "C2'"  "H22'"  109.470    3.000
+ MDQ      "C3'"  "C2'"  "H12'"  109.470    3.000
+ MDQ      "C3'"  "C2'"  "C1'"   111.000    3.000
+ MDQ      "H22'" "C2'"  "H12'"  107.900    3.000
+ MDQ      "H22'" "C2'"  "C1'"   109.470    3.000
+ MDQ      "H12'" "C2'"  "C1'"   109.470    3.000
+ MDQ      "C4'"  "O4'"  "C1'"   111.800    3.000
+ MDQ      "O4'"  "C1'"  "H1'"   109.470    3.000
+ MDQ      "O4'"  "C1'"  N1      109.470    3.000
+ MDQ      "O4'"  "C1'"  "C2'"   109.470    3.000
+ MDQ      "H1'"  "C1'"  N1      109.470    3.000
+ MDQ      "H1'"  "C1'"  "C2'"   108.340    3.000
+ MDQ      N1     "C1'"  "C2'"   109.470    3.000
+ MDQ      "C1'"  N1     C6      120.000    3.000
+ MDQ      "C1'"  N1     C2      120.000    3.000
+ MDQ      C6     N1     C2      120.000    3.000
+ MDQ      N1     C6     H6      120.000    3.000
+ MDQ      N1     C6     C5      120.000    3.000
+ MDQ      H6     C6     C5      120.000    3.000
+ MDQ      C6     C5     H5      120.000    3.000
+ MDQ      C6     C5     C4      120.000    3.000
+ MDQ      H5     C5     C4      120.000    3.000
+ MDQ      C5     C4     N4      120.000    3.000
+ MDQ      C5     C4     N3      120.000    3.000
+ MDQ      N4     C4     N3      120.000    3.000
+ MDQ      C4     N4     H2N4    120.000    3.000
+ MDQ      C4     N4     H1N4    120.000    3.000
+ MDQ      H2N4   N4     H1N4    120.000    3.000
+ MDQ      C4     N3     C2      120.000    3.000
+ MDQ      C4     N3     C20     120.000    3.000
+ MDQ      C2     N3     C20     120.000    3.000
+ MDQ      N3     C2     O2      120.000    3.000
+ MDQ      N3     C2     N1      120.000    3.000
+ MDQ      O2     C2     N1      120.000    3.000
+ MDQ      N3     C20    H161    109.470    3.000
+ MDQ      N3     C20    H20     109.470    3.000
+ MDQ      N3     C20    O21     109.500    3.000
+ MDQ      H161   C20    H20     107.900    3.000
+ MDQ      H161   C20    O21     109.470    3.000
+ MDQ      H20    C20    O21     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MDQ      var_1    O8     P      "O5'"  "C5'"   -174.994   20.000   1
+ MDQ      var_2    P      "O5'"  "C5'"  "C4'"    179.994   20.000   1
+ MDQ      var_3    "O5'"  "C5'"  "C4'"  "O4'"     66.502   20.000   3
+ MDQ      var_4    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ MDQ      var_5    "C4'"  "C3'"  "O3'"  "HO3'"   174.116   20.000   1
+ MDQ      var_6    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ MDQ      var_7    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ MDQ      var_8    "C4'"  "O4'"  "C1'"  N1      -150.000   20.000   1
+ MDQ      var_9    "O4'"  "C1'"  "C2'"  "C3'"      0.000   20.000   3
+ MDQ      var_10   "O4'"  "C1'"  N1     C6        53.031   20.000   1
+ MDQ      CONST_1  "C1'"  N1     C2     N3       180.000    0.000   0
+ MDQ      CONST_2  "C1'"  N1     C6     C5       180.000    0.000   0
+ MDQ      CONST_3  N1     C6     C5     C4         0.000    0.000   0
+ MDQ      CONST_4  C6     C5     C4     N3         0.000    0.000   0
+ MDQ      CONST_5  C5     C4     N4     H1N4    -179.999    0.000   0
+ MDQ      CONST_6  C5     C4     N3     C20      180.000    0.000   0
+ MDQ      CONST_7  C4     N3     C2     O2       180.000    0.000   0
+ MDQ      var_11   C4     N3     C20    O21      -75.040   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MDQ      chir_01  "C1'"  N1     "C2'"  "O4'"     negativ
+ MDQ      chir_02  "C3'"  "C2'"  "O3'"  "C4'"     positiv
+ MDQ      chir_03  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MDQ      plan-1    N1        0.020
+ MDQ      plan-1    C2        0.020
+ MDQ      plan-1    C6        0.020
+ MDQ      plan-1    "C1'"     0.020
+ MDQ      plan-1    N3        0.020
+ MDQ      plan-1    C4        0.020
+ MDQ      plan-1    C5        0.020
+ MDQ      plan-1    O2        0.020
+ MDQ      plan-1    C20       0.020
+ MDQ      plan-1    N4        0.020
+ MDQ      plan-1    H5        0.020
+ MDQ      plan-1    H6        0.020
+ MDQ      plan-1    H2N4      0.020
+ MDQ      plan-1    H1N4      0.020
+ MDQ      plan-2    N4        0.020
+ MDQ      plan-2    C4        0.020
+ MDQ      plan-2    H1N4      0.020
+ MDQ      plan-2    H2N4      0.020
+# ------------------------------------------------------

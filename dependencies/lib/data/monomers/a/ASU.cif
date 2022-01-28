@@ -1,0 +1,194 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ASU      ASU '4'-THIO-2'4'-DIDEOXYRIBOFURANOSE-5'-' DNA                22  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ASU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ASU           OP3    O    OP       -0.666      0.000    0.000    0.000
+ ASU           P      P    P         0.000     -0.578   -0.001    1.398
+ ASU           OP1    O    OP       -0.666     -0.692    1.423    1.897
+ ASU           OP2    O    OP       -0.666      0.330   -0.787    2.319
+ ASU           "O5'"  O    O2        0.000     -2.037   -0.679    1.375
+ ASU           "C5'"  C    CH2       0.000     -2.844    0.103    0.495
+ ASU           "H5'"  H    H         0.000     -2.399    0.103   -0.502
+ ASU           "H5''" H    H         0.000     -2.898    1.128    0.868
+ ASU           "C4'"  C    CH1       0.000     -4.251   -0.491    0.427
+ ASU           "H4'"  H    H         0.000     -4.214   -1.543    0.111
+ ASU           "C3'"  C    CH1       0.000     -5.152    0.335   -0.522
+ ASU           "H3'"  H    H         0.000     -4.785    1.371   -0.562
+ ASU           "C2'"  C    CH2       0.000     -6.601    0.327   -0.007
+ ASU           "H2'"  H    H         0.000     -7.049   -0.656   -0.163
+ ASU           "H2''" H    H         0.000     -7.190    1.082   -0.533
+ ASU           "C1'"  C    CH1       0.000     -6.577    0.653    1.513
+ ASU           "H1'"  H    H         0.000     -6.421    1.727    1.687
+ ASU           "S4'"  S    S2        0.000     -5.111   -0.327    2.045
+ ASU           "O1'"  O    OH1       0.000     -7.767    0.193    2.157
+ ASU           "HO'1" H    H         0.000     -7.701    0.355    3.108
+ ASU           "O3'"  O    OH1       0.000     -5.110   -0.234   -1.831
+ ASU           "HO'3" H    H         0.000     -5.658    0.325   -2.398
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ASU      OP3    n/a    P      START
+ ASU      P      OP3    "O5'"  .
+ ASU      OP1    P      .      .
+ ASU      OP2    P      .      .
+ ASU      "O5'"  P      "C5'"  .
+ ASU      "C5'"  "O5'"  "C4'"  .
+ ASU      "H5'"  "C5'"  .      .
+ ASU      "H5''" "C5'"  .      .
+ ASU      "C4'"  "C5'"  "C3'"  .
+ ASU      "H4'"  "C4'"  .      .
+ ASU      "C3'"  "C4'"  "O3'"  .
+ ASU      "H3'"  "C3'"  .      .
+ ASU      "C2'"  "C3'"  "C1'"  .
+ ASU      "H2'"  "C2'"  .      .
+ ASU      "H2''" "C2'"  .      .
+ ASU      "C1'"  "C2'"  "O1'"  .
+ ASU      "H1'"  "C1'"  .      .
+ ASU      "S4'"  "C1'"  .      .
+ ASU      "O1'"  "C1'"  "HO'1" .
+ ASU      "HO'1" "O1'"  .      .
+ ASU      "O3'"  "C3'"  .      END
+ ASU      "HO'3" "O3'"  .      .
+ ASU      "S4'"  "C4'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ASU       OP1       P         deloc     1.510     0.020     1.510     0.020     
+ASU       OP2       P         deloc     1.510     0.020     1.510     0.020     
+ASU       P         OP3       deloc     1.510     0.020     1.510     0.020     
+ASU       "O5'"     P         single    1.610     0.020     1.610     0.020     
+ASU       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+ASU       "S4'"     "C4'"     single    1.765     0.020     1.765     0.020     
+ASU       "S4'"     "C1'"     single    1.765     0.020     1.765     0.020     
+ASU       "O1'"     "C1'"     single    1.432     0.020     1.432     0.020     
+ASU       "HO'1"    "O1'"     single    0.970     0.012     0.839     0.014     
+ASU       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+ASU       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+ASU       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+ASU       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+ASU       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+ASU       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+ASU       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+ASU       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+ASU       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+ASU       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+ASU       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+ASU       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+ASU       "HO'3"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ASU      OP3    P      OP1     119.900    3.000
+ ASU      OP3    P      OP2     119.900    3.000
+ ASU      OP3    P      "O5'"   108.200    3.000
+ ASU      OP1    P      OP2     119.900    3.000
+ ASU      OP1    P      "O5'"   108.200    3.000
+ ASU      OP2    P      "O5'"   108.200    3.000
+ ASU      P      "O5'"  "C5'"   120.500    3.000
+ ASU      "O5'"  "C5'"  "H5'"   109.470    3.000
+ ASU      "O5'"  "C5'"  "H5''"  109.470    3.000
+ ASU      "O5'"  "C5'"  "C4'"   109.470    3.000
+ ASU      "H5'"  "C5'"  "H5''"  107.900    3.000
+ ASU      "H5'"  "C5'"  "C4'"   109.470    3.000
+ ASU      "H5''" "C5'"  "C4'"   109.470    3.000
+ ASU      "C5'"  "C4'"  "H4'"   108.340    3.000
+ ASU      "C5'"  "C4'"  "C3'"   111.000    3.000
+ ASU      "C5'"  "C4'"  "S4'"   109.500    3.000
+ ASU      "H4'"  "C4'"  "C3'"   108.340    3.000
+ ASU      "H4'"  "C4'"  "S4'"   109.500    3.000
+ ASU      "C3'"  "C4'"  "S4'"   109.500    3.000
+ ASU      "C4'"  "C3'"  "H3'"   108.340    3.000
+ ASU      "C4'"  "C3'"  "C2'"   111.000    3.000
+ ASU      "C4'"  "C3'"  "O3'"   109.470    3.000
+ ASU      "H3'"  "C3'"  "C2'"   108.340    3.000
+ ASU      "H3'"  "C3'"  "O3'"   109.470    3.000
+ ASU      "C2'"  "C3'"  "O3'"   109.470    3.000
+ ASU      "C3'"  "C2'"  "H2'"   109.470    3.000
+ ASU      "C3'"  "C2'"  "H2''"  109.470    3.000
+ ASU      "C3'"  "C2'"  "C1'"   111.000    3.000
+ ASU      "H2'"  "C2'"  "H2''"  107.900    3.000
+ ASU      "H2'"  "C2'"  "C1'"   109.470    3.000
+ ASU      "H2''" "C2'"  "C1'"   109.470    3.000
+ ASU      "C2'"  "C1'"  "H1'"   108.340    3.000
+ ASU      "C2'"  "C1'"  "S4'"   109.500    3.000
+ ASU      "C2'"  "C1'"  "O1'"   109.470    3.000
+ ASU      "H1'"  "C1'"  "S4'"   109.500    3.000
+ ASU      "H1'"  "C1'"  "O1'"   109.470    3.000
+ ASU      "S4'"  "C1'"  "O1'"   109.500    3.000
+ ASU      "C1'"  "S4'"  "C4'"    99.546    3.000
+ ASU      "C1'"  "O1'"  "HO'1"  109.470    3.000
+ ASU      "C3'"  "O3'"  "HO'3"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ASU      var_1    OP3    P      "O5'"  "C5'"    -60.008   20.000   1
+ ASU      var_2    P      "O5'"  "C5'"  "C4'"    179.980   20.000   1
+ ASU      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -179.939   20.000   3
+ ASU      var_4    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ ASU      var_5    "C4'"  "C3'"  "C2'"  "C1'"     60.000   20.000   3
+ ASU      var_6    "C3'"  "C2'"  "C1'"  "O1'"   -150.000   20.000   3
+ ASU      var_7    "C2'"  "C1'"  "S4'"  "C4'"     30.000   20.000   1
+ ASU      var_8    "C1'"  "S4'"  "C4'"  "C5'"    120.000   20.000   1
+ ASU      var_9    "C2'"  "C1'"  "O1'"  "HO'1"   176.274   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ASU      chir_01  "C4'"  "S4'"  "C5'"  "C3'"     positiv
+ ASU      chir_02  "C1'"  "S4'"  "O1'"  "C2'"     positiv
+ ASU      chir_03  "C3'"  "C2'"  "C4'"  "O3'"     negativ
+# ------------------------------------------------------

@@ -1,0 +1,101 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+202      202 'BROMIC ACID                         ' non-polymer         5   4 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_202
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 202           O3     O    O         0.000      0.000    0.000    0.000
+ 202           BR     BR   BR        0.000     -1.289    0.902   -0.340
+ 202           O2     O    O         0.000     -2.769    0.319   -0.091
+ 202           O1     O    OH1       0.000     -1.081    2.526   -0.986
+ 202           H1     H    H         0.000     -0.198    2.826   -1.116
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 202      O3     n/a    BR     START
+ 202      BR     O3     O1     .
+ 202      O2     BR     .      .
+ 202      O1     BR     H1     .
+ 202      H1     O1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+202       O1        BR        single    1.984     0.020     1.984     0.020     
+202       O2        BR        double    1.790     0.020     1.790     0.020     
+202       BR        O3        double    1.790     0.020     1.790     0.020     
+202       H1        O1        single    0.970     0.012     0.967     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 202      O3     BR     O2      120.000    3.000
+ 202      O3     BR     O1      120.000    3.000
+ 202      O2     BR     O1      120.000    3.000
+ 202      BR     O1     H1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 202      var_1    H1     O1     BR     O3         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ 202      chir_01  BR     .      .      O3        cross3
+                   O2     O1     .      .      .
+# ------------------------------------------------------

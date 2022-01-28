@@ -1,0 +1,257 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZAD      ZAD '(S)-1'-(2',3'-DIHYDROXYPROPYL)-ADENI' non-polymer        29  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ZAD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ZAD           OXT    O    OP       -0.666      0.000    0.000    0.000
+ ZAD           P      P    P         0.000      0.909    1.190   -0.219
+ ZAD           O2P    O    OP       -0.666      1.298    1.835    1.093
+ ZAD           O1P    O    OP       -0.666      2.006    0.726   -1.152
+ ZAD           O3G    O    O2        0.000     -0.072    2.168   -1.008
+ ZAD           C3G    C    CH2       0.000      0.218    3.560   -1.116
+ ZAD           H3G1   H    H         0.000      1.262    3.722   -0.843
+ ZAD           H3G2   H    H         0.000     -0.427    4.107   -0.424
+ ZAD           C2G    C    CH1       0.000     -0.021    4.056   -2.533
+ ZAD           H2G    H    H         0.000     -0.019    5.155   -2.568
+ ZAD           O2G    O    OH1       0.000      0.961    3.520   -3.411
+ ZAD           HA     H    H         0.000      0.800    2.574   -3.532
+ ZAD           C1G    C    CH2       0.000     -1.359    3.504   -2.989
+ ZAD           H1G1   H    H         0.000     -2.124    3.892   -2.313
+ ZAD           H1G2   H    H         0.000     -1.315    2.416   -2.901
+ ZAD           N9     N    NR5       0.000     -1.692    3.871   -4.368
+ ZAD           C8     C    CR15      0.000     -1.432    3.151   -5.458
+ ZAD           H8     H    H         0.000     -0.906    2.205   -5.456
+ ZAD           N7     N    NRD5      0.000     -1.913    3.758   -6.567
+ ZAD           C5     C    CR56      0.000     -2.511    4.915   -6.121
+ ZAD           C4     C    CR56      0.000     -2.367    4.991   -4.746
+ ZAD           C6     C    CR6       0.000     -3.148    5.963   -6.787
+ ZAD           N6     N    NH2       0.000     -3.333    5.946   -8.112
+ ZAD           H6N2   H    H         0.000     -2.755    6.519   -8.704
+ ZAD           H6N1   H    H         0.000     -4.050    5.360   -8.507
+ ZAD           N1     N    NRD6      0.000     -3.618    6.974   -6.029
+ ZAD           C2     C    CR16      0.000     -3.471    7.000   -4.704
+ ZAD           H2     H    H         0.000     -3.864    7.847   -4.156
+ ZAD           N3     N    NRD6      0.000     -2.855    6.020   -4.019
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ZAD      OXT    n/a    P      START
+ ZAD      P      OXT    O3G    .
+ ZAD      O2P    P      .      .
+ ZAD      O1P    P      .      .
+ ZAD      O3G    P      C3G    .
+ ZAD      C3G    O3G    C2G    .
+ ZAD      H3G1   C3G    .      .
+ ZAD      H3G2   C3G    .      .
+ ZAD      C2G    C3G    C1G    .
+ ZAD      H2G    C2G    .      .
+ ZAD      O2G    C2G    HA     .
+ ZAD      HA     O2G    .      .
+ ZAD      C1G    C2G    N9     .
+ ZAD      H1G1   C1G    .      .
+ ZAD      H1G2   C1G    .      .
+ ZAD      N9     C1G    C8     .
+ ZAD      C8     N9     N7     .
+ ZAD      H8     C8     .      .
+ ZAD      N7     C8     C5     .
+ ZAD      C5     N7     C6     .
+ ZAD      C4     C5     .      .
+ ZAD      C6     C5     N1     .
+ ZAD      N6     C6     H6N1   .
+ ZAD      H6N2   N6     .      .
+ ZAD      H6N1   N6     .      .
+ ZAD      N1     C6     C2     .
+ ZAD      C2     N1     N3     .
+ ZAD      H2     C2     .      .
+ ZAD      N3     C2     .      END
+ ZAD      N9     C4     .    ADD
+ ZAD      C4     N3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZAD       O2P       P         deloc     1.510     0.020     1.510     0.020     
+ZAD       O1P       P         deloc     1.510     0.020     1.510     0.020     
+ZAD       O3G       P         single    1.610     0.020     1.610     0.020     
+ZAD       P         OXT       deloc     1.510     0.020     1.510     0.020     
+ZAD       C3G       O3G       single    1.426     0.020     1.426     0.020     
+ZAD       C2G       C3G       single    1.524     0.020     1.524     0.020     
+ZAD       O2G       C2G       single    1.432     0.020     1.432     0.020     
+ZAD       C1G       C2G       single    1.524     0.020     1.524     0.020     
+ZAD       N9        C1G       single    1.462     0.020     1.462     0.020     
+ZAD       N9        C4        single    1.337     0.020     1.337     0.020     
+ZAD       C8        N9        single    1.337     0.020     1.337     0.020     
+ZAD       C4        N3        single    1.355     0.020     1.355     0.020     
+ZAD       C4        C5        double    1.490     0.020     1.490     0.020     
+ZAD       N3        C2        double    1.337     0.020     1.337     0.020     
+ZAD       C2        N1        single    1.337     0.020     1.337     0.020     
+ZAD       N1        C6        double    1.350     0.020     1.350     0.020     
+ZAD       N6        C6        single    1.355     0.020     1.355     0.020     
+ZAD       C6        C5        single    1.490     0.020     1.490     0.020     
+ZAD       C5        N7        single    1.350     0.020     1.350     0.020     
+ZAD       N7        C8        double    1.350     0.020     1.350     0.020     
+ZAD       H3G1      C3G       single    1.089     0.010     0.989     0.005     
+ZAD       H3G2      C3G       single    1.089     0.010     0.989     0.005     
+ZAD       H2G       C2G       single    1.089     0.010     0.989     0.005     
+ZAD       HA        O2G       single    0.970     0.012     0.839     0.014     
+ZAD       H1G1      C1G       single    1.089     0.010     0.989     0.005     
+ZAD       H1G2      C1G       single    1.089     0.010     0.989     0.005     
+ZAD       H8        C8        single    1.082     0.013     0.975     0.010     
+ZAD       H2        C2        single    1.082     0.013     0.975     0.010     
+ZAD       H6N1      N6        single    1.016     0.010     0.899     0.007     
+ZAD       H6N2      N6        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ZAD      OXT    P      O2P     119.900    3.000
+ ZAD      OXT    P      O1P     119.900    3.000
+ ZAD      OXT    P      O3G     108.200    3.000
+ ZAD      O2P    P      O1P     119.900    3.000
+ ZAD      O2P    P      O3G     108.200    3.000
+ ZAD      O1P    P      O3G     108.200    3.000
+ ZAD      P      O3G    C3G     120.500    3.000
+ ZAD      O3G    C3G    H3G1    109.470    3.000
+ ZAD      O3G    C3G    H3G2    109.470    3.000
+ ZAD      O3G    C3G    C2G     109.470    3.000
+ ZAD      H3G1   C3G    H3G2    107.900    3.000
+ ZAD      H3G1   C3G    C2G     109.470    3.000
+ ZAD      H3G2   C3G    C2G     109.470    3.000
+ ZAD      C3G    C2G    H2G     108.340    3.000
+ ZAD      C3G    C2G    O2G     109.470    3.000
+ ZAD      C3G    C2G    C1G     109.470    3.000
+ ZAD      H2G    C2G    O2G     109.470    3.000
+ ZAD      H2G    C2G    C1G     108.340    3.000
+ ZAD      O2G    C2G    C1G     109.470    3.000
+ ZAD      C2G    O2G    HA      109.470    3.000
+ ZAD      C2G    C1G    H1G1    109.470    3.000
+ ZAD      C2G    C1G    H1G2    109.470    3.000
+ ZAD      C2G    C1G    N9      109.500    3.000
+ ZAD      H1G1   C1G    H1G2    107.900    3.000
+ ZAD      H1G1   C1G    N9      109.500    3.000
+ ZAD      H1G2   C1G    N9      109.500    3.000
+ ZAD      C1G    N9     C8      126.000    3.000
+ ZAD      C1G    N9     C4      126.000    3.000
+ ZAD      C8     N9     C4      108.000    3.000
+ ZAD      N9     C8     H8      126.000    3.000
+ ZAD      N9     C8     N7      108.000    3.000
+ ZAD      H8     C8     N7      126.000    3.000
+ ZAD      C8     N7     C5      108.000    3.000
+ ZAD      N7     C5     C4      108.000    3.000
+ ZAD      N7     C5     C6      132.000    3.000
+ ZAD      C4     C5     C6      120.000    3.000
+ ZAD      C5     C4     N9      108.000    3.000
+ ZAD      C5     C4     N3      120.000    3.000
+ ZAD      N9     C4     N3      132.000    3.000
+ ZAD      C5     C6     N6      120.000    3.000
+ ZAD      C5     C6     N1      120.000    3.000
+ ZAD      N6     C6     N1      120.000    3.000
+ ZAD      C6     N6     H6N2    120.000    3.000
+ ZAD      C6     N6     H6N1    120.000    3.000
+ ZAD      H6N2   N6     H6N1    120.000    3.000
+ ZAD      C6     N1     C2      120.000    3.000
+ ZAD      N1     C2     H2      120.000    3.000
+ ZAD      N1     C2     N3      120.000    3.000
+ ZAD      H2     C2     N3      120.000    3.000
+ ZAD      C2     N3     C4      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ZAD      var_1    OXT    P      O3G    C3G      162.681   20.000   1
+ ZAD      var_2    P      O3G    C3G    C2G      135.814   20.000   1
+ ZAD      var_3    O3G    C3G    C2G    C1G       46.007   20.000   3
+ ZAD      var_4    C3G    C2G    O2G    HA        70.844   20.000   1
+ ZAD      var_5    C3G    C2G    C1G    N9      -177.931   20.000   3
+ ZAD      var_6    C2G    C1G    N9     C8        93.047   20.000   1
+ ZAD      CONST_1  C1G    N9     C4     C5       180.000    0.000   0
+ ZAD      CONST_2  C1G    N9     C8     N7       180.000    0.000   0
+ ZAD      CONST_3  N9     C8     N7     C5         0.000    0.000   0
+ ZAD      CONST_4  C8     N7     C5     C6       180.000    0.000   0
+ ZAD      CONST_5  N7     C5     C4     N9         0.000    0.000   0
+ ZAD      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ ZAD      CONST_7  N7     C5     C6     N1       180.000    0.000   0
+ ZAD      CONST_8  C5     C6     N6     H6N1      75.445    0.000   0
+ ZAD      CONST_9  C5     C6     N1     C2         0.000    0.000   0
+ ZAD      CONST_10 C6     N1     C2     N3         0.000    0.000   0
+ ZAD      CONST_11 N1     C2     N3     C4         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ZAD      chir_01  C2G    C3G    O2G    C1G       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ZAD      plan-1    N9        0.020
+ ZAD      plan-1    C1G       0.020
+ ZAD      plan-1    C4        0.020
+ ZAD      plan-1    C8        0.020
+ ZAD      plan-1    N7        0.020
+ ZAD      plan-1    N3        0.020
+ ZAD      plan-1    C5        0.020
+ ZAD      plan-1    C2        0.020
+ ZAD      plan-1    N1        0.020
+ ZAD      plan-1    C6        0.020
+ ZAD      plan-1    H2        0.020
+ ZAD      plan-1    N6        0.020
+ ZAD      plan-1    H8        0.020
+ ZAD      plan-1    H6N2      0.020
+ ZAD      plan-1    H6N1      0.020
+ ZAD      plan-2    N6        0.020
+ ZAD      plan-2    C6        0.020
+ ZAD      plan-2    H6N1      0.020
+ ZAD      plan-2    H6N2      0.020
+# ------------------------------------------------------

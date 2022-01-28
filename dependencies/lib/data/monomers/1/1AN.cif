@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1AN     1AN     2-FLUOROANILINE     NON-POLYMER     14     8     .     
+#
+data_comp_1AN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+1AN     C4      C       CR16    0       26.041      5.660       5.563       
+1AN     C5      C       CR16    0       26.854      6.756       5.815       
+1AN     C3      C       CR16    0       26.019      5.064       4.312       
+1AN     C6      C       CR16    0       27.668      7.280       4.814       
+1AN     C2      C       CR6     0       26.819      5.571       3.310       
+1AN     C1      C       CR6     0       27.668      6.696       3.531       
+1AN     N       N       NH2     0       28.457      7.182       2.511       
+1AN     F2      F       F       0       26.797      4.986       2.086       
+1AN     HC4     H       H       0       25.496      5.316       6.249       
+1AN     HC5     H       H       0       26.858      7.150       6.672       
+1AN     HC3     H       H       0       25.466      4.322       4.146       
+1AN     HC6     H       H       0       28.215      8.022       4.994       
+1AN     HN1     H       H       0       28.441      6.803       1.719       
+1AN     HN2     H       H       0       28.977      7.873       2.657       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1AN       C4        C5        DOUBLE    y         1.376     0.012     1.376     0.012     
+1AN       C4        C3        SINGLE    y         1.378     0.010     1.378     0.010     
+1AN       C5        C6        SINGLE    y         1.386     0.010     1.386     0.010     
+1AN       C3        C2        DOUBLE    y         1.370     0.011     1.370     0.011     
+1AN       C6        C1        DOUBLE    y         1.396     0.016     1.396     0.016     
+1AN       C2        C1        SINGLE    y         1.403     0.020     1.403     0.020     
+1AN       C2        F2        SINGLE    n         1.357     0.011     1.357     0.011     
+1AN       C1        N         SINGLE    n         1.373     0.020     1.373     0.020     
+1AN       C4        HC4       SINGLE    n         1.082     0.013     0.941     0.020     
+1AN       C5        HC5       SINGLE    n         1.082     0.013     0.943     0.017     
+1AN       C3        HC3       SINGLE    n         1.082     0.013     0.940     0.014     
+1AN       C6        HC6       SINGLE    n         1.082     0.013     0.939     0.013     
+1AN       N         HN1       SINGLE    n         1.016     0.010     0.877     0.020     
+1AN       N         HN2       SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+1AN          C5          C4          C3     120.282    1.50
+1AN          C5          C4         HC4     120.016    1.50
+1AN          C3          C4         HC4     119.702    1.50
+1AN          C4          C5          C6     120.554    1.50
+1AN          C4          C5         HC5     119.864    1.50
+1AN          C6          C5         HC5     119.582    1.50
+1AN          C4          C3          C2     118.634    1.50
+1AN          C4          C3         HC3     120.871    1.50
+1AN          C2          C3         HC3     120.495    1.50
+1AN          C5          C6          C1     120.124    1.50
+1AN          C5          C6         HC6     119.936    1.50
+1AN          C1          C6         HC6     119.940    1.50
+1AN          C3          C2          C1     121.808    1.82
+1AN          C3          C2          F2     119.060    1.50
+1AN          C1          C2          F2     119.132    1.50
+1AN          C6          C1          C2     118.599    1.59
+1AN          C6          C1           N     121.698    1.50
+1AN          C2          C1           N     119.703    1.50
+1AN          C1           N         HN1     119.789    2.29
+1AN          C1           N         HN2     119.789    2.29
+1AN         HN1           N         HN2     120.421    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+1AN       const_sp2_sp2_1          C3          C4          C5          C6       0.000   10.00     2
+1AN              const_21          C2          C3          C4          C5       0.000   10.00     2
+1AN       const_sp2_sp2_5          C4          C5          C6          C1       0.000   10.00     2
+1AN              const_19          F2          C2          C3          C4     180.000   10.00     2
+1AN              const_11           N          C1          C6          C5     180.000   10.00     2
+1AN              const_16           N          C1          C2          F2       0.000   10.00     2
+1AN             sp2_sp2_1          C6          C1           N         HN1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+1AN    plan-1          C1   0.020
+1AN    plan-1          C2   0.020
+1AN    plan-1          C3   0.020
+1AN    plan-1          C4   0.020
+1AN    plan-1          C5   0.020
+1AN    plan-1          C6   0.020
+1AN    plan-1          F2   0.020
+1AN    plan-1         HC3   0.020
+1AN    plan-1         HC4   0.020
+1AN    plan-1         HC5   0.020
+1AN    plan-1         HC6   0.020
+1AN    plan-1           N   0.020
+1AN    plan-2          C1   0.020
+1AN    plan-2         HN1   0.020
+1AN    plan-2         HN2   0.020
+1AN    plan-2           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+1AN SMILES           ACDLabs              10.04 Fc1ccccc1N
+1AN SMILES_CANONICAL CACTVS               3.341 Nc1ccccc1F
+1AN SMILES           CACTVS               3.341 Nc1ccccc1F
+1AN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(c(c1)N)F"
+1AN SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(c(c1)N)F"
+1AN InChI            InChI                1.03  "InChI=1S/C6H6FN/c7-5-3-1-2-4-6(5)8/h1-4H,8H2"
+1AN InChIKey         InChI                1.03  FTZQXOJYPFINKJ-UHFFFAOYSA-N
+1AN ?                acedrg               190         "dictionary generator"                  
+1AN ?                acedrg_database      11          "data source"                           
+1AN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+1AN ?                refmac5              5.8.0158    "optimization tool"                     

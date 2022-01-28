@@ -1,0 +1,123 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FU1     FU1      tetrahydrofuran     NON-POLYMER     13     5     .     
+#
+data_comp_FU1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FU1     O1      O       O2      0       5.645       2.762       26.369      
+FU1     C2      C       CH2     0       4.370       3.249       28.275      
+FU1     C3      C       CH2     0       5.435       4.286       28.137      
+FU1     C4      C       CH2     0       4.820       2.164       27.361      
+FU1     C5      C       CH2     0       5.912       4.108       26.738      
+FU1     H2      H       H       0       3.495       3.603       28.000      
+FU1     H2A     H       H       0       4.310       2.928       29.202      
+FU1     H3      H       H       0       6.162       4.133       28.780      
+FU1     H3A     H       H       0       5.069       5.188       28.274      
+FU1     H4      H       H       0       4.045       1.729       26.941      
+FU1     H4A     H       H       0       5.326       1.485       27.860      
+FU1     H5      H       H       0       5.441       4.726       26.136      
+FU1     H5A     H       H       0       6.877       4.291       26.681      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FU1       O1        C5        SINGLE    n         1.420     0.020     1.420     0.020     
+FU1       O1        C4        SINGLE    n         1.420     0.020     1.420     0.020     
+FU1       C2        C4        SINGLE    n         1.489     0.020     1.489     0.020     
+FU1       C2        C3        SINGLE    n         1.495     0.020     1.495     0.020     
+FU1       C3        C5        SINGLE    n         1.489     0.020     1.489     0.020     
+FU1       C2        H2        SINGLE    n         1.089     0.010     0.983     0.014     
+FU1       C2        H2A       SINGLE    n         1.089     0.010     0.983     0.014     
+FU1       C3        H3        SINGLE    n         1.089     0.010     0.983     0.014     
+FU1       C3        H3A       SINGLE    n         1.089     0.010     0.983     0.014     
+FU1       C4        H4        SINGLE    n         1.089     0.010     0.983     0.014     
+FU1       C4        H4A       SINGLE    n         1.089     0.010     0.983     0.014     
+FU1       C5        H5        SINGLE    n         1.089     0.010     0.983     0.014     
+FU1       C5        H5A       SINGLE    n         1.089     0.010     0.983     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FU1          C5          O1          C4     107.493    3.00
+FU1          C4          C2          C3     103.737    2.89
+FU1          C4          C2          H2     111.002    1.50
+FU1          C4          C2         H2A     111.002    1.50
+FU1          C3          C2          H2     110.951    1.50
+FU1          C3          C2         H2A     110.951    1.50
+FU1          H2          C2         H2A     109.004    1.50
+FU1          C2          C3          C5     103.737    2.89
+FU1          C2          C3          H3     110.951    1.50
+FU1          C2          C3         H3A     110.951    1.50
+FU1          C5          C3          H3     111.002    1.50
+FU1          C5          C3         H3A     111.002    1.50
+FU1          H3          C3         H3A     109.004    1.50
+FU1          O1          C4          C2     106.787    3.00
+FU1          O1          C4          H4     110.289    1.50
+FU1          O1          C4         H4A     110.289    1.50
+FU1          C2          C4          H4     110.412    1.50
+FU1          C2          C4         H4A     110.412    1.50
+FU1          H4          C4         H4A     108.637    1.50
+FU1          O1          C5          C3     106.787    3.00
+FU1          O1          C5          H5     110.289    1.50
+FU1          O1          C5         H5A     110.289    1.50
+FU1          C3          C5          H5     110.412    1.50
+FU1          C3          C5         H5A     110.412    1.50
+FU1          H5          C5         H5A     108.637    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FU1            sp3_sp3_31          C2          C4          O1          C5     180.000   10.00     3
+FU1             sp3_sp3_1          C3          C5          O1          C4      60.000   10.00     3
+FU1            sp3_sp3_13          C4          C2          C3          C5      60.000   10.00     3
+FU1            sp3_sp3_22          C3          C2          C4          O1     -60.000   10.00     3
+FU1             sp3_sp3_4          C2          C3          C5          O1     -60.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FU1 SMILES           ACDLabs              12.01 O1CCCC1
+FU1 SMILES_CANONICAL CACTVS               3.370 C1CCOC1
+FU1 SMILES           CACTVS               3.370 C1CCOC1
+FU1 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 C1CCOC1
+FU1 SMILES           "OpenEye OEToolkits" 1.7.0 C1CCOC1
+FU1 InChI            InChI                1.03  InChI=1S/C4H8O/c1-2-4-5-3-1/h1-4H2
+FU1 InChIKey         InChI                1.03  WYURNTSHIVDZCO-UHFFFAOYSA-N
+FU1 ?                acedrg               202         "dictionary generator"                  
+FU1 ?                acedrg_database      11          "data source"                           
+FU1 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FU1 ?                refmac5              5.8.0189    "optimization tool"                     

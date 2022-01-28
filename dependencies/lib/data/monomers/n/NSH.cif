@@ -1,0 +1,929 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NSH      NSH 'Nosiheptide                         ' non-polymer       125  82 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NSH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NSH           O12    O    O         0.000      0.000    0.000    0.000
+ NSH           C51    C    C         0.000     -0.106   -0.333    1.164
+ NSH           N13    N    NH2       0.000      0.759   -1.221    1.693
+ NSH           HN1A   H    H         0.000      0.674   -1.502    2.662
+ NSH           HN13   H    H         0.000      1.499   -1.614    1.124
+ NSH           C49    C    C         0.000     -1.182    0.235    1.999
+ NSH           C50    C    C2        0.000     -1.299   -0.131    3.278
+ NSH           H50A   H    H         0.000     -2.133    0.217    3.870
+ NSH           H50    H    H         0.000     -0.560   -0.777    3.729
+ NSH           N12    N    NH1       0.000     -2.082    1.157    1.449
+ NSH           HN12   H    H         0.000     -3.075    0.976    1.481
+ NSH           C48    C    C         0.000     -1.621    2.288    0.877
+ NSH           O11    O    O         0.000     -0.424    2.464    0.756
+ NSH           C47    C    CR5       0.000     -2.569    3.308    0.398
+ NSH           C46    C    CR15      0.000     -2.161    4.470   -0.188
+ NSH           H46    H    H         0.000     -1.132    4.760   -0.361
+ NSH           S1     S    S2        0.000     -3.538    5.395   -0.608
+ NSH           N11    N    NRD5      0.000     -3.883    3.169    0.505
+ NSH           C45    C    CR5       0.000     -4.597    4.148    0.039
+ NSH           C1     C    CR6       0.000     -6.073    4.206    0.053
+ NSH           C2     C    CR6       0.000     -6.730    5.321   -0.480
+ NSH           O1     O    OH1       0.000     -6.018    6.361   -0.986
+ NSH           HO1    H    H         0.000     -5.855    6.211   -1.927
+ NSH           C3     C    CR16      0.000     -8.108    5.350   -0.485
+ NSH           H3     H    H         0.000     -8.635    6.201   -0.899
+ NSH           C4     C    CR6       0.000     -8.832    4.256    0.058
+ NSH           C6     C    CR5       0.000    -10.291    4.360   -0.090
+ NSH           C5     C    CR6       0.000     -8.102    3.201    0.619
+ NSH           N1     N    NRD6      0.000     -6.763    3.211    0.566
+ NSH           C31    C    CR5       0.000     -8.665    2.020    1.306
+ NSH           C32    C    CR15      0.000     -9.894    1.899    1.827
+ NSH           H32    H    H         0.000    -10.682    2.640    1.776
+ NSH           S3     S    S2        0.000    -10.005    0.322    2.610
+ NSH           N9     N    NRD5      0.000     -7.887    0.952    1.499
+ NSH           C30    C    CR5       0.000     -8.396   -0.030    2.153
+ NSH           C29    C    CH1       0.000     -7.667   -1.311    2.470
+ NSH           H29    H    H         0.000     -6.938   -1.124    3.271
+ NSH           C33    C    CH2       0.000     -6.931   -1.808    1.224
+ NSH           H33A   H    H         0.000     -6.027   -2.341    1.528
+ NSH           H33    H    H         0.000     -6.656   -0.953    0.603
+ NSH           N8     N    NH1       0.000     -8.627   -2.327    2.917
+ NSH           HN8    H    H         0.000     -8.389   -2.951    3.674
+ NSH           C28    C    C         0.000     -9.822   -2.424    2.317
+ NSH           O9     O    O         0.000    -10.095   -1.642    1.426
+ NSH           C27    C    CR5       0.000    -10.817   -3.439    2.694
+ NSH           C26    C    CR15      0.000    -10.659   -4.328    3.697
+ NSH           H26    H    H         0.000     -9.790   -4.408    4.338
+ NSH           S5     S    S2        0.000    -12.057   -5.309    3.790
+ NSH           N7     N    NRD5      0.000    -11.983   -3.554    2.051
+ NSH           C25    C    CR5       0.000    -12.767   -4.476    2.481
+ NSH           C21    C    CH1       0.000    -14.125   -4.770    1.884
+ NSH           H21    H    H         0.000    -14.664   -5.493    2.512
+ NSH           C22    C    CH2       0.000    -13.941   -5.334    0.472
+ NSH           H22    H    H         0.000    -14.174   -4.559   -0.261
+ NSH           H22A   H    H         0.000    -14.615   -6.182    0.331
+ NSH           C23    C    CH1       0.000    -12.494   -5.795    0.287
+ NSH           H23    H    H         0.000    -12.335   -6.730    0.843
+ NSH           O6     O    OH1       0.000    -11.608   -4.790    0.785
+ NSH           HO6    H    H         0.000    -10.705   -5.135    0.798
+ NSH           C24    C    C         0.000    -12.218   -6.027   -1.172
+ NSH           O7     O    O        -0.500    -13.019   -5.598   -2.032
+ NSH           O8     O    O2       -0.500    -11.193   -6.648   -1.531
+ NSH           C44    C    CH2       0.000    -10.927   -6.878   -2.985
+ NSH           H44    H    H         0.000    -11.250   -5.987   -3.528
+ NSH           H44A   H    H         0.000    -11.528   -7.733   -3.301
+ NSH           C43    C    CR6       0.000     -9.473   -7.147   -3.278
+ NSH           C42    C    CR16      0.000     -9.129   -8.142   -4.147
+ NSH           H42    H    H         0.000     -9.903   -8.743   -4.608
+ NSH           C41    C    CR16      0.000     -7.794   -8.391   -4.445
+ NSH           H41    H    H         0.000     -7.538   -9.183   -5.138
+ NSH           C40    C    CR16      0.000     -6.793   -7.640   -3.867
+ NSH           H40    H    H         0.000     -5.756   -7.837   -4.108
+ NSH           C36    C    CR56      0.000     -7.122   -6.625   -2.970
+ NSH           N10    N    NR15      0.000     -6.367   -5.731   -2.246
+ NSH           HN10   H    H         0.000     -5.329   -5.666   -2.256
+ NSH           C37    C    CR56      0.000     -8.476   -6.375   -2.670
+ NSH           C38    C    CR5       0.000     -8.502   -5.305   -1.743
+ NSH           C39    C    CH3       0.000     -9.733   -4.689   -1.132
+ NSH           H39B   H    H         0.000    -10.279   -5.432   -0.612
+ NSH           H39A   H    H         0.000     -9.447   -3.924   -0.458
+ NSH           H39    H    H         0.000    -10.338   -4.277   -1.898
+ NSH           C35    C    CR5       0.000     -7.217   -4.935   -1.504
+ NSH           C34    C    C         0.000     -6.794   -3.859   -0.594
+ NSH           O10    O    O         0.000     -5.611   -3.616   -0.446
+ NSH           S6     S    S2        0.000     -8.002   -2.923    0.282
+ NSH           N6     N    NH1       0.000    -14.879   -3.508    1.806
+ NSH           HN6    H    H         0.000    -15.591   -3.290    2.489
+ NSH           C20    C    C         0.000    -14.601   -2.648    0.807
+ NSH           O5     O    O         0.000    -13.885   -3.006   -0.108
+ NSH           C19    C    CR5       0.000    -15.149   -1.284    0.805
+ NSH           C18    C    CR15      0.000    -15.914   -0.787    1.802
+ NSH           H18    H    H         0.000    -16.234   -1.334    2.681
+ NSH           S4     S    S2        0.000    -16.295    0.845    1.454
+ NSH           N5     N    NRD5      0.000    -14.894   -0.440   -0.185
+ NSH           C17    C    CR5       0.000    -15.380    0.757   -0.046
+ NSH           C14    C    C         0.000    -15.151    1.861   -0.991
+ NSH           C15    C    C1        0.000    -14.655    1.604   -2.204
+ NSH           H15    H    H         0.000    -15.123    0.863   -2.831
+ NSH           C16    C    CH3       0.000    -13.441    2.350   -2.696
+ NSH           H16B   H    H         0.000    -12.632    1.675   -2.802
+ NSH           H16A   H    H         0.000    -13.656    2.795   -3.632
+ NSH           H16    H    H         0.000    -13.184    3.103   -1.997
+ NSH           N4     N    NH1       0.000    -15.450    3.184   -0.626
+ NSH           HN4    H    H         0.000    -15.905    3.401    0.249
+ NSH           C13    C    C         0.000    -15.098    4.158   -1.504
+ NSH           O4     O    O         0.000    -14.867    3.884   -2.663
+ NSH           C10    C    CH1       0.000    -14.996    5.585   -1.025
+ NSH           H10    H    H         0.000    -14.534    5.609   -0.028
+ NSH           C11    C    CH1       0.000    -16.392    6.208   -0.960
+ NSH           H11    H    H         0.000    -16.984    5.703   -0.184
+ NSH           C12    C    CH3       0.000    -16.272    7.695   -0.623
+ NSH           H12B   H    H         0.000    -15.793    7.808    0.315
+ NSH           H12A   H    H         0.000    -15.703    8.184   -1.371
+ NSH           H12    H    H         0.000    -17.239    8.127   -0.578
+ NSH           O3     O    OH1       0.000    -17.039    6.058   -2.226
+ NSH           HO3    H    H         0.000    -17.921    6.452   -2.185
+ NSH           N3     N    NH1       0.000    -14.152    6.343   -1.988
+ NSH           HN3    H    H         0.000    -14.552    6.913   -2.720
+ NSH           C9     C    C         0.000    -12.812    6.221   -1.820
+ NSH           O2     O    O         0.000    -12.105    6.984   -2.449
+ NSH           C8     C    CR5       0.000    -12.139    5.256   -0.951
+ NSH           N2     N    NRD5      0.000    -10.815    5.289   -0.844
+ NSH           C7     C    CR15      0.000    -12.748    4.284   -0.244
+ NSH           H7     H    H         0.000    -13.816    4.109   -0.208
+ NSH           S2     S    S2        0.000    -11.563    3.368    0.587
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NSH      O12    n/a    C51    START
+ NSH      C51    O12    C49    .
+ NSH      N13    C51    HN13   .
+ NSH      HN1A   N13    .      .
+ NSH      HN13   N13    .      .
+ NSH      C49    C51    N12    .
+ NSH      C50    C49    H50    .
+ NSH      H50A   C50    .      .
+ NSH      H50    C50    .      .
+ NSH      N12    C49    C48    .
+ NSH      HN12   N12    .      .
+ NSH      C48    N12    C47    .
+ NSH      O11    C48    .      .
+ NSH      C47    C48    N11    .
+ NSH      C46    C47    S1     .
+ NSH      H46    C46    .      .
+ NSH      S1     C46    .      .
+ NSH      N11    C47    C45    .
+ NSH      C45    N11    C1     .
+ NSH      C1     C45    C2     .
+ NSH      C2     C1     C3     .
+ NSH      O1     C2     HO1    .
+ NSH      HO1    O1     .      .
+ NSH      C3     C2     C4     .
+ NSH      H3     C3     .      .
+ NSH      C4     C3     C5     .
+ NSH      C6     C4     .      .
+ NSH      C5     C4     C31    .
+ NSH      N1     C5     .      .
+ NSH      C31    C5     N9     .
+ NSH      C32    C31    S3     .
+ NSH      H32    C32    .      .
+ NSH      S3     C32    .      .
+ NSH      N9     C31    C30    .
+ NSH      C30    N9     C29    .
+ NSH      C29    C30    N8     .
+ NSH      H29    C29    .      .
+ NSH      C33    C29    H33    .
+ NSH      H33A   C33    .      .
+ NSH      H33    C33    .      .
+ NSH      N8     C29    C28    .
+ NSH      HN8    N8     .      .
+ NSH      C28    N8     C27    .
+ NSH      O9     C28    .      .
+ NSH      C27    C28    N7     .
+ NSH      C26    C27    S5     .
+ NSH      H26    C26    .      .
+ NSH      S5     C26    .      .
+ NSH      N7     C27    C25    .
+ NSH      C25    N7     C21    .
+ NSH      C21    C25    N6     .
+ NSH      H21    C21    .      .
+ NSH      C22    C21    C23    .
+ NSH      H22    C22    .      .
+ NSH      H22A   C22    .      .
+ NSH      C23    C22    C24    .
+ NSH      H23    C23    .      .
+ NSH      O6     C23    HO6    .
+ NSH      HO6    O6     .      .
+ NSH      C24    C23    O8     .
+ NSH      O7     C24    .      .
+ NSH      O8     C24    C44    .
+ NSH      C44    O8     C43    .
+ NSH      H44    C44    .      .
+ NSH      H44A   C44    .      .
+ NSH      C43    C44    C37    .
+ NSH      C42    C43    C41    .
+ NSH      H42    C42    .      .
+ NSH      C41    C42    C40    .
+ NSH      H41    C41    .      .
+ NSH      C40    C41    C36    .
+ NSH      H40    C40    .      .
+ NSH      C36    C40    N10    .
+ NSH      N10    C36    HN10   .
+ NSH      HN10   N10    .      .
+ NSH      C37    C43    C38    .
+ NSH      C38    C37    C35    .
+ NSH      C39    C38    H39    .
+ NSH      H39B   C39    .      .
+ NSH      H39A   C39    .      .
+ NSH      H39    C39    .      .
+ NSH      C35    C38    C34    .
+ NSH      C34    C35    S6     .
+ NSH      O10    C34    .      .
+ NSH      S6     C34    .      .
+ NSH      N6     C21    C20    .
+ NSH      HN6    N6     .      .
+ NSH      C20    N6     C19    .
+ NSH      O5     C20    .      .
+ NSH      C19    C20    N5     .
+ NSH      C18    C19    S4     .
+ NSH      H18    C18    .      .
+ NSH      S4     C18    .      .
+ NSH      N5     C19    C17    .
+ NSH      C17    N5     C14    .
+ NSH      C14    C17    N4     .
+ NSH      C15    C14    C16    .
+ NSH      H15    C15    .      .
+ NSH      C16    C15    H16    .
+ NSH      H16B   C16    .      .
+ NSH      H16A   C16    .      .
+ NSH      H16    C16    .      .
+ NSH      N4     C14    C13    .
+ NSH      HN4    N4     .      .
+ NSH      C13    N4     C10    .
+ NSH      O4     C13    .      .
+ NSH      C10    C13    N3     .
+ NSH      H10    C10    .      .
+ NSH      C11    C10    O3     .
+ NSH      H11    C11    .      .
+ NSH      C12    C11    H12    .
+ NSH      H12B   C12    .      .
+ NSH      H12A   C12    .      .
+ NSH      H12    C12    .      .
+ NSH      O3     C11    HO3    .
+ NSH      HO3    O3     .      .
+ NSH      N3     C10    C9     .
+ NSH      HN3    N3     .      .
+ NSH      C9     N3     C8     .
+ NSH      O2     C9     .      .
+ NSH      C8     C9     C7     .
+ NSH      N2     C8     .      .
+ NSH      C7     C8     S2     .
+ NSH      H7     C7     .      .
+ NSH      S2     C7     .      END
+ NSH      S1     C45    .    ADD
+ NSH      S2     C6     .    ADD
+ NSH      S3     C30    .    ADD
+ NSH      S4     C17    .    ADD
+ NSH      S5     C25    .    ADD
+ NSH      S6     C33    .    ADD
+ NSH      N1     C1     .    ADD
+ NSH      N2     C6     .    ADD
+ NSH      N10    C35    .    ADD
+ NSH      C36    C37    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NSH       S1        C45       single    1.745     0.020     1.745     0.020     
+NSH       S1        C46       single    1.745     0.020     1.745     0.020     
+NSH       S2        C6        single    1.745     0.020     1.745     0.020     
+NSH       S2        C7        single    1.745     0.020     1.745     0.020     
+NSH       S3        C30       single    1.745     0.020     1.745     0.020     
+NSH       S3        C32       single    1.745     0.020     1.745     0.020     
+NSH       S4        C17       single    1.745     0.020     1.745     0.020     
+NSH       S4        C18       single    1.745     0.020     1.745     0.020     
+NSH       S5        C25       single    1.745     0.020     1.745     0.020     
+NSH       S5        C26       single    1.745     0.020     1.745     0.020     
+NSH       S6        C33       single    1.762     0.020     1.762     0.020     
+NSH       S6        C34       single    1.665     0.020     1.665     0.020     
+NSH       O1        C2        single    1.362     0.020     1.362     0.020     
+NSH       O2        C9        double    1.220     0.020     1.220     0.020     
+NSH       O3        C11       single    1.432     0.020     1.432     0.020     
+NSH       O4        C13       double    1.220     0.020     1.220     0.020     
+NSH       O5        C20       double    1.220     0.020     1.220     0.020     
+NSH       O6        C23       single    1.432     0.020     1.432     0.020     
+NSH       O7        C24       deloc     1.220     0.020     1.220     0.020     
+NSH       O8        C24       deloc     1.454     0.020     1.454     0.020     
+NSH       C44       O8        single    1.426     0.020     1.426     0.020     
+NSH       O9        C28       double    1.220     0.020     1.220     0.020     
+NSH       O10       C34       double    1.220     0.020     1.220     0.020     
+NSH       O11       C48       double    1.220     0.020     1.220     0.020     
+NSH       C51       O12       double    1.220     0.020     1.220     0.020     
+NSH       N1        C1        double    1.350     0.020     1.350     0.020     
+NSH       N1        C5        single    1.350     0.020     1.350     0.020     
+NSH       N2        C6        double    1.350     0.020     1.350     0.020     
+NSH       N2        C8        single    1.350     0.020     1.350     0.020     
+NSH       C9        N3        single    1.330     0.020     1.330     0.020     
+NSH       N3        C10       single    1.450     0.020     1.450     0.020     
+NSH       C13       N4        single    1.330     0.020     1.330     0.020     
+NSH       N4        C14       single    1.330     0.020     1.330     0.020     
+NSH       C17       N5        double    1.350     0.020     1.350     0.020     
+NSH       N5        C19       single    1.350     0.020     1.350     0.020     
+NSH       C20       N6        single    1.330     0.020     1.330     0.020     
+NSH       N6        C21       single    1.450     0.020     1.450     0.020     
+NSH       C25       N7        double    1.350     0.020     1.350     0.020     
+NSH       N7        C27       single    1.350     0.020     1.350     0.020     
+NSH       C28       N8        single    1.330     0.020     1.330     0.020     
+NSH       N8        C29       single    1.450     0.020     1.450     0.020     
+NSH       C30       N9        double    1.350     0.020     1.350     0.020     
+NSH       N9        C31       single    1.350     0.020     1.350     0.020     
+NSH       N10       C35       single    1.340     0.020     1.340     0.020     
+NSH       N10       C36       single    1.340     0.020     1.340     0.020     
+NSH       C45       N11       double    1.350     0.020     1.350     0.020     
+NSH       N11       C47       single    1.350     0.020     1.350     0.020     
+NSH       C48       N12       single    1.330     0.020     1.330     0.020     
+NSH       N12       C49       single    1.330     0.020     1.330     0.020     
+NSH       N13       C51       single    1.332     0.020     1.332     0.020     
+NSH       C2        C1        single    1.487     0.020     1.487     0.020     
+NSH       C1        C45       single    1.490     0.020     1.490     0.020     
+NSH       C3        C2        double    1.390     0.020     1.390     0.020     
+NSH       C4        C3        single    1.390     0.020     1.390     0.020     
+NSH       C5        C4        double    1.487     0.020     1.487     0.020     
+NSH       C6        C4        single    1.490     0.020     1.490     0.020     
+NSH       C31       C5        single    1.490     0.020     1.490     0.020     
+NSH       C7        C8        double    1.387     0.020     1.387     0.020     
+NSH       C8        C9        single    1.490     0.020     1.490     0.020     
+NSH       C11       C10       single    1.524     0.020     1.524     0.020     
+NSH       C10       C13       single    1.500     0.020     1.500     0.020     
+NSH       C12       C11       single    1.524     0.020     1.524     0.020     
+NSH       C15       C14       double    1.340     0.020     1.340     0.020     
+NSH       C14       C17       single    1.490     0.020     1.490     0.020     
+NSH       C16       C15       single    1.510     0.020     1.510     0.020     
+NSH       C18       C19       double    1.387     0.020     1.387     0.020     
+NSH       C19       C20       single    1.490     0.020     1.490     0.020     
+NSH       C22       C21       single    1.524     0.020     1.524     0.020     
+NSH       C21       C25       single    1.480     0.020     1.480     0.020     
+NSH       C23       C22       single    1.524     0.020     1.524     0.020     
+NSH       C24       C23       single    1.500     0.020     1.500     0.020     
+NSH       C26       C27       double    1.387     0.020     1.387     0.020     
+NSH       C27       C28       single    1.490     0.020     1.490     0.020     
+NSH       C29       C30       single    1.480     0.020     1.480     0.020     
+NSH       C33       C29       single    1.524     0.020     1.524     0.020     
+NSH       C32       C31       double    1.387     0.020     1.387     0.020     
+NSH       C34       C35       single    1.490     0.020     1.490     0.020     
+NSH       C35       C38       double    1.490     0.020     1.490     0.020     
+NSH       C36       C37       double    1.490     0.020     1.490     0.020     
+NSH       C36       C40       single    1.390     0.020     1.390     0.020     
+NSH       C38       C37       single    1.490     0.020     1.490     0.020     
+NSH       C37       C43       single    1.490     0.020     1.490     0.020     
+NSH       C39       C38       single    1.506     0.020     1.506     0.020     
+NSH       C40       C41       double    1.390     0.020     1.390     0.020     
+NSH       C41       C42       single    1.390     0.020     1.390     0.020     
+NSH       C42       C43       double    1.390     0.020     1.390     0.020     
+NSH       C43       C44       single    1.511     0.020     1.511     0.020     
+NSH       C46       C47       double    1.387     0.020     1.387     0.020     
+NSH       C47       C48       single    1.490     0.020     1.490     0.020     
+NSH       C50       C49       double    1.320     0.020     1.320     0.020     
+NSH       C49       C51       single    1.460     0.020     1.460     0.020     
+NSH       HO1       O1        single    0.970     0.012     0.839     0.014     
+NSH       HO3       O3        single    0.970     0.012     0.839     0.014     
+NSH       HO6       O6        single    0.970     0.012     0.839     0.014     
+NSH       HN3       N3        single    1.016     0.010     0.899     0.007     
+NSH       HN4       N4        single    1.016     0.010     0.899     0.007     
+NSH       HN6       N6        single    1.016     0.010     0.899     0.007     
+NSH       HN8       N8        single    1.016     0.010     0.899     0.007     
+NSH       HN10      N10       single    1.016     0.010     0.899     0.007     
+NSH       HN12      N12       single    1.016     0.010     0.899     0.007     
+NSH       HN13      N13       single    1.016     0.010     0.899     0.007     
+NSH       HN1A      N13       single    1.016     0.010     0.899     0.007     
+NSH       H3        C3        single    1.082     0.013     0.975     0.010     
+NSH       H7        C7        single    1.082     0.013     0.975     0.010     
+NSH       H10       C10       single    1.089     0.010     0.989     0.005     
+NSH       H11       C11       single    1.089     0.010     0.989     0.005     
+NSH       H12       C12       single    1.089     0.010     0.989     0.005     
+NSH       H12A      C12       single    1.089     0.010     0.989     0.005     
+NSH       H12B      C12       single    1.089     0.010     0.989     0.005     
+NSH       H15       C15       single    1.082     0.013     0.975     0.010     
+NSH       H16       C16       single    1.089     0.010     0.989     0.005     
+NSH       H16A      C16       single    1.089     0.010     0.989     0.005     
+NSH       H16B      C16       single    1.089     0.010     0.989     0.005     
+NSH       H18       C18       single    1.082     0.013     0.975     0.010     
+NSH       H21       C21       single    1.089     0.010     0.989     0.005     
+NSH       H22       C22       single    1.089     0.010     0.989     0.005     
+NSH       H22A      C22       single    1.089     0.010     0.989     0.005     
+NSH       H23       C23       single    1.089     0.010     0.989     0.005     
+NSH       H26       C26       single    1.082     0.013     0.975     0.010     
+NSH       H29       C29       single    1.089     0.010     0.989     0.005     
+NSH       H32       C32       single    1.082     0.013     0.975     0.010     
+NSH       H33       C33       single    1.089     0.010     0.989     0.005     
+NSH       H33A      C33       single    1.089     0.010     0.989     0.005     
+NSH       H39       C39       single    1.089     0.010     0.989     0.005     
+NSH       H39A      C39       single    1.089     0.010     0.989     0.005     
+NSH       H39B      C39       single    1.089     0.010     0.989     0.005     
+NSH       H40       C40       single    1.082     0.013     0.975     0.010     
+NSH       H41       C41       single    1.082     0.013     0.975     0.010     
+NSH       H42       C42       single    1.082     0.013     0.975     0.010     
+NSH       H44       C44       single    1.089     0.010     0.989     0.005     
+NSH       H44A      C44       single    1.089     0.010     0.989     0.005     
+NSH       H46       C46       single    1.082     0.013     0.975     0.010     
+NSH       H50       C50       single    1.082     0.013     0.975     0.010     
+NSH       H50A      C50       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NSH      O12    C51    N13     123.000    3.000
+ NSH      O12    C51    C49     120.500    3.000
+ NSH      N13    C51    C49     120.000    3.000
+ NSH      C51    N13    HN1A    120.000    3.000
+ NSH      C51    N13    HN13    120.000    3.000
+ NSH      HN1A   N13    HN13    120.000    3.000
+ NSH      C51    C49    C50     120.000    3.000
+ NSH      C51    C49    N12     120.000    3.000
+ NSH      C50    C49    N12     120.000    3.000
+ NSH      C49    C50    H50A    120.000    3.000
+ NSH      C49    C50    H50     120.000    3.000
+ NSH      H50A   C50    H50     120.000    3.000
+ NSH      C49    N12    HN12    120.000    3.000
+ NSH      C49    N12    C48     120.000    3.000
+ NSH      HN12   N12    C48     120.000    3.000
+ NSH      N12    C48    O11     123.000    3.000
+ NSH      N12    C48    C47     120.000    3.000
+ NSH      O11    C48    C47     120.500    3.000
+ NSH      C48    C47    C46     126.000    3.000
+ NSH      C48    C47    N11     126.000    3.000
+ NSH      C46    C47    N11     108.000    3.000
+ NSH      C47    C46    H46     126.000    3.000
+ NSH      C47    C46    S1      108.000    3.000
+ NSH      H46    C46    S1      108.000    3.000
+ NSH      C46    S1     C45      90.627    3.000
+ NSH      C47    N11    C45     108.000    3.000
+ NSH      N11    C45    C1      126.000    3.000
+ NSH      N11    C45    S1      108.000    3.000
+ NSH      C1     C45    S1      108.000    3.000
+ NSH      C45    C1     C2      120.000    3.000
+ NSH      C45    C1     N1      120.000    3.000
+ NSH      C2     C1     N1      120.000    3.000
+ NSH      C1     C2     O1      120.000    3.000
+ NSH      C1     C2     C3      120.000    3.000
+ NSH      O1     C2     C3      120.000    3.000
+ NSH      C2     O1     HO1     109.470    3.000
+ NSH      C2     C3     H3      120.000    3.000
+ NSH      C2     C3     C4      120.000    3.000
+ NSH      H3     C3     C4      120.000    3.000
+ NSH      C3     C4     C6      120.000    3.000
+ NSH      C3     C4     C5      120.000    3.000
+ NSH      C6     C4     C5      120.000    3.000
+ NSH      C4     C6     S2      108.000    3.000
+ NSH      C4     C6     N2      126.000    3.000
+ NSH      S2     C6     N2      108.000    3.000
+ NSH      C4     C5     N1      120.000    3.000
+ NSH      C4     C5     C31     120.000    3.000
+ NSH      N1     C5     C31     120.000    3.000
+ NSH      C5     N1     C1      120.000    3.000
+ NSH      C5     C31    C32     126.000    3.000
+ NSH      C5     C31    N9      126.000    3.000
+ NSH      C32    C31    N9      108.000    3.000
+ NSH      C31    C32    H32     126.000    3.000
+ NSH      C31    C32    S3      108.000    3.000
+ NSH      H32    C32    S3      108.000    3.000
+ NSH      C32    S3     C30      90.374    3.000
+ NSH      C31    N9     C30     108.000    3.000
+ NSH      N9     C30    C29     126.000    3.000
+ NSH      N9     C30    S3      108.000    3.000
+ NSH      C29    C30    S3      108.000    3.000
+ NSH      C30    C29    H29     109.470    3.000
+ NSH      C30    C29    C33     109.470    3.000
+ NSH      C30    C29    N8      109.470    3.000
+ NSH      H29    C29    C33     108.340    3.000
+ NSH      H29    C29    N8      108.550    3.000
+ NSH      C33    C29    N8      110.000    3.000
+ NSH      C29    C33    H33A    109.470    3.000
+ NSH      C29    C33    H33     109.470    3.000
+ NSH      C29    C33    S6      109.500    3.000
+ NSH      H33A   C33    H33     107.900    3.000
+ NSH      H33A   C33    S6      109.500    3.000
+ NSH      H33    C33    S6      109.500    3.000
+ NSH      C29    N8     HN8     118.500    3.000
+ NSH      C29    N8     C28     121.500    3.000
+ NSH      HN8    N8     C28     120.000    3.000
+ NSH      N8     C28    O9      123.000    3.000
+ NSH      N8     C28    C27     120.000    3.000
+ NSH      O9     C28    C27     120.500    3.000
+ NSH      C28    C27    C26     126.000    3.000
+ NSH      C28    C27    N7      126.000    3.000
+ NSH      C26    C27    N7      108.000    3.000
+ NSH      C27    C26    H26     126.000    3.000
+ NSH      C27    C26    S5      108.000    3.000
+ NSH      H26    C26    S5      108.000    3.000
+ NSH      C26    S5     C25      91.070    3.000
+ NSH      C27    N7     C25     108.000    3.000
+ NSH      N7     C25    C21     126.000    3.000
+ NSH      N7     C25    S5      108.000    3.000
+ NSH      C21    C25    S5      108.000    3.000
+ NSH      C25    C21    H21     109.470    3.000
+ NSH      C25    C21    C22     109.470    3.000
+ NSH      C25    C21    N6      109.470    3.000
+ NSH      H21    C21    C22     108.340    3.000
+ NSH      H21    C21    N6      108.550    3.000
+ NSH      C22    C21    N6      110.000    3.000
+ NSH      C21    C22    H22     109.470    3.000
+ NSH      C21    C22    H22A    109.470    3.000
+ NSH      C21    C22    C23     111.000    3.000
+ NSH      H22    C22    H22A    107.900    3.000
+ NSH      H22    C22    C23     109.470    3.000
+ NSH      H22A   C22    C23     109.470    3.000
+ NSH      C22    C23    H23     108.340    3.000
+ NSH      C22    C23    O6      109.470    3.000
+ NSH      C22    C23    C24     109.470    3.000
+ NSH      H23    C23    O6      109.470    3.000
+ NSH      H23    C23    C24     108.810    3.000
+ NSH      O6     C23    C24     109.470    3.000
+ NSH      C23    O6     HO6     109.470    3.000
+ NSH      C23    C24    O7      120.500    3.000
+ NSH      C23    C24    O8      120.000    3.000
+ NSH      O7     C24    O8      119.000    3.000
+ NSH      C24    O8     C44     120.000    3.000
+ NSH      O8     C44    H44     109.470    3.000
+ NSH      O8     C44    H44A    109.470    3.000
+ NSH      O8     C44    C43     109.470    3.000
+ NSH      H44    C44    H44A    107.900    3.000
+ NSH      H44    C44    C43     109.470    3.000
+ NSH      H44A   C44    C43     109.470    3.000
+ NSH      C44    C43    C42     120.000    3.000
+ NSH      C44    C43    C37     120.000    3.000
+ NSH      C42    C43    C37     120.000    3.000
+ NSH      C43    C42    H42     120.000    3.000
+ NSH      C43    C42    C41     120.000    3.000
+ NSH      H42    C42    C41     120.000    3.000
+ NSH      C42    C41    H41     120.000    3.000
+ NSH      C42    C41    C40     120.000    3.000
+ NSH      H41    C41    C40     120.000    3.000
+ NSH      C41    C40    H40     120.000    3.000
+ NSH      C41    C40    C36     120.000    3.000
+ NSH      H40    C40    C36     120.000    3.000
+ NSH      C40    C36    N10     132.000    3.000
+ NSH      C40    C36    C37     120.000    3.000
+ NSH      N10    C36    C37     108.000    3.000
+ NSH      C36    N10    HN10    126.000    3.000
+ NSH      C36    N10    C35     108.000    3.000
+ NSH      HN10   N10    C35     126.000    3.000
+ NSH      C43    C37    C38     132.000    3.000
+ NSH      C43    C37    C36     120.000    3.000
+ NSH      C38    C37    C36     108.000    3.000
+ NSH      C37    C38    C39     108.000    3.000
+ NSH      C37    C38    C35     108.000    3.000
+ NSH      C39    C38    C35     126.000    3.000
+ NSH      C38    C39    H39B    109.470    3.000
+ NSH      C38    C39    H39A    109.470    3.000
+ NSH      C38    C39    H39     109.470    3.000
+ NSH      H39B   C39    H39A    109.470    3.000
+ NSH      H39B   C39    H39     109.470    3.000
+ NSH      H39A   C39    H39     109.470    3.000
+ NSH      C38    C35    C34     117.000    3.000
+ NSH      C38    C35    N10     108.000    3.000
+ NSH      C34    C35    N10     126.000    3.000
+ NSH      C35    C34    O10     120.500    3.000
+ NSH      C35    C34    S6      120.000    3.000
+ NSH      O10    C34    S6      120.000    3.000
+ NSH      C34    S6     C33     100.398    3.000
+ NSH      C21    N6     HN6     118.500    3.000
+ NSH      C21    N6     C20     121.500    3.000
+ NSH      HN6    N6     C20     120.000    3.000
+ NSH      N6     C20    O5      123.000    3.000
+ NSH      N6     C20    C19     120.000    3.000
+ NSH      O5     C20    C19     120.500    3.000
+ NSH      C20    C19    C18     126.000    3.000
+ NSH      C20    C19    N5      126.000    3.000
+ NSH      C18    C19    N5      108.000    3.000
+ NSH      C19    C18    H18     126.000    3.000
+ NSH      C19    C18    S4      108.000    3.000
+ NSH      H18    C18    S4      108.000    3.000
+ NSH      C18    S4     C17      90.563    3.000
+ NSH      C19    N5     C17     108.000    3.000
+ NSH      N5     C17    C14     126.000    3.000
+ NSH      N5     C17    S4      108.000    3.000
+ NSH      C14    C17    S4      108.000    3.000
+ NSH      C17    C14    C15     120.000    3.000
+ NSH      C17    C14    N4      120.000    3.000
+ NSH      C15    C14    N4      120.000    3.000
+ NSH      C14    C15    H15     120.000    3.000
+ NSH      C14    C15    C16     120.500    3.000
+ NSH      H15    C15    C16     120.000    3.000
+ NSH      C15    C16    H16B    109.470    3.000
+ NSH      C15    C16    H16A    109.470    3.000
+ NSH      C15    C16    H16     109.470    3.000
+ NSH      H16B   C16    H16A    109.470    3.000
+ NSH      H16B   C16    H16     109.470    3.000
+ NSH      H16A   C16    H16     109.470    3.000
+ NSH      C14    N4     HN4     120.000    3.000
+ NSH      C14    N4     C13     120.000    3.000
+ NSH      HN4    N4     C13     120.000    3.000
+ NSH      N4     C13    O4      123.000    3.000
+ NSH      N4     C13    C10     116.500    3.000
+ NSH      O4     C13    C10     120.500    3.000
+ NSH      C13    C10    H10     108.810    3.000
+ NSH      C13    C10    C11     109.470    3.000
+ NSH      C13    C10    N3      111.600    3.000
+ NSH      H10    C10    C11     108.340    3.000
+ NSH      H10    C10    N3      108.550    3.000
+ NSH      C11    C10    N3      110.000    3.000
+ NSH      C10    C11    H11     108.340    3.000
+ NSH      C10    C11    C12     111.000    3.000
+ NSH      C10    C11    O3      109.470    3.000
+ NSH      H11    C11    C12     108.340    3.000
+ NSH      H11    C11    O3      109.470    3.000
+ NSH      C12    C11    O3      109.470    3.000
+ NSH      C11    C12    H12B    109.470    3.000
+ NSH      C11    C12    H12A    109.470    3.000
+ NSH      C11    C12    H12     109.470    3.000
+ NSH      H12B   C12    H12A    109.470    3.000
+ NSH      H12B   C12    H12     109.470    3.000
+ NSH      H12A   C12    H12     109.470    3.000
+ NSH      C11    O3     HO3     109.470    3.000
+ NSH      C10    N3     HN3     118.500    3.000
+ NSH      C10    N3     C9      121.500    3.000
+ NSH      HN3    N3     C9      120.000    3.000
+ NSH      N3     C9     O2      123.000    3.000
+ NSH      N3     C9     C8      120.000    3.000
+ NSH      O2     C9     C8      120.500    3.000
+ NSH      C9     C8     N2      126.000    3.000
+ NSH      C9     C8     C7      126.000    3.000
+ NSH      N2     C8     C7      108.000    3.000
+ NSH      C8     N2     C6      108.000    3.000
+ NSH      C8     C7     H7      126.000    3.000
+ NSH      C8     C7     S2      108.000    3.000
+ NSH      H7     C7     S2      108.000    3.000
+ NSH      C7     S2     C6       90.694    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NSH      CONST_1  O12    C51    N13    HN13       0.000    0.000   0
+ NSH      var_1    O12    C51    C49    N12        0.046   20.000   1
+ NSH      CONST_2  C51    C49    C50    H50        5.174    0.000   0
+ NSH      CONST_3  C51    C49    N12    C48        0.000    0.000   0
+ NSH      CONST_4  C49    N12    C48    C47      180.000    0.000   0
+ NSH      var_2    N12    C48    C47    N11        0.077   20.000   1
+ NSH      CONST_5  C48    C47    C46    S1       180.000    0.000   0
+ NSH      CONST_6  C47    C46    S1     C45        0.000    0.000   0
+ NSH      CONST_7  C46    S1     C45    N11        0.000    0.000   0
+ NSH      CONST_8  C48    C47    N11    C45      180.000    0.000   0
+ NSH      CONST_9  C47    N11    C45    C1       180.000    0.000   0
+ NSH      var_3    N11    C45    C1     C2       179.969   20.000   1
+ NSH      CONST_10 C45    C1     C2     C3       180.000    0.000   0
+ NSH      var_4    C1     C2     O1     HO1       89.999   20.000   1
+ NSH      CONST_11 C1     C2     C3     C4         0.000    0.000   0
+ NSH      CONST_12 C2     C3     C4     C5         0.000    0.000   0
+ NSH      var_5    C3     C4     C6     S2      -171.539   20.000   1
+ NSH      CONST_13 C3     C4     C5     C31      180.000    0.000   0
+ NSH      CONST_14 C4     C5     N1     C1         0.000    0.000   0
+ NSH      CONST_15 C5     N1     C1     C45      180.000    0.000   0
+ NSH      var_6    C4     C5     C31    N9       163.841   20.000   1
+ NSH      CONST_16 C5     C31    C32    S3       180.000    0.000   0
+ NSH      CONST_17 C31    C32    S3     C30        0.000    0.000   0
+ NSH      CONST_18 C32    S3     C30    N9         0.000    0.000   0
+ NSH      CONST_19 C5     C31    N9     C30      180.000    0.000   0
+ NSH      CONST_20 C31    N9     C30    C29      180.000    0.000   0
+ NSH      var_7    N9     C30    C29    N8      -165.832   20.000   1
+ NSH      var_8    C30    C29    C33    S6       -90.817   20.000   3
+ NSH      var_9    C30    C29    N8     C28       39.512   20.000   3
+ NSH      CONST_21 C29    N8     C28    C27      180.000    0.000   0
+ NSH      var_10   N8     C28    C27    N7      -177.410   20.000   1
+ NSH      CONST_22 C28    C27    C26    S5       180.000    0.000   0
+ NSH      CONST_23 C27    C26    S5     C25        0.000    0.000   0
+ NSH      CONST_24 C26    S5     C25    N7         0.000    0.000   0
+ NSH      CONST_25 C28    C27    N7     C25      180.000    0.000   0
+ NSH      CONST_26 C27    N7     C25    C21      180.000    0.000   0
+ NSH      var_11   N7     C25    C21    N6       -51.138   20.000   1
+ NSH      var_12   C25    C21    C22    C23       16.501   20.000   3
+ NSH      var_13   C21    C22    C23    C24     -166.061   20.000   3
+ NSH      var_14   C22    C23    O6     HO6      171.139   20.000   1
+ NSH      var_15   C22    C23    C24    O8      -166.176   20.000   3
+ NSH      var_16   C23    C24    O8     C44      179.809   20.000   1
+ NSH      var_17   C24    O8     C44    C43      158.173   20.000   1
+ NSH      var_18   O8     C44    C43    C37      -43.630   20.000   2
+ NSH      CONST_27 C44    C43    C42    C41      180.000    0.000   0
+ NSH      CONST_28 C43    C42    C41    C40        0.000    0.000   0
+ NSH      CONST_29 C42    C41    C40    C36        0.000    0.000   0
+ NSH      CONST_30 C41    C40    C36    N10      180.000    0.000   0
+ NSH      CONST_31 C40    C36    C37    C43        0.000    0.000   0
+ NSH      CONST_32 C40    C36    N10    C35      180.000    0.000   0
+ NSH      CONST_33 C36    N10    C35    C38        0.000    0.000   0
+ NSH      CONST_34 C44    C43    C37    C38        0.000    0.000   0
+ NSH      CONST_35 C43    C37    C38    C35      180.000    0.000   0
+ NSH      var_19   C37    C38    C39    H39      -61.335   20.000   1
+ NSH      CONST_36 C37    C38    C35    C34      180.000    0.000   0
+ NSH      var_20   C38    C35    C34    S6        -0.444   20.000   1
+ NSH      var_21   C35    C34    S6     C33      179.149   20.000   1
+ NSH      var_22   C34    S6     C33    C29     -156.169   20.000   1
+ NSH      var_23   C25    C21    N6     C20       78.407   20.000   3
+ NSH      CONST_37 C21    N6     C20    C19      180.000    0.000   0
+ NSH      var_24   N6     C20    C19    N5      -179.076   20.000   1
+ NSH      CONST_38 C20    C19    C18    S4       180.000    0.000   0
+ NSH      CONST_39 C19    C18    S4     C17        0.000    0.000   0
+ NSH      CONST_40 C18    S4     C17    N5         0.000    0.000   0
+ NSH      CONST_41 C20    C19    N5     C17      180.000    0.000   0
+ NSH      CONST_42 C19    N5     C17    C14      180.000    0.000   0
+ NSH      var_25   N5     C17    C14    N4      -165.536   20.000   1
+ NSH      CONST_43 C17    C14    C15    C16     -127.527    0.000   0
+ NSH      var_26   C14    C15    C16    H16       -6.068   20.000   1
+ NSH      CONST_44 C17    C14    N4     C13      180.000    0.000   0
+ NSH      CONST_45 C14    N4     C13    C10      180.000    0.000   0
+ NSH      var_27   N4     C13    C10    N3       159.881   20.000   3
+ NSH      var_28   C13    C10    C11    O3       -53.855   20.000   3
+ NSH      var_29   C10    C11    C12    H12      179.983   20.000   3
+ NSH      var_30   C10    C11    O3     HO3      179.986   20.000   1
+ NSH      var_31   C13    C10    N3     C9       -82.211   20.000   3
+ NSH      CONST_46 C10    N3     C9     C8         0.000    0.000   0
+ NSH      var_32   N3     C9     C8     C7         4.295   20.000   1
+ NSH      CONST_47 C9     C8     N2     C6       180.000    0.000   0
+ NSH      CONST_48 C8     N2     C6     C4       180.000    0.000   0
+ NSH      CONST_49 C9     C8     C7     S2       180.000    0.000   0
+ NSH      CONST_50 C8     C7     S2     C6         0.000    0.000   0
+ NSH      CONST_51 C7     S2     C6     C4       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NSH      chir_01  C10    N3     C11    C13       negativ
+ NSH      chir_02  C11    O3     C10    C12       negativ
+ NSH      chir_03  C21    N6     C22    C25       negativ
+ NSH      chir_04  C23    O6     C22    C24       negativ
+ NSH      chir_05  C29    N8     C30    C33       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NSH      plan-1    N1        0.020
+ NSH      plan-1    C1        0.020
+ NSH      plan-1    C5        0.020
+ NSH      plan-1    C2        0.020
+ NSH      plan-1    C3        0.020
+ NSH      plan-1    C4        0.020
+ NSH      plan-1    C45       0.020
+ NSH      plan-1    O1        0.020
+ NSH      plan-1    H3        0.020
+ NSH      plan-1    C6        0.020
+ NSH      plan-1    C31       0.020
+ NSH      plan-2    N2        0.020
+ NSH      plan-2    C6        0.020
+ NSH      plan-2    C8        0.020
+ NSH      plan-2    S2        0.020
+ NSH      plan-2    C7        0.020
+ NSH      plan-2    C4        0.020
+ NSH      plan-2    H7        0.020
+ NSH      plan-2    C9        0.020
+ NSH      plan-3    N3        0.020
+ NSH      plan-3    C9        0.020
+ NSH      plan-3    C10       0.020
+ NSH      plan-3    HN3       0.020
+ NSH      plan-4    N4        0.020
+ NSH      plan-4    C13       0.020
+ NSH      plan-4    C14       0.020
+ NSH      plan-4    HN4       0.020
+ NSH      plan-5    N5        0.020
+ NSH      plan-5    C17       0.020
+ NSH      plan-5    C19       0.020
+ NSH      plan-5    S4        0.020
+ NSH      plan-5    C18       0.020
+ NSH      plan-5    C14       0.020
+ NSH      plan-5    H18       0.020
+ NSH      plan-5    C20       0.020
+ NSH      plan-6    N6        0.020
+ NSH      plan-6    C20       0.020
+ NSH      plan-6    C21       0.020
+ NSH      plan-6    HN6       0.020
+ NSH      plan-7    N7        0.020
+ NSH      plan-7    C25       0.020
+ NSH      plan-7    C27       0.020
+ NSH      plan-7    S5        0.020
+ NSH      plan-7    C26       0.020
+ NSH      plan-7    C21       0.020
+ NSH      plan-7    H26       0.020
+ NSH      plan-7    C28       0.020
+ NSH      plan-8    N8        0.020
+ NSH      plan-8    C28       0.020
+ NSH      plan-8    C29       0.020
+ NSH      plan-8    HN8       0.020
+ NSH      plan-9    N9        0.020
+ NSH      plan-9    C30       0.020
+ NSH      plan-9    C31       0.020
+ NSH      plan-9    S3        0.020
+ NSH      plan-9    C32       0.020
+ NSH      plan-9    C29       0.020
+ NSH      plan-9    C5        0.020
+ NSH      plan-9    H32       0.020
+ NSH      plan-10   N10       0.020
+ NSH      plan-10   C35       0.020
+ NSH      plan-10   C36       0.020
+ NSH      plan-10   HN10      0.020
+ NSH      plan-10   C38       0.020
+ NSH      plan-10   C34       0.020
+ NSH      plan-10   C37       0.020
+ NSH      plan-10   C40       0.020
+ NSH      plan-10   C41       0.020
+ NSH      plan-10   C42       0.020
+ NSH      plan-10   C43       0.020
+ NSH      plan-10   C39       0.020
+ NSH      plan-10   H40       0.020
+ NSH      plan-10   H41       0.020
+ NSH      plan-10   H42       0.020
+ NSH      plan-10   C44       0.020
+ NSH      plan-11   N11       0.020
+ NSH      plan-11   C45       0.020
+ NSH      plan-11   C47       0.020
+ NSH      plan-11   S1        0.020
+ NSH      plan-11   C46       0.020
+ NSH      plan-11   C1        0.020
+ NSH      plan-11   H46       0.020
+ NSH      plan-11   C48       0.020
+ NSH      plan-12   N12       0.020
+ NSH      plan-12   C48       0.020
+ NSH      plan-12   C49       0.020
+ NSH      plan-12   HN12      0.020
+ NSH      plan-13   N13       0.020
+ NSH      plan-13   C51       0.020
+ NSH      plan-13   HN13      0.020
+ NSH      plan-13   HN1A      0.020
+ NSH      plan-14   C9        0.020
+ NSH      plan-14   O2        0.020
+ NSH      plan-14   N3        0.020
+ NSH      plan-14   C8        0.020
+ NSH      plan-14   HN3       0.020
+ NSH      plan-15   C13       0.020
+ NSH      plan-15   O4        0.020
+ NSH      plan-15   N4        0.020
+ NSH      plan-15   C10       0.020
+ NSH      plan-15   HN4       0.020
+ NSH      plan-16   C14       0.020
+ NSH      plan-16   N4        0.020
+ NSH      plan-16   C15       0.020
+ NSH      plan-16   C17       0.020
+ NSH      plan-16   C16       0.020
+ NSH      plan-16   H15       0.020
+ NSH      plan-16   HN4       0.020
+ NSH      plan-17   C20       0.020
+ NSH      plan-17   O5        0.020
+ NSH      plan-17   N6        0.020
+ NSH      plan-17   C19       0.020
+ NSH      plan-17   HN6       0.020
+ NSH      plan-18   C24       0.020
+ NSH      plan-18   O7        0.020
+ NSH      plan-18   O8        0.020
+ NSH      plan-18   C23       0.020
+ NSH      plan-19   C28       0.020
+ NSH      plan-19   O9        0.020
+ NSH      plan-19   N8        0.020
+ NSH      plan-19   C27       0.020
+ NSH      plan-19   HN8       0.020
+ NSH      plan-20   C34       0.020
+ NSH      plan-20   S6        0.020
+ NSH      plan-20   O10       0.020
+ NSH      plan-20   C35       0.020
+ NSH      plan-21   C48       0.020
+ NSH      plan-21   O11       0.020
+ NSH      plan-21   N12       0.020
+ NSH      plan-21   C47       0.020
+ NSH      plan-21   HN12      0.020
+ NSH      plan-22   C49       0.020
+ NSH      plan-22   N12       0.020
+ NSH      plan-22   C50       0.020
+ NSH      plan-22   C51       0.020
+ NSH      plan-22   H50       0.020
+ NSH      plan-22   H50A      0.020
+ NSH      plan-22   HN12      0.020
+ NSH      plan-23   C51       0.020
+ NSH      plan-23   O12       0.020
+ NSH      plan-23   N13       0.020
+ NSH      plan-23   C49       0.020
+ NSH      plan-23   HN1A      0.020
+ NSH      plan-23   HN13      0.020
+# ------------------------------------------------------

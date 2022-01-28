@@ -1,0 +1,145 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TDR     TDR      THYMINE     NON-POLYMER     15     9     .     
+#
+data_comp_TDR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TDR     N1      N       NR6     0       14.197      33.536      14.352      
+TDR     C2      C       CR6     0       15.470      33.074      14.562      
+TDR     O2      O       O       0       16.229      33.572      15.385      
+TDR     N3      N       NR6     0       15.835      32.005      13.776      
+TDR     C4      C       CR6     0       15.045      31.378      12.820      
+TDR     O4      O       O       0       15.502      30.422      12.182      
+TDR     C5      C       CR6     0       13.710      31.929      12.661      
+TDR     CM5     C       CH3     0       12.795      31.306      11.646      
+TDR     C6      C       CR16    0       13.340      32.977      13.424      
+TDR     HN1     H       H       0       13.929      34.234      14.850      
+TDR     HN3     H       H       0       16.660      31.690      13.898      
+TDR     H5M1    H       H       0       11.883      31.607      11.797      
+TDR     H5M2    H       H       0       12.830      30.339      11.726      
+TDR     H5M3    H       H       0       13.074      31.565      10.753      
+TDR     H6      H       H       0       12.474      33.346      13.331      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TDR       N1        C2        SINGLE    y         1.365     0.010     1.365     0.010     
+TDR       N1        C6        SINGLE    y         1.365     0.015     1.365     0.015     
+TDR       C2        O2        DOUBLE    n         1.225     0.010     1.225     0.010     
+TDR       C2        N3        SINGLE    y         1.370     0.010     1.370     0.010     
+TDR       N3        C4        SINGLE    y         1.383     0.010     1.383     0.010     
+TDR       C4        O4        DOUBLE    n         1.234     0.014     1.234     0.014     
+TDR       C4        C5        SINGLE    y         1.446     0.010     1.446     0.010     
+TDR       C5        CM5       SINGLE    n         1.500     0.010     1.500     0.010     
+TDR       C5        C6        DOUBLE    y         1.342     0.010     1.342     0.010     
+TDR       N1        HN1       SINGLE    n         1.016     0.010     0.898     0.020     
+TDR       N3        HN3       SINGLE    n         1.016     0.010     0.889     0.020     
+TDR       CM5       H5M1      SINGLE    n         1.089     0.010     0.971     0.013     
+TDR       CM5       H5M2      SINGLE    n         1.089     0.010     0.971     0.013     
+TDR       CM5       H5M3      SINGLE    n         1.089     0.010     0.971     0.013     
+TDR       C6        H6        SINGLE    n         1.082     0.013     0.945     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TDR          C2          N1          C6     122.480    1.50
+TDR          C2          N1         HN1     117.012    2.18
+TDR          C6          N1         HN1     120.508    2.60
+TDR          N1          C2          O2     122.669    1.50
+TDR          N1          C2          N3     115.125    1.50
+TDR          O2          C2          N3     122.206    1.50
+TDR          C2          N3          C4     126.733    1.50
+TDR          C2          N3         HN3     116.019    2.30
+TDR          C4          N3         HN3     117.248    1.81
+TDR          N3          C4          O4     119.759    1.50
+TDR          N3          C4          C5     115.321    1.50
+TDR          O4          C4          C5     124.920    1.50
+TDR          C4          C5         CM5     118.130    1.50
+TDR          C4          C5          C6     119.156    1.74
+TDR         CM5          C5          C6     122.714    1.50
+TDR          C5         CM5        H5M1     109.652    1.50
+TDR          C5         CM5        H5M2     109.652    1.50
+TDR          C5         CM5        H5M3     109.652    1.50
+TDR        H5M1         CM5        H5M2     109.348    1.50
+TDR        H5M1         CM5        H5M3     109.348    1.50
+TDR        H5M2         CM5        H5M3     109.348    1.50
+TDR          N1          C6          C5     121.185    1.50
+TDR          N1          C6          H6     118.827    2.09
+TDR          C5          C6          H6     119.988    1.54
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TDR       const_sp2_sp2_3          O2          C2          N1          C6     180.000   10.00     2
+TDR              const_21          C5          C6          N1          C2       0.000   10.00     2
+TDR       const_sp2_sp2_7          O2          C2          N3          C4     180.000   10.00     2
+TDR              const_11          O4          C4          N3          C2     180.000   10.00     2
+TDR              const_16          O4          C4          C5         CM5       0.000   10.00     2
+TDR             sp2_sp3_1          C4          C5         CM5        H5M1     150.000   10.00     6
+TDR              const_19         CM5          C5          C6          N1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TDR    plan-1          C2   0.020
+TDR    plan-1          C4   0.020
+TDR    plan-1          C5   0.020
+TDR    plan-1          C6   0.020
+TDR    plan-1         CM5   0.020
+TDR    plan-1          H6   0.020
+TDR    plan-1         HN1   0.020
+TDR    plan-1         HN3   0.020
+TDR    plan-1          N1   0.020
+TDR    plan-1          N3   0.020
+TDR    plan-1          O2   0.020
+TDR    plan-1          O4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TDR SMILES           ACDLabs              10.04 "O=C1C(=CNC(=O)N1)C"
+TDR SMILES_CANONICAL CACTVS               3.341 "CC1=CNC(=O)NC1=O"
+TDR SMILES           CACTVS               3.341 "CC1=CNC(=O)NC1=O"
+TDR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC1=CNC(=O)NC1=O"
+TDR SMILES           "OpenEye OEToolkits" 1.5.0 "CC1=CNC(=O)NC1=O"
+TDR InChI            InChI                1.03  "InChI=1S/C5H6N2O2/c1-3-2-6-5(9)7-4(3)8/h2H,1H3,(H2,6,7,8,9)"
+TDR InChIKey         InChI                1.03  RWQNBRDOKXIBIV-UHFFFAOYSA-N
+TDR ?                acedrg               202         "dictionary generator"                  
+TDR ?                acedrg_database      11          "data source"                           
+TDR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TDR ?                refmac5              5.8.0189    "optimization tool"                     

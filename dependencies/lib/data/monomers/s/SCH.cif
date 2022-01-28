@@ -1,0 +1,179 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SCH     SCH     S-METHYL-THIO-CYSTEINE     peptide     18     9     .
+#
+data_comp_SCH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SCH     N       N       NT3     1       -2.402      -0.869      -0.371
+SCH     CA      C       CH1     0       -1.508      0.154       0.238
+SCH     CB      C       CH2     0       -0.174      -0.448      0.644
+SCH     SG      S       S2      0       0.971       0.679       1.487
+SCH     SD      S       S2      0       2.724       -0.331      1.476
+SCH     CE      C       CH3     0       3.491       0.120       -0.084
+SCH     C       C       C       0       -1.377      1.349       -0.716
+SCH     O       O       O       0       -2.076      2.353       -0.470
+SCH     OXT     O       OC      -1      -0.586      1.234       -1.674
+SCH     H       H       H       0       -3.174      -0.478      -0.658
+SCH     H2      H       H       0       -2.605      -1.506      0.248
+SCH     H3      H       H       0       -1.983      -1.263      -1.078
+SCH     HA      H       H       0       -1.940      0.468       1.066
+SCH     HB2     H       H       0       0.268       -0.792      -0.173
+SCH     HB3     H       H       0       -0.358      -1.213      1.246
+SCH     HE1     H       H       0       4.274       -0.428      -0.224
+SCH     HE2     H       H       0       3.745       1.051       -0.057
+SCH     HE3     H       H       0       2.861       -0.024      -0.802
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+SCH      N      n/a    CA     START
+SCH      H      N      .      .
+SCH      H2     N      .      .
+SCH      H3     N      .      .
+SCH      CA     N      C      .
+SCH      HA     CA     .      .
+SCH      CB     CA     SG     .
+SCH      HB2    CB     .      .
+SCH      HB3    CB     .      .
+SCH      SG     CB     SD     .
+SCH      SD     SG     CE     .
+SCH      CE     SD     HE1    .
+SCH      HE3    CE     .      .
+SCH      HE2    CE     .      .
+SCH      HE1    CE     .      .
+SCH      C      CA     .      END
+SCH      O      C      .      .
+SCH      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SCH       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+SCH       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+SCH       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+SCH       CB        SG        SINGLE    n         1.814     0.010     1.814     0.010     
+SCH       SG        SD        SINGLE    n         2.023     0.016     2.023     0.016     
+SCH       SD        CE        SINGLE    n         1.796     0.019     1.796     0.019     
+SCH       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+SCH       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SCH       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+SCH       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+SCH       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+SCH       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+SCH       CB        HB2       SINGLE    n         1.089     0.010     0.991     0.010     
+SCH       CB        HB3       SINGLE    n         1.089     0.010     0.991     0.010     
+SCH       CE        HE1       SINGLE    n         1.089     0.010     0.966     0.017     
+SCH       CE        HE2       SINGLE    n         1.089     0.010     0.966     0.017     
+SCH       CE        HE3       SINGLE    n         1.089     0.010     0.966     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SCH          CA           N           H     109.671    1.50
+SCH          CA           N          H2     109.671    1.50
+SCH          CA           N          H3     109.671    1.50
+SCH           H           N          H2     109.028    2.41
+SCH           H           N          H3     109.028    2.41
+SCH          H2           N          H3     109.028    2.41
+SCH           N          CA          CB     111.909    1.50
+SCH           N          CA           C     109.494    1.50
+SCH           N          CA          HA     107.983    1.50
+SCH          CB          CA           C     113.463    1.50
+SCH          CB          CA          HA     107.198    1.50
+SCH           C          CA          HA     108.606    1.50
+SCH          CA          CB          SG     115.472    1.77
+SCH          CA          CB         HB2     107.935    1.50
+SCH          CA          CB         HB3     107.935    1.50
+SCH          SG          CB         HB2     108.472    1.50
+SCH          SG          CB         HB3     108.472    1.50
+SCH         HB2          CB         HB3     108.536    1.50
+SCH          CB          SG          SD     103.571    1.50
+SCH          SG          SD          CE     104.459    2.07
+SCH          SD          CE         HE1     109.066    1.50
+SCH          SD          CE         HE2     109.066    1.50
+SCH          SD          CE         HE3     109.066    1.50
+SCH         HE1          CE         HE2     109.484    1.50
+SCH         HE1          CE         HE3     109.484    1.50
+SCH         HE2          CE         HE3     109.484    1.50
+SCH          CA           C           O     117.134    1.50
+SCH          CA           C         OXT     117.134    1.50
+SCH           O           C         OXT     125.732    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SCH             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+SCH            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+SCH             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+SCH            sp3_sp3_19          CA          CB          SG          SD     180.000   10.00     3
+SCH            sp3_sp3_22          CE          SD          SG          CB     180.000   10.00     3
+SCH            sp3_sp3_23         HE1          CE          SD          SG     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SCH    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SCH    plan-1           C   0.020
+SCH    plan-1          CA   0.020
+SCH    plan-1           O   0.020
+SCH    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SCH SMILES           ACDLabs              10.04 "O=C(O)C(N)CSSC"
+SCH SMILES_CANONICAL CACTVS               3.370 "CSSC[C@H](N)C(O)=O"
+SCH SMILES           CACTVS               3.370 "CSSC[CH](N)C(O)=O"
+SCH SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "CSSC[C@@H](C(=O)O)N"
+SCH SMILES           "OpenEye OEToolkits" 1.7.0 "CSSCC(C(=O)O)N"
+SCH InChI            InChI                1.03  "InChI=1S/C4H9NO2S2/c1-8-9-2-3(5)4(6)7/h3H,2,5H2,1H3,(H,6,7)/t3-/m0/s1"
+SCH InChIKey         InChI                1.03  PYFNLWPQPNXHCS-VKHMYHEASA-N
+SCH ?                acedrg               196         "dictionary generator"
+SCH ?                acedrg_database      11          "data source"
+SCH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SCH ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,364 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SIB     SIB     "(2S)-2-AMINO-4-({[(2S,3S,4R,5R)-3,4-DIHYDROXY-5-(6-OXO-1,6-DIHYDRO-9H-PURIN-9-YL)TETRAHYDROFURAN-2-YL]METHYL}THIO)BUTANOICACID"     peptide     45     26     .
+#
+data_comp_SIB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SIB     N       N       NT3     1       49.568      29.047      -0.776
+SIB     CA      C       CH1     0       49.455      28.711      -2.223
+SIB     CB      C       CH2     0       49.795      29.917      -3.108
+SIB     CG      C       CH2     0       48.878      31.118      -2.920
+SIB     SD      S       S2      0       47.183      30.846      -3.495
+SIB     C       C       C       0       50.413      27.560      -2.561
+SIB     OXT     O       OC      -1      51.475      27.490      -1.911
+SIB     O       O       O       0       50.061      26.777      -3.466
+SIB     "C5'"   C       CH2     0       46.277      32.173      -2.660
+SIB     "C4'"   C       CH1     0       45.925      31.866      -1.223
+SIB     "O4'"   O       O2      0       45.422      33.062      -0.585
+SIB     "C3'"   C       CH1     0       44.826      30.824      -1.040
+SIB     "O3'"   O       OH1     0       45.364      29.506      -1.036
+SIB     "C2'"   C       CH1     0       44.224      31.228      0.309
+SIB     "O2'"   O       OH1     0       44.920      30.693      1.417
+SIB     "C1'"   C       CH1     0       44.328      32.753      0.254
+SIB     N9      N       NR5     0       43.112      33.406      -0.232
+SIB     C8      C       CR15    0       41.917      33.418      0.444
+SIB     N7      N       NRD5    0       40.965      34.065      -0.181
+SIB     C5      C       CR56    0       41.568      34.517      -1.346
+SIB     C6      C       CR6     0       41.022      35.288      -2.422
+SIB     O6      O       O       0       39.880      35.718      -2.538
+SIB     N1      N       NR6     0       41.992      35.527      -3.411
+SIB     C2      C       CR16    0       43.268      35.094      -3.365
+SIB     N3      N       NRD6    0       43.781      34.387      -2.387
+SIB     C4      C       CR56    0       42.892      34.119      -1.390
+SIB     H       H       H       0       49.605      28.286      -0.274
+SIB     H2      H       H       0       48.844      29.531      -0.510
+SIB     H3      H       H       0       50.322      29.536      -0.625
+SIB     HA      H       H       0       48.534      28.415      -2.403
+SIB     HB2     H       H       0       49.757      29.636      -4.045
+SIB     HB3     H       H       0       50.715      30.190      -2.920
+SIB     HG2     H       H       0       49.251      31.882      -3.411
+SIB     HG3     H       H       0       48.851      31.360      -1.970
+SIB     "H5'1"  H       H       0       45.472      32.341      -3.141
+SIB     "H5'2"  H       H       0       46.808      32.965      -2.679
+SIB     "H4'"   H       H       0       46.740      31.566      -0.750
+SIB     "H3'"   H       H       0       44.146      30.910      -1.757
+SIB     "HO3'"  H       H       0       45.866      29.403      -0.357
+SIB     "H2'"   H       H       0       43.272      30.948      0.354
+SIB     "HO2'"  H       H       0       45.714      30.994      1.436
+SIB     "H1'"   H       H       0       44.519      33.081      1.161
+SIB     H8      H       H       0       41.793      32.995      1.276
+SIB     HN1     H       H       0       41.750      35.990      -4.105
+SIB     HC2     H       H       0       43.827      35.314      -4.083
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+SIB      N      n/a    CA     START
+SIB      H      N      .      .
+SIB      H2     N      .      .
+SIB      H3     N      .      .
+SIB      CA     N      C      .
+SIB      HA     CA     .      .
+SIB      CB     CA     CG     .
+SIB      HB2    CB     .      .
+SIB      HB3    CB     .      .
+SIB      CG     CB     SD     .
+SIB      HG2    CG     .      .
+SIB      HG3    CG     .      .
+SIB      SD     CG     "C5'"  .
+SIB      "C5'"  SD     "C4'"  .
+SIB      "H5'1" "C5'"  .      .
+SIB      "H5'2" "C5'"  .      .
+SIB      "C4'"  "C5'"  "C3'"  .
+SIB      "H4'"  "C4'"  .      .
+SIB      "C3'"  "C4'"  "C2'"  .
+SIB      "H3'"  "C3'"  .      .
+SIB      "O3'"  "C3'"  "HO3'" .
+SIB      "HO3'" "O3'"  .      .
+SIB      "C2'"  "C3'"  "C1'"  .
+SIB      "H2'"  "C2'"  .      .
+SIB      "O2'"  "C2'"  "HO2'" .
+SIB      "HO2'" "O2'"  .      .
+SIB      "C1'"  "C2'"  N9     .
+SIB      "H1'"  "C1'"  .      .
+SIB      "O4'"  "C1'"  .      .
+SIB      N9     "C1'"  C4     .
+SIB      C4     N9     N3     .
+SIB      C5     C4     N7     .
+SIB      N7     C5     C8     .
+SIB      C8     N7     H8     .
+SIB      H8     C8     .      .
+SIB      N3     C4     C2     .
+SIB      C2     N3     N1     .
+SIB      HC2    C2     .      .
+SIB      N1     C2     C6     .
+SIB      HN1    N1     .      .
+SIB      C6     N1     O6     .
+SIB      O6     C6     .      .
+SIB      C      CA     .      END
+SIB      OXT    C      .      .
+SIB      O      C      .      .
+SIB      "C4'"  "O4'"  .    ADD
+SIB      N9     C8     .    ADD
+SIB      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SIB       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+SIB       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+SIB       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+SIB       CB        CG        SINGLE    n         1.517     0.020     1.517     0.020     
+SIB       CG        SD        SINGLE    n         1.810     0.020     1.810     0.020     
+SIB       SD        "C5'"     SINGLE    n         1.810     0.017     1.810     0.017     
+SIB       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+SIB       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SIB       "C5'"     "C4'"     SINGLE    n         1.510     0.014     1.510     0.014     
+SIB       "C4'"     "O4'"     SINGLE    n         1.446     0.010     1.446     0.010     
+SIB       "C4'"     "C3'"     SINGLE    n         1.528     0.012     1.528     0.012     
+SIB       "O4'"     "C1'"     SINGLE    n         1.409     0.010     1.409     0.010     
+SIB       "C3'"     "C2'"     SINGLE    n         1.531     0.010     1.531     0.010     
+SIB       "C3'"     "O3'"     SINGLE    n         1.422     0.010     1.422     0.010     
+SIB       "C2'"     "C1'"     SINGLE    n         1.525     0.010     1.525     0.010     
+SIB       "C2'"     "O2'"     SINGLE    n         1.411     0.010     1.411     0.010     
+SIB       "C1'"     N9        SINGLE    n         1.458     0.010     1.458     0.010     
+SIB       N9        C4        SINGLE    y         1.370     0.010     1.370     0.010     
+SIB       N9        C8        SINGLE    y         1.372     0.010     1.372     0.010     
+SIB       C8        N7        DOUBLE    y         1.312     0.010     1.312     0.010     
+SIB       N7        C5        SINGLE    y         1.390     0.010     1.390     0.010     
+SIB       C5        C4        DOUBLE    y         1.378     0.010     1.378     0.010     
+SIB       C5        C6        SINGLE    y         1.424     0.012     1.424     0.012     
+SIB       C6        N1        SINGLE    y         1.398     0.014     1.398     0.014     
+SIB       C6        O6        DOUBLE    n         1.226     0.015     1.226     0.015     
+SIB       N1        C2        SINGLE    y         1.342     0.019     1.342     0.019     
+SIB       C2        N3        DOUBLE    y         1.310     0.010     1.310     0.010     
+SIB       N3        C4        SINGLE    y         1.359     0.010     1.359     0.010     
+SIB       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+SIB       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+SIB       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+SIB       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+SIB       CB        HB2       SINGLE    n         1.089     0.010     0.978     0.020     
+SIB       CB        HB3       SINGLE    n         1.089     0.010     0.978     0.020     
+SIB       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.013     
+SIB       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.013     
+SIB       "C5'"     "H5'1"    SINGLE    n         1.089     0.010     0.954     0.020     
+SIB       "C5'"     "H5'2"    SINGLE    n         1.089     0.010     0.954     0.020     
+SIB       "C4'"     "H4'"     SINGLE    n         1.089     0.010     0.989     0.020     
+SIB       "C3'"     "H3'"     SINGLE    n         1.089     0.010     0.992     0.020     
+SIB       "O3'"     "HO3'"    SINGLE    n         0.970     0.012     0.849     0.020     
+SIB       "C2'"     "H2'"     SINGLE    n         1.089     0.010     0.994     0.020     
+SIB       "O2'"     "HO2'"    SINGLE    n         0.970     0.012     0.849     0.020     
+SIB       "C1'"     "H1'"     SINGLE    n         1.089     0.010     0.984     0.020     
+SIB       C8        H8        SINGLE    n         1.082     0.013     0.942     0.017     
+SIB       N1        HN1       SINGLE    n         1.016     0.010     0.869     0.016     
+SIB       C2        HC2       SINGLE    n         1.082     0.013     0.936     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SIB          CA           N           H     110.062    1.93
+SIB          CA           N          H2     110.062    1.93
+SIB          CA           N          H3     110.062    1.93
+SIB           H           N          H2     109.028    2.41
+SIB           H           N          H3     109.028    2.41
+SIB          H2           N          H3     109.028    2.41
+SIB           N          CA          CB     110.906    1.50
+SIB           N          CA           C     109.241    1.50
+SIB           N          CA          HA     108.487    1.50
+SIB          CB          CA           C     109.344    1.50
+SIB          CB          CA          HA     109.670    1.50
+SIB           C          CA          HA     108.824    1.50
+SIB          CA          CB          CG     113.476    1.50
+SIB          CA          CB         HB2     108.666    1.50
+SIB          CA          CB         HB3     108.666    1.50
+SIB          CG          CB         HB2     108.955    1.50
+SIB          CG          CB         HB3     108.955    1.50
+SIB         HB2          CB         HB3     107.698    1.50
+SIB          CB          CG          SD     113.263    2.33
+SIB          CB          CG         HG2     109.206    1.50
+SIB          CB          CG         HG3     109.206    1.50
+SIB          SD          CG         HG2     108.654    1.50
+SIB          SD          CG         HG3     108.654    1.50
+SIB         HG2          CG         HG3     107.939    1.50
+SIB          CG          SD       "C5'"     102.171    1.96
+SIB          CA           C           O     117.124    1.50
+SIB          CA           C         OXT     117.124    1.50
+SIB           O           C         OXT     125.752    1.50
+SIB          SD       "C5'"       "C4'"     113.180    3.00
+SIB          SD       "C5'"      "H5'1"     108.574    1.50
+SIB          SD       "C5'"      "H5'2"     108.574    1.50
+SIB       "C4'"       "C5'"      "H5'1"     108.376    1.50
+SIB       "C4'"       "C5'"      "H5'2"     108.376    1.50
+SIB      "H5'1"       "C5'"      "H5'2"     108.127    1.50
+SIB       "C5'"       "C4'"       "O4'"     109.275    1.50
+SIB       "C5'"       "C4'"       "C3'"     114.880    1.64
+SIB       "C5'"       "C4'"       "H4'"     109.000    1.62
+SIB       "O4'"       "C4'"       "C3'"     105.508    1.50
+SIB       "O4'"       "C4'"       "H4'"     109.115    1.50
+SIB       "C3'"       "C4'"       "H4'"     109.143    1.50
+SIB       "C4'"       "O4'"       "C1'"     109.426    1.50
+SIB       "C4'"       "C3'"       "C2'"     102.352    1.50
+SIB       "C4'"       "C3'"       "O3'"     110.985    2.41
+SIB       "C4'"       "C3'"       "H3'"     110.624    1.81
+SIB       "C2'"       "C3'"       "O3'"     111.581    2.83
+SIB       "C2'"       "C3'"       "H3'"     110.504    1.75
+SIB       "O3'"       "C3'"       "H3'"     110.380    1.67
+SIB       "C3'"       "O3'"      "HO3'"     108.744    3.00
+SIB       "C3'"       "C2'"       "C1'"     101.239    1.50
+SIB       "C3'"       "C2'"       "O2'"     112.782    2.45
+SIB       "C3'"       "C2'"       "H2'"     110.596    1.51
+SIB       "C1'"       "C2'"       "O2'"     111.715    2.69
+SIB       "C1'"       "C2'"       "H2'"     110.636    1.70
+SIB       "O2'"       "C2'"       "H2'"     110.448    1.97
+SIB       "C2'"       "O2'"      "HO2'"     109.103    2.13
+SIB       "O4'"       "C1'"       "C2'"     106.047    1.50
+SIB       "O4'"       "C1'"          N9     108.477    1.50
+SIB       "O4'"       "C1'"       "H1'"     109.807    1.50
+SIB       "C2'"       "C1'"          N9     113.824    1.50
+SIB       "C2'"       "C1'"       "H1'"     109.015    1.50
+SIB          N9       "C1'"       "H1'"     109.561    1.50
+SIB       "C1'"          N9          C4     127.440    1.80
+SIB       "C1'"          N9          C8     126.829    1.91
+SIB          C4          N9          C8     105.731    1.50
+SIB          N9          C8          N7     113.507    1.50
+SIB          N9          C8          H8     123.187    1.50
+SIB          N7          C8          H8     123.307    1.50
+SIB          C8          N7          C5     104.778    1.50
+SIB          N7          C5          C4     110.574    1.50
+SIB          N7          C5          C6     130.391    1.50
+SIB          C4          C5          C6     119.035    1.50
+SIB          C5          C6          N1     109.765    1.50
+SIB          C5          C6          O6     128.572    1.50
+SIB          N1          C6          O6     121.664    1.50
+SIB          C6          N1          C2     125.186    1.50
+SIB          C6          N1         HN1     117.309    1.50
+SIB          C2          N1         HN1     117.505    1.50
+SIB          N1          C2          N3     125.293    1.50
+SIB          N1          C2         HC2     117.332    1.50
+SIB          N3          C2         HC2     117.375    1.50
+SIB          C2          N3          C4     113.450    1.50
+SIB          N9          C4          C5     105.411    1.50
+SIB          N9          C4          N3     127.317    1.50
+SIB          C5          C4          N3     127.272    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SIB            sp3_sp3_25          CB          CA           N           H     180.000   10.00     3
+SIB             sp3_sp3_4       "C2'"       "C1'"       "O4'"       "C4'"     -60.000   10.00     3
+SIB            sp3_sp3_76       "C4'"       "C3'"       "O3'"      "HO3'"     180.000   10.00     3
+SIB            sp3_sp3_20       "O2'"       "C2'"       "C3'"       "O3'"     -60.000   10.00     3
+SIB            sp3_sp3_79       "C3'"       "C2'"       "O2'"      "HO2'"     180.000   10.00     3
+SIB             sp3_sp3_9       "O4'"       "C1'"       "C2'"       "O2'"     -60.000   10.00     3
+SIB             sp2_sp3_7          C4          N9       "C1'"       "O4'"     150.000   10.00     6
+SIB              const_26          N7          C8          N9       "C1'"     180.000   10.00     2
+SIB              const_18          C5          C4          N9       "C1'"     180.000   10.00     2
+SIB              const_23          N9          C8          N7          C5       0.000   10.00     2
+SIB              const_21          C4          C5          N7          C8       0.000   10.00     2
+SIB              const_32          N7          C5          C6          O6       0.000   10.00     2
+SIB       const_sp2_sp2_1          N9          C4          C5          N7       0.000   10.00     2
+SIB            sp3_sp3_37           N          CA          CB          CG      60.000   10.00     3
+SIB             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+SIB              const_15          O6          C6          N1          C2     180.000   10.00     2
+SIB       const_sp2_sp2_9          N3          C2          N1          C6       0.000   10.00     2
+SIB       const_sp2_sp2_7          N1          C2          N3          C4       0.000   10.00     2
+SIB       const_sp2_sp2_6          N9          C4          N3          C2     180.000   10.00     2
+SIB            sp3_sp3_43          CA          CB          CG          SD     180.000   10.00     3
+SIB            sp3_sp3_52          CB          CG          SD       "C5'"     180.000   10.00     3
+SIB            sp3_sp3_55       "C4'"       "C5'"          SD          CG     180.000   10.00     3
+SIB            sp3_sp3_58       "O4'"       "C4'"       "C5'"          SD     180.000   10.00     3
+SIB             sp3_sp3_2       "C5'"       "C4'"       "O4'"       "C1'"     -60.000   10.00     3
+SIB            sp3_sp3_72       "O3'"       "C3'"       "C4'"       "C5'"     -60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SIB    chir_1    CA    N    C    CB    both
+SIB    chir_2    "C4'"    "O4'"    "C5'"    "C3'"    both
+SIB    chir_3    "C3'"    "O3'"    "C4'"    "C2'"    positive
+SIB    chir_4    "C2'"    "O2'"    "C1'"    "C3'"    both
+SIB    chir_5    "C1'"    "O4'"    N9    "C2'"    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SIB    plan-1       "C1'"   0.020
+SIB    plan-1          C4   0.020
+SIB    plan-1          C5   0.020
+SIB    plan-1          C6   0.020
+SIB    plan-1          C8   0.020
+SIB    plan-1          H8   0.020
+SIB    plan-1          N3   0.020
+SIB    plan-1          N7   0.020
+SIB    plan-1          N9   0.020
+SIB    plan-2          C2   0.020
+SIB    plan-2          C4   0.020
+SIB    plan-2          C5   0.020
+SIB    plan-2          C6   0.020
+SIB    plan-2         HC2   0.020
+SIB    plan-2         HN1   0.020
+SIB    plan-2          N1   0.020
+SIB    plan-2          N3   0.020
+SIB    plan-2          N7   0.020
+SIB    plan-2          N9   0.020
+SIB    plan-2          O6   0.020
+SIB    plan-3           C   0.020
+SIB    plan-3          CA   0.020
+SIB    plan-3           O   0.020
+SIB    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SIB SMILES           ACDLabs              10.04 "O=C(O)C(N)CCSCC3OC(n2cnc1c2N=CNC1=O)C(O)C3O"
+SIB SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCSC[C@H]1O[C@H]([C@H](O)[C@@H]1O)n2cnc3C(=O)NC=Nc23)C(O)=O"
+SIB SMILES           CACTVS               3.341 "N[CH](CCSC[CH]1O[CH]([CH](O)[CH]1O)n2cnc3C(=O)NC=Nc23)C(O)=O"
+SIB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1nc2c(n1[C@H]3[C@@H]([C@@H]([C@H](O3)CSCC[C@@H](C(=O)O)N)O)O)N=CNC2=O"
+SIB SMILES           "OpenEye OEToolkits" 1.5.0 "c1nc2c(n1C3C(C(C(O3)CSCCC(C(=O)O)N)O)O)N=CNC2=O"
+SIB InChI            InChI                1.03  "InChI=1S/C14H19N5O6S/c15-6(14(23)24)1-2-26-3-7-9(20)10(21)13(25-7)19-5-18-8-11(19)16-4-17-12(8)22/h4-7,9-10,13,20-21H,1-3,15H2,(H,23,24)(H,16,17,22)/t6-,7+,9+,10+,13+/m0/s1"
+SIB InChIKey         InChI                1.03  VNPWVMVYUSNFAW-WFMPWKQPSA-N
+SIB ?                acedrg               196         "dictionary generator"
+SIB ?                acedrg_database      11          "data source"
+SIB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SIB ?                refmac5              5.8.0222    "optimization tool"

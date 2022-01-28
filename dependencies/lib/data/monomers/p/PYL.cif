@@ -1,0 +1,311 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PYL     PYL     PYRROLYSINE     peptide     39     18     .
+#
+data_comp_PYL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PYL     CB2     C       CH3     0       3.418       71.643      1.051
+PYL     CG2     C       CH1     0       4.646       71.717      1.950
+PYL     CD2     C       CH2     0       4.376       71.293      3.391
+PYL     CE2     C       CR15    0       5.136       72.281      4.211
+PYL     N2      N       NRD5    0       5.616       73.265      3.542
+PYL     CA2     C       CH1     0       5.270       73.121      2.110
+PYL     C2      C       C       0       6.536       73.331      1.297
+PYL     O2      O       O       0       6.531       74.157      0.382
+PYL     NZ      N       NH1     0       7.597       72.605      1.647
+PYL     CE      C       CH2     0       8.957       72.871      1.166
+PYL     CD      C       CH2     0       9.795       73.614      2.190
+PYL     CG      C       CH2     0       9.266       74.998      2.509
+PYL     CB      C       CH2     0       10.178      75.819      3.413
+PYL     CA      C       CH1     0       10.396      75.267      4.827
+PYL     C       C       C       0       11.347      76.181      5.610
+PYL     OXT     O       OC      -1      12.468      75.719      5.900
+PYL     O       O       O       0       10.930      77.320      5.900
+PYL     N       N       NT3     1       9.103       75.151      5.559
+PYL     HB12    H       H       0       2.912       72.469      1.117
+PYL     HB22    H       H       0       2.857       70.901      1.328
+PYL     HB32    H       H       0       3.697       71.509      0.131
+PYL     HG22    H       H       0       5.327       71.107      1.582
+PYL     HD32    H       H       0       3.421       71.334      3.598
+PYL     HD22    H       H       0       4.700       70.385      3.555
+PYL     HE22    H       H       0       5.263       72.203      5.142
+PYL     HA2     H       H       0       4.606       73.818      1.863
+PYL     HZ      H       H       0       7.480       71.919      2.208
+PYL     HE3     H       H       0       8.922       73.390      0.335
+PYL     HE2     H       H       0       9.386       72.012      0.964
+PYL     HD3     H       H       0       10.712      73.694      1.851
+PYL     HD2     H       H       0       9.825       73.086      3.016
+PYL     HG3     H       H       0       8.389       74.912      2.939
+PYL     HG2     H       H       0       9.137       75.488      1.668
+PYL     HB3     H       H       0       9.804       76.722      3.490
+PYL     HB2     H       H       0       11.053      75.899      2.977
+PYL     HA      H       H       0       10.800      74.372      4.764
+PYL     H       H       H       0       9.253       75.023      6.450
+PYL     H2      H       H       0       8.627       74.442      5.243
+PYL     H3      H       H       0       8.611       75.911      5.450
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+PYL      N      n/a    CA     START
+PYL      H      N      .      .
+PYL      H2     N      .      .
+PYL      H3     N      .      .
+PYL      CA     N      C      .
+PYL      HA     CA     .      .
+PYL      CB     CA     CG     .
+PYL      HB3    CB     .      .
+PYL      HB2    CB     .      .
+PYL      CG     CB     CD     .
+PYL      HG3    CG     .      .
+PYL      HG2    CG     .      .
+PYL      CD     CG     CE     .
+PYL      HD3    CD     .      .
+PYL      HD2    CD     .      .
+PYL      CE     CD     NZ     .
+PYL      HE3    CE     .      .
+PYL      HE2    CE     .      .
+PYL      NZ     CE     C2     .
+PYL      HZ     NZ     .      .
+PYL      C2     NZ     CA2    .
+PYL      O2     C2     .      .
+PYL      CA2    C2     N2     .
+PYL      HA2    CA2    .      .
+PYL      CG2    CA2    CB2    .
+PYL      HG22   CG2    .      .
+PYL      CB2    CG2    HB12   .
+PYL      HB32   CB2    .      .
+PYL      HB22   CB2    .      .
+PYL      HB12   CB2    .      .
+PYL      N2     CA2    CE2    .
+PYL      CE2    N2     CD2    .
+PYL      HE22   CE2    .      .
+PYL      CD2    CE2    HD32   .
+PYL      HD22   CD2    .      .
+PYL      HD32   CD2    .      .
+PYL      C      CA     .      END
+PYL      OXT    C      .      .
+PYL      O      C      .      .
+PYL      CG2    CD2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PYL       CB2       CG2       SINGLE    n         1.521     0.012     1.521     0.012     
+PYL       CG2       CD2       SINGLE    n         1.531     0.020     1.531     0.020     
+PYL       CG2       CA2       SINGLE    n         1.539     0.016     1.539     0.016     
+PYL       CD2       CE2       SINGLE    n         1.493     0.012     1.493     0.012     
+PYL       CE2       N2        DOUBLE    n         1.278     0.020     1.278     0.020     
+PYL       N2        CA2       SINGLE    n         1.470     0.020     1.470     0.020     
+PYL       CA2       C2        SINGLE    n         1.508     0.019     1.508     0.019     
+PYL       C2        NZ        SINGLE    n         1.326     0.011     1.326     0.011     
+PYL       C2        O2        DOUBLE    n         1.231     0.010     1.231     0.010     
+PYL       NZ        CE        SINGLE    n         1.461     0.013     1.461     0.013     
+PYL       CE        CD        SINGLE    n         1.517     0.015     1.517     0.015     
+PYL       CD        CG        SINGLE    n         1.514     0.020     1.514     0.020     
+PYL       CG        CB        SINGLE    n         1.523     0.012     1.523     0.012     
+PYL       CB        CA        SINGLE    n         1.532     0.010     1.532     0.010     
+PYL       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+PYL       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+PYL       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+PYL       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+PYL       CB2       HB12      SINGLE    n         1.089     0.010     0.971     0.017     
+PYL       CB2       HB22      SINGLE    n         1.089     0.010     0.971     0.017     
+PYL       CB2       HB32      SINGLE    n         1.089     0.010     0.971     0.017     
+PYL       CG2       HG22      SINGLE    n         1.089     0.010     0.985     0.011     
+PYL       CD2       HD32      SINGLE    n         1.089     0.010     0.978     0.018     
+PYL       CD2       HD22      SINGLE    n         1.089     0.010     0.978     0.018     
+PYL       CE2       HE22      SINGLE    n         1.082     0.013     0.942     0.013     
+PYL       CA2       HA2       SINGLE    n         1.089     0.010     0.994     0.019     
+PYL       NZ        HZ        SINGLE    n         1.016     0.010     0.893     0.020     
+PYL       CE        HE3       SINGLE    n         1.089     0.010     0.981     0.015     
+PYL       CE        HE2       SINGLE    n         1.089     0.010     0.981     0.015     
+PYL       CD        HD3       SINGLE    n         1.089     0.010     0.981     0.016     
+PYL       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.016     
+PYL       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.016     
+PYL       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+PYL       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+PYL       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+PYL       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+PYL       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+PYL       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+PYL       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PYL         CG2         CB2        HB12     109.481    1.50
+PYL         CG2         CB2        HB22     109.481    1.50
+PYL         CG2         CB2        HB32     109.481    1.50
+PYL        HB12         CB2        HB22     109.347    1.50
+PYL        HB12         CB2        HB32     109.347    1.50
+PYL        HB22         CB2        HB32     109.347    1.50
+PYL         CB2         CG2         CD2     113.283    1.88
+PYL         CB2         CG2         CA2     113.745    2.48
+PYL         CB2         CG2        HG22     108.105    1.90
+PYL         CD2         CG2         CA2     104.443    2.26
+PYL         CD2         CG2        HG22     107.876    2.08
+PYL         CA2         CG2        HG22     108.378    1.50
+PYL         CG2         CD2         CE2     104.779    1.50
+PYL         CG2         CD2        HD32     110.890    1.50
+PYL         CG2         CD2        HD22     110.890    1.50
+PYL         CE2         CD2        HD32     110.597    1.50
+PYL         CE2         CD2        HD22     110.597    1.50
+PYL        HD32         CD2        HD22     108.871    1.50
+PYL         CD2         CE2          N2     113.949    1.55
+PYL         CD2         CE2        HE22     124.047    1.51
+PYL          N2         CE2        HE22     122.003    1.50
+PYL         CE2          N2         CA2     107.937    1.96
+PYL         CG2         CA2          N2     105.224    2.48
+PYL         CG2         CA2          C2     112.424    2.46
+PYL         CG2         CA2         HA2     110.125    1.50
+PYL          N2         CA2          C2     107.922    3.00
+PYL          N2         CA2         HA2     109.715    1.50
+PYL          C2         CA2         HA2     109.469    1.50
+PYL         CA2          C2          NZ     116.292    1.65
+PYL         CA2          C2          O2     119.983    1.50
+PYL          NZ          C2          O2     123.725    1.50
+PYL          C2          NZ          CE     122.174    1.50
+PYL          C2          NZ          HZ     119.067    1.50
+PYL          CE          NZ          HZ     118.760    1.50
+PYL          NZ          CE          CD     112.159    1.92
+PYL          NZ          CE         HE3     108.475    1.75
+PYL          NZ          CE         HE2     108.475    1.75
+PYL          CD          CE         HE3     109.197    1.51
+PYL          CD          CE         HE2     109.197    1.51
+PYL         HE3          CE         HE2     107.877    1.50
+PYL          CE          CD          CG     113.159    3.00
+PYL          CE          CD         HD3     108.956    1.50
+PYL          CE          CD         HD2     108.956    1.50
+PYL          CG          CD         HD3     109.041    1.50
+PYL          CG          CD         HD2     109.041    1.50
+PYL         HD3          CD         HD2     107.927    1.57
+PYL          CD          CG          CB     113.328    2.00
+PYL          CD          CG         HG3     108.806    1.50
+PYL          CD          CG         HG2     108.806    1.50
+PYL          CB          CG         HG3     108.601    1.50
+PYL          CB          CG         HG2     108.601    1.50
+PYL         HG3          CG         HG2     107.646    1.50
+PYL          CG          CB          CA     115.311    1.56
+PYL          CG          CB         HB3     108.650    1.50
+PYL          CG          CB         HB2     108.650    1.50
+PYL          CA          CB         HB3     108.549    1.50
+PYL          CA          CB         HB2     108.549    1.50
+PYL         HB3          CB         HB2     107.844    1.50
+PYL          CB          CA           C     111.037    2.40
+PYL          CB          CA           N     110.374    1.62
+PYL          CB          CA          HA     108.967    1.50
+PYL           C          CA           N     109.241    1.50
+PYL           C          CA          HA     108.824    1.50
+PYL           N          CA          HA     108.487    1.50
+PYL          CA           C         OXT     117.124    1.50
+PYL          CA           C           O     117.124    1.50
+PYL         OXT           C           O     125.752    1.50
+PYL          CA           N           H     110.062    1.93
+PYL          CA           N          H2     110.062    1.93
+PYL          CA           N          H3     110.062    1.93
+PYL           H           N          H2     109.028    2.41
+PYL           H           N          H3     109.028    2.41
+PYL          H2           N          H3     109.028    2.41
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PYL            sp3_sp3_10        HB12         CB2         CG2         CD2     180.000   10.00     3
+PYL            sp3_sp3_37          CE          CD          CG          CB     180.000   10.00     3
+PYL            sp3_sp3_46          CA          CB          CG          CD     180.000   10.00     3
+PYL            sp3_sp3_55           C          CA          CB          CG     180.000   10.00     3
+PYL            sp2_sp3_22         OXT           C          CA          CB       0.000   10.00     6
+PYL            sp3_sp3_64          CB          CA           N           H     180.000   10.00     3
+PYL             sp3_sp3_2         CE2         CD2         CG2         CB2     180.000   10.00     3
+PYL            sp3_sp3_26          C2         CA2         CG2         CB2      60.000   10.00     3
+PYL             sp2_sp3_1          N2         CE2         CD2         CG2       0.000   10.00     6
+PYL             sp2_sp2_1         CD2         CE2          N2         CA2       0.000   10.00     2
+PYL             sp2_sp3_8         CE2          N2         CA2          C2     120.000   10.00     6
+PYL            sp2_sp3_11          NZ          C2         CA2         CG2     120.000   10.00     6
+PYL             sp2_sp2_5          O2          C2          NZ          CE       0.000   10.00     2
+PYL            sp2_sp3_17          C2          NZ          CE          CD     120.000   10.00     6
+PYL            sp3_sp3_28          CG          CD          CE          NZ     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PYL    chir_1    CG2    CA2    CD2    CB2    negative
+PYL    chir_2    CA2    N2    C2    CG2    both
+PYL    chir_3    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PYL    plan-1         CD2   0.020
+PYL    plan-1         CE2   0.020
+PYL    plan-1        HE22   0.020
+PYL    plan-1          N2   0.020
+PYL    plan-2          C2   0.020
+PYL    plan-2         CA2   0.020
+PYL    plan-2          NZ   0.020
+PYL    plan-2          O2   0.020
+PYL    plan-3          C2   0.020
+PYL    plan-3          CE   0.020
+PYL    plan-3          HZ   0.020
+PYL    plan-3          NZ   0.020
+PYL    plan-4           C   0.020
+PYL    plan-4          CA   0.020
+PYL    plan-4           O   0.020
+PYL    plan-4         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PYL SMILES           ACDLabs              12.01 "O=C(NCCCCC(C(=O)O)N)C1N=CCC1C"
+PYL InChI            InChI                1.03  "InChI=1S/C12H21N3O3/c1-8-5-7-14-10(8)11(16)15-6-3-2-4-9(13)12(17)18/h7-10H,2-6,13H2,1H3,(H,15,16)(H,17,18)/t8-,9+,10-/m1/s1"
+PYL InChIKey         InChI                1.03  ZFOMKMMPBOQKMC-KXUCPTDWSA-N
+PYL SMILES_CANONICAL CACTVS               3.385 "C[C@@H]1CC=N[C@H]1C(=O)NCCCC[C@H](N)C(O)=O"
+PYL SMILES           CACTVS               3.385 "C[CH]1CC=N[CH]1C(=O)NCCCC[CH](N)C(O)=O"
+PYL SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C[C@@H]1CC=N[C@H]1C(=O)NCCCC[C@@H](C(=O)O)N"
+PYL SMILES           "OpenEye OEToolkits" 1.7.6 "CC1CC=NC1C(=O)NCCCCC(C(=O)O)N"
+PYL ?                acedrg               196         "dictionary generator"
+PYL ?                acedrg_database      11          "data source"
+PYL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PYL ?                refmac5              5.8.0222    "optimization tool"

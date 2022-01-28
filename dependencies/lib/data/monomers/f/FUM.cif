@@ -1,0 +1,122 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FUM     FUM      "FUMARIC ACID"     NON-POLYMER     10     8     .     
+#
+data_comp_FUM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FUM     O1      O       OC      -1      29.234      28.874      73.069      
+FUM     C2      C       C       0       28.518      29.773      73.509      
+FUM     O3      O       O       0       27.360      29.964      73.133      
+FUM     C4      C       C1      0       29.103      30.674      74.557      
+FUM     C5      C       C1      0       28.521      31.700      75.180      
+FUM     C6      C       C       0       29.106      32.601      76.228      
+FUM     O7      O       O       0       30.265      32.410      76.603      
+FUM     O8      O       OC      -1      28.391      33.500      76.667      
+FUM     H4      H       H       0       29.994      30.483      74.798      
+FUM     H5      H       H       0       27.631      31.891      74.938      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FUM       O1        C2        SINGLE    n         1.230     0.020     1.230     0.020     
+FUM       C2        O3        DOUBLE    n         1.230     0.020     1.230     0.020     
+FUM       C2        C4        SINGLE    n         1.492     0.020     1.492     0.020     
+FUM       C4        C5        DOUBLE    n         1.331     0.010     1.331     0.010     
+FUM       C5        C6        SINGLE    n         1.492     0.020     1.492     0.020     
+FUM       C6        O7        DOUBLE    n         1.230     0.020     1.230     0.020     
+FUM       C6        O8        SINGLE    n         1.230     0.020     1.230     0.020     
+FUM       C4        H4        SINGLE    n         1.082     0.013     0.943     0.020     
+FUM       C5        H5        SINGLE    n         1.082     0.013     0.943     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FUM          O1          C2          O3     123.843    1.50
+FUM          O1          C2          C4     118.078    1.84
+FUM          O3          C2          C4     118.078    1.84
+FUM          C2          C4          C5     126.264    3.00
+FUM          C2          C4          H4     116.538    1.98
+FUM          C5          C4          H4     117.199    2.10
+FUM          C4          C5          C6     126.264    3.00
+FUM          C4          C5          H5     117.199    2.10
+FUM          C6          C5          H5     116.538    1.98
+FUM          C5          C6          O7     118.078    1.84
+FUM          C5          C6          O8     118.078    1.84
+FUM          O7          C6          O8     123.843    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FUM             sp2_sp2_1          O1          C2          C4          C5     180.000   10.00     2
+FUM             sp2_sp2_5          C2          C4          C5          C6     180.000   10.00     2
+FUM             sp2_sp2_9          C4          C5          C6          O7     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FUM    plan-1          C2   0.020
+FUM    plan-1          C4   0.020
+FUM    plan-1          O1   0.020
+FUM    plan-1          O3   0.020
+FUM    plan-2          C2   0.020
+FUM    plan-2          C4   0.020
+FUM    plan-2          C5   0.020
+FUM    plan-2          H4   0.020
+FUM    plan-3          C4   0.020
+FUM    plan-3          C5   0.020
+FUM    plan-3          C6   0.020
+FUM    plan-3          H5   0.020
+FUM    plan-4          C5   0.020
+FUM    plan-4          C6   0.020
+FUM    plan-4          O7   0.020
+FUM    plan-4          O8   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FUM SMILES           ACDLabs              12.01 "O=C(O)\C=C\C(=O)O"
+FUM InChI            InChI                1.03  "InChI=1S/C4H4O4/c5-3(6)1-2-4(7)8/h1-2H,(H,5,6)(H,7,8)/b2-1+"
+FUM InChIKey         InChI                1.03  VZCYOOQTPOCHFL-OWOJBTEDSA-N
+FUM SMILES_CANONICAL CACTVS               3.370 "OC(=O)\C=C\C(O)=O"
+FUM SMILES           CACTVS               3.370 "OC(=O)C=CC(O)=O"
+FUM SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C(=C/C(=O)O)\C(=O)O"
+FUM SMILES           "OpenEye OEToolkits" 1.7.6 "C(=CC(=O)O)C(=O)O"
+FUM ?                acedrg               202         "dictionary generator"                  
+FUM ?                acedrg_database      11          "data source"                           
+FUM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FUM ?                refmac5              5.8.0189    "optimization tool"                     

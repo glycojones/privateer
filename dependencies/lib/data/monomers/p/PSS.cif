@@ -1,0 +1,352 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PSS      PSS '(2S)-2-[(3R)-3-benzyl-2-oxopiperazin' non-polymer        45  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PSS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PSS           OXT    O    OC       -0.500      0.000    0.000    0.000
+ PSS           C      C    C         0.000     -1.205    0.194    0.275
+ PSS           O      O    OC       -0.500     -1.729    1.305    0.039
+ PSS           C12    C    CH1       0.000     -2.026   -0.913    0.883
+ PSS           H12    H    H         0.000     -1.580   -1.215    1.841
+ PSS           C13    C    CH2       0.000     -2.052   -2.111   -0.068
+ PSS           H13    H    H         0.000     -1.028   -2.408   -0.306
+ PSS           H13A   H    H         0.000     -2.573   -1.835   -0.987
+ PSS           C14    C    CH2       0.000     -2.780   -3.278    0.602
+ PSS           H14    H    H         0.000     -3.803   -2.979    0.841
+ PSS           H14A   H    H         0.000     -2.258   -3.552    1.521
+ PSS           C15    C    CH2       0.000     -2.806   -4.477   -0.349
+ PSS           H15    H    H         0.000     -1.782   -4.773   -0.588
+ PSS           H15A   H    H         0.000     -3.327   -4.200   -1.268
+ PSS           C16    C    CH3       0.000     -3.533   -5.645    0.321
+ PSS           H16B   H    H         0.000     -4.528   -5.359    0.554
+ PSS           H16A   H    H         0.000     -3.553   -6.477   -0.335
+ PSS           H16    H    H         0.000     -3.029   -5.915    1.214
+ PSS           N      N    N         0.000     -3.393   -0.440    1.109
+ PSS           C4     C    C         0.000     -4.107   -0.024    0.057
+ PSS           O1     O    O         0.000     -3.609   -0.090   -1.046
+ PSS           C3     C    CH1       0.000     -5.502    0.521    0.185
+ PSS           H3     H    H         0.000     -5.475    1.616    0.100
+ PSS           N1     N    NH1       0.000     -6.070    0.147    1.487
+ PSS           HN1    H    H         0.000     -6.974   -0.282    1.622
+ PSS           C1     C    CH2       0.000     -5.129    0.490    2.567
+ PSS           H1     H    H         0.000     -5.615    0.357    3.536
+ PSS           H1A    H    H         0.000     -4.807    1.528    2.461
+ PSS           C2     C    CH2       0.000     -3.915   -0.435    2.472
+ PSS           H2A    H    H         0.000     -4.213   -1.447    2.753
+ PSS           H2     H    H         0.000     -3.141   -0.082    3.158
+ PSS           C5     C    CH2       0.000     -6.375   -0.053   -0.933
+ PSS           H5     H    H         0.000     -6.479   -1.131   -0.797
+ PSS           H5A    H    H         0.000     -5.907    0.147   -1.899
+ PSS           C6     C    CR6       0.000     -7.736    0.594   -0.889
+ PSS           C11    C    CR16      0.000     -7.975    1.749   -1.610
+ PSS           H11    H    H         0.000     -7.184    2.192   -2.202
+ PSS           C10    C    CR16      0.000     -9.225    2.341   -1.575
+ PSS           H10    H    H         0.000     -9.415    3.241   -2.146
+ PSS           C9     C    CR16      0.000    -10.231    1.782   -0.809
+ PSS           H9     H    H         0.000    -11.209    2.246   -0.778
+ PSS           C8     C    CR16      0.000     -9.990    0.630   -0.084
+ PSS           H8     H    H         0.000    -10.779    0.193    0.516
+ PSS           C7     C    CR16      0.000     -8.742    0.036   -0.124
+ PSS           H7     H    H         0.000     -8.553   -0.866    0.445
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PSS      OXT    n/a    C      START
+ PSS      C      OXT    C12    .
+ PSS      O      C      .      .
+ PSS      C12    C      N      .
+ PSS      H12    C12    .      .
+ PSS      C13    C12    C14    .
+ PSS      H13    C13    .      .
+ PSS      H13A   C13    .      .
+ PSS      C14    C13    C15    .
+ PSS      H14    C14    .      .
+ PSS      H14A   C14    .      .
+ PSS      C15    C14    C16    .
+ PSS      H15    C15    .      .
+ PSS      H15A   C15    .      .
+ PSS      C16    C15    H16    .
+ PSS      H16B   C16    .      .
+ PSS      H16A   C16    .      .
+ PSS      H16    C16    .      .
+ PSS      N      C12    C4     .
+ PSS      C4     N      C3     .
+ PSS      O1     C4     .      .
+ PSS      C3     C4     C5     .
+ PSS      H3     C3     .      .
+ PSS      N1     C3     C1     .
+ PSS      HN1    N1     .      .
+ PSS      C1     N1     C2     .
+ PSS      H1     C1     .      .
+ PSS      H1A    C1     .      .
+ PSS      C2     C1     H2     .
+ PSS      H2A    C2     .      .
+ PSS      H2     C2     .      .
+ PSS      C5     C3     C6     .
+ PSS      H5     C5     .      .
+ PSS      H5A    C5     .      .
+ PSS      C6     C5     C11    .
+ PSS      C11    C6     C10    .
+ PSS      H11    C11    .      .
+ PSS      C10    C11    C9     .
+ PSS      H10    C10    .      .
+ PSS      C9     C10    C8     .
+ PSS      H9     C9     .      .
+ PSS      C8     C9     C7     .
+ PSS      H8     C8     .      .
+ PSS      C7     C8     H7     .
+ PSS      H7     C7     .      END
+ PSS      N      C2     .    ADD
+ PSS      C6     C7     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PSS       C12       C         single    1.500     0.020     1.500     0.020     
+PSS       C         OXT       deloc     1.250     0.020     1.250     0.020     
+PSS       C4        N         single    1.330     0.020     1.330     0.020     
+PSS       O         C         deloc     1.250     0.020     1.250     0.020     
+PSS       C1        N1        single    1.450     0.020     1.450     0.020     
+PSS       H1        C1        single    1.089     0.010     0.989     0.005     
+PSS       H1A       C1        single    1.089     0.010     0.989     0.005     
+PSS       N1        C3        single    1.450     0.020     1.450     0.020     
+PSS       HN1       N1        single    1.036     0.016     0.914     0.007     
+PSS       N         C2        single    1.455     0.020     1.455     0.020     
+PSS       C2        C1        single    1.524     0.020     1.524     0.020     
+PSS       H2        C2        single    1.089     0.010     0.989     0.005     
+PSS       H2A       C2        single    1.089     0.010     0.989     0.005     
+PSS       C5        C3        single    1.524     0.020     1.524     0.020     
+PSS       H3        C3        single    1.089     0.010     0.989     0.005     
+PSS       O1        C4        double    1.220     0.020     1.220     0.020     
+PSS       C3        C4        single    1.500     0.020     1.500     0.020     
+PSS       H5        C5        single    1.089     0.010     0.989     0.005     
+PSS       H5A       C5        single    1.089     0.010     0.989     0.005     
+PSS       C6        C5        single    1.511     0.020     1.511     0.020     
+PSS       C11       C6        single    1.390     0.020     1.390     0.020     
+PSS       C6        C7        double    1.390     0.020     1.390     0.020     
+PSS       H7        C7        single    1.082     0.013     0.975     0.010     
+PSS       C7        C8        single    1.390     0.020     1.390     0.020     
+PSS       C8        C9        double    1.390     0.020     1.390     0.020     
+PSS       H8        C8        single    1.082     0.013     0.975     0.010     
+PSS       C9        C10       single    1.390     0.020     1.390     0.020     
+PSS       H9        C9        single    1.082     0.013     0.975     0.010     
+PSS       C10       C11       double    1.390     0.020     1.390     0.020     
+PSS       H10       C10       single    1.082     0.013     0.975     0.010     
+PSS       H11       C11       single    1.082     0.013     0.975     0.010     
+PSS       N         C12       single    1.455     0.020     1.455     0.020     
+PSS       C13       C12       single    1.524     0.020     1.524     0.020     
+PSS       H12       C12       single    1.089     0.010     0.989     0.005     
+PSS       H13       C13       single    1.089     0.010     0.989     0.005     
+PSS       H13A      C13       single    1.089     0.010     0.989     0.005     
+PSS       C14       C13       single    1.524     0.020     1.524     0.020     
+PSS       C15       C14       single    1.524     0.020     1.524     0.020     
+PSS       H14       C14       single    1.089     0.010     0.989     0.005     
+PSS       H14A      C14       single    1.089     0.010     0.989     0.005     
+PSS       C16       C15       single    1.513     0.020     1.513     0.020     
+PSS       H15       C15       single    1.089     0.010     0.989     0.005     
+PSS       H15A      C15       single    1.089     0.010     0.989     0.005     
+PSS       H16       C16       single    1.089     0.010     0.989     0.005     
+PSS       H16A      C16       single    1.089     0.010     0.989     0.005     
+PSS       H16B      C16       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PSS      OXT    C      O       123.000    3.000
+ PSS      OXT    C      C12     118.500    3.000
+ PSS      O      C      C12     118.500    3.000
+ PSS      C      C12    H12     108.810    3.000
+ PSS      C      C12    C13     109.470    3.000
+ PSS      C      C12    N       111.600    3.000
+ PSS      H12    C12    C13     108.340    3.000
+ PSS      H12    C12    N       109.470    3.000
+ PSS      C13    C12    N       105.000    3.000
+ PSS      C12    C13    H13     109.470    3.000
+ PSS      C12    C13    H13A    109.470    3.000
+ PSS      C12    C13    C14     111.000    3.000
+ PSS      H13    C13    H13A    107.900    3.000
+ PSS      H13    C13    C14     109.470    3.000
+ PSS      H13A   C13    C14     109.470    3.000
+ PSS      C13    C14    H14     109.470    3.000
+ PSS      C13    C14    H14A    109.470    3.000
+ PSS      C13    C14    C15     111.000    3.000
+ PSS      H14    C14    H14A    107.900    3.000
+ PSS      H14    C14    C15     109.470    3.000
+ PSS      H14A   C14    C15     109.470    3.000
+ PSS      C14    C15    H15     109.470    3.000
+ PSS      C14    C15    H15A    109.470    3.000
+ PSS      C14    C15    C16     111.000    3.000
+ PSS      H15    C15    H15A    107.900    3.000
+ PSS      H15    C15    C16     109.470    3.000
+ PSS      H15A   C15    C16     109.470    3.000
+ PSS      C15    C16    H16B    109.470    3.000
+ PSS      C15    C16    H16A    109.470    3.000
+ PSS      C15    C16    H16     109.470    3.000
+ PSS      H16B   C16    H16A    109.470    3.000
+ PSS      H16B   C16    H16     109.470    3.000
+ PSS      H16A   C16    H16     109.470    3.000
+ PSS      C12    N      C4      121.000    3.000
+ PSS      C12    N      C2      112.000    3.000
+ PSS      C4     N      C2      127.000    3.000
+ PSS      N      C4     O1      123.000    3.000
+ PSS      N      C4     C3      116.500    3.000
+ PSS      O1     C4     C3      120.500    3.000
+ PSS      C4     C3     H3      108.810    3.000
+ PSS      C4     C3     N1      111.600    3.000
+ PSS      C4     C3     C5      109.470    3.000
+ PSS      H3     C3     N1      108.550    3.000
+ PSS      H3     C3     C5      108.340    3.000
+ PSS      N1     C3     C5      110.000    3.000
+ PSS      C3     N1     HN1     118.500    3.000
+ PSS      C3     N1     C1      120.000    3.000
+ PSS      HN1    N1     C1      118.500    3.000
+ PSS      N1     C1     H1      109.470    3.000
+ PSS      N1     C1     H1A     109.470    3.000
+ PSS      N1     C1     C2      112.000    3.000
+ PSS      H1     C1     H1A     107.900    3.000
+ PSS      H1     C1     C2      109.470    3.000
+ PSS      H1A    C1     C2      109.470    3.000
+ PSS      C1     C2     H2A     109.470    3.000
+ PSS      C1     C2     H2      109.470    3.000
+ PSS      C1     C2     N       105.000    3.000
+ PSS      H2A    C2     H2      107.900    3.000
+ PSS      H2A    C2     N       109.470    3.000
+ PSS      H2     C2     N       109.470    3.000
+ PSS      C3     C5     H5      109.470    3.000
+ PSS      C3     C5     H5A     109.470    3.000
+ PSS      C3     C5     C6      109.470    3.000
+ PSS      H5     C5     H5A     107.900    3.000
+ PSS      H5     C5     C6      109.470    3.000
+ PSS      H5A    C5     C6      109.470    3.000
+ PSS      C5     C6     C11     120.000    3.000
+ PSS      C5     C6     C7      120.000    3.000
+ PSS      C11    C6     C7      120.000    3.000
+ PSS      C6     C11    H11     120.000    3.000
+ PSS      C6     C11    C10     120.000    3.000
+ PSS      H11    C11    C10     120.000    3.000
+ PSS      C11    C10    H10     120.000    3.000
+ PSS      C11    C10    C9      120.000    3.000
+ PSS      H10    C10    C9      120.000    3.000
+ PSS      C10    C9     H9      120.000    3.000
+ PSS      C10    C9     C8      120.000    3.000
+ PSS      H9     C9     C8      120.000    3.000
+ PSS      C9     C8     H8      120.000    3.000
+ PSS      C9     C8     C7      120.000    3.000
+ PSS      H8     C8     C7      120.000    3.000
+ PSS      C8     C7     H7      120.000    3.000
+ PSS      C8     C7     C6      120.000    3.000
+ PSS      H7     C7     C6      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PSS      var_1    OXT    C      C12    N       -179.993   20.000   3
+ PSS      var_2    C      C12    C13    C14      175.024   20.000   3
+ PSS      var_3    C12    C13    C14    C15      180.000   20.000   3
+ PSS      var_4    C13    C14    C15    C16      179.964   20.000   3
+ PSS      var_5    C14    C15    C16    H16      -59.995   20.000   3
+ PSS      var_6    C      C12    N      C4        59.973   20.000   3
+ PSS      var_7    C12    N      C2     C1       150.000   20.000   1
+ PSS      CONST_1  C12    N      C4     C3       180.000    0.000   0
+ PSS      var_8    N      C4     C3     C5      -150.000   20.000   3
+ PSS      var_9    C4     C3     N1     C1        60.000   20.000   3
+ PSS      var_10   C3     N1     C1     C2       -60.000   20.000   3
+ PSS      var_11   N1     C1     C2     N         60.000   20.000   3
+ PSS      var_12   C4     C3     C5     C6      -174.469   20.000   3
+ PSS      var_13   C3     C5     C6     C11       89.990   20.000   2
+ PSS      CONST_2  C5     C6     C7     C8       180.000    0.000   0
+ PSS      CONST_3  C5     C6     C11    C10      180.000    0.000   0
+ PSS      CONST_4  C6     C11    C10    C9         0.000    0.000   0
+ PSS      CONST_5  C11    C10    C9     C8         0.000    0.000   0
+ PSS      CONST_6  C10    C9     C8     C7         0.000    0.000   0
+ PSS      CONST_7  C9     C8     C7     C6         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PSS      chir_01  C3     N1     C4     C5        negativ
+ PSS      chir_02  C12    C      N      C13       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PSS      plan-1    C         0.020
+ PSS      plan-1    O         0.020
+ PSS      plan-1    C12       0.020
+ PSS      plan-1    OXT       0.020
+ PSS      plan-2    N         0.020
+ PSS      plan-2    C2        0.020
+ PSS      plan-2    C4        0.020
+ PSS      plan-2    C12       0.020
+ PSS      plan-3    N1        0.020
+ PSS      plan-3    C1        0.020
+ PSS      plan-3    C3        0.020
+ PSS      plan-3    HN1       0.020
+ PSS      plan-4    C4        0.020
+ PSS      plan-4    N         0.020
+ PSS      plan-4    O1        0.020
+ PSS      plan-4    C3        0.020
+ PSS      plan-5    C6        0.020
+ PSS      plan-5    C5        0.020
+ PSS      plan-5    C7        0.020
+ PSS      plan-5    C11       0.020
+ PSS      plan-5    C8        0.020
+ PSS      plan-5    C9        0.020
+ PSS      plan-5    C10       0.020
+ PSS      plan-5    H7        0.020
+ PSS      plan-5    H8        0.020
+ PSS      plan-5    H9        0.020
+ PSS      plan-5    H10       0.020
+ PSS      plan-5    H11       0.020
+# ------------------------------------------------------

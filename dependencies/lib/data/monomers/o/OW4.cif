@@ -1,0 +1,169 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OW4     OW4      "3-(methylamino)benzoic acid"     NON-POLYMER     19     11     .     
+#
+data_comp_OW4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OW4     C01     C       CH3     0       2.979       -0.671      18.974      
+OW4     C03     C       CR6     0       3.990       1.609       18.513      
+OW4     C04     C       CR16    0       5.004       1.508       19.485      
+OW4     C05     C       CR16    0       5.896       2.549       19.667      
+OW4     C06     C       CR16    0       5.806       3.702       18.902      
+OW4     C07     C       CR6     0       4.812       3.821       17.938      
+OW4     C08     C       CR16    0       3.910       2.778       17.748      
+OW4     C09     C       C       0       4.705       5.064       17.105      
+OW4     N02     N       NH1     0       3.076       0.606       18.283      
+OW4     O10     O       O       0       4.612       4.931       15.871      
+OW4     O11     O       OC      -1      4.718       6.159       17.695      
+OW4     H1      H       H       0       3.792       -0.865      19.456      
+OW4     H2      H       H       0       2.823       -1.374      18.322      
+OW4     H3      H       H       0       2.235       -0.645      19.596      
+OW4     H4      H       H       0       5.084       0.737       20.015      
+OW4     H5      H       H       0       6.570       2.474       20.319      
+OW4     H6      H       H       0       6.419       4.404       19.037      
+OW4     H7      H       H       0       3.238       2.857       17.096      
+OW4     H8      H       H       0       2.483       0.766       17.642      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OW4       C09       O10       DOUBLE    n         1.244     0.0200    1.244     0.0200    
+OW4       C09       O11       SINGLE    n         1.244     0.0200    1.244     0.0200    
+OW4       C07       C09       SINGLE    n         1.498     0.0200    1.498     0.0200    
+OW4       C07       C08       SINGLE    y         1.389     0.0100    1.389     0.0100    
+OW4       C03       C08       DOUBLE    y         1.393     0.0100    1.393     0.0100    
+OW4       C06       C07       DOUBLE    y         1.389     0.0100    1.389     0.0100    
+OW4       C03       N02       SINGLE    n         1.367     0.0100    1.367     0.0100    
+OW4       C01       N02       SINGLE    n         1.448     0.0122    1.448     0.0122    
+OW4       C03       C04       SINGLE    y         1.395     0.0124    1.395     0.0124    
+OW4       C05       C06       SINGLE    y         1.384     0.0100    1.384     0.0100    
+OW4       C04       C05       DOUBLE    y         1.379     0.0100    1.379     0.0100    
+OW4       C01       H1        SINGLE    n         1.089     0.010     0.970     0.0159    
+OW4       C01       H2        SINGLE    n         1.089     0.010     0.970     0.0159    
+OW4       C01       H3        SINGLE    n         1.089     0.010     0.970     0.0159    
+OW4       C04       H4        SINGLE    n         1.082     0.013     0.943     0.0178    
+OW4       C05       H5        SINGLE    n         1.082     0.013     0.940     0.0164    
+OW4       C06       H6        SINGLE    n         1.082     0.013     0.941     0.0168    
+OW4       C08       H7        SINGLE    n         1.082     0.013     0.939     0.0130    
+OW4       N02       H8        SINGLE    n         1.016     0.010     0.887     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OW4         N02         C01          H1     109.514    1.50
+OW4         N02         C01          H2     109.514    1.50
+OW4         N02         C01          H3     109.514    1.50
+OW4          H1         C01          H2     109.396    1.50
+OW4          H1         C01          H3     109.396    1.50
+OW4          H2         C01          H3     109.396    1.50
+OW4         C08         C03         N02     120.282    1.76
+OW4         C08         C03         C04     119.540    1.50
+OW4         N02         C03         C04     120.178    1.50
+OW4         C03         C04         C05     119.776    1.50
+OW4         C03         C04          H4     120.046    1.50
+OW4         C05         C04          H4     120.178    1.50
+OW4         C06         C05         C04     120.429    1.50
+OW4         C06         C05          H5     119.881    1.50
+OW4         C04         C05          H5     119.690    1.50
+OW4         C07         C06         C05     120.088    1.50
+OW4         C07         C06          H6     120.006    1.50
+OW4         C05         C06          H6     119.905    1.50
+OW4         C09         C07         C08     119.888    1.50
+OW4         C09         C07         C06     120.481    1.50
+OW4         C08         C07         C06     119.631    1.50
+OW4         C07         C08         C03     120.536    1.50
+OW4         C07         C08          H7     120.043    1.50
+OW4         C03         C08          H7     119.421    1.50
+OW4         O10         C09         O11     124.418    1.50
+OW4         O10         C09         C07     117.791    1.50
+OW4         O11         C09         C07     117.791    1.50
+OW4         C03         N02         C01     123.696    1.50
+OW4         C03         N02          H8     117.614    2.50
+OW4         C01         N02          H8     118.690    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OW4             sp2_sp3_1         C03         N02         C01          H1       0.000   10.00     6
+OW4              const_23         N02         C03         C04         C05     180.000   10.00     2
+OW4       const_sp2_sp2_3         N02         C03         C08         C07     180.000   10.00     2
+OW4             sp2_sp2_5         C08         C03         N02         C01     180.000   10.00     2
+OW4              const_17         C03         C04         C05         C06       0.000   10.00     2
+OW4              const_13         C04         C05         C06         C07       0.000   10.00     2
+OW4              const_10         C05         C06         C07         C09     180.000   10.00     2
+OW4       const_sp2_sp2_7         C09         C07         C08         C03     180.000   10.00     2
+OW4             sp2_sp2_1         C08         C07         C09         O10     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OW4    plan-1         C03   0.020
+OW4    plan-1         C04   0.020
+OW4    plan-1         C05   0.020
+OW4    plan-1         C06   0.020
+OW4    plan-1         C07   0.020
+OW4    plan-1         C08   0.020
+OW4    plan-1         C09   0.020
+OW4    plan-1          H4   0.020
+OW4    plan-1          H5   0.020
+OW4    plan-1          H6   0.020
+OW4    plan-1          H7   0.020
+OW4    plan-1         N02   0.020
+OW4    plan-2         C07   0.020
+OW4    plan-2         C09   0.020
+OW4    plan-2         O10   0.020
+OW4    plan-2         O11   0.020
+OW4    plan-3         C01   0.020
+OW4    plan-3         C03   0.020
+OW4    plan-3          H8   0.020
+OW4    plan-3         N02   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OW4           SMILES              ACDLabs 12.01                                                CNc1cccc(c1)C(O)=O
+OW4            InChI                InChI  1.03 InChI=1S/C8H9NO2/c1-9-7-4-2-3-6(5-7)8(10)11/h2-5,9H,1H3,(H,10,11)
+OW4         InChIKey                InChI  1.03                                       ZCCNWBPFIBQFQX-UHFFFAOYSA-N
+OW4 SMILES_CANONICAL               CACTVS 3.385                                                CNc1cccc(c1)C(O)=O
+OW4           SMILES               CACTVS 3.385                                                CNc1cccc(c1)C(O)=O
+OW4 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                                CNc1cccc(c1)C(=O)O
+OW4           SMILES "OpenEye OEToolkits" 2.0.7                                                CNc1cccc(c1)C(=O)O
+OW4 ?                acedrg               217         "dictionary generator"                  
+OW4 ?                acedrg_database      11          "data source"                           
+OW4 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OW4 ?                refmac5              5.8.0253    "optimization tool"                     

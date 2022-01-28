@@ -1,0 +1,277 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TTQ     TTQ     6-AMINO-7-HYDROXY-L-TRYPTOPHAN     peptide     30     17     .
+#
+data_comp_TTQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TTQ     N       N       NT3     1       -3.059      -0.080      -1.260
+TTQ     CA      C       CH1     0       -2.620      -0.806      -0.034
+TTQ     C       C       C       0       -3.812      -1.538      0.598
+TTQ     O       O       O       0       -3.565      -2.587      1.226
+TTQ     CB      C       CH2     0       -1.963      0.155       0.966
+TTQ     CG      C       CR5     0       -0.687      0.773       0.481
+TTQ     CD1     C       CR15    0       -0.490      2.077       0.126
+TTQ     CD2     C       CR56    0       0.577       0.112       0.294
+TTQ     NE1     N       NR5     0       0.805       2.277       -0.269
+TTQ     CE2     C       CR56    0       1.485       1.088       -0.176
+TTQ     CE3     C       CR16    0       1.011       -1.212      0.485
+TTQ     CZ2     C       CR6     0       2.821       0.755       -0.458
+TTQ     CZ3     C       CR16    0       2.312       -1.549      0.213
+TTQ     CH2     C       CR6     0       3.234       -0.571      -0.261
+TTQ     O2      O       OH1     0       3.677       1.712       -0.910
+TTQ     N2      N       NH2     0       4.533       -0.932      -0.527
+TTQ     OXT     O       OC      -1      -4.942      -1.032      0.444
+TTQ     H       H       H       0       -3.608      -0.613      -1.757
+TTQ     H2      H       H       0       -2.332      0.142       -1.762
+TTQ     H3      H       H       0       -3.508      0.677       -1.024
+TTQ     HA      H       H       0       -1.946      -1.473      -0.303
+TTQ     HB2     H       H       0       -1.783      -0.338      1.793
+TTQ     HB3     H       H       0       -2.603      0.865       1.176
+TTQ     HD1     H       H       0       -1.152      2.751       0.147
+TTQ     HE1     H       H       0       1.140       3.043       -0.536
+TTQ     HE3     H       H       0       0.408       -1.865      0.798
+TTQ     HZ3     H       H       0       2.596       -2.435      0.342
+TTQ     HO2     H       H       0       3.938       1.515       -1.724
+TTQ     HN21    H       H       0       4.703       -1.712      -0.890
+TTQ     HN22    H       H       0       5.188       -0.381      -0.332
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+TTQ      N      n/a    CA     START
+TTQ      H      N      .      .
+TTQ      H2     N      .      .
+TTQ      H3     N      .      .
+TTQ      CA     N      C      .
+TTQ      HA     CA     .      .
+TTQ      CB     CA     CG     .
+TTQ      HB2    CB     .      .
+TTQ      HB3    CB     .      .
+TTQ      CG     CB     CD2    .
+TTQ      CD2    CG     CE3    .
+TTQ      CE3    CD2    CZ3    .
+TTQ      HE3    CE3    .      .
+TTQ      CZ3    CE3    CH2    .
+TTQ      HZ3    CZ3    .      .
+TTQ      CH2    CZ3    CZ2    .
+TTQ      N2     CH2    HN21   .
+TTQ      HN22   N2     .      .
+TTQ      HN21   N2     .      .
+TTQ      CZ2    CH2    CE2    .
+TTQ      O2     CZ2    HO2    .
+TTQ      HO2    O2     .      .
+TTQ      CE2    CZ2    NE1    .
+TTQ      NE1    CE2    CD1    .
+TTQ      HE1    NE1    .      .
+TTQ      CD1    NE1    HD1    .
+TTQ      HD1    CD1    .      .
+TTQ      C      CA     .      END
+TTQ      O      C      .      .
+TTQ      OXT    C      .      .
+TTQ      CG     CD1    .    ADD
+TTQ      CD2    CE2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TTQ       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+TTQ       CA        CB        SINGLE    n         1.534     0.012     1.534     0.012     
+TTQ       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+TTQ       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TTQ       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TTQ       CB        CG        SINGLE    n         1.498     0.010     1.498     0.010     
+TTQ       CG        CD2       SINGLE    y         1.439     0.010     1.439     0.010     
+TTQ       CG        CD1       DOUBLE    y         1.365     0.010     1.365     0.010     
+TTQ       CD1       NE1       SINGLE    y         1.368     0.010     1.368     0.010     
+TTQ       CD2       CE3       DOUBLE    y         1.401     0.010     1.401     0.010     
+TTQ       CD2       CE2       SINGLE    y         1.410     0.010     1.410     0.010     
+TTQ       NE1       CE2       SINGLE    y         1.373     0.010     1.373     0.010     
+TTQ       CE2       CZ2       DOUBLE    y         1.404     0.010     1.404     0.010     
+TTQ       CE3       CZ3       SINGLE    y         1.366     0.010     1.366     0.010     
+TTQ       CZ2       CH2       SINGLE    y         1.399     0.013     1.399     0.013     
+TTQ       CZ2       O2        SINGLE    n         1.361     0.010     1.361     0.010     
+TTQ       CZ3       CH2       DOUBLE    y         1.422     0.011     1.422     0.011     
+TTQ       CH2       N2        SINGLE    n         1.373     0.020     1.373     0.020     
+TTQ       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+TTQ       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+TTQ       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+TTQ       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+TTQ       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.020     
+TTQ       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.020     
+TTQ       CD1       HD1       SINGLE    n         1.082     0.013     0.945     0.020     
+TTQ       NE1       HE1       SINGLE    n         1.016     0.010     0.878     0.020     
+TTQ       CE3       HE3       SINGLE    n         1.082     0.013     0.942     0.018     
+TTQ       CZ3       HZ3       SINGLE    n         1.082     0.013     0.939     0.020     
+TTQ       O2        HO2       SINGLE    n         0.970     0.012     0.877     0.020     
+TTQ       N2        HN21      SINGLE    n         1.016     0.010     0.877     0.020     
+TTQ       N2        HN22      SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TTQ          CA           N           H     109.321    1.91
+TTQ          CA           N          H2     109.321    1.91
+TTQ          CA           N          H3     109.321    1.91
+TTQ           H           N          H2     109.028    2.41
+TTQ           H           N          H3     109.028    2.41
+TTQ          H2           N          H3     109.028    2.41
+TTQ           N          CA          CB     110.562    1.50
+TTQ           N          CA           C     109.666    1.50
+TTQ           N          CA          HA     108.030    1.50
+TTQ          CB          CA           C     111.644    1.50
+TTQ          CB          CA          HA     108.128    1.50
+TTQ           C          CA          HA     108.922    1.50
+TTQ          CA           C           O     117.134    1.50
+TTQ          CA           C         OXT     117.134    1.50
+TTQ           O           C         OXT     125.731    1.50
+TTQ          CA          CB          CG     113.843    1.64
+TTQ          CA          CB         HB2     108.266    1.50
+TTQ          CA          CB         HB3     108.266    1.50
+TTQ          CG          CB         HB2     109.029    1.50
+TTQ          CG          CB         HB3     109.029    1.50
+TTQ         HB2          CB         HB3     107.759    1.50
+TTQ          CB          CG         CD2     126.853    1.50
+TTQ          CB          CG         CD1     127.101    1.62
+TTQ         CD2          CG         CD1     106.047    1.50
+TTQ          CG         CD1         NE1     110.339    1.50
+TTQ          CG         CD1         HD1     125.192    1.59
+TTQ         NE1         CD1         HD1     124.470    1.50
+TTQ          CG         CD2         CE3     133.415    1.50
+TTQ          CG         CD2         CE2     107.292    1.50
+TTQ         CE3         CD2         CE2     119.293    1.50
+TTQ         CD1         NE1         CE2     108.704    1.50
+TTQ         CD1         NE1         HE1     125.299    1.77
+TTQ         CE2         NE1         HE1     125.997    1.93
+TTQ         CD2         CE2         NE1     107.618    1.50
+TTQ         CD2         CE2         CZ2     121.042    1.50
+TTQ         NE1         CE2         CZ2     131.340    1.56
+TTQ         CD2         CE3         CZ3     118.981    1.50
+TTQ         CD2         CE3         HE3     120.432    1.50
+TTQ         CZ3         CE3         HE3     120.587    1.50
+TTQ         CE2         CZ2         CH2     119.266    1.50
+TTQ         CE2         CZ2          O2     119.647    2.51
+TTQ         CH2         CZ2          O2     121.087    2.01
+TTQ         CE3         CZ3         CH2     120.431    1.50
+TTQ         CE3         CZ3         HZ3     119.626    1.50
+TTQ         CH2         CZ3         HZ3     119.943    1.50
+TTQ         CZ2         CH2         CZ3     120.987    1.50
+TTQ         CZ2         CH2          N2     119.432    1.52
+TTQ         CZ3         CH2          N2     119.580    1.50
+TTQ         CZ2          O2         HO2     109.699    3.00
+TTQ         CH2          N2        HN21     119.789    2.29
+TTQ         CH2          N2        HN22     119.789    2.29
+TTQ        HN21          N2        HN22     120.421    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TTQ             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+TTQ              const_21         CD2         CE3         CZ3         CH2       0.000   10.00     2
+TTQ              const_32          N2         CH2         CZ2          O2       0.000   10.00     2
+TTQ              const_27          N2         CH2         CZ3         CE3     180.000   10.00     2
+TTQ             sp2_sp2_1         CZ2         CH2          N2        HN21     180.000   10.00     2
+TTQ             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+TTQ            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+TTQ             sp2_sp3_8         CD2          CG          CB          CA     -90.000   10.00     6
+TTQ              const_38         NE1         CD1          CG          CB     180.000   10.00     2
+TTQ       const_sp2_sp2_4         CE3         CD2          CG          CB       0.000   10.00     2
+TTQ              const_13          CG         CD1         NE1         CE2       0.000   10.00     2
+TTQ              const_19          CG         CD2         CE3         CZ3     180.000   10.00     2
+TTQ       const_sp2_sp2_5          CG         CD2         CE2         NE1       0.000   10.00     2
+TTQ       const_sp2_sp2_9         CD2         CE2         NE1         CD1       0.000   10.00     2
+TTQ              const_34         CD2         CE2         CZ2          O2     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TTQ    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TTQ    plan-1         CD2   0.020
+TTQ    plan-1         CE2   0.020
+TTQ    plan-1         CE3   0.020
+TTQ    plan-1          CG   0.020
+TTQ    plan-1         CH2   0.020
+TTQ    plan-1         CZ2   0.020
+TTQ    plan-1         CZ3   0.020
+TTQ    plan-1         HE3   0.020
+TTQ    plan-1         HZ3   0.020
+TTQ    plan-1          N2   0.020
+TTQ    plan-1         NE1   0.020
+TTQ    plan-1          O2   0.020
+TTQ    plan-2          CB   0.020
+TTQ    plan-2         CD1   0.020
+TTQ    plan-2         CD2   0.020
+TTQ    plan-2         CE2   0.020
+TTQ    plan-2         CE3   0.020
+TTQ    plan-2          CG   0.020
+TTQ    plan-2         CZ2   0.020
+TTQ    plan-2         HD1   0.020
+TTQ    plan-2         HE1   0.020
+TTQ    plan-2         NE1   0.020
+TTQ    plan-3           C   0.020
+TTQ    plan-3          CA   0.020
+TTQ    plan-3           O   0.020
+TTQ    plan-3         OXT   0.020
+TTQ    plan-4         CH2   0.020
+TTQ    plan-4        HN21   0.020
+TTQ    plan-4        HN22   0.020
+TTQ    plan-4          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TTQ SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc2c1ccc(c(O)c1nc2)N"
+TTQ SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1c[nH]c2c(O)c(N)ccc12)C(O)=O"
+TTQ SMILES           CACTVS               3.341 "N[CH](Cc1c[nH]c2c(O)c(N)ccc12)C(O)=O"
+TTQ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(c2c1c(c[nH]2)C[C@@H](C(=O)O)N)O)N"
+TTQ SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(c2c1c(c[nH]2)CC(C(=O)O)N)O)N"
+TTQ InChI            InChI                1.03  "InChI=1S/C11H13N3O3/c12-7-2-1-6-5(3-8(13)11(16)17)4-14-9(6)10(7)15/h1-2,4,8,14-15H,3,12-13H2,(H,16,17)/t8-/m0/s1"
+TTQ InChIKey         InChI                1.03  AGPIOLMMNWQUSU-QMMMGPOBSA-N
+TTQ ?                acedrg               196         "dictionary generator"
+TTQ ?                acedrg_database      11          "data source"
+TTQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TTQ ?                refmac5              5.8.0222    "optimization tool"

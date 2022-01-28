@@ -1,0 +1,331 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IEY      IEY '2-((1E)-2-(5-IMIDAZOLYL)ETHENYL)-4-(' non-polymer        40  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_IEY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ IEY           OXT    O    OC       -0.500      0.000    0.000    0.000
+ IEY           C      C    C         0.000     -1.213    0.093    0.291
+ IEY           O      O    OC       -0.500     -1.680   -0.195    1.416
+ IEY           CA3    C    CH2       0.000     -1.989    0.593   -0.896
+ IEY           HA31   H    H         0.000     -1.843   -0.114   -1.716
+ IEY           HA32   H    H         0.000     -1.581    1.565   -1.179
+ IEY           N3     N    NR5       0.000     -3.402    0.724   -0.615
+ IEY           C1     C    CR5       0.000     -4.052    1.823   -0.126
+ IEY           CA1    C    C1        0.000     -3.305    2.983    0.151
+ IEY           HA1    H    H         0.000     -2.271    2.840    0.415
+ IEY           CB1    C    C1        0.000     -3.761    4.287    0.121
+ IEY           HB1    H    H         0.000     -4.792    4.431   -0.158
+ IEY           CG1    C    CR5       0.000     -2.985    5.501    0.429
+ IEY           N21    N    NRD5      0.000     -1.690    5.387    0.746
+ IEY           C22    C    CR15      0.000     -1.338    6.636    0.952
+ IEY           H22    H    H         0.000     -0.340    6.949    1.232
+ IEY           NE1    N    NR15      0.000     -2.387    7.494    0.770
+ IEY           HA     H    H         0.000     -2.361    8.529    0.875
+ IEY           CD3    C    CR15      0.000     -3.476    6.744    0.423
+ IEY           HD3    H    H         0.000     -4.483    7.073    0.200
+ IEY           C2     C    CR5       0.000     -4.337   -0.257   -0.799
+ IEY           O2     O    OH1       0.000     -4.027   -1.456   -1.267
+ IEY           H2     H    H         0.000     -4.220   -2.198   -0.718
+ IEY           CA2    C    CR5       0.000     -5.484    0.329   -0.405
+ IEY           N2     N    NRD5      0.000     -5.341    1.606    0.013
+ IEY           CB2    C    CH2       0.000     -6.867   -0.293   -0.390
+ IEY           HB21   H    H         0.000     -6.906   -1.010   -1.213
+ IEY           HB22   H    H         0.000     -7.583    0.510   -0.574
+ IEY           CG2    C    CR6       0.000     -7.206   -0.982    0.888
+ IEY           CD2    C    CR16      0.000     -6.904   -2.334    1.053
+ IEY           HD2    H    H         0.000     -6.424   -2.883    0.253
+ IEY           CE2    C    CR16      0.000     -7.222   -2.978    2.249
+ IEY           HE2    H    H         0.000     -6.988   -4.027    2.378
+ IEY           CZ     C    CR6       0.000     -7.840   -2.270    3.280
+ IEY           OH     O    OH1       0.000     -8.147   -2.898    4.448
+ IEY           HO1    H    H         0.000     -8.386   -2.240    5.115
+ IEY           CE1    C    CR16      0.000     -8.141   -0.918    3.115
+ IEY           HE1    H    H         0.000     -8.620   -0.368    3.916
+ IEY           CD1    C    CR16      0.000     -7.824   -0.274    1.919
+ IEY           HD1    H    H         0.000     -8.059    0.776    1.790
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ IEY      OXT    n/a    C      START
+ IEY      C      OXT    CA3    .
+ IEY      O      C      .      .
+ IEY      CA3    C      N3     .
+ IEY      HA31   CA3    .      .
+ IEY      HA32   CA3    .      .
+ IEY      N3     CA3    C2     .
+ IEY      C1     N3     CA1    .
+ IEY      CA1    C1     CB1    .
+ IEY      HA1    CA1    .      .
+ IEY      CB1    CA1    CG1    .
+ IEY      HB1    CB1    .      .
+ IEY      CG1    CB1    N21    .
+ IEY      N21    CG1    C22    .
+ IEY      C22    N21    NE1    .
+ IEY      H22    C22    .      .
+ IEY      NE1    C22    CD3    .
+ IEY      HA     NE1    .      .
+ IEY      CD3    NE1    HD3    .
+ IEY      HD3    CD3    .      .
+ IEY      C2     N3     CA2    .
+ IEY      O2     C2     H2     .
+ IEY      H2     O2     .      .
+ IEY      CA2    C2     CB2    .
+ IEY      N2     CA2    .      .
+ IEY      CB2    CA2    CG2    .
+ IEY      HB21   CB2    .      .
+ IEY      HB22   CB2    .      .
+ IEY      CG2    CB2    CD2    .
+ IEY      CD2    CG2    CE2    .
+ IEY      HD2    CD2    .      .
+ IEY      CE2    CD2    CZ     .
+ IEY      HE2    CE2    .      .
+ IEY      CZ     CE2    CE1    .
+ IEY      OH     CZ     HO1    .
+ IEY      HO1    OH     .      .
+ IEY      CE1    CZ     CD1    .
+ IEY      HE1    CE1    .      .
+ IEY      CD1    CE1    HD1    .
+ IEY      HD1    CD1    .      END
+ IEY      CG1    CD3    .    ADD
+ IEY      C1     N2     .    ADD
+ IEY      CG2    CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IEY       CB1       CA1       double    1.330     0.020     1.330     0.020     
+IEY       CA1       C1        single    1.483     0.020     1.483     0.020     
+IEY       HA1       CA1       single    1.082     0.013     0.975     0.010     
+IEY       CG1       CB1       single    1.483     0.020     1.483     0.020     
+IEY       HB1       CB1       single    1.082     0.013     0.975     0.010     
+IEY       CG1       CD3       double    1.387     0.020     1.387     0.020     
+IEY       N21       CG1       single    1.350     0.020     1.350     0.020     
+IEY       C1        N2        double    1.350     0.020     1.350     0.020     
+IEY       C1        N3        single    1.337     0.020     1.337     0.020     
+IEY       N2        CA2       single    1.350     0.020     1.350     0.020     
+IEY       C2        N3        single    1.337     0.020     1.337     0.020     
+IEY       N3        CA3       single    1.462     0.020     1.462     0.020     
+IEY       O2        C2        single    1.480     0.020     1.480     0.020     
+IEY       CA2       C2        double    1.490     0.020     1.490     0.020     
+IEY       H2        O2        single    0.970     0.012     0.839     0.014     
+IEY       CB2       CA2       single    1.510     0.020     1.510     0.020     
+IEY       CA3       C         single    1.510     0.020     1.510     0.020     
+IEY       HA31      CA3       single    1.089     0.010     0.989     0.005     
+IEY       HA32      CA3       single    1.089     0.010     0.989     0.005     
+IEY       CG2       CB2       single    1.511     0.020     1.511     0.020     
+IEY       HB21      CB2       single    1.089     0.010     0.989     0.005     
+IEY       HB22      CB2       single    1.089     0.010     0.989     0.005     
+IEY       CG2       CD1       double    1.390     0.020     1.390     0.020     
+IEY       CD2       CG2       single    1.390     0.020     1.390     0.020     
+IEY       CD1       CE1       single    1.390     0.020     1.390     0.020     
+IEY       HD1       CD1       single    1.082     0.013     0.975     0.010     
+IEY       CE2       CD2       double    1.390     0.020     1.390     0.020     
+IEY       HD2       CD2       single    1.082     0.013     0.975     0.010     
+IEY       CE1       CZ        double    1.390     0.020     1.390     0.020     
+IEY       HE1       CE1       single    1.082     0.013     0.975     0.010     
+IEY       CZ        CE2       single    1.390     0.020     1.390     0.020     
+IEY       HE2       CE2       single    1.082     0.013     0.975     0.010     
+IEY       OH        CZ        single    1.362     0.020     1.362     0.020     
+IEY       HO1       OH        single    0.970     0.012     0.839     0.014     
+IEY       O         C         deloc     1.250     0.020     1.250     0.020     
+IEY       C         OXT       deloc     1.250     0.020     1.250     0.020     
+IEY       CD3       NE1       single    1.350     0.020     1.350     0.020     
+IEY       HD3       CD3       single    1.082     0.013     0.975     0.010     
+IEY       NE1       C22       single    1.350     0.020     1.350     0.020     
+IEY       HA        NE1       single    1.016     0.010     0.899     0.007     
+IEY       C22       N21       double    1.350     0.020     1.350     0.020     
+IEY       H22       C22       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ IEY      OXT    C      O       123.000    3.000
+ IEY      OXT    C      CA3     118.500    3.000
+ IEY      O      C      CA3     118.500    3.000
+ IEY      C      CA3    HA31    109.470    3.000
+ IEY      C      CA3    HA32    109.470    3.000
+ IEY      C      CA3    N3      109.500    3.000
+ IEY      HA31   CA3    HA32    107.900    3.000
+ IEY      HA31   CA3    N3      109.500    3.000
+ IEY      HA32   CA3    N3      109.500    3.000
+ IEY      CA3    N3     C1      126.000    3.000
+ IEY      CA3    N3     C2      126.000    3.000
+ IEY      C1     N3     C2      108.000    3.000
+ IEY      N3     C1     CA1     108.000    3.000
+ IEY      N3     C1     N2      108.000    3.000
+ IEY      CA1    C1     N2      108.000    3.000
+ IEY      C1     CA1    HA1     120.000    3.000
+ IEY      C1     CA1    CB1     120.000    3.000
+ IEY      HA1    CA1    CB1     120.000    3.000
+ IEY      CA1    CB1    HB1     120.000    3.000
+ IEY      CA1    CB1    CG1     120.000    3.000
+ IEY      HB1    CB1    CG1     120.000    3.000
+ IEY      CB1    CG1    N21     108.000    3.000
+ IEY      CB1    CG1    CD3     108.000    3.000
+ IEY      N21    CG1    CD3     108.000    3.000
+ IEY      CG1    N21    C22     108.000    3.000
+ IEY      N21    C22    H22     126.000    3.000
+ IEY      N21    C22    NE1     108.000    3.000
+ IEY      H22    C22    NE1     126.000    3.000
+ IEY      C22    NE1    HA      126.000    3.000
+ IEY      C22    NE1    CD3     108.000    3.000
+ IEY      HA     NE1    CD3     126.000    3.000
+ IEY      NE1    CD3    HD3     126.000    3.000
+ IEY      NE1    CD3    CG1     108.000    3.000
+ IEY      HD3    CD3    CG1     126.000    3.000
+ IEY      N3     C2     O2      108.000    3.000
+ IEY      N3     C2     CA2     108.000    3.000
+ IEY      O2     C2     CA2     108.000    3.000
+ IEY      C2     O2     H2      120.000    3.000
+ IEY      C2     CA2    N2      108.000    3.000
+ IEY      C2     CA2    CB2     126.000    3.000
+ IEY      N2     CA2    CB2     126.000    3.000
+ IEY      CA2    N2     C1      108.000    3.000
+ IEY      CA2    CB2    HB21    109.470    3.000
+ IEY      CA2    CB2    HB22    109.470    3.000
+ IEY      CA2    CB2    CG2     109.500    3.000
+ IEY      HB21   CB2    HB22    107.900    3.000
+ IEY      HB21   CB2    CG2     109.470    3.000
+ IEY      HB22   CB2    CG2     109.470    3.000
+ IEY      CB2    CG2    CD2     120.000    3.000
+ IEY      CB2    CG2    CD1     120.000    3.000
+ IEY      CD2    CG2    CD1     120.000    3.000
+ IEY      CG2    CD2    HD2     120.000    3.000
+ IEY      CG2    CD2    CE2     120.000    3.000
+ IEY      HD2    CD2    CE2     120.000    3.000
+ IEY      CD2    CE2    HE2     120.000    3.000
+ IEY      CD2    CE2    CZ      120.000    3.000
+ IEY      HE2    CE2    CZ      120.000    3.000
+ IEY      CE2    CZ     OH      120.000    3.000
+ IEY      CE2    CZ     CE1     120.000    3.000
+ IEY      OH     CZ     CE1     120.000    3.000
+ IEY      CZ     OH     HO1     109.470    3.000
+ IEY      CZ     CE1    HE1     120.000    3.000
+ IEY      CZ     CE1    CD1     120.000    3.000
+ IEY      HE1    CE1    CD1     120.000    3.000
+ IEY      CE1    CD1    HD1     120.000    3.000
+ IEY      CE1    CD1    CG2     120.000    3.000
+ IEY      HD1    CD1    CG2     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ IEY      var_1    OXT    C      CA3    N3      -179.835   20.000   3
+ IEY      var_2    C      CA3    N3     C2       -90.022   20.000   1
+ IEY      CONST_1  CA3    N3     C1     CA1        0.000    0.000   0
+ IEY      CONST_2  N3     C1     N2     CA2        0.000    0.000   0
+ IEY      var_3    N3     C1     CA1    CB1      151.904   20.000   1
+ IEY      CONST_3  C1     CA1    CB1    CG1      179.073    0.000   0
+ IEY      var_4    CA1    CB1    CG1    N21        1.808   20.000   1
+ IEY      CONST_4  CB1    CG1    CD3    NE1      180.000    0.000   0
+ IEY      CONST_5  CB1    CG1    N21    C22      180.000    0.000   0
+ IEY      CONST_6  CG1    N21    C22    NE1        0.000    0.000   0
+ IEY      CONST_7  N21    C22    NE1    CD3        0.000    0.000   0
+ IEY      CONST_8  C22    NE1    CD3    CG1        0.000    0.000   0
+ IEY      CONST_9  CA3    N3     C2     CA2      180.000    0.000   0
+ IEY      var_5    N3     C2     O2     H2       120.462   20.000   1
+ IEY      CONST_10 N3     C2     CA2    CB2      180.000    0.000   0
+ IEY      CONST_11 C2     CA2    N2     C1         0.000    0.000   0
+ IEY      var_6    C2     CA2    CB2    CG2       90.007   20.000   2
+ IEY      var_7    CA2    CB2    CG2    CD2      -89.929   20.000   2
+ IEY      CONST_12 CB2    CG2    CD1    CE1      180.000    0.000   0
+ IEY      CONST_13 CB2    CG2    CD2    CE2      180.000    0.000   0
+ IEY      CONST_14 CG2    CD2    CE2    CZ         0.000    0.000   0
+ IEY      CONST_15 CD2    CE2    CZ     CE1        0.000    0.000   0
+ IEY      var_8    CE2    CZ     OH     HO1      167.753   20.000   1
+ IEY      CONST_16 CE2    CZ     CE1    CD1        0.000    0.000   0
+ IEY      CONST_17 CZ     CE1    CD1    CG2        0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ IEY      plan-1    CA1       0.020
+ IEY      plan-1    CB1       0.020
+ IEY      plan-1    C1        0.020
+ IEY      plan-1    HA1       0.020
+ IEY      plan-1    CG1       0.020
+ IEY      plan-1    HB1       0.020
+ IEY      plan-2    CG1       0.020
+ IEY      plan-2    CB1       0.020
+ IEY      plan-2    CD3       0.020
+ IEY      plan-2    N21       0.020
+ IEY      plan-2    NE1       0.020
+ IEY      plan-2    C22       0.020
+ IEY      plan-2    HD3       0.020
+ IEY      plan-2    HA        0.020
+ IEY      plan-2    H22       0.020
+ IEY      plan-2    HB1       0.020
+ IEY      plan-3    C1        0.020
+ IEY      plan-3    CA1       0.020
+ IEY      plan-3    N2        0.020
+ IEY      plan-3    N3        0.020
+ IEY      plan-3    C2        0.020
+ IEY      plan-3    CA2       0.020
+ IEY      plan-3    CA3       0.020
+ IEY      plan-3    O2        0.020
+ IEY      plan-3    CB2       0.020
+ IEY      plan-3    HA1       0.020
+ IEY      plan-4    CG2       0.020
+ IEY      plan-4    CB2       0.020
+ IEY      plan-4    CD1       0.020
+ IEY      plan-4    CD2       0.020
+ IEY      plan-4    CE1       0.020
+ IEY      plan-4    CE2       0.020
+ IEY      plan-4    CZ        0.020
+ IEY      plan-4    HD1       0.020
+ IEY      plan-4    HD2       0.020
+ IEY      plan-4    HE1       0.020
+ IEY      plan-4    HE2       0.020
+ IEY      plan-4    OH        0.020
+ IEY      plan-5    C         0.020
+ IEY      plan-5    CA3       0.020
+ IEY      plan-5    O         0.020
+ IEY      plan-5    OXT       0.020
+# ------------------------------------------------------

@@ -1,0 +1,157 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+M27      M27 'bis(mu2-oxo)-octaoxo-dimolybdenum (V' non-polymer         12  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_M27
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ M27           O9     O    O        -1.000      0.000    0.001   -0.000
+ M27           MO1    MO   MO        0.000     -1.958    0.405   -0.000
+ M27           O1     O    O        -1.000     -1.672    1.790    1.414
+ M27           O7     O    O        -1.000     -3.917    0.812   -0.000
+ M27           O6     O    O        -1.000     -1.672    1.790   -1.414
+ M27           O5     O    O2        0.000     -2.245   -0.979   -1.414
+ M27           MO2    MO   MO        0.000     -2.532   -2.364   -0.000
+ M27           O2     O    O2        0.000     -2.245   -0.979    1.414
+ M27           O4     O    O        -1.000     -0.573   -2.770   -0.000
+ M27           O8     O    O        -1.000     -4.490   -1.959   -0.000
+ M27           O3     O    O        -1.000     -2.818   -3.749   -1.414
+ M27           O10    O    O        -1.000     -2.818   -3.749    1.414
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ M27      O9     n/a    MO1    START
+ M27      MO1    O9     O5     .
+ M27      O1     MO1    .      .
+ M27      O7     MO1    .      .
+ M27      O6     MO1    .      .
+ M27      O5     MO1    MO2    .
+ M27      MO2    O5     O10    .
+ M27      O2     MO2    .      .
+ M27      O4     MO2    .      .
+ M27      O8     MO2    .      .
+ M27      O3     MO2    .      .
+ M27      O10    MO2    .      END
+ M27      MO1    O2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+M27       O1        MO1       single    2.000     0.020     2.000     0.020     
+M27       O6        MO1       single    2.000     0.020     2.000     0.020     
+M27       O7        MO1       single    2.000     0.020     2.000     0.020     
+M27       MO1       O2        single    2.000     0.020     2.000     0.020     
+M27       MO1       O9        single    2.000     0.020     2.000     0.020     
+M27       O5        MO1       single    2.000     0.020     2.000     0.020     
+M27       O4        MO2       single    2.000     0.020     2.000     0.020     
+M27       O8        MO2       single    2.000     0.020     2.000     0.020     
+M27       O2        MO2       single    2.000     0.020     2.000     0.020     
+M27       O3        MO2       single    2.000     0.020     2.000     0.020     
+M27       MO2       O5        single    2.000     0.020     2.000     0.020     
+M27       O10       MO2       single    2.000     0.020     2.000     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ M27      O9     MO1    O1       90.000    3.000
+ M27      O9     MO1    O7      180.000    3.000
+ M27      O9     MO1    O6       90.000    3.000
+ M27      O9     MO1    O5       90.000    3.000
+ M27      O9     MO1    O2       90.000    3.000
+ M27      O1     MO1    O7       90.000    3.000
+ M27      O1     MO1    O6       90.000    3.000
+ M27      O7     MO1    O6       90.000    3.000
+ M27      O1     MO1    O5      180.000    3.000
+ M27      O7     MO1    O5       90.000    3.000
+ M27      O6     MO1    O5       90.000    3.000
+ M27      O1     MO1    O2       90.000    3.000
+ M27      O7     MO1    O2       90.000    3.000
+ M27      O6     MO1    O2      180.000    3.000
+ M27      O5     MO1    O2       90.000    3.000
+ M27      MO1    O5     MO2      90.000    3.000
+ M27      O5     MO2    O2       90.000    3.000
+ M27      O5     MO2    O4       90.000    3.000
+ M27      O5     MO2    O8       90.000    3.000
+ M27      O5     MO2    O3       90.000    3.000
+ M27      O5     MO2    O10     180.000    3.000
+ M27      O2     MO2    O4       90.000    3.000
+ M27      O2     MO2    O8       90.000    3.000
+ M27      O4     MO2    O8      180.000    3.000
+ M27      O2     MO2    O3      180.000    3.000
+ M27      O4     MO2    O3       90.000    3.000
+ M27      O8     MO2    O3       90.000    3.000
+ M27      O2     MO2    O10      90.000    3.000
+ M27      O4     MO2    O10      90.000    3.000
+ M27      O8     MO2    O10      90.000    3.000
+ M27      O3     MO2    O10      90.000    3.000
+ M27      MO2    O2     MO1      90.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ M27      var_1            MO2    O2     MO1    O5                 0.000           20.000   3
+ M27      var_2            MO2    O5     MO1    O2                 0.000           20.000   3
+ M27      var_3            MO1    O5     MO2    O2                 0.000           20.000   3
+ M27      var_4            MO1    O2     MO2    O5                 0.000           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ M27      chir_01          MO1    O9     O7     O1        cross4
+                   O2     O5     O6     .      .
+ M27      chir_02          MO2    O5     O10    O2        cross4
+                   O4     O3     O8     .      .
+# ------------------------------------------------------

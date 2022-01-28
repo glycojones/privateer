@@ -1,0 +1,242 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZUK     ZUK     5-pyrimidin-2-yl-D-norvaline     peptide    27     14     .
+#
+data_comp_ZUK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ZUK     C       C       C       0       3.510       -0.801      -0.664
+ZUK     N       N       NT3     1       3.011       1.219       0.656
+ZUK     O       O       O       0       3.968       -0.145      -1.621
+ZUK     CA      C       CH1     0       2.478       -0.104      0.231
+ZUK     CB      C       CH2     0       1.140       0.068       -0.497
+ZUK     CD      C       CH2     0       -1.044      -0.993      -1.319
+ZUK     CE      C       CR6     0       -2.042      -0.300      -0.422
+ZUK     CG      C       CH2     0       0.308       -1.202      -0.639
+ZUK     CT      C       CR16    0       -3.827      0.936       1.179
+ZUK     CH1     C       CR16    0       -3.336      1.537       0.046
+ZUK     CH2     C       CR16    0       -3.363      -0.326      1.454
+ZUK     OXT     O       OC      -1      3.817       -1.973      -0.371
+ZUK     NZ1     N       NRD6    0       -2.447      0.938       -0.763
+ZUK     NZ2     N       NRD6    0       -2.476      -0.959      0.669
+ZUK     H       H       H       0       3.136       1.754       -0.071
+ZUK     H2      H       H       0       3.808       1.113       1.085
+ZUK     H3      H       H       0       2.425       1.625       1.224
+ZUK     HA      H       H       0       2.334       -0.654      1.035
+ZUK     HBA     H       H       0       1.318       0.426       -1.392
+ZUK     HB      H       H       0       0.611       0.735       -0.012
+ZUK     HDA     H       H       0       -0.909      -0.461      -2.132
+ZUK     HD      H       H       0       -1.401      -1.866      -1.587
+ZUK     HGA     H       H       0       0.160       -1.582      0.251
+ZUK     HG      H       H       0       0.821       -1.856      -1.159
+ZUK     HT      H       H       0       -4.449      1.367       1.737
+ZUK     HH1     H       H       0       -3.633      2.407       -0.174
+ZUK     HH2     H       H       0       -3.681      -0.770      2.226
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ZUK      N      n/a    CA     START
+ZUK      H      N      .      .
+ZUK      H2     N      .      .
+ZUK      H3     N      .      .
+ZUK      CA     N      C      .
+ZUK      HA     CA     .      .
+ZUK      CB     CA     CG     .
+ZUK      HBA    CB     .      .
+ZUK      HB     CB     .      .
+ZUK      CG     CB     CD     .
+ZUK      HGA    CG     .      .
+ZUK      HG     CG     .      .
+ZUK      CD     CG     CE     .
+ZUK      HDA    CD     .      .
+ZUK      HD     CD     .      .
+ZUK      CE     CD     NZ2    .
+ZUK      NZ2    CE     CH2    .
+ZUK      CH2    NZ2    CT     .
+ZUK      HH2    CH2    .      .
+ZUK      CT     CH2    CH1    .
+ZUK      HT     CT     .      .
+ZUK      CH1    CT     NZ1    .
+ZUK      HH1    CH1    .      .
+ZUK      NZ1    CH1    .      .
+ZUK      C      CA     .      END
+ZUK      O      C      .      .
+ZUK      OXT    C      .      .
+ZUK      CE     NZ1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZUK       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+ZUK       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+ZUK       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+ZUK       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+ZUK       CB        CG        SINGLE    n         1.524     0.011     1.524     0.011     
+ZUK       CD        CE        SINGLE    n         1.509     0.011     1.509     0.011     
+ZUK       CE        NZ1       DOUBLE    y         1.342     0.011     1.342     0.011     
+ZUK       CD        CG        SINGLE    n         1.527     0.011     1.527     0.011     
+ZUK       CT        CH1       DOUBLE    y         1.369     0.010     1.369     0.010     
+ZUK       CT        CH2       SINGLE    y         1.369     0.010     1.369     0.010     
+ZUK       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+ZUK       CH1       NZ1       SINGLE    y         1.339     0.010     1.339     0.010     
+ZUK       CE        NZ2       SINGLE    y         1.342     0.011     1.342     0.011     
+ZUK       CH2       NZ2       DOUBLE    y         1.339     0.010     1.339     0.010     
+ZUK       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+ZUK       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+ZUK       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+ZUK       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+ZUK       CB        HBA       SINGLE    n         1.089     0.010     0.980     0.016     
+ZUK       CB        HB        SINGLE    n         1.089     0.010     0.980     0.016     
+ZUK       CD        HDA       SINGLE    n         1.089     0.010     0.981     0.015     
+ZUK       CD        HD        SINGLE    n         1.089     0.010     0.981     0.015     
+ZUK       CG        HGA       SINGLE    n         1.089     0.010     0.980     0.016     
+ZUK       CG        HG        SINGLE    n         1.089     0.010     0.980     0.016     
+ZUK       CT        HT        SINGLE    n         1.082     0.013     0.940     0.013     
+ZUK       CH1       HH1       SINGLE    n         1.082     0.013     0.945     0.015     
+ZUK       CH2       HH2       SINGLE    n         1.082     0.013     0.945     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ZUK          CA           C           O     117.124    1.50
+ZUK          CA           C         OXT     117.124    1.50
+ZUK           O           C         OXT     125.752    1.50
+ZUK          CA           N           H     110.062    1.93
+ZUK          CA           N          H2     110.062    1.93
+ZUK          CA           N          H3     110.062    1.93
+ZUK           H           N          H2     109.028    2.41
+ZUK           H           N          H3     109.028    2.41
+ZUK          H2           N          H3     109.028    2.41
+ZUK           C          CA           N     109.241    1.50
+ZUK           C          CA          CB     111.037    2.40
+ZUK           C          CA          HA     108.824    1.50
+ZUK           N          CA          CB     110.374    1.62
+ZUK           N          CA          HA     108.487    1.50
+ZUK          CB          CA          HA     108.967    1.50
+ZUK          CA          CB          CG     115.594    1.53
+ZUK          CA          CB         HBA     108.549    1.50
+ZUK          CA          CB          HB     108.549    1.50
+ZUK          CG          CB         HBA     108.801    1.50
+ZUK          CG          CB          HB     108.801    1.50
+ZUK         HBA          CB          HB     107.844    1.50
+ZUK          CE          CD          CG     111.525    1.84
+ZUK          CE          CD         HDA     109.184    1.50
+ZUK          CE          CD          HD     109.184    1.50
+ZUK          CG          CD         HDA     108.612    1.50
+ZUK          CG          CD          HD     108.612    1.50
+ZUK         HDA          CD          HD     107.735    1.50
+ZUK          CD          CE         NZ1     117.828    1.50
+ZUK          CD          CE         NZ2     117.828    1.50
+ZUK         NZ1          CE         NZ2     124.345    1.50
+ZUK          CB          CG          CD     113.764    1.91
+ZUK          CB          CG         HGA     108.801    1.50
+ZUK          CB          CG          HG     108.801    1.50
+ZUK          CD          CG         HGA     108.750    1.50
+ZUK          CD          CG          HG     108.750    1.50
+ZUK         HGA          CG          HG     107.749    1.50
+ZUK         CH1          CT         CH2     116.530    1.50
+ZUK         CH1          CT          HT     121.735    1.50
+ZUK         CH2          CT          HT     121.735    1.50
+ZUK          CT         CH1         NZ1     122.524    1.50
+ZUK          CT         CH1         HH1     118.868    1.50
+ZUK         NZ1         CH1         HH1     118.608    1.50
+ZUK          CT         CH2         NZ2     122.524    1.50
+ZUK          CT         CH2         HH2     118.868    1.50
+ZUK         NZ2         CH2         HH2     118.608    1.50
+ZUK          CE         NZ1         CH1     117.038    1.65
+ZUK          CE         NZ2         CH2     117.038    1.65
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ZUK             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+ZUK              const_13          CT         CH2         NZ2          CE       0.000   10.00     2
+ZUK             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+ZUK            sp3_sp3_10           C          CA          CB          CG     180.000   10.00     3
+ZUK            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+ZUK             sp2_sp3_8         NZ1          CE          CD          CG     -90.000   10.00     6
+ZUK            sp3_sp3_28          CE          CD          CG          CB     180.000   10.00     3
+ZUK       const_sp2_sp2_2          CD          CE         NZ1         CH1     180.000   10.00     2
+ZUK              const_16          CD          CE         NZ2         CH2     180.000   10.00     2
+ZUK       const_sp2_sp2_9         NZ2         CH2          CT         CH1       0.000   10.00     2
+ZUK       const_sp2_sp2_5         NZ1         CH1          CT         CH2       0.000   10.00     2
+ZUK       const_sp2_sp2_3          CT         CH1         NZ1          CE       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ZUK    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ZUK    plan-1          CD   0.020
+ZUK    plan-1          CE   0.020
+ZUK    plan-1         CH1   0.020
+ZUK    plan-1         CH2   0.020
+ZUK    plan-1          CT   0.020
+ZUK    plan-1         HH1   0.020
+ZUK    plan-1         HH2   0.020
+ZUK    plan-1          HT   0.020
+ZUK    plan-1         NZ1   0.020
+ZUK    plan-1         NZ2   0.020
+ZUK    plan-2           C   0.020
+ZUK    plan-2          CA   0.020
+ZUK    plan-2           O   0.020
+ZUK    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ZUK SMILES           ACDLabs              11.02 "O=C(O)C(N)CCCc1ncccn1"
+ZUK SMILES_CANONICAL CACTVS               3.352 "N[C@H](CCCc1ncccn1)C(O)=O"
+ZUK SMILES           CACTVS               3.352 "N[CH](CCCc1ncccn1)C(O)=O"
+ZUK SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cnc(nc1)CCC[C@H](C(=O)O)N"
+ZUK SMILES           "OpenEye OEToolkits" 1.7.0 "c1cnc(nc1)CCCC(C(=O)O)N"
+ZUK InChI            InChI                1.03  "InChI=1S/C9H13N3O2/c10-7(9(13)14)3-1-4-8-11-5-2-6-12-8/h2,5-7H,1,3-4,10H2,(H,13,14)/t7-/m1/s1"
+ZUK InChIKey         InChI                1.03  UREVLRRGQRTHIJ-SSDOTTSWSA-N
+ZUK ?                acedrg               202         "dictionary generator"
+ZUK ?                acedrg_database      11          "data source"
+ZUK ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ZUK ?                refmac5              5.8.0222    "optimization tool"

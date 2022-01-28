@@ -1,0 +1,173 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FBF     FBF     "4-(trifluoromethyl)benzenecarboximidamide"     NON-POLYMER     20     13     .     
+#
+data_comp_FBF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FBF     C1      C       CR16    0       0.904       7.280       10.680      
+FBF     C2      C       CR16    0       0.714       8.653       10.559      
+FBF     C3      C       CR6     0       1.399       9.372       9.577       
+FBF     C4      C       CR16    0       2.286       8.700       8.732       
+FBF     C5      C       CR16    0       2.468       7.328       8.861       
+FBF     C6      C       CR6     0       1.782       6.602       9.835       
+FBF     C7      C       C       0       1.982       5.134       9.968       
+FBF     N8      N       NH1     0       1.744       4.302       9.002       
+FBF     N9      N       NH2     0       2.432       4.667       11.156      
+FBF     C10     C       CT      0       1.203       10.854      9.448       
+FBF     F11     F       F       0       -0.018      11.261      9.792       
+FBF     F12     F       F       0       2.041       11.546      10.213      
+FBF     F13     F       F       0       1.383       11.312      8.210       
+FBF     H1      H       H       0       0.433       6.805       11.342      
+FBF     H2      H       H       0       0.114       9.086       11.146      
+FBF     H4      H       H       0       2.765       9.165       8.065       
+FBF     H5      H       H       0       3.064       6.884       8.283       
+FBF     HN8     H       H       0       1.471       4.616       8.289       
+FBF     HN9     H       H       0       2.601       5.228       11.824      
+FBF     HN9A    H       H       0       2.559       3.795       11.271      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FBF       C1        C6        DOUBLE    y         1.390     0.010     1.390     0.010     
+FBF       C1        C2        SINGLE    y         1.384     0.010     1.384     0.010     
+FBF       C2        C3        DOUBLE    y         1.383     0.011     1.383     0.011     
+FBF       C3        C4        SINGLE    y         1.383     0.011     1.383     0.011     
+FBF       C3        C10       SINGLE    n         1.493     0.010     1.493     0.010     
+FBF       C4        C5        DOUBLE    y         1.383     0.010     1.383     0.010     
+FBF       C5        C6        SINGLE    y         1.390     0.010     1.390     0.010     
+FBF       C6        C7        SINGLE    n         1.484     0.011     1.484     0.011     
+FBF       C7        N8        DOUBLE    n         1.287     0.020     1.287     0.020     
+FBF       C7        N9        SINGLE    n         1.347     0.016     1.347     0.016     
+FBF       C10       F13       SINGLE    n         1.329     0.018     1.329     0.018     
+FBF       C10       F12       SINGLE    n         1.329     0.018     1.329     0.018     
+FBF       C10       F11       SINGLE    n         1.329     0.018     1.329     0.018     
+FBF       C1        H1        SINGLE    n         1.082     0.013     0.941     0.017     
+FBF       C2        H2        SINGLE    n         1.082     0.013     0.943     0.017     
+FBF       C4        H4        SINGLE    n         1.082     0.013     0.943     0.017     
+FBF       C5        H5        SINGLE    n         1.082     0.013     0.941     0.017     
+FBF       N8        HN8       SINGLE    n         1.016     0.010     0.823     0.020     
+FBF       N9        HN9       SINGLE    n         1.016     0.010     0.887     0.020     
+FBF       N9        HN9A      SINGLE    n         1.016     0.010     0.887     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FBF          C6          C1          C2     120.765    1.50
+FBF          C6          C1          H1     119.744    1.50
+FBF          C2          C1          H1     119.492    1.50
+FBF          C1          C2          C3     119.738    1.50
+FBF          C1          C2          H2     119.889    1.50
+FBF          C3          C2          H2     120.373    1.50
+FBF          C2          C3          C4     120.021    1.50
+FBF          C2          C3         C10     119.989    1.50
+FBF          C4          C3         C10     119.989    1.50
+FBF          C3          C4          C5     119.738    1.50
+FBF          C3          C4          H4     120.373    1.50
+FBF          C5          C4          H4     119.889    1.50
+FBF          C4          C5          C6     120.765    1.50
+FBF          C4          C5          H5     119.492    1.50
+FBF          C6          C5          H5     119.744    1.50
+FBF          C1          C6          C5     118.973    1.50
+FBF          C1          C6          C7     120.513    1.50
+FBF          C5          C6          C7     120.513    1.50
+FBF          C6          C7          N8     121.847    3.00
+FBF          C6          C7          N9     117.501    1.50
+FBF          N8          C7          N9     120.652    2.66
+FBF          C7          N8         HN8     114.748    3.00
+FBF          C7          N9         HN9     119.893    1.50
+FBF          C7          N9        HN9A     119.893    1.50
+FBF         HN9          N9        HN9A     120.214    2.70
+FBF          C3         C10         F13     112.813    1.50
+FBF          C3         C10         F12     112.813    1.50
+FBF          C3         C10         F11     112.813    1.50
+FBF         F13         C10         F12     105.974    1.50
+FBF         F13         C10         F11     105.974    1.50
+FBF         F12         C10         F11     105.974    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FBF              const_21          C6          C1          C2          C3       0.000   10.00     2
+FBF       const_sp2_sp2_2          C2          C1          C6          C7     180.000   10.00     2
+FBF              const_18          C1          C2          C3         C10     180.000   10.00     2
+FBF              const_15         C10          C3          C4          C5     180.000   10.00     2
+FBF             sp2_sp3_1          C2          C3         C10         F13     150.000   10.00     6
+FBF       const_sp2_sp2_9          C3          C4          C5          C6       0.000   10.00     2
+FBF       const_sp2_sp2_6          C4          C5          C6          C7     180.000   10.00     2
+FBF             sp2_sp2_2          C1          C6          C7          N8       0.000   10.00     2
+FBF             sp2_sp2_6          N9          C7          N8         HN8       0.000   10.00     2
+FBF             sp2_sp2_9          N8          C7          N9         HN9       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FBF    plan-1          C1   0.020
+FBF    plan-1         C10   0.020
+FBF    plan-1          C2   0.020
+FBF    plan-1          C3   0.020
+FBF    plan-1          C4   0.020
+FBF    plan-1          C5   0.020
+FBF    plan-1          C6   0.020
+FBF    plan-1          C7   0.020
+FBF    plan-1          H1   0.020
+FBF    plan-1          H2   0.020
+FBF    plan-1          H4   0.020
+FBF    plan-1          H5   0.020
+FBF    plan-2          C6   0.020
+FBF    plan-2          C7   0.020
+FBF    plan-2          N8   0.020
+FBF    plan-2          N9   0.020
+FBF    plan-3          C7   0.020
+FBF    plan-3         HN9   0.020
+FBF    plan-3        HN9A   0.020
+FBF    plan-3          N9   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FBF SMILES           ACDLabs              12.01 "FC(F)(F)c1ccc(C(=[N@H])N)cc1"
+FBF SMILES_CANONICAL CACTVS               3.370 "NC(=N)c1ccc(cc1)C(F)(F)F"
+FBF SMILES           CACTVS               3.370 "NC(=N)c1ccc(cc1)C(F)(F)F"
+FBF SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "[H]/N=C(/c1ccc(cc1)C(F)(F)F)\N"
+FBF SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(ccc1C(=N)N)C(F)(F)F"
+FBF InChI            InChI                1.03  "InChI=1S/C8H7F3N2/c9-8(10,11)6-3-1-5(2-4-6)7(12)13/h1-4H,(H3,12,13)"
+FBF InChIKey         InChI                1.03  XFLGYXVBXUAGQV-UHFFFAOYSA-N
+FBF ?                acedrg               190         "dictionary generator"                  
+FBF ?                acedrg_database      11          "data source"                           
+FBF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FBF ?                refmac5              5.8.0158    "optimization tool"                     

@@ -1,0 +1,156 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+I1L     I1L      "[2-(2~{H}-1,2,3,4-tetrazol-5-yl)ethanoylamino]azanium"     NON-POLYMER     17     10     .     
+#
+data_comp_I1L
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+I1L     NAD     N       NRD5    0       -3.796      -10.885     -18.359     
+I1L     NAB     N       NR5     0       -3.444      -11.803     -17.478     
+I1L     NAA     N       NRD5    0       -2.244      -11.558     -17.017     
+I1L     NAC     N       NRD5    0       -1.830      -10.460     -17.622     
+I1L     CAE     C       CR5     0       -2.762      -10.063     -18.424     
+I1L     CAF     C       CH2     0       -2.685      -8.853      -19.293     
+I1L     CAG     C       C       0       -3.398      -7.655      -18.695     
+I1L     OAI     O       O       0       -4.448      -7.228      -19.178     
+I1L     N       N       NH1     0       -2.820      -7.107      -17.621     
+I1L     NAJ     N       NT3     1       -3.422      -6.022      -16.907     
+I1L     HAB     H       H       0       -3.947      -12.492     -17.230     
+I1L     HAF     H       H       0       -3.083      -9.067      -20.166     
+I1L     HAG     H       H       0       -1.739      -8.631      -19.439     
+I1L     H       H       H       0       -2.052      -7.422      -17.352     
+I1L     HAJ     H       H       0       -4.126      -5.682      -17.386     
+I1L     HAK     H       H       0       -2.796      -5.367      -16.777     
+I1L     HAL     H       H       0       -3.720      -6.326      -16.097     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+I1L       CAG       OAI       DOUBLE    n         1.232     0.0104    1.232     0.0104    
+I1L       CAF       CAG       SINGLE    n         1.516     0.0106    1.516     0.0106    
+I1L       CAE       CAF       SINGLE    n         1.492     0.0100    1.492     0.0100    
+I1L       CAG       N         SINGLE    n         1.334     0.0104    1.334     0.0104    
+I1L       NAC       CAE       SINGLE    y         1.284     0.0142    1.284     0.0142    
+I1L       NAA       NAC       DOUBLE    y         1.317     0.0100    1.317     0.0100    
+I1L       NAD       CAE       DOUBLE    y         1.323     0.0199    1.323     0.0199    
+I1L       N         NAJ       SINGLE    n         1.426     0.0172    1.426     0.0172    
+I1L       NAD       NAB       SINGLE    y         1.324     0.0100    1.324     0.0100    
+I1L       NAB       NAA       SINGLE    y         1.311     0.0100    1.311     0.0100    
+I1L       NAB       HAB       SINGLE    n         1.016     0.010     0.889     0.0200    
+I1L       CAF       HAF       SINGLE    n         1.089     0.010     0.983     0.0200    
+I1L       CAF       HAG       SINGLE    n         1.089     0.010     0.983     0.0200    
+I1L       N         H         SINGLE    n         1.016     0.010     0.872     0.0200    
+I1L       NAJ       HAJ       SINGLE    n         1.036     0.016     0.915     0.0200    
+I1L       NAJ       HAK       SINGLE    n         1.036     0.016     0.915     0.0200    
+I1L       NAJ       HAL       SINGLE    n         1.036     0.016     0.915     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+I1L         CAE         NAD         NAB     106.359    1.58
+I1L         NAD         NAB         NAA     111.911    1.50
+I1L         NAD         NAB         HAB     124.512    1.95
+I1L         NAA         NAB         HAB     123.577    2.38
+I1L         NAC         NAA         NAB     106.211    1.50
+I1L         CAE         NAC         NAA     106.427    1.50
+I1L         CAF         CAE         NAC     125.454    3.00
+I1L         CAF         CAE         NAD     125.454    3.00
+I1L         NAC         CAE         NAD     109.091    1.52
+I1L         CAG         CAF         CAE     112.079    2.81
+I1L         CAG         CAF         HAF     109.162    1.50
+I1L         CAG         CAF         HAG     109.162    1.50
+I1L         CAE         CAF         HAF     108.233    2.01
+I1L         CAE         CAF         HAG     108.233    2.01
+I1L         HAF         CAF         HAG     107.730    1.50
+I1L         OAI         CAG         CAF     121.553    1.50
+I1L         OAI         CAG           N     122.779    1.50
+I1L         CAF         CAG           N     115.668    1.65
+I1L         CAG           N         NAJ     120.036    3.00
+I1L         CAG           N           H     118.820    2.01
+I1L         NAJ           N           H     121.145    3.00
+I1L           N         NAJ         HAJ     109.111    1.93
+I1L           N         NAJ         HAK     109.111    1.93
+I1L           N         NAJ         HAL     109.111    1.93
+I1L         HAJ         NAJ         HAK     109.834    3.00
+I1L         HAJ         NAJ         HAL     109.834    3.00
+I1L         HAK         NAJ         HAL     109.834    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+I1L       const_sp2_sp2_8         NAA         NAB         NAD         CAE       0.000   10.00     2
+I1L       const_sp2_sp2_2         CAF         CAE         NAD         NAB     180.000   10.00     2
+I1L       const_sp2_sp2_6         NAC         NAA         NAB         NAD       0.000   10.00     2
+I1L       const_sp2_sp2_5         NAB         NAA         NAC         CAE       0.000   10.00     2
+I1L       const_sp2_sp2_4         CAF         CAE         NAC         NAA     180.000   10.00     2
+I1L             sp2_sp3_8         NAC         CAE         CAF         CAG     -90.000   10.00     6
+I1L             sp2_sp3_2         OAI         CAG         CAF         CAE     120.000   10.00     6
+I1L             sp2_sp2_3         OAI         CAG           N         NAJ       0.000   10.00     2
+I1L            sp2_sp3_13         CAG           N         NAJ         HAJ       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+I1L    plan-1         CAE   0.020
+I1L    plan-1         CAF   0.020
+I1L    plan-1         HAB   0.020
+I1L    plan-1         NAA   0.020
+I1L    plan-1         NAB   0.020
+I1L    plan-1         NAC   0.020
+I1L    plan-1         NAD   0.020
+I1L    plan-2         CAF   0.020
+I1L    plan-2         CAG   0.020
+I1L    plan-2           N   0.020
+I1L    plan-2         OAI   0.020
+I1L    plan-3         CAG   0.020
+I1L    plan-3           H   0.020
+I1L    plan-3           N   0.020
+I1L    plan-3         NAJ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+I1L            InChI                InChI  1.03 InChI=1S/C3H6N6O/c4-5-3(10)1-2-6-8-9-7-2/h1,4H2,(H,5,10)(H,6,7,8,9)/p+1
+I1L         InChIKey                InChI  1.03                                             TWKUAKLZOIABHJ-UHFFFAOYSA-O
+I1L SMILES_CANONICAL               CACTVS 3.385                                               "[NH3+]NC(=O)Cc1n[nH]nn1"
+I1L           SMILES               CACTVS 3.385                                               "[NH3+]NC(=O)Cc1n[nH]nn1"
+I1L SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                               C(c1n[nH]nn1)C(=O)N[NH3+]
+I1L           SMILES "OpenEye OEToolkits" 2.0.6                                               C(c1n[nH]nn1)C(=O)N[NH3+]
+I1L ?                acedrg               217         "dictionary generator"                  
+I1L ?                acedrg_database      11          "data source"                           
+I1L ?                rdkit                2017.03.2   "Chemoinformatics tool"
+I1L ?                refmac5              5.8.0253    "optimization tool"                     

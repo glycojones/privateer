@@ -1,0 +1,251 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ERD     ERD     "(2S)-2-(3,4-DIHYDROXYPHENYL)-5,7-DIHYDROXY-2,3-DIHYDRO-4H-CHROMEN-4-ONE"     NON-POLYMER     33     21     .     
+#
+data_comp_ERD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ERD     O13     O       O       0       1.992       -3.114      0.501       
+ERD     C9      C       CR6     0       1.542       -1.982      0.260       
+ERD     C10     C       CH2     0       0.050       -1.738      0.209       
+ERD     C11     C       CH1     0       -0.314      -0.343      0.694       
+ERD     C14     C       CR6     0       -1.771      -0.010      0.530       
+ERD     C15     C       CR16    0       -2.619      0.079       1.632       
+ERD     C16     C       CR16    0       -3.977      0.386       1.474       
+ERD     C17     C       CR6     0       -4.503      0.602       0.209       
+ERD     O24     O       OH1     0       -5.821      0.900       0.042       
+ERD     C18     C       CR6     0       -3.660      0.510       -0.904      
+ERD     O23     O       OH1     0       -4.159      0.721       -2.166      
+ERD     C19     C       CR16    0       -2.311      0.204       -0.745      
+ERD     O12     O       O2      0       0.462       0.665       -0.021      
+ERD     C4      C       CR66    0       1.820       0.464       -0.099      
+ERD     C3      C       CR66    0       2.391       -0.817      0.017       
+ERD     C5      C       CR16    0       2.589       1.594       -0.332      
+ERD     C6      C       CR6     0       3.970       1.467       -0.435      
+ERD     O29     O       OH1     0       4.735       2.573       -0.657      
+ERD     C1      C       CR16    0       4.582       0.220       -0.316      
+ERD     C2      C       CR6     0       3.812       -0.903      -0.092      
+ERD     O30     O       OH1     0       4.454       -2.095      0.017       
+ERD     H101    H       H       0       -0.265      -1.850      -0.706      
+ERD     H102    H       H       0       -0.404      -2.397      0.764       
+ERD     H11     H       H       0       -0.076      -0.269      1.657       
+ERD     H15     H       H       0       -2.279      -0.064      2.494       
+ERD     H16     H       H       0       -4.539      0.446       2.231       
+ERD     HO24    H       H       0       -5.907      1.713       -0.217      
+ERD     HO23    H       H       0       -3.805      1.423       -2.508      
+ERD     H19     H       H       0       -1.758      0.148       -1.502      
+ERD     H5      H       H       0       2.181       2.439       -0.414      
+ERD     HO29    H       H       0       5.238       2.711       0.024       
+ERD     H1      H       H       0       5.518       0.145       -0.388      
+ERD     HO30    H       H       0       4.462       -2.470      -0.753      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ERD       O13       C9        DOUBLE    n         1.241     0.012     1.241     0.012     
+ERD       C9        C3        SINGLE    n         1.450     0.013     1.450     0.013     
+ERD       C9        C10       SINGLE    n         1.508     0.011     1.508     0.011     
+ERD       C10       C11       SINGLE    n         1.512     0.014     1.512     0.014     
+ERD       C11       O12       SINGLE    n         1.452     0.010     1.452     0.010     
+ERD       C11       C14       SINGLE    n         1.502     0.010     1.502     0.010     
+ERD       C14       C15       DOUBLE    y         1.385     0.010     1.385     0.010     
+ERD       C14       C19       SINGLE    y         1.393     0.010     1.393     0.010     
+ERD       C15       C16       SINGLE    y         1.395     0.010     1.395     0.010     
+ERD       C16       C17       DOUBLE    y         1.381     0.010     1.381     0.010     
+ERD       C17       C18       SINGLE    y         1.391     0.010     1.391     0.010     
+ERD       C17       O24       SINGLE    n         1.361     0.010     1.361     0.010     
+ERD       C18       C19       DOUBLE    y         1.385     0.010     1.385     0.010     
+ERD       C18       O23       SINGLE    n         1.372     0.010     1.372     0.010     
+ERD       O12       C4        SINGLE    n         1.369     0.010     1.369     0.010     
+ERD       C4        C3        DOUBLE    y         1.396     0.010     1.396     0.010     
+ERD       C4        C5        SINGLE    y         1.379     0.010     1.379     0.010     
+ERD       C3        C2        SINGLE    y         1.419     0.010     1.419     0.010     
+ERD       C5        C6        DOUBLE    y         1.383     0.010     1.383     0.010     
+ERD       C6        C1        SINGLE    y         1.383     0.012     1.383     0.012     
+ERD       C6        O29       SINGLE    n         1.363     0.011     1.363     0.011     
+ERD       C1        C2        DOUBLE    y         1.373     0.010     1.373     0.010     
+ERD       C2        O30       SINGLE    n         1.357     0.010     1.357     0.010     
+ERD       C10       H101      SINGLE    n         1.089     0.010     0.974     0.013     
+ERD       C10       H102      SINGLE    n         1.089     0.010     0.974     0.013     
+ERD       C11       H11       SINGLE    n         1.089     0.010     0.994     0.020     
+ERD       C15       H15       SINGLE    n         1.082     0.013     0.938     0.010     
+ERD       C16       H16       SINGLE    n         1.082     0.013     0.944     0.020     
+ERD       O24       HO24      SINGLE    n         0.970     0.012     0.858     0.020     
+ERD       O23       HO23      SINGLE    n         0.970     0.012     0.858     0.020     
+ERD       C19       H19       SINGLE    n         1.082     0.013     0.939     0.010     
+ERD       C5        H5        SINGLE    n         1.082     0.013     0.942     0.020     
+ERD       O29       HO29      SINGLE    n         0.970     0.012     0.858     0.020     
+ERD       C1        H1        SINGLE    n         1.082     0.013     0.941     0.016     
+ERD       O30       HO30      SINGLE    n         0.970     0.012     0.856     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ERD         O13          C9          C3     122.876    1.50
+ERD         O13          C9         C10     121.353    1.50
+ERD          C3          C9         C10     115.771    1.50
+ERD          C9         C10         C11     111.338    1.51
+ERD          C9         C10        H101     109.466    1.50
+ERD          C9         C10        H102     109.466    1.50
+ERD         C11         C10        H101     109.236    1.50
+ERD         C11         C10        H102     109.236    1.50
+ERD        H101         C10        H102     107.989    1.50
+ERD         C10         C11         O12     109.460    1.50
+ERD         C10         C11         C14     114.163    1.60
+ERD         C10         C11         H11     108.938    1.55
+ERD         O12         C11         C14     107.980    1.50
+ERD         O12         C11         H11     107.570    1.59
+ERD         C14         C11         H11     108.507    1.50
+ERD         C11         C14         C15     120.842    1.50
+ERD         C11         C14         C19     120.612    1.50
+ERD         C15         C14         C19     118.545    1.50
+ERD         C14         C15         C16     121.151    1.50
+ERD         C14         C15         H15     119.583    1.50
+ERD         C16         C15         H15     119.266    1.50
+ERD         C15         C16         C17     120.324    1.50
+ERD         C15         C16         H16     119.996    1.50
+ERD         C17         C16         H16     119.680    1.50
+ERD         C16         C17         C18     119.460    1.50
+ERD         C16         C17         O24     121.571    2.46
+ERD         C18         C17         O24     118.969    2.41
+ERD         C17         O24        HO24     110.003    2.63
+ERD         C17         C18         C19     120.438    1.50
+ERD         C17         C18         O23     119.399    2.41
+ERD         C19         C18         O23     120.162    2.14
+ERD         C18         O23        HO23     110.003    2.63
+ERD         C14         C19         C18     120.081    1.50
+ERD         C14         C19         H19     120.135    1.50
+ERD         C18         C19         H19     119.784    1.50
+ERD         C11         O12          C4     114.163    1.50
+ERD         O12          C4          C3     121.119    1.50
+ERD         O12          C4          C5     116.458    1.50
+ERD          C3          C4          C5     122.423    1.50
+ERD          C9          C3          C4     120.661    1.50
+ERD          C9          C3          C2     121.634    1.50
+ERD          C4          C3          C2     117.705    1.50
+ERD          C4          C5          C6     118.761    1.50
+ERD          C4          C5          H5     120.657    1.50
+ERD          C6          C5          H5     120.582    1.50
+ERD          C5          C6          C1     120.126    1.50
+ERD          C5          C6         O29     120.002    2.40
+ERD          C1          C6         O29     119.871    2.69
+ERD          C6         O29        HO29     109.303    1.50
+ERD          C6          C1          C2     119.427    1.50
+ERD          C6          C1          H1     120.290    1.50
+ERD          C2          C1          H1     120.292    1.50
+ERD          C3          C2          C1     121.550    1.50
+ERD          C3          C2         O30     120.424    1.50
+ERD          C1          C2         O30     118.027    1.50
+ERD          C2         O30        HO30     108.445    2.66
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ERD             sp2_sp2_5          C3          C4         O12         C11       0.000   10.00     2
+ERD       const_sp2_sp2_1          C9          C3          C4         O12       0.000   10.00     2
+ERD              const_47         O12          C4          C5          C6     180.000   10.00     2
+ERD              const_28         O30          C2          C3          C9       0.000   10.00     2
+ERD              const_38          C4          C5          C6         O29     180.000   10.00     2
+ERD              const_34          C2          C1          C6         O29     180.000   10.00     2
+ERD              const_30          C6          C1          C2         O30     180.000   10.00     2
+ERD             sp2_sp2_2          C4          C3          C9         O13     180.000   10.00     2
+ERD             sp2_sp3_4         O13          C9         C10         C11     180.000   10.00     6
+ERD             sp3_sp3_4          C9         C10         C11         O12      60.000   10.00     3
+ERD             sp3_sp3_1         C10         C11         O12          C4     -60.000   10.00     3
+ERD             sp2_sp3_8         C15         C14         C11         C10     -90.000   10.00     6
+ERD              const_43         C11         C14         C19         C18     180.000   10.00     2
+ERD       const_sp2_sp2_7         C11         C14         C15         C16     180.000   10.00     2
+ERD       const_sp2_sp2_9         C14         C15         C16         C17       0.000   10.00     2
+ERD              const_14         C15         C16         C17         O24     180.000   10.00     2
+ERD              const_20         O24         C17         C18         O23       0.000   10.00     2
+ERD              const_23         O23         C18         C19         C14     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ERD    chir_1    C11    O12    C14    C10    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ERD    plan-1         C11   0.020
+ERD    plan-1         C14   0.020
+ERD    plan-1         C15   0.020
+ERD    plan-1         C16   0.020
+ERD    plan-1         C17   0.020
+ERD    plan-1         C18   0.020
+ERD    plan-1         C19   0.020
+ERD    plan-1         H15   0.020
+ERD    plan-1         H16   0.020
+ERD    plan-1         H19   0.020
+ERD    plan-1         O23   0.020
+ERD    plan-1         O24   0.020
+ERD    plan-2          C1   0.020
+ERD    plan-2          C2   0.020
+ERD    plan-2          C3   0.020
+ERD    plan-2          C4   0.020
+ERD    plan-2          C5   0.020
+ERD    plan-2          C6   0.020
+ERD    plan-2          C9   0.020
+ERD    plan-2          H1   0.020
+ERD    plan-2          H5   0.020
+ERD    plan-2         O12   0.020
+ERD    plan-2         O29   0.020
+ERD    plan-2         O30   0.020
+ERD    plan-3         C10   0.020
+ERD    plan-3          C3   0.020
+ERD    plan-3          C9   0.020
+ERD    plan-3         O13   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ERD SMILES           ACDLabs              10.04 "O=C2c3c(OC(c1ccc(O)c(O)c1)C2)cc(O)cc3O"
+ERD SMILES_CANONICAL CACTVS               3.341 "Oc1cc(O)c2C(=O)C[C@H](Oc2c1)c3ccc(O)c(O)c3"
+ERD SMILES           CACTVS               3.341 "Oc1cc(O)c2C(=O)C[CH](Oc2c1)c3ccc(O)c(O)c3"
+ERD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1[C@@H]2CC(=O)c3c(cc(cc3O2)O)O)O)O"
+ERD SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1C2CC(=O)c3c(cc(cc3O2)O)O)O)O"
+ERD InChI            InChI                1.03  "InChI=1S/C15H12O6/c16-8-4-11(19)15-12(20)6-13(21-14(15)5-8)7-1-2-9(17)10(18)3-7/h1-5,13,16-19H,6H2/t13-/m0/s1"
+ERD InChIKey         InChI                1.03  SBHXYTNGIZCORC-ZDUSSCGKSA-N
+ERD ?                acedrg               190         "dictionary generator"                  
+ERD ?                acedrg_database      11          "data source"                           
+ERD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ERD ?                refmac5              5.8.0158    "optimization tool"                     

@@ -1,0 +1,256 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+APH     APH     P-AMIDINOPHENYL-3-ALANINE  peptide  28     15     .     
+#
+data_comp_APH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+APH     N       N       NT3     1       16.234      -14.259     20.452      
+APH     CA      C       CH1     0       16.291      -12.807     20.129      
+APH     C       C       C       0       17.267      -12.577     18.968      
+APH     O       O       O       0       17.014      -13.148     17.889      
+APH     CB      C       CH2     0       14.897      -12.270     19.785      
+APH     CG      C       CR6     0       13.927      -12.228     20.941      
+APH     CD1     C       CR16    0       12.784      -13.021     20.950      
+APH     CD2     C       CR16    0       14.151      -11.393     22.029      
+APH     CE1     C       CR16    0       11.893      -12.982     22.012      
+APH     CE2     C       CR16    0       13.266      -11.349     23.095      
+APH     CZ      C       CR6     0       12.123      -12.143     23.099      
+APH     CF      C       C       0       11.171      -12.100     24.240      
+APH     NG1     N       NH1     0       10.840      -13.157     24.909      
+APH     NG2     N       NH2     0       10.646      -10.901     24.575      
+APH     OXT     O       OC      -1      18.245      -11.835     19.184      
+APH     H       H       H       0       17.078      -14.591     20.540      
+APH     H2      H       H       0       15.805      -14.706     19.784      
+APH     H3      H       H       0       15.785      -14.385     21.234      
+APH     HA      H       H       0       16.631      -12.321     20.923      
+APH     HB2     H       H       0       14.520      -12.828     19.073      
+APH     HB3     H       H       0       14.997      -11.363     19.429      
+APH     HD1     H       H       0       12.612      -13.595     20.222      
+APH     HD2     H       H       0       14.921      -10.847     22.042      
+APH     HE1     H       H       0       11.127      -13.528     21.995      
+APH     HE2     H       H       0       13.440      -10.775     23.820      
+APH     HG1     H       H       0       11.187      -13.866     24.671      
+APH     HG21    H       H       0       10.850      -10.177     24.103      
+APH     HG22    H       H       0       10.098      -10.837     25.270      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ APH      N      n/a    CA     START
+ APH      H      N      .      .
+ APH      H2     N      .      .
+ APH      H3     N      .      .
+ APH      CA     N      C      .
+ APH      HA     CA     .      .
+ APH      CB     CA     CG     .
+ APH      HB2    CB     .      .
+ APH      HB3    CB     .      .
+ APH      CG     CB     CD2    .
+ APH      CD2    CG     CE2    .
+ APH      HD2    CD2    .      .
+ APH      CE2    CD2    CZ     .
+ APH      HE2    CE2    .      .
+ APH      CZ     CE2    CE1    .
+ APH      CF     CZ     NG1    .
+ APH      NG2    CF     HG21   .
+ APH      HG22   NG2    .      .
+ APH      HG21   NG2    .      .
+ APH      NG1    CF     HG1    .
+ APH      HG1    NG1    .      .
+ APH      CE1    CZ     CD1    .
+ APH      HE1    CE1    .      .
+ APH      CD1    CE1    HD1    .
+ APH      HD1    CD1    .      .
+ APH      C      CA     .      END
+ APH      O      C      .      .
+ APH      OXT    C      .      .
+ APH      CG     CD1    .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+APH       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+APH       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+APH       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+APH       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+APH       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+APH       CB        CG        SINGLE    n         1.508     0.010     1.508     0.010     
+APH       CG        CD1       DOUBLE    y         1.385     0.011     1.385     0.011     
+APH       CG        CD2       SINGLE    y         1.385     0.011     1.385     0.011     
+APH       CD1       CE1       SINGLE    y         1.383     0.010     1.383     0.010     
+APH       CD2       CE2       DOUBLE    y         1.383     0.010     1.383     0.010     
+APH       CE1       CZ        DOUBLE    y         1.390     0.010     1.390     0.010     
+APH       CE2       CZ        SINGLE    y         1.390     0.010     1.390     0.010     
+APH       CZ        CF        SINGLE    n         1.484     0.011     1.484     0.011     
+APH       CF        NG1       DOUBLE    n         1.287     0.020     1.287     0.020     
+APH       CF        NG2       SINGLE    n         1.347     0.016     1.347     0.016     
+APH       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+APH       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+APH       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+APH       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+APH       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+APH       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+APH       CD1       HD1       SINGLE    n         1.082     0.013     0.943     0.017     
+APH       CD2       HD2       SINGLE    n         1.082     0.013     0.943     0.017     
+APH       CE1       HE1       SINGLE    n         1.082     0.013     0.941     0.017     
+APH       CE2       HE2       SINGLE    n         1.082     0.013     0.941     0.017     
+APH       NG1       HG1       SINGLE    n         1.016     0.010     0.823     0.020     
+APH       NG2       HG21      SINGLE    n         1.016     0.010     0.887     0.020     
+APH       NG2       HG22      SINGLE    n         1.016     0.010     0.887     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+APH          CA           N           H     109.646    1.54
+APH          CA           N          H2     109.646    1.54
+APH          CA           N          H3     109.646    1.54
+APH           H           N          H2     109.028    2.41
+APH           H           N          H3     109.028    2.41
+APH          H2           N          H3     109.028    2.41
+APH           N          CA           C     109.448    1.50
+APH           N          CA          CB     110.494    1.50
+APH           N          CA          HA     108.601    1.50
+APH           C          CA          CB     111.331    2.53
+APH           C          CA          HA     108.450    1.50
+APH          CB          CA          HA     108.690    1.50
+APH          CA           C           O     117.228    2.13
+APH          CA           C         OXT     117.228    2.13
+APH           O           C         OXT     125.543    1.50
+APH          CA          CB          CG     114.745    1.55
+APH          CA          CB         HB2     108.434    1.50
+APH          CA          CB         HB3     108.434    1.50
+APH          CG          CB         HB2     108.862    1.50
+APH          CG          CB         HB3     108.862    1.50
+APH         HB2          CB         HB3     107.782    1.50
+APH          CB          CG         CD1     121.126    1.50
+APH          CB          CG         CD2     121.126    1.50
+APH         CD1          CG         CD2     117.748    1.50
+APH          CG         CD1         CE1     120.933    1.50
+APH          CG         CD1         HD1     119.459    1.50
+APH         CE1         CD1         HD1     119.609    1.50
+APH          CG         CD2         CE2     120.933    1.50
+APH          CG         CD2         HD2     119.459    1.50
+APH         CE2         CD2         HD2     119.609    1.50
+APH         CD1         CE1          CZ     120.726    1.50
+APH         CD1         CE1         HE1     119.511    1.50
+APH          CZ         CE1         HE1     119.763    1.50
+APH         CD2         CE2          CZ     120.726    1.50
+APH         CD2         CE2         HE2     119.511    1.50
+APH          CZ         CE2         HE2     119.763    1.50
+APH         CE1          CZ         CE2     118.934    1.50
+APH         CE1          CZ          CF     120.533    1.50
+APH         CE2          CZ          CF     120.533    1.50
+APH          CZ          CF         NG1     121.847    3.00
+APH          CZ          CF         NG2     117.501    1.50
+APH         NG1          CF         NG2     120.652    2.66
+APH          CF         NG1         HG1     114.748    3.00
+APH          CF         NG2        HG21     119.893    1.50
+APH          CF         NG2        HG22     119.893    1.50
+APH        HG21         NG2        HG22     120.214    2.70
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+APH             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+APH             sp2_sp2_3         NG1          CF          CZ         CE1       0.000   10.00     2
+APH             sp2_sp2_6         NG2          CF         NG1         HG1       0.000   10.00     2
+APH             sp2_sp2_9         NG1          CF         NG2        HG21       0.000   10.00     2
+APH             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+APH            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+APH             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+APH       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+APH              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+APH       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+APH              const_17          CG         CD2         CE2          CZ       0.000   10.00     2
+APH              const_10         CD1         CE1          CZ          CF     180.000   10.00     2
+APH              const_14         CD2         CE2          CZ          CF     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+APH    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+APH    plan-1          CB   0.020
+APH    plan-1         CD1   0.020
+APH    plan-1         CD2   0.020
+APH    plan-1         CE1   0.020
+APH    plan-1         CE2   0.020
+APH    plan-1          CF   0.020
+APH    plan-1          CG   0.020
+APH    plan-1          CZ   0.020
+APH    plan-1         HD1   0.020
+APH    plan-1         HD2   0.020
+APH    plan-1         HE1   0.020
+APH    plan-1         HE2   0.020
+APH    plan-2           C   0.020
+APH    plan-2          CA   0.020
+APH    plan-2           O   0.020
+APH    plan-2         OXT   0.020
+APH    plan-3          CF   0.020
+APH    plan-3          CZ   0.020
+APH    plan-3         NG1   0.020
+APH    plan-3         NG2   0.020
+APH    plan-4          CF   0.020
+APH    plan-4        HG21   0.020
+APH    plan-4        HG22   0.020
+APH    plan-4         NG2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+APH SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc1ccc(cc1)C(=[N@H])N"
+APH SMILES_CANONICAL CACTVS               3.341 "N[C@H](Cc1ccc(cc1)C(N)=N)C(O)=O"
+APH SMILES           CACTVS               3.341 "N[CH](Cc1ccc(cc1)C(N)=N)C(O)=O"
+APH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(ccc1C[C@H](C(=O)O)N)C(=N)N"
+APH SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(ccc1CC(C(=O)O)N)C(=N)N"
+APH InChI            InChI                1.03  "InChI=1S/C10H13N3O2/c11-8(10(14)15)5-6-1-3-7(4-2-6)9(12)13/h1-4,8H,5,11H2,(H3,12,13)(H,14,15)/t8-/m1/s1"
+APH InChIKey         InChI                1.03  XPRCPVGCTGELMN-MRVPVSSYSA-N
+APH ?                acedrg               196         "dictionary generator"                  
+APH ?                acedrg_database      11          "data source"                           
+APH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+APH ?                refmac5              5.8.0222    "optimization tool"                     

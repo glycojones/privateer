@@ -1,0 +1,351 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SAP      SAP '.                                   ' non-polymer        45  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SAP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SAP           O2A    O    OP       -0.500      0.000    0.000    0.000
+ SAP           PA     P    P         0.000     -1.125   -0.066    0.964
+ SAP           O1A    O    OP       -0.500     -1.398    1.289    1.500
+ SAP           O3A    O    O2        0.000     -0.735   -1.051    2.175
+ SAP           PB     P    P         0.000      0.579   -0.437    2.872
+ SAP           O1B    O    OP       -0.500      1.678   -0.363    1.879
+ SAP           O2B    O    OP       -0.500      0.279    0.925    3.378
+ SAP           O3B    O    O2        0.000      1.027   -1.378    4.100
+ SAP           PG     P    P         0.000      2.340   -0.706    4.747
+ SAP           O2G    O    OH1       0.000      2.844   -1.600    5.986
+ SAP           HOG2   H    H         0.000      3.627   -1.333    6.487
+ SAP           O3G    O    OH1       0.000      3.502   -0.622    3.637
+ SAP           HOG3   H    H         0.000      3.833   -1.431    3.223
+ SAP           S1G    S    S1        0.000      1.929    1.009    5.345
+ SAP           "O5'"  O    O2        0.000     -2.438   -0.624    0.220
+ SAP           "C5'"  C    CH2       0.000     -2.731    0.288   -0.839
+ SAP           "H5'1" H    H         0.000     -1.883    0.332   -1.526
+ SAP           "H5'2" H    H         0.000     -2.912    1.281   -0.423
+ SAP           "C4'"  C    CH1       0.000     -3.975   -0.185   -1.592
+ SAP           "H4'"  H    H         0.000     -3.802   -1.179   -2.029
+ SAP           "C3'"  C    CH1       0.000     -4.359    0.826   -2.694
+ SAP           "H3'"  H    H         0.000     -3.974    1.825   -2.451
+ SAP           "O3'"  O    OH1       0.000     -3.866    0.395   -3.964
+ SAP           "HO3'" H    H         0.000     -4.115    1.038   -4.641
+ SAP           "C2'"  C    CH1       0.000     -5.906    0.824   -2.684
+ SAP           "H2'"  H    H         0.000     -6.288    1.824   -2.434
+ SAP           "O2'"  O    OH1       0.000     -6.415    0.396   -3.948
+ SAP           "HO2'" H    H         0.000     -6.124    1.009   -4.636
+ SAP           "C1'"  C    CH1       0.000     -6.271   -0.185   -1.574
+ SAP           "H1'"  H    H         0.000     -6.452   -1.179   -2.006
+ SAP           "O4'"  O    O2        0.000     -5.116   -0.217   -0.707
+ SAP           N9     N    NR5       0.000     -7.450    0.272   -0.835
+ SAP           C4     C    CR56      0.000     -8.756   -0.039   -1.117
+ SAP           C5     C    CR56      0.000     -9.530    0.626   -0.152
+ SAP           N7     N    NRD5      0.000     -8.672    1.290    0.659
+ SAP           C8     C    CR15      0.000     -7.451    1.087    0.258
+ SAP           H8     H    H         0.000     -6.566    1.503    0.724
+ SAP           N3     N    NRD6      0.000     -9.367   -0.775   -2.040
+ SAP           C2     C    CR16      0.000    -10.679   -0.885   -2.049
+ SAP           H2     H    H         0.000    -11.146   -1.492   -2.815
+ SAP           N1     N    NRD6      0.000    -11.447   -0.283   -1.160
+ SAP           C6     C    CR6       0.000    -10.926    0.473   -0.200
+ SAP           N6     N    NH2       0.000    -11.739    1.099    0.728
+ SAP           HN62   H    H         0.000    -11.336    1.676    1.460
+ SAP           HN61   H    H         0.000    -12.748    0.989    0.688
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SAP      O2A    n/a    PA     START
+ SAP      PA     O2A    "O5'"  .
+ SAP      O1A    PA     .      .
+ SAP      O3A    PA     PB     .
+ SAP      PB     O3A    O3B    .
+ SAP      O1B    PB     .      .
+ SAP      O2B    PB     .      .
+ SAP      O3B    PB     PG     .
+ SAP      PG     O3B    S1G    .
+ SAP      O2G    PG     HOG2   .
+ SAP      HOG2   O2G    .      .
+ SAP      O3G    PG     HOG3   .
+ SAP      HOG3   O3G    .      .
+ SAP      S1G    PG     .      .
+ SAP      "O5'"  PA     "C5'"  .
+ SAP      "C5'"  "O5'"  "C4'"  .
+ SAP      "H5'1" "C5'"  .      .
+ SAP      "H5'2" "C5'"  .      .
+ SAP      "C4'"  "C5'"  "C3'"  .
+ SAP      "H4'"  "C4'"  .      .
+ SAP      "C3'"  "C4'"  "C2'"  .
+ SAP      "H3'"  "C3'"  .      .
+ SAP      "O3'"  "C3'"  "HO3'" .
+ SAP      "HO3'" "O3'"  .      .
+ SAP      "C2'"  "C3'"  "C1'"  .
+ SAP      "H2'"  "C2'"  .      .
+ SAP      "O2'"  "C2'"  "HO2'" .
+ SAP      "HO2'" "O2'"  .      .
+ SAP      "C1'"  "C2'"  N9     .
+ SAP      "H1'"  "C1'"  .      .
+ SAP      "O4'"  "C1'"  .      .
+ SAP      N9     "C1'"  C4     .
+ SAP      C4     N9     N3     .
+ SAP      C5     C4     N7     .
+ SAP      N7     C5     C8     .
+ SAP      C8     N7     H8     .
+ SAP      H8     C8     .      .
+ SAP      N3     C4     C2     .
+ SAP      C2     N3     N1     .
+ SAP      H2     C2     .      .
+ SAP      N1     C2     C6     .
+ SAP      C6     N1     N6     .
+ SAP      N6     C6     HN61   .
+ SAP      HN62   N6     .      .
+ SAP      HN61   N6     .      END
+ SAP      "C4'"  "O4'"  .    ADD
+ SAP      N9     C8     .    ADD
+ SAP      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SAP       S1G       PG        double    1.950     0.020     1.950     0.020     
+SAP       O2G       PG        single    1.610     0.020     1.610     0.020     
+SAP       O3G       PG        single    1.610     0.020     1.610     0.020     
+SAP       PG        O3B       single    1.610     0.020     1.610     0.020     
+SAP       HOG2      O2G       single    0.970     0.012     0.839     0.014     
+SAP       HOG3      O3G       single    0.970     0.012     0.839     0.014     
+SAP       O1B       PB        deloc     1.510     0.020     1.510     0.020     
+SAP       O2B       PB        deloc     1.510     0.020     1.510     0.020     
+SAP       O3B       PB        single    1.610     0.020     1.610     0.020     
+SAP       PB        O3A       single    1.610     0.020     1.610     0.020     
+SAP       O1A       PA        deloc     1.510     0.020     1.510     0.020     
+SAP       PA        O2A       deloc     1.510     0.020     1.510     0.020     
+SAP       O3A       PA        single    1.610     0.020     1.610     0.020     
+SAP       "O5'"     PA        single    1.610     0.020     1.610     0.020     
+SAP       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+SAP       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+SAP       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+SAP       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+SAP       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+SAP       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+SAP       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+SAP       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+SAP       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+SAP       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+SAP       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+SAP       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+SAP       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+SAP       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+SAP       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+SAP       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+SAP       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+SAP       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+SAP       N9        C8        single    1.337     0.020     1.337     0.020     
+SAP       C4        N9        single    1.337     0.020     1.337     0.020     
+SAP       C8        N7        double    1.350     0.020     1.350     0.020     
+SAP       H8        C8        single    1.082     0.013     0.975     0.010     
+SAP       N7        C5        single    1.350     0.020     1.350     0.020     
+SAP       C5        C6        single    1.490     0.020     1.490     0.020     
+SAP       C5        C4        double    1.490     0.020     1.490     0.020     
+SAP       N6        C6        single    1.355     0.020     1.355     0.020     
+SAP       C6        N1        double    1.350     0.020     1.350     0.020     
+SAP       HN61      N6        single    1.016     0.010     0.899     0.007     
+SAP       HN62      N6        single    1.016     0.010     0.899     0.007     
+SAP       N1        C2        single    1.337     0.020     1.337     0.020     
+SAP       C2        N3        double    1.337     0.020     1.337     0.020     
+SAP       H2        C2        single    1.082     0.013     0.975     0.010     
+SAP       N3        C4        single    1.355     0.020     1.355     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SAP      O2A    PA     O1A     119.900    3.000
+ SAP      O2A    PA     O3A     108.200    3.000
+ SAP      O2A    PA     "O5'"   108.200    3.000
+ SAP      O1A    PA     O3A     108.200    3.000
+ SAP      O1A    PA     "O5'"   108.200    3.000
+ SAP      O3A    PA     "O5'"   102.600    3.000
+ SAP      PA     O3A    PB      120.500    3.000
+ SAP      O3A    PB     O1B     108.200    3.000
+ SAP      O3A    PB     O2B     108.200    3.000
+ SAP      O3A    PB     O3B     102.600    3.000
+ SAP      O1B    PB     O2B     119.900    3.000
+ SAP      O1B    PB     O3B     108.200    3.000
+ SAP      O2B    PB     O3B     108.200    3.000
+ SAP      PB     O3B    PG      120.500    3.000
+ SAP      O3B    PG     O3G     109.500    3.000
+ SAP      O3B    PG     O2G     109.500    3.000
+ SAP      O3B    PG     S1G     109.500    3.000
+ SAP      O3G    PG     O2G     109.500    3.000
+ SAP      O3G    PG     S1G     109.500    3.000
+ SAP      O2G    PG     S1G     109.500    3.000
+ SAP      PG     O3G    HOG3    120.000    3.000
+ SAP      PG     O2G    HOG2    120.000    3.000
+ SAP      PA     "O5'"  "C5'"   120.500    3.000
+ SAP      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ SAP      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ SAP      "O5'"  "C5'"  "C4'"   109.470    3.000
+ SAP      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ SAP      "H5'1" "C5'"  "C4'"   109.470    3.000
+ SAP      "H5'2" "C5'"  "C4'"   109.470    3.000
+ SAP      "C5'"  "C4'"  "H4'"   108.340    3.000
+ SAP      "C5'"  "C4'"  "C3'"   111.000    3.000
+ SAP      "C5'"  "C4'"  "O4'"   109.470    3.000
+ SAP      "H4'"  "C4'"  "C3'"   108.340    3.000
+ SAP      "H4'"  "C4'"  "O4'"   109.470    3.000
+ SAP      "C3'"  "C4'"  "O4'"   109.470    3.000
+ SAP      "C4'"  "C3'"  "H3'"   108.340    3.000
+ SAP      "C4'"  "C3'"  "O3'"   109.470    3.000
+ SAP      "C4'"  "C3'"  "C2'"   111.000    3.000
+ SAP      "H3'"  "C3'"  "O3'"   109.470    3.000
+ SAP      "H3'"  "C3'"  "C2'"   108.340    3.000
+ SAP      "O3'"  "C3'"  "C2'"   109.470    3.000
+ SAP      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ SAP      "C3'"  "C2'"  "H2'"   108.340    3.000
+ SAP      "C3'"  "C2'"  "O2'"   109.470    3.000
+ SAP      "C3'"  "C2'"  "C1'"   111.000    3.000
+ SAP      "H2'"  "C2'"  "O2'"   109.470    3.000
+ SAP      "H2'"  "C2'"  "C1'"   108.340    3.000
+ SAP      "O2'"  "C2'"  "C1'"   109.470    3.000
+ SAP      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ SAP      "C2'"  "C1'"  "H1'"   108.340    3.000
+ SAP      "C2'"  "C1'"  "O4'"   109.470    3.000
+ SAP      "C2'"  "C1'"  N9      109.470    3.000
+ SAP      "H1'"  "C1'"  "O4'"   109.470    3.000
+ SAP      "H1'"  "C1'"  N9      109.470    3.000
+ SAP      "O4'"  "C1'"  N9      109.470    3.000
+ SAP      "C1'"  "O4'"  "C4'"   111.800    3.000
+ SAP      "C1'"  N9     C4      126.000    3.000
+ SAP      "C1'"  N9     C8      126.000    3.000
+ SAP      C4     N9     C8      108.000    3.000
+ SAP      N9     C4     C5      108.000    3.000
+ SAP      N9     C4     N3      132.000    3.000
+ SAP      C5     C4     N3      120.000    3.000
+ SAP      C4     C5     N7      108.000    3.000
+ SAP      C4     C5     C6      120.000    3.000
+ SAP      N7     C5     C6      132.000    3.000
+ SAP      C5     N7     C8      108.000    3.000
+ SAP      N7     C8     H8      126.000    3.000
+ SAP      N7     C8     N9      108.000    3.000
+ SAP      H8     C8     N9      126.000    3.000
+ SAP      C4     N3     C2      120.000    3.000
+ SAP      N3     C2     H2      120.000    3.000
+ SAP      N3     C2     N1      120.000    3.000
+ SAP      H2     C2     N1      120.000    3.000
+ SAP      C2     N1     C6      120.000    3.000
+ SAP      N1     C6     N6      120.000    3.000
+ SAP      N1     C6     C5      120.000    3.000
+ SAP      N6     C6     C5      120.000    3.000
+ SAP      C6     N6     HN62    120.000    3.000
+ SAP      C6     N6     HN61    120.000    3.000
+ SAP      HN62   N6     HN61    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SAP      var_1    O2A    PA     O3A    PB        59.992   20.000   1
+ SAP      var_2    PA     O3A    PB     O3B     -179.999   20.000   1
+ SAP      var_3    O3A    PB     O3B    PG      -179.997   20.000   1
+ SAP      var_4    PB     O3B    PG     S1G       60.017   20.000   1
+ SAP      var_5    O3B    PG     O3G    HOG3     -60.036   20.000   1
+ SAP      var_6    O3B    PG     O2G    HOG2    -179.989   20.000   1
+ SAP      var_7    O2A    PA     "O5'"  "C5'"    -59.993   20.000   1
+ SAP      var_8    PA     "O5'"  "C5'"  "C4'"    179.995   20.000   1
+ SAP      var_9    "O5'"  "C5'"  "C4'"  "C3'"    176.907   20.000   3
+ SAP      var_10   "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ SAP      var_11   "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ SAP      var_12   "C4'"  "C3'"  "O3'"  "HO3'"  -179.990   20.000   1
+ SAP      var_13   "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ SAP      var_14   "C3'"  "C2'"  "O2'"  "HO2'"   -61.424   20.000   1
+ SAP      var_15   "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ SAP      var_16   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ SAP      var_17   "C2'"  "C1'"  N9     C4        91.500   20.000   1
+ SAP      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ SAP      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ SAP      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ SAP      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ SAP      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ SAP      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ SAP      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ SAP      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ SAP      CONST_9  N3     C2     N1     C6         0.000    0.000   0
+ SAP      CONST_10 C2     N1     C6     N6       180.000    0.000   0
+ SAP      CONST_11 N1     C6     N6     HN61       0.023    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SAP      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ SAP      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ SAP      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ SAP      chir_04  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SAP      plan-1    N9        0.020
+ SAP      plan-1    "C1'"     0.020
+ SAP      plan-1    C8        0.020
+ SAP      plan-1    C4        0.020
+ SAP      plan-1    N7        0.020
+ SAP      plan-1    H8        0.020
+ SAP      plan-1    C5        0.020
+ SAP      plan-1    C6        0.020
+ SAP      plan-1    N1        0.020
+ SAP      plan-1    C2        0.020
+ SAP      plan-1    N3        0.020
+ SAP      plan-1    N6        0.020
+ SAP      plan-1    H2        0.020
+ SAP      plan-1    HN62      0.020
+ SAP      plan-1    HN61      0.020
+ SAP      plan-2    N6        0.020
+ SAP      plan-2    C6        0.020
+ SAP      plan-2    HN61      0.020
+ SAP      plan-2    HN62      0.020
+# ------------------------------------------------------

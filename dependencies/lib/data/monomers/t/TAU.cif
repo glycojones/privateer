@@ -1,0 +1,120 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TAU     TAU      "2-AMINOETHANESULFONIC ACID"     NON-POLYMER     14     7     .     
+#
+data_comp_TAU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TAU     C1      C       CH2     0       1.007       0.123       -0.364      
+TAU     C2      C       CH2     0       0.015       -0.116      0.760       
+TAU     N1      N       NT2     0       2.389       -0.170      0.020       
+TAU     S       S       S3      0       -1.634      0.383       0.351       
+TAU     O1      O       O       0       -1.579      1.783       0.041       
+TAU     O2      O       OH1     0       -1.946      -0.430      -0.929      
+TAU     O3      O       O       0       -2.478      -0.055      1.426       
+TAU     H1C1    H       H       0       0.948       1.059       -0.648      
+TAU     H1C2    H       H       0       0.764       -0.440      -1.129      
+TAU     H2C1    H       H       0       0.312       0.378       1.547       
+TAU     H2C2    H       H       0       0.015       -1.067      0.978       
+TAU     H1N1    H       H       0       2.910       -0.170      -0.699      
+TAU     H1N2    H       H       0       2.438       -0.981      0.380       
+TAU     H2      H       H       0       -2.738      -0.601      -0.969      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TAU       C1        C2        SINGLE    n         1.518     0.012     1.518     0.012     
+TAU       C1        N1        SINGLE    n         1.464     0.020     1.464     0.020     
+TAU       C2        S         SINGLE    n         1.771     0.013     1.771     0.013     
+TAU       S         O1        DOUBLE    n         1.435     0.010     1.435     0.010     
+TAU       S         O2        SINGLE    n         1.549     0.020     1.549     0.020     
+TAU       S         O3        DOUBLE    n         1.435     0.010     1.435     0.010     
+TAU       C1        H1C1      SINGLE    n         1.089     0.010     0.980     0.015     
+TAU       C1        H1C2      SINGLE    n         1.089     0.010     0.980     0.015     
+TAU       C2        H2C1      SINGLE    n         1.089     0.010     0.975     0.020     
+TAU       C2        H2C2      SINGLE    n         1.089     0.010     0.975     0.020     
+TAU       N1        H1N1      SINGLE    n         1.036     0.016     0.888     0.020     
+TAU       N1        H1N2      SINGLE    n         1.036     0.016     0.888     0.020     
+TAU       O2        H2        SINGLE    n         0.970     0.012     0.811     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TAU          C2          C1          N1     112.884    2.86
+TAU          C2          C1        H1C1     108.964    1.50
+TAU          C2          C1        H1C2     108.964    1.50
+TAU          N1          C1        H1C1     108.870    1.50
+TAU          N1          C1        H1C2     108.870    1.50
+TAU        H1C1          C1        H1C2     107.873    1.50
+TAU          C1          C2           S     112.963    1.50
+TAU          C1          C2        H2C1     108.480    1.53
+TAU          C1          C2        H2C2     108.480    1.53
+TAU           S          C2        H2C1     108.904    1.50
+TAU           S          C2        H2C2     108.904    1.50
+TAU        H2C1          C2        H2C2     108.151    1.50
+TAU          C1          N1        H1N1     109.962    3.00
+TAU          C1          N1        H1N2     109.962    3.00
+TAU        H1N1          N1        H1N2     107.243    3.00
+TAU          C2           S          O1     106.916    1.50
+TAU          C2           S          O2     103.568    2.80
+TAU          C2           S          O3     106.916    1.50
+TAU          O1           S          O2     110.306    2.80
+TAU          O1           S          O3     119.289    2.60
+TAU          O2           S          O3     110.306    2.80
+TAU           S          O2          H2     110.371    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TAU             sp3_sp3_1          N1          C1          C2           S     180.000   10.00     3
+TAU            sp3_sp3_10          C2          C1          N1        H1N1     180.000   10.00     3
+TAU            sp3_sp3_16          C1          C2           S          O1     180.000   10.00     3
+TAU            sp3_sp3_25          H2          O2           S          C2     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TAU SMILES           ACDLabs              10.04 "O=S(=O)(O)CCN"
+TAU SMILES_CANONICAL CACTVS               3.341 "NCC[S](O)(=O)=O"
+TAU SMILES           CACTVS               3.341 "NCC[S](O)(=O)=O"
+TAU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CS(=O)(=O)O)N"
+TAU SMILES           "OpenEye OEToolkits" 1.5.0 "C(CS(=O)(=O)O)N"
+TAU InChI            InChI                1.03  "InChI=1S/C2H7NO3S/c3-1-2-7(4,5)6/h1-3H2,(H,4,5,6)"
+TAU InChIKey         InChI                1.03  XOAAWQZATWQOTB-UHFFFAOYSA-N
+TAU ?                acedrg               202         "dictionary generator"                  
+TAU ?                acedrg_database      11          "data source"                           
+TAU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TAU ?                refmac5              5.8.0189    "optimization tool"                     

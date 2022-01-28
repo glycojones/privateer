@@ -1,0 +1,335 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+WRR      WRR '4-HYDROXY-3-[(1S,3R)-3-HYDROXY-1-PHE' non-polymer        41  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_WRR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ WRR           O2     O    O        -0.500      0.000    0.000    0.000
+ WRR           C11    C    CR6       0.000     -1.044    0.253    0.641
+ WRR           O1     O    O2       -0.500     -1.047    0.100    1.883
+ WRR           C19    C    CR66      0.000     -2.144    0.348    2.718
+ WRR           C18    C    CR16      0.000     -2.127    0.165    4.095
+ WRR           HC81   H    H         0.000     -1.227   -0.186    4.584
+ WRR           C17    C    CR16      0.000     -3.255    0.432    4.839
+ WRR           HC71   H    H         0.000     -3.237    0.288    5.912
+ WRR           C16    C    CR16      0.000     -4.416    0.884    4.226
+ WRR           HC61   H    H         0.000     -5.295    1.090    4.824
+ WRR           C15    C    CR16      0.000     -4.454    1.071    2.863
+ WRR           HC51   H    H         0.000     -5.360    1.424    2.386
+ WRR           C1     C    CR66      0.000     -3.316    0.804    2.097
+ WRR           C14    C    CR6       0.000     -3.322    0.993    0.638
+ WRR           O4     O    OH1       0.000     -4.429    1.431   -0.003
+ WRR           HO4    H    H         0.000     -5.136    1.576    0.640
+ WRR           C13    C    CR6       0.000     -2.176    0.711   -0.050
+ WRR           C2     C    CH1       0.000     -2.128    0.887   -1.545
+ WRR           HC2    H    H         0.000     -1.113    0.673   -1.907
+ WRR           C3     C    CH2       0.000     -2.504    2.325   -1.902
+ WRR           HC31   H    H         0.000     -3.472    2.569   -1.458
+ WRR           HC32   H    H         0.000     -2.568    2.426   -2.988
+ WRR           C4     C    CH1       0.000     -1.438    3.280   -1.362
+ WRR           HC4    H    H         0.000     -1.374    3.178   -0.269
+ WRR           O3     O    OH1       0.000     -0.174    2.962   -1.945
+ WRR           HO3    H    H         0.000     -0.231    3.052   -2.906
+ WRR           C5     C    CH3       0.000     -1.815    4.721   -1.719
+ WRR           HC3    H    H         0.000     -1.878    4.820   -2.772
+ WRR           HA2    H    H         0.000     -2.753    4.959   -1.286
+ WRR           HC1    H    H         0.000     -1.078    5.383   -1.346
+ WRR           C6     C    CR6       0.000     -3.101   -0.062   -2.193
+ WRR           C12    C    CR16      0.000     -4.407    0.332   -2.416
+ WRR           HC21   H    H         0.000     -4.731    1.323   -2.122
+ WRR           C10    C    CR16      0.000     -5.299   -0.538   -3.015
+ WRR           HC01   H    H         0.000     -6.320   -0.227   -3.196
+ WRR           C9     C    CR16      0.000     -4.887   -1.805   -3.383
+ WRR           HC9    H    H         0.000     -5.587   -2.487   -3.850
+ WRR           C8     C    CR16      0.000     -3.583   -2.201   -3.155
+ WRR           HC8    H    H         0.000     -3.261   -3.194   -3.443
+ WRR           C7     C    CR16      0.000     -2.690   -1.330   -2.561
+ WRR           HC7    H    H         0.000     -1.668   -1.641   -2.384
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ WRR      O2     n/a    C11    START
+ WRR      C11    O2     O1     .
+ WRR      O1     C11    C19    .
+ WRR      C19    O1     C1     .
+ WRR      C18    C19    C17    .
+ WRR      HC81   C18    .      .
+ WRR      C17    C18    C16    .
+ WRR      HC71   C17    .      .
+ WRR      C16    C17    C15    .
+ WRR      HC61   C16    .      .
+ WRR      C15    C16    HC51   .
+ WRR      HC51   C15    .      .
+ WRR      C1     C19    C14    .
+ WRR      C14    C1     C13    .
+ WRR      O4     C14    HO4    .
+ WRR      HO4    O4     .      .
+ WRR      C13    C14    C2     .
+ WRR      C2     C13    C6     .
+ WRR      HC2    C2     .      .
+ WRR      C3     C2     C4     .
+ WRR      HC31   C3     .      .
+ WRR      HC32   C3     .      .
+ WRR      C4     C3     C5     .
+ WRR      HC4    C4     .      .
+ WRR      O3     C4     HO3    .
+ WRR      HO3    O3     .      .
+ WRR      C5     C4     HC1    .
+ WRR      HC3    C5     .      .
+ WRR      HA2    C5     .      .
+ WRR      HC1    C5     .      .
+ WRR      C6     C2     C12    .
+ WRR      C12    C6     C10    .
+ WRR      HC21   C12    .      .
+ WRR      C10    C12    C9     .
+ WRR      HC01   C10    .      .
+ WRR      C9     C10    C8     .
+ WRR      HC9    C9     .      .
+ WRR      C8     C9     C7     .
+ WRR      HC8    C8     .      .
+ WRR      C7     C8     HC7    .
+ WRR      HC7    C7     .      END
+ WRR      C1     C15    .    ADD
+ WRR      C6     C7     .    ADD
+ WRR      C11    C13    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+WRR       C14       C1        single    1.490     0.020     1.490     0.020     
+WRR       C1        C15       double    1.390     0.020     1.390     0.020     
+WRR       C1        C19       single    1.490     0.020     1.490     0.020     
+WRR       C3        C2        single    1.524     0.020     1.524     0.020     
+WRR       C6        C2        single    1.480     0.020     1.480     0.020     
+WRR       C2        C13       single    1.480     0.020     1.480     0.020     
+WRR       HC2       C2        single    1.089     0.010     0.989     0.005     
+WRR       C4        C3        single    1.524     0.020     1.524     0.020     
+WRR       HC31      C3        single    1.089     0.010     0.989     0.005     
+WRR       HC32      C3        single    1.089     0.010     0.989     0.005     
+WRR       C5        C4        single    1.524     0.020     1.524     0.020     
+WRR       O3        C4        single    1.432     0.020     1.432     0.020     
+WRR       HC4       C4        single    1.089     0.010     0.989     0.005     
+WRR       HC1       C5        single    1.089     0.010     0.989     0.005     
+WRR       HA2       C5        single    1.089     0.010     0.989     0.005     
+WRR       HC3       C5        single    1.089     0.010     0.989     0.005     
+WRR       C6        C7        double    1.390     0.020     1.390     0.020     
+WRR       C12       C6        single    1.390     0.020     1.390     0.020     
+WRR       C7        C8        single    1.390     0.020     1.390     0.020     
+WRR       HC7       C7        single    1.082     0.013     0.975     0.010     
+WRR       C8        C9        double    1.390     0.020     1.390     0.020     
+WRR       HC8       C8        single    1.082     0.013     0.975     0.010     
+WRR       C9        C10       single    1.390     0.020     1.390     0.020     
+WRR       HC9       C9        single    1.082     0.013     0.975     0.010     
+WRR       C10       C12       double    1.390     0.020     1.390     0.020     
+WRR       HC01      C10       single    1.082     0.013     0.975     0.010     
+WRR       C11       C13       single    1.487     0.020     1.487     0.020     
+WRR       O1        C11       deloc     1.370     0.020     1.370     0.020     
+WRR       C11       O2        deloc     1.250     0.020     1.250     0.020     
+WRR       HC21      C12       single    1.082     0.013     0.975     0.010     
+WRR       C13       C14       double    1.487     0.020     1.487     0.020     
+WRR       O4        C14       single    1.362     0.020     1.362     0.020     
+WRR       C15       C16       single    1.390     0.020     1.390     0.020     
+WRR       HC51      C15       single    1.082     0.013     0.975     0.010     
+WRR       C16       C17       double    1.390     0.020     1.390     0.020     
+WRR       HC61      C16       single    1.082     0.013     0.975     0.010     
+WRR       C17       C18       single    1.390     0.020     1.390     0.020     
+WRR       HC71      C17       single    1.082     0.013     0.975     0.010     
+WRR       C18       C19       double    1.390     0.020     1.390     0.020     
+WRR       HC81      C18       single    1.082     0.013     0.975     0.010     
+WRR       C19       O1        single    1.370     0.020     1.370     0.020     
+WRR       HO3       O3        single    0.970     0.012     0.839     0.014     
+WRR       HO4       O4        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ WRR      O2     C11    O1      120.000    3.000
+ WRR      O2     C11    C13     120.000    3.000
+ WRR      O1     C11    C13     120.000    3.000
+ WRR      C11    O1     C19     120.000    3.000
+ WRR      O1     C19    C18     120.000    3.000
+ WRR      O1     C19    C1      120.000    3.000
+ WRR      C18    C19    C1      120.000    3.000
+ WRR      C19    C18    HC81    120.000    3.000
+ WRR      C19    C18    C17     120.000    3.000
+ WRR      HC81   C18    C17     120.000    3.000
+ WRR      C18    C17    HC71    120.000    3.000
+ WRR      C18    C17    C16     120.000    3.000
+ WRR      HC71   C17    C16     120.000    3.000
+ WRR      C17    C16    HC61    120.000    3.000
+ WRR      C17    C16    C15     120.000    3.000
+ WRR      HC61   C16    C15     120.000    3.000
+ WRR      C16    C15    HC51    120.000    3.000
+ WRR      C16    C15    C1      120.000    3.000
+ WRR      HC51   C15    C1      120.000    3.000
+ WRR      C19    C1     C14     120.000    3.000
+ WRR      C19    C1     C15     120.000    3.000
+ WRR      C14    C1     C15     120.000    3.000
+ WRR      C1     C14    O4      120.000    3.000
+ WRR      C1     C14    C13     120.000    3.000
+ WRR      O4     C14    C13     120.000    3.000
+ WRR      C14    O4     HO4     109.470    3.000
+ WRR      C14    C13    C2      120.000    3.000
+ WRR      C14    C13    C11     120.000    3.000
+ WRR      C2     C13    C11     120.000    3.000
+ WRR      C13    C2     HC2     109.470    3.000
+ WRR      C13    C2     C3      109.470    3.000
+ WRR      C13    C2     C6      109.500    3.000
+ WRR      HC2    C2     C3      108.340    3.000
+ WRR      HC2    C2     C6      109.470    3.000
+ WRR      C3     C2     C6      109.470    3.000
+ WRR      C2     C3     HC31    109.470    3.000
+ WRR      C2     C3     HC32    109.470    3.000
+ WRR      C2     C3     C4      111.000    3.000
+ WRR      HC31   C3     HC32    107.900    3.000
+ WRR      HC31   C3     C4      109.470    3.000
+ WRR      HC32   C3     C4      109.470    3.000
+ WRR      C3     C4     HC4     108.340    3.000
+ WRR      C3     C4     O3      109.470    3.000
+ WRR      C3     C4     C5      111.000    3.000
+ WRR      HC4    C4     O3      109.470    3.000
+ WRR      HC4    C4     C5      108.340    3.000
+ WRR      O3     C4     C5      109.470    3.000
+ WRR      C4     O3     HO3     109.470    3.000
+ WRR      C4     C5     HC3     109.470    3.000
+ WRR      C4     C5     HA2     109.470    3.000
+ WRR      C4     C5     HC1     109.470    3.000
+ WRR      HC3    C5     HA2     109.470    3.000
+ WRR      HC3    C5     HC1     109.470    3.000
+ WRR      HA2    C5     HC1     109.470    3.000
+ WRR      C2     C6     C12     120.000    3.000
+ WRR      C2     C6     C7      120.000    3.000
+ WRR      C12    C6     C7      120.000    3.000
+ WRR      C6     C12    HC21    120.000    3.000
+ WRR      C6     C12    C10     120.000    3.000
+ WRR      HC21   C12    C10     120.000    3.000
+ WRR      C12    C10    HC01    120.000    3.000
+ WRR      C12    C10    C9      120.000    3.000
+ WRR      HC01   C10    C9      120.000    3.000
+ WRR      C10    C9     HC9     120.000    3.000
+ WRR      C10    C9     C8      120.000    3.000
+ WRR      HC9    C9     C8      120.000    3.000
+ WRR      C9     C8     HC8     120.000    3.000
+ WRR      C9     C8     C7      120.000    3.000
+ WRR      HC8    C8     C7      120.000    3.000
+ WRR      C8     C7     HC7     120.000    3.000
+ WRR      C8     C7     C6      120.000    3.000
+ WRR      HC7    C7     C6      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ WRR      CONST_1  O2     C11    C13    C14      180.000    0.000   0
+ WRR      CONST_2  O2     C11    O1     C19      180.000    0.000   0
+ WRR      CONST_3  C11    O1     C19    C1         0.000    0.000   0
+ WRR      CONST_4  O1     C19    C18    C17      180.000    0.000   0
+ WRR      CONST_5  C19    C18    C17    C16        0.000    0.000   0
+ WRR      CONST_6  C18    C17    C16    C15        0.000    0.000   0
+ WRR      CONST_7  C17    C16    C15    C1         0.000    0.000   0
+ WRR      CONST_8  O1     C19    C1     C14        0.000    0.000   0
+ WRR      CONST_9  C19    C1     C15    C16        0.000    0.000   0
+ WRR      CONST_10 C19    C1     C14    C13        0.000    0.000   0
+ WRR      var_1    C1     C14    O4     HO4       -0.002   20.000   1
+ WRR      CONST_11 C1     C14    C13    C2       180.000    0.000   0
+ WRR      var_2    C14    C13    C2     C6       -63.545   20.000   1
+ WRR      var_3    C13    C2     C3     C4        65.613   20.000   3
+ WRR      var_4    C2     C3     C4     C5      -179.966   20.000   3
+ WRR      var_5    C3     C4     O3     HO3       59.992   20.000   1
+ WRR      var_6    C3     C4     C5     HC1     -179.956   20.000   3
+ WRR      var_7    C13    C2     C6     C12       89.774   20.000   1
+ WRR      CONST_12 C2     C6     C7     C8       180.000    0.000   0
+ WRR      CONST_13 C2     C6     C12    C10      180.000    0.000   0
+ WRR      CONST_14 C6     C12    C10    C9         0.000    0.000   0
+ WRR      CONST_15 C12    C10    C9     C8         0.000    0.000   0
+ WRR      CONST_16 C10    C9     C8     C7         0.000    0.000   0
+ WRR      CONST_17 C9     C8     C7     C6         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ WRR      chir_01  C2     C3     C6     C13       positiv
+ WRR      chir_02  C4     C3     C5     O3        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ WRR      plan-1    C1        0.020
+ WRR      plan-1    C14       0.020
+ WRR      plan-1    C15       0.020
+ WRR      plan-1    C19       0.020
+ WRR      plan-1    C16       0.020
+ WRR      plan-1    C17       0.020
+ WRR      plan-1    C18       0.020
+ WRR      plan-1    C13       0.020
+ WRR      plan-1    O4        0.020
+ WRR      plan-1    HC51      0.020
+ WRR      plan-1    HC61      0.020
+ WRR      plan-1    HC71      0.020
+ WRR      plan-1    HC81      0.020
+ WRR      plan-1    O1        0.020
+ WRR      plan-1    C11       0.020
+ WRR      plan-1    O2        0.020
+ WRR      plan-1    C2        0.020
+ WRR      plan-2    C6        0.020
+ WRR      plan-2    C2        0.020
+ WRR      plan-2    C7        0.020
+ WRR      plan-2    C12       0.020
+ WRR      plan-2    C8        0.020
+ WRR      plan-2    C9        0.020
+ WRR      plan-2    C10       0.020
+ WRR      plan-2    HC7       0.020
+ WRR      plan-2    HC8       0.020
+ WRR      plan-2    HC9       0.020
+ WRR      plan-2    HC01      0.020
+ WRR      plan-2    HC21      0.020
+# ------------------------------------------------------

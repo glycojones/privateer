@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3PG     3PG      "3-PHOSPHOGLYCERIC ACID"     NON-POLYMER     15     11     .     
+#
+data_comp_3PG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3PG     C1      C       C       0       -1.807      -1.252      0.026       
+3PG     O1      O       O       0       -1.706      -2.141      0.896       
+3PG     O2      O       OC      -1      -2.240      -1.420      -1.132      
+3PG     C2      C       CH1     0       -1.360      0.164       0.409       
+3PG     O3      O       OH1     0       -2.301      1.134       -0.031      
+3PG     C3      C       CH2     0       0.029       0.453       -0.137      
+3PG     O1P     O       O2      0       0.993       -0.317      0.593       
+3PG     P       P       P       0       2.557       -0.162      0.222       
+3PG     O2P     O       O       0       2.903       1.292       0.483       
+3PG     O3P     O       OP      -1      3.294       -1.116      1.143       
+3PG     O4P     O       OP      -1      2.679       -0.544      -1.241      
+3PG     H2      H       H       0       -1.311      0.212       1.395       
+3PG     HO3     H       H       0       -2.329      1.151       -0.880      
+3PG     H31     H       H       0       0.244       1.412       -0.044      
+3PG     H32     H       H       0       0.081       0.217       -1.094      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3PG       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+3PG       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+3PG       C1        C2        SINGLE    n         1.533     0.010     1.533     0.010     
+3PG       C2        O3        SINGLE    n         1.419     0.017     1.419     0.017     
+3PG       C2        C3        SINGLE    n         1.520     0.010     1.520     0.010     
+3PG       C3        O1P       SINGLE    n         1.433     0.010     1.433     0.010     
+3PG       O1P       P         SINGLE    n         1.614     0.019     1.614     0.019     
+3PG       P         O2P       DOUBLE    n         1.517     0.019     1.517     0.019     
+3PG       P         O3P       SINGLE    n         1.517     0.019     1.517     0.019     
+3PG       P         O4P       SINGLE    n         1.517     0.019     1.517     0.019     
+3PG       C2        H2        SINGLE    n         1.089     0.010     0.988     0.014     
+3PG       O3        HO3       SINGLE    n         0.970     0.012     0.848     0.020     
+3PG       C3        H31       SINGLE    n         1.089     0.010     0.987     0.016     
+3PG       C3        H32       SINGLE    n         1.089     0.010     0.987     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3PG          O1          C1          O2     125.546    1.50
+3PG          O1          C1          C2     117.227    1.50
+3PG          O2          C1          C2     117.227    1.50
+3PG          C1          C2          O3     111.343    1.72
+3PG          C1          C2          C3     111.511    2.91
+3PG          C1          C2          H2     108.330    1.50
+3PG          O3          C2          C3     111.584    1.50
+3PG          O3          C2          H2     108.675    1.50
+3PG          C3          C2          H2     108.282    1.50
+3PG          C2          O3         HO3     108.894    3.00
+3PG          C2          C3         O1P     109.482    3.00
+3PG          C2          C3         H31     110.652    1.50
+3PG          C2          C3         H32     110.652    1.50
+3PG         O1P          C3         H31     109.393    1.91
+3PG         O1P          C3         H32     109.393    1.91
+3PG         H31          C3         H32     108.319    1.50
+3PG          C3         O1P           P     118.671    1.50
+3PG         O1P           P         O2P     105.795    2.09
+3PG         O1P           P         O3P     105.795    2.09
+3PG         O1P           P         O4P     105.795    2.09
+3PG         O2P           P         O3P     112.864    1.69
+3PG         O2P           P         O4P     112.864    1.69
+3PG         O3P           P         O4P     112.864    1.69
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3PG             sp2_sp3_1          O1          C1          C2          O3       0.000   10.00     6
+3PG             sp3_sp3_1          C1          C2          O3         HO3     180.000   10.00     3
+3PG             sp3_sp3_4          C1          C2          C3         O1P     180.000   10.00     3
+3PG            sp3_sp3_13          C2          C3         O1P           P     180.000   10.00     3
+3PG            sp3_sp3_16          C3         O1P           P         O2P     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+3PG    chir_1    C2    O3    C1    C3    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3PG    plan-1          C1   0.020
+3PG    plan-1          C2   0.020
+3PG    plan-1          O1   0.020
+3PG    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3PG SMILES           ACDLabs              10.04 "O=P(O)(O)OCC(O)C(=O)O"
+3PG SMILES_CANONICAL CACTVS               3.341 "O[C@H](CO[P](O)(O)=O)C(O)=O"
+3PG SMILES           CACTVS               3.341 "O[CH](CO[P](O)(O)=O)C(O)=O"
+3PG SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@H](C(=O)O)O)OP(=O)(O)O"
+3PG SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)O)OP(=O)(O)O"
+3PG InChI            InChI                1.03  "InChI=1S/C3H7O7P/c4-2(3(5)6)1-10-11(7,8)9/h2,4H,1H2,(H,5,6)(H2,7,8,9)/t2-/m1/s1"
+3PG InChIKey         InChI                1.03  OSJPPGNTCRNQQC-UWTATZPHSA-N
+3PG ?                acedrg               202         "dictionary generator"                  
+3PG ?                acedrg_database      11          "data source"                           
+3PG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3PG ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,122 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MKV     MKV      2,3,4-tribromo-1H-pyrrole     NON-POLYMER     10     8     .     
+#
+data_comp_MKV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MKV     C02     C       CR5     0       -11.384     32.137      -18.343     
+MKV     C03     C       CR5     0       -11.876     32.276      -17.077     
+MKV     C05     C       CR5     0       -13.130     32.858      -17.184     
+MKV     C07     C       CR15    0       -13.386     33.064      -18.508     
+MKV     N08     N       NR5     0       -12.311     32.620      -19.218     
+MKV     BR01    BR      BR      0       -9.760      31.432      -18.907     
+MKV     BR04    BR      BR      0       -11.030     31.782      -15.491     
+MKV     BR06    BR      BR      0       -14.280     33.288      -15.777     
+MKV     H1      H       H       0       -14.166     33.446      -18.880     
+MKV     H2      H       H       0       -12.226     32.641      -20.100     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MKV       C07       N08       SINGLE    y         1.366     0.0167    1.366     0.0167    
+MKV       C02       N08       SINGLE    y         1.365     0.0161    1.365     0.0161    
+MKV       C02       BR01      SINGLE    n         1.858     0.0113    1.858     0.0113    
+MKV       C05       C07       DOUBLE    y         1.364     0.0143    1.364     0.0143    
+MKV       C02       C03       DOUBLE    y         1.365     0.0100    1.365     0.0100    
+MKV       C03       C05       SINGLE    y         1.383     0.0179    1.383     0.0179    
+MKV       C05       BR06      SINGLE    n         1.867     0.0104    1.867     0.0104    
+MKV       C03       BR04      SINGLE    n         1.864     0.0100    1.864     0.0100    
+MKV       C07       H1        SINGLE    n         1.082     0.013     0.945     0.0191    
+MKV       N08       H2        SINGLE    n         1.016     0.010     0.887     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MKV         N08         C02        BR01     122.284    1.50
+MKV         N08         C02         C03     108.309    1.50
+MKV        BR01         C02         C03     129.407    1.50
+MKV         C02         C03         C05     106.881    1.50
+MKV         C02         C03        BR04     126.878    1.50
+MKV         C05         C03        BR04     126.241    1.87
+MKV         C07         C05         C03     107.693    1.50
+MKV         C07         C05        BR06     125.661    1.90
+MKV         C03         C05        BR06     126.646    1.87
+MKV         N08         C07         C05     108.179    1.50
+MKV         N08         C07          H1     125.200    1.72
+MKV         C05         C07          H1     126.622    1.57
+MKV         C07         N08         C02     108.938    1.50
+MKV         C07         N08          H2     125.621    1.94
+MKV         C02         N08          H2     125.441    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MKV              const_20        BR01         C02         C03        BR04       0.000   10.00     2
+MKV       const_sp2_sp2_3        BR01         C02         N08         C07     180.000   10.00     2
+MKV              const_16        BR04         C03         C05        BR06       0.000   10.00     2
+MKV              const_11        BR06         C05         C07         N08     180.000   10.00     2
+MKV       const_sp2_sp2_5         C05         C07         N08         C02       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MKV    plan-1        BR01   0.020
+MKV    plan-1        BR04   0.020
+MKV    plan-1        BR06   0.020
+MKV    plan-1         C02   0.020
+MKV    plan-1         C03   0.020
+MKV    plan-1         C05   0.020
+MKV    plan-1         C07   0.020
+MKV    plan-1          H1   0.020
+MKV    plan-1          H2   0.020
+MKV    plan-1         N08   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MKV           SMILES              ACDLabs 12.01                        c1(c(Br)c(Br)cn1)Br
+MKV            InChI                InChI  1.03 InChI=1S/C4H2Br3N/c5-2-1-8-4(7)3(2)6/h1,8H
+MKV         InChIKey                InChI  1.03                KYSLACCYHUAOAK-UHFFFAOYSA-N
+MKV SMILES_CANONICAL               CACTVS 3.385                         Brc1[nH]cc(Br)c1Br
+MKV           SMILES               CACTVS 3.385                         Brc1[nH]cc(Br)c1Br
+MKV SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                     c1c(c(c([nH]1)Br)Br)Br
+MKV           SMILES "OpenEye OEToolkits" 2.0.7                     c1c(c(c([nH]1)Br)Br)Br
+MKV ?                acedrg               217         "dictionary generator"                  
+MKV ?                acedrg_database      11          "data source"                           
+MKV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MKV ?                refmac5              5.8.0253    "optimization tool"                     

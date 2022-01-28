@@ -1,0 +1,213 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DMH     DMH     N4,N4-DIMETHYL-ASPARAGINE     peptide     23     11     .
+#
+data_comp_DMH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DMH     N       N       NT3     1       38.465      21.889      82.791
+DMH     CA      C       CH1     0       38.503      20.865      81.710
+DMH     CB      C       CH2     0       39.425      19.690      82.054
+DMH     CG      C       C       0       40.880      20.107      82.187
+DMH     OD1     O       O       0       41.493      20.446      81.176
+DMH     ND2     N       N       0       41.487      20.124      83.424
+DMH     CE1     C       CH3     0       40.867      19.931      84.738
+DMH     CE2     C       CH3     0       42.925      20.352      83.583
+DMH     C       C       C       0       37.079      20.370      81.426
+DMH     O       O       O       0       36.430      19.922      82.392
+DMH     OXT     O       OC      -1      36.672      20.452      80.250
+DMH     H2      H       H       0       37.783      22.477      82.647
+DMH     H       H       H       0       39.246      22.357      82.811
+DMH     H3      H       H       0       38.339      21.487      83.598
+DMH     HA1     H       H       0       38.854      21.292      80.894
+DMH     HB2     H       H       0       39.358      19.025      81.339
+DMH     HB3     H       H       0       39.115      19.270      82.878
+DMH     HE11    H       H       0       39.929      20.161      84.705
+DMH     HE12    H       H       0       41.306      20.499      85.394
+DMH     HE13    H       H       0       40.962      19.002      85.005
+DMH     HE21    H       H       0       43.373      20.309      82.724
+DMH     HE22    H       H       0       43.299      19.673      84.169
+DMH     HE23    H       H       0       43.070      21.229      83.975
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DMH      N      n/a    CA     START
+DMH      H2     N      .      .
+DMH      H      N      .      .
+DMH      H3     N      .      .
+DMH      CA     N      C      .
+DMH      HA1    CA     .      .
+DMH      CB     CA     CG     .
+DMH      HB2    CB     .      .
+DMH      HB3    CB     .      .
+DMH      CG     CB     ND2    .
+DMH      OD1    CG     .      .
+DMH      ND2    CG     CE1    .
+DMH      CE2    ND2    HE21   .
+DMH      HE23   CE2    .      .
+DMH      HE22   CE2    .      .
+DMH      HE21   CE2    .      .
+DMH      CE1    ND2    HE11   .
+DMH      HE13   CE1    .      .
+DMH      HE12   CE1    .      .
+DMH      HE11   CE1    .      .
+DMH      C      CA     .      END
+DMH      O      C      .      .
+DMH      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DMH       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+DMH       CA        CB        SINGLE    n         1.531     0.011     1.531     0.011     
+DMH       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DMH       CB        CG        SINGLE    n         1.515     0.010     1.515     0.010     
+DMH       CG        OD1       DOUBLE    n         1.229     0.012     1.229     0.012     
+DMH       CG        ND2       SINGLE    n         1.331     0.020     1.331     0.020     
+DMH       ND2       CE1       SINGLE    n         1.458     0.011     1.458     0.011     
+DMH       ND2       CE2       SINGLE    n         1.458     0.011     1.458     0.011     
+DMH       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DMH       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DMH       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DMH       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DMH       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DMH       CA        HA1       SINGLE    n         1.089     0.010     0.986     0.020     
+DMH       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.016     
+DMH       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.016     
+DMH       CE1       HE11      SINGLE    n         1.089     0.010     0.971     0.018     
+DMH       CE1       HE12      SINGLE    n         1.089     0.010     0.971     0.018     
+DMH       CE1       HE13      SINGLE    n         1.089     0.010     0.971     0.018     
+DMH       CE2       HE21      SINGLE    n         1.089     0.010     0.971     0.018     
+DMH       CE2       HE22      SINGLE    n         1.089     0.010     0.971     0.018     
+DMH       CE2       HE23      SINGLE    n         1.089     0.010     0.971     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DMH          CA           N          H2     110.062    1.93
+DMH          CA           N           H     110.062    1.93
+DMH          CA           N          H3     110.062    1.93
+DMH          H2           N           H     109.028    2.41
+DMH          H2           N          H3     109.028    2.41
+DMH           H           N          H3     109.028    2.41
+DMH           N          CA          CB     111.766    1.50
+DMH           N          CA           C     109.241    1.50
+DMH           N          CA         HA1     108.487    1.50
+DMH          CB          CA           C     111.540    2.60
+DMH          CB          CA         HA1     107.983    1.50
+DMH           C          CA         HA1     108.824    1.50
+DMH          CA          CB          CG     112.799    1.50
+DMH          CA          CB         HB2     108.904    1.50
+DMH          CA          CB         HB3     108.904    1.50
+DMH          CG          CB         HB2     108.929    1.50
+DMH          CG          CB         HB3     108.929    1.50
+DMH         HB2          CB         HB3     108.069    1.50
+DMH          CB          CG         OD1     121.163    1.50
+DMH          CB          CG         ND2     117.514    1.50
+DMH         OD1          CG         ND2     121.323    1.50
+DMH          CG         ND2         CE1     121.708    2.81
+DMH          CG         ND2         CE2     121.708    2.81
+DMH         CE1         ND2         CE2     116.584    3.00
+DMH         ND2         CE1        HE11     109.484    1.50
+DMH         ND2         CE1        HE12     109.484    1.50
+DMH         ND2         CE1        HE13     109.484    1.50
+DMH        HE11         CE1        HE12     109.408    1.50
+DMH        HE11         CE1        HE13     109.408    1.50
+DMH        HE12         CE1        HE13     109.408    1.50
+DMH         ND2         CE2        HE21     109.484    1.50
+DMH         ND2         CE2        HE22     109.484    1.50
+DMH         ND2         CE2        HE23     109.484    1.50
+DMH        HE21         CE2        HE22     109.408    1.50
+DMH        HE21         CE2        HE23     109.408    1.50
+DMH        HE22         CE2        HE23     109.408    1.50
+DMH          CA           C           O     117.124    1.50
+DMH          CA           C         OXT     117.124    1.50
+DMH           O           C         OXT     125.752    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DMH             sp3_sp3_1          CB          CA           N          H2     180.000   10.00     3
+DMH            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+DMH             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DMH             sp2_sp3_8         OD1          CG          CB          CA     120.000   10.00     6
+DMH             sp2_sp2_1          CB          CG         ND2         CE1     180.000   10.00     2
+DMH            sp2_sp3_13          CG         ND2         CE1        HE11       0.000   10.00     6
+DMH            sp2_sp3_19          CG         ND2         CE2        HE21       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DMH    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DMH    plan-1          CB   0.020
+DMH    plan-1          CG   0.020
+DMH    plan-1         ND2   0.020
+DMH    plan-1         OD1   0.020
+DMH    plan-2         CE1   0.020
+DMH    plan-2         CE2   0.020
+DMH    plan-2          CG   0.020
+DMH    plan-2         ND2   0.020
+DMH    plan-3           C   0.020
+DMH    plan-3          CA   0.020
+DMH    plan-3           O   0.020
+DMH    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DMH SMILES           ACDLabs              10.04 "O=C(N(C)C)CC(N)C(=O)O"
+DMH SMILES_CANONICAL CACTVS               3.341 "CN(C)C(=O)C[C@H](N)C(O)=O"
+DMH SMILES           CACTVS               3.341 "CN(C)C(=O)C[CH](N)C(O)=O"
+DMH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CN(C)C(=O)C[C@@H](C(=O)O)N"
+DMH SMILES           "OpenEye OEToolkits" 1.5.0 "CN(C)C(=O)CC(C(=O)O)N"
+DMH InChI            InChI                1.03  "InChI=1S/C6H12N2O3/c1-8(2)5(9)3-4(7)6(10)11/h4H,3,7H2,1-2H3,(H,10,11)/t4-/m0/s1"
+DMH InChIKey         InChI                1.03  AHEBZPSPUGRPFZ-BYPYZUCNSA-N
+DMH ?                acedrg               196         "dictionary generator"
+DMH ?                acedrg_database      11          "data source"
+DMH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DMH ?                refmac5              5.8.0222    "optimization tool"

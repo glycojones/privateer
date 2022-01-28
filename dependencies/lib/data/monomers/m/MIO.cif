@@ -1,0 +1,137 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MIO     MIO      3-methyl-1,2-oxazol-5-amine     NON-POLYMER     13     7     .     
+#
+data_comp_MIO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MIO     CAA     C       CH3     0       15.274      11.971      44.165      
+MIO     NAB     N       NH2     0       17.370      15.968      42.082      
+MIO     CAC     C       CR15    0       16.515      14.182      43.548      
+MIO     NAD     N       NRD5    0       15.543      12.974      41.963      
+MIO     OAE     O       O2      0       16.154      14.132      41.380      
+MIO     CAF     C       CR5     0       15.775      13.033      43.243      
+MIO     CAG     C       CR5     0       16.730      14.835      42.370      
+MIO     HAA     H       H       0       14.773      11.308      43.664      
+MIO     HAAA    H       H       0       14.697      12.369      44.836      
+MIO     HAAB    H       H       0       16.025      11.541      44.603      
+MIO     HNAB    H       H       0       17.782      16.428      42.736      
+MIO     HNAA    H       H       0       17.388      16.269      41.234      
+MIO     HAC     H       H       0       16.808      14.450      44.402      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MIO       CAA       CAF       SINGLE    n         1.492     0.010     1.492     0.010     
+MIO       NAB       CAG       SINGLE    n         1.332     0.010     1.332     0.010     
+MIO       CAC       CAF       SINGLE    y         1.402     0.012     1.402     0.012     
+MIO       CAC       CAG       DOUBLE    y         1.369     0.020     1.369     0.020     
+MIO       NAD       OAE       SINGLE    y         1.432     0.011     1.432     0.011     
+MIO       NAD       CAF       DOUBLE    y         1.300     0.010     1.300     0.010     
+MIO       OAE       CAG       SINGLE    y         1.344     0.010     1.344     0.010     
+MIO       CAA       HAA       SINGLE    n         1.089     0.010     0.970     0.015     
+MIO       CAA       HAAA      SINGLE    n         1.089     0.010     0.970     0.015     
+MIO       CAA       HAAB      SINGLE    n         1.089     0.010     0.970     0.015     
+MIO       NAB       HNAB      SINGLE    n         1.016     0.010     0.900     0.020     
+MIO       NAB       HNAA      SINGLE    n         1.016     0.010     0.900     0.020     
+MIO       CAC       HAC       SINGLE    n         1.082     0.013     0.942     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MIO         CAF         CAA         HAA     109.696    1.50
+MIO         CAF         CAA        HAAA     109.696    1.50
+MIO         CAF         CAA        HAAB     109.696    1.50
+MIO         HAA         CAA        HAAA     109.354    1.50
+MIO         HAA         CAA        HAAB     109.354    1.50
+MIO        HAAA         CAA        HAAB     109.354    1.50
+MIO         CAG         NAB        HNAB     119.881    1.50
+MIO         CAG         NAB        HNAA     119.881    1.50
+MIO        HNAB         NAB        HNAA     120.238    1.50
+MIO         CAF         CAC         CAG     107.470    2.27
+MIO         CAF         CAC         HAC     126.182    1.50
+MIO         CAG         CAC         HAC     126.347    1.50
+MIO         OAE         NAD         CAF     106.039    1.50
+MIO         NAD         OAE         CAG     107.317    1.50
+MIO         CAA         CAF         CAC     128.898    1.50
+MIO         CAA         CAF         NAD     120.714    1.50
+MIO         CAC         CAF         NAD     110.388    1.50
+MIO         NAB         CAG         CAC     131.859    2.60
+MIO         NAB         CAG         OAE     119.355    1.50
+MIO         CAC         CAG         OAE     108.786    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MIO             sp2_sp3_1         CAC         CAF         CAA         HAA     150.000   10.00     6
+MIO             sp2_sp2_1         CAC         CAG         NAB        HNAB     180.000   10.00     2
+MIO       const_sp2_sp2_2         CAG         CAC         CAF         CAA     180.000   10.00     2
+MIO              const_11         CAF         CAC         CAG         NAB     180.000   10.00     2
+MIO       const_sp2_sp2_7         CAF         NAD         OAE         CAG       0.000   10.00     2
+MIO       const_sp2_sp2_6         CAA         CAF         NAD         OAE     180.000   10.00     2
+MIO       const_sp2_sp2_9         NAB         CAG         OAE         NAD     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MIO    plan-1         CAA   0.020
+MIO    plan-1         CAC   0.020
+MIO    plan-1         CAF   0.020
+MIO    plan-1         CAG   0.020
+MIO    plan-1         HAC   0.020
+MIO    plan-1         NAB   0.020
+MIO    plan-1         NAD   0.020
+MIO    plan-1         OAE   0.020
+MIO    plan-2         CAG   0.020
+MIO    plan-2        HNAA   0.020
+MIO    plan-2        HNAB   0.020
+MIO    plan-2         NAB   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MIO SMILES           ACDLabs              12.01 "n1oc(N)cc1C"
+MIO SMILES_CANONICAL CACTVS               3.370 "Cc1cc(N)on1"
+MIO SMILES           CACTVS               3.370 "Cc1cc(N)on1"
+MIO SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "Cc1cc(on1)N"
+MIO SMILES           "OpenEye OEToolkits" 1.7.0 "Cc1cc(on1)N"
+MIO InChI            InChI                1.03  "InChI=1S/C4H6N2O/c1-3-2-4(5)7-6-3/h2H,5H2,1H3"
+MIO InChIKey         InChI                1.03  FNXYWHTZDAVRTB-UHFFFAOYSA-N
+MIO ?                acedrg               202         "dictionary generator"                  
+MIO ?                acedrg_database      11          "data source"                           
+MIO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MIO ?                refmac5              5.8.0189    "optimization tool"                     

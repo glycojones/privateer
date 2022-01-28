@@ -1,0 +1,112 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MOE     MOE      METHOXY-ETHOXYL     NON-POLYMER     12     5     .     
+#
+data_comp_MOE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MOE     "O2'"   O       OC      -1      2.814       -0.528      0.267       
+MOE     "CA'"   C       CH2     0       1.752       0.340       -0.067      
+MOE     "CB'"   C       CH2     0       0.452       -0.333      0.072       
+MOE     "OC'"   O       O2      0       -0.593      0.565       -0.275      
+MOE     "CD'"   C       CH3     0       -1.935      0.086       -0.201      
+MOE     "HA'1"  H       H       0       1.863       0.649       -0.983      
+MOE     "HA'2"  H       H       0       1.778       1.120       0.514       
+MOE     "HB'1"  H       H       0       0.331       -0.637      0.998       
+MOE     "HB'2"  H       H       0       0.419       -1.119      -0.516      
+MOE     "HD'1"  H       H       0       -2.434      0.628       0.432       
+MOE     "HD'2"  H       H       0       -1.947      -0.841      0.090       
+MOE     "HD'3"  H       H       0       -2.347      0.154       -1.077      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MOE       "O2'"     "CA'"     SINGLE    n         1.412     0.020     1.412     0.020     
+MOE       "CA'"     "CB'"     SINGLE    n         1.470     0.020     1.470     0.020     
+MOE       "CB'"     "OC'"     SINGLE    n         1.414     0.020     1.414     0.020     
+MOE       "OC'"     "CD'"     SINGLE    n         1.415     0.020     1.415     0.020     
+MOE       "CA'"     "HA'1"    SINGLE    n         1.089     0.010     0.973     0.015     
+MOE       "CA'"     "HA'2"    SINGLE    n         1.089     0.010     0.973     0.015     
+MOE       "CB'"     "HB'1"    SINGLE    n         1.089     0.010     0.982     0.018     
+MOE       "CB'"     "HB'2"    SINGLE    n         1.089     0.010     0.982     0.018     
+MOE       "CD'"     "HD'1"    SINGLE    n         1.089     0.010     0.971     0.015     
+MOE       "CD'"     "HD'2"    SINGLE    n         1.089     0.010     0.971     0.015     
+MOE       "CD'"     "HD'3"    SINGLE    n         1.089     0.010     0.971     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MOE       "O2'"       "CA'"       "CB'"     110.924    3.00
+MOE       "O2'"       "CA'"      "HA'1"     109.276    1.75
+MOE       "O2'"       "CA'"      "HA'2"     109.276    1.75
+MOE       "CB'"       "CA'"      "HA'1"     109.513    1.50
+MOE       "CB'"       "CA'"      "HA'2"     109.513    1.50
+MOE      "HA'1"       "CA'"      "HA'2"     107.470    3.00
+MOE       "CA'"       "CB'"       "OC'"     109.882    3.00
+MOE       "CA'"       "CB'"      "HB'1"     109.891    1.50
+MOE       "CA'"       "CB'"      "HB'2"     109.891    1.50
+MOE       "OC'"       "CB'"      "HB'1"     109.622    1.50
+MOE       "OC'"       "CB'"      "HB'2"     109.622    1.50
+MOE      "HB'1"       "CB'"      "HB'2"     108.274    1.50
+MOE       "CB'"       "OC'"       "CD'"     112.505    3.00
+MOE       "OC'"       "CD'"      "HD'1"     109.470    1.50
+MOE       "OC'"       "CD'"      "HD'2"     109.470    1.50
+MOE       "OC'"       "CD'"      "HD'3"     109.470    1.50
+MOE      "HD'1"       "CD'"      "HD'2"     109.532    1.53
+MOE      "HD'1"       "CD'"      "HD'3"     109.532    1.53
+MOE      "HD'2"       "CD'"      "HD'3"     109.532    1.53
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MOE             sp3_sp3_1       "O2'"       "CA'"       "CB'"       "OC'"     180.000   10.00     3
+MOE            sp3_sp3_10       "CA'"       "CB'"       "OC'"       "CD'"     180.000   10.00     3
+MOE            sp3_sp3_13      "HD'1"       "CD'"       "OC'"       "CB'"     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MOE SMILES           ACDLabs              10.04 "[O-]CCOC"
+MOE SMILES_CANONICAL CACTVS               3.341 "COCC[O-]"
+MOE SMILES           CACTVS               3.341 "COCC[O-]"
+MOE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "COCC[O-]"
+MOE SMILES           "OpenEye OEToolkits" 1.5.0 "COCC[O-]"
+MOE InChI            InChI                1.03  InChI=1S/C3H7O2/c1-5-3-2-4/h2-3H2,1H3/q-1
+MOE InChIKey         InChI                1.03  ASQUQUOEFDHYGP-UHFFFAOYSA-N
+MOE ?                acedrg               202         "dictionary generator"                  
+MOE ?                acedrg_database      11          "data source"                           
+MOE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MOE ?                refmac5              5.8.0189    "optimization tool"                     

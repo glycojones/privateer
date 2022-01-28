@@ -1,0 +1,336 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UDC      UDC '"(2S,3S)-2-((2S,3R,4S,5R)-5-ETHANAMI' non-polymer        45  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_UDC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ UDC           OBP    O    OC       -0.500      0.000    0.000    0.000
+ UDC           CBO    C    C         0.000     -0.535    0.882   -0.708
+ UDC           OBQ    O    OC       -0.500     -0.291    0.932   -1.934
+ UDC           CBN    C    CT        0.000     -1.472    1.884   -0.084
+ UDC           CBR    C    CH3       0.000     -2.199    2.656   -1.186
+ UDC           HBR3   H    H         0.000     -1.492    3.163   -1.790
+ UDC           HBR2   H    H         0.000     -2.754    1.980   -1.785
+ UDC           HBR1   H    H         0.000     -2.859    3.361   -0.749
+ UDC           CBS    C    CH1       0.000     -0.672    2.860    0.780
+ UDC           HBS    H    H         0.000     -0.149    2.305    1.572
+ UDC           CBU    C    CH2       0.000     -1.623    3.877    1.414
+ UDC           HBU1   H    H         0.000     -2.406    3.349    1.963
+ UDC           HBU2   H    H         0.000     -2.077    4.487    0.631
+ UDC           OBV    O    OH1       0.000     -0.894    4.716    2.312
+ UDC           HOBV   H    H         0.000     -1.495    5.359    2.713
+ UDC           OBT    O    OH1       0.000      0.284    3.544   -0.033
+ UDC           HOBT   H    H         0.000     -0.177    4.032   -0.729
+ UDC           O3     O    O2        0.000     -2.427    1.200    0.729
+ UDC           C3     C    CH1       0.000     -3.244    0.274    0.011
+ UDC           H3     H    H         0.000     -2.939    0.255   -1.044
+ UDC           C2     C    CH1       0.000     -4.712    0.700    0.113
+ UDC           H2     H    H         0.000     -5.003    0.769    1.171
+ UDC           N2     N    NH1       0.000     -4.889    2.005   -0.529
+ UDC           HN2    H    H         0.000     -4.246    2.305   -1.248
+ UDC           C7     C    C         0.000     -5.909    2.804   -0.161
+ UDC           O7     O    O         0.000     -6.680    2.444    0.702
+ UDC           C8     C    CH3       0.000     -6.091    4.146   -0.823
+ UDC           H83    H    H         0.000     -7.037    4.183   -1.297
+ UDC           H82    H    H         0.000     -6.033    4.912   -0.092
+ UDC           H81    H    H         0.000     -5.329    4.292   -1.545
+ UDC           C4     C    CH1       0.000     -3.087   -1.125    0.616
+ UDC           H4     H    H         0.000     -3.344   -1.094    1.684
+ UDC           O4     O    OH1       0.000     -1.736   -1.563    0.462
+ UDC           HO4    H    H         0.000     -1.616   -2.405    0.923
+ UDC           C5     C    CH1       0.000     -4.026   -2.094   -0.108
+ UDC           H5     H    H         0.000     -3.742   -2.156   -1.168
+ UDC           C6     C    CH2       0.000     -3.919   -3.481    0.530
+ UDC           H61    H    H         0.000     -4.284   -3.436    1.558
+ UDC           H62    H    H         0.000     -2.875   -3.802    0.529
+ UDC           O6     O    OH1       0.000     -4.706   -4.410   -0.217
+ UDC           HO6    H    H         0.000     -4.638   -5.286    0.188
+ UDC           O5     O    O2        0.000     -5.370   -1.622   -0.002
+ UDC           C1     C    CH2       0.000     -5.588   -0.339   -0.592
+ UDC           H12    H    H         0.000     -6.639   -0.063   -0.487
+ UDC           H11    H    H         0.000     -5.327   -0.378   -1.652
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ UDC      OBP    n/a    CBO    START
+ UDC      CBO    OBP    CBN    .
+ UDC      OBQ    CBO    .      .
+ UDC      CBN    CBO    O3     .
+ UDC      CBR    CBN    HBR1   .
+ UDC      HBR3   CBR    .      .
+ UDC      HBR2   CBR    .      .
+ UDC      HBR1   CBR    .      .
+ UDC      CBS    CBN    OBT    .
+ UDC      HBS    CBS    .      .
+ UDC      CBU    CBS    OBV    .
+ UDC      HBU1   CBU    .      .
+ UDC      HBU2   CBU    .      .
+ UDC      OBV    CBU    HOBV   .
+ UDC      HOBV   OBV    .      .
+ UDC      OBT    CBS    HOBT   .
+ UDC      HOBT   OBT    .      .
+ UDC      O3     CBN    C3     .
+ UDC      C3     O3     C4     .
+ UDC      H3     C3     .      .
+ UDC      C2     C3     N2     .
+ UDC      H2     C2     .      .
+ UDC      N2     C2     C7     .
+ UDC      HN2    N2     .      .
+ UDC      C7     N2     C8     .
+ UDC      O7     C7     .      .
+ UDC      C8     C7     H81    .
+ UDC      H83    C8     .      .
+ UDC      H82    C8     .      .
+ UDC      H81    C8     .      .
+ UDC      C4     C3     C5     .
+ UDC      H4     C4     .      .
+ UDC      O4     C4     HO4    .
+ UDC      HO4    O4     .      .
+ UDC      C5     C4     O5     .
+ UDC      H5     C5     .      .
+ UDC      C6     C5     O6     .
+ UDC      H61    C6     .      .
+ UDC      H62    C6     .      .
+ UDC      O6     C6     HO6    .
+ UDC      HO6    O6     .      .
+ UDC      O5     C5     C1     .
+ UDC      C1     O5     H11    .
+ UDC      H12    C1     .      .
+ UDC      H11    C1     .      END
+ UDC      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UDC       C1        O5        single    1.426     0.020     1.426     0.020     
+UDC       C1        C2        single    1.524     0.020     1.524     0.020     
+UDC       H11       C1        single    1.089     0.010     0.989     0.005     
+UDC       H12       C1        single    1.089     0.010     0.989     0.005     
+UDC       C2        C3        single    1.524     0.020     1.524     0.020     
+UDC       N2        C2        single    1.450     0.020     1.450     0.020     
+UDC       H2        C2        single    1.089     0.010     0.989     0.005     
+UDC       C7        N2        single    1.330     0.020     1.330     0.020     
+UDC       HN2       N2        single    1.016     0.010     0.899     0.007     
+UDC       O7        C7        double    1.220     0.020     1.220     0.020     
+UDC       C8        C7        single    1.500     0.020     1.500     0.020     
+UDC       H81       C8        single    1.089     0.010     0.989     0.005     
+UDC       H82       C8        single    1.089     0.010     0.989     0.005     
+UDC       H83       C8        single    1.089     0.010     0.989     0.005     
+UDC       O5        C5        single    1.426     0.020     1.426     0.020     
+UDC       C6        C5        single    1.524     0.020     1.524     0.020     
+UDC       C5        C4        single    1.524     0.020     1.524     0.020     
+UDC       H5        C5        single    1.089     0.010     0.989     0.005     
+UDC       O6        C6        single    1.432     0.020     1.432     0.020     
+UDC       H61       C6        single    1.089     0.010     0.989     0.005     
+UDC       H62       C6        single    1.089     0.010     0.989     0.005     
+UDC       HO6       O6        single    0.970     0.012     0.839     0.014     
+UDC       O4        C4        single    1.432     0.020     1.432     0.020     
+UDC       C4        C3        single    1.524     0.020     1.524     0.020     
+UDC       H4        C4        single    1.089     0.010     0.989     0.005     
+UDC       HO4       O4        single    0.970     0.012     0.839     0.014     
+UDC       C3        O3        single    1.426     0.020     1.426     0.020     
+UDC       H3        C3        single    1.089     0.010     0.989     0.005     
+UDC       O3        CBN       single    1.426     0.020     1.426     0.020     
+UDC       CBR       CBN       single    1.524     0.020     1.524     0.020     
+UDC       CBN       CBO       single    1.507     0.020     1.507     0.020     
+UDC       CBS       CBN       single    1.524     0.020     1.524     0.020     
+UDC       OBQ       CBO       deloc     1.250     0.020     1.250     0.020     
+UDC       CBO       OBP       deloc     1.250     0.020     1.250     0.020     
+UDC       HBR1      CBR       single    1.089     0.010     0.989     0.005     
+UDC       HBR2      CBR       single    1.089     0.010     0.989     0.005     
+UDC       HBR3      CBR       single    1.089     0.010     0.989     0.005     
+UDC       CBU       CBS       single    1.524     0.020     1.524     0.020     
+UDC       OBT       CBS       single    1.432     0.020     1.432     0.020     
+UDC       HBS       CBS       single    1.089     0.010     0.989     0.005     
+UDC       HOBT      OBT       single    0.970     0.012     0.839     0.014     
+UDC       OBV       CBU       single    1.432     0.020     1.432     0.020     
+UDC       HBU1      CBU       single    1.089     0.010     0.989     0.005     
+UDC       HBU2      CBU       single    1.089     0.010     0.989     0.005     
+UDC       HOBV      OBV       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ UDC      OBP    CBO    OBQ     123.000    3.000
+ UDC      OBP    CBO    CBN     118.500    3.000
+ UDC      OBQ    CBO    CBN     118.500    3.000
+ UDC      CBO    CBN    CBR     109.470    3.000
+ UDC      CBO    CBN    CBS     109.470    3.000
+ UDC      CBO    CBN    O3      109.470    3.000
+ UDC      CBR    CBN    CBS     111.000    3.000
+ UDC      CBR    CBN    O3      109.470    3.000
+ UDC      CBS    CBN    O3      109.470    3.000
+ UDC      CBN    CBR    HBR3    109.470    3.000
+ UDC      CBN    CBR    HBR2    109.470    3.000
+ UDC      CBN    CBR    HBR1    109.470    3.000
+ UDC      HBR3   CBR    HBR2    109.470    3.000
+ UDC      HBR3   CBR    HBR1    109.470    3.000
+ UDC      HBR2   CBR    HBR1    109.470    3.000
+ UDC      CBN    CBS    HBS     108.340    3.000
+ UDC      CBN    CBS    CBU     111.000    3.000
+ UDC      CBN    CBS    OBT     109.470    3.000
+ UDC      HBS    CBS    CBU     108.340    3.000
+ UDC      HBS    CBS    OBT     109.470    3.000
+ UDC      CBU    CBS    OBT     109.470    3.000
+ UDC      CBS    CBU    HBU1    109.470    3.000
+ UDC      CBS    CBU    HBU2    109.470    3.000
+ UDC      CBS    CBU    OBV     109.470    3.000
+ UDC      HBU1   CBU    HBU2    107.900    3.000
+ UDC      HBU1   CBU    OBV     109.470    3.000
+ UDC      HBU2   CBU    OBV     109.470    3.000
+ UDC      CBU    OBV    HOBV    109.470    3.000
+ UDC      CBS    OBT    HOBT    109.470    3.000
+ UDC      CBN    O3     C3      111.800    3.000
+ UDC      O3     C3     H3      109.470    3.000
+ UDC      O3     C3     C2      109.470    3.000
+ UDC      O3     C3     C4      109.470    3.000
+ UDC      H3     C3     C2      108.340    3.000
+ UDC      H3     C3     C4      108.340    3.000
+ UDC      C2     C3     C4      111.000    3.000
+ UDC      C3     C2     H2      108.340    3.000
+ UDC      C3     C2     N2      110.000    3.000
+ UDC      C3     C2     C1      111.000    3.000
+ UDC      H2     C2     N2      108.550    3.000
+ UDC      H2     C2     C1      108.340    3.000
+ UDC      N2     C2     C1      110.000    3.000
+ UDC      C2     N2     HN2     118.500    3.000
+ UDC      C2     N2     C7      121.500    3.000
+ UDC      HN2    N2     C7      120.000    3.000
+ UDC      N2     C7     O7      123.000    3.000
+ UDC      N2     C7     C8      116.500    3.000
+ UDC      O7     C7     C8      123.000    3.000
+ UDC      C7     C8     H83     109.470    3.000
+ UDC      C7     C8     H82     109.470    3.000
+ UDC      C7     C8     H81     109.470    3.000
+ UDC      H83    C8     H82     109.470    3.000
+ UDC      H83    C8     H81     109.470    3.000
+ UDC      H82    C8     H81     109.470    3.000
+ UDC      C3     C4     H4      108.340    3.000
+ UDC      C3     C4     O4      109.470    3.000
+ UDC      C3     C4     C5      111.000    3.000
+ UDC      H4     C4     O4      109.470    3.000
+ UDC      H4     C4     C5      108.340    3.000
+ UDC      O4     C4     C5      109.470    3.000
+ UDC      C4     O4     HO4     109.470    3.000
+ UDC      C4     C5     H5      108.340    3.000
+ UDC      C4     C5     C6      111.000    3.000
+ UDC      C4     C5     O5      109.470    3.000
+ UDC      H5     C5     C6      108.340    3.000
+ UDC      H5     C5     O5      109.470    3.000
+ UDC      C6     C5     O5      109.470    3.000
+ UDC      C5     C6     H61     109.470    3.000
+ UDC      C5     C6     H62     109.470    3.000
+ UDC      C5     C6     O6      109.470    3.000
+ UDC      H61    C6     H62     107.900    3.000
+ UDC      H61    C6     O6      109.470    3.000
+ UDC      H62    C6     O6      109.470    3.000
+ UDC      C6     O6     HO6     109.470    3.000
+ UDC      C5     O5     C1      111.800    3.000
+ UDC      O5     C1     H12     109.470    3.000
+ UDC      O5     C1     H11     109.470    3.000
+ UDC      O5     C1     C2      109.470    3.000
+ UDC      H12    C1     H11     107.900    3.000
+ UDC      H12    C1     C2      109.470    3.000
+ UDC      H11    C1     C2      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ UDC      var_1    OBP    CBO    CBN    O3       -48.609   20.000   1
+ UDC      var_2    CBO    CBN    CBR    HBR1     179.997   20.000   1
+ UDC      var_3    CBO    CBN    CBS    OBT       60.004   20.000   1
+ UDC      var_4    CBN    CBS    CBU    OBV      175.010   20.000   3
+ UDC      var_5    CBS    CBU    OBV    HOBV     179.986   20.000   1
+ UDC      var_6    CBN    CBS    OBT    HOBT      60.002   20.000   1
+ UDC      var_7    CBO    CBN    O3     C3       -60.878   20.000   1
+ UDC      var_8    CBN    O3     C3     C4       122.056   20.000   1
+ UDC      var_9    O3     C3     C2     N2        60.000   20.000   3
+ UDC      var_10   C3     C2     N2     C7      -155.293   20.000   3
+ UDC      CONST_1  C2     N2     C7     C8       180.000    0.000   0
+ UDC      var_11   N2     C7     C8     H81       -0.081   20.000   1
+ UDC      var_12   O3     C3     C4     C5       180.000   20.000   3
+ UDC      var_13   C3     C4     O4     HO4      174.231   20.000   1
+ UDC      var_14   C3     C4     C5     O5       -60.000   20.000   3
+ UDC      var_15   C4     C5     C6     O6      -175.029   20.000   3
+ UDC      var_16   C5     C6     O6     HO6     -179.953   20.000   1
+ UDC      var_17   C4     C5     O5     C1        60.000   20.000   1
+ UDC      var_18   C5     O5     C1     C2       -60.000   20.000   1
+ UDC      var_19   O5     C1     C2     C3        60.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ UDC      chir_01  C2     C1     N2     C3        positiv
+ UDC      chir_02  C5     O5     C6     C4        positiv
+ UDC      chir_03  C4     C5     O4     C3        negativ
+ UDC      chir_04  C3     C2     C4     O3        positiv
+ UDC      chir_05  CBN    O3     CBO    CBR       negativ
+ UDC      chir_06  CBS    CBN    OBT    CBU       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ UDC      plan-1    N2        0.020
+ UDC      plan-1    C2        0.020
+ UDC      plan-1    C7        0.020
+ UDC      plan-1    HN2       0.020
+ UDC      plan-2    C7        0.020
+ UDC      plan-2    N2        0.020
+ UDC      plan-2    C8        0.020
+ UDC      plan-2    O7        0.020
+ UDC      plan-2    HN2       0.020
+ UDC      plan-3    CBO       0.020
+ UDC      plan-3    CBN       0.020
+ UDC      plan-3    OBQ       0.020
+ UDC      plan-3    OBP       0.020
+# ------------------------------------------------------

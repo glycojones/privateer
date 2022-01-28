@@ -1,0 +1,124 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+13D     13D      1,3-DIAMINOPROPANE     NON-POLYMER     15     5     .     
+#
+data_comp_13D
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+13D     CA      C       CH2     0       17.127      17.082      23.032      
+13D     CB      C       CH2     0       16.613      16.625      21.695      
+13D     CC      C       CH2     0       15.154      16.911      21.469      
+13D     ND      N       NT2     0       14.757      16.674      20.077      
+13D     NAA     N       NT2     0       16.739      16.172      24.114      
+13D     HAC1    H       H       0       16.780      17.976      23.229      
+13D     HAC2    H       H       0       18.104      17.139      23.002      
+13D     HBC1    H       H       0       16.762      15.661      21.612      
+13D     HBC2    H       H       0       17.134      17.061      20.990      
+13D     HCC1    H       H       0       14.964      17.844      21.697      
+13D     HCC2    H       H       0       14.615      16.342      22.054      
+13D     HDN1    H       H       0       13.875      16.730      19.987      
+13D     HDN2    H       H       0       14.997      15.861      19.813      
+13D     HAA1    H       H       0       17.088      15.365      23.989      
+13D     HAA2    H       H       0       15.858      16.076      24.149      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+13D       CA        CB        SINGLE    n         1.502     0.019     1.502     0.019     
+13D       CA        NAA       SINGLE    n         1.466     0.012     1.466     0.012     
+13D       CB        CC        SINGLE    n         1.502     0.019     1.502     0.019     
+13D       CC        ND        SINGLE    n         1.466     0.012     1.466     0.012     
+13D       CA        HAC1      SINGLE    n         1.089     0.010     0.979     0.011     
+13D       CA        HAC2      SINGLE    n         1.089     0.010     0.979     0.011     
+13D       CB        HBC1      SINGLE    n         1.089     0.010     0.979     0.016     
+13D       CB        HBC2      SINGLE    n         1.089     0.010     0.979     0.016     
+13D       CC        HCC1      SINGLE    n         1.089     0.010     0.979     0.011     
+13D       CC        HCC2      SINGLE    n         1.089     0.010     0.979     0.011     
+13D       ND        HDN1      SINGLE    n         1.036     0.016     0.888     0.020     
+13D       ND        HDN2      SINGLE    n         1.036     0.016     0.888     0.020     
+13D       NAA       HAA1      SINGLE    n         1.036     0.016     0.888     0.020     
+13D       NAA       HAA2      SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+13D          CB          CA         NAA     111.621    2.46
+13D          CB          CA        HAC1     109.330    1.50
+13D          CB          CA        HAC2     109.330    1.50
+13D         NAA          CA        HAC1     108.763    1.50
+13D         NAA          CA        HAC2     108.763    1.50
+13D        HAC1          CA        HAC2     107.806    1.50
+13D          CA          CB          CC     114.005    1.96
+13D          CA          CB        HBC1     109.108    1.50
+13D          CA          CB        HBC2     109.108    1.50
+13D          CC          CB        HBC1     109.108    1.50
+13D          CC          CB        HBC2     109.108    1.50
+13D        HBC1          CB        HBC2     107.594    1.73
+13D          CB          CC          ND     111.621    2.46
+13D          CB          CC        HCC1     109.330    1.50
+13D          CB          CC        HCC2     109.330    1.50
+13D          ND          CC        HCC1     108.763    1.50
+13D          ND          CC        HCC2     108.763    1.50
+13D        HCC1          CC        HCC2     107.806    1.50
+13D          CC          ND        HDN1     110.839    3.00
+13D          CC          ND        HDN2     110.839    3.00
+13D        HDN1          ND        HDN2     107.243    3.00
+13D          CA         NAA        HAA1     110.839    3.00
+13D          CA         NAA        HAA2     110.839    3.00
+13D        HAA1         NAA        HAA2     107.243    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+13D             sp3_sp3_1         NAA          CA          CB          CC     180.000   10.00     3
+13D            sp3_sp3_10          CB          CA         NAA        HAA1     180.000   10.00     3
+13D            sp3_sp3_16          CA          CB          CC          ND     180.000   10.00     3
+13D            sp3_sp3_25          CB          CC          ND        HDN1     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+13D SMILES           ACDLabs              10.04 NCCCN
+13D SMILES_CANONICAL CACTVS               3.341 NCCCN
+13D SMILES           CACTVS               3.341 NCCCN
+13D SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CN)CN"
+13D SMILES           "OpenEye OEToolkits" 1.5.0 "C(CN)CN"
+13D InChI            InChI                1.03  InChI=1S/C3H10N2/c4-2-1-3-5/h1-5H2
+13D InChIKey         InChI                1.03  XFNJVJPLKCPIBV-UHFFFAOYSA-N
+13D ?                acedrg               202         "dictionary generator"                  
+13D ?                acedrg_database      11          "data source"                           
+13D ?                rdkit                2017.03.2   "Chemoinformatics tool"
+13D ?                refmac5              5.8.0189    "optimization tool"                     

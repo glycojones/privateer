@@ -1,0 +1,291 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UDP      UDP 'URIDINE-5'-DIPHOSPHATE              ' non-polymer        36  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_UDP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ UDP           O3B    O    OP       -0.666      0.000    0.000    0.000
+ UDP           PB     P    P         0.000     -0.789   -0.199   -1.276
+ UDP           O1B    O    OP       -0.666     -0.319   -1.460   -1.967
+ UDP           O2B    O    OP       -0.666     -0.577    0.987   -2.191
+ UDP           O3A    O    O2        0.000     -2.355   -0.333   -0.924
+ UDP           PA     P    P         0.000     -3.627   -0.939   -1.701
+ UDP           O1A    O    OP       -0.500     -3.270   -2.252   -2.289
+ UDP           O2A    O    OP       -0.500     -4.035   -0.008   -2.781
+ UDP           "O5'"  O    O2        0.000     -4.848   -1.128   -0.667
+ UDP           "C5'"  C    CH2       0.000     -6.086   -1.742   -1.028
+ UDP           "H5'1" H    H         0.000     -5.900   -2.765   -1.362
+ UDP           "H5'2" H    H         0.000     -6.551   -1.175   -1.838
+ UDP           "C4'"  C    CH1       0.000     -7.019   -1.761    0.184
+ UDP           "H4'"  H    H         0.000     -6.514   -2.235    1.037
+ UDP           "C3'"  C    CH1       0.000     -8.308   -2.534   -0.158
+ UDP           "H3'"  H    H         0.000     -8.295   -2.857   -1.209
+ UDP           "O3'"  O    OH1       0.000     -8.464   -3.658    0.710
+ UDP           "HO3'" H    H         0.000     -9.305   -4.095    0.522
+ UDP           "C2'"  C    CH1       0.000     -9.440   -1.504    0.079
+ UDP           "H2'"  H    H         0.000     -9.739   -1.028   -0.865
+ UDP           "O2'"  O    OH1       0.000    -10.562   -2.118    0.718
+ UDP           "HO2'" H    H         0.000    -10.971   -2.751    0.112
+ UDP           "O4'"  O    O2        0.000     -7.402   -0.419    0.526
+ UDP           "C1'"  C    CH1       0.000     -8.757   -0.481    1.022
+ UDP           "H1'"  H    H         0.000     -8.774   -0.840    2.060
+ UDP           N1     N    NR6       0.000     -9.405    0.829    0.917
+ UDP           C6     C    CR16      0.000     -9.340    1.525   -0.259
+ UDP           H6     H    H         0.000     -8.816    1.108   -1.110
+ UDP           C5     C    CR16      0.000     -9.932    2.735   -0.353
+ UDP           H5     H    H         0.000     -9.887    3.298   -1.277
+ UDP           C4     C    CR6       0.000    -10.612    3.259    0.774
+ UDP           O4     O    O         0.000    -11.154    4.347    0.712
+ UDP           N3     N    NR16      0.000    -10.653    2.541    1.914
+ UDP           HN3    H    H         0.000    -11.151    2.918    2.746
+ UDP           C2     C    CR6       0.000    -10.053    1.338    1.980
+ UDP           O2     O    O         0.000    -10.100    0.701    3.016
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ UDP      O3B    n/a    PB     START
+ UDP      PB     O3B    O3A    .
+ UDP      O1B    PB     .      .
+ UDP      O2B    PB     .      .
+ UDP      O3A    PB     PA     .
+ UDP      PA     O3A    "O5'"  .
+ UDP      O1A    PA     .      .
+ UDP      O2A    PA     .      .
+ UDP      "O5'"  PA     "C5'"  .
+ UDP      "C5'"  "O5'"  "C4'"  .
+ UDP      "H5'1" "C5'"  .      .
+ UDP      "H5'2" "C5'"  .      .
+ UDP      "C4'"  "C5'"  "O4'"  .
+ UDP      "H4'"  "C4'"  .      .
+ UDP      "C3'"  "C4'"  "C2'"  .
+ UDP      "H3'"  "C3'"  .      .
+ UDP      "O3'"  "C3'"  "HO3'" .
+ UDP      "HO3'" "O3'"  .      .
+ UDP      "C2'"  "C3'"  "O2'"  .
+ UDP      "H2'"  "C2'"  .      .
+ UDP      "O2'"  "C2'"  "HO2'" .
+ UDP      "HO2'" "O2'"  .      .
+ UDP      "O4'"  "C4'"  "C1'"  .
+ UDP      "C1'"  "O4'"  N1     .
+ UDP      "H1'"  "C1'"  .      .
+ UDP      N1     "C1'"  C6     .
+ UDP      C6     N1     C5     .
+ UDP      H6     C6     .      .
+ UDP      C5     C6     C4     .
+ UDP      H5     C5     .      .
+ UDP      C4     C5     N3     .
+ UDP      O4     C4     .      .
+ UDP      N3     C4     C2     .
+ UDP      HN3    N3     .      .
+ UDP      C2     N3     O2     .
+ UDP      O2     C2     .      END
+ UDP      N1     C2     .    ADD
+ UDP      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UDP       N1        C2        single    1.410     0.020     1.410     0.020     
+UDP       C6        N1        single    1.337     0.020     1.337     0.020     
+UDP       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+UDP       C2        N3        single    1.337     0.020     1.337     0.020     
+UDP       O2        C2        double    1.250     0.020     1.250     0.020     
+UDP       N3        C4        single    1.337     0.020     1.337     0.020     
+UDP       HN3       N3        single    1.016     0.010     0.899     0.007     
+UDP       C4        C5        single    1.390     0.020     1.390     0.020     
+UDP       O4        C4        double    1.250     0.020     1.250     0.020     
+UDP       C5        C6        double    1.390     0.020     1.390     0.020     
+UDP       H5        C5        single    1.082     0.013     0.975     0.010     
+UDP       H6        C6        single    1.082     0.013     0.975     0.010     
+UDP       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+UDP       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+UDP       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+UDP       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+UDP       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+UDP       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+UDP       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+UDP       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+UDP       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+UDP       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+UDP       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+UDP       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+UDP       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+UDP       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+UDP       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+UDP       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+UDP       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+UDP       "O5'"     PA        single    1.610     0.020     1.610     0.020     
+UDP       O1A       PA        deloc     1.510     0.020     1.510     0.020     
+UDP       O2A       PA        deloc     1.510     0.020     1.510     0.020     
+UDP       PA        O3A       single    1.610     0.020     1.610     0.020     
+UDP       O3A       PB        single    1.610     0.020     1.610     0.020     
+UDP       O1B       PB        deloc     1.510     0.020     1.510     0.020     
+UDP       O2B       PB        deloc     1.510     0.020     1.510     0.020     
+UDP       PB        O3B       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ UDP      O3B    PB     O1B     119.900    3.000
+ UDP      O3B    PB     O2B     119.900    3.000
+ UDP      O3B    PB     O3A     108.200    3.000
+ UDP      O1B    PB     O2B     119.900    3.000
+ UDP      O1B    PB     O3A     108.200    3.000
+ UDP      O2B    PB     O3A     108.200    3.000
+ UDP      PB     O3A    PA      120.500    3.000
+ UDP      O3A    PA     O1A     108.200    3.000
+ UDP      O3A    PA     O2A     108.200    3.000
+ UDP      O3A    PA     "O5'"   102.600    3.000
+ UDP      O1A    PA     O2A     119.900    3.000
+ UDP      O1A    PA     "O5'"   108.200    3.000
+ UDP      O2A    PA     "O5'"   108.200    3.000
+ UDP      PA     "O5'"  "C5'"   120.500    3.000
+ UDP      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ UDP      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ UDP      "O5'"  "C5'"  "C4'"   109.470    3.000
+ UDP      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ UDP      "H5'1" "C5'"  "C4'"   109.470    3.000
+ UDP      "H5'2" "C5'"  "C4'"   109.470    3.000
+ UDP      "C5'"  "C4'"  "H4'"   108.340    3.000
+ UDP      "C5'"  "C4'"  "C3'"   111.000    3.000
+ UDP      "C5'"  "C4'"  "O4'"   109.470    3.000
+ UDP      "H4'"  "C4'"  "C3'"   108.340    3.000
+ UDP      "H4'"  "C4'"  "O4'"   109.470    3.000
+ UDP      "C3'"  "C4'"  "O4'"   109.470    3.000
+ UDP      "C4'"  "C3'"  "H3'"   108.340    3.000
+ UDP      "C4'"  "C3'"  "O3'"   109.470    3.000
+ UDP      "C4'"  "C3'"  "C2'"   111.000    3.000
+ UDP      "H3'"  "C3'"  "O3'"   109.470    3.000
+ UDP      "H3'"  "C3'"  "C2'"   108.340    3.000
+ UDP      "O3'"  "C3'"  "C2'"   109.470    3.000
+ UDP      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ UDP      "C3'"  "C2'"  "H2'"   108.340    3.000
+ UDP      "C3'"  "C2'"  "O2'"   109.470    3.000
+ UDP      "C3'"  "C2'"  "C1'"   111.000    3.000
+ UDP      "H2'"  "C2'"  "O2'"   109.470    3.000
+ UDP      "H2'"  "C2'"  "C1'"   108.340    3.000
+ UDP      "O2'"  "C2'"  "C1'"   109.470    3.000
+ UDP      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ UDP      "C4'"  "O4'"  "C1'"   111.800    3.000
+ UDP      "O4'"  "C1'"  "H1'"   109.470    3.000
+ UDP      "O4'"  "C1'"  N1      109.470    3.000
+ UDP      "O4'"  "C1'"  "C2'"   109.470    3.000
+ UDP      "H1'"  "C1'"  N1      109.470    3.000
+ UDP      "H1'"  "C1'"  "C2'"   108.340    3.000
+ UDP      N1     "C1'"  "C2'"   109.470    3.000
+ UDP      "C1'"  N1     C6      120.000    3.000
+ UDP      "C1'"  N1     C2      120.000    3.000
+ UDP      C6     N1     C2      120.000    3.000
+ UDP      N1     C6     H6      120.000    3.000
+ UDP      N1     C6     C5      120.000    3.000
+ UDP      H6     C6     C5      120.000    3.000
+ UDP      C6     C5     H5      120.000    3.000
+ UDP      C6     C5     C4      120.000    3.000
+ UDP      H5     C5     C4      120.000    3.000
+ UDP      C5     C4     O4      120.000    3.000
+ UDP      C5     C4     N3      120.000    3.000
+ UDP      O4     C4     N3      120.000    3.000
+ UDP      C4     N3     HN3     120.000    3.000
+ UDP      C4     N3     C2      120.000    3.000
+ UDP      HN3    N3     C2      120.000    3.000
+ UDP      N3     C2     O2      120.000    3.000
+ UDP      N3     C2     N1      120.000    3.000
+ UDP      O2     C2     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ UDP      var_1    O3B    PB     O3A    PA      -159.989   20.000   1
+ UDP      var_2    PB     O3A    PA     "O5'"    165.012   20.000   1
+ UDP      var_3    O3A    PA     "O5'"  "C5'"   -175.019   20.000   1
+ UDP      var_4    PA     "O5'"  "C5'"  "C4'"    179.977   20.000   1
+ UDP      var_5    "O5'"  "C5'"  "C4'"  "O4'"     67.163   20.000   3
+ UDP      var_6    "C5'"  "C4'"  "C3'"  "C2'"   -120.000   20.000   3
+ UDP      var_7    "C4'"  "C3'"  "O3'"  "HO3'"   176.173   20.000   1
+ UDP      var_8    "C4'"  "C3'"  "C2'"  "O2'"   -150.000   20.000   3
+ UDP      var_9    "C3'"  "C2'"  "O2'"  "HO2'"   -67.291   20.000   1
+ UDP      var_10   "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ UDP      var_11   "C4'"  "O4'"  "C1'"  N1      -150.000   20.000   1
+ UDP      var_12   "O4'"  "C1'"  "C2'"  "C3'"     30.000   20.000   3
+ UDP      var_13   "O4'"  "C1'"  N1     C6        48.762   20.000   1
+ UDP      CONST_1  "C1'"  N1     C2     N3       180.000    0.000   0
+ UDP      CONST_2  "C1'"  N1     C6     C5       180.000    0.000   0
+ UDP      CONST_3  N1     C6     C5     C4         0.000    0.000   0
+ UDP      CONST_4  C6     C5     C4     N3         0.000    0.000   0
+ UDP      CONST_5  C5     C4     N3     C2         0.000    0.000   0
+ UDP      CONST_6  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ UDP      chir_01  "C1'"  N1     "C2'"  "O4'"     negativ
+ UDP      chir_02  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ UDP      chir_03  "C3'"  "C2'"  "C4'"  "O3'"     negativ
+ UDP      chir_04  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ UDP      plan-1    N1        0.020
+ UDP      plan-1    C2        0.020
+ UDP      plan-1    C6        0.020
+ UDP      plan-1    "C1'"     0.020
+ UDP      plan-1    N3        0.020
+ UDP      plan-1    C4        0.020
+ UDP      plan-1    C5        0.020
+ UDP      plan-1    O2        0.020
+ UDP      plan-1    HN3       0.020
+ UDP      plan-1    O4        0.020
+ UDP      plan-1    H5        0.020
+ UDP      plan-1    H6        0.020
+# ------------------------------------------------------

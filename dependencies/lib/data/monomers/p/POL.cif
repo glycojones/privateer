@@ -1,0 +1,112 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+POL     POL      N-PROPANOL     NON-POLYMER     12     4     .     
+#
+data_comp_POL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+POL     O       O       OH1     0       2.039       -0.501      0.610       
+POL     C1      C       CH2     0       0.968       0.069       -0.123      
+POL     C2      C       CH2     0       -0.302      -0.321      0.441       
+POL     C3      C       CH3     0       -1.509      0.243       -0.283      
+POL     HO      H       H       0       2.767       -0.263      0.251       
+POL     H11     H       H       0       1.019       -0.229      -1.056      
+POL     H12     H       H       0       1.048       1.046       -0.108      
+POL     H21     H       H       0       -0.332      -0.031      1.378       
+POL     H22     H       H       0       -0.360      -1.301      0.435       
+POL     H31     H       H       0       -2.062      -0.488      -0.610      
+POL     H32     H       H       0       -1.226      0.793       -1.036      
+POL     H33     H       H       0       -2.031      0.788       0.332       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+POL       O         C1        SINGLE    n         1.417     0.020     1.417     0.020     
+POL       C1        C2        SINGLE    n         1.438     0.020     1.438     0.020     
+POL       C2        C3        SINGLE    n         1.508     0.020     1.508     0.020     
+POL       O         HO        SINGLE    n         0.970     0.012     0.846     0.020     
+POL       C1        H11       SINGLE    n         1.089     0.010     0.981     0.017     
+POL       C1        H12       SINGLE    n         1.089     0.010     0.981     0.017     
+POL       C2        H21       SINGLE    n         1.089     0.010     0.981     0.013     
+POL       C2        H22       SINGLE    n         1.089     0.010     0.981     0.013     
+POL       C3        H31       SINGLE    n         1.089     0.010     0.973     0.016     
+POL       C3        H32       SINGLE    n         1.089     0.010     0.973     0.016     
+POL       C3        H33       SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+POL          C1           O          HO     108.576    2.78
+POL           O          C1          C2     110.464    3.00
+POL           O          C1         H11     109.258    1.50
+POL           O          C1         H12     109.258    1.50
+POL          C2          C1         H11     109.515    1.50
+POL          C2          C1         H12     109.515    1.50
+POL         H11          C1         H12     108.120    1.50
+POL          C1          C2          C3     112.057    3.00
+POL          C1          C2         H21     109.143    1.50
+POL          C1          C2         H22     109.143    1.50
+POL          C3          C2         H21     109.194    1.50
+POL          C3          C2         H22     109.194    1.50
+POL         H21          C2         H22     107.894    1.50
+POL          C2          C3         H31     109.599    1.50
+POL          C2          C3         H32     109.599    1.50
+POL          C2          C3         H33     109.599    1.50
+POL         H31          C3         H32     109.380    1.50
+POL         H31          C3         H33     109.380    1.50
+POL         H32          C3         H33     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+POL             sp3_sp3_1          C2          C1           O          HO     180.000   10.00     3
+POL             sp3_sp3_4           O          C1          C2          C3     180.000   10.00     3
+POL            sp3_sp3_13          C1          C2          C3         H31     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+POL SMILES           ACDLabs              10.04 OCCC
+POL SMILES_CANONICAL CACTVS               3.341 CCCO
+POL SMILES           CACTVS               3.341 CCCO
+POL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCCO
+POL SMILES           "OpenEye OEToolkits" 1.5.0 CCCO
+POL InChI            InChI                1.03  InChI=1S/C3H8O/c1-2-3-4/h4H,2-3H2,1H3
+POL InChIKey         InChI                1.03  BDERNNFJNOPAEC-UHFFFAOYSA-N
+POL ?                acedrg               202         "dictionary generator"                  
+POL ?                acedrg_database      11          "data source"                           
+POL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+POL ?                refmac5              5.8.0189    "optimization tool"                     

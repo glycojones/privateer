@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+61G     61G      2-methylbuta-1,3-diene     NON-POLYMER     13     5     .     
+#
+data_comp_61G
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+61G     CAC     C       CH3     0       -10.147     -16.056     -12.650     
+61G     CAE     C       C       0       -9.954      -14.902     -11.747     
+61G     CAB     C       C2      0       -9.821      -15.113     -10.419     
+61G     CAD     C       C1      0       -9.885      -13.574     -12.252     
+61G     CAA     C       C2      0       -9.524      -13.171     -13.451     
+61G     H1      H       H       0       -10.602     -15.773     -13.457     
+61G     H2      H       H       0       -10.682     -16.732     -12.206     
+61G     H3      H       H       0       -9.285      -16.433     -12.883     
+61G     H5      H       H       0       -9.689      -14.382     -9.828      
+61G     H6      H       H       0       -9.857      -15.995     -10.073     
+61G     H8      H       H       0       -10.143     -12.899     -11.644     
+61G     H10     H       H       0       -9.572      -12.250     -13.673     
+61G     H11     H       H       0       -9.205      -13.791     -14.094     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+61G       CAD       CAA       DOUBLE    n         1.308     0.020     1.308     0.020     
+61G       CAC       CAE       SINGLE    n         1.466     0.020     1.466     0.020     
+61G       CAE       CAD       SINGLE    n         1.402     0.020     1.402     0.020     
+61G       CAE       CAB       DOUBLE    n         1.343     0.020     1.343     0.020     
+61G       CAC       H1        SINGLE    n         1.089     0.010     0.969     0.018     
+61G       CAC       H2        SINGLE    n         1.089     0.010     0.969     0.018     
+61G       CAC       H3        SINGLE    n         1.089     0.010     0.969     0.018     
+61G       CAB       H5        SINGLE    n         1.082     0.013     0.948     0.020     
+61G       CAB       H6        SINGLE    n         1.082     0.013     0.948     0.020     
+61G       CAD       H8        SINGLE    n         1.082     0.013     0.943     0.020     
+61G       CAA       H10       SINGLE    n         1.082     0.013     0.948     0.020     
+61G       CAA       H11       SINGLE    n         1.082     0.013     0.948     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+61G         CAE         CAC          H1     109.566    1.50
+61G         CAE         CAC          H2     109.566    1.50
+61G         CAE         CAC          H3     109.566    1.50
+61G          H1         CAC          H2     109.342    1.50
+61G          H1         CAC          H3     109.342    1.50
+61G          H2         CAC          H3     109.342    1.50
+61G         CAC         CAE         CAD     118.567    3.00
+61G         CAC         CAE         CAB     120.521    1.50
+61G         CAD         CAE         CAB     120.912    2.46
+61G         CAE         CAB          H5     120.125    1.50
+61G         CAE         CAB          H6     120.125    1.50
+61G          H5         CAB          H6     119.750    1.57
+61G         CAA         CAD         CAE     124.957    3.00
+61G         CAA         CAD          H8     119.070    2.55
+61G         CAE         CAD          H8     115.974    1.81
+61G         CAD         CAA         H10     120.073    2.19
+61G         CAD         CAA         H11     120.073    2.19
+61G         H10         CAA         H11     119.855    2.15
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+61G             sp2_sp3_1         CAD         CAE         CAC          H1       0.000   10.00     6
+61G            sp2_sp2_10          H5         CAB         CAE         CAC       0.000   10.00     2
+61G             sp2_sp2_5         CAA         CAD         CAE         CAC     180.000   10.00     2
+61G             sp2_sp2_1         H10         CAA         CAD         CAE     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+61G    plan-1         CAB   0.020
+61G    plan-1         CAC   0.020
+61G    plan-1         CAD   0.020
+61G    plan-1         CAE   0.020
+61G    plan-2         CAB   0.020
+61G    plan-2         CAE   0.020
+61G    plan-2          H5   0.020
+61G    plan-2          H6   0.020
+61G    plan-3         CAA   0.020
+61G    plan-3         CAD   0.020
+61G    plan-3         CAE   0.020
+61G    plan-3          H8   0.020
+61G    plan-4         CAA   0.020
+61G    plan-4         CAD   0.020
+61G    plan-4         H10   0.020
+61G    plan-4         H11   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+61G SMILES           ACDLabs              12.01 "C\C(=C)[C@H]=C"
+61G InChI            InChI                1.03  "InChI=1S/C5H8/c1-4-5(2)3/h4H,1-2H2,3H3"
+61G InChIKey         InChI                1.03  RRHGJUQNOFWUDK-UHFFFAOYSA-N
+61G SMILES_CANONICAL CACTVS               3.385 "CC(=C)C=C"
+61G SMILES           CACTVS               3.385 "CC(=C)C=C"
+61G SMILES_CANONICAL "OpenEye OEToolkits" 2.0.4 "CC(=C)C=C"
+61G SMILES           "OpenEye OEToolkits" 2.0.4 "CC(=C)C=C"
+61G ?                acedrg               202         "dictionary generator"                  
+61G ?                acedrg_database      11          "data source"                           
+61G ?                rdkit                2017.03.2   "Chemoinformatics tool"
+61G ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,488 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SVC      SVC 'N-ACETYL-L-LEUCYL-N-[(1S)-4-{[AMINO(' non-polymer        70  30 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SVC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SVC           OAO    O    O         0.000      0.000    0.000    0.000
+ SVC           CAN    C    C         0.000     -0.708   -0.323    0.930
+ SVC           CAM    C    CH1       0.000     -2.118   -0.792    0.676
+ SVC           HAM    H    H         0.000     -2.824   -0.128    1.193
+ SVC           CAP    C    CH2       0.000     -2.282   -2.219    1.200
+ SVC           HAP1   H    H         0.000     -1.993   -2.255    2.253
+ SVC           HAP2   H    H         0.000     -1.645   -2.894    0.625
+ SVC           CAQ    C    CH1       0.000     -3.744   -2.650    1.056
+ SVC           HAQ    H    H         0.000     -4.061   -2.528    0.011
+ SVC           CAR    C    CH3       0.000     -4.623   -1.783    1.959
+ SVC           HAR3   H    H         0.000     -4.526   -0.766    1.677
+ SVC           HAR2   H    H         0.000     -5.635   -2.080    1.860
+ SVC           HAR1   H    H         0.000     -4.319   -1.899    2.967
+ SVC           CAS    C    CH3       0.000     -3.885   -4.118    1.464
+ SVC           HAS3   H    H         0.000     -4.897   -4.418    1.363
+ SVC           HAS2   H    H         0.000     -3.276   -4.719    0.839
+ SVC           HAS1   H    H         0.000     -3.581   -4.237    2.471
+ SVC           NAL    N    NH1       0.000     -2.388   -0.766   -0.764
+ SVC           HNAL   H    H         0.000     -1.626   -0.839   -1.422
+ SVC           C      C    C         0.000     -3.656   -0.645   -1.209
+ SVC           O      O    O         0.000     -4.570   -0.557   -0.417
+ SVC           CA     C    CH1       0.000     -3.934   -0.619   -2.689
+ SVC           HA     H    H         0.000     -3.289   -1.350   -3.197
+ SVC           N      N    NH1       0.000     -5.339   -0.958   -2.928
+ SVC           HN     H    H         0.000     -5.575   -1.764   -3.489
+ SVC           CAA    C    C         0.000     -6.316   -0.197   -2.399
+ SVC           OAB    O    O         0.000     -6.033    0.771   -1.725
+ SVC           CAC    C    CH3       0.000     -7.762   -0.546   -2.644
+ SVC           HAC3   H    H         0.000     -8.385    0.158   -2.155
+ SVC           HAC2   H    H         0.000     -7.960   -0.527   -3.685
+ SVC           HAC1   H    H         0.000     -7.962   -1.515   -2.265
+ SVC           CB     C    CH2       0.000     -3.648    0.781   -3.238
+ SVC           HB1    H    H         0.000     -2.627    1.070   -2.981
+ SVC           HB2    H    H         0.000     -4.349    1.493   -2.797
+ SVC           CG     C    CH1       0.000     -3.811    0.776   -4.758
+ SVC           HG     H    H         0.000     -4.810    0.399   -5.018
+ SVC           CD2    C    CH3       0.000     -2.746   -0.128   -5.382
+ SVC           HD23   H    H         0.000     -2.858   -0.131   -6.436
+ SVC           HD22   H    H         0.000     -1.783    0.235   -5.132
+ SVC           HD21   H    H         0.000     -2.858   -1.114   -5.013
+ SVC           CD1    C    CH3       0.000     -3.648    2.200   -5.293
+ SVC           HD13   H    H         0.000     -3.760    2.198   -6.347
+ SVC           HD12   H    H         0.000     -4.385    2.828   -4.862
+ SVC           HD11   H    H         0.000     -2.685    2.565   -5.043
+ SVC           NAT    N    NH1       0.000     -0.234   -0.264    2.190
+ SVC           HNAT   H    H         0.000     -0.824   -0.533    2.964
+ SVC           CAU    C    CH1       0.000      1.136    0.191    2.437
+ SVC           HAU    H    H         0.000      1.399    0.974    1.712
+ SVC           CAV    C    CH2       0.000      2.100   -0.988    2.287
+ SVC           HAV1   H    H         0.000      3.128   -0.631    2.381
+ SVC           HAV2   H    H         0.000      1.963   -1.445    1.305
+ SVC           OAW    O    OH1       0.000      1.833   -1.955    3.306
+ SVC           HOAW   H    H         0.000      2.443   -2.699    3.210
+ SVC           CAX    C    CH2       0.000      1.238    0.755    3.856
+ SVC           HAX1   H    H         0.000      2.277    1.011    4.072
+ SVC           HAX2   H    H         0.000      0.892    0.005    4.570
+ SVC           CAY    C    CH2       0.000      0.368    2.009    3.969
+ SVC           HAY1   H    H         0.000     -0.671    1.752    3.752
+ SVC           HAY2   H    H         0.000      0.714    2.757    3.253
+ SVC           CAZ    C    CH2       0.000      0.470    2.573    5.388
+ SVC           HAZ1   H    H         0.000      1.510    2.829    5.603
+ SVC           HAZ2   H    H         0.000      0.126    1.824    6.103
+ SVC           NBA    N    NH1       0.000     -0.363    3.773    5.497
+ SVC           HNBA   H    H         0.000     -0.887    4.098    4.697
+ SVC           CBB    C    C         0.000     -0.429    4.458    6.688
+ SVC           NBC    N    N         0.000     -1.171    5.526    6.785
+ SVC           HNBC   H    H         0.000     -1.676    5.846    6.031
+ SVC           NBD    N    NH2       0.000      0.284    4.016    7.776
+ SVC           HBD2   H    H         0.000      0.243    4.514    8.663
+ SVC           HBD1   H    H         0.000      0.867    3.183    7.714
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SVC      OAO    n/a    CAN    START
+ SVC      CAN    OAO    NAT    .
+ SVC      CAM    CAN    NAL    .
+ SVC      HAM    CAM    .      .
+ SVC      CAP    CAM    CAQ    .
+ SVC      HAP1   CAP    .      .
+ SVC      HAP2   CAP    .      .
+ SVC      CAQ    CAP    CAS    .
+ SVC      HAQ    CAQ    .      .
+ SVC      CAR    CAQ    HAR1   .
+ SVC      HAR3   CAR    .      .
+ SVC      HAR2   CAR    .      .
+ SVC      HAR1   CAR    .      .
+ SVC      CAS    CAQ    HAS1   .
+ SVC      HAS3   CAS    .      .
+ SVC      HAS2   CAS    .      .
+ SVC      HAS1   CAS    .      .
+ SVC      NAL    CAM    C      .
+ SVC      HNAL   NAL    .      .
+ SVC      C      NAL    CA     .
+ SVC      O      C      .      .
+ SVC      CA     C      CB     .
+ SVC      HA     CA     .      .
+ SVC      N      CA     CAA    .
+ SVC      HN     N      .      .
+ SVC      CAA    N      CAC    .
+ SVC      OAB    CAA    .      .
+ SVC      CAC    CAA    HAC1   .
+ SVC      HAC3   CAC    .      .
+ SVC      HAC2   CAC    .      .
+ SVC      HAC1   CAC    .      .
+ SVC      CB     CA     CG     .
+ SVC      HB1    CB     .      .
+ SVC      HB2    CB     .      .
+ SVC      CG     CB     CD1    .
+ SVC      HG     CG     .      .
+ SVC      CD2    CG     HD21   .
+ SVC      HD23   CD2    .      .
+ SVC      HD22   CD2    .      .
+ SVC      HD21   CD2    .      .
+ SVC      CD1    CG     HD11   .
+ SVC      HD13   CD1    .      .
+ SVC      HD12   CD1    .      .
+ SVC      HD11   CD1    .      .
+ SVC      NAT    CAN    CAU    .
+ SVC      HNAT   NAT    .      .
+ SVC      CAU    NAT    CAX    .
+ SVC      HAU    CAU    .      .
+ SVC      CAV    CAU    OAW    .
+ SVC      HAV1   CAV    .      .
+ SVC      HAV2   CAV    .      .
+ SVC      OAW    CAV    HOAW   .
+ SVC      HOAW   OAW    .      .
+ SVC      CAX    CAU    CAY    .
+ SVC      HAX1   CAX    .      .
+ SVC      HAX2   CAX    .      .
+ SVC      CAY    CAX    CAZ    .
+ SVC      HAY1   CAY    .      .
+ SVC      HAY2   CAY    .      .
+ SVC      CAZ    CAY    NBA    .
+ SVC      HAZ1   CAZ    .      .
+ SVC      HAZ2   CAZ    .      .
+ SVC      NBA    CAZ    CBB    .
+ SVC      HNBA   NBA    .      .
+ SVC      CBB    NBA    NBD    .
+ SVC      NBC    CBB    HNBC   .
+ SVC      HNBC   NBC    .      .
+ SVC      NBD    CBB    HBD1   .
+ SVC      HBD2   NBD    .      .
+ SVC      HBD1   NBD    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SVC       CD1       CG        single    1.524     0.020     1.524     0.020     
+SVC       HD11      CD1       single    1.089     0.010     0.989     0.005     
+SVC       HD12      CD1       single    1.089     0.010     0.989     0.005     
+SVC       HD13      CD1       single    1.089     0.010     0.989     0.005     
+SVC       CG        CB        single    1.524     0.020     1.524     0.020     
+SVC       CD2       CG        single    1.524     0.020     1.524     0.020     
+SVC       HG        CG        single    1.089     0.010     0.989     0.005     
+SVC       HD21      CD2       single    1.089     0.010     0.989     0.005     
+SVC       HD22      CD2       single    1.089     0.010     0.989     0.005     
+SVC       HD23      CD2       single    1.089     0.010     0.989     0.005     
+SVC       CB        CA        single    1.524     0.020     1.524     0.020     
+SVC       HB1       CB        single    1.089     0.010     0.989     0.005     
+SVC       HB2       CB        single    1.089     0.010     0.989     0.005     
+SVC       CA        C         single    1.500     0.020     1.500     0.020     
+SVC       N         CA        single    1.450     0.020     1.450     0.020     
+SVC       HA        CA        single    1.089     0.010     0.989     0.005     
+SVC       CAA       N         single    1.330     0.020     1.330     0.020     
+SVC       HN        N         single    1.016     0.010     0.899     0.007     
+SVC       CAC       CAA       single    1.500     0.020     1.500     0.020     
+SVC       OAB       CAA       double    1.220     0.020     1.220     0.020     
+SVC       HAC1      CAC       single    1.089     0.010     0.989     0.005     
+SVC       HAC2      CAC       single    1.089     0.010     0.989     0.005     
+SVC       HAC3      CAC       single    1.089     0.010     0.989     0.005     
+SVC       O         C         double    1.220     0.020     1.220     0.020     
+SVC       C         NAL       single    1.330     0.020     1.330     0.020     
+SVC       NAL       CAM       single    1.450     0.020     1.450     0.020     
+SVC       HNAL      NAL       single    1.016     0.010     0.899     0.007     
+SVC       CAM       CAN       single    1.500     0.020     1.500     0.020     
+SVC       CAP       CAM       single    1.524     0.020     1.524     0.020     
+SVC       HAM       CAM       single    1.089     0.010     0.989     0.005     
+SVC       CAQ       CAP       single    1.524     0.020     1.524     0.020     
+SVC       HAP1      CAP       single    1.089     0.010     0.989     0.005     
+SVC       HAP2      CAP       single    1.089     0.010     0.989     0.005     
+SVC       CAS       CAQ       single    1.524     0.020     1.524     0.020     
+SVC       CAR       CAQ       single    1.524     0.020     1.524     0.020     
+SVC       HAQ       CAQ       single    1.089     0.010     0.989     0.005     
+SVC       HAS1      CAS       single    1.089     0.010     0.989     0.005     
+SVC       HAS2      CAS       single    1.089     0.010     0.989     0.005     
+SVC       HAS3      CAS       single    1.089     0.010     0.989     0.005     
+SVC       HAR1      CAR       single    1.089     0.010     0.989     0.005     
+SVC       HAR2      CAR       single    1.089     0.010     0.989     0.005     
+SVC       HAR3      CAR       single    1.089     0.010     0.989     0.005     
+SVC       CAN       OAO       double    1.220     0.020     1.220     0.020     
+SVC       NAT       CAN       single    1.330     0.020     1.330     0.020     
+SVC       CAU       NAT       single    1.450     0.020     1.450     0.020     
+SVC       HNAT      NAT       single    1.016     0.010     0.899     0.007     
+SVC       CAX       CAU       single    1.524     0.020     1.524     0.020     
+SVC       CAV       CAU       single    1.524     0.020     1.524     0.020     
+SVC       HAU       CAU       single    1.089     0.010     0.989     0.005     
+SVC       OAW       CAV       single    1.432     0.020     1.432     0.020     
+SVC       HOAW      OAW       single    0.970     0.012     0.839     0.014     
+SVC       CAY       CAX       single    1.524     0.020     1.524     0.020     
+SVC       HAX1      CAX       single    1.089     0.010     0.989     0.005     
+SVC       HAX2      CAX       single    1.089     0.010     0.989     0.005     
+SVC       CAZ       CAY       single    1.524     0.020     1.524     0.020     
+SVC       HAY1      CAY       single    1.089     0.010     0.989     0.005     
+SVC       HAY2      CAY       single    1.089     0.010     0.989     0.005     
+SVC       NBA       CAZ       single    1.450     0.020     1.450     0.020     
+SVC       HAZ1      CAZ       single    1.089     0.010     0.989     0.005     
+SVC       HAZ2      CAZ       single    1.089     0.010     0.989     0.005     
+SVC       CBB       NBA       single    1.330     0.020     1.330     0.020     
+SVC       HNBA      NBA       single    1.016     0.010     0.899     0.007     
+SVC       NBD       CBB       single    1.332     0.020     1.332     0.020     
+SVC       NBC       CBB       double    1.260     0.020     1.260     0.020     
+SVC       HBD1      NBD       single    1.016     0.010     0.899     0.007     
+SVC       HBD2      NBD       single    1.016     0.010     0.899     0.007     
+SVC       HNBC      NBC       single    1.016     0.010     0.899     0.007     
+SVC       HAV1      CAV       single    1.089     0.010     0.989     0.005     
+SVC       HAV2      CAV       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SVC      OAO    CAN    CAM     120.500    3.000
+ SVC      OAO    CAN    NAT     123.000    3.000
+ SVC      CAM    CAN    NAT     116.500    3.000
+ SVC      CAN    CAM    HAM     108.810    3.000
+ SVC      CAN    CAM    CAP     109.470    3.000
+ SVC      CAN    CAM    NAL     111.600    3.000
+ SVC      HAM    CAM    CAP     108.340    3.000
+ SVC      HAM    CAM    NAL     108.550    3.000
+ SVC      CAP    CAM    NAL     110.000    3.000
+ SVC      CAM    CAP    HAP1    109.470    3.000
+ SVC      CAM    CAP    HAP2    109.470    3.000
+ SVC      CAM    CAP    CAQ     111.000    3.000
+ SVC      HAP1   CAP    HAP2    107.900    3.000
+ SVC      HAP1   CAP    CAQ     109.470    3.000
+ SVC      HAP2   CAP    CAQ     109.470    3.000
+ SVC      CAP    CAQ    HAQ     108.340    3.000
+ SVC      CAP    CAQ    CAR     111.000    3.000
+ SVC      CAP    CAQ    CAS     111.000    3.000
+ SVC      HAQ    CAQ    CAR     108.340    3.000
+ SVC      HAQ    CAQ    CAS     108.340    3.000
+ SVC      CAR    CAQ    CAS     111.000    3.000
+ SVC      CAQ    CAR    HAR3    109.470    3.000
+ SVC      CAQ    CAR    HAR2    109.470    3.000
+ SVC      CAQ    CAR    HAR1    109.470    3.000
+ SVC      HAR3   CAR    HAR2    109.470    3.000
+ SVC      HAR3   CAR    HAR1    109.470    3.000
+ SVC      HAR2   CAR    HAR1    109.470    3.000
+ SVC      CAQ    CAS    HAS3    109.470    3.000
+ SVC      CAQ    CAS    HAS2    109.470    3.000
+ SVC      CAQ    CAS    HAS1    109.470    3.000
+ SVC      HAS3   CAS    HAS2    109.470    3.000
+ SVC      HAS3   CAS    HAS1    109.470    3.000
+ SVC      HAS2   CAS    HAS1    109.470    3.000
+ SVC      CAM    NAL    HNAL    118.500    3.000
+ SVC      CAM    NAL    C       121.500    3.000
+ SVC      HNAL   NAL    C       120.000    3.000
+ SVC      NAL    C      O       123.000    3.000
+ SVC      NAL    C      CA      116.500    3.000
+ SVC      O      C      CA      120.500    3.000
+ SVC      C      CA     HA      108.810    3.000
+ SVC      C      CA     N       111.600    3.000
+ SVC      C      CA     CB      109.470    3.000
+ SVC      HA     CA     N       108.550    3.000
+ SVC      HA     CA     CB      108.340    3.000
+ SVC      N      CA     CB      110.000    3.000
+ SVC      CA     N      HN      118.500    3.000
+ SVC      CA     N      CAA     121.500    3.000
+ SVC      HN     N      CAA     120.000    3.000
+ SVC      N      CAA    OAB     123.000    3.000
+ SVC      N      CAA    CAC     116.500    3.000
+ SVC      OAB    CAA    CAC     123.000    3.000
+ SVC      CAA    CAC    HAC3    109.470    3.000
+ SVC      CAA    CAC    HAC2    109.470    3.000
+ SVC      CAA    CAC    HAC1    109.470    3.000
+ SVC      HAC3   CAC    HAC2    109.470    3.000
+ SVC      HAC3   CAC    HAC1    109.470    3.000
+ SVC      HAC2   CAC    HAC1    109.470    3.000
+ SVC      CA     CB     HB1     109.470    3.000
+ SVC      CA     CB     HB2     109.470    3.000
+ SVC      CA     CB     CG      111.000    3.000
+ SVC      HB1    CB     HB2     107.900    3.000
+ SVC      HB1    CB     CG      109.470    3.000
+ SVC      HB2    CB     CG      109.470    3.000
+ SVC      CB     CG     HG      108.340    3.000
+ SVC      CB     CG     CD2     111.000    3.000
+ SVC      CB     CG     CD1     111.000    3.000
+ SVC      HG     CG     CD2     108.340    3.000
+ SVC      HG     CG     CD1     108.340    3.000
+ SVC      CD2    CG     CD1     111.000    3.000
+ SVC      CG     CD2    HD23    109.470    3.000
+ SVC      CG     CD2    HD22    109.470    3.000
+ SVC      CG     CD2    HD21    109.470    3.000
+ SVC      HD23   CD2    HD22    109.470    3.000
+ SVC      HD23   CD2    HD21    109.470    3.000
+ SVC      HD22   CD2    HD21    109.470    3.000
+ SVC      CG     CD1    HD13    109.470    3.000
+ SVC      CG     CD1    HD12    109.470    3.000
+ SVC      CG     CD1    HD11    109.470    3.000
+ SVC      HD13   CD1    HD12    109.470    3.000
+ SVC      HD13   CD1    HD11    109.470    3.000
+ SVC      HD12   CD1    HD11    109.470    3.000
+ SVC      CAN    NAT    HNAT    120.000    3.000
+ SVC      CAN    NAT    CAU     121.500    3.000
+ SVC      HNAT   NAT    CAU     118.500    3.000
+ SVC      NAT    CAU    HAU     108.550    3.000
+ SVC      NAT    CAU    CAV     110.000    3.000
+ SVC      NAT    CAU    CAX     110.000    3.000
+ SVC      HAU    CAU    CAV     108.340    3.000
+ SVC      HAU    CAU    CAX     108.340    3.000
+ SVC      CAV    CAU    CAX     109.470    3.000
+ SVC      CAU    CAV    HAV1    109.470    3.000
+ SVC      CAU    CAV    HAV2    109.470    3.000
+ SVC      CAU    CAV    OAW     109.470    3.000
+ SVC      HAV1   CAV    HAV2    107.900    3.000
+ SVC      HAV1   CAV    OAW     109.470    3.000
+ SVC      HAV2   CAV    OAW     109.470    3.000
+ SVC      CAV    OAW    HOAW    109.470    3.000
+ SVC      CAU    CAX    HAX1    109.470    3.000
+ SVC      CAU    CAX    HAX2    109.470    3.000
+ SVC      CAU    CAX    CAY     111.000    3.000
+ SVC      HAX1   CAX    HAX2    107.900    3.000
+ SVC      HAX1   CAX    CAY     109.470    3.000
+ SVC      HAX2   CAX    CAY     109.470    3.000
+ SVC      CAX    CAY    HAY1    109.470    3.000
+ SVC      CAX    CAY    HAY2    109.470    3.000
+ SVC      CAX    CAY    CAZ     111.000    3.000
+ SVC      HAY1   CAY    HAY2    107.900    3.000
+ SVC      HAY1   CAY    CAZ     109.470    3.000
+ SVC      HAY2   CAY    CAZ     109.470    3.000
+ SVC      CAY    CAZ    HAZ1    109.470    3.000
+ SVC      CAY    CAZ    HAZ2    109.470    3.000
+ SVC      CAY    CAZ    NBA     112.000    3.000
+ SVC      HAZ1   CAZ    HAZ2    107.900    3.000
+ SVC      HAZ1   CAZ    NBA     109.470    3.000
+ SVC      HAZ2   CAZ    NBA     109.470    3.000
+ SVC      CAZ    NBA    HNBA    118.500    3.000
+ SVC      CAZ    NBA    CBB     121.500    3.000
+ SVC      HNBA   NBA    CBB     120.000    3.000
+ SVC      NBA    CBB    NBC     120.000    3.000
+ SVC      NBA    CBB    NBD     120.000    3.000
+ SVC      NBC    CBB    NBD     120.000    3.000
+ SVC      CBB    NBC    HNBC    120.000    3.000
+ SVC      CBB    NBD    HBD2    120.000    3.000
+ SVC      CBB    NBD    HBD1    120.000    3.000
+ SVC      HBD2   NBD    HBD1    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SVC      var_1    OAO    CAN    CAM    NAL        0.004   20.000   3
+ SVC      var_2    CAN    CAM    CAP    CAQ      174.989   20.000   3
+ SVC      var_3    CAM    CAP    CAQ    CAS      174.965   20.000   3
+ SVC      var_4    CAP    CAQ    CAR    HAR1     -60.015   20.000   3
+ SVC      var_5    CAP    CAQ    CAS    HAS1      60.079   20.000   3
+ SVC      var_6    CAN    CAM    NAL    C       -154.991   20.000   3
+ SVC      CONST_1  CAM    NAL    C      CA       180.000    0.000   0
+ SVC      var_7    NAL    C      CA     CB       -80.028   20.000   3
+ SVC      var_8    C      CA     N      CAA       59.938   20.000   3
+ SVC      CONST_2  CA     N      CAA    CAC      180.000    0.000   0
+ SVC      var_9    N      CAA    CAC    HAC1      60.007   20.000   1
+ SVC      var_10   C      CA     CB     CG       175.037   20.000   3
+ SVC      var_11   CA     CB     CG     CD1      175.016   20.000   3
+ SVC      var_12   CB     CG     CD2    HD21      60.028   20.000   3
+ SVC      var_13   CB     CG     CD1    HD11      59.990   20.000   3
+ SVC      CONST_3  OAO    CAN    NAT    CAU        0.000    0.000   0
+ SVC      var_14   CAN    NAT    CAU    CAX      155.019   20.000   3
+ SVC      var_15   NAT    CAU    CAV    OAW      -65.031   20.000   3
+ SVC      var_16   CAU    CAV    OAW    HOAW    -179.997   20.000   1
+ SVC      var_17   NAT    CAU    CAX    CAY      -65.029   20.000   3
+ SVC      var_18   CAU    CAX    CAY    CAZ     -179.950   20.000   3
+ SVC      var_19   CAX    CAY    CAZ    NBA     -179.977   20.000   3
+ SVC      var_20   CAY    CAZ    NBA    CBB     -179.994   20.000   3
+ SVC      CONST_4  CAZ    NBA    CBB    NBD        0.000    0.000   0
+ SVC      CONST_5  NBA    CBB    NBC    HNBC       0.000    0.000   0
+ SVC      CONST_6  NBA    CBB    NBD    HBD1       0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SVC      chir_01  CG     CD1    CD2    CB        negativ
+ SVC      chir_02  CA     CB     N      C         positiv
+ SVC      chir_03  CAM    NAL    CAP    CAN       negativ
+ SVC      chir_04  CAQ    CAP    CAS    CAR       negativ
+ SVC      chir_05  CAU    NAT    CAX    CAV       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SVC      plan-1    N         0.020
+ SVC      plan-1    CA        0.020
+ SVC      plan-1    CAA       0.020
+ SVC      plan-1    HN        0.020
+ SVC      plan-2    CAA       0.020
+ SVC      plan-2    N         0.020
+ SVC      plan-2    CAC       0.020
+ SVC      plan-2    OAB       0.020
+ SVC      plan-2    HN        0.020
+ SVC      plan-3    C         0.020
+ SVC      plan-3    CA        0.020
+ SVC      plan-3    O         0.020
+ SVC      plan-3    NAL       0.020
+ SVC      plan-3    HNAL      0.020
+ SVC      plan-4    NAL       0.020
+ SVC      plan-4    C         0.020
+ SVC      plan-4    CAM       0.020
+ SVC      plan-4    HNAL      0.020
+ SVC      plan-5    CAN       0.020
+ SVC      plan-5    CAM       0.020
+ SVC      plan-5    OAO       0.020
+ SVC      plan-5    NAT       0.020
+ SVC      plan-5    HNAT      0.020
+ SVC      plan-6    NAT       0.020
+ SVC      plan-6    CAN       0.020
+ SVC      plan-6    CAU       0.020
+ SVC      plan-6    HNAT      0.020
+ SVC      plan-7    NBA       0.020
+ SVC      plan-7    CAZ       0.020
+ SVC      plan-7    CBB       0.020
+ SVC      plan-7    HNBA      0.020
+ SVC      plan-8    CBB       0.020
+ SVC      plan-8    NBA       0.020
+ SVC      plan-8    NBD       0.020
+ SVC      plan-8    NBC       0.020
+ SVC      plan-8    HNBC      0.020
+ SVC      plan-8    HNBA      0.020
+ SVC      plan-8    HBD2      0.020
+ SVC      plan-8    HBD1      0.020
+ SVC      plan-9    NBD       0.020
+ SVC      plan-9    CBB       0.020
+ SVC      plan-9    HBD1      0.020
+ SVC      plan-9    HBD2      0.020
+# ------------------------------------------------------

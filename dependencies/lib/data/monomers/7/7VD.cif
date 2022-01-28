@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+7VD     7VD      "(2-oxopropyl)phosphonic acid"     NON-POLYMER     13     8     .     
+#
+data_comp_7VD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+7VD     P1      P       P       0       1.794       -0.051      0.022       
+7VD     C1      C       CH2     0       0.253       -0.453      -0.852      
+7VD     O2      O       OP      -1      1.653       -0.526      1.443       
+7VD     O3      O       O       0       2.919       -0.765      -0.679      
+7VD     O4      O       OP      -1      1.979       1.441       -0.036      
+7VD     C6      C       C       0       -0.905      0.434       -0.474      
+7VD     O7      O       O       0       -1.273      1.338       -1.192      
+7VD     C8      C       CH3     0       -1.576      0.141       0.830       
+7VD     H1      H       H       0       0.016       -1.378      -0.655      
+7VD     H2      H       H       0       0.409       -0.371      -1.811      
+7VD     H5      H       H       0       -2.334      0.736       0.946       
+7VD     H6      H       H       0       -0.945      0.275       1.556       
+7VD     H7      H       H       0       -1.883      -0.780      0.836       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+7VD       C6        O7        DOUBLE    n         1.212     0.020     1.212     0.020     
+7VD       C6        C8        SINGLE    n         1.494     0.020     1.494     0.020     
+7VD       C1        C6        SINGLE    n         1.507     0.010     1.507     0.010     
+7VD       P1        O3        DOUBLE    n         1.505     0.020     1.505     0.020     
+7VD       P1        C1        SINGLE    n         1.816     0.020     1.816     0.020     
+7VD       P1        O2        SINGLE    n         1.505     0.020     1.505     0.020     
+7VD       P1        O4        SINGLE    n         1.505     0.020     1.505     0.020     
+7VD       C1        H1        SINGLE    n         1.089     0.010     0.975     0.020     
+7VD       C1        H2        SINGLE    n         1.089     0.010     0.975     0.020     
+7VD       C8        H5        SINGLE    n         1.089     0.010     0.971     0.015     
+7VD       C8        H6        SINGLE    n         1.089     0.010     0.971     0.015     
+7VD       C8        H7        SINGLE    n         1.089     0.010     0.971     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+7VD          O3          P1          C1     110.326    3.00
+7VD          O3          P1          O2     111.786    1.50
+7VD          O3          P1          O4     111.786    1.50
+7VD          C1          P1          O2     110.326    3.00
+7VD          C1          P1          O4     110.326    3.00
+7VD          O2          P1          O4     111.786    1.50
+7VD          C6          C1          P1     113.247    3.00
+7VD          C6          C1          H1     108.545    1.50
+7VD          C6          C1          H2     108.545    1.50
+7VD          P1          C1          H1     108.528    1.50
+7VD          P1          C1          H2     108.528    1.50
+7VD          H1          C1          H2     108.296    2.31
+7VD          O7          C6          C8     121.747    1.81
+7VD          O7          C6          C1     121.581    1.64
+7VD          C8          C6          C1     116.672    1.67
+7VD          C6          C8          H5     109.453    1.50
+7VD          C6          C8          H6     109.453    1.50
+7VD          C6          C8          H7     109.453    1.50
+7VD          H5          C8          H6     109.400    1.50
+7VD          H5          C8          H7     109.400    1.50
+7VD          H6          C8          H7     109.400    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+7VD             sp3_sp3_1          C6          C1          P1          O3     180.000   10.00     3
+7VD             sp2_sp3_8          O7          C6          C1          P1     120.000   10.00     6
+7VD             sp2_sp3_1          O7          C6          C8          H5       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+7VD    plan-1          C1   0.020
+7VD    plan-1          C6   0.020
+7VD    plan-1          C8   0.020
+7VD    plan-1          O7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+7VD SMILES           ACDLabs              12.01 "P(O)(CC(C)=O)(O)=O"
+7VD InChI            InChI                1.03  "InChI=1S/C3H7O4P/c1-3(4)2-8(5,6)7/h2H2,1H3,(H2,5,6,7)"
+7VD InChIKey         InChI                1.03  DVSHXLWNRCEDCW-UHFFFAOYSA-N
+7VD SMILES_CANONICAL CACTVS               3.385 "CC(=O)C[P](O)(O)=O"
+7VD SMILES           CACTVS               3.385 "CC(=O)C[P](O)(O)=O"
+7VD SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "CC(=O)CP(=O)(O)O"
+7VD SMILES           "OpenEye OEToolkits" 2.0.6 "CC(=O)CP(=O)(O)O"
+7VD ?                acedrg               202         "dictionary generator"                  
+7VD ?                acedrg_database      11          "data source"                           
+7VD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+7VD ?                refmac5              5.8.0189    "optimization tool"                     

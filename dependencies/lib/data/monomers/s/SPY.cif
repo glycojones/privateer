@@ -1,0 +1,169 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SPY      SPY 'pyridine-4-sulfonic acid            ' non-polymer        15  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SPY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SPY           O2     O    OS        0.000      0.000    0.000    0.000
+ SPY           S      S    ST        0.000     -0.955   -0.949    0.457
+ SPY           O2S    O    OS        0.000     -0.994   -2.294    0.000
+ SPY           O1S    O    OH1       0.000     -0.807   -1.013    1.969
+ SPY           HO1S   H    H         0.000      0.001   -1.363    2.329
+ SPY           C4     C    CR6       0.000     -2.540   -0.261    0.115
+ SPY           C3     C    CR16      0.000     -2.706    1.109   -0.023
+ SPY           H3     H    H         0.000     -1.859    1.776    0.079
+ SPY           C2     C    CR16      0.000     -3.965    1.612   -0.290
+ SPY           H2     H    H         0.000     -4.102    2.680   -0.399
+ SPY           C5     C    CR16      0.000     -3.654   -1.077   -0.023
+ SPY           H5     H    H         0.000     -3.562   -2.151    0.079
+ SPY           C6     C    CR16      0.000     -4.882   -0.502   -0.290
+ SPY           H6     H    H         0.000     -5.756   -1.132   -0.399
+ SPY           N1     N    NRD6      0.000     -5.001    0.805   -0.415
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SPY      O2     n/a    S      START
+ SPY      S      O2     C4     .
+ SPY      O2S    S      .      .
+ SPY      O1S    S      HO1S   .
+ SPY      HO1S   O1S    .      .
+ SPY      C4     S      C5     .
+ SPY      C3     C4     C2     .
+ SPY      H3     C3     .      .
+ SPY      C2     C3     H2     .
+ SPY      H2     C2     .      .
+ SPY      C5     C4     C6     .
+ SPY      H5     C5     .      .
+ SPY      C6     C5     N1     .
+ SPY      H6     C6     .      .
+ SPY      N1     C6     .      END
+ SPY      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SPY       O2S       S         double    1.436     0.020     1.436     0.020     
+SPY       S         O2        double    1.436     0.020     1.436     0.020     
+SPY       O1S       S         single    1.635     0.020     1.635     0.020     
+SPY       N1        C2        double    1.337     0.020     1.337     0.020     
+SPY       N1        C6        single    1.337     0.020     1.337     0.020     
+SPY       C2        C3        single    1.390     0.020     1.390     0.020     
+SPY       H2        C2        single    1.082     0.013     0.975     0.010     
+SPY       C3        C4        double    1.390     0.020     1.390     0.020     
+SPY       H3        C3        single    1.082     0.013     0.975     0.010     
+SPY       C4        S         single    1.595     0.020     1.595     0.020     
+SPY       C5        C4        single    1.390     0.020     1.390     0.020     
+SPY       H5        C5        single    1.082     0.013     0.975     0.010     
+SPY       C6        C5        double    1.390     0.020     1.390     0.020     
+SPY       H6        C6        single    1.082     0.013     0.975     0.010     
+SPY       HO1S      O1S       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SPY      O2     S      O2S     109.500    3.000
+ SPY      O2     S      O1S     109.500    3.000
+ SPY      O2     S      C4      109.500    3.000
+ SPY      O2S    S      O1S     109.500    3.000
+ SPY      O2S    S      C4      109.500    3.000
+ SPY      O1S    S      C4      109.500    3.000
+ SPY      S      O1S    HO1S    120.000    3.000
+ SPY      S      C4     C3      120.000    3.000
+ SPY      S      C4     C5      120.000    3.000
+ SPY      C3     C4     C5      120.000    3.000
+ SPY      C4     C3     H3      120.000    3.000
+ SPY      C4     C3     C2      120.000    3.000
+ SPY      H3     C3     C2      120.000    3.000
+ SPY      C3     C2     H2      120.000    3.000
+ SPY      C3     C2     N1      120.000    3.000
+ SPY      H2     C2     N1      120.000    3.000
+ SPY      C4     C5     H5      120.000    3.000
+ SPY      C4     C5     C6      120.000    3.000
+ SPY      H5     C5     C6      120.000    3.000
+ SPY      C5     C6     H6      120.000    3.000
+ SPY      C5     C6     N1      120.000    3.000
+ SPY      H6     C6     N1      120.000    3.000
+ SPY      C6     N1     C2      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SPY      var_1    O2     S      O1S    HO1S     -66.484   20.000   1
+ SPY      var_2    O2     S      C4     C5       156.481   20.000   1
+ SPY      CONST_1  S      C4     C3     C2       180.000    0.000   0
+ SPY      CONST_2  C4     C3     C2     N1         0.000    0.000   0
+ SPY      CONST_3  S      C4     C5     C6       180.000    0.000   0
+ SPY      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ SPY      CONST_5  C5     C6     N1     C2         0.000    0.000   0
+ SPY      CONST_6  C6     N1     C2     C3         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SPY      chir_01  S      C4     O2S    O2        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SPY      plan-1    N1        0.020
+ SPY      plan-1    C2        0.020
+ SPY      plan-1    C6        0.020
+ SPY      plan-1    C3        0.020
+ SPY      plan-1    C4        0.020
+ SPY      plan-1    C5        0.020
+ SPY      plan-1    H2        0.020
+ SPY      plan-1    H3        0.020
+ SPY      plan-1    S         0.020
+ SPY      plan-1    H5        0.020
+ SPY      plan-1    H6        0.020
+# ------------------------------------------------------

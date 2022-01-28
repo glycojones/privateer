@@ -1,0 +1,175 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FSO      FSO 'IRON/SULFUR/OXYGEN HYBRID CLUSTER   ' non-polymer        12  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FSO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FSO           S7     S    SH1       0.000      0.000    0.000    0.000
+ FSO           HS7    H    H         0.000     -0.201    0.388    1.272
+ FSO           FE8    FE   FE        0.000      0.888   -2.317   -0.104
+ FSO           O9     O    O2        0.000      2.007   -2.409    1.595
+ FSO           O8     O    O2        0.000      1.083   -4.470   -0.315
+ FSO           FE6    FE   FE        0.000      1.220   -4.424   -2.286
+ FSO           S5     S    S2        0.000      3.368   -4.476   -2.771
+ FSO           S6     S    ST        0.000      0.730   -2.250   -2.676
+ FSO           HS6    H    H         0.000     -0.041   -1.689   -3.458
+ FSO           FE5    FE   FE        0.000      2.928   -2.334   -2.532
+ FSO           O10    O    O2        0.000      3.389   -1.839   -0.564
+ FSO           FE7    FE   FE        0.000      3.964   -1.890    1.045
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FSO      S7     n/a    FE8    START
+ FSO      HS7    S7     .      .
+ FSO      FE8    S7     S6     .
+ FSO      O9     FE8    .      .
+ FSO      O8     FE8    FE6    .
+ FSO      FE6    O8     S5     .
+ FSO      S5     FE6    .      .
+ FSO      S6     FE8    FE5    .
+ FSO      HS6    S6     .      .
+ FSO      FE5    S6     O10    .
+ FSO      O10    FE5    FE7    .
+ FSO      FE7    O10    .      END
+ FSO      FE5    FE8    .    ADD
+ FSO      FE5    S5     .    ADD
+ FSO      FE6    FE8    .    ADD
+ FSO      FE6    S6     .    ADD
+ FSO      FE7    O9     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FSO       FE5       FE8       single    2.470     0.020     2.470     0.020     
+FSO       FE5       S5        single    2.235     0.020     2.235     0.020     
+FSO       FE5       S6        single    2.135     0.020     2.135     0.020     
+FSO       O10       FE5       single    1.870     0.020     1.870     0.020     
+FSO       FE6       FE8       single    2.470     0.020     2.470     0.020     
+FSO       S5        FE6       single    2.235     0.020     2.235     0.020     
+FSO       FE6       S6        single    2.135     0.020     2.135     0.020     
+FSO       FE6       O8        single    1.870     0.020     1.870     0.020     
+FSO       FE7       O9        single    1.870     0.020     1.870     0.020     
+FSO       FE7       O10       single    1.870     0.020     1.870     0.020     
+FSO       S6        FE8       single    2.135     0.020     2.135     0.020     
+FSO       FE8       S7        single    2.260     0.020     2.260     0.020     
+FSO       O8        FE8       single    1.870     0.020     1.870     0.020     
+FSO       O9        FE8       single    1.870     0.020     1.870     0.020     
+FSO       HS6       S6        single    1.338     0.010     1.171     0.208     
+FSO       HS7       S7        single    1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FSO      HS7    S7     FE8     109.500    3.000
+ FSO      S7     FE8    O9       90.000    3.000
+ FSO      S7     FE8    O8       90.000    3.000
+ FSO      S7     FE8    S6       90.000    3.000
+ FSO      S7     FE8    FE5      90.000    3.000
+ FSO      S7     FE8    FE6      90.000    3.000
+ FSO      O9     FE8    O8       90.000    3.000
+ FSO      O9     FE8    S6       90.000    3.000
+ FSO      O8     FE8    S6       90.000    3.000
+ FSO      FE5    FE8    FE6      90.000    3.000
+ FSO      O9     FE8    FE5      90.000    3.000
+ FSO      O8     FE8    FE5      90.000    3.000
+ FSO      S6     FE8    FE5      54.658    3.000
+ FSO      O9     FE8    FE6      90.000    3.000
+ FSO      O8     FE8    FE6      48.654    3.000
+ FSO      S6     FE8    FE6      54.658    3.000
+ FSO      FE8    O9     FE7     120.000    3.000
+ FSO      FE8    O8     FE6      82.692    3.000
+ FSO      O8     FE6    S5       90.000    3.000
+ FSO      O8     FE6    FE8      48.654    3.000
+ FSO      O8     FE6    S6       90.000    3.000
+ FSO      FE8    FE6    S6       54.658    3.000
+ FSO      S5     FE6    FE8      90.000    3.000
+ FSO      S5     FE6    S6       90.000    3.000
+ FSO      FE6    S5     FE5      75.997    3.000
+ FSO      FE8    S6     HS6     109.500    3.000
+ FSO      FE8    S6     FE5      70.684    3.000
+ FSO      FE8    S6     FE6      70.684    3.000
+ FSO      HS6    S6     FE5     109.500    3.000
+ FSO      HS6    S6     FE6     109.500    3.000
+ FSO      FE5    S6     FE6     109.500    3.000
+ FSO      S6     FE5    O10      90.000    3.000
+ FSO      S6     FE5    FE8      54.658    3.000
+ FSO      S6     FE5    S5       90.000    3.000
+ FSO      FE8    FE5    S5       90.000    3.000
+ FSO      O10    FE5    FE8      90.000    3.000
+ FSO      O10    FE5    S5       90.000    3.000
+ FSO      FE5    O10    FE7     120.000    3.000
+ FSO      O10    FE7    O9       90.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FSO      var_1    HS7    S7     FE8    S6       175.000   20.000   1
+ FSO      var_2    S7     FE8    O9     FE7      -93.425   20.000   1
+ FSO      var_3    S7     FE8    O8     FE6       83.399   20.000   1
+ FSO      var_4    FE8    O8     FE6    S5        96.608   20.000   1
+ FSO      var_5    O8     FE6    FE8    S7      -156.930   20.000   1
+ FSO      var_6    O8     FE6    S6     FE8        7.402   20.000   1
+ FSO      var_7    O8     FE6    S5     FE5      -88.154   20.000   1
+ FSO      var_8    S7     FE8    S6     FE5      113.076   20.000   1
+ FSO      var_9    FE8    S6     FE5    O10      -16.199   20.000   1
+ FSO      var_10   S6     FE5    FE8    S7       -72.698   20.000   1
+ FSO      var_11   S6     FE5    S5     FE6      -16.962   20.000   1
+ FSO      var_12   S6     FE5    O10    FE7      119.361   20.000   1
+ FSO      var_13   FE5    O10    FE7    O9         0.000   20.000   1
+ FSO      var_14   FE8    O9     FE7    O10        0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FSO      chir_01  S6     FE5    FE6    FE8       negativ
+ FSO      chir_02  FE7    O10    .      O9        cross1
+# ------------------------------------------------------

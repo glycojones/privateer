@@ -1,0 +1,426 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DW2      DW2 'RU-PYRIDOCARBAZOLE-2                ' non-polymer        44  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DW2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DW2           O9     O    O         0.000    -45.854   -1.333   -1.222
+ DW2           C1     C    CR5       0.000    -44.670   -1.599   -1.350
+ DW2           C2     C    CR56      0.000    -43.717   -1.755   -0.339
+ DW2           C3     C    CR66      0.000    -43.824   -1.676    1.077
+ DW2           C4     C    CR16      0.000    -44.965   -1.398    1.840
+ DW2           H4     H    H         0.000    -45.910   -1.202    1.348
+ DW2           C5     C    CR16      0.000    -44.886   -1.373    3.248
+ DW2           H5     H    H         0.000    -45.774   -1.161    3.831
+ DW2           C6     C    CR16      0.000    -43.663   -1.621    3.905
+ DW2           H6     H    H         0.000    -43.618   -1.617    4.987
+ DW2           C7     C    CR66      0.000    -42.659   -1.899    1.811
+ DW2           N21    N    NR6       0.000    -42.549   -1.863    3.182
+ DW2           C22    C    CR56      0.000    -41.502   -2.168    1.146
+ DW2           N19    N    NR5       0.000    -40.368   -2.383    1.861
+ DW2           RU18   RU   RU        0.000    -40.668   -2.320    3.892
+ DW2           C17    C    CH1       0.000    -39.700   -4.199    4.133
+ DW2           H13    H    H         0.000    -39.256   -4.805    3.331
+ DW2           C16    C    CH1       0.000    -41.008   -4.298    4.608
+ DW2           H161   H    H         0.000    -41.776   -4.993    4.239
+ DW2           C14    C    CH1       0.000    -41.157   -3.405    5.670
+ DW2           H141   H    H         0.000    -42.059   -3.272    6.284
+ DW2           C13    C    CH1       0.000    -39.940   -2.750    5.844
+ DW2           H131   H    H         0.000    -39.715   -2.009    6.623
+ DW2           C12    C    CH1       0.000    -39.038   -3.236    4.896
+ DW2           H121   H    H         0.000    -37.980   -2.953    4.805
+ DW2           C10    C    CSP       0.000    -39.997   -0.431    4.014
+ DW2           O11    O    O         0.000    -39.583    0.594    4.083
+ DW2           N20    N    NR15      0.000    -44.074   -1.762   -2.583
+ DW2           H20    H    H         0.000    -44.546   -1.688   -3.507
+ DW2           C31    C    CR5       0.000    -42.749   -2.039   -2.374
+ DW2           O8     O    O         0.000    -41.974   -2.240   -3.294
+ DW2           C30    C    CR56      0.000    -42.492   -2.040   -0.996
+ DW2           C29    C    CR56      0.000    -41.332   -2.249   -0.228
+ DW2           C28    C    CR56      0.000    -39.980   -2.537   -0.410
+ DW2           C23    C    CR56      0.000    -39.409   -2.622    0.875
+ DW2           C24    C    CR16      0.000    -38.063   -2.917    1.035
+ DW2           H24    H    H         0.000    -37.628   -2.985    2.024
+ DW2           C25    C    CR16      0.000    -37.280   -3.124   -0.100
+ DW2           H25    H    H         0.000    -36.227   -3.348    0.019
+ DW2           C26    C    CR6       0.000    -37.822   -3.049   -1.391
+ DW2           O15    O    OH1       0.000    -37.021   -3.237   -2.484
+ DW2           H15    H    H         0.000    -37.567   -3.282   -3.282
+ DW2           C27    C    CR16      0.000    -39.189   -2.747   -1.550
+ DW2           H27    H    H         0.000    -39.624   -2.678   -2.539
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DW2      O9     n/a    C1     START
+ DW2      C1     O9     N20    .
+ DW2      C2     C1     C3     .
+ DW2      C3     C2     C7     .
+ DW2      C4     C3     C5     .
+ DW2      H4     C4     .      .
+ DW2      C5     C4     C6     .
+ DW2      H5     C5     .      .
+ DW2      C6     C5     H6     .
+ DW2      H6     C6     .      .
+ DW2      C7     C3     C22    .
+ DW2      N21    C7     .      .
+ DW2      C22    C7     N19    .
+ DW2      N19    C22    RU18   .
+ DW2      RU18   N19    C10    .
+ DW2      C17    RU18   C12    .
+ DW2      H13    C17    .      .
+ DW2      C16    C17    C14    .
+ DW2      H161   C16    .      .
+ DW2      C14    C16    C13    .
+ DW2      H141   C14    .      .
+ DW2      C13    C14    H131   .
+ DW2      H131   C13    .      .
+ DW2      C12    C17    H121   .
+ DW2      H121   C12    .      .
+ DW2      C10    RU18   O11    .
+ DW2      O11    C10    .      .
+ DW2      N20    C1     C31    .
+ DW2      H20    N20    .      .
+ DW2      C31    N20    C30    .
+ DW2      O8     C31    .      .
+ DW2      C30    C31    C29    .
+ DW2      C29    C30    C28    .
+ DW2      C28    C29    C23    .
+ DW2      C23    C28    C24    .
+ DW2      C24    C23    C25    .
+ DW2      H24    C24    .      .
+ DW2      C25    C24    C26    .
+ DW2      H25    C25    .      .
+ DW2      C26    C25    C27    .
+ DW2      O15    C26    H15    .
+ DW2      H15    O15    .      .
+ DW2      C27    C26    H27    .
+ DW2      H27    C27    .      END
+ DW2      RU18   C12    .    ADD
+ DW2      RU18   C13    .    ADD
+ DW2      RU18   C14    .    ADD
+ DW2      RU18   C16    .    ADD
+ DW2      RU18   N21    .    ADD
+ DW2      C12    C13    .    ADD
+ DW2      N21    C6     .    ADD
+ DW2      N19    C23    .    ADD
+ DW2      C28    C27    .    ADD
+ DW2      C29    C22    .    ADD
+ DW2      C30    C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DW2       O11       C10       triple    1.130     0.020     1.130     0.020     
+DW2       C10       RU18      single    2.008     0.020     2.008     0.020     
+DW2       RU18      C12       single    2.122     0.020     2.122     0.020     
+DW2       RU18      C13       single    2.127     0.020     2.127     0.020     
+DW2       RU18      C14       single    2.140     0.020     2.140     0.020     
+DW2       RU18      C16       single    2.131     0.020     2.131     0.020     
+DW2       C17       RU18      single    2.127     0.020     2.127     0.020     
+DW2       RU18      N21       single    2.062     0.020     2.062     0.020     
+DW2       RU18      N19       single    2.054     0.020     2.054     0.020     
+DW2       C12       C13       double    1.524     0.020     1.524     0.020     
+DW2       C12       C17       single    1.524     0.020     1.524     0.020     
+DW2       C13       C14       single    1.524     0.020     1.524     0.020     
+DW2       C14       C16       double    1.524     0.020     1.524     0.020     
+DW2       C16       C17       single    1.524     0.020     1.524     0.020     
+DW2       N21       C6        double    1.337     0.020     1.337     0.020     
+DW2       N21       C7        single    1.410     0.020     1.410     0.020     
+DW2       C6        C5        single    1.390     0.020     1.390     0.020     
+DW2       H6        C6        single    1.082     0.013     0.975     0.010     
+DW2       C5        C4        double    1.390     0.020     1.390     0.020     
+DW2       H5        C5        single    1.082     0.013     0.975     0.010     
+DW2       H4        C4        single    1.082     0.013     0.975     0.010     
+DW2       N19       C23       single    1.337     0.020     1.337     0.020     
+DW2       N19       C22       single    1.337     0.020     1.337     0.020     
+DW2       C23       C28       double    1.490     0.020     1.490     0.020     
+DW2       C24       C23       single    1.390     0.020     1.390     0.020     
+DW2       C28       C27       single    1.390     0.020     1.390     0.020     
+DW2       C28       C29       single    1.490     0.020     1.490     0.020     
+DW2       C27       C26       double    1.390     0.020     1.390     0.020     
+DW2       H27       C27       single    1.082     0.013     0.975     0.010     
+DW2       C26       C25       single    1.390     0.020     1.390     0.020     
+DW2       O15       C26       single    1.362     0.020     1.362     0.020     
+DW2       C25       C24       double    1.390     0.020     1.390     0.020     
+DW2       H25       C25       single    1.082     0.013     0.975     0.010     
+DW2       H24       C24       single    1.082     0.013     0.975     0.010     
+DW2       H15       O15       single    0.970     0.012     0.839     0.014     
+DW2       C29       C22       double    1.490     0.020     1.490     0.020     
+DW2       C29       C30       single    1.490     0.020     1.490     0.020     
+DW2       C22       C7        single    1.390     0.020     1.390     0.020     
+DW2       C7        C3        double    1.490     0.020     1.490     0.020     
+DW2       C3        C2        single    1.390     0.020     1.390     0.020     
+DW2       C4        C3        single    1.390     0.020     1.390     0.020     
+DW2       C30       C2        double    1.490     0.020     1.490     0.020     
+DW2       C30       C31       single    1.490     0.020     1.490     0.020     
+DW2       C2        C1        single    1.490     0.020     1.490     0.020     
+DW2       O8        C31       double    1.285     0.020     1.285     0.020     
+DW2       C31       N20       single    1.340     0.020     1.340     0.020     
+DW2       N20       C1        single    1.340     0.020     1.340     0.020     
+DW2       H20       N20       single    1.016     0.010     0.899     0.007     
+DW2       C1        O9        double    1.285     0.020     1.285     0.020     
+DW2       H131      C13       single    1.089     0.010     0.989     0.005     
+DW2       H141      C14       single    1.089     0.010     0.989     0.005     
+DW2       H121      C12       single    1.089     0.010     0.989     0.005     
+DW2       H161      C16       single    1.089     0.010     0.989     0.005     
+DW2       H13       C17       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DW2      O9     C1     C2      108.000    3.000
+ DW2      O9     C1     N20     108.000    3.000
+ DW2      C2     C1     N20     108.000    3.000
+ DW2      C1     C2     C3      120.000    3.000
+ DW2      C1     C2     C30     108.000    3.000
+ DW2      C3     C2     C30     120.000    3.000
+ DW2      C2     C3     C4      120.000    3.000
+ DW2      C2     C3     C7      120.000    3.000
+ DW2      C4     C3     C7      120.000    3.000
+ DW2      C3     C4     H4      120.000    3.000
+ DW2      C3     C4     C5      120.000    3.000
+ DW2      H4     C4     C5      120.000    3.000
+ DW2      C4     C5     H5      120.000    3.000
+ DW2      C4     C5     C6      120.000    3.000
+ DW2      H5     C5     C6      120.000    3.000
+ DW2      C5     C6     H6      120.000    3.000
+ DW2      C5     C6     N21     120.000    3.000
+ DW2      H6     C6     N21     120.000    3.000
+ DW2      C3     C7     N21     120.000    3.000
+ DW2      C3     C7     C22     120.000    3.000
+ DW2      N21    C7     C22     120.000    3.000
+ DW2      C7     N21    RU18    120.000    3.000
+ DW2      C7     N21    C6      120.000    3.000
+ DW2      RU18   N21    C6      120.000    3.000
+ DW2      C7     C22    N19     120.000    3.000
+ DW2      C7     C22    C29     120.000    3.000
+ DW2      N19    C22    C29     108.000    3.000
+ DW2      C22    N19    RU18    108.000    3.000
+ DW2      C22    N19    C23     108.000    3.000
+ DW2      RU18   N19    C23     108.000    3.000
+ DW2      N19    RU18   C17      91.058    3.000
+ DW2      N19    RU18   C10      92.299    3.000
+ DW2      N19    RU18   C12     110.021    3.000
+ DW2      N19    RU18   C13     148.338    3.000
+ DW2      N19    RU18   C14     147.092    3.000
+ DW2      N19    RU18   C16     109.092    3.000
+ DW2      N19    RU18   N21      78.437    3.000
+ DW2      C17    RU18   C10     132.210    3.000
+ DW2      C12    RU18   C13      42.032    3.000
+ DW2      C12    RU18   C14      64.121    3.000
+ DW2      C13    RU18   C14      41.853    3.000
+ DW2      C12    RU18   C16      64.084    3.000
+ DW2      C13    RU18   C16      63.810    3.000
+ DW2      C14    RU18   C16      41.816    3.000
+ DW2      C12    RU18   N21     163.591    3.000
+ DW2      C13    RU18   N21     132.299    3.000
+ DW2      C14    RU18   N21     100.956    3.000
+ DW2      C16    RU18   N21     100.130    3.000
+ DW2      C17    RU18   C12      42.031    3.000
+ DW2      C10    RU18   C12      96.928    3.000
+ DW2      C17    RU18   C13      64.010    3.000
+ DW2      C10    RU18   C13      91.149    3.000
+ DW2      C17    RU18   C14      64.020    3.000
+ DW2      C10    RU18   C14     120.190    3.000
+ DW2      C17    RU18   C16      41.941    3.000
+ DW2      C10    RU18   C16     154.956    3.000
+ DW2      C17    RU18   N21     130.534    3.000
+ DW2      C10    RU18   N21      96.733    3.000
+ DW2      RU18   C17    H13     109.500    3.000
+ DW2      RU18   C17    C16      69.153    3.000
+ DW2      RU18   C17    C12      68.805    3.000
+ DW2      H13    C17    C16     108.340    3.000
+ DW2      H13    C17    C12     108.340    3.000
+ DW2      C16    C17    C12     111.000    3.000
+ DW2      C17    C16    H161    108.340    3.000
+ DW2      C17    C16    C14     111.000    3.000
+ DW2      C17    C16    RU18     68.906    3.000
+ DW2      H161   C16    C14     108.340    3.000
+ DW2      H161   C16    RU18    109.500    3.000
+ DW2      C14    C16    RU18     69.396    3.000
+ DW2      C16    C14    H141    108.340    3.000
+ DW2      C16    C14    C13     111.000    3.000
+ DW2      C16    C14    RU18     68.789    3.000
+ DW2      H141   C14    C13     108.340    3.000
+ DW2      H141   C14    RU18    109.500    3.000
+ DW2      C13    C14    RU18     68.642    3.000
+ DW2      C14    C13    H131    108.340    3.000
+ DW2      C14    C13    RU18     69.505    3.000
+ DW2      C14    C13    C12     111.000    3.000
+ DW2      RU18   C13    C12      68.809    3.000
+ DW2      H131   C13    RU18    109.500    3.000
+ DW2      H131   C13    C12     108.340    3.000
+ DW2      C17    C12    H121    108.340    3.000
+ DW2      C17    C12    RU18     69.164    3.000
+ DW2      C17    C12    C13     111.000    3.000
+ DW2      RU18   C12    C13      69.159    3.000
+ DW2      H121   C12    RU18    109.500    3.000
+ DW2      H121   C12    C13     108.340    3.000
+ DW2      RU18   C10    O11     180.000    3.000
+ DW2      C1     N20    H20     126.000    3.000
+ DW2      C1     N20    C31     108.000    3.000
+ DW2      H20    N20    C31     126.000    3.000
+ DW2      N20    C31    O8      108.000    3.000
+ DW2      N20    C31    C30     108.000    3.000
+ DW2      O8     C31    C30     108.000    3.000
+ DW2      C31    C30    C29     108.000    3.000
+ DW2      C31    C30    C2      108.000    3.000
+ DW2      C29    C30    C2      120.000    3.000
+ DW2      C30    C29    C28     120.000    3.000
+ DW2      C30    C29    C22     120.000    3.000
+ DW2      C28    C29    C22     120.000    3.000
+ DW2      C29    C28    C23     120.000    3.000
+ DW2      C29    C28    C27     120.000    3.000
+ DW2      C23    C28    C27     120.000    3.000
+ DW2      C28    C23    C24     120.000    3.000
+ DW2      C28    C23    N19     108.000    3.000
+ DW2      C24    C23    N19     132.000    3.000
+ DW2      C23    C24    H24     120.000    3.000
+ DW2      C23    C24    C25     120.000    3.000
+ DW2      H24    C24    C25     120.000    3.000
+ DW2      C24    C25    H25     120.000    3.000
+ DW2      C24    C25    C26     120.000    3.000
+ DW2      H25    C25    C26     120.000    3.000
+ DW2      C25    C26    O15     120.000    3.000
+ DW2      C25    C26    C27     120.000    3.000
+ DW2      O15    C26    C27     120.000    3.000
+ DW2      C26    O15    H15     109.470    3.000
+ DW2      C26    C27    H27     120.000    3.000
+ DW2      C26    C27    C28     120.000    3.000
+ DW2      H27    C27    C28     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DW2      CONST_1  O9     C1     C2     C3         0.000    0.000   0
+ DW2      CONST_2  C1     C2     C3     C7       179.454    0.000   0
+ DW2      CONST_3  C2     C3     C4     C5       180.000    0.000   0
+ DW2      CONST_4  C3     C4     C5     C6         0.000    0.000   0
+ DW2      CONST_5  C4     C5     C6     N21        0.000    0.000   0
+ DW2      CONST_6  C2     C3     C7     C22        0.350    0.000   0
+ DW2      CONST_7  C3     C7     N21    RU18     180.000    0.000   0
+ DW2      CONST_8  C7     N21    C6     C5         0.000    0.000   0
+ DW2      CONST_9  C3     C7     C22    N19      179.903    0.000   0
+ DW2      CONST_10 C7     C22    N19    RU18       0.000    0.000   0
+ DW2      CONST_11 C22    N19    C23    C28        0.000    0.000   0
+ DW2      var_1    C22    N19    RU18   C10      -99.166   20.000   1
+ DW2      var_2    N19    RU18   C12    C17      -64.597   20.000   1
+ DW2      var_3    N19    RU18   C13    C14     -121.614   20.000   1
+ DW2      var_4    N19    RU18   C14    C16        6.894   20.000   1
+ DW2      var_5    N19    RU18   C16    C17       65.952   20.000   1
+ DW2      CONST_12 N19    RU18   N21    C7         3.058    0.000   0
+ DW2      var_6    N19    RU18   C17    C12      121.911   20.000   1
+ DW2      var_7    RU18   C17    C16    C14      -61.713   20.000   3
+ DW2      var_8    C17    C16    C14    C13        0.316   20.000   3
+ DW2      var_9    C16    C14    C13    RU18      61.145   20.000   3
+ DW2      var_10   C17    C12    C13    C14       -0.117   20.000   3
+ DW2      var_11   N19    RU18   C10    O11      -83.657   20.000   1
+ DW2      CONST_13 O9     C1     N20    C31      180.000    0.000   0
+ DW2      CONST_14 C1     N20    C31    C30        0.000    0.000   0
+ DW2      CONST_15 N20    C31    C30    C29      180.000    0.000   0
+ DW2      CONST_16 C31    C30    C2     C1         0.000    0.000   0
+ DW2      CONST_17 C31    C30    C29    C28        0.000    0.000   0
+ DW2      CONST_18 C30    C29    C22    C7         0.000    0.000   0
+ DW2      CONST_19 C30    C29    C28    C23      180.000    0.000   0
+ DW2      CONST_20 C29    C28    C27    C26      180.000    0.000   0
+ DW2      CONST_21 C29    C28    C23    C24      180.000    0.000   0
+ DW2      CONST_22 C28    C23    C24    C25        0.000    0.000   0
+ DW2      CONST_23 C23    C24    C25    C26        0.000    0.000   0
+ DW2      CONST_24 C24    C25    C26    C27        0.000    0.000   0
+ DW2      var_12   C25    C26    O15    H15      171.755   20.000   1
+ DW2      CONST_25 C25    C26    C27    C28        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DW2      chir_01  C12    RU18   C13    C17       negativ
+ DW2      chir_02  C13    RU18   C12    C14       positiv
+ DW2      chir_03  C14    RU18   C13    C16       positiv
+ DW2      chir_04  C16    RU18   C14    C17       positiv
+ DW2      chir_05  C17    RU18   C12    C16       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DW2      plan-1    N21       0.020
+ DW2      plan-1    RU18      0.020
+ DW2      plan-1    C6        0.020
+ DW2      plan-1    C7        0.020
+ DW2      plan-1    C5        0.020
+ DW2      plan-1    C4        0.020
+ DW2      plan-1    H6        0.020
+ DW2      plan-1    H5        0.020
+ DW2      plan-1    C3        0.020
+ DW2      plan-1    H4        0.020
+ DW2      plan-1    C29       0.020
+ DW2      plan-1    C28       0.020
+ DW2      plan-1    C22       0.020
+ DW2      plan-1    C30       0.020
+ DW2      plan-1    N19       0.020
+ DW2      plan-1    C2        0.020
+ DW2      plan-1    C31       0.020
+ DW2      plan-1    N20       0.020
+ DW2      plan-1    C1        0.020
+ DW2      plan-1    O8        0.020
+ DW2      plan-1    H20       0.020
+ DW2      plan-1    O9        0.020
+ DW2      plan-1    C23       0.020
+ DW2      plan-1    C27       0.020
+ DW2      plan-1    C26       0.020
+ DW2      plan-1    C25       0.020
+ DW2      plan-1    C24       0.020
+ DW2      plan-1    H27       0.020
+ DW2      plan-1    O15       0.020
+ DW2      plan-1    H25       0.020
+ DW2      plan-1    H24       0.020
+# ------------------------------------------------------

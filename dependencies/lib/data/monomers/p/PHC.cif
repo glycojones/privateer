@@ -1,0 +1,231 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PHC      PHC 'N-METHYL-N-(METHYLBENZYL)FORMAMIDE  ' non-polymer        25  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PHC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PHC           O      O    O         0.000      0.000    0.000    0.000
+ PHC           C      C    C1        0.000     -0.999    0.658   -0.195
+ PHC           H      H    H         0.000     -1.184    1.541    0.393
+ PHC           N      N    N         0.000     -1.877    0.287   -1.146
+ PHC           CA     C    CH3       0.000     -1.625   -0.914   -1.947
+ PHC           HA3    H    H         0.000     -2.369   -1.640   -1.742
+ PHC           HA2    H    H         0.000     -1.650   -0.666   -2.977
+ PHC           HA1    H    H         0.000     -0.672   -1.309   -1.704
+ PHC           CB     C    CH1       0.000     -3.084    1.082   -1.382
+ PHC           HB     H    H         0.000     -3.054    1.986   -0.757
+ PHC           CG2    C    CH3       0.000     -3.151    1.484   -2.857
+ PHC           HG23   H    H         0.000     -4.023    2.060   -3.028
+ PHC           HG22   H    H         0.000     -2.296    2.058   -3.107
+ PHC           HG21   H    H         0.000     -3.179    0.613   -3.460
+ PHC           CG     C    CR6       0.000     -4.299    0.267   -1.027
+ PHC           CD2    C    CR16      0.000     -4.597   -0.876   -1.743
+ PHC           HD2    H    H         0.000     -3.958   -1.185   -2.561
+ PHC           CE2    C    CR16      0.000     -5.711   -1.627   -1.415
+ PHC           HE2    H    H         0.000     -5.940   -2.528   -1.970
+ PHC           CZ     C    CR16      0.000     -6.532   -1.227   -0.378
+ PHC           HZ     H    H         0.000     -7.407   -1.812   -0.124
+ PHC           CE1    C    CR16      0.000     -6.238   -0.080    0.334
+ PHC           HE1    H    H         0.000     -6.881    0.233    1.147
+ PHC           CD1    C    CR16      0.000     -5.122    0.668    0.008
+ PHC           HD1    H    H         0.000     -4.892    1.568    0.565
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PHC      O      n/a    C      START
+ PHC      C      O      N      .
+ PHC      H      C      .      .
+ PHC      N      C      CB     .
+ PHC      CA     N      HA1    .
+ PHC      HA3    CA     .      .
+ PHC      HA2    CA     .      .
+ PHC      HA1    CA     .      .
+ PHC      CB     N      CG     .
+ PHC      HB     CB     .      .
+ PHC      CG2    CB     HG21   .
+ PHC      HG23   CG2    .      .
+ PHC      HG22   CG2    .      .
+ PHC      HG21   CG2    .      .
+ PHC      CG     CB     CD2    .
+ PHC      CD2    CG     CE2    .
+ PHC      HD2    CD2    .      .
+ PHC      CE2    CD2    CZ     .
+ PHC      HE2    CE2    .      .
+ PHC      CZ     CE2    CE1    .
+ PHC      HZ     CZ     .      .
+ PHC      CE1    CZ     CD1    .
+ PHC      HE1    CE1    .      .
+ PHC      CD1    CE1    HD1    .
+ PHC      HD1    CD1    .      END
+ PHC      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PHC       N         C         single    1.260     0.020     1.260     0.020     
+PHC       CA        N         single    1.455     0.020     1.455     0.020     
+PHC       CB        N         single    1.455     0.020     1.455     0.020     
+PHC       C         O         double    1.220     0.020     1.220     0.020     
+PHC       H         C         single    1.082     0.013     0.975     0.010     
+PHC       HA1       CA        single    1.089     0.010     0.989     0.005     
+PHC       HA2       CA        single    1.089     0.010     0.989     0.005     
+PHC       HA3       CA        single    1.089     0.010     0.989     0.005     
+PHC       CG2       CB        single    1.524     0.020     1.524     0.020     
+PHC       CG        CB        single    1.480     0.020     1.480     0.020     
+PHC       HB        CB        single    1.089     0.010     0.989     0.005     
+PHC       HG21      CG2       single    1.089     0.010     0.989     0.005     
+PHC       HG22      CG2       single    1.089     0.010     0.989     0.005     
+PHC       HG23      CG2       single    1.089     0.010     0.989     0.005     
+PHC       CG        CD1       double    1.390     0.020     1.390     0.020     
+PHC       CD2       CG        single    1.390     0.020     1.390     0.020     
+PHC       CD1       CE1       single    1.390     0.020     1.390     0.020     
+PHC       HD1       CD1       single    1.082     0.013     0.975     0.010     
+PHC       CE2       CD2       double    1.390     0.020     1.390     0.020     
+PHC       HD2       CD2       single    1.082     0.013     0.975     0.010     
+PHC       CE1       CZ        double    1.390     0.020     1.390     0.020     
+PHC       HE1       CE1       single    1.082     0.013     0.975     0.010     
+PHC       CZ        CE2       single    1.390     0.020     1.390     0.020     
+PHC       HE2       CE2       single    1.082     0.013     0.975     0.010     
+PHC       HZ        CZ        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PHC      O      C      H       123.000    3.000
+ PHC      O      C      N       120.000    3.000
+ PHC      H      C      N       120.000    3.000
+ PHC      C      N      CA      120.000    3.000
+ PHC      C      N      CB      120.000    3.000
+ PHC      CA     N      CB      120.000    3.000
+ PHC      N      CA     HA3     109.470    3.000
+ PHC      N      CA     HA2     109.470    3.000
+ PHC      N      CA     HA1     109.470    3.000
+ PHC      HA3    CA     HA2     109.470    3.000
+ PHC      HA3    CA     HA1     109.470    3.000
+ PHC      HA2    CA     HA1     109.470    3.000
+ PHC      N      CB     HB      109.470    3.000
+ PHC      N      CB     CG2     109.500    3.000
+ PHC      N      CB     CG      109.500    3.000
+ PHC      HB     CB     CG2     108.340    3.000
+ PHC      HB     CB     CG      109.470    3.000
+ PHC      CG2    CB     CG      109.470    3.000
+ PHC      CB     CG2    HG23    109.470    3.000
+ PHC      CB     CG2    HG22    109.470    3.000
+ PHC      CB     CG2    HG21    109.470    3.000
+ PHC      HG23   CG2    HG22    109.470    3.000
+ PHC      HG23   CG2    HG21    109.470    3.000
+ PHC      HG22   CG2    HG21    109.470    3.000
+ PHC      CB     CG     CD2     120.000    3.000
+ PHC      CB     CG     CD1     120.000    3.000
+ PHC      CD2    CG     CD1     120.000    3.000
+ PHC      CG     CD2    HD2     120.000    3.000
+ PHC      CG     CD2    CE2     120.000    3.000
+ PHC      HD2    CD2    CE2     120.000    3.000
+ PHC      CD2    CE2    HE2     120.000    3.000
+ PHC      CD2    CE2    CZ      120.000    3.000
+ PHC      HE2    CE2    CZ      120.000    3.000
+ PHC      CE2    CZ     HZ      120.000    3.000
+ PHC      CE2    CZ     CE1     120.000    3.000
+ PHC      HZ     CZ     CE1     120.000    3.000
+ PHC      CZ     CE1    HE1     120.000    3.000
+ PHC      CZ     CE1    CD1     120.000    3.000
+ PHC      HE1    CE1    CD1     120.000    3.000
+ PHC      CE1    CD1    HD1     120.000    3.000
+ PHC      CE1    CD1    CG      120.000    3.000
+ PHC      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PHC      var_1    O      C      N      CB       179.973   20.000   1
+ PHC      var_2    C      N      CA     HA1       -5.170   20.000   1
+ PHC      var_3    C      N      CB     CG      -114.789   20.000   3
+ PHC      var_4    N      CB     CG2    HG21      60.040   20.000   3
+ PHC      var_5    N      CB     CG     CD2      -64.207   20.000   1
+ PHC      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ PHC      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ PHC      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ PHC      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ PHC      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ PHC      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PHC      chir_01  CB     N      CG2    CG        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PHC      plan-1    N         0.020
+ PHC      plan-1    C         0.020
+ PHC      plan-1    CA        0.020
+ PHC      plan-1    CB        0.020
+ PHC      plan-1    H         0.020
+ PHC      plan-2    C         0.020
+ PHC      plan-2    N         0.020
+ PHC      plan-2    O         0.020
+ PHC      plan-2    H         0.020
+ PHC      plan-3    CG        0.020
+ PHC      plan-3    CB        0.020
+ PHC      plan-3    CD1       0.020
+ PHC      plan-3    CD2       0.020
+ PHC      plan-3    CE1       0.020
+ PHC      plan-3    CE2       0.020
+ PHC      plan-3    CZ        0.020
+ PHC      plan-3    HD1       0.020
+ PHC      plan-3    HD2       0.020
+ PHC      plan-3    HE1       0.020
+ PHC      plan-3    HE2       0.020
+ PHC      plan-3    HZ        0.020
+# ------------------------------------------------------

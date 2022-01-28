@@ -1,0 +1,86 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CCN     CCN      ACETONITRILE     NON-POLYMER     6     3     .     
+#
+data_comp_CCN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CCN     N       N       N       0       32.072      9.849       19.213      
+CCN     C1      C       CSP     0       31.721      8.758       19.168      
+CCN     C2      C       CH3     0       31.251      7.392       19.186      
+CCN     H21     H       H       0       31.953      6.812       19.526      
+CCN     H22     H       H       0       31.014      7.119       18.284      
+CCN     H23     H       H       0       30.470      7.326       19.760      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CCN       N         C1        TRIPLE    n         1.147     0.020     1.147     0.020     
+CCN       C1        C2        SINGLE    n         1.444     0.020     1.444     0.020     
+CCN       C2        H21       SINGLE    n         1.089     0.010     0.972     0.015     
+CCN       C2        H22       SINGLE    n         1.089     0.010     0.972     0.015     
+CCN       C2        H23       SINGLE    n         1.089     0.010     0.972     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CCN           N          C1          C2     176.851    3.00
+CCN          C1          C2         H21     109.496    1.50
+CCN          C1          C2         H22     109.496    1.50
+CCN          C1          C2         H23     109.496    1.50
+CCN         H21          C2         H22     109.456    1.50
+CCN         H21          C2         H23     109.456    1.50
+CCN         H22          C2         H23     109.456    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CCN             sp3_sp3_1           N          C1          C2         H21     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CCN SMILES           ACDLabs              11.02 N#CC
+CCN SMILES_CANONICAL CACTVS               3.352 CC#N
+CCN SMILES           CACTVS               3.352 CC#N
+CCN SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 CC#N
+CCN SMILES           "OpenEye OEToolkits" 1.7.0 CC#N
+CCN InChI            InChI                1.03  InChI=1S/C2H3N/c1-2-3/h1H3
+CCN InChIKey         InChI                1.03  WEVYAHXRMPXWCK-UHFFFAOYSA-N
+CCN ?                acedrg               202         "dictionary generator"                  
+CCN ?                acedrg_database      11          "data source"                           
+CCN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CCN ?                refmac5              5.8.0189    "optimization tool"                     

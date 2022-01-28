@@ -1,0 +1,136 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HHQ     HHQ      4-iodanyl-3~{H}-pyridin-2-one     NON-POLYMER     12     8     .     
+#
+data_comp_HHQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HHQ     C4      C       CR16    0       2.868       -6.837      -27.621     
+HHQ     C5      C       CR16    0       3.710       -5.945      -28.321     
+HHQ     N1      N       NRD6    0       3.331       -4.714      -28.702     
+HHQ     C3      C       CR6     0       1.624       -6.409      -27.180     
+HHQ     O1      O       O       0       1.902       -3.014      -28.387     
+HHQ     C1      C       CR6     0       2.140       -4.209      -28.199     
+HHQ     C2      C       CH2     0       1.148       -5.053      -27.445     
+HHQ     I1      I       I       0       0.333       -7.668      -26.100     
+HHQ     H1      H       H       0       3.133       -7.711      -27.449     
+HHQ     H2      H       H       0       4.581       -6.228      -28.532     
+HHQ     H3      H       H       0       0.944       -4.613      -26.602     
+HHQ     H4      H       H       0       0.324       -5.098      -27.961     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HHQ       C5        N1        DOUBLE    n         1.339     0.0100    1.339     0.0100    
+HHQ       N1        C1        SINGLE    n         1.377     0.0158    1.377     0.0158    
+HHQ       O1        C1        DOUBLE    n         1.233     0.0140    1.233     0.0140    
+HHQ       C4        C5        SINGLE    n         1.402     0.0200    1.402     0.0200    
+HHQ       C1        C2        SINGLE    n         1.502     0.0100    1.502     0.0100    
+HHQ       C4        C3        DOUBLE    n         1.383     0.0200    1.383     0.0200    
+HHQ       C3        C2        SINGLE    n         1.455     0.0200    1.455     0.0200    
+HHQ       C3        I1        SINGLE    n         2.102     0.0100    2.102     0.0100    
+HHQ       C4        H1        SINGLE    n         1.082     0.013     0.930     0.0100    
+HHQ       C5        H2        SINGLE    n         1.082     0.013     0.940     0.0138    
+HHQ       C2        H3        SINGLE    n         1.089     0.010     0.973     0.0171    
+HHQ       C2        H4        SINGLE    n         1.089     0.010     0.973     0.0171    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HHQ          C5          C4          C3     120.262    1.50
+HHQ          C5          C4          H1     120.868    1.50
+HHQ          C3          C4          H1     118.871    1.50
+HHQ          N1          C5          C4     123.113    1.50
+HHQ          N1          C5          H2     118.512    1.50
+HHQ          C4          C5          H2     118.375    1.50
+HHQ          C5          N1          C1     116.585    1.84
+HHQ          C4          C3          C2     122.396    2.14
+HHQ          C4          C3          I1     121.426    2.20
+HHQ          C2          C3          I1     116.178    2.12
+HHQ          N1          C1          O1     117.851    1.50
+HHQ          N1          C1          C2     121.992    3.00
+HHQ          O1          C1          C2     120.157    2.11
+HHQ          C1          C2          C3     112.879    3.00
+HHQ          C1          C2          H3     108.350    1.50
+HHQ          C1          C2          H4     108.350    1.50
+HHQ          C3          C2          H3     108.709    2.43
+HHQ          C3          C2          H4     108.709    2.43
+HHQ          H3          C2          H4     106.810    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HHQ             sp2_sp2_1          C3          C4          C5          N1       0.000   10.00     2
+HHQ            sp2_sp2_11          I1          C3          C4          C5     180.000   10.00     2
+HHQ             sp2_sp2_5          C4          C5          N1          C1       0.000   10.00     2
+HHQ             sp2_sp2_8          O1          C1          N1          C5     180.000   10.00     2
+HHQ            sp2_sp3_10          I1          C3          C2          C1     180.000   10.00     6
+HHQ             sp2_sp3_4          O1          C1          C2          C3     180.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HHQ    plan-1          C3   0.020
+HHQ    plan-1          C4   0.020
+HHQ    plan-1          C5   0.020
+HHQ    plan-1          H1   0.020
+HHQ    plan-2          C4   0.020
+HHQ    plan-2          C5   0.020
+HHQ    plan-2          H2   0.020
+HHQ    plan-2          N1   0.020
+HHQ    plan-3          C2   0.020
+HHQ    plan-3          C3   0.020
+HHQ    plan-3          C4   0.020
+HHQ    plan-3          I1   0.020
+HHQ    plan-4          C1   0.020
+HHQ    plan-4          C2   0.020
+HHQ    plan-4          N1   0.020
+HHQ    plan-4          O1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HHQ            InChI                InChI  1.03 InChI=1S/C5H4INO/c6-4-1-2-7-5(8)3-4/h1-2H,3H2
+HHQ         InChIKey                InChI  1.03                   GRVSGGNZRNHMQI-UHFFFAOYSA-N
+HHQ SMILES_CANONICAL               CACTVS 3.385                               IC1=CC=NC(=O)C1
+HHQ           SMILES               CACTVS 3.385                               IC1=CC=NC(=O)C1
+HHQ SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                               C1C(=CC=NC1=O)I
+HHQ           SMILES "OpenEye OEToolkits" 2.0.6                               C1C(=CC=NC1=O)I
+HHQ ?                acedrg               217         "dictionary generator"                  
+HHQ ?                acedrg_database      11          "data source"                           
+HHQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HHQ ?                refmac5              5.8.0253    "optimization tool"                     

@@ -1,0 +1,309 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XAD      XAD '9-(2,3-DIDEOXY-6-O-PHOSPHONO-BETA-D-' non-polymer        37  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_XAD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ XAD           OP2    O    OP       -0.666      0.000    0.000    0.000
+ XAD           P      P    P         0.000     -1.062   -0.788   -0.735
+ XAD           OP3    O    OP       -0.666     -1.160   -0.294   -2.161
+ XAD           OP1    O    OP       -0.666     -0.693   -2.255   -0.733
+ XAD           "O6'"  O    O2        0.000     -2.481   -0.591    0.000
+ XAD           "C6'"  C    CH2       0.000     -3.413   -1.446   -0.664
+ XAD           "H6'1" H    H         0.000     -3.075   -2.482   -0.586
+ XAD           "H6'2" H    H         0.000     -3.477   -1.164   -1.717
+ XAD           "C5'"  C    CH1       0.000     -4.789   -1.306   -0.011
+ XAD           "H5'"  H    H         0.000     -4.705   -1.505    1.067
+ XAD           "O5'"  O    O2        0.000     -5.275    0.020   -0.212
+ XAD           "C1'"  C    CH1       0.000     -6.466    0.164    0.559
+ XAD           "H1'"  H    H         0.000     -6.267   -0.135    1.597
+ XAD           "C2'"  C    CH2       0.000     -7.570   -0.723   -0.023
+ XAD           "H2'1" H    H         0.000     -7.755   -0.444   -1.063
+ XAD           "H2'2" H    H         0.000     -8.487   -0.595    0.556
+ XAD           "C3'"  C    CH2       0.000     -7.122   -2.187    0.043
+ XAD           "H3'1" H    H         0.000     -7.848   -2.819   -0.472
+ XAD           "H3'2" H    H         0.000     -7.041   -2.502    1.085
+ XAD           "C4'"  C    CH1       0.000     -5.755   -2.313   -0.640
+ XAD           "H4'"  H    H         0.000     -5.859   -2.101   -1.713
+ XAD           "O4'"  O    OH1       0.000     -5.251   -3.638   -0.461
+ XAD           "H4T'" H    H         0.000     -5.867   -4.272   -0.854
+ XAD           N9     N    NR5       0.000     -6.899    1.562    0.530
+ XAD           C4     C    CR56      0.000     -7.663    2.196    1.478
+ XAD           N3     N    NRD6      0.000     -8.225    1.833    2.626
+ XAD           C2     C    CR16      0.000     -8.921    2.697    3.334
+ XAD           H2     H    H         0.000     -9.365    2.369    4.266
+ XAD           N1     N    NRD6      0.000     -9.097    3.948    2.952
+ XAD           C6     C    CR6       0.000     -8.573    4.403    1.819
+ XAD           N6     N    NH2       0.000     -8.763    5.716    1.427
+ XAD           HN62   H    H         0.000     -8.361    6.059    0.560
+ XAD           HN61   H    H         0.000     -9.307    6.352    2.002
+ XAD           C5     C    CR56      0.000     -7.826    3.516    1.024
+ XAD           N7     N    NRD5      0.000     -7.158    3.620   -0.149
+ XAD           C8     C    CR15      0.000     -6.617    2.475   -0.443
+ XAD           H8     H    H         0.000     -6.028    2.275   -1.330
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ XAD      OP2    n/a    P      START
+ XAD      P      OP2    "O6'"  .
+ XAD      OP3    P      .      .
+ XAD      OP1    P      .      .
+ XAD      "O6'"  P      "C6'"  .
+ XAD      "C6'"  "O6'"  "C5'"  .
+ XAD      "H6'1" "C6'"  .      .
+ XAD      "H6'2" "C6'"  .      .
+ XAD      "C5'"  "C6'"  "O5'"  .
+ XAD      "H5'"  "C5'"  .      .
+ XAD      "O5'"  "C5'"  "C1'"  .
+ XAD      "C1'"  "O5'"  N9     .
+ XAD      "H1'"  "C1'"  .      .
+ XAD      "C2'"  "C1'"  "C3'"  .
+ XAD      "H2'1" "C2'"  .      .
+ XAD      "H2'2" "C2'"  .      .
+ XAD      "C3'"  "C2'"  "C4'"  .
+ XAD      "H3'1" "C3'"  .      .
+ XAD      "H3'2" "C3'"  .      .
+ XAD      "C4'"  "C3'"  "O4'"  .
+ XAD      "H4'"  "C4'"  .      .
+ XAD      "O4'"  "C4'"  "H4T'" .
+ XAD      "H4T'" "O4'"  .      .
+ XAD      N9     "C1'"  C4     .
+ XAD      C4     N9     N3     .
+ XAD      N3     C4     C2     .
+ XAD      C2     N3     N1     .
+ XAD      H2     C2     .      .
+ XAD      N1     C2     C6     .
+ XAD      C6     N1     C5     .
+ XAD      N6     C6     HN61   .
+ XAD      HN62   N6     .      .
+ XAD      HN61   N6     .      .
+ XAD      C5     C6     N7     .
+ XAD      N7     C5     C8     .
+ XAD      C8     N7     H8     .
+ XAD      H8     C8     .      END
+ XAD      "C5'"  "C4'"  .    ADD
+ XAD      N9     C8     .    ADD
+ XAD      C5     C4     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XAD       OP3       P         deloc     1.510     0.020     1.510     0.020     
+XAD       OP1       P         deloc     1.510     0.020     1.510     0.020     
+XAD       P         OP2       deloc     1.510     0.020     1.510     0.020     
+XAD       "O6'"     P         single    1.610     0.020     1.610     0.020     
+XAD       "C6'"     "O6'"     single    1.426     0.020     1.426     0.020     
+XAD       "C5'"     "C6'"     single    1.524     0.020     1.524     0.020     
+XAD       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+XAD       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+XAD       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+XAD       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+XAD       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+XAD       "O4'"     "C4'"     single    1.432     0.020     1.432     0.020     
+XAD       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+XAD       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+XAD       "H4T'"    "O4'"     single    0.970     0.012     0.839     0.014     
+XAD       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+XAD       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+XAD       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+XAD       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+XAD       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+XAD       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+XAD       "C1'"     "O5'"     single    1.426     0.020     1.426     0.020     
+XAD       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+XAD       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+XAD       N9        C8        single    1.337     0.020     1.337     0.020     
+XAD       C4        N9        single    1.337     0.020     1.337     0.020     
+XAD       C8        N7        double    1.350     0.020     1.350     0.020     
+XAD       H8        C8        single    1.082     0.013     0.975     0.010     
+XAD       N7        C5        single    1.350     0.020     1.350     0.020     
+XAD       C5        C4        double    1.490     0.020     1.490     0.020     
+XAD       C5        C6        single    1.490     0.020     1.490     0.020     
+XAD       N3        C4        single    1.355     0.020     1.355     0.020     
+XAD       N6        C6        single    1.355     0.020     1.355     0.020     
+XAD       C6        N1        double    1.350     0.020     1.350     0.020     
+XAD       HN61      N6        single    1.016     0.010     0.899     0.007     
+XAD       HN62      N6        single    1.016     0.010     0.899     0.007     
+XAD       N1        C2        single    1.337     0.020     1.337     0.020     
+XAD       C2        N3        double    1.337     0.020     1.337     0.020     
+XAD       H2        C2        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ XAD      OP2    P      OP3     119.900    3.000
+ XAD      OP2    P      OP1     119.900    3.000
+ XAD      OP2    P      "O6'"   108.200    3.000
+ XAD      OP3    P      OP1     119.900    3.000
+ XAD      OP3    P      "O6'"   108.200    3.000
+ XAD      OP1    P      "O6'"   108.200    3.000
+ XAD      P      "O6'"  "C6'"   120.500    3.000
+ XAD      "O6'"  "C6'"  "H6'1"  109.470    3.000
+ XAD      "O6'"  "C6'"  "H6'2"  109.470    3.000
+ XAD      "O6'"  "C6'"  "C5'"   109.470    3.000
+ XAD      "H6'1" "C6'"  "H6'2"  107.900    3.000
+ XAD      "H6'1" "C6'"  "C5'"   109.470    3.000
+ XAD      "H6'2" "C6'"  "C5'"   109.470    3.000
+ XAD      "C6'"  "C5'"  "H5'"   108.340    3.000
+ XAD      "C6'"  "C5'"  "O5'"   109.470    3.000
+ XAD      "C6'"  "C5'"  "C4'"   111.000    3.000
+ XAD      "H5'"  "C5'"  "O5'"   109.470    3.000
+ XAD      "H5'"  "C5'"  "C4'"   108.340    3.000
+ XAD      "O5'"  "C5'"  "C4'"   109.470    3.000
+ XAD      "C5'"  "O5'"  "C1'"   111.800    3.000
+ XAD      "O5'"  "C1'"  "H1'"   109.470    3.000
+ XAD      "O5'"  "C1'"  "C2'"   109.470    3.000
+ XAD      "O5'"  "C1'"  N9      109.470    3.000
+ XAD      "H1'"  "C1'"  "C2'"   108.340    3.000
+ XAD      "H1'"  "C1'"  N9      109.470    3.000
+ XAD      "C2'"  "C1'"  N9      109.470    3.000
+ XAD      "C1'"  "C2'"  "H2'1"  109.470    3.000
+ XAD      "C1'"  "C2'"  "H2'2"  109.470    3.000
+ XAD      "C1'"  "C2'"  "C3'"   111.000    3.000
+ XAD      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ XAD      "H2'1" "C2'"  "C3'"   109.470    3.000
+ XAD      "H2'2" "C2'"  "C3'"   109.470    3.000
+ XAD      "C2'"  "C3'"  "H3'1"  109.470    3.000
+ XAD      "C2'"  "C3'"  "H3'2"  109.470    3.000
+ XAD      "C2'"  "C3'"  "C4'"   111.000    3.000
+ XAD      "H3'1" "C3'"  "H3'2"  107.900    3.000
+ XAD      "H3'1" "C3'"  "C4'"   109.470    3.000
+ XAD      "H3'2" "C3'"  "C4'"   109.470    3.000
+ XAD      "C3'"  "C4'"  "H4'"   108.340    3.000
+ XAD      "C3'"  "C4'"  "O4'"   109.470    3.000
+ XAD      "C3'"  "C4'"  "C5'"   111.000    3.000
+ XAD      "H4'"  "C4'"  "O4'"   109.470    3.000
+ XAD      "H4'"  "C4'"  "C5'"   108.340    3.000
+ XAD      "O4'"  "C4'"  "C5'"   109.470    3.000
+ XAD      "C4'"  "O4'"  "H4T'"  109.470    3.000
+ XAD      "C1'"  N9     C4      126.000    3.000
+ XAD      "C1'"  N9     C8      126.000    3.000
+ XAD      C4     N9     C8      108.000    3.000
+ XAD      N9     C4     N3      132.000    3.000
+ XAD      N9     C4     C5      108.000    3.000
+ XAD      N3     C4     C5      120.000    3.000
+ XAD      C4     N3     C2      120.000    3.000
+ XAD      N3     C2     H2      120.000    3.000
+ XAD      N3     C2     N1      120.000    3.000
+ XAD      H2     C2     N1      120.000    3.000
+ XAD      C2     N1     C6      120.000    3.000
+ XAD      N1     C6     N6      120.000    3.000
+ XAD      N1     C6     C5      120.000    3.000
+ XAD      N6     C6     C5      120.000    3.000
+ XAD      C6     N6     HN62    120.000    3.000
+ XAD      C6     N6     HN61    120.000    3.000
+ XAD      HN62   N6     HN61    120.000    3.000
+ XAD      C6     C5     N7      132.000    3.000
+ XAD      C6     C5     C4      120.000    3.000
+ XAD      N7     C5     C4      108.000    3.000
+ XAD      C5     N7     C8      108.000    3.000
+ XAD      N7     C8     H8      126.000    3.000
+ XAD      N7     C8     N9      108.000    3.000
+ XAD      H8     C8     N9      126.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ XAD      var_1    OP2    P      "O6'"  "C6'"   -175.023   20.000   1
+ XAD      var_2    P      "O6'"  "C6'"  "C5'"   -179.967   20.000   1
+ XAD      var_3    "O6'"  "C6'"  "C5'"  "O5'"     64.778   20.000   3
+ XAD      var_4    "C6'"  "C5'"  "C4'"  "C3'"    180.000   20.000   3
+ XAD      var_5    "C6'"  "C5'"  "O5'"  "C1'"    180.000   20.000   1
+ XAD      var_6    "C5'"  "O5'"  "C1'"  N9       180.000   20.000   1
+ XAD      var_7    "O5'"  "C1'"  "C2'"  "C3'"     60.000   20.000   3
+ XAD      var_8    "C1'"  "C2'"  "C3'"  "C4'"    -60.000   20.000   3
+ XAD      var_9    "C2'"  "C3'"  "C4'"  "O4'"    180.000   20.000   3
+ XAD      var_10   "C3'"  "C4'"  "O4'"  "H4T'"    59.957   20.000   1
+ XAD      var_11   "O5'"  "C1'"  N9     C4      -154.832   20.000   1
+ XAD      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ XAD      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ XAD      CONST_3  N9     C4     N3     C2       180.000    0.000   0
+ XAD      CONST_4  C4     N3     C2     N1         0.000    0.000   0
+ XAD      CONST_5  N3     C2     N1     C6         0.000    0.000   0
+ XAD      CONST_6  C2     N1     C6     C5         0.000    0.000   0
+ XAD      CONST_7  N1     C6     N6     HN61       0.010    0.000   0
+ XAD      CONST_8  N1     C6     C5     N7       180.000    0.000   0
+ XAD      CONST_9  C6     C5     C4     N9       180.000    0.000   0
+ XAD      CONST_10 C6     C5     N7     C8       180.000    0.000   0
+ XAD      CONST_11 C5     N7     C8     N9         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ XAD      chir_01  "C5'"  "C6'"  "C4'"  "O5'"     positiv
+ XAD      chir_02  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ XAD      chir_03  "C1'"  "C2'"  "O5'"  N9        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ XAD      plan-1    N9        0.020
+ XAD      plan-1    "C1'"     0.020
+ XAD      plan-1    C8        0.020
+ XAD      plan-1    C4        0.020
+ XAD      plan-1    N7        0.020
+ XAD      plan-1    H8        0.020
+ XAD      plan-1    C5        0.020
+ XAD      plan-1    C6        0.020
+ XAD      plan-1    N1        0.020
+ XAD      plan-1    C2        0.020
+ XAD      plan-1    N3        0.020
+ XAD      plan-1    N6        0.020
+ XAD      plan-1    H2        0.020
+ XAD      plan-1    HN62      0.020
+ XAD      plan-1    HN61      0.020
+ XAD      plan-2    N6        0.020
+ XAD      plan-2    C6        0.020
+ XAD      plan-2    HN61      0.020
+ XAD      plan-2    HN62      0.020
+# ------------------------------------------------------

@@ -1,0 +1,196 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BBN     BBN      "1-hydroxy-2,3,1-benzodiazaborinine-2(1H)-carboxamide"     NON-POLYMER     22     14     .     
+#
+data_comp_BBN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BBN     B1X     B       B       0       8.373       -42.348     -9.230      
+BBN     O1X     O       OH1     0       8.049       -41.426     -10.196     
+BBN     N2X     N       NR6     0       9.482       -42.073     -8.358      
+BBN     C9X     C       C       0       10.306      -40.846     -8.436      
+BBN     N3X     N       NH2     0       11.314      -40.655     -7.585      
+BBN     O2X     O       O       0       10.038      -40.012     -9.303      
+BBN     C4X     C       CR66    0       7.601       -43.659     -9.041      
+BBN     C1X     C       CR66    0       8.031       -44.522     -8.014      
+BBN     C2X     C       CR16    0       9.159       -44.118     -7.216      
+BBN     N1X     N       NRD6    0       9.820       -43.006     -7.369      
+BBN     C5X     C       CR16    0       6.498       -44.037     -9.834      
+BBN     C6X     C       CR16    0       5.843       -45.233     -9.615      
+BBN     C7X     C       CR16    0       6.282       -46.093     -8.581      
+BBN     C8X     C       CR16    0       7.351       -45.748     -7.798      
+BBN     H1      H       H       0       7.218       -41.254     -10.214     
+BBN     H2      H       H       0       11.805      -39.923     -7.633      
+BBN     H3      H       H       0       11.491      -41.263     -6.973      
+BBN     H4      H       H       0       9.440       -44.696     -6.535      
+BBN     H5      H       H       0       6.204       -43.465     -10.523     
+BBN     H6      H       H       0       5.100       -45.480     -10.155     
+BBN     H7      H       H       0       5.835       -46.911     -8.431      
+BBN     H8      H       H       0       7.638       -46.327     -7.111      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BBN       C5X       C6X       DOUBLE    y         1.373     0.010     1.373     0.010     
+BBN       C4X       C5X       SINGLE    y         1.400     0.013     1.400     0.013     
+BBN       C6X       C7X       SINGLE    y         1.401     0.013     1.401     0.013     
+BBN       B1X       O1X       SINGLE    n         1.370     0.020     1.370     0.020     
+BBN       B1X       C4X       SINGLE    y         1.534     0.010     1.534     0.010     
+BBN       B1X       N2X       SINGLE    y         1.426     0.011     1.426     0.011     
+BBN       C9X       O2X       DOUBLE    n         1.231     0.016     1.231     0.016     
+BBN       C4X       C1X       DOUBLE    y         1.407     0.010     1.407     0.010     
+BBN       C7X       C8X       DOUBLE    y         1.361     0.011     1.361     0.011     
+BBN       N2X       C9X       SINGLE    n         1.454     0.020     1.454     0.020     
+BBN       C9X       N3X       SINGLE    n         1.328     0.015     1.328     0.015     
+BBN       N2X       N1X       SINGLE    y         1.371     0.018     1.371     0.018     
+BBN       C1X       C8X       SINGLE    y         1.405     0.015     1.405     0.015     
+BBN       C1X       C2X       SINGLE    y         1.437     0.010     1.437     0.010     
+BBN       C2X       N1X       DOUBLE    y         1.291     0.013     1.291     0.013     
+BBN       O1X       H1        SINGLE    n         0.970     0.012     0.849     0.020     
+BBN       N3X       H2        SINGLE    n         1.016     0.010     0.881     0.020     
+BBN       N3X       H3        SINGLE    n         1.016     0.010     0.881     0.020     
+BBN       C2X       H4        SINGLE    n         1.082     0.013     0.936     0.014     
+BBN       C5X       H5        SINGLE    n         1.082     0.013     0.943     0.011     
+BBN       C6X       H6        SINGLE    n         1.082     0.013     0.952     0.010     
+BBN       C7X       H7        SINGLE    n         1.082     0.013     0.944     0.018     
+BBN       C8X       H8        SINGLE    n         1.082     0.013     0.943     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BBN         O1X         B1X         C4X     123.710    1.82
+BBN         O1X         B1X         N2X     116.844    1.50
+BBN         C4X         B1X         N2X     119.446    2.51
+BBN         B1X         O1X          H1     112.405    3.00
+BBN         B1X         N2X         C9X     120.171    3.00
+BBN         B1X         N2X         N1X     119.659    3.00
+BBN         C9X         N2X         N1X     120.171    3.00
+BBN         O2X         C9X         N2X     118.310    1.91
+BBN         O2X         C9X         N3X     122.064    1.50
+BBN         N2X         C9X         N3X     119.626    3.00
+BBN         C9X         N3X          H2     119.959    2.30
+BBN         C9X         N3X          H3     119.959    2.30
+BBN          H2         N3X          H3     120.083    2.31
+BBN         C5X         C4X         B1X     122.162    1.50
+BBN         C5X         C4X         C1X     118.716    1.50
+BBN         B1X         C4X         C1X     119.122    1.50
+BBN         C4X         C1X         C8X     119.718    1.50
+BBN         C4X         C1X         C2X     119.229    1.62
+BBN         C8X         C1X         C2X     121.053    1.50
+BBN         C1X         C2X         N1X     123.588    1.50
+BBN         C1X         C2X          H4     118.403    1.50
+BBN         N1X         C2X          H4     118.009    1.50
+BBN         N2X         N1X         C2X     118.956    1.54
+BBN         C6X         C5X         C4X     121.117    1.50
+BBN         C6X         C5X          H5     119.522    1.50
+BBN         C4X         C5X          H5     119.361    1.50
+BBN         C5X         C6X         C7X     119.544    1.50
+BBN         C5X         C6X          H6     120.452    1.50
+BBN         C7X         C6X          H6     120.004    1.50
+BBN         C6X         C7X         C8X     120.275    1.50
+BBN         C6X         C7X          H7     119.834    1.50
+BBN         C8X         C7X          H7     119.890    1.50
+BBN         C7X         C8X         C1X     120.630    1.50
+BBN         C7X         C8X          H8     119.784    1.50
+BBN         C1X         C8X          H8     119.586    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BBN              const_40         O1X         B1X         N2X         C9X       0.000   10.00     2
+BBN       const_sp2_sp2_4         O1X         B1X         C4X         C5X       0.000   10.00     2
+BBN              const_21         C4X         C5X         C6X         C7X       0.000   10.00     2
+BBN              const_25         C5X         C6X         C7X         C8X       0.000   10.00     2
+BBN              const_29         C6X         C7X         C8X         C1X       0.000   10.00     2
+BBN             sp2_sp2_3         O2X         C9X         N2X         B1X       0.000   10.00     2
+BBN              const_16         C2X         N1X         N2X         C9X     180.000   10.00     2
+BBN             sp2_sp2_7         O2X         C9X         N3X          H2       0.000   10.00     2
+BBN              const_19         B1X         C4X         C5X         C6X     180.000   10.00     2
+BBN       const_sp2_sp2_5         C8X         C1X         C4X         C5X       0.000   10.00     2
+BBN              const_33         C4X         C1X         C8X         C7X       0.000   10.00     2
+BBN       const_sp2_sp2_9         C4X         C1X         C2X         N1X       0.000   10.00     2
+BBN              const_13         C1X         C2X         N1X         N2X       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BBN    plan-1         B1X   0.020
+BBN    plan-1         C1X   0.020
+BBN    plan-1         C2X   0.020
+BBN    plan-1         C4X   0.020
+BBN    plan-1         C5X   0.020
+BBN    plan-1         C8X   0.020
+BBN    plan-1         C9X   0.020
+BBN    plan-1          H4   0.020
+BBN    plan-1         N1X   0.020
+BBN    plan-1         N2X   0.020
+BBN    plan-1         O1X   0.020
+BBN    plan-2         B1X   0.020
+BBN    plan-2         C1X   0.020
+BBN    plan-2         C2X   0.020
+BBN    plan-2         C4X   0.020
+BBN    plan-2         C5X   0.020
+BBN    plan-2         C6X   0.020
+BBN    plan-2         C7X   0.020
+BBN    plan-2         C8X   0.020
+BBN    plan-2          H5   0.020
+BBN    plan-2          H6   0.020
+BBN    plan-2          H7   0.020
+BBN    plan-2          H8   0.020
+BBN    plan-3         C9X   0.020
+BBN    plan-3         N2X   0.020
+BBN    plan-3         N3X   0.020
+BBN    plan-3         O2X   0.020
+BBN    plan-4         C9X   0.020
+BBN    plan-4          H2   0.020
+BBN    plan-4          H3   0.020
+BBN    plan-4         N3X   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BBN SMILES           ACDLabs              12.01 "B2(c1c(cccc1)C=NN2C(N)=O)O"
+BBN InChI            InChI                1.03  "InChI=1S/C8H8BN3O2/c10-8(13)12-9(14)7-4-2-1-3-6(7)5-11-12/h1-5,14H,(H2,10,13)"
+BBN InChIKey         InChI                1.03  CNLKBXXRSGCDQQ-UHFFFAOYSA-N
+BBN SMILES_CANONICAL CACTVS               3.385 "NC(=O)N1N=Cc2ccccc2B1O"
+BBN SMILES           CACTVS               3.385 "NC(=O)N1N=Cc2ccccc2B1O"
+BBN SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "B1(c2ccccc2C=NN1C(=O)N)O"
+BBN SMILES           "OpenEye OEToolkits" 1.9.2 "B1(c2ccccc2C=NN1C(=O)N)O"
+BBN ?                acedrg               202         "dictionary generator"                  
+BBN ?                acedrg_database      11          "data source"                           
+BBN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BBN ?                refmac5              5.8.0189    "optimization tool"                     

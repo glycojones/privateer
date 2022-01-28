@@ -1,0 +1,160 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TEA     TEA      "TRIETHYLAMMONIUM ION"     NON-POLYMER     23     7     .     
+#
+data_comp_TEA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TEA     N       N       NT1     1       0.017       -0.003      0.064       
+TEA     C11     C       CH2     0       0.949       -1.197      0.065       
+TEA     C12     C       CH3     0       1.784       -1.324      -1.174      
+TEA     C21     C       CH2     0       0.725       1.282       0.440       
+TEA     C22     C       CH3     0       0.127       2.514       -0.170      
+TEA     C31     C       CH2     0       -1.227      -0.239      0.894       
+TEA     C32     C       CH3     0       -2.272      -1.079      0.218       
+TEA     HN      H       H       0       -0.268      0.104       -0.802      
+TEA     H111    H       H       0       0.423       -2.013      0.169       
+TEA     H112    H       H       0       1.541       -1.128      0.838       
+TEA     H121    H       H       0       2.333       -2.123      -1.113      
+TEA     H122    H       H       0       2.358       -0.546      -1.261      
+TEA     H123    H       H       0       1.206       -1.388      -1.951      
+TEA     H211    H       H       0       1.660       1.222       0.167       
+TEA     H212    H       H       0       0.708       1.372       1.412       
+TEA     H221    H       H       0       0.644       3.291       0.098       
+TEA     H222    H       H       0       -0.789      2.616       0.132       
+TEA     H223    H       H       0       0.142       2.436       -1.138      
+TEA     H311    H       H       0       -1.623      0.623       1.125       
+TEA     H312    H       H       0       -0.964      -0.675      1.727       
+TEA     H321    H       H       0       -2.702      -1.650      0.875       
+TEA     H322    H       H       0       -1.857      -1.630      -0.466      
+TEA     H323    H       H       0       -2.936      -0.501      -0.192      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TEA       N         C11       SINGLE    n         1.503     0.014     1.503     0.014     
+TEA       N         C21       SINGLE    n         1.503     0.014     1.503     0.014     
+TEA       N         C31       SINGLE    n         1.503     0.014     1.503     0.014     
+TEA       C11       C12       SINGLE    n         1.493     0.020     1.493     0.020     
+TEA       C21       C22       SINGLE    n         1.493     0.020     1.493     0.020     
+TEA       C31       C32       SINGLE    n         1.493     0.020     1.493     0.020     
+TEA       N         HN        SINGLE    n         1.036     0.016     0.915     0.020     
+TEA       C11       H111      SINGLE    n         1.089     0.010     0.976     0.017     
+TEA       C11       H112      SINGLE    n         1.089     0.010     0.976     0.017     
+TEA       C12       H121      SINGLE    n         1.089     0.010     0.971     0.015     
+TEA       C12       H122      SINGLE    n         1.089     0.010     0.971     0.015     
+TEA       C12       H123      SINGLE    n         1.089     0.010     0.971     0.015     
+TEA       C21       H211      SINGLE    n         1.089     0.010     0.976     0.017     
+TEA       C21       H212      SINGLE    n         1.089     0.010     0.976     0.017     
+TEA       C22       H221      SINGLE    n         1.089     0.010     0.971     0.015     
+TEA       C22       H222      SINGLE    n         1.089     0.010     0.971     0.015     
+TEA       C22       H223      SINGLE    n         1.089     0.010     0.971     0.015     
+TEA       C31       H311      SINGLE    n         1.089     0.010     0.976     0.017     
+TEA       C31       H312      SINGLE    n         1.089     0.010     0.976     0.017     
+TEA       C32       H321      SINGLE    n         1.089     0.010     0.971     0.015     
+TEA       C32       H322      SINGLE    n         1.089     0.010     0.971     0.015     
+TEA       C32       H323      SINGLE    n         1.089     0.010     0.971     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TEA         C11           N         C21     112.335    2.04
+TEA         C11           N         C31     112.335    2.04
+TEA         C11           N          HN     106.455    2.47
+TEA         C21           N         C31     112.335    2.04
+TEA         C21           N          HN     106.455    2.47
+TEA         C31           N          HN     106.455    2.47
+TEA           N         C11         C12     113.420    1.50
+TEA           N         C11        H111     108.641    1.50
+TEA           N         C11        H112     108.641    1.50
+TEA         C12         C11        H111     109.056    1.50
+TEA         C12         C11        H112     109.056    1.50
+TEA        H111         C11        H112     107.855    1.50
+TEA         C11         C12        H121     109.478    1.50
+TEA         C11         C12        H122     109.478    1.50
+TEA         C11         C12        H123     109.478    1.50
+TEA        H121         C12        H122     109.415    1.50
+TEA        H121         C12        H123     109.415    1.50
+TEA        H122         C12        H123     109.415    1.50
+TEA           N         C21         C22     113.420    1.50
+TEA           N         C21        H211     108.641    1.50
+TEA           N         C21        H212     108.641    1.50
+TEA         C22         C21        H211     109.056    1.50
+TEA         C22         C21        H212     109.056    1.50
+TEA        H211         C21        H212     107.855    1.50
+TEA         C21         C22        H221     109.478    1.50
+TEA         C21         C22        H222     109.478    1.50
+TEA         C21         C22        H223     109.478    1.50
+TEA        H221         C22        H222     109.415    1.50
+TEA        H221         C22        H223     109.415    1.50
+TEA        H222         C22        H223     109.415    1.50
+TEA           N         C31         C32     113.420    1.50
+TEA           N         C31        H311     108.641    1.50
+TEA           N         C31        H312     108.641    1.50
+TEA         C32         C31        H311     109.056    1.50
+TEA         C32         C31        H312     109.056    1.50
+TEA        H311         C31        H312     107.855    1.50
+TEA         C31         C32        H321     109.478    1.50
+TEA         C31         C32        H322     109.478    1.50
+TEA         C31         C32        H323     109.478    1.50
+TEA        H321         C32        H322     109.415    1.50
+TEA        H321         C32        H323     109.415    1.50
+TEA        H322         C32        H323     109.415    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TEA             sp3_sp3_1         C12         C11           N         C21     180.000   10.00     3
+TEA            sp3_sp3_10         C22         C21           N         C11     180.000   10.00     3
+TEA            sp3_sp3_19         C32         C31           N         C11     180.000   10.00     3
+TEA            sp3_sp3_28           N         C11         C12        H121     180.000   10.00     3
+TEA            sp3_sp3_37           N         C21         C22        H221     180.000   10.00     3
+TEA            sp3_sp3_46           N         C31         C32        H321     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TEA SMILES           ACDLabs              10.04 "CC[NH+](CC)CC"
+TEA SMILES_CANONICAL CACTVS               3.341 "CC[NH+](CC)CC"
+TEA SMILES           CACTVS               3.341 "CC[NH+](CC)CC"
+TEA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC[NH+](CC)CC"
+TEA SMILES           "OpenEye OEToolkits" 1.5.0 "CC[NH+](CC)CC"
+TEA InChI            InChI                1.03  "InChI=1S/C6H15N/c1-4-7(5-2)6-3/h4-6H2,1-3H3/p+1"
+TEA InChIKey         InChI                1.03  ZMANZCXQSJIPKH-UHFFFAOYSA-O
+TEA ?                acedrg               202         "dictionary generator"                  
+TEA ?                acedrg_database      11          "data source"                           
+TEA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TEA ?                refmac5              5.8.0189    "optimization tool"                     

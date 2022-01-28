@@ -1,0 +1,259 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NA8      NA8 '(1S)-1-CARBOXY-2-NAPHTHALEN-2-YLETHA' non-polymer        29  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NA8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NA8           OXT    O    OC       -0.500      0.000    0.000    0.000
+ NA8           C11    C    C         0.000     -0.910   -0.856   -0.067
+ NA8           O2     O    OC       -0.500     -0.652   -2.061    0.148
+ NA8           C10    C    CH1       0.000     -2.318   -0.434   -0.399
+ NA8           H10    H    H         0.000     -2.295    0.335   -1.183
+ NA8           N      N    NT3       1.000     -3.079   -1.597   -0.876
+ NA8           HN3    H    H         0.000     -4.041   -1.304   -1.102
+ NA8           HN2    H    H         0.000     -2.623   -1.978   -1.720
+ NA8           HN1    H    H         0.000     -3.099   -2.317   -0.137
+ NA8           C9     C    CH2       0.000     -2.989    0.135    0.853
+ NA8           H91C   H    H         0.000     -2.375    0.942    1.259
+ NA8           H92C   H    H         0.000     -3.091   -0.655    1.601
+ NA8           C2     C    CR6       0.000     -4.351    0.669    0.495
+ NA8           C3     C    CR16      0.000     -4.485    1.998    0.098
+ NA8           H3     H    H         0.000     -3.608    2.632    0.052
+ NA8           C4     C    CR16      0.000     -5.702    2.512   -0.232
+ NA8           H4     H    H         0.000     -5.791    3.548   -0.537
+ NA8           C4A    C    CR66      0.000     -6.841    1.692   -0.175
+ NA8           C8A    C    CR66      0.000     -6.706    0.340    0.228
+ NA8           C1     C    CR16      0.000     -5.434   -0.154    0.562
+ NA8           H1     H    H         0.000     -5.315   -1.186    0.871
+ NA8           C8     C    CR16      0.000     -7.846   -0.479    0.287
+ NA8           H8     H    H         0.000     -7.757   -1.514    0.594
+ NA8           C7     C    CR16      0.000     -9.062    0.034   -0.044
+ NA8           H7     H    H         0.000     -9.939   -0.600    0.001
+ NA8           C6     C    CR16      0.000     -9.196    1.364   -0.440
+ NA8           H6     H    H         0.000    -10.175    1.747   -0.699
+ NA8           C5     C    CR16      0.000     -8.114    2.187   -0.507
+ NA8           H5     H    H         0.000     -8.234    3.219   -0.816
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NA8      OXT    n/a    C11    START
+ NA8      C11    OXT    C10    .
+ NA8      O2     C11    .      .
+ NA8      C10    C11    C9     .
+ NA8      H10    C10    .      .
+ NA8      N      C10    HN1    .
+ NA8      HN3    N      .      .
+ NA8      HN2    N      .      .
+ NA8      HN1    N      .      .
+ NA8      C9     C10    C2     .
+ NA8      H91C   C9     .      .
+ NA8      H92C   C9     .      .
+ NA8      C2     C9     C3     .
+ NA8      C3     C2     C4     .
+ NA8      H3     C3     .      .
+ NA8      C4     C3     C4A    .
+ NA8      H4     C4     .      .
+ NA8      C4A    C4     C8A    .
+ NA8      C8A    C4A    C8     .
+ NA8      C1     C8A    H1     .
+ NA8      H1     C1     .      .
+ NA8      C8     C8A    C7     .
+ NA8      H8     C8     .      .
+ NA8      C7     C8     C6     .
+ NA8      H7     C7     .      .
+ NA8      C6     C7     C5     .
+ NA8      H6     C6     .      .
+ NA8      C5     C6     H5     .
+ NA8      H5     C5     .      END
+ NA8      C1     C2     .    ADD
+ NA8      C4A    C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NA8       O2        C11       deloc     1.250     0.020     1.250     0.020     
+NA8       C10       C11       single    1.500     0.020     1.500     0.020     
+NA8       C11       OXT       deloc     1.250     0.020     1.250     0.020     
+NA8       N         C10       single    1.488     0.020     1.488     0.020     
+NA8       C1        C2        single    1.390     0.020     1.390     0.020     
+NA8       C1        C8A       double    1.390     0.020     1.390     0.020     
+NA8       C3        C2        double    1.390     0.020     1.390     0.020     
+NA8       C2        C9        single    1.511     0.020     1.511     0.020     
+NA8       C4        C3        single    1.390     0.020     1.390     0.020     
+NA8       C4A       C4        double    1.390     0.020     1.390     0.020     
+NA8       C4A       C5        single    1.390     0.020     1.390     0.020     
+NA8       C8A       C4A       single    1.490     0.020     1.490     0.020     
+NA8       C5        C6        double    1.390     0.020     1.390     0.020     
+NA8       C6        C7        single    1.390     0.020     1.390     0.020     
+NA8       C7        C8        double    1.390     0.020     1.390     0.020     
+NA8       C8        C8A       single    1.390     0.020     1.390     0.020     
+NA8       C9        C10       single    1.524     0.020     1.524     0.020     
+NA8       H10       C10       single    1.089     0.010     0.989     0.005     
+NA8       HN1       N         single    1.036     0.016     0.914     0.007     
+NA8       HN2       N         single    1.036     0.016     0.914     0.007     
+NA8       HN3       N         single    1.036     0.016     0.914     0.007     
+NA8       H1        C1        single    1.082     0.013     0.975     0.010     
+NA8       H3        C3        single    1.082     0.013     0.975     0.010     
+NA8       H91C      C9        single    1.089     0.010     0.989     0.005     
+NA8       H92C      C9        single    1.089     0.010     0.989     0.005     
+NA8       H4        C4        single    1.082     0.013     0.975     0.010     
+NA8       H5        C5        single    1.082     0.013     0.975     0.010     
+NA8       H6        C6        single    1.082     0.013     0.975     0.010     
+NA8       H7        C7        single    1.082     0.013     0.975     0.010     
+NA8       H8        C8        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NA8      OXT    C11    O2      123.000    3.000
+ NA8      OXT    C11    C10     118.500    3.000
+ NA8      O2     C11    C10     118.500    3.000
+ NA8      C11    C10    H10     108.810    3.000
+ NA8      C11    C10    N       111.600    3.000
+ NA8      C11    C10    C9      109.470    3.000
+ NA8      H10    C10    N       108.550    3.000
+ NA8      H10    C10    C9      108.340    3.000
+ NA8      N      C10    C9      110.000    3.000
+ NA8      C10    N      HN3     109.470    3.000
+ NA8      C10    N      HN2     109.470    3.000
+ NA8      C10    N      HN1     109.470    3.000
+ NA8      HN3    N      HN2     109.470    3.000
+ NA8      HN3    N      HN1     109.470    3.000
+ NA8      HN2    N      HN1     109.470    3.000
+ NA8      C10    C9     H91C    109.470    3.000
+ NA8      C10    C9     H92C    109.470    3.000
+ NA8      C10    C9     C2      109.470    3.000
+ NA8      H91C   C9     H92C    107.900    3.000
+ NA8      H91C   C9     C2      109.470    3.000
+ NA8      H92C   C9     C2      109.470    3.000
+ NA8      C9     C2     C3      120.000    3.000
+ NA8      C9     C2     C1      120.000    3.000
+ NA8      C3     C2     C1      120.000    3.000
+ NA8      C2     C3     H3      120.000    3.000
+ NA8      C2     C3     C4      120.000    3.000
+ NA8      H3     C3     C4      120.000    3.000
+ NA8      C3     C4     H4      120.000    3.000
+ NA8      C3     C4     C4A     120.000    3.000
+ NA8      H4     C4     C4A     120.000    3.000
+ NA8      C4     C4A    C8A     120.000    3.000
+ NA8      C4     C4A    C5      120.000    3.000
+ NA8      C8A    C4A    C5      120.000    3.000
+ NA8      C4A    C8A    C1      120.000    3.000
+ NA8      C4A    C8A    C8      120.000    3.000
+ NA8      C1     C8A    C8      120.000    3.000
+ NA8      C8A    C1     H1      120.000    3.000
+ NA8      C8A    C1     C2      120.000    3.000
+ NA8      H1     C1     C2      120.000    3.000
+ NA8      C8A    C8     H8      120.000    3.000
+ NA8      C8A    C8     C7      120.000    3.000
+ NA8      H8     C8     C7      120.000    3.000
+ NA8      C8     C7     H7      120.000    3.000
+ NA8      C8     C7     C6      120.000    3.000
+ NA8      H7     C7     C6      120.000    3.000
+ NA8      C7     C6     H6      120.000    3.000
+ NA8      C7     C6     C5      120.000    3.000
+ NA8      H6     C6     C5      120.000    3.000
+ NA8      C6     C5     H5      120.000    3.000
+ NA8      C6     C5     C4A     120.000    3.000
+ NA8      H5     C5     C4A     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NA8      var_1    OXT    C11    C10    C9       -79.712   20.000   3
+ NA8      var_2    C11    C10    N      HN1       60.025   20.000   1
+ NA8      var_3    C11    C10    C9     C2       175.005   20.000   3
+ NA8      var_4    C10    C9     C2     C3       -89.982   20.000   2
+ NA8      CONST_1  C9     C2     C3     C4       180.000    0.000   0
+ NA8      CONST_2  C2     C3     C4     C4A        0.000    0.000   0
+ NA8      CONST_3  C3     C4     C4A    C8A        0.000    0.000   0
+ NA8      CONST_4  C4     C4A    C5     C6       180.000    0.000   0
+ NA8      CONST_5  C4     C4A    C8A    C8       180.000    0.000   0
+ NA8      CONST_6  C4A    C8A    C1     C2         0.000    0.000   0
+ NA8      CONST_7  C8A    C1     C2     C9       180.000    0.000   0
+ NA8      CONST_8  C4A    C8A    C8     C7         0.000    0.000   0
+ NA8      CONST_9  C8A    C8     C7     C6         0.000    0.000   0
+ NA8      CONST_10 C8     C7     C6     C5         0.000    0.000   0
+ NA8      CONST_11 C7     C6     C5     C4A        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NA8      chir_01  C10    C11    N      C9        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NA8      plan-1    C11       0.020
+ NA8      plan-1    O2        0.020
+ NA8      plan-1    C10       0.020
+ NA8      plan-1    OXT       0.020
+ NA8      plan-2    C1        0.020
+ NA8      plan-2    C2        0.020
+ NA8      plan-2    C8A       0.020
+ NA8      plan-2    H1        0.020
+ NA8      plan-2    C3        0.020
+ NA8      plan-2    C4        0.020
+ NA8      plan-2    C9        0.020
+ NA8      plan-2    H3        0.020
+ NA8      plan-2    C4A       0.020
+ NA8      plan-2    H4        0.020
+ NA8      plan-2    C5        0.020
+ NA8      plan-2    C6        0.020
+ NA8      plan-2    C7        0.020
+ NA8      plan-2    C8        0.020
+ NA8      plan-2    H5        0.020
+ NA8      plan-2    H6        0.020
+ NA8      plan-2    H7        0.020
+ NA8      plan-2    H8        0.020
+# ------------------------------------------------------

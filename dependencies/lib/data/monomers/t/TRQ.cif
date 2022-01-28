@@ -1,0 +1,263 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TRQ     TRQ     "2-AMINO-3-(6,7-DIOXO-6,7-DIHYDRO-1H-INDOL-3-YL)-PROPIONICACID"     peptide     27     17     .
+#
+data_comp_TRQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TRQ     N       N       NT3     1       80.823      11.674      17.368
+TRQ     CA      C       CH1     0       82.205      12.176      17.606
+TRQ     C       C       C       0       82.453      12.320      19.113
+TRQ     O       O       O       0       81.736      13.130      19.733
+TRQ     OXT     O       OC      -1      83.354      11.615      19.611
+TRQ     CB      C       CH2     0       82.432      13.510      16.879
+TRQ     CG      C       CR5     0       82.418      13.420      15.383
+TRQ     CD1     C       CR15    0       83.368      12.827      14.600
+TRQ     NE1     N       NR5     0       83.014      12.942      13.286
+TRQ     CE2     C       CR56    0       81.823      13.615      13.210
+TRQ     CZ2     C       CR6     0       81.011      14.002      12.076
+TRQ     CH2     C       CR6     0       79.706      14.762      12.363
+TRQ     CZ3     C       CR16    0       79.367      15.045      13.733
+TRQ     CE3     C       CR16    0       80.216      14.633      14.779
+TRQ     CD2     C       CR56    0       81.408      13.936      14.506
+TRQ     O6      O       O       0       78.939      15.136      11.428
+TRQ     O7      O       O       0       81.334      13.742      10.904
+TRQ     H       H       H       0       80.222      12.339      17.536
+TRQ     H2      H       H       0       80.651      10.967      17.917
+TRQ     H3      H       H       0       80.738      11.403      16.503
+TRQ     HA      H       H       0       82.836      11.512      17.241
+TRQ     HB2     H       H       0       83.296      13.871      17.165
+TRQ     HB3     H       H       0       81.738      14.138      17.166
+TRQ     HD1     H       H       0       84.187      12.382      14.924
+TRQ     HE1     H       H       0       83.457      12.645      12.615
+TRQ     HZ3     H       H       0       78.570      15.509      13.928
+TRQ     HE3     H       H       0       79.983      14.827      15.673
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+TRQ      N      n/a    CA     START
+TRQ      H      N      .      .
+TRQ      H2     N      .      .
+TRQ      H3     N      .      .
+TRQ      CA     N      C      .
+TRQ      HA     CA     .      .
+TRQ      CB     CA     CG     .
+TRQ      HB2    CB     .      .
+TRQ      HB3    CB     .      .
+TRQ      CG     CB     CD2    .
+TRQ      CD2    CG     CE3    .
+TRQ      CE2    CD2    NE1    .
+TRQ      NE1    CE2    CD1    .
+TRQ      HE1    NE1    .      .
+TRQ      CD1    NE1    HD1    .
+TRQ      HD1    CD1    .      .
+TRQ      CE3    CD2    CZ3    .
+TRQ      HE3    CE3    .      .
+TRQ      CZ3    CE3    CH2    .
+TRQ      HZ3    CZ3    .      .
+TRQ      CH2    CZ3    CZ2    .
+TRQ      O6     CH2    .      .
+TRQ      CZ2    CH2    O7     .
+TRQ      O7     CZ2    .      .
+TRQ      C      CA     .      END
+TRQ      O      C      .      .
+TRQ      OXT    C      .      .
+TRQ      CG     CD1    .    ADD
+TRQ      CE2    CZ2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TRQ       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+TRQ       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+TRQ       CA        CB        SINGLE    n         1.534     0.012     1.534     0.012     
+TRQ       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TRQ       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TRQ       CB        CG        SINGLE    n         1.499     0.010     1.499     0.010     
+TRQ       CG        CD1       DOUBLE    y         1.365     0.012     1.365     0.012     
+TRQ       CG        CD2       SINGLE    y         1.435     0.015     1.435     0.015     
+TRQ       CD1       NE1       SINGLE    y         1.363     0.015     1.363     0.015     
+TRQ       NE1       CE2       SINGLE    y         1.370     0.013     1.370     0.013     
+TRQ       CE2       CZ2       SINGLE    n         1.447     0.018     1.447     0.018     
+TRQ       CE2       CD2       DOUBLE    y         1.393     0.011     1.393     0.011     
+TRQ       CZ2       CH2       SINGLE    n         1.540     0.012     1.540     0.012     
+TRQ       CZ2       O7        DOUBLE    n         1.243     0.020     1.243     0.020     
+TRQ       CH2       CZ3       SINGLE    n         1.437     0.017     1.437     0.017     
+TRQ       CH2       O6        DOUBLE    n         1.265     0.020     1.265     0.020     
+TRQ       CZ3       CE3       DOUBLE    n         1.386     0.020     1.386     0.020     
+TRQ       CE3       CD2       SINGLE    n         1.388     0.016     1.388     0.016     
+TRQ       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+TRQ       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+TRQ       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+TRQ       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+TRQ       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.019     
+TRQ       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.019     
+TRQ       CD1       HD1       SINGLE    n         1.082     0.013     0.987     0.020     
+TRQ       NE1       HE1       SINGLE    n         1.016     0.010     0.858     0.017     
+TRQ       CZ3       HZ3       SINGLE    n         1.082     0.013     0.942     0.020     
+TRQ       CE3       HE3       SINGLE    n         1.082     0.013     0.945     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TRQ          CA           N           H     109.321    1.91
+TRQ          CA           N          H2     109.321    1.91
+TRQ          CA           N          H3     109.321    1.91
+TRQ           H           N          H2     109.028    2.41
+TRQ           H           N          H3     109.028    2.41
+TRQ          H2           N          H3     109.028    2.41
+TRQ           N          CA           C     109.666    1.50
+TRQ           N          CA          CB     110.324    1.50
+TRQ           N          CA          HA     108.030    1.50
+TRQ           C          CA          CB     111.332    1.67
+TRQ           C          CA          HA     108.922    1.50
+TRQ          CB          CA          HA     108.492    1.50
+TRQ          CA           C           O     117.134    1.50
+TRQ          CA           C         OXT     117.134    1.50
+TRQ           O           C         OXT     125.731    1.50
+TRQ          CA          CB          CG     114.435    1.50
+TRQ          CA          CB         HB2     108.290    1.50
+TRQ          CA          CB         HB3     108.290    1.50
+TRQ          CG          CB         HB2     108.882    1.50
+TRQ          CG          CB         HB3     108.882    1.50
+TRQ         HB2          CB         HB3     107.724    1.50
+TRQ          CB          CG         CD1     126.487    2.31
+TRQ          CB          CG         CD2     126.561    1.50
+TRQ         CD1          CG         CD2     106.952    1.50
+TRQ          CG         CD1         NE1     109.040    1.50
+TRQ          CG         CD1         HD1     126.007    1.50
+TRQ         NE1         CD1         HD1     124.953    1.50
+TRQ         CD1         NE1         CE2     108.127    1.50
+TRQ         CD1         NE1         HE1     126.251    1.50
+TRQ         CE2         NE1         HE1     125.621    3.00
+TRQ         NE1         CE2         CZ2     131.206    3.00
+TRQ         NE1         CE2         CD2     108.455    1.50
+TRQ         CZ2         CE2         CD2     120.339    3.00
+TRQ         CE2         CZ2         CH2     119.642    1.50
+TRQ         CE2         CZ2          O7     121.635    2.47
+TRQ         CH2         CZ2          O7     118.724    2.72
+TRQ         CZ2         CH2         CZ3     120.258    1.50
+TRQ         CZ2         CH2          O6     119.932    2.72
+TRQ         CZ3         CH2          O6     119.809    1.50
+TRQ         CH2         CZ3         CE3     120.258    1.50
+TRQ         CH2         CZ3         HZ3     119.615    1.50
+TRQ         CE3         CZ3         HZ3     120.127    1.50
+TRQ         CZ3         CE3         CD2     119.163    1.50
+TRQ         CZ3         CE3         HE3     120.398    1.50
+TRQ         CD2         CE3         HE3     120.439    1.50
+TRQ          CG         CD2         CE2     107.426    1.55
+TRQ          CG         CD2         CE3     132.235    1.50
+TRQ         CE2         CD2         CE3     120.339    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TRQ             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+TRQ             sp2_sp2_8          O6         CH2         CZ2          O7       0.000   10.00     2
+TRQ            sp2_sp2_11          O6         CH2         CZ3         CE3     180.000   10.00     2
+TRQ            sp2_sp2_13         CD2         CE3         CZ3         CH2       0.000   10.00     2
+TRQ            sp2_sp2_19          CG         CD2         CE3         CZ3     180.000   10.00     2
+TRQ             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+TRQ            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+TRQ             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+TRQ              const_18         CE2         CD2          CG          CB     180.000   10.00     2
+TRQ       const_sp2_sp2_2         NE1         CD1          CG          CB     180.000   10.00     2
+TRQ       const_sp2_sp2_5          CG         CD1         NE1         CE2       0.000   10.00     2
+TRQ              const_11         CZ2         CE2         NE1         CD1     180.000   10.00     2
+TRQ             sp2_sp2_4         NE1         CE2         CZ2          O7       0.000   10.00     2
+TRQ              const_13          CG         CD2         CE2         NE1       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TRQ    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TRQ    plan-1          CB   0.020
+TRQ    plan-1         CD1   0.020
+TRQ    plan-1         CD2   0.020
+TRQ    plan-1         CE2   0.020
+TRQ    plan-1         CE3   0.020
+TRQ    plan-1          CG   0.020
+TRQ    plan-1         CZ2   0.020
+TRQ    plan-1         HD1   0.020
+TRQ    plan-1         HE1   0.020
+TRQ    plan-1         NE1   0.020
+TRQ    plan-2           C   0.020
+TRQ    plan-2          CA   0.020
+TRQ    plan-2           O   0.020
+TRQ    plan-2         OXT   0.020
+TRQ    plan-3         CE2   0.020
+TRQ    plan-3         CH2   0.020
+TRQ    plan-3         CZ2   0.020
+TRQ    plan-3          O7   0.020
+TRQ    plan-4         CH2   0.020
+TRQ    plan-4         CZ2   0.020
+TRQ    plan-4         CZ3   0.020
+TRQ    plan-4          O6   0.020
+TRQ    plan-5         CE3   0.020
+TRQ    plan-5         CH2   0.020
+TRQ    plan-5         CZ3   0.020
+TRQ    plan-5         HZ3   0.020
+TRQ    plan-6         CD2   0.020
+TRQ    plan-6         CE3   0.020
+TRQ    plan-6         CZ3   0.020
+TRQ    plan-6         HE3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TRQ SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc2c1C=CC(=O)C(=O)c1nc2"
+TRQ SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1c[nH]c2C(=O)C(=O)C=Cc12)C(O)=O"
+TRQ SMILES           CACTVS               3.341 "N[CH](Cc1c[nH]c2C(=O)C(=O)C=Cc12)C(O)=O"
+TRQ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(c2c([nH]1)C(=O)C(=O)C=C2)C[C@@H](C(=O)O)N"
+TRQ SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(c2c([nH]1)C(=O)C(=O)C=C2)CC(C(=O)O)N"
+TRQ InChI            InChI                1.03  "InChI=1S/C11H10N2O4/c12-7(11(16)17)3-5-4-13-9-6(5)1-2-8(14)10(9)15/h1-2,4,7,13H,3,12H2,(H,16,17)/t7-/m0/s1"
+TRQ InChIKey         InChI                1.03  QNXHRZBZDHLGQO-ZETCQYMHSA-N
+TRQ ?                acedrg               196         "dictionary generator"
+TRQ ?                acedrg_database      11          "data source"
+TRQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TRQ ?                refmac5              5.8.0222    "optimization tool"

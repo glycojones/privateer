@@ -1,0 +1,149 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TRC     TRC      "TRICARBALLYLIC ACID"     NON-POLYMER     17     12     .     
+#
+data_comp_TRC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TRC     C1      C       C       0       76.744      43.527      28.896      
+TRC     O1      O       O       0       76.885      44.580      29.548      
+TRC     O2      O       OC      -1      77.420      43.241      27.888      
+TRC     C2      C       CH2     0       75.688      42.535      29.355      
+TRC     C3      C       CH1     0       76.167      41.599      30.471      
+TRC     C4      C       CH2     0       74.998      40.896      31.172      
+TRC     C5      C       C       0       74.143      40.013      30.275      
+TRC     O3      O       O       0       74.441      38.806      30.182      
+TRC     O4      O       OC      -1      73.183      40.538      29.675      
+TRC     C6      C       C       0       77.236      40.596      30.007      
+TRC     O5      O       O       0       77.063      39.981      28.932      
+TRC     O6      O       OC      -1      78.237      40.439      30.735      
+TRC     H21     H       H       0       75.403      42.013      28.587      
+TRC     H22     H       H       0       74.916      43.036      29.670      
+TRC     H3      H       H       0       76.608      42.160      31.146      
+TRC     H41     H       H       0       74.422      41.568      31.573      
+TRC     H42     H       H       0       75.348      40.346      31.893      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TRC       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+TRC       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+TRC       C1        C2        SINGLE    n         1.519     0.012     1.519     0.012     
+TRC       C2        C3        SINGLE    n         1.530     0.010     1.530     0.010     
+TRC       C3        C4        SINGLE    n         1.530     0.010     1.530     0.010     
+TRC       C3        C6        SINGLE    n         1.533     0.011     1.533     0.011     
+TRC       C4        C5        SINGLE    n         1.519     0.012     1.519     0.012     
+TRC       C5        O3        DOUBLE    n         1.247     0.019     1.247     0.019     
+TRC       C5        O4        SINGLE    n         1.247     0.019     1.247     0.019     
+TRC       C6        O5        DOUBLE    n         1.247     0.019     1.247     0.019     
+TRC       C6        O6        SINGLE    n         1.247     0.019     1.247     0.019     
+TRC       C2        H21       SINGLE    n         1.089     0.010     0.972     0.013     
+TRC       C2        H22       SINGLE    n         1.089     0.010     0.972     0.013     
+TRC       C3        H3        SINGLE    n         1.089     0.010     0.982     0.020     
+TRC       C4        H41       SINGLE    n         1.089     0.010     0.972     0.013     
+TRC       C4        H42       SINGLE    n         1.089     0.010     0.972     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TRC          O1          C1          O2     123.742    1.50
+TRC          O1          C1          C2     118.129    1.68
+TRC          O2          C1          C2     118.129    1.68
+TRC          C1          C2          C3     113.398    1.64
+TRC          C1          C2         H21     108.462    1.50
+TRC          C1          C2         H22     108.462    1.50
+TRC          C3          C2         H21     109.189    1.50
+TRC          C3          C2         H22     109.189    1.50
+TRC         H21          C2         H22     107.639    1.50
+TRC          C2          C3          C4     111.094    2.85
+TRC          C2          C3          C6     111.066    2.42
+TRC          C2          C3          H3     108.361    1.50
+TRC          C4          C3          C6     111.066    2.42
+TRC          C4          C3          H3     108.361    1.50
+TRC          C6          C3          H3     107.706    1.93
+TRC          C3          C4          C5     113.398    1.64
+TRC          C3          C4         H41     109.189    1.50
+TRC          C3          C4         H42     109.189    1.50
+TRC          C5          C4         H41     108.462    1.50
+TRC          C5          C4         H42     108.462    1.50
+TRC         H41          C4         H42     107.639    1.50
+TRC          C4          C5          O3     118.129    1.68
+TRC          C4          C5          O4     118.129    1.68
+TRC          O3          C5          O4     123.742    1.50
+TRC          C3          C6          O5     118.051    1.50
+TRC          C3          C6          O6     118.051    1.50
+TRC          O5          C6          O6     123.899    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TRC             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+TRC             sp3_sp3_1          C1          C2          C3          C4     180.000   10.00     3
+TRC            sp3_sp3_10          C2          C3          C4          C5     180.000   10.00     3
+TRC             sp2_sp3_8          O5          C6          C3          C2     120.000   10.00     6
+TRC            sp2_sp3_14          O3          C5          C4          C3     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TRC    plan-1          C1   0.020
+TRC    plan-1          C2   0.020
+TRC    plan-1          O1   0.020
+TRC    plan-1          O2   0.020
+TRC    plan-2          C4   0.020
+TRC    plan-2          C5   0.020
+TRC    plan-2          O3   0.020
+TRC    plan-2          O4   0.020
+TRC    plan-3          C3   0.020
+TRC    plan-3          C6   0.020
+TRC    plan-3          O5   0.020
+TRC    plan-3          O6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TRC SMILES           ACDLabs              10.04 "O=C(O)CC(C(=O)O)CC(=O)O"
+TRC SMILES_CANONICAL CACTVS               3.341 "OC(=O)CC(CC(O)=O)C(O)=O"
+TRC SMILES           CACTVS               3.341 "OC(=O)CC(CC(O)=O)C(O)=O"
+TRC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(CC(=O)O)C(=O)O)C(=O)O"
+TRC SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(CC(=O)O)C(=O)O)C(=O)O"
+TRC InChI            InChI                1.03  "InChI=1S/C6H8O6/c7-4(8)1-3(6(11)12)2-5(9)10/h3H,1-2H2,(H,7,8)(H,9,10)(H,11,12)"
+TRC InChIKey         InChI                1.03  KQTIIICEAUMSDG-UHFFFAOYSA-N
+TRC ?                acedrg               202         "dictionary generator"                  
+TRC ?                acedrg_database      11          "data source"                           
+TRC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TRC ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,125 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CUZ      CUZ '(MU-4-SULFIDO)-TETRA-NUCLEAR COPPER ' non-polymer         5   5 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CUZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CUZ           CU1    CU   CU        0.000    109.445   32.490   -5.787
+ CUZ           S1     S    ST        0.000    109.822   34.742   -5.721
+ CUZ           CU2    CU   CU        0.000    112.056   34.438   -5.106
+ CUZ           CU3    CU   CU        0.000    110.644   34.065   -8.097
+ CUZ           CU4    CU   CU        0.000    108.226   33.930   -7.437
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CUZ      CU1    n/a    S1     START
+ CUZ      S1     CU1    CU4    .
+ CUZ      CU2    S1     .      .
+ CUZ      CU3    S1     .      .
+ CUZ      CU4    S1     .      END
+ CUZ      CU1    CU3    .    ADD
+ CUZ      CU1    CU4    .    ADD
+ CUZ      CU2    CU3    .    ADD
+ CUZ      CU2    CU4    .    ADD
+ CUZ      CU3    CU4    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CUZ       CU1       CU3       single    2.750     0.020     2.750     0.020     
+CUZ       CU1       CU4       single    2.750     0.020     2.750     0.020     
+CUZ       S1        CU1       single    2.275     0.020     2.275     0.020     
+CUZ       CU2       CU3       single    2.750     0.020     2.750     0.020     
+CUZ       CU2       CU4       single    2.750     0.020     2.750     0.020     
+CUZ       CU2       S1        single    2.275     0.020     2.275     0.020     
+CUZ       CU3       CU4       single    2.750     0.020     2.750     0.020     
+CUZ       CU3       S1        single    2.275     0.020     2.275     0.020     
+CUZ       CU4       S1        single    2.275     0.020     2.275     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CUZ      CU3    CU1    CU4      60.000    3.000
+ CUZ      S1     CU1    CU3      52.815    3.000
+ CUZ      S1     CU1    CU4      52.815    3.000
+ CUZ      CU1    S1     CU2     109.500    3.000
+ CUZ      CU1    S1     CU3      74.371    3.000
+ CUZ      CU1    S1     CU4      74.371    3.000
+ CUZ      CU2    S1     CU3      74.371    3.000
+ CUZ      CU2    S1     CU4      74.371    3.000
+ CUZ      CU3    S1     CU4      74.371    3.000
+ CUZ      S1     CU2    CU3      52.815    3.000
+ CUZ      S1     CU2    CU4      52.815    3.000
+ CUZ      CU3    CU2    CU4      60.000    3.000
+ CUZ      S1     CU3    CU1      52.815    3.000
+ CUZ      S1     CU3    CU2      52.815    3.000
+ CUZ      S1     CU3    CU4      52.815    3.000
+ CUZ      CU1    CU3    CU2      90.000    3.000
+ CUZ      CU1    CU3    CU4      60.000    3.000
+ CUZ      CU2    CU3    CU4      60.000    3.000
+ CUZ      S1     CU4    CU1      52.815    3.000
+ CUZ      S1     CU4    CU2      52.815    3.000
+ CUZ      S1     CU4    CU3      52.815    3.000
+ CUZ      CU1    CU4    CU2      90.000    3.000
+ CUZ      CU1    CU4    CU3      60.000    3.000
+ CUZ      CU2    CU4    CU3      60.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CUZ      var_1    CU1    S1     CU2    CU3       76.386   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CUZ      chir_01  S1     CU1    CU2    CU3       negativ
+# ------------------------------------------------------

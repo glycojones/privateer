@@ -1,0 +1,181 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AQO     AQO      "2-AMINOQUINAZOLIN-4(3H)-ONE"     NON-POLYMER     19     12     .     
+#
+data_comp_AQO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AQO     C1      C       CR16    0       18.136      17.137      19.154      
+AQO     C2      C       CR16    0       16.829      16.735      18.792      
+AQO     C3      C       CR16    0       15.847      16.587      19.737      
+AQO     C4      C       CR66    0       16.121      16.833      21.095      
+AQO     N5      N       NRD6    0       15.107      16.674      22.028      
+AQO     C6      C       CR6     0       15.377      16.910      23.322      
+AQO     N7      N       NH2     0       14.419      16.766      24.245      
+AQO     N8      N       NR6     0       16.628      17.305      23.753      
+AQO     C9      C       CR6     0       17.705      17.490      22.892      
+AQO     O10     O       O       0       18.797      17.843      23.344      
+AQO     C11     C       CR66    0       17.443      17.240      21.472      
+AQO     C12     C       CR16    0       18.449      17.387      20.472      
+AQO     HC1     H       H       0       18.798      17.233      18.488      
+AQO     HC2     H       H       0       16.629      16.567      17.885      
+AQO     HC3     H       H       0       14.981      16.319      19.479      
+AQO     H71     H       H       0       14.379      17.320      24.923      
+AQO     H72     H       H       0       13.833      16.118      24.168      
+AQO     H8      H       H       0       16.754      17.448      24.620      
+AQO     H12     H       H       0       19.317      17.653      20.705      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AQO       C1        C2        DOUBLE    y         1.403     0.012     1.403     0.012     
+AQO       C1        C12       SINGLE    y         1.371     0.010     1.371     0.010     
+AQO       C2        C3        SINGLE    y         1.363     0.010     1.363     0.010     
+AQO       C3        C4        DOUBLE    y         1.401     0.010     1.401     0.010     
+AQO       C4        N5        SINGLE    y         1.381     0.010     1.381     0.010     
+AQO       C4        C11       SINGLE    y         1.419     0.014     1.419     0.014     
+AQO       N5        C6        DOUBLE    y         1.321     0.017     1.321     0.017     
+AQO       C6        N7        SINGLE    n         1.337     0.012     1.337     0.012     
+AQO       C6        N8        SINGLE    y         1.372     0.010     1.372     0.010     
+AQO       N8        C9        SINGLE    y         1.377     0.013     1.377     0.013     
+AQO       C9        O10       DOUBLE    n         1.232     0.010     1.232     0.010     
+AQO       C9        C11       SINGLE    y         1.460     0.010     1.460     0.010     
+AQO       C11       C12       DOUBLE    y         1.418     0.012     1.418     0.012     
+AQO       C1        HC1       SINGLE    n         1.082     0.013     0.944     0.018     
+AQO       C2        HC2       SINGLE    n         1.082     0.013     0.944     0.020     
+AQO       C3        HC3       SINGLE    n         1.082     0.013     0.943     0.020     
+AQO       N7        H71       SINGLE    n         1.016     0.010     0.877     0.020     
+AQO       N7        H72       SINGLE    n         1.016     0.010     0.877     0.020     
+AQO       N8        H8        SINGLE    n         1.016     0.010     0.886     0.020     
+AQO       C12       H12       SINGLE    n         1.082     0.013     0.937     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AQO          C2          C1         C12     120.241    1.50
+AQO          C2          C1         HC1     119.852    1.50
+AQO         C12          C1         HC1     119.908    1.50
+AQO          C1          C2          C3     120.636    1.50
+AQO          C1          C2         HC2     119.756    1.50
+AQO          C3          C2         HC2     119.608    1.50
+AQO          C2          C3          C4     120.150    1.50
+AQO          C2          C3         HC3     120.209    1.50
+AQO          C4          C3         HC3     119.641    1.50
+AQO          C3          C4          N5     118.592    1.50
+AQO          C3          C4         C11     118.928    1.50
+AQO          N5          C4         C11     122.480    1.50
+AQO          C4          N5          C6     118.263    1.50
+AQO          N5          C6          N7     120.495    1.50
+AQO          N5          C6          N8     121.782    1.50
+AQO          N7          C6          N8     117.723    1.50
+AQO          C6          N7         H71     119.834    1.50
+AQO          C6          N7         H72     119.834    1.50
+AQO         H71          N7         H72     120.331    1.96
+AQO          C6          N8          C9     122.580    1.50
+AQO          C6          N8          H8     118.840    1.59
+AQO          C9          N8          H8     118.580    1.50
+AQO          N8          C9         O10     119.954    1.50
+AQO          N8          C9         C11     116.076    1.50
+AQO         O10          C9         C11     123.970    1.50
+AQO          C4         C11          C9     118.819    1.50
+AQO          C4         C11         C12     120.239    1.50
+AQO          C9         C11         C12     120.943    1.50
+AQO          C1         C12         C11     119.807    1.50
+AQO          C1         C12         H12     119.910    1.50
+AQO         C11         C12         H12     120.283    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AQO       const_sp2_sp2_1         C12          C1          C2          C3       0.000   10.00     2
+AQO              const_37          C2          C1         C12         C11       0.000   10.00     2
+AQO              const_17          C4         C11         C12          C1       0.000   10.00     2
+AQO       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+AQO              const_10          C2          C3          C4          N5     180.000   10.00     2
+AQO              const_14          C9         C11          C4          C3     180.000   10.00     2
+AQO              const_22          C3          C4          N5          C6     180.000   10.00     2
+AQO              const_24          N7          C6          N5          C4     180.000   10.00     2
+AQO             sp2_sp2_3          N5          C6          N7         H71       0.000   10.00     2
+AQO              const_27          N7          C6          N8          C9     180.000   10.00     2
+AQO              const_31         O10          C9          N8          C6     180.000   10.00     2
+AQO              const_34          C4         C11          C9         O10     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AQO    plan-1          C1   0.020
+AQO    plan-1         C11   0.020
+AQO    plan-1         C12   0.020
+AQO    plan-1          C2   0.020
+AQO    plan-1          C3   0.020
+AQO    plan-1          C4   0.020
+AQO    plan-1          C9   0.020
+AQO    plan-1         H12   0.020
+AQO    plan-1         HC1   0.020
+AQO    plan-1         HC2   0.020
+AQO    plan-1         HC3   0.020
+AQO    plan-1          N5   0.020
+AQO    plan-2         C11   0.020
+AQO    plan-2         C12   0.020
+AQO    plan-2          C3   0.020
+AQO    plan-2          C4   0.020
+AQO    plan-2          C6   0.020
+AQO    plan-2          C9   0.020
+AQO    plan-2          H8   0.020
+AQO    plan-2          N5   0.020
+AQO    plan-2          N7   0.020
+AQO    plan-2          N8   0.020
+AQO    plan-2         O10   0.020
+AQO    plan-3          C6   0.020
+AQO    plan-3         H71   0.020
+AQO    plan-3         H72   0.020
+AQO    plan-3          N7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AQO SMILES           ACDLabs              10.04 "O=C1c2c(N=C(N1)N)cccc2"
+AQO SMILES_CANONICAL CACTVS               3.341 "NC1=Nc2ccccc2C(=O)N1"
+AQO SMILES           CACTVS               3.341 "NC1=Nc2ccccc2C(=O)N1"
+AQO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)C(=O)NC(=N2)N"
+AQO SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)C(=O)NC(=N2)N"
+AQO InChI            InChI                1.03  "InChI=1S/C8H7N3O/c9-8-10-6-4-2-1-3-5(6)7(12)11-8/h1-4H,(H3,9,10,11,12)"
+AQO InChIKey         InChI                1.03  SDTFBAXSPXZDKC-UHFFFAOYSA-N
+AQO ?                acedrg               202         "dictionary generator"                  
+AQO ?                acedrg_database      11          "data source"                           
+AQO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AQO ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,153 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FLC     FLC      "CITRATE ANION"     NON-POLYMER     18     13     .     
+#
+data_comp_FLC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FLC     CAC     C       C       0       2.371       -0.507      0.365       
+FLC     CA      C       CH2     0       0.932       -0.756      -0.061      
+FLC     CB      C       CT      0       0.045       0.496       -0.203      
+FLC     CBC     C       C       0       -0.112      1.250       1.158       
+FLC     CG      C       CH2     0       -1.338      0.090       -0.742      
+FLC     CGC     C       C       0       -2.216      -0.762      0.162       
+FLC     OA1     O       O       0       3.188       -0.149      -0.507      
+FLC     OA2     O       OC      -1      2.666       -0.673      1.566       
+FLC     OB1     O       O       0       -0.292      2.488       1.111       
+FLC     OB2     O       OC      -1      -0.076      0.585       2.217       
+FLC     OG1     O       O       0       -3.037      -0.182      0.901       
+FLC     OG2     O       OC      -1      -2.074      -2.000      0.121       
+FLC     OHB     O       OH1     0       0.647       1.357       -1.159      
+FLC     HA1     H       H       0       0.529       -1.370      0.585       
+FLC     HA2     H       H       0       0.950       -1.216      -0.925      
+FLC     HG1     H       H       0       -1.207      -0.398      -1.581      
+FLC     HG2     H       H       0       -1.832      0.907       -0.958      
+FLC     HOB     H       H       0       0.738       0.970       -1.912      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FLC       CAC       CA        SINGLE    n         1.519     0.012     1.519     0.012     
+FLC       CAC       OA1       DOUBLE    n         1.247     0.019     1.247     0.019     
+FLC       CAC       OA2       SINGLE    n         1.247     0.019     1.247     0.019     
+FLC       CA        CB        SINGLE    n         1.534     0.010     1.534     0.010     
+FLC       CB        CBC       SINGLE    n         1.551     0.012     1.551     0.012     
+FLC       CB        CG        SINGLE    n         1.534     0.010     1.534     0.010     
+FLC       CB        OHB       SINGLE    n         1.417     0.010     1.417     0.010     
+FLC       CBC       OB1       DOUBLE    n         1.247     0.019     1.247     0.019     
+FLC       CBC       OB2       SINGLE    n         1.247     0.019     1.247     0.019     
+FLC       CG        CGC       SINGLE    n         1.519     0.012     1.519     0.012     
+FLC       CGC       OG1       DOUBLE    n         1.247     0.019     1.247     0.019     
+FLC       CGC       OG2       SINGLE    n         1.247     0.019     1.247     0.019     
+FLC       CA        HA1       SINGLE    n         1.089     0.010     0.979     0.016     
+FLC       CA        HA2       SINGLE    n         1.089     0.010     0.979     0.016     
+FLC       CG        HG1       SINGLE    n         1.089     0.010     0.979     0.016     
+FLC       CG        HG2       SINGLE    n         1.089     0.010     0.979     0.016     
+FLC       OHB       HOB       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FLC          CA         CAC         OA1     118.090    1.84
+FLC          CA         CAC         OA2     118.090    1.84
+FLC         OA1         CAC         OA2     123.820    1.50
+FLC         CAC          CA          CB     115.470    1.57
+FLC         CAC          CA         HA1     108.477    1.50
+FLC         CAC          CA         HA2     108.477    1.50
+FLC          CB          CA         HA1     108.739    1.50
+FLC          CB          CA         HA2     108.739    1.50
+FLC         HA1          CA         HA2     107.711    1.51
+FLC          CA          CB         CBC     109.606    1.52
+FLC          CA          CB          CG     108.961    1.71
+FLC          CA          CB         OHB     109.404    1.81
+FLC         CBC          CB          CG     109.606    1.52
+FLC         CBC          CB         OHB     110.081    1.50
+FLC          CG          CB         OHB     109.404    1.81
+FLC          CB         CBC         OB1     117.335    1.81
+FLC          CB         CBC         OB2     117.335    1.81
+FLC         OB1         CBC         OB2     125.331    1.50
+FLC          CB          CG         CGC     115.470    1.57
+FLC          CB          CG         HG1     108.739    1.50
+FLC          CB          CG         HG2     108.739    1.50
+FLC         CGC          CG         HG1     108.477    1.50
+FLC         CGC          CG         HG2     108.477    1.50
+FLC         HG1          CG         HG2     107.711    1.51
+FLC          CG         CGC         OG1     118.090    1.84
+FLC          CG         CGC         OG2     118.090    1.84
+FLC         OG1         CGC         OG2     123.820    1.50
+FLC          CB         OHB         HOB     108.694    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FLC             sp2_sp3_2         OA1         CAC          CA          CB     120.000   10.00     6
+FLC             sp3_sp3_1         CAC          CA          CB         CBC     180.000   10.00     3
+FLC            sp3_sp3_19          CA          CB         OHB         HOB     180.000   10.00     3
+FLC             sp2_sp3_7         OB1         CBC          CB          CA       0.000   10.00     6
+FLC            sp3_sp3_10          CA          CB          CG         CGC     180.000   10.00     3
+FLC            sp2_sp3_14         OG1         CGC          CG          CB     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FLC    plan-1          CA   0.020
+FLC    plan-1         CAC   0.020
+FLC    plan-1         OA1   0.020
+FLC    plan-1         OA2   0.020
+FLC    plan-2          CB   0.020
+FLC    plan-2         CBC   0.020
+FLC    plan-2         OB1   0.020
+FLC    plan-2         OB2   0.020
+FLC    plan-3          CG   0.020
+FLC    plan-3         CGC   0.020
+FLC    plan-3         OG1   0.020
+FLC    plan-3         OG2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FLC SMILES           ACDLabs              10.04 "O=C([O-])CC(O)(C([O-])=O)CC(=O)[O-]"
+FLC SMILES_CANONICAL CACTVS               3.341 "OC(CC([O-])=O)(CC([O-])=O)C([O-])=O"
+FLC SMILES           CACTVS               3.341 "OC(CC([O-])=O)(CC([O-])=O)C([O-])=O"
+FLC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)[O-])C(CC(=O)[O-])(C(=O)[O-])O"
+FLC SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)[O-])C(CC(=O)[O-])(C(=O)[O-])O"
+FLC InChI            InChI                1.03  "InChI=1S/C6H8O7/c7-3(8)1-6(13,5(11)12)2-4(9)10/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12)/p-3"
+FLC InChIKey         InChI                1.03  KRKNYBCHXYNGOX-UHFFFAOYSA-K
+FLC ?                acedrg               202         "dictionary generator"                  
+FLC ?                acedrg_database      11          "data source"                           
+FLC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FLC ?                refmac5              5.8.0189    "optimization tool"                     

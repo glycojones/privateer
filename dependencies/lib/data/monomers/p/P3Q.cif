@@ -1,0 +1,402 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+P3Q     P3Q     "2-hydroxy-5-{[(1E)-1-(2-oxoethylidene)-4-phenylbutyl]amino}-L-tyrosine"     peptide   52     28     .
+#
+data_comp_P3Q
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+P3Q     C       C       C       0       -0.698      5.178       26.577
+P3Q     N       N       NT3     1       0.563       3.581       25.177
+P3Q     O       O       O       0       0.338       5.688       27.048
+P3Q     C1      C       C       0       2.920       -1.347      26.475
+P3Q     C2      C       CH2     0       3.785       -0.913      25.314
+P3Q     C3      C       CH2     0       3.749       0.595       25.077
+P3Q     C4      C       CH2     0       4.616       1.041       23.906
+P3Q     C5      C       CR6     0       4.477       2.505       23.558
+P3Q     C6      C       CR16    0       5.493       3.409       23.846
+P3Q     C7      C       CR16    0       5.360       4.755       23.525
+P3Q     C8      C       CR16    0       4.210       5.211       22.915
+P3Q     C9      C       CR16    0       3.193       4.327       22.624
+P3Q     CA      C       CH1     0       -0.605      3.727       26.089
+P3Q     CB      C       CH2     0       -0.497      2.762       27.274
+P3Q     CG      C       CR6     0       -0.607      1.301       26.903
+P3Q     CZ      C       CR6     0       -0.784      -1.419      26.208
+P3Q     C10     C       CR16    0       3.325       2.981       22.944
+P3Q     C11     C       C1      0       3.353       -1.467      27.771
+P3Q     C12     C       C1      0       4.491       -0.972      28.295
+P3Q     O12     O       O       0       4.869       -1.160      29.434
+P3Q     OAD     O       OH1     0       -3.004      1.384       26.921
+P3Q     NAE     N       NH1     0       1.635       -1.594      26.163
+P3Q     OAZ     O       OH1     0       -0.841      -2.730      25.874
+P3Q     CD1     C       CR16    0       0.544       0.543       26.708
+P3Q     CD2     C       CR6     0       -1.852      0.674       26.742
+P3Q     CE1     C       CR6     0       0.469       -0.806      26.366
+P3Q     CE2     C       CR16    0       -1.939      -0.671      26.399
+P3Q     OXT     O       OC      -1      -1.802      5.747       26.469
+P3Q     H       H       H       0       0.517       2.782       24.741
+P3Q     H2      H       H       0       1.336       3.618       25.657
+P3Q     H3      H       H       0       0.561       4.252       24.560
+P3Q     HC2     H       H       0       3.484       -1.368      24.499
+P3Q     H2A     H       H       0       4.712       -1.187      25.476
+P3Q     HC3     H       H       0       4.054       1.055       25.891
+P3Q     H3A     H       H       0       2.820       0.870       24.905
+P3Q     HC4     H       H       0       4.378       0.507       23.119
+P3Q     H4A     H       H       0       5.555       0.853       24.121
+P3Q     HC6     H       H       0       6.283       3.105       24.263
+P3Q     HC7     H       H       0       6.058       5.357       23.726
+P3Q     HC8     H       H       0       4.120       6.125       22.697
+P3Q     HC9     H       H       0       2.405       4.636       22.206
+P3Q     HA      H       H       0       -1.430      3.514       25.582
+P3Q     HB      H       H       0       -1.200      2.982       27.920
+P3Q     HBA     H       H       0       0.366       2.912       27.714
+P3Q     H10     H       H       0       2.624       2.382       22.741
+P3Q     H11     H       H       0       2.781       -1.953      28.343
+P3Q     H12     H       H       0       5.036       -0.420      27.726
+P3Q     HOAD    H       H       0       -3.094      1.925       26.262
+P3Q     HNAE    H       H       0       1.505       -2.364      25.768
+P3Q     HOAZ    H       H       0       -1.217      -2.811      25.107
+P3Q     HD1     H       H       0       1.385       0.952       26.813
+P3Q     HE2     H       H       0       -2.783      -1.079      26.294
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+P3Q      N      n/a    CA     START
+P3Q      H      N      .      .
+P3Q      H2     N      .      .
+P3Q      H3     N      .      .
+P3Q      CA     N      C      .
+P3Q      HA     CA     .      .
+P3Q      CB     CA     CG     .
+P3Q      HB     CB     .      .
+P3Q      HBA    CB     .      .
+P3Q      CG     CB     CD2    .
+P3Q      CD2    CG     CE2    .
+P3Q      OAD    CD2    HOAD   .
+P3Q      HOAD   OAD    .      .
+P3Q      CE2    CD2    CZ     .
+P3Q      HE2    CE2    .      .
+P3Q      CZ     CE2    CE1    .
+P3Q      OAZ    CZ     HOAZ   .
+P3Q      HOAZ   OAZ    .      .
+P3Q      CE1    CZ     NAE    .
+P3Q      CD1    CE1    HD1    .
+P3Q      HD1    CD1    .      .
+P3Q      NAE    CE1    C1     .
+P3Q      HNAE   NAE    .      .
+P3Q      C1     NAE    C11    .
+P3Q      C2     C1     C3     .
+P3Q      HC2    C2     .      .
+P3Q      H2A    C2     .      .
+P3Q      C3     C2     C4     .
+P3Q      HC3    C3     .      .
+P3Q      H3A    C3     .      .
+P3Q      C4     C3     C5     .
+P3Q      HC4    C4     .      .
+P3Q      H4A    C4     .      .
+P3Q      C5     C4     C10    .
+P3Q      C10    C5     C9     .
+P3Q      H10    C10    .      .
+P3Q      C9     C10    C8     .
+P3Q      HC9    C9     .      .
+P3Q      C8     C9     C7     .
+P3Q      HC8    C8     .      .
+P3Q      C7     C8     C6     .
+P3Q      HC7    C7     .      .
+P3Q      C6     C7     HC6    .
+P3Q      HC6    C6     .      .
+P3Q      C11    C1     C12    .
+P3Q      H11    C11    .      .
+P3Q      C12    C11    O12    .
+P3Q      H12    C12    .      .
+P3Q      O12    C12    .      .
+P3Q      C      CA     OXT    .
+P3Q      O      C      .      .
+P3Q      OXT    C      .      END
+P3Q      C5     C6     .    ADD
+P3Q      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+P3Q       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+P3Q       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+P3Q       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+P3Q       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+P3Q       C1        C2        SINGLE    n         1.509     0.012     1.509     0.012     
+P3Q       C1        NAE       SINGLE    n         1.343     0.012     1.343     0.012     
+P3Q       C1        C11       DOUBLE    n         1.365     0.017     1.365     0.017     
+P3Q       C2        C3        SINGLE    n         1.527     0.014     1.527     0.014     
+P3Q       C3        C4        SINGLE    n         1.524     0.020     1.524     0.020     
+P3Q       C4        C5        SINGLE    n         1.510     0.010     1.510     0.010     
+P3Q       C5        C10       SINGLE    y         1.385     0.011     1.385     0.011     
+P3Q       C5        C6        DOUBLE    y         1.385     0.011     1.385     0.011     
+P3Q       C6        C7        SINGLE    y         1.386     0.010     1.386     0.010     
+P3Q       C7        C8        DOUBLE    y         1.376     0.012     1.376     0.012     
+P3Q       C8        C9        SINGLE    y         1.374     0.013     1.374     0.013     
+P3Q       C9        C10       DOUBLE    y         1.386     0.010     1.386     0.010     
+P3Q       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+P3Q       CB        CG        SINGLE    n         1.509     0.010     1.509     0.010     
+P3Q       CG        CD1       DOUBLE    y         1.388     0.010     1.388     0.010     
+P3Q       CG        CD2       SINGLE    y         1.398     0.010     1.398     0.010     
+P3Q       CZ        OAZ       SINGLE    n         1.353     0.010     1.353     0.010     
+P3Q       CZ        CE1       DOUBLE    y         1.399     0.010     1.399     0.010     
+P3Q       CZ        CE2       SINGLE    y         1.385     0.011     1.385     0.011     
+P3Q       C11       C12       SINGLE    n         1.340     0.020     1.340     0.020     
+P3Q       C12       O12       DOUBLE    n         1.215     0.011     1.215     0.011     
+P3Q       OAD       CD2       SINGLE    n         1.364     0.013     1.364     0.013     
+P3Q       NAE       CE1       SINGLE    n         1.417     0.011     1.417     0.011     
+P3Q       CD1       CE1       SINGLE    y         1.388     0.010     1.388     0.010     
+P3Q       CD2       CE2       DOUBLE    y         1.387     0.010     1.387     0.010     
+P3Q       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+P3Q       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+P3Q       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+P3Q       C2        HC2       SINGLE    n         1.089     0.010     0.981     0.019     
+P3Q       C2        H2A       SINGLE    n         1.089     0.010     0.981     0.019     
+P3Q       C3        HC3       SINGLE    n         1.089     0.010     0.984     0.016     
+P3Q       C3        H3A       SINGLE    n         1.089     0.010     0.984     0.016     
+P3Q       C4        HC4       SINGLE    n         1.089     0.010     0.981     0.015     
+P3Q       C4        H4A       SINGLE    n         1.089     0.010     0.981     0.015     
+P3Q       C6        HC6       SINGLE    n         1.082     0.013     0.944     0.017     
+P3Q       C7        HC7       SINGLE    n         1.082     0.013     0.944     0.018     
+P3Q       C8        HC8       SINGLE    n         1.082     0.013     0.944     0.016     
+P3Q       C9        HC9       SINGLE    n         1.082     0.013     0.944     0.018     
+P3Q       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+P3Q       CB        HB        SINGLE    n         1.089     0.010     0.980     0.016     
+P3Q       CB        HBA       SINGLE    n         1.089     0.010     0.980     0.016     
+P3Q       C10       H10       SINGLE    n         1.082     0.013     0.944     0.017     
+P3Q       C11       H11       SINGLE    n         1.082     0.013     0.943     0.020     
+P3Q       C12       H12       SINGLE    n         1.082     0.013     0.962     0.020     
+P3Q       OAD       HOAD      SINGLE    n         0.970     0.012     0.858     0.020     
+P3Q       NAE       HNAE      SINGLE    n         1.016     0.010     0.874     0.020     
+P3Q       OAZ       HOAZ      SINGLE    n         0.970     0.012     0.858     0.020     
+P3Q       CD1       HD1       SINGLE    n         1.082     0.013     0.942     0.014     
+P3Q       CE2       HE2       SINGLE    n         1.082     0.013     0.943     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+P3Q          CA           C           O     117.228    2.13
+P3Q          CA           C         OXT     117.228    2.13
+P3Q           O           C         OXT     125.543    1.50
+P3Q          CA           N           H     109.646    1.54
+P3Q          CA           N          H2     109.646    1.54
+P3Q          CA           N          H3     109.646    1.54
+P3Q           H           N          H2     109.028    2.41
+P3Q           H           N          H3     109.028    2.41
+P3Q          H2           N          H3     109.028    2.41
+P3Q          C2          C1         NAE     116.459    1.98
+P3Q          C2          C1         C11     122.379    3.00
+P3Q         NAE          C1         C11     121.162    1.61
+P3Q          C1          C2          C3     113.330    2.27
+P3Q          C1          C2         HC2     109.333    1.50
+P3Q          C1          C2         H2A     109.333    1.50
+P3Q          C3          C2         HC2     108.844    1.50
+P3Q          C3          C2         H2A     108.844    1.50
+P3Q         HC2          C2         H2A     107.424    1.50
+P3Q          C2          C3          C4     112.984    1.80
+P3Q          C2          C3         HC3     108.915    1.50
+P3Q          C2          C3         H3A     108.915    1.50
+P3Q          C4          C3         HC3     108.763    1.50
+P3Q          C4          C3         H3A     108.763    1.50
+P3Q         HC3          C3         H3A     107.749    1.50
+P3Q          C3          C4          C5     114.548    2.35
+P3Q          C3          C4         HC4     108.665    1.50
+P3Q          C3          C4         H4A     108.665    1.50
+P3Q          C5          C4         HC4     108.803    1.50
+P3Q          C5          C4         H4A     108.803    1.50
+P3Q         HC4          C4         H4A     107.745    1.50
+P3Q          C4          C5         C10     120.970    1.50
+P3Q          C4          C5          C6     120.970    1.50
+P3Q         C10          C5          C6     118.060    1.50
+P3Q          C5          C6          C7     120.624    1.50
+P3Q          C5          C6         HC6     119.591    1.50
+P3Q          C7          C6         HC6     119.786    1.50
+P3Q          C6          C7          C8     120.325    1.50
+P3Q          C6          C7         HC7     119.792    1.50
+P3Q          C8          C7         HC7     119.883    1.50
+P3Q          C7          C8          C9     120.043    1.50
+P3Q          C7          C8         HC8     119.979    1.50
+P3Q          C9          C8         HC8     119.979    1.50
+P3Q          C8          C9         C10     120.325    1.50
+P3Q          C8          C9         HC9     119.883    1.50
+P3Q         C10          C9         HC9     119.792    1.50
+P3Q           C          CA           N     109.448    1.50
+P3Q           C          CA          CB     111.331    2.53
+P3Q           C          CA          HA     108.450    1.50
+P3Q           N          CA          CB     110.494    1.50
+P3Q           N          CA          HA     108.601    1.50
+P3Q          CB          CA          HA     108.690    1.50
+P3Q          CA          CB          CG     114.187    1.55
+P3Q          CA          CB          HB     108.434    1.50
+P3Q          CA          CB         HBA     108.434    1.50
+P3Q          CG          CB          HB     108.906    1.50
+P3Q          CG          CB         HBA     108.906    1.50
+P3Q          HB          CB         HBA     107.782    1.50
+P3Q          CB          CG         CD1     120.855    1.50
+P3Q          CB          CG         CD2     120.872    1.68
+P3Q         CD1          CG         CD2     118.273    1.50
+P3Q         OAZ          CZ         CE1     118.753    1.50
+P3Q         OAZ          CZ         CE2     121.905    3.00
+P3Q         CE1          CZ         CE2     119.342    1.50
+P3Q          C5         C10          C9     120.624    1.50
+P3Q          C5         C10         H10     119.591    1.50
+P3Q          C9         C10         H10     119.786    1.50
+P3Q          C1         C11         C12     124.934    3.00
+P3Q          C1         C11         H11     116.144    1.50
+P3Q         C12         C11         H11     118.922    1.61
+P3Q         C11         C12         O12     125.129    1.73
+P3Q         C11         C12         H12     116.757    2.05
+P3Q         O12         C12         H12     118.106    1.50
+P3Q         CD2         OAD        HOAD     108.378    3.00
+P3Q          C1         NAE         CE1     129.252    2.63
+P3Q          C1         NAE        HNAE     115.209    2.42
+P3Q         CE1         NAE        HNAE     115.540    2.21
+P3Q          CZ         OAZ        HOAZ     109.343    2.75
+P3Q          CG         CD1         CE1     120.777    1.50
+P3Q          CG         CD1         HD1     119.586    1.50
+P3Q         CE1         CD1         HD1     119.637    1.50
+P3Q          CG         CD2         OAD     119.433    1.50
+P3Q          CG         CD2         CE2     120.964    1.50
+P3Q         OAD         CD2         CE2     119.603    2.16
+P3Q          CZ         CE1         NAE     117.818    2.41
+P3Q          CZ         CE1         CD1     120.815    1.59
+P3Q         NAE         CE1         CD1     121.367    3.00
+P3Q          CZ         CE2         CD2     119.829    1.50
+P3Q          CZ         CE2         HE2     119.895    1.50
+P3Q         CD2         CE2         HE2     120.276    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+P3Q             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+P3Q       const_sp2_sp2_9          C7          C8          C9         C10       0.000   10.00     2
+P3Q       const_sp2_sp2_5          C5         C10          C9          C8       0.000   10.00     2
+P3Q            sp3_sp3_28           C          CA          CB          CG     180.000   10.00     3
+P3Q            sp2_sp3_20         CD1          CG          CB          CA     -90.000   10.00     6
+P3Q              const_22         CE1         CD1          CG          CB     180.000   10.00     2
+P3Q              const_48         OAD         CD2          CG          CB       0.000   10.00     2
+P3Q              const_32         NAE         CE1          CZ         OAZ       0.000   10.00     2
+P3Q              const_34         CD2         CE2          CZ         OAZ     180.000   10.00     2
+P3Q             sp2_sp2_9          C1         C11         C12         O12     180.000   10.00     2
+P3Q             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+P3Q            sp2_sp2_13          CZ         CE1         NAE          C1     180.000   10.00     2
+P3Q              const_26          CG         CD1         CE1         NAE     180.000   10.00     2
+P3Q              const_39         OAD         CD2         CE2          CZ     180.000   10.00     2
+P3Q             sp2_sp2_5          C2          C1         C11         C12     180.000   10.00     2
+P3Q             sp2_sp2_1          C2          C1         NAE         CE1     180.000   10.00     2
+P3Q             sp2_sp3_8         NAE          C1          C2          C3     120.000   10.00     6
+P3Q            sp3_sp3_10          C1          C2          C3          C4     180.000   10.00     3
+P3Q            sp3_sp3_19          C2          C3          C4          C5     180.000   10.00     3
+P3Q            sp2_sp3_14         C10          C5          C4          C3     -90.000   10.00     6
+P3Q       const_sp2_sp2_2          C9         C10          C5          C4     180.000   10.00     2
+P3Q              const_43          C4          C5          C6          C7     180.000   10.00     2
+P3Q              const_17          C5          C6          C7          C8       0.000   10.00     2
+P3Q              const_13          C6          C7          C8          C9       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+P3Q    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+P3Q    plan-1         C10   0.020
+P3Q    plan-1          C4   0.020
+P3Q    plan-1          C5   0.020
+P3Q    plan-1          C6   0.020
+P3Q    plan-1          C7   0.020
+P3Q    plan-1          C8   0.020
+P3Q    plan-1          C9   0.020
+P3Q    plan-1         H10   0.020
+P3Q    plan-1         HC6   0.020
+P3Q    plan-1         HC7   0.020
+P3Q    plan-1         HC8   0.020
+P3Q    plan-1         HC9   0.020
+P3Q    plan-2          CB   0.020
+P3Q    plan-2         CD1   0.020
+P3Q    plan-2         CD2   0.020
+P3Q    plan-2         CE1   0.020
+P3Q    plan-2         CE2   0.020
+P3Q    plan-2          CG   0.020
+P3Q    plan-2          CZ   0.020
+P3Q    plan-2         HD1   0.020
+P3Q    plan-2         HE2   0.020
+P3Q    plan-2         NAE   0.020
+P3Q    plan-2         OAD   0.020
+P3Q    plan-2         OAZ   0.020
+P3Q    plan-3           C   0.020
+P3Q    plan-3          CA   0.020
+P3Q    plan-3           O   0.020
+P3Q    plan-3         OXT   0.020
+P3Q    plan-4          C1   0.020
+P3Q    plan-4         C11   0.020
+P3Q    plan-4          C2   0.020
+P3Q    plan-4         NAE   0.020
+P3Q    plan-5          C1   0.020
+P3Q    plan-5         C11   0.020
+P3Q    plan-5         C12   0.020
+P3Q    plan-5         H11   0.020
+P3Q    plan-6         C11   0.020
+P3Q    plan-6         C12   0.020
+P3Q    plan-6         H12   0.020
+P3Q    plan-6         O12   0.020
+P3Q    plan-7          C1   0.020
+P3Q    plan-7         CE1   0.020
+P3Q    plan-7        HNAE   0.020
+P3Q    plan-7         NAE   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+P3Q SMILES_CANONICAL CACTVS               3.352 "N[C@@H](Cc1cc(NC(/CCCc2ccccc2)=C/C=O)c(O)cc1O)C(O)=O"
+P3Q SMILES           CACTVS               3.352 "N[CH](Cc1cc(NC(CCCc2ccccc2)=CC=O)c(O)cc1O)C(O)=O"
+P3Q SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1ccc(cc1)CCC/C(=C\C=O)/Nc2cc(c(cc2O)O)C[C@@H](C(=O)O)N"
+P3Q SMILES           "OpenEye OEToolkits" 1.7.0 "c1ccc(cc1)CCCC(=CC=O)Nc2cc(c(cc2O)O)CC(C(=O)O)N"
+P3Q InChI            InChI                1.03  "InChI=1S/C21H24N2O5/c22-17(21(27)28)11-15-12-18(20(26)13-19(15)25)23-16(9-10-24)8-4-7-14-5-2-1-3-6-14/h1-3,5-6,9-10,12-13,17,23,25-26H,4,7-8,11,22H2,(H,27,28)/b16-9+/t17-/m0/s1"
+P3Q InChIKey         InChI                1.03  HHNJWLBRCQJYIP-NDCSFFLDSA-N
+P3Q ?                acedrg               202         "dictionary generator"
+P3Q ?                acedrg_database      11          "data source"
+P3Q ?                rdkit                2017.03.2   "Chemoinformatics tool"
+P3Q ?                refmac5              5.8.0222    "optimization tool"

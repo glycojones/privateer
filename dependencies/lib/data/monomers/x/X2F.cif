@@ -1,0 +1,180 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+X2F      X2F '2-DEOXY-2-FLUORO XYLOPYRANOSE       ' pyranose           19  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_X2F
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ X2F           C1     C    CH1       0.000      0.000    0.000    0.000
+ X2F           H1     H    H         0.000      1.019    0.288   -0.293
+ X2F           O1     O    OH1       0.000     -0.193   -1.391   -0.261
+ X2F           HO1    H    H         0.000     -0.066   -1.562   -1.203
+ X2F           O5     O    O2        0.000     -0.943    0.760   -0.755
+ X2F           C5     C    CH2       0.000     -2.239    0.233   -0.478
+ X2F           H51    H    H         0.000     -2.233   -0.846   -0.647
+ X2F           H52    H    H         0.000     -2.967    0.701   -1.144
+ X2F           C4     C    CH1       0.000     -2.616    0.521    0.976
+ X2F           H4     H    H         0.000     -2.598    1.606    1.152
+ X2F           O4     O    OH1       0.000     -3.926    0.016    1.240
+ X2F           HO4    H    H         0.000     -4.561    0.448    0.653
+ X2F           C3     C    CH1       0.000     -1.605   -0.165    1.901
+ X2F           H3     H    H         0.000     -1.698   -1.255    1.802
+ X2F           O3     O    OH1       0.000     -1.851    0.215    3.256
+ X2F           HO3    H    H         0.000     -1.203   -0.213    3.832
+ X2F           C2     C    CH1       0.000     -0.194    0.269    1.492
+ X2F           H2     H    H         0.000     -0.068    1.342    1.691
+ X2F           F2     F    F         0.000      0.752   -0.456    2.225
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ X2F      C1     n/a    O5     START
+ X2F      H1     C1     .      .
+ X2F      O1     C1     HO1    .
+ X2F      HO1    O1     .      .
+ X2F      O5     C1     .      END
+ X2F      C5     O5     C4     .
+ X2F      H51    C5     .      .
+ X2F      H52    C5     .      .
+ X2F      C4     C5     C3     .
+ X2F      H4     C4     .      .
+ X2F      O4     C4     HO4    .
+ X2F      HO4    O4     .      .
+ X2F      C3     C4     C2     .
+ X2F      H3     C3     .      .
+ X2F      O3     C3     HO3    .
+ X2F      HO3    O3     .      .
+ X2F      C2     C3     F2     .
+ X2F      H2     C2     .      .
+ X2F      F2     C2     .      .
+ X2F      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+X2F       C1        C2        single    1.524     0.020     1.524     0.020     
+X2F       O1        C1        single    1.432     0.020     1.432     0.020     
+X2F       O5        C1        single    1.426     0.020     1.426     0.020     
+X2F       H1        C1        single    1.089     0.010     0.989     0.005     
+X2F       C2        C3        single    1.524     0.020     1.524     0.020     
+X2F       F2        C2        single    1.370     0.020     1.370     0.020     
+X2F       H2        C2        single    1.089     0.010     0.989     0.005     
+X2F       C3        C4        single    1.524     0.020     1.524     0.020     
+X2F       O3        C3        single    1.432     0.020     1.432     0.020     
+X2F       H3        C3        single    1.089     0.010     0.989     0.005     
+X2F       C4        C5        single    1.524     0.020     1.524     0.020     
+X2F       O4        C4        single    1.432     0.020     1.432     0.020     
+X2F       H4        C4        single    1.089     0.010     0.989     0.005     
+X2F       C5        O5        single    1.426     0.020     1.426     0.020     
+X2F       H51       C5        single    1.089     0.010     0.989     0.005     
+X2F       H52       C5        single    1.089     0.010     0.989     0.005     
+X2F       HO1       O1        single    0.970     0.012     0.839     0.014     
+X2F       HO3       O3        single    0.970     0.012     0.839     0.014     
+X2F       HO4       O4        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ X2F      H1     C1     O1      109.470    3.000
+ X2F      H1     C1     O5      109.470    3.000
+ X2F      O1     C1     O5      109.470    3.000
+ X2F      H1     C1     C2      108.340    3.000
+ X2F      O1     C1     C2      109.470    3.000
+ X2F      O5     C1     C2      109.470    3.000
+ X2F      C1     O1     HO1     109.470    3.000
+ X2F      C1     O5     C5      111.800    3.000
+ X2F      O5     C5     H51     109.470    3.000
+ X2F      O5     C5     H52     109.470    3.000
+ X2F      O5     C5     C4      109.470    3.000
+ X2F      H51    C5     H52     107.900    3.000
+ X2F      H51    C5     C4      109.470    3.000
+ X2F      H52    C5     C4      109.470    3.000
+ X2F      C5     C4     H4      108.340    3.000
+ X2F      C5     C4     O4      109.470    3.000
+ X2F      C5     C4     C3      111.000    3.000
+ X2F      H4     C4     O4      109.470    3.000
+ X2F      H4     C4     C3      108.340    3.000
+ X2F      O4     C4     C3      109.470    3.000
+ X2F      C4     O4     HO4     109.470    3.000
+ X2F      C4     C3     H3      108.340    3.000
+ X2F      C4     C3     O3      109.470    3.000
+ X2F      C4     C3     C2      111.000    3.000
+ X2F      H3     C3     O3      109.470    3.000
+ X2F      H3     C3     C2      108.340    3.000
+ X2F      O3     C3     C2      109.470    3.000
+ X2F      C3     O3     HO3     109.470    3.000
+ X2F      C3     C2     H2      108.340    3.000
+ X2F      C3     C2     F2      109.500    3.000
+ X2F      C3     C2     C1      111.000    3.000
+ X2F      H2     C2     F2      109.500    3.000
+ X2F      H2     C2     C1      108.340    3.000
+ X2F      F2     C2     C1      109.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ X2F      var_1    O5     C1     O1     HO1       59.949   20.000   1
+ X2F      var_2    C1     O5     C5     C4        60.000   20.000   1
+ X2F      var_3    O5     C5     C4     C3       -60.000   20.000   3
+ X2F      var_4    C5     C4     O4     HO4      -60.153   20.000   1
+ X2F      var_5    C5     C4     C3     C2        60.000   20.000   3
+ X2F      var_6    C4     C3     O3     HO3     -179.297   20.000   1
+ X2F      var_7    C4     C3     C2     F2       180.000   20.000   3
+ X2F      var_8    C3     C2     C1     O5        60.000   20.000   3
+ X2F      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ X2F      chir_01  C1     C2     O1     O5        negativ
+ X2F      chir_02  C2     C1     C3     F2        negativ
+ X2F      chir_03  C3     C2     C4     O3        positiv
+ X2F      chir_04  C4     C3     C5     O4        negativ
+# ------------------------------------------------------

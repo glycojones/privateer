@@ -1,0 +1,838 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AAO      AAO 'ACARBOSE DERIVED HEXASACCHARIDE     ' non-polymer       129  66 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AAO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AAO           O6T    O    OH1       0.000      0.000    0.000    0.000
+ AAO           H6T    H    H         0.000     -0.516    0.342    0.743
+ AAO           C6T    C    CH2       0.000     -0.882   -0.575   -0.966
+ AAO           H6T1   H    H         0.000     -1.577    0.188   -1.323
+ AAO           H6T2   H    H         0.000     -1.444   -1.390   -0.506
+ AAO           C5T    C    CH1       0.000     -0.068   -1.115   -2.143
+ AAO           H5T    H    H         0.000      0.556   -0.309   -2.555
+ AAO           O5T    O    O2        0.000      0.770   -2.178   -1.691
+ AAO           C1T    C    CH1       0.000      1.637   -2.533   -2.765
+ AAO           H1T    H    H         0.000      2.386   -3.253   -2.408
+ AAO           O1T    O    OH1       0.000      2.298   -1.362   -3.249
+ AAO           H5     H    H         0.000      2.811   -0.964   -2.533
+ AAO           C4T    C    CH1       0.000     -1.017   -1.629   -3.228
+ AAO           H4T    H    H         0.000     -1.627   -2.449   -2.824
+ AAO           C3T    C    CH1       0.000     -0.193   -2.140   -4.414
+ AAO           H3T    H    H         0.000      0.336   -1.299   -4.885
+ AAO           O3T    O    OH1       0.000     -1.058   -2.757   -5.369
+ AAO           H3     H    H         0.000     -0.535   -3.079   -6.116
+ AAO           C2T    C    CH1       0.000      0.826   -3.164   -3.900
+ AAO           H2T    H    H         0.000      0.297   -4.052   -3.525
+ AAO           O2T    O    OH1       0.000      1.702   -3.543   -4.963
+ AAO           H4     H    H         0.000      2.343   -4.189   -4.637
+ AAO           O1G    O    O2        0.000     -1.869   -0.566   -3.659
+ AAO           C1G    C    CH1       0.000     -3.033   -1.174   -4.224
+ AAO           H1G    H    H         0.000     -2.744   -2.090   -4.759
+ AAO           O5G    O    O2        0.000     -3.948   -1.502   -3.181
+ AAO           C5G    C    CH1       0.000     -4.159   -0.326   -2.402
+ AAO           H5G    H    H         0.000     -3.188    0.083   -2.090
+ AAO           C6G    C    CH2       0.000     -4.984   -0.679   -1.162
+ AAO           H6G1   H    H         0.000     -5.933   -1.122   -1.471
+ AAO           H6G2   H    H         0.000     -5.177    0.228   -0.584
+ AAO           O6G    O    OH1       0.000     -4.260   -1.612   -0.358
+ AAO           H6G    H    H         0.000     -4.782   -1.834    0.426
+ AAO           C4G    C    CH1       0.000     -4.907    0.719   -3.233
+ AAO           H4G    H    H         0.000     -5.870    0.305   -3.564
+ AAO           C3G    C    CH1       0.000     -4.060    1.088   -4.455
+ AAO           H3G    H    H         0.000     -3.144    1.599   -4.128
+ AAO           O3G    O    OH1       0.000     -4.808    1.949   -5.316
+ AAO           H1     H    H         0.000     -4.271    2.180   -6.086
+ AAO           C2G    C    CH1       0.000     -3.692   -0.198   -5.203
+ AAO           H2G    H    H         0.000     -4.600   -0.654   -5.621
+ AAO           O2G    O    OH1       0.000     -2.780    0.108   -6.261
+ AAO           H2     H    H         0.000     -2.549   -0.705   -6.731
+ AAO           O4G    O    O2        0.000     -5.136    1.885   -2.440
+ AAO           C1C    C    CH1       0.000     -6.210    2.599   -3.056
+ AAO           H1C    H    H         0.000     -5.993    2.735   -4.125
+ AAO           O5C    O    O2        0.000     -7.419    1.858   -2.907
+ AAO           C5C    C    CH1       0.000     -7.569    1.549   -1.524
+ AAO           H5C    H    H         0.000     -6.650    1.071   -1.154
+ AAO           C6C    C    CH3       0.000     -8.749    0.592   -1.342
+ AAO           H6C3   H    H         0.000     -8.762    0.231   -0.346
+ AAO           H6C2   H    H         0.000     -9.655    1.105   -1.542
+ AAO           H6C1   H    H         0.000     -8.651   -0.223   -2.011
+ AAO           C4C    C    CH1       0.000     -7.828    2.833   -0.732
+ AAO           H4C    H    H         0.000     -8.732    3.326   -1.117
+ AAO           C3C    C    CH1       0.000     -6.626    3.770   -0.893
+ AAO           H3C    H    H         0.000     -5.743    3.321   -0.416
+ AAO           O3C    O    OH1       0.000     -6.912    5.031   -0.285
+ AAO           H7     H    H         0.000     -6.155    5.622   -0.399
+ AAO           C2C    C    CH1       0.000     -6.357    3.969   -2.388
+ AAO           H2C    H    H         0.000     -7.197    4.511   -2.844
+ AAO           O2C    O    OH1       0.000     -5.152    4.718   -2.563
+ AAO           H6     H    H         0.000     -4.982    4.837   -3.508
+ AAO           N4C    N    NH1       0.000     -8.012    2.506    0.688
+ AAO           H8     H    H         0.000     -7.578    1.746    1.192
+ AAO           C1H    C    CH1       0.000     -8.948    3.499    1.231
+ AAO           H1H    H    H         0.000     -8.779    4.467    0.740
+ AAO           C6H    C    C1        0.000    -10.356    3.048    0.973
+ AAO           H6H    H    H         0.000    -10.750    3.167   -0.022
+ AAO           C5H    C    C         0.000    -11.127    2.524    1.872
+ AAO           C7H    C    CH2       0.000    -12.515    2.110    1.458
+ AAO           H7H1   H    H         0.000    -13.245    2.558    2.135
+ AAO           H7H2   H    H         0.000    -12.598    1.022    1.503
+ AAO           O7H    O    OH1       0.000    -12.766    2.553    0.123
+ AAO           H7H    H    H         0.000    -13.686    2.370   -0.110
+ AAO           C4H    C    CH1       0.000    -10.722    2.302    3.300
+ AAO           H4H    H    H         0.000    -11.180    3.075    3.932
+ AAO           C3H    C    CH1       0.000     -9.200    2.374    3.434
+ AAO           H3H    H    H         0.000     -8.745    1.494    2.957
+ AAO           O3H    O    OH1       0.000     -8.840    2.410    4.817
+ AAO           H14    H    H         0.000     -7.878    2.456    4.898
+ AAO           C2H    C    CH1       0.000     -8.713    3.646    2.737
+ AAO           H2H    H    H         0.000     -9.275    4.512    3.115
+ AAO           O2H    O    OH1       0.000     -7.319    3.830    2.991
+ AAO           H15    H    H         0.000     -7.173    3.909    3.943
+ AAO           O4H    O    O2        0.000    -11.172    1.015    3.725
+ AAO           C1B    C    CH1       0.000    -11.832    1.200    4.979
+ AAO           H1B    H    H         0.000    -11.430    2.095    5.474
+ AAO           O5B    O    O2        0.000    -13.231    1.370    4.757
+ AAO           C5B    C    CH1       0.000    -13.678    0.275    3.959
+ AAO           H5B    H    H         0.000    -13.046    0.194    3.064
+ AAO           C6B    C    CH2       0.000    -15.129    0.511    3.537
+ AAO           H6B1   H    H         0.000    -15.748    0.649    4.426
+ AAO           H6B2   H    H         0.000    -15.489   -0.352    2.974
+ AAO           O6B    O    OH1       0.000    -15.203    1.680    2.718
+ AAO           H6B    H    H         0.000    -16.106    1.786    2.388
+ AAO           C4B    C    CH1       0.000    -13.589   -1.023    4.764
+ AAO           H4B    H    H         0.000    -14.202   -0.936    5.672
+ AAO           C3B    C    CH1       0.000    -12.126   -1.270    5.154
+ AAO           H3B    H    H         0.000    -11.531   -1.462    4.251
+ AAO           O3B    O    OH1       0.000    -12.048   -2.397    6.029
+ AAO           H12    H    H         0.000    -11.125   -2.551    6.275
+ AAO           C2B    C    CH1       0.000    -11.594   -0.023    5.866
+ AAO           H2B    H    H         0.000    -12.120    0.108    6.822
+ AAO           O2B    O    OH1       0.000    -10.193   -0.173    6.108
+ AAO           H13    H    H         0.000     -9.858    0.615    6.557
+ AAO           O4B    O    O2        0.000    -14.063   -2.112    3.969
+ AAO           C1A    C    CH1       0.000    -14.497   -3.127    4.877
+ AAO           H1A    H    H         0.000    -13.751   -3.246    5.675
+ AAO           O5A    O    O2        0.000    -15.748   -2.750    5.448
+ AAO           C5A    C    CH1       0.000    -16.634   -2.433    4.377
+ AAO           H5A    H    H         0.000    -16.156   -1.699    3.713
+ AAO           C6A    C    CH2       0.000    -17.926   -1.841    4.942
+ AAO           H6A1   H    H         0.000    -18.354   -2.533    5.670
+ AAO           H6A2   H    H         0.000    -18.639   -1.682    4.130
+ AAO           O6A    O    OH1       0.000    -17.640   -0.594    5.579
+ AAO           H6A    H    H         0.000    -18.457   -0.221    5.937
+ AAO           C4A    C    CH1       0.000    -16.961   -3.699    3.583
+ AAO           H4A    H    H         0.000    -17.418   -4.444    4.250
+ AAO           O4A    O    OH1       0.000    -17.871   -3.381    2.528
+ AAO           H9     H    H         0.000    -18.076   -4.183    2.027
+ AAO           C3A    C    CH1       0.000    -15.666   -4.267    2.991
+ AAO           H3A    H    H         0.000    -15.264   -3.568    2.245
+ AAO           O3A    O    OH1       0.000    -15.933   -5.527    2.373
+ AAO           H10    H    H         0.000    -15.115   -5.883    2.000
+ AAO           C2A    C    CH1       0.000    -14.651   -4.451    4.123
+ AAO           H2A    H    H         0.000    -15.007   -5.228    4.814
+ AAO           O2A    O    OH1       0.000    -13.389   -4.839    3.576
+ AAO           H11    H    H         0.000    -12.750   -4.954    4.292
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AAO      O6T    n/a    C6T    START
+ AAO      H6T    O6T    .      .
+ AAO      C6T    O6T    C5T    .
+ AAO      H6T1   C6T    .      .
+ AAO      H6T2   C6T    .      .
+ AAO      C5T    C6T    C4T    .
+ AAO      H5T    C5T    .      .
+ AAO      O5T    C5T    C1T    .
+ AAO      C1T    O5T    O1T    .
+ AAO      H1T    C1T    .      .
+ AAO      O1T    C1T    H5     .
+ AAO      H5     O1T    .      .
+ AAO      C4T    C5T    O1G    .
+ AAO      H4T    C4T    .      .
+ AAO      C3T    C4T    C2T    .
+ AAO      H3T    C3T    .      .
+ AAO      O3T    C3T    H3     .
+ AAO      H3     O3T    .      .
+ AAO      C2T    C3T    O2T    .
+ AAO      H2T    C2T    .      .
+ AAO      O2T    C2T    H4     .
+ AAO      H4     O2T    .      .
+ AAO      O1G    C4T    C1G    .
+ AAO      C1G    O1G    O5G    .
+ AAO      H1G    C1G    .      .
+ AAO      O5G    C1G    C5G    .
+ AAO      C5G    O5G    C4G    .
+ AAO      H5G    C5G    .      .
+ AAO      C6G    C5G    O6G    .
+ AAO      H6G1   C6G    .      .
+ AAO      H6G2   C6G    .      .
+ AAO      O6G    C6G    H6G    .
+ AAO      H6G    O6G    .      .
+ AAO      C4G    C5G    O4G    .
+ AAO      H4G    C4G    .      .
+ AAO      C3G    C4G    C2G    .
+ AAO      H3G    C3G    .      .
+ AAO      O3G    C3G    H1     .
+ AAO      H1     O3G    .      .
+ AAO      C2G    C3G    O2G    .
+ AAO      H2G    C2G    .      .
+ AAO      O2G    C2G    H2     .
+ AAO      H2     O2G    .      .
+ AAO      O4G    C4G    C1C    .
+ AAO      C1C    O4G    O5C    .
+ AAO      H1C    C1C    .      .
+ AAO      O5C    C1C    C5C    .
+ AAO      C5C    O5C    C4C    .
+ AAO      H5C    C5C    .      .
+ AAO      C6C    C5C    H6C1   .
+ AAO      H6C3   C6C    .      .
+ AAO      H6C2   C6C    .      .
+ AAO      H6C1   C6C    .      .
+ AAO      C4C    C5C    N4C    .
+ AAO      H4C    C4C    .      .
+ AAO      C3C    C4C    C2C    .
+ AAO      H3C    C3C    .      .
+ AAO      O3C    C3C    H7     .
+ AAO      H7     O3C    .      .
+ AAO      C2C    C3C    O2C    .
+ AAO      H2C    C2C    .      .
+ AAO      O2C    C2C    H6     .
+ AAO      H6     O2C    .      .
+ AAO      N4C    C4C    C1H    .
+ AAO      H8     N4C    .      .
+ AAO      C1H    N4C    C6H    .
+ AAO      H1H    C1H    .      .
+ AAO      C6H    C1H    C5H    .
+ AAO      H6H    C6H    .      .
+ AAO      C5H    C6H    C4H    .
+ AAO      C7H    C5H    O7H    .
+ AAO      H7H1   C7H    .      .
+ AAO      H7H2   C7H    .      .
+ AAO      O7H    C7H    H7H    .
+ AAO      H7H    O7H    .      .
+ AAO      C4H    C5H    O4H    .
+ AAO      H4H    C4H    .      .
+ AAO      C3H    C4H    C2H    .
+ AAO      H3H    C3H    .      .
+ AAO      O3H    C3H    H14    .
+ AAO      H14    O3H    .      .
+ AAO      C2H    C3H    O2H    .
+ AAO      H2H    C2H    .      .
+ AAO      O2H    C2H    H15    .
+ AAO      H15    O2H    .      .
+ AAO      O4H    C4H    C1B    .
+ AAO      C1B    O4H    O5B    .
+ AAO      H1B    C1B    .      .
+ AAO      O5B    C1B    C5B    .
+ AAO      C5B    O5B    C4B    .
+ AAO      H5B    C5B    .      .
+ AAO      C6B    C5B    O6B    .
+ AAO      H6B1   C6B    .      .
+ AAO      H6B2   C6B    .      .
+ AAO      O6B    C6B    H6B    .
+ AAO      H6B    O6B    .      .
+ AAO      C4B    C5B    O4B    .
+ AAO      H4B    C4B    .      .
+ AAO      C3B    C4B    C2B    .
+ AAO      H3B    C3B    .      .
+ AAO      O3B    C3B    H12    .
+ AAO      H12    O3B    .      .
+ AAO      C2B    C3B    O2B    .
+ AAO      H2B    C2B    .      .
+ AAO      O2B    C2B    H13    .
+ AAO      H13    O2B    .      .
+ AAO      O4B    C4B    C1A    .
+ AAO      C1A    O4B    O5A    .
+ AAO      H1A    C1A    .      .
+ AAO      O5A    C1A    C5A    .
+ AAO      C5A    O5A    C4A    .
+ AAO      H5A    C5A    .      .
+ AAO      C6A    C5A    O6A    .
+ AAO      H6A1   C6A    .      .
+ AAO      H6A2   C6A    .      .
+ AAO      O6A    C6A    H6A    .
+ AAO      H6A    O6A    .      .
+ AAO      C4A    C5A    C3A    .
+ AAO      H4A    C4A    .      .
+ AAO      O4A    C4A    H9     .
+ AAO      H9     O4A    .      .
+ AAO      C3A    C4A    C2A    .
+ AAO      H3A    C3A    .      .
+ AAO      O3A    C3A    H10    .
+ AAO      H10    O3A    .      .
+ AAO      C2A    C3A    O2A    .
+ AAO      H2A    C2A    .      .
+ AAO      O2A    C2A    H11    .
+ AAO      H11    O2A    .      END
+ AAO      C1A    C2A    .    ADD
+ AAO      C1B    C2B    .    ADD
+ AAO      C1C    C2C    .    ADD
+ AAO      C1H    C2H    .    ADD
+ AAO      C1G    C2G    .    ADD
+ AAO      C1T    C2T    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AAO       C1A       C2A       single    1.524     0.020     1.524     0.020     
+AAO       O5A       C1A       single    1.426     0.020     1.426     0.020     
+AAO       C1A       O4B       single    1.426     0.020     1.426     0.020     
+AAO       H1A       C1A       single    1.089     0.010     0.989     0.005     
+AAO       C2A       C3A       single    1.524     0.020     1.524     0.020     
+AAO       O2A       C2A       single    1.432     0.020     1.432     0.020     
+AAO       H2A       C2A       single    1.089     0.010     0.989     0.005     
+AAO       C3A       C4A       single    1.524     0.020     1.524     0.020     
+AAO       O3A       C3A       single    1.432     0.020     1.432     0.020     
+AAO       H3A       C3A       single    1.089     0.010     0.989     0.005     
+AAO       C4A       C5A       single    1.524     0.020     1.524     0.020     
+AAO       O4A       C4A       single    1.432     0.020     1.432     0.020     
+AAO       H4A       C4A       single    1.089     0.010     0.989     0.005     
+AAO       C6A       C5A       single    1.524     0.020     1.524     0.020     
+AAO       C5A       O5A       single    1.426     0.020     1.426     0.020     
+AAO       H5A       C5A       single    1.089     0.010     0.989     0.005     
+AAO       O6A       C6A       single    1.432     0.020     1.432     0.020     
+AAO       H6A1      C6A       single    1.089     0.010     0.989     0.005     
+AAO       H6A2      C6A       single    1.089     0.010     0.989     0.005     
+AAO       H11       O2A       single    0.970     0.012     0.839     0.014     
+AAO       H10       O3A       single    0.970     0.012     0.839     0.014     
+AAO       H9        O4A       single    0.970     0.012     0.839     0.014     
+AAO       H6A       O6A       single    0.970     0.012     0.839     0.014     
+AAO       C1B       C2B       single    1.524     0.020     1.524     0.020     
+AAO       O5B       C1B       single    1.426     0.020     1.426     0.020     
+AAO       C1B       O4H       single    1.426     0.020     1.426     0.020     
+AAO       H1B       C1B       single    1.089     0.010     0.989     0.005     
+AAO       C2B       C3B       single    1.524     0.020     1.524     0.020     
+AAO       O2B       C2B       single    1.432     0.020     1.432     0.020     
+AAO       H2B       C2B       single    1.089     0.010     0.989     0.005     
+AAO       C3B       C4B       single    1.524     0.020     1.524     0.020     
+AAO       O3B       C3B       single    1.432     0.020     1.432     0.020     
+AAO       H3B       C3B       single    1.089     0.010     0.989     0.005     
+AAO       C4B       C5B       single    1.524     0.020     1.524     0.020     
+AAO       O4B       C4B       single    1.426     0.020     1.426     0.020     
+AAO       H4B       C4B       single    1.089     0.010     0.989     0.005     
+AAO       C6B       C5B       single    1.524     0.020     1.524     0.020     
+AAO       C5B       O5B       single    1.426     0.020     1.426     0.020     
+AAO       H5B       C5B       single    1.089     0.010     0.989     0.005     
+AAO       O6B       C6B       single    1.432     0.020     1.432     0.020     
+AAO       H6B1      C6B       single    1.089     0.010     0.989     0.005     
+AAO       H6B2      C6B       single    1.089     0.010     0.989     0.005     
+AAO       H13       O2B       single    0.970     0.012     0.839     0.014     
+AAO       H12       O3B       single    0.970     0.012     0.839     0.014     
+AAO       H6B       O6B       single    0.970     0.012     0.839     0.014     
+AAO       C1C       C2C       single    1.524     0.020     1.524     0.020     
+AAO       O5C       C1C       single    1.426     0.020     1.426     0.020     
+AAO       C1C       O4G       single    1.426     0.020     1.426     0.020     
+AAO       H1C       C1C       single    1.089     0.010     0.989     0.005     
+AAO       C2C       C3C       single    1.524     0.020     1.524     0.020     
+AAO       O2C       C2C       single    1.432     0.020     1.432     0.020     
+AAO       H2C       C2C       single    1.089     0.010     0.989     0.005     
+AAO       C3C       C4C       single    1.524     0.020     1.524     0.020     
+AAO       O3C       C3C       single    1.432     0.020     1.432     0.020     
+AAO       H3C       C3C       single    1.089     0.010     0.989     0.005     
+AAO       C4C       C5C       single    1.524     0.020     1.524     0.020     
+AAO       N4C       C4C       single    1.450     0.020     1.450     0.020     
+AAO       H4C       C4C       single    1.089     0.010     0.989     0.005     
+AAO       C6C       C5C       single    1.524     0.020     1.524     0.020     
+AAO       C5C       O5C       single    1.426     0.020     1.426     0.020     
+AAO       H5C       C5C       single    1.089     0.010     0.989     0.005     
+AAO       H6C1      C6C       single    1.089     0.010     0.989     0.005     
+AAO       H6C2      C6C       single    1.089     0.010     0.989     0.005     
+AAO       H6C3      C6C       single    1.089     0.010     0.989     0.005     
+AAO       H6        O2C       single    0.970     0.012     0.839     0.014     
+AAO       H7        O3C       single    0.970     0.012     0.839     0.014     
+AAO       C1H       N4C       single    1.450     0.020     1.450     0.020     
+AAO       H8        N4C       single    1.036     0.016     0.914     0.007     
+AAO       C1H       C2H       single    1.524     0.020     1.524     0.020     
+AAO       C6H       C1H       single    1.510     0.020     1.510     0.020     
+AAO       H1H       C1H       single    1.089     0.010     0.989     0.005     
+AAO       C2H       C3H       single    1.524     0.020     1.524     0.020     
+AAO       O2H       C2H       single    1.432     0.020     1.432     0.020     
+AAO       H2H       C2H       single    1.089     0.010     0.989     0.005     
+AAO       C3H       C4H       single    1.524     0.020     1.524     0.020     
+AAO       O3H       C3H       single    1.432     0.020     1.432     0.020     
+AAO       H3H       C3H       single    1.089     0.010     0.989     0.005     
+AAO       C4H       C5H       single    1.500     0.020     1.500     0.020     
+AAO       O4H       C4H       single    1.426     0.020     1.426     0.020     
+AAO       H4H       C4H       single    1.089     0.010     0.989     0.005     
+AAO       C5H       C6H       double    1.340     0.020     1.340     0.020     
+AAO       C7H       C5H       single    1.510     0.020     1.510     0.020     
+AAO       H6H       C6H       single    1.082     0.013     0.975     0.010     
+AAO       O7H       C7H       single    1.432     0.020     1.432     0.020     
+AAO       H7H1      C7H       single    1.089     0.010     0.989     0.005     
+AAO       H7H2      C7H       single    1.089     0.010     0.989     0.005     
+AAO       H15       O2H       single    0.970     0.012     0.839     0.014     
+AAO       H14       O3H       single    0.970     0.012     0.839     0.014     
+AAO       H7H       O7H       single    0.970     0.012     0.839     0.014     
+AAO       C1G       C2G       single    1.524     0.020     1.524     0.020     
+AAO       C1G       O1G       single    1.426     0.020     1.426     0.020     
+AAO       O5G       C1G       single    1.426     0.020     1.426     0.020     
+AAO       H1G       C1G       single    1.089     0.010     0.989     0.005     
+AAO       C2G       C3G       single    1.524     0.020     1.524     0.020     
+AAO       O2G       C2G       single    1.432     0.020     1.432     0.020     
+AAO       H2G       C2G       single    1.089     0.010     0.989     0.005     
+AAO       C3G       C4G       single    1.524     0.020     1.524     0.020     
+AAO       O3G       C3G       single    1.432     0.020     1.432     0.020     
+AAO       H3G       C3G       single    1.089     0.010     0.989     0.005     
+AAO       C4G       C5G       single    1.524     0.020     1.524     0.020     
+AAO       O4G       C4G       single    1.426     0.020     1.426     0.020     
+AAO       H4G       C4G       single    1.089     0.010     0.989     0.005     
+AAO       C6G       C5G       single    1.524     0.020     1.524     0.020     
+AAO       C5G       O5G       single    1.426     0.020     1.426     0.020     
+AAO       H5G       C5G       single    1.089     0.010     0.989     0.005     
+AAO       O6G       C6G       single    1.432     0.020     1.432     0.020     
+AAO       H6G1      C6G       single    1.089     0.010     0.989     0.005     
+AAO       H6G2      C6G       single    1.089     0.010     0.989     0.005     
+AAO       O1G       C4T       single    1.426     0.020     1.426     0.020     
+AAO       H2        O2G       single    0.970     0.012     0.839     0.014     
+AAO       H1        O3G       single    0.970     0.012     0.839     0.014     
+AAO       H6G       O6G       single    0.970     0.012     0.839     0.014     
+AAO       C1T       C2T       single    1.524     0.020     1.524     0.020     
+AAO       O1T       C1T       single    1.432     0.020     1.432     0.020     
+AAO       C1T       O5T       single    1.426     0.020     1.426     0.020     
+AAO       H1T       C1T       single    1.089     0.010     0.989     0.005     
+AAO       C2T       C3T       single    1.524     0.020     1.524     0.020     
+AAO       O2T       C2T       single    1.432     0.020     1.432     0.020     
+AAO       H2T       C2T       single    1.089     0.010     0.989     0.005     
+AAO       C3T       C4T       single    1.524     0.020     1.524     0.020     
+AAO       O3T       C3T       single    1.432     0.020     1.432     0.020     
+AAO       H3T       C3T       single    1.089     0.010     0.989     0.005     
+AAO       C4T       C5T       single    1.524     0.020     1.524     0.020     
+AAO       H4T       C4T       single    1.089     0.010     0.989     0.005     
+AAO       C5T       C6T       single    1.524     0.020     1.524     0.020     
+AAO       O5T       C5T       single    1.426     0.020     1.426     0.020     
+AAO       H5T       C5T       single    1.089     0.010     0.989     0.005     
+AAO       C6T       O6T       single    1.432     0.020     1.432     0.020     
+AAO       H6T1      C6T       single    1.089     0.010     0.989     0.005     
+AAO       H6T2      C6T       single    1.089     0.010     0.989     0.005     
+AAO       H5        O1T       single    0.970     0.012     0.839     0.014     
+AAO       H4        O2T       single    0.970     0.012     0.839     0.014     
+AAO       H3        O3T       single    0.970     0.012     0.839     0.014     
+AAO       H6T       O6T       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AAO      H6T    O6T    C6T     109.470    3.000
+ AAO      O6T    C6T    H6T1    109.470    3.000
+ AAO      O6T    C6T    H6T2    109.470    3.000
+ AAO      O6T    C6T    C5T     109.470    3.000
+ AAO      H6T1   C6T    H6T2    107.900    3.000
+ AAO      H6T1   C6T    C5T     109.470    3.000
+ AAO      H6T2   C6T    C5T     109.470    3.000
+ AAO      C6T    C5T    H5T     108.340    3.000
+ AAO      C6T    C5T    O5T     109.470    3.000
+ AAO      C6T    C5T    C4T     111.000    3.000
+ AAO      H5T    C5T    O5T     109.470    3.000
+ AAO      H5T    C5T    C4T     108.340    3.000
+ AAO      O5T    C5T    C4T     109.470    3.000
+ AAO      C5T    O5T    C1T     111.800    3.000
+ AAO      O5T    C1T    H1T     109.470    3.000
+ AAO      O5T    C1T    O1T     109.470    3.000
+ AAO      O5T    C1T    C2T     109.470    3.000
+ AAO      H1T    C1T    O1T     109.470    3.000
+ AAO      H1T    C1T    C2T     108.340    3.000
+ AAO      O1T    C1T    C2T     109.470    3.000
+ AAO      C1T    O1T    H5      109.470    3.000
+ AAO      C5T    C4T    H4T     108.340    3.000
+ AAO      C5T    C4T    C3T     111.000    3.000
+ AAO      C5T    C4T    O1G     109.470    3.000
+ AAO      H4T    C4T    C3T     108.340    3.000
+ AAO      H4T    C4T    O1G     109.470    3.000
+ AAO      C3T    C4T    O1G     109.470    3.000
+ AAO      C4T    C3T    H3T     108.340    3.000
+ AAO      C4T    C3T    O3T     109.470    3.000
+ AAO      C4T    C3T    C2T     111.000    3.000
+ AAO      H3T    C3T    O3T     109.470    3.000
+ AAO      H3T    C3T    C2T     108.340    3.000
+ AAO      O3T    C3T    C2T     109.470    3.000
+ AAO      C3T    O3T    H3      109.470    3.000
+ AAO      C3T    C2T    H2T     108.340    3.000
+ AAO      C3T    C2T    O2T     109.470    3.000
+ AAO      C3T    C2T    C1T     111.000    3.000
+ AAO      H2T    C2T    O2T     109.470    3.000
+ AAO      H2T    C2T    C1T     108.340    3.000
+ AAO      O2T    C2T    C1T     109.470    3.000
+ AAO      C2T    O2T    H4      109.470    3.000
+ AAO      C4T    O1G    C1G     111.800    3.000
+ AAO      O1G    C1G    H1G     109.470    3.000
+ AAO      O1G    C1G    O5G     109.470    3.000
+ AAO      O1G    C1G    C2G     109.470    3.000
+ AAO      H1G    C1G    O5G     109.470    3.000
+ AAO      H1G    C1G    C2G     108.340    3.000
+ AAO      O5G    C1G    C2G     109.470    3.000
+ AAO      C1G    O5G    C5G     111.800    3.000
+ AAO      O5G    C5G    H5G     109.470    3.000
+ AAO      O5G    C5G    C6G     109.470    3.000
+ AAO      O5G    C5G    C4G     109.470    3.000
+ AAO      H5G    C5G    C6G     108.340    3.000
+ AAO      H5G    C5G    C4G     108.340    3.000
+ AAO      C6G    C5G    C4G     111.000    3.000
+ AAO      C5G    C6G    H6G1    109.470    3.000
+ AAO      C5G    C6G    H6G2    109.470    3.000
+ AAO      C5G    C6G    O6G     109.470    3.000
+ AAO      H6G1   C6G    H6G2    107.900    3.000
+ AAO      H6G1   C6G    O6G     109.470    3.000
+ AAO      H6G2   C6G    O6G     109.470    3.000
+ AAO      C6G    O6G    H6G     109.470    3.000
+ AAO      C5G    C4G    H4G     108.340    3.000
+ AAO      C5G    C4G    C3G     111.000    3.000
+ AAO      C5G    C4G    O4G     109.470    3.000
+ AAO      H4G    C4G    C3G     108.340    3.000
+ AAO      H4G    C4G    O4G     109.470    3.000
+ AAO      C3G    C4G    O4G     109.470    3.000
+ AAO      C4G    C3G    H3G     108.340    3.000
+ AAO      C4G    C3G    O3G     109.470    3.000
+ AAO      C4G    C3G    C2G     111.000    3.000
+ AAO      H3G    C3G    O3G     109.470    3.000
+ AAO      H3G    C3G    C2G     108.340    3.000
+ AAO      O3G    C3G    C2G     109.470    3.000
+ AAO      C3G    O3G    H1      109.470    3.000
+ AAO      C3G    C2G    H2G     108.340    3.000
+ AAO      C3G    C2G    O2G     109.470    3.000
+ AAO      C3G    C2G    C1G     111.000    3.000
+ AAO      H2G    C2G    O2G     109.470    3.000
+ AAO      H2G    C2G    C1G     108.340    3.000
+ AAO      O2G    C2G    C1G     109.470    3.000
+ AAO      C2G    O2G    H2      109.470    3.000
+ AAO      C4G    O4G    C1C     111.800    3.000
+ AAO      O4G    C1C    H1C     109.470    3.000
+ AAO      O4G    C1C    O5C     109.470    3.000
+ AAO      O4G    C1C    C2C     109.470    3.000
+ AAO      H1C    C1C    O5C     109.470    3.000
+ AAO      H1C    C1C    C2C     108.340    3.000
+ AAO      O5C    C1C    C2C     109.470    3.000
+ AAO      C1C    O5C    C5C     111.800    3.000
+ AAO      O5C    C5C    H5C     109.470    3.000
+ AAO      O5C    C5C    C6C     109.470    3.000
+ AAO      O5C    C5C    C4C     109.470    3.000
+ AAO      H5C    C5C    C6C     108.340    3.000
+ AAO      H5C    C5C    C4C     108.340    3.000
+ AAO      C6C    C5C    C4C     111.000    3.000
+ AAO      C5C    C6C    H6C3    109.470    3.000
+ AAO      C5C    C6C    H6C2    109.470    3.000
+ AAO      C5C    C6C    H6C1    109.470    3.000
+ AAO      H6C3   C6C    H6C2    109.470    3.000
+ AAO      H6C3   C6C    H6C1    109.470    3.000
+ AAO      H6C2   C6C    H6C1    109.470    3.000
+ AAO      C5C    C4C    H4C     108.340    3.000
+ AAO      C5C    C4C    C3C     111.000    3.000
+ AAO      C5C    C4C    N4C     110.000    3.000
+ AAO      H4C    C4C    C3C     108.340    3.000
+ AAO      H4C    C4C    N4C     108.550    3.000
+ AAO      C3C    C4C    N4C     110.000    3.000
+ AAO      C4C    C3C    H3C     108.340    3.000
+ AAO      C4C    C3C    O3C     109.470    3.000
+ AAO      C4C    C3C    C2C     111.000    3.000
+ AAO      H3C    C3C    O3C     109.470    3.000
+ AAO      H3C    C3C    C2C     108.340    3.000
+ AAO      O3C    C3C    C2C     109.470    3.000
+ AAO      C3C    O3C    H7      109.470    3.000
+ AAO      C3C    C2C    H2C     108.340    3.000
+ AAO      C3C    C2C    O2C     109.470    3.000
+ AAO      C3C    C2C    C1C     111.000    3.000
+ AAO      H2C    C2C    O2C     109.470    3.000
+ AAO      H2C    C2C    C1C     108.340    3.000
+ AAO      O2C    C2C    C1C     109.470    3.000
+ AAO      C2C    O2C    H6      109.470    3.000
+ AAO      C4C    N4C    H8      118.500    3.000
+ AAO      C4C    N4C    C1H     120.000    3.000
+ AAO      H8     N4C    C1H     118.500    3.000
+ AAO      N4C    C1H    H1H     108.550    3.000
+ AAO      N4C    C1H    C6H     111.600    3.000
+ AAO      N4C    C1H    C2H     110.000    3.000
+ AAO      H1H    C1H    C6H     108.810    3.000
+ AAO      H1H    C1H    C2H     108.340    3.000
+ AAO      C6H    C1H    C2H     109.470    3.000
+ AAO      C1H    C6H    H6H     120.000    3.000
+ AAO      C1H    C6H    C5H     120.500    3.000
+ AAO      H6H    C6H    C5H     120.000    3.000
+ AAO      C6H    C5H    C7H     120.000    3.000
+ AAO      C6H    C5H    C4H     120.000    3.000
+ AAO      C7H    C5H    C4H     120.000    3.000
+ AAO      C5H    C7H    H7H1    109.470    3.000
+ AAO      C5H    C7H    H7H2    109.470    3.000
+ AAO      C5H    C7H    O7H     109.500    3.000
+ AAO      H7H1   C7H    H7H2    107.900    3.000
+ AAO      H7H1   C7H    O7H     109.470    3.000
+ AAO      H7H2   C7H    O7H     109.470    3.000
+ AAO      C7H    O7H    H7H     109.470    3.000
+ AAO      C5H    C4H    H4H     108.810    3.000
+ AAO      C5H    C4H    C3H     109.470    3.000
+ AAO      C5H    C4H    O4H     109.470    3.000
+ AAO      H4H    C4H    C3H     108.340    3.000
+ AAO      H4H    C4H    O4H     109.470    3.000
+ AAO      C3H    C4H    O4H     109.470    3.000
+ AAO      C4H    C3H    H3H     108.340    3.000
+ AAO      C4H    C3H    O3H     109.470    3.000
+ AAO      C4H    C3H    C2H     111.000    3.000
+ AAO      H3H    C3H    O3H     109.470    3.000
+ AAO      H3H    C3H    C2H     108.340    3.000
+ AAO      O3H    C3H    C2H     109.470    3.000
+ AAO      C3H    O3H    H14     109.470    3.000
+ AAO      C3H    C2H    H2H     108.340    3.000
+ AAO      C3H    C2H    O2H     109.470    3.000
+ AAO      C3H    C2H    C1H     111.000    3.000
+ AAO      H2H    C2H    O2H     109.470    3.000
+ AAO      H2H    C2H    C1H     108.340    3.000
+ AAO      O2H    C2H    C1H     109.470    3.000
+ AAO      C2H    O2H    H15     109.470    3.000
+ AAO      C4H    O4H    C1B     111.800    3.000
+ AAO      O4H    C1B    H1B     109.470    3.000
+ AAO      O4H    C1B    O5B     109.470    3.000
+ AAO      O4H    C1B    C2B     109.470    3.000
+ AAO      H1B    C1B    O5B     109.470    3.000
+ AAO      H1B    C1B    C2B     108.340    3.000
+ AAO      O5B    C1B    C2B     109.470    3.000
+ AAO      C1B    O5B    C5B     111.800    3.000
+ AAO      O5B    C5B    H5B     109.470    3.000
+ AAO      O5B    C5B    C6B     109.470    3.000
+ AAO      O5B    C5B    C4B     109.470    3.000
+ AAO      H5B    C5B    C6B     108.340    3.000
+ AAO      H5B    C5B    C4B     108.340    3.000
+ AAO      C6B    C5B    C4B     111.000    3.000
+ AAO      C5B    C6B    H6B1    109.470    3.000
+ AAO      C5B    C6B    H6B2    109.470    3.000
+ AAO      C5B    C6B    O6B     109.470    3.000
+ AAO      H6B1   C6B    H6B2    107.900    3.000
+ AAO      H6B1   C6B    O6B     109.470    3.000
+ AAO      H6B2   C6B    O6B     109.470    3.000
+ AAO      C6B    O6B    H6B     109.470    3.000
+ AAO      C5B    C4B    H4B     108.340    3.000
+ AAO      C5B    C4B    C3B     111.000    3.000
+ AAO      C5B    C4B    O4B     109.470    3.000
+ AAO      H4B    C4B    C3B     108.340    3.000
+ AAO      H4B    C4B    O4B     109.470    3.000
+ AAO      C3B    C4B    O4B     109.470    3.000
+ AAO      C4B    C3B    H3B     108.340    3.000
+ AAO      C4B    C3B    O3B     109.470    3.000
+ AAO      C4B    C3B    C2B     111.000    3.000
+ AAO      H3B    C3B    O3B     109.470    3.000
+ AAO      H3B    C3B    C2B     108.340    3.000
+ AAO      O3B    C3B    C2B     109.470    3.000
+ AAO      C3B    O3B    H12     109.470    3.000
+ AAO      C3B    C2B    H2B     108.340    3.000
+ AAO      C3B    C2B    O2B     109.470    3.000
+ AAO      C3B    C2B    C1B     111.000    3.000
+ AAO      H2B    C2B    O2B     109.470    3.000
+ AAO      H2B    C2B    C1B     108.340    3.000
+ AAO      O2B    C2B    C1B     109.470    3.000
+ AAO      C2B    O2B    H13     109.470    3.000
+ AAO      C4B    O4B    C1A     111.800    3.000
+ AAO      O4B    C1A    H1A     109.470    3.000
+ AAO      O4B    C1A    O5A     109.470    3.000
+ AAO      O4B    C1A    C2A     109.470    3.000
+ AAO      H1A    C1A    O5A     109.470    3.000
+ AAO      H1A    C1A    C2A     108.340    3.000
+ AAO      O5A    C1A    C2A     109.470    3.000
+ AAO      C1A    O5A    C5A     111.800    3.000
+ AAO      O5A    C5A    H5A     109.470    3.000
+ AAO      O5A    C5A    C6A     109.470    3.000
+ AAO      O5A    C5A    C4A     109.470    3.000
+ AAO      H5A    C5A    C6A     108.340    3.000
+ AAO      H5A    C5A    C4A     108.340    3.000
+ AAO      C6A    C5A    C4A     111.000    3.000
+ AAO      C5A    C6A    H6A1    109.470    3.000
+ AAO      C5A    C6A    H6A2    109.470    3.000
+ AAO      C5A    C6A    O6A     109.470    3.000
+ AAO      H6A1   C6A    H6A2    107.900    3.000
+ AAO      H6A1   C6A    O6A     109.470    3.000
+ AAO      H6A2   C6A    O6A     109.470    3.000
+ AAO      C6A    O6A    H6A     109.470    3.000
+ AAO      C5A    C4A    H4A     108.340    3.000
+ AAO      C5A    C4A    O4A     109.470    3.000
+ AAO      C5A    C4A    C3A     111.000    3.000
+ AAO      H4A    C4A    O4A     109.470    3.000
+ AAO      H4A    C4A    C3A     108.340    3.000
+ AAO      O4A    C4A    C3A     109.470    3.000
+ AAO      C4A    O4A    H9      109.470    3.000
+ AAO      C4A    C3A    H3A     108.340    3.000
+ AAO      C4A    C3A    O3A     109.470    3.000
+ AAO      C4A    C3A    C2A     111.000    3.000
+ AAO      H3A    C3A    O3A     109.470    3.000
+ AAO      H3A    C3A    C2A     108.340    3.000
+ AAO      O3A    C3A    C2A     109.470    3.000
+ AAO      C3A    O3A    H10     109.470    3.000
+ AAO      C3A    C2A    H2A     108.340    3.000
+ AAO      C3A    C2A    O2A     109.470    3.000
+ AAO      C3A    C2A    C1A     111.000    3.000
+ AAO      H2A    C2A    O2A     109.470    3.000
+ AAO      H2A    C2A    C1A     108.340    3.000
+ AAO      O2A    C2A    C1A     109.470    3.000
+ AAO      C2A    O2A    H11     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AAO      var_1    H6T    O6T    C6T    C5T      179.963   20.000   1
+ AAO      var_2    O6T    C6T    C5T    C4T     -175.498   20.000   3
+ AAO      var_3    C6T    C5T    O5T    C1T      180.000   20.000   1
+ AAO      var_4    C5T    O5T    C1T    O1T       60.000   20.000   1
+ AAO      var_5    O5T    C1T    C2T    C3T       60.000   20.000   3
+ AAO      var_6    O5T    C1T    O1T    H5        59.720   20.000   1
+ AAO      var_7    C6T    C5T    C4T    O1G       60.000   20.000   3
+ AAO      var_8    C5T    C4T    C3T    C2T       60.000   20.000   3
+ AAO      var_9    C4T    C3T    O3T    H3      -179.996   20.000   1
+ AAO      var_10   C4T    C3T    C2T    O2T      180.000   20.000   3
+ AAO      var_11   C3T    C2T    O2T    H4       179.989   20.000   1
+ AAO      var_12   C5T    C4T    O1G    C1G     -157.157   20.000   1
+ AAO      var_13   C4T    O1G    C1G    O5G       83.359   20.000   1
+ AAO      var_14   O1G    C1G    C2G    C3G      -60.000   20.000   3
+ AAO      var_15   O1G    C1G    O5G    C5G       60.000   20.000   1
+ AAO      var_16   C1G    O5G    C5G    C4G       60.000   20.000   1
+ AAO      var_17   O5G    C5G    C6G    O6G       62.055   20.000   3
+ AAO      var_18   C5G    C6G    O6G    H6G      179.965   20.000   1
+ AAO      var_19   O5G    C5G    C4G    O4G      180.000   20.000   3
+ AAO      var_20   C5G    C4G    C3G    C2G       60.000   20.000   3
+ AAO      var_21   C4G    C3G    O3G    H1       179.984   20.000   1
+ AAO      var_22   C4G    C3G    C2G    O2G      180.000   20.000   3
+ AAO      var_23   C3G    C2G    O2G    H2       179.966   20.000   1
+ AAO      var_24   C5G    C4G    O4G    C1C     -159.638   20.000   1
+ AAO      var_25   C4G    O4G    C1C    O5C       68.748   20.000   1
+ AAO      var_26   O4G    C1C    C2C    C3C      -60.000   20.000   3
+ AAO      var_27   O4G    C1C    O5C    C5C       60.000   20.000   1
+ AAO      var_28   C1C    O5C    C5C    C4C       60.000   20.000   1
+ AAO      var_29   O5C    C5C    C6C    H6C1      50.367   20.000   3
+ AAO      var_30   O5C    C5C    C4C    N4C      180.000   20.000   3
+ AAO      var_31   C5C    C4C    C3C    C2C       60.000   20.000   3
+ AAO      var_32   C4C    C3C    O3C    H7      -179.235   20.000   1
+ AAO      var_33   C4C    C3C    C2C    O2C      180.000   20.000   3
+ AAO      var_34   C3C    C2C    O2C    H6       179.607   20.000   1
+ AAO      var_35   C5C    C4C    N4C    C1H     -148.588   20.000   3
+ AAO      var_36   C4C    N4C    C1H    C6H       85.098   20.000   3
+ AAO      var_37   N4C    C1H    C2H    C3H      -60.000   20.000   3
+ AAO      var_38   N4C    C1H    C6H    C5H       90.000   20.000   1
+ AAO      var_39   C1H    C6H    C5H    C4H        0.000   20.000   1
+ AAO      var_40   C6H    C5H    C7H    O7H       -7.378   20.000   3
+ AAO      var_41   C5H    C7H    O7H    H7H     -174.126   20.000   1
+ AAO      var_42   C6H    C5H    C4H    O4H     -150.000   20.000   3
+ AAO      var_43   C5H    C4H    C3H    C2H       60.000   20.000   3
+ AAO      var_44   C4H    C3H    O3H    H14     -179.969   20.000   1
+ AAO      var_45   C4H    C3H    C2H    O2H      180.000   20.000   3
+ AAO      var_46   C3H    C2H    O2H    H15      -59.929   20.000   1
+ AAO      var_47   C5H    C4H    O4H    C1B     -131.234   20.000   1
+ AAO      var_48   C4H    O4H    C1B    O5B       93.770   20.000   1
+ AAO      var_49   O4H    C1B    C2B    C3B      -60.000   20.000   3
+ AAO      var_50   O4H    C1B    O5B    C5B       60.000   20.000   1
+ AAO      var_51   C1B    O5B    C5B    C4B       60.000   20.000   1
+ AAO      var_52   O5B    C5B    C6B    O6B       63.117   20.000   3
+ AAO      var_53   C5B    C6B    O6B    H6B      175.070   20.000   1
+ AAO      var_54   O5B    C5B    C4B    O4B      180.000   20.000   3
+ AAO      var_55   C5B    C4B    C3B    C2B       60.000   20.000   3
+ AAO      var_56   C4B    C3B    O3B    H12     -179.978   20.000   1
+ AAO      var_57   C4B    C3B    C2B    O2B      180.000   20.000   3
+ AAO      var_58   C3B    C2B    O2B    H13      179.982   20.000   1
+ AAO      var_59   C5B    C4B    O4B    C1A     -155.736   20.000   1
+ AAO      var_60   C4B    O4B    C1A    O5A       75.289   20.000   1
+ AAO      var_61   O4B    C1A    C2A    C3A      -60.000   20.000   3
+ AAO      var_62   O4B    C1A    O5A    C5A       60.000   20.000   1
+ AAO      var_63   C1A    O5A    C5A    C4A       60.000   20.000   1
+ AAO      var_64   O5A    C5A    C6A    O6A       64.964   20.000   3
+ AAO      var_65   C5A    C6A    O6A    H6A     -179.982   20.000   1
+ AAO      var_66   O5A    C5A    C4A    C3A      -60.000   20.000   3
+ AAO      var_67   C5A    C4A    O4A    H9      -179.998   20.000   1
+ AAO      var_68   C5A    C4A    C3A    C2A       60.000   20.000   3
+ AAO      var_69   C4A    C3A    O3A    H10      179.987   20.000   1
+ AAO      var_70   C4A    C3A    C2A    O2A      180.000   20.000   3
+ AAO      var_71   C3A    C2A    O2A    H11      179.990   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AAO      chir_01  C1A    C2A    O5A    O4B       positiv
+ AAO      chir_02  C2A    C1A    C3A    O2A       negativ
+ AAO      chir_03  C3A    C2A    C4A    O3A       positiv
+ AAO      chir_04  C4A    C3A    C5A    O4A       negativ
+ AAO      chir_05  C5A    C4A    C6A    O5A       negativ
+ AAO      chir_06  C1B    C2B    O5B    O4H       positiv
+ AAO      chir_07  C2B    C1B    C3B    O2B       negativ
+ AAO      chir_08  C3B    C2B    C4B    O3B       positiv
+ AAO      chir_09  C4B    C3B    C5B    O4B       negativ
+ AAO      chir_10  C5B    C4B    C6B    O5B       negativ
+ AAO      chir_11  C1C    C2C    O5C    O4G       positiv
+ AAO      chir_12  C2C    C1C    C3C    O2C       negativ
+ AAO      chir_13  C3C    C2C    C4C    O3C       positiv
+ AAO      chir_14  C4C    C3C    C5C    N4C       negativ
+ AAO      chir_15  C5C    C4C    C6C    O5C       negativ
+ AAO      chir_16  C1H    N4C    C2H    C6H       positiv
+ AAO      chir_17  C2H    C1H    C3H    O2H       negativ
+ AAO      chir_18  C3H    C2H    C4H    O3H       positiv
+ AAO      chir_19  C4H    C3H    C5H    O4H       negativ
+ AAO      chir_20  C1G    C2G    O1G    O5G       negativ
+ AAO      chir_21  C2G    C1G    C3G    O2G       negativ
+ AAO      chir_22  C3G    C2G    C4G    O3G       positiv
+ AAO      chir_23  C4G    C3G    C5G    O4G       negativ
+ AAO      chir_24  C5G    C4G    C6G    O5G       negativ
+ AAO      chir_25  C1T    C2T    O1T    O5T       negativ
+ AAO      chir_26  C2T    C1T    C3T    O2T       negativ
+ AAO      chir_27  C3T    C2T    C4T    O3T       positiv
+ AAO      chir_28  C4T    O1G    C3T    C5T       negativ
+ AAO      chir_29  C5T    C4T    C6T    O5T       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AAO      plan-1    N4C       0.020
+ AAO      plan-1    C4C       0.020
+ AAO      plan-1    C1H       0.020
+ AAO      plan-1    H8        0.020
+ AAO      plan-2    C5H       0.020
+ AAO      plan-2    C4H       0.020
+ AAO      plan-2    C6H       0.020
+ AAO      plan-2    C7H       0.020
+ AAO      plan-2    H6H       0.020
+ AAO      plan-3    C6H       0.020
+ AAO      plan-3    C1H       0.020
+ AAO      plan-3    C5H       0.020
+ AAO      plan-3    H6H       0.020
+# ------------------------------------------------------

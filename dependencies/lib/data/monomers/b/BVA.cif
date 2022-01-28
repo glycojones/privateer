@@ -1,0 +1,234 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BVA      BVA 'TRIHYDROXY[(N-HYDROXYBENZAMIDATO)OXO' non-polymer        23  14 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BVA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BVA           O12    O    OH1       0.000      0.000    0.000    0.000
+ BVA           HO12   H    H         0.000      0.871   -0.269    0.252
+ BVA           V16    V    V         0.000     -1.468   -0.676    1.019
+ BVA           O10    O    O2        0.000     -0.688    0.936    1.871
+ BVA           O9     O    OH1       0.000     -2.938   -1.336    1.853
+ BVA           HO9    H    H         0.000     -2.785   -1.934    2.556
+ BVA           O11    O    OH1       0.000     -1.455   -2.124   -0.190
+ BVA           HO11   H    H         0.000     -0.901   -2.858    0.019
+ BVA           O8     O    O2        0.000     -0.225   -1.618    2.091
+ BVA           N13    N    NH1       0.000      0.398   -0.699    2.865
+ BVA           HN13   H    H         0.000      1.075   -1.010    3.547
+ BVA           C14    C    C         0.000      0.152    0.573    2.756
+ BVA           C15    C    CR6       0.000      0.820    1.539    3.654
+ BVA           C17    C    CR16      0.000      0.542    2.887    3.499
+ BVA           H17    H    H         0.000     -0.115    3.215    2.704
+ BVA           C21    C    CR16      0.000      1.675    1.131    4.654
+ BVA           H21    H    H         0.000      1.910    0.081    4.772
+ BVA           C20    C    CR16      0.000      2.233    2.068    5.510
+ BVA           H20    H    H         0.000      2.895    1.746    6.304
+ BVA           C19    C    CR16      0.000      1.952    3.398    5.355
+ BVA           H19    H    H         0.000      2.400    4.124    6.023
+ BVA           C18    C    CR16      0.000      1.106    3.818    4.363
+ BVA           H18    H    H         0.000      0.877    4.871    4.252
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BVA      O12    n/a    V16    START
+ BVA      HO12   O12    .      .
+ BVA      V16    O12    O8     .
+ BVA      O10    V16    .      .
+ BVA      O9     V16    HO9    .
+ BVA      HO9    O9     .      .
+ BVA      O11    V16    HO11   .
+ BVA      HO11   O11    .      .
+ BVA      O8     V16    N13    .
+ BVA      N13    O8     C14    .
+ BVA      HN13   N13    .      .
+ BVA      C14    N13    C15    .
+ BVA      C15    C14    C21    .
+ BVA      C17    C15    H17    .
+ BVA      H17    C17    .      .
+ BVA      C21    C15    C20    .
+ BVA      H21    C21    .      .
+ BVA      C20    C21    C19    .
+ BVA      H20    C20    .      .
+ BVA      C19    C20    C18    .
+ BVA      H19    C19    .      .
+ BVA      C18    C19    H18    .
+ BVA      H18    C18    .      END
+ BVA      C14    O10    .    ADD
+ BVA      C17    C18    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BVA       C14       O10       double    1.454     0.020     1.454     0.020     
+BVA       C14       N13       single    1.330     0.020     1.330     0.020     
+BVA       C15       C14       single    1.500     0.020     1.500     0.020     
+BVA       C17       C15       double    1.390     0.020     1.390     0.020     
+BVA       C17       C18       single    1.390     0.020     1.390     0.020     
+BVA       H17       C17       single    1.082     0.013     0.975     0.010     
+BVA       C18       C19       double    1.390     0.020     1.390     0.020     
+BVA       C19       C20       single    1.390     0.020     1.390     0.020     
+BVA       H19       C19       single    1.082     0.013     0.975     0.010     
+BVA       C21       C15       single    1.390     0.020     1.390     0.020     
+BVA       C20       C21       double    1.390     0.020     1.390     0.020     
+BVA       H21       C21       single    1.082     0.013     0.975     0.010     
+BVA       H20       C20       single    1.082     0.013     0.975     0.010     
+BVA       H18       C18       single    1.082     0.013     0.975     0.010     
+BVA       O8        V16       single    2.004     0.020     2.004     0.020     
+BVA       N13       O8        single    1.335     0.020     1.335     0.020     
+BVA       O9        V16       single    2.105     0.020     2.105     0.020     
+BVA       HO9       O9        single    0.970     0.012     0.839     0.014     
+BVA       O10       V16       single    2.004     0.020     2.004     0.020     
+BVA       O11       V16       single    2.105     0.020     2.105     0.020     
+BVA       HO11      O11       single    0.970     0.012     0.839     0.014     
+BVA       V16       O12       single    2.105     0.020     2.105     0.020     
+BVA       HO12      O12       single    0.970     0.012     0.839     0.014     
+BVA       HN13      N13       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BVA      HO12   O12    V16     120.000    3.000
+ BVA      O12    V16    O10      60.000    3.000
+ BVA      O12    V16    O9      180.000    3.000
+ BVA      O12    V16    O11      60.000    3.000
+ BVA      O12    V16    O8       90.000    3.000
+ BVA      O10    V16    O9      120.000    3.000
+ BVA      O10    V16    O11     120.000    3.000
+ BVA      O9     V16    O11     120.000    3.000
+ BVA      O10    V16    O8       90.000    3.000
+ BVA      O9     V16    O8       90.000    3.000
+ BVA      O11    V16    O8       90.000    3.000
+ BVA      V16    O10    C14     120.000    3.000
+ BVA      V16    O9     HO9     120.000    3.000
+ BVA      V16    O11    HO11    120.000    3.000
+ BVA      V16    O8     N13     120.000    3.000
+ BVA      O8     N13    HN13    120.000    3.000
+ BVA      O8     N13    C14     120.000    3.000
+ BVA      HN13   N13    C14     120.000    3.000
+ BVA      N13    C14    C15     120.000    3.000
+ BVA      N13    C14    O10     118.000    3.000
+ BVA      C15    C14    O10     120.000    3.000
+ BVA      C14    C15    C17     120.000    3.000
+ BVA      C14    C15    C21     120.000    3.000
+ BVA      C17    C15    C21     120.000    3.000
+ BVA      C15    C17    H17     120.000    3.000
+ BVA      C15    C17    C18     120.000    3.000
+ BVA      H17    C17    C18     120.000    3.000
+ BVA      C15    C21    H21     120.000    3.000
+ BVA      C15    C21    C20     120.000    3.000
+ BVA      H21    C21    C20     120.000    3.000
+ BVA      C21    C20    H20     120.000    3.000
+ BVA      C21    C20    C19     120.000    3.000
+ BVA      H20    C20    C19     120.000    3.000
+ BVA      C20    C19    H19     120.000    3.000
+ BVA      C20    C19    C18     120.000    3.000
+ BVA      H19    C19    C18     120.000    3.000
+ BVA      C19    C18    H18     120.000    3.000
+ BVA      C19    C18    C17     120.000    3.000
+ BVA      H18    C18    C17     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BVA      var_1    HO12   O12    V16    O8         0.000   20.000   1
+ BVA      var_2    C14    O10    V16    O8         0.000   20.000   1
+ BVA      var_3    HO9    O9     V16    O8         0.000   20.000   1
+ BVA      var_4    HO11   O11    V16    O8         0.000   20.000   1
+ BVA      var_5    N13    O8     V16    O10        0.000   20.000   1
+ BVA      var_6    V16    O8     N13    C14        0.000   20.000   1
+ BVA      CONST_1  O8     N13    C14    C15      180.000    0.000   0
+ BVA      var_7    N13    C14    O10    V16        0.000   20.000   1
+ BVA      var_8    N13    C14    C15    C21       -2.451   20.000   1
+ BVA      CONST_2  C14    C15    C17    C18      180.000    0.000   0
+ BVA      CONST_3  C15    C17    C18    C19        0.000    0.000   0
+ BVA      CONST_4  C14    C15    C21    C20      180.000    0.000   0
+ BVA      CONST_5  C15    C21    C20    C19        0.000    0.000   0
+ BVA      CONST_6  C21    C20    C19    C18        0.000    0.000   0
+ BVA      CONST_7  C20    C19    C18    C17        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ BVA      chir_01  V16    O8     .      O12       cross6
+                   O10    .      O9     .      O11
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BVA      plan-1    C14       0.020
+ BVA      plan-1    O10       0.020
+ BVA      plan-1    N13       0.020
+ BVA      plan-1    C15       0.020
+ BVA      plan-1    HN13      0.020
+ BVA      plan-2    C17       0.020
+ BVA      plan-2    C18       0.020
+ BVA      plan-2    C15       0.020
+ BVA      plan-2    H17       0.020
+ BVA      plan-2    C19       0.020
+ BVA      plan-2    C21       0.020
+ BVA      plan-2    C20       0.020
+ BVA      plan-2    H19       0.020
+ BVA      plan-2    H21       0.020
+ BVA      plan-2    H20       0.020
+ BVA      plan-2    H18       0.020
+ BVA      plan-2    C14       0.020
+ BVA      plan-3    N13       0.020
+ BVA      plan-3    C14       0.020
+ BVA      plan-3    O8        0.020
+ BVA      plan-3    HN13      0.020
+# ------------------------------------------------------

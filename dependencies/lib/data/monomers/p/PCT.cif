@@ -1,0 +1,124 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PCT     PCT      PHOSPHONOACETAMIDE     NON-POLYMER     12     8     .     
+#
+data_comp_PCT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PCT     P       P       P       0       -1.569      0.042       -0.381      
+PCT     O1P     O       O       0       -2.386      -0.054      -1.641      
+PCT     O2P     O       OP      -1      -1.565      1.447       0.157       
+PCT     O3P     O       OP      -1      -2.056      -0.934      0.656       
+PCT     C1P     C       CH2     0       0.144       -0.398      -0.796      
+PCT     C1      C       C       0       1.048       -0.465      0.405       
+PCT     O1      O       O       0       1.479       -1.546      0.810       
+PCT     N1      N       NH2     0       1.346       0.688       0.986       
+PCT     H1P1    H       H       0       0.492       0.266       -1.419      
+PCT     H1P2    H       H       0       0.142       -1.265      -1.241      
+PCT     HN11    H       H       0       1.874       0.700       1.696       
+PCT     HN12    H       H       0       1.019       1.449       0.671       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PCT       P         O1P       DOUBLE    n         1.505     0.020     1.505     0.020     
+PCT       P         O2P       SINGLE    n         1.505     0.020     1.505     0.020     
+PCT       P         O3P       SINGLE    n         1.505     0.020     1.505     0.020     
+PCT       P         C1P       SINGLE    n         1.816     0.020     1.816     0.020     
+PCT       C1P       C1        SINGLE    n         1.501     0.017     1.501     0.017     
+PCT       C1        O1        DOUBLE    n         1.232     0.012     1.232     0.012     
+PCT       C1        N1        SINGLE    n         1.323     0.010     1.323     0.010     
+PCT       C1P       H1P1      SINGLE    n         1.089     0.010     0.975     0.020     
+PCT       C1P       H1P2      SINGLE    n         1.089     0.010     0.975     0.020     
+PCT       N1        HN11      SINGLE    n         1.016     0.010     0.884     0.020     
+PCT       N1        HN12      SINGLE    n         1.016     0.010     0.884     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PCT         O1P           P         O2P     111.786    1.50
+PCT         O1P           P         O3P     111.786    1.50
+PCT         O1P           P         C1P     110.326    3.00
+PCT         O2P           P         O3P     111.786    1.50
+PCT         O2P           P         C1P     110.326    3.00
+PCT         O3P           P         C1P     110.326    3.00
+PCT           P         C1P          C1     113.247    3.00
+PCT           P         C1P        H1P1     108.528    1.50
+PCT           P         C1P        H1P2     108.528    1.50
+PCT          C1         C1P        H1P1     108.973    1.50
+PCT          C1         C1P        H1P2     108.973    1.50
+PCT        H1P1         C1P        H1P2     108.296    2.31
+PCT         C1P          C1          O1     121.086    1.52
+PCT         C1P          C1          N1     116.079    1.50
+PCT          O1          C1          N1     122.835    1.50
+PCT          C1          N1        HN11     119.958    1.85
+PCT          C1          N1        HN12     119.958    1.85
+PCT        HN11          N1        HN12     120.084    2.38
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PCT             sp3_sp3_1          C1         C1P           P         O1P     180.000   10.00     3
+PCT             sp2_sp3_2          O1          C1         C1P           P     120.000   10.00     6
+PCT             sp2_sp2_1         C1P          C1          N1        HN11     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PCT    plan-1          C1   0.020
+PCT    plan-1         C1P   0.020
+PCT    plan-1          N1   0.020
+PCT    plan-1          O1   0.020
+PCT    plan-2          C1   0.020
+PCT    plan-2        HN11   0.020
+PCT    plan-2        HN12   0.020
+PCT    plan-2          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PCT SMILES           ACDLabs              10.04 "O=C(N)CP(=O)(O)O"
+PCT SMILES_CANONICAL CACTVS               3.341 "NC(=O)C[P](O)(O)=O"
+PCT SMILES           CACTVS               3.341 "NC(=O)C[P](O)(O)=O"
+PCT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)N)P(=O)(O)O"
+PCT SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)N)P(=O)(O)O"
+PCT InChI            InChI                1.03  "InChI=1S/C2H6NO4P/c3-2(4)1-8(5,6)7/h1H2,(H2,3,4)(H2,5,6,7)"
+PCT InChIKey         InChI                1.03  AKVIWWJLBFWFLM-UHFFFAOYSA-N
+PCT ?                acedrg               202         "dictionary generator"                  
+PCT ?                acedrg_database      11          "data source"                           
+PCT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PCT ?                refmac5              5.8.0189    "optimization tool"                     

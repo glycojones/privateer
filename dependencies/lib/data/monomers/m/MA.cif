@@ -1,0 +1,166 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MA       MA  'METHYL L-ALANINATE                  ' non-polymer        16   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MA            O      O    O        -0.500      0.000    0.000    0.000
+ MA            C      C    C         0.000     -1.073   -0.294   -0.571
+ MA            OXT    O    O2       -0.500     -2.165    0.057   -0.071
+ MA            CH3    C    CH3       0.000     -2.189    0.830    1.210
+ MA            HH3B   H    H         0.000     -1.675    1.756    1.093
+ MA            HH3A   H    H         0.000     -3.193    1.034    1.500
+ MA            HH3    H    H         0.000     -1.717    0.275    1.986
+ MA            CA     C    CH1       0.000     -1.052   -1.073   -1.861
+ MA            HA     H    H         0.000     -1.813   -0.671   -2.544
+ MA            CB     C    CH3       0.000     -1.352   -2.546   -1.573
+ MA            HBB    H    H         0.000     -2.308   -2.631   -1.125
+ MA            HBA    H    H         0.000     -1.337   -3.094   -2.480
+ MA            HB     H    H         0.000     -0.619   -2.934   -0.915
+ MA            N      N    NH2       0.000      0.274   -0.955   -2.482
+ MA            HNA    H    H         0.000      0.859   -1.774   -2.599
+ MA            HN     H    H         0.000      0.613   -0.054   -2.796
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MA       O      n/a    C      START
+ MA       C      O      CA     .
+ MA       OXT    C      CH3    .
+ MA       CH3    OXT    HH3    .
+ MA       HH3B   CH3    .      .
+ MA       HH3A   CH3    .      .
+ MA       HH3    CH3    .      .
+ MA       CA     C      N      .
+ MA       HA     CA     .      .
+ MA       CB     CA     HB     .
+ MA       HBB    CB     .      .
+ MA       HBA    CB     .      .
+ MA       HB     CB     .      .
+ MA       N      CA     HN     .
+ MA       HNA    N      .      .
+ MA       HN     N      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MA        N         CA        single    1.450     0.020     1.450     0.020     
+MA        CA        C         single    1.500     0.020     1.500     0.020     
+MA        CB        CA        single    1.524     0.020     1.524     0.020     
+MA        C         O         deloc     1.220     0.020     1.220     0.020     
+MA        OXT       C         deloc     1.454     0.020     1.454     0.020     
+MA        CH3       OXT       single    1.426     0.020     1.426     0.020     
+MA        HN        N         single    1.036     0.016     0.914     0.007     
+MA        HNA       N         single    1.036     0.016     0.914     0.007     
+MA        HA        CA        single    1.089     0.010     0.989     0.005     
+MA        HB        CB        single    1.089     0.010     0.989     0.005     
+MA        HBA       CB        single    1.089     0.010     0.989     0.005     
+MA        HBB       CB        single    1.089     0.010     0.989     0.005     
+MA        HH3       CH3       single    1.089     0.010     0.989     0.005     
+MA        HH3A      CH3       single    1.089     0.010     0.989     0.005     
+MA        HH3B      CH3       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MA       O      C      OXT     119.000    3.000
+ MA       O      C      CA      120.500    3.000
+ MA       OXT    C      CA      120.000    3.000
+ MA       C      OXT    CH3     120.000    3.000
+ MA       OXT    CH3    HH3B    109.470    3.000
+ MA       OXT    CH3    HH3A    109.470    3.000
+ MA       OXT    CH3    HH3     109.470    3.000
+ MA       HH3B   CH3    HH3A    109.470    3.000
+ MA       HH3B   CH3    HH3     109.470    3.000
+ MA       HH3A   CH3    HH3     109.470    3.000
+ MA       C      CA     HA      108.810    3.000
+ MA       C      CA     CB      109.470    3.000
+ MA       C      CA     N       109.470    3.000
+ MA       HA     CA     CB      108.340    3.000
+ MA       HA     CA     N       109.470    3.000
+ MA       CB     CA     N       109.470    3.000
+ MA       CA     CB     HBB     109.470    3.000
+ MA       CA     CB     HBA     109.470    3.000
+ MA       CA     CB     HB      109.470    3.000
+ MA       HBB    CB     HBA     109.470    3.000
+ MA       HBB    CB     HB      109.470    3.000
+ MA       HBA    CB     HB      109.470    3.000
+ MA       CA     N      HNA     120.000    3.000
+ MA       CA     N      HN      120.000    3.000
+ MA       HNA    N      HN      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MA       var_1    O      C      OXT    CH3        0.059   20.000   1
+ MA       var_2    C      OXT    CH3    HH3      -59.154   20.000   1
+ MA       var_3    O      C      CA     N        -20.044   20.000   3
+ MA       var_4    C      CA     CB     HB       -60.004   20.000   3
+ MA       var_5    C      CA     N      HN       -63.945   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MA       chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MA       plan-1    N         0.020
+ MA       plan-1    CA        0.020
+ MA       plan-1    HN        0.020
+ MA       plan-1    HNA       0.020
+ MA       plan-2    C         0.020
+ MA       plan-2    CA        0.020
+ MA       plan-2    O         0.020
+ MA       plan-2    OXT       0.020
+# ------------------------------------------------------

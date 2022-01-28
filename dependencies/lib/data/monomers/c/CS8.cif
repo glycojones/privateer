@@ -1,0 +1,670 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CS8      CS8 '3-THIAOCTANOYL-COENZYME A           ' non-polymer       101  57 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CS8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CS8           O9A    O    OP       -0.666      0.000    0.000    0.000
+ CS8           P3B    P    P         0.000     -1.445   -0.254   -0.368
+ CS8           O7A    O    OP       -0.666     -1.659   -0.843   -1.745
+ CS8           O8A    O    OP       -0.666     -1.956   -1.094    0.781
+ CS8           O3B    O    O2        0.000     -2.129    1.188   -0.126
+ CS8           C3B    C    CH1       0.000     -1.969    1.797    1.137
+ CS8           "H3'"  H    H         0.000     -2.440    1.172    1.909
+ CS8           C2B    C    CH1       0.000     -0.519    2.053    1.506
+ CS8           "H2'"  H    H         0.000     -0.075    1.177    1.999
+ CS8           O2B    O    OH1       0.000      0.243    2.441    0.364
+ CS8           H3     H    H         0.000      0.213    1.736   -0.297
+ CS8           C1B    C    CH1       0.000     -0.618    3.236    2.471
+ CS8           "H1'"  H    H         0.000      0.159    3.968    2.212
+ CS8           N9A    N    NR5       0.000     -0.459    2.861    3.876
+ CS8           C4A    C    CR56      0.000      0.698    2.873    4.603
+ CS8           N3A    N    NRD6      0.000      1.923    3.227    4.185
+ CS8           C2A    C    CR16      0.000      2.818    3.108    5.189
+ CS8           H2     H    H         0.000      3.838    3.374    4.940
+ CS8           N1A    N    NRD6      0.000      2.615    2.701    6.465
+ CS8           C6A    C    CR6       0.000      1.353    2.360    6.819
+ CS8           N6A    N    NH2       0.000      1.077    1.932    8.128
+ CS8           HN62   H    H         0.000      1.462    1.058    8.486
+ CS8           HN61   H    H         0.000      0.485    2.486    8.747
+ CS8           C5A    C    CR56      0.000      0.339    2.440    5.869
+ CS8           N7A    N    NRD5      0.000     -1.005    2.168    5.926
+ CS8           C8A    C    CR15      0.000     -1.454    2.431    4.715
+ CS8           H8     H    H         0.000     -2.489    2.319    4.418
+ CS8           O4B    O    O2        0.000     -1.912    3.848    2.280
+ CS8           C4B    C    CH1       0.000     -2.565    3.193    1.179
+ CS8           "H4'"  H    H         0.000     -2.326    3.721    0.246
+ CS8           C5B    C    CH2       0.000     -4.068    3.203    1.394
+ CS8           H11    H    H         0.000     -4.307    2.713    2.340
+ CS8           H12    H    H         0.000     -4.560    2.673    0.576
+ CS8           O5B    O    O2        0.000     -4.520    4.546    1.428
+ CS8           P1A    P    P         0.000     -6.091    4.865    1.645
+ CS8           O1A    O    OP       -0.500     -6.444    6.306    1.664
+ CS8           O2A    O    OP       -0.500     -6.785    4.079    0.597
+ CS8           O3A    O    O2        0.000     -6.437    4.069    3.010
+ CS8           P2A    P    P         0.000     -5.924    4.291    4.526
+ CS8           O4A    O    OP       -0.500     -4.458    4.174    4.718
+ CS8           O5A    O    OP       -0.500     -6.500    5.607    4.896
+ CS8           O6A    O    O2        0.000     -6.836    3.219    5.318
+ CS8           CCP    C    CH2       0.000     -8.250    3.292    5.165
+ CS8           H121   H    H         0.000     -8.493    3.167    4.108
+ CS8           H122   H    H         0.000     -8.586    4.275    5.501
+ CS8           CBP    C    CT        0.000     -8.956    2.191    5.994
+ CS8           CDP    C    CH3       0.000     -8.477    0.807    5.493
+ CS8           H133   H    H         0.000     -8.672    0.713    4.455
+ CS8           H132   H    H         0.000     -7.435    0.705    5.663
+ CS8           H131   H    H         0.000     -8.992    0.039    6.015
+ CS8           CEP    C    CH3       0.000     -8.552    2.313    7.475
+ CS8           H143   H    H         0.000     -8.758    3.294    7.822
+ CS8           H142   H    H         0.000     -9.101    1.615    8.054
+ CS8           H141   H    H         0.000     -7.515    2.116    7.580
+ CS8           CAP    C    CH1       0.000    -10.503    2.270    5.828
+ CS8           H1     H    H         0.000    -10.965    1.489    6.449
+ CS8           OAP    O    OH1       0.000    -10.968    3.543    6.269
+ CS8           H10    H    H         0.000    -10.819    4.197    5.574
+ CS8           C9P    C    C         0.000    -10.990    2.106    4.390
+ CS8           O9P    O    O         0.000    -11.073    3.056    3.613
+ CS8           N8P    N    NH1       0.000    -11.292    0.792    4.072
+ CS8           HN8    H    H         0.000    -11.189    0.087    4.788
+ CS8           C7P    C    CH2       0.000    -11.748    0.383    2.764
+ CS8           H71    H    H         0.000    -12.303    1.203    2.303
+ CS8           H72    H    H         0.000    -12.402   -0.486    2.865
+ CS8           C6P    C    CH2       0.000    -10.554    0.024    1.891
+ CS8           H61    H    H         0.000     -9.922    0.910    1.804
+ CS8           H62    H    H         0.000    -10.930   -0.252    0.904
+ CS8           C5P    C    C         0.000     -9.742   -1.124    2.464
+ CS8           O5P    O    O         0.000    -10.026   -1.690    3.516
+ CS8           N4P    N    NH1       0.000     -8.659   -1.436    1.654
+ CS8           HN4    H    H         0.000     -8.520   -0.904    0.808
+ CS8           C3P    C    CH2       0.000     -7.722   -2.490    1.969
+ CS8           H31    H    H         0.000     -7.357   -2.900    1.026
+ CS8           H32    H    H         0.000     -8.266   -3.263    2.515
+ CS8           C2P    C    CH2       0.000     -6.544   -2.008    2.805
+ CS8           H21    H    H         0.000     -6.938   -1.565    3.722
+ CS8           H22    H    H         0.000     -6.012   -1.245    2.233
+ CS8           S1P    S    S2        0.000     -5.402   -3.359    3.225
+ CS8           "C1'"  C    C         0.000     -4.243   -2.484    4.237
+ CS8           "O1'"  O    O         0.000     -4.350   -1.288    4.475
+ CS8           "C2'"  C    CH2       0.000     -3.141   -3.384    4.747
+ CS8           "H2'1" H    H         0.000     -2.620   -3.813    3.889
+ CS8           "H2'2" H    H         0.000     -3.593   -4.185    5.335
+ CS8           "S3'"  S    S2        0.000     -1.965   -2.469    5.774
+ CS8           "C4'"  C    CH2       0.000     -0.845   -3.831    6.178
+ CS8           "H4'1" H    H         0.000     -0.458   -4.255    5.249
+ CS8           "H4'2" H    H         0.000     -1.403   -4.596    6.721
+ CS8           "C5'"  C    CH2       0.000      0.315   -3.338    7.037
+ CS8           "H5'1" H    H         0.000     -0.087   -2.914    7.959
+ CS8           "H5'2" H    H         0.000      0.855   -2.564    6.487
+ CS8           "C6'"  C    CH2       0.000      1.270   -4.486    7.376
+ CS8           "H6'1" H    H         0.000      1.673   -4.887    6.444
+ CS8           "H6'2" H    H         0.000      0.706   -5.265    7.893
+ CS8           "C7'"  C    CH2       0.000      2.418   -4.010    8.267
+ CS8           "H7'1" H    H         0.000      1.994   -3.579    9.176
+ CS8           "H7'2" H    H         0.000      2.977   -3.242    7.728
+ CS8           "C8'"  C    CH3       0.000      3.350   -5.153    8.634
+ CS8           "H8'3" H    H         0.000      3.760   -5.574    7.752
+ CS8           "H8'2" H    H         0.000      4.134   -4.789    9.247
+ CS8           "H8'1" H    H         0.000      2.809   -5.897    9.160
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CS8      O9A    n/a    P3B    START
+ CS8      P3B    O9A    O3B    .
+ CS8      O7A    P3B    .      .
+ CS8      O8A    P3B    .      .
+ CS8      O3B    P3B    C3B    .
+ CS8      C3B    O3B    C4B    .
+ CS8      "H3'"  C3B    .      .
+ CS8      C2B    C3B    C1B    .
+ CS8      "H2'"  C2B    .      .
+ CS8      O2B    C2B    H3     .
+ CS8      H3     O2B    .      .
+ CS8      C1B    C2B    O4B    .
+ CS8      "H1'"  C1B    .      .
+ CS8      N9A    C1B    C4A    .
+ CS8      C4A    N9A    C5A    .
+ CS8      N3A    C4A    C2A    .
+ CS8      C2A    N3A    N1A    .
+ CS8      H2     C2A    .      .
+ CS8      N1A    C2A    C6A    .
+ CS8      C6A    N1A    N6A    .
+ CS8      N6A    C6A    HN61   .
+ CS8      HN62   N6A    .      .
+ CS8      HN61   N6A    .      .
+ CS8      C5A    C4A    N7A    .
+ CS8      N7A    C5A    C8A    .
+ CS8      C8A    N7A    H8     .
+ CS8      H8     C8A    .      .
+ CS8      O4B    C1B    .      .
+ CS8      C4B    C3B    C5B    .
+ CS8      "H4'"  C4B    .      .
+ CS8      C5B    C4B    O5B    .
+ CS8      H11    C5B    .      .
+ CS8      H12    C5B    .      .
+ CS8      O5B    C5B    P1A    .
+ CS8      P1A    O5B    O3A    .
+ CS8      O1A    P1A    .      .
+ CS8      O2A    P1A    .      .
+ CS8      O3A    P1A    P2A    .
+ CS8      P2A    O3A    O6A    .
+ CS8      O4A    P2A    .      .
+ CS8      O5A    P2A    .      .
+ CS8      O6A    P2A    CCP    .
+ CS8      CCP    O6A    CBP    .
+ CS8      H121   CCP    .      .
+ CS8      H122   CCP    .      .
+ CS8      CBP    CCP    CAP    .
+ CS8      CDP    CBP    H131   .
+ CS8      H133   CDP    .      .
+ CS8      H132   CDP    .      .
+ CS8      H131   CDP    .      .
+ CS8      CEP    CBP    H141   .
+ CS8      H143   CEP    .      .
+ CS8      H142   CEP    .      .
+ CS8      H141   CEP    .      .
+ CS8      CAP    CBP    C9P    .
+ CS8      H1     CAP    .      .
+ CS8      OAP    CAP    H10    .
+ CS8      H10    OAP    .      .
+ CS8      C9P    CAP    N8P    .
+ CS8      O9P    C9P    .      .
+ CS8      N8P    C9P    C7P    .
+ CS8      HN8    N8P    .      .
+ CS8      C7P    N8P    C6P    .
+ CS8      H71    C7P    .      .
+ CS8      H72    C7P    .      .
+ CS8      C6P    C7P    C5P    .
+ CS8      H61    C6P    .      .
+ CS8      H62    C6P    .      .
+ CS8      C5P    C6P    N4P    .
+ CS8      O5P    C5P    .      .
+ CS8      N4P    C5P    C3P    .
+ CS8      HN4    N4P    .      .
+ CS8      C3P    N4P    C2P    .
+ CS8      H31    C3P    .      .
+ CS8      H32    C3P    .      .
+ CS8      C2P    C3P    S1P    .
+ CS8      H21    C2P    .      .
+ CS8      H22    C2P    .      .
+ CS8      S1P    C2P    "C1'"  .
+ CS8      "C1'"  S1P    "C2'"  .
+ CS8      "O1'"  "C1'"  .      .
+ CS8      "C2'"  "C1'"  "S3'"  .
+ CS8      "H2'1" "C2'"  .      .
+ CS8      "H2'2" "C2'"  .      .
+ CS8      "S3'"  "C2'"  "C4'"  .
+ CS8      "C4'"  "S3'"  "C5'"  .
+ CS8      "H4'1" "C4'"  .      .
+ CS8      "H4'2" "C4'"  .      .
+ CS8      "C5'"  "C4'"  "C6'"  .
+ CS8      "H5'1" "C5'"  .      .
+ CS8      "H5'2" "C5'"  .      .
+ CS8      "C6'"  "C5'"  "C7'"  .
+ CS8      "H6'1" "C6'"  .      .
+ CS8      "H6'2" "C6'"  .      .
+ CS8      "C7'"  "C6'"  "C8'"  .
+ CS8      "H7'1" "C7'"  .      .
+ CS8      "H7'2" "C7'"  .      .
+ CS8      "C8'"  "C7'"  "H8'1" .
+ CS8      "H8'3" "C8'"  .      .
+ CS8      "H8'2" "C8'"  .      .
+ CS8      "H8'1" "C8'"  .      END
+ CS8      C4B    O4B    .    ADD
+ CS8      N9A    C8A    .    ADD
+ CS8      C5A    C6A    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CS8       OAP       CAP       single    1.432     0.020     1.432     0.020     
+CS8       H10       OAP       single    0.970     0.012     0.839     0.014     
+CS8       C9P       CAP       single    1.500     0.020     1.500     0.020     
+CS8       CAP       CBP       single    1.524     0.020     1.524     0.020     
+CS8       H1        CAP       single    1.089     0.010     0.989     0.005     
+CS8       O9P       C9P       double    1.220     0.020     1.220     0.020     
+CS8       N8P       C9P       single    1.330     0.020     1.330     0.020     
+CS8       C7P       N8P       single    1.450     0.020     1.450     0.020     
+CS8       HN8       N8P       single    1.016     0.010     0.899     0.007     
+CS8       C6P       C7P       single    1.524     0.020     1.524     0.020     
+CS8       H71       C7P       single    1.089     0.010     0.989     0.005     
+CS8       H72       C7P       single    1.089     0.010     0.989     0.005     
+CS8       C5P       C6P       single    1.510     0.020     1.510     0.020     
+CS8       H61       C6P       single    1.089     0.010     0.989     0.005     
+CS8       H62       C6P       single    1.089     0.010     0.989     0.005     
+CS8       O5P       C5P       double    1.220     0.020     1.220     0.020     
+CS8       N4P       C5P       single    1.330     0.020     1.330     0.020     
+CS8       C3P       N4P       single    1.450     0.020     1.450     0.020     
+CS8       HN4       N4P       single    1.016     0.010     0.899     0.007     
+CS8       C2P       C3P       single    1.524     0.020     1.524     0.020     
+CS8       H31       C3P       single    1.089     0.010     0.989     0.005     
+CS8       H32       C3P       single    1.089     0.010     0.989     0.005     
+CS8       S1P       C2P       single    1.762     0.020     1.762     0.020     
+CS8       H21       C2P       single    1.089     0.010     0.989     0.005     
+CS8       H22       C2P       single    1.089     0.010     0.989     0.005     
+CS8       "C1'"     S1P       single    1.665     0.020     1.665     0.020     
+CS8       "O1'"     "C1'"     double    1.220     0.020     1.220     0.020     
+CS8       "C2'"     "C1'"     single    1.510     0.020     1.510     0.020     
+CS8       "S3'"     "C2'"     single    1.762     0.020     1.762     0.020     
+CS8       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+CS8       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+CS8       "C4'"     "S3'"     single    1.762     0.020     1.762     0.020     
+CS8       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+CS8       "H4'1"    "C4'"     single    1.089     0.010     0.989     0.005     
+CS8       "H4'2"    "C4'"     single    1.089     0.010     0.989     0.005     
+CS8       "C6'"     "C5'"     single    1.524     0.020     1.524     0.020     
+CS8       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+CS8       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+CS8       "C7'"     "C6'"     single    1.524     0.020     1.524     0.020     
+CS8       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+CS8       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+CS8       "C8'"     "C7'"     single    1.513     0.020     1.513     0.020     
+CS8       "H7'1"    "C7'"     single    1.089     0.010     0.989     0.005     
+CS8       "H7'2"    "C7'"     single    1.089     0.010     0.989     0.005     
+CS8       "H8'1"    "C8'"     single    1.089     0.010     0.989     0.005     
+CS8       "H8'2"    "C8'"     single    1.089     0.010     0.989     0.005     
+CS8       "H8'3"    "C8'"     single    1.089     0.010     0.989     0.005     
+CS8       CDP       CBP       single    1.524     0.020     1.524     0.020     
+CS8       CEP       CBP       single    1.524     0.020     1.524     0.020     
+CS8       CBP       CCP       single    1.524     0.020     1.524     0.020     
+CS8       H131      CDP       single    1.089     0.010     0.989     0.005     
+CS8       H132      CDP       single    1.089     0.010     0.989     0.005     
+CS8       H133      CDP       single    1.089     0.010     0.989     0.005     
+CS8       H141      CEP       single    1.089     0.010     0.989     0.005     
+CS8       H142      CEP       single    1.089     0.010     0.989     0.005     
+CS8       H143      CEP       single    1.089     0.010     0.989     0.005     
+CS8       CCP       O6A       single    1.426     0.020     1.426     0.020     
+CS8       H121      CCP       single    1.089     0.010     0.989     0.005     
+CS8       H122      CCP       single    1.089     0.010     0.989     0.005     
+CS8       O6A       P2A       single    1.610     0.020     1.610     0.020     
+CS8       O4A       P2A       deloc     1.510     0.020     1.510     0.020     
+CS8       O5A       P2A       deloc     1.510     0.020     1.510     0.020     
+CS8       P2A       O3A       single    1.610     0.020     1.610     0.020     
+CS8       O3A       P1A       single    1.610     0.020     1.610     0.020     
+CS8       O1A       P1A       deloc     1.510     0.020     1.510     0.020     
+CS8       O2A       P1A       deloc     1.510     0.020     1.510     0.020     
+CS8       P1A       O5B       single    1.610     0.020     1.610     0.020     
+CS8       O5B       C5B       single    1.426     0.020     1.426     0.020     
+CS8       C5B       C4B       single    1.524     0.020     1.524     0.020     
+CS8       H11       C5B       single    1.089     0.010     0.989     0.005     
+CS8       H12       C5B       single    1.089     0.010     0.989     0.005     
+CS8       C4B       O4B       single    1.426     0.020     1.426     0.020     
+CS8       C4B       C3B       single    1.524     0.020     1.524     0.020     
+CS8       "H4'"     C4B       single    1.089     0.010     0.989     0.005     
+CS8       O4B       C1B       single    1.426     0.020     1.426     0.020     
+CS8       N9A       C1B       single    1.485     0.020     1.485     0.020     
+CS8       C1B       C2B       single    1.524     0.020     1.524     0.020     
+CS8       "H1'"     C1B       single    1.089     0.010     0.989     0.005     
+CS8       N9A       C8A       single    1.337     0.020     1.337     0.020     
+CS8       C4A       N9A       single    1.337     0.020     1.337     0.020     
+CS8       C8A       N7A       double    1.350     0.020     1.350     0.020     
+CS8       H8        C8A       single    1.082     0.013     0.975     0.010     
+CS8       N7A       C5A       single    1.350     0.020     1.350     0.020     
+CS8       C5A       C6A       double    1.490     0.020     1.490     0.020     
+CS8       C5A       C4A       single    1.490     0.020     1.490     0.020     
+CS8       C6A       N1A       single    1.350     0.020     1.350     0.020     
+CS8       N6A       C6A       single    1.355     0.020     1.355     0.020     
+CS8       N1A       C2A       double    1.337     0.020     1.337     0.020     
+CS8       C2A       N3A       single    1.337     0.020     1.337     0.020     
+CS8       H2        C2A       single    1.082     0.013     0.975     0.010     
+CS8       N3A       C4A       double    1.355     0.020     1.355     0.020     
+CS8       HN61      N6A       single    1.016     0.010     0.899     0.007     
+CS8       HN62      N6A       single    1.016     0.010     0.899     0.007     
+CS8       O2B       C2B       single    1.432     0.020     1.432     0.020     
+CS8       C2B       C3B       single    1.524     0.020     1.524     0.020     
+CS8       "H2'"     C2B       single    1.089     0.010     0.989     0.005     
+CS8       H3        O2B       single    0.970     0.012     0.839     0.014     
+CS8       C3B       O3B       single    1.426     0.020     1.426     0.020     
+CS8       "H3'"     C3B       single    1.089     0.010     0.989     0.005     
+CS8       O3B       P3B       single    1.610     0.020     1.610     0.020     
+CS8       O7A       P3B       deloc     1.510     0.020     1.510     0.020     
+CS8       O8A       P3B       deloc     1.510     0.020     1.510     0.020     
+CS8       P3B       O9A       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CS8      O9A    P3B    O7A     119.900    3.000
+ CS8      O9A    P3B    O8A     119.900    3.000
+ CS8      O9A    P3B    O3B     108.200    3.000
+ CS8      O7A    P3B    O8A     119.900    3.000
+ CS8      O7A    P3B    O3B     108.200    3.000
+ CS8      O8A    P3B    O3B     108.200    3.000
+ CS8      P3B    O3B    C3B     120.500    3.000
+ CS8      O3B    C3B    "H3'"   109.470    3.000
+ CS8      O3B    C3B    C2B     109.470    3.000
+ CS8      O3B    C3B    C4B     109.470    3.000
+ CS8      "H3'"  C3B    C2B     108.340    3.000
+ CS8      "H3'"  C3B    C4B     108.340    3.000
+ CS8      C2B    C3B    C4B     111.000    3.000
+ CS8      C3B    C2B    "H2'"   108.340    3.000
+ CS8      C3B    C2B    O2B     109.470    3.000
+ CS8      C3B    C2B    C1B     111.000    3.000
+ CS8      "H2'"  C2B    O2B     109.470    3.000
+ CS8      "H2'"  C2B    C1B     108.340    3.000
+ CS8      O2B    C2B    C1B     109.470    3.000
+ CS8      C2B    O2B    H3      109.470    3.000
+ CS8      C2B    C1B    "H1'"   108.340    3.000
+ CS8      C2B    C1B    N9A     109.470    3.000
+ CS8      C2B    C1B    O4B     109.470    3.000
+ CS8      "H1'"  C1B    N9A     109.470    3.000
+ CS8      "H1'"  C1B    O4B     109.470    3.000
+ CS8      N9A    C1B    O4B     109.470    3.000
+ CS8      C1B    N9A    C4A     126.000    3.000
+ CS8      C1B    N9A    C8A     126.000    3.000
+ CS8      C4A    N9A    C8A     108.000    3.000
+ CS8      N9A    C4A    N3A     132.000    3.000
+ CS8      N9A    C4A    C5A     108.000    3.000
+ CS8      N3A    C4A    C5A     120.000    3.000
+ CS8      C4A    N3A    C2A     120.000    3.000
+ CS8      N3A    C2A    H2      120.000    3.000
+ CS8      N3A    C2A    N1A     120.000    3.000
+ CS8      H2     C2A    N1A     120.000    3.000
+ CS8      C2A    N1A    C6A     120.000    3.000
+ CS8      N1A    C6A    N6A     120.000    3.000
+ CS8      N1A    C6A    C5A     120.000    3.000
+ CS8      N6A    C6A    C5A     120.000    3.000
+ CS8      C6A    N6A    HN62    120.000    3.000
+ CS8      C6A    N6A    HN61    120.000    3.000
+ CS8      HN62   N6A    HN61    120.000    3.000
+ CS8      C4A    C5A    N7A     108.000    3.000
+ CS8      C4A    C5A    C6A     120.000    3.000
+ CS8      N7A    C5A    C6A     132.000    3.000
+ CS8      C5A    N7A    C8A     108.000    3.000
+ CS8      N7A    C8A    H8      126.000    3.000
+ CS8      N7A    C8A    N9A     108.000    3.000
+ CS8      H8     C8A    N9A     126.000    3.000
+ CS8      C1B    O4B    C4B     111.800    3.000
+ CS8      C3B    C4B    "H4'"   108.340    3.000
+ CS8      C3B    C4B    C5B     111.000    3.000
+ CS8      C3B    C4B    O4B     109.470    3.000
+ CS8      "H4'"  C4B    C5B     108.340    3.000
+ CS8      "H4'"  C4B    O4B     109.470    3.000
+ CS8      C5B    C4B    O4B     109.470    3.000
+ CS8      C4B    C5B    H11     109.470    3.000
+ CS8      C4B    C5B    H12     109.470    3.000
+ CS8      C4B    C5B    O5B     109.470    3.000
+ CS8      H11    C5B    H12     107.900    3.000
+ CS8      H11    C5B    O5B     109.470    3.000
+ CS8      H12    C5B    O5B     109.470    3.000
+ CS8      C5B    O5B    P1A     120.500    3.000
+ CS8      O5B    P1A    O1A     108.200    3.000
+ CS8      O5B    P1A    O2A     108.200    3.000
+ CS8      O5B    P1A    O3A     102.600    3.000
+ CS8      O1A    P1A    O2A     119.900    3.000
+ CS8      O1A    P1A    O3A     108.200    3.000
+ CS8      O2A    P1A    O3A     108.200    3.000
+ CS8      P1A    O3A    P2A     120.500    3.000
+ CS8      O3A    P2A    O4A     108.200    3.000
+ CS8      O3A    P2A    O5A     108.200    3.000
+ CS8      O3A    P2A    O6A     102.600    3.000
+ CS8      O4A    P2A    O5A     119.900    3.000
+ CS8      O4A    P2A    O6A     108.200    3.000
+ CS8      O5A    P2A    O6A     108.200    3.000
+ CS8      P2A    O6A    CCP     120.500    3.000
+ CS8      O6A    CCP    H121    109.470    3.000
+ CS8      O6A    CCP    H122    109.470    3.000
+ CS8      O6A    CCP    CBP     109.500    3.000
+ CS8      H121   CCP    H122    107.900    3.000
+ CS8      H121   CCP    CBP     109.470    3.000
+ CS8      H122   CCP    CBP     109.470    3.000
+ CS8      CCP    CBP    CDP     111.000    3.000
+ CS8      CCP    CBP    CEP     111.000    3.000
+ CS8      CCP    CBP    CAP     111.000    3.000
+ CS8      CDP    CBP    CEP     111.000    3.000
+ CS8      CDP    CBP    CAP     111.000    3.000
+ CS8      CEP    CBP    CAP     111.000    3.000
+ CS8      CBP    CDP    H133    109.470    3.000
+ CS8      CBP    CDP    H132    109.470    3.000
+ CS8      CBP    CDP    H131    109.470    3.000
+ CS8      H133   CDP    H132    109.470    3.000
+ CS8      H133   CDP    H131    109.470    3.000
+ CS8      H132   CDP    H131    109.470    3.000
+ CS8      CBP    CEP    H143    109.470    3.000
+ CS8      CBP    CEP    H142    109.470    3.000
+ CS8      CBP    CEP    H141    109.470    3.000
+ CS8      H143   CEP    H142    109.470    3.000
+ CS8      H143   CEP    H141    109.470    3.000
+ CS8      H142   CEP    H141    109.470    3.000
+ CS8      CBP    CAP    H1      108.340    3.000
+ CS8      CBP    CAP    OAP     109.470    3.000
+ CS8      CBP    CAP    C9P     109.470    3.000
+ CS8      H1     CAP    OAP     109.470    3.000
+ CS8      H1     CAP    C9P     108.810    3.000
+ CS8      OAP    CAP    C9P     109.470    3.000
+ CS8      CAP    OAP    H10     109.470    3.000
+ CS8      CAP    C9P    O9P     120.500    3.000
+ CS8      CAP    C9P    N8P     116.500    3.000
+ CS8      O9P    C9P    N8P     123.000    3.000
+ CS8      C9P    N8P    HN8     120.000    3.000
+ CS8      C9P    N8P    C7P     121.500    3.000
+ CS8      HN8    N8P    C7P     118.500    3.000
+ CS8      N8P    C7P    H71     109.470    3.000
+ CS8      N8P    C7P    H72     109.470    3.000
+ CS8      N8P    C7P    C6P     112.000    3.000
+ CS8      H71    C7P    H72     107.900    3.000
+ CS8      H71    C7P    C6P     109.470    3.000
+ CS8      H72    C7P    C6P     109.470    3.000
+ CS8      C7P    C6P    H61     109.470    3.000
+ CS8      C7P    C6P    H62     109.470    3.000
+ CS8      C7P    C6P    C5P     109.470    3.000
+ CS8      H61    C6P    H62     107.900    3.000
+ CS8      H61    C6P    C5P     109.470    3.000
+ CS8      H62    C6P    C5P     109.470    3.000
+ CS8      C6P    C5P    O5P     120.500    3.000
+ CS8      C6P    C5P    N4P     116.500    3.000
+ CS8      O5P    C5P    N4P     123.000    3.000
+ CS8      C5P    N4P    HN4     120.000    3.000
+ CS8      C5P    N4P    C3P     121.500    3.000
+ CS8      HN4    N4P    C3P     118.500    3.000
+ CS8      N4P    C3P    H31     109.470    3.000
+ CS8      N4P    C3P    H32     109.470    3.000
+ CS8      N4P    C3P    C2P     112.000    3.000
+ CS8      H31    C3P    H32     107.900    3.000
+ CS8      H31    C3P    C2P     109.470    3.000
+ CS8      H32    C3P    C2P     109.470    3.000
+ CS8      C3P    C2P    H21     109.470    3.000
+ CS8      C3P    C2P    H22     109.470    3.000
+ CS8      C3P    C2P    S1P     109.500    3.000
+ CS8      H21    C2P    H22     107.900    3.000
+ CS8      H21    C2P    S1P     109.500    3.000
+ CS8      H22    C2P    S1P     109.500    3.000
+ CS8      C2P    S1P    "C1'"   100.115    3.000
+ CS8      S1P    "C1'"  "O1'"   120.000    3.000
+ CS8      S1P    "C1'"  "C2'"   120.000    3.000
+ CS8      "O1'"  "C1'"  "C2'"   120.500    3.000
+ CS8      "C1'"  "C2'"  "H2'1"  109.470    3.000
+ CS8      "C1'"  "C2'"  "H2'2"  109.470    3.000
+ CS8      "C1'"  "C2'"  "S3'"   109.500    3.000
+ CS8      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ CS8      "H2'1" "C2'"  "S3'"   109.500    3.000
+ CS8      "H2'2" "C2'"  "S3'"   109.500    3.000
+ CS8      "C2'"  "S3'"  "C4'"    98.533    3.000
+ CS8      "S3'"  "C4'"  "H4'1"  109.500    3.000
+ CS8      "S3'"  "C4'"  "H4'2"  109.500    3.000
+ CS8      "S3'"  "C4'"  "C5'"   109.500    3.000
+ CS8      "H4'1" "C4'"  "H4'2"  107.900    3.000
+ CS8      "H4'1" "C4'"  "C5'"   109.470    3.000
+ CS8      "H4'2" "C4'"  "C5'"   109.470    3.000
+ CS8      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ CS8      "C4'"  "C5'"  "H5'2"  109.470    3.000
+ CS8      "C4'"  "C5'"  "C6'"   111.000    3.000
+ CS8      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ CS8      "H5'1" "C5'"  "C6'"   109.470    3.000
+ CS8      "H5'2" "C5'"  "C6'"   109.470    3.000
+ CS8      "C5'"  "C6'"  "H6'1"  109.470    3.000
+ CS8      "C5'"  "C6'"  "H6'2"  109.470    3.000
+ CS8      "C5'"  "C6'"  "C7'"   111.000    3.000
+ CS8      "H6'1" "C6'"  "H6'2"  107.900    3.000
+ CS8      "H6'1" "C6'"  "C7'"   109.470    3.000
+ CS8      "H6'2" "C6'"  "C7'"   109.470    3.000
+ CS8      "C6'"  "C7'"  "H7'1"  109.470    3.000
+ CS8      "C6'"  "C7'"  "H7'2"  109.470    3.000
+ CS8      "C6'"  "C7'"  "C8'"   111.000    3.000
+ CS8      "H7'1" "C7'"  "H7'2"  107.900    3.000
+ CS8      "H7'1" "C7'"  "C8'"   109.470    3.000
+ CS8      "H7'2" "C7'"  "C8'"   109.470    3.000
+ CS8      "C7'"  "C8'"  "H8'3"  109.470    3.000
+ CS8      "C7'"  "C8'"  "H8'2"  109.470    3.000
+ CS8      "C7'"  "C8'"  "H8'1"  109.470    3.000
+ CS8      "H8'3" "C8'"  "H8'2"  109.470    3.000
+ CS8      "H8'3" "C8'"  "H8'1"  109.470    3.000
+ CS8      "H8'2" "C8'"  "H8'1"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CS8      var_1    O9A    P3B    O3B    C3B      -54.358   20.000   1
+ CS8      var_2    P3B    O3B    C3B    C4B      175.231   20.000   1
+ CS8      var_3    O3B    C3B    C2B    C1B      150.000   20.000   3
+ CS8      var_4    C3B    C2B    O2B    H3       -60.074   20.000   1
+ CS8      var_5    C3B    C2B    C1B    O4B      -30.000   20.000   3
+ CS8      var_6    C2B    C1B    N9A    C4A       93.611   20.000   1
+ CS8      CONST_1  C1B    N9A    C8A    N7A      180.000    0.000   0
+ CS8      CONST_2  C1B    N9A    C4A    C5A      180.000    0.000   0
+ CS8      CONST_3  N9A    C4A    N3A    C2A      180.000    0.000   0
+ CS8      CONST_4  C4A    N3A    C2A    N1A        0.000    0.000   0
+ CS8      CONST_5  N3A    C2A    N1A    C6A        0.000    0.000   0
+ CS8      CONST_6  C2A    N1A    C6A    N6A      180.000    0.000   0
+ CS8      CONST_7  N1A    C6A    N6A    HN61     114.160    0.000   0
+ CS8      CONST_8  N9A    C4A    C5A    N7A        0.000    0.000   0
+ CS8      CONST_9  C4A    C5A    C6A    N1A        0.000    0.000   0
+ CS8      CONST_10 C4A    C5A    N7A    C8A        0.000    0.000   0
+ CS8      CONST_11 C5A    N7A    C8A    N9A        0.000    0.000   0
+ CS8      var_7    C2B    C1B    O4B    C4B        0.000   20.000   1
+ CS8      var_8    O3B    C3B    C4B    C5B       90.000   20.000   3
+ CS8      var_9    C3B    C4B    O4B    C1B       30.000   20.000   1
+ CS8      var_10   C3B    C4B    C5B    O5B      179.532   20.000   3
+ CS8      var_11   C4B    C5B    O5B    P1A      179.966   20.000   1
+ CS8      var_12   C5B    O5B    P1A    O3A       54.555   20.000   1
+ CS8      var_13   O5B    P1A    O3A    P2A       65.750   20.000   1
+ CS8      var_14   P1A    O3A    P2A    O6A      174.019   20.000   1
+ CS8      var_15   O3A    P2A    O6A    CCP      -54.802   20.000   1
+ CS8      var_16   P2A    O6A    CCP    CBP     -179.986   20.000   1
+ CS8      var_17   O6A    CCP    CBP    CAP     -179.989   20.000   1
+ CS8      var_18   CCP    CBP    CDP    H131    -176.938   20.000   1
+ CS8      var_19   CCP    CBP    CEP    H141     -64.953   20.000   1
+ CS8      var_20   CCP    CBP    CAP    C9P       59.580   20.000   1
+ CS8      var_21   CBP    CAP    OAP    H10       79.965   20.000   1
+ CS8      var_22   CBP    CAP    C9P    N8P       92.306   20.000   3
+ CS8      CONST_12 CAP    C9P    N8P    C7P      180.000    0.000   0
+ CS8      var_23   C9P    N8P    C7P    C6P       90.011   20.000   3
+ CS8      var_24   N8P    C7P    C6P    C5P       60.673   20.000   3
+ CS8      var_25   C7P    C6P    C5P    N4P      179.991   20.000   3
+ CS8      CONST_13 C6P    C5P    N4P    C3P      180.000    0.000   0
+ CS8      var_26   C5P    N4P    C3P    C2P      -89.995   20.000   3
+ CS8      var_27   N4P    C3P    C2P    S1P      178.503   20.000   3
+ CS8      var_28   C3P    C2P    S1P    "C1'"   -177.154   20.000   1
+ CS8      var_29   C2P    S1P    "C1'"  "C2'"   -179.982   20.000   1
+ CS8      var_30   S1P    "C1'"  "C2'"  "S3'"    179.800   20.000   3
+ CS8      var_31   "C1'"  "C2'"  "S3'"  "C4'"    179.990   20.000   1
+ CS8      var_32   "C2'"  "S3'"  "C4'"  "C5'"    178.429   20.000   1
+ CS8      var_33   "S3'"  "C4'"  "C5'"  "C6'"   -179.722   20.000   3
+ CS8      var_34   "C4'"  "C5'"  "C6'"  "C7'"   -178.562   20.000   3
+ CS8      var_35   "C5'"  "C6'"  "C7'"  "C8'"    178.615   20.000   3
+ CS8      var_36   "C6'"  "C7'"  "C8'"  "H8'1"   -60.215   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CS8      chir_01  CAP    OAP    C9P    CBP       negativ
+ CS8      chir_02  CBP    CAP    CDP    CEP       positiv
+ CS8      chir_03  C4B    C5B    O4B    C3B       negativ
+ CS8      chir_04  C1B    O4B    N9A    C2B       negativ
+ CS8      chir_05  C2B    C1B    O2B    C3B       positiv
+ CS8      chir_06  C3B    C4B    C2B    O3B       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CS8      plan-1    C9P       0.020
+ CS8      plan-1    CAP       0.020
+ CS8      plan-1    O9P       0.020
+ CS8      plan-1    N8P       0.020
+ CS8      plan-1    HN8       0.020
+ CS8      plan-2    N8P       0.020
+ CS8      plan-2    C9P       0.020
+ CS8      plan-2    C7P       0.020
+ CS8      plan-2    HN8       0.020
+ CS8      plan-3    C5P       0.020
+ CS8      plan-3    C6P       0.020
+ CS8      plan-3    O5P       0.020
+ CS8      plan-3    N4P       0.020
+ CS8      plan-3    HN4       0.020
+ CS8      plan-4    N4P       0.020
+ CS8      plan-4    C5P       0.020
+ CS8      plan-4    C3P       0.020
+ CS8      plan-4    HN4       0.020
+ CS8      plan-5    "C1'"     0.020
+ CS8      plan-5    S1P       0.020
+ CS8      plan-5    "O1'"     0.020
+ CS8      plan-5    "C2'"     0.020
+ CS8      plan-6    N9A       0.020
+ CS8      plan-6    C1B       0.020
+ CS8      plan-6    C8A       0.020
+ CS8      plan-6    C4A       0.020
+ CS8      plan-6    N7A       0.020
+ CS8      plan-6    H8        0.020
+ CS8      plan-6    C5A       0.020
+ CS8      plan-6    C6A       0.020
+ CS8      plan-6    N1A       0.020
+ CS8      plan-6    C2A       0.020
+ CS8      plan-6    N3A       0.020
+ CS8      plan-6    N6A       0.020
+ CS8      plan-6    H2        0.020
+ CS8      plan-6    HN62      0.020
+ CS8      plan-6    HN61      0.020
+ CS8      plan-7    N6A       0.020
+ CS8      plan-7    C6A       0.020
+ CS8      plan-7    HN61      0.020
+ CS8      plan-7    HN62      0.020
+# ------------------------------------------------------

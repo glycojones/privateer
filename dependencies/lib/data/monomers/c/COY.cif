@@ -1,0 +1,1430 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+COY      COY 'CO-(ADENIN-9-YL-PENTYL)-COBALAMIN   ' non-polymer       211 106 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_COY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ COY           O5     O    OP       -0.500      9.292   -1.882   -2.210
+ COY           P      P    P         0.000      8.597   -0.894   -1.350
+ COY           O4     O    OP       -0.500      7.318   -1.470   -0.869
+ COY           O2     O    O2        0.000      9.530   -0.531   -0.088
+ COY           C3R    C    CH1       0.000      9.855   -1.766    0.554
+ COY           H3R    H    H         0.000      9.380   -2.608    0.031
+ COY           C4R    C    CH1       0.000      9.421   -1.735    2.036
+ COY           H4R    H    H         0.000      9.358   -0.698    2.394
+ COY           C5R    C    CH2       0.000      8.077   -2.443    2.220
+ COY           H5R1   H    H         0.000      8.175   -3.491    1.930
+ COY           H5R2   H    H         0.000      7.324   -1.962    1.593
+ COY           O8R    O    OH1       0.000      7.680   -2.362    3.591
+ COY           HOR8   H    H         0.000      6.831   -2.810    3.707
+ COY           O6R    O    O2        0.000     10.466   -2.447    2.739
+ COY           C1R    C    CH1       0.000     11.701   -2.021    2.123
+ COY           H1R    H    H         0.000     12.498   -2.752    2.318
+ COY           N1B    N    NR5       0.000     12.090   -0.699    2.617
+ COY           C8B    C    CR56      0.000     13.327   -0.103    2.472
+ COY           C7B    C    CR16      0.000     14.517   -0.480    1.865
+ COY           H7B    H    H         0.000     14.596   -1.442    1.373
+ COY           C6B    C    CR6       0.000     15.598    0.375    1.891
+ COY           C6M    C    CH3       0.000     16.893   -0.035    1.238
+ COY           HM63   H    H         0.000     16.689   -0.678    0.421
+ COY           HM62   H    H         0.000     17.402    0.826    0.890
+ COY           HM61   H    H         0.000     17.499   -0.542    1.943
+ COY           C5B    C    CR6       0.000     15.503    1.610    2.515
+ COY           C5M    C    CH3       0.000     16.696    2.531    2.534
+ COY           HM53   H    H         0.000     17.282    2.367    1.667
+ COY           HM52   H    H         0.000     16.365    3.537    2.552
+ COY           HM51   H    H         0.000     17.279    2.336    3.396
+ COY           C4B    C    CR16      0.000     14.338    2.001    3.114
+ COY           H4B    H    H         0.000     14.275    2.967    3.599
+ COY           C9B    C    CR56      0.000     13.229    1.151    3.099
+ COY           N3B    N    NRD5      0.000     11.968    1.249    3.592
+ COY           C2B    C    CR15      0.000     11.303    0.168    3.310
+ COY           H2B    H    H         0.000     10.272   -0.016    3.587
+ COY           C2R    C    CH1       0.000     11.387   -1.959    0.611
+ COY           H2R    H    H         0.000     11.675   -2.899    0.119
+ COY           O7R    O    OH1       0.000     12.054   -0.852    0.004
+ COY           HOR7   H    H         0.000     13.010   -0.989    0.049
+ COY           O3     O    O2        0.000      8.299    0.441   -2.198
+ COY           C2P    C    CH1       0.000      7.555    0.041   -3.351
+ COY           H2P    H    H         0.000      7.274   -1.017   -3.256
+ COY           C3P    C    CH3       0.000      8.413    0.229   -4.603
+ COY           H3P3   H    H         0.000      8.686    1.249   -4.696
+ COY           H3P2   H    H         0.000      9.288   -0.364   -4.525
+ COY           H3P1   H    H         0.000      7.862   -0.067   -5.458
+ COY           C1P    C    CH2       0.000      6.291    0.896   -3.464
+ COY           H1P1   H    H         0.000      5.775    0.661   -4.397
+ COY           H1P2   H    H         0.000      6.566    1.953   -3.458
+ COY           N59    N    NH1       0.000      5.407    0.613   -2.331
+ COY           H59    H    H         0.000      5.712   -0.008   -1.595
+ COY           C57    C    C         0.000      4.186    1.181   -2.271
+ COY           O58    O    O         0.000      3.820    1.926   -3.156
+ COY           C56    C    CH2       0.000      3.276    0.891   -1.106
+ COY           H561   H    H         0.000      3.761    1.206   -0.180
+ COY           H562   H    H         0.000      3.072   -0.181   -1.063
+ COY           C55    C    CH2       0.000      1.962    1.655   -1.281
+ COY           H551   H    H         0.000      1.521    1.402   -2.247
+ COY           H552   H    H         0.000      2.158    2.729   -1.242
+ COY           C17    C    CT        0.000      1.000    1.272   -0.166
+ COY           C54    C    CH3       0.000      1.539    1.677    1.202
+ COY           H543   H    H         0.000      0.888    1.321    1.958
+ COY           H542   H    H         0.000      2.502    1.259    1.340
+ COY           H541   H    H         0.000      1.601    2.733    1.259
+ COY           C18    C    CH1       0.000      0.792   -0.266   -0.160
+ COY           H18    H    H         0.000      1.149   -0.722   -1.094
+ COY           C60    C    CH2       0.000      1.532   -0.840    1.063
+ COY           H601   H    H         0.000      1.072   -0.460    1.978
+ COY           H602   H    H         0.000      2.580   -0.535    1.030
+ COY           C61    C    C         0.000      1.444   -2.345    1.042
+ COY           N62    N    NH2       0.000      1.940   -3.063    2.070
+ COY           H622   H    H         0.000      2.372   -2.596    2.858
+ COY           H621   H    H         0.000      1.884   -4.075    2.061
+ COY           O63    O    O         0.000      0.927   -2.909    0.102
+ COY           C19    C    CH1       0.000     -0.730   -0.480    0.025
+ COY           H119   H    H         0.000     -0.924   -1.155    0.870
+ COY           C1     C    CT        0.000     -1.419   -0.975   -1.212
+ COY           C20    C    CH3       0.000     -0.684   -0.475   -2.479
+ COY           H203   H    H         0.000     -0.634    0.585   -2.470
+ COY           H202   H    H         0.000      0.300   -0.871   -2.502
+ COY           H201   H    H         0.000     -1.208   -0.792   -3.346
+ COY           N24    N    NT       -1.000     -1.268    0.891    0.313
+ COY           CO     CO   CO        2.000     -2.966    0.999   -0.264
+ COY           C75    C    CH2       0.000     -3.560    0.294    1.389
+ COY           H751   H    H         0.000     -3.184    0.915    2.205
+ COY           H752   H    H         0.000     -3.184   -0.725    1.506
+ COY           C74    C    CH2       0.000     -5.090    0.282    1.418
+ COY           H741   H    H         0.000     -5.467   -0.211    0.519
+ COY           H742   H    H         0.000     -5.461    1.309    1.451
+ COY           C73    C    CH2       0.000     -5.571   -0.476    2.657
+ COY           H731   H    H         0.000     -5.193    0.018    3.554
+ COY           H732   H    H         0.000     -5.198   -1.502    2.623
+ COY           C72    C    CH2       0.000     -7.100   -0.489    2.686
+ COY           H721   H    H         0.000     -7.476   -0.982    1.787
+ COY           H722   H    H         0.000     -7.471    0.537    2.719
+ COY           C71    C    CH2       0.000     -7.581   -1.247    3.925
+ COY           H711   H    H         0.000     -7.203   -0.753    4.822
+ COY           H712   H    H         0.000     -7.208   -2.273    3.891
+ COY           N9A    N    NR5       0.000     -9.046   -1.259    3.953
+ COY           C8A    C    CR15      0.000     -9.847   -0.381    4.622
+ COY           H8A    H    H         0.000     -9.495    0.447    5.225
+ COY           N7A    N    NRD5      0.000    -11.097   -0.685    4.428
+ COY           C4A    C    CR56      0.000     -9.863   -2.151    3.306
+ COY           C5A    C    CR56      0.000    -11.178   -1.773    3.624
+ COY           N3A    N    NRD6      0.000     -9.666   -3.208    2.525
+ COY           C2A    C    CR16      0.000    -10.686   -3.888    2.047
+ COY           H2A    H    H         0.000    -10.491   -4.742    1.411
+ COY           N1A    N    NRD6      0.000    -11.939   -3.568    2.314
+ COY           C6A    C    CR6       0.000    -12.234   -2.530    3.090
+ COY           N6A    N    NH2       0.000    -13.550   -2.202    3.364
+ COY           H6A2   H    H         0.000    -14.310   -2.752    2.975
+ COY           H6A1   H    H         0.000    -13.771   -1.408    3.957
+ COY           C16    C    CH1       0.000     -0.401    1.818   -0.416
+ COY           H116   H    H         0.000     -0.611    1.673   -1.485
+ COY           C15    C    C         0.000     -0.648    3.252   -0.123
+ COY           C53    C    CH3       0.000      0.448    4.285   -0.068
+ COY           H533   H    H         0.000      0.177    5.054    0.609
+ COY           H532   H    H         0.000      1.348    3.830    0.258
+ COY           H531   H    H         0.000      0.593    4.700   -1.032
+ COY           C14    C    C         0.000     -1.903    3.643    0.046
+ COY           N23    N    N         0.000     -3.004    2.782   -0.039
+ COY           C13    C    CH1       0.000     -2.377    5.049    0.358
+ COY           H13    H    H         0.000     -1.738    5.515    1.121
+ COY           C48    C    CH2       0.000     -2.414    5.900   -0.908
+ COY           H481   H    H         0.000     -2.782    6.899   -0.664
+ COY           H482   H    H         0.000     -3.081    5.436   -1.638
+ COY           C49    C    CH2       0.000     -1.005    6.003   -1.495
+ COY           H491   H    H         0.000     -0.678    5.016   -1.829
+ COY           H492   H    H         0.000     -0.319    6.373   -0.730
+ COY           C50    C    C         0.000     -1.016    6.953   -2.665
+ COY           N52    N    NH2       0.000      0.122    7.201   -3.343
+ COY           H522   H    H         0.000      0.988    6.751   -3.070
+ COY           H521   H    H         0.000      0.119    7.839   -4.130
+ COY           O51    O    O         0.000     -2.050    7.494   -2.997
+ COY           C12    C    CT        0.000     -3.813    4.830    0.903
+ COY           C46    C    CH3       0.000     -4.724    5.998    0.574
+ COY           H463   H    H         0.000     -5.697    5.799    0.940
+ COY           H462   H    H         0.000     -4.347    6.876    1.029
+ COY           H461   H    H         0.000     -4.761    6.130   -0.476
+ COY           C47    C    CH3       0.000     -3.804    4.508    2.387
+ COY           H473   H    H         0.000     -4.796    4.341    2.717
+ COY           H472   H    H         0.000     -3.224    3.638    2.555
+ COY           H471   H    H         0.000     -3.385    5.321    2.921
+ COY           C11    C    CH1       0.000     -4.203    3.609    0.100
+ COY           H111   H    H         0.000     -4.337    4.016   -0.912
+ COY           C10    C    C1        0.000     -5.487    2.931    0.351
+ COY           H10    H    H         0.000     -6.250    3.385    0.961
+ COY           C9     C    C         0.000     -5.662    1.757   -0.196
+ COY           N22    N    N         0.000     -4.671    1.044   -0.884
+ COY           C8     C    CH1       0.000     -6.864    0.852   -0.168
+ COY           H8     H    H         0.000     -6.889    0.269    0.763
+ COY           C41    C    CH2       0.000     -8.145    1.668   -0.328
+ COY           H411   H    H         0.000     -8.967    1.005   -0.606
+ COY           H412   H    H         0.000     -8.004    2.418   -1.109
+ COY           C42    C    CH2       0.000     -8.474    2.363    0.995
+ COY           H421   H    H         0.000     -7.668    3.053    1.254
+ COY           H422   H    H         0.000     -8.578    1.614    1.783
+ COY           C43    C    C         0.000     -9.766    3.128    0.852
+ COY           N45    N    NH2       0.000    -10.256    3.823    1.898
+ COY           H452   H    H         0.000     -9.760    3.834    2.781
+ COY           H451   H    H         0.000    -11.123    4.339    1.808
+ COY           O44    O    O         0.000    -10.363    3.117   -0.203
+ COY           C7     C    CT        0.000     -6.672   -0.075   -1.387
+ COY           C36    C    CH3       0.000     -7.847    0.100   -2.348
+ COY           H363   H    H         0.000     -7.705   -0.517   -3.197
+ COY           H362   H    H         0.000     -8.747   -0.173   -1.860
+ COY           H361   H    H         0.000     -7.906    1.112   -2.654
+ COY           C37    C    CH2       0.000     -6.576   -1.519   -0.903
+ COY           H371   H    H         0.000     -5.772   -1.604   -0.168
+ COY           H372   H    H         0.000     -6.363   -2.173   -1.751
+ COY           C38    C    C         0.000     -7.882   -1.924   -0.270
+ COY           N40    N    NH2       0.000     -8.031   -3.166    0.232
+ COY           H402   H    H         0.000     -7.268   -3.831    0.186
+ COY           H401   H    H         0.000     -8.907   -3.443    0.659
+ COY           O39    O    O         0.000     -8.800   -1.133   -0.212
+ COY           C6     C    CH1       0.000     -5.333    0.425   -2.039
+ COY           H66    H    H         0.000     -5.536    1.174   -2.817
+ COY           C5     C    C         0.000     -4.660   -0.801   -2.637
+ COY           C35    C    CH3       0.000     -5.296   -1.504   -3.821
+ COY           H353   H    H         0.000     -6.276   -1.818   -3.565
+ COY           H352   H    H         0.000     -5.346   -0.840   -4.646
+ COY           H351   H    H         0.000     -4.716   -2.350   -4.087
+ COY           C4     C    C         0.000     -3.504   -1.229   -2.206
+ COY           N21    N    N         0.000     -2.768   -0.446   -1.306
+ COY           C3     C    CH1       0.000     -2.795   -2.546   -2.376
+ COY           H3     H    H         0.000     -3.464   -3.356   -2.054
+ COY           C30    C    CH2       0.000     -2.350   -2.810   -3.805
+ COY           H301   H    H         0.000     -1.457   -2.220   -4.023
+ COY           H302   H    H         0.000     -3.149   -2.526   -4.493
+ COY           C31    C    CH2       0.000     -2.034   -4.297   -3.974
+ COY           H311   H    H         0.000     -2.906   -4.889   -3.687
+ COY           H312   H    H         0.000     -1.189   -4.564   -3.336
+ COY           C32    C    C         0.000     -1.687   -4.576   -5.414
+ COY           N33    N    NH2       0.000     -1.370   -5.828   -5.800
+ COY           H332   H    H         0.000     -1.364   -6.584   -5.126
+ COY           H331   H    H         0.000     -1.136   -6.021   -6.767
+ COY           O34    O    O         0.000     -1.692   -3.675   -6.225
+ COY           C2     C    CT        0.000     -1.583   -2.475   -1.405
+ COY           C25    C    CH3       0.000     -0.336   -3.063   -2.050
+ COY           H253   H    H         0.000      0.524   -2.596   -1.645
+ COY           H252   H    H         0.000     -0.297   -4.104   -1.858
+ COY           H251   H    H         0.000     -0.368   -2.898   -3.095
+ COY           C26    C    CH2       0.000     -1.913   -3.176   -0.097
+ COY           H261   H    H         0.000     -2.787   -2.705    0.357
+ COY           H262   H    H         0.000     -1.063   -3.095    0.584
+ COY           C27    C    C         0.000     -2.206   -4.630   -0.367
+ COY           O28    O    O         0.000     -2.154   -5.059   -1.500
+ COY           N29    N    NH2       0.000     -2.526   -5.453    0.651
+ COY           H292   H    H         0.000     -2.571   -5.099    1.599
+ COY           H291   H    H         0.000     -2.724   -6.431    0.475
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ COY      O5     n/a    P      START
+ COY      P      O5     O3     .
+ COY      O4     P      .      .
+ COY      O2     P      C3R    .
+ COY      C3R    O2     C4R    .
+ COY      H3R    C3R    .      .
+ COY      C4R    C3R    O6R    .
+ COY      H4R    C4R    .      .
+ COY      C5R    C4R    O8R    .
+ COY      H5R1   C5R    .      .
+ COY      H5R2   C5R    .      .
+ COY      O8R    C5R    HOR8   .
+ COY      HOR8   O8R    .      .
+ COY      O6R    C4R    C1R    .
+ COY      C1R    O6R    C2R    .
+ COY      H1R    C1R    .      .
+ COY      N1B    C1R    C8B    .
+ COY      C8B    N1B    C7B    .
+ COY      C7B    C8B    C6B    .
+ COY      H7B    C7B    .      .
+ COY      C6B    C7B    C5B    .
+ COY      C6M    C6B    HM61   .
+ COY      HM63   C6M    .      .
+ COY      HM62   C6M    .      .
+ COY      HM61   C6M    .      .
+ COY      C5B    C6B    C4B    .
+ COY      C5M    C5B    HM51   .
+ COY      HM53   C5M    .      .
+ COY      HM52   C5M    .      .
+ COY      HM51   C5M    .      .
+ COY      C4B    C5B    C9B    .
+ COY      H4B    C4B    .      .
+ COY      C9B    C4B    N3B    .
+ COY      N3B    C9B    C2B    .
+ COY      C2B    N3B    H2B    .
+ COY      H2B    C2B    .      .
+ COY      C2R    C1R    O7R    .
+ COY      H2R    C2R    .      .
+ COY      O7R    C2R    HOR7   .
+ COY      HOR7   O7R    .      .
+ COY      O3     P      C2P    .
+ COY      C2P    O3     C1P    .
+ COY      H2P    C2P    .      .
+ COY      C3P    C2P    H3P1   .
+ COY      H3P3   C3P    .      .
+ COY      H3P2   C3P    .      .
+ COY      H3P1   C3P    .      .
+ COY      C1P    C2P    N59    .
+ COY      H1P1   C1P    .      .
+ COY      H1P2   C1P    .      .
+ COY      N59    C1P    C57    .
+ COY      H59    N59    .      .
+ COY      C57    N59    C56    .
+ COY      O58    C57    .      .
+ COY      C56    C57    C55    .
+ COY      H561   C56    .      .
+ COY      H562   C56    .      .
+ COY      C55    C56    C17    .
+ COY      H551   C55    .      .
+ COY      H552   C55    .      .
+ COY      C17    C55    C16    .
+ COY      C54    C17    H541   .
+ COY      H543   C54    .      .
+ COY      H542   C54    .      .
+ COY      H541   C54    .      .
+ COY      C18    C17    C19    .
+ COY      H18    C18    .      .
+ COY      C60    C18    C61    .
+ COY      H601   C60    .      .
+ COY      H602   C60    .      .
+ COY      C61    C60    O63    .
+ COY      N62    C61    H621   .
+ COY      H622   N62    .      .
+ COY      H621   N62    .      .
+ COY      O63    C61    .      .
+ COY      C19    C18    N24    .
+ COY      H119   C19    .      .
+ COY      C1     C19    C20    .
+ COY      C20    C1     H201   .
+ COY      H203   C20    .      .
+ COY      H202   C20    .      .
+ COY      H201   C20    .      .
+ COY      N24    C19    CO     .
+ COY      CO     N24    C75    .
+ COY      C75    CO     C74    .
+ COY      H751   C75    .      .
+ COY      H752   C75    .      .
+ COY      C74    C75    C73    .
+ COY      H741   C74    .      .
+ COY      H742   C74    .      .
+ COY      C73    C74    C72    .
+ COY      H731   C73    .      .
+ COY      H732   C73    .      .
+ COY      C72    C73    C71    .
+ COY      H721   C72    .      .
+ COY      H722   C72    .      .
+ COY      C71    C72    N9A    .
+ COY      H711   C71    .      .
+ COY      H712   C71    .      .
+ COY      N9A    C71    C4A    .
+ COY      C8A    N9A    N7A    .
+ COY      H8A    C8A    .      .
+ COY      N7A    C8A    .      .
+ COY      C4A    N9A    N3A    .
+ COY      C5A    C4A    .      .
+ COY      N3A    C4A    C2A    .
+ COY      C2A    N3A    N1A    .
+ COY      H2A    C2A    .      .
+ COY      N1A    C2A    C6A    .
+ COY      C6A    N1A    N6A    .
+ COY      N6A    C6A    H6A1   .
+ COY      H6A2   N6A    .      .
+ COY      H6A1   N6A    .      .
+ COY      C16    C17    C15    .
+ COY      H116   C16    .      .
+ COY      C15    C16    C14    .
+ COY      C53    C15    H531   .
+ COY      H533   C53    .      .
+ COY      H532   C53    .      .
+ COY      H531   C53    .      .
+ COY      C14    C15    C13    .
+ COY      N23    C14    .      .
+ COY      C13    C14    C12    .
+ COY      H13    C13    .      .
+ COY      C48    C13    C49    .
+ COY      H481   C48    .      .
+ COY      H482   C48    .      .
+ COY      C49    C48    C50    .
+ COY      H491   C49    .      .
+ COY      H492   C49    .      .
+ COY      C50    C49    O51    .
+ COY      N52    C50    H521   .
+ COY      H522   N52    .      .
+ COY      H521   N52    .      .
+ COY      O51    C50    .      .
+ COY      C12    C13    C11    .
+ COY      C46    C12    H461   .
+ COY      H463   C46    .      .
+ COY      H462   C46    .      .
+ COY      H461   C46    .      .
+ COY      C47    C12    H471   .
+ COY      H473   C47    .      .
+ COY      H472   C47    .      .
+ COY      H471   C47    .      .
+ COY      C11    C12    C10    .
+ COY      H111   C11    .      .
+ COY      C10    C11    C9     .
+ COY      H10    C10    .      .
+ COY      C9     C10    C8     .
+ COY      N22    C9     .      .
+ COY      C8     C9     C7     .
+ COY      H8     C8     .      .
+ COY      C41    C8     C42    .
+ COY      H411   C41    .      .
+ COY      H412   C41    .      .
+ COY      C42    C41    C43    .
+ COY      H421   C42    .      .
+ COY      H422   C42    .      .
+ COY      C43    C42    O44    .
+ COY      N45    C43    H451   .
+ COY      H452   N45    .      .
+ COY      H451   N45    .      .
+ COY      O44    C43    .      .
+ COY      C7     C8     C6     .
+ COY      C36    C7     H361   .
+ COY      H363   C36    .      .
+ COY      H362   C36    .      .
+ COY      H361   C36    .      .
+ COY      C37    C7     C38    .
+ COY      H371   C37    .      .
+ COY      H372   C37    .      .
+ COY      C38    C37    O39    .
+ COY      N40    C38    H401   .
+ COY      H402   N40    .      .
+ COY      H401   N40    .      .
+ COY      O39    C38    .      .
+ COY      C6     C7     C5     .
+ COY      H66    C6     .      .
+ COY      C5     C6     C4     .
+ COY      C35    C5     H351   .
+ COY      H353   C35    .      .
+ COY      H352   C35    .      .
+ COY      H351   C35    .      .
+ COY      C4     C5     C3     .
+ COY      N21    C4     .      .
+ COY      C3     C4     C2     .
+ COY      H3     C3     .      .
+ COY      C30    C3     C31    .
+ COY      H301   C30    .      .
+ COY      H302   C30    .      .
+ COY      C31    C30    C32    .
+ COY      H311   C31    .      .
+ COY      H312   C31    .      .
+ COY      C32    C31    O34    .
+ COY      N33    C32    H331   .
+ COY      H332   N33    .      .
+ COY      H331   N33    .      .
+ COY      O34    C32    .      .
+ COY      C2     C3     C26    .
+ COY      C25    C2     H251   .
+ COY      H253   C25    .      .
+ COY      H252   C25    .      .
+ COY      H251   C25    .      .
+ COY      C26    C2     C27    .
+ COY      H261   C26    .      .
+ COY      H262   C26    .      .
+ COY      C27    C26    N29    .
+ COY      O28    C27    .      .
+ COY      N29    C27    H291   .
+ COY      H292   N29    .      .
+ COY      H291   N29    .      END
+ COY      CO     N21    .    ADD
+ COY      CO     N22    .    ADD
+ COY      CO     N23    .    ADD
+ COY      N21    C1     .    ADD
+ COY      N22    C6     .    ADD
+ COY      N23    C11    .    ADD
+ COY      N24    C16    .    ADD
+ COY      C1     C2     .    ADD
+ COY      C3R    C2R    .    ADD
+ COY      N1B    C2B    .    ADD
+ COY      C8B    C9B    .    ADD
+ COY      C6A    C5A    .    ADD
+ COY      C5A    N7A    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+COY       CO        N21       single    1.810     0.020     1.810     0.020     
+COY       CO        N22       single    1.810     0.020     1.810     0.020     
+COY       CO        N23       single    1.810     0.020     1.810     0.020     
+COY       CO        N24       single    1.900     0.020     1.900     0.020     
+COY       C75       CO        single    1.980     0.020     1.980     0.020     
+COY       N21       C1        single    1.455     0.020     1.455     0.020     
+COY       N21       C4        single    1.330     0.020     1.330     0.020     
+COY       N22       C6        single    1.455     0.020     1.455     0.020     
+COY       N22       C9        single    1.330     0.020     1.330     0.020     
+COY       N23       C11       single    1.455     0.020     1.455     0.020     
+COY       N23       C14       single    1.330     0.020     1.330     0.020     
+COY       N24       C16       single    1.469     0.020     1.469     0.020     
+COY       N24       C19       single    1.469     0.020     1.469     0.020     
+COY       C20       C1        single    1.524     0.020     1.524     0.020     
+COY       C1        C2        single    1.524     0.020     1.524     0.020     
+COY       C1        C19       single    1.524     0.020     1.524     0.020     
+COY       H201      C20       single    1.089     0.010     0.989     0.005     
+COY       H202      C20       single    1.089     0.010     0.989     0.005     
+COY       H203      C20       single    1.089     0.010     0.989     0.005     
+COY       C25       C2        single    1.524     0.020     1.524     0.020     
+COY       C26       C2        single    1.524     0.020     1.524     0.020     
+COY       C2        C3        single    1.524     0.020     1.524     0.020     
+COY       H251      C25       single    1.089     0.010     0.989     0.005     
+COY       H252      C25       single    1.089     0.010     0.989     0.005     
+COY       H253      C25       single    1.089     0.010     0.989     0.005     
+COY       C27       C26       single    1.510     0.020     1.510     0.020     
+COY       H261      C26       single    1.089     0.010     0.989     0.005     
+COY       H262      C26       single    1.089     0.010     0.989     0.005     
+COY       O28       C27       double    1.220     0.020     1.220     0.020     
+COY       N29       C27       single    1.332     0.020     1.332     0.020     
+COY       H291      N29       single    1.016     0.010     0.899     0.007     
+COY       H292      N29       single    1.016     0.010     0.899     0.007     
+COY       C30       C3        single    1.524     0.020     1.524     0.020     
+COY       C3        C4        single    1.500     0.020     1.500     0.020     
+COY       H3        C3        single    1.089     0.010     0.989     0.005     
+COY       C31       C30       single    1.524     0.020     1.524     0.020     
+COY       H301      C30       single    1.089     0.010     0.989     0.005     
+COY       H302      C30       single    1.089     0.010     0.989     0.005     
+COY       C32       C31       single    1.510     0.020     1.510     0.020     
+COY       H311      C31       single    1.089     0.010     0.989     0.005     
+COY       H312      C31       single    1.089     0.010     0.989     0.005     
+COY       O34       C32       double    1.220     0.020     1.220     0.020     
+COY       N33       C32       single    1.332     0.020     1.332     0.020     
+COY       H331      N33       single    1.016     0.010     0.899     0.007     
+COY       H332      N33       single    1.016     0.010     0.899     0.007     
+COY       C4        C5        double    1.330     0.020     1.330     0.020     
+COY       C35       C5        single    1.500     0.020     1.500     0.020     
+COY       C5        C6        single    1.500     0.020     1.500     0.020     
+COY       H351      C35       single    1.089     0.010     0.989     0.005     
+COY       H352      C35       single    1.089     0.010     0.989     0.005     
+COY       H353      C35       single    1.089     0.010     0.989     0.005     
+COY       C6        C7        single    1.524     0.020     1.524     0.020     
+COY       H66       C6        single    1.089     0.010     0.989     0.005     
+COY       C36       C7        single    1.524     0.020     1.524     0.020     
+COY       C37       C7        single    1.524     0.020     1.524     0.020     
+COY       C7        C8        single    1.524     0.020     1.524     0.020     
+COY       H361      C36       single    1.089     0.010     0.989     0.005     
+COY       H362      C36       single    1.089     0.010     0.989     0.005     
+COY       H363      C36       single    1.089     0.010     0.989     0.005     
+COY       C38       C37       single    1.510     0.020     1.510     0.020     
+COY       H371      C37       single    1.089     0.010     0.989     0.005     
+COY       H372      C37       single    1.089     0.010     0.989     0.005     
+COY       O39       C38       double    1.220     0.020     1.220     0.020     
+COY       N40       C38       single    1.332     0.020     1.332     0.020     
+COY       H401      N40       single    1.016     0.010     0.899     0.007     
+COY       H402      N40       single    1.016     0.010     0.899     0.007     
+COY       C41       C8        single    1.524     0.020     1.524     0.020     
+COY       C8        C9        single    1.500     0.020     1.500     0.020     
+COY       H8        C8        single    1.089     0.010     0.989     0.005     
+COY       C42       C41       single    1.524     0.020     1.524     0.020     
+COY       H411      C41       single    1.089     0.010     0.989     0.005     
+COY       H412      C41       single    1.089     0.010     0.989     0.005     
+COY       C43       C42       single    1.510     0.020     1.510     0.020     
+COY       H421      C42       single    1.089     0.010     0.989     0.005     
+COY       H422      C42       single    1.089     0.010     0.989     0.005     
+COY       O44       C43       double    1.220     0.020     1.220     0.020     
+COY       N45       C43       single    1.332     0.020     1.332     0.020     
+COY       H451      N45       single    1.016     0.010     0.899     0.007     
+COY       H452      N45       single    1.016     0.010     0.899     0.007     
+COY       C9        C10       double    1.340     0.020     1.340     0.020     
+COY       C10       C11       single    1.510     0.020     1.510     0.020     
+COY       H10       C10       single    1.082     0.013     0.975     0.010     
+COY       C11       C12       single    1.524     0.020     1.524     0.020     
+COY       H111      C11       single    1.089     0.010     0.989     0.005     
+COY       C46       C12       single    1.524     0.020     1.524     0.020     
+COY       C47       C12       single    1.524     0.020     1.524     0.020     
+COY       C12       C13       single    1.524     0.020     1.524     0.020     
+COY       H461      C46       single    1.089     0.010     0.989     0.005     
+COY       H462      C46       single    1.089     0.010     0.989     0.005     
+COY       H463      C46       single    1.089     0.010     0.989     0.005     
+COY       H471      C47       single    1.089     0.010     0.989     0.005     
+COY       H472      C47       single    1.089     0.010     0.989     0.005     
+COY       H473      C47       single    1.089     0.010     0.989     0.005     
+COY       C48       C13       single    1.524     0.020     1.524     0.020     
+COY       C13       C14       single    1.500     0.020     1.500     0.020     
+COY       H13       C13       single    1.089     0.010     0.989     0.005     
+COY       C49       C48       single    1.524     0.020     1.524     0.020     
+COY       H481      C48       single    1.089     0.010     0.989     0.005     
+COY       H482      C48       single    1.089     0.010     0.989     0.005     
+COY       C50       C49       single    1.510     0.020     1.510     0.020     
+COY       H491      C49       single    1.089     0.010     0.989     0.005     
+COY       H492      C49       single    1.089     0.010     0.989     0.005     
+COY       O51       C50       double    1.220     0.020     1.220     0.020     
+COY       N52       C50       single    1.332     0.020     1.332     0.020     
+COY       H521      N52       single    1.016     0.010     0.899     0.007     
+COY       H522      N52       single    1.016     0.010     0.899     0.007     
+COY       C14       C15       double    1.330     0.020     1.330     0.020     
+COY       C53       C15       single    1.500     0.020     1.500     0.020     
+COY       C15       C16       single    1.500     0.020     1.500     0.020     
+COY       H531      C53       single    1.089     0.010     0.989     0.005     
+COY       H532      C53       single    1.089     0.010     0.989     0.005     
+COY       H533      C53       single    1.089     0.010     0.989     0.005     
+COY       C16       C17       single    1.524     0.020     1.524     0.020     
+COY       H116      C16       single    1.089     0.010     0.989     0.005     
+COY       C54       C17       single    1.524     0.020     1.524     0.020     
+COY       C17       C55       single    1.524     0.020     1.524     0.020     
+COY       C18       C17       single    1.524     0.020     1.524     0.020     
+COY       H541      C54       single    1.089     0.010     0.989     0.005     
+COY       H542      C54       single    1.089     0.010     0.989     0.005     
+COY       H543      C54       single    1.089     0.010     0.989     0.005     
+COY       C55       C56       single    1.524     0.020     1.524     0.020     
+COY       H551      C55       single    1.089     0.010     0.989     0.005     
+COY       H552      C55       single    1.089     0.010     0.989     0.005     
+COY       C56       C57       single    1.510     0.020     1.510     0.020     
+COY       H561      C56       single    1.089     0.010     0.989     0.005     
+COY       H562      C56       single    1.089     0.010     0.989     0.005     
+COY       O58       C57       double    1.220     0.020     1.220     0.020     
+COY       C57       N59       single    1.330     0.020     1.330     0.020     
+COY       N59       C1P       single    1.450     0.020     1.450     0.020     
+COY       H59       N59       single    1.016     0.010     0.899     0.007     
+COY       C60       C18       single    1.524     0.020     1.524     0.020     
+COY       C19       C18       single    1.524     0.020     1.524     0.020     
+COY       H18       C18       single    1.089     0.010     0.989     0.005     
+COY       C61       C60       single    1.510     0.020     1.510     0.020     
+COY       H601      C60       single    1.089     0.010     0.989     0.005     
+COY       H602      C60       single    1.089     0.010     0.989     0.005     
+COY       O63       C61       double    1.220     0.020     1.220     0.020     
+COY       N62       C61       single    1.332     0.020     1.332     0.020     
+COY       H621      N62       single    1.016     0.010     0.899     0.007     
+COY       H622      N62       single    1.016     0.010     0.899     0.007     
+COY       H119      C19       single    1.089     0.010     0.989     0.005     
+COY       C1P       C2P       single    1.524     0.020     1.524     0.020     
+COY       H1P1      C1P       single    1.089     0.010     0.989     0.005     
+COY       H1P2      C1P       single    1.089     0.010     0.989     0.005     
+COY       C3P       C2P       single    1.524     0.020     1.524     0.020     
+COY       C2P       O3        single    1.426     0.020     1.426     0.020     
+COY       H2P       C2P       single    1.089     0.010     0.989     0.005     
+COY       H3P1      C3P       single    1.089     0.010     0.989     0.005     
+COY       H3P2      C3P       single    1.089     0.010     0.989     0.005     
+COY       H3P3      C3P       single    1.089     0.010     0.989     0.005     
+COY       O3        P         single    1.610     0.020     1.610     0.020     
+COY       O4        P         deloc     1.510     0.020     1.510     0.020     
+COY       P         O5        deloc     1.510     0.020     1.510     0.020     
+COY       O2        P         single    1.610     0.020     1.610     0.020     
+COY       C3R       O2        single    1.426     0.020     1.426     0.020     
+COY       C3R       C2R       single    1.524     0.020     1.524     0.020     
+COY       C4R       C3R       single    1.524     0.020     1.524     0.020     
+COY       H3R       C3R       single    1.089     0.010     0.989     0.005     
+COY       O7R       C2R       single    1.432     0.020     1.432     0.020     
+COY       C2R       C1R       single    1.524     0.020     1.524     0.020     
+COY       H2R       C2R       single    1.089     0.010     0.989     0.005     
+COY       HOR7      O7R       single    0.970     0.012     0.839     0.014     
+COY       C1R       O6R       single    1.426     0.020     1.426     0.020     
+COY       N1B       C1R       single    1.485     0.020     1.485     0.020     
+COY       H1R       C1R       single    1.089     0.010     0.989     0.005     
+COY       O6R       C4R       single    1.426     0.020     1.426     0.020     
+COY       C5R       C4R       single    1.524     0.020     1.524     0.020     
+COY       H4R       C4R       single    1.089     0.010     0.989     0.005     
+COY       O8R       C5R       single    1.432     0.020     1.432     0.020     
+COY       H5R1      C5R       single    1.089     0.010     0.989     0.005     
+COY       H5R2      C5R       single    1.089     0.010     0.989     0.005     
+COY       HOR8      O8R       single    0.970     0.012     0.839     0.014     
+COY       C8B       N1B       single    1.337     0.020     1.337     0.020     
+COY       N1B       C2B       single    1.337     0.020     1.337     0.020     
+COY       C8B       C9B       single    1.490     0.020     1.490     0.020     
+COY       C7B       C8B       double    1.390     0.020     1.390     0.020     
+COY       C2B       N3B       double    1.350     0.020     1.350     0.020     
+COY       H2B       C2B       single    1.082     0.013     0.975     0.010     
+COY       N3B       C9B       single    1.350     0.020     1.350     0.020     
+COY       C9B       C4B       double    1.390     0.020     1.390     0.020     
+COY       C4B       C5B       single    1.390     0.020     1.390     0.020     
+COY       H4B       C4B       single    1.082     0.013     0.975     0.010     
+COY       C5M       C5B       single    1.506     0.020     1.506     0.020     
+COY       C5B       C6B       double    1.487     0.020     1.487     0.020     
+COY       HM51      C5M       single    1.089     0.010     0.989     0.005     
+COY       HM52      C5M       single    1.089     0.010     0.989     0.005     
+COY       HM53      C5M       single    1.089     0.010     0.989     0.005     
+COY       C6M       C6B       single    1.506     0.020     1.506     0.020     
+COY       C6B       C7B       single    1.390     0.020     1.390     0.020     
+COY       HM61      C6M       single    1.089     0.010     0.989     0.005     
+COY       HM62      C6M       single    1.089     0.010     0.989     0.005     
+COY       HM63      C6M       single    1.089     0.010     0.989     0.005     
+COY       H7B       C7B       single    1.082     0.013     0.975     0.010     
+COY       C71       C72       single    1.524     0.020     1.524     0.020     
+COY       N9A       C71       single    1.462     0.020     1.462     0.020     
+COY       H711      C71       single    1.089     0.010     0.989     0.005     
+COY       H712      C71       single    1.089     0.010     0.989     0.005     
+COY       C72       C73       single    1.524     0.020     1.524     0.020     
+COY       H721      C72       single    1.089     0.010     0.989     0.005     
+COY       H722      C72       single    1.089     0.010     0.989     0.005     
+COY       C73       C74       single    1.524     0.020     1.524     0.020     
+COY       H731      C73       single    1.089     0.010     0.989     0.005     
+COY       H732      C73       single    1.089     0.010     0.989     0.005     
+COY       C74       C75       single    1.524     0.020     1.524     0.020     
+COY       H741      C74       single    1.089     0.010     0.989     0.005     
+COY       H742      C74       single    1.089     0.010     0.989     0.005     
+COY       H751      C75       single    1.089     0.010     0.989     0.005     
+COY       H752      C75       single    1.089     0.010     0.989     0.005     
+COY       N6A       C6A       single    1.355     0.020     1.355     0.020     
+COY       H6A1      N6A       single    1.016     0.010     0.899     0.007     
+COY       H6A2      N6A       single    1.016     0.010     0.899     0.007     
+COY       C6A       C5A       double    1.490     0.020     1.490     0.020     
+COY       C6A       N1A       single    1.350     0.020     1.350     0.020     
+COY       C5A       N7A       single    1.350     0.020     1.350     0.020     
+COY       C5A       C4A       single    1.490     0.020     1.490     0.020     
+COY       N7A       C8A       double    1.350     0.020     1.350     0.020     
+COY       C8A       N9A       single    1.337     0.020     1.337     0.020     
+COY       H8A       C8A       single    1.082     0.013     0.975     0.010     
+COY       C4A       N9A       single    1.337     0.020     1.337     0.020     
+COY       N3A       C4A       double    1.355     0.020     1.355     0.020     
+COY       C2A       N3A       single    1.337     0.020     1.337     0.020     
+COY       N1A       C2A       double    1.337     0.020     1.337     0.020     
+COY       H2A       C2A       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ COY      O5     P      O4      119.900    3.000
+ COY      O5     P      O2      108.200    3.000
+ COY      O5     P      O3      108.200    3.000
+ COY      O4     P      O2      108.200    3.000
+ COY      O4     P      O3      108.200    3.000
+ COY      O2     P      O3      102.600    3.000
+ COY      P      O2     C3R     120.500    3.000
+ COY      O2     C3R    H3R     109.470    3.000
+ COY      O2     C3R    C4R     109.470    3.000
+ COY      O2     C3R    C2R     109.470    3.000
+ COY      H3R    C3R    C4R     108.340    3.000
+ COY      H3R    C3R    C2R     108.340    3.000
+ COY      C4R    C3R    C2R     111.000    3.000
+ COY      C3R    C4R    H4R     108.340    3.000
+ COY      C3R    C4R    C5R     111.000    3.000
+ COY      C3R    C4R    O6R     109.470    3.000
+ COY      H4R    C4R    C5R     108.340    3.000
+ COY      H4R    C4R    O6R     109.470    3.000
+ COY      C5R    C4R    O6R     109.470    3.000
+ COY      C4R    C5R    H5R1    109.470    3.000
+ COY      C4R    C5R    H5R2    109.470    3.000
+ COY      C4R    C5R    O8R     109.470    3.000
+ COY      H5R1   C5R    H5R2    107.900    3.000
+ COY      H5R1   C5R    O8R     109.470    3.000
+ COY      H5R2   C5R    O8R     109.470    3.000
+ COY      C5R    O8R    HOR8    109.470    3.000
+ COY      C4R    O6R    C1R     111.800    3.000
+ COY      O6R    C1R    H1R     109.470    3.000
+ COY      O6R    C1R    N1B     109.470    3.000
+ COY      O6R    C1R    C2R     109.470    3.000
+ COY      H1R    C1R    N1B     109.470    3.000
+ COY      H1R    C1R    C2R     108.340    3.000
+ COY      N1B    C1R    C2R     109.470    3.000
+ COY      C1R    N1B    C8B     126.000    3.000
+ COY      C1R    N1B    C2B     126.000    3.000
+ COY      C8B    N1B    C2B     108.000    3.000
+ COY      N1B    C8B    C7B     132.000    3.000
+ COY      N1B    C8B    C9B     108.000    3.000
+ COY      C7B    C8B    C9B     120.000    3.000
+ COY      C8B    C7B    H7B     120.000    3.000
+ COY      C8B    C7B    C6B     120.000    3.000
+ COY      H7B    C7B    C6B     120.000    3.000
+ COY      C7B    C6B    C6M     120.000    3.000
+ COY      C7B    C6B    C5B     120.000    3.000
+ COY      C6M    C6B    C5B     120.000    3.000
+ COY      C6B    C6M    HM63    109.470    3.000
+ COY      C6B    C6M    HM62    109.470    3.000
+ COY      C6B    C6M    HM61    109.470    3.000
+ COY      HM63   C6M    HM62    109.470    3.000
+ COY      HM63   C6M    HM61    109.470    3.000
+ COY      HM62   C6M    HM61    109.470    3.000
+ COY      C6B    C5B    C5M     120.000    3.000
+ COY      C6B    C5B    C4B     120.000    3.000
+ COY      C5M    C5B    C4B     120.000    3.000
+ COY      C5B    C5M    HM53    109.470    3.000
+ COY      C5B    C5M    HM52    109.470    3.000
+ COY      C5B    C5M    HM51    109.470    3.000
+ COY      HM53   C5M    HM52    109.470    3.000
+ COY      HM53   C5M    HM51    109.470    3.000
+ COY      HM52   C5M    HM51    109.470    3.000
+ COY      C5B    C4B    H4B     120.000    3.000
+ COY      C5B    C4B    C9B     120.000    3.000
+ COY      H4B    C4B    C9B     120.000    3.000
+ COY      C4B    C9B    N3B     132.000    3.000
+ COY      C4B    C9B    C8B     120.000    3.000
+ COY      N3B    C9B    C8B     108.000    3.000
+ COY      C9B    N3B    C2B     108.000    3.000
+ COY      N3B    C2B    H2B     126.000    3.000
+ COY      N3B    C2B    N1B     108.000    3.000
+ COY      H2B    C2B    N1B     126.000    3.000
+ COY      C1R    C2R    H2R     108.340    3.000
+ COY      C1R    C2R    O7R     109.470    3.000
+ COY      C1R    C2R    C3R     111.000    3.000
+ COY      H2R    C2R    O7R     109.470    3.000
+ COY      H2R    C2R    C3R     108.340    3.000
+ COY      O7R    C2R    C3R     109.470    3.000
+ COY      C2R    O7R    HOR7    109.470    3.000
+ COY      P      O3     C2P     120.500    3.000
+ COY      O3     C2P    H2P     109.470    3.000
+ COY      O3     C2P    C3P     109.470    3.000
+ COY      O3     C2P    C1P     109.470    3.000
+ COY      H2P    C2P    C3P     108.340    3.000
+ COY      H2P    C2P    C1P     108.340    3.000
+ COY      C3P    C2P    C1P     111.000    3.000
+ COY      C2P    C3P    H3P3    109.470    3.000
+ COY      C2P    C3P    H3P2    109.470    3.000
+ COY      C2P    C3P    H3P1    109.470    3.000
+ COY      H3P3   C3P    H3P2    109.470    3.000
+ COY      H3P3   C3P    H3P1    109.470    3.000
+ COY      H3P2   C3P    H3P1    109.470    3.000
+ COY      C2P    C1P    H1P1    109.470    3.000
+ COY      C2P    C1P    H1P2    109.470    3.000
+ COY      C2P    C1P    N59     110.000    3.000
+ COY      H1P1   C1P    H1P2    107.900    3.000
+ COY      H1P1   C1P    N59     109.470    3.000
+ COY      H1P2   C1P    N59     109.470    3.000
+ COY      C1P    N59    H59     118.500    3.000
+ COY      C1P    N59    C57     121.500    3.000
+ COY      H59    N59    C57     120.000    3.000
+ COY      N59    C57    O58     123.000    3.000
+ COY      N59    C57    C56     116.500    3.000
+ COY      O58    C57    C56     120.500    3.000
+ COY      C57    C56    H561    109.470    3.000
+ COY      C57    C56    H562    109.470    3.000
+ COY      C57    C56    C55     109.470    3.000
+ COY      H561   C56    H562    107.900    3.000
+ COY      H561   C56    C55     109.470    3.000
+ COY      H562   C56    C55     109.470    3.000
+ COY      C56    C55    H551    109.470    3.000
+ COY      C56    C55    H552    109.470    3.000
+ COY      C56    C55    C17     111.000    3.000
+ COY      H551   C55    H552    107.900    3.000
+ COY      H551   C55    C17     109.470    3.000
+ COY      H552   C55    C17     109.470    3.000
+ COY      C55    C17    C54     111.000    3.000
+ COY      C55    C17    C18     111.000    3.000
+ COY      C55    C17    C16     111.000    3.000
+ COY      C54    C17    C18     111.000    3.000
+ COY      C54    C17    C16     111.000    3.000
+ COY      C18    C17    C16     111.000    3.000
+ COY      C17    C54    H543    109.470    3.000
+ COY      C17    C54    H542    109.470    3.000
+ COY      C17    C54    H541    109.470    3.000
+ COY      H543   C54    H542    109.470    3.000
+ COY      H543   C54    H541    109.470    3.000
+ COY      H542   C54    H541    109.470    3.000
+ COY      C17    C18    H18     108.340    3.000
+ COY      C17    C18    C60     111.000    3.000
+ COY      C17    C18    C19     111.000    3.000
+ COY      H18    C18    C60     108.340    3.000
+ COY      H18    C18    C19     108.340    3.000
+ COY      C60    C18    C19     111.000    3.000
+ COY      C18    C60    H601    109.470    3.000
+ COY      C18    C60    H602    109.470    3.000
+ COY      C18    C60    C61     109.470    3.000
+ COY      H601   C60    H602    107.900    3.000
+ COY      H601   C60    C61     109.470    3.000
+ COY      H602   C60    C61     109.470    3.000
+ COY      C60    C61    N62     116.500    3.000
+ COY      C60    C61    O63     120.500    3.000
+ COY      N62    C61    O63     123.000    3.000
+ COY      C61    N62    H622    120.000    3.000
+ COY      C61    N62    H621    120.000    3.000
+ COY      H622   N62    H621    120.000    3.000
+ COY      C18    C19    H119    108.340    3.000
+ COY      C18    C19    C1      111.000    3.000
+ COY      C18    C19    N24     109.500    3.000
+ COY      H119   C19    C1      108.340    3.000
+ COY      H119   C19    N24     109.500    3.000
+ COY      C1     C19    N24     109.500    3.000
+ COY      C19    C1     C20     111.000    3.000
+ COY      C19    C1     N21     111.600    3.000
+ COY      C19    C1     C2      111.000    3.000
+ COY      N21    C1     C2      111.600    3.000
+ COY      C20    C1     N21     111.600    3.000
+ COY      C20    C1     C2      111.000    3.000
+ COY      C1     C20    H203    109.470    3.000
+ COY      C1     C20    H202    109.470    3.000
+ COY      C1     C20    H201    109.470    3.000
+ COY      H203   C20    H202    109.470    3.000
+ COY      H203   C20    H201    109.470    3.000
+ COY      H202   C20    H201    109.470    3.000
+ COY      C19    N24    CO      109.500    3.000
+ COY      C19    N24    C16     109.500    3.000
+ COY      CO     N24    C16     109.500    3.000
+ COY      N24    CO     C75      90.000    3.000
+ COY      N24    CO     N21      90.000    3.000
+ COY      N24    CO     N22     180.000    3.000
+ COY      N24    CO     N23      90.000    3.000
+ COY      N21    CO     N22      90.000    3.000
+ COY      N21    CO     N23      90.000    3.000
+ COY      N22    CO     N23      90.000    3.000
+ COY      C75    CO     N21      90.000    3.000
+ COY      C75    CO     N22      90.000    3.000
+ COY      C75    CO     N23      90.000    3.000
+ COY      CO     C75    H751    109.500    3.000
+ COY      CO     C75    H752    109.500    3.000
+ COY      CO     C75    C74     109.500    3.000
+ COY      H751   C75    H752    107.900    3.000
+ COY      H751   C75    C74     109.470    3.000
+ COY      H752   C75    C74     109.470    3.000
+ COY      C75    C74    H741    109.470    3.000
+ COY      C75    C74    H742    109.470    3.000
+ COY      C75    C74    C73     111.000    3.000
+ COY      H741   C74    H742    107.900    3.000
+ COY      H741   C74    C73     109.470    3.000
+ COY      H742   C74    C73     109.470    3.000
+ COY      C74    C73    H731    109.470    3.000
+ COY      C74    C73    H732    109.470    3.000
+ COY      C74    C73    C72     111.000    3.000
+ COY      H731   C73    H732    107.900    3.000
+ COY      H731   C73    C72     109.470    3.000
+ COY      H732   C73    C72     109.470    3.000
+ COY      C73    C72    H721    109.470    3.000
+ COY      C73    C72    H722    109.470    3.000
+ COY      C73    C72    C71     111.000    3.000
+ COY      H721   C72    H722    107.900    3.000
+ COY      H721   C72    C71     109.470    3.000
+ COY      H722   C72    C71     109.470    3.000
+ COY      C72    C71    H711    109.470    3.000
+ COY      C72    C71    H712    109.470    3.000
+ COY      C72    C71    N9A     109.500    3.000
+ COY      H711   C71    H712    107.900    3.000
+ COY      H711   C71    N9A     109.500    3.000
+ COY      H712   C71    N9A     109.500    3.000
+ COY      C71    N9A    C8A     126.000    3.000
+ COY      C71    N9A    C4A     126.000    3.000
+ COY      C8A    N9A    C4A     108.000    3.000
+ COY      N9A    C8A    H8A     126.000    3.000
+ COY      N9A    C8A    N7A     108.000    3.000
+ COY      H8A    C8A    N7A     126.000    3.000
+ COY      C8A    N7A    C5A     108.000    3.000
+ COY      N9A    C4A    C5A     108.000    3.000
+ COY      N9A    C4A    N3A     132.000    3.000
+ COY      C5A    C4A    N3A     120.000    3.000
+ COY      C4A    C5A    C6A     120.000    3.000
+ COY      C4A    C5A    N7A     108.000    3.000
+ COY      C6A    C5A    N7A     132.000    3.000
+ COY      C4A    N3A    C2A     120.000    3.000
+ COY      N3A    C2A    H2A     120.000    3.000
+ COY      N3A    C2A    N1A     120.000    3.000
+ COY      H2A    C2A    N1A     120.000    3.000
+ COY      C2A    N1A    C6A     120.000    3.000
+ COY      N1A    C6A    N6A     120.000    3.000
+ COY      N1A    C6A    C5A     120.000    3.000
+ COY      N6A    C6A    C5A     120.000    3.000
+ COY      C6A    N6A    H6A2    120.000    3.000
+ COY      C6A    N6A    H6A1    120.000    3.000
+ COY      H6A2   N6A    H6A1    120.000    3.000
+ COY      C17    C16    H116    108.340    3.000
+ COY      C17    C16    C15     109.470    3.000
+ COY      C17    C16    N24     109.500    3.000
+ COY      H116   C16    C15     108.810    3.000
+ COY      H116   C16    N24     109.500    3.000
+ COY      C15    C16    N24     109.500    3.000
+ COY      C16    C15    C53     120.000    3.000
+ COY      C16    C15    C14     120.000    3.000
+ COY      C53    C15    C14     120.000    3.000
+ COY      C15    C53    H533    109.470    3.000
+ COY      C15    C53    H532    109.470    3.000
+ COY      C15    C53    H531    109.470    3.000
+ COY      H533   C53    H532    109.470    3.000
+ COY      H533   C53    H531    109.470    3.000
+ COY      H532   C53    H531    109.470    3.000
+ COY      C15    C14    N23     116.500    3.000
+ COY      C15    C14    C13     120.000    3.000
+ COY      N23    C14    C13     116.500    3.000
+ COY      C14    N23    CO      120.000    3.000
+ COY      C14    N23    C11     121.000    3.000
+ COY      CO     N23    C11     120.000    3.000
+ COY      C14    C13    H13     108.810    3.000
+ COY      C14    C13    C48     109.470    3.000
+ COY      C14    C13    C12     109.470    3.000
+ COY      H13    C13    C48     108.340    3.000
+ COY      H13    C13    C12     108.340    3.000
+ COY      C48    C13    C12     111.000    3.000
+ COY      C13    C48    H481    109.470    3.000
+ COY      C13    C48    H482    109.470    3.000
+ COY      C13    C48    C49     111.000    3.000
+ COY      H481   C48    H482    107.900    3.000
+ COY      H481   C48    C49     109.470    3.000
+ COY      H482   C48    C49     109.470    3.000
+ COY      C48    C49    H491    109.470    3.000
+ COY      C48    C49    H492    109.470    3.000
+ COY      C48    C49    C50     109.470    3.000
+ COY      H491   C49    H492    107.900    3.000
+ COY      H491   C49    C50     109.470    3.000
+ COY      H492   C49    C50     109.470    3.000
+ COY      C49    C50    N52     116.500    3.000
+ COY      C49    C50    O51     120.500    3.000
+ COY      N52    C50    O51     123.000    3.000
+ COY      C50    N52    H522    120.000    3.000
+ COY      C50    N52    H521    120.000    3.000
+ COY      H522   N52    H521    120.000    3.000
+ COY      C13    C12    C46     111.000    3.000
+ COY      C13    C12    C47     111.000    3.000
+ COY      C13    C12    C11     111.000    3.000
+ COY      C46    C12    C47     111.000    3.000
+ COY      C46    C12    C11     111.000    3.000
+ COY      C47    C12    C11     111.000    3.000
+ COY      C12    C46    H463    109.470    3.000
+ COY      C12    C46    H462    109.470    3.000
+ COY      C12    C46    H461    109.470    3.000
+ COY      H463   C46    H462    109.470    3.000
+ COY      H463   C46    H461    109.470    3.000
+ COY      H462   C46    H461    109.470    3.000
+ COY      C12    C47    H473    109.470    3.000
+ COY      C12    C47    H472    109.470    3.000
+ COY      C12    C47    H471    109.470    3.000
+ COY      H473   C47    H472    109.470    3.000
+ COY      H473   C47    H471    109.470    3.000
+ COY      H472   C47    H471    109.470    3.000
+ COY      C12    C11    H111    108.340    3.000
+ COY      C12    C11    C10     109.470    3.000
+ COY      C12    C11    N23     109.500    3.000
+ COY      H111   C11    C10     108.810    3.000
+ COY      H111   C11    N23     109.470    3.000
+ COY      C10    C11    N23     111.600    3.000
+ COY      C11    C10    H10     120.000    3.000
+ COY      C11    C10    C9      120.500    3.000
+ COY      H10    C10    C9      120.000    3.000
+ COY      C10    C9     N22     116.500    3.000
+ COY      C10    C9     C8      120.000    3.000
+ COY      N22    C9     C8      116.500    3.000
+ COY      C9     N22    CO      120.000    3.000
+ COY      C9     N22    C6      121.000    3.000
+ COY      CO     N22    C6      120.000    3.000
+ COY      C9     C8     H8      108.810    3.000
+ COY      C9     C8     C41     109.470    3.000
+ COY      C9     C8     C7      109.470    3.000
+ COY      H8     C8     C41     108.340    3.000
+ COY      H8     C8     C7      108.340    3.000
+ COY      C41    C8     C7      111.000    3.000
+ COY      C8     C41    H411    109.470    3.000
+ COY      C8     C41    H412    109.470    3.000
+ COY      C8     C41    C42     111.000    3.000
+ COY      H411   C41    H412    107.900    3.000
+ COY      H411   C41    C42     109.470    3.000
+ COY      H412   C41    C42     109.470    3.000
+ COY      C41    C42    H421    109.470    3.000
+ COY      C41    C42    H422    109.470    3.000
+ COY      C41    C42    C43     109.470    3.000
+ COY      H421   C42    H422    107.900    3.000
+ COY      H421   C42    C43     109.470    3.000
+ COY      H422   C42    C43     109.470    3.000
+ COY      C42    C43    N45     116.500    3.000
+ COY      C42    C43    O44     120.500    3.000
+ COY      N45    C43    O44     123.000    3.000
+ COY      C43    N45    H452    120.000    3.000
+ COY      C43    N45    H451    120.000    3.000
+ COY      H452   N45    H451    120.000    3.000
+ COY      C8     C7     C36     111.000    3.000
+ COY      C8     C7     C37     111.000    3.000
+ COY      C8     C7     C6      111.000    3.000
+ COY      C36    C7     C37     111.000    3.000
+ COY      C36    C7     C6      111.000    3.000
+ COY      C37    C7     C6      111.000    3.000
+ COY      C7     C36    H363    109.470    3.000
+ COY      C7     C36    H362    109.470    3.000
+ COY      C7     C36    H361    109.470    3.000
+ COY      H363   C36    H362    109.470    3.000
+ COY      H363   C36    H361    109.470    3.000
+ COY      H362   C36    H361    109.470    3.000
+ COY      C7     C37    H371    109.470    3.000
+ COY      C7     C37    H372    109.470    3.000
+ COY      C7     C37    C38     109.470    3.000
+ COY      H371   C37    H372    107.900    3.000
+ COY      H371   C37    C38     109.470    3.000
+ COY      H372   C37    C38     109.470    3.000
+ COY      C37    C38    N40     116.500    3.000
+ COY      C37    C38    O39     120.500    3.000
+ COY      N40    C38    O39     123.000    3.000
+ COY      C38    N40    H402    120.000    3.000
+ COY      C38    N40    H401    120.000    3.000
+ COY      H402   N40    H401    120.000    3.000
+ COY      C7     C6     H66     108.340    3.000
+ COY      C7     C6     C5      109.470    3.000
+ COY      C7     C6     N22     109.500    3.000
+ COY      H66    C6     C5      108.810    3.000
+ COY      H66    C6     N22     109.470    3.000
+ COY      C5     C6     N22     111.600    3.000
+ COY      C6     C5     C35     120.000    3.000
+ COY      C6     C5     C4      120.000    3.000
+ COY      C35    C5     C4      120.000    3.000
+ COY      C5     C35    H353    109.470    3.000
+ COY      C5     C35    H352    109.470    3.000
+ COY      C5     C35    H351    109.470    3.000
+ COY      H353   C35    H352    109.470    3.000
+ COY      H353   C35    H351    109.470    3.000
+ COY      H352   C35    H351    109.470    3.000
+ COY      C5     C4     N21     116.500    3.000
+ COY      C5     C4     C3      120.000    3.000
+ COY      N21    C4     C3      116.500    3.000
+ COY      C4     N21    CO      120.000    3.000
+ COY      C4     N21    C1      121.000    3.000
+ COY      CO     N21    C1      120.000    3.000
+ COY      C4     C3     H3      108.810    3.000
+ COY      C4     C3     C30     109.470    3.000
+ COY      C4     C3     C2      109.470    3.000
+ COY      H3     C3     C30     108.340    3.000
+ COY      H3     C3     C2      108.340    3.000
+ COY      C30    C3     C2      111.000    3.000
+ COY      C3     C30    H301    109.470    3.000
+ COY      C3     C30    H302    109.470    3.000
+ COY      C3     C30    C31     111.000    3.000
+ COY      H301   C30    H302    107.900    3.000
+ COY      H301   C30    C31     109.470    3.000
+ COY      H302   C30    C31     109.470    3.000
+ COY      C30    C31    H311    109.470    3.000
+ COY      C30    C31    H312    109.470    3.000
+ COY      C30    C31    C32     109.470    3.000
+ COY      H311   C31    H312    107.900    3.000
+ COY      H311   C31    C32     109.470    3.000
+ COY      H312   C31    C32     109.470    3.000
+ COY      C31    C32    N33     116.500    3.000
+ COY      C31    C32    O34     120.500    3.000
+ COY      N33    C32    O34     123.000    3.000
+ COY      C32    N33    H332    120.000    3.000
+ COY      C32    N33    H331    120.000    3.000
+ COY      H332   N33    H331    120.000    3.000
+ COY      C3     C2     C25     111.000    3.000
+ COY      C3     C2     C26     111.000    3.000
+ COY      C3     C2     C1      111.000    3.000
+ COY      C25    C2     C26     111.000    3.000
+ COY      C25    C2     C1      111.000    3.000
+ COY      C26    C2     C1      111.000    3.000
+ COY      C2     C25    H253    109.470    3.000
+ COY      C2     C25    H252    109.470    3.000
+ COY      C2     C25    H251    109.470    3.000
+ COY      H253   C25    H252    109.470    3.000
+ COY      H253   C25    H251    109.470    3.000
+ COY      H252   C25    H251    109.470    3.000
+ COY      C2     C26    H261    109.470    3.000
+ COY      C2     C26    H262    109.470    3.000
+ COY      C2     C26    C27     109.470    3.000
+ COY      H261   C26    H262    107.900    3.000
+ COY      H261   C26    C27     109.470    3.000
+ COY      H262   C26    C27     109.470    3.000
+ COY      C26    C27    O28     120.500    3.000
+ COY      C26    C27    N29     116.500    3.000
+ COY      O28    C27    N29     123.000    3.000
+ COY      C27    N29    H292    120.000    3.000
+ COY      C27    N29    H291    120.000    3.000
+ COY      H292   N29    H291    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ COY      var_1    O5     P      O2     C3R      -54.985   20.000   3
+ COY      var_2    P      O2     C3R    C4R     -123.302   20.000   3
+ COY      var_3    O2     C3R    C2R    C1R      180.000   20.000   3
+ COY      var_4    O2     C3R    C4R    O6R      180.000   20.000   3
+ COY      var_5    C3R    C4R    C5R    O8R      180.000   20.000   3
+ COY      var_6    C4R    C5R    O8R    HOR8    -179.972   20.000   3
+ COY      var_7    C3R    C4R    O6R    C1R       40.357   20.000   3
+ COY      var_8    C4R    O6R    C1R    C2R      -40.432   20.000   3
+ COY      var_9    O6R    C1R    N1B    C8B      165.585   20.000   3
+ COY      CONST_1  C1R    N1B    C2B    N3B      180.000    0.000   0
+ COY      CONST_2  C1R    N1B    C8B    C7B      180.000    0.000   0
+ COY      CONST_3  N1B    C8B    C9B    C4B      180.000    0.000   0
+ COY      CONST_4  N1B    C8B    C7B    C6B      180.000    0.000   0
+ COY      CONST_5  C8B    C7B    C6B    C5B        0.000    0.000   0
+ COY      var_10   C7B    C6B    C6M    HM61     -89.909   20.000   3
+ COY      CONST_6  C7B    C6B    C5B    C4B        0.000    0.000   0
+ COY      var_11   C6B    C5B    C5M    HM51     -89.963   20.000   3
+ COY      CONST_7  C6B    C5B    C4B    C9B        0.000    0.000   0
+ COY      CONST_8  C5B    C4B    C9B    N3B      180.000    0.000   0
+ COY      CONST_9  C4B    C9B    N3B    C2B      180.000    0.000   0
+ COY      CONST_10 C9B    N3B    C2B    N1B        0.000    0.000   0
+ COY      var_12   O6R    C1R    C2R    O7R      180.000   20.000   3
+ COY      var_13   C1R    C2R    O7R    HOR7      65.305   20.000   3
+ COY      var_14   O5     P      O3     C2P       55.837   20.000   3
+ COY      var_15   P      O3     C2P    C1P      128.267   20.000   3
+ COY      var_16   O3     C2P    C3P    H3P1     180.000   20.000   3
+ COY      var_17   O3     C2P    C1P    N59      180.000   20.000   3
+ COY      var_18   C2P    C1P    N59    C57        0.000   20.000   3
+ COY      var_19   C1P    N59    C57    C56      180.000   20.000   2
+ COY      var_20   N59    C57    C56    C55      180.000   20.000   3
+ COY      var_21   C57    C56    C55    C17      180.000   20.000   3
+ COY      var_22   C56    C55    C17    C16     -170.417   20.000   3
+ COY      var_23   C55    C17    C54    H541      64.973   20.000   3
+ COY      var_24   C55    C17    C18    C19     -136.087   20.000   3
+ COY      var_25   C17    C18    C60    C61      180.000   20.000   3
+ COY      var_26   C18    C60    C61    O63      180.000   20.000   3
+ COY      CONST_11 C60    C61    N62    H621     180.000    0.000   0
+ COY      var_27   C17    C18    C19    N24      180.000   20.000   3
+ COY      var_28   C18    C19    C1     C20      -29.304   20.000   3
+ COY      var_29   C19    C1     C2     C3       156.717   20.000   3
+ COY      var_30   C19    C1     C20    H201    -177.238   20.000   3
+ COY      var_31   C18    C19    N24    CO       151.105   20.000   3
+ COY      var_32   C19    N24    C16    C17      -42.555   20.000   3
+ COY      var_33   C19    N24    CO     C75       86.469   20.000   3
+ COY      var_34   N24    CO     N21    C4      -179.649   20.000   3
+ COY      var_35   N24    CO     N22    C9       143.323   20.000   3
+ COY      var_36   N24    CO     N23    C14       20.253   20.000   3
+ COY      var_37   N24    CO     C75    C74      175.932   20.000   3
+ COY      var_38   CO     C75    C74    C73      180.000   20.000   3
+ COY      var_39   C75    C74    C73    C72      180.000   20.000   3
+ COY      var_40   C74    C73    C72    C71      180.000   20.000   3
+ COY      var_41   C73    C72    C71    N9A      180.000   20.000   3
+ COY      var_42   C72    C71    N9A    C4A       84.706   20.000   3
+ COY      CONST_12 C71    N9A    C8A    N7A      180.000    0.000   0
+ COY      CONST_13 N9A    C8A    N7A    C5A        0.000    0.000   0
+ COY      CONST_14 C71    N9A    C4A    N3A      180.000    0.000   0
+ COY      CONST_15 N9A    C4A    C5A    C6A      180.000    0.000   0
+ COY      CONST_16 C4A    C5A    N7A    C8A      180.000    0.000   0
+ COY      CONST_17 N9A    C4A    N3A    C2A      180.000    0.000   0
+ COY      CONST_18 C4A    N3A    C2A    N1A        0.000    0.000   0
+ COY      CONST_19 N3A    C2A    N1A    C6A        0.000    0.000   0
+ COY      CONST_20 C2A    N1A    C6A    N6A        0.000    0.000   0
+ COY      CONST_21 N1A    C6A    C5A    C4A      180.000    0.000   0
+ COY      CONST_22 N1A    C6A    N6A    H6A1    -179.960    0.000   0
+ COY      var_43   C55    C17    C16    C15      -78.318   20.000   3
+ COY      var_44   C17    C16    C15    C14      180.000   20.000   3
+ COY      var_45   C16    C15    C53    H531      89.455   20.000   3
+ COY      var_46   C16    C15    C14    C13      179.663   20.000   3
+ COY      var_47   C15    C14    N23    CO       180.000   20.000   2
+ COY      var_48   C14    N23    C11    C12        0.000   20.000   3
+ COY      var_49   C15    C14    C13    C12      180.000   20.000   3
+ COY      var_50   C14    C13    C48    C49      180.000   20.000   3
+ COY      var_51   C13    C48    C49    C50      180.000   20.000   3
+ COY      var_52   C48    C49    C50    O51      180.000   20.000   3
+ COY      CONST_23 C49    C50    N52    H521     180.000    0.000   0
+ COY      var_53   C14    C13    C12    C11      -31.791   20.000   3
+ COY      var_54   C13    C12    C46    H461      58.543   20.000   3
+ COY      var_55   C13    C12    C47    H471      61.421   20.000   3
+ COY      var_56   C13    C12    C11    C10      174.845   20.000   3
+ COY      var_57   C12    C11    C10    C9      -168.019   20.000   3
+ COY      var_58   C11    C10    C9     C8      -177.519   20.000   3
+ COY      var_59   C10    C9     N22    CO       180.000   20.000   2
+ COY      var_60   C9     N22    C6     C7         0.000   20.000   3
+ COY      var_61   C10    C9     C8     C7       180.000   20.000   3
+ COY      var_62   C9     C8     C41    C42      180.000   20.000   3
+ COY      var_63   C8     C41    C42    C43      180.000   20.000   3
+ COY      var_64   C41    C42    C43    O44      180.000   20.000   3
+ COY      CONST_24 C42    C43    N45    H451     180.000    0.000   0
+ COY      var_65   C9     C8     C7     C6        -0.966   20.000   3
+ COY      var_66   C8     C7     C36    H361      58.573   20.000   3
+ COY      var_67   C8     C7     C37    C38       64.297   20.000   3
+ COY      var_68   C7     C37    C38    O39      180.000   20.000   3
+ COY      CONST_25 C37    C38    N40    H401     180.000    0.000   0
+ COY      var_69   C8     C7     C6     C5       147.072   20.000   3
+ COY      var_70   C7     C6     C5     C4       180.000   20.000   3
+ COY      var_71   C6     C5     C35    H351    -178.171   20.000   3
+ COY      var_72   C6     C5     C4     C3       163.314   20.000   3
+ COY      var_73   C5     C4     N21    CO       180.000   20.000   2
+ COY      var_74   C4     N21    C1     C19     -161.763   20.000   3
+ COY      var_75   C5     C4     C3     C2       180.000   20.000   3
+ COY      var_76   C4     C3     C30    C31      180.000   20.000   3
+ COY      var_77   C3     C30    C31    C32      180.000   20.000   3
+ COY      var_78   C30    C31    C32    O34      180.000   20.000   3
+ COY      CONST_26 C31    C32    N33    H331     180.000    0.000   0
+ COY      var_79   C4     C3     C2     C26       97.284   20.000   3
+ COY      var_80   C3     C2     C25    H251      31.397   20.000   3
+ COY      var_81   C3     C2     C26    C27       61.429   20.000   3
+ COY      var_82   C2     C26    C27    N29      180.000   20.000   3
+ COY      CONST_27 C26    C27    N29    H291     180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ COY      chir_01  N24    CO     C16    C19       positiv
+ COY      chir_02  C1     N21    C20    C2        positiv
+ COY      chir_03  C2     C1     C25    C26       negativ
+ COY      chir_04  C3     C2     C30    C4        positiv
+ COY      chir_05  C6     N22    C5     C7        negativ
+ COY      chir_06  C7     C6     C36    C37       negativ
+ COY      chir_07  C8     C7     C41    C9        positiv
+ COY      chir_08  C11    N23    C10    C12       negativ
+ COY      chir_09  C12    C11    C46    C47       negativ
+ COY      chir_10  C13    C12    C48    C14       positiv
+ COY      chir_11  C16    N24    C15    C17       negativ
+ COY      chir_12  C17    C16    C54    C55       positiv
+ COY      chir_13  C18    C17    C60    C19       negativ
+ COY      chir_14  C19    N24    C1     C18       negativ
+ COY      chir_15  C2P    C1P    C3P    O3        negativ
+ COY      chir_16  C3R    O2     C2R    C4R       negativ
+ COY      chir_17  C2R    C3R    O7R    C1R       negativ
+ COY      chir_18  C1R    C2R    O6R    N1B       positiv
+ COY      chir_19  C4R    C3R    O6R    C5R       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ COY      plan-1    N21       0.020
+ COY      plan-1    CO        0.020
+ COY      plan-1    C1        0.020
+ COY      plan-1    C4        0.020
+ COY      plan-2    N22       0.020
+ COY      plan-2    CO        0.020
+ COY      plan-2    C6        0.020
+ COY      plan-2    C9        0.020
+ COY      plan-3    N23       0.020
+ COY      plan-3    CO        0.020
+ COY      plan-3    C11       0.020
+ COY      plan-3    C14       0.020
+ COY      plan-4    C27       0.020
+ COY      plan-4    C26       0.020
+ COY      plan-4    O28       0.020
+ COY      plan-4    N29       0.020
+ COY      plan-4    H292      0.020
+ COY      plan-4    H291      0.020
+ COY      plan-5    N29       0.020
+ COY      plan-5    C27       0.020
+ COY      plan-5    H291      0.020
+ COY      plan-5    H292      0.020
+ COY      plan-6    C32       0.020
+ COY      plan-6    C31       0.020
+ COY      plan-6    O34       0.020
+ COY      plan-6    N33       0.020
+ COY      plan-6    H332      0.020
+ COY      plan-6    H331      0.020
+ COY      plan-7    N33       0.020
+ COY      plan-7    C32       0.020
+ COY      plan-7    H331      0.020
+ COY      plan-7    H332      0.020
+ COY      plan-8    C4        0.020
+ COY      plan-8    N21       0.020
+ COY      plan-8    C3        0.020
+ COY      plan-8    C5        0.020
+ COY      plan-9    C5        0.020
+ COY      plan-9    C4        0.020
+ COY      plan-9    C35       0.020
+ COY      plan-9    C6        0.020
+ COY      plan-10   C38       0.020
+ COY      plan-10   C37       0.020
+ COY      plan-10   O39       0.020
+ COY      plan-10   N40       0.020
+ COY      plan-10   H402      0.020
+ COY      plan-10   H401      0.020
+ COY      plan-11   N40       0.020
+ COY      plan-11   C38       0.020
+ COY      plan-11   H401      0.020
+ COY      plan-11   H402      0.020
+ COY      plan-12   C43       0.020
+ COY      plan-12   C42       0.020
+ COY      plan-12   O44       0.020
+ COY      plan-12   N45       0.020
+ COY      plan-12   H452      0.020
+ COY      plan-12   H451      0.020
+ COY      plan-13   N45       0.020
+ COY      plan-13   C43       0.020
+ COY      plan-13   H451      0.020
+ COY      plan-13   H452      0.020
+ COY      plan-14   C9        0.020
+ COY      plan-14   N22       0.020
+ COY      plan-14   C8        0.020
+ COY      plan-14   C10       0.020
+ COY      plan-14   H10       0.020
+ COY      plan-15   C10       0.020
+ COY      plan-15   C9        0.020
+ COY      plan-15   C11       0.020
+ COY      plan-15   H10       0.020
+ COY      plan-16   C50       0.020
+ COY      plan-16   C49       0.020
+ COY      plan-16   O51       0.020
+ COY      plan-16   N52       0.020
+ COY      plan-16   H522      0.020
+ COY      plan-16   H521      0.020
+ COY      plan-17   N52       0.020
+ COY      plan-17   C50       0.020
+ COY      plan-17   H521      0.020
+ COY      plan-17   H522      0.020
+ COY      plan-18   C14       0.020
+ COY      plan-18   N23       0.020
+ COY      plan-18   C13       0.020
+ COY      plan-18   C15       0.020
+ COY      plan-19   C15       0.020
+ COY      plan-19   C14       0.020
+ COY      plan-19   C53       0.020
+ COY      plan-19   C16       0.020
+ COY      plan-20   C57       0.020
+ COY      plan-20   C56       0.020
+ COY      plan-20   O58       0.020
+ COY      plan-20   N59       0.020
+ COY      plan-20   H59       0.020
+ COY      plan-21   N59       0.020
+ COY      plan-21   C57       0.020
+ COY      plan-21   C1P       0.020
+ COY      plan-21   H59       0.020
+ COY      plan-22   C61       0.020
+ COY      plan-22   C60       0.020
+ COY      plan-22   O63       0.020
+ COY      plan-22   N62       0.020
+ COY      plan-22   H622      0.020
+ COY      plan-22   H621      0.020
+ COY      plan-23   N62       0.020
+ COY      plan-23   C61       0.020
+ COY      plan-23   H621      0.020
+ COY      plan-23   H622      0.020
+ COY      plan-24   N1B       0.020
+ COY      plan-24   C1R       0.020
+ COY      plan-24   C8B       0.020
+ COY      plan-24   C2B       0.020
+ COY      plan-24   N3B       0.020
+ COY      plan-24   C9B       0.020
+ COY      plan-24   C7B       0.020
+ COY      plan-24   C4B       0.020
+ COY      plan-24   C5B       0.020
+ COY      plan-24   C6B       0.020
+ COY      plan-24   H2B       0.020
+ COY      plan-24   H4B       0.020
+ COY      plan-24   C5M       0.020
+ COY      plan-24   C6M       0.020
+ COY      plan-24   H7B       0.020
+ COY      plan-25   N6A       0.020
+ COY      plan-25   C6A       0.020
+ COY      plan-25   H6A1      0.020
+ COY      plan-25   H6A2      0.020
+ COY      plan-26   C6A       0.020
+ COY      plan-26   N6A       0.020
+ COY      plan-26   C5A       0.020
+ COY      plan-26   N1A       0.020
+ COY      plan-26   N3A       0.020
+ COY      plan-26   C2A       0.020
+ COY      plan-26   N7A       0.020
+ COY      plan-26   C4A       0.020
+ COY      plan-26   C8A       0.020
+ COY      plan-26   N9A       0.020
+ COY      plan-26   H8A       0.020
+ COY      plan-26   C71       0.020
+ COY      plan-26   H2A       0.020
+ COY      plan-26   H6A2      0.020
+ COY      plan-26   H6A1      0.020
+# ------------------------------------------------------

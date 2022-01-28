@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RCO     RCO      RESORCINOL     NON-POLYMER     14     8     .     
+#
+data_comp_RCO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+RCO     C1      C       CR6     0       8.985       4.043       11.581      
+RCO     C2      C       CR16    0       8.191       4.770       12.466      
+RCO     C3      C       CR6     0       7.043       5.405       11.997      
+RCO     C4      C       CR16    0       6.687       5.317       10.654      
+RCO     C5      C       CR16    0       7.489       4.588       9.786       
+RCO     C6      C       CR16    0       8.637       3.949       10.236      
+RCO     O1      O       OH1     0       10.105      3.424       12.038      
+RCO     O3      O       OH1     0       6.269       6.114       12.860      
+RCO     H2      H       H       0       8.430       4.832       13.378      
+RCO     H4      H       H       0       5.910       5.747       10.338      
+RCO     H5      H       H       0       7.250       4.526       8.874       
+RCO     H6      H       H       0       9.174       3.457       9.639       
+RCO     H1      H       H       0       10.028      2.574       11.947      
+RCO     H3      H       H       0       5.491       5.757       12.919      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RCO       C1        C2        DOUBLE    y         1.386     0.010     1.386     0.010     
+RCO       C1        C6        SINGLE    y         1.386     0.010     1.386     0.010     
+RCO       C1        O1        SINGLE    n         1.359     0.010     1.359     0.010     
+RCO       C2        C3        SINGLE    y         1.386     0.010     1.386     0.010     
+RCO       C3        C4        DOUBLE    y         1.386     0.010     1.386     0.010     
+RCO       C3        O3        SINGLE    n         1.359     0.010     1.359     0.010     
+RCO       C4        C5        SINGLE    y         1.382     0.010     1.382     0.010     
+RCO       C5        C6        DOUBLE    y         1.382     0.010     1.382     0.010     
+RCO       C2        H2        SINGLE    n         1.082     0.013     0.944     0.020     
+RCO       C4        H4        SINGLE    n         1.082     0.013     0.942     0.016     
+RCO       C5        H5        SINGLE    n         1.082     0.013     0.945     0.013     
+RCO       C6        H6        SINGLE    n         1.082     0.013     0.942     0.016     
+RCO       O1        H1        SINGLE    n         0.970     0.012     0.858     0.020     
+RCO       O3        H3        SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+RCO          C2          C1          C6     120.301    1.50
+RCO          C2          C1          O1     119.628    2.39
+RCO          C6          C1          O1     120.071    2.50
+RCO          C1          C2          C3     119.172    1.50
+RCO          C1          C2          H2     120.414    1.50
+RCO          C3          C2          H2     120.414    1.50
+RCO          C2          C3          C4     120.301    1.50
+RCO          C2          C3          O3     119.628    2.39
+RCO          C4          C3          O3     120.071    2.50
+RCO          C3          C4          C5     119.393    1.50
+RCO          C3          C4          H4     120.206    1.50
+RCO          C5          C4          H4     120.400    1.50
+RCO          C4          C5          C6     121.439    1.50
+RCO          C4          C5          H5     119.280    1.50
+RCO          C6          C5          H5     119.280    1.50
+RCO          C1          C6          C5     119.393    1.50
+RCO          C1          C6          H6     120.206    1.50
+RCO          C5          C6          H6     120.400    1.50
+RCO          C1          O1          H1     110.017    2.50
+RCO          C3          O3          H3     110.017    2.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+RCO       const_sp2_sp2_3          O1          C1          C2          C3     180.000   10.00     2
+RCO              const_23          O1          C1          C6          C5     180.000   10.00     2
+RCO       const_sp2_sp2_6          C1          C2          C3          O3     180.000   10.00     2
+RCO              const_11          O3          C3          C4          C5     180.000   10.00     2
+RCO              const_13          C3          C4          C5          C6       0.000   10.00     2
+RCO              const_17          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+RCO    plan-1          C1   0.020
+RCO    plan-1          C2   0.020
+RCO    plan-1          C3   0.020
+RCO    plan-1          C4   0.020
+RCO    plan-1          C5   0.020
+RCO    plan-1          C6   0.020
+RCO    plan-1          H2   0.020
+RCO    plan-1          H4   0.020
+RCO    plan-1          H5   0.020
+RCO    plan-1          H6   0.020
+RCO    plan-1          O1   0.020
+RCO    plan-1          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+RCO SMILES           ACDLabs              10.04 "Oc1cccc(O)c1"
+RCO SMILES_CANONICAL CACTVS               3.341 "Oc1cccc(O)c1"
+RCO SMILES           CACTVS               3.341 "Oc1cccc(O)c1"
+RCO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(cc(c1)O)O"
+RCO SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(cc(c1)O)O"
+RCO InChI            InChI                1.03  "InChI=1S/C6H6O2/c7-5-2-1-3-6(8)4-5/h1-4,7-8H"
+RCO InChIKey         InChI                1.03  GHMLBKRAJCXXBS-UHFFFAOYSA-N
+RCO ?                acedrg               202         "dictionary generator"                  
+RCO ?                acedrg_database      11          "data source"                           
+RCO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+RCO ?                refmac5              5.8.0189    "optimization tool"                     

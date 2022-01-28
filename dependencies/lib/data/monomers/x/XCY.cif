@@ -1,0 +1,387 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XCY      XCY '"{5-[4-{[4-(AMINOMETHYL)BENZYL]AMINO' DNA                50  29 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_XCY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ XCY           OP3    O    OP       -0.666      0.000    0.000    0.000
+ XCY           P      P    P         0.000     -0.355    1.442   -0.290
+ XCY           OP2    O    OP       -0.666      0.469    2.212    0.719
+ XCY           OP1    O    OP       -0.666     -0.175    1.877   -1.728
+ XCY           "O5'"  O    O2        0.000     -1.861    1.589    0.286
+ XCY           "C5'"  C    CH2       0.000     -2.113    1.203    1.626
+ XCY           "H5'"  H    H         0.000     -1.500    1.801    2.304
+ XCY           "H5''" H    H         0.000     -1.872    0.146    1.757
+ XCY           "C4'"  C    CH1       0.000     -3.587    1.432    1.936
+ XCY           "H4'"  H    H         0.000     -3.847    2.485    1.762
+ XCY           "O4'"  O    O2        0.000     -4.359    0.586    1.062
+ XCY           "C1'"  C    CH1       0.000     -4.940   -0.481    1.827
+ XCY           "H1'"  H    H         0.000     -6.024   -0.319    1.904
+ XCY           N1     N    NR6       0.000     -4.697   -1.728    1.162
+ XCY           C2     C    CR6       0.000     -5.623   -2.799    1.219
+ XCY           O2     O    O         0.000     -6.676   -2.695    1.848
+ XCY           N3     N    NRD6      0.000     -5.322   -3.975    0.553
+ XCY           C4     C    CR6       0.000     -4.209   -4.104   -0.119
+ XCY           C5     C    CR16      0.000     -3.215   -3.003   -0.201
+ XCY           H5     H    H         0.000     -2.292   -3.107   -0.757
+ XCY           C6     C    CR16      0.000     -3.522   -1.880    0.447
+ XCY           H6     H    H         0.000     -2.823   -1.053    0.412
+ XCY           N4     N    NH1       0.000     -3.930   -5.281   -0.774
+ XCY           HN4    H    H         0.000     -3.068   -5.376   -1.293
+ XCY           CH     C    CH2       0.000     -4.856   -6.371   -0.724
+ XCY           HH1    H    H         0.000     -5.795   -6.041   -1.172
+ XCY           HH2    H    H         0.000     -5.023   -6.628    0.324
+ XCY           CZ     C    CR6       0.000     -4.345   -7.577   -1.461
+ XCY           CE1    C    CR16      0.000     -3.589   -8.526   -0.784
+ XCY           HE1    H    H         0.000     -3.370   -8.398    0.269
+ XCY           CD1    C    CR16      0.000     -3.114   -9.645   -1.468
+ XCY           HD1    H    H         0.000     -2.524  -10.389   -0.945
+ XCY           CE2    C    CR16      0.000     -4.633   -7.730   -2.811
+ XCY           HE2    H    H         0.000     -5.224   -6.985   -3.330
+ XCY           CD2    C    CR16      0.000     -4.157   -8.849   -3.495
+ XCY           HD2    H    H         0.000     -4.377   -8.974   -4.548
+ XCY           CG     C    CR6       0.000     -3.397   -9.807   -2.824
+ XCY           CB     C    CH2       0.000     -2.889  -11.003   -3.554
+ XCY           HB1    H    H         0.000     -1.944  -11.302   -3.096
+ XCY           HB2    H    H         0.000     -2.713  -10.714   -4.593
+ XCY           NZ     N    NH2       0.000     -3.815  -12.106   -3.511
+ XCY           HNZ2   H    H         0.000     -4.707  -11.994   -3.053
+ XCY           HNZ1   H    H         0.000     -3.569  -12.985   -3.939
+ XCY           "C3'"  C    CH1       0.000     -3.962    1.035    3.356
+ XCY           "H3'"  H    H         0.000     -3.117    1.171    4.045
+ XCY           "C2'"  C    CH2       0.000     -4.329   -0.425    3.218
+ XCY           "H2''" H    H         0.000     -5.068   -0.748    3.955
+ XCY           "H2'"  H    H         0.000     -3.460   -1.086    3.262
+ XCY           "O3'"  O    OH1       0.000     -5.103    1.777    3.782
+ XCY           "HO3'" H    H         0.000     -4.879    2.184    4.638
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ XCY      OP3    n/a    P      START
+ XCY      P      OP3    "O5'"  .
+ XCY      OP2    P      .      .
+ XCY      OP1    P      .      .
+ XCY      "O5'"  P      "C5'"  .
+ XCY      "C5'"  "O5'"  "C4'"  .
+ XCY      "H5'"  "C5'"  .      .
+ XCY      "H5''" "C5'"  .      .
+ XCY      "C4'"  "C5'"  "C3'"  .
+ XCY      "H4'"  "C4'"  .      .
+ XCY      "O4'"  "C4'"  "C1'"  .
+ XCY      "C1'"  "O4'"  N1     .
+ XCY      "H1'"  "C1'"  .      .
+ XCY      N1     "C1'"  C2     .
+ XCY      C2     N1     N3     .
+ XCY      O2     C2     .      .
+ XCY      N3     C2     C4     .
+ XCY      C4     N3     N4     .
+ XCY      C5     C4     C6     .
+ XCY      H5     C5     .      .
+ XCY      C6     C5     H6     .
+ XCY      H6     C6     .      .
+ XCY      N4     C4     CH     .
+ XCY      HN4    N4     .      .
+ XCY      CH     N4     CZ     .
+ XCY      HH1    CH     .      .
+ XCY      HH2    CH     .      .
+ XCY      CZ     CH     CE2    .
+ XCY      CE1    CZ     CD1    .
+ XCY      HE1    CE1    .      .
+ XCY      CD1    CE1    HD1    .
+ XCY      HD1    CD1    .      .
+ XCY      CE2    CZ     CD2    .
+ XCY      HE2    CE2    .      .
+ XCY      CD2    CE2    CG     .
+ XCY      HD2    CD2    .      .
+ XCY      CG     CD2    CB     .
+ XCY      CB     CG     NZ     .
+ XCY      HB1    CB     .      .
+ XCY      HB2    CB     .      .
+ XCY      NZ     CB     HNZ1   .
+ XCY      HNZ2   NZ     .      .
+ XCY      HNZ1   NZ     .      .
+ XCY      "C3'"  "C4'"  "O3'"  .
+ XCY      "H3'"  "C3'"  .      .
+ XCY      "C2'"  "C3'"  "H2'"  .
+ XCY      "H2''" "C2'"  .      .
+ XCY      "H2'"  "C2'"  .      .
+ XCY      "O3'"  "C3'"  .      END
+ XCY      "HO3'" "O3'"  .      .
+ XCY      N1     C6     .    ADD
+ XCY      CG     CD1    .    ADD
+ XCY      "C2'"  "C1'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XCY       P         OP3       deloc     1.510     0.020     1.510     0.020     
+XCY       OP2       P         deloc     1.510     0.020     1.510     0.020     
+XCY       "O5'"     P         single    1.610     0.020     1.610     0.020     
+XCY       OP1       P         deloc     1.510     0.020     1.510     0.020     
+XCY       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+XCY       N1        C6        single    1.337     0.020     1.337     0.020     
+XCY       C2        N1        single    1.410     0.020     1.410     0.020     
+XCY       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+XCY       C6        C5        double    1.390     0.020     1.390     0.020     
+XCY       H6        C6        single    1.082     0.013     0.975     0.010     
+XCY       O2        C2        double    1.250     0.020     1.250     0.020     
+XCY       N3        C2        single    1.350     0.020     1.350     0.020     
+XCY       C4        N3        double    1.350     0.020     1.350     0.020     
+XCY       N4        C4        single    1.350     0.020     1.350     0.020     
+XCY       C5        C4        single    1.390     0.020     1.390     0.020     
+XCY       CH        N4        single    1.450     0.020     1.450     0.020     
+XCY       HN4       N4        single    1.016     0.010     0.899     0.007     
+XCY       H5        C5        single    1.082     0.013     0.975     0.010     
+XCY       NZ        CB        single    1.450     0.020     1.450     0.020     
+XCY       HNZ1      NZ        single    1.036     0.016     0.914     0.007     
+XCY       HNZ2      NZ        single    1.036     0.016     0.914     0.007     
+XCY       CB        CG        single    1.511     0.020     1.511     0.020     
+XCY       HB1       CB        single    1.089     0.010     0.989     0.005     
+XCY       HB2       CB        single    1.089     0.010     0.989     0.005     
+XCY       CG        CD1       double    1.390     0.020     1.390     0.020     
+XCY       CG        CD2       single    1.390     0.020     1.390     0.020     
+XCY       CD1       CE1       single    1.390     0.020     1.390     0.020     
+XCY       HD1       CD1       single    1.082     0.013     0.975     0.010     
+XCY       CE1       CZ        double    1.390     0.020     1.390     0.020     
+XCY       HE1       CE1       single    1.082     0.013     0.975     0.010     
+XCY       CD2       CE2       double    1.390     0.020     1.390     0.020     
+XCY       HD2       CD2       single    1.082     0.013     0.975     0.010     
+XCY       CE2       CZ        single    1.390     0.020     1.390     0.020     
+XCY       HE2       CE2       single    1.082     0.013     0.975     0.010     
+XCY       CZ        CH        single    1.511     0.020     1.511     0.020     
+XCY       HH1       CH        single    1.089     0.010     0.989     0.005     
+XCY       HH2       CH        single    1.089     0.010     0.989     0.005     
+XCY       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+XCY       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+XCY       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+XCY       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+XCY       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+XCY       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+XCY       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+XCY       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+XCY       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+XCY       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+XCY       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+XCY       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+XCY       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+XCY       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+XCY       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ XCY      OP3    P      OP2     119.900    3.000
+ XCY      OP3    P      OP1     119.900    3.000
+ XCY      OP3    P      "O5'"   108.200    3.000
+ XCY      OP2    P      OP1     119.900    3.000
+ XCY      OP2    P      "O5'"   108.200    3.000
+ XCY      OP1    P      "O5'"   108.200    3.000
+ XCY      P      "O5'"  "C5'"   120.500    3.000
+ XCY      "O5'"  "C5'"  "H5'"   109.470    3.000
+ XCY      "O5'"  "C5'"  "H5''"  109.470    3.000
+ XCY      "O5'"  "C5'"  "C4'"   109.470    3.000
+ XCY      "H5'"  "C5'"  "H5''"  107.900    3.000
+ XCY      "H5'"  "C5'"  "C4'"   109.470    3.000
+ XCY      "H5''" "C5'"  "C4'"   109.470    3.000
+ XCY      "C5'"  "C4'"  "H4'"   108.340    3.000
+ XCY      "C5'"  "C4'"  "O4'"   109.470    3.000
+ XCY      "C5'"  "C4'"  "C3'"   111.000    3.000
+ XCY      "H4'"  "C4'"  "O4'"   109.470    3.000
+ XCY      "H4'"  "C4'"  "C3'"   108.340    3.000
+ XCY      "O4'"  "C4'"  "C3'"   109.470    3.000
+ XCY      "C4'"  "O4'"  "C1'"   111.800    3.000
+ XCY      "O4'"  "C1'"  "H1'"   109.470    3.000
+ XCY      "O4'"  "C1'"  N1      109.470    3.000
+ XCY      "O4'"  "C1'"  "C2'"   109.470    3.000
+ XCY      "H1'"  "C1'"  N1      109.470    3.000
+ XCY      "H1'"  "C1'"  "C2'"   108.340    3.000
+ XCY      N1     "C1'"  "C2'"   109.470    3.000
+ XCY      "C1'"  N1     C2      120.000    3.000
+ XCY      "C1'"  N1     C6      120.000    3.000
+ XCY      C2     N1     C6      120.000    3.000
+ XCY      N1     C2     O2      120.000    3.000
+ XCY      N1     C2     N3      120.000    3.000
+ XCY      O2     C2     N3      120.000    3.000
+ XCY      C2     N3     C4      120.000    3.000
+ XCY      N3     C4     C5      120.000    3.000
+ XCY      N3     C4     N4      120.000    3.000
+ XCY      C5     C4     N4      120.000    3.000
+ XCY      C4     C5     H5      120.000    3.000
+ XCY      C4     C5     C6      120.000    3.000
+ XCY      H5     C5     C6      120.000    3.000
+ XCY      C5     C6     H6      120.000    3.000
+ XCY      C5     C6     N1      120.000    3.000
+ XCY      H6     C6     N1      120.000    3.000
+ XCY      C4     N4     HN4     120.000    3.000
+ XCY      C4     N4     CH      120.000    3.000
+ XCY      HN4    N4     CH      118.500    3.000
+ XCY      N4     CH     HH1     109.470    3.000
+ XCY      N4     CH     HH2     109.470    3.000
+ XCY      N4     CH     CZ      109.500    3.000
+ XCY      HH1    CH     HH2     107.900    3.000
+ XCY      HH1    CH     CZ      109.470    3.000
+ XCY      HH2    CH     CZ      109.470    3.000
+ XCY      CH     CZ     CE1     120.000    3.000
+ XCY      CH     CZ     CE2     120.000    3.000
+ XCY      CE1    CZ     CE2     120.000    3.000
+ XCY      CZ     CE1    HE1     120.000    3.000
+ XCY      CZ     CE1    CD1     120.000    3.000
+ XCY      HE1    CE1    CD1     120.000    3.000
+ XCY      CE1    CD1    HD1     120.000    3.000
+ XCY      CE1    CD1    CG      120.000    3.000
+ XCY      HD1    CD1    CG      120.000    3.000
+ XCY      CZ     CE2    HE2     120.000    3.000
+ XCY      CZ     CE2    CD2     120.000    3.000
+ XCY      HE2    CE2    CD2     120.000    3.000
+ XCY      CE2    CD2    HD2     120.000    3.000
+ XCY      CE2    CD2    CG      120.000    3.000
+ XCY      HD2    CD2    CG      120.000    3.000
+ XCY      CD2    CG     CB      120.000    3.000
+ XCY      CD2    CG     CD1     120.000    3.000
+ XCY      CB     CG     CD1     120.000    3.000
+ XCY      CG     CB     HB1     109.470    3.000
+ XCY      CG     CB     HB2     109.470    3.000
+ XCY      CG     CB     NZ      109.500    3.000
+ XCY      HB1    CB     HB2     107.900    3.000
+ XCY      HB1    CB     NZ      109.470    3.000
+ XCY      HB2    CB     NZ      109.470    3.000
+ XCY      CB     NZ     HNZ2    120.000    3.000
+ XCY      CB     NZ     HNZ1    120.000    3.000
+ XCY      HNZ2   NZ     HNZ1    120.000    3.000
+ XCY      "C4'"  "C3'"  "H3'"   108.340    3.000
+ XCY      "C4'"  "C3'"  "C2'"   111.000    3.000
+ XCY      "C4'"  "C3'"  "O3'"   109.470    3.000
+ XCY      "H3'"  "C3'"  "C2'"   108.340    3.000
+ XCY      "H3'"  "C3'"  "O3'"   109.470    3.000
+ XCY      "C2'"  "C3'"  "O3'"   109.470    3.000
+ XCY      "C3'"  "C2'"  "H2''"  109.470    3.000
+ XCY      "C3'"  "C2'"  "H2'"   109.470    3.000
+ XCY      "C3'"  "C2'"  "C1'"   111.000    3.000
+ XCY      "H2''" "C2'"  "H2'"   107.900    3.000
+ XCY      "H2''" "C2'"  "C1'"   109.470    3.000
+ XCY      "H2'"  "C2'"  "C1'"   109.470    3.000
+ XCY      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ XCY      var_1    OP3    P      "O5'"  "C5'"     53.168   20.000   1
+ XCY      var_2    P      "O5'"  "C5'"  "C4'"    179.973   20.000   1
+ XCY      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.542   20.000   3
+ XCY      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ XCY      var_5    "C4'"  "O4'"  "C1'"  N1      -120.000   20.000   1
+ XCY      var_6    "O4'"  "C1'"  N1     C2      -147.102   20.000   1
+ XCY      CONST_1  "C1'"  N1     C6     C5       180.000    0.000   0
+ XCY      CONST_2  "C1'"  N1     C2     N3       180.000    0.000   0
+ XCY      CONST_3  N1     C2     N3     C4         0.000    0.000   0
+ XCY      CONST_4  C2     N3     C4     N4       180.000    0.000   0
+ XCY      CONST_5  N3     C4     C5     C6         0.000    0.000   0
+ XCY      CONST_6  C4     C5     C6     N1         0.000    0.000   0
+ XCY      var_7    N3     C4     N4     CH        -0.039   20.000   1
+ XCY      var_8    C4     N4     CH     CZ      -177.990   20.000   3
+ XCY      var_9    N4     CH     CZ     CE2      -89.926   20.000   2
+ XCY      CONST_7  CH     CZ     CE1    CD1      180.000    0.000   0
+ XCY      CONST_8  CZ     CE1    CD1    CG         0.000    0.000   0
+ XCY      CONST_9  CH     CZ     CE2    CD2      180.000    0.000   0
+ XCY      CONST_10 CZ     CE2    CD2    CG         0.000    0.000   0
+ XCY      CONST_11 CE2    CD2    CG     CB       180.000    0.000   0
+ XCY      CONST_12 CD2    CG     CD1    CE1        0.000    0.000   0
+ XCY      var_10   CD2    CG     CB     NZ       -89.951   20.000   2
+ XCY      var_11   CG     CB     NZ     HNZ1    -177.583   20.000   1
+ XCY      var_12   "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ XCY      var_13   "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ XCY      var_14   "C3'"  "C2'"  "C1'"  "O4'"     30.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ XCY      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ XCY      chir_02  "C1'"  N1     "C2'"  "O4'"     negativ
+ XCY      chir_03  "C3'"  "C2'"  "C4'"  "O3'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ XCY      plan-1    N1        0.020
+ XCY      plan-1    C6        0.020
+ XCY      plan-1    C2        0.020
+ XCY      plan-1    "C1'"     0.020
+ XCY      plan-1    N3        0.020
+ XCY      plan-1    C4        0.020
+ XCY      plan-1    C5        0.020
+ XCY      plan-1    H6        0.020
+ XCY      plan-1    O2        0.020
+ XCY      plan-1    N4        0.020
+ XCY      plan-1    H5        0.020
+ XCY      plan-1    HN4       0.020
+ XCY      plan-2    N4        0.020
+ XCY      plan-2    C4        0.020
+ XCY      plan-2    CH        0.020
+ XCY      plan-2    HN4       0.020
+ XCY      plan-3    NZ        0.020
+ XCY      plan-3    CB        0.020
+ XCY      plan-3    HNZ1      0.020
+ XCY      plan-3    HNZ2      0.020
+ XCY      plan-4    CG        0.020
+ XCY      plan-4    CB        0.020
+ XCY      plan-4    CD1       0.020
+ XCY      plan-4    CD2       0.020
+ XCY      plan-4    CE1       0.020
+ XCY      plan-4    CE2       0.020
+ XCY      plan-4    CZ        0.020
+ XCY      plan-4    HD1       0.020
+ XCY      plan-4    HE1       0.020
+ XCY      plan-4    HD2       0.020
+ XCY      plan-4    HE2       0.020
+ XCY      plan-4    CH        0.020
+# ------------------------------------------------------

@@ -1,0 +1,123 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GBD     GBD     "4-HYDROXY-1,2,5-THIADIAZOLE-3-CARBOXYLICACID"     NON-POLYMER     10     9     .     
+#
+data_comp_GBD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GBD     O13     O       OC      -1      24.335      21.588      3.335       
+GBD     C1      C       C       0       25.311      20.986      2.924       
+GBD     O11     O       O       0       25.974      21.306      1.952       
+GBD     C3      C       CR5     0       25.725      19.763      3.670       
+GBD     N2      N       NRD5    0       26.669      18.934      3.223       
+GBD     S1      S       S2      0       26.823      17.711      4.286       
+GBD     C4      C       CR5     0       25.169      19.364      4.909       
+GBD     O4      O       OH1     0       24.233      20.000      5.597       
+GBD     N5      N       NRD5    0       25.686      18.235      5.349       
+GBD     HO4     H       H       0       23.530      20.098      5.102       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GBD       O13       C1        SINGLE    n         1.214     0.020     1.214     0.020     
+GBD       C1        O11       DOUBLE    n         1.214     0.020     1.214     0.020     
+GBD       C1        C3        SINGLE    n         1.471     0.020     1.471     0.020     
+GBD       C3        N2        DOUBLE    n         1.327     0.010     1.327     0.010     
+GBD       C3        C4        SINGLE    n         1.398     0.020     1.398     0.020     
+GBD       N2        S1        SINGLE    n         1.627     0.010     1.627     0.010     
+GBD       S1        N5        SINGLE    n         1.648     0.011     1.648     0.011     
+GBD       C4        O4        SINGLE    n         1.324     0.020     1.324     0.020     
+GBD       C4        N5        DOUBLE    n         1.327     0.020     1.327     0.020     
+GBD       O4        HO4       SINGLE    n         0.970     0.012     0.866     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GBD         O13          C1         O11     125.827    1.50
+GBD         O13          C1          C3     117.086    1.50
+GBD         O11          C1          C3     117.086    1.50
+GBD          C1          C3          N2     123.182    3.00
+GBD          C1          C3          C4     125.404    3.00
+GBD          N2          C3          C4     111.414    3.00
+GBD          C3          N2          S1     107.267    1.50
+GBD          N2          S1          N5      98.697    1.50
+GBD          C3          C4          O4     126.389    3.00
+GBD          C3          C4          N5     112.913    3.00
+GBD          O4          C4          N5     120.698    3.00
+GBD          C4          O4         HO4     109.266    1.50
+GBD          S1          N5          C4     113.723    2.06
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GBD             sp2_sp2_6         O13          C1          C3          N2       0.000   10.00     2
+GBD             sp2_sp2_2          C1          C3          N2          S1     180.000   10.00     2
+GBD            sp2_sp2_12          C1          C3          C4          O4       0.000   10.00     2
+GBD             sp2_sp3_1          C3          N2          S1          N5       0.000   10.00     6
+GBD             sp2_sp3_2          C4          N5          S1          N2       0.000   10.00     6
+GBD             sp2_sp2_4          O4          C4          N5          S1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GBD    plan-1          C1   0.020
+GBD    plan-1          C3   0.020
+GBD    plan-1         O11   0.020
+GBD    plan-1         O13   0.020
+GBD    plan-2          C1   0.020
+GBD    plan-2          C3   0.020
+GBD    plan-2          C4   0.020
+GBD    plan-2          N2   0.020
+GBD    plan-3          C3   0.020
+GBD    plan-3          C4   0.020
+GBD    plan-3          N5   0.020
+GBD    plan-3          O4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GBD SMILES           ACDLabs              10.04 "O=C(O)c1nsnc1O"
+GBD SMILES_CANONICAL CACTVS               3.341 "OC(=O)c1nsnc1O"
+GBD SMILES           CACTVS               3.341 "OC(=O)c1nsnc1O"
+GBD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1(c(nsn1)O)C(=O)O"
+GBD SMILES           "OpenEye OEToolkits" 1.5.0 "c1(c(nsn1)O)C(=O)O"
+GBD InChI            InChI                1.03  "InChI=1S/C3H2N2O3S/c6-2-1(3(7)8)4-9-5-2/h(H,5,6)(H,7,8)"
+GBD InChIKey         InChI                1.03  FVZITYNLUYJDOE-UHFFFAOYSA-N
+GBD ?                acedrg               190         "dictionary generator"                  
+GBD ?                acedrg_database      11          "data source"                           
+GBD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GBD ?                refmac5              5.8.0158    "optimization tool"                     

@@ -1,0 +1,210 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BIL      BIL '(3R,4S)-3-amino-4-methylhexanoic aci' non-polymer        24  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BIL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BIL           OXT    O    OC       -0.500      0.000    0.000    0.000
+ BIL           C      C    C         0.000     -1.149   -0.415   -0.269
+ BIL           O      O    OC       -0.500     -1.295   -1.427   -0.991
+ BIL           CA     C    CH2       0.000     -2.357    0.298    0.282
+ BIL           HA     H    H         0.000     -2.363    1.330   -0.074
+ BIL           HAA    H    H         0.000     -2.317    0.290    1.373
+ BIL           CB     C    CH1       0.000     -3.628   -0.413   -0.189
+ BIL           HB     H    H         0.000     -3.623   -0.484   -1.286
+ BIL           N      N    NH2       0.000     -3.676   -1.763    0.389
+ BIL           HNA    H    H         0.000     -3.700   -2.577   -0.215
+ BIL           HN     H    H         0.000     -3.686   -1.889    1.394
+ BIL           CG     C    CH1       0.000     -4.854    0.381    0.265
+ BIL           HG     H    H         0.000     -4.859    0.451    1.362
+ BIL           CD2    C    CH3       0.000     -4.803    1.786   -0.336
+ BIL           H1D2   H    H         0.000     -5.652    2.336   -0.022
+ BIL           H2D2   H    H         0.000     -3.924    2.279   -0.011
+ BIL           H3D2   H    H         0.000     -4.799    1.719   -1.394
+ BIL           CD1    C    CH2       0.000     -6.125   -0.330   -0.206
+ BIL           H1D1   H    H         0.000     -6.116   -1.363    0.150
+ BIL           H2D1   H    H         0.000     -6.162   -0.322   -1.297
+ BIL           CE1    C    CH3       0.000     -7.351    0.394    0.354
+ BIL           H1E1   H    H         0.000     -7.361    1.397    0.010
+ BIL           H2E1   H    H         0.000     -8.234   -0.097    0.030
+ BIL           H3E1   H    H         0.000     -7.316    0.388    1.413
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BIL      OXT    n/a    C      START
+ BIL      C      OXT    CA     .
+ BIL      O      C      .      .
+ BIL      CA     C      CB     .
+ BIL      HA     CA     .      .
+ BIL      HAA    CA     .      .
+ BIL      CB     CA     CG     .
+ BIL      HB     CB     .      .
+ BIL      N      CB     HN     .
+ BIL      HNA    N      .      .
+ BIL      HN     N      .      .
+ BIL      CG     CB     CD1    .
+ BIL      HG     CG     .      .
+ BIL      CD2    CG     H3D2   .
+ BIL      H1D2   CD2    .      .
+ BIL      H2D2   CD2    .      .
+ BIL      H3D2   CD2    .      .
+ BIL      CD1    CG     CE1    .
+ BIL      H1D1   CD1    .      .
+ BIL      H2D1   CD1    .      .
+ BIL      CE1    CD1    H3E1   .
+ BIL      H1E1   CE1    .      .
+ BIL      H2E1   CE1    .      .
+ BIL      H3E1   CE1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BIL       O         C         deloc     1.250     0.020     1.250     0.020     
+BIL       C         OXT       deloc     1.250     0.020     1.250     0.020     
+BIL       CA        C         single    1.510     0.020     1.510     0.020     
+BIL       CB        CA        single    1.524     0.020     1.524     0.020     
+BIL       HA        CA        single    1.089     0.010     0.989     0.005     
+BIL       HB        CB        single    1.089     0.010     0.989     0.005     
+BIL       N         CB        single    1.450     0.020     1.450     0.020     
+BIL       HNA       N         single    1.036     0.016     0.914     0.007     
+BIL       CG        CB        single    1.524     0.020     1.524     0.020     
+BIL       CD1       CG        single    1.524     0.020     1.524     0.020     
+BIL       CD2       CG        single    1.524     0.020     1.524     0.020     
+BIL       H1D2      CD2       single    1.089     0.010     0.989     0.005     
+BIL       H3D2      CD2       single    1.089     0.010     0.989     0.005     
+BIL       CE1       CD1       single    1.513     0.020     1.513     0.020     
+BIL       H2E1      CE1       single    1.089     0.010     0.989     0.005     
+BIL       H3E1      CE1       single    1.089     0.010     0.989     0.005     
+BIL       HAA       CA        single    1.089     0.010     0.989     0.005     
+BIL       HN        N         single    1.036     0.016     0.914     0.007     
+BIL       HG        CG        single    1.089     0.010     0.989     0.005     
+BIL       H2D2      CD2       single    1.089     0.010     0.989     0.005     
+BIL       H1D1      CD1       single    1.089     0.010     0.989     0.005     
+BIL       H2D1      CD1       single    1.089     0.010     0.989     0.005     
+BIL       H1E1      CE1       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BIL      OXT    C      O       123.000    3.000
+ BIL      OXT    C      CA      118.500    3.000
+ BIL      O      C      CA      118.500    3.000
+ BIL      C      CA     HA      109.470    3.000
+ BIL      C      CA     HAA     109.470    3.000
+ BIL      C      CA     CB      109.470    3.000
+ BIL      HA     CA     HAA     107.900    3.000
+ BIL      HA     CA     CB      109.470    3.000
+ BIL      HAA    CA     CB      109.470    3.000
+ BIL      CA     CB     HB      108.340    3.000
+ BIL      CA     CB     N       109.470    3.000
+ BIL      CA     CB     CG      111.000    3.000
+ BIL      HB     CB     N       109.470    3.000
+ BIL      HB     CB     CG      108.340    3.000
+ BIL      N      CB     CG      109.470    3.000
+ BIL      CB     N      HNA     120.000    3.000
+ BIL      CB     N      HN      120.000    3.000
+ BIL      HNA    N      HN      120.000    3.000
+ BIL      CB     CG     HG      108.340    3.000
+ BIL      CB     CG     CD2     111.000    3.000
+ BIL      CB     CG     CD1     111.000    3.000
+ BIL      HG     CG     CD2     108.340    3.000
+ BIL      HG     CG     CD1     108.340    3.000
+ BIL      CD2    CG     CD1     111.000    3.000
+ BIL      CG     CD2    H1D2    109.470    3.000
+ BIL      CG     CD2    H2D2    109.470    3.000
+ BIL      CG     CD2    H3D2    109.470    3.000
+ BIL      H1D2   CD2    H2D2    109.470    3.000
+ BIL      H1D2   CD2    H3D2    109.470    3.000
+ BIL      H2D2   CD2    H3D2    109.470    3.000
+ BIL      CG     CD1    H1D1    109.470    3.000
+ BIL      CG     CD1    H2D1    109.470    3.000
+ BIL      CG     CD1    CE1     111.000    3.000
+ BIL      H1D1   CD1    H2D1    107.900    3.000
+ BIL      H1D1   CD1    CE1     109.470    3.000
+ BIL      H2D1   CD1    CE1     109.470    3.000
+ BIL      CD1    CE1    H1E1    109.470    3.000
+ BIL      CD1    CE1    H2E1    109.470    3.000
+ BIL      CD1    CE1    H3E1    109.470    3.000
+ BIL      H1E1   CE1    H2E1    109.470    3.000
+ BIL      H1E1   CE1    H3E1    109.470    3.000
+ BIL      H2E1   CE1    H3E1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BIL      var_1    OXT    C      CA     CB      -179.685   20.000   3
+ BIL      var_2    C      CA     CB     CG      -174.967   20.000   3
+ BIL      var_3    CA     CB     N      HN        59.978   20.000   1
+ BIL      var_4    CA     CB     CG     CD1      180.000   20.000   3
+ BIL      var_5    CB     CG     CD2    H3D2      60.022   20.000   3
+ BIL      var_6    CB     CG     CD1    CE1      174.971   20.000   3
+ BIL      var_7    CG     CD1    CE1    H3E1     -59.982   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BIL      chir_01  CB     CA     N      CG        negativ
+ BIL      chir_02  CG     CB     CD2    CD1       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BIL      plan-1    C         0.020
+ BIL      plan-1    O         0.020
+ BIL      plan-1    CA        0.020
+ BIL      plan-1    OXT       0.020
+ BIL      plan-2    N         0.020
+ BIL      plan-2    CB        0.020
+ BIL      plan-2    HN        0.020
+ BIL      plan-2    HNA       0.020
+# ------------------------------------------------------

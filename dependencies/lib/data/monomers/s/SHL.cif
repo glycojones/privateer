@@ -1,0 +1,155 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SHL     SHL      "5-hydroxy-6-methyl-4-oxo-4H-pyran-2-carboxylic acid"     NON-POLYMER     17     12     .     
+#
+data_comp_SHL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SHL     OAD     O       O       0       2.792       -2.206      -0.406      
+SHL     CAH     C       C       0       2.793       -1.077      0.053       
+SHL     OAA     O       OC      -1      3.740       -0.482      0.537       
+SHL     CAK     C       CR6     0       1.474       -0.331      0.016       
+SHL     OAG     O       O2      0       0.448       -0.999      0.646       
+SHL     CAF     C       CR6     0       -0.812      -0.434      0.690       
+SHL     CAL     C       CH3     0       -1.814      -1.270      1.401       
+SHL     CAJ     C       CR6     0       -1.038      0.834       0.081       
+SHL     OAC     O       OH1     0       -2.278      1.393       0.121       
+SHL     CAI     C       CR6     0       0.037       1.544       -0.584      
+SHL     CAE     C       CR16    0       1.286       0.913       -0.589      
+SHL     OAB     O       O       0       -0.172      2.666       -1.120      
+SHL     H2      H       H       0       -2.640      -0.786      1.526       
+SHL     H3      H       H       0       -1.472      -1.526      2.269       
+SHL     H4      H       H       0       -1.997      -2.071      0.892       
+SHL     H5      H       H       0       -2.271      2.135       0.553       
+SHL     H6      H       H       0       2.035       1.350       -1.023      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SHL       OAD       CAH       DOUBLE    n         1.219     0.020     1.219     0.020     
+SHL       CAH       OAA       SINGLE    n         1.219     0.020     1.219     0.020     
+SHL       CAH       CAK       SINGLE    n         1.516     0.012     1.516     0.012     
+SHL       CAK       CAE       DOUBLE    y         1.386     0.014     1.386     0.014     
+SHL       CAI       CAE       SINGLE    y         1.382     0.014     1.382     0.014     
+SHL       CAK       OAG       SINGLE    y         1.372     0.012     1.372     0.012     
+SHL       CAI       OAB       DOUBLE    n         1.260     0.015     1.260     0.015     
+SHL       CAJ       CAI       SINGLE    y         1.440     0.010     1.440     0.010     
+SHL       OAG       CAF       SINGLE    y         1.373     0.015     1.373     0.015     
+SHL       CAF       CAJ       DOUBLE    y         1.397     0.019     1.397     0.019     
+SHL       CAJ       OAC       SINGLE    n         1.359     0.010     1.359     0.010     
+SHL       CAF       CAL       SINGLE    n         1.484     0.010     1.484     0.010     
+SHL       CAL       H2        SINGLE    n         1.089     0.010     0.967     0.017     
+SHL       CAL       H3        SINGLE    n         1.089     0.010     0.967     0.017     
+SHL       CAL       H4        SINGLE    n         1.089     0.010     0.967     0.017     
+SHL       OAC       H5        SINGLE    n         0.970     0.012     0.858     0.020     
+SHL       CAE       H6        SINGLE    n         1.082     0.013     0.969     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SHL         OAD         CAH         OAA     127.065    1.50
+SHL         OAD         CAH         CAK     116.458    1.69
+SHL         OAA         CAH         CAK     116.458    1.69
+SHL         CAH         CAK         CAE     124.100    1.50
+SHL         CAH         CAK         OAG     113.107    1.50
+SHL         CAE         CAK         OAG     122.792    1.50
+SHL         CAK         OAG         CAF     120.461    1.84
+SHL         OAG         CAF         CAJ     120.768    1.50
+SHL         OAG         CAF         CAL     114.332    1.50
+SHL         CAJ         CAF         CAL     124.900    2.46
+SHL         CAF         CAL          H2     110.662    1.67
+SHL         CAF         CAL          H3     110.662    1.67
+SHL         CAF         CAL          H4     110.662    1.67
+SHL          H2         CAL          H3     109.273    1.50
+SHL          H2         CAL          H4     109.273    1.50
+SHL          H3         CAL          H4     109.273    1.50
+SHL         CAI         CAJ         CAF     120.819    1.50
+SHL         CAI         CAJ         OAC     119.409    1.69
+SHL         CAF         CAJ         OAC     119.772    1.50
+SHL         CAJ         OAC          H5     111.278    3.00
+SHL         CAE         CAI         OAB     124.518    1.50
+SHL         CAE         CAI         CAJ     114.481    1.50
+SHL         OAB         CAI         CAJ     121.001    1.50
+SHL         CAK         CAE         CAI     120.678    1.50
+SHL         CAK         CAE          H6     119.830    1.50
+SHL         CAI         CAE          H6     119.492    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SHL             sp2_sp2_1         OAD         CAH         CAK         CAE     180.000   10.00     2
+SHL       const_sp2_sp2_2         CAI         CAE         CAK         CAH     180.000   10.00     2
+SHL              const_20         CAH         CAK         OAG         CAF     180.000   10.00     2
+SHL              const_18         CAL         CAF         OAG         CAK     180.000   10.00     2
+SHL             sp2_sp3_3         OAG         CAF         CAL          H2     150.000   10.00     6
+SHL              const_16         CAL         CAF         CAJ         OAC       0.000   10.00     2
+SHL              const_12         OAB         CAI         CAJ         OAC       0.000   10.00     2
+SHL       const_sp2_sp2_6         CAK         CAE         CAI         OAB     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SHL    plan-1         CAE   0.020
+SHL    plan-1         CAF   0.020
+SHL    plan-1         CAH   0.020
+SHL    plan-1         CAI   0.020
+SHL    plan-1         CAJ   0.020
+SHL    plan-1         CAK   0.020
+SHL    plan-1         CAL   0.020
+SHL    plan-1          H6   0.020
+SHL    plan-1         OAB   0.020
+SHL    plan-1         OAC   0.020
+SHL    plan-1         OAG   0.020
+SHL    plan-2         CAH   0.020
+SHL    plan-2         CAK   0.020
+SHL    plan-2         OAA   0.020
+SHL    plan-2         OAD   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SHL SMILES           ACDLabs              12.01 "O=C1C=C(OC(=C1O)C)C(=O)O"
+SHL InChI            InChI                1.03  "InChI=1S/C7H6O5/c1-3-6(9)4(8)2-5(12-3)7(10)11/h2,9H,1H3,(H,10,11)"
+SHL InChIKey         InChI                1.03  ANRPPKUCFMTTIH-UHFFFAOYSA-N
+SHL SMILES_CANONICAL CACTVS               3.370 "CC1=C(O)C(=O)C=C(O1)C(O)=O"
+SHL SMILES           CACTVS               3.370 "CC1=C(O)C(=O)C=C(O1)C(O)=O"
+SHL SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "CC1=C(C(=O)C=C(O1)C(=O)O)O"
+SHL SMILES           "OpenEye OEToolkits" 1.7.6 "CC1=C(C(=O)C=C(O1)C(=O)O)O"
+SHL ?                acedrg               202         "dictionary generator"                  
+SHL ?                acedrg_database      11          "data source"                           
+SHL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SHL ?                refmac5              5.8.0189    "optimization tool"                     

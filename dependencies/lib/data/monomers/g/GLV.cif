@@ -1,0 +1,98 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GLV     GLV     "GLYOXYLICACID"     NON-POLYMER     6     5     .     
+#
+data_comp_GLV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GLV     C1      C       C1      0       5.781       -0.341      -14.237     
+GLV     O1      O       O       0       6.681       -1.119      -14.486     
+GLV     C2      C       C       0       4.423       -0.439      -14.926     
+GLV     O2      O       O       0       3.576       0.394       -14.607     
+GLV     O3      O       OC      -1      4.264       -1.341      -15.751     
+GLV     H1      H       H       0       5.884       0.368       -13.599     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GLV       C1        O1        DOUBLE    n         1.215     0.011     1.215     0.011     
+GLV       C1        C2        SINGLE    n         1.522     0.020     1.522     0.020     
+GLV       C2        O2        DOUBLE    n         1.230     0.020     1.230     0.020     
+GLV       C2        O3        SINGLE    n         1.230     0.020     1.230     0.020     
+GLV       C1        H1        SINGLE    n         1.082     0.013     0.959     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GLV          O1          C1          C2     121.046    2.06
+GLV          O1          C1          H1     122.098    1.50
+GLV          C2          C1          H1     116.856    3.00
+GLV          C1          C2          O2     117.166    2.06
+GLV          C1          C2          O3     117.166    2.06
+GLV          O2          C2          O3     125.667    1.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GLV             sp2_sp2_1          O1          C1          C2          O2     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GLV    plan-1          C1   0.020
+GLV    plan-1          C2   0.020
+GLV    plan-1          H1   0.020
+GLV    plan-1          O1   0.020
+GLV    plan-2          C1   0.020
+GLV    plan-2          C2   0.020
+GLV    plan-2          O2   0.020
+GLV    plan-2          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GLV SMILES           ACDLabs              10.04 "O=CC(=O)O"
+GLV SMILES_CANONICAL CACTVS               3.341 "OC(=O)C=O"
+GLV SMILES           CACTVS               3.341 "OC(=O)C=O"
+GLV SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=O)C(=O)O"
+GLV SMILES           "OpenEye OEToolkits" 1.5.0 "C(=O)C(=O)O"
+GLV InChI            InChI                1.03  "InChI=1S/C2H2O3/c3-1-2(4)5/h1H,(H,4,5)"
+GLV InChIKey         InChI                1.03  HHLFWLYXYJOTON-UHFFFAOYSA-N
+GLV ?                acedrg               190         "dictionary generator"                  
+GLV ?                acedrg_database      11          "data source"                           
+GLV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GLV ?                refmac5              5.8.0158    "optimization tool"                     

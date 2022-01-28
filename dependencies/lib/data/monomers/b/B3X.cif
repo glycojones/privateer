@@ -1,0 +1,191 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B3X      B3X '(3S)-3,5-DIAMINO-5-OXOPENTANOIC ACID' non-polymer        19  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_B3X
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ B3X           OXT    O    OC       -0.500      0.000    0.000    0.000
+ B3X           C      C    C         0.000     -0.702   -0.992    0.298
+ B3X           O      O    OC       -0.500     -0.587   -2.105   -0.263
+ B3X           CA     C    CH2       0.000     -1.678   -0.712    1.412
+ B3X           HA1    H    H         0.000     -1.876    0.362    1.421
+ B3X           HA2    H    H         0.000     -1.203   -1.001    2.352
+ B3X           CB     C    CH1       0.000     -3.000   -1.477    1.248
+ B3X           HB     H    H         0.000     -2.798   -2.556    1.216
+ B3X           N      N    NH2       0.000     -3.837   -1.170    2.415
+ B3X           H2     H    H         0.000     -3.643   -0.354    2.983
+ B3X           H      H    H         0.000     -4.614   -1.773    2.660
+ B3X           CG     C    CH2       0.000     -3.773   -1.063   -0.016
+ B3X           HG3    H    H         0.000     -3.142   -1.306   -0.873
+ B3X           HG2    H    H         0.000     -3.918    0.018    0.034
+ B3X           CD     C    C         0.000     -5.120   -1.750   -0.164
+ B3X           OE1    O    O         0.000     -5.347   -2.895    0.217
+ B3X           NE2    N    NH2       0.000     -6.045   -0.968   -0.819
+ B3X           HE22   H    H         0.000     -6.991   -1.307   -0.987
+ B3X           HE21   H    H         0.000     -5.800   -0.036   -1.148
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B3X      OXT    n/a    C      START
+ B3X      C      OXT    CA     .
+ B3X      O      C      .      .
+ B3X      CA     C      CB     .
+ B3X      HA1    CA     .      .
+ B3X      HA2    CA     .      .
+ B3X      CB     CA     CG     .
+ B3X      HB     CB     .      .
+ B3X      N      CB     H      .
+ B3X      H2     N      .      .
+ B3X      H      N      .      .
+ B3X      CG     CB     CD     .
+ B3X      HG3    CG     .      .
+ B3X      HG2    CG     .      .
+ B3X      CD     CG     NE2    .
+ B3X      OE1    CD     .      .
+ B3X      NE2    CD     HE21   .
+ B3X      HE22   NE2    .      .
+ B3X      HE21   NE2    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B3X       OE1       CD        double    1.220     0.020     1.220     0.020     
+B3X       NE2       CD        single    1.332     0.020     1.332     0.020     
+B3X       CD        CG        single    1.510     0.020     1.510     0.020     
+B3X       HE21      NE2       single    1.016     0.010     0.899     0.007     
+B3X       HE22      NE2       single    1.016     0.010     0.899     0.007     
+B3X       CG        CB        single    1.524     0.020     1.524     0.020     
+B3X       HG3       CG        single    1.089     0.010     0.989     0.005     
+B3X       HG2       CG        single    1.089     0.010     0.989     0.005     
+B3X       N         CB        single    1.450     0.020     1.450     0.020     
+B3X       CB        CA        single    1.524     0.020     1.524     0.020     
+B3X       HB        CB        single    1.089     0.010     0.989     0.005     
+B3X       H         N         single    1.036     0.016     0.914     0.007     
+B3X       H2        N         single    1.036     0.016     0.914     0.007     
+B3X       CA        C         single    1.510     0.020     1.510     0.020     
+B3X       HA1       CA        single    1.089     0.010     0.989     0.005     
+B3X       HA2       CA        single    1.089     0.010     0.989     0.005     
+B3X       C         OXT       deloc     1.250     0.020     1.250     0.020     
+B3X       O         C         deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ B3X      OXT    C      O       123.000    3.000
+ B3X      OXT    C      CA      118.500    3.000
+ B3X      O      C      CA      118.500    3.000
+ B3X      C      CA     HA1     109.470    3.000
+ B3X      C      CA     HA2     109.470    3.000
+ B3X      C      CA     CB      109.470    3.000
+ B3X      HA1    CA     HA2     107.900    3.000
+ B3X      HA1    CA     CB      109.470    3.000
+ B3X      HA2    CA     CB      109.470    3.000
+ B3X      CA     CB     HB      108.340    3.000
+ B3X      CA     CB     N       109.470    3.000
+ B3X      CA     CB     CG      109.470    3.000
+ B3X      HB     CB     N       109.470    3.000
+ B3X      HB     CB     CG      108.340    3.000
+ B3X      N      CB     CG      109.470    3.000
+ B3X      CB     N      H2      120.000    3.000
+ B3X      CB     N      H       120.000    3.000
+ B3X      H2     N      H       120.000    3.000
+ B3X      CB     CG     HG3     109.470    3.000
+ B3X      CB     CG     HG2     109.470    3.000
+ B3X      CB     CG     CD      109.470    3.000
+ B3X      HG3    CG     HG2     107.900    3.000
+ B3X      HG3    CG     CD      109.470    3.000
+ B3X      HG2    CG     CD      109.470    3.000
+ B3X      CG     CD     OE1     120.500    3.000
+ B3X      CG     CD     NE2     116.500    3.000
+ B3X      OE1    CD     NE2     123.000    3.000
+ B3X      CD     NE2    HE22    120.000    3.000
+ B3X      CD     NE2    HE21    120.000    3.000
+ B3X      HE22   NE2    HE21    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ B3X      var_1    OXT    C      CA     CB       145.645   20.000   3
+ B3X      var_2    C      CA     CB     CG       -63.378   20.000   3
+ B3X      var_3    CA     CB     N      H       -160.916   20.000   1
+ B3X      var_4    CA     CB     CG     CD      -176.923   20.000   3
+ B3X      var_5    CB     CG     CD     NE2      149.230   20.000   3
+ B3X      CONST_1  CG     CD     NE2    HE21       0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ B3X      chir_01  CB     CG     N      CA        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ B3X      plan-1    CD        0.020
+ B3X      plan-1    OE1       0.020
+ B3X      plan-1    NE2       0.020
+ B3X      plan-1    CG        0.020
+ B3X      plan-1    HE22      0.020
+ B3X      plan-1    HE21      0.020
+ B3X      plan-2    NE2       0.020
+ B3X      plan-2    CD        0.020
+ B3X      plan-2    HE21      0.020
+ B3X      plan-2    HE22      0.020
+ B3X      plan-3    N         0.020
+ B3X      plan-3    CB        0.020
+ B3X      plan-3    H         0.020
+ B3X      plan-3    H2        0.020
+ B3X      plan-4    C         0.020
+ B3X      plan-4    CA        0.020
+ B3X      plan-4    O         0.020
+ B3X      plan-4    OXT       0.020
+# ------------------------------------------------------

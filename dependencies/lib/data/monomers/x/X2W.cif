@@ -1,0 +1,227 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+X2W      X2W 'N-ACETYL-L-GLUTAMYL 5-PHOSPHATE     ' non-polymer        26  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_X2W
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ X2W           O2     O    O        -0.500      0.000    0.000    0.000
+ X2W           C3     C    C         0.000     -1.196   -0.137    0.341
+ X2W           OE2    O    O2       -0.500     -1.507   -0.996    1.196
+ X2W           P      P    P         0.000     -0.335   -1.946    1.872
+ X2W           O3P    O    OP       -0.666      0.268   -2.804    0.780
+ X2W           O1P    O    OP       -0.666      0.729   -1.034    2.443
+ X2W           O2P    O    OP       -0.666     -0.879   -2.836    2.968
+ X2W           CG     C    CH2       0.000     -2.260    0.731   -0.278
+ X2W           HG1C   H    H         0.000     -2.761    1.306    0.505
+ X2W           HG2C   H    H         0.000     -2.991    0.101   -0.789
+ X2W           CB     C    CH2       0.000     -1.618    1.688   -1.283
+ X2W           HB1C   H    H         0.000     -1.117    1.112   -2.064
+ X2W           HB2C   H    H         0.000     -0.886    2.316   -0.770
+ X2W           CA     C    CH1       0.000     -2.699    2.570   -1.911
+ X2W           HA     H    H         0.000     -3.261    3.082   -1.117
+ X2W           C      C    C         0.000     -2.053    3.594   -2.809
+ X2W           OXT    O    OC       -0.500     -1.233    4.412   -2.337
+ X2W           O      O    OC       -0.500     -2.338    3.626   -4.027
+ X2W           N1     N    NH1       0.000     -3.612    1.737   -2.698
+ X2W           H1     H    H         0.000     -3.295    0.855   -3.073
+ X2W           C1     C    C         0.000     -4.876    2.149   -2.922
+ X2W           O1     O    O         0.000     -5.257    3.209   -2.471
+ X2W           C2     C    CH3       0.000     -5.815    1.292   -3.730
+ X2W           H23C   H    H         0.000     -5.560    0.271   -3.607
+ X2W           H22C   H    H         0.000     -6.810    1.448   -3.401
+ X2W           H21C   H    H         0.000     -5.739    1.552   -4.755
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ X2W      O2     n/a    C3     START
+ X2W      C3     O2     CG     .
+ X2W      OE2    C3     P      .
+ X2W      P      OE2    O2P    .
+ X2W      O3P    P      .      .
+ X2W      O1P    P      .      .
+ X2W      O2P    P      .      .
+ X2W      CG     C3     CB     .
+ X2W      HG1C   CG     .      .
+ X2W      HG2C   CG     .      .
+ X2W      CB     CG     CA     .
+ X2W      HB1C   CB     .      .
+ X2W      HB2C   CB     .      .
+ X2W      CA     CB     N1     .
+ X2W      HA     CA     .      .
+ X2W      C      CA     O      .
+ X2W      OXT    C      .      .
+ X2W      O      C      .      .
+ X2W      N1     CA     C1     .
+ X2W      H1     N1     .      .
+ X2W      C1     N1     C2     .
+ X2W      O1     C1     .      .
+ X2W      C2     C1     H21C   .
+ X2W      H23C   C2     .      .
+ X2W      H22C   C2     .      .
+ X2W      H21C   C2     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+X2W       CA        CB        single    1.524     0.020     1.524     0.020     
+X2W       C         CA        single    1.500     0.020     1.500     0.020     
+X2W       N1        CA        single    1.450     0.020     1.450     0.020     
+X2W       CB        CG        single    1.524     0.020     1.524     0.020     
+X2W       O         C         deloc     1.250     0.020     1.250     0.020     
+X2W       OXT       C         deloc     1.250     0.020     1.250     0.020     
+X2W       O1        C1        double    1.220     0.020     1.220     0.020     
+X2W       C1        N1        single    1.330     0.020     1.330     0.020     
+X2W       C2        C1        single    1.500     0.020     1.500     0.020     
+X2W       O3P       P         deloc     1.510     0.020     1.510     0.020     
+X2W       O2P       P         deloc     1.510     0.020     1.510     0.020     
+X2W       O1P       P         deloc     1.510     0.020     1.510     0.020     
+X2W       P         OE2       single    1.610     0.020     1.610     0.020     
+X2W       C3        O2        deloc     1.220     0.020     1.220     0.020     
+X2W       CG        C3        single    1.510     0.020     1.510     0.020     
+X2W       OE2       C3        deloc     1.454     0.020     1.454     0.020     
+X2W       HA        CA        single    1.089     0.010     0.989     0.005     
+X2W       HB1C      CB        single    1.089     0.010     0.989     0.005     
+X2W       HB2C      CB        single    1.089     0.010     0.989     0.005     
+X2W       H1        N1        single    1.016     0.010     0.899     0.007     
+X2W       HG1C      CG        single    1.089     0.010     0.989     0.005     
+X2W       HG2C      CG        single    1.089     0.010     0.989     0.005     
+X2W       H21C      C2        single    1.089     0.010     0.989     0.005     
+X2W       H22C      C2        single    1.089     0.010     0.989     0.005     
+X2W       H23C      C2        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ X2W      O2     C3     OE2     119.000    3.000
+ X2W      O2     C3     CG      120.500    3.000
+ X2W      OE2    C3     CG      120.000    3.000
+ X2W      C3     OE2    P       120.000    3.000
+ X2W      OE2    P      O3P     108.200    3.000
+ X2W      OE2    P      O1P     108.200    3.000
+ X2W      OE2    P      O2P     108.200    3.000
+ X2W      O3P    P      O1P     119.900    3.000
+ X2W      O3P    P      O2P     119.900    3.000
+ X2W      O1P    P      O2P     119.900    3.000
+ X2W      C3     CG     HG1C    109.470    3.000
+ X2W      C3     CG     HG2C    109.470    3.000
+ X2W      C3     CG     CB      109.470    3.000
+ X2W      HG1C   CG     HG2C    107.900    3.000
+ X2W      HG1C   CG     CB      109.470    3.000
+ X2W      HG2C   CG     CB      109.470    3.000
+ X2W      CG     CB     HB1C    109.470    3.000
+ X2W      CG     CB     HB2C    109.470    3.000
+ X2W      CG     CB     CA      111.000    3.000
+ X2W      HB1C   CB     HB2C    107.900    3.000
+ X2W      HB1C   CB     CA      109.470    3.000
+ X2W      HB2C   CB     CA      109.470    3.000
+ X2W      CB     CA     HA      108.340    3.000
+ X2W      CB     CA     C       109.470    3.000
+ X2W      CB     CA     N1      110.000    3.000
+ X2W      HA     CA     C       108.810    3.000
+ X2W      HA     CA     N1      108.550    3.000
+ X2W      C      CA     N1      111.600    3.000
+ X2W      CA     C      OXT     118.500    3.000
+ X2W      CA     C      O       118.500    3.000
+ X2W      OXT    C      O       123.000    3.000
+ X2W      CA     N1     H1      118.500    3.000
+ X2W      CA     N1     C1      121.500    3.000
+ X2W      H1     N1     C1      120.000    3.000
+ X2W      N1     C1     O1      123.000    3.000
+ X2W      N1     C1     C2      116.500    3.000
+ X2W      O1     C1     C2      123.000    3.000
+ X2W      C1     C2     H23C    109.470    3.000
+ X2W      C1     C2     H22C    109.470    3.000
+ X2W      C1     C2     H21C    109.470    3.000
+ X2W      H23C   C2     H22C    109.470    3.000
+ X2W      H23C   C2     H21C    109.470    3.000
+ X2W      H22C   C2     H21C    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ X2W      var_1    O2     C3     OE2    P          0.016   20.000   1
+ X2W      var_2    C3     OE2    P      O2P      174.891   20.000   1
+ X2W      var_3    O2     C3     CG     CB        -0.017   20.000   3
+ X2W      var_4    C3     CG     CB     CA      -179.979   20.000   3
+ X2W      var_5    CG     CB     CA     N1       -65.006   20.000   3
+ X2W      var_6    CB     CA     C      O        119.978   20.000   3
+ X2W      var_7    CB     CA     N1     C1       155.012   20.000   3
+ X2W      CONST_1  CA     N1     C1     C2       180.000    0.000   0
+ X2W      var_8    N1     C1     C2     H21C     -90.059   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ X2W      chir_01  CA     CB     C      N1        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ X2W      plan-1    C3        0.020
+ X2W      plan-1    CG        0.020
+ X2W      plan-1    O2        0.020
+ X2W      plan-1    OE2       0.020
+ X2W      plan-2    C         0.020
+ X2W      plan-2    CA        0.020
+ X2W      plan-2    O         0.020
+ X2W      plan-2    OXT       0.020
+ X2W      plan-3    C1        0.020
+ X2W      plan-3    O1        0.020
+ X2W      plan-3    N1        0.020
+ X2W      plan-3    C2        0.020
+ X2W      plan-3    H1        0.020
+ X2W      plan-4    N1        0.020
+ X2W      plan-4    CA        0.020
+ X2W      plan-4    C1        0.020
+ X2W      plan-4    H1        0.020
+# ------------------------------------------------------

@@ -1,0 +1,429 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+THL      THL 'tetrahydrofolate' non-polymer        53  32 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_THL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ THL           O2     O    OC       -0.500      0.000    0.000    0.000
+ THL           CT     C    C         0.000     -1.228   -0.194    0.139
+ THL           O1     O    OC       -0.500     -1.636   -1.198    0.763
+ THL           CA     C    CH1       0.000     -2.216    0.782   -0.445
+ THL           HA     H    H         0.000     -2.078    0.836   -1.534
+ THL           CB     C    CH2       0.000     -1.989    2.166    0.166
+ THL           HB1    H    H         0.000     -0.948    2.460    0.023
+ THL           HB2    H    H         0.000     -2.213    2.132    1.235
+ THL           CG     C    CH2       0.000     -2.907    3.182   -0.516
+ THL           HG1    H    H         0.000     -3.948    2.886   -0.373
+ THL           HG2    H    H         0.000     -2.682    3.214   -1.585
+ THL           CD     C    C         0.000     -2.683    4.545    0.086
+ THL           OE2    O    OC       -0.500     -1.845    4.694    1.003
+ THL           OE1    O    OC       -0.500     -3.337    5.527   -0.328
+ THL           N      N    NH1       0.000     -3.579    0.335   -0.149
+ THL           HN     H    H         0.000     -4.066    0.698    0.659
+ THL           C      C    C         0.000     -4.184   -0.562   -0.953
+ THL           O      O    O         0.000     -3.599   -0.998   -1.926
+ THL           C11    C    CR6       0.000     -5.557   -1.012   -0.654
+ THL           C16    C    CR16      0.000     -6.231   -0.512    0.463
+ THL           H16    H    H         0.000     -5.744    0.205    1.114
+ THL           C15    C    CR16      0.000     -7.513   -0.930    0.736
+ THL           H15    H    H         0.000     -8.038   -0.536    1.597
+ THL           C14    C    CR6       0.000     -8.135   -1.860   -0.092
+ THL           C13    C    CR16      0.000     -7.466   -2.360   -1.206
+ THL           H13    H    H         0.000     -7.954   -3.080   -1.852
+ THL           C12    C    CR16      0.000     -6.186   -1.942   -1.488
+ THL           H12    H    H         0.000     -5.667   -2.332   -2.355
+ THL           N10    N    NH1       0.000     -9.428   -2.285    0.189
+ THL           H10    H    H         0.000     -9.881   -2.956   -0.414
+ THL           C9     C    CH2       0.000    -10.133   -1.759    1.361
+ THL           H91    H    H         0.000    -10.224   -0.675    1.274
+ THL           H92    H    H         0.000     -9.570   -2.005    2.264
+ THL           C6     C    CH1       0.000    -11.527   -2.384    1.441
+ THL           H6     H    H         0.000    -11.439   -3.468    1.606
+ THL           N5     N    NH1       0.000    -12.261   -2.128    0.191
+ THL           HN5    H    H         0.000    -12.383   -2.859   -0.495
+ THL           C7     C    CH2       0.000    -12.318   -1.747    2.594
+ THL           H71    H    H         0.000    -11.763   -1.844    3.529
+ THL           H72    H    H         0.000    -13.290   -2.234    2.696
+ THL           N8     N    NH1       0.000    -12.513   -0.323    2.284
+ THL           HN8    H    H         0.000    -12.355    0.381    2.991
+ THL           C8A    C    CR6       0.000    -12.914    0.039    1.013
+ THL           C4A    C    CR6       0.000    -12.792   -0.837   -0.026
+ THL           N1     N    NR16      0.000    -13.435    1.285    0.776
+ THL           HN1    H    H         0.000    -13.530    1.967    1.556
+ THL           C2     C    CR6       0.000    -13.828    1.630   -0.481
+ THL           NA2    N    NH2       0.000    -14.352    2.878   -0.701
+ THL           HA22   H    H         0.000    -14.450    3.533    0.065
+ THL           HA21   H    H         0.000    -14.645    3.152   -1.631
+ THL           N3     N    NRD6      0.000    -13.712    0.793   -1.489
+ THL           C4     C    CR6       0.000    -13.205   -0.438   -1.313
+ THL           O4     O    O         0.000    -13.101   -1.205   -2.261
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ THL      O2     n/a    CT     START
+ THL      CT     O2     CA     .
+ THL      O1     CT     .      .
+ THL      CA     CT     N      .
+ THL      HA     CA     .      .
+ THL      CB     CA     CG     .
+ THL      HB1    CB     .      .
+ THL      HB2    CB     .      .
+ THL      CG     CB     CD     .
+ THL      HG1    CG     .      .
+ THL      HG2    CG     .      .
+ THL      CD     CG     OE1    .
+ THL      OE2    CD     .      .
+ THL      OE1    CD     .      .
+ THL      N      CA     C      .
+ THL      HN     N      .      .
+ THL      C      N      C11    .
+ THL      O      C      .      .
+ THL      C11    C      C16    .
+ THL      C16    C11    C15    .
+ THL      H16    C16    .      .
+ THL      C15    C16    C14    .
+ THL      H15    C15    .      .
+ THL      C14    C15    N10    .
+ THL      C13    C14    C12    .
+ THL      H13    C13    .      .
+ THL      C12    C13    H12    .
+ THL      H12    C12    .      .
+ THL      N10    C14    C9     .
+ THL      H10    N10    .      .
+ THL      C9     N10    C6     .
+ THL      H91    C9     .      .
+ THL      H92    C9     .      .
+ THL      C6     C9     C7     .
+ THL      H6     C6     .      .
+ THL      N5     C6     HN5    .
+ THL      HN5    N5     .      .
+ THL      C7     C6     N8     .
+ THL      H71    C7     .      .
+ THL      H72    C7     .      .
+ THL      N8     C7     C8A    .
+ THL      HN8    N8     .      .
+ THL      C8A    N8     N1     .
+ THL      C4A    C8A    .      .
+ THL      N1     C8A    C2     .
+ THL      HN1    N1     .      .
+ THL      C2     N1     N3     .
+ THL      NA2    C2     HA21   .
+ THL      HA22   NA2    .      .
+ THL      HA21   NA2    .      .
+ THL      N3     C2     C4     .
+ THL      C4     N3     O4     .
+ THL      O4     C4     .      END
+ THL      C4     C4A    .    ADD
+ THL      C4A    N5     .    ADD
+ THL      C11    C12    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+THL       N         CA        single    1.450     0.020     1.450     0.020     
+THL       C         N         single    1.330     0.020     1.330     0.020     
+THL       HN        N         single    1.016     0.010     0.899     0.007     
+THL       CB        CA        single    1.524     0.020     1.524     0.020     
+THL       CA        CT        single    1.500     0.020     1.500     0.020     
+THL       HA        CA        single    1.089     0.010     0.989     0.005     
+THL       O         C         double    1.220     0.020     1.220     0.020     
+THL       C11       C         single    1.500     0.020     1.500     0.020     
+THL       O4        C4        double    1.250     0.020     1.250     0.020     
+THL       C4        C4A       single    1.487     0.020     1.487     0.020     
+THL       C4        N3        single    1.350     0.020     1.350     0.020     
+THL       C4A       N5        single    1.350     0.020     1.350     0.020     
+THL       C4A       C8A       double    1.487     0.020     1.487     0.020     
+THL       N5        C6        single    1.450     0.020     1.450     0.020     
+THL       HN5       N5        single    1.016     0.010     0.899     0.007     
+THL       C7        C6        single    1.524     0.020     1.524     0.020     
+THL       C6        C9        single    1.524     0.020     1.524     0.020     
+THL       H6        C6        single    1.089     0.010     0.989     0.005     
+THL       N8        C7        single    1.450     0.020     1.450     0.020     
+THL       H71       C7        single    1.089     0.010     0.989     0.005     
+THL       H72       C7        single    1.089     0.010     0.989     0.005     
+THL       C8A       N8        single    1.350     0.020     1.350     0.020     
+THL       HN8       N8        single    1.016     0.010     0.899     0.007     
+THL       N1        C8A       single    1.337     0.020     1.337     0.020     
+THL       C9        N10       single    1.450     0.020     1.450     0.020     
+THL       H91       C9        single    1.089     0.010     0.989     0.005     
+THL       H92       C9        single    1.089     0.010     0.989     0.005     
+THL       N10       C14       single    1.350     0.020     1.350     0.020     
+THL       H10       N10       single    1.016     0.010     0.899     0.007     
+THL       C11       C12       double    1.390     0.020     1.390     0.020     
+THL       C16       C11       single    1.390     0.020     1.390     0.020     
+THL       C12       C13       single    1.390     0.020     1.390     0.020     
+THL       H12       C12       single    1.082     0.013     0.975     0.010     
+THL       C13       C14       double    1.390     0.020     1.390     0.020     
+THL       H13       C13       single    1.082     0.013     0.975     0.010     
+THL       C14       C15       single    1.390     0.020     1.390     0.020     
+THL       C15       C16       double    1.390     0.020     1.390     0.020     
+THL       H15       C15       single    1.082     0.013     0.975     0.010     
+THL       H16       C16       single    1.082     0.013     0.975     0.010     
+THL       NA2       C2        single    1.355     0.020     1.355     0.020     
+THL       HA21      NA2       single    1.016     0.010     0.899     0.007     
+THL       HA22      NA2       single    1.016     0.010     0.899     0.007     
+THL       N3        C2        double    1.350     0.020     1.350     0.020     
+THL       C2        N1        single    1.337     0.020     1.337     0.020     
+THL       HN1       N1        single    1.016     0.010     0.899     0.007     
+THL       CG        CB        single    1.524     0.020     1.524     0.020     
+THL       HB1       CB        single    1.089     0.010     0.989     0.005     
+THL       HB2       CB        single    1.089     0.010     0.989     0.005     
+THL       CD        CG        single    1.510     0.020     1.510     0.020     
+THL       HG1       CG        single    1.089     0.010     0.989     0.005     
+THL       HG2       CG        single    1.089     0.010     0.989     0.005     
+THL       OE1       CD        deloc     1.250     0.020     1.250     0.020     
+THL       OE2       CD        deloc     1.250     0.020     1.250     0.020     
+THL       O1        CT        deloc     1.250     0.020     1.250     0.020     
+THL       CT        O2        deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ THL      O2     CT     O1      123.000    3.000
+ THL      O2     CT     CA      118.500    3.000
+ THL      O1     CT     CA      118.500    3.000
+ THL      CT     CA     HA      108.810    3.000
+ THL      CT     CA     CB      109.470    3.000
+ THL      CT     CA     N       111.600    3.000
+ THL      HA     CA     CB      108.340    3.000
+ THL      HA     CA     N       108.550    3.000
+ THL      CB     CA     N       110.000    3.000
+ THL      CA     CB     HB1     109.470    3.000
+ THL      CA     CB     HB2     109.470    3.000
+ THL      CA     CB     CG      111.000    3.000
+ THL      HB1    CB     HB2     107.900    3.000
+ THL      HB1    CB     CG      109.470    3.000
+ THL      HB2    CB     CG      109.470    3.000
+ THL      CB     CG     HG1     109.470    3.000
+ THL      CB     CG     HG2     109.470    3.000
+ THL      CB     CG     CD      109.470    3.000
+ THL      HG1    CG     HG2     107.900    3.000
+ THL      HG1    CG     CD      109.470    3.000
+ THL      HG2    CG     CD      109.470    3.000
+ THL      CG     CD     OE2     118.500    3.000
+ THL      CG     CD     OE1     118.500    3.000
+ THL      OE2    CD     OE1     123.000    3.000
+ THL      CA     N      HN      118.500    3.000
+ THL      CA     N      C       121.500    3.000
+ THL      HN     N      C       120.000    3.000
+ THL      N      C      O       123.000    3.000
+ THL      N      C      C11     120.000    3.000
+ THL      O      C      C11     120.500    3.000
+ THL      C      C11    C16     120.000    3.000
+ THL      C      C11    C12     120.000    3.000
+ THL      C16    C11    C12     120.000    3.000
+ THL      C11    C16    H16     120.000    3.000
+ THL      C11    C16    C15     120.000    3.000
+ THL      H16    C16    C15     120.000    3.000
+ THL      C16    C15    H15     120.000    3.000
+ THL      C16    C15    C14     120.000    3.000
+ THL      H15    C15    C14     120.000    3.000
+ THL      C15    C14    C13     120.000    3.000
+ THL      C15    C14    N10     120.000    3.000
+ THL      C13    C14    N10     120.000    3.000
+ THL      C14    C13    H13     120.000    3.000
+ THL      C14    C13    C12     120.000    3.000
+ THL      H13    C13    C12     120.000    3.000
+ THL      C13    C12    H12     120.000    3.000
+ THL      C13    C12    C11     120.000    3.000
+ THL      H12    C12    C11     120.000    3.000
+ THL      C14    N10    H10     120.000    3.000
+ THL      C14    N10    C9      120.000    3.000
+ THL      H10    N10    C9      118.500    3.000
+ THL      N10    C9     H91     109.470    3.000
+ THL      N10    C9     H92     109.470    3.000
+ THL      N10    C9     C6      110.000    3.000
+ THL      H91    C9     H92     107.900    3.000
+ THL      H91    C9     C6      109.470    3.000
+ THL      H92    C9     C6      109.470    3.000
+ THL      C9     C6     H6      108.340    3.000
+ THL      C9     C6     N5      110.000    3.000
+ THL      C9     C6     C7      109.470    3.000
+ THL      H6     C6     N5      108.550    3.000
+ THL      H6     C6     C7      108.340    3.000
+ THL      N5     C6     C7      110.000    3.000
+ THL      C6     N5     HN5     118.500    3.000
+ THL      C6     N5     C4A     120.000    3.000
+ THL      HN5    N5     C4A     120.000    3.000
+ THL      C6     C7     H71     109.470    3.000
+ THL      C6     C7     H72     109.470    3.000
+ THL      C6     C7     N8      110.000    3.000
+ THL      H71    C7     H72     107.900    3.000
+ THL      H71    C7     N8      109.470    3.000
+ THL      H72    C7     N8      109.470    3.000
+ THL      C7     N8     HN8     118.500    3.000
+ THL      C7     N8     C8A     120.000    3.000
+ THL      HN8    N8     C8A     120.000    3.000
+ THL      N8     C8A    C4A     120.000    3.000
+ THL      N8     C8A    N1      120.000    3.000
+ THL      C4A    C8A    N1      120.000    3.000
+ THL      C8A    C4A    C4      120.000    3.000
+ THL      C8A    C4A    N5      120.000    3.000
+ THL      C4     C4A    N5      120.000    3.000
+ THL      C8A    N1     HN1     120.000    3.000
+ THL      C8A    N1     C2      120.000    3.000
+ THL      HN1    N1     C2      120.000    3.000
+ THL      N1     C2     NA2     120.000    3.000
+ THL      N1     C2     N3      120.000    3.000
+ THL      NA2    C2     N3      120.000    3.000
+ THL      C2     NA2    HA22    120.000    3.000
+ THL      C2     NA2    HA21    120.000    3.000
+ THL      HA22   NA2    HA21    120.000    3.000
+ THL      C2     N3     C4      120.000    3.000
+ THL      N3     C4     O4      120.000    3.000
+ THL      N3     C4     C4A     120.000    3.000
+ THL      O4     C4     C4A     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ THL      var_1    O2     CT     CA     N        179.987   20.000   3
+ THL      var_2    CT     CA     CB     CG       174.950   20.000   3
+ THL      var_3    CA     CB     CG     CD       179.979   20.000   3
+ THL      var_4    CB     CG     CD     OE1     -179.938   20.000   3
+ THL      var_5    CT     CA     N      C        -84.954   20.000   3
+ THL      CONST_1  CA     N      C      C11      180.000    0.000   0
+ THL      var_6    N      C      C11    C16       -0.072   20.000   1
+ THL      CONST_2  C      C11    C12    C13      180.000    0.000   0
+ THL      CONST_3  C      C11    C16    C15      180.000    0.000   0
+ THL      CONST_4  C11    C16    C15    C14        0.000    0.000   0
+ THL      CONST_5  C16    C15    C14    N10      180.000    0.000   0
+ THL      CONST_6  C15    C14    C13    C12        0.000    0.000   0
+ THL      CONST_7  C14    C13    C12    C11        0.000    0.000   0
+ THL      var_7    C15    C14    N10    C9        -0.322   20.000   1
+ THL      var_8    C14    N10    C9     C6      -179.956   20.000   3
+ THL      var_9    N10    C9     C6     C7      -174.988   20.000   3
+ THL      var_10   C9     C6     N5     C4A      -90.000   20.000   3
+ THL      var_11   C9     C6     C7     N8        60.000   20.000   3
+ THL      var_12   C6     C7     N8     C8A       60.000   20.000   3
+ THL      var_13   C7     N8     C8A    N1       150.000   20.000   1
+ THL      CONST_8  N8     C8A    C4A    C4       180.000    0.000   0
+ THL      var_14   C8A    C4A    N5     C6       -30.000   20.000   1
+ THL      CONST_9  N8     C8A    N1     C2       180.000    0.000   0
+ THL      CONST_10 C8A    N1     C2     N3         0.000    0.000   0
+ THL      CONST_11 N1     C2     NA2    HA21     179.697    0.000   0
+ THL      CONST_12 N1     C2     N3     C4         0.000    0.000   0
+ THL      CONST_13 C2     N3     C4     O4       180.000    0.000   0
+ THL      CONST_14 N3     C4     C4A    C8A        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ THL      chir_01  CA     N      CB     CT        negativ
+ THL      chir_02  C6     N5     C7     C9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ THL      plan-1    N         0.020
+ THL      plan-1    CA        0.020
+ THL      plan-1    C         0.020
+ THL      plan-1    HN        0.020
+ THL      plan-2    C         0.020
+ THL      plan-2    N         0.020
+ THL      plan-2    O         0.020
+ THL      plan-2    C11       0.020
+ THL      plan-2    HN        0.020
+ THL      plan-3    C4        0.020
+ THL      plan-3    O4        0.020
+ THL      plan-3    C4A       0.020
+ THL      plan-3    N3        0.020
+ THL      plan-3    C8A       0.020
+ THL      plan-3    N1        0.020
+ THL      plan-3    C2        0.020
+ THL      plan-3    N5        0.020
+ THL      plan-3    N8        0.020
+ THL      plan-3    HN1       0.020
+ THL      plan-3    NA2       0.020
+ THL      plan-3    HN5       0.020
+ THL      plan-3    HN8       0.020
+ THL      plan-3    HA22      0.020
+ THL      plan-3    HA21      0.020
+ THL      plan-4    N5        0.020
+ THL      plan-4    C4A       0.020
+ THL      plan-4    C6        0.020
+ THL      plan-4    HN5       0.020
+ THL      plan-5    N8        0.020
+ THL      plan-5    C7        0.020
+ THL      plan-5    C8A       0.020
+ THL      plan-5    HN8       0.020
+ THL      plan-6    N10       0.020
+ THL      plan-6    C9        0.020
+ THL      plan-6    C14       0.020
+ THL      plan-6    H10       0.020
+ THL      plan-7    C11       0.020
+ THL      plan-7    C         0.020
+ THL      plan-7    C12       0.020
+ THL      plan-7    C16       0.020
+ THL      plan-7    C13       0.020
+ THL      plan-7    C14       0.020
+ THL      plan-7    C15       0.020
+ THL      plan-7    H12       0.020
+ THL      plan-7    H13       0.020
+ THL      plan-7    N10       0.020
+ THL      plan-7    H15       0.020
+ THL      plan-7    H16       0.020
+ THL      plan-7    H10       0.020
+ THL      plan-8    NA2       0.020
+ THL      plan-8    C2        0.020
+ THL      plan-8    HA21      0.020
+ THL      plan-8    HA22      0.020
+ THL      plan-9    CD        0.020
+ THL      plan-9    CG        0.020
+ THL      plan-9    OE1       0.020
+ THL      plan-9    OE2       0.020
+ THL      plan-10   CT        0.020
+ THL      plan-10   CA        0.020
+ THL      plan-10   O1        0.020
+ THL      plan-10   O2        0.020
+# ------------------------------------------------------

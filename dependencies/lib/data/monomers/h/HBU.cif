@@ -1,0 +1,163 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HBU     HBU      "4-[HYDROXY-[METHYL-PHOSPHINOYL]]-3-OXO-BUTANOIC ACID"     NON-POLYMER     19     11     .     
+#
+data_comp_HBU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HBU     O1      O       OC      -1      3.812       -1.449      -0.236      
+HBU     C2      C       C       0       3.208       -0.407      0.075       
+HBU     O3      O       O       0       3.386       0.204       1.145       
+HBU     C4      C       CH2     0       2.189       0.153       -0.913      
+HBU     C5      C       C       0       0.877       -0.594      -0.900      
+HBU     O8      O       O       0       0.571       -1.343      -1.798      
+HBU     C9      C       CH2     0       -0.037      -0.368      0.280       
+HBU     P10     P       P       0       -1.549      0.563       -0.136      
+HBU     O13     O       O       0       -1.220      1.891       -0.711      
+HBU     O14     O       OH1     0       -2.316      -0.318      -1.168      
+HBU     C15     C       CH3     0       -2.620      0.701       1.297       
+HBU     HC41    H       H       0       2.569       0.108       -1.811      
+HBU     HC42    H       H       0       2.022       1.090       -0.693      
+HBU     HC91    H       H       0       0.450       0.121       0.969       
+HBU     HC92    H       H       0       -0.296      -1.235      0.643       
+HBU     H141    H       H       0       -2.244      -0.027      -1.952      
+HBU     H151    H       H       0       -2.798      1.599       1.467       
+HBU     H152    H       H       0       -2.200      0.324       2.038       
+HBU     H153    H       H       0       -3.419      0.253       1.134       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HBU       O1        C2        SINGLE    n         1.244     0.020     1.244     0.020     
+HBU       C2        O3        DOUBLE    n         1.244     0.020     1.244     0.020     
+HBU       C2        C4        SINGLE    n         1.525     0.014     1.525     0.014     
+HBU       C4        C5        SINGLE    n         1.508     0.020     1.508     0.020     
+HBU       C5        O8        DOUBLE    n         1.209     0.010     1.209     0.010     
+HBU       C5        C9        SINGLE    n         1.508     0.016     1.508     0.016     
+HBU       C9        P10       SINGLE    n         1.822     0.020     1.822     0.020     
+HBU       P10       O13       DOUBLE    n         1.484     0.015     1.484     0.015     
+HBU       P10       O14       SINGLE    n         1.557     0.017     1.557     0.017     
+HBU       P10       C15       SINGLE    n         1.794     0.020     1.794     0.020     
+HBU       C4        HC41      SINGLE    n         1.089     0.010     0.976     0.020     
+HBU       C4        HC42      SINGLE    n         1.089     0.010     0.976     0.020     
+HBU       C9        HC91      SINGLE    n         1.089     0.010     0.975     0.020     
+HBU       C9        HC92      SINGLE    n         1.089     0.010     0.975     0.020     
+HBU       O14       H141      SINGLE    n         0.970     0.012     0.839     0.020     
+HBU       C15       H151      SINGLE    n         1.089     0.010     0.931     0.020     
+HBU       C15       H152      SINGLE    n         1.089     0.010     0.931     0.020     
+HBU       C15       H153      SINGLE    n         1.089     0.010     0.931     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HBU          O1          C2          O3     123.857    1.50
+HBU          O1          C2          C4     118.071    1.50
+HBU          O3          C2          C4     118.071    1.50
+HBU          C2          C4          C5     111.575    3.00
+HBU          C2          C4        HC41     108.236    1.50
+HBU          C2          C4        HC42     108.236    1.50
+HBU          C5          C4        HC41     108.453    1.62
+HBU          C5          C4        HC42     108.453    1.62
+HBU        HC41          C4        HC42     108.195    1.50
+HBU          C4          C5          O8     121.578    1.57
+HBU          C4          C5          C9     116.902    2.07
+HBU          O8          C5          C9     121.520    1.64
+HBU          C5          C9         P10     113.247    3.00
+HBU          C5          C9        HC91     108.545    1.50
+HBU          C5          C9        HC92     108.545    1.50
+HBU         P10          C9        HC91     108.528    1.50
+HBU         P10          C9        HC92     108.528    1.50
+HBU        HC91          C9        HC92     108.296    2.31
+HBU          C9         P10         O13     110.326    3.00
+HBU          C9         P10         O14     105.177    2.72
+HBU          C9         P10         C15     109.194    3.00
+HBU         O13         P10         O14     110.226    3.00
+HBU         O13         P10         C15     110.326    3.00
+HBU         O14         P10         C15     105.177    2.72
+HBU         P10         O14        H141     112.398    3.00
+HBU         P10         C15        H151     109.571    1.50
+HBU         P10         C15        H152     109.571    1.50
+HBU         P10         C15        H153     109.571    1.50
+HBU        H151         C15        H152     109.340    3.00
+HBU        H151         C15        H153     109.340    3.00
+HBU        H152         C15        H153     109.340    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HBU             sp2_sp3_2          O1          C2          C4          C5     120.000   10.00     6
+HBU             sp2_sp3_8          O8          C5          C4          C2     120.000   10.00     6
+HBU            sp2_sp3_14          C4          C5          C9         P10     120.000   10.00     6
+HBU             sp3_sp3_1          C5          C9         P10         O13     180.000   10.00     3
+HBU            sp3_sp3_15        H151         C15         P10          C9      60.000   10.00     3
+HBU            sp3_sp3_10        H141         O14         P10          C9     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+HBU    chir_1    P10    O14    O13    C9    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HBU    plan-1          C2   0.020
+HBU    plan-1          C4   0.020
+HBU    plan-1          O1   0.020
+HBU    plan-1          O3   0.020
+HBU    plan-2          C4   0.020
+HBU    plan-2          C5   0.020
+HBU    plan-2          C9   0.020
+HBU    plan-2          O8   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HBU SMILES           ACDLabs              10.04 "O=C(CC(=O)O)CP(=O)(O)C"
+HBU SMILES_CANONICAL CACTVS               3.341 "C[P@](O)(=O)CC(=O)CC(O)=O"
+HBU SMILES           CACTVS               3.341 "C[P](O)(=O)CC(=O)CC(O)=O"
+HBU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[P@](=O)(CC(=O)CC(=O)O)O"
+HBU SMILES           "OpenEye OEToolkits" 1.5.0 "CP(=O)(CC(=O)CC(=O)O)O"
+HBU InChI            InChI                1.03  "InChI=1S/C5H9O5P/c1-11(9,10)3-4(6)2-5(7)8/h2-3H2,1H3,(H,7,8)(H,9,10)"
+HBU InChIKey         InChI                1.03  MZTALSPOBPYJPG-UHFFFAOYSA-N
+HBU ?                acedrg               202         "dictionary generator"                  
+HBU ?                acedrg_database      11          "data source"                           
+HBU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HBU ?                refmac5              5.8.0189    "optimization tool"                     

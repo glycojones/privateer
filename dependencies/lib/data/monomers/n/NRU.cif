@@ -1,0 +1,206 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NRU      NRU 'RUTHENIUM (III) HEXAAMINE ION       ' non-polymer        19   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NRU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NRU           N6     N    NH2       0.000     -0.008   -0.000    0.043
+ NRU           HN6    H    H         0.000      0.050   -0.444    0.950
+ NRU           HN62   H    H         0.000      0.837    0.253   -0.449
+ NRU           RU     RU   RU        3.000     -1.905    0.396   -0.827
+ NRU           N3     N    NH2       0.000     -3.815    0.781   -1.680
+ NRU           HN32   H    H         0.000     -4.625    0.881   -1.084
+ NRU           HN3    H    H         0.000     -3.915    0.864   -2.682
+ NRU           N4     N    NH2       0.000     -1.262    2.346   -1.360
+ NRU           HN42   H    H         0.000     -0.484    2.771   -0.875
+ NRU           HN4    H    H         0.000     -1.733    2.850   -2.098
+ NRU           N5     N    NH2       0.000     -1.222   -0.354   -2.689
+ NRU           HN52   H    H         0.000     -1.887   -0.669   -3.382
+ NRU           HN5    H    H         0.000     -0.232   -0.397   -2.884
+ NRU           N2     N    NH2       0.000     -2.598    1.138    1.038
+ NRU           HN22   H    H         0.000     -2.020    1.766    1.579
+ NRU           HN2    H    H         0.000     -3.506    0.862    1.387
+ NRU           N1     N    NH2       0.000     -2.554   -1.552   -0.285
+ NRU           HN12   H    H         0.000     -3.058   -2.120   -0.950
+ NRU           HN1    H    H         0.000     -2.358   -1.911    0.639
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NRU      N6     n/a    RU     START
+ NRU      HN6    N6     .      .
+ NRU      HN62   N6     .      .
+ NRU      RU     N6     N1     .
+ NRU      N3     RU     HN3    .
+ NRU      HN32   N3     .      .
+ NRU      HN3    N3     .      .
+ NRU      N4     RU     HN4    .
+ NRU      HN42   N4     .      .
+ NRU      HN4    N4     .      .
+ NRU      N5     RU     HN5    .
+ NRU      HN52   N5     .      .
+ NRU      HN5    N5     .      .
+ NRU      N2     RU     HN2    .
+ NRU      HN22   N2     .      .
+ NRU      HN2    N2     .      .
+ NRU      N1     RU     HN1    .
+ NRU      HN12   N1     .      .
+ NRU      HN1    N1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NRU       N1        RU        single    2.120     0.020     2.120     0.020     
+NRU       HN1       N1        single    1.036     0.016     0.914     0.007     
+NRU       HN12      N1        single    1.036     0.016     0.914     0.007     
+NRU       N4        RU        single    2.120     0.020     2.120     0.020     
+NRU       N5        RU        single    2.120     0.020     2.120     0.020     
+NRU       N2        RU        single    2.120     0.020     2.120     0.020     
+NRU       N3        RU        single    2.121     0.020     2.121     0.020     
+NRU       RU        N6        single    2.120     0.020     2.120     0.020     
+NRU       HN4       N4        single    1.036     0.016     0.914     0.007     
+NRU       HN42      N4        single    1.036     0.016     0.914     0.007     
+NRU       HN5       N5        single    1.036     0.016     0.914     0.007     
+NRU       HN52      N5        single    1.036     0.016     0.914     0.007     
+NRU       HN2       N2        single    1.036     0.016     0.914     0.007     
+NRU       HN22      N2        single    1.036     0.016     0.914     0.007     
+NRU       HN3       N3        single    1.036     0.016     0.914     0.007     
+NRU       HN32      N3        single    1.036     0.016     0.914     0.007     
+NRU       HN6       N6        single    1.036     0.016     0.914     0.007     
+NRU       HN62      N6        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NRU      HN6    N6     HN62    120.000    3.000
+ NRU      HN6    N6     RU      120.000    3.000
+ NRU      HN62   N6     RU      120.000    3.000
+ NRU      N6     RU     N3      179.972    3.000
+ NRU      N6     RU     N4       90.025    3.000
+ NRU      N6     RU     N5       90.009    3.000
+ NRU      N6     RU     N2       90.013    3.000
+ NRU      N6     RU     N1       90.012    3.000
+ NRU      N3     RU     N4       89.968    3.000
+ NRU      N3     RU     N5       90.003    3.000
+ NRU      N4     RU     N5       89.993    3.000
+ NRU      N3     RU     N2       89.974    3.000
+ NRU      N4     RU     N2       90.000    3.000
+ NRU      N5     RU     N2      180.000    3.000
+ NRU      N3     RU     N1       89.995    3.000
+ NRU      N4     RU     N1      179.972    3.000
+ NRU      N5     RU     N1       90.005    3.000
+ NRU      N2     RU     N1       90.002    3.000
+ NRU      RU     N3     HN32    120.000    3.000
+ NRU      RU     N3     HN3     120.000    3.000
+ NRU      HN32   N3     HN3     120.000    3.000
+ NRU      RU     N4     HN42    120.000    3.000
+ NRU      RU     N4     HN4     120.000    3.000
+ NRU      HN42   N4     HN4     120.000    3.000
+ NRU      RU     N5     HN52    120.000    3.000
+ NRU      RU     N5     HN5     120.000    3.000
+ NRU      HN52   N5     HN5     120.000    3.000
+ NRU      RU     N2     HN22    120.000    3.000
+ NRU      RU     N2     HN2     120.000    3.000
+ NRU      HN22   N2     HN2     120.000    3.000
+ NRU      RU     N1     HN12    120.000    3.000
+ NRU      RU     N1     HN1     120.000    3.000
+ NRU      HN12   N1     HN1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NRU      var_1    HN62   N6     RU     N1       134.993   20.000   3
+ NRU      var_2    N6     RU     N3     HN3     -157.393   20.000   3
+ NRU      var_3    N6     RU     N4     HN4      158.769   20.000   3
+ NRU      var_4    N6     RU     N5     HN5      -21.206   20.000   3
+ NRU      var_5    N6     RU     N2     HN2     -134.969   20.000   3
+ NRU      var_6    N6     RU     N1     HN1       44.992   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ NRU      chir_01  RU     N6     N3     N4        cross4
+                   N2     N1     N5     .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NRU      plan-1    N1        0.020
+ NRU      plan-1    RU        0.020
+ NRU      plan-1    HN1       0.020
+ NRU      plan-1    HN12      0.020
+ NRU      plan-2    N4        0.020
+ NRU      plan-2    RU        0.020
+ NRU      plan-2    HN4       0.020
+ NRU      plan-2    HN42      0.020
+ NRU      plan-3    N5        0.020
+ NRU      plan-3    RU        0.020
+ NRU      plan-3    HN5       0.020
+ NRU      plan-3    HN52      0.020
+ NRU      plan-4    N2        0.020
+ NRU      plan-4    RU        0.020
+ NRU      plan-4    HN2       0.020
+ NRU      plan-4    HN22      0.020
+ NRU      plan-5    N3        0.020
+ NRU      plan-5    RU        0.020
+ NRU      plan-5    HN3       0.020
+ NRU      plan-5    HN32      0.020
+ NRU      plan-6    N6        0.020
+ NRU      plan-6    RU        0.020
+ NRU      plan-6    HN6       0.020
+ NRU      plan-6    HN62      0.020
+# ------------------------------------------------------

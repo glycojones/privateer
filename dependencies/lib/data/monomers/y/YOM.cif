@@ -1,0 +1,369 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+YOM      YOM '2,2'-[1,2-PHENYLENEBIS(NITRILOMETHYL' non-polymer        39  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_YOM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ YOM           HB3    H    H         0.000      0.001   -0.002   -0.001
+ YOM           CB3    C    CR16      0.000     -0.278    1.045   -0.007
+ YOM           CB2    C    CR6       0.000     -1.630    1.399   -0.005
+ YOM           OB     O    O2        0.000     -2.531    0.421    0.004
+ YOM           FE     FE   FE        0.000     -4.306    0.538    0.007
+ YOM           NA     N    N         1.000     -6.173    0.529    0.003
+ YOM           CA     C    C1        0.000     -6.874    1.620    0.067
+ YOM           HA     H    H         0.000     -7.246    2.630    0.105
+ YOM           OA     O    O2        0.000     -4.096   -1.228    0.010
+ YOM           CA2    C    CR6       0.000     -5.024   -2.181    0.006
+ YOM           CA1    C    CR6       0.000     -6.395   -1.914    0.004
+ YOM           CA6    C    CR16      0.000     -7.314   -2.975    0.001
+ YOM           HA6    H    H         0.000     -8.377   -2.769    0.001
+ YOM           CA5    C    CR16      0.000     -6.869   -4.277   -0.001
+ YOM           HA5    H    H         0.000     -7.581   -5.093   -0.004
+ YOM           CA3    C    CR16      0.000     -4.597   -3.511    0.003
+ YOM           HA3    H    H         0.000     -3.537   -3.733    0.003
+ YOM           CA4    C    CR16      0.000     -5.510   -4.543   -0.001
+ YOM           HA4    H    H         0.000     -5.162   -5.569   -0.004
+ YOM           CB4    C    CR16      0.000      0.703    2.012   -0.017
+ YOM           HB4    H    H         0.000      1.746    1.720   -0.019
+ YOM           CB5    C    CR16      0.000      0.364    3.355   -0.026
+ YOM           HB5    H    H         0.000      1.141    4.109   -0.034
+ YOM           CB6    C    CR16      0.000     -0.960    3.729   -0.025
+ YOM           HB6    H    H         0.000     -1.224    4.779   -0.033
+ YOM           CB1    C    CR6       0.000     -1.969    2.754   -0.012
+ YOM           CB     C    C1        0.000     -3.363    3.186   -0.009
+ YOM           HB     H    H         0.000     -3.548    4.247   -0.012
+ YOM           NB     N    N         1.000     -4.397    2.403   -0.003
+ YOM           CC2    C    CR6       0.000     -5.706    2.815   -0.003
+ YOM           CC1    C    CR6       0.000     -6.656    1.813    0.000
+ YOM           CC3    C    CR16      0.000     -6.124    4.166   -0.007
+ YOM           HC3    H    H         0.000     -5.386    4.958   -0.011
+ YOM           CC4    C    CR16      0.000     -7.463    4.480   -0.007
+ YOM           HC4    H    H         0.000     -7.774    5.517   -0.009
+ YOM           CC5    C    CR16      0.000     -8.416    3.473   -0.004
+ YOM           HC5    H    H         0.000     -9.469    3.726   -0.004
+ YOM           CC6    C    CR16      0.000     -8.027    2.155    0.000
+ YOM           HC6    H    H         0.000     -8.777    1.373    0.002
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ YOM      HB3    n/a    CB3    START
+ YOM      CB3    HB3    CB4    .
+ YOM      CB2    CB3    OB     .
+ YOM      OB     CB2    FE     .
+ YOM      FE     OB     OA     .
+ YOM      NA     FE     CA     .
+ YOM      CA     NA     HA     .
+ YOM      HA     CA     .      .
+ YOM      OA     FE     CA2    .
+ YOM      CA2    OA     CA3    .
+ YOM      CA1    CA2    CA6    .
+ YOM      CA6    CA1    CA5    .
+ YOM      HA6    CA6    .      .
+ YOM      CA5    CA6    HA5    .
+ YOM      HA5    CA5    .      .
+ YOM      CA3    CA2    CA4    .
+ YOM      HA3    CA3    .      .
+ YOM      CA4    CA3    HA4    .
+ YOM      HA4    CA4    .      .
+ YOM      CB4    CB3    CB5    .
+ YOM      HB4    CB4    .      .
+ YOM      CB5    CB4    CB6    .
+ YOM      HB5    CB5    .      .
+ YOM      CB6    CB5    CB1    .
+ YOM      HB6    CB6    .      .
+ YOM      CB1    CB6    CB     .
+ YOM      CB     CB1    NB     .
+ YOM      HB     CB     .      .
+ YOM      NB     CB     CC2    .
+ YOM      CC2    NB     CC3    .
+ YOM      CC1    CC2    .      .
+ YOM      CC3    CC2    CC4    .
+ YOM      HC3    CC3    .      .
+ YOM      CC4    CC3    CC5    .
+ YOM      HC4    CC4    .      .
+ YOM      CC5    CC4    CC6    .
+ YOM      HC5    CC5    .      .
+ YOM      CC6    CC5    HC6    .
+ YOM      HC6    CC6    .      END
+ YOM      CA4    CA5    .    ADD
+ YOM      CA1    CA     .    ADD
+ YOM      NA     CC1    .    ADD
+ YOM      CC1    CC6    .    ADD
+ YOM      FE     NB     .    ADD
+ YOM      CB2    CB1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+YOM       CA4       CA5       single    1.390     0.020     1.390     0.020     
+YOM       CA4       CA3       double    1.390     0.020     1.390     0.020     
+YOM       HA4       CA4       single    1.082     0.013     0.975     0.010     
+YOM       CA5       CA6       double    1.390     0.020     1.390     0.020     
+YOM       HA5       CA5       single    1.082     0.013     0.975     0.010     
+YOM       CA6       CA1       single    1.390     0.020     1.390     0.020     
+YOM       HA6       CA6       single    1.082     0.013     0.975     0.010     
+YOM       CA1       CA        single    1.480     0.020     1.480     0.020     
+YOM       CA1       CA2       double    1.487     0.020     1.487     0.020     
+YOM       CA        NA        double    1.260     0.020     1.260     0.020     
+YOM       HA        CA        single    1.082     0.013     0.975     0.010     
+YOM       NA        CC1       single    1.400     0.020     1.400     0.020     
+YOM       NA        FE        single    1.855     0.020     1.855     0.020     
+YOM       CC1       CC6       double    1.390     0.020     1.390     0.020     
+YOM       CC1       CC2       single    1.487     0.020     1.487     0.020     
+YOM       CC6       CC5       single    1.390     0.020     1.390     0.020     
+YOM       HC6       CC6       single    1.082     0.013     0.975     0.010     
+YOM       CA3       CA2       single    1.390     0.020     1.390     0.020     
+YOM       HA3       CA3       single    1.082     0.013     0.975     0.010     
+YOM       CA2       OA        single    1.370     0.020     1.370     0.020     
+YOM       OA        FE        single    1.870     0.020     1.870     0.020     
+YOM       FE        NB        single    1.855     0.020     1.855     0.020     
+YOM       FE        OB        single    1.870     0.020     1.870     0.020     
+YOM       CC2       NB        single    1.400     0.020     1.400     0.020     
+YOM       NB        CB        double    1.260     0.020     1.260     0.020     
+YOM       CC3       CC2       double    1.390     0.020     1.390     0.020     
+YOM       CC4       CC3       single    1.390     0.020     1.390     0.020     
+YOM       HC3       CC3       single    1.082     0.013     0.975     0.010     
+YOM       CC5       CC4       double    1.390     0.020     1.390     0.020     
+YOM       HC4       CC4       single    1.082     0.013     0.975     0.010     
+YOM       HC5       CC5       single    1.082     0.013     0.975     0.010     
+YOM       OB        CB2       single    1.370     0.020     1.370     0.020     
+YOM       CB2       CB1       single    1.487     0.020     1.487     0.020     
+YOM       CB2       CB3       double    1.390     0.020     1.390     0.020     
+YOM       CB        CB1       single    1.480     0.020     1.480     0.020     
+YOM       CB1       CB6       double    1.390     0.020     1.390     0.020     
+YOM       HB        CB        single    1.082     0.013     0.975     0.010     
+YOM       CB6       CB5       single    1.390     0.020     1.390     0.020     
+YOM       HB6       CB6       single    1.082     0.013     0.975     0.010     
+YOM       CB5       CB4       double    1.390     0.020     1.390     0.020     
+YOM       HB5       CB5       single    1.082     0.013     0.975     0.010     
+YOM       CB4       CB3       single    1.390     0.020     1.390     0.020     
+YOM       HB4       CB4       single    1.082     0.013     0.975     0.010     
+YOM       CB3       HB3       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ YOM      HB3    CB3    CB2     120.000    3.000
+ YOM      HB3    CB3    CB4     120.000    3.000
+ YOM      CB2    CB3    CB4     120.000    3.000
+ YOM      CB3    CB2    OB      120.000    3.000
+ YOM      CB3    CB2    CB1     120.000    3.000
+ YOM      OB     CB2    CB1     120.000    3.000
+ YOM      CB2    OB     FE      120.000    3.000
+ YOM      OB     FE     NA      180.000    3.000
+ YOM      OB     FE     OA       90.000    3.000
+ YOM      OB     FE     NB       90.000    3.000
+ YOM      NA     FE     OA       90.000    3.000
+ YOM      NA     FE     NB       90.000    3.000
+ YOM      OA     FE     NB      180.000    3.000
+ YOM      FE     NA     CA      120.000    3.000
+ YOM      FE     NA     CC1     120.000    3.000
+ YOM      CA     NA     CC1     120.000    3.000
+ YOM      NA     CA     HA      120.000    3.000
+ YOM      NA     CA     CA1     120.000    3.000
+ YOM      HA     CA     CA1     120.000    3.000
+ YOM      FE     OA     CA2     120.000    3.000
+ YOM      OA     CA2    CA1     120.000    3.000
+ YOM      OA     CA2    CA3     120.000    3.000
+ YOM      CA1    CA2    CA3     120.000    3.000
+ YOM      CA2    CA1    CA6     120.000    3.000
+ YOM      CA2    CA1    CA      120.000    3.000
+ YOM      CA6    CA1    CA      120.000    3.000
+ YOM      CA1    CA6    HA6     120.000    3.000
+ YOM      CA1    CA6    CA5     120.000    3.000
+ YOM      HA6    CA6    CA5     120.000    3.000
+ YOM      CA6    CA5    HA5     120.000    3.000
+ YOM      CA6    CA5    CA4     120.000    3.000
+ YOM      HA5    CA5    CA4     120.000    3.000
+ YOM      CA2    CA3    HA3     120.000    3.000
+ YOM      CA2    CA3    CA4     120.000    3.000
+ YOM      HA3    CA3    CA4     120.000    3.000
+ YOM      CA3    CA4    HA4     120.000    3.000
+ YOM      CA3    CA4    CA5     120.000    3.000
+ YOM      HA4    CA4    CA5     120.000    3.000
+ YOM      CB3    CB4    HB4     120.000    3.000
+ YOM      CB3    CB4    CB5     120.000    3.000
+ YOM      HB4    CB4    CB5     120.000    3.000
+ YOM      CB4    CB5    HB5     120.000    3.000
+ YOM      CB4    CB5    CB6     120.000    3.000
+ YOM      HB5    CB5    CB6     120.000    3.000
+ YOM      CB5    CB6    HB6     120.000    3.000
+ YOM      CB5    CB6    CB1     120.000    3.000
+ YOM      HB6    CB6    CB1     120.000    3.000
+ YOM      CB6    CB1    CB      120.000    3.000
+ YOM      CB6    CB1    CB2     120.000    3.000
+ YOM      CB     CB1    CB2     120.000    3.000
+ YOM      CB1    CB     HB      120.000    3.000
+ YOM      CB1    CB     NB      120.000    3.000
+ YOM      HB     CB     NB      120.000    3.000
+ YOM      CB     NB     CC2     120.000    3.000
+ YOM      CB     NB     FE      120.000    3.000
+ YOM      CC2    NB     FE      120.000    3.000
+ YOM      NB     CC2    CC1     120.000    3.000
+ YOM      NB     CC2    CC3     120.000    3.000
+ YOM      CC1    CC2    CC3     120.000    3.000
+ YOM      CC2    CC1    NA      120.000    3.000
+ YOM      CC2    CC1    CC6     120.000    3.000
+ YOM      NA     CC1    CC6     120.000    3.000
+ YOM      CC2    CC3    HC3     120.000    3.000
+ YOM      CC2    CC3    CC4     120.000    3.000
+ YOM      HC3    CC3    CC4     120.000    3.000
+ YOM      CC3    CC4    HC4     120.000    3.000
+ YOM      CC3    CC4    CC5     120.000    3.000
+ YOM      HC4    CC4    CC5     120.000    3.000
+ YOM      CC4    CC5    HC5     120.000    3.000
+ YOM      CC4    CC5    CC6     120.000    3.000
+ YOM      HC5    CC5    CC6     120.000    3.000
+ YOM      CC5    CC6    HC6     120.000    3.000
+ YOM      CC5    CC6    CC1     120.000    3.000
+ YOM      HC6    CC6    CC1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ YOM      CONST_1  HB3    CB3    CB2    OB         0.000    0.000   0
+ YOM      CONST_2  CB3    CB2    CB1    CB6        0.000    0.000   0
+ YOM      var_1    CB3    CB2    OB     FE       180.000   20.000   1
+ YOM      var_2    CB2    OB     FE     NB         0.000   20.000   1
+ YOM      var_3    CB     NB     FE     OB         0.000   20.000   1
+ YOM      var_4    CA     NA     FE     OA         0.000   20.000   1
+ YOM      var_5    FE     NA     CC1    CC2        0.000   20.000   1
+ YOM      var_6    FE     NA     CA     CA1        0.000   20.000   1
+ YOM      var_7    CA2    OA     FE     NA         0.000   20.000   1
+ YOM      var_8    FE     OA     CA2    CA3      180.000   20.000   1
+ YOM      CONST_3  OA     CA2    CA1    CA6      180.000    0.000   0
+ YOM      var_9    CA2    CA1    CA     NA         0.000   20.000   1
+ YOM      CONST_4  CA2    CA1    CA6    CA5        0.000    0.000   0
+ YOM      CONST_5  CA1    CA6    CA5    CA4        0.000    0.000   0
+ YOM      CONST_6  OA     CA2    CA3    CA4      180.000    0.000   0
+ YOM      CONST_7  CA2    CA3    CA4    CA5        0.000    0.000   0
+ YOM      CONST_8  CA3    CA4    CA5    CA6        0.000    0.000   0
+ YOM      CONST_9  HB3    CB3    CB4    CB5      180.000    0.000   0
+ YOM      CONST_10 CB3    CB4    CB5    CB6        0.000    0.000   0
+ YOM      CONST_11 CB4    CB5    CB6    CB1        0.000    0.000   0
+ YOM      CONST_12 CB5    CB6    CB1    CB       180.000    0.000   0
+ YOM      var_10   CB6    CB1    CB     NB       180.000   20.000   1
+ YOM      var_11   CB1    CB     NB     CC2      180.000   20.000   1
+ YOM      var_12   CB     NB     CC2    CC3        0.000   20.000   1
+ YOM      CONST_13 NB     CC2    CC1    NA         0.000    0.000   0
+ YOM      CONST_14 CC2    CC1    CC6    CC5        0.000    0.000   0
+ YOM      CONST_15 NB     CC2    CC3    CC4      180.000    0.000   0
+ YOM      CONST_16 CC2    CC3    CC4    CC5        0.000    0.000   0
+ YOM      CONST_17 CC3    CC4    CC5    CC6        0.000    0.000   0
+ YOM      CONST_18 CC4    CC5    CC6    CC1        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ YOM      chir_01  FE     OB     NA     OA        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ YOM      plan-1    CA4       0.020
+ YOM      plan-1    CA5       0.020
+ YOM      plan-1    CA3       0.020
+ YOM      plan-1    HA4       0.020
+ YOM      plan-1    CA6       0.020
+ YOM      plan-1    CA1       0.020
+ YOM      plan-1    CA2       0.020
+ YOM      plan-1    HA5       0.020
+ YOM      plan-1    HA6       0.020
+ YOM      plan-1    CA        0.020
+ YOM      plan-1    HA3       0.020
+ YOM      plan-1    OA        0.020
+ YOM      plan-1    HA        0.020
+ YOM      plan-2    CA        0.020
+ YOM      plan-2    CA1       0.020
+ YOM      plan-2    NA        0.020
+ YOM      plan-2    HA        0.020
+ YOM      plan-3    NA        0.020
+ YOM      plan-3    CA        0.020
+ YOM      plan-3    CC1       0.020
+ YOM      plan-3    FE        0.020
+ YOM      plan-3    HA        0.020
+ YOM      plan-4    CC1       0.020
+ YOM      plan-4    NA        0.020
+ YOM      plan-4    CC6       0.020
+ YOM      plan-4    CC2       0.020
+ YOM      plan-4    CC3       0.020
+ YOM      plan-4    CC4       0.020
+ YOM      plan-4    CC5       0.020
+ YOM      plan-4    HC6       0.020
+ YOM      plan-4    NB        0.020
+ YOM      plan-4    HC3       0.020
+ YOM      plan-4    HC4       0.020
+ YOM      plan-4    HC5       0.020
+ YOM      plan-5    NB        0.020
+ YOM      plan-5    FE        0.020
+ YOM      plan-5    CC2       0.020
+ YOM      plan-5    CB        0.020
+ YOM      plan-5    HB        0.020
+ YOM      plan-6    CB2       0.020
+ YOM      plan-6    OB        0.020
+ YOM      plan-6    CB1       0.020
+ YOM      plan-6    CB3       0.020
+ YOM      plan-6    CB6       0.020
+ YOM      plan-6    CB5       0.020
+ YOM      plan-6    CB4       0.020
+ YOM      plan-6    CB        0.020
+ YOM      plan-6    HB6       0.020
+ YOM      plan-6    HB5       0.020
+ YOM      plan-6    HB4       0.020
+ YOM      plan-6    HB3       0.020
+ YOM      plan-6    HB        0.020
+ YOM      plan-7    CB        0.020
+ YOM      plan-7    NB        0.020
+ YOM      plan-7    CB1       0.020
+ YOM      plan-7    HB        0.020
+# ------------------------------------------------------

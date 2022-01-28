@@ -1,0 +1,98 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TCV     TCV      1,1,2-trichloroethene     non-polymer     6     5     .     
+#
+data_comp_TCV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TCV     CL1     CL      CL      0       -3.283      -52.840     -19.222     
+TCV     C2      C       C1      0       -3.552      -52.770     -17.524     
+TCV     C3      C       C       0       -2.445      -52.453     -16.529     
+TCV     CL4     CL      CL      0       -2.739      -52.389     -14.833     
+TCV     CL5     CL      CL      0       -0.830      -52.139     -17.035     
+TCV     H2      H       H       0       -4.410      -52.930     -17.156     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TCV       CL1       C2        SINGLE    n         1.721     0.016     1.721     0.016     
+TCV       C2        C3        DOUBLE    n         1.522     0.020     1.522     0.020     
+TCV       C3        CL4       SINGLE    n         1.722     0.014     1.722     0.014     
+TCV       C3        CL5       SINGLE    n         1.722     0.014     1.722     0.014     
+TCV       C2        H2        SINGLE    n         1.082     0.013     0.947     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TCV         CL1          C2          C3     122.694    3.00
+TCV         CL1          C2          H2     121.239    2.07
+TCV          C3          C2          H2     116.067    3.00
+TCV          C2          C3         CL4     121.866    3.00
+TCV          C2          C3         CL5     121.866    3.00
+TCV         CL4          C3         CL5     116.268    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TCV             sp2_sp2_1         CL1          C2          C3         CL4     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TCV    plan-1          C2   0.020
+TCV    plan-1          C3   0.020
+TCV    plan-1         CL1   0.020
+TCV    plan-1          H2   0.020
+TCV    plan-2          C2   0.020
+TCV    plan-2          C3   0.020
+TCV    plan-2         CL4   0.020
+TCV    plan-2         CL5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TCV SMILES           ACDLabs              12.01 "Cl[C@H]=C(Cl)Cl"
+TCV InChI            InChI                1.03  "InChI=1S/C2HCl3/c3-1-2(4)5/h1H"
+TCV InChIKey         InChI                1.03  XSTXAVWGXDQKEL-UHFFFAOYSA-N
+TCV SMILES_CANONICAL CACTVS               3.385 "ClC=C(Cl)Cl"
+TCV SMILES           CACTVS               3.385 "ClC=C(Cl)Cl"
+TCV SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C(=C(Cl)Cl)Cl"
+TCV SMILES           "OpenEye OEToolkits" 1.7.6 "C(=C(Cl)Cl)Cl"
+TCV ?                acedrg               202         "dictionary generator"                  
+TCV ?                acedrg_database      11          "data source"                           
+TCV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TCV ?                refmac5              5.8.0189    "optimization tool"                     

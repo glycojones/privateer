@@ -1,0 +1,117 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PYZ     PYZ      4-IODOPYRAZOLE     NON-POLYMER     9     6     .     
+#
+data_comp_PYZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PYZ     N1      N       NR5     0       2.752       -1.326      -67.334     
+PYZ     N2      N       NRD5    0       3.096       -1.103      -66.050     
+PYZ     C3      C       CR15    0       2.021       -0.581      -65.468     
+PYZ     C4      C       CR5     0       0.995       -0.476      -66.396     
+PYZ     I4      I       I       0       -0.908      0.261       -66.072     
+PYZ     C5      C       CR15    0       1.488       -0.955      -67.566     
+PYZ     HN1     H       H       0       3.311       -1.676      -67.934     
+PYZ     H3      H       H       0       1.979       -0.326      -64.560     
+PYZ     H5      H       H       0       1.030       -1.017      -68.390     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PYZ       N1        N2        SINGLE    y         1.346     0.010     1.346     0.010     
+PYZ       N1        C5        SINGLE    y         1.338     0.010     1.338     0.010     
+PYZ       N2        C3        DOUBLE    y         1.327     0.013     1.327     0.013     
+PYZ       C3        C4        SINGLE    y         1.389     0.015     1.389     0.015     
+PYZ       C4        I4        SINGLE    n         2.066     0.012     2.066     0.012     
+PYZ       C4        C5        DOUBLE    y         1.361     0.015     1.361     0.015     
+PYZ       N1        HN1       SINGLE    n         1.016     0.010     0.892     0.020     
+PYZ       C3        H3        SINGLE    n         1.082     0.013     0.944     0.017     
+PYZ       C5        H5        SINGLE    n         1.082     0.013     0.945     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PYZ          N2          N1          C5     111.020    1.50
+PYZ          N2          N1         HN1     123.144    2.09
+PYZ          C5          N1         HN1     125.836    2.30
+PYZ          N1          N2          C3     105.264    1.50
+PYZ          N2          C3          C4     109.364    1.50
+PYZ          N2          C3          H3     124.399    2.33
+PYZ          C4          C3          H3     126.236    2.40
+PYZ          C3          C4          I4     126.846    2.21
+PYZ          C3          C4          C5     106.859    1.50
+PYZ          I4          C4          C5     126.295    2.20
+PYZ          N1          C5          C4     107.493    1.50
+PYZ          N1          C5          H5     125.941    1.72
+PYZ          C4          C5          H5     126.567    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PYZ       const_sp2_sp2_1          C5          N1          N2          C3       0.000   10.00     2
+PYZ              const_13          C4          C5          N1          N2       0.000   10.00     2
+PYZ       const_sp2_sp2_3          C4          C3          N2          N1       0.000   10.00     2
+PYZ       const_sp2_sp2_6          N2          C3          C4          I4     180.000   10.00     2
+PYZ              const_11          I4          C4          C5          N1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PYZ    plan-1          C3   0.020
+PYZ    plan-1          C4   0.020
+PYZ    plan-1          C5   0.020
+PYZ    plan-1          H3   0.020
+PYZ    plan-1          H5   0.020
+PYZ    plan-1         HN1   0.020
+PYZ    plan-1          I4   0.020
+PYZ    plan-1          N1   0.020
+PYZ    plan-1          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PYZ SMILES           ACDLabs              10.04 Ic1cnnc1
+PYZ SMILES_CANONICAL CACTVS               3.341 "Ic1c[nH]nc1"
+PYZ SMILES           CACTVS               3.341 "Ic1c[nH]nc1"
+PYZ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(cn[nH]1)I"
+PYZ SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(cn[nH]1)I"
+PYZ InChI            InChI                1.03  "InChI=1S/C3H3IN2/c4-3-1-5-6-2-3/h1-2H,(H,5,6)"
+PYZ InChIKey         InChI                1.03  LLNQWPTUJJYTTE-UHFFFAOYSA-N
+PYZ ?                acedrg               202         "dictionary generator"                  
+PYZ ?                acedrg_database      11          "data source"                           
+PYZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PYZ ?                refmac5              5.8.0189    "optimization tool"                     

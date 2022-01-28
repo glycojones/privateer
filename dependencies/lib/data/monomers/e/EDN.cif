@@ -1,0 +1,110 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EDN     EDN      ETHANE-1,2-DIAMINE     non-polymer     12     4     .     
+#
+data_comp_EDN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+EDN     NAA     N       NT2     0       1.505       0.727       -0.430      
+EDN     CAB     C       CH2     0       0.768       -0.338      0.248       
+EDN     CAC     C       CH2     0       -0.598      -0.614      -0.331      
+EDN     NAD     N       NT2     0       -1.577      0.449       -0.110      
+EDN     HAA1    H       H       0       2.222       0.941       0.047       
+EDN     HAA2    H       H       0       0.997       1.453       -0.482      
+EDN     HAB1    H       H       0       0.665       -0.098      1.188       
+EDN     HAB2    H       H       0       1.294       -1.158      0.208       
+EDN     HAC1    H       H       0       -0.939      -1.440      0.061       
+EDN     HAC2    H       H       0       -0.504      -0.760      -1.291      
+EDN     HAD1    H       H       0       -1.376      1.150       -0.616      
+EDN     HAD2    H       H       0       -1.547      0.716       0.736       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EDN       NAA       CAB       SINGLE    n         1.461     0.020     1.461     0.020     
+EDN       CAB       CAC       SINGLE    n         1.508     0.020     1.508     0.020     
+EDN       CAC       NAD       SINGLE    n         1.461     0.020     1.461     0.020     
+EDN       NAA       HAA1      SINGLE    n         1.036     0.016     0.888     0.020     
+EDN       NAA       HAA2      SINGLE    n         1.036     0.016     0.888     0.020     
+EDN       CAB       HAB1      SINGLE    n         1.089     0.010     0.976     0.013     
+EDN       CAB       HAB2      SINGLE    n         1.089     0.010     0.976     0.013     
+EDN       CAC       HAC1      SINGLE    n         1.089     0.010     0.976     0.013     
+EDN       CAC       HAC2      SINGLE    n         1.089     0.010     0.976     0.013     
+EDN       NAD       HAD1      SINGLE    n         1.036     0.016     0.888     0.020     
+EDN       NAD       HAD2      SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+EDN         CAB         NAA        HAA1     109.540    3.00
+EDN         CAB         NAA        HAA2     109.540    3.00
+EDN        HAA1         NAA        HAA2     107.243    3.00
+EDN         NAA         CAB         CAC     114.650    3.00
+EDN         NAA         CAB        HAB1     108.883    1.50
+EDN         NAA         CAB        HAB2     108.883    1.50
+EDN         CAC         CAB        HAB1     108.684    1.50
+EDN         CAC         CAB        HAB2     108.684    1.50
+EDN        HAB1         CAB        HAB2     107.734    1.50
+EDN         CAB         CAC         NAD     114.650    3.00
+EDN         CAB         CAC        HAC1     108.684    1.50
+EDN         CAB         CAC        HAC2     108.684    1.50
+EDN         NAD         CAC        HAC1     108.883    1.50
+EDN         NAD         CAC        HAC2     108.883    1.50
+EDN        HAC1         CAC        HAC2     107.734    1.50
+EDN         CAC         NAD        HAD1     109.540    3.00
+EDN         CAC         NAD        HAD2     109.540    3.00
+EDN        HAD1         NAD        HAD2     107.243    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+EDN             sp3_sp3_1         CAC         CAB         NAA        HAA1     180.000   10.00     3
+EDN             sp3_sp3_7         NAA         CAB         CAC         NAD     180.000   10.00     3
+EDN            sp3_sp3_16         CAB         CAC         NAD        HAD1     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+EDN SMILES_CANONICAL CACTVS               3.352 NCCN
+EDN SMILES           CACTVS               3.352 NCCN
+EDN SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "C(CN)N"
+EDN SMILES           "OpenEye OEToolkits" 1.6.1 "C(CN)N"
+EDN InChI            InChI                1.03  InChI=1S/C2H8N2/c3-1-2-4/h1-4H2
+EDN InChIKey         InChI                1.03  PIICEJLVQHRZGT-UHFFFAOYSA-N
+EDN ?                acedrg               202         "dictionary generator"                  
+EDN ?                acedrg_database      11          "data source"                           
+EDN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+EDN ?                refmac5              5.8.0189    "optimization tool"                     

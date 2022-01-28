@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EOH     EOH      ETHANOL     NON-POLYMER     9     3     .     
+#
+data_comp_EOH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+EOH     C1      C       CH2     0       15.236      49.182      7.439       
+EOH     C2      C       CH3     0       16.056      50.364      7.167       
+EOH     O       O       OH1     0       15.970      48.139      8.056       
+EOH     H11     H       H       0       14.859      48.851      6.594       
+EOH     H12     H       H       0       14.489      49.437      8.022       
+EOH     H21     H       H       0       15.543      51.001      6.642       
+EOH     H22     H       H       0       16.849      50.102      6.671       
+EOH     H23     H       H       0       16.320      50.776      8.005       
+EOH     HO      H       H       0       16.196      48.376      8.836       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EOH       C1        C2        SINGLE    n         1.464     0.020     1.464     0.020     
+EOH       C1        O         SINGLE    n         1.417     0.020     1.417     0.020     
+EOH       C1        H11       SINGLE    n         1.089     0.010     0.982     0.017     
+EOH       C1        H12       SINGLE    n         1.089     0.010     0.982     0.017     
+EOH       C2        H21       SINGLE    n         1.089     0.010     0.971     0.016     
+EOH       C2        H22       SINGLE    n         1.089     0.010     0.971     0.016     
+EOH       C2        H23       SINGLE    n         1.089     0.010     0.971     0.016     
+EOH       O         HO        SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+EOH          C2          C1           O     112.593    3.00
+EOH          C2          C1         H11     109.052    1.94
+EOH          C2          C1         H12     109.052    1.94
+EOH           O          C1         H11     108.991    1.86
+EOH           O          C1         H12     108.991    1.86
+EOH         H11          C1         H12     107.837    1.60
+EOH          C1          C2         H21     109.524    1.50
+EOH          C1          C2         H22     109.524    1.50
+EOH          C1          C2         H23     109.524    1.50
+EOH         H21          C2         H22     109.410    1.50
+EOH         H21          C2         H23     109.410    1.50
+EOH         H22          C2         H23     109.410    1.50
+EOH          C1           O          HO     109.530    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+EOH             sp3_sp3_1           O          C1          C2         H21     180.000   10.00     3
+EOH            sp3_sp3_10          C2          C1           O          HO     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+EOH SMILES           ACDLabs              11.02 OCC
+EOH SMILES_CANONICAL CACTVS               3.352 CCO
+EOH SMILES           CACTVS               3.352 CCO
+EOH SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 CCO
+EOH SMILES           "OpenEye OEToolkits" 1.7.0 CCO
+EOH InChI            InChI                1.03  InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3
+EOH InChIKey         InChI                1.03  LFQSCWFLJHTTHZ-UHFFFAOYSA-N
+EOH ?                acedrg               202         "dictionary generator"                  
+EOH ?                acedrg_database      11          "data source"                           
+EOH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+EOH ?                refmac5              5.8.0189    "optimization tool"                     

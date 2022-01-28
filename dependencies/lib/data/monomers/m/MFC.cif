@@ -1,0 +1,321 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MFC      MFC '5-[1-(3-FLUORO-4-HYDROXY-PHENYL)-MET' non-polymer        39  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MFC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MFC           OXT    O    OC       -0.500      0.000    0.000    0.000
+ MFC           C      C    C         0.000     -0.753   -0.437   -0.899
+ MFC           O      O    OC       -0.500     -0.863   -1.650   -1.182
+ MFC           CA3    C    CH2       0.000     -1.475    0.700   -1.556
+ MFC           HA31   H    H         0.000     -0.755    1.380   -2.017
+ MFC           HA32   H    H         0.000     -2.064    1.244   -0.814
+ MFC           N3     N    NR5       0.000     -2.357    0.161   -2.576
+ MFC           C1     C    CR5       0.000     -3.643   -0.236   -2.423
+ MFC           CA1    C    CH1       0.000     -4.325   -0.153   -1.097
+ MFC           HA1    H    H         0.000     -3.585   -0.290   -0.297
+ MFC           CB1    C    CH1       0.000     -5.427   -1.203   -0.955
+ MFC           HB1    H    H         0.000     -6.161   -1.050   -1.759
+ MFC           OG1    O    OH1       0.000     -6.089   -1.050    0.299
+ MFC           HG1    H    H         0.000     -5.433   -1.020    1.007
+ MFC           CG1    C    CH3       0.000     -4.886   -2.625   -1.058
+ MFC           HG13   H    H         0.000     -4.120   -2.764   -0.340
+ MFC           HG12   H    H         0.000     -5.668   -3.315   -0.877
+ MFC           HG11   H    H         0.000     -4.493   -2.784   -2.029
+ MFC           N      N    NH2       0.000     -4.875    1.216   -1.026
+ MFC           HN2    H    H         0.000     -4.709    1.877   -1.778
+ MFC           H      H    H         0.000     -5.424    1.509   -0.225
+ MFC           C2     C    CR5       0.000     -2.010   -0.032   -3.888
+ MFC           O2     O    O         0.000     -0.967    0.183   -4.476
+ MFC           CA2    C    CR5       0.000     -3.258   -0.591   -4.466
+ MFC           N2     N    NRD5      0.000     -4.224   -0.687   -3.494
+ MFC           CB2    C    C1        0.000     -3.378   -0.935   -5.748
+ MFC           HB2    H    H         0.000     -2.530   -0.773   -6.392
+ MFC           CG2    C    CR6       0.000     -4.558   -1.507   -6.333
+ MFC           CD2    C    CR16      0.000     -4.755   -2.898   -6.334
+ MFC           HD2    H    H         0.000     -4.010   -3.545   -5.890
+ MFC           CE2    C    CR6       0.000     -5.902   -3.453   -6.903
+ MFC           F      F    F         0.000     -6.071   -4.783   -6.893
+ MFC           CZ     C    CR6       0.000     -6.867   -2.626   -7.478
+ MFC           OH     O    OH1       0.000     -7.986   -3.167   -8.032
+ MFC           HOH    H    H         0.000     -8.769   -2.795   -7.604
+ MFC           CE1    C    CR16      0.000     -6.684   -1.243   -7.485
+ MFC           HE1    H    H         0.000     -7.432   -0.600   -7.933
+ MFC           CD1    C    CR16      0.000     -5.539   -0.687   -6.916
+ MFC           HD1    H    H         0.000     -5.403    0.387   -6.925
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MFC      OXT    n/a    C      START
+ MFC      C      OXT    CA3    .
+ MFC      O      C      .      .
+ MFC      CA3    C      N3     .
+ MFC      HA31   CA3    .      .
+ MFC      HA32   CA3    .      .
+ MFC      N3     CA3    C2     .
+ MFC      C1     N3     CA1    .
+ MFC      CA1    C1     N      .
+ MFC      HA1    CA1    .      .
+ MFC      CB1    CA1    CG1    .
+ MFC      HB1    CB1    .      .
+ MFC      OG1    CB1    HG1    .
+ MFC      HG1    OG1    .      .
+ MFC      CG1    CB1    HG11   .
+ MFC      HG13   CG1    .      .
+ MFC      HG12   CG1    .      .
+ MFC      HG11   CG1    .      .
+ MFC      N      CA1    H      .
+ MFC      HN2    N      .      .
+ MFC      H      N      .      .
+ MFC      C2     N3     CA2    .
+ MFC      O2     C2     .      .
+ MFC      CA2    C2     CB2    .
+ MFC      N2     CA2    .      .
+ MFC      CB2    CA2    CG2    .
+ MFC      HB2    CB2    .      .
+ MFC      CG2    CB2    CD2    .
+ MFC      CD2    CG2    CE2    .
+ MFC      HD2    CD2    .      .
+ MFC      CE2    CD2    CZ     .
+ MFC      F      CE2    .      .
+ MFC      CZ     CE2    CE1    .
+ MFC      OH     CZ     HOH    .
+ MFC      HOH    OH     .      .
+ MFC      CE1    CZ     CD1    .
+ MFC      HE1    CE1    .      .
+ MFC      CD1    CE1    HD1    .
+ MFC      HD1    CD1    .      END
+ MFC      C1     N2     .    ADD
+ MFC      CG2    CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MFC       N         CA1       single    1.450     0.020     1.450     0.020     
+MFC       H         N         single    1.036     0.016     0.914     0.007     
+MFC       HN2       N         single    1.036     0.016     0.914     0.007     
+MFC       CB1       CA1       single    1.524     0.020     1.524     0.020     
+MFC       CA1       C1        single    1.480     0.020     1.480     0.020     
+MFC       HA1       CA1       single    1.089     0.010     0.989     0.005     
+MFC       CG1       CB1       single    1.524     0.020     1.524     0.020     
+MFC       OG1       CB1       single    1.432     0.020     1.432     0.020     
+MFC       HB1       CB1       single    1.089     0.010     0.989     0.005     
+MFC       HG11      CG1       single    1.089     0.010     0.989     0.005     
+MFC       HG12      CG1       single    1.089     0.010     0.989     0.005     
+MFC       HG13      CG1       single    1.089     0.010     0.989     0.005     
+MFC       HG1       OG1       single    0.970     0.012     0.839     0.014     
+MFC       C1        N2        double    1.350     0.020     1.350     0.020     
+MFC       C1        N3        single    1.337     0.020     1.337     0.020     
+MFC       N2        CA2       single    1.350     0.020     1.350     0.020     
+MFC       C2        N3        single    1.337     0.020     1.337     0.020     
+MFC       N3        CA3       single    1.462     0.020     1.462     0.020     
+MFC       O2        C2        double    1.285     0.020     1.285     0.020     
+MFC       CA2       C2        single    1.490     0.020     1.490     0.020     
+MFC       CB2       CA2       double    1.483     0.020     1.483     0.020     
+MFC       CA3       C         single    1.510     0.020     1.510     0.020     
+MFC       HA31      CA3       single    1.089     0.010     0.989     0.005     
+MFC       HA32      CA3       single    1.089     0.010     0.989     0.005     
+MFC       O         C         deloc     1.250     0.020     1.250     0.020     
+MFC       C         OXT       deloc     1.250     0.020     1.250     0.020     
+MFC       CG2       CB2       single    1.480     0.020     1.480     0.020     
+MFC       HB2       CB2       single    1.082     0.013     0.975     0.010     
+MFC       CG2       CD1       double    1.390     0.020     1.390     0.020     
+MFC       CD2       CG2       single    1.390     0.020     1.390     0.020     
+MFC       CD1       CE1       single    1.390     0.020     1.390     0.020     
+MFC       HD1       CD1       single    1.082     0.013     0.975     0.010     
+MFC       CE2       CD2       double    1.390     0.020     1.390     0.020     
+MFC       HD2       CD2       single    1.082     0.013     0.975     0.010     
+MFC       CE1       CZ        double    1.390     0.020     1.390     0.020     
+MFC       HE1       CE1       single    1.082     0.013     0.975     0.010     
+MFC       F         CE2       single    1.345     0.020     1.345     0.020     
+MFC       CZ        CE2       single    1.487     0.020     1.487     0.020     
+MFC       OH        CZ        single    1.362     0.020     1.362     0.020     
+MFC       HOH       OH        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MFC      OXT    C      O       123.000    3.000
+ MFC      OXT    C      CA3     118.500    3.000
+ MFC      O      C      CA3     118.500    3.000
+ MFC      C      CA3    HA31    109.470    3.000
+ MFC      C      CA3    HA32    109.470    3.000
+ MFC      C      CA3    N3      109.500    3.000
+ MFC      HA31   CA3    HA32    107.900    3.000
+ MFC      HA31   CA3    N3      109.500    3.000
+ MFC      HA32   CA3    N3      109.500    3.000
+ MFC      CA3    N3     C1      126.000    3.000
+ MFC      CA3    N3     C2      126.000    3.000
+ MFC      C1     N3     C2      108.000    3.000
+ MFC      N3     C1     CA1     126.000    3.000
+ MFC      N3     C1     N2      108.000    3.000
+ MFC      CA1    C1     N2      126.000    3.000
+ MFC      C1     CA1    HA1     109.470    3.000
+ MFC      C1     CA1    CB1     109.470    3.000
+ MFC      C1     CA1    N       109.470    3.000
+ MFC      HA1    CA1    CB1     108.340    3.000
+ MFC      HA1    CA1    N       109.470    3.000
+ MFC      CB1    CA1    N       109.470    3.000
+ MFC      CA1    CB1    HB1     108.340    3.000
+ MFC      CA1    CB1    OG1     109.470    3.000
+ MFC      CA1    CB1    CG1     111.000    3.000
+ MFC      HB1    CB1    OG1     109.470    3.000
+ MFC      HB1    CB1    CG1     108.340    3.000
+ MFC      OG1    CB1    CG1     109.470    3.000
+ MFC      CB1    OG1    HG1     109.470    3.000
+ MFC      CB1    CG1    HG13    109.470    3.000
+ MFC      CB1    CG1    HG12    109.470    3.000
+ MFC      CB1    CG1    HG11    109.470    3.000
+ MFC      HG13   CG1    HG12    109.470    3.000
+ MFC      HG13   CG1    HG11    109.470    3.000
+ MFC      HG12   CG1    HG11    109.470    3.000
+ MFC      CA1    N      HN2     120.000    3.000
+ MFC      CA1    N      H       120.000    3.000
+ MFC      HN2    N      H       120.000    3.000
+ MFC      N3     C2     O2      108.000    3.000
+ MFC      N3     C2     CA2     108.000    3.000
+ MFC      O2     C2     CA2     108.000    3.000
+ MFC      C2     CA2    N2      108.000    3.000
+ MFC      C2     CA2    CB2     117.000    3.000
+ MFC      N2     CA2    CB2     108.000    3.000
+ MFC      CA2    N2     C1      108.000    3.000
+ MFC      CA2    CB2    HB2     120.000    3.000
+ MFC      CA2    CB2    CG2     120.000    3.000
+ MFC      HB2    CB2    CG2     120.000    3.000
+ MFC      CB2    CG2    CD2     120.000    3.000
+ MFC      CB2    CG2    CD1     120.000    3.000
+ MFC      CD2    CG2    CD1     120.000    3.000
+ MFC      CG2    CD2    HD2     120.000    3.000
+ MFC      CG2    CD2    CE2     120.000    3.000
+ MFC      HD2    CD2    CE2     120.000    3.000
+ MFC      CD2    CE2    F       120.000    3.000
+ MFC      CD2    CE2    CZ      120.000    3.000
+ MFC      F      CE2    CZ      120.000    3.000
+ MFC      CE2    CZ     OH      120.000    3.000
+ MFC      CE2    CZ     CE1     120.000    3.000
+ MFC      OH     CZ     CE1     120.000    3.000
+ MFC      CZ     OH     HOH     109.470    3.000
+ MFC      CZ     CE1    HE1     120.000    3.000
+ MFC      CZ     CE1    CD1     120.000    3.000
+ MFC      HE1    CE1    CD1     120.000    3.000
+ MFC      CE1    CD1    HD1     120.000    3.000
+ MFC      CE1    CD1    CG2     120.000    3.000
+ MFC      HD1    CD1    CG2     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MFC      var_1    OXT    C      CA3    N3      -179.021   20.000   3
+ MFC      var_2    C      CA3    N3     C2       -90.622   20.000   1
+ MFC      CONST_1  CA3    N3     C1     CA1        0.000    0.000   0
+ MFC      CONST_2  N3     C1     N2     CA2        0.000    0.000   0
+ MFC      var_3    N3     C1     CA1    N         86.543   20.000   1
+ MFC      var_4    C1     CA1    CB1    CG1       61.061   20.000   3
+ MFC      var_5    CA1    CB1    OG1    HG1      -51.047   20.000   1
+ MFC      var_6    CA1    CB1    CG1    HG11     -64.508   20.000   3
+ MFC      var_7    C1     CA1    N      H        177.472   20.000   1
+ MFC      CONST_3  CA3    N3     C2     CA2      180.000    0.000   0
+ MFC      CONST_4  N3     C2     CA2    CB2      180.000    0.000   0
+ MFC      CONST_5  C2     CA2    N2     C1         0.000    0.000   0
+ MFC      CONST_6  C2     CA2    CB2    CG2      178.483    0.000   0
+ MFC      var_8    CA2    CB2    CG2    CD2      -88.305   20.000   1
+ MFC      CONST_7  CB2    CG2    CD1    CE1      180.000    0.000   0
+ MFC      CONST_8  CB2    CG2    CD2    CE2      180.000    0.000   0
+ MFC      CONST_9  CG2    CD2    CE2    CZ         0.000    0.000   0
+ MFC      CONST_10 CD2    CE2    CZ     CE1        0.000    0.000   0
+ MFC      var_9    CE2    CZ     OH     HOH      122.524   20.000   1
+ MFC      CONST_11 CE2    CZ     CE1    CD1        0.000    0.000   0
+ MFC      CONST_12 CZ     CE1    CD1    CG2        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MFC      chir_01  CA1    N      CB1    C1        negativ
+ MFC      chir_02  CB1    CA1    CG1    OG1       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MFC      plan-1    N         0.020
+ MFC      plan-1    CA1       0.020
+ MFC      plan-1    H         0.020
+ MFC      plan-1    HN2       0.020
+ MFC      plan-2    C1        0.020
+ MFC      plan-2    CA1       0.020
+ MFC      plan-2    N2        0.020
+ MFC      plan-2    N3        0.020
+ MFC      plan-2    C2        0.020
+ MFC      plan-2    CA2       0.020
+ MFC      plan-2    CA3       0.020
+ MFC      plan-2    O2        0.020
+ MFC      plan-2    CB2       0.020
+ MFC      plan-2    CG2       0.020
+ MFC      plan-2    HB2       0.020
+ MFC      plan-3    C         0.020
+ MFC      plan-3    CA3       0.020
+ MFC      plan-3    O         0.020
+ MFC      plan-3    OXT       0.020
+ MFC      plan-4    CG2       0.020
+ MFC      plan-4    CB2       0.020
+ MFC      plan-4    CD1       0.020
+ MFC      plan-4    CD2       0.020
+ MFC      plan-4    CE1       0.020
+ MFC      plan-4    CE2       0.020
+ MFC      plan-4    CZ        0.020
+ MFC      plan-4    HD1       0.020
+ MFC      plan-4    HD2       0.020
+ MFC      plan-4    HE1       0.020
+ MFC      plan-4    F         0.020
+ MFC      plan-4    OH        0.020
+ MFC      plan-4    HB2       0.020
+# ------------------------------------------------------

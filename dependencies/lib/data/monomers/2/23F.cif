@@ -1,0 +1,200 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+23F      23F '(2Z)-2-AMINO-3-PHENYLACRYLIC ACID   ' peptide            21  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_23F
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 23F           N      N    NT3      -1.000      0.000    0.000    0.000
+ 23F           H      H    HNH1      0.000     -0.351    0.152    0.880
+ 23F           H2     H    HNT3      0.000     -0.688    0.157   -0.651
+ 23F           H3     H    HNT3      0.000      0.306   -0.907   -0.070
+ 23F           CA     C    C         0.000      1.139    0.928   -0.247
+ 23F           CB     C    C1        0.000      2.423    0.581   -0.323
+ 23F           HB     H    H         0.000      3.180    1.338   -0.203
+ 23F           CG     C    CR6       0.000      2.831   -0.804   -0.563
+ 23F           CD1    C    CR16      0.000      2.091   -1.638   -1.395
+ 23F           HD1    H    H         0.000      1.424   -1.236   -2.148
+ 23F           CE1    C    CR16      0.000      2.244   -3.008   -1.218
+ 23F           HE1    H    H         0.000      1.426   -3.696   -1.389
+ 23F           CZ     C    CR16      0.000      3.494   -3.451   -0.812
+ 23F           HZ     H    H         0.000      3.748   -4.501   -0.895
+ 23F           CE2    C    CR16      0.000      4.421   -2.553   -0.298
+ 23F           HE2    H    H         0.000      5.438   -2.870   -0.102
+ 23F           CD2    C    CR16      0.000      4.035   -1.247   -0.040
+ 23F           HD2    H    H         0.000      4.657   -0.591    0.556
+ 23F           C      C    C         0.000      0.844    2.373   -0.177
+ 23F           O      O    OC       -0.500     -0.188    2.888   -0.628
+ 23F           OXT    O    OC       -0.500      1.589    3.187    0.383
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 23F      N      n/a    CA     START
+ 23F      H      N      .      .
+ 23F      H2     N      .      .
+ 23F      H3     N      .      .
+ 23F      CA     N      C      .
+ 23F      CB     CA     CG     .
+ 23F      HB     CB     .      .
+ 23F      CG     CB     CD1    .
+ 23F      CD1    CG     CE1    .
+ 23F      HD1    CD1    .      .
+ 23F      CE1    CD1    CZ     .
+ 23F      HE1    CE1    .      .
+ 23F      CZ     CE1    CE2    .
+ 23F      HZ     CZ     .      .
+ 23F      CE2    CZ     CD2    .
+ 23F      HE2    CE2    .      .
+ 23F      CD2    CE2    HD2    .
+ 23F      HD2    CD2    .      .
+ 23F      C      CA     OXT    .
+ 23F      O      C      .      .
+ 23F      OXT    C      .      END
+ 23F      CG     CD2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+23F       N         CA        single    1.491     0.021     1.491     0.021     
+23F       CA        C         single    1.460     0.020     1.460     0.020     
+23F       CB        CA        double    1.340     0.020     1.340     0.020     
+23F       C         O         deloc     1.231     0.020     1.231     0.020     
+23F       CG        CB        single    1.480     0.020     1.480     0.020     
+23F       HB        CB        single    1.082     0.013     0.975     0.010     
+23F       CG        CD1       single    1.390     0.020     1.390     0.020     
+23F       CD2       CG        double    1.390     0.020     1.390     0.020     
+23F       CD1       CE1       double    1.390     0.020     1.390     0.020     
+23F       HD1       CD1       single    1.082     0.013     0.975     0.010     
+23F       CE2       CD2       single    1.390     0.020     1.390     0.020     
+23F       HD2       CD2       single    1.082     0.013     0.975     0.010     
+23F       CE1       CZ        single    1.390     0.020     1.390     0.020     
+23F       HE1       CE1       single    1.082     0.013     0.975     0.010     
+23F       CZ        CE2       double    1.390     0.020     1.390     0.020     
+23F       HE2       CE2       single    1.082     0.013     0.975     0.010     
+23F       HZ        CZ        single    1.082     0.013     0.975     0.010     
+23F       N         H         single    1.036     0.016     0.914     0.007     
+23F       N         H2        single    1.036     0.016     0.914     0.007     
+23F       N         H3        single    1.036     0.016     0.914     0.007     
+23F       C         OXT       deloc     1.231     0.020     1.231     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 23F      O      C      CA      121.000    3.000
+ 23F      C      CA     N       120.000    3.000
+ 23F      C      CA     CB      120.000    3.000
+ 23F      N      CA     CB      120.000    3.000
+ 23F      CA     CB     HB      120.000    3.000
+ 23F      CA     CB     CG      120.000    3.000
+ 23F      HB     CB     CG      120.000    3.000
+ 23F      CB     CG     CD2     120.000    3.000
+ 23F      CB     CG     CD1     120.000    3.000
+ 23F      CD2    CG     CD1     120.000    3.000
+ 23F      CG     CD2    HD2     120.000    3.000
+ 23F      CG     CD2    CE2     120.000    3.000
+ 23F      HD2    CD2    CE2     120.000    3.000
+ 23F      CD2    CE2    HE2     120.000    3.000
+ 23F      CD2    CE2    CZ      120.000    3.000
+ 23F      HE2    CE2    CZ      120.000    3.000
+ 23F      CE2    CZ     HZ      120.000    3.000
+ 23F      CE2    CZ     CE1     120.000    3.000
+ 23F      HZ     CZ     CE1     120.000    3.000
+ 23F      CZ     CE1    HE1     120.000    3.000
+ 23F      CZ     CE1    CD1     120.000    3.000
+ 23F      HE1    CE1    CD1     120.000    3.000
+ 23F      CE1    CD1    HD1     120.000    3.000
+ 23F      CE1    CD1    CG      120.000    3.000
+ 23F      HD1    CD1    CG      120.000    3.000
+ 23F      H      N      CA      109.470    3.000
+ 23F      H2     N      H3      109.470    3.000
+ 23F      H3     N      CA      109.470    3.000
+ 23F      H2     N      CA      109.470    3.000
+ 23F      H      N      H2      109.470    3.000
+ 23F      H      N      H3      109.470    3.000
+ 23F      CA     C      OXT     121.000    3.000
+ 23F      O      C      OXT     118.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 23F      var_1            O      C      CA     CB                -0.026           20.000   1
+ 23F      CONST_2          C      CA     CB     CG              -171.276            0.000   0
+ 23F      var_2            CA     CB     CG     CD2             -153.400           20.000   1
+ 23F      CONST_3          CB     CG     CD1    CE1              180.000            0.000   0
+ 23F      CONST_4          CB     CG     CD2    CE2              180.000            0.000   0
+ 23F      CONST_5          CG     CD2    CE2    CZ                 0.000            0.000   0
+ 23F      CONST_6          CD2    CE2    CZ     CE1                0.000            0.000   0
+ 23F      CONST_7          CE2    CZ     CE1    CD1                0.000            0.000   0
+ 23F      CONST_8          CZ     CE1    CD1    CG                 0.000            0.000   0
+ 23F      psi              N      CA     C      OXT              160.000           30.000   2
+ 23F      var_1            C      CA     N      H3               180.000           20.000   3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 23F      plan-1            CA        0.020
+ 23F      plan-1            N         0.020
+ 23F      plan-1            C         0.020
+ 23F      plan-1            CB        0.020
+ 23F      plan-1            HB        0.020
+ 23F      plan-2            CG        0.020
+ 23F      plan-2            CD1       0.020
+ 23F      plan-2            CD2       0.020
+ 23F      plan-2            CE1       0.020
+ 23F      plan-2            CE2       0.020
+ 23F      plan-2            CZ        0.020
+ 23F      plan-2            HD1       0.020
+ 23F      plan-2            HD2       0.020
+ 23F      plan-2            HE1       0.020
+ 23F      plan-2            HE2       0.020
+ 23F      plan-2            HZ        0.020
+ 23F      oxt               C         0.020
+ 23F      oxt               CA        0.020
+ 23F      oxt               O         0.020
+ 23F      oxt               OXT       0.020
+# ------------------------------------------------------

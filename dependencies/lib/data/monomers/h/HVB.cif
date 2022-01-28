@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HVB     HVB      1-azanylpropylideneazanium     NON-POLYMER     14     5     .     
+#
+data_comp_HVB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HVB     C1      C       CH3     0       6.941       8.375       43.108      
+HVB     C2      C       CH2     0       6.525       9.677       42.496      
+HVB     C3      C       C       0       6.125       9.526       41.057      
+HVB     N4      N       NH2     1       6.946       9.970       40.093      
+HVB     N5      N       NH2     0       4.976       8.961       40.773      
+HVB     H10     H       H       0       7.209       8.521       44.032      
+HVB     H8      H       H       0       7.689       8.004       42.609      
+HVB     H9      H       H       0       6.195       7.751       43.083      
+HVB     H12     H       H       0       7.270       10.312      42.566      
+HVB     H11     H       H       0       5.769       10.037      43.006      
+HVB     H6      H       H       0       6.703       9.909       39.250      
+HVB     H7      H       H       0       7.726       10.316      40.306      
+HVB     H13     H       H       0       4.727       8.867       39.925      
+HVB     H14     H       H       0       4.450       8.675       41.431      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HVB       C3        N4        DOUBLE    n         1.335     0.0200    1.335     0.0200    
+HVB       C3        N5        SINGLE    n         1.310     0.0100    1.310     0.0100    
+HVB       C2        C3        SINGLE    n         1.500     0.0100    1.500     0.0100    
+HVB       C1        C2        SINGLE    n         1.498     0.0200    1.498     0.0200    
+HVB       C1        H10       SINGLE    n         1.089     0.010     0.973     0.0141    
+HVB       C1        H8        SINGLE    n         1.089     0.010     0.973     0.0141    
+HVB       C1        H9        SINGLE    n         1.089     0.010     0.973     0.0141    
+HVB       C2        H12       SINGLE    n         1.089     0.010     0.981     0.0185    
+HVB       C2        H11       SINGLE    n         1.089     0.010     0.981     0.0185    
+HVB       N4        H6        SINGLE    n         1.016     0.010     0.879     0.0200    
+HVB       N4        H7        SINGLE    n         1.016     0.010     0.879     0.0200    
+HVB       N5        H13       SINGLE    n         1.016     0.010     0.889     0.0200    
+HVB       N5        H14       SINGLE    n         1.016     0.010     0.889     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HVB          C2          C1         H10     109.465    1.50
+HVB          C2          C1          H8     109.465    1.50
+HVB          C2          C1          H9     109.465    1.50
+HVB         H10          C1          H8     109.380    1.50
+HVB         H10          C1          H9     109.380    1.50
+HVB          H8          C1          H9     109.380    1.50
+HVB          C3          C2          C1     112.167    1.55
+HVB          C3          C2         H12     109.208    1.50
+HVB          C3          C2         H11     109.208    1.50
+HVB          C1          C2         H12     108.655    2.05
+HVB          C1          C2         H11     108.655    2.05
+HVB         H12          C2         H11     108.057    1.93
+HVB          N4          C3          N5     121.609    1.50
+HVB          N4          C3          C2     119.196    1.50
+HVB          N5          C3          C2     119.196    1.50
+HVB          C3          N4          H6     119.714    1.50
+HVB          C3          N4          H7     119.714    1.50
+HVB          H6          N4          H7     120.572    1.86
+HVB          C3          N5         H13     119.714    1.50
+HVB          C3          N5         H14     119.714    1.50
+HVB         H13          N5         H14     120.572    1.86
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HVB             sp3_sp3_1         H10          C1          C2          C3     180.000   10.00     3
+HVB             sp2_sp3_2          N4          C3          C2          C1     120.000   10.00     6
+HVB             sp2_sp2_3          N5          C3          N4          H6       0.000   10.00     2
+HVB             sp2_sp2_7          N4          C3          N5         H13       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HVB    plan-1          C2   0.020
+HVB    plan-1          C3   0.020
+HVB    plan-1          N4   0.020
+HVB    plan-1          N5   0.020
+HVB    plan-2          C3   0.020
+HVB    plan-2          H6   0.020
+HVB    plan-2          H7   0.020
+HVB    plan-2          N4   0.020
+HVB    plan-3          C3   0.020
+HVB    plan-3         H13   0.020
+HVB    plan-3         H14   0.020
+HVB    plan-3          N5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HVB            InChI                InChI  1.03 InChI=1S/C3H8N2/c1-2-3(4)5/h2H2,1H3,(H3,4,5)/p+1
+HVB         InChIKey                InChI  1.03                      GNFWGDKKNWGGJY-UHFFFAOYSA-O
+HVB SMILES_CANONICAL               CACTVS 3.385                                    CCC(N)=[NH2+]
+HVB           SMILES               CACTVS 3.385                                    CCC(N)=[NH2+]
+HVB SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                    CCC(=[NH2+])N
+HVB           SMILES "OpenEye OEToolkits" 2.0.6                                    CCC(=[NH2+])N
+HVB ?                acedrg               217         "dictionary generator"                  
+HVB ?                acedrg_database      11          "data source"                           
+HVB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HVB ?                refmac5              5.8.0253    "optimization tool"                     

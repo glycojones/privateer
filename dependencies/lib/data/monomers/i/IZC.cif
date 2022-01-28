@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IZC     IZC      "2H-IMIDAZOL-4-YLACETIC ACID"     NON-POLYMER     14     9     .     
+#
+data_comp_IZC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+IZC     O1      O       OC      -1      26.153      23.040      -24.729     
+IZC     O2      O       O       0       27.451      24.404      -25.906     
+IZC     N1      N       NRD5    0       27.924      26.658      -21.612     
+IZC     N3      N       NRD5    0       29.215      25.891      -23.401     
+IZC     C2      C       CH2     0       29.026      27.025      -22.494     
+IZC     C4      C       CR5     0       28.331      25.010      -23.066     
+IZC     C5      C       CR15    0       27.569      25.436      -22.022     
+IZC     C6      C       CH2     0       28.215      23.704      -23.783     
+IZC     C7      C       C       0       27.182      23.717      -24.905     
+IZC     H21     H       H       0       28.801      27.832      -23.001     
+IZC     H22     H       H       0       29.840      27.183      -21.973     
+IZC     H5      H       H       0       26.868      24.938      -21.624     
+IZC     H61     H       H       0       27.972      23.004      -23.143     
+IZC     H62     H       H       0       29.085      23.465      -24.163     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IZC       O1        C7        SINGLE    n         1.244     0.020     1.244     0.020     
+IZC       O2        C7        DOUBLE    n         1.244     0.020     1.244     0.020     
+IZC       N1        C2        SINGLE    n         1.470     0.020     1.470     0.020     
+IZC       N1        C5        DOUBLE    n         1.338     0.020     1.338     0.020     
+IZC       N3        C2        SINGLE    n         1.470     0.020     1.470     0.020     
+IZC       N3        C4        DOUBLE    n         1.287     0.016     1.287     0.016     
+IZC       C4        C5        SINGLE    n         1.349     0.020     1.349     0.020     
+IZC       C4        C6        SINGLE    n         1.494     0.010     1.494     0.010     
+IZC       C6        C7        SINGLE    n         1.525     0.014     1.525     0.014     
+IZC       C2        H21       SINGLE    n         1.089     0.010     0.979     0.015     
+IZC       C2        H22       SINGLE    n         1.089     0.010     0.979     0.015     
+IZC       C5        H5        SINGLE    n         1.082     0.013     0.948     0.020     
+IZC       C6        H61       SINGLE    n         1.089     0.010     0.979     0.012     
+IZC       C6        H62       SINGLE    n         1.089     0.010     0.979     0.012     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+IZC          C2          N1          C5     107.937    1.96
+IZC          C2          N3          C4     107.937    1.96
+IZC          N1          C2          N3     108.072    1.50
+IZC          N1          C2         H21     109.715    1.50
+IZC          N1          C2         H22     109.715    1.50
+IZC          N3          C2         H21     109.715    1.50
+IZC          N3          C2         H22     109.715    1.50
+IZC         H21          C2         H22     108.625    1.79
+IZC          N3          C4          C5     111.553    3.00
+IZC          N3          C4          C6     121.668    3.00
+IZC          C5          C4          C6     126.779    1.50
+IZC          N1          C5          C4     112.939    3.00
+IZC          N1          C5          H5     122.878    1.50
+IZC          C4          C5          H5     124.182    2.31
+IZC          C4          C6          C7     113.528    2.79
+IZC          C4          C6         H61     109.361    1.50
+IZC          C4          C6         H62     109.361    1.50
+IZC          C7          C6         H61     108.520    1.50
+IZC          C7          C6         H62     108.520    1.50
+IZC         H61          C6         H62     107.455    1.50
+IZC          O1          C7          O2     126.397    2.50
+IZC          O1          C7          C6     116.793    1.89
+IZC          O2          C7          C6     116.793    1.89
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+IZC             sp2_sp3_1          C5          N1          C2          N3       0.000   10.00     6
+IZC             sp2_sp2_7          C4          C5          N1          C2       0.000   10.00     2
+IZC             sp2_sp3_4          C4          N3          C2          N1       0.000   10.00     6
+IZC             sp2_sp2_2          C6          C4          N3          C2     180.000   10.00     2
+IZC             sp2_sp2_5          C6          C4          C5          N1     180.000   10.00     2
+IZC             sp2_sp3_8          N3          C4          C6          C7     -90.000   10.00     6
+IZC            sp2_sp3_14          O1          C7          C6          C4     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+IZC    plan-1          C4   0.020
+IZC    plan-1          C5   0.020
+IZC    plan-1          C6   0.020
+IZC    plan-1          N3   0.020
+IZC    plan-2          C4   0.020
+IZC    plan-2          C5   0.020
+IZC    plan-2          H5   0.020
+IZC    plan-2          N1   0.020
+IZC    plan-3          C6   0.020
+IZC    plan-3          C7   0.020
+IZC    plan-3          O1   0.020
+IZC    plan-3          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+IZC SMILES           ACDLabs              10.04 "O=C(O)CC1=NCN=C1"
+IZC SMILES_CANONICAL CACTVS               3.341 "OC(=O)CC1=NCN=C1"
+IZC SMILES           CACTVS               3.341 "OC(=O)CC1=NCN=C1"
+IZC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1N=CC(=N1)CC(=O)O"
+IZC SMILES           "OpenEye OEToolkits" 1.5.0 "C1N=CC(=N1)CC(=O)O"
+IZC InChI            InChI                1.03  "InChI=1S/C5H6N2O2/c8-5(9)1-4-2-6-3-7-4/h2H,1,3H2,(H,8,9)"
+IZC InChIKey         InChI                1.03  RMEAVYUMFHJQAD-UHFFFAOYSA-N
+IZC ?                acedrg               202         "dictionary generator"                  
+IZC ?                acedrg_database      11          "data source"                           
+IZC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+IZC ?                refmac5              5.8.0189    "optimization tool"                     

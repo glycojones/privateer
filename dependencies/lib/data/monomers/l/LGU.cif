@@ -1,0 +1,205 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LGU      LGU 'ALPHA-L-GULURONATE                  ' pyranose           22  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LGU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LGU           C1     C    CH1       0.000      0.000    0.000    0.000
+ LGU           H1     H    H         0.000      0.981   -0.488    0.083
+ LGU           O1     O    OH1       0.000     -0.041    1.138    0.863
+ LGU           H10    H    H         0.000      0.652    1.761    0.607
+ LGU           O5     O    O2        0.000     -0.212    0.417   -1.351
+ LGU           C5     C    CH1       0.000     -1.454    1.090   -1.565
+ LGU           H5     H    H         0.000     -1.505    1.979   -0.922
+ LGU           C6     C    C         0.000     -1.557    1.507   -3.010
+ LGU           O6A    O    OC       -0.500     -2.529    2.195   -3.394
+ LGU           O6B    O    OC       -0.500     -0.671    1.166   -3.824
+ LGU           C4     C    CH1       0.000     -2.609    0.146   -1.222
+ LGU           H4     H    H         0.000     -3.565    0.675   -1.344
+ LGU           O4     O    OH1       0.000     -2.576   -0.986   -2.093
+ LGU           HO4    H    H         0.000     -2.668   -0.690   -3.009
+ LGU           C3     C    CH1       0.000     -2.465   -0.320    0.229
+ LGU           H3     H    H         0.000     -3.259   -1.042    0.465
+ LGU           O3     O    OH1       0.000     -2.564    0.804    1.106
+ LGU           HO3    H    H         0.000     -2.464    0.509    2.021
+ LGU           C2     C    CH1       0.000     -1.097   -0.988    0.405
+ LGU           H2     H    H         0.000     -1.040   -1.882   -0.232
+ LGU           O2     O    OH1       0.000     -0.921   -1.363    1.773
+ LGU           HO2    H    H         0.000     -0.055   -1.779    1.884
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LGU      C1     n/a    O5     START
+ LGU      H1     C1     .      .
+ LGU      O1     C1     H10    .
+ LGU      H10    O1     .      .
+ LGU      O5     C1     .      END
+ LGU      C5     O5     C4     .
+ LGU      H5     C5     .      .
+ LGU      C6     C5     O6B    .
+ LGU      O6A    C6     .      .
+ LGU      O6B    C6     .      .
+ LGU      C4     C5     C3     .
+ LGU      H4     C4     .      .
+ LGU      O4     C4     HO4    .
+ LGU      HO4    O4     .      .
+ LGU      C3     C4     C2     .
+ LGU      H3     C3     .      .
+ LGU      O3     C3     HO3    .
+ LGU      HO3    O3     .      .
+ LGU      C2     C3     O2     .
+ LGU      H2     C2     .      .
+ LGU      O2     C2     HO2    .
+ LGU      HO2    O2     .      .
+ LGU      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LGU       C1        C2        single    1.524     0.020     1.524     0.020     
+LGU       O5        C1        single    1.426     0.020     1.426     0.020     
+LGU       O1        C1        single    1.432     0.020     1.432     0.020     
+LGU       H1        C1        single    1.089     0.010     0.989     0.005     
+LGU       O2        C2        single    1.432     0.020     1.432     0.020     
+LGU       C2        C3        single    1.524     0.020     1.524     0.020     
+LGU       H2        C2        single    1.089     0.010     0.989     0.005     
+LGU       HO2       O2        single    0.970     0.012     0.839     0.014     
+LGU       O3        C3        single    1.432     0.020     1.432     0.020     
+LGU       C3        C4        single    1.524     0.020     1.524     0.020     
+LGU       H3        C3        single    1.089     0.010     0.989     0.005     
+LGU       HO3       O3        single    0.970     0.012     0.839     0.014     
+LGU       O4        C4        single    1.432     0.020     1.432     0.020     
+LGU       C4        C5        single    1.524     0.020     1.524     0.020     
+LGU       H4        C4        single    1.089     0.010     0.989     0.005     
+LGU       HO4       O4        single    0.970     0.012     0.839     0.014     
+LGU       C5        O5        single    1.426     0.020     1.426     0.020     
+LGU       C6        C5        single    1.500     0.020     1.500     0.020     
+LGU       H5        C5        single    1.089     0.010     0.989     0.005     
+LGU       O6A       C6        deloc     1.250     0.020     1.250     0.020     
+LGU       O6B       C6        deloc     1.250     0.020     1.250     0.020     
+LGU       H10       O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LGU      H1     C1     O1      109.470    3.000
+ LGU      H1     C1     O5      109.470    3.000
+ LGU      O1     C1     O5      109.470    3.000
+ LGU      H1     C1     C2      108.340    3.000
+ LGU      O1     C1     C2      109.470    3.000
+ LGU      O5     C1     C2      109.470    3.000
+ LGU      C1     O1     H10     109.470    3.000
+ LGU      C1     O5     C5      111.800    3.000
+ LGU      O5     C5     H5      109.470    3.000
+ LGU      O5     C5     C6      109.470    3.000
+ LGU      O5     C5     C4      109.470    3.000
+ LGU      H5     C5     C6      108.810    3.000
+ LGU      H5     C5     C4      108.340    3.000
+ LGU      C6     C5     C4      109.470    3.000
+ LGU      C5     C6     O6A     118.500    3.000
+ LGU      C5     C6     O6B     118.500    3.000
+ LGU      O6A    C6     O6B     123.000    3.000
+ LGU      C5     C4     H4      108.340    3.000
+ LGU      C5     C4     O4      109.470    3.000
+ LGU      C5     C4     C3      111.000    3.000
+ LGU      H4     C4     O4      109.470    3.000
+ LGU      H4     C4     C3      108.340    3.000
+ LGU      O4     C4     C3      109.470    3.000
+ LGU      C4     O4     HO4     109.470    3.000
+ LGU      C4     C3     H3      108.340    3.000
+ LGU      C4     C3     O3      109.470    3.000
+ LGU      C4     C3     C2      111.000    3.000
+ LGU      H3     C3     O3      109.470    3.000
+ LGU      H3     C3     C2      108.340    3.000
+ LGU      O3     C3     C2      109.470    3.000
+ LGU      C3     O3     HO3     109.470    3.000
+ LGU      C3     C2     H2      108.340    3.000
+ LGU      C3     C2     O2      109.470    3.000
+ LGU      C3     C2     C1      111.000    3.000
+ LGU      H2     C2     O2      109.470    3.000
+ LGU      H2     C2     C1      108.340    3.000
+ LGU      O2     C2     C1      109.470    3.000
+ LGU      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LGU      var_1    O5     C1     O1     H10      -60.060   20.000   1
+ LGU      var_2    C1     O5     C5     C4       -60.000   20.000   1
+ LGU      var_3    O5     C5     C6     O6B        4.891   20.000   3
+ LGU      var_4    O5     C5     C4     C3        60.000   20.000   3
+ LGU      var_5    C5     C4     O4     HO4      -60.325   20.000   1
+ LGU      var_6    C5     C4     C3     C2       -60.000   20.000   3
+ LGU      var_7    C4     C3     O3     HO3     -179.512   20.000   1
+ LGU      var_8    C4     C3     C2     O2       180.000   20.000   3
+ LGU      var_9    C3     C2     C1     O5       -60.000   20.000   3
+ LGU      var_10   C3     C2     O2     HO2     -179.639   20.000   1
+ LGU      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LGU      chir_01  C1     C2     O5     O1        negativ
+ LGU      chir_02  C2     C1     O2     C3        negativ
+ LGU      chir_03  C3     C2     O3     C4        negativ
+ LGU      chir_04  C4     C3     O4     C5        positiv
+ LGU      chir_05  C5     C4     O5     C6        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LGU      plan-1    C6        0.020
+ LGU      plan-1    C5        0.020
+ LGU      plan-1    O6A       0.020
+ LGU      plan-1    O6B       0.020
+# ------------------------------------------------------

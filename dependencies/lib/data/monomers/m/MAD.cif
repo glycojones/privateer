@@ -1,0 +1,311 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MAD      MAD '6-HYDRO-1-METHYLADENOSINE-5'-MONOPHO' non-polymer        38  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MAD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MAD           OXT    O    OP       -0.666      0.000    0.000    0.000
+ MAD           P      P    P         0.000     -1.179    0.114   -0.942
+ MAD           OP1    O    OP       -0.666     -0.823    1.040   -2.084
+ MAD           OP2    O    OP       -0.666     -1.521   -1.254   -1.490
+ MAD           "O5'"  O    O2        0.000     -2.447    0.707   -0.145
+ MAD           "C5'"  C    CH2       0.000     -2.732   -0.207    0.915
+ MAD           "H5'"  H    H         0.000     -1.863   -0.285    1.571
+ MAD           "H5''" H    H         0.000     -2.960   -1.189    0.496
+ MAD           "C4'"  C    CH1       0.000     -3.933    0.299    1.715
+ MAD           "H4'"  H    H         0.000     -3.713    1.282    2.154
+ MAD           "C3'"  C    CH1       0.000     -4.310   -0.711    2.822
+ MAD           "H3'"  H    H         0.000     -3.965   -1.720    2.556
+ MAD           "O3'"  O    OH1       0.000     -3.759   -0.307    4.077
+ MAD           HA     H    H         0.000     -4.004   -0.950    4.757
+ MAD           "C2'"  C    CH1       0.000     -5.855   -0.661    2.866
+ MAD           "H2'"  H    H         0.000     -6.279   -1.645    2.622
+ MAD           "O2'"  O    OH1       0.000     -6.305   -0.228    4.151
+ MAD           HB     H    H         0.000     -6.010   -0.856    4.824
+ MAD           "C1'"  C    CH1       0.000     -6.226    0.371    1.778
+ MAD           "H1'"  H    H         0.000     -6.360    1.366    2.225
+ MAD           "O4'"  O    O2        0.000     -5.103    0.376    0.872
+ MAD           N9     N    NR5       0.000     -7.444   -0.041    1.079
+ MAD           C4     C    CR56      0.000     -8.714    0.304    1.406
+ MAD           C5     C    CR56      0.000     -9.540   -0.311    0.447
+ MAD           N7     N    NRD5      0.000     -8.758   -0.997   -0.387
+ MAD           C8     C    CR15      0.000     -7.510   -0.846   -0.024
+ MAD           H8     H    H         0.000     -6.658   -1.291   -0.523
+ MAD           N3     N    NRD6      0.000     -9.242    1.066    2.379
+ MAD           C2     C    CR16      0.000    -10.543    1.106    2.526
+ MAD           H2     H    H         0.000    -10.954    1.771    3.276
+ MAD           N1     N    NR6       0.000    -11.406    0.355    1.786
+ MAD           CM1    C    CH3       0.000    -12.741    0.032    2.296
+ MAD           HM13   H    H         0.000    -13.474    0.419    1.637
+ MAD           HM12   H    H         0.000    -12.848   -1.019    2.365
+ MAD           HM11   H    H         0.000    -12.866    0.463    3.255
+ MAD           C6     C    CR6       0.000    -10.995   -0.107    0.533
+ MAD           N6     N    N         0.000    -11.820   -0.332   -0.462
+ MAD           H6     H    H         0.000    -12.746   -0.179   -0.339
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MAD      OXT    n/a    P      START
+ MAD      P      OXT    "O5'"  .
+ MAD      OP1    P      .      .
+ MAD      OP2    P      .      .
+ MAD      "O5'"  P      "C5'"  .
+ MAD      "C5'"  "O5'"  "C4'"  .
+ MAD      "H5'"  "C5'"  .      .
+ MAD      "H5''" "C5'"  .      .
+ MAD      "C4'"  "C5'"  "C3'"  .
+ MAD      "H4'"  "C4'"  .      .
+ MAD      "C3'"  "C4'"  "C2'"  .
+ MAD      "H3'"  "C3'"  .      .
+ MAD      "O3'"  "C3'"  HA     .
+ MAD      HA     "O3'"  .      .
+ MAD      "C2'"  "C3'"  "C1'"  .
+ MAD      "H2'"  "C2'"  .      .
+ MAD      "O2'"  "C2'"  HB     .
+ MAD      HB     "O2'"  .      .
+ MAD      "C1'"  "C2'"  N9     .
+ MAD      "H1'"  "C1'"  .      .
+ MAD      "O4'"  "C1'"  .      .
+ MAD      N9     "C1'"  C4     .
+ MAD      C4     N9     N3     .
+ MAD      C5     C4     N7     .
+ MAD      N7     C5     C8     .
+ MAD      C8     N7     H8     .
+ MAD      H8     C8     .      .
+ MAD      N3     C4     C2     .
+ MAD      C2     N3     N1     .
+ MAD      H2     C2     .      .
+ MAD      N1     C2     C6     .
+ MAD      CM1    N1     HM11   .
+ MAD      HM13   CM1    .      .
+ MAD      HM12   CM1    .      .
+ MAD      HM11   CM1    .      .
+ MAD      C6     N1     N6     .
+ MAD      N6     C6     H6     .
+ MAD      H6     N6     .      END
+ MAD      "C4'"  "O4'"  .    ADD
+ MAD      N9     C8     .    ADD
+ MAD      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MAD       OP1       P         deloc     1.510     0.020     1.510     0.020     
+MAD       OP2       P         deloc     1.510     0.020     1.510     0.020     
+MAD       "O5'"     P         single    1.610     0.020     1.610     0.020     
+MAD       P         OXT       deloc     1.510     0.020     1.510     0.020     
+MAD       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+MAD       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+MAD       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+MAD       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+MAD       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+MAD       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+MAD       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+MAD       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+MAD       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+MAD       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+MAD       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+MAD       HA        "O3'"     single    0.970     0.012     0.839     0.014     
+MAD       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+MAD       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+MAD       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+MAD       HB        "O2'"     single    0.970     0.012     0.839     0.014     
+MAD       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+MAD       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+MAD       N9        C8        single    1.337     0.020     1.337     0.020     
+MAD       C4        N9        single    1.337     0.020     1.337     0.020     
+MAD       C8        N7        double    1.350     0.020     1.350     0.020     
+MAD       H8        C8        single    1.082     0.013     0.975     0.010     
+MAD       N7        C5        single    1.350     0.020     1.350     0.020     
+MAD       C5        C6        single    1.490     0.020     1.490     0.020     
+MAD       C5        C4        double    1.490     0.020     1.490     0.020     
+MAD       N6        C6        double    1.355     0.020     1.355     0.020     
+MAD       C6        N1        single    1.410     0.020     1.410     0.020     
+MAD       H6        N6        single    1.016     0.010     0.899     0.007     
+MAD       CM1       N1        single    1.465     0.020     1.465     0.020     
+MAD       N1        C2        single    1.337     0.020     1.337     0.020     
+MAD       HM11      CM1       single    1.089     0.010     0.989     0.005     
+MAD       HM12      CM1       single    1.089     0.010     0.989     0.005     
+MAD       HM13      CM1       single    1.089     0.010     0.989     0.005     
+MAD       C2        N3        double    1.337     0.020     1.337     0.020     
+MAD       H2        C2        single    1.082     0.013     0.975     0.010     
+MAD       N3        C4        single    1.355     0.020     1.355     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MAD      OXT    P      OP1     119.900    3.000
+ MAD      OXT    P      OP2     119.900    3.000
+ MAD      OXT    P      "O5'"   108.200    3.000
+ MAD      OP1    P      OP2     119.900    3.000
+ MAD      OP1    P      "O5'"   108.200    3.000
+ MAD      OP2    P      "O5'"   108.200    3.000
+ MAD      P      "O5'"  "C5'"   120.500    3.000
+ MAD      "O5'"  "C5'"  "H5'"   109.470    3.000
+ MAD      "O5'"  "C5'"  "H5''"  109.470    3.000
+ MAD      "O5'"  "C5'"  "C4'"   109.470    3.000
+ MAD      "H5'"  "C5'"  "H5''"  107.900    3.000
+ MAD      "H5'"  "C5'"  "C4'"   109.470    3.000
+ MAD      "H5''" "C5'"  "C4'"   109.470    3.000
+ MAD      "C5'"  "C4'"  "H4'"   108.340    3.000
+ MAD      "C5'"  "C4'"  "C3'"   111.000    3.000
+ MAD      "C5'"  "C4'"  "O4'"   109.470    3.000
+ MAD      "H4'"  "C4'"  "C3'"   108.340    3.000
+ MAD      "H4'"  "C4'"  "O4'"   109.470    3.000
+ MAD      "C3'"  "C4'"  "O4'"   109.470    3.000
+ MAD      "C4'"  "C3'"  "H3'"   108.340    3.000
+ MAD      "C4'"  "C3'"  "O3'"   109.470    3.000
+ MAD      "C4'"  "C3'"  "C2'"   111.000    3.000
+ MAD      "H3'"  "C3'"  "O3'"   109.470    3.000
+ MAD      "H3'"  "C3'"  "C2'"   108.340    3.000
+ MAD      "O3'"  "C3'"  "C2'"   109.470    3.000
+ MAD      "C3'"  "O3'"  HA      109.470    3.000
+ MAD      "C3'"  "C2'"  "H2'"   108.340    3.000
+ MAD      "C3'"  "C2'"  "O2'"   109.470    3.000
+ MAD      "C3'"  "C2'"  "C1'"   111.000    3.000
+ MAD      "H2'"  "C2'"  "O2'"   109.470    3.000
+ MAD      "H2'"  "C2'"  "C1'"   108.340    3.000
+ MAD      "O2'"  "C2'"  "C1'"   109.470    3.000
+ MAD      "C2'"  "O2'"  HB      109.470    3.000
+ MAD      "C2'"  "C1'"  "H1'"   108.340    3.000
+ MAD      "C2'"  "C1'"  "O4'"   109.470    3.000
+ MAD      "C2'"  "C1'"  N9      109.470    3.000
+ MAD      "H1'"  "C1'"  "O4'"   109.470    3.000
+ MAD      "H1'"  "C1'"  N9      109.470    3.000
+ MAD      "O4'"  "C1'"  N9      109.470    3.000
+ MAD      "C1'"  "O4'"  "C4'"   111.800    3.000
+ MAD      "C1'"  N9     C4      126.000    3.000
+ MAD      "C1'"  N9     C8      126.000    3.000
+ MAD      C4     N9     C8      108.000    3.000
+ MAD      N9     C4     C5      108.000    3.000
+ MAD      N9     C4     N3      132.000    3.000
+ MAD      C5     C4     N3      120.000    3.000
+ MAD      C4     C5     N7      108.000    3.000
+ MAD      C4     C5     C6      120.000    3.000
+ MAD      N7     C5     C6      132.000    3.000
+ MAD      C5     N7     C8      108.000    3.000
+ MAD      N7     C8     H8      126.000    3.000
+ MAD      N7     C8     N9      108.000    3.000
+ MAD      H8     C8     N9      126.000    3.000
+ MAD      C4     N3     C2      120.000    3.000
+ MAD      N3     C2     H2      120.000    3.000
+ MAD      N3     C2     N1      120.000    3.000
+ MAD      H2     C2     N1      120.000    3.000
+ MAD      C2     N1     CM1     120.000    3.000
+ MAD      C2     N1     C6      120.000    3.000
+ MAD      CM1    N1     C6      120.000    3.000
+ MAD      N1     CM1    HM13    109.470    3.000
+ MAD      N1     CM1    HM12    109.470    3.000
+ MAD      N1     CM1    HM11    109.470    3.000
+ MAD      HM13   CM1    HM12    109.470    3.000
+ MAD      HM13   CM1    HM11    109.470    3.000
+ MAD      HM12   CM1    HM11    109.470    3.000
+ MAD      N1     C6     N6      120.000    3.000
+ MAD      N1     C6     C5      120.000    3.000
+ MAD      N6     C6     C5      120.000    3.000
+ MAD      C6     N6     H6      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MAD      var_1    OXT    P      "O5'"  "C5'"    -60.061   20.000   1
+ MAD      var_2    P      "O5'"  "C5'"  "C4'"   -179.981   20.000   1
+ MAD      var_3    "O5'"  "C5'"  "C4'"  "C3'"    176.932   20.000   3
+ MAD      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ MAD      var_5    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ MAD      var_6    "C4'"  "C3'"  "O3'"  HA      -179.929   20.000   1
+ MAD      var_7    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ MAD      var_8    "C3'"  "C2'"  "O2'"  HB       -61.404   20.000   1
+ MAD      var_9    "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ MAD      var_10   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ MAD      var_11   "C2'"  "C1'"  N9     C4        91.444   20.000   1
+ MAD      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ MAD      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ MAD      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ MAD      CONST_4  C4     C5     C6     N1       -30.000    0.000   0
+ MAD      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ MAD      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ MAD      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ MAD      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ MAD      CONST_9  N3     C2     N1     C6       -30.000    0.000   0
+ MAD      var_12   C2     N1     CM1    HM11      -0.019   20.000   1
+ MAD      CONST_10 C2     N1     C6     N6      -150.000    0.000   0
+ MAD      CONST_11 N1     C6     N6     H6        -0.114    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MAD      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ MAD      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ MAD      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ MAD      chir_04  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MAD      plan-1    N9        0.020
+ MAD      plan-1    "C1'"     0.020
+ MAD      plan-1    C8        0.020
+ MAD      plan-1    C4        0.020
+ MAD      plan-1    N7        0.020
+ MAD      plan-1    H8        0.020
+ MAD      plan-1    C5        0.020
+ MAD      plan-1    C6        0.020
+ MAD      plan-1    N1        0.020
+ MAD      plan-1    C2        0.020
+ MAD      plan-1    N3        0.020
+ MAD      plan-1    N6        0.020
+ MAD      plan-1    H6        0.020
+ MAD      plan-1    CM1       0.020
+ MAD      plan-1    H2        0.020
+# ------------------------------------------------------

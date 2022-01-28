@@ -1,0 +1,209 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NLN      NLN 'NORLEUCINE AMIDE                    ' non-polymer        23   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NLN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NLN           O      O    O         0.000      0.000    0.000    0.000
+ NLN           C      C    C         0.000     -0.992   -0.635   -0.285
+ NLN           NH2    N    NH2       0.000     -1.142   -1.124   -1.532
+ NLN           HH22   H    H         0.000     -1.969   -1.656   -1.776
+ NLN           HH21   H    H         0.000     -0.428   -0.964   -2.233
+ NLN           CA     C    CH1       0.000     -2.057   -0.876    0.752
+ NLN           HA     H    H         0.000     -2.559   -1.832    0.546
+ NLN           N      N    NH2       0.000     -1.441   -0.925    2.085
+ NLN           H2     H    H         0.000     -0.433   -0.897    2.184
+ NLN           H      H    H         0.000     -2.020   -0.986    2.914
+ NLN           CB     C    CH2       0.000     -3.082    0.258    0.706
+ NLN           HB2    H    H         0.000     -3.538    0.294   -0.286
+ NLN           HB3    H    H         0.000     -2.581    1.207    0.909
+ NLN           CG     C    CH2       0.000     -4.163    0.014    1.758
+ NLN           HG2    H    H         0.000     -3.704   -0.023    2.748
+ NLN           HG3    H    H         0.000     -4.661   -0.936    1.553
+ NLN           CD     C    CH2       0.000     -5.187    1.148    1.713
+ NLN           HD2    H    H         0.000     -5.645    1.185    0.722
+ NLN           HD3    H    H         0.000     -4.687    2.097    1.916
+ NLN           CE     C    CH3       0.000     -6.269    0.904    2.767
+ NLN           HE3    H    H         0.000     -6.756   -0.018    2.571
+ NLN           HE2    H    H         0.000     -5.827    0.869    3.730
+ NLN           HE1    H    H         0.000     -6.981    1.689    2.736
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NLN      O      n/a    C      START
+ NLN      C      O      CA     .
+ NLN      NH2    C      HH21   .
+ NLN      HH22   NH2    .      .
+ NLN      HH21   NH2    .      .
+ NLN      CA     C      CB     .
+ NLN      HA     CA     .      .
+ NLN      N      CA     H      .
+ NLN      H2     N      .      .
+ NLN      H      N      .      .
+ NLN      CB     CA     CG     .
+ NLN      HB2    CB     .      .
+ NLN      HB3    CB     .      .
+ NLN      CG     CB     CD     .
+ NLN      HG2    CG     .      .
+ NLN      HG3    CG     .      .
+ NLN      CD     CG     CE     .
+ NLN      HD2    CD     .      .
+ NLN      HD3    CD     .      .
+ NLN      CE     CD     HE1    .
+ NLN      HE3    CE     .      .
+ NLN      HE2    CE     .      .
+ NLN      HE1    CE     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NLN       N         CA        single    1.450     0.020     1.450     0.020     
+NLN       H         N         single    1.036     0.016     0.914     0.007     
+NLN       H2        N         single    1.036     0.016     0.914     0.007     
+NLN       CA        C         single    1.500     0.020     1.500     0.020     
+NLN       CB        CA        single    1.524     0.020     1.524     0.020     
+NLN       HA        CA        single    1.089     0.010     0.989     0.005     
+NLN       C         O         double    1.220     0.020     1.220     0.020     
+NLN       NH2       C         single    1.332     0.020     1.332     0.020     
+NLN       CG        CB        single    1.524     0.020     1.524     0.020     
+NLN       HB2       CB        single    1.089     0.010     0.989     0.005     
+NLN       HB3       CB        single    1.089     0.010     0.989     0.005     
+NLN       CD        CG        single    1.524     0.020     1.524     0.020     
+NLN       HG2       CG        single    1.089     0.010     0.989     0.005     
+NLN       HG3       CG        single    1.089     0.010     0.989     0.005     
+NLN       CE        CD        single    1.513     0.020     1.513     0.020     
+NLN       HD2       CD        single    1.089     0.010     0.989     0.005     
+NLN       HD3       CD        single    1.089     0.010     0.989     0.005     
+NLN       HE1       CE        single    1.089     0.010     0.989     0.005     
+NLN       HE2       CE        single    1.089     0.010     0.989     0.005     
+NLN       HE3       CE        single    1.089     0.010     0.989     0.005     
+NLN       HH21      NH2       single    1.016     0.010     0.899     0.007     
+NLN       HH22      NH2       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NLN      O      C      NH2     123.000    3.000
+ NLN      O      C      CA      120.500    3.000
+ NLN      NH2    C      CA      120.000    3.000
+ NLN      C      NH2    HH22    120.000    3.000
+ NLN      C      NH2    HH21    120.000    3.000
+ NLN      HH22   NH2    HH21    120.000    3.000
+ NLN      C      CA     HA      108.810    3.000
+ NLN      C      CA     N       109.470    3.000
+ NLN      C      CA     CB      109.470    3.000
+ NLN      HA     CA     N       109.470    3.000
+ NLN      HA     CA     CB      108.340    3.000
+ NLN      N      CA     CB      109.470    3.000
+ NLN      CA     N      H2      120.000    3.000
+ NLN      CA     N      H       120.000    3.000
+ NLN      H2     N      H       120.000    3.000
+ NLN      CA     CB     HB2     109.470    3.000
+ NLN      CA     CB     HB3     109.470    3.000
+ NLN      CA     CB     CG      111.000    3.000
+ NLN      HB2    CB     HB3     107.900    3.000
+ NLN      HB2    CB     CG      109.470    3.000
+ NLN      HB3    CB     CG      109.470    3.000
+ NLN      CB     CG     HG2     109.470    3.000
+ NLN      CB     CG     HG3     109.470    3.000
+ NLN      CB     CG     CD      111.000    3.000
+ NLN      HG2    CG     HG3     107.900    3.000
+ NLN      HG2    CG     CD      109.470    3.000
+ NLN      HG3    CG     CD      109.470    3.000
+ NLN      CG     CD     HD2     109.470    3.000
+ NLN      CG     CD     HD3     109.470    3.000
+ NLN      CG     CD     CE      111.000    3.000
+ NLN      HD2    CD     HD3     107.900    3.000
+ NLN      HD2    CD     CE      109.470    3.000
+ NLN      HD3    CD     CE      109.470    3.000
+ NLN      CD     CE     HE3     109.470    3.000
+ NLN      CD     CE     HE2     109.470    3.000
+ NLN      CD     CE     HE1     109.470    3.000
+ NLN      HE3    CE     HE2     109.470    3.000
+ NLN      HE3    CE     HE1     109.470    3.000
+ NLN      HE2    CE     HE1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NLN      CONST_1  O      C      NH2    HH21       0.000    0.000   0
+ NLN      var_1    O      C      CA     CB        89.978   20.000   3
+ NLN      var_2    C      CA     N      H        173.778   20.000   1
+ NLN      var_3    C      CA     CB     CG      -179.973   20.000   3
+ NLN      var_4    CA     CB     CG     CD       179.970   20.000   3
+ NLN      var_5    CB     CG     CD     CE      -179.995   20.000   3
+ NLN      var_6    CG     CD     CE     HE1     -179.953   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NLN      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NLN      plan-1    N         0.020
+ NLN      plan-1    CA        0.020
+ NLN      plan-1    H         0.020
+ NLN      plan-1    H2        0.020
+ NLN      plan-2    C         0.020
+ NLN      plan-2    CA        0.020
+ NLN      plan-2    O         0.020
+ NLN      plan-2    NH2       0.020
+ NLN      plan-2    HH22      0.020
+ NLN      plan-2    HH21      0.020
+ NLN      plan-3    NH2       0.020
+ NLN      plan-3    C         0.020
+ NLN      plan-3    HH21      0.020
+ NLN      plan-3    HH22      0.020
+# ------------------------------------------------------

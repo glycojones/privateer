@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ES3     ES3      4-bromo-1H-imidazole     NON-POLYMER     9     6     .     
+#
+data_comp_ES3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ES3     BR01    BR      BR      0       2.914       -0.741      -0.398      
+ES3     C02     C       CR5     0       1.084       -0.365      -0.319      
+ES3     C03     C       CR15    0       0.450       0.824       -0.269      
+ES3     N04     N       NR5     0       -0.885      0.550       -0.224      
+ES3     C05     C       CR15    0       -1.008      -0.779      -0.248      
+ES3     N06     N       NRD5    0       0.179       -1.355      -0.307      
+ES3     H03     H       H       0       0.841       1.685       -0.265      
+ES3     HN04    H       H       0       -1.540      1.152       -0.185      
+ES3     H05     H       H       0       -1.833      -1.240      -0.227      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ES3       BR01      C02       SINGLE    n         1.869     0.010     1.869     0.010     
+ES3       C02       C03       DOUBLE    y         1.349     0.011     1.349     0.011     
+ES3       C02       N06       SINGLE    y         1.338     0.020     1.338     0.020     
+ES3       C03       N04       SINGLE    y         1.366     0.017     1.366     0.017     
+ES3       N04       C05       SINGLE    y         1.336     0.012     1.336     0.012     
+ES3       C05       N06       DOUBLE    y         1.319     0.015     1.319     0.015     
+ES3       C03       H03       SINGLE    n         1.082     0.013     0.945     0.019     
+ES3       N04       HN04      SINGLE    n         1.016     0.010     0.890     0.020     
+ES3       C05       H05       SINGLE    n         1.082     0.013     0.945     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ES3        BR01         C02         C03     129.828    2.75
+ES3        BR01         C02         N06     120.924    2.14
+ES3         C03         C02         N06     109.248    1.50
+ES3         C02         C03         N04     106.781    1.50
+ES3         C02         C03         H03     127.379    1.50
+ES3         N04         C03         H03     125.840    1.72
+ES3         C03         N04         C05     107.216    1.50
+ES3         C03         N04        HN04     125.799    1.94
+ES3         C05         N04        HN04     126.985    3.00
+ES3         N04         C05         N06     110.599    1.50
+ES3         N04         C05         H05     124.476    1.50
+ES3         N06         C05         H05     124.925    1.50
+ES3         C02         N06         C05     106.155    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ES3       const_sp2_sp2_3        BR01         C02         C03         N04     180.000   10.00     2
+ES3              const_16        BR01         C02         N06         C05     180.000   10.00     2
+ES3       const_sp2_sp2_5         C02         C03         N04         C05       0.000   10.00     2
+ES3       const_sp2_sp2_9         N06         C05         N04         C03       0.000   10.00     2
+ES3              const_13         N04         C05         N06         C02       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ES3    plan-1        BR01   0.020
+ES3    plan-1         C02   0.020
+ES3    plan-1         C03   0.020
+ES3    plan-1         C05   0.020
+ES3    plan-1         H03   0.020
+ES3    plan-1         H05   0.020
+ES3    plan-1        HN04   0.020
+ES3    plan-1         N04   0.020
+ES3    plan-1         N06   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ES3 SMILES_CANONICAL CACTVS               3.352 "Brc1c[nH]cn1"
+ES3 SMILES           CACTVS               3.352 "Brc1c[nH]cn1"
+ES3 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1c(nc[nH]1)Br"
+ES3 SMILES           "OpenEye OEToolkits" 1.7.0 "c1c(nc[nH]1)Br"
+ES3 InChI            InChI                1.03  "InChI=1S/C3H3BrN2/c4-3-1-5-2-6-3/h1-2H,(H,5,6)"
+ES3 InChIKey         InChI                1.03  FHZALEJIENDROK-UHFFFAOYSA-N
+ES3 ?                acedrg               202         "dictionary generator"                  
+ES3 ?                acedrg_database      11          "data source"                           
+ES3 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ES3 ?                refmac5              5.8.0189    "optimization tool"                     

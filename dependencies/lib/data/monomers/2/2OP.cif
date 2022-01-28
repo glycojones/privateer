@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2OP     2OP      "(2S)-2-HYDROXYPROPANOIC ACID"     NON-POLYMER     11     6     .     
+#
+data_comp_2OP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2OP     C       C       C       0       -1.324      -0.411      -0.364      
+2OP     O       O       O       0       -2.025      -1.365      0.033       
+2OP     CB      C       CH3     0       1.167       -0.268      -0.137      
+2OP     OHN     O       OH1     0       -0.245      1.409       0.828       
+2OP     CA      C       CH1     0       -0.160      0.030       0.531       
+2OP     OXT     O       OC      -1      -1.490      0.215       -1.430      
+2OP     HB1     H       H       0       1.896       0.019       0.441       
+2OP     HB2     H       H       0       1.221       0.209       -0.984      
+2OP     HB3     H       H       0       1.243       -1.224      -0.300      
+2OP     HHN     H       H       0       -0.869      1.523       1.391       
+2OP     HA      H       H       0       -0.208      -0.481      1.379       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2OP       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+2OP       C         CA        SINGLE    n         1.533     0.010     1.533     0.010     
+2OP       CB        CA        SINGLE    n         1.516     0.010     1.516     0.010     
+2OP       OHN       CA        SINGLE    n         1.413     0.014     1.413     0.014     
+2OP       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+2OP       CB        HB1       SINGLE    n         1.089     0.010     0.973     0.014     
+2OP       CB        HB2       SINGLE    n         1.089     0.010     0.973     0.014     
+2OP       CB        HB3       SINGLE    n         1.089     0.010     0.973     0.014     
+2OP       OHN       HHN       SINGLE    n         0.970     0.012     0.848     0.020     
+2OP       CA        HA        SINGLE    n         1.089     0.010     0.991     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2OP           O           C          CA     117.167    1.52
+2OP           O           C         OXT     125.666    1.50
+2OP          CA           C         OXT     117.167    1.52
+2OP          CA          CB         HB1     109.657    1.50
+2OP          CA          CB         HB2     109.657    1.50
+2OP          CA          CB         HB3     109.657    1.50
+2OP         HB1          CB         HB2     109.425    1.50
+2OP         HB1          CB         HB3     109.425    1.50
+2OP         HB2          CB         HB3     109.425    1.50
+2OP          CA         OHN         HHN     108.411    2.22
+2OP           C          CA          CB     111.511    2.91
+2OP           C          CA         OHN     111.343    1.72
+2OP           C          CA          HA     108.330    1.50
+2OP          CB          CA         OHN     110.101    1.75
+2OP          CB          CA          HA     108.870    1.50
+2OP         OHN          CA          HA     109.094    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2OP             sp2_sp3_2           O           C          CA          CB     120.000   10.00     6
+2OP             sp3_sp3_1           C          CA          CB         HB1     180.000   10.00     3
+2OP            sp3_sp3_11           C          CA         OHN         HHN      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+2OP    chir_1    CA    OHN    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+2OP    plan-1           C   0.020
+2OP    plan-1          CA   0.020
+2OP    plan-1           O   0.020
+2OP    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2OP SMILES           ACDLabs              12.01 "O=C(O)C(O)C"
+2OP SMILES_CANONICAL CACTVS               3.370 "C[C@H](O)C(O)=O"
+2OP SMILES           CACTVS               3.370 "C[CH](O)C(O)=O"
+2OP SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C[C@@H](C(=O)O)O"
+2OP SMILES           "OpenEye OEToolkits" 1.7.0 "CC(C(=O)O)O"
+2OP InChI            InChI                1.03  "InChI=1S/C3H6O3/c1-2(4)3(5)6/h2,4H,1H3,(H,5,6)/t2-/m0/s1"
+2OP InChIKey         InChI                1.03  JVTAAEKCZFNVCJ-REOHCLBHSA-N
+2OP ?                acedrg               202         "dictionary generator"                  
+2OP ?                acedrg_database      11          "data source"                           
+2OP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2OP ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,565 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FAG      FAG '.                                   ' non-polymer        74  48 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FAG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FAG           O3P    O    OP       -0.666      0.000    0.000    0.000
+ FAG           P      P    P         0.000     -1.219    0.120    0.889
+ FAG           O1P    O    OP       -0.666     -1.172    1.254    1.889
+ FAG           O2P    O    OP       -0.666     -2.365    0.174   -0.097
+ FAG           "O5'"  O    O2        0.000     -1.339   -1.359    1.537
+ FAG           "C5'"  C    CH2       0.000     -1.389   -2.477    0.665
+ FAG           "H5'1" H    H         0.000     -0.378   -2.839    0.471
+ FAG           "H5'2" H    H         0.000     -1.859   -2.188   -0.277
+ FAG           "C4'"  C    CH1       0.000     -2.207   -3.579    1.326
+ FAG           "H4'"  H    H         0.000     -1.765   -3.841    2.297
+ FAG           "C3'"  C    CH1       0.000     -2.330   -4.825    0.460
+ FAG           "H3'"  H    H         0.000     -1.445   -4.956   -0.180
+ FAG           "O3'"  O    OH1       0.000     -2.547   -5.968    1.283
+ FAG           "HO3'" H    H         0.000     -3.451   -5.951    1.624
+ FAG           "C2'"  C    CH2       0.000     -3.566   -4.549   -0.364
+ FAG           "H2'1" H    H         0.000     -4.093   -5.459   -0.656
+ FAG           "H2'2" H    H         0.000     -3.358   -3.950   -1.253
+ FAG           "C1'"  C    CH1       0.000     -4.429   -3.748    0.597
+ FAG           "H1'"  H    H         0.000     -5.077   -4.437    1.157
+ FAG           "O4'"  O    O2        0.000     -3.547   -3.085    1.513
+ FAG           N9     N    NH1       0.000     -5.244   -2.773   -0.067
+ FAG           HN9    H    H         0.000     -5.104   -1.790    0.118
+ FAG           C4     C    CR6       0.000     -6.217   -3.174   -0.958
+ FAG           C5     C    CR6       0.000     -6.986   -2.251   -1.585
+ FAG           C6     C    CR6       0.000     -8.036   -2.685   -2.546
+ FAG           O6     O    O         0.000     -8.754   -1.884   -3.136
+ FAG           N1     N    NR16      0.000     -8.115   -4.051   -2.700
+ FAG           H1     H    H         0.000     -8.825   -4.435   -3.356
+ FAG           C2     C    CR6       0.000     -7.296   -4.937   -2.026
+ FAG           N2     N    NH2       0.000     -7.508   -6.264   -2.296
+ FAG           HN22   H    H         0.000     -7.997   -6.542   -3.139
+ FAG           HN21   H    H         0.000     -7.176   -6.975   -1.655
+ FAG           N3     N    NRD6      0.000     -6.384   -4.533   -1.190
+ FAG           N7     N    N         0.000     -6.866   -0.888   -1.394
+ FAG           C8     C    C1        0.000     -7.054   -0.357   -0.115
+ FAG           H8     H    H         0.000     -7.288   -1.058    0.668
+ FAG           O8     O    O         0.000     -6.981    0.823    0.208
+ FAG           C8A    C    CH1       0.000     -6.550   -0.047   -2.513
+ FAG           H8A    H    H         0.000     -7.338    0.708   -2.642
+ FAG           O7     O    O2        0.000     -6.461   -0.854   -3.691
+ FAG           C6A    C    CH1       0.000     -5.433   -0.319   -4.538
+ FAG           H6A    H    H         0.000     -5.887    0.057   -5.466
+ FAG           C9A    C    CH1       0.000     -4.772    0.846   -3.792
+ FAG           H9A    H    H         0.000     -5.074    1.826   -4.187
+ FAG           C9     C    CH1       0.000     -5.207    0.641   -2.355
+ FAG           H9     H    H         0.000     -4.498   -0.011   -1.825
+ FAG           O9     O    OH1       0.000     -5.338    1.883   -1.687
+ FAG           HO9    H    H         0.000     -5.886    1.766   -0.901
+ FAG           O6A    O    O2        0.000     -4.440   -1.321   -4.865
+ FAG           C5M    C    CR6       0.000     -3.237   -0.697   -4.657
+ FAG           C5B    C    CR16      0.000     -2.010   -1.245   -4.984
+ FAG           H5B    H    H         0.000     -1.942   -2.221   -5.449
+ FAG           C4B    C    CR6       0.000     -0.857   -0.505   -4.698
+ FAG           O4     O    O2        0.000      0.333   -1.075   -5.046
+ FAG           CM     C    CH3       0.000      0.970   -1.892   -4.066
+ FAG           HM3    H    H         0.000      2.016   -1.733   -4.101
+ FAG           HM2    H    H         0.000      0.606   -1.638   -3.104
+ FAG           HM1    H    H         0.000      0.760   -2.910   -4.265
+ FAG           C4A    C    CR66      0.000     -0.946    0.759   -4.088
+ FAG           CAA    C    CR66      0.000     -2.209    1.272   -3.767
+ FAG           C9B    C    CR6       0.000     -3.348    0.543   -4.053
+ FAG           O10    O    O2       -0.500     -2.246    2.612   -3.113
+ FAG           C11    C    CR6       0.000     -1.262    3.328   -2.821
+ FAG           O11    O    O        -0.500     -1.385    4.443   -2.268
+ FAG           CBA    C    CR6       0.000      0.038    2.762   -3.175
+ FAG           C3A    C    CR6       0.000      0.214    1.577   -3.761
+ FAG           C1     C    C         0.000      1.385    3.319   -2.985
+ FAG           O1     O    O         0.000      1.607    4.405   -2.469
+ FAG           C2A    C    CH2       0.000      2.442    2.387   -3.507
+ FAG           H2A1   H    H         0.000      3.123    2.048   -2.724
+ FAG           H2A2   H    H         0.000      3.018    2.824   -4.325
+ FAG           C3     C    CH2       0.000      1.634    1.200   -4.029
+ FAG           H32    H    H         0.000      1.873    0.277   -3.498
+ FAG           H31    H    H         0.000      1.775    1.049   -5.101
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FAG      O3P    n/a    P      START
+ FAG      P      O3P    "O5'"  .
+ FAG      O1P    P      .      .
+ FAG      O2P    P      .      .
+ FAG      "O5'"  P      "C5'"  .
+ FAG      "C5'"  "O5'"  "C4'"  .
+ FAG      "H5'1" "C5'"  .      .
+ FAG      "H5'2" "C5'"  .      .
+ FAG      "C4'"  "C5'"  "C3'"  .
+ FAG      "H4'"  "C4'"  .      .
+ FAG      "C3'"  "C4'"  "C2'"  .
+ FAG      "H3'"  "C3'"  .      .
+ FAG      "O3'"  "C3'"  "HO3'" .
+ FAG      "HO3'" "O3'"  .      .
+ FAG      "C2'"  "C3'"  "C1'"  .
+ FAG      "H2'1" "C2'"  .      .
+ FAG      "H2'2" "C2'"  .      .
+ FAG      "C1'"  "C2'"  N9     .
+ FAG      "H1'"  "C1'"  .      .
+ FAG      "O4'"  "C1'"  .      .
+ FAG      N9     "C1'"  C4     .
+ FAG      HN9    N9     .      .
+ FAG      C4     N9     C5     .
+ FAG      C5     C4     N7     .
+ FAG      C6     C5     N1     .
+ FAG      O6     C6     .      .
+ FAG      N1     C6     C2     .
+ FAG      H1     N1     .      .
+ FAG      C2     N1     N3     .
+ FAG      N2     C2     HN21   .
+ FAG      HN22   N2     .      .
+ FAG      HN21   N2     .      .
+ FAG      N3     C2     .      .
+ FAG      N7     C5     C8A    .
+ FAG      C8     N7     O8     .
+ FAG      H8     C8     .      .
+ FAG      O8     C8     .      .
+ FAG      C8A    N7     O7     .
+ FAG      H8A    C8A    .      .
+ FAG      O7     C8A    C6A    .
+ FAG      C6A    O7     O6A    .
+ FAG      H6A    C6A    .      .
+ FAG      C9A    C6A    C9     .
+ FAG      H9A    C9A    .      .
+ FAG      C9     C9A    O9     .
+ FAG      H9     C9     .      .
+ FAG      O9     C9     HO9    .
+ FAG      HO9    O9     .      .
+ FAG      O6A    C6A    C5M    .
+ FAG      C5M    O6A    C5B    .
+ FAG      C5B    C5M    C4B    .
+ FAG      H5B    C5B    .      .
+ FAG      C4B    C5B    C4A    .
+ FAG      O4     C4B    CM     .
+ FAG      CM     O4     HM1    .
+ FAG      HM3    CM     .      .
+ FAG      HM2    CM     .      .
+ FAG      HM1    CM     .      .
+ FAG      C4A    C4B    CAA    .
+ FAG      CAA    C4A    O10    .
+ FAG      C9B    CAA    .      .
+ FAG      O10    CAA    C11    .
+ FAG      C11    O10    CBA    .
+ FAG      O11    C11    .      .
+ FAG      CBA    C11    C1     .
+ FAG      C3A    CBA    .      .
+ FAG      C1     CBA    C2A    .
+ FAG      O1     C1     .      .
+ FAG      C2A    C1     C3     .
+ FAG      H2A1   C2A    .      .
+ FAG      H2A2   C2A    .      .
+ FAG      C3     C2A    H31    .
+ FAG      H32    C3     .      .
+ FAG      H31    C3     .      END
+ FAG      C3A    C3     .    ADD
+ FAG      C3A    C4A    .    ADD
+ FAG      "C4'"  "O4'"  .    ADD
+ FAG      C4     N3     .    ADD
+ FAG      C8A    C9     .    ADD
+ FAG      C9A    C9B    .    ADD
+ FAG      C9B    C5M    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FAG       C3A       C3        single    1.511     0.020     1.511     0.020     
+FAG       C3A       C4A       single    1.490     0.020     1.490     0.020     
+FAG       C3A       CBA       double    1.487     0.020     1.487     0.020     
+FAG       C3        C2A       single    1.524     0.020     1.524     0.020     
+FAG       H31       C3        single    1.089     0.010     0.989     0.005     
+FAG       H32       C3        single    1.089     0.010     0.989     0.005     
+FAG       C2A       C1        single    1.510     0.020     1.510     0.020     
+FAG       H2A1      C2A       single    1.089     0.010     0.989     0.005     
+FAG       H2A2      C2A       single    1.089     0.010     0.989     0.005     
+FAG       O1        C1        double    1.220     0.020     1.220     0.020     
+FAG       C1        CBA       single    1.500     0.020     1.500     0.020     
+FAG       O1P       P         deloc     1.510     0.020     1.510     0.020     
+FAG       O2P       P         deloc     1.510     0.020     1.510     0.020     
+FAG       "O5'"     P         single    1.610     0.020     1.610     0.020     
+FAG       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+FAG       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+FAG       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+FAG       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+FAG       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+FAG       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+FAG       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+FAG       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+FAG       N9        "C1'"     single    1.450     0.020     1.450     0.020     
+FAG       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+FAG       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+FAG       C4        N9        single    1.350     0.020     1.350     0.020     
+FAG       HN9       N9        single    1.016     0.010     0.899     0.007     
+FAG       C4        N3        single    1.350     0.020     1.350     0.020     
+FAG       C5        C4        double    1.487     0.020     1.487     0.020     
+FAG       N3        C2        double    1.350     0.020     1.350     0.020     
+FAG       N2        C2        single    1.355     0.020     1.355     0.020     
+FAG       C2        N1        single    1.337     0.020     1.337     0.020     
+FAG       HN21      N2        single    1.016     0.010     0.899     0.007     
+FAG       HN22      N2        single    1.016     0.010     0.899     0.007     
+FAG       N1        C6        single    1.337     0.020     1.337     0.020     
+FAG       H1        N1        single    1.016     0.010     0.899     0.007     
+FAG       O6        C6        double    1.250     0.020     1.250     0.020     
+FAG       C6        C5        single    1.487     0.020     1.487     0.020     
+FAG       N7        C5        single    1.400     0.020     1.400     0.020     
+FAG       C8        N7        single    1.260     0.020     1.260     0.020     
+FAG       C8A       N7        single    1.455     0.020     1.455     0.020     
+FAG       O8        C8        double    1.220     0.020     1.220     0.020     
+FAG       H8        C8        single    1.082     0.013     0.975     0.010     
+FAG       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+FAG       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+FAG       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+FAG       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+FAG       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+FAG       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+FAG       C8A       C9        single    1.524     0.020     1.524     0.020     
+FAG       O7        C8A       single    1.426     0.020     1.426     0.020     
+FAG       H8A       C8A       single    1.089     0.010     0.989     0.005     
+FAG       O9        C9        single    1.432     0.020     1.432     0.020     
+FAG       C9        C9A       single    1.524     0.020     1.524     0.020     
+FAG       H9        C9        single    1.089     0.010     0.989     0.005     
+FAG       HO9       O9        single    0.970     0.012     0.839     0.014     
+FAG       C9A       C9B       single    1.480     0.020     1.480     0.020     
+FAG       C9A       C6A       single    1.524     0.020     1.524     0.020     
+FAG       H9A       C9A       single    1.089     0.010     0.989     0.005     
+FAG       C9B       C5M       double    1.487     0.020     1.487     0.020     
+FAG       C9B       CAA       single    1.490     0.020     1.490     0.020     
+FAG       C6A       O7        single    1.426     0.020     1.426     0.020     
+FAG       O6A       C6A       single    1.426     0.020     1.426     0.020     
+FAG       H6A       C6A       single    1.089     0.010     0.989     0.005     
+FAG       C5M       O6A       single    1.370     0.020     1.370     0.020     
+FAG       C5B       C5M       single    1.390     0.020     1.390     0.020     
+FAG       C4B       C5B       double    1.390     0.020     1.390     0.020     
+FAG       H5B       C5B       single    1.082     0.013     0.975     0.010     
+FAG       O4        C4B       single    1.370     0.020     1.370     0.020     
+FAG       C4A       C4B       single    1.490     0.020     1.490     0.020     
+FAG       CM        O4        single    1.426     0.020     1.426     0.020     
+FAG       HM1       CM        single    1.089     0.010     0.989     0.005     
+FAG       HM2       CM        single    1.089     0.010     0.989     0.005     
+FAG       HM3       CM        single    1.089     0.010     0.989     0.005     
+FAG       CAA       C4A       double    1.490     0.020     1.490     0.020     
+FAG       O10       CAA       single    1.370     0.020     1.370     0.020     
+FAG       C11       O10       deloc     1.370     0.020     1.370     0.020     
+FAG       O11       C11       deloc     1.250     0.020     1.250     0.020     
+FAG       CBA       C11       single    1.487     0.020     1.487     0.020     
+FAG       P         O3P       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FAG      O3P    P      O1P     119.900    3.000
+ FAG      O3P    P      O2P     119.900    3.000
+ FAG      O3P    P      "O5'"   108.200    3.000
+ FAG      O1P    P      O2P     119.900    3.000
+ FAG      O1P    P      "O5'"   108.200    3.000
+ FAG      O2P    P      "O5'"   108.200    3.000
+ FAG      P      "O5'"  "C5'"   120.500    3.000
+ FAG      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ FAG      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ FAG      "O5'"  "C5'"  "C4'"   109.470    3.000
+ FAG      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ FAG      "H5'1" "C5'"  "C4'"   109.470    3.000
+ FAG      "H5'2" "C5'"  "C4'"   109.470    3.000
+ FAG      "C5'"  "C4'"  "H4'"   108.340    3.000
+ FAG      "C5'"  "C4'"  "C3'"   111.000    3.000
+ FAG      "C5'"  "C4'"  "O4'"   109.470    3.000
+ FAG      "H4'"  "C4'"  "C3'"   108.340    3.000
+ FAG      "H4'"  "C4'"  "O4'"   109.470    3.000
+ FAG      "C3'"  "C4'"  "O4'"   109.470    3.000
+ FAG      "C4'"  "C3'"  "H3'"   108.340    3.000
+ FAG      "C4'"  "C3'"  "O3'"   109.470    3.000
+ FAG      "C4'"  "C3'"  "C2'"   111.000    3.000
+ FAG      "H3'"  "C3'"  "O3'"   109.470    3.000
+ FAG      "H3'"  "C3'"  "C2'"   108.340    3.000
+ FAG      "O3'"  "C3'"  "C2'"   109.470    3.000
+ FAG      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ FAG      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ FAG      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ FAG      "C3'"  "C2'"  "C1'"   111.000    3.000
+ FAG      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ FAG      "H2'1" "C2'"  "C1'"   109.470    3.000
+ FAG      "H2'2" "C2'"  "C1'"   109.470    3.000
+ FAG      "C2'"  "C1'"  "H1'"   108.340    3.000
+ FAG      "C2'"  "C1'"  "O4'"   109.470    3.000
+ FAG      "C2'"  "C1'"  N9      110.000    3.000
+ FAG      "H1'"  "C1'"  "O4'"   109.470    3.000
+ FAG      "H1'"  "C1'"  N9      108.550    3.000
+ FAG      "O4'"  "C1'"  N9      109.500    3.000
+ FAG      "C1'"  "O4'"  "C4'"   111.800    3.000
+ FAG      "C1'"  N9     HN9     118.500    3.000
+ FAG      "C1'"  N9     C4      120.000    3.000
+ FAG      HN9    N9     C4      120.000    3.000
+ FAG      N9     C4     C5      120.000    3.000
+ FAG      N9     C4     N3      120.000    3.000
+ FAG      C5     C4     N3      120.000    3.000
+ FAG      C4     C5     C6      120.000    3.000
+ FAG      C4     C5     N7      120.000    3.000
+ FAG      C6     C5     N7      120.000    3.000
+ FAG      C5     C6     O6      120.000    3.000
+ FAG      C5     C6     N1      120.000    3.000
+ FAG      O6     C6     N1      120.000    3.000
+ FAG      C6     N1     H1      120.000    3.000
+ FAG      C6     N1     C2      120.000    3.000
+ FAG      H1     N1     C2      120.000    3.000
+ FAG      N1     C2     N2      120.000    3.000
+ FAG      N1     C2     N3      120.000    3.000
+ FAG      N2     C2     N3      120.000    3.000
+ FAG      C2     N2     HN22    120.000    3.000
+ FAG      C2     N2     HN21    120.000    3.000
+ FAG      HN22   N2     HN21    120.000    3.000
+ FAG      C2     N3     C4      120.000    3.000
+ FAG      C5     N7     C8      120.000    3.000
+ FAG      C5     N7     C8A     120.000    3.000
+ FAG      C8     N7     C8A     120.000    3.000
+ FAG      N7     C8     H8      120.000    3.000
+ FAG      N7     C8     O8      120.000    3.000
+ FAG      H8     C8     O8      123.000    3.000
+ FAG      N7     C8A    H8A     109.470    3.000
+ FAG      N7     C8A    O7      109.500    3.000
+ FAG      N7     C8A    C9      105.000    3.000
+ FAG      H8A    C8A    O7      109.470    3.000
+ FAG      H8A    C8A    C9      108.340    3.000
+ FAG      O7     C8A    C9      109.470    3.000
+ FAG      C8A    O7     C6A     111.800    3.000
+ FAG      O7     C6A    H6A     109.470    3.000
+ FAG      O7     C6A    C9A     109.470    3.000
+ FAG      O7     C6A    O6A     109.470    3.000
+ FAG      H6A    C6A    C9A     108.340    3.000
+ FAG      H6A    C6A    O6A     109.470    3.000
+ FAG      C9A    C6A    O6A     109.470    3.000
+ FAG      C6A    C9A    H9A     108.340    3.000
+ FAG      C6A    C9A    C9      111.000    3.000
+ FAG      C6A    C9A    C9B     109.470    3.000
+ FAG      H9A    C9A    C9      108.340    3.000
+ FAG      H9A    C9A    C9B     109.470    3.000
+ FAG      C9     C9A    C9B     109.470    3.000
+ FAG      C9A    C9     H9      108.340    3.000
+ FAG      C9A    C9     O9      109.470    3.000
+ FAG      C9A    C9     C8A     111.000    3.000
+ FAG      H9     C9     O9      109.470    3.000
+ FAG      H9     C9     C8A     108.340    3.000
+ FAG      O9     C9     C8A     109.470    3.000
+ FAG      C9     O9     HO9     109.470    3.000
+ FAG      C6A    O6A    C5M     120.000    3.000
+ FAG      O6A    C5M    C5B     120.000    3.000
+ FAG      O6A    C5M    C9B     120.000    3.000
+ FAG      C5B    C5M    C9B     120.000    3.000
+ FAG      C5M    C5B    H5B     120.000    3.000
+ FAG      C5M    C5B    C4B     120.000    3.000
+ FAG      H5B    C5B    C4B     120.000    3.000
+ FAG      C5B    C4B    O4      120.000    3.000
+ FAG      C5B    C4B    C4A     120.000    3.000
+ FAG      O4     C4B    C4A     120.000    3.000
+ FAG      C4B    O4     CM      120.000    3.000
+ FAG      O4     CM     HM3     109.470    3.000
+ FAG      O4     CM     HM2     109.470    3.000
+ FAG      O4     CM     HM1     109.470    3.000
+ FAG      HM3    CM     HM2     109.470    3.000
+ FAG      HM3    CM     HM1     109.470    3.000
+ FAG      HM2    CM     HM1     109.470    3.000
+ FAG      C4B    C4A    CAA     120.000    3.000
+ FAG      C4B    C4A    C3A     120.000    3.000
+ FAG      CAA    C4A    C3A     120.000    3.000
+ FAG      C4A    CAA    C9B     120.000    3.000
+ FAG      C4A    CAA    O10     120.000    3.000
+ FAG      C9B    CAA    O10     120.000    3.000
+ FAG      CAA    C9B    C9A     120.000    3.000
+ FAG      CAA    C9B    C5M     120.000    3.000
+ FAG      C9A    C9B    C5M     120.000    3.000
+ FAG      CAA    O10    C11     120.000    3.000
+ FAG      O10    C11    O11     120.000    3.000
+ FAG      O10    C11    CBA     120.000    3.000
+ FAG      O11    C11    CBA     120.000    3.000
+ FAG      C11    CBA    C3A     120.000    3.000
+ FAG      C11    CBA    C1      120.000    3.000
+ FAG      C3A    CBA    C1      120.000    3.000
+ FAG      CBA    C3A    C3      120.000    3.000
+ FAG      CBA    C3A    C4A     120.000    3.000
+ FAG      C3     C3A    C4A     120.000    3.000
+ FAG      CBA    C1     O1      120.500    3.000
+ FAG      CBA    C1     C2A     120.000    3.000
+ FAG      O1     C1     C2A     120.500    3.000
+ FAG      C1     C2A    H2A1    109.470    3.000
+ FAG      C1     C2A    H2A2    109.470    3.000
+ FAG      C1     C2A    C3      109.470    3.000
+ FAG      H2A1   C2A    H2A2    107.900    3.000
+ FAG      H2A1   C2A    C3      109.470    3.000
+ FAG      H2A2   C2A    C3      109.470    3.000
+ FAG      C2A    C3     H32     109.470    3.000
+ FAG      C2A    C3     H31     109.470    3.000
+ FAG      C2A    C3     C3A     109.470    3.000
+ FAG      H32    C3     H31     107.900    3.000
+ FAG      H32    C3     C3A     109.470    3.000
+ FAG      H31    C3     C3A     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FAG      var_1    O3P    P      "O5'"  "C5'"    -54.228   20.000   1
+ FAG      var_2    P      "O5'"  "C5'"  "C4'"   -150.030   20.000   1
+ FAG      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.541   20.000   3
+ FAG      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ FAG      var_5    "C5'"  "C4'"  "C3'"  "C2'"    -90.000   20.000   3
+ FAG      var_6    "C4'"  "C3'"  "O3'"  "HO3'"    73.455   20.000   1
+ FAG      var_7    "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ FAG      var_8    "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ FAG      var_9    "C2'"  "C1'"  "O4'"  "C4'"      0.000   20.000   1
+ FAG      var_10   "C2'"  "C1'"  N9     C4        63.475   20.000   3
+ FAG      var_11   "C1'"  N9     C4     C5       179.994   20.000   1
+ FAG      CONST_1  N9     C4     N3     C2       180.000    0.000   0
+ FAG      CONST_2  N9     C4     C5     N7         0.000    0.000   0
+ FAG      CONST_3  C4     C5     C6     N1         0.000    0.000   0
+ FAG      CONST_4  C5     C6     N1     C2         0.000    0.000   0
+ FAG      CONST_5  C6     N1     C2     N3         0.000    0.000   0
+ FAG      CONST_6  N1     C2     N2     HN21    -160.544    0.000   0
+ FAG      CONST_7  N1     C2     N3     C4         0.000    0.000   0
+ FAG      var_12   C4     C5     N7     C8A      119.988   20.000   1
+ FAG      var_13   C5     N7     C8     O8      -179.970   20.000   1
+ FAG      var_14   C5     N7     C8A    O7         1.968   20.000   3
+ FAG      var_15   N7     C8A    C9     C9A      150.000   20.000   3
+ FAG      var_16   N7     C8A    O7     C6A     -150.000   20.000   1
+ FAG      var_17   C8A    O7     C6A    O6A      120.000   20.000   1
+ FAG      var_18   O7     C6A    C9A    C9        30.000   20.000   3
+ FAG      var_19   C6A    C9A    C9B    CAA      180.000   20.000   1
+ FAG      var_20   C6A    C9A    C9     O9      -150.000   20.000   3
+ FAG      var_21   C9A    C9     O9     HO9      161.033   20.000   1
+ FAG      var_22   O7     C6A    O6A    C5M     -120.000   20.000   1
+ FAG      var_23   C6A    O6A    C5M    C5B      180.000   20.000   1
+ FAG      CONST_8  O6A    C5M    C5B    C4B      180.000    0.000   0
+ FAG      CONST_9  C5M    C5B    C4B    C4A        0.000    0.000   0
+ FAG      var_24   C5B    C4B    O4     CM       -90.235   20.000   1
+ FAG      var_25   C4B    O4     CM     HM1       98.607   20.000   1
+ FAG      CONST_10 C5B    C4B    C4A    CAA        0.000    0.000   0
+ FAG      CONST_11 C4B    C4A    CAA    O10      180.000    0.000   0
+ FAG      CONST_12 C4A    CAA    C9B    C9A      180.000    0.000   0
+ FAG      CONST_13 CAA    C9B    C5M    O6A      180.000    0.000   0
+ FAG      CONST_14 C4A    CAA    O10    C11        0.000    0.000   0
+ FAG      CONST_15 CAA    O10    C11    CBA        0.000    0.000   0
+ FAG      CONST_16 O10    C11    CBA    C1       180.000    0.000   0
+ FAG      CONST_17 C11    CBA    C3A    C3       180.000    0.000   0
+ FAG      var_26   CBA    C3A    C3     C2A        0.000   20.000   2
+ FAG      CONST_18 CBA    C3A    C4A    C4B      180.000    0.000   0
+ FAG      var_27   C11    CBA    C1     C2A      180.000   20.000   1
+ FAG      var_28   CBA    C1     C2A    C3         0.000   20.000   3
+ FAG      var_29   C1     C2A    C3     C3A        0.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FAG      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ FAG      chir_02  "C1'"  "O4'"  N9     "C2'"     negativ
+ FAG      chir_03  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+ FAG      chir_04  C8A    N7     C9     O7        negativ
+ FAG      chir_05  C9     C8A    O9     C9A       positiv
+ FAG      chir_06  C9A    C9     C9B    C6A       negativ
+ FAG      chir_07  C6A    C9A    O7     O6A       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FAG      plan-1    C3A       0.020
+ FAG      plan-1    C3        0.020
+ FAG      plan-1    C4A       0.020
+ FAG      plan-1    CBA       0.020
+ FAG      plan-1    O10       0.020
+ FAG      plan-1    C11       0.020
+ FAG      plan-1    C4B       0.020
+ FAG      plan-1    CAA       0.020
+ FAG      plan-1    C9B       0.020
+ FAG      plan-1    O11       0.020
+ FAG      plan-1    C1        0.020
+ FAG      plan-1    C5M       0.020
+ FAG      plan-1    C5B       0.020
+ FAG      plan-1    C9A       0.020
+ FAG      plan-1    O6A       0.020
+ FAG      plan-1    H5B       0.020
+ FAG      plan-1    O4        0.020
+ FAG      plan-2    C1        0.020
+ FAG      plan-2    C2A       0.020
+ FAG      plan-2    O1        0.020
+ FAG      plan-2    CBA       0.020
+ FAG      plan-3    N9        0.020
+ FAG      plan-3    "C1'"     0.020
+ FAG      plan-3    C4        0.020
+ FAG      plan-3    HN9       0.020
+ FAG      plan-4    C4        0.020
+ FAG      plan-4    N9        0.020
+ FAG      plan-4    N3        0.020
+ FAG      plan-4    C5        0.020
+ FAG      plan-4    C2        0.020
+ FAG      plan-4    N1        0.020
+ FAG      plan-4    C6        0.020
+ FAG      plan-4    N2        0.020
+ FAG      plan-4    H1        0.020
+ FAG      plan-4    O6        0.020
+ FAG      plan-4    N7        0.020
+ FAG      plan-4    HN9       0.020
+ FAG      plan-4    HN22      0.020
+ FAG      plan-4    HN21      0.020
+ FAG      plan-5    N2        0.020
+ FAG      plan-5    C2        0.020
+ FAG      plan-5    HN21      0.020
+ FAG      plan-5    HN22      0.020
+ FAG      plan-6    N7        0.020
+ FAG      plan-6    C5        0.020
+ FAG      plan-6    C8        0.020
+ FAG      plan-6    C8A       0.020
+ FAG      plan-6    H8        0.020
+ FAG      plan-7    C8        0.020
+ FAG      plan-7    N7        0.020
+ FAG      plan-7    O8        0.020
+ FAG      plan-7    H8        0.020
+# ------------------------------------------------------

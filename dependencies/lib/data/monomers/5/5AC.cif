@@ -1,0 +1,153 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5AC     5AC      5-amino-1H-imidazole-4-carboxamide     NON-POLYMER     15     9     .     
+#
+data_comp_5AC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+5AC     NAA     N       NH2     0       17.910      10.300      -23.957     
+5AC     CAG     C       C       0       16.807      10.218      -24.702     
+5AC     OAC     O       O       0       15.688      10.508      -24.262     
+5AC     CAI     C       CR5     0       16.958      9.763       -26.095     
+5AC     CAH     C       CR5     0       16.025      9.171       -26.924     
+5AC     NAB     N       NH2     0       14.729      8.846       -26.691     
+5AC     NAF     N       NR5     0       16.665      8.946       -28.111     
+5AC     CAD     C       CR15    0       17.929      9.388       -27.992     
+5AC     NAE     N       NRD5    0       18.153      9.890       -26.795     
+5AC     HNAA    H       H       0       17.842      10.565      -23.116     
+5AC     HNAB    H       H       0       18.702      10.093      -24.298     
+5AC     HNAC    H       H       0       14.247      8.494       -27.329     
+5AC     HNAD    H       H       0       14.380      8.991       -25.903     
+5AC     HNAF    H       H       0       16.307      8.569       -28.845     
+5AC     HAD     H       H       0       18.573      9.343       -28.682     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5AC       NAA       CAG       SINGLE    n         1.329     0.011     1.329     0.011     
+5AC       CAG       OAC       DOUBLE    n         1.235     0.016     1.235     0.016     
+5AC       CAG       CAI       SINGLE    n         1.471     0.010     1.471     0.010     
+5AC       CAI       CAH       DOUBLE    y         1.389     0.020     1.389     0.020     
+5AC       CAI       NAE       SINGLE    y         1.391     0.011     1.391     0.011     
+5AC       CAH       NAB       SINGLE    n         1.356     0.010     1.356     0.010     
+5AC       CAH       NAF       SINGLE    y         1.367     0.011     1.367     0.011     
+5AC       NAF       CAD       SINGLE    y         1.337     0.020     1.337     0.020     
+5AC       CAD       NAE       DOUBLE    y         1.315     0.010     1.315     0.010     
+5AC       NAA       HNAA      SINGLE    n         1.016     0.010     0.884     0.020     
+5AC       NAA       HNAB      SINGLE    n         1.016     0.010     0.884     0.020     
+5AC       NAB       HNAC      SINGLE    n         1.016     0.010     0.874     0.020     
+5AC       NAB       HNAD      SINGLE    n         1.016     0.010     0.874     0.020     
+5AC       NAF       HNAF      SINGLE    n         1.016     0.010     0.899     0.015     
+5AC       CAD       HAD       SINGLE    n         1.082     0.013     0.945     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+5AC         CAG         NAA        HNAA     119.305    2.54
+5AC         CAG         NAA        HNAB     119.305    2.54
+5AC        HNAA         NAA        HNAB     121.391    3.00
+5AC         NAA         CAG         OAC     122.869    1.50
+5AC         NAA         CAG         CAI     116.435    1.62
+5AC         OAC         CAG         CAI     120.695    1.50
+5AC         CAG         CAI         CAH     129.263    3.00
+5AC         CAG         CAI         NAE     121.255    2.60
+5AC         CAH         CAI         NAE     109.483    1.50
+5AC         CAI         CAH         NAB     129.785    2.46
+5AC         CAI         CAH         NAF     106.441    1.50
+5AC         NAB         CAH         NAF     123.774    1.89
+5AC         CAH         NAB        HNAC     119.832    1.50
+5AC         CAH         NAB        HNAD     119.832    1.50
+5AC        HNAC         NAB        HNAD     120.336    1.50
+5AC         CAH         NAF         CAD     107.567    1.50
+5AC         CAH         NAF        HNAF     126.343    1.50
+5AC         CAD         NAF        HNAF     126.091    2.70
+5AC         NAF         CAD         NAE     110.762    1.50
+5AC         NAF         CAD         HAD     124.423    1.50
+5AC         NAE         CAD         HAD     124.815    1.50
+5AC         CAI         NAE         CAD     105.747    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+5AC             sp2_sp2_3         OAC         CAG         NAA        HNAA       0.000   10.00     2
+5AC             sp2_sp2_5         NAA         CAG         CAI         CAH     180.000   10.00     2
+5AC       const_sp2_sp2_4         NAB         CAH         CAI         CAG       0.000   10.00     2
+5AC              const_16         CAG         CAI         NAE         CAD     180.000   10.00     2
+5AC             sp2_sp2_9         CAI         CAH         NAB        HNAC     180.000   10.00     2
+5AC       const_sp2_sp2_7         NAB         CAH         NAF         CAD     180.000   10.00     2
+5AC       const_sp2_sp2_9         NAE         CAD         NAF         CAH       0.000   10.00     2
+5AC              const_13         NAF         CAD         NAE         CAI       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+5AC    plan-1         CAD   0.020
+5AC    plan-1         CAG   0.020
+5AC    plan-1         CAH   0.020
+5AC    plan-1         CAI   0.020
+5AC    plan-1         HAD   0.020
+5AC    plan-1        HNAF   0.020
+5AC    plan-1         NAB   0.020
+5AC    plan-1         NAE   0.020
+5AC    plan-1         NAF   0.020
+5AC    plan-2         CAG   0.020
+5AC    plan-2        HNAA   0.020
+5AC    plan-2        HNAB   0.020
+5AC    plan-2         NAA   0.020
+5AC    plan-3         CAG   0.020
+5AC    plan-3         CAI   0.020
+5AC    plan-3         NAA   0.020
+5AC    plan-3         OAC   0.020
+5AC    plan-4         CAH   0.020
+5AC    plan-4        HNAC   0.020
+5AC    plan-4        HNAD   0.020
+5AC    plan-4         NAB   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+5AC SMILES           ACDLabs              10.04 "O=C(N)c1ncnc1N"
+5AC SMILES_CANONICAL CACTVS               3.341 "NC(=O)c1nc[nH]c1N"
+5AC SMILES           CACTVS               3.341 "NC(=O)c1nc[nH]c1N"
+5AC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1[nH]c(c(n1)C(=O)N)N"
+5AC SMILES           "OpenEye OEToolkits" 1.5.0 "c1[nH]c(c(n1)C(=O)N)N"
+5AC InChI            InChI                1.03  "InChI=1S/C4H6N4O/c5-3-2(4(6)9)7-1-8-3/h1H,5H2,(H2,6,9)(H,7,8)"
+5AC InChIKey         InChI                1.03  DVNYTAVYBRSTGK-UHFFFAOYSA-N
+5AC ?                acedrg               202         "dictionary generator"                  
+5AC ?                acedrg_database      11          "data source"                           
+5AC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+5AC ?                refmac5              5.8.0189    "optimization tool"                     

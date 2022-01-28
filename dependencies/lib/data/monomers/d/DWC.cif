@@ -1,0 +1,406 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DWC      DWC 'PYRIDOCARBAZOLE CYCLOPENTADIENYL OS(' non-polymer        40  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DWC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DWC           O8     O    O         0.000     18.639  -37.550    2.679
+ DWC           C31    C    CR5       0.000     19.232  -38.135    1.781
+ DWC           N20    N    NR15      0.000     20.115  -39.153    2.031
+ DWC           HN20   H    H         0.000     20.367  -39.529    2.967
+ DWC           C1     C    CR5       0.000     20.612  -39.592    0.816
+ DWC           O9     O    O         0.000     21.431  -40.526    0.720
+ DWC           C30    C    CR56      0.000     19.172  -37.914    0.402
+ DWC           C2     C    CR56      0.000     20.061  -38.848   -0.214
+ DWC           C29    C    CR56      0.000     18.446  -37.006   -0.417
+ DWC           C22    C    CR56      0.000     18.649  -37.145   -1.784
+ DWC           C7     C    CR66      0.000     19.504  -38.047   -2.409
+ DWC           C3     C    CR66      0.000     20.231  -38.935   -1.628
+ DWC           C28    C    CR56      0.000     17.527  -35.968   -0.291
+ DWC           C27    C    CR16      0.000     16.897  -35.365    0.812
+ DWC           H27    H    H         0.000     17.103  -35.710    1.818
+ DWC           C26    C    CR6       0.000     15.988  -34.299    0.589
+ DWC           O15    O    OH1       0.000     15.362  -33.685    1.644
+ DWC           HO15   H    H         0.000     15.998  -33.540    2.359
+ DWC           C25    C    CR16      0.000     15.704  -33.894   -0.738
+ DWC           H25    H    H         0.000     15.022  -33.070   -0.905
+ DWC           C24    C    CR16      0.000     16.282  -34.531   -1.835
+ DWC           H24    H    H         0.000     16.013  -34.244   -2.844
+ DWC           C23    C    CR56      0.000     17.214  -35.545   -1.610
+ DWC           N19    N    NR5       0.000     17.939  -36.271   -2.545
+ DWC           OS     OS   OS        0.000     18.233  -36.554   -4.619
+ DWC           C10    C    CSP       0.000     19.500  -35.179   -4.711
+ DWC           O11    O    O         1.000     20.260  -34.371   -4.788
+ DWC           C12    C    CH1       0.000     16.641  -35.570   -5.768
+ DWC           H12    H    H         0.000     16.378  -34.504   -5.726
+ DWC           C13    C    C         0.000     17.573  -36.175   -6.677
+ DWC           C14    C    C         0.000     17.577  -37.591   -6.456
+ DWC           C16    C    C         0.000     16.639  -37.866   -5.401
+ DWC           C17    C    C         0.000     16.057  -36.612   -4.980
+ DWC           N21    N    NR6       1.000     19.551  -37.958   -3.803
+ DWC           C6     C    CR16      0.000     20.335  -38.834   -4.470
+ DWC           H6     H    H         0.000     20.360  -38.823   -5.553
+ DWC           C5     C    CR16      0.000     21.120  -39.762   -3.756
+ DWC           H5     H    H         0.000     21.773  -40.438   -4.294
+ DWC           C4     C    CR16      0.000     21.064  -39.820   -2.345
+ DWC           H4     H    H         0.000     21.663  -40.547   -1.811
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DWC      O8     n/a    C31    START
+ DWC      C31    O8     C30    .
+ DWC      N20    C31    C1     .
+ DWC      HN20   N20    .      .
+ DWC      C1     N20    O9     .
+ DWC      O9     C1     .      .
+ DWC      C30    C31    C29    .
+ DWC      C2     C30    .      .
+ DWC      C29    C30    C28    .
+ DWC      C22    C29    C7     .
+ DWC      C7     C22    C3     .
+ DWC      C3     C7     .      .
+ DWC      C28    C29    C27    .
+ DWC      C27    C28    C26    .
+ DWC      H27    C27    .      .
+ DWC      C26    C27    C25    .
+ DWC      O15    C26    HO15   .
+ DWC      HO15   O15    .      .
+ DWC      C25    C26    C24    .
+ DWC      H25    C25    .      .
+ DWC      C24    C25    C23    .
+ DWC      H24    C24    .      .
+ DWC      C23    C24    N19    .
+ DWC      N19    C23    OS     .
+ DWC      OS     N19    N21    .
+ DWC      C10    OS     O11    .
+ DWC      O11    C10    .      .
+ DWC      C12    OS     C17    .
+ DWC      H12    C12    .      .
+ DWC      C13    C12    C14    .
+ DWC      C14    C13    C16    .
+ DWC      C16    C14    .      .
+ DWC      C17    C12    .      .
+ DWC      N21    OS     C6     .
+ DWC      C6     N21    C5     .
+ DWC      H6     C6     .      .
+ DWC      C5     C6     C4     .
+ DWC      H5     C5     .      .
+ DWC      C4     C5     H4     .
+ DWC      H4     C4     .      END
+ DWC      C1     C2     .    ADD
+ DWC      C2     C3     .    ADD
+ DWC      C3     C4     .    ADD
+ DWC      C7     N21    .    ADD
+ DWC      C22    N19    .    ADD
+ DWC      OS     C17    .    ADD
+ DWC      OS     C16    .    ADD
+ DWC      OS     C14    .    ADD
+ DWC      OS     C13    .    ADD
+ DWC      C17    C16    .    ADD
+ DWC      C28    C23    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DWC       C14       C13       double    1.330     0.020     1.330     0.020     
+DWC       C13       C12       single    1.500     0.020     1.500     0.020     
+DWC       OS        C13       single    2.194     0.020     2.194     0.020     
+DWC       C16       C14       single    1.460     0.020     1.460     0.020     
+DWC       OS        C14       single    2.209     0.020     2.209     0.020     
+DWC       C17       C12       single    1.500     0.020     1.500     0.020     
+DWC       C12       OS        single    2.196     0.020     2.196     0.020     
+DWC       C17       C16       double    1.330     0.020     1.330     0.020     
+DWC       OS        C16       single    2.208     0.020     2.208     0.020     
+DWC       OS        C17       single    2.207     0.020     2.207     0.020     
+DWC       O11       C10       triple    1.130     0.020     1.130     0.020     
+DWC       C10       OS        single    1.872     0.020     1.872     0.020     
+DWC       N21       OS        single    2.091     0.020     2.091     0.020     
+DWC       OS        N19       single    2.114     0.020     2.114     0.020     
+DWC       C6        N21       double    1.337     0.020     1.337     0.020     
+DWC       C5        C6        single    1.390     0.020     1.390     0.020     
+DWC       C7        N21       single    1.410     0.020     1.410     0.020     
+DWC       C4        C5        double    1.390     0.020     1.390     0.020     
+DWC       C22       N19       single    1.337     0.020     1.337     0.020     
+DWC       N19       C23       single    1.337     0.020     1.337     0.020     
+DWC       C7        C22       double    1.390     0.020     1.390     0.020     
+DWC       C3        C7        single    1.490     0.020     1.490     0.020     
+DWC       C3        C4        single    1.390     0.020     1.390     0.020     
+DWC       C23       C24       double    1.390     0.020     1.390     0.020     
+DWC       C24       C25       single    1.390     0.020     1.390     0.020     
+DWC       C22       C29       single    1.490     0.020     1.490     0.020     
+DWC       C2        C3        double    1.390     0.020     1.390     0.020     
+DWC       C28       C23       single    1.490     0.020     1.490     0.020     
+DWC       C25       C26       double    1.390     0.020     1.390     0.020     
+DWC       C28       C29       single    1.490     0.020     1.490     0.020     
+DWC       C29       C30       double    1.490     0.020     1.490     0.020     
+DWC       C27       C28       double    1.390     0.020     1.390     0.020     
+DWC       C2        C30       single    1.490     0.020     1.490     0.020     
+DWC       C1        C2        single    1.490     0.020     1.490     0.020     
+DWC       C30       C31       single    1.490     0.020     1.490     0.020     
+DWC       C26       C27       single    1.390     0.020     1.390     0.020     
+DWC       O15       C26       single    1.362     0.020     1.362     0.020     
+DWC       O9        C1        double    1.285     0.020     1.285     0.020     
+DWC       C1        N20       single    1.340     0.020     1.340     0.020     
+DWC       N20       C31       single    1.340     0.020     1.340     0.020     
+DWC       C31       O8        double    1.285     0.020     1.285     0.020     
+DWC       H4        C4        single    1.082     0.013     0.975     0.010     
+DWC       H5        C5        single    1.082     0.013     0.975     0.010     
+DWC       H6        C6        single    1.082     0.013     0.975     0.010     
+DWC       H12       C12       single    1.089     0.010     0.989     0.005     
+DWC       HN20      N20       single    1.016     0.010     0.899     0.007     
+DWC       H24       C24       single    1.082     0.013     0.975     0.010     
+DWC       H25       C25       single    1.082     0.013     0.975     0.010     
+DWC       HO15      O15       single    0.970     0.012     0.839     0.014     
+DWC       H27       C27       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DWC      O8     C31    N20     108.000    3.000
+ DWC      O8     C31    C30     108.000    3.000
+ DWC      N20    C31    C30     108.000    3.000
+ DWC      C31    N20    HN20    126.000    3.000
+ DWC      C31    N20    C1      108.000    3.000
+ DWC      HN20   N20    C1      126.000    3.000
+ DWC      N20    C1     O9      108.000    3.000
+ DWC      N20    C1     C2      108.000    3.000
+ DWC      O9     C1     C2      108.000    3.000
+ DWC      C31    C30    C2      108.000    3.000
+ DWC      C31    C30    C29     108.000    3.000
+ DWC      C2     C30    C29     120.000    3.000
+ DWC      C30    C2     C1      108.000    3.000
+ DWC      C30    C2     C3      120.000    3.000
+ DWC      C1     C2     C3      120.000    3.000
+ DWC      C30    C29    C22     120.000    3.000
+ DWC      C30    C29    C28     120.000    3.000
+ DWC      C22    C29    C28     120.000    3.000
+ DWC      C29    C22    C7      120.000    3.000
+ DWC      C29    C22    N19     108.000    3.000
+ DWC      C7     C22    N19     120.000    3.000
+ DWC      C22    C7     C3      120.000    3.000
+ DWC      C22    C7     N21     120.000    3.000
+ DWC      C3     C7     N21     120.000    3.000
+ DWC      C7     C3     C2      120.000    3.000
+ DWC      C7     C3     C4      120.000    3.000
+ DWC      C2     C3     C4      120.000    3.000
+ DWC      C29    C28    C27     120.000    3.000
+ DWC      C29    C28    C23     120.000    3.000
+ DWC      C27    C28    C23     120.000    3.000
+ DWC      C28    C27    H27     120.000    3.000
+ DWC      C28    C27    C26     120.000    3.000
+ DWC      H27    C27    C26     120.000    3.000
+ DWC      C27    C26    O15     120.000    3.000
+ DWC      C27    C26    C25     120.000    3.000
+ DWC      O15    C26    C25     120.000    3.000
+ DWC      C26    O15    HO15    109.470    3.000
+ DWC      C26    C25    H25     120.000    3.000
+ DWC      C26    C25    C24     120.000    3.000
+ DWC      H25    C25    C24     120.000    3.000
+ DWC      C25    C24    H24     120.000    3.000
+ DWC      C25    C24    C23     120.000    3.000
+ DWC      H24    C24    C23     120.000    3.000
+ DWC      C24    C23    N19     132.000    3.000
+ DWC      C24    C23    C28     120.000    3.000
+ DWC      N19    C23    C28     108.000    3.000
+ DWC      C23    N19    OS      108.000    3.000
+ DWC      C23    N19    C22     108.000    3.000
+ DWC      OS     N19    C22     108.000    3.000
+ DWC      N19    OS     C10     120.000    3.000
+ DWC      N19    OS     C12     120.000    3.000
+ DWC      N19    OS     N21     120.000    3.000
+ DWC      N19    OS     C17     120.000    3.000
+ DWC      N19    OS     C16     120.000    3.000
+ DWC      N19    OS     C14     120.000    3.000
+ DWC      N19    OS     C13     120.000    3.000
+ DWC      C10    OS     C12     120.000    3.000
+ DWC      C10    OS     N21     120.000    3.000
+ DWC      C12    OS     N21     120.000    3.000
+ DWC      C17    OS     C16      35.072    3.000
+ DWC      C17    OS     C14     120.000    3.000
+ DWC      C16    OS     C14      38.605    3.000
+ DWC      C17    OS     C13     120.000    3.000
+ DWC      C16    OS     C13     120.000    3.000
+ DWC      C14    OS     C13      35.159    3.000
+ DWC      C10    OS     C17     120.000    3.000
+ DWC      C12    OS     C17      39.839    3.000
+ DWC      N21    OS     C17     120.000    3.000
+ DWC      C10    OS     C16     120.000    3.000
+ DWC      C12    OS     C16     120.000    3.000
+ DWC      N21    OS     C16     120.000    3.000
+ DWC      C10    OS     C14     120.000    3.000
+ DWC      C12    OS     C14     120.000    3.000
+ DWC      N21    OS     C14     120.000    3.000
+ DWC      C10    OS     C13     120.000    3.000
+ DWC      C12    OS     C13      39.956    3.000
+ DWC      N21    OS     C13     120.000    3.000
+ DWC      OS     C10    O11     180.000    3.000
+ DWC      OS     C12    H12     109.500    3.000
+ DWC      OS     C12    C13      69.954    3.000
+ DWC      OS     C12    C17      70.454    3.000
+ DWC      H12    C12    C13     108.810    3.000
+ DWC      H12    C12    C17     108.810    3.000
+ DWC      C13    C12    C17     111.000    3.000
+ DWC      C12    C13    C14     120.000    3.000
+ DWC      C12    C13    OS       70.090    3.000
+ DWC      C14    C13    OS       73.033    3.000
+ DWC      C13    C14    C16     120.000    3.000
+ DWC      C13    C14    OS       71.808    3.000
+ DWC      C16    C14    OS       70.642    3.000
+ DWC      C14    C16    OS       70.752    3.000
+ DWC      C14    C16    C17     120.000    3.000
+ DWC      OS     C16    C17      72.417    3.000
+ DWC      C12    C17    OS       69.707    3.000
+ DWC      C12    C17    C16     120.000    3.000
+ DWC      OS     C17    C16      72.511    3.000
+ DWC      OS     N21    C6      120.000    3.000
+ DWC      OS     N21    C7      120.000    3.000
+ DWC      C6     N21    C7      120.000    3.000
+ DWC      N21    C6     H6      120.000    3.000
+ DWC      N21    C6     C5      120.000    3.000
+ DWC      H6     C6     C5      120.000    3.000
+ DWC      C6     C5     H5      120.000    3.000
+ DWC      C6     C5     C4      120.000    3.000
+ DWC      H5     C5     C4      120.000    3.000
+ DWC      C5     C4     H4      120.000    3.000
+ DWC      C5     C4     C3      120.000    3.000
+ DWC      H4     C4     C3      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DWC      CONST_1  O8     C31    N20    C1       180.000    0.000   0
+ DWC      CONST_2  C31    N20    C1     O9       180.000    0.000   0
+ DWC      CONST_3  N20    C1     C2     C30        0.000    0.000   0
+ DWC      CONST_4  O8     C31    C30    C29        0.000    0.000   0
+ DWC      CONST_5  C31    C30    C2     C1         0.000    0.000   0
+ DWC      CONST_6  C30    C2     C3     C7         1.041    0.000   0
+ DWC      CONST_7  C31    C30    C29    C28        0.000    0.000   0
+ DWC      CONST_8  C30    C29    C22    C7         0.000    0.000   0
+ DWC      CONST_9  C29    C22    N19    C23        0.000    0.000   0
+ DWC      CONST_10 C29    C22    C7     C3         1.271    0.000   0
+ DWC      CONST_11 C22    C7     N21    OS         0.000    0.000   0
+ DWC      CONST_12 C22    C7     C3     C2        -0.797    0.000   0
+ DWC      CONST_13 C7     C3     C4     C5         0.000    0.000   0
+ DWC      CONST_14 C30    C29    C28    C27        0.000    0.000   0
+ DWC      CONST_15 C29    C28    C23    C24      180.000    0.000   0
+ DWC      CONST_16 C29    C28    C27    C26      180.000    0.000   0
+ DWC      CONST_17 C28    C27    C26    C25        0.000    0.000   0
+ DWC      var_1    C27    C26    O15    HO15      42.870   20.000   1
+ DWC      CONST_18 C27    C26    C25    C24        0.000    0.000   0
+ DWC      CONST_19 C26    C25    C24    C23        0.000    0.000   0
+ DWC      CONST_20 C25    C24    C23    N19      180.000    0.000   0
+ DWC      CONST_21 C24    C23    N19    OS         0.000    0.000   0
+ DWC      CONST_22 C23    N19    OS     N21     -178.676    0.000   0
+ DWC      var_2    N19    OS     C17    C12      122.627   20.000   1
+ DWC      var_3    N19    OS     C16    C14     -175.319   20.000   1
+ DWC      var_4    N19    OS     C14    C13      125.487   20.000   1
+ DWC      var_5    N19    OS     C13    C12       -2.631   20.000   1
+ DWC      var_6    N19    OS     C10    O11      164.220   20.000   1
+ DWC      var_7    N19    OS     C12    C17      -64.113   20.000   1
+ DWC      var_8    OS     C12    C13    C14       61.990   20.000   3
+ DWC      var_9    C12    C13    C14    C16        0.014   20.000   1
+ DWC      CONST_23 C13    C14    C16    OS       -61.313    0.000   0
+ DWC      var_10   C12    C17    C16    C14       -0.331   20.000   1
+ DWC      CONST_24 N19    OS     N21    C6       177.935    0.000   0
+ DWC      CONST_25 OS     N21    C6     C5       180.000    0.000   0
+ DWC      CONST_26 N21    C6     C5     C4         0.000    0.000   0
+ DWC      CONST_27 C6     C5     C4     C3         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DWC      chir_01  C12    OS     C17    C13       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DWC      plan-1    C1        0.020
+ DWC      plan-1    O9        0.020
+ DWC      plan-1    C2        0.020
+ DWC      plan-1    N20       0.020
+ DWC      plan-1    C31       0.020
+ DWC      plan-1    C3        0.020
+ DWC      plan-1    C30       0.020
+ DWC      plan-1    C4        0.020
+ DWC      plan-1    C7        0.020
+ DWC      plan-1    C5        0.020
+ DWC      plan-1    C6        0.020
+ DWC      plan-1    N21       0.020
+ DWC      plan-1    H4        0.020
+ DWC      plan-1    H5        0.020
+ DWC      plan-1    H6        0.020
+ DWC      plan-1    C22       0.020
+ DWC      plan-1    OS        0.020
+ DWC      plan-1    N19       0.020
+ DWC      plan-1    C29       0.020
+ DWC      plan-1    C23       0.020
+ DWC      plan-1    HN20      0.020
+ DWC      plan-1    O8        0.020
+ DWC      plan-1    C28       0.020
+ DWC      plan-1    C27       0.020
+ DWC      plan-1    C24       0.020
+ DWC      plan-1    C25       0.020
+ DWC      plan-1    C26       0.020
+ DWC      plan-1    H24       0.020
+ DWC      plan-1    H25       0.020
+ DWC      plan-1    O15       0.020
+ DWC      plan-1    H27       0.020
+ DWC      plan-2    C17       0.020
+ DWC      plan-2    OS        0.020
+ DWC      plan-2    C16       0.020
+ DWC      plan-2    C12       0.020
+ DWC      plan-3    C14       0.020
+ DWC      plan-3    OS        0.020
+ DWC      plan-3    C16       0.020
+ DWC      plan-3    C13       0.020
+# ------------------------------------------------------

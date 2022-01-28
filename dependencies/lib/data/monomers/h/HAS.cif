@@ -1,0 +1,897 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HAS      HAS 'HEME-AS                             ' non-polymer       127  65 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HAS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HAS           O2D    O    OC       -0.500      0.000    0.000    0.000
+ HAS           CGD    C    C         0.000      0.349   -0.104   -1.197
+ HAS           O1D    O    OC       -0.500      0.055    0.752   -2.060
+ HAS           CBD    C    CH2       0.000      1.153   -1.316   -1.619
+ HAS           HBD1   H    H         0.000      1.342   -1.238   -2.691
+ HAS           HBD2   H    H         0.000      0.551   -2.205   -1.420
+ HAS           CAD    C    CH2       0.000      2.479   -1.421   -0.874
+ HAS           HAD1   H    H         0.000      2.264   -1.424    0.197
+ HAS           HAD2   H    H         0.000      3.074   -0.539   -1.121
+ HAS           C3D    C    CR5       0.000      3.255   -2.677   -1.240
+ HAS           C2D    C    CR5       0.000      4.287   -2.766   -2.099
+ HAS           CMD    C    C1        0.000      4.871   -1.660   -2.854
+ HAS           HMD    H    H         0.000      4.222   -0.841   -3.114
+ HAS           OMD    O    O         0.000      6.026   -1.590   -3.213
+ HAS           C1D    C    CR5       0.000      4.693   -4.153   -2.109
+ HAS           CHB    C    C1        0.000      5.705   -4.664   -2.892
+ HAS           HHB    H    H         0.000      6.222   -3.979   -3.542
+ HAS           C4D    C    CR5       0.000      3.034   -4.000   -0.721
+ HAS           CHA    C    C1        0.000      2.094   -4.296    0.237
+ HAS           HHA    H    H         0.000      1.440   -3.500    0.552
+ HAS           ND     N    NR5       0.000      3.923   -4.906   -1.250
+ HAS           FE     FE   FE        0.000      4.083   -6.820   -0.832
+ HAS           NC     N    NR5       0.000      4.413   -8.666   -0.247
+ HAS           C4C    C    CR5       0.000      3.753   -9.377    0.732
+ HAS           CHD    C    C1        0.000      2.730   -8.867    1.509
+ HAS           HHD    H    H         0.000      2.293   -9.522    2.244
+ HAS           C3C    C    CR5       0.000      4.270  -10.723    0.846
+ HAS           CAC    C    C1        0.000      3.810  -11.707    1.707
+ HAS           HAC    H    H         0.000      2.816  -11.609    2.109
+ HAS           CBC    C    C2        0.000      4.570  -12.823    2.083
+ HAS           HBC2   H    H         0.000      4.174  -13.580    2.767
+ HAS           HBC1   H    H         0.000      5.585  -12.976    1.706
+ HAS           C2C    C    CR5       0.000      5.260  -10.828   -0.068
+ HAS           CMC    C    CH3       0.000      6.172  -12.022   -0.301
+ HAS           HMC3   H    H         0.000      6.094  -12.338   -1.310
+ HAS           HMC2   H    H         0.000      7.175  -11.749   -0.096
+ HAS           HMC1   H    H         0.000      5.887  -12.818    0.338
+ HAS           C1C    C    CR5       0.000      5.332   -9.561   -0.748
+ HAS           CHC    C    C1        0.000      6.202   -9.293   -1.781
+ HAS           HHC    H    H         0.000      6.848  -10.092   -2.104
+ HAS           NA     N    NR5       0.000      2.666   -6.642    0.519
+ HAS           C4A    C    CR5       0.000      2.224   -7.587    1.418
+ HAS           C3A    C    CR5       0.000      1.200   -7.042    2.292
+ HAS           CMA    C    CH3       0.000      0.524   -7.744    3.461
+ HAS           HMA3   H    H         0.000      0.754   -7.237    4.363
+ HAS           HMA2   H    H         0.000     -0.526   -7.744    3.318
+ HAS           HMA1   H    H         0.000      0.869   -8.745    3.524
+ HAS           C2A    C    CR5       0.000      1.007   -5.765    1.909
+ HAS           CAA    C    CH2       0.000      0.010   -4.770    2.490
+ HAS           HAA1   H    H         0.000     -0.917   -5.314    2.682
+ HAS           HAA2   H    H         0.000     -0.168   -4.007    1.729
+ HAS           CBA    C    CH2       0.000      0.489   -4.103    3.782
+ HAS           HBA1   H    H         0.000      1.418   -3.572    3.565
+ HAS           HBA2   H    H         0.000      0.681   -4.887    4.518
+ HAS           CGA    C    C         0.000     -0.534   -3.129    4.335
+ HAS           O2A    O    OC       -0.500     -0.473   -1.924    4.004
+ HAS           O1A    O    OC       -0.500     -1.433   -3.571    5.084
+ HAS           C1A    C    CR5       0.000      1.922   -5.523    0.822
+ HAS           NB     N    NR5       0.000      5.572   -6.967   -2.113
+ HAS           C4B    C    CR5       0.000      6.313   -8.087   -2.435
+ HAS           C3B    C    CR5       0.000      7.290   -7.796   -3.473
+ HAS           C2B    C    CR5       0.000      7.168   -6.488   -3.751
+ HAS           CMB    C    CH3       0.000      8.017   -5.710   -4.743
+ HAS           HMB3   H    H         0.000      7.393   -5.278   -5.483
+ HAS           HMB2   H    H         0.000      8.543   -4.942   -4.237
+ HAS           HMB1   H    H         0.000      8.711   -6.363   -5.208
+ HAS           C1B    C    CR5       0.000      6.108   -5.977   -2.910
+ HAS           C11    C    CH1       0.000      8.230   -8.753   -4.196
+ HAS           H11    H    H         0.000      8.824   -8.157   -4.904
+ HAS           O11    O    OH1       0.000      9.143   -9.364   -3.280
+ HAS           HO1    H    H         0.000      9.727   -9.965   -3.761
+ HAS           C12    C    CH2       0.000      7.486   -9.825   -5.010
+ HAS           H121   H    H         0.000      6.716   -9.307   -5.586
+ HAS           H122   H    H         0.000      7.012  -10.495   -4.290
+ HAS           C13    C    CH2       0.000      8.371  -10.634   -5.954
+ HAS           H131   H    H         0.000      9.205  -11.019   -5.364
+ HAS           H132   H    H         0.000      8.750   -9.945   -6.712
+ HAS           C14    C    C1        0.000      7.643  -11.801   -6.639
+ HAS           H14    H    H         0.000      6.723  -12.153   -6.203
+ HAS           C15    C    C         0.000      8.111  -12.434   -7.800
+ HAS           C26    C    CH3       0.000      9.384  -12.001   -8.507
+ HAS           H263   H    H         0.000      9.295  -10.991   -8.817
+ HAS           H262   H    H         0.000     10.209  -12.093   -7.847
+ HAS           H261   H    H         0.000      9.547  -12.614   -9.357
+ HAS           C16    C    CH2       0.000      7.327  -13.583   -8.415
+ HAS           H161   H    H         0.000      7.154  -13.349   -9.467
+ HAS           H162   H    H         0.000      6.369  -13.654   -7.896
+ HAS           C17    C    CH2       0.000      8.068  -14.910   -8.302
+ HAS           H171   H    H         0.000      8.431  -15.011   -7.277
+ HAS           H172   H    H         0.000      8.918  -14.884   -8.987
+ HAS           C18    C    C1        0.000      7.170  -16.102   -8.646
+ HAS           H18    H    H         0.000      6.305  -15.927   -9.264
+ HAS           C19    C    C         0.000      7.412  -17.405   -8.201
+ HAS           C27    C    CH3       0.000      8.582  -17.737   -7.286
+ HAS           H273   H    H         0.000      9.494  -17.478   -7.763
+ HAS           H272   H    H         0.000      8.495  -17.192   -6.381
+ HAS           H271   H    H         0.000      8.584  -18.775   -7.070
+ HAS           C20    C    CH2       0.000      6.467  -18.532   -8.584
+ HAS           H201   H    H         0.000      5.622  -18.098   -9.123
+ HAS           H202   H    H         0.000      6.109  -19.001   -7.665
+ HAS           C21    C    CH2       0.000      7.149  -19.580   -9.460
+ HAS           H211   H    H         0.000      8.144  -19.766   -9.052
+ HAS           H212   H    H         0.000      7.240  -19.170  -10.468
+ HAS           C22    C    C1        0.000      6.363  -20.895   -9.512
+ HAS           H22    H    H         0.000      5.287  -20.861   -9.469
+ HAS           C23    C    C         0.000      6.998  -22.138   -9.613
+ HAS           C25    C    CH3       0.000      8.513  -22.266   -9.652
+ HAS           H253   H    H         0.000      8.894  -21.739  -10.490
+ HAS           H252   H    H         0.000      8.929  -21.860   -8.765
+ HAS           H251   H    H         0.000      8.784  -23.289   -9.730
+ HAS           C24    C    CH2       0.000      6.178  -23.417   -9.638
+ HAS           H241   H    H         0.000      5.289  -23.246   -9.027
+ HAS           H242   H    H         0.000      6.785  -24.203   -9.184
+ HAS           C28    C    CH2       0.000      5.761  -23.839  -11.031
+ HAS           H281   H    H         0.000      6.662  -24.101  -11.590
+ HAS           H282   H    H         0.000      5.271  -22.989  -11.511
+ HAS           C29    C    C1        0.000      4.804  -25.038  -11.010
+ HAS           H29    H    H         0.000      4.539  -25.458  -10.055
+ HAS           C30    C    C         0.000      4.254  -25.617  -12.161
+ HAS           C32    C    CH3       0.000      4.575  -25.096  -13.552
+ HAS           H323   H    H         0.000      4.274  -24.082  -13.632
+ HAS           H322   H    H         0.000      5.618  -25.167  -13.728
+ HAS           H321   H    H         0.000      4.058  -25.672  -14.277
+ HAS           C31    C    CH3       0.000      3.308  -26.802  -12.069
+ HAS           H313   H    H         0.000      3.799  -27.616  -11.599
+ HAS           H312   H    H         0.000      2.453  -26.534  -11.500
+ HAS           H311   H    H         0.000      3.003  -27.092  -13.042
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HAS      O2D    n/a    CGD    START
+ HAS      CGD    O2D    CBD    .
+ HAS      O1D    CGD    .      .
+ HAS      CBD    CGD    CAD    .
+ HAS      HBD1   CBD    .      .
+ HAS      HBD2   CBD    .      .
+ HAS      CAD    CBD    C3D    .
+ HAS      HAD1   CAD    .      .
+ HAS      HAD2   CAD    .      .
+ HAS      C3D    CAD    C4D    .
+ HAS      C2D    C3D    C1D    .
+ HAS      CMD    C2D    OMD    .
+ HAS      HMD    CMD    .      .
+ HAS      OMD    CMD    .      .
+ HAS      C1D    C2D    CHB    .
+ HAS      CHB    C1D    HHB    .
+ HAS      HHB    CHB    .      .
+ HAS      C4D    C3D    ND     .
+ HAS      CHA    C4D    HHA    .
+ HAS      HHA    CHA    .      .
+ HAS      ND     C4D    FE     .
+ HAS      FE     ND     NB     .
+ HAS      NC     FE     C4C    .
+ HAS      C4C    NC     C3C    .
+ HAS      CHD    C4C    HHD    .
+ HAS      HHD    CHD    .      .
+ HAS      C3C    C4C    C2C    .
+ HAS      CAC    C3C    CBC    .
+ HAS      HAC    CAC    .      .
+ HAS      CBC    CAC    HBC1   .
+ HAS      HBC2   CBC    .      .
+ HAS      HBC1   CBC    .      .
+ HAS      C2C    C3C    C1C    .
+ HAS      CMC    C2C    HMC1   .
+ HAS      HMC3   CMC    .      .
+ HAS      HMC2   CMC    .      .
+ HAS      HMC1   CMC    .      .
+ HAS      C1C    C2C    CHC    .
+ HAS      CHC    C1C    HHC    .
+ HAS      HHC    CHC    .      .
+ HAS      NA     FE     C4A    .
+ HAS      C4A    NA     C3A    .
+ HAS      C3A    C4A    C2A    .
+ HAS      CMA    C3A    HMA1   .
+ HAS      HMA3   CMA    .      .
+ HAS      HMA2   CMA    .      .
+ HAS      HMA1   CMA    .      .
+ HAS      C2A    C3A    C1A    .
+ HAS      CAA    C2A    CBA    .
+ HAS      HAA1   CAA    .      .
+ HAS      HAA2   CAA    .      .
+ HAS      CBA    CAA    CGA    .
+ HAS      HBA1   CBA    .      .
+ HAS      HBA2   CBA    .      .
+ HAS      CGA    CBA    O1A    .
+ HAS      O2A    CGA    .      .
+ HAS      O1A    CGA    .      .
+ HAS      C1A    C2A    .      .
+ HAS      NB     FE     C4B    .
+ HAS      C4B    NB     C3B    .
+ HAS      C3B    C4B    C11    .
+ HAS      C2B    C3B    C1B    .
+ HAS      CMB    C2B    HMB1   .
+ HAS      HMB3   CMB    .      .
+ HAS      HMB2   CMB    .      .
+ HAS      HMB1   CMB    .      .
+ HAS      C1B    C2B    .      .
+ HAS      C11    C3B    C12    .
+ HAS      H11    C11    .      .
+ HAS      O11    C11    HO1    .
+ HAS      HO1    O11    .      .
+ HAS      C12    C11    C13    .
+ HAS      H121   C12    .      .
+ HAS      H122   C12    .      .
+ HAS      C13    C12    C14    .
+ HAS      H131   C13    .      .
+ HAS      H132   C13    .      .
+ HAS      C14    C13    C15    .
+ HAS      H14    C14    .      .
+ HAS      C15    C14    C16    .
+ HAS      C26    C15    H261   .
+ HAS      H263   C26    .      .
+ HAS      H262   C26    .      .
+ HAS      H261   C26    .      .
+ HAS      C16    C15    C17    .
+ HAS      H161   C16    .      .
+ HAS      H162   C16    .      .
+ HAS      C17    C16    C18    .
+ HAS      H171   C17    .      .
+ HAS      H172   C17    .      .
+ HAS      C18    C17    C19    .
+ HAS      H18    C18    .      .
+ HAS      C19    C18    C20    .
+ HAS      C27    C19    H271   .
+ HAS      H273   C27    .      .
+ HAS      H272   C27    .      .
+ HAS      H271   C27    .      .
+ HAS      C20    C19    C21    .
+ HAS      H201   C20    .      .
+ HAS      H202   C20    .      .
+ HAS      C21    C20    C22    .
+ HAS      H211   C21    .      .
+ HAS      H212   C21    .      .
+ HAS      C22    C21    C23    .
+ HAS      H22    C22    .      .
+ HAS      C23    C22    C24    .
+ HAS      C25    C23    H251   .
+ HAS      H253   C25    .      .
+ HAS      H252   C25    .      .
+ HAS      H251   C25    .      .
+ HAS      C24    C23    C28    .
+ HAS      H241   C24    .      .
+ HAS      H242   C24    .      .
+ HAS      C28    C24    C29    .
+ HAS      H281   C28    .      .
+ HAS      H282   C28    .      .
+ HAS      C29    C28    C30    .
+ HAS      H29    C29    .      .
+ HAS      C30    C29    C31    .
+ HAS      C32    C30    H321   .
+ HAS      H323   C32    .      .
+ HAS      H322   C32    .      .
+ HAS      H321   C32    .      .
+ HAS      C31    C30    H311   .
+ HAS      H313   C31    .      .
+ HAS      H312   C31    .      .
+ HAS      H311   C31    .      END
+ HAS      CHA    C1A    .    ADD
+ HAS      CHB    C1B    .    ADD
+ HAS      CHC    C4B    .    ADD
+ HAS      CHD    C4A    .    ADD
+ HAS      NA     C1A    .    ADD
+ HAS      NB     C1B    .    ADD
+ HAS      NC     C1C    .    ADD
+ HAS      ND     C1D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HAS       NA        FE        single    2.090     0.020     2.090     0.020     
+HAS       NB        FE        single    2.090     0.020     2.090     0.020     
+HAS       NC        FE        single    2.090     0.020     2.090     0.020     
+HAS       FE        ND        single    2.090     0.020     2.090     0.020     
+HAS       CHA       C1A       double    1.483     0.020     1.483     0.020     
+HAS       CHA       C4D       single    1.483     0.020     1.483     0.020     
+HAS       HHA       CHA       single    1.082     0.013     0.975     0.010     
+HAS       CHB       C1D       double    1.483     0.020     1.483     0.020     
+HAS       CHB       C1B       single    1.483     0.020     1.483     0.020     
+HAS       HHB       CHB       single    1.082     0.013     0.975     0.010     
+HAS       CHC       C4B       double    1.483     0.020     1.483     0.020     
+HAS       CHC       C1C       single    1.483     0.020     1.483     0.020     
+HAS       HHC       CHC       single    1.082     0.013     0.975     0.010     
+HAS       CHD       C4C       single    1.483     0.020     1.483     0.020     
+HAS       CHD       C4A       double    1.483     0.020     1.483     0.020     
+HAS       HHD       CHD       single    1.082     0.013     0.975     0.010     
+HAS       NA        C1A       single    1.337     0.020     1.337     0.020     
+HAS       C4A       NA        single    1.337     0.020     1.337     0.020     
+HAS       C1A       C2A       single    1.490     0.020     1.490     0.020     
+HAS       C2A       C3A       double    1.490     0.020     1.490     0.020     
+HAS       CAA       C2A       single    1.510     0.020     1.510     0.020     
+HAS       C3A       C4A       single    1.490     0.020     1.490     0.020     
+HAS       CMA       C3A       single    1.506     0.020     1.506     0.020     
+HAS       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+HAS       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+HAS       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+HAS       OMD       CMD       double    1.220     0.020     1.220     0.020     
+HAS       CBA       CAA       single    1.524     0.020     1.524     0.020     
+HAS       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+HAS       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+HAS       CGA       CBA       single    1.510     0.020     1.510     0.020     
+HAS       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+HAS       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+HAS       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+HAS       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+HAS       NB        C1B       double    1.337     0.020     1.337     0.020     
+HAS       C4B       NB        single    1.337     0.020     1.337     0.020     
+HAS       C1B       C2B       single    1.490     0.020     1.490     0.020     
+HAS       C2B       C3B       double    1.490     0.020     1.490     0.020     
+HAS       CMB       C2B       single    1.506     0.020     1.506     0.020     
+HAS       C3B       C4B       single    1.490     0.020     1.490     0.020     
+HAS       C11       C3B       single    1.480     0.020     1.480     0.020     
+HAS       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+HAS       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+HAS       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+HAS       NC        C1C       single    1.337     0.020     1.337     0.020     
+HAS       C4C       NC        single    1.337     0.020     1.337     0.020     
+HAS       C1C       C2C       double    1.490     0.020     1.490     0.020     
+HAS       C2C       C3C       single    1.490     0.020     1.490     0.020     
+HAS       CMC       C2C       single    1.506     0.020     1.506     0.020     
+HAS       C3C       C4C       double    1.490     0.020     1.490     0.020     
+HAS       CAC       C3C       single    1.483     0.020     1.483     0.020     
+HAS       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+HAS       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+HAS       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+HAS       CBC       CAC       double    1.320     0.020     1.320     0.020     
+HAS       HAC       CAC       single    1.082     0.013     0.975     0.010     
+HAS       HBC1      CBC       single    1.082     0.013     0.975     0.010     
+HAS       HBC2      CBC       single    1.082     0.013     0.975     0.010     
+HAS       ND        C1D       single    1.337     0.020     1.337     0.020     
+HAS       ND        C4D       double    1.337     0.020     1.337     0.020     
+HAS       C1D       C2D       single    1.490     0.020     1.490     0.020     
+HAS       C2D       C3D       double    1.490     0.020     1.490     0.020     
+HAS       CMD       C2D       single    1.483     0.020     1.483     0.020     
+HAS       C4D       C3D       single    1.490     0.020     1.490     0.020     
+HAS       C3D       CAD       single    1.510     0.020     1.510     0.020     
+HAS       HMD       CMD       single    1.082     0.013     0.975     0.010     
+HAS       CAD       CBD       single    1.524     0.020     1.524     0.020     
+HAS       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+HAS       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+HAS       CBD       CGD       single    1.510     0.020     1.510     0.020     
+HAS       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+HAS       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+HAS       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+HAS       CGD       O2D       deloc     1.250     0.020     1.250     0.020     
+HAS       O11       C11       single    1.432     0.020     1.432     0.020     
+HAS       C12       C11       single    1.524     0.020     1.524     0.020     
+HAS       H11       C11       single    1.089     0.010     0.989     0.005     
+HAS       HO1       O11       single    0.970     0.012     0.839     0.014     
+HAS       C13       C12       single    1.524     0.020     1.524     0.020     
+HAS       H121      C12       single    1.089     0.010     0.989     0.005     
+HAS       H122      C12       single    1.089     0.010     0.989     0.005     
+HAS       C14       C13       single    1.510     0.020     1.510     0.020     
+HAS       H131      C13       single    1.089     0.010     0.989     0.005     
+HAS       H132      C13       single    1.089     0.010     0.989     0.005     
+HAS       C15       C14       double    1.340     0.020     1.340     0.020     
+HAS       H14       C14       single    1.082     0.013     0.975     0.010     
+HAS       C16       C15       single    1.510     0.020     1.510     0.020     
+HAS       C26       C15       single    1.500     0.020     1.500     0.020     
+HAS       C17       C16       single    1.524     0.020     1.524     0.020     
+HAS       H161      C16       single    1.089     0.010     0.989     0.005     
+HAS       H162      C16       single    1.089     0.010     0.989     0.005     
+HAS       C18       C17       single    1.510     0.020     1.510     0.020     
+HAS       H171      C17       single    1.089     0.010     0.989     0.005     
+HAS       H172      C17       single    1.089     0.010     0.989     0.005     
+HAS       C19       C18       double    1.340     0.020     1.340     0.020     
+HAS       H18       C18       single    1.082     0.013     0.975     0.010     
+HAS       C20       C19       single    1.510     0.020     1.510     0.020     
+HAS       C27       C19       single    1.500     0.020     1.500     0.020     
+HAS       C21       C20       single    1.524     0.020     1.524     0.020     
+HAS       H201      C20       single    1.089     0.010     0.989     0.005     
+HAS       H202      C20       single    1.089     0.010     0.989     0.005     
+HAS       C22       C21       single    1.510     0.020     1.510     0.020     
+HAS       H211      C21       single    1.089     0.010     0.989     0.005     
+HAS       H212      C21       single    1.089     0.010     0.989     0.005     
+HAS       C23       C22       double    1.340     0.020     1.340     0.020     
+HAS       H22       C22       single    1.082     0.013     0.975     0.010     
+HAS       C24       C23       single    1.510     0.020     1.510     0.020     
+HAS       C25       C23       single    1.500     0.020     1.500     0.020     
+HAS       C28       C24       single    1.524     0.020     1.524     0.020     
+HAS       H241      C24       single    1.089     0.010     0.989     0.005     
+HAS       H242      C24       single    1.089     0.010     0.989     0.005     
+HAS       H251      C25       single    1.089     0.010     0.989     0.005     
+HAS       H252      C25       single    1.089     0.010     0.989     0.005     
+HAS       H253      C25       single    1.089     0.010     0.989     0.005     
+HAS       H261      C26       single    1.089     0.010     0.989     0.005     
+HAS       H262      C26       single    1.089     0.010     0.989     0.005     
+HAS       H263      C26       single    1.089     0.010     0.989     0.005     
+HAS       H271      C27       single    1.089     0.010     0.989     0.005     
+HAS       H272      C27       single    1.089     0.010     0.989     0.005     
+HAS       H273      C27       single    1.089     0.010     0.989     0.005     
+HAS       C29       C28       single    1.510     0.020     1.510     0.020     
+HAS       H281      C28       single    1.089     0.010     0.989     0.005     
+HAS       H282      C28       single    1.089     0.010     0.989     0.005     
+HAS       C30       C29       double    1.340     0.020     1.340     0.020     
+HAS       H29       C29       single    1.082     0.013     0.975     0.010     
+HAS       C31       C30       single    1.500     0.020     1.500     0.020     
+HAS       C32       C30       single    1.500     0.020     1.500     0.020     
+HAS       H311      C31       single    1.089     0.010     0.989     0.005     
+HAS       H312      C31       single    1.089     0.010     0.989     0.005     
+HAS       H313      C31       single    1.089     0.010     0.989     0.005     
+HAS       H321      C32       single    1.089     0.010     0.989     0.005     
+HAS       H322      C32       single    1.089     0.010     0.989     0.005     
+HAS       H323      C32       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HAS      O2D    CGD    O1D     123.000    3.000
+ HAS      O2D    CGD    CBD     118.500    3.000
+ HAS      O1D    CGD    CBD     118.500    3.000
+ HAS      CGD    CBD    HBD1    109.470    3.000
+ HAS      CGD    CBD    HBD2    109.470    3.000
+ HAS      CGD    CBD    CAD     109.470    3.000
+ HAS      HBD1   CBD    HBD2    107.900    3.000
+ HAS      HBD1   CBD    CAD     109.470    3.000
+ HAS      HBD2   CBD    CAD     109.470    3.000
+ HAS      CBD    CAD    HAD1    109.470    3.000
+ HAS      CBD    CAD    HAD2    109.470    3.000
+ HAS      CBD    CAD    C3D     109.470    3.000
+ HAS      HAD1   CAD    HAD2    107.900    3.000
+ HAS      HAD1   CAD    C3D     109.470    3.000
+ HAS      HAD2   CAD    C3D     109.470    3.000
+ HAS      CAD    C3D    C2D     126.000    3.000
+ HAS      CAD    C3D    C4D     126.000    3.000
+ HAS      C2D    C3D    C4D     108.000    3.000
+ HAS      C3D    C2D    CMD     117.000    3.000
+ HAS      C3D    C2D    C1D     108.000    3.000
+ HAS      CMD    C2D    C1D     117.000    3.000
+ HAS      C2D    CMD    HMD     120.000    3.000
+ HAS      C2D    CMD    OMD     120.000    3.000
+ HAS      HMD    CMD    OMD     123.000    3.000
+ HAS      C2D    C1D    CHB     117.000    3.000
+ HAS      C2D    C1D    ND      108.000    3.000
+ HAS      CHB    C1D    ND      108.000    3.000
+ HAS      C1D    CHB    HHB     120.000    3.000
+ HAS      C1D    CHB    C1B     120.000    3.000
+ HAS      HHB    CHB    C1B     120.000    3.000
+ HAS      C3D    C4D    CHA     117.000    3.000
+ HAS      C3D    C4D    ND      108.000    3.000
+ HAS      CHA    C4D    ND      108.000    3.000
+ HAS      C4D    CHA    HHA     120.000    3.000
+ HAS      C4D    CHA    C1A     120.000    3.000
+ HAS      HHA    CHA    C1A     120.000    3.000
+ HAS      C4D    ND     FE      126.000    3.000
+ HAS      C4D    ND     C1D     108.000    3.000
+ HAS      FE     ND     C1D     126.000    3.000
+ HAS      ND     FE     NC      180.000    3.000
+ HAS      ND     FE     NA       90.000    3.000
+ HAS      ND     FE     NB       90.000    3.000
+ HAS      NC     FE     NA       90.000    3.000
+ HAS      NC     FE     NB       90.000    3.000
+ HAS      NA     FE     NB      180.000    3.000
+ HAS      FE     NC     C4C     126.000    3.000
+ HAS      FE     NC     C1C     126.000    3.000
+ HAS      C4C    NC     C1C     108.000    3.000
+ HAS      NC     C4C    CHD     108.000    3.000
+ HAS      NC     C4C    C3C     108.000    3.000
+ HAS      CHD    C4C    C3C     117.000    3.000
+ HAS      C4C    CHD    HHD     120.000    3.000
+ HAS      C4C    CHD    C4A     120.000    3.000
+ HAS      HHD    CHD    C4A     120.000    3.000
+ HAS      C4C    C3C    CAC     117.000    3.000
+ HAS      C4C    C3C    C2C     108.000    3.000
+ HAS      CAC    C3C    C2C     117.000    3.000
+ HAS      C3C    CAC    HAC     120.000    3.000
+ HAS      C3C    CAC    CBC     120.000    3.000
+ HAS      HAC    CAC    CBC     120.000    3.000
+ HAS      CAC    CBC    HBC2    120.000    3.000
+ HAS      CAC    CBC    HBC1    120.000    3.000
+ HAS      HBC2   CBC    HBC1    120.000    3.000
+ HAS      C3C    C2C    CMC     126.000    3.000
+ HAS      C3C    C2C    C1C     108.000    3.000
+ HAS      CMC    C2C    C1C     126.000    3.000
+ HAS      C2C    CMC    HMC3    109.470    3.000
+ HAS      C2C    CMC    HMC2    109.470    3.000
+ HAS      C2C    CMC    HMC1    109.470    3.000
+ HAS      HMC3   CMC    HMC2    109.470    3.000
+ HAS      HMC3   CMC    HMC1    109.470    3.000
+ HAS      HMC2   CMC    HMC1    109.470    3.000
+ HAS      C2C    C1C    CHC     117.000    3.000
+ HAS      C2C    C1C    NC      108.000    3.000
+ HAS      CHC    C1C    NC      108.000    3.000
+ HAS      C1C    CHC    HHC     120.000    3.000
+ HAS      C1C    CHC    C4B     120.000    3.000
+ HAS      HHC    CHC    C4B     120.000    3.000
+ HAS      FE     NA     C4A     126.000    3.000
+ HAS      FE     NA     C1A     126.000    3.000
+ HAS      C4A    NA     C1A     108.000    3.000
+ HAS      NA     C4A    C3A     108.000    3.000
+ HAS      NA     C4A    CHD     108.000    3.000
+ HAS      C3A    C4A    CHD     117.000    3.000
+ HAS      C4A    C3A    CMA     126.000    3.000
+ HAS      C4A    C3A    C2A     108.000    3.000
+ HAS      CMA    C3A    C2A     126.000    3.000
+ HAS      C3A    CMA    HMA3    109.470    3.000
+ HAS      C3A    CMA    HMA2    109.470    3.000
+ HAS      C3A    CMA    HMA1    109.470    3.000
+ HAS      HMA3   CMA    HMA2    109.470    3.000
+ HAS      HMA3   CMA    HMA1    109.470    3.000
+ HAS      HMA2   CMA    HMA1    109.470    3.000
+ HAS      C3A    C2A    CAA     126.000    3.000
+ HAS      C3A    C2A    C1A     108.000    3.000
+ HAS      CAA    C2A    C1A     126.000    3.000
+ HAS      C2A    CAA    HAA1    109.470    3.000
+ HAS      C2A    CAA    HAA2    109.470    3.000
+ HAS      C2A    CAA    CBA     109.470    3.000
+ HAS      HAA1   CAA    HAA2    107.900    3.000
+ HAS      HAA1   CAA    CBA     109.470    3.000
+ HAS      HAA2   CAA    CBA     109.470    3.000
+ HAS      CAA    CBA    HBA1    109.470    3.000
+ HAS      CAA    CBA    HBA2    109.470    3.000
+ HAS      CAA    CBA    CGA     109.470    3.000
+ HAS      HBA1   CBA    HBA2    107.900    3.000
+ HAS      HBA1   CBA    CGA     109.470    3.000
+ HAS      HBA2   CBA    CGA     109.470    3.000
+ HAS      CBA    CGA    O2A     118.500    3.000
+ HAS      CBA    CGA    O1A     118.500    3.000
+ HAS      O2A    CGA    O1A     123.000    3.000
+ HAS      C2A    C1A    CHA     117.000    3.000
+ HAS      C2A    C1A    NA      108.000    3.000
+ HAS      CHA    C1A    NA      108.000    3.000
+ HAS      FE     NB     C4B     126.000    3.000
+ HAS      FE     NB     C1B     126.000    3.000
+ HAS      C4B    NB     C1B     108.000    3.000
+ HAS      NB     C4B    C3B     108.000    3.000
+ HAS      NB     C4B    CHC     108.000    3.000
+ HAS      C3B    C4B    CHC     117.000    3.000
+ HAS      C4B    C3B    C2B     108.000    3.000
+ HAS      C4B    C3B    C11     126.000    3.000
+ HAS      C2B    C3B    C11     126.000    3.000
+ HAS      C3B    C2B    CMB     126.000    3.000
+ HAS      C3B    C2B    C1B     108.000    3.000
+ HAS      CMB    C2B    C1B     126.000    3.000
+ HAS      C2B    CMB    HMB3    109.470    3.000
+ HAS      C2B    CMB    HMB2    109.470    3.000
+ HAS      C2B    CMB    HMB1    109.470    3.000
+ HAS      HMB3   CMB    HMB2    109.470    3.000
+ HAS      HMB3   CMB    HMB1    109.470    3.000
+ HAS      HMB2   CMB    HMB1    109.470    3.000
+ HAS      C2B    C1B    CHB     117.000    3.000
+ HAS      C2B    C1B    NB      108.000    3.000
+ HAS      CHB    C1B    NB      108.000    3.000
+ HAS      C3B    C11    H11     109.470    3.000
+ HAS      C3B    C11    O11     109.500    3.000
+ HAS      C3B    C11    C12     109.470    3.000
+ HAS      H11    C11    O11     109.470    3.000
+ HAS      H11    C11    C12     108.340    3.000
+ HAS      O11    C11    C12     109.470    3.000
+ HAS      C11    O11    HO1     109.470    3.000
+ HAS      C11    C12    H121    109.470    3.000
+ HAS      C11    C12    H122    109.470    3.000
+ HAS      C11    C12    C13     111.000    3.000
+ HAS      H121   C12    H122    107.900    3.000
+ HAS      H121   C12    C13     109.470    3.000
+ HAS      H122   C12    C13     109.470    3.000
+ HAS      C12    C13    H131    109.470    3.000
+ HAS      C12    C13    H132    109.470    3.000
+ HAS      C12    C13    C14     109.470    3.000
+ HAS      H131   C13    H132    107.900    3.000
+ HAS      H131   C13    C14     109.470    3.000
+ HAS      H132   C13    C14     109.470    3.000
+ HAS      C13    C14    H14     120.000    3.000
+ HAS      C13    C14    C15     120.500    3.000
+ HAS      H14    C14    C15     120.000    3.000
+ HAS      C14    C15    C26     120.000    3.000
+ HAS      C14    C15    C16     120.000    3.000
+ HAS      C26    C15    C16     120.000    3.000
+ HAS      C15    C26    H263    109.470    3.000
+ HAS      C15    C26    H262    109.470    3.000
+ HAS      C15    C26    H261    109.470    3.000
+ HAS      H263   C26    H262    109.470    3.000
+ HAS      H263   C26    H261    109.470    3.000
+ HAS      H262   C26    H261    109.470    3.000
+ HAS      C15    C16    H161    109.470    3.000
+ HAS      C15    C16    H162    109.470    3.000
+ HAS      C15    C16    C17     109.470    3.000
+ HAS      H161   C16    H162    107.900    3.000
+ HAS      H161   C16    C17     109.470    3.000
+ HAS      H162   C16    C17     109.470    3.000
+ HAS      C16    C17    H171    109.470    3.000
+ HAS      C16    C17    H172    109.470    3.000
+ HAS      C16    C17    C18     109.470    3.000
+ HAS      H171   C17    H172    107.900    3.000
+ HAS      H171   C17    C18     109.470    3.000
+ HAS      H172   C17    C18     109.470    3.000
+ HAS      C17    C18    H18     120.000    3.000
+ HAS      C17    C18    C19     120.500    3.000
+ HAS      H18    C18    C19     120.000    3.000
+ HAS      C18    C19    C27     120.000    3.000
+ HAS      C18    C19    C20     120.000    3.000
+ HAS      C27    C19    C20     120.000    3.000
+ HAS      C19    C27    H273    109.470    3.000
+ HAS      C19    C27    H272    109.470    3.000
+ HAS      C19    C27    H271    109.470    3.000
+ HAS      H273   C27    H272    109.470    3.000
+ HAS      H273   C27    H271    109.470    3.000
+ HAS      H272   C27    H271    109.470    3.000
+ HAS      C19    C20    H201    109.470    3.000
+ HAS      C19    C20    H202    109.470    3.000
+ HAS      C19    C20    C21     109.470    3.000
+ HAS      H201   C20    H202    107.900    3.000
+ HAS      H201   C20    C21     109.470    3.000
+ HAS      H202   C20    C21     109.470    3.000
+ HAS      C20    C21    H211    109.470    3.000
+ HAS      C20    C21    H212    109.470    3.000
+ HAS      C20    C21    C22     109.470    3.000
+ HAS      H211   C21    H212    107.900    3.000
+ HAS      H211   C21    C22     109.470    3.000
+ HAS      H212   C21    C22     109.470    3.000
+ HAS      C21    C22    H22     120.000    3.000
+ HAS      C21    C22    C23     120.500    3.000
+ HAS      H22    C22    C23     120.000    3.000
+ HAS      C22    C23    C25     120.000    3.000
+ HAS      C22    C23    C24     120.000    3.000
+ HAS      C25    C23    C24     120.000    3.000
+ HAS      C23    C25    H253    109.470    3.000
+ HAS      C23    C25    H252    109.470    3.000
+ HAS      C23    C25    H251    109.470    3.000
+ HAS      H253   C25    H252    109.470    3.000
+ HAS      H253   C25    H251    109.470    3.000
+ HAS      H252   C25    H251    109.470    3.000
+ HAS      C23    C24    H241    109.470    3.000
+ HAS      C23    C24    H242    109.470    3.000
+ HAS      C23    C24    C28     109.470    3.000
+ HAS      H241   C24    H242    107.900    3.000
+ HAS      H241   C24    C28     109.470    3.000
+ HAS      H242   C24    C28     109.470    3.000
+ HAS      C24    C28    H281    109.470    3.000
+ HAS      C24    C28    H282    109.470    3.000
+ HAS      C24    C28    C29     109.470    3.000
+ HAS      H281   C28    H282    107.900    3.000
+ HAS      H281   C28    C29     109.470    3.000
+ HAS      H282   C28    C29     109.470    3.000
+ HAS      C28    C29    H29     120.000    3.000
+ HAS      C28    C29    C30     120.500    3.000
+ HAS      H29    C29    C30     120.000    3.000
+ HAS      C29    C30    C32     120.000    3.000
+ HAS      C29    C30    C31     120.000    3.000
+ HAS      C32    C30    C31     120.000    3.000
+ HAS      C30    C32    H323    109.470    3.000
+ HAS      C30    C32    H322    109.470    3.000
+ HAS      C30    C32    H321    109.470    3.000
+ HAS      H323   C32    H322    109.470    3.000
+ HAS      H323   C32    H321    109.470    3.000
+ HAS      H322   C32    H321    109.470    3.000
+ HAS      C30    C31    H313    109.470    3.000
+ HAS      C30    C31    H312    109.470    3.000
+ HAS      C30    C31    H311    109.470    3.000
+ HAS      H313   C31    H312    109.470    3.000
+ HAS      H313   C31    H311    109.470    3.000
+ HAS      H312   C31    H311    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HAS      var_1    O2D    CGD    CBD    CAD      -60.231   20.000   3
+ HAS      var_2    CGD    CBD    CAD    C3D      176.884   20.000   3
+ HAS      var_3    CBD    CAD    C3D    C4D      -80.587   20.000   2
+ HAS      CONST_1  CAD    C3D    C2D    C1D      180.000    0.000   0
+ HAS      var_4    C3D    C2D    CMD    OMD      150.872   20.000   1
+ HAS      CONST_2  C3D    C2D    C1D    CHB      180.000    0.000   0
+ HAS      var_5    C2D    C1D    CHB    C1B      180.000   20.000   1
+ HAS      var_6    C1D    CHB    C1B    C2B      180.000   20.000   1
+ HAS      CONST_3  CAD    C3D    C4D    ND       180.000    0.000   0
+ HAS      var_7    C3D    C4D    CHA    C1A      180.000   20.000   1
+ HAS      var_8    C4D    CHA    C1A    C2A      180.000   20.000   1
+ HAS      CONST_4  C3D    C4D    ND     FE       180.000    0.000   0
+ HAS      CONST_5  C4D    ND     C1D    C2D        0.000    0.000   0
+ HAS      var_9    C4D    ND     FE     NA         0.000   20.000   1
+ HAS      var_10   C4C    NC     FE     NA         0.000   20.000   1
+ HAS      CONST_6  FE     NC     C1C    C2C      180.000    0.000   0
+ HAS      CONST_7  FE     NC     C4C    C3C      180.000    0.000   0
+ HAS      var_11   NC     C4C    CHD    C4A        0.000   20.000   1
+ HAS      var_12   C4C    CHD    C4A    NA         0.000   20.000   1
+ HAS      CONST_8  NC     C4C    C3C    C2C        0.000    0.000   0
+ HAS      var_13   C4C    C3C    CAC    CBC     -159.441   20.000   1
+ HAS      CONST_9  C3C    CAC    CBC    HBC1      -0.064    0.000   0
+ HAS      CONST_10 C4C    C3C    C2C    C1C        0.000    0.000   0
+ HAS      var_14   C3C    C2C    CMC    HMC1       3.100   20.000   1
+ HAS      CONST_11 C3C    C2C    C1C    CHC      180.000    0.000   0
+ HAS      var_15   C2C    C1C    CHC    C4B      180.000   20.000   1
+ HAS      var_16   C1C    CHC    C4B    NB         0.000   20.000   1
+ HAS      var_17   C1A    NA     FE     ND         0.000   20.000   1
+ HAS      CONST_12 FE     NA     C1A    C2A      180.000    0.000   0
+ HAS      CONST_13 FE     NA     C4A    C3A      180.000    0.000   0
+ HAS      CONST_14 NA     C4A    C3A    C2A        0.000    0.000   0
+ HAS      var_18   C4A    C3A    CMA    HMA1      -3.439   20.000   1
+ HAS      CONST_15 C4A    C3A    C2A    C1A        0.000    0.000   0
+ HAS      var_19   C3A    C2A    CAA    CBA       80.919   20.000   2
+ HAS      var_20   C2A    CAA    CBA    CGA     -179.545   20.000   3
+ HAS      var_21   CAA    CBA    CGA    O1A       86.304   20.000   3
+ HAS      CONST_16 C3A    C2A    C1A    CHA      180.000    0.000   0
+ HAS      var_22   C1B    NB     FE     ND         0.000   20.000   1
+ HAS      CONST_17 FE     NB     C1B    C2B      180.000    0.000   0
+ HAS      CONST_18 FE     NB     C4B    C3B      180.000    0.000   0
+ HAS      CONST_19 NB     C4B    C3B    C11      180.000    0.000   0
+ HAS      CONST_20 C4B    C3B    C2B    C1B        0.000    0.000   0
+ HAS      var_23   C3B    C2B    CMB    HMB1       1.403   20.000   1
+ HAS      CONST_21 C3B    C2B    C1B    CHB      180.000    0.000   0
+ HAS      var_24   C4B    C3B    C11    C12       62.445   20.000   1
+ HAS      var_25   C3B    C11    O11    HO1      179.958   20.000   1
+ HAS      var_26   C3B    C11    C12    C13      169.001   20.000   3
+ HAS      var_27   C11    C12    C13    C14      173.465   20.000   3
+ HAS      var_28   C12    C13    C14    C15      161.188   20.000   1
+ HAS      CONST_22 C13    C14    C15    C16     -179.924    0.000   0
+ HAS      var_29   C14    C15    C26    H261     179.996   20.000   1
+ HAS      var_30   C14    C15    C16    C17     -112.318   20.000   3
+ HAS      var_31   C15    C16    C17    C18      167.948   20.000   3
+ HAS      var_32   C16    C17    C18    C19     -157.135   20.000   1
+ HAS      CONST_23 C17    C18    C19    C20      179.710    0.000   0
+ HAS      var_33   C18    C19    C27    H271     179.955   20.000   1
+ HAS      var_34   C18    C19    C20    C21      115.569   20.000   3
+ HAS      var_35   C19    C20    C21    C22      163.233   20.000   3
+ HAS      var_36   C20    C21    C22    C23     -146.312   20.000   1
+ HAS      CONST_24 C21    C22    C23    C24      178.990    0.000   0
+ HAS      var_37   C22    C23    C25    H251     179.945   20.000   1
+ HAS      var_38   C22    C23    C24    C28       89.182   20.000   3
+ HAS      var_39   C23    C24    C28    C29     -173.466   20.000   3
+ HAS      var_40   C24    C28    C29    C30      179.199   20.000   1
+ HAS      CONST_25 C28    C29    C30    C31     -179.806    0.000   0
+ HAS      var_41   C29    C30    C32    H321    -179.963   20.000   1
+ HAS      var_42   C29    C30    C31    H311     179.962   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HAS      chir_01  C11    C3B    O11    C12       negativ
+ HAS      chir_02  FE     ND     NC     NA        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HAS      plan-1    CHA       0.020
+ HAS      plan-1    C1A       0.020
+ HAS      plan-1    C4D       0.020
+ HAS      plan-1    HHA       0.020
+ HAS      plan-2    CHB       0.020
+ HAS      plan-2    C1B       0.020
+ HAS      plan-2    C1D       0.020
+ HAS      plan-2    HHB       0.020
+ HAS      plan-3    CHC       0.020
+ HAS      plan-3    C4B       0.020
+ HAS      plan-3    C1C       0.020
+ HAS      plan-3    HHC       0.020
+ HAS      plan-4    CHD       0.020
+ HAS      plan-4    C4A       0.020
+ HAS      plan-4    C4C       0.020
+ HAS      plan-4    HHD       0.020
+ HAS      plan-5    NA        0.020
+ HAS      plan-5    FE        0.020
+ HAS      plan-5    C1A       0.020
+ HAS      plan-5    C4A       0.020
+ HAS      plan-5    C2A       0.020
+ HAS      plan-5    C3A       0.020
+ HAS      plan-5    CHA       0.020
+ HAS      plan-5    CAA       0.020
+ HAS      plan-5    CMA       0.020
+ HAS      plan-5    CHD       0.020
+ HAS      plan-5    HHA       0.020
+ HAS      plan-5    HHD       0.020
+ HAS      plan-6    CGA       0.020
+ HAS      plan-6    CBA       0.020
+ HAS      plan-6    O1A       0.020
+ HAS      plan-6    O2A       0.020
+ HAS      plan-7    NB        0.020
+ HAS      plan-7    FE        0.020
+ HAS      plan-7    C1B       0.020
+ HAS      plan-7    C4B       0.020
+ HAS      plan-7    C2B       0.020
+ HAS      plan-7    C3B       0.020
+ HAS      plan-7    CHB       0.020
+ HAS      plan-7    CMB       0.020
+ HAS      plan-7    C11       0.020
+ HAS      plan-7    CHC       0.020
+ HAS      plan-7    HHB       0.020
+ HAS      plan-7    HHC       0.020
+ HAS      plan-8    NC        0.020
+ HAS      plan-8    FE        0.020
+ HAS      plan-8    C1C       0.020
+ HAS      plan-8    C4C       0.020
+ HAS      plan-8    C2C       0.020
+ HAS      plan-8    C3C       0.020
+ HAS      plan-8    CHC       0.020
+ HAS      plan-8    CMC       0.020
+ HAS      plan-8    CAC       0.020
+ HAS      plan-8    CHD       0.020
+ HAS      plan-8    HHC       0.020
+ HAS      plan-8    HAC       0.020
+ HAS      plan-8    HHD       0.020
+ HAS      plan-9    CAC       0.020
+ HAS      plan-9    C3C       0.020
+ HAS      plan-9    CBC       0.020
+ HAS      plan-9    HAC       0.020
+ HAS      plan-9    HBC1      0.020
+ HAS      plan-9    HBC2      0.020
+ HAS      plan-10   ND        0.020
+ HAS      plan-10   FE        0.020
+ HAS      plan-10   C1D       0.020
+ HAS      plan-10   C4D       0.020
+ HAS      plan-10   C2D       0.020
+ HAS      plan-10   C3D       0.020
+ HAS      plan-10   CHB       0.020
+ HAS      plan-10   CMD       0.020
+ HAS      plan-10   CAD       0.020
+ HAS      plan-10   CHA       0.020
+ HAS      plan-10   HHB       0.020
+ HAS      plan-10   HMD       0.020
+ HAS      plan-10   HHA       0.020
+ HAS      plan-11   CMD       0.020
+ HAS      plan-11   OMD       0.020
+ HAS      plan-11   C2D       0.020
+ HAS      plan-11   HMD       0.020
+ HAS      plan-12   CGD       0.020
+ HAS      plan-12   CBD       0.020
+ HAS      plan-12   O1D       0.020
+ HAS      plan-12   O2D       0.020
+ HAS      plan-13   C14       0.020
+ HAS      plan-13   C13       0.020
+ HAS      plan-13   C15       0.020
+ HAS      plan-13   H14       0.020
+ HAS      plan-13   C16       0.020
+ HAS      plan-13   C26       0.020
+ HAS      plan-14   C18       0.020
+ HAS      plan-14   C17       0.020
+ HAS      plan-14   C19       0.020
+ HAS      plan-14   H18       0.020
+ HAS      plan-14   C20       0.020
+ HAS      plan-14   C27       0.020
+ HAS      plan-15   C22       0.020
+ HAS      plan-15   C21       0.020
+ HAS      plan-15   C23       0.020
+ HAS      plan-15   H22       0.020
+ HAS      plan-15   C24       0.020
+ HAS      plan-15   C25       0.020
+ HAS      plan-16   C29       0.020
+ HAS      plan-16   C28       0.020
+ HAS      plan-16   C30       0.020
+ HAS      plan-16   H29       0.020
+ HAS      plan-16   C31       0.020
+ HAS      plan-16   C32       0.020
+# ------------------------------------------------------

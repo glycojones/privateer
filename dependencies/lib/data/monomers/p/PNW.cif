@@ -1,0 +1,295 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PNW      PNW '4-nitrophenyl beta-D-glucopyranoside' pyranose           36  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PNW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PNW           C1     C    CH1       0.000      0.000    0.000    0.000
+ PNW           H1     H    H         0.000     -0.168   -0.060   -1.084
+ PNW           O1     O    O2        0.000     -0.766    1.078    0.542
+ PNW           C7     C    CR6       0.000     -2.103    1.071    0.294
+ PNW           C12    C    CR16      0.000     -2.664    0.050   -0.460
+ PNW           H12    H    H         0.000     -2.037   -0.740   -0.855
+ PNW           C11    C    CR16      0.000     -4.024    0.042   -0.705
+ PNW           H11    H    H         0.000     -4.464   -0.759   -1.286
+ PNW           C10    C    CR6       0.000     -4.822    1.057   -0.210
+ PNW           C9     C    CR16      0.000     -4.264    2.078    0.537
+ PNW           H9     H    H         0.000     -4.892    2.871    0.923
+ PNW           C8     C    CR16      0.000     -2.906    2.087    0.790
+ PNW           H8     H    H         0.000     -2.469    2.887    1.375
+ PNW           N1     N    N         1.000     -6.278    1.049   -0.479
+ PNW           O7     O    O         0.000     -6.983    1.941   -0.044
+ PNW           O8     O    O        -1.000     -6.771    0.150   -1.138
+ PNW           O5     O    O2        0.000     -0.403   -1.226    0.614
+ PNW           C5     C    CH1       0.000      0.287   -2.377    0.123
+ PNW           H5     H    H         0.000      0.122   -2.469   -0.960
+ PNW           C6     C    CH2       0.000     -0.243   -3.628    0.828
+ PNW           H6     H    H         0.000     -0.160   -3.499    1.909
+ PNW           H6A    H    H         0.000      0.345   -4.496    0.520
+ PNW           O6     O    OH1       0.000     -1.613   -3.830    0.474
+ PNW           HO6    H    H         0.000     -1.947   -4.620    0.920
+ PNW           C4     C    CH1       0.000      1.786   -2.231    0.401
+ PNW           H4     H    H         0.000      1.955   -2.181    1.486
+ PNW           O4     O    OH1       0.000      2.484   -3.354   -0.140
+ PNW           HO4    H    H         0.000      3.430   -3.258    0.032
+ PNW           C3     C    CH1       0.000      2.296   -0.945   -0.257
+ PNW           H3     H    H         0.000      2.174   -1.016   -1.347
+ PNW           O3     O    OH1       0.000      3.677   -0.762    0.059
+ PNW           HO3    H    H         0.000      3.995    0.053   -0.351
+ PNW           C2     C    CH1       0.000      1.486    0.243    0.273
+ PNW           H2     H    H         0.000      1.649    0.345    1.355
+ PNW           O2     O    OH1       0.000      1.905    1.439   -0.388
+ PNW           HO2    H    H         0.000      1.390    2.187   -0.056
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PNW      C1     n/a    O5     START
+ PNW      H1     C1     .      .
+ PNW      O1     C1     C7     .
+ PNW      C7     O1     C12    .
+ PNW      C12    C7     C11    .
+ PNW      H12    C12    .      .
+ PNW      C11    C12    C10    .
+ PNW      H11    C11    .      .
+ PNW      C10    C11    N1     .
+ PNW      C9     C10    C8     .
+ PNW      H9     C9     .      .
+ PNW      C8     C9     H8     .
+ PNW      H8     C8     .      .
+ PNW      N1     C10    O8     .
+ PNW      O7     N1     .      .
+ PNW      O8     N1     .      .
+ PNW      O5     C1     .      END
+ PNW      C5     O5     C4     .
+ PNW      H5     C5     .      .
+ PNW      C6     C5     O6     .
+ PNW      H6     C6     .      .
+ PNW      H6A    C6     .      .
+ PNW      O6     C6     HO6    .
+ PNW      HO6    O6     .      .
+ PNW      C4     C5     C3     .
+ PNW      H4     C4     .      .
+ PNW      O4     C4     HO4    .
+ PNW      HO4    O4     .      .
+ PNW      C3     C4     C2     .
+ PNW      H3     C3     .      .
+ PNW      O3     C3     HO3    .
+ PNW      HO3    O3     .      .
+ PNW      C2     C3     O2     .
+ PNW      H2     C2     .      .
+ PNW      O2     C2     HO2    .
+ PNW      HO2    O2     .      .
+ PNW      C1     C2     .    ADD
+ PNW      C7     C8     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PNW       O1        C1        single    1.426     0.020     1.426     0.020     
+PNW       C1        C2        single    1.524     0.020     1.524     0.020     
+PNW       O5        C1        single    1.426     0.020     1.426     0.020     
+PNW       O7        N1        double    1.220     0.020     1.220     0.020     
+PNW       O8        N1        single    1.400     0.020     1.400     0.020     
+PNW       N1        C10       single    1.400     0.020     1.400     0.020     
+PNW       C7        O1        single    1.370     0.020     1.370     0.020     
+PNW       O2        C2        single    1.432     0.020     1.432     0.020     
+PNW       C2        C3        single    1.524     0.020     1.524     0.020     
+PNW       O3        C3        single    1.432     0.020     1.432     0.020     
+PNW       C3        C4        single    1.524     0.020     1.524     0.020     
+PNW       O4        C4        single    1.432     0.020     1.432     0.020     
+PNW       C4        C5        single    1.524     0.020     1.524     0.020     
+PNW       C5        O5        single    1.426     0.020     1.426     0.020     
+PNW       C6        C5        single    1.524     0.020     1.524     0.020     
+PNW       O6        C6        single    1.432     0.020     1.432     0.020     
+PNW       C7        C8        double    1.390     0.020     1.390     0.020     
+PNW       C12       C7        single    1.390     0.020     1.390     0.020     
+PNW       C8        C9        single    1.390     0.020     1.390     0.020     
+PNW       C9        C10       double    1.390     0.020     1.390     0.020     
+PNW       C10       C11       single    1.390     0.020     1.390     0.020     
+PNW       C11       C12       double    1.390     0.020     1.390     0.020     
+PNW       H1        C1        single    1.089     0.010     0.989     0.005     
+PNW       H2        C2        single    1.089     0.010     0.989     0.005     
+PNW       HO2       O2        single    0.970     0.012     0.839     0.014     
+PNW       H3        C3        single    1.089     0.010     0.989     0.005     
+PNW       HO3       O3        single    0.970     0.012     0.839     0.014     
+PNW       H4        C4        single    1.089     0.010     0.989     0.005     
+PNW       HO4       O4        single    0.970     0.012     0.839     0.014     
+PNW       H5        C5        single    1.089     0.010     0.989     0.005     
+PNW       H6        C6        single    1.089     0.010     0.989     0.005     
+PNW       H6A       C6        single    1.089     0.010     0.989     0.005     
+PNW       HO6       O6        single    0.970     0.012     0.839     0.014     
+PNW       H8        C8        single    1.082     0.013     0.975     0.010     
+PNW       H9        C9        single    1.082     0.013     0.975     0.010     
+PNW       H11       C11       single    1.082     0.013     0.975     0.010     
+PNW       H12       C12       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PNW      H1     C1     O1      109.470    3.000
+ PNW      H1     C1     O5      109.470    3.000
+ PNW      O1     C1     O5      109.470    3.000
+ PNW      H1     C1     C2      108.340    3.000
+ PNW      O1     C1     C2      109.470    3.000
+ PNW      O5     C1     C2      109.470    3.000
+ PNW      C1     O1     C7      120.000    3.000
+ PNW      O1     C7     C12     120.000    3.000
+ PNW      O1     C7     C8      120.000    3.000
+ PNW      C12    C7     C8      120.000    3.000
+ PNW      C7     C12    H12     120.000    3.000
+ PNW      C7     C12    C11     120.000    3.000
+ PNW      H12    C12    C11     120.000    3.000
+ PNW      C12    C11    H11     120.000    3.000
+ PNW      C12    C11    C10     120.000    3.000
+ PNW      H11    C11    C10     120.000    3.000
+ PNW      C11    C10    C9      120.000    3.000
+ PNW      C11    C10    N1      120.000    3.000
+ PNW      C9     C10    N1      120.000    3.000
+ PNW      C10    C9     H9      120.000    3.000
+ PNW      C10    C9     C8      120.000    3.000
+ PNW      H9     C9     C8      120.000    3.000
+ PNW      C9     C8     H8      120.000    3.000
+ PNW      C9     C8     C7      120.000    3.000
+ PNW      H8     C8     C7      120.000    3.000
+ PNW      C10    N1     O7      120.000    3.000
+ PNW      C10    N1     O8      120.000    3.000
+ PNW      O7     N1     O8      120.000    3.000
+ PNW      C1     O5     C5      111.800    3.000
+ PNW      O5     C5     H5      109.470    3.000
+ PNW      O5     C5     C6      109.470    3.000
+ PNW      O5     C5     C4      109.470    3.000
+ PNW      H5     C5     C6      108.340    3.000
+ PNW      H5     C5     C4      108.340    3.000
+ PNW      C6     C5     C4      111.000    3.000
+ PNW      C5     C6     H6      109.470    3.000
+ PNW      C5     C6     H6A     109.470    3.000
+ PNW      C5     C6     O6      109.470    3.000
+ PNW      H6     C6     H6A     107.900    3.000
+ PNW      H6     C6     O6      109.470    3.000
+ PNW      H6A    C6     O6      109.470    3.000
+ PNW      C6     O6     HO6     109.470    3.000
+ PNW      C5     C4     H4      108.340    3.000
+ PNW      C5     C4     O4      109.470    3.000
+ PNW      C5     C4     C3      111.000    3.000
+ PNW      H4     C4     O4      109.470    3.000
+ PNW      H4     C4     C3      108.340    3.000
+ PNW      O4     C4     C3      109.470    3.000
+ PNW      C4     O4     HO4     109.470    3.000
+ PNW      C4     C3     H3      108.340    3.000
+ PNW      C4     C3     O3      109.470    3.000
+ PNW      C4     C3     C2      111.000    3.000
+ PNW      H3     C3     O3      109.470    3.000
+ PNW      H3     C3     C2      108.340    3.000
+ PNW      O3     C3     C2      109.470    3.000
+ PNW      C3     O3     HO3     109.470    3.000
+ PNW      C3     C2     H2      108.340    3.000
+ PNW      C3     C2     O2      109.470    3.000
+ PNW      C3     C2     C1      111.000    3.000
+ PNW      H2     C2     O2      109.470    3.000
+ PNW      H2     C2     C1      108.340    3.000
+ PNW      O2     C2     C1      109.470    3.000
+ PNW      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PNW      var_1    O5     C1     O1     C7       -65.065   20.000   1
+ PNW      var_2    C1     O1     C7     C12       -0.221   20.000   1
+ PNW      CONST_1  O1     C7     C8     C9       180.000    0.000   0
+ PNW      CONST_2  O1     C7     C12    C11      180.000    0.000   0
+ PNW      CONST_3  C7     C12    C11    C10        0.000    0.000   0
+ PNW      CONST_4  C12    C11    C10    N1       180.000    0.000   0
+ PNW      CONST_5  C11    C10    C9     C8         0.000    0.000   0
+ PNW      CONST_6  C10    C9     C8     C7         0.000    0.000   0
+ PNW      var_3    C11    C10    N1     O8        -0.036   20.000   1
+ PNW      var_4    C1     O5     C5     C4        60.000   20.000   1
+ PNW      var_5    O5     C5     C6     O6        65.043   20.000   3
+ PNW      var_6    C5     C6     O6     HO6     -179.957   20.000   1
+ PNW      var_7    O5     C5     C4     C3       -60.000   20.000   3
+ PNW      var_8    C5     C4     O4     HO4      179.691   20.000   1
+ PNW      var_9    C5     C4     C3     C2        60.000   20.000   3
+ PNW      var_10   C4     C3     O3     HO3     -179.594   20.000   1
+ PNW      var_11   C4     C3     C2     O2       180.000   20.000   3
+ PNW      var_12   C3     C2     C1     O5        60.000   20.000   3
+ PNW      var_13   C3     C2     O2     HO2      179.677   20.000   1
+ PNW      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PNW      chir_01  C1     O1     C2     O5        negativ
+ PNW      chir_02  C2     C1     O2     C3        positiv
+ PNW      chir_03  C3     C2     O3     C4        negativ
+ PNW      chir_04  C4     C3     O4     C5        positiv
+ PNW      chir_05  C5     C4     O5     C6        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PNW      plan-1    N1        0.020
+ PNW      plan-1    O7        0.020
+ PNW      plan-1    O8        0.020
+ PNW      plan-1    C10       0.020
+ PNW      plan-2    C7        0.020
+ PNW      plan-2    O1        0.020
+ PNW      plan-2    C8        0.020
+ PNW      plan-2    C12       0.020
+ PNW      plan-2    C9        0.020
+ PNW      plan-2    C10       0.020
+ PNW      plan-2    C11       0.020
+ PNW      plan-2    H8        0.020
+ PNW      plan-2    H9        0.020
+ PNW      plan-2    N1        0.020
+ PNW      plan-2    H11       0.020
+ PNW      plan-2    H12       0.020
+# ------------------------------------------------------

@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NOE     NOE      NITROSOETHANE     NON-POLYMER     9     4     .     
+#
+data_comp_NOE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NOE     C1      C       CH2     0       0.400       0.334       -0.227      
+NOE     C2      C       CH3     0       -0.992      -0.108      -0.001      
+NOE     N       N       N       0       1.251       -0.096      0.884       
+NOE     O1      O       O       0       2.205       -0.884      0.695       
+NOE     HC11    H       H       0       0.426       1.313       -0.302      
+NOE     HC12    H       H       0       0.734       -0.048      -1.068      
+NOE     HC21    H       H       0       -1.553      0.186       -0.740      
+NOE     HC22    H       H       0       -1.326      0.275       0.829       
+NOE     HC23    H       H       0       -1.021      -1.079      0.058       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NOE       C1        C2        SINGLE    n         1.478     0.020     1.478     0.020     
+NOE       C1        N         SINGLE    n         1.463     0.014     1.463     0.014     
+NOE       N         O1        DOUBLE    n         1.251     0.020     1.251     0.020     
+NOE       C1        HC11      SINGLE    n         1.089     0.010     0.982     0.011     
+NOE       C1        HC12      SINGLE    n         1.089     0.010     0.982     0.011     
+NOE       C2        HC21      SINGLE    n         1.089     0.010     0.973     0.014     
+NOE       C2        HC22      SINGLE    n         1.089     0.010     0.973     0.014     
+NOE       C2        HC23      SINGLE    n         1.089     0.010     0.973     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NOE          C2          C1           N     109.508    2.50
+NOE          C2          C1        HC11     109.377    1.50
+NOE          C2          C1        HC12     109.377    1.50
+NOE           N          C1        HC11     109.364    1.50
+NOE           N          C1        HC12     109.364    1.50
+NOE        HC11          C1        HC12     108.122    1.50
+NOE          C1          C2        HC21     109.760    1.50
+NOE          C1          C2        HC22     109.760    1.50
+NOE          C1          C2        HC23     109.760    1.50
+NOE        HC21          C2        HC22     109.415    1.50
+NOE        HC21          C2        HC23     109.415    1.50
+NOE        HC22          C2        HC23     109.415    1.50
+NOE          C1           N          O1     120.000    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NOE             sp3_sp3_1           N          C1          C2        HC21     180.000   10.00     3
+NOE             sp2_sp3_2          O1           N          C1          C2     120.000   10.00     6
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NOE SMILES           ACDLabs              10.04 O=NCC
+NOE SMILES_CANONICAL CACTVS               3.341 CCN=O
+NOE SMILES           CACTVS               3.341 CCN=O
+NOE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCN=O
+NOE SMILES           "OpenEye OEToolkits" 1.5.0 CCN=O
+NOE InChI            InChI                1.03  InChI=1S/C2H5NO/c1-2-3-4/h2H2,1H3
+NOE InChIKey         InChI                1.03  IFYCAQIXDKZDTB-UHFFFAOYSA-N
+NOE ?                acedrg               202         "dictionary generator"                  
+NOE ?                acedrg_database      11          "data source"                           
+NOE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NOE ?                refmac5              5.8.0189    "optimization tool"                     

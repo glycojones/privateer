@@ -1,0 +1,77 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2NO     2NO      "NITROGEN DIOXIDE"     NON-POLYMER     4     3     .     
+#
+data_comp_2NO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2NO     N       N       N       0       0.553       0.374       0.029       
+2NO     O1      O       OH1     0       -0.622      -0.390      0.059       
+2NO     O2      O       O       0       1.595       -0.064      0.557       
+2NO     H2      H       H       0       -0.438      -1.116      -0.370      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2NO       N         O1        SINGLE    n         1.401     0.019     1.401     0.019     
+2NO       N         O2        DOUBLE    n         1.248     0.020     1.248     0.020     
+2NO       O1        H2        SINGLE    n         0.970     0.012     0.863     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2NO          O1           N          O2     120.000    3.00
+2NO           N          O1          H2     105.688    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2NO             sp2_sp3_1          O2           N          O1          H2       0.000   10.00     6
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2NO SMILES           ACDLabs              10.04 ON=O
+2NO InChI            InChI                1.02b "InChI=1/HNO2/c2-1-3/h(H,2,3)/f/h2H"
+2NO InChIKey         InChI                1.02b IOVCWXUNBOPUCH-QEZKKOIZCP
+2NO SMILES_CANONICAL CACTVS               3.341 "[O]N=O"
+2NO SMILES           CACTVS               3.341 "[O]N=O"
+2NO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "N(=O)[O]"
+2NO SMILES           "OpenEye OEToolkits" 1.5.0 "N(=O)[O]"
+2NO ?                acedrg               202         "dictionary generator"                  
+2NO ?                acedrg_database      11          "data source"                           
+2NO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2NO ?                refmac5              5.8.0189    "optimization tool"                     

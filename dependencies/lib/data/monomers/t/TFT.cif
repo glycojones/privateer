@@ -1,0 +1,264 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TFT      TFT '(L)-ALPHA-THREOFURANOSYL-THYMINE-3'-' non-polymer        31  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TFT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TFT           O4     O    O         0.000      0.000    0.000    0.000
+ TFT           C4     C    CR6       0.000     -1.205    0.024    0.235
+ TFT           C5     C    CR6       0.000     -2.210    0.117   -0.857
+ TFT           C5M    C    CH3       0.000     -1.714    0.182   -2.266
+ TFT           H73    H    H         0.000     -1.102   -0.659   -2.460
+ TFT           H72    H    H         0.000     -2.539    0.181   -2.928
+ TFT           H71    H    H         0.000     -1.152    1.068   -2.399
+ TFT           C6     C    CR16      0.000     -3.507    0.138   -0.527
+ TFT           H6     H    H         0.000     -4.236    0.206   -1.325
+ TFT           N3     N    NR16      0.000     -1.738   -0.031    1.514
+ TFT           H3     H    H         0.000     -1.058   -0.096    2.298
+ TFT           C2     C    CR6       0.000     -3.093   -0.009    1.863
+ TFT           O2     O    O         0.000     -3.448   -0.065    3.041
+ TFT           N1     N    NR6       0.000     -3.969    0.079    0.772
+ TFT           C1T    C    CH1       0.000     -5.389    0.112    0.980
+ TFT           H1TC   H    H         0.000     -5.636   -0.415    1.913
+ TFT           O4T    O    O2        0.000     -6.036   -0.541   -0.124
+ TFT           C4T    C    CH2       0.000     -7.048    0.331   -0.640
+ TFT           H4T1   H    H         0.000     -7.968   -0.218   -0.851
+ TFT           H4T2   H    H         0.000     -6.708    0.830   -1.550
+ TFT           C3T    C    CH1       0.000     -7.310    1.362    0.435
+ TFT           H3TC   H    H         0.000     -8.013    0.969    1.182
+ TFT           C2T    C    CH1       0.000     -5.934    1.528    1.039
+ TFT           H2TC   H    H         0.000     -5.321    2.206    0.428
+ TFT           O2T    O    OH1       0.000     -6.002    1.986    2.378
+ TFT           H2T    H    H         0.000     -6.158    2.939    2.382
+ TFT           O3T    O    O2        0.000     -7.799    2.564   -0.122
+ TFT           P      P    P         0.000     -9.184    2.515   -0.956
+ TFT           OP3    O    OP       -0.666    -10.199    2.150    0.104
+ TFT           OP1    O    OP       -0.666     -9.169    1.608   -2.167
+ TFT           OP2    O    OP       -0.666     -9.485    3.970   -1.241
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TFT      O4     n/a    C4     START
+ TFT      C4     O4     N3     .
+ TFT      C5     C4     C6     .
+ TFT      C5M    C5     H71    .
+ TFT      H73    C5M    .      .
+ TFT      H72    C5M    .      .
+ TFT      H71    C5M    .      .
+ TFT      C6     C5     H6     .
+ TFT      H6     C6     .      .
+ TFT      N3     C4     C2     .
+ TFT      H3     N3     .      .
+ TFT      C2     N3     N1     .
+ TFT      O2     C2     .      .
+ TFT      N1     C2     C1T    .
+ TFT      C1T    N1     O4T    .
+ TFT      H1TC   C1T    .      .
+ TFT      O4T    C1T    C4T    .
+ TFT      C4T    O4T    C3T    .
+ TFT      H4T1   C4T    .      .
+ TFT      H4T2   C4T    .      .
+ TFT      C3T    C4T    O3T    .
+ TFT      H3TC   C3T    .      .
+ TFT      C2T    C3T    O2T    .
+ TFT      H2TC   C2T    .      .
+ TFT      O2T    C2T    H2T    .
+ TFT      H2T    O2T    .      .
+ TFT      O3T    C3T    P      .
+ TFT      P      O3T    OP2    .
+ TFT      OP3    P      .      .
+ TFT      OP1    P      .      .
+ TFT      OP2    P      .      END
+ TFT      N1     C6     .    ADD
+ TFT      C2T    C1T    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TFT       OP1       P         deloc     1.510     0.020     1.510     0.020     
+TFT       OP2       P         deloc     1.510     0.020     1.510     0.020     
+TFT       P         O3T       single    1.610     0.020     1.610     0.020     
+TFT       OP3       P         deloc     1.510     0.020     1.510     0.020     
+TFT       O3T       C3T       single    1.426     0.020     1.426     0.020     
+TFT       N1        C6        single    1.337     0.020     1.337     0.020     
+TFT       N1        C2        single    1.410     0.020     1.410     0.020     
+TFT       C1T       N1        single    1.465     0.020     1.465     0.020     
+TFT       C6        C5        double    1.390     0.020     1.390     0.020     
+TFT       H6        C6        single    1.082     0.013     0.975     0.010     
+TFT       O2        C2        double    1.250     0.020     1.250     0.020     
+TFT       C2        N3        single    1.337     0.020     1.337     0.020     
+TFT       N3        C4        single    1.337     0.020     1.337     0.020     
+TFT       H3        N3        single    1.016     0.010     0.899     0.007     
+TFT       C4        O4        double    1.250     0.020     1.250     0.020     
+TFT       C5        C4        single    1.487     0.020     1.487     0.020     
+TFT       C5M       C5        single    1.506     0.020     1.506     0.020     
+TFT       H71       C5M       single    1.089     0.010     0.989     0.005     
+TFT       H72       C5M       single    1.089     0.010     0.989     0.005     
+TFT       H73       C5M       single    1.089     0.010     0.989     0.005     
+TFT       C2T       C1T       single    1.524     0.020     1.524     0.020     
+TFT       C2T       C3T       single    1.524     0.020     1.524     0.020     
+TFT       O2T       C2T       single    1.432     0.020     1.432     0.020     
+TFT       H2TC      C2T       single    1.089     0.010     0.989     0.005     
+TFT       C4T       O4T       single    1.426     0.020     1.426     0.020     
+TFT       C3T       C4T       single    1.524     0.020     1.524     0.020     
+TFT       H4T1      C4T       single    1.089     0.010     0.989     0.005     
+TFT       H4T2      C4T       single    1.089     0.010     0.989     0.005     
+TFT       O4T       C1T       single    1.426     0.020     1.426     0.020     
+TFT       H1TC      C1T       single    1.089     0.010     0.989     0.005     
+TFT       H3TC      C3T       single    1.089     0.010     0.989     0.005     
+TFT       H2T       O2T       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TFT      O4     C4     C5      120.000    3.000
+ TFT      O4     C4     N3      120.000    3.000
+ TFT      C5     C4     N3      120.000    3.000
+ TFT      C4     C5     C5M     120.000    3.000
+ TFT      C4     C5     C6      120.000    3.000
+ TFT      C5M    C5     C6      120.000    3.000
+ TFT      C5     C5M    H73     109.470    3.000
+ TFT      C5     C5M    H72     109.470    3.000
+ TFT      C5     C5M    H71     109.470    3.000
+ TFT      H73    C5M    H72     109.470    3.000
+ TFT      H73    C5M    H71     109.470    3.000
+ TFT      H72    C5M    H71     109.470    3.000
+ TFT      C5     C6     H6      120.000    3.000
+ TFT      C5     C6     N1      120.000    3.000
+ TFT      H6     C6     N1      120.000    3.000
+ TFT      C4     N3     H3      120.000    3.000
+ TFT      C4     N3     C2      120.000    3.000
+ TFT      H3     N3     C2      120.000    3.000
+ TFT      N3     C2     O2      120.000    3.000
+ TFT      N3     C2     N1      120.000    3.000
+ TFT      O2     C2     N1      120.000    3.000
+ TFT      C2     N1     C1T     120.000    3.000
+ TFT      C2     N1     C6      120.000    3.000
+ TFT      C1T    N1     C6      120.000    3.000
+ TFT      N1     C1T    H1TC    109.470    3.000
+ TFT      N1     C1T    O4T     109.470    3.000
+ TFT      N1     C1T    C2T     109.470    3.000
+ TFT      H1TC   C1T    O4T     109.470    3.000
+ TFT      H1TC   C1T    C2T     108.340    3.000
+ TFT      O4T    C1T    C2T     109.470    3.000
+ TFT      C1T    O4T    C4T     111.800    3.000
+ TFT      O4T    C4T    H4T1    109.470    3.000
+ TFT      O4T    C4T    H4T2    109.470    3.000
+ TFT      O4T    C4T    C3T     109.470    3.000
+ TFT      H4T1   C4T    H4T2    107.900    3.000
+ TFT      H4T1   C4T    C3T     109.470    3.000
+ TFT      H4T2   C4T    C3T     109.470    3.000
+ TFT      C4T    C3T    H3TC    108.340    3.000
+ TFT      C4T    C3T    C2T     111.000    3.000
+ TFT      C4T    C3T    O3T     109.470    3.000
+ TFT      H3TC   C3T    C2T     108.340    3.000
+ TFT      H3TC   C3T    O3T     109.470    3.000
+ TFT      C2T    C3T    O3T     109.470    3.000
+ TFT      C3T    C2T    H2TC    108.340    3.000
+ TFT      C3T    C2T    O2T     109.470    3.000
+ TFT      C3T    C2T    C1T     111.000    3.000
+ TFT      H2TC   C2T    O2T     109.470    3.000
+ TFT      H2TC   C2T    C1T     108.340    3.000
+ TFT      O2T    C2T    C1T     109.470    3.000
+ TFT      C2T    O2T    H2T     109.470    3.000
+ TFT      C3T    O3T    P       120.500    3.000
+ TFT      O3T    P      OP3     108.200    3.000
+ TFT      O3T    P      OP1     108.200    3.000
+ TFT      O3T    P      OP2     108.200    3.000
+ TFT      OP3    P      OP1     119.900    3.000
+ TFT      OP3    P      OP2     119.900    3.000
+ TFT      OP1    P      OP2     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TFT      CONST_1  O4     C4     C5     C6       180.000    0.000   0
+ TFT      var_1    C4     C5     C5M    H71      -63.628   20.000   1
+ TFT      CONST_2  C4     C5     C6     N1         0.000    0.000   0
+ TFT      CONST_3  O4     C4     N3     C2       180.000    0.000   0
+ TFT      CONST_4  C4     N3     C2     N1         0.000    0.000   0
+ TFT      CONST_5  N3     C2     N1     C1T      180.000    0.000   0
+ TFT      CONST_6  C2     N1     C6     C5         0.000    0.000   0
+ TFT      var_2    C2     N1     C1T    O4T     -147.331   20.000   1
+ TFT      var_3    N1     C1T    O4T    C4T     -120.000   20.000   1
+ TFT      var_4    C1T    O4T    C4T    C3T      -30.000   20.000   1
+ TFT      var_5    O4T    C4T    C3T    O3T      150.000   20.000   3
+ TFT      var_6    C4T    C3T    C2T    O2T     -150.000   20.000   3
+ TFT      var_7    C3T    C2T    C1T    N1       150.000   20.000   3
+ TFT      var_8    C3T    C2T    O2T    H2T      -79.579   20.000   1
+ TFT      var_9    C4T    C3T    O3T    P         60.045   20.000   1
+ TFT      var_10   C3T    O3T    P      OP2      173.051   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TFT      chir_01  C2T    C1T    C3T    O2T       negativ
+ TFT      chir_02  C1T    N1     C2T    O4T       negativ
+ TFT      chir_03  C3T    O3T    C2T    C4T       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TFT      plan-1    N1        0.020
+ TFT      plan-1    C6        0.020
+ TFT      plan-1    C2        0.020
+ TFT      plan-1    C1T       0.020
+ TFT      plan-1    N3        0.020
+ TFT      plan-1    C4        0.020
+ TFT      plan-1    C5        0.020
+ TFT      plan-1    H6        0.020
+ TFT      plan-1    O2        0.020
+ TFT      plan-1    H3        0.020
+ TFT      plan-1    O4        0.020
+ TFT      plan-1    C5M       0.020
+# ------------------------------------------------------

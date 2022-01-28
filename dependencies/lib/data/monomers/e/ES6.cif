@@ -1,0 +1,143 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ES6     ES6     "2-oxo-1,2-dihydropyridine-3-carboxylicacid"     NON-POLYMER     14     10     .     
+#
+data_comp_ES6
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ES6     O01     O       O       0       1.738       -1.198      0.000       
+ES6     C02     C       C       0       1.615       0.043       -0.000      
+ES6     O03     O       OC      -1      2.598       0.813       -0.000      
+ES6     C04     C       CR6     0       0.201       0.663       -0.000      
+ES6     C05     C       CR16    0       0.047       2.073       0.000       
+ES6     C06     C       CR16    0       -1.226      2.671       0.000       
+ES6     C07     C       CR16    0       -2.316      1.877       0.000       
+ES6     N08     N       NR6     0       -2.197      0.520       -0.000      
+ES6     C09     C       CR6     0       -0.993      -0.154      -0.000      
+ES6     O10     O       O       0       -1.019      -1.417      -0.000      
+ES6     H05     H       H       0       0.815       2.626       0.000       
+ES6     H06     H       H       0       -1.316      3.613       0.000       
+ES6     H07     H       H       0       -3.186      2.254       0.000       
+ES6     HN08    H       H       0       -2.953      0.022       -0.000      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ES6       O01       C02       DOUBLE    n         1.244     0.020     1.244     0.020     
+ES6       C02       O03       SINGLE    n         1.244     0.020     1.244     0.020     
+ES6       C02       C04       SINGLE    n         1.498     0.020     1.498     0.020     
+ES6       C04       C05       DOUBLE    y         1.400     0.014     1.400     0.014     
+ES6       C04       C09       SINGLE    y         1.434     0.010     1.434     0.010     
+ES6       C05       C06       SINGLE    y         1.401     0.010     1.401     0.010     
+ES6       C06       C07       DOUBLE    y         1.344     0.010     1.344     0.010     
+ES6       C07       N08       SINGLE    y         1.355     0.010     1.355     0.010     
+ES6       N08       C09       SINGLE    y         1.371     0.010     1.371     0.010     
+ES6       C09       O10       DOUBLE    n         1.262     0.010     1.262     0.010     
+ES6       C05       H05       SINGLE    n         1.082     0.013     0.948     0.015     
+ES6       C06       H06       SINGLE    n         1.082     0.013     0.946     0.010     
+ES6       C07       H07       SINGLE    n         1.082     0.013     0.948     0.016     
+ES6       N08       HN08      SINGLE    n         1.016     0.010     0.904     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ES6         O01         C02         O03     124.413    1.50
+ES6         O01         C02         C04     117.793    1.50
+ES6         O03         C02         C04     117.793    1.50
+ES6         C02         C04         C05     119.954    1.50
+ES6         C02         C04         C09     119.954    1.55
+ES6         C05         C04         C09     120.092    1.50
+ES6         C04         C05         C06     121.374    1.50
+ES6         C04         C05         H05     118.881    1.50
+ES6         C06         C05         H05     119.746    1.50
+ES6         C05         C06         C07     118.533    1.50
+ES6         C05         C06         H06     120.760    1.50
+ES6         C07         C06         H06     120.707    1.50
+ES6         C06         C07         N08     120.609    1.50
+ES6         C06         C07         H07     120.648    1.93
+ES6         N08         C07         H07     118.744    2.07
+ES6         C07         N08         C09     123.298    1.50
+ES6         C07         N08        HN08     119.161    1.70
+ES6         C09         N08        HN08     117.541    1.50
+ES6         C04         C09         N08     116.095    1.50
+ES6         C04         C09         O10     124.552    1.50
+ES6         N08         C09         O10     119.353    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ES6             sp2_sp2_1         O01         C02         C04         C05     180.000   10.00     2
+ES6       const_sp2_sp2_3         C02         C04         C05         C06     180.000   10.00     2
+ES6              const_24         C02         C04         C09         O10       0.000   10.00     2
+ES6       const_sp2_sp2_5         C04         C05         C06         C07       0.000   10.00     2
+ES6       const_sp2_sp2_9         C05         C06         C07         N08       0.000   10.00     2
+ES6              const_13         C06         C07         N08         C09       0.000   10.00     2
+ES6              const_19         O10         C09         N08         C07     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ES6    plan-1         C02   0.020
+ES6    plan-1         C04   0.020
+ES6    plan-1         C05   0.020
+ES6    plan-1         C06   0.020
+ES6    plan-1         C07   0.020
+ES6    plan-1         C09   0.020
+ES6    plan-1         H05   0.020
+ES6    plan-1         H06   0.020
+ES6    plan-1         H07   0.020
+ES6    plan-1        HN08   0.020
+ES6    plan-1         N08   0.020
+ES6    plan-1         O10   0.020
+ES6    plan-2         C02   0.020
+ES6    plan-2         C04   0.020
+ES6    plan-2         O01   0.020
+ES6    plan-2         O03   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ES6 SMILES_CANONICAL CACTVS               3.352 "OC(=O)C1=CC=CNC1=O"
+ES6 SMILES           CACTVS               3.352 "OC(=O)C1=CC=CNC1=O"
+ES6 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C1=CNC(=O)C(=C1)C(=O)O"
+ES6 SMILES           "OpenEye OEToolkits" 1.7.0 "C1=CNC(=O)C(=C1)C(=O)O"
+ES6 InChI            InChI                1.03  "InChI=1S/C6H5NO3/c8-5-4(6(9)10)2-1-3-7-5/h1-3H,(H,7,8)(H,9,10)"
+ES6 InChIKey         InChI                1.03  UEYQJQVBUVAELZ-UHFFFAOYSA-N
+ES6 ?                acedrg               190         "dictionary generator"                  
+ES6 ?                acedrg_database      11          "data source"                           
+ES6 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ES6 ?                refmac5              5.8.0158    "optimization tool"                     

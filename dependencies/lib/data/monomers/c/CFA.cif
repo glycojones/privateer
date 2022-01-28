@@ -1,0 +1,161 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CFA     CFA     "(2,4-DICHLOROPHENOXY)ACETICACID"     NON-POLYMER     18     13     .     
+#
+data_comp_CFA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CFA     C1      C       C       0       -3.578      5.616       -4.270      
+CFA     C2      C       CH2     0       -2.370      5.262       -3.418      
+CFA     "C1'"   C       CR6     0       0.006       5.768       -3.236      
+CFA     "C2'"   C       CR6     0       1.090       6.428       -3.834      
+CFA     "C3'"   C       CR16    0       2.378       6.305       -3.337      
+CFA     "C4'"   C       CR6     0       2.596       5.511       -2.219      
+CFA     "C5'"   C       CR16    0       1.555       4.850       -1.603      
+CFA     CL3     CL      CL      0       0.837       7.423       -5.230      
+CFA     "C6'"   C       CR16    0       0.262       4.977       -2.106      
+CFA     O1      O       OC      -1      -3.835      4.868       -5.233      
+CFA     O2      O       O       0       -4.227      6.630       -3.945      
+CFA     "O1'"   O       O2      0       -1.214      5.983       -3.827      
+CFA     CL4     CL      CL      0       4.208       5.351       -1.592      
+CFA     H2C1    H       H       0       -2.196      4.306       -3.488      
+CFA     H2C2    H       H       0       -2.564      5.466       -2.485      
+CFA     "H3'"   H       H       0       3.089       6.751       -3.752      
+CFA     "H5'"   H       H       0       1.716       4.316       -0.847      
+CFA     "H6'"   H       H       0       -0.435      4.524       -1.678      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CFA       C1        C2        SINGLE    n         1.520     0.010     1.520     0.010     
+CFA       C1        O1        SINGLE    n         1.247     0.019     1.247     0.019     
+CFA       C1        O2        DOUBLE    n         1.247     0.019     1.247     0.019     
+CFA       C2        "O1'"     SINGLE    n         1.420     0.010     1.420     0.010     
+CFA       "C1'"     "C2'"     DOUBLE    y         1.392     0.010     1.392     0.010     
+CFA       "C1'"     "C6'"     SINGLE    y         1.389     0.010     1.389     0.010     
+CFA       "C1'"     "O1'"     SINGLE    n         1.364     0.010     1.364     0.010     
+CFA       "C2'"     "C3'"     SINGLE    y         1.379     0.010     1.379     0.010     
+CFA       "C2'"     CL3       SINGLE    n         1.731     0.010     1.731     0.010     
+CFA       "C3'"     "C4'"     DOUBLE    y         1.383     0.010     1.383     0.010     
+CFA       "C4'"     "C5'"     SINGLE    y         1.373     0.010     1.373     0.010     
+CFA       "C4'"     CL4       SINGLE    n         1.738     0.010     1.738     0.010     
+CFA       "C5'"     "C6'"     DOUBLE    y         1.385     0.010     1.385     0.010     
+CFA       C2        H2C1      SINGLE    n         1.089     0.010     0.974     0.010     
+CFA       C2        H2C2      SINGLE    n         1.089     0.010     0.974     0.010     
+CFA       "C3'"     "H3'"     SINGLE    n         1.082     0.013     0.937     0.011     
+CFA       "C5'"     "H5'"     SINGLE    n         1.082     0.013     0.939     0.019     
+CFA       "C6'"     "H6'"     SINGLE    n         1.082     0.013     0.935     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CFA          C2          C1          O1     117.215    2.48
+CFA          C2          C1          O2     117.215    2.48
+CFA          O1          C1          O2     125.570    1.50
+CFA          C1          C2       "O1'"     111.607    2.58
+CFA          C1          C2        H2C1     109.314    1.50
+CFA          C1          C2        H2C2     109.314    1.50
+CFA       "O1'"          C2        H2C1     109.378    1.50
+CFA       "O1'"          C2        H2C2     109.378    1.50
+CFA        H2C1          C2        H2C2     108.052    1.50
+CFA       "C2'"       "C1'"       "C6'"     118.424    1.50
+CFA       "C2'"       "C1'"       "O1'"     116.391    1.50
+CFA       "C6'"       "C1'"       "O1'"     125.185    1.50
+CFA       "C1'"       "C2'"       "C3'"     121.407    1.50
+CFA       "C1'"       "C2'"         CL3     119.261    1.50
+CFA       "C3'"       "C2'"         CL3     119.331    1.50
+CFA       "C2'"       "C3'"       "C4'"     119.042    1.50
+CFA       "C2'"       "C3'"       "H3'"     120.278    1.50
+CFA       "C4'"       "C3'"       "H3'"     120.681    1.50
+CFA       "C3'"       "C4'"       "C5'"     121.523    1.50
+CFA       "C3'"       "C4'"         CL4     119.016    1.50
+CFA       "C5'"       "C4'"         CL4     119.461    1.50
+CFA       "C4'"       "C5'"       "C6'"     119.543    1.50
+CFA       "C4'"       "C5'"       "H5'"     120.306    1.50
+CFA       "C6'"       "C5'"       "H5'"     120.151    1.50
+CFA       "C1'"       "C6'"       "C5'"     120.061    1.50
+CFA       "C1'"       "C6'"       "H6'"     119.983    1.50
+CFA       "C5'"       "C6'"       "H6'"     119.955    1.50
+CFA          C2       "O1'"       "C1'"     117.721    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CFA             sp2_sp3_2          O1          C1          C2       "O1'"     120.000   10.00     6
+CFA             sp3_sp3_1          C1          C2       "O1'"       "C1'"     180.000   10.00     3
+CFA             sp2_sp2_1       "C2'"       "C1'"       "O1'"          C2     180.000   10.00     2
+CFA       const_sp2_sp2_4       "O1'"       "C1'"       "C2'"         CL3       0.000   10.00     2
+CFA              const_23       "O1'"       "C1'"       "C6'"       "C5'"     180.000   10.00     2
+CFA       const_sp2_sp2_7         CL3       "C2'"       "C3'"       "C4'"     180.000   10.00     2
+CFA              const_10       "C2'"       "C3'"       "C4'"         CL4     180.000   10.00     2
+CFA              const_15         CL4       "C4'"       "C5'"       "C6'"     180.000   10.00     2
+CFA              const_17       "C4'"       "C5'"       "C6'"       "C1'"       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CFA    plan-1       "C1'"   0.020
+CFA    plan-1       "C2'"   0.020
+CFA    plan-1       "C3'"   0.020
+CFA    plan-1       "C4'"   0.020
+CFA    plan-1       "C5'"   0.020
+CFA    plan-1       "C6'"   0.020
+CFA    plan-1         CL3   0.020
+CFA    plan-1         CL4   0.020
+CFA    plan-1       "H3'"   0.020
+CFA    plan-1       "H5'"   0.020
+CFA    plan-1       "H6'"   0.020
+CFA    plan-1       "O1'"   0.020
+CFA    plan-2          C1   0.020
+CFA    plan-2          C2   0.020
+CFA    plan-2          O1   0.020
+CFA    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CFA SMILES           ACDLabs              10.04 "Clc1cc(Cl)ccc1OCC(=O)O"
+CFA SMILES_CANONICAL CACTVS               3.341 "OC(=O)COc1ccc(Cl)cc1Cl"
+CFA SMILES           CACTVS               3.341 "OC(=O)COc1ccc(Cl)cc1Cl"
+CFA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1Cl)Cl)OCC(=O)O"
+CFA SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1Cl)Cl)OCC(=O)O"
+CFA InChI            InChI                1.03  "InChI=1S/C8H6Cl2O3/c9-5-1-2-7(6(10)3-5)13-4-8(11)12/h1-3H,4H2,(H,11,12)"
+CFA InChIKey         InChI                1.03  OVSKIKFHRZPJSS-UHFFFAOYSA-N
+CFA ?                acedrg               190         "dictionary generator"                  
+CFA ?                acedrg_database      11          "data source"                           
+CFA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CFA ?                refmac5              5.8.0158    "optimization tool"                     

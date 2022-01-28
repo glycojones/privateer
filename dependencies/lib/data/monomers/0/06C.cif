@@ -1,0 +1,72 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+06C     06C      Iodomethane     NON-POLYMER     5     2     .     
+#
+data_comp_06C
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+06C     C1      C       CH3     0       -0.206      -0.004      -0.004      
+06C     I1      I       I       0       1.947       0.044       0.035       
+06C     H       H       H       0       -0.550      0.907       -0.010      
+06C     HA      H       H       0       -0.534      -0.470      0.785       
+06C     HB      H       H       0       -0.506      -0.470      -0.805      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+06C       C1        I1        SINGLE    n         2.154     0.020     2.154     0.020     
+06C       C1        H         SINGLE    n         1.089     0.010     0.974     0.010     
+06C       C1        HA        SINGLE    n         1.089     0.010     0.974     0.010     
+06C       C1        HB        SINGLE    n         1.089     0.010     0.974     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+06C          I1          C1           H     109.465    1.50
+06C          I1          C1          HA     109.465    1.50
+06C          I1          C1          HB     109.465    1.50
+06C           H          C1          HA     109.477    1.50
+06C           H          C1          HB     109.477    1.50
+06C          HA          C1          HB     109.477    1.50
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+06C SMILES           ACDLabs              12.01 IC
+06C SMILES_CANONICAL CACTVS               3.370 CI
+06C SMILES           CACTVS               3.370 CI
+06C SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 CI
+06C SMILES           "OpenEye OEToolkits" 1.7.0 CI
+06C InChI            InChI                1.03  InChI=1S/CH3I/c1-2/h1H3
+06C InChIKey         InChI                1.03  INQOMBQAUSQDDS-UHFFFAOYSA-N
+06C ?                acedrg               202         "dictionary generator"                  
+06C ?                acedrg_database      11          "data source"                           
+06C ?                rdkit                2017.03.2   "Chemoinformatics tool"
+06C ?                refmac5              5.8.0189    "optimization tool"                     

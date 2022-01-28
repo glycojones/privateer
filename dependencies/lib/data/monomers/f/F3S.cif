@@ -1,0 +1,101 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+F3S      F3S 'FE3-S4 CLUSTER                      ' non-polymer         7   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_F3S
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ F3S           S3     S    ST        0.000     -1.136   -0.000    0.456
+ F3S           FE1    FE   FE        0.000     -2.422   -1.763    0.452
+ F3S           FE4    FE   FE        0.000     -2.721    1.300   -0.292
+ F3S           S2     S    S2        0.000     -3.482   -0.616   -1.140
+ F3S           S4     S    S2        0.000     -2.363    2.349    1.644
+ F3S           FE3    FE   FE        0.000     -1.583    0.463    2.541
+ F3S           S1     S    S2        0.000     -1.966   -1.732    2.635
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+F3S       FE1       S1        single    2.260     0.030     2.260     0.030     
+F3S       FE1       S2        single    2.260     0.030     2.260     0.030     
+F3S       FE1       S3        single    2.260     0.030     2.260     0.030     
+F3S       S1        FE3       single    2.260     0.030     2.260     0.030     
+F3S       FE3       S3        single    2.260     0.030     2.260     0.030     
+F3S       FE3       S4        single    2.260     0.030     2.260     0.030     
+F3S       S2        FE4       single    2.260     0.030     2.260     0.030     
+F3S       FE4       S3        single    2.260     0.030     2.260     0.030     
+F3S       S4        FE4       single    2.260     0.030     2.260     0.030     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ F3S      FE1    S3     FE4       75.00    6.000
+ F3S      FE1    S3     FE3       75.00    6.000
+ F3S      FE4    S3     FE3       75.00    6.000
+ F3S      FE3    S1     FE1      75.000    6.000
+ F3S      FE4    S2     FE1       75.00    6.000
+ F3S      FE4    S4     FE3       75.00    6.000
+ F3S      S3     FE1    S1      112.000    6.000
+ F3S      S3     FE1    S2      112.000    6.000
+ F3S      S1     FE1    S2      112.000    6.000
+ F3S      S3     FE4    S2      112.003    6.000
+ F3S      S3     FE4    S4      112.004    6.000
+ F3S      S2     FE4    S4      112.005    6.000
+ F3S      S4     FE3    S1      112.005    6.000
+ F3S      S4     FE3    S3      112.005    6.000
+ F3S      S1     FE3    S3      112.003    6.000
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ F3S      chir_02  FE1    S3     .      S1        cross5
+                   .      .      S2     .      .
+ F3S      chir_03  FE3    S3     .      S4        cross5
+                   .      .      S1     .      .
+ F3S      chir_04  FE4    S3     .      S2        cross5
+                   .      .      S4     .      .
+# ------------------------------------------------------

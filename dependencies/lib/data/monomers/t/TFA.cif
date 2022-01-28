@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TFA     TFA      "trifluoroacetic acid"     non-polymer     7     7     .     
+#
+data_comp_TFA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TFA     C1      C       C       0       0.912       0.056       -0.019      
+TFA     C2      C       CT      0       -0.622      -0.051      0.009       
+TFA     O       O       O       0       1.524       -1.014      0.178       
+TFA     F1      F       F       0       -1.220      0.967       -0.589      
+TFA     F2      F       F       0       -1.066      -1.141      -0.593      
+TFA     F3      F       F       0       -1.099      -0.088      1.240       
+TFA     OXT     O       OC      -1      1.369       1.200       -0.228      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TFA       C1        C2        SINGLE    n         1.530     0.020     1.530     0.020     
+TFA       C1        O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TFA       C1        OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TFA       C2        F1        SINGLE    n         1.321     0.020     1.321     0.020     
+TFA       C2        F2        SINGLE    n         1.321     0.020     1.321     0.020     
+TFA       C2        F3        SINGLE    n         1.321     0.020     1.321     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TFA          C2          C1           O     115.258    1.50
+TFA          C2          C1         OXT     115.258    1.50
+TFA           O          C1         OXT     129.483    1.50
+TFA          C1          C2          F1     112.591    1.64
+TFA          C1          C2          F2     112.591    1.64
+TFA          C1          C2          F3     112.591    1.64
+TFA          F1          C2          F2     106.549    1.71
+TFA          F1          C2          F3     106.549    1.71
+TFA          F2          C2          F3     106.549    1.71
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TFA             sp2_sp3_1           O          C1          C2          F1       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TFA    plan-1          C1   0.020
+TFA    plan-1          C2   0.020
+TFA    plan-1           O   0.020
+TFA    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TFA SMILES           ACDLabs              12.01 "FC(F)(F)C(=O)O"
+TFA SMILES_CANONICAL CACTVS               3.370 "OC(=O)C(F)(F)F"
+TFA SMILES           CACTVS               3.370 "OC(=O)C(F)(F)F"
+TFA SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(=O)(C(F)(F)F)O"
+TFA SMILES           "OpenEye OEToolkits" 1.7.0 "C(=O)(C(F)(F)F)O"
+TFA InChI            InChI                1.03  "InChI=1S/C2HF3O2/c3-2(4,5)1(6)7/h(H,6,7)"
+TFA InChIKey         InChI                1.03  DTQVDTLACAAQTR-UHFFFAOYSA-N
+TFA ?                acedrg               202         "dictionary generator"                  
+TFA ?                acedrg_database      11          "data source"                           
+TFA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TFA ?                refmac5              5.8.0189    "optimization tool"                     

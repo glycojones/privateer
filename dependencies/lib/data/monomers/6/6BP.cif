@@ -1,0 +1,93 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+6BP      6BP 'HEXABROMOPLATINATE(IV)              ' non-polymer         7   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_6BP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+6BP    PT    PT    PT       0       0.000       0.000       0.000
+6BP   BR1    BR    BR   0.000      -1.768       0.000       1.768
+6BP   BR2    BR    BR   0.000       1.768      -0.000      -1.768
+6BP   BR3    BR    BR   0.000       1.768       0.000       1.768
+6BP   BR4    BR    BR   0.000      -1.768      -0.000      -1.768
+6BP   BR5    BR    BR  -1.000      -0.000       2.500      -0.000
+6BP   BR6    BR    BR  -1.000       0.000      -2.500       0.000
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+6BP       PT        BR1       SING      2.487     0.020     2.487     0.020     
+6BP       PT        BR2       SING      2.487     0.020     2.487     0.020     
+6BP       PT        BR3       SING      2.487     0.020     2.487     0.020     
+6BP       PT        BR4       SING      2.487     0.020     2.487     0.020     
+6BP       PT        BR5       SING      2.487     0.020     2.487     0.020     
+6BP       PT        BR6       SING      2.487     0.020     2.487     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+6BP   BR1    PT   BR2   90.000      3.00
+6BP   BR1    PT   BR2  180.000      3.00
+6BP   BR1    PT   BR3   90.000      3.00
+6BP   BR1    PT   BR3  180.000      3.00
+6BP   BR1    PT   BR4   90.000      3.00
+6BP   BR1    PT   BR4  180.000      3.00
+6BP   BR1    PT   BR5   90.000      3.00
+6BP   BR1    PT   BR5  180.000      3.00
+6BP   BR1    PT   BR6   90.000      3.00
+6BP   BR1    PT   BR6  180.000      3.00
+6BP   BR2    PT   BR3   90.000      3.00
+6BP   BR2    PT   BR3  180.000      3.00
+6BP   BR2    PT   BR4   90.000      3.00
+6BP   BR2    PT   BR4  180.000      3.00
+6BP   BR2    PT   BR5   90.000      3.00
+6BP   BR2    PT   BR5  180.000      3.00
+6BP   BR2    PT   BR6   90.000      3.00
+6BP   BR2    PT   BR6  180.000      3.00
+6BP   BR3    PT   BR4   90.000      3.00
+6BP   BR3    PT   BR4  180.000      3.00
+6BP   BR3    PT   BR5   90.000      3.00
+6BP   BR3    PT   BR5  180.000      3.00
+6BP   BR3    PT   BR6   90.000      3.00
+6BP   BR3    PT   BR6  180.000      3.00
+6BP   BR4    PT   BR5   90.000      3.00
+6BP   BR4    PT   BR5  180.000      3.00
+6BP   BR4    PT   BR6   90.000      3.00
+6BP   BR4    PT   BR6  180.000      3.00
+6BP   BR5    PT   BR6   90.000      3.00
+6BP   BR5    PT   BR6  180.000      3.00

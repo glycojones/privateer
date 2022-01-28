@@ -1,0 +1,174 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B27      B27 '(2R,3S) 3-amino-4-mercapto-2-butanol' non-polymer        18   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_B27
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ B27           SG     S    SH1       0.000      0.000    0.000    0.000
+ B27           HSG    H    H         0.000      0.639   -1.150   -0.199
+ B27           CX     C    CH2       0.000     -1.655   -0.726    0.155
+ B27           HX     H    H         0.000     -1.667   -1.427    0.992
+ B27           HXA    H    H         0.000     -1.907   -1.257   -0.766
+ B27           CA     C    CH1       0.000     -2.679    0.383    0.402
+ B27           HA     H    H         0.000     -2.376    0.972    1.279
+ B27           N      N    NH2       0.000     -2.747    1.258   -0.776
+ B27           HNA    H    H         0.000     -2.528    2.244   -0.693
+ B27           HN     H    H         0.000     -3.012    0.882   -1.678
+ B27           CB     C    CH1       0.000     -4.054   -0.238    0.656
+ B27           HB     H    H         0.000     -4.026   -0.821    1.587
+ B27           CG2    C    CH3       0.000     -5.099    0.871    0.780
+ B27           HG2B   H    H         0.000     -4.846    1.508    1.587
+ B27           HG2A   H    H         0.000     -5.128    1.434   -0.117
+ B27           HG2    H    H         0.000     -6.052    0.442    0.957
+ B27           OG1    O    OH1       0.000     -4.396   -1.097   -0.433
+ B27           HOG1   H    H         0.000     -4.422   -0.584   -1.252
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B27      SG     n/a    CX     START
+ B27      HSG    SG     .      .
+ B27      CX     SG     CA     .
+ B27      HX     CX     .      .
+ B27      HXA    CX     .      .
+ B27      CA     CX     CB     .
+ B27      HA     CA     .      .
+ B27      N      CA     HN     .
+ B27      HNA    N      .      .
+ B27      HN     N      .      .
+ B27      CB     CA     OG1    .
+ B27      HB     CB     .      .
+ B27      CG2    CB     HG2    .
+ B27      HG2B   CG2    .      .
+ B27      HG2A   CG2    .      .
+ B27      HG2    CG2    .      .
+ B27      OG1    CB     HOG1   .
+ B27      HOG1   OG1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B27       HN        N         single    1.036     0.016     0.914     0.007     
+B27       N         CA        single    1.450     0.020     1.450     0.020     
+B27       HNA       N         single    1.036     0.016     0.914     0.007     
+B27       CA        CX        single    1.524     0.020     1.524     0.020     
+B27       CB        CA        single    1.524     0.020     1.524     0.020     
+B27       HA        CA        single    1.089     0.010     0.989     0.005     
+B27       CG2       CB        single    1.524     0.020     1.524     0.020     
+B27       OG1       CB        single    1.432     0.020     1.432     0.020     
+B27       HB        CB        single    1.089     0.010     0.989     0.005     
+B27       HG2A      CG2       single    1.089     0.010     0.989     0.005     
+B27       HG2B      CG2       single    1.089     0.010     0.989     0.005     
+B27       HG2       CG2       single    1.089     0.010     0.989     0.005     
+B27       HOG1      OG1       single    0.970     0.012     0.839     0.014     
+B27       CX        SG        single    1.810     0.020     1.810     0.020     
+B27       HSG       SG        single    1.338     0.010     1.171     0.208     
+B27       HX        CX        single    1.089     0.010     0.989     0.005     
+B27       HXA       CX        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ B27      HSG    SG     CX       96.000    3.000
+ B27      SG     CX     HX      109.470    3.000
+ B27      SG     CX     HXA     109.470    3.000
+ B27      SG     CX     CA      112.500    3.000
+ B27      HX     CX     HXA     107.900    3.000
+ B27      HX     CX     CA      109.470    3.000
+ B27      HXA    CX     CA      109.470    3.000
+ B27      CX     CA     HA      108.340    3.000
+ B27      CX     CA     N       109.470    3.000
+ B27      CX     CA     CB      111.000    3.000
+ B27      HA     CA     N       109.470    3.000
+ B27      HA     CA     CB      108.340    3.000
+ B27      N      CA     CB      109.470    3.000
+ B27      CA     N      HNA     120.000    3.000
+ B27      CA     N      HN      120.000    3.000
+ B27      HNA    N      HN      120.000    3.000
+ B27      CA     CB     HB      108.340    3.000
+ B27      CA     CB     CG2     111.000    3.000
+ B27      CA     CB     OG1     109.470    3.000
+ B27      HB     CB     CG2     108.340    3.000
+ B27      HB     CB     OG1     109.470    3.000
+ B27      CG2    CB     OG1     109.470    3.000
+ B27      CB     CG2    HG2B    109.470    3.000
+ B27      CB     CG2    HG2A    109.470    3.000
+ B27      CB     CG2    HG2     109.470    3.000
+ B27      HG2B   CG2    HG2A    109.470    3.000
+ B27      HG2B   CG2    HG2     109.470    3.000
+ B27      HG2A   CG2    HG2     109.470    3.000
+ B27      CB     OG1    HOG1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ B27      var_1    HSG    SG     CX     CA      -179.984   20.000   1
+ B27      var_2    SG     CX     CA     CB      -175.015   20.000   3
+ B27      var_3    CX     CA     N      HN        60.043   20.000   1
+ B27      var_4    CX     CA     CB     OG1      -54.995   20.000   3
+ B27      var_5    CA     CB     CG2    HG2     -179.975   20.000   3
+ B27      var_6    CA     CB     OG1    HOG1     -60.086   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ B27      chir_01  CA     N      CB     CX        negativ
+ B27      chir_02  CB     CA     CG2    OG1       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ B27      plan-1    N         0.020
+ B27      plan-1    CA        0.020
+ B27      plan-1    HN        0.020
+ B27      plan-1    HNA       0.020
+# ------------------------------------------------------

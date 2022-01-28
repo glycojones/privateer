@@ -1,0 +1,279 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MGG      MGG '2-(2-CARBOXY-ACETYLAMINO)-5-GUANIDIN' non-polymer        33  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MGG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MGG           OXT    O    OC       -0.500      0.000    0.000    0.000
+ MGG           C      C    C         0.000     -0.778    0.875   -0.442
+ MGG           O      O    OC       -0.500     -1.273    0.818   -1.589
+ MGG           CA     C    CH1       0.000     -1.026    1.977    0.573
+ MGG           HA     H    H         0.000     -0.712    2.932    0.129
+ MGG           N      N    NH1       0.000     -0.190    1.716    1.743
+ MGG           H      H    H         0.000     -0.005    0.761    2.015
+ MGG           C3     C    C         0.000      0.351    2.742    2.484
+ MGG           C2     C    CH2       0.000      1.191    2.215    3.625
+ MGG           H21    H    H         0.000      2.015    2.919    3.759
+ MGG           H22    H    H         0.000      1.587    1.250    3.304
+ MGG           C1     C    C         0.000      0.455    2.049    4.927
+ MGG           O1     O    OC       -0.500      1.208    1.698    5.863
+ MGG           O12    O    OC       -0.500     -0.772    2.251    5.070
+ MGG           O3     O    O         0.000      0.205    3.942    2.264
+ MGG           CB     C    CH2       0.000     -2.511    2.086    0.952
+ MGG           HB2    H    H         0.000     -3.059    2.287    0.029
+ MGG           HB3    H    H         0.000     -2.604    2.942    1.623
+ MGG           CG     C    CH2       0.000     -3.089    0.834    1.630
+ MGG           HG2    H    H         0.000     -2.486    0.622    2.516
+ MGG           HG3    H    H         0.000     -3.006    0.002    0.928
+ MGG           CD     C    CH2       0.000     -4.551    1.015    2.038
+ MGG           HD2    H    H         0.000     -4.900    0.092    2.506
+ MGG           HD3    H    H         0.000     -5.142    1.213    1.142
+ MGG           NE     N    NH1       0.000     -4.697    2.112    2.965
+ MGG           HE     H    H         0.000     -5.017    3.002    2.611
+ MGG           CZ     C    C         0.000     -4.415    1.998    4.337
+ MGG           NH2    N    NH2       1.000     -3.974    0.784    4.854
+ MGG           HH22   H    H         0.000     -3.763    0.679    5.847
+ MGG           HH21   H    H         0.000     -3.849   -0.031    4.251
+ MGG           NH1    N    NH2       0.000     -4.570    3.083    5.194
+ MGG           HH12   H    H         0.000     -4.892    3.988    4.846
+ MGG           HH11   H    H         0.000     -4.366    3.001    6.191
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MGG      OXT    n/a    C      START
+ MGG      C      OXT    CA     .
+ MGG      O      C      .      .
+ MGG      CA     C      CB     .
+ MGG      HA     CA     .      .
+ MGG      N      CA     C3     .
+ MGG      H      N      .      .
+ MGG      C3     N      O3     .
+ MGG      C2     C3     C1     .
+ MGG      H21    C2     .      .
+ MGG      H22    C2     .      .
+ MGG      C1     C2     O12    .
+ MGG      O1     C1     .      .
+ MGG      O12    C1     .      .
+ MGG      O3     C3     .      .
+ MGG      CB     CA     CG     .
+ MGG      HB2    CB     .      .
+ MGG      HB3    CB     .      .
+ MGG      CG     CB     CD     .
+ MGG      HG2    CG     .      .
+ MGG      HG3    CG     .      .
+ MGG      CD     CG     NE     .
+ MGG      HD2    CD     .      .
+ MGG      HD3    CD     .      .
+ MGG      NE     CD     CZ     .
+ MGG      HE     NE     .      .
+ MGG      CZ     NE     NH1    .
+ MGG      NH2    CZ     HH21   .
+ MGG      HH22   NH2    .      .
+ MGG      HH21   NH2    .      .
+ MGG      NH1    CZ     HH11   .
+ MGG      HH12   NH1    .      .
+ MGG      HH11   NH1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MGG       N         CA        single    1.450     0.020     1.450     0.020     
+MGG       C3        N         single    1.330     0.020     1.330     0.020     
+MGG       H         N         single    1.016     0.010     0.899     0.007     
+MGG       CB        CA        single    1.524     0.020     1.524     0.020     
+MGG       CA        C         single    1.500     0.020     1.500     0.020     
+MGG       HA        CA        single    1.089     0.010     0.989     0.005     
+MGG       CG        CB        single    1.524     0.020     1.524     0.020     
+MGG       HB2       CB        single    1.089     0.010     0.989     0.005     
+MGG       HB3       CB        single    1.089     0.010     0.989     0.005     
+MGG       CD        CG        single    1.524     0.020     1.524     0.020     
+MGG       HG2       CG        single    1.089     0.010     0.989     0.005     
+MGG       HG3       CG        single    1.089     0.010     0.989     0.005     
+MGG       NE        CD        single    1.450     0.020     1.450     0.020     
+MGG       HD2       CD        single    1.089     0.010     0.989     0.005     
+MGG       HD3       CD        single    1.089     0.010     0.989     0.005     
+MGG       CZ        NE        single    1.330     0.020     1.330     0.020     
+MGG       HE        NE        single    1.016     0.010     0.899     0.007     
+MGG       NH1       CZ        single    1.332     0.020     1.332     0.020     
+MGG       NH2       CZ        double    1.332     0.020     1.332     0.020     
+MGG       HH11      NH1       single    1.016     0.010     0.899     0.007     
+MGG       HH12      NH1       single    1.016     0.010     0.899     0.007     
+MGG       HH21      NH2       single    1.016     0.010     0.899     0.007     
+MGG       HH22      NH2       single    1.016     0.010     0.899     0.007     
+MGG       O3        C3        double    1.220     0.020     1.220     0.020     
+MGG       C2        C3        single    1.510     0.020     1.510     0.020     
+MGG       C1        C2        single    1.510     0.020     1.510     0.020     
+MGG       H21       C2        single    1.089     0.010     0.989     0.005     
+MGG       H22       C2        single    1.089     0.010     0.989     0.005     
+MGG       O12       C1        deloc     1.250     0.020     1.250     0.020     
+MGG       O1        C1        deloc     1.250     0.020     1.250     0.020     
+MGG       O         C         deloc     1.250     0.020     1.250     0.020     
+MGG       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MGG      OXT    C      O       123.000    3.000
+ MGG      OXT    C      CA      118.500    3.000
+ MGG      O      C      CA      118.500    3.000
+ MGG      C      CA     HA      108.810    3.000
+ MGG      C      CA     N       111.600    3.000
+ MGG      C      CA     CB      109.470    3.000
+ MGG      HA     CA     N       108.550    3.000
+ MGG      HA     CA     CB      108.340    3.000
+ MGG      N      CA     CB      110.000    3.000
+ MGG      CA     N      H       118.500    3.000
+ MGG      CA     N      C3      121.500    3.000
+ MGG      H      N      C3      120.000    3.000
+ MGG      N      C3     C2      116.500    3.000
+ MGG      N      C3     O3      123.000    3.000
+ MGG      C2     C3     O3      120.500    3.000
+ MGG      C3     C2     H21     109.470    3.000
+ MGG      C3     C2     H22     109.470    3.000
+ MGG      C3     C2     C1      109.470    3.000
+ MGG      H21    C2     H22     107.900    3.000
+ MGG      H21    C2     C1      109.470    3.000
+ MGG      H22    C2     C1      109.470    3.000
+ MGG      C2     C1     O1      118.500    3.000
+ MGG      C2     C1     O12     118.500    3.000
+ MGG      O1     C1     O12     123.000    3.000
+ MGG      CA     CB     HB2     109.470    3.000
+ MGG      CA     CB     HB3     109.470    3.000
+ MGG      CA     CB     CG      111.000    3.000
+ MGG      HB2    CB     HB3     107.900    3.000
+ MGG      HB2    CB     CG      109.470    3.000
+ MGG      HB3    CB     CG      109.470    3.000
+ MGG      CB     CG     HG2     109.470    3.000
+ MGG      CB     CG     HG3     109.470    3.000
+ MGG      CB     CG     CD      111.000    3.000
+ MGG      HG2    CG     HG3     107.900    3.000
+ MGG      HG2    CG     CD      109.470    3.000
+ MGG      HG3    CG     CD      109.470    3.000
+ MGG      CG     CD     HD2     109.470    3.000
+ MGG      CG     CD     HD3     109.470    3.000
+ MGG      CG     CD     NE      112.000    3.000
+ MGG      HD2    CD     HD3     107.900    3.000
+ MGG      HD2    CD     NE      109.470    3.000
+ MGG      HD3    CD     NE      109.470    3.000
+ MGG      CD     NE     HE      118.500    3.000
+ MGG      CD     NE     CZ      121.500    3.000
+ MGG      HE     NE     CZ      120.000    3.000
+ MGG      NE     CZ     NH2     120.000    3.000
+ MGG      NE     CZ     NH1     120.000    3.000
+ MGG      NH2    CZ     NH1     120.000    3.000
+ MGG      CZ     NH2    HH22    120.000    3.000
+ MGG      CZ     NH2    HH21    120.000    3.000
+ MGG      HH22   NH2    HH21    120.000    3.000
+ MGG      CZ     NH1    HH12    120.000    3.000
+ MGG      CZ     NH1    HH11    120.000    3.000
+ MGG      HH12   NH1    HH11    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MGG      var_1    OXT    C      CA     CB      -119.468   20.000   3
+ MGG      var_2    C      CA     N      C3       146.231   20.000   3
+ MGG      CONST_1  CA     N      C3     O3         0.000    0.000   0
+ MGG      var_3    N      C3     C2     C1       -92.555   20.000   3
+ MGG      var_4    C3     C2     C1     O12        3.818   20.000   3
+ MGG      var_5    C      CA     CB     CG        62.454   20.000   3
+ MGG      var_6    CA     CB     CG     CD       177.634   20.000   3
+ MGG      var_7    CB     CG     CD     NE       -59.814   20.000   3
+ MGG      var_8    CG     CD     NE     CZ       -80.003   20.000   3
+ MGG      CONST_2  CD     NE     CZ     NH1      180.000    0.000   0
+ MGG      CONST_3  NE     CZ     NH2    HH21       0.000    0.000   0
+ MGG      CONST_4  NE     CZ     NH1    HH11     180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MGG      chir_01  CA     N      CB     C         positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MGG      plan-1    N         0.020
+ MGG      plan-1    CA        0.020
+ MGG      plan-1    C3        0.020
+ MGG      plan-1    H         0.020
+ MGG      plan-2    NE        0.020
+ MGG      plan-2    CD        0.020
+ MGG      plan-2    CZ        0.020
+ MGG      plan-2    HE        0.020
+ MGG      plan-3    CZ        0.020
+ MGG      plan-3    NE        0.020
+ MGG      plan-3    NH1       0.020
+ MGG      plan-3    NH2       0.020
+ MGG      plan-3    HH21      0.020
+ MGG      plan-3    HH22      0.020
+ MGG      plan-3    HE        0.020
+ MGG      plan-3    HH12      0.020
+ MGG      plan-3    HH11      0.020
+ MGG      plan-4    NH1       0.020
+ MGG      plan-4    CZ        0.020
+ MGG      plan-4    HH11      0.020
+ MGG      plan-4    HH12      0.020
+ MGG      plan-5    C3        0.020
+ MGG      plan-5    N         0.020
+ MGG      plan-5    O3        0.020
+ MGG      plan-5    C2        0.020
+ MGG      plan-5    H         0.020
+ MGG      plan-6    C1        0.020
+ MGG      plan-6    C2        0.020
+ MGG      plan-6    O12       0.020
+ MGG      plan-6    O1        0.020
+ MGG      plan-7    C         0.020
+ MGG      plan-7    CA        0.020
+ MGG      plan-7    O         0.020
+ MGG      plan-7    OXT       0.020
+# ------------------------------------------------------

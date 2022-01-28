@@ -1,0 +1,53 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CYN     CYN      "CYANIDE ION"     NON-POLYMER     2     2     .     
+#
+data_comp_CYN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CYN     C       C       C       -1      0.665       0.000       0.000       
+CYN     N       N       N       0       -0.665      0.000       0.000       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CYN       C         N         TRIPLE    n         1.330     0.020     1.330     0.020     
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CYN SMILES           ACDLabs              10.04 "[C-]#N"
+CYN SMILES_CANONICAL CACTVS               3.341 "[C-]#N"
+CYN SMILES           CACTVS               3.341 "[C-]#N"
+CYN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[C-]#N"
+CYN SMILES           "OpenEye OEToolkits" 1.5.0 "[C-]#N"
+CYN InChI            InChI                1.03  InChI=1S/CN/c1-2/q-1
+CYN InChIKey         InChI                1.03  XFXPMWWXUTWYJX-UHFFFAOYSA-N
+CYN ?                acedrg               202         "dictionary generator"                  
+CYN ?                acedrg_database      11          "data source"                           
+CYN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CYN ?                refmac5              5.8.0189    "optimization tool"                     

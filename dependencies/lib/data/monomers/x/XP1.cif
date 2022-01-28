@@ -1,0 +1,182 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XP1     XP1      "4-(DIMETHYLAMINO)BENZOIC ACID"     non-polymer     22     12     .     
+#
+data_comp_XP1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+XP1     CAG     C       CH3     0       -18.487     -40.637     -18.096     
+XP1     NAF     N       N       0       -18.602     -41.282     -19.391     
+XP1     CAK     C       CH3     0       -19.650     -40.816     -20.281     
+XP1     CAE     C       CR6     0       -17.752     -42.296     -19.760     
+XP1     CAJ     C       CR16    0       -17.009     -42.231     -20.965     
+XP1     CAI     C       CR16    0       -16.154     -43.258     -21.330     
+XP1     CAD     C       CR6     0       -16.002     -44.383     -20.520     
+XP1     CAC     C       C       0       -15.074     -45.488     -20.924     
+XP1     OAH     O       O       0       -14.233     -45.874     -20.092     
+XP1     CAA     C       CR16    0       -16.724     -44.465     -19.331     
+XP1     CAB     C       CR16    0       -17.585     -43.447     -18.951     
+XP1     OXT     O       OC      -1      -15.196     -45.958     -22.070     
+XP1     HAG1    H       H       0       -17.600     -40.783     -17.725     
+XP1     HAG2    H       H       0       -19.151     -41.003     -17.491     
+XP1     HAG3    H       H       0       -18.637     -39.682     -18.194     
+XP1     HAK1    H       H       0       -19.853     -41.497     -20.945     
+XP1     HAK2    H       H       0       -19.357     -40.007     -20.731     
+XP1     HAK3    H       H       0       -20.452     -40.624     -19.767     
+XP1     HAJ     H       H       0       -17.101     -41.478     -21.523     
+XP1     HAI     H       H       0       -15.671     -43.193     -22.135     
+XP1     HAA     H       H       0       -16.629     -45.220     -18.777     
+XP1     HAB     H       H       0       -18.065     -43.518     -18.144     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XP1       CAG       NAF       SINGLE    n         1.447     0.012     1.447     0.012     
+XP1       NAF       CAK       SINGLE    n         1.447     0.012     1.447     0.012     
+XP1       NAF       CAE       SINGLE    n         1.369     0.011     1.369     0.011     
+XP1       CAE       CAJ       DOUBLE    y         1.409     0.011     1.409     0.011     
+XP1       CAE       CAB       SINGLE    y         1.409     0.011     1.409     0.011     
+XP1       CAJ       CAI       SINGLE    y         1.379     0.010     1.379     0.010     
+XP1       CAI       CAD       DOUBLE    y         1.387     0.010     1.387     0.010     
+XP1       CAD       CAC       SINGLE    n         1.498     0.020     1.498     0.020     
+XP1       CAD       CAA       SINGLE    y         1.387     0.010     1.387     0.010     
+XP1       CAC       OAH       DOUBLE    n         1.244     0.020     1.244     0.020     
+XP1       CAA       CAB       DOUBLE    y         1.379     0.010     1.379     0.010     
+XP1       CAC       OXT       SINGLE    n         1.244     0.020     1.244     0.020     
+XP1       CAG       HAG1      SINGLE    n         1.089     0.010     0.971     0.018     
+XP1       CAG       HAG2      SINGLE    n         1.089     0.010     0.971     0.018     
+XP1       CAG       HAG3      SINGLE    n         1.089     0.010     0.971     0.018     
+XP1       CAK       HAK1      SINGLE    n         1.089     0.010     0.971     0.018     
+XP1       CAK       HAK2      SINGLE    n         1.089     0.010     0.971     0.018     
+XP1       CAK       HAK3      SINGLE    n         1.089     0.010     0.971     0.018     
+XP1       CAJ       HAJ       SINGLE    n         1.082     0.013     0.942     0.020     
+XP1       CAI       HAI       SINGLE    n         1.082     0.013     0.941     0.017     
+XP1       CAA       HAA       SINGLE    n         1.082     0.013     0.941     0.017     
+XP1       CAB       HAB       SINGLE    n         1.082     0.013     0.942     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+XP1         NAF         CAG        HAG1     109.662    1.50
+XP1         NAF         CAG        HAG2     109.662    1.50
+XP1         NAF         CAG        HAG3     109.662    1.50
+XP1        HAG1         CAG        HAG2     109.352    1.56
+XP1        HAG1         CAG        HAG3     109.352    1.56
+XP1        HAG2         CAG        HAG3     109.352    1.56
+XP1         CAG         NAF         CAK     117.963    1.50
+XP1         CAG         NAF         CAE     121.018    1.50
+XP1         CAK         NAF         CAE     121.018    1.50
+XP1         NAF         CAK        HAK1     109.662    1.50
+XP1         NAF         CAK        HAK2     109.662    1.50
+XP1         NAF         CAK        HAK3     109.662    1.50
+XP1        HAK1         CAK        HAK2     109.352    1.56
+XP1        HAK1         CAK        HAK3     109.352    1.56
+XP1        HAK2         CAK        HAK3     109.352    1.56
+XP1         NAF         CAE         CAJ     121.158    1.50
+XP1         NAF         CAE         CAB     121.158    1.50
+XP1         CAJ         CAE         CAB     117.683    1.50
+XP1         CAE         CAJ         CAI     120.947    1.50
+XP1         CAE         CAJ         HAJ     119.291    1.50
+XP1         CAI         CAJ         HAJ     119.763    1.50
+XP1         CAJ         CAI         CAD     120.685    1.50
+XP1         CAJ         CAI         HAI     119.466    1.50
+XP1         CAD         CAI         HAI     119.849    1.50
+XP1         CAI         CAD         CAC     120.473    1.50
+XP1         CAI         CAD         CAA     119.054    1.50
+XP1         CAC         CAD         CAA     120.473    1.50
+XP1         CAD         CAC         OAH     117.791    1.50
+XP1         CAD         CAC         OXT     117.791    1.50
+XP1         OAH         CAC         OXT     124.418    1.50
+XP1         CAD         CAA         CAB     120.685    1.50
+XP1         CAD         CAA         HAA     119.849    1.50
+XP1         CAB         CAA         HAA     119.466    1.50
+XP1         CAE         CAB         CAA     120.947    1.50
+XP1         CAE         CAB         HAB     119.291    1.50
+XP1         CAA         CAB         HAB     119.763    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+XP1             sp2_sp3_1         CAK         NAF         CAG        HAG1       0.000   10.00     6
+XP1             sp2_sp3_7         CAG         NAF         CAK        HAK1       0.000   10.00     6
+XP1             sp2_sp2_1         CAJ         CAE         NAF         CAG     180.000   10.00     2
+XP1              const_22         CAA         CAB         CAE         NAF     180.000   10.00     2
+XP1       const_sp2_sp2_3         NAF         CAE         CAJ         CAI     180.000   10.00     2
+XP1       const_sp2_sp2_5         CAD         CAI         CAJ         CAE       0.000   10.00     2
+XP1              const_11         CAC         CAD         CAI         CAJ     180.000   10.00     2
+XP1             sp2_sp2_5         OAH         CAC         CAD         CAI     180.000   10.00     2
+XP1              const_14         CAB         CAA         CAD         CAC     180.000   10.00     2
+XP1              const_17         CAD         CAA         CAB         CAE       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+XP1    plan-1         CAA   0.020
+XP1    plan-1         CAB   0.020
+XP1    plan-1         CAC   0.020
+XP1    plan-1         CAD   0.020
+XP1    plan-1         CAE   0.020
+XP1    plan-1         CAI   0.020
+XP1    plan-1         CAJ   0.020
+XP1    plan-1         HAA   0.020
+XP1    plan-1         HAB   0.020
+XP1    plan-1         HAI   0.020
+XP1    plan-1         HAJ   0.020
+XP1    plan-1         NAF   0.020
+XP1    plan-2         CAE   0.020
+XP1    plan-2         CAG   0.020
+XP1    plan-2         CAK   0.020
+XP1    plan-2         NAF   0.020
+XP1    plan-3         CAC   0.020
+XP1    plan-3         CAD   0.020
+XP1    plan-3         OAH   0.020
+XP1    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+XP1 SMILES           ACDLabs              10.04 "O=C(O)c1ccc(N(C)C)cc1"
+XP1 SMILES_CANONICAL CACTVS               3.341 "CN(C)c1ccc(cc1)C(O)=O"
+XP1 SMILES           CACTVS               3.341 "CN(C)c1ccc(cc1)C(O)=O"
+XP1 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CN(C)c1ccc(cc1)C(=O)O"
+XP1 SMILES           "OpenEye OEToolkits" 1.5.0 "CN(C)c1ccc(cc1)C(=O)O"
+XP1 InChI            InChI                1.03  "InChI=1S/C9H11NO2/c1-10(2)8-5-3-7(4-6-8)9(11)12/h3-6H,1-2H3,(H,11,12)"
+XP1 InChIKey         InChI                1.03  YDIYEOMDOWUDTJ-UHFFFAOYSA-N
+XP1 ?                acedrg               202         "dictionary generator"                  
+XP1 ?                acedrg_database      11          "data source"                           
+XP1 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+XP1 ?                refmac5              5.8.0189    "optimization tool"                     

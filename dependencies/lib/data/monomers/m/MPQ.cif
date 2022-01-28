@@ -1,0 +1,214 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MPQ      MPQ 'N-METHYL-ALPHA-PHENYL-GLYCINE       ' non-polymer        22  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MPQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MPQ           OXT    O    OC       -0.500      0.000    0.000    0.000
+ MPQ           C      C    C         0.000     -1.163   -0.042    0.459
+ MPQ           O      O    OC       -0.500     -1.353    0.058    1.691
+ MPQ           CA     C    CH1       0.000     -2.335   -0.212   -0.474
+ MPQ           HA1    H    H         0.000     -2.042   -0.849   -1.319
+ MPQ           N      N    NH1       0.000     -3.449   -0.840    0.250
+ MPQ           H      H    H         0.000     -4.200   -0.333    0.696
+ MPQ           CM     C    CH3       0.000     -3.324   -2.304    0.240
+ MPQ           HM3    H    H         0.000     -2.379   -2.585    0.632
+ MPQ           HM2    H    H         0.000     -4.091   -2.733    0.834
+ MPQ           HM1    H    H         0.000     -3.410   -2.663   -0.755
+ MPQ           CG     C    CR6       0.000     -2.768    1.138   -0.987
+ MPQ           CD2    C    CR16      0.000     -3.461    2.002   -0.161
+ MPQ           HD21   H    H         0.000     -3.693    1.710    0.855
+ MPQ           CE2    C    CR16      0.000     -3.858    3.240   -0.633
+ MPQ           HE21   H    H         0.000     -4.401    3.918    0.015
+ MPQ           CZ     C    CR16      0.000     -3.562    3.612   -1.931
+ MPQ           HZ1    H    H         0.000     -3.869    4.583   -2.300
+ MPQ           CE1    C    CR16      0.000     -2.873    2.745   -2.758
+ MPQ           HE11   H    H         0.000     -2.644    3.035   -3.777
+ MPQ           CD1    C    CR16      0.000     -2.476    1.508   -2.287
+ MPQ           HD11   H    H         0.000     -1.937    0.829   -2.935
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MPQ      OXT    n/a    C      START
+ MPQ      C      OXT    CA     .
+ MPQ      O      C      .      .
+ MPQ      CA     C      CG     .
+ MPQ      HA1    CA     .      .
+ MPQ      N      CA     CM     .
+ MPQ      H      N      .      .
+ MPQ      CM     N      HM1    .
+ MPQ      HM3    CM     .      .
+ MPQ      HM2    CM     .      .
+ MPQ      HM1    CM     .      .
+ MPQ      CG     CA     CD2    .
+ MPQ      CD2    CG     CE2    .
+ MPQ      HD21   CD2    .      .
+ MPQ      CE2    CD2    CZ     .
+ MPQ      HE21   CE2    .      .
+ MPQ      CZ     CE2    CE1    .
+ MPQ      HZ1    CZ     .      .
+ MPQ      CE1    CZ     CD1    .
+ MPQ      HE11   CE1    .      .
+ MPQ      CD1    CE1    HD11   .
+ MPQ      HD11   CD1    .      END
+ MPQ      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MPQ       CM        N         single    1.450     0.020     1.450     0.020     
+MPQ       N         CA        single    1.450     0.020     1.450     0.020     
+MPQ       H         N         single    1.036     0.016     0.914     0.007     
+MPQ       HM1       CM        single    1.089     0.010     0.989     0.005     
+MPQ       HM2       CM        single    1.089     0.010     0.989     0.005     
+MPQ       HM3       CM        single    1.089     0.010     0.989     0.005     
+MPQ       CG        CA        single    1.480     0.020     1.480     0.020     
+MPQ       CA        C         single    1.500     0.020     1.500     0.020     
+MPQ       HA1       CA        single    1.089     0.010     0.989     0.005     
+MPQ       CG        CD1       double    1.390     0.020     1.390     0.020     
+MPQ       CD2       CG        single    1.390     0.020     1.390     0.020     
+MPQ       CD1       CE1       single    1.390     0.020     1.390     0.020     
+MPQ       HD11      CD1       single    1.082     0.013     0.975     0.010     
+MPQ       CE2       CD2       double    1.390     0.020     1.390     0.020     
+MPQ       HD21      CD2       single    1.082     0.013     0.975     0.010     
+MPQ       CE1       CZ        double    1.390     0.020     1.390     0.020     
+MPQ       HE11      CE1       single    1.082     0.013     0.975     0.010     
+MPQ       CZ        CE2       single    1.390     0.020     1.390     0.020     
+MPQ       HE21      CE2       single    1.082     0.013     0.975     0.010     
+MPQ       HZ1       CZ        single    1.082     0.013     0.975     0.010     
+MPQ       O         C         deloc     1.250     0.020     1.250     0.020     
+MPQ       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MPQ      OXT    C      O       123.000    3.000
+ MPQ      OXT    C      CA      118.500    3.000
+ MPQ      O      C      CA      118.500    3.000
+ MPQ      C      CA     HA1     108.810    3.000
+ MPQ      C      CA     N       111.600    3.000
+ MPQ      C      CA     CG      109.500    3.000
+ MPQ      HA1    CA     N       108.550    3.000
+ MPQ      HA1    CA     CG      109.470    3.000
+ MPQ      N      CA     CG      109.470    3.000
+ MPQ      CA     N      H       118.500    3.000
+ MPQ      CA     N      CM      120.000    3.000
+ MPQ      H      N      CM      118.500    3.000
+ MPQ      N      CM     HM3     109.470    3.000
+ MPQ      N      CM     HM2     109.470    3.000
+ MPQ      N      CM     HM1     109.470    3.000
+ MPQ      HM3    CM     HM2     109.470    3.000
+ MPQ      HM3    CM     HM1     109.470    3.000
+ MPQ      HM2    CM     HM1     109.470    3.000
+ MPQ      CA     CG     CD2     120.000    3.000
+ MPQ      CA     CG     CD1     120.000    3.000
+ MPQ      CD2    CG     CD1     120.000    3.000
+ MPQ      CG     CD2    HD21    120.000    3.000
+ MPQ      CG     CD2    CE2     120.000    3.000
+ MPQ      HD21   CD2    CE2     120.000    3.000
+ MPQ      CD2    CE2    HE21    120.000    3.000
+ MPQ      CD2    CE2    CZ      120.000    3.000
+ MPQ      HE21   CE2    CZ      120.000    3.000
+ MPQ      CE2    CZ     HZ1     120.000    3.000
+ MPQ      CE2    CZ     CE1     120.000    3.000
+ MPQ      HZ1    CZ     CE1     120.000    3.000
+ MPQ      CZ     CE1    HE11    120.000    3.000
+ MPQ      CZ     CE1    CD1     120.000    3.000
+ MPQ      HE11   CE1    CD1     120.000    3.000
+ MPQ      CE1    CD1    HD11    120.000    3.000
+ MPQ      CE1    CD1    CG      120.000    3.000
+ MPQ      HD11   CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MPQ      var_1    OXT    C      CA     CG       -86.139   20.000   3
+ MPQ      var_2    C      CA     N      CM       -85.520   20.000   3
+ MPQ      var_3    CA     N      CM     HM1      -64.671   20.000   1
+ MPQ      var_4    C      CA     CG     CD2      -74.618   20.000   1
+ MPQ      CONST_1  CA     CG     CD1    CE1      180.000    0.000   0
+ MPQ      CONST_2  CA     CG     CD2    CE2      180.000    0.000   0
+ MPQ      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ MPQ      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ MPQ      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ MPQ      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MPQ      chir_01  CA     N      CG     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MPQ      plan-1    N         0.020
+ MPQ      plan-1    CM        0.020
+ MPQ      plan-1    CA        0.020
+ MPQ      plan-1    H         0.020
+ MPQ      plan-2    CG        0.020
+ MPQ      plan-2    CA        0.020
+ MPQ      plan-2    CD1       0.020
+ MPQ      plan-2    CD2       0.020
+ MPQ      plan-2    CE1       0.020
+ MPQ      plan-2    CE2       0.020
+ MPQ      plan-2    CZ        0.020
+ MPQ      plan-2    HD11      0.020
+ MPQ      plan-2    HD21      0.020
+ MPQ      plan-2    HE11      0.020
+ MPQ      plan-2    HE21      0.020
+ MPQ      plan-2    HZ1       0.020
+ MPQ      plan-3    C         0.020
+ MPQ      plan-3    CA        0.020
+ MPQ      plan-3    O         0.020
+ MPQ      plan-3    OXT       0.020
+# ------------------------------------------------------

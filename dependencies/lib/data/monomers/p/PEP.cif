@@ -1,0 +1,127 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PEP     PEP      PHOSPHOENOLPYRUVATE     NON-POLYMER     12     10     .     
+#
+data_comp_PEP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PEP     C1      C       C       0       -1.719      -0.902      0.288       
+PEP     O1      O       O       0       -2.783      -0.849      -0.335      
+PEP     "O2'"   O       OC      -1      -1.449      -1.791      1.099       
+PEP     C2      C       C       0       -0.754      0.114       0.047       
+PEP     C3      C       C2      0       -0.773      1.133       -0.927      
+PEP     O2      O       O2      0       0.362       0.149       0.862       
+PEP     P       P       P       0       1.840       -0.281      0.423       
+PEP     O1P     O       O       0       2.324       -1.294      1.431       
+PEP     O2P     O       OP      -1      1.796       -0.875      -0.966      
+PEP     O3P     O       OP      -1      2.691       0.965       0.454       
+PEP     H31     H       H       0       -0.049      1.757       -0.975      
+PEP     H32     H       H       0       -1.507      1.196       -1.537      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PEP       C1        O1        DOUBLE    n         1.230     0.020     1.230     0.020     
+PEP       C1        "O2'"     SINGLE    n         1.230     0.020     1.230     0.020     
+PEP       C1        C2        SINGLE    n         1.403     0.020     1.403     0.020     
+PEP       C2        C3        DOUBLE    n         1.403     0.020     1.403     0.020     
+PEP       C2        O2        SINGLE    n         1.374     0.020     1.374     0.020     
+PEP       O2        P         SINGLE    n         1.595     0.020     1.595     0.020     
+PEP       P         O1P       DOUBLE    n         1.509     0.020     1.509     0.020     
+PEP       P         O2P       SINGLE    n         1.509     0.020     1.509     0.020     
+PEP       P         O3P       SINGLE    n         1.509     0.020     1.509     0.020     
+PEP       C3        H31       SINGLE    n         1.082     0.013     0.957     0.020     
+PEP       C3        H32       SINGLE    n         1.082     0.013     0.957     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PEP          O1          C1       "O2'"     124.523    1.63
+PEP          O1          C1          C2     117.738    3.00
+PEP       "O2'"          C1          C2     117.738    3.00
+PEP          C1          C2          C3     127.477    3.00
+PEP          C1          C2          O2     116.262    3.00
+PEP          C3          C2          O2     116.262    3.00
+PEP          C2          C3         H31     119.796    1.50
+PEP          C2          C3         H32     119.796    1.50
+PEP         H31          C3         H32     120.407    1.50
+PEP          C2          O2           P     122.808    2.93
+PEP          O2           P         O1P     112.304    3.00
+PEP          O2           P         O2P     112.304    3.00
+PEP          O2           P         O3P     112.304    3.00
+PEP         O1P           P         O2P     112.864    1.69
+PEP         O1P           P         O3P     112.864    1.69
+PEP         O2P           P         O3P     112.864    1.69
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PEP             sp2_sp2_2          O1          C1          C2          C3       0.000   10.00     2
+PEP             sp2_sp2_5          C1          C2          C3         H31     180.000   10.00     2
+PEP             sp2_sp2_9          C1          C2          O2           P     180.000   10.00     2
+PEP             sp3_sp3_1         O1P           P          O2          C2     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PEP    plan-1          C1   0.020
+PEP    plan-1          C2   0.020
+PEP    plan-1          O1   0.020
+PEP    plan-1       "O2'"   0.020
+PEP    plan-2          C1   0.020
+PEP    plan-2          C2   0.020
+PEP    plan-2          C3   0.020
+PEP    plan-2          O2   0.020
+PEP    plan-3          C2   0.020
+PEP    plan-3          C3   0.020
+PEP    plan-3         H31   0.020
+PEP    plan-3         H32   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PEP SMILES           ACDLabs              10.04 "O=C(O)C(\OP(=O)(O)O)=C"
+PEP SMILES_CANONICAL CACTVS               3.341 "OC(=O)C(=C)O[P](O)(O)=O"
+PEP SMILES           CACTVS               3.341 "OC(=O)C(=C)O[P](O)(O)=O"
+PEP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C=C(C(=O)O)OP(=O)(O)O"
+PEP SMILES           "OpenEye OEToolkits" 1.5.0 "C=C(C(=O)O)OP(=O)(O)O"
+PEP InChI            InChI                1.03  "InChI=1S/C3H5O6P/c1-2(3(4)5)9-10(6,7)8/h1H2,(H,4,5)(H2,6,7,8)"
+PEP InChIKey         InChI                1.03  DTBNBXWJWCWCIK-UHFFFAOYSA-N
+PEP ?                acedrg               202         "dictionary generator"                  
+PEP ?                acedrg_database      11          "data source"                           
+PEP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PEP ?                refmac5              5.8.0189    "optimization tool"                     

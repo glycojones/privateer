@@ -1,0 +1,147 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+9Q8      9Q8 'tris(oxidaniumylidynemethyl)-tris(ox' non-polymer        13  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_9Q8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 9Q8           O3     O    O         1.000     -0.123    0.084   -0.087
+ 9Q8           C3     C    CSP       0.000     -1.127    0.183   -0.046
+ 9Q8           RU     RU   RU        0.000     -2.959    0.331   -0.014
+ 9Q8           C1     C    CSP       0.000     -3.073   -0.809   -1.446
+ 9Q8           O1     O    O         1.000     -3.129   -1.409   -2.252
+ 9Q8           O6     O    OH1       0.000     -3.052   -1.102    1.137
+ 9Q8           H2     H    H         0.000     -2.191   -1.479    1.366
+ 9Q8           O5     O    OH1       0.000     -2.863    1.767   -1.164
+ 9Q8           H1     H    H         0.000     -1.961    2.002   -1.425
+ 9Q8           O4     O    OH1       0.000     -2.829    1.479    1.423
+ 9Q8           H3     H    H         0.000     -1.920    1.649    1.709
+ 9Q8           C2     C    CSP       0.000     -4.788    0.480    0.017
+ 9Q8           O2     O    O         1.000     -5.793    0.558    0.051
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 9Q8      O3     n/a    C3     START
+ 9Q8      C3     O3     RU     .
+ 9Q8      RU     C3     C2     .
+ 9Q8      C1     RU     O1     .
+ 9Q8      O1     C1     .      .
+ 9Q8      O6     RU     H2     .
+ 9Q8      H2     O6     .      .
+ 9Q8      O5     RU     H1     .
+ 9Q8      H1     O5     .      .
+ 9Q8      O4     RU     H3     .
+ 9Q8      H3     O4     .      .
+ 9Q8      C2     RU     O2     .
+ 9Q8      O2     C2     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+9Q8       C3        O3        triple    1.004     0.020     1.004     0.020     
+9Q8       O1        C1        triple    1.003     0.020     1.003     0.020     
+9Q8       RU        C3        single    1.830     0.020     1.830     0.020     
+9Q8       C1        RU        single    1.831     0.020     1.831     0.020     
+9Q8       O2        C2        triple    1.003     0.020     1.003     0.020     
+9Q8       C2        RU        single    1.830     0.020     1.830     0.020     
+9Q8       O4        RU        single    1.840     0.020     1.840     0.020     
+9Q8       O5        RU        single    1.841     0.020     1.841     0.020     
+9Q8       O6        RU        single    1.840     0.020     1.840     0.020     
+9Q8       H1        O5        single    0.970     0.012     0.967     0.020     
+9Q8       H2        O6        single    0.970     0.012     0.968     0.020     
+9Q8       H3        O4        single    0.970     0.012     0.967     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 9Q8      O3     C3     RU      179.966    3.000
+ 9Q8      C3     RU     C1       90.000    3.000
+ 9Q8      C3     RU     O6       90.000    3.000
+ 9Q8      C3     RU     O5       90.000    3.000
+ 9Q8      C3     RU     O4       90.000    3.000
+ 9Q8      C3     RU     C2      180.000    3.000
+ 9Q8      C1     RU     O6       90.000    3.000
+ 9Q8      C1     RU     O5       90.000    3.000
+ 9Q8      O6     RU     O5      180.000    3.000
+ 9Q8      C1     RU     O4      180.000    3.000
+ 9Q8      O6     RU     O4       90.000    3.000
+ 9Q8      O5     RU     O4       90.000    3.000
+ 9Q8      C1     RU     C2       90.000    3.000
+ 9Q8      O6     RU     C2       90.000    3.000
+ 9Q8      O5     RU     C2       90.000    3.000
+ 9Q8      O4     RU     C2       90.000    3.000
+ 9Q8      RU     C1     O1      179.937    3.000
+ 9Q8      RU     O6     H2      114.023    3.000
+ 9Q8      RU     O5     H1      113.951    3.000
+ 9Q8      RU     O4     H3      113.957    3.000
+ 9Q8      RU     C2     O2      179.966    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 9Q8      var_1            O3     C3     RU     C2               180.000           20.000   3
+ 9Q8      var_2            O1     C1     RU     C3               180.000           20.000   3
+ 9Q8      var_3            H2     O6     RU     C3                 0.000           20.000   3
+ 9Q8      var_4            H1     O5     RU     C3                 0.000           20.000   3
+ 9Q8      var_5            H3     O4     RU     C3                 0.000           20.000   3
+ 9Q8      var_6            O2     C2     RU     C3               180.000           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ 9Q8      chir_01          RU     C3     C2     C1        cross4
+                   O5     O4     O6     .      .
+# ------------------------------------------------------

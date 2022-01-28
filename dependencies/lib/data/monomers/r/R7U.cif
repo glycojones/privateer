@@ -1,0 +1,861 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+R7U      R7U 'RUTHENIUM WIRE, 7 CARBON LINKER     ' non-polymer       121  56 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_R7U
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ R7U           CM1    C    CH3       0.000      0.105    0.074   -0.051
+ R7U           HM13   H    H         0.000     -0.377   -0.070   -1.017
+ R7U           HM12   H    H         0.000     -0.369    0.903    0.473
+ R7U           HM11   H    H         0.000      1.161    0.292   -0.199
+ R7U           NNG    N    N         0.000     -0.032   -1.140    0.743
+ R7U           CM2    C    CH3       0.000      1.152   -1.875    1.215
+ R7U           HM21   H    H         0.000      2.056   -1.367    0.877
+ R7U           HM22   H    H         0.000      1.145   -1.916    2.306
+ R7U           HM23   H    H         0.000      1.135   -2.890    0.814
+ R7U           CNE    C    CR6       0.000     -1.314   -1.605    1.053
+ R7U           CND    C    CR16      0.000     -1.450   -2.755    1.798
+ R7U           HND    H    H         0.000     -0.566   -3.278    2.132
+ R7U           CNC    C    CR16      0.000     -2.682   -3.247    2.124
+ R7U           HNC    H    H         0.000     -2.706   -4.154    2.712
+ R7U           CNB    C    CR16      0.000     -3.875   -2.709    1.780
+ R7U           HNB    H    H         0.000     -4.812   -3.155    2.081
+ R7U           CNA    C    CR6       0.000     -3.825   -1.576    1.036
+ R7U           CNF    C    CR16      0.000     -2.556   -1.052    0.700
+ R7U           HNF    H    H         0.000     -2.540   -0.143    0.117
+ R7U           OL5    O    O2        0.000     -4.955   -0.942    0.634
+ R7U           CL4    C    CH2       0.000     -6.093   -1.662    1.107
+ R7U           HL71   H    H         0.000     -6.092   -1.705    2.197
+ R7U           HL72   H    H         0.000     -6.097   -2.675    0.705
+ R7U           CL3    C    CH2       0.000     -7.337   -0.915    0.626
+ R7U           HL61   H    H         0.000     -7.378   -0.873   -0.463
+ R7U           HL62   H    H         0.000     -7.373    0.097    1.029
+ R7U           CL2    C    CH2       0.000     -8.525   -1.717    1.151
+ R7U           HL51   H    H         0.000     -8.488   -1.755    2.240
+ R7U           HL52   H    H         0.000     -8.487   -2.730    0.751
+ R7U           CL1    C    CH2       0.000     -9.814   -1.045    0.710
+ R7U           HL41   H    H         0.000     -9.885   -0.998   -0.377
+ R7U           HL42   H    H         0.000     -9.899   -0.039    1.122
+ R7U           CL0    C    CH2       0.000    -10.941   -1.918    1.259
+ R7U           HL31   H    H         0.000    -10.898   -1.969    2.346
+ R7U           HL32   H    H         0.000    -10.887   -2.925    0.847
+ R7U           CL5    C    CH2       0.000    -12.243   -1.265    0.832
+ R7U           HL21   H    H         0.000    -12.291   -1.227   -0.256
+ R7U           HL22   H    H         0.000    -12.290   -0.253    1.232
+ R7U           CL6    C    CH2       0.000    -13.418   -2.081    1.367
+ R7U           HL11   H    H         0.000    -13.407   -2.082    2.457
+ R7U           HL12   H    H         0.000    -13.356   -3.107    1.003
+ R7U           CA0    C    CR6       0.000    -14.685   -1.452    0.879
+ R7U           CAK    C    CR66      0.000    -15.456   -1.804   -0.210
+ R7U           CAM    C    CR16      0.000    -15.301   -0.497    1.684
+ R7U           HAM    H    H         0.000    -14.982   -0.387    2.713
+ R7U           CAN    C    CR16      0.000    -16.281    0.291    1.212
+ R7U           HAN    H    H         0.000    -16.405    1.247    1.703
+ R7U           NAA    N    NR6       0.000    -17.139    0.025    0.186
+ R7U           CAB    C    CR66      0.000    -16.672   -1.034   -0.603
+ R7U           RU     RU   RU        0.000    -19.040    0.557   -0.322
+ R7U           NBA    N    NT        0.000    -19.968   -0.977    0.728
+ R7U           CBB    C    CH2       0.000    -19.224   -1.641    1.724
+ R7U           HBK    H    H         0.000    -18.569   -0.929    2.220
+ R7U           HBB1   H    H         0.000    -18.624   -2.423    1.264
+ R7U           CBC    C    CH2       0.000    -20.160   -2.252    2.733
+ R7U           HBJ    H    H         0.000    -20.161   -1.565    3.583
+ R7U           HBC1   H    H         0.000    -19.695   -3.196    3.029
+ R7U           CBD    C    CH2       0.000    -21.558   -2.502    2.296
+ R7U           HBI    H    H         0.000    -22.125   -2.311    3.209
+ R7U           HBD0   H    H         0.000    -21.550   -3.575    2.091
+ R7U           CBE    C    CH2       0.000    -22.113   -1.872    1.298
+ R7U           HBE0   H    H         0.000    -23.122   -1.637    1.520
+ R7U           HBH    H    H         0.000    -22.075   -2.460    0.418
+ R7U           CBF    C    CH1       0.000    -21.350   -0.626    1.092
+ R7U           HBF    H    H         0.000    -21.310   -0.109    2.054
+ R7U           CBG    C    CH1       0.000    -21.932    0.311    0.116
+ R7U           HBG    H    H         0.000    -21.873    1.282    0.650
+ R7U           CBH    C    CH2       0.000    -23.400    0.219   -0.236
+ R7U           HBE    H    H         0.000    -24.009    0.014    0.636
+ R7U           HBH1   H    H         0.000    -23.585   -0.537   -0.989
+ R7U           CBI    C    CH2       0.000    -23.757    1.606   -0.799
+ R7U           HBD    H    H         0.000    -23.527    2.387   -0.078
+ R7U           HBI1   H    H         0.000    -24.811    1.657   -1.063
+ R7U           CBJ    C    CH2       0.000    -22.923    1.798   -2.029
+ R7U           HBC    H    H         0.000    -23.136    2.789   -2.439
+ R7U           HBJ1   H    H         0.000    -23.205    1.035   -2.759
+ R7U           CBK    C    CH2       0.000    -21.444    1.683   -1.721
+ R7U           HBK1   H    H         0.000    -21.183    2.581   -1.131
+ R7U           HBB    H    H         0.000    -20.924    1.721   -2.697
+ R7U           NBL    N    NT        0.000    -21.045    0.519   -1.016
+ R7U           NCA    N    NT        0.000    -18.315    2.201   -1.352
+ R7U           CCB    C    CH2       0.000    -18.627    2.311   -2.722
+ R7U           HCK    H    H         0.000    -19.688    2.540   -2.856
+ R7U           HCB1   H    H         0.000    -18.388    1.382   -3.246
+ R7U           CCC    C    CH2       0.000    -17.780    3.455   -3.293
+ R7U           HCJ    H    H         0.000    -18.119    3.642   -4.306
+ R7U           HCC1   H    H         0.000    -16.748    3.120   -3.314
+ R7U           CCD    C    CH2       0.000    -17.882    4.733   -2.478
+ R7U           HCI    H    H         0.000    -18.896    5.121   -2.539
+ R7U           HCD1   H    H         0.000    -17.188    5.471   -2.874
+ R7U           CCE    C    CH2       0.000    -17.536    4.436   -1.024
+ R7U           HCE1   H    H         0.000    -17.597    5.312   -0.392
+ R7U           HCH    H    H         0.000    -16.563    3.978   -0.910
+ R7U           CCF    C    CH1       0.000    -18.614    3.444   -0.623
+ R7U           HCF    H    H         0.000    -19.609    3.826   -0.917
+ R7U           CCG    C    CH1       0.000    -18.577    3.199    0.843
+ R7U           HCG    H    H         0.000    -17.559    2.847    1.036
+ R7U           CCH    C    C1        0.000    -18.746    4.399    1.763
+ R7U           HCE    H    H         0.000    -18.997    5.400    1.424
+ R7U           CCI    C    C1        0.000    -18.516    4.016    3.232
+ R7U           HCD    H    H         0.000    -17.900    4.562    3.944
+ R7U           CCJ    C    CH2       0.000    -19.288    2.758    3.517
+ R7U           HCC    H    H         0.000    -20.343    3.026    3.576
+ R7U           HCJ1   H    H         0.000    -18.956    2.382    4.485
+ R7U           CCK    C    CH2       0.000    -19.094    1.676    2.454
+ R7U           HCK1   H    H         0.000    -19.711    0.838    2.765
+ R7U           HCB    H    H         0.000    -18.046    1.393    2.505
+ R7U           NCL    N    NT        0.000    -19.423    2.040    1.119
+ R7U           NAD    N    NR6       0.000    -18.628   -0.743   -1.861
+ R7U           CAC    C    CR66      0.000    -17.400   -1.380   -1.650
+ R7U           CAE    C    CR16      0.000    -19.271   -1.157   -3.021
+ R7U           HAE    H    H         0.000    -20.280   -0.804   -3.192
+ R7U           CAF    C    CR16      0.000    -18.720   -1.972   -3.952
+ R7U           HAF    H    H         0.000    -19.216   -2.063   -4.910
+ R7U           CAG    C    CR16      0.000    -17.550   -2.700   -3.746
+ R7U           HAG    H    H         0.000    -17.186   -3.429   -4.453
+ R7U           CAH    C    CR66      0.000    -16.899   -2.416   -2.573
+ R7U           CAI    C    CR16      0.000    -15.656   -3.066   -2.267
+ R7U           HAI    H    H         0.000    -15.254   -3.792   -2.959
+ R7U           CAJ    C    CR16      0.000    -14.984   -2.790   -1.142
+ R7U           HAJ    H    H         0.000    -14.068   -3.321   -0.931
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ R7U      CM1    n/a    NNG    START
+ R7U      HM13   CM1    .      .
+ R7U      HM12   CM1    .      .
+ R7U      HM11   CM1    .      .
+ R7U      NNG    CM1    CNE    .
+ R7U      CM2    NNG    HM23   .
+ R7U      HM21   CM2    .      .
+ R7U      HM22   CM2    .      .
+ R7U      HM23   CM2    .      .
+ R7U      CNE    NNG    CND    .
+ R7U      CND    CNE    CNC    .
+ R7U      HND    CND    .      .
+ R7U      CNC    CND    CNB    .
+ R7U      HNC    CNC    .      .
+ R7U      CNB    CNC    CNA    .
+ R7U      HNB    CNB    .      .
+ R7U      CNA    CNB    OL5    .
+ R7U      CNF    CNA    HNF    .
+ R7U      HNF    CNF    .      .
+ R7U      OL5    CNA    CL4    .
+ R7U      CL4    OL5    CL3    .
+ R7U      HL71   CL4    .      .
+ R7U      HL72   CL4    .      .
+ R7U      CL3    CL4    CL2    .
+ R7U      HL61   CL3    .      .
+ R7U      HL62   CL3    .      .
+ R7U      CL2    CL3    CL1    .
+ R7U      HL51   CL2    .      .
+ R7U      HL52   CL2    .      .
+ R7U      CL1    CL2    CL0    .
+ R7U      HL41   CL1    .      .
+ R7U      HL42   CL1    .      .
+ R7U      CL0    CL1    CL5    .
+ R7U      HL31   CL0    .      .
+ R7U      HL32   CL0    .      .
+ R7U      CL5    CL0    CL6    .
+ R7U      HL21   CL5    .      .
+ R7U      HL22   CL5    .      .
+ R7U      CL6    CL5    CA0    .
+ R7U      HL11   CL6    .      .
+ R7U      HL12   CL6    .      .
+ R7U      CA0    CL6    CAM    .
+ R7U      CAK    CA0    .      .
+ R7U      CAM    CA0    CAN    .
+ R7U      HAM    CAM    .      .
+ R7U      CAN    CAM    NAA    .
+ R7U      HAN    CAN    .      .
+ R7U      NAA    CAN    RU     .
+ R7U      CAB    NAA    .      .
+ R7U      RU     NAA    NAD    .
+ R7U      NBA    RU     CBF    .
+ R7U      CBB    NBA    CBC    .
+ R7U      HBK    CBB    .      .
+ R7U      HBB1   CBB    .      .
+ R7U      CBC    CBB    CBD    .
+ R7U      HBJ    CBC    .      .
+ R7U      HBC1   CBC    .      .
+ R7U      CBD    CBC    CBE    .
+ R7U      HBI    CBD    .      .
+ R7U      HBD0   CBD    .      .
+ R7U      CBE    CBD    HBH    .
+ R7U      HBE0   CBE    .      .
+ R7U      HBH    CBE    .      .
+ R7U      CBF    NBA    CBG    .
+ R7U      HBF    CBF    .      .
+ R7U      CBG    CBF    NBL    .
+ R7U      HBG    CBG    .      .
+ R7U      CBH    CBG    CBI    .
+ R7U      HBE    CBH    .      .
+ R7U      HBH1   CBH    .      .
+ R7U      CBI    CBH    CBJ    .
+ R7U      HBD    CBI    .      .
+ R7U      HBI1   CBI    .      .
+ R7U      CBJ    CBI    CBK    .
+ R7U      HBC    CBJ    .      .
+ R7U      HBJ1   CBJ    .      .
+ R7U      CBK    CBJ    HBB    .
+ R7U      HBK1   CBK    .      .
+ R7U      HBB    CBK    .      .
+ R7U      NBL    CBG    .      .
+ R7U      NCA    RU     CCF    .
+ R7U      CCB    NCA    CCC    .
+ R7U      HCK    CCB    .      .
+ R7U      HCB1   CCB    .      .
+ R7U      CCC    CCB    CCD    .
+ R7U      HCJ    CCC    .      .
+ R7U      HCC1   CCC    .      .
+ R7U      CCD    CCC    CCE    .
+ R7U      HCI    CCD    .      .
+ R7U      HCD1   CCD    .      .
+ R7U      CCE    CCD    HCH    .
+ R7U      HCE1   CCE    .      .
+ R7U      HCH    CCE    .      .
+ R7U      CCF    NCA    CCG    .
+ R7U      HCF    CCF    .      .
+ R7U      CCG    CCF    NCL    .
+ R7U      HCG    CCG    .      .
+ R7U      CCH    CCG    CCI    .
+ R7U      HCE    CCH    .      .
+ R7U      CCI    CCH    CCJ    .
+ R7U      HCD    CCI    .      .
+ R7U      CCJ    CCI    CCK    .
+ R7U      HCC    CCJ    .      .
+ R7U      HCJ1   CCJ    .      .
+ R7U      CCK    CCJ    HCB    .
+ R7U      HCK1   CCK    .      .
+ R7U      HCB    CCK    .      .
+ R7U      NCL    CCG    .      .
+ R7U      NAD    RU     CAE    .
+ R7U      CAC    NAD    .      .
+ R7U      CAE    NAD    CAF    .
+ R7U      HAE    CAE    .      .
+ R7U      CAF    CAE    CAG    .
+ R7U      HAF    CAF    .      .
+ R7U      CAG    CAF    CAH    .
+ R7U      HAG    CAG    .      .
+ R7U      CAH    CAG    CAI    .
+ R7U      CAI    CAH    CAJ    .
+ R7U      HAI    CAI    .      .
+ R7U      CAJ    CAI    HAJ    .
+ R7U      HAJ    CAJ    .      END
+ R7U      CNE    CNF    .    ADD
+ R7U      CAK    CAJ    .    ADD
+ R7U      CAK    CAB    .    ADD
+ R7U      CAB    CAC    .    ADD
+ R7U      CAC    CAH    .    ADD
+ R7U      RU     NCL    .    ADD
+ R7U      RU     NBL    .    ADD
+ R7U      NCL    CCK    .    ADD
+ R7U      CCF    CCE    .    ADD
+ R7U      NBL    CBK    .    ADD
+ R7U      CBF    CBE    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+R7U       CM2       NNG       single    1.465     0.020     1.465     0.020     
+R7U       HM23      CM2       single    1.089     0.010     0.989     0.005     
+R7U       HM22      CM2       single    1.089     0.010     0.989     0.005     
+R7U       HM21      CM2       single    1.089     0.010     0.989     0.005     
+R7U       NNG       CM1       single    1.465     0.020     1.465     0.020     
+R7U       CNE       NNG       single    1.397     0.020     1.397     0.020     
+R7U       HM13      CM1       single    1.089     0.010     0.989     0.005     
+R7U       HM12      CM1       single    1.089     0.010     0.989     0.005     
+R7U       HM11      CM1       single    1.089     0.010     0.989     0.005     
+R7U       CNE       CNF       single    1.387     0.020     1.387     0.020     
+R7U       CND       CNE       double    1.390     0.020     1.390     0.020     
+R7U       CNF       CNA       double    1.387     0.020     1.387     0.020     
+R7U       HNF       CNF       single    1.082     0.013     0.975     0.010     
+R7U       CNA       CNB       single    1.387     0.020     1.387     0.020     
+R7U       OL5       CNA       single    1.359     0.020     1.359     0.020     
+R7U       CNB       CNC       double    1.382     0.020     1.382     0.020     
+R7U       HNB       CNB       single    1.082     0.013     0.975     0.010     
+R7U       CNC       CND       single    1.381     0.020     1.381     0.020     
+R7U       HNC       CNC       single    1.082     0.013     0.975     0.010     
+R7U       HND       CND       single    1.082     0.013     0.975     0.010     
+R7U       CL4       OL5       single    1.429     0.020     1.429     0.020     
+R7U       CL3       CL4       single    1.530     0.020     1.530     0.020     
+R7U       HL71      CL4       single    1.089     0.010     0.989     0.005     
+R7U       HL72      CL4       single    1.089     0.010     0.989     0.005     
+R7U       CL2       CL3       single    1.529     0.020     1.529     0.020     
+R7U       HL61      CL3       single    1.089     0.010     0.989     0.005     
+R7U       HL62      CL3       single    1.089     0.010     0.989     0.005     
+R7U       CL1       CL2       single    1.530     0.020     1.530     0.020     
+R7U       HL51      CL2       single    1.089     0.010     0.989     0.005     
+R7U       HL52      CL2       single    1.089     0.010     0.989     0.005     
+R7U       CL0       CL1       single    1.530     0.020     1.530     0.020     
+R7U       HL41      CL1       single    1.089     0.010     0.989     0.005     
+R7U       HL42      CL1       single    1.089     0.010     0.989     0.005     
+R7U       CAK       CAJ       single    1.459     0.020     1.459     0.020     
+R7U       CAK       CAB       single    1.470     0.020     1.470     0.020     
+R7U       CAK       CA0       double    1.389     0.020     1.389     0.020     
+R7U       CAJ       CAI       double    1.355     0.020     1.355     0.020     
+R7U       HAJ       CAJ       single    1.082     0.013     0.975     0.010     
+R7U       CAB       CAC       double    1.322     0.020     1.322     0.020     
+R7U       CAB       NAA       single    1.400     0.020     1.400     0.020     
+R7U       CAC       CAH       single    1.468     0.020     1.468     0.020     
+R7U       CAC       NAD       single    1.394     0.020     1.394     0.020     
+R7U       CAI       CAH       single    1.457     0.020     1.457     0.020     
+R7U       CAH       CAG       double    1.388     0.020     1.388     0.020     
+R7U       CAM       CA0       single    1.410     0.020     1.410     0.020     
+R7U       CA0       CL6       single    1.505     0.020     1.505     0.020     
+R7U       HAI       CAI       single    1.082     0.013     0.975     0.010     
+R7U       CAG       CAF       single    1.410     0.020     1.410     0.020     
+R7U       HAG       CAG       single    1.082     0.013     0.975     0.010     
+R7U       CAF       CAE       double    1.347     0.020     1.347     0.020     
+R7U       HAF       CAF       single    1.082     0.013     0.975     0.010     
+R7U       CAE       NAD       single    1.388     0.020     1.388     0.020     
+R7U       HAE       CAE       single    1.082     0.013     0.975     0.010     
+R7U       NAD       RU        single    2.038     0.020     2.038     0.020     
+R7U       NAA       CAN       single    1.385     0.020     1.385     0.020     
+R7U       RU        NAA       single    2.035     0.020     2.035     0.020     
+R7U       CAN       CAM       double    1.347     0.020     1.347     0.020     
+R7U       HAN       CAN       single    1.082     0.013     0.975     0.010     
+R7U       HAM       CAM       single    1.082     0.013     0.975     0.010     
+R7U       RU        NCL       single    2.116     0.020     2.116     0.020     
+R7U       NCA       RU        single    2.102     0.020     2.102     0.020     
+R7U       RU        NBL       single    2.124     0.020     2.124     0.020     
+R7U       NBA       RU        single    2.117     0.020     2.117     0.020     
+R7U       NCL       CCK       single    1.451     0.020     1.451     0.020     
+R7U       NCL       CCG       single    1.493     0.020     1.493     0.020     
+R7U       CCK       CCJ       single    1.538     0.020     1.538     0.020     
+R7U       HCB       CCK       single    1.089     0.010     0.989     0.005     
+R7U       HCK1      CCK       single    1.089     0.010     0.989     0.005     
+R7U       CCJ       CCI       single    1.531     0.020     1.531     0.020     
+R7U       HCC       CCJ       single    1.089     0.010     0.989     0.005     
+R7U       HCJ1      CCJ       single    1.089     0.010     0.989     0.005     
+R7U       CCI       CCH       double    1.539     0.020     1.539     0.020     
+R7U       HCD       CCI       single    1.082     0.013     0.975     0.010     
+R7U       CCH       CCG       single    1.521     0.020     1.521     0.020     
+R7U       CCG       CCF       single    1.508     0.020     1.508     0.020     
+R7U       HCG       CCG       single    1.089     0.010     0.989     0.005     
+R7U       HCE       CCH       single    1.082     0.013     0.975     0.010     
+R7U       CCF       CCE       single    1.523     0.020     1.523     0.020     
+R7U       CCF       NCA       single    1.473     0.020     1.473     0.020     
+R7U       HCF       CCF       single    1.089     0.010     0.989     0.005     
+R7U       CCE       CCD       single    1.544     0.020     1.544     0.020     
+R7U       HCH       CCE       single    1.089     0.010     0.989     0.005     
+R7U       HCE1      CCE       single    1.089     0.010     0.989     0.005     
+R7U       CCD       CCC       single    1.536     0.020     1.536     0.020     
+R7U       HCI       CCD       single    1.089     0.010     0.989     0.005     
+R7U       HCD1      CCD       single    1.089     0.010     0.989     0.005     
+R7U       CCC       CCB       single    1.549     0.020     1.549     0.020     
+R7U       HCJ       CCC       single    1.089     0.010     0.989     0.005     
+R7U       HCC1      CCC       single    1.089     0.010     0.989     0.005     
+R7U       CCB       NCA       single    1.443     0.020     1.443     0.020     
+R7U       HCK       CCB       single    1.089     0.010     0.989     0.005     
+R7U       HCB1      CCB       single    1.089     0.010     0.989     0.005     
+R7U       NBL       CBK       single    1.441     0.020     1.441     0.020     
+R7U       NBL       CBG       single    1.483     0.020     1.483     0.020     
+R7U       CBK       CBJ       single    1.533     0.020     1.533     0.020     
+R7U       HBB       CBK       single    1.089     0.010     0.989     0.005     
+R7U       HBK1      CBK       single    1.089     0.010     0.989     0.005     
+R7U       CL5       CL0       single    1.529     0.020     1.529     0.020     
+R7U       HL31      CL0       single    1.089     0.010     0.989     0.005     
+R7U       HL32      CL0       single    1.089     0.010     0.989     0.005     
+R7U       CBJ       CBI       single    1.529     0.020     1.529     0.020     
+R7U       HBC       CBJ       single    1.089     0.010     0.989     0.005     
+R7U       HBJ1      CBJ       single    1.089     0.010     0.989     0.005     
+R7U       CBI       CBH       single    1.544     0.020     1.544     0.020     
+R7U       HBD       CBI       single    1.089     0.010     0.989     0.005     
+R7U       HBI1      CBI       single    1.089     0.010     0.989     0.005     
+R7U       CL6       CL5       single    1.530     0.020     1.530     0.020     
+R7U       HL11      CL6       single    1.089     0.010     0.989     0.005     
+R7U       HL12      CL6       single    1.089     0.010     0.989     0.005     
+R7U       HL21      CL5       single    1.089     0.010     0.989     0.005     
+R7U       HL22      CL5       single    1.089     0.010     0.989     0.005     
+R7U       CBH       CBG       single    1.520     0.020     1.520     0.020     
+R7U       CBG       CBF       single    1.499     0.020     1.499     0.020     
+R7U       HBG       CBG       single    1.089     0.010     0.989     0.005     
+R7U       HBE       CBH       single    1.089     0.010     0.989     0.005     
+R7U       HBH1      CBH       single    1.089     0.010     0.989     0.005     
+R7U       CBF       CBE       single    1.508     0.020     1.508     0.020     
+R7U       CBF       NBA       single    1.486     0.020     1.486     0.020     
+R7U       HBF       CBF       single    1.089     0.010     0.989     0.005     
+R7U       CBE       CBD       single    1.326     0.020     1.326     0.020     
+R7U       HBH       CBE       single    1.089     0.010     0.989     0.005     
+R7U       CBD       CBC       single    1.503     0.020     1.503     0.020     
+R7U       HBI       CBD       single    1.089     0.010     0.989     0.005     
+R7U       CBC       CBB       single    1.530     0.020     1.530     0.020     
+R7U       HBJ       CBC       single    1.089     0.010     0.989     0.005     
+R7U       HBC1      CBC       single    1.089     0.010     0.989     0.005     
+R7U       CBB       NBA       single    1.440     0.020     1.440     0.020     
+R7U       HBK       CBB       single    1.089     0.010     0.989     0.005     
+R7U       HBB1      CBB       single    1.089     0.010     0.989     0.005     
+R7U       HBE0      CBE       single    1.089     0.010     0.989     0.005     
+R7U       HBD0      CBD       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ R7U      HM13   CM1    HM12    109.472    3.000
+ R7U      HM13   CM1    HM11    109.469    3.000
+ R7U      HM12   CM1    HM11    109.441    3.000
+ R7U      HM13   CM1    NNG     109.479    3.000
+ R7U      HM12   CM1    NNG     109.488    3.000
+ R7U      HM11   CM1    NNG     109.479    3.000
+ R7U      CM1    NNG    CM2     120.005    3.000
+ R7U      CM1    NNG    CNE     120.000    3.000
+ R7U      CM2    NNG    CNE     119.996    3.000
+ R7U      NNG    CM2    HM21    109.483    3.000
+ R7U      NNG    CM2    HM22    109.440    3.000
+ R7U      NNG    CM2    HM23    109.463    3.000
+ R7U      HM21   CM2    HM22    109.503    3.000
+ R7U      HM21   CM2    HM23    109.443    3.000
+ R7U      HM22   CM2    HM23    109.495    3.000
+ R7U      NNG    CNE    CND     120.048    3.000
+ R7U      NNG    CNE    CNF     120.015    3.000
+ R7U      CND    CNE    CNF     119.936    3.000
+ R7U      CNE    CND    HND     119.956    3.000
+ R7U      CNE    CND    CNC     120.012    3.000
+ R7U      HND    CND    CNC     120.032    3.000
+ R7U      CND    CNC    HNC     119.917    3.000
+ R7U      CND    CNC    CNB     120.141    3.000
+ R7U      HNC    CNC    CNB     119.943    3.000
+ R7U      CNC    CNB    HNB     119.938    3.000
+ R7U      CNC    CNB    CNA     120.103    3.000
+ R7U      HNB    CNB    CNA     119.959    3.000
+ R7U      CNB    CNA    CNF     119.948    3.000
+ R7U      CNB    CNA    OL5     120.021    3.000
+ R7U      CNF    CNA    OL5     120.030    3.000
+ R7U      CNA    CNF    HNF     119.997    3.000
+ R7U      CNA    CNF    CNE     119.858    3.000
+ R7U      HNF    CNF    CNE     120.143    3.000
+ R7U      CNA    OL5    CL4     106.794    3.000
+ R7U      OL5    CL4    HL71    109.452    3.000
+ R7U      OL5    CL4    HL72    109.457    3.000
+ R7U      OL5    CL4    CL3     109.482    3.000
+ R7U      HL71   CL4    HL72    109.482    3.000
+ R7U      HL71   CL4    CL3     109.503    3.000
+ R7U      HL72   CL4    CL3     109.452    3.000
+ R7U      CL4    CL3    HL61    109.454    3.000
+ R7U      CL4    CL3    HL62    109.420    3.000
+ R7U      CL4    CL3    CL2     109.481    3.000
+ R7U      HL61   CL3    HL62    109.449    3.000
+ R7U      HL61   CL3    CL2     109.514    3.000
+ R7U      HL62   CL3    CL2     109.509    3.000
+ R7U      CL3    CL2    HL51    109.514    3.000
+ R7U      CL3    CL2    HL52    109.435    3.000
+ R7U      CL3    CL2    CL1     109.481    3.000
+ R7U      HL51   CL2    HL52    109.491    3.000
+ R7U      HL51   CL2    CL1     109.454    3.000
+ R7U      HL52   CL2    CL1     109.452    3.000
+ R7U      CL2    CL1    HL41    109.454    3.000
+ R7U      CL2    CL1    HL42    109.452    3.000
+ R7U      CL2    CL1    CL0     109.495    3.000
+ R7U      HL41   CL1    HL42    109.491    3.000
+ R7U      HL41   CL1    CL0     109.479    3.000
+ R7U      HL42   CL1    CL0     109.456    3.000
+ R7U      CL1    CL0    HL31    109.439    3.000
+ R7U      CL1    CL0    HL32    109.452    3.000
+ R7U      CL1    CL0    CL5     109.462    3.000
+ R7U      HL31   CL0    HL32    109.479    3.000
+ R7U      HL31   CL0    CL5     109.492    3.000
+ R7U      HL32   CL0    CL5     109.502    3.000
+ R7U      CL0    CL5    HL21    109.492    3.000
+ R7U      CL0    CL5    HL22    109.502    3.000
+ R7U      CL0    CL5    CL6     109.462    3.000
+ R7U      HL21   CL5    HL22    109.479    3.000
+ R7U      HL21   CL5    CL6     109.439    3.000
+ R7U      HL22   CL5    CL6     109.452    3.000
+ R7U      CL5    CL6    HL11    109.439    3.000
+ R7U      CL5    CL6    HL12    109.456    3.000
+ R7U      CL5    CL6    CA0     109.490    3.000
+ R7U      HL11   CL6    HL12    109.482    3.000
+ R7U      HL11   CL6    CA0     109.496    3.000
+ R7U      HL12   CL6    CA0     109.465    3.000
+ R7U      CL6    CA0    CAK     121.210    3.000
+ R7U      CL6    CA0    CAM     119.601    3.000
+ R7U      CAK    CA0    CAM     119.174    3.000
+ R7U      CA0    CAK    CAJ     122.428    3.000
+ R7U      CA0    CAK    CAB     118.093    3.000
+ R7U      CAJ    CAK    CAB     119.479    3.000
+ R7U      CA0    CAM    HAM     119.271    3.000
+ R7U      CA0    CAM    CAN     121.836    3.000
+ R7U      HAM    CAM    CAN     118.893    3.000
+ R7U      CAM    CAN    HAN     117.029    3.000
+ R7U      CAM    CAN    NAA     121.971    3.000
+ R7U      HAN    CAN    NAA     120.890    3.000
+ R7U      CAN    NAA    CAB     118.405    3.000
+ R7U      CAN    NAA    RU      133.514    3.000
+ R7U      CAB    NAA    RU      108.079    3.000
+ R7U      NAA    CAB    CAK     120.060    3.000
+ R7U      NAA    CAB    CAC     119.765    3.000
+ R7U      CAK    CAB    CAC     120.172    3.000
+ R7U      NAA    RU     NBA      94.296    3.000
+ R7U      NAA    RU     NCA      90.958    3.000
+ R7U      NAA    RU     NAD      83.517    3.000
+ R7U      NAA    RU     NCL      96.175    3.000
+ R7U      NAA    RU     NBL     166.559    3.000
+ R7U      NBA    RU     NCA     174.493    3.000
+ R7U      NBA    RU     NAD      90.562    3.000
+ R7U      NCA    RU     NAD      91.670    3.000
+ R7U      NCL    RU     NBL      91.988    3.000
+ R7U      NBA    RU     NCL      95.026    3.000
+ R7U      NCA    RU     NCL      82.753    3.000
+ R7U      NAD    RU     NCL     174.411    3.000
+ R7U      NBA    RU     NBL      74.310    3.000
+ R7U      NCA    RU     NBL     100.676    3.000
+ R7U      NAD    RU     NBL      89.387    3.000
+ R7U      RU     NBA    CBB     112.065    3.000
+ R7U      RU     NBA    CBF     106.074    3.000
+ R7U      CBB    NBA    CBF     107.830    3.000
+ R7U      NBA    CBB    HBK     109.105    3.000
+ R7U      NBA    CBB    HBB1    111.516    3.000
+ R7U      NBA    CBB    CBC     111.504    3.000
+ R7U      HBK    CBB    HBB1    107.519    3.000
+ R7U      HBK    CBB    CBC     107.732    3.000
+ R7U      HBB1   CBB    CBC     109.312    3.000
+ R7U      CBB    CBC    HBJ     108.610    3.000
+ R7U      CBB    CBC    HBC1    108.515    3.000
+ R7U      CBB    CBC    CBD     113.898    3.000
+ R7U      HBJ    CBC    HBC1    108.553    3.000
+ R7U      HBJ    CBC    CBD     108.668    3.000
+ R7U      HBC1   CBC    CBD     108.481    3.000
+ R7U      CBC    CBD    HBI     119.832    3.000
+ R7U      CBC    CBD    HBD0    109.470    3.000
+ R7U      CBC    CBD    CBE     119.751    3.000
+ R7U      HBI    CBD    HBD0    107.900    3.000
+ R7U      HBI    CBD    CBE     120.418    3.000
+ R7U      HBD0   CBD    CBE     109.470    3.000
+ R7U      CBD    CBE    HBE0    109.470    3.000
+ R7U      CBD    CBE    HBH     124.481    3.000
+ R7U      CBD    CBE    CBF     112.207    3.000
+ R7U      HBE0   CBE    HBH     107.900    3.000
+ R7U      HBE0   CBE    CBF     109.470    3.000
+ R7U      HBH    CBE    CBF     123.313    3.000
+ R7U      NBA    CBF    HBF     111.363    3.000
+ R7U      NBA    CBF    CBG     110.655    3.000
+ R7U      NBA    CBF    CBE     104.268    3.000
+ R7U      HBF    CBF    CBG     106.795    3.000
+ R7U      HBF    CBF    CBE     106.712    3.000
+ R7U      CBG    CBF    CBE     117.037    3.000
+ R7U      CBF    CBG    HBG     105.597    3.000
+ R7U      CBF    CBG    CBH     116.791    3.000
+ R7U      CBF    CBG    NBL     111.175    3.000
+ R7U      HBG    CBG    CBH     106.134    3.000
+ R7U      HBG    CBG    NBL     106.808    3.000
+ R7U      CBH    CBG    NBL     109.671    3.000
+ R7U      CBG    CBH    HBE     109.991    3.000
+ R7U      CBG    CBH    HBH1    109.824    3.000
+ R7U      CBG    CBH    CBI     104.671    3.000
+ R7U      HBE    CBH    HBH1    111.847    3.000
+ R7U      HBE    CBH    CBI     110.222    3.000
+ R7U      HBH1   CBH    CBI     110.045    3.000
+ R7U      CBH    CBI    HBD     109.699    3.000
+ R7U      CBH    CBI    HBI1    109.651    3.000
+ R7U      CBH    CBI    CBJ     107.791    3.000
+ R7U      HBD    CBI    HBI1    110.133    3.000
+ R7U      HBD    CBI    CBJ     109.806    3.000
+ R7U      HBI1   CBI    CBJ     109.723    3.000
+ R7U      CBI    CBJ    HBC     109.002    3.000
+ R7U      CBI    CBJ    HBJ1    109.034    3.000
+ R7U      CBI    CBJ    CBK     112.365    3.000
+ R7U      HBC    CBJ    HBJ1    108.327    3.000
+ R7U      HBC    CBJ    CBK     109.008    3.000
+ R7U      HBJ1   CBJ    CBK     109.024    3.000
+ R7U      CBJ    CBK    HBK1    109.883    3.000
+ R7U      CBJ    CBK    HBB     105.034    3.000
+ R7U      CBJ    CBK    NBL     112.346    3.000
+ R7U      HBK1   CBK    HBB     110.357    3.000
+ R7U      HBK1   CBK    NBL     111.799    3.000
+ R7U      HBB    CBK    NBL     107.171    3.000
+ R7U      CBG    NBL    RU      104.047    3.000
+ R7U      CBG    NBL    CBK     108.207    3.000
+ R7U      RU     NBL    CBK     111.785    3.000
+ R7U      RU     NCA    CCB     114.819    3.000
+ R7U      RU     NCA    CCF     108.337    3.000
+ R7U      CCB    NCA    CCF     105.977    3.000
+ R7U      NCA    CCB    HCK     112.763    3.000
+ R7U      NCA    CCB    HCB1    109.996    3.000
+ R7U      NCA    CCB    CCC     106.710    3.000
+ R7U      HCK    CCB    HCB1    112.342    3.000
+ R7U      HCK    CCB    CCC     110.086    3.000
+ R7U      HCB1   CCB    CCC     104.470    3.000
+ R7U      CCB    CCC    HCJ     109.008    3.000
+ R7U      CCB    CCC    HCC1    109.101    3.000
+ R7U      CCB    CCC    CCD     108.939    3.000
+ R7U      HCJ    CCC    HCC1    110.730    3.000
+ R7U      HCJ    CCC    CCD     109.399    3.000
+ R7U      HCC1   CCC    CCD     109.635    3.000
+ R7U      CCC    CCD    HCI     109.310    3.000
+ R7U      CCC    CCD    HCD1    109.231    3.000
+ R7U      CCC    CCD    CCE     108.931    3.000
+ R7U      HCI    CCD    HCD1    109.988    3.000
+ R7U      HCI    CCD    CCE     109.672    3.000
+ R7U      HCD1   CCD    CCE     109.689    3.000
+ R7U      CCD    CCE    HCE1    110.042    3.000
+ R7U      CCD    CCE    HCH     110.242    3.000
+ R7U      CCD    CCE    CCF     105.701    3.000
+ R7U      HCE1   CCE    HCH     111.590    3.000
+ R7U      HCE1   CCE    CCF     109.498    3.000
+ R7U      HCH    CCE    CCF     109.595    3.000
+ R7U      NCA    CCF    HCF     108.038    3.000
+ R7U      NCA    CCF    CCG     110.452    3.000
+ R7U      NCA    CCF    CCE     107.662    3.000
+ R7U      HCF    CCF    CCG     106.855    3.000
+ R7U      HCF    CCF    CCE     106.569    3.000
+ R7U      CCG    CCF    CCE     116.898    3.000
+ R7U      CCF    CCG    HCG     108.265    3.000
+ R7U      CCF    CCG    CCH     114.348    3.000
+ R7U      CCF    CCG    NCL     106.629    3.000
+ R7U      HCG    CCG    CCH     108.862    3.000
+ R7U      HCG    CCG    NCL     109.662    3.000
+ R7U      CCH    CCG    NCL     109.000    3.000
+ R7U      CCG    CCH    HCE     109.990    3.000
+ R7U      CCG    CCH    CCI     106.724    3.000
+ R7U      HCE    CCH    CCI     109.589    3.000
+ R7U      CCH    CCI    HCD     109.469    3.000
+ R7U      CCH    CCI    CCJ     108.292    3.000
+ R7U      HCD    CCI    CCJ     109.573    3.000
+ R7U      CCI    CCJ    HCC     109.384    3.000
+ R7U      CCI    CCJ    HCJ1    109.487    3.000
+ R7U      CCI    CCJ    CCK     110.205    3.000
+ R7U      HCC    CCJ    HCJ1    109.560    3.000
+ R7U      HCC    CCJ    CCK     109.030    3.000
+ R7U      HCJ1   CCJ    CCK     109.159    3.000
+ R7U      CCJ    CCK    HCK1    107.649    3.000
+ R7U      CCJ    CCK    HCB     108.612    3.000
+ R7U      CCJ    CCK    NCL     109.964    3.000
+ R7U      HCK1   CCK    HCB     107.245    3.000
+ R7U      HCK1   CCK    NCL     111.656    3.000
+ R7U      HCB    CCK    NCL     111.567    3.000
+ R7U      CCG    NCL    RU      105.102    3.000
+ R7U      CCG    NCL    CCK     106.109    3.000
+ R7U      RU     NCL    CCK     110.929    3.000
+ R7U      RU     NAD    CAC     108.185    3.000
+ R7U      RU     NAD    CAE     132.007    3.000
+ R7U      CAC    NAD    CAE     119.804    3.000
+ R7U      NAD    CAC    CAB     119.918    3.000
+ R7U      NAD    CAC    CAH     119.219    3.000
+ R7U      CAB    CAC    CAH     120.858    3.000
+ R7U      NAD    CAE    HAE     119.421    3.000
+ R7U      NAD    CAE    CAF     121.336    3.000
+ R7U      HAE    CAE    CAF     119.243    3.000
+ R7U      CAE    CAF    HAF     119.065    3.000
+ R7U      CAE    CAF    CAG     121.661    3.000
+ R7U      HAF    CAF    CAG     119.273    3.000
+ R7U      CAF    CAG    HAG     120.169    3.000
+ R7U      CAF    CAG    CAH     119.553    3.000
+ R7U      HAG    CAG    CAH     120.278    3.000
+ R7U      CAG    CAH    CAI     122.275    3.000
+ R7U      CAG    CAH    CAC     118.368    3.000
+ R7U      CAI    CAH    CAC     119.357    3.000
+ R7U      CAH    CAI    HAI     120.146    3.000
+ R7U      CAH    CAI    CAJ     119.924    3.000
+ R7U      HAI    CAI    CAJ     119.930    3.000
+ R7U      CAI    CAJ    HAJ     118.937    3.000
+ R7U      CAI    CAJ    CAK     120.142    3.000
+ R7U      HAJ    CAJ    CAK     120.921    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ R7U      var_1    HM11   CM1    NNG    CNE      180.000   20.000   3
+ R7U      var_2    CM1    NNG    CM2    HM23    -120.004   20.000   3
+ R7U      var_3    CM1    NNG    CNE    CND      180.000   20.000   3
+ R7U      CONST_1  NNG    CNE    CNF    CNA      179.691    0.000   0
+ R7U      CONST_2  NNG    CNE    CND    CNC     -179.966    0.000   0
+ R7U      CONST_3  CNE    CND    CNC    CNB       -0.048    0.000   0
+ R7U      CONST_4  CND    CNC    CNB    CNA        0.034    0.000   0
+ R7U      CONST_5  CNC    CNB    CNA    OL5      179.980    0.000   0
+ R7U      CONST_6  CNB    CNA    CNF    CNE        0.591    0.000   0
+ R7U      var_4    CNB    CNA    OL5    CL4        0.000   20.000   3
+ R7U      var_5    CNA    OL5    CL4    CL3      180.000   20.000   3
+ R7U      var_6    OL5    CL4    CL3    CL2      180.000   20.000   3
+ R7U      var_7    CL4    CL3    CL2    CL1      179.972   20.000   3
+ R7U      var_8    CL3    CL2    CL1    CL0     -179.966   20.000   3
+ R7U      var_9    CL2    CL1    CL0    CL5     -179.972   20.000   3
+ R7U      var_10   CL1    CL0    CL5    CL6      179.972   20.000   3
+ R7U      var_11   CL0    CL5    CL6    CA0      180.000   20.000   3
+ R7U      var_12   CL5    CL6    CA0    CAM      -83.630   20.000   2
+ R7U      CONST_7  CL6    CA0    CAK    CAJ       -2.450    0.000   0
+ R7U      CONST_8  CA0    CAK    CAJ    CAI     -178.200    0.000   0
+ R7U      CONST_9  CA0    CAK    CAB    NAA       -0.086    0.000   0
+ R7U      CONST_10 CL6    CA0    CAM    CAN     -178.744    0.000   0
+ R7U      CONST_11 CA0    CAM    CAN    NAA        3.432    0.000   0
+ R7U      CONST_12 CAM    CAN    NAA    RU       173.003    0.000   0
+ R7U      CONST_13 CAN    NAA    CAB    CAK        5.824    0.000   0
+ R7U      CONST_14 NAA    CAB    CAC    NAD       -1.184    0.000   0
+ R7U      CONST_15 CAN    NAA    RU     NAD      173.116    0.000   0
+ R7U      var_13   NAA    RU     NCL    CCG       65.226   20.000   3
+ R7U      var_14   NAA    RU     NBL    CBG       81.745   20.000   3
+ R7U      var_15   NAA    RU     NBA    CBF      140.322   20.000   3
+ R7U      var_16   RU     NBA    CBB    CBC      156.649   20.000   3
+ R7U      var_17   NBA    CBB    CBC    CBD       13.369   20.000   3
+ R7U      var_18   CBB    CBC    CBD    CBE      -36.265   20.000   3
+ R7U      var_19   CBC    CBD    CBE    CBF       -0.284   20.000   3
+ R7U      var_20   RU     NBA    CBF    CBG       35.746   20.000   3
+ R7U      var_21   NBA    CBF    CBE    CBD       55.431   20.000   3
+ R7U      var_22   NBA    CBF    CBG    NBL        4.990   20.000   3
+ R7U      var_23   CBF    CBG    CBH    CBI      162.728   20.000   3
+ R7U      var_24   CBG    CBH    CBI    CBJ       61.163   20.000   3
+ R7U      var_25   CBH    CBI    CBJ    CBK      -53.848   20.000   3
+ R7U      var_26   CBI    CBJ    CBK    NBL       51.919   20.000   3
+ R7U      var_27   CBF    CBG    NBL    RU       -42.936   20.000   3
+ R7U      var_28   CBG    NBL    CBK    CBJ      -56.247   20.000   3
+ R7U      var_29   NAA    RU     NCA    CCF     -100.376   20.000   3
+ R7U      var_30   RU     NCA    CCB    CCC     -170.647   20.000   3
+ R7U      var_31   NCA    CCB    CCC    CCD      -62.193   20.000   3
+ R7U      var_32   CCB    CCC    CCD    CCE       56.516   20.000   3
+ R7U      var_33   CCC    CCD    CCE    CCF      -57.815   20.000   3
+ R7U      var_34   RU     NCA    CCF    CCG       33.471   20.000   3
+ R7U      var_35   NCA    CCF    CCE    CCD       66.363   20.000   3
+ R7U      var_36   NCA    CCF    CCG    NCL      -56.553   20.000   3
+ R7U      var_37   CCF    CCG    CCH    CCI     -174.330   20.000   3
+ R7U      var_38   CCG    CCH    CCI    CCJ      -58.577   20.000   3
+ R7U      var_39   CCH    CCI    CCJ    CCK       55.526   20.000   3
+ R7U      var_40   CCI    CCJ    CCK    NCL      -59.586   20.000   3
+ R7U      var_41   CCF    CCG    NCL    RU        49.207   20.000   3
+ R7U      var_42   CCG    NCL    CCK    CCJ       64.350   20.000   3
+ R7U      CONST_16 NAA    RU     NAD    CAE     -174.857    0.000   0
+ R7U      CONST_17 RU     NAD    CAC    CAB       -4.383    0.000   0
+ R7U      CONST_18 NAD    CAC    CAH    CAG        2.000    0.000   0
+ R7U      CONST_19 RU     NAD    CAE    CAF     -177.258    0.000   0
+ R7U      CONST_20 NAD    CAE    CAF    CAG       -0.000    0.000   0
+ R7U      CONST_21 CAE    CAF    CAG    CAH       -0.936    0.000   0
+ R7U      CONST_22 CAF    CAG    CAH    CAI     -179.980    0.000   0
+ R7U      CONST_23 CAG    CAH    CAI    CAJ      178.197    0.000   0
+ R7U      CONST_24 CAH    CAI    CAJ    CAK       -0.642    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ R7U      chir_01  NCL    RU     CCK    CCG       negativ
+                   .      .      .      .      .
+ R7U      chir_02  CCG    NCL    CCH    CCF       positiv
+                   .      .      .      .      .
+ R7U      chir_03  CCF    CCG    CCE    NCA       negativ
+                   .      .      .      .      .
+ R7U      chir_04  NCA    RU     CCF    CCB       positiv
+                   .      .      .      .      .
+ R7U      chir_05  NBL    RU     CBK    CBG       positiv
+                   .      .      .      .      .
+ R7U      chir_06  CBG    NBL    CBH    CBF       negativ
+                   .      .      .      .      .
+ R7U      chir_07  CBF    CBG    CBE    NBA       negativ
+                   .      .      .      .      .
+ R7U      chir_08  NBA    RU     CBF    CBB       positiv
+                   .      .      .      .      .
+ R7U      chir_09  RU     NAA    NBL    NCA       cross4
+                   NCL    NBA    NAD    .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ R7U      plan-1    NNG       0.020
+ R7U      plan-1    CM2       0.020
+ R7U      plan-1    CM1       0.020
+ R7U      plan-1    CNE       0.020
+ R7U      plan-2    CNE       0.020
+ R7U      plan-2    NNG       0.020
+ R7U      plan-2    CNF       0.020
+ R7U      plan-2    CND       0.020
+ R7U      plan-2    CNA       0.020
+ R7U      plan-2    CNB       0.020
+ R7U      plan-2    CNC       0.020
+ R7U      plan-2    HNF       0.020
+ R7U      plan-2    OL5       0.020
+ R7U      plan-2    HNB       0.020
+ R7U      plan-2    HNC       0.020
+ R7U      plan-2    HND       0.020
+ R7U      plan-3    CAK       0.020
+ R7U      plan-3    CAJ       0.020
+ R7U      plan-3    CAB       0.020
+ R7U      plan-3    CA0       0.020
+ R7U      plan-3    NAA       0.020
+ R7U      plan-3    CAN       0.020
+ R7U      plan-3    CAM       0.020
+ R7U      plan-3    CAI       0.020
+ R7U      plan-3    HAJ       0.020
+ R7U      plan-3    CAC       0.020
+ R7U      plan-3    CAH       0.020
+ R7U      plan-3    NAD       0.020
+ R7U      plan-3    CAG       0.020
+ R7U      plan-3    CAF       0.020
+ R7U      plan-3    CAE       0.020
+ R7U      plan-3    CL6       0.020
+ R7U      plan-3    HAI       0.020
+ R7U      plan-3    HAG       0.020
+ R7U      plan-3    HAF       0.020
+ R7U      plan-3    HAE       0.020
+ R7U      plan-3    RU        0.020
+ R7U      plan-3    HAN       0.020
+ R7U      plan-3    HAM       0.020
+ R7U      plan-4    CCI       0.020
+ R7U      plan-4    CCJ       0.020
+ R7U      plan-4    CCH       0.020
+ R7U      plan-4    HCD       0.020
+ R7U      plan-4    HCE       0.020
+ R7U      plan-5    CCH       0.020
+ R7U      plan-5    CCI       0.020
+ R7U      plan-5    CCG       0.020
+ R7U      plan-5    HCE       0.020
+ R7U      plan-5    HCD       0.020
+# ------------------------------------------------------

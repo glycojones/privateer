@@ -1,0 +1,298 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LOV      LOV '5-AMINO-4-HYDROXY-2-ISOPROPYL-7-METH' non-polymer        40  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LOV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LOV           OXT    O    OC       -0.500      0.000    0.000    0.000
+ LOV           C      C    C         0.000     -1.204    0.248   -0.231
+ LOV           O      O    OC       -0.500     -1.541    1.381   -0.640
+ LOV           CA     C    CH1       0.000     -2.248   -0.817   -0.016
+ LOV           HA     H    H         0.000     -2.238   -1.132    1.037
+ LOV           CB     C    CH1       0.000     -1.940   -2.019   -0.910
+ LOV           HB     H    H         0.000     -1.949   -1.704   -1.963
+ LOV           CG2    C    CH3       0.000     -3.001   -3.102   -0.693
+ LOV           HG23   H    H         0.000     -3.957   -2.716   -0.937
+ LOV           HG22   H    H         0.000     -2.789   -3.935   -1.312
+ LOV           HG21   H    H         0.000     -2.993   -3.407    0.322
+ LOV           CG1    C    CH3       0.000     -0.561   -2.579   -0.557
+ LOV           HG13   H    H         0.000     -0.347   -3.412   -1.175
+ LOV           HG12   H    H         0.000      0.175   -1.831   -0.708
+ LOV           HG11   H    H         0.000     -0.551   -2.883    0.458
+ LOV           CT     C    CH2       0.000     -3.628   -0.258   -0.370
+ LOV           HT1    H    H         0.000     -4.371   -1.055   -0.300
+ LOV           HT2    H    H         0.000     -3.611    0.134   -1.389
+ LOV           CS     C    CH1       0.000     -3.987    0.864    0.605
+ LOV           HS1    H    H         0.000     -3.192    1.623    0.601
+ LOV           OS     O    OH1       0.000     -4.124    0.325    1.922
+ LOV           HOS    H    H         0.000     -4.824   -0.342    1.925
+ LOV           C1A    C    CH1       0.000     -5.309    1.507    0.178
+ LOV           H1A    H    H         0.000     -5.204    1.921   -0.835
+ LOV           N      N    NH2       0.000     -6.372    0.493    0.184
+ LOV           H2     H    H         0.000     -6.877    0.276   -0.667
+ LOV           H      H    H         0.000     -6.607    0.003    1.039
+ LOV           C1B    C    CH2       0.000     -5.669    2.629    1.153
+ LOV           H1B1   H    H         0.000     -4.840    3.336    1.215
+ LOV           H1B2   H    H         0.000     -5.859    2.204    2.141
+ LOV           C1G    C    CH1       0.000     -6.924    3.353    0.657
+ LOV           H1G    H    H         0.000     -7.733    2.624    0.509
+ LOV           CD2    C    CH3       0.000     -6.617    4.051   -0.670
+ LOV           HD23   H    H         0.000     -6.316    3.332   -1.387
+ LOV           HD22   H    H         0.000     -7.485    4.551   -1.015
+ LOV           HD21   H    H         0.000     -5.838    4.754   -0.528
+ LOV           CD1    C    CH3       0.000     -7.356    4.391    1.693
+ LOV           HD13   H    H         0.000     -7.568    3.908    2.611
+ LOV           HD12   H    H         0.000     -6.576    5.094    1.836
+ LOV           HD11   H    H         0.000     -8.224    4.893    1.350
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LOV      OXT    n/a    C      START
+ LOV      C      OXT    CA     .
+ LOV      O      C      .      .
+ LOV      CA     C      CT     .
+ LOV      HA     CA     .      .
+ LOV      CB     CA     CG1    .
+ LOV      HB     CB     .      .
+ LOV      CG2    CB     HG21   .
+ LOV      HG23   CG2    .      .
+ LOV      HG22   CG2    .      .
+ LOV      HG21   CG2    .      .
+ LOV      CG1    CB     HG11   .
+ LOV      HG13   CG1    .      .
+ LOV      HG12   CG1    .      .
+ LOV      HG11   CG1    .      .
+ LOV      CT     CA     CS     .
+ LOV      HT1    CT     .      .
+ LOV      HT2    CT     .      .
+ LOV      CS     CT     C1A    .
+ LOV      HS1    CS     .      .
+ LOV      OS     CS     HOS    .
+ LOV      HOS    OS     .      .
+ LOV      C1A    CS     C1B    .
+ LOV      H1A    C1A    .      .
+ LOV      N      C1A    H      .
+ LOV      H2     N      .      .
+ LOV      H      N      .      .
+ LOV      C1B    C1A    C1G    .
+ LOV      H1B1   C1B    .      .
+ LOV      H1B2   C1B    .      .
+ LOV      C1G    C1B    CD1    .
+ LOV      H1G    C1G    .      .
+ LOV      CD2    C1G    HD21   .
+ LOV      HD23   CD2    .      .
+ LOV      HD22   CD2    .      .
+ LOV      HD21   CD2    .      .
+ LOV      CD1    C1G    HD11   .
+ LOV      HD13   CD1    .      .
+ LOV      HD12   CD1    .      .
+ LOV      HD11   CD1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LOV       CD1       C1G       single    1.524     0.020     1.524     0.020     
+LOV       HD11      CD1       single    1.089     0.010     0.989     0.005     
+LOV       HD12      CD1       single    1.089     0.010     0.989     0.005     
+LOV       HD13      CD1       single    1.089     0.010     0.989     0.005     
+LOV       CD2       C1G       single    1.524     0.020     1.524     0.020     
+LOV       HD21      CD2       single    1.089     0.010     0.989     0.005     
+LOV       HD22      CD2       single    1.089     0.010     0.989     0.005     
+LOV       HD23      CD2       single    1.089     0.010     0.989     0.005     
+LOV       C1G       C1B       single    1.524     0.020     1.524     0.020     
+LOV       H1G       C1G       single    1.089     0.010     0.989     0.005     
+LOV       C1B       C1A       single    1.524     0.020     1.524     0.020     
+LOV       H1B1      C1B       single    1.089     0.010     0.989     0.005     
+LOV       H1B2      C1B       single    1.089     0.010     0.989     0.005     
+LOV       C1A       CS        single    1.524     0.020     1.524     0.020     
+LOV       N         C1A       single    1.450     0.020     1.450     0.020     
+LOV       H1A       C1A       single    1.089     0.010     0.989     0.005     
+LOV       OS        CS        single    1.432     0.020     1.432     0.020     
+LOV       CS        CT        single    1.524     0.020     1.524     0.020     
+LOV       HS1       CS        single    1.089     0.010     0.989     0.005     
+LOV       H         N         single    1.036     0.016     0.914     0.007     
+LOV       H2        N         single    1.036     0.016     0.914     0.007     
+LOV       HOS       OS        single    0.970     0.012     0.839     0.014     
+LOV       CT        CA        single    1.524     0.020     1.524     0.020     
+LOV       HT1       CT        single    1.089     0.010     0.989     0.005     
+LOV       HT2       CT        single    1.089     0.010     0.989     0.005     
+LOV       CB        CA        single    1.524     0.020     1.524     0.020     
+LOV       CA        C         single    1.500     0.020     1.500     0.020     
+LOV       HA        CA        single    1.089     0.010     0.989     0.005     
+LOV       CG1       CB        single    1.524     0.020     1.524     0.020     
+LOV       CG2       CB        single    1.524     0.020     1.524     0.020     
+LOV       HB        CB        single    1.089     0.010     0.989     0.005     
+LOV       HG11      CG1       single    1.089     0.010     0.989     0.005     
+LOV       HG12      CG1       single    1.089     0.010     0.989     0.005     
+LOV       HG13      CG1       single    1.089     0.010     0.989     0.005     
+LOV       HG21      CG2       single    1.089     0.010     0.989     0.005     
+LOV       HG22      CG2       single    1.089     0.010     0.989     0.005     
+LOV       HG23      CG2       single    1.089     0.010     0.989     0.005     
+LOV       O         C         deloc     1.250     0.020     1.250     0.020     
+LOV       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LOV      OXT    C      O       123.000    3.000
+ LOV      OXT    C      CA      118.500    3.000
+ LOV      O      C      CA      118.500    3.000
+ LOV      C      CA     HA      108.810    3.000
+ LOV      C      CA     CB      109.470    3.000
+ LOV      C      CA     CT      109.470    3.000
+ LOV      HA     CA     CB      108.340    3.000
+ LOV      HA     CA     CT      108.340    3.000
+ LOV      CB     CA     CT      111.000    3.000
+ LOV      CA     CB     HB      108.340    3.000
+ LOV      CA     CB     CG2     111.000    3.000
+ LOV      CA     CB     CG1     111.000    3.000
+ LOV      HB     CB     CG2     108.340    3.000
+ LOV      HB     CB     CG1     108.340    3.000
+ LOV      CG2    CB     CG1     111.000    3.000
+ LOV      CB     CG2    HG23    109.470    3.000
+ LOV      CB     CG2    HG22    109.470    3.000
+ LOV      CB     CG2    HG21    109.470    3.000
+ LOV      HG23   CG2    HG22    109.470    3.000
+ LOV      HG23   CG2    HG21    109.470    3.000
+ LOV      HG22   CG2    HG21    109.470    3.000
+ LOV      CB     CG1    HG13    109.470    3.000
+ LOV      CB     CG1    HG12    109.470    3.000
+ LOV      CB     CG1    HG11    109.470    3.000
+ LOV      HG13   CG1    HG12    109.470    3.000
+ LOV      HG13   CG1    HG11    109.470    3.000
+ LOV      HG12   CG1    HG11    109.470    3.000
+ LOV      CA     CT     HT1     109.470    3.000
+ LOV      CA     CT     HT2     109.470    3.000
+ LOV      CA     CT     CS      111.000    3.000
+ LOV      HT1    CT     HT2     107.900    3.000
+ LOV      HT1    CT     CS      109.470    3.000
+ LOV      HT2    CT     CS      109.470    3.000
+ LOV      CT     CS     HS1     108.340    3.000
+ LOV      CT     CS     OS      109.470    3.000
+ LOV      CT     CS     C1A     111.000    3.000
+ LOV      HS1    CS     OS      109.470    3.000
+ LOV      HS1    CS     C1A     108.340    3.000
+ LOV      OS     CS     C1A     109.470    3.000
+ LOV      CS     OS     HOS     109.470    3.000
+ LOV      CS     C1A    H1A     108.340    3.000
+ LOV      CS     C1A    N       109.470    3.000
+ LOV      CS     C1A    C1B     111.000    3.000
+ LOV      H1A    C1A    N       109.470    3.000
+ LOV      H1A    C1A    C1B     108.340    3.000
+ LOV      N      C1A    C1B     109.470    3.000
+ LOV      C1A    N      H2      120.000    3.000
+ LOV      C1A    N      H       120.000    3.000
+ LOV      H2     N      H       120.000    3.000
+ LOV      C1A    C1B    H1B1    109.470    3.000
+ LOV      C1A    C1B    H1B2    109.470    3.000
+ LOV      C1A    C1B    C1G     111.000    3.000
+ LOV      H1B1   C1B    H1B2    107.900    3.000
+ LOV      H1B1   C1B    C1G     109.470    3.000
+ LOV      H1B2   C1B    C1G     109.470    3.000
+ LOV      C1B    C1G    H1G     108.340    3.000
+ LOV      C1B    C1G    CD2     111.000    3.000
+ LOV      C1B    C1G    CD1     111.000    3.000
+ LOV      H1G    C1G    CD2     108.340    3.000
+ LOV      H1G    C1G    CD1     108.340    3.000
+ LOV      CD2    C1G    CD1     111.000    3.000
+ LOV      C1G    CD2    HD23    109.470    3.000
+ LOV      C1G    CD2    HD22    109.470    3.000
+ LOV      C1G    CD2    HD21    109.470    3.000
+ LOV      HD23   CD2    HD22    109.470    3.000
+ LOV      HD23   CD2    HD21    109.470    3.000
+ LOV      HD22   CD2    HD21    109.470    3.000
+ LOV      C1G    CD1    HD13    109.470    3.000
+ LOV      C1G    CD1    HD12    109.470    3.000
+ LOV      C1G    CD1    HD11    109.470    3.000
+ LOV      HD13   CD1    HD12    109.470    3.000
+ LOV      HD13   CD1    HD11    109.470    3.000
+ LOV      HD12   CD1    HD11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LOV      var_1    OXT    C      CA     CT       179.970   20.000   3
+ LOV      var_2    C      CA     CB     CG1       60.050   20.000   3
+ LOV      var_3    CA     CB     CG2    HG21     -60.039   20.000   3
+ LOV      var_4    CA     CB     CG1    HG11      59.951   20.000   3
+ LOV      var_5    C      CA     CT     CS       -64.986   20.000   3
+ LOV      var_6    CA     CT     CS     C1A      175.004   20.000   3
+ LOV      var_7    CT     CS     OS     HOS      -59.998   20.000   1
+ LOV      var_8    CT     CS     C1A    C1B      179.967   20.000   3
+ LOV      var_9    CS     C1A    N      H         60.009   20.000   1
+ LOV      var_10   CS     C1A    C1B    C1G      174.989   20.000   3
+ LOV      var_11   C1A    C1B    C1G    CD1      175.007   20.000   3
+ LOV      var_12   C1B    C1G    CD2    HD21     -60.082   20.000   3
+ LOV      var_13   C1B    C1G    CD1    HD11     179.984   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LOV      chir_01  C1G    CD1    CD2    C1B       negativ
+ LOV      chir_02  C1A    C1B    CS     N         negativ
+ LOV      chir_03  CS     C1A    OS     CT        negativ
+ LOV      chir_04  CA     CT     CB     C         negativ
+ LOV      chir_05  CB     CA     CG1    CG2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LOV      plan-1    N         0.020
+ LOV      plan-1    C1A       0.020
+ LOV      plan-1    H         0.020
+ LOV      plan-1    H2        0.020
+ LOV      plan-2    C         0.020
+ LOV      plan-2    CA        0.020
+ LOV      plan-2    O         0.020
+ LOV      plan-2    OXT       0.020
+# ------------------------------------------------------

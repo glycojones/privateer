@@ -1,0 +1,163 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PSW     PSW     "3-(SULFANYLSELANYL)-L-ALANINE"     peptide    15     8     .
+#
+data_comp_PSW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PSW     N       N       NT3     1       -0.207      -1.669      -0.690
+PSW     C       C       C       0       -0.952      -0.589      1.412
+PSW     O       O       O       0       -1.845      0.081       1.968
+PSW     CA      C       CH1     0       -0.813      -0.438      -0.110
+PSW     CB      C       CH2     0       -0.003      0.799       -0.480
+PSW     SE      SE      SE      0       1.810       0.811       0.282
+PSW     SD      S       SH1     0       2.863       2.743       -0.299
+PSW     OXT     O       OC      -1      -0.164      -1.368      1.986
+PSW     H       H       H       0       0.001       -1.531      -1.567
+PSW     H2      H       H       0       -0.799      -2.359      -0.634
+PSW     H3      H       H       0       0.551       -1.894      -0.237
+PSW     HA      H       H       0       -1.714      -0.331      -0.492
+PSW     HB1C    H       H       0       -0.481      1.597       -0.171
+PSW     HB2C    H       H       0       0.065       0.855       -1.457
+PSW     HD      H       HSH1    0       3.844       2.901       0.412
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+PSW      N      n/a    CA     START
+PSW      H      N      .      .
+PSW      H2     N      .      .
+PSW      H3     N      .      .
+PSW      CA     N      C      .
+PSW      HA     CA     .      .
+PSW      CB     CA     SE     .
+PSW      HB1C   CB     .      .
+PSW      HB2C   CB     .      .
+PSW      SE     CB     SD     .
+PSW      SD     SE     HD     .
+PSW      HD     SD     .      .
+PSW      C      CA     .      END
+PSW      O      C      .      .
+PSW      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PSW       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+PSW       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+PSW       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+PSW       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+PSW       CA        CB        SINGLE    n         1.520     0.015     1.520     0.015     
+PSW       CB        SE        SINGLE    n         1.963     0.020     1.963     0.020     
+PSW       SE        SD        SINGLE    n         2.276     0.020     2.276     0.020     
+PSW       N         H         SINGLE    n         1.036     0.016     0.914     0.007     
+PSW       N         H2        SINGLE    n         1.036     0.016     0.914     0.007     
+PSW       N         H3        SINGLE    n         1.036     0.016     0.914     0.007     
+PSW       CA        HA        SINGLE    n         1.089     0.010     0.989     0.005     
+PSW       CB        HB1C      SINGLE    n         1.089     0.010     0.989     0.005     
+PSW       CB        HB2C      SINGLE    n         1.089     0.010     0.989     0.005     
+PSW       SD        HD        SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PSW          CA           N           H     109.853    1.85
+PSW          CA           N          H2     109.853    1.85
+PSW          CA           N          H3     109.853    1.85
+PSW           H           N          H2     109.028    2.41
+PSW           H           N          H3     109.028    2.41
+PSW          H2           N          H3     109.028    2.41
+PSW           O           C          CA     117.139    1.50
+PSW           O           C         OXT     125.721    1.50
+PSW          CA           C         OXT     117.139    1.50
+PSW           N          CA           C     109.414    1.50
+PSW           N          CA          CB     110.632    1.50
+PSW           N          CA          HA     108.444    1.50
+PSW           C          CA          CB     111.425    1.50
+PSW           C          CA          HA     108.600    1.50
+PSW          CB          CA          HA     108.078    1.50
+PSW          CA          CB          SE     111.593    3.00
+PSW          CA          CB        HB1C     109.297    1.50
+PSW          CA          CB        HB2C     109.297    1.50
+PSW          SE          CB        HB1C     109.134    1.50
+PSW          SE          CB        HB2C     109.134    1.50
+PSW        HB1C          CB        HB2C     107.871    1.50
+PSW          CB          SE          SD     109.471    3.00
+PSW          SE          SD          HD     109.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PSW             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+PSW             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+PSW            sp3_sp3_10           N          CA          CB          SE     180.000   10.00     3
+PSW            sp3_sp3_19          CA          CB          SE          SD     180.000   10.00     3
+PSW            sp3_sp3_22          HD          SD          SE          CB     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PSW    chir_1    CA    N    CB    C    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PSW    plan-1           C   0.020
+PSW    plan-1          CA   0.020
+PSW    plan-1           O   0.020
+PSW    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PSW SMILES           ACDLabs              10.04 "O=C(O)C(N)C[Se]S"
+PSW SMILES_CANONICAL CACTVS               3.352 "N[C@@H](C[Se]S)C(O)=O"
+PSW SMILES           CACTVS               3.352 "N[CH](C[Se]S)C(O)=O"
+PSW SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "C([C@@H](C(=O)O)N)[Se]S"
+PSW SMILES           "OpenEye OEToolkits" 1.6.1 "C(C(C(=O)O)N)[Se]S"
+PSW InChI            InChI                1.03  "InChI=1S/C3H7NO2SSe/c4-2(1-8-7)3(5)6/h2,7H,1,4H2,(H,5,6)/t2-/m0/s1"
+PSW InChIKey         InChI                1.03  SPXWFQKISDCWEH-REOHCLBHSA-N
+PSW ?                acedrg               202         "dictionary generator"
+PSW ?                acedrg_database      11          "data source"
+PSW ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PSW ?                refmac5              5.8.0222    "optimization tool"

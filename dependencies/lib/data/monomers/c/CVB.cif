@@ -1,0 +1,186 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CVB     CVB      "4-(CARBOXYVIN-2-YL)PHENYLBORONIC ACID"     NON-POLYMER     22     14     .     
+#
+data_comp_CVB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CVB     B       B       B       0       26.763      5.264       16.607      
+CVB     OB1     O       OH1     0       26.946      3.917       16.565      
+CVB     OB2     O       OH1     0       27.121      5.938       17.733      
+CVB     CP1     C       CR6     0       26.150      6.026       15.381      
+CVB     CP2     C       CR16    0       25.641      5.336       14.257      
+CVB     CP3     C       CR16    0       25.097      6.010       13.169      
+CVB     CP4     C       CR6     0       25.033      7.415       13.147      
+CVB     CX1     C       C1      0       24.462      8.133       12.004      
+CVB     CX2     C       C1      0       24.603      7.834       10.715      
+CVB     CX3     C       C       0       23.879      8.509       9.577       
+CVB     OX1     O       OC      -1      24.116      8.108       8.439       
+CVB     OX2     O       O       0       23.086      9.424       9.823       
+CVB     CP5     C       CR16    0       25.536      8.115       14.258      
+CVB     CP6     C       CR16    0       26.079      7.438       15.344      
+CVB     HO11    H       H       0       27.372      3.672       15.897      
+CVB     HO21    H       H       0       27.698      6.517       17.590      
+CVB     HC21    H       H       0       25.669      4.390       14.241      
+CVB     HC31    H       H       0       24.766      5.521       12.435      
+CVB     HX11    H       H       0       23.946      8.895       12.213      
+CVB     HX21    H       H       0       25.200      7.144       10.489      
+CVB     HC51    H       H       0       25.503      9.055       14.264      
+CVB     HC61    H       H       0       26.409      7.938       16.077      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CVB       B         OB1       SINGLE    n         1.360     0.011     1.360     0.011     
+CVB       B         OB2       SINGLE    n         1.360     0.011     1.360     0.011     
+CVB       B         CP1       SINGLE    n         1.567     0.011     1.567     0.011     
+CVB       CP1       CP2       DOUBLE    y         1.397     0.016     1.397     0.016     
+CVB       CP1       CP6       SINGLE    y         1.397     0.016     1.397     0.016     
+CVB       CP2       CP3       SINGLE    y         1.384     0.010     1.384     0.010     
+CVB       CP3       CP4       DOUBLE    y         1.400     0.010     1.400     0.010     
+CVB       CP4       CX1       SINGLE    n         1.465     0.010     1.465     0.010     
+CVB       CP4       CP5       SINGLE    y         1.400     0.010     1.400     0.010     
+CVB       CX1       CX2       DOUBLE    n         1.318     0.020     1.318     0.020     
+CVB       CX2       CX3       SINGLE    n         1.492     0.020     1.492     0.020     
+CVB       CX3       OX1       SINGLE    n         1.230     0.020     1.230     0.020     
+CVB       CX3       OX2       DOUBLE    n         1.230     0.020     1.230     0.020     
+CVB       CP5       CP6       DOUBLE    y         1.384     0.010     1.384     0.010     
+CVB       OB1       HO11      SINGLE    n         0.970     0.012     0.829     0.020     
+CVB       OB2       HO21      SINGLE    n         0.970     0.012     0.829     0.020     
+CVB       CP2       HC21      SINGLE    n         1.082     0.013     0.947     0.017     
+CVB       CP3       HC31      SINGLE    n         1.082     0.013     0.941     0.017     
+CVB       CX1       HX11      SINGLE    n         1.082     0.013     0.945     0.020     
+CVB       CX2       HX21      SINGLE    n         1.082     0.013     0.940     0.018     
+CVB       CP5       HC51      SINGLE    n         1.082     0.013     0.941     0.017     
+CVB       CP6       HC61      SINGLE    n         1.082     0.013     0.947     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CVB         OB1           B         OB2     119.315    2.69
+CVB         OB1           B         CP1     120.343    2.68
+CVB         OB2           B         CP1     120.343    2.68
+CVB           B         OB1        HO11     112.760    3.00
+CVB           B         OB2        HO21     112.760    3.00
+CVB           B         CP1         CP2     121.571    1.50
+CVB           B         CP1         CP6     121.571    1.50
+CVB         CP2         CP1         CP6     116.858    1.50
+CVB         CP1         CP2         CP3     121.816    1.50
+CVB         CP1         CP2        HC21     119.255    1.50
+CVB         CP3         CP2        HC21     118.930    1.50
+CVB         CP2         CP3         CP4     120.852    1.50
+CVB         CP2         CP3        HC31     119.795    1.50
+CVB         CP4         CP3        HC31     119.353    1.50
+CVB         CP3         CP4         CX1     121.096    2.00
+CVB         CP3         CP4         CP5     117.808    1.50
+CVB         CX1         CP4         CP5     121.096    2.00
+CVB         CP4         CX1         CX2     127.349    1.50
+CVB         CP4         CX1        HX11     116.250    1.50
+CVB         CX2         CX1        HX11     116.403    1.50
+CVB         CX1         CX2         CX3     123.568    1.67
+CVB         CX1         CX2        HX21     118.640    1.50
+CVB         CX3         CX2        HX21     117.792    1.50
+CVB         CX2         CX3         OX1     118.013    1.50
+CVB         CX2         CX3         OX2     118.013    1.50
+CVB         OX1         CX3         OX2     123.974    1.50
+CVB         CP4         CP5         CP6     120.852    1.50
+CVB         CP4         CP5        HC51     119.353    1.50
+CVB         CP6         CP5        HC51     119.795    1.50
+CVB         CP1         CP6         CP5     121.816    1.50
+CVB         CP1         CP6        HC61     119.255    1.50
+CVB         CP5         CP6        HC61     118.930    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CVB             sp2_sp2_1         OB1           B         CP1         CP2     180.000   10.00     2
+CVB              const_17         CP4         CP5         CP6         CP1       0.000   10.00     2
+CVB              const_23           B         CP1         CP6         CP5     180.000   10.00     2
+CVB       const_sp2_sp2_3           B         CP1         CP2         CP3     180.000   10.00     2
+CVB       const_sp2_sp2_5         CP1         CP2         CP3         CP4       0.000   10.00     2
+CVB              const_10         CP2         CP3         CP4         CX1     180.000   10.00     2
+CVB              const_15         CX1         CP4         CP5         CP6     180.000   10.00     2
+CVB             sp2_sp2_5         CP3         CP4         CX1         CX2     180.000   10.00     2
+CVB             sp2_sp2_9         CP4         CX1         CX2         CX3     180.000   10.00     2
+CVB            sp2_sp2_13         CX1         CX2         CX3         OX1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CVB    plan-1           B   0.020
+CVB    plan-1         CP1   0.020
+CVB    plan-1         CP2   0.020
+CVB    plan-1         CP3   0.020
+CVB    plan-1         CP4   0.020
+CVB    plan-1         CP5   0.020
+CVB    plan-1         CP6   0.020
+CVB    plan-1         CX1   0.020
+CVB    plan-1        HC21   0.020
+CVB    plan-1        HC31   0.020
+CVB    plan-1        HC51   0.020
+CVB    plan-1        HC61   0.020
+CVB    plan-2           B   0.020
+CVB    plan-2         CP1   0.020
+CVB    plan-2         OB1   0.020
+CVB    plan-2         OB2   0.020
+CVB    plan-3         CP4   0.020
+CVB    plan-3         CX1   0.020
+CVB    plan-3         CX2   0.020
+CVB    plan-3        HX11   0.020
+CVB    plan-4         CX1   0.020
+CVB    plan-4         CX2   0.020
+CVB    plan-4         CX3   0.020
+CVB    plan-4        HX21   0.020
+CVB    plan-5         CX2   0.020
+CVB    plan-5         CX3   0.020
+CVB    plan-5         OX1   0.020
+CVB    plan-5         OX2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CVB SMILES           ACDLabs              10.04 "O=C(O)\C=C\c1ccc(B(O)O)cc1"
+CVB SMILES_CANONICAL CACTVS               3.341 "OB(O)c1ccc(\C=C\C(O)=O)cc1"
+CVB SMILES           CACTVS               3.341 "OB(O)c1ccc(C=CC(O)=O)cc1"
+CVB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "B(c1ccc(cc1)\C=C\C(=O)O)(O)O"
+CVB SMILES           "OpenEye OEToolkits" 1.5.0 "B(c1ccc(cc1)C=CC(=O)O)(O)O"
+CVB InChI            InChI                1.03  "InChI=1S/C9H9BO4/c11-9(12)6-3-7-1-4-8(5-2-7)10(13)14/h1-6,13-14H,(H,11,12)/b6-3+"
+CVB InChIKey         InChI                1.03  IEMLKNHGGSYOMP-ZZXKWVIFSA-N
+CVB ?                acedrg               202         "dictionary generator"                  
+CVB ?                acedrg_database      11          "data source"                           
+CVB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CVB ?                refmac5              5.8.0189    "optimization tool"                     

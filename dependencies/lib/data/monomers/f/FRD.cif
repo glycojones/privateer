@@ -1,0 +1,216 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FRD      FRD '1-PHENYL-2-AMINOPROPANE             ' non-polymer        23  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FRD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FRD           N      N    NH2       0.000      0.000    0.000    0.000
+ FRD           H      H    H         0.000      0.975   -0.179    0.208
+ FRD           H2     H    H         0.000     -0.262    0.300   -0.932
+ FRD           CA     C    CH1       0.000     -1.024   -0.174    1.039
+ FRD           HA     H    H         0.000     -1.464    0.803    1.286
+ FRD           C      C    CH3       0.000     -0.382   -0.775    2.291
+ FRD           HC3    H    H         0.000     -1.119   -0.900    3.041
+ FRD           HC2    H    H         0.000      0.043   -1.716    2.053
+ FRD           HC1    H    H         0.000      0.376   -0.126    2.647
+ FRD           CB     C    CH2       0.000     -2.118   -1.110    0.525
+ FRD           HB2    H    H         0.000     -2.878   -1.240    1.298
+ FRD           HB3    H    H         0.000     -1.680   -2.080    0.281
+ FRD           CG     C    CR6       0.000     -2.749   -0.517   -0.708
+ FRD           CD2    C    CR16      0.000     -3.846    0.314   -0.590
+ FRD           HD2    H    H         0.000     -4.255    0.537    0.388
+ FRD           CE2    C    CR16      0.000     -4.423    0.862   -1.721
+ FRD           HE2    H    H         0.000     -5.278    1.519   -1.628
+ FRD           CZ     C    CR16      0.000     -3.908    0.570   -2.969
+ FRD           HZ     H    H         0.000     -4.362    0.997   -3.856
+ FRD           CE1    C    CR16      0.000     -2.814   -0.266   -3.088
+ FRD           HE1    H    H         0.000     -2.410   -0.494   -4.066
+ FRD           CD1    C    CR16      0.000     -2.234   -0.810   -1.956
+ FRD           HD1    H    H         0.000     -1.377   -1.465   -2.049
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FRD      N      n/a    CA     START
+ FRD      H      N      .      .
+ FRD      H2     N      .      .
+ FRD      CA     N      CB     .
+ FRD      HA     CA     .      .
+ FRD      C      CA     HC1    .
+ FRD      HC3    C      .      .
+ FRD      HC2    C      .      .
+ FRD      HC1    C      .      .
+ FRD      CB     CA     CG     .
+ FRD      HB2    CB     .      .
+ FRD      HB3    CB     .      .
+ FRD      CG     CB     CD2    .
+ FRD      CD2    CG     CE2    .
+ FRD      HD2    CD2    .      .
+ FRD      CE2    CD2    CZ     .
+ FRD      HE2    CE2    .      .
+ FRD      CZ     CE2    CE1    .
+ FRD      HZ     CZ     .      .
+ FRD      CE1    CZ     CD1    .
+ FRD      HE1    CE1    .      .
+ FRD      CD1    CE1    HD1    .
+ FRD      HD1    CD1    .      END
+ FRD      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FRD       CA        N         single    1.450     0.020     1.450     0.020     
+FRD       H         N         single    1.036     0.016     0.914     0.007     
+FRD       H2        N         single    1.036     0.016     0.914     0.007     
+FRD       C         CA        single    1.524     0.020     1.524     0.020     
+FRD       CB        CA        single    1.524     0.020     1.524     0.020     
+FRD       HA        CA        single    1.089     0.010     0.989     0.005     
+FRD       HC1       C         single    1.089     0.010     0.989     0.005     
+FRD       HC2       C         single    1.089     0.010     0.989     0.005     
+FRD       HC3       C         single    1.089     0.010     0.989     0.005     
+FRD       CG        CB        single    1.511     0.020     1.511     0.020     
+FRD       HB2       CB        single    1.089     0.010     0.989     0.005     
+FRD       HB3       CB        single    1.089     0.010     0.989     0.005     
+FRD       CG        CD1       double    1.390     0.020     1.390     0.020     
+FRD       CD2       CG        single    1.390     0.020     1.390     0.020     
+FRD       CD1       CE1       single    1.390     0.020     1.390     0.020     
+FRD       HD1       CD1       single    1.082     0.013     0.975     0.010     
+FRD       CE2       CD2       double    1.390     0.020     1.390     0.020     
+FRD       HD2       CD2       single    1.082     0.013     0.975     0.010     
+FRD       CE1       CZ        double    1.390     0.020     1.390     0.020     
+FRD       HE1       CE1       single    1.082     0.013     0.975     0.010     
+FRD       CZ        CE2       single    1.390     0.020     1.390     0.020     
+FRD       HE2       CE2       single    1.082     0.013     0.975     0.010     
+FRD       HZ        CZ        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FRD      H      N      H2      120.000    3.000
+ FRD      H      N      CA      120.000    3.000
+ FRD      H2     N      CA      120.000    3.000
+ FRD      N      CA     HA      109.470    3.000
+ FRD      N      CA     C       109.470    3.000
+ FRD      N      CA     CB      109.470    3.000
+ FRD      HA     CA     C       108.340    3.000
+ FRD      HA     CA     CB      108.340    3.000
+ FRD      C      CA     CB      111.000    3.000
+ FRD      CA     C      HC3     109.470    3.000
+ FRD      CA     C      HC2     109.470    3.000
+ FRD      CA     C      HC1     109.470    3.000
+ FRD      HC3    C      HC2     109.470    3.000
+ FRD      HC3    C      HC1     109.470    3.000
+ FRD      HC2    C      HC1     109.470    3.000
+ FRD      CA     CB     HB2     109.470    3.000
+ FRD      CA     CB     HB3     109.470    3.000
+ FRD      CA     CB     CG      109.470    3.000
+ FRD      HB2    CB     HB3     107.900    3.000
+ FRD      HB2    CB     CG      109.470    3.000
+ FRD      HB3    CB     CG      109.470    3.000
+ FRD      CB     CG     CD2     120.000    3.000
+ FRD      CB     CG     CD1     120.000    3.000
+ FRD      CD2    CG     CD1     120.000    3.000
+ FRD      CG     CD2    HD2     120.000    3.000
+ FRD      CG     CD2    CE2     120.000    3.000
+ FRD      HD2    CD2    CE2     120.000    3.000
+ FRD      CD2    CE2    HE2     120.000    3.000
+ FRD      CD2    CE2    CZ      120.000    3.000
+ FRD      HE2    CE2    CZ      120.000    3.000
+ FRD      CE2    CZ     HZ      120.000    3.000
+ FRD      CE2    CZ     CE1     120.000    3.000
+ FRD      HZ     CZ     CE1     120.000    3.000
+ FRD      CZ     CE1    HE1     120.000    3.000
+ FRD      CZ     CE1    CD1     120.000    3.000
+ FRD      HE1    CE1    CD1     120.000    3.000
+ FRD      CE1    CD1    HD1     120.000    3.000
+ FRD      CE1    CD1    CG      120.000    3.000
+ FRD      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FRD      var_1    H2     N      CA     CB        53.765   20.000   1
+ FRD      var_2    N      CA     C      HC1       59.998   20.000   3
+ FRD      var_3    N      CA     CB     CG       -60.007   20.000   3
+ FRD      var_4    CA     CB     CG     CD2      -90.282   20.000   2
+ FRD      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ FRD      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ FRD      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ FRD      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ FRD      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ FRD      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FRD      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FRD      plan-1    N         0.020
+ FRD      plan-1    CA        0.020
+ FRD      plan-1    H         0.020
+ FRD      plan-1    H2        0.020
+ FRD      plan-2    CG        0.020
+ FRD      plan-2    CB        0.020
+ FRD      plan-2    CD1       0.020
+ FRD      plan-2    CD2       0.020
+ FRD      plan-2    CE1       0.020
+ FRD      plan-2    CE2       0.020
+ FRD      plan-2    CZ        0.020
+ FRD      plan-2    HD1       0.020
+ FRD      plan-2    HD2       0.020
+ FRD      plan-2    HE1       0.020
+ FRD      plan-2    HE2       0.020
+ FRD      plan-2    HZ        0.020
+# ------------------------------------------------------

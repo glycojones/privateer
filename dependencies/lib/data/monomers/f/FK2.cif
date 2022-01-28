@@ -1,0 +1,110 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FK2     FK2      "3-oxidanylidenepropanoic acid"     NON-POLYMER     9     6     .     
+#
+data_comp_FK2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FK2     C1      C       CH2     0       0.099       -0.477      -0.314      
+FK2     C2      C       C1      0       1.215       0.490       0.070       
+FK2     O1      O       O       0       1.255       1.617       -0.327      
+FK2     C       C       C       0       -1.265      -0.064      0.228       
+FK2     O       O       O       0       -2.133      0.305       -0.585      
+FK2     O2      O       OC      -1      -1.446      -0.115      1.458       
+FK2     H1      H       H       0       0.315       -1.365      0.029       
+FK2     H2      H       H       0       0.046       -0.533      -1.287      
+FK2     H3      H       H       0       1.878       0.134       0.650       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FK2       C2        O1        DOUBLE    n         1.195     0.0200    1.195     0.0200    
+FK2       C1        C2        SINGLE    n         1.526     0.0198    1.526     0.0198    
+FK2       C1        C         SINGLE    n         1.525     0.0126    1.525     0.0126    
+FK2       C         O         DOUBLE    n         1.244     0.0200    1.244     0.0200    
+FK2       C         O2        SINGLE    n         1.244     0.0200    1.244     0.0200    
+FK2       C1        H1        SINGLE    n         1.089     0.010     0.976     0.0200    
+FK2       C1        H2        SINGLE    n         1.089     0.010     0.976     0.0200    
+FK2       C2        H3        SINGLE    n         1.082     0.013     0.950     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FK2          C2          C1           C     111.575    3.00
+FK2          C2          C1          H1     108.731    1.50
+FK2          C2          C1          H2     108.731    1.50
+FK2           C          C1          H1     108.236    1.50
+FK2           C          C1          H2     108.236    1.50
+FK2          H1          C1          H2     107.635    1.72
+FK2          O1          C2          C1     122.573    1.72
+FK2          O1          C2          H3     122.229    1.50
+FK2          C1          C2          H3     115.198    1.50
+FK2          C1           C           O     118.071    1.50
+FK2          C1           C          O2     118.071    1.50
+FK2           O           C          O2     123.857    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FK2             sp2_sp3_2          O1          C2          C1           C     120.000   10.00     6
+FK2             sp2_sp3_8           O           C          C1          C2     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FK2    plan-1          C1   0.020
+FK2    plan-1          C2   0.020
+FK2    plan-1          H3   0.020
+FK2    plan-1          O1   0.020
+FK2    plan-2           C   0.020
+FK2    plan-2          C1   0.020
+FK2    plan-2           O   0.020
+FK2    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FK2            InChI                InChI  1.03 InChI=1S/C3H4O3/c4-2-1-3(5)6/h2H,1H2,(H,5,6)
+FK2         InChIKey                InChI  1.03                  OAKURXIZZOAYBC-UHFFFAOYSA-N
+FK2 SMILES_CANONICAL               CACTVS 3.385                                   OC(=O)CC=O
+FK2           SMILES               CACTVS 3.385                                   OC(=O)CC=O
+FK2 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                 C(C=O)C(=O)O
+FK2           SMILES "OpenEye OEToolkits" 2.0.6                                 C(C=O)C(=O)O
+FK2 ?                acedrg               217         "dictionary generator"                  
+FK2 ?                acedrg_database      11          "data source"                           
+FK2 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FK2 ?                refmac5              5.8.0253    "optimization tool"                     

@@ -1,0 +1,309 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MMR      MMR 'N-((2R,3R,4S,6S)-6-(HYDROXYMETHYL)-2' non-polymer        40  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MMR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MMR           O11    O    O         0.000      0.000    0.000    0.000
+ MMR           C11    C    C1        0.000     -0.752    0.476   -0.817
+ MMR           H11    H    H         0.000     -0.519    0.411   -1.866
+ MMR           C10    C    CH1       0.000     -2.016    1.162   -0.366
+ MMR           H10    H    H         0.000     -2.079    1.130    0.731
+ MMR           C12    C    CH3       0.000     -2.000    2.619   -0.833
+ MMR           H123   H    H         0.000     -1.162    3.116   -0.417
+ MMR           H122   H    H         0.000     -1.938    2.652   -1.890
+ MMR           H121   H    H         0.000     -2.888    3.102   -0.517
+ MMR           O3     O    O2        0.000     -3.147    0.494   -0.929
+ MMR           C3     C    CH1       0.000     -4.323    0.563   -0.122
+ MMR           H3     H    H         0.000     -4.039    0.625    0.938
+ MMR           C2     C    CH1       0.000     -5.177   -0.688   -0.351
+ MMR           H2     H    H         0.000     -5.418   -0.778   -1.420
+ MMR           N2     N    NH1       0.000     -4.434   -1.873    0.085
+ MMR           HN2    H    H         0.000     -3.707   -1.786    0.781
+ MMR           C8     C    C         0.000     -4.721   -3.080   -0.442
+ MMR           O8     O    O         0.000     -5.594   -3.185   -1.277
+ MMR           C9     C    CH3       0.000     -3.957   -4.299    0.007
+ MMR           H93    H    H         0.000     -3.906   -4.998   -0.787
+ MMR           H92    H    H         0.000     -2.976   -4.018    0.292
+ MMR           H91    H    H         0.000     -4.450   -4.741    0.834
+ MMR           C4     C    CH2       0.000     -5.139    1.801   -0.508
+ MMR           H41    H    H         0.000     -5.377    1.765   -1.573
+ MMR           H42    H    H         0.000     -4.558    2.702   -0.297
+ MMR           C5     C    CH1       0.000     -6.434    1.824    0.307
+ MMR           H5     H    H         0.000     -6.194    1.904    1.376
+ MMR           C6     C    CH2       0.000     -7.283    3.025   -0.117
+ MMR           H61    H    H         0.000     -7.596    2.899   -1.156
+ MMR           H62    H    H         0.000     -6.692    3.938   -0.024
+ MMR           O6     O    OH1       0.000     -8.436    3.114    0.722
+ MMR           HO6    H    H         0.000     -8.972    3.872    0.453
+ MMR           O5     O    O2        0.000     -7.165    0.619    0.070
+ MMR           C1     C    CH1       0.000     -6.471   -0.570    0.457
+ MMR           H1     H    H         0.000     -6.231   -0.521    1.529
+ MMR           O1     O    O2        0.000     -7.297   -1.708    0.205
+ MMR           C7     C    CH3       0.000     -8.484   -1.753    0.998
+ MMR           H73    H    H         0.000     -8.223   -1.779    2.024
+ MMR           H72    H    H         0.000     -9.071   -0.892    0.806
+ MMR           H71    H    H         0.000     -9.041   -2.620    0.753
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MMR      O11    n/a    C11    START
+ MMR      C11    O11    C10    .
+ MMR      H11    C11    .      .
+ MMR      C10    C11    O3     .
+ MMR      H10    C10    .      .
+ MMR      C12    C10    H121   .
+ MMR      H123   C12    .      .
+ MMR      H122   C12    .      .
+ MMR      H121   C12    .      .
+ MMR      O3     C10    C3     .
+ MMR      C3     O3     C4     .
+ MMR      H3     C3     .      .
+ MMR      C2     C3     N2     .
+ MMR      H2     C2     .      .
+ MMR      N2     C2     C8     .
+ MMR      HN2    N2     .      .
+ MMR      C8     N2     C9     .
+ MMR      O8     C8     .      .
+ MMR      C9     C8     H91    .
+ MMR      H93    C9     .      .
+ MMR      H92    C9     .      .
+ MMR      H91    C9     .      .
+ MMR      C4     C3     C5     .
+ MMR      H41    C4     .      .
+ MMR      H42    C4     .      .
+ MMR      C5     C4     O5     .
+ MMR      H5     C5     .      .
+ MMR      C6     C5     O6     .
+ MMR      H61    C6     .      .
+ MMR      H62    C6     .      .
+ MMR      O6     C6     HO6    .
+ MMR      HO6    O6     .      .
+ MMR      O5     C5     C1     .
+ MMR      C1     O5     O1     .
+ MMR      H1     C1     .      .
+ MMR      O1     C1     C7     .
+ MMR      C7     O1     H71    .
+ MMR      H73    C7     .      .
+ MMR      H72    C7     .      .
+ MMR      H71    C7     .      END
+ MMR      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MMR       O1        C1        single    1.426     0.020     1.426     0.020     
+MMR       C1        C2        single    1.524     0.020     1.524     0.020     
+MMR       C1        O5        single    1.426     0.020     1.426     0.020     
+MMR       H1        C1        single    1.089     0.010     0.989     0.005     
+MMR       N2        C2        single    1.450     0.020     1.450     0.020     
+MMR       C2        C3        single    1.524     0.020     1.524     0.020     
+MMR       H2        C2        single    1.089     0.010     0.989     0.005     
+MMR       C3        O3        single    1.426     0.020     1.426     0.020     
+MMR       C4        C3        single    1.524     0.020     1.524     0.020     
+MMR       H3        C3        single    1.089     0.010     0.989     0.005     
+MMR       C5        C4        single    1.524     0.020     1.524     0.020     
+MMR       H41       C4        single    1.089     0.010     0.989     0.005     
+MMR       H42       C4        single    1.089     0.010     0.989     0.005     
+MMR       O5        C5        single    1.426     0.020     1.426     0.020     
+MMR       C6        C5        single    1.524     0.020     1.524     0.020     
+MMR       H5        C5        single    1.089     0.010     0.989     0.005     
+MMR       O6        C6        single    1.432     0.020     1.432     0.020     
+MMR       H61       C6        single    1.089     0.010     0.989     0.005     
+MMR       H62       C6        single    1.089     0.010     0.989     0.005     
+MMR       C7        O1        single    1.426     0.020     1.426     0.020     
+MMR       H71       C7        single    1.089     0.010     0.989     0.005     
+MMR       H72       C7        single    1.089     0.010     0.989     0.005     
+MMR       H73       C7        single    1.089     0.010     0.989     0.005     
+MMR       O3        C10       single    1.426     0.020     1.426     0.020     
+MMR       HO6       O6        single    0.970     0.012     0.839     0.014     
+MMR       C8        N2        single    1.330     0.020     1.330     0.020     
+MMR       HN2       N2        single    1.016     0.010     0.899     0.007     
+MMR       C9        C8        single    1.500     0.020     1.500     0.020     
+MMR       O8        C8        double    1.220     0.020     1.220     0.020     
+MMR       H91       C9        single    1.089     0.010     0.989     0.005     
+MMR       H92       C9        single    1.089     0.010     0.989     0.005     
+MMR       H93       C9        single    1.089     0.010     0.989     0.005     
+MMR       C12       C10       single    1.524     0.020     1.524     0.020     
+MMR       C10       C11       single    1.510     0.020     1.510     0.020     
+MMR       H10       C10       single    1.089     0.010     0.989     0.005     
+MMR       H121      C12       single    1.089     0.010     0.989     0.005     
+MMR       H122      C12       single    1.089     0.010     0.989     0.005     
+MMR       H123      C12       single    1.089     0.010     0.989     0.005     
+MMR       C11       O11       double    1.220     0.020     1.220     0.020     
+MMR       H11       C11       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MMR      O11    C11    H11     123.000    3.000
+ MMR      O11    C11    C10     120.500    3.000
+ MMR      H11    C11    C10     120.000    3.000
+ MMR      C11    C10    H10     108.810    3.000
+ MMR      C11    C10    C12     109.470    3.000
+ MMR      C11    C10    O3      109.500    3.000
+ MMR      H10    C10    C12     108.340    3.000
+ MMR      H10    C10    O3      109.470    3.000
+ MMR      C12    C10    O3      109.470    3.000
+ MMR      C10    C12    H123    109.470    3.000
+ MMR      C10    C12    H122    109.470    3.000
+ MMR      C10    C12    H121    109.470    3.000
+ MMR      H123   C12    H122    109.470    3.000
+ MMR      H123   C12    H121    109.470    3.000
+ MMR      H122   C12    H121    109.470    3.000
+ MMR      C10    O3     C3      111.800    3.000
+ MMR      O3     C3     H3      109.470    3.000
+ MMR      O3     C3     C2      109.470    3.000
+ MMR      O3     C3     C4      109.470    3.000
+ MMR      H3     C3     C2      108.340    3.000
+ MMR      H3     C3     C4      108.340    3.000
+ MMR      C2     C3     C4      111.000    3.000
+ MMR      C3     C2     H2      108.340    3.000
+ MMR      C3     C2     N2      110.000    3.000
+ MMR      C3     C2     C1      111.000    3.000
+ MMR      H2     C2     N2      108.550    3.000
+ MMR      H2     C2     C1      108.340    3.000
+ MMR      N2     C2     C1      110.000    3.000
+ MMR      C2     N2     HN2     118.500    3.000
+ MMR      C2     N2     C8      121.500    3.000
+ MMR      HN2    N2     C8      120.000    3.000
+ MMR      N2     C8     O8      123.000    3.000
+ MMR      N2     C8     C9      116.500    3.000
+ MMR      O8     C8     C9      123.000    3.000
+ MMR      C8     C9     H93     109.470    3.000
+ MMR      C8     C9     H92     109.470    3.000
+ MMR      C8     C9     H91     109.470    3.000
+ MMR      H93    C9     H92     109.470    3.000
+ MMR      H93    C9     H91     109.470    3.000
+ MMR      H92    C9     H91     109.470    3.000
+ MMR      C3     C4     H41     109.470    3.000
+ MMR      C3     C4     H42     109.470    3.000
+ MMR      C3     C4     C5      111.000    3.000
+ MMR      H41    C4     H42     107.900    3.000
+ MMR      H41    C4     C5      109.470    3.000
+ MMR      H42    C4     C5      109.470    3.000
+ MMR      C4     C5     H5      108.340    3.000
+ MMR      C4     C5     C6      109.470    3.000
+ MMR      C4     C5     O5      109.470    3.000
+ MMR      H5     C5     C6      108.340    3.000
+ MMR      H5     C5     O5      109.470    3.000
+ MMR      C6     C5     O5      109.470    3.000
+ MMR      C5     C6     H61     109.470    3.000
+ MMR      C5     C6     H62     109.470    3.000
+ MMR      C5     C6     O6      109.470    3.000
+ MMR      H61    C6     H62     107.900    3.000
+ MMR      H61    C6     O6      109.470    3.000
+ MMR      H62    C6     O6      109.470    3.000
+ MMR      C6     O6     HO6     109.470    3.000
+ MMR      C5     O5     C1      111.800    3.000
+ MMR      O5     C1     H1      109.470    3.000
+ MMR      O5     C1     O1      109.470    3.000
+ MMR      O5     C1     C2      109.470    3.000
+ MMR      H1     C1     O1      109.470    3.000
+ MMR      H1     C1     C2      108.340    3.000
+ MMR      O1     C1     C2      109.470    3.000
+ MMR      C1     O1     C7      111.800    3.000
+ MMR      O1     C7     H73     109.470    3.000
+ MMR      O1     C7     H72     109.470    3.000
+ MMR      O1     C7     H71     109.470    3.000
+ MMR      H73    C7     H72     109.470    3.000
+ MMR      H73    C7     H71     109.470    3.000
+ MMR      H72    C7     H71     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MMR      var_1    O11    C11    C10    O3      -119.969   20.000   1
+ MMR      var_2    C11    C10    C12    H121     179.974   20.000   3
+ MMR      var_3    C11    C10    O3     C3       150.026   20.000   1
+ MMR      var_4    C10    O3     C3     C4        90.425   20.000   1
+ MMR      var_5    O3     C3     C2     N2        60.000   20.000   3
+ MMR      var_6    C3     C2     N2     C8      -155.288   20.000   3
+ MMR      CONST_1  C2     N2     C8     C9       180.000    0.000   0
+ MMR      var_7    N2     C8     C9     H91       90.024   20.000   1
+ MMR      var_8    O3     C3     C4     C5       180.000   20.000   3
+ MMR      var_9    C3     C4     C5     O5       -60.000   20.000   3
+ MMR      var_10   C4     C5     C6     O6      -174.979   20.000   3
+ MMR      var_11   C5     C6     O6     HO6     -179.976   20.000   1
+ MMR      var_12   C4     C5     O5     C1        60.000   20.000   1
+ MMR      var_13   C5     O5     C1     O1       180.000   20.000   1
+ MMR      var_14   O5     C1     C2     C3        60.000   20.000   3
+ MMR      var_15   O5     C1     O1     C7       -65.066   20.000   1
+ MMR      var_16   C1     O1     C7     H71      179.944   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MMR      chir_01  C1     C2     O1     O5        positiv
+ MMR      chir_02  C2     C1     C3     N2        negativ
+ MMR      chir_03  C3     C2     C4     O3        positiv
+ MMR      chir_04  C5     C4     C6     O5        negativ
+ MMR      chir_05  C10    O3     C12    C11       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MMR      plan-1    N2        0.020
+ MMR      plan-1    C2        0.020
+ MMR      plan-1    C8        0.020
+ MMR      plan-1    HN2       0.020
+ MMR      plan-2    C8        0.020
+ MMR      plan-2    N2        0.020
+ MMR      plan-2    C9        0.020
+ MMR      plan-2    O8        0.020
+ MMR      plan-2    HN2       0.020
+ MMR      plan-3    C11       0.020
+ MMR      plan-3    C10       0.020
+ MMR      plan-3    O11       0.020
+ MMR      plan-3    H11       0.020
+# ------------------------------------------------------

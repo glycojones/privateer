@@ -1,0 +1,132 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+URB     URB      "5-bromopyrimidine-2,4(1H,3H)-dione"     NON-POLYMER     12     9     .     
+#
+data_comp_URB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+URB     O4      O       O       0       -27.322     14.474      21.534      
+URB     C4      C       CR6     0       -27.236     15.248      22.504      
+URB     C5      C       CR6     0       -26.429     14.994      23.684      
+URB     BR      BR      BR      0       -25.415     13.402      23.821      
+URB     C6      C       CR16    0       -26.407     15.915      24.696      
+URB     N1      N       NR6     0       -27.153     17.078      24.586      
+URB     C2      C       CR6     0       -27.936     17.377      23.497      
+URB     O2      O       O       0       -28.586     18.413      23.424      
+URB     N3      N       NR6     0       -27.945     16.439      22.490      
+URB     H6      H       H       0       -25.888     15.769      25.473      
+URB     HN1     H       H       0       -27.133     17.677      25.255      
+URB     HN3     H       H       0       -28.449     16.619      21.777      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+URB       O4        C4        DOUBLE    n         1.242     0.018     1.242     0.018     
+URB       C4        C5        SINGLE    y         1.449     0.010     1.449     0.010     
+URB       C4        N3        SINGLE    y         1.381     0.010     1.381     0.010     
+URB       C5        BR        SINGLE    n         1.892     0.010     1.892     0.010     
+URB       C5        C6        DOUBLE    y         1.349     0.020     1.349     0.020     
+URB       C6        N1        SINGLE    y         1.365     0.016     1.365     0.016     
+URB       N1        C2        SINGLE    y         1.365     0.010     1.365     0.010     
+URB       C2        O2        DOUBLE    n         1.225     0.010     1.225     0.010     
+URB       C2        N3        SINGLE    y         1.370     0.010     1.370     0.010     
+URB       C6        H6        SINGLE    n         1.082     0.013     0.945     0.020     
+URB       N1        HN1       SINGLE    n         1.016     0.010     0.898     0.020     
+URB       N3        HN3       SINGLE    n         1.016     0.010     0.889     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+URB          O4          C4          C5     122.684    3.00
+URB          O4          C4          N3     118.749    1.50
+URB          C5          C4          N3     118.568    2.98
+URB          C4          C5          BR     119.904    1.50
+URB          C4          C5          C6     120.192    1.50
+URB          BR          C5          C6     119.904    1.50
+URB          C5          C6          N1     118.568    2.98
+URB          C5          C6          H6     121.300    1.50
+URB          N1          C6          H6     120.132    1.97
+URB          C6          N1          C2     122.251    1.50
+URB          C6          N1         HN1     120.048    2.19
+URB          C2          N1         HN1     117.701    2.18
+URB          N1          C2          O2     122.644    1.50
+URB          N1          C2          N3     115.177    1.50
+URB          O2          C2          N3     122.180    1.50
+URB          C4          N3          C2     125.246    1.50
+URB          C4          N3         HN3     117.997    1.78
+URB          C2          N3         HN3     116.757    2.30
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+URB       const_sp2_sp2_4          O4          C4          C5          BR       0.000   10.00     2
+URB              const_23          O4          C4          N3          C2     180.000   10.00     2
+URB       const_sp2_sp2_7          BR          C5          C6          N1     180.000   10.00     2
+URB       const_sp2_sp2_9          C5          C6          N1          C2       0.000   10.00     2
+URB              const_15          O2          C2          N1          C6     180.000   10.00     2
+URB              const_19          O2          C2          N3          C4     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+URB    plan-1          BR   0.020
+URB    plan-1          C2   0.020
+URB    plan-1          C4   0.020
+URB    plan-1          C5   0.020
+URB    plan-1          C6   0.020
+URB    plan-1          H6   0.020
+URB    plan-1         HN1   0.020
+URB    plan-1         HN3   0.020
+URB    plan-1          N1   0.020
+URB    plan-1          N3   0.020
+URB    plan-1          O2   0.020
+URB    plan-1          O4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+URB SMILES           ACDLabs              10.04 "BrC1=CNC(=O)NC1=O"
+URB SMILES_CANONICAL CACTVS               3.341 "BrC1=CNC(=O)NC1=O"
+URB SMILES           CACTVS               3.341 "BrC1=CNC(=O)NC1=O"
+URB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1=C(C(=O)NC(=O)N1)Br"
+URB SMILES           "OpenEye OEToolkits" 1.5.0 "C1=C(C(=O)NC(=O)N1)Br"
+URB InChI            InChI                1.03  "InChI=1S/C4H3BrN2O2/c5-2-1-6-4(9)7-3(2)8/h1H,(H2,6,7,8,9)"
+URB InChIKey         InChI                1.03  LQLQRFGHAALLLE-UHFFFAOYSA-N
+URB ?                acedrg               202         "dictionary generator"                  
+URB ?                acedrg_database      11          "data source"                           
+URB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+URB ?                refmac5              5.8.0189    "optimization tool"                     

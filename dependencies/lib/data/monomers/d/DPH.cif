@@ -1,0 +1,216 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DPH      DPH 'DEAMINO-METHYL-PHENYLALANINE        ' non-polymer        23  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DPH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DPH           OXT    O    OC       -0.500      0.000    0.000    0.000
+ DPH           C      C    C         0.000     -1.119   -0.553    0.090
+ DPH           O      O    OC       -0.500     -1.241   -1.614    0.740
+ DPH           CA     C    CH1       0.000     -2.320    0.061   -0.583
+ DPH           HA     H    H         0.000     -2.489    1.070   -0.183
+ DPH           CM     C    CH3       0.000     -2.070    0.145   -2.091
+ DPH           HM3    H    H         0.000     -1.907   -0.827   -2.478
+ DPH           HM2    H    H         0.000     -2.913    0.577   -2.566
+ DPH           HM1    H    H         0.000     -1.217    0.745   -2.275
+ DPH           CB     C    CH2       0.000     -3.552   -0.806   -0.318
+ DPH           HB1    H    H         0.000     -3.729   -0.867    0.757
+ DPH           HB2    H    H         0.000     -3.383   -1.809   -0.716
+ DPH           CG     C    CR6       0.000     -4.750   -0.193   -0.992
+ DPH           CD2    C    CR16      0.000     -5.537    0.716   -0.311
+ DPH           HD2    H    H         0.000     -5.293    0.985    0.710
+ DPH           CE2    C    CR16      0.000     -6.635    1.282   -0.930
+ DPH           HE2    H    H         0.000     -7.247    2.000   -0.397
+ DPH           CZ     C    CR16      0.000     -6.953    0.932   -2.228
+ DPH           HZ     H    H         0.000     -7.816    1.373   -2.712
+ DPH           CE1    C    CR16      0.000     -6.170    0.020   -2.909
+ DPH           HE1    H    H         0.000     -6.419   -0.254   -3.927
+ DPH           CD1    C    CR16      0.000     -5.069   -0.544   -2.290
+ DPH           HD1    H    H         0.000     -4.457   -1.260   -2.823
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DPH      OXT    n/a    C      START
+ DPH      C      OXT    CA     .
+ DPH      O      C      .      .
+ DPH      CA     C      CB     .
+ DPH      HA     CA     .      .
+ DPH      CM     CA     HM1    .
+ DPH      HM3    CM     .      .
+ DPH      HM2    CM     .      .
+ DPH      HM1    CM     .      .
+ DPH      CB     CA     CG     .
+ DPH      HB1    CB     .      .
+ DPH      HB2    CB     .      .
+ DPH      CG     CB     CD2    .
+ DPH      CD2    CG     CE2    .
+ DPH      HD2    CD2    .      .
+ DPH      CE2    CD2    CZ     .
+ DPH      HE2    CE2    .      .
+ DPH      CZ     CE2    CE1    .
+ DPH      HZ     CZ     .      .
+ DPH      CE1    CZ     CD1    .
+ DPH      HE1    CE1    .      .
+ DPH      CD1    CE1    HD1    .
+ DPH      HD1    CD1    .      END
+ DPH      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DPH       CM        CA        single    1.524     0.020     1.524     0.020     
+DPH       HM1       CM        single    1.089     0.010     0.989     0.005     
+DPH       HM2       CM        single    1.089     0.010     0.989     0.005     
+DPH       HM3       CM        single    1.089     0.010     0.989     0.005     
+DPH       CB        CA        single    1.524     0.020     1.524     0.020     
+DPH       CA        C         single    1.500     0.020     1.500     0.020     
+DPH       HA        CA        single    1.089     0.010     0.989     0.005     
+DPH       CG        CB        single    1.511     0.020     1.511     0.020     
+DPH       HB1       CB        single    1.089     0.010     0.989     0.005     
+DPH       HB2       CB        single    1.089     0.010     0.989     0.005     
+DPH       CG        CD1       double    1.390     0.020     1.390     0.020     
+DPH       CD2       CG        single    1.390     0.020     1.390     0.020     
+DPH       CD1       CE1       single    1.390     0.020     1.390     0.020     
+DPH       HD1       CD1       single    1.082     0.013     0.975     0.010     
+DPH       CE2       CD2       double    1.390     0.020     1.390     0.020     
+DPH       HD2       CD2       single    1.082     0.013     0.975     0.010     
+DPH       CE1       CZ        double    1.390     0.020     1.390     0.020     
+DPH       HE1       CE1       single    1.082     0.013     0.975     0.010     
+DPH       CZ        CE2       single    1.390     0.020     1.390     0.020     
+DPH       HE2       CE2       single    1.082     0.013     0.975     0.010     
+DPH       HZ        CZ        single    1.082     0.013     0.975     0.010     
+DPH       O         C         deloc     1.250     0.020     1.250     0.020     
+DPH       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DPH      OXT    C      O       123.000    3.000
+ DPH      OXT    C      CA      118.500    3.000
+ DPH      O      C      CA      118.500    3.000
+ DPH      C      CA     HA      108.810    3.000
+ DPH      C      CA     CM      109.470    3.000
+ DPH      C      CA     CB      109.470    3.000
+ DPH      HA     CA     CM      108.340    3.000
+ DPH      HA     CA     CB      108.340    3.000
+ DPH      CM     CA     CB      111.000    3.000
+ DPH      CA     CM     HM3     109.470    3.000
+ DPH      CA     CM     HM2     109.470    3.000
+ DPH      CA     CM     HM1     109.470    3.000
+ DPH      HM3    CM     HM2     109.470    3.000
+ DPH      HM3    CM     HM1     109.470    3.000
+ DPH      HM2    CM     HM1     109.470    3.000
+ DPH      CA     CB     HB1     109.470    3.000
+ DPH      CA     CB     HB2     109.470    3.000
+ DPH      CA     CB     CG      109.470    3.000
+ DPH      HB1    CB     HB2     107.900    3.000
+ DPH      HB1    CB     CG      109.470    3.000
+ DPH      HB2    CB     CG      109.470    3.000
+ DPH      CB     CG     CD2     120.000    3.000
+ DPH      CB     CG     CD1     120.000    3.000
+ DPH      CD2    CG     CD1     120.000    3.000
+ DPH      CG     CD2    HD2     120.000    3.000
+ DPH      CG     CD2    CE2     120.000    3.000
+ DPH      HD2    CD2    CE2     120.000    3.000
+ DPH      CD2    CE2    HE2     120.000    3.000
+ DPH      CD2    CE2    CZ      120.000    3.000
+ DPH      HE2    CE2    CZ      120.000    3.000
+ DPH      CE2    CZ     HZ      120.000    3.000
+ DPH      CE2    CZ     CE1     120.000    3.000
+ DPH      HZ     CZ     CE1     120.000    3.000
+ DPH      CZ     CE1    HE1     120.000    3.000
+ DPH      CZ     CE1    CD1     120.000    3.000
+ DPH      HE1    CE1    CD1     120.000    3.000
+ DPH      CE1    CD1    HD1     120.000    3.000
+ DPH      CE1    CD1    CG      120.000    3.000
+ DPH      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DPH      var_1    OXT    C      CA     CB      -179.983   20.000   3
+ DPH      var_2    C      CA     CM     HM1      -59.981   20.000   3
+ DPH      var_3    C      CA     CB     CG      -179.963   20.000   3
+ DPH      var_4    CA     CB     CG     CD2      -90.327   20.000   2
+ DPH      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ DPH      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ DPH      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ DPH      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ DPH      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ DPH      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DPH      chir_01  CA     CM     CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DPH      plan-1    CG        0.020
+ DPH      plan-1    CB        0.020
+ DPH      plan-1    CD1       0.020
+ DPH      plan-1    CD2       0.020
+ DPH      plan-1    CE1       0.020
+ DPH      plan-1    CE2       0.020
+ DPH      plan-1    CZ        0.020
+ DPH      plan-1    HD1       0.020
+ DPH      plan-1    HD2       0.020
+ DPH      plan-1    HE1       0.020
+ DPH      plan-1    HE2       0.020
+ DPH      plan-1    HZ        0.020
+ DPH      plan-2    C         0.020
+ DPH      plan-2    CA        0.020
+ DPH      plan-2    O         0.020
+ DPH      plan-2    OXT       0.020
+# ------------------------------------------------------

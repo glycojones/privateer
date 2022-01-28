@@ -1,0 +1,140 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+P1P      P1P '3-{[OXIDO(OXO)PHOSPHINO]OXY}PROPAN-1' non-polymer        15   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_P1P
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ P1P           "O3'"  O    O        -1.000      0.000    0.000    0.000
+ P1P           "C3'"  C    CH2       0.000     -1.299   -0.584    0.118
+ P1P           "H3'1" H    H         0.000     -1.412   -1.021    1.112
+ P1P           "H3'2" H    H         0.000     -1.417   -1.364   -0.637
+ P1P           "C4'"  C    CH2       0.000     -2.364    0.494   -0.091
+ P1P           "H4'1" H    H         0.000     -2.249    0.930   -1.086
+ P1P           "H4'2" H    H         0.000     -2.244    1.275    0.663
+ P1P           "C5'"  C    CH2       0.000     -3.755   -0.130    0.036
+ P1P           "H5'"  H    H         0.000     -3.868   -0.566    1.030
+ P1P           "H5''" H    H         0.000     -3.873   -0.911   -0.718
+ P1P           "O5'"  O    O2        0.000     -4.749    0.876   -0.160
+ P1P           P      P    P         1.000     -6.277    0.103   -0.004
+ P1P           HP     H    H         0.000     -6.109    0.048    1.368
+ P1P           OP1    O    OP       -1.000     -7.576    0.963    0.190
+ P1P           OP2    O    OP        0.000     -6.373   -1.463   -0.054
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ P1P      "O3'"  n/a    "C3'"  START
+ P1P      "C3'"  "O3'"  "C4'"  .
+ P1P      "H3'1" "C3'"  .      .
+ P1P      "H3'2" "C3'"  .      .
+ P1P      "C4'"  "C3'"  "C5'"  .
+ P1P      "H4'1" "C4'"  .      .
+ P1P      "H4'2" "C4'"  .      .
+ P1P      "C5'"  "C4'"  "O5'"  .
+ P1P      "H5'"  "C5'"  .      .
+ P1P      "H5''" "C5'"  .      .
+ P1P      "O5'"  "C5'"  P      .
+ P1P      P      "O5'"  OP2    .
+ P1P      HP     P      .      .
+ P1P      OP1    P      .      .
+ P1P      OP2    P      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+P1P       OP1       P         single    1.610     0.020     1.610     0.020     
+P1P       OP2       P         double    1.480     0.020     1.480     0.020     
+P1P       P         "O5'"     single    1.610     0.020     1.610     0.020     
+P1P       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+P1P       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+P1P       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+P1P       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+P1P       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+P1P       "H4'1"    "C4'"     single    1.089     0.010     0.989     0.005     
+P1P       "H4'2"    "C4'"     single    1.089     0.010     0.989     0.005     
+P1P       "C3'"     "O3'"     single    1.420     0.020     1.420     0.020     
+P1P       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+P1P       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+P1P       HP        P         single    1.284     0.020     1.284     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ P1P      "O3'"  "C3'"  "H3'1"  109.470    3.000
+ P1P      "O3'"  "C3'"  "H3'2"  109.470    3.000
+ P1P      "O3'"  "C3'"  "C4'"   109.470    3.000
+ P1P      "H3'1" "C3'"  "H3'2"  107.900    3.000
+ P1P      "H3'1" "C3'"  "C4'"   109.470    3.000
+ P1P      "H3'2" "C3'"  "C4'"   109.470    3.000
+ P1P      "C3'"  "C4'"  "H4'1"  109.470    3.000
+ P1P      "C3'"  "C4'"  "H4'2"  109.470    3.000
+ P1P      "C3'"  "C4'"  "C5'"   111.000    3.000
+ P1P      "H4'1" "C4'"  "H4'2"  107.900    3.000
+ P1P      "H4'1" "C4'"  "C5'"   109.470    3.000
+ P1P      "H4'2" "C4'"  "C5'"   109.470    3.000
+ P1P      "C4'"  "C5'"  "H5'"   109.470    3.000
+ P1P      "C4'"  "C5'"  "H5''"  109.470    3.000
+ P1P      "C4'"  "C5'"  "O5'"   109.470    3.000
+ P1P      "H5'"  "C5'"  "H5''"  107.900    3.000
+ P1P      "H5'"  "C5'"  "O5'"   109.470    3.000
+ P1P      "H5''" "C5'"  "O5'"   109.470    3.000
+ P1P      "C5'"  "O5'"  P       120.500    3.000
+ P1P      "O5'"  P      HP      109.500    3.000
+ P1P      "O5'"  P      OP1     108.200    3.000
+ P1P      "O5'"  P      OP2     108.200    3.000
+ P1P      HP     P      OP1     109.500    3.000
+ P1P      HP     P      OP2     109.500    3.000
+ P1P      OP1    P      OP2     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ P1P      var_1    "O3'"  "C3'"  "C4'"  "C5'"   -179.954   20.000   3
+ P1P      var_2    "C3'"  "C4'"  "C5'"  "O5'"   -179.991   20.000   3
+ P1P      var_3    "C4'"  "C5'"  "O5'"  P        179.959   20.000   1
+ P1P      var_4    "C5'"  "O5'"  P      OP2      -14.968   20.000   1
+# ------------------------------------------------------

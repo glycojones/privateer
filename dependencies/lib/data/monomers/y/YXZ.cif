@@ -1,0 +1,347 @@
+global_
+_lib_name         mon_lib
+_lib_version      5.41
+_lib_update       11/02/13
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+YXZ      YXZ 'chloro[N,N-di(pyridin-2-yl-kappaN)pe' non-polymer        42  21 .
+#
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_YXZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ YXZ           CL     CL   CL        0.000     -2.051  -13.322  -23.919
+ YXZ           RU     RU   RU        0.000     -2.881  -12.633  -25.993
+ YXZ           NAU    N    NT        0.000     -3.278  -11.004  -27.579
+ YXZ           CAJ    C    CH2       0.000     -2.869  -11.227  -28.859
+ YXZ           HAJ1   H    H         0.000     -3.373  -12.155  -29.138
+ YXZ           HAJ2   H    H         0.000     -1.797  -11.411  -28.765
+ YXZ           CAF    C    C1        0.000     -3.102  -10.217  -29.887
+ YXZ           HAF    H    H         0.000     -2.775  -10.395  -30.898
+ YXZ           CAH    C    CSP       0.000     -3.726   -9.061  -29.575
+ YXZ           NAV    N    NR6       0.000     -4.851  -11.976  -25.230
+ YXZ           CAK    C    CR16      0.000     -5.666  -12.952  -24.710
+ YXZ           HAK    H    H         0.000     -5.331  -13.982  -24.685
+ YXZ           CAG    C    CR16      0.000     -6.941  -12.612  -24.207
+ YXZ           HAG    H    H         0.000     -7.591  -13.372  -23.791
+ YXZ           CAI    C    CR16      0.000     -7.354  -11.253  -24.257
+ YXZ           HAI    H    H         0.000     -8.327  -10.968  -23.877
+ YXZ           CAM    C    CR16      0.000     -6.476  -10.253  -24.814
+ YXZ           HAM    H    H         0.000     -6.782   -9.215  -24.866
+ YXZ           CBB    C    CR6       0.000     -5.211  -10.656  -25.289
+ YXZ           NBF    N    N         0.000     -4.308   -9.710  -25.851
+ YXZ           CBA    C    CH1       0.000     -3.881   -9.904  -27.235
+ YXZ           HBA    H    H         0.000     -4.851  -10.366  -27.467
+ YXZ           CAL    C    C1        0.000     -4.137   -8.872  -28.234
+ YXZ           HAL    H    H         0.000     -4.640   -7.963  -27.949
+ YXZ           CAR    C    CH2       0.000     -3.658   -8.699  -25.015
+ YXZ           HAR1   H    H         0.000     -2.608   -8.691  -25.315
+ YXZ           HAR2   H    H         0.000     -3.739   -9.062  -23.988
+ YXZ           CAP    C    CH2       0.000     -4.234   -7.260  -25.104
+ YXZ           HAP1   H    H         0.000     -5.315   -7.400  -25.032
+ YXZ           HAP2   H    H         0.000     -3.976   -6.931  -26.112
+ YXZ           CAN    C    CH2       0.000     -3.794   -6.221  -24.108
+ YXZ           HAN1   H    H         0.000     -3.260   -6.774  -23.332
+ YXZ           HAN2   H    H         0.000     -4.717   -5.812  -23.691
+ YXZ           CAO    C    CH2       0.000     -2.912   -5.076  -24.622
+ YXZ           HAO1   H    H         0.000     -3.112   -5.030  -25.694
+ YXZ           HAO2   H    H         0.000     -1.888   -5.418  -24.458
+ YXZ           CAQ    C    CH2       0.000     -3.089   -3.711  -24.018
+ YXZ           HAQ1   H    H         0.000     -4.117   -3.708  -23.648
+ YXZ           HAQ2   H    H         0.000     -3.006   -3.026  -24.864
+ YXZ           NBE    N    NT2       0.000     -2.181   -3.281  -22.947
+ YXZ           HBE2   H    H         0.000     -1.502   -4.034  -22.748
+ YXZ           HBE1   H    H         0.000     -2.434   -2.327  -22.643
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ YXZ      CL     n/a    RU     START
+ YXZ      RU     CL     NAV    .
+ YXZ      NAU    RU     CAJ    .
+ YXZ      CAJ    NAU    CAF    .
+ YXZ      HAJ1   CAJ    .      .
+ YXZ      HAJ2   CAJ    .      .
+ YXZ      CAF    CAJ    CAH    .
+ YXZ      HAF    CAF    .      .
+ YXZ      CAH    CAF    .      .
+ YXZ      NAV    RU     CBB    .
+ YXZ      CAK    NAV    CAG    .
+ YXZ      HAK    CAK    .      .
+ YXZ      CAG    CAK    CAI    .
+ YXZ      HAG    CAG    .      .
+ YXZ      CAI    CAG    CAM    .
+ YXZ      HAI    CAI    .      .
+ YXZ      CAM    CAI    HAM    .
+ YXZ      HAM    CAM    .      .
+ YXZ      CBB    NAV    NBF    .
+ YXZ      NBF    CBB    CAR    .
+ YXZ      CBA    NBF    CAL    .
+ YXZ      HBA    CBA    .      .
+ YXZ      CAL    CBA    HAL    .
+ YXZ      HAL    CAL    .      .
+ YXZ      CAR    NBF    CAP    .
+ YXZ      HAR1   CAR    .      .
+ YXZ      HAR2   CAR    .      .
+ YXZ      CAP    CAR    CAN    .
+ YXZ      HAP1   CAP    .      .
+ YXZ      HAP2   CAP    .      .
+ YXZ      CAN    CAP    CAO    .
+ YXZ      HAN1   CAN    .      .
+ YXZ      HAN2   CAN    .      .
+ YXZ      CAO    CAN    CAQ    .
+ YXZ      HAO1   CAO    .      .
+ YXZ      HAO2   CAO    .      .
+ YXZ      CAQ    CAO    NBE    .
+ YXZ      HAQ1   CAQ    .      .
+ YXZ      HAQ2   CAQ    .      .
+ YXZ      NBE    CAQ    HBE1   .
+ YXZ      HBE2   NBE    .      .
+ YXZ      HBE1   NBE    .      END
+ YXZ      CAL    CAH    .    ADD
+ YXZ      NAU    CBA    .    ADD
+ YXZ      CBB    CAM    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+YXZ       RU        CL        single    2.338     0.020     2.338     0.020     
+YXZ       CAL       CAH       aromatic  1.255     0.020     1.255     0.020     
+YXZ       CAL       CBA       single    1.510     0.020     1.510     0.020     
+YXZ       CAH       CAF       double    1.255     0.020     1.255     0.020     
+YXZ       CAF       CAJ       single    1.510     0.020     1.510     0.020     
+YXZ       CAJ       NAU       single    1.469     0.020     1.469     0.020     
+YXZ       NAU       CBA       single    1.469     0.020     1.469     0.020     
+YXZ       NAU       RU        single    2.308     0.020     2.308     0.020     
+YXZ       CBA       NBF       single    1.455     0.020     1.455     0.020     
+YXZ       NBF       CBB       single    1.400     0.020     1.400     0.020     
+YXZ       CAR       NBF       single    1.455     0.020     1.455     0.020     
+YXZ       CBB       CAM       aromatic  1.390     0.020     1.390     0.020     
+YXZ       CBB       NAV       single    1.410     0.020     1.410     0.020     
+YXZ       CAM       CAI       aromatic  1.390     0.020     1.390     0.020     
+YXZ       CAI       CAG       aromatic  1.390     0.020     1.390     0.020     
+YXZ       CAG       CAK       aromatic  1.390     0.020     1.390     0.020     
+YXZ       CAK       NAV       single    1.337     0.020     1.337     0.020     
+YXZ       NAV       RU        single    2.212     0.020     2.212     0.020     
+YXZ       CAP       CAR       single    1.524     0.020     1.524     0.020     
+YXZ       CAN       CAP       single    1.524     0.020     1.524     0.020     
+YXZ       CAO       CAN       single    1.524     0.020     1.524     0.020     
+YXZ       CAQ       CAO       single    1.524     0.020     1.524     0.020     
+YXZ       NBE       CAQ       single    1.472     0.020     1.472     0.020     
+YXZ       HAL       CAL       single    1.082     0.013     0.975     0.010     
+YXZ       HAF       CAF       single    1.082     0.013     0.975     0.010     
+YXZ       HAJ1      CAJ       single    1.089     0.010     0.989     0.005     
+YXZ       HAJ2      CAJ       single    1.089     0.010     0.989     0.005     
+YXZ       HBA       CBA       single    1.089     0.010     0.989     0.005     
+YXZ       HAM       CAM       single    1.082     0.013     0.975     0.010     
+YXZ       HAI       CAI       single    1.082     0.013     0.975     0.010     
+YXZ       HAG       CAG       single    1.082     0.013     0.975     0.010     
+YXZ       HAK       CAK       single    1.082     0.013     0.975     0.010     
+YXZ       HAR1      CAR       single    1.089     0.010     0.989     0.005     
+YXZ       HAR2      CAR       single    1.089     0.010     0.989     0.005     
+YXZ       HAP1      CAP       single    1.089     0.010     0.989     0.005     
+YXZ       HAP2      CAP       single    1.089     0.010     0.989     0.005     
+YXZ       HAN1      CAN       single    1.089     0.010     0.989     0.005     
+YXZ       HAN2      CAN       single    1.089     0.010     0.989     0.005     
+YXZ       HAO1      CAO       single    1.089     0.010     0.989     0.005     
+YXZ       HAO2      CAO       single    1.089     0.010     0.989     0.005     
+YXZ       HAQ1      CAQ       single    1.089     0.010     0.989     0.005     
+YXZ       HAQ2      CAQ       single    1.089     0.010     0.989     0.005     
+YXZ       HBE1      NBE       single    1.036     0.016     0.914     0.007     
+YXZ       HBE2      NBE       single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ YXZ      CL     RU     NAU     151.492    3.000
+ YXZ      CL     RU     NAV      95.607    3.000
+ YXZ      NAU    RU     NAV      82.774    3.000
+ YXZ      RU     NAU    CAJ     109.500    3.000
+ YXZ      RU     NAU    CBA     109.500    3.000
+ YXZ      CAJ    NAU    CBA     109.470    3.000
+ YXZ      NAU    CAJ    HAJ1    109.470    3.000
+ YXZ      NAU    CAJ    HAJ2    109.470    3.000
+ YXZ      NAU    CAJ    CAF     109.500    3.000
+ YXZ      HAJ1   CAJ    HAJ2    107.900    3.000
+ YXZ      HAJ1   CAJ    CAF     109.470    3.000
+ YXZ      HAJ2   CAJ    CAF     109.470    3.000
+ YXZ      CAJ    CAF    HAF     120.000    3.000
+ YXZ      CAJ    CAF    CAH     120.000    3.000
+ YXZ      HAF    CAF    CAH     120.000    3.000
+ YXZ      CAF    CAH    CAL     180.000    3.000
+ YXZ      RU     NAV    CAK     120.000    3.000
+ YXZ      RU     NAV    CBB     120.000    3.000
+ YXZ      CAK    NAV    CBB     120.000    3.000
+ YXZ      NAV    CAK    HAK     120.000    3.000
+ YXZ      NAV    CAK    CAG     120.000    3.000
+ YXZ      HAK    CAK    CAG     120.000    3.000
+ YXZ      CAK    CAG    HAG     120.000    3.000
+ YXZ      CAK    CAG    CAI     120.000    3.000
+ YXZ      HAG    CAG    CAI     120.000    3.000
+ YXZ      CAG    CAI    HAI     120.000    3.000
+ YXZ      CAG    CAI    CAM     120.000    3.000
+ YXZ      HAI    CAI    CAM     120.000    3.000
+ YXZ      CAI    CAM    HAM     120.000    3.000
+ YXZ      CAI    CAM    CBB     120.000    3.000
+ YXZ      HAM    CAM    CBB     120.000    3.000
+ YXZ      NAV    CBB    NBF     120.000    3.000
+ YXZ      NAV    CBB    CAM     120.000    3.000
+ YXZ      NBF    CBB    CAM     120.000    3.000
+ YXZ      CBB    NBF    CBA     120.000    3.000
+ YXZ      CBB    NBF    CAR     120.000    3.000
+ YXZ      CBA    NBF    CAR     112.000    3.000
+ YXZ      NBF    CBA    HBA     109.470    3.000
+ YXZ      NBF    CBA    CAL     111.600    3.000
+ YXZ      NBF    CBA    NAU     109.500    3.000
+ YXZ      HBA    CBA    CAL     108.810    3.000
+ YXZ      HBA    CBA    NAU     109.500    3.000
+ YXZ      CAL    CBA    NAU     109.500    3.000
+ YXZ      CBA    CAL    HAL     120.000    3.000
+ YXZ      CBA    CAL    CAH     120.000    3.000
+ YXZ      HAL    CAL    CAH     120.000    3.000
+ YXZ      NBF    CAR    HAR1    109.470    3.000
+ YXZ      NBF    CAR    HAR2    109.470    3.000
+ YXZ      NBF    CAR    CAP     105.000    3.000
+ YXZ      HAR1   CAR    HAR2    107.900    3.000
+ YXZ      HAR1   CAR    CAP     109.470    3.000
+ YXZ      HAR2   CAR    CAP     109.470    3.000
+ YXZ      CAR    CAP    HAP1    109.470    3.000
+ YXZ      CAR    CAP    HAP2    109.470    3.000
+ YXZ      CAR    CAP    CAN     111.000    3.000
+ YXZ      HAP1   CAP    HAP2    107.900    3.000
+ YXZ      HAP1   CAP    CAN     109.470    3.000
+ YXZ      HAP2   CAP    CAN     109.470    3.000
+ YXZ      CAP    CAN    HAN1    109.470    3.000
+ YXZ      CAP    CAN    HAN2    109.470    3.000
+ YXZ      CAP    CAN    CAO     111.000    3.000
+ YXZ      HAN1   CAN    HAN2    107.900    3.000
+ YXZ      HAN1   CAN    CAO     109.470    3.000
+ YXZ      HAN2   CAN    CAO     109.470    3.000
+ YXZ      CAN    CAO    HAO1    109.470    3.000
+ YXZ      CAN    CAO    HAO2    109.470    3.000
+ YXZ      CAN    CAO    CAQ     111.000    3.000
+ YXZ      HAO1   CAO    HAO2    107.900    3.000
+ YXZ      HAO1   CAO    CAQ     109.470    3.000
+ YXZ      HAO2   CAO    CAQ     109.470    3.000
+ YXZ      CAO    CAQ    HAQ1    109.470    3.000
+ YXZ      CAO    CAQ    HAQ2    109.470    3.000
+ YXZ      CAO    CAQ    NBE     109.500    3.000
+ YXZ      HAQ1   CAQ    HAQ2    107.900    3.000
+ YXZ      HAQ1   CAQ    NBE     109.500    3.000
+ YXZ      HAQ2   CAQ    NBE     109.500    3.000
+ YXZ      CAQ    NBE    HBE2    109.500    3.000
+ YXZ      CAQ    NBE    HBE1    109.500    3.000
+ YXZ      HBE2   NBE    HBE1    109.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ YXZ      var_1            CL     RU     NAU    CAJ              128.060           20.000   3
+ YXZ      var_2            RU     NAU    CBA    NBF               -0.298           20.000   3
+ YXZ      var_3            RU     NAU    CAJ    CAF             -179.897           20.000   3
+ YXZ      var_4            NAU    CAJ    CAF    CAH               -0.189           20.000   3
+ YXZ      var_5            CAJ    CAF    CAH    CAL                0.034           20.000   3
+ YXZ      var_6            CL     RU     NAV    CBB              115.246           20.000   3
+ YXZ      CONST_1          RU     NAV    CAK    CAG                0.000            0.000   0
+ YXZ      CONST_2          NAV    CAK    CAG    CAI                0.000            0.000   0
+ YXZ      CONST_3          CAK    CAG    CAI    CAM                0.000            0.000   0
+ YXZ      CONST_4          CAG    CAI    CAM    CBB                0.000            0.000   0
+ YXZ      CONST_5          RU     NAV    CBB    NBF                0.000            0.000   0
+ YXZ      CONST_6          NAV    CBB    CAM    CAI                0.000            0.000   0
+ YXZ      var_7            NAV    CBB    NBF    CAR             -111.315           20.000   3
+ YXZ      var_8            CBB    NBF    CBA    CAL                0.000           20.000   3
+ YXZ      var_9            NBF    CBA    CAL    CAH             -179.857           20.000   3
+ YXZ      var_10           CBA    CAL    CAH    CAF                0.187           20.000   3
+ YXZ      var_11           CBB    NBF    CAR    CAP             -103.182           20.000   3
+ YXZ      var_12           NBF    CAR    CAP    CAN              180.000           20.000   3
+ YXZ      var_13           CAR    CAP    CAN    CAO              180.000           20.000   3
+ YXZ      var_14           CAP    CAN    CAO    CAQ              180.000           20.000   3
+ YXZ      var_15           CAN    CAO    CAQ    NBE              180.000           20.000   3
+ YXZ      var_16           CAO    CAQ    NBE    HBE1             180.000           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ YXZ      chir_01          NAU    CAJ    CBA    RU        positiv
+                   .      .      .      .      .
+ YXZ      chir_02          CBA    CAL    NAU    NBF       positiv
+                   .      .      .      .      .
+ YXZ      chir_03          RU     NAV    .      CL        cross5
+                   .      NAU    .      .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ YXZ      plan-1            CAL       0.020
+ YXZ      plan-1            CAH       0.020
+ YXZ      plan-1            CBA       0.020
+ YXZ      plan-1            HAL       0.020
+ YXZ      plan-2            CAF       0.020
+ YXZ      plan-2            CAH       0.020
+ YXZ      plan-2            CAJ       0.020
+ YXZ      plan-2            HAF       0.020
+ YXZ      plan-3            NBF       0.020
+ YXZ      plan-3            CBA       0.020
+ YXZ      plan-3            CBB       0.020
+ YXZ      plan-3            CAR       0.020
+ YXZ      plan-4            CBB       0.020
+ YXZ      plan-4            NBF       0.020
+ YXZ      plan-4            CAM       0.020
+ YXZ      plan-4            NAV       0.020
+ YXZ      plan-4            CAI       0.020
+ YXZ      plan-4            CAG       0.020
+ YXZ      plan-4            CAK       0.020
+ YXZ      plan-4            HAM       0.020
+ YXZ      plan-4            HAI       0.020
+ YXZ      plan-4            HAG       0.020
+ YXZ      plan-4            HAK       0.020
+ YXZ      plan-4            RU        0.020
+#
+# ------------------------------------------------------

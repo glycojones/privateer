@@ -1,0 +1,201 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OMT     OMT     S-DIOXYMETHIONINE     peptide     22     11     .
+#
+data_comp_OMT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OMT     N       N       NT3     1       56.599      15.221      10.471
+OMT     CA      C       CH1     0       56.382      16.458      11.271
+OMT     CB      C       CH2     0       56.197      16.112      12.755
+OMT     CG      C       CH2     0       55.885      17.280      13.696
+OMT     SD      S       S3      0       54.384      18.183      13.368
+OMT     CE      C       CH3     0       53.164      16.957      13.084
+OMT     C       C       C       0       57.590      17.386      11.093
+OMT     O       O       O       0       58.718      16.901      11.313
+OMT     OXT     O       OC      -1      57.358      18.560      10.741
+OMT     OD1     O       O       0       54.036      18.899      14.555
+OMT     OD2     O       O       0       54.564      18.945      12.173
+OMT     H       H       H       0       56.690      15.431      9.589
+OMT     H2      H       H       0       55.888      14.660      10.568
+OMT     H3      H       H       0       57.352      14.793      10.753
+OMT     HA      H       H       0       55.580      16.907      10.927
+OMT     HB2     H       H       0       57.017      15.679      13.064
+OMT     HB3     H       H       0       55.484      15.449      12.824
+OMT     HG2     H       H       0       56.631      17.906      13.674
+OMT     HG3     H       H       0       55.835      16.930      14.604
+OMT     HE1     H       H       0       53.167      16.713      12.145
+OMT     HE2     H       H       0       52.294      17.309      13.326
+OMT     HE3     H       H       0       53.361      16.177      13.625
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+OMT      N      n/a    CA     START
+OMT      H      N      .      .
+OMT      H2     N      .      .
+OMT      H3     N      .      .
+OMT      CA     N      C      .
+OMT      HA     CA     .      .
+OMT      CB     CA     CG     .
+OMT      HB2    CB     .      .
+OMT      HB3    CB     .      .
+OMT      CG     CB     SD     .
+OMT      HG2    CG     .      .
+OMT      HG3    CG     .      .
+OMT      SD     CG     OD2    .
+OMT      OD1    SD     .      .
+OMT      CE     SD     HE1    .
+OMT      HE3    CE     .      .
+OMT      HE2    CE     .      .
+OMT      HE1    CE     .      .
+OMT      OD2    SD     .      .
+OMT      C      CA     .      END
+OMT      O      C      .      .
+OMT      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OMT       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+OMT       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+OMT       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+OMT       CB        CG        SINGLE    n         1.521     0.016     1.521     0.016     
+OMT       CG        SD        SINGLE    n         1.779     0.010     1.779     0.010     
+OMT       SD        CE        SINGLE    n         1.752     0.010     1.752     0.010     
+OMT       SD        OD1       DOUBLE    n         1.429     0.010     1.429     0.010     
+OMT       SD        OD2       DOUBLE    n         1.429     0.010     1.429     0.010     
+OMT       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+OMT       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+OMT       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+OMT       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+OMT       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+OMT       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+OMT       CB        HB2       SINGLE    n         1.089     0.010     0.978     0.020     
+OMT       CB        HB3       SINGLE    n         1.089     0.010     0.978     0.020     
+OMT       CG        HG2       SINGLE    n         1.089     0.010     0.975     0.020     
+OMT       CG        HG3       SINGLE    n         1.089     0.010     0.975     0.020     
+OMT       CE        HE1       SINGLE    n         1.089     0.010     0.970     0.015     
+OMT       CE        HE2       SINGLE    n         1.089     0.010     0.970     0.015     
+OMT       CE        HE3       SINGLE    n         1.089     0.010     0.970     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OMT          CA           N           H     110.062    1.93
+OMT          CA           N          H2     110.062    1.93
+OMT          CA           N          H3     110.062    1.93
+OMT           H           N          H2     109.028    2.41
+OMT           H           N          H3     109.028    2.41
+OMT          H2           N          H3     109.028    2.41
+OMT           N          CA          CB     110.906    1.50
+OMT           N          CA           C     109.241    1.50
+OMT           N          CA          HA     108.487    1.50
+OMT          CB          CA           C     109.344    1.50
+OMT          CB          CA          HA     109.670    1.50
+OMT           C          CA          HA     108.824    1.50
+OMT          CA          CB          CG     114.535    1.69
+OMT          CA          CB         HB2     108.666    1.50
+OMT          CA          CB         HB3     108.666    1.50
+OMT          CG          CB         HB2     109.334    1.50
+OMT          CG          CB         HB3     109.334    1.50
+OMT         HB2          CB         HB3     107.698    1.50
+OMT          CB          CG          SD     111.256    2.92
+OMT          CB          CG         HG2     109.242    1.50
+OMT          CB          CG         HG3     109.242    1.50
+OMT          SD          CG         HG2     109.377    1.50
+OMT          SD          CG         HG3     109.377    1.50
+OMT         HG2          CG         HG3     108.043    1.50
+OMT          CG          SD          CE     104.032    1.79
+OMT          CG          SD         OD1     108.322    1.50
+OMT          CG          SD         OD2     108.322    1.50
+OMT          CE          SD         OD1     108.931    1.50
+OMT          CE          SD         OD2     108.931    1.50
+OMT         OD1          SD         OD2     118.392    2.04
+OMT          SD          CE         HE1     109.505    1.50
+OMT          SD          CE         HE2     109.505    1.50
+OMT          SD          CE         HE3     109.505    1.50
+OMT         HE1          CE         HE2     109.823    1.50
+OMT         HE1          CE         HE3     109.823    1.50
+OMT         HE2          CE         HE3     109.823    1.50
+OMT          CA           C           O     117.124    1.50
+OMT          CA           C         OXT     117.124    1.50
+OMT           O           C         OXT     125.752    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OMT             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+OMT            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+OMT             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+OMT            sp3_sp3_19          CA          CB          CG          SD     180.000   10.00     3
+OMT            sp3_sp3_28          CB          CG          SD          CE     180.000   10.00     3
+OMT            sp3_sp3_37         HE1          CE          SD          CG     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+OMT    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OMT    plan-1           C   0.020
+OMT    plan-1          CA   0.020
+OMT    plan-1           O   0.020
+OMT    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OMT SMILES           ACDLabs              10.04 "O=S(=O)(C)CCC(C(=O)O)N"
+OMT SMILES_CANONICAL CACTVS               3.341 "C[S](=O)(=O)CC[C@H](N)C(O)=O"
+OMT SMILES           CACTVS               3.341 "C[S](=O)(=O)CC[CH](N)C(O)=O"
+OMT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CS(=O)(=O)CC[C@@H](C(=O)O)N"
+OMT SMILES           "OpenEye OEToolkits" 1.5.0 "CS(=O)(=O)CCC(C(=O)O)N"
+OMT InChI            InChI                1.03  "InChI=1S/C5H11NO4S/c1-11(9,10)3-2-4(6)5(7)8/h4H,2-3,6H2,1H3,(H,7,8)/t4-/m0/s1"
+OMT InChIKey         InChI                1.03  UCUNFLYVYCGDHP-BYPYZUCNSA-N
+OMT ?                acedrg               196         "dictionary generator"
+OMT ?                acedrg_database      11          "data source"
+OMT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OMT ?                refmac5              5.8.0222    "optimization tool"

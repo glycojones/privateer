@@ -1,0 +1,541 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DRU      DRU '.                                   ' non-polymer        71  30 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DRU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DRU           HE21   H    H         0.000      0.286    1.004    0.087
+ DRU           NE2    N    NH1       0.000     -0.683    0.728    0.150
+ DRU           CD2    C    CH2       0.000     -1.459    0.343    1.360
+ DRU           HD22   H    H         0.000     -1.043    0.772    2.274
+ DRU           HD21   H    H         0.000     -1.542   -0.740    1.473
+ DRU           CE1    C    CH2       0.000     -1.683    0.606   -0.942
+ DRU           HE11   H    H         0.000     -1.809   -0.433   -1.254
+ DRU           HE12   H    H         0.000     -1.406    1.213   -1.806
+ DRU           ND1    N    NT        0.000     -2.952    1.108   -0.370
+ DRU           CG     C    CH2       0.000     -2.856    0.944    1.097
+ DRU           HG2    H    H         0.000     -3.623    0.262    1.471
+ DRU           HG1    H    H         0.000     -2.944    1.904    1.610
+ DRU           RU     RU   RU        2.000     -4.473   -0.196   -1.028
+ DRU           N37    N    NT        0.000     -4.493    0.539   -3.019
+ DRU           C36    C    CH2       0.000     -3.311    1.372   -3.248
+ DRU           H361   H    H         0.000     -2.402    0.802   -3.048
+ DRU           H362   H    H         0.000     -3.337    2.251   -2.600
+ DRU           C35    C    CH2       0.000     -3.325    1.816   -4.714
+ DRU           H351   H    H         0.000     -2.466    2.463   -4.903
+ DRU           H352   H    H         0.000     -4.246    2.368   -4.914
+ DRU           C34    C    CH2       0.000     -3.255    0.591   -5.629
+ DRU           H341   H    H         0.000     -2.308    0.067   -5.481
+ DRU           H342   H    H         0.000     -3.339    0.898   -6.674
+ DRU           C33    C    CH2       0.000     -4.416   -0.341   -5.274
+ DRU           H33B   H    H         0.000     -4.387   -1.257   -5.869
+ DRU           H33A   H    H         0.000     -5.380    0.153   -5.416
+ DRU           C32    C    CH1       0.000     -4.230   -0.686   -3.794
+ DRU           H332   H    H         0.000     -3.178   -0.963   -3.641
+ DRU           C31    C    CH1       0.000     -5.105   -1.819   -3.230
+ DRU           H331   H    H         0.000     -4.433   -2.568   -2.788
+ DRU           C30    C    CH2       0.000     -6.016   -2.544   -4.221
+ DRU           H301   H    H         0.000     -5.463   -2.868   -5.104
+ DRU           H302   H    H         0.000     -6.851   -1.911   -4.528
+ DRU           C29    C    CH2       0.000     -6.550   -3.769   -3.472
+ DRU           H291   H    H         0.000     -5.725   -4.397   -3.130
+ DRU           H292   H    H         0.000     -7.208   -4.354   -4.117
+ DRU           C28    C    CH2       0.000     -7.339   -3.259   -2.264
+ DRU           H281   H    H         0.000     -7.702   -4.111   -1.686
+ DRU           H282   H    H         0.000     -8.189   -2.669   -2.612
+ DRU           C27    C    CH2       0.000     -6.437   -2.388   -1.382
+ DRU           H272   H    H         0.000     -5.603   -2.992   -1.019
+ DRU           H271   H    H         0.000     -7.016   -2.021   -0.532
+ DRU           N26    N    NT        0.000     -5.927   -1.263   -2.145
+ DRU           N13    N    NT        0.000     -4.912   -0.899    0.906
+ DRU           C12    C    CH2       0.000     -5.227   -2.304    1.004
+ DRU           H121   H    H         0.000     -4.507   -2.919    0.460
+ DRU           H122   H    H         0.000     -6.234   -2.519    0.641
+ DRU           C11    C    CH2       0.000     -5.143   -2.624    2.523
+ DRU           H111   H    H         0.000     -4.181   -2.309    2.932
+ DRU           H112   H    H         0.000     -5.281   -3.692    2.702
+ DRU           C10    C    CH2       0.000     -6.274   -1.837    3.205
+ DRU           H101   H    H         0.000     -6.284   -2.056    4.275
+ DRU           H102   H    H         0.000     -7.235   -2.118    2.768
+ DRU           C9     C    CH2       0.000     -6.033   -0.350    2.991
+ DRU           H92    H    H         0.000     -5.080   -0.046    3.429
+ DRU           H91    H    H         0.000     -6.839    0.240    3.430
+ DRU           C8     C    CH1       0.000     -5.996   -0.122    1.476
+ DRU           H88    H    H         0.000     -6.929   -0.538    1.072
+ DRU           C7     C    CH1       0.000     -5.891    1.321    0.952
+ DRU           H77    H    H         0.000     -4.878    1.673    1.190
+ DRU           N2     N    NT        0.000     -5.970    1.205   -0.499
+ DRU           C6     C    C1        0.000     -6.847    2.360    1.469
+ DRU           H61    H    H         0.000     -7.187    2.306    2.489
+ DRU           C5     C    C1        0.000     -7.272    3.327    0.702
+ DRU           H51    H    H         0.000     -7.952    4.061    1.100
+ DRU           C4     C    CH2       0.000     -6.824    3.431   -0.733
+ DRU           H41    H    H         0.000     -6.566    4.470   -0.948
+ DRU           H42    H    H         0.000     -7.644    3.119   -1.382
+ DRU           C3     C    CH2       0.000     -5.604    2.538   -0.983
+ DRU           H32    H    H         0.000     -4.733    2.900   -0.433
+ DRU           H31    H    H         0.000     -5.366    2.487   -2.047
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DRU      HE21   n/a    NE2    START
+ DRU      NE2    HE21   CE1    .
+ DRU      CD2    NE2    HD21   .
+ DRU      HD22   CD2    .      .
+ DRU      HD21   CD2    .      .
+ DRU      CE1    NE2    ND1    .
+ DRU      HE11   CE1    .      .
+ DRU      HE12   CE1    .      .
+ DRU      ND1    CE1    RU     .
+ DRU      CG     ND1    HG1    .
+ DRU      HG2    CG     .      .
+ DRU      HG1    CG     .      .
+ DRU      RU     ND1    N13    .
+ DRU      N37    RU     C32    .
+ DRU      C36    N37    C35    .
+ DRU      H361   C36    .      .
+ DRU      H362   C36    .      .
+ DRU      C35    C36    C34    .
+ DRU      H351   C35    .      .
+ DRU      H352   C35    .      .
+ DRU      C34    C35    C33    .
+ DRU      H341   C34    .      .
+ DRU      H342   C34    .      .
+ DRU      C33    C34    H33A   .
+ DRU      H33B   C33    .      .
+ DRU      H33A   C33    .      .
+ DRU      C32    N37    C31    .
+ DRU      H332   C32    .      .
+ DRU      C31    C32    N26    .
+ DRU      H331   C31    .      .
+ DRU      C30    C31    C29    .
+ DRU      H301   C30    .      .
+ DRU      H302   C30    .      .
+ DRU      C29    C30    C28    .
+ DRU      H291   C29    .      .
+ DRU      H292   C29    .      .
+ DRU      C28    C29    C27    .
+ DRU      H281   C28    .      .
+ DRU      H282   C28    .      .
+ DRU      C27    C28    H271   .
+ DRU      H272   C27    .      .
+ DRU      H271   C27    .      .
+ DRU      N26    C31    .      .
+ DRU      N13    RU     C8     .
+ DRU      C12    N13    C11    .
+ DRU      H121   C12    .      .
+ DRU      H122   C12    .      .
+ DRU      C11    C12    C10    .
+ DRU      H111   C11    .      .
+ DRU      H112   C11    .      .
+ DRU      C10    C11    C9     .
+ DRU      H101   C10    .      .
+ DRU      H102   C10    .      .
+ DRU      C9     C10    H91    .
+ DRU      H92    C9     .      .
+ DRU      H91    C9     .      .
+ DRU      C8     N13    C7     .
+ DRU      H88    C8     .      .
+ DRU      C7     C8     C6     .
+ DRU      H77    C7     .      .
+ DRU      N2     C7     .      .
+ DRU      C6     C7     C5     .
+ DRU      H61    C6     .      .
+ DRU      C5     C6     C4     .
+ DRU      H51    C5     .      .
+ DRU      C4     C5     C3     .
+ DRU      H41    C4     .      .
+ DRU      H42    C4     .      .
+ DRU      C3     C4     H31    .
+ DRU      H32    C3     .      .
+ DRU      H31    C3     .      END
+ DRU      RU     N2     .    ADD
+ DRU      RU     N26    .    ADD
+ DRU      N2     C3     .    ADD
+ DRU      C8     C9     .    ADD
+ DRU      N26    C27    .    ADD
+ DRU      C32    C33    .    ADD
+ DRU      CG     CD2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DRU       RU        N2        single    2.118     0.020     2.118     0.020     
+DRU       N13       RU        single    2.104     0.020     2.104     0.020     
+DRU       RU        N26       single    2.122     0.020     2.122     0.020     
+DRU       N37       RU        single    2.123     0.020     2.123     0.020     
+DRU       RU        ND1       single    2.109     0.020     2.109     0.020     
+DRU       N2        C3        single    1.469     0.020     1.469     0.020     
+DRU       N2        C7        single    1.469     0.020     1.469     0.020     
+DRU       C3        C4        single    1.524     0.020     1.524     0.020     
+DRU       H31       C3        single    1.089     0.010     0.989     0.005     
+DRU       H32       C3        single    1.089     0.010     0.989     0.005     
+DRU       C4        C5        single    1.510     0.020     1.510     0.020     
+DRU       H41       C4        single    1.089     0.010     0.989     0.005     
+DRU       H42       C4        single    1.089     0.010     0.989     0.005     
+DRU       C5        C6        double    1.330     0.020     1.330     0.020     
+DRU       H51       C5        single    1.082     0.013     0.975     0.010     
+DRU       C6        C7        single    1.510     0.020     1.510     0.020     
+DRU       H61       C6        single    1.082     0.013     0.975     0.010     
+DRU       C7        C8        single    1.524     0.020     1.524     0.020     
+DRU       H77       C7        single    1.089     0.010     0.989     0.005     
+DRU       C8        C9        single    1.524     0.020     1.524     0.020     
+DRU       C8        N13       single    1.469     0.020     1.469     0.020     
+DRU       H88       C8        single    1.089     0.010     0.989     0.005     
+DRU       C9        C10       single    1.524     0.020     1.524     0.020     
+DRU       H91       C9        single    1.089     0.010     0.989     0.005     
+DRU       H92       C9        single    1.089     0.010     0.989     0.005     
+DRU       C10       C11       single    1.524     0.020     1.524     0.020     
+DRU       H101      C10       single    1.089     0.010     0.989     0.005     
+DRU       H102      C10       single    1.089     0.010     0.989     0.005     
+DRU       C11       C12       single    1.524     0.020     1.524     0.020     
+DRU       H111      C11       single    1.089     0.010     0.989     0.005     
+DRU       H112      C11       single    1.089     0.010     0.989     0.005     
+DRU       C12       N13       single    1.469     0.020     1.469     0.020     
+DRU       H121      C12       single    1.089     0.010     0.989     0.005     
+DRU       H122      C12       single    1.089     0.010     0.989     0.005     
+DRU       N26       C27       single    1.469     0.020     1.469     0.020     
+DRU       N26       C31       single    1.469     0.020     1.469     0.020     
+DRU       C27       C28       single    1.524     0.020     1.524     0.020     
+DRU       H271      C27       single    1.089     0.010     0.989     0.005     
+DRU       H272      C27       single    1.089     0.010     0.989     0.005     
+DRU       C28       C29       single    1.524     0.020     1.524     0.020     
+DRU       H281      C28       single    1.089     0.010     0.989     0.005     
+DRU       H282      C28       single    1.089     0.010     0.989     0.005     
+DRU       C29       C30       single    1.524     0.020     1.524     0.020     
+DRU       H291      C29       single    1.089     0.010     0.989     0.005     
+DRU       H292      C29       single    1.089     0.010     0.989     0.005     
+DRU       C30       C31       single    1.524     0.020     1.524     0.020     
+DRU       H301      C30       single    1.089     0.010     0.989     0.005     
+DRU       H302      C30       single    1.089     0.010     0.989     0.005     
+DRU       C31       C32       single    1.524     0.020     1.524     0.020     
+DRU       H331      C31       single    1.089     0.010     0.989     0.005     
+DRU       C32       C33       single    1.524     0.020     1.524     0.020     
+DRU       C32       N37       single    1.469     0.020     1.469     0.020     
+DRU       H332      C32       single    1.089     0.010     0.989     0.005     
+DRU       C33       C34       single    1.524     0.020     1.524     0.020     
+DRU       H33A      C33       single    1.089     0.010     0.989     0.005     
+DRU       H33B      C33       single    1.089     0.010     0.989     0.005     
+DRU       C34       C35       single    1.524     0.020     1.524     0.020     
+DRU       H341      C34       single    1.089     0.010     0.989     0.005     
+DRU       H342      C34       single    1.089     0.010     0.989     0.005     
+DRU       C35       C36       single    1.524     0.020     1.524     0.020     
+DRU       H351      C35       single    1.089     0.010     0.989     0.005     
+DRU       H352      C35       single    1.089     0.010     0.989     0.005     
+DRU       C36       N37       single    1.469     0.020     1.469     0.020     
+DRU       H361      C36       single    1.089     0.010     0.989     0.005     
+DRU       H362      C36       single    1.089     0.010     0.989     0.005     
+DRU       CG        CD2       single    1.524     0.020     1.524     0.020     
+DRU       CG        ND1       single    1.469     0.020     1.469     0.020     
+DRU       HG1       CG        single    1.089     0.010     0.989     0.005     
+DRU       HG2       CG        single    1.089     0.010     0.989     0.005     
+DRU       CD2       NE2       single    1.450     0.020     1.450     0.020     
+DRU       HD21      CD2       single    1.089     0.010     0.989     0.005     
+DRU       HD22      CD2       single    1.089     0.010     0.989     0.005     
+DRU       ND1       CE1       single    1.469     0.020     1.469     0.020     
+DRU       CE1       NE2       single    1.450     0.020     1.450     0.020     
+DRU       HE11      CE1       single    1.089     0.010     0.989     0.005     
+DRU       HE12      CE1       single    1.089     0.010     0.989     0.005     
+DRU       NE2       HE21      single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DRU      HE21   NE2    CD2     118.500    3.000
+ DRU      HE21   NE2    CE1     118.500    3.000
+ DRU      CD2    NE2    CE1     120.000    3.000
+ DRU      NE2    CD2    HD22    109.470    3.000
+ DRU      NE2    CD2    HD21    109.470    3.000
+ DRU      NE2    CD2    CG      112.000    3.000
+ DRU      HD22   CD2    HD21    107.900    3.000
+ DRU      HD22   CD2    CG      109.470    3.000
+ DRU      HD21   CD2    CG      109.470    3.000
+ DRU      NE2    CE1    HE11    109.470    3.000
+ DRU      NE2    CE1    HE12    109.470    3.000
+ DRU      NE2    CE1    ND1     109.500    3.000
+ DRU      HE11   CE1    HE12    107.900    3.000
+ DRU      HE11   CE1    ND1     109.470    3.000
+ DRU      HE12   CE1    ND1     109.470    3.000
+ DRU      CE1    ND1    CG      109.470    3.000
+ DRU      CE1    ND1    RU      109.500    3.000
+ DRU      CG     ND1    RU      109.500    3.000
+ DRU      ND1    CG     HG2     109.470    3.000
+ DRU      ND1    CG     HG1     109.470    3.000
+ DRU      ND1    CG     CD2     109.470    3.000
+ DRU      HG2    CG     HG1     107.900    3.000
+ DRU      HG2    CG     CD2     109.470    3.000
+ DRU      HG1    CG     CD2     109.470    3.000
+ DRU      ND1    RU     N37      90.000    3.000
+ DRU      ND1    RU     N13      90.000    3.000
+ DRU      ND1    RU     N2       90.000    3.000
+ DRU      ND1    RU     N26     180.000    3.000
+ DRU      N37    RU     N13     180.000    3.000
+ DRU      N2     RU     N26      90.000    3.000
+ DRU      N37    RU     N2       90.000    3.000
+ DRU      N13    RU     N2       90.000    3.000
+ DRU      N37    RU     N26      90.000    3.000
+ DRU      N13    RU     N26      90.000    3.000
+ DRU      RU     N37    C36     109.500    3.000
+ DRU      RU     N37    C32     109.500    3.000
+ DRU      C36    N37    C32     109.470    3.000
+ DRU      N37    C36    H361    109.470    3.000
+ DRU      N37    C36    H362    109.470    3.000
+ DRU      N37    C36    C35     109.470    3.000
+ DRU      H361   C36    H362    107.900    3.000
+ DRU      H361   C36    C35     109.470    3.000
+ DRU      H362   C36    C35     109.470    3.000
+ DRU      C36    C35    H351    109.470    3.000
+ DRU      C36    C35    H352    109.470    3.000
+ DRU      C36    C35    C34     111.000    3.000
+ DRU      H351   C35    H352    107.900    3.000
+ DRU      H351   C35    C34     109.470    3.000
+ DRU      H352   C35    C34     109.470    3.000
+ DRU      C35    C34    H341    109.470    3.000
+ DRU      C35    C34    H342    109.470    3.000
+ DRU      C35    C34    C33     111.000    3.000
+ DRU      H341   C34    H342    107.900    3.000
+ DRU      H341   C34    C33     109.470    3.000
+ DRU      H342   C34    C33     109.470    3.000
+ DRU      C34    C33    H33B    109.470    3.000
+ DRU      C34    C33    H33A    109.470    3.000
+ DRU      C34    C33    C32     111.000    3.000
+ DRU      H33B   C33    H33A    107.900    3.000
+ DRU      H33B   C33    C32     109.470    3.000
+ DRU      H33A   C33    C32     109.470    3.000
+ DRU      N37    C32    H332    109.500    3.000
+ DRU      N37    C32    C31     109.500    3.000
+ DRU      N37    C32    C33     109.500    3.000
+ DRU      H332   C32    C31     108.340    3.000
+ DRU      H332   C32    C33     108.340    3.000
+ DRU      C31    C32    C33     111.000    3.000
+ DRU      C32    C31    H331    108.340    3.000
+ DRU      C32    C31    C30     111.000    3.000
+ DRU      C32    C31    N26     109.500    3.000
+ DRU      H331   C31    C30     108.340    3.000
+ DRU      H331   C31    N26     109.500    3.000
+ DRU      C30    C31    N26     109.500    3.000
+ DRU      C31    C30    H301    109.470    3.000
+ DRU      C31    C30    H302    109.470    3.000
+ DRU      C31    C30    C29     111.000    3.000
+ DRU      H301   C30    H302    107.900    3.000
+ DRU      H301   C30    C29     109.470    3.000
+ DRU      H302   C30    C29     109.470    3.000
+ DRU      C30    C29    H291    109.470    3.000
+ DRU      C30    C29    H292    109.470    3.000
+ DRU      C30    C29    C28     111.000    3.000
+ DRU      H291   C29    H292    107.900    3.000
+ DRU      H291   C29    C28     109.470    3.000
+ DRU      H292   C29    C28     109.470    3.000
+ DRU      C29    C28    H281    109.470    3.000
+ DRU      C29    C28    H282    109.470    3.000
+ DRU      C29    C28    C27     111.000    3.000
+ DRU      H281   C28    H282    107.900    3.000
+ DRU      H281   C28    C27     109.470    3.000
+ DRU      H282   C28    C27     109.470    3.000
+ DRU      C28    C27    H272    109.470    3.000
+ DRU      C28    C27    H271    109.470    3.000
+ DRU      C28    C27    N26     109.470    3.000
+ DRU      H272   C27    H271    107.900    3.000
+ DRU      H272   C27    N26     109.470    3.000
+ DRU      H271   C27    N26     109.470    3.000
+ DRU      C31    N26    RU      109.500    3.000
+ DRU      C31    N26    C27     109.470    3.000
+ DRU      RU     N26    C27     109.500    3.000
+ DRU      RU     N13    C12     109.500    3.000
+ DRU      RU     N13    C8      109.500    3.000
+ DRU      C12    N13    C8      109.470    3.000
+ DRU      N13    C12    H121    109.470    3.000
+ DRU      N13    C12    H122    109.470    3.000
+ DRU      N13    C12    C11     109.470    3.000
+ DRU      H121   C12    H122    107.900    3.000
+ DRU      H121   C12    C11     109.470    3.000
+ DRU      H122   C12    C11     109.470    3.000
+ DRU      C12    C11    H111    109.470    3.000
+ DRU      C12    C11    H112    109.470    3.000
+ DRU      C12    C11    C10     111.000    3.000
+ DRU      H111   C11    H112    107.900    3.000
+ DRU      H111   C11    C10     109.470    3.000
+ DRU      H112   C11    C10     109.470    3.000
+ DRU      C11    C10    H101    109.470    3.000
+ DRU      C11    C10    H102    109.470    3.000
+ DRU      C11    C10    C9      111.000    3.000
+ DRU      H101   C10    H102    107.900    3.000
+ DRU      H101   C10    C9      109.470    3.000
+ DRU      H102   C10    C9      109.470    3.000
+ DRU      C10    C9     H92     109.470    3.000
+ DRU      C10    C9     H91     109.470    3.000
+ DRU      C10    C9     C8      111.000    3.000
+ DRU      H92    C9     H91     107.900    3.000
+ DRU      H92    C9     C8      109.470    3.000
+ DRU      H91    C9     C8      109.470    3.000
+ DRU      N13    C8     H88     109.500    3.000
+ DRU      N13    C8     C7      109.500    3.000
+ DRU      N13    C8     C9      109.500    3.000
+ DRU      H88    C8     C7      108.340    3.000
+ DRU      H88    C8     C9      108.340    3.000
+ DRU      C7     C8     C9      111.000    3.000
+ DRU      C8     C7     H77     108.340    3.000
+ DRU      C8     C7     N2      109.500    3.000
+ DRU      C8     C7     C6      109.470    3.000
+ DRU      H77    C7     N2      109.500    3.000
+ DRU      H77    C7     C6      108.810    3.000
+ DRU      N2     C7     C6      109.500    3.000
+ DRU      C7     N2     RU      109.500    3.000
+ DRU      C7     N2     C3      109.470    3.000
+ DRU      RU     N2     C3      109.500    3.000
+ DRU      C7     C6     H61     120.000    3.000
+ DRU      C7     C6     C5      120.000    3.000
+ DRU      H61    C6     C5      120.000    3.000
+ DRU      C6     C5     H51     120.000    3.000
+ DRU      C6     C5     C4      120.000    3.000
+ DRU      H51    C5     C4      120.000    3.000
+ DRU      C5     C4     H41     109.470    3.000
+ DRU      C5     C4     H42     109.470    3.000
+ DRU      C5     C4     C3      109.470    3.000
+ DRU      H41    C4     H42     107.900    3.000
+ DRU      H41    C4     C3      109.470    3.000
+ DRU      H42    C4     C3      109.470    3.000
+ DRU      C4     C3     H32     109.470    3.000
+ DRU      C4     C3     H31     109.470    3.000
+ DRU      C4     C3     N2      109.470    3.000
+ DRU      H32    C3     H31     107.900    3.000
+ DRU      H32    C3     N2      109.470    3.000
+ DRU      H31    C3     N2      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DRU      var_1    HE21   NE2    CD2    CG      -150.000   20.000   3
+ DRU      var_2    HE21   NE2    CE1    ND1      150.000   20.000   3
+ DRU      var_3    NE2    CE1    ND1    RU      -150.000   20.000   1
+ DRU      var_4    CE1    ND1    CG     CD2        0.000   20.000   1
+ DRU      var_5    ND1    CG     CD2    NE2       30.000   20.000   3
+ DRU      var_6    CE1    ND1    RU     N13        0.000   20.000   1
+ DRU      var_7    C7     N2     RU     N13        0.000   20.000   1
+ DRU      var_8    C31    N26    RU     N37        0.000   20.000   1
+ DRU      var_9    C32    N37    RU     N26        0.000   20.000   1
+ DRU      var_10   RU     N37    C36    C35      180.000   20.000   1
+ DRU      var_11   N37    C36    C35    C34      -60.000   20.000   3
+ DRU      var_12   C36    C35    C34    C33       60.000   20.000   3
+ DRU      var_13   C35    C34    C33    C32      -60.000   20.000   3
+ DRU      var_14   RU     N37    C32    C31       30.000   20.000   1
+ DRU      var_15   N37    C32    C33    C34       60.000   20.000   3
+ DRU      var_16   N37    C32    C31    N26        0.000   20.000   3
+ DRU      var_17   C32    C31    C30    C29      180.000   20.000   3
+ DRU      var_18   C31    C30    C29    C28       60.000   20.000   3
+ DRU      var_19   C30    C29    C28    C27      -60.000   20.000   3
+ DRU      var_20   C29    C28    C27    N26       60.000   20.000   3
+ DRU      var_21   C32    C31    N26    RU       -60.000   20.000   1
+ DRU      var_22   C31    N26    C27    C28      -60.000   20.000   1
+ DRU      var_23   C8     N13    RU     N2         0.000   20.000   1
+ DRU      var_24   RU     N13    C12    C11      180.000   20.000   1
+ DRU      var_25   N13    C12    C11    C10       60.000   20.000   3
+ DRU      var_26   C12    C11    C10    C9       -60.000   20.000   3
+ DRU      var_27   C11    C10    C9     C8        60.000   20.000   3
+ DRU      var_28   RU     N13    C8     C7       -30.000   20.000   1
+ DRU      var_29   N13    C8     C9     C10      -60.000   20.000   3
+ DRU      var_30   N13    C8     C7     C6       180.000   20.000   3
+ DRU      var_31   C8     C7     N2     RU       -60.000   20.000   1
+ DRU      var_32   C7     N2     C3     C4       -90.000   20.000   1
+ DRU      var_33   C8     C7     C6     C5      -150.000   20.000   1
+ DRU      var_34   C7     C6     C5     C4         0.000   20.000   1
+ DRU      var_35   C6     C5     C4     C3         0.000   20.000   1
+ DRU      var_36   C5     C4     C3     N2        60.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ DRU      chir_01  N2     RU     C3     C7        positiv
+                   .      .      .      .      .
+ DRU      chir_02  C7     N2     C6     C8        negativ
+                   .      .      .      .      .
+ DRU      chir_03  C8     C7     C9     N13       positiv
+                   .      .      .      .      .
+ DRU      chir_04  N13    RU     C8     C12       negativ
+                   .      .      .      .      .
+ DRU      chir_05  N26    RU     C27    C31       positiv
+                   .      .      .      .      .
+ DRU      chir_06  C31    N26    C30    C32       negativ
+                   .      .      .      .      .
+ DRU      chir_07  C32    C31    C33    N37       negativ
+                   .      .      .      .      .
+ DRU      chir_08  N37    RU     C32    C36       positiv
+                   .      .      .      .      .
+ DRU      chir_09  ND1    RU     CG     CE1       negativ
+                   .      .      .      .      .
+ DRU      chir_10  RU     ND1    N26    N13       cross4
+                   N2     N37    .      .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DRU      plan-1    C5        0.020
+ DRU      plan-1    C4        0.020
+ DRU      plan-1    C6        0.020
+ DRU      plan-1    H51       0.020
+ DRU      plan-1    H61       0.020
+ DRU      plan-2    C6        0.020
+ DRU      plan-2    C5        0.020
+ DRU      plan-2    C7        0.020
+ DRU      plan-2    H61       0.020
+ DRU      plan-2    H51       0.020
+ DRU      plan-3    NE2       0.020
+ DRU      plan-3    CD2       0.020
+ DRU      plan-3    CE1       0.020
+ DRU      plan-3    HE21      0.020
+# ------------------------------------------------------

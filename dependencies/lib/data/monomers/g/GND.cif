@@ -1,0 +1,241 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GND     GND     "2-AMINO-5-GUANIDINO-PENTANOIC"     peptide    27     12     .
+#
+data_comp_GND
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GND     CA      C       CH1     0       -2.569      0.192       0.758
+GND     CB      C       CH2     0       -1.050      0.301       0.593
+GND     CG      C       CH2     0       -0.595      0.643       -0.819
+GND     CD      C       CH2     0       0.903       0.870       -0.910
+GND     NE      N       NH1     0       1.679       -0.368      -0.878
+GND     CZ      C       C       0       3.008       -0.449      -0.760
+GND     NH1     N       NH2     1       3.571       -1.612      -0.466
+GND     NH2     N       NH2     0       3.776       0.612       -0.964
+GND     C       C       C       0       -3.108      -1.081      0.091
+GND     OXT     O       OC      -1      -2.816      -2.169      0.624
+GND     O       O       O       0       -3.799      -0.936      -0.938
+GND     N       N       NT3     1       -2.931      0.185       2.203
+GND     HA      H       H       0       -2.992      0.975       0.336
+GND     HB1     H       H       0       -0.645      -0.552      0.857
+GND     HB2     H       H       0       -0.720      0.991       1.205
+GND     HG1     H       H       0       -1.059      1.454       -1.120
+GND     HG2     H       H       0       -0.843      -0.087      -1.426
+GND     HD1     H       H       0       1.185       1.443       -0.165
+GND     HD2     H       H       0       1.102       1.348       -1.744
+GND     HE      H       H       0       1.238       -1.118      -0.948
+GND     HH11    H       H       0       4.447       -1.685      -0.444
+GND     HH12    H       H       0       3.071       -2.313      -0.288
+GND     HH21    H       H       0       4.615       0.602       -0.695
+GND     HH22    H       H       0       3.467       1.314       -1.395
+GND     H       H       H       0       -3.814      -0.015      2.308
+GND     H2      H       H       0       -2.771      1.005       2.566
+GND     H3      H       H       0       -2.432      -0.436      2.646
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+GND      N      n/a    CA     START
+GND      H      N      .      .
+GND      H2     N      .      .
+GND      H3     N      .      .
+GND      CA     N      C      .
+GND      HA     CA     .      .
+GND      CB     CA     CG     .
+GND      HB1    CB     .      .
+GND      HB2    CB     .      .
+GND      CG     CB     CD     .
+GND      HG1    CG     .      .
+GND      HG2    CG     .      .
+GND      CD     CG     NE     .
+GND      HD1    CD     .      .
+GND      HD2    CD     .      .
+GND      NE     CD     CZ     .
+GND      HE     NE     .      .
+GND      CZ     NE     NH1    .
+GND      NH2    CZ     HH21   .
+GND      HH22   NH2    .      .
+GND      HH21   NH2    .      .
+GND      NH1    CZ     HH11   .
+GND      HH12   NH1    .      .
+GND      HH11   NH1    .      .
+GND      C      CA     .      END
+GND      OXT    C      .      .
+GND      O      C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GND       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+GND       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+GND       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+GND       CB        CG        SINGLE    n         1.522     0.010     1.522     0.010     
+GND       CG        CD        SINGLE    n         1.517     0.015     1.517     0.015     
+GND       CD        NE        SINGLE    n         1.456     0.014     1.456     0.014     
+GND       NE        CZ        SINGLE    n         1.328     0.013     1.328     0.013     
+GND       CZ        NH1       DOUBLE    n         1.322     0.010     1.322     0.010     
+GND       CZ        NH2       SINGLE    n         1.321     0.011     1.321     0.011     
+GND       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+GND       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+GND       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+GND       CB        HB1       SINGLE    n         1.089     0.010     0.980     0.016     
+GND       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+GND       CG        HG1       SINGLE    n         1.089     0.010     0.981     0.016     
+GND       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+GND       CD        HD1       SINGLE    n         1.089     0.010     0.981     0.015     
+GND       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.015     
+GND       NE        HE        SINGLE    n         1.016     0.010     0.872     0.020     
+GND       NH1       HH11      SINGLE    n         1.016     0.010     0.879     0.020     
+GND       NH1       HH12      SINGLE    n         1.016     0.010     0.879     0.020     
+GND       NH2       HH21      SINGLE    n         1.016     0.010     0.881     0.020     
+GND       NH2       HH22      SINGLE    n         1.016     0.010     0.881     0.020     
+GND       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+GND       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+GND       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GND          CB          CA           C     111.037    2.40
+GND          CB          CA           N     110.374    1.62
+GND          CB          CA          HA     108.967    1.50
+GND           C          CA           N     109.241    1.50
+GND           C          CA          HA     108.824    1.50
+GND           N          CA          HA     108.487    1.50
+GND          CA          CB          CG     114.117    1.50
+GND          CA          CB         HB1     108.549    1.50
+GND          CA          CB         HB2     108.549    1.50
+GND          CG          CB         HB1     108.775    1.50
+GND          CG          CB         HB2     108.775    1.50
+GND         HB1          CB         HB2     107.844    1.50
+GND          CB          CG          CD     112.387    3.00
+GND          CB          CG         HG1     109.262    1.50
+GND          CB          CG         HG2     109.262    1.50
+GND          CD          CG         HG1     108.956    1.50
+GND          CD          CG         HG2     108.956    1.50
+GND         HG1          CG         HG2     107.927    1.57
+GND          CG          CD          NE     112.382    2.90
+GND          CG          CD         HD1     109.197    1.51
+GND          CG          CD         HD2     109.197    1.51
+GND          NE          CD         HD1     109.183    1.50
+GND          NE          CD         HD2     109.183    1.50
+GND         HD1          CD         HD2     107.877    1.50
+GND          CD          NE          CZ     124.510    1.50
+GND          CD          NE          HE     117.883    1.50
+GND          CZ          NE          HE     117.606    1.50
+GND          NE          CZ         NH1     120.052    1.50
+GND          NE          CZ         NH2     120.052    1.50
+GND         NH1          CZ         NH2     119.896    1.50
+GND          CZ         NH1        HH11     119.855    2.01
+GND          CZ         NH1        HH12     119.855    2.01
+GND        HH11         NH1        HH12     120.290    2.09
+GND          CZ         NH2        HH21     119.855    2.01
+GND          CZ         NH2        HH22     119.855    2.01
+GND        HH21         NH2        HH22     120.290    2.09
+GND          CA           C         OXT     117.124    1.50
+GND          CA           C           O     117.124    1.50
+GND         OXT           C           O     125.752    1.50
+GND          CA           N           H     110.062    1.93
+GND          CA           N          H2     110.062    1.93
+GND          CA           N          H3     110.062    1.93
+GND           H           N          H2     109.028    2.41
+GND           H           N          H3     109.028    2.41
+GND          H2           N          H3     109.028    2.41
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GND             sp3_sp3_1           C          CA          CB          CG     180.000   10.00     3
+GND            sp3_sp3_10          CB          CA           N           H     180.000   10.00     3
+GND             sp2_sp3_1         OXT           C          CA          CB       0.000   10.00     6
+GND            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+GND            sp3_sp3_28          NE          CD          CG          CB     180.000   10.00     3
+GND             sp2_sp3_8          CZ          NE          CD          CG     120.000   10.00     6
+GND             sp2_sp2_1         NH1          CZ          NE          CD     180.000   10.00     2
+GND             sp2_sp2_5          NE          CZ         NH1        HH11     180.000   10.00     2
+GND             sp2_sp2_9          NE          CZ         NH2        HH21     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+GND    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GND    plan-1          CD   0.020
+GND    plan-1          CZ   0.020
+GND    plan-1          HE   0.020
+GND    plan-1          NE   0.020
+GND    plan-2          CZ   0.020
+GND    plan-2          NE   0.020
+GND    plan-2         NH1   0.020
+GND    plan-2         NH2   0.020
+GND    plan-3          CZ   0.020
+GND    plan-3        HH11   0.020
+GND    plan-3        HH12   0.020
+GND    plan-3         NH1   0.020
+GND    plan-4          CZ   0.020
+GND    plan-4        HH21   0.020
+GND    plan-4        HH22   0.020
+GND    plan-4         NH2   0.020
+GND    plan-5           C   0.020
+GND    plan-5          CA   0.020
+GND    plan-5           O   0.020
+GND    plan-5         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GND SMILES           ACDLabs              10.04 "O=C(O)C(CCCNC(=[N@H])N)[NH3+]"
+GND SMILES_CANONICAL CACTVS               3.341 "NC(=N)NCCC[C@H]([NH3+])C(O)=O"
+GND SMILES           CACTVS               3.341 "NC(=N)NCCC[CH]([NH3+])C(O)=O"
+GND SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[H]/N=C(/N)\NCCC[C@@H](C(=O)O)[NH3+]"
+GND SMILES           "OpenEye OEToolkits" 1.5.0 "[H]N=C(N)NCCCC(C(=O)O)[NH3+]"
+GND InChI            InChI                1.03  "InChI=1S/C6H14N4O2/c7-4(5(11)12)2-1-3-10-6(8)9/h4H,1-3,7H2,(H,11,12)(H4,8,9,10)/p+1/t4-/m0/s1"
+GND InChIKey         InChI                1.03  ODKSFYDXXFIFQN-BYPYZUCNSA-O
+GND ?                acedrg               202         "dictionary generator"
+GND ?                acedrg_database      11          "data source"
+GND ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GND ?                refmac5              5.8.0222    "optimization tool"

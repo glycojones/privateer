@@ -1,0 +1,134 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VX    VX        "O-ETHYLMETHYLPHOSPHONIC ACID ESTER GROUP"     NON-POLYMER     15     7     .     
+#
+data_comp_VX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+VX      P1      P       P       0       0.628       1.060       -3.259      
+VX      O1      O       O       0       -0.482      1.819       -2.586      
+VX      O2      O       O2      0       0.036       -0.316      -3.794      
+VX      C1      C       CH3     0       1.149       1.938       -4.741      
+VX      C2      C       CH2     0       0.890       -1.411      -4.226      
+VX      C3      C       CH3     0       0.050       -2.533      -4.690      
+VX      O3      O       OP      -1      1.827       0.760       -2.403      
+VX      H1      H       H       0       2.110       2.053       -4.719      
+VX      H2      H       H       0       0.715       2.803       -4.765      
+VX      H3      H       H       0       0.897       1.421       -5.520      
+VX      H21     H       H       0       1.455       -1.704      -3.481      
+VX      H22     H       H       0       1.472       -1.109      -4.955      
+VX      H31     H       H       0       0.618       -3.255      -5.005      
+VX      H32     H       H       0       -0.523      -2.233      -5.414      
+VX      H33     H       H       0       -0.499      -2.852      -3.955      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VX        P1        O1        DOUBLE    n         1.504     0.014     1.504     0.014     
+VX        P1        O2        SINGLE    n         1.590     0.015     1.590     0.015     
+VX        P1        C1        SINGLE    n         1.800     0.020     1.800     0.020     
+VX        O2        C2        SINGLE    n         1.454     0.018     1.454     0.018     
+VX        C2        C3        SINGLE    n         1.477     0.020     1.477     0.020     
+VX        P1        O3        SINGLE    n         1.504     0.014     1.504     0.014     
+VX        C1        H1        SINGLE    n         1.089     0.010     0.968     0.013     
+VX        C1        H2        SINGLE    n         1.089     0.010     0.968     0.013     
+VX        C1        H3        SINGLE    n         1.089     0.010     0.968     0.013     
+VX        C2        H21       SINGLE    n         1.089     0.010     0.980     0.015     
+VX        C2        H22       SINGLE    n         1.089     0.010     0.980     0.015     
+VX        C3        H31       SINGLE    n         1.089     0.010     0.971     0.016     
+VX        C3        H32       SINGLE    n         1.089     0.010     0.971     0.016     
+VX        C3        H33       SINGLE    n         1.089     0.010     0.971     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+VX         O1          P1          O2     108.773    3.00
+VX         O1          P1          C1     110.326    3.00
+VX         O1          P1          O3     115.915    1.71
+VX         O2          P1          C1     105.177    2.72
+VX         O2          P1          O3     108.773    3.00
+VX         C1          P1          O3     110.326    3.00
+VX         P1          O2          C2     122.156    1.65
+VX         P1          C1          H1     108.528    1.50
+VX         P1          C1          H2     108.528    1.50
+VX         P1          C1          H3     108.528    1.50
+VX         H1          C1          H2     109.372    1.50
+VX         H1          C1          H3     109.372    1.50
+VX         H2          C1          H3     109.372    1.50
+VX         O2          C2          C3     109.352    2.81
+VX         O2          C2         H21     109.728    1.50
+VX         O2          C2         H22     109.728    1.50
+VX         C3          C2         H21     109.788    1.50
+VX         C3          C2         H22     109.788    1.50
+VX        H21          C2         H22     108.343    1.50
+VX         C2          C3         H31     109.474    1.50
+VX         C2          C3         H32     109.474    1.50
+VX         C2          C3         H33     109.474    1.50
+VX        H31          C3         H32     109.410    1.50
+VX        H31          C3         H33     109.410    1.50
+VX        H32          C3         H33     109.410    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+VX            sp3_sp3_1          C2          O2          P1          O1     180.000   10.00     3
+VX            sp3_sp3_6          H1          C1          P1          O1      60.000   10.00     3
+VX           sp3_sp3_13          C3          C2          O2          P1     180.000   10.00     3
+VX           sp3_sp3_16          O2          C2          C3         H31     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+VX   chir_1    P1    O2    O3    O1    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+VX SMILES           ACDLabs              10.04 "O=P(O)(OCC)C"
+VX SMILES_CANONICAL CACTVS               3.341 "CCO[P@](C)(O)=O"
+VX SMILES           CACTVS               3.341 "CCO[P](C)(O)=O"
+VX SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCO[P@](=O)(C)O"
+VX SMILES           "OpenEye OEToolkits" 1.5.0 "CCOP(=O)(C)O"
+VX InChI            InChI                1.03  "InChI=1S/C3H9O3P/c1-3-6-7(2,4)5/h3H2,1-2H3,(H,4,5)"
+VX InChIKey         InChI                1.03  UFZOPKFMKMAWLU-UHFFFAOYSA-N
+VX  ?                acedrg               204         "dictionary generator"                  
+VX  ?                acedrg_database      11          "data source"                           
+VX  ?                rdkit                2017.03.2   "Chemoinformatics tool"
+VX  ?                refmac5              5.8.0230    "optimization tool"                     

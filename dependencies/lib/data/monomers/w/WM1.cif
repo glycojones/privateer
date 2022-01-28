@@ -1,0 +1,151 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+WM1     WM1      pyridine-2-carboxamide     NON-POLYMER     15     9     .     
+#
+data_comp_WM1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+WM1     CAD     C       CR16    0       0.601       -13.355     -5.176      
+WM1     CAG     C       CR16    0       0.148       -12.052     -5.035      
+WM1     CAH     C       CR16    0       -0.294      -11.615     -3.798      
+WM1     CAI     C       CR16    0       -0.263      -12.511     -2.741      
+WM1     NAF     N       NRD6    0       0.175       -13.777     -2.854      
+WM1     CAE     C       CR6     0       0.599       -14.187     -4.065      
+WM1     CAB     C       C       0       1.085       -15.612     -4.171      
+WM1     OAC     O       O       0       1.861       -15.934     -5.081      
+WM1     NAA     N       NH2     0       0.660       -16.474     -3.258      
+WM1     H1      H       H       0       0.903       -13.664     -6.010      
+WM1     H2      H       H       0       0.139       -11.468     -5.777      
+WM1     H3      H       H       0       -0.608      -10.733     -3.676      
+WM1     H4      H       H       0       -0.562      -12.220     -1.894      
+WM1     H5      H       H       0       0.917       -17.327     -3.298      
+WM1     H6      H       H       0       0.122       -16.208     -2.596      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+WM1       CAD       CAG       DOUBLE    y         1.379     0.010     1.379     0.010     
+WM1       CAD       CAE       SINGLE    y         1.378     0.010     1.378     0.010     
+WM1       CAG       CAH       SINGLE    y         1.374     0.013     1.374     0.013     
+WM1       CAB       OAC       DOUBLE    n         1.237     0.010     1.237     0.010     
+WM1       CAE       CAB       SINGLE    n         1.502     0.010     1.502     0.010     
+WM1       CAB       NAA       SINGLE    n         1.321     0.010     1.321     0.010     
+WM1       NAF       CAE       DOUBLE    y         1.337     0.010     1.337     0.010     
+WM1       CAH       CAI       DOUBLE    y         1.376     0.013     1.376     0.013     
+WM1       CAI       NAF       SINGLE    y         1.337     0.010     1.337     0.010     
+WM1       CAD       H1        SINGLE    n         1.082     0.013     0.939     0.015     
+WM1       CAG       H2        SINGLE    n         1.082     0.013     0.944     0.020     
+WM1       CAH       H3        SINGLE    n         1.082     0.013     0.944     0.020     
+WM1       CAI       H4        SINGLE    n         1.082     0.013     0.945     0.020     
+WM1       NAA       H5        SINGLE    n         1.016     0.010     0.891     0.020     
+WM1       NAA       H6        SINGLE    n         1.016     0.010     0.891     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+WM1         CAG         CAD         CAE     118.519    1.50
+WM1         CAG         CAD          H1     120.775    1.50
+WM1         CAE         CAD          H1     120.706    1.50
+WM1         CAD         CAG         CAH     119.103    1.50
+WM1         CAD         CAG          H2     120.438    1.50
+WM1         CAH         CAG          H2     120.459    1.50
+WM1         CAG         CAH         CAI     118.418    1.50
+WM1         CAG         CAH          H3     120.863    1.50
+WM1         CAI         CAH          H3     120.722    1.50
+WM1         CAH         CAI         NAF     123.742    1.50
+WM1         CAH         CAI          H4     118.377    1.50
+WM1         NAF         CAI          H4     117.881    1.50
+WM1         CAE         NAF         CAI     116.818    1.50
+WM1         CAD         CAE         CAB     119.818    1.50
+WM1         CAD         CAE         NAF     123.397    1.50
+WM1         CAB         CAE         NAF     116.778    1.50
+WM1         OAC         CAB         CAE     119.681    1.50
+WM1         OAC         CAB         NAA     123.765    1.50
+WM1         CAE         CAB         NAA     116.555    1.50
+WM1         CAB         NAA          H5     120.020    1.69
+WM1         CAB         NAA          H6     120.020    1.69
+WM1          H5         NAA          H6     119.960    2.83
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+WM1       const_sp2_sp2_1         CAE         CAD         CAG         CAH       0.000   10.00     2
+WM1              const_18         CAG         CAD         CAE         CAB     180.000   10.00     2
+WM1       const_sp2_sp2_5         CAD         CAG         CAH         CAI       0.000   10.00     2
+WM1       const_sp2_sp2_9         CAG         CAH         CAI         NAF       0.000   10.00     2
+WM1              const_13         CAH         CAI         NAF         CAE       0.000   10.00     2
+WM1              const_16         CAB         CAE         NAF         CAI     180.000   10.00     2
+WM1             sp2_sp2_3         OAC         CAB         CAE         CAD       0.000   10.00     2
+WM1             sp2_sp2_7         OAC         CAB         NAA          H5       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+WM1    plan-1         CAB   0.020
+WM1    plan-1         CAD   0.020
+WM1    plan-1         CAE   0.020
+WM1    plan-1         CAG   0.020
+WM1    plan-1         CAH   0.020
+WM1    plan-1         CAI   0.020
+WM1    plan-1          H1   0.020
+WM1    plan-1          H2   0.020
+WM1    plan-1          H3   0.020
+WM1    plan-1          H4   0.020
+WM1    plan-1         NAF   0.020
+WM1    plan-2         CAB   0.020
+WM1    plan-2         CAE   0.020
+WM1    plan-2         NAA   0.020
+WM1    plan-2         OAC   0.020
+WM1    plan-3         CAB   0.020
+WM1    plan-3          H5   0.020
+WM1    plan-3          H6   0.020
+WM1    plan-3         NAA   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+WM1 SMILES           ACDLabs              12.01 "O=C(N)c1ncccc1"
+WM1 InChI            InChI                1.03  "InChI=1S/C6H6N2O/c7-6(9)5-3-1-2-4-8-5/h1-4H,(H2,7,9)"
+WM1 InChIKey         InChI                1.03  IBBMAWULFFBRKK-UHFFFAOYSA-N
+WM1 SMILES_CANONICAL CACTVS               3.385 "NC(=O)c1ccccn1"
+WM1 SMILES           CACTVS               3.385 "NC(=O)c1ccccn1"
+WM1 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1ccnc(c1)C(=O)N"
+WM1 SMILES           "OpenEye OEToolkits" 1.7.6 "c1ccnc(c1)C(=O)N"
+WM1 ?                acedrg               202         "dictionary generator"                  
+WM1 ?                acedrg_database      11          "data source"                           
+WM1 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+WM1 ?                refmac5              5.8.0189    "optimization tool"                     

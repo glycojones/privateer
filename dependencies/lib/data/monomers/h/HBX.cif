@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HBX     HBX      benzaldehyde     NON-POLYMER     14     8     .     
+#
+data_comp_HBX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HBX     "C1'"   C       C1      0       2.282       -0.461      0.353       
+HBX     "O1'"   O       O       0       3.092       0.292       0.850       
+HBX     C1      C       CR6     0       0.854       -0.168      0.133       
+HBX     C2      C       CR16    0       0.304       1.063       0.502       
+HBX     C3      C       CR16    0       -1.046      1.318       0.286       
+HBX     C4      C       CR16    0       -1.855      0.358       -0.295      
+HBX     C5      C       CR16    0       -1.319      -0.865      -0.663      
+HBX     C6      C       CR16    0       0.030       -1.131      -0.452      
+HBX     "H1'"   H       H       0       2.589       -1.316      0.078       
+HBX     H2      H       H       0       0.846       1.722       0.898       
+HBX     H3      H       H       0       -1.411      2.151       0.537       
+HBX     H4      H       H       0       -2.771      0.535       -0.439      
+HBX     H5      H       H       0       -1.870      -1.520      -1.059      
+HBX     H6      H       H       0       0.388       -1.964      -0.705      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HBX       "C1'"     C1        SINGLE    n         1.471     0.013     1.471     0.013     
+HBX       "C1'"     "O1'"     DOUBLE    n         1.210     0.015     1.210     0.015     
+HBX       C1        C6        DOUBLE    y         1.389     0.010     1.389     0.010     
+HBX       C1        C2        SINGLE    y         1.389     0.010     1.389     0.010     
+HBX       C2        C3        DOUBLE    y         1.384     0.010     1.384     0.010     
+HBX       C3        C4        SINGLE    y         1.376     0.011     1.376     0.011     
+HBX       C4        C5        DOUBLE    y         1.376     0.012     1.376     0.012     
+HBX       C5        C6        SINGLE    y         1.384     0.010     1.384     0.010     
+HBX       "C1'"     "H1'"     SINGLE    n         1.082     0.013     0.949     0.020     
+HBX       C2        H2        SINGLE    n         1.082     0.013     0.941     0.017     
+HBX       C3        H3        SINGLE    n         1.082     0.013     0.943     0.018     
+HBX       C4        H4        SINGLE    n         1.082     0.013     0.944     0.016     
+HBX       C5        H5        SINGLE    n         1.082     0.013     0.943     0.018     
+HBX       C6        H6        SINGLE    n         1.082     0.013     0.941     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HBX          C1       "C1'"       "O1'"     125.057    1.50
+HBX          C1       "C1'"       "H1'"     117.090    1.93
+HBX       "O1'"       "C1'"       "H1'"     117.869    1.69
+HBX       "C1'"          C1          C6     120.357    1.50
+HBX       "C1'"          C1          C2     120.359    1.50
+HBX          C6          C1          C2     119.286    1.50
+HBX          C1          C2          C3     120.063    1.50
+HBX          C1          C2          H2     119.988    1.50
+HBX          C3          C2          H2     119.950    1.50
+HBX          C2          C3          C4     120.290    1.50
+HBX          C2          C3          H3     119.809    1.50
+HBX          C4          C3          H3     119.900    1.50
+HBX          C3          C4          C5     120.006    1.50
+HBX          C3          C4          H4     119.998    1.50
+HBX          C5          C4          H4     119.998    1.50
+HBX          C4          C5          C6     120.290    1.50
+HBX          C4          C5          H5     119.900    1.50
+HBX          C6          C5          H5     119.809    1.50
+HBX          C1          C6          C5     120.063    1.50
+HBX          C1          C6          H6     119.988    1.50
+HBX          C5          C6          H6     119.950    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HBX             sp2_sp2_1          C6          C1       "C1'"       "O1'"     180.000   10.00     2
+HBX              const_23       "C1'"          C1          C2          C3     180.000   10.00     2
+HBX       const_sp2_sp2_3       "C1'"          C1          C6          C5     180.000   10.00     2
+HBX              const_17          C1          C2          C3          C4       0.000   10.00     2
+HBX              const_13          C2          C3          C4          C5       0.000   10.00     2
+HBX       const_sp2_sp2_9          C3          C4          C5          C6       0.000   10.00     2
+HBX       const_sp2_sp2_5          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HBX    plan-1          C1   0.020
+HBX    plan-1       "C1'"   0.020
+HBX    plan-1          C2   0.020
+HBX    plan-1          C3   0.020
+HBX    plan-1          C4   0.020
+HBX    plan-1          C5   0.020
+HBX    plan-1          C6   0.020
+HBX    plan-1          H2   0.020
+HBX    plan-1          H3   0.020
+HBX    plan-1          H4   0.020
+HBX    plan-1          H5   0.020
+HBX    plan-1          H6   0.020
+HBX    plan-2          C1   0.020
+HBX    plan-2       "C1'"   0.020
+HBX    plan-2       "H1'"   0.020
+HBX    plan-2       "O1'"   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HBX SMILES           ACDLabs              10.04 O=Cc1ccccc1
+HBX SMILES_CANONICAL CACTVS               3.341 O=Cc1ccccc1
+HBX SMILES           CACTVS               3.341 O=Cc1ccccc1
+HBX SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)C=O"
+HBX SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)C=O"
+HBX InChI            InChI                1.03  InChI=1S/C7H6O/c8-6-7-4-2-1-3-5-7/h1-6H
+HBX InChIKey         InChI                1.03  HUMNYLRZRPPJDN-UHFFFAOYSA-N
+HBX ?                acedrg               202         "dictionary generator"                  
+HBX ?                acedrg_database      11          "data source"                           
+HBX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HBX ?                refmac5              5.8.0189    "optimization tool"                     

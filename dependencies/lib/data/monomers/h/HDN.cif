@@ -1,0 +1,90 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HDN     HDN      METHYLHYDRAZINE     NON-POLYMER     7     3     .     
+#
+data_comp_HDN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HDN     N1      N       NH1     0       13.663      55.601      69.569      
+HDN     N2      N       N       0       14.478      56.508      69.409      
+HDN     C1      C       CH3     0       13.932      57.797      68.918      
+HDN     HN1     H       H       0       13.934      54.810      69.876      
+HDN     H11     H       H       0       14.391      58.525      69.355      
+HDN     H12     H       H       0       12.988      57.854      69.112      
+HDN     H13     H       H       0       14.067      57.862      67.964      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HDN       N1        N2        DOUBLE    n         1.227     0.016     1.227     0.016     
+HDN       N2        C1        SINGLE    n         1.476     0.020     1.476     0.020     
+HDN       N1        HN1       SINGLE    n         1.016     0.010     0.891     0.020     
+HDN       C1        H11       SINGLE    n         1.089     0.010     0.965     0.011     
+HDN       C1        H12       SINGLE    n         1.089     0.010     0.965     0.011     
+HDN       C1        H13       SINGLE    n         1.089     0.010     0.965     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HDN          N2          N1         HN1     120.000    3.00
+HDN          N1          N2          C1     115.160    1.71
+HDN          N2          C1         H11     109.472    1.50
+HDN          N2          C1         H12     109.472    1.50
+HDN          N2          C1         H13     109.472    1.50
+HDN         H11          C1         H12     109.432    1.50
+HDN         H11          C1         H13     109.432    1.50
+HDN         H12          C1         H13     109.432    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HDN             sp2_sp2_1         HN1          N1          N2          C1     180.000   10.00     2
+HDN             sp2_sp3_1          N1          N2          C1         H11       0.000   10.00     6
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HDN SMILES           ACDLabs              10.04 "[N@H]=NC"
+HDN SMILES_CANONICAL CACTVS               3.341 CN=N
+HDN SMILES           CACTVS               3.341 CN=N
+HDN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CN=N
+HDN SMILES           "OpenEye OEToolkits" 1.5.0 CN=N
+HDN InChI            InChI                1.03  InChI=1S/CH4N2/c1-3-2/h2H,1H3/b3-2-
+HDN InChIKey         InChI                1.03  JYXPWUYLZPYOAH-IHWYPQMZSA-N
+HDN ?                acedrg               202         "dictionary generator"                  
+HDN ?                acedrg_database      11          "data source"                           
+HDN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HDN ?                refmac5              5.8.0189    "optimization tool"                     

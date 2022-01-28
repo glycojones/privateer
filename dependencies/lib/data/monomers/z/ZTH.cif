@@ -1,0 +1,244 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZTH      ZTH '(S)-1'-(2',3'-DIHYDROXYPROPYL)-THYMI' non-polymer        29  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ZTH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ZTH           OXT    O    OP       -0.666      0.000    0.000    0.000
+ ZTH           P      P    P         0.000     -0.739   -1.268    0.370
+ ZTH           O1P    O    OP       -0.666     -0.184   -1.814    1.668
+ ZTH           O2P    O    OP       -0.666     -0.559   -2.293   -0.727
+ ZTH           O3G    O    O2        0.000     -2.304   -0.942    0.550
+ ZTH           C3G    C    CH2       0.000     -3.139   -0.510   -0.526
+ ZTH           H3G1   H    H         0.000     -3.146   -1.271   -1.309
+ ZTH           H3G2   H    H         0.000     -2.751    0.426   -0.934
+ ZTH           C2G    C    CH1       0.000     -4.563   -0.292   -0.011
+ ZTH           H2G    H    H         0.000     -4.920   -1.209    0.478
+ ZTH           O2G    O    OH1       0.000     -4.571    0.784    0.929
+ ZTH           H2     H    H         0.000     -4.257    1.590    0.497
+ ZTH           C1G    C    CH2       0.000     -5.483    0.050   -1.186
+ ZTH           H1G1   H    H         0.000     -5.476   -0.773   -1.904
+ ZTH           H1G2   H    H         0.000     -5.128    0.960   -1.673
+ ZTH           N1     N    NR6       0.000     -6.847    0.258   -0.692
+ ZTH           C2     C    CR6       0.000     -7.239    1.489   -0.317
+ ZTH           O2     O    O         0.000     -6.455    2.416   -0.390
+ ZTH           N3     N    NR16      0.000     -8.485    1.710    0.139
+ ZTH           H3     H    H         0.000     -8.770    2.668    0.426
+ ZTH           C6     C    CR16      0.000     -7.708   -0.801   -0.614
+ ZTH           H6     H    H         0.000     -7.383   -1.790   -0.914
+ ZTH           C5     C    CR6       0.000     -8.966   -0.609   -0.159
+ ZTH           C5M    C    CH3       0.000     -9.929   -1.764   -0.065
+ ZTH           H5M3   H    H         0.000    -10.071   -2.185   -1.027
+ ZTH           H5M2   H    H         0.000     -9.536   -2.499    0.588
+ ZTH           H5M1   H    H         0.000    -10.858   -1.419    0.309
+ ZTH           C4     C    CR6       0.000     -9.366    0.693    0.227
+ ZTH           O4     O    O         0.000    -10.494    0.891    0.640
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ZTH      OXT    n/a    P      START
+ ZTH      P      OXT    O3G    .
+ ZTH      O1P    P      .      .
+ ZTH      O2P    P      .      .
+ ZTH      O3G    P      C3G    .
+ ZTH      C3G    O3G    C2G    .
+ ZTH      H3G1   C3G    .      .
+ ZTH      H3G2   C3G    .      .
+ ZTH      C2G    C3G    C1G    .
+ ZTH      H2G    C2G    .      .
+ ZTH      O2G    C2G    H2     .
+ ZTH      H2     O2G    .      .
+ ZTH      C1G    C2G    N1     .
+ ZTH      H1G1   C1G    .      .
+ ZTH      H1G2   C1G    .      .
+ ZTH      N1     C1G    C6     .
+ ZTH      C2     N1     N3     .
+ ZTH      O2     C2     .      .
+ ZTH      N3     C2     H3     .
+ ZTH      H3     N3     .      .
+ ZTH      C6     N1     C5     .
+ ZTH      H6     C6     .      .
+ ZTH      C5     C6     C4     .
+ ZTH      C5M    C5     H5M1   .
+ ZTH      H5M3   C5M    .      .
+ ZTH      H5M2   C5M    .      .
+ ZTH      H5M1   C5M    .      .
+ ZTH      C4     C5     O4     .
+ ZTH      O4     C4     .      END
+ ZTH      C4     N3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZTH       O4        C4        double    1.250     0.020     1.250     0.020     
+ZTH       C4        N3        single    1.337     0.020     1.337     0.020     
+ZTH       C4        C5        single    1.487     0.020     1.487     0.020     
+ZTH       N3        C2        single    1.337     0.020     1.337     0.020     
+ZTH       O2        C2        double    1.250     0.020     1.250     0.020     
+ZTH       C2        N1        single    1.410     0.020     1.410     0.020     
+ZTH       C5M       C5        single    1.506     0.020     1.506     0.020     
+ZTH       C5        C6        double    1.390     0.020     1.390     0.020     
+ZTH       C6        N1        single    1.337     0.020     1.337     0.020     
+ZTH       N1        C1G       single    1.465     0.020     1.465     0.020     
+ZTH       C1G       C2G       single    1.524     0.020     1.524     0.020     
+ZTH       O2G       C2G       single    1.432     0.020     1.432     0.020     
+ZTH       C2G       C3G       single    1.524     0.020     1.524     0.020     
+ZTH       P         OXT       deloc     1.510     0.020     1.510     0.020     
+ZTH       C3G       O3G       single    1.426     0.020     1.426     0.020     
+ZTH       O3G       P         single    1.610     0.020     1.610     0.020     
+ZTH       O1P       P         deloc     1.510     0.020     1.510     0.020     
+ZTH       O2P       P         deloc     1.510     0.020     1.510     0.020     
+ZTH       H3        N3        single    1.016     0.010     0.899     0.007     
+ZTH       H5M1      C5M       single    1.089     0.010     0.989     0.005     
+ZTH       H5M2      C5M       single    1.089     0.010     0.989     0.005     
+ZTH       H5M3      C5M       single    1.089     0.010     0.989     0.005     
+ZTH       H6        C6        single    1.082     0.013     0.975     0.010     
+ZTH       H1G1      C1G       single    1.089     0.010     0.989     0.005     
+ZTH       H1G2      C1G       single    1.089     0.010     0.989     0.005     
+ZTH       H2G       C2G       single    1.089     0.010     0.989     0.005     
+ZTH       H3G1      C3G       single    1.089     0.010     0.989     0.005     
+ZTH       H3G2      C3G       single    1.089     0.010     0.989     0.005     
+ZTH       H2        O2G       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ZTH      OXT    P      O1P     119.900    3.000
+ ZTH      OXT    P      O2P     119.900    3.000
+ ZTH      OXT    P      O3G     108.200    3.000
+ ZTH      O1P    P      O2P     119.900    3.000
+ ZTH      O1P    P      O3G     108.200    3.000
+ ZTH      O2P    P      O3G     108.200    3.000
+ ZTH      P      O3G    C3G     120.500    3.000
+ ZTH      O3G    C3G    H3G1    109.470    3.000
+ ZTH      O3G    C3G    H3G2    109.470    3.000
+ ZTH      O3G    C3G    C2G     109.470    3.000
+ ZTH      H3G1   C3G    H3G2    107.900    3.000
+ ZTH      H3G1   C3G    C2G     109.470    3.000
+ ZTH      H3G2   C3G    C2G     109.470    3.000
+ ZTH      C3G    C2G    H2G     108.340    3.000
+ ZTH      C3G    C2G    O2G     109.470    3.000
+ ZTH      C3G    C2G    C1G     109.470    3.000
+ ZTH      H2G    C2G    O2G     109.470    3.000
+ ZTH      H2G    C2G    C1G     108.340    3.000
+ ZTH      O2G    C2G    C1G     109.470    3.000
+ ZTH      C2G    O2G    H2      109.470    3.000
+ ZTH      C2G    C1G    H1G1    109.470    3.000
+ ZTH      C2G    C1G    H1G2    109.470    3.000
+ ZTH      C2G    C1G    N1      109.470    3.000
+ ZTH      H1G1   C1G    H1G2    107.900    3.000
+ ZTH      H1G1   C1G    N1      109.470    3.000
+ ZTH      H1G2   C1G    N1      109.470    3.000
+ ZTH      C1G    N1     C2      120.000    3.000
+ ZTH      C1G    N1     C6      120.000    3.000
+ ZTH      C2     N1     C6      120.000    3.000
+ ZTH      N1     C2     O2      120.000    3.000
+ ZTH      N1     C2     N3      120.000    3.000
+ ZTH      O2     C2     N3      120.000    3.000
+ ZTH      C2     N3     H3      120.000    3.000
+ ZTH      C2     N3     C4      120.000    3.000
+ ZTH      H3     N3     C4      120.000    3.000
+ ZTH      N1     C6     H6      120.000    3.000
+ ZTH      N1     C6     C5      120.000    3.000
+ ZTH      H6     C6     C5      120.000    3.000
+ ZTH      C6     C5     C5M     120.000    3.000
+ ZTH      C6     C5     C4      120.000    3.000
+ ZTH      C5M    C5     C4      120.000    3.000
+ ZTH      C5     C5M    H5M3    109.470    3.000
+ ZTH      C5     C5M    H5M2    109.470    3.000
+ ZTH      C5     C5M    H5M1    109.470    3.000
+ ZTH      H5M3   C5M    H5M2    109.470    3.000
+ ZTH      H5M3   C5M    H5M1    109.470    3.000
+ ZTH      H5M2   C5M    H5M1    109.470    3.000
+ ZTH      C5     C4     O4      120.000    3.000
+ ZTH      C5     C4     N3      120.000    3.000
+ ZTH      O4     C4     N3      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ZTH      var_1    OXT    P      O3G    C3G       65.008   20.000   1
+ ZTH      var_2    P      O3G    C3G    C2G      179.950   20.000   1
+ ZTH      var_3    O3G    C3G    C2G    C1G     -175.011   20.000   3
+ ZTH      var_4    C3G    C2G    O2G    H2        59.955   20.000   1
+ ZTH      var_5    C3G    C2G    C1G    N1      -179.979   20.000   3
+ ZTH      var_6    C2G    C1G    N1     C6       -89.737   20.000   1
+ ZTH      CONST_1  C1G    N1     C2     N3       180.000    0.000   0
+ ZTH      CONST_2  N1     C2     N3     C4         0.000    0.000   0
+ ZTH      CONST_3  C1G    N1     C6     C5       180.000    0.000   0
+ ZTH      CONST_4  N1     C6     C5     C4         0.000    0.000   0
+ ZTH      var_7    C6     C5     C5M    H5M1    -179.978   20.000   1
+ ZTH      CONST_5  C6     C5     C4     O4       180.000    0.000   0
+ ZTH      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ZTH      chir_01  C2G    C1G    O2G    C3G       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ZTH      plan-1    C4        0.020
+ ZTH      plan-1    O4        0.020
+ ZTH      plan-1    N3        0.020
+ ZTH      plan-1    C5        0.020
+ ZTH      plan-1    C2        0.020
+ ZTH      plan-1    C6        0.020
+ ZTH      plan-1    N1        0.020
+ ZTH      plan-1    H3        0.020
+ ZTH      plan-1    O2        0.020
+ ZTH      plan-1    C5M       0.020
+ ZTH      plan-1    H6        0.020
+ ZTH      plan-1    C1G       0.020
+# ------------------------------------------------------

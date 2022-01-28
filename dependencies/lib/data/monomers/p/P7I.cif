@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+P7I     P7I      "(2-aminoethyl)phosphonic acid"     NON-POLYMER     13     7     .     
+#
+data_comp_P7I
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+P7I     NAA     N       NT2     0       -2.036      -22.989     10.993      
+P7I     OAB     O       OP      -1      -5.391      -23.388     13.924      
+P7I     OAC     O       OP      -1      -5.437      -20.947     14.272      
+P7I     OAD     O       O       0       -6.293      -21.909     12.170      
+P7I     CAE     C       CH2     0       -3.398      -23.013     11.527      
+P7I     CAF     C       CH2     0       -3.658      -21.912     12.543      
+P7I     PAG     P       P       0       -5.300      -22.048     13.274      
+P7I     HNAA    H       H       0       -1.974      -23.534     10.295      
+P7I     HNAB    H       H       0       -1.836      -22.172     10.707      
+P7I     HAE     H       H       0       -3.558      -23.884     11.952      
+P7I     HAEA    H       H       0       -4.033      -22.918     10.784      
+P7I     HAF     H       H       0       -3.564      -21.042     12.102      
+P7I     HAFA    H       H       0       -2.978      -21.962     13.248      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+P7I       NAA       CAE       SINGLE    n         1.464     0.020     1.464     0.020     
+P7I       OAB       PAG       SINGLE    n         1.492     0.020     1.492     0.020     
+P7I       OAC       PAG       SINGLE    n         1.492     0.020     1.492     0.020     
+P7I       OAD       PAG       DOUBLE    n         1.492     0.020     1.492     0.020     
+P7I       CAE       CAF       SINGLE    n         1.520     0.018     1.520     0.018     
+P7I       CAF       PAG       SINGLE    n         1.803     0.020     1.803     0.020     
+P7I       NAA       HNAA      SINGLE    n         1.036     0.016     0.888     0.020     
+P7I       NAA       HNAB      SINGLE    n         1.036     0.016     0.888     0.020     
+P7I       CAE       HAE       SINGLE    n         1.089     0.010     0.982     0.015     
+P7I       CAE       HAEA      SINGLE    n         1.089     0.010     0.982     0.015     
+P7I       CAF       HAF       SINGLE    n         1.089     0.010     0.980     0.014     
+P7I       CAF       HAFA      SINGLE    n         1.089     0.010     0.980     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+P7I         CAE         NAA        HNAA     109.962    3.00
+P7I         CAE         NAA        HNAB     109.962    3.00
+P7I        HNAA         NAA        HNAB     107.243    3.00
+P7I         NAA         CAE         CAF     112.884    2.86
+P7I         NAA         CAE         HAE     108.870    1.50
+P7I         NAA         CAE        HAEA     108.870    1.50
+P7I         CAF         CAE         HAE     108.964    1.50
+P7I         CAF         CAE        HAEA     108.964    1.50
+P7I         HAE         CAE        HAEA     107.873    1.50
+P7I         CAE         CAF         PAG     111.410    2.87
+P7I         CAE         CAF         HAF     108.869    1.50
+P7I         CAE         CAF        HAFA     108.869    1.50
+P7I         PAG         CAF         HAF     109.545    1.50
+P7I         PAG         CAF        HAFA     109.545    1.50
+P7I         HAF         CAF        HAFA     107.498    1.50
+P7I         OAB         PAG         OAC     111.786    1.50
+P7I         OAB         PAG         OAD     111.786    1.50
+P7I         OAB         PAG         CAF     108.625    3.00
+P7I         OAC         PAG         OAD     111.786    1.50
+P7I         OAC         PAG         CAF     108.625    3.00
+P7I         OAD         PAG         CAF     108.625    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+P7I             sp3_sp3_1         CAF         CAE         NAA        HNAA     180.000   10.00     3
+P7I             sp3_sp3_7         NAA         CAE         CAF         PAG     180.000   10.00     3
+P7I            sp3_sp3_16         CAE         CAF         PAG         OAB     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+P7I SMILES           ACDLabs              12.01 "O=P(O)(O)CCN"
+P7I SMILES_CANONICAL CACTVS               3.370 "NCC[P](O)(O)=O"
+P7I SMILES           CACTVS               3.370 "NCC[P](O)(O)=O"
+P7I SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(CP(=O)(O)O)N"
+P7I SMILES           "OpenEye OEToolkits" 1.7.0 "C(CP(=O)(O)O)N"
+P7I InChI            InChI                1.03  "InChI=1S/C2H8NO3P/c3-1-2-7(4,5)6/h1-3H2,(H2,4,5,6)"
+P7I InChIKey         InChI                1.03  QQVDJLLNRSOCEL-UHFFFAOYSA-N
+P7I ?                acedrg               202         "dictionary generator"                  
+P7I ?                acedrg_database      11          "data source"                           
+P7I ?                rdkit                2017.03.2   "Chemoinformatics tool"
+P7I ?                refmac5              5.8.0189    "optimization tool"                     

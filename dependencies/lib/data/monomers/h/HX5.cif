@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HX5     HX5      4,6-dichloro-2-(methylsulfanyl)pyrimidine     NON-POLYMER     14     10     .     
+#
+data_comp_HX5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HX5     C1      C       CR16    0       -2.265      -0.106      0.074       
+HX5     C2      C       CR6     0       -1.480      -1.246      0.110       
+HX5     N3      N       NRD6    0       -0.205      -1.306      -0.255      
+HX5     C4      C       CR6     0       0.313       -0.137      -0.684      
+HX5     N5      N       NRD6    0       -0.330      1.047       -0.772      
+HX5     C6      C       CR6     0       -1.600      1.017       -0.388      
+HX5     S7      S       S2      0       1.988       -0.157      -1.177      
+HX5     C8      C       CH3     0       2.836       0.234       0.350       
+HX5     CL9     CL      CL      0       -2.459      2.516       -0.486      
+HX5     CL1     CL      CL      0       -2.182      -2.726      0.667       
+HX5     H1      H       H       0       -3.171      -0.095      0.341       
+HX5     H2      H       H       0       3.793       0.252       0.193       
+HX5     H3      H       H       0       2.630       -0.441      1.016       
+HX5     H4      H       H       0       2.544       1.102       0.669       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HX5       C6        CL9       SINGLE    n         1.730     0.0100    1.730     0.0100    
+HX5       N5        C6        SINGLE    y         1.323     0.0100    1.323     0.0100    
+HX5       C4        N5        DOUBLE    y         1.345     0.0100    1.345     0.0100    
+HX5       C1        C6        DOUBLE    y         1.381     0.0100    1.381     0.0100    
+HX5       C4        S7        SINGLE    n         1.747     0.0100    1.747     0.0100    
+HX5       S7        C8        SINGLE    n         1.790     0.0162    1.790     0.0162    
+HX5       N3        C4        SINGLE    y         1.345     0.0100    1.345     0.0100    
+HX5       C1        C2        SINGLE    y         1.381     0.0100    1.381     0.0100    
+HX5       C2        N3        DOUBLE    y         1.323     0.0100    1.323     0.0100    
+HX5       C2        CL1       SINGLE    n         1.730     0.0100    1.730     0.0100    
+HX5       C1        H1        SINGLE    n         1.082     0.013     0.945     0.0100    
+HX5       C8        H2        SINGLE    n         1.089     0.010     0.970     0.0166    
+HX5       C8        H3        SINGLE    n         1.089     0.010     0.970     0.0166    
+HX5       C8        H4        SINGLE    n         1.089     0.010     0.970     0.0166    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HX5          C6          C1          C2     114.025    1.50
+HX5          C6          C1          H1     122.988    1.50
+HX5          C2          C1          H1     122.988    1.50
+HX5          C1          C2          N3     125.137    1.50
+HX5          C1          C2         CL1     118.839    1.50
+HX5          N3          C2         CL1     116.024    1.50
+HX5          C4          N3          C2     114.473    1.50
+HX5          N5          C4          S7     116.622    3.00
+HX5          N5          C4          N3     126.756    1.50
+HX5          S7          C4          N3     116.622    3.00
+HX5          C6          N5          C4     114.473    1.50
+HX5         CL9          C6          N5     116.024    1.50
+HX5         CL9          C6          C1     118.839    1.50
+HX5          N5          C6          C1     125.137    1.50
+HX5          C4          S7          C8     102.172    1.50
+HX5          S7          C8          H2     109.458    1.50
+HX5          S7          C8          H3     109.458    1.50
+HX5          S7          C8          H4     109.458    1.50
+HX5          H2          C8          H3     109.472    1.50
+HX5          H2          C8          H4     109.472    1.50
+HX5          H3          C8          H4     109.472    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HX5              const_14          C6          C1          C2         CL1     180.000   10.00     2
+HX5       const_sp2_sp2_2          C2          C1          C6         CL9     180.000   10.00     2
+HX5              const_12         CL1          C2          N3          C4     180.000   10.00     2
+HX5              const_10          S7          C4          N3          C2     180.000   10.00     2
+HX5       const_sp2_sp2_8          S7          C4          N5          C6     180.000   10.00     2
+HX5       const_sp2_sp2_6         CL9          C6          N5          C4     180.000   10.00     2
+HX5             sp3_sp3_1          H2          C8          S7          C4     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HX5    plan-1          C1   0.020
+HX5    plan-1          C2   0.020
+HX5    plan-1          C4   0.020
+HX5    plan-1          C6   0.020
+HX5    plan-1         CL1   0.020
+HX5    plan-1         CL9   0.020
+HX5    plan-1          H1   0.020
+HX5    plan-1          N3   0.020
+HX5    plan-1          N5   0.020
+HX5    plan-1          S7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HX5           SMILES              ACDLabs 12.01                                  c1c(Cl)nc(nc1Cl)SC
+HX5            InChI                InChI  1.03 InChI=1S/C5H4Cl2N2S/c1-10-5-8-3(6)2-4(7)9-5/h2H,1H3
+HX5         InChIKey                InChI  1.03                         FCMLONIWOAGZJX-UHFFFAOYSA-N
+HX5 SMILES_CANONICAL               CACTVS 3.385                                  CSc1nc(Cl)cc(Cl)n1
+HX5           SMILES               CACTVS 3.385                                  CSc1nc(Cl)cc(Cl)n1
+HX5 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                  CSc1nc(cc(n1)Cl)Cl
+HX5           SMILES "OpenEye OEToolkits" 2.0.6                                  CSc1nc(cc(n1)Cl)Cl
+HX5 ?                acedrg               217         "dictionary generator"                  
+HX5 ?                acedrg_database      11          "data source"                           
+HX5 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HX5 ?                refmac5              5.8.0253    "optimization tool"                     

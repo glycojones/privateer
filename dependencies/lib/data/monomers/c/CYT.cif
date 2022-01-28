@@ -1,0 +1,139 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CYT     CYT      "6-AMINOPYRIMIDIN-2(1H)-ONE"     NON-POLYMER     13     8     .     
+#
+data_comp_CYT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CYT     N3      N       NR6     0       114.650     17.833      5.804       
+CYT     C4      C       CR6     0       113.621     18.553      5.238       
+CYT     N1      N       NRD6    0       115.105     16.776      3.715       
+CYT     C2      C       CR6     0       115.398     16.942      5.055       
+CYT     O2      O       O       0       116.322     16.309      5.606       
+CYT     N4      N       NH2     0       112.907     19.409      5.971       
+CYT     C5      C       CR16    0       113.339     18.377      3.898       
+CYT     C6      C       CR16    0       114.103     17.480      3.168       
+CYT     HN3     H       H       0       114.840     17.937      6.664       
+CYT     HN41    H       H       0       112.282     19.907      5.601       
+CYT     HN42    H       H       0       113.062     19.475      6.832       
+CYT     H5      H       H       0       112.638     18.864      3.498       
+CYT     H6      H       H       0       113.907     17.363      2.252       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CYT       N3        C4        SINGLE    y         1.365     0.013     1.365     0.013     
+CYT       N3        C2        SINGLE    y         1.375     0.010     1.375     0.010     
+CYT       C4        N4        SINGLE    n         1.329     0.013     1.329     0.013     
+CYT       C4        C5        DOUBLE    y         1.374     0.010     1.374     0.010     
+CYT       N1        C2        SINGLE    y         1.364     0.015     1.364     0.015     
+CYT       N1        C6        DOUBLE    y         1.335     0.010     1.335     0.010     
+CYT       C2        O2        DOUBLE    n         1.248     0.013     1.248     0.013     
+CYT       C5        C6        SINGLE    y         1.378     0.012     1.378     0.012     
+CYT       N3        HN3       SINGLE    n         1.016     0.010     0.886     0.020     
+CYT       N4        HN41      SINGLE    n         1.016     0.010     0.878     0.020     
+CYT       N4        HN42      SINGLE    n         1.016     0.010     0.878     0.020     
+CYT       C5        H5        SINGLE    n         1.082     0.013     0.943     0.020     
+CYT       C6        H6        SINGLE    n         1.082     0.013     0.944     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CYT          C4          N3          C2     120.719    2.37
+CYT          C4          N3         HN3     119.873    1.63
+CYT          C2          N3         HN3     119.408    2.10
+CYT          N3          C4          N4     120.484    1.61
+CYT          N3          C4          C5     119.776    1.64
+CYT          N4          C4          C5     119.741    1.50
+CYT          C2          N1          C6     118.689    1.64
+CYT          N3          C2          N1     118.820    1.50
+CYT          N3          C2          O2     119.295    1.50
+CYT          N1          C2          O2     121.885    1.50
+CYT          C4          N4        HN41     119.878    2.77
+CYT          C4          N4        HN42     119.878    2.77
+CYT        HN41          N4        HN42     120.243    1.85
+CYT          C4          C5          C6     119.480    1.50
+CYT          C4          C5          H5     119.452    1.50
+CYT          C6          C5          H5     121.068    1.50
+CYT          N1          C6          C5     122.516    1.50
+CYT          N1          C6          H6     119.004    1.50
+CYT          C5          C6          H6     118.480    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CYT       const_sp2_sp2_3          N4          C4          N3          C2     180.000   10.00     2
+CYT              const_19          O2          C2          N3          C4     180.000   10.00     2
+CYT             sp2_sp2_1          N3          C4          N4        HN41     180.000   10.00     2
+CYT       const_sp2_sp2_7          N4          C4          C5          C6     180.000   10.00     2
+CYT              const_16          O2          C2          N1          C6     180.000   10.00     2
+CYT              const_13          C5          C6          N1          C2       0.000   10.00     2
+CYT       const_sp2_sp2_9          C4          C5          C6          N1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CYT    plan-1          C2   0.020
+CYT    plan-1          C4   0.020
+CYT    plan-1          C5   0.020
+CYT    plan-1          C6   0.020
+CYT    plan-1          H5   0.020
+CYT    plan-1          H6   0.020
+CYT    plan-1         HN3   0.020
+CYT    plan-1          N1   0.020
+CYT    plan-1          N3   0.020
+CYT    plan-1          N4   0.020
+CYT    plan-1          O2   0.020
+CYT    plan-2          C4   0.020
+CYT    plan-2        HN41   0.020
+CYT    plan-2        HN42   0.020
+CYT    plan-2          N4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CYT SMILES           ACDLabs              10.04 "O=C1N=CC=C(N)N1"
+CYT SMILES_CANONICAL CACTVS               3.341 "NC1=CC=NC(=O)N1"
+CYT SMILES           CACTVS               3.341 "NC1=CC=NC(=O)N1"
+CYT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1=C(NC(=O)N=C1)N"
+CYT SMILES           "OpenEye OEToolkits" 1.5.0 "C1=C(NC(=O)N=C1)N"
+CYT InChI            InChI                1.03  "InChI=1S/C4H5N3O/c5-3-1-2-6-4(8)7-3/h1-2H,(H3,5,6,7,8)"
+CYT InChIKey         InChI                1.03  OPTASPLRGRRNAP-UHFFFAOYSA-N
+CYT ?                acedrg               202         "dictionary generator"                  
+CYT ?                acedrg_database      11          "data source"                           
+CYT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CYT ?                refmac5              5.8.0189    "optimization tool"                     

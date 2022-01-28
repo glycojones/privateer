@@ -1,0 +1,261 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MMN      MMN '5-DEOXY-5-{[(1S)-1-HYDROXYETHYL]AMIN' non-polymer        34  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MMN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MMN           O6     O    OH1       0.000      0.000    0.000    0.000
+ MMN           HO6    H    H         0.000      0.706   -0.654    0.090
+ MMN           C6     C    CH2       0.000     -1.268   -0.654    0.089
+ MMN           H61    H    H         0.000     -1.353   -1.152    1.058
+ MMN           H62    H    H         0.000     -1.351   -1.395   -0.708
+ MMN           C5     C    CH1       0.000     -2.385    0.380   -0.054
+ MMN           H5     H    H         0.000     -2.247    1.174    0.693
+ MMN           O5     O    OH1       0.000     -2.345    0.949   -1.364
+ MMN           HO5    H    H         0.000     -2.465    0.250   -2.022
+ MMN           C4     C    CH1       0.000     -3.739   -0.298    0.166
+ MMN           H4     H    H         0.000     -3.877   -1.092   -0.581
+ MMN           O4     O    OH1       0.000     -3.780   -0.865    1.476
+ MMN           HO4    H    H         0.000     -3.659   -0.166    2.133
+ MMN           C3     C    CH1       0.000     -4.857    0.736    0.022
+ MMN           H3     H    H         0.000     -4.868    1.124   -1.006
+ MMN           O3     O    OH1       0.000     -4.630    1.813    0.936
+ MMN           HO3    H    H         0.000     -4.714    1.489    1.843
+ MMN           C2     C    CH1       0.000     -6.203    0.079    0.334
+ MMN           H2     H    H         0.000     -6.161   -0.390    1.327
+ MMN           C1     C    CH2       0.000     -7.305    1.140    0.318
+ MMN           H11    H    H         0.000     -7.128    1.860    1.120
+ MMN           H12    H    H         0.000     -8.274    0.660    0.468
+ MMN           O1     O    OH1       0.000     -7.297    1.817   -0.941
+ MMN           HO1    H    H         0.000     -7.993    2.487   -0.950
+ MMN           N1     N    NH1       0.000     -6.495   -0.944   -0.679
+ MMN           HN1    H    H         0.000     -6.140   -0.974   -1.625
+ MMN           C7     C    CH1       0.000     -7.402   -1.913   -0.052
+ MMN           H7     H    H         0.000     -7.329   -1.828    1.042
+ MMN           O7     O    OH1       0.000     -8.744   -1.643   -0.461
+ MMN           HO7    H    H         0.000     -8.808   -1.718   -1.423
+ MMN           C8     C    CH3       0.000     -7.012   -3.329   -0.480
+ MMN           H83    H    H         0.000     -6.017   -3.530   -0.177
+ MMN           H82    H    H         0.000     -7.666   -4.029   -0.028
+ MMN           H81    H    H         0.000     -7.083   -3.413   -1.534
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MMN      O6     n/a    C6     START
+ MMN      HO6    O6     .      .
+ MMN      C6     O6     C5     .
+ MMN      H61    C6     .      .
+ MMN      H62    C6     .      .
+ MMN      C5     C6     C4     .
+ MMN      H5     C5     .      .
+ MMN      O5     C5     HO5    .
+ MMN      HO5    O5     .      .
+ MMN      C4     C5     C3     .
+ MMN      H4     C4     .      .
+ MMN      O4     C4     HO4    .
+ MMN      HO4    O4     .      .
+ MMN      C3     C4     C2     .
+ MMN      H3     C3     .      .
+ MMN      O3     C3     HO3    .
+ MMN      HO3    O3     .      .
+ MMN      C2     C3     N1     .
+ MMN      H2     C2     .      .
+ MMN      C1     C2     O1     .
+ MMN      H11    C1     .      .
+ MMN      H12    C1     .      .
+ MMN      O1     C1     HO1    .
+ MMN      HO1    O1     .      .
+ MMN      N1     C2     C7     .
+ MMN      HN1    N1     .      .
+ MMN      C7     N1     C8     .
+ MMN      H7     C7     .      .
+ MMN      O7     C7     HO7    .
+ MMN      HO7    O7     .      .
+ MMN      C8     C7     H81    .
+ MMN      H83    C8     .      .
+ MMN      H82    C8     .      .
+ MMN      H81    C8     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MMN       C8        C7        single    1.524     0.020     1.524     0.020     
+MMN       H81       C8        single    1.089     0.010     0.989     0.005     
+MMN       H82       C8        single    1.089     0.010     0.989     0.005     
+MMN       H83       C8        single    1.089     0.010     0.989     0.005     
+MMN       O7        C7        single    1.432     0.020     1.432     0.020     
+MMN       C7        N1        single    1.450     0.020     1.450     0.020     
+MMN       H7        C7        single    1.089     0.010     0.989     0.005     
+MMN       HO7       O7        single    0.970     0.012     0.839     0.014     
+MMN       N1        C2        single    1.450     0.020     1.450     0.020     
+MMN       HN1       N1        single    1.036     0.016     0.914     0.007     
+MMN       C1        C2        single    1.524     0.020     1.524     0.020     
+MMN       C2        C3        single    1.524     0.020     1.524     0.020     
+MMN       H2        C2        single    1.089     0.010     0.989     0.005     
+MMN       O1        C1        single    1.432     0.020     1.432     0.020     
+MMN       H11       C1        single    1.089     0.010     0.989     0.005     
+MMN       H12       C1        single    1.089     0.010     0.989     0.005     
+MMN       HO1       O1        single    0.970     0.012     0.839     0.014     
+MMN       O3        C3        single    1.432     0.020     1.432     0.020     
+MMN       C3        C4        single    1.524     0.020     1.524     0.020     
+MMN       H3        C3        single    1.089     0.010     0.989     0.005     
+MMN       HO3       O3        single    0.970     0.012     0.839     0.014     
+MMN       O4        C4        single    1.432     0.020     1.432     0.020     
+MMN       C4        C5        single    1.524     0.020     1.524     0.020     
+MMN       H4        C4        single    1.089     0.010     0.989     0.005     
+MMN       HO4       O4        single    0.970     0.012     0.839     0.014     
+MMN       O5        C5        single    1.432     0.020     1.432     0.020     
+MMN       C5        C6        single    1.524     0.020     1.524     0.020     
+MMN       H5        C5        single    1.089     0.010     0.989     0.005     
+MMN       HO5       O5        single    0.970     0.012     0.839     0.014     
+MMN       C6        O6        single    1.432     0.020     1.432     0.020     
+MMN       H61       C6        single    1.089     0.010     0.989     0.005     
+MMN       H62       C6        single    1.089     0.010     0.989     0.005     
+MMN       HO6       O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MMN      HO6    O6     C6      109.470    3.000
+ MMN      O6     C6     H61     109.470    3.000
+ MMN      O6     C6     H62     109.470    3.000
+ MMN      O6     C6     C5      109.470    3.000
+ MMN      H61    C6     H62     107.900    3.000
+ MMN      H61    C6     C5      109.470    3.000
+ MMN      H62    C6     C5      109.470    3.000
+ MMN      C6     C5     H5      108.340    3.000
+ MMN      C6     C5     O5      109.470    3.000
+ MMN      C6     C5     C4      111.000    3.000
+ MMN      H5     C5     O5      109.470    3.000
+ MMN      H5     C5     C4      108.340    3.000
+ MMN      O5     C5     C4      109.470    3.000
+ MMN      C5     O5     HO5     109.470    3.000
+ MMN      C5     C4     H4      108.340    3.000
+ MMN      C5     C4     O4      109.470    3.000
+ MMN      C5     C4     C3      111.000    3.000
+ MMN      H4     C4     O4      109.470    3.000
+ MMN      H4     C4     C3      108.340    3.000
+ MMN      O4     C4     C3      109.470    3.000
+ MMN      C4     O4     HO4     109.470    3.000
+ MMN      C4     C3     H3      108.340    3.000
+ MMN      C4     C3     O3      109.470    3.000
+ MMN      C4     C3     C2      111.000    3.000
+ MMN      H3     C3     O3      109.470    3.000
+ MMN      H3     C3     C2      108.340    3.000
+ MMN      O3     C3     C2      109.470    3.000
+ MMN      C3     O3     HO3     109.470    3.000
+ MMN      C3     C2     H2      108.340    3.000
+ MMN      C3     C2     C1      111.000    3.000
+ MMN      C3     C2     N1      110.000    3.000
+ MMN      H2     C2     C1      108.340    3.000
+ MMN      H2     C2     N1      108.550    3.000
+ MMN      C1     C2     N1      110.000    3.000
+ MMN      C2     C1     H11     109.470    3.000
+ MMN      C2     C1     H12     109.470    3.000
+ MMN      C2     C1     O1      109.470    3.000
+ MMN      H11    C1     H12     107.900    3.000
+ MMN      H11    C1     O1      109.470    3.000
+ MMN      H12    C1     O1      109.470    3.000
+ MMN      C1     O1     HO1     109.470    3.000
+ MMN      C2     N1     HN1     118.500    3.000
+ MMN      C2     N1     C7      120.000    3.000
+ MMN      HN1    N1     C7      118.500    3.000
+ MMN      N1     C7     H7      108.550    3.000
+ MMN      N1     C7     O7      109.470    3.000
+ MMN      N1     C7     C8      110.000    3.000
+ MMN      H7     C7     O7      109.470    3.000
+ MMN      H7     C7     C8      108.340    3.000
+ MMN      O7     C7     C8      109.470    3.000
+ MMN      C7     O7     HO7     109.470    3.000
+ MMN      C7     C8     H83     109.470    3.000
+ MMN      C7     C8     H82     109.470    3.000
+ MMN      C7     C8     H81     109.470    3.000
+ MMN      H83    C8     H82     109.470    3.000
+ MMN      H83    C8     H81     109.470    3.000
+ MMN      H82    C8     H81     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MMN      var_1    HO6    O6     C6     C5      -179.983   20.000   1
+ MMN      var_2    O6     C6     C5     C4      -174.970   20.000   3
+ MMN      var_3    C6     C5     O5     HO5       59.935   20.000   1
+ MMN      var_4    C6     C5     C4     C3      -179.995   20.000   3
+ MMN      var_5    C5     C4     O4     HO4       60.001   20.000   1
+ MMN      var_6    C5     C4     C3     C2      -176.253   20.000   3
+ MMN      var_7    C4     C3     O3     HO3      -65.980   20.000   1
+ MMN      var_8    C4     C3     C2     N1       -65.279   20.000   3
+ MMN      var_9    C3     C2     C1     O1        55.845   20.000   3
+ MMN      var_10   C2     C1     O1     HO1     -179.974   20.000   1
+ MMN      var_11   C3     C2     N1     C7       155.005   20.000   3
+ MMN      var_12   C2     N1     C7     C8      -139.954   20.000   3
+ MMN      var_13   N1     C7     O7     HO7       60.019   20.000   1
+ MMN      var_14   N1     C7     C8     H81      -60.018   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MMN      chir_01  C7     C8     O7     N1        positiv
+ MMN      chir_02  C2     N1     C1     C3        positiv
+ MMN      chir_03  C3     C2     O3     C4        negativ
+ MMN      chir_04  C4     C3     O4     C5        positiv
+ MMN      chir_05  C5     C4     O5     C6        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MMN      plan-1    N1        0.020
+ MMN      plan-1    C7        0.020
+ MMN      plan-1    C2        0.020
+ MMN      plan-1    HN1       0.020
+# ------------------------------------------------------

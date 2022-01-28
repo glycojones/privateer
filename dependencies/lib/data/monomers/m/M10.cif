@@ -1,0 +1,206 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+M10      M10 'Trimolybdate [Mo(VI)3O13]8-         ' non-polymer        16  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_M10
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+M10    O1     O     O      -1      -3.408       1.355       0.685
+M10    O2     O     O  -1.000       2.856       1.519       0.701
+M10    O3     O     O  -1.000       1.621      -2.845      -1.404
+M10    O4     O    O2   0.000       1.488       0.043      -1.367
+M10   MO1    MO    MO   0.000      -2.084      -0.076      -0.070
+M10    O5     O     O  -1.000      -1.769      -0.755       1.785
+M10   MO2    MO    MO   0.000       0.914       1.449      -0.071
+M10    O6     O    O2   0.000      -0.938       1.382      -0.807
+M10   MO3    MO    MO   0.000       1.017      -1.378      -0.045
+M10    O7     O     O  -1.000      -3.559      -0.846      -1.180
+M10    O8     O     O  -1.000       0.344       2.856       1.231
+M10    O9     O     O   0.000       0.442       0.029       1.250
+M10   O10     O     O  -1.000       1.389       2.868      -1.398
+M10   O11     O     O   0.000       0.549      -2.799       1.283
+M10   O12     O    O2   0.000      -0.835      -1.459      -0.782
+M10   O13     O     O  -1.000       2.874      -1.301       0.695
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+M10       MO1       O1        SING      1.857     0.020     1.857     0.020     
+M10       MO1       O7        SING      1.857     0.020     1.857     0.020     
+M10       O5        MO1       SING      1.857     0.020     1.857     0.020     
+M10       MO2       O2        SING      1.857     0.020     1.857     0.020     
+M10       MO2       O4        SING      1.857     0.020     1.857     0.020     
+M10       MO2       O10       SING      1.857     0.020     1.857     0.020     
+M10       O6        MO1       SING      1.857     0.020     1.857     0.020     
+M10       O6        MO2       SING      1.857     0.020     1.857     0.020     
+M10       MO3       O3        SING      1.857     0.020     1.857     0.020     
+M10       MO3       O4        SING      1.857     0.020     1.857     0.020     
+M10       MO3       O13       SING      1.857     0.020     1.857     0.020     
+M10       O8        MO2       SING      1.857     0.020     1.857     0.020     
+M10       O9        MO2       SING      1.857     0.020     1.857     0.020     
+M10       O9        MO3       SING      1.857     0.020     1.857     0.020     
+M10       O11       MO3       DOUB      1.857     0.020     1.857     0.020     
+M10       O12       MO1       SING      1.857     0.020     1.857     0.020     
+M10       O12       MO3       SING      1.857     0.020     1.857     0.020     
+M10       O9        MO1       SING      1.857     0.020     1.857     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+M10   MO2    O4   MO3 112.500      3.00
+M10    O1   MO1    O7  90.000      3.00
+M10    O1   MO1    O7 180.000      3.00
+M10    O1   MO1    O5  90.000      3.00
+M10    O1   MO1    O5 180.000      3.00
+M10    O1   MO1    O6  90.000      3.00
+M10    O1   MO1    O6 180.000      3.00
+M10    O1   MO1   O12  90.000      3.00
+M10    O1   MO1   O12 180.000      3.00
+M10    O1   MO1    O9  90.000      3.00
+M10    O1   MO1    O9 180.000      3.00
+M10    O7   MO1    O5  90.000      3.00
+M10    O7   MO1    O5 180.000      3.00
+M10    O7   MO1    O6  90.000      3.00
+M10    O7   MO1    O6 180.000      3.00
+M10    O7   MO1   O12  90.000      3.00
+M10    O7   MO1   O12 180.000      3.00
+M10    O7   MO1    O9  90.000      3.00
+M10    O7   MO1    O9 180.000      3.00
+M10    O5   MO1    O6  90.000      3.00
+M10    O5   MO1    O6 180.000      3.00
+M10    O5   MO1   O12  90.000      3.00
+M10    O5   MO1   O12 180.000      3.00
+M10    O5   MO1    O9  90.000      3.00
+M10    O5   MO1    O9 180.000      3.00
+M10    O6   MO1   O12  90.000      3.00
+M10    O6   MO1   O12 180.000      3.00
+M10    O6   MO1    O9  90.000      3.00
+M10    O6   MO1    O9 180.000      3.00
+M10   O12   MO1    O9  90.000      3.00
+M10   O12   MO1    O9 180.000      3.00
+M10    O2   MO2    O4  90.000      3.00
+M10    O2   MO2    O4 180.000      3.00
+M10    O2   MO2   O10  90.000      3.00
+M10    O2   MO2   O10 180.000      3.00
+M10    O2   MO2    O6  90.000      3.00
+M10    O2   MO2    O6 180.000      3.00
+M10    O2   MO2    O8  90.000      3.00
+M10    O2   MO2    O8 180.000      3.00
+M10    O2   MO2    O9  90.000      3.00
+M10    O2   MO2    O9 180.000      3.00
+M10    O4   MO2   O10  90.000      3.00
+M10    O4   MO2   O10 180.000      3.00
+M10    O4   MO2    O6  90.000      3.00
+M10    O4   MO2    O6 180.000      3.00
+M10    O4   MO2    O8  90.000      3.00
+M10    O4   MO2    O8 180.000      3.00
+M10    O4   MO2    O9  90.000      3.00
+M10    O4   MO2    O9 180.000      3.00
+M10   O10   MO2    O6  90.000      3.00
+M10   O10   MO2    O6 180.000      3.00
+M10   O10   MO2    O8  90.000      3.00
+M10   O10   MO2    O8 180.000      3.00
+M10   O10   MO2    O9  90.000      3.00
+M10   O10   MO2    O9 180.000      3.00
+M10    O6   MO2    O8  90.000      3.00
+M10    O6   MO2    O8 180.000      3.00
+M10    O6   MO2    O9  90.000      3.00
+M10    O6   MO2    O9 180.000      3.00
+M10    O8   MO2    O9  90.000      3.00
+M10    O8   MO2    O9 180.000      3.00
+M10   MO1    O6   MO2 112.500      3.00
+M10    O3   MO3    O4  90.000      3.00
+M10    O3   MO3    O4 180.000      3.00
+M10    O3   MO3   O13  90.000      3.00
+M10    O3   MO3   O13 180.000      3.00
+M10    O3   MO3    O9  90.000      3.00
+M10    O3   MO3    O9 180.000      3.00
+M10    O3   MO3   O11  90.000      3.00
+M10    O3   MO3   O11 180.000      3.00
+M10    O3   MO3   O12  90.000      3.00
+M10    O3   MO3   O12 180.000      3.00
+M10    O4   MO3   O13  90.000      3.00
+M10    O4   MO3   O13 180.000      3.00
+M10    O4   MO3    O9  90.000      3.00
+M10    O4   MO3    O9 180.000      3.00
+M10    O4   MO3   O11  90.000      3.00
+M10    O4   MO3   O11 180.000      3.00
+M10    O4   MO3   O12  90.000      3.00
+M10    O4   MO3   O12 180.000      3.00
+M10   O13   MO3    O9  90.000      3.00
+M10   O13   MO3    O9 180.000      3.00
+M10   O13   MO3   O11  90.000      3.00
+M10   O13   MO3   O11 180.000      3.00
+M10   O13   MO3   O12  90.000      3.00
+M10   O13   MO3   O12 180.000      3.00
+M10    O9   MO3   O11  90.000      3.00
+M10    O9   MO3   O11 180.000      3.00
+M10    O9   MO3   O12  90.000      3.00
+M10    O9   MO3   O12 180.000      3.00
+M10   O11   MO3   O12  90.000      3.00
+M10   O11   MO3   O12 180.000      3.00
+M10   MO2    O9   MO3    82.500    2.55
+M10   MO2    O9   MO1    82.500    2.55
+M10   MO3    O9   MO1    82.500    2.55
+M10   MO1   O12   MO3   112.500    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+M10     other_tor_1      O2     MO2      O4     MO3      90.000   10.00     1
+M10     other_tor_2      O2     MO2      O6     MO1      90.000   10.00     1
+M10     other_tor_3      O1     MO1      O6     MO2      90.000   10.00     1
+M10     other_tor_4      O1     MO1     O12     MO3      90.000   10.00     1
+M10     other_tor_5      O3     MO3     O12     MO1      90.000   10.00     1
+M10     other_tor_6      O1     MO1      O6     MO2      90.000   10.00     1
+M10     other_tor_7      O2     MO2      O6     MO1      90.000   10.00     1
+M10     other_tor_8      O2     MO2      O9     MO3     180.000   10.00     1
+M10     other_tor_9      O1     MO1     O12     MO3      90.000   10.00     1
+M10    other_tor_10      O3     MO3     O12     MO1      90.000   10.00     1
+M10    other_tor_11      O3     MO3      O9     MO2     180.000   10.00     1
+M10    other_tor_12      O2     MO2      O4     MO3      90.000   10.00     1
+M10    other_tor_13      O2     MO2      O9     MO3     180.000   10.00     1
+M10    other_tor_14      O3     MO3      O9     MO2     180.000   10.00     1
+M10    other_tor_15      O3     MO3      O4     MO2      90.000   10.00     1
+M10    other_tor_16      O1     MO1      O9     MO2     180.000   10.00     1

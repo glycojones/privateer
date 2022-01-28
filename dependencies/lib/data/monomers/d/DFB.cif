@@ -1,0 +1,149 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DFB     DFB      "2,3-DIFLUOROBENZYL ALCOHOL"     NON-POLYMER     16     10     .     
+#
+data_comp_DFB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DFB     O1      O       OH1     0       20.542      0.651       9.280       
+DFB     C7      C       CH2     0       19.693      0.032       10.236      
+DFB     C1      C       CR6     0       19.985      0.513       11.635      
+DFB     C2      C       CR6     0       19.821      1.852       12.002      
+DFB     F2      F       F       0       19.392      2.741       11.094      
+DFB     C6      C       CR16    0       20.436      -0.372      12.623      
+DFB     C5      C       CR16    0       20.706      0.074       13.914      
+DFB     C4      C       CR16    0       20.533      1.410       14.253      
+DFB     C3      C       CR6     0       20.090      2.288       13.287      
+DFB     F3      F       F       0       19.910      3.597       13.577      
+DFB     HO1     H       H       0       20.349      0.351       8.510       
+DFB     HC71    H       H       0       19.813      -0.939      10.184      
+DFB     HC72    H       H       0       18.762      0.230       10.008      
+DFB     HC6     H       H       0       20.559      -1.283      12.410      
+DFB     HC5     H       H       0       21.009      -0.538      14.568      
+DFB     HC4     H       H       0       20.716      1.717       15.132      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DFB       O1        C7        SINGLE    n         1.420     0.014     1.420     0.014     
+DFB       C7        C1        SINGLE    n         1.507     0.010     1.507     0.010     
+DFB       C1        C2        DOUBLE    y         1.385     0.014     1.385     0.014     
+DFB       C1        C6        SINGLE    y         1.392     0.011     1.392     0.011     
+DFB       C2        F2        SINGLE    n         1.341     0.010     1.341     0.010     
+DFB       C2        C3        SINGLE    y         1.377     0.010     1.377     0.010     
+DFB       C6        C5        DOUBLE    y         1.383     0.011     1.383     0.011     
+DFB       C5        C4        SINGLE    y         1.378     0.012     1.378     0.012     
+DFB       C4        C3        DOUBLE    y         1.371     0.010     1.371     0.010     
+DFB       C3        F3        SINGLE    n         1.353     0.010     1.353     0.010     
+DFB       O1        HO1       SINGLE    n         0.970     0.012     0.849     0.020     
+DFB       C7        HC71      SINGLE    n         1.089     0.010     0.979     0.018     
+DFB       C7        HC72      SINGLE    n         1.089     0.010     0.979     0.018     
+DFB       C6        HC6       SINGLE    n         1.082     0.013     0.943     0.017     
+DFB       C5        HC5       SINGLE    n         1.082     0.013     0.946     0.020     
+DFB       C4        HC4       SINGLE    n         1.082     0.013     0.949     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DFB          C7          O1         HO1     108.716    3.00
+DFB          O1          C7          C1     111.937    1.71
+DFB          O1          C7        HC71     109.107    1.50
+DFB          O1          C7        HC72     109.107    1.50
+DFB          C1          C7        HC71     109.800    1.50
+DFB          C1          C7        HC72     109.800    1.50
+DFB        HC71          C7        HC72     107.986    1.50
+DFB          C7          C1          C2     121.903    1.50
+DFB          C7          C1          C6     120.658    1.50
+DFB          C2          C1          C6     117.439    1.50
+DFB          C1          C2          F2     119.380    1.50
+DFB          C1          C2          C3     121.885    1.50
+DFB          F2          C2          C3     118.735    1.50
+DFB          C1          C6          C5     120.849    1.50
+DFB          C1          C6         HC6     119.422    1.50
+DFB          C5          C6         HC6     119.729    1.50
+DFB          C6          C5          C4     120.463    1.50
+DFB          C6          C5         HC5     119.880    1.50
+DFB          C4          C5         HC5     119.657    1.50
+DFB          C5          C4          C3     118.364    1.50
+DFB          C5          C4         HC4     121.073    1.50
+DFB          C3          C4         HC4     120.564    1.50
+DFB          C2          C3          C4     121.000    1.50
+DFB          C2          C3          F3     118.512    1.50
+DFB          C4          C3          F3     120.487    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DFB             sp3_sp3_1          C1          C7          O1         HO1     180.000   10.00     3
+DFB             sp2_sp3_2          C2          C1          C7          O1     -90.000   10.00     6
+DFB       const_sp2_sp2_4          C7          C1          C2          F2       0.000   10.00     2
+DFB              const_23          C7          C1          C6          C5     180.000   10.00     2
+DFB       const_sp2_sp2_8          F2          C2          C3          F3       0.000   10.00     2
+DFB              const_17          C4          C5          C6          C1       0.000   10.00     2
+DFB              const_13          C3          C4          C5          C6       0.000   10.00     2
+DFB              const_11          F3          C3          C4          C5     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DFB    plan-1          C1   0.020
+DFB    plan-1          C2   0.020
+DFB    plan-1          C3   0.020
+DFB    plan-1          C4   0.020
+DFB    plan-1          C5   0.020
+DFB    plan-1          C6   0.020
+DFB    plan-1          C7   0.020
+DFB    plan-1          F2   0.020
+DFB    plan-1          F3   0.020
+DFB    plan-1         HC4   0.020
+DFB    plan-1         HC5   0.020
+DFB    plan-1         HC6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DFB SMILES           ACDLabs              10.04 "Fc1c(cccc1F)CO"
+DFB SMILES_CANONICAL CACTVS               3.341 "OCc1cccc(F)c1F"
+DFB SMILES           CACTVS               3.341 "OCc1cccc(F)c1F"
+DFB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)F)F)CO"
+DFB SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)F)F)CO"
+DFB InChI            InChI                1.03  "InChI=1S/C7H6F2O/c8-6-3-1-2-5(4-10)7(6)9/h1-3,10H,4H2"
+DFB InChIKey         InChI                1.03  JSFGDUIJQWWBGY-UHFFFAOYSA-N
+DFB ?                acedrg               202         "dictionary generator"                  
+DFB ?                acedrg_database      11          "data source"                           
+DFB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DFB ?                refmac5              5.8.0189    "optimization tool"                     

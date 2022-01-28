@@ -1,0 +1,220 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B2F      B2F 'PHENYLALANINE BORONIC ACID          ' non-polymer        24  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_B2F
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ B2F           O2     O    OH1       0.000      0.000    0.000    0.000
+ B2F           HO2    H    H         0.000      0.376   -0.871    0.032
+ B2F           B      B    B         0.000     -1.218    0.230    0.695
+ B2F           O1     O    OH1       0.000     -1.837   -0.829    1.411
+ B2F           HO1    H    H         0.000     -1.415   -1.679    1.407
+ B2F           CA     C    CH1       0.000     -1.878    1.654    0.672
+ B2F           HA     H    H         0.000     -2.436    1.814    1.605
+ B2F           N      N    NH2       0.000     -0.832    2.677    0.544
+ B2F           HN2    H    H         0.000     -0.793    3.269   -0.278
+ B2F           HN1    H    H         0.000     -0.142    2.798    1.276
+ B2F           CB     C    CH2       0.000     -2.835    1.752   -0.518
+ B2F           HB1    H    H         0.000     -2.281    1.593   -1.445
+ B2F           HB2    H    H         0.000     -3.294    2.743   -0.535
+ B2F           CG     C    CR6       0.000     -3.909    0.702   -0.386
+ B2F           CD2    C    CR16      0.000     -3.723   -0.550   -0.942
+ B2F           HD2    H    H         0.000     -2.806   -0.776   -1.472
+ B2F           CE2    C    CR16      0.000     -4.709   -1.512   -0.823
+ B2F           HE2    H    H         0.000     -4.564   -2.492   -1.259
+ B2F           CZ     C    CR16      0.000     -5.879   -1.223   -0.145
+ B2F           HZ     H    H         0.000     -6.648   -1.978   -0.047
+ B2F           CE1    C    CR16      0.000     -6.067    0.031    0.406
+ B2F           HE1    H    H         0.000     -6.985    0.258    0.933
+ B2F           CD1    C    CR16      0.000     -5.081    0.994    0.285
+ B2F           HD1    H    H         0.000     -5.228    1.976    0.717
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B2F      O2     n/a    B      START
+ B2F      HO2    O2     .      .
+ B2F      B      O2     CA     .
+ B2F      O1     B      HO1    .
+ B2F      HO1    O1     .      .
+ B2F      CA     B      CB     .
+ B2F      HA     CA     .      .
+ B2F      N      CA     HN1    .
+ B2F      HN2    N      .      .
+ B2F      HN1    N      .      .
+ B2F      CB     CA     CG     .
+ B2F      HB1    CB     .      .
+ B2F      HB2    CB     .      .
+ B2F      CG     CB     CD2    .
+ B2F      CD2    CG     CE2    .
+ B2F      HD2    CD2    .      .
+ B2F      CE2    CD2    CZ     .
+ B2F      HE2    CE2    .      .
+ B2F      CZ     CE2    CE1    .
+ B2F      HZ     CZ     .      .
+ B2F      CE1    CZ     CD1    .
+ B2F      HE1    CE1    .      .
+ B2F      CD1    CE1    HD1    .
+ B2F      HD1    CD1    .      END
+ B2F      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B2F       N         CA        single    1.450     0.020     1.450     0.020     
+B2F       HN1       N         single    1.036     0.016     0.914     0.007     
+B2F       HN2       N         single    1.036     0.016     0.914     0.007     
+B2F       CB        CA        single    1.524     0.020     1.524     0.020     
+B2F       CA        B         single    1.600     0.020     1.600     0.020     
+B2F       HA        CA        single    1.089     0.010     0.989     0.005     
+B2F       CG        CB        single    1.511     0.020     1.511     0.020     
+B2F       HB1       CB        single    1.089     0.010     0.989     0.005     
+B2F       HB2       CB        single    1.089     0.010     0.989     0.005     
+B2F       CG        CD1       double    1.390     0.020     1.390     0.020     
+B2F       CD2       CG        single    1.390     0.020     1.390     0.020     
+B2F       CD1       CE1       single    1.390     0.020     1.390     0.020     
+B2F       HD1       CD1       single    1.082     0.013     0.975     0.010     
+B2F       CE2       CD2       double    1.390     0.020     1.390     0.020     
+B2F       HD2       CD2       single    1.082     0.013     0.975     0.010     
+B2F       CE1       CZ        double    1.390     0.020     1.390     0.020     
+B2F       HE1       CE1       single    1.082     0.013     0.975     0.010     
+B2F       CZ        CE2       single    1.390     0.020     1.390     0.020     
+B2F       HE2       CE2       single    1.082     0.013     0.975     0.010     
+B2F       HZ        CZ        single    1.082     0.013     0.975     0.010     
+B2F       O1        B         single    1.535     0.020     1.535     0.020     
+B2F       B         O2        single    1.535     0.020     1.535     0.020     
+B2F       HO1       O1        single    0.970     0.012     0.839     0.014     
+B2F       HO2       O2        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ B2F      HO2    O2     B       120.000    3.000
+ B2F      O2     B      O1      120.000    3.000
+ B2F      O2     B      CA      120.000    3.000
+ B2F      O1     B      CA      120.000    3.000
+ B2F      B      O1     HO1     120.000    3.000
+ B2F      B      CA     HA      109.470    3.000
+ B2F      B      CA     N       109.500    3.000
+ B2F      B      CA     CB      109.470    3.000
+ B2F      HA     CA     N       109.470    3.000
+ B2F      HA     CA     CB      108.340    3.000
+ B2F      N      CA     CB      109.470    3.000
+ B2F      CA     N      HN2     120.000    3.000
+ B2F      CA     N      HN1     120.000    3.000
+ B2F      HN2    N      HN1     120.000    3.000
+ B2F      CA     CB     HB1     109.470    3.000
+ B2F      CA     CB     HB2     109.470    3.000
+ B2F      CA     CB     CG      109.470    3.000
+ B2F      HB1    CB     HB2     107.900    3.000
+ B2F      HB1    CB     CG      109.470    3.000
+ B2F      HB2    CB     CG      109.470    3.000
+ B2F      CB     CG     CD2     120.000    3.000
+ B2F      CB     CG     CD1     120.000    3.000
+ B2F      CD2    CG     CD1     120.000    3.000
+ B2F      CG     CD2    HD2     120.000    3.000
+ B2F      CG     CD2    CE2     120.000    3.000
+ B2F      HD2    CD2    CE2     120.000    3.000
+ B2F      CD2    CE2    HE2     120.000    3.000
+ B2F      CD2    CE2    CZ      120.000    3.000
+ B2F      HE2    CE2    CZ      120.000    3.000
+ B2F      CE2    CZ     HZ      120.000    3.000
+ B2F      CE2    CZ     CE1     120.000    3.000
+ B2F      HZ     CZ     CE1     120.000    3.000
+ B2F      CZ     CE1    HE1     120.000    3.000
+ B2F      CZ     CE1    CD1     120.000    3.000
+ B2F      HE1    CE1    CD1     120.000    3.000
+ B2F      CE1    CD1    HD1     120.000    3.000
+ B2F      CE1    CD1    CG      120.000    3.000
+ B2F      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ B2F      var_1    HO2    O2     B      CA       179.990   20.000   1
+ B2F      var_2    O2     B      O1     HO1       -0.034   20.000   1
+ B2F      var_3    O2     B      CA     CB        89.964   20.000   1
+ B2F      var_4    B      CA     N      HN1      -63.951   20.000   1
+ B2F      var_5    B      CA     CB     CG        60.046   20.000   3
+ B2F      var_6    CA     CB     CG     CD2      -90.274   20.000   2
+ B2F      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ B2F      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ B2F      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ B2F      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ B2F      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ B2F      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ B2F      chir_01  CA     N      CB     B         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ B2F      plan-1    N         0.020
+ B2F      plan-1    CA        0.020
+ B2F      plan-1    HN1       0.020
+ B2F      plan-1    HN2       0.020
+ B2F      plan-2    CG        0.020
+ B2F      plan-2    CB        0.020
+ B2F      plan-2    CD1       0.020
+ B2F      plan-2    CD2       0.020
+ B2F      plan-2    CE1       0.020
+ B2F      plan-2    CE2       0.020
+ B2F      plan-2    CZ        0.020
+ B2F      plan-2    HD1       0.020
+ B2F      plan-2    HD2       0.020
+ B2F      plan-2    HE1       0.020
+ B2F      plan-2    HE2       0.020
+ B2F      plan-2    HZ        0.020
+# ------------------------------------------------------

@@ -1,0 +1,944 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VAG      VAG 'VANCOMYCIN AGLYCON                  ' non-polymer       132  80 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VAG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ VAG           O80    O    OC       -0.500      0.000    0.000    0.000
+ VAG           C70    C    C         0.000     -0.051    1.042    0.691
+ VAG           O71    O    OC       -0.500      0.926    1.794    0.903
+ VAG           C69    C    CH1       0.000     -1.437    1.260    1.218
+ VAG           H69    H    H         0.000     -1.718    0.375    1.806
+ VAG           C72    C    CR6       0.000     -2.451    1.412    0.087
+ VAG           C74    C    CR16      0.000     -3.523    0.496    0.072
+ VAG           H74    H    H         0.000     -3.590   -0.253    0.851
+ VAG           C77    C    CR6       0.000     -4.498    0.534   -0.923
+ VAG           O78    O    OH1       0.000     -5.522   -0.363   -0.909
+ VAG           HO8    H    H         0.000     -5.347   -1.041   -0.242
+ VAG           C76    C    CR16      0.000     -4.426    1.489   -1.929
+ VAG           H76    H    H         0.000     -5.180    1.517   -2.706
+ VAG           C75    C    CR6       0.000     -3.382    2.412   -1.938
+ VAG           O79    O    OH1       0.000     -3.344    3.319   -2.962
+ VAG           HO7    H    H         0.000     -3.586    4.194   -2.628
+ VAG           C73    C    CR6       0.000     -2.385    2.399   -0.941
+ VAG           C50    C    CR6       0.000     -1.326    3.420   -1.009
+ VAG           C48    C    CR16      0.000     -1.336    4.507   -0.123
+ VAG           H48    H    H         0.000     -2.221    4.695    0.473
+ VAG           C52    C    CR6       0.000     -0.258    3.305   -1.908
+ VAG           O53    O    OH1       0.000     -0.242    2.330   -2.861
+ VAG           HO3    H    H         0.000     -1.104    2.290   -3.297
+ VAG           C51    C    CR16      0.000      0.806    4.209   -1.860
+ VAG           H51    H    H         0.000      1.612    4.132   -2.580
+ VAG           C49    C    CR16      0.000      0.835    5.210   -0.888
+ VAG           H49    H    H         0.000      1.685    5.877   -0.828
+ VAG           C47    C    CR6       0.000     -0.229    5.357    0.009
+ VAG           N68    N    NH1       0.000     -1.421    2.405    2.116
+ VAG           HN8    H    H         0.000     -1.961    3.214    1.844
+ VAG           C56    C    C         0.000     -0.725    2.478    3.312
+ VAG           O57    O    O         0.000     -0.115    1.541    3.826
+ VAG           C55    C    CH1       0.000     -0.893    3.820    4.046
+ VAG           H55    H    H         0.000      0.014    3.990    4.643
+ VAG           C58    C    CH1       0.000     -2.099    3.786    5.016
+ VAG           H58    H    H         0.000     -1.864    3.083    5.827
+ VAG           O59    O    OH1       0.000     -3.255    3.299    4.330
+ VAG           HO9    H    H         0.000     -3.268    2.333    4.367
+ VAG           C60    C    CR6       0.000     -2.387    5.143    5.639
+ VAG           C62    C    CR16      0.000     -1.354    5.858    6.270
+ VAG           H62    H    H         0.000     -0.409    5.369    6.472
+ VAG           C64    C    CR6       0.000     -1.533    7.191    6.641
+ VAG           CL6    CL   CL        0.000     -0.207    8.058    7.315
+ VAG           C65    C    CR6       0.000     -2.756    7.804    6.385
+ VAG           C63    C    CR16      0.000     -3.845    7.065    5.917
+ VAG           H63    H    H         0.000     -4.827    7.517    5.852
+ VAG           C61    C    CR16      0.000     -3.653    5.740    5.537
+ VAG           H61    H    H         0.000     -4.489    5.164    5.159
+ VAG           O66    O    O2        0.000     -2.838    9.177    6.477
+ VAG           C39    C    CR6       0.000     -3.024    9.825    5.263
+ VAG           C37    C    CR16      0.000     -2.519    9.328    4.047
+ VAG           H37    H    H         0.000     -1.897    8.441    4.051
+ VAG           C36    C    CR6       0.000     -2.806    9.958    2.833
+ VAG           C41    C    CR6       0.000     -3.756   11.013    5.286
+ VAG           O42    O    OH1       0.000     -4.175   11.542    6.470
+ VAG           H42    H    H         0.000     -5.000   11.116    6.740
+ VAG           C40    C    CR6       0.000     -4.046   11.665    4.086
+ VAG           C38    C    CR16      0.000     -3.612   11.108    2.871
+ VAG           H38    H    H         0.000     -3.906   11.577    1.941
+ VAG           O22    O    O2        0.000     -4.794   12.826    4.190
+ VAG           C21    C    CR6       0.000     -4.881   13.614    3.066
+ VAG           C19    C    CR6       0.000     -6.084   13.640    2.365
+ VAG           CL2    CL   CL        0.000     -7.469   12.772    2.912
+ VAG           C17    C    CR16      0.000     -6.157   14.341    1.162
+ VAG           H17    H    H         0.000     -7.090   14.360    0.611
+ VAG           C20    C    CR16      0.000     -3.782   14.352    2.624
+ VAG           H20    H    H         0.000     -2.876   14.388    3.216
+ VAG           C18    C    CR16      0.000     -3.859   15.044    1.415
+ VAG           H18    H    H         0.000     -3.001   15.603    1.060
+ VAG           C16    C    CR6       0.000     -5.038   15.024    0.653
+ VAG           C14    C    CH1       0.000     -5.127   15.662   -0.721
+ VAG           H14    H    H         0.000     -6.073   16.221   -0.765
+ VAG           O15    O    OH1       0.000     -4.066   16.596   -0.922
+ VAG           HO5    H    H         0.000     -4.436   17.479   -1.055
+ VAG           N54    N    NH1       0.000     -0.984    4.900    3.050
+ VAG           HN5    H    H         0.000     -1.896    5.237    2.777
+ VAG           C45    C    C         0.000      0.144    5.473    2.472
+ VAG           O46    O    O         0.000      1.298    5.201    2.811
+ VAG           C44    C    CH1       0.000     -0.109    6.296    1.199
+ VAG           H44    H    H         0.000      0.788    6.909    1.032
+ VAG           N43    N    NH1       0.000     -1.234    7.216    1.314
+ VAG           HN43   H    H         0.000     -2.171    6.861    1.190
+ VAG           C34    C    C         0.000     -1.056    8.569    1.590
+ VAG           O35    O    O         0.000      0.026    9.094    1.855
+ VAG           C33    C    CH1       0.000     -2.345    9.380    1.503
+ VAG           H33    H    H         0.000     -3.144    8.758    1.076
+ VAG           N32    N    NH1       0.000     -2.001   10.451    0.562
+ VAG           HN3    H    H         0.000     -1.172   10.998    0.746
+ VAG           C26    C    C         0.000     -2.747   10.756   -0.564
+ VAG           O27    O    O         0.000     -3.704   10.083   -0.954
+ VAG           C25    C    CH1       0.000     -2.366   12.053   -1.288
+ VAG           H25    H    H         0.000     -2.152   11.804   -2.336
+ VAG           C28    C    CH2       0.000     -1.174   12.831   -0.740
+ VAG           H281   H    H         0.000     -1.397   13.110    0.292
+ VAG           H282   H    H         0.000     -1.054   13.734   -1.342
+ VAG           C29    C    C         0.000      0.104   12.023   -0.781
+ VAG           N31    N    NH2       0.000      0.980   12.389    0.218
+ VAG           HN12   H    H         0.000      1.884   11.930    0.314
+ VAG           HN11   H    H         0.000      0.740   13.127    0.879
+ VAG           O30    O    O         0.000      0.338   11.144   -1.605
+ VAG           N24    N    NH1       0.000     -3.579   12.868   -1.261
+ VAG           HN4    H    H         0.000     -4.296   12.636   -0.588
+ VAG           C12    C    C         0.000     -3.800   13.945   -2.110
+ VAG           O13    O    O         0.000     -3.001   14.346   -2.955
+ VAG           C11    C    CH1       0.000     -5.150   14.620   -1.859
+ VAG           H11    H    H         0.000     -5.882   13.843   -1.601
+ VAG           N10    N    NH1       0.000     -5.550   15.221   -3.109
+ VAG           HN0    H    H         0.000     -4.836   15.604   -3.712
+ VAG           C4     C    C         0.000     -6.874   15.295   -3.517
+ VAG           O5     O    O         0.000     -7.833   14.870   -2.877
+ VAG           C3     C    CH1       0.000     -7.024   15.983   -4.865
+ VAG           H3     H    H         0.000     -6.176   16.665   -5.015
+ VAG           N2     N    NT2       1.000     -8.290   16.770   -4.891
+ VAG           HN21   H    H         0.000     -9.063   16.107   -4.717
+ VAG           HN22   H    H         0.000     -8.383   17.164   -5.841
+ VAG           C1     C    CH3       0.000     -8.342   17.867   -3.890
+ VAG           H13    H    H         0.000     -7.526   18.526   -4.040
+ VAG           H12    H    H         0.000     -9.250   18.404   -3.997
+ VAG           H11A   H    H         0.000     -8.289   17.461   -2.912
+ VAG           C6     C    CH2       0.000     -7.035   14.945   -5.996
+ VAG           H61A   H    H         0.000     -7.128   15.512   -6.925
+ VAG           H62A   H    H         0.000     -7.935   14.344   -5.846
+ VAG           C7     C    CH1       0.000     -5.804   14.019   -6.077
+ VAG           H7     H    H         0.000     -5.969   13.295   -6.887
+ VAG           C9     C    CH3       0.000     -4.560   14.846   -6.416
+ VAG           H93    H    H         0.000     -4.383   15.554   -5.647
+ VAG           H92    H    H         0.000     -3.720   14.205   -6.503
+ VAG           H91    H    H         0.000     -4.710   15.354   -7.334
+ VAG           C8     C    CH3       0.000     -5.571   13.246   -4.779
+ VAG           H83    H    H         0.000     -5.491   13.926   -3.971
+ VAG           H82    H    H         0.000     -6.385   12.590   -4.607
+ VAG           H81    H    H         0.000     -4.676   12.684   -4.857
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VAG      O80    n/a    C70    START
+ VAG      C70    O80    C69    .
+ VAG      O71    C70    .      .
+ VAG      C69    C70    N68    .
+ VAG      H69    C69    .      .
+ VAG      C72    C69    C74    .
+ VAG      C74    C72    C77    .
+ VAG      H74    C74    .      .
+ VAG      C77    C74    C76    .
+ VAG      O78    C77    HO8    .
+ VAG      HO8    O78    .      .
+ VAG      C76    C77    C75    .
+ VAG      H76    C76    .      .
+ VAG      C75    C76    C73    .
+ VAG      O79    C75    HO7    .
+ VAG      HO7    O79    .      .
+ VAG      C73    C75    C50    .
+ VAG      C50    C73    C52    .
+ VAG      C48    C50    H48    .
+ VAG      H48    C48    .      .
+ VAG      C52    C50    C51    .
+ VAG      O53    C52    HO3    .
+ VAG      HO3    O53    .      .
+ VAG      C51    C52    C49    .
+ VAG      H51    C51    .      .
+ VAG      C49    C51    C47    .
+ VAG      H49    C49    .      .
+ VAG      C47    C49    .      .
+ VAG      N68    C69    C56    .
+ VAG      HN8    N68    .      .
+ VAG      C56    N68    C55    .
+ VAG      O57    C56    .      .
+ VAG      C55    C56    N54    .
+ VAG      H55    C55    .      .
+ VAG      C58    C55    C60    .
+ VAG      H58    C58    .      .
+ VAG      O59    C58    HO9    .
+ VAG      HO9    O59    .      .
+ VAG      C60    C58    C62    .
+ VAG      C62    C60    C64    .
+ VAG      H62    C62    .      .
+ VAG      C64    C62    C65    .
+ VAG      CL6    C64    .      .
+ VAG      C65    C64    O66    .
+ VAG      C63    C65    C61    .
+ VAG      H63    C63    .      .
+ VAG      C61    C63    H61    .
+ VAG      H61    C61    .      .
+ VAG      O66    C65    C39    .
+ VAG      C39    O66    C41    .
+ VAG      C37    C39    C36    .
+ VAG      H37    C37    .      .
+ VAG      C36    C37    .      .
+ VAG      C41    C39    C40    .
+ VAG      O42    C41    H42    .
+ VAG      H42    O42    .      .
+ VAG      C40    C41    O22    .
+ VAG      C38    C40    H38    .
+ VAG      H38    C38    .      .
+ VAG      O22    C40    C21    .
+ VAG      C21    O22    C20    .
+ VAG      C19    C21    C17    .
+ VAG      CL2    C19    .      .
+ VAG      C17    C19    H17    .
+ VAG      H17    C17    .      .
+ VAG      C20    C21    C18    .
+ VAG      H20    C20    .      .
+ VAG      C18    C20    C16    .
+ VAG      H18    C18    .      .
+ VAG      C16    C18    C14    .
+ VAG      C14    C16    O15    .
+ VAG      H14    C14    .      .
+ VAG      O15    C14    HO5    .
+ VAG      HO5    O15    .      .
+ VAG      N54    C55    C45    .
+ VAG      HN5    N54    .      .
+ VAG      C45    N54    C44    .
+ VAG      O46    C45    .      .
+ VAG      C44    C45    N43    .
+ VAG      H44    C44    .      .
+ VAG      N43    C44    C34    .
+ VAG      HN43   N43    .      .
+ VAG      C34    N43    C33    .
+ VAG      O35    C34    .      .
+ VAG      C33    C34    N32    .
+ VAG      H33    C33    .      .
+ VAG      N32    C33    C26    .
+ VAG      HN3    N32    .      .
+ VAG      C26    N32    C25    .
+ VAG      O27    C26    .      .
+ VAG      C25    C26    N24    .
+ VAG      H25    C25    .      .
+ VAG      C28    C25    C29    .
+ VAG      H281   C28    .      .
+ VAG      H282   C28    .      .
+ VAG      C29    C28    O30    .
+ VAG      N31    C29    HN11   .
+ VAG      HN12   N31    .      .
+ VAG      HN11   N31    .      .
+ VAG      O30    C29    .      .
+ VAG      N24    C25    C12    .
+ VAG      HN4    N24    .      .
+ VAG      C12    N24    C11    .
+ VAG      O13    C12    .      .
+ VAG      C11    C12    N10    .
+ VAG      H11    C11    .      .
+ VAG      N10    C11    C4     .
+ VAG      HN0    N10    .      .
+ VAG      C4     N10    C3     .
+ VAG      O5     C4     .      .
+ VAG      C3     C4     C6     .
+ VAG      H3     C3     .      .
+ VAG      N2     C3     C1     .
+ VAG      HN21   N2     .      .
+ VAG      HN22   N2     .      .
+ VAG      C1     N2     H11A   .
+ VAG      H13    C1     .      .
+ VAG      H12    C1     .      .
+ VAG      H11A   C1     .      .
+ VAG      C6     C3     C7     .
+ VAG      H61A   C6     .      .
+ VAG      H62A   C6     .      .
+ VAG      C7     C6     C8     .
+ VAG      H7     C7     .      .
+ VAG      C9     C7     H91    .
+ VAG      H93    C9     .      .
+ VAG      H92    C9     .      .
+ VAG      H91    C9     .      .
+ VAG      C8     C7     H81    .
+ VAG      H83    C8     .      .
+ VAG      H82    C8     .      .
+ VAG      H81    C8     .      END
+ VAG      C11    C14    .    ADD
+ VAG      C16    C17    .    ADD
+ VAG      C33    C36    .    ADD
+ VAG      C36    C38    .    ADD
+ VAG      C44    C47    .    ADD
+ VAG      C47    C48    .    ADD
+ VAG      C60    C61    .    ADD
+ VAG      C72    C73    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VAG       C1        N2        single    1.472     0.020     1.472     0.020     
+VAG       H11A      C1        single    1.089     0.010     0.989     0.005     
+VAG       H12       C1        single    1.089     0.010     0.989     0.005     
+VAG       H13       C1        single    1.089     0.010     0.989     0.005     
+VAG       N2        C3        single    1.475     0.020     1.475     0.020     
+VAG       HN21      N2        single    1.036     0.016     0.914     0.007     
+VAG       HN22      N2        single    1.036     0.016     0.914     0.007     
+VAG       C6        C3        single    1.524     0.020     1.524     0.020     
+VAG       C3        C4        single    1.500     0.020     1.500     0.020     
+VAG       H3        C3        single    1.089     0.010     0.989     0.005     
+VAG       C7        C6        single    1.524     0.020     1.524     0.020     
+VAG       H61A      C6        single    1.089     0.010     0.989     0.005     
+VAG       H62A      C6        single    1.089     0.010     0.989     0.005     
+VAG       C8        C7        single    1.524     0.020     1.524     0.020     
+VAG       C9        C7        single    1.524     0.020     1.524     0.020     
+VAG       H7        C7        single    1.089     0.010     0.989     0.005     
+VAG       H81       C8        single    1.089     0.010     0.989     0.005     
+VAG       H82       C8        single    1.089     0.010     0.989     0.005     
+VAG       H83       C8        single    1.089     0.010     0.989     0.005     
+VAG       H91       C9        single    1.089     0.010     0.989     0.005     
+VAG       H92       C9        single    1.089     0.010     0.989     0.005     
+VAG       H93       C9        single    1.089     0.010     0.989     0.005     
+VAG       O5        C4        double    1.220     0.020     1.220     0.020     
+VAG       C4        N10       single    1.330     0.020     1.330     0.020     
+VAG       N10       C11       single    1.450     0.020     1.450     0.020     
+VAG       HN0       N10       single    1.016     0.010     0.899     0.007     
+VAG       C11       C14       single    1.524     0.020     1.524     0.020     
+VAG       C11       C12       single    1.500     0.020     1.500     0.020     
+VAG       H11       C11       single    1.089     0.010     0.989     0.005     
+VAG       O15       C14       single    1.432     0.020     1.432     0.020     
+VAG       C14       C16       single    1.480     0.020     1.480     0.020     
+VAG       H14       C14       single    1.089     0.010     0.989     0.005     
+VAG       HO5       O15       single    0.970     0.012     0.839     0.014     
+VAG       C16       C17       double    1.390     0.020     1.390     0.020     
+VAG       C16       C18       single    1.390     0.020     1.390     0.020     
+VAG       C17       C19       single    1.390     0.020     1.390     0.020     
+VAG       H17       C17       single    1.082     0.013     0.975     0.010     
+VAG       CL2       C19       single    1.795     0.020     1.795     0.020     
+VAG       C19       C21       double    1.487     0.020     1.487     0.020     
+VAG       C21       O22       single    1.370     0.020     1.370     0.020     
+VAG       C20       C21       single    1.390     0.020     1.390     0.020     
+VAG       O22       C40       single    1.370     0.020     1.370     0.020     
+VAG       C18       C20       double    1.390     0.020     1.390     0.020     
+VAG       H20       C20       single    1.082     0.013     0.975     0.010     
+VAG       H18       C18       single    1.082     0.013     0.975     0.010     
+VAG       O13       C12       double    1.220     0.020     1.220     0.020     
+VAG       C12       N24       single    1.330     0.020     1.330     0.020     
+VAG       N24       C25       single    1.450     0.020     1.450     0.020     
+VAG       HN4       N24       single    1.016     0.010     0.899     0.007     
+VAG       C28       C25       single    1.524     0.020     1.524     0.020     
+VAG       C25       C26       single    1.500     0.020     1.500     0.020     
+VAG       H25       C25       single    1.089     0.010     0.989     0.005     
+VAG       C29       C28       single    1.510     0.020     1.510     0.020     
+VAG       H281      C28       single    1.089     0.010     0.989     0.005     
+VAG       H282      C28       single    1.089     0.010     0.989     0.005     
+VAG       O30       C29       double    1.220     0.020     1.220     0.020     
+VAG       N31       C29       single    1.332     0.020     1.332     0.020     
+VAG       HN11      N31       single    1.016     0.010     0.899     0.007     
+VAG       HN12      N31       single    1.016     0.010     0.899     0.007     
+VAG       O27       C26       double    1.220     0.020     1.220     0.020     
+VAG       C26       N32       single    1.330     0.020     1.330     0.020     
+VAG       N32       C33       single    1.450     0.020     1.450     0.020     
+VAG       HN3       N32       single    1.016     0.010     0.899     0.007     
+VAG       C33       C36       single    1.480     0.020     1.480     0.020     
+VAG       C33       C34       single    1.500     0.020     1.500     0.020     
+VAG       H33       C33       single    1.089     0.010     0.989     0.005     
+VAG       C36       C38       double    1.390     0.020     1.390     0.020     
+VAG       C36       C37       single    1.390     0.020     1.390     0.020     
+VAG       C38       C40       single    1.390     0.020     1.390     0.020     
+VAG       H38       C38       single    1.082     0.013     0.975     0.010     
+VAG       C40       C41       double    1.487     0.020     1.487     0.020     
+VAG       O42       C41       single    1.362     0.020     1.362     0.020     
+VAG       C41       C39       single    1.487     0.020     1.487     0.020     
+VAG       H42       O42       single    0.970     0.012     0.839     0.014     
+VAG       C37       C39       double    1.390     0.020     1.390     0.020     
+VAG       C39       O66       single    1.370     0.020     1.370     0.020     
+VAG       H37       C37       single    1.082     0.013     0.975     0.010     
+VAG       O35       C34       double    1.220     0.020     1.220     0.020     
+VAG       C34       N43       single    1.330     0.020     1.330     0.020     
+VAG       N43       C44       single    1.450     0.020     1.450     0.020     
+VAG       HN43      N43       single    1.016     0.010     0.899     0.007     
+VAG       C44       C47       single    1.480     0.020     1.480     0.020     
+VAG       C44       C45       single    1.500     0.020     1.500     0.020     
+VAG       H44       C44       single    1.089     0.010     0.989     0.005     
+VAG       C47       C48       double    1.390     0.020     1.390     0.020     
+VAG       C47       C49       single    1.390     0.020     1.390     0.020     
+VAG       C48       C50       single    1.390     0.020     1.390     0.020     
+VAG       H48       C48       single    1.082     0.013     0.975     0.010     
+VAG       C52       C50       double    1.487     0.020     1.487     0.020     
+VAG       C50       C73       single    1.487     0.020     1.487     0.020     
+VAG       O53       C52       single    1.362     0.020     1.362     0.020     
+VAG       C51       C52       single    1.390     0.020     1.390     0.020     
+VAG       HO3       O53       single    0.970     0.012     0.839     0.014     
+VAG       C49       C51       double    1.390     0.020     1.390     0.020     
+VAG       H51       C51       single    1.082     0.013     0.975     0.010     
+VAG       H49       C49       single    1.082     0.013     0.975     0.010     
+VAG       O46       C45       double    1.220     0.020     1.220     0.020     
+VAG       C45       N54       single    1.330     0.020     1.330     0.020     
+VAG       N54       C55       single    1.450     0.020     1.450     0.020     
+VAG       HN5       N54       single    1.016     0.010     0.899     0.007     
+VAG       C58       C55       single    1.524     0.020     1.524     0.020     
+VAG       C55       C56       single    1.500     0.020     1.500     0.020     
+VAG       H55       C55       single    1.089     0.010     0.989     0.005     
+VAG       O59       C58       single    1.432     0.020     1.432     0.020     
+VAG       C60       C58       single    1.480     0.020     1.480     0.020     
+VAG       H58       C58       single    1.089     0.010     0.989     0.005     
+VAG       HO9       O59       single    0.970     0.012     0.839     0.014     
+VAG       C60       C61       double    1.390     0.020     1.390     0.020     
+VAG       C62       C60       single    1.390     0.020     1.390     0.020     
+VAG       C61       C63       single    1.390     0.020     1.390     0.020     
+VAG       H61       C61       single    1.082     0.013     0.975     0.010     
+VAG       C63       C65       double    1.390     0.020     1.390     0.020     
+VAG       H63       C63       single    1.082     0.013     0.975     0.010     
+VAG       O66       C65       single    1.370     0.020     1.370     0.020     
+VAG       C65       C64       single    1.487     0.020     1.487     0.020     
+VAG       CL6       C64       single    1.795     0.020     1.795     0.020     
+VAG       C64       C62       double    1.390     0.020     1.390     0.020     
+VAG       H62       C62       single    1.082     0.013     0.975     0.010     
+VAG       O57       C56       double    1.220     0.020     1.220     0.020     
+VAG       C56       N68       single    1.330     0.020     1.330     0.020     
+VAG       N68       C69       single    1.450     0.020     1.450     0.020     
+VAG       HN8       N68       single    1.016     0.010     0.899     0.007     
+VAG       C72       C69       single    1.480     0.020     1.480     0.020     
+VAG       C69       C70       single    1.500     0.020     1.500     0.020     
+VAG       H69       C69       single    1.089     0.010     0.989     0.005     
+VAG       C72       C73       double    1.487     0.020     1.487     0.020     
+VAG       C74       C72       single    1.390     0.020     1.390     0.020     
+VAG       C73       C75       single    1.487     0.020     1.487     0.020     
+VAG       O79       C75       single    1.362     0.020     1.362     0.020     
+VAG       C75       C76       double    1.390     0.020     1.390     0.020     
+VAG       HO7       O79       single    0.970     0.012     0.839     0.014     
+VAG       C76       C77       single    1.390     0.020     1.390     0.020     
+VAG       H76       C76       single    1.082     0.013     0.975     0.010     
+VAG       O78       C77       single    1.362     0.020     1.362     0.020     
+VAG       C77       C74       double    1.390     0.020     1.390     0.020     
+VAG       HO8       O78       single    0.970     0.012     0.839     0.014     
+VAG       H74       C74       single    1.082     0.013     0.975     0.010     
+VAG       O71       C70       deloc     1.250     0.020     1.250     0.020     
+VAG       C70       O80       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VAG      O80    C70    O71     123.000    3.000
+ VAG      O80    C70    C69     118.500    3.000
+ VAG      O71    C70    C69     118.500    3.000
+ VAG      C70    C69    H69     108.810    3.000
+ VAG      C70    C69    C72     109.500    3.000
+ VAG      C70    C69    N68     111.600    3.000
+ VAG      H69    C69    C72     109.470    3.000
+ VAG      H69    C69    N68     108.550    3.000
+ VAG      C72    C69    N68     109.470    3.000
+ VAG      C69    C72    C74     120.000    3.000
+ VAG      C69    C72    C73     120.000    3.000
+ VAG      C74    C72    C73     120.000    3.000
+ VAG      C72    C74    H74     120.000    3.000
+ VAG      C72    C74    C77     120.000    3.000
+ VAG      H74    C74    C77     120.000    3.000
+ VAG      C74    C77    O78     120.000    3.000
+ VAG      C74    C77    C76     120.000    3.000
+ VAG      O78    C77    C76     120.000    3.000
+ VAG      C77    O78    HO8     109.470    3.000
+ VAG      C77    C76    H76     120.000    3.000
+ VAG      C77    C76    C75     120.000    3.000
+ VAG      H76    C76    C75     120.000    3.000
+ VAG      C76    C75    O79     120.000    3.000
+ VAG      C76    C75    C73     120.000    3.000
+ VAG      O79    C75    C73     120.000    3.000
+ VAG      C75    O79    HO7     109.470    3.000
+ VAG      C75    C73    C50     120.000    3.000
+ VAG      C75    C73    C72     120.000    3.000
+ VAG      C50    C73    C72     120.000    3.000
+ VAG      C73    C50    C48     120.000    3.000
+ VAG      C73    C50    C52     120.000    3.000
+ VAG      C48    C50    C52     120.000    3.000
+ VAG      C50    C48    H48     120.000    3.000
+ VAG      C50    C48    C47     120.000    3.000
+ VAG      H48    C48    C47     120.000    3.000
+ VAG      C50    C52    O53     120.000    3.000
+ VAG      C50    C52    C51     120.000    3.000
+ VAG      O53    C52    C51     120.000    3.000
+ VAG      C52    O53    HO3     109.470    3.000
+ VAG      C52    C51    H51     120.000    3.000
+ VAG      C52    C51    C49     120.000    3.000
+ VAG      H51    C51    C49     120.000    3.000
+ VAG      C51    C49    H49     120.000    3.000
+ VAG      C51    C49    C47     120.000    3.000
+ VAG      H49    C49    C47     120.000    3.000
+ VAG      C49    C47    C44     120.000    3.000
+ VAG      C49    C47    C48     120.000    3.000
+ VAG      C44    C47    C48     120.000    3.000
+ VAG      C69    N68    HN8     118.500    3.000
+ VAG      C69    N68    C56     121.500    3.000
+ VAG      HN8    N68    C56     120.000    3.000
+ VAG      N68    C56    O57     123.000    3.000
+ VAG      N68    C56    C55     116.500    3.000
+ VAG      O57    C56    C55     120.500    3.000
+ VAG      C56    C55    H55     108.810    3.000
+ VAG      C56    C55    C58     109.470    3.000
+ VAG      C56    C55    N54     111.600    3.000
+ VAG      H55    C55    C58     108.340    3.000
+ VAG      H55    C55    N54     108.550    3.000
+ VAG      C58    C55    N54     110.000    3.000
+ VAG      C55    C58    H58     108.340    3.000
+ VAG      C55    C58    O59     109.470    3.000
+ VAG      C55    C58    C60     109.470    3.000
+ VAG      H58    C58    O59     109.470    3.000
+ VAG      H58    C58    C60     109.470    3.000
+ VAG      O59    C58    C60     109.470    3.000
+ VAG      C58    O59    HO9     109.470    3.000
+ VAG      C58    C60    C62     120.000    3.000
+ VAG      C58    C60    C61     120.000    3.000
+ VAG      C62    C60    C61     120.000    3.000
+ VAG      C60    C62    H62     120.000    3.000
+ VAG      C60    C62    C64     120.000    3.000
+ VAG      H62    C62    C64     120.000    3.000
+ VAG      C62    C64    CL6     120.000    3.000
+ VAG      C62    C64    C65     120.000    3.000
+ VAG      CL6    C64    C65     120.000    3.000
+ VAG      C64    C65    C63     120.000    3.000
+ VAG      C64    C65    O66     120.000    3.000
+ VAG      C63    C65    O66     120.000    3.000
+ VAG      C65    C63    H63     120.000    3.000
+ VAG      C65    C63    C61     120.000    3.000
+ VAG      H63    C63    C61     120.000    3.000
+ VAG      C63    C61    H61     120.000    3.000
+ VAG      C63    C61    C60     120.000    3.000
+ VAG      H61    C61    C60     120.000    3.000
+ VAG      C65    O66    C39     120.000    3.000
+ VAG      O66    C39    C37     120.000    3.000
+ VAG      O66    C39    C41     120.000    3.000
+ VAG      C37    C39    C41     120.000    3.000
+ VAG      C39    C37    H37     120.000    3.000
+ VAG      C39    C37    C36     120.000    3.000
+ VAG      H37    C37    C36     120.000    3.000
+ VAG      C37    C36    C33     120.000    3.000
+ VAG      C37    C36    C38     120.000    3.000
+ VAG      C33    C36    C38     120.000    3.000
+ VAG      C39    C41    O42     120.000    3.000
+ VAG      C39    C41    C40     120.000    3.000
+ VAG      O42    C41    C40     120.000    3.000
+ VAG      C41    O42    H42     109.470    3.000
+ VAG      C41    C40    C38     120.000    3.000
+ VAG      C41    C40    O22     120.000    3.000
+ VAG      C38    C40    O22     120.000    3.000
+ VAG      C40    C38    H38     120.000    3.000
+ VAG      C40    C38    C36     120.000    3.000
+ VAG      H38    C38    C36     120.000    3.000
+ VAG      C40    O22    C21     120.000    3.000
+ VAG      O22    C21    C19     120.000    3.000
+ VAG      O22    C21    C20     120.000    3.000
+ VAG      C19    C21    C20     120.000    3.000
+ VAG      C21    C19    CL2     120.000    3.000
+ VAG      C21    C19    C17     120.000    3.000
+ VAG      CL2    C19    C17     120.000    3.000
+ VAG      C19    C17    H17     120.000    3.000
+ VAG      C19    C17    C16     120.000    3.000
+ VAG      H17    C17    C16     120.000    3.000
+ VAG      C21    C20    H20     120.000    3.000
+ VAG      C21    C20    C18     120.000    3.000
+ VAG      H20    C20    C18     120.000    3.000
+ VAG      C20    C18    H18     120.000    3.000
+ VAG      C20    C18    C16     120.000    3.000
+ VAG      H18    C18    C16     120.000    3.000
+ VAG      C18    C16    C14     120.000    3.000
+ VAG      C18    C16    C17     120.000    3.000
+ VAG      C14    C16    C17     120.000    3.000
+ VAG      C16    C14    H14     109.470    3.000
+ VAG      C16    C14    O15     109.470    3.000
+ VAG      C16    C14    C11     109.470    3.000
+ VAG      H14    C14    O15     109.470    3.000
+ VAG      H14    C14    C11     108.340    3.000
+ VAG      O15    C14    C11     109.470    3.000
+ VAG      C14    O15    HO5     109.470    3.000
+ VAG      C55    N54    HN5     118.500    3.000
+ VAG      C55    N54    C45     121.500    3.000
+ VAG      HN5    N54    C45     120.000    3.000
+ VAG      N54    C45    O46     123.000    3.000
+ VAG      N54    C45    C44     116.500    3.000
+ VAG      O46    C45    C44     120.500    3.000
+ VAG      C45    C44    H44     108.810    3.000
+ VAG      C45    C44    N43     111.600    3.000
+ VAG      C45    C44    C47     109.500    3.000
+ VAG      H44    C44    N43     108.550    3.000
+ VAG      H44    C44    C47     109.470    3.000
+ VAG      N43    C44    C47     109.470    3.000
+ VAG      C44    N43    HN43    118.500    3.000
+ VAG      C44    N43    C34     121.500    3.000
+ VAG      HN43   N43    C34     120.000    3.000
+ VAG      N43    C34    O35     123.000    3.000
+ VAG      N43    C34    C33     116.500    3.000
+ VAG      O35    C34    C33     120.500    3.000
+ VAG      C34    C33    H33     108.810    3.000
+ VAG      C34    C33    N32     111.600    3.000
+ VAG      C34    C33    C36     109.500    3.000
+ VAG      H33    C33    N32     108.550    3.000
+ VAG      H33    C33    C36     109.470    3.000
+ VAG      N32    C33    C36     109.470    3.000
+ VAG      C33    N32    HN3     118.500    3.000
+ VAG      C33    N32    C26     121.500    3.000
+ VAG      HN3    N32    C26     120.000    3.000
+ VAG      N32    C26    O27     123.000    3.000
+ VAG      N32    C26    C25     116.500    3.000
+ VAG      O27    C26    C25     120.500    3.000
+ VAG      C26    C25    H25     108.810    3.000
+ VAG      C26    C25    C28     109.470    3.000
+ VAG      C26    C25    N24     111.600    3.000
+ VAG      H25    C25    C28     108.340    3.000
+ VAG      H25    C25    N24     108.550    3.000
+ VAG      C28    C25    N24     110.000    3.000
+ VAG      C25    C28    H281    109.470    3.000
+ VAG      C25    C28    H282    109.470    3.000
+ VAG      C25    C28    C29     109.470    3.000
+ VAG      H281   C28    H282    107.900    3.000
+ VAG      H281   C28    C29     109.470    3.000
+ VAG      H282   C28    C29     109.470    3.000
+ VAG      C28    C29    N31     116.500    3.000
+ VAG      C28    C29    O30     120.500    3.000
+ VAG      N31    C29    O30     123.000    3.000
+ VAG      C29    N31    HN12    120.000    3.000
+ VAG      C29    N31    HN11    120.000    3.000
+ VAG      HN12   N31    HN11    120.000    3.000
+ VAG      C25    N24    HN4     118.500    3.000
+ VAG      C25    N24    C12     121.500    3.000
+ VAG      HN4    N24    C12     120.000    3.000
+ VAG      N24    C12    O13     123.000    3.000
+ VAG      N24    C12    C11     116.500    3.000
+ VAG      O13    C12    C11     120.500    3.000
+ VAG      C12    C11    H11     108.810    3.000
+ VAG      C12    C11    N10     111.600    3.000
+ VAG      C12    C11    C14     109.470    3.000
+ VAG      H11    C11    N10     108.550    3.000
+ VAG      H11    C11    C14     108.340    3.000
+ VAG      N10    C11    C14     110.000    3.000
+ VAG      C11    N10    HN0     118.500    3.000
+ VAG      C11    N10    C4      121.500    3.000
+ VAG      HN0    N10    C4      120.000    3.000
+ VAG      N10    C4     O5      123.000    3.000
+ VAG      N10    C4     C3      116.500    3.000
+ VAG      O5     C4     C3      120.500    3.000
+ VAG      C4     C3     H3      108.810    3.000
+ VAG      C4     C3     N2      109.500    3.000
+ VAG      C4     C3     C6      109.470    3.000
+ VAG      H3     C3     N2      109.500    3.000
+ VAG      H3     C3     C6      108.340    3.000
+ VAG      N2     C3     C6      109.500    3.000
+ VAG      C3     N2     HN21    109.500    3.000
+ VAG      C3     N2     HN22    109.500    3.000
+ VAG      C3     N2     C1      109.500    3.000
+ VAG      HN21   N2     HN22    109.500    3.000
+ VAG      HN21   N2     C1      109.500    3.000
+ VAG      HN22   N2     C1      109.500    3.000
+ VAG      N2     C1     H13     109.500    3.000
+ VAG      N2     C1     H12     109.500    3.000
+ VAG      N2     C1     H11A    109.500    3.000
+ VAG      H13    C1     H12     109.470    3.000
+ VAG      H13    C1     H11A    109.470    3.000
+ VAG      H12    C1     H11A    109.470    3.000
+ VAG      C3     C6     H61A    109.470    3.000
+ VAG      C3     C6     H62A    109.470    3.000
+ VAG      C3     C6     C7      111.000    3.000
+ VAG      H61A   C6     H62A    107.900    3.000
+ VAG      H61A   C6     C7      109.470    3.000
+ VAG      H62A   C6     C7      109.470    3.000
+ VAG      C6     C7     H7      108.340    3.000
+ VAG      C6     C7     C9      111.000    3.000
+ VAG      C6     C7     C8      111.000    3.000
+ VAG      H7     C7     C9      108.340    3.000
+ VAG      H7     C7     C8      108.340    3.000
+ VAG      C9     C7     C8      111.000    3.000
+ VAG      C7     C9     H93     109.470    3.000
+ VAG      C7     C9     H92     109.470    3.000
+ VAG      C7     C9     H91     109.470    3.000
+ VAG      H93    C9     H92     109.470    3.000
+ VAG      H93    C9     H91     109.470    3.000
+ VAG      H92    C9     H91     109.470    3.000
+ VAG      C7     C8     H83     109.470    3.000
+ VAG      C7     C8     H82     109.470    3.000
+ VAG      C7     C8     H81     109.470    3.000
+ VAG      H83    C8     H82     109.470    3.000
+ VAG      H83    C8     H81     109.470    3.000
+ VAG      H82    C8     H81     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VAG      var_1    O80    C70    C69    N68      174.612   20.000   3
+ VAG      var_2    C70    C69    C72    C74      121.929   20.000   1
+ VAG      CONST_1  C69    C72    C73    C75      180.000    0.000   0
+ VAG      CONST_2  C69    C72    C74    C77      180.000    0.000   0
+ VAG      CONST_3  C72    C74    C77    C76        0.000    0.000   0
+ VAG      var_3    C74    C77    O78    HO8       -9.578   20.000   1
+ VAG      CONST_4  C74    C77    C76    C75        0.000    0.000   0
+ VAG      CONST_5  C77    C76    C75    C73        0.000    0.000   0
+ VAG      var_4    C76    C75    O79    HO7      107.685   20.000   1
+ VAG      CONST_6  C76    C75    C73    C50      180.000    0.000   0
+ VAG      CONST_7  C75    C73    C50    C52        0.000    0.000   0
+ VAG      CONST_8  C73    C50    C48    C47      180.000    0.000   0
+ VAG      CONST_9  C73    C50    C52    C51      180.000    0.000   0
+ VAG      var_5    C50    C52    O53    HO3       46.133   20.000   1
+ VAG      CONST_10 C50    C52    C51    C49        0.000    0.000   0
+ VAG      CONST_11 C52    C51    C49    C47        0.000    0.000   0
+ VAG      CONST_12 C51    C49    C47    C44      180.000    0.000   0
+ VAG      CONST_13 C49    C47    C48    C50        0.000    0.000   0
+ VAG      var_6    C70    C69    N68    C56      -63.961   20.000   3
+ VAG      CONST_14 C69    N68    C56    C55      180.000    0.000   0
+ VAG      var_7    N68    C56    C55    N54      -35.242   20.000   3
+ VAG      var_8    C56    C55    C58    C60     -173.537   20.000   3
+ VAG      var_9    C55    C58    O59    HO9       86.393   20.000   1
+ VAG      var_10   C55    C58    C60    C62      -51.916   20.000   1
+ VAG      CONST_15 C58    C60    C61    C63      180.000    0.000   0
+ VAG      CONST_16 C58    C60    C62    C64      180.000    0.000   0
+ VAG      CONST_17 C60    C62    C64    C65        0.000    0.000   0
+ VAG      CONST_18 C62    C64    C65    O66      180.000    0.000   0
+ VAG      CONST_19 C64    C65    C63    C61        0.000    0.000   0
+ VAG      CONST_20 C65    C63    C61    C60        0.000    0.000   0
+ VAG      var_11   C64    C65    O66    C39      110.925   20.000   1
+ VAG      var_12   C65    O66    C39    C41      148.569   20.000   1
+ VAG      CONST_21 O66    C39    C37    C36      180.000    0.000   0
+ VAG      CONST_22 C39    C37    C36    C33      180.000    0.000   0
+ VAG      CONST_23 C37    C36    C38    C40        0.000    0.000   0
+ VAG      CONST_24 O66    C39    C41    C40      180.000    0.000   0
+ VAG      var_13   C39    C41    O42    H42      -83.538   20.000   1
+ VAG      CONST_25 C39    C41    C40    O22      180.000    0.000   0
+ VAG      CONST_26 C41    C40    C38    C36        0.000    0.000   0
+ VAG      var_14   C41    C40    O22    C21      168.273   20.000   1
+ VAG      var_15   C40    O22    C21    C20      -71.949   20.000   1
+ VAG      CONST_27 O22    C21    C19    C17      180.000    0.000   0
+ VAG      CONST_28 C21    C19    C17    C16        0.000    0.000   0
+ VAG      CONST_29 O22    C21    C20    C18      180.000    0.000   0
+ VAG      CONST_30 C21    C20    C18    C16        0.000    0.000   0
+ VAG      CONST_31 C20    C18    C16    C14      180.000    0.000   0
+ VAG      CONST_32 C18    C16    C17    C19        0.000    0.000   0
+ VAG      var_16   C18    C16    C14    O15      -18.198   20.000   1
+ VAG      var_17   C16    C14    O15    HO5     -117.936   20.000   1
+ VAG      var_18   C56    C55    N54    C45      -82.796   20.000   3
+ VAG      CONST_33 C55    N54    C45    C44      180.000    0.000   0
+ VAG      var_19   N54    C45    C44    N43       46.310   20.000   3
+ VAG      var_20   C45    C44    C47    C49     -102.974   20.000   1
+ VAG      var_21   C45    C44    N43    C34       99.159   20.000   3
+ VAG      CONST_34 C44    N43    C34    C33      180.000    0.000   0
+ VAG      var_22   N43    C34    C33    N32     -125.769   20.000   3
+ VAG      var_23   C34    C33    C36    C37      -29.255   20.000   1
+ VAG      var_24   C34    C33    N32    C26      127.449   20.000   3
+ VAG      CONST_35 C33    N32    C26    C25      180.000    0.000   0
+ VAG      var_25   N32    C26    C25    N24     -120.576   20.000   3
+ VAG      var_26   C26    C25    C28    C29       60.773   20.000   3
+ VAG      var_27   C25    C28    C29    O30       28.994   20.000   3
+ VAG      CONST_36 C28    C29    N31    HN11       0.000    0.000   0
+ VAG      var_28   C26    C25    N24    C12     -161.291   20.000   3
+ VAG      CONST_37 C25    N24    C12    C11      180.000    0.000   0
+ VAG      var_29   N24    C12    C11    N10     -152.703   20.000   3
+ VAG      var_30   C12    C11    C14    C16      -73.082   20.000   3
+ VAG      var_31   C12    C11    N10    C4       145.281   20.000   3
+ VAG      CONST_38 C11    N10    C4     C3       180.000    0.000   0
+ VAG      var_32   N10    C4     C3     C6        93.670   20.000   3
+ VAG      var_33   C4     C3     N2     C1        62.423   20.000   1
+ VAG      var_34   C3     N2     C1     H11A     -62.416   20.000   1
+ VAG      var_35   C4     C3     C6     C7       -57.181   20.000   3
+ VAG      var_36   C3     C6     C7     C8        57.083   20.000   3
+ VAG      var_37   C6     C7     C9     H91      -58.137   20.000   3
+ VAG      var_38   C6     C7     C8     H81     -175.629   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ VAG      chir_01  C3     N2     C6     C4        positiv
+ VAG      chir_02  C7     C6     C8     C9        positiv
+ VAG      chir_03  C11    N10    C14    C12       positiv
+ VAG      chir_04  C14    C11    O15    C16       positiv
+ VAG      chir_05  C25    N24    C28    C26       negativ
+ VAG      chir_06  C33    N32    C36    C34       positiv
+ VAG      chir_07  C44    N43    C47    C45       positiv
+ VAG      chir_08  C55    N54    C58    C56       negativ
+ VAG      chir_09  C58    C55    O59    C60       positiv
+ VAG      chir_10  C69    N68    C72    C70       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ VAG      plan-1    C4        0.020
+ VAG      plan-1    C3        0.020
+ VAG      plan-1    O5        0.020
+ VAG      plan-1    N10       0.020
+ VAG      plan-1    HN0       0.020
+ VAG      plan-2    N10       0.020
+ VAG      plan-2    C4        0.020
+ VAG      plan-2    C11       0.020
+ VAG      plan-2    HN0       0.020
+ VAG      plan-3    C16       0.020
+ VAG      plan-3    C14       0.020
+ VAG      plan-3    C17       0.020
+ VAG      plan-3    C18       0.020
+ VAG      plan-3    C19       0.020
+ VAG      plan-3    C21       0.020
+ VAG      plan-3    C20       0.020
+ VAG      plan-3    H17       0.020
+ VAG      plan-3    CL2       0.020
+ VAG      plan-3    O22       0.020
+ VAG      plan-3    H20       0.020
+ VAG      plan-3    H18       0.020
+ VAG      plan-4    C12       0.020
+ VAG      plan-4    C11       0.020
+ VAG      plan-4    O13       0.020
+ VAG      plan-4    N24       0.020
+ VAG      plan-4    HN4       0.020
+ VAG      plan-5    N24       0.020
+ VAG      plan-5    C12       0.020
+ VAG      plan-5    C25       0.020
+ VAG      plan-5    HN4       0.020
+ VAG      plan-6    C29       0.020
+ VAG      plan-6    C28       0.020
+ VAG      plan-6    O30       0.020
+ VAG      plan-6    N31       0.020
+ VAG      plan-6    HN12      0.020
+ VAG      plan-6    HN11      0.020
+ VAG      plan-7    N31       0.020
+ VAG      plan-7    C29       0.020
+ VAG      plan-7    HN11      0.020
+ VAG      plan-7    HN12      0.020
+ VAG      plan-8    C26       0.020
+ VAG      plan-8    C25       0.020
+ VAG      plan-8    O27       0.020
+ VAG      plan-8    N32       0.020
+ VAG      plan-8    HN3       0.020
+ VAG      plan-9    N32       0.020
+ VAG      plan-9    C26       0.020
+ VAG      plan-9    C33       0.020
+ VAG      plan-9    HN3       0.020
+ VAG      plan-10   C36       0.020
+ VAG      plan-10   C33       0.020
+ VAG      plan-10   C38       0.020
+ VAG      plan-10   C37       0.020
+ VAG      plan-10   C40       0.020
+ VAG      plan-10   C41       0.020
+ VAG      plan-10   C39       0.020
+ VAG      plan-10   H38       0.020
+ VAG      plan-10   O22       0.020
+ VAG      plan-10   O42       0.020
+ VAG      plan-10   O66       0.020
+ VAG      plan-10   H37       0.020
+ VAG      plan-11   C34       0.020
+ VAG      plan-11   C33       0.020
+ VAG      plan-11   O35       0.020
+ VAG      plan-11   N43       0.020
+ VAG      plan-11   HN43      0.020
+ VAG      plan-12   N43       0.020
+ VAG      plan-12   C34       0.020
+ VAG      plan-12   C44       0.020
+ VAG      plan-12   HN43      0.020
+ VAG      plan-13   C47       0.020
+ VAG      plan-13   C44       0.020
+ VAG      plan-13   C48       0.020
+ VAG      plan-13   C49       0.020
+ VAG      plan-13   C50       0.020
+ VAG      plan-13   C52       0.020
+ VAG      plan-13   C51       0.020
+ VAG      plan-13   H48       0.020
+ VAG      plan-13   C73       0.020
+ VAG      plan-13   O53       0.020
+ VAG      plan-13   H51       0.020
+ VAG      plan-13   H49       0.020
+ VAG      plan-14   C45       0.020
+ VAG      plan-14   C44       0.020
+ VAG      plan-14   O46       0.020
+ VAG      plan-14   N54       0.020
+ VAG      plan-14   HN5       0.020
+ VAG      plan-15   N54       0.020
+ VAG      plan-15   C45       0.020
+ VAG      plan-15   C55       0.020
+ VAG      plan-15   HN5       0.020
+ VAG      plan-16   C60       0.020
+ VAG      plan-16   C58       0.020
+ VAG      plan-16   C61       0.020
+ VAG      plan-16   C62       0.020
+ VAG      plan-16   C63       0.020
+ VAG      plan-16   C65       0.020
+ VAG      plan-16   C64       0.020
+ VAG      plan-16   H61       0.020
+ VAG      plan-16   H63       0.020
+ VAG      plan-16   O66       0.020
+ VAG      plan-16   CL6       0.020
+ VAG      plan-16   H62       0.020
+ VAG      plan-17   C56       0.020
+ VAG      plan-17   C55       0.020
+ VAG      plan-17   O57       0.020
+ VAG      plan-17   N68       0.020
+ VAG      plan-17   HN8       0.020
+ VAG      plan-18   N68       0.020
+ VAG      plan-18   C56       0.020
+ VAG      plan-18   C69       0.020
+ VAG      plan-18   HN8       0.020
+ VAG      plan-19   C72       0.020
+ VAG      plan-19   C69       0.020
+ VAG      plan-19   C73       0.020
+ VAG      plan-19   C74       0.020
+ VAG      plan-19   C75       0.020
+ VAG      plan-19   C76       0.020
+ VAG      plan-19   C77       0.020
+ VAG      plan-19   C50       0.020
+ VAG      plan-19   O79       0.020
+ VAG      plan-19   H76       0.020
+ VAG      plan-19   O78       0.020
+ VAG      plan-19   H74       0.020
+ VAG      plan-20   C70       0.020
+ VAG      plan-20   C69       0.020
+ VAG      plan-20   O71       0.020
+ VAG      plan-20   O80       0.020
+# ------------------------------------------------------

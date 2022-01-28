@@ -1,0 +1,202 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LEF     LEF     "(4S)-5-FLUORO-L-LEUCINE"     peptide     22     10     .
+#
+data_comp_LEF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LEF     CD1     C       CH2     0       25.895      26.283      17.348
+LEF     CD2     C       CH3     0       24.258      25.173      18.912
+LEF     CG      C       CH1     0       25.590      25.914      18.797
+LEF     CB      C       CH2     0       26.744      25.102      19.411
+LEF     N       N       NT3     1       26.598      26.038      21.696
+LEF     CA      C       CH1     0       26.633      24.775      20.906
+LEF     C       C       C       0       27.822      23.920      21.362
+LEF     O       O       O       0       28.947      24.458      21.351
+LEF     F1      F       F       0       27.010      27.123      17.248
+LEF     OXT     O       OC      -1      27.578      22.748      21.712
+LEF     HD12    H       H       0       25.114      26.747      16.953
+LEF     HD13    H       H       0       26.065      25.459      16.827
+LEF     HD21    H       H       0       24.422      24.229      19.079
+LEF     HD22    H       H       0       23.750      25.270      18.088
+LEF     HD23    H       H       0       23.746      25.546      19.651
+LEF     HG      H       H       0       25.511      26.757      19.306
+LEF     HB3     H       H       0       27.577      25.594      19.270
+LEF     HB2     H       H       0       26.818      24.259      18.921
+LEF     H       H       H       0       26.740      25.863      22.580
+LEF     H2      H       H       0       25.785      26.439      21.611
+LEF     H3      H       H       0       27.243      26.612      21.404
+LEF     HA      H       H       0       25.802      24.276      21.077
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+LEF      N      n/a    CA     START
+LEF      H      N      .      .
+LEF      H2     N      .      .
+LEF      H3     N      .      .
+LEF      CA     N      C      .
+LEF      HA     CA     .      .
+LEF      CB     CA     CG     .
+LEF      HB3    CB     .      .
+LEF      HB2    CB     .      .
+LEF      CG     CB     CD1    .
+LEF      HG     CG     .      .
+LEF      CD2    CG     HD21   .
+LEF      HD23   CD2    .      .
+LEF      HD22   CD2    .      .
+LEF      HD21   CD2    .      .
+LEF      CD1    CG     F1     .
+LEF      HD13   CD1    .      .
+LEF      HD12   CD1    .      .
+LEF      F1     CD1    .      .
+LEF      C      CA     .      END
+LEF      O      C      .      .
+LEF      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LEF       CD1       CG        SINGLE    n         1.521     0.015     1.521     0.015     
+LEF       CD1       F1        SINGLE    n         1.399     0.013     1.399     0.013     
+LEF       CD2       CG        SINGLE    n         1.521     0.015     1.521     0.015     
+LEF       CG        CB        SINGLE    n         1.536     0.010     1.536     0.010     
+LEF       CB        CA        SINGLE    n         1.532     0.010     1.532     0.010     
+LEF       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+LEF       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+LEF       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+LEF       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+LEF       CD1       HD12      SINGLE    n         1.089     0.010     0.990     0.020     
+LEF       CD1       HD13      SINGLE    n         1.089     0.010     0.990     0.020     
+LEF       CD2       HD21      SINGLE    n         1.089     0.010     0.973     0.015     
+LEF       CD2       HD22      SINGLE    n         1.089     0.010     0.973     0.015     
+LEF       CD2       HD23      SINGLE    n         1.089     0.010     0.973     0.015     
+LEF       CG        HG        SINGLE    n         1.089     0.010     0.989     0.016     
+LEF       CB        HB3       SINGLE    n         1.089     0.010     0.978     0.012     
+LEF       CB        HB2       SINGLE    n         1.089     0.010     0.978     0.012     
+LEF       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+LEF       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+LEF       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+LEF       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LEF          CG         CD1          F1     111.806    1.50
+LEF          CG         CD1        HD12     109.552    1.50
+LEF          CG         CD1        HD13     109.552    1.50
+LEF          F1         CD1        HD12     109.076    1.66
+LEF          F1         CD1        HD13     109.076    1.66
+LEF        HD12         CD1        HD13     108.400    1.50
+LEF          CG         CD2        HD21     109.513    1.50
+LEF          CG         CD2        HD22     109.513    1.50
+LEF          CG         CD2        HD23     109.513    1.50
+LEF        HD21         CD2        HD22     109.411    1.50
+LEF        HD21         CD2        HD23     109.411    1.50
+LEF        HD22         CD2        HD23     109.411    1.50
+LEF         CD1          CG         CD2     110.749    1.50
+LEF         CD1          CG          CB     111.043    1.67
+LEF         CD1          CG          HG     107.665    1.50
+LEF         CD2          CG          CB     111.118    1.50
+LEF         CD2          CG          HG     107.863    1.50
+LEF          CB          CG          HG     107.675    1.50
+LEF          CG          CB          CA     115.572    1.50
+LEF          CG          CB         HB3     108.471    1.50
+LEF          CG          CB         HB2     108.471    1.50
+LEF          CA          CB         HB3     108.332    1.50
+LEF          CA          CB         HB2     108.332    1.50
+LEF         HB3          CB         HB2     107.542    1.50
+LEF          CA           N           H     110.062    1.93
+LEF          CA           N          H2     110.062    1.93
+LEF          CA           N          H3     110.062    1.93
+LEF           H           N          H2     109.028    2.41
+LEF           H           N          H3     109.028    2.41
+LEF          H2           N          H3     109.028    2.41
+LEF          CB          CA           N     108.955    1.50
+LEF          CB          CA           C     111.075    1.50
+LEF          CB          CA          HA     109.549    1.50
+LEF           N          CA           C     109.241    1.50
+LEF           N          CA          HA     108.487    1.50
+LEF           C          CA          HA     108.824    1.50
+LEF          CA           C           O     117.124    1.50
+LEF          CA           C         OXT     117.124    1.50
+LEF           O           C         OXT     125.752    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LEF             sp3_sp3_1          F1         CD1          CG         CD2     180.000   10.00     3
+LEF            sp3_sp3_10        HD21         CD2          CG         CD1     180.000   10.00     3
+LEF            sp3_sp3_19          CA          CB          CG         CD1     180.000   10.00     3
+LEF            sp3_sp3_28           N          CA          CB          CG     180.000   10.00     3
+LEF            sp3_sp3_37          CB          CA           N           H     180.000   10.00     3
+LEF             sp2_sp3_1           O           C          CA          CB       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+LEF    chir_1    CG    CD1    CB    CD2    positive
+LEF    chir_2    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LEF    plan-1           C   0.020
+LEF    plan-1          CA   0.020
+LEF    plan-1           O   0.020
+LEF    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LEF SMILES           ACDLabs              10.04 "FCC(CC(N)C(=O)O)C"
+LEF SMILES_CANONICAL CACTVS               3.341 "C[C@H](CF)C[C@H](N)C(O)=O"
+LEF SMILES           CACTVS               3.341 "C[CH](CF)C[CH](N)C(O)=O"
+LEF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@@H](C[C@@H](C(=O)O)N)CF"
+LEF SMILES           "OpenEye OEToolkits" 1.5.0 "CC(CC(C(=O)O)N)CF"
+LEF InChI            InChI                1.03  "InChI=1S/C6H12FNO2/c1-4(3-7)2-5(8)6(9)10/h4-5H,2-3,8H2,1H3,(H,9,10)/t4-,5-/m0/s1"
+LEF InChIKey         InChI                1.03  FHOARJRQRXAPOF-WHFBIAKZSA-N
+LEF ?                acedrg               196         "dictionary generator"
+LEF ?                acedrg_database      11          "data source"
+LEF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LEF ?                refmac5              5.8.0222    "optimization tool"

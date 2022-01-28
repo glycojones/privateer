@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PE9     PE9      PENTAN-1-OL     NON-POLYMER     18     6     .     
+#
+data_comp_PE9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PE9     CAA     C       CH3     0       2.774       -0.027      0.014       
+PE9     CAC     C       CH2     0       1.410       -0.527      -0.399      
+PE9     CAE     C       CH2     0       0.272       0.276       0.175       
+PE9     CAF     C       CH2     0       -1.090      -0.221      -0.242      
+PE9     CAD     C       CH2     0       -2.228      0.586       0.332       
+PE9     OAB     O       OH1     0       -3.478      0.158       -0.180      
+PE9     HAA1    H       H       0       3.461       -0.586      -0.388      
+PE9     HAA2    H       H       0       2.854       -0.064      0.983       
+PE9     HAA3    H       H       0       2.888       0.891       -0.285      
+PE9     HAC1    H       H       0       1.313       -1.461      -0.112      
+PE9     HAC2    H       H       0       1.348       -0.508      -1.379      
+PE9     HAE1    H       H       0       0.371       1.210       -0.110      
+PE9     HAE2    H       H       0       0.334       0.254       1.154       
+PE9     HAF1    H       H       0       -1.190      -1.153      0.044       
+PE9     HAF2    H       H       0       -1.152      -0.200      -1.220      
+PE9     HAD1    H       H       0       -2.096      1.533       0.114       
+PE9     HAD2    H       H       0       -2.230      0.495       1.308       
+PE9     HAB     H       H       0       -3.636      -0.621      0.108       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PE9       CAA       CAC       SINGLE    n         1.510     0.020     1.510     0.020     
+PE9       CAC       CAE       SINGLE    n         1.507     0.020     1.507     0.020     
+PE9       CAE       CAF       SINGLE    n         1.509     0.020     1.509     0.020     
+PE9       CAF       CAD       SINGLE    n         1.508     0.020     1.508     0.020     
+PE9       CAD       OAB       SINGLE    n         1.417     0.020     1.417     0.020     
+PE9       CAA       HAA1      SINGLE    n         1.089     0.010     0.973     0.016     
+PE9       CAA       HAA2      SINGLE    n         1.089     0.010     0.973     0.016     
+PE9       CAA       HAA3      SINGLE    n         1.089     0.010     0.973     0.016     
+PE9       CAC       HAC1      SINGLE    n         1.089     0.010     0.982     0.015     
+PE9       CAC       HAC2      SINGLE    n         1.089     0.010     0.982     0.015     
+PE9       CAE       HAE1      SINGLE    n         1.089     0.010     0.981     0.016     
+PE9       CAE       HAE2      SINGLE    n         1.089     0.010     0.981     0.016     
+PE9       CAF       HAF1      SINGLE    n         1.089     0.010     0.980     0.017     
+PE9       CAF       HAF2      SINGLE    n         1.089     0.010     0.980     0.017     
+PE9       CAD       HAD1      SINGLE    n         1.089     0.010     0.981     0.017     
+PE9       CAD       HAD2      SINGLE    n         1.089     0.010     0.981     0.017     
+PE9       OAB       HAB       SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PE9         CAC         CAA        HAA1     109.554    1.50
+PE9         CAC         CAA        HAA2     109.554    1.50
+PE9         CAC         CAA        HAA3     109.554    1.50
+PE9        HAA1         CAA        HAA2     109.380    1.50
+PE9        HAA1         CAA        HAA3     109.380    1.50
+PE9        HAA2         CAA        HAA3     109.380    1.50
+PE9         CAA         CAC         CAE     113.719    3.00
+PE9         CAA         CAC        HAC1     108.918    1.50
+PE9         CAA         CAC        HAC2     108.918    1.50
+PE9         CAE         CAC        HAC1     108.758    1.50
+PE9         CAE         CAC        HAC2     108.758    1.50
+PE9        HAC1         CAC        HAC2     107.763    1.50
+PE9         CAC         CAE         CAF     113.560    1.83
+PE9         CAC         CAE        HAE1     108.653    1.50
+PE9         CAC         CAE        HAE2     108.653    1.50
+PE9         CAF         CAE        HAE1     108.902    1.50
+PE9         CAF         CAE        HAE2     108.902    1.50
+PE9        HAE1         CAE        HAE2     107.646    1.50
+PE9         CAE         CAF         CAD     113.583    1.50
+PE9         CAE         CAF        HAF1     108.944    1.50
+PE9         CAE         CAF        HAF2     108.944    1.50
+PE9         CAD         CAF        HAF1     108.717    1.50
+PE9         CAD         CAF        HAF2     108.717    1.50
+PE9        HAF1         CAF        HAF2     107.788    1.50
+PE9         CAF         CAD         OAB     111.456    3.00
+PE9         CAF         CAD        HAD1     109.269    1.50
+PE9         CAF         CAD        HAD2     109.269    1.50
+PE9         OAB         CAD        HAD1     109.258    1.50
+PE9         OAB         CAD        HAD2     109.258    1.50
+PE9        HAD1         CAD        HAD2     108.120    1.50
+PE9         CAD         OAB         HAB     108.576    2.78
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PE9             sp3_sp3_1        HAA1         CAA         CAC         CAE     180.000   10.00     3
+PE9            sp3_sp3_10         CAA         CAC         CAE         CAF     180.000   10.00     3
+PE9            sp3_sp3_19         CAC         CAE         CAF         CAD     180.000   10.00     3
+PE9            sp3_sp3_28         OAB         CAD         CAF         CAE     180.000   10.00     3
+PE9            sp3_sp3_37         CAF         CAD         OAB         HAB     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PE9 SMILES           ACDLabs              10.04 OCCCCC
+PE9 SMILES_CANONICAL CACTVS               3.341 CCCCCO
+PE9 SMILES           CACTVS               3.341 CCCCCO
+PE9 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCCCCO
+PE9 SMILES           "OpenEye OEToolkits" 1.5.0 CCCCCO
+PE9 InChI            InChI                1.03  InChI=1S/C5H12O/c1-2-3-4-5-6/h6H,2-5H2,1H3
+PE9 InChIKey         InChI                1.03  AMQJEAYHLZJPGS-UHFFFAOYSA-N
+PE9 ?                acedrg               202         "dictionary generator"                  
+PE9 ?                acedrg_database      11          "data source"                           
+PE9 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PE9 ?                refmac5              5.8.0189    "optimization tool"                     

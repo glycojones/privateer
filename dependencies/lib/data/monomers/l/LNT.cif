@@ -1,0 +1,290 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LNT      LNT 'N-[(2S)-2-amino-1,1-dihydroxy-4-meth' non-polymer        38  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LNT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LNT           OXT    O    OC       -0.500      0.000    0.000    0.000
+ LNT           C      C    C         0.000     -1.181   -0.035    0.412
+ LNT           O      O    OC       -0.500     -1.548   -0.949    1.183
+ LNT           C24    C    CH1       0.000     -2.161    1.024   -0.021
+ LNT           H24    H    H         0.000     -2.262    1.005   -1.115
+ LNT           C27    C    CH1       0.000     -1.656    2.399    0.421
+ LNT           H27    H    H         0.000     -0.669    2.587   -0.026
+ LNT           C29    C    CH3       0.000     -2.639    3.477   -0.039
+ LNT           H29B   H    H         0.000     -2.798    3.389   -1.083
+ LNT           H29A   H    H         0.000     -3.561    3.356    0.468
+ LNT           H29    H    H         0.000     -2.241    4.435    0.177
+ LNT           OG1    O    OH1       0.000     -1.548    2.431    1.846
+ LNT           HOG1   H    H         0.000     -1.228    3.300    2.124
+ LNT           N23    N    NH1       0.000     -3.469    0.762    0.595
+ LNT           HN23   H    H         0.000     -3.690    0.938    1.564
+ LNT           C16    C    CT        0.000     -4.411    0.209   -0.387
+ LNT           O21    O    OH1       0.000     -3.895   -1.019   -0.906
+ LNT           HO21   H    H         0.000     -3.776   -1.649   -0.182
+ LNT           O22    O    OH1       0.000     -4.587    1.140   -1.456
+ LNT           HO22   H    H         0.000     -4.937    1.970   -1.105
+ LNT           CA     C    CH1       0.000     -5.759   -0.050    0.290
+ LNT           H15    H    H         0.000     -5.624   -0.766    1.112
+ LNT           N14    N    NH2       0.000     -6.291    1.212    0.822
+ LNT           H2     H    H         0.000     -7.153    1.598    0.457
+ LNT           H      H    H         0.000     -5.798    1.704    1.557
+ LNT           C17    C    CH2       0.000     -6.741   -0.627   -0.733
+ LNT           H17    H    H         0.000     -6.305   -1.516   -1.193
+ LNT           H17A   H    H         0.000     -6.942    0.120   -1.504
+ LNT           C18    C    CH1       0.000     -8.047   -1.002   -0.031
+ LNT           H18    H    H         0.000     -8.438   -0.127    0.508
+ LNT           C20    C    CH3       0.000     -7.785   -2.136    0.962
+ LNT           H20B   H    H         0.000     -8.689   -2.397    1.449
+ LNT           H20A   H    H         0.000     -7.408   -2.980    0.445
+ LNT           H20    H    H         0.000     -7.075   -1.820    1.683
+ LNT           C19    C    CH3       0.000     -9.071   -1.460   -1.070
+ LNT           H19B   H    H         0.000     -9.976   -1.720   -0.585
+ LNT           H19A   H    H         0.000     -9.253   -0.675   -1.758
+ LNT           H19    H    H         0.000     -8.696   -2.304   -1.590
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LNT      OXT    n/a    C      START
+ LNT      C      OXT    C24    .
+ LNT      O      C      .      .
+ LNT      C24    C      N23    .
+ LNT      H24    C24    .      .
+ LNT      C27    C24    OG1    .
+ LNT      H27    C27    .      .
+ LNT      C29    C27    H29    .
+ LNT      H29B   C29    .      .
+ LNT      H29A   C29    .      .
+ LNT      H29    C29    .      .
+ LNT      OG1    C27    HOG1   .
+ LNT      HOG1   OG1    .      .
+ LNT      N23    C24    C16    .
+ LNT      HN23   N23    .      .
+ LNT      C16    N23    CA     .
+ LNT      O21    C16    HO21   .
+ LNT      HO21   O21    .      .
+ LNT      O22    C16    HO22   .
+ LNT      HO22   O22    .      .
+ LNT      CA     C16    C17    .
+ LNT      H15    CA     .      .
+ LNT      N14    CA     H      .
+ LNT      H2     N14    .      .
+ LNT      H      N14    .      .
+ LNT      C17    CA     C18    .
+ LNT      H17    C17    .      .
+ LNT      H17A   C17    .      .
+ LNT      C18    C17    C19    .
+ LNT      H18    C18    .      .
+ LNT      C20    C18    H20    .
+ LNT      H20B   C20    .      .
+ LNT      H20A   C20    .      .
+ LNT      H20    C20    .      .
+ LNT      C19    C18    H19    .
+ LNT      H19B   C19    .      .
+ LNT      H19A   C19    .      .
+ LNT      H19    C19    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LNT       N14       CA        single    1.450     0.020     1.450     0.020     
+LNT       H         N14       single    1.036     0.016     0.914     0.007     
+LNT       H2        N14       single    1.036     0.016     0.914     0.007     
+LNT       C17       CA        single    1.524     0.020     1.524     0.020     
+LNT       H15       CA        single    1.089     0.010     0.989     0.005     
+LNT       CA        C16       single    1.524     0.020     1.524     0.020     
+LNT       O22       C16       single    1.432     0.020     1.432     0.020     
+LNT       O21       C16       single    1.432     0.020     1.432     0.020     
+LNT       C18       C17       single    1.524     0.020     1.524     0.020     
+LNT       H17       C17       single    1.089     0.010     0.989     0.005     
+LNT       H17A      C17       single    1.089     0.010     0.989     0.005     
+LNT       C20       C18       single    1.524     0.020     1.524     0.020     
+LNT       H18       C18       single    1.089     0.010     0.989     0.005     
+LNT       C19       C18       single    1.524     0.020     1.524     0.020     
+LNT       H19       C19       single    1.089     0.010     0.989     0.005     
+LNT       H19A      C19       single    1.089     0.010     0.989     0.005     
+LNT       H19B      C19       single    1.089     0.010     0.989     0.005     
+LNT       H20       C20       single    1.089     0.010     0.989     0.005     
+LNT       H20A      C20       single    1.089     0.010     0.989     0.005     
+LNT       H20B      C20       single    1.089     0.010     0.989     0.005     
+LNT       HO21      O21       single    0.970     0.012     0.839     0.014     
+LNT       HO22      O22       single    0.970     0.012     0.839     0.014     
+LNT       C16       N23       single    1.450     0.020     1.450     0.020     
+LNT       HN23      N23       single    1.036     0.016     0.914     0.007     
+LNT       N23       C24       single    1.450     0.020     1.450     0.020     
+LNT       C24       C         single    1.500     0.020     1.500     0.020     
+LNT       H24       C24       single    1.089     0.010     0.989     0.005     
+LNT       O         C         deloc     1.250     0.020     1.250     0.020     
+LNT       C         OXT       deloc     1.250     0.020     1.250     0.020     
+LNT       C27       C24       single    1.524     0.020     1.524     0.020     
+LNT       H27       C27       single    1.089     0.010     0.989     0.005     
+LNT       OG1       C27       single    1.432     0.020     1.432     0.020     
+LNT       HOG1      OG1       single    0.970     0.012     0.839     0.014     
+LNT       C29       C27       single    1.524     0.020     1.524     0.020     
+LNT       H29       C29       single    1.089     0.010     0.989     0.005     
+LNT       H29A      C29       single    1.089     0.010     0.989     0.005     
+LNT       H29B      C29       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LNT      OXT    C      O       123.000    3.000
+ LNT      OXT    C      C24     118.500    3.000
+ LNT      O      C      C24     118.500    3.000
+ LNT      C      C24    H24     108.810    3.000
+ LNT      C      C24    C27     109.470    3.000
+ LNT      C      C24    N23     111.600    3.000
+ LNT      H24    C24    C27     108.340    3.000
+ LNT      H24    C24    N23     108.550    3.000
+ LNT      C27    C24    N23     110.000    3.000
+ LNT      C24    C27    H27     108.340    3.000
+ LNT      C24    C27    C29     111.000    3.000
+ LNT      C24    C27    OG1     109.470    3.000
+ LNT      H27    C27    C29     108.340    3.000
+ LNT      H27    C27    OG1     109.470    3.000
+ LNT      C29    C27    OG1     109.470    3.000
+ LNT      C27    C29    H29B    109.470    3.000
+ LNT      C27    C29    H29A    109.470    3.000
+ LNT      C27    C29    H29     109.470    3.000
+ LNT      H29B   C29    H29A    109.470    3.000
+ LNT      H29B   C29    H29     109.470    3.000
+ LNT      H29A   C29    H29     109.470    3.000
+ LNT      C27    OG1    HOG1    109.470    3.000
+ LNT      C24    N23    HN23    118.500    3.000
+ LNT      C24    N23    C16     120.000    3.000
+ LNT      HN23   N23    C16     118.500    3.000
+ LNT      N23    C16    O21     109.500    3.000
+ LNT      N23    C16    O22     109.500    3.000
+ LNT      N23    C16    CA      110.000    3.000
+ LNT      O21    C16    O22     109.470    3.000
+ LNT      O21    C16    CA      109.470    3.000
+ LNT      O22    C16    CA      109.470    3.000
+ LNT      C16    O21    HO21    109.470    3.000
+ LNT      C16    O22    HO22    109.470    3.000
+ LNT      C16    CA     H15     108.340    3.000
+ LNT      C16    CA     N14     109.500    3.000
+ LNT      C16    CA     C17     111.000    3.000
+ LNT      H15    CA     N14     109.470    3.000
+ LNT      H15    CA     C17     108.340    3.000
+ LNT      N14    CA     C17     109.470    3.000
+ LNT      CA     N14    H2      120.000    3.000
+ LNT      CA     N14    H       120.000    3.000
+ LNT      H2     N14    H       120.000    3.000
+ LNT      CA     C17    H17     109.470    3.000
+ LNT      CA     C17    H17A    109.470    3.000
+ LNT      CA     C17    C18     111.000    3.000
+ LNT      H17    C17    H17A    107.900    3.000
+ LNT      H17    C17    C18     109.470    3.000
+ LNT      H17A   C17    C18     109.470    3.000
+ LNT      C17    C18    H18     108.340    3.000
+ LNT      C17    C18    C20     111.000    3.000
+ LNT      C17    C18    C19     111.000    3.000
+ LNT      H18    C18    C20     108.340    3.000
+ LNT      H18    C18    C19     108.340    3.000
+ LNT      C20    C18    C19     111.000    3.000
+ LNT      C18    C20    H20B    109.470    3.000
+ LNT      C18    C20    H20A    109.470    3.000
+ LNT      C18    C20    H20     109.470    3.000
+ LNT      H20B   C20    H20A    109.470    3.000
+ LNT      H20B   C20    H20     109.470    3.000
+ LNT      H20A   C20    H20     109.470    3.000
+ LNT      C18    C19    H19B    109.470    3.000
+ LNT      C18    C19    H19A    109.470    3.000
+ LNT      C18    C19    H19     109.470    3.000
+ LNT      H19B   C19    H19A    109.470    3.000
+ LNT      H19B   C19    H19     109.470    3.000
+ LNT      H19A   C19    H19     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LNT      var_1    OXT    C      C24    N23      179.995   20.000   3
+ LNT      var_2    C      C24    C27    OG1      -61.018   20.000   3
+ LNT      var_3    C24    C27    C29    H29     -174.152   20.000   3
+ LNT      var_4    C24    C27    OG1    HOG1     179.992   20.000   1
+ LNT      var_5    C      C24    N23    C16     -104.850   20.000   3
+ LNT      var_6    C24    N23    C16    CA      -179.968   20.000   1
+ LNT      var_7    N23    C16    O21    HO21      59.945   20.000   1
+ LNT      var_8    N23    C16    O22    HO22     -59.967   20.000   1
+ LNT      var_9    N23    C16    CA     C17     -179.971   20.000   1
+ LNT      var_10   C16    CA     N14    H        -63.923   20.000   1
+ LNT      var_11   C16    CA     C17    C18      174.972   20.000   3
+ LNT      var_12   CA     C17    C18    C19      174.947   20.000   3
+ LNT      var_13   C17    C18    C20    H20       59.985   20.000   3
+ LNT      var_14   C17    C18    C19    H19       60.030   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LNT      chir_01  CA     N14    C16    C17       positiv
+ LNT      chir_02  C16    CA     O21    O22       negativ
+ LNT      chir_03  C18    C17    C19    C20       negativ
+ LNT      chir_04  C24    N23    C      C27       positiv
+ LNT      chir_05  C27    C24    OG1    C29       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LNT      plan-1    N14       0.020
+ LNT      plan-1    CA        0.020
+ LNT      plan-1    H         0.020
+ LNT      plan-1    H2        0.020
+ LNT      plan-2    N23       0.020
+ LNT      plan-2    C16       0.020
+ LNT      plan-2    C24       0.020
+ LNT      plan-2    HN23      0.020
+ LNT      plan-3    C         0.020
+ LNT      plan-3    C24       0.020
+ LNT      plan-3    O         0.020
+ LNT      plan-3    OXT       0.020
+# ------------------------------------------------------

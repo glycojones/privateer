@@ -1,0 +1,103 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+E1H     E1H      ETHANIMINE     NON-POLYMER     8     3     .     
+#
+data_comp_E1H
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+E1H     N1      N       NH1     0       1.477       26.924      34.171      
+E1H     CA1     C       C1      0       0.641       25.968      33.947      
+E1H     CB1     C       CH3     0       -0.718      25.971      34.552      
+E1H     HN11    H       H       0       2.257       26.808      33.752      
+E1H     HA12    H       H       0       0.914       25.265      33.388      
+E1H     HB11    H       H       0       -1.386      25.969      33.848      
+E1H     HB12    H       H       0       -0.827      26.766      35.100      
+E1H     HB13    H       H       0       -0.828      25.180      35.105      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+E1H       N1        CA1       DOUBLE    n         1.288     0.020     1.288     0.020     
+E1H       CA1       CB1       SINGLE    n         1.487     0.017     1.487     0.017     
+E1H       N1        HN11      SINGLE    n         1.016     0.010     0.892     0.020     
+E1H       CA1       HA12      SINGLE    n         1.082     0.013     0.938     0.013     
+E1H       CB1       HB11      SINGLE    n         1.089     0.010     0.971     0.014     
+E1H       CB1       HB12      SINGLE    n         1.089     0.010     0.971     0.014     
+E1H       CB1       HB13      SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+E1H         CA1          N1        HN11     112.238    3.00
+E1H          N1         CA1         CB1     121.143    3.00
+E1H          N1         CA1        HA12     117.961    1.50
+E1H         CB1         CA1        HA12     120.896    3.00
+E1H         CA1         CB1        HB11     109.452    1.50
+E1H         CA1         CB1        HB12     109.452    1.50
+E1H         CA1         CB1        HB13     109.452    1.50
+E1H        HB11         CB1        HB12     109.476    1.50
+E1H        HB11         CB1        HB13     109.476    1.50
+E1H        HB12         CB1        HB13     109.476    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+E1H             sp2_sp2_1         CB1         CA1          N1        HN11     180.000   10.00     2
+E1H             sp2_sp3_1          N1         CA1         CB1        HB11       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+E1H    plan-1         CA1   0.020
+E1H    plan-1         CB1   0.020
+E1H    plan-1        HA12   0.020
+E1H    plan-1          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+E1H SMILES           ACDLabs              10.04 "[N@H]=CC"
+E1H SMILES_CANONICAL CACTVS               3.341 CC=N
+E1H SMILES           CACTVS               3.341 CC=N
+E1H SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[H]/N=C\C"
+E1H SMILES           "OpenEye OEToolkits" 1.5.0 "[H]N=CC"
+E1H InChI            InChI                1.03  InChI=1S/C2H5N/c1-2-3/h2-3H,1H3/b3-2-
+E1H InChIKey         InChI                1.03  MPAYEWNVIPXRDP-IHWYPQMZSA-N
+E1H ?                acedrg               202         "dictionary generator"                  
+E1H ?                acedrg_database      11          "data source"                           
+E1H ?                rdkit                2017.03.2   "Chemoinformatics tool"
+E1H ?                refmac5              5.8.0189    "optimization tool"                     

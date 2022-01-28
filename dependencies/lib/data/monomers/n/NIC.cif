@@ -1,0 +1,163 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NIC     NIC      "NITROISOCITRIC ACID"     NON-POLYMER     18     13     .     
+#
+data_comp_NIC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NIC     C1      C       C       0       35.906      33.741      69.747      
+NIC     O1      O       O       0       36.256      34.678      69.001      
+NIC     O2      O       OC      -1      35.102      32.835      69.442      
+NIC     C2      C       CH1     0       36.514      33.704      71.156      
+NIC     C3      C       CH1     0       35.630      34.481      72.157      
+NIC     O7      O       OH1     0       36.741      32.372      71.587      
+NIC     C4      C       CH2     0       36.210      34.544      73.576      
+NIC     C5      C       C       0       37.459      35.399      73.707      
+NIC     O3      O       O       0       37.359      36.621      73.478      
+NIC     O4      O       OC      -1      38.521      34.836      74.038      
+NIC     N6      N       N       1       34.222      33.917      72.219      
+NIC     O5      O       OC      -1      33.299      34.653      71.933      
+NIC     O6      O       O       0       34.086      32.756      72.551      
+NIC     H2      H       H       0       37.390      34.159      71.111      
+NIC     H3      H       H       0       35.577      35.408      71.823      
+NIC     HO7     H       H       0       36.019      31.927      71.602      
+NIC     H41     H       H       0       36.422      33.639      73.882      
+NIC     H42     H       H       0       35.531      34.913      74.177      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NIC       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+NIC       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+NIC       C1        C2        SINGLE    n         1.533     0.010     1.533     0.010     
+NIC       C2        C3        SINGLE    n         1.539     0.011     1.539     0.011     
+NIC       C2        O7        SINGLE    n         1.415     0.012     1.415     0.012     
+NIC       C3        C4        SINGLE    n         1.530     0.012     1.530     0.012     
+NIC       C3        N6        SINGLE    n         1.514     0.015     1.514     0.015     
+NIC       C4        C5        SINGLE    n         1.519     0.012     1.519     0.012     
+NIC       C5        O3        DOUBLE    n         1.247     0.019     1.247     0.019     
+NIC       C5        O4        SINGLE    n         1.247     0.019     1.247     0.019     
+NIC       N6        O5        SINGLE    n         1.215     0.012     1.215     0.012     
+NIC       N6        O6        DOUBLE    n         1.215     0.012     1.215     0.012     
+NIC       C2        H2        SINGLE    n         1.089     0.010     0.989     0.018     
+NIC       C3        H3        SINGLE    n         1.089     0.010     0.986     0.020     
+NIC       O7        HO7       SINGLE    n         0.970     0.012     0.848     0.020     
+NIC       C4        H41       SINGLE    n         1.089     0.010     0.979     0.016     
+NIC       C4        H42       SINGLE    n         1.089     0.010     0.979     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NIC          O1          C1          O2     125.666    1.50
+NIC          O1          C1          C2     117.167    1.52
+NIC          O2          C1          C2     117.167    1.52
+NIC          C1          C2          C3     111.511    2.91
+NIC          C1          C2          O7     111.343    1.72
+NIC          C1          C2          H2     108.330    1.50
+NIC          C3          C2          O7     110.423    2.15
+NIC          C3          C2          H2     108.277    1.50
+NIC          O7          C2          H2     108.675    1.50
+NIC          C2          C3          C4     111.094    2.85
+NIC          C2          C3          N6     111.308    2.28
+NIC          C2          C3          H3     107.549    1.55
+NIC          C4          C3          N6     111.308    2.28
+NIC          C4          C3          H3     108.052    1.50
+NIC          N6          C3          H3     108.956    1.50
+NIC          C2          O7         HO7     108.894    3.00
+NIC          C3          C4          C5     113.398    1.64
+NIC          C3          C4         H41     108.853    1.50
+NIC          C3          C4         H42     108.853    1.50
+NIC          C5          C4         H41     107.840    2.14
+NIC          C5          C4         H42     107.840    2.14
+NIC         H41          C4         H42     107.891    1.66
+NIC          C4          C5          O3     117.986    1.50
+NIC          C4          C5          O4     117.986    1.50
+NIC          O3          C5          O4     124.027    1.50
+NIC          C3          N6          O5     117.990    1.50
+NIC          C3          N6          O6     117.995    1.50
+NIC          O5          N6          O6     124.025    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NIC             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+NIC             sp3_sp3_1          C1          C2          C3          C4     180.000   10.00     3
+NIC            sp3_sp3_11          C1          C2          O7         HO7      60.000   10.00     3
+NIC             sp2_sp3_7          O5          N6          C3          C2       0.000   10.00     6
+NIC            sp3_sp3_13          C2          C3          C4          C5     180.000   10.00     3
+NIC            sp2_sp3_14          O3          C5          C4          C3     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+NIC    chir_1    C2    O7    C1    C3    both
+NIC    chir_2    C3    N6    C2    C4    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NIC    plan-1          C1   0.020
+NIC    plan-1          C2   0.020
+NIC    plan-1          O1   0.020
+NIC    plan-1          O2   0.020
+NIC    plan-2          C4   0.020
+NIC    plan-2          C5   0.020
+NIC    plan-2          O3   0.020
+NIC    plan-2          O4   0.020
+NIC    plan-3          C3   0.020
+NIC    plan-3          N6   0.020
+NIC    plan-3          O5   0.020
+NIC    plan-3          O6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NIC SMILES           ACDLabs              10.04 "O=C(O)C(O)C([N+]([O-])=O)CC(=O)O"
+NIC SMILES_CANONICAL CACTVS               3.341 "O[C@H]([C@H](CC(O)=O)[N+]([O-])=O)C(O)=O"
+NIC SMILES           CACTVS               3.341 "O[CH]([CH](CC(O)=O)[N+]([O-])=O)C(O)=O"
+NIC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H]([C@H](C(=O)O)O)[N+](=O)[O-])C(=O)O"
+NIC SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(C(=O)O)O)[N+](=O)[O-])C(=O)O"
+NIC InChI            InChI                1.03  "InChI=1S/C5H7NO7/c7-3(8)1-2(6(12)13)4(9)5(10)11/h2,4,9H,1H2,(H,7,8)(H,10,11)/t2-,4+/m0/s1"
+NIC InChIKey         InChI                1.03  ZTJSGPUFCRRTOT-ZAFYKAAXSA-N
+NIC ?                acedrg               202         "dictionary generator"                  
+NIC ?                acedrg_database      11          "data source"                           
+NIC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NIC ?                refmac5              5.8.0189    "optimization tool"                     

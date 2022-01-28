@@ -1,0 +1,117 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PZO     PZO      PYRAZOLE     NON-POLYMER     9     5     .     
+#
+data_comp_PZO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PZO     C5      C       CR15    0       16.884      -14.709     0.707       
+PZO     C4      C       CR15    0       17.582      -14.083     -0.310      
+PZO     C3      C       CR15    0       16.910      -14.444     -1.446      
+PZO     N2      N       NR5     0       15.891      -15.230     -1.089      
+PZO     N1      N       NRD5    0       15.860      -15.405     0.242       
+PZO     HC5     H       H       0       17.108      -14.651     1.619       
+PZO     HC4     H       H       0       18.343      -13.535     -0.233      
+PZO     HC3     H       H       0       17.129      -14.183     -2.324      
+PZO     HN2     H       H       0       15.309      -15.592     -1.636      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PZO       C5        C4        SINGLE    y         1.383     0.011     1.383     0.011     
+PZO       C5        N1        DOUBLE    y         1.322     0.020     1.322     0.020     
+PZO       C4        C3        DOUBLE    y         1.368     0.015     1.368     0.015     
+PZO       C3        N2        SINGLE    y         1.335     0.015     1.335     0.015     
+PZO       N2        N1        SINGLE    y         1.343     0.011     1.343     0.011     
+PZO       C5        HC5       SINGLE    n         1.082     0.013     0.941     0.011     
+PZO       C4        HC4       SINGLE    n         1.082     0.013     0.941     0.010     
+PZO       C3        HC3       SINGLE    n         1.082     0.013     0.942     0.010     
+PZO       N2        HN2       SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PZO          C4          C5          N1     111.719    1.50
+PZO          C4          C5         HC5     124.397    2.17
+PZO          N1          C5         HC5     123.885    1.50
+PZO          C5          C4          C3     104.095    1.50
+PZO          C5          C4         HC4     127.676    1.50
+PZO          C3          C4         HC4     128.229    1.50
+PZO          C4          C3          N2     107.956    1.50
+PZO          C4          C3         HC3     125.940    1.50
+PZO          N2          C3         HC3     126.105    1.50
+PZO          C3          N2          N1     111.037    1.89
+PZO          C3          N2         HN2     125.678    2.28
+PZO          N1          N2         HN2     123.285    2.09
+PZO          C5          N1          N2     105.194    1.72
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PZO       const_sp2_sp2_1          C3          C4          C5          N1       0.000   10.00     2
+PZO              const_15          C4          C5          N1          N2       0.000   10.00     2
+PZO       const_sp2_sp2_5          N2          C3          C4          C5       0.000   10.00     2
+PZO       const_sp2_sp2_9          C4          C3          N2          N1       0.000   10.00     2
+PZO              const_13          C5          N1          N2          C3       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PZO    plan-1          C3   0.020
+PZO    plan-1          C4   0.020
+PZO    plan-1          C5   0.020
+PZO    plan-1         HC3   0.020
+PZO    plan-1         HC4   0.020
+PZO    plan-1         HC5   0.020
+PZO    plan-1         HN2   0.020
+PZO    plan-1          N1   0.020
+PZO    plan-1          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PZO SMILES           ACDLabs              10.04 n1cccn1
+PZO SMILES_CANONICAL CACTVS               3.341 "[nH]1cccn1"
+PZO SMILES           CACTVS               3.341 "[nH]1cccn1"
+PZO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c[nH]nc1"
+PZO SMILES           "OpenEye OEToolkits" 1.5.0 "c1c[nH]nc1"
+PZO InChI            InChI                1.03  "InChI=1S/C3H4N2/c1-2-4-5-3-1/h1-3H,(H,4,5)"
+PZO InChIKey         InChI                1.03  WTKZEGDFNFYCGP-UHFFFAOYSA-N
+PZO ?                acedrg               202         "dictionary generator"                  
+PZO ?                acedrg_database      11          "data source"                           
+PZO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PZO ?                refmac5              5.8.0189    "optimization tool"                     

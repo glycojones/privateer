@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FAC     FAC      1,1,1,3,3,3-HEXAFLUOROPROPANEDIOL     NON-POLYMER     13     11     .     
+#
+data_comp_FAC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FAC     C       C       CT      0       0.035       0.371       -0.123      
+FAC     O1      O       OH1     0       0.219       1.215       0.949       
+FAC     O2      O       OH1     0       -0.314      0.969       -1.313      
+FAC     C1      C       CT      0       -1.166      -0.509      0.256       
+FAC     C2      C       CT      0       1.336       -0.420      -0.343      
+FAC     F1      F       F       0       -0.960      -1.184      1.386       
+FAC     F2      F       F       0       -1.448      -1.409      -0.685      
+FAC     F3      F       F       0       -2.269      0.215       0.436       
+FAC     F4      F       F       0       1.707       -1.088      0.748       
+FAC     F5      F       F       0       1.220       -1.312      -1.326      
+FAC     F6      F       F       0       2.348       0.380       -0.668      
+FAC     H1      H       H       0       0.649       1.921       0.746       
+FAC     H2      H       H       0       0.127       1.680       -1.469      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FAC       C         O1        SINGLE    n         1.372     0.011     1.372     0.011     
+FAC       C         O2        SINGLE    n         1.372     0.011     1.372     0.011     
+FAC       C         C1        SINGLE    n         1.531     0.012     1.531     0.012     
+FAC       C         C2        SINGLE    n         1.531     0.012     1.531     0.012     
+FAC       C1        F1        SINGLE    n         1.331     0.013     1.331     0.013     
+FAC       C1        F2        SINGLE    n         1.331     0.013     1.331     0.013     
+FAC       C1        F3        SINGLE    n         1.331     0.013     1.331     0.013     
+FAC       C2        F4        SINGLE    n         1.331     0.013     1.331     0.013     
+FAC       C2        F5        SINGLE    n         1.331     0.013     1.331     0.013     
+FAC       C2        F6        SINGLE    n         1.331     0.013     1.331     0.013     
+FAC       O1        H1        SINGLE    n         0.970     0.012     0.848     0.020     
+FAC       O2        H2        SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FAC          O1           C          O2     113.458    2.75
+FAC          O1           C          C1     107.104    3.00
+FAC          O1           C          C2     107.104    3.00
+FAC          O2           C          C1     107.104    3.00
+FAC          O2           C          C2     107.104    3.00
+FAC          C1           C          C2     112.811    1.50
+FAC           C          O1          H1     108.607    3.00
+FAC           C          O2          H2     108.607    3.00
+FAC           C          C1          F1     111.680    1.50
+FAC           C          C1          F2     111.680    1.50
+FAC           C          C1          F3     111.680    1.50
+FAC          F1          C1          F2     106.868    1.50
+FAC          F1          C1          F3     106.868    1.50
+FAC          F2          C1          F3     106.868    1.50
+FAC           C          C2          F4     111.680    1.50
+FAC           C          C2          F5     111.680    1.50
+FAC           C          C2          F6     111.680    1.50
+FAC          F4          C2          F5     106.868    1.50
+FAC          F4          C2          F6     106.868    1.50
+FAC          F5          C2          F6     106.868    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FAC             sp3_sp3_1          O2           C          O1          H1     180.000   10.00     3
+FAC             sp3_sp3_4          O1           C          O2          H2     180.000   10.00     3
+FAC             sp3_sp3_7          O1           C          C1          F1     180.000   10.00     3
+FAC            sp3_sp3_16          O1           C          C2          F4     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FAC SMILES           ACDLabs              10.04 "FC(F)(F)C(O)(O)C(F)(F)F"
+FAC SMILES_CANONICAL CACTVS               3.341 "OC(O)(C(F)(F)F)C(F)(F)F"
+FAC SMILES           CACTVS               3.341 "OC(O)(C(F)(F)F)C(F)(F)F"
+FAC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(F)(F)F)(C(F)(F)F)(O)O"
+FAC SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(F)(F)F)(C(F)(F)F)(O)O"
+FAC InChI            InChI                1.03  "InChI=1S/C3H2F6O2/c4-2(5,6)1(10,11)3(7,8)9/h10-11H"
+FAC InChIKey         InChI                1.03  AKVXSYUWYXOLMY-UHFFFAOYSA-N
+FAC ?                acedrg               202         "dictionary generator"                  
+FAC ?                acedrg_database      11          "data source"                           
+FAC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FAC ?                refmac5              5.8.0189    "optimization tool"                     

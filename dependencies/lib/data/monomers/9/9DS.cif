@@ -1,0 +1,316 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+9DS      9DS 'DANSYL-L-SARCOSINE                  ' non-polymer        39  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_9DS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 9DS           O10    O    OS        0.000      0.000    0.000    0.000
+ 9DS           S8     S    ST        0.000     -0.768    0.712   -0.960
+ 9DS           O9     O    OS        0.000     -0.890    0.304   -2.316
+ 9DS           N      N    N         0.000     -0.166    2.255   -0.988
+ 9DS           C6     C    CH3       0.000      0.589    2.767    0.158
+ 9DS           H63C   H    H         0.000      0.531    3.825    0.178
+ 9DS           H62C   H    H         0.000      0.182    2.376    1.055
+ 9DS           H61C   H    H         0.000      1.604    2.472    0.075
+ 9DS           CA     C    CH2       0.000     -0.389    3.107   -2.158
+ 9DS           HA     H    H         0.000     -0.519    4.142   -1.835
+ 9DS           HA2    H    H         0.000     -1.288    2.776   -2.683
+ 9DS           C      C    C         0.000      0.797    3.013   -3.082
+ 9DS           OXT    O    OC       -0.500      0.813    3.666   -4.149
+ 9DS           O      O    OC       -0.500      1.769    2.285   -2.780
+ 9DS           C11    C    CR6       0.000     -2.406    0.802   -0.320
+ 9DS           C16    C    CR66      0.000     -3.067   -0.366    0.097
+ 9DS           C17    C    CR16      0.000     -2.445   -1.623    0.015
+ 9DS           H17    H    H         0.000     -1.438   -1.705   -0.376
+ 9DS           C18    C    CR16      0.000     -3.108   -2.738    0.426
+ 9DS           H18    H    H         0.000     -2.621   -3.703    0.359
+ 9DS           C19    C    CR16      0.000     -4.403   -2.660    0.931
+ 9DS           H19    H    H         0.000     -4.912   -3.563    1.243
+ 9DS           C20    C    CR6       0.000     -5.044   -1.445    1.039
+ 9DS           N21    N    NT        0.000     -6.340   -1.377    1.548
+ 9DS           C22    C    CH3       0.000     -6.392   -1.881    2.926
+ 9DS           H223   H    H         0.000     -7.385   -1.818    3.287
+ 9DS           H222   H    H         0.000     -6.073   -2.890    2.944
+ 9DS           H221   H    H         0.000     -5.756   -1.298    3.539
+ 9DS           C23    C    CH3       0.000     -7.282   -2.102    0.685
+ 9DS           H233   H    H         0.000     -8.257   -2.034    1.093
+ 9DS           H232   H    H         0.000     -7.274   -1.675   -0.284
+ 9DS           H231   H    H         0.000     -6.994   -3.119    0.625
+ 9DS           C15    C    CR66      0.000     -4.383   -0.271    0.615
+ 9DS           C14    C    CR16      0.000     -5.005    0.984    0.693
+ 9DS           H14    H    H         0.000     -6.011    1.069    1.084
+ 9DS           C13    C    CR16      0.000     -4.337    2.094    0.274
+ 9DS           H13    H    H         0.000     -4.820    3.062    0.333
+ 9DS           C12    C    CR16      0.000     -3.041    2.003   -0.230
+ 9DS           H12    H    H         0.000     -2.531    2.902   -0.554
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 9DS      O10    n/a    S8     START
+ 9DS      S8     O10    C11    .
+ 9DS      O9     S8     .      .
+ 9DS      N      S8     CA     .
+ 9DS      C6     N      H61C   .
+ 9DS      H63C   C6     .      .
+ 9DS      H62C   C6     .      .
+ 9DS      H61C   C6     .      .
+ 9DS      CA     N      C      .
+ 9DS      HA     CA     .      .
+ 9DS      HA2    CA     .      .
+ 9DS      C      CA     O      .
+ 9DS      OXT    C      .      .
+ 9DS      O      C      .      .
+ 9DS      C11    S8     C16    .
+ 9DS      C16    C11    C17    .
+ 9DS      C17    C16    C18    .
+ 9DS      H17    C17    .      .
+ 9DS      C18    C17    C19    .
+ 9DS      H18    C18    .      .
+ 9DS      C19    C18    C20    .
+ 9DS      H19    C19    .      .
+ 9DS      C20    C19    C15    .
+ 9DS      N21    C20    C23    .
+ 9DS      C22    N21    H221   .
+ 9DS      H223   C22    .      .
+ 9DS      H222   C22    .      .
+ 9DS      H221   C22    .      .
+ 9DS      C23    N21    H231   .
+ 9DS      H233   C23    .      .
+ 9DS      H232   C23    .      .
+ 9DS      H231   C23    .      .
+ 9DS      C15    C20    C14    .
+ 9DS      C14    C15    C13    .
+ 9DS      H14    C14    .      .
+ 9DS      C13    C14    C12    .
+ 9DS      H13    C13    .      .
+ 9DS      C12    C13    H12    .
+ 9DS      H12    C12    .      END
+ 9DS      C11    C12    .    ADD
+ 9DS      C15    C16    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+9DS       OXT       C         deloc     1.250     0.020     1.250     0.020     
+9DS       O         C         deloc     1.250     0.020     1.250     0.020     
+9DS       C         CA        single    1.510     0.020     1.510     0.020     
+9DS       C6        N         single    1.455     0.020     1.455     0.020     
+9DS       N         S8        single    1.520     0.020     1.520     0.020     
+9DS       CA        N         single    1.455     0.020     1.455     0.020     
+9DS       O9        S8        double    1.436     0.020     1.436     0.020     
+9DS       S8        O10       double    1.436     0.020     1.436     0.020     
+9DS       C11       S8        single    1.595     0.020     1.595     0.020     
+9DS       C11       C12       single    1.390     0.020     1.390     0.020     
+9DS       C16       C11       double    1.490     0.020     1.490     0.020     
+9DS       C12       C13       double    1.390     0.020     1.390     0.020     
+9DS       C13       C14       single    1.390     0.020     1.390     0.020     
+9DS       C14       C15       double    1.390     0.020     1.390     0.020     
+9DS       C15       C16       single    1.490     0.020     1.490     0.020     
+9DS       C15       C20       single    1.490     0.020     1.490     0.020     
+9DS       C17       C16       single    1.390     0.020     1.390     0.020     
+9DS       C18       C17       double    1.390     0.020     1.390     0.020     
+9DS       C19       C18       single    1.390     0.020     1.390     0.020     
+9DS       C20       C19       double    1.390     0.020     1.390     0.020     
+9DS       N21       C20       single    1.405     0.020     1.405     0.020     
+9DS       C22       N21       single    1.469     0.020     1.469     0.020     
+9DS       C23       N21       single    1.469     0.020     1.469     0.020     
+9DS       HA        CA        single    1.089     0.010     0.989     0.005     
+9DS       HA2       CA        single    1.089     0.010     0.989     0.005     
+9DS       H61C      C6        single    1.089     0.010     0.989     0.005     
+9DS       H62C      C6        single    1.089     0.010     0.989     0.005     
+9DS       H63C      C6        single    1.089     0.010     0.989     0.005     
+9DS       H12       C12       single    1.082     0.013     0.975     0.010     
+9DS       H13       C13       single    1.082     0.013     0.975     0.010     
+9DS       H14       C14       single    1.082     0.013     0.975     0.010     
+9DS       H17       C17       single    1.082     0.013     0.975     0.010     
+9DS       H18       C18       single    1.082     0.013     0.975     0.010     
+9DS       H19       C19       single    1.082     0.013     0.975     0.010     
+9DS       H221      C22       single    1.089     0.010     0.989     0.005     
+9DS       H222      C22       single    1.089     0.010     0.989     0.005     
+9DS       H223      C22       single    1.089     0.010     0.989     0.005     
+9DS       H231      C23       single    1.089     0.010     0.989     0.005     
+9DS       H232      C23       single    1.089     0.010     0.989     0.005     
+9DS       H233      C23       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 9DS      O10    S8     O9      109.500    3.000
+ 9DS      O10    S8     N       109.500    3.000
+ 9DS      O10    S8     C11     109.500    3.000
+ 9DS      O9     S8     N       109.500    3.000
+ 9DS      O9     S8     C11     109.500    3.000
+ 9DS      N      S8     C11     109.500    3.000
+ 9DS      S8     N      C6      120.000    3.000
+ 9DS      S8     N      CA      120.000    3.000
+ 9DS      C6     N      CA      120.000    3.000
+ 9DS      N      C6     H63C    109.470    3.000
+ 9DS      N      C6     H62C    109.470    3.000
+ 9DS      N      C6     H61C    109.470    3.000
+ 9DS      H63C   C6     H62C    109.470    3.000
+ 9DS      H63C   C6     H61C    109.470    3.000
+ 9DS      H62C   C6     H61C    109.470    3.000
+ 9DS      N      CA     HA      109.470    3.000
+ 9DS      N      CA     HA2     109.470    3.000
+ 9DS      N      CA     C       109.500    3.000
+ 9DS      HA     CA     HA2     107.900    3.000
+ 9DS      HA     CA     C       109.470    3.000
+ 9DS      HA2    CA     C       109.470    3.000
+ 9DS      CA     C      OXT     118.500    3.000
+ 9DS      CA     C      O       118.500    3.000
+ 9DS      OXT    C      O       123.000    3.000
+ 9DS      S8     C11    C16     120.000    3.000
+ 9DS      S8     C11    C12     120.000    3.000
+ 9DS      C16    C11    C12     120.000    3.000
+ 9DS      C11    C16    C17     120.000    3.000
+ 9DS      C11    C16    C15     120.000    3.000
+ 9DS      C17    C16    C15     120.000    3.000
+ 9DS      C16    C17    H17     120.000    3.000
+ 9DS      C16    C17    C18     120.000    3.000
+ 9DS      H17    C17    C18     120.000    3.000
+ 9DS      C17    C18    H18     120.000    3.000
+ 9DS      C17    C18    C19     120.000    3.000
+ 9DS      H18    C18    C19     120.000    3.000
+ 9DS      C18    C19    H19     120.000    3.000
+ 9DS      C18    C19    C20     120.000    3.000
+ 9DS      H19    C19    C20     120.000    3.000
+ 9DS      C19    C20    N21     120.000    3.000
+ 9DS      C19    C20    C15     120.000    3.000
+ 9DS      N21    C20    C15     120.000    3.000
+ 9DS      C20    N21    C22     109.500    3.000
+ 9DS      C20    N21    C23     109.500    3.000
+ 9DS      C22    N21    C23     109.470    3.000
+ 9DS      N21    C22    H223    109.470    3.000
+ 9DS      N21    C22    H222    109.470    3.000
+ 9DS      N21    C22    H221    109.470    3.000
+ 9DS      H223   C22    H222    109.470    3.000
+ 9DS      H223   C22    H221    109.470    3.000
+ 9DS      H222   C22    H221    109.470    3.000
+ 9DS      N21    C23    H233    109.470    3.000
+ 9DS      N21    C23    H232    109.470    3.000
+ 9DS      N21    C23    H231    109.470    3.000
+ 9DS      H233   C23    H232    109.470    3.000
+ 9DS      H233   C23    H231    109.470    3.000
+ 9DS      H232   C23    H231    109.470    3.000
+ 9DS      C20    C15    C14     120.000    3.000
+ 9DS      C20    C15    C16     120.000    3.000
+ 9DS      C14    C15    C16     120.000    3.000
+ 9DS      C15    C14    H14     120.000    3.000
+ 9DS      C15    C14    C13     120.000    3.000
+ 9DS      H14    C14    C13     120.000    3.000
+ 9DS      C14    C13    H13     120.000    3.000
+ 9DS      C14    C13    C12     120.000    3.000
+ 9DS      H13    C13    C12     120.000    3.000
+ 9DS      C13    C12    H12     120.000    3.000
+ 9DS      C13    C12    C11     120.000    3.000
+ 9DS      H12    C12    C11     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 9DS      var_1    O10    S8     N      CA       158.448   20.000   1
+ 9DS      var_2    S8     N      C6     H61C      84.554   20.000   1
+ 9DS      var_3    S8     N      CA     C        -95.014   20.000   1
+ 9DS      var_4    N      CA     C      O         -0.272   20.000   3
+ 9DS      var_5    O10    S8     C11    C16      -52.458   20.000   1
+ 9DS      CONST_1  S8     C11    C12    C13      180.000    0.000   0
+ 9DS      CONST_2  S8     C11    C16    C17        0.000    0.000   0
+ 9DS      CONST_3  C11    C16    C17    C18      180.000    0.000   0
+ 9DS      CONST_4  C16    C17    C18    C19        0.000    0.000   0
+ 9DS      CONST_5  C17    C18    C19    C20        0.000    0.000   0
+ 9DS      CONST_6  C18    C19    C20    C15        0.000    0.000   0
+ 9DS      var_6    C19    C20    N21    C23      -63.217   20.000   1
+ 9DS      var_7    C20    N21    C22    H221      60.028   20.000   1
+ 9DS      var_8    C20    N21    C23    H231      60.018   20.000   1
+ 9DS      CONST_7  C19    C20    C15    C14      180.000    0.000   0
+ 9DS      CONST_8  C20    C15    C16    C11      180.000    0.000   0
+ 9DS      CONST_9  C20    C15    C14    C13      180.000    0.000   0
+ 9DS      CONST_10 C15    C14    C13    C12        0.000    0.000   0
+ 9DS      CONST_11 C14    C13    C12    C11        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 9DS      chir_01  S8     N      O9     O10       negativ
+ 9DS      chir_02  N21    C20    C23    C22       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 9DS      plan-1    N         0.020
+ 9DS      plan-1    CA        0.020
+ 9DS      plan-1    C6        0.020
+ 9DS      plan-1    S8        0.020
+ 9DS      plan-2    C         0.020
+ 9DS      plan-2    CA        0.020
+ 9DS      plan-2    O         0.020
+ 9DS      plan-2    OXT       0.020
+ 9DS      plan-3    C11       0.020
+ 9DS      plan-3    S8        0.020
+ 9DS      plan-3    C12       0.020
+ 9DS      plan-3    C16       0.020
+ 9DS      plan-3    C13       0.020
+ 9DS      plan-3    C14       0.020
+ 9DS      plan-3    H12       0.020
+ 9DS      plan-3    H13       0.020
+ 9DS      plan-3    C15       0.020
+ 9DS      plan-3    H14       0.020
+ 9DS      plan-3    C20       0.020
+ 9DS      plan-3    C17       0.020
+ 9DS      plan-3    C18       0.020
+ 9DS      plan-3    C19       0.020
+ 9DS      plan-3    H17       0.020
+ 9DS      plan-3    H18       0.020
+ 9DS      plan-3    H19       0.020
+ 9DS      plan-3    N21       0.020
+# ------------------------------------------------------

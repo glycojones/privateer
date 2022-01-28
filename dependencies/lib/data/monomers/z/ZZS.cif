@@ -1,0 +1,141 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZZS     ZZS      1,3,5-TRIAZINE-2,4-DIAMINE     non-polymer     13     8     .     
+#
+data_comp_ZZS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ZZS     NAA     N       NH2     0       -10.657     -0.165      -14.789     
+ZZS     CAG     C       CR6     0       -10.970     0.520       -13.687     
+ZZS     NAF     N       NRD6    0       -10.907     -0.121      -12.498     
+ZZS     NAD     N       NRD6    0       -11.338     1.835       -13.828     
+ZZS     CAC     C       CR16    0       -11.640     2.476       -12.705     
+ZZS     NAE     N       NRD6    0       -11.611     1.944       -11.488     
+ZZS     CAH     C       CR6     0       -11.235     0.626       -11.421     
+ZZS     NAB     N       NH2     0       -11.191     0.048       -10.218     
+ZZS     HAA1    H       H       0       -11.058     0.020       -15.548     
+ZZS     HAA2    H       H       0       -10.049     -0.798      -14.755     
+ZZS     HAC     H       H       0       -11.897     3.384       -12.777     
+ZZS     HAB1    H       H       0       -10.556     -0.529      -10.033     
+ZZS     HAB2    H       H       0       -11.796     0.248       -9.615      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZZS       NAA       CAG       SINGLE    n         1.334     0.010     1.334     0.010     
+ZZS       CAG       NAF       DOUBLE    y         1.343     0.010     1.343     0.010     
+ZZS       CAG       NAD       SINGLE    y         1.365     0.010     1.365     0.010     
+ZZS       NAF       CAH       SINGLE    y         1.343     0.010     1.343     0.010     
+ZZS       NAD       CAC       DOUBLE    y         1.321     0.010     1.321     0.010     
+ZZS       CAC       NAE       SINGLE    y         1.321     0.010     1.321     0.010     
+ZZS       NAE       CAH       DOUBLE    y         1.365     0.010     1.365     0.010     
+ZZS       CAH       NAB       SINGLE    n         1.334     0.010     1.334     0.010     
+ZZS       NAA       HAA1      SINGLE    n         1.016     0.010     0.877     0.020     
+ZZS       NAA       HAA2      SINGLE    n         1.016     0.010     0.877     0.020     
+ZZS       CAC       HAC       SINGLE    n         1.082     0.013     0.946     0.017     
+ZZS       NAB       HAB1      SINGLE    n         1.016     0.010     0.877     0.020     
+ZZS       NAB       HAB2      SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ZZS         CAG         NAA        HAA1     119.826    1.50
+ZZS         CAG         NAA        HAA2     119.826    1.50
+ZZS        HAA1         NAA        HAA2     120.348    1.96
+ZZS         NAA         CAG         NAF     118.026    1.50
+ZZS         NAA         CAG         NAD     117.937    1.64
+ZZS         NAF         CAG         NAD     124.037    1.50
+ZZS         CAG         NAF         CAH     114.634    1.50
+ZZS         CAG         NAD         CAC     115.968    1.50
+ZZS         NAD         CAC         NAE     125.357    1.50
+ZZS         NAD         CAC         HAC     117.322    1.50
+ZZS         NAE         CAC         HAC     117.322    1.50
+ZZS         CAC         NAE         CAH     115.968    1.50
+ZZS         NAF         CAH         NAE     124.037    1.50
+ZZS         NAF         CAH         NAB     118.026    1.50
+ZZS         NAE         CAH         NAB     117.937    1.64
+ZZS         CAH         NAB        HAB1     119.826    1.50
+ZZS         CAH         NAB        HAB2     119.826    1.50
+ZZS        HAB1         NAB        HAB2     120.348    1.96
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ZZS             sp2_sp2_1         NAF         CAG         NAA        HAA1     180.000   10.00     2
+ZZS       const_sp2_sp2_2         NAA         CAG         NAF         CAH     180.000   10.00     2
+ZZS              const_12         NAA         CAG         NAD         CAC     180.000   10.00     2
+ZZS       const_sp2_sp2_4         NAB         CAH         NAF         CAG     180.000   10.00     2
+ZZS       const_sp2_sp2_9         NAE         CAC         NAD         CAG       0.000   10.00     2
+ZZS       const_sp2_sp2_7         NAD         CAC         NAE         CAH       0.000   10.00     2
+ZZS       const_sp2_sp2_6         NAB         CAH         NAE         CAC     180.000   10.00     2
+ZZS             sp2_sp2_5         NAF         CAH         NAB        HAB1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ZZS    plan-1         CAC   0.020
+ZZS    plan-1         CAG   0.020
+ZZS    plan-1         CAH   0.020
+ZZS    plan-1         HAC   0.020
+ZZS    plan-1         NAA   0.020
+ZZS    plan-1         NAB   0.020
+ZZS    plan-1         NAD   0.020
+ZZS    plan-1         NAE   0.020
+ZZS    plan-1         NAF   0.020
+ZZS    plan-2         CAG   0.020
+ZZS    plan-2        HAA1   0.020
+ZZS    plan-2        HAA2   0.020
+ZZS    plan-2         NAA   0.020
+ZZS    plan-3         CAH   0.020
+ZZS    plan-3        HAB1   0.020
+ZZS    plan-3        HAB2   0.020
+ZZS    plan-3         NAB   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ZZS SMILES           ACDLabs              10.04 "n1c(nc(nc1)N)N"
+ZZS SMILES_CANONICAL CACTVS               3.352 "Nc1ncnc(N)n1"
+ZZS SMILES           CACTVS               3.352 "Nc1ncnc(N)n1"
+ZZS SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "c1nc(nc(n1)N)N"
+ZZS SMILES           "OpenEye OEToolkits" 1.6.1 "c1nc(nc(n1)N)N"
+ZZS InChI            InChI                1.03  "InChI=1S/C3H5N5/c4-2-6-1-7-3(5)8-2/h1H,(H4,4,5,6,7,8)"
+ZZS InChIKey         InChI                1.03  VZXTWGWHSMCWGA-UHFFFAOYSA-N
+ZZS ?                acedrg               202         "dictionary generator"                  
+ZZS ?                acedrg_database      11          "data source"                           
+ZZS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ZZS ?                refmac5              5.8.0189    "optimization tool"                     

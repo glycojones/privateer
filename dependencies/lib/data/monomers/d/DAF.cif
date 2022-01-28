@@ -1,0 +1,339 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DAF      DAF '1,4-DEOXY-4-((5-HYDROXYMETHYL-2,3,4-' pyranose           44  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DAF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DAF           C1     C    CH2       0.000      0.000    0.000    0.000
+ DAF           H11    H    H         0.000      0.967   -0.501   -0.084
+ DAF           H12    H    H         0.000      0.113    1.052   -0.269
+ DAF           O5     O    O2        0.000     -0.465   -0.096    1.345
+ DAF           C5     C    CH1       0.000     -1.631    0.718    1.458
+ DAF           H5     H    H         0.000     -1.409    1.728    1.086
+ DAF           C6     C    CH3       0.000     -2.055    0.799    2.926
+ DAF           H63    H    H         0.000     -2.840    1.502    3.029
+ DAF           H62    H    H         0.000     -2.389   -0.152    3.251
+ DAF           H61    H    H         0.000     -1.230    1.104    3.516
+ DAF           C4     C    CH1       0.000     -2.768    0.111    0.633
+ DAF           H4     H    H         0.000     -2.976   -0.908    0.988
+ DAF           C3     C    CH1       0.000     -2.347    0.066   -0.840
+ DAF           H3     H    H         0.000     -2.240    1.090   -1.224
+ DAF           O3     O    OH1       0.000     -3.333   -0.631   -1.602
+ DAF           HO3    H    H         0.000     -3.058   -0.667   -2.528
+ DAF           C2     C    CH1       0.000     -1.004   -0.664   -0.944
+ DAF           H2     H    H         0.000     -1.135   -1.717   -0.658
+ DAF           O2     O    OH1       0.000     -0.519   -0.590   -2.285
+ DAF           HO2    H    H         0.000      0.331   -1.047   -2.346
+ DAF           N4     N    NH1       0.000     -3.973    0.938    0.775
+ DAF           HN4    H    H         0.000     -4.007    1.941    0.886
+ DAF           C1H    C    CH1       0.000     -5.120    0.021    0.725
+ DAF           H1H    H    H         0.000     -4.845   -0.877    0.155
+ DAF           C6H    C    C1        0.000     -5.504   -0.373    2.121
+ DAF           H6H    H    H         0.000     -4.714   -0.610    2.813
+ DAF           C5H    C    C         0.000     -6.725   -0.445    2.544
+ DAF           C4H    C    CH1       0.000     -7.926   -0.134    1.703
+ DAF           H4H    H    H         0.000     -8.704   -0.889    1.886
+ DAF           O4H    O    OH1       0.000     -8.429    1.156    2.052
+ DAF           "HO4'" H    H         0.000     -8.679    1.161    2.985
+ DAF           C3H    C    CH1       0.000     -7.548   -0.146    0.220
+ DAF           H3H    H    H         0.000     -8.374    0.269   -0.375
+ DAF           O3H    O    OH1       0.000     -7.280   -1.485   -0.198
+ DAF           "HO3'" H    H         0.000     -8.069   -2.028   -0.064
+ DAF           C2H    C    CH1       0.000     -6.296    0.718    0.036
+ DAF           H2H    H    H         0.000     -6.081    0.831   -1.036
+ DAF           O2H    O    OH1       0.000     -6.510    2.004    0.619
+ DAF           "HO2'" H    H         0.000     -7.262    2.432    0.187
+ DAF           C7H    C    CH2       0.000     -6.953   -0.867    3.974
+ DAF           H7H1   H    H         0.000     -7.556   -1.777    3.992
+ DAF           H7H2   H    H         0.000     -7.478   -0.072    4.508
+ DAF           O7H    O    OH1       0.000     -5.694   -1.115    4.603
+ DAF           HO7    H    H         0.000     -5.885   -1.382    5.513
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DAF      C1     n/a    O5     START
+ DAF      H11    C1     .      .
+ DAF      H12    C1     .      .
+ DAF      O5     C1     .      END
+ DAF      C5     O5     C4     .
+ DAF      H5     C5     .      .
+ DAF      C6     C5     H61    .
+ DAF      H63    C6     .      .
+ DAF      H62    C6     .      .
+ DAF      H61    C6     .      .
+ DAF      C4     C5     N4     .
+ DAF      H4     C4     .      .
+ DAF      C3     C4     C2     .
+ DAF      H3     C3     .      .
+ DAF      O3     C3     HO3    .
+ DAF      HO3    O3     .      .
+ DAF      C2     C3     O2     .
+ DAF      H2     C2     .      .
+ DAF      O2     C2     HO2    .
+ DAF      HO2    O2     .      .
+ DAF      N4     C4     C1H    .
+ DAF      HN4    N4     .      .
+ DAF      C1H    N4     C6H    .
+ DAF      H1H    C1H    .      .
+ DAF      C6H    C1H    C5H    .
+ DAF      H6H    C6H    .      .
+ DAF      C5H    C6H    C7H    .
+ DAF      C4H    C5H    C3H    .
+ DAF      H4H    C4H    .      .
+ DAF      O4H    C4H    "HO4'" .
+ DAF      "HO4'" O4H    .      .
+ DAF      C3H    C4H    C2H    .
+ DAF      H3H    C3H    .      .
+ DAF      O3H    C3H    "HO3'" .
+ DAF      "HO3'" O3H    .      .
+ DAF      C2H    C3H    O2H    .
+ DAF      H2H    C2H    .      .
+ DAF      O2H    C2H    "HO2'" .
+ DAF      "HO2'" O2H    .      .
+ DAF      C7H    C5H    O7H    .
+ DAF      H7H1   C7H    .      .
+ DAF      H7H2   C7H    .      .
+ DAF      O7H    C7H    .      .
+ DAF      HO7    O7H    .      .
+ DAF      C1     C2     .    ADD
+ DAF      C1H    C2H    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DAF       C1        C2        single    1.524     0.020     1.524     0.020     
+DAF       O5        C1        single    1.426     0.020     1.426     0.020     
+DAF       H11       C1        single    1.089     0.010     0.989     0.005     
+DAF       H12       C1        single    1.089     0.010     0.989     0.005     
+DAF       C2        C3        single    1.524     0.020     1.524     0.020     
+DAF       O2        C2        single    1.432     0.020     1.432     0.020     
+DAF       H2        C2        single    1.089     0.010     0.989     0.005     
+DAF       C3        C4        single    1.524     0.020     1.524     0.020     
+DAF       O3        C3        single    1.432     0.020     1.432     0.020     
+DAF       H3        C3        single    1.089     0.010     0.989     0.005     
+DAF       C4        C5        single    1.524     0.020     1.524     0.020     
+DAF       N4        C4        single    1.450     0.020     1.450     0.020     
+DAF       H4        C4        single    1.089     0.010     0.989     0.005     
+DAF       C6        C5        single    1.524     0.020     1.524     0.020     
+DAF       C5        O5        single    1.426     0.020     1.426     0.020     
+DAF       H5        C5        single    1.089     0.010     0.989     0.005     
+DAF       H61       C6        single    1.089     0.010     0.989     0.005     
+DAF       H62       C6        single    1.089     0.010     0.989     0.005     
+DAF       H63       C6        single    1.089     0.010     0.989     0.005     
+DAF       HO2       O2        single    0.970     0.012     0.839     0.014     
+DAF       HO3       O3        single    0.970     0.012     0.839     0.014     
+DAF       C1H       N4        single    1.450     0.020     1.450     0.020     
+DAF       HN4       N4        single    1.036     0.016     0.914     0.007     
+DAF       C1H       C2H       single    1.524     0.020     1.524     0.020     
+DAF       C6H       C1H       single    1.510     0.020     1.510     0.020     
+DAF       H1H       C1H       single    1.089     0.010     0.989     0.005     
+DAF       C2H       C3H       single    1.524     0.020     1.524     0.020     
+DAF       O2H       C2H       single    1.432     0.020     1.432     0.020     
+DAF       H2H       C2H       single    1.089     0.010     0.989     0.005     
+DAF       C3H       C4H       single    1.524     0.020     1.524     0.020     
+DAF       O3H       C3H       single    1.432     0.020     1.432     0.020     
+DAF       H3H       C3H       single    1.089     0.010     0.989     0.005     
+DAF       C4H       C5H       single    1.500     0.020     1.500     0.020     
+DAF       O4H       C4H       single    1.432     0.020     1.432     0.020     
+DAF       H4H       C4H       single    1.089     0.010     0.989     0.005     
+DAF       C5H       C6H       double    1.340     0.020     1.340     0.020     
+DAF       C7H       C5H       single    1.510     0.020     1.510     0.020     
+DAF       H6H       C6H       single    1.082     0.013     0.975     0.010     
+DAF       O7H       C7H       single    1.432     0.020     1.432     0.020     
+DAF       H7H1      C7H       single    1.089     0.010     0.989     0.005     
+DAF       H7H2      C7H       single    1.089     0.010     0.989     0.005     
+DAF       "HO2'"    O2H       single    0.970     0.012     0.839     0.014     
+DAF       "HO3'"    O3H       single    0.970     0.012     0.839     0.014     
+DAF       "HO4'"    O4H       single    0.970     0.012     0.839     0.014     
+DAF       HO7       O7H       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DAF      H11    C1     H12     107.900    3.000
+ DAF      H11    C1     O5      109.470    3.000
+ DAF      H12    C1     O5      109.470    3.000
+ DAF      H11    C1     C2      109.470    3.000
+ DAF      H12    C1     C2      109.470    3.000
+ DAF      O5     C1     C2      109.470    3.000
+ DAF      C1     O5     C5      111.800    3.000
+ DAF      O5     C5     H5      109.470    3.000
+ DAF      O5     C5     C6      109.470    3.000
+ DAF      O5     C5     C4      109.470    3.000
+ DAF      H5     C5     C6      108.340    3.000
+ DAF      H5     C5     C4      108.340    3.000
+ DAF      C6     C5     C4      111.000    3.000
+ DAF      C5     C6     H63     109.470    3.000
+ DAF      C5     C6     H62     109.470    3.000
+ DAF      C5     C6     H61     109.470    3.000
+ DAF      H63    C6     H62     109.470    3.000
+ DAF      H63    C6     H61     109.470    3.000
+ DAF      H62    C6     H61     109.470    3.000
+ DAF      C5     C4     H4      108.340    3.000
+ DAF      C5     C4     C3      111.000    3.000
+ DAF      C5     C4     N4      110.000    3.000
+ DAF      H4     C4     C3      108.340    3.000
+ DAF      H4     C4     N4      108.550    3.000
+ DAF      C3     C4     N4      110.000    3.000
+ DAF      C4     C3     H3      108.340    3.000
+ DAF      C4     C3     O3      109.470    3.000
+ DAF      C4     C3     C2      111.000    3.000
+ DAF      H3     C3     O3      109.470    3.000
+ DAF      H3     C3     C2      108.340    3.000
+ DAF      O3     C3     C2      109.470    3.000
+ DAF      C3     O3     HO3     109.470    3.000
+ DAF      C3     C2     H2      108.340    3.000
+ DAF      C3     C2     O2      109.470    3.000
+ DAF      C3     C2     C1      111.000    3.000
+ DAF      H2     C2     O2      109.470    3.000
+ DAF      H2     C2     C1      108.340    3.000
+ DAF      O2     C2     C1      109.470    3.000
+ DAF      C2     O2     HO2     109.470    3.000
+ DAF      C4     N4     HN4     118.500    3.000
+ DAF      C4     N4     C1H     120.000    3.000
+ DAF      HN4    N4     C1H     118.500    3.000
+ DAF      N4     C1H    H1H     108.550    3.000
+ DAF      N4     C1H    C6H     111.600    3.000
+ DAF      N4     C1H    C2H     110.000    3.000
+ DAF      H1H    C1H    C6H     108.810    3.000
+ DAF      H1H    C1H    C2H     108.340    3.000
+ DAF      C6H    C1H    C2H     109.470    3.000
+ DAF      C1H    C6H    H6H     120.000    3.000
+ DAF      C1H    C6H    C5H     120.500    3.000
+ DAF      H6H    C6H    C5H     120.000    3.000
+ DAF      C6H    C5H    C4H     120.000    3.000
+ DAF      C6H    C5H    C7H     120.000    3.000
+ DAF      C4H    C5H    C7H     120.000    3.000
+ DAF      C5H    C4H    H4H     108.810    3.000
+ DAF      C5H    C4H    O4H     109.470    3.000
+ DAF      C5H    C4H    C3H     109.470    3.000
+ DAF      H4H    C4H    O4H     109.470    3.000
+ DAF      H4H    C4H    C3H     108.340    3.000
+ DAF      O4H    C4H    C3H     109.470    3.000
+ DAF      C4H    O4H    "HO4'"  109.470    3.000
+ DAF      C4H    C3H    H3H     108.340    3.000
+ DAF      C4H    C3H    O3H     109.470    3.000
+ DAF      C4H    C3H    C2H     111.000    3.000
+ DAF      H3H    C3H    O3H     109.470    3.000
+ DAF      H3H    C3H    C2H     108.340    3.000
+ DAF      O3H    C3H    C2H     109.470    3.000
+ DAF      C3H    O3H    "HO3'"  109.470    3.000
+ DAF      C3H    C2H    H2H     108.340    3.000
+ DAF      C3H    C2H    O2H     109.470    3.000
+ DAF      C3H    C2H    C1H     111.000    3.000
+ DAF      H2H    C2H    O2H     109.470    3.000
+ DAF      H2H    C2H    C1H     108.340    3.000
+ DAF      O2H    C2H    C1H     109.470    3.000
+ DAF      C2H    O2H    "HO2'"  109.470    3.000
+ DAF      C5H    C7H    H7H1    109.470    3.000
+ DAF      C5H    C7H    H7H2    109.470    3.000
+ DAF      C5H    C7H    O7H     109.500    3.000
+ DAF      H7H1   C7H    H7H2    107.900    3.000
+ DAF      H7H1   C7H    O7H     109.470    3.000
+ DAF      H7H2   C7H    O7H     109.470    3.000
+ DAF      C7H    O7H    HO7     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DAF      var_1    C1     O5     C5     C4        60.000   20.000   1
+ DAF      var_2    O5     C5     C6     H61       52.612   20.000   3
+ DAF      var_3    O5     C5     C4     N4       180.000   20.000   3
+ DAF      var_4    C5     C4     C3     C2        60.000   20.000   3
+ DAF      var_5    C4     C3     O3     HO3     -179.244   20.000   1
+ DAF      var_6    C4     C3     C2     O2       180.000   20.000   3
+ DAF      var_7    C3     C2     C1     O5        60.000   20.000   3
+ DAF      var_8    C3     C2     O2     HO2      179.659   20.000   1
+ DAF      var_9    C5     C4     N4     C1H     -146.210   20.000   3
+ DAF      var_10   C4     N4     C1H    C6H       93.631   20.000   3
+ DAF      var_11   N4     C1H    C2H    C3H      180.000   20.000   3
+ DAF      var_12   N4     C1H    C6H    C5H      150.000   20.000   1
+ DAF      var_13   C1H    C6H    C5H    C7H      180.000   20.000   1
+ DAF      var_14   C6H    C5H    C4H    C3H       30.000   20.000   3
+ DAF      var_15   C5H    C4H    O4H    "HO4'"   -60.055   20.000   1
+ DAF      var_16   C5H    C4H    C3H    C2H      -60.000   20.000   3
+ DAF      var_17   C4H    C3H    O3H    "HO3'"    59.970   20.000   1
+ DAF      var_18   C4H    C3H    C2H    O2H      -60.000   20.000   3
+ DAF      var_19   C3H    C2H    O2H    "HO2'"   -59.993   20.000   1
+ DAF      var_20   C6H    C5H    C7H    O7H       -0.007   20.000   3
+ DAF      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DAF      chir_01  C2     C1     C3     O2        negativ
+ DAF      chir_02  C3     C2     C4     O3        positiv
+ DAF      chir_03  C4     C3     C5     N4        negativ
+ DAF      chir_04  C5     C4     C6     O5        negativ
+ DAF      chir_05  C1H    N4     C2H    C6H       positiv
+ DAF      chir_06  C2H    C1H    C3H    O2H       negativ
+ DAF      chir_07  C3H    C2H    C4H    O3H       positiv
+ DAF      chir_08  C4H    C3H    C5H    O4H       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DAF      plan-1    N4        0.020
+ DAF      plan-1    C4        0.020
+ DAF      plan-1    C1H       0.020
+ DAF      plan-1    HN4       0.020
+ DAF      plan-2    C5H       0.020
+ DAF      plan-2    C4H       0.020
+ DAF      plan-2    C6H       0.020
+ DAF      plan-2    C7H       0.020
+ DAF      plan-2    H6H       0.020
+ DAF      plan-3    C6H       0.020
+ DAF      plan-3    C1H       0.020
+ DAF      plan-3    C5H       0.020
+ DAF      plan-3    H6H       0.020
+# ------------------------------------------------------

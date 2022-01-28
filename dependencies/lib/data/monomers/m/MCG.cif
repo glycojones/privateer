@@ -1,0 +1,240 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MCG     MCG     "(S)-(ALPHA)-METHYL-4-CARBOXYPHENYLGLYCINE"     peptide     26     15     .
+#
+data_comp_MCG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MCG     N       N       NT3     1       -2.009      1.209       1.377
+MCG     CA      C       CT      0       -1.780      0.349       0.181
+MCG     C       C       C       0       -2.222      1.109       -1.079
+MCG     CB      C       CR6     0       -0.281      -0.009      0.076
+MCG     CG1     C       CR16    0       0.179       -1.324      0.141
+MCG     CG2     C       CR16    0       0.669       0.996       -0.088
+MCG     CD1     C       CR16    0       1.531       -1.620      0.045
+MCG     CD2     C       CR16    0       2.022       0.704       -0.184
+MCG     CE      C       CR6     0       2.465       -0.609      -0.119
+MCG     CZ      C       C       0       3.913       -0.926      -0.221
+MCG     OH2     O       OH1     0       4.503       -0.436      -1.281
+MCG     OH1     O       O       0       4.493       -1.592      0.622
+MCG     O       O       O       0       -2.085      0.560       -2.189
+MCG     OXT     O       OC      -1      -2.706      2.252       -0.962
+MCG     CM      C       CH3     0       -2.731      -0.859      0.305
+MCG     H       H       H       0       -2.915      1.398       1.454
+MCG     H2      H       H       0       -1.536      2.002       1.288
+MCG     H3      H       H       0       -1.720      0.756       2.134
+MCG     HG1     H       H       0       -0.431      -2.031      0.251
+MCG     HG2     H       H       0       0.391       1.896       -0.133
+MCG     HD1     H       H       0       1.815       -2.516      0.091
+MCG     HD2     H       H       0       2.642       1.402       -0.294
+MCG     HH2     H       H       0       4.304       -0.910      -1.986
+MCG     HM1     H       H       0       -3.652      -0.548      0.337
+MCG     HM2     H       H       0       -2.529      -1.349      1.121
+MCG     HM3     H       H       0       -2.617      -1.446      -0.462
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+MCG      N      n/a    CA     START
+MCG      H      N      .      .
+MCG      H2     N      .      .
+MCG      H3     N      .      .
+MCG      CA     N      C      .
+MCG      CB     CA     CG2    .
+MCG      CG2    CB     CD2    .
+MCG      HG2    CG2    .      .
+MCG      CD2    CG2    CE     .
+MCG      HD2    CD2    .      .
+MCG      CE     CD2    CD1    .
+MCG      CZ     CE     OH2    .
+MCG      OH1    CZ     .      .
+MCG      OH2    CZ     HH2    .
+MCG      HH2    OH2    .      .
+MCG      CD1    CE     CG1    .
+MCG      HD1    CD1    .      .
+MCG      CG1    CD1    HG1    .
+MCG      HG1    CG1    .      .
+MCG      CM     CA     HM1    .
+MCG      HM3    CM     .      .
+MCG      HM2    CM     .      .
+MCG      HM1    CM     .      .
+MCG      C      CA     .      END
+MCG      O      C      .      .
+MCG      OXT    C      .      .
+MCG      CB     CG1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MCG       N         CA        SINGLE    n         1.487     0.015     1.487     0.015     
+MCG       CA        C         SINGLE    n         1.527     0.020     1.527     0.020     
+MCG       CA        CB        SINGLE    n         1.537     0.010     1.537     0.010     
+MCG       CA        CM        SINGLE    n         1.539     0.010     1.539     0.010     
+MCG       C         O         DOUBLE    n         1.244     0.020     1.244     0.020     
+MCG       C         OXT       SINGLE    n         1.244     0.020     1.244     0.020     
+MCG       CB        CG1       DOUBLE    y         1.385     0.010     1.385     0.010     
+MCG       CB        CG2       SINGLE    y         1.385     0.010     1.385     0.010     
+MCG       CG1       CD1       SINGLE    y         1.384     0.010     1.384     0.010     
+MCG       CG2       CD2       DOUBLE    y         1.384     0.010     1.384     0.010     
+MCG       CD1       CE        DOUBLE    y         1.385     0.010     1.385     0.010     
+MCG       CD2       CE        SINGLE    y         1.385     0.010     1.385     0.010     
+MCG       CE        CZ        SINGLE    n         1.485     0.012     1.485     0.012     
+MCG       CZ        OH2       SINGLE    n         1.308     0.017     1.308     0.017     
+MCG       CZ        OH1       DOUBLE    n         1.221     0.018     1.221     0.018     
+MCG       N         H         SINGLE    n         1.036     0.016     0.928     0.020     
+MCG       N         H2        SINGLE    n         1.036     0.016     0.928     0.020     
+MCG       N         H3        SINGLE    n         1.036     0.016     0.928     0.020     
+MCG       CG1       HG1       SINGLE    n         1.082     0.013     0.943     0.017     
+MCG       CG2       HG2       SINGLE    n         1.082     0.013     0.943     0.017     
+MCG       CD1       HD1       SINGLE    n         1.082     0.013     0.941     0.017     
+MCG       CD2       HD2       SINGLE    n         1.082     0.013     0.941     0.017     
+MCG       OH2       HH2       SINGLE    n         0.970     0.012     0.873     0.020     
+MCG       CM        HM1       SINGLE    n         1.089     0.010     0.973     0.015     
+MCG       CM        HM2       SINGLE    n         1.089     0.010     0.973     0.015     
+MCG       CM        HM3       SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MCG          CA           N           H     109.014    2.44
+MCG          CA           N          H2     109.014    2.44
+MCG          CA           N          H3     109.014    2.44
+MCG           H           N          H2     109.748    1.85
+MCG           H           N          H3     109.748    1.85
+MCG          H2           N          H3     109.748    1.85
+MCG           N          CA           C     109.935    2.65
+MCG           N          CA          CB     111.783    2.39
+MCG           N          CA          CM     112.810    3.00
+MCG           C          CA          CB     111.423    3.00
+MCG           C          CA          CM     111.511    2.91
+MCG          CB          CA          CM     110.860    2.57
+MCG          CA           C           O     118.693    3.00
+MCG          CA           C         OXT     118.693    3.00
+MCG           O           C         OXT     122.613    1.75
+MCG          CA          CB         CG1     120.974    1.57
+MCG          CA          CB         CG2     120.974    1.57
+MCG         CG1          CB         CG2     118.053    1.50
+MCG          CB         CG1         CD1     120.865    1.50
+MCG          CB         CG1         HG1     119.632    1.50
+MCG         CD1         CG1         HG1     119.504    1.50
+MCG          CB         CG2         CD2     120.865    1.50
+MCG          CB         CG2         HG2     119.632    1.50
+MCG         CD2         CG2         HG2     119.504    1.50
+MCG         CG1         CD1          CE     120.531    1.50
+MCG         CG1         CD1         HD1     119.661    1.50
+MCG          CE         CD1         HD1     119.808    1.50
+MCG         CG2         CD2          CE     120.531    1.50
+MCG         CG2         CD2         HD2     119.661    1.50
+MCG          CE         CD2         HD2     119.808    1.50
+MCG         CD1          CE         CD2     119.155    1.50
+MCG         CD1          CE          CZ     120.423    1.50
+MCG         CD2          CE          CZ     120.423    1.50
+MCG          CE          CZ         OH2     114.477    1.61
+MCG          CE          CZ         OH1     122.197    1.58
+MCG         OH2          CZ         OH1     123.326    1.50
+MCG          CZ         OH2         HH2     110.328    3.00
+MCG          CA          CM         HM1     109.640    1.50
+MCG          CA          CM         HM2     109.640    1.50
+MCG          CA          CM         HM3     109.640    1.50
+MCG         HM1          CM         HM2     109.500    1.50
+MCG         HM1          CM         HM3     109.500    1.50
+MCG         HM2          CM         HM3     109.500    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MCG             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+MCG            sp3_sp3_10           N          CA          CM         HM1     180.000   10.00     3
+MCG             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+MCG             sp2_sp3_8         CG1          CB          CA           N     -90.000   10.00     6
+MCG       const_sp2_sp2_3          CA          CB         CG1         CD1     180.000   10.00     2
+MCG              const_23          CA          CB         CG2         CD2     180.000   10.00     2
+MCG       const_sp2_sp2_5          CE         CD1         CG1          CB       0.000   10.00     2
+MCG              const_17          CE         CD2         CG2          CB       0.000   10.00     2
+MCG              const_10         CG1         CD1          CE          CZ     180.000   10.00     2
+MCG              const_14         CG2         CD2          CE          CZ     180.000   10.00     2
+MCG             sp2_sp2_1         CD1          CE          CZ         OH2     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MCG    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MCG    plan-1          CA   0.020
+MCG    plan-1          CB   0.020
+MCG    plan-1         CD1   0.020
+MCG    plan-1         CD2   0.020
+MCG    plan-1          CE   0.020
+MCG    plan-1         CG1   0.020
+MCG    plan-1         CG2   0.020
+MCG    plan-1          CZ   0.020
+MCG    plan-1         HD1   0.020
+MCG    plan-1         HD2   0.020
+MCG    plan-1         HG1   0.020
+MCG    plan-1         HG2   0.020
+MCG    plan-2           C   0.020
+MCG    plan-2          CA   0.020
+MCG    plan-2           O   0.020
+MCG    plan-2         OXT   0.020
+MCG    plan-3          CE   0.020
+MCG    plan-3          CZ   0.020
+MCG    plan-3         OH1   0.020
+MCG    plan-3         OH2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MCG SMILES           ACDLabs              10.04 "O=C(O)C(N)(c1ccc(C(=O)O)cc1)C"
+MCG SMILES_CANONICAL CACTVS               3.341 "C[C@@](N)(C(O)=O)c1ccc(cc1)C(O)=O"
+MCG SMILES           CACTVS               3.341 "C[C](N)(C(O)=O)c1ccc(cc1)C(O)=O"
+MCG SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@](c1ccc(cc1)C(=O)O)(C(=O)O)N"
+MCG SMILES           "OpenEye OEToolkits" 1.5.0 "CC(c1ccc(cc1)C(=O)O)(C(=O)O)N"
+MCG InChI            InChI                1.03  "InChI=1S/C10H11NO4/c1-10(11,9(14)15)7-4-2-6(3-5-7)8(12)13/h2-5H,11H2,1H3,(H,12,13)(H,14,15)/t10-/m0/s1"
+MCG InChIKey         InChI                1.03  DNCAZYRLRMTVSF-JTQLQIEISA-N
+MCG ?                acedrg               196         "dictionary generator"
+MCG ?                acedrg_database      11          "data source"
+MCG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MCG ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,194 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VLM      VLM 'VALINYLAMINE                        ' non-polymer        20   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VLM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ VLM           O      O    O         0.000      0.000    0.000    0.000
+ VLM           C      C    C         0.000     -0.831   -0.675   -0.570
+ VLM           NT     N    NH2       0.000     -0.540   -1.939   -0.933
+ VLM           HNT2   H    H         0.000      0.372   -2.331   -0.732
+ VLM           HNT1   H    H         0.000     -1.231   -2.506   -1.408
+ VLM           CA     C    CH1       0.000     -2.191   -0.098   -0.873
+ VLM           HA     H    H         0.000     -2.512   -0.423   -1.872
+ VLM           N      N    NH2       0.000     -2.121    1.369   -0.833
+ VLM           H2     H    H         0.000     -2.353    1.914   -1.655
+ VLM           H      H    H         0.000     -1.840    1.845    0.016
+ VLM           CB     C    CH1       0.000     -3.197   -0.589    0.170
+ VLM           HB     H    H         0.000     -3.184   -1.687    0.203
+ VLM           CG2    C    CH3       0.000     -4.599   -0.107   -0.207
+ VLM           HG23   H    H         0.000     -4.861   -0.491   -1.159
+ VLM           HG22   H    H         0.000     -5.296   -0.447    0.514
+ VLM           HG21   H    H         0.000     -4.613    0.952   -0.238
+ VLM           CG1    C    CH3       0.000     -2.819   -0.033    1.545
+ VLM           HG13   H    H         0.000     -3.515   -0.373    2.268
+ VLM           HG12   H    H         0.000     -1.848   -0.368    1.808
+ VLM           HG11   H    H         0.000     -2.830    1.026    1.515
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VLM      O      n/a    C      START
+ VLM      C      O      CA     .
+ VLM      NT     C      HNT1   .
+ VLM      HNT2   NT     .      .
+ VLM      HNT1   NT     .      .
+ VLM      CA     C      CB     .
+ VLM      HA     CA     .      .
+ VLM      N      CA     H      .
+ VLM      H2     N      .      .
+ VLM      H      N      .      .
+ VLM      CB     CA     CG1    .
+ VLM      HB     CB     .      .
+ VLM      CG2    CB     HG21   .
+ VLM      HG23   CG2    .      .
+ VLM      HG22   CG2    .      .
+ VLM      HG21   CG2    .      .
+ VLM      CG1    CB     HG11   .
+ VLM      HG13   CG1    .      .
+ VLM      HG12   CG1    .      .
+ VLM      HG11   CG1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VLM       N         CA        single    1.450     0.020     1.450     0.020     
+VLM       H         N         single    1.036     0.016     0.914     0.007     
+VLM       H2        N         single    1.036     0.016     0.914     0.007     
+VLM       CA        C         single    1.500     0.020     1.500     0.020     
+VLM       CB        CA        single    1.524     0.020     1.524     0.020     
+VLM       HA        CA        single    1.089     0.010     0.989     0.005     
+VLM       C         O         double    1.220     0.020     1.220     0.020     
+VLM       NT        C         single    1.332     0.020     1.332     0.020     
+VLM       CG1       CB        single    1.524     0.020     1.524     0.020     
+VLM       CG2       CB        single    1.524     0.020     1.524     0.020     
+VLM       HB        CB        single    1.089     0.010     0.989     0.005     
+VLM       HG11      CG1       single    1.089     0.010     0.989     0.005     
+VLM       HG12      CG1       single    1.089     0.010     0.989     0.005     
+VLM       HG13      CG1       single    1.089     0.010     0.989     0.005     
+VLM       HG21      CG2       single    1.089     0.010     0.989     0.005     
+VLM       HG22      CG2       single    1.089     0.010     0.989     0.005     
+VLM       HG23      CG2       single    1.089     0.010     0.989     0.005     
+VLM       HNT1      NT        single    1.016     0.010     0.899     0.007     
+VLM       HNT2      NT        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VLM      O      C      NT      123.000    3.000
+ VLM      O      C      CA      120.500    3.000
+ VLM      NT     C      CA      120.000    3.000
+ VLM      C      NT     HNT2    120.000    3.000
+ VLM      C      NT     HNT1    120.000    3.000
+ VLM      HNT2   NT     HNT1    120.000    3.000
+ VLM      C      CA     HA      108.810    3.000
+ VLM      C      CA     N       109.470    3.000
+ VLM      C      CA     CB      109.470    3.000
+ VLM      HA     CA     N       109.470    3.000
+ VLM      HA     CA     CB      108.340    3.000
+ VLM      N      CA     CB      109.470    3.000
+ VLM      CA     N      H2      120.000    3.000
+ VLM      CA     N      H       120.000    3.000
+ VLM      H2     N      H       120.000    3.000
+ VLM      CA     CB     HB      108.340    3.000
+ VLM      CA     CB     CG2     111.000    3.000
+ VLM      CA     CB     CG1     111.000    3.000
+ VLM      HB     CB     CG2     108.340    3.000
+ VLM      HB     CB     CG1     108.340    3.000
+ VLM      CG2    CB     CG1     111.000    3.000
+ VLM      CB     CG2    HG23    109.470    3.000
+ VLM      CB     CG2    HG22    109.470    3.000
+ VLM      CB     CG2    HG21    109.470    3.000
+ VLM      HG23   CG2    HG22    109.470    3.000
+ VLM      HG23   CG2    HG21    109.470    3.000
+ VLM      HG22   CG2    HG21    109.470    3.000
+ VLM      CB     CG1    HG13    109.470    3.000
+ VLM      CB     CG1    HG12    109.470    3.000
+ VLM      CB     CG1    HG11    109.470    3.000
+ VLM      HG13   CG1    HG12    109.470    3.000
+ VLM      HG13   CG1    HG11    109.470    3.000
+ VLM      HG12   CG1    HG11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VLM      CONST_1  O      C      NT     HNT1     180.000    0.000   0
+ VLM      var_1    O      C      CA     CB      -100.057   20.000   3
+ VLM      var_2    C      CA     N      H        -59.982   20.000   1
+ VLM      var_3    C      CA     CB     CG1       65.002   20.000   3
+ VLM      var_4    CA     CB     CG2    HG21     -60.042   20.000   3
+ VLM      var_5    CA     CB     CG1    HG11      59.981   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ VLM      chir_01  CA     N      C      CB        negativ
+ VLM      chir_02  CB     CA     CG1    CG2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ VLM      plan-1    N         0.020
+ VLM      plan-1    CA        0.020
+ VLM      plan-1    H         0.020
+ VLM      plan-1    H2        0.020
+ VLM      plan-2    C         0.020
+ VLM      plan-2    CA        0.020
+ VLM      plan-2    O         0.020
+ VLM      plan-2    NT        0.020
+ VLM      plan-2    HNT2      0.020
+ VLM      plan-2    HNT1      0.020
+ VLM      plan-3    NT        0.020
+ VLM      plan-3    C         0.020
+ VLM      plan-3    HNT1      0.020
+ VLM      plan-3    HNT2      0.020
+# ------------------------------------------------------

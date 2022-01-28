@@ -1,0 +1,259 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FT6     FT6     6-FLUORO-L-TRYPTOPHAN     peptide     27     16     .
+#
+data_comp_FT6
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FT6     N       N       NT3     1       15.687      -22.583     -3.266
+FT6     CA      C       CH1     0       17.143      -22.547     -2.955
+FT6     C       C       C       0       17.644      -21.097     -2.962
+FT6     OXT     O       OC      -1      17.139      -20.323     -3.801
+FT6     CB      C       CH2     0       17.936      -23.416     -3.942
+FT6     CG      C       CR5     0       17.650      -24.883     -3.839
+FT6     CD2     C       CR56    0       16.997      -25.702     -4.825
+FT6     CD1     C       CR15    0       17.953      -25.710     -2.795
+FT6     NE1     N       NR5     0       17.536      -26.986     -3.060
+FT6     CE2     C       CR56    0       16.946      -27.014     -4.299
+FT6     CZ2     C       CR16    0       16.367      -28.056     -5.020
+FT6     CH2     C       CR6     0       15.848      -27.768     -6.261
+FT6     FAP     F       F       0       15.275      -28.771     -6.987
+FT6     CZ3     C       CR16    0       15.881      -26.491     -6.811
+FT6     CE3     C       CR16    0       16.453      -25.458     -6.099
+FT6     O       O       O       0       18.522      -20.794     -2.130
+FT6     H       H       H       0       15.250      -21.944     -2.783
+FT6     H2      H       H       0       15.345      -23.399     -3.051
+FT6     H3      H       H       0       15.559      -22.427     -4.155
+FT6     HA      H       H       0       17.269      -22.921     -2.051
+FT6     HB2     H       H       0       18.891      -23.266     -3.784
+FT6     HB3     H       H       0       17.733      -23.114     -4.850
+FT6     HD1     H       H       0       18.389      -25.444     -1.999
+FT6     HE1     H       H       0       17.632      -27.673     -2.523
+FT6     HZ2     H       H       0       16.335      -28.927     -4.665
+FT6     HZ3     H       H       0       15.518      -26.336     -7.655
+FT6     HE3     H       H       0       16.480      -24.589     -6.464
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+FT6      N      n/a    CA     START
+FT6      H      N      .      .
+FT6      H2     N      .      .
+FT6      H3     N      .      .
+FT6      CA     N      C      .
+FT6      HA     CA     .      .
+FT6      CB     CA     CG     .
+FT6      HB2    CB     .      .
+FT6      HB3    CB     .      .
+FT6      CG     CB     CD1    .
+FT6      CD1    CG     NE1    .
+FT6      HD1    CD1    .      .
+FT6      NE1    CD1    CE2    .
+FT6      HE1    NE1    .      .
+FT6      CE2    NE1    CZ2    .
+FT6      CZ2    CE2    CH2    .
+FT6      HZ2    CZ2    .      .
+FT6      CH2    CZ2    CZ3    .
+FT6      FAP    CH2    .      .
+FT6      CZ3    CH2    CE3    .
+FT6      HZ3    CZ3    .      .
+FT6      CE3    CZ3    CD2    .
+FT6      HE3    CE3    .      .
+FT6      CD2    CE3    .      .
+FT6      C      CA     .      END
+FT6      OXT    C      .      .
+FT6      O      C      .      .
+FT6      CG     CD2    .    ADD
+FT6      CD2    CE2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FT6       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+FT6       CA        CB        SINGLE    n         1.534     0.012     1.534     0.012     
+FT6       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+FT6       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+FT6       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+FT6       CB        CG        SINGLE    n         1.498     0.010     1.498     0.010     
+FT6       CG        CD2       SINGLE    y         1.439     0.010     1.439     0.010     
+FT6       CG        CD1       DOUBLE    y         1.365     0.010     1.365     0.010     
+FT6       CD2       CE3       DOUBLE    y         1.401     0.010     1.401     0.010     
+FT6       CD2       CE2       SINGLE    y         1.411     0.010     1.411     0.010     
+FT6       CD1       NE1       SINGLE    y         1.369     0.010     1.369     0.010     
+FT6       NE1       CE2       SINGLE    y         1.373     0.010     1.373     0.010     
+FT6       CE2       CZ2       DOUBLE    y         1.391     0.010     1.391     0.010     
+FT6       CZ2       CH2       SINGLE    y         1.374     0.012     1.374     0.012     
+FT6       CH2       FAP       SINGLE    n         1.364     0.010     1.364     0.010     
+FT6       CH2       CZ3       DOUBLE    y         1.388     0.010     1.388     0.010     
+FT6       CZ3       CE3       SINGLE    y         1.373     0.010     1.373     0.010     
+FT6       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+FT6       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+FT6       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+FT6       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+FT6       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.020     
+FT6       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.020     
+FT6       CD1       HD1       SINGLE    n         1.082     0.013     0.945     0.020     
+FT6       NE1       HE1       SINGLE    n         1.016     0.010     0.877     0.020     
+FT6       CZ2       HZ2       SINGLE    n         1.082     0.013     0.941     0.017     
+FT6       CZ3       HZ3       SINGLE    n         1.082     0.013     0.932     0.010     
+FT6       CE3       HE3       SINGLE    n         1.082     0.013     0.942     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FT6          CA           N           H     109.321    1.91
+FT6          CA           N          H2     109.321    1.91
+FT6          CA           N          H3     109.321    1.91
+FT6           H           N          H2     109.028    2.41
+FT6           H           N          H3     109.028    2.41
+FT6          H2           N          H3     109.028    2.41
+FT6           N          CA          CB     110.562    1.50
+FT6           N          CA           C     109.666    1.50
+FT6           N          CA          HA     108.030    1.50
+FT6          CB          CA           C     111.644    1.50
+FT6          CB          CA          HA     108.128    1.50
+FT6           C          CA          HA     108.922    1.50
+FT6          CA           C         OXT     117.134    1.50
+FT6          CA           C           O     117.134    1.50
+FT6         OXT           C           O     125.731    1.50
+FT6          CA          CB          CG     113.843    1.64
+FT6          CA          CB         HB2     108.266    1.50
+FT6          CA          CB         HB3     108.266    1.50
+FT6          CG          CB         HB2     109.029    1.50
+FT6          CG          CB         HB3     109.029    1.50
+FT6         HB2          CB         HB3     107.759    1.50
+FT6          CB          CG         CD2     126.820    1.50
+FT6          CB          CG         CD1     127.068    1.62
+FT6         CD2          CG         CD1     106.112    1.50
+FT6          CG         CD2         CE3     134.513    1.50
+FT6          CG         CD2         CE2     106.987    1.50
+FT6         CE3         CD2         CE2     118.500    1.50
+FT6          CG         CD1         NE1     110.404    1.50
+FT6          CG         CD1         HD1     125.159    1.59
+FT6         NE1         CD1         HD1     124.437    1.50
+FT6         CD1         NE1         CE2     109.042    1.50
+FT6         CD1         NE1         HE1     125.328    1.77
+FT6         CE2         NE1         HE1     125.630    1.60
+FT6         CD2         CE2         NE1     107.455    1.50
+FT6         CD2         CE2         CZ2     121.436    1.50
+FT6         NE1         CE2         CZ2     131.108    1.50
+FT6         CE2         CZ2         CH2     118.726    1.50
+FT6         CE2         CZ2         HZ2     120.355    1.50
+FT6         CH2         CZ2         HZ2     120.919    1.50
+FT6         CZ2         CH2         FAP     118.707    1.50
+FT6         CZ2         CH2         CZ3     123.315    1.50
+FT6         FAP         CH2         CZ3     117.978    1.50
+FT6         CH2         CZ3         CE3     119.244    1.50
+FT6         CH2         CZ3         HZ3     120.272    1.50
+FT6         CE3         CZ3         HZ3     120.484    1.50
+FT6         CD2         CE3         CZ3     118.779    1.50
+FT6         CD2         CE3         HE3     120.495    1.50
+FT6         CZ3         CE3         HE3     120.726    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FT6             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+FT6              const_31         FAP         CH2         CZ2         CE2     180.000   10.00     2
+FT6              const_27         FAP         CH2         CZ3         CE3     180.000   10.00     2
+FT6              const_21         CD2         CE3         CZ3         CH2       0.000   10.00     2
+FT6             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+FT6            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+FT6             sp2_sp3_8         CD2          CG          CB          CA     -90.000   10.00     6
+FT6       const_sp2_sp2_4         CE3         CD2          CG          CB       0.000   10.00     2
+FT6              const_38         NE1         CD1          CG          CB     180.000   10.00     2
+FT6              const_19          CG         CD2         CE3         CZ3     180.000   10.00     2
+FT6       const_sp2_sp2_5          CG         CD2         CE2         NE1       0.000   10.00     2
+FT6              const_13          CG         CD1         NE1         CE2       0.000   10.00     2
+FT6       const_sp2_sp2_9         CD2         CE2         NE1         CD1       0.000   10.00     2
+FT6              const_33         CD2         CE2         CZ2         CH2       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+FT6    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FT6    plan-1         CD2   0.020
+FT6    plan-1         CE2   0.020
+FT6    plan-1         CE3   0.020
+FT6    plan-1          CG   0.020
+FT6    plan-1         CH2   0.020
+FT6    plan-1         CZ2   0.020
+FT6    plan-1         CZ3   0.020
+FT6    plan-1         FAP   0.020
+FT6    plan-1         HE3   0.020
+FT6    plan-1         HZ2   0.020
+FT6    plan-1         HZ3   0.020
+FT6    plan-1         NE1   0.020
+FT6    plan-2          CB   0.020
+FT6    plan-2         CD1   0.020
+FT6    plan-2         CD2   0.020
+FT6    plan-2         CE2   0.020
+FT6    plan-2         CE3   0.020
+FT6    plan-2          CG   0.020
+FT6    plan-2         CZ2   0.020
+FT6    plan-2         HD1   0.020
+FT6    plan-2         HE1   0.020
+FT6    plan-2         NE1   0.020
+FT6    plan-3           C   0.020
+FT6    plan-3          CA   0.020
+FT6    plan-3           O   0.020
+FT6    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FT6 SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc2c1ccc(F)cc1nc2"
+FT6 SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1c[nH]c2cc(F)ccc12)C(O)=O"
+FT6 SMILES           CACTVS               3.341 "N[CH](Cc1c[nH]c2cc(F)ccc12)C(O)=O"
+FT6 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc2c(cc1F)[nH]cc2C[C@@H](C(=O)O)N"
+FT6 SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc2c(cc1F)[nH]cc2CC(C(=O)O)N"
+FT6 InChI            InChI                1.03  "InChI=1S/C11H11FN2O2/c12-7-1-2-8-6(3-9(13)11(15)16)5-14-10(8)4-7/h1-2,4-5,9,14H,3,13H2,(H,15,16)/t9-/m0/s1"
+FT6 InChIKey         InChI                1.03  YMEXGEAJNZRQEH-VIFPVBQESA-N
+FT6 ?                acedrg               196         "dictionary generator"
+FT6 ?                acedrg_database      11          "data source"
+FT6 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FT6 ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,195 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EEK     EEK      "~{N}-(3,4-dichlorophenyl)-~{N}'-oxidanyl-propanediamide"     NON-POLYMER     24     16     .     
+#
+data_comp_EEK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+EEK     C10     C       C       0       3.035       1.306       -0.952      
+EEK     C15     C       CR16    0       -2.214      0.877       0.169       
+EEK     C02     C       CR6     0       -3.822      -0.766      0.853       
+EEK     C03     C       CR6     0       -2.943      -1.774      0.471       
+EEK     C05     C       CR16    0       -1.703      -1.461      -0.062      
+EEK     C06     C       CR6     0       -1.332      -0.131      -0.213      
+EEK     C08     C       C       0       1.148       -0.286      -0.454      
+EEK     C09     C       CH2     0       2.265       0.076       -1.411      
+EEK     C16     C       CR16    0       -3.457      0.560       0.702       
+EEK     N07     N       NH1     0       -0.075      0.233       -0.754      
+EEK     N11     N       NH1     0       3.859       1.170       0.076       
+EEK     O12     O       OH1     0       4.133       -0.066      0.652       
+EEK     O13     O       O       0       2.882       2.383       -1.530      
+EEK     O14     O       O       0       1.359       -0.990      0.521       
+EEK     CL1     CL      CL      0       -5.374      -1.139      1.519       
+EEK     CL4     CL      CL      0       -3.370      -3.441      0.648       
+EEK     H1      H       H       0       -1.967      1.775       0.067       
+EEK     H2      H       H       0       -1.118      -2.149      -0.315      
+EEK     H3      H       H       0       2.880       -0.673      -1.503      
+EEK     H4      H       H       0       1.900       0.262       -2.295      
+EEK     H5      H       H       0       -4.048      1.241       0.959       
+EEK     H6      H       H       0       -0.095      0.881       -1.341      
+EEK     H7      H       H       0       4.253       1.873       0.420       
+EEK     H8      H       H       0       3.540       -0.213      1.267       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EEK       N11       O12       SINGLE    n         1.389     0.0110    1.389     0.0110    
+EEK       C10       N11       SINGLE    n         1.320     0.0103    1.320     0.0103    
+EEK       C10       C09       SINGLE    n         1.518     0.0111    1.518     0.0111    
+EEK       C10       O13       DOUBLE    n         1.232     0.0104    1.232     0.0104    
+EEK       C08       C09       SINGLE    n         1.513     0.0100    1.513     0.0100    
+EEK       C08       O14       DOUBLE    n         1.220     0.0113    1.220     0.0113    
+EEK       C08       N07       SINGLE    n         1.356     0.0127    1.356     0.0127    
+EEK       C06       N07       SINGLE    n         1.414     0.0100    1.414     0.0100    
+EEK       C15       C06       DOUBLE    y         1.389     0.0100    1.389     0.0100    
+EEK       C05       C06       SINGLE    y         1.386     0.0100    1.386     0.0100    
+EEK       C15       C16       SINGLE    y         1.383     0.0126    1.383     0.0126    
+EEK       C03       C05       DOUBLE    y         1.382     0.0100    1.382     0.0100    
+EEK       C02       C16       DOUBLE    y         1.380     0.0100    1.380     0.0100    
+EEK       C02       C03       SINGLE    y         1.386     0.0100    1.386     0.0100    
+EEK       C03       CL4       SINGLE    n         1.730     0.0100    1.730     0.0100    
+EEK       C02       CL1       SINGLE    n         1.730     0.0100    1.730     0.0100    
+EEK       C15       H1        SINGLE    n         1.082     0.013     0.937     0.0124    
+EEK       C05       H2        SINGLE    n         1.082     0.013     0.938     0.0116    
+EEK       C09       H3        SINGLE    n         1.089     0.010     0.974     0.0121    
+EEK       C09       H4        SINGLE    n         1.089     0.010     0.974     0.0121    
+EEK       C16       H5        SINGLE    n         1.082     0.013     0.938     0.0146    
+EEK       N07       H6        SINGLE    n         1.016     0.010     0.874     0.0200    
+EEK       N11       H7        SINGLE    n         1.016     0.010     0.875     0.0200    
+EEK       O12       H8        SINGLE    n         0.970     0.012     0.867     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+EEK         N11         C10         C09     115.798    1.90
+EEK         N11         C10         O13     123.052    1.50
+EEK         C09         C10         O13     121.151    1.50
+EEK         C06         C15         C16     120.406    1.50
+EEK         C06         C15          H1     119.850    1.50
+EEK         C16         C15          H1     119.744    1.50
+EEK         C16         C02         C03     119.787    1.50
+EEK         C16         C02         CL1     119.170    1.50
+EEK         C03         C02         CL1     121.043    1.50
+EEK         C05         C03         C02     120.481    1.50
+EEK         C05         C03         CL4     118.591    1.50
+EEK         C02         C03         CL4     120.928    1.50
+EEK         C06         C05         C03     119.816    1.50
+EEK         C06         C05          H2     120.345    1.50
+EEK         C03         C05          H2     119.839    1.50
+EEK         N07         C06         C15     119.881    3.00
+EEK         N07         C06         C05     120.155    3.00
+EEK         C15         C06         C05     119.963    1.50
+EEK         C09         C08         O14     121.588    1.50
+EEK         C09         C08         N07     115.103    1.50
+EEK         O14         C08         N07     123.309    1.50
+EEK         C10         C09         C08     111.575    3.00
+EEK         C10         C09          H3     108.097    2.54
+EEK         C10         C09          H4     108.097    2.54
+EEK         C08         C09          H3     109.762    1.50
+EEK         C08         C09          H4     109.762    1.50
+EEK          H3         C09          H4     107.609    1.50
+EEK         C15         C16         C02     119.546    1.50
+EEK         C15         C16          H5     120.374    1.50
+EEK         C02         C16          H5     120.080    1.50
+EEK         C08         N07         C06     127.481    1.50
+EEK         C08         N07          H6     116.600    1.57
+EEK         C06         N07          H6     115.919    1.69
+EEK         O12         N11         C10     120.736    1.50
+EEK         O12         N11          H7     118.803    2.59
+EEK         C10         N11          H7     120.460    1.50
+EEK         N11         O12          H8     108.051    2.18
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+EEK             sp2_sp2_1         C09         C10         N11         O12     180.000   10.00     2
+EEK             sp2_sp3_4         N11         C10         C09         C08     120.000   10.00     6
+EEK       const_sp2_sp2_3         N07         C06         C15         C16     180.000   10.00     2
+EEK              const_21         C06         C15         C16         C02       0.000   10.00     2
+EEK              const_16         CL1         C02         C03         CL4       0.000   10.00     2
+EEK              const_19         CL1         C02         C16         C15     180.000   10.00     2
+EEK              const_11         CL4         C03         C05         C06     180.000   10.00     2
+EEK       const_sp2_sp2_6         C03         C05         C06         N07     180.000   10.00     2
+EEK             sp2_sp2_9         C15         C06         N07         C08     180.000   10.00     2
+EEK            sp2_sp3_10         O14         C08         C09         C10     120.000   10.00     6
+EEK             sp2_sp2_5         C09         C08         N07         C06     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+EEK    plan-1         C02   0.020
+EEK    plan-1         C03   0.020
+EEK    plan-1         C05   0.020
+EEK    plan-1         C06   0.020
+EEK    plan-1         C15   0.020
+EEK    plan-1         C16   0.020
+EEK    plan-1         CL1   0.020
+EEK    plan-1         CL4   0.020
+EEK    plan-1          H1   0.020
+EEK    plan-1          H2   0.020
+EEK    plan-1          H5   0.020
+EEK    plan-1         N07   0.020
+EEK    plan-2         C09   0.020
+EEK    plan-2         C10   0.020
+EEK    plan-2         N11   0.020
+EEK    plan-2         O13   0.020
+EEK    plan-3         C08   0.020
+EEK    plan-3         C09   0.020
+EEK    plan-3         N07   0.020
+EEK    plan-3         O14   0.020
+EEK    plan-4         C06   0.020
+EEK    plan-4         C08   0.020
+EEK    plan-4          H6   0.020
+EEK    plan-4         N07   0.020
+EEK    plan-5         C10   0.020
+EEK    plan-5          H7   0.020
+EEK    plan-5         N11   0.020
+EEK    plan-5         O12   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+EEK            InChI                InChI  1.03 InChI=1S/C9H8Cl2N2O3/c10-6-2-1-5(3-7(6)11)12-8(14)4-9(15)13-16/h1-3,16H,4H2,(H,12,14)(H,13,15)
+EEK         InChIKey                InChI  1.03                                                                    ZGACHNBRFOETSO-UHFFFAOYSA-N
+EEK SMILES_CANONICAL               CACTVS 3.385                                                                 ONC(=O)CC(=O)Nc1ccc(Cl)c(Cl)c1
+EEK           SMILES               CACTVS 3.385                                                                 ONC(=O)CC(=O)Nc1ccc(Cl)c(Cl)c1
+EEK SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                                                 c1cc(c(cc1NC(=O)CC(=O)NO)Cl)Cl
+EEK           SMILES "OpenEye OEToolkits" 2.0.6                                                                 c1cc(c(cc1NC(=O)CC(=O)NO)Cl)Cl
+EEK ?                acedrg               217         "dictionary generator"                  
+EEK ?                acedrg_database      11          "data source"                           
+EEK ?                rdkit                2017.03.2   "Chemoinformatics tool"
+EEK ?                refmac5              5.8.0253    "optimization tool"                     

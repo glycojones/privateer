@@ -1,0 +1,151 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NTM     NTM      "QUINOLINIC ACID"     NON-POLYMER     15     12     .     
+#
+data_comp_NTM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NTM     N1      N       NRD6    0       39.302      36.208      19.417      
+NTM     C2      C       CR6     0       40.646      36.083      19.433      
+NTM     C3      C       CR6     0       41.335      35.760      20.643      
+NTM     C4      C       CR16    0       40.577      35.577      21.809      
+NTM     C5      C       CR16    0       39.200      35.708      21.776      
+NTM     C6      C       CR16    0       38.602      36.024      20.564      
+NTM     C7      C       C       0       41.367      36.302      18.115      
+NTM     O1      O       O       0       41.172      35.464      17.216      
+NTM     O2      O       OC      -1      42.101      37.303      18.029      
+NTM     C8      C       C       0       42.835      35.607      20.726      
+NTM     O3      O       O       0       43.356      34.653      20.119      
+NTM     O4      O       OC      -1      43.467      36.442      21.397      
+NTM     H4      H       H       0       41.010      35.364      22.617      
+NTM     H5      H       H       0       38.683      35.587      22.554      
+NTM     H6      H       H       0       37.662      36.115      20.532      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NTM       N1        C2        DOUBLE    y         1.343     0.010     1.343     0.010     
+NTM       N1        C6        SINGLE    y         1.341     0.015     1.341     0.015     
+NTM       C2        C3        SINGLE    y         1.405     0.016     1.405     0.016     
+NTM       C2        C7        SINGLE    n         1.517     0.011     1.517     0.011     
+NTM       C3        C4        DOUBLE    y         1.394     0.011     1.394     0.011     
+NTM       C3        C8        SINGLE    n         1.508     0.013     1.508     0.013     
+NTM       C4        C5        SINGLE    y         1.377     0.010     1.377     0.010     
+NTM       C5        C6        DOUBLE    y         1.374     0.015     1.374     0.015     
+NTM       C7        O1        DOUBLE    n         1.244     0.020     1.244     0.020     
+NTM       C7        O2        SINGLE    n         1.244     0.020     1.244     0.020     
+NTM       C8        O3        DOUBLE    n         1.244     0.020     1.244     0.020     
+NTM       C8        O4        SINGLE    n         1.244     0.020     1.244     0.020     
+NTM       C4        H4        SINGLE    n         1.082     0.013     0.941     0.017     
+NTM       C5        H5        SINGLE    n         1.082     0.013     0.942     0.015     
+NTM       C6        H6        SINGLE    n         1.082     0.013     0.945     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NTM          C2          N1          C6     118.801    1.50
+NTM          N1          C2          C3     121.105    1.50
+NTM          N1          C2          C7     117.646    1.81
+NTM          C3          C2          C7     121.249    2.28
+NTM          C2          C3          C4     118.734    1.85
+NTM          C2          C3          C8     122.288    1.77
+NTM          C4          C3          C8     118.977    1.50
+NTM          C3          C4          C5     119.944    1.50
+NTM          C3          C4          H4     119.862    1.50
+NTM          C5          C4          H4     120.194    1.50
+NTM          C4          C5          C6     118.123    1.50
+NTM          C4          C5          H5     120.945    1.50
+NTM          C6          C5          H5     120.933    1.50
+NTM          N1          C6          C5     123.293    1.50
+NTM          N1          C6          H6     118.106    1.50
+NTM          C5          C6          H6     118.601    1.50
+NTM          C2          C7          O1     117.096    1.74
+NTM          C2          C7          O2     117.096    1.74
+NTM          O1          C7          O2     125.807    1.50
+NTM          C3          C8          O3     117.793    1.50
+NTM          C3          C8          O4     117.793    1.50
+NTM          O3          C8          O4     124.413    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NTM       const_sp2_sp2_2          C7          C2          N1          C6     180.000   10.00     2
+NTM              const_19          C5          C6          N1          C2       0.000   10.00     2
+NTM       const_sp2_sp2_6          C7          C2          C3          C8       0.000   10.00     2
+NTM             sp2_sp2_3          N1          C2          C7          O1       0.000   10.00     2
+NTM       const_sp2_sp2_9          C8          C3          C4          C5     180.000   10.00     2
+NTM             sp2_sp2_5          C2          C3          C8          O3     180.000   10.00     2
+NTM              const_11          C3          C4          C5          C6       0.000   10.00     2
+NTM              const_15          C4          C5          C6          N1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NTM    plan-1          C2   0.020
+NTM    plan-1          C3   0.020
+NTM    plan-1          C4   0.020
+NTM    plan-1          C5   0.020
+NTM    plan-1          C6   0.020
+NTM    plan-1          C7   0.020
+NTM    plan-1          C8   0.020
+NTM    plan-1          H4   0.020
+NTM    plan-1          H5   0.020
+NTM    plan-1          H6   0.020
+NTM    plan-1          N1   0.020
+NTM    plan-2          C2   0.020
+NTM    plan-2          C7   0.020
+NTM    plan-2          O1   0.020
+NTM    plan-2          O2   0.020
+NTM    plan-3          C3   0.020
+NTM    plan-3          C8   0.020
+NTM    plan-3          O3   0.020
+NTM    plan-3          O4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NTM SMILES           ACDLabs              10.04 "O=C(O)c1ncccc1C(=O)O"
+NTM SMILES_CANONICAL CACTVS               3.341 "OC(=O)c1cccnc1C(O)=O"
+NTM SMILES           CACTVS               3.341 "OC(=O)c1cccnc1C(O)=O"
+NTM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(nc1)C(=O)O)C(=O)O"
+NTM SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(nc1)C(=O)O)C(=O)O"
+NTM InChI            InChI                1.03  "InChI=1S/C7H5NO4/c9-6(10)4-2-1-3-8-5(4)7(11)12/h1-3H,(H,9,10)(H,11,12)"
+NTM InChIKey         InChI                1.03  GJAWHXHKYYXBSV-UHFFFAOYSA-N
+NTM ?                acedrg               202         "dictionary generator"                  
+NTM ?                acedrg_database      11          "data source"                           
+NTM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NTM ?                refmac5              5.8.0189    "optimization tool"                     

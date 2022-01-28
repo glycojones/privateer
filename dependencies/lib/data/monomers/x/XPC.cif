@@ -1,0 +1,189 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XPC      XPC '(3S,4R)-4-aminopyrrolidine-3-carboxy' non-polymer        18   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_XPC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ XPC           OXT    O    OC       -0.500      0.000    0.000    0.000
+ XPC           C      C    C         0.000     -1.088   -0.551   -0.277
+ XPC           O      O    OC       -0.500     -1.116   -1.508   -1.082
+ XPC           CA     C    CH1       0.000     -2.365   -0.062    0.356
+ XPC           HA     H    H         0.000     -2.326   -0.177    1.449
+ XPC           CB     C    CH1       0.000     -3.586   -0.807   -0.229
+ XPC           HB     H    H         0.000     -3.337   -1.236   -1.210
+ XPC           N      N    NH2       0.000     -4.031   -1.862    0.690
+ XPC           HNA    H    H         0.000     -3.521   -2.042    1.547
+ XPC           HN     H    H         0.000     -4.851   -2.417    0.474
+ XPC           CE     C    CH2       0.000     -2.639    1.413   -0.030
+ XPC           HE     H    H         0.000     -2.362    1.631   -1.064
+ XPC           HEA    H    H         0.000     -2.139    2.119    0.636
+ XPC           ND     N    NH1       0.000     -4.111    1.537    0.127
+ XPC           HND    H    H         0.000     -4.619    2.326    0.501
+ XPC           CG     C    CH2       0.000     -4.679    0.269   -0.377
+ XPC           HGA    H    H         0.000     -4.958    0.364   -1.429
+ XPC           HG     H    H         0.000     -5.556   -0.019    0.206
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ XPC      OXT    n/a    C      START
+ XPC      C      OXT    CA     .
+ XPC      O      C      .      .
+ XPC      CA     C      CE     .
+ XPC      HA     CA     .      .
+ XPC      CB     CA     N      .
+ XPC      HB     CB     .      .
+ XPC      N      CB     HN     .
+ XPC      HNA    N      .      .
+ XPC      HN     N      .      .
+ XPC      CE     CA     ND     .
+ XPC      HE     CE     .      .
+ XPC      HEA    CE     .      .
+ XPC      ND     CE     CG     .
+ XPC      HND    ND     .      .
+ XPC      CG     ND     HG     .
+ XPC      HGA    CG     .      .
+ XPC      HG     CG     .      END
+ XPC      CB     CG     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XPC       HN        N         single    1.036     0.016     0.914     0.007     
+XPC       HNA       N         single    1.036     0.016     0.914     0.007     
+XPC       N         CB        single    1.450     0.020     1.450     0.020     
+XPC       CB        CG        single    1.524     0.020     1.524     0.020     
+XPC       HGA       CG        single    1.089     0.010     0.989     0.005     
+XPC       CG        ND        single    1.450     0.020     1.450     0.020     
+XPC       HND       ND        single    1.036     0.016     0.914     0.007     
+XPC       ND        CE        single    1.450     0.020     1.450     0.020     
+XPC       HE        CE        single    1.089     0.010     0.989     0.005     
+XPC       CE        CA        single    1.524     0.020     1.524     0.020     
+XPC       CB        CA        single    1.524     0.020     1.524     0.020     
+XPC       HA        CA        single    1.089     0.010     0.989     0.005     
+XPC       CA        C         single    1.500     0.020     1.500     0.020     
+XPC       C         OXT       deloc     1.250     0.020     1.250     0.020     
+XPC       O         C         deloc     1.250     0.020     1.250     0.020     
+XPC       HB        CB        single    1.089     0.010     0.989     0.005     
+XPC       HG        CG        single    1.089     0.010     0.989     0.005     
+XPC       HEA       CE        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ XPC      OXT    C      O       123.000    3.000
+ XPC      OXT    C      CA      118.500    3.000
+ XPC      O      C      CA      118.500    3.000
+ XPC      C      CA     HA      108.810    3.000
+ XPC      C      CA     CB      109.470    3.000
+ XPC      C      CA     CE      109.470    3.000
+ XPC      HA     CA     CB      108.340    3.000
+ XPC      HA     CA     CE      108.340    3.000
+ XPC      CB     CA     CE      111.000    3.000
+ XPC      CA     CB     HB      108.340    3.000
+ XPC      CA     CB     N       109.470    3.000
+ XPC      CA     CB     CG      111.000    3.000
+ XPC      HB     CB     N       109.470    3.000
+ XPC      HB     CB     CG      108.340    3.000
+ XPC      N      CB     CG      109.470    3.000
+ XPC      CB     N      HNA     120.000    3.000
+ XPC      CB     N      HN      120.000    3.000
+ XPC      HNA    N      HN      120.000    3.000
+ XPC      CA     CE     HE      109.470    3.000
+ XPC      CA     CE     HEA     109.470    3.000
+ XPC      CA     CE     ND      110.000    3.000
+ XPC      HE     CE     HEA     107.900    3.000
+ XPC      HE     CE     ND      109.470    3.000
+ XPC      HEA    CE     ND      109.470    3.000
+ XPC      CE     ND     HND     118.500    3.000
+ XPC      CE     ND     CG      120.000    3.000
+ XPC      HND    ND     CG      118.500    3.000
+ XPC      ND     CG     HGA     109.470    3.000
+ XPC      ND     CG     HG      109.470    3.000
+ XPC      ND     CG     CB      110.000    3.000
+ XPC      HGA    CG     HG      107.900    3.000
+ XPC      HGA    CG     CB      109.470    3.000
+ XPC      HG     CG     CB      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ XPC      var_1    OXT    C      CA     CE        61.413   20.000   3
+ XPC      var_2    C      CA     CB     N         90.000   20.000   3
+ XPC      var_3    CA     CB     CG     ND         0.000   20.000   3
+ XPC      var_4    CA     CB     N      HN       177.103   20.000   1
+ XPC      var_5    C      CA     CE     ND       150.000   20.000   3
+ XPC      var_6    CA     CE     ND     CG       -30.000   20.000   3
+ XPC      var_7    CE     ND     CG     CB        30.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ XPC      chir_01  CB     N      CG     CA        negativ
+ XPC      chir_02  CA     CB     CE     C         positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ XPC      plan-1    N         0.020
+ XPC      plan-1    CB        0.020
+ XPC      plan-1    HN        0.020
+ XPC      plan-1    HNA       0.020
+ XPC      plan-2    ND        0.020
+ XPC      plan-2    CG        0.020
+ XPC      plan-2    CE        0.020
+ XPC      plan-2    HND       0.020
+ XPC      plan-3    C         0.020
+ XPC      plan-3    CA        0.020
+ XPC      plan-3    O         0.020
+ XPC      plan-3    OXT       0.020
+# ------------------------------------------------------

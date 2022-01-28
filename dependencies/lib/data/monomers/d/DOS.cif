@@ -1,0 +1,551 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DOS      DOS '.                                   ' non-polymer        71  30 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DOS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DOS           HE21   H    H         0.000     -0.343    0.643    0.417
+ DOS           NE2    N    NH1       0.000     -0.730   -0.256    0.663
+ DOS           CD2    C    CH2       0.000     -0.274   -1.083    1.658
+ DOS           HD22   H    H         0.000     -0.359   -0.658    2.661
+ DOS           HD21   H    H         0.000      0.745   -1.444    1.502
+ DOS           CE1    C    CH2       0.000     -1.763   -0.840    0.081
+ DOS           HE11   H    H         0.000     -1.497   -0.931   -0.974
+ DOS           HE12   H    H         0.000     -2.596   -0.143    0.186
+ DOS           ND1    N    N         0.000     -2.115   -2.025    0.553
+ DOS           CG     C    CH2       0.000     -1.142   -2.110    1.528
+ DOS           HG2    H    H         0.000     -0.593   -3.025    1.296
+ DOS           HG1    H    H         0.000     -1.692   -2.244    2.462
+ DOS           OS     OS   OS        2.000     -3.755   -3.272    0.123
+ DOS           N37    N    N         0.000     -3.466   -4.405    1.842
+ DOS           C36    C    CH2       0.000     -2.562   -4.153    2.836
+ DOS           H361   H    H         0.000     -2.843   -3.155    3.177
+ DOS           H362   H    H         0.000     -1.613   -4.099    2.298
+ DOS           C35    C    CH2       0.000     -2.428   -5.000    3.932
+ DOS           H351   H    H         0.000     -2.608   -4.356    4.796
+ DOS           H352   H    H         0.000     -1.379   -5.301    3.916
+ DOS           C34    C    CH2       0.000     -3.233   -6.124    4.017
+ DOS           H341   H    H         0.000     -3.754   -6.010    4.969
+ DOS           H342   H    H         0.000     -2.527   -6.955    4.086
+ DOS           C33    C    CH2       0.000     -4.136   -6.375    3.030
+ DOS           H33B   H    H         0.000     -5.093   -6.426    3.554
+ DOS           H33A   H    H         0.000     -3.866   -7.371    2.671
+ DOS           C32    C    CH1       0.000     -4.243   -5.497    1.940
+ DOS           H332   H    H         0.000     -4.998   -4.912    2.485
+ DOS           C31    C    CH1       0.000     -5.190   -5.703    0.848
+ DOS           H331   H    H         0.000     -4.436   -6.287    0.302
+ DOS           C30    C    CH2       0.000     -6.092   -6.777    0.755
+ DOS           H301   H    H         0.000     -6.671   -6.712    1.679
+ DOS           H302   H    H         0.000     -5.451   -7.660    0.791
+ DOS           C29    C    CH2       0.000     -6.947   -6.873   -0.317
+ DOS           H291   H    H         0.000     -7.939   -6.903    0.138
+ DOS           H292   H    H         0.000     -6.718   -7.848   -0.751
+ DOS           C28    C    CH2       0.000     -6.920   -5.905   -1.309
+ DOS           H281   H    H         0.000     -7.936   -5.503   -1.341
+ DOS           H282   H    H         0.000     -6.717   -6.451   -2.233
+ DOS           C27    C    CH2       0.000     -6.009   -4.858   -1.177
+ DOS           H272   H    H         0.000     -6.654   -3.977   -1.214
+ DOS           H271   H    H         0.000     -5.434   -4.926   -2.103
+ DOS           N26    N    N         0.000     -5.166   -4.756   -0.129
+ DOS           N13    N    N         0.000     -2.316   -4.229   -1.023
+ DOS           C12    C    CH2       0.000     -1.450   -5.180   -0.574
+ DOS           H121   H    H         0.000     -2.110   -5.925   -0.126
+ DOS           H122   H    H         0.000     -0.899   -4.662    0.214
+ DOS           C11    C    CH2       0.000     -0.555   -5.807   -1.433
+ DOS           H111   H    H         0.000     -0.789   -6.869   -1.337
+ DOS           H112   H    H         0.000      0.424   -5.610   -0.991
+ DOS           C10    C    CH2       0.000     -0.539   -5.454   -2.773
+ DOS           H101   H    H         0.000     -0.723   -6.394   -3.297
+ DOS           H102   H    H         0.000      0.489   -5.135   -2.952
+ DOS           C9     C    CH2       0.000     -1.404   -4.496   -3.233
+ DOS           H92    H    H         0.000     -1.966   -4.998   -4.023
+ DOS           H91    H    H         0.000     -0.754   -3.738   -3.676
+ DOS           C8     C    CH1       0.000     -2.299   -3.883   -2.336
+ DOS           H88    H    H         0.000     -1.553   -3.104   -2.123
+ DOS           C7     C    CH1       0.000     -3.261   -2.856   -2.732
+ DOS           H77    H    H         0.000     -4.006   -3.636   -2.945
+ DOS           N2     N    N         0.000     -4.050   -2.378   -1.727
+ DOS           C6     C    C1        0.000     -3.410   -2.357   -4.035
+ DOS           H61    H    H         0.000     -2.787   -2.732   -4.830
+ DOS           C5     C    C1        0.000     -4.349   -1.393   -4.296
+ DOS           H51    H    H         0.000     -4.465   -1.015   -5.298
+ DOS           C4     C    CH2       0.000     -5.151   -0.903   -3.277
+ DOS           H41    H    H         0.000     -6.174   -1.092   -3.610
+ DOS           H42    H    H         0.000     -4.965    0.173   -3.268
+ DOS           C3     C    CH2       0.000     -4.976   -1.418   -1.996
+ DOS           H32    H    H         0.000     -5.972   -1.791   -1.745
+ DOS           H31    H    H         0.000     -4.762   -0.527   -1.402
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DOS      HE21   n/a    NE2    START
+ DOS      NE2    HE21   CE1    .
+ DOS      CD2    NE2    HD21   .
+ DOS      HD22   CD2    .      .
+ DOS      HD21   CD2    .      .
+ DOS      CE1    NE2    ND1    .
+ DOS      HE11   CE1    .      .
+ DOS      HE12   CE1    .      .
+ DOS      ND1    CE1    OS     .
+ DOS      CG     ND1    HG1    .
+ DOS      HG2    CG     .      .
+ DOS      HG1    CG     .      .
+ DOS      OS     ND1    N13    .
+ DOS      N37    OS     C32    .
+ DOS      C36    N37    C35    .
+ DOS      H361   C36    .      .
+ DOS      H362   C36    .      .
+ DOS      C35    C36    C34    .
+ DOS      H351   C35    .      .
+ DOS      H352   C35    .      .
+ DOS      C34    C35    C33    .
+ DOS      H341   C34    .      .
+ DOS      H342   C34    .      .
+ DOS      C33    C34    H33A   .
+ DOS      H33B   C33    .      .
+ DOS      H33A   C33    .      .
+ DOS      C32    N37    C31    .
+ DOS      H332   C32    .      .
+ DOS      C31    C32    N26    .
+ DOS      H331   C31    .      .
+ DOS      C30    C31    C29    .
+ DOS      H301   C30    .      .
+ DOS      H302   C30    .      .
+ DOS      C29    C30    C28    .
+ DOS      H291   C29    .      .
+ DOS      H292   C29    .      .
+ DOS      C28    C29    C27    .
+ DOS      H281   C28    .      .
+ DOS      H282   C28    .      .
+ DOS      C27    C28    H271   .
+ DOS      H272   C27    .      .
+ DOS      H271   C27    .      .
+ DOS      N26    C31    .      .
+ DOS      N13    OS     C8     .
+ DOS      C12    N13    C11    .
+ DOS      H121   C12    .      .
+ DOS      H122   C12    .      .
+ DOS      C11    C12    C10    .
+ DOS      H111   C11    .      .
+ DOS      H112   C11    .      .
+ DOS      C10    C11    C9     .
+ DOS      H101   C10    .      .
+ DOS      H102   C10    .      .
+ DOS      C9     C10    H91    .
+ DOS      H92    C9     .      .
+ DOS      H91    C9     .      .
+ DOS      C8     N13    C7     .
+ DOS      H88    C8     .      .
+ DOS      C7     C8     C6     .
+ DOS      H77    C7     .      .
+ DOS      N2     C7     .      .
+ DOS      C6     C7     C5     .
+ DOS      H61    C6     .      .
+ DOS      C5     C6     C4     .
+ DOS      H51    C5     .      .
+ DOS      C4     C5     C3     .
+ DOS      H41    C4     .      .
+ DOS      H42    C4     .      .
+ DOS      C3     C4     H31    .
+ DOS      H32    C3     .      .
+ DOS      H31    C3     .      END
+ DOS      OS     N2     .    ADD
+ DOS      OS     N26    .    ADD
+ DOS      N2     C3     .    ADD
+ DOS      C8     C9     .    ADD
+ DOS      N26    C27    .    ADD
+ DOS      C32    C33    .    ADD
+ DOS      CG     CD2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DOS       OS        N2        single    2.075     0.020     2.075     0.020     
+DOS       N13       OS        single    2.073     0.020     2.073     0.020     
+DOS       OS        N26       single    2.064     0.020     2.064     0.020     
+DOS       N37       OS        single    2.079     0.020     2.079     0.020     
+DOS       OS        ND1       single    2.105     0.020     2.105     0.020     
+DOS       N2        C3        single    1.455     0.020     1.455     0.020     
+DOS       N2        C7        single    1.455     0.020     1.455     0.020     
+DOS       C3        C4        single    1.524     0.020     1.524     0.020     
+DOS       H31       C3        single    1.089     0.010     0.989     0.005     
+DOS       H32       C3        single    1.089     0.010     0.989     0.005     
+DOS       C4        C5        single    1.510     0.020     1.510     0.020     
+DOS       H41       C4        single    1.089     0.010     0.989     0.005     
+DOS       H42       C4        single    1.089     0.010     0.989     0.005     
+DOS       C5        C6        double    1.330     0.020     1.330     0.020     
+DOS       H51       C5        single    1.082     0.013     0.975     0.010     
+DOS       C6        C7        single    1.510     0.020     1.510     0.020     
+DOS       H61       C6        single    1.082     0.013     0.975     0.010     
+DOS       C7        C8        single    1.524     0.020     1.524     0.020     
+DOS       H77       C7        single    1.089     0.010     0.989     0.005     
+DOS       C8        C9        single    1.524     0.020     1.524     0.020     
+DOS       C8        N13       single    1.455     0.020     1.455     0.020     
+DOS       H88       C8        single    1.089     0.010     0.989     0.005     
+DOS       C9        C10       single    1.524     0.020     1.524     0.020     
+DOS       H91       C9        single    1.089     0.010     0.989     0.005     
+DOS       H92       C9        single    1.089     0.010     0.989     0.005     
+DOS       C10       C11       single    1.524     0.020     1.524     0.020     
+DOS       H101      C10       single    1.089     0.010     0.989     0.005     
+DOS       H102      C10       single    1.089     0.010     0.989     0.005     
+DOS       C11       C12       single    1.524     0.020     1.524     0.020     
+DOS       H111      C11       single    1.089     0.010     0.989     0.005     
+DOS       H112      C11       single    1.089     0.010     0.989     0.005     
+DOS       C12       N13       single    1.455     0.020     1.455     0.020     
+DOS       H121      C12       single    1.089     0.010     0.989     0.005     
+DOS       H122      C12       single    1.089     0.010     0.989     0.005     
+DOS       N26       C27       single    1.455     0.020     1.455     0.020     
+DOS       N26       C31       single    1.455     0.020     1.455     0.020     
+DOS       C27       C28       single    1.524     0.020     1.524     0.020     
+DOS       H271      C27       single    1.089     0.010     0.989     0.005     
+DOS       H272      C27       single    1.089     0.010     0.989     0.005     
+DOS       C28       C29       single    1.524     0.020     1.524     0.020     
+DOS       H281      C28       single    1.089     0.010     0.989     0.005     
+DOS       H282      C28       single    1.089     0.010     0.989     0.005     
+DOS       C29       C30       single    1.524     0.020     1.524     0.020     
+DOS       H291      C29       single    1.089     0.010     0.989     0.005     
+DOS       H292      C29       single    1.089     0.010     0.989     0.005     
+DOS       C30       C31       single    1.524     0.020     1.524     0.020     
+DOS       H301      C30       single    1.089     0.010     0.989     0.005     
+DOS       H302      C30       single    1.089     0.010     0.989     0.005     
+DOS       C31       C32       single    1.524     0.020     1.524     0.020     
+DOS       H331      C31       single    1.089     0.010     0.989     0.005     
+DOS       C32       C33       single    1.524     0.020     1.524     0.020     
+DOS       C32       N37       single    1.455     0.020     1.455     0.020     
+DOS       H332      C32       single    1.089     0.010     0.989     0.005     
+DOS       C33       C34       single    1.524     0.020     1.524     0.020     
+DOS       H33A      C33       single    1.089     0.010     0.989     0.005     
+DOS       H33B      C33       single    1.089     0.010     0.989     0.005     
+DOS       C34       C35       single    1.524     0.020     1.524     0.020     
+DOS       H341      C34       single    1.089     0.010     0.989     0.005     
+DOS       H342      C34       single    1.089     0.010     0.989     0.005     
+DOS       C35       C36       single    1.524     0.020     1.524     0.020     
+DOS       H351      C35       single    1.089     0.010     0.989     0.005     
+DOS       H352      C35       single    1.089     0.010     0.989     0.005     
+DOS       C36       N37       single    1.455     0.020     1.455     0.020     
+DOS       H361      C36       single    1.089     0.010     0.989     0.005     
+DOS       H362      C36       single    1.089     0.010     0.989     0.005     
+DOS       CG        CD2       single    1.524     0.020     1.524     0.020     
+DOS       CG        ND1       single    1.455     0.020     1.455     0.020     
+DOS       HG1       CG        single    1.089     0.010     0.989     0.005     
+DOS       HG2       CG        single    1.089     0.010     0.989     0.005     
+DOS       CD2       NE2       single    1.450     0.020     1.450     0.020     
+DOS       HD21      CD2       single    1.089     0.010     0.989     0.005     
+DOS       HD22      CD2       single    1.089     0.010     0.989     0.005     
+DOS       ND1       CE1       single    1.455     0.020     1.455     0.020     
+DOS       CE1       NE2       single    1.450     0.020     1.450     0.020     
+DOS       HE11      CE1       single    1.089     0.010     0.989     0.005     
+DOS       HE12      CE1       single    1.089     0.010     0.989     0.005     
+DOS       NE2       HE21      single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DOS      HE21   NE2    CD2     118.500    3.000
+ DOS      HE21   NE2    CE1     118.500    3.000
+ DOS      CD2    NE2    CE1     120.000    3.000
+ DOS      NE2    CD2    HD22    109.470    3.000
+ DOS      NE2    CD2    HD21    109.470    3.000
+ DOS      NE2    CD2    CG      112.000    3.000
+ DOS      HD22   CD2    HD21    107.900    3.000
+ DOS      HD22   CD2    CG      109.470    3.000
+ DOS      HD21   CD2    CG      109.470    3.000
+ DOS      NE2    CE1    HE11    109.470    3.000
+ DOS      NE2    CE1    HE12    109.470    3.000
+ DOS      NE2    CE1    ND1     109.500    3.000
+ DOS      HE11   CE1    HE12    107.900    3.000
+ DOS      HE11   CE1    ND1     109.470    3.000
+ DOS      HE12   CE1    ND1     109.470    3.000
+ DOS      CE1    ND1    CG      120.000    3.000
+ DOS      CE1    ND1    OS      120.000    3.000
+ DOS      CG     ND1    OS      120.000    3.000
+ DOS      ND1    CG     HG2     109.470    3.000
+ DOS      ND1    CG     HG1     109.470    3.000
+ DOS      ND1    CG     CD2     105.000    3.000
+ DOS      HG2    CG     HG1     107.900    3.000
+ DOS      HG2    CG     CD2     109.470    3.000
+ DOS      HG1    CG     CD2     109.470    3.000
+ DOS      ND1    OS     N37      90.000    3.000
+ DOS      ND1    OS     N13      90.000    3.000
+ DOS      ND1    OS     N2       90.000    3.000
+ DOS      ND1    OS     N26     180.000    3.000
+ DOS      N37    OS     N13      90.000    3.000
+ DOS      N2     OS     N26      90.000    3.000
+ DOS      N37    OS     N2      180.000    3.000
+ DOS      N13    OS     N2       90.000    3.000
+ DOS      N37    OS     N26      90.000    3.000
+ DOS      N13    OS     N26      90.000    3.000
+ DOS      OS     N37    C36     120.000    3.000
+ DOS      OS     N37    C32     120.000    3.000
+ DOS      C36    N37    C32     112.000    3.000
+ DOS      N37    C36    H361    109.470    3.000
+ DOS      N37    C36    H362    109.470    3.000
+ DOS      N37    C36    C35     105.000    3.000
+ DOS      H361   C36    H362    107.900    3.000
+ DOS      H361   C36    C35     109.470    3.000
+ DOS      H362   C36    C35     109.470    3.000
+ DOS      C36    C35    H351    109.470    3.000
+ DOS      C36    C35    H352    109.470    3.000
+ DOS      C36    C35    C34     111.000    3.000
+ DOS      H351   C35    H352    107.900    3.000
+ DOS      H351   C35    C34     109.470    3.000
+ DOS      H352   C35    C34     109.470    3.000
+ DOS      C35    C34    H341    109.470    3.000
+ DOS      C35    C34    H342    109.470    3.000
+ DOS      C35    C34    C33     111.000    3.000
+ DOS      H341   C34    H342    107.900    3.000
+ DOS      H341   C34    C33     109.470    3.000
+ DOS      H342   C34    C33     109.470    3.000
+ DOS      C34    C33    H33B    109.470    3.000
+ DOS      C34    C33    H33A    109.470    3.000
+ DOS      C34    C33    C32     111.000    3.000
+ DOS      H33B   C33    H33A    107.900    3.000
+ DOS      H33B   C33    C32     109.470    3.000
+ DOS      H33A   C33    C32     109.470    3.000
+ DOS      N37    C32    H332    109.470    3.000
+ DOS      N37    C32    C31     105.000    3.000
+ DOS      N37    C32    C33     105.000    3.000
+ DOS      H332   C32    C31     108.340    3.000
+ DOS      H332   C32    C33     108.340    3.000
+ DOS      C31    C32    C33     111.000    3.000
+ DOS      C32    C31    H331    108.340    3.000
+ DOS      C32    C31    C30     111.000    3.000
+ DOS      C32    C31    N26     105.000    3.000
+ DOS      H331   C31    C30     108.340    3.000
+ DOS      H331   C31    N26     109.470    3.000
+ DOS      C30    C31    N26     105.000    3.000
+ DOS      C31    C30    H301    109.470    3.000
+ DOS      C31    C30    H302    109.470    3.000
+ DOS      C31    C30    C29     111.000    3.000
+ DOS      H301   C30    H302    107.900    3.000
+ DOS      H301   C30    C29     109.470    3.000
+ DOS      H302   C30    C29     109.470    3.000
+ DOS      C30    C29    H291    109.470    3.000
+ DOS      C30    C29    H292    109.470    3.000
+ DOS      C30    C29    C28     111.000    3.000
+ DOS      H291   C29    H292    107.900    3.000
+ DOS      H291   C29    C28     109.470    3.000
+ DOS      H292   C29    C28     109.470    3.000
+ DOS      C29    C28    H281    109.470    3.000
+ DOS      C29    C28    H282    109.470    3.000
+ DOS      C29    C28    C27     111.000    3.000
+ DOS      H281   C28    H282    107.900    3.000
+ DOS      H281   C28    C27     109.470    3.000
+ DOS      H282   C28    C27     109.470    3.000
+ DOS      C28    C27    H272    109.470    3.000
+ DOS      C28    C27    H271    109.470    3.000
+ DOS      C28    C27    N26     105.000    3.000
+ DOS      H272   C27    H271    107.900    3.000
+ DOS      H272   C27    N26     109.470    3.000
+ DOS      H271   C27    N26     109.470    3.000
+ DOS      C31    N26    OS      120.000    3.000
+ DOS      C31    N26    C27     112.000    3.000
+ DOS      OS     N26    C27     120.000    3.000
+ DOS      OS     N13    C12     120.000    3.000
+ DOS      OS     N13    C8      120.000    3.000
+ DOS      C12    N13    C8      112.000    3.000
+ DOS      N13    C12    H121    109.470    3.000
+ DOS      N13    C12    H122    109.470    3.000
+ DOS      N13    C12    C11     105.000    3.000
+ DOS      H121   C12    H122    107.900    3.000
+ DOS      H121   C12    C11     109.470    3.000
+ DOS      H122   C12    C11     109.470    3.000
+ DOS      C12    C11    H111    109.470    3.000
+ DOS      C12    C11    H112    109.470    3.000
+ DOS      C12    C11    C10     111.000    3.000
+ DOS      H111   C11    H112    107.900    3.000
+ DOS      H111   C11    C10     109.470    3.000
+ DOS      H112   C11    C10     109.470    3.000
+ DOS      C11    C10    H101    109.470    3.000
+ DOS      C11    C10    H102    109.470    3.000
+ DOS      C11    C10    C9      111.000    3.000
+ DOS      H101   C10    H102    107.900    3.000
+ DOS      H101   C10    C9      109.470    3.000
+ DOS      H102   C10    C9      109.470    3.000
+ DOS      C10    C9     H92     109.470    3.000
+ DOS      C10    C9     H91     109.470    3.000
+ DOS      C10    C9     C8      111.000    3.000
+ DOS      H92    C9     H91     107.900    3.000
+ DOS      H92    C9     C8      109.470    3.000
+ DOS      H91    C9     C8      109.470    3.000
+ DOS      N13    C8     H88     109.470    3.000
+ DOS      N13    C8     C7      105.000    3.000
+ DOS      N13    C8     C9      105.000    3.000
+ DOS      H88    C8     C7      108.340    3.000
+ DOS      H88    C8     C9      108.340    3.000
+ DOS      C7     C8     C9      111.000    3.000
+ DOS      C8     C7     H77     108.340    3.000
+ DOS      C8     C7     N2      105.000    3.000
+ DOS      C8     C7     C6      109.470    3.000
+ DOS      H77    C7     N2      109.470    3.000
+ DOS      H77    C7     C6      108.810    3.000
+ DOS      N2     C7     C6      111.600    3.000
+ DOS      C7     N2     OS      120.000    3.000
+ DOS      C7     N2     C3      112.000    3.000
+ DOS      OS     N2     C3      120.000    3.000
+ DOS      C7     C6     H61     120.000    3.000
+ DOS      C7     C6     C5      120.000    3.000
+ DOS      H61    C6     C5      120.000    3.000
+ DOS      C6     C5     H51     120.000    3.000
+ DOS      C6     C5     C4      120.000    3.000
+ DOS      H51    C5     C4      120.000    3.000
+ DOS      C5     C4     H41     109.470    3.000
+ DOS      C5     C4     H42     109.470    3.000
+ DOS      C5     C4     C3      109.470    3.000
+ DOS      H41    C4     H42     107.900    3.000
+ DOS      H41    C4     C3      109.470    3.000
+ DOS      H42    C4     C3      109.470    3.000
+ DOS      C4     C3     H32     109.470    3.000
+ DOS      C4     C3     H31     109.470    3.000
+ DOS      C4     C3     N2      105.000    3.000
+ DOS      H32    C3     H31     107.900    3.000
+ DOS      H32    C3     N2      109.470    3.000
+ DOS      H31    C3     N2      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DOS      var_1    HE21   NE2    CD2    CG      -120.000   20.000   3
+ DOS      var_2    HE21   NE2    CE1    ND1      120.000   20.000   3
+ DOS      var_3    NE2    CE1    ND1    OS       180.000   20.000   1
+ DOS      var_4    CE1    ND1    CG     CD2        0.000   20.000   1
+ DOS      var_5    ND1    CG     CD2    NE2        0.000   20.000   3
+ DOS      var_6    CE1    ND1    OS     N13        0.000   20.000   1
+ DOS      var_7    C7     N2     OS     N13        0.000   20.000   1
+ DOS      var_8    C31    N26    OS     N37        0.000   20.000   1
+ DOS      var_9    C32    N37    OS     N26        0.000   20.000   1
+ DOS      var_10   OS     N37    C36    C35      180.000   20.000   1
+ DOS      var_11   N37    C36    C35    C34        0.000   20.000   3
+ DOS      var_12   C36    C35    C34    C33        0.000   20.000   3
+ DOS      var_13   C35    C34    C33    C32        0.000   20.000   3
+ DOS      var_14   OS     N37    C32    C31        0.000   20.000   3
+ DOS      var_15   N37    C32    C33    C34        0.000   20.000   3
+ DOS      var_16   N37    C32    C31    N26        0.000   20.000   3
+ DOS      var_17   C32    C31    C30    C29      180.000   20.000   3
+ DOS      var_18   C31    C30    C29    C28        0.000   20.000   3
+ DOS      var_19   C30    C29    C28    C27        0.000   20.000   3
+ DOS      var_20   C29    C28    C27    N26        0.000   20.000   3
+ DOS      var_21   C32    C31    N26    OS         0.000   20.000   3
+ DOS      var_22   C31    N26    C27    C28        0.000   20.000   1
+ DOS      var_23   C8     N13    OS     N2         0.000   20.000   1
+ DOS      var_24   OS     N13    C12    C11      180.000   20.000   1
+ DOS      var_25   N13    C12    C11    C10        0.000   20.000   3
+ DOS      var_26   C12    C11    C10    C9         0.000   20.000   3
+ DOS      var_27   C11    C10    C9     C8         0.000   20.000   3
+ DOS      var_28   OS     N13    C8     C7         0.000   20.000   3
+ DOS      var_29   N13    C8     C9     C10        0.000   20.000   3
+ DOS      var_30   N13    C8     C7     C6       180.000   20.000   3
+ DOS      var_31   C8     C7     N2     OS         0.000   20.000   3
+ DOS      var_32   C7     N2     C3     C4         0.000   20.000   1
+ DOS      var_33   C8     C7     C6     C5       180.000   20.000   1
+ DOS      var_34   C7     C6     C5     C4         0.000   20.000   1
+ DOS      var_35   C6     C5     C4     C3         0.000   20.000   1
+ DOS      var_36   C5     C4     C3     N2         0.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ DOS      chir_01  C7     N2     C6     C8        negativ
+                   .      .      .      .      .
+ DOS      chir_02  C8     C7     C9     N13       positiv
+                   .      .      .      .      .
+ DOS      chir_03  C31    N26    C30    C32       positiv
+                   .      .      .      .      .
+ DOS      chir_04  C32    C31    C33    N37       negativ
+                   .      .      .      .      .
+ DOS      chir_05  OS     ND1    N26    N13       cross4
+                   N2     .      N37    .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DOS      plan-1    N2        0.020
+ DOS      plan-1    OS        0.020
+ DOS      plan-1    C3        0.020
+ DOS      plan-1    C7        0.020
+ DOS      plan-2    C5        0.020
+ DOS      plan-2    C4        0.020
+ DOS      plan-2    C6        0.020
+ DOS      plan-2    H51       0.020
+ DOS      plan-2    H61       0.020
+ DOS      plan-3    C6        0.020
+ DOS      plan-3    C5        0.020
+ DOS      plan-3    C7        0.020
+ DOS      plan-3    H61       0.020
+ DOS      plan-3    H51       0.020
+ DOS      plan-4    N13       0.020
+ DOS      plan-4    OS        0.020
+ DOS      plan-4    C8        0.020
+ DOS      plan-4    C12       0.020
+ DOS      plan-5    N26       0.020
+ DOS      plan-5    OS        0.020
+ DOS      plan-5    C27       0.020
+ DOS      plan-5    C31       0.020
+ DOS      plan-6    N37       0.020
+ DOS      plan-6    OS        0.020
+ DOS      plan-6    C32       0.020
+ DOS      plan-6    C36       0.020
+ DOS      plan-7    ND1       0.020
+ DOS      plan-7    OS        0.020
+ DOS      plan-7    CG        0.020
+ DOS      plan-7    CE1       0.020
+ DOS      plan-8    NE2       0.020
+ DOS      plan-8    CD2       0.020
+ DOS      plan-8    CE1       0.020
+ DOS      plan-8    HE21      0.020
+# ------------------------------------------------------

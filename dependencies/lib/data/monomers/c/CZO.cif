@@ -1,0 +1,351 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CZO      CZO '"[(2R,4S)-2-[(1S,2R)-1-amino-2-hydro' non-polymer        44  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CZO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CZO           OXT    O    OC       -0.500      0.000    0.000    0.000
+ CZO           C3     C    C         0.000     -1.233    0.133   -0.162
+ CZO           O3     O    OC       -0.500     -1.677    0.606   -1.231
+ CZO           CA3    C    CH2       0.000     -2.186   -0.279    0.933
+ CZO           HA3    H    H         0.000     -1.974    0.298    1.835
+ CZO           HA3A   H    H         0.000     -2.059   -1.343    1.144
+ CZO           N3     N    N         0.000     -3.562   -0.026    0.502
+ CZO           C1     C    CT        0.000     -4.415   -0.985   -0.212
+ CZO           O      O    OH1       0.000     -4.059   -1.026   -1.595
+ CZO           HO     H    H         0.000     -4.150   -0.142   -1.977
+ CZO           CA1    C    CH1       0.000     -4.277   -2.377    0.408
+ CZO           HA1    H    H         0.000     -3.237   -2.720    0.311
+ CZO           CB1    C    CH1       0.000     -5.206   -3.352   -0.318
+ CZO           HB1    H    H         0.000     -4.877   -3.464   -1.360
+ CZO           OG1    O    OH1       0.000     -6.541   -2.847   -0.292
+ CZO           HOG1   H    H         0.000     -7.128   -3.464   -0.750
+ CZO           CG1    C    CH3       0.000     -5.161   -4.713    0.381
+ CZO           HG1B   H    H         0.000     -4.170   -5.089    0.361
+ CZO           HG1A   H    H         0.000     -5.477   -4.606    1.386
+ CZO           HG1    H    H         0.000     -5.803   -5.390   -0.120
+ CZO           N1     N    NH2       0.000     -4.643   -2.317    1.829
+ CZO           HN1A   H    H         0.000     -5.447   -2.829    2.173
+ CZO           HN1    H    H         0.000     -4.093   -1.764    2.476
+ CZO           C2     C    C         0.000     -4.241    1.121    0.703
+ CZO           O2     O    O         0.000     -3.812    2.111    1.257
+ CZO           CA2    C    CH1       0.000     -5.628    0.968    0.117
+ CZO           HA2    H    H         0.000     -5.695    1.481   -0.852
+ CZO           N2     N    NH1       0.000     -5.804   -0.494   -0.058
+ CZO           HN2    H    H         0.000     -6.663   -1.026   -0.071
+ CZO           CB2    C    CH2       0.000     -6.678    1.518    1.085
+ CZO           HB2    H    H         0.000     -6.480    2.575    1.273
+ CZO           HB2A   H    H         0.000     -6.629    0.967    2.026
+ CZO           CG2    C    CR6       0.000     -8.050    1.362    0.480
+ CZO           CD2    C    CR16      0.000     -8.579    2.374   -0.299
+ CZO           HD2    H    H         0.000     -8.008    3.278   -0.474
+ CZO           CE2    C    CR16      0.000     -9.836    2.234   -0.855
+ CZO           HE2    H    H         0.000    -10.251    3.027   -1.465
+ CZO           CZ     C    CR6       0.000    -10.567    1.077   -0.631
+ CZO           OH     O    OH1       0.000    -11.803    0.936   -1.177
+ CZO           HOH    H    H         0.000    -12.466    1.284   -0.566
+ CZO           CE1    C    CR16      0.000    -10.036    0.064    0.155
+ CZO           HE1    H    H         0.000    -10.606   -0.839    0.334
+ CZO           CD1    C    CR16      0.000     -8.778    0.209    0.709
+ CZO           HD1    H    H         0.000     -8.363   -0.580    1.323
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CZO      OXT    n/a    C3     START
+ CZO      C3     OXT    CA3    .
+ CZO      O3     C3     .      .
+ CZO      CA3    C3     N3     .
+ CZO      HA3    CA3    .      .
+ CZO      HA3A   CA3    .      .
+ CZO      N3     CA3    C2     .
+ CZO      C1     N3     CA1    .
+ CZO      O      C1     HO     .
+ CZO      HO     O      .      .
+ CZO      CA1    C1     N1     .
+ CZO      HA1    CA1    .      .
+ CZO      CB1    CA1    CG1    .
+ CZO      HB1    CB1    .      .
+ CZO      OG1    CB1    HOG1   .
+ CZO      HOG1   OG1    .      .
+ CZO      CG1    CB1    HG1    .
+ CZO      HG1B   CG1    .      .
+ CZO      HG1A   CG1    .      .
+ CZO      HG1    CG1    .      .
+ CZO      N1     CA1    HN1    .
+ CZO      HN1A   N1     .      .
+ CZO      HN1    N1     .      .
+ CZO      C2     N3     CA2    .
+ CZO      O2     C2     .      .
+ CZO      CA2    C2     CB2    .
+ CZO      HA2    CA2    .      .
+ CZO      N2     CA2    HN2    .
+ CZO      HN2    N2     .      .
+ CZO      CB2    CA2    CG2    .
+ CZO      HB2    CB2    .      .
+ CZO      HB2A   CB2    .      .
+ CZO      CG2    CB2    CD2    .
+ CZO      CD2    CG2    CE2    .
+ CZO      HD2    CD2    .      .
+ CZO      CE2    CD2    CZ     .
+ CZO      HE2    CE2    .      .
+ CZO      CZ     CE2    CE1    .
+ CZO      OH     CZ     HOH    .
+ CZO      HOH    OH     .      .
+ CZO      CE1    CZ     CD1    .
+ CZO      HE1    CE1    .      .
+ CZO      CD1    CE1    HD1    .
+ CZO      HD1    CD1    .      END
+ CZO      C1     N2     .    ADD
+ CZO      CG2    CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CZO       N1        CA1       single    1.450     0.020     1.450     0.020     
+CZO       CB1       CA1       single    1.524     0.020     1.524     0.020     
+CZO       CA1       C1        single    1.524     0.020     1.524     0.020     
+CZO       CG1       CB1       single    1.524     0.020     1.524     0.020     
+CZO       OG1       CB1       single    1.432     0.020     1.432     0.020     
+CZO       C1        N2        single    1.450     0.020     1.450     0.020     
+CZO       C1        N3        single    1.455     0.020     1.455     0.020     
+CZO       O         C1        single    1.432     0.020     1.432     0.020     
+CZO       N2        CA2       single    1.450     0.020     1.450     0.020     
+CZO       C2        N3        single    1.330     0.020     1.330     0.020     
+CZO       N3        CA3       single    1.455     0.020     1.455     0.020     
+CZO       O2        C2        double    1.220     0.020     1.220     0.020     
+CZO       CA2       C2        single    1.500     0.020     1.500     0.020     
+CZO       CB2       CA2       single    1.524     0.020     1.524     0.020     
+CZO       CA3       C3        single    1.510     0.020     1.510     0.020     
+CZO       O3        C3        deloc     1.250     0.020     1.250     0.020     
+CZO       C3        OXT       deloc     1.250     0.020     1.250     0.020     
+CZO       CG2       CB2       single    1.511     0.020     1.511     0.020     
+CZO       CG2       CD1       double    1.390     0.020     1.390     0.020     
+CZO       CD2       CG2       single    1.390     0.020     1.390     0.020     
+CZO       CD1       CE1       single    1.390     0.020     1.390     0.020     
+CZO       CE2       CD2       double    1.390     0.020     1.390     0.020     
+CZO       CE1       CZ        double    1.390     0.020     1.390     0.020     
+CZO       CZ        CE2       single    1.390     0.020     1.390     0.020     
+CZO       OH        CZ        single    1.362     0.020     1.362     0.020     
+CZO       HN1       N1        single    1.036     0.016     0.914     0.007     
+CZO       HN1A      N1        single    1.036     0.016     0.914     0.007     
+CZO       HA1       CA1       single    1.089     0.010     0.989     0.005     
+CZO       HB1       CB1       single    1.089     0.010     0.989     0.005     
+CZO       HG1       CG1       single    1.089     0.010     0.989     0.005     
+CZO       HG1A      CG1       single    1.089     0.010     0.989     0.005     
+CZO       HG1B      CG1       single    1.089     0.010     0.989     0.005     
+CZO       HOG1      OG1       single    0.970     0.012     0.839     0.014     
+CZO       HN2       N2        single    1.036     0.016     0.914     0.007     
+CZO       HA2       CA2       single    1.089     0.010     0.989     0.005     
+CZO       HA3       CA3       single    1.089     0.010     0.989     0.005     
+CZO       HA3A      CA3       single    1.089     0.010     0.989     0.005     
+CZO       HB2       CB2       single    1.089     0.010     0.989     0.005     
+CZO       HB2A      CB2       single    1.089     0.010     0.989     0.005     
+CZO       HD1       CD1       single    1.082     0.013     0.975     0.010     
+CZO       HD2       CD2       single    1.082     0.013     0.975     0.010     
+CZO       HE1       CE1       single    1.082     0.013     0.975     0.010     
+CZO       HE2       CE2       single    1.082     0.013     0.975     0.010     
+CZO       HOH       OH        single    0.970     0.012     0.839     0.014     
+CZO       HO        O         single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CZO      OXT    C3     O3      123.000    3.000
+ CZO      OXT    C3     CA3     118.500    3.000
+ CZO      O3     C3     CA3     118.500    3.000
+ CZO      C3     CA3    HA3     109.470    3.000
+ CZO      C3     CA3    HA3A    109.470    3.000
+ CZO      C3     CA3    N3      109.500    3.000
+ CZO      HA3    CA3    HA3A    107.900    3.000
+ CZO      HA3    CA3    N3      109.470    3.000
+ CZO      HA3A   CA3    N3      109.470    3.000
+ CZO      CA3    N3     C1      120.000    3.000
+ CZO      CA3    N3     C2      127.000    3.000
+ CZO      C1     N3     C2      121.000    3.000
+ CZO      N3     C1     O       109.500    3.000
+ CZO      N3     C1     CA1     111.600    3.000
+ CZO      N3     C1     N2      109.500    3.000
+ CZO      O      C1     CA1     109.470    3.000
+ CZO      O      C1     N2      109.500    3.000
+ CZO      CA1    C1     N2      110.000    3.000
+ CZO      C1     O      HO      109.470    3.000
+ CZO      C1     CA1    HA1     108.340    3.000
+ CZO      C1     CA1    CB1     111.000    3.000
+ CZO      C1     CA1    N1      109.500    3.000
+ CZO      HA1    CA1    CB1     108.340    3.000
+ CZO      HA1    CA1    N1      109.470    3.000
+ CZO      CB1    CA1    N1      109.470    3.000
+ CZO      CA1    CB1    HB1     108.340    3.000
+ CZO      CA1    CB1    OG1     109.470    3.000
+ CZO      CA1    CB1    CG1     111.000    3.000
+ CZO      HB1    CB1    OG1     109.470    3.000
+ CZO      HB1    CB1    CG1     108.340    3.000
+ CZO      OG1    CB1    CG1     109.470    3.000
+ CZO      CB1    OG1    HOG1    109.470    3.000
+ CZO      CB1    CG1    HG1B    109.470    3.000
+ CZO      CB1    CG1    HG1A    109.470    3.000
+ CZO      CB1    CG1    HG1     109.470    3.000
+ CZO      HG1B   CG1    HG1A    109.470    3.000
+ CZO      HG1B   CG1    HG1     109.470    3.000
+ CZO      HG1A   CG1    HG1     109.470    3.000
+ CZO      CA1    N1     HN1A    120.000    3.000
+ CZO      CA1    N1     HN1     120.000    3.000
+ CZO      HN1A   N1     HN1     120.000    3.000
+ CZO      N3     C2     O2      123.000    3.000
+ CZO      N3     C2     CA2     116.500    3.000
+ CZO      O2     C2     CA2     120.500    3.000
+ CZO      C2     CA2    HA2     108.810    3.000
+ CZO      C2     CA2    N2      111.600    3.000
+ CZO      C2     CA2    CB2     109.470    3.000
+ CZO      HA2    CA2    N2      108.550    3.000
+ CZO      HA2    CA2    CB2     108.340    3.000
+ CZO      N2     CA2    CB2     110.000    3.000
+ CZO      CA2    N2     HN2     118.500    3.000
+ CZO      CA2    N2     C1      120.000    3.000
+ CZO      HN2    N2     C1      118.500    3.000
+ CZO      CA2    CB2    HB2     109.470    3.000
+ CZO      CA2    CB2    HB2A    109.470    3.000
+ CZO      CA2    CB2    CG2     109.470    3.000
+ CZO      HB2    CB2    HB2A    107.900    3.000
+ CZO      HB2    CB2    CG2     109.470    3.000
+ CZO      HB2A   CB2    CG2     109.470    3.000
+ CZO      CB2    CG2    CD2     120.000    3.000
+ CZO      CB2    CG2    CD1     120.000    3.000
+ CZO      CD2    CG2    CD1     120.000    3.000
+ CZO      CG2    CD2    HD2     120.000    3.000
+ CZO      CG2    CD2    CE2     120.000    3.000
+ CZO      HD2    CD2    CE2     120.000    3.000
+ CZO      CD2    CE2    HE2     120.000    3.000
+ CZO      CD2    CE2    CZ      120.000    3.000
+ CZO      HE2    CE2    CZ      120.000    3.000
+ CZO      CE2    CZ     OH      120.000    3.000
+ CZO      CE2    CZ     CE1     120.000    3.000
+ CZO      OH     CZ     CE1     120.000    3.000
+ CZO      CZ     OH     HOH     109.470    3.000
+ CZO      CZ     CE1    HE1     120.000    3.000
+ CZO      CZ     CE1    CD1     120.000    3.000
+ CZO      HE1    CE1    CD1     120.000    3.000
+ CZO      CE1    CD1    HD1     120.000    3.000
+ CZO      CE1    CD1    CG2     120.000    3.000
+ CZO      HD1    CD1    CG2     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CZO      var_1    OXT    C3     CA3    N3      -179.965   20.000   3
+ CZO      var_2    C3     CA3    N3     C2       -90.128   20.000   1
+ CZO      var_3    CA3    N3     C1     CA1       30.000   20.000   1
+ CZO      var_4    N3     C1     N2     CA2       30.000   20.000   1
+ CZO      var_5    N3     C1     O      HO       -58.380   20.000   1
+ CZO      var_6    N3     C1     CA1    N1        58.191   20.000   1
+ CZO      var_7    C1     CA1    CB1    CG1     -175.004   20.000   3
+ CZO      var_8    CA1    CB1    OG1    HOG1    -179.943   20.000   1
+ CZO      var_9    CA1    CB1    CG1    HG1      179.995   20.000   3
+ CZO      var_10   C1     CA1    N1     HN1      -63.968   20.000   1
+ CZO      CONST_1  CA3    N3     C2     CA2      180.000    0.000   0
+ CZO      var_11   N3     C2     CA2    CB2      150.000   20.000   3
+ CZO      var_12   C2     CA2    N2     C1       -30.000   20.000   3
+ CZO      var_13   C2     CA2    CB2    CG2      179.689   20.000   3
+ CZO      var_14   CA2    CB2    CG2    CD2      -90.252   20.000   2
+ CZO      CONST_2  CB2    CG2    CD1    CE1      180.000    0.000   0
+ CZO      CONST_3  CB2    CG2    CD2    CE2      180.000    0.000   0
+ CZO      CONST_4  CG2    CD2    CE2    CZ         0.000    0.000   0
+ CZO      CONST_5  CD2    CE2    CZ     CE1        0.000    0.000   0
+ CZO      var_15   CE2    CZ     OH     HOH      -89.731   20.000   1
+ CZO      CONST_6  CE2    CZ     CE1    CD1        0.000    0.000   0
+ CZO      CONST_7  CZ     CE1    CD1    CG2        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CZO      chir_01  CA1    N1     CB1    C1        negativ
+ CZO      chir_02  CB1    CA1    CG1    OG1       negativ
+ CZO      chir_03  C1     CA1    N2     N3        negativ
+ CZO      chir_04  CA2    N2     C2     CB2       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CZO      plan-1    N1        0.020
+ CZO      plan-1    CA1       0.020
+ CZO      plan-1    HN1       0.020
+ CZO      plan-1    HN1A      0.020
+ CZO      plan-2    N2        0.020
+ CZO      plan-2    C1        0.020
+ CZO      plan-2    CA2       0.020
+ CZO      plan-2    HN2       0.020
+ CZO      plan-3    N3        0.020
+ CZO      plan-3    C1        0.020
+ CZO      plan-3    C2        0.020
+ CZO      plan-3    CA3       0.020
+ CZO      plan-4    C2        0.020
+ CZO      plan-4    N3        0.020
+ CZO      plan-4    O2        0.020
+ CZO      plan-4    CA2       0.020
+ CZO      plan-5    C3        0.020
+ CZO      plan-5    CA3       0.020
+ CZO      plan-5    O3        0.020
+ CZO      plan-5    OXT       0.020
+ CZO      plan-6    CG2       0.020
+ CZO      plan-6    CB2       0.020
+ CZO      plan-6    CD1       0.020
+ CZO      plan-6    CD2       0.020
+ CZO      plan-6    CE1       0.020
+ CZO      plan-6    CE2       0.020
+ CZO      plan-6    CZ        0.020
+ CZO      plan-6    HD1       0.020
+ CZO      plan-6    HD2       0.020
+ CZO      plan-6    HE1       0.020
+ CZO      plan-6    HE2       0.020
+ CZO      plan-6    OH        0.020
+# ------------------------------------------------------

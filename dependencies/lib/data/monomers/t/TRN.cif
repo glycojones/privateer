@@ -1,0 +1,253 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TRN     TRN     NZ2-TRYPTOPHAN     peptide     26     15     .
+#
+data_comp_TRN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TRN     N       N       NT3     1       52.960      78.980      15.014
+TRN     CA      C       CH1     0       51.974      78.730      13.927
+TRN     CB      C       CH2     0       52.635      78.915      12.554
+TRN     CG      C       CR5     0       51.683      78.848      11.397
+TRN     CD1     C       CR15    0       50.733      79.766      11.051
+TRN     CD2     C       CR56    0       51.592      77.789      10.428
+TRN     NE1     N       NR5     0       50.056      79.354      9.932
+TRN     CE2     C       CR56    0       50.560      78.151      9.532
+TRN     CE3     C       CR16    0       52.254      76.573      10.200
+TRN     NZ2     N       NRD6    0       50.162      77.421      8.475
+TRN     CH2     C       CR16    0       50.823      76.266      8.296
+TRN     CZ3     C       CR16    0       51.860      75.809      9.120
+TRN     C       C       C       0       51.370      77.328      14.084
+TRN     O       O       O       0       50.133      77.252      14.227
+TRN     OXT     O       OC      -1      52.159      76.363      14.057
+TRN     H       H       H       0       52.606      78.736      15.818
+TRN     H2      H       H       0       53.169      79.867      15.037
+TRN     H3      H       H       0       53.717      78.497      14.858
+TRN     HA      H       H       0       51.254      79.400      14.011
+TRN     HB2     H       H       0       53.317      78.221      12.446
+TRN     HB3     H       H       0       53.087      79.783      12.545
+TRN     HD1     H       H       0       50.562      80.573      11.512
+TRN     HE1     H       H       0       49.401      79.796      9.537
+TRN     HE3     H       H       0       52.945      76.291      10.767
+TRN     HH2     H       H       0       50.570      75.729      7.565
+TRN     HZ3     H       H       0       52.282      74.987      8.937
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+TRN      N      n/a    CA     START
+TRN      H      N      .      .
+TRN      H2     N      .      .
+TRN      H3     N      .      .
+TRN      CA     N      C      .
+TRN      HA     CA     .      .
+TRN      CB     CA     CG     .
+TRN      HB2    CB     .      .
+TRN      HB3    CB     .      .
+TRN      CG     CB     CD2    .
+TRN      CD2    CG     CE3    .
+TRN      CE3    CD2    CZ3    .
+TRN      HE3    CE3    .      .
+TRN      CZ3    CE3    CH2    .
+TRN      HZ3    CZ3    .      .
+TRN      CH2    CZ3    NZ2    .
+TRN      HH2    CH2    .      .
+TRN      NZ2    CH2    CE2    .
+TRN      CE2    NZ2    NE1    .
+TRN      NE1    CE2    CD1    .
+TRN      HE1    NE1    .      .
+TRN      CD1    NE1    HD1    .
+TRN      HD1    CD1    .      .
+TRN      C      CA     .      END
+TRN      O      C      .      .
+TRN      OXT    C      .      .
+TRN      CG     CD1    .    ADD
+TRN      CD2    CE2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TRN       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+TRN       CA        CB        SINGLE    n         1.534     0.012     1.534     0.012     
+TRN       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+TRN       CB        CG        SINGLE    n         1.499     0.010     1.499     0.010     
+TRN       CG        CD1       DOUBLE    y         1.365     0.010     1.365     0.010     
+TRN       CG        CD2       SINGLE    y         1.440     0.010     1.440     0.010     
+TRN       CD1       NE1       SINGLE    y         1.369     0.010     1.369     0.010     
+TRN       CD2       CE2       DOUBLE    y         1.412     0.013     1.412     0.013     
+TRN       CD2       CE3       SINGLE    y         1.401     0.011     1.401     0.011     
+TRN       NE1       CE2       SINGLE    y         1.363     0.010     1.363     0.010     
+TRN       CE2       NZ2       SINGLE    y         1.339     0.010     1.339     0.010     
+TRN       CE3       CZ3       DOUBLE    y         1.379     0.010     1.379     0.010     
+TRN       NZ2       CH2       DOUBLE    y         1.337     0.010     1.337     0.010     
+TRN       CH2       CZ3       SINGLE    y         1.393     0.016     1.393     0.016     
+TRN       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TRN       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TRN       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+TRN       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+TRN       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+TRN       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+TRN       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.020     
+TRN       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.020     
+TRN       CD1       HD1       SINGLE    n         1.082     0.013     0.945     0.019     
+TRN       NE1       HE1       SINGLE    n         1.016     0.010     0.883     0.020     
+TRN       CE3       HE3       SINGLE    n         1.082     0.013     0.937     0.010     
+TRN       CH2       HH2       SINGLE    n         1.082     0.013     0.942     0.013     
+TRN       CZ3       HZ3       SINGLE    n         1.082     0.013     0.942     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TRN          CA           N           H     109.321    1.91
+TRN          CA           N          H2     109.321    1.91
+TRN          CA           N          H3     109.321    1.91
+TRN           H           N          H2     109.028    2.41
+TRN           H           N          H3     109.028    2.41
+TRN          H2           N          H3     109.028    2.41
+TRN           N          CA          CB     110.562    1.50
+TRN           N          CA           C     109.666    1.50
+TRN           N          CA          HA     108.030    1.50
+TRN          CB          CA           C     111.644    1.50
+TRN          CB          CA          HA     108.128    1.50
+TRN           C          CA          HA     108.922    1.50
+TRN          CA          CB          CG     113.843    1.64
+TRN          CA          CB         HB2     108.266    1.50
+TRN          CA          CB         HB3     108.266    1.50
+TRN          CG          CB         HB2     109.029    1.50
+TRN          CG          CB         HB3     109.029    1.50
+TRN         HB2          CB         HB3     107.759    1.50
+TRN          CB          CG         CD1     127.119    1.62
+TRN          CB          CG         CD2     126.253    1.63
+TRN         CD1          CG         CD2     106.628    1.50
+TRN          CG         CD1         NE1     109.821    1.50
+TRN          CG         CD1         HD1     125.482    1.59
+TRN         NE1         CD1         HD1     124.697    1.50
+TRN          CG         CD2         CE2     107.098    1.50
+TRN          CG         CD2         CE3     135.180    1.50
+TRN         CE2         CD2         CE3     117.722    1.50
+TRN         CD1         NE1         CE2     108.127    1.50
+TRN         CD1         NE1         HE1     125.814    1.67
+TRN         CE2         NE1         HE1     126.059    1.50
+TRN         CD2         CE2         NE1     108.325    1.50
+TRN         CD2         CE2         NZ2     124.903    1.50
+TRN         NE1         CE2         NZ2     126.771    1.50
+TRN         CD2         CE3         CZ3     118.873    1.50
+TRN         CD2         CE3         HE3     120.351    1.50
+TRN         CZ3         CE3         HE3     120.775    1.50
+TRN         CE2         NZ2         CH2     113.973    1.50
+TRN         NZ2         CH2         CZ3     124.468    1.50
+TRN         NZ2         CH2         HH2     117.498    1.50
+TRN         CZ3         CH2         HH2     118.034    1.50
+TRN         CE3         CZ3         CH2     120.060    1.50
+TRN         CE3         CZ3         HZ3     120.155    1.50
+TRN         CH2         CZ3         HZ3     119.785    1.50
+TRN          CA           C           O     117.134    1.50
+TRN          CA           C         OXT     117.134    1.50
+TRN           O           C         OXT     125.731    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TRN             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+TRN              const_21         NZ2         CH2         CZ3         CE3       0.000   10.00     2
+TRN             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+TRN            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+TRN             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+TRN       const_sp2_sp2_2         NE1         CD1          CG          CB     180.000   10.00     2
+TRN              const_30         CE2         CD2          CG          CB     180.000   10.00     2
+TRN       const_sp2_sp2_5          CG         CD1         NE1         CE2       0.000   10.00     2
+TRN              const_13          CG         CD2         CE2         NE1       0.000   10.00     2
+TRN              const_35          CG         CD2         CE3         CZ3     180.000   10.00     2
+TRN       const_sp2_sp2_9         CD2         CE2         NE1         CD1       0.000   10.00     2
+TRN              const_17         CD2         CE2         NZ2         CH2       0.000   10.00     2
+TRN              const_25         CD2         CE3         CZ3         CH2       0.000   10.00     2
+TRN              const_19         CZ3         CH2         NZ2         CE2       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TRN    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TRN    plan-1         CD2   0.020
+TRN    plan-1         CE2   0.020
+TRN    plan-1         CE3   0.020
+TRN    plan-1          CG   0.020
+TRN    plan-1         CH2   0.020
+TRN    plan-1         CZ3   0.020
+TRN    plan-1         HE3   0.020
+TRN    plan-1         HH2   0.020
+TRN    plan-1         HZ3   0.020
+TRN    plan-1         NE1   0.020
+TRN    plan-1         NZ2   0.020
+TRN    plan-2          CB   0.020
+TRN    plan-2         CD1   0.020
+TRN    plan-2         CD2   0.020
+TRN    plan-2         CE2   0.020
+TRN    plan-2         CE3   0.020
+TRN    plan-2          CG   0.020
+TRN    plan-2         HD1   0.020
+TRN    plan-2         HE1   0.020
+TRN    plan-2         NE1   0.020
+TRN    plan-2         NZ2   0.020
+TRN    plan-3           C   0.020
+TRN    plan-3          CA   0.020
+TRN    plan-3           O   0.020
+TRN    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TRN SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc2c1cccnc1nc2"
+TRN SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1c[nH]c2ncccc12)C(O)=O"
+TRN SMILES           CACTVS               3.341 "N[CH](Cc1c[nH]c2ncccc12)C(O)=O"
+TRN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc2c(c[nH]c2nc1)C[C@@H](C(=O)O)N"
+TRN SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc2c(c[nH]c2nc1)CC(C(=O)O)N"
+TRN InChI            InChI                1.03  "InChI=1S/C10H11N3O2/c11-8(10(14)15)4-6-5-13-9-7(6)2-1-3-12-9/h1-3,5,8H,4,11H2,(H,12,13)(H,14,15)/t8-/m0/s1"
+TRN InChIKey         InChI                1.03  SNLOIIPRZGMRAB-QMMMGPOBSA-N
+TRN ?                acedrg               196         "dictionary generator"
+TRN ?                acedrg_database      11          "data source"
+TRN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TRN ?                refmac5              5.8.0222    "optimization tool"

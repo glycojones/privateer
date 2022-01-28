@@ -1,0 +1,72 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CFT     CFT      TRIFLUOROMETHANE     NON-POLYMER     5     4     .     
+#
+data_comp_CFT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CFT     C1      C       CH1     0       44.117      10.407      -8.410      
+CFT     FB1     F       F       0       44.426      9.484       -7.504      
+CFT     FB2     F       F       0       43.013      10.992      -7.954      
+CFT     FB3     F       F       0       43.734      9.727       -9.488      
+CFT     H1      H       H       0       44.849      11.041      -8.588      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CFT       C1        FB1       SINGLE    n         1.330     0.017     1.330     0.017     
+CFT       C1        FB2       SINGLE    n         1.330     0.017     1.330     0.017     
+CFT       C1        FB3       SINGLE    n         1.330     0.017     1.330     0.017     
+CFT       C1        H1        SINGLE    n         1.089     0.010     0.985     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CFT         FB1          C1         FB2     102.168    1.50
+CFT         FB1          C1         FB3     102.168    1.50
+CFT         FB1          C1          H1     109.433    1.57
+CFT         FB2          C1         FB3     102.168    1.50
+CFT         FB2          C1          H1     109.433    1.57
+CFT         FB3          C1          H1     109.433    1.57
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CFT SMILES           ACDLabs              10.04 "FC(F)F"
+CFT SMILES_CANONICAL CACTVS               3.341 "FC(F)F"
+CFT SMILES           CACTVS               3.341 "FC(F)F"
+CFT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(F)(F)F"
+CFT SMILES           "OpenEye OEToolkits" 1.5.0 "C(F)(F)F"
+CFT InChI            InChI                1.03  "InChI=1S/CHF3/c2-1(3)4/h1H"
+CFT InChIKey         InChI                1.03  XPDWGBQVDMORPB-UHFFFAOYSA-N
+CFT ?                acedrg               202         "dictionary generator"                  
+CFT ?                acedrg_database      11          "data source"                           
+CFT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CFT ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,820 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UFE      UFE 'Fe(III) Uroporphyrin                ' non-polymer        97  61 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_UFE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+UFE   O4D     O    O2       0      98.839      26.429     108.546
+UFE   CED     C     C   0.000      97.751      26.661     107.961
+UFE   O3D     O     O   0.000      97.362      26.056     106.928
+UFE   CDD     C   CH2   0.000      96.883      27.725     108.579
+UFE   C3D     C   CR5   0.000      95.626      27.981     107.785
+UFE   C2D     C   CR5   0.000      95.540      28.372     106.362
+UFE   CAD     C   CH2   0.000      96.687      28.577     105.395
+UFE   CBD     C   CH2   0.000      96.897      30.076     105.122
+UFE   CCD     C     C   0.000      95.748      30.587     104.291
+UFE   O2D     O     O   0.000      95.458      29.900     103.289
+UFE   O1D     O    O2   0.000      95.114      31.617     104.633
+UFE   C1D     C  CR56   0.000      94.072      28.498     106.155
+UFE   CHD     C  CR16   0.000      93.475      28.835     104.843
+UFE   C4D     C  CR56   0.000      94.204      27.919     108.224
+UFE   CHA     C  CR16   0.000      93.808      27.602     109.622
+UFE    ND     N     N   0.000      93.331      28.200     107.237
+UFE    FE    FE    FE   0.000      91.251      28.324     107.413
+UFE    NA     N     N   0.000      91.428      28.207     109.491
+UFE   C4A     C  CR56   0.000      90.483      28.498     110.383
+UFE   C3A     C   CR5   0.000      90.882      28.372     111.784
+UFE   CAA     C   CH2   0.000      90.031      28.596     112.978
+UFE   CBA     C   CH2   0.000      89.125      27.393     113.068
+UFE   CCA     C     C   0.000      88.138      27.702     114.173
+UFE   O2A     O     O   0.000      86.922      27.412     114.023
+UFE   O1A     O    O2   0.000      88.574      28.250     115.217
+UFE   C2A     C   CR5   0.000      92.288      27.971     111.704
+UFE   CDA     C   CH2   0.000      93.220      27.661     112.844
+UFE   CEA     C     C   0.000      92.884      26.238     113.254
+UFE   O4A     O    O2   0.000      91.966      26.068     114.102
+UFE   O3A     O     O   0.000      93.518      25.304     112.702
+UFE   C1A     C  CR56   0.000      92.506      27.899     110.230
+UFE    NB     N     N   0.000      89.175      28.519     107.613
+UFE   C4B     C  CR56   0.000      88.255      28.531     106.647
+UFE   C3B     C   CR5   0.000      86.858      28.768     107.128
+UFE   CAB     C   CH2   0.000      85.589      28.820     106.314
+UFE   CBB     C   CH2   0.000      85.709      29.938     105.267
+UFE   CCB     C     C   0.000      85.470      31.331     105.819
+UFE   O2B     O    O2   0.000      84.564      31.499     106.666
+UFE   O1B     O     O   0.000      86.179      32.278     105.388
+UFE   C2B     C   CR5   0.000      87.000      28.944     108.593
+UFE   CDB     C   CH2   0.000      85.893      29.211     109.618
+UFE   CEB     C     C   0.000      86.347      29.447     111.070
+UFE   O4B     O     O   0.000      86.010      30.514     111.654
+UFE   O3B     O    O2   0.000      87.037      28.583     111.671
+UFE   C1B     C  CR56   0.000      88.482      28.793     108.743
+UFE   CHB     C  CR16   0.000      89.125      28.865     110.050
+UFE    NC     N     N   0.000      91.081      28.504     105.345
+UFE   C4C     C  CR56   0.000      92.051      28.756     104.457
+UFE   C3C     C   CR5   0.000      91.571      28.868     103.055
+UFE   C2C     C   CR5   0.000      90.119      28.720     103.205
+UFE   CDC     C   CH2   0.000      88.979      28.677     102.229
+UFE   CEC     C     C   0.000      88.378      27.273     102.426
+UFE   O4C     O    O2   0.000      87.342      27.113     103.129
+UFE   O3C     O     O   0.000      88.952      26.275     101.917
+UFE   C1C     C  CR56   0.000      89.958      28.496     104.648
+UFE   CHC     C  CR16   0.000      88.619      28.342     105.235
+UFE   CAC     C   CH2   0.000      92.342      29.130     101.798
+UFE   CBC     C   CH2   0.000      92.901      27.876     101.169
+UFE   CCC     C     C   0.000      93.243      28.234      99.727
+UFE   O1C     O    O2   0.000      94.343      28.786      99.467
+UFE   O2C     O     O   0.000      92.404      27.984      98.826
+UFE    H1     H     H   0.000      99.304      25.739     108.088
+UFE    H2     H     H   0.000      97.459      28.660     108.637
+UFE    H3     H     H   0.000      96.600      27.404     109.593
+UFE    H4     H     H   0.000      96.459      28.065     104.449
+UFE    H5     H     H   0.000      97.606      28.155     105.828
+UFE    H6     H     H   0.000      97.841      30.223     104.577
+UFE    H7     H     H   0.000      96.935      30.623     106.076
+UFE    H8     H     H   0.000      94.406      31.772     104.019
+UFE    H9     H     H   0.000      94.159      29.178     104.081
+UFE   H10     H     H   0.000      94.542      27.111     110.243
+UFE   H11     H     H   0.000      90.653      28.676     113.882
+UFE   H12     H     H   0.000      89.438      29.514     112.859
+UFE   H13     H     H   0.000      88.597      27.239     112.115
+UFE   H14     H     H   0.000      89.707      26.493     113.315
+UFE   H15     H     H   0.000      87.857      28.391     115.824
+UFE   H16     H     H   0.000      94.268      27.731     112.516
+UFE   H17     H     H   0.000      93.050      28.354     113.681
+UFE   H18     H     H   0.000      91.838      25.138     114.249
+UFE   H19     H     H   0.000      84.735      29.025     106.976
+UFE   H20     H     H   0.000      85.437      27.856     105.807
+UFE   H21     H     H   0.000      84.971      29.749     104.474
+UFE   H22     H     H   0.000      86.722      29.905     104.840
+UFE   H23     H     H   0.000      84.519      32.418     106.904
+UFE   H24     H     H   0.000      85.342      30.105     109.290
+UFE   H25     H     H   0.000      85.218      28.343     109.615
+UFE   H26     H     H   0.000      87.222      28.882     112.553
+UFE   H27     H     H   0.000      88.517      29.235     110.862
+UFE   H28     H     H   0.000      89.341      28.807     101.198
+UFE   H29     H     H   0.000      88.237      29.456     102.458
+UFE   H30     H     H   0.000      87.130      26.188     103.175
+UFE   H31     H     H   0.000      87.823      28.062     104.561
+UFE   H32     H     H   0.000      93.178      29.804     102.035
+UFE   H33     H     H   0.000      91.673      29.616     101.073
+UFE   H34     H     H   0.000      92.152      27.071     101.194
+UFE   H35     H     H   0.000      93.805      27.552     101.705
+UFE   H36     H     H   0.000      94.399      28.957      98.534
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UFE       O2C       CCC       DOUB      1.211     0.019     1.211     0.019     
+UFE       O1C       CCC       SING      1.311     0.019     1.311     0.019     
+UFE       CCC       CBC       SING      1.500     0.012     1.500     0.012     
+UFE       CBC       CAC       SING      1.523     0.011     1.523     0.011     
+UFE       CAC       C3C       SING      1.505     0.013     1.505     0.013     
+UFE       O3C       CEC       DOUB      1.211     0.019     1.211     0.019     
+UFE       CDC       CEC       SING      1.506     0.010     1.506     0.010     
+UFE       CDC       C2C       SING      1.496     0.010     1.496     0.010     
+UFE       CEC       O4C       SING      1.311     0.019     1.311     0.019     
+UFE       C3C       C2C       DOUB      1.362     0.013     1.362     0.013     
+UFE       C3C       C4C       SING      1.446     0.016     1.446     0.016     
+UFE       C2C       C1C       SING      1.446     0.016     1.446     0.016     
+UFE       O2D       CCD       DOUB      1.211     0.019     1.211     0.019     
+UFE       CCD       O1D       SING      1.311     0.019     1.311     0.019     
+UFE       CCD       CBD       SING      1.500     0.012     1.500     0.012     
+UFE       C4C       CHD       DOUB      1.382     0.019     1.382     0.019     
+UFE       C4C       NC        SING      1.382     0.010     1.382     0.010     
+UFE       C1C       CHC       DOUB      1.382     0.019     1.382     0.019     
+UFE       C1C       NC        SING      1.382     0.010     1.382     0.010     
+UFE       CHD       C1D       SING      1.382     0.019     1.382     0.019     
+UFE       CBD       CAD       SING      1.523     0.011     1.523     0.011     
+UFE       CHC       C4B       SING      1.382     0.019     1.382     0.019     
+UFE       CBB       CCB       SING      1.500     0.012     1.500     0.012     
+UFE       CBB       CAB       SING      1.523     0.011     1.523     0.011     
+UFE       NC        FE        SING      2.039     0.020     2.039     0.020     
+UFE       O1B       CCB       DOUB      1.211     0.019     1.211     0.019     
+UFE       CAD       C2D       SING      1.505     0.013     1.505     0.013     
+UFE       CCB       O2B       SING      1.311     0.019     1.311     0.019     
+UFE       C1D       C2D       SING      1.446     0.016     1.446     0.016     
+UFE       C1D       ND        DOUB      1.382     0.010     1.382     0.010     
+UFE       CAB       C3B       SING      1.505     0.013     1.505     0.013     
+UFE       C2D       C3D       DOUB      1.362     0.013     1.362     0.013     
+UFE       C4B       C3B       SING      1.446     0.016     1.446     0.016     
+UFE       C4B       NB        DOUB      1.382     0.010     1.382     0.010     
+UFE       O3D       CED       DOUB      1.211     0.019     1.211     0.019     
+UFE       C3B       C2B       DOUB      1.362     0.013     1.362     0.013     
+UFE       ND        FE        SING      2.039     0.020     2.039     0.020     
+UFE       ND        C4D       SING      1.382     0.010     1.382     0.010     
+UFE       FE        NB        SING      2.039     0.020     2.039     0.020     
+UFE       FE        NA        SING      2.039     0.020     2.039     0.020     
+UFE       NB        C1B       SING      1.382     0.010     1.382     0.010     
+UFE       C3D       C4D       SING      1.446     0.016     1.446     0.016     
+UFE       C3D       CDD       SING      1.496     0.010     1.496     0.010     
+UFE       CED       O4D       SING      1.311     0.019     1.311     0.019     
+UFE       CED       CDD       SING      1.506     0.010     1.506     0.010     
+UFE       C4D       CHA       DOUB      1.382     0.019     1.382     0.019     
+UFE       C2B       C1B       SING      1.446     0.016     1.446     0.016     
+UFE       C2B       CDB       SING      1.496     0.010     1.496     0.010     
+UFE       C1B       CHB       DOUB      1.382     0.019     1.382     0.019     
+UFE       NA        C1A       SING      1.382     0.010     1.382     0.010     
+UFE       NA        C4A       SING      1.382     0.010     1.382     0.010     
+UFE       CDB       CEB       SING      1.506     0.010     1.506     0.010     
+UFE       CHA       C1A       SING      1.382     0.019     1.382     0.019     
+UFE       CHB       C4A       SING      1.382     0.019     1.382     0.019     
+UFE       C1A       C2A       DOUB      1.446     0.016     1.446     0.016     
+UFE       C4A       C3A       DOUB      1.446     0.016     1.446     0.016     
+UFE       CEB       O4B       DOUB      1.211     0.019     1.211     0.019     
+UFE       CEB       O3B       SING      1.311     0.019     1.311     0.019     
+UFE       C2A       C3A       SING      1.362     0.013     1.362     0.013     
+UFE       C2A       CDA       SING      1.496     0.010     1.496     0.010     
+UFE       C3A       CAA       SING      1.505     0.013     1.505     0.013     
+UFE       O3A       CEA       DOUB      1.211     0.019     1.211     0.019     
+UFE       CDA       CEA       SING      1.506     0.010     1.506     0.010     
+UFE       CAA       CBA       SING      1.523     0.011     1.523     0.011     
+UFE       CBA       CCA       SING      1.500     0.012     1.500     0.012     
+UFE       CEA       O4A       SING      1.311     0.019     1.311     0.019     
+UFE       O2A       CCA       DOUB      1.211     0.019     1.211     0.019     
+UFE       CCA       O1A       SING      1.311     0.019     1.311     0.019     
+UFE       O4D       H1        SING      0.970     0.012     0.888     0.020     
+UFE       CDD       H2        SING      1.089     0.010     0.989     0.020     
+UFE       CDD       H3        SING      1.089     0.010     0.989     0.020     
+UFE       CAD       H4        SING      1.089     0.010     0.982     0.017     
+UFE       CAD       H5        SING      1.089     0.010     0.982     0.017     
+UFE       CBD       H6        SING      1.089     0.010     0.978     0.020     
+UFE       CBD       H7        SING      1.089     0.010     0.978     0.020     
+UFE       O1D       H8        SING      0.970     0.012     0.888     0.020     
+UFE       CHD       H9        SING      1.082     0.013     0.948     0.020     
+UFE       CHA       H10       SING      1.082     0.013     0.948     0.020     
+UFE       CAA       H11       SING      1.089     0.010     0.982     0.017     
+UFE       CAA       H12       SING      1.089     0.010     0.982     0.017     
+UFE       CBA       H13       SING      1.089     0.010     0.978     0.020     
+UFE       CBA       H14       SING      1.089     0.010     0.978     0.020     
+UFE       O1A       H15       SING      0.970     0.012     0.888     0.020     
+UFE       CDA       H16       SING      1.089     0.010     0.989     0.020     
+UFE       CDA       H17       SING      1.089     0.010     0.989     0.020     
+UFE       O4A       H18       SING      0.970     0.012     0.888     0.020     
+UFE       CAB       H19       SING      1.089     0.010     0.982     0.017     
+UFE       CAB       H20       SING      1.089     0.010     0.982     0.017     
+UFE       CBB       H21       SING      1.089     0.010     0.978     0.020     
+UFE       CBB       H22       SING      1.089     0.010     0.978     0.020     
+UFE       O2B       H23       SING      0.970     0.012     0.888     0.020     
+UFE       CDB       H24       SING      1.089     0.010     0.989     0.020     
+UFE       CDB       H25       SING      1.089     0.010     0.989     0.020     
+UFE       O3B       H26       SING      0.970     0.012     0.888     0.020     
+UFE       CHB       H27       SING      1.082     0.013     0.948     0.020     
+UFE       CDC       H28       SING      1.089     0.010     0.989     0.020     
+UFE       CDC       H29       SING      1.089     0.010     0.989     0.020     
+UFE       O4C       H30       SING      0.970     0.012     0.888     0.020     
+UFE       CHC       H31       SING      1.082     0.013     0.948     0.020     
+UFE       CAC       H32       SING      1.089     0.010     0.982     0.017     
+UFE       CAC       H33       SING      1.089     0.010     0.982     0.017     
+UFE       CBC       H34       SING      1.089     0.010     0.978     0.020     
+UFE       CBC       H35       SING      1.089     0.010     0.978     0.020     
+UFE       O1C       H36       SING      0.970     0.012     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+UFE   CED   O4D      H1   110.447    3.00
+UFE   O3D   CED     O4D   122.995    1.34
+UFE   O3D   CED     CDD   123.498    2.53
+UFE   O4D   CED     CDD   113.507    2.44
+UFE   C3D   CDD     CED   114.038    1.94
+UFE   C3D   CDD      H2   109.271    1.35
+UFE   C3D   CDD      H3   109.271    1.35
+UFE   CED   CDD      H2   107.890    2.00
+UFE   CED   CDD      H3   107.890    2.00
+UFE    H2   CDD      H3   107.712    0.90
+UFE   C2D   C3D     C4D   107.161    0.75
+UFE   C2D   C3D     CDD   127.323    2.25
+UFE   C4D   C3D     CDD   125.516    0.99
+UFE   CAD   C2D     C1D   125.328    0.97
+UFE   CAD   C2D     C3D   127.511    1.94
+UFE   C1D   C2D     C3D   107.161    0.75
+UFE   CBD   CAD     C2D   113.577    0.19
+UFE   CBD   CAD      H4   109.002    1.44
+UFE   CBD   CAD      H5   109.002    1.44
+UFE   C2D   CAD      H4   108.929    0.59
+UFE   C2D   CAD      H5   108.929    0.59
+UFE    H4   CAD      H5   107.813    0.92
+UFE   CCD   CBD     CAD   113.874    1.88
+UFE   CCD   CBD      H6   108.528    0.87
+UFE   CCD   CBD      H7   108.528    0.87
+UFE   CAD   CBD      H6   108.801    1.64
+UFE   CAD   CBD      H7   108.801    1.64
+UFE    H6   CBD      H7   107.724    1.61
+UFE   O2D   CCD     O1D   122.931    1.34
+UFE   O2D   CCD     CBD   123.754    1.42
+UFE   O1D   CCD     CBD   113.315    1.57
+UFE   CCD   O1D      H8   110.447    3.00
+UFE   CHD   C1D     C2D   129.955    1.03
+UFE   CHD   C1D      ND   120.386    0.83
+UFE   C2D   C1D      ND   109.658    0.74
+UFE   C4C   CHD     C1D   124.711    1.50
+UFE   C4C   CHD      H9   117.644    0.74
+UFE   C1D   CHD      H9   117.644    0.74
+UFE    ND   C4D     C3D   109.658    0.74
+UFE    ND   C4D     CHA   120.386    0.83
+UFE   C3D   C4D     CHA   129.955    1.03
+UFE   C4D   CHA     C1A   124.711    1.50
+UFE   C4D   CHA     H10   117.644    0.74
+UFE   C1A   CHA     H10   117.644    0.74
+UFE   C1D    ND      FE   118.172    3.00
+UFE   C1D    ND     C4D   106.361    0.24
+UFE    FE    ND     C4D   118.172    3.00
+UFE    NC    FE      ND    90.000    3.00
+UFE    NC    FE      NB    90.000    3.00
+UFE    NC    FE      NA   180.000    3.00
+UFE    ND    FE      NB   180.000    3.00
+UFE    ND    FE      NA    90.000    3.00
+UFE    NB    FE      NA    90.000    3.00
+UFE    FE    NA     C1A   118.172    3.00
+UFE    FE    NA     C4A   118.172    3.00
+UFE   C1A    NA     C4A   106.361    0.24
+UFE    NA   C4A     CHB   120.386    0.83
+UFE    NA   C4A     C3A   109.658    0.74
+UFE   CHB   C4A     C3A   129.955    1.03
+UFE   C4A   C3A     C2A   107.161    0.75
+UFE   C4A   C3A     CAA   125.328    0.97
+UFE   C2A   C3A     CAA   127.511    1.94
+UFE   C3A   CAA     CBA   113.577    0.19
+UFE   C3A   CAA     H11   108.929    0.59
+UFE   C3A   CAA     H12   108.929    0.59
+UFE   CBA   CAA     H11   109.002    1.44
+UFE   CBA   CAA     H12   109.002    1.44
+UFE   H11   CAA     H12   107.813    0.92
+UFE   CAA   CBA     CCA   113.874    1.88
+UFE   CAA   CBA     H13   108.801    1.64
+UFE   CAA   CBA     H14   108.801    1.64
+UFE   CCA   CBA     H13   108.528    0.87
+UFE   CCA   CBA     H14   108.528    0.87
+UFE   H13   CBA     H14   107.724    1.61
+UFE   CBA   CCA     O2A   123.754    1.42
+UFE   CBA   CCA     O1A   113.315    1.57
+UFE   O2A   CCA     O1A   122.931    1.34
+UFE   CCA   O1A     H15   110.447    3.00
+UFE   C1A   C2A     C3A   107.161    0.75
+UFE   C1A   C2A     CDA   125.516    0.99
+UFE   C3A   C2A     CDA   127.323    2.25
+UFE   C2A   CDA     CEA   114.038    1.94
+UFE   C2A   CDA     H16   109.271    1.35
+UFE   C2A   CDA     H17   109.271    1.35
+UFE   CEA   CDA     H16   107.890    2.00
+UFE   CEA   CDA     H17   107.890    2.00
+UFE   H16   CDA     H17   107.712    0.90
+UFE   O3A   CEA     CDA   123.498    2.53
+UFE   O3A   CEA     O4A   122.995    1.34
+UFE   CDA   CEA     O4A   113.507    2.44
+UFE   CEA   O4A     H18   110.447    3.00
+UFE    NA   C1A     CHA   120.386    0.83
+UFE    NA   C1A     C2A   109.658    0.74
+UFE   CHA   C1A     C2A   129.955    1.03
+UFE   C4B    NB      FE   118.172    3.00
+UFE   C4B    NB     C1B   106.361    0.24
+UFE    FE    NB     C1B   118.172    3.00
+UFE   CHC   C4B     C3B   129.955    1.03
+UFE   CHC   C4B      NB   120.386    0.83
+UFE   C3B   C4B      NB   109.658    0.74
+UFE   CAB   C3B     C4B   125.328    0.97
+UFE   CAB   C3B     C2B   127.511    1.94
+UFE   C4B   C3B     C2B   107.161    0.75
+UFE   CBB   CAB     C3B   113.577    0.19
+UFE   CBB   CAB     H19   109.002    1.44
+UFE   CBB   CAB     H20   109.002    1.44
+UFE   C3B   CAB     H19   108.929    0.59
+UFE   C3B   CAB     H20   108.929    0.59
+UFE   H19   CAB     H20   107.813    0.92
+UFE   CCB   CBB     CAB   113.874    1.88
+UFE   CCB   CBB     H21   108.528    0.87
+UFE   CCB   CBB     H22   108.528    0.87
+UFE   CAB   CBB     H21   108.801    1.64
+UFE   CAB   CBB     H22   108.801    1.64
+UFE   H21   CBB     H22   107.724    1.61
+UFE   CBB   CCB     O1B   123.754    1.42
+UFE   CBB   CCB     O2B   113.315    1.57
+UFE   O1B   CCB     O2B   122.931    1.34
+UFE   CCB   O2B     H23   110.447    3.00
+UFE   C3B   C2B     C1B   107.161    0.75
+UFE   C3B   C2B     CDB   127.323    2.25
+UFE   C1B   C2B     CDB   125.516    0.99
+UFE   C2B   CDB     CEB   114.038    1.94
+UFE   C2B   CDB     H24   109.271    1.35
+UFE   C2B   CDB     H25   109.271    1.35
+UFE   CEB   CDB     H24   107.890    2.00
+UFE   CEB   CDB     H25   107.890    2.00
+UFE   H24   CDB     H25   107.712    0.90
+UFE   CDB   CEB     O4B   123.498    2.53
+UFE   CDB   CEB     O3B   113.507    2.44
+UFE   O4B   CEB     O3B   122.995    1.34
+UFE   CEB   O3B     H26   110.447    3.00
+UFE    NB   C1B     C2B   109.658    0.74
+UFE    NB   C1B     CHB   120.386    0.83
+UFE   C2B   C1B     CHB   129.955    1.03
+UFE   C1B   CHB     C4A   124.711    1.50
+UFE   C1B   CHB     H27   117.644    0.74
+UFE   C4A   CHB     H27   117.644    0.74
+UFE   C4C    NC     C1C   106.361    0.24
+UFE   C4C    NC      FE   118.172    3.00
+UFE   C1C    NC      FE   118.172    3.00
+UFE   C3C   C4C     CHD   129.955    1.03
+UFE   C3C   C4C      NC   109.658    0.74
+UFE   CHD   C4C      NC   120.386    0.83
+UFE   CAC   C3C     C2C   127.511    1.94
+UFE   CAC   C3C     C4C   125.328    0.97
+UFE   C2C   C3C     C4C   107.161    0.75
+UFE   CDC   C2C     C3C   127.323    2.25
+UFE   CDC   C2C     C1C   125.516    0.99
+UFE   C3C   C2C     C1C   107.161    0.75
+UFE   CEC   CDC     C2C   114.038    1.94
+UFE   CEC   CDC     H28   107.890    2.00
+UFE   CEC   CDC     H29   107.890    2.00
+UFE   C2C   CDC     H28   109.271    1.35
+UFE   C2C   CDC     H29   109.271    1.35
+UFE   H28   CDC     H29   107.712    0.90
+UFE   O3C   CEC     CDC   123.498    2.53
+UFE   O3C   CEC     O4C   122.995    1.34
+UFE   CDC   CEC     O4C   113.507    2.44
+UFE   CEC   O4C     H30   110.447    3.00
+UFE   C2C   C1C     CHC   129.955    1.03
+UFE   C2C   C1C      NC   109.658    0.74
+UFE   CHC   C1C      NC   120.386    0.83
+UFE   C1C   CHC     C4B   124.711    1.50
+UFE   C1C   CHC     H31   117.644    0.74
+UFE   C4B   CHC     H31   117.644    0.74
+UFE   CBC   CAC     C3C   113.577    0.19
+UFE   CBC   CAC     H32   109.002    1.44
+UFE   CBC   CAC     H33   109.002    1.44
+UFE   C3C   CAC     H32   108.929    0.59
+UFE   C3C   CAC     H33   108.929    0.59
+UFE   H32   CAC     H33   107.813    0.92
+UFE   CCC   CBC     CAC   113.874    1.88
+UFE   CCC   CBC     H34   108.528    0.87
+UFE   CCC   CBC     H35   108.528    0.87
+UFE   CAC   CBC     H34   108.801    1.64
+UFE   CAC   CBC     H35   108.801    1.64
+UFE   H34   CBC     H35   107.724    1.61
+UFE   O2C   CCC     O1C   122.931    1.34
+UFE   O2C   CCC     CBC   123.754    1.42
+UFE   O1C   CCC     CBC   113.315    1.57
+UFE   CCC   O1C     H36   110.447    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+UFE       sp2_sp2_1     CHA     C1A      NA      FE       0.000   10.00     2
+UFE     P_sp2_sp2_1     CHA     C1A      NA     C4A     180.000   10.00     2
+UFE       sp2_sp2_2     C2A     C1A      NA      FE     180.000   10.00     2
+UFE     P_sp2_sp2_2     C2A     C1A      NA     C4A       0.000   10.00     2
+UFE     P_sp2_sp2_3      NA     C1A     C2A     C3A       0.000   10.00     2
+UFE     P_sp2_sp2_4      NA     C1A     C2A     CDA     180.000   10.00     2
+UFE     P_sp2_sp2_5     CHA     C1A     C2A     C3A     180.000   10.00     2
+UFE     P_sp2_sp2_6     CHA     C1A     C2A     CDA       0.000   10.00     2
+UFE     P_sp2_sp2_7     C1A     C2A     C3A     C4A       0.000   10.00     2
+UFE     P_sp2_sp2_8     C1A     C2A     C3A     CAA     180.000   10.00     2
+UFE     P_sp2_sp2_9     CDA     C2A     C3A     C4A     180.000   10.00     2
+UFE    P_sp2_sp2_10     CDA     C2A     C3A     CAA       0.000   10.00     2
+UFE    P_sp2_sp2_11     C2A     C3A     C4A      NA       0.000   10.00     2
+UFE    P_sp2_sp2_12     C2A     C3A     C4A     CHB     180.000   10.00     2
+UFE    P_sp2_sp2_13     CAA     C3A     C4A      NA     180.000   10.00     2
+UFE    P_sp2_sp2_14     CAA     C3A     C4A     CHB       0.000   10.00     2
+UFE    P_sp2_sp2_15     C3D     C4D      ND     C1D       0.000   10.00     2
+UFE       sp2_sp2_3     C3D     C4D      ND      FE     180.000   10.00     2
+UFE    P_sp2_sp2_16     CHA     C4D      ND     C1D     180.000   10.00     2
+UFE       sp2_sp2_4     CHA     C4D      ND      FE       0.000   10.00     2
+UFE     other_tor_1      NC      FE      ND     C1D       0.000   10.00     1
+UFE     other_tor_2      NC      FE      ND     C4D     180.000   10.00     1
+UFE     other_tor_3      NC      FE      NA     C1A      90.000   10.00     1
+UFE     other_tor_4      NC      FE      NA     C4A     -90.000   10.00     1
+UFE       sp2_sp2_5     CHA     C1A      NA      FE       0.000   10.00     2
+UFE    P_sp2_sp2_17     CHA     C1A      NA     C4A     180.000   10.00     2
+UFE       sp2_sp2_6     C2A     C1A      NA      FE     180.000   10.00     2
+UFE    P_sp2_sp2_18     C2A     C1A      NA     C4A       0.000   10.00     2
+UFE       sp2_sp2_7      NA     C1A     CHA     C4D       0.000   10.00     2
+UFE       sp2_sp2_8      NA     C1A     CHA     H10     180.000   10.00     2
+UFE       sp2_sp2_9     C2A     C1A     CHA     C4D     180.000   10.00     2
+UFE      sp2_sp2_10     C2A     C1A     CHA     H10       0.000   10.00     2
+UFE      sp2_sp2_11     CHC     C4B      NB      FE       0.000   10.00     2
+UFE    P_sp2_sp2_19     CHC     C4B      NB     C1B     180.000   10.00     2
+UFE      sp2_sp2_12     C3B     C4B      NB      FE     180.000   10.00     2
+UFE    P_sp2_sp2_20     C3B     C4B      NB     C1B       0.000   10.00     2
+UFE    P_sp2_sp2_21     C2B     C3B     C4B      NB       0.000   10.00     2
+UFE    P_sp2_sp2_22     C2B     C3B     C4B     CHC     180.000   10.00     2
+UFE    P_sp2_sp2_23     CAB     C3B     C4B      NB     180.000   10.00     2
+UFE    P_sp2_sp2_24     CAB     C3B     C4B     CHC       0.000   10.00     2
+UFE    P_sp2_sp2_25     C1B     C2B     C3B     C4B       0.000   10.00     2
+UFE    P_sp2_sp2_26     C1B     C2B     C3B     CAB     180.000   10.00     2
+UFE    P_sp2_sp2_27     CDB     C2B     C3B     C4B     180.000   10.00     2
+UFE    P_sp2_sp2_28     CDB     C2B     C3B     CAB       0.000   10.00     2
+UFE    P_sp2_sp2_29      NB     C1B     C2B     C3B       0.000   10.00     2
+UFE    P_sp2_sp2_30      NB     C1B     C2B     CDB     180.000   10.00     2
+UFE    P_sp2_sp2_31     CHB     C1B     C2B     C3B     180.000   10.00     2
+UFE    P_sp2_sp2_32     CHB     C1B     C2B     CDB       0.000   10.00     2
+UFE     other_tor_5      NC      FE      NB     C4B       0.000   10.00     1
+UFE     other_tor_6      NC      FE      NB     C1B     180.000   10.00     1
+UFE    P_sp2_sp2_33     C2B     C1B      NB     C4B       0.000   10.00     2
+UFE      sp2_sp2_13     C2B     C1B      NB      FE     180.000   10.00     2
+UFE    P_sp2_sp2_34     CHB     C1B      NB     C4B     180.000   10.00     2
+UFE      sp2_sp2_14     CHB     C1B      NB      FE       0.000   10.00     2
+UFE      sp2_sp2_15      NB     C1B     CHB     C4A       0.000   10.00     2
+UFE      sp2_sp2_16      NB     C1B     CHB     H27     180.000   10.00     2
+UFE      sp2_sp2_17     C2B     C1B     CHB     C4A     180.000   10.00     2
+UFE      sp2_sp2_18     C2B     C1B     CHB     H27       0.000   10.00     2
+UFE      sp2_sp2_19      NA     C4A     CHB     C1B       0.000   10.00     2
+UFE      sp2_sp2_20      NA     C4A     CHB     H27     180.000   10.00     2
+UFE      sp2_sp2_21     C3A     C4A     CHB     C1B     180.000   10.00     2
+UFE      sp2_sp2_22     C3A     C4A     CHB     H27       0.000   10.00     2
+UFE      sp2_sp2_23     CHB     C4A      NA      FE       0.000   10.00     2
+UFE    P_sp2_sp2_35     CHB     C4A      NA     C1A     180.000   10.00     2
+UFE      sp2_sp2_24     C3A     C4A      NA      FE     180.000   10.00     2
+UFE    P_sp2_sp2_36     C3A     C4A      NA     C1A       0.000   10.00     2
+UFE    P_sp2_sp2_37     C3C     C4C      NC     C1C       0.000   10.00     2
+UFE      sp2_sp2_25     C3C     C4C      NC      FE     180.000   10.00     2
+UFE    P_sp2_sp2_38     CHD     C4C      NC     C1C     180.000   10.00     2
+UFE      sp2_sp2_26     CHD     C4C      NC      FE       0.000   10.00     2
+UFE    P_sp2_sp2_39     C2C     C3C     C4C      NC       0.000   10.00     2
+UFE    P_sp2_sp2_40     C2C     C3C     C4C     CHD     180.000   10.00     2
+UFE    P_sp2_sp2_41     CAC     C3C     C4C      NC     180.000   10.00     2
+UFE    P_sp2_sp2_42     CAC     C3C     C4C     CHD       0.000   10.00     2
+UFE    P_sp2_sp2_43     C1C     C2C     C3C     C4C       0.000   10.00     2
+UFE    P_sp2_sp2_44     C1C     C2C     C3C     CAC     180.000   10.00     2
+UFE    P_sp2_sp2_45     CDC     C2C     C3C     C4C     180.000   10.00     2
+UFE    P_sp2_sp2_46     CDC     C2C     C3C     CAC       0.000   10.00     2
+UFE    P_sp2_sp2_47      NC     C1C     C2C     C3C       0.000   10.00     2
+UFE    P_sp2_sp2_48      NC     C1C     C2C     CDC     180.000   10.00     2
+UFE    P_sp2_sp2_49     CHC     C1C     C2C     C3C     180.000   10.00     2
+UFE    P_sp2_sp2_50     CHC     C1C     C2C     CDC       0.000   10.00     2
+UFE     other_tor_7      ND      FE      NC     C4C       0.000   10.00     1
+UFE     other_tor_8      ND      FE      NC     C1C     180.000   10.00     1
+UFE    P_sp2_sp2_51     C2C     C1C      NC     C4C       0.000   10.00     2
+UFE      sp2_sp2_27     C2C     C1C      NC      FE     180.000   10.00     2
+UFE    P_sp2_sp2_52     CHC     C1C      NC     C4C     180.000   10.00     2
+UFE      sp2_sp2_28     CHC     C1C      NC      FE       0.000   10.00     2
+UFE      sp2_sp2_29      NC     C1C     CHC     C4B       0.000   10.00     2
+UFE      sp2_sp2_30      NC     C1C     CHC     H31     180.000   10.00     2
+UFE      sp2_sp2_31     C2C     C1C     CHC     C4B     180.000   10.00     2
+UFE      sp2_sp2_32     C2C     C1C     CHC     H31       0.000   10.00     2
+UFE      sp2_sp2_33      NB     C4B     CHC     C1C       0.000   10.00     2
+UFE      sp2_sp2_34      NB     C4B     CHC     H31     180.000   10.00     2
+UFE      sp2_sp2_35     C3B     C4B     CHC     C1C     180.000   10.00     2
+UFE      sp2_sp2_36     C3B     C4B     CHC     H31       0.000   10.00     2
+UFE      sp2_sp2_37     CHC     C4B      NB      FE       0.000   10.00     2
+UFE    P_sp2_sp2_53     CHC     C4B      NB     C1B     180.000   10.00     2
+UFE      sp2_sp2_38     C3B     C4B      NB      FE     180.000   10.00     2
+UFE    P_sp2_sp2_54     C3B     C4B      NB     C1B       0.000   10.00     2
+UFE    P_sp2_sp2_55     C1D     C2D     C3D     C4D       0.000   10.00     2
+UFE    P_sp2_sp2_56     C1D     C2D     C3D     CDD     180.000   10.00     2
+UFE    P_sp2_sp2_57     CAD     C2D     C3D     C4D     180.000   10.00     2
+UFE    P_sp2_sp2_58     CAD     C2D     C3D     CDD       0.000   10.00     2
+UFE    P_sp2_sp2_59      ND     C1D     C2D     C3D       0.000   10.00     2
+UFE    P_sp2_sp2_60      ND     C1D     C2D     CAD     180.000   10.00     2
+UFE    P_sp2_sp2_61     CHD     C1D     C2D     C3D     180.000   10.00     2
+UFE    P_sp2_sp2_62     CHD     C1D     C2D     CAD       0.000   10.00     2
+UFE      sp2_sp2_39     CHD     C1D      ND      FE       0.000   10.00     2
+UFE    P_sp2_sp2_63     CHD     C1D      ND     C4D     180.000   10.00     2
+UFE      sp2_sp2_40     C2D     C1D      ND      FE     180.000   10.00     2
+UFE    P_sp2_sp2_64     C2D     C1D      ND     C4D       0.000   10.00     2
+UFE    P_sp2_sp2_65     C3D     C4D      ND     C1D       0.000   10.00     2
+UFE      sp2_sp2_41     C3D     C4D      ND      FE     180.000   10.00     2
+UFE    P_sp2_sp2_66     CHA     C4D      ND     C1D     180.000   10.00     2
+UFE      sp2_sp2_42     CHA     C4D      ND      FE       0.000   10.00     2
+UFE      sp2_sp2_43      ND     C1D     CHD     C4C       0.000   10.00     2
+UFE      sp2_sp2_44      ND     C1D     CHD      H9     180.000   10.00     2
+UFE      sp2_sp2_45     C2D     C1D     CHD     C4C     180.000   10.00     2
+UFE      sp2_sp2_46     C2D     C1D     CHD      H9       0.000   10.00     2
+UFE      sp2_sp2_47      NC     C4C     CHD     C1D       0.000   10.00     2
+UFE      sp2_sp2_48      NC     C4C     CHD      H9     180.000   10.00     2
+UFE      sp2_sp2_49     C3C     C4C     CHD     C1D     180.000   10.00     2
+UFE      sp2_sp2_50     C3C     C4C     CHD      H9       0.000   10.00     2
+UFE    P_sp2_sp2_67     C3C     C4C      NC     C1C       0.000   10.00     2
+UFE      sp2_sp2_51     C3C     C4C      NC      FE     180.000   10.00     2
+UFE    P_sp2_sp2_68     CHD     C4C      NC     C1C     180.000   10.00     2
+UFE      sp2_sp2_52     CHD     C4C      NC      FE       0.000   10.00     2
+UFE     other_tor_9      ND      FE      NC     C4C       0.000   10.00     1
+UFE    other_tor_10      ND      FE      NC     C1C     180.000   10.00     1
+UFE    other_tor_11      NC      FE      ND     C1D       0.000   10.00     1
+UFE    other_tor_12      NC      FE      ND     C4D     180.000   10.00     1
+UFE      sp2_sp2_53     O2C     CCC     O1C     H36     180.000   10.00     2
+UFE      sp2_sp2_54     CBC     CCC     O1C     H36       0.000   10.00     2
+UFE       sp2_sp3_1     O2C     CCC     CBC     H34       0.000   10.00     6
+UFE       sp2_sp3_2     O2C     CCC     CBC     CAC     120.000   10.00     6
+UFE       sp2_sp3_3     O2C     CCC     CBC     H35    -120.000   10.00     6
+UFE       sp2_sp3_4     O1C     CCC     CBC     H34     180.000   10.00     6
+UFE       sp2_sp3_5     O1C     CCC     CBC     CAC     -60.000   10.00     6
+UFE       sp2_sp3_6     O1C     CCC     CBC     H35      60.000   10.00     6
+UFE       sp3_sp3_1     C3C     CAC     CBC     CCC     180.000   10.00     3
+UFE       sp3_sp3_2     C3C     CAC     CBC     H34     -60.000   10.00     3
+UFE       sp3_sp3_3     C3C     CAC     CBC     H35      60.000   10.00     3
+UFE       sp3_sp3_4     H32     CAC     CBC     CCC      60.000   10.00     3
+UFE       sp3_sp3_5     H32     CAC     CBC     H34     180.000   10.00     3
+UFE       sp3_sp3_6     H32     CAC     CBC     H35     -60.000   10.00     3
+UFE       sp3_sp3_7     H33     CAC     CBC     CCC     -60.000   10.00     3
+UFE       sp3_sp3_8     H33     CAC     CBC     H34      60.000   10.00     3
+UFE       sp3_sp3_9     H33     CAC     CBC     H35     180.000   10.00     3
+UFE       sp2_sp3_7     C2C     C3C     CAC     H32     150.000   10.00     6
+UFE       sp2_sp3_8     C2C     C3C     CAC     CBC     -90.000   10.00     6
+UFE       sp2_sp3_9     C2C     C3C     CAC     H33      30.000   10.00     6
+UFE      sp2_sp3_10     C4C     C3C     CAC     H32     -30.000   10.00     6
+UFE      sp2_sp3_11     C4C     C3C     CAC     CBC      90.000   10.00     6
+UFE      sp2_sp3_12     C4C     C3C     CAC     H33    -150.000   10.00     6
+UFE      sp2_sp3_13     O3C     CEC     CDC     H28       0.000   10.00     6
+UFE      sp2_sp3_14     O3C     CEC     CDC     C2C     120.000   10.00     6
+UFE      sp2_sp3_15     O3C     CEC     CDC     H29    -120.000   10.00     6
+UFE      sp2_sp3_16     O4C     CEC     CDC     H28     180.000   10.00     6
+UFE      sp2_sp3_17     O4C     CEC     CDC     C2C     -60.000   10.00     6
+UFE      sp2_sp3_18     O4C     CEC     CDC     H29      60.000   10.00     6
+UFE      sp2_sp3_19     C3C     C2C     CDC     H28     150.000   10.00     6
+UFE      sp2_sp3_20     C3C     C2C     CDC     CEC     -90.000   10.00     6
+UFE      sp2_sp3_21     C3C     C2C     CDC     H29      30.000   10.00     6
+UFE      sp2_sp3_22     C1C     C2C     CDC     H28     -30.000   10.00     6
+UFE      sp2_sp3_23     C1C     C2C     CDC     CEC      90.000   10.00     6
+UFE      sp2_sp3_24     C1C     C2C     CDC     H29    -150.000   10.00     6
+UFE      sp2_sp2_55     O3C     CEC     O4C     H30     180.000   10.00     2
+UFE      sp2_sp2_56     CDC     CEC     O4C     H30       0.000   10.00     2
+UFE      sp2_sp2_57     O2D     CCD     O1D      H8     180.000   10.00     2
+UFE      sp2_sp2_58     CBD     CCD     O1D      H8       0.000   10.00     2
+UFE      sp2_sp3_25     O2D     CCD     CBD      H6       0.000   10.00     6
+UFE      sp2_sp3_26     O2D     CCD     CBD     CAD     120.000   10.00     6
+UFE      sp2_sp3_27     O2D     CCD     CBD      H7    -120.000   10.00     6
+UFE      sp2_sp3_28     O1D     CCD     CBD      H6     180.000   10.00     6
+UFE      sp2_sp3_29     O1D     CCD     CBD     CAD     -60.000   10.00     6
+UFE      sp2_sp3_30     O1D     CCD     CBD      H7      60.000   10.00     6
+UFE      sp3_sp3_10     C2D     CAD     CBD     CCD     180.000   10.00     3
+UFE      sp3_sp3_11     C2D     CAD     CBD      H6     -60.000   10.00     3
+UFE      sp3_sp3_12     C2D     CAD     CBD      H7      60.000   10.00     3
+UFE      sp3_sp3_13      H4     CAD     CBD     CCD      60.000   10.00     3
+UFE      sp3_sp3_14      H4     CAD     CBD      H6     180.000   10.00     3
+UFE      sp3_sp3_15      H4     CAD     CBD      H7     -60.000   10.00     3
+UFE      sp3_sp3_16      H5     CAD     CBD     CCD     -60.000   10.00     3
+UFE      sp3_sp3_17      H5     CAD     CBD      H6      60.000   10.00     3
+UFE      sp3_sp3_18      H5     CAD     CBD      H7     180.000   10.00     3
+UFE      sp2_sp3_31     O1B     CCB     CBB     H21       0.000   10.00     6
+UFE      sp2_sp3_32     O1B     CCB     CBB     CAB     120.000   10.00     6
+UFE      sp2_sp3_33     O1B     CCB     CBB     H22    -120.000   10.00     6
+UFE      sp2_sp3_34     O2B     CCB     CBB     H21     180.000   10.00     6
+UFE      sp2_sp3_35     O2B     CCB     CBB     CAB     -60.000   10.00     6
+UFE      sp2_sp3_36     O2B     CCB     CBB     H22      60.000   10.00     6
+UFE      sp3_sp3_19     C3B     CAB     CBB     CCB     180.000   10.00     3
+UFE      sp3_sp3_20     C3B     CAB     CBB     H21     -60.000   10.00     3
+UFE      sp3_sp3_21     C3B     CAB     CBB     H22      60.000   10.00     3
+UFE      sp3_sp3_22     H19     CAB     CBB     CCB      60.000   10.00     3
+UFE      sp3_sp3_23     H19     CAB     CBB     H21     180.000   10.00     3
+UFE      sp3_sp3_24     H19     CAB     CBB     H22     -60.000   10.00     3
+UFE      sp3_sp3_25     H20     CAB     CBB     CCB     -60.000   10.00     3
+UFE      sp3_sp3_26     H20     CAB     CBB     H21      60.000   10.00     3
+UFE      sp3_sp3_27     H20     CAB     CBB     H22     180.000   10.00     3
+UFE      sp2_sp3_37     C1D     C2D     CAD      H4     150.000   10.00     6
+UFE      sp2_sp3_38     C1D     C2D     CAD     CBD     -90.000   10.00     6
+UFE      sp2_sp3_39     C1D     C2D     CAD      H5      30.000   10.00     6
+UFE      sp2_sp3_40     C3D     C2D     CAD      H4     -30.000   10.00     6
+UFE      sp2_sp3_41     C3D     C2D     CAD     CBD      90.000   10.00     6
+UFE      sp2_sp3_42     C3D     C2D     CAD      H5    -150.000   10.00     6
+UFE      sp2_sp2_59     CBB     CCB     O2B     H23     180.000   10.00     2
+UFE      sp2_sp2_60     O1B     CCB     O2B     H23       0.000   10.00     2
+UFE      sp2_sp3_43     C4B     C3B     CAB     H19     150.000   10.00     6
+UFE      sp2_sp3_44     C4B     C3B     CAB     CBB     -90.000   10.00     6
+UFE      sp2_sp3_45     C4B     C3B     CAB     H20      30.000   10.00     6
+UFE      sp2_sp3_46     C2B     C3B     CAB     H19     -30.000   10.00     6
+UFE      sp2_sp3_47     C2B     C3B     CAB     CBB      90.000   10.00     6
+UFE      sp2_sp3_48     C2B     C3B     CAB     H20    -150.000   10.00     6
+UFE    P_sp2_sp2_69     C2D     C3D     C4D      ND       0.000   10.00     2
+UFE    P_sp2_sp2_70     C2D     C3D     C4D     CHA     180.000   10.00     2
+UFE    P_sp2_sp2_71     CDD     C3D     C4D      ND     180.000   10.00     2
+UFE    P_sp2_sp2_72     CDD     C3D     C4D     CHA       0.000   10.00     2
+UFE      sp2_sp3_49     C2D     C3D     CDD      H2     150.000   10.00     6
+UFE      sp2_sp3_50     C2D     C3D     CDD     CED     -90.000   10.00     6
+UFE      sp2_sp3_51     C2D     C3D     CDD      H3      30.000   10.00     6
+UFE      sp2_sp3_52     C4D     C3D     CDD      H2     -30.000   10.00     6
+UFE      sp2_sp3_53     C4D     C3D     CDD     CED      90.000   10.00     6
+UFE      sp2_sp3_54     C4D     C3D     CDD      H3    -150.000   10.00     6
+UFE      sp2_sp2_61     O3D     CED     O4D      H1     180.000   10.00     2
+UFE      sp2_sp2_62     CDD     CED     O4D      H1       0.000   10.00     2
+UFE      sp2_sp3_55     O3D     CED     CDD      H2       0.000   10.00     6
+UFE      sp2_sp3_56     O3D     CED     CDD     C3D     120.000   10.00     6
+UFE      sp2_sp3_57     O3D     CED     CDD      H3    -120.000   10.00     6
+UFE      sp2_sp3_58     O4D     CED     CDD      H2     180.000   10.00     6
+UFE      sp2_sp3_59     O4D     CED     CDD     C3D     -60.000   10.00     6
+UFE      sp2_sp3_60     O4D     CED     CDD      H3      60.000   10.00     6
+UFE      sp2_sp2_63      ND     C4D     CHA     C1A       0.000   10.00     2
+UFE      sp2_sp2_64      ND     C4D     CHA     H10     180.000   10.00     2
+UFE      sp2_sp2_65     C3D     C4D     CHA     C1A     180.000   10.00     2
+UFE      sp2_sp2_66     C3D     C4D     CHA     H10       0.000   10.00     2
+UFE      sp2_sp3_61     C3B     C2B     CDB     H24     150.000   10.00     6
+UFE      sp2_sp3_62     C3B     C2B     CDB     CEB     -90.000   10.00     6
+UFE      sp2_sp3_63     C3B     C2B     CDB     H25      30.000   10.00     6
+UFE      sp2_sp3_64     C1B     C2B     CDB     H24     -30.000   10.00     6
+UFE      sp2_sp3_65     C1B     C2B     CDB     CEB      90.000   10.00     6
+UFE      sp2_sp3_66     C1B     C2B     CDB     H25    -150.000   10.00     6
+UFE      sp2_sp3_67     O4B     CEB     CDB     H24       0.000   10.00     6
+UFE      sp2_sp3_68     O4B     CEB     CDB     C2B     120.000   10.00     6
+UFE      sp2_sp3_69     O4B     CEB     CDB     H25    -120.000   10.00     6
+UFE      sp2_sp3_70     O3B     CEB     CDB     H24     180.000   10.00     6
+UFE      sp2_sp3_71     O3B     CEB     CDB     C2B     -60.000   10.00     6
+UFE      sp2_sp3_72     O3B     CEB     CDB     H25      60.000   10.00     6
+UFE      sp2_sp2_67     CDB     CEB     O3B     H26     180.000   10.00     2
+UFE      sp2_sp2_68     O4B     CEB     O3B     H26       0.000   10.00     2
+UFE      sp2_sp3_73     C1A     C2A     CDA     H16     150.000   10.00     6
+UFE      sp2_sp3_74     C1A     C2A     CDA     CEA     -90.000   10.00     6
+UFE      sp2_sp3_75     C1A     C2A     CDA     H17      30.000   10.00     6
+UFE      sp2_sp3_76     C3A     C2A     CDA     H16     -30.000   10.00     6
+UFE      sp2_sp3_77     C3A     C2A     CDA     CEA      90.000   10.00     6
+UFE      sp2_sp3_78     C3A     C2A     CDA     H17    -150.000   10.00     6
+UFE      sp2_sp3_79     C4A     C3A     CAA     H11     150.000   10.00     6
+UFE      sp2_sp3_80     C4A     C3A     CAA     CBA     -90.000   10.00     6
+UFE      sp2_sp3_81     C4A     C3A     CAA     H12      30.000   10.00     6
+UFE      sp2_sp3_82     C2A     C3A     CAA     H11     -30.000   10.00     6
+UFE      sp2_sp3_83     C2A     C3A     CAA     CBA      90.000   10.00     6
+UFE      sp2_sp3_84     C2A     C3A     CAA     H12    -150.000   10.00     6
+UFE      sp2_sp3_85     O3A     CEA     CDA     H16       0.000   10.00     6
+UFE      sp2_sp3_86     O3A     CEA     CDA     C2A     120.000   10.00     6
+UFE      sp2_sp3_87     O3A     CEA     CDA     H17    -120.000   10.00     6
+UFE      sp2_sp3_88     O4A     CEA     CDA     H16     180.000   10.00     6
+UFE      sp2_sp3_89     O4A     CEA     CDA     C2A     -60.000   10.00     6
+UFE      sp2_sp3_90     O4A     CEA     CDA     H17      60.000   10.00     6
+UFE      sp3_sp3_28     C3A     CAA     CBA     CCA     180.000   10.00     3
+UFE      sp3_sp3_29     C3A     CAA     CBA     H13     -60.000   10.00     3
+UFE      sp3_sp3_30     C3A     CAA     CBA     H14      60.000   10.00     3
+UFE      sp3_sp3_31     H11     CAA     CBA     CCA      60.000   10.00     3
+UFE      sp3_sp3_32     H11     CAA     CBA     H13     180.000   10.00     3
+UFE      sp3_sp3_33     H11     CAA     CBA     H14     -60.000   10.00     3
+UFE      sp3_sp3_34     H12     CAA     CBA     CCA     -60.000   10.00     3
+UFE      sp3_sp3_35     H12     CAA     CBA     H13      60.000   10.00     3
+UFE      sp3_sp3_36     H12     CAA     CBA     H14     180.000   10.00     3
+UFE      sp2_sp3_91     O2A     CCA     CBA     H13       0.000   10.00     6
+UFE      sp2_sp3_92     O2A     CCA     CBA     CAA     120.000   10.00     6
+UFE      sp2_sp3_93     O2A     CCA     CBA     H14    -120.000   10.00     6
+UFE      sp2_sp3_94     O1A     CCA     CBA     H13     180.000   10.00     6
+UFE      sp2_sp3_95     O1A     CCA     CBA     CAA     -60.000   10.00     6
+UFE      sp2_sp3_96     O1A     CCA     CBA     H14      60.000   10.00     6
+UFE      sp2_sp2_69     O3A     CEA     O4A     H18     180.000   10.00     2
+UFE      sp2_sp2_70     CDA     CEA     O4A     H18       0.000   10.00     2
+UFE      sp2_sp2_71     CBA     CCA     O1A     H15     180.000   10.00     2
+UFE      sp2_sp2_72     O2A     CCA     O1A     H15       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+UFE    plan-1   CDD   0.020
+UFE    plan-1   CED   0.020
+UFE    plan-1   O3D   0.020
+UFE    plan-1   O4D   0.020
+UFE    plan-2   CBD   0.020
+UFE    plan-2   CCD   0.020
+UFE    plan-2   O1D   0.020
+UFE    plan-2   O2D   0.020
+UFE    plan-3   C1D   0.020
+UFE    plan-3   C4C   0.020
+UFE    plan-3   CHD   0.020
+UFE    plan-3    H9   0.020
+UFE    plan-4   C1A   0.020
+UFE    plan-4   C4D   0.020
+UFE    plan-4   CHA   0.020
+UFE    plan-4   H10   0.020
+UFE    plan-5   C1D   0.020
+UFE    plan-5   C2D   0.020
+UFE    plan-5   C3D   0.020
+UFE    plan-5   C4D   0.020
+UFE    plan-5   CAD   0.020
+UFE    plan-5   CDD   0.020
+UFE    plan-5   CHA   0.020
+UFE    plan-5   CHD   0.020
+UFE    plan-5    ND   0.020
+UFE    plan-6   CBA   0.020
+UFE    plan-6   CCA   0.020
+UFE    plan-6   O1A   0.020
+UFE    plan-6   O2A   0.020
+UFE    plan-7   CDA   0.020
+UFE    plan-7   CEA   0.020
+UFE    plan-7   O3A   0.020
+UFE    plan-7   O4A   0.020
+UFE    plan-8   C1A   0.020
+UFE    plan-8   C2A   0.020
+UFE    plan-8   C3A   0.020
+UFE    plan-8   C4A   0.020
+UFE    plan-8   CAA   0.020
+UFE    plan-8   CDA   0.020
+UFE    plan-8   CHA   0.020
+UFE    plan-8   CHB   0.020
+UFE    plan-8    NA   0.020
+UFE    plan-9   CBB   0.020
+UFE    plan-9   CCB   0.020
+UFE    plan-9   O1B   0.020
+UFE    plan-9   O2B   0.020
+UFE   plan-10   CDB   0.020
+UFE   plan-10   CEB   0.020
+UFE   plan-10   O3B   0.020
+UFE   plan-10   O4B   0.020
+UFE   plan-11   C1B   0.020
+UFE   plan-11   C2B   0.020
+UFE   plan-11   C3B   0.020
+UFE   plan-11   C4B   0.020
+UFE   plan-11   CAB   0.020
+UFE   plan-11   CDB   0.020
+UFE   plan-11   CHB   0.020
+UFE   plan-11   CHC   0.020
+UFE   plan-11    NB   0.020
+UFE   plan-12   C1B   0.020
+UFE   plan-12   C4A   0.020
+UFE   plan-12   CHB   0.020
+UFE   plan-12   H27   0.020
+UFE   plan-13   CDC   0.020
+UFE   plan-13   CEC   0.020
+UFE   plan-13   O3C   0.020
+UFE   plan-13   O4C   0.020
+UFE   plan-14   C1C   0.020
+UFE   plan-14   C2C   0.020
+UFE   plan-14   C3C   0.020
+UFE   plan-14   C4C   0.020
+UFE   plan-14   CAC   0.020
+UFE   plan-14   CDC   0.020
+UFE   plan-14   CHC   0.020
+UFE   plan-14   CHD   0.020
+UFE   plan-14    NC   0.020
+UFE   plan-15   C1C   0.020
+UFE   plan-15   C4B   0.020
+UFE   plan-15   CHC   0.020
+UFE   plan-15   H31   0.020
+UFE   plan-16   CBC   0.020
+UFE   plan-16   CCC   0.020
+UFE   plan-16   O1C   0.020
+UFE   plan-16   O2C   0.020

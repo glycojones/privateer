@@ -1,0 +1,275 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BMQ      BMQ '.                                   ' non-polymer        33  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BMQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BMQ           O1     O    O         0.000      0.000    0.000    0.000
+ BMQ           C6     C    CR6       0.000     -0.773   -0.693    0.626
+ BMQ           C5     C    CH2       0.000     -0.412   -1.232    1.997
+ BMQ           H51    H    H         0.000     -0.192   -0.359    2.615
+ BMQ           H52    H    H         0.000      0.499   -1.818    1.859
+ BMQ           C4     C    CR6       0.000     -1.463   -2.084    2.681
+ BMQ           O4     O    O         0.000     -1.271   -2.561    3.778
+ BMQ           N3     N    NR16      0.000     -2.623   -2.292    2.021
+ BMQ           HN3    H    H         0.000     -3.359   -2.877    2.467
+ BMQ           C2     C    CR6       0.000     -2.854   -1.768    0.812
+ BMQ           O2     O    O         0.000     -3.926   -2.006    0.290
+ BMQ           N1     N    NR6       0.000     -1.988   -1.011    0.131
+ BMQ           "C1'"  C    CH1       0.000     -2.370   -0.507   -1.190
+ BMQ           "H1'"  H    H         0.000     -1.576    0.132   -1.601
+ BMQ           "O4'"  O    O2        0.000     -3.612    0.224   -1.112
+ BMQ           "C2'"  C    CH1       0.000     -2.664   -1.682   -2.149
+ BMQ           "H2'"  H    H         0.000     -2.949   -2.579   -1.583
+ BMQ           "O2'"  O    OH1       0.000     -1.530   -1.952   -2.977
+ BMQ           "HO2'" H    H         0.000     -1.752   -2.648   -3.611
+ BMQ           "C3'"  C    CH1       0.000     -3.850   -1.183   -3.003
+ BMQ           "H3'"  H    H         0.000     -4.725   -1.833   -2.863
+ BMQ           "O3'"  O    OH1       0.000     -3.485   -1.125   -4.383
+ BMQ           "HO3'" H    H         0.000     -3.281   -2.015   -4.699
+ BMQ           "C4'"  C    CH1       0.000     -4.137    0.234   -2.460
+ BMQ           "H4'"  H    H         0.000     -3.616    0.988   -3.067
+ BMQ           "C5'"  C    CH2       0.000     -5.641    0.513   -2.444
+ BMQ           "H5'1" H    H         0.000     -6.146   -0.252   -1.850
+ BMQ           "H5'2" H    H         0.000     -6.025    0.491   -3.466
+ BMQ           "O5'"  O    O2        0.000     -5.881    1.799   -1.871
+ BMQ           P      P    P         0.000     -7.476    2.024   -1.885
+ BMQ           O1P    O    OP       -0.666     -8.146    0.940   -1.070
+ BMQ           O2P    O    OP       -0.666     -7.800    3.376   -1.288
+ BMQ           O3P    O    OP       -0.666     -7.980    1.969   -3.311
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BMQ      O1     n/a    C6     START
+ BMQ      C6     O1     N1     .
+ BMQ      C5     C6     C4     .
+ BMQ      H51    C5     .      .
+ BMQ      H52    C5     .      .
+ BMQ      C4     C5     N3     .
+ BMQ      O4     C4     .      .
+ BMQ      N3     C4     C2     .
+ BMQ      HN3    N3     .      .
+ BMQ      C2     N3     O2     .
+ BMQ      O2     C2     .      .
+ BMQ      N1     C6     "C1'"  .
+ BMQ      "C1'"  N1     "C2'"  .
+ BMQ      "H1'"  "C1'"  .      .
+ BMQ      "O4'"  "C1'"  .      .
+ BMQ      "C2'"  "C1'"  "C3'"  .
+ BMQ      "H2'"  "C2'"  .      .
+ BMQ      "O2'"  "C2'"  "HO2'" .
+ BMQ      "HO2'" "O2'"  .      .
+ BMQ      "C3'"  "C2'"  "C4'"  .
+ BMQ      "H3'"  "C3'"  .      .
+ BMQ      "O3'"  "C3'"  "HO3'" .
+ BMQ      "HO3'" "O3'"  .      .
+ BMQ      "C4'"  "C3'"  "C5'"  .
+ BMQ      "H4'"  "C4'"  .      .
+ BMQ      "C5'"  "C4'"  "O5'"  .
+ BMQ      "H5'1" "C5'"  .      .
+ BMQ      "H5'2" "C5'"  .      .
+ BMQ      "O5'"  "C5'"  P      .
+ BMQ      P      "O5'"  O3P    .
+ BMQ      O1P    P      .      .
+ BMQ      O2P    P      .      .
+ BMQ      O3P    P      .      END
+ BMQ      "C4'"  "O4'"  .    ADD
+ BMQ      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BMQ       O1P       P         deloc     1.510     0.020     1.510     0.020     
+BMQ       O2P       P         deloc     1.510     0.020     1.510     0.020     
+BMQ       O3P       P         deloc     1.510     0.020     1.510     0.020     
+BMQ       P         "O5'"     single    1.610     0.020     1.610     0.020     
+BMQ       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+BMQ       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+BMQ       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+BMQ       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+BMQ       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+BMQ       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+BMQ       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+BMQ       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+BMQ       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+BMQ       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+BMQ       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+BMQ       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+BMQ       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+BMQ       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+BMQ       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+BMQ       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+BMQ       "C1'"     N1        single    1.465     0.020     1.465     0.020     
+BMQ       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+BMQ       N1        C2        single    1.410     0.020     1.410     0.020     
+BMQ       N1        C6        single    1.410     0.020     1.410     0.020     
+BMQ       O2        C2        double    1.250     0.020     1.250     0.020     
+BMQ       C2        N3        single    1.337     0.020     1.337     0.020     
+BMQ       N3        C4        single    1.337     0.020     1.337     0.020     
+BMQ       HN3       N3        single    1.016     0.010     0.899     0.007     
+BMQ       O4        C4        double    1.250     0.020     1.250     0.020     
+BMQ       C4        C5        single    1.511     0.020     1.511     0.020     
+BMQ       C5        C6        single    1.511     0.020     1.511     0.020     
+BMQ       H51       C5        single    1.089     0.010     0.989     0.005     
+BMQ       H52       C5        single    1.089     0.010     0.989     0.005     
+BMQ       C6        O1        double    1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BMQ      O1     C6     C5      120.000    3.000
+ BMQ      O1     C6     N1      120.000    3.000
+ BMQ      C5     C6     N1      120.000    3.000
+ BMQ      C6     C5     H51     109.470    3.000
+ BMQ      C6     C5     H52     109.470    3.000
+ BMQ      C6     C5     C4      109.470    3.000
+ BMQ      H51    C5     H52     107.900    3.000
+ BMQ      H51    C5     C4      109.470    3.000
+ BMQ      H52    C5     C4      109.470    3.000
+ BMQ      C5     C4     O4      120.000    3.000
+ BMQ      C5     C4     N3      120.000    3.000
+ BMQ      O4     C4     N3      120.000    3.000
+ BMQ      C4     N3     HN3     120.000    3.000
+ BMQ      C4     N3     C2      120.000    3.000
+ BMQ      HN3    N3     C2      120.000    3.000
+ BMQ      N3     C2     O2      120.000    3.000
+ BMQ      N3     C2     N1      120.000    3.000
+ BMQ      O2     C2     N1      120.000    3.000
+ BMQ      C6     N1     "C1'"   120.000    3.000
+ BMQ      C6     N1     C2      120.000    3.000
+ BMQ      "C1'"  N1     C2      120.000    3.000
+ BMQ      N1     "C1'"  "H1'"   109.470    3.000
+ BMQ      N1     "C1'"  "O4'"   109.470    3.000
+ BMQ      N1     "C1'"  "C2'"   109.470    3.000
+ BMQ      "H1'"  "C1'"  "O4'"   109.470    3.000
+ BMQ      "H1'"  "C1'"  "C2'"   108.340    3.000
+ BMQ      "O4'"  "C1'"  "C2'"   109.470    3.000
+ BMQ      "C1'"  "O4'"  "C4'"   111.800    3.000
+ BMQ      "C1'"  "C2'"  "H2'"   108.340    3.000
+ BMQ      "C1'"  "C2'"  "O2'"   109.470    3.000
+ BMQ      "C1'"  "C2'"  "C3'"   111.000    3.000
+ BMQ      "H2'"  "C2'"  "O2'"   109.470    3.000
+ BMQ      "H2'"  "C2'"  "C3'"   108.340    3.000
+ BMQ      "O2'"  "C2'"  "C3'"   109.470    3.000
+ BMQ      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ BMQ      "C2'"  "C3'"  "H3'"   108.340    3.000
+ BMQ      "C2'"  "C3'"  "O3'"   109.470    3.000
+ BMQ      "C2'"  "C3'"  "C4'"   111.000    3.000
+ BMQ      "H3'"  "C3'"  "O3'"   109.470    3.000
+ BMQ      "H3'"  "C3'"  "C4'"   108.340    3.000
+ BMQ      "O3'"  "C3'"  "C4'"   109.470    3.000
+ BMQ      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ BMQ      "C3'"  "C4'"  "H4'"   108.340    3.000
+ BMQ      "C3'"  "C4'"  "C5'"   111.000    3.000
+ BMQ      "C3'"  "C4'"  "O4'"   109.470    3.000
+ BMQ      "H4'"  "C4'"  "C5'"   108.340    3.000
+ BMQ      "H4'"  "C4'"  "O4'"   109.470    3.000
+ BMQ      "C5'"  "C4'"  "O4'"   109.470    3.000
+ BMQ      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ BMQ      "C4'"  "C5'"  "H5'2"  109.470    3.000
+ BMQ      "C4'"  "C5'"  "O5'"   109.470    3.000
+ BMQ      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ BMQ      "H5'1" "C5'"  "O5'"   109.470    3.000
+ BMQ      "H5'2" "C5'"  "O5'"   109.470    3.000
+ BMQ      "C5'"  "O5'"  P       120.500    3.000
+ BMQ      "O5'"  P      O1P     108.200    3.000
+ BMQ      "O5'"  P      O2P     108.200    3.000
+ BMQ      "O5'"  P      O3P     108.200    3.000
+ BMQ      O1P    P      O2P     119.900    3.000
+ BMQ      O1P    P      O3P     119.900    3.000
+ BMQ      O2P    P      O3P     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BMQ      CONST_1  O1     C6     C5     C4       180.000    0.000   0
+ BMQ      CONST_2  C6     C5     C4     N3         0.000    0.000   0
+ BMQ      CONST_3  C5     C4     N3     C2         0.000    0.000   0
+ BMQ      CONST_4  C4     N3     C2     O2       180.000    0.000   0
+ BMQ      CONST_5  O1     C6     N1     "C1'"      0.000    0.000   0
+ BMQ      CONST_6  C6     N1     C2     N3         0.000    0.000   0
+ BMQ      var_1    C6     N1     "C1'"  "C2'"    119.965   20.000   1
+ BMQ      var_2    N1     "C1'"  "O4'"  "C4'"   -150.000   20.000   1
+ BMQ      var_3    N1     "C1'"  "C2'"  "C3'"    150.000   20.000   3
+ BMQ      var_4    "C1'"  "C2'"  "O2'"  "HO2'"  -176.168   20.000   1
+ BMQ      var_5    "C1'"  "C2'"  "C3'"  "C4'"      0.000   20.000   3
+ BMQ      var_6    "C2'"  "C3'"  "O3'"  "HO3'"    63.364   20.000   1
+ BMQ      var_7    "C2'"  "C3'"  "C4'"  "C5'"   -150.000   20.000   3
+ BMQ      var_8    "C3'"  "C4'"  "O4'"  "C1'"     30.000   20.000   1
+ BMQ      var_9    "C3'"  "C4'"  "C5'"  "O5'"    176.882   20.000   3
+ BMQ      var_10   "C4'"  "C5'"  "O5'"  P       -179.972   20.000   1
+ BMQ      var_11   "C5'"  "O5'"  P      O3P      -60.026   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BMQ      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ BMQ      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ BMQ      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ BMQ      chir_04  "C1'"  "O4'"  "C2'"  N1        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BMQ      plan-1    N1        0.020
+ BMQ      plan-1    "C1'"     0.020
+ BMQ      plan-1    C2        0.020
+ BMQ      plan-1    C6        0.020
+ BMQ      plan-1    N3        0.020
+ BMQ      plan-1    C4        0.020
+ BMQ      plan-1    C5        0.020
+ BMQ      plan-1    O2        0.020
+ BMQ      plan-1    HN3       0.020
+ BMQ      plan-1    O4        0.020
+ BMQ      plan-1    O1        0.020
+# ------------------------------------------------------

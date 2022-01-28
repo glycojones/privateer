@@ -1,0 +1,704 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PCU      PCU 'CU(II)MESO(4-N-TETRAMETHYLPYRIDYL)PO' non-polymer        89  53 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PCU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PCU           CMD    C    CH3       0.000      5.901   -1.834    5.852
+ PCU           HMD1   H    H         0.000      5.686   -1.286    6.732
+ PCU           HMD2   H    H         0.000      5.532   -2.821    5.952
+ PCU           HMD3   H    H         0.000      6.949   -1.862    5.701
+ PCU           NPD    N    NR6       0.000      5.260   -1.187    4.705
+ PCU           C8D    C    CR16      0.000      5.414   -1.740    3.459
+ PCU           H8D    H    H         0.000      6.184   -2.484    3.293
+ PCU           C7D    C    CR16      0.000      4.616   -1.366    2.440
+ PCU           H7D    H    H         0.000      4.730   -1.803    1.456
+ PCU           C9D    C    CR16      0.000      4.526   -0.047    4.908
+ PCU           H9D    H    H         0.000      4.619    0.491    5.843
+ PCU           C0D    C    CR16      0.000      3.690    0.410    3.955
+ PCU           H0D    H    H         0.000      3.110    1.312    4.109
+ PCU           C6D    C    CR6       0.000      3.586   -0.349    2.700
+ PCU           C5D    C    C         0.000      2.550   -0.111    1.787
+ PCU           C1A    C    CR5       0.000      2.329   -0.947    0.580
+ PCU           C4D    C    CR5       0.000      1.549    1.028    1.932
+ PCU           ND     N    NT        0.000      0.332    0.861    1.325
+ PCU           CU     CU   CU        0.000     -0.014    0.147   -0.036
+ PCU           C3D    C    CR15      0.000      1.449    2.087    2.775
+ PCU           H3D    H    H         0.000      2.256    2.694    3.168
+ PCU           C2D    C    CR15      0.000      0.065    2.228    3.030
+ PCU           H2D    H    H         0.000     -0.416    3.006    3.610
+ PCU           C1D    C    CR5       0.000     -0.539    1.182    2.394
+ PCU           C5C    C    C         0.000     -1.764    0.401    2.592
+ PCU           C6C    C    CR6       0.000     -2.640    0.618    3.664
+ PCU           C0C    C    CR16      0.000     -3.932   -0.077    3.749
+ PCU           H0C    H    H         0.000     -4.340   -0.600    2.893
+ PCU           C9C    C    CR16      0.000     -4.595   -0.045    4.922
+ PCU           H9C    H    H         0.000     -5.547   -0.553    5.013
+ PCU           NPC    N    NR6       0.000     -4.076    0.624    6.001
+ PCU           CMC    C    CH3       0.000     -4.641    0.377    7.330
+ PCU           HMC3   H    H         0.000     -3.885    0.004    7.971
+ PCU           HMC2   H    H         0.000     -5.024    1.282    7.725
+ PCU           HMC1   H    H         0.000     -5.423   -0.334    7.255
+ PCU           C8C    C    CR16      0.000     -3.044    1.518    5.872
+ PCU           H8C    H    H         0.000     -2.821    2.200    6.683
+ PCU           C7C    C    CR16      0.000     -2.305    1.556    4.747
+ PCU           H7C    H    H         0.000     -1.487    2.258    4.642
+ PCU           C4C    C    CR5       0.000     -1.996   -0.638    1.559
+ PCU           NC     N    NT        0.000     -1.400   -0.515    0.310
+ PCU           C3C    C    CR15      0.000     -2.928   -1.623    1.454
+ PCU           H3C    H    H         0.000     -3.370   -2.195    2.260
+ PCU           C2C    C    CR15      0.000     -3.199   -1.743    0.074
+ PCU           H2C    H    H         0.000     -3.850   -2.465   -0.402
+ PCU           C1C    C    CR5       0.000     -2.472   -0.762   -0.538
+ PCU           C5B    C    C         0.000     -2.605   -0.030   -1.804
+ PCU           C6B    C    CR6       0.000     -3.642   -0.267   -2.716
+ PCU           C0B    C    CR16      0.000     -3.605    0.287   -4.077
+ PCU           H0B    H    H         0.000     -2.898    1.063   -4.343
+ PCU           C9B    C    CR16      0.000     -4.476   -0.198   -4.985
+ PCU           H9B    H    H         0.000     -4.468    0.189   -5.996
+ PCU           NPB    N    NR6       0.000     -5.372   -1.177   -4.640
+ PCU           CMB    C    CH3       0.000     -6.072   -1.905   -5.700
+ PCU           HMB3   H    H         0.000     -5.847   -2.937   -5.627
+ PCU           HMB2   H    H         0.000     -7.116   -1.763   -5.595
+ PCU           HMB1   H    H         0.000     -5.759   -1.541   -6.644
+ PCU           C8B    C    CR16      0.000     -5.633   -1.494   -3.331
+ PCU           H8B    H    H         0.000     -6.506   -2.087   -3.086
+ PCU           C7B    C    CR16      0.000     -4.814   -1.075   -2.347
+ PCU           H7B    H    H         0.000     -5.013   -1.326   -1.313
+ PCU           C4B    C    CR5       0.000     -1.542    0.981   -2.034
+ PCU           NB     N    NT        0.000     -0.310    0.831   -1.421
+ PCU           C3B    C    CR15      0.000     -1.409    1.917   -3.014
+ PCU           H3B    H    H         0.000     -2.196    2.503   -3.472
+ PCU           C2B    C    CR15      0.000     -0.029    1.962   -3.308
+ PCU           H2B    H    H         0.000      0.464    2.588   -4.041
+ PCU           C1B    C    CR5       0.000      0.553    1.051   -2.475
+ PCU           C5A    C    C         0.000      1.737    0.184   -2.658
+ PCU           C4A    C    CR5       0.000      2.000   -0.736   -1.543
+ PCU           C3A    C    CR15      0.000      2.824   -1.816   -1.387
+ PCU           H3A    H    H         0.000      3.200   -2.466   -2.167
+ PCU           C2A    C    CR15      0.000      3.085   -1.913   -0.003
+ PCU           H2A    H    H         0.000      3.749   -2.612    0.491
+ PCU           NA     N    NT        0.000      1.354   -0.586   -0.320
+ PCU           C6A    C    CR6       0.000      2.547    0.239   -3.800
+ PCU           C0A    C    CR16      0.000      3.782   -0.550   -3.900
+ PCU           H0A    H    H         0.000      3.991   -1.347   -3.197
+ PCU           C9A    C    CR16      0.000      4.649   -0.256   -4.891
+ PCU           H9A    H    H         0.000      5.561   -0.830   -4.995
+ PCU           NPA    N    NR6       0.000      4.384    0.764   -5.767
+ PCU           CMA    C    CH3       0.000      5.469    1.279   -6.607
+ PCU           HMA3   H    H         0.000      5.217    1.149   -7.628
+ PCU           HMA2   H    H         0.000      5.612    2.309   -6.407
+ PCU           HMA1   H    H         0.000      6.362    0.751   -6.394
+ PCU           C8A    C    CR16      0.000      3.133    1.313   -5.886
+ PCU           H8A    H    H         0.000      2.898    1.932   -6.743
+ PCU           C7A    C    CR16      0.000      2.194    1.090   -4.947
+ PCU           H7A    H    H         0.000      1.206    1.525   -5.034
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PCU      CMD    n/a    NPD    START
+ PCU      HMD1   CMD    .      .
+ PCU      HMD2   CMD    .      .
+ PCU      HMD3   CMD    .      .
+ PCU      NPD    CMD    C9D    .
+ PCU      C8D    NPD    C7D    .
+ PCU      H8D    C8D    .      .
+ PCU      C7D    C8D    H7D    .
+ PCU      H7D    C7D    .      .
+ PCU      C9D    NPD    C0D    .
+ PCU      H9D    C9D    .      .
+ PCU      C0D    C9D    C6D    .
+ PCU      H0D    C0D    .      .
+ PCU      C6D    C0D    C5D    .
+ PCU      C5D    C6D    C4D    .
+ PCU      C1A    C5D    .      .
+ PCU      C4D    C5D    C3D    .
+ PCU      ND     C4D    CU     .
+ PCU      CU     ND     .      .
+ PCU      C3D    C4D    C2D    .
+ PCU      H3D    C3D    .      .
+ PCU      C2D    C3D    C1D    .
+ PCU      H2D    C2D    .      .
+ PCU      C1D    C2D    C5C    .
+ PCU      C5C    C1D    C4C    .
+ PCU      C6C    C5C    C0C    .
+ PCU      C0C    C6C    C9C    .
+ PCU      H0C    C0C    .      .
+ PCU      C9C    C0C    NPC    .
+ PCU      H9C    C9C    .      .
+ PCU      NPC    C9C    C8C    .
+ PCU      CMC    NPC    HMC1   .
+ PCU      HMC3   CMC    .      .
+ PCU      HMC2   CMC    .      .
+ PCU      HMC1   CMC    .      .
+ PCU      C8C    NPC    C7C    .
+ PCU      H8C    C8C    .      .
+ PCU      C7C    C8C    H7C    .
+ PCU      H7C    C7C    .      .
+ PCU      C4C    C5C    C3C    .
+ PCU      NC     C4C    .      .
+ PCU      C3C    C4C    C2C    .
+ PCU      H3C    C3C    .      .
+ PCU      C2C    C3C    C1C    .
+ PCU      H2C    C2C    .      .
+ PCU      C1C    C2C    C5B    .
+ PCU      C5B    C1C    C4B    .
+ PCU      C6B    C5B    C0B    .
+ PCU      C0B    C6B    C9B    .
+ PCU      H0B    C0B    .      .
+ PCU      C9B    C0B    NPB    .
+ PCU      H9B    C9B    .      .
+ PCU      NPB    C9B    C8B    .
+ PCU      CMB    NPB    HMB1   .
+ PCU      HMB3   CMB    .      .
+ PCU      HMB2   CMB    .      .
+ PCU      HMB1   CMB    .      .
+ PCU      C8B    NPB    C7B    .
+ PCU      H8B    C8B    .      .
+ PCU      C7B    C8B    H7B    .
+ PCU      H7B    C7B    .      .
+ PCU      C4B    C5B    C3B    .
+ PCU      NB     C4B    .      .
+ PCU      C3B    C4B    C2B    .
+ PCU      H3B    C3B    .      .
+ PCU      C2B    C3B    C1B    .
+ PCU      H2B    C2B    .      .
+ PCU      C1B    C2B    C5A    .
+ PCU      C5A    C1B    C6A    .
+ PCU      C4A    C5A    NA     .
+ PCU      C3A    C4A    C2A    .
+ PCU      H3A    C3A    .      .
+ PCU      C2A    C3A    H2A    .
+ PCU      H2A    C2A    .      .
+ PCU      NA     C4A    .      .
+ PCU      C6A    C5A    C0A    .
+ PCU      C0A    C6A    C9A    .
+ PCU      H0A    C0A    .      .
+ PCU      C9A    C0A    NPA    .
+ PCU      H9A    C9A    .      .
+ PCU      NPA    C9A    C8A    .
+ PCU      CMA    NPA    HMA1   .
+ PCU      HMA3   CMA    .      .
+ PCU      HMA2   CMA    .      .
+ PCU      HMA1   CMA    .      .
+ PCU      C8A    NPA    C7A    .
+ PCU      H8A    C8A    .      .
+ PCU      C7A    C8A    H7A    .
+ PCU      H7A    C7A    .      END
+ PCU      CU     NA     .    ADD
+ PCU      CU     NB     .    ADD
+ PCU      CU     NC     .    ADD
+ PCU      NA     C1A    .    ADD
+ PCU      C1A    C2A    .    ADD
+ PCU      C6A    C7A    .    ADD
+ PCU      NB     C1B    .    ADD
+ PCU      C6B    C7B    .    ADD
+ PCU      NC     C1C    .    ADD
+ PCU      C6C    C7C    .    ADD
+ PCU      ND     C1D    .    ADD
+ PCU      C6D    C7D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PCU       CU        NA        single    2.085     0.020     2.085     0.020     
+PCU       CU        NB        single    2.085     0.020     2.085     0.020     
+PCU       CU        NC        single    2.085     0.020     2.085     0.020     
+PCU       CU        ND        single    2.085     0.020     2.085     0.020     
+PCU       NA        C1A       single    1.455     0.020     1.455     0.020     
+PCU       NA        C4A       single    1.455     0.020     1.455     0.020     
+PCU       C1A       C2A       double    1.387     0.020     1.387     0.020     
+PCU       C1A       C5D       single    1.490     0.020     1.490     0.020     
+PCU       C2A       C3A       single    1.380     0.020     1.380     0.020     
+PCU       H2A       C2A       single    1.082     0.013     0.975     0.010     
+PCU       C3A       C4A       double    1.387     0.020     1.387     0.020     
+PCU       H3A       C3A       single    1.082     0.013     0.975     0.010     
+PCU       C4A       C5A       single    1.490     0.020     1.490     0.020     
+PCU       C6A       C5A       double    1.500     0.020     1.500     0.020     
+PCU       C5A       C1B       single    1.490     0.020     1.490     0.020     
+PCU       C6A       C7A       single    1.390     0.020     1.390     0.020     
+PCU       C0A       C6A       single    1.390     0.020     1.390     0.020     
+PCU       C7A       C8A       double    1.390     0.020     1.390     0.020     
+PCU       H7A       C7A       single    1.082     0.013     0.975     0.010     
+PCU       C8A       NPA       single    1.337     0.020     1.337     0.020     
+PCU       H8A       C8A       single    1.082     0.013     0.975     0.010     
+PCU       CMA       NPA       single    1.465     0.020     1.465     0.020     
+PCU       NPA       C9A       single    1.337     0.020     1.337     0.020     
+PCU       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+PCU       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+PCU       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+PCU       C9A       C0A       double    1.390     0.020     1.390     0.020     
+PCU       H9A       C9A       single    1.082     0.013     0.975     0.010     
+PCU       H0A       C0A       single    1.082     0.013     0.975     0.010     
+PCU       NB        C1B       single    1.455     0.020     1.455     0.020     
+PCU       NB        C4B       single    1.455     0.020     1.455     0.020     
+PCU       C1B       C2B       double    1.387     0.020     1.387     0.020     
+PCU       C2B       C3B       single    1.380     0.020     1.380     0.020     
+PCU       H2B       C2B       single    1.082     0.013     0.975     0.010     
+PCU       C3B       C4B       double    1.387     0.020     1.387     0.020     
+PCU       H3B       C3B       single    1.082     0.013     0.975     0.010     
+PCU       C4B       C5B       single    1.490     0.020     1.490     0.020     
+PCU       C6B       C5B       double    1.500     0.020     1.500     0.020     
+PCU       C5B       C1C       single    1.490     0.020     1.490     0.020     
+PCU       C6B       C7B       single    1.390     0.020     1.390     0.020     
+PCU       C0B       C6B       single    1.390     0.020     1.390     0.020     
+PCU       C7B       C8B       double    1.390     0.020     1.390     0.020     
+PCU       H7B       C7B       single    1.082     0.013     0.975     0.010     
+PCU       C8B       NPB       single    1.337     0.020     1.337     0.020     
+PCU       H8B       C8B       single    1.082     0.013     0.975     0.010     
+PCU       CMB       NPB       single    1.465     0.020     1.465     0.020     
+PCU       NPB       C9B       single    1.337     0.020     1.337     0.020     
+PCU       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+PCU       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+PCU       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+PCU       C9B       C0B       double    1.390     0.020     1.390     0.020     
+PCU       H9B       C9B       single    1.082     0.013     0.975     0.010     
+PCU       H0B       C0B       single    1.082     0.013     0.975     0.010     
+PCU       NC        C1C       single    1.455     0.020     1.455     0.020     
+PCU       NC        C4C       single    1.455     0.020     1.455     0.020     
+PCU       C1C       C2C       double    1.387     0.020     1.387     0.020     
+PCU       C2C       C3C       single    1.380     0.020     1.380     0.020     
+PCU       H2C       C2C       single    1.082     0.013     0.975     0.010     
+PCU       C3C       C4C       double    1.387     0.020     1.387     0.020     
+PCU       H3C       C3C       single    1.082     0.013     0.975     0.010     
+PCU       C4C       C5C       single    1.490     0.020     1.490     0.020     
+PCU       C6C       C5C       double    1.500     0.020     1.500     0.020     
+PCU       C5C       C1D       single    1.490     0.020     1.490     0.020     
+PCU       C6C       C7C       single    1.390     0.020     1.390     0.020     
+PCU       C0C       C6C       single    1.390     0.020     1.390     0.020     
+PCU       C7C       C8C       double    1.390     0.020     1.390     0.020     
+PCU       H7C       C7C       single    1.082     0.013     0.975     0.010     
+PCU       C8C       NPC       single    1.337     0.020     1.337     0.020     
+PCU       H8C       C8C       single    1.082     0.013     0.975     0.010     
+PCU       CMC       NPC       single    1.465     0.020     1.465     0.020     
+PCU       NPC       C9C       single    1.337     0.020     1.337     0.020     
+PCU       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+PCU       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+PCU       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+PCU       C9C       C0C       double    1.390     0.020     1.390     0.020     
+PCU       H9C       C9C       single    1.082     0.013     0.975     0.010     
+PCU       H0C       C0C       single    1.082     0.013     0.975     0.010     
+PCU       ND        C1D       single    1.455     0.020     1.455     0.020     
+PCU       ND        C4D       single    1.455     0.020     1.455     0.020     
+PCU       C1D       C2D       double    1.387     0.020     1.387     0.020     
+PCU       C2D       C3D       single    1.380     0.020     1.380     0.020     
+PCU       H2D       C2D       single    1.082     0.013     0.975     0.010     
+PCU       C3D       C4D       double    1.387     0.020     1.387     0.020     
+PCU       H3D       C3D       single    1.082     0.013     0.975     0.010     
+PCU       C4D       C5D       single    1.490     0.020     1.490     0.020     
+PCU       C5D       C6D       double    1.500     0.020     1.500     0.020     
+PCU       C6D       C7D       single    1.390     0.020     1.390     0.020     
+PCU       C6D       C0D       single    1.390     0.020     1.390     0.020     
+PCU       C7D       C8D       double    1.390     0.020     1.390     0.020     
+PCU       H7D       C7D       single    1.082     0.013     0.975     0.010     
+PCU       C8D       NPD       single    1.337     0.020     1.337     0.020     
+PCU       H8D       C8D       single    1.082     0.013     0.975     0.010     
+PCU       NPD       CMD       single    1.465     0.020     1.465     0.020     
+PCU       C9D       NPD       single    1.337     0.020     1.337     0.020     
+PCU       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+PCU       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+PCU       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+PCU       C0D       C9D       double    1.390     0.020     1.390     0.020     
+PCU       H9D       C9D       single    1.082     0.013     0.975     0.010     
+PCU       H0D       C0D       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PCU      HMD1   CMD    HMD2    109.470    3.000
+ PCU      HMD1   CMD    HMD3    109.470    3.000
+ PCU      HMD2   CMD    HMD3    109.470    3.000
+ PCU      HMD1   CMD    NPD     109.470    3.000
+ PCU      HMD2   CMD    NPD     109.470    3.000
+ PCU      HMD3   CMD    NPD     109.470    3.000
+ PCU      CMD    NPD    C8D     120.000    3.000
+ PCU      CMD    NPD    C9D     120.000    3.000
+ PCU      C8D    NPD    C9D     120.000    3.000
+ PCU      NPD    C8D    H8D     120.000    3.000
+ PCU      NPD    C8D    C7D     120.000    3.000
+ PCU      H8D    C8D    C7D     120.000    3.000
+ PCU      C8D    C7D    H7D     120.000    3.000
+ PCU      C8D    C7D    C6D     120.000    3.000
+ PCU      H7D    C7D    C6D     120.000    3.000
+ PCU      NPD    C9D    H9D     120.000    3.000
+ PCU      NPD    C9D    C0D     120.000    3.000
+ PCU      H9D    C9D    C0D     120.000    3.000
+ PCU      C9D    C0D    H0D     120.000    3.000
+ PCU      C9D    C0D    C6D     120.000    3.000
+ PCU      H0D    C0D    C6D     120.000    3.000
+ PCU      C0D    C6D    C5D     120.000    3.000
+ PCU      C0D    C6D    C7D     120.000    3.000
+ PCU      C5D    C6D    C7D     120.000    3.000
+ PCU      C6D    C5D    C1A     120.000    3.000
+ PCU      C6D    C5D    C4D     120.000    3.000
+ PCU      C1A    C5D    C4D     120.000    3.000
+ PCU      C5D    C1A    NA      108.000    3.000
+ PCU      C5D    C1A    C2A     126.000    3.000
+ PCU      NA     C1A    C2A     108.000    3.000
+ PCU      C5D    C4D    ND      108.000    3.000
+ PCU      C5D    C4D    C3D     126.000    3.000
+ PCU      ND     C4D    C3D     108.000    3.000
+ PCU      C4D    ND     CU      109.500    3.000
+ PCU      C4D    ND     C1D     109.500    3.000
+ PCU      CU     ND     C1D     109.500    3.000
+ PCU      ND     CU     NA       90.000    3.000
+ PCU      ND     CU     NB       90.000    3.000
+ PCU      ND     CU     NC       90.000    3.000
+ PCU      NA     CU     NB       90.000    3.000
+ PCU      NA     CU     NC       90.000    3.000
+ PCU      NB     CU     NC       90.000    3.000
+ PCU      C4D    C3D    H3D     126.000    3.000
+ PCU      C4D    C3D    C2D     108.000    3.000
+ PCU      H3D    C3D    C2D     126.000    3.000
+ PCU      C3D    C2D    H2D     126.000    3.000
+ PCU      C3D    C2D    C1D     108.000    3.000
+ PCU      H2D    C2D    C1D     126.000    3.000
+ PCU      C2D    C1D    C5C     126.000    3.000
+ PCU      C2D    C1D    ND      108.000    3.000
+ PCU      C5C    C1D    ND      108.000    3.000
+ PCU      C1D    C5C    C6C     120.000    3.000
+ PCU      C1D    C5C    C4C     120.000    3.000
+ PCU      C6C    C5C    C4C     120.000    3.000
+ PCU      C5C    C6C    C0C     120.000    3.000
+ PCU      C5C    C6C    C7C     120.000    3.000
+ PCU      C0C    C6C    C7C     120.000    3.000
+ PCU      C6C    C0C    H0C     120.000    3.000
+ PCU      C6C    C0C    C9C     120.000    3.000
+ PCU      H0C    C0C    C9C     120.000    3.000
+ PCU      C0C    C9C    H9C     120.000    3.000
+ PCU      C0C    C9C    NPC     120.000    3.000
+ PCU      H9C    C9C    NPC     120.000    3.000
+ PCU      C9C    NPC    CMC     120.000    3.000
+ PCU      C9C    NPC    C8C     120.000    3.000
+ PCU      CMC    NPC    C8C     120.000    3.000
+ PCU      NPC    CMC    HMC3    109.470    3.000
+ PCU      NPC    CMC    HMC2    109.470    3.000
+ PCU      NPC    CMC    HMC1    109.470    3.000
+ PCU      HMC3   CMC    HMC2    109.470    3.000
+ PCU      HMC3   CMC    HMC1    109.470    3.000
+ PCU      HMC2   CMC    HMC1    109.470    3.000
+ PCU      NPC    C8C    H8C     120.000    3.000
+ PCU      NPC    C8C    C7C     120.000    3.000
+ PCU      H8C    C8C    C7C     120.000    3.000
+ PCU      C8C    C7C    H7C     120.000    3.000
+ PCU      C8C    C7C    C6C     120.000    3.000
+ PCU      H7C    C7C    C6C     120.000    3.000
+ PCU      C5C    C4C    NC      108.000    3.000
+ PCU      C5C    C4C    C3C     126.000    3.000
+ PCU      NC     C4C    C3C     108.000    3.000
+ PCU      C4C    NC     CU      109.500    3.000
+ PCU      C4C    NC     C1C     109.500    3.000
+ PCU      CU     NC     C1C     109.500    3.000
+ PCU      C4C    C3C    H3C     126.000    3.000
+ PCU      C4C    C3C    C2C     108.000    3.000
+ PCU      H3C    C3C    C2C     126.000    3.000
+ PCU      C3C    C2C    H2C     126.000    3.000
+ PCU      C3C    C2C    C1C     108.000    3.000
+ PCU      H2C    C2C    C1C     126.000    3.000
+ PCU      C2C    C1C    C5B     126.000    3.000
+ PCU      C2C    C1C    NC      108.000    3.000
+ PCU      C5B    C1C    NC      108.000    3.000
+ PCU      C1C    C5B    C6B     120.000    3.000
+ PCU      C1C    C5B    C4B     120.000    3.000
+ PCU      C6B    C5B    C4B     120.000    3.000
+ PCU      C5B    C6B    C0B     120.000    3.000
+ PCU      C5B    C6B    C7B     120.000    3.000
+ PCU      C0B    C6B    C7B     120.000    3.000
+ PCU      C6B    C0B    H0B     120.000    3.000
+ PCU      C6B    C0B    C9B     120.000    3.000
+ PCU      H0B    C0B    C9B     120.000    3.000
+ PCU      C0B    C9B    H9B     120.000    3.000
+ PCU      C0B    C9B    NPB     120.000    3.000
+ PCU      H9B    C9B    NPB     120.000    3.000
+ PCU      C9B    NPB    CMB     120.000    3.000
+ PCU      C9B    NPB    C8B     120.000    3.000
+ PCU      CMB    NPB    C8B     120.000    3.000
+ PCU      NPB    CMB    HMB3    109.470    3.000
+ PCU      NPB    CMB    HMB2    109.470    3.000
+ PCU      NPB    CMB    HMB1    109.470    3.000
+ PCU      HMB3   CMB    HMB2    109.470    3.000
+ PCU      HMB3   CMB    HMB1    109.470    3.000
+ PCU      HMB2   CMB    HMB1    109.470    3.000
+ PCU      NPB    C8B    H8B     120.000    3.000
+ PCU      NPB    C8B    C7B     120.000    3.000
+ PCU      H8B    C8B    C7B     120.000    3.000
+ PCU      C8B    C7B    H7B     120.000    3.000
+ PCU      C8B    C7B    C6B     120.000    3.000
+ PCU      H7B    C7B    C6B     120.000    3.000
+ PCU      C5B    C4B    NB      108.000    3.000
+ PCU      C5B    C4B    C3B     126.000    3.000
+ PCU      NB     C4B    C3B     108.000    3.000
+ PCU      C4B    NB     CU      109.500    3.000
+ PCU      C4B    NB     C1B     109.500    3.000
+ PCU      CU     NB     C1B     109.500    3.000
+ PCU      C4B    C3B    H3B     126.000    3.000
+ PCU      C4B    C3B    C2B     108.000    3.000
+ PCU      H3B    C3B    C2B     126.000    3.000
+ PCU      C3B    C2B    H2B     126.000    3.000
+ PCU      C3B    C2B    C1B     108.000    3.000
+ PCU      H2B    C2B    C1B     126.000    3.000
+ PCU      C2B    C1B    C5A     126.000    3.000
+ PCU      C2B    C1B    NB      108.000    3.000
+ PCU      C5A    C1B    NB      108.000    3.000
+ PCU      C1B    C5A    C4A     120.000    3.000
+ PCU      C1B    C5A    C6A     120.000    3.000
+ PCU      C4A    C5A    C6A     120.000    3.000
+ PCU      C5A    C4A    C3A     126.000    3.000
+ PCU      C5A    C4A    NA      108.000    3.000
+ PCU      C3A    C4A    NA      108.000    3.000
+ PCU      C4A    C3A    H3A     126.000    3.000
+ PCU      C4A    C3A    C2A     108.000    3.000
+ PCU      H3A    C3A    C2A     126.000    3.000
+ PCU      C3A    C2A    H2A     126.000    3.000
+ PCU      C3A    C2A    C1A     108.000    3.000
+ PCU      H2A    C2A    C1A     126.000    3.000
+ PCU      C4A    NA     CU      109.500    3.000
+ PCU      C4A    NA     C1A     109.500    3.000
+ PCU      CU     NA     C1A     109.500    3.000
+ PCU      C5A    C6A    C0A     120.000    3.000
+ PCU      C5A    C6A    C7A     120.000    3.000
+ PCU      C0A    C6A    C7A     120.000    3.000
+ PCU      C6A    C0A    H0A     120.000    3.000
+ PCU      C6A    C0A    C9A     120.000    3.000
+ PCU      H0A    C0A    C9A     120.000    3.000
+ PCU      C0A    C9A    H9A     120.000    3.000
+ PCU      C0A    C9A    NPA     120.000    3.000
+ PCU      H9A    C9A    NPA     120.000    3.000
+ PCU      C9A    NPA    CMA     120.000    3.000
+ PCU      C9A    NPA    C8A     120.000    3.000
+ PCU      CMA    NPA    C8A     120.000    3.000
+ PCU      NPA    CMA    HMA3    109.470    3.000
+ PCU      NPA    CMA    HMA2    109.470    3.000
+ PCU      NPA    CMA    HMA1    109.470    3.000
+ PCU      HMA3   CMA    HMA2    109.470    3.000
+ PCU      HMA3   CMA    HMA1    109.470    3.000
+ PCU      HMA2   CMA    HMA1    109.470    3.000
+ PCU      NPA    C8A    H8A     120.000    3.000
+ PCU      NPA    C8A    C7A     120.000    3.000
+ PCU      H8A    C8A    C7A     120.000    3.000
+ PCU      C8A    C7A    H7A     120.000    3.000
+ PCU      C8A    C7A    C6A     120.000    3.000
+ PCU      H7A    C7A    C6A     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PCU      var_1    HMD3   CMD    NPD    C9D     -119.941   20.000   1
+ PCU      CONST_1  CMD    NPD    C8D    C7D      180.000    0.000   0
+ PCU      CONST_2  NPD    C8D    C7D    C6D        0.000    0.000   0
+ PCU      CONST_3  CMD    NPD    C9D    C0D      180.000    0.000   0
+ PCU      CONST_4  NPD    C9D    C0D    C6D        0.000    0.000   0
+ PCU      CONST_5  C9D    C0D    C6D    C5D      180.000    0.000   0
+ PCU      CONST_6  C0D    C6D    C7D    C8D        0.000    0.000   0
+ PCU      CONST_7  C0D    C6D    C5D    C4D        6.741    0.000   0
+ PCU      var_2    C6D    C5D    C1A    NA      -175.035   20.000   1
+ PCU      CONST_8  C5D    C1A    C2A    C3A      180.000    0.000   0
+ PCU      var_3    C6D    C5D    C4D    C3D        7.415   20.000   1
+ PCU      var_4    C5D    C4D    ND     CU       -35.614   20.000   1
+ PCU      CONST_9  C4D    ND     C1D    C2D       38.947    0.000   0
+ PCU      var_5    C4D    ND     CU     NA        12.185   20.000   1
+ PCU      var_6    ND     CU     NA     C4A     -140.228   20.000   1
+ PCU      var_7    ND     CU     NB     C4B     -104.908   20.000   1
+ PCU      var_8    ND     CU     NC     C4C      -11.055   20.000   1
+ PCU      CONST_10 C5D    C4D    C3D    C2D      180.000    0.000   0
+ PCU      CONST_11 C4D    C3D    C2D    C1D        4.224    0.000   0
+ PCU      CONST_12 C3D    C2D    C1D    C5C      180.000    0.000   0
+ PCU      var_9    C2D    C1D    C5C    C4C      178.006   20.000   1
+ PCU      CONST_13 C1D    C5C    C6C    C0C      172.985    0.000   0
+ PCU      CONST_14 C5C    C6C    C7C    C8C      180.000    0.000   0
+ PCU      CONST_15 C5C    C6C    C0C    C9C      180.000    0.000   0
+ PCU      CONST_16 C6C    C0C    C9C    NPC        0.000    0.000   0
+ PCU      CONST_17 C0C    C9C    NPC    C8C        0.000    0.000   0
+ PCU      var_10   C9C    NPC    CMC    HMC1       0.040   20.000   1
+ PCU      CONST_18 C9C    NPC    C8C    C7C        0.000    0.000   0
+ PCU      CONST_19 NPC    C8C    C7C    C6C        0.000    0.000   0
+ PCU      var_11   C1D    C5C    C4C    C3C      173.323   20.000   1
+ PCU      var_12   C5C    C4C    NC     CU        31.736   20.000   1
+ PCU      CONST_20 C4C    NC     C1C    C2C      -37.595    0.000   0
+ PCU      CONST_21 C5C    C4C    C3C    C2C      180.000    0.000   0
+ PCU      CONST_22 C4C    C3C    C2C    C1C       -3.774    0.000   0
+ PCU      CONST_23 C3C    C2C    C1C    C5B      180.000    0.000   0
+ PCU      var_13   C2C    C1C    C5B    C4B      179.518   20.000   1
+ PCU      CONST_24 C1C    C5B    C6B    C0B     -167.971    0.000   0
+ PCU      CONST_25 C5B    C6B    C7B    C8B      180.000    0.000   0
+ PCU      CONST_26 C5B    C6B    C0B    C9B      180.000    0.000   0
+ PCU      CONST_27 C6B    C0B    C9B    NPB        0.000    0.000   0
+ PCU      CONST_28 C0B    C9B    NPB    C8B        0.000    0.000   0
+ PCU      var_14   C9B    NPB    CMB    HMB1       0.050   20.000   1
+ PCU      CONST_29 C9B    NPB    C8B    C7B        0.000    0.000   0
+ PCU      CONST_30 NPB    C8B    C7B    C6B        0.000    0.000   0
+ PCU      var_15   C1C    C5B    C4B    C3B     -173.143   20.000   1
+ PCU      var_16   C5B    C4B    NB     CU       -30.423   20.000   1
+ PCU      CONST_31 C4B    NB     C1B    C2B       32.823    0.000   0
+ PCU      CONST_32 C5B    C4B    C3B    C2B      180.000    0.000   0
+ PCU      CONST_33 C4B    C3B    C2B    C1B       -0.213    0.000   0
+ PCU      CONST_34 C3B    C2B    C1B    C5A      180.000    0.000   0
+ PCU      var_17   C2B    C1B    C5A    C6A        3.985   20.000   1
+ PCU      var_18   C1B    C5A    C4A    NA       -12.898   20.000   1
+ PCU      CONST_35 C5A    C4A    C3A    C2A      180.000    0.000   0
+ PCU      CONST_36 C4A    C3A    C2A    C1A        4.113    0.000   0
+ PCU      var_19   C5A    C4A    NA     CU        22.784   20.000   1
+ PCU      CONST_37 C4A    NA     C1A    C5D      134.794    0.000   0
+ PCU      CONST_38 C1B    C5A    C6A    C0A      174.525    0.000   0
+ PCU      CONST_39 C5A    C6A    C7A    C8A      180.000    0.000   0
+ PCU      CONST_40 C5A    C6A    C0A    C9A      180.000    0.000   0
+ PCU      CONST_41 C6A    C0A    C9A    NPA        0.000    0.000   0
+ PCU      CONST_42 C0A    C9A    NPA    C8A        0.000    0.000   0
+ PCU      var_20   C9A    NPA    CMA    HMA1      -0.246   20.000   1
+ PCU      CONST_43 C9A    NPA    C8A    C7A        0.000    0.000   0
+ PCU      CONST_44 NPA    C8A    C7A    C6A        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PCU      chir_01  NA     CU     C1A    C4A       positiv
+ PCU      chir_02  NB     CU     C1B    C4B       negativ
+ PCU      chir_03  NC     CU     C1C    C4C       positiv
+ PCU      chir_04  ND     CU     C1D    C4D       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PCU      plan-1    C1A       0.020
+ PCU      plan-1    NA        0.020
+ PCU      plan-1    C2A       0.020
+ PCU      plan-1    C5D       0.020
+ PCU      plan-1    C3A       0.020
+ PCU      plan-1    C4A       0.020
+ PCU      plan-1    H2A       0.020
+ PCU      plan-1    H3A       0.020
+ PCU      plan-1    C5A       0.020
+ PCU      plan-2    C5A       0.020
+ PCU      plan-2    C4A       0.020
+ PCU      plan-2    C6A       0.020
+ PCU      plan-2    C1B       0.020
+ PCU      plan-2    C7A       0.020
+ PCU      plan-2    C0A       0.020
+ PCU      plan-2    C8A       0.020
+ PCU      plan-2    NPA       0.020
+ PCU      plan-2    C9A       0.020
+ PCU      plan-2    H7A       0.020
+ PCU      plan-2    H8A       0.020
+ PCU      plan-2    CMA       0.020
+ PCU      plan-2    H9A       0.020
+ PCU      plan-2    H0A       0.020
+ PCU      plan-3    C1B       0.020
+ PCU      plan-3    C5A       0.020
+ PCU      plan-3    NB        0.020
+ PCU      plan-3    C2B       0.020
+ PCU      plan-3    C3B       0.020
+ PCU      plan-3    C4B       0.020
+ PCU      plan-3    H2B       0.020
+ PCU      plan-3    H3B       0.020
+ PCU      plan-3    C5B       0.020
+ PCU      plan-4    C5B       0.020
+ PCU      plan-4    C4B       0.020
+ PCU      plan-4    C6B       0.020
+ PCU      plan-4    C1C       0.020
+ PCU      plan-4    C7B       0.020
+ PCU      plan-4    C0B       0.020
+ PCU      plan-4    C8B       0.020
+ PCU      plan-4    NPB       0.020
+ PCU      plan-4    C9B       0.020
+ PCU      plan-4    H7B       0.020
+ PCU      plan-4    H8B       0.020
+ PCU      plan-4    CMB       0.020
+ PCU      plan-4    H9B       0.020
+ PCU      plan-4    H0B       0.020
+ PCU      plan-5    C1C       0.020
+ PCU      plan-5    C5B       0.020
+ PCU      plan-5    NC        0.020
+ PCU      plan-5    C2C       0.020
+ PCU      plan-5    C3C       0.020
+ PCU      plan-5    C4C       0.020
+ PCU      plan-5    H2C       0.020
+ PCU      plan-5    H3C       0.020
+ PCU      plan-5    C5C       0.020
+ PCU      plan-6    C5C       0.020
+ PCU      plan-6    C4C       0.020
+ PCU      plan-6    C6C       0.020
+ PCU      plan-6    C1D       0.020
+ PCU      plan-6    C7C       0.020
+ PCU      plan-6    C0C       0.020
+ PCU      plan-6    C8C       0.020
+ PCU      plan-6    NPC       0.020
+ PCU      plan-6    C9C       0.020
+ PCU      plan-6    H7C       0.020
+ PCU      plan-6    H8C       0.020
+ PCU      plan-6    CMC       0.020
+ PCU      plan-6    H9C       0.020
+ PCU      plan-6    H0C       0.020
+ PCU      plan-7    C1D       0.020
+ PCU      plan-7    C5C       0.020
+ PCU      plan-7    ND        0.020
+ PCU      plan-7    C2D       0.020
+ PCU      plan-7    C3D       0.020
+ PCU      plan-7    C4D       0.020
+ PCU      plan-7    H2D       0.020
+ PCU      plan-7    H3D       0.020
+ PCU      plan-7    C5D       0.020
+ PCU      plan-8    C5D       0.020
+ PCU      plan-8    C1A       0.020
+ PCU      plan-8    C4D       0.020
+ PCU      plan-8    C6D       0.020
+ PCU      plan-8    C7D       0.020
+ PCU      plan-8    C0D       0.020
+ PCU      plan-8    C8D       0.020
+ PCU      plan-8    NPD       0.020
+ PCU      plan-8    C9D       0.020
+ PCU      plan-8    H7D       0.020
+ PCU      plan-8    H8D       0.020
+ PCU      plan-8    CMD       0.020
+ PCU      plan-8    H9D       0.020
+ PCU      plan-8    H0D       0.020
+# ------------------------------------------------------

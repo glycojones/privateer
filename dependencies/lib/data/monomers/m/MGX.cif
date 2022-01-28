@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MGX     MGX      1-METHYLGUANIDINE     NON-POLYMER     13     5     .     
+#
+data_comp_MGX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MGX     CD      C       CH3     0       24.489      -29.832     -65.537     
+MGX     NE      N       NH1     0       24.414      -29.512     -64.121     
+MGX     CZ      C       C       0       23.296      -29.468     -63.393     
+MGX     NH1     N       NH2     0       22.180      -28.958     -63.893     
+MGX     NH2     N       NH2     1       23.311      -29.943     -62.156     
+MGX     HD1     H       H       0       23.738      -29.443     -66.010     
+MGX     HD2     H       H       0       24.476      -30.796     -65.653     
+MGX     HD3     H       H       0       25.315      -29.477     -65.905     
+MGX     HNE     H       H       0       25.164      -29.334     -63.713     
+MGX     HH11    H       H       0       21.403      -29.154     -63.527     
+MGX     HH12    H       H       0       22.216      -28.389     -64.563     
+MGX     HNH2    H       H       0       22.597      -29.879     -61.646     
+MGX     HH3     H       H       0       24.038      -30.327     -61.842     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MGX       CD        NE        SINGLE    n         1.450     0.011     1.450     0.011     
+MGX       NE        CZ        SINGLE    n         1.328     0.013     1.328     0.013     
+MGX       CZ        NH1       SINGLE    n         1.321     0.011     1.321     0.011     
+MGX       CZ        NH2       DOUBLE    n         1.322     0.010     1.322     0.010     
+MGX       CD        HD1       SINGLE    n         1.089     0.010     0.971     0.020     
+MGX       CD        HD2       SINGLE    n         1.089     0.010     0.971     0.020     
+MGX       CD        HD3       SINGLE    n         1.089     0.010     0.971     0.020     
+MGX       NE        HNE       SINGLE    n         1.016     0.010     0.872     0.020     
+MGX       NH1       HH11      SINGLE    n         1.016     0.010     0.881     0.020     
+MGX       NH1       HH12      SINGLE    n         1.016     0.010     0.881     0.020     
+MGX       NH2       HNH2      SINGLE    n         1.016     0.010     0.879     0.020     
+MGX       NH2       HH3       SINGLE    n         1.016     0.010     0.879     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MGX          NE          CD         HD1     109.472    1.50
+MGX          NE          CD         HD2     109.472    1.50
+MGX          NE          CD         HD3     109.472    1.50
+MGX         HD1          CD         HD2     109.279    1.79
+MGX         HD1          CD         HD3     109.279    1.79
+MGX         HD2          CD         HD3     109.279    1.79
+MGX          CD          NE          CZ     124.162    1.50
+MGX          CD          NE         HNE     117.938    1.50
+MGX          CZ          NE         HNE     117.915    1.50
+MGX          NE          CZ         NH1     119.902    1.50
+MGX          NE          CZ         NH2     119.902    1.50
+MGX         NH1          CZ         NH2     120.196    1.50
+MGX          CZ         NH1        HH11     119.855    2.01
+MGX          CZ         NH1        HH12     119.855    2.01
+MGX        HH11         NH1        HH12     120.290    2.09
+MGX          CZ         NH2        HNH2     119.855    2.01
+MGX          CZ         NH2         HH3     119.855    2.01
+MGX        HNH2         NH2         HH3     120.290    2.09
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MGX             sp2_sp3_1          CZ          NE          CD         HD1       0.000   10.00     6
+MGX             sp2_sp2_1         NH1          CZ          NE          CD     180.000   10.00     2
+MGX             sp2_sp2_5          NE          CZ         NH1        HH11     180.000   10.00     2
+MGX             sp2_sp2_9          NE          CZ         NH2        HNH2     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MGX    plan-1          CD   0.020
+MGX    plan-1          CZ   0.020
+MGX    plan-1         HNE   0.020
+MGX    plan-1          NE   0.020
+MGX    plan-2          CZ   0.020
+MGX    plan-2          NE   0.020
+MGX    plan-2         NH1   0.020
+MGX    plan-2         NH2   0.020
+MGX    plan-3          CZ   0.020
+MGX    plan-3        HH11   0.020
+MGX    plan-3        HH12   0.020
+MGX    plan-3         NH1   0.020
+MGX    plan-4          CZ   0.020
+MGX    plan-4         HH3   0.020
+MGX    plan-4        HNH2   0.020
+MGX    plan-4         NH2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MGX SMILES           ACDLabs              10.04 "[N@H]=C(N)NC"
+MGX SMILES_CANONICAL CACTVS               3.341 "CNC(N)=N"
+MGX SMILES           CACTVS               3.341 "CNC(N)=N"
+MGX SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[H]/N=C(/N)\NC"
+MGX SMILES           "OpenEye OEToolkits" 1.5.0 "[H]N=C(N)NC"
+MGX InChI            InChI                1.03  "InChI=1S/C2H7N3/c1-5-2(3)4/h1H3,(H4,3,4,5)"
+MGX InChIKey         InChI                1.03  CHJJGSNFBQVOTG-UHFFFAOYSA-N
+MGX ?                acedrg               202         "dictionary generator"                  
+MGX ?                acedrg_database      11          "data source"                           
+MGX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MGX ?                refmac5              5.8.0189    "optimization tool"                     

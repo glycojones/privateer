@@ -1,0 +1,617 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5FP      5FP '"5,5,5-TRIFLUORO-3-HYDROXY-4-[2-(5,5' non-polymer        92  48 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_5FP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 5FP           O21    O    O         0.000      0.000    0.000    0.000
+ 5FP           C21    C    C         0.000     -0.219   -0.254    1.166
+ 5FP           C22    C    CH2       0.000      0.837    0.015    2.207
+ 5FP           H221   H    H         0.000      1.101   -0.919    2.706
+ 5FP           H222   H    H         0.000      0.449    0.723    2.944
+ 5FP           C23    C    CH1       0.000      2.077    0.606    1.534
+ 5FP           H23    H    H         0.000      2.415   -0.067    0.733
+ 5FP           C24    C    CH3       0.000      3.193    0.764    2.570
+ 5FP           H243   H    H         0.000      3.431   -0.183    2.982
+ 5FP           H242   H    H         0.000      4.053    1.172    2.106
+ 5FP           H241   H    H         0.000      2.869    1.412    3.343
+ 5FP           C39    C    CH3       0.000      1.735    1.974    0.941
+ 5FP           H393   H    H         0.000      2.594    2.383    0.475
+ 5FP           H392   H    H         0.000      0.963    1.865    0.223
+ 5FP           H391   H    H         0.000      1.410    2.623    1.712
+ 5FP           N20    N    NH1       0.000     -1.406   -0.778    1.530
+ 5FP           H20    H    H         0.000     -1.589   -0.990    2.501
+ 5FP           C19    C    CH1       0.000     -2.432   -1.040    0.518
+ 5FP           H19    H    H         0.000     -2.386   -0.265   -0.260
+ 5FP           C36    C    CH1       0.000     -2.186   -2.412   -0.114
+ 5FP           H36    H    H         0.000     -2.956   -2.609   -0.874
+ 5FP           C37    C    CH3       0.000     -2.251   -3.491    0.969
+ 5FP           H373   H    H         0.000     -2.080   -4.441    0.534
+ 5FP           H372   H    H         0.000     -1.509   -3.302    1.702
+ 5FP           H371   H    H         0.000     -3.207   -3.479    1.425
+ 5FP           C38    C    CH3       0.000     -0.804   -2.431   -0.772
+ 5FP           H383   H    H         0.000     -0.759   -1.684   -1.522
+ 5FP           H382   H    H         0.000     -0.061   -2.241   -0.040
+ 5FP           H381   H    H         0.000     -0.633   -3.380   -1.210
+ 5FP           C18    C    C         0.000     -3.793   -1.022    1.166
+ 5FP           O18    O    O         0.000     -3.896   -0.811    2.355
+ 5FP           N17    N    NH1       0.000     -4.896   -1.240    0.422
+ 5FP           H17    H    H         0.000     -4.810   -1.417   -0.569
+ 5FP           C16    C    CH1       0.000     -6.218   -1.223    1.051
+ 5FP           H16    H    H         0.000     -6.146   -1.637    2.067
+ 5FP           C33    C    CH1       0.000     -6.730    0.218    1.123
+ 5FP           H33    H    H         0.000     -7.722    0.231    1.595
+ 5FP           C34    C    CH3       0.000     -6.831    0.793   -0.292
+ 5FP           H343   H    H         0.000     -7.185    1.790   -0.244
+ 5FP           H342   H    H         0.000     -5.875    0.780   -0.748
+ 5FP           H341   H    H         0.000     -7.502    0.208   -0.865
+ 5FP           C35    C    CH3       0.000     -5.760    1.063    1.950
+ 5FP           H353   H    H         0.000     -6.113    2.061    1.999
+ 5FP           H352   H    H         0.000     -5.689    0.666    2.929
+ 5FP           H351   H    H         0.000     -4.803    1.051    1.495
+ 5FP           C15    C    C         0.000     -7.173   -2.056    0.236
+ 5FP           O15    O    O         0.000     -6.788   -2.610   -0.772
+ 5FP           N14    N    NH1       0.000     -8.458   -2.185    0.627
+ 5FP           H14    H    H         0.000     -8.779   -1.724    1.466
+ 5FP           C12    C    CH1       0.000     -9.386   -2.995   -0.165
+ 5FP           H12    H    H         0.000     -9.142   -2.895   -1.232
+ 5FP           C13    C    CT        0.000     -9.265   -4.463    0.251
+ 5FP           F1     F    F         0.000     -7.957   -4.904    0.029
+ 5FP           F2     F    F         0.000    -10.152   -5.236   -0.507
+ 5FP           F3     F    F         0.000     -9.577   -4.590    1.608
+ 5FP           C11    C    CH1       0.000    -10.818   -2.513    0.077
+ 5FP           H11    H    H         0.000    -11.514   -3.121   -0.517
+ 5FP           O11    O    OH1       0.000    -11.136   -2.643    1.463
+ 5FP           H1     H    H         0.000    -10.523   -2.108    1.986
+ 5FP           C10    C    CH2       0.000    -10.939   -1.045   -0.338
+ 5FP           H101   H    H         0.000    -10.609   -0.932   -1.373
+ 5FP           H102   H    H         0.000    -10.312   -0.431    0.311
+ 5FP           C9     C    C         0.000    -12.375   -0.605   -0.217
+ 5FP           O9     O    O         0.000    -13.218   -1.388    0.166
+ 5FP           N8     N    NH1       0.000    -12.721    0.659   -0.531
+ 5FP           HN8    H    H         0.000    -12.018    1.311   -0.850
+ 5FP           C7     C    CH1       0.000    -14.118    1.087   -0.412
+ 5FP           H7     H    H         0.000    -14.781    0.251   -0.674
+ 5FP           C29    C    CH3       0.000    -14.396    1.525    1.027
+ 5FP           H293   H    H         0.000    -15.405    1.834    1.115
+ 5FP           H292   H    H         0.000    -14.218    0.714    1.685
+ 5FP           H291   H    H         0.000    -13.757    2.331    1.282
+ 5FP           C6     C    C         0.000    -14.371    2.242   -1.347
+ 5FP           O6     O    O         0.000    -13.473    2.666   -2.043
+ 5FP           N5     N    NH1       0.000    -15.594    2.804   -1.408
+ 5FP           HN5    H    H         0.000    -16.341    2.451   -0.827
+ 5FP           C4     C    CH1       0.000    -15.840    3.926   -2.316
+ 5FP           H4     H    H         0.000    -14.940    4.555   -2.372
+ 5FP           C25    C    CT        0.000    -16.176    3.391   -3.709
+ 5FP           F5     F    F         0.000    -16.411    4.463   -4.576
+ 5FP           F4     F    F         0.000    -17.321    2.590   -3.637
+ 5FP           F6     F    F         0.000    -15.105    2.629   -4.188
+ 5FP           C3     C    CH1       0.000    -17.011    4.758   -1.793
+ 5FP           H3     H    H         0.000    -17.196    5.601   -2.474
+ 5FP           O3     O    OH1       0.000    -18.181    3.941   -1.718
+ 5FP           HO3    H    H         0.000    -18.018    3.200   -1.119
+ 5FP           C2     C    CH2       0.000    -16.675    5.294   -0.399
+ 5FP           H21    H    H         0.000    -15.732    5.843   -0.439
+ 5FP           H22    H    H         0.000    -16.579    4.458    0.298
+ 5FP           C1     C    C         0.000    -17.775    6.213    0.065
+ 5FP           O2     O    OC       -0.500    -17.699    6.763    1.186
+ 5FP           O1     O    OC       -0.500    -18.765    6.426   -0.671
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 5FP      O21    n/a    C21    START
+ 5FP      C21    O21    N20    .
+ 5FP      C22    C21    C23    .
+ 5FP      H221   C22    .      .
+ 5FP      H222   C22    .      .
+ 5FP      C23    C22    C39    .
+ 5FP      H23    C23    .      .
+ 5FP      C24    C23    H241   .
+ 5FP      H243   C24    .      .
+ 5FP      H242   C24    .      .
+ 5FP      H241   C24    .      .
+ 5FP      C39    C23    H391   .
+ 5FP      H393   C39    .      .
+ 5FP      H392   C39    .      .
+ 5FP      H391   C39    .      .
+ 5FP      N20    C21    C19    .
+ 5FP      H20    N20    .      .
+ 5FP      C19    N20    C18    .
+ 5FP      H19    C19    .      .
+ 5FP      C36    C19    C38    .
+ 5FP      H36    C36    .      .
+ 5FP      C37    C36    H371   .
+ 5FP      H373   C37    .      .
+ 5FP      H372   C37    .      .
+ 5FP      H371   C37    .      .
+ 5FP      C38    C36    H381   .
+ 5FP      H383   C38    .      .
+ 5FP      H382   C38    .      .
+ 5FP      H381   C38    .      .
+ 5FP      C18    C19    N17    .
+ 5FP      O18    C18    .      .
+ 5FP      N17    C18    C16    .
+ 5FP      H17    N17    .      .
+ 5FP      C16    N17    C15    .
+ 5FP      H16    C16    .      .
+ 5FP      C33    C16    C35    .
+ 5FP      H33    C33    .      .
+ 5FP      C34    C33    H341   .
+ 5FP      H343   C34    .      .
+ 5FP      H342   C34    .      .
+ 5FP      H341   C34    .      .
+ 5FP      C35    C33    H351   .
+ 5FP      H353   C35    .      .
+ 5FP      H352   C35    .      .
+ 5FP      H351   C35    .      .
+ 5FP      C15    C16    N14    .
+ 5FP      O15    C15    .      .
+ 5FP      N14    C15    C12    .
+ 5FP      H14    N14    .      .
+ 5FP      C12    N14    C11    .
+ 5FP      H12    C12    .      .
+ 5FP      C13    C12    F3     .
+ 5FP      F1     C13    .      .
+ 5FP      F2     C13    .      .
+ 5FP      F3     C13    .      .
+ 5FP      C11    C12    C10    .
+ 5FP      H11    C11    .      .
+ 5FP      O11    C11    H1     .
+ 5FP      H1     O11    .      .
+ 5FP      C10    C11    C9     .
+ 5FP      H101   C10    .      .
+ 5FP      H102   C10    .      .
+ 5FP      C9     C10    N8     .
+ 5FP      O9     C9     .      .
+ 5FP      N8     C9     C7     .
+ 5FP      HN8    N8     .      .
+ 5FP      C7     N8     C6     .
+ 5FP      H7     C7     .      .
+ 5FP      C29    C7     H291   .
+ 5FP      H293   C29    .      .
+ 5FP      H292   C29    .      .
+ 5FP      H291   C29    .      .
+ 5FP      C6     C7     N5     .
+ 5FP      O6     C6     .      .
+ 5FP      N5     C6     C4     .
+ 5FP      HN5    N5     .      .
+ 5FP      C4     N5     C3     .
+ 5FP      H4     C4     .      .
+ 5FP      C25    C4     F6     .
+ 5FP      F5     C25    .      .
+ 5FP      F4     C25    .      .
+ 5FP      F6     C25    .      .
+ 5FP      C3     C4     C2     .
+ 5FP      H3     C3     .      .
+ 5FP      O3     C3     HO3    .
+ 5FP      HO3    O3     .      .
+ 5FP      C2     C3     C1     .
+ 5FP      H21    C2     .      .
+ 5FP      H22    C2     .      .
+ 5FP      C1     C2     O1     .
+ 5FP      O2     C1     .      .
+ 5FP      O1     C1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5FP       F6        C25       single    1.320     0.020     1.320     0.020     
+5FP       F4        C25       single    1.320     0.020     1.320     0.020     
+5FP       F5        C25       single    1.320     0.020     1.320     0.020     
+5FP       C25       C4        single    1.524     0.020     1.524     0.020     
+5FP       C3        C4        single    1.524     0.020     1.524     0.020     
+5FP       C4        N5        single    1.450     0.020     1.450     0.020     
+5FP       H4        C4        single    1.089     0.010     0.989     0.005     
+5FP       O3        C3        single    1.432     0.020     1.432     0.020     
+5FP       C2        C3        single    1.524     0.020     1.524     0.020     
+5FP       H3        C3        single    1.089     0.010     0.989     0.005     
+5FP       HO3       O3        single    0.970     0.012     0.839     0.014     
+5FP       C1        C2        single    1.510     0.020     1.510     0.020     
+5FP       H21       C2        single    1.089     0.010     0.989     0.005     
+5FP       H22       C2        single    1.089     0.010     0.989     0.005     
+5FP       O2        C1        deloc     1.250     0.020     1.250     0.020     
+5FP       O1        C1        deloc     1.250     0.020     1.250     0.020     
+5FP       N5        C6        single    1.330     0.020     1.330     0.020     
+5FP       HN5       N5        single    1.016     0.010     0.899     0.007     
+5FP       O6        C6        double    1.220     0.020     1.220     0.020     
+5FP       C6        C7        single    1.500     0.020     1.500     0.020     
+5FP       C29       C7        single    1.524     0.020     1.524     0.020     
+5FP       C7        N8        single    1.450     0.020     1.450     0.020     
+5FP       H7        C7        single    1.089     0.010     0.989     0.005     
+5FP       H291      C29       single    1.089     0.010     0.989     0.005     
+5FP       H292      C29       single    1.089     0.010     0.989     0.005     
+5FP       H293      C29       single    1.089     0.010     0.989     0.005     
+5FP       N8        C9        single    1.330     0.020     1.330     0.020     
+5FP       HN8       N8        single    1.016     0.010     0.899     0.007     
+5FP       O9        C9        double    1.220     0.020     1.220     0.020     
+5FP       C9        C10       single    1.510     0.020     1.510     0.020     
+5FP       C10       C11       single    1.524     0.020     1.524     0.020     
+5FP       H101      C10       single    1.089     0.010     0.989     0.005     
+5FP       H102      C10       single    1.089     0.010     0.989     0.005     
+5FP       O11       C11       single    1.432     0.020     1.432     0.020     
+5FP       C11       C12       single    1.524     0.020     1.524     0.020     
+5FP       H11       C11       single    1.089     0.010     0.989     0.005     
+5FP       H1        O11       single    0.970     0.012     0.839     0.014     
+5FP       C13       C12       single    1.524     0.020     1.524     0.020     
+5FP       C12       N14       single    1.450     0.020     1.450     0.020     
+5FP       H12       C12       single    1.089     0.010     0.989     0.005     
+5FP       F3        C13       single    1.320     0.020     1.320     0.020     
+5FP       F2        C13       single    1.320     0.020     1.320     0.020     
+5FP       F1        C13       single    1.320     0.020     1.320     0.020     
+5FP       N14       C15       single    1.330     0.020     1.330     0.020     
+5FP       H14       N14       single    1.016     0.010     0.899     0.007     
+5FP       O15       C15       double    1.220     0.020     1.220     0.020     
+5FP       C15       C16       single    1.500     0.020     1.500     0.020     
+5FP       C33       C16       single    1.524     0.020     1.524     0.020     
+5FP       C16       N17       single    1.450     0.020     1.450     0.020     
+5FP       H16       C16       single    1.089     0.010     0.989     0.005     
+5FP       C35       C33       single    1.524     0.020     1.524     0.020     
+5FP       C34       C33       single    1.524     0.020     1.524     0.020     
+5FP       H33       C33       single    1.089     0.010     0.989     0.005     
+5FP       H351      C35       single    1.089     0.010     0.989     0.005     
+5FP       H352      C35       single    1.089     0.010     0.989     0.005     
+5FP       H353      C35       single    1.089     0.010     0.989     0.005     
+5FP       H341      C34       single    1.089     0.010     0.989     0.005     
+5FP       H342      C34       single    1.089     0.010     0.989     0.005     
+5FP       H343      C34       single    1.089     0.010     0.989     0.005     
+5FP       N17       C18       single    1.330     0.020     1.330     0.020     
+5FP       H17       N17       single    1.016     0.010     0.899     0.007     
+5FP       O18       C18       double    1.220     0.020     1.220     0.020     
+5FP       C18       C19       single    1.500     0.020     1.500     0.020     
+5FP       C36       C19       single    1.524     0.020     1.524     0.020     
+5FP       C19       N20       single    1.450     0.020     1.450     0.020     
+5FP       H19       C19       single    1.089     0.010     0.989     0.005     
+5FP       C38       C36       single    1.524     0.020     1.524     0.020     
+5FP       C37       C36       single    1.524     0.020     1.524     0.020     
+5FP       H36       C36       single    1.089     0.010     0.989     0.005     
+5FP       H381      C38       single    1.089     0.010     0.989     0.005     
+5FP       H382      C38       single    1.089     0.010     0.989     0.005     
+5FP       H383      C38       single    1.089     0.010     0.989     0.005     
+5FP       H371      C37       single    1.089     0.010     0.989     0.005     
+5FP       H372      C37       single    1.089     0.010     0.989     0.005     
+5FP       H373      C37       single    1.089     0.010     0.989     0.005     
+5FP       N20       C21       single    1.330     0.020     1.330     0.020     
+5FP       H20       N20       single    1.016     0.010     0.899     0.007     
+5FP       C21       O21       double    1.220     0.020     1.220     0.020     
+5FP       C22       C21       single    1.510     0.020     1.510     0.020     
+5FP       C23       C22       single    1.524     0.020     1.524     0.020     
+5FP       H221      C22       single    1.089     0.010     0.989     0.005     
+5FP       H222      C22       single    1.089     0.010     0.989     0.005     
+5FP       C39       C23       single    1.524     0.020     1.524     0.020     
+5FP       C24       C23       single    1.524     0.020     1.524     0.020     
+5FP       H23       C23       single    1.089     0.010     0.989     0.005     
+5FP       H391      C39       single    1.089     0.010     0.989     0.005     
+5FP       H392      C39       single    1.089     0.010     0.989     0.005     
+5FP       H393      C39       single    1.089     0.010     0.989     0.005     
+5FP       H241      C24       single    1.089     0.010     0.989     0.005     
+5FP       H242      C24       single    1.089     0.010     0.989     0.005     
+5FP       H243      C24       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 5FP      O21    C21    C22     120.500    3.000
+ 5FP      O21    C21    N20     123.000    3.000
+ 5FP      C22    C21    N20     116.500    3.000
+ 5FP      C21    C22    H221    109.470    3.000
+ 5FP      C21    C22    H222    109.470    3.000
+ 5FP      C21    C22    C23     109.470    3.000
+ 5FP      H221   C22    H222    107.900    3.000
+ 5FP      H221   C22    C23     109.470    3.000
+ 5FP      H222   C22    C23     109.470    3.000
+ 5FP      C22    C23    H23     108.340    3.000
+ 5FP      C22    C23    C24     111.000    3.000
+ 5FP      C22    C23    C39     111.000    3.000
+ 5FP      H23    C23    C24     108.340    3.000
+ 5FP      H23    C23    C39     108.340    3.000
+ 5FP      C24    C23    C39     111.000    3.000
+ 5FP      C23    C24    H243    109.470    3.000
+ 5FP      C23    C24    H242    109.470    3.000
+ 5FP      C23    C24    H241    109.470    3.000
+ 5FP      H243   C24    H242    109.470    3.000
+ 5FP      H243   C24    H241    109.470    3.000
+ 5FP      H242   C24    H241    109.470    3.000
+ 5FP      C23    C39    H393    109.470    3.000
+ 5FP      C23    C39    H392    109.470    3.000
+ 5FP      C23    C39    H391    109.470    3.000
+ 5FP      H393   C39    H392    109.470    3.000
+ 5FP      H393   C39    H391    109.470    3.000
+ 5FP      H392   C39    H391    109.470    3.000
+ 5FP      C21    N20    H20     120.000    3.000
+ 5FP      C21    N20    C19     121.500    3.000
+ 5FP      H20    N20    C19     118.500    3.000
+ 5FP      N20    C19    H19     108.550    3.000
+ 5FP      N20    C19    C36     110.000    3.000
+ 5FP      N20    C19    C18     111.600    3.000
+ 5FP      H19    C19    C36     108.340    3.000
+ 5FP      H19    C19    C18     108.810    3.000
+ 5FP      C36    C19    C18     109.470    3.000
+ 5FP      C19    C36    H36     108.340    3.000
+ 5FP      C19    C36    C37     111.000    3.000
+ 5FP      C19    C36    C38     111.000    3.000
+ 5FP      H36    C36    C37     108.340    3.000
+ 5FP      H36    C36    C38     108.340    3.000
+ 5FP      C37    C36    C38     111.000    3.000
+ 5FP      C36    C37    H373    109.470    3.000
+ 5FP      C36    C37    H372    109.470    3.000
+ 5FP      C36    C37    H371    109.470    3.000
+ 5FP      H373   C37    H372    109.470    3.000
+ 5FP      H373   C37    H371    109.470    3.000
+ 5FP      H372   C37    H371    109.470    3.000
+ 5FP      C36    C38    H383    109.470    3.000
+ 5FP      C36    C38    H382    109.470    3.000
+ 5FP      C36    C38    H381    109.470    3.000
+ 5FP      H383   C38    H382    109.470    3.000
+ 5FP      H383   C38    H381    109.470    3.000
+ 5FP      H382   C38    H381    109.470    3.000
+ 5FP      C19    C18    O18     120.500    3.000
+ 5FP      C19    C18    N17     116.500    3.000
+ 5FP      O18    C18    N17     123.000    3.000
+ 5FP      C18    N17    H17     120.000    3.000
+ 5FP      C18    N17    C16     121.500    3.000
+ 5FP      H17    N17    C16     118.500    3.000
+ 5FP      N17    C16    H16     108.550    3.000
+ 5FP      N17    C16    C33     110.000    3.000
+ 5FP      N17    C16    C15     111.600    3.000
+ 5FP      H16    C16    C33     108.340    3.000
+ 5FP      H16    C16    C15     108.810    3.000
+ 5FP      C33    C16    C15     109.470    3.000
+ 5FP      C16    C33    H33     108.340    3.000
+ 5FP      C16    C33    C34     111.000    3.000
+ 5FP      C16    C33    C35     111.000    3.000
+ 5FP      H33    C33    C34     108.340    3.000
+ 5FP      H33    C33    C35     108.340    3.000
+ 5FP      C34    C33    C35     111.000    3.000
+ 5FP      C33    C34    H343    109.470    3.000
+ 5FP      C33    C34    H342    109.470    3.000
+ 5FP      C33    C34    H341    109.470    3.000
+ 5FP      H343   C34    H342    109.470    3.000
+ 5FP      H343   C34    H341    109.470    3.000
+ 5FP      H342   C34    H341    109.470    3.000
+ 5FP      C33    C35    H353    109.470    3.000
+ 5FP      C33    C35    H352    109.470    3.000
+ 5FP      C33    C35    H351    109.470    3.000
+ 5FP      H353   C35    H352    109.470    3.000
+ 5FP      H353   C35    H351    109.470    3.000
+ 5FP      H352   C35    H351    109.470    3.000
+ 5FP      C16    C15    O15     120.500    3.000
+ 5FP      C16    C15    N14     116.500    3.000
+ 5FP      O15    C15    N14     123.000    3.000
+ 5FP      C15    N14    H14     120.000    3.000
+ 5FP      C15    N14    C12     121.500    3.000
+ 5FP      H14    N14    C12     118.500    3.000
+ 5FP      N14    C12    H12     108.550    3.000
+ 5FP      N14    C12    C13     110.000    3.000
+ 5FP      N14    C12    C11     110.000    3.000
+ 5FP      H12    C12    C13     108.340    3.000
+ 5FP      H12    C12    C11     108.340    3.000
+ 5FP      C13    C12    C11     111.000    3.000
+ 5FP      C12    C13    F1      109.470    3.000
+ 5FP      C12    C13    F2      109.470    3.000
+ 5FP      C12    C13    F3      109.470    3.000
+ 5FP      F1     C13    F2      109.470    3.000
+ 5FP      F1     C13    F3      109.470    3.000
+ 5FP      F2     C13    F3      109.470    3.000
+ 5FP      C12    C11    H11     108.340    3.000
+ 5FP      C12    C11    O11     109.470    3.000
+ 5FP      C12    C11    C10     111.000    3.000
+ 5FP      H11    C11    O11     109.470    3.000
+ 5FP      H11    C11    C10     108.340    3.000
+ 5FP      O11    C11    C10     109.470    3.000
+ 5FP      C11    O11    H1      109.470    3.000
+ 5FP      C11    C10    H101    109.470    3.000
+ 5FP      C11    C10    H102    109.470    3.000
+ 5FP      C11    C10    C9      109.470    3.000
+ 5FP      H101   C10    H102    107.900    3.000
+ 5FP      H101   C10    C9      109.470    3.000
+ 5FP      H102   C10    C9      109.470    3.000
+ 5FP      C10    C9     O9      120.500    3.000
+ 5FP      C10    C9     N8      116.500    3.000
+ 5FP      O9     C9     N8      123.000    3.000
+ 5FP      C9     N8     HN8     120.000    3.000
+ 5FP      C9     N8     C7      121.500    3.000
+ 5FP      HN8    N8     C7      118.500    3.000
+ 5FP      N8     C7     H7      108.550    3.000
+ 5FP      N8     C7     C29     110.000    3.000
+ 5FP      N8     C7     C6      111.600    3.000
+ 5FP      H7     C7     C29     108.340    3.000
+ 5FP      H7     C7     C6      108.810    3.000
+ 5FP      C29    C7     C6      109.470    3.000
+ 5FP      C7     C29    H293    109.470    3.000
+ 5FP      C7     C29    H292    109.470    3.000
+ 5FP      C7     C29    H291    109.470    3.000
+ 5FP      H293   C29    H292    109.470    3.000
+ 5FP      H293   C29    H291    109.470    3.000
+ 5FP      H292   C29    H291    109.470    3.000
+ 5FP      C7     C6     O6      120.500    3.000
+ 5FP      C7     C6     N5      116.500    3.000
+ 5FP      O6     C6     N5      123.000    3.000
+ 5FP      C6     N5     HN5     120.000    3.000
+ 5FP      C6     N5     C4      121.500    3.000
+ 5FP      HN5    N5     C4      118.500    3.000
+ 5FP      N5     C4     H4      108.550    3.000
+ 5FP      N5     C4     C25     110.000    3.000
+ 5FP      N5     C4     C3      110.000    3.000
+ 5FP      H4     C4     C25     108.340    3.000
+ 5FP      H4     C4     C3      108.340    3.000
+ 5FP      C25    C4     C3      111.000    3.000
+ 5FP      C4     C25    F5      109.470    3.000
+ 5FP      C4     C25    F4      109.470    3.000
+ 5FP      C4     C25    F6      109.470    3.000
+ 5FP      F5     C25    F4      109.470    3.000
+ 5FP      F5     C25    F6      109.470    3.000
+ 5FP      F4     C25    F6      109.470    3.000
+ 5FP      C4     C3     H3      108.340    3.000
+ 5FP      C4     C3     O3      109.470    3.000
+ 5FP      C4     C3     C2      111.000    3.000
+ 5FP      H3     C3     O3      109.470    3.000
+ 5FP      H3     C3     C2      108.340    3.000
+ 5FP      O3     C3     C2      109.470    3.000
+ 5FP      C3     O3     HO3     109.470    3.000
+ 5FP      C3     C2     H21     109.470    3.000
+ 5FP      C3     C2     H22     109.470    3.000
+ 5FP      C3     C2     C1      109.470    3.000
+ 5FP      H21    C2     H22     107.900    3.000
+ 5FP      H21    C2     C1      109.470    3.000
+ 5FP      H22    C2     C1      109.470    3.000
+ 5FP      C2     C1     O2      118.500    3.000
+ 5FP      C2     C1     O1      118.500    3.000
+ 5FP      O2     C1     O1      123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 5FP      var_1    O21    C21    C22    C23        0.095   20.000   3
+ 5FP      var_2    C21    C22    C23    C39       64.944   20.000   3
+ 5FP      var_3    C22    C23    C24    H241     -60.025   20.000   3
+ 5FP      var_4    C22    C23    C39    H391      59.994   20.000   3
+ 5FP      CONST_1  O21    C21    N20    C19        0.000    0.000   0
+ 5FP      var_5    C21    N20    C19    C18     -154.978   20.000   3
+ 5FP      var_6    N20    C19    C36    C38      -60.004   20.000   3
+ 5FP      var_7    C19    C36    C37    H371      60.034   20.000   3
+ 5FP      var_8    C19    C36    C38    H381    -179.995   20.000   3
+ 5FP      var_9    N20    C19    C18    N17     -179.978   20.000   3
+ 5FP      CONST_2  C19    C18    N17    C16      180.000    0.000   0
+ 5FP      var_10   C18    N17    C16    C15     -155.014   20.000   3
+ 5FP      var_11   N17    C16    C33    C35      -59.975   20.000   3
+ 5FP      var_12   C16    C33    C34    H341      59.984   20.000   3
+ 5FP      var_13   C16    C33    C35    H351      59.995   20.000   3
+ 5FP      var_14   N17    C16    C15    N14      179.993   20.000   3
+ 5FP      CONST_3  C16    C15    N14    C12      180.000    0.000   0
+ 5FP      var_15   C15    N14    C12    C11     -154.995   20.000   3
+ 5FP      var_16   N14    C12    C13    F3        60.040   20.000   1
+ 5FP      var_17   N14    C12    C11    C10       59.996   20.000   3
+ 5FP      var_18   C12    C11    O11    H1        59.995   20.000   1
+ 5FP      var_19   C12    C11    C10    C9       174.982   20.000   3
+ 5FP      var_20   C11    C10    C9     N8       179.992   20.000   3
+ 5FP      CONST_4  C10    C9     N8     C7       180.000    0.000   0
+ 5FP      var_21   C9     N8     C7     C6      -154.987   20.000   3
+ 5FP      var_22   N8     C7     C29    H291      60.018   20.000   3
+ 5FP      var_23   N8     C7     C6     N5      -179.985   20.000   3
+ 5FP      CONST_5  C7     C6     N5     C4       180.000    0.000   0
+ 5FP      var_24   C6     N5     C4     C3      -155.043   20.000   3
+ 5FP      var_25   N5     C4     C25    F6       -59.973   20.000   1
+ 5FP      var_26   N5     C4     C3     C2        59.994   20.000   3
+ 5FP      var_27   C4     C3     O3     HO3       59.944   20.000   1
+ 5FP      var_28   C4     C3     C2     C1       174.978   20.000   3
+ 5FP      var_29   C3     C2     C1     O1         0.025   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 5FP      chir_01  C25    F6     F4     F5        positiv
+ 5FP      chir_02  C4     C25    C3     N5        negativ
+ 5FP      chir_03  C3     C4     O3     C2        negativ
+ 5FP      chir_04  C7     C6     C29    N8        positiv
+ 5FP      chir_05  C11    C10    O11    C12       positiv
+ 5FP      chir_06  C12    C11    C13    N14       positiv
+ 5FP      chir_07  C13    C12    F3     F2        negativ
+ 5FP      chir_08  C16    C15    C33    N17       positiv
+ 5FP      chir_09  C33    C16    C35    C34       negativ
+ 5FP      chir_10  C19    C18    C36    N20       positiv
+ 5FP      chir_11  C36    C19    C38    C37       negativ
+ 5FP      chir_12  C23    C22    C39    C24       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 5FP      plan-1    C1        0.020
+ 5FP      plan-1    C2        0.020
+ 5FP      plan-1    O2        0.020
+ 5FP      plan-1    O1        0.020
+ 5FP      plan-2    N5        0.020
+ 5FP      plan-2    C4        0.020
+ 5FP      plan-2    C6        0.020
+ 5FP      plan-2    HN5       0.020
+ 5FP      plan-3    C6        0.020
+ 5FP      plan-3    N5        0.020
+ 5FP      plan-3    O6        0.020
+ 5FP      plan-3    C7        0.020
+ 5FP      plan-3    HN5       0.020
+ 5FP      plan-4    N8        0.020
+ 5FP      plan-4    C7        0.020
+ 5FP      plan-4    C9        0.020
+ 5FP      plan-4    HN8       0.020
+ 5FP      plan-5    C9        0.020
+ 5FP      plan-5    N8        0.020
+ 5FP      plan-5    O9        0.020
+ 5FP      plan-5    C10       0.020
+ 5FP      plan-5    HN8       0.020
+ 5FP      plan-6    N14       0.020
+ 5FP      plan-6    C12       0.020
+ 5FP      plan-6    C15       0.020
+ 5FP      plan-6    H14       0.020
+ 5FP      plan-7    C15       0.020
+ 5FP      plan-7    N14       0.020
+ 5FP      plan-7    O15       0.020
+ 5FP      plan-7    C16       0.020
+ 5FP      plan-7    H14       0.020
+ 5FP      plan-8    N17       0.020
+ 5FP      plan-8    C16       0.020
+ 5FP      plan-8    C18       0.020
+ 5FP      plan-8    H17       0.020
+ 5FP      plan-9    C18       0.020
+ 5FP      plan-9    N17       0.020
+ 5FP      plan-9    O18       0.020
+ 5FP      plan-9    C19       0.020
+ 5FP      plan-9    H17       0.020
+ 5FP      plan-10   N20       0.020
+ 5FP      plan-10   C19       0.020
+ 5FP      plan-10   C21       0.020
+ 5FP      plan-10   H20       0.020
+ 5FP      plan-11   C21       0.020
+ 5FP      plan-11   N20       0.020
+ 5FP      plan-11   O21       0.020
+ 5FP      plan-11   C22       0.020
+ 5FP      plan-11   H20       0.020
+# ------------------------------------------------------

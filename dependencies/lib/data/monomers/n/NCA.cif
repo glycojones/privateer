@@ -1,0 +1,151 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NCA     NCA     NICOTINAMIDE     NON-POLYMER     15     9     .     
+#
+data_comp_NCA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NCA     N1      N       NRD6    0       20.241      84.053      -1.633      
+NCA     C2      C       CR16    0       21.154      84.671      -0.865      
+NCA     C3      C       CR6     0       22.237      85.384      -1.375      
+NCA     C4      C       CR16    0       22.373      85.451      -2.759      
+NCA     C5      C       CR16    0       21.443      84.820      -3.571      
+NCA     C6      C       CR16    0       20.396      84.134      -2.970      
+NCA     C7      C       C       0       23.220      86.050      -0.461      
+NCA     O7      O       O       0       24.428      85.787      -0.570      
+NCA     N7      N       NH2     0       22.763      86.905      0.446       
+NCA     H2      H       H       0       21.053      84.620      0.063       
+NCA     H4      H       H       0       23.091      85.922      -3.143      
+NCA     H5      H       H       0       21.520      84.855      -4.509      
+NCA     H6      H       H       0       19.762      83.704      -3.519      
+NCA     HN71    H       H       0       23.328      87.292      1.017       
+NCA     HN72    H       H       0       21.895      87.108      0.497       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NCA       N1        C2        DOUBLE    y         1.337     0.010     1.337     0.010     
+NCA       N1        C6        SINGLE    y         1.336     0.013     1.336     0.013     
+NCA       C2        C3        SINGLE    y         1.386     0.010     1.386     0.010     
+NCA       C3        C4        DOUBLE    y         1.385     0.010     1.385     0.010     
+NCA       C3        C7        SINGLE    n         1.497     0.010     1.497     0.010     
+NCA       C4        C5        SINGLE    y         1.379     0.010     1.379     0.010     
+NCA       C5        C6        DOUBLE    y         1.374     0.015     1.374     0.015     
+NCA       C7        O7        DOUBLE    n         1.241     0.011     1.241     0.011     
+NCA       C7        N7        SINGLE    n         1.326     0.010     1.326     0.010     
+NCA       C2        H2        SINGLE    n         1.082     0.013     0.935     0.010     
+NCA       C4        H4        SINGLE    n         1.082     0.013     0.941     0.017     
+NCA       C5        H5        SINGLE    n         1.082     0.013     0.942     0.015     
+NCA       C6        H6        SINGLE    n         1.082     0.013     0.942     0.017     
+NCA       N7        HN71      SINGLE    n         1.016     0.010     0.891     0.020     
+NCA       N7        HN72      SINGLE    n         1.016     0.010     0.891     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NCA          C2          N1          C6     117.118    1.50
+NCA          N1          C2          C3     123.770    1.50
+NCA          N1          C2          H2     117.909    1.50
+NCA          C3          C2          H2     118.321    1.50
+NCA          C2          C3          C4     117.792    1.50
+NCA          C2          C3          C7     120.792    2.45
+NCA          C4          C3          C7     121.416    2.50
+NCA          C3          C4          C5     119.324    1.50
+NCA          C3          C4          H4     120.435    1.50
+NCA          C5          C4          H4     120.242    1.50
+NCA          C4          C5          C6     118.619    1.50
+NCA          C4          C5          H5     120.697    1.50
+NCA          C6          C5          H5     120.685    1.50
+NCA          N1          C6          C5     123.378    1.50
+NCA          N1          C6          H6     118.084    1.50
+NCA          C5          C6          H6     118.538    1.50
+NCA          C3          C7          O7     119.730    1.50
+NCA          C3          C7          N7     118.032    1.50
+NCA          O7          C7          N7     122.238    1.50
+NCA          C7          N7        HN71     120.236    2.75
+NCA          C7          N7        HN72     120.236    2.75
+NCA        HN71          N7        HN72     119.529    2.83
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NCA       const_sp2_sp2_1          C3          C2          N1          C6       0.000   10.00     2
+NCA              const_19          C5          C6          N1          C2       0.000   10.00     2
+NCA       const_sp2_sp2_4          N1          C2          C3          C7     180.000   10.00     2
+NCA       const_sp2_sp2_9          C7          C3          C4          C5     180.000   10.00     2
+NCA             sp2_sp2_2          C2          C3          C7          O7       0.000   10.00     2
+NCA              const_11          C3          C4          C5          C6       0.000   10.00     2
+NCA              const_15          C4          C5          C6          N1       0.000   10.00     2
+NCA             sp2_sp2_7          O7          C7          N7        HN71       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NCA    plan-1          C2   0.020
+NCA    plan-1          C3   0.020
+NCA    plan-1          C4   0.020
+NCA    plan-1          C5   0.020
+NCA    plan-1          C6   0.020
+NCA    plan-1          C7   0.020
+NCA    plan-1          H2   0.020
+NCA    plan-1          H4   0.020
+NCA    plan-1          H5   0.020
+NCA    plan-1          H6   0.020
+NCA    plan-1          N1   0.020
+NCA    plan-2          C3   0.020
+NCA    plan-2          C7   0.020
+NCA    plan-2          N7   0.020
+NCA    plan-2          O7   0.020
+NCA    plan-3          C7   0.020
+NCA    plan-3        HN71   0.020
+NCA    plan-3        HN72   0.020
+NCA    plan-3          N7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NCA SMILES           ACDLabs              10.04 "O=C(N)c1cccnc1"
+NCA SMILES_CANONICAL CACTVS               3.341 "NC(=O)c1cccnc1"
+NCA SMILES           CACTVS               3.341 "NC(=O)c1cccnc1"
+NCA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(cnc1)C(=O)N"
+NCA SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(cnc1)C(=O)N"
+NCA InChI            InChI                1.03  "InChI=1S/C6H6N2O/c7-6(9)5-2-1-3-8-4-5/h1-4H,(H2,7,9)"
+NCA InChIKey         InChI                1.03  DFPAKSUCGFBDDF-UHFFFAOYSA-N
+NCA ?                acedrg               190         "dictionary generator"                  
+NCA ?                acedrg_database      11          "data source"                           
+NCA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NCA ?                refmac5              5.8.0158    "optimization tool"                     

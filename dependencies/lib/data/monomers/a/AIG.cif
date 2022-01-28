@@ -1,0 +1,316 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AIG      AIG '4-AMINO-2-HEXYLOXY-6-HYDROXYMETHYL-T' pyranose           43  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AIG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AIG           C1     C    CH1       0.000      0.000    0.000    0.000
+ AIG           H1     H    H         0.000      0.340   -1.043    0.069
+ AIG           O1     O    O2        0.000     -1.428    0.033   -0.011
+ AIG           "C1'"  C    CH2       0.000     -1.864   -0.564    1.212
+ AIG           "H1'1" H    H         0.000     -1.469    0.007    2.055
+ AIG           "H1'2" H    H         0.000     -1.499   -1.591    1.266
+ AIG           "C2'"  C    CH2       0.000     -3.394   -0.561    1.264
+ AIG           "H2'1" H    H         0.000     -3.787   -1.130    0.419
+ AIG           "H2'2" H    H         0.000     -3.757    0.467    1.209
+ AIG           "C3'"  C    CH2       0.000     -3.861   -1.200    2.572
+ AIG           "H3'1" H    H         0.000     -3.465   -0.630    3.416
+ AIG           "H3'2" H    H         0.000     -3.496   -2.227    2.625
+ AIG           "C4'"  C    CH2       0.000     -5.389   -1.197    2.625
+ AIG           "H4'1" H    H         0.000     -5.783   -1.765    1.780
+ AIG           "H4'2" H    H         0.000     -5.752   -0.168    2.571
+ AIG           "C5'"  C    CH2       0.000     -5.857   -1.835    3.934
+ AIG           "H5'1" H    H         0.000     -5.461   -1.266    4.777
+ AIG           "H5'2" H    H         0.000     -5.491   -2.863    3.987
+ AIG           "C6'"  C    CH3       0.000     -7.386   -1.833    3.987
+ AIG           "H6'3" H    H         0.000     -7.743   -0.836    3.935
+ AIG           "H6'2" H    H         0.000     -7.772   -2.386    3.169
+ AIG           "H6'1" H    H         0.000     -7.712   -2.275    4.893
+ AIG           O5     O    O2        0.000      0.483    0.730    1.124
+ AIG           C5     C    CH1       0.000      1.892    0.524    1.201
+ AIG           H5     H    H         0.000      2.104   -0.554    1.189
+ AIG           C4     C    CH1       0.000      2.579    1.191    0.008
+ AIG           H4     H    H         0.000      3.666    1.046    0.082
+ AIG           O4     O    OH1       0.000      2.283    2.588    0.004
+ AIG           HO4    H    H         0.000      2.603    2.987    0.824
+ AIG           C3     C    CH1       0.000      2.064    0.552   -1.286
+ AIG           H3     H    H         0.000      2.384   -0.498   -1.331
+ AIG           N3     N    NH2       0.000      2.600    1.282   -2.443
+ AIG           HN32   H    H         0.000      3.213    2.077   -2.308
+ AIG           HN31   H    H         0.000      2.359    0.995   -3.385
+ AIG           C2     C    CH1       0.000      0.533    0.624   -1.291
+ AIG           H2     H    H         0.000      0.214    1.674   -1.351
+ AIG           O2     O    OH1       0.000      0.024   -0.094   -2.416
+ AIG           HO2    H    H         0.000     -0.942   -0.047   -2.418
+ AIG           C6     C    CH2       0.000      2.425    1.133    2.499
+ AIG           H61    H    H         0.000      2.213    2.205    2.512
+ AIG           H62    H    H         0.000      3.504    0.976    2.559
+ AIG           O6     O    OH1       0.000      1.788    0.507    3.615
+ AIG           HO6    H    H         0.000      2.152    0.919    4.411
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AIG      C1     n/a    O5     START
+ AIG      H1     C1     .      .
+ AIG      O1     C1     "C1'"  .
+ AIG      "C1'"  O1     "C2'"  .
+ AIG      "H1'1" "C1'"  .      .
+ AIG      "H1'2" "C1'"  .      .
+ AIG      "C2'"  "C1'"  "C3'"  .
+ AIG      "H2'1" "C2'"  .      .
+ AIG      "H2'2" "C2'"  .      .
+ AIG      "C3'"  "C2'"  "C4'"  .
+ AIG      "H3'1" "C3'"  .      .
+ AIG      "H3'2" "C3'"  .      .
+ AIG      "C4'"  "C3'"  "C5'"  .
+ AIG      "H4'1" "C4'"  .      .
+ AIG      "H4'2" "C4'"  .      .
+ AIG      "C5'"  "C4'"  "C6'"  .
+ AIG      "H5'1" "C5'"  .      .
+ AIG      "H5'2" "C5'"  .      .
+ AIG      "C6'"  "C5'"  "H6'1" .
+ AIG      "H6'3" "C6'"  .      .
+ AIG      "H6'2" "C6'"  .      .
+ AIG      "H6'1" "C6'"  .      .
+ AIG      O5     C1     .      END
+ AIG      C5     O5     C6     .
+ AIG      H5     C5     .      .
+ AIG      C4     C5     C3     .
+ AIG      H4     C4     .      .
+ AIG      O4     C4     HO4    .
+ AIG      HO4    O4     .      .
+ AIG      C3     C4     C2     .
+ AIG      H3     C3     .      .
+ AIG      N3     C3     HN31   .
+ AIG      HN32   N3     .      .
+ AIG      HN31   N3     .      .
+ AIG      C2     C3     O2     .
+ AIG      H2     C2     .      .
+ AIG      O2     C2     HO2    .
+ AIG      HO2    O2     .      .
+ AIG      C6     C5     O6     .
+ AIG      H61    C6     .      .
+ AIG      H62    C6     .      .
+ AIG      O6     C6     .      .
+ AIG      HO6    O6     .      .
+ AIG      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AIG       O1        C1        single    1.426     0.020     1.426     0.020     
+AIG       C1        C2        single    1.524     0.020     1.524     0.020     
+AIG       O5        C1        single    1.426     0.020     1.426     0.020     
+AIG       H1        C1        single    1.089     0.010     0.989     0.005     
+AIG       "C1'"     O1        single    1.426     0.020     1.426     0.020     
+AIG       O2        C2        single    1.432     0.020     1.432     0.020     
+AIG       C2        C3        single    1.524     0.020     1.524     0.020     
+AIG       H2        C2        single    1.089     0.010     0.989     0.005     
+AIG       HO2       O2        single    0.970     0.012     0.839     0.014     
+AIG       C3        C4        single    1.524     0.020     1.524     0.020     
+AIG       N3        C3        single    1.450     0.020     1.450     0.020     
+AIG       H3        C3        single    1.089     0.010     0.989     0.005     
+AIG       O4        C4        single    1.432     0.020     1.432     0.020     
+AIG       C4        C5        single    1.524     0.020     1.524     0.020     
+AIG       H4        C4        single    1.089     0.010     0.989     0.005     
+AIG       HO4       O4        single    0.970     0.012     0.839     0.014     
+AIG       C5        O5        single    1.426     0.020     1.426     0.020     
+AIG       C6        C5        single    1.524     0.020     1.524     0.020     
+AIG       H5        C5        single    1.089     0.010     0.989     0.005     
+AIG       O6        C6        single    1.432     0.020     1.432     0.020     
+AIG       H61       C6        single    1.089     0.010     0.989     0.005     
+AIG       H62       C6        single    1.089     0.010     0.989     0.005     
+AIG       HO6       O6        single    0.970     0.012     0.839     0.014     
+AIG       HN31      N3        single    1.036     0.016     0.914     0.007     
+AIG       HN32      N3        single    1.036     0.016     0.914     0.007     
+AIG       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+AIG       "H1'1"    "C1'"     single    1.089     0.010     0.989     0.005     
+AIG       "H1'2"    "C1'"     single    1.089     0.010     0.989     0.005     
+AIG       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+AIG       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+AIG       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+AIG       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+AIG       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+AIG       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+AIG       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+AIG       "H4'1"    "C4'"     single    1.089     0.010     0.989     0.005     
+AIG       "H4'2"    "C4'"     single    1.089     0.010     0.989     0.005     
+AIG       "C6'"     "C5'"     single    1.513     0.020     1.513     0.020     
+AIG       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+AIG       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+AIG       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+AIG       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+AIG       "H6'3"    "C6'"     single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AIG      H1     C1     O1      109.470    3.000
+ AIG      H1     C1     O5      109.470    3.000
+ AIG      O1     C1     O5      109.470    3.000
+ AIG      H1     C1     C2      108.340    3.000
+ AIG      O1     C1     C2      109.470    3.000
+ AIG      O5     C1     C2      109.470    3.000
+ AIG      C1     O1     "C1'"   111.800    3.000
+ AIG      O1     "C1'"  "H1'1"  109.470    3.000
+ AIG      O1     "C1'"  "H1'2"  109.470    3.000
+ AIG      O1     "C1'"  "C2'"   109.470    3.000
+ AIG      "H1'1" "C1'"  "H1'2"  107.900    3.000
+ AIG      "H1'1" "C1'"  "C2'"   109.470    3.000
+ AIG      "H1'2" "C1'"  "C2'"   109.470    3.000
+ AIG      "C1'"  "C2'"  "H2'1"  109.470    3.000
+ AIG      "C1'"  "C2'"  "H2'2"  109.470    3.000
+ AIG      "C1'"  "C2'"  "C3'"   111.000    3.000
+ AIG      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ AIG      "H2'1" "C2'"  "C3'"   109.470    3.000
+ AIG      "H2'2" "C2'"  "C3'"   109.470    3.000
+ AIG      "C2'"  "C3'"  "H3'1"  109.470    3.000
+ AIG      "C2'"  "C3'"  "H3'2"  109.470    3.000
+ AIG      "C2'"  "C3'"  "C4'"   111.000    3.000
+ AIG      "H3'1" "C3'"  "H3'2"  107.900    3.000
+ AIG      "H3'1" "C3'"  "C4'"   109.470    3.000
+ AIG      "H3'2" "C3'"  "C4'"   109.470    3.000
+ AIG      "C3'"  "C4'"  "H4'1"  109.470    3.000
+ AIG      "C3'"  "C4'"  "H4'2"  109.470    3.000
+ AIG      "C3'"  "C4'"  "C5'"   111.000    3.000
+ AIG      "H4'1" "C4'"  "H4'2"  107.900    3.000
+ AIG      "H4'1" "C4'"  "C5'"   109.470    3.000
+ AIG      "H4'2" "C4'"  "C5'"   109.470    3.000
+ AIG      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ AIG      "C4'"  "C5'"  "H5'2"  109.470    3.000
+ AIG      "C4'"  "C5'"  "C6'"   111.000    3.000
+ AIG      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ AIG      "H5'1" "C5'"  "C6'"   109.470    3.000
+ AIG      "H5'2" "C5'"  "C6'"   109.470    3.000
+ AIG      "C5'"  "C6'"  "H6'3"  109.470    3.000
+ AIG      "C5'"  "C6'"  "H6'2"  109.470    3.000
+ AIG      "C5'"  "C6'"  "H6'1"  109.470    3.000
+ AIG      "H6'3" "C6'"  "H6'2"  109.470    3.000
+ AIG      "H6'3" "C6'"  "H6'1"  109.470    3.000
+ AIG      "H6'2" "C6'"  "H6'1"  109.470    3.000
+ AIG      C1     O5     C5      111.800    3.000
+ AIG      O5     C5     H5      109.470    3.000
+ AIG      O5     C5     C4      109.470    3.000
+ AIG      O5     C5     C6      109.470    3.000
+ AIG      H5     C5     C4      108.340    3.000
+ AIG      H5     C5     C6      108.340    3.000
+ AIG      C4     C5     C6      111.000    3.000
+ AIG      C5     C4     H4      108.340    3.000
+ AIG      C5     C4     O4      109.470    3.000
+ AIG      C5     C4     C3      111.000    3.000
+ AIG      H4     C4     O4      109.470    3.000
+ AIG      H4     C4     C3      108.340    3.000
+ AIG      O4     C4     C3      109.470    3.000
+ AIG      C4     O4     HO4     109.470    3.000
+ AIG      C4     C3     H3      108.340    3.000
+ AIG      C4     C3     N3      109.470    3.000
+ AIG      C4     C3     C2      111.000    3.000
+ AIG      H3     C3     N3      109.470    3.000
+ AIG      H3     C3     C2      108.340    3.000
+ AIG      N3     C3     C2      109.470    3.000
+ AIG      C3     N3     HN32    120.000    3.000
+ AIG      C3     N3     HN31    120.000    3.000
+ AIG      HN32   N3     HN31    120.000    3.000
+ AIG      C3     C2     H2      108.340    3.000
+ AIG      C3     C2     O2      109.470    3.000
+ AIG      C3     C2     C1      111.000    3.000
+ AIG      H2     C2     O2      109.470    3.000
+ AIG      H2     C2     C1      108.340    3.000
+ AIG      O2     C2     C1      109.470    3.000
+ AIG      C2     O2     HO2     109.470    3.000
+ AIG      C5     C6     H61     109.470    3.000
+ AIG      C5     C6     H62     109.470    3.000
+ AIG      C5     C6     O6      109.470    3.000
+ AIG      H61    C6     H62     107.900    3.000
+ AIG      H61    C6     O6      109.470    3.000
+ AIG      H62    C6     O6      109.470    3.000
+ AIG      C6     O6     HO6     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AIG      var_1    O5     C1     O1     "C1'"    -59.790   20.000   1
+ AIG      var_2    C1     O1     "C1'"  "C2'"   -179.963   20.000   1
+ AIG      var_3    O1     "C1'"  "C2'"  "C3'"    179.981   20.000   3
+ AIG      var_4    "C1'"  "C2'"  "C3'"  "C4'"    179.954   20.000   3
+ AIG      var_5    "C2'"  "C3'"  "C4'"  "C5'"    180.000   20.000   3
+ AIG      var_6    "C3'"  "C4'"  "C5'"  "C6'"   -179.975   20.000   3
+ AIG      var_7    "C4'"  "C5'"  "C6'"  "H6'1"  -179.976   20.000   3
+ AIG      var_8    C1     O5     C5     C6       180.000   20.000   1
+ AIG      var_9    O5     C5     C4     C3       -60.000   20.000   3
+ AIG      var_10   C5     C4     O4     HO4       59.952   20.000   1
+ AIG      var_11   C5     C4     C3     C2        60.000   20.000   3
+ AIG      var_12   C4     C3     N3     HN31    -179.891   20.000   1
+ AIG      var_13   C4     C3     C2     O2       180.000   20.000   3
+ AIG      var_14   C3     C2     C1     O5        60.000   20.000   3
+ AIG      var_15   C3     C2     O2     HO2     -179.945   20.000   1
+ AIG      var_16   O5     C5     C6     O6        59.952   20.000   3
+ AIG      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AIG      chir_01  C1     O1     C2     O5        negativ
+ AIG      chir_02  C2     C1     O2     C3        positiv
+ AIG      chir_03  C3     C2     C4     N3        positiv
+ AIG      chir_04  C4     C3     O4     C5        negativ
+ AIG      chir_05  C5     C4     O5     C6        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AIG      plan-1    N3        0.020
+ AIG      plan-1    C3        0.020
+ AIG      plan-1    HN31      0.020
+ AIG      plan-1    HN32      0.020
+# ------------------------------------------------------

@@ -1,0 +1,132 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IBF     IBF     1,2,3,4,5-pentafluoro-6-iodobenzene     NON-POLYMER     12     12     .     
+#
+data_comp_IBF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+IBF     F6      F       F       0       27.462      5.541       2.389       
+IBF     C6      C       CR6     0       26.899      6.147       3.449       
+IBF     C1      C       CR6     0       27.298      7.426       3.824       
+IBF     I1      I       I       0       28.778      8.458       2.766       
+IBF     C5      C       CR6     0       25.919      5.458       4.146       
+IBF     F5      F       F       0       25.556      4.225       3.760       
+IBF     C4      C       CR6     0       25.313      6.046       5.245       
+IBF     F4      F       F       0       24.363      5.385       5.925       
+IBF     C3      C       CR6     0       25.691      7.314       5.637       
+IBF     F3      F       F       0       25.108      7.888       6.701       
+IBF     C2      C       CR6     0       26.673      7.991       4.931       
+IBF     F2      F       F       0       27.010      9.224       5.348       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IBF       F6        C6        SINGLE    n         1.345     0.010     1.345     0.010     
+IBF       C6        C1        DOUBLE    y         1.383     0.010     1.383     0.010     
+IBF       C6        C5        SINGLE    y         1.378     0.010     1.378     0.010     
+IBF       C1        I1        SINGLE    n         2.092     0.013     2.092     0.013     
+IBF       C1        C2        SINGLE    y         1.383     0.010     1.383     0.010     
+IBF       C5        F5        SINGLE    n         1.342     0.010     1.342     0.010     
+IBF       C5        C4        DOUBLE    y         1.377     0.010     1.377     0.010     
+IBF       C4        F4        SINGLE    n         1.343     0.010     1.343     0.010     
+IBF       C4        C3        SINGLE    y         1.371     0.010     1.371     0.010     
+IBF       C3        F3        SINGLE    n         1.342     0.010     1.342     0.010     
+IBF       C3        C2        DOUBLE    y         1.378     0.010     1.378     0.010     
+IBF       C2        F2        SINGLE    n         1.345     0.010     1.345     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+IBF          F6          C6          C1     120.375    1.50
+IBF          F6          C6          C5     117.838    1.50
+IBF          C1          C6          C5     121.788    1.50
+IBF          C6          C1          I1     121.337    1.50
+IBF          C6          C1          C2     117.326    1.50
+IBF          I1          C1          C2     121.337    1.50
+IBF          C6          C5          F5     120.204    1.50
+IBF          C6          C5          C4     119.800    1.50
+IBF          F5          C5          C4     119.997    1.50
+IBF          C5          C4          F4     120.250    1.50
+IBF          C5          C4          C3     119.499    1.50
+IBF          F4          C4          C3     120.250    1.50
+IBF          C4          C3          F3     119.997    1.50
+IBF          C4          C3          C2     119.800    1.50
+IBF          F3          C3          C2     120.204    1.50
+IBF          C1          C2          C3     121.788    1.50
+IBF          C1          C2          F2     120.375    1.50
+IBF          C3          C2          F2     117.838    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+IBF       const_sp2_sp2_4          I1          C1          C6          F6       0.000   10.00     2
+IBF              const_24          F5          C5          C6          F6       0.000   10.00     2
+IBF       const_sp2_sp2_8          I1          C1          C2          F2       0.000   10.00     2
+IBF              const_20          F4          C4          C5          F5       0.000   10.00     2
+IBF              const_16          F3          C3          C4          F4       0.000   10.00     2
+IBF              const_12          F2          C2          C3          F3       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+IBF    plan-1          C1   0.020
+IBF    plan-1          C2   0.020
+IBF    plan-1          C3   0.020
+IBF    plan-1          C4   0.020
+IBF    plan-1          C5   0.020
+IBF    plan-1          C6   0.020
+IBF    plan-1          F2   0.020
+IBF    plan-1          F3   0.020
+IBF    plan-1          F4   0.020
+IBF    plan-1          F5   0.020
+IBF    plan-1          F6   0.020
+IBF    plan-1          I1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+IBF SMILES           ACDLabs              10.04 "Fc1c(F)c(F)c(F)c(I)c1F"
+IBF SMILES_CANONICAL CACTVS               3.341 "Fc1c(F)c(F)c(I)c(F)c1F"
+IBF SMILES           CACTVS               3.341 "Fc1c(F)c(F)c(I)c(F)c1F"
+IBF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1(c(c(c(c(c1F)F)I)F)F)F"
+IBF SMILES           "OpenEye OEToolkits" 1.5.0 "c1(c(c(c(c(c1F)F)I)F)F)F"
+IBF InChI            InChI                1.03  "InChI=1S/C6F5I/c7-1-2(8)4(10)6(12)5(11)3(1)9"
+IBF InChIKey         InChI                1.03  OPYHNLNYCRZOGY-UHFFFAOYSA-N
+IBF ?                acedrg               190         "dictionary generator"                  
+IBF ?                acedrg_database      11          "data source"                           
+IBF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+IBF ?                refmac5              5.8.0158    "optimization tool"                     

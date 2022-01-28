@@ -1,0 +1,110 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AKR     AKR      "ACRYLIC ACID"     NON-POLYMER     8     5     .     
+#
+data_comp_AKR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AKR     CA      C       C1      0       -0.139      -0.439      0.079       
+AKR     CB      C       C2      0       -1.185      0.344       0.080       
+AKR     C       C       C       0       1.246       -0.055      -0.114      
+AKR     O       O       O       0       2.094       -0.948      -0.085      
+AKR     OXT     O       OC      -1      1.522       1.134       -0.296      
+AKR     HA1     H       H       0       -0.288      -1.367      0.218       
+AKR     HB2     H       H       0       -2.050      -0.019      0.219       
+AKR     HB3     H       H       0       -1.091      1.277       -0.056      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AKR       CA        CB        DOUBLE    n         1.297     0.020     1.297     0.020     
+AKR       CA        C         SINGLE    n         1.435     0.020     1.435     0.020     
+AKR       C         O         DOUBLE    n         1.230     0.020     1.230     0.020     
+AKR       C         OXT       SINGLE    n         1.230     0.020     1.230     0.020     
+AKR       CA        HA1       SINGLE    n         1.082     0.013     0.949     0.020     
+AKR       CB        HB2       SINGLE    n         1.082     0.013     0.948     0.020     
+AKR       CB        HB3       SINGLE    n         1.082     0.013     0.948     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AKR          CB          CA           C     124.395    3.00
+AKR          CB          CA         HA1     118.808    1.71
+AKR           C          CA         HA1     116.798    1.95
+AKR          CA          CB         HB2     120.195    1.50
+AKR          CA          CB         HB3     120.195    1.50
+AKR         HB2          CB         HB3     119.611    2.15
+AKR          CA           C           O     118.064    1.74
+AKR          CA           C         OXT     118.060    1.74
+AKR           O           C         OXT     123.870    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AKR             sp2_sp2_1           C          CA          CB         HB2     180.000   10.00     2
+AKR             sp2_sp2_5           O           C          CA          CB     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AKR    plan-1           C   0.020
+AKR    plan-1          CA   0.020
+AKR    plan-1          CB   0.020
+AKR    plan-1         HA1   0.020
+AKR    plan-2          CA   0.020
+AKR    plan-2          CB   0.020
+AKR    plan-2         HB2   0.020
+AKR    plan-2         HB3   0.020
+AKR    plan-3           C   0.020
+AKR    plan-3          CA   0.020
+AKR    plan-3           O   0.020
+AKR    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AKR SMILES           ACDLabs              10.04 "O=C(O)\C=C"
+AKR SMILES_CANONICAL CACTVS               3.341 "OC(=O)C=C"
+AKR SMILES           CACTVS               3.341 "OC(=O)C=C"
+AKR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C=CC(=O)O"
+AKR SMILES           "OpenEye OEToolkits" 1.5.0 "C=CC(=O)O"
+AKR InChI            InChI                1.03  "InChI=1S/C3H4O2/c1-2-3(4)5/h2H,1H2,(H,4,5)"
+AKR InChIKey         InChI                1.03  NIXOWILDQLNWCW-UHFFFAOYSA-N
+AKR ?                acedrg               202         "dictionary generator"                  
+AKR ?                acedrg_database      11          "data source"                           
+AKR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AKR ?                refmac5              5.8.0189    "optimization tool"                     

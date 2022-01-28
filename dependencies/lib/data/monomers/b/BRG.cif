@@ -1,0 +1,166 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BRG     BRG      8-BROMOGUANINE     NON-POLYMER     16     12     .     
+#
+data_comp_BRG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BRG     N9      N       NRD5    0       19.226      23.187      33.612      
+BRG     C4      C       CR56    0       19.781      23.671      32.451      
+BRG     N3      N       NRD6    0       19.449      24.822      31.771      
+BRG     C2      C       CR6     0       20.133      25.088      30.655      
+BRG     N2      N       NH2     0       19.860      26.193      29.943      
+BRG     N1      N       NR6     0       21.133      24.256      30.191      
+BRG     C6      C       CR6     0       21.533      23.068      30.824      
+BRG     O6      O       O       0       22.440      22.381      30.338      
+BRG     C5      C       CR56    0       20.793      22.785      32.025      
+BRG     N7      N       NR5     0       20.805      21.783      32.966      
+BRG     C8      C       CR5     0       19.857      22.067      33.887      
+BRG     BR      BR      BR      0       19.468      21.027      35.369      
+BRG     H21     H       H       0       20.464      26.529      29.403      
+BRG     H22     H       H       0       19.077      26.583      30.022      
+BRG     H1      H       H       0       21.565      24.475      29.437      
+BRG     H7      H       H       0       21.339      21.082      32.964      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BRG       N9        C4        SINGLE    y         1.376     0.010     1.376     0.010     
+BRG       N9        C8        DOUBLE    y         1.311     0.011     1.311     0.011     
+BRG       C4        N3        SINGLE    y         1.368     0.012     1.368     0.012     
+BRG       C4        C5        DOUBLE    y         1.401     0.020     1.401     0.020     
+BRG       N3        C2        DOUBLE    y         1.323     0.015     1.323     0.015     
+BRG       C2        N2        SINGLE    n         1.340     0.010     1.340     0.010     
+BRG       C2        N1        SINGLE    y         1.374     0.010     1.374     0.010     
+BRG       N1        C6        SINGLE    y         1.392     0.012     1.392     0.012     
+BRG       C6        O6        DOUBLE    n         1.237     0.013     1.237     0.013     
+BRG       C6        C5        SINGLE    y         1.425     0.014     1.425     0.014     
+BRG       C5        N7        SINGLE    y         1.375     0.011     1.375     0.011     
+BRG       N7        C8        SINGLE    y         1.346     0.013     1.346     0.013     
+BRG       C8        BR        SINGLE    n         1.852     0.010     1.852     0.010     
+BRG       N2        H21       SINGLE    n         1.016     0.010     0.877     0.020     
+BRG       N2        H22       SINGLE    n         1.016     0.010     0.877     0.020     
+BRG       N1        H1        SINGLE    n         1.016     0.010     0.895     0.020     
+BRG       N7        H7        SINGLE    n         1.016     0.010     0.881     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BRG          C4          N9          C8     105.978    1.50
+BRG          N9          C4          N3     127.242    1.50
+BRG          N9          C4          C5     109.876    1.50
+BRG          N3          C4          C5     122.881    1.50
+BRG          C4          N3          C2     117.146    1.79
+BRG          N3          C2          N2     119.986    1.50
+BRG          N3          C2          N1     123.273    1.50
+BRG          N2          C2          N1     116.741    1.50
+BRG          C2          N2         H21     119.868    1.50
+BRG          C2          N2         H22     119.868    1.50
+BRG         H21          N2         H22     120.263    1.96
+BRG          C2          N1          C6     125.027    1.50
+BRG          C2          N1          H1     117.836    2.71
+BRG          C6          N1          H1     117.137    2.44
+BRG          N1          C6          O6     120.363    1.50
+BRG          N1          C6          C5     112.698    1.50
+BRG          O6          C6          C5     126.939    1.50
+BRG          C4          C5          C6     118.974    2.44
+BRG          C4          C5          N7     106.131    1.50
+BRG          C6          C5          N7     134.894    1.50
+BRG          C5          N7          C8     107.347    1.50
+BRG          C5          N7          H7     125.935    1.93
+BRG          C8          N7          H7     126.708    3.00
+BRG          N9          C8          N7     110.678    1.50
+BRG          N9          C8          BR     123.827    2.14
+BRG          N7          C8          BR     125.495    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BRG              const_18          N3          C4          N9          C8     180.000   10.00     2
+BRG              const_32          BR          C8          N9          C4     180.000   10.00     2
+BRG       const_sp2_sp2_2          N9          C4          N3          C2     180.000   10.00     2
+BRG              const_20          N9          C4          C5          C6     180.000   10.00     2
+BRG       const_sp2_sp2_4          N2          C2          N3          C4     180.000   10.00     2
+BRG             sp2_sp2_3          N3          C2          N2         H21       0.000   10.00     2
+BRG       const_sp2_sp2_7          N2          C2          N1          C6     180.000   10.00     2
+BRG              const_11          O6          C6          N1          C2     180.000   10.00     2
+BRG              const_14          C4          C5          C6          O6     180.000   10.00     2
+BRG              const_23          C4          C5          N7          C8       0.000   10.00     2
+BRG              const_29          BR          C8          N7          C5     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BRG    plan-1          BR   0.020
+BRG    plan-1          C4   0.020
+BRG    plan-1          C5   0.020
+BRG    plan-1          C6   0.020
+BRG    plan-1          C8   0.020
+BRG    plan-1          H7   0.020
+BRG    plan-1          N3   0.020
+BRG    plan-1          N7   0.020
+BRG    plan-1          N9   0.020
+BRG    plan-2          C2   0.020
+BRG    plan-2          C4   0.020
+BRG    plan-2          C5   0.020
+BRG    plan-2          C6   0.020
+BRG    plan-2          H1   0.020
+BRG    plan-2          N1   0.020
+BRG    plan-2          N2   0.020
+BRG    plan-2          N3   0.020
+BRG    plan-2          N7   0.020
+BRG    plan-2          N9   0.020
+BRG    plan-2          O6   0.020
+BRG    plan-3          C2   0.020
+BRG    plan-3         H21   0.020
+BRG    plan-3         H22   0.020
+BRG    plan-3          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BRG SMILES           ACDLabs              10.04 "O=C2NC(=Nc1nc(Br)nc12)N"
+BRG SMILES_CANONICAL CACTVS               3.341 "NC1=Nc2nc(Br)[nH]c2C(=O)N1"
+BRG SMILES           CACTVS               3.341 "NC1=Nc2nc(Br)[nH]c2C(=O)N1"
+BRG SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c12c(nc([nH]1)Br)N=C(NC2=O)N"
+BRG SMILES           "OpenEye OEToolkits" 1.5.0 "c12c(nc([nH]1)Br)N=C(NC2=O)N"
+BRG InChI            InChI                1.03  "InChI=1S/C5H4BrN5O/c6-4-8-1-2(9-4)10-5(7)11-3(1)12/h(H4,7,8,9,10,11,12)"
+BRG InChIKey         InChI                1.03  CRYCZDRIXVHNQB-UHFFFAOYSA-N
+BRG ?                acedrg               202         "dictionary generator"                  
+BRG ?                acedrg_database      11          "data source"                           
+BRG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BRG ?                refmac5              5.8.0189    "optimization tool"                     

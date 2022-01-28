@@ -1,0 +1,692 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PNI      PNI 'TETRA[N-METHYL-PYRIDYL] PORPHYRIN-NI' non-polymer        89  53 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PNI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PNI           CMD    C    CH3       0.000      5.750   -1.352    6.364
+ PNI           HMD1   H    H         0.000      5.717   -0.561    7.067
+ PNI           HMD2   H    H         0.000      5.178   -2.168    6.724
+ PNI           HMD3   H    H         0.000      6.754   -1.659    6.224
+ PNI           NPD    N    NR6       0.000      5.197   -0.894    5.087
+ PNI           C8D    C    CR16      0.000      5.145   -1.771    4.033
+ PNI           H8D    H    H         0.000      5.718   -2.689    4.070
+ PNI           C7D    C    CR16      0.000      4.388   -1.500    2.953
+ PNI           H7D    H    H         0.000      4.340   -2.190    2.120
+ PNI           C9D    C    CR16      0.000      4.748    0.396    4.981
+ PNI           H9D    H    H         0.000      5.015    1.121    5.740
+ PNI           C0D    C    CR16      0.000      3.977    0.772    3.941
+ PNI           H0D    H    H         0.000      3.625    1.792    3.849
+ PNI           C6D    C    CR6       0.000      3.628   -0.241    2.935
+ PNI           C5D    C    C         0.000      2.615   -0.015    1.993
+ PNI           C1A    C    CR5       0.000      2.759   -0.827    0.763
+ PNI           C4D    C    CR5       0.000      1.589    1.011    2.434
+ PNI           ND     N    NT        0.000      0.350    0.997    1.861
+ PNI           NI     NI   NI        0.000      0.029    0.196   -0.022
+ PNI           C3D    C    CR15      0.000      1.337    1.771    3.537
+ PNI           H3D    H    H         0.000      2.085    2.241    4.163
+ PNI           C2D    C    CR15      0.000     -0.073    1.845    3.730
+ PNI           H2D    H    H         0.000     -0.572    2.425    4.496
+ PNI           C1D    C    CR5       0.000     -0.694    1.067    2.794
+ PNI           C5C    C    C         0.000     -1.942    0.316    2.608
+ PNI           C6C    C    CR6       0.000     -2.856    0.487    3.657
+ PNI           C0C    C    CR16      0.000     -4.288    0.211    3.476
+ PNI           H0C    H    H         0.000     -4.710    0.083    2.487
+ PNI           C9C    C    CR16      0.000     -5.062    0.122    4.577
+ PNI           H9C    H    H         0.000     -6.120   -0.086    4.474
+ PNI           NPC    N    NR6       0.000     -4.522    0.292    5.826
+ PNI           CMC    C    CH3       0.000     -5.298   -0.123    6.998
+ PNI           HMC3   H    H         0.000     -4.761   -0.862    7.534
+ PNI           HMC2   H    H         0.000     -5.467    0.714    7.624
+ PNI           HMC1   H    H         0.000     -6.227   -0.522    6.683
+ PNI           C8C    C    CR16      0.000     -3.279    0.839    6.012
+ PNI           H8C    H    H         0.000     -2.985    1.180    6.997
+ PNI           C7C    C    CR16      0.000     -2.420    0.956    4.981
+ PNI           H7C    H    H         0.000     -1.435    1.384    5.123
+ PNI           C4C    C    CR5       0.000     -2.436   -0.584    1.540
+ PNI           NC     N    NT        0.000     -1.875   -0.577    0.279
+ PNI           C3C    C    CR15      0.000     -3.575   -1.285    1.271
+ PNI           H3C    H    H         0.000     -4.224   -1.738    2.010
+ PNI           C2C    C    CR15      0.000     -3.772   -1.324   -0.139
+ PNI           H2C    H    H         0.000     -4.570   -1.852   -0.646
+ PNI           C1C    C    CR5       0.000     -2.795   -0.589   -0.752
+ PNI           C5B    C    C         0.000     -2.569    0.129   -2.013
+ PNI           C6B    C    CR6       0.000     -3.586   -0.066   -2.958
+ PNI           C0B    C    CR16      0.000     -3.358    0.183   -4.389
+ PNI           H0B    H    H         0.000     -2.485    0.727   -4.727
+ PNI           C9B    C    CR16      0.000     -4.267   -0.285   -5.268
+ PNI           H9B    H    H         0.000     -4.122   -0.120   -6.329
+ PNI           NPB    N    NR6       0.000     -5.373   -0.967   -4.832
+ PNI           CMB    C    CH3       0.000     -6.162   -1.734   -5.800
+ PNI           HMB3   H    H         0.000     -6.175   -2.754   -5.516
+ PNI           HMB2   H    H         0.000     -7.153   -1.362   -5.822
+ PNI           HMB1   H    H         0.000     -5.729   -1.641   -6.762
+ PNI           C8B    C    CR16      0.000     -5.764   -0.954   -3.518
+ PNI           H8B    H    H         0.000     -6.757   -1.293   -3.250
+ PNI           C7B    C    CR16      0.000     -4.924   -0.524   -2.557
+ PNI           H7B    H    H         0.000     -5.226   -0.516   -1.517
+ PNI           C4B    C    CR5       0.000     -1.483    1.021   -2.490
+ PNI           NB     N    NT        0.000     -0.229    0.987   -1.917
+ PNI           C3B    C    CR15      0.000     -1.201    1.662   -3.662
+ PNI           H3B    H    H         0.000     -1.926    2.132   -4.315
+ PNI           C2B    C    CR15      0.000      0.204    1.610   -3.884
+ PNI           H2B    H    H         0.000      0.723    2.026   -4.739
+ PNI           C1B    C    CR5       0.000      0.791    0.949   -2.841
+ PNI           C5A    C    C         0.000      1.976    0.084   -2.658
+ PNI           C4A    C    CR5       0.000      2.468   -0.737   -1.543
+ PNI           C3A    C    CR15      0.000      3.527   -1.548   -1.250
+ PNI           H3A    H    H         0.000      4.115   -2.097   -1.975
+ PNI           C2A    C    CR15      0.000      3.738   -1.559    0.157
+ PNI           H2A    H    H         0.000      4.547   -2.068    0.666
+ PNI           NA     N    NT        0.000      1.884   -0.706   -0.288
+ PNI           C6A    C    CR6       0.000      2.811    0.045   -3.783
+ PNI           C0A    C    CR16      0.000      4.219   -0.364   -3.676
+ PNI           H0A    H    H         0.000      4.592   -0.844   -2.780
+ PNI           C9A    C    CR16      0.000      5.033   -0.126   -4.724
+ PNI           H9A    H    H         0.000      6.072   -0.428   -4.676
+ PNI           NPA    N    NR6       0.000      4.556    0.495   -5.850
+ PNI           CMA    C    CH3       0.000      5.510    1.039   -6.820
+ PNI           HMA3   H    H         0.000      5.369    0.567   -7.757
+ PNI           HMA2   H    H         0.000      5.353    2.081   -6.923
+ PNI           HMA1   H    H         0.000      6.498    0.862   -6.481
+ PNI           C8A    C    CR16      0.000      3.213    0.619   -6.098
+ PNI           H8A    H    H         0.000      2.873    0.886   -7.091
+ PNI           C7A    C    CR16      0.000      2.313    0.411   -5.117
+ PNI           H7A    H    H         0.000      1.251    0.511   -5.306
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PNI      CMD    n/a    NPD    START
+ PNI      HMD1   CMD    .      .
+ PNI      HMD2   CMD    .      .
+ PNI      HMD3   CMD    .      .
+ PNI      NPD    CMD    C9D    .
+ PNI      C8D    NPD    C7D    .
+ PNI      H8D    C8D    .      .
+ PNI      C7D    C8D    H7D    .
+ PNI      H7D    C7D    .      .
+ PNI      C9D    NPD    C0D    .
+ PNI      H9D    C9D    .      .
+ PNI      C0D    C9D    C6D    .
+ PNI      H0D    C0D    .      .
+ PNI      C6D    C0D    C5D    .
+ PNI      C5D    C6D    C4D    .
+ PNI      C1A    C5D    .      .
+ PNI      C4D    C5D    C3D    .
+ PNI      ND     C4D    NI     .
+ PNI      NI     ND     .      .
+ PNI      C3D    C4D    C2D    .
+ PNI      H3D    C3D    .      .
+ PNI      C2D    C3D    C1D    .
+ PNI      H2D    C2D    .      .
+ PNI      C1D    C2D    C5C    .
+ PNI      C5C    C1D    C4C    .
+ PNI      C6C    C5C    C0C    .
+ PNI      C0C    C6C    C9C    .
+ PNI      H0C    C0C    .      .
+ PNI      C9C    C0C    NPC    .
+ PNI      H9C    C9C    .      .
+ PNI      NPC    C9C    C8C    .
+ PNI      CMC    NPC    HMC1   .
+ PNI      HMC3   CMC    .      .
+ PNI      HMC2   CMC    .      .
+ PNI      HMC1   CMC    .      .
+ PNI      C8C    NPC    C7C    .
+ PNI      H8C    C8C    .      .
+ PNI      C7C    C8C    H7C    .
+ PNI      H7C    C7C    .      .
+ PNI      C4C    C5C    C3C    .
+ PNI      NC     C4C    .      .
+ PNI      C3C    C4C    C2C    .
+ PNI      H3C    C3C    .      .
+ PNI      C2C    C3C    C1C    .
+ PNI      H2C    C2C    .      .
+ PNI      C1C    C2C    C5B    .
+ PNI      C5B    C1C    C4B    .
+ PNI      C6B    C5B    C0B    .
+ PNI      C0B    C6B    C9B    .
+ PNI      H0B    C0B    .      .
+ PNI      C9B    C0B    NPB    .
+ PNI      H9B    C9B    .      .
+ PNI      NPB    C9B    C8B    .
+ PNI      CMB    NPB    HMB1   .
+ PNI      HMB3   CMB    .      .
+ PNI      HMB2   CMB    .      .
+ PNI      HMB1   CMB    .      .
+ PNI      C8B    NPB    C7B    .
+ PNI      H8B    C8B    .      .
+ PNI      C7B    C8B    H7B    .
+ PNI      H7B    C7B    .      .
+ PNI      C4B    C5B    C3B    .
+ PNI      NB     C4B    .      .
+ PNI      C3B    C4B    C2B    .
+ PNI      H3B    C3B    .      .
+ PNI      C2B    C3B    C1B    .
+ PNI      H2B    C2B    .      .
+ PNI      C1B    C2B    C5A    .
+ PNI      C5A    C1B    C6A    .
+ PNI      C4A    C5A    NA     .
+ PNI      C3A    C4A    C2A    .
+ PNI      H3A    C3A    .      .
+ PNI      C2A    C3A    H2A    .
+ PNI      H2A    C2A    .      .
+ PNI      NA     C4A    .      .
+ PNI      C6A    C5A    C0A    .
+ PNI      C0A    C6A    C9A    .
+ PNI      H0A    C0A    .      .
+ PNI      C9A    C0A    NPA    .
+ PNI      H9A    C9A    .      .
+ PNI      NPA    C9A    C8A    .
+ PNI      CMA    NPA    HMA1   .
+ PNI      HMA3   CMA    .      .
+ PNI      HMA2   CMA    .      .
+ PNI      HMA1   CMA    .      .
+ PNI      C8A    NPA    C7A    .
+ PNI      H8A    C8A    .      .
+ PNI      C7A    C8A    H7A    .
+ PNI      H7A    C7A    .      END
+ PNI      NI     NA     .    ADD
+ PNI      NI     NB     .    ADD
+ PNI      NI     NC     .    ADD
+ PNI      NA     C1A    .    ADD
+ PNI      C1A    C2A    .    ADD
+ PNI      C6A    C7A    .    ADD
+ PNI      NB     C1B    .    ADD
+ PNI      C6B    C7B    .    ADD
+ PNI      NC     C1C    .    ADD
+ PNI      C6C    C7C    .    ADD
+ PNI      ND     C1D    .    ADD
+ PNI      C6D    C7D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PNI       NI        NA        single    2.110     0.020     2.110     0.020     
+PNI       NI        NB        single    2.110     0.020     2.110     0.020     
+PNI       NI        NC        single    2.110     0.020     2.110     0.020     
+PNI       NI        ND        single    2.110     0.020     2.110     0.020     
+PNI       NA        C1A       single    1.455     0.020     1.455     0.020     
+PNI       NA        C4A       single    1.455     0.020     1.455     0.020     
+PNI       C1A       C2A       double    1.387     0.020     1.387     0.020     
+PNI       C1A       C5D       single    1.490     0.020     1.490     0.020     
+PNI       C2A       C3A       single    1.380     0.020     1.380     0.020     
+PNI       H2A       C2A       single    1.082     0.013     0.975     0.010     
+PNI       C3A       C4A       double    1.387     0.020     1.387     0.020     
+PNI       H3A       C3A       single    1.082     0.013     0.975     0.010     
+PNI       C4A       C5A       single    1.490     0.020     1.490     0.020     
+PNI       C6A       C5A       double    1.500     0.020     1.500     0.020     
+PNI       C5A       C1B       single    1.490     0.020     1.490     0.020     
+PNI       C6A       C7A       single    1.390     0.020     1.390     0.020     
+PNI       C0A       C6A       single    1.390     0.020     1.390     0.020     
+PNI       C7A       C8A       double    1.390     0.020     1.390     0.020     
+PNI       H7A       C7A       single    1.082     0.013     0.975     0.010     
+PNI       C8A       NPA       single    1.337     0.020     1.337     0.020     
+PNI       H8A       C8A       single    1.082     0.013     0.975     0.010     
+PNI       NPA       C9A       single    1.337     0.020     1.337     0.020     
+PNI       CMA       NPA       single    1.465     0.020     1.465     0.020     
+PNI       C9A       C0A       double    1.390     0.020     1.390     0.020     
+PNI       H9A       C9A       single    1.082     0.013     0.975     0.010     
+PNI       H0A       C0A       single    1.082     0.013     0.975     0.010     
+PNI       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+PNI       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+PNI       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+PNI       NB        C1B       single    1.455     0.020     1.455     0.020     
+PNI       NB        C4B       single    1.455     0.020     1.455     0.020     
+PNI       C1B       C2B       double    1.387     0.020     1.387     0.020     
+PNI       C2B       C3B       single    1.380     0.020     1.380     0.020     
+PNI       H2B       C2B       single    1.082     0.013     0.975     0.010     
+PNI       C3B       C4B       double    1.387     0.020     1.387     0.020     
+PNI       H3B       C3B       single    1.082     0.013     0.975     0.010     
+PNI       C4B       C5B       single    1.490     0.020     1.490     0.020     
+PNI       C6B       C5B       double    1.500     0.020     1.500     0.020     
+PNI       C5B       C1C       single    1.490     0.020     1.490     0.020     
+PNI       C6B       C7B       single    1.390     0.020     1.390     0.020     
+PNI       C0B       C6B       single    1.390     0.020     1.390     0.020     
+PNI       C7B       C8B       double    1.390     0.020     1.390     0.020     
+PNI       H7B       C7B       single    1.082     0.013     0.975     0.010     
+PNI       C8B       NPB       single    1.337     0.020     1.337     0.020     
+PNI       H8B       C8B       single    1.082     0.013     0.975     0.010     
+PNI       NPB       C9B       single    1.337     0.020     1.337     0.020     
+PNI       CMB       NPB       single    1.465     0.020     1.465     0.020     
+PNI       C9B       C0B       double    1.390     0.020     1.390     0.020     
+PNI       H9B       C9B       single    1.082     0.013     0.975     0.010     
+PNI       H0B       C0B       single    1.082     0.013     0.975     0.010     
+PNI       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+PNI       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+PNI       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+PNI       NC        C1C       single    1.455     0.020     1.455     0.020     
+PNI       NC        C4C       single    1.455     0.020     1.455     0.020     
+PNI       C1C       C2C       double    1.387     0.020     1.387     0.020     
+PNI       C2C       C3C       single    1.380     0.020     1.380     0.020     
+PNI       H2C       C2C       single    1.082     0.013     0.975     0.010     
+PNI       C3C       C4C       double    1.387     0.020     1.387     0.020     
+PNI       H3C       C3C       single    1.082     0.013     0.975     0.010     
+PNI       C4C       C5C       single    1.490     0.020     1.490     0.020     
+PNI       C6C       C5C       double    1.500     0.020     1.500     0.020     
+PNI       C5C       C1D       single    1.490     0.020     1.490     0.020     
+PNI       C6C       C7C       single    1.390     0.020     1.390     0.020     
+PNI       C0C       C6C       single    1.390     0.020     1.390     0.020     
+PNI       C7C       C8C       double    1.390     0.020     1.390     0.020     
+PNI       H7C       C7C       single    1.082     0.013     0.975     0.010     
+PNI       C8C       NPC       single    1.337     0.020     1.337     0.020     
+PNI       H8C       C8C       single    1.082     0.013     0.975     0.010     
+PNI       NPC       C9C       single    1.337     0.020     1.337     0.020     
+PNI       CMC       NPC       single    1.465     0.020     1.465     0.020     
+PNI       C9C       C0C       double    1.390     0.020     1.390     0.020     
+PNI       H9C       C9C       single    1.082     0.013     0.975     0.010     
+PNI       H0C       C0C       single    1.082     0.013     0.975     0.010     
+PNI       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+PNI       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+PNI       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+PNI       ND        C1D       single    1.455     0.020     1.455     0.020     
+PNI       ND        C4D       single    1.455     0.020     1.455     0.020     
+PNI       C1D       C2D       double    1.387     0.020     1.387     0.020     
+PNI       C2D       C3D       single    1.380     0.020     1.380     0.020     
+PNI       H2D       C2D       single    1.082     0.013     0.975     0.010     
+PNI       C3D       C4D       double    1.387     0.020     1.387     0.020     
+PNI       H3D       C3D       single    1.082     0.013     0.975     0.010     
+PNI       C4D       C5D       single    1.490     0.020     1.490     0.020     
+PNI       C5D       C6D       double    1.500     0.020     1.500     0.020     
+PNI       C6D       C7D       single    1.390     0.020     1.390     0.020     
+PNI       C6D       C0D       single    1.390     0.020     1.390     0.020     
+PNI       C7D       C8D       double    1.390     0.020     1.390     0.020     
+PNI       H7D       C7D       single    1.082     0.013     0.975     0.010     
+PNI       C8D       NPD       single    1.337     0.020     1.337     0.020     
+PNI       H8D       C8D       single    1.082     0.013     0.975     0.010     
+PNI       C0D       C9D       double    1.390     0.020     1.390     0.020     
+PNI       C9D       NPD       single    1.337     0.020     1.337     0.020     
+PNI       H9D       C9D       single    1.082     0.013     0.975     0.010     
+PNI       H0D       C0D       single    1.082     0.013     0.975     0.010     
+PNI       NPD       CMD       single    1.465     0.020     1.465     0.020     
+PNI       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+PNI       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+PNI       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PNI      HMD1   CMD    HMD2    109.470    3.000
+ PNI      HMD1   CMD    HMD3    109.470    3.000
+ PNI      HMD2   CMD    HMD3    109.470    3.000
+ PNI      HMD1   CMD    NPD     109.470    3.000
+ PNI      HMD2   CMD    NPD     109.470    3.000
+ PNI      HMD3   CMD    NPD     109.470    3.000
+ PNI      CMD    NPD    C8D     120.000    3.000
+ PNI      CMD    NPD    C9D     120.000    3.000
+ PNI      C8D    NPD    C9D     120.000    3.000
+ PNI      NPD    C8D    H8D     120.000    3.000
+ PNI      NPD    C8D    C7D     120.000    3.000
+ PNI      H8D    C8D    C7D     120.000    3.000
+ PNI      C8D    C7D    H7D     120.000    3.000
+ PNI      C8D    C7D    C6D     120.000    3.000
+ PNI      H7D    C7D    C6D     120.000    3.000
+ PNI      NPD    C9D    H9D     120.000    3.000
+ PNI      NPD    C9D    C0D     120.000    3.000
+ PNI      H9D    C9D    C0D     120.000    3.000
+ PNI      C9D    C0D    H0D     120.000    3.000
+ PNI      C9D    C0D    C6D     120.000    3.000
+ PNI      H0D    C0D    C6D     120.000    3.000
+ PNI      C0D    C6D    C5D     120.000    3.000
+ PNI      C0D    C6D    C7D     120.000    3.000
+ PNI      C5D    C6D    C7D     120.000    3.000
+ PNI      C6D    C5D    C1A     120.000    3.000
+ PNI      C6D    C5D    C4D     120.000    3.000
+ PNI      C1A    C5D    C4D     120.000    3.000
+ PNI      C5D    C1A    NA      108.000    3.000
+ PNI      C5D    C1A    C2A     126.000    3.000
+ PNI      NA     C1A    C2A     108.000    3.000
+ PNI      C5D    C4D    ND      108.000    3.000
+ PNI      C5D    C4D    C3D     126.000    3.000
+ PNI      ND     C4D    C3D     108.000    3.000
+ PNI      C4D    ND     NI      109.500    3.000
+ PNI      C4D    ND     C1D     109.500    3.000
+ PNI      NI     ND     C1D     109.500    3.000
+ PNI      ND     NI     NA       90.000    3.000
+ PNI      ND     NI     NB       90.000    3.000
+ PNI      ND     NI     NC       90.000    3.000
+ PNI      NA     NI     NB       90.000    3.000
+ PNI      NA     NI     NC       90.000    3.000
+ PNI      NB     NI     NC       90.000    3.000
+ PNI      C4D    C3D    H3D     126.000    3.000
+ PNI      C4D    C3D    C2D     108.000    3.000
+ PNI      H3D    C3D    C2D     126.000    3.000
+ PNI      C3D    C2D    H2D     126.000    3.000
+ PNI      C3D    C2D    C1D     108.000    3.000
+ PNI      H2D    C2D    C1D     126.000    3.000
+ PNI      C2D    C1D    C5C     126.000    3.000
+ PNI      C2D    C1D    ND      108.000    3.000
+ PNI      C5C    C1D    ND      108.000    3.000
+ PNI      C1D    C5C    C6C     120.000    3.000
+ PNI      C1D    C5C    C4C     120.000    3.000
+ PNI      C6C    C5C    C4C     120.000    3.000
+ PNI      C5C    C6C    C0C     120.000    3.000
+ PNI      C5C    C6C    C7C     120.000    3.000
+ PNI      C0C    C6C    C7C     120.000    3.000
+ PNI      C6C    C0C    H0C     120.000    3.000
+ PNI      C6C    C0C    C9C     120.000    3.000
+ PNI      H0C    C0C    C9C     120.000    3.000
+ PNI      C0C    C9C    H9C     120.000    3.000
+ PNI      C0C    C9C    NPC     120.000    3.000
+ PNI      H9C    C9C    NPC     120.000    3.000
+ PNI      C9C    NPC    CMC     120.000    3.000
+ PNI      C9C    NPC    C8C     120.000    3.000
+ PNI      CMC    NPC    C8C     120.000    3.000
+ PNI      NPC    CMC    HMC3    109.470    3.000
+ PNI      NPC    CMC    HMC2    109.470    3.000
+ PNI      NPC    CMC    HMC1    109.470    3.000
+ PNI      HMC3   CMC    HMC2    109.470    3.000
+ PNI      HMC3   CMC    HMC1    109.470    3.000
+ PNI      HMC2   CMC    HMC1    109.470    3.000
+ PNI      NPC    C8C    H8C     120.000    3.000
+ PNI      NPC    C8C    C7C     120.000    3.000
+ PNI      H8C    C8C    C7C     120.000    3.000
+ PNI      C8C    C7C    H7C     120.000    3.000
+ PNI      C8C    C7C    C6C     120.000    3.000
+ PNI      H7C    C7C    C6C     120.000    3.000
+ PNI      C5C    C4C    NC      108.000    3.000
+ PNI      C5C    C4C    C3C     126.000    3.000
+ PNI      NC     C4C    C3C     108.000    3.000
+ PNI      C4C    NC     NI      109.500    3.000
+ PNI      C4C    NC     C1C     109.500    3.000
+ PNI      NI     NC     C1C     109.500    3.000
+ PNI      C4C    C3C    H3C     126.000    3.000
+ PNI      C4C    C3C    C2C     108.000    3.000
+ PNI      H3C    C3C    C2C     126.000    3.000
+ PNI      C3C    C2C    H2C     126.000    3.000
+ PNI      C3C    C2C    C1C     108.000    3.000
+ PNI      H2C    C2C    C1C     126.000    3.000
+ PNI      C2C    C1C    C5B     126.000    3.000
+ PNI      C2C    C1C    NC      108.000    3.000
+ PNI      C5B    C1C    NC      108.000    3.000
+ PNI      C1C    C5B    C6B     120.000    3.000
+ PNI      C1C    C5B    C4B     120.000    3.000
+ PNI      C6B    C5B    C4B     120.000    3.000
+ PNI      C5B    C6B    C0B     120.000    3.000
+ PNI      C5B    C6B    C7B     120.000    3.000
+ PNI      C0B    C6B    C7B     120.000    3.000
+ PNI      C6B    C0B    H0B     120.000    3.000
+ PNI      C6B    C0B    C9B     120.000    3.000
+ PNI      H0B    C0B    C9B     120.000    3.000
+ PNI      C0B    C9B    H9B     120.000    3.000
+ PNI      C0B    C9B    NPB     120.000    3.000
+ PNI      H9B    C9B    NPB     120.000    3.000
+ PNI      C9B    NPB    CMB     120.000    3.000
+ PNI      C9B    NPB    C8B     120.000    3.000
+ PNI      CMB    NPB    C8B     120.000    3.000
+ PNI      NPB    CMB    HMB3    109.470    3.000
+ PNI      NPB    CMB    HMB2    109.470    3.000
+ PNI      NPB    CMB    HMB1    109.470    3.000
+ PNI      HMB3   CMB    HMB2    109.470    3.000
+ PNI      HMB3   CMB    HMB1    109.470    3.000
+ PNI      HMB2   CMB    HMB1    109.470    3.000
+ PNI      NPB    C8B    H8B     120.000    3.000
+ PNI      NPB    C8B    C7B     120.000    3.000
+ PNI      H8B    C8B    C7B     120.000    3.000
+ PNI      C8B    C7B    H7B     120.000    3.000
+ PNI      C8B    C7B    C6B     120.000    3.000
+ PNI      H7B    C7B    C6B     120.000    3.000
+ PNI      C5B    C4B    NB      108.000    3.000
+ PNI      C5B    C4B    C3B     126.000    3.000
+ PNI      NB     C4B    C3B     108.000    3.000
+ PNI      C4B    NB     NI      109.500    3.000
+ PNI      C4B    NB     C1B     109.500    3.000
+ PNI      NI     NB     C1B     109.500    3.000
+ PNI      C4B    C3B    H3B     126.000    3.000
+ PNI      C4B    C3B    C2B     108.000    3.000
+ PNI      H3B    C3B    C2B     126.000    3.000
+ PNI      C3B    C2B    H2B     126.000    3.000
+ PNI      C3B    C2B    C1B     108.000    3.000
+ PNI      H2B    C2B    C1B     126.000    3.000
+ PNI      C2B    C1B    C5A     126.000    3.000
+ PNI      C2B    C1B    NB      108.000    3.000
+ PNI      C5A    C1B    NB      108.000    3.000
+ PNI      C1B    C5A    C4A     120.000    3.000
+ PNI      C1B    C5A    C6A     120.000    3.000
+ PNI      C4A    C5A    C6A     120.000    3.000
+ PNI      C5A    C4A    C3A     126.000    3.000
+ PNI      C5A    C4A    NA      108.000    3.000
+ PNI      C3A    C4A    NA      108.000    3.000
+ PNI      C4A    C3A    H3A     126.000    3.000
+ PNI      C4A    C3A    C2A     108.000    3.000
+ PNI      H3A    C3A    C2A     126.000    3.000
+ PNI      C3A    C2A    H2A     126.000    3.000
+ PNI      C3A    C2A    C1A     108.000    3.000
+ PNI      H2A    C2A    C1A     126.000    3.000
+ PNI      C4A    NA     NI      109.500    3.000
+ PNI      C4A    NA     C1A     109.500    3.000
+ PNI      NI     NA     C1A     109.500    3.000
+ PNI      C5A    C6A    C0A     120.000    3.000
+ PNI      C5A    C6A    C7A     120.000    3.000
+ PNI      C0A    C6A    C7A     120.000    3.000
+ PNI      C6A    C0A    H0A     120.000    3.000
+ PNI      C6A    C0A    C9A     120.000    3.000
+ PNI      H0A    C0A    C9A     120.000    3.000
+ PNI      C0A    C9A    H9A     120.000    3.000
+ PNI      C0A    C9A    NPA     120.000    3.000
+ PNI      H9A    C9A    NPA     120.000    3.000
+ PNI      C9A    NPA    CMA     120.000    3.000
+ PNI      C9A    NPA    C8A     120.000    3.000
+ PNI      CMA    NPA    C8A     120.000    3.000
+ PNI      NPA    CMA    HMA3    109.470    3.000
+ PNI      NPA    CMA    HMA2    109.470    3.000
+ PNI      NPA    CMA    HMA1    109.470    3.000
+ PNI      HMA3   CMA    HMA2    109.470    3.000
+ PNI      HMA3   CMA    HMA1    109.470    3.000
+ PNI      HMA2   CMA    HMA1    109.470    3.000
+ PNI      NPA    C8A    H8A     120.000    3.000
+ PNI      NPA    C8A    C7A     120.000    3.000
+ PNI      H8A    C8A    C7A     120.000    3.000
+ PNI      C8A    C7A    H7A     120.000    3.000
+ PNI      C8A    C7A    C6A     120.000    3.000
+ PNI      H7A    C7A    C6A     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PNI      var_1    HMD3   CMD    NPD    C9D     -119.951   20.000   1
+ PNI      CONST_1  CMD    NPD    C8D    C7D      180.000    0.000   0
+ PNI      CONST_2  NPD    C8D    C7D    C6D        0.000    0.000   0
+ PNI      CONST_3  CMD    NPD    C9D    C0D      180.000    0.000   0
+ PNI      CONST_4  NPD    C9D    C0D    C6D        0.000    0.000   0
+ PNI      CONST_5  C9D    C0D    C6D    C5D      180.000    0.000   0
+ PNI      CONST_6  C0D    C6D    C7D    C8D        0.000    0.000   0
+ PNI      CONST_7  C0D    C6D    C5D    C4D      -23.955    0.000   0
+ PNI      var_2    C6D    C5D    C1A    NA      -177.809   20.000   1
+ PNI      CONST_8  C5D    C1A    C2A    C3A      180.000    0.000   0
+ PNI      var_3    C6D    C5D    C4D    C3D       -2.729   20.000   1
+ PNI      var_4    C5D    C4D    ND     NI       -24.560   20.000   1
+ PNI      CONST_9  C4D    ND     C1D    C2D       32.796    0.000   0
+ PNI      var_5    C4D    ND     NI     NA        10.166   20.000   1
+ PNI      var_6    ND     NI     NA     C4A     -144.213   20.000   1
+ PNI      var_7    ND     NI     NB     C4B     -104.615   20.000   1
+ PNI      var_8    ND     NI     NC     C4C       -7.777   20.000   1
+ PNI      CONST_10 C5D    C4D    C3D    C2D      180.000    0.000   0
+ PNI      CONST_11 C4D    C3D    C2D    C1D        3.529    0.000   0
+ PNI      CONST_12 C3D    C2D    C1D    C5C      180.000    0.000   0
+ PNI      var_9    C2D    C1D    C5C    C4C     -174.544   20.000   1
+ PNI      CONST_13 C1D    C5C    C6C    C0C      159.322    0.000   0
+ PNI      CONST_14 C5C    C6C    C7C    C8C      180.000    0.000   0
+ PNI      CONST_15 C5C    C6C    C0C    C9C      180.000    0.000   0
+ PNI      CONST_16 C6C    C0C    C9C    NPC        0.000    0.000   0
+ PNI      CONST_17 C0C    C9C    NPC    C8C        0.000    0.000   0
+ PNI      var_10   C9C    NPC    CMC    HMC1       0.026   20.000   1
+ PNI      CONST_18 C9C    NPC    C8C    C7C        0.000    0.000   0
+ PNI      CONST_19 NPC    C8C    C7C    C6C        0.000    0.000   0
+ PNI      var_11   C1D    C5C    C4C    C3C     -177.845   20.000   1
+ PNI      var_12   C5C    C4C    NC     NI        20.199   20.000   1
+ PNI      CONST_20 C4C    NC     C1C    C2C      -32.274    0.000   0
+ PNI      CONST_21 C5C    C4C    C3C    C2C      180.000    0.000   0
+ PNI      CONST_22 C4C    C3C    C2C    C1C       -3.108    0.000   0
+ PNI      CONST_23 C3C    C2C    C1C    C5B      180.000    0.000   0
+ PNI      var_13   C2C    C1C    C5B    C4B      172.265   20.000   1
+ PNI      CONST_24 C1C    C5B    C6B    C0B     -159.760    0.000   0
+ PNI      CONST_25 C5B    C6B    C7B    C8B      180.000    0.000   0
+ PNI      CONST_26 C5B    C6B    C0B    C9B      180.000    0.000   0
+ PNI      CONST_27 C6B    C0B    C9B    NPB        0.000    0.000   0
+ PNI      CONST_28 C0B    C9B    NPB    C8B        0.000    0.000   0
+ PNI      var_14   C9B    NPB    CMB    HMB1       0.022   20.000   1
+ PNI      CONST_29 C9B    NPB    C8B    C7B        0.000    0.000   0
+ PNI      CONST_30 NPB    C8B    C7B    C6B        0.000    0.000   0
+ PNI      var_15   C1C    C5B    C4B    C3B      176.654   20.000   1
+ PNI      var_16   C5B    C4B    NB     NI       -20.485   20.000   1
+ PNI      CONST_31 C4B    NB     C1B    C2B       28.931    0.000   0
+ PNI      CONST_32 C5B    C4B    C3B    C2B      180.000    0.000   0
+ PNI      CONST_33 C4B    C3B    C2B    C1B       -0.646    0.000   0
+ PNI      CONST_34 C3B    C2B    C1B    C5A      180.000    0.000   0
+ PNI      var_17   C2B    C1B    C5A    C6A        9.524   20.000   1
+ PNI      var_18   C1B    C5A    C4A    NA        -7.782   20.000   1
+ PNI      CONST_35 C5A    C4A    C3A    C2A      180.000    0.000   0
+ PNI      CONST_36 C4A    C3A    C2A    C1A        4.010    0.000   0
+ PNI      var_19   C5A    C4A    NA     NI        13.220   20.000   1
+ PNI      CONST_37 C4A    NA     C1A    C5D      139.229    0.000   0
+ PNI      CONST_38 C1B    C5A    C6A    C0A      159.311    0.000   0
+ PNI      CONST_39 C5A    C6A    C7A    C8A      180.000    0.000   0
+ PNI      CONST_40 C5A    C6A    C0A    C9A      180.000    0.000   0
+ PNI      CONST_41 C6A    C0A    C9A    NPA        0.000    0.000   0
+ PNI      CONST_42 C0A    C9A    NPA    C8A        0.000    0.000   0
+ PNI      var_20   C9A    NPA    CMA    HMA1      -0.230   20.000   1
+ PNI      CONST_43 C9A    NPA    C8A    C7A        0.000    0.000   0
+ PNI      CONST_44 NPA    C8A    C7A    C6A        0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PNI      plan-1    C1A       0.020
+ PNI      plan-1    NA        0.020
+ PNI      plan-1    C2A       0.020
+ PNI      plan-1    C5D       0.020
+ PNI      plan-1    C3A       0.020
+ PNI      plan-1    C4A       0.020
+ PNI      plan-1    H2A       0.020
+ PNI      plan-1    H3A       0.020
+ PNI      plan-1    C5A       0.020
+ PNI      plan-2    C5A       0.020
+ PNI      plan-2    C4A       0.020
+ PNI      plan-2    C6A       0.020
+ PNI      plan-2    C1B       0.020
+ PNI      plan-2    C7A       0.020
+ PNI      plan-2    C0A       0.020
+ PNI      plan-2    C8A       0.020
+ PNI      plan-2    NPA       0.020
+ PNI      plan-2    C9A       0.020
+ PNI      plan-2    H7A       0.020
+ PNI      plan-2    H8A       0.020
+ PNI      plan-2    CMA       0.020
+ PNI      plan-2    H9A       0.020
+ PNI      plan-2    H0A       0.020
+ PNI      plan-3    C1B       0.020
+ PNI      plan-3    C5A       0.020
+ PNI      plan-3    NB        0.020
+ PNI      plan-3    C2B       0.020
+ PNI      plan-3    C3B       0.020
+ PNI      plan-3    C4B       0.020
+ PNI      plan-3    H2B       0.020
+ PNI      plan-3    H3B       0.020
+ PNI      plan-3    C5B       0.020
+ PNI      plan-4    C5B       0.020
+ PNI      plan-4    C4B       0.020
+ PNI      plan-4    C6B       0.020
+ PNI      plan-4    C1C       0.020
+ PNI      plan-4    C7B       0.020
+ PNI      plan-4    C0B       0.020
+ PNI      plan-4    C8B       0.020
+ PNI      plan-4    NPB       0.020
+ PNI      plan-4    C9B       0.020
+ PNI      plan-4    H7B       0.020
+ PNI      plan-4    H8B       0.020
+ PNI      plan-4    CMB       0.020
+ PNI      plan-4    H9B       0.020
+ PNI      plan-4    H0B       0.020
+ PNI      plan-5    C1C       0.020
+ PNI      plan-5    C5B       0.020
+ PNI      plan-5    NC        0.020
+ PNI      plan-5    C2C       0.020
+ PNI      plan-5    C3C       0.020
+ PNI      plan-5    C4C       0.020
+ PNI      plan-5    H2C       0.020
+ PNI      plan-5    H3C       0.020
+ PNI      plan-5    C5C       0.020
+ PNI      plan-6    C5C       0.020
+ PNI      plan-6    C4C       0.020
+ PNI      plan-6    C6C       0.020
+ PNI      plan-6    C1D       0.020
+ PNI      plan-6    C7C       0.020
+ PNI      plan-6    C0C       0.020
+ PNI      plan-6    C8C       0.020
+ PNI      plan-6    NPC       0.020
+ PNI      plan-6    C9C       0.020
+ PNI      plan-6    H7C       0.020
+ PNI      plan-6    H8C       0.020
+ PNI      plan-6    CMC       0.020
+ PNI      plan-6    H9C       0.020
+ PNI      plan-6    H0C       0.020
+ PNI      plan-7    C1D       0.020
+ PNI      plan-7    C5C       0.020
+ PNI      plan-7    ND        0.020
+ PNI      plan-7    C2D       0.020
+ PNI      plan-7    C3D       0.020
+ PNI      plan-7    C4D       0.020
+ PNI      plan-7    H2D       0.020
+ PNI      plan-7    H3D       0.020
+ PNI      plan-7    C5D       0.020
+ PNI      plan-8    C5D       0.020
+ PNI      plan-8    C1A       0.020
+ PNI      plan-8    C4D       0.020
+ PNI      plan-8    C6D       0.020
+ PNI      plan-8    C7D       0.020
+ PNI      plan-8    C0D       0.020
+ PNI      plan-8    C8D       0.020
+ PNI      plan-8    C9D       0.020
+ PNI      plan-8    NPD       0.020
+ PNI      plan-8    H7D       0.020
+ PNI      plan-8    H8D       0.020
+ PNI      plan-8    H9D       0.020
+ PNI      plan-8    H0D       0.020
+ PNI      plan-8    CMD       0.020
+# ------------------------------------------------------

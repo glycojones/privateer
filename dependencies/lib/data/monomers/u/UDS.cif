@@ -1,0 +1,276 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UDS      UDS 'N-[(3-HYDROXYQUINOLIN-2-YL)CARBONYL]' non-polymer        31  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_UDS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ UDS           OXT    O    OC       -0.500      0.000    0.000    0.000
+ UDS           C      C    C         0.000     -1.210    0.291   -0.125
+ UDS           O      O    OC       -0.500     -1.541    1.416   -0.563
+ UDS           CA     C    CH1       0.000     -2.270   -0.713    0.250
+ UDS           HA     H    H         0.000     -2.149   -1.618   -0.361
+ UDS           CB     C    CH2       0.000     -2.128   -1.073    1.731
+ UDS           HB1C   H    H         0.000     -1.176   -1.585    1.891
+ UDS           HB2C   H    H         0.000     -2.948   -1.732    2.024
+ UDS           OG     O    OH1       0.000     -2.168    0.119    2.518
+ UDS           HG     H    H         0.000     -2.078   -0.110    3.453
+ UDS           N      N    NH1       0.000     -3.596   -0.135    0.013
+ UDS           H      H    H         0.000     -3.719    0.867    0.022
+ UDS           C11    C    C         0.000     -4.650   -0.942   -0.216
+ UDS           O1     O    O         0.000     -4.502   -2.148   -0.226
+ UDS           C2     C    CR6       0.000     -5.990   -0.358   -0.455
+ UDS           C3     C    CR6       0.000     -7.081   -1.214   -0.693
+ UDS           O3     O    OH1       0.000     -6.906   -2.560   -0.703
+ UDS           H3     H    H         0.000     -7.036   -2.908    0.190
+ UDS           C4     C    CR16      0.000     -8.334   -0.674   -0.918
+ UDS           H4     H    H         0.000     -9.190   -1.311   -1.103
+ UDS           C10    C    CR66      0.000     -8.465    0.724   -0.899
+ UDS           C5     C    CR16      0.000     -9.708    1.341   -1.120
+ UDS           H5     H    H         0.000    -10.588    0.739   -1.309
+ UDS           C9     C    CR66      0.000     -7.319    1.526   -0.652
+ UDS           N1     N    NRD6      0.000     -6.135    0.953   -0.442
+ UDS           C8     C    CR16      0.000     -7.457    2.928   -0.635
+ UDS           H8     H    H         0.000     -6.595    3.557   -0.448
+ UDS           C7     C    CR16      0.000     -8.675    3.489   -0.854
+ UDS           H7     H    H         0.000     -8.775    4.567   -0.840
+ UDS           C6     C    CR16      0.000     -9.799    2.699   -1.095
+ UDS           H6     H    H         0.000    -10.758    3.172   -1.265
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ UDS      OXT    n/a    C      START
+ UDS      C      OXT    CA     .
+ UDS      O      C      .      .
+ UDS      CA     C      N      .
+ UDS      HA     CA     .      .
+ UDS      CB     CA     OG     .
+ UDS      HB1C   CB     .      .
+ UDS      HB2C   CB     .      .
+ UDS      OG     CB     HG     .
+ UDS      HG     OG     .      .
+ UDS      N      CA     C11    .
+ UDS      H      N      .      .
+ UDS      C11    N      C2     .
+ UDS      O1     C11    .      .
+ UDS      C2     C11    C3     .
+ UDS      C3     C2     C4     .
+ UDS      O3     C3     H3     .
+ UDS      H3     O3     .      .
+ UDS      C4     C3     C10    .
+ UDS      H4     C4     .      .
+ UDS      C10    C4     C9     .
+ UDS      C5     C10    H5     .
+ UDS      H5     C5     .      .
+ UDS      C9     C10    C8     .
+ UDS      N1     C9     .      .
+ UDS      C8     C9     C7     .
+ UDS      H8     C8     .      .
+ UDS      C7     C8     C6     .
+ UDS      H7     C7     .      .
+ UDS      C6     C7     H6     .
+ UDS      H6     C6     .      END
+ UDS      N1     C2     .    ADD
+ UDS      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UDS       N1        C2        single    1.350     0.020     1.350     0.020     
+UDS       N1        C9        double    1.350     0.020     1.350     0.020     
+UDS       C3        C2        double    1.487     0.020     1.487     0.020     
+UDS       C2        C11       single    1.500     0.020     1.500     0.020     
+UDS       C4        C3        single    1.390     0.020     1.390     0.020     
+UDS       O3        C3        single    1.362     0.020     1.362     0.020     
+UDS       C10       C4        double    1.390     0.020     1.390     0.020     
+UDS       C5        C6        double    1.390     0.020     1.390     0.020     
+UDS       C5        C10       single    1.390     0.020     1.390     0.020     
+UDS       C6        C7        single    1.390     0.020     1.390     0.020     
+UDS       C7        C8        double    1.390     0.020     1.390     0.020     
+UDS       C8        C9        single    1.390     0.020     1.390     0.020     
+UDS       C9        C10       single    1.490     0.020     1.490     0.020     
+UDS       O1        C11       double    1.220     0.020     1.220     0.020     
+UDS       C11       N         single    1.330     0.020     1.330     0.020     
+UDS       N         CA        single    1.450     0.020     1.450     0.020     
+UDS       CA        C         single    1.500     0.020     1.500     0.020     
+UDS       CB        CA        single    1.524     0.020     1.524     0.020     
+UDS       O         C         deloc     1.250     0.020     1.250     0.020     
+UDS       C         OXT       deloc     1.250     0.020     1.250     0.020     
+UDS       OG        CB        single    1.432     0.020     1.432     0.020     
+UDS       H4        C4        single    1.082     0.013     0.975     0.010     
+UDS       H3        O3        single    0.970     0.012     0.839     0.014     
+UDS       H5        C5        single    1.082     0.013     0.975     0.010     
+UDS       H6        C6        single    1.082     0.013     0.975     0.010     
+UDS       H7        C7        single    1.082     0.013     0.975     0.010     
+UDS       H8        C8        single    1.082     0.013     0.975     0.010     
+UDS       H         N         single    1.016     0.010     0.899     0.007     
+UDS       HA        CA        single    1.089     0.010     0.989     0.005     
+UDS       HB1C      CB        single    1.089     0.010     0.989     0.005     
+UDS       HB2C      CB        single    1.089     0.010     0.989     0.005     
+UDS       HG        OG        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ UDS      OXT    C      O       123.000    3.000
+ UDS      OXT    C      CA      118.500    3.000
+ UDS      O      C      CA      118.500    3.000
+ UDS      C      CA     HA      108.810    3.000
+ UDS      C      CA     CB      109.470    3.000
+ UDS      C      CA     N       111.600    3.000
+ UDS      HA     CA     CB      108.340    3.000
+ UDS      HA     CA     N       108.550    3.000
+ UDS      CB     CA     N       110.000    3.000
+ UDS      CA     CB     HB1C    109.470    3.000
+ UDS      CA     CB     HB2C    109.470    3.000
+ UDS      CA     CB     OG      109.470    3.000
+ UDS      HB1C   CB     HB2C    107.900    3.000
+ UDS      HB1C   CB     OG      109.470    3.000
+ UDS      HB2C   CB     OG      109.470    3.000
+ UDS      CB     OG     HG      109.470    3.000
+ UDS      CA     N      H       118.500    3.000
+ UDS      CA     N      C11     121.500    3.000
+ UDS      H      N      C11     120.000    3.000
+ UDS      N      C11    O1      123.000    3.000
+ UDS      N      C11    C2      120.000    3.000
+ UDS      O1     C11    C2      120.500    3.000
+ UDS      C11    C2     C3      120.000    3.000
+ UDS      C11    C2     N1      120.000    3.000
+ UDS      C3     C2     N1      120.000    3.000
+ UDS      C2     C3     O3      120.000    3.000
+ UDS      C2     C3     C4      120.000    3.000
+ UDS      O3     C3     C4      120.000    3.000
+ UDS      C3     O3     H3      109.470    3.000
+ UDS      C3     C4     H4      120.000    3.000
+ UDS      C3     C4     C10     120.000    3.000
+ UDS      H4     C4     C10     120.000    3.000
+ UDS      C4     C10    C5      120.000    3.000
+ UDS      C4     C10    C9      120.000    3.000
+ UDS      C5     C10    C9      120.000    3.000
+ UDS      C10    C5     H5      120.000    3.000
+ UDS      C10    C5     C6      120.000    3.000
+ UDS      H5     C5     C6      120.000    3.000
+ UDS      C10    C9     N1      120.000    3.000
+ UDS      C10    C9     C8      120.000    3.000
+ UDS      N1     C9     C8      120.000    3.000
+ UDS      C9     N1     C2      120.000    3.000
+ UDS      C9     C8     H8      120.000    3.000
+ UDS      C9     C8     C7      120.000    3.000
+ UDS      H8     C8     C7      120.000    3.000
+ UDS      C8     C7     H7      120.000    3.000
+ UDS      C8     C7     C6      120.000    3.000
+ UDS      H7     C7     C6      120.000    3.000
+ UDS      C7     C6     H6      120.000    3.000
+ UDS      C7     C6     C5      120.000    3.000
+ UDS      H6     C6     C5      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ UDS      var_1    OXT    C      CA     N       -179.999   20.000   3
+ UDS      var_2    C      CA     CB     OG        54.996   20.000   3
+ UDS      var_3    CA     CB     OG     HG      -179.990   20.000   1
+ UDS      var_4    C      CA     N      C11      155.017   20.000   3
+ UDS      CONST_1  CA     N      C11    C2       180.000    0.000   0
+ UDS      var_5    N      C11    C2     C3       179.979   20.000   1
+ UDS      CONST_2  C11    C2     C3     C4       180.000    0.000   0
+ UDS      var_6    C2     C3     O3     H3        89.977   20.000   1
+ UDS      CONST_3  C2     C3     C4     C10        0.000    0.000   0
+ UDS      CONST_4  C3     C4     C10    C9         0.000    0.000   0
+ UDS      CONST_5  C4     C10    C5     C6       180.000    0.000   0
+ UDS      CONST_6  C10    C5     C6     C7         0.000    0.000   0
+ UDS      CONST_7  C4     C10    C9     C8       180.000    0.000   0
+ UDS      CONST_8  C10    C9     N1     C2         0.000    0.000   0
+ UDS      CONST_9  C9     N1     C2     C11      180.000    0.000   0
+ UDS      CONST_10 C10    C9     C8     C7         0.000    0.000   0
+ UDS      CONST_11 C9     C8     C7     C6         0.000    0.000   0
+ UDS      CONST_12 C8     C7     C6     C5         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ UDS      chir_01  CA     N      C      CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ UDS      plan-1    N1        0.020
+ UDS      plan-1    C2        0.020
+ UDS      plan-1    C9        0.020
+ UDS      plan-1    C3        0.020
+ UDS      plan-1    C4        0.020
+ UDS      plan-1    C11       0.020
+ UDS      plan-1    O3        0.020
+ UDS      plan-1    C10       0.020
+ UDS      plan-1    H4        0.020
+ UDS      plan-1    C5        0.020
+ UDS      plan-1    C6        0.020
+ UDS      plan-1    H5        0.020
+ UDS      plan-1    C7        0.020
+ UDS      plan-1    C8        0.020
+ UDS      plan-1    H6        0.020
+ UDS      plan-1    H7        0.020
+ UDS      plan-1    H8        0.020
+ UDS      plan-2    C11       0.020
+ UDS      plan-2    C2        0.020
+ UDS      plan-2    O1        0.020
+ UDS      plan-2    N         0.020
+ UDS      plan-2    H         0.020
+ UDS      plan-3    N         0.020
+ UDS      plan-3    C11       0.020
+ UDS      plan-3    CA        0.020
+ UDS      plan-3    H         0.020
+ UDS      plan-4    C         0.020
+ UDS      plan-4    CA        0.020
+ UDS      plan-4    O         0.020
+ UDS      plan-4    OXT       0.020
+# ------------------------------------------------------

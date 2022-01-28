@@ -1,0 +1,315 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NOR      NOR 'CYCLOHEXYL-NORSTATINE               ' non-polymer        42  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NOR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NOR           O1     O    O        -0.500      0.000    0.000    0.000
+ NOR           C      C    C         0.000     -1.041   -0.418   -0.554
+ NOR           O2     O    O2       -0.500     -1.156   -1.631   -0.837
+ NOR           CM     C    CH1       0.000     -0.050   -2.584   -0.515
+ NOR           HM     H    H         0.000      0.485   -2.213    0.370
+ NOR           CM2    C    CH3       0.000      0.930   -2.642   -1.688
+ NOR           HM23   H    H         0.000      1.291   -1.668   -1.897
+ NOR           HM22   H    H         0.000      1.744   -3.273   -1.439
+ NOR           HM21   H    H         0.000      0.437   -3.024   -2.544
+ NOR           CM1    C    CH3       0.000     -0.570   -3.992   -0.216
+ NOR           HM13   H    H         0.000      0.243   -4.624    0.034
+ NOR           HM12   H    H         0.000     -1.249   -3.953    0.596
+ NOR           HM11   H    H         0.000     -1.065   -4.376   -1.070
+ NOR           CH     C    CH1       0.000     -2.158    0.541   -0.879
+ NOR           HC     H    H         0.000     -2.400    0.472   -1.949
+ NOR           OH     O    OH1       0.000     -1.746    1.874   -0.569
+ NOR           HH     H    H         0.000     -1.534    1.935    0.372
+ NOR           CA     C    CH1       0.000     -3.395    0.183   -0.053
+ NOR           HA     H    H         0.000     -3.711   -0.842   -0.291
+ NOR           N      N    NH2       0.000     -3.072    0.276    1.377
+ NOR           HN2    H    H         0.000     -3.065   -0.556    1.955
+ NOR           HN1    H    H         0.000     -2.853    1.173    1.796
+ NOR           CB     C    CH2       0.000     -4.527    1.157   -0.384
+ NOR           HB1    H    H         0.000     -4.702    1.159   -1.462
+ NOR           HB2    H    H         0.000     -4.249    2.162   -0.060
+ NOR           CG     C    CH1       0.000     -5.803    0.720    0.340
+ NOR           HG     H    H         0.000     -5.597    0.619    1.415
+ NOR           CD2    C    CH2       0.000     -6.895    1.770    0.127
+ NOR           HD21   H    H         0.000     -7.098    1.871   -0.941
+ NOR           HD22   H    H         0.000     -6.559    2.730    0.525
+ NOR           CE2    C    CH2       0.000     -8.170    1.333    0.851
+ NOR           HE21   H    H         0.000     -8.949    2.083    0.699
+ NOR           HE22   H    H         0.000     -7.966    1.233    1.919
+ NOR           CZ     C    CH2       0.000     -8.639   -0.012    0.292
+ NOR           HZ1    H    H         0.000     -8.844    0.090   -0.776
+ NOR           HZ2    H    H         0.000     -9.550   -0.322    0.808
+ NOR           CE1    C    CH2       0.000     -7.546   -1.062    0.506
+ NOR           HE11   H    H         0.000     -7.881   -2.022    0.108
+ NOR           HE12   H    H         0.000     -7.343   -1.163    1.574
+ NOR           CD1    C    CH2       0.000     -6.271   -0.625   -0.218
+ NOR           HD12   H    H         0.000     -6.476   -0.525   -1.286
+ NOR           HD11   H    H         0.000     -5.492   -1.375   -0.066
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NOR      O1     n/a    C      START
+ NOR      C      O1     CH     .
+ NOR      O2     C      CM     .
+ NOR      CM     O2     CM1    .
+ NOR      HM     CM     .      .
+ NOR      CM2    CM     HM21   .
+ NOR      HM23   CM2    .      .
+ NOR      HM22   CM2    .      .
+ NOR      HM21   CM2    .      .
+ NOR      CM1    CM     HM11   .
+ NOR      HM13   CM1    .      .
+ NOR      HM12   CM1    .      .
+ NOR      HM11   CM1    .      .
+ NOR      CH     C      CA     .
+ NOR      HC     CH     .      .
+ NOR      OH     CH     HH     .
+ NOR      HH     OH     .      .
+ NOR      CA     CH     CB     .
+ NOR      HA     CA     .      .
+ NOR      N      CA     HN1    .
+ NOR      HN2    N      .      .
+ NOR      HN1    N      .      .
+ NOR      CB     CA     CG     .
+ NOR      HB1    CB     .      .
+ NOR      HB2    CB     .      .
+ NOR      CG     CB     CD2    .
+ NOR      HG     CG     .      .
+ NOR      CD2    CG     CE2    .
+ NOR      HD21   CD2    .      .
+ NOR      HD22   CD2    .      .
+ NOR      CE2    CD2    CZ     .
+ NOR      HE21   CE2    .      .
+ NOR      HE22   CE2    .      .
+ NOR      CZ     CE2    CE1    .
+ NOR      HZ1    CZ     .      .
+ NOR      HZ2    CZ     .      .
+ NOR      CE1    CZ     CD1    .
+ NOR      HE11   CE1    .      .
+ NOR      HE12   CE1    .      .
+ NOR      CD1    CE1    HD11   .
+ NOR      HD12   CD1    .      .
+ NOR      HD11   CD1    .      END
+ NOR      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NOR       N         CA        single    1.450     0.020     1.450     0.020     
+NOR       HN1       N         single    1.036     0.016     0.914     0.007     
+NOR       HN2       N         single    1.036     0.016     0.914     0.007     
+NOR       CB        CA        single    1.524     0.020     1.524     0.020     
+NOR       CA        CH        single    1.524     0.020     1.524     0.020     
+NOR       HA        CA        single    1.089     0.010     0.989     0.005     
+NOR       CG        CB        single    1.524     0.020     1.524     0.020     
+NOR       HB1       CB        single    1.089     0.010     0.989     0.005     
+NOR       HB2       CB        single    1.089     0.010     0.989     0.005     
+NOR       CG        CD1       single    1.524     0.020     1.524     0.020     
+NOR       CD2       CG        single    1.524     0.020     1.524     0.020     
+NOR       HG        CG        single    1.089     0.010     0.989     0.005     
+NOR       CD1       CE1       single    1.524     0.020     1.524     0.020     
+NOR       HD11      CD1       single    1.089     0.010     0.989     0.005     
+NOR       HD12      CD1       single    1.089     0.010     0.989     0.005     
+NOR       CE2       CD2       single    1.524     0.020     1.524     0.020     
+NOR       HD21      CD2       single    1.089     0.010     0.989     0.005     
+NOR       HD22      CD2       single    1.089     0.010     0.989     0.005     
+NOR       CE1       CZ        single    1.524     0.020     1.524     0.020     
+NOR       HE11      CE1       single    1.089     0.010     0.989     0.005     
+NOR       HE12      CE1       single    1.089     0.010     0.989     0.005     
+NOR       CZ        CE2       single    1.524     0.020     1.524     0.020     
+NOR       HE21      CE2       single    1.089     0.010     0.989     0.005     
+NOR       HE22      CE2       single    1.089     0.010     0.989     0.005     
+NOR       HZ1       CZ        single    1.089     0.010     0.989     0.005     
+NOR       HZ2       CZ        single    1.089     0.010     0.989     0.005     
+NOR       OH        CH        single    1.432     0.020     1.432     0.020     
+NOR       CH        C         single    1.500     0.020     1.500     0.020     
+NOR       HC        CH        single    1.089     0.010     0.989     0.005     
+NOR       HH        OH        single    0.970     0.012     0.839     0.014     
+NOR       C         O1        deloc     1.220     0.020     1.220     0.020     
+NOR       O2        C         deloc     1.454     0.020     1.454     0.020     
+NOR       CM        O2        single    1.426     0.020     1.426     0.020     
+NOR       CM1       CM        single    1.524     0.020     1.524     0.020     
+NOR       CM2       CM        single    1.524     0.020     1.524     0.020     
+NOR       HM        CM        single    1.089     0.010     0.989     0.005     
+NOR       HM11      CM1       single    1.089     0.010     0.989     0.005     
+NOR       HM12      CM1       single    1.089     0.010     0.989     0.005     
+NOR       HM13      CM1       single    1.089     0.010     0.989     0.005     
+NOR       HM21      CM2       single    1.089     0.010     0.989     0.005     
+NOR       HM22      CM2       single    1.089     0.010     0.989     0.005     
+NOR       HM23      CM2       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NOR      O1     C      O2      119.000    3.000
+ NOR      O1     C      CH      120.500    3.000
+ NOR      O2     C      CH      120.000    3.000
+ NOR      C      O2     CM      111.800    3.000
+ NOR      O2     CM     HM      109.470    3.000
+ NOR      O2     CM     CM2     109.470    3.000
+ NOR      O2     CM     CM1     109.470    3.000
+ NOR      HM     CM     CM2     108.340    3.000
+ NOR      HM     CM     CM1     108.340    3.000
+ NOR      CM2    CM     CM1     111.000    3.000
+ NOR      CM     CM2    HM23    109.470    3.000
+ NOR      CM     CM2    HM22    109.470    3.000
+ NOR      CM     CM2    HM21    109.470    3.000
+ NOR      HM23   CM2    HM22    109.470    3.000
+ NOR      HM23   CM2    HM21    109.470    3.000
+ NOR      HM22   CM2    HM21    109.470    3.000
+ NOR      CM     CM1    HM13    109.470    3.000
+ NOR      CM     CM1    HM12    109.470    3.000
+ NOR      CM     CM1    HM11    109.470    3.000
+ NOR      HM13   CM1    HM12    109.470    3.000
+ NOR      HM13   CM1    HM11    109.470    3.000
+ NOR      HM12   CM1    HM11    109.470    3.000
+ NOR      C      CH     HC      108.810    3.000
+ NOR      C      CH     OH      109.470    3.000
+ NOR      C      CH     CA      109.470    3.000
+ NOR      HC     CH     OH      109.470    3.000
+ NOR      HC     CH     CA      108.340    3.000
+ NOR      OH     CH     CA      109.470    3.000
+ NOR      CH     OH     HH      109.470    3.000
+ NOR      CH     CA     HA      108.340    3.000
+ NOR      CH     CA     N       109.470    3.000
+ NOR      CH     CA     CB      111.000    3.000
+ NOR      HA     CA     N       109.470    3.000
+ NOR      HA     CA     CB      108.340    3.000
+ NOR      N      CA     CB      109.470    3.000
+ NOR      CA     N      HN2     120.000    3.000
+ NOR      CA     N      HN1     120.000    3.000
+ NOR      HN2    N      HN1     120.000    3.000
+ NOR      CA     CB     HB1     109.470    3.000
+ NOR      CA     CB     HB2     109.470    3.000
+ NOR      CA     CB     CG      111.000    3.000
+ NOR      HB1    CB     HB2     107.900    3.000
+ NOR      HB1    CB     CG      109.470    3.000
+ NOR      HB2    CB     CG      109.470    3.000
+ NOR      CB     CG     HG      108.340    3.000
+ NOR      CB     CG     CD2     109.470    3.000
+ NOR      CB     CG     CD1     109.470    3.000
+ NOR      HG     CG     CD2     108.340    3.000
+ NOR      HG     CG     CD1     108.340    3.000
+ NOR      CD2    CG     CD1     109.470    3.000
+ NOR      CG     CD2    HD21    109.470    3.000
+ NOR      CG     CD2    HD22    109.470    3.000
+ NOR      CG     CD2    CE2     111.000    3.000
+ NOR      HD21   CD2    HD22    107.900    3.000
+ NOR      HD21   CD2    CE2     109.470    3.000
+ NOR      HD22   CD2    CE2     109.470    3.000
+ NOR      CD2    CE2    HE21    109.470    3.000
+ NOR      CD2    CE2    HE22    109.470    3.000
+ NOR      CD2    CE2    CZ      111.000    3.000
+ NOR      HE21   CE2    HE22    107.900    3.000
+ NOR      HE21   CE2    CZ      109.470    3.000
+ NOR      HE22   CE2    CZ      109.470    3.000
+ NOR      CE2    CZ     HZ1     109.470    3.000
+ NOR      CE2    CZ     HZ2     109.470    3.000
+ NOR      CE2    CZ     CE1     111.000    3.000
+ NOR      HZ1    CZ     HZ2     107.900    3.000
+ NOR      HZ1    CZ     CE1     109.470    3.000
+ NOR      HZ2    CZ     CE1     109.470    3.000
+ NOR      CZ     CE1    HE11    109.470    3.000
+ NOR      CZ     CE1    HE12    109.470    3.000
+ NOR      CZ     CE1    CD1     111.000    3.000
+ NOR      HE11   CE1    HE12    107.900    3.000
+ NOR      HE11   CE1    CD1     109.470    3.000
+ NOR      HE12   CE1    CD1     109.470    3.000
+ NOR      CE1    CD1    HD12    109.470    3.000
+ NOR      CE1    CD1    HD11    109.470    3.000
+ NOR      CE1    CD1    CG      111.000    3.000
+ NOR      HD12   CD1    HD11    107.900    3.000
+ NOR      HD12   CD1    CG      109.470    3.000
+ NOR      HD11   CD1    CG      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NOR      var_1    O1     C      O2     CM        -0.056   20.000   1
+ NOR      var_2    C      O2     CM     CM1      149.425   20.000   1
+ NOR      var_3    O2     CM     CM2    HM21     -63.271   20.000   3
+ NOR      var_4    O2     CM     CM1    HM11      61.677   20.000   3
+ NOR      var_5    O1     C      CH     CA      -114.980   20.000   3
+ NOR      var_6    C      CH     OH     HH       -60.091   20.000   1
+ NOR      var_7    C      CH     CA     CB      -179.978   20.000   3
+ NOR      var_8    CH     CA     N      HN1       66.328   20.000   1
+ NOR      var_9    CH     CA     CB     CG       174.643   20.000   3
+ NOR      var_10   CA     CB     CG     CD2      174.188   20.000   3
+ NOR      var_11   CB     CG     CD1    CE1      180.000   20.000   3
+ NOR      var_12   CB     CG     CD2    CE2      180.000   20.000   3
+ NOR      var_13   CG     CD2    CE2    CZ       -60.000   20.000   3
+ NOR      var_14   CD2    CE2    CZ     CE1       60.000   20.000   3
+ NOR      var_15   CE2    CZ     CE1    CD1      -60.000   20.000   3
+ NOR      var_16   CZ     CE1    CD1    CG        60.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NOR      chir_01  CA     N      CB     CH        negativ
+ NOR      chir_02  CG     CB     CD1    CD2       positiv
+ NOR      chir_03  CH     CA     OH     C         negativ
+ NOR      chir_04  CM     O2     CM1    CM2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NOR      plan-1    N         0.020
+ NOR      plan-1    CA        0.020
+ NOR      plan-1    HN1       0.020
+ NOR      plan-1    HN2       0.020
+ NOR      plan-2    C         0.020
+ NOR      plan-2    CH        0.020
+ NOR      plan-2    O1        0.020
+ NOR      plan-2    O2        0.020
+# ------------------------------------------------------

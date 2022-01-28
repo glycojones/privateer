@@ -1,0 +1,372 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+46D      46D '"(4AR,6R,7S,8R,8AR)-8-((5R,6R)-3-CAR' pyranose           49  29 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_46D
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 46D           C1     C    CH1       0.000      0.000    0.000    0.000
+ 46D           H1     H    H         0.000      0.328   -0.614   -0.850
+ 46D           C2     C    CH1       0.000     -1.027   -0.775    0.825
+ 46D           H2     H    H         0.000     -1.263   -0.199    1.731
+ 46D           O2     O    OH1       0.000     -0.482   -2.037    1.208
+ 46D           HO2    H    H         0.000      0.470   -1.947    1.348
+ 46D           C3     C    CH1       0.000     -2.315   -1.002    0.034
+ 46D           H3     H    H         0.000     -2.132   -1.754   -0.747
+ 46D           O3     O    OH1       0.000     -3.333   -1.479    0.916
+ 46D           HO3    H    H         0.000     -3.472   -0.836    1.623
+ 46D           C4     C    CH1       0.000     -2.808    0.291   -0.617
+ 46D           H4     H    H         0.000     -3.213    0.958    0.157
+ 46D           C5     C    CH1       0.000     -1.671    0.995   -1.347
+ 46D           H5     H    H         0.000     -1.358    0.411   -2.224
+ 46D           C6     C    C         0.000     -2.071    2.375   -1.756
+ 46D           O6B    O    OC       -0.500     -1.978    3.394   -1.036
+ 46D           O6A    O    OC       -0.500     -2.518    2.377   -2.924
+ 46D           OP1    O    O2        0.000     -3.829   -0.020   -1.553
+ 46D           CP1    C    CH1       0.000     -5.062    0.604   -1.204
+ 46D           HP1    H    H         0.000     -4.924    1.695   -1.206
+ 46D           CP2    C    CH1       0.000     -6.115    0.232   -2.253
+ 46D           HP2    H    H         0.000     -5.796    0.593   -3.241
+ 46D           OP2    O    OH1       0.000     -6.235   -1.194   -2.275
+ 46D           H7     H    H         0.000     -7.084   -1.440   -2.666
+ 46D           CP3    C    CH1       0.000     -7.467    0.854   -1.888
+ 46D           HP3    H    H         0.000     -7.393    1.947   -1.972
+ 46D           OP3    O    OH1       0.000     -8.476    0.387   -2.777
+ 46D           H6     H    H         0.000     -8.762    1.114   -3.347
+ 46D           CP4    C    CH1       0.000     -7.847    0.488   -0.454
+ 46D           HP4    H    H         0.000     -8.061   -0.589   -0.397
+ 46D           CP5    C    CH1       0.000     -6.700    0.828    0.494
+ 46D           HP5    H    H         0.000     -6.543    1.916    0.476
+ 46D           OP5    O    O2        0.000     -5.487    0.190    0.099
+ 46D           OP4    O    O2        0.000     -9.006    1.223   -0.058
+ 46D           CP7    C    CT        0.000     -9.284    1.097    1.338
+ 46D           CP8    C    CH3       0.000     -9.324    2.473    1.988
+ 46D           HP83   H    H         0.000     -9.487    2.367    3.029
+ 46D           HP82   H    H         0.000     -8.402    2.968    1.823
+ 46D           HP81   H    H         0.000    -10.110    3.041    1.563
+ 46D           OP6    O    O2        0.000     -8.468    0.179    2.063
+ 46D           CP6    C    CH2       0.000     -7.066    0.415    1.920
+ 46D           HP62   H    H         0.000     -6.538   -0.504    2.181
+ 46D           HP61   H    H         0.000     -6.781    1.207    2.615
+ 46D           CP9    C    C         0.000    -10.640    0.466    1.399
+ 46D           OP7    O    OC       -0.500    -11.313    0.113    0.405
+ 46D           OP8    O    OC       -0.500    -11.015    0.340    2.585
+ 46D           O1     O    OH1       0.000      1.115    0.285    0.842
+ 46D           HO1    H    H         0.000      0.802    0.475    1.737
+ 46D           O5     O    O2        0.000     -0.567    1.216   -0.480
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 46D      C1     n/a    O5     START
+ 46D      H1     C1     .      .
+ 46D      C2     C1     C3     .
+ 46D      H2     C2     .      .
+ 46D      O2     C2     HO2    .
+ 46D      HO2    O2     .      .
+ 46D      C3     C2     C4     .
+ 46D      H3     C3     .      .
+ 46D      O3     C3     HO3    .
+ 46D      HO3    O3     .      .
+ 46D      C4     C3     OP1    .
+ 46D      H4     C4     .      .
+ 46D      C5     C4     C6     .
+ 46D      H5     C5     .      .
+ 46D      C6     C5     O6A    .
+ 46D      O6B    C6     .      .
+ 46D      O6A    C6     .      .
+ 46D      OP1    C4     CP1    .
+ 46D      CP1    OP1    CP2    .
+ 46D      HP1    CP1    .      .
+ 46D      CP2    CP1    CP3    .
+ 46D      HP2    CP2    .      .
+ 46D      OP2    CP2    H7     .
+ 46D      H7     OP2    .      .
+ 46D      CP3    CP2    CP4    .
+ 46D      HP3    CP3    .      .
+ 46D      OP3    CP3    H6     .
+ 46D      H6     OP3    .      .
+ 46D      CP4    CP3    OP4    .
+ 46D      HP4    CP4    .      .
+ 46D      CP5    CP4    OP5    .
+ 46D      HP5    CP5    .      .
+ 46D      OP5    CP5    .      .
+ 46D      OP4    CP4    CP7    .
+ 46D      CP7    OP4    CP9    .
+ 46D      CP8    CP7    HP81   .
+ 46D      HP83   CP8    .      .
+ 46D      HP82   CP8    .      .
+ 46D      HP81   CP8    .      .
+ 46D      OP6    CP7    CP6    .
+ 46D      CP6    OP6    HP61   .
+ 46D      HP62   CP6    .      .
+ 46D      HP61   CP6    .      .
+ 46D      CP9    CP7    OP8    .
+ 46D      OP7    CP9    .      .
+ 46D      OP8    CP9    .      .
+ 46D      O1     C1     HO1    .
+ 46D      HO1    O1     .      .
+ 46D      O5     C1     .      END
+ 46D      C5     O5     .    ADD
+ 46D      CP1    OP5    .    ADD
+ 46D      CP5    CP6    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+46D       O6A       C6        deloc     1.250     0.020     1.250     0.020     
+46D       O6B       C6        deloc     1.250     0.020     1.250     0.020     
+46D       C6        C5        single    1.500     0.020     1.500     0.020     
+46D       C5        O5        single    1.426     0.020     1.426     0.020     
+46D       C5        C4        single    1.524     0.020     1.524     0.020     
+46D       H5        C5        single    1.089     0.010     0.989     0.005     
+46D       O5        C1        single    1.426     0.020     1.426     0.020     
+46D       C2        C1        single    1.524     0.020     1.524     0.020     
+46D       O1        C1        single    1.432     0.020     1.432     0.020     
+46D       H1        C1        single    1.089     0.010     0.989     0.005     
+46D       O2        C2        single    1.432     0.020     1.432     0.020     
+46D       C3        C2        single    1.524     0.020     1.524     0.020     
+46D       H2        C2        single    1.089     0.010     0.989     0.005     
+46D       HO2       O2        single    0.970     0.012     0.839     0.014     
+46D       O3        C3        single    1.432     0.020     1.432     0.020     
+46D       C4        C3        single    1.524     0.020     1.524     0.020     
+46D       H3        C3        single    1.089     0.010     0.989     0.005     
+46D       HO3       O3        single    0.970     0.012     0.839     0.014     
+46D       OP1       C4        single    1.426     0.020     1.426     0.020     
+46D       H4        C4        single    1.089     0.010     0.989     0.005     
+46D       CP1       OP1       single    1.426     0.020     1.426     0.020     
+46D       CP1       OP5       single    1.426     0.020     1.426     0.020     
+46D       CP2       CP1       single    1.524     0.020     1.524     0.020     
+46D       HP1       CP1       single    1.089     0.010     0.989     0.005     
+46D       OP5       CP5       single    1.426     0.020     1.426     0.020     
+46D       CP5       CP6       single    1.524     0.020     1.524     0.020     
+46D       CP5       CP4       single    1.524     0.020     1.524     0.020     
+46D       HP5       CP5       single    1.089     0.010     0.989     0.005     
+46D       CP6       OP6       single    1.426     0.020     1.426     0.020     
+46D       HP61      CP6       single    1.089     0.010     0.989     0.005     
+46D       HP62      CP6       single    1.089     0.010     0.989     0.005     
+46D       OP6       CP7       single    1.426     0.020     1.426     0.020     
+46D       CP9       CP7       single    1.507     0.020     1.507     0.020     
+46D       CP8       CP7       single    1.524     0.020     1.524     0.020     
+46D       CP7       OP4       single    1.426     0.020     1.426     0.020     
+46D       OP7       CP9       deloc     1.250     0.020     1.250     0.020     
+46D       OP8       CP9       deloc     1.250     0.020     1.250     0.020     
+46D       HP81      CP8       single    1.089     0.010     0.989     0.005     
+46D       HP82      CP8       single    1.089     0.010     0.989     0.005     
+46D       HP83      CP8       single    1.089     0.010     0.989     0.005     
+46D       OP4       CP4       single    1.426     0.020     1.426     0.020     
+46D       CP4       CP3       single    1.524     0.020     1.524     0.020     
+46D       HP4       CP4       single    1.089     0.010     0.989     0.005     
+46D       OP3       CP3       single    1.432     0.020     1.432     0.020     
+46D       CP3       CP2       single    1.524     0.020     1.524     0.020     
+46D       HP3       CP3       single    1.089     0.010     0.989     0.005     
+46D       H6        OP3       single    0.970     0.012     0.839     0.014     
+46D       OP2       CP2       single    1.432     0.020     1.432     0.020     
+46D       HP2       CP2       single    1.089     0.010     0.989     0.005     
+46D       H7        OP2       single    0.970     0.012     0.839     0.014     
+46D       HO1       O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 46D      H1     C1     C2      108.340    3.000
+ 46D      H1     C1     O1      109.470    3.000
+ 46D      C2     C1     O1      109.470    3.000
+ 46D      H1     C1     O5      109.470    3.000
+ 46D      C2     C1     O5      109.470    3.000
+ 46D      O1     C1     O5      109.470    3.000
+ 46D      C1     C2     H2      108.340    3.000
+ 46D      C1     C2     O2      109.470    3.000
+ 46D      C1     C2     C3      111.000    3.000
+ 46D      H2     C2     O2      109.470    3.000
+ 46D      H2     C2     C3      108.340    3.000
+ 46D      O2     C2     C3      109.470    3.000
+ 46D      C2     O2     HO2     109.470    3.000
+ 46D      C2     C3     H3      108.340    3.000
+ 46D      C2     C3     O3      109.470    3.000
+ 46D      C2     C3     C4      111.000    3.000
+ 46D      H3     C3     O3      109.470    3.000
+ 46D      H3     C3     C4      108.340    3.000
+ 46D      O3     C3     C4      109.470    3.000
+ 46D      C3     O3     HO3     109.470    3.000
+ 46D      C3     C4     H4      108.340    3.000
+ 46D      C3     C4     C5      111.000    3.000
+ 46D      C3     C4     OP1     109.470    3.000
+ 46D      H4     C4     C5      108.340    3.000
+ 46D      H4     C4     OP1     109.470    3.000
+ 46D      C5     C4     OP1     109.470    3.000
+ 46D      C4     C5     H5      108.340    3.000
+ 46D      C4     C5     C6      109.470    3.000
+ 46D      C4     C5     O5      109.470    3.000
+ 46D      H5     C5     C6      108.810    3.000
+ 46D      H5     C5     O5      109.470    3.000
+ 46D      C6     C5     O5      109.470    3.000
+ 46D      C5     C6     O6B     118.500    3.000
+ 46D      C5     C6     O6A     118.500    3.000
+ 46D      O6B    C6     O6A     123.000    3.000
+ 46D      C4     OP1    CP1     111.800    3.000
+ 46D      OP1    CP1    HP1     109.470    3.000
+ 46D      OP1    CP1    CP2     109.470    3.000
+ 46D      OP1    CP1    OP5     109.470    3.000
+ 46D      HP1    CP1    CP2     108.340    3.000
+ 46D      HP1    CP1    OP5     109.470    3.000
+ 46D      CP2    CP1    OP5     109.470    3.000
+ 46D      CP1    CP2    HP2     108.340    3.000
+ 46D      CP1    CP2    OP2     109.470    3.000
+ 46D      CP1    CP2    CP3     111.000    3.000
+ 46D      HP2    CP2    OP2     109.470    3.000
+ 46D      HP2    CP2    CP3     108.340    3.000
+ 46D      OP2    CP2    CP3     109.470    3.000
+ 46D      CP2    OP2    H7      109.470    3.000
+ 46D      CP2    CP3    HP3     108.340    3.000
+ 46D      CP2    CP3    OP3     109.470    3.000
+ 46D      CP2    CP3    CP4     111.000    3.000
+ 46D      HP3    CP3    OP3     109.470    3.000
+ 46D      HP3    CP3    CP4     108.340    3.000
+ 46D      OP3    CP3    CP4     109.470    3.000
+ 46D      CP3    OP3    H6      109.470    3.000
+ 46D      CP3    CP4    HP4     108.340    3.000
+ 46D      CP3    CP4    CP5     111.000    3.000
+ 46D      CP3    CP4    OP4     109.470    3.000
+ 46D      HP4    CP4    CP5     108.340    3.000
+ 46D      HP4    CP4    OP4     109.470    3.000
+ 46D      CP5    CP4    OP4     109.470    3.000
+ 46D      CP4    CP5    HP5     108.340    3.000
+ 46D      CP4    CP5    OP5     109.470    3.000
+ 46D      CP4    CP5    CP6     111.000    3.000
+ 46D      HP5    CP5    OP5     109.470    3.000
+ 46D      HP5    CP5    CP6     108.340    3.000
+ 46D      OP5    CP5    CP6     109.470    3.000
+ 46D      CP5    OP5    CP1     111.800    3.000
+ 46D      CP4    OP4    CP7     111.800    3.000
+ 46D      OP4    CP7    OP6     109.500    3.000
+ 46D      OP4    CP7    CP8     109.470    3.000
+ 46D      OP4    CP7    CP9     109.470    3.000
+ 46D      OP6    CP7    CP8     109.470    3.000
+ 46D      OP6    CP7    CP9     109.470    3.000
+ 46D      CP8    CP7    CP9     109.470    3.000
+ 46D      CP7    OP6    CP6     111.800    3.000
+ 46D      OP6    CP6    HP62    109.470    3.000
+ 46D      OP6    CP6    HP61    109.470    3.000
+ 46D      OP6    CP6    CP5     109.470    3.000
+ 46D      HP62   CP6    HP61    107.900    3.000
+ 46D      HP62   CP6    CP5     109.470    3.000
+ 46D      HP61   CP6    CP5     109.470    3.000
+ 46D      CP7    CP8    HP83    109.470    3.000
+ 46D      CP7    CP8    HP82    109.470    3.000
+ 46D      CP7    CP8    HP81    109.470    3.000
+ 46D      HP83   CP8    HP82    109.470    3.000
+ 46D      HP83   CP8    HP81    109.470    3.000
+ 46D      HP82   CP8    HP81    109.470    3.000
+ 46D      CP7    CP9    OP7     118.500    3.000
+ 46D      CP7    CP9    OP8     118.500    3.000
+ 46D      OP7    CP9    OP8     123.000    3.000
+ 46D      C1     O1     HO1     109.470    3.000
+ 46D      C1     O5     C5      111.800    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 46D      var_1    O5     C1     C2     C3        60.000   20.000   3
+ 46D      var_2    C1     C2     O2     HO2       33.198   20.000   1
+ 46D      var_3    C1     C2     C3     C4       -60.000   20.000   3
+ 46D      var_4    C2     C3     O3     HO3       58.427   20.000   1
+ 46D      var_5    C2     C3     C4     OP1      180.000   20.000   3
+ 46D      var_6    C3     C4     C5     C6       180.000   20.000   3
+ 46D      var_7    C4     C5     O5     C1        60.000   20.000   1
+ 46D      var_8    C4     C5     C6     O6A      -93.614   20.000   3
+ 46D      var_9    C3     C4     OP1    CP1      118.902   20.000   1
+ 46D      var_10   C4     OP1    CP1    CP2      179.847   20.000   1
+ 46D      var_11   OP1    CP1    OP5    CP5      180.000   20.000   1
+ 46D      var_12   OP1    CP1    CP2    CP3      180.000   20.000   3
+ 46D      var_13   CP1    CP2    OP2    H7       159.407   20.000   1
+ 46D      var_14   CP1    CP2    CP3    CP4      -60.000   20.000   3
+ 46D      var_15   CP2    CP3    OP3    H6      -110.594   20.000   1
+ 46D      var_16   CP2    CP3    CP4    OP4      180.000   20.000   3
+ 46D      var_17   CP3    CP4    CP5    OP5      -60.000   20.000   3
+ 46D      var_18   CP4    CP5    CP6    OP6      -30.000   20.000   3
+ 46D      var_19   CP4    CP5    OP5    CP1       60.000   20.000   1
+ 46D      var_20   CP3    CP4    OP4    CP7      180.000   20.000   1
+ 46D      var_21   CP4    OP4    CP7    CP9     -120.000   20.000   1
+ 46D      var_22   OP4    CP7    OP6    CP6       60.000   20.000   1
+ 46D      var_23   CP7    OP6    CP6    CP5      -30.000   20.000   1
+ 46D      var_24   OP4    CP7    CP8    HP81      62.491   20.000   1
+ 46D      var_25   OP4    CP7    CP9    OP8     -177.995   20.000   1
+ 46D      var_26   O5     C1     O1     HO1       83.655   20.000   1
+ 46D      var_27   O1     C1     O5     C5       180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 46D      chir_01  C5     C6     O5     C4        negativ
+ 46D      chir_02  C1     O5     C2     O1        positiv
+ 46D      chir_03  C2     C1     O2     C3        positiv
+ 46D      chir_04  C3     C2     O3     C4        negativ
+ 46D      chir_05  C4     C5     C3     OP1       positiv
+ 46D      chir_06  CP1    OP1    OP5    CP2       positiv
+ 46D      chir_07  CP5    OP5    CP6    CP4       positiv
+ 46D      chir_08  CP7    OP6    CP9    CP8       negativ
+ 46D      chir_09  CP4    CP5    OP4    CP3       negativ
+ 46D      chir_10  CP3    CP4    OP3    CP2       positiv
+ 46D      chir_11  CP2    CP1    CP3    OP2       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 46D      plan-1    C6        0.020
+ 46D      plan-1    O6A       0.020
+ 46D      plan-1    O6B       0.020
+ 46D      plan-1    C5        0.020
+ 46D      plan-2    CP9       0.020
+ 46D      plan-2    CP7       0.020
+ 46D      plan-2    OP7       0.020
+ 46D      plan-2    OP8       0.020
+# ------------------------------------------------------

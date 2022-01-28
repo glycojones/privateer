@@ -1,0 +1,169 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BXE     BXE      "[3-(2~{H}-1,2,3,4-tetrazol-5-yl)propanoylamino]azanium"     NON-POLYMER     20     11     .     
+#
+data_comp_BXE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BXE     NAD     N       NRD5    0       -0.336      -11.095     -16.759     
+BXE     NAB     N       NR5     0       0.175       -12.271     -17.071     
+BXE     NAA     N       NRD5    0       -0.749      -13.052     -17.568     
+BXE     NAC     N       NRD5    0       -1.867      -12.350     -17.568     
+BXE     CAE     C       CR5     0       -1.610      -11.180     -17.081     
+BXE     CAF     C       CH2     0       -2.570      -10.067     -16.896     
+BXE     CAG     C       CH2     0       -2.659      -9.152      -18.113     
+BXE     CAH     C       C       0       -3.700      -8.070      -17.949     
+BXE     OAI     O       O       0       -4.894      -8.314      -18.112     
+BXE     NAJ     N       NH1     0       -3.253      -6.844      -17.634     
+BXE     NAK     N       NT3     1       -4.123      -5.706      -17.640     
+BXE     HAB     H       H       0       1.026       -12.504     -16.961     
+BXE     HAG     H       H       0       -2.294      -9.544      -16.116     
+BXE     HAF     H       H       0       -3.453      -10.446     -16.709     
+BXE     HAI     H       H       0       -2.884      -9.686      -18.902     
+BXE     HAH     H       H       0       -1.786      -8.740      -18.276     
+BXE     HAJ     H       H       0       -2.416      -6.740      -17.412     
+BXE     HAK     H       H       0       -4.986      -5.974      -17.490     
+BXE     HAL     H       H       0       -4.064      -5.289      -18.453     
+BXE     HAM     H       H       0       -3.863      -5.130      -16.979     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BXE       CAH       OAI       DOUBLE    n         1.229     0.0102    1.229     0.0102    
+BXE       CAG       CAH       SINGLE    n         1.508     0.0116    1.508     0.0116    
+BXE       CAF       CAG       SINGLE    n         1.524     0.0100    1.524     0.0100    
+BXE       CAH       NAJ       SINGLE    n         1.336     0.0126    1.336     0.0126    
+BXE       NAJ       NAK       SINGLE    n         1.426     0.0172    1.426     0.0172    
+BXE       NAD       NAB       SINGLE    y         1.324     0.0100    1.324     0.0100    
+BXE       NAD       CAE       DOUBLE    y         1.317     0.0100    1.317     0.0100    
+BXE       NAB       NAA       SINGLE    y         1.311     0.0100    1.311     0.0100    
+BXE       CAE       CAF       SINGLE    n         1.481     0.0100    1.481     0.0100    
+BXE       NAC       CAE       SINGLE    y         1.284     0.0142    1.284     0.0142    
+BXE       NAA       NAC       DOUBLE    y         1.317     0.0100    1.317     0.0100    
+BXE       NAB       HAB       SINGLE    n         1.016     0.010     0.889     0.0200    
+BXE       CAF       HAG       SINGLE    n         1.089     0.010     0.979     0.0187    
+BXE       CAF       HAF       SINGLE    n         1.089     0.010     0.979     0.0187    
+BXE       CAG       HAI       SINGLE    n         1.089     0.010     0.979     0.0159    
+BXE       CAG       HAH       SINGLE    n         1.089     0.010     0.979     0.0159    
+BXE       NAJ       HAJ       SINGLE    n         1.016     0.010     0.872     0.0200    
+BXE       NAK       HAK       SINGLE    n         1.036     0.016     0.915     0.0200    
+BXE       NAK       HAL       SINGLE    n         1.036     0.016     0.915     0.0200    
+BXE       NAK       HAM       SINGLE    n         1.036     0.016     0.915     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BXE         NAB         NAD         CAE     106.359    1.58
+BXE         NAD         NAB         NAA     111.911    1.50
+BXE         NAD         NAB         HAB     124.512    1.95
+BXE         NAA         NAB         HAB     123.577    2.38
+BXE         NAB         NAA         NAC     106.211    1.50
+BXE         CAE         NAC         NAA     106.427    1.50
+BXE         NAD         CAE         CAF     123.983    3.00
+BXE         NAD         CAE         NAC     109.091    1.52
+BXE         CAF         CAE         NAC     126.925    1.50
+BXE         CAG         CAF         CAE     112.857    1.50
+BXE         CAG         CAF         HAG     109.247    1.50
+BXE         CAG         CAF         HAF     109.247    1.50
+BXE         CAE         CAF         HAG     108.392    1.50
+BXE         CAE         CAF         HAF     108.392    1.50
+BXE         HAG         CAF         HAF     107.822    1.50
+BXE         CAH         CAG         CAF     112.333    2.26
+BXE         CAH         CAG         HAI     108.929    1.50
+BXE         CAH         CAG         HAH     108.929    1.50
+BXE         CAF         CAG         HAI     109.544    1.50
+BXE         CAF         CAG         HAH     109.544    1.50
+BXE         HAI         CAG         HAH     107.705    1.50
+BXE         OAI         CAH         CAG     121.355    1.50
+BXE         OAI         CAH         NAJ     122.716    1.50
+BXE         CAG         CAH         NAJ     115.928    1.54
+BXE         CAH         NAJ         NAK     120.036    3.00
+BXE         CAH         NAJ         HAJ     118.820    2.01
+BXE         NAK         NAJ         HAJ     121.145    3.00
+BXE         NAJ         NAK         HAK     109.111    1.93
+BXE         NAJ         NAK         HAL     109.111    1.93
+BXE         NAJ         NAK         HAM     109.111    1.93
+BXE         HAK         NAK         HAL     109.834    3.00
+BXE         HAK         NAK         HAM     109.834    3.00
+BXE         HAL         NAK         HAM     109.834    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BXE       const_sp2_sp2_1         NAA         NAB         NAD         CAE       0.000   10.00     2
+BXE       const_sp2_sp2_9         CAF         CAE         NAD         NAB     180.000   10.00     2
+BXE       const_sp2_sp2_3         NAC         NAA         NAB         NAD       0.000   10.00     2
+BXE       const_sp2_sp2_5         NAB         NAA         NAC         CAE       0.000   10.00     2
+BXE       const_sp2_sp2_7         CAF         CAE         NAC         NAA     180.000   10.00     2
+BXE            sp2_sp3_14         NAD         CAE         CAF         CAG     -90.000   10.00     6
+BXE             sp3_sp3_1         CAE         CAF         CAG         CAH     180.000   10.00     3
+BXE             sp2_sp3_2         OAI         CAH         CAG         CAF     120.000   10.00     6
+BXE             sp2_sp2_3         OAI         CAH         NAJ         NAK       0.000   10.00     2
+BXE             sp2_sp3_7         CAH         NAJ         NAK         HAK       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BXE    plan-1         CAE   0.020
+BXE    plan-1         CAF   0.020
+BXE    plan-1         HAB   0.020
+BXE    plan-1         NAA   0.020
+BXE    plan-1         NAB   0.020
+BXE    plan-1         NAC   0.020
+BXE    plan-1         NAD   0.020
+BXE    plan-2         CAG   0.020
+BXE    plan-2         CAH   0.020
+BXE    plan-2         NAJ   0.020
+BXE    plan-2         OAI   0.020
+BXE    plan-3         CAH   0.020
+BXE    plan-3         HAJ   0.020
+BXE    plan-3         NAJ   0.020
+BXE    plan-3         NAK   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BXE            InChI                InChI  1.03 InChI=1S/C4H8N6O/c5-6-4(11)2-1-3-7-9-10-8-3/h1-2,5H2,(H,6,11)(H,7,8,9,10)/p+1
+BXE         InChIKey                InChI  1.03                                                   YTOFZWXGVLOWNC-UHFFFAOYSA-O
+BXE SMILES_CANONICAL               CACTVS 3.385                                                    "[NH3+]NC(=O)CCc1n[nH]nn1"
+BXE           SMILES               CACTVS 3.385                                                    "[NH3+]NC(=O)CCc1n[nH]nn1"
+BXE SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                                    C(CC(=O)N[NH3+])c1n[nH]nn1
+BXE           SMILES "OpenEye OEToolkits" 2.0.6                                                    C(CC(=O)N[NH3+])c1n[nH]nn1
+BXE ?                acedrg               217         "dictionary generator"                  
+BXE ?                acedrg_database      11          "data source"                           
+BXE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BXE ?                refmac5              5.8.0253    "optimization tool"                     

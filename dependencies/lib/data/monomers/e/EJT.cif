@@ -1,0 +1,593 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EJT      EJT '1,3-DI(N-PROPYLOXY-A-MANNOPYRANOSYL)' pyranose           87  46 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_EJT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ EJT           C1     C    CH1       0.000      0.000    0.000    0.000
+ EJT           HC1    H    H         0.000      0.419    0.617   -0.807
+ EJT           O1     O    O2        0.000     -1.426    0.077   -0.035
+ EJT           CE     C    CH2       0.000     -1.764    1.465   -0.095
+ EJT           HCE1   H    H         0.000     -1.328    1.906   -0.994
+ EJT           HCE2   H    H         0.000     -1.369    1.973    0.787
+ EJT           CD     C    CH2       0.000     -3.286    1.618   -0.136
+ EJT           HCDA   H    H         0.000     -3.720    1.175    0.763
+ EJT           HCDB   H    H         0.000     -3.679    1.107   -1.018
+ EJT           CG     C    CH2       0.000     -3.647    3.103   -0.200
+ EJT           HCG1   H    H         0.000     -3.212    3.544   -1.099
+ EJT           HCG2   H    H         0.000     -3.252    3.612    0.681
+ EJT           N      N    NH1       0.000     -5.105    3.250   -0.239
+ EJT           HN     H    H         0.000     -5.695    2.431   -0.221
+ EJT           C      C    C         0.000     -5.657    4.478   -0.298
+ EJT           O      O    O         0.000     -4.946    5.463   -0.320
+ EJT           CE1    C    CR6       0.000     -7.127    4.625   -0.336
+ EJT           CD1    C    CR16      0.000     -7.702    5.898   -0.397
+ EJT           HCD1   H    H         0.000     -7.069    6.776   -0.417
+ EJT           CZ     C    CR16      0.000     -7.943    3.496   -0.317
+ EJT           HCZ    H    H         0.000     -7.503    2.508   -0.279
+ EJT           CE2    C    CR6       0.000     -9.328    3.645   -0.347
+ EJT           CD2    C    CR16      0.000     -9.889    4.922   -0.409
+ EJT           HCD2   H    H         0.000    -10.965    5.039   -0.438
+ EJT           CF     C    CR6       0.000     -9.075    6.038   -0.434
+ EJT           CB     C    CH2       0.000     -9.687    7.413   -0.500
+ EJT           HCB1   H    H         0.000     -9.031    8.127    0.003
+ EJT           HCB2   H    H         0.000    -10.659    7.402   -0.004
+ EJT           NZ     N    N         0.000     -9.855    7.805   -1.902
+ EJT           NZ2    N    N         1.000    -10.880    8.037   -2.301
+ EJT           NZ3    N    NS       -1.000    -11.904    8.270   -2.702
+ EJT           CX     C    C         0.000    -10.203    2.452   -0.320
+ EJT           NX     N    NH1       0.000     -9.659    1.220   -0.261
+ EJT           HNX    H    H         0.000     -8.655    1.111   -0.235
+ EJT           CXG    C    CH2       0.000    -10.525    0.039   -0.234
+ EJT           HXG1   H    H         0.000    -11.136    0.016   -1.139
+ EJT           HXG2   H    H         0.000    -11.176    0.085    0.642
+ EJT           CXD    C    CH2       0.000     -9.664   -1.223   -0.165
+ EJT           HXD1   H    H         0.000     -9.053   -1.197    0.740
+ EJT           HXD2   H    H         0.000     -9.013   -1.267   -1.041
+ EJT           CXE    C    CH2       0.000    -10.568   -2.457   -0.138
+ EJT           HXE1   H    H         0.000    -11.179   -2.480   -1.043
+ EJT           HXE2   H    H         0.000    -11.219   -2.412    0.738
+ EJT           OX1    O    O2        0.000     -9.763   -3.637   -0.074
+ EJT           CX1    C    CH1       0.000    -10.660   -4.748   -0.051
+ EJT           HCX1   H    H         0.000    -11.425   -4.584    0.721
+ EJT           OX5    O    O2        0.000    -11.291   -4.876   -1.324
+ EJT           CX5    C    CH1       0.000    -10.264   -4.907   -2.313
+ EJT           HCX5   H    H         0.000     -9.600   -4.041   -2.178
+ EJT           CX6    C    CH2       0.000    -10.896   -4.852   -3.705
+ EJT           HX61   H    H         0.000    -11.623   -5.660   -3.806
+ EJT           HX62   H    H         0.000    -10.118   -4.966   -4.462
+ EJT           OX6    O    OH1       0.000    -11.552   -3.595   -3.881
+ EJT           HOX6   H    H         0.000    -11.952   -3.561   -4.760
+ EJT           CX4    C    CH1       0.000     -9.451   -6.197   -2.175
+ EJT           HCX4   H    H         0.000    -10.117   -7.064   -2.286
+ EJT           OX4    O    OH1       0.000     -8.441   -6.236   -3.186
+ EJT           HOX4   H    H         0.000     -7.929   -7.051   -3.098
+ EJT           CX3    C    CH1       0.000     -8.794   -6.228   -0.791
+ EJT           HCX3   H    H         0.000     -8.050   -5.422   -0.717
+ EJT           OX3    O    OH1       0.000     -8.155   -7.491   -0.592
+ EJT           HOX3   H    H         0.000     -7.742   -7.508    0.282
+ EJT           CX2    C    CH1       0.000     -9.880   -6.025    0.270
+ EJT           HCX2   H    H         0.000     -9.414   -5.931    1.261
+ EJT           OX2    O    OH1       0.000    -10.768   -7.144    0.265
+ EJT           HOX2   H    H         0.000    -11.453   -7.015    0.936
+ EJT           OX     O    O         0.000    -11.411    2.583   -0.352
+ EJT           O5     O    O2        0.000      0.471    0.482    1.257
+ EJT           C5     C    CH1       0.000     -0.232   -0.222    2.279
+ EJT           HC5    H    H         0.000     -1.313   -0.148    2.097
+ EJT           C6     C    CH2       0.000      0.099    0.393    3.641
+ EJT           HC61   H    H         0.000      1.182    0.400    3.784
+ EJT           HC62   H    H         0.000     -0.368   -0.199    4.431
+ EJT           O6     O    OH1       0.000     -0.397    1.732    3.690
+ EJT           HO6    H    H         0.000     -0.189    2.121    4.551
+ EJT           C4     C    CH1       0.000      0.185   -1.695    2.273
+ EJT           HC4    H    H         0.000      1.271   -1.771    2.429
+ EJT           O4     O    OH1       0.000     -0.498   -2.391    3.316
+ EJT           HO4    H    H         0.000     -0.240   -3.322    3.305
+ EJT           C3     C    CH1       0.000     -0.181   -2.311    0.918
+ EJT           HC3    H    H         0.000     -1.274   -2.331    0.806
+ EJT           O3     O    OH1       0.000      0.333   -3.642    0.838
+ EJT           HO3    H    H         0.000      0.109   -4.022   -0.022
+ EJT           C2     C    CH1       0.000      0.435   -1.455   -0.194
+ EJT           HC2    H    H         0.000      0.087   -1.816   -1.172
+ EJT           O2     O    OH1       0.000      1.860   -1.540   -0.131
+ EJT           HO2    H    H         0.000      2.246   -0.993   -0.829
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ EJT      C1     n/a    O5     START
+ EJT      HC1    C1     .      .
+ EJT      O1     C1     CE     .
+ EJT      CE     O1     CD     .
+ EJT      HCE1   CE     .      .
+ EJT      HCE2   CE     .      .
+ EJT      CD     CE     CG     .
+ EJT      HCDA   CD     .      .
+ EJT      HCDB   CD     .      .
+ EJT      CG     CD     N      .
+ EJT      HCG1   CG     .      .
+ EJT      HCG2   CG     .      .
+ EJT      N      CG     C      .
+ EJT      HN     N      .      .
+ EJT      C      N      CE1    .
+ EJT      O      C      .      .
+ EJT      CE1    C      CZ     .
+ EJT      CD1    CE1    HCD1   .
+ EJT      HCD1   CD1    .      .
+ EJT      CZ     CE1    CE2    .
+ EJT      HCZ    CZ     .      .
+ EJT      CE2    CZ     CX     .
+ EJT      CD2    CE2    CF     .
+ EJT      HCD2   CD2    .      .
+ EJT      CF     CD2    CB     .
+ EJT      CB     CF     NZ     .
+ EJT      HCB1   CB     .      .
+ EJT      HCB2   CB     .      .
+ EJT      NZ     CB     NZ2    .
+ EJT      NZ2    NZ     NZ3    .
+ EJT      NZ3    NZ2    .      .
+ EJT      CX     CE2    OX     .
+ EJT      NX     CX     CXG    .
+ EJT      HNX    NX     .      .
+ EJT      CXG    NX     CXD    .
+ EJT      HXG1   CXG    .      .
+ EJT      HXG2   CXG    .      .
+ EJT      CXD    CXG    CXE    .
+ EJT      HXD1   CXD    .      .
+ EJT      HXD2   CXD    .      .
+ EJT      CXE    CXD    OX1    .
+ EJT      HXE1   CXE    .      .
+ EJT      HXE2   CXE    .      .
+ EJT      OX1    CXE    CX1    .
+ EJT      CX1    OX1    OX5    .
+ EJT      HCX1   CX1    .      .
+ EJT      OX5    CX1    CX5    .
+ EJT      CX5    OX5    CX4    .
+ EJT      HCX5   CX5    .      .
+ EJT      CX6    CX5    OX6    .
+ EJT      HX61   CX6    .      .
+ EJT      HX62   CX6    .      .
+ EJT      OX6    CX6    HOX6   .
+ EJT      HOX6   OX6    .      .
+ EJT      CX4    CX5    CX3    .
+ EJT      HCX4   CX4    .      .
+ EJT      OX4    CX4    HOX4   .
+ EJT      HOX4   OX4    .      .
+ EJT      CX3    CX4    CX2    .
+ EJT      HCX3   CX3    .      .
+ EJT      OX3    CX3    HOX3   .
+ EJT      HOX3   OX3    .      .
+ EJT      CX2    CX3    OX2    .
+ EJT      HCX2   CX2    .      .
+ EJT      OX2    CX2    HOX2   .
+ EJT      HOX2   OX2    .      .
+ EJT      OX     CX     .      .
+ EJT      O5     C1     .      END
+ EJT      C5     O5     C4     .
+ EJT      HC5    C5     .      .
+ EJT      C6     C5     O6     .
+ EJT      HC61   C6     .      .
+ EJT      HC62   C6     .      .
+ EJT      O6     C6     HO6    .
+ EJT      HO6    O6     .      .
+ EJT      C4     C5     C3     .
+ EJT      HC4    C4     .      .
+ EJT      O4     C4     HO4    .
+ EJT      HO4    O4     .      .
+ EJT      C3     C4     C2     .
+ EJT      HC3    C3     .      .
+ EJT      O3     C3     HO3    .
+ EJT      HO3    O3     .      .
+ EJT      C2     C3     O2     .
+ EJT      HC2    C2     .      .
+ EJT      O2     C2     HO2    .
+ EJT      HO2    O2     .      .
+ EJT      C1     C2     .    ADD
+ EJT      CX1    CX2    .    ADD
+ EJT      CF     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EJT       O1        C1        single    1.426     0.020     1.426     0.020     
+EJT       C1        C2        single    1.524     0.020     1.524     0.020     
+EJT       O5        C1        single    1.426     0.020     1.426     0.020     
+EJT       HC1       C1        single    1.089     0.010     0.989     0.005     
+EJT       CE        O1        single    1.426     0.020     1.426     0.020     
+EJT       O2        C2        single    1.432     0.020     1.432     0.020     
+EJT       C2        C3        single    1.524     0.020     1.524     0.020     
+EJT       HC2       C2        single    1.089     0.010     0.989     0.005     
+EJT       HO2       O2        single    0.970     0.012     0.839     0.014     
+EJT       O3        C3        single    1.432     0.020     1.432     0.020     
+EJT       C3        C4        single    1.524     0.020     1.524     0.020     
+EJT       HC3       C3        single    1.089     0.010     0.989     0.005     
+EJT       HO3       O3        single    0.970     0.012     0.839     0.014     
+EJT       O4        C4        single    1.432     0.020     1.432     0.020     
+EJT       C4        C5        single    1.524     0.020     1.524     0.020     
+EJT       HC4       C4        single    1.089     0.010     0.989     0.005     
+EJT       HO4       O4        single    0.970     0.012     0.839     0.014     
+EJT       C5        O5        single    1.426     0.020     1.426     0.020     
+EJT       C6        C5        single    1.524     0.020     1.524     0.020     
+EJT       HC5       C5        single    1.089     0.010     0.989     0.005     
+EJT       O6        C6        single    1.432     0.020     1.432     0.020     
+EJT       HC61      C6        single    1.089     0.010     0.989     0.005     
+EJT       HC62      C6        single    1.089     0.010     0.989     0.005     
+EJT       HO6       O6        single    0.970     0.012     0.839     0.014     
+EJT       CX1       OX1       single    1.426     0.020     1.426     0.020     
+EJT       CX1       CX2       single    1.524     0.020     1.524     0.020     
+EJT       OX5       CX1       single    1.426     0.020     1.426     0.020     
+EJT       HCX1      CX1       single    1.089     0.010     0.989     0.005     
+EJT       OX1       CXE       single    1.426     0.020     1.426     0.020     
+EJT       OX2       CX2       single    1.432     0.020     1.432     0.020     
+EJT       CX2       CX3       single    1.524     0.020     1.524     0.020     
+EJT       HCX2      CX2       single    1.089     0.010     0.989     0.005     
+EJT       HOX2      OX2       single    0.970     0.012     0.839     0.014     
+EJT       OX3       CX3       single    1.432     0.020     1.432     0.020     
+EJT       CX3       CX4       single    1.524     0.020     1.524     0.020     
+EJT       HCX3      CX3       single    1.089     0.010     0.989     0.005     
+EJT       HOX3      OX3       single    0.970     0.012     0.839     0.014     
+EJT       OX4       CX4       single    1.432     0.020     1.432     0.020     
+EJT       CX4       CX5       single    1.524     0.020     1.524     0.020     
+EJT       HCX4      CX4       single    1.089     0.010     0.989     0.005     
+EJT       HOX4      OX4       single    0.970     0.012     0.839     0.014     
+EJT       CX5       OX5       single    1.426     0.020     1.426     0.020     
+EJT       CX6       CX5       single    1.524     0.020     1.524     0.020     
+EJT       HCX5      CX5       single    1.089     0.010     0.989     0.005     
+EJT       OX6       CX6       single    1.432     0.020     1.432     0.020     
+EJT       HX61      CX6       single    1.089     0.010     0.989     0.005     
+EJT       HX62      CX6       single    1.089     0.010     0.989     0.005     
+EJT       HOX6      OX6       single    0.970     0.012     0.839     0.014     
+EJT       NZ        CB        single    1.455     0.020     1.455     0.020     
+EJT       CB        CF        single    1.511     0.020     1.511     0.020     
+EJT       HCB1      CB        single    1.089     0.010     0.989     0.005     
+EJT       HCB2      CB        single    1.089     0.010     0.989     0.005     
+EJT       NZ2       NZ        double    1.240     0.020     1.240     0.020     
+EJT       NZ3       NZ2       double    1.295     0.020     1.295     0.020     
+EJT       CF        CD1       double    1.390     0.020     1.390     0.020     
+EJT       CF        CD2       single    1.390     0.020     1.390     0.020     
+EJT       CD1       CE1       single    1.390     0.020     1.390     0.020     
+EJT       HCD1      CD1       single    1.082     0.013     0.975     0.010     
+EJT       CZ        CE1       double    1.390     0.020     1.390     0.020     
+EJT       CE1       C         single    1.500     0.020     1.500     0.020     
+EJT       CD2       CE2       double    1.390     0.020     1.390     0.020     
+EJT       HCD2      CD2       single    1.082     0.013     0.975     0.010     
+EJT       CE2       CZ        single    1.390     0.020     1.390     0.020     
+EJT       CX        CE2       single    1.500     0.020     1.500     0.020     
+EJT       HCZ       CZ        single    1.082     0.013     0.975     0.010     
+EJT       O         C         double    1.220     0.020     1.220     0.020     
+EJT       C         N         single    1.330     0.020     1.330     0.020     
+EJT       N         CG        single    1.450     0.020     1.450     0.020     
+EJT       HN        N         single    1.016     0.010     0.899     0.007     
+EJT       CG        CD        single    1.524     0.020     1.524     0.020     
+EJT       HCG1      CG        single    1.089     0.010     0.989     0.005     
+EJT       HCG2      CG        single    1.089     0.010     0.989     0.005     
+EJT       CD        CE        single    1.524     0.020     1.524     0.020     
+EJT       HCDA      CD        single    1.089     0.010     0.989     0.005     
+EJT       HCDB      CD        single    1.089     0.010     0.989     0.005     
+EJT       HCE1      CE        single    1.089     0.010     0.989     0.005     
+EJT       HCE2      CE        single    1.089     0.010     0.989     0.005     
+EJT       OX        CX        double    1.220     0.020     1.220     0.020     
+EJT       NX        CX        single    1.330     0.020     1.330     0.020     
+EJT       CXG       NX        single    1.450     0.020     1.450     0.020     
+EJT       HNX       NX        single    1.016     0.010     0.899     0.007     
+EJT       CXD       CXG       single    1.524     0.020     1.524     0.020     
+EJT       HXG1      CXG       single    1.089     0.010     0.989     0.005     
+EJT       HXG2      CXG       single    1.089     0.010     0.989     0.005     
+EJT       CXE       CXD       single    1.524     0.020     1.524     0.020     
+EJT       HXD1      CXD       single    1.089     0.010     0.989     0.005     
+EJT       HXD2      CXD       single    1.089     0.010     0.989     0.005     
+EJT       HXE1      CXE       single    1.089     0.010     0.989     0.005     
+EJT       HXE2      CXE       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ EJT      HC1    C1     O1      109.470    3.000
+ EJT      HC1    C1     O5      109.470    3.000
+ EJT      O1     C1     O5      109.470    3.000
+ EJT      HC1    C1     C2      108.340    3.000
+ EJT      O1     C1     C2      109.470    3.000
+ EJT      O5     C1     C2      109.470    3.000
+ EJT      C1     O1     CE      111.800    3.000
+ EJT      O1     CE     HCE1    109.470    3.000
+ EJT      O1     CE     HCE2    109.470    3.000
+ EJT      O1     CE     CD      109.470    3.000
+ EJT      HCE1   CE     HCE2    107.900    3.000
+ EJT      HCE1   CE     CD      109.470    3.000
+ EJT      HCE2   CE     CD      109.470    3.000
+ EJT      CE     CD     HCDA    109.470    3.000
+ EJT      CE     CD     HCDB    109.470    3.000
+ EJT      CE     CD     CG      111.000    3.000
+ EJT      HCDA   CD     HCDB    107.900    3.000
+ EJT      HCDA   CD     CG      109.470    3.000
+ EJT      HCDB   CD     CG      109.470    3.000
+ EJT      CD     CG     HCG1    109.470    3.000
+ EJT      CD     CG     HCG2    109.470    3.000
+ EJT      CD     CG     N       112.000    3.000
+ EJT      HCG1   CG     HCG2    107.900    3.000
+ EJT      HCG1   CG     N       109.470    3.000
+ EJT      HCG2   CG     N       109.470    3.000
+ EJT      CG     N      HN      118.500    3.000
+ EJT      CG     N      C       121.500    3.000
+ EJT      HN     N      C       120.000    3.000
+ EJT      N      C      O       123.000    3.000
+ EJT      N      C      CE1     120.000    3.000
+ EJT      O      C      CE1     120.500    3.000
+ EJT      C      CE1    CD1     120.000    3.000
+ EJT      C      CE1    CZ      120.000    3.000
+ EJT      CD1    CE1    CZ      120.000    3.000
+ EJT      CE1    CD1    HCD1    120.000    3.000
+ EJT      CE1    CD1    CF      120.000    3.000
+ EJT      HCD1   CD1    CF      120.000    3.000
+ EJT      CE1    CZ     HCZ     120.000    3.000
+ EJT      CE1    CZ     CE2     120.000    3.000
+ EJT      HCZ    CZ     CE2     120.000    3.000
+ EJT      CZ     CE2    CD2     120.000    3.000
+ EJT      CZ     CE2    CX      120.000    3.000
+ EJT      CD2    CE2    CX      120.000    3.000
+ EJT      CE2    CD2    HCD2    120.000    3.000
+ EJT      CE2    CD2    CF      120.000    3.000
+ EJT      HCD2   CD2    CF      120.000    3.000
+ EJT      CD2    CF     CB      120.000    3.000
+ EJT      CD2    CF     CD1     120.000    3.000
+ EJT      CB     CF     CD1     120.000    3.000
+ EJT      CF     CB     HCB1    109.470    3.000
+ EJT      CF     CB     HCB2    109.470    3.000
+ EJT      CF     CB     NZ      109.470    3.000
+ EJT      HCB1   CB     HCB2    107.900    3.000
+ EJT      HCB1   CB     NZ      109.470    3.000
+ EJT      HCB2   CB     NZ      109.470    3.000
+ EJT      CB     NZ     NZ2     120.000    3.000
+ EJT      NZ     NZ2    NZ3     120.000    3.000
+ EJT      CE2    CX     NX      120.000    3.000
+ EJT      CE2    CX     OX      120.500    3.000
+ EJT      NX     CX     OX      123.000    3.000
+ EJT      CX     NX     HNX     120.000    3.000
+ EJT      CX     NX     CXG     121.500    3.000
+ EJT      HNX    NX     CXG     118.500    3.000
+ EJT      NX     CXG    HXG1    109.470    3.000
+ EJT      NX     CXG    HXG2    109.470    3.000
+ EJT      NX     CXG    CXD     112.000    3.000
+ EJT      HXG1   CXG    HXG2    107.900    3.000
+ EJT      HXG1   CXG    CXD     109.470    3.000
+ EJT      HXG2   CXG    CXD     109.470    3.000
+ EJT      CXG    CXD    HXD1    109.470    3.000
+ EJT      CXG    CXD    HXD2    109.470    3.000
+ EJT      CXG    CXD    CXE     111.000    3.000
+ EJT      HXD1   CXD    HXD2    107.900    3.000
+ EJT      HXD1   CXD    CXE     109.470    3.000
+ EJT      HXD2   CXD    CXE     109.470    3.000
+ EJT      CXD    CXE    HXE1    109.470    3.000
+ EJT      CXD    CXE    HXE2    109.470    3.000
+ EJT      CXD    CXE    OX1     109.470    3.000
+ EJT      HXE1   CXE    HXE2    107.900    3.000
+ EJT      HXE1   CXE    OX1     109.470    3.000
+ EJT      HXE2   CXE    OX1     109.470    3.000
+ EJT      CXE    OX1    CX1     111.800    3.000
+ EJT      OX1    CX1    HCX1    109.470    3.000
+ EJT      OX1    CX1    OX5     109.470    3.000
+ EJT      OX1    CX1    CX2     109.470    3.000
+ EJT      HCX1   CX1    OX5     109.470    3.000
+ EJT      HCX1   CX1    CX2     108.340    3.000
+ EJT      OX5    CX1    CX2     109.470    3.000
+ EJT      CX1    OX5    CX5     111.800    3.000
+ EJT      OX5    CX5    HCX5    109.470    3.000
+ EJT      OX5    CX5    CX6     109.470    3.000
+ EJT      OX5    CX5    CX4     109.470    3.000
+ EJT      HCX5   CX5    CX6     108.340    3.000
+ EJT      HCX5   CX5    CX4     108.340    3.000
+ EJT      CX6    CX5    CX4     111.000    3.000
+ EJT      CX5    CX6    HX61    109.470    3.000
+ EJT      CX5    CX6    HX62    109.470    3.000
+ EJT      CX5    CX6    OX6     109.470    3.000
+ EJT      HX61   CX6    HX62    107.900    3.000
+ EJT      HX61   CX6    OX6     109.470    3.000
+ EJT      HX62   CX6    OX6     109.470    3.000
+ EJT      CX6    OX6    HOX6    109.470    3.000
+ EJT      CX5    CX4    HCX4    108.340    3.000
+ EJT      CX5    CX4    OX4     109.470    3.000
+ EJT      CX5    CX4    CX3     111.000    3.000
+ EJT      HCX4   CX4    OX4     109.470    3.000
+ EJT      HCX4   CX4    CX3     108.340    3.000
+ EJT      OX4    CX4    CX3     109.470    3.000
+ EJT      CX4    OX4    HOX4    109.470    3.000
+ EJT      CX4    CX3    HCX3    108.340    3.000
+ EJT      CX4    CX3    OX3     109.470    3.000
+ EJT      CX4    CX3    CX2     111.000    3.000
+ EJT      HCX3   CX3    OX3     109.470    3.000
+ EJT      HCX3   CX3    CX2     108.340    3.000
+ EJT      OX3    CX3    CX2     109.470    3.000
+ EJT      CX3    OX3    HOX3    109.470    3.000
+ EJT      CX3    CX2    HCX2    108.340    3.000
+ EJT      CX3    CX2    OX2     109.470    3.000
+ EJT      CX3    CX2    CX1     111.000    3.000
+ EJT      HCX2   CX2    OX2     109.470    3.000
+ EJT      HCX2   CX2    CX1     108.340    3.000
+ EJT      OX2    CX2    CX1     109.470    3.000
+ EJT      CX2    OX2    HOX2    109.470    3.000
+ EJT      C1     O5     C5      111.800    3.000
+ EJT      O5     C5     HC5     109.470    3.000
+ EJT      O5     C5     C6      109.470    3.000
+ EJT      O5     C5     C4      109.470    3.000
+ EJT      HC5    C5     C6      108.340    3.000
+ EJT      HC5    C5     C4      108.340    3.000
+ EJT      C6     C5     C4      111.000    3.000
+ EJT      C5     C6     HC61    109.470    3.000
+ EJT      C5     C6     HC62    109.470    3.000
+ EJT      C5     C6     O6      109.470    3.000
+ EJT      HC61   C6     HC62    107.900    3.000
+ EJT      HC61   C6     O6      109.470    3.000
+ EJT      HC62   C6     O6      109.470    3.000
+ EJT      C6     O6     HO6     109.470    3.000
+ EJT      C5     C4     HC4     108.340    3.000
+ EJT      C5     C4     O4      109.470    3.000
+ EJT      C5     C4     C3      111.000    3.000
+ EJT      HC4    C4     O4      109.470    3.000
+ EJT      HC4    C4     C3      108.340    3.000
+ EJT      O4     C4     C3      109.470    3.000
+ EJT      C4     O4     HO4     109.470    3.000
+ EJT      C4     C3     HC3     108.340    3.000
+ EJT      C4     C3     O3      109.470    3.000
+ EJT      C4     C3     C2      111.000    3.000
+ EJT      HC3    C3     O3      109.470    3.000
+ EJT      HC3    C3     C2      108.340    3.000
+ EJT      O3     C3     C2      109.470    3.000
+ EJT      C3     O3     HO3     109.470    3.000
+ EJT      C3     C2     HC2     108.340    3.000
+ EJT      C3     C2     O2      109.470    3.000
+ EJT      C3     C2     C1      111.000    3.000
+ EJT      HC2    C2     O2      109.470    3.000
+ EJT      HC2    C2     C1      108.340    3.000
+ EJT      O2     C2     C1      109.470    3.000
+ EJT      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ EJT      var_1    O5     C1     O1     CE        69.925   20.000   1
+ EJT      var_2    C1     O1     CE     CD       179.985   20.000   1
+ EJT      var_3    O1     CE     CD     CG      -179.978   20.000   3
+ EJT      var_4    CE     CD     CG     N       -179.978   20.000   3
+ EJT      var_5    CD     CG     N      C       -179.981   20.000   3
+ EJT      CONST_1  CG     N      C      CE1      180.000    0.000   0
+ EJT      var_6    N      C      CE1    CZ        -0.349   20.000   1
+ EJT      CONST_2  C      CE1    CD1    CF       180.000    0.000   0
+ EJT      CONST_3  C      CE1    CZ     CE2      180.000    0.000   0
+ EJT      CONST_4  CE1    CZ     CE2    CX       180.000    0.000   0
+ EJT      CONST_5  CZ     CE2    CD2    CF         0.000    0.000   0
+ EJT      CONST_6  CE2    CD2    CF     CB       180.000    0.000   0
+ EJT      CONST_7  CD2    CF     CD1    CE1        0.000    0.000   0
+ EJT      var_7    CD2    CF     CB     NZ       -89.936   20.000   2
+ EJT      var_8    CF     CB     NZ     NZ2      119.936   20.000   1
+ EJT      CONST_8  CB     NZ     NZ2    NZ3      146.755    0.000   0
+ EJT      var_9    CZ     CE2    CX     OX      -179.690   20.000   1
+ EJT      CONST_9  CE2    CX     NX     CXG      180.000    0.000   0
+ EJT      var_10   CX     NX     CXG    CXD     -179.943   20.000   3
+ EJT      var_11   NX     CXG    CXD    CXE     -179.986   20.000   3
+ EJT      var_12   CXG    CXD    CXE    OX1      179.975   20.000   3
+ EJT      var_13   CXD    CXE    OX1    CX1      179.976   20.000   1
+ EJT      var_14   CXE    OX1    CX1    OX5       69.855   20.000   1
+ EJT      var_15   OX1    CX1    CX2    CX3      -60.000   20.000   3
+ EJT      var_16   OX1    CX1    OX5    CX5       60.000   20.000   1
+ EJT      var_17   CX1    OX5    CX5    CX4       60.000   20.000   1
+ EJT      var_18   OX5    CX5    CX6    OX6       64.989   20.000   3
+ EJT      var_19   CX5    CX6    OX6    HOX6     180.000   20.000   1
+ EJT      var_20   OX5    CX5    CX4    CX3      -60.000   20.000   3
+ EJT      var_21   CX5    CX4    OX4    HOX4    -179.991   20.000   1
+ EJT      var_22   CX5    CX4    CX3    CX2       60.000   20.000   3
+ EJT      var_23   CX4    CX3    OX3    HOX3    -179.985   20.000   1
+ EJT      var_24   CX4    CX3    CX2    OX2       60.000   20.000   3
+ EJT      var_25   CX3    CX2    OX2    HOX2     179.981   20.000   1
+ EJT      var_26   C1     O5     C5     C4        60.000   20.000   1
+ EJT      var_27   O5     C5     C6     O6        64.885   20.000   3
+ EJT      var_28   C5     C6     O6     HO6      179.980   20.000   1
+ EJT      var_29   O5     C5     C4     C3       -60.000   20.000   3
+ EJT      var_30   C5     C4     O4     HO4      179.485   20.000   1
+ EJT      var_31   C5     C4     C3     C2        60.000   20.000   3
+ EJT      var_32   C4     C3     O3     HO3     -179.235   20.000   1
+ EJT      var_33   C4     C3     C2     O2        60.000   20.000   3
+ EJT      var_34   C3     C2     C1     O5        60.000   20.000   3
+ EJT      var_35   C3     C2     O2     HO2     -179.541   20.000   1
+ EJT      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ EJT      chir_01  C1     O1     C2     O5        positiv
+ EJT      chir_02  C2     C1     O2     C3        negativ
+ EJT      chir_03  C3     C2     O3     C4        negativ
+ EJT      chir_04  C4     C3     O4     C5        positiv
+ EJT      chir_05  C5     C4     O5     C6        positiv
+ EJT      chir_06  CX1    OX1    CX2    OX5       positiv
+ EJT      chir_07  CX2    CX1    OX2    CX3       negativ
+ EJT      chir_08  CX3    CX2    OX3    CX4       negativ
+ EJT      chir_09  CX4    CX3    OX4    CX5       positiv
+ EJT      chir_10  CX5    CX4    OX5    CX6       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ EJT      plan-1    NZ        0.020
+ EJT      plan-1    CB        0.020
+ EJT      plan-1    NZ2       0.020
+ EJT      plan-1    NZ3       0.020
+ EJT      plan-2    CF        0.020
+ EJT      plan-2    CB        0.020
+ EJT      plan-2    CD1       0.020
+ EJT      plan-2    CD2       0.020
+ EJT      plan-2    CE1       0.020
+ EJT      plan-2    CE2       0.020
+ EJT      plan-2    CZ        0.020
+ EJT      plan-2    HCD1      0.020
+ EJT      plan-2    C         0.020
+ EJT      plan-2    HCD2      0.020
+ EJT      plan-2    CX        0.020
+ EJT      plan-2    HCZ       0.020
+ EJT      plan-3    C         0.020
+ EJT      plan-3    CE1       0.020
+ EJT      plan-3    O         0.020
+ EJT      plan-3    N         0.020
+ EJT      plan-3    HN        0.020
+ EJT      plan-4    N         0.020
+ EJT      plan-4    C         0.020
+ EJT      plan-4    CG        0.020
+ EJT      plan-4    HN        0.020
+ EJT      plan-5    CX        0.020
+ EJT      plan-5    CE2       0.020
+ EJT      plan-5    OX        0.020
+ EJT      plan-5    NX        0.020
+ EJT      plan-5    HNX       0.020
+ EJT      plan-6    NX        0.020
+ EJT      plan-6    CX        0.020
+ EJT      plan-6    CXG       0.020
+ EJT      plan-6    HNX       0.020
+# ------------------------------------------------------

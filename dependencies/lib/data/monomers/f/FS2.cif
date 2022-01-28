@@ -1,0 +1,180 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FS2      FS2 'FE-S-O HYBRID CLUSTER               ' non-polymer        10   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FS2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FS2           HS6    H    H         0.000      0.000    0.000    0.000
+ FS2           S6     S    ST        0.000     -0.877    0.662    0.560
+ FS2           FE5    FE   FE        0.000     -3.159    0.807    0.164
+ FS2           FE6    FE   FE        0.000     -1.394    2.854    0.414
+ FS2           S5     S    S2        0.000     -3.439    3.012   -0.312
+ FS2           FE8    FE   FE        0.000     -1.377    0.973    2.922
+ FS2           O8     O    O2        0.000     -1.698    3.178    2.436
+ FS2           O9     O    O2        0.000     -2.920    1.168    4.077
+ FS2           O1     O    O         0.000    -40.259   -0.337   -0.739
+ FS2           FE7    FE   FE        0.000     -4.876    0.733    3.351
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FS2      HS6    n/a    S6     START
+ FS2      S6     HS6    FE8    .
+ FS2      FE5    S6     .      .
+ FS2      FE6    S6     S5     .
+ FS2      S5     FE6    .      .
+ FS2      FE8    S6     O1     .
+ FS2      O8     FE8    .      .
+ FS2      O9     FE8    .      .
+ FS2      O1     FE8    FE7    .
+ FS2      FE7    O1     .      END
+ FS2      FE5    FE6    .    ADD
+ FS2      FE5    S5     .    ADD
+ FS2      FE5    O1     .    ADD
+ FS2      FE6    FE8    .    ADD
+ FS2      FE6    O8     .    ADD
+ FS2      FE7    O9     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FS2       FE5       FE6       single    2.470     0.020     2.470     0.020     
+FS2       FE5       S5        single    2.235     0.020     2.235     0.020     
+FS2       FE5       S6        single    2.135     0.020     2.135     0.020     
+FS2       FE5       O1        single    2.040     0.020     2.040     0.020     
+FS2       FE6       FE8       single    2.470     0.020     2.470     0.020     
+FS2       S5        FE6       single    2.235     0.020     2.235     0.020     
+FS2       FE6       S6        single    2.135     0.020     2.135     0.020     
+FS2       FE6       O8        single    1.870     0.020     1.870     0.020     
+FS2       FE7       O9        single    1.870     0.020     1.870     0.020     
+FS2       FE7       O1        single    2.040     0.020     2.040     0.020     
+FS2       FE8       S6        single    2.135     0.020     2.135     0.020     
+FS2       O8        FE8       single    1.870     0.020     1.870     0.020     
+FS2       O9        FE8       single    1.870     0.020     1.870     0.020     
+FS2       O1        FE8       single    2.040     0.020     2.040     0.020     
+FS2       S6        HS6       single    1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FS2      HS6    S6     FE5     109.500    3.000
+ FS2      HS6    S6     FE6     109.500    3.000
+ FS2      HS6    S6     FE8     109.500    3.000
+ FS2      FE5    S6     FE6      70.684    3.000
+ FS2      FE5    S6     FE8     109.500    3.000
+ FS2      FE6    S6     FE8      70.684    3.000
+ FS2      S6     FE5    FE6      60.000    3.000
+ FS2      S6     FE5    S5       60.000    3.000
+ FS2      S6     FE5    O1      120.000    3.000
+ FS2      FE6    FE5    S5      120.000    3.000
+ FS2      FE6    FE5    O1      180.000    3.000
+ FS2      S5     FE5    O1       60.000    3.000
+ FS2      S6     FE6    S5       90.000    3.000
+ FS2      S6     FE6    FE5      54.658    3.000
+ FS2      S6     FE6    FE8      54.658    3.000
+ FS2      S6     FE6    O8       90.000    3.000
+ FS2      FE5    FE6    FE8      90.000    3.000
+ FS2      FE5    FE6    O8       90.000    3.000
+ FS2      FE8    FE6    O8       48.654    3.000
+ FS2      S5     FE6    FE5      56.456    3.000
+ FS2      S5     FE6    FE8      90.000    3.000
+ FS2      S5     FE6    O8       90.000    3.000
+ FS2      FE6    S5     FE5      67.087    3.000
+ FS2      S6     FE8    O8       90.000    3.000
+ FS2      S6     FE8    O9       90.000    3.000
+ FS2      S6     FE8    O1       90.000    3.000
+ FS2      S6     FE8    FE6      54.658    3.000
+ FS2      O8     FE8    O9       90.000    3.000
+ FS2      O8     FE8    O1       90.000    3.000
+ FS2      O9     FE8    O1       90.000    3.000
+ FS2      O8     FE8    FE6      48.654    3.000
+ FS2      O9     FE8    FE6      90.000    3.000
+ FS2      O1     FE8    FE6      90.000    3.000
+ FS2      FE8    O8     FE6      82.692    3.000
+ FS2      FE8    O9     FE7     120.000    3.000
+ FS2      FE8    O1     FE7     120.000    3.000
+ FS2      FE8    O1     FE5     120.000    3.000
+ FS2      FE7    O1     FE5     120.000    3.000
+ FS2      O1     FE7    O9      180.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FS2      var_1    FE6    S6     FE5    FE6        0.000   20.000   1
+ FS2      var_2    FE6    S5     FE5    FE6        0.000   20.000   1
+ FS2      var_3    FE8    O1     FE5    S6         0.000   20.000   1
+ FS2      var_4    HS6    S6     FE6    S5       175.000   20.000   1
+ FS2      var_5    S6     FE6    O8     FE8       -3.916   20.000   1
+ FS2      var_6    S6     FE6    S5     FE5       10.226   20.000   1
+ FS2      var_7    HS6    S6     FE8    O1       175.000   20.000   1
+ FS2      var_8    S6     FE8    O8     FE6        3.607   20.000   1
+ FS2      var_9    S6     FE8    O9     FE7       12.740   20.000   1
+ FS2      var_10   S6     FE8    O1     FE7      163.024   20.000   1
+ FS2      var_11   FE8    O1     FE7    O9       180.000   20.000   1
+ FS2      var_12   FE8    O9     FE7    O1       180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ FS2      chir_01  S6     FE5    FE6    FE8       negativ
+                   .      .      .      .      .
+ FS2      chir_02  O1     FE5    FE7    FE8       negativ
+                   .      .      .      .      .
+ FS2      chir_03  FE5    .      .      FE6       cross6
+                   S6     S5     O1     .      .
+ FS2      chir_04  FE7    O1     O9     .         cross0
+                   .      .      .      .      .
+# ------------------------------------------------------

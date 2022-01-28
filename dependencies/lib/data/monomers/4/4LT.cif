@@ -1,0 +1,121 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4LT     4LT      "(2R)-2-fluoropropanoic acid"     NON-POLYMER     10     6     .     
+#
+data_comp_4LT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4LT     C       C       C       0       -0.866      3.515       -8.129      
+4LT     O       O       O       0       -0.138      3.968       -9.034      
+4LT     CA      C       CH1     0       -1.057      4.371       -6.890      
+4LT     CB      C       CH3     0       0.107       4.382       -5.939      
+4LT     F       F       F       0       -1.298      5.698       -7.254      
+4LT     O1      O       OC      -1      -1.450      2.414       -8.162      
+4LT     HA      H       H       0       -1.853      4.038       -6.408      
+4LT     HB3     H       H       0       -0.098      4.954       -5.179      
+4LT     HB2     H       H       0       0.897       4.722       -6.394      
+4LT     HB1     H       H       0       0.280       3.478       -5.624      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4LT       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+4LT       C         CA        SINGLE    n         1.519     0.012     1.519     0.012     
+4LT       CA        F         SINGLE    n         1.398     0.020     1.398     0.020     
+4LT       CA        CB        SINGLE    n         1.505     0.020     1.505     0.020     
+4LT       C         O1        SINGLE    n         1.247     0.019     1.247     0.019     
+4LT       CA        HA        SINGLE    n         1.089     0.010     0.988     0.012     
+4LT       CB        HB3       SINGLE    n         1.089     0.010     0.973     0.014     
+4LT       CB        HB2       SINGLE    n         1.089     0.010     0.973     0.014     
+4LT       CB        HB1       SINGLE    n         1.089     0.010     0.973     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4LT           O           C          CA     117.429    2.33
+4LT           O           C          O1     125.142    1.75
+4LT          CA           C          O1     117.429    2.33
+4LT           C          CA           F     110.579    1.50
+4LT           C          CA          CB     116.743    3.00
+4LT           C          CA          HA     108.627    1.50
+4LT           F          CA          CB     107.354    1.50
+4LT           F          CA          HA     108.556    1.50
+4LT          CB          CA          HA     109.085    1.50
+4LT          CA          CB         HB3     109.537    1.50
+4LT          CA          CB         HB2     109.537    1.50
+4LT          CA          CB         HB1     109.537    1.50
+4LT         HB3          CB         HB2     109.294    1.50
+4LT         HB3          CB         HB1     109.294    1.50
+4LT         HB2          CB         HB1     109.294    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4LT             sp2_sp3_1           O           C          CA           F       0.000   10.00     6
+4LT             sp3_sp3_1           C          CA          CB         HB3     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+4LT    chir_1    CA    F    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4LT    plan-1           C   0.020
+4LT    plan-1          CA   0.020
+4LT    plan-1           O   0.020
+4LT    plan-1          O1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4LT SMILES           ACDLabs              12.01 "C(C(C)F)(O)=O"
+4LT InChI            InChI                1.03  "InChI=1S/C3H5FO2/c1-2(4)3(5)6/h2H,1H3,(H,5,6)/t2-/m1/s1"
+4LT InChIKey         InChI                1.03  ZVZPFTCEXIGSHM-UWTATZPHSA-N
+4LT SMILES_CANONICAL CACTVS               3.385 "C[C@@H](F)C(O)=O"
+4LT SMILES           CACTVS               3.385 "C[CH](F)C(O)=O"
+4LT SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C[C@H](C(=O)O)F"
+4LT SMILES           "OpenEye OEToolkits" 1.7.6 "CC(C(=O)O)F"
+4LT ?                acedrg               202         "dictionary generator"                  
+4LT ?                acedrg_database      11          "data source"                           
+4LT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4LT ?                refmac5              5.8.0189    "optimization tool"                     

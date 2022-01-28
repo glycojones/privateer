@@ -1,0 +1,172 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CQL     CQL      5-chloro-7-iodoquinolin-8-ol     NON-POLYMER     18     13     .     
+#
+data_comp_CQL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CQL     OAA     O       OH1     0       -23.422     25.286      6.492       
+CQL     CLAB    CL      CL      0       -17.663     25.157      7.698       
+CQL     IAC     I       I       0       -21.839     23.899      4.109       
+CQL     CAD     C       CR16    0       -20.787     26.919      10.443      
+CQL     CAE     C       CR16    0       -22.144     26.896      10.052      
+CQL     CAF     C       CR16    0       -19.859     26.383      9.602       
+CQL     CAG     C       CR16    0       -19.839     24.702      6.230       
+CQL     NAH     N       NRD6    0       -22.579     26.383      8.911       
+CQL     CAI     C       CR6     0       -19.377     25.229      7.407       
+CQL     CAJ     C       CR6     0       -22.112     25.275      6.805       
+CQL     CAK     C       CR6     0       -21.199     24.722      5.924       
+CQL     CAL     C       CR66    0       -20.262     25.818      8.364       
+CQL     CAM     C       CR66    0       -21.661     25.837      8.047       
+CQL     HOAA    H       H       0       -23.560     25.901      5.908       
+CQL     HAD     H       H       0       -20.531     27.297      11.267      
+CQL     HAE     H       H       0       -22.782     27.268      10.638      
+CQL     HAF     H       H       0       -18.951     26.390      9.847       
+CQL     HAG     H       H       0       -19.230     24.321      5.619       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CQL       OAA       CAJ       SINGLE    n         1.345     0.010     1.345     0.010     
+CQL       CLAB      CAI       SINGLE    n         1.739     0.010     1.739     0.010     
+CQL       IAC       CAK       SINGLE    n         2.092     0.010     2.092     0.010     
+CQL       CAD       CAE       DOUBLE    y         1.406     0.010     1.406     0.010     
+CQL       CAD       CAF       SINGLE    y         1.356     0.010     1.356     0.010     
+CQL       CAE       NAH       SINGLE    y         1.317     0.010     1.317     0.010     
+CQL       CAF       CAL       DOUBLE    y         1.411     0.010     1.411     0.010     
+CQL       CAG       CAI       DOUBLE    y         1.359     0.012     1.359     0.012     
+CQL       CAG       CAK       SINGLE    y         1.385     0.012     1.385     0.012     
+CQL       NAH       CAM       DOUBLE    y         1.365     0.010     1.365     0.010     
+CQL       CAI       CAL       SINGLE    y         1.420     0.010     1.420     0.010     
+CQL       CAJ       CAK       DOUBLE    y         1.376     0.010     1.376     0.010     
+CQL       CAJ       CAM       SINGLE    y         1.426     0.010     1.426     0.010     
+CQL       CAL       CAM       SINGLE    y         1.420     0.010     1.420     0.010     
+CQL       OAA       HOAA      SINGLE    n         0.970     0.012     0.860     0.020     
+CQL       CAD       HAD       SINGLE    n         1.082     0.013     0.942     0.019     
+CQL       CAE       HAE       SINGLE    n         1.082     0.013     0.943     0.020     
+CQL       CAF       HAF       SINGLE    n         1.082     0.013     0.942     0.010     
+CQL       CAG       HAG       SINGLE    n         1.082     0.013     0.943     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CQL         CAJ         OAA        HOAA     108.595    3.00
+CQL         CAE         CAD         CAF     118.446    1.50
+CQL         CAE         CAD         HAD     120.637    1.50
+CQL         CAF         CAD         HAD     120.917    1.50
+CQL         CAD         CAE         NAH     123.766    1.50
+CQL         CAD         CAE         HAE     118.339    1.50
+CQL         NAH         CAE         HAE     117.895    1.50
+CQL         CAD         CAF         CAL     120.303    1.50
+CQL         CAD         CAF         HAF     120.039    1.50
+CQL         CAL         CAF         HAF     119.657    1.50
+CQL         CAI         CAG         CAK     120.390    1.50
+CQL         CAI         CAG         HAG     119.869    1.50
+CQL         CAK         CAG         HAG     119.741    1.50
+CQL         CAE         NAH         CAM     116.983    1.50
+CQL        CLAB         CAI         CAG     118.618    1.93
+CQL        CLAB         CAI         CAL     119.694    1.50
+CQL         CAG         CAI         CAL     121.688    1.50
+CQL         OAA         CAJ         CAK     119.925    1.50
+CQL         OAA         CAJ         CAM     119.659    1.77
+CQL         CAK         CAJ         CAM     120.416    1.50
+CQL         IAC         CAK         CAG     119.275    1.50
+CQL         IAC         CAK         CAJ     119.982    1.50
+CQL         CAG         CAK         CAJ     120.744    1.50
+CQL         CAF         CAL         CAI     123.708    1.50
+CQL         CAF         CAL         CAM     118.945    1.50
+CQL         CAI         CAL         CAM     117.346    1.50
+CQL         NAH         CAM         CAJ     119.028    1.50
+CQL         NAH         CAM         CAL     121.556    1.50
+CQL         CAJ         CAM         CAL     119.416    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CQL       const_sp2_sp2_9         CAF         CAL         CAM         NAH       0.000   10.00     2
+CQL       const_sp2_sp2_1         CAF         CAD         CAE         NAH       0.000   10.00     2
+CQL              const_33         CAE         CAD         CAF         CAL       0.000   10.00     2
+CQL       const_sp2_sp2_5         CAD         CAE         NAH         CAM       0.000   10.00     2
+CQL              const_14         CAD         CAF         CAL         CAI     180.000   10.00     2
+CQL              const_38         CAI         CAG         CAK         IAC     180.000   10.00     2
+CQL              const_18         CAK         CAG         CAI        CLAB     180.000   10.00     2
+CQL       const_sp2_sp2_8         CAJ         CAM         NAH         CAE     180.000   10.00     2
+CQL              const_24        CLAB         CAI         CAL         CAF       0.000   10.00     2
+CQL              const_32         OAA         CAJ         CAK         IAC       0.000   10.00     2
+CQL              const_28         OAA         CAJ         CAM         NAH       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CQL    plan-1         CAF   0.020
+CQL    plan-1         CAG   0.020
+CQL    plan-1         CAI   0.020
+CQL    plan-1         CAJ   0.020
+CQL    plan-1         CAK   0.020
+CQL    plan-1         CAL   0.020
+CQL    plan-1         CAM   0.020
+CQL    plan-1        CLAB   0.020
+CQL    plan-1         HAG   0.020
+CQL    plan-1         IAC   0.020
+CQL    plan-1         NAH   0.020
+CQL    plan-1         OAA   0.020
+CQL    plan-2         CAD   0.020
+CQL    plan-2         CAE   0.020
+CQL    plan-2         CAF   0.020
+CQL    plan-2         CAI   0.020
+CQL    plan-2         CAJ   0.020
+CQL    plan-2         CAL   0.020
+CQL    plan-2         CAM   0.020
+CQL    plan-2         HAD   0.020
+CQL    plan-2         HAE   0.020
+CQL    plan-2         HAF   0.020
+CQL    plan-2         NAH   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CQL SMILES           ACDLabs              11.02 "Ic1c(O)c2ncccc2c(Cl)c1"
+CQL SMILES_CANONICAL CACTVS               3.352 "Oc1c(I)cc(Cl)c2cccnc12"
+CQL SMILES           CACTVS               3.352 "Oc1c(I)cc(Cl)c2cccnc12"
+CQL SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc2c(cc(c(c2nc1)O)I)Cl"
+CQL SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc2c(cc(c(c2nc1)O)I)Cl"
+CQL InChI            InChI                1.03  "InChI=1S/C9H5ClINO/c10-6-4-7(11)9(13)8-5(6)2-1-3-12-8/h1-4,13H"
+CQL InChIKey         InChI                1.03  QCDFBFJGMNKBDO-UHFFFAOYSA-N
+CQL ?                acedrg               202         "dictionary generator"                  
+CQL ?                acedrg_database      11          "data source"                           
+CQL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CQL ?                refmac5              5.8.0189    "optimization tool"                     

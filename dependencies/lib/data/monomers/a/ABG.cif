@@ -1,0 +1,367 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ABG      ABG '.                                   ' non-polymer        48  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ABG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ABG           O2A    O    OP       -0.500      0.000    0.000    0.000
+ ABG           PA     P    P         0.000     -1.449   -0.193    0.249
+ ABG           O1A    O    OP       -0.500     -1.659   -0.586    1.664
+ ABG           O3A    O    O2        0.000     -2.011   -1.350   -0.718
+ ABG           PB     P    P         0.000     -1.976   -2.959   -0.675
+ ABG           O1B    O    O         0.000     -2.655   -3.435    0.551
+ ABG           O2B    O    OH1       0.000     -0.447   -3.464   -0.671
+ ABG           H2B    H    H         0.000      0.139   -3.237   -1.407
+ ABG           C3B    C    CH2       0.000     -2.831   -3.625   -2.141
+ ABG           H3B2   H    H         0.000     -2.330   -3.274   -3.045
+ ABG           H3B1   H    H         0.000     -3.868   -3.282   -2.144
+ ABG           PG     P    P         0.000     -2.793   -5.447   -2.091
+ ABG           O2G    O    OH1       0.000     -1.264   -5.952   -2.087
+ ABG           H2G    H    H         0.000     -0.678   -5.725   -2.823
+ ABG           O3G    O    OH1       0.000     -3.548   -6.035   -3.386
+ ABG           H3G    H    H         0.000     -3.617   -6.991   -3.512
+ ABG           O1G    O    O         0.000     -3.471   -5.922   -0.865
+ ABG           "O5'"  O    O2        0.000     -2.233    1.182   -0.047
+ ABG           "C5'"  C    CH2       0.000     -2.036    2.371    0.720
+ ABG           "H5'2" H    H         0.000     -0.990    2.677    0.653
+ ABG           "H5'1" H    H         0.000     -2.291    2.176    1.764
+ ABG           "C4'"  C    CH1       0.000     -2.932    3.484    0.174
+ ABG           "H4'"  H    H         0.000     -2.747    3.620   -0.900
+ ABG           "C3'"  C    CH1       0.000     -2.650    4.800    0.926
+ ABG           "H3'"  H    H         0.000     -1.906    4.639    1.719
+ ABG           "O3'"  O    OH1       0.000     -2.203    5.809    0.018
+ ABG           H3O1   H    H         0.000     -2.031    6.626    0.505
+ ABG           "C2'"  C    CH1       0.000     -4.017    5.189    1.538
+ ABG           "H2'"  H    H         0.000     -4.084    4.865    2.586
+ ABG           "O2'"  O    OH1       0.000     -4.246    6.595    1.424
+ ABG           H2O1   H    H         0.000     -3.618    7.070    1.985
+ ABG           "C1'"  C    CH1       0.000     -5.009    4.394    0.649
+ ABG           "H1'"  H    H         0.000     -5.201    4.929   -0.291
+ ABG           "O4'"  O    O2        0.000     -4.313    3.154    0.396
+ ABG           N9     N    NR5       0.000     -6.261    4.146    1.367
+ ABG           C8     C    CR15      0.000     -6.547    3.058    2.138
+ ABG           H8     H    H         0.000     -5.874    2.228    2.316
+ ABG           N7     N    NRD5      0.000     -7.748    3.165    2.630
+ ABG           C5     C    CR56      0.000     -8.310    4.319    2.199
+ ABG           C4     C    CR56      0.000     -7.363    4.963    1.384
+ ABG           C6     C    CR6       0.000     -9.553    4.945    2.391
+ ABG           N6     N    NH2       0.000    -10.525    4.360    3.184
+ ABG           H61    H    H         0.000    -10.352    3.468    3.638
+ ABG           H62    H    H         0.000    -11.422    4.815    3.321
+ ABG           N1     N    NRD6      0.000     -9.774    6.112    1.796
+ ABG           C2     C    CR16      0.000     -8.852    6.679    1.039
+ ABG           H2     H    H         0.000     -9.073    7.631    0.572
+ ABG           N3     N    NRD6      0.000     -7.674    6.130    0.830
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ABG      O2A    n/a    PA     START
+ ABG      PA     O2A    "O5'"  .
+ ABG      O1A    PA     .      .
+ ABG      O3A    PA     PB     .
+ ABG      PB     O3A    C3B    .
+ ABG      O1B    PB     .      .
+ ABG      O2B    PB     H2B    .
+ ABG      H2B    O2B    .      .
+ ABG      C3B    PB     PG     .
+ ABG      H3B2   C3B    .      .
+ ABG      H3B1   C3B    .      .
+ ABG      PG     C3B    O1G    .
+ ABG      O2G    PG     H2G    .
+ ABG      H2G    O2G    .      .
+ ABG      O3G    PG     H3G    .
+ ABG      H3G    O3G    .      .
+ ABG      O1G    PG     .      .
+ ABG      "O5'"  PA     "C5'"  .
+ ABG      "C5'"  "O5'"  "C4'"  .
+ ABG      "H5'2" "C5'"  .      .
+ ABG      "H5'1" "C5'"  .      .
+ ABG      "C4'"  "C5'"  "C3'"  .
+ ABG      "H4'"  "C4'"  .      .
+ ABG      "C3'"  "C4'"  "C2'"  .
+ ABG      "H3'"  "C3'"  .      .
+ ABG      "O3'"  "C3'"  H3O1   .
+ ABG      H3O1   "O3'"  .      .
+ ABG      "C2'"  "C3'"  "C1'"  .
+ ABG      "H2'"  "C2'"  .      .
+ ABG      "O2'"  "C2'"  H2O1   .
+ ABG      H2O1   "O2'"  .      .
+ ABG      "C1'"  "C2'"  N9     .
+ ABG      "H1'"  "C1'"  .      .
+ ABG      "O4'"  "C1'"  .      .
+ ABG      N9     "C1'"  C8     .
+ ABG      C8     N9     N7     .
+ ABG      H8     C8     .      .
+ ABG      N7     C8     C5     .
+ ABG      C5     N7     C6     .
+ ABG      C4     C5     .      .
+ ABG      C6     C5     N1     .
+ ABG      N6     C6     H62    .
+ ABG      H61    N6     .      .
+ ABG      H62    N6     .      .
+ ABG      N1     C6     C2     .
+ ABG      C2     N1     N3     .
+ ABG      H2     C2     .      .
+ ABG      N3     C2     .      END
+ ABG      "C4'"  "O4'"  .    ADD
+ ABG      N9     C4     .    ADD
+ ABG      C4     N3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ABG       O1G       PG        double    1.480     0.020     1.480     0.020     
+ABG       O2G       PG        single    1.610     0.020     1.610     0.020     
+ABG       O3G       PG        single    1.610     0.020     1.610     0.020     
+ABG       PG        C3B       single    1.812     0.020     1.812     0.020     
+ABG       H2G       O2G       single    0.970     0.012     0.839     0.014     
+ABG       H3G       O3G       single    0.970     0.012     0.839     0.014     
+ABG       C3B       PB        single    1.812     0.020     1.812     0.020     
+ABG       H3B2      C3B       single    1.089     0.010     0.989     0.005     
+ABG       H3B1      C3B       single    1.089     0.010     0.989     0.005     
+ABG       O1B       PB        double    1.480     0.020     1.480     0.020     
+ABG       O2B       PB        single    1.610     0.020     1.610     0.020     
+ABG       PB        O3A       single    1.610     0.020     1.610     0.020     
+ABG       H2B       O2B       single    0.970     0.012     0.839     0.014     
+ABG       O3A       PA        single    1.610     0.020     1.610     0.020     
+ABG       O1A       PA        deloc     1.510     0.020     1.510     0.020     
+ABG       PA        O2A       deloc     1.510     0.020     1.510     0.020     
+ABG       "O5'"     PA        single    1.610     0.020     1.610     0.020     
+ABG       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+ABG       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+ABG       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+ABG       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+ABG       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+ABG       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+ABG       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+ABG       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+ABG       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+ABG       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+ABG       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+ABG       N9        C4        single    1.337     0.020     1.337     0.020     
+ABG       C8        N9        single    1.337     0.020     1.337     0.020     
+ABG       C4        N3        double    1.355     0.020     1.355     0.020     
+ABG       C4        C5        single    1.490     0.020     1.490     0.020     
+ABG       N3        C2        single    1.337     0.020     1.337     0.020     
+ABG       C2        N1        double    1.337     0.020     1.337     0.020     
+ABG       H2        C2        single    1.082     0.013     0.975     0.010     
+ABG       N1        C6        single    1.350     0.020     1.350     0.020     
+ABG       N6        C6        single    1.355     0.020     1.355     0.020     
+ABG       C6        C5        double    1.490     0.020     1.490     0.020     
+ABG       H62       N6        single    1.016     0.010     0.899     0.007     
+ABG       H61       N6        single    1.016     0.010     0.899     0.007     
+ABG       C5        N7        single    1.350     0.020     1.350     0.020     
+ABG       N7        C8        double    1.350     0.020     1.350     0.020     
+ABG       H8        C8        single    1.082     0.013     0.975     0.010     
+ABG       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+ABG       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+ABG       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+ABG       H2O1      "O2'"     single    0.970     0.012     0.839     0.014     
+ABG       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+ABG       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+ABG       H3O1      "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ABG      O2A    PA     O1A     119.900    3.000
+ ABG      O2A    PA     O3A     108.200    3.000
+ ABG      O2A    PA     "O5'"   108.200    3.000
+ ABG      O1A    PA     O3A     108.200    3.000
+ ABG      O1A    PA     "O5'"   108.200    3.000
+ ABG      O3A    PA     "O5'"   102.600    3.000
+ ABG      PA     O3A    PB      120.500    3.000
+ ABG      O3A    PB     O1B     109.500    3.000
+ ABG      O3A    PB     O2B     109.500    3.000
+ ABG      O3A    PB     C3B     109.500    3.000
+ ABG      O1B    PB     O2B     109.500    3.000
+ ABG      O1B    PB     C3B     109.500    3.000
+ ABG      O2B    PB     C3B     109.500    3.000
+ ABG      PB     O2B    H2B     120.000    3.000
+ ABG      PB     C3B    H3B2    109.500    3.000
+ ABG      PB     C3B    H3B1    109.500    3.000
+ ABG      PB     C3B    PG      109.500    3.000
+ ABG      H3B2   C3B    H3B1    107.900    3.000
+ ABG      H3B2   C3B    PG      109.500    3.000
+ ABG      H3B1   C3B    PG      109.500    3.000
+ ABG      C3B    PG     O3G     109.500    3.000
+ ABG      C3B    PG     O2G     109.500    3.000
+ ABG      C3B    PG     O1G     109.500    3.000
+ ABG      O3G    PG     O2G     109.500    3.000
+ ABG      O3G    PG     O1G     109.500    3.000
+ ABG      O2G    PG     O1G     109.500    3.000
+ ABG      PG     O3G    H3G     120.000    3.000
+ ABG      PG     O2G    H2G     120.000    3.000
+ ABG      PA     "O5'"  "C5'"   120.500    3.000
+ ABG      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ ABG      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ ABG      "O5'"  "C5'"  "C4'"   109.470    3.000
+ ABG      "H5'2" "C5'"  "H5'1"  107.900    3.000
+ ABG      "H5'2" "C5'"  "C4'"   109.470    3.000
+ ABG      "H5'1" "C5'"  "C4'"   109.470    3.000
+ ABG      "C5'"  "C4'"  "H4'"   108.340    3.000
+ ABG      "C5'"  "C4'"  "C3'"   111.000    3.000
+ ABG      "C5'"  "C4'"  "O4'"   109.470    3.000
+ ABG      "H4'"  "C4'"  "C3'"   108.340    3.000
+ ABG      "H4'"  "C4'"  "O4'"   109.470    3.000
+ ABG      "C3'"  "C4'"  "O4'"   109.470    3.000
+ ABG      "C4'"  "C3'"  "H3'"   108.340    3.000
+ ABG      "C4'"  "C3'"  "O3'"   109.470    3.000
+ ABG      "C4'"  "C3'"  "C2'"   111.000    3.000
+ ABG      "H3'"  "C3'"  "O3'"   109.470    3.000
+ ABG      "H3'"  "C3'"  "C2'"   108.340    3.000
+ ABG      "O3'"  "C3'"  "C2'"   109.470    3.000
+ ABG      "C3'"  "O3'"  H3O1    109.470    3.000
+ ABG      "C3'"  "C2'"  "H2'"   108.340    3.000
+ ABG      "C3'"  "C2'"  "O2'"   109.470    3.000
+ ABG      "C3'"  "C2'"  "C1'"   111.000    3.000
+ ABG      "H2'"  "C2'"  "O2'"   109.470    3.000
+ ABG      "H2'"  "C2'"  "C1'"   108.340    3.000
+ ABG      "O2'"  "C2'"  "C1'"   109.470    3.000
+ ABG      "C2'"  "O2'"  H2O1    109.470    3.000
+ ABG      "C2'"  "C1'"  "H1'"   108.340    3.000
+ ABG      "C2'"  "C1'"  "O4'"   109.470    3.000
+ ABG      "C2'"  "C1'"  N9      109.470    3.000
+ ABG      "H1'"  "C1'"  "O4'"   109.470    3.000
+ ABG      "H1'"  "C1'"  N9      109.470    3.000
+ ABG      "O4'"  "C1'"  N9      109.470    3.000
+ ABG      "C1'"  "O4'"  "C4'"   111.800    3.000
+ ABG      "C1'"  N9     C8      126.000    3.000
+ ABG      "C1'"  N9     C4      126.000    3.000
+ ABG      C8     N9     C4      108.000    3.000
+ ABG      N9     C8     H8      126.000    3.000
+ ABG      N9     C8     N7      108.000    3.000
+ ABG      H8     C8     N7      126.000    3.000
+ ABG      C8     N7     C5      108.000    3.000
+ ABG      N7     C5     C4      108.000    3.000
+ ABG      N7     C5     C6      132.000    3.000
+ ABG      C4     C5     C6      120.000    3.000
+ ABG      C5     C4     N9      108.000    3.000
+ ABG      C5     C4     N3      120.000    3.000
+ ABG      N9     C4     N3      132.000    3.000
+ ABG      C5     C6     N6      120.000    3.000
+ ABG      C5     C6     N1      120.000    3.000
+ ABG      N6     C6     N1      120.000    3.000
+ ABG      C6     N6     H61     120.000    3.000
+ ABG      C6     N6     H62     120.000    3.000
+ ABG      H61    N6     H62     120.000    3.000
+ ABG      C6     N1     C2      120.000    3.000
+ ABG      N1     C2     H2      120.000    3.000
+ ABG      N1     C2     N3      120.000    3.000
+ ABG      H2     C2     N3      120.000    3.000
+ ABG      C2     N3     C4      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ABG      var_1    O2A    PA     O3A    PB        79.955   20.000   1
+ ABG      var_2    PA     O3A    PB     C3B     -179.945   20.000   1
+ ABG      var_3    O3A    PB     O2B    H2B      -59.985   20.000   1
+ ABG      var_4    O3A    PB     C3B    PG      -179.969   20.000   1
+ ABG      var_5    PB     C3B    PG     O1G       59.932   20.000   1
+ ABG      var_6    C3B    PG     O3G    H3G      179.988   20.000   1
+ ABG      var_7    C3B    PG     O2G    H2G      -59.966   20.000   1
+ ABG      var_8    O2A    PA     "O5'"  "C5'"    -64.968   20.000   1
+ ABG      var_9    PA     "O5'"  "C5'"  "C4'"    179.982   20.000   1
+ ABG      var_10   "O5'"  "C5'"  "C4'"  "C3'"   -175.750   20.000   3
+ ABG      var_11   "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ ABG      var_12   "C5'"  "C4'"  "C3'"  "C2'"   -120.000   20.000   3
+ ABG      var_13   "C4'"  "C3'"  "O3'"  H3O1    -179.949   20.000   1
+ ABG      var_14   "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ ABG      var_15   "C3'"  "C2'"  "O2'"  H2O1     -67.286   20.000   1
+ ABG      var_16   "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ ABG      var_17   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ ABG      var_18   "C2'"  "C1'"  N9     C8       -90.821   20.000   1
+ ABG      CONST_1  "C1'"  N9     C4     C5       180.000    0.000   0
+ ABG      CONST_2  "C1'"  N9     C8     N7       180.000    0.000   0
+ ABG      CONST_3  N9     C8     N7     C5         0.000    0.000   0
+ ABG      CONST_4  C8     N7     C5     C6       180.000    0.000   0
+ ABG      CONST_5  N7     C5     C4     N9         0.000    0.000   0
+ ABG      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ ABG      CONST_7  N7     C5     C6     N1       180.000    0.000   0
+ ABG      CONST_8  C5     C6     N6     H62     -179.997    0.000   0
+ ABG      CONST_9  C5     C6     N1     C2         0.000    0.000   0
+ ABG      CONST_10 C6     N1     C2     N3         0.000    0.000   0
+ ABG      CONST_11 N1     C2     N3     C4         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ABG      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ ABG      chir_02  "C1'"  "O4'"  N9     "C2'"     negativ
+ ABG      chir_03  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ ABG      chir_04  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ABG      plan-1    N9        0.020
+ ABG      plan-1    "C1'"     0.020
+ ABG      plan-1    C4        0.020
+ ABG      plan-1    C8        0.020
+ ABG      plan-1    N7        0.020
+ ABG      plan-1    N3        0.020
+ ABG      plan-1    C5        0.020
+ ABG      plan-1    C2        0.020
+ ABG      plan-1    N1        0.020
+ ABG      plan-1    C6        0.020
+ ABG      plan-1    H2        0.020
+ ABG      plan-1    N6        0.020
+ ABG      plan-1    H8        0.020
+ ABG      plan-1    H61       0.020
+ ABG      plan-1    H62       0.020
+ ABG      plan-2    N6        0.020
+ ABG      plan-2    C6        0.020
+ ABG      plan-2    H62       0.020
+ ABG      plan-2    H61       0.020
+# ------------------------------------------------------

@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PSL     PSL      PYROSULFATE     NON-POLYMER     9     9     .     
+#
+data_comp_PSL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PSL     S1      S       S3      0       -1.324      -0.213      -0.245      
+PSL     O1      O       OS      -1      -1.617      -0.966      0.955       
+PSL     O2      O       O       0       -2.058      -0.699      -1.391      
+PSL     O3      O       O       0       -1.475      1.216       -0.060      
+PSL     S2      S       S3      0       1.390       0.200       0.198       
+PSL     O4      O       O       0       1.498       1.515       -0.394      
+PSL     O5      O       O2      0       0.209       -0.539      -0.603      
+PSL     O6      O       O       0       2.556       -0.617      -0.055      
+PSL     O7      O       OS      -1      1.041       0.246       1.602       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PSL       S1        O1        SINGLE    n         1.446     0.016     1.446     0.016     
+PSL       S1        O2        DOUBLE    n         1.446     0.016     1.446     0.016     
+PSL       S1        O3        DOUBLE    n         1.446     0.016     1.446     0.016     
+PSL       S1        O5        SINGLE    n         1.592     0.020     1.592     0.020     
+PSL       S2        O4        DOUBLE    n         1.446     0.016     1.446     0.016     
+PSL       S2        O5        SINGLE    n         1.592     0.020     1.592     0.020     
+PSL       S2        O6        DOUBLE    n         1.446     0.016     1.446     0.016     
+PSL       S2        O7        SINGLE    n         1.446     0.016     1.446     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PSL          O1          S1          O2     112.746    1.50
+PSL          O1          S1          O3     112.746    1.50
+PSL          O1          S1          O5     105.111    2.79
+PSL          O2          S1          O3     112.746    1.50
+PSL          O2          S1          O5     105.111    2.79
+PSL          O3          S1          O5     105.111    2.79
+PSL          O4          S2          O5     105.111    2.79
+PSL          O4          S2          O6     112.746    1.50
+PSL          O4          S2          O7     112.746    1.50
+PSL          O5          S2          O6     105.111    2.79
+PSL          O5          S2          O7     105.111    2.79
+PSL          O6          S2          O7     112.746    1.50
+PSL          S1          O5          S2     109.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PSL             sp3_sp3_1          S2          O5          S1          O1     180.000   10.00     3
+PSL             sp3_sp3_4          S1          O5          S2          O4     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PSL SMILES           ACDLabs              10.04 "[O-]S(=O)(=O)OS([O-])(=O)=O"
+PSL SMILES_CANONICAL CACTVS               3.341 "[O-][S](=O)(=O)O[S]([O-])(=O)=O"
+PSL SMILES           CACTVS               3.341 "[O-][S](=O)(=O)O[S]([O-])(=O)=O"
+PSL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[O-]S(=O)(=O)OS(=O)(=O)[O-]"
+PSL SMILES           "OpenEye OEToolkits" 1.5.0 "[O-]S(=O)(=O)OS(=O)(=O)[O-]"
+PSL InChI            InChI                1.03  "InChI=1S/H2O7S2/c1-8(2,3)7-9(4,5)6/h(H,1,2,3)(H,4,5,6)/p-2"
+PSL InChIKey         InChI                1.03  VFNGKCDDZUSWLR-UHFFFAOYSA-L
+PSL ?                acedrg               202         "dictionary generator"                  
+PSL ?                acedrg_database      11          "data source"                           
+PSL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PSL ?                refmac5              5.8.0189    "optimization tool"                     

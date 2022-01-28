@@ -1,0 +1,158 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FPY     FPY      "(4S)-5-FLUORO-4-HYDROXY-3,4-DIHYDROPYRIMIDIN-2(1H)-ONE"     NON-POLYMER     14     9     .     
+#
+data_comp_FPY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FPY     N1      N       NR6     0       3.970       23.845      102.101     
+FPY     C2      C       CR6     0       4.020       22.495      102.321     
+FPY     O2      O       O       0       3.395       21.694      101.613     
+FPY     N3      N       NR6     0       4.785       22.080      103.345     
+FPY     C4      C       CH1     0       5.551       22.956      104.245     
+FPY     O4      O       OH1     0       6.928       22.665      104.161     
+FPY     C5      C       CR6     0       5.320       24.413      103.947     
+FPY     F5      F       F       0       5.939       25.286      104.765     
+FPY     C6      C       CR16    0       4.549       24.783      102.936     
+FPY     HN1     H       H       0       3.543       24.120      101.386     
+FPY     HN3     H       H       0       4.831       21.209      103.489     
+FPY     H4      H       H       0       5.258       22.801      105.175     
+FPY     HO4     H       H       0       7.321       22.973      104.876     
+FPY     H6      H       H       0       4.397       25.700      102.787     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FPY       N1        C2        SINGLE    n         1.343     0.017     1.343     0.017     
+FPY       N1        C6        SINGLE    n         1.357     0.020     1.357     0.020     
+FPY       C2        O2        DOUBLE    n         1.237     0.010     1.237     0.010     
+FPY       C2        N3        SINGLE    n         1.335     0.011     1.335     0.011     
+FPY       N3        C4        SINGLE    n         1.462     0.013     1.462     0.013     
+FPY       C4        O4        SINGLE    n         1.410     0.012     1.410     0.012     
+FPY       C4        C5        SINGLE    n         1.495     0.020     1.495     0.020     
+FPY       C5        F5        SINGLE    n         1.347     0.017     1.347     0.017     
+FPY       C5        C6        DOUBLE    n         1.322     0.010     1.322     0.010     
+FPY       N1        HN1       SINGLE    n         1.016     0.010     0.876     0.020     
+FPY       N3        HN3       SINGLE    n         1.016     0.010     0.882     0.020     
+FPY       C4        H4        SINGLE    n         1.089     0.010     0.987     0.020     
+FPY       O4        HO4       SINGLE    n         0.970     0.012     0.872     0.020     
+FPY       C6        H6        SINGLE    n         1.082     0.013     0.941     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FPY          C2          N1          C6     122.641    1.50
+FPY          C2          N1         HN1     117.818    1.50
+FPY          C6          N1         HN1     119.541    1.50
+FPY          N1          C2          O2     122.433    1.50
+FPY          N1          C2          N3     115.666    1.50
+FPY          O2          C2          N3     121.901    1.50
+FPY          C2          N3          C4     123.393    2.69
+FPY          C2          N3         HN3     117.465    2.07
+FPY          C4          N3         HN3     119.142    2.75
+FPY          N3          C4          O4     110.342    2.34
+FPY          N3          C4          C5     111.725    2.77
+FPY          N3          C4          H4     109.078    1.50
+FPY          O4          C4          C5     109.527    2.40
+FPY          O4          C4          H4     108.134    1.50
+FPY          C5          C4          H4     106.710    3.00
+FPY          C4          O4         HO4     108.419    2.12
+FPY          C4          C5          F5     115.220    1.50
+FPY          C4          C5          C6     123.061    3.00
+FPY          F5          C5          C6     121.719    2.26
+FPY          N1          C6          C5     120.814    3.00
+FPY          N1          C6          H6     119.952    1.50
+FPY          C5          C6          H6     119.235    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FPY             sp2_sp2_3          O2          C2          N1          C6     180.000   10.00     2
+FPY            sp2_sp2_13          C5          C6          N1          C2       0.000   10.00     2
+FPY             sp2_sp2_7          O2          C2          N3          C4     180.000   10.00     2
+FPY             sp2_sp3_2          C2          N3          C4          O4     120.000   10.00     6
+FPY             sp3_sp3_1          N3          C4          O4         HO4     180.000   10.00     3
+FPY            sp2_sp3_11          F5          C5          C4          O4     -60.000   10.00     6
+FPY            sp2_sp2_11          F5          C5          C6          N1     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+FPY    chir_1    C4    O4    N3    C5    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FPY    plan-1          C2   0.020
+FPY    plan-1          C6   0.020
+FPY    plan-1         HN1   0.020
+FPY    plan-1          N1   0.020
+FPY    plan-2          C2   0.020
+FPY    plan-2          N1   0.020
+FPY    plan-2          N3   0.020
+FPY    plan-2          O2   0.020
+FPY    plan-3          C2   0.020
+FPY    plan-3          C4   0.020
+FPY    plan-3         HN3   0.020
+FPY    plan-3          N3   0.020
+FPY    plan-4          C4   0.020
+FPY    plan-4          C5   0.020
+FPY    plan-4          C6   0.020
+FPY    plan-4          F5   0.020
+FPY    plan-5          C5   0.020
+FPY    plan-5          C6   0.020
+FPY    plan-5          H6   0.020
+FPY    plan-5          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FPY SMILES           ACDLabs              10.04 "FC1=CNC(=O)NC1O"
+FPY SMILES_CANONICAL CACTVS               3.341 "O[C@@H]1NC(=O)NC=C1F"
+FPY SMILES           CACTVS               3.341 "O[CH]1NC(=O)NC=C1F"
+FPY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1=C([C@@H](NC(=O)N1)O)F"
+FPY SMILES           "OpenEye OEToolkits" 1.5.0 "C1=C(C(NC(=O)N1)O)F"
+FPY InChI            InChI                1.03  "InChI=1S/C4H5FN2O2/c5-2-1-6-4(9)7-3(2)8/h1,3,8H,(H2,6,7,9)/t3-/m0/s1"
+FPY InChIKey         InChI                1.03  PRVUBDAKZJCBTI-VKHMYHEASA-N
+FPY ?                acedrg               202         "dictionary generator"                  
+FPY ?                acedrg_database      11          "data source"                           
+FPY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FPY ?                refmac5              5.8.0189    "optimization tool"                     

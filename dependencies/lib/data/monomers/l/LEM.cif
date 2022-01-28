@@ -1,0 +1,210 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LEM      LEM '(3S)-3-amino-5-methylhexan-2-one    ' non-polymer        24   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LEM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LEM           N      N    NH2       0.000      0.000    0.000    0.000
+ LEM           HN     H    H         0.000      0.415   -0.231   -0.895
+ LEM           HNA    H    H         0.000      0.352   -0.443    0.840
+ LEM           CA     C    CH1       0.000     -1.102    0.967    0.078
+ LEM           HA     H    H         0.000     -1.340    1.334   -0.930
+ LEM           C      C    C         0.000     -0.692    2.126    0.951
+ LEM           CZ     C    CH3       0.000     -1.487    3.406    0.926
+ LEM           HZB    H    H         0.000     -1.482    3.807   -0.055
+ LEM           HZA    H    H         0.000     -2.485    3.210    1.220
+ LEM           HZ     H    H         0.000     -1.054    4.106    1.594
+ LEM           O      O    O         0.000      0.275    2.029    1.668
+ LEM           CB     C    CH2       0.000     -2.335    0.289    0.678
+ LEM           HB     H    H         0.000     -3.125    1.030    0.820
+ LEM           HBA    H    H         0.000     -2.075   -0.152    1.642
+ LEM           CG     C    CH1       0.000     -2.826   -0.807   -0.270
+ LEM           HG     H    H         0.000     -2.002   -1.503   -0.483
+ LEM           CD1    C    CH3       0.000     -3.307   -0.173   -1.578
+ LEM           HD1B   H    H         0.000     -4.101    0.499   -1.375
+ LEM           HD1A   H    H         0.000     -2.508    0.354   -2.031
+ LEM           HD1    H    H         0.000     -3.647   -0.931   -2.235
+ LEM           CD2    C    CH3       0.000     -3.980   -1.568    0.383
+ LEM           HD2B   H    H         0.000     -4.320   -2.327   -0.273
+ LEM           HD2A   H    H         0.000     -3.648   -2.008    1.287
+ LEM           HD2    H    H         0.000     -4.775   -0.898    0.588
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LEM      N      n/a    CA     START
+ LEM      HN     N      .      .
+ LEM      HNA    N      .      .
+ LEM      CA     N      CB     .
+ LEM      HA     CA     .      .
+ LEM      C      CA     O      .
+ LEM      CZ     C      HZ     .
+ LEM      HZB    CZ     .      .
+ LEM      HZA    CZ     .      .
+ LEM      HZ     CZ     .      .
+ LEM      O      C      .      .
+ LEM      CB     CA     CG     .
+ LEM      HB     CB     .      .
+ LEM      HBA    CB     .      .
+ LEM      CG     CB     CD2    .
+ LEM      HG     CG     .      .
+ LEM      CD1    CG     HD1    .
+ LEM      HD1B   CD1    .      .
+ LEM      HD1A   CD1    .      .
+ LEM      HD1    CD1    .      .
+ LEM      CD2    CG     HD2    .
+ LEM      HD2B   CD2    .      .
+ LEM      HD2A   CD2    .      .
+ LEM      HD2    CD2    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LEM       O         C         double    1.220     0.020     1.220     0.020     
+LEM       CZ        C         single    1.500     0.020     1.500     0.020     
+LEM       C         CA        single    1.500     0.020     1.500     0.020     
+LEM       CA        N         single    1.450     0.020     1.450     0.020     
+LEM       CB        CA        single    1.524     0.020     1.524     0.020     
+LEM       CG        CB        single    1.524     0.020     1.524     0.020     
+LEM       CD2       CG        single    1.524     0.020     1.524     0.020     
+LEM       CD1       CG        single    1.524     0.020     1.524     0.020     
+LEM       HZ        CZ        single    1.089     0.010     0.989     0.005     
+LEM       HZA       CZ        single    1.089     0.010     0.989     0.005     
+LEM       HZB       CZ        single    1.089     0.010     0.989     0.005     
+LEM       HA        CA        single    1.089     0.010     0.989     0.005     
+LEM       HN        N         single    1.036     0.016     0.914     0.007     
+LEM       HNA       N         single    1.036     0.016     0.914     0.007     
+LEM       HB        CB        single    1.089     0.010     0.989     0.005     
+LEM       HBA       CB        single    1.089     0.010     0.989     0.005     
+LEM       HG        CG        single    1.089     0.010     0.989     0.005     
+LEM       HD2       CD2       single    1.089     0.010     0.989     0.005     
+LEM       HD2A      CD2       single    1.089     0.010     0.989     0.005     
+LEM       HD2B      CD2       single    1.089     0.010     0.989     0.005     
+LEM       HD1       CD1       single    1.089     0.010     0.989     0.005     
+LEM       HD1A      CD1       single    1.089     0.010     0.989     0.005     
+LEM       HD1B      CD1       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LEM      HN     N      HNA     120.000    3.000
+ LEM      HN     N      CA      120.000    3.000
+ LEM      HNA    N      CA      120.000    3.000
+ LEM      N      CA     HA      109.470    3.000
+ LEM      N      CA     C       109.470    3.000
+ LEM      N      CA     CB      109.470    3.000
+ LEM      HA     CA     C       108.810    3.000
+ LEM      HA     CA     CB      108.340    3.000
+ LEM      C      CA     CB      109.470    3.000
+ LEM      CA     C      CZ      120.000    3.000
+ LEM      CA     C      O       120.500    3.000
+ LEM      CZ     C      O       123.000    3.000
+ LEM      C      CZ     HZB     109.470    3.000
+ LEM      C      CZ     HZA     109.470    3.000
+ LEM      C      CZ     HZ      109.470    3.000
+ LEM      HZB    CZ     HZA     109.470    3.000
+ LEM      HZB    CZ     HZ      109.470    3.000
+ LEM      HZA    CZ     HZ      109.470    3.000
+ LEM      CA     CB     HB      109.470    3.000
+ LEM      CA     CB     HBA     109.470    3.000
+ LEM      CA     CB     CG      111.000    3.000
+ LEM      HB     CB     HBA     107.900    3.000
+ LEM      HB     CB     CG      109.470    3.000
+ LEM      HBA    CB     CG      109.470    3.000
+ LEM      CB     CG     HG      108.340    3.000
+ LEM      CB     CG     CD1     111.000    3.000
+ LEM      CB     CG     CD2     111.000    3.000
+ LEM      HG     CG     CD1     108.340    3.000
+ LEM      HG     CG     CD2     108.340    3.000
+ LEM      CD1    CG     CD2     111.000    3.000
+ LEM      CG     CD1    HD1B    109.470    3.000
+ LEM      CG     CD1    HD1A    109.470    3.000
+ LEM      CG     CD1    HD1     109.470    3.000
+ LEM      HD1B   CD1    HD1A    109.470    3.000
+ LEM      HD1B   CD1    HD1     109.470    3.000
+ LEM      HD1A   CD1    HD1     109.470    3.000
+ LEM      CG     CD2    HD2B    109.470    3.000
+ LEM      CG     CD2    HD2A    109.470    3.000
+ LEM      CG     CD2    HD2     109.470    3.000
+ LEM      HD2B   CD2    HD2A    109.470    3.000
+ LEM      HD2B   CD2    HD2     109.470    3.000
+ LEM      HD2A   CD2    HD2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LEM      var_1    HNA    N      CA     CB       -59.964   20.000   1
+ LEM      var_2    N      CA     C      O        -15.018   20.000   3
+ LEM      var_3    CA     C      CZ     HZ      -179.739   20.000   1
+ LEM      var_4    N      CA     CB     CG       -65.015   20.000   3
+ LEM      var_5    CA     CB     CG     CD2      174.988   20.000   3
+ LEM      var_6    CB     CG     CD1    HD1      179.991   20.000   3
+ LEM      var_7    CB     CG     CD2    HD2       60.014   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LEM      chir_01  CA     C      N      CB        negativ
+ LEM      chir_02  CG     CB     CD2    CD1       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LEM      plan-1    C         0.020
+ LEM      plan-1    O         0.020
+ LEM      plan-1    CZ        0.020
+ LEM      plan-1    CA        0.020
+ LEM      plan-2    N         0.020
+ LEM      plan-2    CA        0.020
+ LEM      plan-2    HN        0.020
+ LEM      plan-2    HNA       0.020
+# ------------------------------------------------------

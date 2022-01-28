@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PDO     PDO      1,3-PROPANDIOL     NON-POLYMER     13     5     .     
+#
+data_comp_PDO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PDO     C1      C       CH2     0       0.992       -0.175      -0.766      
+PDO     O1      O       OH1     0       2.386       -0.105      -0.524      
+PDO     C2      C       CH2     0       0.200       -0.177      0.529       
+PDO     C3      C       CH2     0       -1.301      -0.339      0.371       
+PDO     O3      O       OH1     0       -1.855      0.689       -0.432      
+PDO     H11     H       H       0       0.790       -0.993      -1.268      
+PDO     H12     H       H       0       0.717       0.594       -1.310      
+PDO     HO1     H       H       0       2.780       0.046       -1.258      
+PDO     H21     H       H       0       0.357       0.687       0.971       
+PDO     H22     H       H       0       0.522       -0.933      1.069       
+PDO     H31     H       H       0       -1.722      -0.321      1.257       
+PDO     H32     H       H       0       -1.489      -1.209      -0.040      
+PDO     HO3     H       H       0       -1.772      1.425       -0.023      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PDO       C1        O1        SINGLE    n         1.417     0.020     1.417     0.020     
+PDO       C1        C2        SINGLE    n         1.518     0.010     1.518     0.010     
+PDO       C2        C3        SINGLE    n         1.518     0.010     1.518     0.010     
+PDO       C3        O3        SINGLE    n         1.417     0.020     1.417     0.020     
+PDO       C1        H11       SINGLE    n         1.089     0.010     0.981     0.017     
+PDO       C1        H12       SINGLE    n         1.089     0.010     0.981     0.017     
+PDO       O1        HO1       SINGLE    n         0.970     0.012     0.846     0.020     
+PDO       C2        H21       SINGLE    n         1.089     0.010     0.983     0.018     
+PDO       C2        H22       SINGLE    n         1.089     0.010     0.983     0.018     
+PDO       C3        H31       SINGLE    n         1.089     0.010     0.981     0.017     
+PDO       C3        H32       SINGLE    n         1.089     0.010     0.981     0.017     
+PDO       O3        HO3       SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PDO          O1          C1          C2     111.314    3.00
+PDO          O1          C1         H11     109.258    1.50
+PDO          O1          C1         H12     109.258    1.50
+PDO          C2          C1         H11     109.103    1.50
+PDO          C2          C1         H12     109.103    1.50
+PDO         H11          C1         H12     108.120    1.50
+PDO          C1          O1         HO1     108.576    2.78
+PDO          C1          C2          C3     113.605    1.94
+PDO          C1          C2         H21     103.378    3.00
+PDO          C1          C2         H22     103.378    3.00
+PDO          C3          C2         H21     103.378    3.00
+PDO          C3          C2         H22     103.378    3.00
+PDO         H21          C2         H22     108.411    3.00
+PDO          C2          C3          O3     111.314    3.00
+PDO          C2          C3         H31     109.103    1.50
+PDO          C2          C3         H32     109.103    1.50
+PDO          O3          C3         H31     109.258    1.50
+PDO          O3          C3         H32     109.258    1.50
+PDO         H31          C3         H32     108.120    1.50
+PDO          C3          O3         HO3     108.576    2.78
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PDO             sp3_sp3_1          C2          C1          O1         HO1     180.000   10.00     3
+PDO             sp3_sp3_4          O1          C1          C2          C3     180.000   10.00     3
+PDO            sp3_sp3_13          C1          C2          C3          O3     180.000   10.00     3
+PDO            sp3_sp3_22          C2          C3          O3         HO3     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PDO SMILES           ACDLabs              11.02 OCCCO
+PDO SMILES_CANONICAL CACTVS               3.352 OCCCO
+PDO SMILES           CACTVS               3.352 OCCCO
+PDO SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(CO)CO"
+PDO SMILES           "OpenEye OEToolkits" 1.7.0 "C(CO)CO"
+PDO InChI            InChI                1.03  InChI=1S/C3H8O2/c4-2-1-3-5/h4-5H,1-3H2
+PDO InChIKey         InChI                1.03  YPFDHNVEDLHUCE-UHFFFAOYSA-N
+PDO ?                acedrg               202         "dictionary generator"                  
+PDO ?                acedrg_database      11          "data source"                           
+PDO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PDO ?                refmac5              5.8.0189    "optimization tool"                     

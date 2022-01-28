@@ -1,0 +1,156 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1FP     1FP      piperazine-1-carbaldehyde     NON-POLYMER     18     8     .     
+#
+data_comp_1FP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+1FP     OAA     O       O       0       0.022       16.695      18.913      
+1FP     CAB     C       C1      0       -0.516      15.900      19.667      
+1FP     CAC     C       CH2     0       1.080       16.138      22.854      
+1FP     CAD     C       CH2     0       -0.767      14.585      22.964      
+1FP     CAE     C       CH2     0       1.288       15.802      21.390      
+1FP     CAF     C       CH2     0       -0.571      14.234      21.504      
+1FP     NAG     N       NT1     0       0.498       15.002      23.572      
+1FP     NAH     N       NR6     0       0.036       15.352      20.789      
+1FP     HAB     H       H       0       -1.421      15.647      19.440      
+1FP     HAC     H       H       0       1.945       16.377      23.263      
+1FP     HACA    H       H       0       0.481       16.917      22.931      
+1FP     HAD     H       H       0       -1.121      13.802      23.447      
+1FP     HADA    H       H       0       -1.425      15.315      23.042      
+1FP     HAE     H       H       0       1.627       16.591      20.925      
+1FP     HAEA    H       H       0       1.959       15.095      21.312      
+1FP     HAF     H       H       0       -1.435      14.006      21.105      
+1FP     HAFA    H       H       0       0.010       13.450      21.433      
+1FP     HNAG    H       H       0       1.073       14.318      23.569      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1FP       OAA       CAB       DOUBLE    n         1.219     0.013     1.219     0.013     
+1FP       CAB       NAH       SINGLE    n         1.349     0.017     1.349     0.017     
+1FP       CAC       CAE       SINGLE    n         1.512     0.010     1.512     0.010     
+1FP       CAC       NAG       SINGLE    n         1.460     0.011     1.460     0.011     
+1FP       CAD       CAF       SINGLE    n         1.512     0.010     1.512     0.010     
+1FP       CAD       NAG       SINGLE    n         1.460     0.011     1.460     0.011     
+1FP       CAE       NAH       SINGLE    n         1.453     0.010     1.453     0.010     
+1FP       CAF       NAH       SINGLE    n         1.453     0.010     1.453     0.010     
+1FP       CAB       HAB       SINGLE    n         1.082     0.013     0.967     0.020     
+1FP       CAC       HAC       SINGLE    n         1.089     0.010     0.986     0.020     
+1FP       CAC       HACA      SINGLE    n         1.089     0.010     0.986     0.020     
+1FP       CAD       HAD       SINGLE    n         1.089     0.010     0.986     0.020     
+1FP       CAD       HADA      SINGLE    n         1.089     0.010     0.986     0.020     
+1FP       CAE       HAE       SINGLE    n         1.089     0.010     0.978     0.016     
+1FP       CAE       HAEA      SINGLE    n         1.089     0.010     0.978     0.016     
+1FP       CAF       HAF       SINGLE    n         1.089     0.010     0.978     0.016     
+1FP       CAF       HAFA      SINGLE    n         1.089     0.010     0.978     0.016     
+1FP       NAG       HNAG      SINGLE    n         1.036     0.016     0.893     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+1FP         OAA         CAB         NAH     124.923    1.50
+1FP         OAA         CAB         HAB     117.545    3.00
+1FP         NAH         CAB         HAB     117.532    3.00
+1FP         CAE         CAC         NAG     110.456    1.63
+1FP         CAE         CAC         HAC     109.542    1.50
+1FP         CAE         CAC        HACA     109.542    1.50
+1FP         NAG         CAC         HAC     109.479    1.50
+1FP         NAG         CAC        HACA     109.479    1.50
+1FP         HAC         CAC        HACA     108.060    1.50
+1FP         CAF         CAD         NAG     110.456    1.63
+1FP         CAF         CAD         HAD     109.542    1.50
+1FP         CAF         CAD        HADA     109.542    1.50
+1FP         NAG         CAD         HAD     109.479    1.50
+1FP         NAG         CAD        HADA     109.479    1.50
+1FP         HAD         CAD        HADA     108.060    1.50
+1FP         CAC         CAE         NAH     110.222    1.50
+1FP         CAC         CAE         HAE     109.627    1.50
+1FP         CAC         CAE        HAEA     109.627    1.50
+1FP         NAH         CAE         HAE     109.623    1.50
+1FP         NAH         CAE        HAEA     109.623    1.50
+1FP         HAE         CAE        HAEA     108.187    1.50
+1FP         CAD         CAF         NAH     110.222    1.50
+1FP         CAD         CAF         HAF     109.627    1.50
+1FP         CAD         CAF        HAFA     109.627    1.50
+1FP         NAH         CAF         HAF     109.623    1.50
+1FP         NAH         CAF        HAFA     109.623    1.50
+1FP         HAF         CAF        HAFA     108.187    1.50
+1FP         CAC         NAG         CAD     110.165    1.50
+1FP         CAC         NAG        HNAG     109.673    3.00
+1FP         CAD         NAG        HNAG     109.673    3.00
+1FP         CAB         NAH         CAE     123.234    1.50
+1FP         CAB         NAH         CAF     123.234    1.50
+1FP         CAE         NAH         CAF     113.533    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+1FP             sp2_sp2_1         OAA         CAB         NAH         CAE     180.000   10.00     2
+1FP             sp3_sp3_1         NAG         CAC         CAE         NAH      60.000   10.00     3
+1FP            sp3_sp3_25         CAE         CAC         NAG         CAD     180.000   10.00     3
+1FP            sp3_sp3_10         NAG         CAD         CAF         NAH     -60.000   10.00     3
+1FP            sp3_sp3_19         CAF         CAD         NAG         CAC      60.000   10.00     3
+1FP             sp2_sp3_4         CAB         NAH         CAE         CAC     180.000   10.00     6
+1FP            sp2_sp3_10         CAB         NAH         CAF         CAD     180.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+1FP    plan-1         CAB   0.020
+1FP    plan-1         HAB   0.020
+1FP    plan-1         NAH   0.020
+1FP    plan-1         OAA   0.020
+1FP    plan-2         CAB   0.020
+1FP    plan-2         CAE   0.020
+1FP    plan-2         CAF   0.020
+1FP    plan-2         NAH   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+1FP SMILES           ACDLabs              12.01 O=CN1CCNCC1
+1FP SMILES_CANONICAL CACTVS               3.370 O=CN1CCNCC1
+1FP SMILES           CACTVS               3.370 O=CN1CCNCC1
+1FP SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C1CN(CCN1)C=O"
+1FP SMILES           "OpenEye OEToolkits" 1.7.0 "C1CN(CCN1)C=O"
+1FP InChI            InChI                1.03  InChI=1S/C5H10N2O/c8-5-7-3-1-6-2-4-7/h5-6H,1-4H2
+1FP InChIKey         InChI                1.03  MSSDTZLYNMFTKN-UHFFFAOYSA-N
+1FP ?                acedrg               202         "dictionary generator"                  
+1FP ?                acedrg_database      11          "data source"                           
+1FP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+1FP ?                refmac5              5.8.0189    "optimization tool"                     

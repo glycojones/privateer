@@ -1,0 +1,121 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NBU     NBU      N-BUTANE     NON-POLYMER     14     4     .     
+#
+data_comp_NBU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NBU     C1      C       CH3     0       -0.866      1.309       -10.439     
+NBU     C2      C       CH2     0       0.206       0.527       -9.718      
+NBU     C3      C       CH2     0       -0.228      -0.016      -8.383      
+NBU     C4      C       CH3     0       -0.425      1.015       -7.291      
+NBU     H11     H       H       0       -0.520      1.625       -11.292     
+NBU     H12     H       H       0       -1.134      2.071       -9.897      
+NBU     H13     H       H       0       -1.637      0.737       -10.595     
+NBU     H21     H       H       0       0.986       1.108       -9.581      
+NBU     H22     H       H       0       0.488       -0.224      -10.284     
+NBU     H31     H       H       0       0.446       -0.665      -8.085      
+NBU     H32     H       H       0       -1.072      -0.502      -8.512      
+NBU     H41     H       H       0       -1.348      0.990       -6.983      
+NBU     H42     H       H       0       -0.224      1.904       -7.633      
+NBU     H43     H       H       0       0.168       0.816       -6.545      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NBU       C1        C2        SINGLE    n         1.510     0.020     1.510     0.020     
+NBU       C2        C3        SINGLE    n         1.502     0.020     1.502     0.020     
+NBU       C3        C4        SINGLE    n         1.510     0.020     1.510     0.020     
+NBU       C1        H11       SINGLE    n         1.089     0.010     0.973     0.016     
+NBU       C1        H12       SINGLE    n         1.089     0.010     0.973     0.016     
+NBU       C1        H13       SINGLE    n         1.089     0.010     0.973     0.016     
+NBU       C2        H21       SINGLE    n         1.089     0.010     0.982     0.015     
+NBU       C2        H22       SINGLE    n         1.089     0.010     0.982     0.015     
+NBU       C3        H31       SINGLE    n         1.089     0.010     0.982     0.015     
+NBU       C3        H32       SINGLE    n         1.089     0.010     0.982     0.015     
+NBU       C4        H41       SINGLE    n         1.089     0.010     0.973     0.016     
+NBU       C4        H42       SINGLE    n         1.089     0.010     0.973     0.016     
+NBU       C4        H43       SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NBU          C2          C1         H11     109.554    1.50
+NBU          C2          C1         H12     109.554    1.50
+NBU          C2          C1         H13     109.554    1.50
+NBU         H11          C1         H12     109.380    1.50
+NBU         H11          C1         H13     109.380    1.50
+NBU         H12          C1         H13     109.380    1.50
+NBU          C1          C2          C3     113.980    3.00
+NBU          C1          C2         H21     108.918    1.50
+NBU          C1          C2         H22     108.918    1.50
+NBU          C3          C2         H21     108.623    2.48
+NBU          C3          C2         H22     108.623    2.48
+NBU         H21          C2         H22     107.763    1.50
+NBU          C2          C3          C4     113.980    3.00
+NBU          C2          C3         H31     108.623    2.48
+NBU          C2          C3         H32     108.623    2.48
+NBU          C4          C3         H31     108.918    1.50
+NBU          C4          C3         H32     108.918    1.50
+NBU         H31          C3         H32     107.763    1.50
+NBU          C3          C4         H41     109.554    1.50
+NBU          C3          C4         H42     109.554    1.50
+NBU          C3          C4         H43     109.554    1.50
+NBU         H41          C4         H42     109.380    1.50
+NBU         H41          C4         H43     109.380    1.50
+NBU         H42          C4         H43     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NBU             sp3_sp3_1         H11          C1          C2          C3     180.000   10.00     3
+NBU            sp3_sp3_10          C1          C2          C3          C4     180.000   10.00     3
+NBU            sp3_sp3_19          C2          C3          C4         H41     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NBU SMILES           ACDLabs              10.04 CCCC
+NBU SMILES_CANONICAL CACTVS               3.341 CCCC
+NBU SMILES           CACTVS               3.341 CCCC
+NBU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCCC
+NBU SMILES           "OpenEye OEToolkits" 1.5.0 CCCC
+NBU InChI            InChI                1.03  InChI=1S/C4H10/c1-3-4-2/h3-4H2,1-2H3
+NBU InChIKey         InChI                1.03  IJDNQMDRQITEOD-UHFFFAOYSA-N
+NBU ?                acedrg               202         "dictionary generator"                  
+NBU ?                acedrg_database      11          "data source"                           
+NBU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NBU ?                refmac5              5.8.0189    "optimization tool"                     

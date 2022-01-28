@@ -1,0 +1,194 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DRZ      DRZ '3',4'-DIHYDROXY-PENTANAL-5'-PHOSPHAT' DNA                22  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DRZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DRZ           OP3    O    OP       -0.666      0.000    0.000    0.000
+ DRZ           P      P    P         0.000      0.287   -1.437    0.375
+ DRZ           OP1    O    OP       -0.666      1.430   -2.079   -0.381
+ DRZ           OP2    O    OP       -0.666      0.457   -1.378    1.877
+ DRZ           "O5'"  O    O2        0.000     -1.150   -2.149    0.178
+ DRZ           "C5'"  C    CH2       0.000     -2.274   -1.598    0.860
+ DRZ           "H5'"  H    H         0.000     -2.422   -0.565    0.540
+ DRZ           "H5''" H    H         0.000     -2.092   -1.621    1.937
+ DRZ           "C4'"  C    CH1       0.000     -3.522   -2.418    0.536
+ DRZ           "H4'"  H    H         0.000     -3.661   -2.422   -0.554
+ DRZ           "O4'"  O    OH1       0.000     -3.302   -3.765    0.969
+ DRZ           "H4'O" H    H         0.000     -4.091   -4.294    0.787
+ DRZ           "C3'"  C    CH1       0.000     -4.811   -1.899    1.190
+ DRZ           "H3'"  H    H         0.000     -4.660   -1.837    2.276
+ DRZ           "C2'"  C    CH2       0.000     -6.008   -2.808    0.908
+ DRZ           "H2'"  H    H         0.000     -5.784   -3.790    1.328
+ DRZ           "H2''" H    H         0.000     -6.112   -2.892   -0.176
+ DRZ           "C1'"  C    C1        0.000     -7.299   -2.286    1.501
+ DRZ           "H1'"  H    H         0.000     -8.182   -2.890    1.379
+ DRZ           O1     O    O         0.000     -7.416   -1.228    2.110
+ DRZ           "O3'"  O    OH1       0.000     -5.121   -0.596    0.691
+ DRZ           "HO3'" H    H         0.000     -4.858   -0.592   -0.241
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DRZ      OP3    n/a    P      START
+ DRZ      P      OP3    "O5'"  .
+ DRZ      OP1    P      .      .
+ DRZ      OP2    P      .      .
+ DRZ      "O5'"  P      "C5'"  .
+ DRZ      "C5'"  "O5'"  "C4'"  .
+ DRZ      "H5'"  "C5'"  .      .
+ DRZ      "H5''" "C5'"  .      .
+ DRZ      "C4'"  "C5'"  "C3'"  .
+ DRZ      "H4'"  "C4'"  .      .
+ DRZ      "O4'"  "C4'"  "H4'O" .
+ DRZ      "H4'O" "O4'"  .      .
+ DRZ      "C3'"  "C4'"  "O3'"  .
+ DRZ      "H3'"  "C3'"  .      .
+ DRZ      "C2'"  "C3'"  "C1'"  .
+ DRZ      "H2'"  "C2'"  .      .
+ DRZ      "H2''" "C2'"  .      .
+ DRZ      "C1'"  "C2'"  O1     .
+ DRZ      "H1'"  "C1'"  .      .
+ DRZ      O1     "C1'"  .      .
+ DRZ      "O3'"  "C3'"  .      END
+ DRZ      "HO3'" "O3'"  .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DRZ       OP1       P         deloc     1.510     0.020     1.510     0.020     
+DRZ       OP2       P         deloc     1.510     0.020     1.510     0.020     
+DRZ       P         OP3       deloc     1.510     0.020     1.510     0.020     
+DRZ       "O5'"     P         single    1.610     0.020     1.610     0.020     
+DRZ       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+DRZ       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+DRZ       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+DRZ       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+DRZ       "O4'"     "C4'"     single    1.432     0.020     1.432     0.020     
+DRZ       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+DRZ       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+DRZ       "H4'O"    "O4'"     single    0.970     0.012     0.839     0.014     
+DRZ       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+DRZ       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+DRZ       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+DRZ       "C1'"     "C2'"     single    1.510     0.020     1.510     0.020     
+DRZ       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+DRZ       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+DRZ       O1        "C1'"     double    1.220     0.020     1.220     0.020     
+DRZ       "H1'"     "C1'"     single    1.082     0.013     0.975     0.010     
+DRZ       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DRZ      OP3    P      OP1     119.900    3.000
+ DRZ      OP3    P      OP2     119.900    3.000
+ DRZ      OP3    P      "O5'"   108.200    3.000
+ DRZ      OP1    P      OP2     119.900    3.000
+ DRZ      OP1    P      "O5'"   108.200    3.000
+ DRZ      OP2    P      "O5'"   108.200    3.000
+ DRZ      P      "O5'"  "C5'"   120.500    3.000
+ DRZ      "O5'"  "C5'"  "H5'"   109.470    3.000
+ DRZ      "O5'"  "C5'"  "H5''"  109.470    3.000
+ DRZ      "O5'"  "C5'"  "C4'"   109.470    3.000
+ DRZ      "H5'"  "C5'"  "H5''"  107.900    3.000
+ DRZ      "H5'"  "C5'"  "C4'"   109.470    3.000
+ DRZ      "H5''" "C5'"  "C4'"   109.470    3.000
+ DRZ      "C5'"  "C4'"  "H4'"   108.340    3.000
+ DRZ      "C5'"  "C4'"  "O4'"   109.470    3.000
+ DRZ      "C5'"  "C4'"  "C3'"   111.000    3.000
+ DRZ      "H4'"  "C4'"  "O4'"   109.470    3.000
+ DRZ      "H4'"  "C4'"  "C3'"   108.340    3.000
+ DRZ      "O4'"  "C4'"  "C3'"   109.470    3.000
+ DRZ      "C4'"  "O4'"  "H4'O"  109.470    3.000
+ DRZ      "C4'"  "C3'"  "H3'"   108.340    3.000
+ DRZ      "C4'"  "C3'"  "C2'"   111.000    3.000
+ DRZ      "C4'"  "C3'"  "O3'"   109.470    3.000
+ DRZ      "H3'"  "C3'"  "C2'"   108.340    3.000
+ DRZ      "H3'"  "C3'"  "O3'"   109.470    3.000
+ DRZ      "C2'"  "C3'"  "O3'"   109.470    3.000
+ DRZ      "C3'"  "C2'"  "H2'"   109.470    3.000
+ DRZ      "C3'"  "C2'"  "H2''"  109.470    3.000
+ DRZ      "C3'"  "C2'"  "C1'"   109.470    3.000
+ DRZ      "H2'"  "C2'"  "H2''"  107.900    3.000
+ DRZ      "H2'"  "C2'"  "C1'"   109.470    3.000
+ DRZ      "H2''" "C2'"  "C1'"   109.470    3.000
+ DRZ      "C2'"  "C1'"  "H1'"   120.000    3.000
+ DRZ      "C2'"  "C1'"  O1      120.500    3.000
+ DRZ      "H1'"  "C1'"  O1      123.000    3.000
+ DRZ      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DRZ      var_1    OP3    P      "O5'"  "C5'"    -54.273   20.000   1
+ DRZ      var_2    P      "O5'"  "C5'"  "C4'"    179.961   20.000   1
+ DRZ      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -178.594   20.000   3
+ DRZ      var_4    "C5'"  "C4'"  "O4'"  "H4'O"   178.805   20.000   1
+ DRZ      var_5    "C5'"  "C4'"  "C3'"  "O3'"     63.673   20.000   3
+ DRZ      var_6    "C4'"  "C3'"  "C2'"  "C1'"   -177.895   20.000   3
+ DRZ      var_7    "C3'"  "C2'"  "C1'"  O1         2.353   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DRZ      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ DRZ      chir_02  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DRZ      plan-1    "C1'"     0.020
+ DRZ      plan-1    "C2'"     0.020
+ DRZ      plan-1    O1        0.020
+ DRZ      plan-1    "H1'"     0.020
+# ------------------------------------------------------

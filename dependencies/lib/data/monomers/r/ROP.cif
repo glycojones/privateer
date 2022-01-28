@@ -1,0 +1,124 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ROP     ROP      PROPIONAMIDE     NON-POLYMER     12     5     .     
+#
+data_comp_ROP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ROP     CA      C       CH3     0       66.359      -11.776     129.851     
+ROP     CB      C       CH2     0       66.326      -10.614     128.905     
+ROP     CG      C       C       0       66.401      -11.026     127.456     
+ROP     OD1     O       O       0       65.425      -11.516     126.891     
+ROP     ND2     N       NH2     0       67.555      -10.845     126.826     
+ROP     HCA1    H       H       0       66.323      -11.450     130.767     
+ROP     HCA2    H       H       0       67.181      -12.280     129.719     
+ROP     HCA3    H       H       0       65.595      -12.354     129.683     
+ROP     HCB1    H       H       0       67.069      -10.010     129.115     
+ROP     HCB2    H       H       0       65.492      -10.117     129.046     
+ROP     HND1    H       H       0       67.601      -10.952     125.949     
+ROP     HND2    H       H       0       68.290      -10.641     127.275     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ROP       CA        CB        SINGLE    n         1.498     0.020     1.498     0.020     
+ROP       CB        CG        SINGLE    n         1.505     0.010     1.505     0.010     
+ROP       CG        OD1       DOUBLE    n         1.229     0.012     1.229     0.012     
+ROP       CG        ND2       SINGLE    n         1.323     0.011     1.323     0.011     
+ROP       CA        HCA1      SINGLE    n         1.089     0.010     0.973     0.014     
+ROP       CA        HCA2      SINGLE    n         1.089     0.010     0.973     0.014     
+ROP       CA        HCA3      SINGLE    n         1.089     0.010     0.973     0.014     
+ROP       CB        HCB1      SINGLE    n         1.089     0.010     0.981     0.019     
+ROP       CB        HCB2      SINGLE    n         1.089     0.010     0.981     0.019     
+ROP       ND2       HND1      SINGLE    n         1.016     0.010     0.884     0.020     
+ROP       ND2       HND2      SINGLE    n         1.016     0.010     0.884     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ROP          CB          CA        HCA1     109.502    1.50
+ROP          CB          CA        HCA2     109.502    1.50
+ROP          CB          CA        HCA3     109.502    1.50
+ROP        HCA1          CA        HCA2     109.380    1.50
+ROP        HCA1          CA        HCA3     109.380    1.50
+ROP        HCA2          CA        HCA3     109.380    1.50
+ROP          CA          CB          CG     113.335    1.50
+ROP          CA          CB        HCB1     109.044    1.50
+ROP          CA          CB        HCB2     109.044    1.50
+ROP          CG          CB        HCB1     108.929    1.50
+ROP          CG          CB        HCB2     108.929    1.50
+ROP        HCB1          CB        HCB2     107.827    1.50
+ROP          CB          CG         OD1     121.425    1.50
+ROP          CB          CG         ND2     116.260    1.50
+ROP         OD1          CG         ND2     122.315    1.50
+ROP          CG         ND2        HND1     120.022    1.65
+ROP          CG         ND2        HND2     120.022    1.65
+ROP        HND1         ND2        HND2     119.956    2.38
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ROP             sp3_sp3_1        HCA1          CA          CB          CG     180.000   10.00     3
+ROP             sp2_sp3_2         OD1          CG          CB          CA     120.000   10.00     6
+ROP             sp2_sp2_1          CB          CG         ND2        HND1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ROP    plan-1          CB   0.020
+ROP    plan-1          CG   0.020
+ROP    plan-1         ND2   0.020
+ROP    plan-1         OD1   0.020
+ROP    plan-2          CG   0.020
+ROP    plan-2        HND1   0.020
+ROP    plan-2        HND2   0.020
+ROP    plan-2         ND2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ROP SMILES           ACDLabs              10.04 "O=C(N)CC"
+ROP SMILES_CANONICAL CACTVS               3.341 "CCC(N)=O"
+ROP SMILES           CACTVS               3.341 "CCC(N)=O"
+ROP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCC(=O)N"
+ROP SMILES           "OpenEye OEToolkits" 1.5.0 "CCC(=O)N"
+ROP InChI            InChI                1.03  "InChI=1S/C3H7NO/c1-2-3(4)5/h2H2,1H3,(H2,4,5)"
+ROP InChIKey         InChI                1.03  QLNJFJADRCOGBJ-UHFFFAOYSA-N
+ROP ?                acedrg               202         "dictionary generator"                  
+ROP ?                acedrg_database      11          "data source"                           
+ROP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ROP ?                refmac5              5.8.0189    "optimization tool"                     

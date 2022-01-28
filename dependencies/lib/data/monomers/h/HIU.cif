@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HIU     HIU      "(2R)-3-HYDROXY-2-METHYLPROPANOIC ACID"     NON-POLYMER     14     7     .     
+#
+data_comp_HIU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HIU     O1      O       OC      -1      -0.460      -2.327      0.100       
+HIU     C1      C       C       0       -0.918      -1.388      -0.580      
+HIU     O2      O       O       0       -1.755      -1.536      -1.494      
+HIU     C2      C       CH1     0       -0.423      0.031       -0.273      
+HIU     C3      C       CH3     0       -0.815      0.446       1.138       
+HIU     C4      C       CH2     0       1.072       0.151       -0.465      
+HIU     O3      O       OH1     0       1.478       1.515       -0.467      
+HIU     H2      H       H       0       -0.862      0.653       -0.907      
+HIU     H31     H       H       0       -0.330      -0.098      1.783       
+HIU     H32     H       H       0       -1.771      0.317       1.261       
+HIU     H33     H       H       0       -0.595      1.383       1.275       
+HIU     H41     H       H       0       1.340       -0.264      -1.322      
+HIU     H42     H       H       0       1.546       -0.324      0.260       
+HIU     HO3     H       H       0       2.323       1.549       -0.442      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HIU       O1        C1        SINGLE    n         1.247     0.019     1.247     0.019     
+HIU       C1        O2        DOUBLE    n         1.247     0.019     1.247     0.019     
+HIU       C1        C2        SINGLE    n         1.533     0.011     1.533     0.011     
+HIU       C2        C3        SINGLE    n         1.521     0.017     1.521     0.017     
+HIU       C2        C4        SINGLE    n         1.511     0.018     1.511     0.018     
+HIU       C4        O3        SINGLE    n         1.423     0.012     1.423     0.012     
+HIU       C2        H2        SINGLE    n         1.089     0.010     0.990     0.015     
+HIU       C3        H31       SINGLE    n         1.089     0.010     0.973     0.014     
+HIU       C3        H32       SINGLE    n         1.089     0.010     0.973     0.014     
+HIU       C3        H33       SINGLE    n         1.089     0.010     0.973     0.014     
+HIU       C4        H41       SINGLE    n         1.089     0.010     0.988     0.017     
+HIU       C4        H42       SINGLE    n         1.089     0.010     0.988     0.017     
+HIU       O3        HO3       SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HIU          O1          C1          O2     123.899    1.50
+HIU          O1          C1          C2     118.051    1.50
+HIU          O2          C1          C2     118.051    1.50
+HIU          C1          C2          C3     110.920    1.69
+HIU          C1          C2          C4     111.425    1.50
+HIU          C1          C2          H2     107.706    1.93
+HIU          C3          C2          C4     110.504    1.89
+HIU          C3          C2          H2     108.016    1.51
+HIU          C4          C2          H2     108.060    2.95
+HIU          C2          C3         H31     109.591    1.50
+HIU          C2          C3         H32     109.591    1.50
+HIU          C2          C3         H33     109.591    1.50
+HIU         H31          C3         H32     109.411    1.50
+HIU         H31          C3         H33     109.411    1.50
+HIU         H32          C3         H33     109.411    1.50
+HIU          C2          C4          O3     111.210    1.70
+HIU          C2          C4         H41     110.271    1.50
+HIU          C2          C4         H42     110.271    1.50
+HIU          O3          C4         H41     109.168    1.50
+HIU          O3          C4         H42     109.168    1.50
+HIU         H41          C4         H42     107.918    1.50
+HIU          C4          O3         HO3     108.847    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HIU             sp2_sp3_1          O1          C1          C2          C3       0.000   10.00     6
+HIU             sp3_sp3_4          C1          C2          C3         H31      60.000   10.00     3
+HIU            sp3_sp3_10          C1          C2          C4          O3     180.000   10.00     3
+HIU            sp3_sp3_19          C2          C4          O3         HO3     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+HIU    chir_1    C2    C1    C4    C3    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HIU    plan-1          C1   0.020
+HIU    plan-1          C2   0.020
+HIU    plan-1          O1   0.020
+HIU    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HIU SMILES           ACDLabs              10.04 "O=C(O)C(C)CO"
+HIU SMILES_CANONICAL CACTVS               3.341 "C[C@H](CO)C(O)=O"
+HIU SMILES           CACTVS               3.341 "C[CH](CO)C(O)=O"
+HIU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@H](CO)C(=O)O"
+HIU SMILES           "OpenEye OEToolkits" 1.5.0 "CC(CO)C(=O)O"
+HIU InChI            InChI                1.03  "InChI=1S/C4H8O3/c1-3(2-5)4(6)7/h3,5H,2H2,1H3,(H,6,7)/t3-/m1/s1"
+HIU InChIKey         InChI                1.03  DBXBTMSZEOQQDU-GSVOUGTGSA-N
+HIU ?                acedrg               202         "dictionary generator"                  
+HIU ?                acedrg_database      11          "data source"                           
+HIU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HIU ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,374 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NXD      NXD '"METHYL 5-(ACETYLAMINO)-9-{[AMINO(OX' non-polymer        49  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NXD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NXD           OAG    O    O         0.000      0.000    0.000    0.000
+ NXD           CAF    C    C         0.000     -0.131    1.194   -0.174
+ NXD           NAK    N    NH2       0.000      0.957    1.976   -0.318
+ NXD           HAK2   H    H         0.000      1.886    1.572   -0.282
+ NXD           HAK1   H    H         0.000      0.854    2.973   -0.463
+ NXD           CAC    C    C         0.000     -1.498    1.796   -0.227
+ NXD           OAD    O    O         0.000     -1.627    2.990   -0.400
+ NXD           NAB    N    NH1       0.000     -2.585    1.014   -0.083
+ NXD           HAB    H    H         0.000     -2.476    0.020    0.060
+ NXD           C9     C    CH2       0.000     -3.925    1.604   -0.135
+ NXD           H91    H    H         0.000     -4.072    2.087   -1.104
+ NXD           H92    H    H         0.000     -4.026    2.347    0.659
+ NXD           C8     C    CH1       0.000     -4.973    0.507    0.054
+ NXD           H8     H    H         0.000     -4.814   -0.285   -0.691
+ NXD           O8     O    OH1       0.000     -4.855   -0.044    1.367
+ NXD           HO8    H    H         0.000     -4.995    0.653    2.022
+ NXD           C7     C    CH1       0.000     -6.372    1.101   -0.125
+ NXD           H7     H    H         0.000     -6.531    1.894    0.620
+ NXD           O7     O    OH1       0.000     -6.491    1.652   -1.438
+ NXD           HO7    H    H         0.000     -6.351    0.955   -2.093
+ NXD           C6     C    CH1       0.000     -7.421    0.004    0.066
+ NXD           H6     H    H         0.000     -7.391   -0.355    1.104
+ NXD           C5     C    CH1       0.000     -8.810    0.571   -0.236
+ NXD           H5     H    H         0.000     -8.850    0.910   -1.281
+ NXD           N5     N    NH1       0.000     -9.085    1.700    0.657
+ NXD           HN5    H    H         0.000     -8.612    1.767    1.547
+ NXD           C10    C    C         0.000     -9.969    2.649    0.290
+ NXD           O10    O    O         0.000    -10.537    2.569   -0.778
+ NXD           C11    C    CH3       0.000    -10.252    3.810    1.208
+ NXD           H113   H    H         0.000    -10.005    4.717    0.719
+ NXD           H112   H    H         0.000    -11.280    3.816    1.465
+ NXD           H111   H    H         0.000     -9.670    3.715    2.089
+ NXD           O6     O    O2        0.000     -7.138   -1.078   -0.820
+ NXD           C2     C    CT        0.000     -8.023   -2.147   -0.490
+ NXD           C1     C    C         0.000     -7.925   -2.440    0.985
+ NXD           O1B    O    OC       -0.500     -8.938   -2.810    1.619
+ NXD           O1A    O    OC       -0.500     -6.830   -2.312    1.577
+ NXD           O2     O    O2        0.000     -7.655   -3.313   -1.230
+ NXD           CB     C    CH3       0.000     -6.283   -3.576   -0.933
+ NXD           HB3    H    H         0.000     -6.187   -3.842    0.088
+ NXD           HB2    H    H         0.000     -5.936   -4.373   -1.538
+ NXD           HB1    H    H         0.000     -5.706   -2.709   -1.127
+ NXD           C3     C    CH2       0.000     -9.462   -1.757   -0.836
+ NXD           H31    H    H         0.000    -10.134   -2.585   -0.602
+ NXD           H32    H    H         0.000     -9.533   -1.522   -1.900
+ NXD           C4     C    CH1       0.000     -9.856   -0.527   -0.012
+ NXD           H4     H    H         0.000     -9.890   -0.792    1.054
+ NXD           O4     O    OH1       0.000    -11.141   -0.062   -0.431
+ NXD           HO4    H    H         0.000    -11.795   -0.761   -0.299
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NXD      OAG    n/a    CAF    START
+ NXD      CAF    OAG    CAC    .
+ NXD      NAK    CAF    HAK1   .
+ NXD      HAK2   NAK    .      .
+ NXD      HAK1   NAK    .      .
+ NXD      CAC    CAF    NAB    .
+ NXD      OAD    CAC    .      .
+ NXD      NAB    CAC    C9     .
+ NXD      HAB    NAB    .      .
+ NXD      C9     NAB    C8     .
+ NXD      H91    C9     .      .
+ NXD      H92    C9     .      .
+ NXD      C8     C9     C7     .
+ NXD      H8     C8     .      .
+ NXD      O8     C8     HO8    .
+ NXD      HO8    O8     .      .
+ NXD      C7     C8     C6     .
+ NXD      H7     C7     .      .
+ NXD      O7     C7     HO7    .
+ NXD      HO7    O7     .      .
+ NXD      C6     C7     O6     .
+ NXD      H6     C6     .      .
+ NXD      C5     C6     N5     .
+ NXD      H5     C5     .      .
+ NXD      N5     C5     C10    .
+ NXD      HN5    N5     .      .
+ NXD      C10    N5     C11    .
+ NXD      O10    C10    .      .
+ NXD      C11    C10    H111   .
+ NXD      H113   C11    .      .
+ NXD      H112   C11    .      .
+ NXD      H111   C11    .      .
+ NXD      O6     C6     C2     .
+ NXD      C2     O6     C3     .
+ NXD      C1     C2     O1A    .
+ NXD      O1B    C1     .      .
+ NXD      O1A    C1     .      .
+ NXD      O2     C2     CB     .
+ NXD      CB     O2     HB1    .
+ NXD      HB3    CB     .      .
+ NXD      HB2    CB     .      .
+ NXD      HB1    CB     .      .
+ NXD      C3     C2     C4     .
+ NXD      H31    C3     .      .
+ NXD      H32    C3     .      .
+ NXD      C4     C3     O4     .
+ NXD      H4     C4     .      .
+ NXD      O4     C4     HO4    .
+ NXD      HO4    O4     .      END
+ NXD      C5     C4     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NXD       C11       C10       single    1.500     0.020     1.500     0.020     
+NXD       H111      C11       single    1.089     0.010     0.989     0.005     
+NXD       H112      C11       single    1.089     0.010     0.989     0.005     
+NXD       H113      C11       single    1.089     0.010     0.989     0.005     
+NXD       O10       C10       double    1.220     0.020     1.220     0.020     
+NXD       C10       N5        single    1.330     0.020     1.330     0.020     
+NXD       N5        C5        single    1.450     0.020     1.450     0.020     
+NXD       HN5       N5        single    1.016     0.010     0.899     0.007     
+NXD       C5        C4        single    1.524     0.020     1.524     0.020     
+NXD       C5        C6        single    1.524     0.020     1.524     0.020     
+NXD       H5        C5        single    1.089     0.010     0.989     0.005     
+NXD       O4        C4        single    1.432     0.020     1.432     0.020     
+NXD       C4        C3        single    1.524     0.020     1.524     0.020     
+NXD       H4        C4        single    1.089     0.010     0.989     0.005     
+NXD       HO4       O4        single    0.970     0.012     0.839     0.014     
+NXD       C3        C2        single    1.524     0.020     1.524     0.020     
+NXD       H31       C3        single    1.089     0.010     0.989     0.005     
+NXD       H32       C3        single    1.089     0.010     0.989     0.005     
+NXD       C1        C2        single    1.507     0.020     1.507     0.020     
+NXD       O2        C2        single    1.426     0.020     1.426     0.020     
+NXD       C2        O6        single    1.426     0.020     1.426     0.020     
+NXD       O1A       C1        deloc     1.250     0.020     1.250     0.020     
+NXD       O1B       C1        deloc     1.250     0.020     1.250     0.020     
+NXD       CB        O2        single    1.426     0.020     1.426     0.020     
+NXD       HB1       CB        single    1.089     0.010     0.989     0.005     
+NXD       HB2       CB        single    1.089     0.010     0.989     0.005     
+NXD       HB3       CB        single    1.089     0.010     0.989     0.005     
+NXD       O6        C6        single    1.426     0.020     1.426     0.020     
+NXD       C6        C7        single    1.524     0.020     1.524     0.020     
+NXD       H6        C6        single    1.089     0.010     0.989     0.005     
+NXD       O7        C7        single    1.432     0.020     1.432     0.020     
+NXD       C7        C8        single    1.524     0.020     1.524     0.020     
+NXD       H7        C7        single    1.089     0.010     0.989     0.005     
+NXD       HO7       O7        single    0.970     0.012     0.839     0.014     
+NXD       O8        C8        single    1.432     0.020     1.432     0.020     
+NXD       C8        C9        single    1.524     0.020     1.524     0.020     
+NXD       H8        C8        single    1.089     0.010     0.989     0.005     
+NXD       HO8       O8        single    0.970     0.012     0.839     0.014     
+NXD       C9        NAB       single    1.450     0.020     1.450     0.020     
+NXD       H91       C9        single    1.089     0.010     0.989     0.005     
+NXD       H92       C9        single    1.089     0.010     0.989     0.005     
+NXD       NAB       CAC       single    1.330     0.020     1.330     0.020     
+NXD       HAB       NAB       single    1.016     0.010     0.899     0.007     
+NXD       OAD       CAC       double    1.220     0.020     1.220     0.020     
+NXD       CAC       CAF       single    1.460     0.020     1.460     0.020     
+NXD       CAF       OAG       double    1.220     0.020     1.220     0.020     
+NXD       NAK       CAF       single    1.332     0.020     1.332     0.020     
+NXD       HAK1      NAK       single    1.016     0.010     0.899     0.007     
+NXD       HAK2      NAK       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NXD      OAG    CAF    NAK     123.000    3.000
+ NXD      OAG    CAF    CAC     120.500    3.000
+ NXD      NAK    CAF    CAC     120.000    3.000
+ NXD      CAF    NAK    HAK2    120.000    3.000
+ NXD      CAF    NAK    HAK1    120.000    3.000
+ NXD      HAK2   NAK    HAK1    120.000    3.000
+ NXD      CAF    CAC    OAD     120.500    3.000
+ NXD      CAF    CAC    NAB     120.000    3.000
+ NXD      OAD    CAC    NAB     123.000    3.000
+ NXD      CAC    NAB    HAB     120.000    3.000
+ NXD      CAC    NAB    C9      121.500    3.000
+ NXD      HAB    NAB    C9      118.500    3.000
+ NXD      NAB    C9     H91     109.470    3.000
+ NXD      NAB    C9     H92     109.470    3.000
+ NXD      NAB    C9     C8      110.000    3.000
+ NXD      H91    C9     H92     107.900    3.000
+ NXD      H91    C9     C8      109.470    3.000
+ NXD      H92    C9     C8      109.470    3.000
+ NXD      C9     C8     H8      108.340    3.000
+ NXD      C9     C8     O8      109.470    3.000
+ NXD      C9     C8     C7      111.000    3.000
+ NXD      H8     C8     O8      109.470    3.000
+ NXD      H8     C8     C7      108.340    3.000
+ NXD      O8     C8     C7      109.470    3.000
+ NXD      C8     O8     HO8     109.470    3.000
+ NXD      C8     C7     H7      108.340    3.000
+ NXD      C8     C7     O7      109.470    3.000
+ NXD      C8     C7     C6      111.000    3.000
+ NXD      H7     C7     O7      109.470    3.000
+ NXD      H7     C7     C6      108.340    3.000
+ NXD      O7     C7     C6      109.470    3.000
+ NXD      C7     O7     HO7     109.470    3.000
+ NXD      C7     C6     H6      108.340    3.000
+ NXD      C7     C6     C5      111.000    3.000
+ NXD      C7     C6     O6      109.470    3.000
+ NXD      H6     C6     C5      108.340    3.000
+ NXD      H6     C6     O6      109.470    3.000
+ NXD      C5     C6     O6      109.470    3.000
+ NXD      C6     C5     H5      108.340    3.000
+ NXD      C6     C5     N5      110.000    3.000
+ NXD      C6     C5     C4      111.000    3.000
+ NXD      H5     C5     N5      108.550    3.000
+ NXD      H5     C5     C4      108.340    3.000
+ NXD      N5     C5     C4      110.000    3.000
+ NXD      C5     N5     HN5     118.500    3.000
+ NXD      C5     N5     C10     121.500    3.000
+ NXD      HN5    N5     C10     120.000    3.000
+ NXD      N5     C10    O10     123.000    3.000
+ NXD      N5     C10    C11     116.500    3.000
+ NXD      O10    C10    C11     123.000    3.000
+ NXD      C10    C11    H113    109.470    3.000
+ NXD      C10    C11    H112    109.470    3.000
+ NXD      C10    C11    H111    109.470    3.000
+ NXD      H113   C11    H112    109.470    3.000
+ NXD      H113   C11    H111    109.470    3.000
+ NXD      H112   C11    H111    109.470    3.000
+ NXD      C6     O6     C2      111.800    3.000
+ NXD      O6     C2     C1      109.470    3.000
+ NXD      O6     C2     O2      109.500    3.000
+ NXD      O6     C2     C3      109.470    3.000
+ NXD      C1     C2     O2      109.470    3.000
+ NXD      C1     C2     C3      109.470    3.000
+ NXD      O2     C2     C3      109.470    3.000
+ NXD      C2     C1     O1B     118.500    3.000
+ NXD      C2     C1     O1A     118.500    3.000
+ NXD      O1B    C1     O1A     123.000    3.000
+ NXD      C2     O2     CB      120.000    3.000
+ NXD      O2     CB     HB3     109.470    3.000
+ NXD      O2     CB     HB2     109.470    3.000
+ NXD      O2     CB     HB1     109.470    3.000
+ NXD      HB3    CB     HB2     109.470    3.000
+ NXD      HB3    CB     HB1     109.470    3.000
+ NXD      HB2    CB     HB1     109.470    3.000
+ NXD      C2     C3     H31     109.470    3.000
+ NXD      C2     C3     H32     109.470    3.000
+ NXD      C2     C3     C4      111.000    3.000
+ NXD      H31    C3     H32     107.900    3.000
+ NXD      H31    C3     C4      109.470    3.000
+ NXD      H32    C3     C4      109.470    3.000
+ NXD      C3     C4     H4      108.340    3.000
+ NXD      C3     C4     O4      109.470    3.000
+ NXD      C3     C4     C5      111.000    3.000
+ NXD      H4     C4     O4      109.470    3.000
+ NXD      H4     C4     C5      108.340    3.000
+ NXD      O4     C4     C5      109.470    3.000
+ NXD      C4     O4     HO4     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NXD      CONST_1  OAG    CAF    NAK    HAK1     180.000    0.000   0
+ NXD      var_1    OAG    CAF    CAC    NAB       -0.045   20.000   1
+ NXD      CONST_2  CAF    CAC    NAB    C9       180.000    0.000   0
+ NXD      var_2    CAC    NAB    C9     C8       179.997   20.000   3
+ NXD      var_3    NAB    C9     C8     C7      -174.977   20.000   3
+ NXD      var_4    C9     C8     O8     HO8       59.971   20.000   1
+ NXD      var_5    C9     C8     C7     C6      -179.960   20.000   3
+ NXD      var_6    C8     C7     O7     HO7       60.083   20.000   1
+ NXD      var_7    C8     C7     C6     O6       -54.708   20.000   3
+ NXD      var_8    C7     C6     C5     N5       -60.000   20.000   3
+ NXD      var_9    C6     C5     C4     C3       -60.000   20.000   3
+ NXD      var_10   C6     C5     N5     C10      155.455   20.000   3
+ NXD      CONST_3  C5     N5     C10    C11      180.000    0.000   0
+ NXD      var_11   N5     C10    C11    H111       0.027   20.000   1
+ NXD      var_12   C7     C6     O6     C2       180.000   20.000   1
+ NXD      var_13   C6     O6     C2     C3        60.000   20.000   1
+ NXD      var_14   O6     C2     C1     O1A      -34.236   20.000   1
+ NXD      var_15   O6     C2     O2     CB        55.906   20.000   1
+ NXD      var_16   C2     O2     CB     HB1      -54.061   20.000   1
+ NXD      var_17   O6     C2     C3     C4       -60.000   20.000   1
+ NXD      var_18   C2     C3     C4     O4       180.000   20.000   3
+ NXD      var_19   C3     C4     O4     HO4       59.943   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NXD      chir_01  C5     N5     C4     C6        positiv
+ NXD      chir_02  C4     C5     O4     C3        negativ
+ NXD      chir_03  C2     C3     C1     O2        negativ
+ NXD      chir_04  C6     C5     O6     C7        negativ
+ NXD      chir_05  C7     C6     O7     C8        positiv
+ NXD      chir_06  C8     C7     O8     C9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NXD      plan-1    C10       0.020
+ NXD      plan-1    C11       0.020
+ NXD      plan-1    O10       0.020
+ NXD      plan-1    N5        0.020
+ NXD      plan-1    HN5       0.020
+ NXD      plan-2    N5        0.020
+ NXD      plan-2    C10       0.020
+ NXD      plan-2    C5        0.020
+ NXD      plan-2    HN5       0.020
+ NXD      plan-3    C1        0.020
+ NXD      plan-3    C2        0.020
+ NXD      plan-3    O1A       0.020
+ NXD      plan-3    O1B       0.020
+ NXD      plan-4    NAB       0.020
+ NXD      plan-4    C9        0.020
+ NXD      plan-4    CAC       0.020
+ NXD      plan-4    HAB       0.020
+ NXD      plan-5    CAC       0.020
+ NXD      plan-5    NAB       0.020
+ NXD      plan-5    OAD       0.020
+ NXD      plan-5    CAF       0.020
+ NXD      plan-5    HAB       0.020
+ NXD      plan-6    CAF       0.020
+ NXD      plan-6    CAC       0.020
+ NXD      plan-6    OAG       0.020
+ NXD      plan-6    NAK       0.020
+ NXD      plan-6    HAK2      0.020
+ NXD      plan-6    HAK1      0.020
+ NXD      plan-7    NAK       0.020
+ NXD      plan-7    CAF       0.020
+ NXD      plan-7    HAK1      0.020
+ NXD      plan-7    HAK2      0.020
+# ------------------------------------------------------

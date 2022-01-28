@@ -1,0 +1,141 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+9TK     9TK      "1-methylimidazole-2-carboxylic acid"     NON-POLYMER     14     9     .     
+#
+data_comp_9TK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+9TK     O81     O       O       0       22.992      30.473      37.312      
+9TK     C81     C       C       0       23.563      29.402      37.215      
+9TK     C83     C       CR15    0       21.516      26.908      35.569      
+9TK     N81     N       NT      0       21.668      27.884      36.539      
+9TK     C88     C       CH3     0       20.637      28.286      37.489      
+9TK     C82     C       CR5     0       22.947      28.353      36.400      
+9TK     N82     N       NRD5    0       23.593      27.738      35.415      
+9TK     C84     C       CR15    0       22.690      26.838      34.903      
+9TK     O1      O       OC      -1      24.622      29.163      37.763      
+9TK     H84     H       H       0       20.738      26.403      35.418      
+9TK     H883    H       H       0       21.038      28.438      38.357      
+9TK     H882    H       H       0       19.973      27.584      37.558      
+9TK     H881    H       H       0       20.214      29.101      37.179      
+9TK     H83     H       H       0       22.872      26.250      34.182      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+9TK       N82       C84       SINGLE    y         1.371     0.010     1.371     0.010     
+9TK       C83       C84       DOUBLE    y         1.349     0.010     1.349     0.010     
+9TK       C82       N82       DOUBLE    y         1.328     0.010     1.328     0.010     
+9TK       C83       N81       SINGLE    y         1.392     0.018     1.392     0.018     
+9TK       N81       C82       SINGLE    y         1.379     0.018     1.379     0.018     
+9TK       C81       C82       SINGLE    n         1.463     0.020     1.463     0.020     
+9TK       N81       C88       SINGLE    n         1.458     0.010     1.458     0.010     
+9TK       O81       C81       DOUBLE    n         1.217     0.020     1.217     0.020     
+9TK       C81       O1        SINGLE    n         1.217     0.020     1.217     0.020     
+9TK       C83       H84       SINGLE    n         1.082     0.013     0.939     0.010     
+9TK       C88       H883      SINGLE    n         1.089     0.010     0.969     0.016     
+9TK       C88       H882      SINGLE    n         1.089     0.010     0.969     0.016     
+9TK       C88       H881      SINGLE    n         1.089     0.010     0.969     0.016     
+9TK       C84       H83       SINGLE    n         1.082     0.013     0.948     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+9TK         C82         C81         O81     118.485    3.00
+9TK         C82         C81          O1     118.485    3.00
+9TK         O81         C81          O1     123.030    1.50
+9TK         C84         C83         N81     107.684    2.05
+9TK         C84         C83         H84     127.240    1.85
+9TK         N81         C83         H84     125.075    1.80
+9TK         C83         N81         C82     108.641    1.96
+9TK         C83         N81         C88     123.481    2.04
+9TK         C82         N81         C88     124.795    3.00
+9TK         N81         C88        H883     109.303    1.50
+9TK         N81         C88        H882     109.303    1.50
+9TK         N81         C88        H881     109.303    1.50
+9TK        H883         C88        H882     109.448    1.52
+9TK        H883         C88        H881     109.448    1.52
+9TK        H882         C88        H881     109.448    1.52
+9TK         N82         C82         N81     113.282    1.50
+9TK         N82         C82         C81     122.394    1.69
+9TK         N81         C82         C81     124.325    2.38
+9TK         C84         N82         C82     105.003    1.50
+9TK         N82         C84         C83     110.276    1.50
+9TK         N82         C84         H83     124.499    1.50
+9TK         C83         C84         H83     125.217    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+9TK             sp2_sp2_2         O81         C81         C82         N82       0.000   10.00     2
+9TK              const_14         C84         C83         N81         C88     180.000   10.00     2
+9TK       const_sp2_sp2_1         N81         C83         C84         N82       0.000   10.00     2
+9TK             sp2_sp3_1         C83         N81         C88        H883     150.000   10.00     6
+9TK              const_12         C81         C82         N81         C88       0.000   10.00     2
+9TK       const_sp2_sp2_8         C81         C82         N82         C84     180.000   10.00     2
+9TK       const_sp2_sp2_5         C83         C84         N82         C82       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+9TK    plan-1         C81   0.020
+9TK    plan-1         C82   0.020
+9TK    plan-1         C83   0.020
+9TK    plan-1         C84   0.020
+9TK    plan-1         C88   0.020
+9TK    plan-1         H83   0.020
+9TK    plan-1         H84   0.020
+9TK    plan-1         N81   0.020
+9TK    plan-1         N82   0.020
+9TK    plan-2         C81   0.020
+9TK    plan-2         C82   0.020
+9TK    plan-2          O1   0.020
+9TK    plan-2         O81   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+9TK InChI            InChI                1.03  "InChI=1S/C5H6N2O2/c1-7-3-2-6-4(7)5(8)9/h2-3H,1H3,(H,8,9)"
+9TK InChIKey         InChI                1.03  WLDPWZQYAVZTTP-UHFFFAOYSA-N
+9TK SMILES_CANONICAL CACTVS               3.385 "Cn1ccnc1C(O)=O"
+9TK SMILES           CACTVS               3.385 "Cn1ccnc1C(O)=O"
+9TK SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "Cn1ccnc1C(=O)O"
+9TK SMILES           "OpenEye OEToolkits" 2.0.6 "Cn1ccnc1C(=O)O"
+9TK ?                acedrg               202         "dictionary generator"                  
+9TK ?                acedrg_database      11          "data source"                           
+9TK ?                rdkit                2017.03.2   "Chemoinformatics tool"
+9TK ?                refmac5              5.8.0189    "optimization tool"                     

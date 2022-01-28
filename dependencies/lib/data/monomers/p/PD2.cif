@@ -1,0 +1,151 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PD2     PD2      "PYRIDINE-2,4-DICARBOXYLIC ACID"     NON-POLYMER     15     12     .     
+#
+data_comp_PD2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PD2     O42     O       O       0       19.087      48.919      65.931      
+PD2     C41     C       C       0       18.264      49.070      66.852      
+PD2     O41     O       OC      -1      17.704      50.146      67.124      
+PD2     C4      C       CR6     0       17.921      47.873      67.688      
+PD2     C5      C       CR16    0       16.599      47.501      67.894      
+PD2     C6      C       CR16    0       16.343      46.388      68.676      
+PD2     C3      C       CR16    0       18.934      47.120      68.271      
+PD2     C2      C       CR6     0       18.591      46.013      69.044      
+PD2     N1      N       NRD6    0       17.307      45.646      69.248      
+PD2     C21     C       C       0       19.656      45.158      69.702      
+PD2     O21     O       O       0       20.524      45.748      70.371      
+PD2     O22     O       OC      -1      19.586      43.929      69.525      
+PD2     H5      H       H       0       15.891      47.994      67.511      
+PD2     H6      H       H       0       15.445      46.134      68.816      
+PD2     H3      H       H       0       19.838      47.356      68.144      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PD2       O42       C41       DOUBLE    n         1.244     0.020     1.244     0.020     
+PD2       C41       O41       SINGLE    n         1.244     0.020     1.244     0.020     
+PD2       C41       C4        SINGLE    n         1.498     0.020     1.498     0.020     
+PD2       C4        C5        DOUBLE    y         1.381     0.011     1.381     0.011     
+PD2       C4        C3        SINGLE    y         1.383     0.010     1.383     0.010     
+PD2       C5        C6        SINGLE    y         1.378     0.010     1.378     0.010     
+PD2       C6        N1        DOUBLE    y         1.337     0.010     1.337     0.010     
+PD2       C3        C2        DOUBLE    y         1.386     0.010     1.386     0.010     
+PD2       C2        N1        SINGLE    y         1.343     0.010     1.343     0.010     
+PD2       C2        C21       SINGLE    n         1.516     0.012     1.516     0.012     
+PD2       C21       O21       DOUBLE    n         1.244     0.020     1.244     0.020     
+PD2       C21       O22       SINGLE    n         1.244     0.020     1.244     0.020     
+PD2       C5        H5        SINGLE    n         1.082     0.013     0.944     0.010     
+PD2       C6        H6        SINGLE    n         1.082     0.013     0.944     0.019     
+PD2       C3        H3        SINGLE    n         1.082     0.013     0.943     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PD2         O42         C41         O41     124.418    1.50
+PD2         O42         C41          C4     117.791    1.50
+PD2         O41         C41          C4     117.791    1.50
+PD2         C41          C4          C5     120.979    1.50
+PD2         C41          C4          C3     119.889    1.50
+PD2          C5          C4          C3     119.131    1.50
+PD2          C4          C5          C6     118.806    1.50
+PD2          C4          C5          H5     120.750    1.50
+PD2          C6          C5          H5     120.445    1.50
+PD2          C5          C6          N1     123.747    1.50
+PD2          C5          C6          H6     118.329    1.50
+PD2          N1          C6          H6     117.920    1.50
+PD2          C4          C3          C2     118.840    1.50
+PD2          C4          C3          H3     120.490    1.50
+PD2          C2          C3          H3     120.670    1.50
+PD2          C3          C2          N1     122.166    1.50
+PD2          C3          C2         C21     121.098    1.50
+PD2          N1          C2         C21     116.736    1.50
+PD2          C6          N1          C2     117.315    1.50
+PD2          C2         C21         O21     117.117    1.50
+PD2          C2         C21         O22     117.117    1.50
+PD2         O21         C21         O22     125.766    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PD2             sp2_sp2_1          C5          C4         C41         O42     180.000   10.00     2
+PD2       const_sp2_sp2_3         C41          C4          C5          C6     180.000   10.00     2
+PD2              const_18          C2          C3          C4         C41     180.000   10.00     2
+PD2       const_sp2_sp2_5          C4          C5          C6          N1       0.000   10.00     2
+PD2       const_sp2_sp2_9          C5          C6          N1          C2       0.000   10.00     2
+PD2              const_15         C21          C2          C3          C4     180.000   10.00     2
+PD2              const_12         C21          C2          N1          C6     180.000   10.00     2
+PD2             sp2_sp2_5          C3          C2         C21         O21     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PD2    plan-1          C2   0.020
+PD2    plan-1         C21   0.020
+PD2    plan-1          C3   0.020
+PD2    plan-1          C4   0.020
+PD2    plan-1         C41   0.020
+PD2    plan-1          C5   0.020
+PD2    plan-1          C6   0.020
+PD2    plan-1          H3   0.020
+PD2    plan-1          H5   0.020
+PD2    plan-1          H6   0.020
+PD2    plan-1          N1   0.020
+PD2    plan-2          C4   0.020
+PD2    plan-2         C41   0.020
+PD2    plan-2         O41   0.020
+PD2    plan-2         O42   0.020
+PD2    plan-3          C2   0.020
+PD2    plan-3         C21   0.020
+PD2    plan-3         O21   0.020
+PD2    plan-3         O22   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PD2 SMILES           ACDLabs              10.04 "O=C(O)c1nccc(C(=O)O)c1"
+PD2 SMILES_CANONICAL CACTVS               3.341 "OC(=O)c1ccnc(c1)C(O)=O"
+PD2 SMILES           CACTVS               3.341 "OC(=O)c1ccnc(c1)C(O)=O"
+PD2 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cnc(cc1C(=O)O)C(=O)O"
+PD2 SMILES           "OpenEye OEToolkits" 1.5.0 "c1cnc(cc1C(=O)O)C(=O)O"
+PD2 InChI            InChI                1.03  "InChI=1S/C7H5NO4/c9-6(10)4-1-2-8-5(3-4)7(11)12/h1-3H,(H,9,10)(H,11,12)"
+PD2 InChIKey         InChI                1.03  MJIVRKPEXXHNJT-UHFFFAOYSA-N
+PD2 ?                acedrg               202         "dictionary generator"                  
+PD2 ?                acedrg_database      11          "data source"                           
+PD2 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PD2 ?                refmac5              5.8.0189    "optimization tool"                     

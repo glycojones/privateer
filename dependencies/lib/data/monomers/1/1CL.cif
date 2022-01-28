@@ -1,0 +1,253 @@
+global_
+_lib_name         p_cluster_open
+_lib_version      3.0_aom
+_lib_update       19_06_30
+# ------------------------------------------------
+#
+# Credit to: Ailiena Maggiolo, Caltech
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1CL      1CL 'FE(8)-S(7) CLUSTER, OXIDIZED                                   ' non-polymer                  21  15 .
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_1CL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+ 1CL           S4A    S    ST        0.000
+ 1CL           FE2    FE   FE        0.000
+ 1CL           FE3    FE   FE        0.000
+ 1CL           S2A    S    ST        0.000
+ 1CL           FE4    FE   FE        0.000
+ 1CL           S3A    S    ST        0.000
+ 1CL           FE1    FE   FE        0.000
+ 1CL           S4B    S    ST        0.000
+ 1CL           FE5    FE   FE        0.000
+ 1CL           FE7    FE   FE        0.000
+ 1CL           S2B    S    ST        0.000
+ 1CL           FE8    FE   FE        0.000
+ 1CL           S1     S    ST        0.000
+ 1CL           S3B    S    ST        0.000
+ 1CL           FE6    FE   FE        0.000
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1CL       S1        FE1       metal     2.389     0.020     2.389     0.020     
+1CL       S1        FE2       metal     2.480     0.020     2.480     0.020     
+1CL       S1        FE4       metal     2.366     0.020     2.366     0.020     
+1CL       S1        FE8       metal     2.346     0.020     2.346     0.020     
+1CL       FE1       FE2       metal     2.518     0.020     2.518     0.020     
+1CL       FE1       FE3       metal     2.800     0.020     2.800     0.020     
+1CL       FE1       FE4       metal     2.630     0.020     2.630     0.020     
+1CL       FE1       S2A       metal     2.308     0.020     2.308     0.020     
+1CL       FE1       S3A       metal     2.311     0.020     2.311     0.020     
+1CL       FE2       FE3       metal     2.750     0.020     2.750     0.020     
+1CL       FE2       FE4       metal     2.567     0.020     2.567     0.020     
+1CL       FE2       S2A       metal     2.296     0.020     2.296     0.020     
+1CL       FE2       S4A       metal     2.277     0.020     2.277     0.020     
+1CL       FE3       FE4       metal     2.710     0.020     2.710     0.020     
+1CL       FE3       S3A       metal     2.313     0.020     2.313     0.020     
+1CL       FE3       S4A       metal     2.265     0.020     2.265     0.020     
+1CL       S3A       FE4       metal     2.296     0.020     2.296     0.020     
+1CL       FE4       S4A       metal     2.287     0.020     2.287     0.020     
+1CL       FE5       FE7       metal     2.820     0.020     2.820     0.020     
+1CL       FE5       S2B       metal     2.273     0.020     2.273     0.020     
+1CL       FE5       S4B       metal     2.310     0.020     2.310     0.020     
+1CL       FE6       FE7       metal     2.800     0.020     2.800     0.020     
+1CL       FE6       S2B       metal     2.330     0.020     2.330     0.020     
+1CL       FE6       S3B       metal     2.330     0.020     2.330     0.020     
+1CL       FE7       FE8       metal     2.750     0.020     2.750     0.020     
+1CL       S2B       FE7       metal     2.309     0.020     2.309     0.020     
+1CL       FE7       S3B       metal     2.320     0.020     2.320     0.020     
+1CL       FE7       S4B       metal     2.289     0.020     2.289     0.020     
+1CL       S3B       FE8       metal     2.283     0.020     2.283     0.020     
+1CL       FE8       S4B       metal     2.324     0.020     2.324     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 1CL      FE2    S4A    FE3      74.390    3.000
+ 1CL      FE2    S4A    FE4      68.460    3.000
+ 1CL      FE3    S4A    FE4      73.280    3.000
+ 1CL      S4A    FE2    S1      108.320    3.000
+ 1CL      S4A    FE2    FE1     105.430    3.000
+ 1CL      S4A    FE2    FE3      52.610    3.000
+ 1CL      S4A    FE2    FE4      55.940    3.000
+ 1CL      S4A    FE2    S2A     102.140    3.000
+ 1CL      S1     FE2    FE1      57.060    3.000
+ 1CL      S1     FE2    FE3     106.890    3.000
+ 1CL      FE1    FE2    FE3      63.990    3.000
+ 1CL      S1     FE2    FE4      55.840    3.000
+ 1CL      FE1    FE2    FE4      62.180    3.000
+ 1CL      FE3    FE2    FE4      61.210    3.000
+ 1CL      S1     FE2    S2A     112.270    3.000
+ 1CL      FE1    FE2    S2A      56.950    3.000
+ 1CL      FE3    FE2    S2A      52.140    3.000
+ 1CL      FE4    FE2    S2A     103.590    3.000
+ 1CL      S4A    FE3    S2A     102.680    3.000
+ 1CL      S4A    FE3    FE1      97.440    3.000
+ 1CL      S4A    FE3    FE2      52.980    3.000
+ 1CL      S4A    FE3    FE4      53.730    3.000
+ 1CL      S4A    FE3    S3A     105.530    3.000
+ 1CL      FE1    FE3    FE2      54.030    3.000
+ 1CL      FE1    FE3    FE4      56.970    3.000
+ 1CL      FE2    FE3    FE4      56.030    3.000
+ 1CL      FE1    FE3    S3A      52.560    3.000
+ 1CL      FE2    FE3    S3A      96.240    3.000
+ 1CL      FE4    FE3    S3A      53.600    3.000
+ 1CL      S2A    FE3    FE1      52.830    3.000
+ 1CL      S2A    FE3    FE2      52.320    3.000
+ 1CL      S2A    FE3    FE4      99.370    3.000
+ 1CL      S2A    FE3    S3A     102.300    3.000
+ 1CL      FE3    S2A    FE1      74.890    3.000
+ 1CL      FE3    S2A    FE2      73.540    3.000
+ 1CL      FE1    S2A    FE2      66.330    3.000
+ 1CL      S4A    FE4    S3A     105.380    3.000
+ 1CL      S4A    FE4    S1      112.160    3.000
+ 1CL      S4A    FE4    FE1     101.830    3.000
+ 1CL      S4A    FE4    FE2      55.660    3.000
+ 1CL      S4A    FE4    FE3      53.020    3.000
+ 1CL      S1     FE4    FE1      56.830    3.000
+ 1CL      S1     FE4    FE2      60.390    3.000
+ 1CL      FE1    FE4    FE2      58.000    3.000
+ 1CL      S1     FE4    FE3     112.050    3.000
+ 1CL      FE1    FE4    FE3      63.080    3.000
+ 1CL      FE2    FE4    FE3      62.540    3.000
+ 1CL      S3A    FE4    S1      106.950    3.000
+ 1CL      S3A    FE4    FE1      55.510    3.000
+ 1CL      S3A    FE4    FE2     101.990    3.000
+ 1CL      S3A    FE4    FE3      54.180    3.000
+ 1CL      FE4    S3A    FE1      69.510    3.000
+ 1CL      FE4    S3A    FE3      72.230    3.000
+ 1CL      FE1    S3A    FE3      74.410    3.000
+ 1CL      S3A    FE1    S1      105.700    3.000
+ 1CL      S3A    FE1    FE2     102.960    3.000
+ 1CL      S3A    FE1    FE3      53.830    3.000
+ 1CL      S3A    FE1    FE4      54.980    3.000
+ 1CL      S3A    FE1    S2A     101.880    3.000
+ 1CL      S1     FE1    FE2      60.738    3.000
+ 1CL      S1     FE1    FE3     108.530    3.000
+ 1CL      FE2    FE1    FE3      62.070    3.000
+ 1CL      S1     FE1    FE4      56.050    3.000
+ 1CL      FE2    FE1    FE4      59.820    3.000
+ 1CL      FE3    FE1    FE4      60.030    3.000
+ 1CL      S1     FE1    S2A     115.390    3.000
+ 1CL      FE2    FE1    S2A      56.620    3.000
+ 1CL      FE3    FE1    S2A      52.270    3.000
+ 1CL      FE4    FE1    S2A     101.470    3.000
+ 1CL      FE5    S4B    FE7      75.960    3.000
+ 1CL      FE5    S4B    FE8      95.310    3.000
+ 1CL      FE7    S4B    FE8      73.280    3.000
+ 1CL      S4B    FE5    FE7      51.680    3.000
+ 1CL      S4B    FE5    S2B     103.290    3.000
+ 1CL      FE7    FE5    S2B      52.440    3.000
+ 1CL      S4B    FE7    S2B     102.840    3.000
+ 1CL      S4B    FE7    FE5      52.360    3.000
+ 1CL      S4B    FE7    FE6     118.790    3.000
+ 1CL      S4B    FE7    FE8      53.940    3.000
+ 1CL      S4B    FE7    S3B     103.220    3.000
+ 1CL      FE5    FE7    FE6      89.820    3.000
+ 1CL      FE5    FE7    FE8      75.670    3.000
+ 1CL      FE6    FE7    FE8      72.900    3.000
+ 1CL      FE5    FE7    S3B     121.450    3.000
+ 1CL      FE6    FE7    S3B      53.220    3.000
+ 1CL      FE8    FE7    S3B      52.660    3.000
+ 1CL      S2B    FE7    FE5      51.290    3.000
+ 1CL      S2B    FE7    FE6      53.280    3.000
+ 1CL      S2B    FE7    FE8      97.800    3.000
+ 1CL      S2B    FE7    S3B     105.900    3.000
+ 1CL      FE7    S2B    FE5      76.270    3.000
+ 1CL      FE7    S2B    FE6      74.090    3.000
+ 1CL      FE5    S2B    FE6     119.250    3.000
+ 1CL      S4B    FE8    S1      113.250    3.000
+ 1CL      S4B    FE8    S3B     103.270    3.000
+ 1CL      S4B    FE8    FE7      52.770    3.000
+ 1CL      S1     FE8    S3B     122.530    3.000
+ 1CL      S1     FE8    FE7     122.960    3.000
+ 1CL      S3B    FE8    FE7      53.880    3.000
+ 1CL      FE8    S1     FE1     134.560    3.000
+ 1CL      FE8    S1     FE2      75.140    3.000
+ 1CL      FE8    S1     FE4     108.400    3.000
+ 1CL      FE1    S1     FE2      62.200    3.000
+ 1CL      FE1    S1     FE4      67.040    3.000
+ 1CL      FE2    S1     FE4      63.870    3.000
+ 1CL      FE8    S3B    FE6      91.200    3.000
+ 1CL      FE8    S3B    FE7      73.460    3.000
+ 1CL      FE6    S3B    FE7      73.900    3.000
+ 1CL      S3B    FE6    FE7      52.900    3.000
+ 1CL      S3B    FE6    S2B     104.920    3.000
+ 1CL      FE7    FE6    S2B      52.600    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 1CL      var_1            FE4    S4A    FE2    S1               -20.331           20.000   3
+ 1CL      var_2            S4A    FE2    S2A    FE3              -20.340           20.000   3
+ 1CL      var_3            FE4    S4A    FE3    S2A              -92.279           20.000   3
+ 1CL      var_4            S4A    FE3    S3A    FE4              -14.557           20.000   3
+ 1CL      var_5            S4A    FE3    S2A    FE1               89.771           20.000   3
+ 1CL      var_6            FE3    S4A    FE4    S3A              -14.631           20.000   3
+ 1CL      var_7            S4A    FE4    S3A    FE1               93.948           20.000   3
+ 1CL      var_8            FE4    S3A    FE1    S1                25.138           20.000   3
+ 1CL      var_9            S3A    FE1    FE2    S4A               -1.161           20.000   3
+ 1CL      var_10           S3A    FE1    FE3    S4A              103.883           20.000   3
+ 1CL      var_11           S3A    FE1    FE4    S4A             -100.659           20.000   3
+ 1CL      var_12           S3A    FE1    S2A    FE3               19.485           20.000   3
+ 1CL      var_15           S4B    FE5    S2B    FE7                9.775           20.000   3
+ 1CL      var_17           S4B    FE7    S3B    FE8              -19.997           20.000   3
+ 1CL      var_18           S4B    FE7    S2B    FE5               -9.849           20.000   3
+ 1CL      var_20           S4B    FE8    S1     FE1              102.241           20.000   3
+ 1CL      var_21           FE8    S1     FE1    S3A             -118.460           20.000   3
+ 1CL      var_22           FE8    S1     FE2    S4A              -99.235           20.000   3
+ 1CL      var_23           FE8    S1     FE4    S4A               41.541           20.000   3
+ 1CL      var_24           S4B    FE8    S3B    FE6               92.479           20.000   3
+ 1CL      var_25           FE8    S3B    FE6    FE7              -72.392           20.000   3
+ 1CL      var_26           S3B    FE6    FE7    S4B               85.132           20.000   3
+ 1CL      var_27           S3B    FE6    S2B    FE7               -8.433           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 1CL      chir_01          S1     FE1    FE2    FE4       negativ
+ 1CL      chir_02          S2A    FE1    FE2    FE3       positiv
+ 1CL      chir_03          S2B    FE5    FE6    FE7       negativ
+ 1CL      chir_04          S3A    FE1    FE3    FE4       positiv
+ 1CL      chir_05          S3B    FE6    FE7    FE8       positiv
+ 1CL      chir_06          S4A    FE2    FE3    FE4       negativ
+ 1CL      chir_07          S4B    FE5    FE7    FE8       negativ
+# ------------------------------------------------------
+# ------------------------------------------------------
+# ------------------------------------------------------

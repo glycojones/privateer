@@ -1,0 +1,226 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TYR     TYR     TYROSINE     L-peptide     24     13     .     
+#
+data_comp_TYR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TYR     N       N       NT3     1       2.151       1.101       0.428       
+TYR     H       H       H       0       2.526       1.022       -0.506      
+TYR     H2      H       H       0       2.801       1.527       0.994       
+TYR     H3      H       H       0       1.365       1.651       0.409       
+TYR     CA      C       CH1     0       1.810       -0.264      0.953       
+TYR     HA      H       H       0       1.265       -0.158      1.774       
+TYR     CB      C       CH2     0       0.997       -1.060      -0.074      
+TYR     HB3     H       H       0       1.506       -1.095      -0.911      
+TYR     HB2     H       H       0       0.903       -1.979      0.254       
+TYR     CG      C       CR6     0       -0.378      -0.512      -0.364      
+TYR     CD1     C       CR16    0       -0.623      0.252       -1.503      
+TYR     HD1     H       H       0       0.084       0.427       -2.102      
+TYR     CE1     C       CR16    0       -1.889      0.762       -1.778      
+TYR     HE1     H       H       0       -2.033      1.276       -2.555      
+TYR     CZ      C       CR6     0       -2.940      0.513       -0.904      
+TYR     OH      O       OH1     0       -4.184      1.010       -1.166      
+TYR     HH      H       H       0       -4.414      1.565       -0.554      
+TYR     CE2     C       CR16    0       -2.716      -0.246      0.239       
+TYR     HE2     H       H       0       -3.426      -0.419      0.836       
+TYR     CD2     C       CR16    0       -1.445      -0.750      0.499       
+TYR     HD2     H       H       0       -1.304      -1.264      1.277       
+TYR     C       C       C       0       3.098       -1.012      1.322       
+TYR     O       O       O       0       3.308       -1.383      2.477       
+TYR     OXT     O       OC      -1      3.952       -1.261      0.471       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TYR      N      n/a    CA     START
+ TYR      H      N      .      .
+ TYR      H2     N      .      .
+ TYR      H3     N      .      .
+ TYR      CA     N      C      .
+ TYR      HA     CA     .      .
+ TYR      CB     CA     CG     .
+ TYR      HB3    CB     .      .
+ TYR      HB2    CB     .      .
+ TYR      CG     CB     CD1    .
+ TYR      CD1    CG     CE1    .
+ TYR      HD1    CD1    .      .
+ TYR      CE1    CD1    CZ     .
+ TYR      HE1    CE1    .      .
+ TYR      CZ     CE1    CE2    .
+ TYR      OH     CZ     HH     .
+ TYR      HH     OH     .      .
+ TYR      CE2    CZ     CD2    .
+ TYR      HE2    CE2    .      .
+ TYR      CD2    CE2    HD2    .
+ TYR      HD2    CD2    .      .
+ TYR      C      CA     .      END
+ TYR      O      C      .      .
+ TYR      OXT    C      .      .
+ TYR      CD2    CG     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TYR       CD1       CE1       DOUBLE    y         1.385     0.010     1.385     0.010     
+TYR       CE1       CZ        SINGLE    y         1.383     0.010     1.383     0.010     
+TYR       CZ        CE2       DOUBLE    y         1.383     0.010     1.383     0.010     
+TYR       CE2       CD2       SINGLE    y         1.385     0.010     1.385     0.010     
+TYR       CD2       CG        DOUBLE    y         1.385     0.011     1.385     0.011     
+TYR       CG        CB        SINGLE    n         1.508     0.010     1.508     0.010     
+TYR       CB        CA        SINGLE    n         1.531     0.010     1.531     0.010     
+TYR       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+TYR       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TYR       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TYR       CA        N         SINGLE    n         1.487     0.010     1.487     0.010     
+TYR       CZ        OH        SINGLE    n         1.365     0.012     1.365     0.012     
+TYR       CD1       CG        SINGLE    y         1.385     0.011     1.385     0.011     
+TYR       CD1       HD1       SINGLE    n         1.082     0.013     0.943     0.017     
+TYR       CE1       HE1       SINGLE    n         1.082     0.013     0.943     0.017     
+TYR       CE2       HE2       SINGLE    n         1.082     0.013     0.943     0.017     
+TYR       CD2       HD2       SINGLE    n         1.082     0.013     0.943     0.017     
+TYR       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+TYR       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+TYR       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+TYR       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+TYR       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+TYR       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+TYR       OH        HH        SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TYR         CE1         CD1          CG     121.472    1.50
+TYR         CE1         CD1         HD1     119.210    1.50
+TYR          CG         CD1         HD1     119.317    1.50
+TYR         CD1         CE1          CZ     119.825    1.50
+TYR         CD1         CE1         HE1     120.168    1.50
+TYR          CZ         CE1         HE1     120.006    1.50
+TYR         CE1          CZ         CE2     119.571    1.50
+TYR         CE1          CZ          OH     120.215    2.50
+TYR         CE2          CZ          OH     120.215    2.50
+TYR          CZ         CE2         CD2     119.825    1.50
+TYR          CZ         CE2         HE2     120.006    1.50
+TYR         CD2         CE2         HE2     120.168    1.50
+TYR         CE2         CD2          CG     121.472    1.50
+TYR         CE2         CD2         HD2     119.210    1.50
+TYR          CG         CD2         HD2     119.317    1.50
+TYR         CD2          CG          CB     121.083    1.50
+TYR         CD2          CG         CD1     117.834    1.50
+TYR          CB          CG         CD1     121.083    1.50
+TYR          CG          CB          CA     114.745    1.55
+TYR          CG          CB         HB3     108.862    1.50
+TYR          CG          CB         HB2     108.862    1.50
+TYR          CA          CB         HB3     108.434    1.50
+TYR          CA          CB         HB2     108.434    1.50
+TYR         HB3          CB         HB2     107.782    1.50
+TYR          CB          CA           C     111.331    2.53
+TYR          CB          CA           N     110.494    1.50
+TYR          CB          CA          HA     108.690    1.50
+TYR           C          CA           N     109.448    1.50
+TYR           C          CA          HA     108.450    1.50
+TYR           N          CA          HA     108.601    1.50
+TYR          CA           C           O     117.228    2.13
+TYR          CA           C         OXT     117.228    2.13
+TYR           O           C         OXT     125.543    1.50
+TYR          CA           N           H     109.646    1.54
+TYR          CA           N          H2     109.646    1.54
+TYR          CA           N          H3     109.646    1.54
+TYR           H           N          H2     109.028    2.41
+TYR           H           N          H3     109.028    2.41
+TYR          H2           N          H3     109.028    2.41
+TYR          CZ          OH          HH     110.017    2.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TYR      chi1     N      CA     CB     CG       180.000   15.000   3
+ TYR      chi2     CA     CB     CG     CD1       90.000   20.000   2
+ TYR      CONST_01 CB     CG     CD1    CE1      180.000    0.000   0
+ TYR      CONST_02 CG     CD1    CE1    CZ         0.000    0.000   0
+ TYR      CONST_03 CD1    CE1    CZ     CE2        0.000    0.000   0
+ TYR      hh1      CE1    CZ     OH     HH         0.000   20.000   2
+ TYR      CONST_04 CE1    CZ     CE2    CD2        0.000    0.000   0
+ TYR      CONST_05 CZ     CE2    CD2    CG         0.000    0.000   0
+TYR            sp3_sp3_10          CB          CA           N           H     180.000   10.00     3
+TYR             sp2_sp3_7           O           C          CA          CB       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TYR    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TYR    plan-1          CB   0.020
+TYR    plan-1         CD1   0.020
+TYR    plan-1         CD2   0.020
+TYR    plan-1         CE1   0.020
+TYR    plan-1         CE2   0.020
+TYR    plan-1          CG   0.020
+TYR    plan-1          CZ   0.020
+TYR    plan-1         HD1   0.020
+TYR    plan-1         HD2   0.020
+TYR    plan-1         HE1   0.020
+TYR    plan-1         HE2   0.020
+TYR    plan-1          OH   0.020
+TYR    plan-2           C   0.020
+TYR    plan-2          CA   0.020
+TYR    plan-2           O   0.020
+TYR    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TYR SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc1ccc(O)cc1"
+TYR SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1ccc(O)cc1)C(O)=O"
+TYR SMILES           CACTVS               3.341 "N[CH](Cc1ccc(O)cc1)C(O)=O"
+TYR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(ccc1C[C@@H](C(=O)O)N)O"
+TYR SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(ccc1CC(C(=O)O)N)O"
+TYR InChI            InChI                1.03  "InChI=1S/C9H11NO3/c10-8(9(12)13)5-6-1-3-7(11)4-2-6/h1-4,8,11H,5,10H2,(H,12,13)/t8-/m0/s1"
+TYR InChIKey         InChI                1.03  OUYCCCASQSFEME-QMMMGPOBSA-N
+TYR ?                acedrg               195         "dictionary generator"                  
+TYR ?                acedrg_database      11          "data source"                           
+TYR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TYR ?                refmac5              5.8.0189    "optimization tool"                     

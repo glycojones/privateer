@@ -1,0 +1,72 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PI    PI        "HYDROGENPHOSPHATE ION"     NON-POLYMER     5     5     .     
+#
+data_comp_PI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PI      P       P       P       0       13.662      -11.041     13.251      
+PI      O1      O       O       0       14.688      -11.744     14.131      
+PI      O2      O       OP      -1      14.182      -9.660      12.868      
+PI      O3      O       OP      -1      12.351      -10.896     14.015      
+PI      O4      O       OP      -1      13.427      -11.863     11.989      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PI        P         O1        DOUBLE    n         1.524     0.020     1.524     0.020     
+PI        P         O2        SINGLE    n         1.524     0.020     1.524     0.020     
+PI        P         O3        SINGLE    n         1.524     0.020     1.524     0.020     
+PI        P         O4        SINGLE    n         1.524     0.020     1.524     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PI         O1           P          O2     109.461    1.50
+PI         O1           P          O3     109.461    1.50
+PI         O1           P          O4     109.461    1.50
+PI         O2           P          O3     109.461    1.50
+PI         O2           P          O4     109.461    1.50
+PI         O3           P          O4     109.461    1.50
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PI SMILES           ACDLabs              10.04 "[O-]P([O-])(=O)O"
+PI SMILES_CANONICAL CACTVS               3.341 "O[P]([O-])([O-])=O"
+PI SMILES           CACTVS               3.341 "O[P]([O-])([O-])=O"
+PI SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "OP(=O)([O-])[O-]"
+PI SMILES           "OpenEye OEToolkits" 1.5.0 "OP(=O)([O-])[O-]"
+PI InChI            InChI                1.03  "InChI=1S/H3O4P/c1-5(2,3)4/h(H3,1,2,3,4)/p-2"
+PI InChIKey         InChI                1.03  NBIIXXVUZAFLBC-UHFFFAOYSA-L
+PI  ?                acedrg               204         "dictionary generator"                  
+PI  ?                acedrg_database      11          "data source"                           
+PI  ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PI  ?                refmac5              5.8.0230    "optimization tool"                     

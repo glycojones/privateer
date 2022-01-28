@@ -1,0 +1,123 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HOW     HOW      1,2-oxazol-3-amine     NON-POLYMER     10     6     .     
+#
+data_comp_HOW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HOW     C2      C       CR5     0       11.474      6.368       43.935      
+HOW     C3      C       CR15    0       10.893      7.529       44.370      
+HOW     N1      N       NH2     0       11.236      5.109       44.399      
+HOW     C4      C       CR15    0       11.409      8.539       43.649      
+HOW     O5      O       O2      0       12.289      8.012       42.787      
+HOW     N6      N       NRD5    0       12.325      6.607       42.979      
+HOW     H9      H       H       0       10.248      7.617       45.051      
+HOW     H8      H       H       0       10.651      4.982       45.042      
+HOW     H7      H       H       0       11.667      4.425       44.054      
+HOW     H10     H       H       0       11.200      9.452       43.724      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HOW       O5        N6        SINGLE    y         1.418     0.0122    1.418     0.0122    
+HOW       C4        O5        SINGLE    y         1.338     0.0126    1.338     0.0126    
+HOW       C2        N6        DOUBLE    y         1.303     0.0100    1.303     0.0100    
+HOW       C3        C4        DOUBLE    y         1.342     0.0200    1.342     0.0200    
+HOW       C2        C3        SINGLE    y         1.372     0.0200    1.372     0.0200    
+HOW       C2        N1        SINGLE    n         1.362     0.0133    1.362     0.0133    
+HOW       C3        H9        SINGLE    n         1.082     0.013     0.942     0.0153    
+HOW       N1        H8        SINGLE    n         1.016     0.010     0.879     0.0200    
+HOW       N1        H7        SINGLE    n         1.016     0.010     0.879     0.0200    
+HOW       C4        H10       SINGLE    n         1.082     0.013     0.940     0.0195    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HOW          N6          C2          C3     111.255    1.50
+HOW          N6          C2          N1     122.041    1.50
+HOW          C3          C2          N1     126.705    2.60
+HOW          C4          C3          C2     107.902    2.27
+HOW          C4          C3          H9     125.424    1.50
+HOW          C2          C3          H9     126.673    1.50
+HOW          C2          N1          H8     119.959    1.50
+HOW          C2          N1          H7     119.959    1.50
+HOW          H8          N1          H7     120.083    1.50
+HOW          O5          C4          C3     106.821    3.00
+HOW          O5          C4         H10     125.818    3.00
+HOW          C3          C4         H10     127.362    2.97
+HOW          N6          O5          C4     108.349    1.50
+HOW          O5          N6          C2     105.673    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HOW              const_12          N1          C2          C3          C4     180.000   10.00     2
+HOW             sp2_sp2_3          N6          C2          N1          H8       0.000   10.00     2
+HOW       const_sp2_sp2_2          N1          C2          N6          O5     180.000   10.00     2
+HOW       const_sp2_sp2_6          C2          C3          C4          O5       0.000   10.00     2
+HOW       const_sp2_sp2_4          C3          C4          O5          N6       0.000   10.00     2
+HOW       const_sp2_sp2_3          C2          N6          O5          C4       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HOW    plan-1          C2   0.020
+HOW    plan-1          C3   0.020
+HOW    plan-1          C4   0.020
+HOW    plan-1         H10   0.020
+HOW    plan-1          H9   0.020
+HOW    plan-1          N1   0.020
+HOW    plan-1          N6   0.020
+HOW    plan-1          O5   0.020
+HOW    plan-2          C2   0.020
+HOW    plan-2          H7   0.020
+HOW    plan-2          H8   0.020
+HOW    plan-2          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HOW            InChI                InChI  1.03 InChI=1S/C3H4N2O/c4-3-1-2-6-5-3/h1-2H,(H2,4,5)
+HOW         InChIKey                InChI  1.03                    RHFWLPWDOYJEAL-UHFFFAOYSA-N
+HOW SMILES_CANONICAL               CACTVS 3.385                                       Nc1ccon1
+HOW           SMILES               CACTVS 3.385                                       Nc1ccon1
+HOW SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                       c1conc1N
+HOW           SMILES "OpenEye OEToolkits" 2.0.6                                       c1conc1N
+HOW ?                acedrg               217         "dictionary generator"                  
+HOW ?                acedrg_database      11          "data source"                           
+HOW ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HOW ?                refmac5              5.8.0253    "optimization tool"                     

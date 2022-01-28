@@ -1,0 +1,161 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GWM     GWM      "(4-methylphenyl) dihydrogen phosphate"     NON-POLYMER     19     12     .     
+#
+data_comp_GWM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GWM     C12     C       CH3     0       -3.270      0.055       0.265       
+GWM     C01     C       CR6     0       -1.776      -0.100      0.143       
+GWM     C02     C       CR16    0       -0.915      0.920       0.529       
+GWM     C03     C       CR16    0       0.468       0.795       0.425       
+GWM     C04     C       CR6     0       1.001       -0.388      -0.084      
+GWM     C05     C       CR16    0       0.163       -1.426      -0.477      
+GWM     C06     C       CR16    0       -1.215      -1.267      -0.359      
+GWM     O07     O       O2      0       2.374       -0.662      -0.246      
+GWM     P08     P       P       0       3.609       0.330       -0.023      
+GWM     O09     O       OP      -1      4.869       -0.364      -0.482      
+GWM     O10     O       O       0       3.695       0.661       1.446       
+GWM     O11     O       OP      -1      3.372       1.581       -0.832      
+GWM     H1      H       H       0       -3.476      0.643       1.010       
+GWM     H2      H       H       0       -3.675      -0.814      0.419       
+GWM     H3      H       H       0       -3.626      0.435       -0.554      
+GWM     H4      H       H       0       -1.278      1.720       0.872       
+GWM     H5      H       H       0       1.023       1.505       0.696       
+GWM     H6      H       H       0       0.520       -2.229      -0.821      
+GWM     H7      H       H       0       -1.782      -1.971      -0.626      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GWM       C12       C01       SINGLE    n         1.507     0.018     1.507     0.018     
+GWM       C01       C06       DOUBLE    y         1.381     0.011     1.381     0.011     
+GWM       C05       C06       SINGLE    y         1.385     0.010     1.385     0.010     
+GWM       C01       C02       SINGLE    y         1.381     0.011     1.381     0.011     
+GWM       C04       C05       DOUBLE    y         1.384     0.010     1.384     0.010     
+GWM       C02       C03       DOUBLE    y         1.385     0.010     1.385     0.010     
+GWM       C03       C04       SINGLE    y         1.384     0.010     1.384     0.010     
+GWM       C04       O07       SINGLE    n         1.398     0.016     1.398     0.016     
+GWM       P08       O10       DOUBLE    n         1.509     0.020     1.509     0.020     
+GWM       O07       P08       SINGLE    n         1.592     0.019     1.592     0.019     
+GWM       P08       O09       SINGLE    n         1.509     0.020     1.509     0.020     
+GWM       P08       O11       SINGLE    n         1.509     0.020     1.509     0.020     
+GWM       C12       H1        SINGLE    n         1.089     0.010     0.971     0.013     
+GWM       C12       H2        SINGLE    n         1.089     0.010     0.971     0.013     
+GWM       C12       H3        SINGLE    n         1.089     0.010     0.971     0.013     
+GWM       C02       H4        SINGLE    n         1.082     0.013     0.943     0.017     
+GWM       C03       H5        SINGLE    n         1.082     0.013     0.943     0.017     
+GWM       C05       H6        SINGLE    n         1.082     0.013     0.943     0.017     
+GWM       C06       H7        SINGLE    n         1.082     0.013     0.943     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GWM         C01         C12          H1     109.567    1.50
+GWM         C01         C12          H2     109.567    1.50
+GWM         C01         C12          H3     109.567    1.50
+GWM          H1         C12          H2     109.348    1.50
+GWM          H1         C12          H3     109.348    1.50
+GWM          H2         C12          H3     109.348    1.50
+GWM         C12         C01         C06     121.148    1.50
+GWM         C12         C01         C02     121.148    1.50
+GWM         C06         C01         C02     117.705    1.50
+GWM         C01         C02         C03     121.577    1.50
+GWM         C01         C02          H4     119.209    1.50
+GWM         C03         C02          H4     119.214    1.50
+GWM         C02         C03         C04     118.880    1.50
+GWM         C02         C03          H5     120.336    1.50
+GWM         C04         C03          H5     120.784    1.50
+GWM         C05         C04         C03     121.380    1.50
+GWM         C05         C04         O07     119.310    3.00
+GWM         C03         C04         O07     119.310    3.00
+GWM         C06         C05         C04     118.880    1.50
+GWM         C06         C05          H6     120.336    1.50
+GWM         C04         C05          H6     120.784    1.50
+GWM         C01         C06         C05     121.577    1.50
+GWM         C01         C06          H7     119.209    1.50
+GWM         C05         C06          H7     119.214    1.50
+GWM         C04         O07         P08     124.779    1.73
+GWM         O10         P08         O07     114.838    3.00
+GWM         O10         P08         O09     112.139    1.52
+GWM         O10         P08         O11     112.139    1.52
+GWM         O07         P08         O09     114.838    3.00
+GWM         O07         P08         O11     114.838    3.00
+GWM         O09         P08         O11     112.139    1.52
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GWM             sp2_sp3_1         C06         C01         C12          H1     150.000   10.00     6
+GWM              const_23         C12         C01         C02         C03     180.000   10.00     2
+GWM       const_sp2_sp2_3         C12         C01         C06         C05     180.000   10.00     2
+GWM              const_17         C01         C02         C03         C04       0.000   10.00     2
+GWM              const_14         C02         C03         C04         O07     180.000   10.00     2
+GWM              const_11         O07         C04         C05         C06     180.000   10.00     2
+GWM             sp2_sp2_1         C05         C04         O07         P08     180.000   10.00     2
+GWM       const_sp2_sp2_5         C04         C05         C06         C01       0.000   10.00     2
+GWM             sp3_sp3_1         O10         P08         O07         C04     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GWM    plan-1         C01   0.020
+GWM    plan-1         C02   0.020
+GWM    plan-1         C03   0.020
+GWM    plan-1         C04   0.020
+GWM    plan-1         C05   0.020
+GWM    plan-1         C06   0.020
+GWM    plan-1         C12   0.020
+GWM    plan-1          H4   0.020
+GWM    plan-1          H5   0.020
+GWM    plan-1          H6   0.020
+GWM    plan-1          H7   0.020
+GWM    plan-1         O07   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GWM InChI            InChI                1.03  "InChI=1S/C7H9O4P/c1-6-2-4-7(5-3-6)11-12(8,9)10/h2-5H,1H3,(H2,8,9,10)"
+GWM InChIKey         InChI                1.03  JNUCNIFVQZYOCP-UHFFFAOYSA-N
+GWM SMILES_CANONICAL CACTVS               3.385 "Cc1ccc(O[P](O)(O)=O)cc1"
+GWM SMILES           CACTVS               3.385 "Cc1ccc(O[P](O)(O)=O)cc1"
+GWM SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "Cc1ccc(cc1)OP(=O)(O)O"
+GWM SMILES           "OpenEye OEToolkits" 2.0.6 "Cc1ccc(cc1)OP(=O)(O)O"
+GWM ?                acedrg               202         "dictionary generator"                  
+GWM ?                acedrg_database      11          "data source"                           
+GWM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GWM ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+JBN     JBN      1,2-oxazole-5-carboxamide     NON-POLYMER     12     8     .     
+#
+data_comp_JBN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+JBN     O01     O       O       0       -18.527     16.232      -13.689     
+JBN     C02     C       C       0       -18.294     17.241      -13.023     
+JBN     N03     N       NH2     0       -17.062     17.597      -12.678     
+JBN     C04     C       CR5     0       -19.393     18.105      -12.577     
+JBN     O05     O       O2      0       -19.109     19.229      -11.873     
+JBN     N06     N       NRD5    0       -20.333     19.872      -11.572     
+JBN     C07     C       CR15    0       -21.274     19.141      -12.084     
+JBN     C08     C       CR15    0       -20.729     18.031      -12.720     
+JBN     H1      H       H       0       -16.381     17.094      -12.933     
+JBN     H2      H       H       0       -16.930     18.330      -12.199     
+JBN     H3      H       H       0       -22.195     19.341      -12.030     
+JBN     H4      H       H       0       -21.200     17.349      -13.169     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+JBN       O01       C02       DOUBLE    n         1.231     0.0100    1.231     0.0100    
+JBN       C07       C08       SINGLE    y         1.390     0.0100    1.390     0.0100    
+JBN       C04       C08       DOUBLE    y         1.350     0.0130    1.350     0.0130    
+JBN       N06       C07       DOUBLE    y         1.294     0.0100    1.294     0.0100    
+JBN       C02       C04       SINGLE    n         1.465     0.0107    1.465     0.0107    
+JBN       C02       N03       SINGLE    n         1.325     0.0100    1.325     0.0100    
+JBN       C04       O05       SINGLE    y         1.358     0.0100    1.358     0.0100    
+JBN       O05       N06       SINGLE    y         1.414     0.0100    1.414     0.0100    
+JBN       N03       H1        SINGLE    n         1.016     0.010     0.884     0.0200    
+JBN       N03       H2        SINGLE    n         1.016     0.010     0.884     0.0200    
+JBN       C07       H3        SINGLE    n         1.082     0.013     0.944     0.0171    
+JBN       C08       H4        SINGLE    n         1.082     0.013     0.942     0.0154    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+JBN         O01         C02         C04     120.800    1.50
+JBN         O01         C02         N03     122.817    1.50
+JBN         C04         C02         N03     116.383    1.62
+JBN         C02         N03          H1     119.305    2.54
+JBN         C02         N03          H2     119.305    2.54
+JBN          H1         N03          H2     121.391    3.00
+JBN         C08         C04         C02     132.982    1.84
+JBN         C08         C04         O05     109.542    1.50
+JBN         C02         C04         O05     117.477    3.00
+JBN         C04         O05         N06     108.311    1.50
+JBN         C07         N06         O05     105.630    1.50
+JBN         C08         C07         N06     108.733    2.56
+JBN         C08         C07          H3     126.313    2.10
+JBN         N06         C07          H3     124.955    1.50
+JBN         C07         C08         C04     107.785    2.27
+JBN         C07         C08          H4     126.568    1.50
+JBN         C04         C08          H4     125.647    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+JBN             sp2_sp2_7         O01         C02         N03          H1       0.000   10.00     2
+JBN             sp2_sp2_3         O01         C02         C04         C08       0.000   10.00     2
+JBN              const_13         C02         C04         O05         N06     180.000   10.00     2
+JBN       const_sp2_sp2_3         C02         C04         C08         C07     180.000   10.00     2
+JBN              const_11         C07         N06         O05         C04       0.000   10.00     2
+JBN       const_sp2_sp2_9         C08         C07         N06         O05       0.000   10.00     2
+JBN       const_sp2_sp2_5         N06         C07         C08         C04       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+JBN    plan-1         C02   0.020
+JBN    plan-1         C04   0.020
+JBN    plan-1         C07   0.020
+JBN    plan-1         C08   0.020
+JBN    plan-1          H3   0.020
+JBN    plan-1          H4   0.020
+JBN    plan-1         N06   0.020
+JBN    plan-1         O05   0.020
+JBN    plan-2         C02   0.020
+JBN    plan-2         C04   0.020
+JBN    plan-2         N03   0.020
+JBN    plan-2         O01   0.020
+JBN    plan-3         C02   0.020
+JBN    plan-3          H1   0.020
+JBN    plan-3          H2   0.020
+JBN    plan-3         N03   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+JBN            InChI                InChI  1.03 InChI=1S/C4H4N2O2/c5-4(7)3-1-2-6-8-3/h1-2H,(H2,5,7)
+JBN         InChIKey                InChI  1.03                         DSIBSRXKQRYPJP-UHFFFAOYSA-N
+JBN SMILES_CANONICAL               CACTVS 3.385                                       NC(=O)c1oncc1
+JBN           SMILES               CACTVS 3.385                                       NC(=O)c1oncc1
+JBN SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                       c1cnoc1C(=O)N
+JBN           SMILES "OpenEye OEToolkits" 2.0.7                                       c1cnoc1C(=O)N
+JBN ?                acedrg               217         "dictionary generator"                  
+JBN ?                acedrg_database      11          "data source"                           
+JBN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+JBN ?                refmac5              5.8.0253    "optimization tool"                     

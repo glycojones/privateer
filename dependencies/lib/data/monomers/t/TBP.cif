@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TBP     TBP      2,4,6-TRIBROMOPHENOL     NON-POLYMER     13     10     .     
+#
+data_comp_TBP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TBP     O1      O       OH1     0       42.813      0.066       29.953      
+TBP     C1      C       CR6     0       42.627      0.116       28.621      
+TBP     C2      C       CR6     0       43.470      -0.574      27.726      
+TBP     C3      C       CR16    0       43.280      -0.525      26.348      
+TBP     C4      C       CR6     0       42.237      0.220       25.840      
+TBP     C5      C       CR16    0       41.381      0.916       26.668      
+TBP     C6      C       CR6     0       41.577      0.862       28.045      
+TBP     BR2     BR      BR      0       44.904      -1.598      28.421      
+TBP     BR4     BR      BR      0       41.976      0.291       23.971      
+TBP     BR6     BR      BR      0       40.400      1.817       29.179      
+TBP     H1      H       H       0       42.185      -0.356      30.358      
+TBP     H3      H       H       0       43.853      -0.991      25.776      
+TBP     H5      H       H       0       40.678      1.417       26.311      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TBP       O1        C1        SINGLE    n         1.344     0.019     1.344     0.019     
+TBP       C1        C2        DOUBLE    y         1.396     0.013     1.396     0.013     
+TBP       C1        C6        SINGLE    y         1.396     0.013     1.396     0.013     
+TBP       C2        C3        SINGLE    y         1.385     0.010     1.385     0.010     
+TBP       C2        BR2       SINGLE    n         1.893     0.010     1.893     0.010     
+TBP       C3        C4        DOUBLE    y         1.372     0.010     1.372     0.010     
+TBP       C4        C5        SINGLE    y         1.372     0.010     1.372     0.010     
+TBP       C4        BR4       SINGLE    n         1.888     0.013     1.888     0.013     
+TBP       C5        C6        DOUBLE    y         1.385     0.010     1.385     0.010     
+TBP       C6        BR6       SINGLE    n         1.893     0.010     1.893     0.010     
+TBP       O1        H1        SINGLE    n         0.970     0.012     0.858     0.020     
+TBP       C3        H3        SINGLE    n         1.082     0.013     0.934     0.010     
+TBP       C5        H5        SINGLE    n         1.082     0.013     0.934     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TBP          C1          O1          H1     112.571    3.00
+TBP          O1          C1          C2     121.834    3.00
+TBP          O1          C1          C6     121.834    3.00
+TBP          C2          C1          C6     116.331    1.50
+TBP          C1          C2          C3     121.910    1.50
+TBP          C1          C2         BR2     118.790    1.50
+TBP          C3          C2         BR2     119.300    1.50
+TBP          C2          C3          C4     119.147    1.50
+TBP          C2          C3          H3     120.293    1.50
+TBP          C4          C3          H3     120.560    1.50
+TBP          C3          C4          C5     121.555    1.50
+TBP          C3          C4         BR4     119.222    1.50
+TBP          C5          C4         BR4     119.222    1.50
+TBP          C4          C5          C6     119.147    1.50
+TBP          C4          C5          H5     120.560    1.50
+TBP          C6          C5          H5     120.293    1.50
+TBP          C1          C6          C5     121.910    1.50
+TBP          C1          C6         BR6     118.790    1.50
+TBP          C5          C6         BR6     119.300    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TBP       const_sp2_sp2_4          O1          C1          C2         BR2       0.000   10.00     2
+TBP              const_24          O1          C1          C6         BR6       0.000   10.00     2
+TBP       const_sp2_sp2_7         BR2          C2          C3          C4     180.000   10.00     2
+TBP              const_10          C2          C3          C4         BR4     180.000   10.00     2
+TBP              const_15         BR4          C4          C5          C6     180.000   10.00     2
+TBP              const_18          C4          C5          C6         BR6     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TBP    plan-1         BR2   0.020
+TBP    plan-1         BR4   0.020
+TBP    plan-1         BR6   0.020
+TBP    plan-1          C1   0.020
+TBP    plan-1          C2   0.020
+TBP    plan-1          C3   0.020
+TBP    plan-1          C4   0.020
+TBP    plan-1          C5   0.020
+TBP    plan-1          C6   0.020
+TBP    plan-1          H3   0.020
+TBP    plan-1          H5   0.020
+TBP    plan-1          O1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TBP SMILES           ACDLabs              10.04 "Brc1cc(Br)cc(Br)c1O"
+TBP SMILES_CANONICAL CACTVS               3.341 "Oc1c(Br)cc(Br)cc1Br"
+TBP SMILES           CACTVS               3.341 "Oc1c(Br)cc(Br)cc1Br"
+TBP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(cc(c(c1Br)O)Br)Br"
+TBP SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(cc(c(c1Br)O)Br)Br"
+TBP InChI            InChI                1.03  "InChI=1S/C6H3Br3O/c7-3-1-4(8)6(10)5(9)2-3/h1-2,10H"
+TBP InChIKey         InChI                1.03  BSWWXRFVMJHFBN-UHFFFAOYSA-N
+TBP ?                acedrg               202         "dictionary generator"                  
+TBP ?                acedrg_database      11          "data source"                           
+TBP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TBP ?                refmac5              5.8.0189    "optimization tool"                     

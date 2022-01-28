@@ -1,0 +1,162 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SHU     SHU      "4,6-DIOXOHEPTANOIC ACID"     NON-POLYMER     20     11     .     
+#
+data_comp_SHU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SHU     C4      C       C       0       20.523      24.498      16.117      
+SHU     C5      C       CH2     0       20.135      24.753      17.540      
+SHU     C6      C       C       0       18.904      24.165      17.883      
+SHU     O6      O       O       0       17.887      24.827      17.932      
+SHU     C7      C       CH3     0       18.876      22.690      18.179      
+SHU     C3      C       CH2     0       20.255      25.576      15.098      
+SHU     C2      C       CH2     0       21.521      26.219      14.565      
+SHU     C1      C       C       0       21.295      27.259      13.480      
+SHU     O1      O       O       0       20.787      28.350      13.807      
+SHU     OH1     O       OC      -1      21.627      26.974      12.313      
+SHU     O4L     O       O       0       21.038      23.449      15.790      
+SHU     HC51    H       H       0       20.110      25.715      17.707      
+SHU     HC52    H       H       0       20.824      24.381      18.124      
+SHU     HC1     H       H       0       19.705      22.276      17.886      
+SHU     HC2     H       H       0       18.131      22.279      17.710      
+SHU     HC3     H       H       0       18.769      22.552      19.134      
+SHU     HC31    H       H       0       19.689      26.266      15.498      
+SHU     HC32    H       H       0       19.763      25.180      14.350      
+SHU     HC21    H       H       0       22.105      25.521      14.204      
+SHU     HC22    H       H       0       21.997      26.646      15.305      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SHU       C4        C5        SINGLE    n         1.491     0.020     1.491     0.020     
+SHU       C4        C3        SINGLE    n         1.505     0.011     1.505     0.011     
+SHU       C4        O4L       DOUBLE    n         1.214     0.010     1.214     0.010     
+SHU       C5        C6        SINGLE    n         1.399     0.018     1.399     0.018     
+SHU       C6        O6        DOUBLE    n         1.212     0.020     1.212     0.020     
+SHU       C6        C7        SINGLE    n         1.498     0.020     1.498     0.020     
+SHU       C3        C2        SINGLE    n         1.516     0.020     1.516     0.020     
+SHU       C2        C1        SINGLE    n         1.519     0.012     1.519     0.012     
+SHU       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+SHU       C1        OH1       SINGLE    n         1.247     0.019     1.247     0.019     
+SHU       C5        HC51      SINGLE    n         1.089     0.010     0.976     0.016     
+SHU       C5        HC52      SINGLE    n         1.089     0.010     0.976     0.016     
+SHU       C7        HC1       SINGLE    n         1.089     0.010     0.971     0.015     
+SHU       C7        HC2       SINGLE    n         1.089     0.010     0.971     0.015     
+SHU       C7        HC3       SINGLE    n         1.089     0.010     0.971     0.015     
+SHU       C3        HC31      SINGLE    n         1.089     0.010     0.979     0.016     
+SHU       C3        HC32      SINGLE    n         1.089     0.010     0.979     0.016     
+SHU       C2        HC21      SINGLE    n         1.089     0.010     0.979     0.016     
+SHU       C2        HC22      SINGLE    n         1.089     0.010     0.979     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SHU          C5          C4          C3     116.951    2.07
+SHU          C5          C4         O4L     121.627    1.57
+SHU          C3          C4         O4L     121.422    1.50
+SHU          C4          C5          C6     111.575    3.00
+SHU          C4          C5        HC51     108.453    1.62
+SHU          C4          C5        HC52     108.453    1.62
+SHU          C6          C5        HC51     106.969    2.76
+SHU          C6          C5        HC52     106.969    2.76
+SHU        HC51          C5        HC52     106.837    1.50
+SHU          C5          C6          O6     120.971    1.57
+SHU          C5          C6          C7     117.837    2.93
+SHU          O6          C6          C7     121.192    1.50
+SHU          C6          C7         HC1     109.690    1.50
+SHU          C6          C7         HC2     109.690    1.50
+SHU          C6          C7         HC3     109.690    1.50
+SHU         HC1          C7         HC2     109.400    1.50
+SHU         HC1          C7         HC3     109.400    1.50
+SHU         HC2          C7         HC3     109.400    1.50
+SHU          C4          C3          C2     113.123    1.50
+SHU          C4          C3        HC31     108.377    1.50
+SHU          C4          C3        HC32     108.377    1.50
+SHU          C2          C3        HC31     108.787    1.50
+SHU          C2          C3        HC32     108.787    1.50
+SHU        HC31          C3        HC32     107.764    1.50
+SHU          C3          C2          C1     114.808    1.90
+SHU          C3          C2        HC21     109.115    1.50
+SHU          C3          C2        HC22     109.115    1.50
+SHU          C1          C2        HC21     108.404    1.50
+SHU          C1          C2        HC22     108.404    1.50
+SHU        HC21          C2        HC22     107.521    1.50
+SHU          C2          C1          O1     118.214    1.64
+SHU          C2          C1         OH1     118.214    1.64
+SHU          O1          C1         OH1     123.571    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SHU             sp2_sp3_2          C3          C4          C5          C6     120.000   10.00     6
+SHU             sp2_sp3_8          C5          C4          C3          C2     120.000   10.00     6
+SHU            sp2_sp3_14          O6          C6          C5          C4     120.000   10.00     6
+SHU            sp2_sp3_19          C5          C6          C7         HC1       0.000   10.00     6
+SHU             sp3_sp3_1          C1          C2          C3          C4     180.000   10.00     3
+SHU            sp2_sp3_26          O1          C1          C2          C3     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SHU    plan-1          C3   0.020
+SHU    plan-1          C4   0.020
+SHU    plan-1          C5   0.020
+SHU    plan-1         O4L   0.020
+SHU    plan-2          C5   0.020
+SHU    plan-2          C6   0.020
+SHU    plan-2          C7   0.020
+SHU    plan-2          O6   0.020
+SHU    plan-3          C1   0.020
+SHU    plan-3          C2   0.020
+SHU    plan-3          O1   0.020
+SHU    plan-3         OH1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SHU SMILES           ACDLabs              10.04 "O=C(CC(=O)C)CCC(=O)O"
+SHU SMILES_CANONICAL CACTVS               3.341 "CC(=O)CC(=O)CCC(O)=O"
+SHU SMILES           CACTVS               3.341 "CC(=O)CC(=O)CCC(O)=O"
+SHU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)CC(=O)CCC(=O)O"
+SHU SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)CC(=O)CCC(=O)O"
+SHU InChI            InChI                1.03  "InChI=1S/C7H10O4/c1-5(8)4-6(9)2-3-7(10)11/h2-4H2,1H3,(H,10,11)"
+SHU InChIKey         InChI                1.03  WYEPBHZLDUPIOD-UHFFFAOYSA-N
+SHU ?                acedrg               202         "dictionary generator"                  
+SHU ?                acedrg_database      11          "data source"                           
+SHU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SHU ?                refmac5              5.8.0189    "optimization tool"                     

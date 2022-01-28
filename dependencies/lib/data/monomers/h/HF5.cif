@@ -1,0 +1,344 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HF5      HF5 'HF OXO CLUSTER HF5                  ' non-polymer        38  26 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HF5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HF5           OE4    O    OH1       0.000      8.798   56.587  -10.939
+ HF5           HE41   H    H         0.000      7.906   56.256  -11.112
+ HF5           HFE    HF   HF        0.000     10.581   56.275  -12.625
+ HF5           OE1    O    OH1       0.000     12.578   56.675  -11.378
+ HF5           HE11   H    H         0.000     12.525   56.897  -10.438
+ HF5           OE2    O    OH1       0.000      8.798   55.140  -13.958
+ HF5           HE21   H    H         0.000      7.903   55.062  -13.601
+ HF5           OE3    O    OH1       0.000      9.748   58.496  -13.264
+ HF5           HE31   H    H         0.000      9.023   58.901  -12.769
+ HF5           OAE    O    O2        0.000     10.540   53.809  -11.877
+ HF5           HFA    HF   HF        0.000     10.810   51.834  -13.339
+ HF5           OA1    O    OH1       0.000      8.751   50.422  -13.681
+ HF5           HA11   H    H         0.000      8.681   49.378  -13.934
+ HF5           ODE    O    O2        0.000     11.786   56.117  -14.349
+ HF5           HFD    HF   HF        0.000     12.141   54.214  -15.784
+ HF5           OBD    O    O2        0.000     12.209   52.345  -17.389
+ HF5           OAD    O    O2        0.000     10.622   53.390  -14.955
+ HF5           OD1    O    OH1       0.000     13.605   55.217  -17.842
+ HF5           HD11   H    H         0.000     14.704   55.289  -17.989
+ HF5           OD2    O    OH1       0.000     11.175   56.187  -17.319
+ HF5           HD21   H    H         0.000     11.697   56.955  -17.917
+ HF5           OCD    O    O2        0.000     14.371   54.160  -14.611
+ HF5           HFC    HF   HF        0.000     14.480   51.988  -14.021
+ HF5           O00    O    O         0.000     12.522   51.019  -14.388
+ HF5           OAC    O    O2        0.000     12.821   52.802  -12.248
+ HF5           OC1    O    OH1       0.000     16.837   52.625  -14.715
+ HF5           HC11   H    H         0.000     17.781   52.270  -14.329
+ HF5           OC2    O    OH1       0.000     15.120   54.166  -11.785
+ HF5           HC21   H    H         0.000     16.112   54.634  -11.305
+ HF5           OBC    O    O2        0.000     14.747   50.922  -16.256
+ HF5           HFB    HF   HF        0.000     12.391   50.336  -16.504
+ HF5           OAB    O    O2        0.000     10.204   50.460  -15.311
+ HF5           OB3    O    OH1       0.000     14.274   50.097  -18.387
+ HF5           HB31   H    H         0.000     15.374   50.107  -18.308
+ HF5           OB2    O    OH1       0.000      9.974   50.462  -17.864
+ HF5           HB21   H    H         0.000      9.737   50.563  -18.955
+ HF5           OB1    O    OH1       0.000     12.516   47.750  -16.386
+ HF5           HB11   H    H         0.000     13.386   47.096  -16.356
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HF5      OE4    n/a    HFE    START
+ HF5      HE41   OE4    .      .
+ HF5      HFE    OE4    ODE    .
+ HF5      OE1    HFE    HE11   .
+ HF5      HE11   OE1    .      .
+ HF5      OE2    HFE    HE21   .
+ HF5      HE21   OE2    .      .
+ HF5      OE3    HFE    HE31   .
+ HF5      HE31   OE3    .      .
+ HF5      OAE    HFE    HFA    .
+ HF5      HFA    OAE    OA1    .
+ HF5      OA1    HFA    HA11   .
+ HF5      HA11   OA1    .      .
+ HF5      ODE    HFE    HFD    .
+ HF5      HFD    ODE    OCD    .
+ HF5      OBD    HFD    .      .
+ HF5      OAD    HFD    .      .
+ HF5      OD1    HFD    HD11   .
+ HF5      HD11   OD1    .      .
+ HF5      OD2    HFD    HD21   .
+ HF5      HD21   OD2    .      .
+ HF5      OCD    HFD    HFC    .
+ HF5      HFC    OCD    OBC    .
+ HF5      O00    HFC    .      .
+ HF5      OAC    HFC    .      .
+ HF5      OC1    HFC    HC11   .
+ HF5      HC11   OC1    .      .
+ HF5      OC2    HFC    HC21   .
+ HF5      HC21   OC2    .      .
+ HF5      OBC    HFC    HFB    .
+ HF5      HFB    OBC    OB1    .
+ HF5      OAB    HFB    .      .
+ HF5      OB3    HFB    HB31   .
+ HF5      HB31   OB3    .      .
+ HF5      OB2    HFB    HB21   .
+ HF5      HB21   OB2    .      .
+ HF5      OB1    HFB    HB11   .
+ HF5      HB11   OB1    .      END
+ HF5      OBD    HFB    .    ADD
+ HF5      HFA    O00    .    ADD
+ HF5      HFA    OAB    .    ADD
+ HF5      HFA    OAC    .    ADD
+ HF5      HFA    OAD    .    ADD
+ HF5      O00    HFB    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HF5       OBD       HFB       single    2.203     0.020     2.203     0.020     
+HF5       OBD       HFD       single    2.465     0.020     2.465     0.020     
+HF5       HFA       O00       single    2.167     0.020     2.167     0.020     
+HF5       HFA       OAB       single    2.479     0.020     2.479     0.020     
+HF5       HFA       OAC       single    2.484     0.020     2.484     0.020     
+HF5       HFA       OAD       single    2.251     0.020     2.251     0.020     
+HF5       HFA       OAE       single    2.472     0.020     2.472     0.020     
+HF5       OA1       HFA       single    1.800     0.020     1.800     0.020     
+HF5       O00       HFB       single    2.227     0.020     2.227     0.020     
+HF5       O00       HFC       single    2.215     0.020     2.215     0.020     
+HF5       OAB       HFB       single    2.494     0.020     2.494     0.020     
+HF5       OAC       HFC       single    1.800     0.020     1.800     0.020     
+HF5       OAD       HFD       single    1.917     0.020     1.917     0.020     
+HF5       OAE       HFE       single    1.800     0.020     1.800     0.020     
+HF5       HA11      OA1       single    0.970     0.012     0.839     0.014     
+HF5       HFB       OBC       single    2.440     0.020     2.440     0.020     
+HF5       OB1       HFB       single    1.800     0.020     1.800     0.020     
+HF5       OB2       HFB       single    1.800     0.020     1.800     0.020     
+HF5       OB3       HFB       single    1.800     0.020     1.800     0.020     
+HF5       OBC       HFC       single    2.491     0.020     2.491     0.020     
+HF5       HB11      OB1       single    0.970     0.012     0.839     0.014     
+HF5       HB21      OB2       single    0.970     0.012     0.839     0.014     
+HF5       HB31      OB3       single    0.970     0.012     0.839     0.014     
+HF5       HFC       OCD       single    2.253     0.020     2.253     0.020     
+HF5       OC1       HFC       single    1.800     0.020     1.800     0.020     
+HF5       OC2       HFC       single    1.800     0.020     1.800     0.020     
+HF5       OCD       HFD       single    1.800     0.020     1.800     0.020     
+HF5       HC11      OC1       single    0.970     0.012     0.839     0.014     
+HF5       HC21      OC2       single    0.970     0.012     0.839     0.014     
+HF5       HFD       ODE       single    2.410     0.020     2.410     0.020     
+HF5       OD1       HFD       single    1.800     0.020     1.800     0.020     
+HF5       OD2       HFD       single    1.800     0.020     1.800     0.020     
+HF5       ODE       HFE       single    2.109     0.020     2.109     0.020     
+HF5       HD11      OD1       single    0.970     0.012     0.839     0.014     
+HF5       HD21      OD2       single    0.970     0.012     0.839     0.014     
+HF5       OE1       HFE       single    2.388     0.020     2.388     0.020     
+HF5       OE2       HFE       single    2.499     0.020     2.499     0.020     
+HF5       OE3       HFE       single    2.457     0.020     2.457     0.020     
+HF5       HFE       OE4       single    2.474     0.020     2.474     0.020     
+HF5       HE11      OE1       single    0.970     0.012     0.839     0.014     
+HF5       HE21      OE2       single    0.970     0.012     0.839     0.014     
+HF5       HE31      OE3       single    0.970     0.012     0.839     0.014     
+HF5       HE41      OE4       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HF5      HE41   OE4    HFE     120.000    3.000
+ HF5      OE4    HFE    OE1      90.000    3.000
+ HF5      OE4    HFE    OE2      90.000    3.000
+ HF5      OE4    HFE    OE3      90.000    3.000
+ HF5      OE4    HFE    OAE      90.000    3.000
+ HF5      OE4    HFE    ODE     180.000    3.000
+ HF5      OE1    HFE    OE2     180.000    3.000
+ HF5      OE1    HFE    OE3      90.000    3.000
+ HF5      OE2    HFE    OE3      90.000    3.000
+ HF5      OE1    HFE    OAE      90.000    3.000
+ HF5      OE2    HFE    OAE      90.000    3.000
+ HF5      OE3    HFE    OAE     180.000    3.000
+ HF5      OE1    HFE    ODE      90.000    3.000
+ HF5      OE2    HFE    ODE      90.000    3.000
+ HF5      OE3    HFE    ODE      90.000    3.000
+ HF5      OAE    HFE    ODE      90.000    3.000
+ HF5      HFE    OE1    HE11    120.000    3.000
+ HF5      HFE    OE2    HE21    120.000    3.000
+ HF5      HFE    OE3    HE31    120.000    3.000
+ HF5      HFE    OAE    HFA     120.000    3.000
+ HF5      OAE    HFA    OA1     116.020    3.000
+ HF5      OAE    HFA    O00     132.305    3.000
+ HF5      OAE    HFA    OAB     152.460    3.000
+ HF5      OAE    HFA    OAC      61.143    3.000
+ HF5      OAE    HFA    OAD      82.138    3.000
+ HF5      O00    HFA    OAB      66.393    3.000
+ HF5      O00    HFA    OAC      73.716    3.000
+ HF5      OAB    HFA    OAC     139.756    3.000
+ HF5      O00    HFA    OAD      88.764    3.000
+ HF5      OAB    HFA    OAD      77.973    3.000
+ HF5      OAC    HFA    OAD      96.519    3.000
+ HF5      OA1    HFA    O00     111.660    3.000
+ HF5      OA1    HFA    OAB      51.805    3.000
+ HF5      OA1    HFA    OAC     159.945    3.000
+ HF5      OA1    HFA    OAD     102.805    3.000
+ HF5      HFA    OA1    HA11    120.000    3.000
+ HF5      HFE    ODE    HFD     120.000    3.000
+ HF5      ODE    HFD    OBD     172.217    3.000
+ HF5      ODE    HFD    OAD      88.005    3.000
+ HF5      ODE    HFD    OD1     103.820    3.000
+ HF5      ODE    HFD    OD2      72.938    3.000
+ HF5      ODE    HFD    OCD      82.537    3.000
+ HF5      OBD    HFD    OAD      88.711    3.000
+ HF5      OBD    HFD    OD1      76.811    3.000
+ HF5      OAD    HFD    OD1     155.951    3.000
+ HF5      OBD    HFD    OD2     101.259    3.000
+ HF5      OAD    HFD    OD2     106.175    3.000
+ HF5      OD1    HFD    OD2      59.249    3.000
+ HF5      OBD    HFD    OCD     105.215    3.000
+ HF5      OAD    HFD    OCD     119.388    3.000
+ HF5      OD1    HFD    OCD      83.321    3.000
+ HF5      OD2    HFD    OCD     126.963    3.000
+ HF5      HFD    OBD    HFB     120.000    3.000
+ HF5      HFD    OAD    HFA     120.000    3.000
+ HF5      HFD    OD1    HD11    120.000    3.000
+ HF5      HFD    OD2    HD21    120.000    3.000
+ HF5      HFD    OCD    HFC     120.000    3.000
+ HF5      OCD    HFC    O00     109.603    3.000
+ HF5      OCD    HFC    OAC      81.000    3.000
+ HF5      OCD    HFC    OC1      74.421    3.000
+ HF5      OCD    HFC    OC2      62.263    3.000
+ HF5      OCD    HFC    OBC     100.532    3.000
+ HF5      O00    HFC    OAC      71.407    3.000
+ HF5      O00    HFC    OC1     152.279    3.000
+ HF5      OAC    HFC    OC1     135.322    3.000
+ HF5      O00    HFC    OC2     126.354    3.000
+ HF5      OAC    HFC    OC2      55.042    3.000
+ HF5      OC1    HFC    OC2      80.434    3.000
+ HF5      O00    HFC    OBC      76.046    3.000
+ HF5      OAC    HFC    OBC     145.769    3.000
+ HF5      OC1    HFC    OBC      76.261    3.000
+ HF5      OC2    HFC    OBC     154.259    3.000
+ HF5      HFC    O00    HFA     120.000    3.000
+ HF5      HFC    O00    HFB     120.000    3.000
+ HF5      HFA    O00    HFB     120.000    3.000
+ HF5      HFC    OAC    HFA     120.000    3.000
+ HF5      HFC    OC1    HC11    120.000    3.000
+ HF5      HFC    OC2    HC21    120.000    3.000
+ HF5      HFC    OBC    HFB     120.000    3.000
+ HF5      OBC    HFB    OAB     141.806    3.000
+ HF5      OBC    HFB    OB3      54.064    3.000
+ HF5      OBC    HFB    OB2     151.567    3.000
+ HF5      OBC    HFB    OB1     100.860    3.000
+ HF5      OBC    HFB    OBD      84.353    3.000
+ HF5      OBC    HFB    O00      76.882    3.000
+ HF5      OAB    HFB    OB3     163.495    3.000
+ HF5      OAB    HFB    OB2      57.907    3.000
+ HF5      OB3    HFB    OB2     105.795    3.000
+ HF5      OAB    HFB    OB1      94.021    3.000
+ HF5      OB3    HFB    OB1      84.773    3.000
+ HF5      OB2    HFB    OB1      96.291    3.000
+ HF5      OBD    HFB    O00      96.135    3.000
+ HF5      OAB    HFB    OBD      94.265    3.000
+ HF5      OB3    HFB    OBD      81.765    3.000
+ HF5      OB2    HFB    OBD      71.933    3.000
+ HF5      OB1    HFB    OBD     158.793    3.000
+ HF5      OAB    HFB    O00      65.288    3.000
+ HF5      OB3    HFB    O00     130.924    3.000
+ HF5      OB2    HFB    O00     120.177    3.000
+ HF5      OB1    HFB    O00     105.063    3.000
+ HF5      HFB    OAB    HFA     120.000    3.000
+ HF5      HFB    OB3    HB31    120.000    3.000
+ HF5      HFB    OB2    HB21    120.000    3.000
+ HF5      HFB    OB1    HB11    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HF5      var_1    HE41   OE4    HFE    OE2        0.000   20.000   1
+ HF5      var_2    HE11   OE1    HFE    OE4        0.000   20.000   1
+ HF5      var_3    HE21   OE2    HFE    OE4        0.000   20.000   1
+ HF5      var_4    HE31   OE3    HFE    OE4        0.000   20.000   1
+ HF5      var_5    HFA    OAE    HFE    ODE        0.000   20.000   1
+ HF5      var_6    HFE    OAE    HFA    OA1     -110.213   20.000   1
+ HF5      var_7    OAE    HFA    O00    HFC        5.376   20.000   1
+ HF5      var_8    OAE    HFA    OAB    HFB      122.930   20.000   1
+ HF5      var_9    OAE    HFA    OAC    HFC     -153.585   20.000   1
+ HF5      var_10   OAE    HFA    OAD    HFD       95.025   20.000   1
+ HF5      var_11   OAE    HFA    OA1    HA11    -154.511   20.000   1
+ HF5      var_12   HFD    ODE    HFE    OAE        0.000   20.000   1
+ HF5      var_13   HFE    ODE    HFD    OCD     -105.712   20.000   1
+ HF5      var_14   ODE    HFD    OBD    HFB     -122.085   20.000   1
+ HF5      var_15   HFD    OBD    HFB    OBC      -78.487   20.000   1
+ HF5      var_16   ODE    HFD    OAD    HFA     -100.250   20.000   1
+ HF5      var_17   ODE    HFD    OD1    HD11      91.305   20.000   1
+ HF5      var_18   ODE    HFD    OD2    HD21      92.671   20.000   1
+ HF5      var_19   ODE    HFD    OCD    HFC      130.787   20.000   1
+ HF5      var_20   HFD    OCD    HFC    OBC       68.918   20.000   1
+ HF5      var_21   OCD    HFC    O00    HFA      -59.495   20.000   1
+ HF5      var_22   HFC    O00    HFB    OBC       11.207   20.000   1
+ HF5      var_23   OCD    HFC    OAC    HFA      103.923   20.000   1
+ HF5      var_24   OCD    HFC    OC1    HC11     146.400   20.000   1
+ HF5      var_25   OCD    HFC    OC2    HC21     -99.416   20.000   1
+ HF5      var_26   OCD    HFC    OBC    HFB      -98.316   20.000   1
+ HF5      var_27   HFC    OBC    HFB    OB1     -112.503   20.000   1
+ HF5      var_28   OBC    HFB    OAB    HFA        6.895   20.000   1
+ HF5      var_29   OBC    HFB    OB3    HB31      16.165   20.000   1
+ HF5      var_30   OBC    HFB    OB2    HB21      31.458   20.000   1
+ HF5      var_31   OBC    HFB    OB1    HB11      -6.575   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ HF5      chir_01  O00    HFA    HFB    HFC       negativ
+                   .      .      .      .      .
+ HF5      chir_02  HFE    OE4    ODE    OE2       cross4
+                   OAE    OE1    OE3    .      .
+# ------------------------------------------------------

@@ -1,0 +1,312 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+A23      A23 '.                                   ' RNA                36  26 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_A23
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ A23           OP3    O    OP       -0.666      0.000    0.000    0.000
+ A23           P      P    P         0.000     -0.646   -0.040    1.368
+ A23           OP1    O    OP       -0.666     -0.754    1.367    1.915
+ A23           OP2    O    OP       -0.666      0.199   -0.880    2.301
+ A23           "O5'"  O    O2        0.000     -2.116   -0.685    1.249
+ A23           "C5'"  C    CH2       0.000     -2.862    0.149    0.360
+ A23           "H5'"  H    H         0.000     -2.369    0.174   -0.614
+ A23           "H5''" H    H         0.000     -2.913    1.161    0.767
+ A23           "C4'"  C    CH1       0.000     -4.276   -0.411    0.202
+ A23           "H4'"  H    H         0.000     -4.241   -1.424   -0.221
+ A23           "C3'"  C    CH1       0.000     -5.128    0.516   -0.693
+ A23           "H3'"  H    H         0.000     -4.728    1.540   -0.699
+ A23           "C2'"  C    CH1       0.000     -6.533    0.470   -0.055
+ A23           "H2'"  H    H         0.000     -6.866    1.469    0.260
+ A23           "O2'"  O    O2        0.000     -7.458   -0.126   -0.997
+ A23           PC     P    P         0.000     -6.741    0.123   -2.441
+ A23           O2C    O    OP       -0.500     -7.019    1.492   -2.938
+ A23           O1C    O    OP       -0.500     -7.136   -0.921   -3.417
+ A23           "C1'"  C    CH1       0.000     -6.365   -0.477    1.153
+ A23           "H1'"  H    H         0.000     -6.653   -1.501    0.878
+ A23           "O4'"  O    O2        0.000     -4.958   -0.421    1.475
+ A23           N9     N    NR5       0.000     -7.166   -0.009    2.286
+ A23           C4     C    CR56      0.000     -8.456   -0.376    2.575
+ A23           C5     C    CR56      0.000     -8.807    0.327    3.740
+ A23           N7     N    NRD5      0.000     -7.731    1.067    4.099
+ A23           C8     C    CR15      0.000     -6.768    0.874    3.245
+ A23           H8     H    H         0.000     -5.794    1.345    3.290
+ A23           N3     N    NRD6      0.000     -9.348   -1.186    2.016
+ A23           C2     C    CR16      0.000    -10.544   -1.335    2.547
+ A23           H2     H    H         0.000    -11.248   -2.004    2.067
+ A23           N1     N    NRD6      0.000    -10.917   -0.701    3.642
+ A23           C6     C    CR6       0.000    -10.093    0.130    4.271
+ A23           N6     N    NH2       0.000    -10.493    0.791    5.420
+ A23           HN62   H    H         0.000     -9.860    1.426    5.897
+ A23           HN61   H    H         0.000    -11.425    0.650    5.799
+ A23           "O3'"  O    O2        0.000     -5.173   -0.034   -2.021
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ A23      OP3    n/a    P      START
+ A23      P      OP3    "O5'"  .
+ A23      OP1    P      .      .
+ A23      OP2    P      .      .
+ A23      "O5'"  P      "C5'"  .
+ A23      "C5'"  "O5'"  "C4'"  .
+ A23      "H5'"  "C5'"  .      .
+ A23      "H5''" "C5'"  .      .
+ A23      "C4'"  "C5'"  "C3'"  .
+ A23      "H4'"  "C4'"  .      .
+ A23      "C3'"  "C4'"  "O3'"  .
+ A23      "H3'"  "C3'"  .      .
+ A23      "C2'"  "C3'"  "C1'"  .
+ A23      "H2'"  "C2'"  .      .
+ A23      "O2'"  "C2'"  PC     .
+ A23      PC     "O2'"  O1C    .
+ A23      O2C    PC     .      .
+ A23      O1C    PC     .      .
+ A23      "C1'"  "C2'"  N9     .
+ A23      "H1'"  "C1'"  .      .
+ A23      "O4'"  "C1'"  .      .
+ A23      N9     "C1'"  C4     .
+ A23      C4     N9     N3     .
+ A23      C5     C4     N7     .
+ A23      N7     C5     C8     .
+ A23      C8     N7     H8     .
+ A23      H8     C8     .      .
+ A23      N3     C4     C2     .
+ A23      C2     N3     N1     .
+ A23      H2     C2     .      .
+ A23      N1     C2     C6     .
+ A23      C6     N1     N6     .
+ A23      N6     C6     HN61   .
+ A23      HN62   N6     .      .
+ A23      HN61   N6     .      .
+ A23      "O3'"  "C3'"  .      END
+ A23      PC     "O3'"  .    ADD
+ A23      "C4'"  "O4'"  .    ADD
+ A23      N9     C8     .    ADD
+ A23      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+A23       O1C       PC        deloc     1.510     0.020     1.510     0.020     
+A23       O2C       PC        deloc     1.510     0.020     1.510     0.020     
+A23       PC        "O3'"     single    1.610     0.020     1.610     0.020     
+A23       PC        "O2'"     single    1.610     0.020     1.610     0.020     
+A23       OP1       P         deloc     1.510     0.020     1.510     0.020     
+A23       OP2       P         deloc     1.510     0.020     1.510     0.020     
+A23       P         OP3       deloc     1.510     0.020     1.510     0.020     
+A23       "O5'"     P         single    1.610     0.020     1.610     0.020     
+A23       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+A23       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+A23       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+A23       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+A23       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+A23       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+A23       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+A23       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+A23       "O3'"     "C3'"     single    1.426     0.020     1.426     0.020     
+A23       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+A23       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+A23       "O2'"     "C2'"     single    1.426     0.020     1.426     0.020     
+A23       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+A23       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+A23       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+A23       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+A23       N9        C8        single    1.337     0.020     1.337     0.020     
+A23       C4        N9        single    1.337     0.020     1.337     0.020     
+A23       C8        N7        double    1.350     0.020     1.350     0.020     
+A23       H8        C8        single    1.082     0.013     0.975     0.010     
+A23       N7        C5        single    1.350     0.020     1.350     0.020     
+A23       C5        C6        single    1.490     0.020     1.490     0.020     
+A23       C5        C4        double    1.490     0.020     1.490     0.020     
+A23       N6        C6        single    1.355     0.020     1.355     0.020     
+A23       C6        N1        double    1.350     0.020     1.350     0.020     
+A23       HN61      N6        single    1.016     0.010     0.899     0.007     
+A23       HN62      N6        single    1.016     0.010     0.899     0.007     
+A23       N1        C2        single    1.337     0.020     1.337     0.020     
+A23       C2        N3        double    1.337     0.020     1.337     0.020     
+A23       H2        C2        single    1.082     0.013     0.975     0.010     
+A23       N3        C4        single    1.355     0.020     1.355     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ A23      OP3    P      OP1     119.900    3.000
+ A23      OP3    P      OP2     119.900    3.000
+ A23      OP3    P      "O5'"   108.200    3.000
+ A23      OP1    P      OP2     119.900    3.000
+ A23      OP1    P      "O5'"   108.200    3.000
+ A23      OP2    P      "O5'"   108.200    3.000
+ A23      P      "O5'"  "C5'"   120.500    3.000
+ A23      "O5'"  "C5'"  "H5'"   109.470    3.000
+ A23      "O5'"  "C5'"  "H5''"  109.470    3.000
+ A23      "O5'"  "C5'"  "C4'"   109.470    3.000
+ A23      "H5'"  "C5'"  "H5''"  107.900    3.000
+ A23      "H5'"  "C5'"  "C4'"   109.470    3.000
+ A23      "H5''" "C5'"  "C4'"   109.470    3.000
+ A23      "C5'"  "C4'"  "H4'"   108.340    3.000
+ A23      "C5'"  "C4'"  "C3'"   111.000    3.000
+ A23      "C5'"  "C4'"  "O4'"   109.470    3.000
+ A23      "H4'"  "C4'"  "C3'"   108.340    3.000
+ A23      "H4'"  "C4'"  "O4'"   109.470    3.000
+ A23      "C3'"  "C4'"  "O4'"   109.470    3.000
+ A23      "C4'"  "C3'"  "H3'"   108.340    3.000
+ A23      "C4'"  "C3'"  "C2'"   111.000    3.000
+ A23      "C4'"  "C3'"  "O3'"   109.470    3.000
+ A23      "H3'"  "C3'"  "C2'"   108.340    3.000
+ A23      "H3'"  "C3'"  "O3'"   109.470    3.000
+ A23      "C2'"  "C3'"  "O3'"   109.470    3.000
+ A23      "C3'"  "C2'"  "H2'"   108.340    3.000
+ A23      "C3'"  "C2'"  "O2'"   109.470    3.000
+ A23      "C3'"  "C2'"  "C1'"   111.000    3.000
+ A23      "H2'"  "C2'"  "O2'"   109.470    3.000
+ A23      "H2'"  "C2'"  "C1'"   108.340    3.000
+ A23      "O2'"  "C2'"  "C1'"   109.470    3.000
+ A23      "C2'"  "O2'"  PC      120.500    3.000
+ A23      "O2'"  PC     O2C     108.200    3.000
+ A23      "O2'"  PC     O1C     108.200    3.000
+ A23      "O2'"  PC     "O3'"   102.600    3.000
+ A23      O2C    PC     O1C     119.900    3.000
+ A23      O2C    PC     "O3'"   108.200    3.000
+ A23      O1C    PC     "O3'"   108.200    3.000
+ A23      "C2'"  "C1'"  "H1'"   108.340    3.000
+ A23      "C2'"  "C1'"  "O4'"   109.470    3.000
+ A23      "C2'"  "C1'"  N9      109.470    3.000
+ A23      "H1'"  "C1'"  "O4'"   109.470    3.000
+ A23      "H1'"  "C1'"  N9      109.470    3.000
+ A23      "O4'"  "C1'"  N9      109.470    3.000
+ A23      "C1'"  "O4'"  "C4'"   111.800    3.000
+ A23      "C1'"  N9     C4      126.000    3.000
+ A23      "C1'"  N9     C8      126.000    3.000
+ A23      C4     N9     C8      108.000    3.000
+ A23      N9     C4     C5      108.000    3.000
+ A23      N9     C4     N3      132.000    3.000
+ A23      C5     C4     N3      120.000    3.000
+ A23      C4     C5     N7      108.000    3.000
+ A23      C4     C5     C6      120.000    3.000
+ A23      N7     C5     C6      132.000    3.000
+ A23      C5     N7     C8      108.000    3.000
+ A23      N7     C8     H8      126.000    3.000
+ A23      N7     C8     N9      108.000    3.000
+ A23      H8     C8     N9      126.000    3.000
+ A23      C4     N3     C2      120.000    3.000
+ A23      N3     C2     H2      120.000    3.000
+ A23      N3     C2     N1      120.000    3.000
+ A23      H2     C2     N1      120.000    3.000
+ A23      C2     N1     C6      120.000    3.000
+ A23      N1     C6     N6      120.000    3.000
+ A23      N1     C6     C5      120.000    3.000
+ A23      N6     C6     C5      120.000    3.000
+ A23      C6     N6     HN62    120.000    3.000
+ A23      C6     N6     HN61    120.000    3.000
+ A23      HN62   N6     HN61    120.000    3.000
+ A23      "C3'"  "O3'"  PC      120.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ A23      var_1    OP3    P      "O5'"  "C5'"    -59.999   20.000   1
+ A23      var_2    P      "O5'"  "C5'"  "C4'"   -179.978   20.000   1
+ A23      var_3    "O5'"  "C5'"  "C4'"  "C3'"    176.856   20.000   3
+ A23      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ A23      var_5    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ A23      var_6    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ A23      var_7    "C3'"  "C2'"  "O2'"  PC       -30.000   20.000   1
+ A23      var_8    "C2'"  "O2'"  PC     O1C      150.000   20.000   1
+ A23      var_9    "O2'"  PC     "O3'"  "C3'"    -30.000   20.000   1
+ A23      var_10   "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ A23      var_11   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ A23      var_12   "C2'"  "C1'"  N9     C4        91.461   20.000   1
+ A23      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ A23      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ A23      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ A23      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ A23      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ A23      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ A23      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ A23      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ A23      CONST_9  N3     C2     N1     C6         0.000    0.000   0
+ A23      CONST_10 C2     N1     C6     N6       180.000    0.000   0
+ A23      CONST_11 N1     C6     N6     HN61       0.011    0.000   0
+ A23      var_13   "C4'"  "C3'"  "O3'"  PC       150.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ A23      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ A23      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ A23      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ A23      chir_04  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ A23      plan-1    N9        0.020
+ A23      plan-1    "C1'"     0.020
+ A23      plan-1    C8        0.020
+ A23      plan-1    C4        0.020
+ A23      plan-1    N7        0.020
+ A23      plan-1    H8        0.020
+ A23      plan-1    C5        0.020
+ A23      plan-1    C6        0.020
+ A23      plan-1    N1        0.020
+ A23      plan-1    C2        0.020
+ A23      plan-1    N3        0.020
+ A23      plan-1    N6        0.020
+ A23      plan-1    H2        0.020
+ A23      plan-1    HN62      0.020
+ A23      plan-1    HN61      0.020
+ A23      plan-2    N6        0.020
+ A23      plan-2    C6        0.020
+ A23      plan-2    HN61      0.020
+ A23      plan-2    HN62      0.020
+# ------------------------------------------------------

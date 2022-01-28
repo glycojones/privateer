@@ -1,0 +1,72 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SE4     SE4      "SELENATE ION"     NON-POLYMER     5     5     .     
+#
+data_comp_SE4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SE4     SE      SE      SE      0       34.956      14.499      18.959      
+SE4     O1      O       O       0       36.299      15.091      19.652      
+SE4     O2      O       O       0       33.750      15.575      19.110      
+SE4     O3      O       OC      -1      34.537      13.111      19.690      
+SE4     O4      O       OC      -1      35.237      14.218      17.386      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SE4       SE        O1        DOUBLE    n         1.623     0.017     1.623     0.017     
+SE4       SE        O2        DOUBLE    n         1.623     0.017     1.623     0.017     
+SE4       SE        O3        SINGLE    n         1.623     0.017     1.623     0.017     
+SE4       SE        O4        SINGLE    n         1.623     0.017     1.623     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SE4          O1          SE          O2     109.471    3.00
+SE4          O1          SE          O3     109.471    3.00
+SE4          O1          SE          O4     109.471    3.00
+SE4          O2          SE          O3     109.471    3.00
+SE4          O2          SE          O4     109.471    3.00
+SE4          O3          SE          O4     109.471    3.00
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SE4 SMILES           ACDLabs              10.04 "[O-][Se]([O-])(=O)=O"
+SE4 SMILES_CANONICAL CACTVS               3.341 "[O-][Se]([O-])(=O)=O"
+SE4 SMILES           CACTVS               3.341 "[O-][Se]([O-])(=O)=O"
+SE4 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[O-][Se](=O)(=O)[O-]"
+SE4 SMILES           "OpenEye OEToolkits" 1.5.0 "[O-][Se](=O)(=O)[O-]"
+SE4 InChI            InChI                1.03  "InChI=1S/H2O4Se/c1-5(2,3)4/h(H2,1,2,3,4)/p-2"
+SE4 InChIKey         InChI                1.03  QYHFIVBSNOWOCQ-UHFFFAOYSA-L
+SE4 ?                acedrg               202         "dictionary generator"                  
+SE4 ?                acedrg_database      11          "data source"                           
+SE4 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SE4 ?                refmac5              5.8.0189    "optimization tool"                     

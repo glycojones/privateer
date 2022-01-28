@@ -1,0 +1,111 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BPV     BPV      Bromopyruvate     NON-POLYMER     9     7     .     
+#
+data_comp_BPV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BPV     BR      BR      BR      0       16.229      17.286      -33.382     
+BPV     C3      C       CH2     0       17.943      17.874      -34.069     
+BPV     C2      C       C       0       18.945      18.040      -32.938     
+BPV     O3      O       O       0       19.874      17.219      -32.912     
+BPV     C1      C       C       0       18.863      18.999      -32.015     
+BPV     O2      O       OC      -1      19.677      19.017      -31.081     
+BPV     O1      O       O       0       17.975      19.855      -32.098     
+BPV     H3      H       H       0       17.830      18.718      -34.534     
+BPV     H3A     H       H       0       18.270      17.222      -34.709     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BPV       BR        C3        SINGLE    n         1.937     0.020     1.937     0.020     
+BPV       C3        C2        SINGLE    n         1.507     0.019     1.507     0.019     
+BPV       C2        O3        DOUBLE    n         1.230     0.019     1.230     0.019     
+BPV       C2        C1        SINGLE    n         1.299     0.020     1.299     0.020     
+BPV       C1        O1        DOUBLE    n         1.230     0.020     1.230     0.020     
+BPV       C1        O2        SINGLE    n         1.230     0.020     1.230     0.020     
+BPV       C3        H3        SINGLE    n         1.089     0.010     0.970     0.010     
+BPV       C3        H3A       SINGLE    n         1.089     0.010     0.970     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BPV          BR          C3          C2     110.027    3.00
+BPV          BR          C3          H3     109.212    1.50
+BPV          BR          C3         H3A     109.212    1.50
+BPV          C2          C3          H3     109.553    1.50
+BPV          C2          C3         H3A     109.553    1.50
+BPV          H3          C3         H3A     107.930    1.50
+BPV          C3          C2          O3     118.804    2.48
+BPV          C3          C2          C1     121.556    3.00
+BPV          O3          C2          C1     119.640    3.00
+BPV          C2          C1          O1     118.654    3.00
+BPV          C2          C1          O2     118.654    3.00
+BPV          O1          C1          O2     122.692    1.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BPV             sp2_sp3_2          O3          C2          C3          BR     120.000   10.00     6
+BPV             sp2_sp2_1          O1          C1          C2          C3     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BPV    plan-1          C1   0.020
+BPV    plan-1          C2   0.020
+BPV    plan-1          C3   0.020
+BPV    plan-1          O3   0.020
+BPV    plan-2          C1   0.020
+BPV    plan-2          C2   0.020
+BPV    plan-2          O1   0.020
+BPV    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BPV SMILES           ACDLabs              10.04 "BrCC(=O)C(=O)O"
+BPV SMILES_CANONICAL CACTVS               3.341 "OC(=O)C(=O)CBr"
+BPV SMILES           CACTVS               3.341 "OC(=O)C(=O)CBr"
+BPV SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)C(=O)O)Br"
+BPV SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)C(=O)O)Br"
+BPV InChI            InChI                1.03  "InChI=1S/C3H3BrO3/c4-1-2(5)3(6)7/h1H2,(H,6,7)"
+BPV InChIKey         InChI                1.03  PRRZDZJYSJLDBS-UHFFFAOYSA-N
+BPV ?                acedrg               202         "dictionary generator"                  
+BPV ?                acedrg_database      11          "data source"                           
+BPV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BPV ?                refmac5              5.8.0189    "optimization tool"                     

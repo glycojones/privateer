@@ -1,0 +1,199 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DMK     DMK     "3,3-DIMETHYLASPARTICACID"     peptide     21     11     .
+#
+data_comp_DMK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DMK     N       N       NT3     1       0.360       1.955       0.272
+DMK     CA      C       CH1     0       0.456       0.497       0.574
+DMK     CB      C       CT      0       -0.478      -0.404      -0.300
+DMK     CG1     C       C       0       -1.980      -0.056      -0.119
+DMK     CG2     C       CH3     0       -0.139      -0.248      -1.790
+DMK     CG3     C       CH3     0       -0.279      -1.878      0.089
+DMK     OD1     O       OC      -1      -2.814      -0.700      -0.792
+DMK     OD2     O       O       0       -2.280      0.858       0.679
+DMK     C       C       C       0       1.941       0.099       0.536
+DMK     O       O       O       0       2.643       0.582       -0.376
+DMK     OXT     O       OC      -1      2.344       -0.673      1.429
+DMK     H       H       H       0       0.722       2.136       -0.544
+DMK     H2      H       H       0       0.818       2.429       0.902
+DMK     H3      H       H       0       -0.507      2.232       0.282
+DMK     HCA     H       H       0       0.149       0.371       1.503
+DMK     HG21    H       H       0       -0.707      -0.836      -2.317
+DMK     HG22    H       H       0       0.790       -0.485      -1.945
+DMK     HG23    H       H       0       -0.289      0.673       -2.064
+DMK     HG31    H       H       0       -1.012      -2.418      -0.255
+DMK     HG32    H       H       0       -0.250      -1.956      1.059
+DMK     HG33    H       H       0       0.557       -2.206      -0.285
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DMK      N      n/a    CA     START
+DMK      H      N      .      .
+DMK      H2     N      .      .
+DMK      H3     N      .      .
+DMK      CA     N      C      .
+DMK      HCA    CA     .      .
+DMK      CB     CA     CG1    .
+DMK      CG3    CB     HG31   .
+DMK      HG33   CG3    .      .
+DMK      HG32   CG3    .      .
+DMK      HG31   CG3    .      .
+DMK      CG2    CB     HG21   .
+DMK      HG23   CG2    .      .
+DMK      HG22   CG2    .      .
+DMK      HG21   CG2    .      .
+DMK      CG1    CB     OD2    .
+DMK      OD1    CG1    .      .
+DMK      OD2    CG1    .      .
+DMK      C      CA     .      END
+DMK      O      C      .      .
+DMK      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DMK       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+DMK       CA        CB        SINGLE    n         1.554     0.010     1.554     0.010     
+DMK       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DMK       CB        CG1       SINGLE    n         1.545     0.010     1.545     0.010     
+DMK       CB        CG2       SINGLE    n         1.533     0.010     1.533     0.010     
+DMK       CB        CG3       SINGLE    n         1.533     0.010     1.533     0.010     
+DMK       CG1       OD1       SINGLE    n         1.247     0.019     1.247     0.019     
+DMK       CG1       OD2       DOUBLE    n         1.247     0.019     1.247     0.019     
+DMK       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DMK       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DMK       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DMK       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DMK       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DMK       CA        HCA       SINGLE    n         1.089     0.010     0.986     0.020     
+DMK       CG2       HG21      SINGLE    n         1.089     0.010     0.973     0.014     
+DMK       CG2       HG22      SINGLE    n         1.089     0.010     0.973     0.014     
+DMK       CG2       HG23      SINGLE    n         1.089     0.010     0.973     0.014     
+DMK       CG3       HG31      SINGLE    n         1.089     0.010     0.973     0.014     
+DMK       CG3       HG32      SINGLE    n         1.089     0.010     0.973     0.014     
+DMK       CG3       HG33      SINGLE    n         1.089     0.010     0.973     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DMK          CA           N           H     109.853    1.85
+DMK          CA           N          H2     109.853    1.85
+DMK          CA           N          H3     109.853    1.85
+DMK           H           N          H2     109.028    2.41
+DMK           H           N          H3     109.028    2.41
+DMK          H2           N          H3     109.028    2.41
+DMK           N          CA          CB     112.810    3.00
+DMK           N          CA           C     109.414    1.50
+DMK           N          CA         HCA     108.444    1.50
+DMK          CB          CA           C     111.511    2.91
+DMK          CB          CA         HCA     106.787    1.50
+DMK           C          CA         HCA     108.600    1.50
+DMK          CA          CB         CG1     111.511    2.91
+DMK          CA          CB         CG2     109.691    1.50
+DMK          CA          CB         CG3     109.691    1.50
+DMK         CG1          CB         CG2     108.923    1.98
+DMK         CG1          CB         CG3     108.923    1.98
+DMK         CG2          CB         CG3     108.963    1.54
+DMK          CB         CG1         OD1     117.496    1.50
+DMK          CB         CG1         OD2     117.496    1.50
+DMK         OD1         CG1         OD2     125.008    1.50
+DMK          CB         CG2        HG21     109.469    1.50
+DMK          CB         CG2        HG22     109.469    1.50
+DMK          CB         CG2        HG23     109.469    1.50
+DMK        HG21         CG2        HG22     109.377    1.50
+DMK        HG21         CG2        HG23     109.377    1.50
+DMK        HG22         CG2        HG23     109.377    1.50
+DMK          CB         CG3        HG31     109.469    1.50
+DMK          CB         CG3        HG32     109.469    1.50
+DMK          CB         CG3        HG33     109.469    1.50
+DMK        HG31         CG3        HG32     109.377    1.50
+DMK        HG31         CG3        HG33     109.377    1.50
+DMK        HG32         CG3        HG33     109.377    1.50
+DMK          CA           C           O     117.139    1.50
+DMK          CA           C         OXT     117.139    1.50
+DMK           O           C         OXT     125.721    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DMK             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+DMK            sp3_sp3_10           N          CA          CB         CG1     180.000   10.00     3
+DMK             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DMK             sp2_sp3_7         OD1         CG1          CB          CA       0.000   10.00     6
+DMK            sp3_sp3_19          CA          CB         CG2        HG21     180.000   10.00     3
+DMK            sp3_sp3_28          CA          CB         CG3        HG31     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DMK    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DMK    plan-1          CB   0.020
+DMK    plan-1         CG1   0.020
+DMK    plan-1         OD1   0.020
+DMK    plan-1         OD2   0.020
+DMK    plan-2           C   0.020
+DMK    plan-2          CA   0.020
+DMK    plan-2           O   0.020
+DMK    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DMK SMILES           ACDLabs              12.01 "NC(C(C(O)=O)(C)C)C(=O)O"
+DMK InChI            InChI                1.03  "InChI=1S/C6H11NO4/c1-6(2,5(10)11)3(7)4(8)9/h3H,7H2,1-2H3,(H,8,9)(H,10,11)/t3-/m1/s1"
+DMK InChIKey         InChI                1.03  NWZACHOBRMGGPL-GSVOUGTGSA-N
+DMK SMILES_CANONICAL CACTVS               3.385 "CC(C)([C@H](N)C(O)=O)C(O)=O"
+DMK SMILES           CACTVS               3.385 "CC(C)([CH](N)C(O)=O)C(O)=O"
+DMK SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "CC(C)([C@@H](C(=O)O)N)C(=O)O"
+DMK SMILES           "OpenEye OEToolkits" 1.7.6 "CC(C)(C(C(=O)O)N)C(=O)O"
+DMK ?                acedrg               196         "dictionary generator"
+DMK ?                acedrg_database      11          "data source"
+DMK ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DMK ?                refmac5              5.8.0222    "optimization tool"

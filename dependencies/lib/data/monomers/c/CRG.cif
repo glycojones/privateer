@@ -1,0 +1,298 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CRG      CRG '"[2-(1-AMINO-2-HYDROXY-PROPYL)-4-(3H' non-polymer        35  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CRG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CRG           OXT    O    OC       -0.500      0.000    0.000    0.000
+ CRG           C3     C    C         0.000     -1.219    0.248   -0.127
+ CRG           O3     O    OC       -0.500     -1.751    0.210   -1.259
+ CRG           CA3    C    CH2       0.000     -2.049    0.593    1.082
+ CRG           HA31   H    H         0.000     -1.645    1.489    1.557
+ CRG           HA32   H    H         0.000     -2.021   -0.237    1.791
+ CRG           N3     N    NR5       0.000     -3.434    0.838    0.672
+ CRG           C1     C    CR5       0.000     -4.423   -0.101    0.593
+ CRG           CA1    C    CH1       0.000     -4.240   -1.560    0.921
+ CRG           HA1    H    H         0.000     -3.399   -1.675    1.620
+ CRG           CB1    C    CH1       0.000     -3.947   -2.339   -0.362
+ CRG           HB1    H    H         0.000     -2.984   -2.011   -0.778
+ CRG           OG1    O    OH1       0.000     -4.984   -2.096   -1.314
+ CRG           HG1O   H    H         0.000     -4.798   -2.589   -2.125
+ CRG           CG1    C    CH3       0.000     -3.884   -3.835   -0.047
+ CRG           HG13   H    H         0.000     -3.116   -4.017    0.659
+ CRG           HG12   H    H         0.000     -4.812   -4.153    0.353
+ CRG           HG11   H    H         0.000     -3.680   -4.376   -0.935
+ CRG           N1     N    NH2       0.000     -5.466   -2.080    1.542
+ CRG           HN12   H    H         0.000     -5.441   -2.467    2.478
+ CRG           HN11   H    H         0.000     -6.344   -2.056    1.037
+ CRG           C2     C    CR5       0.000     -3.950    2.032    0.307
+ CRG           O2     O    O         0.000     -3.371    3.103    0.253
+ CRG           CA2    C    CR5       0.000     -5.361    1.765   -0.008
+ CRG           N2     N    NRD5      0.000     -5.542    0.426    0.204
+ CRG           CB2    C    C1        0.000     -6.309    2.677   -0.428
+ CRG           HB2    H    H         0.000     -6.040    3.712   -0.559
+ CRG           CG2    C    CR5       0.000     -7.677    2.238   -0.695
+ CRG           ND1    N    NRD5      0.000     -8.155    0.971   -0.579
+ CRG           CE1    C    CR15      0.000     -9.416    0.962   -0.900
+ CRG           HE1    H    H         0.000    -10.056    0.088   -0.898
+ CRG           NE2    N    NR15      0.000     -9.806    2.219   -1.240
+ CRG           HE2    H    H         0.000    -10.760    2.505   -1.539
+ CRG           CD2    C    CR15      0.000     -8.725    3.034   -1.118
+ CRG           HD2    H    H         0.000     -8.691    4.099   -1.314
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CRG      OXT    n/a    C3     START
+ CRG      C3     OXT    CA3    .
+ CRG      O3     C3     .      .
+ CRG      CA3    C3     N3     .
+ CRG      HA31   CA3    .      .
+ CRG      HA32   CA3    .      .
+ CRG      N3     CA3    C2     .
+ CRG      C1     N3     CA1    .
+ CRG      CA1    C1     N1     .
+ CRG      HA1    CA1    .      .
+ CRG      CB1    CA1    CG1    .
+ CRG      HB1    CB1    .      .
+ CRG      OG1    CB1    HG1O   .
+ CRG      HG1O   OG1    .      .
+ CRG      CG1    CB1    HG11   .
+ CRG      HG13   CG1    .      .
+ CRG      HG12   CG1    .      .
+ CRG      HG11   CG1    .      .
+ CRG      N1     CA1    HN11   .
+ CRG      HN12   N1     .      .
+ CRG      HN11   N1     .      .
+ CRG      C2     N3     CA2    .
+ CRG      O2     C2     .      .
+ CRG      CA2    C2     CB2    .
+ CRG      N2     CA2    .      .
+ CRG      CB2    CA2    CG2    .
+ CRG      HB2    CB2    .      .
+ CRG      CG2    CB2    ND1    .
+ CRG      ND1    CG2    CE1    .
+ CRG      CE1    ND1    NE2    .
+ CRG      HE1    CE1    .      .
+ CRG      NE2    CE1    CD2    .
+ CRG      HE2    NE2    .      .
+ CRG      CD2    NE2    HD2    .
+ CRG      HD2    CD2    .      END
+ CRG      C1     N2     .    ADD
+ CRG      CG2    CD2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CRG       N1        CA1       single    1.450     0.020     1.450     0.020     
+CRG       HN11      N1        single    1.036     0.016     0.914     0.007     
+CRG       HN12      N1        single    1.036     0.016     0.914     0.007     
+CRG       CB1       CA1       single    1.524     0.020     1.524     0.020     
+CRG       CA1       C1        single    1.480     0.020     1.480     0.020     
+CRG       HA1       CA1       single    1.089     0.010     0.989     0.005     
+CRG       CG1       CB1       single    1.524     0.020     1.524     0.020     
+CRG       OG1       CB1       single    1.432     0.020     1.432     0.020     
+CRG       HB1       CB1       single    1.089     0.010     0.989     0.005     
+CRG       HG11      CG1       single    1.089     0.010     0.989     0.005     
+CRG       HG12      CG1       single    1.089     0.010     0.989     0.005     
+CRG       HG13      CG1       single    1.089     0.010     0.989     0.005     
+CRG       HG1O      OG1       single    0.970     0.012     0.839     0.014     
+CRG       C1        N2        double    1.350     0.020     1.350     0.020     
+CRG       C1        N3        single    1.337     0.020     1.337     0.020     
+CRG       N2        CA2       single    1.350     0.020     1.350     0.020     
+CRG       C2        N3        single    1.337     0.020     1.337     0.020     
+CRG       N3        CA3       single    1.462     0.020     1.462     0.020     
+CRG       O2        C2        double    1.285     0.020     1.285     0.020     
+CRG       CA2       C2        single    1.490     0.020     1.490     0.020     
+CRG       CB2       CA2       double    1.483     0.020     1.483     0.020     
+CRG       CA3       C3        single    1.510     0.020     1.510     0.020     
+CRG       HA31      CA3       single    1.089     0.010     0.989     0.005     
+CRG       HA32      CA3       single    1.089     0.010     0.989     0.005     
+CRG       O3        C3        deloc     1.250     0.020     1.250     0.020     
+CRG       C3        OXT       deloc     1.250     0.020     1.250     0.020     
+CRG       CG2       CB2       single    1.483     0.020     1.483     0.020     
+CRG       HB2       CB2       single    1.082     0.013     0.975     0.010     
+CRG       CG2       CD2       double    1.387     0.020     1.387     0.020     
+CRG       ND1       CG2       single    1.350     0.020     1.350     0.020     
+CRG       CD2       NE2       single    1.350     0.020     1.350     0.020     
+CRG       HD2       CD2       single    1.082     0.013     0.975     0.010     
+CRG       CE1       ND1       double    1.350     0.020     1.350     0.020     
+CRG       NE2       CE1       single    1.350     0.020     1.350     0.020     
+CRG       HE1       CE1       single    1.082     0.013     0.975     0.010     
+CRG       HE2       NE2       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CRG      OXT    C3     O3      123.000    3.000
+ CRG      OXT    C3     CA3     118.500    3.000
+ CRG      O3     C3     CA3     118.500    3.000
+ CRG      C3     CA3    HA31    109.470    3.000
+ CRG      C3     CA3    HA32    109.470    3.000
+ CRG      C3     CA3    N3      109.500    3.000
+ CRG      HA31   CA3    HA32    107.900    3.000
+ CRG      HA31   CA3    N3      109.500    3.000
+ CRG      HA32   CA3    N3      109.500    3.000
+ CRG      CA3    N3     C1      126.000    3.000
+ CRG      CA3    N3     C2      126.000    3.000
+ CRG      C1     N3     C2      108.000    3.000
+ CRG      N3     C1     CA1     126.000    3.000
+ CRG      N3     C1     N2      108.000    3.000
+ CRG      CA1    C1     N2      126.000    3.000
+ CRG      C1     CA1    HA1     109.470    3.000
+ CRG      C1     CA1    CB1     109.470    3.000
+ CRG      C1     CA1    N1      109.470    3.000
+ CRG      HA1    CA1    CB1     108.340    3.000
+ CRG      HA1    CA1    N1      109.470    3.000
+ CRG      CB1    CA1    N1      109.470    3.000
+ CRG      CA1    CB1    HB1     108.340    3.000
+ CRG      CA1    CB1    OG1     109.470    3.000
+ CRG      CA1    CB1    CG1     111.000    3.000
+ CRG      HB1    CB1    OG1     109.470    3.000
+ CRG      HB1    CB1    CG1     108.340    3.000
+ CRG      OG1    CB1    CG1     109.470    3.000
+ CRG      CB1    OG1    HG1O    109.470    3.000
+ CRG      CB1    CG1    HG13    109.470    3.000
+ CRG      CB1    CG1    HG12    109.470    3.000
+ CRG      CB1    CG1    HG11    109.470    3.000
+ CRG      HG13   CG1    HG12    109.470    3.000
+ CRG      HG13   CG1    HG11    109.470    3.000
+ CRG      HG12   CG1    HG11    109.470    3.000
+ CRG      CA1    N1     HN12    120.000    3.000
+ CRG      CA1    N1     HN11    120.000    3.000
+ CRG      HN12   N1     HN11    120.000    3.000
+ CRG      N3     C2     O2      108.000    3.000
+ CRG      N3     C2     CA2     108.000    3.000
+ CRG      O2     C2     CA2     108.000    3.000
+ CRG      C2     CA2    N2      108.000    3.000
+ CRG      C2     CA2    CB2     117.000    3.000
+ CRG      N2     CA2    CB2     108.000    3.000
+ CRG      CA2    N2     C1      108.000    3.000
+ CRG      CA2    CB2    HB2     120.000    3.000
+ CRG      CA2    CB2    CG2     120.000    3.000
+ CRG      HB2    CB2    CG2     120.000    3.000
+ CRG      CB2    CG2    ND1     108.000    3.000
+ CRG      CB2    CG2    CD2     108.000    3.000
+ CRG      ND1    CG2    CD2     108.000    3.000
+ CRG      CG2    ND1    CE1     108.000    3.000
+ CRG      ND1    CE1    HE1     126.000    3.000
+ CRG      ND1    CE1    NE2     108.000    3.000
+ CRG      HE1    CE1    NE2     126.000    3.000
+ CRG      CE1    NE2    HE2     126.000    3.000
+ CRG      CE1    NE2    CD2     108.000    3.000
+ CRG      HE2    NE2    CD2     126.000    3.000
+ CRG      NE2    CD2    HD2     126.000    3.000
+ CRG      NE2    CD2    CG2     108.000    3.000
+ CRG      HD2    CD2    CG2     126.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CRG      var_1    OXT    C3     CA3    N3      -179.974   20.000   3
+ CRG      var_2    C3     CA3    N3     C2       -90.063   20.000   1
+ CRG      CONST_1  CA3    N3     C1     CA1        0.000    0.000   0
+ CRG      CONST_2  N3     C1     N2     CA2        0.000    0.000   0
+ CRG      var_3    N3     C1     CA1    N1       144.725   20.000   1
+ CRG      var_4    C1     CA1    CB1    CG1     -174.996   20.000   3
+ CRG      var_5    CA1    CB1    OG1    HG1O    -179.982   20.000   1
+ CRG      var_6    CA1    CB1    CG1    HG11    -179.959   20.000   3
+ CRG      var_7    C1     CA1    N1     HN11      60.076   20.000   1
+ CRG      CONST_3  CA3    N3     C2     CA2      180.000    0.000   0
+ CRG      CONST_4  N3     C2     CA2    CB2      180.000    0.000   0
+ CRG      CONST_5  C2     CA2    N2     C1         0.000    0.000   0
+ CRG      CONST_6  C2     CA2    CB2    CG2     -179.839    0.000   0
+ CRG      var_8    CA2    CB2    CG2    ND1       -0.315   20.000   1
+ CRG      CONST_7  CB2    CG2    CD2    NE2      180.000    0.000   0
+ CRG      CONST_8  CB2    CG2    ND1    CE1      180.000    0.000   0
+ CRG      CONST_9  CG2    ND1    CE1    NE2        0.000    0.000   0
+ CRG      CONST_10 ND1    CE1    NE2    CD2        0.000    0.000   0
+ CRG      CONST_11 CE1    NE2    CD2    CG2        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CRG      chir_01  CA1    N1     CB1    C1        negativ
+ CRG      chir_02  CB1    CA1    CG1    OG1       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CRG      plan-1    N1        0.020
+ CRG      plan-1    CA1       0.020
+ CRG      plan-1    HN11      0.020
+ CRG      plan-1    HN12      0.020
+ CRG      plan-2    C1        0.020
+ CRG      plan-2    CA1       0.020
+ CRG      plan-2    N2        0.020
+ CRG      plan-2    N3        0.020
+ CRG      plan-2    C2        0.020
+ CRG      plan-2    CA2       0.020
+ CRG      plan-2    CA3       0.020
+ CRG      plan-2    O2        0.020
+ CRG      plan-2    CB2       0.020
+ CRG      plan-2    CG2       0.020
+ CRG      plan-2    HB2       0.020
+ CRG      plan-3    C3        0.020
+ CRG      plan-3    CA3       0.020
+ CRG      plan-3    O3        0.020
+ CRG      plan-3    OXT       0.020
+ CRG      plan-4    CG2       0.020
+ CRG      plan-4    CB2       0.020
+ CRG      plan-4    CD2       0.020
+ CRG      plan-4    ND1       0.020
+ CRG      plan-4    CE1       0.020
+ CRG      plan-4    NE2       0.020
+ CRG      plan-4    HD2       0.020
+ CRG      plan-4    HE1       0.020
+ CRG      plan-4    HE2       0.020
+ CRG      plan-4    HB2       0.020
+# ------------------------------------------------------

@@ -1,0 +1,93 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+S3F      S3F 'oxidized [Fe4-S3] cluster           ' non-polymer         8   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_S3F
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+S3F    S2     S     S       0      13.701       1.756     -16.336
+S3F   FE2    FE    FE   0.000      13.511       1.220     -18.602
+S3F    S3     S     S   0.000      14.025       3.165     -19.517
+S3F   FE3    FE    FE   0.000      14.790       3.374     -17.442
+S3F    S1     S     S   0.000      11.429       0.484     -19.062
+S3F   FE1    FE    FE   0.000      11.597       1.964     -17.083
+S3F    O1     O     O   0.000      11.804       3.289     -15.862
+S3F   FE4    FE    FE   0.000      10.216       2.367     -19.800
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+S3F       FE4       S1        SING      2.782     0.020     2.782     0.020     
+S3F       S3        FE2       SING      2.579     0.020     2.579     0.020     
+S3F       S3        FE3       SING      2.549     0.020     2.549     0.020     
+S3F       S1        FE2       SING      2.579     0.020     2.579     0.020     
+S3F       S1        FE1       SING      2.579     0.020     2.579     0.020     
+S3F       FE2       S2        SING      2.579     0.020     2.579     0.020     
+S3F       FE3       S2        SING      2.549     0.020     2.549     0.020     
+S3F       FE1       S2        SING      2.579     0.020     2.579     0.020     
+S3F       FE1       O1        SING      2.037     0.010     2.037     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+S3F   FE2    S2     FE3    98.857    3.00
+S3F   FE2    S2     FE1    98.857    3.00
+S3F   FE3    S2     FE1     3.000    3.00
+S3F    S3   FE2      S1   101.535    3.00
+S3F    S3   FE2      S2   101.535    3.00
+S3F    S1   FE2      S2   101.535    3.00
+S3F   FE2    S3     FE3    78.157    3.00
+S3F    S3   FE3      S2   180.000    3.00
+S3F   FE4    S1     FE2     3.000    3.00
+S3F   FE4    S1     FE1     3.000    3.00
+S3F   FE2    S1     FE1    98.857    3.00
+S3F    S1   FE1      S2   101.535    3.00
+S3F    S1   FE1      O1   101.535    3.00
+S3F    S2   FE1      O1   101.535    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+S3F     other_tor_1      S1     FE2      S3     FE3     180.000   10.00     1
+S3F     other_tor_2      S2     FE3      S3     FE2     180.000   10.00     1

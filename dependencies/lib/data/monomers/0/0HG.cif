@@ -1,0 +1,374 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0HG      0HG 'N-[(4S)-4-ammonio-4-carboxybutanoyl]' non-polymer        49  28 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_0HG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 0HG           OXT1   O    OC       -0.500      0.000    0.000    0.000
+ 0HG           C8     C    C         0.000     -1.202    0.269   -0.222
+ 0HG           O2     O    OC       -0.500     -1.502    1.211   -0.987
+ 0HG           CA2    C    CH2       0.000     -2.289   -0.545    0.434
+ 0HG           HA2    H    H         0.000     -2.196   -0.468    1.519
+ 0HG           HA3    H    H         0.000     -2.191   -1.591    0.135
+ 0HG           N2     N    NH1       0.000     -3.597   -0.037    0.017
+ 0HG           H4     H    H         0.000     -3.656    0.746   -0.619
+ 0HG           C1     C    C         0.000     -4.723   -0.613    0.481
+ 0HG           O1     O    O         0.000     -4.653   -1.554    1.243
+ 0HG           CA1    C    CH1       0.000     -6.070   -0.090    0.053
+ 0HG           HA1    H    H         0.000     -6.162   -0.169   -1.040
+ 0HG           N1     N    NH1       0.000     -7.127   -0.881    0.690
+ 0HG           H1     H    H         0.000     -7.546   -0.562    1.551
+ 0HG           CD     C    C         0.000     -7.539   -2.033    0.126
+ 0HG           OE1    O    O         0.000     -7.036   -2.416   -0.909
+ 0HG           CG     C    CH2       0.000     -8.625   -2.846    0.781
+ 0HG           HG2    H    H         0.000     -9.535   -2.246    0.853
+ 0HG           HG3    H    H         0.000     -8.305   -3.141    1.783
+ 0HG           CB     C    CH2       0.000     -8.902   -4.096   -0.056
+ 0HG           HB2    H    H         0.000     -7.991   -4.694   -0.128
+ 0HG           HB3    H    H         0.000     -9.221   -3.800   -1.057
+ 0HG           CA     C    CH1       0.000    -10.005   -4.921    0.610
+ 0HG           HA     H    H         0.000    -10.893   -4.291    0.763
+ 0HG           C      C    C         0.000    -10.364   -6.088   -0.276
+ 0HG           OXT    O    OC       -0.500    -11.124   -5.919   -1.255
+ 0HG           O      O    OC       -0.500     -9.902   -7.224   -0.032
+ 0HG           N      N    NT3       1.000     -9.530   -5.420    1.906
+ 0HG           H3     H    H         0.000    -10.276   -5.975    2.351
+ 0HG           H2     H    H         0.000     -8.697   -6.011    1.758
+ 0HG           H      H    H         0.000     -9.285   -4.619    2.509
+ 0HG           CB1    C    CH2       0.000     -6.206    1.375    0.472
+ 0HG           HB21   H    H         0.000     -5.418    1.963   -0.003
+ 0HG           HB31   H    H         0.000     -6.112    1.452    1.557
+ 0HG           SG     S    S2        0.000     -7.827    2.004   -0.044
+ 0HG           C7     C    CH2       0.000     -7.798    3.724    0.532
+ 0HG           H71    H    H         0.000     -6.970    4.253    0.057
+ 0HG           H72    H    H         0.000     -7.665    3.742    1.616
+ 0HG           C11    C    CR6       0.000     -9.099    4.396    0.173
+ 0HG           C6     C    CR16      0.000     -9.226    5.052   -1.037
+ 0HG           H6     H    H         0.000     -8.392    5.079   -1.728
+ 0HG           C5     C    CR16      0.000    -10.417    5.672   -1.365
+ 0HG           H5     H    H         0.000    -10.516    6.186   -2.314
+ 0HG           C4     C    CR6       0.000    -11.482    5.638   -0.482
+ 0HG           BR     BR   BR        0.000    -13.110    6.486   -0.930
+ 0HG           C3     C    CR16      0.000    -11.353    4.981    0.729
+ 0HG           H31    H    H         0.000    -12.185    4.953    1.421
+ 0HG           C2     C    CR16      0.000    -10.162    4.360    1.056
+ 0HG           HC2    H    H         0.000    -10.062    3.846    2.003
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 0HG      OXT1   n/a    C8     START
+ 0HG      C8     OXT1   CA2    .
+ 0HG      O2     C8     .      .
+ 0HG      CA2    C8     N2     .
+ 0HG      HA2    CA2    .      .
+ 0HG      HA3    CA2    .      .
+ 0HG      N2     CA2    C1     .
+ 0HG      H4     N2     .      .
+ 0HG      C1     N2     CA1    .
+ 0HG      O1     C1     .      .
+ 0HG      CA1    C1     CB1    .
+ 0HG      HA1    CA1    .      .
+ 0HG      N1     CA1    CD     .
+ 0HG      H1     N1     .      .
+ 0HG      CD     N1     CG     .
+ 0HG      OE1    CD     .      .
+ 0HG      CG     CD     CB     .
+ 0HG      HG2    CG     .      .
+ 0HG      HG3    CG     .      .
+ 0HG      CB     CG     CA     .
+ 0HG      HB2    CB     .      .
+ 0HG      HB3    CB     .      .
+ 0HG      CA     CB     N      .
+ 0HG      HA     CA     .      .
+ 0HG      C      CA     O      .
+ 0HG      OXT    C      .      .
+ 0HG      O      C      .      .
+ 0HG      N      CA     H      .
+ 0HG      H3     N      .      .
+ 0HG      H2     N      .      .
+ 0HG      H      N      .      .
+ 0HG      CB1    CA1    SG     .
+ 0HG      HB21   CB1    .      .
+ 0HG      HB31   CB1    .      .
+ 0HG      SG     CB1    C7     .
+ 0HG      C7     SG     C11    .
+ 0HG      H71    C7     .      .
+ 0HG      H72    C7     .      .
+ 0HG      C11    C7     C6     .
+ 0HG      C6     C11    C5     .
+ 0HG      H6     C6     .      .
+ 0HG      C5     C6     C4     .
+ 0HG      H5     C5     .      .
+ 0HG      C4     C5     C3     .
+ 0HG      BR     C4     .      .
+ 0HG      C3     C4     C2     .
+ 0HG      H31    C3     .      .
+ 0HG      C2     C3     HC2    .
+ 0HG      HC2    C2     .      END
+ 0HG      C11    C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0HG       N         CA        single    1.488     0.020     1.488     0.020     
+0HG       H         N         single    1.036     0.016     0.914     0.007     
+0HG       H2        N         single    1.036     0.016     0.914     0.007     
+0HG       H3        N         single    1.036     0.016     0.914     0.007     
+0HG       C         CA        single    1.500     0.020     1.500     0.020     
+0HG       CA        CB        single    1.524     0.020     1.524     0.020     
+0HG       HA        CA        single    1.089     0.010     0.989     0.005     
+0HG       O         C         deloc     1.250     0.020     1.250     0.020     
+0HG       OXT       C         deloc     1.250     0.020     1.250     0.020     
+0HG       CB        CG        single    1.524     0.020     1.524     0.020     
+0HG       HB2       CB        single    1.089     0.010     0.989     0.005     
+0HG       HB3       CB        single    1.089     0.010     0.989     0.005     
+0HG       CG        CD        single    1.510     0.020     1.510     0.020     
+0HG       HG2       CG        single    1.089     0.010     0.989     0.005     
+0HG       HG3       CG        single    1.089     0.010     0.989     0.005     
+0HG       OE1       CD        double    1.220     0.020     1.220     0.020     
+0HG       CA1       C1        single    1.500     0.020     1.500     0.020     
+0HG       N1        CA1       single    1.450     0.020     1.450     0.020     
+0HG       CB1       CA1       single    1.524     0.020     1.524     0.020     
+0HG       HA1       CA1       single    1.089     0.010     0.989     0.005     
+0HG       O1        C1        double    1.220     0.020     1.220     0.020     
+0HG       H1        N1        single    1.016     0.010     0.899     0.007     
+0HG       SG        CB1       single    1.762     0.020     1.762     0.020     
+0HG       HB21      CB1       single    1.089     0.010     0.989     0.005     
+0HG       HB31      CB1       single    1.089     0.010     0.989     0.005     
+0HG       C7        SG        single    1.762     0.020     1.762     0.020     
+0HG       BR        C4        single    1.890     0.020     1.890     0.020     
+0HG       C11       C2        double    1.390     0.020     1.390     0.020     
+0HG       C6        C11       single    1.390     0.020     1.390     0.020     
+0HG       C11       C7        single    1.511     0.020     1.511     0.020     
+0HG       C2        C3        single    1.390     0.020     1.390     0.020     
+0HG       HC2       C2        single    1.082     0.013     0.975     0.010     
+0HG       C3        C4        double    1.390     0.020     1.390     0.020     
+0HG       H31       C3        single    1.082     0.013     0.975     0.010     
+0HG       C4        C5        single    1.390     0.020     1.390     0.020     
+0HG       C5        C6        double    1.390     0.020     1.390     0.020     
+0HG       H5        C5        single    1.082     0.013     0.975     0.010     
+0HG       H6        C6        single    1.082     0.013     0.975     0.010     
+0HG       H71       C7        single    1.089     0.010     0.989     0.005     
+0HG       H72       C7        single    1.089     0.010     0.989     0.005     
+0HG       N2        CA2       single    1.450     0.020     1.450     0.020     
+0HG       H4        N2        single    1.016     0.010     0.899     0.007     
+0HG       CA2       C8        single    1.510     0.020     1.510     0.020     
+0HG       HA2       CA2       single    1.089     0.010     0.989     0.005     
+0HG       HA3       CA2       single    1.089     0.010     0.989     0.005     
+0HG       O2        C8        deloc     1.250     0.020     1.250     0.020     
+0HG       C8        OXT1      deloc     1.250     0.020     1.250     0.020     
+0HG       CD        N1        single    1.330     0.020     1.330     0.020     
+0HG       C1        N2        single    1.330     0.020     1.330     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 0HG      OXT1   C8     O2      123.000    3.000
+ 0HG      OXT1   C8     CA2     118.500    3.000
+ 0HG      O2     C8     CA2     118.500    3.000
+ 0HG      C8     CA2    HA2     109.470    3.000
+ 0HG      C8     CA2    HA3     109.470    3.000
+ 0HG      C8     CA2    N2      111.600    3.000
+ 0HG      HA2    CA2    HA3     107.900    3.000
+ 0HG      HA2    CA2    N2      109.470    3.000
+ 0HG      HA3    CA2    N2      109.470    3.000
+ 0HG      CA2    N2     H4      118.500    3.000
+ 0HG      CA2    N2     C1      121.500    3.000
+ 0HG      H4     N2     C1      120.000    3.000
+ 0HG      N2     C1     O1      123.000    3.000
+ 0HG      N2     C1     CA1     116.500    3.000
+ 0HG      O1     C1     CA1     120.500    3.000
+ 0HG      C1     CA1    HA1     108.810    3.000
+ 0HG      C1     CA1    N1      111.600    3.000
+ 0HG      C1     CA1    CB1     109.470    3.000
+ 0HG      HA1    CA1    N1      108.550    3.000
+ 0HG      HA1    CA1    CB1     108.340    3.000
+ 0HG      N1     CA1    CB1     110.000    3.000
+ 0HG      CA1    N1     H1      118.500    3.000
+ 0HG      CA1    N1     CD      121.500    3.000
+ 0HG      H1     N1     CD      120.000    3.000
+ 0HG      N1     CD     OE1     123.000    3.000
+ 0HG      N1     CD     CG      116.500    3.000
+ 0HG      OE1    CD     CG      120.500    3.000
+ 0HG      CD     CG     HG2     109.470    3.000
+ 0HG      CD     CG     HG3     109.470    3.000
+ 0HG      CD     CG     CB      109.470    3.000
+ 0HG      HG2    CG     HG3     107.900    3.000
+ 0HG      HG2    CG     CB      109.470    3.000
+ 0HG      HG3    CG     CB      109.470    3.000
+ 0HG      CG     CB     HB2     109.470    3.000
+ 0HG      CG     CB     HB3     109.470    3.000
+ 0HG      CG     CB     CA      111.000    3.000
+ 0HG      HB2    CB     HB3     107.900    3.000
+ 0HG      HB2    CB     CA      109.470    3.000
+ 0HG      HB3    CB     CA      109.470    3.000
+ 0HG      CB     CA     HA      108.340    3.000
+ 0HG      CB     CA     C       109.470    3.000
+ 0HG      CB     CA     N       110.000    3.000
+ 0HG      HA     CA     C       108.810    3.000
+ 0HG      HA     CA     N       108.550    3.000
+ 0HG      C      CA     N       111.600    3.000
+ 0HG      CA     C      OXT     118.500    3.000
+ 0HG      CA     C      O       118.500    3.000
+ 0HG      OXT    C      O       123.000    3.000
+ 0HG      CA     N      H3      109.470    3.000
+ 0HG      CA     N      H2      109.470    3.000
+ 0HG      CA     N      H       109.470    3.000
+ 0HG      H3     N      H2      109.470    3.000
+ 0HG      H3     N      H       109.470    3.000
+ 0HG      H2     N      H       109.470    3.000
+ 0HG      CA1    CB1    HB21    109.470    3.000
+ 0HG      CA1    CB1    HB31    109.470    3.000
+ 0HG      CA1    CB1    SG      109.500    3.000
+ 0HG      HB21   CB1    HB31    107.900    3.000
+ 0HG      HB21   CB1    SG      109.500    3.000
+ 0HG      HB31   CB1    SG      109.500    3.000
+ 0HG      CB1    SG     C7      102.983    3.000
+ 0HG      SG     C7     H71     109.500    3.000
+ 0HG      SG     C7     H72     109.500    3.000
+ 0HG      SG     C7     C11     109.500    3.000
+ 0HG      H71    C7     H72     107.900    3.000
+ 0HG      H71    C7     C11     109.470    3.000
+ 0HG      H72    C7     C11     109.470    3.000
+ 0HG      C7     C11    C6      120.000    3.000
+ 0HG      C7     C11    C2      120.000    3.000
+ 0HG      C6     C11    C2      120.000    3.000
+ 0HG      C11    C6     H6      120.000    3.000
+ 0HG      C11    C6     C5      120.000    3.000
+ 0HG      H6     C6     C5      120.000    3.000
+ 0HG      C6     C5     H5      120.000    3.000
+ 0HG      C6     C5     C4      120.000    3.000
+ 0HG      H5     C5     C4      120.000    3.000
+ 0HG      C5     C4     BR      120.000    3.000
+ 0HG      C5     C4     C3      120.000    3.000
+ 0HG      BR     C4     C3      120.000    3.000
+ 0HG      C4     C3     H31     120.000    3.000
+ 0HG      C4     C3     C2      120.000    3.000
+ 0HG      H31    C3     C2      120.000    3.000
+ 0HG      C3     C2     HC2     120.000    3.000
+ 0HG      C3     C2     C11     120.000    3.000
+ 0HG      HC2    C2     C11     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 0HG      var_1    OXT1   C8     CA2    N2      -179.975   20.000   3
+ 0HG      var_2    C8     CA2    N2     C1      -179.964   20.000   3
+ 0HG      CONST_1  CA2    N2     C1     CA1      180.000    0.000   0
+ 0HG      var_3    N2     C1     CA1    CB1      -59.998   20.000   3
+ 0HG      var_4    C1     CA1    N1     CD       -85.006   20.000   3
+ 0HG      CONST_2  CA1    N1     CD     CG       180.000    0.000   0
+ 0HG      var_5    N1     CD     CG     CB      -179.987   20.000   3
+ 0HG      var_6    CD     CG     CB     CA      -179.996   20.000   3
+ 0HG      var_7    CG     CB     CA     N        -65.000   20.000   3
+ 0HG      var_8    CB     CA     C      O        100.016   20.000   3
+ 0HG      var_9    CB     CA     N      H         59.985   20.000   1
+ 0HG      var_10   C1     CA1    CB1    SG       179.993   20.000   3
+ 0HG      var_11   CA1    CB1    SG     C7       179.987   20.000   1
+ 0HG      var_12   CB1    SG     C7     C11      179.984   20.000   1
+ 0HG      var_13   SG     C7     C11    C6       -90.265   20.000   2
+ 0HG      CONST_3  C7     C11    C2     C3       180.000    0.000   0
+ 0HG      CONST_4  C7     C11    C6     C5       180.000    0.000   0
+ 0HG      CONST_5  C11    C6     C5     C4         0.000    0.000   0
+ 0HG      CONST_6  C6     C5     C4     C3         0.000    0.000   0
+ 0HG      CONST_7  C5     C4     C3     C2         0.000    0.000   0
+ 0HG      CONST_8  C4     C3     C2     C11        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 0HG      chir_01  CA     N      C      CB        positiv
+ 0HG      chir_02  CA1    C1     N1     CB1       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 0HG      plan-1    C         0.020
+ 0HG      plan-1    CA        0.020
+ 0HG      plan-1    O         0.020
+ 0HG      plan-1    OXT       0.020
+ 0HG      plan-2    CD        0.020
+ 0HG      plan-2    CG        0.020
+ 0HG      plan-2    OE1       0.020
+ 0HG      plan-2    N1        0.020
+ 0HG      plan-2    H1        0.020
+ 0HG      plan-3    C1        0.020
+ 0HG      plan-3    CA1       0.020
+ 0HG      plan-3    O1        0.020
+ 0HG      plan-3    N2        0.020
+ 0HG      plan-3    H4        0.020
+ 0HG      plan-4    N1        0.020
+ 0HG      plan-4    CD        0.020
+ 0HG      plan-4    CA1       0.020
+ 0HG      plan-4    H1        0.020
+ 0HG      plan-5    C11       0.020
+ 0HG      plan-5    C2        0.020
+ 0HG      plan-5    C6        0.020
+ 0HG      plan-5    C7        0.020
+ 0HG      plan-5    C3        0.020
+ 0HG      plan-5    C4        0.020
+ 0HG      plan-5    C5        0.020
+ 0HG      plan-5    HC2       0.020
+ 0HG      plan-5    H31       0.020
+ 0HG      plan-5    BR        0.020
+ 0HG      plan-5    H5        0.020
+ 0HG      plan-5    H6        0.020
+ 0HG      plan-6    N2        0.020
+ 0HG      plan-6    C1        0.020
+ 0HG      plan-6    CA2       0.020
+ 0HG      plan-6    H4        0.020
+ 0HG      plan-7    C8        0.020
+ 0HG      plan-7    CA2       0.020
+ 0HG      plan-7    O2        0.020
+ 0HG      plan-7    OXT1      0.020
+# ------------------------------------------------------

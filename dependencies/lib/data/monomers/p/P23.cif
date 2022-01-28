@@ -1,0 +1,151 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+P23     P23      "PROPYL TRIHYDROGEN DIPHOSPHATE"     NON-POLYMER     19     12     .     
+#
+data_comp_P23
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+P23     C5      C       CH3     0       25.743      119.780     45.849      
+P23     C6      C       CH2     0       26.780      119.149     46.744      
+P23     C7      C       CH2     0       26.650      117.665     46.829      
+P23     O7      O       O2      0       27.663      117.145     47.736      
+P23     PA      P       P       0       27.788      115.559     47.948      
+P23     O1A     O       O       0       28.864      115.299     48.949      
+P23     O2A     O       OP      -1      26.421      115.011     48.197      
+P23     O3A     O       O2      0       28.289      115.088     46.499      
+P23     PB      P       P       0       29.677      115.298     45.702      
+P23     O1B     O       OP      -1      29.922      116.787     45.681      
+P23     O2B     O       OP      -1      29.456      114.724     44.324      
+P23     O3B     O       O       0       30.724      114.546     46.486      
+P23     H51     H       H       0       25.862      120.745     45.842      
+P23     H52     H       H       0       24.853      119.567     46.181      
+P23     H53     H       H       0       25.840      119.436     44.944      
+P23     H61     H       H       0       26.698      119.525     47.646      
+P23     H62     H       H       0       27.674      119.369     46.406      
+P23     H71     H       H       0       26.766      117.271     45.938      
+P23     H72     H       H       0       25.756      117.429     47.157      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+P23       C5        C6        SINGLE    n         1.508     0.020     1.508     0.020     
+P23       C6        C7        SINGLE    n         1.492     0.020     1.492     0.020     
+P23       C7        O7        SINGLE    n         1.456     0.010     1.456     0.010     
+P23       O7        PA        SINGLE    n         1.604     0.014     1.604     0.014     
+P23       PA        O1A       DOUBLE    n         1.493     0.012     1.493     0.012     
+P23       PA        O2A       SINGLE    n         1.493     0.012     1.493     0.012     
+P23       PA        O3A       SINGLE    n         1.604     0.014     1.604     0.014     
+P23       O3A       PB        SINGLE    n         1.614     0.019     1.614     0.019     
+P23       PB        O1B       SINGLE    n         1.509     0.020     1.509     0.020     
+P23       PB        O2B       SINGLE    n         1.509     0.020     1.509     0.020     
+P23       PB        O3B       DOUBLE    n         1.509     0.020     1.509     0.020     
+P23       C5        H51       SINGLE    n         1.089     0.010     0.973     0.016     
+P23       C5        H52       SINGLE    n         1.089     0.010     0.973     0.016     
+P23       C5        H53       SINGLE    n         1.089     0.010     0.973     0.016     
+P23       C6        H61       SINGLE    n         1.089     0.010     0.981     0.013     
+P23       C6        H62       SINGLE    n         1.089     0.010     0.981     0.013     
+P23       C7        H71       SINGLE    n         1.089     0.010     0.981     0.010     
+P23       C7        H72       SINGLE    n         1.089     0.010     0.981     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+P23          C6          C5         H51     109.599    1.50
+P23          C6          C5         H52     109.599    1.50
+P23          C6          C5         H53     109.599    1.50
+P23         H51          C5         H52     109.380    1.50
+P23         H51          C5         H53     109.380    1.50
+P23         H52          C5         H53     109.380    1.50
+P23          C5          C6          C7     113.106    3.00
+P23          C5          C6         H61     109.194    1.50
+P23          C5          C6         H62     109.194    1.50
+P23          C7          C6         H61     108.802    1.50
+P23          C7          C6         H62     108.802    1.50
+P23         H61          C6         H62     107.894    1.50
+P23          C6          C7          O7     109.312    1.50
+P23          C6          C7         H71     109.787    1.50
+P23          C6          C7         H72     109.787    1.50
+P23          O7          C7         H71     109.902    1.50
+P23          O7          C7         H72     109.902    1.50
+P23         H71          C7         H72     108.388    1.50
+P23          C7          O7          PA     119.251    1.51
+P23          O7          PA         O1A     107.912    2.57
+P23          O7          PA         O2A     107.912    2.57
+P23          O7          PA         O3A     101.065    1.97
+P23         O1A          PA         O2A     118.411    2.35
+P23         O1A          PA         O3A     108.816    2.14
+P23         O2A          PA         O3A     108.816    2.14
+P23          PA         O3A          PB     132.584    3.00
+P23         O3A          PB         O1B     105.965    2.38
+P23         O3A          PB         O2B     105.965    2.38
+P23         O3A          PB         O3B     105.965    2.38
+P23         O1B          PB         O2B     112.716    1.50
+P23         O1B          PB         O3B     112.716    1.50
+P23         O2B          PB         O3B     112.716    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+P23             sp3_sp3_1         H51          C5          C6          C7     180.000   10.00     3
+P23            sp3_sp3_10          C5          C6          C7          O7     180.000   10.00     3
+P23            sp3_sp3_19          C6          C7          O7          PA     180.000   10.00     3
+P23            sp3_sp3_24          C7          O7          PA         O1A      60.000   10.00     3
+P23            sp3_sp3_26          PB         O3A          PA          O7     -60.000   10.00     3
+P23            sp3_sp3_28          PA         O3A          PB         O1B     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+P23    chir_1    PA    O3A    O7    O2A    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+P23 SMILES           ACDLabs              10.04 "O=P(O)(OP(=O)(OCCC)O)O"
+P23 SMILES_CANONICAL CACTVS               3.341 "CCCO[P@](O)(=O)O[P](O)(O)=O"
+P23 SMILES           CACTVS               3.341 "CCCO[P](O)(=O)O[P](O)(O)=O"
+P23 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCCO[P@@](=O)(O)OP(=O)(O)O"
+P23 SMILES           "OpenEye OEToolkits" 1.5.0 "CCCOP(=O)(O)OP(=O)(O)O"
+P23 InChI            InChI                1.03  "InChI=1S/C3H10O7P2/c1-2-3-9-12(7,8)10-11(4,5)6/h2-3H2,1H3,(H,7,8)(H2,4,5,6)"
+P23 InChIKey         InChI                1.03  JCWMAIAFQQTSAX-UHFFFAOYSA-N
+P23 ?                acedrg               202         "dictionary generator"                  
+P23 ?                acedrg_database      11          "data source"                           
+P23 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+P23 ?                refmac5              5.8.0189    "optimization tool"                     

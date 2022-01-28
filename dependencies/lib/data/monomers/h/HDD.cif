@@ -1,0 +1,622 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HDD      HDD 'CIS-HEME D HYDROXYCHLORIN GAMMA-SPIR' non-polymer        75  44 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HDD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HDD           O2D    O    O        -0.500      0.000    0.000    0.000
+ HDD           CGD    C    C         0.000     -1.036   -0.020   -0.701
+ HDD           CBD    C    CH2       0.000     -1.130    0.489   -2.121
+ HDD           HBD1   H    H         0.000     -0.451   -0.053   -2.782
+ HDD           HBD2   H    H         0.000     -0.911    1.558   -2.174
+ HDD           CAD    C    CH2       0.000     -2.584    0.240   -2.558
+ HDD           HAD2   H    H         0.000     -2.651   -0.439   -3.412
+ HDD           HAD1   H    H         0.000     -3.113    1.167   -2.790
+ HDD           O1D    O    O2       -0.500     -2.143   -0.467   -0.325
+ HDD           C3D    C    CT        0.000     -3.218   -0.418   -1.332
+ HDD           C2D    C    CT        0.000     -3.821   -1.779   -1.668
+ HDD           OND    O    OH1       0.000     -2.952   -2.834   -1.288
+ HDD           HND    H    H         0.000     -3.409   -3.678   -1.394
+ HDD           CMD    C    CH3       0.000     -4.200   -1.860   -3.139
+ HDD           HMD3   H    H         0.000     -3.327   -2.002   -3.720
+ HDD           HMD2   H    H         0.000     -4.861   -2.674   -3.288
+ HDD           HMD1   H    H         0.000     -4.676   -0.960   -3.430
+ HDD           C1D    C    C         0.000     -5.064   -1.744   -0.784
+ HDD           CHD    C    C1        0.000     -5.610   -2.762   -0.145
+ HDD           HHD    H    H         0.000     -5.176   -3.745   -0.222
+ HDD           C4D    C    C         0.000     -4.430    0.390   -0.864
+ HDD           CHA    C    C1        0.000     -4.413    1.701   -0.685
+ HDD           HHA    H    H         0.000     -3.469    2.220   -0.704
+ HDD           ND     N    N         0.000     -5.505   -0.443   -0.722
+ HDD           FE     FE   FE        0.000     -7.287    0.075   -0.437
+ HDD           NB     N    NR5       0.000     -9.116    0.489   -0.443
+ HDD           C4B    C    CR5       0.000    -10.131   -0.227    0.113
+ HDD           C3B    C    CR5       0.000    -11.379    0.185   -0.576
+ HDD           CAB    C    C1        0.000    -12.682   -0.494   -0.510
+ HDD           HAB    H    H         0.000    -13.545   -0.048   -0.975
+ HDD           CBB    C    C2        0.000    -12.795   -1.657    0.122
+ HDD           HBB2   H    H         0.000    -11.916   -2.156    0.501
+ HDD           HBB1   H    H         0.000    -13.765   -2.109    0.259
+ HDD           C2B    C    CR5       0.000    -11.065    1.323   -1.275
+ HDD           CMB    C    CH3       0.000    -11.973    2.120   -2.171
+ HDD           HMB3   H    H         0.000    -12.971    2.034   -1.829
+ HDD           HMB2   H    H         0.000    -11.680    3.138   -2.154
+ HDD           HMB1   H    H         0.000    -11.906    1.750   -3.161
+ HDD           C1B    C    CR5       0.000     -9.707    1.601   -0.986
+ HDD           CHB    C    C1        0.000     -9.065    2.800   -1.112
+ HDD           HHB    H    H         0.000     -9.577    3.640   -1.551
+ HDD           NC     N    NR5       0.000     -7.634   -1.504    0.528
+ HDD           C4C    C    CR5       0.000     -6.797   -2.552    0.661
+ HDD           C3C    C    CR5       0.000     -7.232   -3.341    1.746
+ HDD           CAC    C    C1        0.000     -6.514   -4.479    2.338
+ HDD           HAC    H    H         0.000     -6.133   -5.263    1.706
+ HDD           CBC    C    C2        0.000     -6.336   -4.541    3.655
+ HDD           HBC2   H    H         0.000     -5.809   -5.375    4.092
+ HDD           HBC1   H    H         0.000     -6.717   -3.758    4.292
+ HDD           C2C    C    CR5       0.000     -8.474   -2.825    2.135
+ HDD           CMC    C    CH3       0.000     -9.370   -3.338    3.228
+ HDD           HMC3   H    H         0.000     -8.778   -3.711    4.023
+ HDD           HMC2   H    H         0.000     -9.981   -2.550    3.582
+ HDD           HMC1   H    H         0.000     -9.980   -4.116    2.848
+ HDD           C1C    C    CR5       0.000     -8.751   -1.793    1.244
+ HDD           CHC    C    C1        0.000    -10.001   -1.191    1.042
+ HDD           HHC    H    H         0.000    -10.851   -1.498    1.627
+ HDD           NA     N    NR5       0.000     -6.867    1.905   -0.539
+ HDD           C4A    C    CR5       0.000     -7.745    2.938   -0.674
+ HDD           C3A    C    CR5       0.000     -7.098    4.111   -0.278
+ HDD           CMA    C    CH3       0.000     -7.739    5.456   -0.068
+ HDD           HMA3   H    H         0.000     -8.722    5.325    0.304
+ HDD           HMA2   H    H         0.000     -7.169    6.014    0.629
+ HDD           HMA1   H    H         0.000     -7.777    5.977   -0.990
+ HDD           C2A    C    CR5       0.000     -5.755    3.811   -0.185
+ HDD           C1A    C    CR5       0.000     -5.629    2.456   -0.464
+ HDD           CAA    C    CH2       0.000     -4.635    4.759    0.152
+ HDD           HAA1   H    H         0.000     -4.893    5.762   -0.193
+ HDD           HAA2   H    H         0.000     -3.719    4.429   -0.342
+ HDD           CBA    C    CH2       0.000     -4.420    4.778    1.667
+ HDD           HBA1   H    H         0.000     -4.164    3.774    2.011
+ HDD           HBA2   H    H         0.000     -5.338    5.106    2.160
+ HDD           CGA    C    C         0.000     -3.300    5.727    2.004
+ HDD           O1A    O    OC       -0.500     -2.710    6.348    1.092
+ HDD           O2A    O    OC       -0.500     -2.958    5.894    3.196
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HDD      O2D    n/a    CGD    START
+ HDD      CGD    O2D    O1D    .
+ HDD      CBD    CGD    CAD    .
+ HDD      HBD1   CBD    .      .
+ HDD      HBD2   CBD    .      .
+ HDD      CAD    CBD    HAD1   .
+ HDD      HAD2   CAD    .      .
+ HDD      HAD1   CAD    .      .
+ HDD      O1D    CGD    C3D    .
+ HDD      C3D    O1D    C4D    .
+ HDD      C2D    C3D    C1D    .
+ HDD      OND    C2D    HND    .
+ HDD      HND    OND    .      .
+ HDD      CMD    C2D    HMD1   .
+ HDD      HMD3   CMD    .      .
+ HDD      HMD2   CMD    .      .
+ HDD      HMD1   CMD    .      .
+ HDD      C1D    C2D    CHD    .
+ HDD      CHD    C1D    HHD    .
+ HDD      HHD    CHD    .      .
+ HDD      C4D    C3D    ND     .
+ HDD      CHA    C4D    HHA    .
+ HDD      HHA    CHA    .      .
+ HDD      ND     C4D    FE     .
+ HDD      FE     ND     NA     .
+ HDD      NB     FE     C4B    .
+ HDD      C4B    NB     C3B    .
+ HDD      C3B    C4B    C2B    .
+ HDD      CAB    C3B    CBB    .
+ HDD      HAB    CAB    .      .
+ HDD      CBB    CAB    HBB1   .
+ HDD      HBB2   CBB    .      .
+ HDD      HBB1   CBB    .      .
+ HDD      C2B    C3B    C1B    .
+ HDD      CMB    C2B    HMB1   .
+ HDD      HMB3   CMB    .      .
+ HDD      HMB2   CMB    .      .
+ HDD      HMB1   CMB    .      .
+ HDD      C1B    C2B    CHB    .
+ HDD      CHB    C1B    HHB    .
+ HDD      HHB    CHB    .      .
+ HDD      NC     FE     C4C    .
+ HDD      C4C    NC     C3C    .
+ HDD      C3C    C4C    C2C    .
+ HDD      CAC    C3C    CBC    .
+ HDD      HAC    CAC    .      .
+ HDD      CBC    CAC    HBC1   .
+ HDD      HBC2   CBC    .      .
+ HDD      HBC1   CBC    .      .
+ HDD      C2C    C3C    C1C    .
+ HDD      CMC    C2C    HMC1   .
+ HDD      HMC3   CMC    .      .
+ HDD      HMC2   CMC    .      .
+ HDD      HMC1   CMC    .      .
+ HDD      C1C    C2C    CHC    .
+ HDD      CHC    C1C    HHC    .
+ HDD      HHC    CHC    .      .
+ HDD      NA     FE     C4A    .
+ HDD      C4A    NA     C3A    .
+ HDD      C3A    C4A    C2A    .
+ HDD      CMA    C3A    HMA1   .
+ HDD      HMA3   CMA    .      .
+ HDD      HMA2   CMA    .      .
+ HDD      HMA1   CMA    .      .
+ HDD      C2A    C3A    CAA    .
+ HDD      C1A    C2A    .      .
+ HDD      CAA    C2A    CBA    .
+ HDD      HAA1   CAA    .      .
+ HDD      HAA2   CAA    .      .
+ HDD      CBA    CAA    CGA    .
+ HDD      HBA1   CBA    .      .
+ HDD      HBA2   CBA    .      .
+ HDD      CGA    CBA    O2A    .
+ HDD      O1A    CGA    .      .
+ HDD      O2A    CGA    .      END
+ HDD      CHA    C1A    .    ADD
+ HDD      CHB    C4A    .    ADD
+ HDD      CHC    C4B    .    ADD
+ HDD      CHD    C4C    .    ADD
+ HDD      NA     C1A    .    ADD
+ HDD      NB     C1B    .    ADD
+ HDD      NC     C1C    .    ADD
+ HDD      ND     C1D    .    ADD
+ HDD      C3D    CAD    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HDD       NA        FE        single    2.090     0.020     2.090     0.020     
+HDD       NB        FE        single    2.090     0.020     2.090     0.020     
+HDD       NC        FE        single    2.090     0.020     2.090     0.020     
+HDD       FE        ND        single    1.855     0.020     1.855     0.020     
+HDD       CHA       C1A       single    1.483     0.020     1.483     0.020     
+HDD       CHA       C4D       double    1.340     0.020     1.340     0.020     
+HDD       HHA       CHA       single    1.082     0.013     0.975     0.010     
+HDD       CHB       C4A       single    1.483     0.020     1.483     0.020     
+HDD       CHB       C1B       double    1.483     0.020     1.483     0.020     
+HDD       HHB       CHB       single    1.082     0.013     0.975     0.010     
+HDD       CHC       C4B       double    1.483     0.020     1.483     0.020     
+HDD       CHC       C1C       single    1.483     0.020     1.483     0.020     
+HDD       HHC       CHC       single    1.082     0.013     0.975     0.010     
+HDD       CHD       C4C       single    1.483     0.020     1.483     0.020     
+HDD       CHD       C1D       double    1.340     0.020     1.340     0.020     
+HDD       HHD       CHD       single    1.082     0.013     0.975     0.010     
+HDD       NA        C1A       single    1.337     0.020     1.337     0.020     
+HDD       C4A       NA        single    1.337     0.020     1.337     0.020     
+HDD       C1A       C2A       double    1.490     0.020     1.490     0.020     
+HDD       C2A       C3A       single    1.490     0.020     1.490     0.020     
+HDD       CAA       C2A       single    1.510     0.020     1.510     0.020     
+HDD       C3A       C4A       double    1.490     0.020     1.490     0.020     
+HDD       CMA       C3A       single    1.506     0.020     1.506     0.020     
+HDD       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+HDD       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+HDD       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+HDD       CBA       CAA       single    1.524     0.020     1.524     0.020     
+HDD       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+HDD       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+HDD       CGA       CBA       single    1.510     0.020     1.510     0.020     
+HDD       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+HDD       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+HDD       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+HDD       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+HDD       NB        C1B       single    1.337     0.020     1.337     0.020     
+HDD       C4B       NB        single    1.337     0.020     1.337     0.020     
+HDD       C1B       C2B       single    1.490     0.020     1.490     0.020     
+HDD       C2B       C3B       double    1.490     0.020     1.490     0.020     
+HDD       CMB       C2B       single    1.506     0.020     1.506     0.020     
+HDD       C3B       C4B       single    1.490     0.020     1.490     0.020     
+HDD       CAB       C3B       single    1.483     0.020     1.483     0.020     
+HDD       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+HDD       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+HDD       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+HDD       CBB       CAB       double    1.320     0.020     1.320     0.020     
+HDD       HAB       CAB       single    1.082     0.013     0.975     0.010     
+HDD       HBB1      CBB       single    1.082     0.013     0.975     0.010     
+HDD       HBB2      CBB       single    1.082     0.013     0.975     0.010     
+HDD       NC        C1C       single    1.337     0.020     1.337     0.020     
+HDD       C4C       NC        single    1.337     0.020     1.337     0.020     
+HDD       C1C       C2C       double    1.490     0.020     1.490     0.020     
+HDD       C2C       C3C       single    1.490     0.020     1.490     0.020     
+HDD       CMC       C2C       single    1.506     0.020     1.506     0.020     
+HDD       C3C       C4C       double    1.490     0.020     1.490     0.020     
+HDD       CAC       C3C       single    1.483     0.020     1.483     0.020     
+HDD       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+HDD       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+HDD       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+HDD       CBC       CAC       double    1.320     0.020     1.320     0.020     
+HDD       HAC       CAC       single    1.082     0.013     0.975     0.010     
+HDD       HBC1      CBC       single    1.082     0.013     0.975     0.010     
+HDD       HBC2      CBC       single    1.082     0.013     0.975     0.010     
+HDD       ND        C1D       single    1.330     0.020     1.330     0.020     
+HDD       ND        C4D       single    1.330     0.020     1.330     0.020     
+HDD       C1D       C2D       single    1.507     0.020     1.507     0.020     
+HDD       C2D       C3D       single    1.524     0.020     1.524     0.020     
+HDD       CMD       C2D       single    1.524     0.020     1.524     0.020     
+HDD       OND       C2D       single    1.432     0.020     1.432     0.020     
+HDD       C4D       C3D       single    1.507     0.020     1.507     0.020     
+HDD       C3D       CAD       single    1.524     0.020     1.524     0.020     
+HDD       C3D       O1D       single    1.426     0.020     1.426     0.020     
+HDD       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+HDD       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+HDD       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+HDD       CAD       CBD       single    1.524     0.020     1.524     0.020     
+HDD       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+HDD       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+HDD       CBD       CGD       single    1.510     0.020     1.510     0.020     
+HDD       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+HDD       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+HDD       O1D       CGD       deloc     1.454     0.020     1.454     0.020     
+HDD       CGD       O2D       deloc     1.220     0.020     1.220     0.020     
+HDD       HND       OND       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HDD      O2D    CGD    CBD     120.500    3.000
+ HDD      O2D    CGD    O1D     119.000    3.000
+ HDD      CBD    CGD    O1D     120.000    3.000
+ HDD      CGD    CBD    HBD1    109.470    3.000
+ HDD      CGD    CBD    HBD2    109.470    3.000
+ HDD      CGD    CBD    CAD     109.470    3.000
+ HDD      HBD1   CBD    HBD2    107.900    3.000
+ HDD      HBD1   CBD    CAD     109.470    3.000
+ HDD      HBD2   CBD    CAD     109.470    3.000
+ HDD      CBD    CAD    HAD2    109.470    3.000
+ HDD      CBD    CAD    HAD1    109.470    3.000
+ HDD      CBD    CAD    C3D     111.000    3.000
+ HDD      HAD2   CAD    HAD1    107.900    3.000
+ HDD      HAD2   CAD    C3D     109.470    3.000
+ HDD      HAD1   CAD    C3D     109.470    3.000
+ HDD      CGD    O1D    C3D     120.000    3.000
+ HDD      O1D    C3D    C2D     109.470    3.000
+ HDD      O1D    C3D    C4D     109.470    3.000
+ HDD      O1D    C3D    CAD     109.470    3.000
+ HDD      C2D    C3D    C4D     111.000    3.000
+ HDD      C2D    C3D    CAD     111.000    3.000
+ HDD      C4D    C3D    CAD     109.470    3.000
+ HDD      C3D    C2D    OND     109.470    3.000
+ HDD      C3D    C2D    CMD     111.000    3.000
+ HDD      C3D    C2D    C1D     111.000    3.000
+ HDD      OND    C2D    CMD     109.470    3.000
+ HDD      OND    C2D    C1D     109.470    3.000
+ HDD      CMD    C2D    C1D     109.470    3.000
+ HDD      C2D    OND    HND     109.470    3.000
+ HDD      C2D    CMD    HMD3    109.470    3.000
+ HDD      C2D    CMD    HMD2    109.470    3.000
+ HDD      C2D    CMD    HMD1    109.470    3.000
+ HDD      HMD3   CMD    HMD2    109.470    3.000
+ HDD      HMD3   CMD    HMD1    109.470    3.000
+ HDD      HMD2   CMD    HMD1    109.470    3.000
+ HDD      C2D    C1D    CHD     120.000    3.000
+ HDD      C2D    C1D    ND      116.500    3.000
+ HDD      CHD    C1D    ND      116.500    3.000
+ HDD      C1D    CHD    HHD     120.000    3.000
+ HDD      C1D    CHD    C4C     120.000    3.000
+ HDD      HHD    CHD    C4C     120.000    3.000
+ HDD      C3D    C4D    CHA     120.000    3.000
+ HDD      C3D    C4D    ND      116.500    3.000
+ HDD      CHA    C4D    ND      116.500    3.000
+ HDD      C4D    CHA    HHA     120.000    3.000
+ HDD      C4D    CHA    C1A     120.000    3.000
+ HDD      HHA    CHA    C1A     120.000    3.000
+ HDD      C4D    ND     FE      120.000    3.000
+ HDD      C4D    ND     C1D     120.000    3.000
+ HDD      FE     ND     C1D     120.000    3.000
+ HDD      ND     FE     NB      180.000    3.000
+ HDD      ND     FE     NC       90.000    3.000
+ HDD      ND     FE     NA       90.000    3.000
+ HDD      NB     FE     NC       90.000    3.000
+ HDD      NB     FE     NA       90.000    3.000
+ HDD      NC     FE     NA      144.000    3.000
+ HDD      FE     NB     C4B     126.000    3.000
+ HDD      FE     NB     C1B     126.000    3.000
+ HDD      C4B    NB     C1B     108.000    3.000
+ HDD      NB     C4B    C3B     108.000    3.000
+ HDD      NB     C4B    CHC     108.000    3.000
+ HDD      C3B    C4B    CHC     117.000    3.000
+ HDD      C4B    C3B    CAB     117.000    3.000
+ HDD      C4B    C3B    C2B     108.000    3.000
+ HDD      CAB    C3B    C2B     117.000    3.000
+ HDD      C3B    CAB    HAB     120.000    3.000
+ HDD      C3B    CAB    CBB     120.000    3.000
+ HDD      HAB    CAB    CBB     120.000    3.000
+ HDD      CAB    CBB    HBB2    120.000    3.000
+ HDD      CAB    CBB    HBB1    120.000    3.000
+ HDD      HBB2   CBB    HBB1    120.000    3.000
+ HDD      C3B    C2B    CMB     126.000    3.000
+ HDD      C3B    C2B    C1B     108.000    3.000
+ HDD      CMB    C2B    C1B     126.000    3.000
+ HDD      C2B    CMB    HMB3    109.470    3.000
+ HDD      C2B    CMB    HMB2    109.470    3.000
+ HDD      C2B    CMB    HMB1    109.470    3.000
+ HDD      HMB3   CMB    HMB2    109.470    3.000
+ HDD      HMB3   CMB    HMB1    109.470    3.000
+ HDD      HMB2   CMB    HMB1    109.470    3.000
+ HDD      C2B    C1B    CHB     117.000    3.000
+ HDD      C2B    C1B    NB      108.000    3.000
+ HDD      CHB    C1B    NB      108.000    3.000
+ HDD      C1B    CHB    HHB     120.000    3.000
+ HDD      C1B    CHB    C4A     120.000    3.000
+ HDD      HHB    CHB    C4A     120.000    3.000
+ HDD      FE     NC     C4C     126.000    3.000
+ HDD      FE     NC     C1C     126.000    3.000
+ HDD      C4C    NC     C1C     108.000    3.000
+ HDD      NC     C4C    C3C     108.000    3.000
+ HDD      NC     C4C    CHD     108.000    3.000
+ HDD      C3C    C4C    CHD     117.000    3.000
+ HDD      C4C    C3C    CAC     117.000    3.000
+ HDD      C4C    C3C    C2C     108.000    3.000
+ HDD      CAC    C3C    C2C     117.000    3.000
+ HDD      C3C    CAC    HAC     120.000    3.000
+ HDD      C3C    CAC    CBC     120.000    3.000
+ HDD      HAC    CAC    CBC     120.000    3.000
+ HDD      CAC    CBC    HBC2    120.000    3.000
+ HDD      CAC    CBC    HBC1    120.000    3.000
+ HDD      HBC2   CBC    HBC1    120.000    3.000
+ HDD      C3C    C2C    CMC     126.000    3.000
+ HDD      C3C    C2C    C1C     108.000    3.000
+ HDD      CMC    C2C    C1C     126.000    3.000
+ HDD      C2C    CMC    HMC3    109.470    3.000
+ HDD      C2C    CMC    HMC2    109.470    3.000
+ HDD      C2C    CMC    HMC1    109.470    3.000
+ HDD      HMC3   CMC    HMC2    109.470    3.000
+ HDD      HMC3   CMC    HMC1    109.470    3.000
+ HDD      HMC2   CMC    HMC1    109.470    3.000
+ HDD      C2C    C1C    CHC     117.000    3.000
+ HDD      C2C    C1C    NC      108.000    3.000
+ HDD      CHC    C1C    NC      108.000    3.000
+ HDD      C1C    CHC    HHC     120.000    3.000
+ HDD      C1C    CHC    C4B     120.000    3.000
+ HDD      HHC    CHC    C4B     120.000    3.000
+ HDD      FE     NA     C4A     126.000    3.000
+ HDD      FE     NA     C1A     126.000    3.000
+ HDD      C4A    NA     C1A     108.000    3.000
+ HDD      NA     C4A    C3A     108.000    3.000
+ HDD      NA     C4A    CHB     108.000    3.000
+ HDD      C3A    C4A    CHB     117.000    3.000
+ HDD      C4A    C3A    CMA     126.000    3.000
+ HDD      C4A    C3A    C2A     108.000    3.000
+ HDD      CMA    C3A    C2A     126.000    3.000
+ HDD      C3A    CMA    HMA3    109.470    3.000
+ HDD      C3A    CMA    HMA2    109.470    3.000
+ HDD      C3A    CMA    HMA1    109.470    3.000
+ HDD      HMA3   CMA    HMA2    109.470    3.000
+ HDD      HMA3   CMA    HMA1    109.470    3.000
+ HDD      HMA2   CMA    HMA1    109.470    3.000
+ HDD      C3A    C2A    C1A     108.000    3.000
+ HDD      C3A    C2A    CAA     126.000    3.000
+ HDD      C1A    C2A    CAA     126.000    3.000
+ HDD      C2A    C1A    CHA     117.000    3.000
+ HDD      C2A    C1A    NA      108.000    3.000
+ HDD      CHA    C1A    NA      108.000    3.000
+ HDD      C2A    CAA    HAA1    109.470    3.000
+ HDD      C2A    CAA    HAA2    109.470    3.000
+ HDD      C2A    CAA    CBA     109.470    3.000
+ HDD      HAA1   CAA    HAA2    107.900    3.000
+ HDD      HAA1   CAA    CBA     109.470    3.000
+ HDD      HAA2   CAA    CBA     109.470    3.000
+ HDD      CAA    CBA    HBA1    109.470    3.000
+ HDD      CAA    CBA    HBA2    109.470    3.000
+ HDD      CAA    CBA    CGA     109.470    3.000
+ HDD      HBA1   CBA    HBA2    107.900    3.000
+ HDD      HBA1   CBA    CGA     109.470    3.000
+ HDD      HBA2   CBA    CGA     109.470    3.000
+ HDD      CBA    CGA    O1A     118.500    3.000
+ HDD      CBA    CGA    O2A     118.500    3.000
+ HDD      O1A    CGA    O2A     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HDD      var_1    O2D    CGD    CBD    CAD      180.000   20.000   3
+ HDD      var_2    CGD    CBD    CAD    C3D        0.000   20.000   3
+ HDD      var_3    O2D    CGD    O1D    C3D      180.000   20.000   1
+ HDD      var_4    CGD    O1D    C3D    C4D     -120.000   20.000   1
+ HDD      var_5    O1D    C3D    CAD    CBD        0.000   20.000   1
+ HDD      var_6    O1D    C3D    C2D    C1D       90.000   20.000   1
+ HDD      var_7    C3D    C2D    OND    HND      171.935   20.000   1
+ HDD      var_8    C3D    C2D    CMD    HMD1     -43.459   20.000   1
+ HDD      var_9    C3D    C2D    C1D    CHD     -150.000   20.000   1
+ HDD      var_10   C2D    C1D    CHD    C4C      180.000   20.000   1
+ HDD      var_11   C1D    CHD    C4C    NC        30.000   20.000   1
+ HDD      var_12   O1D    C3D    C4D    ND      -120.000   20.000   1
+ HDD      var_13   C3D    C4D    CHA    C1A      180.000   20.000   1
+ HDD      var_14   C4D    CHA    C1A    C2A      180.000   20.000   1
+ HDD      CONST_1  C3D    C4D    ND     FE       180.000    0.000   0
+ HDD      CONST_2  C4D    ND     C1D    C2D      -30.000    0.000   0
+ HDD      var_15   C1D    ND     FE     NC         0.000   20.000   1
+ HDD      var_16   C4B    NB     FE     NC         0.000   20.000   1
+ HDD      CONST_3  FE     NB     C1B    C2B      150.000    0.000   0
+ HDD      CONST_4  FE     NB     C4B    C3B     -150.000    0.000   0
+ HDD      CONST_5  NB     C4B    C3B    C2B        0.000    0.000   0
+ HDD      var_17   C4B    C3B    CAB    CBB       -6.105   20.000   1
+ HDD      CONST_6  C3B    CAB    CBB    HBB1     173.777    0.000   0
+ HDD      CONST_7  C4B    C3B    C2B    C1B        0.000    0.000   0
+ HDD      var_18   C3B    C2B    CMB    HMB1     -89.928   20.000   1
+ HDD      CONST_8  C3B    C2B    C1B    CHB     -150.000    0.000   0
+ HDD      var_19   C2B    C1B    CHB    C4A      180.000   20.000   1
+ HDD      var_20   C1B    CHB    C4A    NA        30.000   20.000   1
+ HDD      var_21   C4C    NC     FE     ND         0.000   20.000   1
+ HDD      CONST_9  FE     NC     C1C    C2C     -150.000    0.000   0
+ HDD      CONST_10 FE     NC     C4C    C3C      150.000    0.000   0
+ HDD      CONST_11 NC     C4C    C3C    C2C        0.000    0.000   0
+ HDD      var_22   C4C    C3C    CAC    CBC      130.127   20.000   1
+ HDD      CONST_12 C3C    CAC    CBC    HBC1       0.020    0.000   0
+ HDD      CONST_13 C4C    C3C    C2C    C1C        0.000    0.000   0
+ HDD      var_23   C3C    C2C    CMC    HMC1     -85.409   20.000   1
+ HDD      CONST_14 C3C    C2C    C1C    CHC      150.000    0.000   0
+ HDD      var_24   C2C    C1C    CHC    C4B      180.000   20.000   1
+ HDD      var_25   C1C    CHC    C4B    NB       -30.000   20.000   1
+ HDD      var_26   C1A    NA     FE     ND         0.000   20.000   1
+ HDD      CONST_15 FE     NA     C1A    C2A     -150.000    0.000   0
+ HDD      CONST_16 FE     NA     C4A    C3A      150.000    0.000   0
+ HDD      CONST_17 NA     C4A    C3A    C2A        0.000    0.000   0
+ HDD      var_27   C4A    C3A    CMA    HMA1     -86.352   20.000   1
+ HDD      CONST_18 C4A    C3A    C2A    CAA      180.000    0.000   0
+ HDD      CONST_19 C3A    C2A    C1A    CHA      180.000    0.000   0
+ HDD      var_28   C3A    C2A    CAA    CBA       89.987   20.000   2
+ HDD      var_29   C2A    CAA    CBA    CGA     -179.981   20.000   3
+ HDD      var_30   CAA    CBA    CGA    O2A     -179.994   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ HDD      chir_01  C2D    C1D    C3D    CMD       positiv
+                   .      .      .      .      .
+ HDD      chir_02  C3D    C2D    C4D    CAD       positiv
+                   .      .      .      .      .
+ HDD      chir_03  FE     ND     NB     NC        cross5
+                   .      .      NA     .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HDD      plan-1    CHA       0.020
+ HDD      plan-1    C1A       0.020
+ HDD      plan-1    C4D       0.020
+ HDD      plan-1    HHA       0.020
+ HDD      plan-2    CHB       0.020
+ HDD      plan-2    C4A       0.020
+ HDD      plan-2    C1B       0.020
+ HDD      plan-2    HHB       0.020
+ HDD      plan-3    CHC       0.020
+ HDD      plan-3    C4B       0.020
+ HDD      plan-3    C1C       0.020
+ HDD      plan-3    HHC       0.020
+ HDD      plan-4    CHD       0.020
+ HDD      plan-4    C4C       0.020
+ HDD      plan-4    C1D       0.020
+ HDD      plan-4    HHD       0.020
+ HDD      plan-5    NA        0.020
+ HDD      plan-5    FE        0.020
+ HDD      plan-5    C1A       0.020
+ HDD      plan-5    C4A       0.020
+ HDD      plan-5    C2A       0.020
+ HDD      plan-5    C3A       0.020
+ HDD      plan-5    CHA       0.020
+ HDD      plan-5    CAA       0.020
+ HDD      plan-5    CMA       0.020
+ HDD      plan-5    CHB       0.020
+ HDD      plan-5    HHA       0.020
+ HDD      plan-5    HHB       0.020
+ HDD      plan-6    CGA       0.020
+ HDD      plan-6    CBA       0.020
+ HDD      plan-6    O1A       0.020
+ HDD      plan-6    O2A       0.020
+ HDD      plan-7    NB        0.020
+ HDD      plan-7    FE        0.020
+ HDD      plan-7    C1B       0.020
+ HDD      plan-7    C4B       0.020
+ HDD      plan-7    C2B       0.020
+ HDD      plan-7    C3B       0.020
+ HDD      plan-7    CHB       0.020
+ HDD      plan-7    CMB       0.020
+ HDD      plan-7    CAB       0.020
+ HDD      plan-7    CHC       0.020
+ HDD      plan-7    HHB       0.020
+ HDD      plan-7    HAB       0.020
+ HDD      plan-7    HHC       0.020
+ HDD      plan-8    CAB       0.020
+ HDD      plan-8    C3B       0.020
+ HDD      plan-8    CBB       0.020
+ HDD      plan-8    HAB       0.020
+ HDD      plan-8    HBB1      0.020
+ HDD      plan-8    HBB2      0.020
+ HDD      plan-9    NC        0.020
+ HDD      plan-9    FE        0.020
+ HDD      plan-9    C1C       0.020
+ HDD      plan-9    C4C       0.020
+ HDD      plan-9    C2C       0.020
+ HDD      plan-9    C3C       0.020
+ HDD      plan-9    CHC       0.020
+ HDD      plan-9    CMC       0.020
+ HDD      plan-9    CAC       0.020
+ HDD      plan-9    CHD       0.020
+ HDD      plan-9    HHC       0.020
+ HDD      plan-9    HAC       0.020
+ HDD      plan-9    HHD       0.020
+ HDD      plan-10   CAC       0.020
+ HDD      plan-10   C3C       0.020
+ HDD      plan-10   CBC       0.020
+ HDD      plan-10   HAC       0.020
+ HDD      plan-10   HBC1      0.020
+ HDD      plan-10   HBC2      0.020
+ HDD      plan-11   ND        0.020
+ HDD      plan-11   FE        0.020
+ HDD      plan-11   C1D       0.020
+ HDD      plan-11   C4D       0.020
+ HDD      plan-12   C1D       0.020
+ HDD      plan-12   CHD       0.020
+ HDD      plan-12   ND        0.020
+ HDD      plan-12   C2D       0.020
+ HDD      plan-12   HHD       0.020
+ HDD      plan-13   C4D       0.020
+ HDD      plan-13   CHA       0.020
+ HDD      plan-13   ND        0.020
+ HDD      plan-13   C3D       0.020
+ HDD      plan-13   HHA       0.020
+ HDD      plan-14   CGD       0.020
+ HDD      plan-14   CBD       0.020
+ HDD      plan-14   O1D       0.020
+ HDD      plan-14   O2D       0.020
+# ------------------------------------------------------

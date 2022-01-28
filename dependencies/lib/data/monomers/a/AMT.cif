@@ -1,0 +1,126 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AMT     AMT     2-AMINOTHIAZOLE     NON-POLYMER     10     6     .     
+#
+data_comp_AMT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AMT     S1      S       S2      0       -8.039      52.224      111.957     
+AMT     C2      C       CR5     0       -9.042      52.190      110.531     
+AMT     N3      N       NRD5    0       -9.834      53.229      110.386     
+AMT     C4      C       CR15    0       -9.639      54.114      111.431     
+AMT     C5      C       CR15    0       -8.735      53.751      112.353     
+AMT     N       N       NH2     0       -8.981      51.163      109.671     
+AMT     H4      H       H       0       -10.116     54.922      111.486     
+AMT     H5      H       H       0       -8.500      54.249      113.117     
+AMT     HN1     H       H       0       -8.438      50.502      109.820     
+AMT     HN2     H       H       0       -9.485      51.156      108.964     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AMT       S1        C2        SINGLE    n         1.744     0.010     1.744     0.010     
+AMT       S1        C5        SINGLE    n         1.723     0.010     1.723     0.010     
+AMT       C2        N3        DOUBLE    n         1.315     0.012     1.315     0.012     
+AMT       C2        N         SINGLE    n         1.340     0.015     1.340     0.015     
+AMT       N3        C4        SINGLE    n         1.382     0.010     1.382     0.010     
+AMT       C4        C5        DOUBLE    n         1.341     0.011     1.341     0.011     
+AMT       C4        H4        SINGLE    n         1.082     0.013     0.940     0.012     
+AMT       C5        H5        SINGLE    n         1.082     0.013     0.942     0.014     
+AMT       N         HN1       SINGLE    n         1.016     0.010     0.868     0.020     
+AMT       N         HN2       SINGLE    n         1.016     0.010     0.868     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AMT          C2          S1          C5      88.719    1.50
+AMT          S1          C2          N3     115.160    1.50
+AMT          S1          C2           N     120.784    1.50
+AMT          N3          C2           N     124.057    1.50
+AMT          C2          N3          C4     109.862    1.50
+AMT          N3          C4          C5     116.114    1.50
+AMT          N3          C4          H4     121.578    1.50
+AMT          C5          C4          H4     122.308    1.50
+AMT          S1          C5          C4     110.716    1.50
+AMT          S1          C5          H5     123.682    2.70
+AMT          C4          C5          H5     125.602    1.73
+AMT          C2           N         HN1     120.060    1.50
+AMT          C2           N         HN2     120.060    1.50
+AMT         HN1           N         HN2     119.880    2.21
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AMT             sp2_sp2_2           N          C2          N3          C4     180.000   10.00     2
+AMT             sp2_sp2_9          S1          C2           N         HN1     180.000   10.00     2
+AMT             sp2_sp2_3          C5          C4          N3          C2       0.000   10.00     2
+AMT             sp2_sp2_5          N3          C4          C5          S1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AMT    plan-1          C2   0.020
+AMT    plan-1           N   0.020
+AMT    plan-1          N3   0.020
+AMT    plan-1          S1   0.020
+AMT    plan-2          C4   0.020
+AMT    plan-2          C5   0.020
+AMT    plan-2          H4   0.020
+AMT    plan-2          N3   0.020
+AMT    plan-3          C4   0.020
+AMT    plan-3          C5   0.020
+AMT    plan-3          H5   0.020
+AMT    plan-3          S1   0.020
+AMT    plan-4          C2   0.020
+AMT    plan-4         HN1   0.020
+AMT    plan-4         HN2   0.020
+AMT    plan-4           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AMT SMILES           ACDLabs              10.04 n1ccsc1N
+AMT SMILES_CANONICAL CACTVS               3.341 Nc1sccn1
+AMT SMILES           CACTVS               3.341 Nc1sccn1
+AMT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1csc(n1)N"
+AMT SMILES           "OpenEye OEToolkits" 1.5.0 "c1csc(n1)N"
+AMT InChI            InChI                1.03  "InChI=1S/C3H4N2S/c4-3-5-1-2-6-3/h1-2H,(H2,4,5)"
+AMT InChIKey         InChI                1.03  RAIPHJJURHTUIC-UHFFFAOYSA-N
+AMT ?                acedrg               190         "dictionary generator"                  
+AMT ?                acedrg_database      11          "data source"                           
+AMT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AMT ?                refmac5              5.8.0158    "optimization tool"                     

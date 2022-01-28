@@ -1,0 +1,214 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3FG     3FG     "(2S)-amino(3,5-dihydroxyphenyl)ethanoicacid"     peptide     22     13     .     
+#
+data_comp_3FG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3FG     CG1     C       CR16    0       -0.112      -1.053      -0.035      
+3FG     CB      C       CR6     0       0.244       0.291       0.027       
+3FG     CG2     C       CR16    0       -0.746      1.252       -0.162      
+3FG     CD2     C       CR6     0       -2.065      0.877       -0.412      
+3FG     CZ      C       CR16    0       -2.417      -0.469      -0.474      
+3FG     CD1     C       CR6     0       -1.430      -1.432      -0.284      
+3FG     OD1     O       OH1     0       -1.757      -2.761      -0.342      
+3FG     OD2     O       OH1     0       -3.023      1.839       -0.596      
+3FG     CA      C       CH1     0       1.680       0.696       0.300       
+3FG     C       C       C       0       2.086       0.330       1.737       
+3FG     O       O       O       0       1.929       1.200       2.613       
+3FG     OXT     O       OC      -1      2.543       -0.812      1.926       
+3FG     N       N       NT3     1       2.633       0.086       -0.678      
+3FG     HG1     H       H       0       0.551       -1.714      0.092       
+3FG     HG2     H       H       0       -0.519      2.168       -0.122      
+3FG     HZ      H       H       0       -3.310      -0.724      -0.643      
+3FG     HD1     H       H       0       -2.314      -2.954      0.281       
+3FG     HD2     H       H       0       -2.836      2.311       -1.287      
+3FG     HA      H       H       0       1.753       1.665       0.224       
+3FG     H       H       H       0       2.695       -0.819      -0.534      
+3FG     H2      H       H       0       3.463       0.464       -0.575      
+3FG     H3      H       H       0       2.339       0.236       -1.534      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 3FG      N      n/a    CA     START
+ 3FG      H      N      .      .
+ 3FG      H2     N      .      .
+ 3FG      H3     N      .      .
+ 3FG      CA     N      C      .
+ 3FG      HA     CA     .      .
+ 3FG      CB     CA     CG2    .
+ 3FG      CG1    CB     HG1    .
+ 3FG      HG1    CG1    .      .
+ 3FG      CG2    CB     CD2    .
+ 3FG      HG2    CG2    .      .
+ 3FG      CD2    CG2    CZ     .
+ 3FG      OD2    CD2    HD2    .
+ 3FG      HD2    OD2    .      .
+ 3FG      CZ     CD2    CD1    .
+ 3FG      HZ     CZ     .      .
+ 3FG      CD1    CZ     OD1    .
+ 3FG      OD1    CD1    HD1    .
+ 3FG      HD1    OD1    .      .
+ 3FG      C      CA     .      END
+ 3FG      O      C      .      .
+ 3FG      OXT    C      .      .
+ 3FG      CD1    CG1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3FG       CG1       CB        DOUBLE    y         1.387     0.010     1.387     0.010     
+3FG       CB        CG2       SINGLE    y         1.387     0.010     1.387     0.010     
+3FG       CG2       CD2       DOUBLE    y         1.391     0.010     1.391     0.010     
+3FG       CD2       CZ        SINGLE    y         1.389     0.010     1.389     0.010     
+3FG       CZ        CD1       DOUBLE    y         1.389     0.010     1.389     0.010     
+3FG       CD1       OD1       SINGLE    n         1.370     0.010     1.370     0.010     
+3FG       CD2       OD2       SINGLE    n         1.370     0.010     1.370     0.010     
+3FG       CB        CA        SINGLE    n         1.516     0.010     1.516     0.010     
+3FG       CA        C         SINGLE    n         1.536     0.015     1.536     0.015     
+3FG       C         O         DOUBLE    n         1.244     0.020     1.244     0.020     
+3FG       C         OXT       SINGLE    n         1.244     0.020     1.244     0.020     
+3FG       CA        N         SINGLE    n         1.494     0.010     1.494     0.010     
+3FG       CG1       CD1       SINGLE    y         1.391     0.010     1.391     0.010     
+3FG       CG1       HG1       SINGLE    n         1.082     0.013     0.945     0.016     
+3FG       CG2       HG2       SINGLE    n         1.082     0.013     0.945     0.016     
+3FG       CZ        HZ        SINGLE    n         1.082     0.013     0.944     0.020     
+3FG       OD1       HD1       SINGLE    n         0.970     0.012     0.858     0.020     
+3FG       OD2       HD2       SINGLE    n         0.970     0.012     0.858     0.020     
+3FG       CA        HA        SINGLE    n         1.089     0.010     0.974     0.020     
+3FG       N         H         SINGLE    n         1.036     0.016     0.918     0.020     
+3FG       N         H2        SINGLE    n         1.036     0.016     0.918     0.020     
+3FG       N         H3        SINGLE    n         1.036     0.016     0.918     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3FG          CB         CG1         CD1     120.642    1.50
+3FG          CB         CG1         HG1     119.515    1.50
+3FG         CD1         CG1         HG1     119.844    1.50
+3FG         CG1          CB         CG2     118.453    1.50
+3FG         CG1          CB          CA     120.773    1.82
+3FG         CG2          CB          CA     120.773    1.82
+3FG          CB         CG2         CD2     120.642    1.50
+3FG          CB         CG2         HG2     119.515    1.50
+3FG         CD2         CG2         HG2     119.844    1.50
+3FG         CG2         CD2          CZ     120.590    1.50
+3FG         CG2         CD2         OD2     119.735    2.43
+3FG          CZ         CD2         OD2     119.675    2.39
+3FG         CD2          CZ         CD1     119.083    1.50
+3FG         CD2          CZ          HZ     120.458    1.50
+3FG         CD1          CZ          HZ     120.458    1.50
+3FG          CZ         CD1         OD1     119.675    2.39
+3FG          CZ         CD1         CG1     120.590    1.50
+3FG         OD1         CD1         CG1     119.735    2.43
+3FG         CD1         OD1         HD1     110.017    2.50
+3FG         CD2         OD2         HD2     110.017    2.50
+3FG          CB          CA           C     110.945    2.64
+3FG          CB          CA           N     111.953    1.50
+3FG          CB          CA          HA     108.649    1.50
+3FG           C          CA           N     109.935    2.65
+3FG           C          CA          HA     106.938    1.92
+3FG           N          CA          HA     108.128    1.50
+3FG          CA           C           O     117.211    1.75
+3FG          CA           C         OXT     117.211    1.75
+3FG           O           C         OXT     125.577    1.50
+3FG          CA           N           H     109.561    2.23
+3FG          CA           N          H2     109.561    2.23
+3FG          CA           N          H3     109.561    2.23
+3FG           H           N          H2     109.073    2.83
+3FG           H           N          H3     109.073    2.83
+3FG          H2           N          H3     109.073    2.83
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3FG       const_sp2_sp2_3          CA          CB         CG1         CD1     180.000   10.00     2
+3FG              const_23         OD1         CD1         CG1          CB     180.000   10.00     2
+3FG       const_sp2_sp2_7          CA          CB         CG2         CD2     180.000   10.00     2
+3FG             sp2_sp3_5         CG1          CB          CA           C     150.000   10.00     6
+3FG              const_11         OD2         CD2         CG2          CB     180.000   10.00     2
+3FG              const_15         OD2         CD2          CZ         CD1     180.000   10.00     2
+3FG              const_19         OD1         CD1          CZ         CD2     180.000   10.00     2
+3FG             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+3FG            sp2_sp3_12           O           C          CA           N     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+3FG    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3FG    plan-1          CA   0.020
+3FG    plan-1          CB   0.020
+3FG    plan-1         CD1   0.020
+3FG    plan-1         CD2   0.020
+3FG    plan-1         CG1   0.020
+3FG    plan-1         CG2   0.020
+3FG    plan-1          CZ   0.020
+3FG    plan-1         HG1   0.020
+3FG    plan-1         HG2   0.020
+3FG    plan-1          HZ   0.020
+3FG    plan-1         OD1   0.020
+3FG    plan-1         OD2   0.020
+3FG    plan-2           C   0.020
+3FG    plan-2          CA   0.020
+3FG    plan-2           O   0.020
+3FG    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3FG SMILES           ACDLabs              12.01 "O=C(O)C(c1cc(O)cc(O)c1)N"
+3FG SMILES_CANONICAL CACTVS               3.370 "N[C@H](C(O)=O)c1cc(O)cc(O)c1"
+3FG SMILES           CACTVS               3.370 "N[CH](C(O)=O)c1cc(O)cc(O)c1"
+3FG SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1c(cc(cc1O)O)[C@@H](C(=O)O)N"
+3FG SMILES           "OpenEye OEToolkits" 1.7.0 "c1c(cc(cc1O)O)C(C(=O)O)N"
+3FG InChI            InChI                1.03  "InChI=1S/C8H9NO4/c9-7(8(12)13)4-1-5(10)3-6(11)2-4/h1-3,7,10-11H,9H2,(H,12,13)/t7-/m0/s1"
+3FG InChIKey         InChI                1.03  HOOWCUZPEFNHDT-ZETCQYMHSA-N
+3FG ?                acedrg               196         "dictionary generator"                  
+3FG ?                acedrg_database      11          "data source"                           
+3FG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3FG ?                refmac5              5.8.0222    "optimization tool"                     

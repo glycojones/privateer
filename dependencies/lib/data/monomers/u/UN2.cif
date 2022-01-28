@@ -1,0 +1,179 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UN2     UN2     "2-AMINO-4,4-DIHYDROXYBUTANOIC"     peptide   18     9     .
+#
+data_comp_UN2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+UN2     N       N       NT3     1       -1.631      -1.214      1.060
+UN2     CA      C       CH1     0       -0.652      -0.141      0.734
+UN2     C       C       C       0       -1.412      1.147       0.394
+UN2     O       O       O       0       -2.323      1.063       -0.454
+UN2     CB      C       CH2     0       0.243       -0.578      -0.432
+UN2     CG      C       CH1     0       1.489       0.283       -0.603
+UN2     OD1     O       OH1     0       1.202       1.372       -1.470
+UN2     OD2     O       OH1     0       2.544       -0.520      -1.118
+UN2     OXT     O       OC      -1      -1.064      2.187       0.989
+UN2     H       H       H       0       -1.192      -1.975      1.300
+UN2     H2      H       H       0       -2.153      -1.391      0.334
+UN2     H3      H       H       0       -2.164      -0.953      1.751
+UN2     HA      H       H       0       -0.095      0.021       1.530
+UN2     HBC1    H       H       0       -0.282      -0.549      -1.259
+UN2     HBC2    H       H       0       0.515       -1.508      -0.284
+UN2     HGC1    H       H       0       1.771       0.646       0.277
+UN2     HD1     H       H       0       1.760       1.995       -1.331
+UN2     HDT     H       H       0       3.222       -0.032      -1.261
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+UN2      N      n/a    CA     START
+UN2      H      N      .      .
+UN2      H2     N      .      .
+UN2      H3     N      .      .
+UN2      CA     N      C      .
+UN2      HA     CA     .      .
+UN2      CB     CA     CG     .
+UN2      HBC1   CB     .      .
+UN2      HBC2   CB     .      .
+UN2      CG     CB     OD1    .
+UN2      HGC1   CG     .      .
+UN2      OD2    CG     HDT    .
+UN2      HDT    OD2    .      .
+UN2      OD1    CG     HD1    .
+UN2      HD1    OD1    .      .
+UN2      C      CA     .      END
+UN2      O      C      .      .
+UN2      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UN2       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+UN2       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+UN2       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+UN2       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+UN2       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+UN2       CB        CG        SINGLE    n         1.520     0.015     1.520     0.015     
+UN2       CG        OD1       SINGLE    n         1.421     0.017     1.421     0.017     
+UN2       CG        OD2       SINGLE    n         1.421     0.017     1.421     0.017     
+UN2       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+UN2       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+UN2       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+UN2       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+UN2       CB        HBC1      SINGLE    n         1.089     0.010     0.980     0.016     
+UN2       CB        HBC2      SINGLE    n         1.089     0.010     0.980     0.016     
+UN2       CG        HGC1      SINGLE    n         1.089     0.010     0.993     0.020     
+UN2       OD1       HD1       SINGLE    n         0.970     0.012     0.848     0.020     
+UN2       OD2       HDT       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+UN2          CA           N           H     110.062    1.93
+UN2          CA           N          H2     110.062    1.93
+UN2          CA           N          H3     110.062    1.93
+UN2           H           N          H2     109.028    2.41
+UN2           H           N          H3     109.028    2.41
+UN2          H2           N          H3     109.028    2.41
+UN2           N          CA           C     109.241    1.50
+UN2           N          CA          CB     110.245    1.51
+UN2           N          CA          HA     108.487    1.50
+UN2           C          CA          CB     110.728    2.07
+UN2           C          CA          HA     108.824    1.50
+UN2          CB          CA          HA     109.207    1.50
+UN2          CA           C           O     117.124    1.50
+UN2          CA           C         OXT     117.124    1.50
+UN2           O           C         OXT     125.752    1.50
+UN2          CA          CB          CG     111.094    2.85
+UN2          CA          CB        HBC1     108.567    1.50
+UN2          CA          CB        HBC2     108.567    1.50
+UN2          CG          CB        HBC1     108.875    1.50
+UN2          CG          CB        HBC2     108.875    1.50
+UN2        HBC1          CB        HBC2     107.715    1.50
+UN2          CB          CG         OD1     109.482    3.00
+UN2          CB          CG         OD2     109.482    3.00
+UN2          CB          CG        HGC1     109.778    2.07
+UN2         OD1          CG         OD2     111.904    1.92
+UN2         OD1          CG        HGC1     108.816    1.50
+UN2         OD2          CG        HGC1     108.816    1.50
+UN2          CG         OD1         HD1     109.233    2.58
+UN2          CG         OD2         HDT     109.233    2.58
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+UN2             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+UN2             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+UN2            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+UN2            sp3_sp3_19          CA          CB          CG         OD1     180.000   10.00     3
+UN2            sp3_sp3_28          CB          CG         OD1         HD1     180.000   10.00     3
+UN2            sp3_sp3_31          CB          CG         OD2         HDT     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+UN2    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+UN2    plan-1           C   0.020
+UN2    plan-1          CA   0.020
+UN2    plan-1           O   0.020
+UN2    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+UN2 SMILES           ACDLabs              10.04 "O=C(O)C(N)CC(O)O"
+UN2 SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CC(O)O)C(O)=O"
+UN2 SMILES           CACTVS               3.341 "N[CH](CC(O)O)C(O)=O"
+UN2 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)C(O)O"
+UN2 SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)C(O)O"
+UN2 InChI            InChI                1.03  "InChI=1S/C4H9NO4/c5-2(4(8)9)1-3(6)7/h2-3,6-7H,1,5H2,(H,8,9)/t2-/m0/s1"
+UN2 InChIKey         InChI                1.03  NVZWSDYYWDDQAN-REOHCLBHSA-N
+UN2 ?                acedrg               202         "dictionary generator"
+UN2 ?                acedrg_database      11          "data source"
+UN2 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+UN2 ?                refmac5              5.8.0222    "optimization tool"

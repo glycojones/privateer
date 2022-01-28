@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OSL     OSL      "(2R)-2-hydroxy-3-(sulfooxy)propanoic acid"     NON-POLYMER     15     11     .     
+#
+data_comp_OSL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OSL     C24     C       C       0       24.248      6.097       30.866      
+OSL     C25     C       CH1     0       23.525      7.409       30.536      
+OSL     C26     C       CH2     0       24.523      8.536       30.316      
+OSL     O66     O       O       0       24.351      5.788       32.071      
+OSL     O67     O       OH1     0       22.668      7.252       29.415      
+OSL     O68     O       O2      0       25.261      8.295       29.097      
+OSL     S69     S       S3      0       26.426      9.325       28.721      
+OSL     O70     O       O       0       25.797      10.625      28.636      
+OSL     O71     O       O       0       27.400      9.227       29.786      
+OSL     O72     O       OS      -1      26.925      8.851       27.449      
+OSL     O7      O       OC      -1      24.688      5.429       29.908      
+OSL     H25     H       H       0       22.967      7.652       31.315      
+OSL     H26     H       H       0       25.147      8.589       31.071      
+OSL     H26A    H       H       0       24.054      9.396       30.247      
+OSL     HO67    H       H       0       21.972      6.832       29.657      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OSL       C24       C25       SINGLE    n         1.533     0.010     1.533     0.010     
+OSL       C24       O66       DOUBLE    n         1.247     0.019     1.247     0.019     
+OSL       C24       O7        SINGLE    n         1.247     0.019     1.247     0.019     
+OSL       C25       C26       SINGLE    n         1.520     0.010     1.520     0.010     
+OSL       C25       O67       SINGLE    n         1.419     0.017     1.419     0.017     
+OSL       C26       O68       SINGLE    n         1.437     0.020     1.437     0.020     
+OSL       O68       S69       SINGLE    n         1.592     0.020     1.592     0.020     
+OSL       S69       O70       DOUBLE    n         1.446     0.016     1.446     0.016     
+OSL       S69       O71       DOUBLE    n         1.446     0.016     1.446     0.016     
+OSL       S69       O72       SINGLE    n         1.446     0.016     1.446     0.016     
+OSL       C25       H25       SINGLE    n         1.089     0.010     0.988     0.014     
+OSL       C26       H26       SINGLE    n         1.089     0.010     0.982     0.020     
+OSL       C26       H26A      SINGLE    n         1.089     0.010     0.982     0.020     
+OSL       O67       HO67      SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OSL         C25         C24         O66     117.227    1.50
+OSL         C25         C24          O7     117.227    1.50
+OSL         O66         C24          O7     125.546    1.50
+OSL         C24         C25         C26     111.511    2.91
+OSL         C24         C25         O67     111.343    1.72
+OSL         C24         C25         H25     108.330    1.50
+OSL         C26         C25         O67     111.584    1.50
+OSL         C26         C25         H25     108.282    1.50
+OSL         O67         C25         H25     108.675    1.50
+OSL         C25         C26         O68     109.482    3.00
+OSL         C25         C26         H26     110.652    1.50
+OSL         C25         C26        H26A     110.652    1.50
+OSL         O68         C26         H26     109.340    2.33
+OSL         O68         C26        H26A     109.340    2.33
+OSL         H26         C26        H26A     108.319    1.50
+OSL         C25         O67        HO67     108.894    3.00
+OSL         C26         O68         S69     116.432    1.50
+OSL         O68         S69         O70     105.233    2.47
+OSL         O68         S69         O71     105.233    2.47
+OSL         O68         S69         O72     105.233    2.47
+OSL         O70         S69         O71     113.532    1.50
+OSL         O70         S69         O72     113.532    1.50
+OSL         O71         S69         O72     113.532    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OSL             sp2_sp3_2         O66         C24         C25         C26     120.000   10.00     6
+OSL             sp3_sp3_1         C24         C25         C26         O68     180.000   10.00     3
+OSL            sp3_sp3_11         C24         C25         O67        HO67      60.000   10.00     3
+OSL            sp3_sp3_13         C25         C26         O68         S69     180.000   10.00     3
+OSL            sp3_sp3_16         C26         O68         S69         O70     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+OSL    chir_1    C25    O67    C24    C26    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OSL    plan-1         C24   0.020
+OSL    plan-1         C25   0.020
+OSL    plan-1         O66   0.020
+OSL    plan-1          O7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OSL SMILES           ACDLabs              12.01 "O=S(=O)(OCC(O)C(=O)O)O"
+OSL SMILES_CANONICAL CACTVS               3.370 "O[C@H](CO[S](O)(=O)=O)C(O)=O"
+OSL SMILES           CACTVS               3.370 "O[CH](CO[S](O)(=O)=O)C(O)=O"
+OSL SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C([C@H](C(=O)O)O)OS(=O)(=O)O"
+OSL SMILES           "OpenEye OEToolkits" 1.7.0 "C(C(C(=O)O)O)OS(=O)(=O)O"
+OSL InChI            InChI                1.03  "InChI=1S/C3H6O7S/c4-2(3(5)6)1-10-11(7,8)9/h2,4H,1H2,(H,5,6)(H,7,8,9)/t2-/m1/s1"
+OSL InChIKey         InChI                1.03  WBBSXOGBMVRPSH-UWTATZPHSA-N
+OSL ?                acedrg               202         "dictionary generator"                  
+OSL ?                acedrg_database      11          "data source"                           
+OSL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OSL ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,279 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DRM      DRM '"{[(1R,2S)-2-(2,4-DIOXO-3,4-DIHYDROP' non-polymer        34  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DRM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DRM           O2     O    O         0.000      0.000    0.000    0.000
+ DRM           C2     C    CR6       0.000     -0.763    0.557   -0.768
+ DRM           N3     N    NR16      0.000     -0.960    0.045   -1.995
+ DRM           H3     H    H         0.000     -0.462   -0.823   -2.280
+ DRM           C4     C    CR6       0.000     -1.801    0.650   -2.857
+ DRM           O4     O    O         0.000     -1.977    0.189   -3.970
+ DRM           C5     C    CR16      0.000     -2.478    1.827   -2.455
+ DRM           H5     H    H         0.000     -3.158    2.327   -3.134
+ DRM           C6     C    CR16      0.000     -2.264    2.317   -1.215
+ DRM           H6     H    H         0.000     -2.773    3.216   -0.891
+ DRM           N1     N    NR6       0.000     -1.402    1.672   -0.372
+ DRM           "C1'"  C    CH1       0.000     -1.171    2.204    0.974
+ DRM           "H1'"  H    H         0.000     -1.765    3.116    1.125
+ DRM           "C2'"  C    CH2       0.000      0.327    2.512    1.168
+ DRM           "H2'"  H    H         0.000      0.477    3.565    1.416
+ DRM           "H2''" H    H         0.000      0.894    2.267    0.268
+ DRM           "C3'"  C    CH2       0.000      0.810    1.633    2.338
+ DRM           "H3'1" H    H         0.000      1.527    2.156    2.974
+ DRM           "H3'2" H    H         0.000      1.250    0.695    1.991
+ DRM           "C4'"  C    CH2       0.000     -0.477    1.334    3.145
+ DRM           "H4'2" H    H         0.000     -0.767    2.161    3.797
+ DRM           "H4'1" H    H         0.000     -0.401    0.417    3.734
+ DRM           "C5'"  C    CH1       0.000     -1.542    1.150    2.036
+ DRM           "H5'"  H    H         0.000     -1.483    0.138    1.611
+ DRM           "O5'"  O    O2        0.000     -2.851    1.400    2.552
+ DRM           "C6'"  C    CH2       0.000     -3.328    0.162    3.084
+ DRM           "H6'1" H    H         0.000     -4.172    0.354    3.750
+ DRM           "H6'2" H    H         0.000     -2.528   -0.326    3.643
+ DRM           P      P    P         0.000     -3.863   -0.918    1.717
+ DRM           OP1    O    O         0.000     -4.834   -0.194    0.867
+ DRM           OP3    O    OH1       0.000     -2.585   -1.338    0.834
+ DRM           HOP3   H    H         0.000     -1.854   -1.822    1.241
+ DRM           OP2    O    OH1       0.000     -4.558   -2.239    2.319
+ DRM           HOP2   H    H         0.000     -4.900   -2.919    1.723
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DRM      O2     n/a    C2     START
+ DRM      C2     O2     N1     .
+ DRM      N3     C2     C4     .
+ DRM      H3     N3     .      .
+ DRM      C4     N3     C5     .
+ DRM      O4     C4     .      .
+ DRM      C5     C4     C6     .
+ DRM      H5     C5     .      .
+ DRM      C6     C5     H6     .
+ DRM      H6     C6     .      .
+ DRM      N1     C2     "C1'"  .
+ DRM      "C1'"  N1     "C5'"  .
+ DRM      "H1'"  "C1'"  .      .
+ DRM      "C2'"  "C1'"  "C3'"  .
+ DRM      "H2'"  "C2'"  .      .
+ DRM      "H2''" "C2'"  .      .
+ DRM      "C3'"  "C2'"  "C4'"  .
+ DRM      "H3'1" "C3'"  .      .
+ DRM      "H3'2" "C3'"  .      .
+ DRM      "C4'"  "C3'"  "H4'1" .
+ DRM      "H4'2" "C4'"  .      .
+ DRM      "H4'1" "C4'"  .      .
+ DRM      "C5'"  "C1'"  "O5'"  .
+ DRM      "H5'"  "C5'"  .      .
+ DRM      "O5'"  "C5'"  "C6'"  .
+ DRM      "C6'"  "O5'"  P      .
+ DRM      "H6'1" "C6'"  .      .
+ DRM      "H6'2" "C6'"  .      .
+ DRM      P      "C6'"  OP2    .
+ DRM      OP1    P      .      .
+ DRM      OP3    P      HOP3   .
+ DRM      HOP3   OP3    .      .
+ DRM      OP2    P      HOP2   .
+ DRM      HOP2   OP2    .      END
+ DRM      "C5'"  "C4'"  .    ADD
+ DRM      N1     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DRM       OP2       P         single    1.610     0.020     1.610     0.020     
+DRM       HOP2      OP2       single    0.970     0.012     0.839     0.014     
+DRM       OP1       P         double    1.480     0.020     1.480     0.020     
+DRM       OP3       P         single    1.610     0.020     1.610     0.020     
+DRM       P         "C6'"     single    1.812     0.020     1.812     0.020     
+DRM       HOP3      OP3       single    0.970     0.012     0.839     0.014     
+DRM       "C6'"     "O5'"     single    1.426     0.020     1.426     0.020     
+DRM       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+DRM       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+DRM       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+DRM       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+DRM       "C5'"     "C1'"     single    1.524     0.020     1.524     0.020     
+DRM       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+DRM       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+DRM       "H4'1"    "C4'"     single    1.089     0.010     0.989     0.005     
+DRM       "H4'2"    "C4'"     single    1.089     0.010     0.989     0.005     
+DRM       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+DRM       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+DRM       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+DRM       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+DRM       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+DRM       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+DRM       "C1'"     N1        single    1.465     0.020     1.465     0.020     
+DRM       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+DRM       N1        C6        single    1.337     0.020     1.337     0.020     
+DRM       N1        C2        single    1.410     0.020     1.410     0.020     
+DRM       C6        C5        double    1.390     0.020     1.390     0.020     
+DRM       H6        C6        single    1.082     0.013     0.975     0.010     
+DRM       C5        C4        single    1.390     0.020     1.390     0.020     
+DRM       H5        C5        single    1.082     0.013     0.975     0.010     
+DRM       O4        C4        double    1.250     0.020     1.250     0.020     
+DRM       C4        N3        single    1.337     0.020     1.337     0.020     
+DRM       N3        C2        single    1.337     0.020     1.337     0.020     
+DRM       H3        N3        single    1.016     0.010     0.899     0.007     
+DRM       C2        O2        double    1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DRM      O2     C2     N3      120.000    3.000
+ DRM      O2     C2     N1      120.000    3.000
+ DRM      N3     C2     N1      120.000    3.000
+ DRM      C2     N3     H3      120.000    3.000
+ DRM      C2     N3     C4      120.000    3.000
+ DRM      H3     N3     C4      120.000    3.000
+ DRM      N3     C4     O4      120.000    3.000
+ DRM      N3     C4     C5      120.000    3.000
+ DRM      O4     C4     C5      120.000    3.000
+ DRM      C4     C5     H5      120.000    3.000
+ DRM      C4     C5     C6      120.000    3.000
+ DRM      H5     C5     C6      120.000    3.000
+ DRM      C5     C6     H6      120.000    3.000
+ DRM      C5     C6     N1      120.000    3.000
+ DRM      H6     C6     N1      120.000    3.000
+ DRM      C2     N1     "C1'"   120.000    3.000
+ DRM      C2     N1     C6      120.000    3.000
+ DRM      "C1'"  N1     C6      120.000    3.000
+ DRM      N1     "C1'"  "H1'"   109.470    3.000
+ DRM      N1     "C1'"  "C2'"   109.470    3.000
+ DRM      N1     "C1'"  "C5'"   109.470    3.000
+ DRM      "H1'"  "C1'"  "C2'"   108.340    3.000
+ DRM      "H1'"  "C1'"  "C5'"   108.340    3.000
+ DRM      "C2'"  "C1'"  "C5'"   111.000    3.000
+ DRM      "C1'"  "C2'"  "H2'"   109.470    3.000
+ DRM      "C1'"  "C2'"  "H2''"  109.470    3.000
+ DRM      "C1'"  "C2'"  "C3'"   111.000    3.000
+ DRM      "H2'"  "C2'"  "H2''"  107.900    3.000
+ DRM      "H2'"  "C2'"  "C3'"   109.470    3.000
+ DRM      "H2''" "C2'"  "C3'"   109.470    3.000
+ DRM      "C2'"  "C3'"  "H3'1"  109.470    3.000
+ DRM      "C2'"  "C3'"  "H3'2"  109.470    3.000
+ DRM      "C2'"  "C3'"  "C4'"   111.000    3.000
+ DRM      "H3'1" "C3'"  "H3'2"  107.900    3.000
+ DRM      "H3'1" "C3'"  "C4'"   109.470    3.000
+ DRM      "H3'2" "C3'"  "C4'"   109.470    3.000
+ DRM      "C3'"  "C4'"  "H4'2"  109.470    3.000
+ DRM      "C3'"  "C4'"  "H4'1"  109.470    3.000
+ DRM      "C3'"  "C4'"  "C5'"   111.000    3.000
+ DRM      "H4'2" "C4'"  "H4'1"  107.900    3.000
+ DRM      "H4'2" "C4'"  "C5'"   109.470    3.000
+ DRM      "H4'1" "C4'"  "C5'"   109.470    3.000
+ DRM      "C1'"  "C5'"  "H5'"   108.340    3.000
+ DRM      "C1'"  "C5'"  "O5'"   109.470    3.000
+ DRM      "C1'"  "C5'"  "C4'"   111.000    3.000
+ DRM      "H5'"  "C5'"  "O5'"   109.470    3.000
+ DRM      "H5'"  "C5'"  "C4'"   108.340    3.000
+ DRM      "O5'"  "C5'"  "C4'"   109.470    3.000
+ DRM      "C5'"  "O5'"  "C6'"   111.800    3.000
+ DRM      "O5'"  "C6'"  "H6'1"  109.470    3.000
+ DRM      "O5'"  "C6'"  "H6'2"  109.470    3.000
+ DRM      "O5'"  "C6'"  P       109.500    3.000
+ DRM      "H6'1" "C6'"  "H6'2"  107.900    3.000
+ DRM      "H6'1" "C6'"  P       109.500    3.000
+ DRM      "H6'2" "C6'"  P       109.500    3.000
+ DRM      "C6'"  P      OP1     109.500    3.000
+ DRM      "C6'"  P      OP3     109.500    3.000
+ DRM      "C6'"  P      OP2     109.500    3.000
+ DRM      OP1    P      OP3     109.500    3.000
+ DRM      OP1    P      OP2     109.500    3.000
+ DRM      OP3    P      OP2     109.500    3.000
+ DRM      P      OP3    HOP3    120.000    3.000
+ DRM      P      OP2    HOP2    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DRM      CONST_1  O2     C2     N3     C4       180.000    0.000   0
+ DRM      CONST_2  C2     N3     C4     C5         0.000    0.000   0
+ DRM      CONST_3  N3     C4     C5     C6         0.000    0.000   0
+ DRM      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ DRM      CONST_5  O2     C2     N1     "C1'"      0.000    0.000   0
+ DRM      CONST_6  C2     N1     C6     C5         0.000    0.000   0
+ DRM      var_1    C2     N1     "C1'"  "C5'"    -58.834   20.000   1
+ DRM      var_2    N1     "C1'"  "C2'"  "C3'"   -120.000   20.000   3
+ DRM      var_3    "C1'"  "C2'"  "C3'"  "C4'"    -30.000   20.000   3
+ DRM      var_4    "C2'"  "C3'"  "C4'"  "C5'"     30.000   20.000   3
+ DRM      var_5    N1     "C1'"  "C5'"  "O5'"    -90.000   20.000   3
+ DRM      var_6    "C1'"  "C5'"  "C4'"  "C3'"    -30.000   20.000   3
+ DRM      var_7    "C1'"  "C5'"  "O5'"  "C6'"    157.318   20.000   1
+ DRM      var_8    "C5'"  "O5'"  "C6'"  P        -77.122   20.000   1
+ DRM      var_9    "O5'"  "C6'"  P      OP2     -173.450   20.000   1
+ DRM      var_10   "C6'"  P      OP3    HOP3      59.981   20.000   1
+ DRM      var_11   "C6'"  P      OP2    HOP2    -179.975   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DRM      chir_01  "C5'"  "O5'"  "C4'"  "C1'"     positiv
+ DRM      chir_02  "C1'"  "C5'"  "C2'"  N1        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DRM      plan-1    N1        0.020
+ DRM      plan-1    "C1'"     0.020
+ DRM      plan-1    C6        0.020
+ DRM      plan-1    C2        0.020
+ DRM      plan-1    C5        0.020
+ DRM      plan-1    C4        0.020
+ DRM      plan-1    N3        0.020
+ DRM      plan-1    H6        0.020
+ DRM      plan-1    H5        0.020
+ DRM      plan-1    O4        0.020
+ DRM      plan-1    H3        0.020
+ DRM      plan-1    O2        0.020
+# ------------------------------------------------------

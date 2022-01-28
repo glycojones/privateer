@@ -1,0 +1,252 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MAI      MAI 'DEOXO-METHYLARGININE                ' non-polymer        30  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MAI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MAI           OH     O    OH1       0.000      0.000    0.000    0.000
+ MAI           HO     H    H         0.000      0.025   -0.960    0.110
+ MAI           CF     C    CH1       0.000     -0.827    0.573    1.014
+ MAI           HF     H    H         0.000     -0.856    1.665    0.890
+ MAI           CJ     C    CH3       0.000     -0.254    0.233    2.391
+ MAI           HJ3    H    H         0.000     -0.866    0.658    3.144
+ MAI           HJ2    H    H         0.000     -0.225   -0.819    2.513
+ MAI           HJ1    H    H         0.000      0.728    0.623    2.473
+ MAI           CA     C    CH1       0.000     -2.244    0.009    0.896
+ MAI           HA     H    H         0.000     -2.214   -1.082    1.021
+ MAI           N      N    NH2       0.000     -3.094    0.598    1.939
+ MAI           HN2    H    H         0.000     -2.690    1.197    2.651
+ MAI           HN1A   H    H         0.000     -4.089    0.410    1.955
+ MAI           CB     C    CH2       0.000     -2.817    0.348   -0.480
+ MAI           HB1    H    H         0.000     -2.184   -0.090   -1.255
+ MAI           HB2    H    H         0.000     -2.843    1.433   -0.605
+ MAI           CG     C    CH2       0.000     -4.232   -0.215   -0.598
+ MAI           HG1    H    H         0.000     -4.863    0.224    0.178
+ MAI           HG2    H    H         0.000     -4.203   -1.299   -0.472
+ MAI           CD     C    CH2       0.000     -4.805    0.125   -1.974
+ MAI           HD1    H    H         0.000     -4.172   -0.314   -2.749
+ MAI           HD2    H    H         0.000     -4.832    1.209   -2.099
+ MAI           NE     N    NH1       0.000     -6.162   -0.414   -2.087
+ MAI           HNE    H    H         0.000     -6.570   -0.920   -1.314
+ MAI           CZ     C    C         0.000     -6.881   -0.232   -3.244
+ MAI           NH2    N    NH2       0.000     -8.154   -0.739   -3.351
+ MAI           HN22   H    H         0.000     -8.577   -1.251   -2.579
+ MAI           HN21   H    H         0.000     -8.697   -0.610   -4.203
+ MAI           NH1    N    N         0.000     -6.356    0.421   -4.241
+ MAI           HN1    H    H         0.000     -6.848    0.555   -5.057
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MAI      OH     n/a    CF     START
+ MAI      HO     OH     .      .
+ MAI      CF     OH     CA     .
+ MAI      HF     CF     .      .
+ MAI      CJ     CF     HJ1    .
+ MAI      HJ3    CJ     .      .
+ MAI      HJ2    CJ     .      .
+ MAI      HJ1    CJ     .      .
+ MAI      CA     CF     CB     .
+ MAI      HA     CA     .      .
+ MAI      N      CA     HN1A   .
+ MAI      HN2    N      .      .
+ MAI      HN1A   N      .      .
+ MAI      CB     CA     CG     .
+ MAI      HB1    CB     .      .
+ MAI      HB2    CB     .      .
+ MAI      CG     CB     CD     .
+ MAI      HG1    CG     .      .
+ MAI      HG2    CG     .      .
+ MAI      CD     CG     NE     .
+ MAI      HD1    CD     .      .
+ MAI      HD2    CD     .      .
+ MAI      NE     CD     CZ     .
+ MAI      HNE    NE     .      .
+ MAI      CZ     NE     NH1    .
+ MAI      NH2    CZ     HN21   .
+ MAI      HN22   NH2    .      .
+ MAI      HN21   NH2    .      .
+ MAI      NH1    CZ     HN1    .
+ MAI      HN1    NH1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MAI       N         CA        single    1.450     0.020     1.450     0.020     
+MAI       HN1A      N         single    1.036     0.016     0.914     0.007     
+MAI       HN2       N         single    1.036     0.016     0.914     0.007     
+MAI       CA        CF        single    1.524     0.020     1.524     0.020     
+MAI       CB        CA        single    1.524     0.020     1.524     0.020     
+MAI       HA        CA        single    1.089     0.010     0.989     0.005     
+MAI       CJ        CF        single    1.524     0.020     1.524     0.020     
+MAI       CF        OH        single    1.432     0.020     1.432     0.020     
+MAI       HF        CF        single    1.089     0.010     0.989     0.005     
+MAI       HJ1       CJ        single    1.089     0.010     0.989     0.005     
+MAI       HJ2       CJ        single    1.089     0.010     0.989     0.005     
+MAI       HJ3       CJ        single    1.089     0.010     0.989     0.005     
+MAI       CG        CB        single    1.524     0.020     1.524     0.020     
+MAI       HB1       CB        single    1.089     0.010     0.989     0.005     
+MAI       HB2       CB        single    1.089     0.010     0.989     0.005     
+MAI       CD        CG        single    1.524     0.020     1.524     0.020     
+MAI       HG1       CG        single    1.089     0.010     0.989     0.005     
+MAI       HG2       CG        single    1.089     0.010     0.989     0.005     
+MAI       NE        CD        single    1.450     0.020     1.450     0.020     
+MAI       HD1       CD        single    1.089     0.010     0.989     0.005     
+MAI       HD2       CD        single    1.089     0.010     0.989     0.005     
+MAI       CZ        NE        single    1.330     0.020     1.330     0.020     
+MAI       HNE       NE        single    1.016     0.010     0.899     0.007     
+MAI       NH1       CZ        double    1.260     0.020     1.260     0.020     
+MAI       NH2       CZ        single    1.332     0.020     1.332     0.020     
+MAI       HN1       NH1       single    1.016     0.010     0.899     0.007     
+MAI       HN21      NH2       single    1.016     0.010     0.899     0.007     
+MAI       HN22      NH2       single    1.016     0.010     0.899     0.007     
+MAI       HO        OH        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MAI      HO     OH     CF      109.470    3.000
+ MAI      OH     CF     HF      109.470    3.000
+ MAI      OH     CF     CJ      109.470    3.000
+ MAI      OH     CF     CA      109.470    3.000
+ MAI      HF     CF     CJ      108.340    3.000
+ MAI      HF     CF     CA      108.340    3.000
+ MAI      CJ     CF     CA      111.000    3.000
+ MAI      CF     CJ     HJ3     109.470    3.000
+ MAI      CF     CJ     HJ2     109.470    3.000
+ MAI      CF     CJ     HJ1     109.470    3.000
+ MAI      HJ3    CJ     HJ2     109.470    3.000
+ MAI      HJ3    CJ     HJ1     109.470    3.000
+ MAI      HJ2    CJ     HJ1     109.470    3.000
+ MAI      CF     CA     HA      108.340    3.000
+ MAI      CF     CA     N       109.470    3.000
+ MAI      CF     CA     CB      111.000    3.000
+ MAI      HA     CA     N       109.470    3.000
+ MAI      HA     CA     CB      108.340    3.000
+ MAI      N      CA     CB      109.470    3.000
+ MAI      CA     N      HN2     120.000    3.000
+ MAI      CA     N      HN1A    120.000    3.000
+ MAI      HN2    N      HN1A    120.000    3.000
+ MAI      CA     CB     HB1     109.470    3.000
+ MAI      CA     CB     HB2     109.470    3.000
+ MAI      CA     CB     CG      111.000    3.000
+ MAI      HB1    CB     HB2     107.900    3.000
+ MAI      HB1    CB     CG      109.470    3.000
+ MAI      HB2    CB     CG      109.470    3.000
+ MAI      CB     CG     HG1     109.470    3.000
+ MAI      CB     CG     HG2     109.470    3.000
+ MAI      CB     CG     CD      111.000    3.000
+ MAI      HG1    CG     HG2     107.900    3.000
+ MAI      HG1    CG     CD      109.470    3.000
+ MAI      HG2    CG     CD      109.470    3.000
+ MAI      CG     CD     HD1     109.470    3.000
+ MAI      CG     CD     HD2     109.470    3.000
+ MAI      CG     CD     NE      112.000    3.000
+ MAI      HD1    CD     HD2     107.900    3.000
+ MAI      HD1    CD     NE      109.470    3.000
+ MAI      HD2    CD     NE      109.470    3.000
+ MAI      CD     NE     HNE     118.500    3.000
+ MAI      CD     NE     CZ      121.500    3.000
+ MAI      HNE    NE     CZ      120.000    3.000
+ MAI      NE     CZ     NH2     120.000    3.000
+ MAI      NE     CZ     NH1     120.000    3.000
+ MAI      NH2    CZ     NH1     120.000    3.000
+ MAI      CZ     NH2    HN22    120.000    3.000
+ MAI      CZ     NH2    HN21    120.000    3.000
+ MAI      HN22   NH2    HN21    120.000    3.000
+ MAI      CZ     NH1    HN1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MAI      var_1    HO     OH     CF     CA       -60.004   20.000   1
+ MAI      var_2    OH     CF     CJ     HJ1       59.960   20.000   3
+ MAI      var_3    OH     CF     CA     CB       -59.967   20.000   3
+ MAI      var_4    CF     CA     N      HN1A     173.801   20.000   1
+ MAI      var_5    CF     CA     CB     CG      -179.965   20.000   3
+ MAI      var_6    CA     CB     CG     CD       180.000   20.000   3
+ MAI      var_7    CB     CG     CD     NE      -179.975   20.000   3
+ MAI      var_8    CG     CD     NE     CZ      -179.980   20.000   3
+ MAI      CONST_1  CD     NE     CZ     NH1        0.000    0.000   0
+ MAI      CONST_2  NE     CZ     NH2    HN21     180.000    0.000   0
+ MAI      CONST_3  NE     CZ     NH1    HN1      180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MAI      chir_01  CA     N      CF     CB        positiv
+ MAI      chir_02  CF     CA     CJ     OH        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MAI      plan-1    N         0.020
+ MAI      plan-1    CA        0.020
+ MAI      plan-1    HN1A      0.020
+ MAI      plan-1    HN2       0.020
+ MAI      plan-2    NE        0.020
+ MAI      plan-2    CD        0.020
+ MAI      plan-2    CZ        0.020
+ MAI      plan-2    HNE       0.020
+ MAI      plan-3    CZ        0.020
+ MAI      plan-3    NE        0.020
+ MAI      plan-3    NH1       0.020
+ MAI      plan-3    NH2       0.020
+ MAI      plan-3    HN1       0.020
+ MAI      plan-3    HNE       0.020
+ MAI      plan-3    HN22      0.020
+ MAI      plan-3    HN21      0.020
+ MAI      plan-4    NH2       0.020
+ MAI      plan-4    CZ        0.020
+ MAI      plan-4    HN21      0.020
+ MAI      plan-4    HN22      0.020
+# ------------------------------------------------------

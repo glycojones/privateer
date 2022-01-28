@@ -1,0 +1,250 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PRR     PRR     "3-(METHYL-PYRIDINIUM)ALANINE"     peptide  26     13     .
+#
+data_comp_PRR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PRR     N       N       NT3     1       16.795      -17.662     23.341
+PRR     CA      C       CH1     0       17.224      -18.190     24.666
+PRR     C       C       C       0       16.205      -19.222     25.164
+PRR     O       O       O       0       15.035      -18.827     25.341
+PRR     N1      N       NR6     1       20.915      -15.765     25.205
+PRR     C2      C       CR16    0       20.701      -14.489     24.782
+PRR     C3      C       CR16    0       19.408      -14.014     24.633
+PRR     C4      C       CR16    0       18.340      -14.839     24.901
+PRR     C5      C       CH2     0       17.393      -17.051     25.679
+PRR     C8      C       CR6     0       18.553      -16.144     25.360
+PRR     C9      C       CR16    0       19.865      -16.583     25.516
+PRR     C10     C       CH3     0       22.301      -16.268     25.327
+PRR     OXT     O       OC      -1      16.618      -20.383     25.356
+PRR     H       H       H       0       17.481      -17.212     22.946
+PRR     H2      H       H       0       16.088      -17.097     23.445
+PRR     H3      H       H       0       16.548      -18.349     22.794
+PRR     HA      H       H       0       18.096      -18.637     24.557
+PRR     HC2     H       H       0       21.435      -13.933     24.590
+PRR     CH3     H       H       0       19.263      -13.127     24.349
+PRR     HC4     H       H       0       17.463      -14.528     24.776
+PRR     H51     H       H       0       17.527      -17.435     26.567
+PRR     H52     H       H       0       16.570      -16.524     25.703
+PRR     HC9     H       H       0       20.035      -17.450     25.838
+PRR     H101    H       H       0       22.300      -17.166     25.696
+PRR     H102    H       H       0       22.806      -15.681     25.912
+PRR     H103    H       H       0       22.717      -16.282     24.450
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+PRR      N      n/a    CA     START
+PRR      H      N      .      .
+PRR      H2     N      .      .
+PRR      H3     N      .      .
+PRR      CA     N      C      .
+PRR      HA     CA     .      .
+PRR      C5     CA     C8     .
+PRR      H51    C5     .      .
+PRR      H52    C5     .      .
+PRR      C8     C5     C4     .
+PRR      C9     C8     N1     .
+PRR      HC9    C9     .      .
+PRR      N1     C9     C10    .
+PRR      C10    N1     H101   .
+PRR      H103   C10    .      .
+PRR      H102   C10    .      .
+PRR      H101   C10    .      .
+PRR      C4     C8     C3     .
+PRR      HC4    C4     .      .
+PRR      C3     C4     C2     .
+PRR      CH3    C3     .      .
+PRR      C2     C3     HC2    .
+PRR      HC2    C2     .      .
+PRR      C      CA     .      END
+PRR      O      C      .      .
+PRR      OXT    C      .      .
+PRR      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PRR       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+PRR       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+PRR       CA        C5        SINGLE    n         1.532     0.010     1.532     0.010     
+PRR       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+PRR       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+PRR       N1        C2        DOUBLE    n         1.350     0.020     1.350     0.020     
+PRR       N1        C9        SINGLE    n         1.350     0.020     1.350     0.020     
+PRR       N1        C10       SINGLE    n         1.475     0.015     1.475     0.015     
+PRR       C2        C3        SINGLE    n         1.378     0.015     1.378     0.015     
+PRR       C3        C4        DOUBLE    n         1.369     0.013     1.369     0.013     
+PRR       C4        C8        SINGLE    n         1.390     0.015     1.390     0.015     
+PRR       C5        C8        SINGLE    n         1.506     0.010     1.506     0.010     
+PRR       C8        C9        DOUBLE    n         1.381     0.020     1.381     0.020     
+PRR       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+PRR       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+PRR       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+PRR       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+PRR       C2        HC2       SINGLE    n         1.082     0.013     0.941     0.017     
+PRR       C3        CH3       SINGLE    n         1.082     0.013     0.942     0.017     
+PRR       C4        HC4       SINGLE    n         1.082     0.013     0.939     0.012     
+PRR       C5        H51       SINGLE    n         1.089     0.010     0.977     0.014     
+PRR       C5        H52       SINGLE    n         1.089     0.010     0.977     0.014     
+PRR       C9        HC9       SINGLE    n         1.082     0.013     0.941     0.017     
+PRR       C10       H101      SINGLE    n         1.089     0.010     0.971     0.015     
+PRR       C10       H102      SINGLE    n         1.089     0.010     0.971     0.015     
+PRR       C10       H103      SINGLE    n         1.089     0.010     0.971     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PRR          CA           N           H     109.853    1.85
+PRR          CA           N          H2     109.853    1.85
+PRR          CA           N          H3     109.853    1.85
+PRR           H           N          H2     109.028    2.41
+PRR           H           N          H3     109.028    2.41
+PRR          H2           N          H3     109.028    2.41
+PRR           N          CA           C     109.414    1.50
+PRR           N          CA          C5     110.327    1.50
+PRR           N          CA          HA     108.444    1.50
+PRR           C          CA          C5     111.500    2.27
+PRR           C          CA          HA     108.600    1.50
+PRR          C5          CA          HA     108.202    1.50
+PRR          CA           C           O     117.139    1.50
+PRR          CA           C         OXT     117.139    1.50
+PRR           O           C         OXT     125.721    1.50
+PRR          C2          N1          C9     121.210    1.50
+PRR          C2          N1         C10     119.741    1.50
+PRR          C9          N1         C10     119.049    1.50
+PRR          N1          C2          C3     120.122    1.50
+PRR          N1          C2         HC2     119.674    1.50
+PRR          C3          C2         HC2     120.205    1.50
+PRR          C2          C3          C4     119.517    1.50
+PRR          C2          C3         CH3     120.099    1.50
+PRR          C4          C3         CH3     120.384    1.50
+PRR          C3          C4          C8     119.847    1.50
+PRR          C3          C4         HC4     120.291    1.50
+PRR          C8          C4         HC4     119.862    1.50
+PRR          CA          C5          C8     111.448    2.41
+PRR          CA          C5         H51     108.744    1.50
+PRR          CA          C5         H52     108.744    1.50
+PRR          C8          C5         H51     108.898    1.50
+PRR          C8          C5         H52     108.898    1.50
+PRR         H51          C5         H52     107.742    1.50
+PRR          C4          C8          C5     120.800    1.50
+PRR          C4          C8          C9     118.338    1.50
+PRR          C5          C8          C9     120.862    1.58
+PRR          N1          C9          C8     120.966    1.50
+PRR          N1          C9         HC9     119.027    1.50
+PRR          C8          C9         HC9     120.007    1.91
+PRR          N1         C10        H101     109.533    1.50
+PRR          N1         C10        H102     109.533    1.50
+PRR          N1         C10        H103     109.533    1.50
+PRR        H101         C10        H102     109.428    1.50
+PRR        H101         C10        H103     109.428    1.50
+PRR        H102         C10        H103     109.428    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PRR             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+PRR             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+PRR            sp3_sp3_10          C8          C5          CA           N     180.000   10.00     3
+PRR            sp2_sp2_22          C8          C9          N1         C10     180.000   10.00     2
+PRR             sp2_sp3_7          C2          N1         C10        H101     150.000   10.00     6
+PRR             sp2_sp2_2          C3          C2          N1         C10     180.000   10.00     2
+PRR             sp2_sp2_5          N1          C2          C3          C4       0.000   10.00     2
+PRR             sp2_sp2_9          C2          C3          C4          C8       0.000   10.00     2
+PRR            sp2_sp2_14          C3          C4          C8          C5     180.000   10.00     2
+PRR            sp2_sp3_14          C4          C8          C5          CA     -90.000   10.00     6
+PRR            sp2_sp2_19          C5          C8          C9          N1     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PRR    chir_1    CA    N    C    C5    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PRR    plan-1           C   0.020
+PRR    plan-1          CA   0.020
+PRR    plan-1           O   0.020
+PRR    plan-1         OXT   0.020
+PRR    plan-2         C10   0.020
+PRR    plan-2          C2   0.020
+PRR    plan-2          C9   0.020
+PRR    plan-2          N1   0.020
+PRR    plan-3          C2   0.020
+PRR    plan-3          C3   0.020
+PRR    plan-3         HC2   0.020
+PRR    plan-3          N1   0.020
+PRR    plan-4          C2   0.020
+PRR    plan-4          C3   0.020
+PRR    plan-4          C4   0.020
+PRR    plan-4         CH3   0.020
+PRR    plan-5          C3   0.020
+PRR    plan-5          C4   0.020
+PRR    plan-5          C8   0.020
+PRR    plan-5         HC4   0.020
+PRR    plan-6          C4   0.020
+PRR    plan-6          C5   0.020
+PRR    plan-6          C8   0.020
+PRR    plan-6          C9   0.020
+PRR    plan-7          C8   0.020
+PRR    plan-7          C9   0.020
+PRR    plan-7         HC9   0.020
+PRR    plan-7          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PRR SMILES           ACDLabs              12.01 "O=C(O)C(N)Cc1ccc[n+](c1)C"
+PRR SMILES_CANONICAL CACTVS               3.370 "C[n+]1cccc(C[C@H](N)C(O)=O)c1"
+PRR SMILES           CACTVS               3.370 "C[n+]1cccc(C[CH](N)C(O)=O)c1"
+PRR SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C[n+]1cccc(c1)C[C@@H](C(=O)O)N"
+PRR SMILES           "OpenEye OEToolkits" 1.7.0 "C[n+]1cccc(c1)CC(C(=O)O)N"
+PRR InChI            InChI                1.03  "InChI=1S/C9H12N2O2/c1-11-4-2-3-7(6-11)5-8(10)9(12)13/h2-4,6,8H,5,10H2,1H3/p+1/t8-/m0/s1"
+PRR InChIKey         InChI                1.03  KGWLTLVMGZDZJW-QMMMGPOBSA-O
+PRR ?                acedrg               202         "dictionary generator"
+PRR ?                acedrg_database      11          "data source"
+PRR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PRR ?                refmac5              5.8.0222    "optimization tool"

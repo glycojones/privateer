@@ -1,0 +1,194 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CAB     CAB      4,4-dihydroxy-5-oxo-L-norvaline peptide    20     11     .     
+#
+data_comp_CAB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CAB     C1      C       C1      0       37.973      92.269      90.122      
+CAB     O1      O       O       0       37.234      92.040      91.028      
+CAB     C2      C       CT      0       37.956      91.482      88.811      
+CAB     C3      C       CH2     0       36.646      91.756      88.073      
+CAB     CA      C       CH1     0       36.474      90.988      86.756      
+CAB     N       N       NT3     1       37.518      91.380      85.766      
+CAB     O       O       O       0       34.267      90.323      86.165      
+CAB     C       C       C       0       35.083      91.267      86.170      
+CAB     OXT     O       OC      -1      34.868      92.418      85.741      
+CAB     O4      O       OH1     0       38.058      90.118      89.095      
+CAB     O5      O       OH1     0       39.015      91.903      88.003      
+CAB     H1      H       H       0       38.603      92.970      90.215      
+CAB     HC3     H       H       0       36.584      92.715      87.881      
+CAB     H3A     H       H       0       35.897      91.526      88.662      
+CAB     H4      H       H       0       36.556      90.022      86.929      
+CAB     H       H       H       0       37.250      91.167      84.920      
+CAB     H2      H       H       0       38.296      90.938      85.937      
+CAB     H3      H       H       0       37.672      92.277      85.806      
+CAB     H8      H       H       0       37.415      89.848      89.569      
+CAB     H9      H       H       0       38.981      92.731      87.845      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CAB      N      n/a    CA     START
+ CAB      H      N      .      .
+ CAB      H2     N      .      .
+ CAB      H3     N      .      .
+ CAB      CA     N      C      .
+ CAB      H4     CA     .      .
+ CAB      C3     CA     C2     .
+ CAB      HC3    C3     .      .
+ CAB      H3A    C3     .      .
+ CAB      C2     C3     C1     .
+ CAB      O5     C2     H9     .
+ CAB      H9     O5     .      .
+ CAB      O4     C2     H8     .
+ CAB      H8     O4     .      .
+ CAB      C1     C2     O1     .
+ CAB      H1     C1     .      .
+ CAB      O1     C1     .      .
+ CAB      C      CA     .      END
+ CAB      O      C      .      .
+ CAB      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CAB       C1        O1        DOUBLE    n         1.191     0.020     1.191     0.020     
+CAB       C1        C2        SINGLE    n         1.526     0.020     1.526     0.020     
+CAB       C2        O4        SINGLE    n         1.396     0.011     1.396     0.011     
+CAB       C2        O5        SINGLE    n         1.396     0.011     1.396     0.011     
+CAB       C2        C3        SINGLE    n         1.519     0.020     1.519     0.020     
+CAB       C3        CA        SINGLE    n         1.530     0.011     1.530     0.011     
+CAB       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+CAB       O         C         DOUBLE    n         1.247     0.019     1.247     0.019     
+CAB       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+CAB       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+CAB       C1        H1        SINGLE    n         1.082     0.013     0.947     0.020     
+CAB       C3        HC3       SINGLE    n         1.089     0.010     0.980     0.018     
+CAB       C3        H3A       SINGLE    n         1.089     0.010     0.980     0.018     
+CAB       CA        H4        SINGLE    n         1.089     0.010     0.985     0.020     
+CAB       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+CAB       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+CAB       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+CAB       O4        H8        SINGLE    n         0.970     0.012     0.841     0.020     
+CAB       O5        H9        SINGLE    n         0.970     0.012     0.841     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CAB          O1          C1          C2     123.123    3.00
+CAB          O1          C1          H1     118.746    1.50
+CAB          C2          C1          H1     118.130    2.53
+CAB          C1          C2          O4     110.427    2.31
+CAB          C1          C2          O5     110.427    2.31
+CAB          C1          C2          C3     111.511    2.91
+CAB          O4          C2          O5     111.904    1.92
+CAB          O4          C2          C3     109.482    3.00
+CAB          O5          C2          C3     109.482    3.00
+CAB          C2          C3          CA     111.094    2.85
+CAB          C2          C3         HC3     109.155    1.50
+CAB          C2          C3         H3A     109.155    1.50
+CAB          CA          C3         HC3     108.567    1.50
+CAB          CA          C3         H3A     108.567    1.50
+CAB         HC3          C3         H3A     107.715    1.50
+CAB          C3          CA           N     110.245    1.51
+CAB          C3          CA           C     110.728    2.07
+CAB          C3          CA          H4     109.207    1.50
+CAB           N          CA           C     109.241    1.50
+CAB           N          CA          H4     108.487    1.50
+CAB           C          CA          H4     108.824    1.50
+CAB          CA           N           H     110.062    1.93
+CAB          CA           N          H2     110.062    1.93
+CAB          CA           N          H3     110.062    1.93
+CAB           H           N          H2     109.028    2.41
+CAB           H           N          H3     109.028    2.41
+CAB          H2           N          H3     109.028    2.41
+CAB           O           C          CA     117.124    1.50
+CAB           O           C         OXT     125.752    1.50
+CAB          CA           C         OXT     117.124    1.50
+CAB          C2          O4          H8     111.266    2.03
+CAB          C2          O5          H9     111.266    2.03
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CAB             sp2_sp3_1          O1          C1          C2          O4       0.000   10.00     6
+CAB             sp3_sp3_4          C1          C2          O5          H9     180.000   10.00     3
+CAB             sp3_sp3_7          C1          C2          C3          CA     180.000   10.00     3
+CAB             sp3_sp3_1          C1          C2          O4          H8     180.000   10.00     3
+CAB            sp3_sp3_16          C2          C3          CA           N     180.000   10.00     3
+CAB            sp3_sp3_25          C3          CA           N           H     180.000   10.00     3
+CAB             sp2_sp3_7           O           C          CA          C3       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+CAB    chir_1    CA    N    C    C3    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CAB    plan-1          C1   0.020
+CAB    plan-1          C2   0.020
+CAB    plan-1          H1   0.020
+CAB    plan-1          O1   0.020
+CAB    plan-2           C   0.020
+CAB    plan-2          CA   0.020
+CAB    plan-2           O   0.020
+CAB    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CAB SMILES           ACDLabs              12.01 "O=CC(O)(O)CC(C(=O)O)N"
+CAB SMILES_CANONICAL CACTVS               3.370 "N[C@@H](CC(O)(O)C=O)C(O)=O"
+CAB SMILES           CACTVS               3.370 "N[CH](CC(O)(O)C=O)C(O)=O"
+CAB SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C([C@@H](C(=O)O)N)C(C=O)(O)O"
+CAB SMILES           "OpenEye OEToolkits" 1.7.0 "C(C(C(=O)O)N)C(C=O)(O)O"
+CAB InChI            InChI                1.03  "InChI=1S/C5H9NO5/c6-3(4(8)9)1-5(10,11)2-7/h2-3,10-11H,1,6H2,(H,8,9)/t3-/m0/s1"
+CAB InChIKey         InChI                1.03  NKTBKFGHLWDKLW-VKHMYHEASA-N
+CAB ?                acedrg               202         "dictionary generator"                  
+CAB ?                acedrg_database      11          "data source"                           
+CAB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CAB ?                refmac5              5.8.0222    "optimization tool"                     

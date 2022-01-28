@@ -1,0 +1,139 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+JKP     JKP      "2,6-dichloropyridine-4-carboxylic acid"     NON-POLYMER     13     11     .     
+#
+data_comp_JKP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+JKP     O01     O       OC      -1      2.807       0.913       -0.473      
+JKP     C02     C       C       0       2.199       -0.061      0.007       
+JKP     O03     O       O       0       2.752       -1.065      0.493       
+JKP     C04     C       CR6     0       0.701       -0.023      -0.001      
+JKP     C05     C       CR16    0       0.015       1.089       0.475       
+JKP     C06     C       CR6     0       -1.383      1.078       0.447       
+JKP     CL07    CL      CL      0       -2.277      2.449       1.033       
+JKP     N08     N       NRD6    0       -2.096      0.051       -0.014      
+JKP     C09     C       CR6     0       -1.434      -1.012      -0.469      
+JKP     CL10    CL      CL      0       -2.393      -2.335      -1.064      
+JKP     C11     C       CR16    0       -0.038      -1.097      -0.484      
+JKP     H051    H       H       0       0.492       1.837       0.811       
+JKP     H111    H       H       0       0.403       -1.869      -0.815      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+JKP       C06       CL07      SINGLE    n         1.739     0.0100    1.739     0.0100    
+JKP       C02       O03       DOUBLE    n         1.244     0.0200    1.244     0.0200    
+JKP       C05       C06       SINGLE    y         1.392     0.0132    1.392     0.0132    
+JKP       C04       C05       DOUBLE    y         1.387     0.0100    1.387     0.0100    
+JKP       C06       N08       DOUBLE    y         1.328     0.0100    1.328     0.0100    
+JKP       C02       C04       SINGLE    n         1.498     0.0200    1.498     0.0200    
+JKP       O01       C02       SINGLE    n         1.244     0.0200    1.244     0.0200    
+JKP       C04       C11       SINGLE    y         1.387     0.0100    1.387     0.0100    
+JKP       N08       C09       SINGLE    y         1.328     0.0100    1.328     0.0100    
+JKP       C09       C11       DOUBLE    y         1.392     0.0132    1.392     0.0132    
+JKP       C09       CL10      SINGLE    n         1.739     0.0100    1.739     0.0100    
+JKP       C05       H051      SINGLE    n         1.082     0.013     0.949     0.0200    
+JKP       C11       H111      SINGLE    n         1.082     0.013     0.949     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+JKP         O03         C02         C04     117.791    1.50
+JKP         O03         C02         O01     124.418    1.50
+JKP         C04         C02         O01     117.791    1.50
+JKP         C05         C04         C02     120.841    1.50
+JKP         C05         C04         C11     118.318    1.50
+JKP         C02         C04         C11     120.841    1.50
+JKP         C06         C05         C04     118.858    1.50
+JKP         C06         C05        H051     120.996    1.97
+JKP         C04         C05        H051     120.146    1.50
+JKP        CL07         C06         C05     120.049    1.50
+JKP        CL07         C06         N08     116.717    1.50
+JKP         C05         C06         N08     123.234    1.50
+JKP         C06         N08         C09     117.497    1.50
+JKP         N08         C09         C11     123.234    1.50
+JKP         N08         C09        CL10     116.717    1.50
+JKP         C11         C09        CL10     120.049    1.50
+JKP         C04         C11         C09     118.858    1.50
+JKP         C04         C11        H111     120.146    1.50
+JKP         C09         C11        H111     120.996    1.97
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+JKP             sp2_sp2_1         O03         C02         C04         C05     180.000   10.00     2
+JKP              const_19         C02         C04         C11         C09     180.000   10.00     2
+JKP       const_sp2_sp2_3         C02         C04         C05         C06     180.000   10.00     2
+JKP       const_sp2_sp2_6         C04         C05         C06        CL07     180.000   10.00     2
+JKP              const_10        CL07         C06         N08         C09     180.000   10.00     2
+JKP              const_12        CL10         C09         N08         C06     180.000   10.00     2
+JKP              const_15        CL10         C09         C11         C04     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+JKP    plan-1         C02   0.020
+JKP    plan-1         C04   0.020
+JKP    plan-1         C05   0.020
+JKP    plan-1         C06   0.020
+JKP    plan-1         C09   0.020
+JKP    plan-1         C11   0.020
+JKP    plan-1        CL07   0.020
+JKP    plan-1        CL10   0.020
+JKP    plan-1        H051   0.020
+JKP    plan-1        H111   0.020
+JKP    plan-1         N08   0.020
+JKP    plan-2         C02   0.020
+JKP    plan-2         C04   0.020
+JKP    plan-2         O01   0.020
+JKP    plan-2         O03   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+JKP           SMILES              ACDLabs 12.01                                         OC(c1cc(nc(c1)Cl)Cl)=O
+JKP            InChI                InChI  1.03 InChI=1S/C6H3Cl2NO2/c7-4-1-3(6(10)11)2-5(8)9-4/h1-2H,(H,10,11)
+JKP         InChIKey                InChI  1.03                                    SQSYNRCXIZHKAI-UHFFFAOYSA-N
+JKP SMILES_CANONICAL               CACTVS 3.385                                         OC(=O)c1cc(Cl)nc(Cl)c1
+JKP           SMILES               CACTVS 3.385                                         OC(=O)c1cc(Cl)nc(Cl)c1
+JKP SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                         c1c(cc(nc1Cl)Cl)C(=O)O
+JKP           SMILES "OpenEye OEToolkits" 2.0.6                                         c1c(cc(nc1Cl)Cl)C(=O)O
+JKP ?                acedrg               217         "dictionary generator"                  
+JKP ?                acedrg_database      11          "data source"                           
+JKP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+JKP ?                refmac5              5.8.0253    "optimization tool"                     

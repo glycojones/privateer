@@ -1,0 +1,132 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+F5B     F5B      1,2,3,4,5-pentafluorobenzene     NON-POLYMER     12     11     .     
+#
+data_comp_F5B
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+F5B     F6      F       F       0       28.236      7.733       2.230       
+F5B     C6      C       CR6     0       27.446      7.276       3.215       
+F5B     C1      C       CR6     0       26.902      6.021       3.081       
+F5B     F1      F       F       0       27.158      5.278       1.995       
+F5B     C5      C       CR16    0       27.204      8.065       4.318       
+F5B     C4      C       CR6     0       26.387      7.549       5.299       
+F5B     F4      F       F       0       26.118      8.276       6.395       
+F5B     C3      C       CR6     0       25.826      6.297       5.198       
+F5B     F3      F       F       0       25.035      5.822       6.169       
+F5B     C2      C       CR6     0       26.087      5.527       4.078       
+F5B     F2      F       F       0       25.548      4.302       3.963       
+F5B     H5      H       H       0       27.581      8.922       4.398       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+F5B       F6        C6        SINGLE    n         1.343     0.010     1.343     0.010     
+F5B       C6        C1        DOUBLE    y         1.367     0.010     1.367     0.010     
+F5B       C6        C5        SINGLE    y         1.369     0.010     1.369     0.010     
+F5B       C1        F1        SINGLE    n         1.340     0.010     1.340     0.010     
+F5B       C1        C2        SINGLE    y         1.371     0.010     1.371     0.010     
+F5B       C5        C4        DOUBLE    y         1.369     0.010     1.369     0.010     
+F5B       C4        F4        SINGLE    n         1.343     0.010     1.343     0.010     
+F5B       C4        C3        SINGLE    y         1.367     0.010     1.367     0.010     
+F5B       C3        F3        SINGLE    n         1.340     0.010     1.340     0.010     
+F5B       C3        C2        DOUBLE    y         1.375     0.010     1.375     0.010     
+F5B       C2        F2        SINGLE    n         1.343     0.010     1.343     0.010     
+F5B       C5        H5        SINGLE    n         1.082     0.013     0.940     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+F5B          F6          C6          C1     118.092    1.50
+F5B          F6          C6          C5     119.720    1.50
+F5B          C1          C6          C5     122.187    1.50
+F5B          C6          C1          F1     120.599    1.50
+F5B          C6          C1          C2     119.402    1.50
+F5B          F1          C1          C2     119.999    1.50
+F5B          C6          C5          C4     117.246    1.50
+F5B          C6          C5          H5     121.377    1.50
+F5B          C4          C5          H5     121.377    1.50
+F5B          C5          C4          F4     119.720    1.50
+F5B          C5          C4          C3     122.187    1.50
+F5B          F4          C4          C3     118.092    1.50
+F5B          C4          C3          F3     120.599    1.50
+F5B          C4          C3          C2     119.402    1.50
+F5B          F3          C3          C2     119.999    1.50
+F5B          C1          C2          C3     119.575    1.50
+F5B          C1          C2          F2     120.213    1.50
+F5B          C3          C2          F2     120.213    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+F5B       const_sp2_sp2_4          F1          C1          C6          F6       0.000   10.00     2
+F5B              const_22          C4          C5          C6          F6     180.000   10.00     2
+F5B       const_sp2_sp2_8          F1          C1          C2          F2       0.000   10.00     2
+F5B              const_19          F4          C4          C5          C6     180.000   10.00     2
+F5B              const_16          F3          C3          C4          F4       0.000   10.00     2
+F5B              const_12          F2          C2          C3          F3       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+F5B    plan-1          C1   0.020
+F5B    plan-1          C2   0.020
+F5B    plan-1          C3   0.020
+F5B    plan-1          C4   0.020
+F5B    plan-1          C5   0.020
+F5B    plan-1          C6   0.020
+F5B    plan-1          F1   0.020
+F5B    plan-1          F2   0.020
+F5B    plan-1          F3   0.020
+F5B    plan-1          F4   0.020
+F5B    plan-1          F6   0.020
+F5B    plan-1          H5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+F5B SMILES           ACDLabs              10.04 "Fc1cc(F)c(F)c(F)c1F"
+F5B SMILES_CANONICAL CACTVS               3.341 "Fc1cc(F)c(F)c(F)c1F"
+F5B SMILES           CACTVS               3.341 "Fc1cc(F)c(F)c(F)c1F"
+F5B SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(c(c(c(c1F)F)F)F)F"
+F5B SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(c(c(c(c1F)F)F)F)F"
+F5B InChI            InChI                1.03  "InChI=1S/C6HF5/c7-2-1-3(8)5(10)6(11)4(2)9/h1H"
+F5B InChIKey         InChI                1.03  WACNXHCZHTVBJM-UHFFFAOYSA-N
+F5B ?                acedrg               202         "dictionary generator"                  
+F5B ?                acedrg_database      11          "data source"                           
+F5B ?                rdkit                2017.03.2   "Chemoinformatics tool"
+F5B ?                refmac5              5.8.0189    "optimization tool"                     

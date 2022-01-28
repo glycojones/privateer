@@ -1,0 +1,199 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ONL     ONL     5-OXO-L-NORLEUCINE     peptide    21     10     .
+#
+data_comp_ONL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ONL     N       N       NT3     1       76.756      15.461      32.042
+ONL     CA      C       CH1     0       75.414      16.005      32.400
+ONL     C       C       C       0       74.843      16.804      31.220
+ONL     O       O       O       0       73.613      17.013      31.221
+ONL     OXT     O       OC      -1      75.645      17.191      30.345
+ONL     CB      C       CH2     0       75.484      16.856      33.673
+ONL     CG      C       CH2     0       76.500      17.992      33.632
+ONL     CD      C       C       0       76.550      18.803      34.892
+ONL     OD      O       O       0       77.020      18.351      35.911
+ONL     CE      C       CH3     0       75.997      20.180      34.831
+ONL     H       H       H       0       77.186      15.169      32.791
+ONL     H2      H       H       0       77.266      16.102      31.640
+ONL     H3      H       H       0       76.662      14.760      31.468
+ONL     HA      H       H       0       74.816      15.241      32.571
+ONL     HB1     H       H       0       75.702      16.267      34.426
+ONL     HB2     H       H       0       74.596      17.235      33.840
+ONL     HG1     H       H       0       76.286      18.587      32.882
+ONL     HG2     H       H       0       77.391      17.617      33.469
+ONL     HE1     H       H       0       75.994      20.571      35.720
+ONL     HE2     H       H       0       75.088      20.151      34.491
+ONL     HE3     H       H       0       76.543      20.724      34.242
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ONL      N      n/a    CA     START
+ONL      H      N      .      .
+ONL      H2     N      .      .
+ONL      H3     N      .      .
+ONL      CA     N      C      .
+ONL      HA     CA     .      .
+ONL      CB     CA     CG     .
+ONL      HB1    CB     .      .
+ONL      HB2    CB     .      .
+ONL      CG     CB     CD     .
+ONL      HG1    CG     .      .
+ONL      HG2    CG     .      .
+ONL      CD     CG     OD     .
+ONL      CE     CD     HE1    .
+ONL      HE3    CE     .      .
+ONL      HE2    CE     .      .
+ONL      HE1    CE     .      .
+ONL      OD     CD     .      .
+ONL      C      CA     .      END
+ONL      O      C      .      .
+ONL      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ONL       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+ONL       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+ONL       CA        CB        SINGLE    n         1.530     0.011     1.530     0.011     
+ONL       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+ONL       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+ONL       CB        CG        SINGLE    n         1.520     0.015     1.520     0.015     
+ONL       CG        CD        SINGLE    n         1.497     0.020     1.497     0.020     
+ONL       CD        OD        DOUBLE    n         1.209     0.020     1.209     0.020     
+ONL       CD        CE        SINGLE    n         1.483     0.020     1.483     0.020     
+ONL       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+ONL       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+ONL       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+ONL       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+ONL       CB        HB1       SINGLE    n         1.089     0.010     0.980     0.018     
+ONL       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.018     
+ONL       CG        HG1       SINGLE    n         1.089     0.010     0.981     0.019     
+ONL       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.019     
+ONL       CE        HE1       SINGLE    n         1.089     0.010     0.971     0.015     
+ONL       CE        HE2       SINGLE    n         1.089     0.010     0.971     0.015     
+ONL       CE        HE3       SINGLE    n         1.089     0.010     0.971     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ONL          CA           N           H     110.062    1.93
+ONL          CA           N          H2     110.062    1.93
+ONL          CA           N          H3     110.062    1.93
+ONL           H           N          H2     109.028    2.41
+ONL           H           N          H3     109.028    2.41
+ONL          H2           N          H3     109.028    2.41
+ONL           N          CA           C     109.241    1.50
+ONL           N          CA          CB     110.374    1.62
+ONL           N          CA          HA     108.487    1.50
+ONL           C          CA          CB     111.037    2.40
+ONL           C          CA          HA     108.824    1.50
+ONL          CB          CA          HA     108.967    1.50
+ONL          CA           C           O     117.124    1.50
+ONL          CA           C         OXT     117.124    1.50
+ONL           O           C         OXT     125.752    1.50
+ONL          CA          CB          CG     113.488    1.50
+ONL          CA          CB         HB1     108.549    1.50
+ONL          CA          CB         HB2     108.549    1.50
+ONL          CG          CB         HB1     108.915    1.50
+ONL          CG          CB         HB2     108.915    1.50
+ONL         HB1          CB         HB2     107.844    1.50
+ONL          CB          CG          CD     114.397    2.37
+ONL          CB          CG         HG1     108.844    1.50
+ONL          CB          CG         HG2     108.844    1.50
+ONL          CD          CG         HG1     108.742    1.50
+ONL          CD          CG         HG2     108.742    1.50
+ONL         HG1          CG         HG2     107.764    1.50
+ONL          CG          CD          OD     121.417    1.50
+ONL          CG          CD          CE     116.808    1.50
+ONL          OD          CD          CE     121.774    1.50
+ONL          CD          CE         HE1     109.690    1.50
+ONL          CD          CE         HE2     109.690    1.50
+ONL          CD          CE         HE3     109.690    1.50
+ONL         HE1          CE         HE2     109.400    1.50
+ONL         HE1          CE         HE3     109.400    1.50
+ONL         HE2          CE         HE3     109.400    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ONL             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+ONL             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+ONL            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+ONL            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+ONL             sp2_sp3_8          OD          CD          CG          CB     120.000   10.00     6
+ONL            sp2_sp3_13          CG          CD          CE         HE1       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ONL    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ONL    plan-1           C   0.020
+ONL    plan-1          CA   0.020
+ONL    plan-1           O   0.020
+ONL    plan-1         OXT   0.020
+ONL    plan-2          CD   0.020
+ONL    plan-2          CE   0.020
+ONL    plan-2          CG   0.020
+ONL    plan-2          OD   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ONL SMILES           ACDLabs              10.04 "O=C(CCC(N)C(=O)O)C"
+ONL SMILES_CANONICAL CACTVS               3.341 "CC(=O)CC[C@H](N)C(O)=O"
+ONL SMILES           CACTVS               3.341 "CC(=O)CC[CH](N)C(O)=O"
+ONL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)CC[C@@H](C(=O)O)N"
+ONL SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)CCC(C(=O)O)N"
+ONL InChI            InChI                1.03  "InChI=1S/C6H11NO3/c1-4(8)2-3-5(7)6(9)10/h5H,2-3,7H2,1H3,(H,9,10)/t5-/m0/s1"
+ONL InChIKey         InChI                1.03  KSIJECNNZVKMJG-YFKPBYRVSA-N
+ONL ?                acedrg               202         "dictionary generator"
+ONL ?                acedrg_database      11          "data source"
+ONL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ONL ?                refmac5              5.8.0222    "optimization tool"

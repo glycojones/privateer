@@ -1,0 +1,112 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XL3     XL3      propane-1-thiol     NON-POLYMER     12     4     .     
+#
+data_comp_XL3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+XL3     CA      C       CH3     0       7.141       -14.424     -1.400      
+XL3     CB      C       CH2     0       8.090       -15.263     -0.575      
+XL3     CC      C       CH2     0       9.283       -15.759     -1.380      
+XL3     SG      S       SH1     0       8.880       -17.053     -2.580      
+XL3     HA      H       H       0       6.413       -14.107     -0.836      
+XL3     HAA     H       H       0       6.777       -14.962     -2.125      
+XL3     HAB     H       H       0       7.618       -13.662     -1.771      
+XL3     HB      H       H       0       7.602       -16.042     -0.211      
+XL3     HBA     H       H       0       8.419       -14.726     0.187       
+XL3     HC      H       H       0       9.944       -16.146     -0.774      
+XL3     HCA     H       H       0       9.656       -15.017     -1.895      
+XL3     HSG     H       HSH1    0       7.709       -17.163     -2.327      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XL3       CA        CB        SINGLE    n         1.511     0.020     1.511     0.020     
+XL3       CB        CC        SINGLE    n         1.522     0.011     1.522     0.011     
+XL3       CC        SG        SINGLE    n         1.810     0.010     1.810     0.010     
+XL3       CA        HA        SINGLE    n         1.089     0.010     0.989     0.005     
+XL3       CA        HAA       SINGLE    n         1.089     0.010     0.989     0.005     
+XL3       CA        HAB       SINGLE    n         1.089     0.010     0.989     0.005     
+XL3       CB        HB        SINGLE    n         1.089     0.010     0.989     0.005     
+XL3       CB        HBA       SINGLE    n         1.089     0.010     0.989     0.005     
+XL3       CC        HC        SINGLE    n         1.089     0.010     0.989     0.005     
+XL3       CC        HCA       SINGLE    n         1.089     0.010     0.989     0.005     
+XL3       SG        HSG       SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+XL3          CB          CA          HA     109.543    1.50
+XL3          CB          CA         HAA     109.543    1.50
+XL3          CB          CA         HAB     109.543    1.50
+XL3          HA          CA         HAA     109.380    1.50
+XL3          HA          CA         HAB     109.380    1.50
+XL3         HAA          CA         HAB     109.380    1.50
+XL3          CA          CB          CC     112.468    2.09
+XL3          CA          CB          HB     109.107    1.50
+XL3          CA          CB         HBA     109.107    1.50
+XL3          CC          CB          HB     108.867    1.50
+XL3          CC          CB         HBA     108.867    1.50
+XL3          HB          CB         HBA     107.897    1.50
+XL3          CB          CC          SG     113.854    1.50
+XL3          CB          CC          HC     109.079    1.50
+XL3          CB          CC         HCA     109.079    1.50
+XL3          SG          CC          HC     105.353    2.82
+XL3          SG          CC         HCA     105.353    2.82
+XL3          HC          CC         HCA     111.425    1.71
+XL3          CC          SG         HSG      98.146    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+XL3             sp3_sp3_1          HA          CA          CB          CC     180.000   10.00     3
+XL3            sp3_sp3_10          CA          CB          CC          SG     180.000   10.00     3
+XL3            sp3_sp3_19          CB          CC          SG         HSG     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+XL3 SMILES           ACDLabs              10.04 SCCC
+XL3 SMILES_CANONICAL CACTVS               3.341 CCCS
+XL3 SMILES           CACTVS               3.341 CCCS
+XL3 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCCS
+XL3 SMILES           "OpenEye OEToolkits" 1.5.0 CCCS
+XL3 InChI            InChI                1.03  InChI=1S/C3H8S/c1-2-3-4/h4H,2-3H2,1H3
+XL3 InChIKey         InChI                1.03  SUVIGLJNEAMWEG-UHFFFAOYSA-N
+XL3 ?                acedrg               202         "dictionary generator"                  
+XL3 ?                acedrg_database      11          "data source"                           
+XL3 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+XL3 ?                refmac5              5.8.0189    "optimization tool"                     

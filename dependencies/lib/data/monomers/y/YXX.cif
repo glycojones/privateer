@@ -1,0 +1,421 @@
+global_
+_lib_name         mon_lib
+_lib_version      5.44
+_lib_update       30/05/14
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+YXX      YXX 'chloro(1-{5-[di(pyridin-2-yl-kappaN)' non-polymer        51  27 .
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_YXX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ YXX           CL     CL   CL        0.000    -29.153    7.236  -24.215
+ YXX           RU     RU   RU        0.000    -27.615    7.273  -25.992
+ YXX           NAU    N    NT        0.000    -26.923    5.731  -27.832
+ YXX           CAJ    C    CH2       0.000    -27.300    6.040  -29.109
+ YXX           H4     H    H         0.000    -26.885    7.036  -29.277
+ YXX           HAJ    H    H         0.000    -28.389    6.105  -29.058
+ YXX           CAF    C    C1        0.000    -26.914    5.158  -30.208
+ YXX           H3     H    H         0.000    -27.212    5.397  -31.215
+ YXX           CAH    C    C1        0.000    -26.183    4.040  -29.968
+ YXX           H2     H    H         0.000    -25.892    3.385  -30.772
+ YXX           NAV    N    NR6       0.000    -25.548    6.620  -25.274
+ YXX           CAK    C    CR16      0.000    -24.835    7.600  -24.617
+ YXX           H8     H    H         0.000    -25.271    8.582  -24.482
+ YXX           CAG    C    CR16      0.000    -23.546    7.335  -24.120
+ YXX           H7     H    H         0.000    -22.981    8.099  -23.601
+ YXX           CAI    C    CR16      0.000    -23.008    6.035  -24.320
+ YXX           H6     H    H         0.000    -22.018    5.800  -23.950
+ YXX           CAM    C    CR16      0.000    -23.770    5.028  -25.011
+ YXX           H5     H    H         0.000    -23.360    4.038  -25.169
+ YXX           CBB    C    CR6       0.000    -25.062    5.354  -25.480
+ YXX           NBF    N    N         0.000    -25.847    4.383  -26.168
+ YXX           CBA    C    CH1       0.000    -26.219    4.667  -27.554
+ YXX           HBA    H    H         0.000    -25.292    5.242  -27.688
+ YXX           CAL    C    C1        0.000    -25.814    3.759  -28.627
+ YXX           H1     H    H         0.000    -25.237    2.879  -28.400
+ YXX           CAR    C    CH2       0.000    -26.709    3.483  -25.403
+ YXX           H9     H    H         0.000    -27.214    2.882  -26.162
+ YXX           H10    H    H         0.000    -27.433    4.145  -24.923
+ YXX           CAP    C    CH2       0.000    -26.075    2.547  -24.337
+ YXX           H11    H    H         0.000    -26.762    2.602  -23.490
+ YXX           H12    H    H         0.000    -25.135    3.038  -24.075
+ YXX           CAN    C    CH2       0.000    -25.811    1.101  -24.679
+ YXX           H13    H    H         0.000    -25.125    0.767  -23.898
+ YXX           H14    H    H         0.000    -25.280    1.149  -25.632
+ YXX           CAO    C    CH2       0.000    -26.983    0.110  -24.793
+ YXX           H15    H    H         0.000    -27.044   -0.148  -25.852
+ YXX           H21    H    H         0.000    -27.872    0.676  -24.505
+ YXX           CAQ    C    CH2       0.000    -26.900   -1.148  -23.973
+ YXX           H16    H    H         0.000    -26.852   -0.767  -22.951
+ YXX           H22    H    H         0.000    -25.927   -1.556  -24.254
+ YXX           NBE    N    N         0.000    -27.920   -2.206  -24.057
+ YXX           CAY    C    C         0.000    -28.574   -2.828  -25.198
+ YXX           OAC    O    O         0.000    -28.149   -2.659  -26.318
+ YXX           CAT    C    CH2       0.000    -29.783   -3.695  -24.939
+ YXX           H17    H    H         0.000    -29.618   -4.732  -25.238
+ YXX           H18    H    H         0.000    -30.678   -3.313  -25.435
+ YXX           CBD    C    CH2       0.000    -29.966   -3.624  -23.443
+ YXX           H19    H    H         0.000    -29.749   -4.563  -22.930
+ YXX           H20    H    H         0.000    -30.951   -3.263  -23.138
+ YXX           CAZ    C    C         0.000    -28.916   -2.595  -23.082
+ YXX           OAD    O    O         0.000    -28.877   -2.098  -21.994
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ YXX      CL     n/a    RU     START
+ YXX      RU     CL     NAV    .
+ YXX      NAU    RU     CAJ    .
+ YXX      CAJ    NAU    CAF    .
+ YXX      H4     CAJ    .      .
+ YXX      HAJ    CAJ    .      .
+ YXX      CAF    CAJ    CAH    .
+ YXX      H3     CAF    .      .
+ YXX      CAH    CAF    H2     .
+ YXX      H2     CAH    .      .
+ YXX      NAV    RU     CBB    .
+ YXX      CAK    NAV    CAG    .
+ YXX      H8     CAK    .      .
+ YXX      CAG    CAK    CAI    .
+ YXX      H7     CAG    .      .
+ YXX      CAI    CAG    CAM    .
+ YXX      H6     CAI    .      .
+ YXX      CAM    CAI    H5     .
+ YXX      H5     CAM    .      .
+ YXX      CBB    NAV    NBF    .
+ YXX      NBF    CBB    CAR    .
+ YXX      CBA    NBF    CAL    .
+ YXX      HBA    CBA    .      .
+ YXX      CAL    CBA    H1     .
+ YXX      H1     CAL    .      .
+ YXX      CAR    NBF    CAP    .
+ YXX      H9     CAR    .      .
+ YXX      H10    CAR    .      .
+ YXX      CAP    CAR    CAN    .
+ YXX      H11    CAP    .      .
+ YXX      H12    CAP    .      .
+ YXX      CAN    CAP    CAO    .
+ YXX      H13    CAN    .      .
+ YXX      H14    CAN    .      .
+ YXX      CAO    CAN    CAQ    .
+ YXX      H15    CAO    .      .
+ YXX      H21    CAO    .      .
+ YXX      CAQ    CAO    NBE    .
+ YXX      H16    CAQ    .      .
+ YXX      H22    CAQ    .      .
+ YXX      NBE    CAQ    CAY    .
+ YXX      CAY    NBE    CAT    .
+ YXX      OAC    CAY    .      .
+ YXX      CAT    CAY    CBD    .
+ YXX      H17    CAT    .      .
+ YXX      H18    CAT    .      .
+ YXX      CBD    CAT    CAZ    .
+ YXX      H19    CBD    .      .
+ YXX      H20    CBD    .      .
+ YXX      CAZ    CBD    OAD    .
+ YXX      OAD    CAZ    .      END
+ YXX      CAL    CAH    .    ADD
+ YXX      NAU    CBA    .    ADD
+ YXX      CBB    CAM    .    ADD
+ YXX      NBE    CAZ    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+YXX       CAL       CAH       aromatic  1.330     0.020     1.330     0.020     
+YXX       CAL       CBA       single    1.510     0.020     1.510     0.020     
+YXX       H1        CAL       single    1.082     0.013     0.975     0.010     
+YXX       CAH       CAF       double    1.330     0.020     1.330     0.020     
+YXX       H2        CAH       single    1.082     0.013     0.975     0.010     
+YXX       CAF       CAJ       single    1.510     0.020     1.510     0.020     
+YXX       H3        CAF       single    1.082     0.013     0.975     0.010     
+YXX       CAJ       NAU       single    1.469     0.020     1.469     0.020     
+YXX       H4        CAJ       single    1.089     0.010     0.989     0.005     
+YXX       NAU       CBA       single    1.469     0.020     1.469     0.020     
+YXX       NAU       RU        single    2.498     0.020     2.498     0.020     
+YXX       CBA       NBF       single    1.455     0.020     1.455     0.020     
+YXX       NBF       CBB       single    1.400     0.020     1.400     0.020     
+YXX       CAR       NBF       single    1.455     0.020     1.455     0.020     
+YXX       CBB       CAM       aromatic  1.390     0.020     1.390     0.020     
+YXX       CBB       NAV       single    1.410     0.020     1.410     0.020     
+YXX       CAM       CAI       aromatic  1.390     0.020     1.390     0.020     
+YXX       H5        CAM       single    1.082     0.013     0.975     0.010     
+YXX       CAI       CAG       aromatic  1.390     0.020     1.390     0.020     
+YXX       H6        CAI       single    1.082     0.013     0.975     0.010     
+YXX       CAG       CAK       aromatic  1.390     0.020     1.390     0.020     
+YXX       H7        CAG       single    1.082     0.013     0.975     0.010     
+YXX       CAK       NAV       single    1.337     0.020     1.337     0.020     
+YXX       H8        CAK       single    1.082     0.013     0.975     0.010     
+YXX       NAV       RU        single    2.284     0.020     2.284     0.020     
+YXX       CAP       CAR       single    1.524     0.020     1.524     0.020     
+YXX       H9        CAR       single    1.089     0.010     0.989     0.005     
+YXX       H10       CAR       single    1.089     0.010     0.989     0.005     
+YXX       CAN       CAP       single    1.524     0.020     1.524     0.020     
+YXX       H11       CAP       single    1.089     0.010     0.989     0.005     
+YXX       H12       CAP       single    1.089     0.010     0.989     0.005     
+YXX       CAO       CAN       single    1.524     0.020     1.524     0.020     
+YXX       H13       CAN       single    1.089     0.010     0.989     0.005     
+YXX       H14       CAN       single    1.089     0.010     0.989     0.005     
+YXX       CAQ       CAO       single    1.524     0.020     1.524     0.020     
+YXX       H15       CAO       single    1.089     0.010     0.989     0.005     
+YXX       H21       CAO       single    1.089     0.010     0.989     0.005     
+YXX       NBE       CAQ       single    1.455     0.020     1.455     0.020     
+YXX       H16       CAQ       single    1.089     0.010     0.989     0.005     
+YXX       H22       CAQ       single    1.089     0.010     0.989     0.005     
+YXX       NBE       CAZ       single    1.330     0.020     1.330     0.020     
+YXX       CAY       NBE       single    1.330     0.020     1.330     0.020     
+YXX       OAD       CAZ       double    1.220     0.020     1.220     0.020     
+YXX       CAZ       CBD       single    1.510     0.020     1.510     0.020     
+YXX       OAC       CAY       double    1.220     0.020     1.220     0.020     
+YXX       CAT       CAY       single    1.510     0.020     1.510     0.020     
+YXX       CBD       CAT       single    1.524     0.020     1.524     0.020     
+YXX       H17       CAT       single    1.089     0.010     0.989     0.005     
+YXX       H18       CAT       single    1.089     0.010     0.989     0.005     
+YXX       H19       CBD       single    1.089     0.010     0.989     0.005     
+YXX       H20       CBD       single    1.089     0.010     0.989     0.005     
+YXX       RU        CL        single    2.350     0.020     2.350     0.020     
+YXX       HAJ       CAJ       single    1.089     0.010     0.989     0.005     
+YXX       HBA       CBA       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ YXX      CL     RU     NAU     136.745    3.000
+ YXX      CL     RU     NAV     110.493    3.000
+ YXX      NAU    RU     NAV      78.718    3.000
+ YXX      RU     NAU    CAJ     109.500    3.000
+ YXX      RU     NAU    CBA     109.500    3.000
+ YXX      CAJ    NAU    CBA     109.470    3.000
+ YXX      NAU    CAJ    H4      109.470    3.000
+ YXX      NAU    CAJ    HAJ     109.470    3.000
+ YXX      NAU    CAJ    CAF     109.500    3.000
+ YXX      H4     CAJ    HAJ     107.900    3.000
+ YXX      H4     CAJ    CAF     109.470    3.000
+ YXX      HAJ    CAJ    CAF     109.470    3.000
+ YXX      CAJ    CAF    H3      120.000    3.000
+ YXX      CAJ    CAF    CAH     120.000    3.000
+ YXX      H3     CAF    CAH     120.000    3.000
+ YXX      CAF    CAH    H2      120.000    3.000
+ YXX      CAF    CAH    CAL     120.000    3.000
+ YXX      H2     CAH    CAL     120.000    3.000
+ YXX      RU     NAV    CAK     120.000    3.000
+ YXX      RU     NAV    CBB     120.000    3.000
+ YXX      CAK    NAV    CBB     120.000    3.000
+ YXX      NAV    CAK    H8      120.000    3.000
+ YXX      NAV    CAK    CAG     120.000    3.000
+ YXX      H8     CAK    CAG     120.000    3.000
+ YXX      CAK    CAG    H7      120.000    3.000
+ YXX      CAK    CAG    CAI     120.000    3.000
+ YXX      H7     CAG    CAI     120.000    3.000
+ YXX      CAG    CAI    H6      120.000    3.000
+ YXX      CAG    CAI    CAM     120.000    3.000
+ YXX      H6     CAI    CAM     120.000    3.000
+ YXX      CAI    CAM    H5      120.000    3.000
+ YXX      CAI    CAM    CBB     120.000    3.000
+ YXX      H5     CAM    CBB     120.000    3.000
+ YXX      NAV    CBB    NBF     120.000    3.000
+ YXX      NAV    CBB    CAM     120.000    3.000
+ YXX      NBF    CBB    CAM     120.000    3.000
+ YXX      CBB    NBF    CBA     120.000    3.000
+ YXX      CBB    NBF    CAR     120.000    3.000
+ YXX      CBA    NBF    CAR     112.000    3.000
+ YXX      NBF    CBA    HBA     109.470    3.000
+ YXX      NBF    CBA    CAL     111.600    3.000
+ YXX      NBF    CBA    NAU     109.500    3.000
+ YXX      HBA    CBA    CAL     108.810    3.000
+ YXX      HBA    CBA    NAU     109.500    3.000
+ YXX      CAL    CBA    NAU     109.500    3.000
+ YXX      CBA    CAL    H1      120.000    3.000
+ YXX      CBA    CAL    CAH     120.000    3.000
+ YXX      H1     CAL    CAH     120.000    3.000
+ YXX      NBF    CAR    H9      109.470    3.000
+ YXX      NBF    CAR    H10     109.470    3.000
+ YXX      NBF    CAR    CAP     105.000    3.000
+ YXX      H9     CAR    H10     107.900    3.000
+ YXX      H9     CAR    CAP     109.470    3.000
+ YXX      H10    CAR    CAP     109.470    3.000
+ YXX      CAR    CAP    H11     109.470    3.000
+ YXX      CAR    CAP    H12     109.470    3.000
+ YXX      CAR    CAP    CAN     111.000    3.000
+ YXX      H11    CAP    H12     107.900    3.000
+ YXX      H11    CAP    CAN     109.470    3.000
+ YXX      H12    CAP    CAN     109.470    3.000
+ YXX      CAP    CAN    H13     109.470    3.000
+ YXX      CAP    CAN    H14     109.470    3.000
+ YXX      CAP    CAN    CAO     111.000    3.000
+ YXX      H13    CAN    H14     107.900    3.000
+ YXX      H13    CAN    CAO     109.470    3.000
+ YXX      H14    CAN    CAO     109.470    3.000
+ YXX      CAN    CAO    H15     109.470    3.000
+ YXX      CAN    CAO    H21     109.470    3.000
+ YXX      CAN    CAO    CAQ     111.000    3.000
+ YXX      H15    CAO    H21     107.900    3.000
+ YXX      H15    CAO    CAQ     109.470    3.000
+ YXX      H21    CAO    CAQ     109.470    3.000
+ YXX      CAO    CAQ    H16     109.470    3.000
+ YXX      CAO    CAQ    H22     109.470    3.000
+ YXX      CAO    CAQ    NBE     105.000    3.000
+ YXX      H16    CAQ    H22     107.900    3.000
+ YXX      H16    CAQ    NBE     109.470    3.000
+ YXX      H22    CAQ    NBE     109.470    3.000
+ YXX      CAQ    NBE    CAY     127.000    3.000
+ YXX      CAQ    NBE    CAZ     127.000    3.000
+ YXX      CAY    NBE    CAZ     120.000    3.000
+ YXX      NBE    CAY    OAC     123.000    3.000
+ YXX      NBE    CAY    CAT     116.500    3.000
+ YXX      OAC    CAY    CAT     120.500    3.000
+ YXX      CAY    CAT    H17     109.470    3.000
+ YXX      CAY    CAT    H18     109.470    3.000
+ YXX      CAY    CAT    CBD     109.470    3.000
+ YXX      H17    CAT    H18     107.900    3.000
+ YXX      H17    CAT    CBD     109.470    3.000
+ YXX      H18    CAT    CBD     109.470    3.000
+ YXX      CAT    CBD    H19     109.470    3.000
+ YXX      CAT    CBD    H20     109.470    3.000
+ YXX      CAT    CBD    CAZ     109.470    3.000
+ YXX      H19    CBD    H20     107.900    3.000
+ YXX      H19    CBD    CAZ     109.470    3.000
+ YXX      H20    CBD    CAZ     109.470    3.000
+ YXX      CBD    CAZ    OAD     120.500    3.000
+ YXX      CBD    CAZ    NBE     116.500    3.000
+ YXX      OAD    CAZ    NBE     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ YXX      var_1            CL     RU     NAU    CAJ              107.889           20.000   3
+ YXX      var_2            RU     NAU    CBA    NBF                0.301           20.000   3
+ YXX      var_3            RU     NAU    CAJ    CAF             -179.883           20.000   3
+ YXX      var_4            NAU    CAJ    CAF    CAH               -0.171           20.000   3
+ YXX      var_5            CAJ    CAF    CAH    CAL                0.166           20.000   3
+ YXX      var_6            CL     RU     NAV    CBB              100.408           20.000   3
+ YXX      CONST_1          RU     NAV    CAK    CAG                0.000            0.000   0
+ YXX      CONST_2          NAV    CAK    CAG    CAI                0.000            0.000   0
+ YXX      CONST_3          CAK    CAG    CAI    CAM                0.000            0.000   0
+ YXX      CONST_4          CAG    CAI    CAM    CBB                0.000            0.000   0
+ YXX      CONST_5          RU     NAV    CBB    NBF                0.000            0.000   0
+ YXX      CONST_6          NAV    CBB    CAM    CAI                0.000            0.000   0
+ YXX      var_7            NAV    CBB    NBF    CAR              -92.442           20.000   3
+ YXX      var_8            CBB    NBF    CBA    CAL                0.000           20.000   3
+ YXX      var_9            NBF    CBA    CAL    CAH              179.793           20.000   3
+ YXX      var_10           CBA    CAL    CAH    CAF               -0.200           20.000   3
+ YXX      var_11           CBB    NBF    CAR    CAP              -59.480           20.000   3
+ YXX      var_12           NBF    CAR    CAP    CAN              180.000           20.000   3
+ YXX      var_13           CAR    CAP    CAN    CAO              180.000           20.000   3
+ YXX      var_14           CAP    CAN    CAO    CAQ              180.000           20.000   3
+ YXX      var_15           CAN    CAO    CAQ    NBE              180.000           20.000   3
+ YXX      var_16           CAO    CAQ    NBE    CAY               45.035           20.000   3
+ YXX      var_17           CAQ    NBE    CAZ    CBD              180.000           20.000   2
+ YXX      var_18           CAQ    NBE    CAY    CAT              180.000           20.000   2
+ YXX      var_19           NBE    CAY    CAT    CBD              180.000           20.000   3
+ YXX      var_20           CAY    CAT    CBD    CAZ              180.000           20.000   3
+ YXX      var_21           CAT    CBD    CAZ    OAD              180.000           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ YXX      chir_01          NAU    CAJ    CBA    RU        negativ
+                   .      .      .      .      .
+ YXX      chir_02          CBA    CAL    NAU    NBF       negativ
+                   .      .      .      .      .
+ YXX      chir_03          RU     .      .      NAU       cross5
+                   NAV    CL     .      .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ YXX      plan-1            CAL       0.020
+ YXX      plan-1            CAH       0.020
+ YXX      plan-1            CBA       0.020
+ YXX      plan-1            H1        0.020
+ YXX      plan-1            H2        0.020
+ YXX      plan-2            CAH       0.020
+ YXX      plan-2            CAL       0.020
+ YXX      plan-2            CAF       0.020
+ YXX      plan-2            H2        0.020
+ YXX      plan-2            H1        0.020
+ YXX      plan-2            H3        0.020
+ YXX      plan-3            CAF       0.020
+ YXX      plan-3            CAH       0.020
+ YXX      plan-3            CAJ       0.020
+ YXX      plan-3            H3        0.020
+ YXX      plan-3            H2        0.020
+ YXX      plan-4            NBF       0.020
+ YXX      plan-4            CBA       0.020
+ YXX      plan-4            CBB       0.020
+ YXX      plan-4            CAR       0.020
+ YXX      plan-5            CBB       0.020
+ YXX      plan-5            NBF       0.020
+ YXX      plan-5            CAM       0.020
+ YXX      plan-5            NAV       0.020
+ YXX      plan-5            CAI       0.020
+ YXX      plan-5            CAG       0.020
+ YXX      plan-5            CAK       0.020
+ YXX      plan-5            H5        0.020
+ YXX      plan-5            H6        0.020
+ YXX      plan-5            H7        0.020
+ YXX      plan-5            H8        0.020
+ YXX      plan-5            RU        0.020
+ YXX      plan-6            NBE       0.020
+ YXX      plan-6            CAQ       0.020
+ YXX      plan-6            CAZ       0.020
+ YXX      plan-6            CAY       0.020
+ YXX      plan-7            CAZ       0.020
+ YXX      plan-7            NBE       0.020
+ YXX      plan-7            OAD       0.020
+ YXX      plan-7            CBD       0.020
+ YXX      plan-8            CAY       0.020
+ YXX      plan-8            NBE       0.020
+ YXX      plan-8            OAC       0.020
+ YXX      plan-8            CAT       0.020
+# ------------------------------------------------------
+# ------------------------------------------------------
+# ------------------------------------------------------

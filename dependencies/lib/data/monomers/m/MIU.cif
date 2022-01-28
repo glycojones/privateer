@@ -1,0 +1,480 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MIU      MIU 'N-{(1S)-1-{[4-(3-AMINOPROPYL)PIPERAZ' non-polymer        66  34 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MIU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MIU           O15    O    O         0.000      0.000    0.000    0.000
+ MIU           C14    C    C         0.000     -1.078    0.354    0.430
+ MIU           N26    N    N         0.000     -1.614    1.522    0.022
+ MIU           C31    C    CH2       0.000     -2.930    1.965    0.510
+ MIU           H311   H    H         0.000     -2.810    2.813    1.187
+ MIU           H312   H    H         0.000     -3.426    1.148    1.038
+ MIU           C30    C    CH2       0.000     -3.777    2.386   -0.696
+ MIU           H301   H    H         0.000     -4.732    2.783   -0.347
+ MIU           H302   H    H         0.000     -3.956    1.518   -1.334
+ MIU           N29    N    NT        0.000     -3.065    3.418   -1.459
+ MIU           C32    C    CH2       0.000     -3.938    3.791   -2.579
+ MIU           H321   H    H         0.000     -4.151    2.907   -3.184
+ MIU           H322   H    H         0.000     -3.437    4.540   -3.196
+ MIU           C33    C    CH2       0.000     -5.247    4.367   -2.037
+ MIU           H331   H    H         0.000     -5.026    5.188   -1.351
+ MIU           H332   H    H         0.000     -5.794    3.587   -1.504
+ MIU           C8     C    CH2       0.000     -6.097    4.886   -3.199
+ MIU           H8C1   H    H         0.000     -6.315    4.064   -3.884
+ MIU           H8C2   H    H         0.000     -5.548    5.666   -3.731
+ MIU           N9     N    NH2       0.000     -7.354    5.438   -2.677
+ MIU           H9N2   H    H         0.000     -8.238    4.991   -2.892
+ MIU           H9N1   H    H         0.000     -7.347    6.270   -2.099
+ MIU           C28    C    CH2       0.000     -1.874    2.790   -2.042
+ MIU           H281   H    H         0.000     -1.386    3.496   -2.718
+ MIU           H282   H    H         0.000     -2.171    1.900   -2.601
+ MIU           C27    C    CH2       0.000     -0.903    2.395   -0.926
+ MIU           H272   H    H         0.000     -0.550    3.288   -0.406
+ MIU           H271   H    H         0.000     -0.050    1.859   -1.346
+ MIU           C13    C    CH1       0.000     -1.817   -0.509    1.418
+ MIU           H13    H    H         0.000     -2.884   -0.536    1.156
+ MIU           C16    C    CH2       0.000     -1.652    0.070    2.825
+ MIU           H161   H    H         0.000     -2.205   -0.545    3.538
+ MIU           H162   H    H         0.000     -2.042    1.089    2.847
+ MIU           C17    C    CH2       0.000     -0.169    0.081    3.201
+ MIU           H171   H    H         0.000      0.368    0.765    2.541
+ MIU           H172   H    H         0.000      0.241   -0.925    3.092
+ MIU           C18    C    CH2       0.000     -0.015    0.542    4.652
+ MIU           H181   H    H         0.000     -0.554   -0.142    5.310
+ MIU           H182   H    H         0.000     -0.427    1.548    4.759
+ MIU           N19    N    N         0.000      1.405    0.553    5.013
+ MIU           C20    C    C         0.000      1.853   -0.270    5.918
+ MIU           N22    N    NH2       0.000      3.155   -0.175    6.349
+ MIU           H222   H    H         0.000      3.517   -0.812    7.056
+ MIU           H221   H    H         0.000      3.780    0.533    5.969
+ MIU           N21    N    NH2       0.000      1.024   -1.233    6.444
+ MIU           H212   H    H         0.000      0.058   -1.314    6.134
+ MIU           H211   H    H         0.000      1.362   -1.882    7.152
+ MIU           N12    N    NH1       0.000     -1.270   -1.869    1.383
+ MIU           H12    H    H         0.000     -0.282   -2.012    1.233
+ MIU           S11    S    ST        0.000     -2.274   -3.169    1.589
+ MIU           O24    O    OS        0.000     -1.458   -4.319    1.405
+ MIU           O25    O    OS        0.000     -3.043   -2.885    2.749
+ MIU           C1     C    CR6       0.000     -3.415   -3.173    0.246
+ MIU           C10    C    CR16      0.000     -4.616   -2.498    0.359
+ MIU           H10    H    H         0.000     -4.858   -1.971    1.273
+ MIU           C5     C    CR6       0.000     -5.509   -2.497   -0.696
+ MIU           C6     C    CT        0.000     -6.817   -1.757   -0.576
+ MIU           F6     F    F         0.000     -6.565   -0.399   -0.348
+ MIU           F1     F    F         0.000     -7.552   -2.280    0.493
+ MIU           F61    F    F         0.000     -7.547   -1.903   -1.760
+ MIU           C4     C    CR16      0.000     -5.206   -3.178   -1.860
+ MIU           H4     H    H         0.000     -5.908   -3.180   -2.685
+ MIU           C3     C    CR16      0.000     -4.006   -3.856   -1.971
+ MIU           H3     H    H         0.000     -3.768   -4.389   -2.883
+ MIU           C2     C    CR16      0.000     -3.111   -3.854   -0.918
+ MIU           H2     H    H         0.000     -2.172   -4.386   -1.005
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MIU      O15    n/a    C14    START
+ MIU      C14    O15    C13    .
+ MIU      N26    C14    C31    .
+ MIU      C31    N26    C30    .
+ MIU      H311   C31    .      .
+ MIU      H312   C31    .      .
+ MIU      C30    C31    N29    .
+ MIU      H301   C30    .      .
+ MIU      H302   C30    .      .
+ MIU      N29    C30    C28    .
+ MIU      C32    N29    C33    .
+ MIU      H321   C32    .      .
+ MIU      H322   C32    .      .
+ MIU      C33    C32    C8     .
+ MIU      H331   C33    .      .
+ MIU      H332   C33    .      .
+ MIU      C8     C33    N9     .
+ MIU      H8C1   C8     .      .
+ MIU      H8C2   C8     .      .
+ MIU      N9     C8     H9N1   .
+ MIU      H9N2   N9     .      .
+ MIU      H9N1   N9     .      .
+ MIU      C28    N29    C27    .
+ MIU      H281   C28    .      .
+ MIU      H282   C28    .      .
+ MIU      C27    C28    H271   .
+ MIU      H272   C27    .      .
+ MIU      H271   C27    .      .
+ MIU      C13    C14    N12    .
+ MIU      H13    C13    .      .
+ MIU      C16    C13    C17    .
+ MIU      H161   C16    .      .
+ MIU      H162   C16    .      .
+ MIU      C17    C16    C18    .
+ MIU      H171   C17    .      .
+ MIU      H172   C17    .      .
+ MIU      C18    C17    N19    .
+ MIU      H181   C18    .      .
+ MIU      H182   C18    .      .
+ MIU      N19    C18    C20    .
+ MIU      C20    N19    N21    .
+ MIU      N22    C20    H221   .
+ MIU      H222   N22    .      .
+ MIU      H221   N22    .      .
+ MIU      N21    C20    H211   .
+ MIU      H212   N21    .      .
+ MIU      H211   N21    .      .
+ MIU      N12    C13    S11    .
+ MIU      H12    N12    .      .
+ MIU      S11    N12    C1     .
+ MIU      O24    S11    .      .
+ MIU      O25    S11    .      .
+ MIU      C1     S11    C10    .
+ MIU      C10    C1     C5     .
+ MIU      H10    C10    .      .
+ MIU      C5     C10    C4     .
+ MIU      C6     C5     F61    .
+ MIU      F6     C6     .      .
+ MIU      F1     C6     .      .
+ MIU      F61    C6     .      .
+ MIU      C4     C5     C3     .
+ MIU      H4     C4     .      .
+ MIU      C3     C4     C2     .
+ MIU      H3     C3     .      .
+ MIU      C2     C3     H2     .
+ MIU      H2     C2     .      END
+ MIU      C1     C2     .    ADD
+ MIU      N26    C27    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MIU       C1        S11       single    1.595     0.020     1.595     0.020     
+MIU       C1        C2        double    1.390     0.020     1.390     0.020     
+MIU       C10       C1        single    1.390     0.020     1.390     0.020     
+MIU       S11       N12       single    1.600     0.020     1.600     0.020     
+MIU       O24       S11       double    1.436     0.020     1.436     0.020     
+MIU       O25       S11       double    1.436     0.020     1.436     0.020     
+MIU       N12       C13       single    1.450     0.020     1.450     0.020     
+MIU       H12       N12       single    1.036     0.016     0.914     0.007     
+MIU       C13       C14       single    1.500     0.020     1.500     0.020     
+MIU       C16       C13       single    1.524     0.020     1.524     0.020     
+MIU       H13       C13       single    1.089     0.010     0.989     0.005     
+MIU       C2        C3        single    1.390     0.020     1.390     0.020     
+MIU       H2        C2        single    1.082     0.013     0.975     0.010     
+MIU       C3        C4        double    1.390     0.020     1.390     0.020     
+MIU       H3        C3        single    1.082     0.013     0.975     0.010     
+MIU       C4        C5        single    1.390     0.020     1.390     0.020     
+MIU       H4        C4        single    1.082     0.013     0.975     0.010     
+MIU       C6        C5        single    1.500     0.020     1.500     0.020     
+MIU       C5        C10       double    1.390     0.020     1.390     0.020     
+MIU       F61       C6        single    1.320     0.020     1.320     0.020     
+MIU       F1        C6        single    1.320     0.020     1.320     0.020     
+MIU       F6        C6        single    1.320     0.020     1.320     0.020     
+MIU       H10       C10       single    1.082     0.013     0.975     0.010     
+MIU       C14       O15       double    1.220     0.020     1.220     0.020     
+MIU       N26       C14       single    1.330     0.020     1.330     0.020     
+MIU       N26       C27       single    1.455     0.020     1.455     0.020     
+MIU       C31       N26       single    1.455     0.020     1.455     0.020     
+MIU       C27       C28       single    1.524     0.020     1.524     0.020     
+MIU       H271      C27       single    1.089     0.010     0.989     0.005     
+MIU       H272      C27       single    1.089     0.010     0.989     0.005     
+MIU       C28       N29       single    1.469     0.020     1.469     0.020     
+MIU       H281      C28       single    1.089     0.010     0.989     0.005     
+MIU       H282      C28       single    1.089     0.010     0.989     0.005     
+MIU       N29       C30       single    1.469     0.020     1.469     0.020     
+MIU       C32       N29       single    1.469     0.020     1.469     0.020     
+MIU       C30       C31       single    1.524     0.020     1.524     0.020     
+MIU       H301      C30       single    1.089     0.010     0.989     0.005     
+MIU       H302      C30       single    1.089     0.010     0.989     0.005     
+MIU       H311      C31       single    1.089     0.010     0.989     0.005     
+MIU       H312      C31       single    1.089     0.010     0.989     0.005     
+MIU       C33       C32       single    1.524     0.020     1.524     0.020     
+MIU       H321      C32       single    1.089     0.010     0.989     0.005     
+MIU       H322      C32       single    1.089     0.010     0.989     0.005     
+MIU       C17       C16       single    1.524     0.020     1.524     0.020     
+MIU       H161      C16       single    1.089     0.010     0.989     0.005     
+MIU       H162      C16       single    1.089     0.010     0.989     0.005     
+MIU       C18       C17       single    1.524     0.020     1.524     0.020     
+MIU       H171      C17       single    1.089     0.010     0.989     0.005     
+MIU       H172      C17       single    1.089     0.010     0.989     0.005     
+MIU       N19       C18       single    1.455     0.020     1.455     0.020     
+MIU       H181      C18       single    1.089     0.010     0.989     0.005     
+MIU       H182      C18       single    1.089     0.010     0.989     0.005     
+MIU       C20       N19       double    1.260     0.020     1.260     0.020     
+MIU       N21       C20       single    1.332     0.020     1.332     0.020     
+MIU       N22       C20       single    1.332     0.020     1.332     0.020     
+MIU       H211      N21       single    1.016     0.010     0.899     0.007     
+MIU       H212      N21       single    1.016     0.010     0.899     0.007     
+MIU       H221      N22       single    1.016     0.010     0.899     0.007     
+MIU       H222      N22       single    1.016     0.010     0.899     0.007     
+MIU       C8        C33       single    1.524     0.020     1.524     0.020     
+MIU       H331      C33       single    1.089     0.010     0.989     0.005     
+MIU       H332      C33       single    1.089     0.010     0.989     0.005     
+MIU       N9        C8        single    1.450     0.020     1.450     0.020     
+MIU       H8C1      C8        single    1.089     0.010     0.989     0.005     
+MIU       H8C2      C8        single    1.089     0.010     0.989     0.005     
+MIU       H9N1      N9        single    1.036     0.016     0.914     0.007     
+MIU       H9N2      N9        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MIU      O15    C14    N26     123.000    3.000
+ MIU      O15    C14    C13     120.500    3.000
+ MIU      N26    C14    C13     116.500    3.000
+ MIU      C14    N26    C31     127.000    3.000
+ MIU      C14    N26    C27     127.000    3.000
+ MIU      C31    N26    C27     120.000    3.000
+ MIU      N26    C31    H311    109.470    3.000
+ MIU      N26    C31    H312    109.470    3.000
+ MIU      N26    C31    C30     105.000    3.000
+ MIU      H311   C31    H312    107.900    3.000
+ MIU      H311   C31    C30     109.470    3.000
+ MIU      H312   C31    C30     109.470    3.000
+ MIU      C31    C30    H301    109.470    3.000
+ MIU      C31    C30    H302    109.470    3.000
+ MIU      C31    C30    N29     109.470    3.000
+ MIU      H301   C30    H302    107.900    3.000
+ MIU      H301   C30    N29     109.470    3.000
+ MIU      H302   C30    N29     109.470    3.000
+ MIU      C30    N29    C32     109.470    3.000
+ MIU      C30    N29    C28     109.470    3.000
+ MIU      C32    N29    C28     109.470    3.000
+ MIU      N29    C32    H321    109.470    3.000
+ MIU      N29    C32    H322    109.470    3.000
+ MIU      N29    C32    C33     109.470    3.000
+ MIU      H321   C32    H322    107.900    3.000
+ MIU      H321   C32    C33     109.470    3.000
+ MIU      H322   C32    C33     109.470    3.000
+ MIU      C32    C33    H331    109.470    3.000
+ MIU      C32    C33    H332    109.470    3.000
+ MIU      C32    C33    C8      111.000    3.000
+ MIU      H331   C33    H332    107.900    3.000
+ MIU      H331   C33    C8      109.470    3.000
+ MIU      H332   C33    C8      109.470    3.000
+ MIU      C33    C8     H8C1    109.470    3.000
+ MIU      C33    C8     H8C2    109.470    3.000
+ MIU      C33    C8     N9      109.470    3.000
+ MIU      H8C1   C8     H8C2    107.900    3.000
+ MIU      H8C1   C8     N9      109.470    3.000
+ MIU      H8C2   C8     N9      109.470    3.000
+ MIU      C8     N9     H9N2    120.000    3.000
+ MIU      C8     N9     H9N1    120.000    3.000
+ MIU      H9N2   N9     H9N1    120.000    3.000
+ MIU      N29    C28    H281    109.470    3.000
+ MIU      N29    C28    H282    109.470    3.000
+ MIU      N29    C28    C27     109.470    3.000
+ MIU      H281   C28    H282    107.900    3.000
+ MIU      H281   C28    C27     109.470    3.000
+ MIU      H282   C28    C27     109.470    3.000
+ MIU      C28    C27    H272    109.470    3.000
+ MIU      C28    C27    H271    109.470    3.000
+ MIU      C28    C27    N26     105.000    3.000
+ MIU      H272   C27    H271    107.900    3.000
+ MIU      H272   C27    N26     109.470    3.000
+ MIU      H271   C27    N26     109.470    3.000
+ MIU      C14    C13    H13     108.810    3.000
+ MIU      C14    C13    C16     109.470    3.000
+ MIU      C14    C13    N12     111.600    3.000
+ MIU      H13    C13    C16     108.340    3.000
+ MIU      H13    C13    N12     108.550    3.000
+ MIU      C16    C13    N12     110.000    3.000
+ MIU      C13    C16    H161    109.470    3.000
+ MIU      C13    C16    H162    109.470    3.000
+ MIU      C13    C16    C17     111.000    3.000
+ MIU      H161   C16    H162    107.900    3.000
+ MIU      H161   C16    C17     109.470    3.000
+ MIU      H162   C16    C17     109.470    3.000
+ MIU      C16    C17    H171    109.470    3.000
+ MIU      C16    C17    H172    109.470    3.000
+ MIU      C16    C17    C18     111.000    3.000
+ MIU      H171   C17    H172    107.900    3.000
+ MIU      H171   C17    C18     109.470    3.000
+ MIU      H172   C17    C18     109.470    3.000
+ MIU      C17    C18    H181    109.470    3.000
+ MIU      C17    C18    H182    109.470    3.000
+ MIU      C17    C18    N19     105.000    3.000
+ MIU      H181   C18    H182    107.900    3.000
+ MIU      H181   C18    N19     109.470    3.000
+ MIU      H182   C18    N19     109.470    3.000
+ MIU      C18    N19    C20     127.000    3.000
+ MIU      N19    C20    N22     120.000    3.000
+ MIU      N19    C20    N21     120.000    3.000
+ MIU      N22    C20    N21     120.000    3.000
+ MIU      C20    N22    H222    120.000    3.000
+ MIU      C20    N22    H221    120.000    3.000
+ MIU      H222   N22    H221    120.000    3.000
+ MIU      C20    N21    H212    120.000    3.000
+ MIU      C20    N21    H211    120.000    3.000
+ MIU      H212   N21    H211    120.000    3.000
+ MIU      C13    N12    H12     118.500    3.000
+ MIU      C13    N12    S11     120.000    3.000
+ MIU      H12    N12    S11     120.000    3.000
+ MIU      N12    S11    O24     109.500    3.000
+ MIU      N12    S11    O25     109.500    3.000
+ MIU      N12    S11    C1      109.500    3.000
+ MIU      O24    S11    O25     109.500    3.000
+ MIU      O24    S11    C1      109.500    3.000
+ MIU      O25    S11    C1      109.500    3.000
+ MIU      S11    C1     C10     120.000    3.000
+ MIU      S11    C1     C2      120.000    3.000
+ MIU      C10    C1     C2      120.000    3.000
+ MIU      C1     C10    H10     120.000    3.000
+ MIU      C1     C10    C5      120.000    3.000
+ MIU      H10    C10    C5      120.000    3.000
+ MIU      C10    C5     C6      120.000    3.000
+ MIU      C10    C5     C4      120.000    3.000
+ MIU      C6     C5     C4      120.000    3.000
+ MIU      C5     C6     F6      109.470    3.000
+ MIU      C5     C6     F1      109.470    3.000
+ MIU      C5     C6     F61     109.470    3.000
+ MIU      F6     C6     F1      109.470    3.000
+ MIU      F6     C6     F61     109.470    3.000
+ MIU      F1     C6     F61     109.470    3.000
+ MIU      C5     C4     H4      120.000    3.000
+ MIU      C5     C4     C3      120.000    3.000
+ MIU      H4     C4     C3      120.000    3.000
+ MIU      C4     C3     H3      120.000    3.000
+ MIU      C4     C3     C2      120.000    3.000
+ MIU      H3     C3     C2      120.000    3.000
+ MIU      C3     C2     H2      120.000    3.000
+ MIU      C3     C2     C1      120.000    3.000
+ MIU      H2     C2     C1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MIU      CONST_1  O15    C14    N26    C31      180.000    0.000   0
+ MIU      var_1    C14    N26    C27    C28      120.000   20.000   1
+ MIU      var_2    C14    N26    C31    C30     -120.000   20.000   1
+ MIU      var_3    N26    C31    C30    N29      -60.000   20.000   3
+ MIU      var_4    C31    C30    N29    C28       60.000   20.000   1
+ MIU      var_5    C30    N29    C32    C33       61.551   20.000   1
+ MIU      var_6    N29    C32    C33    C8       174.328   20.000   3
+ MIU      var_7    C32    C33    C8     N9       179.963   20.000   3
+ MIU      var_8    C33    C8     N9     H9N1      66.260   20.000   1
+ MIU      var_9    C30    N29    C28    C27      -60.000   20.000   1
+ MIU      var_10   N29    C28    C27    N26       60.000   20.000   3
+ MIU      var_11   O15    C14    C13    N12      -17.696   20.000   3
+ MIU      var_12   C14    C13    C16    C17      -61.083   20.000   3
+ MIU      var_13   C13    C16    C17    C18     -174.985   20.000   3
+ MIU      var_14   C16    C17    C18    N19      179.964   20.000   3
+ MIU      var_15   C17    C18    N19    C20     -114.350   20.000   1
+ MIU      CONST_2  C18    N19    C20    N21        0.000    0.000   0
+ MIU      CONST_3  N19    C20    N22    H221       0.000    0.000   0
+ MIU      CONST_4  N19    C20    N21    H211     180.000    0.000   0
+ MIU      var_16   C14    C13    N12    S11     -144.279   20.000   3
+ MIU      var_17   C13    N12    S11    C1        63.342   20.000   1
+ MIU      var_18   N12    S11    C1     C10      -90.281   20.000   1
+ MIU      CONST_5  S11    C1     C2     C3       180.000    0.000   0
+ MIU      CONST_6  S11    C1     C10    C5       180.000    0.000   0
+ MIU      CONST_7  C1     C10    C5     C4         0.000    0.000   0
+ MIU      var_19   C10    C5     C6     F61     -179.815   20.000   1
+ MIU      CONST_8  C10    C5     C4     C3         0.000    0.000   0
+ MIU      CONST_9  C5     C4     C3     C2         0.000    0.000   0
+ MIU      CONST_10 C4     C3     C2     C1         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MIU      chir_01  S11    C1     N12    O24       positiv
+ MIU      chir_02  C13    N12    C14    C16       positiv
+ MIU      chir_03  C6     C5     F61    F1        negativ
+ MIU      chir_04  N29    C28    C30    C32       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MIU      plan-1    C1        0.020
+ MIU      plan-1    S11       0.020
+ MIU      plan-1    C2        0.020
+ MIU      plan-1    C10       0.020
+ MIU      plan-1    C3        0.020
+ MIU      plan-1    C4        0.020
+ MIU      plan-1    C5        0.020
+ MIU      plan-1    H2        0.020
+ MIU      plan-1    H3        0.020
+ MIU      plan-1    H4        0.020
+ MIU      plan-1    C6        0.020
+ MIU      plan-1    H10       0.020
+ MIU      plan-2    N12       0.020
+ MIU      plan-2    S11       0.020
+ MIU      plan-2    C13       0.020
+ MIU      plan-2    H12       0.020
+ MIU      plan-3    C14       0.020
+ MIU      plan-3    C13       0.020
+ MIU      plan-3    O15       0.020
+ MIU      plan-3    N26       0.020
+ MIU      plan-4    N26       0.020
+ MIU      plan-4    C14       0.020
+ MIU      plan-4    C27       0.020
+ MIU      plan-4    C31       0.020
+ MIU      plan-5    N19       0.020
+ MIU      plan-5    C18       0.020
+ MIU      plan-5    C20       0.020
+ MIU      plan-5    N21       0.020
+ MIU      plan-5    N22       0.020
+ MIU      plan-5    H212      0.020
+ MIU      plan-5    H211      0.020
+ MIU      plan-5    H222      0.020
+ MIU      plan-5    H221      0.020
+ MIU      plan-6    N21       0.020
+ MIU      plan-6    C20       0.020
+ MIU      plan-6    H211      0.020
+ MIU      plan-6    H212      0.020
+ MIU      plan-7    N22       0.020
+ MIU      plan-7    C20       0.020
+ MIU      plan-7    H221      0.020
+ MIU      plan-7    H222      0.020
+ MIU      plan-8    N9        0.020
+ MIU      plan-8    C8        0.020
+ MIU      plan-8    H9N1      0.020
+ MIU      plan-8    H9N2      0.020
+# ------------------------------------------------------

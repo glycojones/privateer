@@ -1,0 +1,172 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NPA     NPA      "2-(4-HYDROXY-3-NITROPHENYL)ACETIC ACID"     NON-POLYMER     20     14     .     
+#
+data_comp_NPA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NPA     C1      C       CR6     0       73.481      29.028      43.447      
+NPA     C2      C       CR16    0       72.592      29.429      42.452      
+NPA     C3      C       CR6     0       73.060      30.031      41.270      
+NPA     C4      C       CR6     0       74.439      30.242      41.067      
+NPA     C5      C       CR16    0       75.320      29.834      42.078      
+NPA     C6      C       CR16    0       74.841      29.242      43.236      
+NPA     C7      C       CH2     0       72.980      28.382      44.716      
+NPA     C8      C       C       0       72.713      29.380      45.839      
+NPA     N1      N       N       1       72.074      30.425      40.271      
+NPA     O1      O       OC      -1      71.363      29.559      39.787      
+NPA     O2      O       O       0       72.001      31.604      39.962      
+NPA     O3      O       OH1     0       74.942      30.819      39.945      
+NPA     O4      O       O       0       73.458      29.358      46.837      
+NPA     O5      O       OC      -1      71.763      30.172      45.705      
+NPA     H2      H       H       0       71.671      29.294      42.573      
+NPA     H5      H       H       0       76.251      29.965      41.965      
+NPA     H6      H       H       0       75.455      28.977      43.900      
+NPA     H71     H       H       0       73.637      27.730      45.022      
+NPA     H72     H       H       0       72.154      27.901      44.523      
+NPA     HO3     H       H       0       75.286      31.579      40.146      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NPA       C1        C2        DOUBLE    y         1.385     0.011     1.385     0.011     
+NPA       C1        C6        SINGLE    y         1.386     0.010     1.386     0.010     
+NPA       C1        C7        SINGLE    n         1.509     0.010     1.509     0.010     
+NPA       C2        C3        SINGLE    y         1.394     0.014     1.394     0.014     
+NPA       C3        C4        DOUBLE    y         1.404     0.010     1.404     0.010     
+NPA       C3        N1        SINGLE    n         1.457     0.020     1.457     0.020     
+NPA       C4        C5        SINGLE    y         1.391     0.012     1.391     0.012     
+NPA       C4        O3        SINGLE    n         1.358     0.015     1.358     0.015     
+NPA       C5        C6        DOUBLE    y         1.377     0.011     1.377     0.011     
+NPA       C7        C8        SINGLE    n         1.525     0.014     1.525     0.014     
+NPA       C8        O4        DOUBLE    n         1.244     0.020     1.244     0.020     
+NPA       C8        O5        SINGLE    n         1.244     0.020     1.244     0.020     
+NPA       N1        O1        SINGLE    n         1.221     0.017     1.221     0.017     
+NPA       N1        O2        DOUBLE    n         1.221     0.017     1.221     0.017     
+NPA       C2        H2        SINGLE    n         1.082     0.013     0.939     0.013     
+NPA       C5        H5        SINGLE    n         1.082     0.013     0.947     0.020     
+NPA       C6        H6        SINGLE    n         1.082     0.013     0.943     0.017     
+NPA       C7        H71       SINGLE    n         1.089     0.010     0.975     0.011     
+NPA       C7        H72       SINGLE    n         1.089     0.010     0.975     0.011     
+NPA       O3        HO3       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NPA          C2          C1          C6     117.904    1.50
+NPA          C2          C1          C7     120.881    1.50
+NPA          C6          C1          C7     121.215    1.50
+NPA          C1          C2          C3     120.861    1.50
+NPA          C1          C2          H2     119.414    1.50
+NPA          C3          C2          H2     119.725    1.50
+NPA          C2          C3          C4     120.973    1.59
+NPA          C2          C3          N1     117.697    1.50
+NPA          C4          C3          N1     121.330    1.50
+NPA          C3          C4          C5     117.922    1.50
+NPA          C3          C4          O3     122.980    1.50
+NPA          C5          C4          O3     119.097    3.00
+NPA          C4          C5          C6     120.412    1.50
+NPA          C4          C5          H5     119.561    1.50
+NPA          C6          C5          H5     120.027    1.50
+NPA          C1          C6          C5     121.929    1.50
+NPA          C1          C6          H6     119.089    1.50
+NPA          C5          C6          H6     118.982    1.50
+NPA          C1          C7          C8     113.444    2.96
+NPA          C1          C7         H71     109.081    1.50
+NPA          C1          C7         H72     109.081    1.50
+NPA          C8          C7         H71     108.710    1.50
+NPA          C8          C7         H72     108.710    1.50
+NPA         H71          C7         H72     107.676    1.52
+NPA          C7          C8          O4     118.115    1.50
+NPA          C7          C8          O5     118.115    1.50
+NPA          O4          C8          O5     123.770    1.50
+NPA          C3          N1          O1     118.308    1.50
+NPA          C3          N1          O2     118.308    1.50
+NPA          O1          N1          O2     123.383    1.50
+NPA          C4          O3         HO3     109.343    2.75
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NPA       const_sp2_sp2_3          C7          C1          C2          C3     180.000   10.00     2
+NPA              const_23          C7          C1          C6          C5     180.000   10.00     2
+NPA             sp2_sp3_2          C2          C1          C7          C8     -90.000   10.00     6
+NPA       const_sp2_sp2_6          C1          C2          C3          N1     180.000   10.00     2
+NPA              const_12          N1          C3          C4          O3       0.000   10.00     2
+NPA             sp2_sp2_1          C2          C3          N1          O1     180.000   10.00     2
+NPA              const_15          O3          C4          C5          C6     180.000   10.00     2
+NPA              const_17          C4          C5          C6          C1       0.000   10.00     2
+NPA            sp2_sp3_10          O4          C8          C7          C1     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NPA    plan-1          C1   0.020
+NPA    plan-1          C2   0.020
+NPA    plan-1          C3   0.020
+NPA    plan-1          C4   0.020
+NPA    plan-1          C5   0.020
+NPA    plan-1          C6   0.020
+NPA    plan-1          C7   0.020
+NPA    plan-1          H2   0.020
+NPA    plan-1          H5   0.020
+NPA    plan-1          H6   0.020
+NPA    plan-1          N1   0.020
+NPA    plan-1          O3   0.020
+NPA    plan-2          C7   0.020
+NPA    plan-2          C8   0.020
+NPA    plan-2          O4   0.020
+NPA    plan-2          O5   0.020
+NPA    plan-3          C3   0.020
+NPA    plan-3          N1   0.020
+NPA    plan-3          O1   0.020
+NPA    plan-3          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NPA SMILES           ACDLabs              10.04 "O=[N+]([O-])c1cc(ccc1O)CC(=O)O"
+NPA SMILES_CANONICAL CACTVS               3.341 "OC(=O)Cc1ccc(O)c(c1)[N+]([O-])=O"
+NPA SMILES           CACTVS               3.341 "OC(=O)Cc1ccc(O)c(c1)[N+]([O-])=O"
+NPA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1CC(=O)O)[N+](=O)[O-])O"
+NPA SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1CC(=O)O)[N+](=O)[O-])O"
+NPA InChI            InChI                1.03  "InChI=1S/C8H7NO5/c10-7-2-1-5(4-8(11)12)3-6(7)9(13)14/h1-3,10H,4H2,(H,11,12)"
+NPA InChIKey         InChI                1.03  QBHBHOSRLDPIHG-UHFFFAOYSA-N
+NPA ?                acedrg               202         "dictionary generator"                  
+NPA ?                acedrg_database      11          "data source"                           
+NPA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NPA ?                refmac5              5.8.0189    "optimization tool"                     

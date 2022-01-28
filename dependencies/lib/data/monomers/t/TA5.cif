@@ -1,0 +1,129 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TA5     TA5      2H-1,2,3-TRIAZOL-4-YLMETHANOL     NON-POLYMER     12     7     .     
+#
+data_comp_TA5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TA5     N       N       NRD5    0       42.771      9.994       -8.641      
+TA5     CA      C       CR5     0       43.678      9.460       -7.826      
+TA5     CB      C       CH2     0       44.958      10.139      -7.460      
+TA5     OG      O       OH1     0       45.968      9.918       -8.429      
+TA5     NT      N       NRD5    0       42.042      8.055       -8.000      
+TA5     C       C       CR15    0       43.226      8.264       -7.432      
+TA5     N2      N       NR5     0       41.777      9.123       -8.737      
+TA5     HBC1    H       H       0       45.262      9.803       -6.592      
+TA5     HBC2    H       H       0       44.796      11.102      -7.375      
+TA5     HG      H       H       0       46.235      9.096       -8.371      
+TA5     H       H       H       0       43.654      7.654       -6.852      
+TA5     H2      H       H       0       41.034      9.240       -9.229      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TA5       N         CA        DOUBLE    y         1.331     0.010     1.331     0.010     
+TA5       N         N2        SINGLE    y         1.324     0.010     1.324     0.010     
+TA5       CA        CB        SINGLE    n         1.494     0.010     1.494     0.010     
+TA5       CA        C         SINGLE    y         1.339     0.010     1.339     0.010     
+TA5       CB        OG        SINGLE    n         1.417     0.017     1.417     0.017     
+TA5       NT        C         DOUBLE    y         1.330     0.013     1.330     0.013     
+TA5       NT        N2        SINGLE    y         1.324     0.010     1.324     0.010     
+TA5       CB        HBC1      SINGLE    n         1.089     0.010     0.980     0.016     
+TA5       CB        HBC2      SINGLE    n         1.089     0.010     0.980     0.016     
+TA5       OG        HG        SINGLE    n         0.970     0.012     0.866     0.020     
+TA5       C         H         SINGLE    n         1.082     0.013     0.944     0.017     
+TA5       N2        H2        SINGLE    n         1.016     0.010     0.899     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TA5          CA           N          N2     106.712    1.58
+TA5           N          CA          CB     123.359    1.50
+TA5           N          CA           C     108.377    2.56
+TA5          CB          CA           C     128.265    3.00
+TA5          CA          CB          OG     111.765    1.50
+TA5          CA          CB        HBC1     109.020    1.50
+TA5          CA          CB        HBC2     109.020    1.50
+TA5          OG          CB        HBC1     109.192    1.50
+TA5          OG          CB        HBC2     109.192    1.50
+TA5        HBC1          CB        HBC2     108.101    1.50
+TA5          CB          OG          HG     108.825    3.00
+TA5           C          NT          N2     106.712    1.58
+TA5          CA           C          NT     108.712    1.50
+TA5          CA           C           H     127.104    2.00
+TA5          NT           C           H     124.184    2.33
+TA5           N          N2          NT     109.489    1.56
+TA5           N          N2          H2     125.256    1.95
+TA5          NT          N2          H2     125.256    1.95
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TA5       const_sp2_sp2_2          CB          CA           N          N2     180.000   10.00     2
+TA5              const_11          CA           N          N2          NT       0.000   10.00     2
+TA5             sp2_sp3_2           N          CA          CB          OG     -90.000   10.00     6
+TA5       const_sp2_sp2_4          NT           C          CA          CB     180.000   10.00     2
+TA5             sp3_sp3_1          CA          CB          OG          HG     180.000   10.00     3
+TA5       const_sp2_sp2_7          CA           C          NT          N2       0.000   10.00     2
+TA5       const_sp2_sp2_9           N          N2          NT           C       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TA5    plan-1           C   0.020
+TA5    plan-1          CA   0.020
+TA5    plan-1          CB   0.020
+TA5    plan-1           H   0.020
+TA5    plan-1          H2   0.020
+TA5    plan-1           N   0.020
+TA5    plan-1          N2   0.020
+TA5    plan-1          NT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TA5 SMILES           ACDLabs              10.04 OCc1nnnc1
+TA5 SMILES_CANONICAL CACTVS               3.341 "OCc1cn[nH]n1"
+TA5 SMILES           CACTVS               3.341 "OCc1cn[nH]n1"
+TA5 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(n[nH]n1)CO"
+TA5 SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(n[nH]n1)CO"
+TA5 InChI            InChI                1.03  "InChI=1S/C3H5N3O/c7-2-3-1-4-6-5-3/h1,7H,2H2,(H,4,5,6)"
+TA5 InChIKey         InChI                1.03  OADYBXHYXPEGHX-UHFFFAOYSA-N
+TA5 ?                acedrg               202         "dictionary generator"                  
+TA5 ?                acedrg_database      11          "data source"                           
+TA5 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TA5 ?                refmac5              5.8.0189    "optimization tool"                     

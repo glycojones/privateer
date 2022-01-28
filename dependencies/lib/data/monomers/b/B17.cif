@@ -1,0 +1,403 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B17      B17 '{1-[4-(AMINOSULFONYL)PHENYL]-11-[(CA' non-polymer        54  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_B17
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ B17           O6     O    O        -0.500      0.000    0.000    0.000
+ B17           C17    C    C         0.000      0.824   -0.818   -0.466
+ B17           O5     O    O2       -0.500      1.076   -0.968   -1.682
+ B17           CU1    CU   CU        0.000      2.549   -1.408   -1.964
+ B17           O3     O    O2       -0.500      3.970   -2.008   -1.830
+ B17           C14    C    C         0.000      3.780   -2.742   -0.834
+ B17           O4     O    O        -0.500      4.528   -2.863    0.161
+ B17           C11    C    CH2       0.000      2.449   -3.461   -1.077
+ B17           H112   H    H         0.000      2.634   -4.534   -1.162
+ B17           H111   H    H         0.000      2.010   -3.094   -2.007
+ B17           C16    C    CH2       0.000      1.672   -1.783    0.369
+ B17           H161   H    H         0.000      1.376   -1.631    1.409
+ B17           H162   H    H         0.000      2.710   -1.471    0.238
+ B17           N1     N    NT        0.000      1.538   -3.211    0.020
+ B17           C8     C    CH2       0.000      0.156   -3.532   -0.361
+ B17           H81    H    H         0.000      0.123   -4.528   -0.806
+ B17           H82    H    H         0.000     -0.201   -2.798   -1.087
+ B17           C15    C    CH2       0.000     -0.737   -3.497    0.882
+ B17           H152   H    H         0.000     -0.329   -4.167    1.642
+ B17           H153   H    H         0.000     -1.745   -3.822    0.615
+ B17           O14    O    O2        0.000     -0.786   -2.164    1.396
+ B17           C13    C    CH2       0.000     -1.597   -2.021    2.563
+ B17           H131   H    H         0.000     -1.207   -2.660    3.358
+ B17           H132   H    H         0.000     -2.623   -2.316    2.332
+ B17           C12    C    CH2       0.000     -1.576   -0.562    3.023
+ B17           H121   H    H         0.000     -0.542   -0.242    3.170
+ B17           H122   H    H         0.000     -2.122   -0.469    3.965
+ B17           O11    O    O2        0.000     -2.194    0.260    2.030
+ B17           C10    C    CH2       0.000     -2.226    1.649    2.362
+ B17           H101   H    H         0.000     -1.206    2.015    2.495
+ B17           H102   H    H         0.000     -2.785    1.788    3.290
+ B17           C9     C    CH2       0.000     -2.906    2.427    1.234
+ B17           H91    H    H         0.000     -2.399    2.217    0.291
+ B17           H92    H    H         0.000     -2.851    3.497    1.446
+ B17           N8     N    NH1       0.000     -4.310    2.020    1.136
+ B17           HN8    H    H         0.000     -4.678    1.321    1.766
+ B17           C7     C    C         0.000     -5.110    2.577    0.206
+ B17           O7     O    O         0.000     -4.667    3.418   -0.551
+ B17           C1     C    CR6       0.000     -6.527    2.165    0.106
+ B17           C6     C    CR16      0.000     -7.037    1.195    0.971
+ B17           H6     H    H         0.000     -6.397    0.744    1.720
+ B17           C5     C    CR16      0.000     -8.358    0.811    0.869
+ B17           H5     H    H         0.000     -8.755    0.059    1.540
+ B17           C4     C    CR6       0.000     -9.177    1.385   -0.087
+ B17           C3     C    CR16      0.000     -8.677    2.347   -0.947
+ B17           H3     H    H         0.000     -9.323    2.793   -1.693
+ B17           C2     C    CR16      0.000     -7.358    2.741   -0.855
+ B17           H2     H    H         0.000     -6.968    3.494   -1.529
+ B17           S      S    ST        0.000    -10.863    0.889   -0.210
+ B17           O1     O    OS        0.000    -11.553    1.965   -0.830
+ B17           O2     O    OS        0.000    -11.221    0.365    1.061
+ B17           N      N    NH2       0.000    -10.924   -0.379   -1.273
+ B17           HN2    H    H         0.000    -11.809   -0.830   -1.498
+ B17           HN1    H    H         0.000    -10.077   -0.729   -1.718
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B17      O6     n/a    C17    START
+ B17      C17    O6     C16    .
+ B17      O5     C17    CU1    .
+ B17      CU1    O5     O3     .
+ B17      O3     CU1    C14    .
+ B17      C14    O3     C11    .
+ B17      O4     C14    .      .
+ B17      C11    C14    H111   .
+ B17      H112   C11    .      .
+ B17      H111   C11    .      .
+ B17      C16    C17    N1     .
+ B17      H161   C16    .      .
+ B17      H162   C16    .      .
+ B17      N1     C16    C8     .
+ B17      C8     N1     C15    .
+ B17      H81    C8     .      .
+ B17      H82    C8     .      .
+ B17      C15    C8     O14    .
+ B17      H152   C15    .      .
+ B17      H153   C15    .      .
+ B17      O14    C15    C13    .
+ B17      C13    O14    C12    .
+ B17      H131   C13    .      .
+ B17      H132   C13    .      .
+ B17      C12    C13    O11    .
+ B17      H121   C12    .      .
+ B17      H122   C12    .      .
+ B17      O11    C12    C10    .
+ B17      C10    O11    C9     .
+ B17      H101   C10    .      .
+ B17      H102   C10    .      .
+ B17      C9     C10    N8     .
+ B17      H91    C9     .      .
+ B17      H92    C9     .      .
+ B17      N8     C9     C7     .
+ B17      HN8    N8     .      .
+ B17      C7     N8     C1     .
+ B17      O7     C7     .      .
+ B17      C1     C7     C6     .
+ B17      C6     C1     C5     .
+ B17      H6     C6     .      .
+ B17      C5     C6     C4     .
+ B17      H5     C5     .      .
+ B17      C4     C5     S      .
+ B17      C3     C4     C2     .
+ B17      H3     C3     .      .
+ B17      C2     C3     H2     .
+ B17      H2     C2     .      .
+ B17      S      C4     N      .
+ B17      O1     S      .      .
+ B17      O2     S      .      .
+ B17      N      S      HN1    .
+ B17      HN2    N      .      .
+ B17      HN1    N      .      END
+ B17      C1     C2     .    ADD
+ B17      N1     C11    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B17       N         S         single    1.600     0.020     1.600     0.020     
+B17       O1        S         double    1.436     0.020     1.436     0.020     
+B17       O2        S         double    1.436     0.020     1.436     0.020     
+B17       S         C4        single    1.595     0.020     1.595     0.020     
+B17       HN1       N         single    1.036     0.016     0.914     0.007     
+B17       HN2       N         single    1.036     0.016     0.914     0.007     
+B17       C1        C2        single    1.390     0.020     1.390     0.020     
+B17       C6        C1        double    1.390     0.020     1.390     0.020     
+B17       C1        C7        single    1.500     0.020     1.500     0.020     
+B17       C2        C3        double    1.390     0.020     1.390     0.020     
+B17       H2        C2        single    1.082     0.013     0.975     0.010     
+B17       C3        C4        single    1.390     0.020     1.390     0.020     
+B17       H3        C3        single    1.082     0.013     0.975     0.010     
+B17       C4        C5        double    1.390     0.020     1.390     0.020     
+B17       C5        C6        single    1.390     0.020     1.390     0.020     
+B17       H5        C5        single    1.082     0.013     0.975     0.010     
+B17       H6        C6        single    1.082     0.013     0.975     0.010     
+B17       O7        C7        double    1.220     0.020     1.220     0.020     
+B17       C7        N8        single    1.330     0.020     1.330     0.020     
+B17       N8        C9        single    1.450     0.020     1.450     0.020     
+B17       HN8       N8        single    1.016     0.010     0.899     0.007     
+B17       C9        C10       single    1.524     0.020     1.524     0.020     
+B17       H91       C9        single    1.089     0.010     0.989     0.005     
+B17       H92       C9        single    1.089     0.010     0.989     0.005     
+B17       C10       O11       single    1.426     0.020     1.426     0.020     
+B17       H101      C10       single    1.089     0.010     0.989     0.005     
+B17       H102      C10       single    1.089     0.010     0.989     0.005     
+B17       O11       C12       single    1.426     0.020     1.426     0.020     
+B17       C12       C13       single    1.524     0.020     1.524     0.020     
+B17       H121      C12       single    1.089     0.010     0.989     0.005     
+B17       H122      C12       single    1.089     0.010     0.989     0.005     
+B17       C13       O14       single    1.426     0.020     1.426     0.020     
+B17       H131      C13       single    1.089     0.010     0.989     0.005     
+B17       H132      C13       single    1.089     0.010     0.989     0.005     
+B17       O14       C15       single    1.426     0.020     1.426     0.020     
+B17       C15       C8        single    1.524     0.020     1.524     0.020     
+B17       H152      C15       single    1.089     0.010     0.989     0.005     
+B17       H153      C15       single    1.089     0.010     0.989     0.005     
+B17       C8        N1        single    1.469     0.020     1.469     0.020     
+B17       H81       C8        single    1.089     0.010     0.989     0.005     
+B17       H82       C8        single    1.089     0.010     0.989     0.005     
+B17       N1        C11       single    1.469     0.020     1.469     0.020     
+B17       N1        C16       single    1.469     0.020     1.469     0.020     
+B17       C11       C14       single    1.510     0.020     1.510     0.020     
+B17       H111      C11       single    1.089     0.010     0.989     0.005     
+B17       H112      C11       single    1.089     0.010     0.989     0.005     
+B17       C14       O3        deloc     1.454     0.020     1.454     0.020     
+B17       O4        C14       deloc     1.220     0.020     1.220     0.020     
+B17       O3        CU1       single    2.010     0.020     2.010     0.020     
+B17       C16       C17       single    1.510     0.020     1.510     0.020     
+B17       H161      C16       single    1.089     0.010     0.989     0.005     
+B17       H162      C16       single    1.089     0.010     0.989     0.005     
+B17       O5        C17       deloc     1.454     0.020     1.454     0.020     
+B17       C17       O6        deloc     1.220     0.020     1.220     0.020     
+B17       CU1       O5        single    2.010     0.020     2.010     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ B17      O6     C17    O5      119.000    3.000
+ B17      O6     C17    C16     120.500    3.000
+ B17      O5     C17    C16     120.000    3.000
+ B17      C17    O5     CU1     120.000    3.000
+ B17      O5     CU1    O3      180.000    3.000
+ B17      CU1    O3     C14     120.000    3.000
+ B17      O3     C14    O4      119.000    3.000
+ B17      O3     C14    C11     120.000    3.000
+ B17      O4     C14    C11     120.500    3.000
+ B17      C14    C11    H112    109.470    3.000
+ B17      C14    C11    H111    109.470    3.000
+ B17      C14    C11    N1      109.500    3.000
+ B17      H112   C11    H111    107.900    3.000
+ B17      H112   C11    N1      109.470    3.000
+ B17      H111   C11    N1      109.470    3.000
+ B17      C17    C16    H161    109.470    3.000
+ B17      C17    C16    H162    109.470    3.000
+ B17      C17    C16    N1      109.500    3.000
+ B17      H161   C16    H162    107.900    3.000
+ B17      H161   C16    N1      109.470    3.000
+ B17      H162   C16    N1      109.470    3.000
+ B17      C16    N1     C8      109.470    3.000
+ B17      C16    N1     C11     109.470    3.000
+ B17      C8     N1     C11     109.470    3.000
+ B17      N1     C8     H81     109.470    3.000
+ B17      N1     C8     H82     109.470    3.000
+ B17      N1     C8     C15     109.470    3.000
+ B17      H81    C8     H82     107.900    3.000
+ B17      H81    C8     C15     109.470    3.000
+ B17      H82    C8     C15     109.470    3.000
+ B17      C8     C15    H152    109.470    3.000
+ B17      C8     C15    H153    109.470    3.000
+ B17      C8     C15    O14     109.470    3.000
+ B17      H152   C15    H153    107.900    3.000
+ B17      H152   C15    O14     109.470    3.000
+ B17      H153   C15    O14     109.470    3.000
+ B17      C15    O14    C13     111.800    3.000
+ B17      O14    C13    H131    109.470    3.000
+ B17      O14    C13    H132    109.470    3.000
+ B17      O14    C13    C12     109.470    3.000
+ B17      H131   C13    H132    107.900    3.000
+ B17      H131   C13    C12     109.470    3.000
+ B17      H132   C13    C12     109.470    3.000
+ B17      C13    C12    H121    109.470    3.000
+ B17      C13    C12    H122    109.470    3.000
+ B17      C13    C12    O11     109.470    3.000
+ B17      H121   C12    H122    107.900    3.000
+ B17      H121   C12    O11     109.470    3.000
+ B17      H122   C12    O11     109.470    3.000
+ B17      C12    O11    C10     111.800    3.000
+ B17      O11    C10    H101    109.470    3.000
+ B17      O11    C10    H102    109.470    3.000
+ B17      O11    C10    C9      109.470    3.000
+ B17      H101   C10    H102    107.900    3.000
+ B17      H101   C10    C9      109.470    3.000
+ B17      H102   C10    C9      109.470    3.000
+ B17      C10    C9     H91     109.470    3.000
+ B17      C10    C9     H92     109.470    3.000
+ B17      C10    C9     N8      112.000    3.000
+ B17      H91    C9     H92     107.900    3.000
+ B17      H91    C9     N8      109.470    3.000
+ B17      H92    C9     N8      109.470    3.000
+ B17      C9     N8     HN8     118.500    3.000
+ B17      C9     N8     C7      121.500    3.000
+ B17      HN8    N8     C7      120.000    3.000
+ B17      N8     C7     O7      123.000    3.000
+ B17      N8     C7     C1      120.000    3.000
+ B17      O7     C7     C1      120.500    3.000
+ B17      C7     C1     C6      120.000    3.000
+ B17      C7     C1     C2      120.000    3.000
+ B17      C6     C1     C2      120.000    3.000
+ B17      C1     C6     H6      120.000    3.000
+ B17      C1     C6     C5      120.000    3.000
+ B17      H6     C6     C5      120.000    3.000
+ B17      C6     C5     H5      120.000    3.000
+ B17      C6     C5     C4      120.000    3.000
+ B17      H5     C5     C4      120.000    3.000
+ B17      C5     C4     C3      120.000    3.000
+ B17      C5     C4     S       120.000    3.000
+ B17      C3     C4     S       120.000    3.000
+ B17      C4     C3     H3      120.000    3.000
+ B17      C4     C3     C2      120.000    3.000
+ B17      H3     C3     C2      120.000    3.000
+ B17      C3     C2     H2      120.000    3.000
+ B17      C3     C2     C1      120.000    3.000
+ B17      H2     C2     C1      120.000    3.000
+ B17      C4     S      O1      109.500    3.000
+ B17      C4     S      O2      109.500    3.000
+ B17      C4     S      N       109.500    3.000
+ B17      O1     S      O2      109.500    3.000
+ B17      O1     S      N       109.500    3.000
+ B17      O2     S      N       109.500    3.000
+ B17      S      N      HN2     120.000    3.000
+ B17      S      N      HN1     120.000    3.000
+ B17      HN2    N      HN1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ B17      var_1    O6     C17    O5     CU1      148.864   20.000   1
+ B17      var_2    C17    O5     CU1    O3       180.000   20.000   1
+ B17      var_3    C14    O3     CU1    O5       180.000   20.000   1
+ B17      var_4    CU1    O3     C14    C11       44.766   20.000   1
+ B17      var_5    O3     C14    C11    N1      -123.751   20.000   3
+ B17      var_6    O6     C17    C16    N1       124.028   20.000   3
+ B17      var_7    C17    C16    N1     C8       -36.354   20.000   1
+ B17      var_8    C16    N1     C11    C14       41.778   20.000   1
+ B17      var_9    C16    N1     C8     C15      -71.467   20.000   1
+ B17      var_10   N1     C8     C15    O14       65.002   20.000   3
+ B17      var_11   C8     C15    O14    C13     -179.965   20.000   1
+ B17      var_12   C15    O14    C13    C12      179.978   20.000   1
+ B17      var_13   O14    C13    C12    O11       64.981   20.000   3
+ B17      var_14   C13    C12    O11    C10      179.997   20.000   1
+ B17      var_15   C12    O11    C10    C9      -179.964   20.000   1
+ B17      var_16   O11    C10    C9     N8        65.028   20.000   3
+ B17      var_17   C10    C9     N8     C7      -179.977   20.000   3
+ B17      CONST_1  C9     N8     C7     C1       180.000    0.000   0
+ B17      var_18   N8     C7     C1     C6        -0.340   20.000   1
+ B17      CONST_2  C7     C1     C2     C3       180.000    0.000   0
+ B17      CONST_3  C7     C1     C6     C5       180.000    0.000   0
+ B17      CONST_4  C1     C6     C5     C4         0.000    0.000   0
+ B17      CONST_5  C6     C5     C4     S        180.000    0.000   0
+ B17      CONST_6  C5     C4     C3     C2         0.000    0.000   0
+ B17      CONST_7  C4     C3     C2     C1         0.000    0.000   0
+ B17      var_19   C5     C4     S      N        -90.051   20.000   1
+ B17      var_20   C4     S      N      HN1       -0.009   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ B17      chir_01  S      N      O1     O2        negativ
+ B17      chir_02  N1     C8     C11    C16       negativ
+ B17      chir_03  CU1    O5     O3     .         cross0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ B17      plan-1    N         0.020
+ B17      plan-1    S         0.020
+ B17      plan-1    HN1       0.020
+ B17      plan-1    HN2       0.020
+ B17      plan-2    C1        0.020
+ B17      plan-2    C2        0.020
+ B17      plan-2    C6        0.020
+ B17      plan-2    C7        0.020
+ B17      plan-2    C3        0.020
+ B17      plan-2    C4        0.020
+ B17      plan-2    C5        0.020
+ B17      plan-2    H2        0.020
+ B17      plan-2    H3        0.020
+ B17      plan-2    S         0.020
+ B17      plan-2    H5        0.020
+ B17      plan-2    H6        0.020
+ B17      plan-3    C7        0.020
+ B17      plan-3    C1        0.020
+ B17      plan-3    O7        0.020
+ B17      plan-3    N8        0.020
+ B17      plan-3    HN8       0.020
+ B17      plan-4    N8        0.020
+ B17      plan-4    C7        0.020
+ B17      plan-4    C9        0.020
+ B17      plan-4    HN8       0.020
+ B17      plan-5    C14       0.020
+ B17      plan-5    C11       0.020
+ B17      plan-5    O3        0.020
+ B17      plan-5    O4        0.020
+ B17      plan-6    C17       0.020
+ B17      plan-6    C16       0.020
+ B17      plan-6    O5        0.020
+ B17      plan-6    O6        0.020
+# ------------------------------------------------------

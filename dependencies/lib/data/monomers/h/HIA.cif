@@ -1,0 +1,212 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HIA      HIA 'L-HISTIDINE AMIDE                   ' non-polymer        21  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HIA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HIA           O      O    O         0.000      0.000    0.000    0.000
+ HIA           C      C    C         0.000     -1.038    0.329    0.531
+ HIA           NXT    N    NH2       0.000     -1.096    0.459    1.872
+ HIA           HXT2   H    H         0.000     -1.961    0.733    2.322
+ HIA           HXT1   H    H         0.000     -0.274    0.283    2.438
+ HIA           CA     C    CH1       0.000     -2.264    0.591   -0.304
+ HIA           HA     H    H         0.000     -2.892    1.343    0.193
+ HIA           N      N    NH2       0.000     -1.858    1.088   -1.625
+ HIA           H2     H    H         0.000     -2.162    2.001   -1.943
+ HIA           H      H    H         0.000     -1.272    0.521   -2.227
+ HIA           CB     C    CH2       0.000     -3.057   -0.706   -0.468
+ HIA           HB2    H    H         0.000     -3.357   -1.075    0.515
+ HIA           HB3    H    H         0.000     -2.432   -1.454   -0.961
+ HIA           CG     C    CR5       0.000     -4.283   -0.443   -1.304
+ HIA           CD2    C    CR15      0.000     -5.498   -0.080   -0.853
+ HIA           HD2    H    H         0.000     -5.773    0.074    0.183
+ HIA           NE2    N    NRD5      0.000     -6.310    0.056   -1.913
+ HIA           CE1    C    CR15      0.000     -5.645   -0.218   -3.001
+ HIA           HE1    H    H         0.000     -6.045   -0.196   -4.007
+ HIA           ND1    N    NR15      0.000     -4.376   -0.534   -2.666
+ HIA           HD1    H    H         0.000     -3.612   -0.798   -3.321
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HIA      O      n/a    C      START
+ HIA      C      O      CA     .
+ HIA      NXT    C      HXT1   .
+ HIA      HXT2   NXT    .      .
+ HIA      HXT1   NXT    .      .
+ HIA      CA     C      CB     .
+ HIA      HA     CA     .      .
+ HIA      N      CA     H      .
+ HIA      H2     N      .      .
+ HIA      H      N      .      .
+ HIA      CB     CA     CG     .
+ HIA      HB2    CB     .      .
+ HIA      HB3    CB     .      .
+ HIA      CG     CB     CD2    .
+ HIA      CD2    CG     NE2    .
+ HIA      HD2    CD2    .      .
+ HIA      NE2    CD2    CE1    .
+ HIA      CE1    NE2    ND1    .
+ HIA      HE1    CE1    .      .
+ HIA      ND1    CE1    HD1    .
+ HIA      HD1    ND1    .      END
+ HIA      CG     ND1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HIA       N         CA        single    1.450     0.020     1.450     0.020     
+HIA       H         N         single    1.036     0.016     0.914     0.007     
+HIA       H2        N         single    1.036     0.016     0.914     0.007     
+HIA       CB        CA        single    1.524     0.020     1.524     0.020     
+HIA       CA        C         single    1.500     0.020     1.500     0.020     
+HIA       HA        CA        single    1.089     0.010     0.989     0.005     
+HIA       CG        CB        single    1.510     0.020     1.510     0.020     
+HIA       HB2       CB        single    1.089     0.010     0.989     0.005     
+HIA       HB3       CB        single    1.089     0.010     0.989     0.005     
+HIA       CG        ND1       single    1.340     0.020     1.340     0.020     
+HIA       CD2       CG        double    1.387     0.020     1.387     0.020     
+HIA       ND1       CE1       single    1.350     0.020     1.350     0.020     
+HIA       HD1       ND1       single    1.016     0.010     0.899     0.007     
+HIA       NE2       CD2       single    1.350     0.020     1.350     0.020     
+HIA       HD2       CD2       single    1.082     0.013     0.975     0.010     
+HIA       CE1       NE2       double    1.350     0.020     1.350     0.020     
+HIA       HE1       CE1       single    1.082     0.013     0.975     0.010     
+HIA       C         O         double    1.220     0.020     1.220     0.020     
+HIA       NXT       C         single    1.332     0.020     1.332     0.020     
+HIA       HXT1      NXT       single    1.016     0.010     0.899     0.007     
+HIA       HXT2      NXT       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HIA      O      C      NXT     123.000    3.000
+ HIA      O      C      CA      120.500    3.000
+ HIA      NXT    C      CA      120.000    3.000
+ HIA      C      NXT    HXT2    120.000    3.000
+ HIA      C      NXT    HXT1    120.000    3.000
+ HIA      HXT2   NXT    HXT1    120.000    3.000
+ HIA      C      CA     HA      108.810    3.000
+ HIA      C      CA     N       109.470    3.000
+ HIA      C      CA     CB      109.470    3.000
+ HIA      HA     CA     N       109.470    3.000
+ HIA      HA     CA     CB      108.340    3.000
+ HIA      N      CA     CB      109.470    3.000
+ HIA      CA     N      H2      120.000    3.000
+ HIA      CA     N      H       120.000    3.000
+ HIA      H2     N      H       120.000    3.000
+ HIA      CA     CB     HB2     109.470    3.000
+ HIA      CA     CB     HB3     109.470    3.000
+ HIA      CA     CB     CG      109.470    3.000
+ HIA      HB2    CB     HB3     107.900    3.000
+ HIA      HB2    CB     CG      109.470    3.000
+ HIA      HB3    CB     CG      109.470    3.000
+ HIA      CB     CG     CD2     126.000    3.000
+ HIA      CB     CG     ND1     126.000    3.000
+ HIA      CD2    CG     ND1     108.000    3.000
+ HIA      CG     CD2    HD2     126.000    3.000
+ HIA      CG     CD2    NE2     108.000    3.000
+ HIA      HD2    CD2    NE2     126.000    3.000
+ HIA      CD2    NE2    CE1     108.000    3.000
+ HIA      NE2    CE1    HE1     126.000    3.000
+ HIA      NE2    CE1    ND1     108.000    3.000
+ HIA      HE1    CE1    ND1     126.000    3.000
+ HIA      CE1    ND1    HD1     126.000    3.000
+ HIA      CE1    ND1    CG      108.000    3.000
+ HIA      HD1    ND1    CG      126.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HIA      CONST_1  O      C      NXT    HXT1       0.000    0.000   0
+ HIA      var_1    O      C      CA     CB        90.005   20.000   3
+ HIA      var_2    C      CA     N      H         60.027   20.000   1
+ HIA      var_3    C      CA     CB     CG       179.989   20.000   3
+ HIA      var_4    CA     CB     CG     CD2      -90.414   20.000   2
+ HIA      CONST_2  CB     CG     ND1    CE1      180.000    0.000   0
+ HIA      CONST_3  CB     CG     CD2    NE2      180.000    0.000   0
+ HIA      CONST_4  CG     CD2    NE2    CE1        0.000    0.000   0
+ HIA      CONST_5  CD2    NE2    CE1    ND1        0.000    0.000   0
+ HIA      CONST_6  NE2    CE1    ND1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HIA      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HIA      plan-1    N         0.020
+ HIA      plan-1    CA        0.020
+ HIA      plan-1    H         0.020
+ HIA      plan-1    H2        0.020
+ HIA      plan-2    CG        0.020
+ HIA      plan-2    CB        0.020
+ HIA      plan-2    ND1       0.020
+ HIA      plan-2    CD2       0.020
+ HIA      plan-2    CE1       0.020
+ HIA      plan-2    NE2       0.020
+ HIA      plan-2    HD1       0.020
+ HIA      plan-2    HD2       0.020
+ HIA      plan-2    HE1       0.020
+ HIA      plan-3    C         0.020
+ HIA      plan-3    CA        0.020
+ HIA      plan-3    O         0.020
+ HIA      plan-3    NXT       0.020
+ HIA      plan-3    HXT2      0.020
+ HIA      plan-3    HXT1      0.020
+ HIA      plan-4    NXT       0.020
+ HIA      plan-4    C         0.020
+ HIA      plan-4    HXT1      0.020
+ HIA      plan-4    HXT2      0.020
+# ------------------------------------------------------

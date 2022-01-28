@@ -1,0 +1,568 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UMA      UMA 'URIDINE-5'-DIPHOSPHATE-N-ACETYLMURAM' non-polymer        82  49 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_UMA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ UMA           O20    O    OC       -0.500      0.000    0.000    0.000
+ UMA           C22    C    C         0.000     -1.148    0.316   -0.383
+ UMA           O19    O    OC       -0.500     -1.966    0.807    0.427
+ UMA           C21    C    CH1       0.000     -1.548    0.104   -1.821
+ UMA           H21    H    H         0.000     -1.469   -0.964   -2.070
+ UMA           C23    C    CH3       0.000     -0.620    0.910   -2.732
+ UMA           H233   H    H         0.000      0.380    0.589   -2.593
+ UMA           H232   H    H         0.000     -0.900    0.763   -3.743
+ UMA           H231   H    H         0.000     -0.695    1.940   -2.492
+ UMA           N4     N    NH1       0.000     -2.931    0.550   -2.015
+ UMA           HN4    H    H         0.000     -3.303    1.300   -1.449
+ UMA           C19    C    C         0.000     -3.705   -0.040   -2.947
+ UMA           O18    O    O         0.000     -3.257   -0.939   -3.625
+ UMA           C18    C    CH1       0.000     -5.126    0.419   -3.145
+ UMA           H18    H    H         0.000     -5.688    0.285   -2.210
+ UMA           C20    C    CH3       0.000     -5.134    1.898   -3.539
+ UMA           H203   H    H         0.000     -6.132    2.217   -3.697
+ UMA           H202   H    H         0.000     -4.700    2.474   -2.763
+ UMA           H201   H    H         0.000     -4.577    2.031   -4.430
+ UMA           "O3'"  O    O2        0.000     -5.735   -0.353   -4.182
+ UMA           "C3'"  C    CH1       0.000     -7.130   -0.422   -3.880
+ UMA           "H3'"  H    H         0.000     -7.393    0.374   -3.170
+ UMA           "C2'"  C    CH1       0.000     -7.456   -1.787   -3.266
+ UMA           "H2'"  H    H         0.000     -7.093   -2.584   -3.930
+ UMA           "N2'"  N    NH1       0.000     -6.811   -1.911   -1.957
+ UMA           HN2    H    H         0.000     -6.647   -1.087   -1.395
+ UMA           "C7'"  C    C         0.000     -6.436   -3.122   -1.502
+ UMA           "C8'"  C    CH3       0.000     -5.773   -3.249   -0.154
+ UMA           "H8'3" H    H         0.000     -4.876   -2.684   -0.146
+ UMA           "H8'2" H    H         0.000     -6.424   -2.884    0.598
+ UMA           "H8'1" H    H         0.000     -5.549   -4.267    0.037
+ UMA           "O7'"  O    O         0.000     -6.633   -4.110   -2.177
+ UMA           "C4'"  C    CH1       0.000     -7.943   -0.253   -5.168
+ UMA           "H4'"  H    H         0.000     -7.602   -0.982   -5.917
+ UMA           "O4'"  O    OH1       0.000     -7.766    1.072   -5.675
+ UMA           HO4    H    H         0.000     -8.281    1.176   -6.487
+ UMA           "C5'"  C    CH1       0.000     -9.423   -0.490   -4.858
+ UMA           "H5'"  H    H         0.000     -9.756    0.225   -4.092
+ UMA           "C6'"  C    CH2       0.000    -10.248   -0.292   -6.132
+ UMA           "H6'1" H    H         0.000     -9.915   -1.000   -6.894
+ UMA           "H6'2" H    H         0.000    -10.111    0.727   -6.499
+ UMA           "O6'"  O    OH1       0.000    -11.630   -0.514   -5.843
+ UMA           HO6    H    H         0.000    -12.151   -0.388   -6.648
+ UMA           "O5'"  O    O2        0.000     -9.607   -1.820   -4.377
+ UMA           "C1'"  C    CH1       0.000     -8.973   -1.911   -3.104
+ UMA           "H1'"  H    H         0.000     -9.213   -2.880   -2.644
+ UMA           "O1'"  O    O2        0.000     -9.444   -0.855   -2.262
+ UMA           PB     P    P         0.000    -10.735   -1.421   -1.486
+ UMA           O1B    O    OP       -0.500    -11.772   -1.812   -2.472
+ UMA           O2B    O    OP       -0.500    -10.350   -2.605   -0.680
+ UMA           O3A    O    O2        0.000    -11.320   -0.278   -0.515
+ UMA           PA     P    P         0.000    -12.603   -0.909    0.226
+ UMA           O1A    O    OP       -0.500    -12.187   -2.100    1.005
+ UMA           O2A    O    OP       -0.500    -13.611   -1.307   -0.786
+ UMA           O5B    O    O2        0.000    -13.242    0.186    1.218
+ UMA           C5B    C    CH2       0.000    -14.370   -0.430    1.842
+ UMA           "H5'1" H    H         0.000    -14.042   -1.312    2.396
+ UMA           "H5'2" H    H         0.000    -15.090   -0.729    1.077
+ UMA           C4B    C    CH1       0.000    -15.027    0.562    2.803
+ UMA           H4B    H    H         0.000    -14.303    0.877    3.568
+ UMA           C3B    C    CH1       0.000    -16.249   -0.091    3.476
+ UMA           H3B    H    H         0.000    -16.410   -1.103    3.081
+ UMA           O3B    O    OH1       0.000    -16.087   -0.128    4.896
+ UMA           "HO3'" H    H         0.000    -16.889   -0.486    5.301
+ UMA           C2B    C    CH1       0.000    -17.432    0.837    3.089
+ UMA           H2B    H    H         0.000    -17.974    0.439    2.220
+ UMA           "O2'"  O    OH1       0.000    -18.313    1.026    4.197
+ UMA           "HO2'" H    H         0.000    -18.755    0.191    4.403
+ UMA           O4B    O    O2        0.000    -15.497    1.708    2.076
+ UMA           C1B    C    CH1       0.000    -16.704    2.156    2.729
+ UMA           H1B    H    H         0.000    -16.464    2.725    3.638
+ UMA           N1     N    NR6       0.000    -17.516    2.964    1.815
+ UMA           C6     C    CR16      0.000    -17.837    4.252    2.152
+ UMA           H6     H    H         0.000    -17.492    4.671    3.089
+ UMA           C5     C    CR16      0.000    -18.584    4.996    1.310
+ UMA           H5     H    H         0.000    -18.845    6.016    1.564
+ UMA           C4     C    CR6       0.000    -19.023    4.425    0.091
+ UMA           O4     O    O         0.000    -19.698    5.077   -0.685
+ UMA           N3     N    NR16      0.000    -18.685    3.154   -0.203
+ UMA           HN3    H    H         0.000    -19.006    2.726   -1.095
+ UMA           C2     C    CR6       0.000    -17.934    2.435    0.653
+ UMA           O2     O    O         0.000    -17.638    1.290    0.374
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ UMA      O20    n/a    C22    START
+ UMA      C22    O20    C21    .
+ UMA      O19    C22    .      .
+ UMA      C21    C22    N4     .
+ UMA      H21    C21    .      .
+ UMA      C23    C21    H231   .
+ UMA      H233   C23    .      .
+ UMA      H232   C23    .      .
+ UMA      H231   C23    .      .
+ UMA      N4     C21    C19    .
+ UMA      HN4    N4     .      .
+ UMA      C19    N4     C18    .
+ UMA      O18    C19    .      .
+ UMA      C18    C19    "O3'"  .
+ UMA      H18    C18    .      .
+ UMA      C20    C18    H201   .
+ UMA      H203   C20    .      .
+ UMA      H202   C20    .      .
+ UMA      H201   C20    .      .
+ UMA      "O3'"  C18    "C3'"  .
+ UMA      "C3'"  "O3'"  "C4'"  .
+ UMA      "H3'"  "C3'"  .      .
+ UMA      "C2'"  "C3'"  "N2'"  .
+ UMA      "H2'"  "C2'"  .      .
+ UMA      "N2'"  "C2'"  "C7'"  .
+ UMA      HN2    "N2'"  .      .
+ UMA      "C7'"  "N2'"  "O7'"  .
+ UMA      "C8'"  "C7'"  "H8'1" .
+ UMA      "H8'3" "C8'"  .      .
+ UMA      "H8'2" "C8'"  .      .
+ UMA      "H8'1" "C8'"  .      .
+ UMA      "O7'"  "C7'"  .      .
+ UMA      "C4'"  "C3'"  "C5'"  .
+ UMA      "H4'"  "C4'"  .      .
+ UMA      "O4'"  "C4'"  HO4    .
+ UMA      HO4    "O4'"  .      .
+ UMA      "C5'"  "C4'"  "O5'"  .
+ UMA      "H5'"  "C5'"  .      .
+ UMA      "C6'"  "C5'"  "O6'"  .
+ UMA      "H6'1" "C6'"  .      .
+ UMA      "H6'2" "C6'"  .      .
+ UMA      "O6'"  "C6'"  HO6    .
+ UMA      HO6    "O6'"  .      .
+ UMA      "O5'"  "C5'"  "C1'"  .
+ UMA      "C1'"  "O5'"  "O1'"  .
+ UMA      "H1'"  "C1'"  .      .
+ UMA      "O1'"  "C1'"  PB     .
+ UMA      PB     "O1'"  O3A    .
+ UMA      O1B    PB     .      .
+ UMA      O2B    PB     .      .
+ UMA      O3A    PB     PA     .
+ UMA      PA     O3A    O5B    .
+ UMA      O1A    PA     .      .
+ UMA      O2A    PA     .      .
+ UMA      O5B    PA     C5B    .
+ UMA      C5B    O5B    C4B    .
+ UMA      "H5'1" C5B    .      .
+ UMA      "H5'2" C5B    .      .
+ UMA      C4B    C5B    O4B    .
+ UMA      H4B    C4B    .      .
+ UMA      C3B    C4B    C2B    .
+ UMA      H3B    C3B    .      .
+ UMA      O3B    C3B    "HO3'" .
+ UMA      "HO3'" O3B    .      .
+ UMA      C2B    C3B    "O2'"  .
+ UMA      H2B    C2B    .      .
+ UMA      "O2'"  C2B    "HO2'" .
+ UMA      "HO2'" "O2'"  .      .
+ UMA      O4B    C4B    C1B    .
+ UMA      C1B    O4B    N1     .
+ UMA      H1B    C1B    .      .
+ UMA      N1     C1B    C6     .
+ UMA      C6     N1     C5     .
+ UMA      H6     C6     .      .
+ UMA      C5     C6     C4     .
+ UMA      H5     C5     .      .
+ UMA      C4     C5     N3     .
+ UMA      O4     C4     .      .
+ UMA      N3     C4     C2     .
+ UMA      HN3    N3     .      .
+ UMA      C2     N3     O2     .
+ UMA      O2     C2     .      END
+ UMA      N1     C2     .    ADD
+ UMA      C1B    C2B    .    ADD
+ UMA      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UMA       N1        C2        single    1.410     0.020     1.410     0.020     
+UMA       C6        N1        single    1.337     0.020     1.337     0.020     
+UMA       N1        C1B       single    1.465     0.020     1.465     0.020     
+UMA       C2        N3        single    1.337     0.020     1.337     0.020     
+UMA       O2        C2        double    1.250     0.020     1.250     0.020     
+UMA       N3        C4        single    1.337     0.020     1.337     0.020     
+UMA       HN3       N3        single    1.016     0.010     0.899     0.007     
+UMA       C4        C5        single    1.390     0.020     1.390     0.020     
+UMA       O4        C4        double    1.250     0.020     1.250     0.020     
+UMA       C5        C6        double    1.390     0.020     1.390     0.020     
+UMA       H5        C5        single    1.082     0.013     0.975     0.010     
+UMA       H6        C6        single    1.082     0.013     0.975     0.010     
+UMA       C1B       C2B       single    1.524     0.020     1.524     0.020     
+UMA       C1B       O4B       single    1.426     0.020     1.426     0.020     
+UMA       H1B       C1B       single    1.089     0.010     0.989     0.005     
+UMA       "O2'"     C2B       single    1.432     0.020     1.432     0.020     
+UMA       C2B       C3B       single    1.524     0.020     1.524     0.020     
+UMA       H2B       C2B       single    1.089     0.010     0.989     0.005     
+UMA       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+UMA       C3B       C4B       single    1.524     0.020     1.524     0.020     
+UMA       O3B       C3B       single    1.432     0.020     1.432     0.020     
+UMA       H3B       C3B       single    1.089     0.010     0.989     0.005     
+UMA       O4B       C4B       single    1.426     0.020     1.426     0.020     
+UMA       C4B       C5B       single    1.524     0.020     1.524     0.020     
+UMA       H4B       C4B       single    1.089     0.010     0.989     0.005     
+UMA       "HO3'"    O3B       single    0.970     0.012     0.839     0.014     
+UMA       C5B       O5B       single    1.426     0.020     1.426     0.020     
+UMA       "H5'1"    C5B       single    1.089     0.010     0.989     0.005     
+UMA       "H5'2"    C5B       single    1.089     0.010     0.989     0.005     
+UMA       O5B       PA        single    1.610     0.020     1.610     0.020     
+UMA       O1A       PA        deloc     1.510     0.020     1.510     0.020     
+UMA       O2A       PA        deloc     1.510     0.020     1.510     0.020     
+UMA       PA        O3A       single    1.610     0.020     1.610     0.020     
+UMA       O3A       PB        single    1.610     0.020     1.610     0.020     
+UMA       O1B       PB        deloc     1.510     0.020     1.510     0.020     
+UMA       O2B       PB        deloc     1.510     0.020     1.510     0.020     
+UMA       PB        "O1'"     single    1.610     0.020     1.610     0.020     
+UMA       "O1'"     "C1'"     single    1.426     0.020     1.426     0.020     
+UMA       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+UMA       "C1'"     "O5'"     single    1.426     0.020     1.426     0.020     
+UMA       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+UMA       "N2'"     "C2'"     single    1.450     0.020     1.450     0.020     
+UMA       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+UMA       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+UMA       "C7'"     "N2'"     single    1.330     0.020     1.330     0.020     
+UMA       HN2       "N2'"     single    1.016     0.010     0.899     0.007     
+UMA       "O7'"     "C7'"     double    1.220     0.020     1.220     0.020     
+UMA       "C8'"     "C7'"     single    1.500     0.020     1.500     0.020     
+UMA       "H8'1"    "C8'"     single    1.089     0.010     0.989     0.005     
+UMA       "H8'2"    "C8'"     single    1.089     0.010     0.989     0.005     
+UMA       "H8'3"    "C8'"     single    1.089     0.010     0.989     0.005     
+UMA       "C3'"     "O3'"     single    1.426     0.020     1.426     0.020     
+UMA       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+UMA       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+UMA       "O3'"     C18       single    1.426     0.020     1.426     0.020     
+UMA       "O4'"     "C4'"     single    1.432     0.020     1.432     0.020     
+UMA       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+UMA       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+UMA       HO4       "O4'"     single    0.970     0.012     0.839     0.014     
+UMA       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+UMA       "C6'"     "C5'"     single    1.524     0.020     1.524     0.020     
+UMA       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+UMA       "O6'"     "C6'"     single    1.432     0.020     1.432     0.020     
+UMA       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+UMA       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+UMA       HO6       "O6'"     single    0.970     0.012     0.839     0.014     
+UMA       C18       C19       single    1.500     0.020     1.500     0.020     
+UMA       C20       C18       single    1.524     0.020     1.524     0.020     
+UMA       H18       C18       single    1.089     0.010     0.989     0.005     
+UMA       O18       C19       double    1.220     0.020     1.220     0.020     
+UMA       C19       N4        single    1.330     0.020     1.330     0.020     
+UMA       H201      C20       single    1.089     0.010     0.989     0.005     
+UMA       H202      C20       single    1.089     0.010     0.989     0.005     
+UMA       H203      C20       single    1.089     0.010     0.989     0.005     
+UMA       N4        C21       single    1.450     0.020     1.450     0.020     
+UMA       HN4       N4        single    1.016     0.010     0.899     0.007     
+UMA       C21       C22       single    1.500     0.020     1.500     0.020     
+UMA       C23       C21       single    1.524     0.020     1.524     0.020     
+UMA       H21       C21       single    1.089     0.010     0.989     0.005     
+UMA       O19       C22       deloc     1.250     0.020     1.250     0.020     
+UMA       C22       O20       deloc     1.250     0.020     1.250     0.020     
+UMA       H231      C23       single    1.089     0.010     0.989     0.005     
+UMA       H232      C23       single    1.089     0.010     0.989     0.005     
+UMA       H233      C23       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ UMA      O20    C22    O19     123.000    3.000
+ UMA      O20    C22    C21     118.500    3.000
+ UMA      O19    C22    C21     118.500    3.000
+ UMA      C22    C21    H21     108.810    3.000
+ UMA      C22    C21    C23     109.470    3.000
+ UMA      C22    C21    N4      111.600    3.000
+ UMA      H21    C21    C23     108.340    3.000
+ UMA      H21    C21    N4      108.550    3.000
+ UMA      C23    C21    N4      110.000    3.000
+ UMA      C21    C23    H233    109.470    3.000
+ UMA      C21    C23    H232    109.470    3.000
+ UMA      C21    C23    H231    109.470    3.000
+ UMA      H233   C23    H232    109.470    3.000
+ UMA      H233   C23    H231    109.470    3.000
+ UMA      H232   C23    H231    109.470    3.000
+ UMA      C21    N4     HN4     118.500    3.000
+ UMA      C21    N4     C19     121.500    3.000
+ UMA      HN4    N4     C19     120.000    3.000
+ UMA      N4     C19    O18     123.000    3.000
+ UMA      N4     C19    C18     116.500    3.000
+ UMA      O18    C19    C18     120.500    3.000
+ UMA      C19    C18    H18     108.810    3.000
+ UMA      C19    C18    C20     109.470    3.000
+ UMA      C19    C18    "O3'"   109.470    3.000
+ UMA      H18    C18    C20     108.340    3.000
+ UMA      H18    C18    "O3'"   109.470    3.000
+ UMA      C20    C18    "O3'"   109.470    3.000
+ UMA      C18    C20    H203    109.470    3.000
+ UMA      C18    C20    H202    109.470    3.000
+ UMA      C18    C20    H201    109.470    3.000
+ UMA      H203   C20    H202    109.470    3.000
+ UMA      H203   C20    H201    109.470    3.000
+ UMA      H202   C20    H201    109.470    3.000
+ UMA      C18    "O3'"  "C3'"   111.800    3.000
+ UMA      "O3'"  "C3'"  "H3'"   109.470    3.000
+ UMA      "O3'"  "C3'"  "C2'"   109.470    3.000
+ UMA      "O3'"  "C3'"  "C4'"   109.470    3.000
+ UMA      "H3'"  "C3'"  "C2'"   108.340    3.000
+ UMA      "H3'"  "C3'"  "C4'"   108.340    3.000
+ UMA      "C2'"  "C3'"  "C4'"   111.000    3.000
+ UMA      "C3'"  "C2'"  "H2'"   108.340    3.000
+ UMA      "C3'"  "C2'"  "N2'"   110.000    3.000
+ UMA      "C3'"  "C2'"  "C1'"   111.000    3.000
+ UMA      "H2'"  "C2'"  "N2'"   108.550    3.000
+ UMA      "H2'"  "C2'"  "C1'"   108.340    3.000
+ UMA      "N2'"  "C2'"  "C1'"   110.000    3.000
+ UMA      "C2'"  "N2'"  HN2     118.500    3.000
+ UMA      "C2'"  "N2'"  "C7'"   121.500    3.000
+ UMA      HN2    "N2'"  "C7'"   120.000    3.000
+ UMA      "N2'"  "C7'"  "C8'"   116.500    3.000
+ UMA      "N2'"  "C7'"  "O7'"   123.000    3.000
+ UMA      "C8'"  "C7'"  "O7'"   123.000    3.000
+ UMA      "C7'"  "C8'"  "H8'3"  109.470    3.000
+ UMA      "C7'"  "C8'"  "H8'2"  109.470    3.000
+ UMA      "C7'"  "C8'"  "H8'1"  109.470    3.000
+ UMA      "H8'3" "C8'"  "H8'2"  109.470    3.000
+ UMA      "H8'3" "C8'"  "H8'1"  109.470    3.000
+ UMA      "H8'2" "C8'"  "H8'1"  109.470    3.000
+ UMA      "C3'"  "C4'"  "H4'"   108.340    3.000
+ UMA      "C3'"  "C4'"  "O4'"   109.470    3.000
+ UMA      "C3'"  "C4'"  "C5'"   111.000    3.000
+ UMA      "H4'"  "C4'"  "O4'"   109.470    3.000
+ UMA      "H4'"  "C4'"  "C5'"   108.340    3.000
+ UMA      "O4'"  "C4'"  "C5'"   109.470    3.000
+ UMA      "C4'"  "O4'"  HO4     109.470    3.000
+ UMA      "C4'"  "C5'"  "H5'"   108.340    3.000
+ UMA      "C4'"  "C5'"  "C6'"   111.000    3.000
+ UMA      "C4'"  "C5'"  "O5'"   109.470    3.000
+ UMA      "H5'"  "C5'"  "C6'"   108.340    3.000
+ UMA      "H5'"  "C5'"  "O5'"   109.470    3.000
+ UMA      "C6'"  "C5'"  "O5'"   109.470    3.000
+ UMA      "C5'"  "C6'"  "H6'1"  109.470    3.000
+ UMA      "C5'"  "C6'"  "H6'2"  109.470    3.000
+ UMA      "C5'"  "C6'"  "O6'"   109.470    3.000
+ UMA      "H6'1" "C6'"  "H6'2"  107.900    3.000
+ UMA      "H6'1" "C6'"  "O6'"   109.470    3.000
+ UMA      "H6'2" "C6'"  "O6'"   109.470    3.000
+ UMA      "C6'"  "O6'"  HO6     109.470    3.000
+ UMA      "C5'"  "O5'"  "C1'"   111.800    3.000
+ UMA      "O5'"  "C1'"  "H1'"   109.470    3.000
+ UMA      "O5'"  "C1'"  "O1'"   109.470    3.000
+ UMA      "O5'"  "C1'"  "C2'"   109.470    3.000
+ UMA      "H1'"  "C1'"  "O1'"   109.470    3.000
+ UMA      "H1'"  "C1'"  "C2'"   108.340    3.000
+ UMA      "O1'"  "C1'"  "C2'"   109.470    3.000
+ UMA      "C1'"  "O1'"  PB      120.500    3.000
+ UMA      "O1'"  PB     O1B     108.200    3.000
+ UMA      "O1'"  PB     O2B     108.200    3.000
+ UMA      "O1'"  PB     O3A     102.600    3.000
+ UMA      O1B    PB     O2B     119.900    3.000
+ UMA      O1B    PB     O3A     108.200    3.000
+ UMA      O2B    PB     O3A     108.200    3.000
+ UMA      PB     O3A    PA      120.500    3.000
+ UMA      O3A    PA     O1A     108.200    3.000
+ UMA      O3A    PA     O2A     108.200    3.000
+ UMA      O3A    PA     O5B     102.600    3.000
+ UMA      O1A    PA     O2A     119.900    3.000
+ UMA      O1A    PA     O5B     108.200    3.000
+ UMA      O2A    PA     O5B     108.200    3.000
+ UMA      PA     O5B    C5B     120.500    3.000
+ UMA      O5B    C5B    "H5'1"  109.470    3.000
+ UMA      O5B    C5B    "H5'2"  109.470    3.000
+ UMA      O5B    C5B    C4B     109.470    3.000
+ UMA      "H5'1" C5B    "H5'2"  107.900    3.000
+ UMA      "H5'1" C5B    C4B     109.470    3.000
+ UMA      "H5'2" C5B    C4B     109.470    3.000
+ UMA      C5B    C4B    H4B     108.340    3.000
+ UMA      C5B    C4B    C3B     111.000    3.000
+ UMA      C5B    C4B    O4B     109.470    3.000
+ UMA      H4B    C4B    C3B     108.340    3.000
+ UMA      H4B    C4B    O4B     109.470    3.000
+ UMA      C3B    C4B    O4B     109.470    3.000
+ UMA      C4B    C3B    H3B     108.340    3.000
+ UMA      C4B    C3B    O3B     109.470    3.000
+ UMA      C4B    C3B    C2B     111.000    3.000
+ UMA      H3B    C3B    O3B     109.470    3.000
+ UMA      H3B    C3B    C2B     108.340    3.000
+ UMA      O3B    C3B    C2B     109.470    3.000
+ UMA      C3B    O3B    "HO3'"  109.470    3.000
+ UMA      C3B    C2B    H2B     108.340    3.000
+ UMA      C3B    C2B    "O2'"   109.470    3.000
+ UMA      C3B    C2B    C1B     111.000    3.000
+ UMA      H2B    C2B    "O2'"   109.470    3.000
+ UMA      H2B    C2B    C1B     108.340    3.000
+ UMA      "O2'"  C2B    C1B     109.470    3.000
+ UMA      C2B    "O2'"  "HO2'"  109.470    3.000
+ UMA      C4B    O4B    C1B     111.800    3.000
+ UMA      O4B    C1B    H1B     109.470    3.000
+ UMA      O4B    C1B    N1      109.470    3.000
+ UMA      O4B    C1B    C2B     109.470    3.000
+ UMA      H1B    C1B    N1      109.470    3.000
+ UMA      H1B    C1B    C2B     108.340    3.000
+ UMA      N1     C1B    C2B     109.470    3.000
+ UMA      C1B    N1     C6      120.000    3.000
+ UMA      C1B    N1     C2      120.000    3.000
+ UMA      C6     N1     C2      120.000    3.000
+ UMA      N1     C6     H6      120.000    3.000
+ UMA      N1     C6     C5      120.000    3.000
+ UMA      H6     C6     C5      120.000    3.000
+ UMA      C6     C5     H5      120.000    3.000
+ UMA      C6     C5     C4      120.000    3.000
+ UMA      H5     C5     C4      120.000    3.000
+ UMA      C5     C4     O4      120.000    3.000
+ UMA      C5     C4     N3      120.000    3.000
+ UMA      O4     C4     N3      120.000    3.000
+ UMA      C4     N3     HN3     120.000    3.000
+ UMA      C4     N3     C2      120.000    3.000
+ UMA      HN3    N3     C2      120.000    3.000
+ UMA      N3     C2     O2      120.000    3.000
+ UMA      N3     C2     N1      120.000    3.000
+ UMA      O2     C2     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ UMA      var_1    O20    C22    C21    N4      -179.983   20.000   3
+ UMA      var_2    C22    C21    C23    H231     -59.977   20.000   3
+ UMA      var_3    C22    C21    N4     C19     -149.980   20.000   3
+ UMA      CONST_1  C21    N4     C19    C18      180.000    0.000   0
+ UMA      var_4    N4     C19    C18    "O3'"    179.961   20.000   3
+ UMA      var_5    C19    C18    C20    H201      58.877   20.000   3
+ UMA      var_6    C19    C18    "O3'"  "C3'"    150.055   20.000   1
+ UMA      var_7    C18    "O3'"  "C3'"  "C4'"    138.891   20.000   1
+ UMA      var_8    "O3'"  "C3'"  "C2'"  "N2'"     60.000   20.000   3
+ UMA      var_9    "C3'"  "C2'"  "N2'"  "C7'"   -150.299   20.000   3
+ UMA      CONST_2  "C2'"  "N2'"  "C7'"  "O7'"      0.000    0.000   0
+ UMA      var_10   "N2'"  "C7'"  "C8'"  "H8'1"   179.988   20.000   1
+ UMA      var_11   "O3'"  "C3'"  "C4'"  "C5'"    180.000   20.000   3
+ UMA      var_12   "C3'"  "C4'"  "O4'"  HO4     -179.936   20.000   1
+ UMA      var_13   "C3'"  "C4'"  "C5'"  "O5'"    -60.000   20.000   3
+ UMA      var_14   "C4'"  "C5'"  "C6'"  "O6'"    179.960   20.000   3
+ UMA      var_15   "C5'"  "C6'"  "O6'"  HO6      179.914   20.000   1
+ UMA      var_16   "C4'"  "C5'"  "O5'"  "C1'"     60.000   20.000   1
+ UMA      var_17   "C5'"  "O5'"  "C1'"  "O1'"     60.000   20.000   1
+ UMA      var_18   "O5'"  "C1'"  "C2'"  "C3'"     60.000   20.000   3
+ UMA      var_19   "O5'"  "C1'"  "O1'"  PB        89.995   20.000   1
+ UMA      var_20   "C1'"  "O1'"  PB     O3A     -179.967   20.000   1
+ UMA      var_21   "O1'"  PB     O3A    PA      -179.964   20.000   1
+ UMA      var_22   PB     O3A    PA     O5B      179.988   20.000   1
+ UMA      var_23   O3A    PA     O5B    C5B      179.972   20.000   1
+ UMA      var_24   PA     O5B    C5B    C4B     -179.980   20.000   1
+ UMA      var_25   O5B    C5B    C4B    O4B       61.720   20.000   3
+ UMA      var_26   C5B    C4B    C3B    C2B     -120.000   20.000   3
+ UMA      var_27   C4B    C3B    O3B    "HO3'"   176.175   20.000   1
+ UMA      var_28   C4B    C3B    C2B    "O2'"   -150.000   20.000   3
+ UMA      var_29   C3B    C2B    "O2'"  "HO2'"   -67.372   20.000   1
+ UMA      var_30   C5B    C4B    O4B    C1B      150.000   20.000   1
+ UMA      var_31   C4B    O4B    C1B    N1      -150.000   20.000   1
+ UMA      var_32   O4B    C1B    C2B    C3B       30.000   20.000   3
+ UMA      var_33   O4B    C1B    N1     C6      -121.500   20.000   1
+ UMA      CONST_3  C1B    N1     C2     N3       180.000    0.000   0
+ UMA      CONST_4  C1B    N1     C6     C5       180.000    0.000   0
+ UMA      CONST_5  N1     C6     C5     C4         0.000    0.000   0
+ UMA      CONST_6  C6     C5     C4     N3         0.000    0.000   0
+ UMA      CONST_7  C5     C4     N3     C2         0.000    0.000   0
+ UMA      CONST_8  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ UMA      chir_01  C1B    N1     C2B    O4B       negativ
+ UMA      chir_02  C2B    C1B    "O2'"  C3B       positiv
+ UMA      chir_03  C3B    C2B    C4B    O3B       negativ
+ UMA      chir_04  C4B    C3B    O4B    C5B       positiv
+ UMA      chir_05  "C1'"  "O1'"  "C2'"  "O5'"     positiv
+ UMA      chir_06  "C2'"  "C1'"  "N2'"  "C3'"     positiv
+ UMA      chir_07  "C3'"  "C2'"  "O3'"  "C4'"     negativ
+ UMA      chir_08  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+ UMA      chir_09  "C5'"  "C4'"  "O5'"  "C6'"     positiv
+ UMA      chir_10  C18    "O3'"  C19    C20       negativ
+ UMA      chir_11  C21    N4     C22    C23       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ UMA      plan-1    N1        0.020
+ UMA      plan-1    C2        0.020
+ UMA      plan-1    C6        0.020
+ UMA      plan-1    C1B       0.020
+ UMA      plan-1    N3        0.020
+ UMA      plan-1    C4        0.020
+ UMA      plan-1    C5        0.020
+ UMA      plan-1    O2        0.020
+ UMA      plan-1    HN3       0.020
+ UMA      plan-1    O4        0.020
+ UMA      plan-1    H5        0.020
+ UMA      plan-1    H6        0.020
+ UMA      plan-2    "N2'"     0.020
+ UMA      plan-2    "C2'"     0.020
+ UMA      plan-2    "C7'"     0.020
+ UMA      plan-2    HN2       0.020
+ UMA      plan-3    "C7'"     0.020
+ UMA      plan-3    "N2'"     0.020
+ UMA      plan-3    "O7'"     0.020
+ UMA      plan-3    "C8'"     0.020
+ UMA      plan-3    HN2       0.020
+ UMA      plan-4    C19       0.020
+ UMA      plan-4    C18       0.020
+ UMA      plan-4    O18       0.020
+ UMA      plan-4    N4        0.020
+ UMA      plan-4    HN4       0.020
+ UMA      plan-5    N4        0.020
+ UMA      plan-5    C19       0.020
+ UMA      plan-5    C21       0.020
+ UMA      plan-5    HN4       0.020
+ UMA      plan-6    C22       0.020
+ UMA      plan-6    C21       0.020
+ UMA      plan-6    O19       0.020
+ UMA      plan-6    O20       0.020
+# ------------------------------------------------------

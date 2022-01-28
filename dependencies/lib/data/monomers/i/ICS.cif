@@ -1,0 +1,253 @@
+global_
+_lib_name         FeMo_cofactor
+_lib_version      2.0_aom
+_lib_update       19_06_30
+# ------------------------------------------------
+#
+# Credit to: Ailiena Maggiolo, Caltech
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ICS      ICS 'iron-sulfur-molybdenum cluster with ' non-polymer        24  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ICS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ICS           S4B    S    ST        0.000     37.233    7.647   -6.007
+ ICS           MO1    MO   MO        0.000     38.496    5.661   -6.039
+ ICS           FE5    FE   FE        0.000     38.418    7.624   -7.927
+ ICS           S3A    S    S2        0.000     38.808    9.571   -9.009
+ ICS           FE7    FE   FE        0.000     36.259    6.217   -7.399
+ ICS           S5A    S    S2        0.000     34.095    6.479   -7.782
+ ICS           S3B    S    ST        0.000     37.015    4.121   -7.066
+ ICS           FE6    FE   FE        0.000     38.247    5.097   -8.634
+ ICS           S2B    S    S2        0.000     38.464    3.989  -10.496
+ ICS           S1B    S    ST        0.000     40.057    6.076   -7.757
+ ICS           CX     C    C         0.000     37.113    6.680   -9.123
+ ICS           FE4    FE   FE        0.000     37.369    8.343  -10.209
+ ICS           S1A    S    ST        0.000     38.056    7.476  -12.210
+ ICS           S4A    S    ST        0.000     35.200    9.011  -10.483
+ ICS           FE1    FE   FE        0.000     35.753    7.581  -12.182
+ ICS           FE3    FE   FE        0.000     35.212    6.916   -9.661
+ ICS           S2A    S    ST        0.000     35.107    5.531  -11.453
+ ICS           FE2    FE   FE        0.000     37.274    5.788  -10.921
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ICS       FE1       S1A       single    2.306     0.020     2.306     0.020     
+ICS       FE1       S2A       single    2.270     0.020     2.270     0.020     
+ICS       FE1       S4A       single    2.289     0.020     2.289     0.020     
+ICS       FE2       CX        single    2.014     0.020     2.014     0.020     
+ICS       FE2       S1A       single    2.263     0.020     2.263     0.020     
+ICS       FE2       S2A       single    2.246     0.020     2.246     0.020     
+ICS       FE2       S2B       single    2.210     0.020     2.210     0.020     
+ICS       FE3       CX        single    1.980     0.020     1.980     0.020     
+ICS       S2A       FE3       single    2.280     0.020     2.280     0.020     
+ICS       FE3       S4A       single    2.251     0.020     2.251     0.020     
+ICS       FE3       S5A       single    2.220     0.020     2.220     0.020     
+ICS       FE4       CX        single    1.990     0.020     1.990     0.020     
+ICS       S1A       FE4       single    2.286     0.020     2.286     0.020     
+ICS       FE4       S3A       single    2.240     0.020     2.240     0.020     
+ICS       S4A       FE4       single    2.286     0.020     2.286     0.020     
+ICS       FE5       CX        single    2.006     0.020     2.006     0.020     
+ICS       FE5       S1B       single    2.270     0.020     2.270     0.020     
+ICS       S3A       FE5       single    2.261     0.020     2.261     0.020     
+ICS       FE5       S4B       single    2.256     0.020     2.256     0.020     
+ICS       FE6       CX        single    2.020     0.020     2.020     0.020     
+ICS       S1B       FE6       single    2.237     0.020     2.237     0.020     
+ICS       S2B       FE6       single    2.178     0.020     2.178     0.020     
+ICS       FE6       S3B       single    2.220     0.020     2.220     0.020     
+ICS       CX        FE7       single    2.000     0.020     2.000     0.020     
+ICS       S3B       FE7       single    2.253     0.020     2.253     0.020     
+ICS       FE7       S4B       single    2.221     0.020     2.221     0.020     
+ICS       S5A       FE7       single    2.213     0.020     2.213     0.020     
+ICS       MO1       S1B       single    2.358     0.020     2.358     0.020     
+ICS       MO1       S3B       single    2.371     0.020     2.371     0.020     
+ICS       MO1       S4B       single    2.354     0.020     2.354     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ICS      MO1    S4B    FE5      72.610    3.000
+ ICS      MO1    S4B    FE7      71.710    3.000
+ ICS      FE5    S4B    FE7      71.990    3.000
+ ICS      S4B    MO1    S1B     102.530    3.000
+ ICS      S4B    MO1    S3B     102.380    3.000
+ ICS      S1B    MO1    S3B     102.120    3.000
+ ICS      S4B    FE5    S3A     119.490    3.000
+ ICS      S4B    FE5    CX      100.470    3.000
+ ICS      S4B    FE5    S1B     108.530    3.000
+ ICS      CX     FE5    S1B     101.230    3.000
+ ICS      S3A    FE5    CX      103.080    3.000
+ ICS      S3A    FE5    S1B     119.970    3.000
+ ICS      FE5    S3A    FE4      70.947    3.000
+ ICS      S4B    FE7    S5A     117.570    3.000
+ ICS      S4B    FE7    S3B     110.920    3.000
+ ICS      S4B    FE7    CX      101.850    3.000
+ ICS      S5A    FE7    S3B     117.830    3.000
+ ICS      S5A    FE7    CX      103.870    3.000
+ ICS      S3B    FE7    CX      101.660    3.000
+ ICS      FE7    S5A    FE3      71.310    3.000
+ ICS      FE7    S3B    FE6      71.250    3.000
+ ICS      FE7    S3B    MO1      71.020    3.000
+ ICS      FE6    S3B    MO1      71.250    3.000
+ ICS      S3B    FE6    S2B     115.940    3.000
+ ICS      S3B    FE6    S1B     110.860    3.000
+ ICS      S3B    FE6    CX      105.140    3.000
+ ICS      S2B    FE6    S1B     118.860    3.000
+ ICS      S2B    FE6    CX      104.280    3.000
+ ICS      S1B    FE6    CX      102.080    3.000
+ ICS      FE6    S2B    FE2      72.070    3.000
+ ICS      FE6    S1B    MO1      71.360    3.000
+ ICS      FE6    S1B    FE5      71.540    3.000
+ ICS      MO1    S1B    FE5      72.420    3.000
+ ICS      FE7    CX     FE4     135.830    3.000
+ ICS      FE7    CX     FE2     134.970    3.000
+ ICS      FE7    CX     FE3      80.880    3.000
+ ICS      FE7    CX     FE5      81.960    3.000
+ ICS      FE7    CX     FE6      80.740    3.000
+ ICS      FE2    CX     FE3      84.290    3.000
+ ICS      FE2    CX     FE5     133.970    3.000
+ ICS      FE3    CX     FE5     136.080    3.000
+ ICS      FE2    CX     FE6      79.830    3.000
+ ICS      FE3    CX     FE6     134.140    3.000
+ ICS      FE5    CX     FE6      81.650    3.000
+ ICS      FE4    CX     FE2      83.430    3.000
+ ICS      FE4    CX     FE3      83.280    3.000
+ ICS      FE4    CX     FE5      81.560    3.000
+ ICS      FE4    CX     FE6     136.170    3.000
+ ICS      CX     FE4    S1A     101.010    3.000
+ ICS      CX     FE4    S4A     100.950    3.000
+ ICS      CX     FE4    S3A     104.420    3.000
+ ICS      S1A    FE4    S4A     106.820    3.000
+ ICS      S1A    FE4    S3A     118.730    3.000
+ ICS      S4A    FE4    S3A     121.220    3.000
+ ICS      FE4    S1A    FE1      70.840    3.000
+ ICS      FE4    S1A    FE2      71.410    3.000
+ ICS      FE1    S1A    FE2      71.700    3.000
+ ICS      FE4    S4A    FE1      70.970    3.000
+ ICS      FE4    S4A    FE3      71.120    3.000
+ ICS      FE1    S4A    FE3      71.950    3.000
+ ICS      S4A    FE1    S1A     106.480    3.000
+ ICS      S4A    FE1    S2A     104.970    3.000
+ ICS      S1A    FE1    S2A     104.510    3.000
+ ICS      S4A    FE3    S2A     105.570    3.000
+ ICS      S4A    FE3    CX      102.260    3.000
+ ICS      S4A    FE3    S5A     119.330    3.000
+ ICS      CX     FE3    S5A     103.910    3.000
+ ICS      S2A    FE3    CX      100.350    3.000
+ ICS      S2A    FE3    S5A     121.610    3.000
+ ICS      FE3    S2A    FE2      72.290    3.000
+ ICS      FE3    S2A    FE1      71.960    3.000
+ ICS      FE2    S2A    FE1      72.370    3.000
+ ICS      S2A    FE2    CX      100.650    3.000
+ ICS      S2A    FE2    S1A     106.030    3.000
+ ICS      S2A    FE2    S2B     118.290    3.000
+ ICS      CX     FE2    S1A     101.630    3.000
+ ICS      CX     FE2    S2B     103.790    3.000
+ ICS      S1A    FE2    S2B     122.640    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ICS      var_1            FE5    S4B    MO1    S1B                0.000           20.000   3
+ ICS      var_2            FE5    S1B    MO1    S4B                0.000           20.000   3
+ ICS      var_3            FE6    S3B    MO1    S1B                0.000           20.000   3
+ ICS      var_4            HS4B   S4B    FE5    S3A              180.000           20.000   3
+ ICS      var_5            S4B    FE5    CX     FE7              -15.046           20.000   3
+ ICS      var_6            S4B    FE5    S1B    FE6               90.993           20.000   3
+ ICS      var_7            S4B    FE5    S3A    FE4             -110.122           20.000   3
+ ICS      var_8            MO1    S4B    FE7    CX                 0.000           20.000   3
+ ICS      var_9            FE3    S5A    FE7    CX                 0.000           20.000   3
+ ICS      var_10           FE6    S3B    FE7    CX                 0.000           20.000   3
+ ICS      var_11           FE7    S3B    FE6    CX                 0.000           20.000   3
+ ICS      var_12           FE7    CX     FE6    S3B                0.000           20.000   3
+ ICS      var_13           FE2    S2B    FE6    CX                 0.000           20.000   3
+ ICS      var_14           MO1    S1B    FE6    S3B                0.000           20.000   3
+ ICS      var_15           FE5    CX     FE7    S4B                0.000           20.000   3
+ ICS      var_16           FE7    CX     FE4    S4A              -56.906           20.000   3
+ ICS      var_17           CX     FE4    S3A    FE5                0.575           20.000   3
+ ICS      var_18           CX     FE4    S1A    FE1               88.052           20.000   3
+ ICS      var_19           CX     FE4    S4A    FE3              -11.876           20.000   3
+ ICS      var_20           FE4    S4A    FE1    S1A              -16.915           20.000   3
+ ICS      var_21           S4A    FE1    S1A    FE4               16.945           20.000   3
+ ICS      var_22           S4A    FE1    S2A    FE3              -17.211           20.000   3
+ ICS      var_23           FE4    S4A    FE3    S2A              -93.147           20.000   3
+ ICS      var_24           S4A    FE3    CX     FE7              125.847           20.000   3
+ ICS      var_25           S4A    FE3    S5A    FE7             -113.908           20.000   3
+ ICS      var_26           S4A    FE3    S2A    FE2               94.358           20.000   3
+ ICS      var_27           FE3    S2A    FE2    CX                11.883           20.000   3
+ ICS      var_28           S2A    FE2    CX     FE7               57.942           20.000   3
+ ICS      var_29           S2A    FE2    S1A    FE4               93.245           20.000   3
+ ICS      var_30           S2A    FE2    S2B    FE6             -111.650           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ ICS      chir_01          CX     FE2    FE3    FE4       positiv
+                   .      .      .      .      .
+ ICS      chir_02          S1A    FE1    FE2    FE4       positiv
+                   .      .      .      .      .
+ ICS      chir_03          S1B    MO1    FE5    FE6       positiv
+                   .      .      .      .      .
+ ICS      chir_04          S2A    FE1    FE2    FE3       negativ
+                   .      .      .      .      .
+ ICS      chir_05          S3B    MO1    FE6    FE7       positiv
+                   .      .      .      .      .
+ ICS      chir_06          S4A    FE1    FE3    FE4       negativ
+                   .      .      .      .      .
+ ICS      chir_07          S4B    MO1    FE5    FE7       negativ
+                   .      .      .      .      .
+ ICS      chir_08          FE1    S4A    S1A    S2A       both
+                   .      .      .      .      .
+ ICS      chir_09          MO1    S4B    .      S1B       cross4
+                   S3B    .      .      .      .
+ ICS      chir_10          FE6    CX     .      S3B       cross3
+                   S1B    S2B    .      .      .
+ ICS      chir_11          FE7    CX     .      S4B       cross3
+                   S3B    S5A    .      .      .
+# ------------------------------------------------------

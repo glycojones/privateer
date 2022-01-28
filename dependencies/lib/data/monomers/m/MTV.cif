@@ -1,0 +1,309 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MTV      MTV '(MOLYBDOPTERIN-S,S)-DIOXO-THIO-MOLYB' non-polymer        34  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MTV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MTV           OM1    O    O         0.000      1.761    4.332   -1.281
+ MTV           MOM1   MO   MO       -1.000      1.574    3.172    0.007
+ MTV           "S1'"  S    S2        0.000     -0.747    2.492    0.292
+ MTV           OM2    O    OH1       0.000      2.379    3.826    1.717
+ MTV           HM11   H    H         0.000      3.292    4.121    1.723
+ MTV           "S2'"  S    S2        0.000      2.416    0.971   -0.616
+ MTV           "C2'"  C    C         0.000      0.815    0.168   -0.419
+ MTV           "C1'"  C    C         0.000     -0.407    0.789   -0.170
+ MTV           C6     C    CR6       0.000     -1.598   -0.046   -0.235
+ MTV           "C3'"  C    C         0.000      0.869   -1.228   -0.506
+ MTV           "C4'"  C    CH2       0.000      2.185   -1.889   -0.826
+ MTV           "H4'1" H    H         0.000      2.934   -1.124   -1.040
+ MTV           "H4'2" H    H         0.000      2.065   -2.533   -1.700
+ MTV           "O4'"  O    O2        0.000      2.608   -2.673    0.292
+ MTV           P      P    P         0.000      3.977   -3.521    0.300
+ MTV           O3P    O    OP       -0.666      3.895   -4.620   -0.736
+ MTV           O2P    O    OP       -0.666      4.184   -4.132    1.669
+ MTV           O1P    O    OP       -0.666      5.138   -2.607   -0.025
+ MTV           "O3'"  O    O2        0.000     -0.210   -1.991   -0.314
+ MTV           C7     C    CH1       0.000     -1.482   -1.448   -0.759
+ MTV           H7     H    H         0.000     -1.532   -1.448   -1.857
+ MTV           N8     N    NR16      0.000     -2.575   -2.261   -0.200
+ MTV           H8     H    H         0.000     -2.424   -3.252    0.078
+ MTV           C10    C    CR66      0.000     -3.809   -1.656   -0.060
+ MTV           N1     N    NRD6      0.000     -4.936   -2.345   -0.093
+ MTV           C9     C    CR66      0.000     -3.859   -0.255    0.130
+ MTV           N5     N    NRD6      0.000     -2.737    0.466    0.144
+ MTV           C4     C    CR6       0.000     -5.178    0.356    0.321
+ MTV           O4     O    O         0.000     -5.298    1.556    0.523
+ MTV           N3     N    NRD6      0.000     -6.249   -0.451    0.267
+ MTV           C2     C    CR6       0.000     -6.114   -1.750    0.064
+ MTV           N2     N    NH2       0.000     -7.252   -2.527    0.011
+ MTV           H22N   H    H         0.000     -8.168   -2.106    0.126
+ MTV           H21N   H    H         0.000     -7.185   -3.527   -0.143
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MTV      OM1    n/a    MOM1   START
+ MTV      MOM1   OM1    "S2'"  .
+ MTV      "S1'"  MOM1   .      .
+ MTV      OM2    MOM1   HM11   .
+ MTV      HM11   OM2    .      .
+ MTV      "S2'"  MOM1   "C2'"  .
+ MTV      "C2'"  "S2'"  "C3'"  .
+ MTV      "C1'"  "C2'"  C6     .
+ MTV      C6     "C1'"  .      .
+ MTV      "C3'"  "C2'"  "O3'"  .
+ MTV      "C4'"  "C3'"  "O4'"  .
+ MTV      "H4'1" "C4'"  .      .
+ MTV      "H4'2" "C4'"  .      .
+ MTV      "O4'"  "C4'"  P      .
+ MTV      P      "O4'"  O1P    .
+ MTV      O3P    P      .      .
+ MTV      O2P    P      .      .
+ MTV      O1P    P      .      .
+ MTV      "O3'"  "C3'"  C7     .
+ MTV      C7     "O3'"  N8     .
+ MTV      H7     C7     .      .
+ MTV      N8     C7     C10    .
+ MTV      H8     N8     .      .
+ MTV      C10    N8     C9     .
+ MTV      N1     C10    .      .
+ MTV      C9     C10    C4     .
+ MTV      N5     C9     .      .
+ MTV      C4     C9     N3     .
+ MTV      O4     C4     .      .
+ MTV      N3     C4     C2     .
+ MTV      C2     N3     N2     .
+ MTV      N2     C2     H21N   .
+ MTV      H22N   N2     .      .
+ MTV      H21N   N2     .      END
+ MTV      N1     C2     .    ADD
+ MTV      N5     C6     .    ADD
+ MTV      C6     C7     .    ADD
+ MTV      "C1'"  "S1'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MTV       N1        C2        single    1.350     0.020     1.350     0.020     
+MTV       N2        C2        single    1.355     0.020     1.355     0.020     
+MTV       C2        N3        double    1.350     0.020     1.350     0.020     
+MTV       N3        C4        single    1.350     0.020     1.350     0.020     
+MTV       O4        C4        double    1.250     0.020     1.250     0.020     
+MTV       N5        C6        single    1.350     0.020     1.350     0.020     
+MTV       C6        C7        single    1.480     0.020     1.480     0.020     
+MTV       N8        C7        single    1.465     0.020     1.465     0.020     
+MTV       C4        C9        single    1.490     0.020     1.490     0.020     
+MTV       N5        C9        double    1.350     0.020     1.350     0.020     
+MTV       N1        C10       double    1.350     0.020     1.350     0.020     
+MTV       C10       N8        single    1.337     0.020     1.337     0.020     
+MTV       C9        C10       single    1.490     0.020     1.490     0.020     
+MTV       C6        "C1'"     double    1.500     0.020     1.500     0.020     
+MTV       "C1'"     "S1'"     single    1.665     0.020     1.665     0.020     
+MTV       "C1'"     "C2'"     single    1.460     0.020     1.460     0.020     
+MTV       "C2'"     "S2'"     single    1.665     0.020     1.665     0.020     
+MTV       "C3'"     "C2'"     double    1.330     0.020     1.330     0.020     
+MTV       C7        "O3'"     single    1.426     0.020     1.426     0.020     
+MTV       "O3'"     "C3'"     single    1.454     0.020     1.454     0.020     
+MTV       "C4'"     "C3'"     single    1.510     0.020     1.510     0.020     
+MTV       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+MTV       P         "O4'"     single    1.610     0.020     1.610     0.020     
+MTV       O1P       P         deloc     1.510     0.020     1.510     0.020     
+MTV       O2P       P         deloc     1.510     0.020     1.510     0.020     
+MTV       O3P       P         deloc     1.510     0.020     1.510     0.020     
+MTV       "S1'"     MOM1      single    2.325     0.020     2.325     0.020     
+MTV       "S2'"     MOM1      single    2.325     0.020     2.325     0.020     
+MTV       H7        C7        single    1.089     0.010     0.989     0.005     
+MTV       H8        N8        single    1.016     0.010     0.899     0.007     
+MTV       MOM1      OM1       double    1.865     0.020     1.865     0.020     
+MTV       OM2       MOM1      single    2.059     0.020     2.059     0.020     
+MTV       "H4'1"    "C4'"     single    1.089     0.010     0.989     0.005     
+MTV       "H4'2"    "C4'"     single    1.089     0.010     0.989     0.005     
+MTV       H21N      N2        single    1.016     0.010     0.899     0.007     
+MTV       H22N      N2        single    1.016     0.010     0.899     0.007     
+MTV       HM11      OM2       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MTV      OM1    MOM1   "S1'"    90.000    3.000
+ MTV      OM1    MOM1   OM2      90.000    3.000
+ MTV      OM1    MOM1   "S2'"    90.000    3.000
+ MTV      "S1'"  MOM1   OM2      90.000    3.000
+ MTV      "S1'"  MOM1   "S2'"    90.000    3.000
+ MTV      OM2    MOM1   "S2'"    90.000    3.000
+ MTV      MOM1   "S1'"  "C1'"    93.107    3.000
+ MTV      MOM1   OM2    HM11    120.000    3.000
+ MTV      MOM1   "S2'"  "C2'"    93.873    3.000
+ MTV      "S2'"  "C2'"  "C1'"   120.000    3.000
+ MTV      "S2'"  "C2'"  "C3'"   120.000    3.000
+ MTV      "C1'"  "C2'"  "C3'"   120.000    3.000
+ MTV      "C2'"  "C1'"  C6      120.000    3.000
+ MTV      "C2'"  "C1'"  "S1'"   120.000    3.000
+ MTV      C6     "C1'"  "S1'"   120.000    3.000
+ MTV      "C1'"  C6     N5      120.000    3.000
+ MTV      "C1'"  C6     C7      120.000    3.000
+ MTV      N5     C6     C7      120.000    3.000
+ MTV      "C2'"  "C3'"  "C4'"   120.000    3.000
+ MTV      "C2'"  "C3'"  "O3'"   120.000    3.000
+ MTV      "C4'"  "C3'"  "O3'"   120.000    3.000
+ MTV      "C3'"  "C4'"  "H4'1"  109.470    3.000
+ MTV      "C3'"  "C4'"  "H4'2"  109.470    3.000
+ MTV      "C3'"  "C4'"  "O4'"   109.470    3.000
+ MTV      "H4'1" "C4'"  "H4'2"  107.900    3.000
+ MTV      "H4'1" "C4'"  "O4'"   109.470    3.000
+ MTV      "H4'2" "C4'"  "O4'"   109.470    3.000
+ MTV      "C4'"  "O4'"  P       120.500    3.000
+ MTV      "O4'"  P      O3P     108.200    3.000
+ MTV      "O4'"  P      O2P     108.200    3.000
+ MTV      "O4'"  P      O1P     108.200    3.000
+ MTV      O3P    P      O2P     119.900    3.000
+ MTV      O3P    P      O1P     119.900    3.000
+ MTV      O2P    P      O1P     119.900    3.000
+ MTV      "C3'"  "O3'"  C7      111.800    3.000
+ MTV      "O3'"  C7     H7      109.470    3.000
+ MTV      "O3'"  C7     N8      109.500    3.000
+ MTV      "O3'"  C7     C6      109.470    3.000
+ MTV      H7     C7     N8      109.500    3.000
+ MTV      H7     C7     C6      109.470    3.000
+ MTV      N8     C7     C6      109.500    3.000
+ MTV      C7     N8     H8      120.000    3.000
+ MTV      C7     N8     C10     120.000    3.000
+ MTV      H8     N8     C10     120.000    3.000
+ MTV      N8     C10    N1      120.000    3.000
+ MTV      N8     C10    C9      120.000    3.000
+ MTV      N1     C10    C9      120.000    3.000
+ MTV      C10    N1     C2      120.000    3.000
+ MTV      C10    C9     N5      120.000    3.000
+ MTV      C10    C9     C4      120.000    3.000
+ MTV      N5     C9     C4      120.000    3.000
+ MTV      C9     N5     C6      120.000    3.000
+ MTV      C9     C4     O4      120.000    3.000
+ MTV      C9     C4     N3      120.000    3.000
+ MTV      O4     C4     N3      120.000    3.000
+ MTV      C4     N3     C2      120.000    3.000
+ MTV      N3     C2     N2      120.000    3.000
+ MTV      N3     C2     N1      120.000    3.000
+ MTV      N2     C2     N1      120.000    3.000
+ MTV      C2     N2     H22N    120.000    3.000
+ MTV      C2     N2     H21N    120.000    3.000
+ MTV      H22N   N2     H21N    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MTV      var_1    OM1    MOM1   "S1'"  "C1'"    115.598   20.000   1
+ MTV      var_2    OM1    MOM1   OM2    HM11     -53.358   20.000   1
+ MTV      var_3    OM1    MOM1   "S2'"  "C2'"   -118.918   20.000   1
+ MTV      var_4    MOM1   "S2'"  "C2'"  "C3'"   -171.332   20.000   1
+ MTV      var_5    "S2'"  "C2'"  "C1'"  C6       171.603   20.000   1
+ MTV      var_6    "C2'"  "C1'"  "S1'"  MOM1       6.600   20.000   1
+ MTV      var_7    "C2'"  "C1'"  C6     N5       172.140   20.000   1
+ MTV      var_8    "C1'"  C6     C7     "O3'"     36.556   20.000   1
+ MTV      var_9    "S2'"  "C2'"  "C3'"  "O3'"    176.414   20.000   1
+ MTV      var_10   "C2'"  "C3'"  "C4'"  "O4'"    114.992   20.000   3
+ MTV      var_11   "C3'"  "C4'"  "O4'"  P        179.973   20.000   1
+ MTV      var_12   "C4'"  "O4'"  P      O1P       55.006   20.000   1
+ MTV      var_13   "C2'"  "C3'"  "O3'"  C7        34.302   20.000   1
+ MTV      var_14   "C3'"  "O3'"  C7     N8      -167.099   20.000   1
+ MTV      CONST_1  "O3'"  C7     N8     C10        0.000    0.000   0
+ MTV      CONST_2  C7     N8     C10    C9         0.000    0.000   0
+ MTV      CONST_3  N8     C10    N1     C2       180.000    0.000   0
+ MTV      CONST_4  C10    N1     C2     N3         0.000    0.000   0
+ MTV      CONST_5  N8     C10    C9     C4      -177.987    0.000   0
+ MTV      CONST_6  C10    C9     N5     C6         0.000    0.000   0
+ MTV      CONST_7  C9     N5     C6     "C1'"    180.000    0.000   0
+ MTV      CONST_8  C10    C9     C4     N3         0.000    0.000   0
+ MTV      CONST_9  C9     C4     N3     C2         0.000    0.000   0
+ MTV      CONST_10 C4     N3     C2     N2       180.000    0.000   0
+ MTV      CONST_11 N3     C2     N2     H21N     179.987    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MTV      chir_01  C7     C6     N8     "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MTV      plan-1    N1        0.020
+ MTV      plan-1    C2        0.020
+ MTV      plan-1    C10       0.020
+ MTV      plan-1    N3        0.020
+ MTV      plan-1    C4        0.020
+ MTV      plan-1    N2        0.020
+ MTV      plan-1    O4        0.020
+ MTV      plan-1    C9        0.020
+ MTV      plan-1    N5        0.020
+ MTV      plan-1    C6        0.020
+ MTV      plan-1    C7        0.020
+ MTV      plan-1    N8        0.020
+ MTV      plan-1    "C1'"     0.020
+ MTV      plan-1    H8        0.020
+ MTV      plan-1    H22N      0.020
+ MTV      plan-1    H21N      0.020
+ MTV      plan-2    N2        0.020
+ MTV      plan-2    C2        0.020
+ MTV      plan-2    H21N      0.020
+ MTV      plan-2    H22N      0.020
+ MTV      plan-3    "C1'"     0.020
+ MTV      plan-3    C6        0.020
+ MTV      plan-3    "S1'"     0.020
+ MTV      plan-3    "C2'"     0.020
+ MTV      plan-4    "C2'"     0.020
+ MTV      plan-4    "C1'"     0.020
+ MTV      plan-4    "S2'"     0.020
+ MTV      plan-4    "C3'"     0.020
+ MTV      plan-5    "C3'"     0.020
+ MTV      plan-5    "C2'"     0.020
+ MTV      plan-5    "O3'"     0.020
+ MTV      plan-5    "C4'"     0.020
+# ------------------------------------------------------

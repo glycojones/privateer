@@ -1,0 +1,123 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+E60     E60      2-sulfanylidene-1,3-thiazolidin-4-one     non-polymer     10     7     .     
+#
+data_comp_E60
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+E60     CAE     C       CH2     0       -1.866      -2.735      -9.941      
+E60     CAF     C       CR5     0       -1.601      -3.219      -8.541      
+E60     CAG     C       CR5     0       -2.827      -1.362      -8.068      
+E60     NAD     N       NR5     0       -2.464      -2.611      -7.667      
+E60     OAC     O       O       0       -0.748      -4.038      -8.242      
+E60     SAA     S       S2      0       -2.899      -1.278      -9.795      
+E60     SAB     S       S1      0       -3.164      -0.068      -7.110      
+E60     H1      H       H       0       -1.031      -2.514      -10.384     
+E60     H3      H       H       0       -2.319      -3.422      -10.456     
+E60     H2      H       H       0       -2.759      -2.973      -6.925      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+E60       CAE       SAA       SINGLE    n         1.795     0.0100    1.795     0.0100    
+E60       CAE       CAF       SINGLE    n         1.503     0.0100    1.503     0.0100    
+E60       CAG       SAA       SINGLE    n         1.733     0.0101    1.733     0.0101    
+E60       CAF       OAC       DOUBLE    n         1.220     0.0100    1.220     0.0100    
+E60       CAF       NAD       SINGLE    n         1.367     0.0102    1.367     0.0102    
+E60       CAG       NAD       SINGLE    n         1.358     0.0149    1.358     0.0149    
+E60       CAG       SAB       DOUBLE    n         1.645     0.0110    1.645     0.0110    
+E60       CAE       H1        SINGLE    n         1.089     0.010     0.971     0.0153    
+E60       CAE       H3        SINGLE    n         1.089     0.010     0.971     0.0153    
+E60       NAD       H2        SINGLE    n         1.016     0.010     0.877     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+E60         SAA         CAE         CAF     107.345    1.50
+E60         SAA         CAE          H1     110.404    1.50
+E60         SAA         CAE          H3     110.404    1.50
+E60         CAF         CAE          H1     110.283    1.50
+E60         CAF         CAE          H3     110.283    1.50
+E60          H1         CAE          H3     108.673    1.50
+E60         CAE         CAF         OAC     125.059    1.50
+E60         CAE         CAF         NAD     108.840    1.71
+E60         OAC         CAF         NAD     126.101    1.50
+E60         SAA         CAG         NAD     111.039    1.75
+E60         SAA         CAG         SAB     122.007    1.77
+E60         NAD         CAG         SAB     126.954    1.50
+E60         CAF         NAD         CAG     110.999    2.36
+E60         CAF         NAD          H2     125.935    2.60
+E60         CAG         NAD          H2     123.066    1.50
+E60         CAE         SAA         CAG      93.404    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+E60             sp2_sp3_6         OAC         CAF         CAE         SAA     180.000   10.00     6
+E60             sp3_sp3_1         CAF         CAE         SAA         CAG      60.000   10.00     3
+E60             sp2_sp2_7         OAC         CAF         NAD         CAG     180.000   10.00     2
+E60             sp2_sp2_3         SAB         CAG         NAD         CAF     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+E60    plan-1         CAE   0.020
+E60    plan-1         CAF   0.020
+E60    plan-1         NAD   0.020
+E60    plan-1         OAC   0.020
+E60    plan-2         CAG   0.020
+E60    plan-2         NAD   0.020
+E60    plan-2         SAA   0.020
+E60    plan-2         SAB   0.020
+E60    plan-3         CAF   0.020
+E60    plan-3         CAG   0.020
+E60    plan-3          H2   0.020
+E60    plan-3         NAD   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+E60            InChI                InChI  1.03 InChI=1S/C3H3NOS2/c5-2-1-7-3(6)4-2/h1H2,(H,4,5,6)
+E60         InChIKey                InChI  1.03                       KIWUVOGUEXMXSV-UHFFFAOYSA-N
+E60 SMILES_CANONICAL               CACTVS 3.385                                     O=C1CSC(=S)N1
+E60           SMILES               CACTVS 3.385                                     O=C1CSC(=S)N1
+E60 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                   C1C(=O)NC(=S)S1
+E60           SMILES "OpenEye OEToolkits" 2.0.7                                   C1C(=O)NC(=S)S1
+E60 ?                acedrg               217         "dictionary generator"                  
+E60 ?                acedrg_database      11          "data source"                           
+E60 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+E60 ?                refmac5              5.8.0253    "optimization tool"                     

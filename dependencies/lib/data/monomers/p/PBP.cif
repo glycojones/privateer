@@ -1,0 +1,157 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PBP     PBP      "1-(4-BROMO-PHENYL)-ETHANONE"     NON-POLYMER     17     10     .     
+#
+data_comp_PBP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PBP     CH      C       CH3     0       21.294      56.356      -3.123      
+PBP     CG      C       CR6     0       20.549      58.719      -2.381      
+PBP     CD1     C       CR16    0       20.894      59.551      -1.310      
+PBP     CE1     C       CR16    0       20.939      60.935      -1.461      
+PBP     CD2     C       CR16    0       20.242      59.311      -3.612      
+PBP     CE2     C       CR16    0       20.284      60.693      -3.774      
+PBP     CZ      C       CR6     0       20.632      61.489      -2.694      
+PBP     BR      BR      BR      0       20.691      63.375      -2.907      
+PBP     CR      C       C       0       20.501      57.239      -2.209      
+PBP     O       O       O       0       19.818      56.746      -1.324      
+PBP     HH1     H       H       0       21.782      56.895      -3.765      
+PBP     HH2     H       H       0       20.694      55.758      -3.596      
+PBP     HH3     H       H       0       21.922      55.832      -2.602      
+PBP     HD1     H       H       0       21.101      59.170      -0.474      
+PBP     HE1     H       H       0       21.173      61.486      -0.735      
+PBP     HD2     H       H       0       20.007      58.767      -4.343      
+PBP     HE2     H       H       0       20.079      61.083      -4.606      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PBP       CH        CR        SINGLE    n         1.496     0.010     1.496     0.010     
+PBP       CG        CD1       DOUBLE    y         1.393     0.010     1.393     0.010     
+PBP       CG        CD2       SINGLE    y         1.393     0.010     1.393     0.010     
+PBP       CG        CR        SINGLE    n         1.490     0.010     1.490     0.010     
+PBP       CD1       CE1       SINGLE    y         1.384     0.011     1.384     0.011     
+PBP       CE1       CZ        DOUBLE    y         1.378     0.011     1.378     0.011     
+PBP       CD2       CE2       DOUBLE    y         1.384     0.011     1.384     0.011     
+PBP       CE2       CZ        SINGLE    y         1.378     0.011     1.378     0.011     
+PBP       CZ        BR        SINGLE    n         1.899     0.010     1.899     0.010     
+PBP       CR        O         DOUBLE    n         1.222     0.013     1.222     0.013     
+PBP       CH        HH1       SINGLE    n         1.089     0.010     0.970     0.020     
+PBP       CH        HH2       SINGLE    n         1.089     0.010     0.970     0.020     
+PBP       CH        HH3       SINGLE    n         1.089     0.010     0.970     0.020     
+PBP       CD1       HD1       SINGLE    n         1.082     0.013     0.941     0.017     
+PBP       CE1       HE1       SINGLE    n         1.082     0.013     0.941     0.015     
+PBP       CD2       HD2       SINGLE    n         1.082     0.013     0.941     0.017     
+PBP       CE2       HE2       SINGLE    n         1.082     0.013     0.941     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PBP          CR          CH         HH1     109.610    1.50
+PBP          CR          CH         HH2     109.610    1.50
+PBP          CR          CH         HH3     109.610    1.50
+PBP         HH1          CH         HH2     109.315    1.55
+PBP         HH1          CH         HH3     109.315    1.55
+PBP         HH2          CH         HH3     109.315    1.55
+PBP         CD1          CG         CD2     118.666    1.50
+PBP         CD1          CG          CR     120.667    1.70
+PBP         CD2          CG          CR     120.667    1.70
+PBP          CG         CD1         CE1     120.948    1.50
+PBP          CG         CD1         HD1     119.608    1.50
+PBP         CE1         CD1         HD1     119.444    1.50
+PBP         CD1         CE1          CZ     119.015    1.50
+PBP         CD1         CE1         HE1     120.520    1.50
+PBP          CZ         CE1         HE1     120.464    1.50
+PBP          CG         CD2         CE2     120.948    1.50
+PBP          CG         CD2         HD2     119.608    1.50
+PBP         CE2         CD2         HD2     119.444    1.50
+PBP         CD2         CE2          CZ     119.015    1.50
+PBP         CD2         CE2         HE2     120.520    1.50
+PBP          CZ         CE2         HE2     120.464    1.50
+PBP         CE1          CZ         CE2     121.406    1.50
+PBP         CE1          CZ          BR     119.297    1.50
+PBP         CE2          CZ          BR     119.297    1.50
+PBP          CH          CR          CG     119.347    1.50
+PBP          CH          CR           O     120.252    1.50
+PBP          CG          CR           O     120.401    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PBP             sp2_sp3_4           O          CR          CH         HH1     180.000   10.00     6
+PBP       const_sp2_sp2_2         CE1         CD1          CG          CR     180.000   10.00     2
+PBP              const_22         CE2         CD2          CG          CR     180.000   10.00     2
+PBP             sp2_sp2_1         CD1          CG          CR          CH     180.000   10.00     2
+PBP       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+PBP              const_10         CD1         CE1          CZ          BR     180.000   10.00     2
+PBP              const_17          CG         CD2         CE2          CZ       0.000   10.00     2
+PBP              const_14         CD2         CE2          CZ          BR     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PBP    plan-1          BR   0.020
+PBP    plan-1         CD1   0.020
+PBP    plan-1         CD2   0.020
+PBP    plan-1         CE1   0.020
+PBP    plan-1         CE2   0.020
+PBP    plan-1          CG   0.020
+PBP    plan-1          CR   0.020
+PBP    plan-1          CZ   0.020
+PBP    plan-1         HD1   0.020
+PBP    plan-1         HD2   0.020
+PBP    plan-1         HE1   0.020
+PBP    plan-1         HE2   0.020
+PBP    plan-2          CG   0.020
+PBP    plan-2          CH   0.020
+PBP    plan-2          CR   0.020
+PBP    plan-2           O   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PBP SMILES           ACDLabs              10.04 "O=C(c1ccc(Br)cc1)C"
+PBP SMILES_CANONICAL CACTVS               3.341 "CC(=O)c1ccc(Br)cc1"
+PBP SMILES           CACTVS               3.341 "CC(=O)c1ccc(Br)cc1"
+PBP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)c1ccc(cc1)Br"
+PBP SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)c1ccc(cc1)Br"
+PBP InChI            InChI                1.03  "InChI=1S/C8H7BrO/c1-6(10)7-2-4-8(9)5-3-7/h2-5H,1H3"
+PBP InChIKey         InChI                1.03  WYECURVXVYPVAT-UHFFFAOYSA-N
+PBP ?                acedrg               202         "dictionary generator"                  
+PBP ?                acedrg_database      11          "data source"                           
+PBP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PBP ?                refmac5              5.8.0189    "optimization tool"                     

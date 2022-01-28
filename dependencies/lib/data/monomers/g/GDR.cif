@@ -1,0 +1,449 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GDR      GDR 'GUANOSINE-5'-DIPHOSPHATE-RHAMNOSE   ' non-polymer        61  38 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GDR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GDR           O6     O    O         0.000      0.000    0.000    0.000
+ GDR           C6     C    CR6       0.000     -0.728   -0.481    0.851
+ GDR           N1     N    NR16      0.000     -0.222   -1.249    1.840
+ GDR           HN1    H    H         0.000      0.801   -1.435    1.880
+ GDR           C2     C    CR6       0.000     -1.045   -1.782    2.787
+ GDR           N2     N    NH2       0.000     -0.503   -2.560    3.780
+ GDR           HN22   H    H         0.000      0.495   -2.733    3.807
+ GDR           HN21   H    H         0.000     -1.097   -2.966    4.494
+ GDR           N3     N    NRD6      0.000     -2.343   -1.574    2.776
+ GDR           C5     C    CR56      0.000     -2.123   -0.248    0.828
+ GDR           C4     C    CR56      0.000     -2.914   -0.818    1.832
+ GDR           N7     N    NRD5      0.000     -2.950    0.450    0.011
+ GDR           C8     C    CR15      0.000     -4.173    0.340    0.442
+ GDR           H8     H    H         0.000     -5.039    0.797   -0.020
+ GDR           N9     N    NR5       0.000     -4.200   -0.439    1.563
+ GDR           C1D    C    CH1       0.000     -5.389   -0.794    2.340
+ GDR           "H1'"  H    H         0.000     -5.251   -1.766    2.834
+ GDR           O4D    O    O2        0.000     -6.560   -0.817    1.496
+ GDR           C2D    C    CH1       0.000     -5.715    0.305    3.381
+ GDR           "H2'"  H    H         0.000     -5.517    1.305    2.970
+ GDR           O2D    O    OH1       0.000     -4.983    0.097    4.591
+ GDR           HO2A   H    H         0.000     -5.202    0.794    5.224
+ GDR           C3D    C    CH1       0.000     -7.234    0.094    3.613
+ GDR           "H3'"  H    H         0.000     -7.749    1.062    3.689
+ GDR           O3D    O    OH1       0.000     -7.458   -0.684    4.791
+ GDR           HO3A   H    H         0.000     -7.104   -0.214    5.558
+ GDR           C4D    C    CH1       0.000     -7.702   -0.667    2.357
+ GDR           "H4'"  H    H         0.000     -8.088   -1.656    2.642
+ GDR           C5D    C    CH2       0.000     -8.793    0.130    1.641
+ GDR           "H5'"  H    H         0.000     -8.399    1.106    1.351
+ GDR           "H5''" H    H         0.000     -9.643    0.267    2.312
+ GDR           O5D    O    O2        0.000     -9.214   -0.581    0.475
+ GDR           PA     P    P         0.000    -10.357    0.310   -0.225
+ GDR           O1A    O    OP       -0.500     -9.797    1.634   -0.589
+ GDR           O2A    O    OP       -0.500    -11.487    0.494    0.717
+ GDR           O3A    O    O2        0.000    -10.880   -0.433   -1.553
+ GDR           PB     P    P         0.000    -12.015    0.507   -2.199
+ GDR           O1B    O    OP       -0.500    -11.429    1.828   -2.532
+ GDR           O2B    O    OP       -0.500    -13.119    0.688   -1.226
+ GDR           O3B    O    O2        0.000    -12.585   -0.180   -3.538
+ GDR           "C1'"  C    CH1       0.000    -13.583    0.699   -4.061
+ GDR           "HC1'" H    H         0.000    -14.055    1.249   -3.235
+ GDR           "O5'"  O    O2        0.000    -12.975    1.624   -4.959
+ GDR           "C5'"  C    CH1       0.000    -12.226    0.872   -5.911
+ GDR           "HC5'" H    H         0.000    -11.551    0.183   -5.384
+ GDR           "C6'"  C    CH3       0.000    -11.402    1.826   -6.779
+ GDR           HC63   H    H         0.000    -10.842    1.268   -7.485
+ GDR           HC62   H    H         0.000    -12.051    2.490   -7.290
+ GDR           HC61   H    H         0.000    -10.741    2.382   -6.165
+ GDR           "C4'"  C    CH1       0.000    -13.176    0.069   -6.801
+ GDR           "HC4'" H    H         0.000    -13.869    0.753   -7.312
+ GDR           "O4'"  O    OH1       0.000    -12.423   -0.661   -7.770
+ GDR           "HO4'" H    H         0.000    -11.922   -0.044   -8.320
+ GDR           "C3'"  C    CH1       0.000    -13.971   -0.908   -5.927
+ GDR           "HC3'" H    H         0.000    -13.291   -1.658   -5.498
+ GDR           "O3'"  O    OH1       0.000    -14.967   -1.561   -6.717
+ GDR           "HO3'" H    H         0.000    -15.474   -2.167   -6.159
+ GDR           "C2'"  C    CH1       0.000    -14.644   -0.120   -4.799
+ GDR           "HC2'" H    H         0.000    -15.124   -0.817   -4.098
+ GDR           "O2'"  O    OH1       0.000    -15.629    0.758   -5.349
+ GDR           "HO2'" H    H         0.000    -16.047    1.258   -4.635
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GDR      O6     n/a    C6     START
+ GDR      C6     O6     C5     .
+ GDR      N1     C6     C2     .
+ GDR      HN1    N1     .      .
+ GDR      C2     N1     N3     .
+ GDR      N2     C2     HN21   .
+ GDR      HN22   N2     .      .
+ GDR      HN21   N2     .      .
+ GDR      N3     C2     .      .
+ GDR      C5     C6     N7     .
+ GDR      C4     C5     .      .
+ GDR      N7     C5     C8     .
+ GDR      C8     N7     N9     .
+ GDR      H8     C8     .      .
+ GDR      N9     C8     C1D    .
+ GDR      C1D    N9     C2D    .
+ GDR      "H1'"  C1D    .      .
+ GDR      O4D    C1D    .      .
+ GDR      C2D    C1D    C3D    .
+ GDR      "H2'"  C2D    .      .
+ GDR      O2D    C2D    HO2A   .
+ GDR      HO2A   O2D    .      .
+ GDR      C3D    C2D    C4D    .
+ GDR      "H3'"  C3D    .      .
+ GDR      O3D    C3D    HO3A   .
+ GDR      HO3A   O3D    .      .
+ GDR      C4D    C3D    C5D    .
+ GDR      "H4'"  C4D    .      .
+ GDR      C5D    C4D    O5D    .
+ GDR      "H5'"  C5D    .      .
+ GDR      "H5''" C5D    .      .
+ GDR      O5D    C5D    PA     .
+ GDR      PA     O5D    O3A    .
+ GDR      O1A    PA     .      .
+ GDR      O2A    PA     .      .
+ GDR      O3A    PA     PB     .
+ GDR      PB     O3A    O3B    .
+ GDR      O1B    PB     .      .
+ GDR      O2B    PB     .      .
+ GDR      O3B    PB     "C1'"  .
+ GDR      "C1'"  O3B    "O5'"  .
+ GDR      "HC1'" "C1'"  .      .
+ GDR      "O5'"  "C1'"  "C5'"  .
+ GDR      "C5'"  "O5'"  "C4'"  .
+ GDR      "HC5'" "C5'"  .      .
+ GDR      "C6'"  "C5'"  HC61   .
+ GDR      HC63   "C6'"  .      .
+ GDR      HC62   "C6'"  .      .
+ GDR      HC61   "C6'"  .      .
+ GDR      "C4'"  "C5'"  "C3'"  .
+ GDR      "HC4'" "C4'"  .      .
+ GDR      "O4'"  "C4'"  "HO4'" .
+ GDR      "HO4'" "O4'"  .      .
+ GDR      "C3'"  "C4'"  "C2'"  .
+ GDR      "HC3'" "C3'"  .      .
+ GDR      "O3'"  "C3'"  "HO3'" .
+ GDR      "HO3'" "O3'"  .      .
+ GDR      "C2'"  "C3'"  "O2'"  .
+ GDR      "HC2'" "C2'"  .      .
+ GDR      "O2'"  "C2'"  "HO2'" .
+ GDR      "HO2'" "O2'"  .      END
+ GDR      C4D    O4D    .    ADD
+ GDR      N9     C4     .    ADD
+ GDR      C4     N3     .    ADD
+ GDR      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GDR       PB        O3A       single    1.610     0.020     1.610     0.020     
+GDR       O1B       PB        deloc     1.510     0.020     1.510     0.020     
+GDR       O2B       PB        deloc     1.510     0.020     1.510     0.020     
+GDR       O3B       PB        single    1.610     0.020     1.610     0.020     
+GDR       O3A       PA        single    1.610     0.020     1.610     0.020     
+GDR       "C1'"     O3B       single    1.426     0.020     1.426     0.020     
+GDR       O1A       PA        deloc     1.510     0.020     1.510     0.020     
+GDR       O2A       PA        deloc     1.510     0.020     1.510     0.020     
+GDR       PA        O5D       single    1.610     0.020     1.610     0.020     
+GDR       O5D       C5D       single    1.426     0.020     1.426     0.020     
+GDR       C5D       C4D       single    1.524     0.020     1.524     0.020     
+GDR       "H5'"     C5D       single    1.089     0.010     0.989     0.005     
+GDR       "H5''"    C5D       single    1.089     0.010     0.989     0.005     
+GDR       C4D       O4D       single    1.426     0.020     1.426     0.020     
+GDR       C4D       C3D       single    1.524     0.020     1.524     0.020     
+GDR       "H4'"     C4D       single    1.089     0.010     0.989     0.005     
+GDR       O4D       C1D       single    1.426     0.020     1.426     0.020     
+GDR       C1D       N9        single    1.485     0.020     1.485     0.020     
+GDR       C2D       C1D       single    1.524     0.020     1.524     0.020     
+GDR       "H1'"     C1D       single    1.089     0.010     0.989     0.005     
+GDR       N9        C4        single    1.337     0.020     1.337     0.020     
+GDR       N9        C8        single    1.337     0.020     1.337     0.020     
+GDR       C4        N3        single    1.355     0.020     1.355     0.020     
+GDR       C4        C5        double    1.490     0.020     1.490     0.020     
+GDR       N3        C2        double    1.350     0.020     1.350     0.020     
+GDR       N2        C2        single    1.355     0.020     1.355     0.020     
+GDR       C2        N1        single    1.337     0.020     1.337     0.020     
+GDR       HN21      N2        single    1.016     0.010     0.899     0.007     
+GDR       HN22      N2        single    1.016     0.010     0.899     0.007     
+GDR       N1        C6        single    1.337     0.020     1.337     0.020     
+GDR       HN1       N1        single    1.016     0.010     0.899     0.007     
+GDR       C6        O6        double    1.250     0.020     1.250     0.020     
+GDR       C5        C6        single    1.490     0.020     1.490     0.020     
+GDR       N7        C5        single    1.350     0.020     1.350     0.020     
+GDR       C8        N7        double    1.350     0.020     1.350     0.020     
+GDR       H8        C8        single    1.082     0.013     0.975     0.010     
+GDR       O2D       C2D       single    1.432     0.020     1.432     0.020     
+GDR       C3D       C2D       single    1.524     0.020     1.524     0.020     
+GDR       "H2'"     C2D       single    1.089     0.010     0.989     0.005     
+GDR       HO2A      O2D       single    0.970     0.012     0.839     0.014     
+GDR       O3D       C3D       single    1.432     0.020     1.432     0.020     
+GDR       "H3'"     C3D       single    1.089     0.010     0.989     0.005     
+GDR       HO3A      O3D       single    0.970     0.012     0.839     0.014     
+GDR       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+GDR       "O5'"     "C1'"     single    1.426     0.020     1.426     0.020     
+GDR       "HC1'"    "C1'"     single    1.089     0.010     0.989     0.005     
+GDR       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+GDR       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+GDR       "HC2'"    "C2'"     single    1.089     0.010     0.989     0.005     
+GDR       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+GDR       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+GDR       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+GDR       "HC3'"    "C3'"     single    1.089     0.010     0.989     0.005     
+GDR       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+GDR       "O4'"     "C4'"     single    1.432     0.020     1.432     0.020     
+GDR       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+GDR       "HC4'"    "C4'"     single    1.089     0.010     0.989     0.005     
+GDR       "HO4'"    "O4'"     single    0.970     0.012     0.839     0.014     
+GDR       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+GDR       "C6'"     "C5'"     single    1.524     0.020     1.524     0.020     
+GDR       "HC5'"    "C5'"     single    1.089     0.010     0.989     0.005     
+GDR       HC61      "C6'"     single    1.089     0.010     0.989     0.005     
+GDR       HC62      "C6'"     single    1.089     0.010     0.989     0.005     
+GDR       HC63      "C6'"     single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GDR      O6     C6     N1      120.000    3.000
+ GDR      O6     C6     C5      120.000    3.000
+ GDR      N1     C6     C5      120.000    3.000
+ GDR      C6     N1     HN1     120.000    3.000
+ GDR      C6     N1     C2      120.000    3.000
+ GDR      HN1    N1     C2      120.000    3.000
+ GDR      N1     C2     N2      120.000    3.000
+ GDR      N1     C2     N3      120.000    3.000
+ GDR      N2     C2     N3      120.000    3.000
+ GDR      C2     N2     HN22    120.000    3.000
+ GDR      C2     N2     HN21    120.000    3.000
+ GDR      HN22   N2     HN21    120.000    3.000
+ GDR      C2     N3     C4      120.000    3.000
+ GDR      C6     C5     C4      120.000    3.000
+ GDR      C6     C5     N7      132.000    3.000
+ GDR      C4     C5     N7      108.000    3.000
+ GDR      C5     C4     N9      108.000    3.000
+ GDR      C5     C4     N3      120.000    3.000
+ GDR      N9     C4     N3      132.000    3.000
+ GDR      C5     N7     C8      108.000    3.000
+ GDR      N7     C8     H8      126.000    3.000
+ GDR      N7     C8     N9      108.000    3.000
+ GDR      H8     C8     N9      126.000    3.000
+ GDR      C8     N9     C1D     126.000    3.000
+ GDR      C8     N9     C4      108.000    3.000
+ GDR      C1D    N9     C4      126.000    3.000
+ GDR      N9     C1D    "H1'"   109.470    3.000
+ GDR      N9     C1D    O4D     109.470    3.000
+ GDR      N9     C1D    C2D     109.470    3.000
+ GDR      "H1'"  C1D    O4D     109.470    3.000
+ GDR      "H1'"  C1D    C2D     108.340    3.000
+ GDR      O4D    C1D    C2D     109.470    3.000
+ GDR      C1D    O4D    C4D     111.800    3.000
+ GDR      C1D    C2D    "H2'"   108.340    3.000
+ GDR      C1D    C2D    O2D     109.470    3.000
+ GDR      C1D    C2D    C3D     111.000    3.000
+ GDR      "H2'"  C2D    O2D     109.470    3.000
+ GDR      "H2'"  C2D    C3D     108.340    3.000
+ GDR      O2D    C2D    C3D     109.470    3.000
+ GDR      C2D    O2D    HO2A    109.470    3.000
+ GDR      C2D    C3D    "H3'"   108.340    3.000
+ GDR      C2D    C3D    O3D     109.470    3.000
+ GDR      C2D    C3D    C4D     111.000    3.000
+ GDR      "H3'"  C3D    O3D     109.470    3.000
+ GDR      "H3'"  C3D    C4D     108.340    3.000
+ GDR      O3D    C3D    C4D     109.470    3.000
+ GDR      C3D    O3D    HO3A    109.470    3.000
+ GDR      C3D    C4D    "H4'"   108.340    3.000
+ GDR      C3D    C4D    C5D     111.000    3.000
+ GDR      C3D    C4D    O4D     109.470    3.000
+ GDR      "H4'"  C4D    C5D     108.340    3.000
+ GDR      "H4'"  C4D    O4D     109.470    3.000
+ GDR      C5D    C4D    O4D     109.470    3.000
+ GDR      C4D    C5D    "H5'"   109.470    3.000
+ GDR      C4D    C5D    "H5''"  109.470    3.000
+ GDR      C4D    C5D    O5D     109.470    3.000
+ GDR      "H5'"  C5D    "H5''"  107.900    3.000
+ GDR      "H5'"  C5D    O5D     109.470    3.000
+ GDR      "H5''" C5D    O5D     109.470    3.000
+ GDR      C5D    O5D    PA      120.500    3.000
+ GDR      O5D    PA     O1A     108.200    3.000
+ GDR      O5D    PA     O2A     108.200    3.000
+ GDR      O5D    PA     O3A     102.600    3.000
+ GDR      O1A    PA     O2A     119.900    3.000
+ GDR      O1A    PA     O3A     108.200    3.000
+ GDR      O2A    PA     O3A     108.200    3.000
+ GDR      PA     O3A    PB      120.500    3.000
+ GDR      O3A    PB     O1B     108.200    3.000
+ GDR      O3A    PB     O2B     108.200    3.000
+ GDR      O3A    PB     O3B     102.600    3.000
+ GDR      O1B    PB     O2B     119.900    3.000
+ GDR      O1B    PB     O3B     108.200    3.000
+ GDR      O2B    PB     O3B     108.200    3.000
+ GDR      PB     O3B    "C1'"   120.500    3.000
+ GDR      O3B    "C1'"  "HC1'"  109.470    3.000
+ GDR      O3B    "C1'"  "O5'"   109.470    3.000
+ GDR      O3B    "C1'"  "C2'"   109.470    3.000
+ GDR      "HC1'" "C1'"  "O5'"   109.470    3.000
+ GDR      "HC1'" "C1'"  "C2'"   108.340    3.000
+ GDR      "O5'"  "C1'"  "C2'"   109.470    3.000
+ GDR      "C1'"  "O5'"  "C5'"   111.800    3.000
+ GDR      "O5'"  "C5'"  "HC5'"  109.470    3.000
+ GDR      "O5'"  "C5'"  "C6'"   109.470    3.000
+ GDR      "O5'"  "C5'"  "C4'"   109.470    3.000
+ GDR      "HC5'" "C5'"  "C6'"   108.340    3.000
+ GDR      "HC5'" "C5'"  "C4'"   108.340    3.000
+ GDR      "C6'"  "C5'"  "C4'"   111.000    3.000
+ GDR      "C5'"  "C6'"  HC63    109.470    3.000
+ GDR      "C5'"  "C6'"  HC62    109.470    3.000
+ GDR      "C5'"  "C6'"  HC61    109.470    3.000
+ GDR      HC63   "C6'"  HC62    109.470    3.000
+ GDR      HC63   "C6'"  HC61    109.470    3.000
+ GDR      HC62   "C6'"  HC61    109.470    3.000
+ GDR      "C5'"  "C4'"  "HC4'"  108.340    3.000
+ GDR      "C5'"  "C4'"  "O4'"   109.470    3.000
+ GDR      "C5'"  "C4'"  "C3'"   111.000    3.000
+ GDR      "HC4'" "C4'"  "O4'"   109.470    3.000
+ GDR      "HC4'" "C4'"  "C3'"   108.340    3.000
+ GDR      "O4'"  "C4'"  "C3'"   109.470    3.000
+ GDR      "C4'"  "O4'"  "HO4'"  109.470    3.000
+ GDR      "C4'"  "C3'"  "HC3'"  108.340    3.000
+ GDR      "C4'"  "C3'"  "O3'"   109.470    3.000
+ GDR      "C4'"  "C3'"  "C2'"   111.000    3.000
+ GDR      "HC3'" "C3'"  "O3'"   109.470    3.000
+ GDR      "HC3'" "C3'"  "C2'"   108.340    3.000
+ GDR      "O3'"  "C3'"  "C2'"   109.470    3.000
+ GDR      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ GDR      "C3'"  "C2'"  "HC2'"  108.340    3.000
+ GDR      "C3'"  "C2'"  "O2'"   109.470    3.000
+ GDR      "C3'"  "C2'"  "C1'"   111.000    3.000
+ GDR      "HC2'" "C2'"  "O2'"   109.470    3.000
+ GDR      "HC2'" "C2'"  "C1'"   108.340    3.000
+ GDR      "O2'"  "C2'"  "C1'"   109.470    3.000
+ GDR      "C2'"  "O2'"  "HO2'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GDR      CONST_1  O6     C6     N1     C2       180.000    0.000   0
+ GDR      CONST_2  C6     N1     C2     N3         0.000    0.000   0
+ GDR      CONST_3  N1     C2     N2     HN21    -179.974    0.000   0
+ GDR      CONST_4  N1     C2     N3     C4         0.000    0.000   0
+ GDR      CONST_5  O6     C6     C5     N7         0.000    0.000   0
+ GDR      CONST_6  C6     C5     C4     N9       180.000    0.000   0
+ GDR      CONST_7  C5     C4     N3     C2         0.000    0.000   0
+ GDR      CONST_8  C6     C5     N7     C8       180.000    0.000   0
+ GDR      CONST_9  C5     N7     C8     N9         0.000    0.000   0
+ GDR      CONST_10 N7     C8     N9     C1D      180.000    0.000   0
+ GDR      CONST_11 C8     N9     C4     C5         0.000    0.000   0
+ GDR      var_1    C8     N9     C1D    C2D      -85.603   20.000   1
+ GDR      var_2    N9     C1D    O4D    C4D     -150.000   20.000   1
+ GDR      var_3    N9     C1D    C2D    C3D      150.000   20.000   3
+ GDR      var_4    C1D    C2D    O2D    HO2A     179.956   20.000   1
+ GDR      var_5    C1D    C2D    C3D    C4D      -30.000   20.000   3
+ GDR      var_6    C2D    C3D    O3D    HO3A      61.446   20.000   1
+ GDR      var_7    C2D    C3D    C4D    C5D     -120.000   20.000   3
+ GDR      var_8    C3D    C4D    O4D    C1D       30.000   20.000   1
+ GDR      var_9    C3D    C4D    C5D    O5D      179.717   20.000   3
+ GDR      var_10   C4D    C5D    O5D    PA       179.981   20.000   1
+ GDR      var_11   C5D    O5D    PA     O3A      179.958   20.000   1
+ GDR      var_12   O5D    PA     O3A    PB       179.991   20.000   1
+ GDR      var_13   PA     O3A    PB     O3B     -179.988   20.000   1
+ GDR      var_14   O3A    PB     O3B    "C1'"   -179.994   20.000   1
+ GDR      var_15   PB     O3B    "C1'"  "O5'"     89.990   20.000   1
+ GDR      var_16   O3B    "C1'"  "C2'"  "C3'"    -60.000   20.000   3
+ GDR      var_17   O3B    "C1'"  "O5'"  "C5'"     60.000   20.000   1
+ GDR      var_18   "C1'"  "O5'"  "C5'"  "C4'"     60.000   20.000   1
+ GDR      var_19   "O5'"  "C5'"  "C6'"  HC61      59.822   20.000   3
+ GDR      var_20   "O5'"  "C5'"  "C4'"  "C3'"    -60.000   20.000   3
+ GDR      var_21   "C5'"  "C4'"  "O4'"  "HO4'"   -60.539   20.000   1
+ GDR      var_22   "C5'"  "C4'"  "C3'"  "C2'"     60.000   20.000   3
+ GDR      var_23   "C4'"  "C3'"  "O3'"  "HO3'"  -179.237   20.000   1
+ GDR      var_24   "C4'"  "C3'"  "C2'"  "O2'"     60.000   20.000   3
+ GDR      var_25   "C3'"  "C2'"  "O2'"  "HO2'"  -179.611   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GDR      chir_01  C4D    C5D    O4D    C3D       negativ
+ GDR      chir_02  C1D    O4D    N9     C2D       negativ
+ GDR      chir_03  C2D    C1D    O2D    C3D       positiv
+ GDR      chir_04  C3D    C4D    C2D    O3D       positiv
+ GDR      chir_05  "C1'"  O3B    "C2'"  "O5'"     positiv
+ GDR      chir_06  "C2'"  "C1'"  "O2'"  "C3'"     negativ
+ GDR      chir_07  "C3'"  "C2'"  "O3'"  "C4'"     negativ
+ GDR      chir_08  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+ GDR      chir_09  "C5'"  "C4'"  "O5'"  "C6'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GDR      plan-1    N9        0.020
+ GDR      plan-1    C1D       0.020
+ GDR      plan-1    C4        0.020
+ GDR      plan-1    C8        0.020
+ GDR      plan-1    N7        0.020
+ GDR      plan-1    N3        0.020
+ GDR      plan-1    C5        0.020
+ GDR      plan-1    C2        0.020
+ GDR      plan-1    N1        0.020
+ GDR      plan-1    C6        0.020
+ GDR      plan-1    N2        0.020
+ GDR      plan-1    HN1       0.020
+ GDR      plan-1    O6        0.020
+ GDR      plan-1    H8        0.020
+ GDR      plan-1    HN22      0.020
+ GDR      plan-1    HN21      0.020
+ GDR      plan-2    N2        0.020
+ GDR      plan-2    C2        0.020
+ GDR      plan-2    HN21      0.020
+ GDR      plan-2    HN22      0.020
+# ------------------------------------------------------

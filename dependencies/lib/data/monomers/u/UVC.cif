@@ -1,0 +1,295 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UVC      UVC 'URIDINE-2',3'-VANADATE              ' non-polymer        33  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_UVC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ UVC           O2V    O    O         0.000      0.000    0.000    0.000
+ UVC           V      V    V         0.000     -0.370    0.730   -1.354
+ UVC           "O2'"  O    O2        0.000     -2.006    1.234   -0.669
+ UVC           O1V    O    OH1       0.000      1.214    0.185   -2.113
+ UVC           HOV1   H    H         0.000      1.785   -0.331   -1.576
+ UVC           O3V    O    OH1       0.000      0.092    2.491   -1.607
+ UVC           HOV3   H    H         0.000     -0.542    3.134   -1.355
+ UVC           "O3'"  O    O2        0.000     -1.321   -0.165   -2.649
+ UVC           "C3'"  C    CH1       0.000     -2.576   -0.566   -2.131
+ UVC           "H3'"  H    H         0.000     -2.642   -1.662   -2.081
+ UVC           "C2'"  C    CH1       0.000     -2.827    0.056   -0.743
+ UVC           "H2'"  H    H         0.000     -2.616   -0.650    0.072
+ UVC           "C4'"  C    CH1       0.000     -3.733    0.011   -2.974
+ UVC           "H4'"  H    H         0.000     -3.479    1.012   -3.349
+ UVC           "C5'"  C    CH2       0.000     -4.067   -0.929   -4.130
+ UVC           "H5'1" H    H         0.000     -4.327   -1.913   -3.734
+ UVC           "H5'2" H    H         0.000     -3.199   -1.020   -4.786
+ UVC           "O5'"  O    OH1       0.000     -5.171   -0.404   -4.869
+ UVC           "HO5'" H    H         0.000     -5.380   -1.000   -5.600
+ UVC           "O4'"  O    O2        0.000     -4.838    0.079   -2.050
+ UVC           "C1'"  C    CH1       0.000     -4.305    0.482   -0.777
+ UVC           "H1'"  H    H         0.000     -4.382    1.573   -0.667
+ UVC           N1     N    NR6       0.000     -5.042   -0.181    0.301
+ UVC           C6     C    CR16      0.000     -5.681    0.571    1.248
+ UVC           H6     H    H         0.000     -5.642    1.653    1.201
+ UVC           C5     C    CR16      0.000     -6.361   -0.040    2.241
+ UVC           H5     H    H         0.000     -6.871    0.544    2.997
+ UVC           C4     C    CR6       0.000     -6.398   -1.454    2.282
+ UVC           O4     O    O         0.000     -7.004   -2.029    3.167
+ UVC           N3     N    NR16      0.000     -5.755   -2.160    1.329
+ UVC           HN3    H    H         0.000     -5.774   -3.200    1.353
+ UVC           C2     C    CR6       0.000     -5.088   -1.525    0.347
+ UVC           O2     O    O         0.000     -4.513   -2.174   -0.505
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ UVC      O2V    n/a    V      START
+ UVC      V      O2V    "O3'"  .
+ UVC      "O2'"  V      .      .
+ UVC      O1V    V      HOV1   .
+ UVC      HOV1   O1V    .      .
+ UVC      O3V    V      HOV3   .
+ UVC      HOV3   O3V    .      .
+ UVC      "O3'"  V      "C3'"  .
+ UVC      "C3'"  "O3'"  "C4'"  .
+ UVC      "H3'"  "C3'"  .      .
+ UVC      "C2'"  "C3'"  "H2'"  .
+ UVC      "H2'"  "C2'"  .      .
+ UVC      "C4'"  "C3'"  "O4'"  .
+ UVC      "H4'"  "C4'"  .      .
+ UVC      "C5'"  "C4'"  "O5'"  .
+ UVC      "H5'1" "C5'"  .      .
+ UVC      "H5'2" "C5'"  .      .
+ UVC      "O5'"  "C5'"  "HO5'" .
+ UVC      "HO5'" "O5'"  .      .
+ UVC      "O4'"  "C4'"  "C1'"  .
+ UVC      "C1'"  "O4'"  N1     .
+ UVC      "H1'"  "C1'"  .      .
+ UVC      N1     "C1'"  C6     .
+ UVC      C6     N1     C5     .
+ UVC      H6     C6     .      .
+ UVC      C5     C6     C4     .
+ UVC      H5     C5     .      .
+ UVC      C4     C5     N3     .
+ UVC      O4     C4     .      .
+ UVC      N3     C4     C2     .
+ UVC      HN3    N3     .      .
+ UVC      C2     N3     O2     .
+ UVC      O2     C2     .      END
+ UVC      N1     C2     .    ADD
+ UVC      "C1'"  "C2'"  .    ADD
+ UVC      "C2'"  "O2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UVC       N1        C2        single    1.410     0.020     1.410     0.020     
+UVC       C6        N1        single    1.337     0.020     1.337     0.020     
+UVC       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+UVC       C2        N3        single    1.337     0.020     1.337     0.020     
+UVC       O2        C2        double    1.250     0.020     1.250     0.020     
+UVC       N3        C4        single    1.337     0.020     1.337     0.020     
+UVC       HN3       N3        single    1.016     0.010     0.899     0.007     
+UVC       C4        C5        single    1.390     0.020     1.390     0.020     
+UVC       O4        C4        double    1.250     0.020     1.250     0.020     
+UVC       C5        C6        double    1.390     0.020     1.390     0.020     
+UVC       H5        C5        single    1.082     0.013     0.975     0.010     
+UVC       H6        C6        single    1.082     0.013     0.975     0.010     
+UVC       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+UVC       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+UVC       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+UVC       "C2'"     "O2'"     single    1.426     0.020     1.426     0.020     
+UVC       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+UVC       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+UVC       "O2'"     V         single    2.004     0.020     2.004     0.020     
+UVC       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+UVC       "C3'"     "O3'"     single    1.426     0.020     1.426     0.020     
+UVC       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+UVC       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+UVC       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+UVC       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+UVC       "O3'"     V         single    2.004     0.020     2.004     0.020     
+UVC       "O5'"     "C5'"     single    1.432     0.020     1.432     0.020     
+UVC       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+UVC       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+UVC       "HO5'"    "O5'"     single    0.970     0.012     0.839     0.014     
+UVC       O1V       V         single    2.105     0.020     2.105     0.020     
+UVC       V         O2V       double    1.910     0.020     1.910     0.020     
+UVC       O3V       V         single    2.105     0.020     2.105     0.020     
+UVC       HOV1      O1V       single    0.970     0.012     0.839     0.014     
+UVC       HOV3      O3V       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ UVC      O2V    V      "O2'"    90.000    3.000
+ UVC      O2V    V      O1V      90.000    3.000
+ UVC      O2V    V      O3V     120.000    3.000
+ UVC      O2V    V      "O3'"   120.000    3.000
+ UVC      "O2'"  V      O1V     180.000    3.000
+ UVC      "O2'"  V      O3V      90.000    3.000
+ UVC      O1V    V      O3V      90.000    3.000
+ UVC      "O2'"  V      "O3'"    90.000    3.000
+ UVC      O1V    V      "O3'"    90.000    3.000
+ UVC      O3V    V      "O3'"   120.000    3.000
+ UVC      V      "O2'"  "C2'"   120.000    3.000
+ UVC      V      O1V    HOV1    120.000    3.000
+ UVC      V      O3V    HOV3    120.000    3.000
+ UVC      V      "O3'"  "C3'"   120.000    3.000
+ UVC      "O3'"  "C3'"  "H3'"   109.470    3.000
+ UVC      "O3'"  "C3'"  "C2'"   109.470    3.000
+ UVC      "O3'"  "C3'"  "C4'"   109.470    3.000
+ UVC      "H3'"  "C3'"  "C2'"   108.340    3.000
+ UVC      "H3'"  "C3'"  "C4'"   108.340    3.000
+ UVC      "C2'"  "C3'"  "C4'"   111.000    3.000
+ UVC      "C3'"  "C2'"  "H2'"   108.340    3.000
+ UVC      "C3'"  "C2'"  "C1'"   111.000    3.000
+ UVC      "C3'"  "C2'"  "O2'"   109.470    3.000
+ UVC      "C1'"  "C2'"  "O2'"   109.470    3.000
+ UVC      "H2'"  "C2'"  "C1'"   108.340    3.000
+ UVC      "H2'"  "C2'"  "O2'"   109.470    3.000
+ UVC      "C3'"  "C4'"  "H4'"   108.340    3.000
+ UVC      "C3'"  "C4'"  "C5'"   111.000    3.000
+ UVC      "C3'"  "C4'"  "O4'"   109.470    3.000
+ UVC      "H4'"  "C4'"  "C5'"   108.340    3.000
+ UVC      "H4'"  "C4'"  "O4'"   109.470    3.000
+ UVC      "C5'"  "C4'"  "O4'"   109.470    3.000
+ UVC      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ UVC      "C4'"  "C5'"  "H5'2"  109.470    3.000
+ UVC      "C4'"  "C5'"  "O5'"   109.470    3.000
+ UVC      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ UVC      "H5'1" "C5'"  "O5'"   109.470    3.000
+ UVC      "H5'2" "C5'"  "O5'"   109.470    3.000
+ UVC      "C5'"  "O5'"  "HO5'"  109.470    3.000
+ UVC      "C4'"  "O4'"  "C1'"   111.800    3.000
+ UVC      "O4'"  "C1'"  "H1'"   109.470    3.000
+ UVC      "O4'"  "C1'"  N1      109.470    3.000
+ UVC      "O4'"  "C1'"  "C2'"   109.470    3.000
+ UVC      "H1'"  "C1'"  N1      109.470    3.000
+ UVC      "H1'"  "C1'"  "C2'"   108.340    3.000
+ UVC      N1     "C1'"  "C2'"   109.470    3.000
+ UVC      "C1'"  N1     C6      120.000    3.000
+ UVC      "C1'"  N1     C2      120.000    3.000
+ UVC      C6     N1     C2      120.000    3.000
+ UVC      N1     C6     H6      120.000    3.000
+ UVC      N1     C6     C5      120.000    3.000
+ UVC      H6     C6     C5      120.000    3.000
+ UVC      C6     C5     H5      120.000    3.000
+ UVC      C6     C5     C4      120.000    3.000
+ UVC      H5     C5     C4      120.000    3.000
+ UVC      C5     C4     O4      120.000    3.000
+ UVC      C5     C4     N3      120.000    3.000
+ UVC      O4     C4     N3      120.000    3.000
+ UVC      C4     N3     HN3     120.000    3.000
+ UVC      C4     N3     C2      120.000    3.000
+ UVC      HN3    N3     C2      120.000    3.000
+ UVC      N3     C2     O2      120.000    3.000
+ UVC      N3     C2     N1      120.000    3.000
+ UVC      O2     C2     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ UVC      var_1    "C2'"  "O2'"  V      "O3'"      0.000   20.000   1
+ UVC      var_2    HOV1   O1V    V      O2V        0.000   20.000   1
+ UVC      var_3    HOV3   O3V    V      "O2'"      0.000   20.000   1
+ UVC      var_4    "C3'"  "O3'"  V      "O2'"      0.000   20.000   1
+ UVC      var_5    V      "O3'"  "C3'"  "C4'"    120.000   20.000   1
+ UVC      var_6    "O3'"  "C3'"  "C2'"  "C1'"    150.000   20.000   3
+ UVC      var_7    "C3'"  "C2'"  "O2'"  V        -30.000   20.000   1
+ UVC      var_8    "O3'"  "C3'"  "C4'"  "O4'"   -150.000   20.000   3
+ UVC      var_9    "C3'"  "C4'"  "C5'"  "O5'"    177.864   20.000   3
+ UVC      var_10   "C4'"  "C5'"  "O5'"  "HO5'"   179.954   20.000   1
+ UVC      var_11   "C3'"  "C4'"  "O4'"  "C1'"     30.000   20.000   1
+ UVC      var_12   "C4'"  "O4'"  "C1'"  N1      -150.000   20.000   1
+ UVC      var_13   "O4'"  "C1'"  "C2'"  "C3'"      0.000   20.000   3
+ UVC      var_14   "O4'"  "C1'"  N1     C6      -121.461   20.000   1
+ UVC      CONST_1  "C1'"  N1     C2     N3       180.000    0.000   0
+ UVC      CONST_2  "C1'"  N1     C6     C5       180.000    0.000   0
+ UVC      CONST_3  N1     C6     C5     C4         0.000    0.000   0
+ UVC      CONST_4  C6     C5     C4     N3         0.000    0.000   0
+ UVC      CONST_5  C5     C4     N3     C2         0.000    0.000   0
+ UVC      CONST_6  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ UVC      chir_01  "C1'"  N1     "C2'"  "O4'"     negativ
+                   .      .      .      .      .
+ UVC      chir_02  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+                   .      .      .      .      .
+ UVC      chir_03  "C3'"  "C2'"  "C4'"  "O3'"     negativ
+                   .      .      .      .      .
+ UVC      chir_04  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+                   .      .      .      .      .
+ UVC      chir_05  V      "O2'"  O1V    O2V       cross3
+                   O3V    "O3'"  .      .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ UVC      plan-1    N1        0.020
+ UVC      plan-1    C2        0.020
+ UVC      plan-1    C6        0.020
+ UVC      plan-1    "C1'"     0.020
+ UVC      plan-1    N3        0.020
+ UVC      plan-1    C4        0.020
+ UVC      plan-1    C5        0.020
+ UVC      plan-1    O2        0.020
+ UVC      plan-1    HN3       0.020
+ UVC      plan-1    O4        0.020
+ UVC      plan-1    H5        0.020
+ UVC      plan-1    H6        0.020
+# ------------------------------------------------------

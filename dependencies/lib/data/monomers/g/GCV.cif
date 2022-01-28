@@ -1,0 +1,221 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GCV      GCV '4-O-METHYL-ALPHA-D-GLUCURONIC ACID  ' pyranose           25  14 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GCV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GCV           C1     C    CH1       0.000      0.000    0.000    0.000
+ GCV           H1     H    H         0.000      1.002   -0.435   -0.117
+ GCV           O1     O    OH1       0.000      0.101    1.424    0.025
+ GCV           HO1    H    H         0.000      0.657    1.694    0.768
+ GCV           O5     O    O2        0.000     -0.575   -0.455    1.224
+ GCV           C5     C    CH1       0.000     -1.788    0.265    1.427
+ GCV           H5     H    H         0.000     -1.589    1.343    1.350
+ GCV           C6     C    C         0.000     -2.332   -0.046    2.798
+ GCV           O6A    O    OC       -0.500     -1.755   -0.886    3.523
+ GCV           O6B    O    OC       -0.500     -3.362    0.533    3.209
+ GCV           C4     C    CH1       0.000     -2.814   -0.138    0.366
+ GCV           H4     H    H         0.000     -2.999   -1.219    0.426
+ GCV           O4     O    O2        0.000     -4.035    0.570    0.590
+ GCV           C7     C    CH3       0.000     -5.098   -0.328    0.266
+ GCV           H73    H    H         0.000     -5.020   -0.616   -0.750
+ GCV           H72    H    H         0.000     -5.035   -1.188    0.882
+ GCV           H71    H    H         0.000     -6.028    0.152    0.427
+ GCV           C3     C    CH1       0.000     -2.265    0.212   -1.020
+ GCV           H3     H    H         0.000     -2.180    1.303   -1.119
+ GCV           O3     O    OH1       0.000     -3.146   -0.293   -2.025
+ GCV           HO3    H    H         0.000     -2.797   -0.071   -2.899
+ GCV           C2     C    CH1       0.000     -0.882   -0.427   -1.176
+ GCV           H2     H    H         0.000     -0.981   -1.522   -1.183
+ GCV           O2     O    OH1       0.000     -0.289    0.007   -2.402
+ GCV           HO2    H    H         0.000      0.584   -0.397   -2.498
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GCV      C1     n/a    O5     START
+ GCV      H1     C1     .      .
+ GCV      O1     C1     HO1    .
+ GCV      HO1    O1     .      .
+ GCV      O5     C1     .      END
+ GCV      C5     O5     C4     .
+ GCV      H5     C5     .      .
+ GCV      C6     C5     O6B    .
+ GCV      O6A    C6     .      .
+ GCV      O6B    C6     .      .
+ GCV      C4     C5     C3     .
+ GCV      H4     C4     .      .
+ GCV      O4     C4     C7     .
+ GCV      C7     O4     H71    .
+ GCV      H73    C7     .      .
+ GCV      H72    C7     .      .
+ GCV      H71    C7     .      .
+ GCV      C3     C4     C2     .
+ GCV      H3     C3     .      .
+ GCV      O3     C3     HO3    .
+ GCV      HO3    O3     .      .
+ GCV      C2     C3     O2     .
+ GCV      H2     C2     .      .
+ GCV      O2     C2     HO2    .
+ GCV      HO2    O2     .      .
+ GCV      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GCV       C7        O4        single    1.426     0.020     1.426     0.020     
+GCV       H71       C7        single    1.089     0.010     0.989     0.005     
+GCV       H72       C7        single    1.089     0.010     0.989     0.005     
+GCV       H73       C7        single    1.089     0.010     0.989     0.005     
+GCV       C1        C2        single    1.524     0.020     1.524     0.020     
+GCV       O1        C1        single    1.432     0.020     1.432     0.020     
+GCV       O5        C1        single    1.426     0.020     1.426     0.020     
+GCV       H1        C1        single    1.089     0.010     0.989     0.005     
+GCV       C2        C3        single    1.524     0.020     1.524     0.020     
+GCV       O2        C2        single    1.432     0.020     1.432     0.020     
+GCV       H2        C2        single    1.089     0.010     0.989     0.005     
+GCV       C3        C4        single    1.524     0.020     1.524     0.020     
+GCV       O3        C3        single    1.432     0.020     1.432     0.020     
+GCV       H3        C3        single    1.089     0.010     0.989     0.005     
+GCV       C4        C5        single    1.524     0.020     1.524     0.020     
+GCV       O4        C4        single    1.426     0.020     1.426     0.020     
+GCV       H4        C4        single    1.089     0.010     0.989     0.005     
+GCV       C6        C5        single    1.500     0.020     1.500     0.020     
+GCV       C5        O5        single    1.426     0.020     1.426     0.020     
+GCV       H5        C5        single    1.089     0.010     0.989     0.005     
+GCV       O6A       C6        deloc     1.250     0.020     1.250     0.020     
+GCV       O6B       C6        deloc     1.250     0.020     1.250     0.020     
+GCV       HO1       O1        single    0.970     0.012     0.839     0.014     
+GCV       HO2       O2        single    0.970     0.012     0.839     0.014     
+GCV       HO3       O3        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GCV      H1     C1     O1      109.470    3.000
+ GCV      H1     C1     O5      109.470    3.000
+ GCV      O1     C1     O5      109.470    3.000
+ GCV      H1     C1     C2      108.340    3.000
+ GCV      O1     C1     C2      109.470    3.000
+ GCV      O5     C1     C2      109.470    3.000
+ GCV      C1     O1     HO1     109.470    3.000
+ GCV      C1     O5     C5      111.800    3.000
+ GCV      O5     C5     H5      109.470    3.000
+ GCV      O5     C5     C6      109.470    3.000
+ GCV      O5     C5     C4      109.470    3.000
+ GCV      H5     C5     C6      108.810    3.000
+ GCV      H5     C5     C4      108.340    3.000
+ GCV      C6     C5     C4      109.470    3.000
+ GCV      C5     C6     O6A     118.500    3.000
+ GCV      C5     C6     O6B     118.500    3.000
+ GCV      O6A    C6     O6B     123.000    3.000
+ GCV      C5     C4     H4      108.340    3.000
+ GCV      C5     C4     O4      109.470    3.000
+ GCV      C5     C4     C3      111.000    3.000
+ GCV      H4     C4     O4      109.470    3.000
+ GCV      H4     C4     C3      108.340    3.000
+ GCV      O4     C4     C3      109.470    3.000
+ GCV      C4     O4     C7      111.800    3.000
+ GCV      O4     C7     H73     109.470    3.000
+ GCV      O4     C7     H72     109.470    3.000
+ GCV      O4     C7     H71     109.470    3.000
+ GCV      H73    C7     H72     109.470    3.000
+ GCV      H73    C7     H71     109.470    3.000
+ GCV      H72    C7     H71     109.470    3.000
+ GCV      C4     C3     H3      108.340    3.000
+ GCV      C4     C3     O3      109.470    3.000
+ GCV      C4     C3     C2      111.000    3.000
+ GCV      H3     C3     O3      109.470    3.000
+ GCV      H3     C3     C2      108.340    3.000
+ GCV      O3     C3     C2      109.470    3.000
+ GCV      C3     O3     HO3     109.470    3.000
+ GCV      C3     C2     H2      108.340    3.000
+ GCV      C3     C2     O2      109.470    3.000
+ GCV      C3     C2     C1      111.000    3.000
+ GCV      H2     C2     O2      109.470    3.000
+ GCV      H2     C2     C1      108.340    3.000
+ GCV      O2     C2     C1      109.470    3.000
+ GCV      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GCV      var_1    O5     C1     O1     HO1       59.753   20.000   1
+ GCV      var_2    C1     O5     C5     C4        60.000   20.000   1
+ GCV      var_3    O5     C5     C6     O6B      176.460   20.000   3
+ GCV      var_4    O5     C5     C4     C3       -60.000   20.000   3
+ GCV      var_5    C5     C4     O4     C7      -143.477   20.000   1
+ GCV      var_6    C4     O4     C7     H71      179.489   20.000   1
+ GCV      var_7    C5     C4     C3     C2        60.000   20.000   3
+ GCV      var_8    C4     C3     O3     HO3     -179.995   20.000   1
+ GCV      var_9    C4     C3     C2     O2       180.000   20.000   3
+ GCV      var_10   C3     C2     C1     O5        60.000   20.000   3
+ GCV      var_11   C3     C2     O2     HO2     -179.995   20.000   1
+ GCV      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GCV      chir_01  C1     C2     O1     O5        negativ
+ GCV      chir_02  C2     C1     C3     O2        negativ
+ GCV      chir_03  C3     C2     C4     O3        positiv
+ GCV      chir_04  C4     C3     C5     O4        negativ
+ GCV      chir_05  C5     C4     C6     O5        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GCV      plan-1    C6        0.020
+ GCV      plan-1    C5        0.020
+ GCV      plan-1    O6A       0.020
+ GCV      plan-1    O6B       0.020
+# ------------------------------------------------------

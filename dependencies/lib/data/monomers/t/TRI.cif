@@ -1,0 +1,112 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TRI     TRI      1,2,4-TRIAZOLE     NON-POLYMER     8     5     .     
+#
+data_comp_TRI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TRI     N1      N       NRD5    0       -4.071      1.392       16.239      
+TRI     N2      N       NRD5    0       -4.837      1.471       17.397      
+TRI     C3      C       CR15    0       -5.792      0.589       17.290      
+TRI     N4      N       NR5     0       -5.665      -0.043      16.118      
+TRI     C5      C       CR15    0       -4.600      0.466       15.488      
+TRI     H3      H       H       0       -6.466      0.417       17.927      
+TRI     HN4     H       H       0       -6.193      -0.687      15.813      
+TRI     H5      H       H       0       -4.292      0.193       14.640      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TRI       N1        N2        SINGLE    y         1.391     0.012     1.391     0.012     
+TRI       N1        C5        DOUBLE    y         1.304     0.010     1.304     0.010     
+TRI       N2        C3        DOUBLE    y         1.304     0.010     1.304     0.010     
+TRI       C3        N4        SINGLE    y         1.338     0.015     1.338     0.015     
+TRI       N4        C5        SINGLE    y         1.338     0.015     1.338     0.015     
+TRI       C3        H3        SINGLE    n         1.082     0.013     0.943     0.020     
+TRI       N4        HN4       SINGLE    n         1.016     0.010     0.887     0.020     
+TRI       C5        H5        SINGLE    n         1.082     0.013     0.943     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TRI          N2          N1          C5     107.159    1.50
+TRI          N1          N2          C3     107.159    1.50
+TRI          N2          C3          N4     108.825    1.88
+TRI          N2          C3          H3     126.187    1.50
+TRI          N4          C3          H3     124.988    1.50
+TRI          C3          N4          C5     108.032    2.04
+TRI          C3          N4         HN4     125.984    2.70
+TRI          C5          N4         HN4     125.984    2.70
+TRI          N1          C5          N4     108.825    1.88
+TRI          N1          C5          H5     126.187    1.50
+TRI          N4          C5          H5     124.988    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TRI       const_sp2_sp2_1          C5          N1          N2          C3       0.000   10.00     2
+TRI              const_12          N4          C5          N1          N2       0.000   10.00     2
+TRI       const_sp2_sp2_2          N4          C3          N2          N1       0.000   10.00     2
+TRI       const_sp2_sp2_4          N2          C3          N4          C5       0.000   10.00     2
+TRI       const_sp2_sp2_8          N1          C5          N4          C3       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TRI    plan-1          C3   0.020
+TRI    plan-1          C5   0.020
+TRI    plan-1          H3   0.020
+TRI    plan-1          H5   0.020
+TRI    plan-1         HN4   0.020
+TRI    plan-1          N1   0.020
+TRI    plan-1          N2   0.020
+TRI    plan-1          N4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TRI SMILES           ACDLabs              10.04 n1ncnc1
+TRI SMILES_CANONICAL CACTVS               3.341 "[nH]1cnnc1"
+TRI SMILES           CACTVS               3.341 "[nH]1cnnc1"
+TRI SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1[nH]cnn1"
+TRI SMILES           "OpenEye OEToolkits" 1.5.0 "c1[nH]cnn1"
+TRI InChI            InChI                1.03  "InChI=1S/C2H3N3/c1-3-2-5-4-1/h1-2H,(H,3,4,5)"
+TRI InChIKey         InChI                1.03  NSPMIYGKQJPBQR-UHFFFAOYSA-N
+TRI ?                acedrg               202         "dictionary generator"                  
+TRI ?                acedrg_database      11          "data source"                           
+TRI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TRI ?                refmac5              5.8.0189    "optimization tool"                     

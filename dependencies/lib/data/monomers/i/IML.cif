@@ -1,0 +1,213 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IML     IML     N-METHYL-ISOLEUCINE     M-peptide     24     10     .
+#
+data_comp_IML
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+IML     N       N       NT1     0       -1.548      -0.350      -0.495
+IML     CA      C       CH1     0       -0.803      0.569       0.386
+IML     C       C       C       0       -0.909      2.046       -0.057
+IML     O       O       O       0       -2.036      2.449       -0.407
+IML     OXT     O       OC      -1      0.125       2.747       -0.037
+IML     CB      C       CH1     0       0.663       0.078       0.512
+IML     CN      C       CH3     0       -2.932      -0.621      -0.095
+IML     CG2     C       CH3     0       0.735       -1.207      1.324
+IML     CG1     C       CH2     0       1.345       -0.088      -0.851
+IML     CD1     C       CH3     0       2.854       -0.046      -0.791
+IML     H       H       H       0       -1.550      -0.023      -1.325
+IML     HA      H       H       0       -1.206      0.513       1.289
+IML     HB      H       H       0       1.166       0.765       1.014
+IML     HN1     H       H       0       -3.354      -1.221      -0.741
+IML     HN2     H       H       0       -3.441      0.212       -0.058
+IML     HN3     H       H       0       -2.949      -1.042      0.786
+IML     HG21    H       H       0       1.665       -1.473      1.431
+IML     HG22    H       H       0       0.249       -1.912      0.862
+IML     HG23    H       H       0       0.339       -1.062      2.200
+IML     HG12    H       H       0       1.036       0.620       -1.454
+IML     HG13    H       H       0       1.070       -0.948      -1.235
+IML     HD11    H       H       0       3.216       -0.062      -1.694
+IML     HD12    H       H       0       3.183       -0.818      -0.298
+IML     HD13    H       H       0       3.140       0.769       -0.343
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+IML      N      n/a    CA     START
+IML      H      N      .      .
+IML      CN     N      HN1    .
+IML      HN3    CN     .      .
+IML      HN2    CN     .      .
+IML      HN1    CN     .      .
+IML      CA     N      C      .
+IML      HA     CA     .      .
+IML      CB     CA     CG1    .
+IML      HB     CB     .      .
+IML      CG2    CB     HG21   .
+IML      HG23   CG2    .      .
+IML      HG22   CG2    .      .
+IML      HG21   CG2    .      .
+IML      CG1    CB     CD1    .
+IML      HG12   CG1    .      .
+IML      HG13   CG1    .      .
+IML      CD1    CG1    HD11   .
+IML      HD13   CD1    .      .
+IML      HD12   CD1    .      .
+IML      HD11   CD1    .      .
+IML      C      CA     .      END
+IML      O      C      .      .
+IML      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IML       N         CA        SINGLE    n         1.468     0.014     1.468     0.014     
+IML       N         CN        SINGLE    n         1.463     0.015     1.463     0.015     
+IML       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+IML       CA        CB        SINGLE    n         1.545     0.012     1.545     0.012     
+IML       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+IML       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+IML       CB        CG2       SINGLE    n         1.521     0.014     1.521     0.014     
+IML       CB        CG1       SINGLE    n         1.531     0.010     1.531     0.010     
+IML       CG1       CD1       SINGLE    n         1.511     0.020     1.511     0.020     
+IML       N         H         SINGLE    n         1.036     0.016     0.890     0.020     
+IML       CA        HA        SINGLE    n         1.089     0.010     0.990     0.020     
+IML       CB        HB        SINGLE    n         1.089     0.010     0.989     0.018     
+IML       CN        HN1       SINGLE    n         1.089     0.010     0.977     0.013     
+IML       CN        HN2       SINGLE    n         1.089     0.010     0.977     0.013     
+IML       CN        HN3       SINGLE    n         1.089     0.010     0.977     0.013     
+IML       CG2       HG21      SINGLE    n         1.089     0.010     0.973     0.015     
+IML       CG2       HG22      SINGLE    n         1.089     0.010     0.973     0.015     
+IML       CG2       HG23      SINGLE    n         1.089     0.010     0.973     0.015     
+IML       CG1       HG12      SINGLE    n         1.089     0.010     0.981     0.016     
+IML       CG1       HG13      SINGLE    n         1.089     0.010     0.981     0.016     
+IML       CD1       HD11      SINGLE    n         1.089     0.010     0.973     0.016     
+IML       CD1       HD12      SINGLE    n         1.089     0.010     0.973     0.016     
+IML       CD1       HD13      SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+IML          CA           N          CN     112.615    2.70
+IML          CA           N           H     106.958    3.00
+IML          CN           N           H     108.144    3.00
+IML           N          CA           C     113.481    2.07
+IML           N          CA          CB     111.154    1.91
+IML           N          CA          HA     108.712    1.50
+IML           C          CA          CB     111.316    1.50
+IML           C          CA          HA     108.240    1.50
+IML          CB          CA          HA     108.465    1.50
+IML          CA           C           O     117.195    1.50
+IML          CA           C         OXT     117.195    1.50
+IML           O           C         OXT     125.611    1.50
+IML          CA          CB         CG2     111.367    1.50
+IML          CA          CB         CG1     111.426    1.50
+IML          CA          CB          HB     107.181    1.50
+IML         CG2          CB         CG1     111.775    1.50
+IML         CG2          CB          HB     107.601    1.50
+IML         CG1          CB          HB     107.402    1.50
+IML           N          CN         HN1     110.215    1.50
+IML           N          CN         HN2     110.215    1.50
+IML           N          CN         HN3     110.215    1.50
+IML         HN1          CN         HN2     109.279    1.79
+IML         HN1          CN         HN3     109.279    1.79
+IML         HN2          CN         HN3     109.279    1.79
+IML          CB         CG2        HG21     109.662    1.50
+IML          CB         CG2        HG22     109.662    1.50
+IML          CB         CG2        HG23     109.662    1.50
+IML        HG21         CG2        HG22     109.411    1.50
+IML        HG21         CG2        HG23     109.411    1.50
+IML        HG22         CG2        HG23     109.411    1.50
+IML          CB         CG1         CD1     113.965    1.50
+IML          CB         CG1        HG12     108.703    1.50
+IML          CB         CG1        HG13     108.703    1.50
+IML         CD1         CG1        HG12     108.717    1.50
+IML         CD1         CG1        HG13     108.717    1.50
+IML        HG12         CG1        HG13     107.862    1.50
+IML         CG1         CD1        HD11     109.566    1.50
+IML         CG1         CD1        HD12     109.566    1.50
+IML         CG1         CD1        HD13     109.566    1.50
+IML        HD11         CD1        HD12     109.380    1.50
+IML        HD11         CD1        HD13     109.380    1.50
+IML        HD12         CD1        HD13     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+IML             sp3_sp3_1           C          CA           N          CN     180.000   10.00     3
+IML             sp3_sp3_7         HN1          CN           N          CA     180.000   10.00     3
+IML             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+IML            sp3_sp3_13           N          CA          CB         CG2     180.000   10.00     3
+IML            sp3_sp3_22          CA          CB         CG2        HG21     180.000   10.00     3
+IML            sp3_sp3_31          CA          CB         CG1         CD1     180.000   10.00     3
+IML            sp3_sp3_40        HD11         CD1         CG1          CB     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+IML    chir_1    N    CA    CN    H    negative
+IML    chir_2    CA    N    C    CB    positive
+IML    chir_3    CB    CA    CG1    CG2    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+IML    plan-1           C   0.020
+IML    plan-1          CA   0.020
+IML    plan-1           O   0.020
+IML    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+IML SMILES           ACDLabs              10.04 "O=C(O)C(NC)C(CC)C"
+IML SMILES_CANONICAL CACTVS               3.341 "CC[C@H](C)[C@H](NC)C(O)=O"
+IML SMILES           CACTVS               3.341 "CC[CH](C)[CH](NC)C(O)=O"
+IML SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC[C@H](C)[C@@H](C(=O)O)NC"
+IML SMILES           "OpenEye OEToolkits" 1.5.0 "CCC(C)C(C(=O)O)NC"
+IML InChI            InChI                1.03  "InChI=1S/C7H15NO2/c1-4-5(2)6(8-3)7(9)10/h5-6,8H,4H2,1-3H3,(H,9,10)/t5-,6-/m0/s1"
+IML InChIKey         InChI                1.03  KSPIYJQBLVDRRI-WDSKDSINSA-N
+IML ?                acedrg               196         "dictionary generator"
+IML ?                acedrg_database      11          "data source"
+IML ?                rdkit                2017.03.2   "Chemoinformatics tool"
+IML ?                refmac5              5.8.0222    "optimization tool"

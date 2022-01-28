@@ -1,0 +1,163 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B57     B57      "2,6-diamino-5-nitropyrimidin-4(3H)-one"     NON-POLYMER     17     12     .     
+#
+data_comp_B57
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+B57     O7      O       O       0       -62.733     57.359      138.040     
+B57     C1      C       CR6     0       -63.125     58.494      137.749     
+B57     C6      C       CR6     0       -62.920     59.149      136.506     
+B57     N8      N       N       1       -62.187     58.454      135.456     
+B57     O10     O       OC      -1      -61.101     58.894      135.113     
+B57     O9      O       O       0       -62.687     57.457      134.958     
+B57     N2      N       NR6     0       -63.831     59.211      138.707     
+B57     C3      C       CR6     0       -64.299     60.473      138.466     
+B57     N11     N       NH2     0       -64.967     61.086      139.445     
+B57     N4      N       NRD6    0       -64.114     61.097      137.306     
+B57     C5      C       CR6     0       -63.442     60.478      136.322     
+B57     N12     N       NH2     0       -63.289     61.147      135.194     
+B57     HN2     H       H       0       -63.980     58.836      139.498     
+B57     HN11    H       H       0       -64.823     61.937      139.603     
+B57     HN1A    H       H       0       -65.546     60.635      139.925     
+B57     HN12    H       H       0       -62.945     61.954      135.208     
+B57     HN1B    H       H       0       -63.532     60.784      134.434     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B57       O7        C1        DOUBLE    n         1.235     0.013     1.235     0.013     
+B57       C1        C6        SINGLE    y         1.397     0.018     1.397     0.018     
+B57       C1        N2        SINGLE    y         1.379     0.011     1.379     0.011     
+B57       C6        N8        SINGLE    n         1.457     0.020     1.457     0.020     
+B57       C6        C5        DOUBLE    y         1.415     0.019     1.415     0.019     
+B57       N8        O10       SINGLE    n         1.221     0.017     1.221     0.017     
+B57       N8        O9        DOUBLE    n         1.221     0.017     1.221     0.017     
+B57       N2        C3        SINGLE    y         1.360     0.010     1.360     0.010     
+B57       C3        N11       SINGLE    n         1.333     0.011     1.333     0.011     
+B57       C3        N4        DOUBLE    y         1.324     0.010     1.324     0.010     
+B57       N4        C5        SINGLE    y         1.336     0.010     1.336     0.010     
+B57       C5        N12       SINGLE    n         1.320     0.011     1.320     0.011     
+B57       N2        HN2       SINGLE    n         1.016     0.010     0.886     0.020     
+B57       N11       HN11      SINGLE    n         1.016     0.010     0.877     0.020     
+B57       N11       HN1A      SINGLE    n         1.016     0.010     0.877     0.020     
+B57       N12       HN12      SINGLE    n         1.016     0.010     0.877     0.020     
+B57       N12       HN1B      SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+B57          O7          C1          C6     126.092    2.00
+B57          O7          C1          N2     118.127    1.50
+B57          C6          C1          N2     115.782    1.63
+B57          C1          C6          N8     118.638    2.67
+B57          C1          C6          C5     119.338    1.85
+B57          N8          C6          C5     122.024    1.57
+B57          C6          N8         O10     118.506    1.50
+B57          C6          N8          O9     118.506    1.50
+B57         O10          N8          O9     122.988    1.50
+B57          C1          N2          C3     122.140    1.50
+B57          C1          N2         HN2     118.749    1.50
+B57          C3          N2         HN2     119.112    1.62
+B57          N2          C3         N11     117.416    1.50
+B57          N2          C3          N4     123.123    1.50
+B57         N11          C3          N4     119.461    1.50
+B57          C3         N11        HN11     119.731    1.85
+B57          C3         N11        HN1A     119.731    1.85
+B57        HN11         N11        HN1A     120.538    1.96
+B57          C3          N4          C5     119.080    1.50
+B57          C6          C5          N4     120.538    1.50
+B57          C6          C5         N12     122.625    2.55
+B57          N4          C5         N12     116.837    1.50
+B57          C5         N12        HN12     119.872    1.50
+B57          C5         N12        HN1B     119.872    1.50
+B57        HN12         N12        HN1B     120.257    1.85
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+B57             sp2_sp2_9          C6          C5         N12        HN12     180.000   10.00     2
+B57       const_sp2_sp2_4          O7          C1          C6          N8       0.000   10.00     2
+B57              const_19          O7          C1          N2          C3     180.000   10.00     2
+B57       const_sp2_sp2_8         N12          C5          C6          N8       0.000   10.00     2
+B57             sp2_sp2_1          C1          C6          N8         O10     180.000   10.00     2
+B57              const_15         N11          C3          N2          C1     180.000   10.00     2
+B57             sp2_sp2_5          N2          C3         N11        HN11     180.000   10.00     2
+B57              const_12         N11          C3          N4          C5     180.000   10.00     2
+B57              const_10         N12          C5          N4          C3     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+B57    plan-1          C1   0.020
+B57    plan-1          C3   0.020
+B57    plan-1          C5   0.020
+B57    plan-1          C6   0.020
+B57    plan-1         HN2   0.020
+B57    plan-1         N11   0.020
+B57    plan-1         N12   0.020
+B57    plan-1          N2   0.020
+B57    plan-1          N4   0.020
+B57    plan-1          N8   0.020
+B57    plan-1          O7   0.020
+B57    plan-2          C6   0.020
+B57    plan-2          N8   0.020
+B57    plan-2         O10   0.020
+B57    plan-2          O9   0.020
+B57    plan-3          C3   0.020
+B57    plan-3        HN11   0.020
+B57    plan-3        HN1A   0.020
+B57    plan-3         N11   0.020
+B57    plan-4          C5   0.020
+B57    plan-4        HN12   0.020
+B57    plan-4        HN1B   0.020
+B57    plan-4         N12   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+B57 SMILES           ACDLabs              10.04 "O=C1C([N+]([O-])=O)=C(N=C(N)N1)N"
+B57 SMILES_CANONICAL CACTVS               3.341 "NC1=NC(=C(C(=O)N1)[N+]([O-])=O)N"
+B57 SMILES           CACTVS               3.341 "NC1=NC(=C(C(=O)N1)[N+]([O-])=O)N"
+B57 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1(=C(N=C(NC1=O)N)N)[N+](=O)[O-]"
+B57 SMILES           "OpenEye OEToolkits" 1.5.0 "C1(=C(N=C(NC1=O)N)N)[N+](=O)[O-]"
+B57 InChI            InChI                1.03  "InChI=1S/C4H5N5O3/c5-2-1(9(11)12)3(10)8-4(6)7-2/h(H5,5,6,7,8,10)"
+B57 InChIKey         InChI                1.03  XNFGVBWYGFPSDN-UHFFFAOYSA-N
+B57 ?                acedrg               202         "dictionary generator"                  
+B57 ?                acedrg_database      11          "data source"                           
+B57 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+B57 ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+F5C     F5C      "penta-fluorocinnamic acid"     NON-POLYMER     18     16     .     
+#
+data_comp_F5C
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+F5C     CA      C       C1      0       2.174       0.589       0.583       
+F5C     CB      C       C1      0       1.398       -0.180      -0.173      
+F5C     CG      C       CR6     0       -0.064      -0.196      -0.208      
+F5C     CD1     C       CR6     0       -0.812      0.927       -0.583      
+F5C     FD1     F       F       0       -0.184      2.065       -0.925      
+F5C     CD2     C       CR6     0       -0.813      -1.332      0.129       
+F5C     FD2     F       F       0       -0.185      -2.460      0.502       
+F5C     CE1     C       CR6     0       -2.198      0.926       -0.622      
+F5C     FE1     F       F       0       -2.864      2.031       -0.989      
+F5C     CE2     C       CR6     0       -2.198      -1.352      0.097       
+F5C     FE2     F       F       0       -2.866      -2.466      0.430       
+F5C     CZ      C       CR6     0       -2.891      -0.218      -0.280      
+F5C     FZ      F       F       0       -4.234      -0.228      -0.314      
+F5C     C       C       C       0       3.665       0.441       0.726       
+F5C     O       O       OC      -1      4.221       -0.539      0.222       
+F5C     OXT     O       O       0       4.264       1.309       1.359       
+F5C     H1      H       H       0       1.765       1.281       1.071       
+F5C     H3      H       H       0       1.828       -0.775      -0.766      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+F5C       C         OXT       DOUBLE    n         1.230     0.020     1.230     0.020     
+F5C       C         O         SINGLE    n         1.230     0.020     1.230     0.020     
+F5C       CA        C         SINGLE    n         1.492     0.020     1.492     0.020     
+F5C       CA        CB        DOUBLE    n         1.318     0.020     1.318     0.020     
+F5C       CD2       FD2       SINGLE    n         1.344     0.010     1.344     0.010     
+F5C       CB        CG        SINGLE    n         1.462     0.010     1.462     0.010     
+F5C       CG        CD2       DOUBLE    y         1.393     0.010     1.393     0.010     
+F5C       CD2       CE2       SINGLE    y         1.378     0.010     1.378     0.010     
+F5C       CE2       FE2       SINGLE    n         1.341     0.010     1.341     0.010     
+F5C       CG        CD1       SINGLE    y         1.393     0.010     1.393     0.010     
+F5C       CE2       CZ        DOUBLE    y         1.371     0.011     1.371     0.011     
+F5C       CD1       FD1       SINGLE    n         1.344     0.010     1.344     0.010     
+F5C       CD1       CE1       DOUBLE    y         1.378     0.010     1.378     0.010     
+F5C       CE1       CZ        SINGLE    y         1.371     0.011     1.371     0.011     
+F5C       CZ        FZ        SINGLE    n         1.343     0.010     1.343     0.010     
+F5C       CE1       FE1       SINGLE    n         1.341     0.010     1.341     0.010     
+F5C       CA        H1        SINGLE    n         1.082     0.013     0.940     0.018     
+F5C       CB        H3        SINGLE    n         1.082     0.013     0.945     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+F5C           C          CA          CB     123.568    1.67
+F5C           C          CA          H1     117.792    1.50
+F5C          CB          CA          H1     118.640    1.50
+F5C          CA          CB          CG     127.454    1.50
+F5C          CA          CB          H3     116.597    1.50
+F5C          CG          CB          H3     115.949    1.50
+F5C          CB          CG         CD2     122.353    3.00
+F5C          CB          CG         CD1     122.353    3.00
+F5C         CD2          CG         CD1     115.293    1.50
+F5C          CG         CD1         FD1     119.627    1.50
+F5C          CG         CD1         CE1     122.923    1.50
+F5C         FD1         CD1         CE1     117.449    1.50
+F5C         FD2         CD2          CG     119.627    1.50
+F5C         FD2         CD2         CE2     117.449    1.50
+F5C          CG         CD2         CE2     122.923    1.50
+F5C         CD1         CE1          CZ     119.726    1.50
+F5C         CD1         CE1         FE1     120.251    1.50
+F5C          CZ         CE1         FE1     120.024    1.50
+F5C         CD2         CE2         FE2     120.251    1.50
+F5C         CD2         CE2          CZ     119.726    1.50
+F5C         FE2         CE2          CZ     120.024    1.50
+F5C         CE2          CZ         CE1     119.409    1.50
+F5C         CE2          CZ          FZ     120.295    1.50
+F5C         CE1          CZ          FZ     120.295    1.50
+F5C         OXT           C           O     123.974    1.50
+F5C         OXT           C          CA     118.013    1.50
+F5C           O           C          CA     118.013    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+F5C             sp2_sp2_5           C          CA          CB          CG     180.000   10.00     2
+F5C             sp2_sp2_1         OXT           C          CA          CB     180.000   10.00     2
+F5C             sp2_sp2_9          CA          CB          CG         CD2     180.000   10.00     2
+F5C              const_24         FD1         CD1          CG          CB       0.000   10.00     2
+F5C       const_sp2_sp2_4         FD2         CD2          CG          CB       0.000   10.00     2
+F5C              const_20         FD1         CD1         CE1         FE1       0.000   10.00     2
+F5C       const_sp2_sp2_8         FD2         CD2         CE2         FE2       0.000   10.00     2
+F5C              const_16         FE1         CE1          CZ          FZ       0.000   10.00     2
+F5C              const_12         FE2         CE2          CZ          FZ       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+F5C    plan-1          CB   0.020
+F5C    plan-1         CD1   0.020
+F5C    plan-1         CD2   0.020
+F5C    plan-1         CE1   0.020
+F5C    plan-1         CE2   0.020
+F5C    plan-1          CG   0.020
+F5C    plan-1          CZ   0.020
+F5C    plan-1         FD1   0.020
+F5C    plan-1         FD2   0.020
+F5C    plan-1         FE1   0.020
+F5C    plan-1         FE2   0.020
+F5C    plan-1          FZ   0.020
+F5C    plan-2           C   0.020
+F5C    plan-2          CA   0.020
+F5C    plan-2          CB   0.020
+F5C    plan-2          H1   0.020
+F5C    plan-3          CA   0.020
+F5C    plan-3          CB   0.020
+F5C    plan-3          CG   0.020
+F5C    plan-3          H3   0.020
+F5C    plan-4           C   0.020
+F5C    plan-4          CA   0.020
+F5C    plan-4           O   0.020
+F5C    plan-4         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+F5C SMILES           ACDLabs              12.01 "[C@H](=Cc1c(F)c(F)c(c(c1F)F)F)C(O)=O"
+F5C InChI            InChI                1.03  "InChI=1S/C9H3F5O2/c10-5-3(1-2-4(15)16)6(11)8(13)9(14)7(5)12/h1-2H,(H,15,16)/b2-1+"
+F5C InChIKey         InChI                1.03  IUUKDBLGVZISGW-OWOJBTEDSA-N
+F5C SMILES_CANONICAL CACTVS               3.385 "OC(=O)\C=C\c1c(F)c(F)c(F)c(F)c1F"
+F5C SMILES           CACTVS               3.385 "OC(=O)C=Cc1c(F)c(F)c(F)c(F)c1F"
+F5C SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "C(=C/C(=O)O)\c1c(c(c(c(c1F)F)F)F)F"
+F5C SMILES           "OpenEye OEToolkits" 1.9.2 "C(=CC(=O)O)c1c(c(c(c(c1F)F)F)F)F"
+F5C ?                acedrg               202         "dictionary generator"                  
+F5C ?                acedrg_database      11          "data source"                           
+F5C ?                rdkit                2017.03.2   "Chemoinformatics tool"
+F5C ?                refmac5              5.8.0189    "optimization tool"                     

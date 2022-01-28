@@ -1,0 +1,148 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DBU      DBU '(2E)-2-AMINOBUT-2-ENOIC ACID        ' non-polymer        13   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DBU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DBU           OXT    O    OC       -0.500      0.000    0.000    0.000
+ DBU           C      C    C         0.000     -0.695   -0.830    0.626
+ DBU           O      O    OC       -0.500     -0.209   -1.763    1.303
+ DBU           CA     C    C         0.000     -2.151   -0.546    0.447
+ DBU           N      N    NH2       0.000     -2.492    0.521   -0.332
+ DBU           H2     H    H         0.000     -3.468    0.758   -0.486
+ DBU           H1     H    H         0.000     -1.774    1.093   -0.768
+ DBU           CB     C    C1        0.000     -2.991   -1.383    1.082
+ DBU           HB1    H    H         0.000     -2.546   -2.177    1.658
+ DBU           CG     C    CH3       0.000     -4.486   -1.316    1.064
+ DBU           HG3    H    H         0.000     -4.872   -2.217    0.666
+ DBU           HG2    H    H         0.000     -4.842   -1.182    2.051
+ DBU           HG1    H    H         0.000     -4.793   -0.502    0.462
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DBU      OXT    n/a    C      START
+ DBU      C      OXT    CA     .
+ DBU      O      C      .      .
+ DBU      CA     C      CB     .
+ DBU      N      CA     H1     .
+ DBU      H2     N      .      .
+ DBU      H1     N      .      .
+ DBU      CB     CA     CG     .
+ DBU      HB1    CB     .      .
+ DBU      CG     CB     HG1    .
+ DBU      HG3    CG     .      .
+ DBU      HG2    CG     .      .
+ DBU      HG1    CG     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DBU       N         CA        single    1.332     0.020     1.332     0.020     
+DBU       H1        N         single    1.016     0.010     0.899     0.007     
+DBU       H2        N         single    1.016     0.010     0.899     0.007     
+DBU       CB        CA        double    1.340     0.020     1.340     0.020     
+DBU       CA        C         single    1.460     0.020     1.460     0.020     
+DBU       CG        CB        single    1.510     0.020     1.510     0.020     
+DBU       HB1       CB        single    1.082     0.013     0.975     0.010     
+DBU       HG1       CG        single    1.089     0.010     0.989     0.005     
+DBU       HG2       CG        single    1.089     0.010     0.989     0.005     
+DBU       HG3       CG        single    1.089     0.010     0.989     0.005     
+DBU       O         C         deloc     1.250     0.020     1.250     0.020     
+DBU       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DBU      OXT    C      O       123.000    3.000
+ DBU      OXT    C      CA      120.000    3.000
+ DBU      O      C      CA      120.000    3.000
+ DBU      C      CA     N       120.000    3.000
+ DBU      C      CA     CB      120.000    3.000
+ DBU      N      CA     CB      120.000    3.000
+ DBU      CA     N      H2      120.000    3.000
+ DBU      CA     N      H1      120.000    3.000
+ DBU      H2     N      H1      120.000    3.000
+ DBU      CA     CB     HB1     120.000    3.000
+ DBU      CA     CB     CG      120.500    3.000
+ DBU      HB1    CB     CG      120.000    3.000
+ DBU      CB     CG     HG3     109.470    3.000
+ DBU      CB     CG     HG2     109.470    3.000
+ DBU      CB     CG     HG1     109.470    3.000
+ DBU      HG3    CG     HG2     109.470    3.000
+ DBU      HG3    CG     HG1     109.470    3.000
+ DBU      HG2    CG     HG1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DBU      var_1    OXT    C      CA     CB      -179.981   20.000   1
+ DBU      CONST_1  C      CA     N      H1         0.000    0.000   0
+ DBU      CONST_2  C      CA     CB     CG       179.980    0.000   0
+ DBU      var_2    CA     CB     CG     HG1        0.351   20.000   1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DBU      plan-1    N         0.020
+ DBU      plan-1    CA        0.020
+ DBU      plan-1    H1        0.020
+ DBU      plan-1    H2        0.020
+ DBU      plan-2    CA        0.020
+ DBU      plan-2    N         0.020
+ DBU      plan-2    CB        0.020
+ DBU      plan-2    C         0.020
+ DBU      plan-2    CG        0.020
+ DBU      plan-2    HB1       0.020
+ DBU      plan-2    H2        0.020
+ DBU      plan-2    H1        0.020
+ DBU      plan-3    C         0.020
+ DBU      plan-3    CA        0.020
+ DBU      plan-3    O         0.020
+ DBU      plan-3    OXT       0.020
+# ------------------------------------------------------

@@ -1,0 +1,145 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+J1Z     J1Z      "thieno[3,2-b]thiophene"     NON-POLYMER     12     8     .     
+#
+data_comp_J1Z
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+J1Z     CAA     C       CR15    0       37.957      -27.460     -10.657     
+J1Z     CAB     C       CR15    0       37.536      -23.968     -13.572     
+J1Z     CAC     C       CR15    0       38.546      -27.348     -11.885     
+J1Z     CAD     C       CR15    0       36.950      -24.079     -12.343     
+J1Z     SAE     S       S2      0       36.985      -26.102     -10.220     
+J1Z     SAF     S       S2      0       38.506      -25.327     -14.010     
+J1Z     CAG     C       CR55    0       38.166      -26.105     -12.502     
+J1Z     CAH     C       CR55    0       37.328      -25.323     -11.727     
+J1Z     HAA     H       H       0       38.070      -28.212     -10.095     
+J1Z     HAB     H       H       0       37.422      -23.216     -14.135     
+J1Z     HAC     H       H       0       39.121      -27.994     -12.275     
+J1Z     HAD     H       H       0       36.378      -23.431     -11.951     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+J1Z       CAA       CAC       DOUBLE    n         1.366     0.011     1.366     0.011     
+J1Z       CAA       SAE       SINGLE    n         1.726     0.010     1.726     0.010     
+J1Z       CAB       CAD       DOUBLE    n         1.366     0.011     1.366     0.011     
+J1Z       CAB       SAF       SINGLE    n         1.726     0.010     1.726     0.010     
+J1Z       CAC       CAG       SINGLE    n         1.440     0.010     1.440     0.010     
+J1Z       CAD       CAH       SINGLE    n         1.440     0.010     1.440     0.010     
+J1Z       SAE       CAH       SINGLE    n         1.730     0.010     1.730     0.010     
+J1Z       SAF       CAG       SINGLE    n         1.730     0.010     1.730     0.010     
+J1Z       CAG       CAH       DOUBLE    n         1.384     0.010     1.384     0.010     
+J1Z       CAA       HAA       SINGLE    n         1.082     0.013     0.946     0.012     
+J1Z       CAB       HAB       SINGLE    n         1.082     0.013     0.946     0.012     
+J1Z       CAC       HAC       SINGLE    n         1.082     0.013     0.949     0.018     
+J1Z       CAD       HAD       SINGLE    n         1.082     0.013     0.949     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+J1Z         CAC         CAA         SAE     113.946    1.50
+J1Z         CAC         CAA         HAA     123.223    1.50
+J1Z         SAE         CAA         HAA     122.831    1.50
+J1Z         CAD         CAB         SAF     113.946    1.50
+J1Z         CAD         CAB         HAB     123.223    1.50
+J1Z         SAF         CAB         HAB     122.831    1.50
+J1Z         CAA         CAC         CAG     110.284    1.50
+J1Z         CAA         CAC         HAC     124.962    1.50
+J1Z         CAG         CAC         HAC     124.754    1.50
+J1Z         CAB         CAD         CAH     110.284    1.50
+J1Z         CAB         CAD         HAD     124.962    1.50
+J1Z         CAH         CAD         HAD     124.754    1.50
+J1Z         CAA         SAE         CAH      91.160    1.50
+J1Z         CAB         SAF         CAG      91.160    1.50
+J1Z         CAC         CAG         SAF     134.927    1.50
+J1Z         CAC         CAG         CAH     114.319    1.50
+J1Z         SAF         CAG         CAH     110.753    1.50
+J1Z         CAD         CAH         SAE     134.927    1.50
+J1Z         CAD         CAH         CAG     114.319    1.50
+J1Z         SAE         CAH         CAG     110.753    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+J1Z             sp2_sp2_1         SAE         CAA         CAC         CAG       0.000   10.00     2
+J1Z            sp2_sp2_13         SAF         CAB         CAD         CAH       0.000   10.00     2
+J1Z             sp2_sp2_6         CAA         CAC         CAG         SAF     180.000   10.00     2
+J1Z            sp2_sp2_18         CAB         CAD         CAH         SAE     180.000   10.00     2
+J1Z            sp2_sp2_10         CAC         CAG         CAH         CAD     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+J1Z    plan-1         CAA   0.020
+J1Z    plan-1         CAC   0.020
+J1Z    plan-1         HAA   0.020
+J1Z    plan-1         SAE   0.020
+J1Z    plan-2         CAB   0.020
+J1Z    plan-2         CAD   0.020
+J1Z    plan-2         HAB   0.020
+J1Z    plan-2         SAF   0.020
+J1Z    plan-3         CAA   0.020
+J1Z    plan-3         CAC   0.020
+J1Z    plan-3         CAG   0.020
+J1Z    plan-3         HAC   0.020
+J1Z    plan-4         CAB   0.020
+J1Z    plan-4         CAD   0.020
+J1Z    plan-4         CAH   0.020
+J1Z    plan-4         HAD   0.020
+J1Z    plan-5         CAC   0.020
+J1Z    plan-5         CAG   0.020
+J1Z    plan-5         CAH   0.020
+J1Z    plan-5         SAF   0.020
+J1Z    plan-6         CAD   0.020
+J1Z    plan-6         CAG   0.020
+J1Z    plan-6         CAH   0.020
+J1Z    plan-6         SAE   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+J1Z SMILES_CANONICAL CACTVS               3.352 s1ccc2sccc12
+J1Z SMILES           CACTVS               3.352 s1ccc2sccc12
+J1Z SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 c1csc2c1scc2
+J1Z SMILES           "OpenEye OEToolkits" 1.7.0 c1csc2c1scc2
+J1Z InChI            InChI                1.03  "InChI=1S/C6H4S2/c1-3-7-6-2-4-8-5(1)6/h1-4H"
+J1Z InChIKey         InChI                1.03  VJYJJHQEVLEOFL-UHFFFAOYSA-N
+J1Z ?                acedrg               202         "dictionary generator"                  
+J1Z ?                acedrg_database      11          "data source"                           
+J1Z ?                rdkit                2017.03.2   "Chemoinformatics tool"
+J1Z ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,561 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GMY      GMY 'GELDANAMYCIN                        ' non-polymer        80  40 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GMY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GMY           O40    O    O         0.000      0.000    0.000    0.000
+ GMY           C21    C    C         0.000      0.461   -0.759    0.839
+ GMY           N22    N    NH1       0.000      1.596   -1.390    0.540
+ GMY           HN2    H    H         0.000      2.147   -1.856    1.247
+ GMY           C3     C    CR6       0.000      1.983   -1.373   -0.791
+ GMY           C4     C    CR16      0.000      3.260   -1.232   -1.175
+ GMY           H4     H    H         0.000      4.043   -1.156   -0.431
+ GMY           C5     C    CR6       0.000      3.597   -1.179   -2.598
+ GMY           O24    O    O         0.000      4.758   -1.068   -2.944
+ GMY           C6     C    CR6       0.000      2.525   -1.255   -3.624
+ GMY           O25    O    O2        0.000      2.841   -1.158   -4.935
+ GMY           C26    C    CH3       0.000      3.326    0.169   -5.146
+ GMY           H263   H    H         0.000      2.609    0.867   -4.799
+ GMY           H262   H    H         0.000      4.233    0.302   -4.616
+ GMY           H261   H    H         0.000      3.496    0.323   -6.180
+ GMY           C2     C    CR6       0.000      0.918   -1.555   -1.819
+ GMY           O23    O    O         0.000     -0.216   -1.836   -1.484
+ GMY           C20    C    C         0.000     -0.308   -0.881    2.069
+ GMY           C39    C    CH3       0.000      0.127   -1.777    3.189
+ GMY           H393   H    H         0.000      0.180   -2.776    2.841
+ GMY           H392   H    H         0.000      1.081   -1.472    3.534
+ GMY           H391   H    H         0.000     -0.572   -1.715    3.981
+ GMY           C19    C    C1        0.000     -1.440   -0.142    2.142
+ GMY           H19    H    H         0.000     -1.696    0.484    1.303
+ GMY           C18    C    C1        0.000     -2.330   -0.146    3.292
+ GMY           H18    H    H         0.000     -2.081   -0.745    4.152
+ GMY           C17    C    C1        0.000     -3.449    0.580    3.297
+ GMY           H17    H    H         0.000     -4.084    0.550    4.167
+ GMY           C16    C    CH1       0.000     -3.857    1.440    2.133
+ GMY           H16    H    H         0.000     -3.057    1.445    1.379
+ GMY           O37    O    O2        0.000     -4.080    2.773    2.606
+ GMY           C38    C    CH3       0.000     -2.831    3.461    2.507
+ GMY           H383   H    H         0.000     -2.107    2.968    3.102
+ GMY           H382   H    H         0.000     -2.511    3.470    1.497
+ GMY           H381   H    H         0.000     -2.948    4.457    2.848
+ GMY           C15    C    CH1       0.000     -5.149    0.914    1.509
+ GMY           H15    H    H         0.000     -5.162   -0.183    1.573
+ GMY           O33    O    O2        0.000     -6.288    1.451    2.236
+ GMY           C34    C    C         0.000     -7.429    0.741    2.319
+ GMY           N36    N    NH2       0.000     -8.485    1.239    2.993
+ GMY           HN62   H    H         0.000     -8.425    2.146    3.439
+ GMY           HN61   H    H         0.000     -9.346    0.708    3.057
+ GMY           O35    O    O         0.000     -7.506   -0.348    1.787
+ GMY           C14    C    C         0.000     -5.248    1.330    0.059
+ GMY           C32    C    CH3       0.000     -5.477    2.782   -0.276
+ GMY           H323   H    H         0.000     -6.390    3.106    0.152
+ GMY           H322   H    H         0.000     -4.681    3.366    0.110
+ GMY           H321   H    H         0.000     -5.521    2.901   -1.328
+ GMY           C13    C    C1        0.000     -5.140    0.425   -0.876
+ GMY           H13    H    H         0.000     -4.966   -0.595   -0.578
+ GMY           C12    C    CH1       0.000     -5.245    0.726   -2.347
+ GMY           H12    H    H         0.000     -4.894    1.747   -2.551
+ GMY           C31    C    CH3       0.000     -6.714    0.574   -2.778
+ GMY           H313   H    H         0.000     -6.805    0.784   -3.813
+ GMY           H312   H    H         0.000     -7.040   -0.417   -2.591
+ GMY           H311   H    H         0.000     -7.318    1.251   -2.229
+ GMY           C11    C    CH1       0.000     -4.409   -0.286   -3.132
+ GMY           H11    H    H         0.000     -4.146   -1.123   -2.471
+ GMY           O30    O    OH1       0.000     -5.193   -0.784   -4.226
+ GMY           HO0    H    H         0.000     -5.989   -1.214   -3.884
+ GMY           C10    C    CH1       0.000     -3.129    0.338   -3.676
+ GMY           H10    H    H         0.000     -3.167    0.326   -4.774
+ GMY           O28    O    O2        0.000     -2.980    1.684   -3.236
+ GMY           C29    C    CH3       0.000     -3.098    2.513   -4.394
+ GMY           H293   H    H         0.000     -2.291    2.318   -5.052
+ GMY           H292   H    H         0.000     -4.013    2.305   -4.886
+ GMY           H291   H    H         0.000     -3.078    3.531   -4.103
+ GMY           C9     C    CH2       0.000     -1.916   -0.480   -3.214
+ GMY           H91    H    H         0.000     -2.180   -1.539   -3.192
+ GMY           H92    H    H         0.000     -1.621   -0.158   -2.213
+ GMY           C8     C    CH1       0.000     -0.752   -0.263   -4.184
+ GMY           H8     H    H         0.000     -1.161   -0.058   -5.184
+ GMY           C27    C    CH3       0.000      0.074    0.939   -3.737
+ GMY           H273   H    H         0.000     -0.555    1.786   -3.648
+ GMY           H272   H    H         0.000      0.521    0.731   -2.800
+ GMY           H271   H    H         0.000      0.829    1.134   -4.453
+ GMY           C7     C    CH2       0.000      0.130   -1.511   -4.262
+ GMY           H72    H    H         0.000      0.557   -1.585   -5.264
+ GMY           H71    H    H         0.000     -0.481   -2.394   -4.061
+ GMY           C1     C    CR6       0.000      1.240   -1.424   -3.245
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GMY      O40    n/a    C21    START
+ GMY      C21    O40    C20    .
+ GMY      N22    C21    C3     .
+ GMY      HN2    N22    .      .
+ GMY      C3     N22    C2     .
+ GMY      C4     C3     C5     .
+ GMY      H4     C4     .      .
+ GMY      C5     C4     C6     .
+ GMY      O24    C5     .      .
+ GMY      C6     C5     O25    .
+ GMY      O25    C6     C26    .
+ GMY      C26    O25    H261   .
+ GMY      H263   C26    .      .
+ GMY      H262   C26    .      .
+ GMY      H261   C26    .      .
+ GMY      C2     C3     O23    .
+ GMY      O23    C2     .      .
+ GMY      C20    C21    C19    .
+ GMY      C39    C20    H391   .
+ GMY      H393   C39    .      .
+ GMY      H392   C39    .      .
+ GMY      H391   C39    .      .
+ GMY      C19    C20    C18    .
+ GMY      H19    C19    .      .
+ GMY      C18    C19    C17    .
+ GMY      H18    C18    .      .
+ GMY      C17    C18    C16    .
+ GMY      H17    C17    .      .
+ GMY      C16    C17    C15    .
+ GMY      H16    C16    .      .
+ GMY      O37    C16    C38    .
+ GMY      C38    O37    H381   .
+ GMY      H383   C38    .      .
+ GMY      H382   C38    .      .
+ GMY      H381   C38    .      .
+ GMY      C15    C16    C14    .
+ GMY      H15    C15    .      .
+ GMY      O33    C15    C34    .
+ GMY      C34    O33    O35    .
+ GMY      N36    C34    HN61   .
+ GMY      HN62   N36    .      .
+ GMY      HN61   N36    .      .
+ GMY      O35    C34    .      .
+ GMY      C14    C15    C13    .
+ GMY      C32    C14    H321   .
+ GMY      H323   C32    .      .
+ GMY      H322   C32    .      .
+ GMY      H321   C32    .      .
+ GMY      C13    C14    C12    .
+ GMY      H13    C13    .      .
+ GMY      C12    C13    C11    .
+ GMY      H12    C12    .      .
+ GMY      C31    C12    H311   .
+ GMY      H313   C31    .      .
+ GMY      H312   C31    .      .
+ GMY      H311   C31    .      .
+ GMY      C11    C12    C10    .
+ GMY      H11    C11    .      .
+ GMY      O30    C11    HO0    .
+ GMY      HO0    O30    .      .
+ GMY      C10    C11    C9     .
+ GMY      H10    C10    .      .
+ GMY      O28    C10    C29    .
+ GMY      C29    O28    H291   .
+ GMY      H293   C29    .      .
+ GMY      H292   C29    .      .
+ GMY      H291   C29    .      .
+ GMY      C9     C10    C8     .
+ GMY      H91    C9     .      .
+ GMY      H92    C9     .      .
+ GMY      C8     C9     C7     .
+ GMY      H8     C8     .      .
+ GMY      C27    C8     H271   .
+ GMY      H273   C27    .      .
+ GMY      H272   C27    .      .
+ GMY      H271   C27    .      .
+ GMY      C7     C8     C1     .
+ GMY      H72    C7     .      .
+ GMY      H71    C7     .      .
+ GMY      C1     C7     .      END
+ GMY      C1     C2     .    ADD
+ GMY      C1     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GMY       C1        C2        single    1.487     0.020     1.487     0.020     
+GMY       C1        C6        double    1.487     0.020     1.487     0.020     
+GMY       C1        C7        single    1.511     0.020     1.511     0.020     
+GMY       C2        C3        single    1.487     0.020     1.487     0.020     
+GMY       O23       C2        double    1.250     0.020     1.250     0.020     
+GMY       C4        C3        double    1.390     0.020     1.390     0.020     
+GMY       C3        N22       single    1.350     0.020     1.350     0.020     
+GMY       C5        C4        single    1.390     0.020     1.390     0.020     
+GMY       H4        C4        single    1.082     0.013     0.975     0.010     
+GMY       C6        C5        single    1.487     0.020     1.487     0.020     
+GMY       O24       C5        double    1.250     0.020     1.250     0.020     
+GMY       O25       C6        single    1.370     0.020     1.370     0.020     
+GMY       C7        C8        single    1.524     0.020     1.524     0.020     
+GMY       H71       C7        single    1.089     0.010     0.989     0.005     
+GMY       H72       C7        single    1.089     0.010     0.989     0.005     
+GMY       C8        C9        single    1.524     0.020     1.524     0.020     
+GMY       C27       C8        single    1.524     0.020     1.524     0.020     
+GMY       H8        C8        single    1.089     0.010     0.989     0.005     
+GMY       C9        C10       single    1.524     0.020     1.524     0.020     
+GMY       H91       C9        single    1.089     0.010     0.989     0.005     
+GMY       H92       C9        single    1.089     0.010     0.989     0.005     
+GMY       C10       C11       single    1.524     0.020     1.524     0.020     
+GMY       O28       C10       single    1.426     0.020     1.426     0.020     
+GMY       H10       C10       single    1.089     0.010     0.989     0.005     
+GMY       C11       C12       single    1.524     0.020     1.524     0.020     
+GMY       O30       C11       single    1.432     0.020     1.432     0.020     
+GMY       H11       C11       single    1.089     0.010     0.989     0.005     
+GMY       C12       C13       single    1.510     0.020     1.510     0.020     
+GMY       C31       C12       single    1.524     0.020     1.524     0.020     
+GMY       H12       C12       single    1.089     0.010     0.989     0.005     
+GMY       C13       C14       double    1.340     0.020     1.340     0.020     
+GMY       H13       C13       single    1.082     0.013     0.975     0.010     
+GMY       C14       C15       single    1.500     0.020     1.500     0.020     
+GMY       C32       C14       single    1.500     0.020     1.500     0.020     
+GMY       C15       C16       single    1.524     0.020     1.524     0.020     
+GMY       O33       C15       single    1.426     0.020     1.426     0.020     
+GMY       H15       C15       single    1.089     0.010     0.989     0.005     
+GMY       C16       C17       single    1.510     0.020     1.510     0.020     
+GMY       O37       C16       single    1.426     0.020     1.426     0.020     
+GMY       H16       C16       single    1.089     0.010     0.989     0.005     
+GMY       C17       C18       double    1.330     0.020     1.330     0.020     
+GMY       H17       C17       single    1.082     0.013     0.975     0.010     
+GMY       C18       C19       single    1.460     0.020     1.460     0.020     
+GMY       H18       C18       single    1.082     0.013     0.975     0.010     
+GMY       C19       C20       double    1.340     0.020     1.340     0.020     
+GMY       H19       C19       single    1.082     0.013     0.975     0.010     
+GMY       C20       C21       single    1.460     0.020     1.460     0.020     
+GMY       C39       C20       single    1.500     0.020     1.500     0.020     
+GMY       N22       C21       single    1.330     0.020     1.330     0.020     
+GMY       C21       O40       double    1.220     0.020     1.220     0.020     
+GMY       HN2       N22       single    1.016     0.010     0.899     0.007     
+GMY       C26       O25       single    1.426     0.020     1.426     0.020     
+GMY       H261      C26       single    1.089     0.010     0.989     0.005     
+GMY       H262      C26       single    1.089     0.010     0.989     0.005     
+GMY       H263      C26       single    1.089     0.010     0.989     0.005     
+GMY       H271      C27       single    1.089     0.010     0.989     0.005     
+GMY       H272      C27       single    1.089     0.010     0.989     0.005     
+GMY       H273      C27       single    1.089     0.010     0.989     0.005     
+GMY       C29       O28       single    1.426     0.020     1.426     0.020     
+GMY       H291      C29       single    1.089     0.010     0.989     0.005     
+GMY       H292      C29       single    1.089     0.010     0.989     0.005     
+GMY       H293      C29       single    1.089     0.010     0.989     0.005     
+GMY       HO0       O30       single    0.970     0.012     0.839     0.014     
+GMY       H311      C31       single    1.089     0.010     0.989     0.005     
+GMY       H312      C31       single    1.089     0.010     0.989     0.005     
+GMY       H313      C31       single    1.089     0.010     0.989     0.005     
+GMY       H321      C32       single    1.089     0.010     0.989     0.005     
+GMY       H322      C32       single    1.089     0.010     0.989     0.005     
+GMY       H323      C32       single    1.089     0.010     0.989     0.005     
+GMY       C34       O33       single    1.454     0.020     1.454     0.020     
+GMY       O35       C34       double    1.220     0.020     1.220     0.020     
+GMY       N36       C34       single    1.332     0.020     1.332     0.020     
+GMY       HN61      N36       single    1.016     0.010     0.899     0.007     
+GMY       HN62      N36       single    1.016     0.010     0.899     0.007     
+GMY       C38       O37       single    1.426     0.020     1.426     0.020     
+GMY       H381      C38       single    1.089     0.010     0.989     0.005     
+GMY       H382      C38       single    1.089     0.010     0.989     0.005     
+GMY       H383      C38       single    1.089     0.010     0.989     0.005     
+GMY       H391      C39       single    1.089     0.010     0.989     0.005     
+GMY       H392      C39       single    1.089     0.010     0.989     0.005     
+GMY       H393      C39       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GMY      O40    C21    N22     123.000    3.000
+ GMY      O40    C21    C20     120.500    3.000
+ GMY      N22    C21    C20     120.000    3.000
+ GMY      C21    N22    HN2     120.000    3.000
+ GMY      C21    N22    C3      120.000    3.000
+ GMY      HN2    N22    C3      120.000    3.000
+ GMY      N22    C3     C4      120.000    3.000
+ GMY      N22    C3     C2      120.000    3.000
+ GMY      C4     C3     C2      120.000    3.000
+ GMY      C3     C4     H4      120.000    3.000
+ GMY      C3     C4     C5      120.000    3.000
+ GMY      H4     C4     C5      120.000    3.000
+ GMY      C4     C5     O24     120.000    3.000
+ GMY      C4     C5     C6      120.000    3.000
+ GMY      O24    C5     C6      120.000    3.000
+ GMY      C5     C6     O25     120.000    3.000
+ GMY      C5     C6     C1      120.000    3.000
+ GMY      O25    C6     C1      120.000    3.000
+ GMY      C6     O25    C26     120.000    3.000
+ GMY      O25    C26    H263    109.470    3.000
+ GMY      O25    C26    H262    109.470    3.000
+ GMY      O25    C26    H261    109.470    3.000
+ GMY      H263   C26    H262    109.470    3.000
+ GMY      H263   C26    H261    109.470    3.000
+ GMY      H262   C26    H261    109.470    3.000
+ GMY      C3     C2     O23     120.000    3.000
+ GMY      C3     C2     C1      120.000    3.000
+ GMY      O23    C2     C1      120.000    3.000
+ GMY      C21    C20    C39     120.000    3.000
+ GMY      C21    C20    C19     120.000    3.000
+ GMY      C39    C20    C19     120.000    3.000
+ GMY      C20    C39    H393    109.470    3.000
+ GMY      C20    C39    H392    109.470    3.000
+ GMY      C20    C39    H391    109.470    3.000
+ GMY      H393   C39    H392    109.470    3.000
+ GMY      H393   C39    H391    109.470    3.000
+ GMY      H392   C39    H391    109.470    3.000
+ GMY      C20    C19    H19     120.000    3.000
+ GMY      C20    C19    C18     120.000    3.000
+ GMY      H19    C19    C18     120.000    3.000
+ GMY      C19    C18    H18     120.000    3.000
+ GMY      C19    C18    C17     120.000    3.000
+ GMY      H18    C18    C17     120.000    3.000
+ GMY      C18    C17    H17     120.000    3.000
+ GMY      C18    C17    C16     120.000    3.000
+ GMY      H17    C17    C16     120.000    3.000
+ GMY      C17    C16    H16     108.810    3.000
+ GMY      C17    C16    O37     109.500    3.000
+ GMY      C17    C16    C15     109.470    3.000
+ GMY      H16    C16    O37     109.470    3.000
+ GMY      H16    C16    C15     108.340    3.000
+ GMY      O37    C16    C15     109.470    3.000
+ GMY      C16    O37    C38     111.800    3.000
+ GMY      O37    C38    H383    109.470    3.000
+ GMY      O37    C38    H382    109.470    3.000
+ GMY      O37    C38    H381    109.470    3.000
+ GMY      H383   C38    H382    109.470    3.000
+ GMY      H383   C38    H381    109.470    3.000
+ GMY      H382   C38    H381    109.470    3.000
+ GMY      C16    C15    H15     108.340    3.000
+ GMY      C16    C15    O33     109.470    3.000
+ GMY      C16    C15    C14     109.470    3.000
+ GMY      H15    C15    O33     109.470    3.000
+ GMY      H15    C15    C14     108.810    3.000
+ GMY      O33    C15    C14     109.470    3.000
+ GMY      C15    O33    C34     111.800    3.000
+ GMY      O33    C34    N36     120.000    3.000
+ GMY      O33    C34    O35     119.000    3.000
+ GMY      N36    C34    O35     123.000    3.000
+ GMY      C34    N36    HN62    120.000    3.000
+ GMY      C34    N36    HN61    120.000    3.000
+ GMY      HN62   N36    HN61    120.000    3.000
+ GMY      C15    C14    C32     120.000    3.000
+ GMY      C15    C14    C13     120.000    3.000
+ GMY      C32    C14    C13     120.000    3.000
+ GMY      C14    C32    H323    109.470    3.000
+ GMY      C14    C32    H322    109.470    3.000
+ GMY      C14    C32    H321    109.470    3.000
+ GMY      H323   C32    H322    109.470    3.000
+ GMY      H323   C32    H321    109.470    3.000
+ GMY      H322   C32    H321    109.470    3.000
+ GMY      C14    C13    H13     120.000    3.000
+ GMY      C14    C13    C12     120.500    3.000
+ GMY      H13    C13    C12     120.000    3.000
+ GMY      C13    C12    H12     108.810    3.000
+ GMY      C13    C12    C31     109.470    3.000
+ GMY      C13    C12    C11     109.470    3.000
+ GMY      H12    C12    C31     108.340    3.000
+ GMY      H12    C12    C11     108.340    3.000
+ GMY      C31    C12    C11     111.000    3.000
+ GMY      C12    C31    H313    109.470    3.000
+ GMY      C12    C31    H312    109.470    3.000
+ GMY      C12    C31    H311    109.470    3.000
+ GMY      H313   C31    H312    109.470    3.000
+ GMY      H313   C31    H311    109.470    3.000
+ GMY      H312   C31    H311    109.470    3.000
+ GMY      C12    C11    H11     108.340    3.000
+ GMY      C12    C11    O30     109.470    3.000
+ GMY      C12    C11    C10     111.000    3.000
+ GMY      H11    C11    O30     109.470    3.000
+ GMY      H11    C11    C10     108.340    3.000
+ GMY      O30    C11    C10     109.470    3.000
+ GMY      C11    O30    HO0     109.470    3.000
+ GMY      C11    C10    H10     108.340    3.000
+ GMY      C11    C10    O28     109.470    3.000
+ GMY      C11    C10    C9      111.000    3.000
+ GMY      H10    C10    O28     109.470    3.000
+ GMY      H10    C10    C9      108.340    3.000
+ GMY      O28    C10    C9      109.470    3.000
+ GMY      C10    O28    C29     111.800    3.000
+ GMY      O28    C29    H293    109.470    3.000
+ GMY      O28    C29    H292    109.470    3.000
+ GMY      O28    C29    H291    109.470    3.000
+ GMY      H293   C29    H292    109.470    3.000
+ GMY      H293   C29    H291    109.470    3.000
+ GMY      H292   C29    H291    109.470    3.000
+ GMY      C10    C9     H91     109.470    3.000
+ GMY      C10    C9     H92     109.470    3.000
+ GMY      C10    C9     C8      111.000    3.000
+ GMY      H91    C9     H92     107.900    3.000
+ GMY      H91    C9     C8      109.470    3.000
+ GMY      H92    C9     C8      109.470    3.000
+ GMY      C9     C8     H8      108.340    3.000
+ GMY      C9     C8     C27     111.000    3.000
+ GMY      C9     C8     C7      109.470    3.000
+ GMY      H8     C8     C27     108.340    3.000
+ GMY      H8     C8     C7      108.340    3.000
+ GMY      C27    C8     C7      111.000    3.000
+ GMY      C8     C27    H273    109.470    3.000
+ GMY      C8     C27    H272    109.470    3.000
+ GMY      C8     C27    H271    109.470    3.000
+ GMY      H273   C27    H272    109.470    3.000
+ GMY      H273   C27    H271    109.470    3.000
+ GMY      H272   C27    H271    109.470    3.000
+ GMY      C8     C7     H72     109.470    3.000
+ GMY      C8     C7     H71     109.470    3.000
+ GMY      C8     C7     C1      109.470    3.000
+ GMY      H72    C7     H71     107.900    3.000
+ GMY      H72    C7     C1      109.470    3.000
+ GMY      H71    C7     C1      109.470    3.000
+ GMY      C7     C1     C2      120.000    3.000
+ GMY      C7     C1     C6      120.000    3.000
+ GMY      C2     C1     C6      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GMY      CONST_1  O40    C21    N22    C3         0.000    0.000   0
+ GMY      var_1    C21    N22    C3     C2       -40.611   20.000   1
+ GMY      CONST_2  N22    C3     C4     C5       180.000    0.000   0
+ GMY      CONST_3  C3     C4     C5     C6         0.000    0.000   0
+ GMY      CONST_4  C4     C5     C6     O25      180.000    0.000   0
+ GMY      var_2    C5     C6     O25    C26      -66.224   20.000   1
+ GMY      var_3    C6     O25    C26    H261    -174.417   20.000   1
+ GMY      CONST_5  N22    C3     C2     O23        0.000    0.000   0
+ GMY      var_4    O40    C21    C20    C19       -0.033   20.000   1
+ GMY      var_5    C21    C20    C39    H391    -179.968   20.000   1
+ GMY      CONST_6  C21    C20    C19    C18      179.708    0.000   0
+ GMY      var_6    C20    C19    C18    C17     -178.481   20.000   1
+ GMY      CONST_7  C19    C18    C17    C16       -0.099    0.000   0
+ GMY      var_7    C18    C17    C16    C15      114.913   20.000   1
+ GMY      var_8    C17    C16    O37    C38       89.996   20.000   1
+ GMY      var_9    C16    O37    C38    H381     180.000   20.000   1
+ GMY      var_10   C17    C16    C15    C14     -155.005   20.000   3
+ GMY      var_11   C16    C15    O33    C34     -149.967   20.000   1
+ GMY      var_12   C15    O33    C34    O35        0.077   20.000   1
+ GMY      CONST_8  O33    C34    N36    HN61     180.000    0.000   0
+ GMY      var_13   C16    C15    C14    C13      110.725   20.000   3
+ GMY      var_14   C15    C14    C32    H321    -179.997   20.000   1
+ GMY      CONST_9  C15    C14    C13    C12      178.978    0.000   0
+ GMY      var_15   C14    C13    C12    C11      151.178   20.000   1
+ GMY      var_16   C13    C12    C31    H311      59.983   20.000   3
+ GMY      var_17   C13    C12    C11    C10     -106.503   20.000   3
+ GMY      var_18   C12    C11    O30    HO0      -60.029   20.000   1
+ GMY      var_19   C12    C11    C10    C9       125.286   20.000   3
+ GMY      var_20   C11    C10    O28    C29     -113.245   20.000   1
+ GMY      var_21   C10    O28    C29    H291     175.129   20.000   1
+ GMY      var_22   C11    C10    C9     C8       155.872   20.000   3
+ GMY      var_23   C10    C9     C8     C7      -149.186   20.000   3
+ GMY      var_24   C9     C8     C27    H271    -175.375   20.000   3
+ GMY      var_25   C9     C8     C7     C1       -91.222   20.000   3
+ GMY      var_26   C8     C7     C1     C2        70.728   20.000   2
+ GMY      CONST_10 C7     C1     C2     C3       180.000    0.000   0
+ GMY      CONST_11 C7     C1     C6     C5       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GMY      chir_01  C8     C7     C9     C27       negativ
+ GMY      chir_02  C10    C9     C11    O28       negativ
+ GMY      chir_03  C11    C10    C12    O30       negativ
+ GMY      chir_04  C12    C11    C13    C31       positiv
+ GMY      chir_05  C15    C14    C16    O33       negativ
+ GMY      chir_06  C16    C15    C17    O37       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GMY      plan-1    C1        0.020
+ GMY      plan-1    C2        0.020
+ GMY      plan-1    C6        0.020
+ GMY      plan-1    C7        0.020
+ GMY      plan-1    C3        0.020
+ GMY      plan-1    C4        0.020
+ GMY      plan-1    C5        0.020
+ GMY      plan-1    O23       0.020
+ GMY      plan-1    N22       0.020
+ GMY      plan-1    H4        0.020
+ GMY      plan-1    O24       0.020
+ GMY      plan-1    O25       0.020
+ GMY      plan-1    HN2       0.020
+ GMY      plan-2    C13       0.020
+ GMY      plan-2    C12       0.020
+ GMY      plan-2    C14       0.020
+ GMY      plan-2    H13       0.020
+ GMY      plan-2    C15       0.020
+ GMY      plan-2    C32       0.020
+ GMY      plan-3    C17       0.020
+ GMY      plan-3    C16       0.020
+ GMY      plan-3    C18       0.020
+ GMY      plan-3    H17       0.020
+ GMY      plan-3    C19       0.020
+ GMY      plan-3    H18       0.020
+ GMY      plan-3    H19       0.020
+ GMY      plan-4    C19       0.020
+ GMY      plan-4    C18       0.020
+ GMY      plan-4    C20       0.020
+ GMY      plan-4    H19       0.020
+ GMY      plan-4    C21       0.020
+ GMY      plan-4    C39       0.020
+ GMY      plan-4    H18       0.020
+ GMY      plan-5    C21       0.020
+ GMY      plan-5    C20       0.020
+ GMY      plan-5    N22       0.020
+ GMY      plan-5    O40       0.020
+ GMY      plan-5    HN2       0.020
+ GMY      plan-6    N22       0.020
+ GMY      plan-6    C3        0.020
+ GMY      plan-6    C21       0.020
+ GMY      plan-6    HN2       0.020
+ GMY      plan-7    C34       0.020
+ GMY      plan-7    O33       0.020
+ GMY      plan-7    O35       0.020
+ GMY      plan-7    N36       0.020
+ GMY      plan-7    HN62      0.020
+ GMY      plan-7    HN61      0.020
+ GMY      plan-8    N36       0.020
+ GMY      plan-8    C34       0.020
+ GMY      plan-8    HN61      0.020
+ GMY      plan-8    HN62      0.020
+# ------------------------------------------------------

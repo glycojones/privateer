@@ -1,0 +1,217 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MHL     MHL     N-METHYL-4-HYDROXY-LEUCINE     M-peptide     25     11     .
+#
+data_comp_MHL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MHL     N       N       NT1     0       1.469       0.216       0.786
+MHL     CA      C       CH1     0       0.942       -0.346      -0.469
+MHL     CB      C       CH2     0       -0.391      -1.065      -0.200
+MHL     CG      C       CT      0       -1.656      -0.195      -0.097
+MHL     CD1     C       CH3     0       -1.566      0.801       1.050
+MHL     CD2     C       CH3     0       -1.967      0.508       -1.411
+MHL     C       C       C       0       1.930       -1.314      -1.147
+MHL     O       O       O       0       2.294       -2.310      -0.490
+MHL     OXT     O       OC      -1      2.299       -1.036      -2.305
+MHL     CN      C       CH3     0       2.512       1.229       0.605
+MHL     OD3     O       OH1     0       -2.743      -1.098      0.186
+MHL     H       H       H       0       1.806       -0.454      1.269
+MHL     HA      H       H       0       0.774       0.398       -1.097
+MHL     HB2     H       H       0       -0.304      -1.565      0.638
+MHL     HB3     H       H       0       -0.540      -1.719      -0.915
+MHL     HD11    H       H       0       -2.440      1.198       1.204
+MHL     HD12    H       H       0       -0.929      1.499       0.821
+MHL     HD13    H       H       0       -1.271      0.340       1.853
+MHL     HD21    H       H       0       -2.886      0.823       -1.401
+MHL     HD22    H       H       0       -1.844      -0.116      -2.146
+MHL     HD23    H       H       0       -1.367      1.265       -1.522
+MHL     HN1     H       H       0       2.719       1.651       1.462
+MHL     HN2     H       H       0       2.209       1.916       -0.020
+MHL     HN3     H       H       0       3.325       0.816       0.253
+MHL     HD3     H       H       0       -3.473      -0.672      0.275
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+MHL      N      n/a    CA     START
+MHL      H      N      .      .
+MHL      CN     N      HN1    .
+MHL      HN3    CN     .      .
+MHL      HN2    CN     .      .
+MHL      HN1    CN     .      .
+MHL      CA     N      C      .
+MHL      HA     CA     .      .
+MHL      CB     CA     CG     .
+MHL      HB2    CB     .      .
+MHL      HB3    CB     .      .
+MHL      CG     CB     CD1    .
+MHL      OD3    CG     HD3    .
+MHL      HD3    OD3    .      .
+MHL      CD2    CG     HD21   .
+MHL      HD23   CD2    .      .
+MHL      HD22   CD2    .      .
+MHL      HD21   CD2    .      .
+MHL      CD1    CG     HD11   .
+MHL      HD13   CD1    .      .
+MHL      HD12   CD1    .      .
+MHL      HD11   CD1    .      .
+MHL      C      CA     .      END
+MHL      O      C      .      .
+MHL      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MHL       N         CA        SINGLE    n         1.468     0.014     1.468     0.014     
+MHL       N         CN        SINGLE    n         1.463     0.015     1.463     0.015     
+MHL       CA        CB        SINGLE    n         1.530     0.014     1.530     0.014     
+MHL       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+MHL       CB        CG        SINGLE    n         1.533     0.012     1.533     0.012     
+MHL       CG        CD1       SINGLE    n         1.520     0.011     1.520     0.011     
+MHL       CG        CD2       SINGLE    n         1.520     0.011     1.520     0.011     
+MHL       CG        OD3       SINGLE    n         1.437     0.015     1.437     0.015     
+MHL       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+MHL       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+MHL       N         H         SINGLE    n         1.036     0.016     0.890     0.020     
+MHL       CA        HA        SINGLE    n         1.089     0.010     0.990     0.020     
+MHL       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+MHL       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+MHL       CD1       HD11      SINGLE    n         1.089     0.010     0.972     0.015     
+MHL       CD1       HD12      SINGLE    n         1.089     0.010     0.972     0.015     
+MHL       CD1       HD13      SINGLE    n         1.089     0.010     0.972     0.015     
+MHL       CD2       HD21      SINGLE    n         1.089     0.010     0.972     0.015     
+MHL       CD2       HD22      SINGLE    n         1.089     0.010     0.972     0.015     
+MHL       CD2       HD23      SINGLE    n         1.089     0.010     0.972     0.015     
+MHL       CN        HN1       SINGLE    n         1.089     0.010     0.977     0.013     
+MHL       CN        HN2       SINGLE    n         1.089     0.010     0.977     0.013     
+MHL       CN        HN3       SINGLE    n         1.089     0.010     0.977     0.013     
+MHL       OD3       HD3       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MHL          CA           N          CN     112.615    2.70
+MHL          CA           N           H     106.958    3.00
+MHL          CN           N           H     108.144    3.00
+MHL           N          CA          CB     109.731    2.61
+MHL           N          CA           C     113.481    2.07
+MHL           N          CA          HA     108.712    1.50
+MHL          CB          CA           C     110.328    1.98
+MHL          CB          CA          HA     108.223    1.50
+MHL           C          CA          HA     108.327    1.50
+MHL          CA          CB          CG     111.094    2.85
+MHL          CA          CB         HB2     108.562    1.50
+MHL          CA          CB         HB3     108.562    1.50
+MHL          CG          CB         HB2     108.201    1.50
+MHL          CG          CB         HB3     108.201    1.50
+MHL         HB2          CB         HB3     107.715    1.50
+MHL          CB          CG         CD1     111.119    1.58
+MHL          CB          CG         CD2     111.119    1.58
+MHL          CB          CG         OD3     107.760    2.12
+MHL         CD1          CG         CD2     110.915    1.50
+MHL         CD1          CG         OD3     107.291    2.44
+MHL         CD2          CG         OD3     107.291    2.44
+MHL          CG         CD1        HD11     109.123    1.50
+MHL          CG         CD1        HD12     109.123    1.50
+MHL          CG         CD1        HD13     109.123    1.50
+MHL        HD11         CD1        HD12     109.441    1.50
+MHL        HD11         CD1        HD13     109.441    1.50
+MHL        HD12         CD1        HD13     109.441    1.50
+MHL          CG         CD2        HD21     109.123    1.50
+MHL          CG         CD2        HD22     109.123    1.50
+MHL          CG         CD2        HD23     109.123    1.50
+MHL        HD21         CD2        HD22     109.441    1.50
+MHL        HD21         CD2        HD23     109.441    1.50
+MHL        HD22         CD2        HD23     109.441    1.50
+MHL          CA           C           O     117.249    1.61
+MHL          CA           C         OXT     117.249    1.61
+MHL           O           C         OXT     125.502    1.50
+MHL           N          CN         HN1     110.215    1.50
+MHL           N          CN         HN2     110.215    1.50
+MHL           N          CN         HN3     110.215    1.50
+MHL         HN1          CN         HN2     109.279    1.79
+MHL         HN1          CN         HN3     109.279    1.79
+MHL         HN2          CN         HN3     109.279    1.79
+MHL          CG         OD3         HD3     109.561    1.92
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MHL             sp3_sp3_2          CB          CA           N          CN     -60.000   10.00     3
+MHL             sp3_sp3_7         HN1          CN           N          CA     180.000   10.00     3
+MHL            sp3_sp3_16           N          CA          CB          CG      60.000   10.00     3
+MHL             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+MHL            sp3_sp3_22          CA          CB          CG         CD1     180.000   10.00     3
+MHL            sp3_sp3_49          CB          CG         OD3         HD3     180.000   10.00     3
+MHL            sp3_sp3_31        HD11         CD1          CG          CB     180.000   10.00     3
+MHL            sp3_sp3_40        HD21         CD2          CG          CB     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MHL    chir_1    N    CA    CN    H    both
+MHL    chir_2    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MHL    plan-1           C   0.020
+MHL    plan-1          CA   0.020
+MHL    plan-1           O   0.020
+MHL    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MHL SMILES           ACDLabs              10.04 "O=C(O)C(NC)CC(O)(C)C"
+MHL SMILES_CANONICAL CACTVS               3.341 "CN[C@@H](CC(C)(C)O)C(O)=O"
+MHL SMILES           CACTVS               3.341 "CN[CH](CC(C)(C)O)C(O)=O"
+MHL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)(C[C@@H](C(=O)O)NC)O"
+MHL SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)(CC(C(=O)O)NC)O"
+MHL InChI            InChI                1.03  "InChI=1S/C7H15NO3/c1-7(2,11)4-5(8-3)6(9)10/h5,8,11H,4H2,1-3H3,(H,9,10)/t5-/m0/s1"
+MHL InChIKey         InChI                1.03  JRKMRRWEUORVRJ-YFKPBYRVSA-N
+MHL ?                acedrg               196         "dictionary generator"
+MHL ?                acedrg_database      11          "data source"
+MHL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MHL ?                refmac5              5.8.0222    "optimization tool"

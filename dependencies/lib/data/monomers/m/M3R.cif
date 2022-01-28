@@ -1,0 +1,265 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+M3R      M3R 'Methyl phosphonated L-Arginine      ' non-polymer        32  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_M3R
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ M3R           O      O    OC       -0.500      0.000    0.000    0.000
+ M3R           C      C    C         0.000     -0.943   -0.531    0.628
+ M3R           OXT    O    OC       -0.500     -0.751   -1.586    1.271
+ M3R           CA     C    CH1       0.000     -2.311    0.102    0.610
+ M3R           HA     H    H         0.000     -2.610    0.358    1.636
+ M3R           N      N    NH1       0.000     -2.276    1.321   -0.209
+ M3R           HN     H    H         0.000     -2.389    1.340   -1.212
+ M3R           P      P    P         0.000     -2.023    2.682    0.748
+ M3R           OPB    O    O         0.000     -0.732    2.552    1.461
+ M3R           OPA    O    OH1       0.000     -3.216    2.814    1.821
+ M3R           HOPA   H    H         0.000     -4.130    2.908    1.518
+ M3R           CP     C    CH3       0.000     -1.986    4.168   -0.307
+ M3R           HPB    H    H         0.000     -1.201    4.084   -1.014
+ M3R           HPA    H    H         0.000     -2.910    4.264   -0.819
+ M3R           HP     H    H         0.000     -1.827    5.027    0.293
+ M3R           CB     C    CH2       0.000     -3.320   -0.883    0.016
+ M3R           HB2    H    H         0.000     -3.281   -1.823    0.570
+ M3R           HB3    H    H         0.000     -3.073   -1.069   -1.032
+ M3R           CG     C    CH2       0.000     -4.727   -0.290    0.112
+ M3R           HG2    H    H         0.000     -4.764    0.650   -0.442
+ M3R           HG3    H    H         0.000     -4.972   -0.104    1.160
+ M3R           CD     C    CH2       0.000     -5.736   -1.275   -0.483
+ M3R           HD2    H    H         0.000     -5.697   -2.215    0.071
+ M3R           HD3    H    H         0.000     -5.489   -1.461   -1.530
+ M3R           NE     N    NH1       0.000     -7.084   -0.708   -0.391
+ M3R           HE     H    H         0.000     -7.222    0.204    0.020
+ M3R           CZ     C    C         0.000     -8.163   -1.417   -0.865
+ M3R           NH1    N    NH2       0.000     -9.427   -0.884   -0.780
+ M3R           HH11   H    H         0.000    -10.234   -1.399   -1.127
+ M3R           HH12   H    H         0.000     -9.579    0.034   -0.368
+ M3R           NH2    N    N         0.000     -7.985   -2.595   -1.396
+ M3R           HH21   H    H         0.000     -8.731   -3.102   -1.732
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ M3R      O      n/a    C      START
+ M3R      C      O      CA     .
+ M3R      OXT    C      .      .
+ M3R      CA     C      CB     .
+ M3R      HA     CA     .      .
+ M3R      N      CA     P      .
+ M3R      HN     N      .      .
+ M3R      P      N      CP     .
+ M3R      OPB    P      .      .
+ M3R      OPA    P      HOPA   .
+ M3R      HOPA   OPA    .      .
+ M3R      CP     P      HP     .
+ M3R      HPB    CP     .      .
+ M3R      HPA    CP     .      .
+ M3R      HP     CP     .      .
+ M3R      CB     CA     CG     .
+ M3R      HB2    CB     .      .
+ M3R      HB3    CB     .      .
+ M3R      CG     CB     CD     .
+ M3R      HG2    CG     .      .
+ M3R      HG3    CG     .      .
+ M3R      CD     CG     NE     .
+ M3R      HD2    CD     .      .
+ M3R      HD3    CD     .      .
+ M3R      NE     CD     CZ     .
+ M3R      HE     NE     .      .
+ M3R      CZ     NE     NH2    .
+ M3R      NH1    CZ     HH12   .
+ M3R      HH11   NH1    .      .
+ M3R      HH12   NH1    .      .
+ M3R      NH2    CZ     HH21   .
+ M3R      HH21   NH2    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+M3R       CP        P         single    1.812     0.020     1.812     0.020     
+M3R       HP        CP        single    1.089     0.010     0.989     0.005     
+M3R       HPA       CP        single    1.089     0.010     0.989     0.005     
+M3R       HPB       CP        single    1.089     0.010     0.989     0.005     
+M3R       P         N         single    1.750     0.020     1.750     0.020     
+M3R       OPB       P         double    1.480     0.020     1.480     0.020     
+M3R       OPA       P         single    1.610     0.020     1.610     0.020     
+M3R       HOPA      OPA       single    0.970     0.012     0.839     0.014     
+M3R       N         CA        single    1.450     0.020     1.450     0.020     
+M3R       HN        N         single    1.036     0.016     0.914     0.007     
+M3R       CA        C         single    1.500     0.020     1.500     0.020     
+M3R       CB        CA        single    1.524     0.020     1.524     0.020     
+M3R       HA        CA        single    1.089     0.010     0.989     0.005     
+M3R       C         O         deloc     1.250     0.020     1.250     0.020     
+M3R       OXT       C         deloc     1.250     0.020     1.250     0.020     
+M3R       CG        CB        single    1.524     0.020     1.524     0.020     
+M3R       HB2       CB        single    1.089     0.010     0.989     0.005     
+M3R       HB3       CB        single    1.089     0.010     0.989     0.005     
+M3R       CD        CG        single    1.524     0.020     1.524     0.020     
+M3R       HG2       CG        single    1.089     0.010     0.989     0.005     
+M3R       HG3       CG        single    1.089     0.010     0.989     0.005     
+M3R       NE        CD        single    1.450     0.020     1.450     0.020     
+M3R       HD2       CD        single    1.089     0.010     0.989     0.005     
+M3R       HD3       CD        single    1.089     0.010     0.989     0.005     
+M3R       CZ        NE        single    1.330     0.020     1.330     0.020     
+M3R       HE        NE        single    1.016     0.010     0.899     0.007     
+M3R       NH2       CZ        double    1.260     0.020     1.260     0.020     
+M3R       NH1       CZ        single    1.332     0.020     1.332     0.020     
+M3R       HH21      NH2       single    1.016     0.010     0.899     0.007     
+M3R       HH12      NH1       single    1.016     0.010     0.899     0.007     
+M3R       HH11      NH1       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ M3R      O      C      OXT     123.000    3.000
+ M3R      O      C      CA      118.500    3.000
+ M3R      OXT    C      CA      118.500    3.000
+ M3R      C      CA     HA      108.810    3.000
+ M3R      C      CA     N       111.600    3.000
+ M3R      C      CA     CB      109.470    3.000
+ M3R      HA     CA     N       108.550    3.000
+ M3R      HA     CA     CB      108.340    3.000
+ M3R      N      CA     CB      110.000    3.000
+ M3R      CA     N      HN      118.500    3.000
+ M3R      CA     N      P       120.000    3.000
+ M3R      HN     N      P       120.000    3.000
+ M3R      N      P      OPB     109.500    3.000
+ M3R      N      P      OPA     109.500    3.000
+ M3R      N      P      CP      109.500    3.000
+ M3R      OPB    P      OPA     109.500    3.000
+ M3R      OPB    P      CP      109.500    3.000
+ M3R      OPA    P      CP      109.500    3.000
+ M3R      P      OPA    HOPA    120.000    3.000
+ M3R      P      CP     HPB     109.500    3.000
+ M3R      P      CP     HPA     109.500    3.000
+ M3R      P      CP     HP      109.500    3.000
+ M3R      HPB    CP     HPA     109.470    3.000
+ M3R      HPB    CP     HP      109.470    3.000
+ M3R      HPA    CP     HP      109.470    3.000
+ M3R      CA     CB     HB2     109.470    3.000
+ M3R      CA     CB     HB3     109.470    3.000
+ M3R      CA     CB     CG      111.000    3.000
+ M3R      HB2    CB     HB3     107.900    3.000
+ M3R      HB2    CB     CG      109.470    3.000
+ M3R      HB3    CB     CG      109.470    3.000
+ M3R      CB     CG     HG2     109.470    3.000
+ M3R      CB     CG     HG3     109.470    3.000
+ M3R      CB     CG     CD      111.000    3.000
+ M3R      HG2    CG     HG3     107.900    3.000
+ M3R      HG2    CG     CD      109.470    3.000
+ M3R      HG3    CG     CD      109.470    3.000
+ M3R      CG     CD     HD2     109.470    3.000
+ M3R      CG     CD     HD3     109.470    3.000
+ M3R      CG     CD     NE      112.000    3.000
+ M3R      HD2    CD     HD3     107.900    3.000
+ M3R      HD2    CD     NE      109.470    3.000
+ M3R      HD3    CD     NE      109.470    3.000
+ M3R      CD     NE     HE      118.500    3.000
+ M3R      CD     NE     CZ      121.500    3.000
+ M3R      HE     NE     CZ      120.000    3.000
+ M3R      NE     CZ     NH1     120.000    3.000
+ M3R      NE     CZ     NH2     120.000    3.000
+ M3R      NH1    CZ     NH2     120.000    3.000
+ M3R      CZ     NH1    HH11    120.000    3.000
+ M3R      CZ     NH1    HH12    120.000    3.000
+ M3R      HH11   NH1    HH12    120.000    3.000
+ M3R      CZ     NH2    HH21    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ M3R      var_1    O      C      CA     CB       120.016   20.000   3
+ M3R      var_2    C      CA     N      P        -94.970   20.000   3
+ M3R      var_3    CA     N      P      CP       179.989   20.000   1
+ M3R      var_4    N      P      OPA    HOPA     -59.992   20.000   1
+ M3R      var_5    N      P      CP     HP       179.988   20.000   1
+ M3R      var_6    C      CA     CB     CG       174.981   20.000   3
+ M3R      var_7    CA     CB     CG     CD       179.963   20.000   3
+ M3R      var_8    CB     CG     CD     NE      -179.998   20.000   3
+ M3R      var_9    CG     CD     NE     CZ      -179.971   20.000   3
+ M3R      CONST_1  CD     NE     CZ     NH2        0.000    0.000   0
+ M3R      CONST_2  NE     CZ     NH1    HH12       0.000    0.000   0
+ M3R      CONST_3  NE     CZ     NH2    HH21     180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ M3R      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ M3R      plan-1    N         0.020
+ M3R      plan-1    P         0.020
+ M3R      plan-1    CA        0.020
+ M3R      plan-1    HN        0.020
+ M3R      plan-2    C         0.020
+ M3R      plan-2    CA        0.020
+ M3R      plan-2    OXT       0.020
+ M3R      plan-2    O         0.020
+ M3R      plan-3    NE        0.020
+ M3R      plan-3    CD        0.020
+ M3R      plan-3    CZ        0.020
+ M3R      plan-3    HE        0.020
+ M3R      plan-4    CZ        0.020
+ M3R      plan-4    NE        0.020
+ M3R      plan-4    NH2       0.020
+ M3R      plan-4    NH1       0.020
+ M3R      plan-4    HH21      0.020
+ M3R      plan-4    HE        0.020
+ M3R      plan-4    HH11      0.020
+ M3R      plan-4    HH12      0.020
+ M3R      plan-5    NH1       0.020
+ M3R      plan-5    CZ        0.020
+ M3R      plan-5    HH12      0.020
+ M3R      plan-5    HH11      0.020
+# ------------------------------------------------------

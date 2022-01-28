@@ -1,0 +1,86 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ALF      ALF 'TETRAFLUOROALUMINATE ION            ' non-polymer         5   5 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ALF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ALF           F4     F    F         0.000      0.000    0.000    0.000
+ ALF           AL     AL   AL       -1.000     -1.200    0.787   -1.068
+ ALF           F1     F    F         0.000      0.113    1.216   -2.188
+ ALF           F2     F    F         0.000     -2.512    0.364    0.102
+ ALF           F3     F    F         0.000     -2.393    1.581   -2.144
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ALF      F4     n/a    AL     START
+ ALF      AL     F4     F3     .
+ ALF      F1     AL     .      .
+ ALF      F2     AL     .      .
+ ALF      F3     AL     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ALF       F1        AL        single    1.800     0.020     1.800     0.020     
+ALF       F2        AL        single    1.800     0.020     1.800     0.020     
+ALF       F3        AL        single    1.800     0.020     1.800     0.020     
+ALF       AL        F4        single    1.800     0.020     1.800     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ALF      F4     AL     F1       90.000    3.000
+ ALF      F4     AL     F2       90.000    3.000
+ ALF      F4     AL     F3      180.000    3.000
+ ALF      F1     AL     F2      180.000    3.000
+ ALF      F1     AL     F3       90.000    3.000
+ ALF      F2     AL     F3       90.000    3.000
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ALF      chir_01  AL     F4     F3     F1        cross2
+# ------------------------------------------------------

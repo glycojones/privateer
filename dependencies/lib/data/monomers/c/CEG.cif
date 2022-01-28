@@ -1,0 +1,256 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CEG      CEG '4,6-O-(1-CARBOXYETHYLIDENE)-BETA-D-G' pyranose           30  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CEG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CEG           C1     C    CH1       0.000      0.000    0.000    0.000
+ CEG           H1     H    H         0.000      0.174    1.083   -0.074
+ CEG           O1     O    OH1       0.000      1.245   -0.689   -0.126
+ CEG           HO1    H    H         0.000      1.842   -0.404    0.579
+ CEG           O5     O    O2        0.000     -0.581   -0.299    1.268
+ CEG           C5     C    CH1       0.000     -1.726    0.535    1.416
+ CEG           H5     H    H         0.000     -1.446    1.579    1.218
+ CEG           C6     C    CH2       0.000     -2.295    0.420    2.831
+ CEG           H6A    H    H         0.000     -1.574    0.811    3.552
+ CEG           H6B    H    H         0.000     -2.506   -0.626    3.061
+ CEG           O6     O    O2        0.000     -3.504    1.180    2.904
+ CEG           C7     C    CT        0.000     -4.415    0.628    1.958
+ CEG           C9     C    CH3       0.000     -5.796    1.253    2.163
+ CEG           H9C    H    H         0.000     -5.734    2.301    2.024
+ CEG           H9B    H    H         0.000     -6.477    0.845    1.462
+ CEG           H9A    H    H         0.000     -6.136    1.047    3.145
+ CEG           O4     O    O2        0.000     -3.974    0.886    0.626
+ CEG           C4     C    CH1       0.000     -2.804    0.099    0.418
+ CEG           H4     H    H         0.000     -3.041   -0.964    0.570
+ CEG           C3     C    CH1       0.000     -2.268    0.310   -1.001
+ CEG           H3     H    H         0.000     -2.109    1.382   -1.182
+ CEG           O3     O    OH1       0.000     -3.202   -0.205   -1.951
+ CEG           HO3    H    H         0.000     -2.851   -0.088   -2.844
+ CEG           C2     C    CH1       0.000     -0.936   -0.439   -1.126
+ CEG           H2     H    H         0.000     -1.115   -1.521   -1.052
+ CEG           O2     O    OH1       0.000     -0.336   -0.142   -2.389
+ CEG           HO2    H    H         0.000      0.505   -0.613   -2.464
+ CEG           C8     C    C         0.000     -4.508   -0.860    2.170
+ CEG           O8A    O    OC       -0.500     -4.704   -1.619    1.195
+ CEG           O8B    O    OC       -0.500     -4.390   -1.338    3.320
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CEG      C1     n/a    O5     START
+ CEG      H1     C1     .      .
+ CEG      O1     C1     HO1    .
+ CEG      HO1    O1     .      .
+ CEG      O5     C1     .      END
+ CEG      C5     O5     C6     .
+ CEG      H5     C5     .      .
+ CEG      C6     C5     O6     .
+ CEG      H6A    C6     .      .
+ CEG      H6B    C6     .      .
+ CEG      O6     C6     C7     .
+ CEG      C7     O6     C8     .
+ CEG      C9     C7     H9A    .
+ CEG      H9C    C9     .      .
+ CEG      H9B    C9     .      .
+ CEG      H9A    C9     .      .
+ CEG      O4     C7     C4     .
+ CEG      C4     O4     C3     .
+ CEG      H4     C4     .      .
+ CEG      C3     C4     C2     .
+ CEG      H3     C3     .      .
+ CEG      O3     C3     HO3    .
+ CEG      HO3    O3     .      .
+ CEG      C2     C3     O2     .
+ CEG      H2     C2     .      .
+ CEG      O2     C2     HO2    .
+ CEG      HO2    O2     .      .
+ CEG      C8     C7     O8B    .
+ CEG      O8A    C8     .      .
+ CEG      O8B    C8     .      .
+ CEG      C1     C2     .    ADD
+ CEG      C4     C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CEG       C1        C2        single    1.524     0.020     1.524     0.020     
+CEG       O1        C1        single    1.432     0.020     1.432     0.020     
+CEG       O5        C1        single    1.426     0.020     1.426     0.020     
+CEG       H1        C1        single    1.089     0.010     0.989     0.005     
+CEG       C2        C3        single    1.524     0.020     1.524     0.020     
+CEG       O2        C2        single    1.432     0.020     1.432     0.020     
+CEG       H2        C2        single    1.089     0.010     0.989     0.005     
+CEG       C3        C4        single    1.524     0.020     1.524     0.020     
+CEG       O3        C3        single    1.432     0.020     1.432     0.020     
+CEG       H3        C3        single    1.089     0.010     0.989     0.005     
+CEG       C4        C5        single    1.524     0.020     1.524     0.020     
+CEG       C4        O4        single    1.426     0.020     1.426     0.020     
+CEG       H4        C4        single    1.089     0.010     0.989     0.005     
+CEG       C6        C5        single    1.524     0.020     1.524     0.020     
+CEG       C5        O5        single    1.426     0.020     1.426     0.020     
+CEG       H5        C5        single    1.089     0.010     0.989     0.005     
+CEG       O6        C6        single    1.426     0.020     1.426     0.020     
+CEG       H6A       C6        single    1.089     0.010     0.989     0.005     
+CEG       H6B       C6        single    1.089     0.010     0.989     0.005     
+CEG       C8        C7        single    1.507     0.020     1.507     0.020     
+CEG       C9        C7        single    1.524     0.020     1.524     0.020     
+CEG       O4        C7        single    1.426     0.020     1.426     0.020     
+CEG       C7        O6        single    1.426     0.020     1.426     0.020     
+CEG       O8A       C8        deloc     1.250     0.020     1.250     0.020     
+CEG       O8B       C8        deloc     1.250     0.020     1.250     0.020     
+CEG       H9A       C9        single    1.089     0.010     0.989     0.005     
+CEG       H9B       C9        single    1.089     0.010     0.989     0.005     
+CEG       H9C       C9        single    1.089     0.010     0.989     0.005     
+CEG       HO1       O1        single    0.970     0.012     0.839     0.014     
+CEG       HO2       O2        single    0.970     0.012     0.839     0.014     
+CEG       HO3       O3        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CEG      H1     C1     O1      109.470    3.000
+ CEG      H1     C1     O5      109.470    3.000
+ CEG      O1     C1     O5      109.470    3.000
+ CEG      H1     C1     C2      108.340    3.000
+ CEG      O1     C1     C2      109.470    3.000
+ CEG      O5     C1     C2      109.470    3.000
+ CEG      C1     O1     HO1     109.470    3.000
+ CEG      C1     O5     C5      111.800    3.000
+ CEG      O5     C5     H5      109.470    3.000
+ CEG      O5     C5     C6      109.470    3.000
+ CEG      O5     C5     C4      109.470    3.000
+ CEG      H5     C5     C6      108.340    3.000
+ CEG      H5     C5     C4      108.340    3.000
+ CEG      C6     C5     C4      111.000    3.000
+ CEG      C5     C6     H6A     109.470    3.000
+ CEG      C5     C6     H6B     109.470    3.000
+ CEG      C5     C6     O6      109.470    3.000
+ CEG      H6A    C6     H6B     107.900    3.000
+ CEG      H6A    C6     O6      109.470    3.000
+ CEG      H6B    C6     O6      109.470    3.000
+ CEG      C6     O6     C7      111.800    3.000
+ CEG      O6     C7     O4      109.500    3.000
+ CEG      O6     C7     C9      109.470    3.000
+ CEG      O6     C7     C8      109.470    3.000
+ CEG      O4     C7     C9      109.470    3.000
+ CEG      O4     C7     C8      109.470    3.000
+ CEG      C9     C7     C8      109.470    3.000
+ CEG      C7     O4     C4      111.800    3.000
+ CEG      O4     C4     H4      109.470    3.000
+ CEG      O4     C4     C3      109.470    3.000
+ CEG      O4     C4     C5      109.470    3.000
+ CEG      H4     C4     C3      108.340    3.000
+ CEG      H4     C4     C5      108.340    3.000
+ CEG      C3     C4     C5      111.000    3.000
+ CEG      C4     C3     H3      108.340    3.000
+ CEG      C4     C3     O3      109.470    3.000
+ CEG      C4     C3     C2      111.000    3.000
+ CEG      H3     C3     O3      109.470    3.000
+ CEG      H3     C3     C2      108.340    3.000
+ CEG      O3     C3     C2      109.470    3.000
+ CEG      C3     O3     HO3     109.470    3.000
+ CEG      C3     C2     H2      108.340    3.000
+ CEG      C3     C2     O2      109.470    3.000
+ CEG      C3     C2     C1      111.000    3.000
+ CEG      H2     C2     O2      109.470    3.000
+ CEG      H2     C2     C1      108.340    3.000
+ CEG      O2     C2     C1      109.470    3.000
+ CEG      C2     O2     HO2     109.470    3.000
+ CEG      C7     C9     H9C     109.470    3.000
+ CEG      C7     C9     H9B     109.470    3.000
+ CEG      C7     C9     H9A     109.470    3.000
+ CEG      H9C    C9     H9B     109.470    3.000
+ CEG      H9C    C9     H9A     109.470    3.000
+ CEG      H9B    C9     H9A     109.470    3.000
+ CEG      C7     C8     O8A     118.500    3.000
+ CEG      C7     C8     O8B     118.500    3.000
+ CEG      O8A    C8     O8B     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CEG      var_1    O5     C1     O1     HO1      -59.950   20.000   1
+ CEG      var_2    C1     O5     C5     C6       180.000   20.000   1
+ CEG      var_3    O5     C5     C6     O6       180.000   20.000   3
+ CEG      var_4    C5     C6     O6     C7        60.000   20.000   1
+ CEG      var_5    C6     O6     C7     C8        60.000   20.000   1
+ CEG      var_6    O6     C7     O4     C4        60.000   20.000   1
+ CEG      var_7    C7     O4     C4     C3       180.000   20.000   1
+ CEG      var_8    O4     C4     C5     O5       180.000   20.000   3
+ CEG      var_9    O4     C4     C3     C2       180.000   20.000   3
+ CEG      var_10   C4     C3     O3     HO3     -178.755   20.000   1
+ CEG      var_11   C4     C3     C2     O2       180.000   20.000   3
+ CEG      var_12   C3     C2     C1     O5        60.000   20.000   3
+ CEG      var_13   C3     C2     O2     HO2      179.816   20.000   1
+ CEG      var_14   O6     C7     C9     H9A      -59.969   20.000   1
+ CEG      var_15   O6     C7     C8     O8B       32.700   20.000   1
+ CEG      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CEG      chir_01  C1     C2     O1     O5        positiv
+ CEG      chir_02  C2     C1     C3     O2        negativ
+ CEG      chir_03  C3     C2     C4     O3        positiv
+ CEG      chir_04  C4     C3     C5     O4        negativ
+ CEG      chir_05  C5     C4     C6     O5        negativ
+ CEG      chir_06  C7     C8     C9     O4        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CEG      plan-1    C8        0.020
+ CEG      plan-1    C7        0.020
+ CEG      plan-1    O8A       0.020
+ CEG      plan-1    O8B       0.020
+# ------------------------------------------------------

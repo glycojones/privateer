@@ -1,0 +1,1193 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PVD      PVD '.                                   ' non-polymer       178  94 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PVD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PVD           O96    O    O         0.000      0.000    0.000    0.000
+ PVD           C95    C    C         0.000      0.550    1.053   -0.249
+ PVD           N69    N    NH1       0.000      0.368    2.145    0.557
+ PVD           H69    H    H         0.000      0.811    3.036    0.380
+ PVD           C68    C    CH2       0.000     -0.534    1.913    1.712
+ PVD           H681   H    H         0.000      0.054    1.754    2.618
+ PVD           H682   H    H         0.000     -1.158    1.036    1.526
+ PVD           C67    C    CH2       0.000     -1.423    3.145    1.889
+ PVD           H671   H    H         0.000     -0.910    4.023    1.491
+ PVD           H672   H    H         0.000     -1.628    3.296    2.951
+ PVD           C66    C    CH2       0.000     -2.740    2.938    1.139
+ PVD           H661   H    H         0.000     -3.406    2.313    1.739
+ PVD           H662   H    H         0.000     -2.541    2.443    0.186
+ PVD           C65    C    CH2       0.000     -3.401    4.293    0.884
+ PVD           H652   H    H         0.000     -2.632    5.037    0.668
+ PVD           H651   H    H         0.000     -3.961    4.596    1.771
+ PVD           C91    C    CH1       0.000      1.445    1.189   -1.453
+ PVD           H91    H    H         0.000      2.228    0.419   -1.418
+ PVD           C92    C    CH1       0.000      2.089    2.576   -1.460
+ PVD           H92    H    H         0.000      1.307    3.343   -1.371
+ PVD           C94    C    CH3       0.000      3.056    2.695   -0.281
+ PVD           H943   H    H         0.000      2.515    2.636    0.629
+ PVD           H942   H    H         0.000      3.763    1.907   -0.321
+ PVD           H941   H    H         0.000      3.562    3.624   -0.330
+ PVD           O93    O    OH1       0.000      2.804    2.764   -2.682
+ PVD           H93    H    H         0.000      3.439    2.044   -2.797
+ PVD           N90    N    NH1       0.000      0.631    1.014   -2.676
+ PVD           H90    H    H         0.000      0.288    0.109   -2.965
+ PVD           C88    C    C         0.000      0.372    2.146   -3.389
+ PVD           O89    O    O         0.000      0.802    3.218   -3.020
+ PVD           C84    C    CH1       0.000     -0.458    2.045   -4.643
+ PVD           H84    H    H         0.000     -1.088    1.145   -4.599
+ PVD           C85    C    CH1       0.000      0.461    1.972   -5.864
+ PVD           H85    H    H         0.000      1.045    1.041   -5.828
+ PVD           C87    C    CH3       0.000     -0.383    1.994   -7.140
+ PVD           H873   H    H         0.000     -1.041    1.163   -7.143
+ PVD           H872   H    H         0.000     -0.947    2.890   -7.176
+ PVD           H871   H    H         0.000      0.252    1.943   -7.986
+ PVD           O86    O    OH1       0.000      1.349    3.091   -5.860
+ PVD           H86    H    H         0.000      1.929    3.044   -6.631
+ PVD           N83    N    NH1       0.000     -1.317    3.252   -4.735
+ PVD           H83    H    H         0.000     -1.082    4.048   -5.311
+ PVD           C81    C    C         0.000     -2.455    3.196   -3.975
+ PVD           O82    O    O         0.000     -2.703    2.218   -3.302
+ PVD           C73    C    CH1       0.000     -3.391    4.377   -3.991
+ PVD           H73    H    H         0.000     -4.032    4.327   -4.882
+ PVD           C74    C    CH2       0.000     -2.579    5.674   -4.014
+ PVD           H741   H    H         0.000     -1.887    5.655   -4.858
+ PVD           H742   H    H         0.000     -2.014    5.766   -3.084
+ PVD           C75    C    CH2       0.000     -3.529    6.866   -4.156
+ PVD           H751   H    H         0.000     -4.220    6.883   -3.311
+ PVD           H752   H    H         0.000     -4.094    6.772   -5.085
+ PVD           C76    C    CH2       0.000     -2.718    8.163   -4.180
+ PVD           H761   H    H         0.000     -2.026    8.144   -5.024
+ PVD           H762   H    H         0.000     -2.152    8.255   -3.250
+ PVD           N77    N    N         0.000     -3.625    9.305   -4.316
+ PVD           C79    C    C1        0.000     -4.360    9.711   -3.261
+ PVD           H79    H    H         0.000     -4.279    9.197   -2.318
+ PVD           O80    O    O         0.000     -5.111   10.657   -3.374
+ PVD           O78    O    OH1       0.000     -3.732    9.981   -5.556
+ PVD           H78    H    H         0.000     -4.370   10.706   -5.479
+ PVD           N72    N    NH1       0.000     -4.229    4.334   -2.774
+ PVD           H72    H    H         0.000     -5.238    4.377   -2.818
+ PVD           C70    C    C         0.000     -3.563    4.233   -1.590
+ PVD           O71    O    O         0.000     -2.351    4.186   -1.567
+ PVD           C64    C    CH1       0.000     -4.354    4.180   -0.309
+ PVD           H64    H    H         0.000     -5.070    5.013   -0.285
+ PVD           N63    N    NH1       0.000     -5.080    2.910   -0.235
+ PVD           H63    H    H         0.000     -4.680    2.128    0.262
+ PVD           C61    C    C         0.000     -6.282    2.786   -0.832
+ PVD           O62    O    O         0.000     -6.763    3.725   -1.429
+ PVD           C52    C    CH1       0.000     -7.029    1.480   -0.756
+ PVD           H52    H    H         0.000     -7.227    1.231    0.296
+ PVD           C53    C    CH2       0.000     -6.186    0.372   -1.391
+ PVD           H531   H    H         0.000     -5.205    0.343   -0.912
+ PVD           H532   H    H         0.000     -6.063    0.575   -2.457
+ PVD           C54    C    CH2       0.000     -6.887   -0.975   -1.204
+ PVD           H541   H    H         0.000     -7.868   -0.943   -1.682
+ PVD           H542   H    H         0.000     -7.009   -1.175   -0.137
+ PVD           C55    C    CH2       0.000     -6.043   -2.082   -1.839
+ PVD           H551   H    H         0.000     -5.063   -2.112   -1.359
+ PVD           H552   H    H         0.000     -5.920   -1.879   -2.905
+ PVD           N56    N    N         0.000     -6.715   -3.371   -1.660
+ PVD           C58    C    C1        0.000     -7.793   -3.680   -2.408
+ PVD           H58    H    H         0.000     -8.160   -2.978   -3.138
+ PVD           O59    O    O         0.000     -8.349   -4.747   -2.260
+ PVD           O57    O    OH1       0.000     -6.233   -4.294   -0.699
+ PVD           H57    H    H         0.000     -6.783   -5.091   -0.706
+ PVD           N50    N    NH1       0.000     -8.299    1.600   -1.477
+ PVD           H50    H    H         0.000     -8.397    2.280   -2.217
+ PVD           C48    C    C         0.000     -9.335    0.802   -1.154
+ PVD           O49    O    O         0.000     -9.218   -0.015   -0.267
+ PVD           C45    C    CH1       0.000    -10.642    0.927   -1.895
+ PVD           H45    H    H         0.000    -11.040    1.943   -1.769
+ PVD           C46    C    CH2       0.000    -10.412    0.650   -3.383
+ PVD           H461   H    H         0.000     -9.768    1.426   -3.801
+ PVD           H462   H    H         0.000    -11.371    0.653   -3.905
+ PVD           O47    O    OH1       0.000     -9.787   -0.626   -3.539
+ PVD           H47    H    H         0.000     -9.642   -0.800   -4.479
+ PVD           N44    N    NH1       0.000    -11.601   -0.043   -1.361
+ PVD           H44    H    H         0.000    -11.271   -0.883   -0.908
+ PVD           C42    C    C         0.000    -12.924    0.186   -1.475
+ PVD           O43    O    O         0.000    -13.321    1.193   -2.021
+ PVD           C34    C    CH1       0.000    -13.912   -0.811   -0.926
+ PVD           H34    H    H         0.000    -13.754   -0.924    0.156
+ PVD           C35    C    CH2       0.000    -13.708   -2.163   -1.615
+ PVD           H351   H    H         0.000    -12.667   -2.473   -1.506
+ PVD           H352   H    H         0.000    -13.950   -2.070   -2.675
+ PVD           C36    C    CH2       0.000    -14.624   -3.207   -0.970
+ PVD           H361   H    H         0.000    -15.664   -2.894   -1.078
+ PVD           H362   H    H         0.000    -14.381   -3.298    0.091
+ PVD           C37    C    CH2       0.000    -14.421   -4.557   -1.659
+ PVD           H371   H    H         0.000    -13.379   -4.867   -1.550
+ PVD           H372   H    H         0.000    -14.663   -4.463   -2.719
+ PVD           N38    N    NH1       0.000    -15.297   -5.557   -1.042
+ PVD           H38    H    H         0.000    -15.906   -5.293   -0.281
+ PVD           C39    C    C         0.000    -15.289   -6.853   -1.499
+ PVD           N41    N    N         0.000    -16.069   -7.742   -0.950
+ PVD           H41    H    H         0.000    -16.074   -8.653   -1.260
+ PVD           N40    N    NH2       0.000    -14.458   -7.212   -2.533
+ PVD           H402   H    H         0.000    -13.844   -6.528   -2.970
+ PVD           H401   H    H         0.000    -14.443   -8.169   -2.881
+ PVD           N33    N    NH1       0.000    -15.275   -0.338   -1.174
+ PVD           H33    H    H         0.000    -15.458    0.296   -1.938
+ PVD           C31    C    C         0.000    -16.286   -0.747   -0.382
+ PVD           O32    O    O         0.000    -16.067   -1.508    0.535
+ PVD           C28    C    CH1       0.000    -17.689   -0.259   -0.638
+ PVD           H28    H    H         0.000    -17.716    0.837   -0.557
+ PVD           C29    C    CH2       0.000    -18.126   -0.677   -2.043
+ PVD           H291   H    H         0.000    -17.505   -0.170   -2.783
+ PVD           H292   H    H         0.000    -19.172   -0.400   -2.196
+ PVD           O30    O    OH1       0.000    -17.981   -2.091   -2.185
+ PVD           H30    H    H         0.000    -18.257   -2.356   -3.072
+ PVD           N27    N    NH1       0.000    -18.596   -0.843    0.352
+ PVD           H27    H    H         0.000    -18.360   -1.717    0.801
+ PVD           C15    C    C         0.000    -19.748   -0.215    0.663
+ PVD           O16    O    O         0.000    -20.032    0.834    0.125
+ PVD           C14    C    CH1       0.000    -20.682   -0.817    1.681
+ PVD           H14    H    H         0.000    -21.187   -0.014    2.236
+ PVD           C13    C    CH2       0.000    -21.727   -1.681    0.969
+ PVD           H131   H    H         0.000    -21.226   -2.446    0.373
+ PVD           H132   H    H         0.000    -22.338   -1.054    0.316
+ PVD           C12    C    CH2       0.000    -22.620   -2.351    2.017
+ PVD           H121   H    H         0.000    -23.335   -3.010    1.521
+ PVD           H122   H    H         0.000    -23.160   -1.587    2.580
+ PVD           N11    N    NH1       0.000    -21.782   -3.135    2.933
+ PVD           H11    H    H         0.000    -21.830   -4.132    3.084
+ PVD           C2     C    CH1       0.000    -20.863   -2.196    3.589
+ PVD           H2     H    H         0.000    -21.448   -1.368    4.014
+ PVD           N1     N    NT        0.000    -19.917   -1.653    2.617
+ PVD           C9     C    CR6       0.000    -19.028   -0.802    3.274
+ PVD           C8     C    CR16      0.000    -18.612    0.374    2.666
+ PVD           H8     H    H         0.000    -18.977    0.632    1.680
+ PVD           C7     C    CR6       0.000    -17.729    1.218    3.321
+ PVD           O26    O    OH1       0.000    -17.325    2.370    2.720
+ PVD           H26    H    H         0.000    -17.931    3.085    2.954
+ PVD           C6     C    CR6       0.000    -17.253    0.897    4.590
+ PVD           O25    O    OH1       0.000    -16.386    1.734    5.224
+ PVD           H25    H    H         0.000    -16.883    2.375    5.750
+ PVD           C10    C    CR6       0.000    -18.547   -1.123    4.550
+ PVD           C5     C    CR16      0.000    -17.660   -0.273    5.206
+ PVD           H5     H    H         0.000    -17.292   -0.526    6.193
+ PVD           C4     C    C1        0.000    -19.002   -2.382    5.180
+ PVD           H4     H    H         0.000    -18.448   -2.852    5.975
+ PVD           C3     C    C         0.000    -20.145   -2.907    4.707
+ PVD           N17    N    NH1       0.000    -20.657   -4.084    5.239
+ PVD           H17    H    H         0.000    -20.103   -4.928    5.222
+ PVD           C18    C    C         0.000    -21.892   -4.099    5.779
+ PVD           O19    O    O         0.000    -22.569   -3.092    5.772
+ PVD           C20    C    CH2       0.000    -22.432   -5.366    6.390
+ PVD           H201   H    H         0.000    -21.782   -5.681    7.209
+ PVD           H202   H    H         0.000    -22.465   -6.151    5.631
+ PVD           C21    C    CH2       0.000    -23.843   -5.113    6.925
+ PVD           H211   H    H         0.000    -24.492   -4.798    6.106
+ PVD           H212   H    H         0.000    -23.809   -4.328    7.684
+ PVD           C22    C    C         0.000    -24.383   -6.381    7.537
+ PVD           O23    O    OC       -0.500    -25.530   -6.394    8.036
+ PVD           O24    O    OC       -0.500    -23.685   -7.419    7.543
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PVD      O96    n/a    C95    START
+ PVD      C95    O96    C91    .
+ PVD      N69    C95    C68    .
+ PVD      H69    N69    .      .
+ PVD      C68    N69    C67    .
+ PVD      H681   C68    .      .
+ PVD      H682   C68    .      .
+ PVD      C67    C68    C66    .
+ PVD      H671   C67    .      .
+ PVD      H672   C67    .      .
+ PVD      C66    C67    C65    .
+ PVD      H661   C66    .      .
+ PVD      H662   C66    .      .
+ PVD      C65    C66    H651   .
+ PVD      H652   C65    .      .
+ PVD      H651   C65    .      .
+ PVD      C91    C95    N90    .
+ PVD      H91    C91    .      .
+ PVD      C92    C91    O93    .
+ PVD      H92    C92    .      .
+ PVD      C94    C92    H941   .
+ PVD      H943   C94    .      .
+ PVD      H942   C94    .      .
+ PVD      H941   C94    .      .
+ PVD      O93    C92    H93    .
+ PVD      H93    O93    .      .
+ PVD      N90    C91    C88    .
+ PVD      H90    N90    .      .
+ PVD      C88    N90    C84    .
+ PVD      O89    C88    .      .
+ PVD      C84    C88    N83    .
+ PVD      H84    C84    .      .
+ PVD      C85    C84    O86    .
+ PVD      H85    C85    .      .
+ PVD      C87    C85    H871   .
+ PVD      H873   C87    .      .
+ PVD      H872   C87    .      .
+ PVD      H871   C87    .      .
+ PVD      O86    C85    H86    .
+ PVD      H86    O86    .      .
+ PVD      N83    C84    C81    .
+ PVD      H83    N83    .      .
+ PVD      C81    N83    C73    .
+ PVD      O82    C81    .      .
+ PVD      C73    C81    N72    .
+ PVD      H73    C73    .      .
+ PVD      C74    C73    C75    .
+ PVD      H741   C74    .      .
+ PVD      H742   C74    .      .
+ PVD      C75    C74    C76    .
+ PVD      H751   C75    .      .
+ PVD      H752   C75    .      .
+ PVD      C76    C75    N77    .
+ PVD      H761   C76    .      .
+ PVD      H762   C76    .      .
+ PVD      N77    C76    O78    .
+ PVD      C79    N77    O80    .
+ PVD      H79    C79    .      .
+ PVD      O80    C79    .      .
+ PVD      O78    N77    H78    .
+ PVD      H78    O78    .      .
+ PVD      N72    C73    C70    .
+ PVD      H72    N72    .      .
+ PVD      C70    N72    C64    .
+ PVD      O71    C70    .      .
+ PVD      C64    C70    N63    .
+ PVD      H64    C64    .      .
+ PVD      N63    C64    C61    .
+ PVD      H63    N63    .      .
+ PVD      C61    N63    C52    .
+ PVD      O62    C61    .      .
+ PVD      C52    C61    N50    .
+ PVD      H52    C52    .      .
+ PVD      C53    C52    C54    .
+ PVD      H531   C53    .      .
+ PVD      H532   C53    .      .
+ PVD      C54    C53    C55    .
+ PVD      H541   C54    .      .
+ PVD      H542   C54    .      .
+ PVD      C55    C54    N56    .
+ PVD      H551   C55    .      .
+ PVD      H552   C55    .      .
+ PVD      N56    C55    O57    .
+ PVD      C58    N56    O59    .
+ PVD      H58    C58    .      .
+ PVD      O59    C58    .      .
+ PVD      O57    N56    H57    .
+ PVD      H57    O57    .      .
+ PVD      N50    C52    C48    .
+ PVD      H50    N50    .      .
+ PVD      C48    N50    C45    .
+ PVD      O49    C48    .      .
+ PVD      C45    C48    N44    .
+ PVD      H45    C45    .      .
+ PVD      C46    C45    O47    .
+ PVD      H461   C46    .      .
+ PVD      H462   C46    .      .
+ PVD      O47    C46    H47    .
+ PVD      H47    O47    .      .
+ PVD      N44    C45    C42    .
+ PVD      H44    N44    .      .
+ PVD      C42    N44    C34    .
+ PVD      O43    C42    .      .
+ PVD      C34    C42    N33    .
+ PVD      H34    C34    .      .
+ PVD      C35    C34    C36    .
+ PVD      H351   C35    .      .
+ PVD      H352   C35    .      .
+ PVD      C36    C35    C37    .
+ PVD      H361   C36    .      .
+ PVD      H362   C36    .      .
+ PVD      C37    C36    N38    .
+ PVD      H371   C37    .      .
+ PVD      H372   C37    .      .
+ PVD      N38    C37    C39    .
+ PVD      H38    N38    .      .
+ PVD      C39    N38    N40    .
+ PVD      N41    C39    H41    .
+ PVD      H41    N41    .      .
+ PVD      N40    C39    H401   .
+ PVD      H402   N40    .      .
+ PVD      H401   N40    .      .
+ PVD      N33    C34    C31    .
+ PVD      H33    N33    .      .
+ PVD      C31    N33    C28    .
+ PVD      O32    C31    .      .
+ PVD      C28    C31    N27    .
+ PVD      H28    C28    .      .
+ PVD      C29    C28    O30    .
+ PVD      H291   C29    .      .
+ PVD      H292   C29    .      .
+ PVD      O30    C29    H30    .
+ PVD      H30    O30    .      .
+ PVD      N27    C28    C15    .
+ PVD      H27    N27    .      .
+ PVD      C15    N27    C14    .
+ PVD      O16    C15    .      .
+ PVD      C14    C15    N1     .
+ PVD      H14    C14    .      .
+ PVD      C13    C14    C12    .
+ PVD      H131   C13    .      .
+ PVD      H132   C13    .      .
+ PVD      C12    C13    N11    .
+ PVD      H121   C12    .      .
+ PVD      H122   C12    .      .
+ PVD      N11    C12    C2     .
+ PVD      H11    N11    .      .
+ PVD      C2     N11    H2     .
+ PVD      H2     C2     .      .
+ PVD      N1     C14    C9     .
+ PVD      C9     N1     C10    .
+ PVD      C8     C9     C7     .
+ PVD      H8     C8     .      .
+ PVD      C7     C8     C6     .
+ PVD      O26    C7     H26    .
+ PVD      H26    O26    .      .
+ PVD      C6     C7     O25    .
+ PVD      O25    C6     H25    .
+ PVD      H25    O25    .      .
+ PVD      C10    C9     C4     .
+ PVD      C5     C10    H5     .
+ PVD      H5     C5     .      .
+ PVD      C4     C10    C3     .
+ PVD      H4     C4     .      .
+ PVD      C3     C4     N17    .
+ PVD      N17    C3     C18    .
+ PVD      H17    N17    .      .
+ PVD      C18    N17    C20    .
+ PVD      O19    C18    .      .
+ PVD      C20    C18    C21    .
+ PVD      H201   C20    .      .
+ PVD      H202   C20    .      .
+ PVD      C21    C20    C22    .
+ PVD      H211   C21    .      .
+ PVD      H212   C21    .      .
+ PVD      C22    C21    O24    .
+ PVD      O23    C22    .      .
+ PVD      O24    C22    .      END
+ PVD      N1     C2     .    ADD
+ PVD      C2     C3     .    ADD
+ PVD      C5     C6     .    ADD
+ PVD      C64    C65    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PVD       N1        C2        single    1.469     0.020     1.469     0.020     
+PVD       C9        N1        single    1.405     0.020     1.405     0.020     
+PVD       N1        C14       single    1.469     0.020     1.469     0.020     
+PVD       C2        C3        single    1.500     0.020     1.500     0.020     
+PVD       C2        N11       single    1.450     0.020     1.450     0.020     
+PVD       H2        C2        single    1.089     0.010     0.989     0.005     
+PVD       C3        C4        double    1.340     0.020     1.340     0.020     
+PVD       N17       C3        single    1.330     0.020     1.330     0.020     
+PVD       C4        C10       single    1.480     0.020     1.480     0.020     
+PVD       H4        C4        single    1.082     0.013     0.975     0.010     
+PVD       C5        C6        double    1.390     0.020     1.390     0.020     
+PVD       C5        C10       single    1.390     0.020     1.390     0.020     
+PVD       H5        C5        single    1.082     0.013     0.975     0.010     
+PVD       C6        C7        single    1.487     0.020     1.487     0.020     
+PVD       O25       C6        single    1.362     0.020     1.362     0.020     
+PVD       C7        C8        double    1.390     0.020     1.390     0.020     
+PVD       O26       C7        single    1.362     0.020     1.362     0.020     
+PVD       C8        C9        single    1.390     0.020     1.390     0.020     
+PVD       H8        C8        single    1.082     0.013     0.975     0.010     
+PVD       C10       C9        double    1.487     0.020     1.487     0.020     
+PVD       N11       C12       single    1.450     0.020     1.450     0.020     
+PVD       H11       N11       single    1.036     0.016     0.914     0.007     
+PVD       C12       C13       single    1.524     0.020     1.524     0.020     
+PVD       H121      C12       single    1.089     0.010     0.989     0.005     
+PVD       H122      C12       single    1.089     0.010     0.989     0.005     
+PVD       C13       C14       single    1.524     0.020     1.524     0.020     
+PVD       H131      C13       single    1.089     0.010     0.989     0.005     
+PVD       H132      C13       single    1.089     0.010     0.989     0.005     
+PVD       C14       C15       single    1.500     0.020     1.500     0.020     
+PVD       H14       C14       single    1.089     0.010     0.989     0.005     
+PVD       O16       C15       double    1.220     0.020     1.220     0.020     
+PVD       C15       N27       single    1.330     0.020     1.330     0.020     
+PVD       C18       N17       single    1.330     0.020     1.330     0.020     
+PVD       H17       N17       single    1.016     0.010     0.899     0.007     
+PVD       O19       C18       double    1.220     0.020     1.220     0.020     
+PVD       C20       C18       single    1.510     0.020     1.510     0.020     
+PVD       C21       C20       single    1.524     0.020     1.524     0.020     
+PVD       H201      C20       single    1.089     0.010     0.989     0.005     
+PVD       H202      C20       single    1.089     0.010     0.989     0.005     
+PVD       C22       C21       single    1.510     0.020     1.510     0.020     
+PVD       H211      C21       single    1.089     0.010     0.989     0.005     
+PVD       H212      C21       single    1.089     0.010     0.989     0.005     
+PVD       O23       C22       deloc     1.250     0.020     1.250     0.020     
+PVD       O24       C22       deloc     1.250     0.020     1.250     0.020     
+PVD       H25       O25       single    0.970     0.012     0.839     0.014     
+PVD       H26       O26       single    0.970     0.012     0.839     0.014     
+PVD       N27       C28       single    1.450     0.020     1.450     0.020     
+PVD       H27       N27       single    1.016     0.010     0.899     0.007     
+PVD       C29       C28       single    1.524     0.020     1.524     0.020     
+PVD       C28       C31       single    1.500     0.020     1.500     0.020     
+PVD       H28       C28       single    1.089     0.010     0.989     0.005     
+PVD       O30       C29       single    1.432     0.020     1.432     0.020     
+PVD       H291      C29       single    1.089     0.010     0.989     0.005     
+PVD       H292      C29       single    1.089     0.010     0.989     0.005     
+PVD       H30       O30       single    0.970     0.012     0.839     0.014     
+PVD       O32       C31       double    1.220     0.020     1.220     0.020     
+PVD       C31       N33       single    1.330     0.020     1.330     0.020     
+PVD       N33       C34       single    1.450     0.020     1.450     0.020     
+PVD       H33       N33       single    1.016     0.010     0.899     0.007     
+PVD       C35       C34       single    1.524     0.020     1.524     0.020     
+PVD       C34       C42       single    1.500     0.020     1.500     0.020     
+PVD       H34       C34       single    1.089     0.010     0.989     0.005     
+PVD       C36       C35       single    1.524     0.020     1.524     0.020     
+PVD       H351      C35       single    1.089     0.010     0.989     0.005     
+PVD       H352      C35       single    1.089     0.010     0.989     0.005     
+PVD       C37       C36       single    1.524     0.020     1.524     0.020     
+PVD       H361      C36       single    1.089     0.010     0.989     0.005     
+PVD       H362      C36       single    1.089     0.010     0.989     0.005     
+PVD       N38       C37       single    1.450     0.020     1.450     0.020     
+PVD       H371      C37       single    1.089     0.010     0.989     0.005     
+PVD       H372      C37       single    1.089     0.010     0.989     0.005     
+PVD       C39       N38       single    1.330     0.020     1.330     0.020     
+PVD       H38       N38       single    1.016     0.010     0.899     0.007     
+PVD       N40       C39       single    1.332     0.020     1.332     0.020     
+PVD       N41       C39       double    1.260     0.020     1.260     0.020     
+PVD       H401      N40       single    1.016     0.010     0.899     0.007     
+PVD       H402      N40       single    1.016     0.010     0.899     0.007     
+PVD       H41       N41       single    1.016     0.010     0.899     0.007     
+PVD       O43       C42       double    1.220     0.020     1.220     0.020     
+PVD       C42       N44       single    1.330     0.020     1.330     0.020     
+PVD       N44       C45       single    1.450     0.020     1.450     0.020     
+PVD       H44       N44       single    1.016     0.010     0.899     0.007     
+PVD       C46       C45       single    1.524     0.020     1.524     0.020     
+PVD       C45       C48       single    1.500     0.020     1.500     0.020     
+PVD       H45       C45       single    1.089     0.010     0.989     0.005     
+PVD       O47       C46       single    1.432     0.020     1.432     0.020     
+PVD       H461      C46       single    1.089     0.010     0.989     0.005     
+PVD       H462      C46       single    1.089     0.010     0.989     0.005     
+PVD       H47       O47       single    0.970     0.012     0.839     0.014     
+PVD       O49       C48       double    1.220     0.020     1.220     0.020     
+PVD       C48       N50       single    1.330     0.020     1.330     0.020     
+PVD       N50       C52       single    1.450     0.020     1.450     0.020     
+PVD       H50       N50       single    1.016     0.010     0.899     0.007     
+PVD       C53       C52       single    1.524     0.020     1.524     0.020     
+PVD       C52       C61       single    1.500     0.020     1.500     0.020     
+PVD       H52       C52       single    1.089     0.010     0.989     0.005     
+PVD       C54       C53       single    1.524     0.020     1.524     0.020     
+PVD       H531      C53       single    1.089     0.010     0.989     0.005     
+PVD       H532      C53       single    1.089     0.010     0.989     0.005     
+PVD       C55       C54       single    1.524     0.020     1.524     0.020     
+PVD       H541      C54       single    1.089     0.010     0.989     0.005     
+PVD       H542      C54       single    1.089     0.010     0.989     0.005     
+PVD       N56       C55       single    1.455     0.020     1.455     0.020     
+PVD       H551      C55       single    1.089     0.010     0.989     0.005     
+PVD       H552      C55       single    1.089     0.010     0.989     0.005     
+PVD       O57       N56       single    1.392     0.020     1.392     0.020     
+PVD       C58       N56       single    1.260     0.020     1.260     0.020     
+PVD       H57       O57       single    0.970     0.012     0.839     0.014     
+PVD       O59       C58       double    1.220     0.020     1.220     0.020     
+PVD       H58       C58       single    1.082     0.013     0.975     0.010     
+PVD       O62       C61       double    1.220     0.020     1.220     0.020     
+PVD       C61       N63       single    1.330     0.020     1.330     0.020     
+PVD       N63       C64       single    1.450     0.020     1.450     0.020     
+PVD       H63       N63       single    1.016     0.010     0.899     0.007     
+PVD       C64       C65       single    1.524     0.020     1.524     0.020     
+PVD       C64       C70       single    1.500     0.020     1.500     0.020     
+PVD       H64       C64       single    1.089     0.010     0.989     0.005     
+PVD       C65       C66       single    1.524     0.020     1.524     0.020     
+PVD       H651      C65       single    1.089     0.010     0.989     0.005     
+PVD       H652      C65       single    1.089     0.010     0.989     0.005     
+PVD       C66       C67       single    1.524     0.020     1.524     0.020     
+PVD       H661      C66       single    1.089     0.010     0.989     0.005     
+PVD       H662      C66       single    1.089     0.010     0.989     0.005     
+PVD       C67       C68       single    1.524     0.020     1.524     0.020     
+PVD       H671      C67       single    1.089     0.010     0.989     0.005     
+PVD       H672      C67       single    1.089     0.010     0.989     0.005     
+PVD       C68       N69       single    1.450     0.020     1.450     0.020     
+PVD       H681      C68       single    1.089     0.010     0.989     0.005     
+PVD       H682      C68       single    1.089     0.010     0.989     0.005     
+PVD       N69       C95       single    1.330     0.020     1.330     0.020     
+PVD       H69       N69       single    1.016     0.010     0.899     0.007     
+PVD       O71       C70       double    1.220     0.020     1.220     0.020     
+PVD       C70       N72       single    1.330     0.020     1.330     0.020     
+PVD       N72       C73       single    1.450     0.020     1.450     0.020     
+PVD       H72       N72       single    1.016     0.010     0.899     0.007     
+PVD       C74       C73       single    1.524     0.020     1.524     0.020     
+PVD       C73       C81       single    1.500     0.020     1.500     0.020     
+PVD       H73       C73       single    1.089     0.010     0.989     0.005     
+PVD       C75       C74       single    1.524     0.020     1.524     0.020     
+PVD       H741      C74       single    1.089     0.010     0.989     0.005     
+PVD       H742      C74       single    1.089     0.010     0.989     0.005     
+PVD       C76       C75       single    1.524     0.020     1.524     0.020     
+PVD       H751      C75       single    1.089     0.010     0.989     0.005     
+PVD       H752      C75       single    1.089     0.010     0.989     0.005     
+PVD       N77       C76       single    1.455     0.020     1.455     0.020     
+PVD       H761      C76       single    1.089     0.010     0.989     0.005     
+PVD       H762      C76       single    1.089     0.010     0.989     0.005     
+PVD       O78       N77       single    1.392     0.020     1.392     0.020     
+PVD       C79       N77       single    1.260     0.020     1.260     0.020     
+PVD       H78       O78       single    0.970     0.012     0.839     0.014     
+PVD       O80       C79       double    1.220     0.020     1.220     0.020     
+PVD       H79       C79       single    1.082     0.013     0.975     0.010     
+PVD       O82       C81       double    1.220     0.020     1.220     0.020     
+PVD       C81       N83       single    1.330     0.020     1.330     0.020     
+PVD       N83       C84       single    1.450     0.020     1.450     0.020     
+PVD       H83       N83       single    1.016     0.010     0.899     0.007     
+PVD       C85       C84       single    1.524     0.020     1.524     0.020     
+PVD       C84       C88       single    1.500     0.020     1.500     0.020     
+PVD       H84       C84       single    1.089     0.010     0.989     0.005     
+PVD       O86       C85       single    1.432     0.020     1.432     0.020     
+PVD       C87       C85       single    1.524     0.020     1.524     0.020     
+PVD       H85       C85       single    1.089     0.010     0.989     0.005     
+PVD       H86       O86       single    0.970     0.012     0.839     0.014     
+PVD       H871      C87       single    1.089     0.010     0.989     0.005     
+PVD       H872      C87       single    1.089     0.010     0.989     0.005     
+PVD       H873      C87       single    1.089     0.010     0.989     0.005     
+PVD       O89       C88       double    1.220     0.020     1.220     0.020     
+PVD       C88       N90       single    1.330     0.020     1.330     0.020     
+PVD       N90       C91       single    1.450     0.020     1.450     0.020     
+PVD       H90       N90       single    1.016     0.010     0.899     0.007     
+PVD       C92       C91       single    1.524     0.020     1.524     0.020     
+PVD       C91       C95       single    1.500     0.020     1.500     0.020     
+PVD       H91       C91       single    1.089     0.010     0.989     0.005     
+PVD       O93       C92       single    1.432     0.020     1.432     0.020     
+PVD       C94       C92       single    1.524     0.020     1.524     0.020     
+PVD       H92       C92       single    1.089     0.010     0.989     0.005     
+PVD       H93       O93       single    0.970     0.012     0.839     0.014     
+PVD       H941      C94       single    1.089     0.010     0.989     0.005     
+PVD       H942      C94       single    1.089     0.010     0.989     0.005     
+PVD       H943      C94       single    1.089     0.010     0.989     0.005     
+PVD       C95       O96       double    1.220     0.020     1.220     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PVD      O96    C95    N69     123.000    3.000
+ PVD      O96    C95    C91     120.500    3.000
+ PVD      N69    C95    C91     116.500    3.000
+ PVD      C95    N69    H69     120.000    3.000
+ PVD      C95    N69    C68     121.500    3.000
+ PVD      H69    N69    C68     118.500    3.000
+ PVD      N69    C68    H681    109.470    3.000
+ PVD      N69    C68    H682    109.470    3.000
+ PVD      N69    C68    C67     112.000    3.000
+ PVD      H681   C68    H682    107.900    3.000
+ PVD      H681   C68    C67     109.470    3.000
+ PVD      H682   C68    C67     109.470    3.000
+ PVD      C68    C67    H671    109.470    3.000
+ PVD      C68    C67    H672    109.470    3.000
+ PVD      C68    C67    C66     111.000    3.000
+ PVD      H671   C67    H672    107.900    3.000
+ PVD      H671   C67    C66     109.470    3.000
+ PVD      H672   C67    C66     109.470    3.000
+ PVD      C67    C66    H661    109.470    3.000
+ PVD      C67    C66    H662    109.470    3.000
+ PVD      C67    C66    C65     111.000    3.000
+ PVD      H661   C66    H662    107.900    3.000
+ PVD      H661   C66    C65     109.470    3.000
+ PVD      H662   C66    C65     109.470    3.000
+ PVD      C66    C65    H652    109.470    3.000
+ PVD      C66    C65    H651    109.470    3.000
+ PVD      C66    C65    C64     111.000    3.000
+ PVD      H652   C65    H651    107.900    3.000
+ PVD      H652   C65    C64     109.470    3.000
+ PVD      H651   C65    C64     109.470    3.000
+ PVD      C95    C91    H91     108.810    3.000
+ PVD      C95    C91    C92     109.470    3.000
+ PVD      C95    C91    N90     111.600    3.000
+ PVD      H91    C91    C92     108.340    3.000
+ PVD      H91    C91    N90     108.550    3.000
+ PVD      C92    C91    N90     110.000    3.000
+ PVD      C91    C92    H92     108.340    3.000
+ PVD      C91    C92    C94     111.000    3.000
+ PVD      C91    C92    O93     109.470    3.000
+ PVD      H92    C92    C94     108.340    3.000
+ PVD      H92    C92    O93     109.470    3.000
+ PVD      C94    C92    O93     109.470    3.000
+ PVD      C92    C94    H943    109.470    3.000
+ PVD      C92    C94    H942    109.470    3.000
+ PVD      C92    C94    H941    109.470    3.000
+ PVD      H943   C94    H942    109.470    3.000
+ PVD      H943   C94    H941    109.470    3.000
+ PVD      H942   C94    H941    109.470    3.000
+ PVD      C92    O93    H93     109.470    3.000
+ PVD      C91    N90    H90     118.500    3.000
+ PVD      C91    N90    C88     121.500    3.000
+ PVD      H90    N90    C88     120.000    3.000
+ PVD      N90    C88    O89     123.000    3.000
+ PVD      N90    C88    C84     116.500    3.000
+ PVD      O89    C88    C84     120.500    3.000
+ PVD      C88    C84    H84     108.810    3.000
+ PVD      C88    C84    C85     109.470    3.000
+ PVD      C88    C84    N83     111.600    3.000
+ PVD      H84    C84    C85     108.340    3.000
+ PVD      H84    C84    N83     108.550    3.000
+ PVD      C85    C84    N83     110.000    3.000
+ PVD      C84    C85    H85     108.340    3.000
+ PVD      C84    C85    C87     111.000    3.000
+ PVD      C84    C85    O86     109.470    3.000
+ PVD      H85    C85    C87     108.340    3.000
+ PVD      H85    C85    O86     109.470    3.000
+ PVD      C87    C85    O86     109.470    3.000
+ PVD      C85    C87    H873    109.470    3.000
+ PVD      C85    C87    H872    109.470    3.000
+ PVD      C85    C87    H871    109.470    3.000
+ PVD      H873   C87    H872    109.470    3.000
+ PVD      H873   C87    H871    109.470    3.000
+ PVD      H872   C87    H871    109.470    3.000
+ PVD      C85    O86    H86     109.470    3.000
+ PVD      C84    N83    H83     118.500    3.000
+ PVD      C84    N83    C81     121.500    3.000
+ PVD      H83    N83    C81     120.000    3.000
+ PVD      N83    C81    O82     123.000    3.000
+ PVD      N83    C81    C73     116.500    3.000
+ PVD      O82    C81    C73     120.500    3.000
+ PVD      C81    C73    H73     108.810    3.000
+ PVD      C81    C73    C74     109.470    3.000
+ PVD      C81    C73    N72     111.600    3.000
+ PVD      H73    C73    C74     108.340    3.000
+ PVD      H73    C73    N72     108.550    3.000
+ PVD      C74    C73    N72     110.000    3.000
+ PVD      C73    C74    H741    109.470    3.000
+ PVD      C73    C74    H742    109.470    3.000
+ PVD      C73    C74    C75     111.000    3.000
+ PVD      H741   C74    H742    107.900    3.000
+ PVD      H741   C74    C75     109.470    3.000
+ PVD      H742   C74    C75     109.470    3.000
+ PVD      C74    C75    H751    109.470    3.000
+ PVD      C74    C75    H752    109.470    3.000
+ PVD      C74    C75    C76     111.000    3.000
+ PVD      H751   C75    H752    107.900    3.000
+ PVD      H751   C75    C76     109.470    3.000
+ PVD      H752   C75    C76     109.470    3.000
+ PVD      C75    C76    H761    109.470    3.000
+ PVD      C75    C76    H762    109.470    3.000
+ PVD      C75    C76    N77     105.000    3.000
+ PVD      H761   C76    H762    107.900    3.000
+ PVD      H761   C76    N77     109.470    3.000
+ PVD      H762   C76    N77     109.470    3.000
+ PVD      C76    N77    C79     120.000    3.000
+ PVD      C76    N77    O78     120.000    3.000
+ PVD      C79    N77    O78     120.000    3.000
+ PVD      N77    C79    H79     120.000    3.000
+ PVD      N77    C79    O80     120.000    3.000
+ PVD      H79    C79    O80     123.000    3.000
+ PVD      N77    O78    H78     109.470    3.000
+ PVD      C73    N72    H72     118.500    3.000
+ PVD      C73    N72    C70     121.500    3.000
+ PVD      H72    N72    C70     120.000    3.000
+ PVD      N72    C70    O71     123.000    3.000
+ PVD      N72    C70    C64     116.500    3.000
+ PVD      O71    C70    C64     120.500    3.000
+ PVD      C70    C64    H64     108.810    3.000
+ PVD      C70    C64    N63     111.600    3.000
+ PVD      C70    C64    C65     109.470    3.000
+ PVD      H64    C64    N63     108.550    3.000
+ PVD      H64    C64    C65     108.340    3.000
+ PVD      N63    C64    C65     110.000    3.000
+ PVD      C64    N63    H63     118.500    3.000
+ PVD      C64    N63    C61     121.500    3.000
+ PVD      H63    N63    C61     120.000    3.000
+ PVD      N63    C61    O62     123.000    3.000
+ PVD      N63    C61    C52     116.500    3.000
+ PVD      O62    C61    C52     120.500    3.000
+ PVD      C61    C52    H52     108.810    3.000
+ PVD      C61    C52    C53     109.470    3.000
+ PVD      C61    C52    N50     111.600    3.000
+ PVD      H52    C52    C53     108.340    3.000
+ PVD      H52    C52    N50     108.550    3.000
+ PVD      C53    C52    N50     110.000    3.000
+ PVD      C52    C53    H531    109.470    3.000
+ PVD      C52    C53    H532    109.470    3.000
+ PVD      C52    C53    C54     111.000    3.000
+ PVD      H531   C53    H532    107.900    3.000
+ PVD      H531   C53    C54     109.470    3.000
+ PVD      H532   C53    C54     109.470    3.000
+ PVD      C53    C54    H541    109.470    3.000
+ PVD      C53    C54    H542    109.470    3.000
+ PVD      C53    C54    C55     111.000    3.000
+ PVD      H541   C54    H542    107.900    3.000
+ PVD      H541   C54    C55     109.470    3.000
+ PVD      H542   C54    C55     109.470    3.000
+ PVD      C54    C55    H551    109.470    3.000
+ PVD      C54    C55    H552    109.470    3.000
+ PVD      C54    C55    N56     105.000    3.000
+ PVD      H551   C55    H552    107.900    3.000
+ PVD      H551   C55    N56     109.470    3.000
+ PVD      H552   C55    N56     109.470    3.000
+ PVD      C55    N56    C58     120.000    3.000
+ PVD      C55    N56    O57     120.000    3.000
+ PVD      C58    N56    O57     120.000    3.000
+ PVD      N56    C58    H58     120.000    3.000
+ PVD      N56    C58    O59     120.000    3.000
+ PVD      H58    C58    O59     123.000    3.000
+ PVD      N56    O57    H57     109.470    3.000
+ PVD      C52    N50    H50     118.500    3.000
+ PVD      C52    N50    C48     121.500    3.000
+ PVD      H50    N50    C48     120.000    3.000
+ PVD      N50    C48    O49     123.000    3.000
+ PVD      N50    C48    C45     116.500    3.000
+ PVD      O49    C48    C45     120.500    3.000
+ PVD      C48    C45    H45     108.810    3.000
+ PVD      C48    C45    C46     109.470    3.000
+ PVD      C48    C45    N44     111.600    3.000
+ PVD      H45    C45    C46     108.340    3.000
+ PVD      H45    C45    N44     108.550    3.000
+ PVD      C46    C45    N44     110.000    3.000
+ PVD      C45    C46    H461    109.470    3.000
+ PVD      C45    C46    H462    109.470    3.000
+ PVD      C45    C46    O47     109.470    3.000
+ PVD      H461   C46    H462    107.900    3.000
+ PVD      H461   C46    O47     109.470    3.000
+ PVD      H462   C46    O47     109.470    3.000
+ PVD      C46    O47    H47     109.470    3.000
+ PVD      C45    N44    H44     118.500    3.000
+ PVD      C45    N44    C42     121.500    3.000
+ PVD      H44    N44    C42     120.000    3.000
+ PVD      N44    C42    O43     123.000    3.000
+ PVD      N44    C42    C34     116.500    3.000
+ PVD      O43    C42    C34     120.500    3.000
+ PVD      C42    C34    H34     108.810    3.000
+ PVD      C42    C34    C35     109.470    3.000
+ PVD      C42    C34    N33     111.600    3.000
+ PVD      H34    C34    C35     108.340    3.000
+ PVD      H34    C34    N33     108.550    3.000
+ PVD      C35    C34    N33     110.000    3.000
+ PVD      C34    C35    H351    109.470    3.000
+ PVD      C34    C35    H352    109.470    3.000
+ PVD      C34    C35    C36     111.000    3.000
+ PVD      H351   C35    H352    107.900    3.000
+ PVD      H351   C35    C36     109.470    3.000
+ PVD      H352   C35    C36     109.470    3.000
+ PVD      C35    C36    H361    109.470    3.000
+ PVD      C35    C36    H362    109.470    3.000
+ PVD      C35    C36    C37     111.000    3.000
+ PVD      H361   C36    H362    107.900    3.000
+ PVD      H361   C36    C37     109.470    3.000
+ PVD      H362   C36    C37     109.470    3.000
+ PVD      C36    C37    H371    109.470    3.000
+ PVD      C36    C37    H372    109.470    3.000
+ PVD      C36    C37    N38     112.000    3.000
+ PVD      H371   C37    H372    107.900    3.000
+ PVD      H371   C37    N38     109.470    3.000
+ PVD      H372   C37    N38     109.470    3.000
+ PVD      C37    N38    H38     118.500    3.000
+ PVD      C37    N38    C39     121.500    3.000
+ PVD      H38    N38    C39     120.000    3.000
+ PVD      N38    C39    N41     120.000    3.000
+ PVD      N38    C39    N40     120.000    3.000
+ PVD      N41    C39    N40     120.000    3.000
+ PVD      C39    N41    H41     120.000    3.000
+ PVD      C39    N40    H402    120.000    3.000
+ PVD      C39    N40    H401    120.000    3.000
+ PVD      H402   N40    H401    120.000    3.000
+ PVD      C34    N33    H33     118.500    3.000
+ PVD      C34    N33    C31     121.500    3.000
+ PVD      H33    N33    C31     120.000    3.000
+ PVD      N33    C31    O32     123.000    3.000
+ PVD      N33    C31    C28     116.500    3.000
+ PVD      O32    C31    C28     120.500    3.000
+ PVD      C31    C28    H28     108.810    3.000
+ PVD      C31    C28    C29     109.470    3.000
+ PVD      C31    C28    N27     111.600    3.000
+ PVD      H28    C28    C29     108.340    3.000
+ PVD      H28    C28    N27     108.550    3.000
+ PVD      C29    C28    N27     110.000    3.000
+ PVD      C28    C29    H291    109.470    3.000
+ PVD      C28    C29    H292    109.470    3.000
+ PVD      C28    C29    O30     109.470    3.000
+ PVD      H291   C29    H292    107.900    3.000
+ PVD      H291   C29    O30     109.470    3.000
+ PVD      H292   C29    O30     109.470    3.000
+ PVD      C29    O30    H30     109.470    3.000
+ PVD      C28    N27    H27     118.500    3.000
+ PVD      C28    N27    C15     121.500    3.000
+ PVD      H27    N27    C15     120.000    3.000
+ PVD      N27    C15    O16     123.000    3.000
+ PVD      N27    C15    C14     116.500    3.000
+ PVD      O16    C15    C14     120.500    3.000
+ PVD      C15    C14    H14     108.810    3.000
+ PVD      C15    C14    C13     109.470    3.000
+ PVD      C15    C14    N1      109.500    3.000
+ PVD      H14    C14    C13     108.340    3.000
+ PVD      H14    C14    N1      109.500    3.000
+ PVD      C13    C14    N1      109.500    3.000
+ PVD      C14    C13    H131    109.470    3.000
+ PVD      C14    C13    H132    109.470    3.000
+ PVD      C14    C13    C12     111.000    3.000
+ PVD      H131   C13    H132    107.900    3.000
+ PVD      H131   C13    C12     109.470    3.000
+ PVD      H132   C13    C12     109.470    3.000
+ PVD      C13    C12    H121    109.470    3.000
+ PVD      C13    C12    H122    109.470    3.000
+ PVD      C13    C12    N11     112.000    3.000
+ PVD      H121   C12    H122    107.900    3.000
+ PVD      H121   C12    N11     109.470    3.000
+ PVD      H122   C12    N11     109.470    3.000
+ PVD      C12    N11    H11     118.500    3.000
+ PVD      C12    N11    C2      120.000    3.000
+ PVD      H11    N11    C2      118.500    3.000
+ PVD      N11    C2     H2      108.550    3.000
+ PVD      N11    C2     N1      109.500    3.000
+ PVD      N11    C2     C3      111.600    3.000
+ PVD      N1     C2     C3      109.500    3.000
+ PVD      H2     C2     N1      109.500    3.000
+ PVD      H2     C2     C3      108.810    3.000
+ PVD      C14    N1     C9      109.500    3.000
+ PVD      C14    N1     C2      109.500    3.000
+ PVD      C9     N1     C2      109.500    3.000
+ PVD      N1     C9     C8      120.000    3.000
+ PVD      N1     C9     C10     120.000    3.000
+ PVD      C8     C9     C10     120.000    3.000
+ PVD      C9     C8     H8      120.000    3.000
+ PVD      C9     C8     C7      120.000    3.000
+ PVD      H8     C8     C7      120.000    3.000
+ PVD      C8     C7     O26     120.000    3.000
+ PVD      C8     C7     C6      120.000    3.000
+ PVD      O26    C7     C6      120.000    3.000
+ PVD      C7     O26    H26     109.470    3.000
+ PVD      C7     C6     O25     120.000    3.000
+ PVD      C7     C6     C5      120.000    3.000
+ PVD      O25    C6     C5      120.000    3.000
+ PVD      C6     O25    H25     109.470    3.000
+ PVD      C9     C10    C5      120.000    3.000
+ PVD      C9     C10    C4      120.000    3.000
+ PVD      C5     C10    C4      120.000    3.000
+ PVD      C10    C5     H5      120.000    3.000
+ PVD      C10    C5     C6      120.000    3.000
+ PVD      H5     C5     C6      120.000    3.000
+ PVD      C10    C4     H4      120.000    3.000
+ PVD      C10    C4     C3      120.000    3.000
+ PVD      H4     C4     C3      120.000    3.000
+ PVD      C4     C3     N17     120.000    3.000
+ PVD      C4     C3     C2      120.000    3.000
+ PVD      N17    C3     C2      116.500    3.000
+ PVD      C3     N17    H17     120.000    3.000
+ PVD      C3     N17    C18     120.000    3.000
+ PVD      H17    N17    C18     120.000    3.000
+ PVD      N17    C18    O19     123.000    3.000
+ PVD      N17    C18    C20     116.500    3.000
+ PVD      O19    C18    C20     120.500    3.000
+ PVD      C18    C20    H201    109.470    3.000
+ PVD      C18    C20    H202    109.470    3.000
+ PVD      C18    C20    C21     109.470    3.000
+ PVD      H201   C20    H202    107.900    3.000
+ PVD      H201   C20    C21     109.470    3.000
+ PVD      H202   C20    C21     109.470    3.000
+ PVD      C20    C21    H211    109.470    3.000
+ PVD      C20    C21    H212    109.470    3.000
+ PVD      C20    C21    C22     109.470    3.000
+ PVD      H211   C21    H212    107.900    3.000
+ PVD      H211   C21    C22     109.470    3.000
+ PVD      H212   C21    C22     109.470    3.000
+ PVD      C21    C22    O23     118.500    3.000
+ PVD      C21    C22    O24     118.500    3.000
+ PVD      O23    C22    O24     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PVD      CONST_1  O96    C95    N69    C68        0.000    0.000   0
+ PVD      var_1    C95    N69    C68    C67     -139.506   20.000   3
+ PVD      var_2    N69    C68    C67    C66       93.650   20.000   3
+ PVD      var_3    C68    C67    C66    C65     -159.891   20.000   3
+ PVD      var_4    C67    C66    C65    C64      156.771   20.000   3
+ PVD      var_5    O96    C95    C91    N90       64.697   20.000   3
+ PVD      var_6    C95    C91    C92    O93     -172.888   20.000   3
+ PVD      var_7    C91    C92    C94    H941     175.376   20.000   3
+ PVD      var_8    C91    C92    O93    H93      -55.083   20.000   1
+ PVD      var_9    C95    C91    N90    C88      106.300   20.000   3
+ PVD      CONST_2  C91    N90    C88    C84      180.000    0.000   0
+ PVD      var_10   N90    C88    C84    N83      143.223   20.000   3
+ PVD      var_11   C88    C84    C85    O86      -54.995   20.000   3
+ PVD      var_12   C84    C85    C87    H871     179.988   20.000   3
+ PVD      var_13   C84    C85    O86    H86      179.995   20.000   1
+ PVD      var_14   C88    C84    N83    C81      -81.202   20.000   3
+ PVD      CONST_3  C84    N83    C81    C73      180.000    0.000   0
+ PVD      var_15   N83    C81    C73    N72     -158.874   20.000   3
+ PVD      var_16   C81    C73    C74    C75      175.006   20.000   3
+ PVD      var_17   C73    C74    C75    C76     -179.963   20.000   3
+ PVD      var_18   C74    C75    C76    N77      179.981   20.000   3
+ PVD      var_19   C75    C76    N77    O78     -105.009   20.000   1
+ PVD      var_20   C76    N77    C79    O80      179.990   20.000   1
+ PVD      var_21   C76    N77    O78    H78      179.996   20.000   1
+ PVD      var_22   C81    C73    N72    C70       52.944   20.000   3
+ PVD      CONST_4  C73    N72    C70    C64      180.000    0.000   0
+ PVD      var_23   N72    C70    C64    N63       68.897   20.000   3
+ PVD      var_24   C70    C64    C65    C66      -79.297   20.000   3
+ PVD      var_25   C70    C64    N63    C61      -84.974   20.000   3
+ PVD      CONST_5  C64    N63    C61    C52      180.000    0.000   0
+ PVD      var_26   N63    C61    C52    N50      179.994   20.000   3
+ PVD      var_27   C61    C52    C53    C54      174.972   20.000   3
+ PVD      var_28   C52    C53    C54    C55      180.000   20.000   3
+ PVD      var_29   C53    C54    C55    N56     -179.955   20.000   3
+ PVD      var_30   C54    C55    N56    O57     -104.969   20.000   1
+ PVD      var_31   C55    N56    C58    O59      179.984   20.000   1
+ PVD      var_32   C55    N56    O57    H57     -179.985   20.000   1
+ PVD      var_33   C61    C52    N50    C48     -154.974   20.000   3
+ PVD      CONST_6  C52    N50    C48    C45      180.000    0.000   0
+ PVD      var_34   N50    C48    C45    N44      179.963   20.000   3
+ PVD      var_35   C48    C45    C46    O47       54.987   20.000   3
+ PVD      var_36   C45    C46    O47    H47      179.962   20.000   1
+ PVD      var_37   C48    C45    N44    C42      154.979   20.000   3
+ PVD      CONST_7  C45    N44    C42    C34      180.000    0.000   0
+ PVD      var_38   N44    C42    C34    N33     -179.970   20.000   3
+ PVD      var_39   C42    C34    C35    C36      174.966   20.000   3
+ PVD      var_40   C34    C35    C36    C37      179.982   20.000   3
+ PVD      var_41   C35    C36    C37    N38     -180.000   20.000   3
+ PVD      var_42   C36    C37    N38    C39      179.960   20.000   3
+ PVD      CONST_8  C37    N38    C39    N40        0.000    0.000   0
+ PVD      CONST_9  N38    C39    N41    H41      180.000    0.000   0
+ PVD      CONST_10 N38    C39    N40    H401     180.000    0.000   0
+ PVD      var_43   C42    C34    N33    C31     -154.979   20.000   3
+ PVD      CONST_11 C34    N33    C31    C28      180.000    0.000   0
+ PVD      var_44   N33    C31    C28    N27     -179.985   20.000   3
+ PVD      var_45   C31    C28    C29    O30       55.063   20.000   3
+ PVD      var_46   C28    C29    O30    H30     -179.973   20.000   1
+ PVD      var_47   C31    C28    N27    C15      154.990   20.000   3
+ PVD      CONST_12 C28    N27    C15    C14      180.000    0.000   0
+ PVD      var_48   N27    C15    C14    N1        26.678   20.000   3
+ PVD      var_49   C15    C14    C13    C12      180.000   20.000   3
+ PVD      var_50   C14    C13    C12    N11      -60.000   20.000   3
+ PVD      var_51   C13    C12    N11    C2        60.000   20.000   3
+ PVD      var_52   C12    N11    C2     N1       -60.000   20.000   3
+ PVD      var_53   N11    C2     C3     C4       150.000   20.000   3
+ PVD      var_54   C15    C14    N1     C9        60.000   20.000   1
+ PVD      var_55   C14    N1     C2     N11       60.000   20.000   1
+ PVD      var_56   C14    N1     C9     C10      150.000   20.000   1
+ PVD      CONST_13 N1     C9     C8     C7       180.000    0.000   0
+ PVD      CONST_14 C9     C8     C7     C6         0.000    0.000   0
+ PVD      var_57   C8     C7     O26    H26       90.016   20.000   1
+ PVD      CONST_15 C8     C7     C6     O25      180.000    0.000   0
+ PVD      var_58   C7     C6     O25    H25       90.005   20.000   1
+ PVD      CONST_16 N1     C9     C10    C4         0.000    0.000   0
+ PVD      CONST_17 C9     C10    C5     C6         0.000    0.000   0
+ PVD      CONST_18 C10    C5     C6     C7         0.000    0.000   0
+ PVD      var_59   C9     C10    C4     C3       -30.000   20.000   1
+ PVD      var_60   C10    C4     C3     N17      180.000   20.000   1
+ PVD      CONST_19 C4     C3     N17    C18      180.000    0.000   0
+ PVD      CONST_20 C3     N17    C18    C20      180.000    0.000   0
+ PVD      var_61   N17    C18    C20    C21     -179.964   20.000   3
+ PVD      var_62   C18    C20    C21    C22      180.000   20.000   3
+ PVD      var_63   C20    C21    C22    O24       -0.010   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PVD      chir_01  N1     C2     C9     C14       positiv
+ PVD      chir_02  C2     N1     C3     N11       positiv
+ PVD      chir_03  C14    N1     C13    C15       positiv
+ PVD      chir_04  C28    N27    C29    C31       positiv
+ PVD      chir_05  C34    N33    C35    C42       negativ
+ PVD      chir_06  C45    N44    C46    C48       positiv
+ PVD      chir_07  C52    N50    C53    C61       negativ
+ PVD      chir_08  C64    N63    C65    C70       negativ
+ PVD      chir_09  C73    N72    C74    C81       negativ
+ PVD      chir_10  C84    N83    C85    C88       negativ
+ PVD      chir_11  C85    C84    O86    C87       positiv
+ PVD      chir_12  C91    N90    C92    C95       negativ
+ PVD      chir_13  C92    C91    O93    C94       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PVD      plan-1    C3        0.020
+ PVD      plan-1    C2        0.020
+ PVD      plan-1    C4        0.020
+ PVD      plan-1    N17       0.020
+ PVD      plan-1    H4        0.020
+ PVD      plan-1    H17       0.020
+ PVD      plan-2    C4        0.020
+ PVD      plan-2    C3        0.020
+ PVD      plan-2    C10       0.020
+ PVD      plan-2    H4        0.020
+ PVD      plan-3    C5        0.020
+ PVD      plan-3    C6        0.020
+ PVD      plan-3    C10       0.020
+ PVD      plan-3    H5        0.020
+ PVD      plan-3    C7        0.020
+ PVD      plan-3    C8        0.020
+ PVD      plan-3    C9        0.020
+ PVD      plan-3    O25       0.020
+ PVD      plan-3    O26       0.020
+ PVD      plan-3    H8        0.020
+ PVD      plan-3    N1        0.020
+ PVD      plan-3    C4        0.020
+ PVD      plan-3    H4        0.020
+ PVD      plan-4    N11       0.020
+ PVD      plan-4    C2        0.020
+ PVD      plan-4    C12       0.020
+ PVD      plan-4    H11       0.020
+ PVD      plan-5    C15       0.020
+ PVD      plan-5    C14       0.020
+ PVD      plan-5    O16       0.020
+ PVD      plan-5    N27       0.020
+ PVD      plan-5    H27       0.020
+ PVD      plan-6    N17       0.020
+ PVD      plan-6    C3        0.020
+ PVD      plan-6    C18       0.020
+ PVD      plan-6    H17       0.020
+ PVD      plan-7    C18       0.020
+ PVD      plan-7    N17       0.020
+ PVD      plan-7    O19       0.020
+ PVD      plan-7    C20       0.020
+ PVD      plan-7    H17       0.020
+ PVD      plan-8    C22       0.020
+ PVD      plan-8    C21       0.020
+ PVD      plan-8    O23       0.020
+ PVD      plan-8    O24       0.020
+ PVD      plan-9    N27       0.020
+ PVD      plan-9    C15       0.020
+ PVD      plan-9    C28       0.020
+ PVD      plan-9    H27       0.020
+ PVD      plan-10   C31       0.020
+ PVD      plan-10   C28       0.020
+ PVD      plan-10   O32       0.020
+ PVD      plan-10   N33       0.020
+ PVD      plan-10   H33       0.020
+ PVD      plan-11   N33       0.020
+ PVD      plan-11   C31       0.020
+ PVD      plan-11   C34       0.020
+ PVD      plan-11   H33       0.020
+ PVD      plan-12   N38       0.020
+ PVD      plan-12   C37       0.020
+ PVD      plan-12   C39       0.020
+ PVD      plan-12   H38       0.020
+ PVD      plan-13   C39       0.020
+ PVD      plan-13   N38       0.020
+ PVD      plan-13   N40       0.020
+ PVD      plan-13   N41       0.020
+ PVD      plan-13   H41       0.020
+ PVD      plan-13   H38       0.020
+ PVD      plan-13   H402      0.020
+ PVD      plan-13   H401      0.020
+ PVD      plan-14   N40       0.020
+ PVD      plan-14   C39       0.020
+ PVD      plan-14   H401      0.020
+ PVD      plan-14   H402      0.020
+ PVD      plan-15   C42       0.020
+ PVD      plan-15   C34       0.020
+ PVD      plan-15   O43       0.020
+ PVD      plan-15   N44       0.020
+ PVD      plan-15   H44       0.020
+ PVD      plan-16   N44       0.020
+ PVD      plan-16   C42       0.020
+ PVD      plan-16   C45       0.020
+ PVD      plan-16   H44       0.020
+ PVD      plan-17   C48       0.020
+ PVD      plan-17   C45       0.020
+ PVD      plan-17   O49       0.020
+ PVD      plan-17   N50       0.020
+ PVD      plan-17   H50       0.020
+ PVD      plan-18   N50       0.020
+ PVD      plan-18   C48       0.020
+ PVD      plan-18   C52       0.020
+ PVD      plan-18   H50       0.020
+ PVD      plan-19   N56       0.020
+ PVD      plan-19   C55       0.020
+ PVD      plan-19   O57       0.020
+ PVD      plan-19   C58       0.020
+ PVD      plan-19   H58       0.020
+ PVD      plan-20   C58       0.020
+ PVD      plan-20   N56       0.020
+ PVD      plan-20   O59       0.020
+ PVD      plan-20   H58       0.020
+ PVD      plan-21   C61       0.020
+ PVD      plan-21   C52       0.020
+ PVD      plan-21   O62       0.020
+ PVD      plan-21   N63       0.020
+ PVD      plan-21   H63       0.020
+ PVD      plan-22   N63       0.020
+ PVD      plan-22   C61       0.020
+ PVD      plan-22   C64       0.020
+ PVD      plan-22   H63       0.020
+ PVD      plan-23   N69       0.020
+ PVD      plan-23   C68       0.020
+ PVD      plan-23   C95       0.020
+ PVD      plan-23   H69       0.020
+ PVD      plan-24   C70       0.020
+ PVD      plan-24   C64       0.020
+ PVD      plan-24   O71       0.020
+ PVD      plan-24   N72       0.020
+ PVD      plan-24   H72       0.020
+ PVD      plan-25   N72       0.020
+ PVD      plan-25   C70       0.020
+ PVD      plan-25   C73       0.020
+ PVD      plan-25   H72       0.020
+ PVD      plan-26   N77       0.020
+ PVD      plan-26   C76       0.020
+ PVD      plan-26   O78       0.020
+ PVD      plan-26   C79       0.020
+ PVD      plan-26   H79       0.020
+ PVD      plan-27   C79       0.020
+ PVD      plan-27   N77       0.020
+ PVD      plan-27   O80       0.020
+ PVD      plan-27   H79       0.020
+ PVD      plan-28   C81       0.020
+ PVD      plan-28   C73       0.020
+ PVD      plan-28   O82       0.020
+ PVD      plan-28   N83       0.020
+ PVD      plan-28   H83       0.020
+ PVD      plan-29   N83       0.020
+ PVD      plan-29   C81       0.020
+ PVD      plan-29   C84       0.020
+ PVD      plan-29   H83       0.020
+ PVD      plan-30   C88       0.020
+ PVD      plan-30   C84       0.020
+ PVD      plan-30   O89       0.020
+ PVD      plan-30   N90       0.020
+ PVD      plan-30   H90       0.020
+ PVD      plan-31   N90       0.020
+ PVD      plan-31   C88       0.020
+ PVD      plan-31   C91       0.020
+ PVD      plan-31   H90       0.020
+ PVD      plan-32   C95       0.020
+ PVD      plan-32   N69       0.020
+ PVD      plan-32   C91       0.020
+ PVD      plan-32   O96       0.020
+ PVD      plan-32   H69       0.020
+# ------------------------------------------------------

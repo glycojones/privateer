@@ -1,0 +1,160 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CON      CON 'COBALT TETRAAMMINE ION              ' non-polymer        17   5 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CON
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CON           N4     N    NT3       0.000      0.000    0.000    0.000
+ CON           HN41   H    H         0.000     -0.590    0.100    0.843
+ CON           HN42   H    H         0.000     -0.590    0.100   -0.843
+ CON           HN43   H    H         0.000      0.441   -0.935    0.000
+ CON           CO     CO   CO        3.000      1.415    1.409    0.000
+ CON           N3     N    NT3       0.000      2.501    1.169    1.651
+ CON           HN33   H    H         0.000      1.895    1.269    2.482
+ CON           HN32   H    H         0.000      2.930    0.229    1.650
+ CON           HN31   H    H         0.000      3.246    1.885    1.683
+ CON           N2     N    NT3       0.000      2.501    1.169   -1.651
+ CON           HN23   H    H         0.000      2.930    0.229   -1.650
+ CON           HN22   H    H         0.000      1.895    1.269   -2.482
+ CON           HN21   H    H         0.000      3.246    1.885   -1.683
+ CON           N1     N    NT3       0.000      0.470    3.164    0.000
+ CON           HN13   H    H         0.000     -0.123    3.239   -0.843
+ CON           HN12   H    H         0.000     -0.123    3.239    0.843
+ CON           HN11   H    H         0.000      1.163    3.931   -0.000
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CON      N4     n/a    CO     START
+ CON      HN41   N4     .      .
+ CON      HN42   N4     .      .
+ CON      HN43   N4     .      .
+ CON      CO     N4     N1     .
+ CON      N3     CO     HN31   .
+ CON      HN33   N3     .      .
+ CON      HN32   N3     .      .
+ CON      HN31   N3     .      .
+ CON      N2     CO     HN21   .
+ CON      HN23   N2     .      .
+ CON      HN22   N2     .      .
+ CON      HN21   N2     .      .
+ CON      N1     CO     HN11   .
+ CON      HN13   N1     .      .
+ CON      HN12   N1     .      .
+ CON      HN11   N1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CON       N1        CO        single    1.980     0.020     1.980     0.020     
+CON       N2        CO        single    1.980     0.020     1.980     0.020     
+CON       N3        CO        single    1.980     0.020     1.980     0.020     
+CON       CO        N4        single    1.980     0.020     1.980     0.020     
+CON       HN11      N1        single    1.036     0.016     0.914     0.007     
+CON       HN12      N1        single    1.036     0.016     0.914     0.007     
+CON       HN13      N1        single    1.036     0.016     0.914     0.007     
+CON       HN21      N2        single    1.036     0.016     0.914     0.007     
+CON       HN22      N2        single    1.036     0.016     0.914     0.007     
+CON       HN23      N2        single    1.036     0.016     0.914     0.007     
+CON       HN31      N3        single    1.036     0.016     0.914     0.007     
+CON       HN32      N3        single    1.036     0.016     0.914     0.007     
+CON       HN33      N3        single    1.036     0.016     0.914     0.007     
+CON       HN41      N4        single    1.036     0.016     0.914     0.007     
+CON       HN42      N4        single    1.036     0.016     0.914     0.007     
+CON       HN43      N4        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CON      HN41   N4     HN42    109.470    3.000
+ CON      HN41   N4     HN43    109.470    3.000
+ CON      HN42   N4     HN43    109.470    3.000
+ CON      HN41   N4     CO      109.500    3.000
+ CON      HN42   N4     CO      109.500    3.000
+ CON      HN43   N4     CO      109.500    3.000
+ CON      N4     CO     N3       90.000    3.000
+ CON      N4     CO     N2       90.000    3.000
+ CON      N4     CO     N1       90.000    3.000
+ CON      N3     CO     N2       90.000    3.000
+ CON      N3     CO     N1       90.000    3.000
+ CON      N2     CO     N1       90.000    3.000
+ CON      CO     N3     HN33    109.500    3.000
+ CON      CO     N3     HN32    109.500    3.000
+ CON      CO     N3     HN31    109.500    3.000
+ CON      HN33   N3     HN32    109.470    3.000
+ CON      HN33   N3     HN31    109.470    3.000
+ CON      HN32   N3     HN31    109.470    3.000
+ CON      CO     N2     HN23    109.500    3.000
+ CON      CO     N2     HN22    109.500    3.000
+ CON      CO     N2     HN21    109.500    3.000
+ CON      HN23   N2     HN22    109.470    3.000
+ CON      HN23   N2     HN21    109.470    3.000
+ CON      HN22   N2     HN21    109.470    3.000
+ CON      CO     N1     HN13    109.500    3.000
+ CON      CO     N1     HN12    109.500    3.000
+ CON      CO     N1     HN11    109.500    3.000
+ CON      HN13   N1     HN12    109.470    3.000
+ CON      HN13   N1     HN11    109.470    3.000
+ CON      HN12   N1     HN11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CON      var_1    HN43   N4     CO     N1       180.000   20.000   3
+ CON      var_2    N4     CO     N3     HN31     180.000   20.000   3
+ CON      var_3    N4     CO     N2     HN21     180.000   20.000   3
+ CON      var_4    N4     CO     N1     HN11     180.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CON      chir_01  CO     N4     N3     N2        negativ
+# ------------------------------------------------------

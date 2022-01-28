@@ -1,0 +1,415 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CBS      CBS 'DI(N-ACETYL-D-GLUCOSAMINE)          ' non-polymer        57  29 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CBS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CBS           O7B    O    O         0.000      0.000    0.000    0.000
+ CBS           C7B    C    C         0.000     -0.225   -1.137   -0.352
+ CBS           C8B    C    CH3       0.000      0.803   -2.215   -0.123
+ CBS           H83B   H    H         0.000      0.391   -2.973    0.492
+ CBS           H82B   H    H         0.000      1.092   -2.633   -1.052
+ CBS           H81B   H    H         0.000      1.653   -1.798    0.355
+ CBS           N2B    N    NH1       0.000     -1.395   -1.439   -0.950
+ CBS           HN2B   H    H         0.000     -1.582   -2.387   -1.244
+ CBS           C2B    C    CH1       0.000     -2.395   -0.392   -1.174
+ CBS           H2B    H    H         0.000     -2.310    0.371   -0.387
+ CBS           C3B    C    CH1       0.000     -3.798   -1.006   -1.143
+ CBS           H3B    H    H         0.000     -3.850   -1.841   -1.855
+ CBS           O3B    O    OH1       0.000     -4.091   -1.481    0.173
+ CBS           HO3B   H    H         0.000     -3.448   -2.160    0.421
+ CBS           C4B    C    CH1       0.000     -4.814    0.070   -1.538
+ CBS           H4B    H    H         0.000     -4.838    0.854   -0.769
+ CBS           C5B    C    CH1       0.000     -4.399    0.681   -2.878
+ CBS           H5B    H    H         0.000     -4.355   -0.108   -3.642
+ CBS           C6B    C    CH2       0.000     -5.426    1.736   -3.295
+ CBS           H61B   H    H         0.000     -5.417    2.556   -2.575
+ CBS           H62B   H    H         0.000     -6.420    1.285   -3.319
+ CBS           O6B    O    OH1       0.000     -5.096    2.235   -4.593
+ CBS           HO6B   H    H         0.000     -5.746    2.901   -4.855
+ CBS           O5B    O    O2        0.000     -3.117    1.292   -2.753
+ CBS           C1B    C    CH1       0.000     -2.161    0.255   -2.540
+ CBS           H1B    H    H         0.000     -2.268   -0.506   -3.326
+ CBS           O1B    O    OH1       0.000     -0.844    0.805   -2.588
+ CBS           HO1B   H    H         0.000     -0.697    1.213   -3.451
+ CBS           O1A    O    O2        0.000     -6.111   -0.516   -1.662
+ CBS           C1A    C    CH1       0.000     -6.972    0.193   -0.770
+ CBS           H1A    H    H         0.000     -6.900    1.271   -0.972
+ CBS           O5A    O    O2        0.000     -6.576   -0.065    0.576
+ CBS           C5A    C    CH1       0.000     -7.337    0.795    1.422
+ CBS           H5A    H    H         0.000     -7.239    1.832    1.072
+ CBS           C6A    C    CH2       0.000     -6.813    0.690    2.856
+ CBS           H61A   H    H         0.000     -6.909   -0.340    3.204
+ CBS           H62A   H    H         0.000     -7.395    1.348    3.504
+ CBS           O6A    O    OH1       0.000     -5.438    1.080    2.891
+ CBS           HO6A   H    H         0.000     -5.108    1.014    3.798
+ CBS           C4A    C    CH1       0.000     -8.810    0.384    1.389
+ CBS           H4A    H    H         0.000     -8.908   -0.661    1.716
+ CBS           O4A    O    OH1       0.000     -9.562    1.231    2.260
+ CBS           HO4A   H    H         0.000     -9.224    1.146    3.162
+ CBS           C3A    C    CH1       0.000     -9.335    0.523   -0.045
+ CBS           H3A    H    H         0.000     -9.335    1.583   -0.337
+ CBS           O3A    O    OH1       0.000    -10.664    0.005   -0.121
+ CBS           HO3A   H    H         0.000    -11.237    0.499    0.481
+ CBS           C2A    C    CH1       0.000     -8.415   -0.267   -0.980
+ CBS           H2A    H    H         0.000     -8.496   -1.340   -0.755
+ CBS           N2A    N    NH1       0.000     -8.808   -0.027   -2.371
+ CBS           HN2A   H    H         0.000     -9.223    0.856   -2.633
+ CBS           C7A    C    C         0.000     -8.615   -0.983   -3.301
+ CBS           O7A    O    O         0.000     -8.116   -2.043   -2.987
+ CBS           C8A    C    CH3       0.000     -9.018   -0.736   -4.732
+ CBS           H83A   H    H         0.000    -10.059   -0.541   -4.779
+ CBS           H82A   H    H         0.000     -8.487    0.099   -5.111
+ CBS           H81A   H    H         0.000     -8.793   -1.590   -5.317
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CBS      O7B    n/a    C7B    START
+ CBS      C7B    O7B    N2B    .
+ CBS      C8B    C7B    H81B   .
+ CBS      H83B   C8B    .      .
+ CBS      H82B   C8B    .      .
+ CBS      H81B   C8B    .      .
+ CBS      N2B    C7B    C2B    .
+ CBS      HN2B   N2B    .      .
+ CBS      C2B    N2B    C3B    .
+ CBS      H2B    C2B    .      .
+ CBS      C3B    C2B    C4B    .
+ CBS      H3B    C3B    .      .
+ CBS      O3B    C3B    HO3B   .
+ CBS      HO3B   O3B    .      .
+ CBS      C4B    C3B    O1A    .
+ CBS      H4B    C4B    .      .
+ CBS      C5B    C4B    O5B    .
+ CBS      H5B    C5B    .      .
+ CBS      C6B    C5B    O6B    .
+ CBS      H61B   C6B    .      .
+ CBS      H62B   C6B    .      .
+ CBS      O6B    C6B    HO6B   .
+ CBS      HO6B   O6B    .      .
+ CBS      O5B    C5B    C1B    .
+ CBS      C1B    O5B    O1B    .
+ CBS      H1B    C1B    .      .
+ CBS      O1B    C1B    HO1B   .
+ CBS      HO1B   O1B    .      .
+ CBS      O1A    C4B    C1A    .
+ CBS      C1A    O1A    O5A    .
+ CBS      H1A    C1A    .      .
+ CBS      O5A    C1A    C5A    .
+ CBS      C5A    O5A    C4A    .
+ CBS      H5A    C5A    .      .
+ CBS      C6A    C5A    O6A    .
+ CBS      H61A   C6A    .      .
+ CBS      H62A   C6A    .      .
+ CBS      O6A    C6A    HO6A   .
+ CBS      HO6A   O6A    .      .
+ CBS      C4A    C5A    C3A    .
+ CBS      H4A    C4A    .      .
+ CBS      O4A    C4A    HO4A   .
+ CBS      HO4A   O4A    .      .
+ CBS      C3A    C4A    C2A    .
+ CBS      H3A    C3A    .      .
+ CBS      O3A    C3A    HO3A   .
+ CBS      HO3A   O3A    .      .
+ CBS      C2A    C3A    N2A    .
+ CBS      H2A    C2A    .      .
+ CBS      N2A    C2A    C7A    .
+ CBS      HN2A   N2A    .      .
+ CBS      C7A    N2A    C8A    .
+ CBS      O7A    C7A    .      .
+ CBS      C8A    C7A    H81A   .
+ CBS      H83A   C8A    .      .
+ CBS      H82A   C8A    .      .
+ CBS      H81A   C8A    .      END
+ CBS      C1A    C2A    .    ADD
+ CBS      C1B    C2B    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CBS       C1A       C2A       single    1.524     0.020     1.524     0.020     
+CBS       C1A       O1A       single    1.426     0.020     1.426     0.020     
+CBS       O5A       C1A       single    1.426     0.020     1.426     0.020     
+CBS       H1A       C1A       single    1.089     0.010     0.989     0.005     
+CBS       C2A       C3A       single    1.524     0.020     1.524     0.020     
+CBS       N2A       C2A       single    1.450     0.020     1.450     0.020     
+CBS       H2A       C2A       single    1.089     0.010     0.989     0.005     
+CBS       C3A       C4A       single    1.524     0.020     1.524     0.020     
+CBS       O3A       C3A       single    1.432     0.020     1.432     0.020     
+CBS       H3A       C3A       single    1.089     0.010     0.989     0.005     
+CBS       C4A       C5A       single    1.524     0.020     1.524     0.020     
+CBS       O4A       C4A       single    1.432     0.020     1.432     0.020     
+CBS       H4A       C4A       single    1.089     0.010     0.989     0.005     
+CBS       C6A       C5A       single    1.524     0.020     1.524     0.020     
+CBS       C5A       O5A       single    1.426     0.020     1.426     0.020     
+CBS       H5A       C5A       single    1.089     0.010     0.989     0.005     
+CBS       O6A       C6A       single    1.432     0.020     1.432     0.020     
+CBS       H61A      C6A       single    1.089     0.010     0.989     0.005     
+CBS       H62A      C6A       single    1.089     0.010     0.989     0.005     
+CBS       C8A       C7A       single    1.500     0.020     1.500     0.020     
+CBS       C7A       N2A       single    1.330     0.020     1.330     0.020     
+CBS       O7A       C7A       double    1.220     0.020     1.220     0.020     
+CBS       H81A      C8A       single    1.089     0.010     0.989     0.005     
+CBS       H82A      C8A       single    1.089     0.010     0.989     0.005     
+CBS       H83A      C8A       single    1.089     0.010     0.989     0.005     
+CBS       HN2A      N2A       single    1.016     0.010     0.899     0.007     
+CBS       O1A       C4B       single    1.426     0.020     1.426     0.020     
+CBS       HO3A      O3A       single    0.970     0.012     0.839     0.014     
+CBS       HO4A      O4A       single    0.970     0.012     0.839     0.014     
+CBS       HO6A      O6A       single    0.970     0.012     0.839     0.014     
+CBS       C1B       C2B       single    1.524     0.020     1.524     0.020     
+CBS       O1B       C1B       single    1.432     0.020     1.432     0.020     
+CBS       C1B       O5B       single    1.426     0.020     1.426     0.020     
+CBS       H1B       C1B       single    1.089     0.010     0.989     0.005     
+CBS       C3B       C2B       single    1.524     0.020     1.524     0.020     
+CBS       C2B       N2B       single    1.450     0.020     1.450     0.020     
+CBS       H2B       C2B       single    1.089     0.010     0.989     0.005     
+CBS       C4B       C3B       single    1.524     0.020     1.524     0.020     
+CBS       O3B       C3B       single    1.432     0.020     1.432     0.020     
+CBS       H3B       C3B       single    1.089     0.010     0.989     0.005     
+CBS       C5B       C4B       single    1.524     0.020     1.524     0.020     
+CBS       H4B       C4B       single    1.089     0.010     0.989     0.005     
+CBS       C6B       C5B       single    1.524     0.020     1.524     0.020     
+CBS       O5B       C5B       single    1.426     0.020     1.426     0.020     
+CBS       H5B       C5B       single    1.089     0.010     0.989     0.005     
+CBS       O6B       C6B       single    1.432     0.020     1.432     0.020     
+CBS       H61B      C6B       single    1.089     0.010     0.989     0.005     
+CBS       H62B      C6B       single    1.089     0.010     0.989     0.005     
+CBS       C8B       C7B       single    1.500     0.020     1.500     0.020     
+CBS       N2B       C7B       single    1.330     0.020     1.330     0.020     
+CBS       C7B       O7B       double    1.220     0.020     1.220     0.020     
+CBS       H81B      C8B       single    1.089     0.010     0.989     0.005     
+CBS       H82B      C8B       single    1.089     0.010     0.989     0.005     
+CBS       H83B      C8B       single    1.089     0.010     0.989     0.005     
+CBS       HN2B      N2B       single    1.016     0.010     0.899     0.007     
+CBS       HO1B      O1B       single    0.970     0.012     0.839     0.014     
+CBS       HO3B      O3B       single    0.970     0.012     0.839     0.014     
+CBS       HO6B      O6B       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CBS      O7B    C7B    C8B     123.000    3.000
+ CBS      O7B    C7B    N2B     123.000    3.000
+ CBS      C8B    C7B    N2B     116.500    3.000
+ CBS      C7B    C8B    H83B    109.470    3.000
+ CBS      C7B    C8B    H82B    109.470    3.000
+ CBS      C7B    C8B    H81B    109.470    3.000
+ CBS      H83B   C8B    H82B    109.470    3.000
+ CBS      H83B   C8B    H81B    109.470    3.000
+ CBS      H82B   C8B    H81B    109.470    3.000
+ CBS      C7B    N2B    HN2B    120.000    3.000
+ CBS      C7B    N2B    C2B     121.500    3.000
+ CBS      HN2B   N2B    C2B     118.500    3.000
+ CBS      N2B    C2B    H2B     108.550    3.000
+ CBS      N2B    C2B    C3B     110.000    3.000
+ CBS      N2B    C2B    C1B     110.000    3.000
+ CBS      H2B    C2B    C3B     108.340    3.000
+ CBS      H2B    C2B    C1B     108.340    3.000
+ CBS      C3B    C2B    C1B     111.000    3.000
+ CBS      C2B    C3B    H3B     108.340    3.000
+ CBS      C2B    C3B    O3B     109.470    3.000
+ CBS      C2B    C3B    C4B     111.000    3.000
+ CBS      H3B    C3B    O3B     109.470    3.000
+ CBS      H3B    C3B    C4B     108.340    3.000
+ CBS      O3B    C3B    C4B     109.470    3.000
+ CBS      C3B    O3B    HO3B    109.470    3.000
+ CBS      C3B    C4B    H4B     108.340    3.000
+ CBS      C3B    C4B    C5B     111.000    3.000
+ CBS      C3B    C4B    O1A     109.470    3.000
+ CBS      H4B    C4B    C5B     108.340    3.000
+ CBS      H4B    C4B    O1A     109.470    3.000
+ CBS      C5B    C4B    O1A     109.470    3.000
+ CBS      C4B    C5B    H5B     108.340    3.000
+ CBS      C4B    C5B    C6B     111.000    3.000
+ CBS      C4B    C5B    O5B     109.470    3.000
+ CBS      H5B    C5B    C6B     108.340    3.000
+ CBS      H5B    C5B    O5B     109.470    3.000
+ CBS      C6B    C5B    O5B     109.470    3.000
+ CBS      C5B    C6B    H61B    109.470    3.000
+ CBS      C5B    C6B    H62B    109.470    3.000
+ CBS      C5B    C6B    O6B     109.470    3.000
+ CBS      H61B   C6B    H62B    107.900    3.000
+ CBS      H61B   C6B    O6B     109.470    3.000
+ CBS      H62B   C6B    O6B     109.470    3.000
+ CBS      C6B    O6B    HO6B    109.470    3.000
+ CBS      C5B    O5B    C1B     111.800    3.000
+ CBS      O5B    C1B    H1B     109.470    3.000
+ CBS      O5B    C1B    O1B     109.470    3.000
+ CBS      O5B    C1B    C2B     109.470    3.000
+ CBS      H1B    C1B    O1B     109.470    3.000
+ CBS      H1B    C1B    C2B     108.340    3.000
+ CBS      O1B    C1B    C2B     109.470    3.000
+ CBS      C1B    O1B    HO1B    109.470    3.000
+ CBS      C4B    O1A    C1A     111.800    3.000
+ CBS      O1A    C1A    H1A     109.470    3.000
+ CBS      O1A    C1A    O5A     109.470    3.000
+ CBS      O1A    C1A    C2A     109.470    3.000
+ CBS      H1A    C1A    O5A     109.470    3.000
+ CBS      H1A    C1A    C2A     108.340    3.000
+ CBS      O5A    C1A    C2A     109.470    3.000
+ CBS      C1A    O5A    C5A     111.800    3.000
+ CBS      O5A    C5A    H5A     109.470    3.000
+ CBS      O5A    C5A    C6A     109.470    3.000
+ CBS      O5A    C5A    C4A     109.470    3.000
+ CBS      H5A    C5A    C6A     108.340    3.000
+ CBS      H5A    C5A    C4A     108.340    3.000
+ CBS      C6A    C5A    C4A     111.000    3.000
+ CBS      C5A    C6A    H61A    109.470    3.000
+ CBS      C5A    C6A    H62A    109.470    3.000
+ CBS      C5A    C6A    O6A     109.470    3.000
+ CBS      H61A   C6A    H62A    107.900    3.000
+ CBS      H61A   C6A    O6A     109.470    3.000
+ CBS      H62A   C6A    O6A     109.470    3.000
+ CBS      C6A    O6A    HO6A    109.470    3.000
+ CBS      C5A    C4A    H4A     108.340    3.000
+ CBS      C5A    C4A    O4A     109.470    3.000
+ CBS      C5A    C4A    C3A     111.000    3.000
+ CBS      H4A    C4A    O4A     109.470    3.000
+ CBS      H4A    C4A    C3A     108.340    3.000
+ CBS      O4A    C4A    C3A     109.470    3.000
+ CBS      C4A    O4A    HO4A    109.470    3.000
+ CBS      C4A    C3A    H3A     108.340    3.000
+ CBS      C4A    C3A    O3A     109.470    3.000
+ CBS      C4A    C3A    C2A     111.000    3.000
+ CBS      H3A    C3A    O3A     109.470    3.000
+ CBS      H3A    C3A    C2A     108.340    3.000
+ CBS      O3A    C3A    C2A     109.470    3.000
+ CBS      C3A    O3A    HO3A    109.470    3.000
+ CBS      C3A    C2A    H2A     108.340    3.000
+ CBS      C3A    C2A    N2A     110.000    3.000
+ CBS      C3A    C2A    C1A     111.000    3.000
+ CBS      H2A    C2A    N2A     108.550    3.000
+ CBS      H2A    C2A    C1A     108.340    3.000
+ CBS      N2A    C2A    C1A     110.000    3.000
+ CBS      C2A    N2A    HN2A    118.500    3.000
+ CBS      C2A    N2A    C7A     121.500    3.000
+ CBS      HN2A   N2A    C7A     120.000    3.000
+ CBS      N2A    C7A    O7A     123.000    3.000
+ CBS      N2A    C7A    C8A     116.500    3.000
+ CBS      O7A    C7A    C8A     123.000    3.000
+ CBS      C7A    C8A    H83A    109.470    3.000
+ CBS      C7A    C8A    H82A    109.470    3.000
+ CBS      C7A    C8A    H81A    109.470    3.000
+ CBS      H83A   C8A    H82A    109.470    3.000
+ CBS      H83A   C8A    H81A    109.470    3.000
+ CBS      H82A   C8A    H81A    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CBS      var_1    O7B    C7B    C8B    H81B       0.022   20.000   1
+ CBS      CONST_1  O7B    C7B    N2B    C2B        0.000    0.000   0
+ CBS      var_2    C7B    N2B    C2B    C3B     -150.181   20.000   3
+ CBS      var_3    N2B    C2B    C3B    C4B      180.000   20.000   3
+ CBS      var_4    C2B    C3B    O3B    HO3B     -60.638   20.000   1
+ CBS      var_5    C2B    C3B    C4B    O1A      180.000   20.000   3
+ CBS      var_6    C3B    C4B    C5B    O5B      -60.000   20.000   3
+ CBS      var_7    C4B    C5B    C6B    O6B     -175.618   20.000   3
+ CBS      var_8    C5B    C6B    O6B    HO6B    -179.990   20.000   1
+ CBS      var_9    C4B    C5B    O5B    C1B       60.000   20.000   1
+ CBS      var_10   C5B    O5B    C1B    O1B      180.000   20.000   1
+ CBS      var_11   O5B    C1B    C2B    N2B      180.000   20.000   3
+ CBS      var_12   O5B    C1B    O1B    HO1B     -59.618   20.000   1
+ CBS      var_13   C3B    C4B    O1A    C1A      122.931   20.000   1
+ CBS      var_14   C4B    O1A    C1A    O5A      -66.796   20.000   1
+ CBS      var_15   O1A    C1A    C2A    C3A      180.000   20.000   3
+ CBS      var_16   O1A    C1A    O5A    C5A      180.000   20.000   1
+ CBS      var_17   C1A    O5A    C5A    C4A       60.000   20.000   1
+ CBS      var_18   O5A    C5A    C6A    O6A       59.954   20.000   3
+ CBS      var_19   C5A    C6A    O6A    HO6A     179.948   20.000   1
+ CBS      var_20   O5A    C5A    C4A    C3A      -60.000   20.000   3
+ CBS      var_21   C5A    C4A    O4A    HO4A     -59.990   20.000   1
+ CBS      var_22   C5A    C4A    C3A    C2A       60.000   20.000   3
+ CBS      var_23   C4A    C3A    O3A    HO3A      59.965   20.000   1
+ CBS      var_24   C4A    C3A    C2A    N2A      180.000   20.000   3
+ CBS      var_25   C3A    C2A    N2A    C7A     -149.943   20.000   3
+ CBS      CONST_2  C2A    N2A    C7A    C8A      180.000    0.000   0
+ CBS      var_26   N2A    C7A    C8A    H81A     179.983   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CBS      chir_01  C1A    C2A    O1A    O5A       positiv
+ CBS      chir_02  C2A    C1A    C3A    N2A       negativ
+ CBS      chir_03  C3A    C2A    C4A    O3A       positiv
+ CBS      chir_04  C4A    C3A    C5A    O4A       negativ
+ CBS      chir_05  C5A    C4A    C6A    O5A       negativ
+ CBS      chir_06  C1B    C2B    O1B    O5B       positiv
+ CBS      chir_07  C2B    C1B    C3B    N2B       negativ
+ CBS      chir_08  C3B    C2B    C4B    O3B       positiv
+ CBS      chir_09  C4B    O1A    C3B    C5B       negativ
+ CBS      chir_10  C5B    C4B    C6B    O5B       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CBS      plan-1    C7A       0.020
+ CBS      plan-1    C8A       0.020
+ CBS      plan-1    N2A       0.020
+ CBS      plan-1    O7A       0.020
+ CBS      plan-1    HN2A      0.020
+ CBS      plan-2    N2A       0.020
+ CBS      plan-2    C2A       0.020
+ CBS      plan-2    C7A       0.020
+ CBS      plan-2    HN2A      0.020
+ CBS      plan-3    C7B       0.020
+ CBS      plan-3    C8B       0.020
+ CBS      plan-3    N2B       0.020
+ CBS      plan-3    O7B       0.020
+ CBS      plan-3    HN2B      0.020
+ CBS      plan-4    N2B       0.020
+ CBS      plan-4    C2B       0.020
+ CBS      plan-4    C7B       0.020
+ CBS      plan-4    HN2B      0.020
+# ------------------------------------------------------

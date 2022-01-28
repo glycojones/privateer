@@ -1,0 +1,137 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MLT     MLT     D-MALATE     NON-POLYMER     13     9     .     
+#
+data_comp_MLT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MLT     C1      C       C       0       -1.364      0.870       -0.104      
+MLT     O1      O       O       0       -1.929      1.357       -1.105      
+MLT     O2      O       OC      -1      -1.367      1.374       1.039       
+MLT     C2      C       CH1     0       -0.602      -0.448      -0.300      
+MLT     O3      O       OH1     0       -0.755      -1.295      0.829       
+MLT     C3      C       CH2     0       0.890       -0.215      -0.601      
+MLT     C4      C       C       0       1.686       0.351       0.564       
+MLT     O4      O       O       0       2.272       -0.447      1.322       
+MLT     O5      O       OC      -1      1.719       1.589       0.711       
+MLT     H2      H       H       0       -1.001      -0.906      -1.078      
+MLT     HO3     H       H       0       -0.462      -2.065      0.627       
+MLT     H31     H       H       0       0.965       0.400       -1.358      
+MLT     H32     H       H       0       1.293       -1.065      -0.871      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MLT       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+MLT       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+MLT       C1        C2        SINGLE    n         1.533     0.010     1.533     0.010     
+MLT       C2        O3        SINGLE    n         1.417     0.015     1.417     0.015     
+MLT       C2        C3        SINGLE    n         1.538     0.011     1.538     0.011     
+MLT       C3        C4        SINGLE    n         1.519     0.012     1.519     0.012     
+MLT       C4        O4        DOUBLE    n         1.247     0.019     1.247     0.019     
+MLT       C4        O5        SINGLE    n         1.247     0.019     1.247     0.019     
+MLT       C2        H2        SINGLE    n         1.089     0.010     0.987     0.010     
+MLT       O3        HO3       SINGLE    n         0.970     0.012     0.848     0.020     
+MLT       C3        H31       SINGLE    n         1.089     0.010     0.978     0.011     
+MLT       C3        H32       SINGLE    n         1.089     0.010     0.978     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MLT          O1          C1          O2     125.364    1.50
+MLT          O1          C1          C2     117.318    2.01
+MLT          O2          C1          C2     117.318    2.01
+MLT          C1          C2          O3     110.439    2.49
+MLT          C1          C2          C3     111.784    1.97
+MLT          C1          C2          H2     107.755    1.52
+MLT          O3          C2          C3     110.185    1.71
+MLT          O3          C2          H2     108.401    1.50
+MLT          C3          C2          H2     108.593    1.79
+MLT          C2          O3         HO3     108.308    3.00
+MLT          C2          C3          C4     111.511    2.91
+MLT          C2          C3         H31     108.936    1.50
+MLT          C2          C3         H32     108.936    1.50
+MLT          C4          C3         H31     108.816    1.50
+MLT          C4          C3         H32     108.816    1.50
+MLT         H31          C3         H32     107.737    1.50
+MLT          C3          C4          O4     118.254    1.50
+MLT          C3          C4          O5     118.254    1.50
+MLT          O4          C4          O5     123.492    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MLT             sp2_sp3_1          O1          C1          C2          O3       0.000   10.00     6
+MLT             sp3_sp3_1          C1          C2          O3         HO3     180.000   10.00     3
+MLT             sp3_sp3_4          C1          C2          C3          C4     180.000   10.00     3
+MLT             sp2_sp3_8          O4          C4          C3          C2     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MLT    chir_1    C2    O3    C1    C3    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MLT    plan-1          C1   0.020
+MLT    plan-1          C2   0.020
+MLT    plan-1          O1   0.020
+MLT    plan-1          O2   0.020
+MLT    plan-2          C3   0.020
+MLT    plan-2          C4   0.020
+MLT    plan-2          O4   0.020
+MLT    plan-2          O5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MLT SMILES           ACDLabs              12.01 "O=C(O)C(O)CC(=O)O"
+MLT InChI            InChI                1.03  "InChI=1S/C4H6O5/c5-2(4(8)9)1-3(6)7/h2,5H,1H2,(H,6,7)(H,8,9)/t2-/m1/s1"
+MLT InChIKey         InChI                1.03  BJEPYKJPYRNKOW-UWTATZPHSA-N
+MLT SMILES_CANONICAL CACTVS               3.370 "O[C@H](CC(O)=O)C(O)=O"
+MLT SMILES           CACTVS               3.370 "O[CH](CC(O)=O)C(O)=O"
+MLT SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C([C@H](C(=O)O)O)C(=O)O"
+MLT SMILES           "OpenEye OEToolkits" 1.7.6 "C(C(C(=O)O)O)C(=O)O"
+MLT ?                acedrg               190         "dictionary generator"                  
+MLT ?                acedrg_database      11          "data source"                           
+MLT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MLT ?                refmac5              5.8.0158    "optimization tool"                     

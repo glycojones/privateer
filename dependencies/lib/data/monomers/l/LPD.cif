@@ -1,0 +1,190 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LPD      LPD 'L-PROLINAMIDE                       ' non-polymer        18   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LPD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LPD           O      O    O         0.000      0.000    0.000    0.000
+ LPD           C      C    C         0.000     -0.769   -0.063   -0.955
+ LPD           N2     N    NH2       0.000     -1.508    0.999   -1.423
+ LPD           HN22   H    H         0.000     -2.132    0.889   -2.221
+ LPD           HN21   H    H         0.000     -1.444    1.914   -0.980
+ LPD           CA     C    CH1       0.000     -1.000   -1.337   -1.709
+ LPD           HA     H    H         0.000     -0.727   -1.210   -2.766
+ LPD           CB     C    CH2       0.000     -2.444   -1.813   -1.589
+ LPD           HB2    H    H         0.000     -2.872   -2.046   -2.566
+ LPD           HB3    H    H         0.000     -3.069   -1.074   -1.085
+ LPD           CG     C    CH2       0.000     -2.376   -3.082   -0.747
+ LPD           HG3    H    H         0.000     -2.439   -3.983   -1.361
+ LPD           HG2    H    H         0.000     -3.158   -3.108    0.015
+ LPD           CD     C    CH2       0.000     -1.019   -3.019   -0.079
+ LPD           HD3    H    H         0.000     -0.620   -4.008    0.157
+ LPD           HD2    H    H         0.000     -1.022   -2.405    0.824
+ LPD           N      N    NH1       0.000     -0.186   -2.386   -1.096
+ LPD           H      H    H         0.000      0.767   -2.626   -1.332
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LPD      O      n/a    C      START
+ LPD      C      O      CA     .
+ LPD      N2     C      HN21   .
+ LPD      HN22   N2     .      .
+ LPD      HN21   N2     .      .
+ LPD      CA     C      CB     .
+ LPD      HA     CA     .      .
+ LPD      CB     CA     CG     .
+ LPD      HB2    CB     .      .
+ LPD      HB3    CB     .      .
+ LPD      CG     CB     CD     .
+ LPD      HG3    CG     .      .
+ LPD      HG2    CG     .      .
+ LPD      CD     CG     N      .
+ LPD      HD3    CD     .      .
+ LPD      HD2    CD     .      .
+ LPD      N      CD     H      .
+ LPD      H      N      .      END
+ LPD      CA     N      .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LPD       C         O         double    1.220     0.020     1.220     0.020     
+LPD       N2        C         single    1.332     0.020     1.332     0.020     
+LPD       CA        C         single    1.500     0.020     1.500     0.020     
+LPD       HN21      N2        single    1.016     0.010     0.899     0.007     
+LPD       HN22      N2        single    1.016     0.010     0.899     0.007     
+LPD       CA        N         single    1.450     0.020     1.450     0.020     
+LPD       CB        CA        single    1.524     0.020     1.524     0.020     
+LPD       HA        CA        single    1.089     0.010     0.989     0.005     
+LPD       N         CD        single    1.450     0.020     1.450     0.020     
+LPD       H         N         single    1.036     0.016     0.914     0.007     
+LPD       CD        CG        single    1.524     0.020     1.524     0.020     
+LPD       HD3       CD        single    1.089     0.010     0.989     0.005     
+LPD       HD2       CD        single    1.089     0.010     0.989     0.005     
+LPD       CG        CB        single    1.524     0.020     1.524     0.020     
+LPD       HG3       CG        single    1.089     0.010     0.989     0.005     
+LPD       HG2       CG        single    1.089     0.010     0.989     0.005     
+LPD       HB2       CB        single    1.089     0.010     0.989     0.005     
+LPD       HB3       CB        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LPD      O      C      N2      123.000    3.000
+ LPD      O      C      CA      120.500    3.000
+ LPD      N2     C      CA      120.000    3.000
+ LPD      C      N2     HN22    120.000    3.000
+ LPD      C      N2     HN21    120.000    3.000
+ LPD      HN22   N2     HN21    120.000    3.000
+ LPD      C      CA     HA      108.810    3.000
+ LPD      C      CA     CB      109.470    3.000
+ LPD      C      CA     N       111.600    3.000
+ LPD      HA     CA     CB      108.340    3.000
+ LPD      HA     CA     N       108.550    3.000
+ LPD      CB     CA     N       110.000    3.000
+ LPD      CA     CB     HB2     109.470    3.000
+ LPD      CA     CB     HB3     109.470    3.000
+ LPD      CA     CB     CG      111.000    3.000
+ LPD      HB2    CB     HB3     107.900    3.000
+ LPD      HB2    CB     CG      109.470    3.000
+ LPD      HB3    CB     CG      109.470    3.000
+ LPD      CB     CG     HG3     109.470    3.000
+ LPD      CB     CG     HG2     109.470    3.000
+ LPD      CB     CG     CD      111.000    3.000
+ LPD      HG3    CG     HG2     107.900    3.000
+ LPD      HG3    CG     CD      109.470    3.000
+ LPD      HG2    CG     CD      109.470    3.000
+ LPD      CG     CD     HD3     109.470    3.000
+ LPD      CG     CD     HD2     109.470    3.000
+ LPD      CG     CD     N       112.000    3.000
+ LPD      HD3    CD     HD2     107.900    3.000
+ LPD      HD3    CD     N       109.470    3.000
+ LPD      HD2    CD     N       109.470    3.000
+ LPD      CD     N      H       118.500    3.000
+ LPD      CD     N      CA      120.000    3.000
+ LPD      H      N      CA      118.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LPD      CONST_1  O      C      N2     HN21       0.000    0.000   0
+ LPD      var_1    O      C      CA     CB       116.446   20.000   3
+ LPD      var_2    C      CA     N      CD        90.000   20.000   3
+ LPD      var_3    C      CA     CB     CG      -120.000   20.000   3
+ LPD      var_4    CA     CB     CG     CD        30.000   20.000   3
+ LPD      var_5    CB     CG     CD     N        -30.000   20.000   3
+ LPD      var_6    CG     CD     N      CA        30.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LPD      chir_01  CA     C      N      CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LPD      plan-1    C         0.020
+ LPD      plan-1    O         0.020
+ LPD      plan-1    N2        0.020
+ LPD      plan-1    CA        0.020
+ LPD      plan-1    HN22      0.020
+ LPD      plan-1    HN21      0.020
+ LPD      plan-2    N2        0.020
+ LPD      plan-2    C         0.020
+ LPD      plan-2    HN21      0.020
+ LPD      plan-2    HN22      0.020
+ LPD      plan-3    N         0.020
+ LPD      plan-3    CA        0.020
+ LPD      plan-3    CD        0.020
+ LPD      plan-3    H         0.020
+# ------------------------------------------------------

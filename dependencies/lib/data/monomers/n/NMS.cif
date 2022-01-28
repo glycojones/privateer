@@ -1,0 +1,346 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NMS      NMS '"1-(O2-(2-METHYLAMINO-2-OXO-ETHYL)-O' DNA                45  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NMS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NMS           OP3    O    OP       -0.666      0.000    0.000    0.000
+ NMS           P      P    P         0.000     -0.530    1.416    0.049
+ NMS           OP2    O    OP       -0.666     -1.420    1.497   -1.172
+ NMS           OP1    O    OP       -0.666      0.531    2.491    0.149
+ NMS           "O5'"  O    O2        0.000     -1.575    1.370    1.285
+ NMS           "C5'"  C    CH2       0.000     -2.598    0.391    1.268
+ NMS           "H5'"  H    H         0.000     -2.156   -0.607    1.248
+ NMS           "H5''" H    H         0.000     -3.226    0.527    0.385
+ NMS           "C4'"  C    CH1       0.000     -3.444    0.549    2.524
+ NMS           "H4'"  H    H         0.000     -2.807    0.459    3.415
+ NMS           "O4'"  O    O2        0.000     -4.059    1.855    2.492
+ NMS           "C1'"  C    CH1       0.000     -5.468    1.707    2.248
+ NMS           "H1'"  H    H         0.000     -6.026    1.920    3.171
+ NMS           N1     N    NR6       0.000     -5.864    2.630    1.223
+ NMS           C2     C    CR6       0.000     -7.152    3.209    1.216
+ NMS           O2     O    O         0.000     -8.013    2.975    2.065
+ NMS           N3     N    NR16      0.000     -7.401    4.090    0.157
+ NMS           HN3    H    H         0.000     -8.344    4.528    0.129
+ NMS           C4     C    CR6       0.000     -6.526    4.441   -0.860
+ NMS           O4     O    O         0.000     -6.811    5.225   -1.761
+ NMS           C5     C    CR6       0.000     -5.190    3.791   -0.785
+ NMS           C5M    C    CH3       0.000     -4.190    4.118   -1.847
+ NMS           H73    H    H         0.000     -4.589    4.859   -2.488
+ NMS           H72    H    H         0.000     -3.304    4.480   -1.394
+ NMS           H71    H    H         0.000     -3.972    3.246   -2.404
+ NMS           C6     C    CR16      0.000     -4.948    2.948    0.226
+ NMS           H6     H    H         0.000     -3.972    2.481    0.271
+ NMS           "C3'"  C    CH1       0.000     -4.591   -0.451    2.607
+ NMS           "H3'"  H    H         0.000     -4.330   -1.416    2.151
+ NMS           "C2'"  C    CH1       0.000     -5.687    0.260    1.843
+ NMS           "H2'"  H    H         0.000     -5.523    0.146    0.762
+ NMS           "O6'"  O    O2        0.000     -6.974   -0.213    2.186
+ NMS           "C7'"  C    CH2       0.000     -7.118   -1.603    1.913
+ NMS           "H7'1" H    H         0.000     -6.372   -2.155    2.490
+ NMS           "H7'2" H    H         0.000     -6.951   -1.773    0.847
+ NMS           "C8'"  C    C         0.000     -8.503   -2.081    2.291
+ NMS           "N9'"  N    NH1       0.000     -8.662   -3.436    2.045
+ NMS           "H9'"  H    H         0.000     -7.882   -3.950    1.659
+ NMS           C10    C    CH3       0.000     -9.890   -4.148    2.316
+ NMS           H103   H    H         0.000     -9.869   -4.522    3.307
+ NMS           H102   H    H         0.000    -10.711   -3.489    2.204
+ NMS           H101   H    H         0.000     -9.987   -4.953    1.636
+ NMS           "O8'"  O    O         0.000     -9.360   -1.334    2.755
+ NMS           "O3'"  O    OH1       0.000     -4.954   -0.589    3.981
+ NMS           "HO3'" H    H         0.000     -4.548    0.157    4.448
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NMS      OP3    n/a    P      START
+ NMS      P      OP3    "O5'"  .
+ NMS      OP2    P      .      .
+ NMS      OP1    P      .      .
+ NMS      "O5'"  P      "C5'"  .
+ NMS      "C5'"  "O5'"  "C4'"  .
+ NMS      "H5'"  "C5'"  .      .
+ NMS      "H5''" "C5'"  .      .
+ NMS      "C4'"  "C5'"  "C3'"  .
+ NMS      "H4'"  "C4'"  .      .
+ NMS      "O4'"  "C4'"  "C1'"  .
+ NMS      "C1'"  "O4'"  N1     .
+ NMS      "H1'"  "C1'"  .      .
+ NMS      N1     "C1'"  C2     .
+ NMS      C2     N1     N3     .
+ NMS      O2     C2     .      .
+ NMS      N3     C2     C4     .
+ NMS      HN3    N3     .      .
+ NMS      C4     N3     C5     .
+ NMS      O4     C4     .      .
+ NMS      C5     C4     C6     .
+ NMS      C5M    C5     H71    .
+ NMS      H73    C5M    .      .
+ NMS      H72    C5M    .      .
+ NMS      H71    C5M    .      .
+ NMS      C6     C5     H6     .
+ NMS      H6     C6     .      .
+ NMS      "C3'"  "C4'"  "O3'"  .
+ NMS      "H3'"  "C3'"  .      .
+ NMS      "C2'"  "C3'"  "O6'"  .
+ NMS      "H2'"  "C2'"  .      .
+ NMS      "O6'"  "C2'"  "C7'"  .
+ NMS      "C7'"  "O6'"  "C8'"  .
+ NMS      "H7'1" "C7'"  .      .
+ NMS      "H7'2" "C7'"  .      .
+ NMS      "C8'"  "C7'"  "O8'"  .
+ NMS      "N9'"  "C8'"  C10    .
+ NMS      "H9'"  "N9'"  .      .
+ NMS      C10    "N9'"  H101   .
+ NMS      H103   C10    .      .
+ NMS      H102   C10    .      .
+ NMS      H101   C10    .      .
+ NMS      "O8'"  "C8'"  .      .
+ NMS      "O3'"  "C3'"  .      END
+ NMS      "HO3'" "O3'"  .      .
+ NMS      N1     C6     .    ADD
+ NMS      "C2'"  "C1'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NMS       OP2       P         deloc     1.510     0.020     1.510     0.020     
+NMS       OP1       P         deloc     1.510     0.020     1.510     0.020     
+NMS       "O5'"     P         single    1.610     0.020     1.610     0.020     
+NMS       P         OP3       deloc     1.510     0.020     1.510     0.020     
+NMS       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+NMS       N1        C6        single    1.337     0.020     1.337     0.020     
+NMS       C2        N1        single    1.410     0.020     1.410     0.020     
+NMS       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+NMS       C6        C5        double    1.390     0.020     1.390     0.020     
+NMS       H6        C6        single    1.082     0.013     0.975     0.010     
+NMS       O2        C2        double    1.250     0.020     1.250     0.020     
+NMS       N3        C2        single    1.337     0.020     1.337     0.020     
+NMS       C4        N3        single    1.337     0.020     1.337     0.020     
+NMS       HN3       N3        single    1.016     0.010     0.899     0.007     
+NMS       O4        C4        double    1.250     0.020     1.250     0.020     
+NMS       C5        C4        single    1.487     0.020     1.487     0.020     
+NMS       C5M       C5        single    1.506     0.020     1.506     0.020     
+NMS       H71       C5M       single    1.089     0.010     0.989     0.005     
+NMS       H72       C5M       single    1.089     0.010     0.989     0.005     
+NMS       H73       C5M       single    1.089     0.010     0.989     0.005     
+NMS       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+NMS       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+NMS       "O6'"     "C2'"     single    1.426     0.020     1.426     0.020     
+NMS       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+NMS       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+NMS       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+NMS       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+NMS       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+NMS       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+NMS       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+NMS       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+NMS       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+NMS       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+NMS       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+NMS       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+NMS       "C7'"     "O6'"     single    1.426     0.020     1.426     0.020     
+NMS       "C8'"     "C7'"     single    1.510     0.020     1.510     0.020     
+NMS       "H7'1"    "C7'"     single    1.089     0.010     0.989     0.005     
+NMS       "H7'2"    "C7'"     single    1.089     0.010     0.989     0.005     
+NMS       "O8'"     "C8'"     double    1.220     0.020     1.220     0.020     
+NMS       "N9'"     "C8'"     single    1.330     0.020     1.330     0.020     
+NMS       C10       "N9'"     single    1.450     0.020     1.450     0.020     
+NMS       "H9'"     "N9'"     single    1.016     0.010     0.899     0.007     
+NMS       H101      C10       single    1.089     0.010     0.989     0.005     
+NMS       H102      C10       single    1.089     0.010     0.989     0.005     
+NMS       H103      C10       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NMS      OP3    P      OP2     119.900    3.000
+ NMS      OP3    P      OP1     119.900    3.000
+ NMS      OP3    P      "O5'"   108.200    3.000
+ NMS      OP2    P      OP1     119.900    3.000
+ NMS      OP2    P      "O5'"   108.200    3.000
+ NMS      OP1    P      "O5'"   108.200    3.000
+ NMS      P      "O5'"  "C5'"   120.500    3.000
+ NMS      "O5'"  "C5'"  "H5'"   109.470    3.000
+ NMS      "O5'"  "C5'"  "H5''"  109.470    3.000
+ NMS      "O5'"  "C5'"  "C4'"   109.470    3.000
+ NMS      "H5'"  "C5'"  "H5''"  107.900    3.000
+ NMS      "H5'"  "C5'"  "C4'"   109.470    3.000
+ NMS      "H5''" "C5'"  "C4'"   109.470    3.000
+ NMS      "C5'"  "C4'"  "H4'"   108.340    3.000
+ NMS      "C5'"  "C4'"  "O4'"   109.470    3.000
+ NMS      "C5'"  "C4'"  "C3'"   111.000    3.000
+ NMS      "H4'"  "C4'"  "O4'"   109.470    3.000
+ NMS      "H4'"  "C4'"  "C3'"   108.340    3.000
+ NMS      "O4'"  "C4'"  "C3'"   109.470    3.000
+ NMS      "C4'"  "O4'"  "C1'"   111.800    3.000
+ NMS      "O4'"  "C1'"  "H1'"   109.470    3.000
+ NMS      "O4'"  "C1'"  N1      109.470    3.000
+ NMS      "O4'"  "C1'"  "C2'"   109.470    3.000
+ NMS      "H1'"  "C1'"  N1      109.470    3.000
+ NMS      "H1'"  "C1'"  "C2'"   108.340    3.000
+ NMS      N1     "C1'"  "C2'"   109.470    3.000
+ NMS      "C1'"  N1     C2      120.000    3.000
+ NMS      "C1'"  N1     C6      120.000    3.000
+ NMS      C2     N1     C6      120.000    3.000
+ NMS      N1     C2     O2      120.000    3.000
+ NMS      N1     C2     N3      120.000    3.000
+ NMS      O2     C2     N3      120.000    3.000
+ NMS      C2     N3     HN3     120.000    3.000
+ NMS      C2     N3     C4      120.000    3.000
+ NMS      HN3    N3     C4      120.000    3.000
+ NMS      N3     C4     O4      120.000    3.000
+ NMS      N3     C4     C5      120.000    3.000
+ NMS      O4     C4     C5      120.000    3.000
+ NMS      C4     C5     C5M     120.000    3.000
+ NMS      C4     C5     C6      120.000    3.000
+ NMS      C5M    C5     C6      120.000    3.000
+ NMS      C5     C5M    H73     109.470    3.000
+ NMS      C5     C5M    H72     109.470    3.000
+ NMS      C5     C5M    H71     109.470    3.000
+ NMS      H73    C5M    H72     109.470    3.000
+ NMS      H73    C5M    H71     109.470    3.000
+ NMS      H72    C5M    H71     109.470    3.000
+ NMS      C5     C6     H6      120.000    3.000
+ NMS      C5     C6     N1      120.000    3.000
+ NMS      H6     C6     N1      120.000    3.000
+ NMS      "C4'"  "C3'"  "H3'"   108.340    3.000
+ NMS      "C4'"  "C3'"  "C2'"   111.000    3.000
+ NMS      "C4'"  "C3'"  "O3'"   109.470    3.000
+ NMS      "H3'"  "C3'"  "C2'"   108.340    3.000
+ NMS      "H3'"  "C3'"  "O3'"   109.470    3.000
+ NMS      "C2'"  "C3'"  "O3'"   109.470    3.000
+ NMS      "C3'"  "C2'"  "H2'"   108.340    3.000
+ NMS      "C3'"  "C2'"  "O6'"   109.470    3.000
+ NMS      "C3'"  "C2'"  "C1'"   111.000    3.000
+ NMS      "H2'"  "C2'"  "O6'"   109.470    3.000
+ NMS      "H2'"  "C2'"  "C1'"   108.340    3.000
+ NMS      "O6'"  "C2'"  "C1'"   109.470    3.000
+ NMS      "C2'"  "O6'"  "C7'"   111.800    3.000
+ NMS      "O6'"  "C7'"  "H7'1"  109.470    3.000
+ NMS      "O6'"  "C7'"  "H7'2"  109.470    3.000
+ NMS      "O6'"  "C7'"  "C8'"   109.470    3.000
+ NMS      "H7'1" "C7'"  "H7'2"  107.900    3.000
+ NMS      "H7'1" "C7'"  "C8'"   109.470    3.000
+ NMS      "H7'2" "C7'"  "C8'"   109.470    3.000
+ NMS      "C7'"  "C8'"  "N9'"   116.500    3.000
+ NMS      "C7'"  "C8'"  "O8'"   120.500    3.000
+ NMS      "N9'"  "C8'"  "O8'"   123.000    3.000
+ NMS      "C8'"  "N9'"  "H9'"   120.000    3.000
+ NMS      "C8'"  "N9'"  C10     121.500    3.000
+ NMS      "H9'"  "N9'"  C10     118.500    3.000
+ NMS      "N9'"  C10    H103    109.470    3.000
+ NMS      "N9'"  C10    H102    109.470    3.000
+ NMS      "N9'"  C10    H101    109.470    3.000
+ NMS      H103   C10    H102    109.470    3.000
+ NMS      H103   C10    H101    109.470    3.000
+ NMS      H102   C10    H101    109.470    3.000
+ NMS      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NMS      var_1    OP3    P      "O5'"  "C5'"    -54.172   20.000   1
+ NMS      var_2    P      "O5'"  "C5'"  "C4'"   -179.986   20.000   1
+ NMS      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.497   20.000   3
+ NMS      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ NMS      var_5    "C4'"  "O4'"  "C1'"  N1      -120.000   20.000   1
+ NMS      var_6    "O4'"  "C1'"  N1     C2      -147.813   20.000   1
+ NMS      CONST_1  "C1'"  N1     C6     C5       180.000    0.000   0
+ NMS      CONST_2  "C1'"  N1     C2     N3       180.000    0.000   0
+ NMS      CONST_3  N1     C2     N3     C4         0.000    0.000   0
+ NMS      CONST_4  C2     N3     C4     C5         0.000    0.000   0
+ NMS      CONST_5  N3     C4     C5     C6         0.000    0.000   0
+ NMS      var_7    C4     C5     C5M    H71     -115.793   20.000   1
+ NMS      CONST_6  C4     C5     C6     N1         0.000    0.000   0
+ NMS      var_8    "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ NMS      var_9    "C4'"  "C3'"  "C2'"  "O6'"   -150.000   20.000   3
+ NMS      var_10   "C3'"  "C2'"  "C1'"  "O4'"     30.000   20.000   3
+ NMS      var_11   "C3'"  "C2'"  "O6'"  "C7'"    -59.966   20.000   1
+ NMS      var_12   "C2'"  "O6'"  "C7'"  "C8'"    179.976   20.000   1
+ NMS      var_13   "O6'"  "C7'"  "C8'"  "O8'"      0.579   20.000   3
+ NMS      CONST_7  "C7'"  "C8'"  "N9'"  C10      180.000    0.000   0
+ NMS      var_14   "C8'"  "N9'"  C10    H101     150.294   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NMS      chir_01  "C2'"  "C1'"  "C3'"  "O6'"     negativ
+ NMS      chir_02  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ NMS      chir_03  "C1'"  N1     "C2'"  "O4'"     negativ
+ NMS      chir_04  "C3'"  "C2'"  "C4'"  "O3'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NMS      plan-1    N1        0.020
+ NMS      plan-1    C6        0.020
+ NMS      plan-1    C2        0.020
+ NMS      plan-1    "C1'"     0.020
+ NMS      plan-1    N3        0.020
+ NMS      plan-1    C4        0.020
+ NMS      plan-1    C5        0.020
+ NMS      plan-1    H6        0.020
+ NMS      plan-1    O2        0.020
+ NMS      plan-1    HN3       0.020
+ NMS      plan-1    O4        0.020
+ NMS      plan-1    C5M       0.020
+ NMS      plan-2    "C8'"     0.020
+ NMS      plan-2    "C7'"     0.020
+ NMS      plan-2    "O8'"     0.020
+ NMS      plan-2    "N9'"     0.020
+ NMS      plan-2    "H9'"     0.020
+ NMS      plan-3    "N9'"     0.020
+ NMS      plan-3    "C8'"     0.020
+ NMS      plan-3    C10       0.020
+ NMS      plan-3    "H9'"     0.020
+# ------------------------------------------------------

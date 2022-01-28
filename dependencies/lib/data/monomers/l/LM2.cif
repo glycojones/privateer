@@ -1,0 +1,487 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LM2      LM2 '.                                   ' non-polymer        70  36 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LM2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LM2           OD6    O    OH1       0.000      0.000    0.000    0.000
+ LM2           HD6    H    H         0.000      0.782    0.124   -0.555
+ LM2           CD6    C    CH2       0.000      0.301    0.395    1.340
+ LM2           HD61   H    H         0.000      0.595    1.447    1.351
+ LM2           HD62   H    H         0.000      1.122   -0.215    1.723
+ LM2           CD5    C    CH1       0.000     -0.936    0.199    2.220
+ LM2           HD5    H    H         0.000     -1.785    0.740    1.780
+ LM2           CD4    C    CH1       0.000     -0.656    0.746    3.622
+ LM2           HD4    H    H         0.000      0.180    0.193    4.072
+ LM2           OD4    O    O2        0.000     -0.321    2.132    3.535
+ LM2           CD7    C    CH3       0.000      0.564    2.412    4.623
+ LM2           HD73   H    H         0.000      0.076    2.199    5.539
+ LM2           HD72   H    H         0.000      1.431    1.809    4.537
+ LM2           HD71   H    H         0.000      0.841    3.434    4.600
+ LM2           CD3    C    CH1       0.000     -1.910    0.573    4.486
+ LM2           HD3    H    H         0.000     -2.717    1.210    4.096
+ LM2           OD3    O    OH1       0.000     -1.617    0.943    5.835
+ LM2           H2     H    H         0.000     -2.409    0.833    6.378
+ LM2           CD2    C    CH1       0.000     -2.344   -0.895    4.433
+ LM2           HD2    H    H         0.000     -1.582   -1.521    4.919
+ LM2           OD2    O    OH1       0.000     -3.593   -1.049    5.111
+ LM2           H3     H    H         0.000     -3.865   -1.976    5.076
+ LM2           OD5    O    O2        0.000     -1.247   -1.191    2.296
+ LM2           CD1    C    CH1       0.000     -2.497   -1.318    2.969
+ LM2           HD1    H    H         0.000     -2.832   -2.364    2.924
+ LM2           OB4    O    O2        0.000     -3.466   -0.481    2.333
+ LM2           CB4    C    CH1       0.000     -3.804   -1.109    1.095
+ LM2           HB4    H    H         0.000     -2.911   -1.587    0.669
+ LM2           CB3    C    CH1       0.000     -4.887   -2.166    1.335
+ LM2           HB3    H    H         0.000     -5.739   -1.709    1.858
+ LM2           OB3    O    OH1       0.000     -4.354   -3.229    2.126
+ LM2           H4     H    H         0.000     -5.040   -3.894    2.275
+ LM2           CB2    C    CH1       0.000     -5.349   -2.711   -0.022
+ LM2           HB2    H    H         0.000     -4.524   -3.260   -0.497
+ LM2           OB2    O    OH1       0.000     -6.460   -3.590    0.169
+ LM2           H5     H    H         0.000     -6.749   -3.932   -0.688
+ LM2           CB5    C    CH1       0.000     -4.336   -0.058    0.117
+ LM2           HB5    H    H         0.000     -5.241    0.404    0.535
+ LM2           CB6    C    CH2       0.000     -3.272    1.018   -0.105
+ LM2           HB61   H    H         0.000     -2.393    0.569   -0.572
+ LM2           HB62   H    H         0.000     -2.989    1.452    0.856
+ LM2           OB6    O    OH1       0.000     -3.798    2.039   -0.955
+ LM2           HB6    H    H         0.000     -3.125    2.719   -1.095
+ LM2           OB5    O    O2        0.000     -4.653   -0.676   -1.129
+ LM2           CB1    C    CH1       0.000     -5.767   -1.541   -0.914
+ LM2           HB1    H    H         0.000     -6.122   -1.926   -1.880
+ LM2           OA4    O    O2        0.000     -6.818   -0.811   -0.279
+ LM2           CA4    C    CH1       0.000     -7.400    0.029   -1.278
+ LM2           HA4    H    H         0.000     -6.623    0.346   -1.988
+ LM2           CA3    C    CH1       0.000     -8.489   -0.746   -2.024
+ LM2           HA3    H    H         0.000     -9.287   -1.025   -1.323
+ LM2           OA3    O    OH1       0.000     -7.925   -1.928   -2.599
+ LM2           H6     H    H         0.000     -8.613   -2.415   -3.072
+ LM2           CA2    C    CH1       0.000     -9.069    0.136   -3.136
+ LM2           HA2    H    H         0.000     -8.293    0.345   -3.886
+ LM2           OA2    O    OH1       0.000    -10.170   -0.530   -3.755
+ LM2           H7     H    H         0.000     -9.877   -1.385   -4.098
+ LM2           CA5    C    CH1       0.000     -8.016    1.264   -0.612
+ LM2           H1     H    H         0.000     -8.756    0.948    0.136
+ LM2           CA6    C    CH2       0.000     -6.917    2.081    0.068
+ LM2           HA61   H    H         0.000     -6.172    2.377   -0.673
+ LM2           HA62   H    H         0.000     -6.439    1.475    0.841
+ LM2           OA6    O    OH1       0.000     -7.489    3.248    0.662
+ LM2           HA6    H    H         0.000     -6.794    3.764    1.092
+ LM2           NA5    N    NH1       0.000     -8.674    2.078   -1.644
+ LM2           HA5    H    H         0.000     -8.502    3.071   -1.715
+ LM2           CA1    C    C         0.000     -9.541    1.435   -2.516
+ LM2           NA1    N    N         0.000    -10.704    1.924   -2.790
+ LM2           OA7    O    OH1       0.000    -11.599    1.203   -3.617
+ LM2           HA7    H    H         0.000    -12.422    1.704   -3.724
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LM2      OD6    n/a    CD6    START
+ LM2      HD6    OD6    .      .
+ LM2      CD6    OD6    CD5    .
+ LM2      HD61   CD6    .      .
+ LM2      HD62   CD6    .      .
+ LM2      CD5    CD6    OD5    .
+ LM2      HD5    CD5    .      .
+ LM2      CD4    CD5    CD3    .
+ LM2      HD4    CD4    .      .
+ LM2      OD4    CD4    CD7    .
+ LM2      CD7    OD4    HD71   .
+ LM2      HD73   CD7    .      .
+ LM2      HD72   CD7    .      .
+ LM2      HD71   CD7    .      .
+ LM2      CD3    CD4    CD2    .
+ LM2      HD3    CD3    .      .
+ LM2      OD3    CD3    H2     .
+ LM2      H2     OD3    .      .
+ LM2      CD2    CD3    OD2    .
+ LM2      HD2    CD2    .      .
+ LM2      OD2    CD2    H3     .
+ LM2      H3     OD2    .      .
+ LM2      OD5    CD5    CD1    .
+ LM2      CD1    OD5    OB4    .
+ LM2      HD1    CD1    .      .
+ LM2      OB4    CD1    CB4    .
+ LM2      CB4    OB4    CB5    .
+ LM2      HB4    CB4    .      .
+ LM2      CB3    CB4    CB2    .
+ LM2      HB3    CB3    .      .
+ LM2      OB3    CB3    H4     .
+ LM2      H4     OB3    .      .
+ LM2      CB2    CB3    OB2    .
+ LM2      HB2    CB2    .      .
+ LM2      OB2    CB2    H5     .
+ LM2      H5     OB2    .      .
+ LM2      CB5    CB4    OB5    .
+ LM2      HB5    CB5    .      .
+ LM2      CB6    CB5    OB6    .
+ LM2      HB61   CB6    .      .
+ LM2      HB62   CB6    .      .
+ LM2      OB6    CB6    HB6    .
+ LM2      HB6    OB6    .      .
+ LM2      OB5    CB5    CB1    .
+ LM2      CB1    OB5    OA4    .
+ LM2      HB1    CB1    .      .
+ LM2      OA4    CB1    CA4    .
+ LM2      CA4    OA4    CA5    .
+ LM2      HA4    CA4    .      .
+ LM2      CA3    CA4    CA2    .
+ LM2      HA3    CA3    .      .
+ LM2      OA3    CA3    H6     .
+ LM2      H6     OA3    .      .
+ LM2      CA2    CA3    OA2    .
+ LM2      HA2    CA2    .      .
+ LM2      OA2    CA2    H7     .
+ LM2      H7     OA2    .      .
+ LM2      CA5    CA4    NA5    .
+ LM2      H1     CA5    .      .
+ LM2      CA6    CA5    OA6    .
+ LM2      HA61   CA6    .      .
+ LM2      HA62   CA6    .      .
+ LM2      OA6    CA6    HA6    .
+ LM2      HA6    OA6    .      .
+ LM2      NA5    CA5    CA1    .
+ LM2      HA5    NA5    .      .
+ LM2      CA1    NA5    NA1    .
+ LM2      NA1    CA1    OA7    .
+ LM2      OA7    NA1    HA7    .
+ LM2      HA7    OA7    .      END
+ LM2      CA1    CA2    .    ADD
+ LM2      CB1    CB2    .    ADD
+ LM2      CD1    CD2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LM2       NA1       CA1       double    1.260     0.020     1.260     0.020     
+LM2       CA1       CA2       single    1.500     0.020     1.500     0.020     
+LM2       CA1       NA5       single    1.330     0.020     1.330     0.020     
+LM2       OA7       NA1       single    1.392     0.020     1.392     0.020     
+LM2       HA7       OA7       single    0.970     0.012     0.839     0.014     
+LM2       OA2       CA2       single    1.432     0.020     1.432     0.020     
+LM2       CA2       CA3       single    1.524     0.020     1.524     0.020     
+LM2       HA2       CA2       single    1.089     0.010     0.989     0.005     
+LM2       H7        OA2       single    0.970     0.012     0.839     0.014     
+LM2       OA3       CA3       single    1.432     0.020     1.432     0.020     
+LM2       CA3       CA4       single    1.524     0.020     1.524     0.020     
+LM2       HA3       CA3       single    1.089     0.010     0.989     0.005     
+LM2       H6        OA3       single    0.970     0.012     0.839     0.014     
+LM2       CA4       OA4       single    1.426     0.020     1.426     0.020     
+LM2       CA5       CA4       single    1.524     0.020     1.524     0.020     
+LM2       HA4       CA4       single    1.089     0.010     0.989     0.005     
+LM2       OA4       CB1       single    1.426     0.020     1.426     0.020     
+LM2       NA5       CA5       single    1.450     0.020     1.450     0.020     
+LM2       CA6       CA5       single    1.524     0.020     1.524     0.020     
+LM2       H1        CA5       single    1.089     0.010     0.989     0.005     
+LM2       HA5       NA5       single    1.016     0.010     0.899     0.007     
+LM2       OA6       CA6       single    1.432     0.020     1.432     0.020     
+LM2       HA61      CA6       single    1.089     0.010     0.989     0.005     
+LM2       HA62      CA6       single    1.089     0.010     0.989     0.005     
+LM2       HA6       OA6       single    0.970     0.012     0.839     0.014     
+LM2       CB1       CB2       single    1.524     0.020     1.524     0.020     
+LM2       CB1       OB5       single    1.426     0.020     1.426     0.020     
+LM2       HB1       CB1       single    1.089     0.010     0.989     0.005     
+LM2       CB2       CB3       single    1.524     0.020     1.524     0.020     
+LM2       OB2       CB2       single    1.432     0.020     1.432     0.020     
+LM2       HB2       CB2       single    1.089     0.010     0.989     0.005     
+LM2       CB3       CB4       single    1.524     0.020     1.524     0.020     
+LM2       OB3       CB3       single    1.432     0.020     1.432     0.020     
+LM2       HB3       CB3       single    1.089     0.010     0.989     0.005     
+LM2       CB5       CB4       single    1.524     0.020     1.524     0.020     
+LM2       CB4       OB4       single    1.426     0.020     1.426     0.020     
+LM2       HB4       CB4       single    1.089     0.010     0.989     0.005     
+LM2       CB6       CB5       single    1.524     0.020     1.524     0.020     
+LM2       OB5       CB5       single    1.426     0.020     1.426     0.020     
+LM2       HB5       CB5       single    1.089     0.010     0.989     0.005     
+LM2       OB6       CB6       single    1.432     0.020     1.432     0.020     
+LM2       HB61      CB6       single    1.089     0.010     0.989     0.005     
+LM2       HB62      CB6       single    1.089     0.010     0.989     0.005     
+LM2       H5        OB2       single    0.970     0.012     0.839     0.014     
+LM2       H4        OB3       single    0.970     0.012     0.839     0.014     
+LM2       OB4       CD1       single    1.426     0.020     1.426     0.020     
+LM2       HB6       OB6       single    0.970     0.012     0.839     0.014     
+LM2       CD1       CD2       single    1.524     0.020     1.524     0.020     
+LM2       CD1       OD5       single    1.426     0.020     1.426     0.020     
+LM2       HD1       CD1       single    1.089     0.010     0.989     0.005     
+LM2       CD2       CD3       single    1.524     0.020     1.524     0.020     
+LM2       OD2       CD2       single    1.432     0.020     1.432     0.020     
+LM2       HD2       CD2       single    1.089     0.010     0.989     0.005     
+LM2       CD3       CD4       single    1.524     0.020     1.524     0.020     
+LM2       OD3       CD3       single    1.432     0.020     1.432     0.020     
+LM2       HD3       CD3       single    1.089     0.010     0.989     0.005     
+LM2       CD4       CD5       single    1.524     0.020     1.524     0.020     
+LM2       OD4       CD4       single    1.426     0.020     1.426     0.020     
+LM2       HD4       CD4       single    1.089     0.010     0.989     0.005     
+LM2       CD5       CD6       single    1.524     0.020     1.524     0.020     
+LM2       OD5       CD5       single    1.426     0.020     1.426     0.020     
+LM2       HD5       CD5       single    1.089     0.010     0.989     0.005     
+LM2       CD6       OD6       single    1.432     0.020     1.432     0.020     
+LM2       HD61      CD6       single    1.089     0.010     0.989     0.005     
+LM2       HD62      CD6       single    1.089     0.010     0.989     0.005     
+LM2       H3        OD2       single    0.970     0.012     0.839     0.014     
+LM2       H2        OD3       single    0.970     0.012     0.839     0.014     
+LM2       CD7       OD4       single    1.426     0.020     1.426     0.020     
+LM2       HD6       OD6       single    0.970     0.012     0.839     0.014     
+LM2       HD71      CD7       single    1.089     0.010     0.989     0.005     
+LM2       HD72      CD7       single    1.089     0.010     0.989     0.005     
+LM2       HD73      CD7       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LM2      HD6    OD6    CD6     109.470    3.000
+ LM2      OD6    CD6    HD61    109.470    3.000
+ LM2      OD6    CD6    HD62    109.470    3.000
+ LM2      OD6    CD6    CD5     109.470    3.000
+ LM2      HD61   CD6    HD62    107.900    3.000
+ LM2      HD61   CD6    CD5     109.470    3.000
+ LM2      HD62   CD6    CD5     109.470    3.000
+ LM2      CD6    CD5    HD5     108.340    3.000
+ LM2      CD6    CD5    CD4     111.000    3.000
+ LM2      CD6    CD5    OD5     109.470    3.000
+ LM2      HD5    CD5    CD4     108.340    3.000
+ LM2      HD5    CD5    OD5     109.470    3.000
+ LM2      CD4    CD5    OD5     109.470    3.000
+ LM2      CD5    CD4    HD4     108.340    3.000
+ LM2      CD5    CD4    OD4     109.470    3.000
+ LM2      CD5    CD4    CD3     111.000    3.000
+ LM2      HD4    CD4    OD4     109.470    3.000
+ LM2      HD4    CD4    CD3     108.340    3.000
+ LM2      OD4    CD4    CD3     109.470    3.000
+ LM2      CD4    OD4    CD7     111.800    3.000
+ LM2      OD4    CD7    HD73    109.470    3.000
+ LM2      OD4    CD7    HD72    109.470    3.000
+ LM2      OD4    CD7    HD71    109.470    3.000
+ LM2      HD73   CD7    HD72    109.470    3.000
+ LM2      HD73   CD7    HD71    109.470    3.000
+ LM2      HD72   CD7    HD71    109.470    3.000
+ LM2      CD4    CD3    HD3     108.340    3.000
+ LM2      CD4    CD3    OD3     109.470    3.000
+ LM2      CD4    CD3    CD2     111.000    3.000
+ LM2      HD3    CD3    OD3     109.470    3.000
+ LM2      HD3    CD3    CD2     108.340    3.000
+ LM2      OD3    CD3    CD2     109.470    3.000
+ LM2      CD3    OD3    H2      109.470    3.000
+ LM2      CD3    CD2    HD2     108.340    3.000
+ LM2      CD3    CD2    OD2     109.470    3.000
+ LM2      CD3    CD2    CD1     111.000    3.000
+ LM2      HD2    CD2    OD2     109.470    3.000
+ LM2      HD2    CD2    CD1     108.340    3.000
+ LM2      OD2    CD2    CD1     109.470    3.000
+ LM2      CD2    OD2    H3      109.470    3.000
+ LM2      CD5    OD5    CD1     111.800    3.000
+ LM2      OD5    CD1    HD1     109.470    3.000
+ LM2      OD5    CD1    OB4     109.470    3.000
+ LM2      OD5    CD1    CD2     109.470    3.000
+ LM2      HD1    CD1    OB4     109.470    3.000
+ LM2      HD1    CD1    CD2     108.340    3.000
+ LM2      OB4    CD1    CD2     109.470    3.000
+ LM2      CD1    OB4    CB4     111.800    3.000
+ LM2      OB4    CB4    HB4     109.470    3.000
+ LM2      OB4    CB4    CB3     109.470    3.000
+ LM2      OB4    CB4    CB5     109.470    3.000
+ LM2      HB4    CB4    CB3     108.340    3.000
+ LM2      HB4    CB4    CB5     108.340    3.000
+ LM2      CB3    CB4    CB5     111.000    3.000
+ LM2      CB4    CB3    HB3     108.340    3.000
+ LM2      CB4    CB3    OB3     109.470    3.000
+ LM2      CB4    CB3    CB2     111.000    3.000
+ LM2      HB3    CB3    OB3     109.470    3.000
+ LM2      HB3    CB3    CB2     108.340    3.000
+ LM2      OB3    CB3    CB2     109.470    3.000
+ LM2      CB3    OB3    H4      109.470    3.000
+ LM2      CB3    CB2    HB2     108.340    3.000
+ LM2      CB3    CB2    OB2     109.470    3.000
+ LM2      CB3    CB2    CB1     111.000    3.000
+ LM2      HB2    CB2    OB2     109.470    3.000
+ LM2      HB2    CB2    CB1     108.340    3.000
+ LM2      OB2    CB2    CB1     109.470    3.000
+ LM2      CB2    OB2    H5      109.470    3.000
+ LM2      CB4    CB5    HB5     108.340    3.000
+ LM2      CB4    CB5    CB6     111.000    3.000
+ LM2      CB4    CB5    OB5     109.470    3.000
+ LM2      HB5    CB5    CB6     108.340    3.000
+ LM2      HB5    CB5    OB5     109.470    3.000
+ LM2      CB6    CB5    OB5     109.470    3.000
+ LM2      CB5    CB6    HB61    109.470    3.000
+ LM2      CB5    CB6    HB62    109.470    3.000
+ LM2      CB5    CB6    OB6     109.470    3.000
+ LM2      HB61   CB6    HB62    107.900    3.000
+ LM2      HB61   CB6    OB6     109.470    3.000
+ LM2      HB62   CB6    OB6     109.470    3.000
+ LM2      CB6    OB6    HB6     109.470    3.000
+ LM2      CB5    OB5    CB1     111.800    3.000
+ LM2      OB5    CB1    HB1     109.470    3.000
+ LM2      OB5    CB1    OA4     109.470    3.000
+ LM2      OB5    CB1    CB2     109.470    3.000
+ LM2      HB1    CB1    OA4     109.470    3.000
+ LM2      HB1    CB1    CB2     108.340    3.000
+ LM2      OA4    CB1    CB2     109.470    3.000
+ LM2      CB1    OA4    CA4     111.800    3.000
+ LM2      OA4    CA4    HA4     109.470    3.000
+ LM2      OA4    CA4    CA3     109.470    3.000
+ LM2      OA4    CA4    CA5     109.470    3.000
+ LM2      HA4    CA4    CA3     108.340    3.000
+ LM2      HA4    CA4    CA5     108.340    3.000
+ LM2      CA3    CA4    CA5     111.000    3.000
+ LM2      CA4    CA3    HA3     108.340    3.000
+ LM2      CA4    CA3    OA3     109.470    3.000
+ LM2      CA4    CA3    CA2     111.000    3.000
+ LM2      HA3    CA3    OA3     109.470    3.000
+ LM2      HA3    CA3    CA2     108.340    3.000
+ LM2      OA3    CA3    CA2     109.470    3.000
+ LM2      CA3    OA3    H6      109.470    3.000
+ LM2      CA3    CA2    HA2     108.340    3.000
+ LM2      CA3    CA2    OA2     109.470    3.000
+ LM2      CA3    CA2    CA1     109.470    3.000
+ LM2      HA2    CA2    OA2     109.470    3.000
+ LM2      HA2    CA2    CA1     108.810    3.000
+ LM2      OA2    CA2    CA1     109.470    3.000
+ LM2      CA2    OA2    H7      109.470    3.000
+ LM2      CA4    CA5    H1      108.340    3.000
+ LM2      CA4    CA5    CA6     111.000    3.000
+ LM2      CA4    CA5    NA5     110.000    3.000
+ LM2      H1     CA5    CA6     108.340    3.000
+ LM2      H1     CA5    NA5     108.550    3.000
+ LM2      CA6    CA5    NA5     110.000    3.000
+ LM2      CA5    CA6    HA61    109.470    3.000
+ LM2      CA5    CA6    HA62    109.470    3.000
+ LM2      CA5    CA6    OA6     109.470    3.000
+ LM2      HA61   CA6    HA62    107.900    3.000
+ LM2      HA61   CA6    OA6     109.470    3.000
+ LM2      HA62   CA6    OA6     109.470    3.000
+ LM2      CA6    OA6    HA6     109.470    3.000
+ LM2      CA5    NA5    HA5     118.500    3.000
+ LM2      CA5    NA5    CA1     121.500    3.000
+ LM2      HA5    NA5    CA1     120.000    3.000
+ LM2      NA5    CA1    NA1     120.000    3.000
+ LM2      NA5    CA1    CA2     116.500    3.000
+ LM2      NA1    CA1    CA2     116.500    3.000
+ LM2      CA1    NA1    OA7     120.000    3.000
+ LM2      NA1    OA7    HA7     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LM2      var_1    HD6    OD6    CD6    CD5     -179.978   20.000   1
+ LM2      var_2    OD6    CD6    CD5    OD5       65.008   20.000   3
+ LM2      var_3    CD6    CD5    CD4    CD3      180.000   20.000   3
+ LM2      var_4    CD5    CD4    OD4    CD7     -150.250   20.000   1
+ LM2      var_5    CD4    OD4    CD7    HD71     179.983   20.000   1
+ LM2      var_6    CD5    CD4    CD3    CD2       60.000   20.000   3
+ LM2      var_7    CD4    CD3    OD3    H2       179.981   20.000   1
+ LM2      var_8    CD4    CD3    CD2    OD2      180.000   20.000   3
+ LM2      var_9    CD3    CD2    OD2    H3       179.996   20.000   1
+ LM2      var_10   CD6    CD5    OD5    CD1      180.000   20.000   1
+ LM2      var_11   CD5    OD5    CD1    OB4       60.000   20.000   1
+ LM2      var_12   OD5    CD1    CD2    CD3       60.000   20.000   3
+ LM2      var_13   OD5    CD1    OB4    CB4       73.376   20.000   1
+ LM2      var_14   CD1    OB4    CB4    CB5     -156.161   20.000   1
+ LM2      var_15   OB4    CB4    CB3    CB2      180.000   20.000   3
+ LM2      var_16   CB4    CB3    OB3    H4       179.989   20.000   1
+ LM2      var_17   CB4    CB3    CB2    OB2      180.000   20.000   3
+ LM2      var_18   CB3    CB2    OB2    H5      -179.984   20.000   1
+ LM2      var_19   OB4    CB4    CB5    OB5      180.000   20.000   3
+ LM2      var_20   CB4    CB5    CB6    OB6     -176.598   20.000   3
+ LM2      var_21   CB5    CB6    OB6    HB6      179.996   20.000   1
+ LM2      var_22   CB4    CB5    OB5    CB1       60.000   20.000   1
+ LM2      var_23   CB5    OB5    CB1    OA4       60.000   20.000   1
+ LM2      var_24   OB5    CB1    CB2    CB3       60.000   20.000   3
+ LM2      var_25   OB5    CB1    OA4    CA4       74.605   20.000   1
+ LM2      var_26   CB1    OA4    CA4    CA5     -153.024   20.000   1
+ LM2      var_27   OA4    CA4    CA3    CA2      180.000   20.000   3
+ LM2      var_28   CA4    CA3    OA3    H6      -179.830   20.000   1
+ LM2      var_29   CA4    CA3    CA2    OA2      180.000   20.000   3
+ LM2      var_30   CA3    CA2    OA2    H7       -57.334   20.000   1
+ LM2      var_31   OA4    CA4    CA5    NA5      180.000   20.000   3
+ LM2      var_32   CA4    CA5    CA6    OA6      178.687   20.000   3
+ LM2      var_33   CA5    CA6    OA6    HA6     -179.970   20.000   1
+ LM2      var_34   CA4    CA5    NA5    CA1       60.000   20.000   3
+ LM2      CONST_1  CA5    NA5    CA1    NA1      120.000    0.000   0
+ LM2      var_35   NA5    CA1    CA2    CA3       60.000   20.000   3
+ LM2      CONST_2  NA5    CA1    NA1    OA7      180.000    0.000   0
+ LM2      var_36   CA1    NA1    OA7    HA7     -179.988   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LM2      chir_01  CA2    CA1    OA2    CA3       positiv
+ LM2      chir_02  CA3    CA2    OA3    CA4       negativ
+ LM2      chir_03  CA4    CA3    OA4    CA5       positiv
+ LM2      chir_04  CA5    CA4    NA5    CA6       positiv
+ LM2      chir_05  CB1    OA4    CB2    OB5       positiv
+ LM2      chir_06  CB2    CB1    CB3    OB2       negativ
+ LM2      chir_07  CB3    CB2    CB4    OB3       positiv
+ LM2      chir_08  CB4    CB3    CB5    OB4       negativ
+ LM2      chir_09  CB5    CB4    CB6    OB5       negativ
+ LM2      chir_10  CD1    OB4    CD2    OD5       positiv
+ LM2      chir_11  CD2    CD1    CD3    OD2       negativ
+ LM2      chir_12  CD3    CD2    CD4    OD3       positiv
+ LM2      chir_13  CD4    CD3    CD5    OD4       negativ
+ LM2      chir_14  CD5    CD4    CD6    OD5       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LM2      plan-1    CA1       0.020
+ LM2      plan-1    NA1       0.020
+ LM2      plan-1    CA2       0.020
+ LM2      plan-1    NA5       0.020
+ LM2      plan-1    OA7       0.020
+ LM2      plan-1    HA5       0.020
+ LM2      plan-2    NA5       0.020
+ LM2      plan-2    CA1       0.020
+ LM2      plan-2    CA5       0.020
+ LM2      plan-2    HA5       0.020
+# ------------------------------------------------------

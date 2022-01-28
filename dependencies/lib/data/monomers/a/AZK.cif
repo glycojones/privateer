@@ -1,0 +1,214 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AZK      AZK '(S)-2-AMINO-6-AZIDOHEXANOIC ACID    ' non-polymer        25  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AZK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AZK           NZ3    N    NS       -1.000      0.000    0.000    0.000
+ AZK           NZ2    N    N         1.000     -0.971    0.362    0.436
+ AZK           NZ     N    N         0.000     -1.942    0.724    0.871
+ AZK           CE     C    CH2       0.000     -3.066    1.046   -0.010
+ AZK           HE2    H    H         0.000     -2.774    0.874   -1.048
+ AZK           HE3    H    H         0.000     -3.342    2.094    0.121
+ AZK           CD     C    CH2       0.000     -4.260    0.155    0.340
+ AZK           HD2    H    H         0.000     -4.550    0.327    1.378
+ AZK           HD3    H    H         0.000     -3.982   -0.893    0.209
+ AZK           CG     C    CH2       0.000     -5.434    0.491   -0.581
+ AZK           HG2    H    H         0.000     -5.143    0.320   -1.619
+ AZK           HG3    H    H         0.000     -5.710    1.539   -0.450
+ AZK           CB     C    CH2       0.000     -6.628   -0.400   -0.231
+ AZK           HB2    H    H         0.000     -6.917   -0.227    0.807
+ AZK           HB3    H    H         0.000     -6.349   -1.448   -0.361
+ AZK           CA     C    CH1       0.000     -7.803   -0.065   -1.152
+ AZK           HA     H    H         0.000     -7.483   -0.153   -2.200
+ AZK           N      N    NH2       0.000     -8.253    1.309   -0.892
+ AZK           H2     H    H         0.000     -8.235    2.002   -1.631
+ AZK           H      H    H         0.000     -8.585    1.573    0.029
+ AZK           C      C    CH2       0.000     -8.953   -1.038   -0.887
+ AZK           HC1    H    H         0.000     -9.329   -0.889    0.128
+ AZK           HC2    H    H         0.000     -8.594   -2.063   -0.994
+ AZK           O      O    OH1       0.000    -10.004   -0.799   -1.826
+ AZK           HO     H    H         0.000    -10.731   -1.414   -1.658
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AZK      NZ3    n/a    NZ2    START
+ AZK      NZ2    NZ3    NZ     .
+ AZK      NZ     NZ2    CE     .
+ AZK      CE     NZ     CD     .
+ AZK      HE2    CE     .      .
+ AZK      HE3    CE     .      .
+ AZK      CD     CE     CG     .
+ AZK      HD2    CD     .      .
+ AZK      HD3    CD     .      .
+ AZK      CG     CD     CB     .
+ AZK      HG2    CG     .      .
+ AZK      HG3    CG     .      .
+ AZK      CB     CG     CA     .
+ AZK      HB2    CB     .      .
+ AZK      HB3    CB     .      .
+ AZK      CA     CB     C      .
+ AZK      HA     CA     .      .
+ AZK      N      CA     H      .
+ AZK      H2     N      .      .
+ AZK      H      N      .      .
+ AZK      C      CA     O      .
+ AZK      HC1    C      .      .
+ AZK      HC2    C      .      .
+ AZK      O      C      HO     .
+ AZK      HO     O      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AZK       N         CA        single    1.450     0.020     1.450     0.020     
+AZK       H         N         single    1.036     0.016     0.914     0.007     
+AZK       H2        N         single    1.036     0.016     0.914     0.007     
+AZK       CA        CB        single    1.524     0.020     1.524     0.020     
+AZK       C         CA        single    1.524     0.020     1.524     0.020     
+AZK       HA        CA        single    1.089     0.010     0.989     0.005     
+AZK       CB        CG        single    1.524     0.020     1.524     0.020     
+AZK       HB2       CB        single    1.089     0.010     0.989     0.005     
+AZK       HB3       CB        single    1.089     0.010     0.989     0.005     
+AZK       CG        CD        single    1.524     0.020     1.524     0.020     
+AZK       HG2       CG        single    1.089     0.010     0.989     0.005     
+AZK       HG3       CG        single    1.089     0.010     0.989     0.005     
+AZK       CD        CE        single    1.524     0.020     1.524     0.020     
+AZK       HD2       CD        single    1.089     0.010     0.989     0.005     
+AZK       HD3       CD        single    1.089     0.010     0.989     0.005     
+AZK       CE        NZ        single    1.455     0.020     1.455     0.020     
+AZK       HE2       CE        single    1.089     0.010     0.989     0.005     
+AZK       HE3       CE        single    1.089     0.010     0.989     0.005     
+AZK       NZ        NZ2       double    1.240     0.020     1.240     0.020     
+AZK       NZ2       NZ3       double    1.295     0.020     1.295     0.020     
+AZK       O         C         single    1.432     0.020     1.432     0.020     
+AZK       HC1       C         single    1.089     0.010     0.989     0.005     
+AZK       HC2       C         single    1.089     0.010     0.989     0.005     
+AZK       HO        O         single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AZK      NZ3    NZ2    NZ      120.000    3.000
+ AZK      NZ2    NZ     CE      120.000    3.000
+ AZK      NZ     CE     HE2     109.470    3.000
+ AZK      NZ     CE     HE3     109.470    3.000
+ AZK      NZ     CE     CD      105.000    3.000
+ AZK      HE2    CE     HE3     107.900    3.000
+ AZK      HE2    CE     CD      109.470    3.000
+ AZK      HE3    CE     CD      109.470    3.000
+ AZK      CE     CD     HD2     109.470    3.000
+ AZK      CE     CD     HD3     109.470    3.000
+ AZK      CE     CD     CG      111.000    3.000
+ AZK      HD2    CD     HD3     107.900    3.000
+ AZK      HD2    CD     CG      109.470    3.000
+ AZK      HD3    CD     CG      109.470    3.000
+ AZK      CD     CG     HG2     109.470    3.000
+ AZK      CD     CG     HG3     109.470    3.000
+ AZK      CD     CG     CB      111.000    3.000
+ AZK      HG2    CG     HG3     107.900    3.000
+ AZK      HG2    CG     CB      109.470    3.000
+ AZK      HG3    CG     CB      109.470    3.000
+ AZK      CG     CB     HB2     109.470    3.000
+ AZK      CG     CB     HB3     109.470    3.000
+ AZK      CG     CB     CA      111.000    3.000
+ AZK      HB2    CB     HB3     107.900    3.000
+ AZK      HB2    CB     CA      109.470    3.000
+ AZK      HB3    CB     CA      109.470    3.000
+ AZK      CB     CA     HA      108.340    3.000
+ AZK      CB     CA     N       109.470    3.000
+ AZK      CB     CA     C       109.470    3.000
+ AZK      HA     CA     N       109.470    3.000
+ AZK      HA     CA     C       108.340    3.000
+ AZK      N      CA     C       109.470    3.000
+ AZK      CA     N      H2      120.000    3.000
+ AZK      CA     N      H       120.000    3.000
+ AZK      H2     N      H       120.000    3.000
+ AZK      CA     C      HC1     109.470    3.000
+ AZK      CA     C      HC2     109.470    3.000
+ AZK      CA     C      O       109.470    3.000
+ AZK      HC1    C      HC2     107.900    3.000
+ AZK      HC1    C      O       109.470    3.000
+ AZK      HC2    C      O       109.470    3.000
+ AZK      C      O      HO      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AZK      CONST_1  NZ3    NZ2    NZ     CE       -31.614    0.000   0
+ AZK      var_1    NZ2    NZ     CE     CD       120.001   20.000   1
+ AZK      var_2    NZ     CE     CD     CG       179.992   20.000   3
+ AZK      var_3    CE     CD     CG     CB       179.995   20.000   3
+ AZK      var_4    CD     CG     CB     CA      -179.973   20.000   3
+ AZK      var_5    CG     CB     CA     C        175.013   20.000   3
+ AZK      var_6    CB     CA     N      H        -60.010   20.000   1
+ AZK      var_7    CB     CA     C      O       -175.000   20.000   3
+ AZK      var_8    CA     C      O      HO       180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AZK      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AZK      plan-1    N         0.020
+ AZK      plan-1    CA        0.020
+ AZK      plan-1    H         0.020
+ AZK      plan-1    H2        0.020
+ AZK      plan-2    NZ        0.020
+ AZK      plan-2    CE        0.020
+ AZK      plan-2    NZ2       0.020
+ AZK      plan-2    NZ3       0.020
+# ------------------------------------------------------

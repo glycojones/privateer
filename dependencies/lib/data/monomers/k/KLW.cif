@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KLW     KLW      "2-carbamoylbenzoic acid"     NON-POLYMER     18     12     .     
+#
+data_comp_KLW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KLW     N       N       NH2     0       -12.424     3.947       -9.834      
+KLW     C1      C       CR16    0       -17.026     3.916       -9.109      
+KLW     O1      O       O       0       -12.949     2.730       -8.024      
+KLW     C2      C       CR16    0       -17.227     5.260       -8.826      
+KLW     O2      O       OC      -1      -13.083     6.372       -7.194      
+KLW     C3      C       CR16    0       -16.143     6.080       -8.555      
+KLW     O3      O       O       0       -13.476     7.435       -9.081      
+KLW     C4      C       CR6     0       -14.839     5.575       -8.561      
+KLW     C5      C       CR6     0       -14.635     4.208       -8.848      
+KLW     C6      C       CR16    0       -15.742     3.393       -9.120      
+KLW     C7      C       C       0       -13.266     3.575       -8.877      
+KLW     C8      C       C       0       -13.712     6.535       -8.255      
+KLW     HN      H       H       0       -12.656     4.557       -10.442     
+KLW     HNA     H       H       0       -11.609     3.586       -9.878      
+KLW     H1      H       H       0       -17.763     3.357       -9.293      
+KLW     H2      H       H       0       -18.100     5.616       -8.819      
+KLW     H3      H       H       0       -16.286     6.991       -8.365      
+KLW     H6      H       H       0       -15.614     2.480       -9.312      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KLW       N         C7        SINGLE    n         1.326     0.010     1.326     0.010     
+KLW       C1        C6        DOUBLE    y         1.380     0.010     1.380     0.010     
+KLW       C1        C2        SINGLE    y         1.378     0.013     1.378     0.013     
+KLW       O1        C7        DOUBLE    n         1.241     0.011     1.241     0.011     
+KLW       C2        C3        DOUBLE    y         1.380     0.010     1.380     0.010     
+KLW       O2        C8        SINGLE    n         1.244     0.020     1.244     0.020     
+KLW       C3        C4        SINGLE    y         1.391     0.010     1.391     0.010     
+KLW       O3        C8        DOUBLE    n         1.244     0.020     1.244     0.020     
+KLW       C4        C5        DOUBLE    y         1.402     0.010     1.402     0.010     
+KLW       C4        C8        SINGLE    n         1.508     0.013     1.508     0.013     
+KLW       C5        C7        SINGLE    n         1.506     0.010     1.506     0.010     
+KLW       C5        C6        SINGLE    y         1.393     0.010     1.393     0.010     
+KLW       N         HN        SINGLE    n         1.016     0.010     0.891     0.020     
+KLW       N         HNA       SINGLE    n         1.016     0.010     0.891     0.020     
+KLW       C1        H1        SINGLE    n         1.082     0.013     0.943     0.018     
+KLW       C2        H2        SINGLE    n         1.082     0.013     0.943     0.018     
+KLW       C3        H3        SINGLE    n         1.082     0.013     0.941     0.017     
+KLW       C6        H6        SINGLE    n         1.082     0.013     0.941     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KLW          C7           N          HN     120.236    2.75
+KLW          C7           N         HNA     120.236    2.75
+KLW          HN           N         HNA     119.529    2.83
+KLW          C6          C1          C2     120.037    1.50
+KLW          C6          C1          H1     119.936    1.50
+KLW          C2          C1          H1     120.027    1.50
+KLW          C1          C2          C3     120.037    1.50
+KLW          C1          C2          H2     120.027    1.50
+KLW          C3          C2          H2     119.936    1.50
+KLW          C2          C3          C4     121.007    1.50
+KLW          C2          C3          H3     119.642    1.50
+KLW          C4          C3          H3     119.350    1.50
+KLW          C3          C4          C5     119.148    1.50
+KLW          C3          C4          C8     118.359    1.99
+KLW          C5          C4          C8     122.493    1.50
+KLW          C4          C5          C7     121.060    2.10
+KLW          C4          C5          C6     119.288    1.50
+KLW          C7          C5          C6     119.652    2.89
+KLW          C1          C6          C5     120.484    1.50
+KLW          C1          C6          H6     119.752    1.50
+KLW          C5          C6          H6     119.764    1.50
+KLW           N          C7          O1     121.689    1.50
+KLW           N          C7          C5     117.742    1.50
+KLW          O1          C7          C5     120.569    1.50
+KLW          O2          C8          O3     124.404    1.50
+KLW          O2          C8          C4     117.793    1.50
+KLW          O3          C8          C4     117.793    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KLW             sp2_sp2_3          O1          C7           N          HN       0.000   10.00     2
+KLW              const_21          C6          C1          C2          C3       0.000   10.00     2
+KLW       const_sp2_sp2_1          C2          C1          C6          C5       0.000   10.00     2
+KLW              const_17          C1          C2          C3          C4       0.000   10.00     2
+KLW              const_14          C2          C3          C4          C8     180.000   10.00     2
+KLW             sp2_sp2_5          C3          C4          C8          O2     180.000   10.00     2
+KLW              const_12          C8          C4          C5          C7       0.000   10.00     2
+KLW             sp2_sp2_9          C4          C5          C7           N     180.000   10.00     2
+KLW       const_sp2_sp2_7          C7          C5          C6          C1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KLW    plan-1          C1   0.020
+KLW    plan-1          C2   0.020
+KLW    plan-1          C3   0.020
+KLW    plan-1          C4   0.020
+KLW    plan-1          C5   0.020
+KLW    plan-1          C6   0.020
+KLW    plan-1          C7   0.020
+KLW    plan-1          C8   0.020
+KLW    plan-1          H1   0.020
+KLW    plan-1          H2   0.020
+KLW    plan-1          H3   0.020
+KLW    plan-1          H6   0.020
+KLW    plan-2          C7   0.020
+KLW    plan-2          HN   0.020
+KLW    plan-2         HNA   0.020
+KLW    plan-2           N   0.020
+KLW    plan-3          C5   0.020
+KLW    plan-3          C7   0.020
+KLW    plan-3           N   0.020
+KLW    plan-3          O1   0.020
+KLW    plan-4          C4   0.020
+KLW    plan-4          C8   0.020
+KLW    plan-4          O2   0.020
+KLW    plan-4          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KLW SMILES           ACDLabs              12.01 "O=C(O)c1ccccc1C(=O)N"
+KLW InChI            InChI                1.03  "InChI=1S/C8H7NO3/c9-7(10)5-3-1-2-4-6(5)8(11)12/h1-4H,(H2,9,10)(H,11,12)"
+KLW InChIKey         InChI                1.03  CYMRPDYINXWJFU-UHFFFAOYSA-N
+KLW SMILES_CANONICAL CACTVS               3.370 "NC(=O)c1ccccc1C(O)=O"
+KLW SMILES           CACTVS               3.370 "NC(=O)c1ccccc1C(O)=O"
+KLW SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1ccc(c(c1)C(=O)N)C(=O)O"
+KLW SMILES           "OpenEye OEToolkits" 1.7.6 "c1ccc(c(c1)C(=O)N)C(=O)O"
+KLW ?                acedrg               202         "dictionary generator"                  
+KLW ?                acedrg_database      11          "data source"                           
+KLW ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KLW ?                refmac5              5.8.0189    "optimization tool"                     

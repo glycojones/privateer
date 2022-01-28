@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MTG     MTG      "[METHYLTHIO]ACETATE"     NON-POLYMER     11     6     .     
+#
+data_comp_MTG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MTG     O5      O       O       0       41.504      28.329      20.033      
+MTG     O6      O       OC      -1      43.189      28.381      18.591      
+MTG     C1      C       C       0       42.195      28.882      19.154      
+MTG     C2      C       CH2     0       41.793      30.285      18.734      
+MTG     S3      S       S2      0       40.602      30.295      17.362      
+MTG     C4      C       CH3     0       40.372      32.062      17.134      
+MTG     H21     H       H       0       42.590      30.774      18.462      
+MTG     H22     H       H       0       41.397      30.741      19.498      
+MTG     H41     H       H       0       39.745      32.214      16.416      
+MTG     H42     H       H       0       41.219      32.470      16.915      
+MTG     H43     H       H       0       40.029      32.449      17.949      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MTG       O5        C1        DOUBLE    n         1.247     0.019     1.247     0.019     
+MTG       O6        C1        SINGLE    n         1.247     0.019     1.247     0.019     
+MTG       C1        C2        SINGLE    n         1.519     0.010     1.519     0.010     
+MTG       C2        S3        SINGLE    n         1.816     0.013     1.816     0.013     
+MTG       S3        C4        SINGLE    n         1.796     0.015     1.796     0.015     
+MTG       C2        H21       SINGLE    n         1.089     0.010     0.974     0.020     
+MTG       C2        H22       SINGLE    n         1.089     0.010     0.974     0.020     
+MTG       C4        H41       SINGLE    n         1.089     0.010     0.965     0.017     
+MTG       C4        H42       SINGLE    n         1.089     0.010     0.965     0.017     
+MTG       C4        H43       SINGLE    n         1.089     0.010     0.965     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MTG          O5          C1          O6     125.576    1.50
+MTG          O5          C1          C2     117.212    2.93
+MTG          O6          C1          C2     117.212    2.93
+MTG          C1          C2          S3     111.968    3.00
+MTG          C1          C2         H21     108.575    1.82
+MTG          C1          C2         H22     108.575    1.82
+MTG          S3          C2         H21     108.570    1.78
+MTG          S3          C2         H22     108.570    1.78
+MTG         H21          C2         H22     108.166    1.80
+MTG          C2          S3          C4     100.682    1.50
+MTG          S3          C4         H41     109.425    1.50
+MTG          S3          C4         H42     109.425    1.50
+MTG          S3          C4         H43     109.425    1.50
+MTG         H41          C4         H42     109.509    1.50
+MTG         H41          C4         H43     109.509    1.50
+MTG         H42          C4         H43     109.509    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MTG             sp2_sp3_2          O5          C1          C2          S3     120.000   10.00     6
+MTG             sp3_sp3_1          C1          C2          S3          C4     180.000   10.00     3
+MTG             sp3_sp3_4         H41          C4          S3          C2     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MTG    plan-1          C1   0.020
+MTG    plan-1          C2   0.020
+MTG    plan-1          O5   0.020
+MTG    plan-1          O6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MTG SMILES           ACDLabs              10.04 "[O-]C(=O)CSC"
+MTG SMILES_CANONICAL CACTVS               3.341 "CSCC([O-])=O"
+MTG SMILES           CACTVS               3.341 "CSCC([O-])=O"
+MTG SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CSCC(=O)[O-]"
+MTG SMILES           "OpenEye OEToolkits" 1.5.0 "CSCC(=O)[O-]"
+MTG InChI            InChI                1.03  "InChI=1S/C3H6O2S/c1-6-2-3(4)5/h2H2,1H3,(H,4,5)/p-1"
+MTG InChIKey         InChI                1.03  HGTBAIVLETUVCG-UHFFFAOYSA-M
+MTG ?                acedrg               202         "dictionary generator"                  
+MTG ?                acedrg_database      11          "data source"                           
+MTG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MTG ?                refmac5              5.8.0189    "optimization tool"                     

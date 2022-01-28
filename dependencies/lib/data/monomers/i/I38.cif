@@ -1,0 +1,175 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+I38     I38      "N-(3-MERCAPTOPROPANOYL)-D-ALANINE"     NON-POLYMER     21     11     .     
+#
+data_comp_I38
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+I38     S       S       SH1     0       13.580      31.593      31.454      
+I38     C1      C       CH2     0       13.808      30.187      30.335      
+I38     C2      C       CH2     0       12.665      29.209      30.357      
+I38     C3      C       C       0       12.495      28.489      31.682      
+I38     O3      O       O       0       13.285      27.600      32.004      
+I38     N4      N       NH1     0       11.481      28.878      32.471      
+I38     C5      C       CH1     0       11.125      28.207      33.716      
+I38     C51     C       CH3     0       9.673       28.480      34.094      
+I38     C6      C       C       0       12.061      28.628      34.865      
+I38     O62     O       O       0       12.227      29.851      35.051      
+I38     O61     O       OC      -1      12.591      27.717      35.531      
+I38     HS      H       HSH1    0       14.698      32.035      31.402      
+I38     H11     H       H       0       14.629      29.737      30.626      
+I38     H12     H       H       0       13.900      30.563      29.435      
+I38     H21     H       H       0       12.805      28.545      29.655      
+I38     H22     H       H       0       11.840      29.677      30.127      
+I38     HN4     H       H       0       11.022      29.588      32.245      
+I38     H5      H       H       0       11.224      27.222      33.585      
+I38     H511    H       H       0       9.609       29.305      34.607      
+I38     H512    H       H       0       9.334       27.742      34.629      
+I38     H513    H       H       0       9.138       28.564      33.287      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+I38       S         C1        SINGLE    n         1.812     0.010     1.812     0.010     
+I38       C1        C2        SINGLE    n         1.504     0.020     1.504     0.020     
+I38       C2        C3        SINGLE    n         1.514     0.010     1.514     0.010     
+I38       C3        O3        DOUBLE    n         1.229     0.012     1.229     0.012     
+I38       C3        N4        SINGLE    n         1.334     0.010     1.334     0.010     
+I38       N4        C5        SINGLE    n         1.453     0.010     1.453     0.010     
+I38       C5        C51       SINGLE    n         1.522     0.011     1.522     0.011     
+I38       C5        C6        SINGLE    n         1.539     0.010     1.539     0.010     
+I38       C6        O62       DOUBLE    n         1.247     0.019     1.247     0.019     
+I38       C6        O61       SINGLE    n         1.247     0.019     1.247     0.019     
+I38       S         HS        SINGLE    n         1.338     0.010     1.171     0.208     
+I38       C1        H11       SINGLE    n         1.089     0.010     0.989     0.005     
+I38       C1        H12       SINGLE    n         1.089     0.010     0.989     0.005     
+I38       C2        H21       SINGLE    n         1.089     0.010     0.989     0.005     
+I38       C2        H22       SINGLE    n         1.089     0.010     0.989     0.005     
+I38       N4        HN4       SINGLE    n         1.016     0.010     0.899     0.007     
+I38       C5        H5        SINGLE    n         1.089     0.010     0.989     0.005     
+I38       C51       H511      SINGLE    n         1.089     0.010     0.989     0.005     
+I38       C51       H512      SINGLE    n         1.089     0.010     0.989     0.005     
+I38       C51       H513      SINGLE    n         1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+I38          C1           S          HS      98.146    3.00
+I38           S          C1          C2     112.239    3.00
+I38           S          C1         H11     105.353    2.82
+I38           S          C1         H12     105.353    2.82
+I38          C2          C1         H11     109.263    1.50
+I38          C2          C1         H12     109.263    1.50
+I38         H11          C1         H12     111.425    1.71
+I38          C1          C2          C3     114.995    3.00
+I38          C1          C2         H21     109.073    1.50
+I38          C1          C2         H22     109.073    1.50
+I38          C3          C2         H21     108.929    1.50
+I38          C3          C2         H22     108.929    1.50
+I38         H21          C2         H22     106.767    2.51
+I38          C2          C3          O3     121.496    1.50
+I38          C2          C3          N4     116.391    1.50
+I38          O3          C3          N4     122.114    1.50
+I38          C3          N4          C5     121.923    1.76
+I38          C3          N4         HN4     118.677    1.50
+I38          C5          N4         HN4     119.400    2.18
+I38          N4          C5         C51     110.599    1.50
+I38          N4          C5          C6     111.925    2.31
+I38          N4          C5          H5     108.173    1.50
+I38         C51          C5          C6     109.294    1.70
+I38         C51          C5          H5     108.430    1.50
+I38          C6          C5          H5     108.101    1.50
+I38          C5         C51        H511     109.550    1.50
+I38          C5         C51        H512     109.550    1.50
+I38          C5         C51        H513     109.550    1.50
+I38        H511         C51        H512     109.386    1.50
+I38        H511         C51        H513     109.386    1.50
+I38        H512         C51        H513     109.386    1.50
+I38          C5          C6         O62     117.260    2.00
+I38          C5          C6         O61     117.260    2.00
+I38         O62          C6         O61     125.481    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+I38             sp3_sp3_1          C2          C1           S          HS     180.000   10.00     3
+I38             sp3_sp3_4           S          C1          C2          C3     180.000   10.00     3
+I38             sp2_sp3_2          O3          C3          C2          C1     120.000   10.00     6
+I38             sp2_sp2_1          C2          C3          N4          C5     180.000   10.00     2
+I38             sp2_sp3_7          C3          N4          C5         C51       0.000   10.00     6
+I38            sp3_sp3_13          N4          C5         C51        H511     180.000   10.00     3
+I38            sp2_sp3_13         O62          C6          C5          N4       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+I38    chir_1    C5    N4    C6    C51    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+I38    plan-1          C2   0.020
+I38    plan-1          C3   0.020
+I38    plan-1          N4   0.020
+I38    plan-1          O3   0.020
+I38    plan-2          C3   0.020
+I38    plan-2          C5   0.020
+I38    plan-2         HN4   0.020
+I38    plan-2          N4   0.020
+I38    plan-3          C5   0.020
+I38    plan-3          C6   0.020
+I38    plan-3         O61   0.020
+I38    plan-3         O62   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+I38 SMILES           ACDLabs              10.04 "O=C(NC(C(=O)O)C)CCS"
+I38 SMILES_CANONICAL CACTVS               3.341 "C[C@@H](NC(=O)CCS)C(O)=O"
+I38 SMILES           CACTVS               3.341 "C[CH](NC(=O)CCS)C(O)=O"
+I38 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@H](C(=O)O)NC(=O)CCS"
+I38 SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C(=O)O)NC(=O)CCS"
+I38 InChI            InChI                1.03  "InChI=1S/C6H11NO3S/c1-4(6(9)10)7-5(8)2-3-11/h4,11H,2-3H2,1H3,(H,7,8)(H,9,10)/t4-/m1/s1"
+I38 InChIKey         InChI                1.03  JIAFOCJABIEPNM-SCSAIBSYSA-N
+I38 ?                acedrg               202         "dictionary generator"                  
+I38 ?                acedrg_database      11          "data source"                           
+I38 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+I38 ?                refmac5              5.8.0189    "optimization tool"                     

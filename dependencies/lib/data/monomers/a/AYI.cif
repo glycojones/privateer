@@ -1,0 +1,500 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AYI      AYI '.                                   ' non-polymer        67  37 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AYI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AYI           OD1    O    O         0.000      0.000    0.000    0.000
+ AYI           CG     C    C         0.000      0.949   -0.751   -0.069
+ AYI           ND2    N    NH2       0.000      2.115   -0.419    0.521
+ AYI           HNDA   H    H         0.000      2.202    0.456    1.023
+ AYI           HND2   H    H         0.000      2.911   -1.043    0.467
+ AYI           CB     C    CH2       0.000      0.826   -2.055   -0.814
+ AYI           HB     H    H         0.000      1.023   -2.884   -0.131
+ AYI           HBA    H    H         0.000      1.552   -2.077   -1.629
+ AYI           CA     C    CH1       0.000     -0.588   -2.185   -1.383
+ AYI           HA     H    H         0.000     -0.817   -1.305   -2.000
+ AYI           C      C    C         0.000     -0.675   -3.428   -2.231
+ AYI           NAE    N    NH2       0.000      0.124   -3.568   -3.308
+ AYI           HNAA   H    H         0.000      0.068   -4.401   -3.881
+ AYI           HNAE   H    H         0.000      0.785   -2.840   -3.551
+ AYI           O      O    O         0.000     -1.461   -4.305   -1.942
+ AYI           N      N    NH1       0.000     -1.551   -2.275   -0.283
+ AYI           HN     H    H         0.000     -1.257   -2.620    0.619
+ AYI           CBA    C    C         0.000     -2.830   -1.898   -0.477
+ AYI           OAI    O    O         0.000     -3.184   -1.484   -1.560
+ AYI           CBG    C    CH1       0.000     -3.821   -1.991    0.656
+ AYI           HBG    H    H         0.000     -3.482   -1.363    1.492
+ AYI           CBE    C    CH1       0.000     -3.931   -3.444    1.121
+ AYI           HBE    H    H         0.000     -2.948   -3.793    1.466
+ AYI           CAC    C    CH3       0.000     -4.937   -3.537    2.269
+ AYI           HACB   H    H         0.000     -5.013   -4.543    2.593
+ AYI           HACA   H    H         0.000     -4.611   -2.932    3.076
+ AYI           HAC    H    H         0.000     -5.885   -3.202    1.938
+ AYI           CAR    C    CH2       0.000     -4.403   -4.317   -0.043
+ AYI           HAR    H    H         0.000     -3.733   -4.180   -0.895
+ AYI           HARA   H    H         0.000     -5.416   -4.027   -0.328
+ AYI           CAA    C    CH3       0.000     -4.392   -5.786    0.385
+ AYI           HAAB   H    H         0.000     -3.409   -6.071    0.662
+ AYI           HAAA   H    H         0.000     -5.042   -5.922    1.212
+ AYI           HAA    H    H         0.000     -4.719   -6.395   -0.420
+ AYI           NAV    N    NH1       0.000     -5.132   -1.525    0.196
+ AYI           HNAV   H    H         0.000     -5.368   -1.569   -0.786
+ AYI           CBB    C    C         0.000     -6.024   -1.039    1.082
+ AYI           OAJ    O    O         0.000     -5.740   -0.987    2.261
+ AYI           CBI    C    CH1       0.000     -7.373   -0.560    0.609
+ AYI           HBI    H    H         0.000     -7.407   -0.084   -0.381
+ AYI           CBJ    C    CH1       0.000     -8.340   -0.019    1.664
+ AYI           HBJ    H    H         0.000     -7.988   -0.026    2.705
+ AYI           CBH    C    CH1       0.000     -8.596   -1.382    1.017
+ AYI           HBH    H    H         0.000     -8.409   -2.267    1.642
+ AYI           CAZ    C    C         0.000     -9.729   -1.481    0.029
+ AYI           OAH    O    O         0.000    -10.824   -1.043    0.315
+ AYI           NAT    N    NH1       0.000     -9.527   -2.054   -1.173
+ AYI           H32    H    H         0.000     -8.615   -2.418   -1.412
+ AYI           CAB    C    CH3       0.000    -10.628   -2.150   -2.135
+ AYI           H31    H    H         0.000    -11.421   -2.715   -1.714
+ AYI           HABA   H    H         0.000    -10.979   -1.178   -2.373
+ AYI           HAB    H    H         0.000    -10.289   -2.626   -3.019
+ AYI           CBD    C    CR6       0.000     -9.239    1.121    1.264
+ AYI           CAP    C    CR16      0.000    -10.093    1.686    2.194
+ AYI           HAP    H    H         0.000    -10.121    1.302    3.206
+ AYI           CAQ    C    CR16      0.000     -9.200    1.610   -0.029
+ AYI           HAQ    H    H         0.000     -8.523    1.173   -0.753
+ AYI           CAO    C    CR16      0.000    -10.023    2.656   -0.398
+ AYI           HAO    H    H         0.000    -10.003    3.029   -1.414
+ AYI           CBC    C    CR6       0.000    -10.876    3.228    0.534
+ AYI           CAN    C    CR16      0.000    -10.910    2.740    1.832
+ AYI           HAN    H    H         0.000    -11.576    3.184    2.561
+ AYI           OAW    O    O2        0.000    -11.680    4.265    0.175
+ AYI           PBK    P    P         0.000    -13.121    3.813   -0.381
+ AYI           OAK    O    OP       -0.666    -13.802    2.928    0.640
+ AYI           OAL    O    OP       -0.666    -12.946    3.049   -1.675
+ AYI           OAM    O    OP       -0.666    -13.971    5.040   -0.631
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AYI      OD1    n/a    CG     START
+ AYI      CG     OD1    CB     .
+ AYI      ND2    CG     HND2   .
+ AYI      HNDA   ND2    .      .
+ AYI      HND2   ND2    .      .
+ AYI      CB     CG     CA     .
+ AYI      HB     CB     .      .
+ AYI      HBA    CB     .      .
+ AYI      CA     CB     N      .
+ AYI      HA     CA     .      .
+ AYI      C      CA     O      .
+ AYI      NAE    C      HNAE   .
+ AYI      HNAA   NAE    .      .
+ AYI      HNAE   NAE    .      .
+ AYI      O      C      .      .
+ AYI      N      CA     CBA    .
+ AYI      HN     N      .      .
+ AYI      CBA    N      CBG    .
+ AYI      OAI    CBA    .      .
+ AYI      CBG    CBA    NAV    .
+ AYI      HBG    CBG    .      .
+ AYI      CBE    CBG    CAR    .
+ AYI      HBE    CBE    .      .
+ AYI      CAC    CBE    HAC    .
+ AYI      HACB   CAC    .      .
+ AYI      HACA   CAC    .      .
+ AYI      HAC    CAC    .      .
+ AYI      CAR    CBE    CAA    .
+ AYI      HAR    CAR    .      .
+ AYI      HARA   CAR    .      .
+ AYI      CAA    CAR    HAA    .
+ AYI      HAAB   CAA    .      .
+ AYI      HAAA   CAA    .      .
+ AYI      HAA    CAA    .      .
+ AYI      NAV    CBG    CBB    .
+ AYI      HNAV   NAV    .      .
+ AYI      CBB    NAV    CBI    .
+ AYI      OAJ    CBB    .      .
+ AYI      CBI    CBB    CBJ    .
+ AYI      HBI    CBI    .      .
+ AYI      CBJ    CBI    CBD    .
+ AYI      HBJ    CBJ    .      .
+ AYI      CBH    CBJ    CAZ    .
+ AYI      HBH    CBH    .      .
+ AYI      CAZ    CBH    NAT    .
+ AYI      OAH    CAZ    .      .
+ AYI      NAT    CAZ    CAB    .
+ AYI      H32    NAT    .      .
+ AYI      CAB    NAT    HAB    .
+ AYI      H31    CAB    .      .
+ AYI      HABA   CAB    .      .
+ AYI      HAB    CAB    .      .
+ AYI      CBD    CBJ    CAQ    .
+ AYI      CAP    CBD    HAP    .
+ AYI      HAP    CAP    .      .
+ AYI      CAQ    CBD    CAO    .
+ AYI      HAQ    CAQ    .      .
+ AYI      CAO    CAQ    CBC    .
+ AYI      HAO    CAO    .      .
+ AYI      CBC    CAO    OAW    .
+ AYI      CAN    CBC    HAN    .
+ AYI      HAN    CAN    .      .
+ AYI      OAW    CBC    PBK    .
+ AYI      PBK    OAW    OAM    .
+ AYI      OAK    PBK    .      .
+ AYI      OAL    PBK    .      .
+ AYI      OAM    PBK    .      END
+ AYI      CAN    CAP    .    ADD
+ AYI      CBH    CBI    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AYI       NAE       C         single    1.332     0.020     1.332     0.020     
+AYI       C         CA        single    1.500     0.020     1.500     0.020     
+AYI       CBA       N         single    1.330     0.020     1.330     0.020     
+AYI       HN        N         single    1.016     0.010     0.899     0.007     
+AYI       O         C         double    1.220     0.020     1.220     0.020     
+AYI       N         CA        single    1.450     0.020     1.450     0.020     
+AYI       HA        CA        single    1.089     0.010     0.989     0.005     
+AYI       CA        CB        single    1.524     0.020     1.524     0.020     
+AYI       HB        CB        single    1.089     0.010     0.989     0.005     
+AYI       HBA       CB        single    1.089     0.010     0.989     0.005     
+AYI       CB        CG        single    1.510     0.020     1.510     0.020     
+AYI       CG        OD1       double    1.220     0.020     1.220     0.020     
+AYI       HAA       CAA       single    1.089     0.010     0.989     0.005     
+AYI       HAAA      CAA       single    1.089     0.010     0.989     0.005     
+AYI       HAAB      CAA       single    1.089     0.010     0.989     0.005     
+AYI       HAB       CAB       single    1.089     0.010     0.989     0.005     
+AYI       HABA      CAB       single    1.089     0.010     0.989     0.005     
+AYI       HAC       CAC       single    1.089     0.010     0.989     0.005     
+AYI       HACA      CAC       single    1.089     0.010     0.989     0.005     
+AYI       HACB      CAC       single    1.089     0.010     0.989     0.005     
+AYI       HNAE      NAE       single    1.016     0.010     0.899     0.007     
+AYI       HNAA      NAE       single    1.016     0.010     0.899     0.007     
+AYI       OAI       CBA       double    1.220     0.020     1.220     0.020     
+AYI       OAJ       CBB       double    1.220     0.020     1.220     0.020     
+AYI       OAK       PBK       deloc     1.510     0.020     1.510     0.020     
+AYI       OAL       PBK       deloc     1.510     0.020     1.510     0.020     
+AYI       CAN       CAP       single    1.390     0.020     1.390     0.020     
+AYI       HAN       CAN       single    1.082     0.013     0.975     0.010     
+AYI       CAO       CAQ       double    1.390     0.020     1.390     0.020     
+AYI       CBC       CAO       single    1.390     0.020     1.390     0.020     
+AYI       HAO       CAO       single    1.082     0.013     0.975     0.010     
+AYI       HAP       CAP       single    1.082     0.013     0.975     0.010     
+AYI       CAQ       CBD       single    1.390     0.020     1.390     0.020     
+AYI       HAQ       CAQ       single    1.082     0.013     0.975     0.010     
+AYI       CAA       CAR       single    1.513     0.020     1.513     0.020     
+AYI       HAR       CAR       single    1.089     0.010     0.989     0.005     
+AYI       HARA      CAR       single    1.089     0.010     0.989     0.005     
+AYI       CAB       NAT       single    1.450     0.020     1.450     0.020     
+AYI       NAT       CAZ       single    1.330     0.020     1.330     0.020     
+AYI       NAV       CBG       single    1.450     0.020     1.450     0.020     
+AYI       HNAV      NAV       single    1.016     0.010     0.899     0.007     
+AYI       OAW       CBC       single    1.370     0.020     1.370     0.020     
+AYI       PBK       OAW       single    1.610     0.020     1.610     0.020     
+AYI       OAH       CAZ       double    1.220     0.020     1.220     0.020     
+AYI       CBG       CBA       single    1.500     0.020     1.500     0.020     
+AYI       CBB       NAV       single    1.330     0.020     1.330     0.020     
+AYI       CAN       CBC       double    1.390     0.020     1.390     0.020     
+AYI       CAP       CBD       double    1.390     0.020     1.390     0.020     
+AYI       CBD       CBJ       single    1.480     0.020     1.480     0.020     
+AYI       CAC       CBE       single    1.524     0.020     1.524     0.020     
+AYI       CAR       CBE       single    1.524     0.020     1.524     0.020     
+AYI       HBE       CBE       single    1.089     0.010     0.989     0.005     
+AYI       CBE       CBG       single    1.524     0.020     1.524     0.020     
+AYI       HBG       CBG       single    1.089     0.010     0.989     0.005     
+AYI       CAZ       CBH       single    1.500     0.020     1.500     0.020     
+AYI       CBH       CBI       single    1.524     0.020     1.524     0.020     
+AYI       HBH       CBH       single    1.089     0.010     0.989     0.005     
+AYI       CBI       CBB       single    1.500     0.020     1.500     0.020     
+AYI       HBI       CBI       single    1.089     0.010     0.989     0.005     
+AYI       CBH       CBJ       single    1.524     0.020     1.524     0.020     
+AYI       CBJ       CBI       single    1.524     0.020     1.524     0.020     
+AYI       HBJ       CBJ       single    1.089     0.010     0.989     0.005     
+AYI       OAM       PBK       deloc     1.510     0.020     1.510     0.020     
+AYI       ND2       CG        single    1.332     0.020     1.332     0.020     
+AYI       HND2      ND2       single    1.016     0.010     0.899     0.007     
+AYI       HNDA      ND2       single    1.016     0.010     0.899     0.007     
+AYI       H31       CAB       single    1.089     0.010     0.989     0.005     
+AYI       H32       NAT       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AYI      OD1    CG     ND2     123.000    3.000
+ AYI      OD1    CG     CB      120.500    3.000
+ AYI      ND2    CG     CB      116.500    3.000
+ AYI      CG     ND2    HNDA    120.000    3.000
+ AYI      CG     ND2    HND2    120.000    3.000
+ AYI      HNDA   ND2    HND2    120.000    3.000
+ AYI      CG     CB     HB      109.470    3.000
+ AYI      CG     CB     HBA     109.470    3.000
+ AYI      CG     CB     CA      109.470    3.000
+ AYI      HB     CB     HBA     107.900    3.000
+ AYI      HB     CB     CA      109.470    3.000
+ AYI      HBA    CB     CA      109.470    3.000
+ AYI      CB     CA     HA      108.340    3.000
+ AYI      CB     CA     C       109.470    3.000
+ AYI      CB     CA     N       110.000    3.000
+ AYI      HA     CA     C       108.810    3.000
+ AYI      HA     CA     N       108.550    3.000
+ AYI      C      CA     N       111.600    3.000
+ AYI      CA     C      NAE     120.000    3.000
+ AYI      CA     C      O       120.500    3.000
+ AYI      NAE    C      O       123.000    3.000
+ AYI      C      NAE    HNAA    120.000    3.000
+ AYI      C      NAE    HNAE    120.000    3.000
+ AYI      HNAA   NAE    HNAE    120.000    3.000
+ AYI      CA     N      HN      118.500    3.000
+ AYI      CA     N      CBA     121.500    3.000
+ AYI      HN     N      CBA     120.000    3.000
+ AYI      N      CBA    OAI     123.000    3.000
+ AYI      N      CBA    CBG     116.500    3.000
+ AYI      OAI    CBA    CBG     120.500    3.000
+ AYI      CBA    CBG    HBG     108.810    3.000
+ AYI      CBA    CBG    CBE     109.470    3.000
+ AYI      CBA    CBG    NAV     111.600    3.000
+ AYI      HBG    CBG    CBE     108.340    3.000
+ AYI      HBG    CBG    NAV     108.550    3.000
+ AYI      CBE    CBG    NAV     110.000    3.000
+ AYI      CBG    CBE    HBE     108.340    3.000
+ AYI      CBG    CBE    CAC     111.000    3.000
+ AYI      CBG    CBE    CAR     111.000    3.000
+ AYI      HBE    CBE    CAC     108.340    3.000
+ AYI      HBE    CBE    CAR     108.340    3.000
+ AYI      CAC    CBE    CAR     111.000    3.000
+ AYI      CBE    CAC    HACB    109.470    3.000
+ AYI      CBE    CAC    HACA    109.470    3.000
+ AYI      CBE    CAC    HAC     109.470    3.000
+ AYI      HACB   CAC    HACA    109.470    3.000
+ AYI      HACB   CAC    HAC     109.470    3.000
+ AYI      HACA   CAC    HAC     109.470    3.000
+ AYI      CBE    CAR    HAR     109.470    3.000
+ AYI      CBE    CAR    HARA    109.470    3.000
+ AYI      CBE    CAR    CAA     111.000    3.000
+ AYI      HAR    CAR    HARA    107.900    3.000
+ AYI      HAR    CAR    CAA     109.470    3.000
+ AYI      HARA   CAR    CAA     109.470    3.000
+ AYI      CAR    CAA    HAAB    109.470    3.000
+ AYI      CAR    CAA    HAAA    109.470    3.000
+ AYI      CAR    CAA    HAA     109.470    3.000
+ AYI      HAAB   CAA    HAAA    109.470    3.000
+ AYI      HAAB   CAA    HAA     109.470    3.000
+ AYI      HAAA   CAA    HAA     109.470    3.000
+ AYI      CBG    NAV    HNAV    118.500    3.000
+ AYI      CBG    NAV    CBB     121.500    3.000
+ AYI      HNAV   NAV    CBB     120.000    3.000
+ AYI      NAV    CBB    OAJ     123.000    3.000
+ AYI      NAV    CBB    CBI     116.500    3.000
+ AYI      OAJ    CBB    CBI     120.500    3.000
+ AYI      CBB    CBI    HBI     108.810    3.000
+ AYI      CBB    CBI    CBJ     109.470    3.000
+ AYI      CBB    CBI    CBH     109.470    3.000
+ AYI      HBI    CBI    CBJ     108.340    3.000
+ AYI      HBI    CBI    CBH     108.340    3.000
+ AYI      CBJ    CBI    CBH      60.000    3.000
+ AYI      CBI    CBJ    HBJ     108.340    3.000
+ AYI      CBI    CBJ    CBH      60.000    3.000
+ AYI      CBI    CBJ    CBD     109.470    3.000
+ AYI      HBJ    CBJ    CBH     108.340    3.000
+ AYI      HBJ    CBJ    CBD     109.470    3.000
+ AYI      CBH    CBJ    CBD     109.470    3.000
+ AYI      CBJ    CBH    HBH     108.340    3.000
+ AYI      CBJ    CBH    CAZ     109.470    3.000
+ AYI      CBJ    CBH    CBI      60.000    3.000
+ AYI      HBH    CBH    CAZ     108.810    3.000
+ AYI      HBH    CBH    CBI     108.340    3.000
+ AYI      CAZ    CBH    CBI     109.470    3.000
+ AYI      CBH    CAZ    OAH     120.500    3.000
+ AYI      CBH    CAZ    NAT     116.500    3.000
+ AYI      OAH    CAZ    NAT     123.000    3.000
+ AYI      CAZ    NAT    H32     120.000    3.000
+ AYI      CAZ    NAT    CAB     121.500    3.000
+ AYI      H32    NAT    CAB     118.500    3.000
+ AYI      NAT    CAB    H31     109.470    3.000
+ AYI      NAT    CAB    HABA    109.470    3.000
+ AYI      NAT    CAB    HAB     109.470    3.000
+ AYI      H31    CAB    HABA    109.470    3.000
+ AYI      H31    CAB    HAB     109.470    3.000
+ AYI      HABA   CAB    HAB     109.470    3.000
+ AYI      CBJ    CBD    CAP     120.000    3.000
+ AYI      CBJ    CBD    CAQ     120.000    3.000
+ AYI      CAP    CBD    CAQ     120.000    3.000
+ AYI      CBD    CAP    HAP     120.000    3.000
+ AYI      CBD    CAP    CAN     120.000    3.000
+ AYI      HAP    CAP    CAN     120.000    3.000
+ AYI      CBD    CAQ    HAQ     120.000    3.000
+ AYI      CBD    CAQ    CAO     120.000    3.000
+ AYI      HAQ    CAQ    CAO     120.000    3.000
+ AYI      CAQ    CAO    HAO     120.000    3.000
+ AYI      CAQ    CAO    CBC     120.000    3.000
+ AYI      HAO    CAO    CBC     120.000    3.000
+ AYI      CAO    CBC    CAN     120.000    3.000
+ AYI      CAO    CBC    OAW     120.000    3.000
+ AYI      CAN    CBC    OAW     120.000    3.000
+ AYI      CBC    CAN    HAN     120.000    3.000
+ AYI      CBC    CAN    CAP     120.000    3.000
+ AYI      HAN    CAN    CAP     120.000    3.000
+ AYI      CBC    OAW    PBK     120.000    3.000
+ AYI      OAW    PBK    OAK     108.200    3.000
+ AYI      OAW    PBK    OAL     108.200    3.000
+ AYI      OAW    PBK    OAM     108.200    3.000
+ AYI      OAK    PBK    OAL     119.900    3.000
+ AYI      OAK    PBK    OAM     119.900    3.000
+ AYI      OAL    PBK    OAM     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AYI      CONST_1  OD1    CG     ND2    HND2     180.000    0.000   0
+ AYI      var_1    OD1    CG     CB     CA        -0.002   20.000   3
+ AYI      var_2    CG     CB     CA     N        -64.999   20.000   3
+ AYI      var_3    CB     CA     C      O        119.726   20.000   3
+ AYI      CONST_2  CA     C      NAE    HNAE       0.000    0.000   0
+ AYI      var_4    CB     CA     N      CBA      154.979   20.000   3
+ AYI      CONST_3  CA     N      CBA    CBG      180.000    0.000   0
+ AYI      var_5    N      CBA    CBG    NAV     -179.998   20.000   3
+ AYI      var_6    CBA    CBG    CBE    CAR      -59.954   20.000   3
+ AYI      var_7    CBG    CBE    CAC    HAC       60.056   20.000   3
+ AYI      var_8    CBG    CBE    CAR    CAA      174.972   20.000   3
+ AYI      var_9    CBE    CAR    CAA    HAA      179.984   20.000   3
+ AYI      var_10   CBA    CBG    NAV    CBB     -154.985   20.000   3
+ AYI      CONST_4  CBG    NAV    CBB    CBI      180.000    0.000   0
+ AYI      var_11   NAV    CBB    CBI    CBJ     -179.995   20.000   3
+ AYI      var_12   CBB    CBI    CBJ    CBD      145.038   20.000   3
+ AYI      var_13   CBI    CBJ    CBH    CAZ     -107.507   20.000   3
+ AYI      var_14   CBJ    CBH    CBI    CBB      107.509   20.000   3
+ AYI      var_15   CBJ    CBH    CAZ    NAT      130.633   20.000   3
+ AYI      CONST_5  CBH    CAZ    NAT    CAB      180.000    0.000   0
+ AYI      var_16   CAZ    NAT    CAB    HAB      180.000   20.000   1
+ AYI      var_17   CBI    CBJ    CBD    CAQ        2.059   20.000   1
+ AYI      CONST_6  CBJ    CBD    CAP    CAN      180.000    0.000   0
+ AYI      CONST_7  CBJ    CBD    CAQ    CAO      180.000    0.000   0
+ AYI      CONST_8  CBD    CAQ    CAO    CBC        0.000    0.000   0
+ AYI      CONST_9  CAQ    CAO    CBC    OAW      180.000    0.000   0
+ AYI      CONST_10 CAO    CBC    CAN    CAP        0.000    0.000   0
+ AYI      CONST_11 CBC    CAN    CAP    CBD        0.000    0.000   0
+ AYI      var_18   CAO    CBC    OAW    PBK       89.969   20.000   1
+ AYI      var_19   CBC    OAW    PBK    OAM      174.974   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AYI      chir_01  CBH    CAZ    CBI    CBJ       negativ
+ AYI      chir_02  CBI    CBB    CBH    CBJ       negativ
+ AYI      chir_03  CBJ    CBD    CBH    CBI       negativ
+ AYI      chir_04  CBE    CAR    CAC    CBG       positiv
+ AYI      chir_05  CBG    NAV    CBA    CBE       positiv
+ AYI      chir_06  CA     C      N      CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AYI      plan-1    CAN       0.020
+ AYI      plan-1    CAP       0.020
+ AYI      plan-1    CBC       0.020
+ AYI      plan-1    HAN       0.020
+ AYI      plan-1    CAO       0.020
+ AYI      plan-1    CAQ       0.020
+ AYI      plan-1    CBD       0.020
+ AYI      plan-1    HAO       0.020
+ AYI      plan-1    HAP       0.020
+ AYI      plan-1    HAQ       0.020
+ AYI      plan-1    OAW       0.020
+ AYI      plan-1    CBJ       0.020
+ AYI      plan-2    NAT       0.020
+ AYI      plan-2    CAB       0.020
+ AYI      plan-2    CAZ       0.020
+ AYI      plan-2    H32       0.020
+ AYI      plan-3    CAZ       0.020
+ AYI      plan-3    OAH       0.020
+ AYI      plan-3    NAT       0.020
+ AYI      plan-3    CBH       0.020
+ AYI      plan-3    H32       0.020
+ AYI      plan-4    CBB       0.020
+ AYI      plan-4    OAJ       0.020
+ AYI      plan-4    CBI       0.020
+ AYI      plan-4    NAV       0.020
+ AYI      plan-4    HNAV      0.020
+ AYI      plan-5    NAV       0.020
+ AYI      plan-5    CBB       0.020
+ AYI      plan-5    CBG       0.020
+ AYI      plan-5    HNAV      0.020
+ AYI      plan-6    CBA       0.020
+ AYI      plan-6    OAI       0.020
+ AYI      plan-6    CBG       0.020
+ AYI      plan-6    N         0.020
+ AYI      plan-6    HN        0.020
+ AYI      plan-7    C         0.020
+ AYI      plan-7    O         0.020
+ AYI      plan-7    CA        0.020
+ AYI      plan-7    NAE       0.020
+ AYI      plan-7    HNAA      0.020
+ AYI      plan-7    HNAE      0.020
+ AYI      plan-8    N         0.020
+ AYI      plan-8    CBA       0.020
+ AYI      plan-8    CA        0.020
+ AYI      plan-8    HN        0.020
+ AYI      plan-9    CG        0.020
+ AYI      plan-9    CB        0.020
+ AYI      plan-9    OD1       0.020
+ AYI      plan-9    ND2       0.020
+ AYI      plan-9    HNDA      0.020
+ AYI      plan-9    HND2      0.020
+ AYI      plan-10   NAE       0.020
+ AYI      plan-10   C         0.020
+ AYI      plan-10   HNAE      0.020
+ AYI      plan-10   HNAA      0.020
+ AYI      plan-11   ND2       0.020
+ AYI      plan-11   CG        0.020
+ AYI      plan-11   HND2      0.020
+ AYI      plan-11   HNDA      0.020
+# ------------------------------------------------------

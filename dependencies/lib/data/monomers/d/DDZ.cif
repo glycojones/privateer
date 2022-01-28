@@ -1,0 +1,163 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DDZ     DDZ     "3,3-DIHYDROXY"     peptide     15     8     .
+#
+data_comp_DDZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DDZ     N       N       NT3     1       20.344      37.369      -18.415
+DDZ     CA      C       CH1     0       20.957      38.027      -19.601
+DDZ     C       C       C       0       19.961      39.034      -20.190
+DDZ     O       O       O       0       20.347      40.214      -20.312
+DDZ     OG1     O       OH1     0       22.156      35.984      -20.021
+DDZ     OG2     O       OH1     0       22.123      37.652      -21.677
+DDZ     CB      C       CH1     0       21.387      37.002      -20.648
+DDZ     OXT     O       OC      -1      18.835      38.601      -20.504
+DDZ     H       H       H       0       20.928      36.765      -18.061
+DDZ     H2      H       H       0       19.581      36.935      -18.660
+DDZ     H3      H       H       0       20.142      37.993      -17.783
+DDZ     HA      H       H       0       21.754      38.521      -19.297
+DDZ     HG1     H       H       0       22.451      35.452      -20.612
+DDZ     HG2     H       H       0       22.137      37.158      -22.366
+DDZ     HB      H       H       0       20.580      36.589      -21.048
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DDZ      N      n/a    CA     START
+DDZ      H      N      .      .
+DDZ      H2     N      .      .
+DDZ      H3     N      .      .
+DDZ      CA     N      C      .
+DDZ      HA     CA     .      .
+DDZ      CB     CA     OG1    .
+DDZ      HB     CB     .      .
+DDZ      OG2    CB     HG2    .
+DDZ      HG2    OG2    .      .
+DDZ      OG1    CB     HG1    .
+DDZ      HG1    OG1    .      .
+DDZ      C      CA     .      END
+DDZ      O      C      .      .
+DDZ      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DDZ       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+DDZ       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DDZ       CA        CB        SINGLE    n         1.525     0.015     1.525     0.015     
+DDZ       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DDZ       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DDZ       OG1       CB        SINGLE    n         1.421     0.017     1.421     0.017     
+DDZ       OG2       CB        SINGLE    n         1.421     0.017     1.421     0.017     
+DDZ       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DDZ       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DDZ       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DDZ       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+DDZ       OG1       HG1       SINGLE    n         0.970     0.012     0.848     0.020     
+DDZ       OG2       HG2       SINGLE    n         0.970     0.012     0.848     0.020     
+DDZ       CB        HB        SINGLE    n         1.089     0.010     0.991     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DDZ          CA           N           H     109.853    1.85
+DDZ          CA           N          H2     109.853    1.85
+DDZ          CA           N          H3     109.853    1.85
+DDZ           H           N          H2     109.028    2.41
+DDZ           H           N          H3     109.028    2.41
+DDZ          H2           N          H3     109.028    2.41
+DDZ           N          CA           C     109.414    1.50
+DDZ           N          CA          CB     112.810    3.00
+DDZ           N          CA          HA     108.444    1.50
+DDZ           C          CA          CB     111.511    2.91
+DDZ           C          CA          HA     108.600    1.50
+DDZ          CB          CA          HA     109.155    1.50
+DDZ          CA           C           O     117.139    1.50
+DDZ          CA           C         OXT     117.139    1.50
+DDZ           O           C         OXT     125.721    1.50
+DDZ          CB         OG1         HG1     109.233    2.58
+DDZ          CB         OG2         HG2     109.233    2.58
+DDZ          CA          CB         OG1     109.482    3.00
+DDZ          CA          CB         OG2     109.482    3.00
+DDZ          CA          CB          HB     109.155    1.50
+DDZ         OG1          CB         OG2     111.904    1.92
+DDZ         OG1          CB          HB     108.816    1.50
+DDZ         OG2          CB          HB     108.816    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DDZ             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+DDZ             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DDZ            sp3_sp3_10           N          CA          CB         OG1     180.000   10.00     3
+DDZ            sp3_sp3_19          CA          CB         OG1         HG1     180.000   10.00     3
+DDZ            sp3_sp3_22          CA          CB         OG2         HG2     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DDZ    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DDZ    plan-1           C   0.020
+DDZ    plan-1          CA   0.020
+DDZ    plan-1           O   0.020
+DDZ    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DDZ SMILES           ACDLabs              10.04 "O=C(O)C(N)C(O)O"
+DDZ SMILES_CANONICAL CACTVS               3.352 "N[C@@H](C(O)O)C(O)=O"
+DDZ SMILES           CACTVS               3.352 "N[CH](C(O)O)C(O)=O"
+DDZ SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "[C@H](C(O)O)(C(=O)O)N"
+DDZ SMILES           "OpenEye OEToolkits" 1.6.1 "C(C(O)O)(C(=O)O)N"
+DDZ InChI            InChI                1.03  "InChI=1S/C3H7NO4/c4-1(2(5)6)3(7)8/h1-2,5-6H,4H2,(H,7,8)/t1-/m0/s1"
+DDZ InChIKey         InChI                1.03  WBZJYDPZNNYSJU-SFOWXEAESA-N
+DDZ ?                acedrg               202         "dictionary generator"
+DDZ ?                acedrg_database      11          "data source"
+DDZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DDZ ?                refmac5              5.8.0222    "optimization tool"

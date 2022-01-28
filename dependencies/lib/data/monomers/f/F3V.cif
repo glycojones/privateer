@@ -1,0 +1,120 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+F3V     F3V      1-aminopropan-2-one     NON-POLYMER     12     5     .     
+#
+data_comp_F3V
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+F3V     N       N       NT2     0       186.891     -10.643     273.116     
+F3V     CA      C       CH2     0       188.295     -10.874     273.477     
+F3V     C       C       C       0       188.528     -12.187     274.212     
+F3V     O       O       O       0       187.625     -12.968     274.414     
+F3V     CM      C       CH3     0       189.913     -12.465     274.667     
+F3V     H1      H       H       0       186.932     -9.840      272.708     
+F3V     H2      H       H       0       186.758     -11.263     272.474     
+F3V     H4      H       H       0       188.598     -10.143     274.039     
+F3V     H5      H       H       0       188.831     -10.869     272.667     
+F3V     H6      H       H       0       189.950     -13.343     275.081     
+F3V     H7      H       H       0       190.183     -11.792     275.314     
+F3V     H8      H       H       0       190.516     -12.441     273.906     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+F3V       N         CA        SINGLE    n         1.467     0.0144    1.467     0.0144    
+F3V       CA        C         SINGLE    n         1.520     0.0140    1.520     0.0140    
+F3V       C         O         DOUBLE    n         1.209     0.0200    1.209     0.0200    
+F3V       C         CM        SINGLE    n         1.483     0.0200    1.483     0.0200    
+F3V       N         H1        SINGLE    n         1.036     0.016     0.902     0.0200    
+F3V       N         H2        SINGLE    n         1.036     0.016     0.902     0.0200    
+F3V       CA        H4        SINGLE    n         1.089     0.010     0.971     0.0200    
+F3V       CA        H5        SINGLE    n         1.089     0.010     0.971     0.0200    
+F3V       CM        H6        SINGLE    n         1.089     0.010     0.971     0.0145    
+F3V       CM        H7        SINGLE    n         1.089     0.010     0.971     0.0145    
+F3V       CM        H8        SINGLE    n         1.089     0.010     0.971     0.0145    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+F3V          CA           N          H1     102.011    3.00
+F3V          CA           N          H2     102.011    3.00
+F3V          H1           N          H2     107.243    3.00
+F3V           N          CA           C     112.134    2.59
+F3V           N          CA          H4     108.833    1.50
+F3V           N          CA          H5     108.833    1.50
+F3V           C          CA          H4     108.871    1.74
+F3V           C          CA          H5     108.871    1.74
+F3V          H4          CA          H5     107.908    1.50
+F3V          CA           C           O     121.134    1.50
+F3V          CA           C          CM     117.281    3.00
+F3V           O           C          CM     121.585    1.81
+F3V           C          CM          H6     109.518    1.50
+F3V           C          CM          H7     109.518    1.50
+F3V           C          CM          H8     109.518    1.50
+F3V          H6          CM          H7     109.400    1.50
+F3V          H6          CM          H8     109.400    1.50
+F3V          H7          CM          H8     109.400    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+F3V             sp3_sp3_1           C          CA           N          H1     180.000   10.00     3
+F3V             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+F3V             sp2_sp3_7          CA           C          CM          H6       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+F3V    plan-1           C   0.020
+F3V    plan-1          CA   0.020
+F3V    plan-1          CM   0.020
+F3V    plan-1           O   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+F3V           SMILES              ACDLabs 12.01                              NCC(=O)C
+F3V            InChI                InChI  1.03 InChI=1S/C3H7NO/c1-3(5)2-4/h2,4H2,1H3
+F3V         InChIKey                InChI  1.03           BCDGQXUMWHRQCB-UHFFFAOYSA-N
+F3V SMILES_CANONICAL               CACTVS 3.385                              CC(=O)CN
+F3V           SMILES               CACTVS 3.385                              CC(=O)CN
+F3V SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                              CC(=O)CN
+F3V           SMILES "OpenEye OEToolkits" 2.0.6                              CC(=O)CN
+F3V ?                acedrg               217         "dictionary generator"                  
+F3V ?                acedrg_database      11          "data source"                           
+F3V ?                rdkit                2017.03.2   "Chemoinformatics tool"
+F3V ?                refmac5              5.8.0253    "optimization tool"                     

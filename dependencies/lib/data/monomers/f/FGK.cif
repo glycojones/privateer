@@ -1,0 +1,541 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FGK      FGK 'N-acetyl-L-phenylalanyl-L-alpha-glut' non-polymer        77  39 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FGK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FGK           CL1    CL   CL        0.000      0.000    0.000    0.000
+ FGK           C26    C    CH2       0.000     -1.334    1.212    0.052
+ FGK           H46    H    H         0.000     -1.459    1.658   -0.937
+ FGK           H47    H    H         0.000     -1.086    1.994    0.773
+ FGK           C24    C    C         0.000     -2.614    0.533    0.464
+ FGK           O10    O    O         0.000     -2.622   -0.652    0.697
+ FGK           C23    C    CH1       0.000     -3.886    1.332    0.585
+ FGK           H42    H    H         0.000     -3.986    1.995   -0.287
+ FGK           C25    C    CH3       0.000     -3.841    2.174    1.862
+ FGK           H45    H    H         0.000     -3.744    1.536    2.703
+ FGK           H44    H    H         0.000     -3.013    2.833    1.823
+ FGK           H43    H    H         0.000     -4.735    2.736    1.948
+ FGK           N5     N    NH1       0.000     -5.032    0.421    0.639
+ FGK           H40    H    H         0.000     -4.909   -0.526    0.970
+ FGK           C18    C    C         0.000     -6.250    0.846    0.249
+ FGK           O8     O    O         0.000     -6.398    1.982   -0.149
+ FGK           C17    C    CH1       0.000     -7.429   -0.091    0.306
+ FGK           H27    H    H         0.000     -7.584   -0.423    1.343
+ FGK           C19    C    CH2       0.000     -7.158   -1.306   -0.584
+ FGK           H28    H    H         0.000     -6.215   -1.771   -0.287
+ FGK           H29    H    H         0.000     -7.092   -0.985   -1.626
+ FGK           C20    C    CH2       0.000     -8.297   -2.315   -0.430
+ FGK           H30    H    H         0.000     -9.239   -1.848   -0.727
+ FGK           H31    H    H         0.000     -8.362   -2.633    0.612
+ FGK           C21    C    CH2       0.000     -8.026   -3.530   -1.320
+ FGK           H32    H    H         0.000     -7.084   -3.995   -1.023
+ FGK           H33    H    H         0.000     -7.960   -3.209   -2.362
+ FGK           C22    C    CH2       0.000     -9.166   -4.539   -1.166
+ FGK           H34    H    H         0.000    -10.108   -4.072   -1.463
+ FGK           H35    H    H         0.000     -9.231   -4.857   -0.124
+ FGK           N4     N    NT3       1.000     -8.906   -5.705   -2.021
+ FGK           H38    H    H         0.000     -8.015   -6.143   -1.737
+ FGK           H37    H    H         0.000     -9.676   -6.383   -1.914
+ FGK           H36    H    H         0.000     -8.845   -5.400   -3.004
+ FGK           N3     N    NH1       0.000     -8.628    0.604   -0.168
+ FGK           H25    H    H         0.000     -8.541    1.388   -0.799
+ FGK           C13    C    C         0.000     -9.848    0.197    0.237
+ FGK           O4     O    O         0.000     -9.951   -0.745    0.995
+ FGK           C12    C    CH1       0.000    -11.082    0.911   -0.250
+ FGK           H18    H    H         0.000    -11.132    0.849   -1.346
+ FGK           C14    C    CH2       0.000    -11.022    2.380    0.176
+ FGK           H19    H    H         0.000    -10.090    2.824   -0.182
+ FGK           H20    H    H         0.000    -11.060    2.445    1.265
+ FGK           C15    C    CH2       0.000    -12.211    3.133   -0.425
+ FGK           H21    H    H         0.000    -13.142    2.687   -0.068
+ FGK           H22    H    H         0.000    -12.172    3.066   -1.514
+ FGK           C16    C    C         0.000    -12.152    4.579   -0.005
+ FGK           O6     O    OC       -0.500    -13.035    5.378   -0.389
+ FGK           O5     O    OC       -0.500    -11.219    4.981    0.725
+ FGK           N2     N    NH1       0.000    -12.271    0.283    0.330
+ FGK           H16    H    H         0.000    -12.201   -0.222    1.201
+ FGK           C4     C    C         0.000    -13.458    0.379   -0.299
+ FGK           O2     O    O         0.000    -13.542    0.986   -1.346
+ FGK           C3     C    CH1       0.000    -14.682   -0.267    0.298
+ FGK           H7     H    H         0.000    -14.676   -0.127    1.388
+ FGK           N1     N    NH1       0.000    -15.885    0.349   -0.268
+ FGK           H5     H    H         0.000    -16.549    0.810    0.338
+ FGK           C1     C    C         0.000    -16.106    0.300   -1.596
+ FGK           C2     C    CH3       0.000    -17.346    0.929   -2.177
+ FGK           H4     H    H         0.000    -17.637    1.756   -1.582
+ FGK           H3     H    H         0.000    -17.147    1.259   -3.165
+ FGK           H2     H    H         0.000    -18.130    0.216   -2.196
+ FGK           O1     O    O         0.000    -15.309   -0.254   -2.324
+ FGK           C5     C    CH2       0.000    -14.676   -1.763   -0.024
+ FGK           H8     H    H         0.000    -13.738   -2.204    0.318
+ FGK           H9     H    H         0.000    -14.771   -1.903   -1.102
+ FGK           C6     C    CR6       0.000    -15.833   -2.431    0.675
+ FGK           C8     C    CR16      0.000    -15.669   -2.945    1.948
+ FGK           H11    H    H         0.000    -14.709   -2.867    2.444
+ FGK           C10    C    CR16      0.000    -16.729   -3.558    2.589
+ FGK           H13    H    H         0.000    -16.600   -3.960    3.586
+ FGK           C11    C    CR16      0.000    -17.954   -3.657    1.957
+ FGK           H14    H    H         0.000    -18.786   -4.133    2.461
+ FGK           C9     C    CR16      0.000    -18.117   -3.148    0.682
+ FGK           H12    H    H         0.000    -19.076   -3.230    0.185
+ FGK           C7     C    CR16      0.000    -17.057   -2.535    0.041
+ FGK           H10    H    H         0.000    -17.185   -2.137   -0.958
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FGK      CL1    n/a    C26    START
+ FGK      C26    CL1    C24    .
+ FGK      H46    C26    .      .
+ FGK      H47    C26    .      .
+ FGK      C24    C26    C23    .
+ FGK      O10    C24    .      .
+ FGK      C23    C24    N5     .
+ FGK      H42    C23    .      .
+ FGK      C25    C23    H43    .
+ FGK      H45    C25    .      .
+ FGK      H44    C25    .      .
+ FGK      H43    C25    .      .
+ FGK      N5     C23    C18    .
+ FGK      H40    N5     .      .
+ FGK      C18    N5     C17    .
+ FGK      O8     C18    .      .
+ FGK      C17    C18    N3     .
+ FGK      H27    C17    .      .
+ FGK      C19    C17    C20    .
+ FGK      H28    C19    .      .
+ FGK      H29    C19    .      .
+ FGK      C20    C19    C21    .
+ FGK      H30    C20    .      .
+ FGK      H31    C20    .      .
+ FGK      C21    C20    C22    .
+ FGK      H32    C21    .      .
+ FGK      H33    C21    .      .
+ FGK      C22    C21    N4     .
+ FGK      H34    C22    .      .
+ FGK      H35    C22    .      .
+ FGK      N4     C22    H36    .
+ FGK      H38    N4     .      .
+ FGK      H37    N4     .      .
+ FGK      H36    N4     .      .
+ FGK      N3     C17    C13    .
+ FGK      H25    N3     .      .
+ FGK      C13    N3     C12    .
+ FGK      O4     C13    .      .
+ FGK      C12    C13    N2     .
+ FGK      H18    C12    .      .
+ FGK      C14    C12    C15    .
+ FGK      H19    C14    .      .
+ FGK      H20    C14    .      .
+ FGK      C15    C14    C16    .
+ FGK      H21    C15    .      .
+ FGK      H22    C15    .      .
+ FGK      C16    C15    O5     .
+ FGK      O6     C16    .      .
+ FGK      O5     C16    .      .
+ FGK      N2     C12    C4     .
+ FGK      H16    N2     .      .
+ FGK      C4     N2     C3     .
+ FGK      O2     C4     .      .
+ FGK      C3     C4     C5     .
+ FGK      H7     C3     .      .
+ FGK      N1     C3     C1     .
+ FGK      H5     N1     .      .
+ FGK      C1     N1     O1     .
+ FGK      C2     C1     H2     .
+ FGK      H4     C2     .      .
+ FGK      H3     C2     .      .
+ FGK      H2     C2     .      .
+ FGK      O1     C1     .      .
+ FGK      C5     C3     C6     .
+ FGK      H8     C5     .      .
+ FGK      H9     C5     .      .
+ FGK      C6     C5     C8     .
+ FGK      C8     C6     C10    .
+ FGK      H11    C8     .      .
+ FGK      C10    C8     C11    .
+ FGK      H13    C10    .      .
+ FGK      C11    C10    C9     .
+ FGK      H14    C11    .      .
+ FGK      C9     C11    C7     .
+ FGK      H12    C9     .      .
+ FGK      C7     C9     H10    .
+ FGK      H10    C7     .      END
+ FGK      C6     C7     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FGK       O1        C1        double    1.220     0.020     1.220     0.020     
+FGK       C2        C1        single    1.500     0.020     1.500     0.020     
+FGK       C1        N1        single    1.330     0.020     1.330     0.020     
+FGK       H2        C2        single    1.089     0.010     0.989     0.005     
+FGK       H3        C2        single    1.089     0.010     0.989     0.005     
+FGK       H4        C2        single    1.089     0.010     0.989     0.005     
+FGK       N1        C3        single    1.450     0.020     1.450     0.020     
+FGK       H5        N1        single    1.016     0.010     0.899     0.007     
+FGK       C3        C4        single    1.500     0.020     1.500     0.020     
+FGK       C5        C3        single    1.524     0.020     1.524     0.020     
+FGK       H7        C3        single    1.089     0.010     0.989     0.005     
+FGK       O2        C4        double    1.220     0.020     1.220     0.020     
+FGK       C4        N2        single    1.330     0.020     1.330     0.020     
+FGK       C6        C5        single    1.511     0.020     1.511     0.020     
+FGK       H8        C5        single    1.089     0.010     0.989     0.005     
+FGK       H9        C5        single    1.089     0.010     0.989     0.005     
+FGK       C6        C7        double    1.390     0.020     1.390     0.020     
+FGK       C8        C6        single    1.390     0.020     1.390     0.020     
+FGK       C7        C9        single    1.390     0.020     1.390     0.020     
+FGK       H10       C7        single    1.082     0.013     0.975     0.010     
+FGK       C10       C8        double    1.390     0.020     1.390     0.020     
+FGK       H11       C8        single    1.082     0.013     0.975     0.010     
+FGK       C9        C11       double    1.390     0.020     1.390     0.020     
+FGK       H12       C9        single    1.082     0.013     0.975     0.010     
+FGK       C11       C10       single    1.390     0.020     1.390     0.020     
+FGK       H13       C10       single    1.082     0.013     0.975     0.010     
+FGK       H14       C11       single    1.082     0.013     0.975     0.010     
+FGK       N2        C12       single    1.450     0.020     1.450     0.020     
+FGK       H16       N2        single    1.016     0.010     0.899     0.007     
+FGK       C12       C13       single    1.500     0.020     1.500     0.020     
+FGK       C14       C12       single    1.524     0.020     1.524     0.020     
+FGK       H18       C12       single    1.089     0.010     0.989     0.005     
+FGK       O4        C13       double    1.220     0.020     1.220     0.020     
+FGK       C13       N3        single    1.330     0.020     1.330     0.020     
+FGK       C15       C14       single    1.524     0.020     1.524     0.020     
+FGK       H19       C14       single    1.089     0.010     0.989     0.005     
+FGK       H20       C14       single    1.089     0.010     0.989     0.005     
+FGK       C16       C15       single    1.510     0.020     1.510     0.020     
+FGK       H21       C15       single    1.089     0.010     0.989     0.005     
+FGK       H22       C15       single    1.089     0.010     0.989     0.005     
+FGK       O5        C16       deloc     1.250     0.020     1.250     0.020     
+FGK       O6        C16       deloc     1.250     0.020     1.250     0.020     
+FGK       N3        C17       single    1.450     0.020     1.450     0.020     
+FGK       H25       N3        single    1.016     0.010     0.899     0.007     
+FGK       C17       C18       single    1.500     0.020     1.500     0.020     
+FGK       C19       C17       single    1.524     0.020     1.524     0.020     
+FGK       H27       C17       single    1.089     0.010     0.989     0.005     
+FGK       O8        C18       double    1.220     0.020     1.220     0.020     
+FGK       C18       N5        single    1.330     0.020     1.330     0.020     
+FGK       C20       C19       single    1.524     0.020     1.524     0.020     
+FGK       H28       C19       single    1.089     0.010     0.989     0.005     
+FGK       H29       C19       single    1.089     0.010     0.989     0.005     
+FGK       C21       C20       single    1.524     0.020     1.524     0.020     
+FGK       H30       C20       single    1.089     0.010     0.989     0.005     
+FGK       H31       C20       single    1.089     0.010     0.989     0.005     
+FGK       C22       C21       single    1.524     0.020     1.524     0.020     
+FGK       H32       C21       single    1.089     0.010     0.989     0.005     
+FGK       H33       C21       single    1.089     0.010     0.989     0.005     
+FGK       N4        C22       single    1.488     0.020     1.488     0.020     
+FGK       H34       C22       single    1.089     0.010     0.989     0.005     
+FGK       H35       C22       single    1.089     0.010     0.989     0.005     
+FGK       H36       N4        single    1.036     0.016     0.914     0.007     
+FGK       H37       N4        single    1.036     0.016     0.914     0.007     
+FGK       H38       N4        single    1.036     0.016     0.914     0.007     
+FGK       N5        C23       single    1.450     0.020     1.450     0.020     
+FGK       H40       N5        single    1.016     0.010     0.899     0.007     
+FGK       C23       C24       single    1.500     0.020     1.500     0.020     
+FGK       C25       C23       single    1.524     0.020     1.524     0.020     
+FGK       H42       C23       single    1.089     0.010     0.989     0.005     
+FGK       O10       C24       double    1.220     0.020     1.220     0.020     
+FGK       C24       C26       single    1.510     0.020     1.510     0.020     
+FGK       H43       C25       single    1.089     0.010     0.989     0.005     
+FGK       H44       C25       single    1.089     0.010     0.989     0.005     
+FGK       H45       C25       single    1.089     0.010     0.989     0.005     
+FGK       H46       C26       single    1.089     0.010     0.989     0.005     
+FGK       H47       C26       single    1.089     0.010     0.989     0.005     
+FGK       C26       CL1       single    1.790     0.020     1.790     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FGK      CL1    C26    H46     109.500    3.000
+ FGK      CL1    C26    H47     109.500    3.000
+ FGK      CL1    C26    C24     109.500    3.000
+ FGK      H46    C26    H47     107.900    3.000
+ FGK      H46    C26    C24     109.470    3.000
+ FGK      H47    C26    C24     109.470    3.000
+ FGK      C26    C24    O10     120.500    3.000
+ FGK      C26    C24    C23     120.000    3.000
+ FGK      O10    C24    C23     120.500    3.000
+ FGK      C24    C23    H42     108.810    3.000
+ FGK      C24    C23    C25     109.470    3.000
+ FGK      C24    C23    N5      111.600    3.000
+ FGK      H42    C23    C25     108.340    3.000
+ FGK      H42    C23    N5      108.550    3.000
+ FGK      C25    C23    N5      110.000    3.000
+ FGK      C23    C25    H45     109.470    3.000
+ FGK      C23    C25    H44     109.470    3.000
+ FGK      C23    C25    H43     109.470    3.000
+ FGK      H45    C25    H44     109.470    3.000
+ FGK      H45    C25    H43     109.470    3.000
+ FGK      H44    C25    H43     109.470    3.000
+ FGK      C23    N5     H40     118.500    3.000
+ FGK      C23    N5     C18     121.500    3.000
+ FGK      H40    N5     C18     120.000    3.000
+ FGK      N5     C18    O8      123.000    3.000
+ FGK      N5     C18    C17     116.500    3.000
+ FGK      O8     C18    C17     120.500    3.000
+ FGK      C18    C17    H27     108.810    3.000
+ FGK      C18    C17    C19     109.470    3.000
+ FGK      C18    C17    N3      111.600    3.000
+ FGK      H27    C17    C19     108.340    3.000
+ FGK      H27    C17    N3      108.550    3.000
+ FGK      C19    C17    N3      110.000    3.000
+ FGK      C17    C19    H28     109.470    3.000
+ FGK      C17    C19    H29     109.470    3.000
+ FGK      C17    C19    C20     111.000    3.000
+ FGK      H28    C19    H29     107.900    3.000
+ FGK      H28    C19    C20     109.470    3.000
+ FGK      H29    C19    C20     109.470    3.000
+ FGK      C19    C20    H30     109.470    3.000
+ FGK      C19    C20    H31     109.470    3.000
+ FGK      C19    C20    C21     111.000    3.000
+ FGK      H30    C20    H31     107.900    3.000
+ FGK      H30    C20    C21     109.470    3.000
+ FGK      H31    C20    C21     109.470    3.000
+ FGK      C20    C21    H32     109.470    3.000
+ FGK      C20    C21    H33     109.470    3.000
+ FGK      C20    C21    C22     111.000    3.000
+ FGK      H32    C21    H33     107.900    3.000
+ FGK      H32    C21    C22     109.470    3.000
+ FGK      H33    C21    C22     109.470    3.000
+ FGK      C21    C22    H34     109.470    3.000
+ FGK      C21    C22    H35     109.470    3.000
+ FGK      C21    C22    N4      110.000    3.000
+ FGK      H34    C22    H35     107.900    3.000
+ FGK      H34    C22    N4      109.470    3.000
+ FGK      H35    C22    N4      109.470    3.000
+ FGK      C22    N4     H38     109.470    3.000
+ FGK      C22    N4     H37     109.470    3.000
+ FGK      C22    N4     H36     109.470    3.000
+ FGK      H38    N4     H37     109.470    3.000
+ FGK      H38    N4     H36     109.470    3.000
+ FGK      H37    N4     H36     109.470    3.000
+ FGK      C17    N3     H25     118.500    3.000
+ FGK      C17    N3     C13     121.500    3.000
+ FGK      H25    N3     C13     120.000    3.000
+ FGK      N3     C13    O4      123.000    3.000
+ FGK      N3     C13    C12     116.500    3.000
+ FGK      O4     C13    C12     120.500    3.000
+ FGK      C13    C12    H18     108.810    3.000
+ FGK      C13    C12    C14     109.470    3.000
+ FGK      C13    C12    N2      111.600    3.000
+ FGK      H18    C12    C14     108.340    3.000
+ FGK      H18    C12    N2      108.550    3.000
+ FGK      C14    C12    N2      110.000    3.000
+ FGK      C12    C14    H19     109.470    3.000
+ FGK      C12    C14    H20     109.470    3.000
+ FGK      C12    C14    C15     111.000    3.000
+ FGK      H19    C14    H20     107.900    3.000
+ FGK      H19    C14    C15     109.470    3.000
+ FGK      H20    C14    C15     109.470    3.000
+ FGK      C14    C15    H21     109.470    3.000
+ FGK      C14    C15    H22     109.470    3.000
+ FGK      C14    C15    C16     109.470    3.000
+ FGK      H21    C15    H22     107.900    3.000
+ FGK      H21    C15    C16     109.470    3.000
+ FGK      H22    C15    C16     109.470    3.000
+ FGK      C15    C16    O6      118.500    3.000
+ FGK      C15    C16    O5      118.500    3.000
+ FGK      O6     C16    O5      123.000    3.000
+ FGK      C12    N2     H16     118.500    3.000
+ FGK      C12    N2     C4      121.500    3.000
+ FGK      H16    N2     C4      120.000    3.000
+ FGK      N2     C4     O2      123.000    3.000
+ FGK      N2     C4     C3      116.500    3.000
+ FGK      O2     C4     C3      120.500    3.000
+ FGK      C4     C3     H7      108.810    3.000
+ FGK      C4     C3     N1      111.600    3.000
+ FGK      C4     C3     C5      109.470    3.000
+ FGK      H7     C3     N1      108.550    3.000
+ FGK      H7     C3     C5      108.340    3.000
+ FGK      N1     C3     C5      110.000    3.000
+ FGK      C3     N1     H5      118.500    3.000
+ FGK      C3     N1     C1      121.500    3.000
+ FGK      H5     N1     C1      120.000    3.000
+ FGK      N1     C1     C2      116.500    3.000
+ FGK      N1     C1     O1      123.000    3.000
+ FGK      C2     C1     O1      123.000    3.000
+ FGK      C1     C2     H4      109.470    3.000
+ FGK      C1     C2     H3      109.470    3.000
+ FGK      C1     C2     H2      109.470    3.000
+ FGK      H4     C2     H3      109.470    3.000
+ FGK      H4     C2     H2      109.470    3.000
+ FGK      H3     C2     H2      109.470    3.000
+ FGK      C3     C5     H8      109.470    3.000
+ FGK      C3     C5     H9      109.470    3.000
+ FGK      C3     C5     C6      109.470    3.000
+ FGK      H8     C5     H9      107.900    3.000
+ FGK      H8     C5     C6      109.470    3.000
+ FGK      H9     C5     C6      109.470    3.000
+ FGK      C5     C6     C8      120.000    3.000
+ FGK      C5     C6     C7      120.000    3.000
+ FGK      C8     C6     C7      120.000    3.000
+ FGK      C6     C8     H11     120.000    3.000
+ FGK      C6     C8     C10     120.000    3.000
+ FGK      H11    C8     C10     120.000    3.000
+ FGK      C8     C10    H13     120.000    3.000
+ FGK      C8     C10    C11     120.000    3.000
+ FGK      H13    C10    C11     120.000    3.000
+ FGK      C10    C11    H14     120.000    3.000
+ FGK      C10    C11    C9      120.000    3.000
+ FGK      H14    C11    C9      120.000    3.000
+ FGK      C11    C9     H12     120.000    3.000
+ FGK      C11    C9     C7      120.000    3.000
+ FGK      H12    C9     C7      120.000    3.000
+ FGK      C9     C7     H10     120.000    3.000
+ FGK      C9     C7     C6      120.000    3.000
+ FGK      H10    C7     C6      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FGK      var_1    CL1    C26    C24    C23      179.974   20.000   3
+ FGK      var_2    C26    C24    C23    N5       164.959   20.000   3
+ FGK      var_3    C24    C23    C25    H43     -179.976   20.000   3
+ FGK      var_4    C24    C23    N5     C18     -155.021   20.000   3
+ FGK      CONST_1  C23    N5     C18    C17      180.000    0.000   0
+ FGK      var_5    N5     C18    C17    N3      -179.961   20.000   3
+ FGK      var_6    C18    C17    C19    C20      174.999   20.000   3
+ FGK      var_7    C17    C19    C20    C21     -179.989   20.000   3
+ FGK      var_8    C19    C20    C21    C22      180.000   20.000   3
+ FGK      var_9    C20    C21    C22    N4       179.998   20.000   3
+ FGK      var_10   C21    C22    N4     H36      -60.014   20.000   1
+ FGK      var_11   C18    C17    N3     C13     -155.043   20.000   3
+ FGK      CONST_2  C17    N3     C13    C12      180.000    0.000   0
+ FGK      var_12   N3     C13    C12    N2      -179.998   20.000   3
+ FGK      var_13   C13    C12    C14    C15      174.984   20.000   3
+ FGK      var_14   C12    C14    C15    C16      179.990   20.000   3
+ FGK      var_15   C14    C15    C16    O5         0.029   20.000   3
+ FGK      var_16   C13    C12    N2     C4      -154.980   20.000   3
+ FGK      CONST_3  C12    N2     C4     C3       180.000    0.000   0
+ FGK      var_17   N2     C4     C3     C5       -80.018   20.000   3
+ FGK      var_18   C4     C3     N1     C1        59.955   20.000   3
+ FGK      CONST_4  C3     N1     C1     O1         0.000    0.000   0
+ FGK      var_19   N1     C1     C2     H2       -89.657   20.000   1
+ FGK      var_20   C4     C3     C5     C6       174.984   20.000   3
+ FGK      var_21   C3     C5     C6     C8       -90.242   20.000   2
+ FGK      CONST_5  C5     C6     C7     C9       180.000    0.000   0
+ FGK      CONST_6  C5     C6     C8     C10      180.000    0.000   0
+ FGK      CONST_7  C6     C8     C10    C11        0.000    0.000   0
+ FGK      CONST_8  C8     C10    C11    C9         0.000    0.000   0
+ FGK      CONST_9  C10    C11    C9     C7         0.000    0.000   0
+ FGK      CONST_10 C11    C9     C7     C6         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FGK      chir_01  C3     N1     C4     C5        positiv
+ FGK      chir_02  C12    N2     C13    C14       positiv
+ FGK      chir_03  C17    N3     C18    C19       positiv
+ FGK      chir_04  C23    N5     C24    C25       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FGK      plan-1    C1        0.020
+ FGK      plan-1    O1        0.020
+ FGK      plan-1    C2        0.020
+ FGK      plan-1    N1        0.020
+ FGK      plan-1    H5        0.020
+ FGK      plan-2    N1        0.020
+ FGK      plan-2    C1        0.020
+ FGK      plan-2    C3        0.020
+ FGK      plan-2    H5        0.020
+ FGK      plan-3    C4        0.020
+ FGK      plan-3    C3        0.020
+ FGK      plan-3    O2        0.020
+ FGK      plan-3    N2        0.020
+ FGK      plan-3    H16       0.020
+ FGK      plan-4    C6        0.020
+ FGK      plan-4    C5        0.020
+ FGK      plan-4    C7        0.020
+ FGK      plan-4    C8        0.020
+ FGK      plan-4    C9        0.020
+ FGK      plan-4    C10       0.020
+ FGK      plan-4    C11       0.020
+ FGK      plan-4    H10       0.020
+ FGK      plan-4    H11       0.020
+ FGK      plan-4    H12       0.020
+ FGK      plan-4    H13       0.020
+ FGK      plan-4    H14       0.020
+ FGK      plan-5    N2        0.020
+ FGK      plan-5    C4        0.020
+ FGK      plan-5    C12       0.020
+ FGK      plan-5    H16       0.020
+ FGK      plan-6    C13       0.020
+ FGK      plan-6    C12       0.020
+ FGK      plan-6    O4        0.020
+ FGK      plan-6    N3        0.020
+ FGK      plan-6    H25       0.020
+ FGK      plan-7    C16       0.020
+ FGK      plan-7    C15       0.020
+ FGK      plan-7    O5        0.020
+ FGK      plan-7    O6        0.020
+ FGK      plan-8    N3        0.020
+ FGK      plan-8    C13       0.020
+ FGK      plan-8    C17       0.020
+ FGK      plan-8    H25       0.020
+ FGK      plan-9    C18       0.020
+ FGK      plan-9    C17       0.020
+ FGK      plan-9    O8        0.020
+ FGK      plan-9    N5        0.020
+ FGK      plan-9    H40       0.020
+ FGK      plan-10   N5        0.020
+ FGK      plan-10   C18       0.020
+ FGK      plan-10   C23       0.020
+ FGK      plan-10   H40       0.020
+ FGK      plan-11   C24       0.020
+ FGK      plan-11   C23       0.020
+ FGK      plan-11   O10       0.020
+ FGK      plan-11   C26       0.020
+# ------------------------------------------------------

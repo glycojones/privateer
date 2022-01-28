@@ -1,0 +1,413 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SOS      SOS '"[(1R,2S,4R)-4-({2-AMINO-5-[BENZYL(F' DNA                53  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SOS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SOS           OP3    O    OP       -0.666      0.000    0.000    0.000
+ SOS           P      P    P         0.000     -1.142    0.165   -0.978
+ SOS           OP2    O    OP       -0.666     -1.889   -1.146   -0.865
+ SOS           OP1    O    OP       -0.666     -0.732    0.557   -2.381
+ SOS           "O5'"  O    O2        0.000     -2.110    1.224   -0.228
+ SOS           "C5'"  C    CH2       0.000     -2.541    0.931    1.090
+ SOS           "H5'"  H    H         0.000     -1.676    0.838    1.750
+ SOS           "H5''" H    H         0.000     -3.104   -0.005    1.096
+ SOS           "C4'"  C    CH1       0.000     -3.432    2.065    1.576
+ SOS           "H4'"  H    H         0.000     -2.846    2.994    1.589
+ SOS           "C6'"  C    CH2       0.000     -4.673    2.277    0.698
+ SOS           "H6'2" H    H         0.000     -4.957    1.353    0.189
+ SOS           "H6'1" H    H         0.000     -4.502    3.061   -0.043
+ SOS           "C3'"  C    CH1       0.000     -4.000    1.823    2.972
+ SOS           "H3'"  H    H         0.000     -4.371    0.793    3.064
+ SOS           "C2'"  C    CH2       0.000     -5.155    2.814    3.032
+ SOS           "H2'"  H    H         0.000     -4.813    3.837    3.197
+ SOS           "H2''" H    H         0.000     -5.887    2.549    3.798
+ SOS           "C1'"  C    CH1       0.000     -5.800    2.706    1.650
+ SOS           "H1'"  H    H         0.000     -6.186    3.689    1.346
+ SOS           N9     N    NH1       0.000     -6.873    1.741    1.647
+ SOS           HN9    H    H         0.000     -6.911    1.056    2.388
+ SOS           C4     C    CR6       0.000     -7.811    1.719    0.709
+ SOS           N3     N    NRD6      0.000     -7.754    2.662   -0.308
+ SOS           C2     C    CR6       0.000     -8.662    2.662   -1.240
+ SOS           N2     N    NH2       0.000     -8.659    3.568   -2.269
+ SOS           HN22   H    H         0.000     -9.513    3.770   -2.774
+ SOS           HN21   H    H         0.000     -7.802    4.040   -2.531
+ SOS           N1     N    NR16      0.000     -9.694    1.743   -1.254
+ SOS           HN1    H    H         0.000    -10.389    1.791   -2.027
+ SOS           C6     C    CR6       0.000     -9.847    0.766   -0.297
+ SOS           O6     O    O         0.000    -10.757   -0.057   -0.294
+ SOS           C5     C    CR6       0.000     -8.796    0.790    0.755
+ SOS           N7     N    N         0.000     -8.902   -0.163    1.731
+ SOS           C8     C    C1        0.000     -9.045    0.222    3.060
+ SOS           H8     H    H         0.000     -9.065    1.282    3.249
+ SOS           O8     O    O         0.000     -9.152   -0.505    4.043
+ SOS           C9     C    CH2       0.000     -8.865   -1.576    1.372
+ SOS           H91    H    H         0.000     -9.292   -1.686    0.373
+ SOS           H92    H    H         0.000     -9.477   -2.126    2.091
+ SOS           C10    C    CR6       0.000     -7.466   -2.122    1.383
+ SOS           C15    C    CR16      0.000     -6.700   -2.073    0.225
+ SOS           H15    H    H         0.000     -7.109   -1.643   -0.681
+ SOS           C11    C    CR16      0.000     -6.952   -2.670    2.552
+ SOS           H11    H    H         0.000     -7.556   -2.703    3.450
+ SOS           C12    C    CR16      0.000     -5.652   -3.177    2.563
+ SOS           H12    H    H         0.000     -5.246   -3.606    3.470
+ SOS           C13    C    CR16      0.000     -4.876   -3.132    1.404
+ SOS           H13    H    H         0.000     -3.867   -3.525    1.412
+ SOS           C14    C    CR16      0.000     -5.401   -2.580    0.236
+ SOS           H14    H    H         0.000     -4.799   -2.545   -0.664
+ SOS           "O3'"  O    OH1       0.000     -3.034    2.093    3.970
+ SOS           "HO3'" H    H         0.000     -3.496    2.526    4.707
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SOS      OP3    n/a    P      START
+ SOS      P      OP3    "O5'"  .
+ SOS      OP2    P      .      .
+ SOS      OP1    P      .      .
+ SOS      "O5'"  P      "C5'"  .
+ SOS      "C5'"  "O5'"  "C4'"  .
+ SOS      "H5'"  "C5'"  .      .
+ SOS      "H5''" "C5'"  .      .
+ SOS      "C4'"  "C5'"  "C3'"  .
+ SOS      "H4'"  "C4'"  .      .
+ SOS      "C6'"  "C4'"  "H6'1" .
+ SOS      "H6'2" "C6'"  .      .
+ SOS      "H6'1" "C6'"  .      .
+ SOS      "C3'"  "C4'"  "O3'"  .
+ SOS      "H3'"  "C3'"  .      .
+ SOS      "C2'"  "C3'"  "C1'"  .
+ SOS      "H2'"  "C2'"  .      .
+ SOS      "H2''" "C2'"  .      .
+ SOS      "C1'"  "C2'"  N9     .
+ SOS      "H1'"  "C1'"  .      .
+ SOS      N9     "C1'"  C4     .
+ SOS      HN9    N9     .      .
+ SOS      C4     N9     C5     .
+ SOS      N3     C4     C2     .
+ SOS      C2     N3     N1     .
+ SOS      N2     C2     HN21   .
+ SOS      HN22   N2     .      .
+ SOS      HN21   N2     .      .
+ SOS      N1     C2     C6     .
+ SOS      HN1    N1     .      .
+ SOS      C6     N1     O6     .
+ SOS      O6     C6     .      .
+ SOS      C5     C4     N7     .
+ SOS      N7     C5     C9     .
+ SOS      C8     N7     O8     .
+ SOS      H8     C8     .      .
+ SOS      O8     C8     .      .
+ SOS      C9     N7     C10    .
+ SOS      H91    C9     .      .
+ SOS      H92    C9     .      .
+ SOS      C10    C9     C11    .
+ SOS      C15    C10    H15    .
+ SOS      H15    C15    .      .
+ SOS      C11    C10    C12    .
+ SOS      H11    C11    .      .
+ SOS      C12    C11    C13    .
+ SOS      H12    C12    .      .
+ SOS      C13    C12    C14    .
+ SOS      H13    C13    .      .
+ SOS      C14    C13    H14    .
+ SOS      H14    C14    .      .
+ SOS      "O3'"  "C3'"  .      END
+ SOS      "HO3'" "O3'"  .      .
+ SOS      C15    C14    .    ADD
+ SOS      C5     C6     .    ADD
+ SOS      "C1'"  "C6'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SOS       P         OP3       deloc     1.510     0.020     1.510     0.020     
+SOS       C15       C10       single    1.390     0.020     1.390     0.020     
+SOS       C15       C14       double    1.390     0.020     1.390     0.020     
+SOS       H15       C15       single    1.082     0.013     0.975     0.010     
+SOS       C14       C13       single    1.390     0.020     1.390     0.020     
+SOS       H14       C14       single    1.082     0.013     0.975     0.010     
+SOS       C13       C12       double    1.390     0.020     1.390     0.020     
+SOS       H13       C13       single    1.082     0.013     0.975     0.010     
+SOS       C12       C11       single    1.390     0.020     1.390     0.020     
+SOS       H12       C12       single    1.082     0.013     0.975     0.010     
+SOS       C11       C10       double    1.390     0.020     1.390     0.020     
+SOS       H11       C11       single    1.082     0.013     0.975     0.010     
+SOS       C10       C9        single    1.511     0.020     1.511     0.020     
+SOS       C9        N7        single    1.455     0.020     1.455     0.020     
+SOS       H91       C9        single    1.089     0.010     0.989     0.005     
+SOS       H92       C9        single    1.089     0.010     0.989     0.005     
+SOS       C8        N7        single    1.260     0.020     1.260     0.020     
+SOS       N7        C5        single    1.400     0.020     1.400     0.020     
+SOS       O8        C8        double    1.220     0.020     1.220     0.020     
+SOS       H8        C8        single    1.082     0.013     0.975     0.010     
+SOS       C5        C6        single    1.487     0.020     1.487     0.020     
+SOS       C5        C4        double    1.487     0.020     1.487     0.020     
+SOS       O6        C6        double    1.250     0.020     1.250     0.020     
+SOS       C6        N1        single    1.337     0.020     1.337     0.020     
+SOS       N1        C2        single    1.337     0.020     1.337     0.020     
+SOS       HN1       N1        single    1.016     0.010     0.899     0.007     
+SOS       C2        N3        double    1.350     0.020     1.350     0.020     
+SOS       N2        C2        single    1.355     0.020     1.355     0.020     
+SOS       HN21      N2        single    1.016     0.010     0.899     0.007     
+SOS       HN22      N2        single    1.016     0.010     0.899     0.007     
+SOS       N3        C4        single    1.350     0.020     1.350     0.020     
+SOS       C4        N9        single    1.350     0.020     1.350     0.020     
+SOS       N9        "C1'"     single    1.450     0.020     1.450     0.020     
+SOS       HN9       N9        single    1.016     0.010     0.899     0.007     
+SOS       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+SOS       "C1'"     "C6'"     single    1.524     0.020     1.524     0.020     
+SOS       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+SOS       "C6'"     "C4'"     single    1.524     0.020     1.524     0.020     
+SOS       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+SOS       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+SOS       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+SOS       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+SOS       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+SOS       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+SOS       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+SOS       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+SOS       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+SOS       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+SOS       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+SOS       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+SOS       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+SOS       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+SOS       "O5'"     P         single    1.610     0.020     1.610     0.020     
+SOS       OP1       P         deloc     1.510     0.020     1.510     0.020     
+SOS       OP2       P         deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SOS      OP3    P      OP2     119.900    3.000
+ SOS      OP3    P      OP1     119.900    3.000
+ SOS      OP3    P      "O5'"   108.200    3.000
+ SOS      OP2    P      OP1     119.900    3.000
+ SOS      OP2    P      "O5'"   108.200    3.000
+ SOS      OP1    P      "O5'"   108.200    3.000
+ SOS      P      "O5'"  "C5'"   120.500    3.000
+ SOS      "O5'"  "C5'"  "H5'"   109.470    3.000
+ SOS      "O5'"  "C5'"  "H5''"  109.470    3.000
+ SOS      "O5'"  "C5'"  "C4'"   109.470    3.000
+ SOS      "H5'"  "C5'"  "H5''"  107.900    3.000
+ SOS      "H5'"  "C5'"  "C4'"   109.470    3.000
+ SOS      "H5''" "C5'"  "C4'"   109.470    3.000
+ SOS      "C5'"  "C4'"  "H4'"   108.340    3.000
+ SOS      "C5'"  "C4'"  "C6'"   109.470    3.000
+ SOS      "C5'"  "C4'"  "C3'"   111.000    3.000
+ SOS      "H4'"  "C4'"  "C6'"   108.340    3.000
+ SOS      "H4'"  "C4'"  "C3'"   108.340    3.000
+ SOS      "C6'"  "C4'"  "C3'"   111.000    3.000
+ SOS      "C4'"  "C6'"  "H6'2"  109.470    3.000
+ SOS      "C4'"  "C6'"  "H6'1"  109.470    3.000
+ SOS      "C4'"  "C6'"  "C1'"   111.000    3.000
+ SOS      "H6'2" "C6'"  "H6'1"  107.900    3.000
+ SOS      "H6'2" "C6'"  "C1'"   109.470    3.000
+ SOS      "H6'1" "C6'"  "C1'"   109.470    3.000
+ SOS      "C4'"  "C3'"  "H3'"   108.340    3.000
+ SOS      "C4'"  "C3'"  "C2'"   111.000    3.000
+ SOS      "C4'"  "C3'"  "O3'"   109.470    3.000
+ SOS      "H3'"  "C3'"  "C2'"   108.340    3.000
+ SOS      "H3'"  "C3'"  "O3'"   109.470    3.000
+ SOS      "C2'"  "C3'"  "O3'"   109.470    3.000
+ SOS      "C3'"  "C2'"  "H2'"   109.470    3.000
+ SOS      "C3'"  "C2'"  "H2''"  109.470    3.000
+ SOS      "C3'"  "C2'"  "C1'"   111.000    3.000
+ SOS      "H2'"  "C2'"  "H2''"  107.900    3.000
+ SOS      "H2'"  "C2'"  "C1'"   109.470    3.000
+ SOS      "H2''" "C2'"  "C1'"   109.470    3.000
+ SOS      "C2'"  "C1'"  "H1'"   108.340    3.000
+ SOS      "C2'"  "C1'"  N9      110.000    3.000
+ SOS      "C2'"  "C1'"  "C6'"   109.470    3.000
+ SOS      "H1'"  "C1'"  N9      108.550    3.000
+ SOS      "H1'"  "C1'"  "C6'"   108.340    3.000
+ SOS      N9     "C1'"  "C6'"   110.000    3.000
+ SOS      "C1'"  N9     HN9     118.500    3.000
+ SOS      "C1'"  N9     C4      120.000    3.000
+ SOS      HN9    N9     C4      120.000    3.000
+ SOS      N9     C4     N3      120.000    3.000
+ SOS      N9     C4     C5      120.000    3.000
+ SOS      N3     C4     C5      120.000    3.000
+ SOS      C4     N3     C2      120.000    3.000
+ SOS      N3     C2     N2      120.000    3.000
+ SOS      N3     C2     N1      120.000    3.000
+ SOS      N2     C2     N1      120.000    3.000
+ SOS      C2     N2     HN22    120.000    3.000
+ SOS      C2     N2     HN21    120.000    3.000
+ SOS      HN22   N2     HN21    120.000    3.000
+ SOS      C2     N1     HN1     120.000    3.000
+ SOS      C2     N1     C6      120.000    3.000
+ SOS      HN1    N1     C6      120.000    3.000
+ SOS      N1     C6     O6      120.000    3.000
+ SOS      N1     C6     C5      120.000    3.000
+ SOS      O6     C6     C5      120.000    3.000
+ SOS      C4     C5     N7      120.000    3.000
+ SOS      C4     C5     C6      120.000    3.000
+ SOS      N7     C5     C6      120.000    3.000
+ SOS      C5     N7     C8      120.000    3.000
+ SOS      C5     N7     C9      120.000    3.000
+ SOS      C8     N7     C9      120.000    3.000
+ SOS      N7     C8     H8      120.000    3.000
+ SOS      N7     C8     O8      120.000    3.000
+ SOS      H8     C8     O8      123.000    3.000
+ SOS      N7     C9     H91     109.470    3.000
+ SOS      N7     C9     H92     109.470    3.000
+ SOS      N7     C9     C10     109.470    3.000
+ SOS      H91    C9     H92     107.900    3.000
+ SOS      H91    C9     C10     109.470    3.000
+ SOS      H92    C9     C10     109.470    3.000
+ SOS      C9     C10    C15     120.000    3.000
+ SOS      C9     C10    C11     120.000    3.000
+ SOS      C15    C10    C11     120.000    3.000
+ SOS      C10    C15    H15     120.000    3.000
+ SOS      C10    C15    C14     120.000    3.000
+ SOS      H15    C15    C14     120.000    3.000
+ SOS      C10    C11    H11     120.000    3.000
+ SOS      C10    C11    C12     120.000    3.000
+ SOS      H11    C11    C12     120.000    3.000
+ SOS      C11    C12    H12     120.000    3.000
+ SOS      C11    C12    C13     120.000    3.000
+ SOS      H12    C12    C13     120.000    3.000
+ SOS      C12    C13    H13     120.000    3.000
+ SOS      C12    C13    C14     120.000    3.000
+ SOS      H13    C13    C14     120.000    3.000
+ SOS      C13    C14    H14     120.000    3.000
+ SOS      C13    C14    C15     120.000    3.000
+ SOS      H14    C14    C15     120.000    3.000
+ SOS      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SOS      var_1    OP3    P      "O5'"  "C5'"    -54.216   20.000   1
+ SOS      var_2    P      "O5'"  "C5'"  "C4'"   -179.995   20.000   1
+ SOS      var_3    "O5'"  "C5'"  "C4'"  "C3'"    177.670   20.000   3
+ SOS      var_4    "C5'"  "C4'"  "C6'"  "C1'"    150.000   20.000   3
+ SOS      var_5    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ SOS      var_6    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ SOS      var_7    "C3'"  "C2'"  "C1'"  N9        90.000   20.000   3
+ SOS      var_8    "C2'"  "C1'"  "C6'"  "C4'"      0.000   20.000   3
+ SOS      var_9    "C2'"  "C1'"  N9     C4       161.161   20.000   3
+ SOS      var_10   "C1'"  N9     C4     C5       179.974   20.000   1
+ SOS      CONST_1  N9     C4     N3     C2       180.000    0.000   0
+ SOS      CONST_2  C4     N3     C2     N1         0.000    0.000   0
+ SOS      CONST_3  N3     C2     N2     HN21      22.124    0.000   0
+ SOS      CONST_4  N3     C2     N1     C6         0.000    0.000   0
+ SOS      CONST_5  C2     N1     C6     O6       180.000    0.000   0
+ SOS      CONST_6  N9     C4     C5     N7         0.000    0.000   0
+ SOS      CONST_7  C4     C5     C6     N1         0.000    0.000   0
+ SOS      var_11   C4     C5     N7     C9      -120.032   20.000   1
+ SOS      var_12   C5     N7     C8     O8       179.983   20.000   1
+ SOS      var_13   C5     N7     C9     C10       90.002   20.000   1
+ SOS      var_14   N7     C9     C10    C11       90.009   20.000   2
+ SOS      CONST_8  C9     C10    C15    C14      180.000    0.000   0
+ SOS      CONST_9  C10    C15    C14    C13        0.000    0.000   0
+ SOS      CONST_10 C9     C10    C11    C12      180.000    0.000   0
+ SOS      CONST_11 C10    C11    C12    C13        0.000    0.000   0
+ SOS      CONST_12 C11    C12    C13    C14        0.000    0.000   0
+ SOS      CONST_13 C12    C13    C14    C15        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SOS      chir_01  "C1'"  N9     "C6'"  "C2'"     positiv
+ SOS      chir_02  "C3'"  "C2'"  "O3'"  "C4'"     positiv
+ SOS      chir_03  "C4'"  "C6'"  "C3'"  "C5'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SOS      plan-1    C15       0.020
+ SOS      plan-1    C14       0.020
+ SOS      plan-1    C10       0.020
+ SOS      plan-1    H15       0.020
+ SOS      plan-1    C13       0.020
+ SOS      plan-1    C12       0.020
+ SOS      plan-1    C11       0.020
+ SOS      plan-1    H14       0.020
+ SOS      plan-1    H13       0.020
+ SOS      plan-1    H12       0.020
+ SOS      plan-1    H11       0.020
+ SOS      plan-1    C9        0.020
+ SOS      plan-2    N7        0.020
+ SOS      plan-2    C9        0.020
+ SOS      plan-2    C8        0.020
+ SOS      plan-2    C5        0.020
+ SOS      plan-2    H8        0.020
+ SOS      plan-3    C8        0.020
+ SOS      plan-3    N7        0.020
+ SOS      plan-3    O8        0.020
+ SOS      plan-3    H8        0.020
+ SOS      plan-4    C5        0.020
+ SOS      plan-4    N7        0.020
+ SOS      plan-4    C6        0.020
+ SOS      plan-4    C4        0.020
+ SOS      plan-4    N1        0.020
+ SOS      plan-4    C2        0.020
+ SOS      plan-4    N3        0.020
+ SOS      plan-4    O6        0.020
+ SOS      plan-4    HN1       0.020
+ SOS      plan-4    N2        0.020
+ SOS      plan-4    N9        0.020
+ SOS      plan-4    HN22      0.020
+ SOS      plan-4    HN21      0.020
+ SOS      plan-4    HN9       0.020
+ SOS      plan-5    N2        0.020
+ SOS      plan-5    C2        0.020
+ SOS      plan-5    HN21      0.020
+ SOS      plan-5    HN22      0.020
+ SOS      plan-6    N9        0.020
+ SOS      plan-6    C4        0.020
+ SOS      plan-6    "C1'"     0.020
+ SOS      plan-6    HN9       0.020
+# ------------------------------------------------------

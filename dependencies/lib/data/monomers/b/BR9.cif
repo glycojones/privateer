@@ -1,0 +1,150 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BR9     BR9      5-bromopyridine-2,3-diamine     non-polymer     15     9     .     
+#
+data_comp_BR9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BR9     C2      C       CR6     0       8.946       134.128     364.369     
+BR9     C1      C       CR16    0       8.922       133.561     363.103     
+BR9     N       N       NH2     0       7.726       132.273     361.450     
+BR9     C       C       CR6     0       7.768       132.842     362.700     
+BR9     BR      BR      BR      0       10.468      135.095     364.938     
+BR9     C3      C       CR16    0       7.857       133.984     365.207     
+BR9     N1      N       NRD6    0       6.740       133.303     364.853     
+BR9     C4      C       CR6     0       6.670       132.726     363.614     
+BR9     N2      N       NH2     0       5.540       132.071     363.331     
+BR9     H1      H       H       0       9.657       133.651     362.520     
+BR9     H2      H       H       0       7.346       131.491     361.340     
+BR9     H3      H       H       0       8.080       132.695     360.767     
+BR9     H4      H       H       0       7.882       134.377     366.075     
+BR9     H5      H       H       0       5.190       131.525     363.923     
+BR9     H6      H       H       0       5.151       132.186     362.553     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BR9       N         C         SINGLE    n         1.373     0.020     1.373     0.020     
+BR9       C1        C         SINGLE    y         1.403     0.018     1.403     0.018     
+BR9       C         C4        DOUBLE    y         1.423     0.014     1.423     0.014     
+BR9       C4        N2        SINGLE    n         1.337     0.010     1.337     0.010     
+BR9       C2        C1        DOUBLE    y         1.380     0.012     1.380     0.012     
+BR9       N1        C4        SINGLE    y         1.353     0.013     1.353     0.013     
+BR9       C2        C3        SINGLE    y         1.374     0.010     1.374     0.010     
+BR9       C2        BR        SINGLE    n         1.891     0.010     1.891     0.010     
+BR9       C3        N1        DOUBLE    y         1.341     0.012     1.341     0.012     
+BR9       C1        H1        SINGLE    n         1.082     0.013     0.943     0.020     
+BR9       N         H2        SINGLE    n         1.016     0.010     0.877     0.020     
+BR9       N         H3        SINGLE    n         1.016     0.010     0.877     0.020     
+BR9       C3        H4        SINGLE    n         1.082     0.013     0.953     0.020     
+BR9       N2        H5        SINGLE    n         1.016     0.010     0.877     0.020     
+BR9       N2        H6        SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BR9          C1          C2          C3     120.180    1.50
+BR9          C1          C2          BR     119.632    1.50
+BR9          C3          C2          BR     120.188    1.50
+BR9           C          C1          C2     119.342    1.50
+BR9           C          C1          H1     120.189    1.50
+BR9          C2          C1          H1     120.469    1.50
+BR9           C           N          H2     119.789    2.29
+BR9           C           N          H3     119.789    2.29
+BR9          H2           N          H3     120.421    3.00
+BR9           N           C          C1     119.158    1.50
+BR9           N           C          C4     121.054    1.50
+BR9          C1           C          C4     119.788    1.50
+BR9          C2          C3          N1     122.437    1.50
+BR9          C2          C3          H4     119.368    1.50
+BR9          N1          C3          H4     118.196    2.17
+BR9          C4          N1          C3     117.728    1.50
+BR9           C          C4          N2     123.357    2.55
+BR9           C          C4          N1     120.525    1.50
+BR9          N2          C4          N1     116.119    1.50
+BR9          C4          N2          H5     119.872    1.50
+BR9          C4          N2          H6     119.872    1.50
+BR9          H5          N2          H6     120.257    1.85
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BR9       const_sp2_sp2_2           C          C1          C2          BR     180.000   10.00     2
+BR9              const_19          BR          C2          C3          N1     180.000   10.00     2
+BR9       const_sp2_sp2_7           N           C          C1          C2     180.000   10.00     2
+BR9             sp2_sp2_1          C1           C           N          H2     180.000   10.00     2
+BR9              const_12           N           C          C4          N2       0.000   10.00     2
+BR9              const_15          C2          C3          N1          C4       0.000   10.00     2
+BR9              const_14          N2          C4          N1          C3     180.000   10.00     2
+BR9             sp2_sp2_5           C          C4          N2          H5     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BR9    plan-1          BR   0.020
+BR9    plan-1           C   0.020
+BR9    plan-1          C1   0.020
+BR9    plan-1          C2   0.020
+BR9    plan-1          C3   0.020
+BR9    plan-1          C4   0.020
+BR9    plan-1          H1   0.020
+BR9    plan-1          H4   0.020
+BR9    plan-1           N   0.020
+BR9    plan-1          N1   0.020
+BR9    plan-1          N2   0.020
+BR9    plan-2           C   0.020
+BR9    plan-2          H2   0.020
+BR9    plan-2          H3   0.020
+BR9    plan-2           N   0.020
+BR9    plan-3          C4   0.020
+BR9    plan-3          H5   0.020
+BR9    plan-3          H6   0.020
+BR9    plan-3          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BR9 InChI            InChI                1.03  "InChI=1S/C5H6BrN3/c6-3-1-4(7)5(8)9-2-3/h1-2H,7H2,(H2,8,9)"
+BR9 InChIKey         InChI                1.03  YRGMYJUKFJPNPD-UHFFFAOYSA-N
+BR9 SMILES_CANONICAL CACTVS               3.385 "Nc1cc(Br)cnc1N"
+BR9 SMILES           CACTVS               3.385 "Nc1cc(Br)cnc1N"
+BR9 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "c1c(cnc(c1N)N)Br"
+BR9 SMILES           "OpenEye OEToolkits" 2.0.6 "c1c(cnc(c1N)N)Br"
+BR9 ?                acedrg               202         "dictionary generator"                  
+BR9 ?                acedrg_database      11          "data source"                           
+BR9 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BR9 ?                refmac5              5.8.0189    "optimization tool"                     

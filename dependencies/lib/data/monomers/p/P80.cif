@@ -1,0 +1,171 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+P80     P80      "3-[(E)-2-nitroethenyl]phenol"     NON-POLYMER     19     12     .     
+#
+data_comp_P80
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+P80     C1      C       C1      0       5.586       -12.760     -24.057     
+P80     N1      N       N       1       5.105       -13.964     -23.666     
+P80     O1      O       O       0       4.342       -14.528     -24.438     
+P80     C2      C       C1      0       6.811       -12.321     -23.735     
+P80     O2      O       OC      -1      5.423       -14.470     -22.595     
+P80     "C1'"   C       CR6     0       7.401       -11.043     -24.151     
+P80     "C2'"   C       CR16    0       8.141       -10.267     -23.246     
+P80     "C3'"   C       CR6     0       8.705       -9.055      -23.643     
+P80     "O3'"   O       OH1     0       9.419       -8.313      -22.747     
+P80     "C4'"   C       CR16    0       8.540       -8.604      -24.950     
+P80     "C5'"   C       CR16    0       7.813       -9.366      -25.852     
+P80     "C6'"   C       CR16    0       7.250       -10.573     -25.461     
+P80     H1      H       H       0       5.016       -12.213     -24.575     
+P80     H2      H       H       0       7.353       -12.885     -23.206     
+P80     "H2'"   H       H       0       8.255       -10.568     -22.361     
+P80     "HO3'"  H       H       0       10.233      -8.240      -23.009     
+P80     "H4'"   H       H       0       8.921       -7.786      -25.218     
+P80     "H5'"   H       H       0       7.702       -9.061      -26.732     
+P80     "H6'"   H       H       0       6.759       -11.081     -26.083     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+P80       C1        N1        SINGLE    n         1.330     0.020     1.330     0.020     
+P80       C1        C2        DOUBLE    n         1.327     0.018     1.327     0.018     
+P80       N1        O2        SINGLE    n         1.221     0.017     1.221     0.017     
+P80       N1        O1        DOUBLE    n         1.221     0.017     1.221     0.017     
+P80       C2        "C1'"     SINGLE    n         1.467     0.011     1.467     0.011     
+P80       "C1'"     "C2'"     DOUBLE    y         1.396     0.010     1.396     0.010     
+P80       "C2'"     "C3'"     SINGLE    y         1.387     0.010     1.387     0.010     
+P80       "C3'"     "O3'"     SINGLE    n         1.365     0.010     1.365     0.010     
+P80       "C3'"     "C4'"     DOUBLE    y         1.385     0.010     1.385     0.010     
+P80       "C4'"     "C5'"     SINGLE    y         1.380     0.010     1.380     0.010     
+P80       "C5'"     "C6'"     DOUBLE    y         1.382     0.010     1.382     0.010     
+P80       "C1'"     "C6'"     SINGLE    y         1.393     0.010     1.393     0.010     
+P80       C1        H1        SINGLE    n         1.082     0.013     0.943     0.020     
+P80       C2        H2        SINGLE    n         1.082     0.013     0.945     0.020     
+P80       "C2'"     "H2'"     SINGLE    n         1.082     0.013     0.942     0.020     
+P80       "O3'"     "HO3'"    SINGLE    n         0.970     0.012     0.858     0.020     
+P80       "C4'"     "H4'"     SINGLE    n         1.082     0.013     0.942     0.016     
+P80       "C5'"     "H5'"     SINGLE    n         1.082     0.013     0.938     0.015     
+P80       "C6'"     "H6'"     SINGLE    n         1.082     0.013     0.941     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+P80          N1          C1          C2     120.736    1.50
+P80          N1          C1          H1     117.735    3.00
+P80          C2          C1          H1     121.529    3.00
+P80          C1          N1          O2     118.679    2.51
+P80          C1          N1          O1     118.679    2.51
+P80          O2          N1          O1     122.642    1.52
+P80          C1          C2       "C1'"     125.925    1.50
+P80          C1          C2          H2     116.966    1.51
+P80       "C1'"          C2          H2     117.109    1.50
+P80          C2       "C1'"       "C2'"     120.691    2.30
+P80          C2       "C1'"       "C6'"     120.805    2.11
+P80       "C2'"       "C1'"       "C6'"     118.504    1.50
+P80       "C1'"       "C2'"       "C3'"     120.560    1.50
+P80       "C1'"       "C2'"       "H2'"     119.622    1.50
+P80       "C3'"       "C2'"       "H2'"     119.818    1.50
+P80       "C2'"       "C3'"       "O3'"     119.853    2.43
+P80       "C2'"       "C3'"       "C4'"     119.912    1.50
+P80       "O3'"       "C3'"       "C4'"     120.235    2.50
+P80       "C3'"       "O3'"      "HO3'"     110.017    2.50
+P80       "C3'"       "C4'"       "C5'"     119.568    1.50
+P80       "C3'"       "C4'"       "H4'"     120.119    1.50
+P80       "C5'"       "C4'"       "H4'"     120.313    1.50
+P80       "C4'"       "C5'"       "C6'"     120.471    1.50
+P80       "C4'"       "C5'"       "H5'"     119.629    1.50
+P80       "C6'"       "C5'"       "H5'"     119.907    1.50
+P80       "C5'"       "C6'"       "C1'"     120.985    1.50
+P80       "C5'"       "C6'"       "H6'"     119.621    1.50
+P80       "C1'"       "C6'"       "H6'"     119.388    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+P80             sp2_sp2_1          C2          C1          N1          O2     180.000   10.00     2
+P80             sp2_sp2_5          N1          C1          C2       "C1'"     180.000   10.00     2
+P80              const_17       "C4'"       "C5'"       "C6'"       "C1'"       0.000   10.00     2
+P80             sp2_sp2_9       "C2'"       "C1'"          C2          C1     180.000   10.00     2
+P80              const_23          C2       "C1'"       "C6'"       "C5'"     180.000   10.00     2
+P80       const_sp2_sp2_3          C2       "C1'"       "C2'"       "C3'"     180.000   10.00     2
+P80       const_sp2_sp2_6       "C1'"       "C2'"       "C3'"       "O3'"     180.000   10.00     2
+P80              const_11       "O3'"       "C3'"       "C4'"       "C5'"     180.000   10.00     2
+P80              const_13       "C3'"       "C4'"       "C5'"       "C6'"       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+P80    plan-1       "C1'"   0.020
+P80    plan-1          C2   0.020
+P80    plan-1       "C2'"   0.020
+P80    plan-1       "C3'"   0.020
+P80    plan-1       "C4'"   0.020
+P80    plan-1       "C5'"   0.020
+P80    plan-1       "C6'"   0.020
+P80    plan-1       "H2'"   0.020
+P80    plan-1       "H4'"   0.020
+P80    plan-1       "H5'"   0.020
+P80    plan-1       "H6'"   0.020
+P80    plan-1       "O3'"   0.020
+P80    plan-2          C1   0.020
+P80    plan-2          C2   0.020
+P80    plan-2          H1   0.020
+P80    plan-2          N1   0.020
+P80    plan-3          C1   0.020
+P80    plan-3          N1   0.020
+P80    plan-3          O1   0.020
+P80    plan-3          O2   0.020
+P80    plan-4          C1   0.020
+P80    plan-4       "C1'"   0.020
+P80    plan-4          C2   0.020
+P80    plan-4          H2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+P80 SMILES           ACDLabs              12.01 "[O-][N+](=O)/C=C/c1cc(O)ccc1"
+P80 SMILES_CANONICAL CACTVS               3.370 "Oc1cccc(/C=C/[N+]([O-])=O)c1"
+P80 SMILES           CACTVS               3.370 "Oc1cccc(C=C[N+]([O-])=O)c1"
+P80 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc(cc(c1)O)/C=C/[N+](=O)[O-]"
+P80 SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(cc(c1)O)C=C[N+](=O)[O-]"
+P80 InChI            InChI                1.03  "InChI=1S/C8H7NO3/c10-8-3-1-2-7(6-8)4-5-9(11)12/h1-6,10H/b5-4+"
+P80 InChIKey         InChI                1.03  DHTXBJQMDPODIB-SNAWJCMRSA-N
+P80 ?                acedrg               202         "dictionary generator"                  
+P80 ?                acedrg_database      11          "data source"                           
+P80 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+P80 ?                refmac5              5.8.0189    "optimization tool"                     

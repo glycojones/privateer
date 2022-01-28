@@ -1,0 +1,160 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ATH     ATH      "4-HYDROXY-ACONITATE ION"     NON-POLYMER     16     13     .     
+#
+data_comp_ATH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ATH     C1      C       C       0       38.019      34.843      73.467      
+ATH     C2      C       C1      0       36.568      34.954      73.100      
+ATH     C3      C       C       0       35.822      34.081      72.382      
+ATH     C4      C       CH1     0       36.333      33.568      71.032      
+ATH     C5      C       C       0       35.423      34.004      69.876      
+ATH     C6      C       C       0       34.615      33.635      72.881      
+ATH     O1      O       O       0       38.551      35.816      74.001      
+ATH     O2      O       OC      -1      38.608      33.786      73.237      
+ATH     O3      O       O       0       35.714      35.064      69.292      
+ATH     O4      O       OC      -1      34.450      33.274      69.603      
+ATH     O5      O       O       0       34.197      32.515      72.574      
+ATH     O6      O       OC      -1      33.918      34.358      73.606      
+ATH     OH      O       OH1     0       36.481      32.155      71.049      
+ATH     H2      H       H       0       36.129      35.743      73.376      
+ATH     H4      H       H       0       37.236      33.950      70.868      
+ATH     HH      H       H       0       36.975      31.925      70.398      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ATH       C1        C2        SINGLE    n         1.492     0.020     1.492     0.020     
+ATH       C1        O1        DOUBLE    n         1.230     0.020     1.230     0.020     
+ATH       C1        O2        SINGLE    n         1.230     0.020     1.230     0.020     
+ATH       C2        C3        DOUBLE    n         1.346     0.011     1.346     0.011     
+ATH       C3        C4        SINGLE    n         1.524     0.011     1.524     0.011     
+ATH       C3        C6        SINGLE    n         1.346     0.020     1.346     0.020     
+ATH       C4        C5        SINGLE    n         1.526     0.020     1.526     0.020     
+ATH       C4        OH        SINGLE    n         1.420     0.012     1.420     0.012     
+ATH       C5        O3        DOUBLE    n         1.244     0.020     1.244     0.020     
+ATH       C5        O4        SINGLE    n         1.244     0.020     1.244     0.020     
+ATH       C6        O5        DOUBLE    n         1.230     0.020     1.230     0.020     
+ATH       C6        O6        SINGLE    n         1.230     0.020     1.230     0.020     
+ATH       C2        H2        SINGLE    n         1.082     0.013     0.943     0.020     
+ATH       C4        H4        SINGLE    n         1.089     0.010     0.994     0.020     
+ATH       OH        HH        SINGLE    n         0.970     0.012     0.849     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ATH          C2          C1          O1     118.064    1.74
+ATH          C2          C1          O2     118.060    1.74
+ATH          O1          C1          O2     123.870    1.50
+ATH          C1          C2          C3     125.527    3.00
+ATH          C1          C2          H2     117.929    1.95
+ATH          C3          C2          H2     116.544    1.81
+ATH          C2          C3          C4     120.588    3.00
+ATH          C2          C3          C6     118.648    2.64
+ATH          C4          C3          C6     120.764    1.92
+ATH          C3          C4          C5     111.575    3.00
+ATH          C3          C4          OH     111.188    1.65
+ATH          C3          C4          H4     108.109    1.50
+ATH          C5          C4          OH     110.459    1.64
+ATH          C5          C4          H4     108.456    1.50
+ATH          OH          C4          H4     108.586    2.82
+ATH          C4          C5          O3     117.233    1.50
+ATH          C4          C5          O4     117.233    1.50
+ATH          O3          C5          O4     125.534    1.50
+ATH          C3          C6          O5     119.884    1.50
+ATH          C3          C6          O6     119.884    1.50
+ATH          O5          C6          O6     120.233    1.63
+ATH          C4          OH          HH     108.635    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ATH             sp2_sp2_1          O1          C1          C2          C3     180.000   10.00     2
+ATH             sp2_sp2_5          C1          C2          C3          C4     180.000   10.00     2
+ATH             sp2_sp3_1          C2          C3          C4          C5       0.000   10.00     6
+ATH            sp2_sp2_11          C2          C3          C6          O5       0.000   10.00     2
+ATH             sp3_sp3_1          C3          C4          OH          HH     180.000   10.00     3
+ATH             sp2_sp3_8          O3          C5          C4          C3     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ATH    chir_1    C4    OH    C5    C3    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ATH    plan-1          C1   0.020
+ATH    plan-1          C2   0.020
+ATH    plan-1          O1   0.020
+ATH    plan-1          O2   0.020
+ATH    plan-2          C1   0.020
+ATH    plan-2          C2   0.020
+ATH    plan-2          C3   0.020
+ATH    plan-2          H2   0.020
+ATH    plan-3          C2   0.020
+ATH    plan-3          C3   0.020
+ATH    plan-3          C4   0.020
+ATH    plan-3          C6   0.020
+ATH    plan-4          C4   0.020
+ATH    plan-4          C5   0.020
+ATH    plan-4          O3   0.020
+ATH    plan-4          O4   0.020
+ATH    plan-5          C3   0.020
+ATH    plan-5          C6   0.020
+ATH    plan-5          O5   0.020
+ATH    plan-5          O6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ATH SMILES           ACDLabs              10.04 "[O-]C(=O)C(O)C(=C/C([O-])=O)\C(=O)[O-]"
+ATH SMILES_CANONICAL CACTVS               3.341 "O[C@@H](C([O-])=O)\C(=C/C([O-])=O)C([O-])=O"
+ATH SMILES           CACTVS               3.341 "O[CH](C([O-])=O)C(=CC([O-])=O)C([O-])=O"
+ATH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=C(/[C@H](C(=O)[O-])O)\C(=O)[O-])/C(=O)[O-]"
+ATH SMILES           "OpenEye OEToolkits" 1.5.0 "C(=C(C(C(=O)[O-])O)C(=O)[O-])C(=O)[O-]"
+ATH InChI            InChI                1.03  "InChI=1S/C6H6O7/c7-3(8)1-2(5(10)11)4(9)6(12)13/h1,4,9H,(H,7,8)(H,10,11)(H,12,13)/p-3/b2-1+/t4-/m1/s1"
+ATH InChIKey         InChI                1.03  WUUVSJBKHXDKBS-ROFOPDMZSA-K
+ATH ?                acedrg               202         "dictionary generator"                  
+ATH ?                acedrg_database      11          "data source"                           
+ATH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ATH ?                refmac5              5.8.0189    "optimization tool"                     

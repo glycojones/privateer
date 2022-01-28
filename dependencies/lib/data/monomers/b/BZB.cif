@@ -1,0 +1,174 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BZB     BZB      "BENZO[B]THIOPHENE-2-BORONIC ACID"     NON-POLYMER     19     12     .     
+#
+data_comp_BZB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BZB     B       B       B       0       78.059      4.483       28.777      
+BZB     O1      O       OH1     0       77.930      4.911       27.495      
+BZB     O2      O       OH1     0       77.832      3.180       29.084      
+BZB     C1      C       CR5     0       78.462      5.484       29.892      
+BZB     C2      C       CR15    0       78.541      6.901       29.773      
+BZB     C8      C       CR56    0       79.285      6.563       31.989      
+BZB     C3      C       CR56    0       79.056      7.514       30.972      
+BZB     C7      C       CR16    0       79.787      6.950       33.243      
+BZB     S       S       S2      0       78.879      4.947       31.496      
+BZB     C4      C       CR16    0       79.341      8.876       31.230      
+BZB     C6      C       CR16    0       80.057      8.291       33.465      
+BZB     C5      C       CR16    0       79.836      9.245       32.468      
+BZB     HO11    H       H       0       77.291      4.560       27.101      
+BZB     HO21    H       H       0       78.409      2.863       29.589      
+BZB     HC21    H       H       0       78.284      7.375       28.997      
+BZB     HC71    H       H       0       79.937      6.308       33.917      
+BZB     HC41    H       H       0       79.194      9.522       30.561      
+BZB     HC61    H       H       0       80.394      8.565       34.302      
+BZB     HC51    H       H       0       80.027      10.153      32.642      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BZB       B         O1        SINGLE    n         1.358     0.012     1.358     0.012     
+BZB       B         O2        SINGLE    n         1.358     0.012     1.358     0.012     
+BZB       B         C1        SINGLE    n         1.552     0.020     1.552     0.020     
+BZB       C1        C2        DOUBLE    n         1.430     0.020     1.430     0.020     
+BZB       C1        S         SINGLE    n         1.745     0.014     1.745     0.014     
+BZB       C2        C3        SINGLE    n         1.441     0.016     1.441     0.016     
+BZB       C8        C3        DOUBLE    y         1.403     0.010     1.403     0.010     
+BZB       C8        C7        SINGLE    y         1.395     0.012     1.395     0.012     
+BZB       C8        S         SINGLE    n         1.736     0.012     1.736     0.012     
+BZB       C3        C4        SINGLE    y         1.408     0.010     1.408     0.010     
+BZB       C7        C6        DOUBLE    y         1.379     0.011     1.379     0.011     
+BZB       C4        C5        DOUBLE    y         1.377     0.010     1.377     0.010     
+BZB       C6        C5        SINGLE    y         1.392     0.010     1.392     0.010     
+BZB       O1        HO11      SINGLE    n         0.970     0.012     0.829     0.020     
+BZB       O2        HO21      SINGLE    n         0.970     0.012     0.829     0.020     
+BZB       C2        HC21      SINGLE    n         1.082     0.013     0.945     0.017     
+BZB       C7        HC71      SINGLE    n         1.082     0.013     0.943     0.020     
+BZB       C4        HC41      SINGLE    n         1.082     0.013     0.942     0.010     
+BZB       C6        HC61      SINGLE    n         1.082     0.013     0.942     0.020     
+BZB       C5        HC51      SINGLE    n         1.082     0.013     0.944     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BZB          O1           B          O2     120.025    3.00
+BZB          O1           B          C1     119.987    3.00
+BZB          O2           B          C1     119.987    3.00
+BZB           B          O1        HO11     112.844    3.00
+BZB           B          O2        HO21     112.844    3.00
+BZB           B          C1          C2     126.806    3.00
+BZB           B          C1           S     121.869    3.00
+BZB          C2          C1           S     111.325    1.50
+BZB          C1          C2          C3     110.817    3.00
+BZB          C1          C2        HC21     124.101    1.50
+BZB          C3          C2        HC21     125.082    1.50
+BZB          C3          C8          C7     121.509    1.50
+BZB          C3          C8           S     111.129    1.50
+BZB          C7          C8           S     127.362    1.87
+BZB          C2          C3          C8     110.359    1.50
+BZB          C2          C3          C4     130.653    2.90
+BZB          C8          C3          C4     118.988    1.50
+BZB          C8          C7          C6     118.373    1.50
+BZB          C8          C7        HC71     120.658    1.50
+BZB          C6          C7        HC71     120.970    1.50
+BZB          C1           S          C8      90.377    1.50
+BZB          C3          C4          C5     119.142    1.50
+BZB          C3          C4        HC41     120.171    1.50
+BZB          C5          C4        HC41     120.687    1.50
+BZB          C7          C6          C5     121.048    1.50
+BZB          C7          C6        HC61     119.500    1.50
+BZB          C5          C6        HC61     119.452    1.50
+BZB          C4          C5          C6     120.941    1.50
+BZB          C4          C5        HC51     119.570    1.50
+BZB          C6          C5        HC51     119.489    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BZB             sp2_sp2_9          O1           B          C1          C2     180.000   10.00     2
+BZB              const_13          C4          C5          C6          C7       0.000   10.00     2
+BZB             sp2_sp2_3           B          C1          C2          C3     180.000   10.00     2
+BZB             sp2_sp2_5          C1          C2          C3          C8       0.000   10.00     2
+BZB       const_sp2_sp2_2          C2          C3          C8          C7     180.000   10.00     2
+BZB              const_21          C6          C7          C8          C3       0.000   10.00     2
+BZB       const_sp2_sp2_7          C2          C3          C4          C5     180.000   10.00     2
+BZB              const_17          C5          C6          C7          C8       0.000   10.00     2
+BZB       const_sp2_sp2_9          C3          C4          C5          C6       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BZB    plan-1          C2   0.020
+BZB    plan-1          C3   0.020
+BZB    plan-1          C4   0.020
+BZB    plan-1          C5   0.020
+BZB    plan-1          C6   0.020
+BZB    plan-1          C7   0.020
+BZB    plan-1          C8   0.020
+BZB    plan-1        HC41   0.020
+BZB    plan-1        HC51   0.020
+BZB    plan-1        HC61   0.020
+BZB    plan-1        HC71   0.020
+BZB    plan-1           S   0.020
+BZB    plan-2           B   0.020
+BZB    plan-2          C1   0.020
+BZB    plan-2          O1   0.020
+BZB    plan-2          O2   0.020
+BZB    plan-3           B   0.020
+BZB    plan-3          C1   0.020
+BZB    plan-3          C2   0.020
+BZB    plan-3           S   0.020
+BZB    plan-4          C1   0.020
+BZB    plan-4          C2   0.020
+BZB    plan-4          C3   0.020
+BZB    plan-4        HC21   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BZB SMILES           ACDLabs              10.04 "OB(O)c2sc1ccccc1c2"
+BZB SMILES_CANONICAL CACTVS               3.341 "OB(O)c1sc2ccccc2c1"
+BZB SMILES           CACTVS               3.341 "OB(O)c1sc2ccccc2c1"
+BZB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "B(c1cc2ccccc2s1)(O)O"
+BZB SMILES           "OpenEye OEToolkits" 1.5.0 "B(c1cc2ccccc2s1)(O)O"
+BZB InChI            InChI                1.03  "InChI=1S/C8H7BO2S/c10-9(11)8-5-6-3-1-2-4-7(6)12-8/h1-5,10-11H"
+BZB InChIKey         InChI                1.03  YNCYPMUJDDXIRH-UHFFFAOYSA-N
+BZB ?                acedrg               202         "dictionary generator"                  
+BZB ?                acedrg_database      11          "data source"                           
+BZB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BZB ?                refmac5              5.8.0189    "optimization tool"                     

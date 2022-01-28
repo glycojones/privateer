@@ -1,0 +1,246 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZAL     ZAL     3-cyclohexyl-D-alanine     peptide     29     12     .
+#
+data_comp_ZAL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ZAL     C1      C       CH1     0       19.457      14.881      24.634
+ZAL     C2      C       CH2     0       19.879      14.949      26.098
+ZAL     C3      C       CH2     0       21.268      15.563      26.276
+ZAL     C4      C       CH2     0       22.311      14.822      25.458
+ZAL     C5      C       CH2     0       21.909      14.744      23.995
+ZAL     C6      C       CH2     0       20.517      14.136      23.827
+ZAL     N       N       NT3     1       16.133      13.563      23.104
+ZAL     CA      C       CH1     0       17.400      14.345      23.108
+ZAL     CB      C       CH2     0       18.065      14.260      24.484
+ZAL     C       C       C       0       17.107      15.796      22.704
+ZAL     O       O       O       0       16.312      16.437      23.420
+ZAL     OXT     O       OC      -1      17.685      16.231      21.688
+ZAL     HC1     H       H       0       19.411      15.801      24.294
+ZAL     HC2     H       H       0       19.227      15.482      26.596
+ZAL     H2A     H       H       0       19.878      14.047      26.475
+ZAL     HC3     H       H       0       21.517      15.533      27.225
+ZAL     H3A     H       H       0       21.245      16.505      25.998
+ZAL     HC4     H       H       0       22.420      13.915      25.814
+ZAL     H4A     H       H       0       23.173      15.284      25.534
+ZAL     HC5     H       H       0       22.563      14.198      23.508
+ZAL     H5A     H       H       0       21.918      15.646      23.607
+ZAL     HC6     H       H       0       20.275      14.155      22.880
+ZAL     H6A     H       H       0       20.539      13.200      24.111
+ZAL     H       H       H       0       15.663      13.725      22.340
+ZAL     H2      H       H       0       15.622      13.796      23.822
+ZAL     H3      H       H       0       16.320      12.672      23.151
+ZAL     HA      H       H       0       18.008      13.951      22.443
+ZAL     HB      H       H       0       17.471      14.689      25.137
+ZAL     HBA     H       H       0       18.129      13.313      24.733
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ZAL      N      n/a    CA     START
+ZAL      H      N      .      .
+ZAL      H2     N      .      .
+ZAL      H3     N      .      .
+ZAL      CA     N      C      .
+ZAL      HA     CA     .      .
+ZAL      CB     CA     C1     .
+ZAL      HB     CB     .      .
+ZAL      HBA    CB     .      .
+ZAL      C1     CB     C6     .
+ZAL      HC1    C1     .      .
+ZAL      C6     C1     C5     .
+ZAL      HC6    C6     .      .
+ZAL      H6A    C6     .      .
+ZAL      C5     C6     C4     .
+ZAL      HC5    C5     .      .
+ZAL      H5A    C5     .      .
+ZAL      C4     C5     C3     .
+ZAL      HC4    C4     .      .
+ZAL      H4A    C4     .      .
+ZAL      C3     C4     C2     .
+ZAL      HC3    C3     .      .
+ZAL      H3A    C3     .      .
+ZAL      C2     C3     HC2    .
+ZAL      H2A    C2     .      .
+ZAL      HC2    C2     .      .
+ZAL      C      CA     OXT    .
+ZAL      O      C      .      .
+ZAL      OXT    C      .      END
+ZAL      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZAL       C1        C2        SINGLE    n         1.524     0.010     1.524     0.010     
+ZAL       C1        C6        SINGLE    n         1.524     0.010     1.524     0.010     
+ZAL       C1        CB        SINGLE    n         1.529     0.010     1.529     0.010     
+ZAL       C2        C3        SINGLE    n         1.527     0.010     1.527     0.010     
+ZAL       C3        C4        SINGLE    n         1.517     0.011     1.517     0.011     
+ZAL       C4        C5        SINGLE    n         1.516     0.014     1.516     0.014     
+ZAL       C5        C6        SINGLE    n         1.527     0.010     1.527     0.010     
+ZAL       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+ZAL       CA        CB        SINGLE    n         1.527     0.013     1.527     0.013     
+ZAL       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+ZAL       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+ZAL       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+ZAL       C1        HC1       SINGLE    n         1.089     0.010     0.983     0.010     
+ZAL       C2        HC2       SINGLE    n         1.089     0.010     0.978     0.014     
+ZAL       C2        H2A       SINGLE    n         1.089     0.010     0.978     0.014     
+ZAL       C3        HC3       SINGLE    n         1.089     0.010     0.982     0.014     
+ZAL       C3        H3A       SINGLE    n         1.089     0.010     0.982     0.014     
+ZAL       C4        HC4       SINGLE    n         1.089     0.010     0.981     0.014     
+ZAL       C4        H4A       SINGLE    n         1.089     0.010     0.981     0.014     
+ZAL       C5        HC5       SINGLE    n         1.089     0.010     0.982     0.014     
+ZAL       C5        H5A       SINGLE    n         1.089     0.010     0.982     0.014     
+ZAL       C6        HC6       SINGLE    n         1.089     0.010     0.978     0.014     
+ZAL       C6        H6A       SINGLE    n         1.089     0.010     0.978     0.014     
+ZAL       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+ZAL       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+ZAL       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+ZAL       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+ZAL       CB        HB        SINGLE    n         1.089     0.010     0.981     0.020     
+ZAL       CB        HBA       SINGLE    n         1.089     0.010     0.981     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ZAL          C2          C1          C6     109.635    1.50
+ZAL          C2          C1          CB     111.907    1.50
+ZAL          C2          C1         HC1     107.897    1.50
+ZAL          C6          C1          CB     111.907    1.50
+ZAL          C6          C1         HC1     107.897    1.50
+ZAL          CB          C1         HC1     107.292    1.50
+ZAL          C1          C2          C3     112.229    1.50
+ZAL          C1          C2         HC2     109.293    1.50
+ZAL          C1          C2         H2A     109.293    1.50
+ZAL          C3          C2         HC2     109.267    1.50
+ZAL          C3          C2         H2A     109.267    1.50
+ZAL         HC2          C2         H2A     107.919    1.50
+ZAL          C2          C3          C4     111.360    1.50
+ZAL          C2          C3         HC3     109.388    1.50
+ZAL          C2          C3         H3A     109.388    1.50
+ZAL          C4          C3         HC3     109.386    1.50
+ZAL          C4          C3         H3A     109.386    1.50
+ZAL         HC3          C3         H3A     108.036    1.50
+ZAL          C3          C4          C5     111.038    1.50
+ZAL          C3          C4         HC4     109.386    1.50
+ZAL          C3          C4         H4A     109.386    1.50
+ZAL          C5          C4         HC4     109.386    1.50
+ZAL          C5          C4         H4A     109.386    1.50
+ZAL         HC4          C4         H4A     108.036    1.50
+ZAL          C4          C5          C6     111.360    1.50
+ZAL          C4          C5         HC5     109.386    1.50
+ZAL          C4          C5         H5A     109.386    1.50
+ZAL          C6          C5         HC5     109.388    1.50
+ZAL          C6          C5         H5A     109.388    1.50
+ZAL         HC5          C5         H5A     108.036    1.50
+ZAL          C1          C6          C5     112.229    1.50
+ZAL          C1          C6         HC6     109.293    1.50
+ZAL          C1          C6         H6A     109.293    1.50
+ZAL          C5          C6         HC6     109.267    1.50
+ZAL          C5          C6         H6A     109.267    1.50
+ZAL         HC6          C6         H6A     107.919    1.50
+ZAL          CA           N           H     109.853    1.85
+ZAL          CA           N          H2     109.853    1.85
+ZAL          CA           N          H3     109.853    1.85
+ZAL           H           N          H2     109.028    2.41
+ZAL           H           N          H3     109.028    2.41
+ZAL          H2           N          H3     109.028    2.41
+ZAL           N          CA          CB     110.361    1.54
+ZAL           N          CA           C     109.414    1.50
+ZAL           N          CA          HA     108.444    1.50
+ZAL          CB          CA           C     110.778    2.06
+ZAL          CB          CA          HA     108.236    1.50
+ZAL           C          CA          HA     108.600    1.50
+ZAL          C1          CB          CA     113.198    2.74
+ZAL          C1          CB          HB     108.361    1.50
+ZAL          C1          CB         HBA     108.361    1.50
+ZAL          CA          CB          HB     108.507    1.50
+ZAL          CA          CB         HBA     108.507    1.50
+ZAL          HB          CB         HBA     107.474    1.50
+ZAL          CA           C           O     117.139    1.50
+ZAL          CA           C         OXT     117.139    1.50
+ZAL           O           C         OXT     125.721    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ZAL             sp3_sp3_4          CB          C1          C2          C3     -60.000   10.00     3
+ZAL            sp3_sp3_49          CB          C1          C6          C5      60.000   10.00     3
+ZAL            sp3_sp3_55          C2          C1          CB          CA     180.000   10.00     3
+ZAL            sp3_sp3_10          C1          C2          C3          C4     -60.000   10.00     3
+ZAL            sp3_sp3_19          C2          C3          C4          C5      60.000   10.00     3
+ZAL            sp3_sp3_28          C3          C4          C5          C6     -60.000   10.00     3
+ZAL            sp3_sp3_37          C4          C5          C6          C1      60.000   10.00     3
+ZAL            sp3_sp3_64          CB          CA           N           H     180.000   10.00     3
+ZAL            sp3_sp3_76           N          CA          CB          C1      60.000   10.00     3
+ZAL             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ZAL    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ZAL    plan-1           C   0.020
+ZAL    plan-1          CA   0.020
+ZAL    plan-1           O   0.020
+ZAL    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ZAL SMILES           ACDLabs              10.04 "O=C(O)C(N)CC1CCCCC1"
+ZAL SMILES_CANONICAL CACTVS               3.341 "N[C@H](CC1CCCCC1)C(O)=O"
+ZAL SMILES           CACTVS               3.341 "N[CH](CC1CCCCC1)C(O)=O"
+ZAL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1CCC(CC1)C[C@H](C(=O)O)N"
+ZAL SMILES           "OpenEye OEToolkits" 1.5.0 "C1CCC(CC1)CC(C(=O)O)N"
+ZAL InChI            InChI                1.03  "InChI=1S/C9H17NO2/c10-8(9(11)12)6-7-4-2-1-3-5-7/h7-8H,1-6,10H2,(H,11,12)/t8-/m1/s1"
+ZAL InChIKey         InChI                1.03  ORQXBVXKBGUSBA-MRVPVSSYSA-N
+ZAL ?                acedrg               202         "dictionary generator"
+ZAL ?                acedrg_database      11          "data source"
+ZAL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ZAL ?                refmac5              5.8.0222    "optimization tool"

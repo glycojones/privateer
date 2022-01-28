@@ -1,0 +1,188 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PHD     PHD     "ASPARTYLPHOSPHATE"     peptide     19     13     .
+#
+data_comp_PHD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PHD     N       N       NT3     1       8.279       34.338      0.477
+PHD     CA      C       CH1     0       9.474       34.686      -0.340
+PHD     C       C       C       0       9.805       36.169      -0.132
+PHD     O       O       O       0       8.939       36.999      -0.473
+PHD     CB      C       CH2     0       9.242       34.349      -1.816
+PHD     CG      C       C       0       10.450      34.549      -2.687
+PHD     OD1     O       O2      0       11.407      33.657      -2.410
+PHD     OD2     O       O       0       10.535      35.398      -3.525
+PHD     P       P       P       0       12.913      33.708      -2.946
+PHD     OP1     O       O       0       13.707      32.680      -2.179
+PHD     OP2     O       OP      -1      12.883      33.387      -4.420
+PHD     OP3     O       OP      -1      13.440      35.101      -2.700
+PHD     OXT     O       OC      -1      10.918      36.439      0.364
+PHD     H2      H       H       0       7.567       34.847      0.223
+PHD     H       H       H       0       8.449       34.487      1.360
+PHD     H3      H       H       0       8.069       33.460      0.362
+PHD     HA      H       H       0       10.234      34.148      -0.016
+PHD     HB2     H       H       0       8.515       34.910      -2.155
+PHD     HB3     H       H       0       8.959       33.415      -1.883
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+PHD      N      n/a    CA     START
+PHD      H2     N      .      .
+PHD      H      N      .      .
+PHD      H3     N      .      .
+PHD      CA     N      C      .
+PHD      HA     CA     .      .
+PHD      CB     CA     CG     .
+PHD      HB2    CB     .      .
+PHD      HB3    CB     .      .
+PHD      CG     CB     OD1    .
+PHD      OD2    CG     .      .
+PHD      OD1    CG     P      .
+PHD      P      OD1    OP3    .
+PHD      OP1    P      .      .
+PHD      OP2    P      .      .
+PHD      OP3    P      .      .
+PHD      C      CA     .      END
+PHD      O      C      .      .
+PHD      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PHD       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+PHD       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+PHD       CA        CB        SINGLE    n         1.531     0.011     1.531     0.011     
+PHD       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+PHD       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+PHD       CB        CG        SINGLE    n         1.501     0.010     1.501     0.010     
+PHD       CG        OD1       SINGLE    n         1.333     0.016     1.333     0.016     
+PHD       CG        OD2       DOUBLE    n         1.194     0.016     1.194     0.016     
+PHD       OD1       P         SINGLE    n         1.595     0.020     1.595     0.020     
+PHD       P         OP1       DOUBLE    n         1.509     0.020     1.509     0.020     
+PHD       P         OP2       SINGLE    n         1.509     0.020     1.509     0.020     
+PHD       P         OP3       SINGLE    n         1.509     0.020     1.509     0.020     
+PHD       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+PHD       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+PHD       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+PHD       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+PHD       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.016     
+PHD       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PHD          CA           N          H2     110.062    1.93
+PHD          CA           N           H     110.062    1.93
+PHD          CA           N          H3     110.062    1.93
+PHD          H2           N           H     109.028    2.41
+PHD          H2           N          H3     109.028    2.41
+PHD           H           N          H3     109.028    2.41
+PHD           N          CA           C     109.241    1.50
+PHD           N          CA          CB     111.338    1.50
+PHD           N          CA          HA     108.487    1.50
+PHD           C          CA          CB     111.804    2.58
+PHD           C          CA          HA     108.824    1.50
+PHD          CB          CA          HA     108.666    1.69
+PHD          CA           C           O     117.124    1.50
+PHD          CA           C         OXT     117.124    1.50
+PHD           O           C         OXT     125.752    1.50
+PHD          CA          CB          CG     113.374    1.50
+PHD          CA          CB         HB2     108.488    2.17
+PHD          CA          CB         HB3     108.488    2.17
+PHD          CG          CB         HB2     108.648    1.50
+PHD          CG          CB         HB3     108.648    1.50
+PHD         HB2          CB         HB3     107.891    1.66
+PHD          CB          CG         OD1     111.661    1.82
+PHD          CB          CG         OD2     124.278    1.60
+PHD         OD1          CG         OD2     124.062    1.74
+PHD          CG         OD1           P     122.808    2.93
+PHD         OD1           P         OP1     112.304    3.00
+PHD         OD1           P         OP2     112.304    3.00
+PHD         OD1           P         OP3     112.304    3.00
+PHD         OP1           P         OP2     112.864    1.69
+PHD         OP1           P         OP3     112.864    1.69
+PHD         OP2           P         OP3     112.864    1.69
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PHD             sp3_sp3_4           C          CA           N          H2      60.000   10.00     3
+PHD             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+PHD            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+PHD             sp2_sp3_8         OD1          CG          CB          CA     120.000   10.00     6
+PHD             sp2_sp2_1          CB          CG         OD1           P     180.000   10.00     2
+PHD            sp3_sp3_19         OP1           P         OD1          CG     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PHD    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PHD    plan-1           C   0.020
+PHD    plan-1          CA   0.020
+PHD    plan-1           O   0.020
+PHD    plan-1         OXT   0.020
+PHD    plan-2          CB   0.020
+PHD    plan-2          CG   0.020
+PHD    plan-2         OD1   0.020
+PHD    plan-2         OD2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PHD SMILES           ACDLabs              10.04 "O=C(OP(=O)(O)O)CC(C(=O)O)N"
+PHD SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CC(=O)O[P](O)(O)=O)C(O)=O"
+PHD SMILES           CACTVS               3.341 "N[CH](CC(=O)O[P](O)(O)=O)C(O)=O"
+PHD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)C(=O)OP(=O)(O)O"
+PHD SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)C(=O)OP(=O)(O)O"
+PHD InChI            InChI                1.03  "InChI=1S/C4H8NO7P/c5-2(4(7)8)1-3(6)12-13(9,10)11/h2H,1,5H2,(H,7,8)(H2,9,10,11)/t2-/m0/s1"
+PHD InChIKey         InChI                1.03  IXZNKTPIYKDIGG-REOHCLBHSA-N
+PHD ?                acedrg               196         "dictionary generator"
+PHD ?                acedrg_database      11          "data source"
+PHD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PHD ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,183 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B3T      B3T '3-amino-2,3,5-trideoxy-D-threo-pento' non-polymer        19   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_B3T
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ B3T           OXT    O    OC       -0.500      0.000    0.000    0.000
+ B3T           C      C    C         0.000     -1.149   -0.485   -0.101
+ B3T           O      O    OC       -0.500     -1.303   -1.725   -0.135
+ B3T           CA     C    CH2       0.000     -2.347    0.426   -0.183
+ B3T           HA     H    H         0.000     -2.254    1.071   -1.059
+ B3T           HAA    H    H         0.000     -2.397    1.043    0.717
+ B3T           CB     C    CH1       0.000     -3.620   -0.413   -0.299
+ B3T           HB     H    H         0.000     -3.531   -1.097   -1.155
+ B3T           N      N    NH2       0.000     -3.807   -1.193    0.932
+ B3T           HNA    H    H         0.000     -4.611   -1.028    1.525
+ B3T           HN     H    H         0.000     -3.133   -1.902    1.196
+ B3T           CG     C    CH1       0.000     -4.823    0.509   -0.507
+ B3T           HG     H    H         0.000     -4.726    1.025   -1.472
+ B3T           CD2    C    CH3       0.000     -6.109   -0.321   -0.499
+ B3T           H3D2   H    H         0.000     -6.074   -1.036   -1.280
+ B3T           H2D2   H    H         0.000     -6.203   -0.820    0.431
+ B3T           H1D2   H    H         0.000     -6.942    0.317   -0.643
+ B3T           OD1    O    OH1       0.000     -4.871    1.473    0.547
+ B3T           HOD1   H    H         0.000     -4.956    1.018    1.396
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B3T      OXT    n/a    C      START
+ B3T      C      OXT    CA     .
+ B3T      O      C      .      .
+ B3T      CA     C      CB     .
+ B3T      HA     CA     .      .
+ B3T      HAA    CA     .      .
+ B3T      CB     CA     CG     .
+ B3T      HB     CB     .      .
+ B3T      N      CB     HN     .
+ B3T      HNA    N      .      .
+ B3T      HN     N      .      .
+ B3T      CG     CB     OD1    .
+ B3T      HG     CG     .      .
+ B3T      CD2    CG     H1D2   .
+ B3T      H3D2   CD2    .      .
+ B3T      H2D2   CD2    .      .
+ B3T      H1D2   CD2    .      .
+ B3T      OD1    CG     HOD1   .
+ B3T      HOD1   OD1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B3T       CD2       CG        single    1.524     0.020     1.524     0.020     
+B3T       OD1       CG        single    1.432     0.020     1.432     0.020     
+B3T       H1D2      CD2       single    1.089     0.010     0.989     0.005     
+B3T       H2D2      CD2       single    1.089     0.010     0.989     0.005     
+B3T       H3D2      CD2       single    1.089     0.010     0.989     0.005     
+B3T       CG        CB        single    1.524     0.020     1.524     0.020     
+B3T       N         CB        single    1.450     0.020     1.450     0.020     
+B3T       HNA       N         single    1.036     0.016     0.914     0.007     
+B3T       CB        CA        single    1.524     0.020     1.524     0.020     
+B3T       HA        CA        single    1.089     0.010     0.989     0.005     
+B3T       HAA       CA        single    1.089     0.010     0.989     0.005     
+B3T       CA        C         single    1.510     0.020     1.510     0.020     
+B3T       C         OXT       deloc     1.250     0.020     1.250     0.020     
+B3T       O         C         deloc     1.250     0.020     1.250     0.020     
+B3T       HG        CG        single    1.089     0.010     0.989     0.005     
+B3T       HOD1      OD1       single    0.970     0.012     0.839     0.014     
+B3T       HB        CB        single    1.089     0.010     0.989     0.005     
+B3T       HN        N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ B3T      OXT    C      O       123.000    3.000
+ B3T      OXT    C      CA      118.500    3.000
+ B3T      O      C      CA      118.500    3.000
+ B3T      C      CA     HA      109.470    3.000
+ B3T      C      CA     HAA     109.470    3.000
+ B3T      C      CA     CB      109.470    3.000
+ B3T      HA     CA     HAA     107.900    3.000
+ B3T      HA     CA     CB      109.470    3.000
+ B3T      HAA    CA     CB      109.470    3.000
+ B3T      CA     CB     HB      108.340    3.000
+ B3T      CA     CB     N       109.470    3.000
+ B3T      CA     CB     CG      111.000    3.000
+ B3T      HB     CB     N       109.470    3.000
+ B3T      HB     CB     CG      108.340    3.000
+ B3T      N      CB     CG      109.470    3.000
+ B3T      CB     N      HNA     120.000    3.000
+ B3T      CB     N      HN      120.000    3.000
+ B3T      HNA    N      HN      120.000    3.000
+ B3T      CB     CG     HG      108.340    3.000
+ B3T      CB     CG     CD2     111.000    3.000
+ B3T      CB     CG     OD1     109.470    3.000
+ B3T      HG     CG     CD2     108.340    3.000
+ B3T      HG     CG     OD1     109.470    3.000
+ B3T      CD2    CG     OD1     109.470    3.000
+ B3T      CG     CD2    H3D2    109.470    3.000
+ B3T      CG     CD2    H2D2    109.470    3.000
+ B3T      CG     CD2    H1D2    109.470    3.000
+ B3T      H3D2   CD2    H2D2    109.470    3.000
+ B3T      H3D2   CD2    H1D2    109.470    3.000
+ B3T      H2D2   CD2    H1D2    109.470    3.000
+ B3T      CG     OD1    HOD1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ B3T      var_1    OXT    C      CA     CB      -179.980   20.000   3
+ B3T      var_2    C      CA     CB     CG      -175.011   20.000   3
+ B3T      var_3    CA     CB     N      HN       -63.909   20.000   1
+ B3T      var_4    CA     CB     CG     OD1      -55.039   20.000   3
+ B3T      var_5    CB     CG     CD2    H1D2     179.965   20.000   3
+ B3T      var_6    CB     CG     OD1    HOD1     -60.024   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ B3T      chir_01  CG     OD1    CD2    CB        positiv
+ B3T      chir_02  CB     CG     N      CA        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ B3T      plan-1    N         0.020
+ B3T      plan-1    CB        0.020
+ B3T      plan-1    HN        0.020
+ B3T      plan-1    HNA       0.020
+ B3T      plan-2    C         0.020
+ B3T      plan-2    CA        0.020
+ B3T      plan-2    O         0.020
+ B3T      plan-2    OXT       0.020
+# ------------------------------------------------------

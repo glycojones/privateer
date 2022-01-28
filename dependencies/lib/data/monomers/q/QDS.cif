@@ -1,0 +1,265 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+QDS      QDS 'N-(quinoxalin-2-ylcarbonyl)-D-serine' non-polymer        29  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_QDS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ QDS           OXT    O    OC       -0.500      0.000    0.000    0.000
+ QDS           C      C    C         0.000     -1.240    0.027   -0.165
+ QDS           O      O    OC       -0.500     -1.722   -0.102   -1.312
+ QDS           CA     C    CH1       0.000     -2.154    0.216    1.019
+ QDS           HA     H    H         0.000     -1.999   -0.603    1.735
+ QDS           CB     C    CH2       0.000     -1.841    1.552    1.696
+ QDS           HB2    H    H         0.000     -0.832    1.521    2.112
+ QDS           HB3    H    H         0.000     -2.560    1.729    2.499
+ QDS           OG     O    OH1       0.000     -1.930    2.606    0.734
+ QDS           HG     H    H         0.000     -1.732    3.450    1.163
+ QDS           N      N    NH1       0.000     -3.547    0.212    0.567
+ QDS           H      H    H         0.000     -4.017    1.085    0.371
+ QDS           C11    C    C         0.000     -4.202   -0.957    0.411
+ QDS           O12    O    O         0.000     -3.636   -2.006    0.647
+ QDS           C2     C    CR6       0.000     -5.611   -0.961   -0.046
+ QDS           C3     C    CR16      0.000     -6.289   -2.181   -0.206
+ QDS           H3     H    H         0.000     -5.777   -3.112    0.007
+ QDS           N4     N    NRD6      0.000     -7.537   -2.205   -0.611
+ QDS           C10    C    CR66      0.000     -8.172   -1.056   -0.874
+ QDS           C5     C    CR16      0.000     -9.508   -1.052   -1.309
+ QDS           H5     H    H         0.000    -10.042   -1.986   -1.437
+ QDS           C9     C    CR66      0.000     -7.489    0.179   -0.713
+ QDS           N1     N    NRD6      0.000     -6.221    0.184   -0.301
+ QDS           C8     C    CR16      0.000     -8.166    1.381   -0.994
+ QDS           H8     H    H         0.000     -7.659    2.331   -0.878
+ QDS           C7     C    CR16      0.000     -9.461    1.344   -1.411
+ QDS           H7     H    H         0.000     -9.979    2.270   -1.625
+ QDS           C6     C    CR16      0.000    -10.130    0.131   -1.569
+ QDS           H6     H    H         0.000    -11.160    0.130   -1.902
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ QDS      OXT    n/a    C      START
+ QDS      C      OXT    CA     .
+ QDS      O      C      .      .
+ QDS      CA     C      N      .
+ QDS      HA     CA     .      .
+ QDS      CB     CA     OG     .
+ QDS      HB2    CB     .      .
+ QDS      HB3    CB     .      .
+ QDS      OG     CB     HG     .
+ QDS      HG     OG     .      .
+ QDS      N      CA     C11    .
+ QDS      H      N      .      .
+ QDS      C11    N      C2     .
+ QDS      O12    C11    .      .
+ QDS      C2     C11    C3     .
+ QDS      C3     C2     N4     .
+ QDS      H3     C3     .      .
+ QDS      N4     C3     C10    .
+ QDS      C10    N4     C9     .
+ QDS      C5     C10    H5     .
+ QDS      H5     C5     .      .
+ QDS      C9     C10    C8     .
+ QDS      N1     C9     .      .
+ QDS      C8     C9     C7     .
+ QDS      H8     C8     .      .
+ QDS      C7     C8     C6     .
+ QDS      H7     C7     .      .
+ QDS      C6     C7     H6     .
+ QDS      H6     C6     .      END
+ QDS      N1     C2     .    ADD
+ QDS      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+QDS       N1        C2        double    1.350     0.020     1.350     0.020     
+QDS       N1        C9        single    1.350     0.020     1.350     0.020     
+QDS       C3        C2        single    1.390     0.020     1.390     0.020     
+QDS       C2        C11       single    1.500     0.020     1.500     0.020     
+QDS       N4        C3        double    1.337     0.020     1.337     0.020     
+QDS       C10       N4        single    1.350     0.020     1.350     0.020     
+QDS       C5        C6        double    1.390     0.020     1.390     0.020     
+QDS       C5        C10       single    1.390     0.020     1.390     0.020     
+QDS       C6        C7        single    1.390     0.020     1.390     0.020     
+QDS       C7        C8        double    1.390     0.020     1.390     0.020     
+QDS       C8        C9        single    1.390     0.020     1.390     0.020     
+QDS       C9        C10       double    1.490     0.020     1.490     0.020     
+QDS       O12       C11       double    1.220     0.020     1.220     0.020     
+QDS       C11       N         single    1.330     0.020     1.330     0.020     
+QDS       N         CA        single    1.450     0.020     1.450     0.020     
+QDS       CA        C         single    1.500     0.020     1.500     0.020     
+QDS       CB        CA        single    1.524     0.020     1.524     0.020     
+QDS       O         C         deloc     1.250     0.020     1.250     0.020     
+QDS       C         OXT       deloc     1.250     0.020     1.250     0.020     
+QDS       OG        CB        single    1.432     0.020     1.432     0.020     
+QDS       H3        C3        single    1.082     0.013     0.975     0.010     
+QDS       H5        C5        single    1.082     0.013     0.975     0.010     
+QDS       H6        C6        single    1.082     0.013     0.975     0.010     
+QDS       H7        C7        single    1.082     0.013     0.975     0.010     
+QDS       H8        C8        single    1.082     0.013     0.975     0.010     
+QDS       H         N         single    1.016     0.010     0.899     0.007     
+QDS       HA        CA        single    1.089     0.010     0.989     0.005     
+QDS       HB2       CB        single    1.089     0.010     0.989     0.005     
+QDS       HB3       CB        single    1.089     0.010     0.989     0.005     
+QDS       HG        OG        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ QDS      OXT    C      O       123.000    3.000
+ QDS      OXT    C      CA      118.500    3.000
+ QDS      O      C      CA      118.500    3.000
+ QDS      C      CA     HA      108.810    3.000
+ QDS      C      CA     CB      109.470    3.000
+ QDS      C      CA     N       111.600    3.000
+ QDS      HA     CA     CB      108.340    3.000
+ QDS      HA     CA     N       108.550    3.000
+ QDS      CB     CA     N       110.000    3.000
+ QDS      CA     CB     HB2     109.470    3.000
+ QDS      CA     CB     HB3     109.470    3.000
+ QDS      CA     CB     OG      109.470    3.000
+ QDS      HB2    CB     HB3     107.900    3.000
+ QDS      HB2    CB     OG      109.470    3.000
+ QDS      HB3    CB     OG      109.470    3.000
+ QDS      CB     OG     HG      109.470    3.000
+ QDS      CA     N      H       118.500    3.000
+ QDS      CA     N      C11     121.500    3.000
+ QDS      H      N      C11     120.000    3.000
+ QDS      N      C11    O12     123.000    3.000
+ QDS      N      C11    C2      120.000    3.000
+ QDS      O12    C11    C2      120.500    3.000
+ QDS      C11    C2     C3      120.000    3.000
+ QDS      C11    C2     N1      120.000    3.000
+ QDS      C3     C2     N1      120.000    3.000
+ QDS      C2     C3     H3      120.000    3.000
+ QDS      C2     C3     N4      120.000    3.000
+ QDS      H3     C3     N4      120.000    3.000
+ QDS      C3     N4     C10     120.000    3.000
+ QDS      N4     C10    C5      120.000    3.000
+ QDS      N4     C10    C9      120.000    3.000
+ QDS      C5     C10    C9      120.000    3.000
+ QDS      C10    C5     H5      120.000    3.000
+ QDS      C10    C5     C6      120.000    3.000
+ QDS      H5     C5     C6      120.000    3.000
+ QDS      C10    C9     N1      120.000    3.000
+ QDS      C10    C9     C8      120.000    3.000
+ QDS      N1     C9     C8      120.000    3.000
+ QDS      C9     N1     C2      120.000    3.000
+ QDS      C9     C8     H8      120.000    3.000
+ QDS      C9     C8     C7      120.000    3.000
+ QDS      H8     C8     C7      120.000    3.000
+ QDS      C8     C7     H7      120.000    3.000
+ QDS      C8     C7     C6      120.000    3.000
+ QDS      H7     C7     C6      120.000    3.000
+ QDS      C7     C6     H6      120.000    3.000
+ QDS      C7     C6     C5      120.000    3.000
+ QDS      H6     C6     C5      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ QDS      var_1    OXT    C      CA     N        179.996   20.000   3
+ QDS      var_2    C      CA     CB     OG        55.010   20.000   3
+ QDS      var_3    CA     CB     OG     HG      -179.989   20.000   1
+ QDS      var_4    C      CA     N      C11       84.995   20.000   3
+ QDS      CONST_1  CA     N      C11    C2       180.000    0.000   0
+ QDS      var_5    N      C11    C2     C3      -179.988   20.000   1
+ QDS      CONST_2  C11    C2     C3     N4       180.000    0.000   0
+ QDS      CONST_3  C2     C3     N4     C10        0.000    0.000   0
+ QDS      CONST_4  C3     N4     C10    C9         0.000    0.000   0
+ QDS      CONST_5  N4     C10    C5     C6       180.000    0.000   0
+ QDS      CONST_6  C10    C5     C6     C7         0.000    0.000   0
+ QDS      CONST_7  N4     C10    C9     C8       180.000    0.000   0
+ QDS      CONST_8  C10    C9     N1     C2         0.000    0.000   0
+ QDS      CONST_9  C9     N1     C2     C11      180.000    0.000   0
+ QDS      CONST_10 C10    C9     C8     C7         0.000    0.000   0
+ QDS      CONST_11 C9     C8     C7     C6         0.000    0.000   0
+ QDS      CONST_12 C8     C7     C6     C5         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ QDS      chir_01  CA     N      C      CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ QDS      plan-1    N1        0.020
+ QDS      plan-1    C2        0.020
+ QDS      plan-1    C9        0.020
+ QDS      plan-1    C3        0.020
+ QDS      plan-1    N4        0.020
+ QDS      plan-1    C11       0.020
+ QDS      plan-1    H3        0.020
+ QDS      plan-1    C10       0.020
+ QDS      plan-1    C5        0.020
+ QDS      plan-1    C6        0.020
+ QDS      plan-1    H5        0.020
+ QDS      plan-1    C7        0.020
+ QDS      plan-1    C8        0.020
+ QDS      plan-1    H6        0.020
+ QDS      plan-1    H7        0.020
+ QDS      plan-1    H8        0.020
+ QDS      plan-2    C11       0.020
+ QDS      plan-2    C2        0.020
+ QDS      plan-2    O12       0.020
+ QDS      plan-2    N         0.020
+ QDS      plan-2    H         0.020
+ QDS      plan-3    N         0.020
+ QDS      plan-3    C11       0.020
+ QDS      plan-3    CA        0.020
+ QDS      plan-3    H         0.020
+ QDS      plan-4    C         0.020
+ QDS      plan-4    CA        0.020
+ QDS      plan-4    O         0.020
+ QDS      plan-4    OXT       0.020
+# ------------------------------------------------------

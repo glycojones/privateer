@@ -1,0 +1,937 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BCD      BCD 'BETA-CYCLODEXTRIN                   ' non-polymer       147  77 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BCD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BCD           O67    O    OH1       0.000      0.000    0.000    0.000
+ BCD           HO67   H    H         0.000     -0.188    0.558   -0.766
+ BCD           C67    C    CH2       0.000      0.301    0.820    1.113
+ BCD           H671   H    H         0.000      0.084    1.864    0.876
+ BCD           H672   H    H         0.000      1.356    0.720    1.374
+ BCD           C57    C    CH1       0.000     -0.562    0.374    2.291
+ BCD           H57    H    H         0.000     -0.358   -0.695    2.445
+ BCD           C47    C    CH1       0.000     -2.069    0.500    1.995
+ BCD           H47    H    H         0.000     -2.278    0.114    0.987
+ BCD           C37    C    CH1       0.000     -2.594    1.939    2.110
+ BCD           H37    H    H         0.000     -3.583    1.924    2.588
+ BCD           O37    O    OH1       0.000     -2.711    2.510    0.805
+ BCD           HO37   H    H         0.000     -2.429    1.863    0.144
+ BCD           C27    C    CH1       0.000     -1.659    2.839    2.920
+ BCD           H27    H    H         0.000     -0.907    3.267    2.243
+ BCD           O27    O    OH1       0.000     -2.406    3.904    3.504
+ BCD           HO27   H    H         0.000     -2.680    4.521    2.812
+ BCD           O47    O    O2        0.000     -2.746   -0.311    2.970
+ BCD           C11    C    CH1       0.000     -3.952   -0.919    2.483
+ BCD           H11    H    H         0.000     -4.545   -0.168    1.942
+ BCD           O57    O    O2        0.000     -0.099    1.055    3.465
+ BCD           C17    C    CH1       0.000     -0.943    2.063    4.020
+ BCD           H17    H    H         0.000     -0.311    2.767    4.579
+ BCD           O46    O    O2        0.000     -1.910    1.517    4.925
+ BCD           C46    C    CH1       0.000     -1.374    1.133    6.199
+ BCD           H46    H    H         0.000     -0.276    1.127    6.159
+ BCD           C36    C    CH1       0.000     -1.857    2.133    7.256
+ BCD           H36    H    H         0.000     -2.947    2.244    7.171
+ BCD           O36    O    OH1       0.000     -1.241    3.398    7.016
+ BCD           HO36   H    H         0.000     -1.899    4.099    7.113
+ BCD           C26    C    CH1       0.000     -1.511    1.675    8.680
+ BCD           H26    H    H         0.000     -0.683    2.284    9.068
+ BCD           O26    O    OH1       0.000     -2.679    1.897    9.480
+ BCD           HO26   H    H         0.000     -2.830    2.847    9.572
+ BCD           C56    C    CH1       0.000     -1.901   -0.278    6.523
+ BCD           H56    H    H         0.000     -2.900   -0.368    6.072
+ BCD           C66    C    CH2       0.000     -1.021   -1.365    5.906
+ BCD           H661   H    H         0.000     -0.003   -1.281    6.292
+ BCD           H662   H    H         0.000     -1.008   -1.259    4.819
+ BCD           O66    O    OH1       0.000     -1.556   -2.631    6.251
+ BCD           HO66   H    H         0.000     -1.231   -3.295    5.630
+ BCD           O56    O    O2        0.000     -2.039   -0.539    7.924
+ BCD           C16    C    CH1       0.000     -1.121    0.192    8.736
+ BCD           H16    H    H         0.000     -0.102    0.066    8.343
+ BCD           O45    O    O2        0.000     -1.164   -0.238   10.098
+ BCD           C45    C    CH1       0.000     -0.300   -1.317   10.473
+ BCD           H45    H    H         0.000     -0.604   -1.615   11.487
+ BCD           C35    C    CH1       0.000     -0.452   -2.569    9.596
+ BCD           H35    H    H         0.000     -0.313   -2.296    8.540
+ BCD           O35    O    OH1       0.000     -1.757   -3.116    9.780
+ BCD           HO35   H    H         0.000     -2.353   -2.425   10.098
+ BCD           C25    C    CH1       0.000      0.580   -3.624    9.990
+ BCD           H25    H    H         0.000      0.341   -3.999   10.995
+ BCD           O25    O    OH1       0.000      0.520   -4.706    9.066
+ BCD           HO25   H    H         0.000     -0.282   -5.221    9.227
+ BCD           C55    C    CH1       0.000      1.164   -0.855   10.583
+ BCD           H55    H    H         0.000      1.486   -0.457    9.610
+ BCD           C65    C    CH2       0.000      1.333    0.231   11.641
+ BCD           H651   H    H         0.000      1.016   -0.147   12.615
+ BCD           H652   H    H         0.000      0.730    1.103   11.377
+ BCD           O65    O    OH1       0.000      2.699    0.599   11.697
+ BCD           HO65   H    H         0.000      2.841    1.383   11.150
+ BCD           O55    O    O2        0.000      2.023   -1.944   10.945
+ BCD           C15    C    CH1       0.000      1.988   -3.025   10.005
+ BCD           H15    H    H         0.000      2.692   -3.800   10.339
+ BCD           O44    O    O2        0.000      2.349   -2.626    8.675
+ BCD           C44    C    CH1       0.000      3.745   -2.309    8.535
+ BCD           H44    H    H         0.000      4.128   -1.921    9.489
+ BCD           C34    C    CH1       0.000      4.501   -3.595    8.169
+ BCD           H34    H    H         0.000      3.859   -4.457    8.395
+ BCD           O34    O    OH1       0.000      5.691   -3.689    8.956
+ BCD           HO34   H    H         0.000      5.892   -4.620    9.124
+ BCD           C24    C    CH1       0.000      4.889   -3.646    6.693
+ BCD           H24    H    H         0.000      5.818   -3.076    6.556
+ BCD           O24    O    OH1       0.000      5.130   -5.000    6.329
+ BCD           HO24   H    H         0.000      4.773   -5.584    7.011
+ BCD           C54    C    CH1       0.000      3.834   -1.203    7.463
+ BCD           H54    H    H         0.000      3.025   -0.491    7.678
+ BCD           C64    C    CH2       0.000      5.143   -0.418    7.546
+ BCD           H641   H    H         0.000      5.167    0.349    6.770
+ BCD           H642   H    H         0.000      5.991   -1.093    7.415
+ BCD           O64    O    OH1       0.000      5.217    0.194    8.820
+ BCD           HO64   H    H         0.000      4.736    1.031    8.800
+ BCD           O54    O    O2        0.000      3.658   -1.627    6.108
+ BCD           C14    C    CH1       0.000      3.802   -3.020    5.820
+ BCD           H14    H    H         0.000      4.110   -3.120    4.770
+ BCD           O43    O    O2        0.000      2.539   -3.684    5.977
+ BCD           C43    C    CH1       0.000      2.261   -4.684    4.994
+ BCD           H43    H    H         0.000      3.203   -5.054    4.567
+ BCD           C33    C    CH1       0.000      1.524   -5.836    5.693
+ BCD           H33    H    H         0.000      0.641   -5.448    6.220
+ BCD           O33    O    OH1       0.000      2.419   -6.437    6.630
+ BCD           HO33   H    H         0.000      2.865   -5.745    7.138
+ BCD           C23    C    CH1       0.000      1.093   -6.885    4.665
+ BCD           H23    H    H         0.000      1.994   -7.363    4.258
+ BCD           O23    O    OH1       0.000      0.290   -7.887    5.278
+ BCD           HO23   H    H         0.000      0.313   -7.774    6.238
+ BCD           C53    C    CH1       0.000      1.366   -4.136    3.869
+ BCD           H53    H    H         0.000      0.424   -3.776    4.308
+ BCD           C63    C    CH2       0.000      1.999   -3.005    3.067
+ BCD           H631   H    H         0.000      2.228   -2.164    3.725
+ BCD           H632   H    H         0.000      1.315   -2.676    2.282
+ BCD           O63    O    OH1       0.000      3.195   -3.487    2.482
+ BCD           HO63   H    H         0.000      3.196   -3.276    1.540
+ BCD           O53    O    O2        0.000      1.071   -5.185    2.938
+ BCD           C13    C    CH1       0.000      0.312   -6.257    3.506
+ BCD           H13    H    H         0.000      0.164   -7.024    2.733
+ BCD           O42    O    O2        0.000     -0.972   -5.820    3.960
+ BCD           C42    C    CH1       0.000     -2.096   -6.299    3.211
+ BCD           H42    H    H         0.000     -1.880   -7.305    2.825
+ BCD           C32    C    CH1       0.000     -3.259   -6.371    4.216
+ BCD           H32    H    H         0.000     -3.310   -5.432    4.784
+ BCD           O32    O    OH1       0.000     -3.027   -7.458    5.115
+ BCD           HO32   H    H         0.000     -3.811   -8.024    5.146
+ BCD           C22    C    CH1       0.000     -4.591   -6.610    3.508
+ BCD           H22    H    H         0.000     -4.581   -7.614    3.060
+ BCD           O22    O    OH1       0.000     -5.647   -6.539    4.461
+ BCD           HO22   H    H         0.000     -5.507   -5.777    5.039
+ BCD           C52    C    CH1       0.000     -2.448   -5.361    2.040
+ BCD           H52    H    H         0.000     -2.475   -4.327    2.411
+ BCD           C62    C    CH2       0.000     -1.470   -5.440    0.872
+ BCD           H621   H    H         0.000     -0.467   -5.166    1.206
+ BCD           H622   H    H         0.000     -1.785   -4.763    0.076
+ BCD           O62    O    OH1       0.000     -1.461   -6.769    0.387
+ BCD           HO62   H    H         0.000     -2.255   -7.225    0.692
+ BCD           O52    O    O2        0.000     -3.728   -5.685    1.478
+ BCD           C12    C    CH1       0.000     -4.809   -5.576    2.404
+ BCD           H12    H    H         0.000     -5.747   -5.809    1.881
+ BCD           O41    O    O2        0.000     -4.925   -4.285    3.003
+ BCD           C41    C    CH1       0.000     -5.638   -3.286    2.258
+ BCD           H41    H    H         0.000     -6.563   -3.720    1.851
+ BCD           C51    C    CH1       0.000     -4.778   -2.728    1.106
+ BCD           H51    H    H         0.000     -4.378   -3.598    0.567
+ BCD           C61    C    CH2       0.000     -5.553   -1.902    0.080
+ BCD           H611   H    H         0.000     -6.022   -1.046    0.569
+ BCD           H612   H    H         0.000     -6.323   -2.519   -0.388
+ BCD           O61    O    OH1       0.000     -4.647   -1.446   -0.907
+ BCD           HO61   H    H         0.000     -5.004   -0.651   -1.323
+ BCD           O51    O    O2        0.000     -3.648   -2.005    1.606
+ BCD           C31    C    CH1       0.000     -5.988   -2.195    3.286
+ BCD           H31    H    H         0.000     -6.409   -2.679    4.179
+ BCD           O31    O    OH1       0.000     -6.966   -1.316    2.746
+ BCD           HO31   H    H         0.000     -6.778   -0.413    3.034
+ BCD           C21    C    CH1       0.000     -4.741   -1.408    3.703
+ BCD           H21    H    H         0.000     -5.046   -0.542    4.306
+ BCD           O21    O    OH1       0.000     -3.892   -2.249    4.485
+ BCD           HO21   H    H         0.000     -3.807   -3.110    4.055
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BCD      O67    n/a    C67    START
+ BCD      HO67   O67    .      .
+ BCD      C67    O67    C57    .
+ BCD      H671   C67    .      .
+ BCD      H672   C67    .      .
+ BCD      C57    C67    O57    .
+ BCD      H57    C57    .      .
+ BCD      C47    C57    O47    .
+ BCD      H47    C47    .      .
+ BCD      C37    C47    C27    .
+ BCD      H37    C37    .      .
+ BCD      O37    C37    HO37   .
+ BCD      HO37   O37    .      .
+ BCD      C27    C37    O27    .
+ BCD      H27    C27    .      .
+ BCD      O27    C27    HO27   .
+ BCD      HO27   O27    .      .
+ BCD      O47    C47    C11    .
+ BCD      C11    O47    H11    .
+ BCD      H11    C11    .      .
+ BCD      O57    C57    C17    .
+ BCD      C17    O57    O46    .
+ BCD      H17    C17    .      .
+ BCD      O46    C17    C46    .
+ BCD      C46    O46    C56    .
+ BCD      H46    C46    .      .
+ BCD      C36    C46    C26    .
+ BCD      H36    C36    .      .
+ BCD      O36    C36    HO36   .
+ BCD      HO36   O36    .      .
+ BCD      C26    C36    O26    .
+ BCD      H26    C26    .      .
+ BCD      O26    C26    HO26   .
+ BCD      HO26   O26    .      .
+ BCD      C56    C46    O56    .
+ BCD      H56    C56    .      .
+ BCD      C66    C56    O66    .
+ BCD      H661   C66    .      .
+ BCD      H662   C66    .      .
+ BCD      O66    C66    HO66   .
+ BCD      HO66   O66    .      .
+ BCD      O56    C56    C16    .
+ BCD      C16    O56    O45    .
+ BCD      H16    C16    .      .
+ BCD      O45    C16    C45    .
+ BCD      C45    O45    C55    .
+ BCD      H45    C45    .      .
+ BCD      C35    C45    C25    .
+ BCD      H35    C35    .      .
+ BCD      O35    C35    HO35   .
+ BCD      HO35   O35    .      .
+ BCD      C25    C35    O25    .
+ BCD      H25    C25    .      .
+ BCD      O25    C25    HO25   .
+ BCD      HO25   O25    .      .
+ BCD      C55    C45    O55    .
+ BCD      H55    C55    .      .
+ BCD      C65    C55    O65    .
+ BCD      H651   C65    .      .
+ BCD      H652   C65    .      .
+ BCD      O65    C65    HO65   .
+ BCD      HO65   O65    .      .
+ BCD      O55    C55    C15    .
+ BCD      C15    O55    O44    .
+ BCD      H15    C15    .      .
+ BCD      O44    C15    C44    .
+ BCD      C44    O44    C54    .
+ BCD      H44    C44    .      .
+ BCD      C34    C44    C24    .
+ BCD      H34    C34    .      .
+ BCD      O34    C34    HO34   .
+ BCD      HO34   O34    .      .
+ BCD      C24    C34    O24    .
+ BCD      H24    C24    .      .
+ BCD      O24    C24    HO24   .
+ BCD      HO24   O24    .      .
+ BCD      C54    C44    O54    .
+ BCD      H54    C54    .      .
+ BCD      C64    C54    O64    .
+ BCD      H641   C64    .      .
+ BCD      H642   C64    .      .
+ BCD      O64    C64    HO64   .
+ BCD      HO64   O64    .      .
+ BCD      O54    C54    C14    .
+ BCD      C14    O54    O43    .
+ BCD      H14    C14    .      .
+ BCD      O43    C14    C43    .
+ BCD      C43    O43    C53    .
+ BCD      H43    C43    .      .
+ BCD      C33    C43    C23    .
+ BCD      H33    C33    .      .
+ BCD      O33    C33    HO33   .
+ BCD      HO33   O33    .      .
+ BCD      C23    C33    O23    .
+ BCD      H23    C23    .      .
+ BCD      O23    C23    HO23   .
+ BCD      HO23   O23    .      .
+ BCD      C53    C43    O53    .
+ BCD      H53    C53    .      .
+ BCD      C63    C53    O63    .
+ BCD      H631   C63    .      .
+ BCD      H632   C63    .      .
+ BCD      O63    C63    HO63   .
+ BCD      HO63   O63    .      .
+ BCD      O53    C53    C13    .
+ BCD      C13    O53    O42    .
+ BCD      H13    C13    .      .
+ BCD      O42    C13    C42    .
+ BCD      C42    O42    C52    .
+ BCD      H42    C42    .      .
+ BCD      C32    C42    C22    .
+ BCD      H32    C32    .      .
+ BCD      O32    C32    HO32   .
+ BCD      HO32   O32    .      .
+ BCD      C22    C32    O22    .
+ BCD      H22    C22    .      .
+ BCD      O22    C22    HO22   .
+ BCD      HO22   O22    .      .
+ BCD      C52    C42    O52    .
+ BCD      H52    C52    .      .
+ BCD      C62    C52    O62    .
+ BCD      H621   C62    .      .
+ BCD      H622   C62    .      .
+ BCD      O62    C62    HO62   .
+ BCD      HO62   O62    .      .
+ BCD      O52    C52    C12    .
+ BCD      C12    O52    O41    .
+ BCD      H12    C12    .      .
+ BCD      O41    C12    C41    .
+ BCD      C41    O41    C31    .
+ BCD      H41    C41    .      .
+ BCD      C51    C41    O51    .
+ BCD      H51    C51    .      .
+ BCD      C61    C51    O61    .
+ BCD      H611   C61    .      .
+ BCD      H612   C61    .      .
+ BCD      O61    C61    HO61   .
+ BCD      HO61   O61    .      .
+ BCD      O51    C51    .      .
+ BCD      C31    C41    C21    .
+ BCD      H31    C31    .      .
+ BCD      O31    C31    HO31   .
+ BCD      HO31   O31    .      .
+ BCD      C21    C31    O21    .
+ BCD      H21    C21    .      .
+ BCD      O21    C21    HO21   .
+ BCD      HO21   O21    .      END
+ BCD      C11    C21    .    ADD
+ BCD      C11    O51    .    ADD
+ BCD      C12    C22    .    ADD
+ BCD      C13    C23    .    ADD
+ BCD      C14    C24    .    ADD
+ BCD      C15    C25    .    ADD
+ BCD      C16    C26    .    ADD
+ BCD      C17    C27    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BCD       C11       C21       single    1.524     0.020     1.524     0.020     
+BCD       C11       O51       single    1.426     0.020     1.426     0.020     
+BCD       C11       O47       single    1.426     0.020     1.426     0.020     
+BCD       H11       C11       single    1.089     0.010     0.989     0.005     
+BCD       O21       C21       single    1.432     0.020     1.432     0.020     
+BCD       C21       C31       single    1.524     0.020     1.524     0.020     
+BCD       H21       C21       single    1.089     0.010     0.989     0.005     
+BCD       HO21      O21       single    0.970     0.012     0.839     0.014     
+BCD       O31       C31       single    1.432     0.020     1.432     0.020     
+BCD       C31       C41       single    1.524     0.020     1.524     0.020     
+BCD       H31       C31       single    1.089     0.010     0.989     0.005     
+BCD       HO31      O31       single    0.970     0.012     0.839     0.014     
+BCD       C41       O41       single    1.426     0.020     1.426     0.020     
+BCD       C51       C41       single    1.524     0.020     1.524     0.020     
+BCD       H41       C41       single    1.089     0.010     0.989     0.005     
+BCD       O41       C12       single    1.426     0.020     1.426     0.020     
+BCD       O51       C51       single    1.426     0.020     1.426     0.020     
+BCD       C61       C51       single    1.524     0.020     1.524     0.020     
+BCD       H51       C51       single    1.089     0.010     0.989     0.005     
+BCD       O61       C61       single    1.432     0.020     1.432     0.020     
+BCD       H611      C61       single    1.089     0.010     0.989     0.005     
+BCD       H612      C61       single    1.089     0.010     0.989     0.005     
+BCD       HO61      O61       single    0.970     0.012     0.839     0.014     
+BCD       C12       C22       single    1.524     0.020     1.524     0.020     
+BCD       C12       O52       single    1.426     0.020     1.426     0.020     
+BCD       H12       C12       single    1.089     0.010     0.989     0.005     
+BCD       O22       C22       single    1.432     0.020     1.432     0.020     
+BCD       C22       C32       single    1.524     0.020     1.524     0.020     
+BCD       H22       C22       single    1.089     0.010     0.989     0.005     
+BCD       HO22      O22       single    0.970     0.012     0.839     0.014     
+BCD       O32       C32       single    1.432     0.020     1.432     0.020     
+BCD       C32       C42       single    1.524     0.020     1.524     0.020     
+BCD       H32       C32       single    1.089     0.010     0.989     0.005     
+BCD       HO32      O32       single    0.970     0.012     0.839     0.014     
+BCD       C42       O42       single    1.426     0.020     1.426     0.020     
+BCD       C52       C42       single    1.524     0.020     1.524     0.020     
+BCD       H42       C42       single    1.089     0.010     0.989     0.005     
+BCD       O42       C13       single    1.426     0.020     1.426     0.020     
+BCD       O52       C52       single    1.426     0.020     1.426     0.020     
+BCD       C62       C52       single    1.524     0.020     1.524     0.020     
+BCD       H52       C52       single    1.089     0.010     0.989     0.005     
+BCD       O62       C62       single    1.432     0.020     1.432     0.020     
+BCD       H621      C62       single    1.089     0.010     0.989     0.005     
+BCD       H622      C62       single    1.089     0.010     0.989     0.005     
+BCD       HO62      O62       single    0.970     0.012     0.839     0.014     
+BCD       C13       C23       single    1.524     0.020     1.524     0.020     
+BCD       C13       O53       single    1.426     0.020     1.426     0.020     
+BCD       H13       C13       single    1.089     0.010     0.989     0.005     
+BCD       O23       C23       single    1.432     0.020     1.432     0.020     
+BCD       C23       C33       single    1.524     0.020     1.524     0.020     
+BCD       H23       C23       single    1.089     0.010     0.989     0.005     
+BCD       HO23      O23       single    0.970     0.012     0.839     0.014     
+BCD       O33       C33       single    1.432     0.020     1.432     0.020     
+BCD       C33       C43       single    1.524     0.020     1.524     0.020     
+BCD       H33       C33       single    1.089     0.010     0.989     0.005     
+BCD       HO33      O33       single    0.970     0.012     0.839     0.014     
+BCD       C43       O43       single    1.426     0.020     1.426     0.020     
+BCD       C53       C43       single    1.524     0.020     1.524     0.020     
+BCD       H43       C43       single    1.089     0.010     0.989     0.005     
+BCD       O43       C14       single    1.426     0.020     1.426     0.020     
+BCD       O53       C53       single    1.426     0.020     1.426     0.020     
+BCD       C63       C53       single    1.524     0.020     1.524     0.020     
+BCD       H53       C53       single    1.089     0.010     0.989     0.005     
+BCD       O63       C63       single    1.432     0.020     1.432     0.020     
+BCD       H631      C63       single    1.089     0.010     0.989     0.005     
+BCD       H632      C63       single    1.089     0.010     0.989     0.005     
+BCD       HO63      O63       single    0.970     0.012     0.839     0.014     
+BCD       C14       C24       single    1.524     0.020     1.524     0.020     
+BCD       C14       O54       single    1.426     0.020     1.426     0.020     
+BCD       H14       C14       single    1.089     0.010     0.989     0.005     
+BCD       O24       C24       single    1.432     0.020     1.432     0.020     
+BCD       C24       C34       single    1.524     0.020     1.524     0.020     
+BCD       H24       C24       single    1.089     0.010     0.989     0.005     
+BCD       HO24      O24       single    0.970     0.012     0.839     0.014     
+BCD       O34       C34       single    1.432     0.020     1.432     0.020     
+BCD       C34       C44       single    1.524     0.020     1.524     0.020     
+BCD       H34       C34       single    1.089     0.010     0.989     0.005     
+BCD       HO34      O34       single    0.970     0.012     0.839     0.014     
+BCD       C44       O44       single    1.426     0.020     1.426     0.020     
+BCD       C54       C44       single    1.524     0.020     1.524     0.020     
+BCD       H44       C44       single    1.089     0.010     0.989     0.005     
+BCD       O44       C15       single    1.426     0.020     1.426     0.020     
+BCD       O54       C54       single    1.426     0.020     1.426     0.020     
+BCD       C64       C54       single    1.524     0.020     1.524     0.020     
+BCD       H54       C54       single    1.089     0.010     0.989     0.005     
+BCD       O64       C64       single    1.432     0.020     1.432     0.020     
+BCD       H641      C64       single    1.089     0.010     0.989     0.005     
+BCD       H642      C64       single    1.089     0.010     0.989     0.005     
+BCD       HO64      O64       single    0.970     0.012     0.839     0.014     
+BCD       C15       C25       single    1.524     0.020     1.524     0.020     
+BCD       C15       O55       single    1.426     0.020     1.426     0.020     
+BCD       H15       C15       single    1.089     0.010     0.989     0.005     
+BCD       O25       C25       single    1.432     0.020     1.432     0.020     
+BCD       C25       C35       single    1.524     0.020     1.524     0.020     
+BCD       H25       C25       single    1.089     0.010     0.989     0.005     
+BCD       HO25      O25       single    0.970     0.012     0.839     0.014     
+BCD       O35       C35       single    1.432     0.020     1.432     0.020     
+BCD       C35       C45       single    1.524     0.020     1.524     0.020     
+BCD       H35       C35       single    1.089     0.010     0.989     0.005     
+BCD       HO35      O35       single    0.970     0.012     0.839     0.014     
+BCD       C45       O45       single    1.426     0.020     1.426     0.020     
+BCD       C55       C45       single    1.524     0.020     1.524     0.020     
+BCD       H45       C45       single    1.089     0.010     0.989     0.005     
+BCD       O45       C16       single    1.426     0.020     1.426     0.020     
+BCD       O55       C55       single    1.426     0.020     1.426     0.020     
+BCD       C65       C55       single    1.524     0.020     1.524     0.020     
+BCD       H55       C55       single    1.089     0.010     0.989     0.005     
+BCD       O65       C65       single    1.432     0.020     1.432     0.020     
+BCD       H651      C65       single    1.089     0.010     0.989     0.005     
+BCD       H652      C65       single    1.089     0.010     0.989     0.005     
+BCD       HO65      O65       single    0.970     0.012     0.839     0.014     
+BCD       C16       C26       single    1.524     0.020     1.524     0.020     
+BCD       C16       O56       single    1.426     0.020     1.426     0.020     
+BCD       H16       C16       single    1.089     0.010     0.989     0.005     
+BCD       O26       C26       single    1.432     0.020     1.432     0.020     
+BCD       C26       C36       single    1.524     0.020     1.524     0.020     
+BCD       H26       C26       single    1.089     0.010     0.989     0.005     
+BCD       HO26      O26       single    0.970     0.012     0.839     0.014     
+BCD       O36       C36       single    1.432     0.020     1.432     0.020     
+BCD       C36       C46       single    1.524     0.020     1.524     0.020     
+BCD       H36       C36       single    1.089     0.010     0.989     0.005     
+BCD       HO36      O36       single    0.970     0.012     0.839     0.014     
+BCD       C46       O46       single    1.426     0.020     1.426     0.020     
+BCD       C56       C46       single    1.524     0.020     1.524     0.020     
+BCD       H46       C46       single    1.089     0.010     0.989     0.005     
+BCD       O46       C17       single    1.426     0.020     1.426     0.020     
+BCD       O56       C56       single    1.426     0.020     1.426     0.020     
+BCD       C66       C56       single    1.524     0.020     1.524     0.020     
+BCD       H56       C56       single    1.089     0.010     0.989     0.005     
+BCD       O66       C66       single    1.432     0.020     1.432     0.020     
+BCD       H661      C66       single    1.089     0.010     0.989     0.005     
+BCD       H662      C66       single    1.089     0.010     0.989     0.005     
+BCD       HO66      O66       single    0.970     0.012     0.839     0.014     
+BCD       C17       C27       single    1.524     0.020     1.524     0.020     
+BCD       C17       O57       single    1.426     0.020     1.426     0.020     
+BCD       H17       C17       single    1.089     0.010     0.989     0.005     
+BCD       O27       C27       single    1.432     0.020     1.432     0.020     
+BCD       C27       C37       single    1.524     0.020     1.524     0.020     
+BCD       H27       C27       single    1.089     0.010     0.989     0.005     
+BCD       HO27      O27       single    0.970     0.012     0.839     0.014     
+BCD       O37       C37       single    1.432     0.020     1.432     0.020     
+BCD       C37       C47       single    1.524     0.020     1.524     0.020     
+BCD       H37       C37       single    1.089     0.010     0.989     0.005     
+BCD       HO37      O37       single    0.970     0.012     0.839     0.014     
+BCD       O47       C47       single    1.426     0.020     1.426     0.020     
+BCD       C47       C57       single    1.524     0.020     1.524     0.020     
+BCD       H47       C47       single    1.089     0.010     0.989     0.005     
+BCD       O57       C57       single    1.426     0.020     1.426     0.020     
+BCD       C57       C67       single    1.524     0.020     1.524     0.020     
+BCD       H57       C57       single    1.089     0.010     0.989     0.005     
+BCD       C67       O67       single    1.432     0.020     1.432     0.020     
+BCD       H671      C67       single    1.089     0.010     0.989     0.005     
+BCD       H672      C67       single    1.089     0.010     0.989     0.005     
+BCD       HO67      O67       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BCD      HO67   O67    C67     109.470    3.000
+ BCD      O67    C67    H671    109.470    3.000
+ BCD      O67    C67    H672    109.470    3.000
+ BCD      O67    C67    C57     109.470    3.000
+ BCD      H671   C67    H672    107.900    3.000
+ BCD      H671   C67    C57     109.470    3.000
+ BCD      H672   C67    C57     109.470    3.000
+ BCD      C67    C57    H57     108.340    3.000
+ BCD      C67    C57    C47     111.000    3.000
+ BCD      C67    C57    O57     109.470    3.000
+ BCD      H57    C57    C47     108.340    3.000
+ BCD      H57    C57    O57     109.470    3.000
+ BCD      C47    C57    O57     109.470    3.000
+ BCD      C57    C47    H47     108.340    3.000
+ BCD      C57    C47    C37     111.000    3.000
+ BCD      C57    C47    O47     109.470    3.000
+ BCD      H47    C47    C37     108.340    3.000
+ BCD      H47    C47    O47     109.470    3.000
+ BCD      C37    C47    O47     109.470    3.000
+ BCD      C47    C37    H37     108.340    3.000
+ BCD      C47    C37    O37     109.470    3.000
+ BCD      C47    C37    C27     111.000    3.000
+ BCD      H37    C37    O37     109.470    3.000
+ BCD      H37    C37    C27     108.340    3.000
+ BCD      O37    C37    C27     109.470    3.000
+ BCD      C37    O37    HO37    109.470    3.000
+ BCD      C37    C27    H27     108.340    3.000
+ BCD      C37    C27    O27     109.470    3.000
+ BCD      C37    C27    C17     111.000    3.000
+ BCD      H27    C27    O27     109.470    3.000
+ BCD      H27    C27    C17     108.340    3.000
+ BCD      O27    C27    C17     109.470    3.000
+ BCD      C27    O27    HO27    109.470    3.000
+ BCD      C47    O47    C11     111.800    3.000
+ BCD      O47    C11    H11     109.470    3.000
+ BCD      O47    C11    C21     109.470    3.000
+ BCD      O47    C11    O51     109.470    3.000
+ BCD      C21    C11    O51     109.470    3.000
+ BCD      H11    C11    C21     108.340    3.000
+ BCD      H11    C11    O51     109.470    3.000
+ BCD      C57    O57    C17     111.800    3.000
+ BCD      O57    C17    H17     109.470    3.000
+ BCD      O57    C17    O46     109.470    3.000
+ BCD      O57    C17    C27     109.470    3.000
+ BCD      H17    C17    O46     109.470    3.000
+ BCD      H17    C17    C27     108.340    3.000
+ BCD      O46    C17    C27     109.470    3.000
+ BCD      C17    O46    C46     111.800    3.000
+ BCD      O46    C46    H46     109.470    3.000
+ BCD      O46    C46    C36     109.470    3.000
+ BCD      O46    C46    C56     109.470    3.000
+ BCD      H46    C46    C36     108.340    3.000
+ BCD      H46    C46    C56     108.340    3.000
+ BCD      C36    C46    C56     111.000    3.000
+ BCD      C46    C36    H36     108.340    3.000
+ BCD      C46    C36    O36     109.470    3.000
+ BCD      C46    C36    C26     111.000    3.000
+ BCD      H36    C36    O36     109.470    3.000
+ BCD      H36    C36    C26     108.340    3.000
+ BCD      O36    C36    C26     109.470    3.000
+ BCD      C36    O36    HO36    109.470    3.000
+ BCD      C36    C26    H26     108.340    3.000
+ BCD      C36    C26    O26     109.470    3.000
+ BCD      C36    C26    C16     111.000    3.000
+ BCD      H26    C26    O26     109.470    3.000
+ BCD      H26    C26    C16     108.340    3.000
+ BCD      O26    C26    C16     109.470    3.000
+ BCD      C26    O26    HO26    109.470    3.000
+ BCD      C46    C56    H56     108.340    3.000
+ BCD      C46    C56    C66     111.000    3.000
+ BCD      C46    C56    O56     109.470    3.000
+ BCD      H56    C56    C66     108.340    3.000
+ BCD      H56    C56    O56     109.470    3.000
+ BCD      C66    C56    O56     109.470    3.000
+ BCD      C56    C66    H661    109.470    3.000
+ BCD      C56    C66    H662    109.470    3.000
+ BCD      C56    C66    O66     109.470    3.000
+ BCD      H661   C66    H662    107.900    3.000
+ BCD      H661   C66    O66     109.470    3.000
+ BCD      H662   C66    O66     109.470    3.000
+ BCD      C66    O66    HO66    109.470    3.000
+ BCD      C56    O56    C16     111.800    3.000
+ BCD      O56    C16    H16     109.470    3.000
+ BCD      O56    C16    O45     109.470    3.000
+ BCD      O56    C16    C26     109.470    3.000
+ BCD      H16    C16    O45     109.470    3.000
+ BCD      H16    C16    C26     108.340    3.000
+ BCD      O45    C16    C26     109.470    3.000
+ BCD      C16    O45    C45     111.800    3.000
+ BCD      O45    C45    H45     109.470    3.000
+ BCD      O45    C45    C35     109.470    3.000
+ BCD      O45    C45    C55     109.470    3.000
+ BCD      H45    C45    C35     108.340    3.000
+ BCD      H45    C45    C55     108.340    3.000
+ BCD      C35    C45    C55     111.000    3.000
+ BCD      C45    C35    H35     108.340    3.000
+ BCD      C45    C35    O35     109.470    3.000
+ BCD      C45    C35    C25     111.000    3.000
+ BCD      H35    C35    O35     109.470    3.000
+ BCD      H35    C35    C25     108.340    3.000
+ BCD      O35    C35    C25     109.470    3.000
+ BCD      C35    O35    HO35    109.470    3.000
+ BCD      C35    C25    H25     108.340    3.000
+ BCD      C35    C25    O25     109.470    3.000
+ BCD      C35    C25    C15     111.000    3.000
+ BCD      H25    C25    O25     109.470    3.000
+ BCD      H25    C25    C15     108.340    3.000
+ BCD      O25    C25    C15     109.470    3.000
+ BCD      C25    O25    HO25    109.470    3.000
+ BCD      C45    C55    H55     108.340    3.000
+ BCD      C45    C55    C65     111.000    3.000
+ BCD      C45    C55    O55     109.470    3.000
+ BCD      H55    C55    C65     108.340    3.000
+ BCD      H55    C55    O55     109.470    3.000
+ BCD      C65    C55    O55     109.470    3.000
+ BCD      C55    C65    H651    109.470    3.000
+ BCD      C55    C65    H652    109.470    3.000
+ BCD      C55    C65    O65     109.470    3.000
+ BCD      H651   C65    H652    107.900    3.000
+ BCD      H651   C65    O65     109.470    3.000
+ BCD      H652   C65    O65     109.470    3.000
+ BCD      C65    O65    HO65    109.470    3.000
+ BCD      C55    O55    C15     111.800    3.000
+ BCD      O55    C15    H15     109.470    3.000
+ BCD      O55    C15    O44     109.470    3.000
+ BCD      O55    C15    C25     109.470    3.000
+ BCD      H15    C15    O44     109.470    3.000
+ BCD      H15    C15    C25     108.340    3.000
+ BCD      O44    C15    C25     109.470    3.000
+ BCD      C15    O44    C44     111.800    3.000
+ BCD      O44    C44    H44     109.470    3.000
+ BCD      O44    C44    C34     109.470    3.000
+ BCD      O44    C44    C54     109.470    3.000
+ BCD      H44    C44    C34     108.340    3.000
+ BCD      H44    C44    C54     108.340    3.000
+ BCD      C34    C44    C54     111.000    3.000
+ BCD      C44    C34    H34     108.340    3.000
+ BCD      C44    C34    O34     109.470    3.000
+ BCD      C44    C34    C24     111.000    3.000
+ BCD      H34    C34    O34     109.470    3.000
+ BCD      H34    C34    C24     108.340    3.000
+ BCD      O34    C34    C24     109.470    3.000
+ BCD      C34    O34    HO34    109.470    3.000
+ BCD      C34    C24    H24     108.340    3.000
+ BCD      C34    C24    O24     109.470    3.000
+ BCD      C34    C24    C14     111.000    3.000
+ BCD      H24    C24    O24     109.470    3.000
+ BCD      H24    C24    C14     108.340    3.000
+ BCD      O24    C24    C14     109.470    3.000
+ BCD      C24    O24    HO24    109.470    3.000
+ BCD      C44    C54    H54     108.340    3.000
+ BCD      C44    C54    C64     111.000    3.000
+ BCD      C44    C54    O54     109.470    3.000
+ BCD      H54    C54    C64     108.340    3.000
+ BCD      H54    C54    O54     109.470    3.000
+ BCD      C64    C54    O54     109.470    3.000
+ BCD      C54    C64    H641    109.470    3.000
+ BCD      C54    C64    H642    109.470    3.000
+ BCD      C54    C64    O64     109.470    3.000
+ BCD      H641   C64    H642    107.900    3.000
+ BCD      H641   C64    O64     109.470    3.000
+ BCD      H642   C64    O64     109.470    3.000
+ BCD      C64    O64    HO64    109.470    3.000
+ BCD      C54    O54    C14     111.800    3.000
+ BCD      O54    C14    H14     109.470    3.000
+ BCD      O54    C14    O43     109.470    3.000
+ BCD      O54    C14    C24     109.470    3.000
+ BCD      H14    C14    O43     109.470    3.000
+ BCD      H14    C14    C24     108.340    3.000
+ BCD      O43    C14    C24     109.470    3.000
+ BCD      C14    O43    C43     111.800    3.000
+ BCD      O43    C43    H43     109.470    3.000
+ BCD      O43    C43    C33     109.470    3.000
+ BCD      O43    C43    C53     109.470    3.000
+ BCD      H43    C43    C33     108.340    3.000
+ BCD      H43    C43    C53     108.340    3.000
+ BCD      C33    C43    C53     111.000    3.000
+ BCD      C43    C33    H33     108.340    3.000
+ BCD      C43    C33    O33     109.470    3.000
+ BCD      C43    C33    C23     111.000    3.000
+ BCD      H33    C33    O33     109.470    3.000
+ BCD      H33    C33    C23     108.340    3.000
+ BCD      O33    C33    C23     109.470    3.000
+ BCD      C33    O33    HO33    109.470    3.000
+ BCD      C33    C23    H23     108.340    3.000
+ BCD      C33    C23    O23     109.470    3.000
+ BCD      C33    C23    C13     111.000    3.000
+ BCD      H23    C23    O23     109.470    3.000
+ BCD      H23    C23    C13     108.340    3.000
+ BCD      O23    C23    C13     109.470    3.000
+ BCD      C23    O23    HO23    109.470    3.000
+ BCD      C43    C53    H53     108.340    3.000
+ BCD      C43    C53    C63     111.000    3.000
+ BCD      C43    C53    O53     109.470    3.000
+ BCD      H53    C53    C63     108.340    3.000
+ BCD      H53    C53    O53     109.470    3.000
+ BCD      C63    C53    O53     109.470    3.000
+ BCD      C53    C63    H631    109.470    3.000
+ BCD      C53    C63    H632    109.470    3.000
+ BCD      C53    C63    O63     109.470    3.000
+ BCD      H631   C63    H632    107.900    3.000
+ BCD      H631   C63    O63     109.470    3.000
+ BCD      H632   C63    O63     109.470    3.000
+ BCD      C63    O63    HO63    109.470    3.000
+ BCD      C53    O53    C13     111.800    3.000
+ BCD      O53    C13    H13     109.470    3.000
+ BCD      O53    C13    O42     109.470    3.000
+ BCD      O53    C13    C23     109.470    3.000
+ BCD      H13    C13    O42     109.470    3.000
+ BCD      H13    C13    C23     108.340    3.000
+ BCD      O42    C13    C23     109.470    3.000
+ BCD      C13    O42    C42     111.800    3.000
+ BCD      O42    C42    H42     109.470    3.000
+ BCD      O42    C42    C32     109.470    3.000
+ BCD      O42    C42    C52     109.470    3.000
+ BCD      H42    C42    C32     108.340    3.000
+ BCD      H42    C42    C52     108.340    3.000
+ BCD      C32    C42    C52     111.000    3.000
+ BCD      C42    C32    H32     108.340    3.000
+ BCD      C42    C32    O32     109.470    3.000
+ BCD      C42    C32    C22     111.000    3.000
+ BCD      H32    C32    O32     109.470    3.000
+ BCD      H32    C32    C22     108.340    3.000
+ BCD      O32    C32    C22     109.470    3.000
+ BCD      C32    O32    HO32    109.470    3.000
+ BCD      C32    C22    H22     108.340    3.000
+ BCD      C32    C22    O22     109.470    3.000
+ BCD      C32    C22    C12     111.000    3.000
+ BCD      H22    C22    O22     109.470    3.000
+ BCD      H22    C22    C12     108.340    3.000
+ BCD      O22    C22    C12     109.470    3.000
+ BCD      C22    O22    HO22    109.470    3.000
+ BCD      C42    C52    H52     108.340    3.000
+ BCD      C42    C52    C62     111.000    3.000
+ BCD      C42    C52    O52     109.470    3.000
+ BCD      H52    C52    C62     108.340    3.000
+ BCD      H52    C52    O52     109.470    3.000
+ BCD      C62    C52    O52     109.470    3.000
+ BCD      C52    C62    H621    109.470    3.000
+ BCD      C52    C62    H622    109.470    3.000
+ BCD      C52    C62    O62     109.470    3.000
+ BCD      H621   C62    H622    107.900    3.000
+ BCD      H621   C62    O62     109.470    3.000
+ BCD      H622   C62    O62     109.470    3.000
+ BCD      C62    O62    HO62    109.470    3.000
+ BCD      C52    O52    C12     111.800    3.000
+ BCD      O52    C12    H12     109.470    3.000
+ BCD      O52    C12    O41     109.470    3.000
+ BCD      O52    C12    C22     109.470    3.000
+ BCD      H12    C12    O41     109.470    3.000
+ BCD      H12    C12    C22     108.340    3.000
+ BCD      O41    C12    C22     109.470    3.000
+ BCD      C12    O41    C41     111.800    3.000
+ BCD      O41    C41    H41     109.470    3.000
+ BCD      O41    C41    C51     109.470    3.000
+ BCD      O41    C41    C31     109.470    3.000
+ BCD      H41    C41    C51     108.340    3.000
+ BCD      H41    C41    C31     108.340    3.000
+ BCD      C51    C41    C31     111.000    3.000
+ BCD      C41    C51    H51     108.340    3.000
+ BCD      C41    C51    C61     111.000    3.000
+ BCD      C41    C51    O51     109.470    3.000
+ BCD      H51    C51    C61     108.340    3.000
+ BCD      H51    C51    O51     109.470    3.000
+ BCD      C61    C51    O51     109.470    3.000
+ BCD      C51    C61    H611    109.470    3.000
+ BCD      C51    C61    H612    109.470    3.000
+ BCD      C51    C61    O61     109.470    3.000
+ BCD      H611   C61    H612    107.900    3.000
+ BCD      H611   C61    O61     109.470    3.000
+ BCD      H612   C61    O61     109.470    3.000
+ BCD      C61    O61    HO61    109.470    3.000
+ BCD      C51    O51    C11     111.800    3.000
+ BCD      C41    C31    H31     108.340    3.000
+ BCD      C41    C31    O31     109.470    3.000
+ BCD      C41    C31    C21     111.000    3.000
+ BCD      H31    C31    O31     109.470    3.000
+ BCD      H31    C31    C21     108.340    3.000
+ BCD      O31    C31    C21     109.470    3.000
+ BCD      C31    O31    HO31    109.470    3.000
+ BCD      C31    C21    H21     108.340    3.000
+ BCD      C31    C21    O21     109.470    3.000
+ BCD      C31    C21    C11     111.000    3.000
+ BCD      H21    C21    O21     109.470    3.000
+ BCD      H21    C21    C11     108.340    3.000
+ BCD      O21    C21    C11     109.470    3.000
+ BCD      C21    O21    HO21    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BCD      var_1    HO67   O67    C67    C57      129.221   20.000   1
+ BCD      var_2    O67    C67    C57    O57      170.620   20.000   3
+ BCD      var_3    C67    C57    C47    O47      150.000   20.000   3
+ BCD      var_4    C57    C47    C37    C27      -30.000   20.000   3
+ BCD      var_5    C47    C37    O37    HO37      -0.342   20.000   1
+ BCD      var_6    C47    C37    C27    O27     -150.000   20.000   3
+ BCD      var_7    C37    C27    O27    HO27     -71.067   20.000   1
+ BCD      var_8    C57    C47    O47    C11     -147.236   20.000   1
+ BCD      var_9    C47    O47    C11    C21     -164.596   20.000   1
+ BCD      var_10   O47    C11    C21    C31      180.000   20.000   3
+ BCD      var_11   O47    C11    O51    C51      180.000   20.000   1
+ BCD      var_12   C67    C57    O57    C17      120.000   20.000   1
+ BCD      var_13   C57    O57    C17    O46       90.000   20.000   1
+ BCD      var_14   O57    C17    C27    C37       60.000   20.000   3
+ BCD      var_15   O57    C17    O46    C46       74.972   20.000   1
+ BCD      var_16   C17    O46    C46    C56     -132.566   20.000   1
+ BCD      var_17   O46    C46    C36    C26      180.000   20.000   3
+ BCD      var_18   C46    C36    O36    HO36     136.649   20.000   1
+ BCD      var_19   C46    C36    C26    O26     -150.000   20.000   3
+ BCD      var_20   C36    C26    O26    HO26     -68.156   20.000   1
+ BCD      var_21   O46    C46    C56    O56     -150.000   20.000   3
+ BCD      var_22   C46    C56    C66    O66      179.544   20.000   3
+ BCD      var_23   C56    C66    O66    HO66     159.312   20.000   1
+ BCD      var_24   C46    C56    O56    C16      -30.000   20.000   1
+ BCD      var_25   C56    O56    C16    O45      180.000   20.000   1
+ BCD      var_26   O56    C16    C26    C36      -30.000   20.000   3
+ BCD      var_27   O56    C16    O45    C45       88.749   20.000   1
+ BCD      var_28   C16    O45    C45    C55       74.652   20.000   1
+ BCD      var_29   O45    C45    C35    C25      180.000   20.000   3
+ BCD      var_30   C45    C35    O35    HO35      23.130   20.000   1
+ BCD      var_31   C45    C35    C25    O25      180.000   20.000   3
+ BCD      var_32   C35    C25    O25    HO25     -73.149   20.000   1
+ BCD      var_33   O45    C45    C55    O55      180.000   20.000   3
+ BCD      var_34   C45    C55    C65    O65      179.484   20.000   3
+ BCD      var_35   C55    C65    O65    HO65      96.172   20.000   1
+ BCD      var_36   C45    C55    O55    C15       60.000   20.000   1
+ BCD      var_37   C55    O55    C15    O44       60.000   20.000   1
+ BCD      var_38   O55    C15    C25    C35       60.000   20.000   3
+ BCD      var_39   O55    C15    O44    C44       70.586   20.000   1
+ BCD      var_40   C15    O44    C44    C54     -147.929   20.000   1
+ BCD      var_41   O44    C44    C34    C24       90.000   20.000   3
+ BCD      var_42   C44    C34    O34    HO34     148.228   20.000   1
+ BCD      var_43   C44    C34    C24    O24     -150.000   20.000   3
+ BCD      var_44   C34    C24    O24    HO24      14.932   20.000   1
+ BCD      var_45   O44    C44    C54    O54      -90.000   20.000   3
+ BCD      var_46   C44    C54    C64    O64      -60.488   20.000   3
+ BCD      var_47   C54    C64    O64    HO64     -84.421   20.000   1
+ BCD      var_48   C44    C54    O54    C14      -30.000   20.000   1
+ BCD      var_49   C54    O54    C14    O43       90.000   20.000   1
+ BCD      var_50   O54    C14    C24    C34       60.000   20.000   3
+ BCD      var_51   O54    C14    O43    C43      140.366   20.000   1
+ BCD      var_52   C14    O43    C43    C53      -97.709   20.000   1
+ BCD      var_53   O43    C43    C33    C23      180.000   20.000   3
+ BCD      var_54   C43    C33    O33    HO33      45.957   20.000   1
+ BCD      var_55   C43    C33    C23    O23      180.000   20.000   3
+ BCD      var_56   C33    C23    O23    HO23      -9.524   20.000   1
+ BCD      var_57   O43    C43    C53    O53      180.000   20.000   3
+ BCD      var_58   C43    C53    C63    O63       59.564   20.000   3
+ BCD      var_59   C53    C63    O63    HO63     129.724   20.000   1
+ BCD      var_60   C43    C53    O53    C13       60.000   20.000   1
+ BCD      var_61   C53    O53    C13    O42       60.000   20.000   1
+ BCD      var_62   O53    C13    C23    C33       60.000   20.000   3
+ BCD      var_63   O53    C13    O42    C42      110.807   20.000   1
+ BCD      var_64   C13    O42    C42    C52      -89.159   20.000   1
+ BCD      var_65   O42    C42    C32    C22      180.000   20.000   3
+ BCD      var_66   C42    C32    O32    HO32    -128.276   20.000   1
+ BCD      var_67   C42    C32    C22    O22      180.000   20.000   3
+ BCD      var_68   C32    C22    O22    HO22      44.393   20.000   1
+ BCD      var_69   O42    C42    C52    O52      180.000   20.000   3
+ BCD      var_70   C42    C52    C62    O62       59.522   20.000   3
+ BCD      var_71   C52    C62    O62    HO62      18.605   20.000   1
+ BCD      var_72   C42    C52    O52    C12       60.000   20.000   1
+ BCD      var_73   C52    O52    C12    O41       60.000   20.000   1
+ BCD      var_74   O52    C12    C22    C32       60.000   20.000   3
+ BCD      var_75   O52    C12    O41    C41       83.713   20.000   1
+ BCD      var_76   C12    O41    C41    C31      162.617   20.000   1
+ BCD      var_77   O41    C41    C51    O51      -60.000   20.000   3
+ BCD      var_78   C41    C51    C61    O61      179.527   20.000   3
+ BCD      var_79   C51    C61    O61    HO61    -155.815   20.000   1
+ BCD      var_80   C41    C51    O51    C11      -60.000   20.000   1
+ BCD      var_81   O41    C41    C31    C21       60.000   20.000   3
+ BCD      var_82   C41    C31    O31    HO31    -142.553   20.000   1
+ BCD      var_83   C41    C31    C21    O21      -60.000   20.000   3
+ BCD      var_84   C31    C21    O21    HO21      46.093   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BCD      chir_01  C11    C21    O51    O47       positiv
+ BCD      chir_02  C21    C11    O21    C31       positiv
+ BCD      chir_03  C31    C21    O31    C41       negativ
+ BCD      chir_04  C41    C31    O41    C51       positiv
+ BCD      chir_05  C51    C41    O51    C61       positiv
+ BCD      chir_06  C12    O41    C22    O52       positiv
+ BCD      chir_07  C22    C12    O22    C32       positiv
+ BCD      chir_08  C32    C22    O32    C42       negativ
+ BCD      chir_09  C42    C32    O42    C52       positiv
+ BCD      chir_10  C52    C42    O52    C62       positiv
+ BCD      chir_11  C13    O42    C23    O53       positiv
+ BCD      chir_12  C23    C13    O23    C33       positiv
+ BCD      chir_13  C33    C23    O33    C43       negativ
+ BCD      chir_14  C43    C33    O43    C53       positiv
+ BCD      chir_15  C53    C43    O53    C63       positiv
+ BCD      chir_16  C14    O43    C24    O54       positiv
+ BCD      chir_17  C24    C14    O24    C34       positiv
+ BCD      chir_18  C34    C24    O34    C44       negativ
+ BCD      chir_19  C44    C34    O44    C54       positiv
+ BCD      chir_20  C54    C44    O54    C64       positiv
+ BCD      chir_21  C15    O44    C25    O55       positiv
+ BCD      chir_22  C25    C15    O25    C35       positiv
+ BCD      chir_23  C35    C25    O35    C45       negativ
+ BCD      chir_24  C45    C35    O45    C55       positiv
+ BCD      chir_25  C55    C45    O55    C65       positiv
+ BCD      chir_26  C16    O45    C26    O56       positiv
+ BCD      chir_27  C26    C16    O26    C36       positiv
+ BCD      chir_28  C36    C26    O36    C46       negativ
+ BCD      chir_29  C46    C36    O46    C56       positiv
+ BCD      chir_30  C56    C46    O56    C66       positiv
+ BCD      chir_31  C17    O46    C27    O57       positiv
+ BCD      chir_32  C27    C17    O27    C37       positiv
+ BCD      chir_33  C37    C27    O37    C47       negativ
+ BCD      chir_34  C47    C37    O47    C57       positiv
+ BCD      chir_35  C57    C47    O57    C67       positiv
+# ------------------------------------------------------

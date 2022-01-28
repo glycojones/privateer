@@ -1,0 +1,404 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+37U      37U 'D-phenylalanyl-N-(3-fluorobenzyl)-L-' non-polymer        51  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_37U
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 37U           F7     F    F         0.000      0.000    0.000    0.000
+ 37U           C19    C    CR6       0.000     -0.891    0.730    0.708
+ 37U           C20    C    CR16      0.000     -0.512    1.947    1.252
+ 37U           H20    H    H         0.000      0.497    2.313    1.110
+ 37U           C21    C    CR16      0.000     -1.423    2.692    1.975
+ 37U           H21    H    H         0.000     -1.128    3.643    2.401
+ 37U           C1     C    CR16      0.000     -2.712    2.224    2.156
+ 37U           H1     H    H         0.000     -3.426    2.810    2.723
+ 37U           C18    C    CR16      0.000     -2.181    0.262    0.890
+ 37U           H18    H    H         0.000     -2.477   -0.689    0.465
+ 37U           C2     C    CR6       0.000     -3.090    1.010    1.614
+ 37U           C3     C    CH2       0.000     -4.495    0.501    1.813
+ 37U           H3     H    H         0.000     -4.885    0.869    2.764
+ 37U           H3A    H    H         0.000     -4.489   -0.591    1.822
+ 37U           N9     N    NH1       0.000     -5.345    0.977    0.718
+ 37U           HN9    H    H         0.000     -4.952    1.554   -0.012
+ 37U           C4     C    C         0.000     -6.650    0.644    0.686
+ 37U           O26    O    O         0.000     -7.122   -0.050    1.563
+ 37U           C5     C    CH1       0.000     -7.526    1.133   -0.439
+ 37U           H5     H    H         0.000     -7.129    0.782   -1.402
+ 37U           C17    C    CH2       0.000     -7.585    2.675   -0.426
+ 37U           H17    H    H         0.000     -6.923    3.127   -1.167
+ 37U           H17A   H    H         0.000     -7.367    3.095    0.558
+ 37U           C16    C    CH2       0.000     -9.062    2.969   -0.801
+ 37U           H16    H    H         0.000     -9.249    2.930   -1.876
+ 37U           H16A   H    H         0.000     -9.426    3.919   -0.403
+ 37U           C15    C    CH2       0.000     -9.799    1.799   -0.103
+ 37U           H15    H    H         0.000    -10.756    1.582   -0.582
+ 37U           H15A   H    H         0.000     -9.961    1.999    0.958
+ 37U           N15    N    N         0.000     -8.899    0.641   -0.254
+ 37U           C6     C    C         0.000     -9.273   -0.654   -0.227
+ 37U           O27    O    O         0.000     -8.444   -1.527   -0.363
+ 37U           C7     C    CH1       0.000    -10.723   -1.015   -0.030
+ 37U           H7     H    H         0.000    -11.169   -0.346    0.720
+ 37U           N25    N    NH2       0.000    -10.821   -2.405    0.434
+ 37U           HN2A   H    H         0.000    -11.252   -2.618    1.326
+ 37U           HN25   H    H         0.000    -10.459   -3.161   -0.135
+ 37U           C8     C    CH2       0.000    -11.472   -0.865   -1.356
+ 37U           H8     H    H         0.000    -11.087   -1.591   -2.075
+ 37U           H8A    H    H         0.000    -11.323    0.144   -1.746
+ 37U           C9     C    CR6       0.000    -12.942   -1.107   -1.133
+ 37U           C14    C    CR16      0.000    -13.459   -2.383   -1.256
+ 37U           H14    H    H         0.000    -12.808   -3.209   -1.517
+ 37U           C13    C    CR16      0.000    -14.807   -2.606   -1.047
+ 37U           H13    H    H         0.000    -15.211   -3.606   -1.138
+ 37U           C12    C    CR16      0.000    -15.640   -1.550   -0.723
+ 37U           H12    H    H         0.000    -16.697   -1.724   -0.561
+ 37U           C11    C    CR16      0.000    -15.124   -0.274   -0.604
+ 37U           H11    H    H         0.000    -15.776    0.553   -0.351
+ 37U           C10    C    CR16      0.000    -13.775   -0.052   -0.809
+ 37U           H10    H    H         0.000    -13.370    0.948   -0.716
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 37U      F7     n/a    C19    START
+ 37U      C19    F7     C18    .
+ 37U      C20    C19    C21    .
+ 37U      H20    C20    .      .
+ 37U      C21    C20    C1     .
+ 37U      H21    C21    .      .
+ 37U      C1     C21    H1     .
+ 37U      H1     C1     .      .
+ 37U      C18    C19    C2     .
+ 37U      H18    C18    .      .
+ 37U      C2     C18    C3     .
+ 37U      C3     C2     N9     .
+ 37U      H3     C3     .      .
+ 37U      H3A    C3     .      .
+ 37U      N9     C3     C4     .
+ 37U      HN9    N9     .      .
+ 37U      C4     N9     C5     .
+ 37U      O26    C4     .      .
+ 37U      C5     C4     C17    .
+ 37U      H5     C5     .      .
+ 37U      C17    C5     C16    .
+ 37U      H17    C17    .      .
+ 37U      H17A   C17    .      .
+ 37U      C16    C17    C15    .
+ 37U      H16    C16    .      .
+ 37U      H16A   C16    .      .
+ 37U      C15    C16    N15    .
+ 37U      H15    C15    .      .
+ 37U      H15A   C15    .      .
+ 37U      N15    C15    C6     .
+ 37U      C6     N15    C7     .
+ 37U      O27    C6     .      .
+ 37U      C7     C6     C8     .
+ 37U      H7     C7     .      .
+ 37U      N25    C7     HN25   .
+ 37U      HN2A   N25    .      .
+ 37U      HN25   N25    .      .
+ 37U      C8     C7     C9     .
+ 37U      H8     C8     .      .
+ 37U      H8A    C8     .      .
+ 37U      C9     C8     C14    .
+ 37U      C14    C9     C13    .
+ 37U      H14    C14    .      .
+ 37U      C13    C14    C12    .
+ 37U      H13    C13    .      .
+ 37U      C12    C13    C11    .
+ 37U      H12    C12    .      .
+ 37U      C11    C12    C10    .
+ 37U      H11    C11    .      .
+ 37U      C10    C11    H10    .
+ 37U      H10    C10    .      END
+ 37U      C1     C2     .    ADD
+ 37U      C5     N15    .    ADD
+ 37U      C9     C10    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+37U       C1        C2        double    1.390     0.020     1.390     0.020     
+37U       C1        C21       single    1.390     0.020     1.390     0.020     
+37U       C3        C2        single    1.511     0.020     1.511     0.020     
+37U       C2        C18       single    1.390     0.020     1.390     0.020     
+37U       N9        C3        single    1.450     0.020     1.450     0.020     
+37U       C4        N9        single    1.330     0.020     1.330     0.020     
+37U       O26       C4        double    1.220     0.020     1.220     0.020     
+37U       C5        C4        single    1.500     0.020     1.500     0.020     
+37U       C5        N15       single    1.455     0.020     1.455     0.020     
+37U       C17       C5        single    1.524     0.020     1.524     0.020     
+37U       C6        N15       single    1.330     0.020     1.330     0.020     
+37U       N15       C15       single    1.455     0.020     1.455     0.020     
+37U       O27       C6        double    1.220     0.020     1.220     0.020     
+37U       C7        C6        single    1.500     0.020     1.500     0.020     
+37U       N25       C7        single    1.450     0.020     1.450     0.020     
+37U       C8        C7        single    1.524     0.020     1.524     0.020     
+37U       C9        C8        single    1.511     0.020     1.511     0.020     
+37U       C9        C10       double    1.390     0.020     1.390     0.020     
+37U       C14       C9        single    1.390     0.020     1.390     0.020     
+37U       C10       C11       single    1.390     0.020     1.390     0.020     
+37U       C11       C12       double    1.390     0.020     1.390     0.020     
+37U       C12       C13       single    1.390     0.020     1.390     0.020     
+37U       C13       C14       double    1.390     0.020     1.390     0.020     
+37U       C15       C16       single    1.524     0.020     1.524     0.020     
+37U       C16       C17       single    1.524     0.020     1.524     0.020     
+37U       C18       C19       double    1.390     0.020     1.390     0.020     
+37U       C19       F7        single    1.345     0.020     1.345     0.020     
+37U       C20       C19       single    1.390     0.020     1.390     0.020     
+37U       C21       C20       double    1.390     0.020     1.390     0.020     
+37U       H1        C1        single    1.082     0.013     0.975     0.010     
+37U       H3        C3        single    1.089     0.010     0.989     0.005     
+37U       H3A       C3        single    1.089     0.010     0.989     0.005     
+37U       HN9       N9        single    1.016     0.010     0.899     0.007     
+37U       H5        C5        single    1.089     0.010     0.989     0.005     
+37U       H7        C7        single    1.089     0.010     0.989     0.005     
+37U       HN25      N25       single    1.036     0.016     0.914     0.007     
+37U       HN2A      N25       single    1.036     0.016     0.914     0.007     
+37U       H8        C8        single    1.089     0.010     0.989     0.005     
+37U       H8A       C8        single    1.089     0.010     0.989     0.005     
+37U       H10       C10       single    1.082     0.013     0.975     0.010     
+37U       H11       C11       single    1.082     0.013     0.975     0.010     
+37U       H12       C12       single    1.082     0.013     0.975     0.010     
+37U       H13       C13       single    1.082     0.013     0.975     0.010     
+37U       H14       C14       single    1.082     0.013     0.975     0.010     
+37U       H15       C15       single    1.089     0.010     0.989     0.005     
+37U       H15A      C15       single    1.089     0.010     0.989     0.005     
+37U       H16       C16       single    1.089     0.010     0.989     0.005     
+37U       H16A      C16       single    1.089     0.010     0.989     0.005     
+37U       H17       C17       single    1.089     0.010     0.989     0.005     
+37U       H17A      C17       single    1.089     0.010     0.989     0.005     
+37U       H18       C18       single    1.082     0.013     0.975     0.010     
+37U       H20       C20       single    1.082     0.013     0.975     0.010     
+37U       H21       C21       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 37U      F7     C19    C20     120.000    3.000
+ 37U      F7     C19    C18     120.000    3.000
+ 37U      C20    C19    C18     120.000    3.000
+ 37U      C19    C20    H20     120.000    3.000
+ 37U      C19    C20    C21     120.000    3.000
+ 37U      H20    C20    C21     120.000    3.000
+ 37U      C20    C21    H21     120.000    3.000
+ 37U      C20    C21    C1      120.000    3.000
+ 37U      H21    C21    C1      120.000    3.000
+ 37U      C21    C1     H1      120.000    3.000
+ 37U      C21    C1     C2      120.000    3.000
+ 37U      H1     C1     C2      120.000    3.000
+ 37U      C19    C18    H18     120.000    3.000
+ 37U      C19    C18    C2      120.000    3.000
+ 37U      H18    C18    C2      120.000    3.000
+ 37U      C18    C2     C3      120.000    3.000
+ 37U      C18    C2     C1      120.000    3.000
+ 37U      C3     C2     C1      120.000    3.000
+ 37U      C2     C3     H3      109.470    3.000
+ 37U      C2     C3     H3A     109.470    3.000
+ 37U      C2     C3     N9      109.500    3.000
+ 37U      H3     C3     H3A     107.900    3.000
+ 37U      H3     C3     N9      109.470    3.000
+ 37U      H3A    C3     N9      109.470    3.000
+ 37U      C3     N9     HN9     118.500    3.000
+ 37U      C3     N9     C4      121.500    3.000
+ 37U      HN9    N9     C4      120.000    3.000
+ 37U      N9     C4     O26     123.000    3.000
+ 37U      N9     C4     C5      116.500    3.000
+ 37U      O26    C4     C5      120.500    3.000
+ 37U      C4     C5     H5      108.810    3.000
+ 37U      C4     C5     C17     109.470    3.000
+ 37U      C4     C5     N15     111.600    3.000
+ 37U      H5     C5     C17     108.340    3.000
+ 37U      H5     C5     N15     109.470    3.000
+ 37U      C17    C5     N15     105.000    3.000
+ 37U      C5     C17    H17     109.470    3.000
+ 37U      C5     C17    H17A    109.470    3.000
+ 37U      C5     C17    C16     111.000    3.000
+ 37U      H17    C17    H17A    107.900    3.000
+ 37U      H17    C17    C16     109.470    3.000
+ 37U      H17A   C17    C16     109.470    3.000
+ 37U      C17    C16    H16     109.470    3.000
+ 37U      C17    C16    H16A    109.470    3.000
+ 37U      C17    C16    C15     111.000    3.000
+ 37U      H16    C16    H16A    107.900    3.000
+ 37U      H16    C16    C15     109.470    3.000
+ 37U      H16A   C16    C15     109.470    3.000
+ 37U      C16    C15    H15     109.470    3.000
+ 37U      C16    C15    H15A    109.470    3.000
+ 37U      C16    C15    N15     105.000    3.000
+ 37U      H15    C15    H15A    107.900    3.000
+ 37U      H15    C15    N15     109.470    3.000
+ 37U      H15A   C15    N15     109.470    3.000
+ 37U      C15    N15    C6      127.000    3.000
+ 37U      C15    N15    C5      112.000    3.000
+ 37U      C6     N15    C5      121.000    3.000
+ 37U      N15    C6     O27     123.000    3.000
+ 37U      N15    C6     C7      116.500    3.000
+ 37U      O27    C6     C7      120.500    3.000
+ 37U      C6     C7     H7      108.810    3.000
+ 37U      C6     C7     N25     109.470    3.000
+ 37U      C6     C7     C8      109.470    3.000
+ 37U      H7     C7     N25     109.470    3.000
+ 37U      H7     C7     C8      108.340    3.000
+ 37U      N25    C7     C8      109.470    3.000
+ 37U      C7     N25    HN2A    120.000    3.000
+ 37U      C7     N25    HN25    120.000    3.000
+ 37U      HN2A   N25    HN25    120.000    3.000
+ 37U      C7     C8     H8      109.470    3.000
+ 37U      C7     C8     H8A     109.470    3.000
+ 37U      C7     C8     C9      109.470    3.000
+ 37U      H8     C8     H8A     107.900    3.000
+ 37U      H8     C8     C9      109.470    3.000
+ 37U      H8A    C8     C9      109.470    3.000
+ 37U      C8     C9     C14     120.000    3.000
+ 37U      C8     C9     C10     120.000    3.000
+ 37U      C14    C9     C10     120.000    3.000
+ 37U      C9     C14    H14     120.000    3.000
+ 37U      C9     C14    C13     120.000    3.000
+ 37U      H14    C14    C13     120.000    3.000
+ 37U      C14    C13    H13     120.000    3.000
+ 37U      C14    C13    C12     120.000    3.000
+ 37U      H13    C13    C12     120.000    3.000
+ 37U      C13    C12    H12     120.000    3.000
+ 37U      C13    C12    C11     120.000    3.000
+ 37U      H12    C12    C11     120.000    3.000
+ 37U      C12    C11    H11     120.000    3.000
+ 37U      C12    C11    C10     120.000    3.000
+ 37U      H11    C11    C10     120.000    3.000
+ 37U      C11    C10    H10     120.000    3.000
+ 37U      C11    C10    C9      120.000    3.000
+ 37U      H10    C10    C9      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 37U      CONST_1  F7     C19    C20    C21      180.000    0.000   0
+ 37U      CONST_2  C19    C20    C21    C1         0.000    0.000   0
+ 37U      CONST_3  C20    C21    C1     C2         0.000    0.000   0
+ 37U      CONST_4  C21    C1     C2     C18        0.000    0.000   0
+ 37U      CONST_5  F7     C19    C18    C2       180.000    0.000   0
+ 37U      CONST_6  C19    C18    C2     C3       180.000    0.000   0
+ 37U      var_1    C18    C2     C3     N9       -89.987   20.000   2
+ 37U      var_2    C2     C3     N9     C4       179.998   20.000   3
+ 37U      CONST_7  C3     N9     C4     C5       180.000    0.000   0
+ 37U      var_3    N9     C4     C5     C17      -62.192   20.000   3
+ 37U      var_4    C4     C5     N15    C15      120.000   20.000   3
+ 37U      var_5    C4     C5     C17    C16     -150.000   20.000   3
+ 37U      var_6    C5     C17    C16    C15       30.000   20.000   3
+ 37U      var_7    C17    C16    C15    N15      -30.000   20.000   3
+ 37U      var_8    C16    C15    N15    C6      -150.000   20.000   1
+ 37U      CONST_8  C15    N15    C6     C7         0.000    0.000   0
+ 37U      var_9    N15    C6     C7     C8        79.990   20.000   3
+ 37U      var_10   C6     C7     N25    HN25     -60.019   20.000   1
+ 37U      var_11   C6     C7     C8     C9      -175.047   20.000   3
+ 37U      var_12   C7     C8     C9     C14      -90.257   20.000   2
+ 37U      CONST_9  C8     C9     C10    C11      180.000    0.000   0
+ 37U      CONST_10 C8     C9     C14    C13      180.000    0.000   0
+ 37U      CONST_11 C9     C14    C13    C12        0.000    0.000   0
+ 37U      CONST_12 C14    C13    C12    C11        0.000    0.000   0
+ 37U      CONST_13 C13    C12    C11    C10        0.000    0.000   0
+ 37U      CONST_14 C12    C11    C10    C9         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 37U      chir_01  C5     C4     N15    C17       negativ
+ 37U      chir_02  C7     C6     N25    C8        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 37U      plan-1    C1        0.020
+ 37U      plan-1    C2        0.020
+ 37U      plan-1    C21       0.020
+ 37U      plan-1    H1        0.020
+ 37U      plan-1    C18       0.020
+ 37U      plan-1    C19       0.020
+ 37U      plan-1    C20       0.020
+ 37U      plan-1    C3        0.020
+ 37U      plan-1    H18       0.020
+ 37U      plan-1    F7        0.020
+ 37U      plan-1    H20       0.020
+ 37U      plan-1    H21       0.020
+ 37U      plan-2    N9        0.020
+ 37U      plan-2    C3        0.020
+ 37U      plan-2    C4        0.020
+ 37U      plan-2    HN9       0.020
+ 37U      plan-3    C4        0.020
+ 37U      plan-3    N9        0.020
+ 37U      plan-3    O26       0.020
+ 37U      plan-3    C5        0.020
+ 37U      plan-3    HN9       0.020
+ 37U      plan-4    N15       0.020
+ 37U      plan-4    C5        0.020
+ 37U      plan-4    C6        0.020
+ 37U      plan-4    C15       0.020
+ 37U      plan-5    C6        0.020
+ 37U      plan-5    N15       0.020
+ 37U      plan-5    O27       0.020
+ 37U      plan-5    C7        0.020
+ 37U      plan-6    N25       0.020
+ 37U      plan-6    C7        0.020
+ 37U      plan-6    HN25      0.020
+ 37U      plan-6    HN2A      0.020
+ 37U      plan-7    C9        0.020
+ 37U      plan-7    C8        0.020
+ 37U      plan-7    C10       0.020
+ 37U      plan-7    C14       0.020
+ 37U      plan-7    C11       0.020
+ 37U      plan-7    C12       0.020
+ 37U      plan-7    C13       0.020
+ 37U      plan-7    H10       0.020
+ 37U      plan-7    H11       0.020
+ 37U      plan-7    H12       0.020
+ 37U      plan-7    H13       0.020
+ 37U      plan-7    H14       0.020
+# ------------------------------------------------------

@@ -1,0 +1,205 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+15L      15L ' (2S,3R,4S,5R,6S)-3,4,5-trihydroxy-6' non-polymer        21  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_15L
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+15L    C1     C   CR6       0       1.096      -1.288      -0.009
+15L    O1     O     O   0.000       1.656      -2.319       0.270
+15L    C2     C   CH2   0.000       1.904      -0.020      -0.260
+15L    O2     O    O2   0.000       3.287      -0.180       0.130
+15L    C3     C   CH2   0.000       1.231       1.110       0.517
+15L    O3     O    O2   0.000       1.824       2.373       0.191
+15L    C4     C   CH2   0.000      -0.265       1.151       0.195
+15L    O4     O    O2   0.000      -0.447       1.423      -1.206
+15L    C5     C   CH2   0.000      -0.941      -0.183       0.592
+15L    O5     O    O2   0.000      -0.254      -1.256      -0.110
+15L    C6     C     C   0.000      -2.442      -0.208       0.212
+15L   O6A     O     O   0.000      -2.912      -0.963      -0.598
+15L   O6B     O    O2   0.000      -3.201       0.707       0.898
+15L    H2     H     H   0.000       1.877       0.182      -1.231
+15L   HO2     H     H   0.000       3.648      -0.819      -0.308
+15L    H3     H     H   0.000       1.337       0.923       1.499
+15L   HO3     H     H   0.000       2.704       2.356       0.329
+15L    H4     H     H   0.000      -0.694       1.908       0.731
+15L   HO4     H     H   0.000      -1.294       1.422      -1.416
+15L    H5     H     H   0.000      -0.844      -0.303       1.558
+15L    H8     H     H   0.000      -4.043       0.659       0.594
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+15L       C1        O1        DOUB      1.202     0.010     1.202     0.010     
+15L       C1        C2        SING      1.515     0.010     1.515     0.010     
+15L       C1        O5        SING      1.339     0.010     1.339     0.010     
+15L       C2        O2        SING      1.428     0.014     1.428     0.014     
+15L       C2        C3        SING      1.529     0.012     1.529     0.012     
+15L       C2        H2        SING      1.089     0.010     0.988     0.020     
+15L       O2        HO2       SING      0.970     0.012     0.854     0.020     
+15L       C3        O3        SING      1.427     0.010     1.427     0.010     
+15L       C3        C4        SING      1.523     0.011     1.523     0.011     
+15L       C3        H3        SING      1.089     0.010     0.989     0.016     
+15L       O3        HO3       SING      0.970     0.012     0.854     0.020     
+15L       C4        O4        SING      1.427     0.010     1.427     0.010     
+15L       C4        C5        SING      1.529     0.016     1.529     0.016     
+15L       C4        H4        SING      1.089     0.010     0.989     0.016     
+15L       O4        HO4       SING      0.970     0.012     0.854     0.020     
+15L       C5        O5        SING      1.432     0.020     1.432     0.020     
+15L       C5        C6        SING      1.521     0.010     1.521     0.010     
+15L       C5        H5        SING      1.089     0.010     0.972     0.020     
+15L       C6        O6A       DOUB      1.204     0.017     1.204     0.017     
+15L       C6        O6B       SING      1.310     0.020     1.310     0.020     
+15L       O6B       H8        SING      0.970     0.012     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+15L    O1    C1      C2   120.513    3.00
+15L    O1    C1      O5   119.215    0.77
+15L    C2    C1      O5   120.272    3.00
+15L    C1    C2      O2   109.088    2.62
+15L    C1    C2      C3   111.440    2.90
+15L    C1    C2      H2   107.851    1.21
+15L    O2    C2      C3   110.118    1.84
+15L    O2    C2      H2   108.382    1.16
+15L    C3    C2      H2   108.952    1.47
+15L    C2    O2     HO2   108.701    2.86
+15L    C2    C3      O3   110.753    0.82
+15L    C2    C3      C4   110.632    1.90
+15L    C2    C3      H3   109.215    1.11
+15L    O3    C3      C4   110.148    1.67
+15L    O3    C3      H3   108.787    1.25
+15L    C4    C3      H3   108.703    1.14
+15L    C3    O3     HO3   108.943    2.95
+15L    C3    C4      O4   110.148    1.67
+15L    C3    C4      C5   110.002    1.66
+15L    C3    C4      H4   108.703    1.14
+15L    O4    C4      C5   109.359    1.85
+15L    O4    C4      H4   108.787    1.25
+15L    C5    C4      H4   110.039    0.91
+15L    C4    O4     HO4   108.943    2.95
+15L    C4    C5      O5   110.399    2.53
+15L    C4    C5      C6   111.940    2.23
+15L    C4    C5      H5   109.414    1.03
+15L    O5    C5      C6   107.702    2.91
+15L    O5    C5      H5   109.030    1.41
+15L    C6    C5      H5   108.992    1.90
+15L    C1    O5      C5   117.907    3.00
+15L    C5    C6     O6A   124.490    1.71
+15L    C5    C6     O6B   112.694    2.56
+15L   O6A    C6     O6B   122.816    1.26
+15L    C6   O6B      H8   109.715    2.82
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+15L       sp2_sp3_1      O5      C1      C2      C3       0.000   10.00     6
+15L       sp2_sp3_2      O5      C1      C2      H2     120.000   10.00     6
+15L       sp2_sp3_3      O5      C1      C2      O2    -120.000   10.00     6
+15L       sp2_sp3_4      O1      C1      C2      C3     180.000   10.00     6
+15L       sp2_sp3_5      O1      C1      C2      H2     -60.000   10.00     6
+15L       sp2_sp3_6      O1      C1      C2      O2      60.000   10.00     6
+15L       sp3_sp3_1      C1      C2      C3      C4     -60.000   10.00     3
+15L       sp3_sp3_2      C1      C2      C3      O3      60.000   10.00     3
+15L       sp3_sp3_3      C1      C2      C3      H3     180.000   10.00     3
+15L       sp3_sp3_4      O2      C2      C3      C4     180.000   10.00     3
+15L       sp3_sp3_5      O2      C2      C3      O3     -60.000   10.00     3
+15L       sp3_sp3_6      O2      C2      C3      H3      60.000   10.00     3
+15L       sp3_sp3_7      H2      C2      C3      C4      60.000   10.00     3
+15L       sp3_sp3_8      H2      C2      C3      O3     180.000   10.00     3
+15L       sp3_sp3_9      H2      C2      C3      H3     -60.000   10.00     3
+15L      sp3_sp3_10      C2      C3      C4      C5      60.000   10.00     3
+15L      sp3_sp3_11      C2      C3      C4      O4     180.000   10.00     3
+15L      sp3_sp3_12      C2      C3      C4      H4     -60.000   10.00     3
+15L      sp3_sp3_13      O3      C3      C4      C5     -60.000   10.00     3
+15L      sp3_sp3_14      O3      C3      C4      O4      60.000   10.00     3
+15L      sp3_sp3_15      O3      C3      C4      H4     180.000   10.00     3
+15L      sp3_sp3_16      H3      C3      C4      C5     180.000   10.00     3
+15L      sp3_sp3_17      H3      C3      C4      O4     -60.000   10.00     3
+15L      sp3_sp3_18      H3      C3      C4      H4      60.000   10.00     3
+15L      sp3_sp3_19      C3      C4      C5      O5     -60.000   10.00     3
+15L      sp3_sp3_20      C3      C4      C5      C6      60.000   10.00     3
+15L      sp3_sp3_21      C3      C4      C5      H5     180.000   10.00     3
+15L      sp3_sp3_22      O4      C4      C5      O5     180.000   10.00     3
+15L      sp3_sp3_23      O4      C4      C5      C6     -60.000   10.00     3
+15L      sp3_sp3_24      O4      C4      C5      H5      60.000   10.00     3
+15L      sp3_sp3_25      H4      C4      C5      O5      60.000   10.00     3
+15L      sp3_sp3_26      H4      C4      C5      C6     180.000   10.00     3
+15L      sp3_sp3_27      H4      C4      C5      H5     -60.000   10.00     3
+15L      sp3_sp3_28      C4      C5      O5      C1      60.000   10.00     3
+15L      sp3_sp3_29      C6      C5      O5      C1     180.000   10.00     3
+15L      sp3_sp3_30      H5      C5      O5      C1     -60.000   10.00     3
+15L       sp2_sp2_1      C2      C1      O5      C5       0.000   10.00     2
+15L       sp2_sp2_2      O1      C1      O5      C5     180.000   10.00     2
+15L      sp3_sp3_31      C1      C2      O2     HO2     180.000   10.00     3
+15L      sp3_sp3_32      C3      C2      O2     HO2     -60.000   10.00     3
+15L      sp3_sp3_33      H2      C2      O2     HO2      60.000   10.00     3
+15L      sp3_sp3_34      C2      C3      O3     HO3     180.000   10.00     3
+15L      sp3_sp3_35      C4      C3      O3     HO3     -60.000   10.00     3
+15L      sp3_sp3_36      H3      C3      O3     HO3      60.000   10.00     3
+15L      sp3_sp3_37      C3      C4      O4     HO4     180.000   10.00     3
+15L      sp3_sp3_38      C5      C4      O4     HO4     -60.000   10.00     3
+15L      sp3_sp3_39      H4      C4      O4     HO4      60.000   10.00     3
+15L       sp2_sp3_7     O6A      C6      C5      H5       0.000   10.00     6
+15L       sp2_sp3_8     O6A      C6      C5      C4     120.000   10.00     6
+15L       sp2_sp3_9     O6A      C6      C5      O5    -120.000   10.00     6
+15L      sp2_sp3_10     O6B      C6      C5      H5     180.000   10.00     6
+15L      sp2_sp3_11     O6B      C6      C5      C4     -60.000   10.00     6
+15L      sp2_sp3_12     O6B      C6      C5      O5      60.000   10.00     6
+15L       sp2_sp2_3      C5      C6     O6B      H8     180.000   10.00     2
+15L       sp2_sp2_4     O6A      C6     O6B      H8       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+15L    plan-1    C1   0.020
+15L    plan-1    C2   0.020
+15L    plan-1    O1   0.020
+15L    plan-1    O5   0.020
+15L    plan-2    C5   0.020
+15L    plan-2    C6   0.020
+15L    plan-2   O6A   0.020
+15L    plan-2   O6B   0.020

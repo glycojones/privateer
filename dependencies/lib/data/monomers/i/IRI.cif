@@ -1,0 +1,213 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IRI      IRI 'IRIDIUM HEXAMMINE ION               ' non-polymer        25   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_IRI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ IRI           N6     N    NT3       0.000      0.000    0.000    0.000
+ IRI           HN61   H    H         0.000      0.041   -0.345    0.959
+ IRI           HN62   H    H         0.000      0.811    0.479   -0.393
+ IRI           HN63   H    H         0.000     -0.825    0.529    0.201
+ IRI           IR     IR   IR        3.000     -0.040   -1.473   -1.694
+ IRI           N5     N    NT3       0.000     -0.066   -2.924   -3.428
+ IRI           HN53   H    H         0.000     -0.894   -3.064   -3.969
+ IRI           HN52   H    H         0.000      0.268   -3.650   -2.794
+ IRI           HN51   H    H         0.000      0.446   -2.713   -4.284
+ IRI           N2     N    NT3       0.000      1.345   -2.819   -0.561
+ IRI           HN23   H    H         0.000      1.253   -2.899    0.432
+ IRI           HN22   H    H         0.000      2.156   -2.340   -0.954
+ IRI           HN21   H    H         0.000      1.259   -3.830   -0.661
+ IRI           N3     N    NT3       0.000      1.701   -0.377   -2.652
+ IRI           HN33   H    H         0.000      2.223   -1.230   -2.646
+ IRI           HN32   H    H         0.000      2.511    0.102   -3.045
+ IRI           HN31   H    H         0.000      1.154    0.483   -2.695
+ IRI           N4     N    NT3       0.000     -1.438   -0.106   -2.836
+ IRI           HN43   H    H         0.000     -2.141   -0.487   -3.436
+ IRI           HN42   H    H         0.000     -0.627    0.374   -3.229
+ IRI           HN41   H    H         0.000     -2.158    0.422   -2.343
+ IRI           N1     N    NT3       0.000     -1.833   -2.532   -0.825
+ IRI           HN13   H    H         0.000     -1.917   -3.523   -0.926
+ IRI           HN12   H    H         0.000     -2.464   -1.919   -1.341
+ IRI           HN11   H    H         0.000     -1.928   -2.617    0.187
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ IRI      N6     n/a    IR     START
+ IRI      HN61   N6     .      .
+ IRI      HN62   N6     .      .
+ IRI      HN63   N6     .      .
+ IRI      IR     N6     N1     .
+ IRI      N5     IR     HN51   .
+ IRI      HN53   N5     .      .
+ IRI      HN52   N5     .      .
+ IRI      HN51   N5     .      .
+ IRI      N2     IR     HN21   .
+ IRI      HN23   N2     .      .
+ IRI      HN22   N2     .      .
+ IRI      HN21   N2     .      .
+ IRI      N3     IR     HN31   .
+ IRI      HN33   N3     .      .
+ IRI      HN32   N3     .      .
+ IRI      HN31   N3     .      .
+ IRI      N4     IR     HN41   .
+ IRI      HN43   N4     .      .
+ IRI      HN42   N4     .      .
+ IRI      HN41   N4     .      .
+ IRI      N1     IR     HN11   .
+ IRI      HN13   N1     .      .
+ IRI      HN12   N1     .      .
+ IRI      HN11   N1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IRI       N1        IR        single    2.035     0.020     2.035     0.020     
+IRI       N2        IR        single    2.035     0.020     2.035     0.020     
+IRI       N3        IR        single    2.035     0.020     2.035     0.020     
+IRI       N4        IR        single    2.035     0.020     2.035     0.020     
+IRI       N5        IR        single    2.035     0.020     2.035     0.020     
+IRI       IR        N6        single    2.035     0.020     2.035     0.020     
+IRI       HN11      N1        single    1.036     0.016     0.914     0.007     
+IRI       HN12      N1        single    1.036     0.016     0.914     0.007     
+IRI       HN13      N1        single    1.036     0.016     0.914     0.007     
+IRI       HN21      N2        single    1.036     0.016     0.914     0.007     
+IRI       HN22      N2        single    1.036     0.016     0.914     0.007     
+IRI       HN23      N2        single    1.036     0.016     0.914     0.007     
+IRI       HN31      N3        single    1.036     0.016     0.914     0.007     
+IRI       HN32      N3        single    1.036     0.016     0.914     0.007     
+IRI       HN33      N3        single    1.036     0.016     0.914     0.007     
+IRI       HN41      N4        single    1.036     0.016     0.914     0.007     
+IRI       HN42      N4        single    1.036     0.016     0.914     0.007     
+IRI       HN43      N4        single    1.036     0.016     0.914     0.007     
+IRI       HN51      N5        single    1.036     0.016     0.914     0.007     
+IRI       HN52      N5        single    1.036     0.016     0.914     0.007     
+IRI       HN53      N5        single    1.036     0.016     0.914     0.007     
+IRI       HN61      N6        single    1.036     0.016     0.914     0.007     
+IRI       HN62      N6        single    1.036     0.016     0.914     0.007     
+IRI       HN63      N6        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ IRI      HN61   N6     HN62    109.470    3.000
+ IRI      HN61   N6     HN63    109.470    3.000
+ IRI      HN62   N6     HN63    109.470    3.000
+ IRI      HN61   N6     IR      109.500    3.000
+ IRI      HN62   N6     IR      109.500    3.000
+ IRI      HN63   N6     IR      109.500    3.000
+ IRI      N6     IR     N5      180.000    3.000
+ IRI      N6     IR     N2       90.000    3.000
+ IRI      N6     IR     N3       90.000    3.000
+ IRI      N6     IR     N4       90.000    3.000
+ IRI      N6     IR     N1       90.000    3.000
+ IRI      N5     IR     N2       90.000    3.000
+ IRI      N5     IR     N3       90.000    3.000
+ IRI      N2     IR     N3       90.000    3.000
+ IRI      N5     IR     N4       90.000    3.000
+ IRI      N2     IR     N4      180.000    3.000
+ IRI      N3     IR     N4       90.000    3.000
+ IRI      N5     IR     N1       90.000    3.000
+ IRI      N2     IR     N1       90.000    3.000
+ IRI      N3     IR     N1      180.000    3.000
+ IRI      N4     IR     N1       90.000    3.000
+ IRI      IR     N5     HN53    109.500    3.000
+ IRI      IR     N5     HN52    109.500    3.000
+ IRI      IR     N5     HN51    109.500    3.000
+ IRI      HN53   N5     HN52    109.470    3.000
+ IRI      HN53   N5     HN51    109.470    3.000
+ IRI      HN52   N5     HN51    109.470    3.000
+ IRI      IR     N2     HN23    109.500    3.000
+ IRI      IR     N2     HN22    109.500    3.000
+ IRI      IR     N2     HN21    109.500    3.000
+ IRI      HN23   N2     HN22    109.470    3.000
+ IRI      HN23   N2     HN21    109.470    3.000
+ IRI      HN22   N2     HN21    109.470    3.000
+ IRI      IR     N3     HN33    109.500    3.000
+ IRI      IR     N3     HN32    109.500    3.000
+ IRI      IR     N3     HN31    109.500    3.000
+ IRI      HN33   N3     HN32    109.470    3.000
+ IRI      HN33   N3     HN31    109.470    3.000
+ IRI      HN32   N3     HN31    109.470    3.000
+ IRI      IR     N4     HN43    109.500    3.000
+ IRI      IR     N4     HN42    109.500    3.000
+ IRI      IR     N4     HN41    109.500    3.000
+ IRI      HN43   N4     HN42    109.470    3.000
+ IRI      HN43   N4     HN41    109.470    3.000
+ IRI      HN42   N4     HN41    109.470    3.000
+ IRI      IR     N1     HN13    109.500    3.000
+ IRI      IR     N1     HN12    109.500    3.000
+ IRI      IR     N1     HN11    109.500    3.000
+ IRI      HN13   N1     HN12    109.470    3.000
+ IRI      HN13   N1     HN11    109.470    3.000
+ IRI      HN12   N1     HN11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ IRI      var_1    HN61   N6     IR     N3         0.000   20.000   1
+ IRI      var_2    HN53   N5     IR     N3         0.000   20.000   1
+ IRI      var_3    HN23   N2     IR     N6         0.000   20.000   1
+ IRI      var_4    HN33   N3     IR     N6         0.000   20.000   1
+ IRI      var_5    HN43   N4     IR     N6         0.000   20.000   1
+ IRI      var_6    HN13   N1     IR     N6         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ IRI      chir_01  IR     N6     N5     N3        cross4
+                   N4     N1     N2     .      .
+# ------------------------------------------------------

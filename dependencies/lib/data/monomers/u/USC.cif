@@ -1,0 +1,194 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+USC     USC      "5-[(methylsulfonyl)amino]benzene-1,3-dicarboxylic acid"     NON-POLYMER     24     17     .     
+#
+data_comp_USC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+USC     CAG     C       CH3     0       -4.244      -0.301      -0.165      
+USC     OAI     O       O       0       2.433       3.261       -1.695      
+USC     OAJ     O       O       0       2.394       -2.716      1.809       
+USC     OAO     O       O       0       -2.338      -1.914      -0.825      
+USC     OAP     O       O       0       -2.563      -1.279      1.534       
+USC     CBG     C       CR16    0       0.572       1.420       -0.332      
+USC     CBH     C       CR16    0       0.570       -0.917      0.338       
+USC     CBI     C       CR16    0       2.657       0.268       0.059       
+USC     O2      O       OC      -1      3.585       3.067       0.171       
+USC     O1      O       OC      -1      3.617       -2.528      -0.012      
+USC     NBU     N       NH1     0       -1.578      0.304       -0.072      
+USC     CBX     C       C       0       2.717       2.679       -0.631      
+USC     CBY     C       C       0       2.714       -2.142      0.752       
+USC     CCF     C       CR6     0       -0.136      0.247       -0.018      
+USC     CCG     C       CR6     0       1.965       1.426       -0.295      
+USC     CCH     C       CR6     0       1.963       -0.900      0.374       
+USC     SCT     S       S3      0       -2.638      -0.921      0.155       
+USC     HAG     H       H       0       -4.183      0.594       -0.530      
+USC     HAGA    H       H       0       -4.748      -0.280      0.663       
+USC     HAGB    H       H       0       -4.689      -0.881      -0.801      
+USC     HBG     H       H       0       0.104       2.199       -0.569      
+USC     HBH     H       H       0       0.109       -1.705      0.552       
+USC     HBI     H       H       0       3.602       0.274       0.084       
+USC     HNBU    H       H       0       -1.926      1.076       -0.238      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+USC       CAG       SCT       SINGLE    n         1.750     0.010     1.750     0.010     
+USC       OAI       CBX       DOUBLE    n         1.244     0.020     1.244     0.020     
+USC       OAJ       CBY       DOUBLE    n         1.244     0.020     1.244     0.020     
+USC       OAO       SCT       DOUBLE    n         1.427     0.010     1.427     0.010     
+USC       OAP       SCT       DOUBLE    n         1.427     0.010     1.427     0.010     
+USC       CBG       CCF       DOUBLE    y         1.393     0.011     1.393     0.011     
+USC       CBG       CCG       SINGLE    y         1.387     0.010     1.387     0.010     
+USC       CBH       CCF       SINGLE    y         1.393     0.011     1.393     0.011     
+USC       CBH       CCH       DOUBLE    y         1.387     0.010     1.387     0.010     
+USC       CBI       CCG       DOUBLE    y         1.389     0.010     1.389     0.010     
+USC       CBI       CCH       SINGLE    y         1.389     0.010     1.389     0.010     
+USC       O2        CBX       SINGLE    n         1.244     0.020     1.244     0.020     
+USC       O1        CBY       SINGLE    n         1.244     0.020     1.244     0.020     
+USC       NBU       CCF       SINGLE    n         1.422     0.017     1.422     0.017     
+USC       NBU       SCT       SINGLE    n         1.629     0.013     1.629     0.013     
+USC       CBX       CCG       SINGLE    n         1.498     0.020     1.498     0.020     
+USC       CBY       CCH       SINGLE    n         1.498     0.020     1.498     0.020     
+USC       CAG       HAG       SINGLE    n         1.089     0.010     0.969     0.015     
+USC       CAG       HAGA      SINGLE    n         1.089     0.010     0.969     0.015     
+USC       CAG       HAGB      SINGLE    n         1.089     0.010     0.969     0.015     
+USC       CBG       HBG       SINGLE    n         1.082     0.013     0.939     0.013     
+USC       CBH       HBH       SINGLE    n         1.082     0.013     0.939     0.013     
+USC       CBI       HBI       SINGLE    n         1.082     0.013     0.946     0.020     
+USC       NBU       HNBU      SINGLE    n         1.016     0.010     0.863     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+USC         SCT         CAG         HAG     109.254    1.50
+USC         SCT         CAG        HAGA     109.254    1.50
+USC         SCT         CAG        HAGB     109.254    1.50
+USC         HAG         CAG        HAGA     109.614    1.50
+USC         HAG         CAG        HAGB     109.614    1.50
+USC        HAGA         CAG        HAGB     109.614    1.50
+USC         CCF         CBG         CCG     119.575    1.50
+USC         CCF         CBG         HBG     119.917    1.50
+USC         CCG         CBG         HBG     120.508    1.50
+USC         CCF         CBH         CCH     119.575    1.50
+USC         CCF         CBH         HBH     119.917    1.50
+USC         CCH         CBH         HBH     120.508    1.50
+USC         CCG         CBI         CCH     120.538    1.50
+USC         CCG         CBI         HBI     119.731    1.50
+USC         CCH         CBI         HBI     119.731    1.50
+USC         CCF         NBU         SCT     124.452    3.00
+USC         CCF         NBU        HNBU     117.774    1.56
+USC         SCT         NBU        HNBU     117.756    1.59
+USC         OAI         CBX          O2     124.418    1.50
+USC         OAI         CBX         CCG     117.791    1.50
+USC          O2         CBX         CCG     117.791    1.50
+USC         OAJ         CBY          O1     124.418    1.50
+USC         OAJ         CBY         CCH     117.791    1.50
+USC          O1         CBY         CCH     117.791    1.50
+USC         CBG         CCF         CBH     120.503    1.50
+USC         CBG         CCF         NBU     119.749    2.41
+USC         CBH         CCF         NBU     119.749    2.41
+USC         CBG         CCG         CBI     119.904    1.50
+USC         CBG         CCG         CBX     119.831    1.50
+USC         CBI         CCG         CBX     120.265    1.50
+USC         CBH         CCH         CBI     119.904    1.50
+USC         CBH         CCH         CBY     119.831    1.50
+USC         CBI         CCH         CBY     120.265    1.50
+USC         CAG         SCT         OAO     108.412    1.50
+USC         CAG         SCT         OAP     108.412    1.50
+USC         CAG         SCT         NBU     106.714    1.50
+USC         OAO         SCT         OAP     118.713    1.50
+USC         OAO         SCT         NBU     106.966    1.72
+USC         OAP         SCT         NBU     106.966    1.72
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+USC             sp3_sp3_1         HAG         CAG         SCT         OAO     180.000   10.00     3
+USC             sp2_sp2_1         CBG         CCF         NBU         SCT     180.000   10.00     2
+USC             sp2_sp3_1         CCF         NBU         SCT         CAG       0.000   10.00     6
+USC             sp2_sp2_5         OAI         CBX         CCG         CBG     180.000   10.00     2
+USC             sp2_sp2_9         OAJ         CBY         CCH         CBH     180.000   10.00     2
+USC       const_sp2_sp2_2         CCG         CBG         CCF         NBU     180.000   10.00     2
+USC              const_22         CCF         CBG         CCG         CBX     180.000   10.00     2
+USC       const_sp2_sp2_6         CCH         CBH         CCF         NBU     180.000   10.00     2
+USC              const_10         CCF         CBH         CCH         CBY     180.000   10.00     2
+USC              const_18         CCH         CBI         CCG         CBX     180.000   10.00     2
+USC              const_14         CCG         CBI         CCH         CBY     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+USC    plan-1         CBG   0.020
+USC    plan-1         CBH   0.020
+USC    plan-1         CBI   0.020
+USC    plan-1         CBX   0.020
+USC    plan-1         CBY   0.020
+USC    plan-1         CCF   0.020
+USC    plan-1         CCG   0.020
+USC    plan-1         CCH   0.020
+USC    plan-1         HBG   0.020
+USC    plan-1         HBH   0.020
+USC    plan-1         HBI   0.020
+USC    plan-1         NBU   0.020
+USC    plan-2         CCF   0.020
+USC    plan-2        HNBU   0.020
+USC    plan-2         NBU   0.020
+USC    plan-2         SCT   0.020
+USC    plan-3         CBX   0.020
+USC    plan-3         CCG   0.020
+USC    plan-3          O2   0.020
+USC    plan-3         OAI   0.020
+USC    plan-4         CBY   0.020
+USC    plan-4         CCH   0.020
+USC    plan-4          O1   0.020
+USC    plan-4         OAJ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+USC SMILES           ACDLabs              12.01 "O=S(=O)(Nc1cc(cc(c1)C(=O)O)C(=O)O)C"
+USC InChI            InChI                1.03  "InChI=1S/C9H9NO6S/c1-17(15,16)10-7-3-5(8(11)12)2-6(4-7)9(13)14/h2-4,10H,1H3,(H,11,12)(H,13,14)"
+USC InChIKey         InChI                1.03  RHRDZYNNRHDSCS-UHFFFAOYSA-N
+USC SMILES_CANONICAL CACTVS               3.370 "C[S](=O)(=O)Nc1cc(cc(c1)C(O)=O)C(O)=O"
+USC SMILES           CACTVS               3.370 "C[S](=O)(=O)Nc1cc(cc(c1)C(O)=O)C(O)=O"
+USC SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "CS(=O)(=O)Nc1cc(cc(c1)C(=O)O)C(=O)O"
+USC SMILES           "OpenEye OEToolkits" 1.7.6 "CS(=O)(=O)Nc1cc(cc(c1)C(=O)O)C(=O)O"
+USC ?                acedrg               202         "dictionary generator"                  
+USC ?                acedrg_database      11          "data source"                           
+USC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+USC ?                refmac5              5.8.0189    "optimization tool"                     

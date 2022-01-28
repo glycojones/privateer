@@ -1,0 +1,160 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HWA     HWA      "3-hydroxy-6-methyl-4-oxo-1,4-dihydropyridine-2-carboxylic acid"     NON-POLYMER     18     12     .     
+#
+data_comp_HWA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HWA     OAF     O       OC      -1      2.530       -2.042      -0.775      
+HWA     CAE     C       C       0       2.475       -1.035      -0.090      
+HWA     OAK     O       O       0       3.372       -0.585      0.601       
+HWA     CAD     C       CR6     0       1.179       -0.278      -0.099      
+HWA     NAC     N       NR6     0       0.037       -0.969      0.226       
+HWA     CAB     C       CR6     0       -1.189      -0.359      0.244       
+HWA     CAA     C       CH3     0       -2.353      -1.220      0.615       
+HWA     CAG     C       CR16    0       -1.293      0.964       -0.067      
+HWA     CAH     C       CR6     0       -0.141      1.745       -0.417      
+HWA     OAL     O       O       0       -0.223      2.970       -0.706      
+HWA     CAI     C       CR6     0       1.094       1.090       -0.424      
+HWA     OAJ     O       OH1     0       2.209       1.797       -0.751      
+HWA     H2      H       H       0       0.092       -1.831      0.431       
+HWA     H3      H       H       0       -2.275      -2.078      0.173       
+HWA     H4      H       H       0       -3.175      -0.790      0.339       
+HWA     H5      H       H       0       -2.365      -1.352      1.574       
+HWA     H6      H       H       0       -2.138      1.379       -0.054      
+HWA     H7      H       H       0       2.413       2.344       -0.121      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HWA       CAH       OAL       DOUBLE    n         1.260     0.0151    1.260     0.0151    
+HWA       CAI       OAJ       SINGLE    n         1.358     0.0149    1.358     0.0149    
+HWA       CAH       CAI       SINGLE    y         1.391     0.0121    1.391     0.0121    
+HWA       CAG       CAH       SINGLE    y         1.428     0.0129    1.428     0.0129    
+HWA       CAD       CAI       DOUBLE    y         1.403     0.0126    1.403     0.0126    
+HWA       CAB       CAG       DOUBLE    y         1.355     0.0142    1.355     0.0142    
+HWA       CAE       OAK       DOUBLE    n         1.219     0.0200    1.219     0.0200    
+HWA       CAE       CAD       SINGLE    n         1.496     0.0200    1.496     0.0200    
+HWA       CAD       NAC       SINGLE    y         1.365     0.0158    1.365     0.0158    
+HWA       OAF       CAE       SINGLE    n         1.219     0.0200    1.219     0.0200    
+HWA       NAC       CAB       SINGLE    y         1.366     0.0100    1.366     0.0100    
+HWA       CAB       CAA       SINGLE    n         1.494     0.0100    1.494     0.0100    
+HWA       NAC       H2        SINGLE    n         1.016     0.010     0.886     0.0200    
+HWA       CAA       H3        SINGLE    n         1.089     0.010     0.968     0.0196    
+HWA       CAA       H4        SINGLE    n         1.089     0.010     0.968     0.0196    
+HWA       CAA       H5        SINGLE    n         1.089     0.010     0.968     0.0196    
+HWA       CAG       H6        SINGLE    n         1.082     0.013     0.942     0.0197    
+HWA       OAJ       H7        SINGLE    n         0.970     0.012     0.858     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HWA         OAK         CAE         CAD     116.880    1.50
+HWA         OAK         CAE         OAF     126.239    1.50
+HWA         CAD         CAE         OAF     116.880    1.50
+HWA         CAI         CAD         CAE     122.504    1.50
+HWA         CAI         CAD         NAC     120.238    3.00
+HWA         CAE         CAD         NAC     117.257    1.50
+HWA         CAD         NAC         CAB     121.603    2.37
+HWA         CAD         NAC          H2     119.356    2.44
+HWA         CAB         NAC          H2     119.041    2.27
+HWA         CAG         CAB         NAC     119.735    1.50
+HWA         CAG         CAB         CAA     124.058    1.50
+HWA         NAC         CAB         CAA     116.207    1.50
+HWA         CAB         CAA          H3     109.477    1.50
+HWA         CAB         CAA          H4     109.477    1.50
+HWA         CAB         CAA          H5     109.477    1.50
+HWA          H3         CAA          H4     109.339    1.66
+HWA          H3         CAA          H5     109.339    1.66
+HWA          H4         CAA          H5     109.339    1.66
+HWA         CAH         CAG         CAB     121.078    1.50
+HWA         CAH         CAG          H6     119.117    1.50
+HWA         CAB         CAG          H6     119.806    1.50
+HWA         OAL         CAH         CAI     120.686    1.50
+HWA         OAL         CAH         CAG     122.731    1.50
+HWA         CAI         CAH         CAG     116.583    1.50
+HWA         OAJ         CAI         CAH     118.577    1.50
+HWA         OAJ         CAI         CAD     120.660    2.01
+HWA         CAH         CAI         CAD     120.763    1.50
+HWA         CAI         OAJ          H7     110.508    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HWA             sp2_sp2_1         CAI         CAD         CAE         OAK     180.000   10.00     2
+HWA       const_sp2_sp2_4         CAE         CAD         CAI         OAJ       0.000   10.00     2
+HWA              const_23         CAE         CAD         NAC         CAB     180.000   10.00     2
+HWA              const_19         CAA         CAB         NAC         CAD     180.000   10.00     2
+HWA             sp2_sp3_3         CAG         CAB         CAA          H3     150.000   10.00     6
+HWA              const_15         CAA         CAB         CAG         CAH     180.000   10.00     2
+HWA              const_10         CAB         CAG         CAH         OAL     180.000   10.00     2
+HWA       const_sp2_sp2_8         OAL         CAH         CAI         OAJ       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HWA    plan-1         CAA   0.020
+HWA    plan-1         CAB   0.020
+HWA    plan-1         CAD   0.020
+HWA    plan-1         CAE   0.020
+HWA    plan-1         CAG   0.020
+HWA    plan-1         CAH   0.020
+HWA    plan-1         CAI   0.020
+HWA    plan-1          H2   0.020
+HWA    plan-1          H6   0.020
+HWA    plan-1         NAC   0.020
+HWA    plan-1         OAJ   0.020
+HWA    plan-1         OAL   0.020
+HWA    plan-2         CAD   0.020
+HWA    plan-2         CAE   0.020
+HWA    plan-2         OAF   0.020
+HWA    plan-2         OAK   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HWA           SMILES              ACDLabs 12.01                                                  OC(=O)C=1NC(C)=CC(C=1O)=O
+HWA            InChI                InChI  1.03 InChI=1S/C7H7NO4/c1-3-2-4(9)6(10)5(8-3)7(11)12/h2,10H,1H3,(H,8,9)(H,11,12)
+HWA         InChIKey                InChI  1.03                                                XNWQBUPQWNNJAL-UHFFFAOYSA-N
+HWA SMILES_CANONICAL               CACTVS 3.385                                                 CC1=CC(=O)C(=C(N1)C(O)=O)O
+HWA           SMILES               CACTVS 3.385                                                 CC1=CC(=O)C(=C(N1)C(O)=O)O
+HWA SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                                 CC1=CC(=O)C(=C(N1)C(=O)O)O
+HWA           SMILES "OpenEye OEToolkits" 2.0.6                                                 CC1=CC(=O)C(=C(N1)C(=O)O)O
+HWA ?                acedrg               217         "dictionary generator"                  
+HWA ?                acedrg_database      11          "data source"                           
+HWA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HWA ?                refmac5              5.8.0253    "optimization tool"                     

@@ -1,0 +1,220 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NEP     NEP     N1-PHOSPHONOHISTIDINE     peptide     23     15     .
+#
+data_comp_NEP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NEP     N       N       NT3     1       -2.234      -0.954      0.606
+NEP     CA      C       CH1     0       -1.938      -0.128      -0.598
+NEP     C       C       C       0       -3.251      0.273       -1.284
+NEP     O       O       O       0       -3.400      -0.069      -2.474
+NEP     CB      C       CH2     0       -1.112      1.109       -0.217
+NEP     CG      C       CR5     0       0.292       0.803       0.186
+NEP     ND1     N       NRD5    0       0.777       1.218       1.412
+NEP     CD2     C       CR15    0       1.270       0.130       -0.487
+NEP     CE1     C       CR15    0       2.018       0.800       1.463
+NEP     NE2     N       NT      0       2.380       0.129       0.335
+NEP     P       P       P       0       3.899       -0.572      0.004
+NEP     O1P     O       OP      -1      3.809       -2.057      0.252
+NEP     O2P     O       OP      -1      4.251       -0.303      -1.437
+NEP     O3P     O       O       0       4.926       0.049       0.918
+NEP     OXT     O       OC      -1      -4.075      0.913       -0.602
+NEP     H       H       H       0       -2.812      -1.624      0.387
+NEP     H2      H       H       0       -2.609      -0.432      1.252
+NEP     H3      H       H       0       -1.464      -1.322      0.925
+NEP     HA      H       H       0       -1.407      -0.679      -1.220
+NEP     HB2     H       H       0       -1.570      1.569       0.515
+NEP     HB3     H       H       0       -1.103      1.718       -0.984
+NEP     HD2     H       H       0       1.211       -0.260      -1.343
+NEP     HE1     H       H       0       2.598       0.941       2.187
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+NEP      N      n/a    CA     START
+NEP      H      N      .      .
+NEP      H2     N      .      .
+NEP      H3     N      .      .
+NEP      CA     N      C      .
+NEP      HA     CA     .      .
+NEP      CB     CA     CG     .
+NEP      HB2    CB     .      .
+NEP      HB3    CB     .      .
+NEP      CG     CB     CD2    .
+NEP      CD2    CG     NE2    .
+NEP      HD2    CD2    .      .
+NEP      NE2    CD2    P      .
+NEP      CE1    NE2    ND1    .
+NEP      HE1    CE1    .      .
+NEP      ND1    CE1    .      .
+NEP      P      NE2    O3P    .
+NEP      O1P    P      .      .
+NEP      O2P    P      .      .
+NEP      O3P    P      .      .
+NEP      C      CA     .      END
+NEP      O      C      .      .
+NEP      OXT    C      .      .
+NEP      CG     ND1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NEP       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+NEP       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+NEP       CA        CB        SINGLE    n         1.534     0.012     1.534     0.012     
+NEP       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+NEP       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+NEP       CB        CG        SINGLE    n         1.492     0.010     1.492     0.010     
+NEP       CG        ND1       SINGLE    y         1.379     0.010     1.379     0.010     
+NEP       CG        CD2       DOUBLE    y         1.362     0.011     1.362     0.011     
+NEP       ND1       CE1       DOUBLE    y         1.310     0.011     1.310     0.011     
+NEP       CD2       NE2       SINGLE    y         1.390     0.019     1.390     0.019     
+NEP       CE1       NE2       SINGLE    y         1.368     0.015     1.368     0.015     
+NEP       NE2       P         SINGLE    n         1.705     0.020     1.705     0.020     
+NEP       P         O1P       SINGLE    n         1.508     0.020     1.508     0.020     
+NEP       P         O2P       SINGLE    n         1.508     0.020     1.508     0.020     
+NEP       P         O3P       DOUBLE    n         1.508     0.020     1.508     0.020     
+NEP       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+NEP       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+NEP       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+NEP       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+NEP       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.019     
+NEP       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.019     
+NEP       CD2       HD2       SINGLE    n         1.082     0.013     0.943     0.020     
+NEP       CE1       HE1       SINGLE    n         1.082     0.013     0.939     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NEP          CA           N           H     109.321    1.91
+NEP          CA           N          H2     109.321    1.91
+NEP          CA           N          H3     109.321    1.91
+NEP           H           N          H2     109.028    2.41
+NEP           H           N          H3     109.028    2.41
+NEP          H2           N          H3     109.028    2.41
+NEP           N          CA           C     109.666    1.50
+NEP           N          CA          CB     110.324    1.50
+NEP           N          CA          HA     108.030    1.50
+NEP           C          CA          CB     111.332    1.67
+NEP           C          CA          HA     108.922    1.50
+NEP          CB          CA          HA     108.492    1.50
+NEP          CA           C           O     117.134    1.50
+NEP          CA           C         OXT     117.134    1.50
+NEP           O           C         OXT     125.731    1.50
+NEP          CA          CB          CG     113.852    1.50
+NEP          CA          CB         HB2     108.290    1.50
+NEP          CA          CB         HB3     108.290    1.50
+NEP          CG          CB         HB2     109.683    1.50
+NEP          CG          CB         HB3     109.683    1.50
+NEP         HB2          CB         HB3     107.541    1.50
+NEP          CB          CG         ND1     120.715    1.50
+NEP          CB          CG         CD2     130.156    1.50
+NEP         ND1          CG         CD2     109.129    1.50
+NEP          CG         ND1         CE1     105.203    1.50
+NEP          CG         CD2         NE2     107.582    2.05
+NEP          CG         CD2         HD2     127.038    1.50
+NEP         NE2         CD2         HD2     125.380    2.25
+NEP         ND1         CE1         NE2     113.014    1.50
+NEP         ND1         CE1         HE1     124.184    1.50
+NEP         NE2         CE1         HE1     122.802    1.68
+NEP         CD2         NE2         CE1     108.641    1.96
+NEP         CD2         NE2           P     124.289    3.00
+NEP         CE1         NE2           P     124.289    3.00
+NEP         NE2           P         O1P     109.471    3.00
+NEP         NE2           P         O2P     109.471    3.00
+NEP         NE2           P         O3P     109.471    3.00
+NEP         O1P           P         O2P     111.149    3.00
+NEP         O1P           P         O3P     111.149    3.00
+NEP         O2P           P         O3P     111.149    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NEP             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+NEP             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+NEP            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+NEP             sp2_sp3_8         ND1          CG          CB          CA     -90.000   10.00     6
+NEP       const_sp2_sp2_2          CB          CG         ND1         CE1     180.000   10.00     2
+NEP              const_14         NE2         CD2          CG          CB     180.000   10.00     2
+NEP       const_sp2_sp2_3         NE2         CE1         ND1          CG       0.000   10.00     2
+NEP              const_10          CG         CD2         NE2           P     180.000   10.00     2
+NEP       const_sp2_sp2_6         ND1         CE1         NE2           P     180.000   10.00     2
+NEP            sp2_sp3_13         CD2         NE2           P         O1P     150.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+NEP    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NEP    plan-1          CB   0.020
+NEP    plan-1         CD2   0.020
+NEP    plan-1         CE1   0.020
+NEP    plan-1          CG   0.020
+NEP    plan-1         HD2   0.020
+NEP    plan-1         HE1   0.020
+NEP    plan-1         ND1   0.020
+NEP    plan-1         NE2   0.020
+NEP    plan-1           P   0.020
+NEP    plan-2           C   0.020
+NEP    plan-2          CA   0.020
+NEP    plan-2           O   0.020
+NEP    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NEP SMILES           ACDLabs              10.04 "O=P(O)(O)n1cc(nc1)CC(C(=O)O)N"
+NEP SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1cn(cn1)[P](O)(O)=O)C(O)=O"
+NEP SMILES           CACTVS               3.341 "N[CH](Cc1cn(cn1)[P](O)(O)=O)C(O)=O"
+NEP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(ncn1P(=O)(O)O)C[C@@H](C(=O)O)N"
+NEP SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(ncn1P(=O)(O)O)CC(C(=O)O)N"
+NEP InChI            InChI                1.03  "InChI=1S/C6H10N3O5P/c7-5(6(10)11)1-4-2-9(3-8-4)15(12,13)14/h2-3,5H,1,7H2,(H,10,11)(H2,12,13,14)/t5-/m0/s1"
+NEP InChIKey         InChI                1.03  MOYPZVWCTBPWEH-YFKPBYRVSA-N
+NEP ?                acedrg               196         "dictionary generator"
+NEP ?                acedrg_database      11          "data source"
+NEP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NEP ?                refmac5              5.8.0222    "optimization tool"

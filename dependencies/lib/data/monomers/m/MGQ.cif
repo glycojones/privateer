@@ -1,0 +1,396 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MGQ      MGQ '7-BENZYL GUANINE MONOPHOSPHATE      ' non-polymer        50  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MGQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MGQ           OP1    O    OP       -0.666      0.000    0.000    0.000
+ MGQ           PBE    P    P         0.000     -1.193   -0.873   -0.323
+ MGQ           OP3    O    OP       -0.666     -0.911   -1.667   -1.580
+ MGQ           OP2    O    OP       -0.666     -1.449   -1.823    0.827
+ MGQ           "O5'"  O    O2        0.000     -2.489    0.053   -0.553
+ MGQ           "C5'"  C    CH2       0.000     -2.951    1.000    0.413
+ MGQ           "H5'1" H    H         0.000     -2.168    1.736    0.603
+ MGQ           "H5'2" H    H         0.000     -3.195    0.481    1.342
+ MGQ           "C4'"  C    CH1       0.000     -4.199    1.707   -0.121
+ MGQ           "H4'"  H    H         0.000     -3.988    2.172   -1.094
+ MGQ           "O4'"  O    O2        0.000     -5.294    0.774   -0.237
+ MGQ           "C3'"  C    CH1       0.000     -4.689    2.769    0.888
+ MGQ           "H3'"  H    H         0.000     -4.348    2.522    1.903
+ MGQ           "O3'"  O    OH1       0.000     -4.233    4.068    0.510
+ MGQ           "HO3'" H    H         0.000     -4.598    4.727    1.116
+ MGQ           "C2'"  C    CH1       0.000     -6.229    2.688    0.799
+ MGQ           "H2'"  H    H         0.000     -6.657    2.401    1.770
+ MGQ           "O2'"  O    OH1       0.000     -6.771    3.937    0.362
+ MGQ           HA     H    H         0.000     -6.602    4.613    1.031
+ MGQ           "C1'"  C    CH1       0.000     -6.487    1.588   -0.254
+ MGQ           "H1'"  H    H         0.000     -6.631    2.035   -1.248
+ MGQ           N9     N    NR5       0.000     -7.656    0.788    0.120
+ MGQ           C8     C    CR15      0.000     -7.646   -0.360    0.858
+ MGQ           H8     H    H         0.000     -6.759   -0.831    1.264
+ MGQ           C4     C    CR56      0.000     -8.958    1.054   -0.208
+ MGQ           N3     N    NRD6      0.000     -9.565    2.022   -0.905
+ MGQ           C2     C    CR6       0.000    -10.869    2.026   -1.069
+ MGQ           N2     N    NH2       0.000    -11.448    3.039   -1.791
+ MGQ           H2N2   H    H         0.000    -10.875    3.773   -2.191
+ MGQ           H2N1   H    H         0.000    -12.451    3.060   -1.929
+ MGQ           N1     N    NR16      0.000    -11.664    1.052   -0.541
+ MGQ           H1     H    H         0.000    -12.693    1.087   -0.691
+ MGQ           C6     C    CR6       0.000    -11.122    0.042    0.176
+ MGQ           O6     O    O         0.000    -11.824   -0.833    0.651
+ MGQ           C5     C    CR56      0.000     -9.719    0.026    0.359
+ MGQ           N7     N    NR5       1.000     -8.860   -0.804    0.999
+ MGQ           CAO    C    CH2       0.000     -9.240   -2.015    1.730
+ MGQ           HAO1   H    H         0.000    -10.203   -1.856    2.220
+ MGQ           HAO2   H    H         0.000     -8.481   -2.238    2.483
+ MGQ           CAU    C    CR6       0.000     -9.349   -3.170    0.768
+ MGQ           CAK    C    CR16      0.000     -8.243   -3.955    0.502
+ MGQ           HAK    H    H         0.000     -7.298   -3.740    0.986
+ MGQ           CAI    C    CR16      0.000     -8.342   -5.015   -0.380
+ MGQ           HAI    H    H         0.000     -7.475   -5.630   -0.587
+ MGQ           CAL    C    CR16      0.000    -10.556   -3.445    0.151
+ MGQ           HAL    H    H         0.000    -11.423   -2.831    0.360
+ MGQ           CAJ    C    CR16      0.000    -10.654   -4.504   -0.732
+ MGQ           HAJ    H    H         0.000    -11.599   -4.719   -1.215
+ MGQ           CAH    C    CR16      0.000     -9.548   -5.289   -0.997
+ MGQ           HAH    H    H         0.000     -9.626   -6.119   -1.689
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MGQ      OP1    n/a    PBE    START
+ MGQ      PBE    OP1    "O5'"  .
+ MGQ      OP3    PBE    .      .
+ MGQ      OP2    PBE    .      .
+ MGQ      "O5'"  PBE    "C5'"  .
+ MGQ      "C5'"  "O5'"  "C4'"  .
+ MGQ      "H5'1" "C5'"  .      .
+ MGQ      "H5'2" "C5'"  .      .
+ MGQ      "C4'"  "C5'"  "C3'"  .
+ MGQ      "H4'"  "C4'"  .      .
+ MGQ      "O4'"  "C4'"  .      .
+ MGQ      "C3'"  "C4'"  "C2'"  .
+ MGQ      "H3'"  "C3'"  .      .
+ MGQ      "O3'"  "C3'"  "HO3'" .
+ MGQ      "HO3'" "O3'"  .      .
+ MGQ      "C2'"  "C3'"  "C1'"  .
+ MGQ      "H2'"  "C2'"  .      .
+ MGQ      "O2'"  "C2'"  HA     .
+ MGQ      HA     "O2'"  .      .
+ MGQ      "C1'"  "C2'"  N9     .
+ MGQ      "H1'"  "C1'"  .      .
+ MGQ      N9     "C1'"  C4     .
+ MGQ      C8     N9     H8     .
+ MGQ      H8     C8     .      .
+ MGQ      C4     N9     C5     .
+ MGQ      N3     C4     C2     .
+ MGQ      C2     N3     N1     .
+ MGQ      N2     C2     H2N1   .
+ MGQ      H2N2   N2     .      .
+ MGQ      H2N1   N2     .      .
+ MGQ      N1     C2     C6     .
+ MGQ      H1     N1     .      .
+ MGQ      C6     N1     O6     .
+ MGQ      O6     C6     .      .
+ MGQ      C5     C4     N7     .
+ MGQ      N7     C5     CAO    .
+ MGQ      CAO    N7     CAU    .
+ MGQ      HAO1   CAO    .      .
+ MGQ      HAO2   CAO    .      .
+ MGQ      CAU    CAO    CAL    .
+ MGQ      CAK    CAU    CAI    .
+ MGQ      HAK    CAK    .      .
+ MGQ      CAI    CAK    HAI    .
+ MGQ      HAI    CAI    .      .
+ MGQ      CAL    CAU    CAJ    .
+ MGQ      HAL    CAL    .      .
+ MGQ      CAJ    CAL    CAH    .
+ MGQ      HAJ    CAJ    .      .
+ MGQ      CAH    CAJ    HAH    .
+ MGQ      HAH    CAH    .      END
+ MGQ      CAI    CAH    .    ADD
+ MGQ      N7     C8     .    ADD
+ MGQ      C5     C6     .    ADD
+ MGQ      "C1'"  "O4'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MGQ       CAI       CAK       single    1.390     0.020     1.390     0.020     
+MGQ       CAK       CAU       double    1.390     0.020     1.390     0.020     
+MGQ       CAI       CAH       double    1.390     0.020     1.390     0.020     
+MGQ       CAH       CAJ       single    1.390     0.020     1.390     0.020     
+MGQ       CAJ       CAL       double    1.390     0.020     1.390     0.020     
+MGQ       CAL       CAU       single    1.390     0.020     1.390     0.020     
+MGQ       CAU       CAO       single    1.511     0.020     1.511     0.020     
+MGQ       CAO       N7        single    1.462     0.020     1.462     0.020     
+MGQ       N7        C8        double    1.337     0.020     1.337     0.020     
+MGQ       N7        C5        single    1.337     0.020     1.337     0.020     
+MGQ       C8        N9        single    1.337     0.020     1.337     0.020     
+MGQ       C5        C6        single    1.490     0.020     1.490     0.020     
+MGQ       C5        C4        double    1.490     0.020     1.490     0.020     
+MGQ       O6        C6        double    1.250     0.020     1.250     0.020     
+MGQ       C6        N1        single    1.337     0.020     1.337     0.020     
+MGQ       N1        C2        single    1.337     0.020     1.337     0.020     
+MGQ       N2        C2        single    1.355     0.020     1.355     0.020     
+MGQ       C2        N3        double    1.350     0.020     1.350     0.020     
+MGQ       N3        C4        single    1.355     0.020     1.355     0.020     
+MGQ       C4        N9        single    1.337     0.020     1.337     0.020     
+MGQ       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+MGQ       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+MGQ       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+MGQ       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+MGQ       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+MGQ       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+MGQ       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+MGQ       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+MGQ       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+MGQ       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+MGQ       "O5'"     PBE       single    1.610     0.020     1.610     0.020     
+MGQ       OP2       PBE       deloc     1.510     0.020     1.510     0.020     
+MGQ       OP3       PBE       deloc     1.510     0.020     1.510     0.020     
+MGQ       PBE       OP1       deloc     1.510     0.020     1.510     0.020     
+MGQ       HAK       CAK       single    1.082     0.013     0.975     0.010     
+MGQ       HAI       CAI       single    1.082     0.013     0.975     0.010     
+MGQ       HAH       CAH       single    1.082     0.013     0.975     0.010     
+MGQ       HAJ       CAJ       single    1.082     0.013     0.975     0.010     
+MGQ       HAL       CAL       single    1.082     0.013     0.975     0.010     
+MGQ       HAO1      CAO       single    1.089     0.010     0.989     0.005     
+MGQ       HAO2      CAO       single    1.089     0.010     0.989     0.005     
+MGQ       H8        C8        single    1.082     0.013     0.975     0.010     
+MGQ       H1        N1        single    1.016     0.010     0.899     0.007     
+MGQ       H2N1      N2        single    1.016     0.010     0.899     0.007     
+MGQ       H2N2      N2        single    1.016     0.010     0.899     0.007     
+MGQ       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+MGQ       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+MGQ       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+MGQ       HA        "O2'"     single    0.970     0.012     0.839     0.014     
+MGQ       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+MGQ       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+MGQ       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+MGQ       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MGQ      OP1    PBE    OP3     119.900    3.000
+ MGQ      OP1    PBE    OP2     119.900    3.000
+ MGQ      OP1    PBE    "O5'"   108.200    3.000
+ MGQ      OP3    PBE    OP2     119.900    3.000
+ MGQ      OP3    PBE    "O5'"   108.200    3.000
+ MGQ      OP2    PBE    "O5'"   108.200    3.000
+ MGQ      PBE    "O5'"  "C5'"   120.500    3.000
+ MGQ      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ MGQ      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ MGQ      "O5'"  "C5'"  "C4'"   109.470    3.000
+ MGQ      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ MGQ      "H5'1" "C5'"  "C4'"   109.470    3.000
+ MGQ      "H5'2" "C5'"  "C4'"   109.470    3.000
+ MGQ      "C5'"  "C4'"  "H4'"   108.340    3.000
+ MGQ      "C5'"  "C4'"  "O4'"   109.470    3.000
+ MGQ      "C5'"  "C4'"  "C3'"   111.000    3.000
+ MGQ      "H4'"  "C4'"  "O4'"   109.470    3.000
+ MGQ      "H4'"  "C4'"  "C3'"   108.340    3.000
+ MGQ      "O4'"  "C4'"  "C3'"   109.470    3.000
+ MGQ      "C4'"  "O4'"  "C1'"   111.800    3.000
+ MGQ      "C4'"  "C3'"  "H3'"   108.340    3.000
+ MGQ      "C4'"  "C3'"  "O3'"   109.470    3.000
+ MGQ      "C4'"  "C3'"  "C2'"   111.000    3.000
+ MGQ      "H3'"  "C3'"  "O3'"   109.470    3.000
+ MGQ      "H3'"  "C3'"  "C2'"   108.340    3.000
+ MGQ      "O3'"  "C3'"  "C2'"   109.470    3.000
+ MGQ      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ MGQ      "C3'"  "C2'"  "H2'"   108.340    3.000
+ MGQ      "C3'"  "C2'"  "O2'"   109.470    3.000
+ MGQ      "C3'"  "C2'"  "C1'"   111.000    3.000
+ MGQ      "H2'"  "C2'"  "O2'"   109.470    3.000
+ MGQ      "H2'"  "C2'"  "C1'"   108.340    3.000
+ MGQ      "O2'"  "C2'"  "C1'"   109.470    3.000
+ MGQ      "C2'"  "O2'"  HA      109.470    3.000
+ MGQ      "C2'"  "C1'"  "H1'"   108.340    3.000
+ MGQ      "C2'"  "C1'"  N9      109.470    3.000
+ MGQ      "C2'"  "C1'"  "O4'"   109.470    3.000
+ MGQ      "H1'"  "C1'"  N9      109.470    3.000
+ MGQ      "H1'"  "C1'"  "O4'"   109.470    3.000
+ MGQ      N9     "C1'"  "O4'"   109.470    3.000
+ MGQ      "C1'"  N9     C8      126.000    3.000
+ MGQ      "C1'"  N9     C4      126.000    3.000
+ MGQ      C8     N9     C4      108.000    3.000
+ MGQ      N9     C8     H8      126.000    3.000
+ MGQ      N9     C8     N7      108.000    3.000
+ MGQ      H8     C8     N7      126.000    3.000
+ MGQ      N9     C4     N3      132.000    3.000
+ MGQ      N9     C4     C5      108.000    3.000
+ MGQ      N3     C4     C5      120.000    3.000
+ MGQ      C4     N3     C2      120.000    3.000
+ MGQ      N3     C2     N2      120.000    3.000
+ MGQ      N3     C2     N1      120.000    3.000
+ MGQ      N2     C2     N1      120.000    3.000
+ MGQ      C2     N2     H2N2    120.000    3.000
+ MGQ      C2     N2     H2N1    120.000    3.000
+ MGQ      H2N2   N2     H2N1    120.000    3.000
+ MGQ      C2     N1     H1      120.000    3.000
+ MGQ      C2     N1     C6      120.000    3.000
+ MGQ      H1     N1     C6      120.000    3.000
+ MGQ      N1     C6     O6      120.000    3.000
+ MGQ      N1     C6     C5      120.000    3.000
+ MGQ      O6     C6     C5      120.000    3.000
+ MGQ      C4     C5     N7      108.000    3.000
+ MGQ      C4     C5     C6      120.000    3.000
+ MGQ      N7     C5     C6      120.000    3.000
+ MGQ      C5     N7     CAO     126.000    3.000
+ MGQ      C5     N7     C8      108.000    3.000
+ MGQ      CAO    N7     C8      126.000    3.000
+ MGQ      N7     CAO    HAO1    109.500    3.000
+ MGQ      N7     CAO    HAO2    109.500    3.000
+ MGQ      N7     CAO    CAU     109.500    3.000
+ MGQ      HAO1   CAO    HAO2    107.900    3.000
+ MGQ      HAO1   CAO    CAU     109.470    3.000
+ MGQ      HAO2   CAO    CAU     109.470    3.000
+ MGQ      CAO    CAU    CAK     120.000    3.000
+ MGQ      CAO    CAU    CAL     120.000    3.000
+ MGQ      CAK    CAU    CAL     120.000    3.000
+ MGQ      CAU    CAK    HAK     120.000    3.000
+ MGQ      CAU    CAK    CAI     120.000    3.000
+ MGQ      HAK    CAK    CAI     120.000    3.000
+ MGQ      CAK    CAI    HAI     120.000    3.000
+ MGQ      CAK    CAI    CAH     120.000    3.000
+ MGQ      HAI    CAI    CAH     120.000    3.000
+ MGQ      CAU    CAL    HAL     120.000    3.000
+ MGQ      CAU    CAL    CAJ     120.000    3.000
+ MGQ      HAL    CAL    CAJ     120.000    3.000
+ MGQ      CAL    CAJ    HAJ     120.000    3.000
+ MGQ      CAL    CAJ    CAH     120.000    3.000
+ MGQ      HAJ    CAJ    CAH     120.000    3.000
+ MGQ      CAJ    CAH    HAH     120.000    3.000
+ MGQ      CAJ    CAH    CAI     120.000    3.000
+ MGQ      HAH    CAH    CAI     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MGQ      var_1    OP1    PBE    "O5'"  "C5'"    -55.026   20.000   1
+ MGQ      var_2    PBE    "O5'"  "C5'"  "C4'"   -179.975   20.000   1
+ MGQ      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -178.145   20.000   3
+ MGQ      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ MGQ      var_5    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ MGQ      var_6    "C4'"  "C3'"  "O3'"  "HO3'"   176.120   20.000   1
+ MGQ      var_7    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ MGQ      var_8    "C3'"  "C2'"  "O2'"  HA       -65.388   20.000   1
+ MGQ      var_9    "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ MGQ      var_10   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ MGQ      var_11   "C2'"  "C1'"  N9     C4        88.372   20.000   1
+ MGQ      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ MGQ      CONST_2  "C1'"  N9     C4     C5       180.000    0.000   0
+ MGQ      CONST_3  N9     C4     N3     C2       180.000    0.000   0
+ MGQ      CONST_4  C4     N3     C2     N1         0.000    0.000   0
+ MGQ      CONST_5  N3     C2     N2     H2N1     179.985    0.000   0
+ MGQ      CONST_6  N3     C2     N1     C6         0.000    0.000   0
+ MGQ      CONST_7  C2     N1     C6     O6       180.000    0.000   0
+ MGQ      CONST_8  N9     C4     C5     N7         0.000    0.000   0
+ MGQ      CONST_9  C4     C5     C6     N1         0.000    0.000   0
+ MGQ      CONST_10 C4     C5     N7     CAO      180.000    0.000   0
+ MGQ      CONST_11 C5     N7     C8     N9         0.000    0.000   0
+ MGQ      var_12   C5     N7     CAO    CAU       84.722   20.000   1
+ MGQ      var_13   N7     CAO    CAU    CAL      -90.073   20.000   2
+ MGQ      CONST_12 CAO    CAU    CAK    CAI      180.000    0.000   0
+ MGQ      CONST_13 CAU    CAK    CAI    CAH        0.000    0.000   0
+ MGQ      CONST_14 CAK    CAI    CAH    CAJ        0.000    0.000   0
+ MGQ      CONST_15 CAO    CAU    CAL    CAJ      180.000    0.000   0
+ MGQ      CONST_16 CAU    CAL    CAJ    CAH        0.000    0.000   0
+ MGQ      CONST_17 CAL    CAJ    CAH    CAI        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MGQ      chir_01  "C1'"  N9     "O4'"  "C2'"     positiv
+ MGQ      chir_02  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ MGQ      chir_03  "C3'"  "C2'"  "O3'"  "C4'"     positiv
+ MGQ      chir_04  "C4'"  "O4'"  "C3'"  "C5'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MGQ      plan-1    CAI       0.020
+ MGQ      plan-1    CAH       0.020
+ MGQ      plan-1    CAK       0.020
+ MGQ      plan-1    HAI       0.020
+ MGQ      plan-1    CAJ       0.020
+ MGQ      plan-1    CAL       0.020
+ MGQ      plan-1    CAU       0.020
+ MGQ      plan-1    HAH       0.020
+ MGQ      plan-1    HAJ       0.020
+ MGQ      plan-1    HAL       0.020
+ MGQ      plan-1    CAO       0.020
+ MGQ      plan-1    HAK       0.020
+ MGQ      plan-2    N7        0.020
+ MGQ      plan-2    CAO       0.020
+ MGQ      plan-2    C8        0.020
+ MGQ      plan-2    C5        0.020
+ MGQ      plan-2    N9        0.020
+ MGQ      plan-2    H8        0.020
+ MGQ      plan-2    C6        0.020
+ MGQ      plan-2    C4        0.020
+ MGQ      plan-2    N1        0.020
+ MGQ      plan-2    C2        0.020
+ MGQ      plan-2    N3        0.020
+ MGQ      plan-2    O6        0.020
+ MGQ      plan-2    H1        0.020
+ MGQ      plan-2    N2        0.020
+ MGQ      plan-2    "C1'"     0.020
+ MGQ      plan-2    H2N2      0.020
+ MGQ      plan-2    H2N1      0.020
+ MGQ      plan-3    N2        0.020
+ MGQ      plan-3    C2        0.020
+ MGQ      plan-3    H2N1      0.020
+ MGQ      plan-3    H2N2      0.020
+# ------------------------------------------------------

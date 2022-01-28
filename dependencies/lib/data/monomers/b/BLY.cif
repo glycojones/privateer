@@ -1,0 +1,215 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BLY      BLY 'LYSINE BORONIC ACID                 ' non-polymer        26  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BLY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BLY           OXT    O    OH1       0.000      0.000    0.000    0.000
+ BLY           HXT    H    H         0.000      0.475   -0.795   -0.207
+ BLY           B      B    B         0.000     -1.078   -0.085    0.919
+ BLY           O      O    OH1       0.000     -1.419   -1.335    1.501
+ BLY           HO     H    H         0.000     -0.908   -2.097    1.256
+ BLY           CA     C    CH1       0.000     -1.895    1.203    1.294
+ BLY           HA     H    H         0.000     -2.277    1.110    2.320
+ BLY           N      N    NH2       0.000     -1.021    2.381    1.201
+ BLY           HN2    H    H         0.000     -0.855    2.960    2.016
+ BLY           HN1    H    H         0.000     -0.579    2.621    0.322
+ BLY           CB     C    CH2       0.000     -3.068    1.362    0.326
+ BLY           HB1    H    H         0.000     -2.687    1.456   -0.694
+ BLY           HB2    H    H         0.000     -3.634    2.259    0.585
+ BLY           CG     C    CH2       0.000     -3.979    0.136    0.421
+ BLY           HG1    H    H         0.000     -4.357    0.043    1.441
+ BLY           HG2    H    H         0.000     -3.410   -0.759    0.161
+ BLY           CD     C    CH2       0.000     -5.153    0.296   -0.548
+ BLY           HD1    H    H         0.000     -4.773    0.390   -1.567
+ BLY           HD2    H    H         0.000     -5.719    1.192   -0.288
+ BLY           CE     C    CH2       0.000     -6.062   -0.931   -0.452
+ BLY           HE1    H    H         0.000     -6.441   -1.024    0.568
+ BLY           HE2    H    H         0.000     -5.494   -1.827   -0.711
+ BLY           NZ     N    NT3       1.000     -7.189   -0.778   -1.382
+ BLY           HZ3    H    H         0.000     -6.827   -0.690   -2.344
+ BLY           HZ2    H    H         0.000     -7.800   -1.606   -1.315
+ BLY           HZ1    H    H         0.000     -7.723    0.069   -1.133
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BLY      OXT    n/a    B      START
+ BLY      HXT    OXT    .      .
+ BLY      B      OXT    CA     .
+ BLY      O      B      HO     .
+ BLY      HO     O      .      .
+ BLY      CA     B      CB     .
+ BLY      HA     CA     .      .
+ BLY      N      CA     HN1    .
+ BLY      HN2    N      .      .
+ BLY      HN1    N      .      .
+ BLY      CB     CA     CG     .
+ BLY      HB1    CB     .      .
+ BLY      HB2    CB     .      .
+ BLY      CG     CB     CD     .
+ BLY      HG1    CG     .      .
+ BLY      HG2    CG     .      .
+ BLY      CD     CG     CE     .
+ BLY      HD1    CD     .      .
+ BLY      HD2    CD     .      .
+ BLY      CE     CD     NZ     .
+ BLY      HE1    CE     .      .
+ BLY      HE2    CE     .      .
+ BLY      NZ     CE     HZ1    .
+ BLY      HZ3    NZ     .      .
+ BLY      HZ2    NZ     .      .
+ BLY      HZ1    NZ     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BLY       N         CA        single    1.450     0.020     1.450     0.020     
+BLY       HN1       N         single    1.036     0.016     0.914     0.007     
+BLY       HN2       N         single    1.036     0.016     0.914     0.007     
+BLY       CB        CA        single    1.524     0.020     1.524     0.020     
+BLY       CA        B         single    1.600     0.020     1.600     0.020     
+BLY       HA        CA        single    1.089     0.010     0.989     0.005     
+BLY       CG        CB        single    1.524     0.020     1.524     0.020     
+BLY       HB1       CB        single    1.089     0.010     0.989     0.005     
+BLY       HB2       CB        single    1.089     0.010     0.989     0.005     
+BLY       CD        CG        single    1.524     0.020     1.524     0.020     
+BLY       HG1       CG        single    1.089     0.010     0.989     0.005     
+BLY       HG2       CG        single    1.089     0.010     0.989     0.005     
+BLY       CE        CD        single    1.524     0.020     1.524     0.020     
+BLY       HD1       CD        single    1.089     0.010     0.989     0.005     
+BLY       HD2       CD        single    1.089     0.010     0.989     0.005     
+BLY       NZ        CE        single    1.488     0.020     1.488     0.020     
+BLY       HE1       CE        single    1.089     0.010     0.989     0.005     
+BLY       HE2       CE        single    1.089     0.010     0.989     0.005     
+BLY       HZ1       NZ        single    1.036     0.016     0.914     0.007     
+BLY       HZ2       NZ        single    1.036     0.016     0.914     0.007     
+BLY       HZ3       NZ        single    1.036     0.016     0.914     0.007     
+BLY       O         B         single    1.535     0.020     1.535     0.020     
+BLY       B         OXT       single    1.535     0.020     1.535     0.020     
+BLY       HO        O         single    0.970     0.012     0.839     0.014     
+BLY       HXT       OXT       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BLY      HXT    OXT    B       120.000    3.000
+ BLY      OXT    B      O       120.000    3.000
+ BLY      OXT    B      CA      120.000    3.000
+ BLY      O      B      CA      120.000    3.000
+ BLY      B      O      HO      120.000    3.000
+ BLY      B      CA     HA      109.470    3.000
+ BLY      B      CA     N       109.500    3.000
+ BLY      B      CA     CB      109.470    3.000
+ BLY      HA     CA     N       109.470    3.000
+ BLY      HA     CA     CB      108.340    3.000
+ BLY      N      CA     CB      109.470    3.000
+ BLY      CA     N      HN2     120.000    3.000
+ BLY      CA     N      HN1     120.000    3.000
+ BLY      HN2    N      HN1     120.000    3.000
+ BLY      CA     CB     HB1     109.470    3.000
+ BLY      CA     CB     HB2     109.470    3.000
+ BLY      CA     CB     CG      111.000    3.000
+ BLY      HB1    CB     HB2     107.900    3.000
+ BLY      HB1    CB     CG      109.470    3.000
+ BLY      HB2    CB     CG      109.470    3.000
+ BLY      CB     CG     HG1     109.470    3.000
+ BLY      CB     CG     HG2     109.470    3.000
+ BLY      CB     CG     CD      111.000    3.000
+ BLY      HG1    CG     HG2     107.900    3.000
+ BLY      HG1    CG     CD      109.470    3.000
+ BLY      HG2    CG     CD      109.470    3.000
+ BLY      CG     CD     HD1     109.470    3.000
+ BLY      CG     CD     HD2     109.470    3.000
+ BLY      CG     CD     CE      111.000    3.000
+ BLY      HD1    CD     HD2     107.900    3.000
+ BLY      HD1    CD     CE      109.470    3.000
+ BLY      HD2    CD     CE      109.470    3.000
+ BLY      CD     CE     HE1     109.470    3.000
+ BLY      CD     CE     HE2     109.470    3.000
+ BLY      CD     CE     NZ      110.000    3.000
+ BLY      HE1    CE     HE2     107.900    3.000
+ BLY      HE1    CE     NZ      109.470    3.000
+ BLY      HE2    CE     NZ      109.470    3.000
+ BLY      CE     NZ     HZ3     109.470    3.000
+ BLY      CE     NZ     HZ2     109.470    3.000
+ BLY      CE     NZ     HZ1     109.470    3.000
+ BLY      HZ3    NZ     HZ2     109.470    3.000
+ BLY      HZ3    NZ     HZ1     109.470    3.000
+ BLY      HZ2    NZ     HZ1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BLY      var_1    HXT    OXT    B      CA       179.997   20.000   1
+ BLY      var_2    OXT    B      O      HO        -0.035   20.000   1
+ BLY      var_3    OXT    B      CA     CB        89.990   20.000   1
+ BLY      var_4    B      CA     N      HN1       59.986   20.000   1
+ BLY      var_5    B      CA     CB     CG        60.022   20.000   3
+ BLY      var_6    CA     CB     CG     CD       179.970   20.000   3
+ BLY      var_7    CB     CG     CD     CE      -179.997   20.000   3
+ BLY      var_8    CG     CD     CE     NZ      -179.973   20.000   3
+ BLY      var_9    CD     CE     NZ     HZ1      -60.034   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BLY      chir_01  CA     N      CB     B         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BLY      plan-1    N         0.020
+ BLY      plan-1    CA        0.020
+ BLY      plan-1    HN1       0.020
+ BLY      plan-1    HN2       0.020
+# ------------------------------------------------------

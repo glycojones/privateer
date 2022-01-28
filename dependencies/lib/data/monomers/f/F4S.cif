@@ -1,0 +1,81 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+F4S      F4S 'FE4-S3 CLUSTER                      ' non-polymer         7   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_F4S
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+F4S    S1     S     S       0      11.471      -0.557      19.033
+F4S   FE1    FE    FE   0.000      11.619      -1.857      17.156
+F4S    S2     S     S   0.000      13.752      -1.650      16.420
+F4S   FE2    FE    FE   0.000      13.630      -1.176      18.647
+F4S    S3     S     S   0.000      13.749      -3.240      19.581
+F4S   FE3    FE    FE   0.000      14.768      -3.375      17.536
+F4S   FE4    FE    FE   0.000      11.489      -2.746      19.668
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+F4S       S1        FE1       SING      2.280     0.020     2.280     0.020     
+F4S       S1        FE2       SING      2.280     0.020     2.280     0.020     
+F4S       S1        FE4       SING      2.280     0.020     2.280     0.020     
+F4S       FE1       S2        SING      2.280     0.020     2.280     0.020     
+F4S       S2        FE2       SING      2.280     0.020     2.280     0.020     
+F4S       S2        FE3       SING      2.280     0.020     2.280     0.020     
+F4S       FE2       S3        SING      2.280     0.020     2.280     0.020     
+F4S       S3        FE3       SING      2.280     0.020     2.280     0.020     
+F4S       S3        FE4       SING      2.280     0.020     2.280     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+F4S   FE1    S1     FE2    69.600    3.00
+F4S   FE1    S1     FE4    71.480    3.00
+F4S   FE2    S1     FE4    77.200    3.00
+F4S    S1   FE1      S2   106.000    3.00
+F4S   FE1    S2     FE2    69.600    3.00
+F4S   FE1    S2     FE3   101.000    3.00
+F4S   FE2    S2     FE3    72.800    3.00
+F4S    S1   FE2      S2   105.800    3.00
+F4S    S1   FE2      S3   103.100    3.00
+F4S    S2   FE2      S3   102.100    3.00
+F4S   FE2    S3     FE3    73.100    3.00
+F4S   FE2    S3     FE4    76.700    3.00
+F4S   FE3    S3     FE4   118.700    3.00
+F4S    S2   FE3      S3   101.100    3.00
+F4S    S1   FE4      S3   101.700    3.00

@@ -1,0 +1,153 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FOM     FOM      "3-[FORMYL(HYDROXY)AMINO]PROPYLPHOSPHONIC ACID"     NON-POLYMER     19     11     .     
+#
+data_comp_FOM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FOM     O2      O       OH1     0       -1.846      -1.746      0.475       
+FOM     N1      N       N       0       -2.079      -0.448      0.095       
+FOM     C1      C       C1      0       -3.302      -0.118      -0.329      
+FOM     O1      O       O       0       -3.688      1.028       -0.569      
+FOM     C2      C       CH2     0       -0.946      0.498       0.206       
+FOM     C3      C       CH2     0       0.415       -0.162      0.050       
+FOM     C4      C       CH2     0       1.544       0.837       -0.144      
+FOM     PA1     P       P       0       3.163       0.044       -0.184      
+FOM     OP1     O       O       0       3.203       -0.827      -1.394      
+FOM     OP2     O       OP      -1      4.187       1.127       -0.257      
+FOM     OP3     O       OP      -1      3.304       -0.755      1.068       
+FOM     HO2     H       H       0       -1.722      -2.204      -0.255      
+FOM     H1      H       H       0       -3.932      -0.838      -0.455      
+FOM     H21     H       H       0       -0.986      0.938       1.081       
+FOM     H22     H       H       0       -1.038      1.188       -0.486      
+FOM     H31     H       H       0       0.387       -0.770      -0.719      
+FOM     H32     H       H       0       0.599       -0.701      0.848       
+FOM     H41     H       H       0       1.514       1.491       0.585       
+FOM     H42     H       H       0       1.394       1.323       -0.982      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FOM       O2        N1        SINGLE    n         1.366     0.020     1.366     0.020     
+FOM       N1        C1        SINGLE    n         1.324     0.020     1.324     0.020     
+FOM       N1        C2        SINGLE    n         1.464     0.016     1.464     0.016     
+FOM       C1        O1        DOUBLE    n         1.232     0.010     1.232     0.010     
+FOM       C2        C3        SINGLE    n         1.512     0.020     1.512     0.020     
+FOM       C3        C4        SINGLE    n         1.520     0.017     1.520     0.017     
+FOM       C4        PA1       SINGLE    n         1.803     0.020     1.803     0.020     
+FOM       PA1       OP1       DOUBLE    n         1.492     0.020     1.492     0.020     
+FOM       PA1       OP2       SINGLE    n         1.492     0.020     1.492     0.020     
+FOM       PA1       OP3       SINGLE    n         1.492     0.020     1.492     0.020     
+FOM       O2        HO2       SINGLE    n         0.970     0.012     0.871     0.020     
+FOM       C1        H1        SINGLE    n         1.082     0.013     0.964     0.020     
+FOM       C2        H21       SINGLE    n         1.089     0.010     0.981     0.015     
+FOM       C2        H22       SINGLE    n         1.089     0.010     0.981     0.015     
+FOM       C3        H31       SINGLE    n         1.089     0.010     0.980     0.016     
+FOM       C3        H32       SINGLE    n         1.089     0.010     0.980     0.016     
+FOM       C4        H41       SINGLE    n         1.089     0.010     0.980     0.014     
+FOM       C4        H42       SINGLE    n         1.089     0.010     0.980     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FOM          N1          O2         HO2     106.835    3.00
+FOM          O2          N1          C1     121.147    2.14
+FOM          O2          N1          C2     114.417    3.00
+FOM          C1          N1          C2     124.436    2.35
+FOM          N1          C1          O1     123.822    1.98
+FOM          N1          C1          H1     117.675    2.15
+FOM          O1          C1          H1     118.502    2.29
+FOM          N1          C2          C3     111.670    1.50
+FOM          N1          C2         H21     109.068    1.50
+FOM          N1          C2         H22     109.068    1.50
+FOM          C3          C2         H21     109.099    1.50
+FOM          C3          C2         H22     109.099    1.50
+FOM         H21          C2         H22     108.384    1.50
+FOM          C2          C3          C4     113.326    2.10
+FOM          C2          C3         H31     108.805    1.50
+FOM          C2          C3         H32     108.805    1.50
+FOM          C4          C3         H31     109.217    1.50
+FOM          C4          C3         H32     109.217    1.50
+FOM         H31          C3         H32     107.682    1.50
+FOM          C3          C4         PA1     111.410    2.87
+FOM          C3          C4         H41     108.554    1.50
+FOM          C3          C4         H42     108.554    1.50
+FOM         PA1          C4         H41     109.545    1.50
+FOM         PA1          C4         H42     109.545    1.50
+FOM         H41          C4         H42     107.240    1.91
+FOM          C4         PA1         OP1     108.625    3.00
+FOM          C4         PA1         OP2     108.625    3.00
+FOM          C4         PA1         OP3     108.625    3.00
+FOM         OP1         PA1         OP2     111.786    1.50
+FOM         OP1         PA1         OP3     111.786    1.50
+FOM         OP2         PA1         OP3     111.786    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FOM             sp2_sp2_2          O1          C1          N1          O2       0.000   10.00     2
+FOM             sp2_sp3_4          O2          N1          C2          C3     120.000   10.00     6
+FOM             sp3_sp3_1          N1          C2          C3          C4     180.000   10.00     3
+FOM            sp3_sp3_10          C2          C3          C4         PA1     180.000   10.00     3
+FOM            sp3_sp3_19          C3          C4         PA1         OP1     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FOM    plan-1          C1   0.020
+FOM    plan-1          C2   0.020
+FOM    plan-1          N1   0.020
+FOM    plan-1          O2   0.020
+FOM    plan-2          C1   0.020
+FOM    plan-2          H1   0.020
+FOM    plan-2          N1   0.020
+FOM    plan-2          O1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FOM SMILES           ACDLabs              10.04 "O=P(O)(O)CCCN(O)C=O"
+FOM SMILES_CANONICAL CACTVS               3.341 "ON(CCC[P](O)(O)=O)C=O"
+FOM SMILES           CACTVS               3.341 "ON(CCC[P](O)(O)=O)C=O"
+FOM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CN(C=O)O)CP(=O)(O)O"
+FOM SMILES           "OpenEye OEToolkits" 1.5.0 "C(CN(C=O)O)CP(=O)(O)O"
+FOM InChI            InChI                1.03  "InChI=1S/C4H10NO5P/c6-4-5(7)2-1-3-11(8,9)10/h4,7H,1-3H2,(H2,8,9,10)"
+FOM InChIKey         InChI                1.03  GJXWDTUCERCKIX-UHFFFAOYSA-N
+FOM ?                acedrg               202         "dictionary generator"                  
+FOM ?                acedrg_database      11          "data source"                           
+FOM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FOM ?                refmac5              5.8.0189    "optimization tool"                     

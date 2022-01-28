@@ -1,0 +1,179 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+M0H     M0H     "S-(HYDROXYMETHYL)-L-CYSTEINE"     peptide    18     9     .
+#
+data_comp_M0H
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+M0H     OXT     O       O       0       -2.518      0.789       2.268
+M0H     O       O       OC      -1      -2.126      2.006       0.454
+M0H     C       C       C       0       -2.042      0.960       1.127
+M0H     CA      C       CH1     0       -1.288      -0.218      0.497
+M0H     N       N       NT3     1       -1.901      -0.564      -0.815
+M0H     CB      C       CH2     0       0.178       0.117       0.298
+M0H     SG      S       S2      0       1.208       -1.268      -0.256
+M0H     CD      C       CH2     0       2.851       -0.532      -0.252
+M0H     OE      O       OH1     0       3.036       0.301       -1.383
+M0H     HA      H       H       0       -1.367      -1.002      1.089
+M0H     H       H       H       0       -1.453      -1.263      -1.189
+M0H     H2      H       H       0       -1.856      0.154       -1.375
+M0H     H3      H       H       0       -2.774      -0.797      -0.695
+M0H     HB1     H       H       0       0.534       0.451       1.136
+M0H     HB2     H       H       0       0.243       0.831       -0.356
+M0H     HD1     H       H       0       3.521       -1.247      -0.258
+M0H     HD2     H       H       0       2.962       -0.003      0.566
+M0H     HE      H       H       0       3.746       0.753       -1.281
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+M0H      N      n/a    CA     START
+M0H      H      N      .      .
+M0H      H2     N      .      .
+M0H      H3     N      .      .
+M0H      CA     N      C      .
+M0H      HA     CA     .      .
+M0H      CB     CA     SG     .
+M0H      HB1    CB     .      .
+M0H      HB2    CB     .      .
+M0H      SG     CB     CD     .
+M0H      CD     SG     OE     .
+M0H      HD1    CD     .      .
+M0H      HD2    CD     .      .
+M0H      OE     CD     HE     .
+M0H      HE     OE     .      .
+M0H      C      CA     .      END
+M0H      OXT    C      .      .
+M0H      O      C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+M0H       OXT       C         DOUBLE    n         1.247     0.019     1.247     0.019     
+M0H       O         C         SINGLE    n         1.247     0.019     1.247     0.019     
+M0H       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+M0H       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+M0H       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+M0H       CB        SG        SINGLE    n         1.813     0.011     1.813     0.011     
+M0H       SG        CD        SINGLE    n         1.801     0.015     1.801     0.015     
+M0H       CD        OE        SINGLE    n         1.417     0.020     1.417     0.020     
+M0H       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+M0H       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+M0H       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+M0H       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+M0H       CB        HB1       SINGLE    n         1.089     0.010     0.970     0.010     
+M0H       CB        HB2       SINGLE    n         1.089     0.010     0.970     0.010     
+M0H       CD        HD1       SINGLE    n         1.089     0.010     0.980     0.017     
+M0H       CD        HD2       SINGLE    n         1.089     0.010     0.980     0.017     
+M0H       OE        HE        SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+M0H         OXT           C           O     125.732    1.50
+M0H         OXT           C          CA     117.134    1.50
+M0H           O           C          CA     117.134    1.50
+M0H           C          CA           N     109.494    1.50
+M0H           C          CA          CB     110.419    2.31
+M0H           C          CA          HA     108.606    1.50
+M0H           N          CA          CB     109.354    1.50
+M0H           N          CA          HA     107.983    1.50
+M0H          CB          CA          HA     109.209    1.50
+M0H          CA           N           H     109.671    1.50
+M0H          CA           N          H2     109.671    1.50
+M0H          CA           N          H3     109.671    1.50
+M0H           H           N          H2     109.028    2.41
+M0H           H           N          H3     109.028    2.41
+M0H          H2           N          H3     109.028    2.41
+M0H          CA          CB          SG     114.974    1.55
+M0H          CA          CB         HB1     108.537    1.50
+M0H          CA          CB         HB2     108.537    1.50
+M0H          SG          CB         HB1     108.654    1.50
+M0H          SG          CB         HB2     108.654    1.50
+M0H         HB1          CB         HB2     107.812    1.50
+M0H          CB          SG          CD     101.840    1.86
+M0H          SG          CD          OE     109.471    3.00
+M0H          SG          CD         HD1     108.611    1.50
+M0H          SG          CD         HD2     108.611    1.50
+M0H          OE          CD         HD1     109.175    1.50
+M0H          OE          CD         HD2     109.175    1.50
+M0H         HD1          CD         HD2     108.396    1.61
+M0H          CD          OE          HE     109.016    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+M0H             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+M0H             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+M0H            sp3_sp3_10           C          CA          CB          SG     180.000   10.00     3
+M0H            sp3_sp3_19          CA          CB          SG          CD     180.000   10.00     3
+M0H            sp3_sp3_22          OE          CD          SG          CB     180.000   10.00     3
+M0H            sp3_sp3_25          SG          CD          OE          HE     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+M0H    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+M0H    plan-1           C   0.020
+M0H    plan-1          CA   0.020
+M0H    plan-1           O   0.020
+M0H    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+M0H SMILES           ACDLabs              10.04 "O=C(O)C(N)CSCO"
+M0H SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CSCO)C(O)=O"
+M0H SMILES           CACTVS               3.341 "N[CH](CSCO)C(O)=O"
+M0H SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)SCO"
+M0H SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)SCO"
+M0H InChI            InChI                1.03  "InChI=1S/C4H9NO3S/c5-3(4(7)8)1-9-2-6/h3,6H,1-2,5H2,(H,7,8)/t3-/m0/s1"
+M0H InChIKey         InChI                1.03  FOTRPRWMLKFGLW-VKHMYHEASA-N
+M0H ?                acedrg               202         "dictionary generator"
+M0H ?                acedrg_database      11          "data source"
+M0H ?                rdkit                2017.03.2   "Chemoinformatics tool"
+M0H ?                refmac5              5.8.0222    "optimization tool"

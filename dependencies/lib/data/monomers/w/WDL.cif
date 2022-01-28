@@ -1,0 +1,126 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+WDL     WDL      1,3,5-triazine-2,4,6-triol     non-polymer     12     9     .     
+#
+data_comp_WDL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+WDL     NAE     N       NRD6    0       1.123       0.786       -0.022      
+WDL     CAH     C       CR6     0       -0.150      1.124       0.223       
+WDL     OAB     O       OH1     0       -0.394      2.422       0.548       
+WDL     N6      N       NRD6    0       -1.204      0.298       0.178       
+WDL     CAI     C       CR6     0       -0.896      -0.965      -0.147      
+WDL     NAF     N       NRD6    0       0.331       -1.430      -0.415      
+WDL     OAC     O       OH1     0       -1.923      -1.855      -0.210      
+WDL     CAG     C       CR6     0       1.297       -0.505      -0.335      
+WDL     OAA     O       OH1     0       2.568       -0.913      -0.596      
+WDL     HAB     H       H       0       -0.614      2.471       1.375       
+WDL     HAC     H       H       0       -1.862      -2.405      0.445       
+WDL     HAA     H       H       0       2.840       -1.418      0.042       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+WDL       CAH       OAB       SINGLE    n         1.360     0.015     1.360     0.015     
+WDL       NAE       CAH       DOUBLE    y         1.328     0.012     1.328     0.012     
+WDL       CAH       N6        SINGLE    y         1.328     0.012     1.328     0.012     
+WDL       CAI       OAC       SINGLE    n         1.360     0.015     1.360     0.015     
+WDL       CAI       NAF       SINGLE    y         1.328     0.012     1.328     0.012     
+WDL       N6        CAI       DOUBLE    y         1.328     0.012     1.328     0.012     
+WDL       NAF       CAG       DOUBLE    y         1.328     0.012     1.328     0.012     
+WDL       CAG       OAA       SINGLE    n         1.360     0.015     1.360     0.015     
+WDL       NAE       CAG       SINGLE    y         1.328     0.012     1.328     0.012     
+WDL       OAB       HAB       SINGLE    n         0.970     0.012     0.858     0.020     
+WDL       OAC       HAC       SINGLE    n         0.970     0.012     0.858     0.020     
+WDL       OAA       HAA       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+WDL         CAH         NAE         CAG     114.052    1.50
+WDL         OAB         CAH         NAE     117.026    1.66
+WDL         OAB         CAH          N6     117.026    1.66
+WDL         NAE         CAH          N6     125.948    1.50
+WDL         CAH         OAB         HAB     109.291    3.00
+WDL         CAH          N6         CAI     114.052    1.50
+WDL         OAC         CAI         NAF     117.026    1.66
+WDL         OAC         CAI          N6     117.026    1.66
+WDL         NAF         CAI          N6     125.948    1.50
+WDL         CAI         NAF         CAG     114.052    1.50
+WDL         CAI         OAC         HAC     109.291    3.00
+WDL         NAF         CAG         OAA     117.026    1.66
+WDL         NAF         CAG         NAE     125.948    1.50
+WDL         OAA         CAG         NAE     117.026    1.66
+WDL         CAG         OAA         HAA     109.291    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+WDL       const_sp2_sp2_2         OAB         CAH         NAE         CAG     180.000   10.00     2
+WDL              const_12         OAA         CAG         NAE         CAH     180.000   10.00     2
+WDL       const_sp2_sp2_4         OAB         CAH          N6         CAI     180.000   10.00     2
+WDL       const_sp2_sp2_6         OAC         CAI          N6         CAH     180.000   10.00     2
+WDL       const_sp2_sp2_8         OAC         CAI         NAF         CAG     180.000   10.00     2
+WDL              const_10         OAA         CAG         NAF         CAI     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+WDL    plan-1         CAG   0.020
+WDL    plan-1         CAH   0.020
+WDL    plan-1         CAI   0.020
+WDL    plan-1          N6   0.020
+WDL    plan-1         NAE   0.020
+WDL    plan-1         NAF   0.020
+WDL    plan-1         OAA   0.020
+WDL    plan-1         OAB   0.020
+WDL    plan-1         OAC   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+WDL SMILES           ACDLabs              12.01 "Oc1nc(O)nc(O)n1"
+WDL InChI            InChI                1.03  "InChI=1S/C3H3N3O3/c7-1-4-2(8)6-3(9)5-1/h(H3,4,5,6,7,8,9)"
+WDL InChIKey         InChI                1.03  ZFSLODLOARCGLH-UHFFFAOYSA-N
+WDL SMILES_CANONICAL CACTVS               3.385 "Oc1nc(O)nc(O)n1"
+WDL SMILES           CACTVS               3.385 "Oc1nc(O)nc(O)n1"
+WDL SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "c1(nc(nc(n1)O)O)O"
+WDL SMILES           "OpenEye OEToolkits" 1.9.2 "c1(nc(nc(n1)O)O)O"
+WDL ?                acedrg               202         "dictionary generator"                  
+WDL ?                acedrg_database      11          "data source"                           
+WDL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+WDL ?                refmac5              5.8.0189    "optimization tool"                     

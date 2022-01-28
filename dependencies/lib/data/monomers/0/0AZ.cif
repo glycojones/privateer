@@ -1,0 +1,184 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0AZ     0AZ     "(4R)-4-hydroxy-D-proline"     P-peptide     17     9     .     
+#
+data_comp_0AZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+0AZ     N       N       NT1     0       0.329       -0.313      -1.224      
+0AZ     CA      C       CH1     0       0.981       -0.479      0.075       
+0AZ     C       C       C       0       2.351       0.216       0.149       
+0AZ     O       O       O       0       3.254       -0.395      0.693       
+0AZ     CB      C       CH2     0       -0.032      0.176       1.022       
+0AZ     CG      C       CH1     0       -1.389      -0.114      0.394       
+0AZ     CD      C       CH2     0       -1.080      -0.643      -0.998      
+0AZ     OD1     O       OH1     0       -2.142      1.088       0.312       
+0AZ     OXT     O       OC      -1      2.434       1.328       -0.342      
+0AZ     H       H       H       0       0.370       0.534       -1.486      
+0AZ     HA      H       H       0       1.074       -1.443      0.277       
+0AZ     HB2     H       H       0       0.126       1.153       1.087       
+0AZ     HB3     H       H       0       0.028       -0.221      1.928       
+0AZ     HG      H       H       0       -1.887      -0.800      0.922       
+0AZ     HD22    H       H       0       -1.215      -1.614      -1.043      
+0AZ     HD23    H       H       0       -1.645      -0.211      -1.674      
+0AZ     HD1     H       H       0       -2.920      0.897       0.031       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 0AZ      N      n/a    CA     START
+ 0AZ      H      N      .      .
+ 0AZ      CD     N      CG     .
+ 0AZ      HD22   CD     .      .
+ 0AZ      HD23   CD     .      .
+ 0AZ      CG     CD     CB     .
+ 0AZ      HG     CG     .      .
+ 0AZ      OD1    CG     HD1    .
+ 0AZ      HD1    OD1    .      .
+ 0AZ      CB     CG     HB2    .
+ 0AZ      HB3    CB     .      .
+ 0AZ      HB2    CB     .      .
+ 0AZ      CA     N      C      .
+ 0AZ      HA     CA     .      .
+ 0AZ      C      CA     OXT    .
+ 0AZ      O      C      .      .
+ 0AZ      OXT    C      .      END
+ 0AZ      CA     CB     .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0AZ       N         CA        SINGLE    n         1.468     0.015     1.468     0.015     
+0AZ       N         CD        SINGLE    n         1.468     0.016     1.468     0.016     
+0AZ       CA        C         SINGLE    n         1.536     0.010     1.536     0.010     
+0AZ       CA        CB        SINGLE    n         1.534     0.013     1.534     0.013     
+0AZ       C         O         DOUBLE    n         1.218     0.020     1.218     0.020     
+0AZ       C         OXT       SINGLE    n         1.218     0.020     1.218     0.020     
+0AZ       CB        CG        SINGLE    n         1.520     0.010     1.520     0.010     
+0AZ       CG        CD        SINGLE    n         1.512     0.016     1.512     0.016     
+0AZ       CG        OD1       SINGLE    n         1.420     0.011     1.420     0.011     
+0AZ       N         H         SINGLE    n         1.036     0.016     0.887     0.020     
+0AZ       CA        HA        SINGLE    n         1.089     0.010     0.990     0.012     
+0AZ       CB        HB2       SINGLE    n         1.089     0.010     0.991     0.020     
+0AZ       CB        HB3       SINGLE    n         1.089     0.010     0.991     0.020     
+0AZ       CG        HG        SINGLE    n         1.089     0.010     0.998     0.020     
+0AZ       CD        HD22      SINGLE    n         1.089     0.010     0.981     0.019     
+0AZ       CD        HD23      SINGLE    n         1.089     0.010     0.981     0.019     
+0AZ       OD1       HD1       SINGLE    n         0.970     0.012     0.849     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+0AZ          CA           N          CD     109.056    3.00
+0AZ          CA           N           H     109.307    3.00
+0AZ          CD           N           H     107.738    2.27
+0AZ           N          CA           C     111.420    2.45
+0AZ           N          CA          CB     103.430    2.23
+0AZ           N          CA          HA     109.296    1.50
+0AZ           C          CA          CB     110.031    2.42
+0AZ           C          CA          HA     110.011    1.50
+0AZ          CB          CA          HA     110.393    1.50
+0AZ          CA           C           O     117.013    1.95
+0AZ          CA           C         OXT     117.013    1.95
+0AZ           O           C         OXT     125.975    1.50
+0AZ          CA          CB          CG     103.875    1.51
+0AZ          CA          CB         HB2     110.853    1.50
+0AZ          CA          CB         HB3     110.853    1.50
+0AZ          CG          CB         HB2     110.841    1.50
+0AZ          CG          CB         HB3     110.841    1.50
+0AZ         HB2          CB         HB3     109.113    1.50
+0AZ          CB          CG          CD     103.389    1.50
+0AZ          CB          CG         OD1     109.789    1.93
+0AZ          CB          CG          HG     111.491    1.54
+0AZ          CD          CG         OD1     110.916    2.22
+0AZ          CD          CG          HG     110.749    1.50
+0AZ         OD1          CG          HG     110.852    1.50
+0AZ           N          CD          CG     103.104    2.01
+0AZ           N          CD        HD22     110.393    1.50
+0AZ           N          CD        HD23     110.393    1.50
+0AZ          CG          CD        HD22     111.050    1.50
+0AZ          CG          CD        HD23     111.050    1.50
+0AZ        HD22          CD        HD23     109.055    1.50
+0AZ          CG         OD1         HD1     108.359    1.75
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+0AZ             sp3_sp3_3           C          CA           N          CD     -60.000   10.00     3
+0AZ            sp3_sp3_34          CG          CD           N          CA     180.000   10.00     3
+0AZ             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+0AZ            sp3_sp3_10           C          CA          CB          CG     180.000   10.00     3
+0AZ            sp3_sp3_17          CA          CB          CG         OD1     180.000   10.00     3
+0AZ            sp3_sp3_26           N          CD          CG         OD1      60.000   10.00     3
+0AZ            sp3_sp3_40          CB          CG         OD1         HD1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+0AZ    chir_1    N    CA    CD    H    negative
+0AZ    chir_2    CA    N    C    CB    negative
+0AZ    chir_3    CG    OD1    CD    CB    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+0AZ    plan-1           C   0.020
+0AZ    plan-1          CA   0.020
+0AZ    plan-1           O   0.020
+0AZ    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+0AZ SMILES           ACDLabs              12.01 "O=C(O)C1NCC(O)C1"
+0AZ InChI            InChI                1.03  "InChI=1S/C5H9NO3/c7-3-1-4(5(8)9)6-2-3/h3-4,6-7H,1-2H2,(H,8,9)/t3-,4-/m1/s1"
+0AZ InChIKey         InChI                1.03  PMMYEEVYMWASQN-QWWZWVQMSA-N
+0AZ SMILES_CANONICAL CACTVS               3.370 "O[C@H]1CN[C@H](C1)C(O)=O"
+0AZ SMILES           CACTVS               3.370 "O[CH]1CN[CH](C1)C(O)=O"
+0AZ SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C1[C@H](CN[C@H]1C(=O)O)O"
+0AZ SMILES           "OpenEye OEToolkits" 1.7.6 "C1C(CNC1C(=O)O)O"
+0AZ ?                acedrg               196         "dictionary generator"                  
+0AZ ?                acedrg_database      11          "data source"                           
+0AZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+0AZ ?                refmac5              5.8.0222    "optimization tool"                     

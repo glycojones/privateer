@@ -1,0 +1,203 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LCN      LCN '1,5-anhydro-D-arabino-hex-1-enitol  ' non-polymer        21  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LCN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LCN    C1     C  CR16       0      -0.597      -1.738       0.174
+LCN    C2     C   CR6   0.000      -1.593      -0.842      -0.099
+LCN    O2     O    O2   0.000      -2.846      -1.211      -0.204
+LCN    C3     C   CH2   0.000      -1.267       0.669      -0.298
+LCN    O3     O    O2   0.000      -2.253       1.460       0.342
+LCN    C4     C   CH2   0.000       0.119       1.001       0.262
+LCN    O4     O    O2   0.000       0.556       2.312      -0.204
+LCN    C5     C   CH2   0.000       1.118      -0.054      -0.215
+LCN    O5     O    O2   0.000       0.694      -1.351       0.308
+LCN    C6     C   CH2   0.000       2.560       0.237       0.298
+LCN    O6     O    O2   0.000       3.521      -0.706      -0.251
+LCN    H1     H     H   0.000      -0.838      -2.653       0.305
+LCN    H3     H     H   0.000      -1.261       0.881      -1.300
+LCN    H4     H     H   0.000       0.088       0.989       1.213
+LCN    H5     H     H   0.000       1.124      -0.083      -1.264
+LCN    H6     H     H   0.000       2.803       1.185       0.000
+LCN   H6A     H     H   0.000       2.535       0.180       1.279
+LCN   HO2     H     H   0.000      -2.949      -2.093      -0.060
+LCN   HO3     H     H   0.000      -3.017       1.301       0.027
+LCN   HO4     H     H   0.000      -0.020       2.944       0.059
+LCN   HO6     H     H   0.000       4.330      -0.549       0.031
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LCN       O5        C1        SING      1.357     0.014     1.357     0.014     
+LCN       H1        C1        SING      1.082     0.013     0.940     0.013     
+LCN       C1        C2        DOUB      1.390     0.020     1.390     0.020     
+LCN       C2        C3        SING      1.514     0.012     1.514     0.012     
+LCN       C2        O2        SING      1.331     0.020     1.331     0.020     
+LCN       HO2       O2        SING      0.970     0.012     0.868     0.020     
+LCN       C4        C3        SING      1.538     0.010     1.538     0.010     
+LCN       H3        C3        SING      1.089     0.010     0.978     0.011     
+LCN       C3        O3        SING      1.418     0.010     1.418     0.010     
+LCN       O3        HO3       SING      0.970     0.012     0.854     0.020     
+LCN       C5        C4        SING      1.527     0.010     1.527     0.010     
+LCN       C4        O4        SING      1.427     0.010     1.427     0.010     
+LCN       C4        H4        SING      1.089     0.010     0.989     0.016     
+LCN       HO4       O4        SING      0.970     0.012     0.854     0.020     
+LCN       C6        C5        SING      1.515     0.020     1.515     0.020     
+LCN       H5        C5        SING      1.089     0.010     0.986     0.019     
+LCN       O5        C5        SING      1.449     0.010     1.449     0.010     
+LCN       H6        C6        SING      1.089     0.010     0.983     0.020     
+LCN       C6        H6A       SING      1.089     0.010     0.983     0.020     
+LCN       C6        O6        SING      1.426     0.020     1.426     0.020     
+LCN       HO6       O6        SING      0.970     0.012     0.850     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LCN    O5    C1      H1   117.518    2.69
+LCN    O5    C1      C2   122.391    3.00
+LCN    H1    C1      C2   120.091    0.70
+LCN    C1    C2      C3   122.297    3.00
+LCN    C1    C2      O2   121.542    3.00
+LCN    C3    C2      O2   116.160    0.82
+LCN    C2    O2     HO2   109.609    3.00
+LCN    C2    C3      C4   111.440    2.90
+LCN    C2    C3      H3   108.070    1.55
+LCN    C2    C3      O3   109.088    2.62
+LCN    C4    C3      H3   107.322    2.24
+LCN    C4    C3      O3   111.518    0.58
+LCN    H3    C3      O3   109.627    1.37
+LCN    C3    O3     HO3   108.557    2.14
+LCN    C3    C4      C5   111.085    2.33
+LCN    C3    C4      O4   110.110    0.49
+LCN    C3    C4      H4   108.995    0.82
+LCN    C5    C4      O4   109.050    2.02
+LCN    C5    C4      H4   109.144    0.72
+LCN    O4    C4      H4   108.787    1.25
+LCN    C4    O4     HO4   108.943    2.95
+LCN    C4    C5      C6   112.946    1.34
+LCN    C4    C5      H5   109.062    1.62
+LCN    C4    C5      O5   111.080    1.57
+LCN    C6    C5      H5   109.009    1.71
+LCN    C6    C5      O5   106.488    1.01
+LCN    H5    C5      O5   108.412    0.54
+LCN    C1    O5      C5   118.320    2.07
+LCN    C5    C6      H6   109.422    1.23
+LCN    C5    C6     H6A   109.422    1.23
+LCN    C5    C6      O6   110.861    3.00
+LCN    H6    C6     H6A   108.204    1.25
+LCN    H6    C6      O6   109.381    1.32
+LCN   H6A    C6      O6   109.381    1.32
+LCN    C6    O6     HO6   109.184    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LCN       sp2_sp2_1      C2      C1      O5      C5       0.000   10.00     2
+LCN       sp2_sp2_2      H1      C1      O5      C5     180.000   10.00     2
+LCN       sp3_sp3_1      C4      C5      O5      C1     -60.000   10.00     3
+LCN       sp3_sp3_2      C6      C5      O5      C1      60.000   10.00     3
+LCN       sp3_sp3_3      H5      C5      O5      C1     180.000   10.00     3
+LCN       sp3_sp3_4      C3      C4      C5      O5      60.000   10.00     3
+LCN       sp3_sp3_5      C3      C4      C5      C6     180.000   10.00     3
+LCN       sp3_sp3_6      C3      C4      C5      H5     -60.000   10.00     3
+LCN       sp3_sp3_7      O4      C4      C5      O5     -60.000   10.00     3
+LCN       sp3_sp3_8      O4      C4      C5      C6      60.000   10.00     3
+LCN       sp3_sp3_9      O4      C4      C5      H5     180.000   10.00     3
+LCN      sp3_sp3_10      H4      C4      C5      O5     180.000   10.00     3
+LCN      sp3_sp3_11      H4      C4      C5      C6     -60.000   10.00     3
+LCN      sp3_sp3_12      H4      C4      C5      H5      60.000   10.00     3
+LCN      sp3_sp3_13      C2      C3      C4      C5     -60.000   10.00     3
+LCN      sp3_sp3_14      C2      C3      C4      O4      60.000   10.00     3
+LCN      sp3_sp3_15      C2      C3      C4      H4     180.000   10.00     3
+LCN      sp3_sp3_16      O3      C3      C4      C5     180.000   10.00     3
+LCN      sp3_sp3_17      O3      C3      C4      O4     -60.000   10.00     3
+LCN      sp3_sp3_18      O3      C3      C4      H4      60.000   10.00     3
+LCN      sp3_sp3_19      H3      C3      C4      C5      60.000   10.00     3
+LCN      sp3_sp3_20      H3      C3      C4      O4     180.000   10.00     3
+LCN      sp3_sp3_21      H3      C3      C4      H4     -60.000   10.00     3
+LCN       sp2_sp3_1      C1      C2      C3      C4       0.000   10.00     6
+LCN       sp2_sp3_2      C1      C2      C3      H3     120.000   10.00     6
+LCN       sp2_sp3_3      C1      C2      C3      O3    -120.000   10.00     6
+LCN       sp2_sp3_4      O2      C2      C3      C4     180.000   10.00     6
+LCN       sp2_sp3_5      O2      C2      C3      H3     -60.000   10.00     6
+LCN       sp2_sp3_6      O2      C2      C3      O3      60.000   10.00     6
+LCN       sp2_sp2_3      O5      C1      C2      C3       0.000   10.00     2
+LCN       sp2_sp2_4      O5      C1      C2      O2     180.000   10.00     2
+LCN       sp2_sp2_5      H1      C1      C2      C3     180.000   10.00     2
+LCN       sp2_sp2_6      H1      C1      C2      O2       0.000   10.00     2
+LCN       sp2_sp2_7      C1      C2      O2     HO2     180.000   10.00     2
+LCN       sp2_sp2_8      C3      C2      O2     HO2       0.000   10.00     2
+LCN      sp3_sp3_22      C2      C3      O3     HO3     180.000   10.00     3
+LCN      sp3_sp3_23      C4      C3      O3     HO3     -60.000   10.00     3
+LCN      sp3_sp3_24      H3      C3      O3     HO3      60.000   10.00     3
+LCN      sp3_sp3_25      C3      C4      O4     HO4     180.000   10.00     3
+LCN      sp3_sp3_26      C5      C4      O4     HO4     -60.000   10.00     3
+LCN      sp3_sp3_27      H4      C4      O4     HO4      60.000   10.00     3
+LCN      sp3_sp3_28      C4      C5      C6      O6     180.000   10.00     3
+LCN      sp3_sp3_29      C4      C5      C6      H6     -60.000   10.00     3
+LCN      sp3_sp3_30      C4      C5      C6     H6A      60.000   10.00     3
+LCN      sp3_sp3_31      H5      C5      C6      O6      60.000   10.00     3
+LCN      sp3_sp3_32      H5      C5      C6      H6     180.000   10.00     3
+LCN      sp3_sp3_33      H5      C5      C6     H6A     -60.000   10.00     3
+LCN      sp3_sp3_34      O5      C5      C6      O6     -60.000   10.00     3
+LCN      sp3_sp3_35      O5      C5      C6      H6      60.000   10.00     3
+LCN      sp3_sp3_36      O5      C5      C6     H6A     180.000   10.00     3
+LCN      sp3_sp3_37      C5      C6      O6     HO6     180.000   10.00     3
+LCN      sp3_sp3_38      H6      C6      O6     HO6     -60.000   10.00     3
+LCN      sp3_sp3_39     H6A      C6      O6     HO6      60.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LCN    plan-1    C1   0.020
+LCN    plan-1    C2   0.020
+LCN    plan-1    H1   0.020
+LCN    plan-1    O5   0.020
+LCN    plan-2    C1   0.020
+LCN    plan-2    C2   0.020
+LCN    plan-2    C3   0.020
+LCN    plan-2    O2   0.020

@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GPF     GPF      "N-(phosphonomethyl)glycine"     NON-POLYMER     15     10     .     
+#
+data_comp_GPF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GPF     C1      C       CH2     0       59.652      8.020       28.287      
+GPF     C2      C       CH2     0       59.973      7.996       30.707      
+GPF     C3      C       C       0       60.518      8.713       31.943      
+GPF     O1      O       OP      -1      59.701      10.267      26.852      
+GPF     O2      O       O       0       59.301      8.148       25.646      
+GPF     O3      O       OP      -1      61.551      8.662       26.528      
+GPF     O4      O       O       0       61.563      9.383       31.810      
+GPF     P1      P       P       0       60.081      8.831       26.719      
+GPF     O5      O       OC      -1      59.879      8.571       33.004      
+GPF     N1      N       NT1     0       60.214      8.709       29.451      
+GPF     H1      H       H       0       59.981      7.099       28.262      
+GPF     H1A     H       H       0       58.676      7.990       28.366      
+GPF     H2      H       H       0       59.016      7.873       30.819      
+GPF     H2A     H       H       0       60.383      7.118       30.654      
+GPF     HN1     H       H       0       61.108      8.765       29.353      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GPF       C1        P1        SINGLE    n         1.816     0.020     1.816     0.020     
+GPF       C1        N1        SINGLE    n         1.465     0.012     1.465     0.012     
+GPF       C2        N1        SINGLE    n         1.462     0.016     1.462     0.016     
+GPF       C2        C3        SINGLE    n         1.527     0.012     1.527     0.012     
+GPF       C3        O4        DOUBLE    n         1.247     0.019     1.247     0.019     
+GPF       C3        O5        SINGLE    n         1.247     0.019     1.247     0.019     
+GPF       O1        P1        SINGLE    n         1.492     0.020     1.492     0.020     
+GPF       O2        P1        DOUBLE    n         1.492     0.020     1.492     0.020     
+GPF       O3        P1        SINGLE    n         1.492     0.020     1.492     0.020     
+GPF       C1        H1        SINGLE    n         1.089     0.010     0.979     0.019     
+GPF       C1        H1A       SINGLE    n         1.089     0.010     0.979     0.019     
+GPF       C2        H2        SINGLE    n         1.089     0.010     0.971     0.020     
+GPF       C2        H2A       SINGLE    n         1.089     0.010     0.971     0.020     
+GPF       N1        HN1       SINGLE    n         1.036     0.016     0.901     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GPF          P1          C1          N1     112.238    3.00
+GPF          P1          C1          H1     108.528    1.50
+GPF          P1          C1         H1A     108.528    1.50
+GPF          N1          C1          H1     109.366    1.50
+GPF          N1          C1         H1A     109.366    1.50
+GPF          H1          C1         H1A     107.579    3.00
+GPF          N1          C2          C3     112.134    2.59
+GPF          N1          C2          H2     108.963    1.50
+GPF          N1          C2         H2A     108.963    1.50
+GPF          C3          C2          H2     108.590    1.50
+GPF          C3          C2         H2A     108.590    1.50
+GPF          H2          C2         H2A     107.999    1.50
+GPF          C2          C3          O4     117.139    1.80
+GPF          C2          C3          O5     117.139    1.80
+GPF          O4          C3          O5     125.722    1.50
+GPF          C1          P1          O1     110.326    3.00
+GPF          C1          P1          O2     110.326    3.00
+GPF          C1          P1          O3     110.326    3.00
+GPF          O1          P1          O2     112.887    1.64
+GPF          O1          P1          O3     112.887    1.64
+GPF          O2          P1          O3     112.887    1.64
+GPF          C1          N1          C2     112.950    1.50
+GPF          C1          N1         HN1     108.898    3.00
+GPF          C2          N1         HN1     106.682    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GPF             sp3_sp3_1          N1          C1          P1          O1     180.000   10.00     3
+GPF            sp3_sp3_10          P1          C1          N1          C2     180.000   10.00     3
+GPF             sp2_sp3_2          O4          C3          C2          N1     120.000   10.00     6
+GPF            sp3_sp3_16          C3          C2          N1          C1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+GPF    chir_1    N1    C1    C2    HN1    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GPF    plan-1          C2   0.020
+GPF    plan-1          C3   0.020
+GPF    plan-1          O4   0.020
+GPF    plan-1          O5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GPF SMILES           ACDLabs              10.04 "O=C(O)CNCP(=O)(O)O"
+GPF SMILES_CANONICAL CACTVS               3.341 "OC(=O)CNC[P](O)(O)=O"
+GPF SMILES           CACTVS               3.341 "OC(=O)CNC[P](O)(O)=O"
+GPF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)NCP(=O)(O)O"
+GPF SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)NCP(=O)(O)O"
+GPF InChI            InChI                1.03  "InChI=1S/C3H8NO5P/c5-3(6)1-4-2-10(7,8)9/h4H,1-2H2,(H,5,6)(H2,7,8,9)"
+GPF InChIKey         InChI                1.03  XDDAORKBJWWYJS-UHFFFAOYSA-N
+GPF ?                acedrg               202         "dictionary generator"                  
+GPF ?                acedrg_database      11          "data source"                           
+GPF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GPF ?                refmac5              5.8.0189    "optimization tool"                     

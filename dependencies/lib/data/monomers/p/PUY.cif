@@ -1,0 +1,471 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PUY      PUY 'PUROMYCIN                           ' non-polymer        63  34 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PUY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PUY           O      O    O         0.000      0.000    0.000    0.000
+ PUY           C      C    C         0.000     -0.742    0.904   -0.319
+ PUY           CA     C    CH1       0.000     -0.172    2.203   -0.827
+ PUY           HA     H    H         0.000     -0.749    3.042   -0.415
+ PUY           CB     C    CH2       0.000     -0.251    2.231   -2.355
+ PUY           HB1    H    H         0.000     -1.281    2.054   -2.669
+ PUY           HB2    H    H         0.000      0.393    1.451   -2.767
+ PUY           CG     C    CR6       0.000      0.205    3.578   -2.857
+ PUY           CD2    C    CR16      0.000     -0.712    4.600   -3.020
+ PUY           HD2    H    H         0.000     -1.757    4.431   -2.792
+ PUY           CE2    C    CR16      0.000     -0.296    5.836   -3.475
+ PUY           HE2    H    H         0.000     -1.013    6.639   -3.595
+ PUY           CZ     C    CR6       0.000      1.041    6.049   -3.777
+ PUY           OM     O    O2        0.000      1.451    7.263   -4.230
+ PUY           CMZ    C    CH3       0.000      0.292    8.094   -4.292
+ PUY           HMZ3   H    H         0.000     -0.415    7.667   -4.955
+ PUY           HMZ2   H    H         0.000     -0.136    8.178   -3.327
+ PUY           HMZ1   H    H         0.000      0.565    9.056   -4.641
+ PUY           CE1    C    CR16      0.000      1.959    5.022   -3.612
+ PUY           HE1    H    H         0.000      3.004    5.187   -3.844
+ PUY           CD1    C    CR16      0.000      1.539    3.789   -3.151
+ PUY           HD1    H    H         0.000      2.256    2.987   -3.021
+ PUY           N      N    NH2       0.000      1.231    2.320   -0.407
+ PUY           HN2    H    H         0.000      1.527    3.094    0.176
+ PUY           HN1    H    H         0.000      1.911    1.628   -0.697
+ PUY           "N3'"  N    NH1       0.000     -2.077    0.747   -0.220
+ PUY           H3     H    H         0.000     -2.695    1.500   -0.485
+ PUY           "C3'"  C    CH1       0.000     -2.631   -0.517    0.274
+ PUY           "H3'"  H    H         0.000     -1.974   -0.953    1.039
+ PUY           "C4'"  C    CH1       0.000     -2.837   -1.509   -0.891
+ PUY           "H4'"  H    H         0.000     -2.939   -0.967   -1.842
+ PUY           "C5'"  C    CH2       0.000     -1.673   -2.501   -0.967
+ PUY           "H5'1" H    H         0.000     -1.632   -3.083   -0.044
+ PUY           "H5''" H    H         0.000     -0.737   -1.954   -1.092
+ PUY           "O5'"  O    OH1       0.000     -1.867   -3.378   -2.077
+ PUY           "H5'"  H    H         0.000     -1.132   -4.004   -2.125
+ PUY           "C2'"  C    CH1       0.000     -4.051   -0.299    0.842
+ PUY           "H2'"  H    H         0.000     -4.102   -0.628    1.889
+ PUY           "O2'"  O    OH1       0.000     -4.430    1.074    0.730
+ PUY           H1     H    H         0.000     -5.320    1.192    1.089
+ PUY           "C1'"  C    CH1       0.000     -4.951   -1.186   -0.048
+ PUY           "H1'"  H    H         0.000     -5.381   -0.593   -0.868
+ PUY           "O4'"  O    O2        0.000     -4.066   -2.201   -0.571
+ PUY           N9     N    NR5       0.000     -6.015   -1.797    0.751
+ PUY           C8     C    CR15      0.000     -5.990   -3.037    1.317
+ PUY           H8     H    H         0.000     -5.166   -3.736    1.244
+ PUY           N7     N    NRD5      0.000     -7.101   -3.257    1.958
+ PUY           C5     C    CR56      0.000     -7.908   -2.175    1.843
+ PUY           C4     C    CR56      0.000     -7.220   -1.224    1.073
+ PUY           C6     C    CR6       0.000     -9.192   -1.848    2.311
+ PUY           N6     N    NT        0.000     -9.917   -2.743    3.079
+ PUY           C10    C    CH3       0.000    -10.228   -3.887    2.211
+ PUY           H103   H    H         0.000    -10.784   -4.603    2.757
+ PUY           H102   H    H         0.000    -10.796   -3.556    1.381
+ PUY           H101   H    H         0.000     -9.327   -4.326    1.869
+ PUY           C9     C    CH3       0.000    -11.195   -2.091    3.393
+ PUY           H93    H    H         0.000    -11.012   -1.197    3.930
+ PUY           H92    H    H         0.000    -11.707   -1.866    2.494
+ PUY           H91    H    H         0.000    -11.787   -2.742    3.983
+ PUY           N1     N    NRD6      0.000     -9.695   -0.658    1.999
+ PUY           C2     C    CR16      0.000     -9.012    0.203    1.267
+ PUY           H2     H    H         0.000     -9.459    1.162    1.036
+ PUY           N3     N    NRD6      0.000     -7.806   -0.061    0.807
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PUY      O      n/a    C      START
+ PUY      C      O      "N3'"  .
+ PUY      CA     C      N      .
+ PUY      HA     CA     .      .
+ PUY      CB     CA     CG     .
+ PUY      HB1    CB     .      .
+ PUY      HB2    CB     .      .
+ PUY      CG     CB     CD2    .
+ PUY      CD2    CG     CE2    .
+ PUY      HD2    CD2    .      .
+ PUY      CE2    CD2    CZ     .
+ PUY      HE2    CE2    .      .
+ PUY      CZ     CE2    CE1    .
+ PUY      OM     CZ     CMZ    .
+ PUY      CMZ    OM     HMZ1   .
+ PUY      HMZ3   CMZ    .      .
+ PUY      HMZ2   CMZ    .      .
+ PUY      HMZ1   CMZ    .      .
+ PUY      CE1    CZ     CD1    .
+ PUY      HE1    CE1    .      .
+ PUY      CD1    CE1    HD1    .
+ PUY      HD1    CD1    .      .
+ PUY      N      CA     HN1    .
+ PUY      HN2    N      .      .
+ PUY      HN1    N      .      .
+ PUY      "N3'"  C      "C3'"  .
+ PUY      H3     "N3'"  .      .
+ PUY      "C3'"  "N3'"  "C2'"  .
+ PUY      "H3'"  "C3'"  .      .
+ PUY      "C4'"  "C3'"  "C5'"  .
+ PUY      "H4'"  "C4'"  .      .
+ PUY      "C5'"  "C4'"  "O5'"  .
+ PUY      "H5'1" "C5'"  .      .
+ PUY      "H5''" "C5'"  .      .
+ PUY      "O5'"  "C5'"  "H5'"  .
+ PUY      "H5'"  "O5'"  .      .
+ PUY      "C2'"  "C3'"  "C1'"  .
+ PUY      "H2'"  "C2'"  .      .
+ PUY      "O2'"  "C2'"  H1     .
+ PUY      H1     "O2'"  .      .
+ PUY      "C1'"  "C2'"  N9     .
+ PUY      "H1'"  "C1'"  .      .
+ PUY      "O4'"  "C1'"  .      .
+ PUY      N9     "C1'"  C8     .
+ PUY      C8     N9     N7     .
+ PUY      H8     C8     .      .
+ PUY      N7     C8     C5     .
+ PUY      C5     N7     C6     .
+ PUY      C4     C5     .      .
+ PUY      C6     C5     N1     .
+ PUY      N6     C6     C9     .
+ PUY      C10    N6     H101   .
+ PUY      H103   C10    .      .
+ PUY      H102   C10    .      .
+ PUY      H101   C10    .      .
+ PUY      C9     N6     H91    .
+ PUY      H93    C9     .      .
+ PUY      H92    C9     .      .
+ PUY      H91    C9     .      .
+ PUY      N1     C6     C2     .
+ PUY      C2     N1     N3     .
+ PUY      H2     C2     .      .
+ PUY      N3     C2     .      END
+ PUY      CG     CD1    .    ADD
+ PUY      "C4'"  "O4'"  .    ADD
+ PUY      N9     C4     .    ADD
+ PUY      C4     N3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PUY       N         CA        single    1.450     0.020     1.450     0.020     
+PUY       HN1       N         single    1.036     0.016     0.914     0.007     
+PUY       HN2       N         single    1.036     0.016     0.914     0.007     
+PUY       CB        CA        single    1.524     0.020     1.524     0.020     
+PUY       CA        C         single    1.500     0.020     1.500     0.020     
+PUY       HA        CA        single    1.089     0.010     0.989     0.005     
+PUY       CG        CB        single    1.511     0.020     1.511     0.020     
+PUY       HB1       CB        single    1.089     0.010     0.989     0.005     
+PUY       HB2       CB        single    1.089     0.010     0.989     0.005     
+PUY       CG        CD1       double    1.390     0.020     1.390     0.020     
+PUY       CD2       CG        single    1.390     0.020     1.390     0.020     
+PUY       CD1       CE1       single    1.390     0.020     1.390     0.020     
+PUY       HD1       CD1       single    1.082     0.013     0.975     0.010     
+PUY       CE2       CD2       double    1.390     0.020     1.390     0.020     
+PUY       HD2       CD2       single    1.082     0.013     0.975     0.010     
+PUY       CE1       CZ        double    1.390     0.020     1.390     0.020     
+PUY       HE1       CE1       single    1.082     0.013     0.975     0.010     
+PUY       CZ        CE2       single    1.390     0.020     1.390     0.020     
+PUY       HE2       CE2       single    1.082     0.013     0.975     0.010     
+PUY       OM        CZ        single    1.370     0.020     1.370     0.020     
+PUY       C         O         double    1.220     0.020     1.220     0.020     
+PUY       CMZ       OM        single    1.426     0.020     1.426     0.020     
+PUY       HMZ1      CMZ       single    1.089     0.010     0.989     0.005     
+PUY       HMZ2      CMZ       single    1.089     0.010     0.989     0.005     
+PUY       HMZ3      CMZ       single    1.089     0.010     0.989     0.005     
+PUY       "N3'"     C         single    1.330     0.020     1.330     0.020     
+PUY       "O5'"     "C5'"     single    1.432     0.020     1.432     0.020     
+PUY       "H5'"     "O5'"     single    0.970     0.012     0.839     0.014     
+PUY       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+PUY       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+PUY       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+PUY       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+PUY       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+PUY       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+PUY       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+PUY       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+PUY       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+PUY       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+PUY       N9        C4        single    1.337     0.020     1.337     0.020     
+PUY       C8        N9        single    1.337     0.020     1.337     0.020     
+PUY       C4        N3        double    1.355     0.020     1.355     0.020     
+PUY       C4        C5        single    1.490     0.020     1.490     0.020     
+PUY       N3        C2        single    1.337     0.020     1.337     0.020     
+PUY       C2        N1        double    1.337     0.020     1.337     0.020     
+PUY       H2        C2        single    1.082     0.013     0.975     0.010     
+PUY       N1        C6        single    1.350     0.020     1.350     0.020     
+PUY       N6        C6        single    1.405     0.020     1.405     0.020     
+PUY       C6        C5        double    1.490     0.020     1.490     0.020     
+PUY       C9        N6        single    1.469     0.020     1.469     0.020     
+PUY       C10       N6        single    1.469     0.020     1.469     0.020     
+PUY       H91       C9        single    1.089     0.010     0.989     0.005     
+PUY       H92       C9        single    1.089     0.010     0.989     0.005     
+PUY       H93       C9        single    1.089     0.010     0.989     0.005     
+PUY       H101      C10       single    1.089     0.010     0.989     0.005     
+PUY       H102      C10       single    1.089     0.010     0.989     0.005     
+PUY       H103      C10       single    1.089     0.010     0.989     0.005     
+PUY       C5        N7        single    1.350     0.020     1.350     0.020     
+PUY       N7        C8        double    1.350     0.020     1.350     0.020     
+PUY       H8        C8        single    1.082     0.013     0.975     0.010     
+PUY       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+PUY       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+PUY       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+PUY       H1        "O2'"     single    0.970     0.012     0.839     0.014     
+PUY       "C3'"     "N3'"     single    1.450     0.020     1.450     0.020     
+PUY       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+PUY       H3        "N3'"     single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PUY      O      C      CA      120.500    3.000
+ PUY      O      C      "N3'"   123.000    3.000
+ PUY      CA     C      "N3'"   116.500    3.000
+ PUY      C      CA     HA      108.810    3.000
+ PUY      C      CA     CB      109.470    3.000
+ PUY      C      CA     N       109.470    3.000
+ PUY      HA     CA     CB      108.340    3.000
+ PUY      HA     CA     N       109.470    3.000
+ PUY      CB     CA     N       109.470    3.000
+ PUY      CA     CB     HB1     109.470    3.000
+ PUY      CA     CB     HB2     109.470    3.000
+ PUY      CA     CB     CG      109.470    3.000
+ PUY      HB1    CB     HB2     107.900    3.000
+ PUY      HB1    CB     CG      109.470    3.000
+ PUY      HB2    CB     CG      109.470    3.000
+ PUY      CB     CG     CD2     120.000    3.000
+ PUY      CB     CG     CD1     120.000    3.000
+ PUY      CD2    CG     CD1     120.000    3.000
+ PUY      CG     CD2    HD2     120.000    3.000
+ PUY      CG     CD2    CE2     120.000    3.000
+ PUY      HD2    CD2    CE2     120.000    3.000
+ PUY      CD2    CE2    HE2     120.000    3.000
+ PUY      CD2    CE2    CZ      120.000    3.000
+ PUY      HE2    CE2    CZ      120.000    3.000
+ PUY      CE2    CZ     OM      120.000    3.000
+ PUY      CE2    CZ     CE1     120.000    3.000
+ PUY      OM     CZ     CE1     120.000    3.000
+ PUY      CZ     OM     CMZ     120.000    3.000
+ PUY      OM     CMZ    HMZ3    109.470    3.000
+ PUY      OM     CMZ    HMZ2    109.470    3.000
+ PUY      OM     CMZ    HMZ1    109.470    3.000
+ PUY      HMZ3   CMZ    HMZ2    109.470    3.000
+ PUY      HMZ3   CMZ    HMZ1    109.470    3.000
+ PUY      HMZ2   CMZ    HMZ1    109.470    3.000
+ PUY      CZ     CE1    HE1     120.000    3.000
+ PUY      CZ     CE1    CD1     120.000    3.000
+ PUY      HE1    CE1    CD1     120.000    3.000
+ PUY      CE1    CD1    HD1     120.000    3.000
+ PUY      CE1    CD1    CG      120.000    3.000
+ PUY      HD1    CD1    CG      120.000    3.000
+ PUY      CA     N      HN2     120.000    3.000
+ PUY      CA     N      HN1     120.000    3.000
+ PUY      HN2    N      HN1     120.000    3.000
+ PUY      C      "N3'"  H3      120.000    3.000
+ PUY      C      "N3'"  "C3'"   121.500    3.000
+ PUY      H3     "N3'"  "C3'"   118.500    3.000
+ PUY      "N3'"  "C3'"  "H3'"   108.550    3.000
+ PUY      "N3'"  "C3'"  "C4'"   110.000    3.000
+ PUY      "N3'"  "C3'"  "C2'"   110.000    3.000
+ PUY      "H3'"  "C3'"  "C4'"   108.340    3.000
+ PUY      "H3'"  "C3'"  "C2'"   108.340    3.000
+ PUY      "C4'"  "C3'"  "C2'"   111.000    3.000
+ PUY      "C3'"  "C4'"  "H4'"   108.340    3.000
+ PUY      "C3'"  "C4'"  "C5'"   111.000    3.000
+ PUY      "C3'"  "C4'"  "O4'"   109.470    3.000
+ PUY      "H4'"  "C4'"  "C5'"   108.340    3.000
+ PUY      "H4'"  "C4'"  "O4'"   109.470    3.000
+ PUY      "C5'"  "C4'"  "O4'"   109.470    3.000
+ PUY      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ PUY      "C4'"  "C5'"  "H5''"  109.470    3.000
+ PUY      "C4'"  "C5'"  "O5'"   109.470    3.000
+ PUY      "H5'1" "C5'"  "H5''"  107.900    3.000
+ PUY      "H5'1" "C5'"  "O5'"   109.470    3.000
+ PUY      "H5''" "C5'"  "O5'"   109.470    3.000
+ PUY      "C5'"  "O5'"  "H5'"   109.470    3.000
+ PUY      "C3'"  "C2'"  "H2'"   108.340    3.000
+ PUY      "C3'"  "C2'"  "O2'"   109.470    3.000
+ PUY      "C3'"  "C2'"  "C1'"   111.000    3.000
+ PUY      "H2'"  "C2'"  "O2'"   109.470    3.000
+ PUY      "H2'"  "C2'"  "C1'"   108.340    3.000
+ PUY      "O2'"  "C2'"  "C1'"   109.470    3.000
+ PUY      "C2'"  "O2'"  H1      109.470    3.000
+ PUY      "C2'"  "C1'"  "H1'"   108.340    3.000
+ PUY      "C2'"  "C1'"  "O4'"   109.470    3.000
+ PUY      "C2'"  "C1'"  N9      109.470    3.000
+ PUY      "H1'"  "C1'"  "O4'"   109.470    3.000
+ PUY      "H1'"  "C1'"  N9      109.470    3.000
+ PUY      "O4'"  "C1'"  N9      109.470    3.000
+ PUY      "C1'"  "O4'"  "C4'"   111.800    3.000
+ PUY      "C1'"  N9     C8      126.000    3.000
+ PUY      "C1'"  N9     C4      126.000    3.000
+ PUY      C8     N9     C4      108.000    3.000
+ PUY      N9     C8     H8      126.000    3.000
+ PUY      N9     C8     N7      108.000    3.000
+ PUY      H8     C8     N7      126.000    3.000
+ PUY      C8     N7     C5      108.000    3.000
+ PUY      N7     C5     C4      108.000    3.000
+ PUY      N7     C5     C6      132.000    3.000
+ PUY      C4     C5     C6      120.000    3.000
+ PUY      C5     C4     N9      108.000    3.000
+ PUY      C5     C4     N3      120.000    3.000
+ PUY      N9     C4     N3      132.000    3.000
+ PUY      C5     C6     N6      120.000    3.000
+ PUY      C5     C6     N1      120.000    3.000
+ PUY      N6     C6     N1      120.000    3.000
+ PUY      C6     N6     C10     109.500    3.000
+ PUY      C6     N6     C9      109.500    3.000
+ PUY      C10    N6     C9      109.470    3.000
+ PUY      N6     C10    H103    109.470    3.000
+ PUY      N6     C10    H102    109.470    3.000
+ PUY      N6     C10    H101    109.470    3.000
+ PUY      H103   C10    H102    109.470    3.000
+ PUY      H103   C10    H101    109.470    3.000
+ PUY      H102   C10    H101    109.470    3.000
+ PUY      N6     C9     H93     109.470    3.000
+ PUY      N6     C9     H92     109.470    3.000
+ PUY      N6     C9     H91     109.470    3.000
+ PUY      H93    C9     H92     109.470    3.000
+ PUY      H93    C9     H91     109.470    3.000
+ PUY      H92    C9     H91     109.470    3.000
+ PUY      C6     N1     C2      120.000    3.000
+ PUY      N1     C2     H2      120.000    3.000
+ PUY      N1     C2     N3      120.000    3.000
+ PUY      H2     C2     N3      120.000    3.000
+ PUY      C2     N3     C4      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PUY      var_1    O      C      CA     N        -19.996   20.000   3
+ PUY      var_2    C      CA     CB     CG       175.027   20.000   3
+ PUY      var_3    CA     CB     CG     CD2      -89.972   20.000   2
+ PUY      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ PUY      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ PUY      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ PUY      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ PUY      var_4    CE2    CZ     OM     CMZ       -0.272   20.000   1
+ PUY      var_5    CZ     OM     CMZ    HMZ1     179.985   20.000   1
+ PUY      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ PUY      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+ PUY      var_6    C      CA     N      HN1       60.002   20.000   1
+ PUY      CONST_7  O      C      "N3'"  "C3'"      0.000    0.000   0
+ PUY      var_7    C      "N3'"  "C3'"  "C2'"    156.906   20.000   3
+ PUY      var_8    "N3'"  "C3'"  "C4'"  "C5'"     90.000   20.000   3
+ PUY      var_9    "C3'"  "C4'"  "O4'"  "C1'"     30.000   20.000   1
+ PUY      var_10   "C3'"  "C4'"  "C5'"  "O5'"   -178.135   20.000   3
+ PUY      var_11   "C4'"  "C5'"  "O5'"  "H5'"    179.984   20.000   1
+ PUY      var_12   "N3'"  "C3'"  "C2'"  "C1'"    120.000   20.000   3
+ PUY      var_13   "C3'"  "C2'"  "O2'"  H1       179.965   20.000   1
+ PUY      var_14   "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ PUY      var_15   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ PUY      var_16   "C2'"  "C1'"  N9     C8       -95.014   20.000   1
+ PUY      CONST_8  "C1'"  N9     C4     C5       180.000    0.000   0
+ PUY      CONST_9  "C1'"  N9     C8     N7       180.000    0.000   0
+ PUY      CONST_10 N9     C8     N7     C5         0.000    0.000   0
+ PUY      CONST_11 C8     N7     C5     C6       180.000    0.000   0
+ PUY      CONST_12 N7     C5     C4     N9         0.000    0.000   0
+ PUY      CONST_13 C5     C4     N3     C2         0.000    0.000   0
+ PUY      CONST_14 N7     C5     C6     N1       180.000    0.000   0
+ PUY      var_17   C5     C6     N6     C9       179.992   20.000   1
+ PUY      var_18   C6     N6     C10    H101      59.982   20.000   1
+ PUY      var_19   C6     N6     C9     H91     -179.987   20.000   1
+ PUY      CONST_15 C5     C6     N1     C2         0.000    0.000   0
+ PUY      CONST_16 C6     N1     C2     N3         0.000    0.000   0
+ PUY      CONST_17 N1     C2     N3     C4         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PUY      chir_01  CA     N      CB     C         negativ
+ PUY      chir_02  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ PUY      chir_03  "C1'"  "O4'"  N9     "C2'"     negativ
+ PUY      chir_04  N6     C6     C9     C10       negativ
+ PUY      chir_05  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ PUY      chir_06  "C3'"  "C4'"  "C2'"  "N3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PUY      plan-1    N         0.020
+ PUY      plan-1    CA        0.020
+ PUY      plan-1    HN1       0.020
+ PUY      plan-1    HN2       0.020
+ PUY      plan-2    CG        0.020
+ PUY      plan-2    CB        0.020
+ PUY      plan-2    CD1       0.020
+ PUY      plan-2    CD2       0.020
+ PUY      plan-2    CE1       0.020
+ PUY      plan-2    CE2       0.020
+ PUY      plan-2    CZ        0.020
+ PUY      plan-2    HD1       0.020
+ PUY      plan-2    HD2       0.020
+ PUY      plan-2    HE1       0.020
+ PUY      plan-2    HE2       0.020
+ PUY      plan-2    OM        0.020
+ PUY      plan-3    C         0.020
+ PUY      plan-3    CA        0.020
+ PUY      plan-3    O         0.020
+ PUY      plan-3    "N3'"     0.020
+ PUY      plan-3    H3        0.020
+ PUY      plan-4    N9        0.020
+ PUY      plan-4    "C1'"     0.020
+ PUY      plan-4    C4        0.020
+ PUY      plan-4    C8        0.020
+ PUY      plan-4    N7        0.020
+ PUY      plan-4    N3        0.020
+ PUY      plan-4    C5        0.020
+ PUY      plan-4    C2        0.020
+ PUY      plan-4    N1        0.020
+ PUY      plan-4    C6        0.020
+ PUY      plan-4    H2        0.020
+ PUY      plan-4    N6        0.020
+ PUY      plan-4    H8        0.020
+ PUY      plan-5    "N3'"     0.020
+ PUY      plan-5    C         0.020
+ PUY      plan-5    "C3'"     0.020
+ PUY      plan-5    H3        0.020
+# ------------------------------------------------------

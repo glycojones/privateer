@@ -1,0 +1,171 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PEA     PEA      2-PHENYLETHYLAMINE     NON-POLYMER     21     9     .     
+#
+data_comp_PEA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PEA     "C1'"   C       CR6     0       -0.473      -0.147      -0.494      
+PEA     "C6'"   C       CR16    0       -1.132      -1.255      0.038       
+PEA     "C5'"   C       CR16    0       -2.492      -1.203      0.333       
+PEA     "C4'"   C       CR16    0       -3.210      -0.043      0.099       
+PEA     "C3'"   C       CR16    0       -2.570      1.065       -0.429      
+PEA     "C2'"   C       CR16    0       -1.210      1.014       -0.724      
+PEA     C2      C       CH2     0       1.002       -0.204      -0.813      
+PEA     C1      C       CH2     0       1.858       0.237       0.359       
+PEA     N       N       NT3     1       3.317       0.212       0.046       
+PEA     "H6'"   H       H       0       -0.648      -2.050      0.201       
+PEA     "H5'"   H       H       0       -2.925      -1.961      0.692       
+PEA     "H4'"   H       H       0       -4.132      -0.008      0.298       
+PEA     "H3'"   H       H       0       -3.056      1.858       -0.590      
+PEA     "H2'"   H       H       0       -0.780      1.773       -1.084      
+PEA     H21     H       H       0       1.189       0.374       -1.583      
+PEA     H22     H       H       0       1.245       -1.122      -1.061      
+PEA     H11     H       H       0       1.685       -0.354      1.125       
+PEA     H12     H       H       0       1.602       1.150       0.620       
+PEA     HN1     H       H       0       3.684       1.025       0.211       
+PEA     HN2     H       H       0       3.466       0.001       -0.825      
+PEA     HN3     H       H       0       3.736       -0.403      0.567       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PEA       "C1'"     "C6'"     DOUBLE    y         1.385     0.011     1.385     0.011     
+PEA       "C1'"     "C2'"     SINGLE    y         1.385     0.011     1.385     0.011     
+PEA       "C1'"     C2        SINGLE    n         1.511     0.010     1.511     0.010     
+PEA       "C6'"     "C5'"     SINGLE    y         1.386     0.010     1.386     0.010     
+PEA       "C5'"     "C4'"     DOUBLE    y         1.374     0.013     1.374     0.013     
+PEA       "C4'"     "C3'"     SINGLE    y         1.376     0.012     1.376     0.012     
+PEA       "C3'"     "C2'"     DOUBLE    y         1.386     0.010     1.386     0.010     
+PEA       C2        C1        SINGLE    n         1.511     0.020     1.511     0.020     
+PEA       C1        N         SINGLE    n         1.490     0.010     1.490     0.010     
+PEA       "C6'"     "H6'"     SINGLE    n         1.082     0.013     0.944     0.017     
+PEA       "C5'"     "H5'"     SINGLE    n         1.082     0.013     0.944     0.018     
+PEA       "C4'"     "H4'"     SINGLE    n         1.082     0.013     0.944     0.016     
+PEA       "C3'"     "H3'"     SINGLE    n         1.082     0.013     0.944     0.018     
+PEA       "C2'"     "H2'"     SINGLE    n         1.082     0.013     0.944     0.017     
+PEA       C2        H21       SINGLE    n         1.089     0.010     0.981     0.016     
+PEA       C2        H22       SINGLE    n         1.089     0.010     0.981     0.016     
+PEA       C1        H11       SINGLE    n         1.089     0.010     0.983     0.011     
+PEA       C1        H12       SINGLE    n         1.089     0.010     0.983     0.011     
+PEA       N         HN1       SINGLE    n         1.036     0.016     0.907     0.020     
+PEA       N         HN2       SINGLE    n         1.036     0.016     0.907     0.020     
+PEA       N         HN3       SINGLE    n         1.036     0.016     0.907     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PEA       "C6'"       "C1'"       "C2'"     118.060    1.50
+PEA       "C6'"       "C1'"          C2     120.970    1.50
+PEA       "C2'"       "C1'"          C2     120.970    1.50
+PEA       "C1'"       "C6'"       "C5'"     120.624    1.50
+PEA       "C1'"       "C6'"       "H6'"     119.591    1.50
+PEA       "C5'"       "C6'"       "H6'"     119.786    1.50
+PEA       "C6'"       "C5'"       "C4'"     120.325    1.50
+PEA       "C6'"       "C5'"       "H5'"     119.792    1.50
+PEA       "C4'"       "C5'"       "H5'"     119.883    1.50
+PEA       "C5'"       "C4'"       "C3'"     120.043    1.50
+PEA       "C5'"       "C4'"       "H4'"     119.979    1.50
+PEA       "C3'"       "C4'"       "H4'"     119.979    1.50
+PEA       "C4'"       "C3'"       "C2'"     120.325    1.50
+PEA       "C4'"       "C3'"       "H3'"     119.883    1.50
+PEA       "C2'"       "C3'"       "H3'"     119.792    1.50
+PEA       "C1'"       "C2'"       "C3'"     120.624    1.50
+PEA       "C1'"       "C2'"       "H2'"     119.591    1.50
+PEA       "C3'"       "C2'"       "H2'"     119.786    1.50
+PEA       "C1'"          C2          C1     112.161    1.87
+PEA       "C1'"          C2         H21     109.239    1.50
+PEA       "C1'"          C2         H22     109.239    1.50
+PEA          C1          C2         H21     109.150    1.50
+PEA          C1          C2         H22     109.150    1.50
+PEA         H21          C2         H22     107.823    1.50
+PEA          C2          C1           N     111.584    1.50
+PEA          C2          C1         H11     109.355    1.50
+PEA          C2          C1         H12     109.355    1.50
+PEA           N          C1         H11     109.232    1.50
+PEA           N          C1         H12     109.232    1.50
+PEA         H11          C1         H12     108.017    1.50
+PEA          C1           N         HN1     110.239    1.87
+PEA          C1           N         HN2     110.239    1.87
+PEA          C1           N         HN3     110.239    1.87
+PEA         HN1           N         HN2     109.021    2.83
+PEA         HN1           N         HN3     109.021    2.83
+PEA         HN2           N         HN3     109.021    2.83
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PEA       const_sp2_sp2_3          C2       "C1'"       "C6'"       "C5'"     180.000   10.00     2
+PEA              const_23          C2       "C1'"       "C2'"       "C3'"     180.000   10.00     2
+PEA             sp2_sp3_2       "C6'"       "C1'"          C2          C1     -90.000   10.00     6
+PEA       const_sp2_sp2_5       "C4'"       "C5'"       "C6'"       "C1'"       0.000   10.00     2
+PEA       const_sp2_sp2_9       "C3'"       "C4'"       "C5'"       "C6'"       0.000   10.00     2
+PEA              const_13       "C2'"       "C3'"       "C4'"       "C5'"       0.000   10.00     2
+PEA              const_17       "C1'"       "C2'"       "C3'"       "C4'"       0.000   10.00     2
+PEA             sp3_sp3_1           N          C1          C2       "C1'"     180.000   10.00     3
+PEA            sp3_sp3_10          C2          C1           N         HN1     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PEA    plan-1       "C1'"   0.020
+PEA    plan-1          C2   0.020
+PEA    plan-1       "C2'"   0.020
+PEA    plan-1       "C3'"   0.020
+PEA    plan-1       "C4'"   0.020
+PEA    plan-1       "C5'"   0.020
+PEA    plan-1       "C6'"   0.020
+PEA    plan-1       "H2'"   0.020
+PEA    plan-1       "H3'"   0.020
+PEA    plan-1       "H4'"   0.020
+PEA    plan-1       "H5'"   0.020
+PEA    plan-1       "H6'"   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PEA SMILES           ACDLabs              10.04 "c1ccccc1CC[NH3+]"
+PEA SMILES_CANONICAL CACTVS               3.341 "[NH3+]CCc1ccccc1"
+PEA SMILES           CACTVS               3.341 "[NH3+]CCc1ccccc1"
+PEA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)CC[NH3+]"
+PEA SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)CC[NH3+]"
+PEA InChI            InChI                1.03  InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2/p+1
+PEA InChIKey         InChI                1.03  BHHGXPLMPWCGHP-UHFFFAOYSA-O
+PEA ?                acedrg               202         "dictionary generator"                  
+PEA ?                acedrg_database      11          "data source"                           
+PEA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PEA ?                refmac5              5.8.0189    "optimization tool"                     

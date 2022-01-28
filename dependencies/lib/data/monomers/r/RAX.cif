@@ -1,0 +1,329 @@
+global_
+_lib_name         mon_lib
+_lib_version      5.44
+_lib_update       30/05/14
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RAX      RAX '.                                   ' non-polymer        34  18 .
+#
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RAX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RAX           C1     C    CH3       0.000    -32.439  -50.585   38.231
+ RAX           H11    H    H         0.000    -33.393  -50.193   38.470
+ RAX           H12    H    H         0.000    -32.441  -50.941   37.234
+ RAX           H13    H    H         0.000    -32.207  -51.380   38.891
+ RAX           C2     C    CT        0.000    -31.396  -49.493   38.373
+ RAX           RU     RU   RU        0.000    -31.330  -47.550   37.247
+ RAX           C3     C    C         0.000    -30.261  -49.525   37.472
+ RAX           C4     C    C         0.000    -29.287  -48.474   37.520
+ RAX           C9     C    C         0.000    -30.620  -47.339   39.315
+ RAX           C10    C    C         0.000    -31.606  -48.375   39.269
+ RAX           C5     C    CH1       0.000    -29.453  -47.350   38.433
+ RAX           H5     H    H         0.000    -28.824  -46.454   38.332
+ RAX           P1     P    P         0.000    -31.606  -47.811   34.925
+ RAX           C16    C    CH2       0.000    -30.146  -47.479   33.838
+ RAX           H162   H    H         0.000    -29.299  -48.124   34.082
+ RAX           H161   H    H         0.000    -29.831  -46.434   33.884
+ RAX           C20    C    CH2       0.000    -32.976  -46.804   34.199
+ RAX           H202   H    H         0.000    -32.761  -45.735   34.254
+ RAX           H201   H    H         0.000    -33.929  -47.008   34.691
+ RAX           C18    C    CH2       0.000    -32.109  -49.546   34.495
+ RAX           H181   H    H         0.000    -33.041  -49.820   34.993
+ RAX           H182   H    H         0.000    -31.329  -50.260   34.767
+ RAX           N3     N    NT        0.000    -32.307  -49.563   33.026
+ RAX           C17    C    CH2       0.000    -31.036  -49.217   32.324
+ RAX           H172   H    H         0.000    -31.179  -49.452   31.268
+ RAX           H171   H    H         0.000    -30.256  -49.861   32.737
+ RAX           C21    C    CH2       0.000    -33.423  -48.659   32.645
+ RAX           H211   H    H         0.000    -34.273  -48.877   33.295
+ RAX           H212   H    H         0.000    -33.694  -48.872   31.609
+ RAX           N2     N    NT        0.000    -33.051  -47.223   32.777
+ RAX           C19    C    CH2       0.000    -31.769  -46.914   32.079
+ RAX           H192   H    H         0.000    -31.523  -45.875   32.310
+ RAX           H191   H    H         0.000    -31.958  -47.012   31.008
+ RAX           N1     N    NT        0.000    -30.632  -47.793   32.467
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RAX      C1     n/a    C2     START
+ RAX      H11    C1     .      .
+ RAX      H12    C1     .      .
+ RAX      H13    C1     .      .
+ RAX      C2     C1     RU     .
+ RAX      RU     C2     P1     .
+ RAX      C3     RU     .      .
+ RAX      C4     RU     .      .
+ RAX      C9     RU     .      .
+ RAX      C10    RU     .      .
+ RAX      C5     RU     H5     .
+ RAX      H5     C5     .      .
+ RAX      P1     RU     C18    .
+ RAX      C16    P1     H161   .
+ RAX      H162   C16    .      .
+ RAX      H161   C16    .      .
+ RAX      C20    P1     H201   .
+ RAX      H202   C20    .      .
+ RAX      H201   C20    .      .
+ RAX      C18    P1     N3     .
+ RAX      H181   C18    .      .
+ RAX      H182   C18    .      .
+ RAX      N3     C18    C21    .
+ RAX      C17    N3     H171   .
+ RAX      H172   C17    .      .
+ RAX      H171   C17    .      .
+ RAX      C21    N3     N2     .
+ RAX      H211   C21    .      .
+ RAX      H212   C21    .      .
+ RAX      N2     C21    C19    .
+ RAX      C19    N2     N1     .
+ RAX      H192   C19    .      .
+ RAX      H191   C19    .      .
+ RAX      N1     C19    .      END
+ RAX      C2     C3     .    ADD
+ RAX      C2     C10    .    ADD
+ RAX      C3     C4     .    ADD
+ RAX      C4     C5     .    ADD
+ RAX      C5     C9     .    ADD
+ RAX      N1     C16    .    ADD
+ RAX      N1     C17    .    ADD
+ RAX      C9     C10    .    ADD
+ RAX      N2     C20    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RAX       C2        C1        single    1.524     0.020     1.524     0.020     
+RAX       C2        C3        single    1.507     0.020     1.507     0.020     
+RAX       C2        C10       single    1.507     0.020     1.507     0.020     
+RAX       RU        C2        single    2.247     0.020     2.247     0.020     
+RAX       C3        C4        aromatic  1.330     0.020     1.330     0.020     
+RAX       C3        RU        metal     2.257     0.020     2.257     0.020     
+RAX       C4        C5        single    1.500     0.020     1.500     0.020     
+RAX       C4        RU        metal     2.259     0.020     2.259     0.020     
+RAX       C5        C9        single    1.500     0.020     1.500     0.020     
+RAX       C5        RU        metal     2.229     0.020     2.229     0.020     
+RAX       N1        C16       single    1.469     0.020     1.469     0.020     
+RAX       N1        C17       single    1.469     0.020     1.469     0.020     
+RAX       N1        C19       single    1.469     0.020     1.469     0.020     
+RAX       C9        C10       aromatic  1.330     0.020     1.330     0.020     
+RAX       C9        RU        metal     2.197     0.020     2.197     0.020     
+RAX       N2        C20       single    1.469     0.020     1.469     0.020     
+RAX       N2        C21       single    1.469     0.020     1.469     0.020     
+RAX       C19       N2        single    1.469     0.020     1.469     0.020     
+RAX       C10       RU        metal     2.201     0.020     2.201     0.020     
+RAX       C16       P1        single    1.812     0.020     1.812     0.020     
+RAX       C17       N3        single    1.469     0.020     1.469     0.020     
+RAX       C18       P1        single    1.812     0.020     1.812     0.020     
+RAX       N3        C18       single    1.469     0.020     1.469     0.020     
+RAX       P1        RU        metal     2.353     0.020     2.353     0.020     
+RAX       C20       P1        single    1.812     0.020     1.812     0.020     
+RAX       C21       N3        single    1.469     0.020     1.469     0.020     
+RAX       H11       C1        single    1.089     0.010     0.989     0.005     
+RAX       H12       C1        single    1.089     0.010     0.989     0.005     
+RAX       H13       C1        single    1.089     0.010     0.989     0.005     
+RAX       H5        C5        single    1.089     0.010     0.989     0.005     
+RAX       H161      C16       single    1.089     0.010     0.989     0.005     
+RAX       H162      C16       single    1.089     0.010     0.989     0.005     
+RAX       H171      C17       single    1.089     0.010     0.989     0.005     
+RAX       H172      C17       single    1.089     0.010     0.989     0.005     
+RAX       H181      C18       single    1.089     0.010     0.989     0.005     
+RAX       H182      C18       single    1.089     0.010     0.989     0.005     
+RAX       H201      C20       single    1.089     0.010     0.989     0.005     
+RAX       H202      C20       single    1.089     0.010     0.989     0.005     
+RAX       H211      C21       single    1.089     0.010     0.989     0.005     
+RAX       H212      C21       single    1.089     0.010     0.989     0.005     
+RAX       H191      C19       single    1.089     0.010     0.989     0.005     
+RAX       H192      C19       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RAX      H11    C1     H12     109.470    3.000
+ RAX      H11    C1     H13     109.470    3.000
+ RAX      H12    C1     H13     109.470    3.000
+ RAX      H11    C1     C2      109.470    3.000
+ RAX      H12    C1     C2      109.470    3.000
+ RAX      H13    C1     C2      109.470    3.000
+ RAX      C1     C2     RU      109.500    3.000
+ RAX      C1     C2     C3      109.470    3.000
+ RAX      C1     C2     C10     109.470    3.000
+ RAX      C3     C2     C10     109.500    3.000
+ RAX      RU     C2     C3       70.823    3.000
+ RAX      RU     C2     C10      68.575    3.000
+ RAX      C2     RU     C3       39.099    3.000
+ RAX      C2     RU     C4       67.185    3.000
+ RAX      C2     RU     C9       67.713    3.000
+ RAX      C2     RU     C10      39.594    3.000
+ RAX      C2     RU     C5       80.544    3.000
+ RAX      C2     RU     P1      113.280    3.000
+ RAX      C3     RU     C4       34.258    3.000
+ RAX      C3     RU     C9       80.625    3.000
+ RAX      C4     RU     C9       68.479    3.000
+ RAX      C3     RU     C10      68.891    3.000
+ RAX      C4     RU     C10      81.320    3.000
+ RAX      C9     RU     C10      35.207    3.000
+ RAX      C3     RU     C5       68.078    3.000
+ RAX      C4     RU     C5       39.043    3.000
+ RAX      C9     RU     C5       39.613    3.000
+ RAX      C10    RU     C5       69.545    3.000
+ RAX      C3     RU     P1       93.260    3.000
+ RAX      C4     RU     P1      100.370    3.000
+ RAX      C9     RU     P1      167.865    3.000
+ RAX      C10    RU     P1      148.238    3.000
+ RAX      C5     RU     P1      129.326    3.000
+ RAX      RU     C3     C2       70.079    3.000
+ RAX      RU     C3     C4       72.948    3.000
+ RAX      C2     C3     C4      120.000    3.000
+ RAX      RU     C4     C3       72.795    3.000
+ RAX      RU     C4     C5       69.416    3.000
+ RAX      C3     C4     C5      120.000    3.000
+ RAX      RU     C9     C5       71.370    3.000
+ RAX      RU     C9     C10      72.583    3.000
+ RAX      C5     C9     C10     120.000    3.000
+ RAX      RU     C10    C2       71.830    3.000
+ RAX      RU     C10    C9       72.210    3.000
+ RAX      C2     C10    C9      120.000    3.000
+ RAX      RU     C5     H5      109.500    3.000
+ RAX      RU     C5     C4       71.542    3.000
+ RAX      RU     C5     C9       69.017    3.000
+ RAX      C4     C5     C9      111.000    3.000
+ RAX      H5     C5     C4      108.810    3.000
+ RAX      H5     C5     C9      108.810    3.000
+ RAX      RU     P1     C16     109.500    3.000
+ RAX      RU     P1     C20     109.500    3.000
+ RAX      RU     P1     C18     109.500    3.000
+ RAX      C16    P1     C20     109.500    3.000
+ RAX      C16    P1     C18     109.500    3.000
+ RAX      C20    P1     C18     109.500    3.000
+ RAX      P1     C16    H162    109.500    3.000
+ RAX      P1     C16    H161    109.500    3.000
+ RAX      P1     C16    N1      109.500    3.000
+ RAX      H162   C16    H161    107.900    3.000
+ RAX      H162   C16    N1      109.470    3.000
+ RAX      H161   C16    N1      109.470    3.000
+ RAX      P1     C20    H202    109.500    3.000
+ RAX      P1     C20    H201    109.500    3.000
+ RAX      P1     C20    N2      109.500    3.000
+ RAX      H202   C20    H201    107.900    3.000
+ RAX      H202   C20    N2      109.470    3.000
+ RAX      H201   C20    N2      109.470    3.000
+ RAX      P1     C18    H181    109.500    3.000
+ RAX      P1     C18    H182    109.500    3.000
+ RAX      P1     C18    N3      109.500    3.000
+ RAX      H181   C18    H182    107.900    3.000
+ RAX      H181   C18    N3      109.470    3.000
+ RAX      H182   C18    N3      109.470    3.000
+ RAX      C18    N3     C17     109.470    3.000
+ RAX      C18    N3     C21     109.470    3.000
+ RAX      C17    N3     C21     109.470    3.000
+ RAX      N3     C17    H172    109.470    3.000
+ RAX      N3     C17    H171    109.470    3.000
+ RAX      N3     C17    N1      109.500    3.000
+ RAX      H172   C17    H171    107.900    3.000
+ RAX      H172   C17    N1      109.470    3.000
+ RAX      H171   C17    N1      109.470    3.000
+ RAX      N3     C21    H211    109.470    3.000
+ RAX      N3     C21    H212    109.470    3.000
+ RAX      N3     C21    N2      109.500    3.000
+ RAX      H211   C21    H212    107.900    3.000
+ RAX      H211   C21    N2      109.470    3.000
+ RAX      H212   C21    N2      109.470    3.000
+ RAX      C21    N2     C19     109.470    3.000
+ RAX      C21    N2     C20     109.470    3.000
+ RAX      C19    N2     C20     109.470    3.000
+ RAX      N2     C19    H192    109.470    3.000
+ RAX      N2     C19    H191    109.470    3.000
+ RAX      N2     C19    N1      109.500    3.000
+ RAX      H192   C19    H191    107.900    3.000
+ RAX      H192   C19    N1      109.470    3.000
+ RAX      H191   C19    N1      109.470    3.000
+ RAX      C19    N1     C16     109.470    3.000
+ RAX      C19    N1     C17     109.470    3.000
+ RAX      C16    N1     C17     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RAX      var_1            H13    C1     C2     RU               180.000           20.000   3
+ RAX      var_2            C1     C2     C3     RU               122.330           20.000   3
+ RAX      var_3            C1     C2     C10    RU              -121.084           20.000   3
+ RAX      var_4            C1     C2     RU     P1               -48.534           20.000   3
+ RAX      CONST_1          C2     RU     C4     C3                29.464            0.000   0
+ RAX      var_5            C2     RU     C9     C5               103.234           20.000   3
+ RAX      var_6            C2     RU     C5     C4                64.784           20.000   3
+ RAX      var_7            C2     RU     P1     C18                9.519           20.000   3
+ RAX      var_8            RU     P1     C16    N1               177.426           20.000   3
+ RAX      var_9            RU     P1     C20    N2              -174.593           20.000   3
+ RAX      var_10           RU     P1     C18    N3               177.558           20.000   3
+ RAX      var_11           P1     C18    N3     C21              -63.534           20.000   3
+ RAX      var_12           C18    N3     C17    N1               -70.519           20.000   3
+ RAX      var_13           C18    N3     C21    N2                72.380           20.000   3
+ RAX      var_14           N3     C21    N2     C19               51.111           20.000   3
+ RAX      var_15           C21    N2     C20    P1                63.427           20.000   3
+ RAX      var_16           C21    N2     C19    N1               -52.974           20.000   3
+ RAX      var_17           N2     C19    N1     C16              -72.360           20.000   3
+ RAX      var_18           C19    N1     C16    P1                61.304           20.000   3
+ RAX      var_19           C19    N1     C17    N3               -52.271           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RAX      chir_03          N1     C16    C17    C19       negativ
+ RAX      chir_04          N2     C20    C21    C19       positiv
+ RAX      chir_05          N3     C17    C18    C21       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RAX      plan-1            C3        0.020
+ RAX      plan-1            C2        0.020
+ RAX      plan-1            C4        0.020
+ RAX      plan-1            C5        0.020
+ RAX      plan-1            C9        0.020 
+ RAX      plan-1            C10       0.020
+ RAX      plan-1            C1        0.020

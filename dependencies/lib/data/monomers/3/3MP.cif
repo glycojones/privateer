@@ -1,0 +1,140 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3MP     3MP      3-METHYLPYRIDINE     NON-POLYMER     14     7     .     
+#
+data_comp_3MP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3MP     CB      C       CH3     0       -0.217      0.394       1.109       
+3MP     CG      C       CR6     0       0.112       0.732       2.536       
+3MP     CD1     C       CR16    0       -0.760      1.471       3.339       
+3MP     CD2     C       CR16    0       1.311       0.321       3.125       
+3MP     CE1     C       CR16    0       -0.426      1.769       4.661       
+3MP     CZ      C       CR16    0       0.791       1.312       5.150       
+3MP     NE2     N       NRD6    0       1.662       0.595       4.403       
+3MP     HB1     H       H       0       -1.040      -0.120      1.079       
+3MP     HB2     H       H       0       0.502       -0.130      0.718       
+3MP     HB3     H       H       0       -0.330      1.212       0.599       
+3MP     HD1     H       H       0       -1.581      1.769       2.984       
+3MP     HD2     H       H       0       1.912       -0.177      2.602       
+3MP     HE1     H       H       0       -1.010      2.266       5.207       
+3MP     HZ      H       H       0       1.024       1.509       6.042       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3MP       CB        CG        SINGLE    n         1.502     0.010     1.502     0.010     
+3MP       CG        CD1       DOUBLE    y         1.389     0.010     1.389     0.010     
+3MP       CG        CD2       SINGLE    y         1.389     0.010     1.389     0.010     
+3MP       CD1       CE1       SINGLE    y         1.375     0.018     1.375     0.018     
+3MP       CD2       NE2       DOUBLE    y         1.342     0.012     1.342     0.012     
+3MP       CE1       CZ        DOUBLE    y         1.368     0.020     1.368     0.020     
+3MP       CZ        NE2       SINGLE    y         1.338     0.016     1.338     0.016     
+3MP       CB        HB1       SINGLE    n         1.089     0.010     0.971     0.013     
+3MP       CB        HB2       SINGLE    n         1.089     0.010     0.971     0.013     
+3MP       CB        HB3       SINGLE    n         1.089     0.010     0.971     0.013     
+3MP       CD1       HD1       SINGLE    n         1.082     0.013     0.943     0.017     
+3MP       CD2       HD2       SINGLE    n         1.082     0.013     0.940     0.020     
+3MP       CE1       HE1       SINGLE    n         1.082     0.013     0.942     0.012     
+3MP       CZ        HZ        SINGLE    n         1.082     0.013     0.942     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3MP          CG          CB         HB1     109.620    1.50
+3MP          CG          CB         HB2     109.620    1.50
+3MP          CG          CB         HB3     109.620    1.50
+3MP         HB1          CB         HB2     109.348    1.50
+3MP         HB1          CB         HB3     109.348    1.50
+3MP         HB2          CB         HB3     109.348    1.50
+3MP          CB          CG         CD1     122.373    1.50
+3MP          CB          CG         CD2     121.068    1.50
+3MP         CD1          CG         CD2     116.559    1.50
+3MP          CG         CD1         CE1     120.183    1.50
+3MP          CG         CD1         HD1     119.778    1.50
+3MP         CE1         CD1         HD1     120.040    1.50
+3MP          CG         CD2         NE2     124.000    1.50
+3MP          CG         CD2         HD2     117.975    1.50
+3MP         NE2         CD2         HD2     118.025    1.50
+3MP         CD1         CE1          CZ     118.666    1.50
+3MP         CD1         CE1         HE1     120.673    1.50
+3MP          CZ         CE1         HE1     120.661    1.50
+3MP         CE1          CZ         NE2     123.426    1.50
+3MP         CE1          CZ          HZ     118.514    1.50
+3MP         NE2          CZ          HZ     118.060    1.50
+3MP         CD2         NE2          CZ     117.166    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3MP             sp2_sp3_1         CD1          CG          CB         HB1     150.000   10.00     6
+3MP       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+3MP              const_18         NE2         CD2          CG          CB     180.000   10.00     2
+3MP       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+3MP              const_15          CG         CD2         NE2          CZ       0.000   10.00     2
+3MP       const_sp2_sp2_9         CD1         CE1          CZ         NE2       0.000   10.00     2
+3MP              const_13         CE1          CZ         NE2         CD2       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3MP    plan-1          CB   0.020
+3MP    plan-1         CD1   0.020
+3MP    plan-1         CD2   0.020
+3MP    plan-1         CE1   0.020
+3MP    plan-1          CG   0.020
+3MP    plan-1          CZ   0.020
+3MP    plan-1         HD1   0.020
+3MP    plan-1         HD2   0.020
+3MP    plan-1         HE1   0.020
+3MP    plan-1          HZ   0.020
+3MP    plan-1         NE2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3MP SMILES           ACDLabs              10.04 "n1cccc(c1)C"
+3MP SMILES_CANONICAL CACTVS               3.341 Cc1cccnc1
+3MP SMILES           CACTVS               3.341 Cc1cccnc1
+3MP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 Cc1cccnc1
+3MP SMILES           "OpenEye OEToolkits" 1.5.0 Cc1cccnc1
+3MP InChI            InChI                1.03  InChI=1S/C6H7N/c1-6-3-2-4-7-5-6/h2-5H,1H3
+3MP InChIKey         InChI                1.03  ITQTTZVARXURQS-UHFFFAOYSA-N
+3MP ?                acedrg               202         "dictionary generator"                  
+3MP ?                acedrg_database      11          "data source"                           
+3MP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3MP ?                refmac5              5.8.0189    "optimization tool"                     

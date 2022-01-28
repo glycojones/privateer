@@ -1,0 +1,269 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PSU      PSU 'PSEUDOURIDINE-5'-MONOPHOSPHATE      ' RNA                32  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PSU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PSU           OP3    O    OP       -0.666      0.000    0.000    0.000
+ PSU           P      P    P         0.000     -1.224    0.219   -0.862
+ PSU           OP1    O    OP       -0.666     -1.686   -1.105   -1.430
+ PSU           OP2    O    OP       -0.666     -0.881    1.162   -1.994
+ PSU           "O5'"  O    O2        0.000     -2.402    0.859    0.032
+ PSU           "C5'"  C    CH2       0.000     -2.679   -0.072    1.078
+ PSU           "H5'"  H    H         0.000     -1.778   -0.227    1.675
+ PSU           "H5''" H    H         0.000     -2.993   -1.024    0.643
+ PSU           "C4'"  C    CH1       0.000     -3.795    0.477    1.968
+ PSU           "H4'"  H    H         0.000     -3.486    1.429    2.422
+ PSU           "O4'"  O    O2        0.000     -5.008    0.657    1.201
+ PSU           "C1'"  C    CH1       0.000     -6.074    0.689    2.174
+ PSU           "H1'"  H    H         0.000     -6.118    1.673    2.661
+ PSU           C5     C    CR6       0.000     -7.393    0.368    1.520
+ PSU           C4     C    CR6       0.000     -7.556   -0.829    0.785
+ PSU           O4     O    O         0.000     -6.631   -1.615    0.676
+ PSU           N3     N    NR16      0.000     -8.748   -1.098    0.212
+ PSU           HN3    H    H         0.000     -8.879   -1.979   -0.324
+ PSU           C6     C    CR16      0.000     -8.434    1.221    1.626
+ PSU           H6     H    H         0.000     -8.327    2.143    2.183
+ PSU           N1     N    NR16      0.000     -9.625    0.914    1.026
+ PSU           HN1    H    H         0.000    -10.426    1.572    1.107
+ PSU           C2     C    CR6       0.000     -9.768   -0.229    0.333
+ PSU           O2     O    O         0.000    -10.835   -0.482   -0.192
+ PSU           "C3'"  C    CH1       0.000     -4.171   -0.543    3.064
+ PSU           "H3'"  H    H         0.000     -3.905   -1.562    2.749
+ PSU           "C2'"  C    CH1       0.000     -5.703   -0.402    3.202
+ PSU           "H2'"  H    H         0.000     -6.201   -1.350    2.953
+ PSU           "O2'"  O    OH1       0.000     -6.051    0.011    4.524
+ PSU           "HO2'" H    H         0.000     -5.757   -0.657    5.158
+ PSU           "O3'"  O    OH1       0.000     -3.525   -0.216    4.295
+ PSU           "HO3'" H    H         0.000     -3.821   -0.867    4.947
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PSU      OP3    n/a    P      START
+ PSU      P      OP3    "O5'"  .
+ PSU      OP1    P      .      .
+ PSU      OP2    P      .      .
+ PSU      "O5'"  P      "C5'"  .
+ PSU      "C5'"  "O5'"  "C4'"  .
+ PSU      "H5'"  "C5'"  .      .
+ PSU      "H5''" "C5'"  .      .
+ PSU      "C4'"  "C5'"  "C3'"  .
+ PSU      "H4'"  "C4'"  .      .
+ PSU      "O4'"  "C4'"  "C1'"  .
+ PSU      "C1'"  "O4'"  C5     .
+ PSU      "H1'"  "C1'"  .      .
+ PSU      C5     "C1'"  C6     .
+ PSU      C4     C5     N3     .
+ PSU      O4     C4     .      .
+ PSU      N3     C4     HN3    .
+ PSU      HN3    N3     .      .
+ PSU      C6     C5     N1     .
+ PSU      H6     C6     .      .
+ PSU      N1     C6     C2     .
+ PSU      HN1    N1     .      .
+ PSU      C2     N1     O2     .
+ PSU      O2     C2     .      .
+ PSU      "C3'"  "C4'"  "O3'"  .
+ PSU      "H3'"  "C3'"  .      .
+ PSU      "C2'"  "C3'"  "O2'"  .
+ PSU      "H2'"  "C2'"  .      .
+ PSU      "O2'"  "C2'"  "HO2'" .
+ PSU      "HO2'" "O2'"  .      .
+ PSU      "O3'"  "C3'"  .      END
+ PSU      "HO3'" "O3'"  .      .
+ PSU      C2     N3     .    ADD
+ PSU      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PSU       C2        N1        single    1.337     0.020     1.337     0.020     
+PSU       N1        C6        single    1.337     0.020     1.337     0.020     
+PSU       HN1       N1        single    1.016     0.010     0.899     0.007     
+PSU       C2        N3        single    1.337     0.020     1.337     0.020     
+PSU       O2        C2        double    1.250     0.020     1.250     0.020     
+PSU       N3        C4        single    1.337     0.020     1.337     0.020     
+PSU       HN3       N3        single    1.016     0.010     0.899     0.007     
+PSU       C4        C5        single    1.487     0.020     1.487     0.020     
+PSU       O4        C4        double    1.250     0.020     1.250     0.020     
+PSU       C6        C5        double    1.390     0.020     1.390     0.020     
+PSU       C5        "C1'"     single    1.480     0.020     1.480     0.020     
+PSU       H6        C6        single    1.082     0.013     0.975     0.010     
+PSU       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+PSU       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+PSU       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+PSU       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+PSU       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+PSU       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+PSU       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+PSU       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+PSU       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+PSU       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+PSU       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+PSU       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+PSU       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+PSU       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+PSU       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+PSU       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+PSU       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+PSU       "O5'"     P         single    1.610     0.020     1.610     0.020     
+PSU       OP1       P         deloc     1.510     0.020     1.510     0.020     
+PSU       OP2       P         deloc     1.510     0.020     1.510     0.020     
+PSU       P         OP3       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PSU      OP3    P      OP1     119.900    3.000
+ PSU      OP3    P      OP2     119.900    3.000
+ PSU      OP3    P      "O5'"   108.200    3.000
+ PSU      OP1    P      OP2     119.900    3.000
+ PSU      OP1    P      "O5'"   108.200    3.000
+ PSU      OP2    P      "O5'"   108.200    3.000
+ PSU      P      "O5'"  "C5'"   120.500    3.000
+ PSU      "O5'"  "C5'"  "H5'"   109.470    3.000
+ PSU      "O5'"  "C5'"  "H5''"  109.470    3.000
+ PSU      "O5'"  "C5'"  "C4'"   109.470    3.000
+ PSU      "H5'"  "C5'"  "H5''"  107.900    3.000
+ PSU      "H5'"  "C5'"  "C4'"   109.470    3.000
+ PSU      "H5''" "C5'"  "C4'"   109.470    3.000
+ PSU      "C5'"  "C4'"  "H4'"   108.340    3.000
+ PSU      "C5'"  "C4'"  "O4'"   109.470    3.000
+ PSU      "C5'"  "C4'"  "C3'"   111.000    3.000
+ PSU      "H4'"  "C4'"  "O4'"   109.470    3.000
+ PSU      "H4'"  "C4'"  "C3'"   108.340    3.000
+ PSU      "O4'"  "C4'"  "C3'"   109.470    3.000
+ PSU      "C4'"  "O4'"  "C1'"   111.800    3.000
+ PSU      "O4'"  "C1'"  "H1'"   109.470    3.000
+ PSU      "O4'"  "C1'"  C5      109.470    3.000
+ PSU      "O4'"  "C1'"  "C2'"   109.470    3.000
+ PSU      "H1'"  "C1'"  C5      109.470    3.000
+ PSU      "H1'"  "C1'"  "C2'"   108.340    3.000
+ PSU      C5     "C1'"  "C2'"   109.470    3.000
+ PSU      "C1'"  C5     C4      120.000    3.000
+ PSU      "C1'"  C5     C6      120.000    3.000
+ PSU      C4     C5     C6      120.000    3.000
+ PSU      C5     C4     O4      120.000    3.000
+ PSU      C5     C4     N3      120.000    3.000
+ PSU      O4     C4     N3      120.000    3.000
+ PSU      C4     N3     HN3     120.000    3.000
+ PSU      C4     N3     C2      120.000    3.000
+ PSU      HN3    N3     C2      120.000    3.000
+ PSU      C5     C6     H6      120.000    3.000
+ PSU      C5     C6     N1      120.000    3.000
+ PSU      H6     C6     N1      120.000    3.000
+ PSU      C6     N1     HN1     120.000    3.000
+ PSU      C6     N1     C2      120.000    3.000
+ PSU      HN1    N1     C2      120.000    3.000
+ PSU      N1     C2     O2      120.000    3.000
+ PSU      N1     C2     N3      120.000    3.000
+ PSU      O2     C2     N3      120.000    3.000
+ PSU      "C4'"  "C3'"  "H3'"   108.340    3.000
+ PSU      "C4'"  "C3'"  "C2'"   111.000    3.000
+ PSU      "C4'"  "C3'"  "O3'"   109.470    3.000
+ PSU      "H3'"  "C3'"  "C2'"   108.340    3.000
+ PSU      "H3'"  "C3'"  "O3'"   109.470    3.000
+ PSU      "C2'"  "C3'"  "O3'"   109.470    3.000
+ PSU      "C3'"  "C2'"  "H2'"   108.340    3.000
+ PSU      "C3'"  "C2'"  "O2'"   109.470    3.000
+ PSU      "C3'"  "C2'"  "C1'"   111.000    3.000
+ PSU      "H2'"  "C2'"  "O2'"   109.470    3.000
+ PSU      "H2'"  "C2'"  "C1'"   108.340    3.000
+ PSU      "O2'"  "C2'"  "C1'"   109.470    3.000
+ PSU      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ PSU      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PSU      var_1    OP3    P      "O5'"  "C5'"    -60.027   20.000   1
+ PSU      var_2    P      "O5'"  "C5'"  "C4'"   -179.975   20.000   1
+ PSU      var_3    "O5'"  "C5'"  "C4'"  "C3'"    176.904   20.000   3
+ PSU      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ PSU      var_5    "C4'"  "O4'"  "C1'"  C5      -150.000   20.000   1
+ PSU      var_6    "O4'"  "C1'"  "C2'"  "C3'"     30.000   20.000   3
+ PSU      var_7    "O4'"  "C1'"  C5     C6      -124.656   20.000   1
+ PSU      CONST_1  "C1'"  C5     C4     N3       180.000    0.000   0
+ PSU      CONST_2  C5     C4     N3     C2         0.000    0.000   0
+ PSU      CONST_3  "C1'"  C5     C6     N1       180.000    0.000   0
+ PSU      CONST_4  C5     C6     N1     C2         0.000    0.000   0
+ PSU      CONST_5  C6     N1     C2     O2       180.000    0.000   0
+ PSU      CONST_6  N1     C2     N3     C4         0.000    0.000   0
+ PSU      var_8    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ PSU      var_9    "C4'"  "C3'"  "C2'"  "O2'"   -120.000   20.000   3
+ PSU      var_10   "C3'"  "C2'"  "O2'"  "HO2'"   -61.439   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PSU      chir_01  "C1'"  C5     "C2'"  "O4'"     negativ
+ PSU      chir_02  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ PSU      chir_03  "C3'"  "C2'"  "C4'"  "O3'"     negativ
+ PSU      chir_04  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PSU      plan-1    C2        0.020
+ PSU      plan-1    N3        0.020
+ PSU      plan-1    O2        0.020
+ PSU      plan-1    N1        0.020
+ PSU      plan-1    C4        0.020
+ PSU      plan-1    C5        0.020
+ PSU      plan-1    C6        0.020
+ PSU      plan-1    HN3       0.020
+ PSU      plan-1    O4        0.020
+ PSU      plan-1    "C1'"     0.020
+ PSU      plan-1    H6        0.020
+ PSU      plan-1    HN1       0.020
+# ------------------------------------------------------

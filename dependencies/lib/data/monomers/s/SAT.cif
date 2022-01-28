@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SAT     SAT      "sulfoacetic acid"     NON-POLYMER     11     8     .     
+#
+data_comp_SAT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SAT     O5      O       O       0       -1.072      -1.784      0.218       
+SAT     S1      S       S3      0       -1.155      -0.384      -0.039      
+SAT     O3      O       O       0       -2.094      0.105       -0.993      
+SAT     O4      O       OH1     0       -1.247      0.415       1.285       
+SAT     C2      C       CH2     0       0.464       0.064       -0.708      
+SAT     C1      C       C       0       1.579       -0.087      0.313       
+SAT     O1      O       O       0       1.888       -1.246      0.655       
+SAT     O2      O       OC      -1      2.109       0.958       0.740       
+SAT     HO4     H       H       0       -0.949      1.162       1.185       
+SAT     H21     H       H       0       0.439       0.993       -1.014      
+SAT     H22     H       H       0       0.661       -0.505      -1.479      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SAT       O5        S1        DOUBLE    n         1.425     0.016     1.425     0.016     
+SAT       S1        O3        DOUBLE    n         1.425     0.016     1.425     0.016     
+SAT       S1        O4        SINGLE    n         1.549     0.020     1.549     0.020     
+SAT       S1        C2        SINGLE    n         1.808     0.020     1.808     0.020     
+SAT       C2        C1        SINGLE    n         1.519     0.012     1.519     0.012     
+SAT       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+SAT       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+SAT       O4        HO4       SINGLE    n         0.970     0.012     0.811     0.020     
+SAT       C2        H21       SINGLE    n         1.089     0.010     0.979     0.019     
+SAT       C2        H22       SINGLE    n         1.089     0.010     0.979     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SAT          O5          S1          O3     119.289    2.60
+SAT          O5          S1          O4     110.306    2.80
+SAT          O5          S1          C2     104.582    2.45
+SAT          O3          S1          O4     110.306    2.80
+SAT          O3          S1          C2     104.582    2.45
+SAT          O4          S1          C2     103.568    2.80
+SAT          S1          O4         HO4     110.371    3.00
+SAT          S1          C2          C1     111.664    2.75
+SAT          S1          C2         H21     108.888    1.50
+SAT          S1          C2         H22     108.888    1.50
+SAT          C1          C2         H21     108.627    1.50
+SAT          C1          C2         H22     108.627    1.50
+SAT         H21          C2         H22     107.826    1.50
+SAT          C2          C1          O1     117.313    2.33
+SAT          C2          C1          O2     117.313    2.33
+SAT          O1          C1          O2     125.373    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SAT             sp3_sp3_1         HO4          O4          S1          O5     180.000   10.00     3
+SAT             sp3_sp3_4          C1          C2          S1          O5     180.000   10.00     3
+SAT             sp2_sp3_2          O1          C1          C2          S1     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SAT    plan-1          C1   0.020
+SAT    plan-1          C2   0.020
+SAT    plan-1          O1   0.020
+SAT    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SAT SMILES           ACDLabs              10.04 "O=C(O)CS(=O)(=O)O"
+SAT SMILES_CANONICAL CACTVS               3.341 "OC(=O)C[S](O)(=O)=O"
+SAT SMILES           CACTVS               3.341 "OC(=O)C[S](O)(=O)=O"
+SAT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)S(=O)(=O)O"
+SAT SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)S(=O)(=O)O"
+SAT InChI            InChI                1.03  "InChI=1S/C2H4O5S/c3-2(4)1-8(5,6)7/h1H2,(H,3,4)(H,5,6,7)"
+SAT InChIKey         InChI                1.03  AGGIJOLULBJGTQ-UHFFFAOYSA-N
+SAT ?                acedrg               202         "dictionary generator"                  
+SAT ?                acedrg_database      11          "data source"                           
+SAT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SAT ?                refmac5              5.8.0189    "optimization tool"                     

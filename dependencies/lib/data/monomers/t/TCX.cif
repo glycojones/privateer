@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TCX     TCX      "ethylphosphoramidic acid"     non-polymer     13     7     .     
+#
+data_comp_TCX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TCX     C4      C       CH3     0       -57.774     -37.767     53.492      
+TCX     C3      C       CH2     0       -57.164     -36.516     54.077      
+TCX     N       N       NT1     0       -55.701     -36.524     53.991      
+TCX     P       P       P       0       -54.820     -35.361     54.727      
+TCX     O3      O       OP      -1      -53.348     -35.683     54.650      
+TCX     O2      O       O       0       -55.206     -35.243     56.180      
+TCX     OXT     O       OP      -1      -55.049     -34.026     54.064      
+TCX     H41C    H       H       0       -58.739     -37.734     53.590      
+TCX     H42C    H       H       0       -57.429     -38.545     53.959      
+TCX     H43C    H       H       0       -57.547     -37.829     52.550      
+TCX     H31C    H       H       0       -57.432     -36.437     55.017      
+TCX     H32C    H       H       0       -57.511     -35.734     53.596      
+TCX     HN1     H       H       0       -55.463     -36.710     53.188      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TCX       C4        C3        SINGLE    n         1.508     0.017     1.508     0.017     
+TCX       C3        N         SINGLE    n         1.465     0.012     1.465     0.012     
+TCX       N         P         SINGLE    n         1.634     0.017     1.634     0.017     
+TCX       P         O3        SINGLE    n         1.508     0.020     1.508     0.020     
+TCX       P         O2        DOUBLE    n         1.508     0.020     1.508     0.020     
+TCX       P         OXT       SINGLE    n         1.508     0.020     1.508     0.020     
+TCX       C4        H41C      SINGLE    n         1.089     0.010     0.971     0.015     
+TCX       C4        H42C      SINGLE    n         1.089     0.010     0.971     0.015     
+TCX       C4        H43C      SINGLE    n         1.089     0.010     0.971     0.015     
+TCX       C3        H31C      SINGLE    n         1.089     0.010     0.981     0.015     
+TCX       C3        H32C      SINGLE    n         1.089     0.010     0.981     0.015     
+TCX       N         HN1       SINGLE    n         1.036     0.016     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TCX          C3          C4        H41C     109.553    1.50
+TCX          C3          C4        H42C     109.553    1.50
+TCX          C3          C4        H43C     109.553    1.50
+TCX        H41C          C4        H42C     109.415    1.50
+TCX        H41C          C4        H43C     109.415    1.50
+TCX        H42C          C4        H43C     109.415    1.50
+TCX          C4          C3           N     111.498    1.50
+TCX          C4          C3        H31C     108.945    1.50
+TCX          C4          C3        H32C     108.945    1.50
+TCX           N          C3        H31C     108.990    1.50
+TCX           N          C3        H32C     108.990    1.50
+TCX        H31C          C3        H32C     107.873    1.50
+TCX          C3           N           P     120.863    2.69
+TCX          C3           N         HN1     108.898    3.00
+TCX           P           N         HN1     115.833    3.00
+TCX           N           P          O3     113.406    3.00
+TCX           N           P          O2     113.406    3.00
+TCX           N           P         OXT     113.406    3.00
+TCX          O3           P          O2     111.149    3.00
+TCX          O3           P         OXT     111.149    3.00
+TCX          O2           P         OXT     111.149    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TCX             sp3_sp3_1           N          C3          C4        H41C     180.000   10.00     3
+TCX            sp3_sp3_10          C4          C3           N           P     180.000   10.00     3
+TCX            sp3_sp3_19          C3           N           P          O3      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TCX    chir_1    N    P    C3    HN1    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TCX SMILES           ACDLabs              10.04 "O=P(O)(O)NCC"
+TCX SMILES_CANONICAL CACTVS               3.352 "CCN[P](O)(O)=O"
+TCX SMILES           CACTVS               3.352 "CCN[P](O)(O)=O"
+TCX SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "CCNP(=O)(O)O"
+TCX SMILES           "OpenEye OEToolkits" 1.6.1 "CCNP(=O)(O)O"
+TCX InChI            InChI                1.03  "InChI=1S/C2H8NO3P/c1-2-3-7(4,5)6/h2H2,1H3,(H3,3,4,5,6)"
+TCX InChIKey         InChI                1.03  CHKLMRVHXLBIHM-UHFFFAOYSA-N
+TCX ?                acedrg               202         "dictionary generator"                  
+TCX ?                acedrg_database      11          "data source"                           
+TCX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TCX ?                refmac5              5.8.0189    "optimization tool"                     

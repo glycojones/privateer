@@ -1,0 +1,261 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AEI     AEI     "THREONINE-ASPARTICESTER"  peptide     32     16     .     
+#
+data_comp_AEI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AEI     N       N       NT3     1       28.977      69.999      23.344      
+AEI     CA      C       CH1     0       28.267      70.363      24.606      
+AEI     C       C       C       0       29.198      71.177      25.515      
+AEI     O       O       O       0       28.766      72.267      25.942      
+AEI     OXT     O       OC      -1      30.318      70.687      25.762      
+AEI     CB      C       CH1     0       27.742      69.117      25.337      
+AEI     CG2     C       CH3     0       26.836      69.452      26.505      
+AEI     OG1     O       O2      0       27.009      68.331      24.383      
+AEI     CD      C       CH1     0       27.337      66.960      24.282      
+AEI     OE1     O       OH1     0       27.063      66.263      25.490      
+AEI     CE2     C       CH2     0       26.523      66.317      23.165      
+AEI     CZ      C       CH1     0       26.817      66.874      21.767      
+AEI     NH1     N       NT3     1       25.768      66.429      20.809      
+AEI     CH2     C       C       0       28.188      66.407      21.261      
+AEI     OT1     O       O       0       29.097      67.260      21.209      
+AEI     OT2     O       OC      -1      28.296      65.208      20.937      
+AEI     H       H       H       0       28.894      69.107      23.179      
+AEI     H2      H       H       0       29.864      70.203      23.404      
+AEI     H3      H       H       0       28.617      70.460      22.644      
+AEI     HA      H       H       0       27.498      70.928      24.362      
+AEI     HB      H       H       0       28.524      68.595      25.666      
+AEI     HG21    H       H       0       26.127      68.787      26.571      
+AEI     HG22    H       H       0       26.442      70.333      26.375      
+AEI     HG23    H       H       0       27.357      69.450      27.329      
+AEI     HD      H       H       0       28.305      66.871      24.080      
+AEI     HE1     H       H       0       26.267      66.425      25.736      
+AEI     HE22    H       H       0       25.570      66.443      23.357      
+AEI     HE23    H       H       0       26.700      65.353      23.160      
+AEI     HZ      H       H       0       26.808      67.858      21.799      
+AEI     HH11    H       H       0       25.939      66.764      19.979      
+AEI     HH12    H       H       0       24.951      66.726      21.081      
+AEI     HH13    H       H       0       25.751      65.520      20.764      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AEI      N      n/a    CA     START
+ AEI      H      N      .      .
+ AEI      H2     N      .      .
+ AEI      H3     N      .      .
+ AEI      CA     N      C      .
+ AEI      HA     CA     .      .
+ AEI      CB     CA     OG1    .
+ AEI      HB     CB     .      .
+ AEI      CG2    CB     HG21   .
+ AEI      HG23   CG2    .      .
+ AEI      HG22   CG2    .      .
+ AEI      HG21   CG2    .      .
+ AEI      OG1    CB     CD     .
+ AEI      CD     OG1    CE2    .
+ AEI      HD     CD     .      .
+ AEI      OE1    CD     HE1    .
+ AEI      HE1    OE1    .      .
+ AEI      CE2    CD     CZ     .
+ AEI      HE22   CE2    .      .
+ AEI      HE23   CE2    .      .
+ AEI      CZ     CE2    CH2    .
+ AEI      HZ     CZ     .      .
+ AEI      NH1    CZ     HH11   .
+ AEI      HH13   NH1    .      .
+ AEI      HH12   NH1    .      .
+ AEI      HH11   NH1    .      .
+ AEI      CH2    CZ     OT2    .
+ AEI      OT1    CH2    .      .
+ AEI      OT2    CH2    .      .
+ AEI      C      CA     .      END
+ AEI      O      C      .      .
+ AEI      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AEI       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+AEI       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+AEI       CA        CB        SINGLE    n         1.534     0.010     1.534     0.010     
+AEI       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+AEI       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+AEI       CB        CG2       SINGLE    n         1.511     0.015     1.511     0.015     
+AEI       CB        OG1       SINGLE    n         1.434     0.010     1.434     0.010     
+AEI       OG1       CD        SINGLE    n         1.409     0.016     1.409     0.016     
+AEI       CD        OE1       SINGLE    n         1.421     0.017     1.421     0.017     
+AEI       CD        CE2       SINGLE    n         1.519     0.020     1.519     0.020     
+AEI       CE2       CZ        SINGLE    n         1.532     0.010     1.532     0.010     
+AEI       CZ        NH1       SINGLE    n         1.488     0.011     1.488     0.011     
+AEI       CZ        CH2       SINGLE    n         1.533     0.011     1.533     0.011     
+AEI       CH2       OT1       DOUBLE    n         1.247     0.019     1.247     0.019     
+AEI       CH2       OT2       SINGLE    n         1.247     0.019     1.247     0.019     
+AEI       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+AEI       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+AEI       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+AEI       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+AEI       CB        HB        SINGLE    n         1.089     0.010     0.995     0.020     
+AEI       CG2       HG21      SINGLE    n         1.089     0.010     0.974     0.015     
+AEI       CG2       HG22      SINGLE    n         1.089     0.010     0.974     0.015     
+AEI       CG2       HG23      SINGLE    n         1.089     0.010     0.974     0.015     
+AEI       CD        HD        SINGLE    n         1.089     0.010     0.993     0.020     
+AEI       OE1       HE1       SINGLE    n         0.970     0.012     0.848     0.020     
+AEI       CE2       HE22      SINGLE    n         1.089     0.010     0.980     0.016     
+AEI       CE2       HE23      SINGLE    n         1.089     0.010     0.980     0.016     
+AEI       CZ        HZ        SINGLE    n         1.089     0.010     0.985     0.020     
+AEI       NH1       HH11      SINGLE    n         1.036     0.016     0.911     0.020     
+AEI       NH1       HH12      SINGLE    n         1.036     0.016     0.911     0.020     
+AEI       NH1       HH13      SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AEI          CA           N           H     109.889    1.50
+AEI          CA           N          H2     109.889    1.50
+AEI          CA           N          H3     109.889    1.50
+AEI           H           N          H2     109.028    2.41
+AEI           H           N          H3     109.028    2.41
+AEI          H2           N          H3     109.028    2.41
+AEI           N          CA           C     109.414    1.50
+AEI           N          CA          CB     111.007    1.50
+AEI           N          CA          HA     108.031    1.50
+AEI           C          CA          CB     111.511    2.91
+AEI           C          CA          HA     108.600    1.50
+AEI          CB          CA          HA     108.678    1.50
+AEI          CA           C           O     117.003    1.50
+AEI          CA           C         OXT     117.003    1.50
+AEI           O           C         OXT     125.994    1.50
+AEI          CA          CB         CG2     112.548    1.50
+AEI          CA          CB         OG1     107.605    2.20
+AEI          CA          CB          HB     108.492    1.50
+AEI         CG2          CB         OG1     108.917    2.95
+AEI         CG2          CB          HB     109.478    1.50
+AEI         OG1          CB          HB     108.915    1.50
+AEI          CB         CG2        HG21     109.471    1.50
+AEI          CB         CG2        HG22     109.471    1.50
+AEI          CB         CG2        HG23     109.471    1.50
+AEI        HG21         CG2        HG22     109.425    1.50
+AEI        HG21         CG2        HG23     109.425    1.50
+AEI        HG22         CG2        HG23     109.425    1.50
+AEI          CB         OG1          CD     113.350    3.00
+AEI         OG1          CD         OE1     111.904    1.92
+AEI         OG1          CD         CE2     109.324    2.90
+AEI         OG1          CD          HD     109.306    1.50
+AEI         OE1          CD         CE2     109.482    3.00
+AEI         OE1          CD          HD     108.816    1.50
+AEI         CE2          CD          HD     109.778    2.07
+AEI          CD         OE1         HE1     109.233    2.58
+AEI          CD         CE2          CZ     111.094    2.85
+AEI          CD         CE2        HE22     108.875    1.50
+AEI          CD         CE2        HE23     108.875    1.50
+AEI          CZ         CE2        HE22     108.567    1.50
+AEI          CZ         CE2        HE23     108.567    1.50
+AEI        HE22         CE2        HE23     107.715    1.50
+AEI         CE2          CZ         NH1     110.245    1.51
+AEI         CE2          CZ         CH2     110.728    2.07
+AEI         CE2          CZ          HZ     109.207    1.50
+AEI         NH1          CZ         CH2     109.241    1.50
+AEI         NH1          CZ          HZ     108.487    1.50
+AEI         CH2          CZ          HZ     108.824    1.50
+AEI          CZ         NH1        HH11     110.062    1.93
+AEI          CZ         NH1        HH12     110.062    1.93
+AEI          CZ         NH1        HH13     110.062    1.93
+AEI        HH11         NH1        HH12     109.028    2.41
+AEI        HH11         NH1        HH13     109.028    2.41
+AEI        HH12         NH1        HH13     109.028    2.41
+AEI          CZ         CH2         OT1     117.124    1.50
+AEI          CZ         CH2         OT2     117.124    1.50
+AEI         OT1         CH2         OT2     125.752    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AEI             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+AEI            sp3_sp3_47          CD         CE2          CZ         NH1     -60.000   10.00     3
+AEI            sp3_sp3_55         CE2          CZ         NH1        HH11     180.000   10.00     3
+AEI             sp2_sp3_8         OT1         CH2          CZ         CE2     120.000   10.00     6
+AEI             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+AEI            sp3_sp3_13           N          CA          CB         CG2      60.000   10.00     3
+AEI            sp3_sp3_19          CA          CB         CG2        HG21     180.000   10.00     3
+AEI            sp3_sp3_28          CA          CB         OG1          CD     180.000   10.00     3
+AEI            sp3_sp3_32         OE1          CD         OG1          CB      60.000   10.00     3
+AEI            sp3_sp3_40         OG1          CD         CE2          CZ      60.000   10.00     3
+AEI            sp3_sp3_34         OG1          CD         OE1         HE1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+AEI    chir_1    CA    N    C    CB    both
+AEI    chir_2    CB    OG1    CA    CG2    negative
+AEI    chir_3    CD    OG1    OE1    CE2    both
+AEI    chir_4    CZ    NH1    CH2    CE2    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AEI    plan-1           C   0.020
+AEI    plan-1          CA   0.020
+AEI    plan-1           O   0.020
+AEI    plan-1         OXT   0.020
+AEI    plan-2         CH2   0.020
+AEI    plan-2          CZ   0.020
+AEI    plan-2         OT1   0.020
+AEI    plan-2         OT2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AEI SMILES           ACDLabs              10.04 "O=C(O)C(N)C(OC(O)CC(N)C(=O)O)C"
+AEI SMILES_CANONICAL CACTVS               3.341 "C[C@@H](O[C@@H](O)C[C@H](N)C(O)=O)[C@H](N)C(O)=O"
+AEI SMILES           CACTVS               3.341 "C[CH](O[CH](O)C[CH](N)C(O)=O)[CH](N)C(O)=O"
+AEI SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@H]([C@@H](C(=O)O)N)OC(C[C@@H](C(=O)O)N)O"
+AEI SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C(C(=O)O)N)OC(CC(C(=O)O)N)O"
+AEI InChI            InChI                1.03  "InChI=1S/C8H16N2O6/c1-3(6(10)8(14)15)16-5(11)2-4(9)7(12)13/h3-6,11H,2,9-10H2,1H3,(H,12,13)(H,14,15)/t3-,4+,5-,6+/m1/s1"
+AEI InChIKey         InChI                1.03  VCAYFLVMRCFGDV-MOJAZDJTSA-N
+AEI ?                acedrg               196         "dictionary generator"                  
+AEI ?                acedrg_database      11          "data source"                           
+AEI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AEI ?                refmac5              5.8.0222    "optimization tool"                     

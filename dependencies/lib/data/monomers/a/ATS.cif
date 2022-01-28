@@ -1,0 +1,367 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ATS      ATS '.                                   ' non-polymer        48  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ATS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ATS           OB2    O    O         0.000     32.197   13.040   30.870
+ ATS           PB     P    P         0.000     33.310   12.971   31.957
+ ATS           OB1    O    OH1       0.000     33.091   11.712   32.855
+ ATS           HB1    H    H         0.000     33.026   10.848   32.443
+ ATS           C3B    C    CH2       0.000     34.783   12.836   31.067
+ ATS           H3B1   H    H         0.000     35.528   13.479   31.541
+ ATS           H3B2   H    H         0.000     34.599   13.184   30.048
+ ATS           AS1    AS   AS        0.000     35.429   11.033   31.021
+ ATS           OG1    O    O         0.000     36.392   10.786   32.339
+ ATS           OG3    O    OH1       0.000     36.367   11.059   29.579
+ ATS           HO3    H    H         0.000     35.899   11.066   28.762
+ ATS           OG2    O    OH1       0.000     34.051    9.954   30.996
+ ATS           HO2    H    H         0.000     33.691    9.685   31.827
+ ATS           O13    O    O2        0.000     33.355   14.347   32.804
+ ATS           PA     P    P         0.000     33.992   14.507   34.254
+ ATS           O11    O    OP       -0.500     34.990   13.438   34.503
+ ATS           O12    O    OP       -0.500     32.911   14.405   35.264
+ ATS           "O5'"  O    O2        0.000     34.687   15.934   34.402
+ ATS           "C5'"  C    CH2       0.000     35.593   16.374   33.424
+ ATS           "H5'1" H    H         0.000     35.797   15.545   32.744
+ ATS           "H5'2" H    H         0.000     36.519   16.673   33.920
+ ATS           "C4'"  C    CH1       0.000     35.035   17.548   32.640
+ ATS           "H4'"  H    H         0.000     34.110   17.221   32.144
+ ATS           "C3'"  C    CH1       0.000     35.957   18.139   31.585
+ ATS           "H3'"  H    H         0.000     36.810   17.465   31.426
+ ATS           "O3'"  O    OH1       0.000     35.294   18.352   30.361
+ ATS           "HO3'" H    H         0.000     34.343   18.400   30.520
+ ATS           "C2'"  C    CH1       0.000     36.451   19.450   32.199
+ ATS           "H2'"  H    H         0.000     37.357   19.295   32.802
+ ATS           "O2'"  O    OH1       0.000     36.678   20.354   31.164
+ ATS           "HO2'" H    H         0.000     36.729   21.244   31.531
+ ATS           "C1'"  C    CH1       0.000     35.267   19.870   33.069
+ ATS           "H1'"  H    H         0.000     34.527   20.378   32.436
+ ATS           "O4'"  O    O2        0.000     34.708   18.643   33.532
+ ATS           N9     N    NT        0.000     35.502   20.690   34.276
+ ATS           C8     C    CR15      0.000     36.001   20.140   35.389
+ ATS           H8     H    H         0.000     36.351   19.116   35.432
+ ATS           N7     N    NRD5      0.000     36.030   20.935   36.410
+ ATS           C5     C    CR56      0.000     35.422   22.061   35.964
+ ATS           C4     C    CR56      0.000     35.025   21.912   34.680
+ ATS           C6     C    CR6       0.000     35.148   23.274   36.604
+ ATS           N6     N    NH2       0.000     35.480   23.528   37.862
+ ATS           HN62   H    H         0.000     36.063   22.879   38.360
+ ATS           HN61   H    H         0.000     35.144   24.366   38.302
+ ATS           N1     N    NRD6      0.000     34.516   24.219   35.929
+ ATS           C2     C    CR16      0.000     34.211   23.937   34.680
+ ATS           H2     H    H         0.000     33.717   24.735   34.140
+ ATS           N3     N    NRD6      0.000     34.414   22.827   33.977
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ATS      OB2    n/a    PB     START
+ ATS      PB     OB2    O13    .
+ ATS      OB1    PB     HB1    .
+ ATS      HB1    OB1    .      .
+ ATS      C3B    PB     AS1    .
+ ATS      H3B1   C3B    .      .
+ ATS      H3B2   C3B    .      .
+ ATS      AS1    C3B    OG2    .
+ ATS      OG1    AS1    .      .
+ ATS      OG3    AS1    HO3    .
+ ATS      HO3    OG3    .      .
+ ATS      OG2    AS1    HO2    .
+ ATS      HO2    OG2    .      .
+ ATS      O13    PB     PA     .
+ ATS      PA     O13    "O5'"  .
+ ATS      O11    PA     .      .
+ ATS      O12    PA     .      .
+ ATS      "O5'"  PA     "C5'"  .
+ ATS      "C5'"  "O5'"  "C4'"  .
+ ATS      "H5'1" "C5'"  .      .
+ ATS      "H5'2" "C5'"  .      .
+ ATS      "C4'"  "C5'"  "C3'"  .
+ ATS      "H4'"  "C4'"  .      .
+ ATS      "C3'"  "C4'"  "C2'"  .
+ ATS      "H3'"  "C3'"  .      .
+ ATS      "O3'"  "C3'"  "HO3'" .
+ ATS      "HO3'" "O3'"  .      .
+ ATS      "C2'"  "C3'"  "C1'"  .
+ ATS      "H2'"  "C2'"  .      .
+ ATS      "O2'"  "C2'"  "HO2'" .
+ ATS      "HO2'" "O2'"  .      .
+ ATS      "C1'"  "C2'"  N9     .
+ ATS      "H1'"  "C1'"  .      .
+ ATS      "O4'"  "C1'"  .      .
+ ATS      N9     "C1'"  C8     .
+ ATS      C8     N9     N7     .
+ ATS      H8     C8     .      .
+ ATS      N7     C8     C5     .
+ ATS      C5     N7     C6     .
+ ATS      C4     C5     .      .
+ ATS      C6     C5     N1     .
+ ATS      N6     C6     HN61   .
+ ATS      HN62   N6     .      .
+ ATS      HN61   N6     .      .
+ ATS      N1     C6     C2     .
+ ATS      C2     N1     N3     .
+ ATS      H2     C2     .      .
+ ATS      N3     C2     .      END
+ ATS      "C4'"  "O4'"  .    ADD
+ ATS      N9     C4     .    ADD
+ ATS      C4     N3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ATS       OG2       AS1       single    1.934     0.020     1.934     0.020     
+ATS       OG3       AS1       single    1.934     0.020     1.934     0.020     
+ATS       OG1       AS1       double    1.740     0.020     1.740     0.020     
+ATS       AS1       C3B       single    1.962     0.020     1.962     0.020     
+ATS       HO2       OG2       single    0.970     0.012     0.839     0.014     
+ATS       HO3       OG3       single    0.970     0.012     0.839     0.014     
+ATS       "O5'"     PA        single    1.610     0.020     1.610     0.020     
+ATS       O11       PA        deloc     1.510     0.020     1.510     0.020     
+ATS       PA        O13       single    1.610     0.020     1.610     0.020     
+ATS       O12       PA        deloc     1.510     0.020     1.510     0.020     
+ATS       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+ATS       O13       PB        single    1.610     0.020     1.610     0.020     
+ATS       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+ATS       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+ATS       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+ATS       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+ATS       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+ATS       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+ATS       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+ATS       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+ATS       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+ATS       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+ATS       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+ATS       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+ATS       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+ATS       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+ATS       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+ATS       N9        "C1'"     single    1.469     0.020     1.469     0.020     
+ATS       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+ATS       N9        C4        single    1.405     0.020     1.405     0.020     
+ATS       C8        N9        single    1.455     0.020     1.455     0.020     
+ATS       C4        N3        double    1.355     0.020     1.355     0.020     
+ATS       C4        C5        single    1.490     0.020     1.490     0.020     
+ATS       N3        C2        single    1.337     0.020     1.337     0.020     
+ATS       C2        N1        double    1.337     0.020     1.337     0.020     
+ATS       H2        C2        single    1.082     0.013     0.975     0.010     
+ATS       N1        C6        single    1.350     0.020     1.350     0.020     
+ATS       N6        C6        single    1.355     0.020     1.355     0.020     
+ATS       C6        C5        double    1.490     0.020     1.490     0.020     
+ATS       HN61      N6        single    1.016     0.010     0.899     0.007     
+ATS       HN62      N6        single    1.016     0.010     0.899     0.007     
+ATS       C5        N7        single    1.350     0.020     1.350     0.020     
+ATS       N7        C8        double    1.350     0.020     1.350     0.020     
+ATS       H8        C8        single    1.082     0.013     0.975     0.010     
+ATS       PB        OB2       double    1.480     0.020     1.480     0.020     
+ATS       C3B       PB        single    1.812     0.020     1.812     0.020     
+ATS       OB1       PB        single    1.610     0.020     1.610     0.020     
+ATS       H3B1      C3B       single    1.089     0.010     0.989     0.005     
+ATS       H3B2      C3B       single    1.089     0.010     0.989     0.005     
+ATS       HB1       OB1       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ATS      OB2    PB     OB1     109.500    3.000
+ ATS      OB2    PB     C3B     109.500    3.000
+ ATS      OB2    PB     O13     109.500    3.000
+ ATS      OB1    PB     C3B     109.500    3.000
+ ATS      OB1    PB     O13     109.500    3.000
+ ATS      C3B    PB     O13     109.500    3.000
+ ATS      PB     OB1    HB1     120.000    3.000
+ ATS      PB     C3B    H3B1    109.500    3.000
+ ATS      PB     C3B    H3B2    109.500    3.000
+ ATS      PB     C3B    AS1     109.500    3.000
+ ATS      H3B1   C3B    H3B2    107.900    3.000
+ ATS      H3B1   C3B    AS1     109.500    3.000
+ ATS      H3B2   C3B    AS1     109.500    3.000
+ ATS      C3B    AS1    OG1     109.470    3.000
+ ATS      C3B    AS1    OG3     109.470    3.000
+ ATS      C3B    AS1    OG2     109.470    3.000
+ ATS      OG1    AS1    OG3     109.470    3.000
+ ATS      OG1    AS1    OG2     109.470    3.000
+ ATS      OG3    AS1    OG2     109.470    3.000
+ ATS      AS1    OG3    HO3     120.000    3.000
+ ATS      AS1    OG2    HO2     120.000    3.000
+ ATS      PB     O13    PA      120.500    3.000
+ ATS      O13    PA     O11     108.200    3.000
+ ATS      O13    PA     O12     108.200    3.000
+ ATS      O13    PA     "O5'"   102.600    3.000
+ ATS      O11    PA     O12     119.900    3.000
+ ATS      O11    PA     "O5'"   108.200    3.000
+ ATS      O12    PA     "O5'"   108.200    3.000
+ ATS      PA     "O5'"  "C5'"   120.500    3.000
+ ATS      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ ATS      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ ATS      "O5'"  "C5'"  "C4'"   109.470    3.000
+ ATS      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ ATS      "H5'1" "C5'"  "C4'"   109.470    3.000
+ ATS      "H5'2" "C5'"  "C4'"   109.470    3.000
+ ATS      "C5'"  "C4'"  "H4'"   108.340    3.000
+ ATS      "C5'"  "C4'"  "C3'"   111.000    3.000
+ ATS      "C5'"  "C4'"  "O4'"   109.470    3.000
+ ATS      "H4'"  "C4'"  "C3'"   108.340    3.000
+ ATS      "H4'"  "C4'"  "O4'"   109.470    3.000
+ ATS      "C3'"  "C4'"  "O4'"   109.470    3.000
+ ATS      "C4'"  "C3'"  "H3'"   108.340    3.000
+ ATS      "C4'"  "C3'"  "O3'"   109.470    3.000
+ ATS      "C4'"  "C3'"  "C2'"   111.000    3.000
+ ATS      "H3'"  "C3'"  "O3'"   109.470    3.000
+ ATS      "H3'"  "C3'"  "C2'"   108.340    3.000
+ ATS      "O3'"  "C3'"  "C2'"   109.470    3.000
+ ATS      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ ATS      "C3'"  "C2'"  "H2'"   108.340    3.000
+ ATS      "C3'"  "C2'"  "O2'"   109.470    3.000
+ ATS      "C3'"  "C2'"  "C1'"   111.000    3.000
+ ATS      "H2'"  "C2'"  "O2'"   109.470    3.000
+ ATS      "H2'"  "C2'"  "C1'"   108.340    3.000
+ ATS      "O2'"  "C2'"  "C1'"   109.470    3.000
+ ATS      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ ATS      "C2'"  "C1'"  "H1'"   108.340    3.000
+ ATS      "C2'"  "C1'"  "O4'"   109.470    3.000
+ ATS      "C2'"  "C1'"  N9      109.500    3.000
+ ATS      "H1'"  "C1'"  "O4'"   109.470    3.000
+ ATS      "H1'"  "C1'"  N9      109.500    3.000
+ ATS      "O4'"  "C1'"  N9      109.500    3.000
+ ATS      "C1'"  "O4'"  "C4'"   111.800    3.000
+ ATS      "C1'"  N9     C8      109.500    3.000
+ ATS      "C1'"  N9     C4      109.500    3.000
+ ATS      C8     N9     C4      109.500    3.000
+ ATS      N9     C8     H8      108.000    3.000
+ ATS      N9     C8     N7      108.000    3.000
+ ATS      H8     C8     N7      126.000    3.000
+ ATS      C8     N7     C5      108.000    3.000
+ ATS      N7     C5     C4      108.000    3.000
+ ATS      N7     C5     C6      132.000    3.000
+ ATS      C4     C5     C6      120.000    3.000
+ ATS      C5     C4     N9      120.000    3.000
+ ATS      C5     C4     N3      120.000    3.000
+ ATS      N9     C4     N3      120.000    3.000
+ ATS      C5     C6     N6      120.000    3.000
+ ATS      C5     C6     N1      120.000    3.000
+ ATS      N6     C6     N1      120.000    3.000
+ ATS      C6     N6     HN62    120.000    3.000
+ ATS      C6     N6     HN61    120.000    3.000
+ ATS      HN62   N6     HN61    120.000    3.000
+ ATS      C6     N1     C2      120.000    3.000
+ ATS      N1     C2     H2      120.000    3.000
+ ATS      N1     C2     N3      120.000    3.000
+ ATS      H2     C2     N3      120.000    3.000
+ ATS      C2     N3     C4      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ATS      var_1    OB2    PB     OB1    HB1       54.846   20.000   1
+ ATS      var_2    OB2    PB     C3B    AS1     -101.001   20.000   1
+ ATS      var_3    PB     C3B    AS1    OG2       33.520   20.000   1
+ ATS      var_4    C3B    AS1    OG3    HO3      -74.051   20.000   1
+ ATS      var_5    C3B    AS1    OG2    HO2      -88.153   20.000   1
+ ATS      var_6    OB2    PB     O13    PA       159.203   20.000   1
+ ATS      var_7    PB     O13    PA     "O5'"    144.212   20.000   1
+ ATS      var_8    O13    PA     "O5'"  "C5'"    -50.391   20.000   1
+ ATS      var_9    PA     "O5'"  "C5'"  "C4'"    112.002   20.000   1
+ ATS      var_10   "O5'"  "C5'"  "C4'"  "C3'"    177.853   20.000   3
+ ATS      var_11   "C5'"  "C4'"  "O4'"  "C1'"    130.117   20.000   1
+ ATS      var_12   "C5'"  "C4'"  "C3'"  "C2'"   -105.145   20.000   3
+ ATS      var_13   "C4'"  "C3'"  "O3'"  "HO3'"    21.238   20.000   1
+ ATS      var_14   "C4'"  "C3'"  "C2'"  "C1'"    -30.900   20.000   3
+ ATS      var_15   "C3'"  "C2'"  "O2'"  "HO2'"   163.137   20.000   1
+ ATS      var_16   "C3'"  "C2'"  "C1'"  N9       151.878   20.000   3
+ ATS      var_17   "C2'"  "C1'"  "O4'"  "C4'"    -24.034   20.000   1
+ ATS      var_18   "C2'"  "C1'"  N9     C8       -76.012   20.000   1
+ ATS      CONST_1  "C1'"  N9     C4     C5         0.000    0.000   0
+ ATS      CONST_2  "C1'"  N9     C8     N7         0.000    0.000   0
+ ATS      CONST_3  N9     C8     N7     C5         0.000    0.000   0
+ ATS      CONST_4  C8     N7     C5     C6       180.000    0.000   0
+ ATS      CONST_5  N7     C5     C4     N9         0.000    0.000   0
+ ATS      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ ATS      CONST_7  N7     C5     C6     N1       180.000    0.000   0
+ ATS      CONST_8  C5     C6     N6     HN61    -171.544    0.000   0
+ ATS      CONST_9  C5     C6     N1     C2         0.000    0.000   0
+ ATS      CONST_10 C6     N1     C2     N3         0.000    0.000   0
+ ATS      CONST_11 N1     C2     N3     C4         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ATS      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ ATS      chir_02  "C2'"  "O2'"  "C3'"  "C1'"     positiv
+ ATS      chir_03  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+ ATS      chir_04  "C1'"  "O4'"  "C2'"  N9        positiv
+ ATS      chir_05  N9     "C1'"  C4     C8        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ATS      plan-1    C4        0.020
+ ATS      plan-1    N9        0.020
+ ATS      plan-1    N3        0.020
+ ATS      plan-1    C5        0.020
+ ATS      plan-1    C2        0.020
+ ATS      plan-1    N1        0.020
+ ATS      plan-1    C6        0.020
+ ATS      plan-1    H2        0.020
+ ATS      plan-1    N6        0.020
+ ATS      plan-1    N7        0.020
+ ATS      plan-1    C8        0.020
+ ATS      plan-1    H8        0.020
+ ATS      plan-1    HN62      0.020
+ ATS      plan-1    HN61      0.020
+ ATS      plan-2    N6        0.020
+ ATS      plan-2    C6        0.020
+ ATS      plan-2    HN61      0.020
+ ATS      plan-2    HN62      0.020
+# ------------------------------------------------------

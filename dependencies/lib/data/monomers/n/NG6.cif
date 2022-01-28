@@ -1,0 +1,274 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NG6      NG6 'N-ACETYL-D-GALACTOSAMINE 6-SULFATE  ' pyranose           34  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NG6
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NG6           C1     C    CH1       0.000      0.000    0.000    0.000
+ NG6           H1     H    H         0.000      0.198   -1.078   -0.082
+ NG6           O1     O    OH1       0.000      1.191    0.726   -0.309
+ NG6           HO1    H    H         0.000      1.468    0.518   -1.212
+ NG6           O5     O    O2        0.000     -1.028    0.364   -0.918
+ NG6           C5     C    CH1       0.000     -2.135   -0.505   -0.694
+ NG6           H5     H    H         0.000     -1.793   -1.549   -0.730
+ NG6           C6     C    CH2       0.000     -3.189   -0.277   -1.779
+ NG6           H61    H    H         0.000     -3.528    0.760   -1.745
+ NG6           H62    H    H         0.000     -4.038   -0.942   -1.607
+ NG6           O6     O    O2        0.000     -2.620   -0.552   -3.061
+ NG6           S      S    ST        0.000     -3.714   -0.308   -4.090
+ NG6           O1S    O    OS        0.000     -3.341   -1.062   -5.235
+ NG6           O3S    O    OH1       0.000     -3.625    1.152   -4.510
+ NG6           HOS3   H    H         0.000     -4.246    1.473   -5.155
+ NG6           O2S    O    OS        0.000     -4.941   -0.434   -3.386
+ NG6           C4     C    CH1       0.000     -2.751   -0.218    0.678
+ NG6           H4     H    H         0.000     -3.616   -0.877    0.838
+ NG6           O4     O    OH1       0.000     -3.172    1.146    0.737
+ NG6           HO4    H    H         0.000     -3.829    1.309    0.048
+ NG6           C3     C    CH1       0.000     -1.700   -0.479    1.762
+ NG6           H3     H    H         0.000     -1.455   -1.550    1.788
+ NG6           O3     O    OH1       0.000     -2.212   -0.074    3.034
+ NG6           HO3    H    H         0.000     -3.012   -0.578    3.234
+ NG6           C2     C    CH1       0.000     -0.440    0.329    1.428
+ NG6           H2     H    H         0.000     -0.659    1.403    1.507
+ NG6           N      N    NH1       0.000      0.630   -0.024    2.365
+ NG6           HN     H    H         0.000      0.664   -0.950    2.768
+ NG6           C7     C    C         0.000      1.568    0.887    2.690
+ NG6           O7     O    O         0.000      1.526    1.998    2.207
+ NG6           C8     C    CH3       0.000      2.669    0.525    3.653
+ NG6           H83    H    H         0.000      2.249    0.249    4.585
+ NG6           H82    H    H         0.000      3.227   -0.288    3.264
+ NG6           H81    H    H         0.000      3.310    1.358    3.788
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NG6      C1     n/a    O5     START
+ NG6      H1     C1     .      .
+ NG6      O1     C1     HO1    .
+ NG6      HO1    O1     .      .
+ NG6      O5     C1     .      END
+ NG6      C5     O5     C4     .
+ NG6      H5     C5     .      .
+ NG6      C6     C5     O6     .
+ NG6      H61    C6     .      .
+ NG6      H62    C6     .      .
+ NG6      O6     C6     S      .
+ NG6      S      O6     O2S    .
+ NG6      O1S    S      .      .
+ NG6      O3S    S      HOS3   .
+ NG6      HOS3   O3S    .      .
+ NG6      O2S    S      .      .
+ NG6      C4     C5     C3     .
+ NG6      H4     C4     .      .
+ NG6      O4     C4     HO4    .
+ NG6      HO4    O4     .      .
+ NG6      C3     C4     C2     .
+ NG6      H3     C3     .      .
+ NG6      O3     C3     HO3    .
+ NG6      HO3    O3     .      .
+ NG6      C2     C3     N      .
+ NG6      H2     C2     .      .
+ NG6      N      C2     C7     .
+ NG6      HN     N      .      .
+ NG6      C7     N      C8     .
+ NG6      O7     C7     .      .
+ NG6      C8     C7     H81    .
+ NG6      H83    C8     .      .
+ NG6      H82    C8     .      .
+ NG6      H81    C8     .      .
+ NG6      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NG6       C1        C2        single    1.524     0.020     1.524     0.020     
+NG6       O1        C1        single    1.432     0.020     1.432     0.020     
+NG6       O5        C1        single    1.426     0.020     1.426     0.020     
+NG6       H1        C1        single    1.089     0.010     0.989     0.005     
+NG6       C2        C3        single    1.524     0.020     1.524     0.020     
+NG6       N         C2        single    1.450     0.020     1.450     0.020     
+NG6       H2        C2        single    1.089     0.010     0.989     0.005     
+NG6       C3        C4        single    1.524     0.020     1.524     0.020     
+NG6       O3        C3        single    1.432     0.020     1.432     0.020     
+NG6       H3        C3        single    1.089     0.010     0.989     0.005     
+NG6       C4        C5        single    1.524     0.020     1.524     0.020     
+NG6       O4        C4        single    1.432     0.020     1.432     0.020     
+NG6       H4        C4        single    1.089     0.010     0.989     0.005     
+NG6       C6        C5        single    1.524     0.020     1.524     0.020     
+NG6       C5        O5        single    1.426     0.020     1.426     0.020     
+NG6       H5        C5        single    1.089     0.010     0.989     0.005     
+NG6       O6        C6        single    1.426     0.020     1.426     0.020     
+NG6       H61       C6        single    1.089     0.010     0.989     0.005     
+NG6       H62       C6        single    1.089     0.010     0.989     0.005     
+NG6       C8        C7        single    1.500     0.020     1.500     0.020     
+NG6       C7        N         single    1.330     0.020     1.330     0.020     
+NG6       O7        C7        double    1.220     0.020     1.220     0.020     
+NG6       H81       C8        single    1.089     0.010     0.989     0.005     
+NG6       H82       C8        single    1.089     0.010     0.989     0.005     
+NG6       H83       C8        single    1.089     0.010     0.989     0.005     
+NG6       HN        N         single    1.016     0.010     0.899     0.007     
+NG6       HO1       O1        single    0.970     0.012     0.839     0.014     
+NG6       HO3       O3        single    0.970     0.012     0.839     0.014     
+NG6       HO4       O4        single    0.970     0.012     0.839     0.014     
+NG6       S         O6        single    1.535     0.020     1.535     0.020     
+NG6       O1S       S         double    1.436     0.020     1.436     0.020     
+NG6       O2S       S         double    1.436     0.020     1.436     0.020     
+NG6       O3S       S         single    1.635     0.020     1.635     0.020     
+NG6       HOS3      O3S       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NG6      H1     C1     O1      109.470    3.000
+ NG6      H1     C1     O5      109.470    3.000
+ NG6      O1     C1     O5      109.470    3.000
+ NG6      H1     C1     C2      108.340    3.000
+ NG6      O1     C1     C2      109.470    3.000
+ NG6      O5     C1     C2      109.470    3.000
+ NG6      C1     O1     HO1     109.470    3.000
+ NG6      C1     O5     C5      111.800    3.000
+ NG6      O5     C5     H5      109.470    3.000
+ NG6      O5     C5     C6      109.470    3.000
+ NG6      O5     C5     C4      109.470    3.000
+ NG6      H5     C5     C6      108.340    3.000
+ NG6      H5     C5     C4      108.340    3.000
+ NG6      C6     C5     C4      111.000    3.000
+ NG6      C5     C6     H61     109.470    3.000
+ NG6      C5     C6     H62     109.470    3.000
+ NG6      C5     C6     O6      109.470    3.000
+ NG6      H61    C6     H62     107.900    3.000
+ NG6      H61    C6     O6      109.470    3.000
+ NG6      H62    C6     O6      109.470    3.000
+ NG6      C6     O6     S       120.000    3.000
+ NG6      O6     S      O1S     109.500    3.000
+ NG6      O6     S      O3S     109.500    3.000
+ NG6      O6     S      O2S     109.500    3.000
+ NG6      O1S    S      O3S     109.500    3.000
+ NG6      O1S    S      O2S     109.500    3.000
+ NG6      O3S    S      O2S     109.500    3.000
+ NG6      S      O3S    HOS3    120.000    3.000
+ NG6      C5     C4     H4      108.340    3.000
+ NG6      C5     C4     O4      109.470    3.000
+ NG6      C5     C4     C3      111.000    3.000
+ NG6      H4     C4     O4      109.470    3.000
+ NG6      H4     C4     C3      108.340    3.000
+ NG6      O4     C4     C3      109.470    3.000
+ NG6      C4     O4     HO4     109.470    3.000
+ NG6      C4     C3     H3      108.340    3.000
+ NG6      C4     C3     O3      109.470    3.000
+ NG6      C4     C3     C2      111.000    3.000
+ NG6      H3     C3     O3      109.470    3.000
+ NG6      H3     C3     C2      108.340    3.000
+ NG6      O3     C3     C2      109.470    3.000
+ NG6      C3     O3     HO3     109.470    3.000
+ NG6      C3     C2     H2      108.340    3.000
+ NG6      C3     C2     N       110.000    3.000
+ NG6      C3     C2     C1      111.000    3.000
+ NG6      H2     C2     N       108.550    3.000
+ NG6      H2     C2     C1      108.340    3.000
+ NG6      N      C2     C1      110.000    3.000
+ NG6      C2     N      HN      118.500    3.000
+ NG6      C2     N      C7      121.500    3.000
+ NG6      HN     N      C7      120.000    3.000
+ NG6      N      C7     O7      123.000    3.000
+ NG6      N      C7     C8      116.500    3.000
+ NG6      O7     C7     C8      123.000    3.000
+ NG6      C7     C8     H83     109.470    3.000
+ NG6      C7     C8     H82     109.470    3.000
+ NG6      C7     C8     H81     109.470    3.000
+ NG6      H83    C8     H82     109.470    3.000
+ NG6      H83    C8     H81     109.470    3.000
+ NG6      H82    C8     H81     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NG6      var_1    O5     C1     O1     HO1      -59.629   20.000   1
+ NG6      var_2    C1     O5     C5     C4        60.000   20.000   1
+ NG6      var_3    O5     C5     C6     O6        60.031   20.000   3
+ NG6      var_4    C5     C6     O6     S        179.987   20.000   1
+ NG6      var_5    C6     O6     S      O2S      -22.628   20.000   1
+ NG6      var_6    O6     S      O3S    HOS3    -179.921   20.000   1
+ NG6      var_7    O5     C5     C4     C3       -60.000   20.000   3
+ NG6      var_8    C5     C4     O4     HO4       59.944   20.000   1
+ NG6      var_9    C5     C4     C3     C2        60.000   20.000   3
+ NG6      var_10   C4     C3     O3     HO3       60.010   20.000   1
+ NG6      var_11   C4     C3     C2     N        180.000   20.000   3
+ NG6      var_12   C3     C2     C1     O5        60.000   20.000   3
+ NG6      var_13   C3     C2     N      C7      -150.240   20.000   3
+ NG6      CONST_1  C2     N      C7     C8       180.000    0.000   0
+ NG6      var_14   N      C7     C8     H81      179.999   20.000   1
+ NG6      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NG6      chir_01  C1     C2     O1     O5        positiv
+ NG6      chir_02  C2     C1     C3     N         negativ
+ NG6      chir_03  C3     C2     C4     O3        positiv
+ NG6      chir_04  C4     C3     C5     O4        positiv
+ NG6      chir_05  C5     C4     C6     O5        negativ
+ NG6      chir_06  S      O6     O1S    O2S       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NG6      plan-1    C7        0.020
+ NG6      plan-1    C8        0.020
+ NG6      plan-1    N         0.020
+ NG6      plan-1    O7        0.020
+ NG6      plan-1    HN        0.020
+ NG6      plan-2    N         0.020
+ NG6      plan-2    C2        0.020
+ NG6      plan-2    C7        0.020
+ NG6      plan-2    HN        0.020
+# ------------------------------------------------------

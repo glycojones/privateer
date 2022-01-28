@@ -1,0 +1,118 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TSZ     TSZ      HYDRAZINECARBOTHIOAMIDE     NON-POLYMER     10     5     .     
+#
+data_comp_TSZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TSZ     C       C       C       0       -0.690      -0.376      0.470       
+TSZ     N1      N       NH2     0       -1.145      0.868       0.476       
+TSZ     N2      N       NH1     0       0.374       -0.695      -0.315      
+TSZ     N3      N       NT2     0       1.297       0.263       -0.800      
+TSZ     S       S       S1      0       -1.393      -1.591      1.411       
+TSZ     HN11    H       H       0       -1.674      1.134       1.125       
+TSZ     HN12    H       H       0       -0.960      1.414       -0.185      
+TSZ     HN2     H       H       0       0.507       -1.527      -0.541      
+TSZ     HN31    H       H       0       0.915       0.671       -1.512      
+TSZ     HN32    H       H       0       2.023       -0.185      -1.098      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TSZ       C         N1        SINGLE    n         1.321     0.010     1.321     0.010     
+TSZ       C         N2        SINGLE    n         1.341     0.019     1.341     0.019     
+TSZ       C         S         DOUBLE    n         1.689     0.011     1.689     0.011     
+TSZ       N2        N3        SINGLE    n         1.414     0.010     1.414     0.010     
+TSZ       N1        HN11      SINGLE    n         1.016     0.010     0.878     0.020     
+TSZ       N1        HN12      SINGLE    n         1.016     0.010     0.878     0.020     
+TSZ       N2        HN2       SINGLE    n         1.016     0.010     0.871     0.020     
+TSZ       N3        HN31      SINGLE    n         1.036     0.016     0.904     0.020     
+TSZ       N3        HN32      SINGLE    n         1.036     0.016     0.904     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TSZ          N1           C          N2     117.799    1.50
+TSZ          N1           C           S     122.637    1.50
+TSZ          N2           C           S     119.564    2.40
+TSZ           C          N1        HN11     119.930    1.73
+TSZ           C          N1        HN12     119.930    1.73
+TSZ        HN11          N1        HN12     120.140    1.51
+TSZ           C          N2          N3     121.171    2.02
+TSZ           C          N2         HN2     120.197    1.62
+TSZ          N3          N2         HN2     118.632    1.83
+TSZ          N2          N3        HN31     107.512    2.88
+TSZ          N2          N3        HN32     107.512    2.88
+TSZ        HN31          N3        HN32     107.713    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TSZ             sp2_sp2_1          N2           C          N1        HN11     180.000   10.00     2
+TSZ             sp2_sp2_5          N1           C          N2          N3     180.000   10.00     2
+TSZ             sp2_sp3_1           C          N2          N3        HN31       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TSZ    plan-1           C   0.020
+TSZ    plan-1          N1   0.020
+TSZ    plan-1          N2   0.020
+TSZ    plan-1           S   0.020
+TSZ    plan-2           C   0.020
+TSZ    plan-2        HN11   0.020
+TSZ    plan-2        HN12   0.020
+TSZ    plan-2          N1   0.020
+TSZ    plan-3           C   0.020
+TSZ    plan-3         HN2   0.020
+TSZ    plan-3          N2   0.020
+TSZ    plan-3          N3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TSZ SMILES           ACDLabs              10.04 "S=C(N)NN"
+TSZ SMILES_CANONICAL CACTVS               3.341 "NNC(N)=S"
+TSZ SMILES           CACTVS               3.341 "NNC(N)=S"
+TSZ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=S)(N)NN"
+TSZ SMILES           "OpenEye OEToolkits" 1.5.0 "C(=S)(N)NN"
+TSZ InChI            InChI                1.03  "InChI=1S/CH5N3S/c2-1(5)4-3/h3H2,(H3,2,4,5)"
+TSZ InChIKey         InChI                1.03  BRWIZMBXBAOCCF-UHFFFAOYSA-N
+TSZ ?                acedrg               202         "dictionary generator"                  
+TSZ ?                acedrg_database      11          "data source"                           
+TSZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TSZ ?                refmac5              5.8.0189    "optimization tool"                     

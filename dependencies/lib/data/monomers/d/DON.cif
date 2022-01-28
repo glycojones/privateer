@@ -1,0 +1,209 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DON     DON     6-DIAZENYL-5-OXO-L-NORLEUCINE     peptide     23     12     .
+#
+data_comp_DON
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DON     O       O       O       0       57.043      7.964       21.740
+DON     C       C       C       0       57.394      9.150       21.577
+DON     OXT     O       OC      -1      58.465      9.527       21.062
+DON     CA      C       CH1     0       56.423      10.241      22.049
+DON     N       N       NT3     1       57.143      11.226      22.909
+DON     CB      C       CH2     0       55.774      10.929      20.845
+DON     C1E     C       CH2     0       54.669      11.905      21.221
+DON     C1D     C       C       0       53.926      12.519      20.061
+DON     O1J     O       O       0       54.181      12.251      18.904
+DON     C1C     C       CH2     0       52.832      13.500      20.406
+DON     N1B     N       N       0       53.162      14.844      19.897
+DON     N1A     N       NH1     0       52.609      15.782      20.465
+DON     HA      H       H       0       55.715      9.820       22.591
+DON     H       H       H       0       57.391      11.957      22.425
+DON     H2      H       H       0       57.891      10.851      23.273
+DON     H3      H       H       0       56.599      11.497      23.588
+DON     HB2     H       H       0       55.401      10.241      20.255
+DON     HB3     H       H       0       56.467      11.409      20.344
+DON     H1E1    H       H       0       55.059      12.630      21.754
+DON     H1E2    H       H       0       54.019      11.438      21.789
+DON     H1C1    H       H       0       52.718      13.538      21.384
+DON     H1C2    H       H       0       51.984      13.200      20.008
+DON     H1A1    H       H       0       52.772      16.619      20.206
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DON      N      n/a    CA     START
+DON      H      N      .      .
+DON      H2     N      .      .
+DON      H3     N      .      .
+DON      CA     N      C      .
+DON      HA     CA     .      .
+DON      CB     CA     C1E    .
+DON      HB2    CB     .      .
+DON      HB3    CB     .      .
+DON      C1E    CB     C1D    .
+DON      H1E1   C1E    .      .
+DON      H1E2   C1E    .      .
+DON      C1D    C1E    O1J    .
+DON      C1C    C1D    N1B    .
+DON      H1C1   C1C    .      .
+DON      H1C2   C1C    .      .
+DON      N1B    C1C    N1A    .
+DON      N1A    N1B    H1A1   .
+DON      H1A1   N1A    .      .
+DON      O1J    C1D    .      .
+DON      C      CA     .      END
+DON      O      C      .      .
+DON      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DON       O         C         DOUBLE    n         1.247     0.019     1.247     0.019     
+DON       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DON       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+DON       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+DON       CA        CB        SINGLE    n         1.530     0.011     1.530     0.011     
+DON       CB        C1E       SINGLE    n         1.520     0.015     1.520     0.015     
+DON       C1E       C1D       SINGLE    n         1.506     0.010     1.506     0.010     
+DON       C1D       O1J       DOUBLE    n         1.212     0.020     1.212     0.020     
+DON       C1D       C1C       SINGLE    n         1.509     0.015     1.509     0.015     
+DON       C1C       N1B       SINGLE    n         1.474     0.012     1.474     0.012     
+DON       N1B       N1A       DOUBLE    n         1.227     0.016     1.227     0.016     
+DON       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+DON       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DON       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DON       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DON       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.018     
+DON       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.018     
+DON       C1E       H1E1      SINGLE    n         1.089     0.010     0.981     0.019     
+DON       C1E       H1E2      SINGLE    n         1.089     0.010     0.981     0.019     
+DON       C1C       H1C1      SINGLE    n         1.089     0.010     0.984     0.017     
+DON       C1C       H1C2      SINGLE    n         1.089     0.010     0.984     0.017     
+DON       N1A       H1A1      SINGLE    n         1.016     0.010     0.891     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DON           O           C         OXT     125.752    1.50
+DON           O           C          CA     117.124    1.50
+DON         OXT           C          CA     117.124    1.50
+DON           C          CA           N     109.241    1.50
+DON           C          CA          CB     111.037    2.40
+DON           C          CA          HA     108.824    1.50
+DON           N          CA          CB     110.374    1.62
+DON           N          CA          HA     108.487    1.50
+DON          CB          CA          HA     108.967    1.50
+DON          CA           N           H     110.062    1.93
+DON          CA           N          H2     110.062    1.93
+DON          CA           N          H3     110.062    1.93
+DON           H           N          H2     109.028    2.41
+DON           H           N          H3     109.028    2.41
+DON          H2           N          H3     109.028    2.41
+DON          CA          CB         C1E     113.488    1.50
+DON          CA          CB         HB2     108.549    1.50
+DON          CA          CB         HB3     108.549    1.50
+DON         C1E          CB         HB2     108.915    1.50
+DON         C1E          CB         HB3     108.915    1.50
+DON         HB2          CB         HB3     107.844    1.50
+DON          CB         C1E         C1D     114.397    2.37
+DON          CB         C1E        H1E1     108.844    1.50
+DON          CB         C1E        H1E2     108.844    1.50
+DON         C1D         C1E        H1E1     108.499    1.50
+DON         C1D         C1E        H1E2     108.499    1.50
+DON        H1E1         C1E        H1E2     107.764    1.50
+DON         C1E         C1D         O1J     122.289    1.50
+DON         C1E         C1D         C1C     116.494    2.67
+DON         O1J         C1D         C1C     121.217    1.66
+DON         C1D         C1C         N1B     110.034    2.57
+DON         C1D         C1C        H1C1     109.211    1.54
+DON         C1D         C1C        H1C2     109.211    1.54
+DON         N1B         C1C        H1C1     109.051    1.50
+DON         N1B         C1C        H1C2     109.051    1.50
+DON        H1C1         C1C        H1C2     108.019    1.50
+DON         C1C         N1B         N1A     115.523    1.50
+DON         N1B         N1A        H1A1     120.000    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DON             sp2_sp2_1        H1A1         N1A         N1B         C1C     180.000   10.00     2
+DON             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DON             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+DON            sp3_sp3_10           C          CA          CB         C1E     180.000   10.00     3
+DON            sp3_sp3_19         C1D         C1E          CB          CA     180.000   10.00     3
+DON             sp2_sp3_8         O1J         C1D         C1E          CB     120.000   10.00     6
+DON            sp2_sp3_14         C1E         C1D         C1C         N1B     120.000   10.00     6
+DON            sp2_sp3_20         N1A         N1B         C1C         C1D     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DON    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DON    plan-1           C   0.020
+DON    plan-1          CA   0.020
+DON    plan-1           O   0.020
+DON    plan-1         OXT   0.020
+DON    plan-2         C1C   0.020
+DON    plan-2         C1D   0.020
+DON    plan-2         C1E   0.020
+DON    plan-2         O1J   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DON SMILES           ACDLabs              10.04 "O=C(O)C(N)CCC(=O)CN=[N@H]"
+DON SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCC(=O)CN=N)C(O)=O"
+DON SMILES           CACTVS               3.341 "N[CH](CCC(=O)CN=N)C(O)=O"
+DON SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CC(=O)CN=N)[C@@H](C(=O)O)N"
+DON SMILES           "OpenEye OEToolkits" 1.5.0 "C(CC(=O)CN=N)C(C(=O)O)N"
+DON InChI            InChI                1.03  "InChI=1S/C6H11N3O3/c7-5(6(11)12)2-1-4(10)3-9-8/h5,8H,1-3,7H2,(H,11,12)/t5-/m0/s1"
+DON InChIKey         InChI                1.03  CKRLZVNSTCQAJW-YFKPBYRVSA-N
+DON ?                acedrg               196         "dictionary generator"
+DON ?                acedrg_database      11          "data source"
+DON ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DON ?                refmac5              5.8.0222    "optimization tool"

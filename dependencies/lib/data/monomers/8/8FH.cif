@@ -1,0 +1,107 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+8FH     8FH      2,2,2-tris-chloroethanol     NON-POLYMER     9     6     .     
+#
+data_comp_8FH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+8FH     O01     O       OH1     0       30.342      210.830     -181.585    
+8FH     C02     C       CH2     0       31.578      210.180     -181.340    
+8FH     C03     C       CT      0       32.579      210.512     -182.365    
+8FH     CL1     CL      CL      0       32.865      212.256     -182.376    
+8FH     CL2     CL      CL      0       31.996      210.004     -183.954    
+8FH     CL3     CL      CL      0       34.093      209.675     -182.003    
+8FH     H011    H       H       0       29.797      210.624     -180.971    
+8FH     H021    H       H       0       31.431      209.211     -181.326    
+8FH     H022    H       H       0       31.909      210.450     -180.457    
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+8FH       C03       CL2       SINGLE    n         1.767     0.0105    1.767     0.0105    
+8FH       C03       CL3       SINGLE    n         1.767     0.0105    1.767     0.0105    
+8FH       C03       CL1       SINGLE    n         1.767     0.0105    1.767     0.0105    
+8FH       C02       C03       SINGLE    n         1.470     0.0200    1.470     0.0200    
+8FH       O01       C02       SINGLE    n         1.417     0.0200    1.417     0.0200    
+8FH       O01       H011      SINGLE    n         0.970     0.012     0.846     0.0200    
+8FH       C02       H021      SINGLE    n         1.089     0.010     0.981     0.0174    
+8FH       C02       H022      SINGLE    n         1.089     0.010     0.981     0.0174    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+8FH         C02         O01        H011     108.972    3.00
+8FH         C03         C02         O01     112.551    3.00
+8FH         C03         C02        H021     109.930    1.50
+8FH         C03         C02        H022     109.930    1.50
+8FH         O01         C02        H021     109.256    1.50
+8FH         O01         C02        H022     109.256    1.50
+8FH        H021         C02        H022     108.319    1.50
+8FH         CL2         C03         CL3     109.354    1.50
+8FH         CL2         C03         CL1     109.354    1.50
+8FH         CL2         C03         C02     109.586    2.11
+8FH         CL3         C03         CL1     109.354    1.50
+8FH         CL3         C03         C02     109.586    2.11
+8FH         CL1         C03         C02     109.586    2.11
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+8FH            sp3_sp3_10         C03         C02         O01        H011     180.000   10.00     3
+8FH             sp3_sp3_1         O01         C02         C03         CL2     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+8FH    chir_1    C03    CL2    CL3    CL1    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+8FH            InChI                InChI  1.03 InChI=1S/C2H3Cl3O/c3-2(4,5)1-6/h6H,1H2
+8FH         InChIKey                InChI  1.03            KPWDGTGXUYRARH-UHFFFAOYSA-N
+8FH SMILES_CANONICAL               CACTVS 3.385                          OCC(Cl)(Cl)Cl
+8FH           SMILES               CACTVS 3.385                          OCC(Cl)(Cl)Cl
+8FH SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                        C(C(Cl)(Cl)Cl)O
+8FH           SMILES "OpenEye OEToolkits" 2.0.6                        C(C(Cl)(Cl)Cl)O
+8FH ?                acedrg               217         "dictionary generator"                  
+8FH ?                acedrg_database      11          "data source"                           
+8FH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+8FH ?                refmac5              5.8.0253    "optimization tool"                     

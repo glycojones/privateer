@@ -1,0 +1,279 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CAR      CAR '.                                   ' DNA                33  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CAR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CAR           OP3    O    OP       -0.666      0.000    0.000    0.000
+ CAR           P      P    P         0.000     -0.802   -0.174    1.271
+ CAR           OP1    O    OP       -0.666     -0.996    1.171    1.935
+ CAR           OP2    O    OP       -0.666     -0.060   -1.098    2.212
+ CAR           "O5'"  O    O2        0.000     -2.238   -0.811    0.916
+ CAR           "C5'"  C    CH2       0.000     -2.886    0.102    0.030
+ CAR           "H5'"  H    H         0.000     -2.282    0.225   -0.871
+ CAR           "H5''" H    H         0.000     -3.000    1.069    0.525
+ CAR           "C4'"  C    CH1       0.000     -4.264   -0.444   -0.348
+ CAR           "H4'"  H    H         0.000     -4.164   -1.411   -0.860
+ CAR           "C3'"  C    CH1       0.000     -5.018    0.562   -1.245
+ CAR           "H3'"  H    H         0.000     -4.642    1.582   -1.080
+ CAR           "C2'"  C    CH1       0.000     -6.489    0.447   -0.785
+ CAR           "H2'"  H    H         0.000     -7.127    0.107   -1.614
+ CAR           "O2'"  O    OH1       0.000     -6.954    1.699   -0.275
+ CAR           "HO2'" H    H         0.000     -6.915    2.366   -0.974
+ CAR           "C1'"  C    CH1       0.000     -6.448   -0.613    0.337
+ CAR           "H1'"  H    H         0.000     -6.685   -1.607   -0.067
+ CAR           "O4'"  O    O2        0.000     -5.091   -0.581    0.829
+ CAR           N1     N    NR6       0.000     -7.386   -0.260    1.406
+ CAR           C6     C    CR16      0.000     -6.966    0.509    2.448
+ CAR           H6     H    H         0.000     -5.941    0.859    2.492
+ CAR           C5     C    CR16      0.000     -7.843    0.833    3.427
+ CAR           H5     H    H         0.000     -7.533    1.451    4.260
+ CAR           C4     C    CR6       0.000     -9.166    0.352    3.346
+ CAR           N4     N    NH2       0.000    -10.077    0.661    4.330
+ CAR           HN42   H    H         0.000     -9.802    1.231    5.122
+ CAR           HN41   H    H         0.000    -11.030    0.320    4.272
+ CAR           N3     N    NRD6      0.000     -9.529   -0.395    2.312
+ CAR           C2     C    CR6       0.000     -8.655   -0.701    1.355
+ CAR           O2     O    O         0.000     -9.014   -1.389    0.414
+ CAR           "O3'"  O    OH1       0.000     -4.892    0.198   -2.621
+ CAR           "HO3'" H    H         0.000     -5.380    0.860   -3.131
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CAR      OP3    n/a    P      START
+ CAR      P      OP3    "O5'"  .
+ CAR      OP1    P      .      .
+ CAR      OP2    P      .      .
+ CAR      "O5'"  P      "C5'"  .
+ CAR      "C5'"  "O5'"  "C4'"  .
+ CAR      "H5'"  "C5'"  .      .
+ CAR      "H5''" "C5'"  .      .
+ CAR      "C4'"  "C5'"  "C3'"  .
+ CAR      "H4'"  "C4'"  .      .
+ CAR      "C3'"  "C4'"  "O3'"  .
+ CAR      "H3'"  "C3'"  .      .
+ CAR      "C2'"  "C3'"  "C1'"  .
+ CAR      "H2'"  "C2'"  .      .
+ CAR      "O2'"  "C2'"  "HO2'" .
+ CAR      "HO2'" "O2'"  .      .
+ CAR      "C1'"  "C2'"  N1     .
+ CAR      "H1'"  "C1'"  .      .
+ CAR      "O4'"  "C1'"  .      .
+ CAR      N1     "C1'"  C6     .
+ CAR      C6     N1     C5     .
+ CAR      H6     C6     .      .
+ CAR      C5     C6     C4     .
+ CAR      H5     C5     .      .
+ CAR      C4     C5     N3     .
+ CAR      N4     C4     HN41   .
+ CAR      HN42   N4     .      .
+ CAR      HN41   N4     .      .
+ CAR      N3     C4     C2     .
+ CAR      C2     N3     O2     .
+ CAR      O2     C2     .      .
+ CAR      "O3'"  "C3'"  .      END
+ CAR      "HO3'" "O3'"  .      .
+ CAR      "C4'"  "O4'"  .    ADD
+ CAR      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CAR       OP1       P         deloc     1.510     0.020     1.510     0.020     
+CAR       OP2       P         deloc     1.510     0.020     1.510     0.020     
+CAR       P         OP3       deloc     1.510     0.020     1.510     0.020     
+CAR       "O5'"     P         single    1.610     0.020     1.610     0.020     
+CAR       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+CAR       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+CAR       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+CAR       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+CAR       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+CAR       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+CAR       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+CAR       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+CAR       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+CAR       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+CAR       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+CAR       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+CAR       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+CAR       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+CAR       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+CAR       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+CAR       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+CAR       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+CAR       N1        C2        single    1.410     0.020     1.410     0.020     
+CAR       C6        N1        single    1.337     0.020     1.337     0.020     
+CAR       O2        C2        double    1.250     0.020     1.250     0.020     
+CAR       C2        N3        single    1.350     0.020     1.350     0.020     
+CAR       N3        C4        double    1.350     0.020     1.350     0.020     
+CAR       N4        C4        single    1.355     0.020     1.355     0.020     
+CAR       C4        C5        single    1.390     0.020     1.390     0.020     
+CAR       HN41      N4        single    1.016     0.010     0.899     0.007     
+CAR       HN42      N4        single    1.016     0.010     0.899     0.007     
+CAR       C5        C6        double    1.390     0.020     1.390     0.020     
+CAR       H5        C5        single    1.082     0.013     0.975     0.010     
+CAR       H6        C6        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CAR      OP3    P      OP1     119.900    3.000
+ CAR      OP3    P      OP2     119.900    3.000
+ CAR      OP3    P      "O5'"   108.200    3.000
+ CAR      OP1    P      OP2     119.900    3.000
+ CAR      OP1    P      "O5'"   108.200    3.000
+ CAR      OP2    P      "O5'"   108.200    3.000
+ CAR      P      "O5'"  "C5'"   120.500    3.000
+ CAR      "O5'"  "C5'"  "H5'"   109.470    3.000
+ CAR      "O5'"  "C5'"  "H5''"  109.470    3.000
+ CAR      "O5'"  "C5'"  "C4'"   109.470    3.000
+ CAR      "H5'"  "C5'"  "H5''"  107.900    3.000
+ CAR      "H5'"  "C5'"  "C4'"   109.470    3.000
+ CAR      "H5''" "C5'"  "C4'"   109.470    3.000
+ CAR      "C5'"  "C4'"  "H4'"   108.340    3.000
+ CAR      "C5'"  "C4'"  "C3'"   111.000    3.000
+ CAR      "C5'"  "C4'"  "O4'"   109.470    3.000
+ CAR      "H4'"  "C4'"  "C3'"   108.340    3.000
+ CAR      "H4'"  "C4'"  "O4'"   109.470    3.000
+ CAR      "C3'"  "C4'"  "O4'"   109.470    3.000
+ CAR      "C4'"  "C3'"  "H3'"   108.340    3.000
+ CAR      "C4'"  "C3'"  "C2'"   111.000    3.000
+ CAR      "C4'"  "C3'"  "O3'"   109.470    3.000
+ CAR      "H3'"  "C3'"  "C2'"   108.340    3.000
+ CAR      "H3'"  "C3'"  "O3'"   109.470    3.000
+ CAR      "C2'"  "C3'"  "O3'"   109.470    3.000
+ CAR      "C3'"  "C2'"  "H2'"   108.340    3.000
+ CAR      "C3'"  "C2'"  "O2'"   109.470    3.000
+ CAR      "C3'"  "C2'"  "C1'"   111.000    3.000
+ CAR      "H2'"  "C2'"  "O2'"   109.470    3.000
+ CAR      "H2'"  "C2'"  "C1'"   108.340    3.000
+ CAR      "O2'"  "C2'"  "C1'"   109.470    3.000
+ CAR      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ CAR      "C2'"  "C1'"  "H1'"   108.340    3.000
+ CAR      "C2'"  "C1'"  "O4'"   109.470    3.000
+ CAR      "C2'"  "C1'"  N1      109.470    3.000
+ CAR      "H1'"  "C1'"  "O4'"   109.470    3.000
+ CAR      "H1'"  "C1'"  N1      109.470    3.000
+ CAR      "O4'"  "C1'"  N1      109.470    3.000
+ CAR      "C1'"  "O4'"  "C4'"   111.800    3.000
+ CAR      "C1'"  N1     C6      120.000    3.000
+ CAR      "C1'"  N1     C2      120.000    3.000
+ CAR      C6     N1     C2      120.000    3.000
+ CAR      N1     C6     H6      120.000    3.000
+ CAR      N1     C6     C5      120.000    3.000
+ CAR      H6     C6     C5      120.000    3.000
+ CAR      C6     C5     H5      120.000    3.000
+ CAR      C6     C5     C4      120.000    3.000
+ CAR      H5     C5     C4      120.000    3.000
+ CAR      C5     C4     N4      120.000    3.000
+ CAR      C5     C4     N3      120.000    3.000
+ CAR      N4     C4     N3      120.000    3.000
+ CAR      C4     N4     HN42    120.000    3.000
+ CAR      C4     N4     HN41    120.000    3.000
+ CAR      HN42   N4     HN41    120.000    3.000
+ CAR      C4     N3     C2      120.000    3.000
+ CAR      N3     C2     O2      120.000    3.000
+ CAR      N3     C2     N1      120.000    3.000
+ CAR      O2     C2     N1      120.000    3.000
+ CAR      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CAR      var_1    OP3    P      "O5'"  "C5'"    -60.053   20.000   1
+ CAR      var_2    P      "O5'"  "C5'"  "C4'"   -179.966   20.000   1
+ CAR      var_3    "O5'"  "C5'"  "C4'"  "C3'"    176.907   20.000   3
+ CAR      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ CAR      var_5    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ CAR      var_6    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ CAR      var_7    "C3'"  "C2'"  "O2'"  "HO2'"    61.482   20.000   1
+ CAR      var_8    "C3'"  "C2'"  "C1'"  N1       150.000   20.000   3
+ CAR      var_9    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ CAR      var_10   "C2'"  "C1'"  N1     C6       -90.281   20.000   1
+ CAR      CONST_1  "C1'"  N1     C2     N3       180.000    0.000   0
+ CAR      CONST_2  "C1'"  N1     C6     C5       180.000    0.000   0
+ CAR      CONST_3  N1     C6     C5     C4         0.000    0.000   0
+ CAR      CONST_4  C6     C5     C4     N3         0.000    0.000   0
+ CAR      CONST_5  C5     C4     N4     HN41     179.698    0.000   0
+ CAR      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ CAR      CONST_7  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CAR      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ CAR      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ CAR      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     positiv
+ CAR      chir_04  "C1'"  "O4'"  "C2'"  N1        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CAR      plan-1    N1        0.020
+ CAR      plan-1    "C1'"     0.020
+ CAR      plan-1    C2        0.020
+ CAR      plan-1    C6        0.020
+ CAR      plan-1    N3        0.020
+ CAR      plan-1    C4        0.020
+ CAR      plan-1    C5        0.020
+ CAR      plan-1    O2        0.020
+ CAR      plan-1    N4        0.020
+ CAR      plan-1    H5        0.020
+ CAR      plan-1    H6        0.020
+ CAR      plan-1    HN42      0.020
+ CAR      plan-1    HN41      0.020
+ CAR      plan-2    N4        0.020
+ CAR      plan-2    C4        0.020
+ CAR      plan-2    HN41      0.020
+ CAR      plan-2    HN42      0.020
+# ------------------------------------------------------

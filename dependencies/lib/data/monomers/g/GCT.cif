@@ -1,0 +1,193 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GCT      GCT '4,5-DIHYDROXY-TETRAHYDRO-PYRAN-2-CAR' pyranose           20  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GCT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GCT           C1     C    CH2       0.000      0.000    0.000    0.000
+ GCT           HC11   H    H         0.000      1.005    0.427   -0.002
+ GCT           HC12   H    H         0.000      0.069   -1.090    0.006
+ GCT           O5     O    O2        0.000     -0.692    0.421   -1.173
+ GCT           C5     C    CH1       0.000     -1.925   -0.296   -1.228
+ GCT           HC5    H    H         0.000     -1.725   -1.372   -1.136
+ GCT           C6     C    C         0.000     -2.604   -0.023   -2.544
+ GCT           O6A    O    OC       -0.500     -2.067    0.736   -3.381
+ GCT           O6B    O    OC       -0.500     -3.706   -0.556   -2.801
+ GCT           C4     C    CH2       0.000     -2.835    0.151   -0.083
+ GCT           HC41   H    H         0.000     -3.785   -0.385   -0.140
+ GCT           HC42   H    H         0.000     -3.020    1.225   -0.160
+ GCT           C3     C    CH1       0.000     -2.151   -0.158    1.253
+ GCT           HC3    H    H         0.000     -2.063   -1.246    1.378
+ GCT           O3     O    OH1       0.000     -2.923    0.387    2.325
+ GCT           HO3    H    H         0.000     -2.489    0.190    3.166
+ GCT           C2     C    CH1       0.000     -0.754    0.471    1.244
+ GCT           HC2    H    H         0.000     -0.844    1.566    1.227
+ GCT           O2     O    OH1       0.000     -0.042    0.069    2.416
+ GCT           HO2    H    H         0.000      0.841    0.464    2.408
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GCT      C1     n/a    O5     START
+ GCT      HC11   C1     .      .
+ GCT      HC12   C1     .      .
+ GCT      O5     C1     .      END
+ GCT      C5     O5     C4     .
+ GCT      HC5    C5     .      .
+ GCT      C6     C5     O6B    .
+ GCT      O6A    C6     .      .
+ GCT      O6B    C6     .      .
+ GCT      C4     C5     C3     .
+ GCT      HC41   C4     .      .
+ GCT      HC42   C4     .      .
+ GCT      C3     C4     C2     .
+ GCT      HC3    C3     .      .
+ GCT      O3     C3     HO3    .
+ GCT      HO3    O3     .      .
+ GCT      C2     C3     O2     .
+ GCT      HC2    C2     .      .
+ GCT      O2     C2     HO2    .
+ GCT      HO2    O2     .      .
+ GCT      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GCT       C1        C2        single    1.524     0.020     1.524     0.020     
+GCT       O5        C1        single    1.426     0.020     1.426     0.020     
+GCT       HC11      C1        single    1.089     0.010     0.989     0.005     
+GCT       HC12      C1        single    1.089     0.010     0.989     0.005     
+GCT       O2        C2        single    1.432     0.020     1.432     0.020     
+GCT       C2        C3        single    1.524     0.020     1.524     0.020     
+GCT       HC2       C2        single    1.089     0.010     0.989     0.005     
+GCT       HO2       O2        single    0.970     0.012     0.839     0.014     
+GCT       O3        C3        single    1.432     0.020     1.432     0.020     
+GCT       C3        C4        single    1.524     0.020     1.524     0.020     
+GCT       HC3       C3        single    1.089     0.010     0.989     0.005     
+GCT       HO3       O3        single    0.970     0.012     0.839     0.014     
+GCT       C4        C5        single    1.524     0.020     1.524     0.020     
+GCT       HC41      C4        single    1.089     0.010     0.989     0.005     
+GCT       HC42      C4        single    1.089     0.010     0.989     0.005     
+GCT       C6        C5        single    1.500     0.020     1.500     0.020     
+GCT       C5        O5        single    1.426     0.020     1.426     0.020     
+GCT       HC5       C5        single    1.089     0.010     0.989     0.005     
+GCT       O6A       C6        deloc     1.250     0.020     1.250     0.020     
+GCT       O6B       C6        deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GCT      HC11   C1     HC12    107.900    3.000
+ GCT      HC11   C1     O5      109.470    3.000
+ GCT      HC12   C1     O5      109.470    3.000
+ GCT      HC11   C1     C2      109.470    3.000
+ GCT      HC12   C1     C2      109.470    3.000
+ GCT      O5     C1     C2      109.470    3.000
+ GCT      C1     O5     C5      111.800    3.000
+ GCT      O5     C5     HC5     109.470    3.000
+ GCT      O5     C5     C6      109.470    3.000
+ GCT      O5     C5     C4      109.470    3.000
+ GCT      HC5    C5     C6      108.810    3.000
+ GCT      HC5    C5     C4      108.340    3.000
+ GCT      C6     C5     C4      109.470    3.000
+ GCT      C5     C6     O6A     118.500    3.000
+ GCT      C5     C6     O6B     118.500    3.000
+ GCT      O6A    C6     O6B     123.000    3.000
+ GCT      C5     C4     HC41    109.470    3.000
+ GCT      C5     C4     HC42    109.470    3.000
+ GCT      C5     C4     C3      111.000    3.000
+ GCT      HC41   C4     HC42    107.900    3.000
+ GCT      HC41   C4     C3      109.470    3.000
+ GCT      HC42   C4     C3      109.470    3.000
+ GCT      C4     C3     HC3     108.340    3.000
+ GCT      C4     C3     O3      109.470    3.000
+ GCT      C4     C3     C2      111.000    3.000
+ GCT      HC3    C3     O3      109.470    3.000
+ GCT      HC3    C3     C2      108.340    3.000
+ GCT      O3     C3     C2      109.470    3.000
+ GCT      C3     O3     HO3     109.470    3.000
+ GCT      C3     C2     HC2     108.340    3.000
+ GCT      C3     C2     O2      109.470    3.000
+ GCT      C3     C2     C1      111.000    3.000
+ GCT      HC2    C2     O2      109.470    3.000
+ GCT      HC2    C2     C1      108.340    3.000
+ GCT      O2     C2     C1      109.470    3.000
+ GCT      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GCT      var_1    C1     O5     C5     C4        60.000   20.000   1
+ GCT      var_2    O5     C5     C6     O6B      179.976   20.000   3
+ GCT      var_3    O5     C5     C4     C3       -60.000   20.000   3
+ GCT      var_4    C5     C4     C3     C2        60.000   20.000   3
+ GCT      var_5    C4     C3     O3     HO3      179.995   20.000   1
+ GCT      var_6    C4     C3     C2     O2       180.000   20.000   3
+ GCT      var_7    C3     C2     C1     O5        60.000   20.000   3
+ GCT      var_8    C3     C2     O2     HO2      179.802   20.000   1
+ GCT      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GCT      chir_01  C2     C1     O2     C3        positiv
+ GCT      chir_02  C3     C2     O3     C4        negativ
+ GCT      chir_03  C5     C4     C6     O5        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GCT      plan-1    C6        0.020
+ GCT      plan-1    C5        0.020
+ GCT      plan-1    O6A       0.020
+ GCT      plan-1    O6B       0.020
+# ------------------------------------------------------

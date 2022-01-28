@@ -1,0 +1,317 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AVC      AVC 'ADENOSINE-5'-MONOPHOSPHATE-2',3'-VAN' RNA                37  26 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AVC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AVC           OP3    O    OP       -0.666     -4.538    2.933    0.955
+ AVC           P      P    P         0.000     -4.802    1.911   -0.129
+ AVC           OP1    O    OP       -0.666     -5.825    0.910    0.361
+ AVC           OP2    O    OP       -0.666     -5.330    2.609   -1.363
+ AVC           "O5'"  O    O2        0.000     -3.432    1.145   -0.490
+ AVC           "C5'"  C    CH2       0.000     -2.742    0.306    0.438
+ AVC           "H5'"  H    H         0.000     -3.396   -0.514    0.743
+ AVC           "H5''" H    H         0.000     -2.460    0.890    1.316
+ AVC           "C4'"  C    CH1       0.000     -1.485   -0.261   -0.225
+ AVC           "H4'"  H    H         0.000     -1.742   -0.805   -1.145
+ AVC           "C3'"  C    CH1       0.000     -0.717   -1.177    0.755
+ AVC           "H3'"  H    H         0.000     -0.728   -0.719    1.754
+ AVC           "C2'"  C    CH1       0.000      0.718   -1.135    0.203
+ AVC           "H2'"  H    H         0.000      1.456   -1.116    1.017
+ AVC           "C1'"  C    CH1       0.000      0.759    0.175   -0.618
+ AVC           "H1'"  H    H         0.000      0.973   -0.050   -1.672
+ AVC           "O4'"  O    O2        0.000     -0.534    0.792   -0.502
+ AVC           N9     N    NR5       0.000      1.787    1.069   -0.079
+ AVC           C4     C    CR56      0.000      3.122    1.055   -0.398
+ AVC           C5     C    CR56      0.000      3.710    2.085    0.356
+ AVC           N7     N    NRD5      0.000      2.724    2.657    1.088
+ AVC           C8     C    CR15      0.000      1.595    2.062    0.834
+ AVC           H8     H    H         0.000      0.643    2.318    1.282
+ AVC           N3     N    NRD6      0.000      3.885    0.336   -1.214
+ AVC           C2     C    CR16      0.000      5.175    0.573   -1.310
+ AVC           H2     H    H         0.000      5.768   -0.036   -1.981
+ AVC           N1     N    NRD6      0.000      5.774    1.526   -0.618
+ AVC           C6     C    CR6       0.000      5.092    2.301    0.219
+ AVC           N6     N    NH2       0.000      5.727    3.297    0.940
+ AVC           H62    H    H         0.000      6.726    3.451    0.838
+ AVC           H61    H    H         0.000      5.202    3.886    1.579
+ AVC           "O2'"  O    O2        0.000      0.993   -2.221   -0.732
+ AVC           V      V    V         0.000     -0.029   -3.565    0.082
+ AVC           O1V    O    O         0.000     -0.635   -4.567   -0.984
+ AVC           O2V    O    OH1       0.000      0.927   -4.456    1.378
+ AVC           HV     H    H         0.000      1.608   -5.030    1.082
+ AVC           "O3'"  O    O2        0.000     -1.346   -2.465    0.827
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AVC      OP3    n/a    P      START
+ AVC      P      OP3    "O5'"  .
+ AVC      OP1    P      .      .
+ AVC      OP2    P      .      .
+ AVC      "O5'"  P      "C5'"  .
+ AVC      "C5'"  "O5'"  "C4'"  .
+ AVC      "H5'"  "C5'"  .      .
+ AVC      "H5''" "C5'"  .      .
+ AVC      "C4'"  "C5'"  "C3'"  .
+ AVC      "H4'"  "C4'"  .      .
+ AVC      "C3'"  "C4'"  "C2'"  .
+ AVC      "H3'"  "C3'"  .      .
+ AVC      "C2'"  "C3'"  "O2'"  .
+ AVC      "H2'"  "C2'"  .      .
+ AVC      "C1'"  "C2'"  N9     .
+ AVC      "H1'"  "C1'"  .      .
+ AVC      "O4'"  "C1'"  .      .
+ AVC      N9     "C1'"  C4     .
+ AVC      C4     N9     N3     .
+ AVC      C5     C4     N7     .
+ AVC      N7     C5     C8     .
+ AVC      C8     N7     H8     .
+ AVC      H8     C8     .      .
+ AVC      N3     C4     C2     .
+ AVC      C2     N3     N1     .
+ AVC      H2     C2     .      .
+ AVC      N1     C2     C6     .
+ AVC      C6     N1     N6     .
+ AVC      N6     C6     H61    .
+ AVC      H62    N6     .      .
+ AVC      H61    N6     .      .
+ AVC      "O2'"  "C2'"  V      .
+ AVC      V      "O2'"  "O3'"  .
+ AVC      O1V    V      .      .
+ AVC      O2V    V      HV     .
+ AVC      HV     O2V    .      .
+ AVC      "O3'"  V      .      END
+ AVC      "C4'"  "O4'"  .    ADD
+ AVC      "C3'"  "O3'"  .    ADD
+ AVC      N9     C8     .    ADD
+ AVC      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AVC       P         OP3       deloc     1.510     0.020     1.510     0.020     
+AVC       OP1       P         deloc     1.510     0.020     1.510     0.020     
+AVC       OP2       P         deloc     1.510     0.020     1.510     0.020     
+AVC       "O5'"     P         single    1.610     0.020     1.610     0.020     
+AVC       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+AVC       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+AVC       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+AVC       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+AVC       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+AVC       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+AVC       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+AVC       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+AVC       "C3'"     "O3'"     single    1.426     0.020     1.426     0.020     
+AVC       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+AVC       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+AVC       "O3'"     V         single    2.004     0.020     2.004     0.020     
+AVC       "O2'"     "C2'"     single    1.426     0.020     1.426     0.020     
+AVC       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+AVC       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+AVC       V         "O2'"     single    2.004     0.020     2.004     0.020     
+AVC       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+AVC       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+AVC       O1V       V         double    1.910     0.020     1.910     0.020     
+AVC       O2V       V         single    2.105     0.020     2.105     0.020     
+AVC       HV        O2V       single    0.970     0.012     0.839     0.014     
+AVC       N9        C8        single    1.337     0.020     1.337     0.020     
+AVC       C4        N9        single    1.337     0.020     1.337     0.020     
+AVC       C8        N7        double    1.350     0.020     1.350     0.020     
+AVC       H8        C8        single    1.082     0.013     0.975     0.010     
+AVC       N7        C5        single    1.350     0.020     1.350     0.020     
+AVC       C5        C6        single    1.490     0.020     1.490     0.020     
+AVC       C5        C4        double    1.490     0.020     1.490     0.020     
+AVC       N6        C6        single    1.355     0.020     1.355     0.020     
+AVC       C6        N1        double    1.350     0.020     1.350     0.020     
+AVC       H61       N6        single    1.016     0.010     0.899     0.007     
+AVC       H62       N6        single    1.016     0.010     0.899     0.007     
+AVC       N1        C2        single    1.337     0.020     1.337     0.020     
+AVC       C2        N3        double    1.337     0.020     1.337     0.020     
+AVC       H2        C2        single    1.082     0.013     0.975     0.010     
+AVC       N3        C4        single    1.355     0.020     1.355     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AVC      OP3    P      OP1     119.900    3.000
+ AVC      OP3    P      OP2     119.900    3.000
+ AVC      OP3    P      "O5'"   108.200    3.000
+ AVC      OP1    P      OP2     119.900    3.000
+ AVC      OP1    P      "O5'"   108.200    3.000
+ AVC      OP2    P      "O5'"   108.200    3.000
+ AVC      P      "O5'"  "C5'"   120.500    3.000
+ AVC      "O5'"  "C5'"  "H5'"   109.470    3.000
+ AVC      "O5'"  "C5'"  "H5''"  109.470    3.000
+ AVC      "O5'"  "C5'"  "C4'"   109.470    3.000
+ AVC      "H5'"  "C5'"  "H5''"  107.900    3.000
+ AVC      "H5'"  "C5'"  "C4'"   109.470    3.000
+ AVC      "H5''" "C5'"  "C4'"   109.470    3.000
+ AVC      "C5'"  "C4'"  "H4'"   108.340    3.000
+ AVC      "C5'"  "C4'"  "C3'"   111.000    3.000
+ AVC      "C5'"  "C4'"  "O4'"   109.470    3.000
+ AVC      "H4'"  "C4'"  "C3'"   108.340    3.000
+ AVC      "H4'"  "C4'"  "O4'"   109.470    3.000
+ AVC      "C3'"  "C4'"  "O4'"   109.470    3.000
+ AVC      "C4'"  "C3'"  "H3'"   108.340    3.000
+ AVC      "C4'"  "C3'"  "C2'"   111.000    3.000
+ AVC      "C4'"  "C3'"  "O3'"   109.470    3.000
+ AVC      "H3'"  "C3'"  "C2'"   108.340    3.000
+ AVC      "H3'"  "C3'"  "O3'"   109.470    3.000
+ AVC      "C2'"  "C3'"  "O3'"   109.470    3.000
+ AVC      "C3'"  "C2'"  "H2'"   108.340    3.000
+ AVC      "C3'"  "C2'"  "C1'"   111.000    3.000
+ AVC      "C3'"  "C2'"  "O2'"   109.470    3.000
+ AVC      "H2'"  "C2'"  "C1'"   108.340    3.000
+ AVC      "H2'"  "C2'"  "O2'"   109.470    3.000
+ AVC      "C1'"  "C2'"  "O2'"   109.470    3.000
+ AVC      "C2'"  "C1'"  "H1'"   108.340    3.000
+ AVC      "C2'"  "C1'"  "O4'"   109.470    3.000
+ AVC      "C2'"  "C1'"  N9      109.470    3.000
+ AVC      "H1'"  "C1'"  "O4'"   109.470    3.000
+ AVC      "H1'"  "C1'"  N9      109.470    3.000
+ AVC      "O4'"  "C1'"  N9      109.470    3.000
+ AVC      "C1'"  "O4'"  "C4'"   111.800    3.000
+ AVC      "C1'"  N9     C4      126.000    3.000
+ AVC      "C1'"  N9     C8      126.000    3.000
+ AVC      C4     N9     C8      108.000    3.000
+ AVC      N9     C4     C5      108.000    3.000
+ AVC      N9     C4     N3      132.000    3.000
+ AVC      C5     C4     N3      120.000    3.000
+ AVC      C4     C5     N7      108.000    3.000
+ AVC      C4     C5     C6      120.000    3.000
+ AVC      N7     C5     C6      132.000    3.000
+ AVC      C5     N7     C8      108.000    3.000
+ AVC      N7     C8     H8      126.000    3.000
+ AVC      N7     C8     N9      108.000    3.000
+ AVC      H8     C8     N9      126.000    3.000
+ AVC      C4     N3     C2      120.000    3.000
+ AVC      N3     C2     H2      120.000    3.000
+ AVC      N3     C2     N1      120.000    3.000
+ AVC      H2     C2     N1      120.000    3.000
+ AVC      C2     N1     C6      120.000    3.000
+ AVC      N1     C6     N6      120.000    3.000
+ AVC      N1     C6     C5      120.000    3.000
+ AVC      N6     C6     C5      120.000    3.000
+ AVC      C6     N6     H62     120.000    3.000
+ AVC      C6     N6     H61     120.000    3.000
+ AVC      H62    N6     H61     120.000    3.000
+ AVC      "C2'"  "O2'"  V       120.000    3.000
+ AVC      "O2'"  V      O2V     111.697    3.000
+ AVC      "O2'"  V      O1V     111.717    3.000
+ AVC      "O2'"  V      "O3'"    97.769    3.000
+ AVC      O2V    V      O1V     111.498    3.000
+ AVC      O2V    V      "O3'"   111.711    3.000
+ AVC      O1V    V      "O3'"   111.762    3.000
+ AVC      V      O2V    HV      120.000    3.000
+ AVC      V      "O3'"  "C3'"   120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AVC      var_1    OP3    P      "O5'"  "C5'"     65.000   20.000   1
+ AVC      var_2    P      "O5'"  "C5'"  "C4'"   -179.990   20.000   1
+ AVC      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -179.882   20.000   3
+ AVC      var_4    "C5'"  "C4'"  "O4'"  "C1'"    158.017   20.000   1
+ AVC      var_5    "C5'"  "C4'"  "C3'"  "C2'"   -156.069   20.000   3
+ AVC      var_6    "C4'"  "C3'"  "O3'"  V        114.197   20.000   1
+ AVC      var_7    "C4'"  "C3'"  "C2'"  "O2'"    -92.782   20.000   3
+ AVC      var_8    "C3'"  "C2'"  "C1'"  N9       120.112   20.000   3
+ AVC      var_9    "C2'"  "C1'"  "O4'"  "C4'"    -25.508   20.000   1
+ AVC      var_10   "C2'"  "C1'"  N9     C4        85.433   20.000   1
+ AVC      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ AVC      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ AVC      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ AVC      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ AVC      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ AVC      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ AVC      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ AVC      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ AVC      CONST_9  N3     C2     N1     C6         0.000    0.000   0
+ AVC      CONST_10 C2     N1     C6     N6       180.000    0.000   0
+ AVC      CONST_11 N1     C6     N6     H61     -179.930    0.000   0
+ AVC      var_11   "C3'"  "C2'"  "O2'"  V        -35.439   20.000   1
+ AVC      var_12   "C2'"  "O2'"  V      "O3'"     30.222   20.000   1
+ AVC      var_13   "O2'"  V      O2V    HV       -71.677   20.000   1
+ AVC      var_14   "O2'"  V      "O3'"  "C3'"    -16.463   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AVC      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ AVC      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ AVC      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ AVC      chir_04  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AVC      plan-1    N9        0.020
+ AVC      plan-1    "C1'"     0.020
+ AVC      plan-1    C8        0.020
+ AVC      plan-1    C4        0.020
+ AVC      plan-1    N7        0.020
+ AVC      plan-1    H8        0.020
+ AVC      plan-1    C5        0.020
+ AVC      plan-1    C6        0.020
+ AVC      plan-1    N1        0.020
+ AVC      plan-1    C2        0.020
+ AVC      plan-1    N3        0.020
+ AVC      plan-1    N6        0.020
+ AVC      plan-1    H2        0.020
+ AVC      plan-1    H62       0.020
+ AVC      plan-1    H61       0.020
+ AVC      plan-2    N6        0.020
+ AVC      plan-2    C6        0.020
+ AVC      plan-2    H61       0.020
+ AVC      plan-2    H62       0.020
+# ------------------------------------------------------

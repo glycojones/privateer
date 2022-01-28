@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2CO     2CO     S-HYDROPEROXYCYSTEINE     peptide     16     9     .     
+#
+data_comp_2CO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2CO     N       N       NT3     1       -1.772      -1.102      0.182       
+2CO     CA      C       CH1     0       -0.911      0.031       -0.254      
+2CO     C       C       C       0       -0.768      1.040       0.892       
+2CO     O       O       O       0       -1.032      2.233       0.639       
+2CO     CB      C       CH2     0       0.444       -0.471      -0.715      
+2CO     SG      S       S2      0       1.499       0.777       -1.509      
+2CO     OD      O       O2      0       2.295       1.638       -0.352      
+2CO     OE      O       OH1     0       3.480       0.889       0.086       
+2CO     OXT     O       OC      -1      -0.396      0.595       1.996       
+2CO     H       H       H       0       -1.872      -1.695      -0.502      
+2CO     H2      H       H       0       -2.593      -0.789      0.428       
+2CO     H3      H       H       0       -1.388      -1.525      0.892       
+2CO     HA      H       H       0       -1.355      0.475       -1.014      
+2CO     HB2     H       H       0       0.306       -1.206      -1.349      
+2CO     HB3     H       H       0       0.923       -0.833      0.059       
+2CO     HE      H       H       0       3.720       1.354       0.791       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 2CO      N      n/a    CA     START
+ 2CO      H      N      .      .
+ 2CO      H2     N      .      .
+ 2CO      H3     N      .      .
+ 2CO      CA     N      C      .
+ 2CO      HA     CA     .      .
+ 2CO      CB     CA     SG     .
+ 2CO      HB2    CB     .      .
+ 2CO      HB3    CB     .      .
+ 2CO      SG     CB     OD     .
+ 2CO      OD     SG     OE     .
+ 2CO      OE     OD     HE     .
+ 2CO      HE     OE     .      .
+ 2CO      C      CA     .      END
+ 2CO      O      C      .      .
+ 2CO      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2CO       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+2CO       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+2CO       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+2CO       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+2CO       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+2CO       CB        SG        SINGLE    n         1.817     0.011     1.817     0.011     
+2CO       SG        OD        SINGLE    n         1.647     0.012     1.647     0.012     
+2CO       OD        OE        SINGLE    n         1.468     0.020     1.468     0.020     
+2CO       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+2CO       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+2CO       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+2CO       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+2CO       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.019     
+2CO       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.019     
+2CO       OE        HE        SINGLE    n         0.970     0.012     0.878     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2CO          CA           N           H     109.671    1.50
+2CO          CA           N          H2     109.671    1.50
+2CO          CA           N          H3     109.671    1.50
+2CO           H           N          H2     109.028    2.41
+2CO           H           N          H3     109.028    2.41
+2CO          H2           N          H3     109.028    2.41
+2CO           N          CA           C     109.494    1.50
+2CO           N          CA          CB     110.672    1.50
+2CO           N          CA          HA     107.983    1.50
+2CO           C          CA          CB     111.067    2.40
+2CO           C          CA          HA     108.606    1.50
+2CO          CB          CA          HA     108.432    1.50
+2CO          CA           C           O     117.134    1.50
+2CO          CA           C         OXT     117.134    1.50
+2CO           O           C         OXT     125.732    1.50
+2CO          CA          CB          SG     115.472    1.77
+2CO          CA          CB         HB2     108.885    1.50
+2CO          CA          CB         HB3     108.885    1.50
+2CO          SG          CB         HB2     108.668    1.50
+2CO          SG          CB         HB3     108.668    1.50
+2CO         HB2          CB         HB3     107.922    1.50
+2CO          CB          SG          OD     109.471    3.00
+2CO          SG          OD          OE     109.471    3.00
+2CO          OD          OE          HE     100.984    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2CO             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+2CO             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+2CO            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+2CO            sp3_sp3_19          CA          CB          SG          OD     180.000   10.00     3
+2CO            sp3_sp3_22          OE          OD          SG          CB     180.000   10.00     3
+2CO            sp3_sp3_23          SG          OD          OE          HE     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+2CO    chir_1    CA    N    CB    C    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+2CO    plan-1           C   0.020
+2CO    plan-1          CA   0.020
+2CO    plan-1           O   0.020
+2CO    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2CO SMILES           ACDLabs              10.04 "O=C(O)C(N)CSOO"
+2CO SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CSOO)C(O)=O"
+2CO SMILES           CACTVS               3.341 "N[CH](CSOO)C(O)=O"
+2CO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)SOO"
+2CO SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)SOO"
+2CO InChI            InChI                1.03  "InChI=1S/C3H7NO4S/c4-2(3(5)6)1-9-8-7/h2,7H,1,4H2,(H,5,6)/t2-/m0/s1"
+2CO InChIKey         InChI                1.03  BXTMIEGCNKHUKA-REOHCLBHSA-N
+2CO ?                acedrg               196         "dictionary generator"                  
+2CO ?                acedrg_database      11          "data source"                           
+2CO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2CO ?                refmac5              5.8.0222    "optimization tool"                     

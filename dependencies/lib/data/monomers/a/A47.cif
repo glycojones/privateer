@@ -1,0 +1,313 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+A47      A47 '.                                   ' non-polymer        38  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_A47
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ A47           O2P    O    OP       -0.666      0.000    0.000    0.000
+ A47           P      P    P         0.000     -1.045    0.957    0.529
+ A47           O3P    O    OP       -0.666     -1.443    1.923   -0.566
+ A47           O1P    O    OP       -0.666     -0.477    1.728    1.700
+ A47           "O5'"  O    O2        0.000     -2.339    0.128    1.008
+ A47           "C5'"  C    CH2       0.000     -2.897   -0.480   -0.159
+ A47           "H5'1" H    H         0.000     -2.156   -1.142   -0.612
+ A47           "H5'2" H    H         0.000     -3.176    0.296   -0.874
+ A47           "C4'"  C    CH1       0.000     -4.136   -1.288    0.230
+ A47           "H4'"  H    H         0.000     -3.904   -1.981    1.051
+ A47           "C3'"  C    CH1       0.000     -4.690   -2.061   -0.995
+ A47           "H3'"  H    H         0.000     -4.598   -1.461   -1.911
+ A47           "O3'"  O    OH1       0.000     -4.033   -3.321   -1.143
+ A47           HA     H    H         0.000     -4.455   -3.822   -1.853
+ A47           "C2'"  C    CH2       0.000     -6.176   -2.255   -0.609
+ A47           "H2'1" H    H         0.000     -6.361   -3.240   -0.175
+ A47           "H2'2" H    H         0.000     -6.843   -2.104   -1.461
+ A47           "C1'"  C    CH1       0.000     -6.438   -1.167    0.450
+ A47           "H1'"  H    H         0.000     -6.707   -1.634    1.408
+ A47           "O4'"  O    O2        0.000     -5.225   -0.411    0.598
+ A47           N9     N    NR5       0.000     -7.521   -0.287    0.003
+ A47           C4     C    CR56      0.000     -8.866   -0.504    0.172
+ A47           C5     C    CR56      0.000     -9.513    0.594   -0.419
+ A47           N7     N    NRD5      0.000     -8.548    1.414   -0.900
+ A47           C8     C    CR15      0.000     -7.379    0.897   -0.657
+ A47           H8     H    H         0.000     -6.432    1.342   -0.938
+ A47           N3     N    NRD6      0.000     -9.598   -1.463    0.728
+ A47           C2     C    CR16      0.000    -10.912   -1.386    0.734
+ A47           H2     H    H         0.000    -11.480   -2.184    1.196
+ A47           N1     N    NRD6      0.000    -11.565   -0.370    0.197
+ A47           C6     C    CR6       0.000    -10.917    0.635   -0.383
+ A47           N6     N    NH1       0.000    -11.609    1.695   -0.942
+ A47           H6     H    H         0.000    -11.105    2.453   -1.380
+ A47           O1     O    O2        0.000    -13.024    1.716   -0.901
+ A47           C1     C    CH3       0.000    -13.438    2.920   -1.551
+ A47           H1C3   H    H         0.000    -13.036    3.755   -1.039
+ A47           H1C2   H    H         0.000    -13.091    2.919   -2.552
+ A47           H1C1   H    H         0.000    -14.496    2.979   -1.545
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ A47      O2P    n/a    P      START
+ A47      P      O2P    "O5'"  .
+ A47      O3P    P      .      .
+ A47      O1P    P      .      .
+ A47      "O5'"  P      "C5'"  .
+ A47      "C5'"  "O5'"  "C4'"  .
+ A47      "H5'1" "C5'"  .      .
+ A47      "H5'2" "C5'"  .      .
+ A47      "C4'"  "C5'"  "C3'"  .
+ A47      "H4'"  "C4'"  .      .
+ A47      "C3'"  "C4'"  "C2'"  .
+ A47      "H3'"  "C3'"  .      .
+ A47      "O3'"  "C3'"  HA     .
+ A47      HA     "O3'"  .      .
+ A47      "C2'"  "C3'"  "C1'"  .
+ A47      "H2'1" "C2'"  .      .
+ A47      "H2'2" "C2'"  .      .
+ A47      "C1'"  "C2'"  N9     .
+ A47      "H1'"  "C1'"  .      .
+ A47      "O4'"  "C1'"  .      .
+ A47      N9     "C1'"  C4     .
+ A47      C4     N9     N3     .
+ A47      C5     C4     N7     .
+ A47      N7     C5     C8     .
+ A47      C8     N7     H8     .
+ A47      H8     C8     .      .
+ A47      N3     C4     C2     .
+ A47      C2     N3     N1     .
+ A47      H2     C2     .      .
+ A47      N1     C2     C6     .
+ A47      C6     N1     N6     .
+ A47      N6     C6     O1     .
+ A47      H6     N6     .      .
+ A47      O1     N6     C1     .
+ A47      C1     O1     H1C1   .
+ A47      H1C3   C1     .      .
+ A47      H1C2   C1     .      .
+ A47      H1C1   C1     .      END
+ A47      "C4'"  "O4'"  .    ADD
+ A47      N9     C8     .    ADD
+ A47      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+A47       O3P       P         deloc     1.510     0.020     1.510     0.020     
+A47       O1P       P         deloc     1.510     0.020     1.510     0.020     
+A47       P         O2P       deloc     1.510     0.020     1.510     0.020     
+A47       "O5'"     P         single    1.610     0.020     1.610     0.020     
+A47       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+A47       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+A47       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+A47       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+A47       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+A47       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+A47       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+A47       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+A47       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+A47       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+A47       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+A47       HA        "O3'"     single    0.970     0.012     0.839     0.014     
+A47       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+A47       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+A47       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+A47       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+A47       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+A47       N9        C8        single    1.337     0.020     1.337     0.020     
+A47       C4        N9        single    1.337     0.020     1.337     0.020     
+A47       C8        N7        double    1.350     0.020     1.350     0.020     
+A47       H8        C8        single    1.082     0.013     0.975     0.010     
+A47       N7        C5        single    1.350     0.020     1.350     0.020     
+A47       C5        C6        double    1.490     0.020     1.490     0.020     
+A47       C5        C4        single    1.490     0.020     1.490     0.020     
+A47       N6        C6        single    1.350     0.020     1.350     0.020     
+A47       C6        N1        single    1.350     0.020     1.350     0.020     
+A47       O1        N6        single    1.335     0.020     1.335     0.020     
+A47       H6        N6        single    1.016     0.010     0.899     0.007     
+A47       N1        C2        double    1.337     0.020     1.337     0.020     
+A47       C2        N3        single    1.337     0.020     1.337     0.020     
+A47       H2        C2        single    1.082     0.013     0.975     0.010     
+A47       N3        C4        double    1.355     0.020     1.355     0.020     
+A47       C1        O1        single    1.426     0.020     1.426     0.020     
+A47       H1C1      C1        single    1.089     0.010     0.989     0.005     
+A47       H1C2      C1        single    1.089     0.010     0.989     0.005     
+A47       H1C3      C1        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ A47      O2P    P      O3P     119.900    3.000
+ A47      O2P    P      O1P     119.900    3.000
+ A47      O2P    P      "O5'"   108.200    3.000
+ A47      O3P    P      O1P     119.900    3.000
+ A47      O3P    P      "O5'"   108.200    3.000
+ A47      O1P    P      "O5'"   108.200    3.000
+ A47      P      "O5'"  "C5'"   120.500    3.000
+ A47      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ A47      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ A47      "O5'"  "C5'"  "C4'"   109.470    3.000
+ A47      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ A47      "H5'1" "C5'"  "C4'"   109.470    3.000
+ A47      "H5'2" "C5'"  "C4'"   109.470    3.000
+ A47      "C5'"  "C4'"  "H4'"   108.340    3.000
+ A47      "C5'"  "C4'"  "C3'"   111.000    3.000
+ A47      "C5'"  "C4'"  "O4'"   109.470    3.000
+ A47      "H4'"  "C4'"  "C3'"   108.340    3.000
+ A47      "H4'"  "C4'"  "O4'"   109.470    3.000
+ A47      "C3'"  "C4'"  "O4'"   109.470    3.000
+ A47      "C4'"  "C3'"  "H3'"   108.340    3.000
+ A47      "C4'"  "C3'"  "O3'"   109.470    3.000
+ A47      "C4'"  "C3'"  "C2'"   111.000    3.000
+ A47      "H3'"  "C3'"  "O3'"   109.470    3.000
+ A47      "H3'"  "C3'"  "C2'"   108.340    3.000
+ A47      "O3'"  "C3'"  "C2'"   109.470    3.000
+ A47      "C3'"  "O3'"  HA      109.470    3.000
+ A47      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ A47      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ A47      "C3'"  "C2'"  "C1'"   111.000    3.000
+ A47      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ A47      "H2'1" "C2'"  "C1'"   109.470    3.000
+ A47      "H2'2" "C2'"  "C1'"   109.470    3.000
+ A47      "C2'"  "C1'"  "H1'"   108.340    3.000
+ A47      "C2'"  "C1'"  "O4'"   109.470    3.000
+ A47      "C2'"  "C1'"  N9      109.470    3.000
+ A47      "H1'"  "C1'"  "O4'"   109.470    3.000
+ A47      "H1'"  "C1'"  N9      109.470    3.000
+ A47      "O4'"  "C1'"  N9      109.470    3.000
+ A47      "C1'"  "O4'"  "C4'"   111.800    3.000
+ A47      "C1'"  N9     C4      126.000    3.000
+ A47      "C1'"  N9     C8      126.000    3.000
+ A47      C4     N9     C8      108.000    3.000
+ A47      N9     C4     C5      108.000    3.000
+ A47      N9     C4     N3      132.000    3.000
+ A47      C5     C4     N3      120.000    3.000
+ A47      C4     C5     N7      108.000    3.000
+ A47      C4     C5     C6      120.000    3.000
+ A47      N7     C5     C6      132.000    3.000
+ A47      C5     N7     C8      108.000    3.000
+ A47      N7     C8     H8      126.000    3.000
+ A47      N7     C8     N9      108.000    3.000
+ A47      H8     C8     N9      126.000    3.000
+ A47      C4     N3     C2      120.000    3.000
+ A47      N3     C2     H2      120.000    3.000
+ A47      N3     C2     N1      120.000    3.000
+ A47      H2     C2     N1      120.000    3.000
+ A47      C2     N1     C6      120.000    3.000
+ A47      N1     C6     N6      120.000    3.000
+ A47      N1     C6     C5      120.000    3.000
+ A47      N6     C6     C5      120.000    3.000
+ A47      C6     N6     H6      120.000    3.000
+ A47      C6     N6     O1      120.000    3.000
+ A47      H6     N6     O1      120.000    3.000
+ A47      N6     O1     C1      120.000    3.000
+ A47      O1     C1     H1C3    109.470    3.000
+ A47      O1     C1     H1C2    109.470    3.000
+ A47      O1     C1     H1C1    109.470    3.000
+ A47      H1C3   C1     H1C2    109.470    3.000
+ A47      H1C3   C1     H1C1    109.470    3.000
+ A47      H1C2   C1     H1C1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ A47      var_1    O2P    P      "O5'"  "C5'"    -64.985   20.000   1
+ A47      var_2    P      "O5'"  "C5'"  "C4'"    179.973   20.000   1
+ A47      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -175.001   20.000   3
+ A47      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ A47      var_5    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ A47      var_6    "C4'"  "C3'"  "O3'"  HA       174.160   20.000   1
+ A47      var_7    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ A47      var_8    "C3'"  "C2'"  "C1'"  N9       120.000   20.000   3
+ A47      var_9    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ A47      var_10   "C2'"  "C1'"  N9     C4        85.333   20.000   1
+ A47      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ A47      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ A47      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ A47      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ A47      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ A47      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ A47      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ A47      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ A47      CONST_9  N3     C2     N1     C6         0.000    0.000   0
+ A47      CONST_10 C2     N1     C6     N6       180.000    0.000   0
+ A47      var_11   N1     C6     N6     O1         0.034   20.000   1
+ A47      var_12   C6     N6     O1     C1      -179.993   20.000   1
+ A47      var_13   N6     O1     C1     H1C1     179.960   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ A47      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ A47      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ A47      chir_03  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ A47      plan-1    N9        0.020
+ A47      plan-1    "C1'"     0.020
+ A47      plan-1    C8        0.020
+ A47      plan-1    C4        0.020
+ A47      plan-1    N7        0.020
+ A47      plan-1    H8        0.020
+ A47      plan-1    C5        0.020
+ A47      plan-1    C6        0.020
+ A47      plan-1    N1        0.020
+ A47      plan-1    C2        0.020
+ A47      plan-1    N3        0.020
+ A47      plan-1    N6        0.020
+ A47      plan-1    H2        0.020
+ A47      plan-1    H6        0.020
+ A47      plan-2    N6        0.020
+ A47      plan-2    C6        0.020
+ A47      plan-2    O1        0.020
+ A47      plan-2    H6        0.020
+# ------------------------------------------------------

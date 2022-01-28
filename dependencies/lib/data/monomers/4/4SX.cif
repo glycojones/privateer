@@ -1,0 +1,155 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4SX     4SX      "3,4-dihydroxybenzenesulfonic acid"     NON-POLYMER     18     12     .     
+#
+data_comp_4SX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4SX     O11     O       O       0       4.896       40.270      35.376      
+4SX     S9      S       S3      0       5.153       39.802      36.714      
+4SX     O12     O       O       0       6.541       39.810      37.095      
+4SX     O10     O       OH1     0       4.351       40.566      37.699      
+4SX     C4      C       CR6     0       4.594       38.119      36.786      
+4SX     C3      C       CR16    0       3.259       37.848      37.071      
+4SX     C5      C       CR16    0       5.482       37.074      36.555      
+4SX     C6      C       CR16    0       5.038       35.760      36.611      
+4SX     C1      C       CR6     0       3.708       35.485      36.896      
+4SX     O7      O       OH1     0       3.264       34.199      36.954      
+4SX     C2      C       CR6     0       2.815       36.544      37.127      
+4SX     O8      O       OH1     0       1.505       36.276      37.408      
+4SX     H6      H       H       0       4.791       41.345      37.919      
+4SX     H1      H       H       0       2.647       38.556      37.227      
+4SX     H2      H       H       0       6.383       37.250      36.360      
+4SX     H3      H       H       0       5.640       35.052      36.456      
+4SX     H4      H       H       0       3.661       33.780      37.588      
+4SX     H5      H       H       0       1.440       35.908      38.181      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4SX       O11       S9        DOUBLE    n         1.440     0.010     1.440     0.010     
+4SX       S9        O12       DOUBLE    n         1.440     0.010     1.440     0.010     
+4SX       C2        O8        SINGLE    n         1.365     0.010     1.365     0.010     
+4SX       C1        O7        SINGLE    n         1.361     0.010     1.361     0.010     
+4SX       C1        C2        DOUBLE    y         1.395     0.010     1.395     0.010     
+4SX       C6        C1        SINGLE    y         1.381     0.010     1.381     0.010     
+4SX       C3        C2        SINGLE    y         1.370     0.010     1.370     0.010     
+4SX       S9        C4        SINGLE    n         1.772     0.013     1.772     0.013     
+4SX       S9        O10       SINGLE    n         1.482     0.020     1.482     0.020     
+4SX       C5        C6        DOUBLE    y         1.381     0.010     1.381     0.010     
+4SX       C4        C3        DOUBLE    y         1.384     0.010     1.384     0.010     
+4SX       C4        C5        SINGLE    y         1.384     0.010     1.384     0.010     
+4SX       O10       H6        SINGLE    n         0.970     0.012     0.921     0.020     
+4SX       C3        H1        SINGLE    n         1.082     0.013     0.949     0.020     
+4SX       C5        H2        SINGLE    n         1.082     0.013     0.939     0.020     
+4SX       C6        H3        SINGLE    n         1.082     0.013     0.942     0.017     
+4SX       O7        H4        SINGLE    n         0.970     0.012     0.858     0.020     
+4SX       O8        H5        SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4SX         O11          S9         O12     114.848    3.00
+4SX         O11          S9          C4     106.928    1.50
+4SX         O11          S9         O10     110.900    2.56
+4SX         O12          S9          C4     106.928    1.50
+4SX         O12          S9         O10     110.900    2.56
+4SX          C4          S9         O10     106.633    1.50
+4SX          S9         O10          H6     109.599    1.50
+4SX          S9          C4          C3     119.484    1.50
+4SX          S9          C4          C5     120.016    1.50
+4SX          C3          C4          C5     120.500    1.50
+4SX          C2          C3          C4     119.633    1.50
+4SX          C2          C3          H1     119.836    1.50
+4SX          C4          C3          H1     120.531    1.50
+4SX          C6          C5          C4     120.306    1.50
+4SX          C6          C5          H2     119.651    1.50
+4SX          C4          C5          H2     120.043    1.50
+4SX          C1          C6          C5     120.114    1.50
+4SX          C1          C6          H3     119.842    1.50
+4SX          C5          C6          H3     120.044    1.50
+4SX          O7          C1          C2     118.856    2.41
+4SX          O7          C1          C6     121.458    2.46
+4SX          C2          C1          C6     119.686    1.50
+4SX          C1          O7          H4     110.003    2.63
+4SX          O8          C2          C1     118.839    2.41
+4SX          O8          C2          C3     121.401    2.50
+4SX          C1          C2          C3     119.760    1.50
+4SX          C2          O8          H5     110.003    2.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4SX             sp3_sp3_1          H6         O10          S9         O11     180.000   10.00     3
+4SX             sp2_sp3_5          C3          C4          S9         O11     150.000   10.00     6
+4SX       const_sp2_sp2_2          C2          C3          C4          S9     180.000   10.00     2
+4SX              const_23          S9          C4          C5          C6     180.000   10.00     2
+4SX       const_sp2_sp2_7          O8          C2          C3          C4     180.000   10.00     2
+4SX              const_17          C4          C5          C6          C1       0.000   10.00     2
+4SX              const_15          O7          C1          C6          C5     180.000   10.00     2
+4SX              const_12          O7          C1          C2          O8       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4SX    plan-1          C1   0.020
+4SX    plan-1          C2   0.020
+4SX    plan-1          C3   0.020
+4SX    plan-1          C4   0.020
+4SX    plan-1          C5   0.020
+4SX    plan-1          C6   0.020
+4SX    plan-1          H1   0.020
+4SX    plan-1          H2   0.020
+4SX    plan-1          H3   0.020
+4SX    plan-1          O7   0.020
+4SX    plan-1          O8   0.020
+4SX    plan-1          S9   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4SX SMILES           ACDLabs              12.01 "O=S(c1cc(c(cc1)O)O)(O)=O"
+4SX InChI            InChI                1.03  "InChI=1S/C6H6O5S/c7-5-2-1-4(3-6(5)8)12(9,10)11/h1-3,7-8H,(H,9,10,11)"
+4SX InChIKey         InChI                1.03  LTPDITOEDOAWRU-UHFFFAOYSA-N
+4SX SMILES_CANONICAL CACTVS               3.385 "Oc1ccc(cc1O)[S](O)(=O)=O"
+4SX SMILES           CACTVS               3.385 "Oc1ccc(cc1O)[S](O)(=O)=O"
+4SX SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "c1cc(c(cc1S(=O)(=O)O)O)O"
+4SX SMILES           "OpenEye OEToolkits" 1.9.2 "c1cc(c(cc1S(=O)(=O)O)O)O"
+4SX ?                acedrg               202         "dictionary generator"                  
+4SX ?                acedrg_database      11          "data source"                           
+4SX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4SX ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,164 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+WM4     WM4      benzohydrazide     NON-POLYMER     18     10     .     
+#
+data_comp_WM4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+WM4     CAE     C       CR16    0       0.726       -13.611     3.809       
+WM4     CAH     C       CR16    0       1.287       -12.352     3.624       
+WM4     CAI     C       CR16    0       0.692       -11.235     4.185       
+WM4     CAJ     C       CR16    0       -0.466      -11.371     4.932       
+WM4     CAG     C       CR16    0       -1.033      -12.627     5.122       
+WM4     CAF     C       CR6     0       -0.440      -13.760     4.561       
+WM4     CAB     C       C       0       -1.044      -15.106     4.760       
+WM4     OAA     O       O       0       -2.210      -15.328     4.440       
+WM4     NAC     N       NH1     0       -0.251      -16.044     5.290       
+WM4     NAD     N       NT2     0       -0.642      -17.403     5.401       
+WM4     H1      H       H       0       1.136       -14.366     3.425       
+WM4     H2      H       H       0       2.075       -12.260     3.115       
+WM4     H3      H       H       0       1.075       -10.381     4.058       
+WM4     H4      H       H       0       -0.872      -10.611     5.315       
+WM4     H5      H       H       0       -1.820      -12.712     5.631       
+WM4     H6      H       H       0       0.566       -15.867     5.607       
+WM4     H7      H       H       0       -1.306      -17.454     6.013       
+WM4     H8      H       H       0       0.060       -17.880     5.715       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+WM4       CAE       CAH       DOUBLE    y         1.384     0.010     1.384     0.010     
+WM4       CAH       CAI       SINGLE    y         1.376     0.011     1.376     0.011     
+WM4       CAE       CAF       SINGLE    y         1.389     0.010     1.389     0.010     
+WM4       CAI       CAJ       DOUBLE    y         1.376     0.012     1.376     0.012     
+WM4       CAF       CAB       SINGLE    n         1.488     0.010     1.488     0.010     
+WM4       CAG       CAF       DOUBLE    y         1.389     0.010     1.389     0.010     
+WM4       CAB       OAA       DOUBLE    n         1.228     0.010     1.228     0.010     
+WM4       CAB       NAC       SINGLE    n         1.334     0.010     1.334     0.010     
+WM4       CAJ       CAG       SINGLE    y         1.384     0.010     1.384     0.010     
+WM4       NAC       NAD       SINGLE    n         1.417     0.010     1.417     0.010     
+WM4       CAE       H1        SINGLE    n         1.082     0.013     0.941     0.017     
+WM4       CAH       H2        SINGLE    n         1.082     0.013     0.943     0.018     
+WM4       CAI       H3        SINGLE    n         1.082     0.013     0.944     0.016     
+WM4       CAJ       H4        SINGLE    n         1.082     0.013     0.943     0.018     
+WM4       CAG       H5        SINGLE    n         1.082     0.013     0.941     0.017     
+WM4       NAC       H6        SINGLE    n         1.016     0.010     0.891     0.020     
+WM4       NAD       H7        SINGLE    n         1.036     0.016     0.904     0.020     
+WM4       NAD       H8        SINGLE    n         1.036     0.016     0.904     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+WM4         CAH         CAE         CAF     120.300    1.50
+WM4         CAH         CAE          H1     119.776    1.50
+WM4         CAF         CAE          H1     119.925    1.50
+WM4         CAE         CAH         CAI     120.226    1.50
+WM4         CAE         CAH          H2     119.842    1.50
+WM4         CAI         CAH          H2     119.933    1.50
+WM4         CAH         CAI         CAJ     119.943    1.50
+WM4         CAH         CAI          H3     120.028    1.50
+WM4         CAJ         CAI          H3     120.028    1.50
+WM4         CAI         CAJ         CAG     120.226    1.50
+WM4         CAI         CAJ          H4     119.933    1.50
+WM4         CAG         CAJ          H4     119.842    1.50
+WM4         CAF         CAG         CAJ     120.300    1.50
+WM4         CAF         CAG          H5     119.925    1.50
+WM4         CAJ         CAG          H5     119.776    1.50
+WM4         CAE         CAF         CAB     120.497    2.92
+WM4         CAE         CAF         CAG     119.007    1.50
+WM4         CAB         CAF         CAG     120.497    2.92
+WM4         CAF         CAB         OAA     121.414    1.50
+WM4         CAF         CAB         NAC     116.187    1.50
+WM4         OAA         CAB         NAC     122.398    1.50
+WM4         CAB         NAC         NAD     122.192    1.50
+WM4         CAB         NAC          H6     122.570    2.56
+WM4         NAD         NAC          H6     115.237    2.41
+WM4         NAC         NAD          H7     108.022    3.00
+WM4         NAC         NAD          H8     108.022    3.00
+WM4          H7         NAD          H8     107.713    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+WM4       const_sp2_sp2_1         CAF         CAE         CAH         CAI       0.000   10.00     2
+WM4              const_22         CAH         CAE         CAF         CAB     180.000   10.00     2
+WM4       const_sp2_sp2_5         CAE         CAH         CAI         CAJ       0.000   10.00     2
+WM4       const_sp2_sp2_9         CAH         CAI         CAJ         CAG       0.000   10.00     2
+WM4              const_13         CAF         CAG         CAJ         CAI       0.000   10.00     2
+WM4              const_19         CAB         CAF         CAG         CAJ     180.000   10.00     2
+WM4             sp2_sp2_3         OAA         CAB         CAF         CAE       0.000   10.00     2
+WM4             sp2_sp2_7         OAA         CAB         NAC         NAD       0.000   10.00     2
+WM4             sp2_sp3_1         CAB         NAC         NAD          H7       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+WM4    plan-1         CAB   0.020
+WM4    plan-1         CAE   0.020
+WM4    plan-1         CAF   0.020
+WM4    plan-1         CAG   0.020
+WM4    plan-1         CAH   0.020
+WM4    plan-1         CAI   0.020
+WM4    plan-1         CAJ   0.020
+WM4    plan-1          H1   0.020
+WM4    plan-1          H2   0.020
+WM4    plan-1          H3   0.020
+WM4    plan-1          H4   0.020
+WM4    plan-1          H5   0.020
+WM4    plan-2         CAB   0.020
+WM4    plan-2         CAF   0.020
+WM4    plan-2         NAC   0.020
+WM4    plan-2         OAA   0.020
+WM4    plan-3         CAB   0.020
+WM4    plan-3          H6   0.020
+WM4    plan-3         NAC   0.020
+WM4    plan-3         NAD   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+WM4 SMILES           ACDLabs              12.01 "O=C(NN)c1ccccc1"
+WM4 InChI            InChI                1.03  "InChI=1S/C7H8N2O/c8-9-7(10)6-4-2-1-3-5-6/h1-5H,8H2,(H,9,10)"
+WM4 InChIKey         InChI                1.03  WARCRYXKINZHGQ-UHFFFAOYSA-N
+WM4 SMILES_CANONICAL CACTVS               3.385 "NNC(=O)c1ccccc1"
+WM4 SMILES           CACTVS               3.385 "NNC(=O)c1ccccc1"
+WM4 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1ccc(cc1)C(=O)NN"
+WM4 SMILES           "OpenEye OEToolkits" 1.7.6 "c1ccc(cc1)C(=O)NN"
+WM4 ?                acedrg               202         "dictionary generator"                  
+WM4 ?                acedrg_database      11          "data source"                           
+WM4 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+WM4 ?                refmac5              5.8.0189    "optimization tool"                     

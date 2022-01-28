@@ -1,0 +1,117 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5KX     5KX      2-chloro-1H-imidazole     NON-POLYMER     9     6     .     
+#
+data_comp_5KX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+5KX     CL1     CL      CL      0       25.246      10.898      0.912       
+5KX     C02     C       CR5     0       25.600      9.245       0.766       
+5KX     N03     N       NR5     0       24.769      8.247       1.090       
+5KX     C04     C       CR15    0       25.411      7.073       0.833       
+5KX     C05     C       CR15    0       26.625      7.392       0.356       
+5KX     N06     N       NRD5    0       26.754      8.755       0.310       
+5KX     H1      H       H       0       23.948      8.325       1.414       
+5KX     H2      H       H       0       25.052      6.206       0.971       
+5KX     H3      H       H       0       27.291      6.781       0.091       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5KX       C05       N06       SINGLE    y         1.371     0.014     1.371     0.014     
+5KX       C02       N06       DOUBLE    y         1.338     0.020     1.338     0.020     
+5KX       C04       C05       DOUBLE    y         1.342     0.011     1.342     0.011     
+5KX       CL1       C02       SINGLE    n         1.697     0.011     1.697     0.011     
+5KX       C02       N03       SINGLE    y         1.338     0.015     1.338     0.015     
+5KX       N03       C04       SINGLE    y         1.360     0.016     1.360     0.016     
+5KX       N03       H1        SINGLE    n         1.016     0.010     0.887     0.020     
+5KX       C04       H2        SINGLE    n         1.082     0.013     0.948     0.020     
+5KX       C05       H3        SINGLE    n         1.082     0.013     0.942     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+5KX         N06         C02         CL1     124.491    1.50
+5KX         N06         C02         N03     110.384    1.50
+5KX         CL1         C02         N03     125.125    1.50
+5KX         C02         N03         C04     107.467    1.50
+5KX         C02         N03          H1     126.869    3.00
+5KX         C04         N03          H1     125.664    1.94
+5KX         C05         C04         N03     106.401    1.50
+5KX         C05         C04          H2     127.924    2.17
+5KX         N03         C04          H2     125.675    1.72
+5KX         N06         C05         C04     109.517    1.50
+5KX         N06         C05          H3     124.716    1.50
+5KX         C04         C05          H3     125.767    1.50
+5KX         C05         N06         C02     106.232    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+5KX              const_15         CL1         C02         N03         C04     180.000   10.00     2
+5KX       const_sp2_sp2_2         CL1         C02         N06         C05     180.000   10.00     2
+5KX       const_sp2_sp2_9         C05         C04         N03         C02       0.000   10.00     2
+5KX       const_sp2_sp2_5         N03         C04         C05         N06       0.000   10.00     2
+5KX       const_sp2_sp2_3         C04         C05         N06         C02       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+5KX    plan-1         C02   0.020
+5KX    plan-1         C04   0.020
+5KX    plan-1         C05   0.020
+5KX    plan-1         CL1   0.020
+5KX    plan-1          H1   0.020
+5KX    plan-1          H2   0.020
+5KX    plan-1          H3   0.020
+5KX    plan-1         N03   0.020
+5KX    plan-1         N06   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+5KX SMILES           ACDLabs              12.01 Clc1nccn1
+5KX InChI            InChI                1.03  "InChI=1S/C3H3ClN2/c4-3-5-1-2-6-3/h1-2H,(H,5,6)"
+5KX InChIKey         InChI                1.03  OCVXSFKKWXMYPF-UHFFFAOYSA-N
+5KX SMILES_CANONICAL CACTVS               3.385 "Clc1[nH]ccn1"
+5KX SMILES           CACTVS               3.385 "Clc1[nH]ccn1"
+5KX SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "c1cnc([nH]1)Cl"
+5KX SMILES           "OpenEye OEToolkits" 1.9.2 "c1cnc([nH]1)Cl"
+5KX ?                acedrg               202         "dictionary generator"                  
+5KX ?                acedrg_database      11          "data source"                           
+5KX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+5KX ?                refmac5              5.8.0189    "optimization tool"                     

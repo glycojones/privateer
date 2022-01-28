@@ -1,0 +1,404 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GSS      GSS '.                                   ' DNA                52  32 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GSS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GSS           OP3    O    OP       -0.666      0.000    0.000    0.000
+ GSS           P      P    P         0.000     -0.831   -1.044    0.714
+ GSS           OP1    O    OP       -0.666     -0.698   -0.857    2.209
+ GSS           OP2    O    OP       -0.666     -0.342   -2.424    0.331
+ GSS           "O5'"  O    O2        0.000     -2.376   -0.884    0.287
+ GSS           "C5'"  C    CH2       0.000     -2.776    0.432    0.672
+ GSS           "H5'"  H    H         0.000     -2.152    1.167    0.158
+ GSS           "H5''" H    H         0.000     -2.656    0.547    1.752
+ GSS           "C4'"  C    CH1       0.000     -4.241    0.650    0.294
+ GSS           "H4'"  H    H         0.000     -4.390    0.489   -0.783
+ GSS           "C3'"  C    CH1       0.000     -4.705    2.073    0.700
+ GSS           "H3'"  H    H         0.000     -4.257    2.372    1.658
+ GSS           "C2'"  C    CH2       0.000     -6.236    1.888    0.841
+ GSS           "H2'"  H    H         0.000     -6.771    2.203   -0.057
+ GSS           "H2''" H    H         0.000     -6.635    2.421    1.707
+ GSS           "C1'"  C    CH1       0.000     -6.415    0.371    1.042
+ GSS           "H1'"  H    H         0.000     -7.002   -0.050    0.213
+ GSS           "O4'"  O    O2        0.000     -5.105   -0.218    1.061
+ GSS           N9     N    NR5       0.000     -7.095    0.114    2.314
+ GSS           C4     C    CR56      0.000     -8.446    0.015    2.504
+ GSS           C5     C    CR56      0.000     -8.629   -0.233    3.868
+ GSS           N7     N    NRD5      0.000     -7.400   -0.273    4.439
+ GSS           C8     C    CR15      0.000     -6.496   -0.069    3.526
+ GSS           H8     H    H         0.000     -5.428   -0.047    3.702
+ GSS           N3     N    NRD6      0.000     -9.510    0.104    1.697
+ GSS           C2     C    CR6       0.000    -10.730   -0.037    2.165
+ GSS           N2     N    NH1       0.000    -11.791    0.063    1.300
+ GSS           H2     H    H         0.000    -12.734   -0.042    1.644
+ GSS           CA     C    CH1       0.000    -11.555    0.323   -0.121
+ GSS           HA     H    H         0.000    -10.586   -0.104   -0.416
+ GSS           CJ     C    CR6       0.000    -12.652   -0.307   -0.938
+ GSS           "CO'"  C    CR16      0.000    -13.918   -0.448   -0.401
+ GSS           "HO'"  H    H         0.000    -14.121   -0.107    0.606
+ GSS           "CM'"  C    CR16      0.000    -14.926   -1.025   -1.152
+ GSS           "HM'"  H    H         0.000    -15.920   -1.130   -0.735
+ GSS           CP     C    CR16      0.000    -14.666   -1.468   -2.435
+ GSS           HP     H    H         0.000    -15.455   -1.921   -3.022
+ GSS           CM     C    CR16      0.000    -13.398   -1.332   -2.969
+ GSS           HM     H    H         0.000    -13.193   -1.679   -3.975
+ GSS           CO     C    CR16      0.000    -12.391   -0.752   -2.221
+ GSS           HO     H    H         0.000    -11.397   -0.646   -2.639
+ GSS           CB     C    CH2       0.000    -11.542    1.834   -0.367
+ GSS           HB1    H    H         0.000    -11.365    2.029   -1.427
+ GSS           HB2    H    H         0.000    -10.745    2.292    0.223
+ GSS           OB     O    OH1       0.000    -12.802    2.389    0.017
+ GSS           HB     H    H         0.000    -12.794    3.344   -0.138
+ GSS           N1     N    NR16      0.000    -10.972   -0.275    3.485
+ GSS           H1     H    H         0.000    -11.952   -0.373    3.821
+ GSS           C6     C    CR6       0.000     -9.948   -0.384    4.358
+ GSS           O6     O    O         0.000    -10.154   -0.602    5.540
+ GSS           "O3'"  O    OH1       0.000     -4.398    3.021   -0.324
+ GSS           "HO3'" H    H         0.000     -4.792    3.862   -0.054
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GSS      OP3    n/a    P      START
+ GSS      P      OP3    "O5'"  .
+ GSS      OP1    P      .      .
+ GSS      OP2    P      .      .
+ GSS      "O5'"  P      "C5'"  .
+ GSS      "C5'"  "O5'"  "C4'"  .
+ GSS      "H5'"  "C5'"  .      .
+ GSS      "H5''" "C5'"  .      .
+ GSS      "C4'"  "C5'"  "C3'"  .
+ GSS      "H4'"  "C4'"  .      .
+ GSS      "C3'"  "C4'"  "O3'"  .
+ GSS      "H3'"  "C3'"  .      .
+ GSS      "C2'"  "C3'"  "C1'"  .
+ GSS      "H2'"  "C2'"  .      .
+ GSS      "H2''" "C2'"  .      .
+ GSS      "C1'"  "C2'"  N9     .
+ GSS      "H1'"  "C1'"  .      .
+ GSS      "O4'"  "C1'"  .      .
+ GSS      N9     "C1'"  C4     .
+ GSS      C4     N9     N3     .
+ GSS      C5     C4     N7     .
+ GSS      N7     C5     C8     .
+ GSS      C8     N7     H8     .
+ GSS      H8     C8     .      .
+ GSS      N3     C4     C2     .
+ GSS      C2     N3     N1     .
+ GSS      N2     C2     CA     .
+ GSS      H2     N2     .      .
+ GSS      CA     N2     CB     .
+ GSS      HA     CA     .      .
+ GSS      CJ     CA     "CO'"  .
+ GSS      "CO'"  CJ     "CM'"  .
+ GSS      "HO'"  "CO'"  .      .
+ GSS      "CM'"  "CO'"  CP     .
+ GSS      "HM'"  "CM'"  .      .
+ GSS      CP     "CM'"  CM     .
+ GSS      HP     CP     .      .
+ GSS      CM     CP     CO     .
+ GSS      HM     CM     .      .
+ GSS      CO     CM     HO     .
+ GSS      HO     CO     .      .
+ GSS      CB     CA     OB     .
+ GSS      HB1    CB     .      .
+ GSS      HB2    CB     .      .
+ GSS      OB     CB     HB     .
+ GSS      HB     OB     .      .
+ GSS      N1     C2     C6     .
+ GSS      H1     N1     .      .
+ GSS      C6     N1     O6     .
+ GSS      O6     C6     .      .
+ GSS      "O3'"  "C3'"  .      END
+ GSS      "HO3'" "O3'"  .      .
+ GSS      "C4'"  "O4'"  .    ADD
+ GSS      N9     C8     .    ADD
+ GSS      C5     C6     .    ADD
+ GSS      CJ     CO     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GSS       OP1       P         deloc     1.510     0.020     1.510     0.020     
+GSS       OP2       P         deloc     1.510     0.020     1.510     0.020     
+GSS       P         OP3       deloc     1.510     0.020     1.510     0.020     
+GSS       "O5'"     P         single    1.610     0.020     1.610     0.020     
+GSS       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+GSS       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+GSS       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+GSS       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+GSS       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+GSS       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+GSS       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+GSS       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+GSS       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+GSS       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+GSS       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+GSS       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+GSS       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+GSS       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+GSS       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+GSS       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+GSS       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+GSS       N9        C8        single    1.337     0.020     1.337     0.020     
+GSS       C4        N9        single    1.337     0.020     1.337     0.020     
+GSS       C8        N7        double    1.350     0.020     1.350     0.020     
+GSS       H8        C8        single    1.082     0.013     0.975     0.010     
+GSS       N7        C5        single    1.350     0.020     1.350     0.020     
+GSS       C5        C6        single    1.490     0.020     1.490     0.020     
+GSS       C5        C4        double    1.490     0.020     1.490     0.020     
+GSS       O6        C6        double    1.250     0.020     1.250     0.020     
+GSS       C6        N1        single    1.337     0.020     1.337     0.020     
+GSS       N1        C2        single    1.337     0.020     1.337     0.020     
+GSS       H1        N1        single    1.016     0.010     0.899     0.007     
+GSS       N2        C2        single    1.350     0.020     1.350     0.020     
+GSS       C2        N3        double    1.350     0.020     1.350     0.020     
+GSS       CA        N2        single    1.450     0.020     1.450     0.020     
+GSS       H2        N2        single    1.016     0.010     0.899     0.007     
+GSS       N3        C4        single    1.355     0.020     1.355     0.020     
+GSS       CB        CA        single    1.524     0.020     1.524     0.020     
+GSS       CJ        CA        single    1.480     0.020     1.480     0.020     
+GSS       HA        CA        single    1.089     0.010     0.989     0.005     
+GSS       OB        CB        single    1.432     0.020     1.432     0.020     
+GSS       HB1       CB        single    1.089     0.010     0.989     0.005     
+GSS       HB2       CB        single    1.089     0.010     0.989     0.005     
+GSS       HB        OB        single    0.970     0.012     0.839     0.014     
+GSS       CJ        CO        double    1.390     0.020     1.390     0.020     
+GSS       "CO'"     CJ        single    1.390     0.020     1.390     0.020     
+GSS       CO        CM        single    1.390     0.020     1.390     0.020     
+GSS       HO        CO        single    1.082     0.013     0.975     0.010     
+GSS       "CM'"     "CO'"     double    1.390     0.020     1.390     0.020     
+GSS       "HO'"     "CO'"     single    1.082     0.013     0.975     0.010     
+GSS       CM        CP        double    1.390     0.020     1.390     0.020     
+GSS       HM        CM        single    1.082     0.013     0.975     0.010     
+GSS       CP        "CM'"     single    1.390     0.020     1.390     0.020     
+GSS       "HM'"     "CM'"     single    1.082     0.013     0.975     0.010     
+GSS       HP        CP        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GSS      OP3    P      OP1     119.900    3.000
+ GSS      OP3    P      OP2     119.900    3.000
+ GSS      OP3    P      "O5'"   108.200    3.000
+ GSS      OP1    P      OP2     119.900    3.000
+ GSS      OP1    P      "O5'"   108.200    3.000
+ GSS      OP2    P      "O5'"   108.200    3.000
+ GSS      P      "O5'"  "C5'"   120.500    3.000
+ GSS      "O5'"  "C5'"  "H5'"   109.470    3.000
+ GSS      "O5'"  "C5'"  "H5''"  109.470    3.000
+ GSS      "O5'"  "C5'"  "C4'"   109.470    3.000
+ GSS      "H5'"  "C5'"  "H5''"  107.900    3.000
+ GSS      "H5'"  "C5'"  "C4'"   109.470    3.000
+ GSS      "H5''" "C5'"  "C4'"   109.470    3.000
+ GSS      "C5'"  "C4'"  "H4'"   108.340    3.000
+ GSS      "C5'"  "C4'"  "C3'"   111.000    3.000
+ GSS      "C5'"  "C4'"  "O4'"   109.470    3.000
+ GSS      "H4'"  "C4'"  "C3'"   108.340    3.000
+ GSS      "H4'"  "C4'"  "O4'"   109.470    3.000
+ GSS      "C3'"  "C4'"  "O4'"   109.470    3.000
+ GSS      "C4'"  "C3'"  "H3'"   108.340    3.000
+ GSS      "C4'"  "C3'"  "C2'"   111.000    3.000
+ GSS      "C4'"  "C3'"  "O3'"   109.470    3.000
+ GSS      "H3'"  "C3'"  "C2'"   108.340    3.000
+ GSS      "H3'"  "C3'"  "O3'"   109.470    3.000
+ GSS      "C2'"  "C3'"  "O3'"   109.470    3.000
+ GSS      "C3'"  "C2'"  "H2'"   109.470    3.000
+ GSS      "C3'"  "C2'"  "H2''"  109.470    3.000
+ GSS      "C3'"  "C2'"  "C1'"   111.000    3.000
+ GSS      "H2'"  "C2'"  "H2''"  107.900    3.000
+ GSS      "H2'"  "C2'"  "C1'"   109.470    3.000
+ GSS      "H2''" "C2'"  "C1'"   109.470    3.000
+ GSS      "C2'"  "C1'"  "H1'"   108.340    3.000
+ GSS      "C2'"  "C1'"  "O4'"   109.470    3.000
+ GSS      "C2'"  "C1'"  N9      109.470    3.000
+ GSS      "H1'"  "C1'"  "O4'"   109.470    3.000
+ GSS      "H1'"  "C1'"  N9      109.470    3.000
+ GSS      "O4'"  "C1'"  N9      109.470    3.000
+ GSS      "C1'"  "O4'"  "C4'"   111.800    3.000
+ GSS      "C1'"  N9     C4      126.000    3.000
+ GSS      "C1'"  N9     C8      126.000    3.000
+ GSS      C4     N9     C8      108.000    3.000
+ GSS      N9     C4     C5      108.000    3.000
+ GSS      N9     C4     N3      132.000    3.000
+ GSS      C5     C4     N3      120.000    3.000
+ GSS      C4     C5     N7      108.000    3.000
+ GSS      C4     C5     C6      120.000    3.000
+ GSS      N7     C5     C6      132.000    3.000
+ GSS      C5     N7     C8      108.000    3.000
+ GSS      N7     C8     H8      126.000    3.000
+ GSS      N7     C8     N9      108.000    3.000
+ GSS      H8     C8     N9      126.000    3.000
+ GSS      C4     N3     C2      120.000    3.000
+ GSS      N3     C2     N2      120.000    3.000
+ GSS      N3     C2     N1      120.000    3.000
+ GSS      N2     C2     N1      120.000    3.000
+ GSS      C2     N2     H2      120.000    3.000
+ GSS      C2     N2     CA      120.000    3.000
+ GSS      H2     N2     CA      118.500    3.000
+ GSS      N2     CA     HA      108.550    3.000
+ GSS      N2     CA     CJ      109.470    3.000
+ GSS      N2     CA     CB      110.000    3.000
+ GSS      HA     CA     CJ      109.470    3.000
+ GSS      HA     CA     CB      108.340    3.000
+ GSS      CJ     CA     CB      109.470    3.000
+ GSS      CA     CJ     "CO'"   120.000    3.000
+ GSS      CA     CJ     CO      120.000    3.000
+ GSS      "CO'"  CJ     CO      120.000    3.000
+ GSS      CJ     "CO'"  "HO'"   120.000    3.000
+ GSS      CJ     "CO'"  "CM'"   120.000    3.000
+ GSS      "HO'"  "CO'"  "CM'"   120.000    3.000
+ GSS      "CO'"  "CM'"  "HM'"   120.000    3.000
+ GSS      "CO'"  "CM'"  CP      120.000    3.000
+ GSS      "HM'"  "CM'"  CP      120.000    3.000
+ GSS      "CM'"  CP     HP      120.000    3.000
+ GSS      "CM'"  CP     CM      120.000    3.000
+ GSS      HP     CP     CM      120.000    3.000
+ GSS      CP     CM     HM      120.000    3.000
+ GSS      CP     CM     CO      120.000    3.000
+ GSS      HM     CM     CO      120.000    3.000
+ GSS      CM     CO     HO      120.000    3.000
+ GSS      CM     CO     CJ      120.000    3.000
+ GSS      HO     CO     CJ      120.000    3.000
+ GSS      CA     CB     HB1     109.470    3.000
+ GSS      CA     CB     HB2     109.470    3.000
+ GSS      CA     CB     OB      109.470    3.000
+ GSS      HB1    CB     HB2     107.900    3.000
+ GSS      HB1    CB     OB      109.470    3.000
+ GSS      HB2    CB     OB      109.470    3.000
+ GSS      CB     OB     HB      109.470    3.000
+ GSS      C2     N1     H1      120.000    3.000
+ GSS      C2     N1     C6      120.000    3.000
+ GSS      H1     N1     C6      120.000    3.000
+ GSS      N1     C6     O6      120.000    3.000
+ GSS      N1     C6     C5      120.000    3.000
+ GSS      O6     C6     C5      120.000    3.000
+ GSS      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GSS      var_1    OP3    P      "O5'"  "C5'"    -60.034   20.000   1
+ GSS      var_2    P      "O5'"  "C5'"  "C4'"   -179.982   20.000   1
+ GSS      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -179.990   20.000   3
+ GSS      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ GSS      var_5    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ GSS      var_6    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ GSS      var_7    "C3'"  "C2'"  "C1'"  N9       120.000   20.000   3
+ GSS      var_8    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ GSS      var_9    "C2'"  "C1'"  N9     C4        90.261   20.000   1
+ GSS      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ GSS      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ GSS      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ GSS      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ GSS      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ GSS      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ GSS      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ GSS      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ GSS      var_10   N3     C2     N2     CA         0.029   20.000   1
+ GSS      var_11   C2     N2     CA     CB       -90.032   20.000   3
+ GSS      var_12   N2     CA     CJ     "CO'"     29.639   20.000   1
+ GSS      CONST_9  CA     CJ     CO     CM       180.000    0.000   0
+ GSS      CONST_10 CA     CJ     "CO'"  "CM'"    180.000    0.000   0
+ GSS      CONST_11 CJ     "CO'"  "CM'"  CP         0.000    0.000   0
+ GSS      CONST_12 "CO'"  "CM'"  CP     CM         0.000    0.000   0
+ GSS      CONST_13 "CM'"  CP     CM     CO         0.000    0.000   0
+ GSS      CONST_14 CP     CM     CO     CJ         0.000    0.000   0
+ GSS      var_13   N2     CA     CB     OB       -60.003   20.000   3
+ GSS      var_14   CA     CB     OB     HB      -179.981   20.000   1
+ GSS      CONST_15 N3     C2     N1     C6         0.000    0.000   0
+ GSS      CONST_16 C2     N1     C6     O6       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GSS      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ GSS      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ GSS      chir_03  "C1'"  "O4'"  "C2'"  N9        positiv
+ GSS      chir_04  CA     N2     CB     CJ        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GSS      plan-1    N9        0.020
+ GSS      plan-1    "C1'"     0.020
+ GSS      plan-1    C8        0.020
+ GSS      plan-1    C4        0.020
+ GSS      plan-1    N7        0.020
+ GSS      plan-1    H8        0.020
+ GSS      plan-1    C5        0.020
+ GSS      plan-1    C6        0.020
+ GSS      plan-1    N1        0.020
+ GSS      plan-1    C2        0.020
+ GSS      plan-1    N3        0.020
+ GSS      plan-1    O6        0.020
+ GSS      plan-1    H1        0.020
+ GSS      plan-1    N2        0.020
+ GSS      plan-1    H2        0.020
+ GSS      plan-2    N2        0.020
+ GSS      plan-2    C2        0.020
+ GSS      plan-2    CA        0.020
+ GSS      plan-2    H2        0.020
+ GSS      plan-3    CJ        0.020
+ GSS      plan-3    CA        0.020
+ GSS      plan-3    CO        0.020
+ GSS      plan-3    "CO'"     0.020
+ GSS      plan-3    CM        0.020
+ GSS      plan-3    "CM'"     0.020
+ GSS      plan-3    CP        0.020
+ GSS      plan-3    HO        0.020
+ GSS      plan-3    "HO'"     0.020
+ GSS      plan-3    HM        0.020
+ GSS      plan-3    "HM'"     0.020
+ GSS      plan-3    HP        0.020
+# ------------------------------------------------------

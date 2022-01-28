@@ -1,0 +1,189 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SEE     SEE     "trihydroxy(L-serinato-kappaO~3~)borate(1-)"     peptide     20     11     .
+#
+data_comp_SEE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SEE     N       N       NT3     1       5.908       -11.669     -18.394
+SEE     CA      C       CH1     0       4.441       -11.704     -18.657
+SEE     CB      C       CH2     0       3.727       -12.582     -17.645
+SEE     OG      O       O2      0       4.170       -13.933     -17.765
+SEE     B       B       B       -1      3.650       -14.951     -16.823
+SEE     O1B     O       OH1     0       4.206       -16.269     -17.180
+SEE     O2B     O       OH1     0       2.178       -15.007     -16.905
+SEE     O3B     O       OH1     0       4.055       -14.611     -15.446
+SEE     C       C       C       0       3.859       -10.284     -18.670
+SEE     O       O       O       0       2.825       -10.099     -19.342
+SEE     OXT     O       OC      -1      4.458       -9.413      -18.005
+SEE     H       H       H       0       6.132       -10.901     -17.954
+SEE     H2      H       H       0       6.361       -11.702     -19.184
+SEE     H3      H       H       0       6.152       -12.384     -17.884
+SEE     HA      H       H       0       4.306       -12.098     -19.561
+SEE     HB2     H       H       0       2.759       -12.535     -17.799
+SEE     HB3     H       H       0       3.912       -12.252     -16.739
+SEE     H6      H       H       0       3.947       -16.863     -16.633
+SEE     H7      H       H       0       1.870       -15.592     -16.374
+SEE     H8      H       H       0       3.726       -15.162     -14.892
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+SEE      N      n/a    CA     START
+SEE      H      N      .      .
+SEE      H2     N      .      .
+SEE      H3     N      .      .
+SEE      CA     N      C      .
+SEE      HA     CA     .      .
+SEE      CB     CA     OG     .
+SEE      HB2    CB     .      .
+SEE      HB3    CB     .      .
+SEE      OG     CB     B      .
+SEE      B      OG     O1B    .
+SEE      O3B    B      H8     .
+SEE      H8     O3B    .      .
+SEE      O2B    B      H7     .
+SEE      H7     O2B    .      .
+SEE      O1B    B      H6     .
+SEE      H6     O1B    .      .
+SEE      C      CA     .      END
+SEE      O      C      .      .
+SEE      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SEE       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+SEE       CA        CB        SINGLE    n         1.515     0.017     1.515     0.017     
+SEE       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+SEE       CB        OG        SINGLE    n         1.425     0.020     1.425     0.020     
+SEE       OG        B         SINGLE    n         1.479     0.020     1.479     0.020     
+SEE       B         O1B       SINGLE    n         1.475     0.020     1.475     0.020     
+SEE       B         O2B       SINGLE    n         1.475     0.020     1.475     0.020     
+SEE       B         O3B       SINGLE    n         1.475     0.020     1.475     0.020     
+SEE       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+SEE       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SEE       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+SEE       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+SEE       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+SEE       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+SEE       CB        HB2       SINGLE    n         1.089     0.010     0.982     0.020     
+SEE       CB        HB3       SINGLE    n         1.089     0.010     0.982     0.020     
+SEE       O1B       H6        SINGLE    n         0.970     0.012     0.848     0.020     
+SEE       O2B       H7        SINGLE    n         0.970     0.012     0.848     0.020     
+SEE       O3B       H8        SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SEE          CA           N           H     109.619    1.50
+SEE          CA           N          H2     109.619    1.50
+SEE          CA           N          H3     109.619    1.50
+SEE           H           N          H2     109.028    2.41
+SEE           H           N          H3     109.028    2.41
+SEE          H2           N          H3     109.028    2.41
+SEE           N          CA          CB     110.608    1.50
+SEE           N          CA           C     109.829    1.50
+SEE           N          CA          HA     108.049    1.50
+SEE          CB          CA           C     111.527    1.50
+SEE          CB          CA          HA     108.597    1.50
+SEE           C          CA          HA     108.255    1.50
+SEE          CA          CB          OG     110.589    2.35
+SEE          CA          CB         HB2     109.469    1.50
+SEE          CA          CB         HB3     109.469    1.50
+SEE          OG          CB         HB2     109.680    1.50
+SEE          OG          CB         HB3     109.680    1.50
+SEE         HB2          CB         HB3     108.319    1.50
+SEE          CB          OG           B     118.513    2.13
+SEE          OG           B         O1B     110.049    3.00
+SEE          OG           B         O2B     110.049    3.00
+SEE          OG           B         O3B     110.049    3.00
+SEE         O1B           B         O2B     110.049    3.00
+SEE         O1B           B         O3B     110.049    3.00
+SEE         O2B           B         O3B     110.049    3.00
+SEE           B         O1B          H6     110.747    3.00
+SEE           B         O2B          H7     110.747    3.00
+SEE           B         O3B          H8     110.747    3.00
+SEE          CA           C           O     117.181    1.50
+SEE          CA           C         OXT     117.181    1.50
+SEE           O           C         OXT     125.637    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SEE             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+SEE            sp3_sp3_10           N          CA          CB          OG     180.000   10.00     3
+SEE             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+SEE            sp3_sp3_19          CA          CB          OG           B     180.000   10.00     3
+SEE            sp3_sp3_22         O1B           B          OG          CB     180.000   10.00     3
+SEE            sp3_sp3_25          OG           B         O1B          H6     180.000   10.00     3
+SEE            sp3_sp3_28          OG           B         O2B          H7     180.000   10.00     3
+SEE            sp3_sp3_31          OG           B         O3B          H8     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SEE    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SEE    plan-1           C   0.020
+SEE    plan-1          CA   0.020
+SEE    plan-1           O   0.020
+SEE    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SEE SMILES           ACDLabs              10.04 "O=C(O)C(N)CO[B-](O)(O)O"
+SEE SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CO[B-](O)(O)O)C(O)=O"
+SEE SMILES           CACTVS               3.341 "N[CH](CO[B-](O)(O)O)C(O)=O"
+SEE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[B-](O)(O)(O)OC[C@@H](C(=O)O)N"
+SEE SMILES           "OpenEye OEToolkits" 1.5.0 "[B-](O)(O)(O)OCC(C(=O)O)N"
+SEE InChI            InChI                1.03  "InChI=1S/C3H9BNO6/c5-2(3(6)7)1-11-4(8,9)10/h2,8-10H,1,5H2,(H,6,7)/q-1/t2-/m0/s1"
+SEE InChIKey         InChI                1.03  IVIUHRYRMDVYGR-REOHCLBHSA-N
+SEE ?                acedrg               196         "dictionary generator"
+SEE ?                acedrg_database      11          "data source"
+SEE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SEE ?                refmac5              5.8.0222    "optimization tool"

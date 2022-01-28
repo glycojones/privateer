@@ -1,0 +1,277 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HGL     HGL     "(2S)-2-amino-4-(2-amino-6-oxo-1,6-dihydro-9H-purin-9-yl)butanoic"     peptide    30     18     .
+#
+data_comp_HGL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HGL     C2      C       CR6     0       3.055       0.515       -0.173
+HGL     O6      O       O       0       3.287       -0.337      3.290
+HGL     C4      C       CR56    0       1.230       -0.668      0.361
+HGL     C5      C       CR56    0       1.588       -0.841      1.684
+HGL     C6      C       CR6     0       2.809       -0.283      2.148
+HGL     C8      C       CR15    0       -0.279      -1.823      1.426
+HGL     N       N       NT3     1       -2.667      1.943       -0.860
+HGL     CA      C       CH1     0       -2.324      0.558       -0.435
+HGL     CB      C       CH2     0       -1.369      -0.080      -1.455
+HGL     CG      C       CH2     0       -0.767      -1.406      -1.019
+HGL     N9      N       NR5     0       0.024       -1.306      0.207
+HGL     N3      N       NRD6    0       1.907       -0.009      -0.614
+HGL     N2      N       NH2     0       3.842       1.199       -1.015
+HGL     N1      N       NR6     0       3.492       0.393       1.128
+HGL     N7      N       NRD5    0       0.617       -1.579      2.350
+HGL     C       C       C       0       -3.614      -0.260      -0.295
+HGL     O       O       O       0       -3.805      -0.843      0.792
+HGL     OXT     O       OC      -1      -4.380      -0.285      -1.279
+HGL     H8      H       H       0       -1.071      -2.318      1.589
+HGL     H       H       H       0       -3.282      2.305       -0.292
+HGL     H2      H       H       0       -3.013      1.933       -1.703
+HGL     H3      H       H       0       -1.920      2.464       -0.854
+HGL     HA      H       H       0       -1.880      0.606       0.442
+HGL     HBA     H       H       0       -0.642      0.552       -1.636
+HGL     HB      H       H       0       -1.858      -0.216      -2.294
+HGL     HG      H       H       0       -0.194      -1.744      -1.735
+HGL     HGA     H       H       0       -1.484      -2.056      -0.882
+HGL     HN2A    H       H       0       3.483       1.736       -1.609
+HGL     HN2     H       H       0       4.713       1.108       -0.971
+HGL     HN1     H       H       0       4.275       0.773       1.348
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+HGL      N      n/a    CA     START
+HGL      H      N      .      .
+HGL      H2     N      .      .
+HGL      H3     N      .      .
+HGL      CA     N      C      .
+HGL      HA     CA     .      .
+HGL      CB     CA     CG     .
+HGL      HBA    CB     .      .
+HGL      HB     CB     .      .
+HGL      CG     CB     N9     .
+HGL      HG     CG     .      .
+HGL      HGA    CG     .      .
+HGL      N9     CG     C8     .
+HGL      C4     N9     N3     .
+HGL      N3     C4     .      .
+HGL      C8     N9     N7     .
+HGL      H8     C8     .      .
+HGL      N7     C8     C5     .
+HGL      C5     N7     C6     .
+HGL      C6     C5     N1     .
+HGL      O6     C6     .      .
+HGL      N1     C6     C2     .
+HGL      HN1    N1     .      .
+HGL      C2     N1     N2     .
+HGL      N2     C2     HN2A   .
+HGL      HN2    N2     .      .
+HGL      HN2A   N2     .      .
+HGL      C      CA     .      END
+HGL      O      C      .      .
+HGL      OXT    C      .      .
+HGL      C2     N3     .    ADD
+HGL      C4     C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HGL       C2        N1        SINGLE    y         1.374     0.010     1.374     0.010     
+HGL       C2        N3        DOUBLE    y         1.333     0.010     1.333     0.010     
+HGL       C2        N2        SINGLE    n         1.340     0.010     1.340     0.010     
+HGL       O6        C6        DOUBLE    n         1.239     0.010     1.239     0.010     
+HGL       C4        C5        DOUBLE    y         1.380     0.010     1.380     0.010     
+HGL       C4        N9        SINGLE    y         1.373     0.010     1.373     0.010     
+HGL       C4        N3        SINGLE    y         1.355     0.010     1.355     0.010     
+HGL       C5        N7        SINGLE    y         1.390     0.010     1.390     0.010     
+HGL       C5        C6        SINGLE    y         1.417     0.010     1.417     0.010     
+HGL       C6        N1        SINGLE    y         1.396     0.011     1.396     0.011     
+HGL       C8        N7        DOUBLE    y         1.310     0.010     1.310     0.010     
+HGL       C8        N9        SINGLE    y         1.355     0.016     1.355     0.016     
+HGL       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+HGL       CA        CB        SINGLE    n         1.530     0.020     1.530     0.020     
+HGL       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+HGL       CB        CG        SINGLE    n         1.516     0.015     1.516     0.015     
+HGL       CG        N9        SINGLE    n         1.462     0.010     1.462     0.010     
+HGL       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+HGL       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+HGL       C8        H8        SINGLE    n         1.082     0.013     0.948     0.020     
+HGL       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+HGL       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+HGL       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+HGL       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+HGL       CB        HBA       SINGLE    n         1.089     0.010     0.980     0.016     
+HGL       CB        HB        SINGLE    n         1.089     0.010     0.980     0.016     
+HGL       CG        HG        SINGLE    n         1.089     0.010     0.978     0.019     
+HGL       CG        HGA       SINGLE    n         1.089     0.010     0.978     0.019     
+HGL       N2        HN2A      SINGLE    n         1.016     0.010     0.877     0.020     
+HGL       N2        HN2       SINGLE    n         1.016     0.010     0.877     0.020     
+HGL       N1        HN1       SINGLE    n         1.016     0.010     0.897     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HGL          N1          C2          N3     123.612    1.50
+HGL          N1          C2          N2     116.575    1.50
+HGL          N3          C2          N2     119.821    1.50
+HGL          C5          C4          N9     106.197    1.50
+HGL          C5          C4          N3     128.446    1.50
+HGL          N9          C4          N3     125.356    1.50
+HGL          C4          C5          N7     110.461    1.50
+HGL          C4          C5          C6     119.083    1.50
+HGL          N7          C5          C6     130.457    1.50
+HGL          O6          C6          C5     128.236    1.50
+HGL          O6          C6          N1     120.380    1.50
+HGL          C5          C6          N1     111.384    1.50
+HGL          N7          C8          N9     113.887    1.50
+HGL          N7          C8          H8     123.322    1.50
+HGL          N9          C8          H8     122.791    1.50
+HGL          CA           N           H     110.062    1.93
+HGL          CA           N          H2     110.062    1.93
+HGL          CA           N          H3     110.062    1.93
+HGL           H           N          H2     109.028    2.41
+HGL           H           N          H3     109.028    2.41
+HGL          H2           N          H3     109.028    2.41
+HGL           N          CA          CB     110.245    1.51
+HGL           N          CA           C     109.241    1.50
+HGL           N          CA          HA     108.487    1.50
+HGL          CB          CA           C     110.728    2.07
+HGL          CB          CA          HA     109.207    1.50
+HGL           C          CA          HA     108.824    1.50
+HGL          CA          CB          CG     113.701    1.50
+HGL          CA          CB         HBA     108.567    1.50
+HGL          CA          CB          HB     108.567    1.50
+HGL          CG          CB         HBA     108.995    1.50
+HGL          CG          CB          HB     108.995    1.50
+HGL         HBA          CB          HB     107.715    1.50
+HGL          CB          CG          N9     112.914    1.50
+HGL          CB          CG          HG     109.073    1.50
+HGL          CB          CG         HGA     109.073    1.50
+HGL          N9          CG          HG     108.938    1.50
+HGL          N9          CG         HGA     108.938    1.50
+HGL          HG          CG         HGA     107.797    1.50
+HGL          C4          N9          C8     105.559    1.50
+HGL          C4          N9          CG     127.002    1.50
+HGL          C8          N9          CG     127.439    1.50
+HGL          C2          N3          C4     112.093    1.50
+HGL          C2          N2        HN2A     119.868    1.50
+HGL          C2          N2         HN2     119.868    1.50
+HGL        HN2A          N2         HN2     120.263    1.96
+HGL          C2          N1          C6     125.374    1.50
+HGL          C2          N1         HN1     117.663    2.71
+HGL          C6          N1         HN1     116.964    2.44
+HGL          C5          N7          C8     103.896    1.50
+HGL          CA           C         OXT     117.124    1.50
+HGL          CA           C           O     117.124    1.50
+HGL         OXT           C           O     125.752    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HGL              const_28          N2          C2          N3          C4     180.000   10.00     2
+HGL             sp2_sp2_1          N1          C2          N2        HN2A     180.000   10.00     2
+HGL       const_sp2_sp2_3          N2          C2          N1          C6     180.000   10.00     2
+HGL              const_30          C5          C4          N9          CG     180.000   10.00     2
+HGL              const_17          C5          C4          N3          C2       0.000   10.00     2
+HGL              const_13          N9          C4          C5          N7       0.000   10.00     2
+HGL              const_19          C4          C5          N7          C8       0.000   10.00     2
+HGL              const_10          C4          C5          C6          O6     180.000   10.00     2
+HGL       const_sp2_sp2_7          O6          C6          N1          C2     180.000   10.00     2
+HGL              const_24          N7          C8          N9          CG     180.000   10.00     2
+HGL              const_21          N9          C8          N7          C5       0.000   10.00     2
+HGL             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+HGL             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+HGL            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+HGL            sp3_sp3_19          CA          CB          CG          N9     180.000   10.00     3
+HGL             sp2_sp3_8          C4          N9          CG          CB     -90.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+HGL    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HGL    plan-1          C2   0.020
+HGL    plan-1          C4   0.020
+HGL    plan-1          C5   0.020
+HGL    plan-1          C6   0.020
+HGL    plan-1         HN1   0.020
+HGL    plan-1          N1   0.020
+HGL    plan-1          N2   0.020
+HGL    plan-1          N3   0.020
+HGL    plan-1          N7   0.020
+HGL    plan-1          N9   0.020
+HGL    plan-1          O6   0.020
+HGL    plan-2          C4   0.020
+HGL    plan-2          C5   0.020
+HGL    plan-2          C6   0.020
+HGL    plan-2          C8   0.020
+HGL    plan-2          CG   0.020
+HGL    plan-2          H8   0.020
+HGL    plan-2          N3   0.020
+HGL    plan-2          N7   0.020
+HGL    plan-2          N9   0.020
+HGL    plan-3          C2   0.020
+HGL    plan-3         HN2   0.020
+HGL    plan-3        HN2A   0.020
+HGL    plan-3          N2   0.020
+HGL    plan-4           C   0.020
+HGL    plan-4          CA   0.020
+HGL    plan-4           O   0.020
+HGL    plan-4         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HGL SMILES           ACDLabs              10.04 "O=C(O)C(N)CCn1c2N=C(NC(=O)c2nc1)N"
+HGL SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCn1cnc2C(=O)NC(=Nc12)N)C(O)=O"
+HGL SMILES           CACTVS               3.341 "N[CH](CCn1cnc2C(=O)NC(=Nc12)N)C(O)=O"
+HGL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1nc2c(n1CC[C@@H](C(=O)O)N)N=C(NC2=O)N"
+HGL SMILES           "OpenEye OEToolkits" 1.5.0 "c1nc2c(n1CCC(C(=O)O)N)N=C(NC2=O)N"
+HGL InChI            InChI                1.03  "InChI=1S/C9H12N6O3/c10-4(8(17)18)1-2-15-3-12-5-6(15)13-9(11)14-7(5)16/h3-4H,1-2,10H2,(H,17,18)(H3,11,13,14,16)/t4-/m0/s1"
+HGL InChIKey         InChI                1.03  GDUSYGWHRRYUNO-BYPYZUCNSA-N
+HGL ?                acedrg               202         "dictionary generator"
+HGL ?                acedrg_database      11          "data source"
+HGL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HGL ?                refmac5              5.8.0222    "optimization tool"

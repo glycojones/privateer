@@ -1,0 +1,194 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EUE     EUE      6-methylsulfonyl-1,3-benzothiazol-2-amine     NON-POLYMER     22     14     .     
+#
+data_comp_EUE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+EUE     CAN     C       CH3     0       4.836       -16.346     16.220      
+EUE     SAK     S       S3      0       4.783       -15.595     14.637      
+EUE     OAL     O       O       0       5.287       -16.535     13.676      
+EUE     OAM     O       O       0       3.465       -15.066     14.432      
+EUE     CAC     C       CR6     0       5.923       -14.247     14.748      
+EUE     CAD     C       CR16    0       7.274       -14.477     14.531      
+EUE     CAE     C       CR56    0       8.158       -13.403     14.624      
+EUE     SAG     S       S2      0       9.884       -13.384     14.405      
+EUE     CAH     C       CR5     0       9.864       -11.650     14.702      
+EUE     NAJ     N       NH2     0       10.990      -10.939     14.627      
+EUE     NAI     N       NRD5    0       8.690       -11.136     14.992      
+EUE     CAF     C       CR56    0       7.699       -12.113     14.931      
+EUE     CAA     C       CR16    0       6.335       -11.893     15.149      
+EUE     CAB     C       CR16    0       5.455       -12.955     15.058      
+EUE     H1      H       H       0       5.732       -16.656     16.398      
+EUE     H2      H       H       0       4.226       -17.093     16.240      
+EUE     H3      H       H       0       4.579       -15.700     16.889      
+EUE     H4      H       H       0       7.592       -15.343     14.323      
+EUE     H5      H       H       0       10.974      -10.083     14.775      
+EUE     H6      H       H       0       11.739      -11.331     14.432      
+EUE     H7      H       H       0       6.023       -11.032     15.356      
+EUE     H8      H       H       0       4.545       -12.809     15.205      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EUE       SAK       OAM       DOUBLE    n         1.435     0.0100    1.435     0.0100    
+EUE       CAE       SAG       SINGLE    n         1.741     0.0100    1.741     0.0100    
+EUE       SAG       CAH       SINGLE    n         1.758     0.0118    1.758     0.0118    
+EUE       CAD       CAE       SINGLE    y         1.391     0.0100    1.391     0.0100    
+EUE       CAC       CAD       DOUBLE    y         1.385     0.0100    1.385     0.0100    
+EUE       SAK       OAL       DOUBLE    n         1.435     0.0100    1.435     0.0100    
+EUE       CAE       CAF       DOUBLE    y         1.401     0.0100    1.401     0.0100    
+EUE       CAH       NAJ       SINGLE    n         1.334     0.0100    1.334     0.0100    
+EUE       CAH       NAI       DOUBLE    n         1.310     0.0183    1.310     0.0183    
+EUE       SAK       CAC       SINGLE    n         1.767     0.0102    1.767     0.0102    
+EUE       CAN       SAK       SINGLE    n         1.753     0.0100    1.753     0.0100    
+EUE       CAC       CAB       SINGLE    y         1.398     0.0166    1.398     0.0166    
+EUE       NAI       CAF       SINGLE    n         1.393     0.0100    1.393     0.0100    
+EUE       CAF       CAA       SINGLE    y         1.394     0.0100    1.394     0.0100    
+EUE       CAA       CAB       DOUBLE    y         1.375     0.0126    1.375     0.0126    
+EUE       CAN       H1        SINGLE    n         1.089     0.010     0.965     0.0106    
+EUE       CAN       H2        SINGLE    n         1.089     0.010     0.965     0.0106    
+EUE       CAN       H3        SINGLE    n         1.089     0.010     0.965     0.0106    
+EUE       CAD       H4        SINGLE    n         1.082     0.013     0.946     0.0100    
+EUE       NAJ       H5        SINGLE    n         1.016     0.010     0.868     0.0200    
+EUE       NAJ       H6        SINGLE    n         1.016     0.010     0.868     0.0200    
+EUE       CAA       H7        SINGLE    n         1.082     0.013     0.939     0.0149    
+EUE       CAB       H8        SINGLE    n         1.082     0.013     0.933     0.0102    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+EUE         SAK         CAN          H1     109.379    1.50
+EUE         SAK         CAN          H2     109.379    1.50
+EUE         SAK         CAN          H3     109.379    1.50
+EUE          H1         CAN          H2     109.535    1.86
+EUE          H1         CAN          H3     109.535    1.86
+EUE          H2         CAN          H3     109.535    1.86
+EUE         OAM         SAK         OAL     118.198    1.50
+EUE         OAM         SAK         CAC     108.324    1.50
+EUE         OAM         SAK         CAN     108.393    1.50
+EUE         OAL         SAK         CAC     108.324    1.50
+EUE         OAL         SAK         CAN     108.393    1.50
+EUE         CAC         SAK         CAN     104.592    1.50
+EUE         CAD         CAC         SAK     119.341    1.50
+EUE         CAD         CAC         CAB     121.330    1.50
+EUE         SAK         CAC         CAB     119.329    1.50
+EUE         CAE         CAD         CAC     119.027    1.50
+EUE         CAE         CAD          H4     120.349    1.50
+EUE         CAC         CAD          H4     120.624    1.50
+EUE         SAG         CAE         CAD     128.562    1.87
+EUE         SAG         CAE         CAF     110.341    1.50
+EUE         CAD         CAE         CAF     121.097    1.50
+EUE         CAE         SAG         CAH      89.031    1.50
+EUE         SAG         CAH         NAJ     120.452    1.50
+EUE         SAG         CAH         NAI     115.632    1.50
+EUE         NAJ         CAH         NAI     123.916    1.50
+EUE         CAH         NAJ          H5     119.996    1.50
+EUE         CAH         NAJ          H6     119.996    1.50
+EUE          H5         NAJ          H6     120.009    2.21
+EUE         CAH         NAI         CAF     110.577    1.50
+EUE         CAE         CAF         NAI     115.345    1.50
+EUE         CAE         CAF         CAA     119.459    1.50
+EUE         NAI         CAF         CAA     125.195    1.50
+EUE         CAF         CAA         CAB     118.709    1.50
+EUE         CAF         CAA          H7     120.490    1.50
+EUE         CAB         CAA          H7     120.801    1.50
+EUE         CAC         CAB         CAA     120.378    1.50
+EUE         CAC         CAB          H8     120.009    1.50
+EUE         CAA         CAB          H8     119.612    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+EUE             sp3_sp3_1          H1         CAN         SAK         OAM     180.000   10.00     3
+EUE             sp2_sp2_3         CAE         CAF         NAI         CAH       0.000   10.00     2
+EUE              const_13         CAB         CAA         CAF         CAE       0.000   10.00     2
+EUE              const_17         CAF         CAA         CAB         CAC       0.000   10.00     2
+EUE             sp2_sp3_6         CAD         CAC         SAK         OAM     -90.000   10.00     6
+EUE              const_22         CAA         CAB         CAC         SAK     180.000   10.00     2
+EUE       const_sp2_sp2_3         SAK         CAC         CAD         CAE     180.000   10.00     2
+EUE       const_sp2_sp2_6         CAC         CAD         CAE         SAG     180.000   10.00     2
+EUE       const_sp2_sp2_9         SAG         CAE         CAF         NAI       0.000   10.00     2
+EUE             sp2_sp2_2         NAJ         CAH         NAI         CAF     180.000   10.00     2
+EUE             sp2_sp2_5         SAG         CAH         NAJ          H5     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+EUE    chir_1    SAK    OAM    OAL    CAC    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+EUE    plan-1         CAA   0.020
+EUE    plan-1         CAB   0.020
+EUE    plan-1         CAC   0.020
+EUE    plan-1         CAD   0.020
+EUE    plan-1         CAE   0.020
+EUE    plan-1         CAF   0.020
+EUE    plan-1          H4   0.020
+EUE    plan-1          H7   0.020
+EUE    plan-1          H8   0.020
+EUE    plan-1         NAI   0.020
+EUE    plan-1         SAG   0.020
+EUE    plan-1         SAK   0.020
+EUE    plan-2         CAH   0.020
+EUE    plan-2         NAI   0.020
+EUE    plan-2         NAJ   0.020
+EUE    plan-2         SAG   0.020
+EUE    plan-3         CAH   0.020
+EUE    plan-3          H5   0.020
+EUE    plan-3          H6   0.020
+EUE    plan-3         NAJ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+EUE            InChI                InChI  1.03 InChI=1S/C8H8N2O2S2/c1-14(11,12)5-2-3-6-7(4-5)13-8(9)10-6/h2-4H,1H3,(H2,9,10)
+EUE         InChIKey                InChI  1.03                                                   ZYHNHJAMVNINSY-UHFFFAOYSA-N
+EUE SMILES_CANONICAL               CACTVS 3.385                                                  C[S](=O)(=O)c1ccc2nc(N)sc2c1
+EUE           SMILES               CACTVS 3.385                                                  C[S](=O)(=O)c1ccc2nc(N)sc2c1
+EUE SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                                  CS(=O)(=O)c1ccc2c(c1)sc(n2)N
+EUE           SMILES "OpenEye OEToolkits" 2.0.6                                                  CS(=O)(=O)c1ccc2c(c1)sc(n2)N
+EUE ?                acedrg               217         "dictionary generator"                  
+EUE ?                acedrg_database      11          "data source"                           
+EUE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+EUE ?                refmac5              5.8.0253    "optimization tool"                     

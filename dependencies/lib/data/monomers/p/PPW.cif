@@ -1,0 +1,298 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PPW      PPW '7-DEAZA-8-AZA-2'-DEOXYGUANOSINE-5'-M' DNA                35  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PPW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PPW           OP3    O    OP       -0.666      0.000    0.000    0.000
+ PPW           P      P    P         0.000     -0.446    1.293    0.646
+ PPW           OP1    O    OP       -0.666      0.674    2.162    1.177
+ PPW           OP2    O    OP       -0.666     -1.312    1.933   -0.417
+ PPW           "O5'"  O    O2        0.000     -1.511    0.795    1.759
+ PPW           "C5'"  C    CH2       0.000     -2.590   -0.023    1.343
+ PPW           "H5'"  H    H         0.000     -2.207   -0.945    0.900
+ PPW           "H5''" H    H         0.000     -3.196    0.509    0.607
+ PPW           "C4'"  C    CH1       0.000     -3.444   -0.359    2.558
+ PPW           "H4'"  H    H         0.000     -2.828   -0.861    3.318
+ PPW           "O4'"  O    O2        0.000     -3.966    0.876    3.092
+ PPW           "C1'"  C    CH1       0.000     -5.400    0.861    2.971
+ PPW           "H1'"  H    H         0.000     -5.830    0.582    3.944
+ PPW           N9     N    NR5       0.000     -5.883    2.190    2.614
+ PPW           N8     N    NRD5      0.000     -5.130    2.984    1.823
+ PPW           C7     C    CR15      0.000     -5.862    4.099    1.704
+ PPW           H7     H    H         0.000     -5.557    4.964    1.128
+ PPW           C5     C    CR56      0.000     -7.069    4.016    2.411
+ PPW           C4     C    CR56      0.000     -7.059    2.771    2.991
+ PPW           C6     C    CR6       0.000     -8.197    4.879    2.630
+ PPW           N1     N    NR16      0.000     -9.152    4.261    3.448
+ PPW           HN1    H    H         0.000    -10.013    4.800    3.671
+ PPW           C2     C    CR6       0.000     -9.037    2.963    3.996
+ PPW           N2     N    NH2       0.000    -10.093    2.558    4.770
+ PPW           HN22   H    H         0.000     -9.934    2.207    5.707
+ PPW           HN21   H    H         0.000    -11.038    2.606    4.410
+ PPW           N3     N    NRD6      0.000     -7.993    2.194    3.780
+ PPW           O6     O    O         0.000     -8.297    6.004    2.155
+ PPW           "C3'"  C    CH1       0.000     -4.645   -1.232    2.211
+ PPW           "H3'"  H    H         0.000     -4.453   -1.854    1.325
+ PPW           "C2'"  C    CH2       0.000     -5.743   -0.224    1.961
+ PPW           "H2''" H    H         0.000     -6.741   -0.615    2.169
+ PPW           "H2'"  H    H         0.000     -5.721    0.196    0.953
+ PPW           "O3'"  O    OH1       0.000     -5.006   -2.020    3.342
+ PPW           "HO3'" H    H         0.000     -5.016   -1.421    4.104
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PPW      OP3    n/a    P      START
+ PPW      P      OP3    "O5'"  .
+ PPW      OP1    P      .      .
+ PPW      OP2    P      .      .
+ PPW      "O5'"  P      "C5'"  .
+ PPW      "C5'"  "O5'"  "C4'"  .
+ PPW      "H5'"  "C5'"  .      .
+ PPW      "H5''" "C5'"  .      .
+ PPW      "C4'"  "C5'"  "C3'"  .
+ PPW      "H4'"  "C4'"  .      .
+ PPW      "O4'"  "C4'"  "C1'"  .
+ PPW      "C1'"  "O4'"  N9     .
+ PPW      "H1'"  "C1'"  .      .
+ PPW      N9     "C1'"  N8     .
+ PPW      N8     N9     C7     .
+ PPW      C7     N8     C5     .
+ PPW      H7     C7     .      .
+ PPW      C5     C7     C6     .
+ PPW      C4     C5     .      .
+ PPW      C6     C5     O6     .
+ PPW      N1     C6     C2     .
+ PPW      HN1    N1     .      .
+ PPW      C2     N1     N3     .
+ PPW      N2     C2     HN21   .
+ PPW      HN22   N2     .      .
+ PPW      HN21   N2     .      .
+ PPW      N3     C2     .      .
+ PPW      O6     C6     .      .
+ PPW      "C3'"  "C4'"  "O3'"  .
+ PPW      "H3'"  "C3'"  .      .
+ PPW      "C2'"  "C3'"  "H2'"  .
+ PPW      "H2''" "C2'"  .      .
+ PPW      "H2'"  "C2'"  .      .
+ PPW      "O3'"  "C3'"  .      END
+ PPW      "HO3'" "O3'"  .      .
+ PPW      N9     C4     .    ADD
+ PPW      C4     N3     .    ADD
+ PPW      "C2'"  "C1'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PPW       OP1       P         deloc     1.510     0.020     1.510     0.020     
+PPW       OP2       P         deloc     1.510     0.020     1.510     0.020     
+PPW       "O5'"     P         single    1.610     0.020     1.610     0.020     
+PPW       P         OP3       deloc     1.510     0.020     1.510     0.020     
+PPW       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+PPW       N9        C4        single    1.337     0.020     1.337     0.020     
+PPW       N8        N9        single    1.402     0.020     1.402     0.020     
+PPW       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+PPW       C4        N3        single    1.355     0.020     1.355     0.020     
+PPW       C4        C5        double    1.490     0.020     1.490     0.020     
+PPW       N3        C2        double    1.350     0.020     1.350     0.020     
+PPW       N2        C2        single    1.355     0.020     1.355     0.020     
+PPW       C2        N1        single    1.337     0.020     1.337     0.020     
+PPW       HN21      N2        single    1.016     0.010     0.899     0.007     
+PPW       HN22      N2        single    1.016     0.010     0.899     0.007     
+PPW       N1        C6        single    1.337     0.020     1.337     0.020     
+PPW       HN1       N1        single    1.016     0.010     0.899     0.007     
+PPW       O6        C6        double    1.250     0.020     1.250     0.020     
+PPW       C6        C5        single    1.490     0.020     1.490     0.020     
+PPW       C5        C7        single    1.440     0.020     1.440     0.020     
+PPW       C7        N8        double    1.350     0.020     1.350     0.020     
+PPW       H7        C7        single    1.082     0.013     0.975     0.010     
+PPW       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+PPW       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+PPW       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+PPW       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+PPW       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+PPW       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+PPW       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+PPW       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+PPW       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+PPW       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+PPW       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+PPW       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+PPW       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+PPW       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+PPW       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PPW      OP3    P      OP1     119.900    3.000
+ PPW      OP3    P      OP2     119.900    3.000
+ PPW      OP3    P      "O5'"   108.200    3.000
+ PPW      OP1    P      OP2     119.900    3.000
+ PPW      OP1    P      "O5'"   108.200    3.000
+ PPW      OP2    P      "O5'"   108.200    3.000
+ PPW      P      "O5'"  "C5'"   120.500    3.000
+ PPW      "O5'"  "C5'"  "H5'"   109.470    3.000
+ PPW      "O5'"  "C5'"  "H5''"  109.470    3.000
+ PPW      "O5'"  "C5'"  "C4'"   109.470    3.000
+ PPW      "H5'"  "C5'"  "H5''"  107.900    3.000
+ PPW      "H5'"  "C5'"  "C4'"   109.470    3.000
+ PPW      "H5''" "C5'"  "C4'"   109.470    3.000
+ PPW      "C5'"  "C4'"  "H4'"   108.340    3.000
+ PPW      "C5'"  "C4'"  "O4'"   109.470    3.000
+ PPW      "C5'"  "C4'"  "C3'"   111.000    3.000
+ PPW      "H4'"  "C4'"  "O4'"   109.470    3.000
+ PPW      "H4'"  "C4'"  "C3'"   108.340    3.000
+ PPW      "O4'"  "C4'"  "C3'"   109.470    3.000
+ PPW      "C4'"  "O4'"  "C1'"   111.800    3.000
+ PPW      "O4'"  "C1'"  "H1'"   109.470    3.000
+ PPW      "O4'"  "C1'"  N9      109.470    3.000
+ PPW      "O4'"  "C1'"  "C2'"   109.470    3.000
+ PPW      "H1'"  "C1'"  N9      109.470    3.000
+ PPW      "H1'"  "C1'"  "C2'"   108.340    3.000
+ PPW      N9     "C1'"  "C2'"   109.470    3.000
+ PPW      "C1'"  N9     N8      108.000    3.000
+ PPW      "C1'"  N9     C4      126.000    3.000
+ PPW      N8     N9     C4      108.000    3.000
+ PPW      N9     N8     C7      108.000    3.000
+ PPW      N8     C7     H7      126.000    3.000
+ PPW      N8     C7     C5      108.000    3.000
+ PPW      H7     C7     C5      108.000    3.000
+ PPW      C7     C5     C4      120.000    3.000
+ PPW      C7     C5     C6      132.000    3.000
+ PPW      C4     C5     C6      120.000    3.000
+ PPW      C5     C4     N9      108.000    3.000
+ PPW      C5     C4     N3      120.000    3.000
+ PPW      N9     C4     N3      132.000    3.000
+ PPW      C5     C6     N1      120.000    3.000
+ PPW      C5     C6     O6      120.000    3.000
+ PPW      N1     C6     O6      120.000    3.000
+ PPW      C6     N1     HN1     120.000    3.000
+ PPW      C6     N1     C2      120.000    3.000
+ PPW      HN1    N1     C2      120.000    3.000
+ PPW      N1     C2     N2      120.000    3.000
+ PPW      N1     C2     N3      120.000    3.000
+ PPW      N2     C2     N3      120.000    3.000
+ PPW      C2     N2     HN22    120.000    3.000
+ PPW      C2     N2     HN21    120.000    3.000
+ PPW      HN22   N2     HN21    120.000    3.000
+ PPW      C2     N3     C4      120.000    3.000
+ PPW      "C4'"  "C3'"  "H3'"   108.340    3.000
+ PPW      "C4'"  "C3'"  "C2'"   111.000    3.000
+ PPW      "C4'"  "C3'"  "O3'"   109.470    3.000
+ PPW      "H3'"  "C3'"  "C2'"   108.340    3.000
+ PPW      "H3'"  "C3'"  "O3'"   109.470    3.000
+ PPW      "C2'"  "C3'"  "O3'"   109.470    3.000
+ PPW      "C3'"  "C2'"  "H2''"  109.470    3.000
+ PPW      "C3'"  "C2'"  "H2'"   109.470    3.000
+ PPW      "C3'"  "C2'"  "C1'"   111.000    3.000
+ PPW      "H2''" "C2'"  "H2'"   107.900    3.000
+ PPW      "H2''" "C2'"  "C1'"   109.470    3.000
+ PPW      "H2'"  "C2'"  "C1'"   109.470    3.000
+ PPW      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PPW      var_1    OP3    P      "O5'"  "C5'"    -54.180   20.000   1
+ PPW      var_2    P      "O5'"  "C5'"  "C4'"    179.954   20.000   1
+ PPW      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.546   20.000   3
+ PPW      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ PPW      var_5    "C4'"  "O4'"  "C1'"  N9      -150.000   20.000   1
+ PPW      var_6    "O4'"  "C1'"  N9     N8        33.483   20.000   1
+ PPW      CONST_1  "C1'"  N9     C4     C5       180.000    0.000   0
+ PPW      CONST_2  "C1'"  N9     N8     C7       180.000    0.000   0
+ PPW      CONST_3  N9     N8     C7     C5         0.000    0.000   0
+ PPW      CONST_4  N8     C7     C5     C6       180.000    0.000   0
+ PPW      CONST_5  C7     C5     C4     N9         0.000    0.000   0
+ PPW      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ PPW      CONST_7  C7     C5     C6     O6         0.000    0.000   0
+ PPW      CONST_8  C5     C6     N1     C2         0.000    0.000   0
+ PPW      CONST_9  C6     N1     C2     N3         0.000    0.000   0
+ PPW      CONST_10 N1     C2     N2     HN21      52.697    0.000   0
+ PPW      CONST_11 N1     C2     N3     C4         0.000    0.000   0
+ PPW      var_7    "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ PPW      var_8    "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ PPW      var_9    "C3'"  "C2'"  "C1'"  "O4'"     30.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PPW      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ PPW      chir_02  "C1'"  N9     "C2'"  "O4'"     negativ
+ PPW      chir_03  "C3'"  "C2'"  "C4'"  "O3'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PPW      plan-1    N9        0.020
+ PPW      plan-1    C4        0.020
+ PPW      plan-1    N8        0.020
+ PPW      plan-1    "C1'"     0.020
+ PPW      plan-1    C7        0.020
+ PPW      plan-1    N3        0.020
+ PPW      plan-1    C5        0.020
+ PPW      plan-1    C2        0.020
+ PPW      plan-1    N1        0.020
+ PPW      plan-1    C6        0.020
+ PPW      plan-1    N2        0.020
+ PPW      plan-1    HN1       0.020
+ PPW      plan-1    O6        0.020
+ PPW      plan-1    H7        0.020
+ PPW      plan-1    HN22      0.020
+ PPW      plan-1    HN21      0.020
+ PPW      plan-2    N2        0.020
+ PPW      plan-2    C2        0.020
+ PPW      plan-2    HN21      0.020
+ PPW      plan-2    HN22      0.020
+# ------------------------------------------------------

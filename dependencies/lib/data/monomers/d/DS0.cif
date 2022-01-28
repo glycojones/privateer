@@ -1,0 +1,152 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DS0     DS0      "[(4R)-4-azanyl-4,5-dihydro-1,2-oxazol-3-yl] dihydrogen phosphate"     non-polymer     16     11     .     
+#
+data_comp_DS0
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DS0     O11     O       OP      -1      2.776       0.286       -1.046      
+DS0     P8      P       P       0       2.559       1.050       0.237       
+DS0     O9      O       O       0       3.361       0.435       1.359       
+DS0     O10     O       OP      -1      2.934       2.500       0.057       
+DS0     O7      O       O2      0       1.012       0.969       0.625       
+DS0     C3      C       CR5     0       0.248       -0.127      0.432       
+DS0     N2      N       NRD5    0       0.611       -1.390      0.445       
+DS0     O1      O       O2      0       -0.536      -2.180      0.141       
+DS0     C5      C       CH2     0       -1.729      -1.359      0.230       
+DS0     C4      C       CH1     0       -1.227      0.067       0.196       
+DS0     N6      N       NT2     0       -1.500      0.769       -1.049      
+DS0     H51C    H       H       0       -2.212      -1.540      1.067       
+DS0     H52C    H       H       0       -2.329      -1.538      -0.528      
+DS0     H4      H       H       0       -1.631      0.584       0.935       
+DS0     H61N    H       H       0       -1.333      0.279       -1.771      
+DS0     H62N    H       H       0       -2.330      1.081       -1.099      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DS0       O11       P8        SINGLE    n         1.509     0.020     1.509     0.020     
+DS0       P8        O9        DOUBLE    n         1.509     0.020     1.509     0.020     
+DS0       P8        O10       SINGLE    n         1.509     0.020     1.509     0.020     
+DS0       P8        O7        SINGLE    n         1.592     0.019     1.592     0.019     
+DS0       O7        C3        SINGLE    n         1.342     0.020     1.342     0.020     
+DS0       C3        N2        DOUBLE    n         1.315     0.019     1.315     0.019     
+DS0       C3        C4        SINGLE    n         1.518     0.019     1.518     0.019     
+DS0       N2        O1        SINGLE    n         1.420     0.016     1.420     0.016     
+DS0       O1        C5        SINGLE    n         1.441     0.018     1.441     0.018     
+DS0       C5        C4        SINGLE    n         1.514     0.020     1.514     0.020     
+DS0       C4        N6        SINGLE    n         1.455     0.012     1.455     0.012     
+DS0       C5        H51C      SINGLE    n         1.089     0.010     0.983     0.015     
+DS0       C5        H52C      SINGLE    n         1.089     0.010     0.983     0.015     
+DS0       C4        H4        SINGLE    n         1.089     0.010     0.988     0.020     
+DS0       N6        H61N      SINGLE    n         1.036     0.016     0.888     0.020     
+DS0       N6        H62N      SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DS0         O11          P8          O9     112.139    1.52
+DS0         O11          P8         O10     112.139    1.52
+DS0         O11          P8          O7     114.838    3.00
+DS0          O9          P8         O10     112.139    1.52
+DS0          O9          P8          O7     114.838    3.00
+DS0         O10          P8          O7     114.838    3.00
+DS0          P8          O7          C3     120.000    3.00
+DS0          O7          C3          N2     126.308    2.76
+DS0          O7          C3          C4     118.270    3.00
+DS0          N2          C3          C4     115.421    1.55
+DS0          C3          N2          O1     108.185    1.65
+DS0          N2          O1          C5     108.447    1.50
+DS0          O1          C5          C4     104.870    1.50
+DS0          O1          C5        H51C     110.674    1.50
+DS0          O1          C5        H52C     110.674    1.50
+DS0          C4          C5        H51C     111.083    2.91
+DS0          C4          C5        H52C     111.083    2.91
+DS0        H51C          C5        H52C     108.865    1.50
+DS0          C3          C4          C5     104.009    1.83
+DS0          C3          C4          N6     111.491    2.69
+DS0          C3          C4          H4     110.367    1.60
+DS0          C5          C4          N6     113.888    3.00
+DS0          C5          C4          H4     109.833    1.83
+DS0          N6          C4          H4     107.611    3.00
+DS0          C4          N6        H61N     113.194    3.00
+DS0          C4          N6        H62N     113.194    3.00
+DS0        H61N          N6        H62N     108.865    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DS0            sp3_sp3_13         O11          P8          O7          C3     180.000   10.00     3
+DS0             sp2_sp2_4          N2          C3          O7          P8     180.000   10.00     2
+DS0             sp2_sp2_2          O7          C3          N2          O1     180.000   10.00     2
+DS0             sp2_sp3_6          O7          C3          C4          N6      60.000   10.00     6
+DS0             sp2_sp2_3          C3          N2          O1          C5       0.000   10.00     2
+DS0             sp3_sp3_1          C4          C5          O1          N2      60.000   10.00     3
+DS0             sp3_sp3_7          N6          C4          C5          O1     180.000   10.00     3
+DS0            sp3_sp3_18          C3          C4          N6        H61N      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DS0    chir_1    C4    N6    C3    C5    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DS0    plan-1          C3   0.020
+DS0    plan-1          C4   0.020
+DS0    plan-1          N2   0.020
+DS0    plan-1          O7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DS0 SMILES           ACDLabs              12.01 "O=P(O)(OC1=NOCC1N)O"
+DS0 InChI            InChI                1.03  "InChI=1S/C3H7N2O5P/c4-2-1-9-5-3(2)10-11(6,7)8/h2H,1,4H2,(H2,6,7,8)/t2-/m1/s1"
+DS0 InChIKey         InChI                1.03  SFMNESRSKJTEMJ-UWTATZPHSA-N
+DS0 SMILES_CANONICAL CACTVS               3.385 "N[C@@H]1CON=C1O[P](O)(O)=O"
+DS0 SMILES           CACTVS               3.385 "N[CH]1CON=C1O[P](O)(O)=O"
+DS0 SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "C1[C@H](C(=NO1)OP(=O)(O)O)N"
+DS0 SMILES           "OpenEye OEToolkits" 1.9.2 "C1C(C(=NO1)OP(=O)(O)O)N"
+DS0 ?                acedrg               202         "dictionary generator"                  
+DS0 ?                acedrg_database      11          "data source"                           
+DS0 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DS0 ?                refmac5              5.8.0189    "optimization tool"                     

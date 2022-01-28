@@ -1,0 +1,133 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+USA     USA      (E)-1-(1H-imidazol-2-yl)methanimine     non-polymer     12     7     .     
+#
+data_comp_USA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+USA     N1      N       NR5     0       5.343       -3.305      21.769      
+USA     N       N       NH1     0       6.044       -5.066      19.554      
+USA     C       C       C1      0       6.910       -4.240      20.102      
+USA     C1      C       CR5     0       6.546       -3.327      21.153      
+USA     N2      N       NRD5    0       7.339       -2.389      21.656      
+USA     C3      C       CR15    0       6.604       -1.764      22.615      
+USA     C2      C       CR15    0       5.381       -2.315      22.694      
+USA     H1      H       H       0       4.662       -3.845      21.591      
+USA     H2      H       H       0       5.678       -5.607      20.147      
+USA     H3      H       H       0       7.806       -4.236      19.804      
+USA     H5      H       H       0       6.915       -1.049      23.143      
+USA     H6      H       H       0       4.669       -2.076      23.274      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+USA       N         C         DOUBLE    n         1.316     0.0100    1.316     0.0100    
+USA       C         C1        SINGLE    n         1.440     0.0152    1.440     0.0152    
+USA       C1        N2        DOUBLE    y         1.329     0.0100    1.329     0.0100    
+USA       N1        C1        SINGLE    y         1.352     0.0100    1.352     0.0100    
+USA       N2        C3        SINGLE    y         1.361     0.0100    1.361     0.0100    
+USA       N1        C2        SINGLE    y         1.354     0.0100    1.354     0.0100    
+USA       C3        C2        DOUBLE    y         1.342     0.0105    1.342     0.0105    
+USA       N1        H1        SINGLE    n         1.016     0.010     0.887     0.0200    
+USA       N         H2        SINGLE    n         1.016     0.010     0.882     0.0200    
+USA       C         H3        SINGLE    n         1.082     0.013     0.944     0.0181    
+USA       C3        H5        SINGLE    n         1.082     0.013     0.942     0.0172    
+USA       C2        H6        SINGLE    n         1.082     0.013     0.949     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+USA          C1          N1          C2     107.030    1.50
+USA          C1          N1          H1     125.699    1.78
+USA          C2          N1          H1     127.271    2.75
+USA           C           N          H2     112.238    3.00
+USA           N           C          C1     122.336    3.00
+USA           N           C          H3     119.789    1.50
+USA          C1           C          H3     117.876    1.91
+USA           C          C1          N2     124.702    2.01
+USA           C          C1          N1     124.445    1.50
+USA          N2          C1          N1     110.853    1.50
+USA          C1          N2          C3     106.263    1.50
+USA          N2          C3          C2     110.005    1.50
+USA          N2          C3          H5     124.542    1.50
+USA          C2          C3          H5     125.453    1.50
+USA          N1          C2          C3     105.850    1.50
+USA          N1          C2          H6     125.866    2.78
+USA          C3          C2          H6     128.284    2.17
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+USA       const_sp2_sp2_3           C          C1          N1          C2     180.000   10.00     2
+USA              const_13          C3          C2          N1          C1       0.000   10.00     2
+USA             sp2_sp2_1          C1           C           N          H2     180.000   10.00     2
+USA             sp2_sp2_4           N           C          C1          N2       0.000   10.00     2
+USA       const_sp2_sp2_6           C          C1          N2          C3     180.000   10.00     2
+USA       const_sp2_sp2_7          C2          C3          N2          C1       0.000   10.00     2
+USA       const_sp2_sp2_9          N1          C2          C3          N2       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+USA    plan-1           C   0.020
+USA    plan-1          C1   0.020
+USA    plan-1          C2   0.020
+USA    plan-1          C3   0.020
+USA    plan-1          H1   0.020
+USA    plan-1          H5   0.020
+USA    plan-1          H6   0.020
+USA    plan-1          N1   0.020
+USA    plan-1          N2   0.020
+USA    plan-2           C   0.020
+USA    plan-2          C1   0.020
+USA    plan-2          H3   0.020
+USA    plan-2           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+USA           SMILES              ACDLabs 12.01                                            n1ccnc1/C=N
+USA            InChI                InChI  1.03 InChI=1S/C4H5N3/c5-3-4-6-1-2-7-4/h1-3,5H,(H,6,7)/b5-3+
+USA         InChIKey                InChI  1.03                            CWGOCYXTOJEBFI-HWKANZROSA-N
+USA SMILES_CANONICAL               CACTVS 3.385                                          N=Cc1[nH]ccn1
+USA           SMILES               CACTVS 3.385                                          N=Cc1[nH]ccn1
+USA SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                   "[H]/N=C/c1[nH]ccn1"
+USA           SMILES "OpenEye OEToolkits" 2.0.7                                        c1cnc([nH]1)C=N
+USA ?                acedrg               217         "dictionary generator"                  
+USA ?                acedrg_database      11          "data source"                           
+USA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+USA ?                refmac5              5.8.0253    "optimization tool"                     

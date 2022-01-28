@@ -1,0 +1,63 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NO2     NO2      "NITRITE ION"     NON-POLYMER     3     3     .     
+#
+data_comp_NO2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NO2     N       N       N       0       -0.064      0.235       0.355       
+NO2     O1      O       O       0       -1.076      0.056       -0.358      
+NO2     O2      O       OC      -1      1.154       -0.016      0.217       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NO2       N         O1        DOUBLE    n         1.251     0.020     1.251     0.020     
+NO2       N         O2        SINGLE    n         1.251     0.020     1.251     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NO2          O1           N          O2     134.151    3.00
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NO2 SMILES           ACDLabs              10.04 "[O-]N=O"
+NO2 SMILES_CANONICAL CACTVS               3.341 "[O-]N=O"
+NO2 SMILES           CACTVS               3.341 "[O-]N=O"
+NO2 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "N(=O)[O-]"
+NO2 SMILES           "OpenEye OEToolkits" 1.5.0 "N(=O)[O-]"
+NO2 InChI            InChI                1.03  "InChI=1S/HNO2/c2-1-3/h(H,2,3)/p-1"
+NO2 InChIKey         InChI                1.03  IOVCWXUNBOPUCH-UHFFFAOYSA-M
+NO2 ?                acedrg               202         "dictionary generator"                  
+NO2 ?                acedrg_database      11          "data source"                           
+NO2 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NO2 ?                refmac5              5.8.0189    "optimization tool"                     

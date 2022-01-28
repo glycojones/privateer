@@ -1,0 +1,163 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PRS      PRS 'THIOPROLINE                         ' non-polymer        14   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PRS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PRS           OXT    O    OC       -0.500      0.000    0.000    0.000
+ PRS           C      C    C         0.000     -1.186    0.391    0.069
+ PRS           O      O    OC       -0.500     -1.477    1.386    0.771
+ PRS           CA     C    CH1       0.000     -2.267   -0.335   -0.689
+ PRS           HA     H    H         0.000     -2.001   -1.398   -0.772
+ PRS           N      N    NH1       0.000     -3.543   -0.209    0.037
+ PRS           H      H    H         0.000     -3.642    0.152    0.975
+ PRS           CB     C    CH2       0.000     -2.394    0.274   -2.110
+ PRS           HB2    H    H         0.000     -1.810   -0.258   -2.864
+ PRS           HB3    H    H         0.000     -2.152    1.339   -2.149
+ PRS           SG     S    S2        0.000     -4.191    0.038   -2.440
+ PRS           CD     C    CH2       0.000     -4.670   -0.692   -0.817
+ PRS           HD2    H    H         0.000     -4.689   -1.784   -0.813
+ PRS           HD3    H    H         0.000     -5.615   -0.312   -0.424
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PRS      OXT    n/a    C      START
+ PRS      C      OXT    CA     .
+ PRS      O      C      .      .
+ PRS      CA     C      CB     .
+ PRS      HA     CA     .      .
+ PRS      N      CA     H      .
+ PRS      H      N      .      .
+ PRS      CB     CA     SG     .
+ PRS      HB2    CB     .      .
+ PRS      HB3    CB     .      .
+ PRS      SG     CB     CD     .
+ PRS      CD     SG     HD3    .
+ PRS      HD2    CD     .      .
+ PRS      HD3    CD     .      END
+ PRS      N      CD     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PRS       N         CD        single    1.450     0.020     1.450     0.020     
+PRS       N         CA        single    1.450     0.020     1.450     0.020     
+PRS       H         N         single    1.036     0.016     0.914     0.007     
+PRS       CD        SG        single    1.762     0.020     1.762     0.020     
+PRS       HD3       CD        single    1.089     0.010     0.989     0.005     
+PRS       HD2       CD        single    1.089     0.010     0.989     0.005     
+PRS       CB        CA        single    1.524     0.020     1.524     0.020     
+PRS       CA        C         single    1.500     0.020     1.500     0.020     
+PRS       HA        CA        single    1.089     0.010     0.989     0.005     
+PRS       SG        CB        single    1.762     0.020     1.762     0.020     
+PRS       HB2       CB        single    1.089     0.010     0.989     0.005     
+PRS       HB3       CB        single    1.089     0.010     0.989     0.005     
+PRS       O         C         deloc     1.250     0.020     1.250     0.020     
+PRS       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PRS      OXT    C      O       123.000    3.000
+ PRS      OXT    C      CA      118.500    3.000
+ PRS      O      C      CA      118.500    3.000
+ PRS      C      CA     HA      108.810    3.000
+ PRS      C      CA     N       111.600    3.000
+ PRS      C      CA     CB      109.470    3.000
+ PRS      HA     CA     N       108.550    3.000
+ PRS      HA     CA     CB      108.340    3.000
+ PRS      N      CA     CB      110.000    3.000
+ PRS      CA     N      H       118.500    3.000
+ PRS      CA     N      CD      120.000    3.000
+ PRS      H      N      CD      118.500    3.000
+ PRS      CA     CB     HB2     109.470    3.000
+ PRS      CA     CB     HB3     109.470    3.000
+ PRS      CA     CB     SG      109.500    3.000
+ PRS      HB2    CB     HB3     107.900    3.000
+ PRS      HB2    CB     SG      109.500    3.000
+ PRS      HB3    CB     SG      109.500    3.000
+ PRS      CB     SG     CD       98.404    3.000
+ PRS      SG     CD     HD2     109.500    3.000
+ PRS      SG     CD     HD3     109.500    3.000
+ PRS      SG     CD     N       109.500    3.000
+ PRS      HD2    CD     HD3     107.900    3.000
+ PRS      HD2    CD     N       109.470    3.000
+ PRS      HD3    CD     N       109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PRS      var_1    OXT    C      CA     CB       -88.852   20.000   3
+ PRS      var_2    C      CA     N      CD       180.000   20.000   3
+ PRS      var_3    CA     N      CD     SG       -30.000   20.000   3
+ PRS      var_4    C      CA     CB     SG      -150.000   20.000   3
+ PRS      var_5    CA     CB     SG     CD         0.000   20.000   1
+ PRS      var_6    CB     SG     CD     N         30.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PRS      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PRS      plan-1    N         0.020
+ PRS      plan-1    CD        0.020
+ PRS      plan-1    CA        0.020
+ PRS      plan-1    H         0.020
+ PRS      plan-2    C         0.020
+ PRS      plan-2    CA        0.020
+ PRS      plan-2    O         0.020
+ PRS      plan-2    OXT       0.020
+# ------------------------------------------------------

@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1BO     1BO      1-BUTANOL     NON-POLYMER     15     5     .     
+#
+data_comp_1BO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+1BO     C1      C       CH3     0       9.155       27.174      27.258      
+1BO     C2      C       CH2     0       8.910       25.963      26.390      
+1BO     C3      C       CH2     0       7.512       25.411      26.515      
+1BO     C4      C       CH2     0       7.245       24.182      25.682      
+1BO     OH      O       OH1     0       7.343       24.460      24.295      
+1BO     H11     H       H       0       10.066      27.488      27.130      
+1BO     H12     H       H       0       9.024       26.936      28.193      
+1BO     H13     H       H       0       8.532       27.881      27.015      
+1BO     H21     H       H       0       9.552       25.261      26.634      
+1BO     H22     H       H       0       9.073       26.206      25.452      
+1BO     H31     H       H       0       6.876       26.110      26.254      
+1BO     H32     H       H       0       7.346       25.193      27.456      
+1BO     H41     H       H       0       6.346       23.845      25.881      
+1BO     H42     H       H       0       7.892       23.484      25.918      
+1BO     HO      H       H       0       6.711       24.981      24.080      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1BO       C1        C2        SINGLE    n         1.510     0.020     1.510     0.020     
+1BO       C2        C3        SINGLE    n         1.508     0.020     1.508     0.020     
+1BO       C3        C4        SINGLE    n         1.508     0.020     1.508     0.020     
+1BO       C4        OH        SINGLE    n         1.417     0.020     1.417     0.020     
+1BO       C1        H11       SINGLE    n         1.089     0.010     0.973     0.016     
+1BO       C1        H12       SINGLE    n         1.089     0.010     0.973     0.016     
+1BO       C1        H13       SINGLE    n         1.089     0.010     0.973     0.016     
+1BO       C2        H21       SINGLE    n         1.089     0.010     0.982     0.015     
+1BO       C2        H22       SINGLE    n         1.089     0.010     0.982     0.015     
+1BO       C3        H31       SINGLE    n         1.089     0.010     0.980     0.017     
+1BO       C3        H32       SINGLE    n         1.089     0.010     0.980     0.017     
+1BO       C4        H41       SINGLE    n         1.089     0.010     0.981     0.017     
+1BO       C4        H42       SINGLE    n         1.089     0.010     0.981     0.017     
+1BO       OH        HO        SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+1BO          C2          C1         H11     109.554    1.50
+1BO          C2          C1         H12     109.554    1.50
+1BO          C2          C1         H13     109.554    1.50
+1BO         H11          C1         H12     109.380    1.50
+1BO         H11          C1         H13     109.380    1.50
+1BO         H12          C1         H13     109.380    1.50
+1BO          C1          C2          C3     113.306    3.00
+1BO          C1          C2         H21     108.918    1.50
+1BO          C1          C2         H22     108.918    1.50
+1BO          C3          C2         H21     108.835    1.50
+1BO          C3          C2         H22     108.835    1.50
+1BO         H21          C2         H22     107.763    1.50
+1BO          C2          C3          C4     114.809    3.00
+1BO          C2          C3         H31     108.683    1.93
+1BO          C2          C3         H32     108.683    1.93
+1BO          C4          C3         H31     108.717    1.50
+1BO          C4          C3         H32     108.717    1.50
+1BO         H31          C3         H32     107.788    1.50
+1BO          C3          C4          OH     111.456    3.00
+1BO          C3          C4         H41     109.269    1.50
+1BO          C3          C4         H42     109.269    1.50
+1BO          OH          C4         H41     109.258    1.50
+1BO          OH          C4         H42     109.258    1.50
+1BO         H41          C4         H42     108.120    1.50
+1BO          C4          OH          HO     108.576    2.78
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+1BO             sp3_sp3_1         H11          C1          C2          C3     180.000   10.00     3
+1BO            sp3_sp3_10          C1          C2          C3          C4     180.000   10.00     3
+1BO            sp3_sp3_19          C2          C3          C4          OH     180.000   10.00     3
+1BO            sp3_sp3_28          C3          C4          OH          HO     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+1BO SMILES           ACDLabs              10.04 OCCCC
+1BO SMILES_CANONICAL CACTVS               3.341 CCCCO
+1BO SMILES           CACTVS               3.341 CCCCO
+1BO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCCCO
+1BO SMILES           "OpenEye OEToolkits" 1.5.0 CCCCO
+1BO InChI            InChI                1.03  InChI=1S/C4H10O/c1-2-3-4-5/h5H,2-4H2,1H3
+1BO InChIKey         InChI                1.03  LRHPLDYGYMQRHN-UHFFFAOYSA-N
+1BO ?                acedrg               202         "dictionary generator"                  
+1BO ?                acedrg_database      11          "data source"                           
+1BO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+1BO ?                refmac5              5.8.0189    "optimization tool"                     

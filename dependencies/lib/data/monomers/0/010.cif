@@ -1,0 +1,149 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+010     010      phenylmethanol     NON-POLYMER     16     8     .     
+#
+data_comp_010
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+010     C       C       CH2     0       -1.962      0.036       -0.315      
+010     O       O       OH1     0       -2.616      0.437       0.880       
+010     C1      C       CR16    0       0.233       1.128       0.248       
+010     C2      C       CR16    0       1.616       1.093       0.408       
+010     C3      C       CR16    0       2.314       -0.080      0.176       
+010     C4      C       CR16    0       1.631       -1.219      -0.214      
+010     C5      C       CR16    0       0.247       -1.186      -0.374      
+010     C6      C       CR6     0       -0.465      -0.011      -0.144      
+010     H       H       H       0       -2.185      0.667       -1.029      
+010     HA      H       H       0       -2.291      -0.848      -0.579      
+010     HO      H       H       0       -2.568      -0.197      1.443       
+010     H1      H       H       0       -0.236      1.931       0.408       
+010     H2      H       H       0       2.078       1.872       0.674       
+010     H3      H       H       0       3.251       -0.103      0.285       
+010     H4      H       H       0       2.103       -2.021      -0.373      
+010     H5      H       H       0       -0.210      -1.967      -0.641      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+010       C         O         SINGLE    n         1.420     0.014     1.420     0.014     
+010       C         C6        SINGLE    n         1.506     0.010     1.506     0.010     
+010       C1        C6        DOUBLE    y         1.383     0.011     1.383     0.011     
+010       C1        C2        SINGLE    y         1.386     0.010     1.386     0.010     
+010       C2        C3        DOUBLE    y         1.376     0.012     1.376     0.012     
+010       C3        C4        SINGLE    y         1.374     0.013     1.374     0.013     
+010       C4        C5        DOUBLE    y         1.386     0.010     1.386     0.010     
+010       C5        C6        SINGLE    y         1.383     0.011     1.383     0.011     
+010       C         H         SINGLE    n         1.089     0.010     0.979     0.018     
+010       C         HA        SINGLE    n         1.089     0.010     0.979     0.018     
+010       O         HO        SINGLE    n         0.970     0.012     0.849     0.020     
+010       C1        H1        SINGLE    n         1.082     0.013     0.944     0.017     
+010       C2        H2        SINGLE    n         1.082     0.013     0.944     0.018     
+010       C3        H3        SINGLE    n         1.082     0.013     0.944     0.016     
+010       C4        H4        SINGLE    n         1.082     0.013     0.944     0.018     
+010       C5        H5        SINGLE    n         1.082     0.013     0.944     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+010           O           C          C6     111.861    1.83
+010           O           C           H     109.107    1.50
+010           O           C          HA     109.107    1.50
+010          C6           C           H     109.239    1.50
+010          C6           C          HA     109.239    1.50
+010           H           C          HA     107.986    1.50
+010           C           O          HO     108.716    3.00
+010          C6          C1          C2     120.514    1.50
+010          C6          C1          H1     119.732    1.50
+010          C2          C1          H1     119.754    1.50
+010          C1          C2          C3     120.186    1.50
+010          C1          C2          H2     119.862    1.50
+010          C3          C2          H2     119.952    1.50
+010          C2          C3          C4     119.903    1.50
+010          C2          C3          H3     120.048    1.50
+010          C4          C3          H3     120.048    1.50
+010          C3          C4          C5     120.186    1.50
+010          C3          C4          H4     119.952    1.50
+010          C5          C4          H4     119.862    1.50
+010          C4          C5          C6     120.514    1.50
+010          C4          C5          H5     119.754    1.50
+010          C6          C5          H5     119.732    1.50
+010           C          C6          C1     120.651    1.50
+010           C          C6          C5     120.651    1.50
+010          C1          C6          C5     118.697    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+010             sp3_sp3_1          C6           C           O          HO     180.000   10.00     3
+010             sp2_sp3_2          C1          C6           C           O     -90.000   10.00     6
+010              const_21          C6          C1          C2          C3       0.000   10.00     2
+010       const_sp2_sp2_2          C2          C1          C6           C     180.000   10.00     2
+010              const_17          C1          C2          C3          C4       0.000   10.00     2
+010              const_13          C2          C3          C4          C5       0.000   10.00     2
+010       const_sp2_sp2_9          C3          C4          C5          C6       0.000   10.00     2
+010       const_sp2_sp2_6          C4          C5          C6           C     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+010    plan-1           C   0.020
+010    plan-1          C1   0.020
+010    plan-1          C2   0.020
+010    plan-1          C3   0.020
+010    plan-1          C4   0.020
+010    plan-1          C5   0.020
+010    plan-1          C6   0.020
+010    plan-1          H1   0.020
+010    plan-1          H2   0.020
+010    plan-1          H3   0.020
+010    plan-1          H4   0.020
+010    plan-1          H5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+010 SMILES           ACDLabs              12.01 OCc1ccccc1
+010 SMILES_CANONICAL CACTVS               3.370 OCc1ccccc1
+010 SMILES           CACTVS               3.370 OCc1ccccc1
+010 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1ccc(cc1)CO"
+010 SMILES           "OpenEye OEToolkits" 1.7.0 "c1ccc(cc1)CO"
+010 InChI            InChI                1.03  InChI=1S/C7H8O/c8-6-7-4-2-1-3-5-7/h1-5,8H,6H2
+010 InChIKey         InChI                1.03  WVDDGKGOMKODPV-UHFFFAOYSA-N
+010 ?                acedrg               202         "dictionary generator"                  
+010 ?                acedrg_database      11          "data source"                           
+010 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+010 ?                refmac5              5.8.0189    "optimization tool"                     

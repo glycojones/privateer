@@ -1,0 +1,249 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZHP      ZHP '(S)-1'-(2',3'-DIHYDROXYPROPYL)-HYDRO' non-polymer        30  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ZHP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ZHP           OXT    O    OP       -0.666      0.000    0.000    0.000
+ ZHP           P      P    P         0.000     -0.712   -0.484   -1.244
+ ZHP           O1P    O    OP       -0.666     -0.220   -1.871   -1.597
+ ZHP           O2P    O    OP       -0.666     -0.425    0.461   -2.390
+ ZHP           O3G    O    O2        0.000     -2.297   -0.531   -0.971
+ ZHP           C3G    C    CH2       0.000     -3.078    0.639   -0.715
+ ZHP           HA1    H    H         0.000     -3.007    1.317   -1.568
+ ZHP           HB2    H    H         0.000     -2.701    1.139    0.179
+ ZHP           C2G    C    CH1       0.000     -4.539    0.238   -0.500
+ ZHP           HA     H    H         0.000     -4.891   -0.343   -1.364
+ ZHP           O2G    O    OH1       0.000     -4.647   -0.554    0.683
+ ZHP           H2G    H    H         0.000     -4.338   -0.042    1.443
+ ZHP           C1G    C    CH2       0.000     -5.396    1.498   -0.350
+ ZHP           HB1    H    H         0.000     -5.312    2.104   -1.255
+ ZHP           HC2    H    H         0.000     -5.045    2.075    0.508
+ ZHP           N1     N    NR6       0.000     -6.794    1.116   -0.145
+ ZHP           C6     C    CR16      0.000     -7.651    0.955   -1.231
+ ZHP           H6     H    H         0.000     -7.521    1.547   -2.128
+ ZHP           C5     C    CR16      0.000     -8.640    0.055   -1.144
+ ZHP           H5     H    H         0.000     -9.311   -0.103   -1.980
+ ZHP           C4     C    CR6       0.000     -8.807   -0.720    0.100
+ ZHP           O4     O    O         0.000     -9.605   -1.824    0.113
+ ZHP           C3     C    CR6       0.000     -8.178   -0.337    1.217
+ ZHP           O3     O    OH1       0.000     -8.314   -1.065    2.359
+ ZHP           H3     H    H         0.000     -8.893   -1.821    2.192
+ ZHP           C2     C    CR6       0.000     -7.317    0.901    1.210
+ ZHP           C2M    C    CH3       0.000     -8.157    2.109    1.632
+ ZHP           H2M3   H    H         0.000     -8.536    1.958    2.611
+ ZHP           H2M2   H    H         0.000     -7.557    2.984    1.622
+ ZHP           H2M1   H    H         0.000     -8.968    2.235    0.959
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ZHP      OXT    n/a    P      START
+ ZHP      P      OXT    O3G    .
+ ZHP      O1P    P      .      .
+ ZHP      O2P    P      .      .
+ ZHP      O3G    P      C3G    .
+ ZHP      C3G    O3G    C2G    .
+ ZHP      HA1    C3G    .      .
+ ZHP      HB2    C3G    .      .
+ ZHP      C2G    C3G    C1G    .
+ ZHP      HA     C2G    .      .
+ ZHP      O2G    C2G    H2G    .
+ ZHP      H2G    O2G    .      .
+ ZHP      C1G    C2G    N1     .
+ ZHP      HB1    C1G    .      .
+ ZHP      HC2    C1G    .      .
+ ZHP      N1     C1G    C6     .
+ ZHP      C6     N1     C5     .
+ ZHP      H6     C6     .      .
+ ZHP      C5     C6     C4     .
+ ZHP      H5     C5     .      .
+ ZHP      C4     C5     C3     .
+ ZHP      O4     C4     .      .
+ ZHP      C3     C4     C2     .
+ ZHP      O3     C3     H3     .
+ ZHP      H3     O3     .      .
+ ZHP      C2     C3     C2M    .
+ ZHP      C2M    C2     H2M1   .
+ ZHP      H2M3   C2M    .      .
+ ZHP      H2M2   C2M    .      .
+ ZHP      H2M1   C2M    .      END
+ ZHP      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZHP       O1P       P         deloc     1.510     0.020     1.510     0.020     
+ZHP       O2P       P         deloc     1.510     0.020     1.510     0.020     
+ZHP       O3G       P         single    1.610     0.020     1.610     0.020     
+ZHP       P         OXT       deloc     1.510     0.020     1.510     0.020     
+ZHP       C3G       O3G       single    1.426     0.020     1.426     0.020     
+ZHP       C2G       C3G       single    1.524     0.020     1.524     0.020     
+ZHP       O2G       C2G       single    1.432     0.020     1.432     0.020     
+ZHP       C1G       C2G       single    1.524     0.020     1.524     0.020     
+ZHP       N1        C1G       single    1.465     0.020     1.465     0.020     
+ZHP       N1        C2        single    1.410     0.020     1.410     0.020     
+ZHP       C6        N1        single    1.337     0.020     1.337     0.020     
+ZHP       C2M       C2        single    1.506     0.020     1.506     0.020     
+ZHP       C2        C3        double    1.487     0.020     1.487     0.020     
+ZHP       O3        C3        single    1.362     0.020     1.362     0.020     
+ZHP       C3        C4        single    1.487     0.020     1.487     0.020     
+ZHP       C5        C6        double    1.390     0.020     1.390     0.020     
+ZHP       C4        C5        single    1.390     0.020     1.390     0.020     
+ZHP       O4        C4        double    1.250     0.020     1.250     0.020     
+ZHP       HA1       C3G       single    1.089     0.010     0.989     0.005     
+ZHP       HB2       C3G       single    1.089     0.010     0.989     0.005     
+ZHP       HA        C2G       single    1.089     0.010     0.989     0.005     
+ZHP       H2G       O2G       single    0.970     0.012     0.839     0.014     
+ZHP       HB1       C1G       single    1.089     0.010     0.989     0.005     
+ZHP       HC2       C1G       single    1.089     0.010     0.989     0.005     
+ZHP       H6        C6        single    1.082     0.013     0.975     0.010     
+ZHP       H2M1      C2M       single    1.089     0.010     0.989     0.005     
+ZHP       H2M2      C2M       single    1.089     0.010     0.989     0.005     
+ZHP       H2M3      C2M       single    1.089     0.010     0.989     0.005     
+ZHP       H3        O3        single    0.970     0.012     0.839     0.014     
+ZHP       H5        C5        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ZHP      OXT    P      O1P     119.900    3.000
+ ZHP      OXT    P      O2P     119.900    3.000
+ ZHP      OXT    P      O3G     108.200    3.000
+ ZHP      O1P    P      O2P     119.900    3.000
+ ZHP      O1P    P      O3G     108.200    3.000
+ ZHP      O2P    P      O3G     108.200    3.000
+ ZHP      P      O3G    C3G     120.500    3.000
+ ZHP      O3G    C3G    HA1     109.470    3.000
+ ZHP      O3G    C3G    HB2     109.470    3.000
+ ZHP      O3G    C3G    C2G     109.470    3.000
+ ZHP      HA1    C3G    HB2     107.900    3.000
+ ZHP      HA1    C3G    C2G     109.470    3.000
+ ZHP      HB2    C3G    C2G     109.470    3.000
+ ZHP      C3G    C2G    HA      108.340    3.000
+ ZHP      C3G    C2G    O2G     109.470    3.000
+ ZHP      C3G    C2G    C1G     109.470    3.000
+ ZHP      HA     C2G    O2G     109.470    3.000
+ ZHP      HA     C2G    C1G     108.340    3.000
+ ZHP      O2G    C2G    C1G     109.470    3.000
+ ZHP      C2G    O2G    H2G     109.470    3.000
+ ZHP      C2G    C1G    HB1     109.470    3.000
+ ZHP      C2G    C1G    HC2     109.470    3.000
+ ZHP      C2G    C1G    N1      109.470    3.000
+ ZHP      HB1    C1G    HC2     107.900    3.000
+ ZHP      HB1    C1G    N1      109.470    3.000
+ ZHP      HC2    C1G    N1      109.470    3.000
+ ZHP      C1G    N1     C6      120.000    3.000
+ ZHP      C1G    N1     C2      120.000    3.000
+ ZHP      C6     N1     C2      120.000    3.000
+ ZHP      N1     C6     H6      120.000    3.000
+ ZHP      N1     C6     C5      120.000    3.000
+ ZHP      H6     C6     C5      120.000    3.000
+ ZHP      C6     C5     H5      120.000    3.000
+ ZHP      C6     C5     C4      120.000    3.000
+ ZHP      H5     C5     C4      120.000    3.000
+ ZHP      C5     C4     O4      120.000    3.000
+ ZHP      C5     C4     C3      120.000    3.000
+ ZHP      O4     C4     C3      120.000    3.000
+ ZHP      C4     C3     O3      120.000    3.000
+ ZHP      C4     C3     C2      120.000    3.000
+ ZHP      O3     C3     C2      120.000    3.000
+ ZHP      C3     O3     H3      109.470    3.000
+ ZHP      C3     C2     C2M     120.000    3.000
+ ZHP      C3     C2     N1      120.000    3.000
+ ZHP      C2M    C2     N1      120.000    3.000
+ ZHP      C2     C2M    H2M3    109.470    3.000
+ ZHP      C2     C2M    H2M2    109.470    3.000
+ ZHP      C2     C2M    H2M1    109.470    3.000
+ ZHP      H2M3   C2M    H2M2    109.470    3.000
+ ZHP      H2M3   C2M    H2M1    109.470    3.000
+ ZHP      H2M2   C2M    H2M1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ZHP      var_1    OXT    P      O3G    C3G       65.049   20.000   1
+ ZHP      var_2    P      O3G    C3G    C2G      179.964   20.000   1
+ ZHP      var_3    O3G    C3G    C2G    C1G     -175.013   20.000   3
+ ZHP      var_4    C3G    C2G    O2G    H2G       60.019   20.000   1
+ ZHP      var_5    C3G    C2G    C1G    N1       179.998   20.000   3
+ ZHP      var_6    C2G    C1G    N1     C6       -90.246   20.000   1
+ ZHP      CONST_1  C1G    N1     C2     C3      -150.000    0.000   0
+ ZHP      CONST_2  C1G    N1     C6     C5       150.000    0.000   0
+ ZHP      CONST_3  N1     C6     C5     C4         0.000    0.000   0
+ ZHP      CONST_4  C6     C5     C4     C3         0.000    0.000   0
+ ZHP      CONST_5  C5     C4     C3     C2         0.000    0.000   0
+ ZHP      var_7    C4     C3     O3     H3         0.060   20.000   1
+ ZHP      CONST_6  C4     C3     C2     C2M       90.000    0.000   0
+ ZHP      var_8    C3     C2     C2M    H2M1     -59.643   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ZHP      chir_01  C2G    C3G    O2G    C1G       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ZHP      plan-1    N1        0.020
+ ZHP      plan-1    C1G       0.020
+ ZHP      plan-1    C2        0.020
+ ZHP      plan-1    C6        0.020
+ ZHP      plan-1    C3        0.020
+ ZHP      plan-1    C5        0.020
+ ZHP      plan-1    C4        0.020
+ ZHP      plan-1    C2M       0.020
+ ZHP      plan-1    O3        0.020
+ ZHP      plan-1    H6        0.020
+ ZHP      plan-1    H5        0.020
+ ZHP      plan-1    O4        0.020
+# ------------------------------------------------------

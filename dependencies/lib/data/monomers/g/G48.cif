@@ -1,0 +1,358 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+G48      G48 '2'-O-METHYOXYETHYL-GUANOSINE-5'-MONO' RNA        46  28 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_G48
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ G48           O6     O    O         0.000      0.000    0.000    0.000
+ G48           C6     C    CR6       0.000     -1.051   -0.495    0.371
+ G48           N1     N    NR16      0.000     -1.090   -1.307    1.450
+ G48           H1     H    H         0.000     -0.216   -1.515    1.973
+ G48           C2     C    CR6       0.000     -2.270   -1.855    1.856
+ G48           N2     N    NH2       0.000     -2.281   -2.676    2.955
+ G48           H2N2   H    H         0.000     -1.422   -2.871    3.456
+ G48           H2N1   H    H         0.000     -3.147   -3.094    3.273
+ G48           N3     N    NRD6      0.000     -3.399   -1.618    1.225
+ G48           C4     C    CR56      0.000     -3.438   -0.820    0.152
+ G48           C5     C    CR56      0.000     -2.258   -0.232   -0.317
+ G48           N7     N    NRD5      0.000     -2.583    0.510   -1.403
+ G48           C8     C    CR15      0.000     -3.861    0.410   -1.626
+ G48           H8     H    H         0.000     -4.393    0.900   -2.432
+ G48           N9     N    NR5       0.000     -4.431   -0.404   -0.691
+ G48           "C1'"  C    CH1       0.000     -5.849   -0.763   -0.605
+ G48           "H1'"  H    H         0.000     -5.969   -1.754   -0.145
+ G48           "O4'"  O    O2        0.000     -6.462   -0.733   -1.910
+ G48           "C2'"  C    CH1       0.000     -6.639    0.306    0.190
+ G48           "H2'"  H    H         0.000     -6.263    1.315   -0.031
+ G48           "O2'"  O    O2        0.000     -6.588    0.040    1.593
+ G48           "CA'"  C    CH2       0.000     -6.740    1.296    2.258
+ G48           "HA'1" H    H         0.000     -7.699    1.739    1.981
+ G48           "HA'2" H    H         0.000     -5.931    1.965    1.959
+ G48           "CB'"  C    CH2       0.000     -6.694    1.081    3.772
+ G48           "HB'1" H    H         0.000     -7.504    0.412    4.069
+ G48           "HB'2" H    H         0.000     -6.810    2.041    4.279
+ G48           "OC'"  O    O2        0.000     -5.439    0.499    4.132
+ G48           "CD'"  C    CH3       0.000     -5.457    0.324    5.550
+ G48           "HD'3" H    H         0.000     -5.585    1.264    6.021
+ G48           "HD'2" H    H         0.000     -6.257   -0.316    5.817
+ G48           "HD'1" H    H         0.000     -4.541   -0.106    5.865
+ G48           "C3'"  C    CH1       0.000     -8.075    0.122   -0.354
+ G48           "H3'"  H    H         0.000     -8.560    1.098   -0.499
+ G48           "O3'"  O    OH1       0.000     -8.845   -0.692    0.532
+ G48           HA     H    H         0.000     -9.739   -0.798    0.178
+ G48           "C4'"  C    CH1       0.000     -7.877   -0.588   -1.708
+ G48           "H4'"  H    H         0.000     -8.354   -1.578   -1.683
+ G48           "C5'"  C    CH2       0.000     -8.485    0.254   -2.831
+ G48           "H5'1" H    H         0.000     -7.995    1.229   -2.860
+ G48           "H5'2" H    H         0.000     -9.553    0.389   -2.647
+ G48           "O5'"  O    O2        0.000     -8.296   -0.411   -4.080
+ G48           P      P    P         0.000     -8.956    0.524   -5.211
+ G48           OP1    O    OP       -0.666     -8.790   -0.126   -6.567
+ G48           OP2    O    OP       -0.666     -8.270    1.873   -5.212
+ G48           OP3    O    OP       -0.666    -10.429    0.709   -4.918
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ G48      O6     n/a    C6     START
+ G48      C6     O6     N1     .
+ G48      N1     C6     C2     .
+ G48      H1     N1     .      .
+ G48      C2     N1     N3     .
+ G48      N2     C2     H2N1   .
+ G48      H2N2   N2     .      .
+ G48      H2N1   N2     .      .
+ G48      N3     C2     C4     .
+ G48      C4     N3     N9     .
+ G48      C5     C4     N7     .
+ G48      N7     C5     C8     .
+ G48      C8     N7     H8     .
+ G48      H8     C8     .      .
+ G48      N9     C4     "C1'"  .
+ G48      "C1'"  N9     "C2'"  .
+ G48      "H1'"  "C1'"  .      .
+ G48      "O4'"  "C1'"  .      .
+ G48      "C2'"  "C1'"  "C3'"  .
+ G48      "H2'"  "C2'"  .      .
+ G48      "O2'"  "C2'"  "CA'"  .
+ G48      "CA'"  "O2'"  "CB'"  .
+ G48      "HA'1" "CA'"  .      .
+ G48      "HA'2" "CA'"  .      .
+ G48      "CB'"  "CA'"  "OC'"  .
+ G48      "HB'1" "CB'"  .      .
+ G48      "HB'2" "CB'"  .      .
+ G48      "OC'"  "CB'"  "CD'"  .
+ G48      "CD'"  "OC'"  "HD'1" .
+ G48      "HD'3" "CD'"  .      .
+ G48      "HD'2" "CD'"  .      .
+ G48      "HD'1" "CD'"  .      .
+ G48      "C3'"  "C2'"  "C4'"  .
+ G48      "H3'"  "C3'"  .      .
+ G48      "O3'"  "C3'"  HA     .
+ G48      HA     "O3'"  .      .
+ G48      "C4'"  "C3'"  "C5'"  .
+ G48      "H4'"  "C4'"  .      .
+ G48      "C5'"  "C4'"  "O5'"  .
+ G48      "H5'1" "C5'"  .      .
+ G48      "H5'2" "C5'"  .      .
+ G48      "O5'"  "C5'"  P      .
+ G48      P      "O5'"  OP3    .
+ G48      OP1    P      .      .
+ G48      OP2    P      .      .
+ G48      OP3    P      .      END
+ G48      "C4'"  "O4'"  .    ADD
+ G48      N9     C8     .    ADD
+ G48      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+G48       OP1       P         deloc     1.510     0.020     1.510     0.020     
+G48       OP2       P         deloc     1.510     0.020     1.510     0.020     
+G48       OP3       P         deloc     1.510     0.020     1.510     0.020     
+G48       P         "O5'"     single    1.610     0.020     1.610     0.020     
+G48       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+G48       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+G48       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+G48       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+G48       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+G48       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+G48       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+G48       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+G48       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+G48       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+G48       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+G48       HA        "O3'"     single    0.970     0.012     0.839     0.014     
+G48       "O2'"     "C2'"     single    1.426     0.020     1.426     0.020     
+G48       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+G48       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+G48       "CA'"     "O2'"     single    1.426     0.020     1.426     0.020     
+G48       "C1'"     N9        single    1.485     0.020     1.485     0.020     
+G48       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+G48       N9        C8        single    1.337     0.020     1.337     0.020     
+G48       N9        C4        single    1.337     0.020     1.337     0.020     
+G48       C8        N7        double    1.350     0.020     1.350     0.020     
+G48       H8        C8        single    1.082     0.013     0.975     0.010     
+G48       N7        C5        single    1.350     0.020     1.350     0.020     
+G48       C5        C6        single    1.490     0.020     1.490     0.020     
+G48       C5        C4        double    1.490     0.020     1.490     0.020     
+G48       C6        O6        double    1.250     0.020     1.250     0.020     
+G48       N1        C6        single    1.337     0.020     1.337     0.020     
+G48       C2        N1        single    1.337     0.020     1.337     0.020     
+G48       H1        N1        single    1.016     0.010     0.899     0.007     
+G48       N2        C2        single    1.355     0.020     1.355     0.020     
+G48       N3        C2        double    1.350     0.020     1.350     0.020     
+G48       H2N1      N2        single    1.016     0.010     0.899     0.007     
+G48       H2N2      N2        single    1.016     0.010     0.899     0.007     
+G48       C4        N3        single    1.355     0.020     1.355     0.020     
+G48       "CB'"     "CA'"     single    1.524     0.020     1.524     0.020     
+G48       "HA'1"    "CA'"     single    1.089     0.010     0.989     0.005     
+G48       "HA'2"    "CA'"     single    1.089     0.010     0.989     0.005     
+G48       "OC'"     "CB'"     single    1.426     0.020     1.426     0.020     
+G48       "HB'1"    "CB'"     single    1.089     0.010     0.989     0.005     
+G48       "HB'2"    "CB'"     single    1.089     0.010     0.989     0.005     
+G48       "CD'"     "OC'"     single    1.426     0.020     1.426     0.020     
+G48       "HD'1"    "CD'"     single    1.089     0.010     0.989     0.005     
+G48       "HD'2"    "CD'"     single    1.089     0.010     0.989     0.005     
+G48       "HD'3"    "CD'"     single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ G48      O6     C6     N1      120.000    3.000
+ G48      O6     C6     C5      120.000    3.000
+ G48      N1     C6     C5      120.000    3.000
+ G48      C6     N1     H1      120.000    3.000
+ G48      C6     N1     C2      120.000    3.000
+ G48      H1     N1     C2      120.000    3.000
+ G48      N1     C2     N2      120.000    3.000
+ G48      N1     C2     N3      120.000    3.000
+ G48      N2     C2     N3      120.000    3.000
+ G48      C2     N2     H2N2    120.000    3.000
+ G48      C2     N2     H2N1    120.000    3.000
+ G48      H2N2   N2     H2N1    120.000    3.000
+ G48      C2     N3     C4      120.000    3.000
+ G48      N3     C4     C5      120.000    3.000
+ G48      N3     C4     N9      132.000    3.000
+ G48      C5     C4     N9      108.000    3.000
+ G48      C4     C5     N7      108.000    3.000
+ G48      C4     C5     C6      120.000    3.000
+ G48      N7     C5     C6      132.000    3.000
+ G48      C5     N7     C8      108.000    3.000
+ G48      N7     C8     H8      126.000    3.000
+ G48      N7     C8     N9      108.000    3.000
+ G48      H8     C8     N9      126.000    3.000
+ G48      C4     N9     "C1'"   126.000    3.000
+ G48      C4     N9     C8      108.000    3.000
+ G48      "C1'"  N9     C8      126.000    3.000
+ G48      N9     "C1'"  "H1'"   109.470    3.000
+ G48      N9     "C1'"  "O4'"   109.470    3.000
+ G48      N9     "C1'"  "C2'"   109.470    3.000
+ G48      "H1'"  "C1'"  "O4'"   109.470    3.000
+ G48      "H1'"  "C1'"  "C2'"   108.340    3.000
+ G48      "O4'"  "C1'"  "C2'"   109.470    3.000
+ G48      "C1'"  "O4'"  "C4'"   111.800    3.000
+ G48      "C1'"  "C2'"  "H2'"   108.340    3.000
+ G48      "C1'"  "C2'"  "O2'"   109.470    3.000
+ G48      "C1'"  "C2'"  "C3'"   111.000    3.000
+ G48      "H2'"  "C2'"  "O2'"   109.470    3.000
+ G48      "H2'"  "C2'"  "C3'"   108.340    3.000
+ G48      "O2'"  "C2'"  "C3'"   109.470    3.000
+ G48      "C2'"  "O2'"  "CA'"   111.800    3.000
+ G48      "O2'"  "CA'"  "HA'1"  109.470    3.000
+ G48      "O2'"  "CA'"  "HA'2"  109.470    3.000
+ G48      "O2'"  "CA'"  "CB'"   109.470    3.000
+ G48      "HA'1" "CA'"  "HA'2"  107.900    3.000
+ G48      "HA'1" "CA'"  "CB'"   109.470    3.000
+ G48      "HA'2" "CA'"  "CB'"   109.470    3.000
+ G48      "CA'"  "CB'"  "HB'1"  109.470    3.000
+ G48      "CA'"  "CB'"  "HB'2"  109.470    3.000
+ G48      "CA'"  "CB'"  "OC'"   109.470    3.000
+ G48      "HB'1" "CB'"  "HB'2"  107.900    3.000
+ G48      "HB'1" "CB'"  "OC'"   109.470    3.000
+ G48      "HB'2" "CB'"  "OC'"   109.470    3.000
+ G48      "CB'"  "OC'"  "CD'"   111.800    3.000
+ G48      "OC'"  "CD'"  "HD'3"  109.470    3.000
+ G48      "OC'"  "CD'"  "HD'2"  109.470    3.000
+ G48      "OC'"  "CD'"  "HD'1"  109.470    3.000
+ G48      "HD'3" "CD'"  "HD'2"  109.470    3.000
+ G48      "HD'3" "CD'"  "HD'1"  109.470    3.000
+ G48      "HD'2" "CD'"  "HD'1"  109.470    3.000
+ G48      "C2'"  "C3'"  "H3'"   108.340    3.000
+ G48      "C2'"  "C3'"  "O3'"   109.470    3.000
+ G48      "C2'"  "C3'"  "C4'"   111.000    3.000
+ G48      "H3'"  "C3'"  "O3'"   109.470    3.000
+ G48      "H3'"  "C3'"  "C4'"   108.340    3.000
+ G48      "O3'"  "C3'"  "C4'"   109.470    3.000
+ G48      "C3'"  "O3'"  HA      109.470    3.000
+ G48      "C3'"  "C4'"  "H4'"   108.340    3.000
+ G48      "C3'"  "C4'"  "C5'"   111.000    3.000
+ G48      "C3'"  "C4'"  "O4'"   109.470    3.000
+ G48      "H4'"  "C4'"  "C5'"   108.340    3.000
+ G48      "H4'"  "C4'"  "O4'"   109.470    3.000
+ G48      "C5'"  "C4'"  "O4'"   109.470    3.000
+ G48      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ G48      "C4'"  "C5'"  "H5'2"  109.470    3.000
+ G48      "C4'"  "C5'"  "O5'"   109.470    3.000
+ G48      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ G48      "H5'1" "C5'"  "O5'"   109.470    3.000
+ G48      "H5'2" "C5'"  "O5'"   109.470    3.000
+ G48      "C5'"  "O5'"  P       120.500    3.000
+ G48      "O5'"  P      OP1     108.200    3.000
+ G48      "O5'"  P      OP2     108.200    3.000
+ G48      "O5'"  P      OP3     108.200    3.000
+ G48      OP1    P      OP2     119.900    3.000
+ G48      OP1    P      OP3     119.900    3.000
+ G48      OP2    P      OP3     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ G48      CONST_1  O6     C6     N1     C2       180.000    0.000   0
+ G48      CONST_2  C6     N1     C2     N3         0.000    0.000   0
+ G48      CONST_3  N1     C2     N2     H2N1    -179.964    0.000   0
+ G48      CONST_4  N1     C2     N3     C4         0.000    0.000   0
+ G48      CONST_5  C2     N3     C4     N9       180.000    0.000   0
+ G48      CONST_6  N3     C4     C5     N7       180.000    0.000   0
+ G48      CONST_7  C4     C5     C6     O6       180.000    0.000   0
+ G48      CONST_8  C4     C5     N7     C8         0.000    0.000   0
+ G48      CONST_9  C5     N7     C8     N9         0.000    0.000   0
+ G48      CONST_10 N3     C4     N9     "C1'"      0.000    0.000   0
+ G48      CONST_11 C4     N9     C8     N7         0.000    0.000   0
+ G48      var_1    C4     N9     "C1'"  "C2'"     94.093   20.000   1
+ G48      var_2    N9     "C1'"  "O4'"  "C4'"   -150.000   20.000   1
+ G48      var_3    N9     "C1'"  "C2'"  "C3'"    150.000   20.000   3
+ G48      var_4    "C1'"  "C2'"  "O2'"  "CA'"    152.933   20.000   1
+ G48      var_5    "C2'"  "O2'"  "CA'"  "CB'"   -179.958   20.000   1
+ G48      var_6    "O2'"  "CA'"  "CB'"  "OC'"     59.973   20.000   3
+ G48      var_7    "CA'"  "CB'"  "OC'"  "CD'"   -179.986   20.000   1
+ G48      var_8    "CB'"  "OC'"  "CD'"  "HD'1"  -179.974   20.000   1
+ G48      var_9    "C1'"  "C2'"  "C3'"  "C4'"    -30.000   20.000   3
+ G48      var_10   "C2'"  "C3'"  "O3'"  HA      -179.983   20.000   1
+ G48      var_11   "C2'"  "C3'"  "C4'"  "C5'"   -120.000   20.000   3
+ G48      var_12   "C3'"  "C4'"  "O4'"  "C1'"     30.000   20.000   1
+ G48      var_13   "C3'"  "C4'"  "C5'"  "O5'"    179.977   20.000   3
+ G48      var_14   "C4'"  "C5'"  "O5'"  P        179.965   20.000   1
+ G48      var_15   "C5'"  "O5'"  P      OP3      -59.968   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ G48      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ G48      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ G48      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ G48      chir_04  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ G48      plan-1    N9        0.020
+ G48      plan-1    "C1'"     0.020
+ G48      plan-1    C8        0.020
+ G48      plan-1    C4        0.020
+ G48      plan-1    N7        0.020
+ G48      plan-1    H8        0.020
+ G48      plan-1    C5        0.020
+ G48      plan-1    C6        0.020
+ G48      plan-1    N1        0.020
+ G48      plan-1    C2        0.020
+ G48      plan-1    N3        0.020
+ G48      plan-1    O6        0.020
+ G48      plan-1    H1        0.020
+ G48      plan-1    N2        0.020
+ G48      plan-1    H2N2      0.020
+ G48      plan-1    H2N1      0.020
+ G48      plan-2    N2        0.020
+ G48      plan-2    C2        0.020
+ G48      plan-2    H2N1      0.020
+ G48      plan-2    H2N2      0.020
+# ------------------------------------------------------

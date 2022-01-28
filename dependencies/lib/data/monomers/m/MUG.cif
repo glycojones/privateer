@@ -1,0 +1,334 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MUG      MUG '4-METHYLUMBELLIFERYL-ALPHA-D-GLUCOSE' non-polymer        42  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MUG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MUG           O2     O    O        -0.500      0.000    0.000    0.000
+ MUG           C2     C    CR6       0.000     -1.159   -0.463    0.080
+ MUG           C3     C    CR16      0.000     -1.421   -1.503    0.995
+ MUG           H3     H    H         0.000     -0.625   -1.893    1.617
+ MUG           C4     C    CR6       0.000     -2.674   -2.016    1.093
+ MUG           CM4    C    CH3       0.000     -2.981   -3.128    2.063
+ MUG           HM43   H    H         0.000     -3.722   -2.804    2.748
+ MUG           HM42   H    H         0.000     -3.337   -3.972    1.532
+ MUG           HM41   H    H         0.000     -2.102   -3.388    2.592
+ MUG           C4A    C    CR66      0.000     -3.718   -1.465    0.227
+ MUG           C8A    C    CR66      0.000     -3.388   -0.425   -0.661
+ MUG           O1     O    O2       -0.500     -2.056    0.006   -0.655
+ MUG           C8     C    CR16      0.000     -4.371    0.108   -1.481
+ MUG           H8     H    H         0.000     -4.128    0.906   -2.172
+ MUG           C7     C    CR6       0.000     -5.663   -0.383   -1.416
+ MUG           C6     C    CR16      0.000     -5.985   -1.411   -0.532
+ MUG           H6     H    H         0.000     -7.000   -1.787   -0.491
+ MUG           C5     C    CR16      0.000     -5.031   -1.946    0.284
+ MUG           H5     H    H         0.000     -5.288   -2.741    0.972
+ MUG           "O1'"  O    O2        0.000     -6.624    0.137   -2.219
+ MUG           "C1'"  C    CH1       0.000     -7.799   -0.649   -2.022
+ MUG           "H1'"  H    H         0.000     -7.533   -1.715   -2.044
+ MUG           "O5'"  O    O2        0.000     -8.377   -0.331   -0.759
+ MUG           "C5'"  C    CH1       0.000     -8.542    1.085   -0.704
+ MUG           "H5'"  H    H         0.000     -7.587    1.573   -0.945
+ MUG           "C6'"  C    CH2       0.000     -8.981    1.491    0.704
+ MUG           "H6'1" H    H         0.000     -9.929    1.005    0.944
+ MUG           "H6'2" H    H         0.000     -9.108    2.575    0.747
+ MUG           "O6'"  O    OH1       0.000     -7.985    1.089    1.648
+ MUG           "HO6'" H    H         0.000     -8.263    1.346    2.538
+ MUG           "C4'"  C    CH1       0.000     -9.606    1.522   -1.713
+ MUG           "H4'"  H    H         0.000    -10.556    1.017   -1.488
+ MUG           "O4'"  O    OH1       0.000     -9.787    2.937   -1.634
+ MUG           "HO4'" H    H         0.000    -10.458    3.212   -2.273
+ MUG           "C3'"  C    CH1       0.000     -9.143    1.140   -3.123
+ MUG           "H3'"  H    H         0.000     -8.251    1.725   -3.389
+ MUG           "O3'"  O    OH1       0.000    -10.188    1.409   -4.060
+ MUG           "HO3'" H    H         0.000     -9.894    1.167   -4.948
+ MUG           "C2'"  C    CH1       0.000     -8.803   -0.352   -3.140
+ MUG           "H2'"  H    H         0.000     -9.718   -0.939   -2.978
+ MUG           "O2'"  O    OH1       0.000     -8.230   -0.698   -4.402
+ MUG           "HO2'" H    H         0.000     -8.017   -1.641   -4.410
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MUG      O2     n/a    C2     START
+ MUG      C2     O2     C3     .
+ MUG      C3     C2     C4     .
+ MUG      H3     C3     .      .
+ MUG      C4     C3     C4A    .
+ MUG      CM4    C4     HM41   .
+ MUG      HM43   CM4    .      .
+ MUG      HM42   CM4    .      .
+ MUG      HM41   CM4    .      .
+ MUG      C4A    C4     C8A    .
+ MUG      C8A    C4A    C8     .
+ MUG      O1     C8A    .      .
+ MUG      C8     C8A    C7     .
+ MUG      H8     C8     .      .
+ MUG      C7     C8     "O1'"  .
+ MUG      C6     C7     C5     .
+ MUG      H6     C6     .      .
+ MUG      C5     C6     H5     .
+ MUG      H5     C5     .      .
+ MUG      "O1'"  C7     "C1'"  .
+ MUG      "C1'"  "O1'"  "O5'"  .
+ MUG      "H1'"  "C1'"  .      .
+ MUG      "O5'"  "C1'"  "C5'"  .
+ MUG      "C5'"  "O5'"  "C4'"  .
+ MUG      "H5'"  "C5'"  .      .
+ MUG      "C6'"  "C5'"  "O6'"  .
+ MUG      "H6'1" "C6'"  .      .
+ MUG      "H6'2" "C6'"  .      .
+ MUG      "O6'"  "C6'"  "HO6'" .
+ MUG      "HO6'" "O6'"  .      .
+ MUG      "C4'"  "C5'"  "C3'"  .
+ MUG      "H4'"  "C4'"  .      .
+ MUG      "O4'"  "C4'"  "HO4'" .
+ MUG      "HO4'" "O4'"  .      .
+ MUG      "C3'"  "C4'"  "C2'"  .
+ MUG      "H3'"  "C3'"  .      .
+ MUG      "O3'"  "C3'"  "HO3'" .
+ MUG      "HO3'" "O3'"  .      .
+ MUG      "C2'"  "C3'"  "O2'"  .
+ MUG      "H2'"  "C2'"  .      .
+ MUG      "O2'"  "C2'"  "HO2'" .
+ MUG      "HO2'" "O2'"  .      END
+ MUG      O1     C2     .    ADD
+ MUG      C4A    C5     .    ADD
+ MUG      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MUG       O1        C2        deloc     1.370     0.020     1.370     0.020     
+MUG       O1        C8A       single    1.370     0.020     1.370     0.020     
+MUG       C2        O2        deloc     1.250     0.020     1.250     0.020     
+MUG       C3        C2        single    1.390     0.020     1.390     0.020     
+MUG       C4        C3        double    1.390     0.020     1.390     0.020     
+MUG       H3        C3        single    1.082     0.013     0.975     0.010     
+MUG       CM4       C4        single    1.506     0.020     1.506     0.020     
+MUG       C4A       C4        single    1.490     0.020     1.490     0.020     
+MUG       HM41      CM4       single    1.089     0.010     0.989     0.005     
+MUG       HM42      CM4       single    1.089     0.010     0.989     0.005     
+MUG       HM43      CM4       single    1.089     0.010     0.989     0.005     
+MUG       C4A       C5        double    1.390     0.020     1.390     0.020     
+MUG       C8A       C4A       single    1.490     0.020     1.490     0.020     
+MUG       C5        C6        single    1.390     0.020     1.390     0.020     
+MUG       H5        C5        single    1.082     0.013     0.975     0.010     
+MUG       C6        C7        double    1.390     0.020     1.390     0.020     
+MUG       H6        C6        single    1.082     0.013     0.975     0.010     
+MUG       C7        C8        single    1.390     0.020     1.390     0.020     
+MUG       "O1'"     C7        single    1.370     0.020     1.370     0.020     
+MUG       C8        C8A       double    1.390     0.020     1.390     0.020     
+MUG       H8        C8        single    1.082     0.013     0.975     0.010     
+MUG       "C1'"     "O1'"     single    1.426     0.020     1.426     0.020     
+MUG       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+MUG       "O5'"     "C1'"     single    1.426     0.020     1.426     0.020     
+MUG       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+MUG       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+MUG       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+MUG       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+MUG       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+MUG       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+MUG       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+MUG       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+MUG       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+MUG       "O4'"     "C4'"     single    1.432     0.020     1.432     0.020     
+MUG       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+MUG       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+MUG       "HO4'"    "O4'"     single    0.970     0.012     0.839     0.014     
+MUG       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+MUG       "C6'"     "C5'"     single    1.524     0.020     1.524     0.020     
+MUG       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+MUG       "O6'"     "C6'"     single    1.432     0.020     1.432     0.020     
+MUG       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+MUG       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+MUG       "HO6'"    "O6'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MUG      O2     C2     C3      120.000    3.000
+ MUG      O2     C2     O1      120.000    3.000
+ MUG      C3     C2     O1      120.000    3.000
+ MUG      C2     C3     H3      120.000    3.000
+ MUG      C2     C3     C4      120.000    3.000
+ MUG      H3     C3     C4      120.000    3.000
+ MUG      C3     C4     CM4     120.000    3.000
+ MUG      C3     C4     C4A     120.000    3.000
+ MUG      CM4    C4     C4A     120.000    3.000
+ MUG      C4     CM4    HM43    109.470    3.000
+ MUG      C4     CM4    HM42    109.470    3.000
+ MUG      C4     CM4    HM41    109.470    3.000
+ MUG      HM43   CM4    HM42    109.470    3.000
+ MUG      HM43   CM4    HM41    109.470    3.000
+ MUG      HM42   CM4    HM41    109.470    3.000
+ MUG      C4     C4A    C8A     120.000    3.000
+ MUG      C4     C4A    C5      120.000    3.000
+ MUG      C8A    C4A    C5      120.000    3.000
+ MUG      C4A    C8A    O1      120.000    3.000
+ MUG      C4A    C8A    C8      120.000    3.000
+ MUG      O1     C8A    C8      120.000    3.000
+ MUG      C8A    O1     C2      120.000    3.000
+ MUG      C8A    C8     H8      120.000    3.000
+ MUG      C8A    C8     C7      120.000    3.000
+ MUG      H8     C8     C7      120.000    3.000
+ MUG      C8     C7     C6      120.000    3.000
+ MUG      C8     C7     "O1'"   120.000    3.000
+ MUG      C6     C7     "O1'"   120.000    3.000
+ MUG      C7     C6     H6      120.000    3.000
+ MUG      C7     C6     C5      120.000    3.000
+ MUG      H6     C6     C5      120.000    3.000
+ MUG      C6     C5     H5      120.000    3.000
+ MUG      C6     C5     C4A     120.000    3.000
+ MUG      H5     C5     C4A     120.000    3.000
+ MUG      C7     "O1'"  "C1'"   120.000    3.000
+ MUG      "O1'"  "C1'"  "H1'"   109.470    3.000
+ MUG      "O1'"  "C1'"  "O5'"   109.470    3.000
+ MUG      "O1'"  "C1'"  "C2'"   109.470    3.000
+ MUG      "H1'"  "C1'"  "O5'"   109.470    3.000
+ MUG      "H1'"  "C1'"  "C2'"   108.340    3.000
+ MUG      "O5'"  "C1'"  "C2'"   109.470    3.000
+ MUG      "C1'"  "O5'"  "C5'"   111.800    3.000
+ MUG      "O5'"  "C5'"  "H5'"   109.470    3.000
+ MUG      "O5'"  "C5'"  "C6'"   109.470    3.000
+ MUG      "O5'"  "C5'"  "C4'"   109.470    3.000
+ MUG      "H5'"  "C5'"  "C6'"   108.340    3.000
+ MUG      "H5'"  "C5'"  "C4'"   108.340    3.000
+ MUG      "C6'"  "C5'"  "C4'"   111.000    3.000
+ MUG      "C5'"  "C6'"  "H6'1"  109.470    3.000
+ MUG      "C5'"  "C6'"  "H6'2"  109.470    3.000
+ MUG      "C5'"  "C6'"  "O6'"   109.470    3.000
+ MUG      "H6'1" "C6'"  "H6'2"  107.900    3.000
+ MUG      "H6'1" "C6'"  "O6'"   109.470    3.000
+ MUG      "H6'2" "C6'"  "O6'"   109.470    3.000
+ MUG      "C6'"  "O6'"  "HO6'"  109.470    3.000
+ MUG      "C5'"  "C4'"  "H4'"   108.340    3.000
+ MUG      "C5'"  "C4'"  "O4'"   109.470    3.000
+ MUG      "C5'"  "C4'"  "C3'"   111.000    3.000
+ MUG      "H4'"  "C4'"  "O4'"   109.470    3.000
+ MUG      "H4'"  "C4'"  "C3'"   108.340    3.000
+ MUG      "O4'"  "C4'"  "C3'"   109.470    3.000
+ MUG      "C4'"  "O4'"  "HO4'"  109.470    3.000
+ MUG      "C4'"  "C3'"  "H3'"   108.340    3.000
+ MUG      "C4'"  "C3'"  "O3'"   109.470    3.000
+ MUG      "C4'"  "C3'"  "C2'"   111.000    3.000
+ MUG      "H3'"  "C3'"  "O3'"   109.470    3.000
+ MUG      "H3'"  "C3'"  "C2'"   108.340    3.000
+ MUG      "O3'"  "C3'"  "C2'"   109.470    3.000
+ MUG      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ MUG      "C3'"  "C2'"  "H2'"   108.340    3.000
+ MUG      "C3'"  "C2'"  "O2'"   109.470    3.000
+ MUG      "C3'"  "C2'"  "C1'"   111.000    3.000
+ MUG      "H2'"  "C2'"  "O2'"   109.470    3.000
+ MUG      "H2'"  "C2'"  "C1'"   108.340    3.000
+ MUG      "O2'"  "C2'"  "C1'"   109.470    3.000
+ MUG      "C2'"  "O2'"  "HO2'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MUG      CONST_1  O2     C2     C3     C4       180.000    0.000   0
+ MUG      CONST_2  C2     C3     C4     C4A        0.000    0.000   0
+ MUG      var_1    C3     C4     CM4    HM41       0.090   20.000   1
+ MUG      CONST_3  C3     C4     C4A    C8A        0.000    0.000   0
+ MUG      CONST_4  C4     C4A    C5     C6       180.000    0.000   0
+ MUG      CONST_5  C4     C4A    C8A    C8       180.000    0.000   0
+ MUG      CONST_6  C4A    C8A    O1     C2         0.000    0.000   0
+ MUG      CONST_7  C8A    O1     C2     O2       180.000    0.000   0
+ MUG      CONST_8  C4A    C8A    C8     C7         0.000    0.000   0
+ MUG      CONST_9  C8A    C8     C7     "O1'"    180.000    0.000   0
+ MUG      CONST_10 C8     C7     C6     C5         0.000    0.000   0
+ MUG      CONST_11 C7     C6     C5     C4A        0.000    0.000   0
+ MUG      var_2    C8     C7     "O1'"  "C1'"    174.419   20.000   1
+ MUG      var_3    C7     "O1'"  "C1'"  "O5'"     74.025   20.000   1
+ MUG      var_4    "O1'"  "C1'"  "C2'"  "C3'"    -60.000   20.000   3
+ MUG      var_5    "O1'"  "C1'"  "O5'"  "C5'"     60.000   20.000   1
+ MUG      var_6    "C1'"  "O5'"  "C5'"  "C4'"     60.000   20.000   1
+ MUG      var_7    "O5'"  "C5'"  "C6'"  "O6'"     59.980   20.000   3
+ MUG      var_8    "C5'"  "C6'"  "O6'"  "HO6'"   179.956   20.000   1
+ MUG      var_9    "O5'"  "C5'"  "C4'"  "C3'"    -60.000   20.000   3
+ MUG      var_10   "C5'"  "C4'"  "O4'"  "HO4'"   179.933   20.000   1
+ MUG      var_11   "C5'"  "C4'"  "C3'"  "C2'"     60.000   20.000   3
+ MUG      var_12   "C4'"  "C3'"  "O3'"  "HO3'"  -179.966   20.000   1
+ MUG      var_13   "C4'"  "C3'"  "C2'"  "O2'"    180.000   20.000   3
+ MUG      var_14   "C3'"  "C2'"  "O2'"  "HO2'"  -179.961   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MUG      chir_01  "C1'"  "O1'"  "C2'"  "O5'"     positiv
+ MUG      chir_02  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ MUG      chir_03  "C3'"  "C2'"  "O3'"  "C4'"     negativ
+ MUG      chir_04  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+ MUG      chir_05  "C5'"  "C4'"  "O5'"  "C6'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MUG      plan-1    C2        0.020
+ MUG      plan-1    O1        0.020
+ MUG      plan-1    O2        0.020
+ MUG      plan-1    C3        0.020
+ MUG      plan-1    C4        0.020
+ MUG      plan-1    H3        0.020
+ MUG      plan-1    CM4       0.020
+ MUG      plan-1    C4A       0.020
+ MUG      plan-1    C5        0.020
+ MUG      plan-1    C8A       0.020
+ MUG      plan-1    C6        0.020
+ MUG      plan-1    C7        0.020
+ MUG      plan-1    C8        0.020
+ MUG      plan-1    H5        0.020
+ MUG      plan-1    H6        0.020
+ MUG      plan-1    "O1'"     0.020
+ MUG      plan-1    H8        0.020
+# ------------------------------------------------------

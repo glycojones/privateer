@@ -1,0 +1,184 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2AS     2AS     "(2S,3S)-3-methyl-asparticacid"     peptide     18     10     .     
+#
+data_comp_2AS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2AS     C       C       C       0       36.513      12.516      31.121      
+2AS     O       O       O       0       36.875      13.153      30.111      
+2AS     CA      C       CH1     0       35.482      11.398      30.912      
+2AS     N       N       NT3     1       34.247      11.989      30.323      
+2AS     CB      C       CH1     0       36.072      10.237      30.062      
+2AS     CG      C       C       0       37.308      9.611       30.723      
+2AS     OD1     O       OC      -1      37.175      9.106       31.855      
+2AS     C4      C       CH3     0       35.027      9.157       29.758      
+2AS     OD2     O       O       0       38.387      9.637       30.097      
+2AS     OXT     O       OC      -1      36.915      12.709      32.285      
+2AS     HA      H       H       0       35.253      11.018      31.792      
+2AS     H       H       H       0       33.537      11.437      30.465      
+2AS     H2      H       H       0       34.355      12.106      29.426      
+2AS     H3      H       H       0       34.064      12.796      30.707      
+2AS     HB2     H       H       0       36.358      10.632      29.205      
+2AS     H4      H       H       0       35.455      8.405       29.312      
+2AS     H4A     H       H       0       34.337      9.524       29.178      
+2AS     H4B     H       H       0       34.623      8.853       30.588      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 2AS      N      n/a    CA     START
+ 2AS      H      N      .      .
+ 2AS      H2     N      .      .
+ 2AS      H3     N      .      .
+ 2AS      CA     N      C      .
+ 2AS      HA     CA     .      .
+ 2AS      CB     CA     CG     .
+ 2AS      HB2    CB     .      .
+ 2AS      C4     CB     H4     .
+ 2AS      H4B    C4     .      .
+ 2AS      H4A    C4     .      .
+ 2AS      H4     C4     .      .
+ 2AS      CG     CB     OD2    .
+ 2AS      OD1    CG     .      .
+ 2AS      OD2    CG     .      .
+ 2AS      C      CA     .      END
+ 2AS      O      C      .      .
+ 2AS      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2AS       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+2AS       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+2AS       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+2AS       CA        N         SINGLE    n         1.488     0.010     1.488     0.010     
+2AS       CA        CB        SINGLE    n         1.548     0.016     1.548     0.016     
+2AS       CB        CG        SINGLE    n         1.533     0.012     1.533     0.012     
+2AS       CB        C4        SINGLE    n         1.532     0.014     1.532     0.014     
+2AS       CG        OD1       SINGLE    n         1.247     0.019     1.247     0.019     
+2AS       CG        OD2       DOUBLE    n         1.247     0.019     1.247     0.019     
+2AS       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+2AS       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+2AS       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+2AS       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+2AS       CB        HB2       SINGLE    n         1.089     0.010     0.985     0.020     
+2AS       C4        H4        SINGLE    n         1.089     0.010     0.973     0.014     
+2AS       C4        H4A       SINGLE    n         1.089     0.010     0.973     0.014     
+2AS       C4        H4B       SINGLE    n         1.089     0.010     0.973     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2AS           O           C          CA     117.133    1.50
+2AS           O           C         OXT     125.734    1.50
+2AS          CA           C         OXT     117.133    1.50
+2AS           C          CA           N     108.763    1.50
+2AS           C          CA          CB     110.967    2.64
+2AS           C          CA          HA     108.542    1.50
+2AS           N          CA          CB     112.810    3.00
+2AS           N          CA          HA     108.396    1.50
+2AS          CB          CA          HA     107.007    2.25
+2AS          CA           N           H     110.089    1.83
+2AS          CA           N          H2     110.089    1.83
+2AS          CA           N          H3     110.089    1.83
+2AS           H           N          H2     109.028    2.41
+2AS           H           N          H3     109.028    2.41
+2AS          H2           N          H3     109.028    2.41
+2AS          CA          CB          CG     110.967    2.64
+2AS          CA          CB          C4     111.865    1.50
+2AS          CA          CB         HB2     107.007    2.25
+2AS          CG          CB          C4     110.920    1.69
+2AS          CG          CB         HB2     107.706    1.93
+2AS          C4          CB         HB2     108.016    1.51
+2AS          CB          CG         OD1     118.051    1.50
+2AS          CB          CG         OD2     118.051    1.50
+2AS         OD1          CG         OD2     123.899    1.50
+2AS          CB          C4          H4     109.591    1.50
+2AS          CB          C4         H4A     109.591    1.50
+2AS          CB          C4         H4B     109.591    1.50
+2AS          H4          C4         H4A     109.411    1.50
+2AS          H4          C4         H4B     109.411    1.50
+2AS         H4A          C4         H4B     109.411    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2AS             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+2AS             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+2AS            sp3_sp3_10           C          CA          CB          CG     180.000   10.00     3
+2AS             sp2_sp3_7         OD1          CG          CB          CA       0.000   10.00     6
+2AS            sp3_sp3_19          H4          C4          CB          CA     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+2AS    chir_1    CA    N    C    CB    positive
+2AS    chir_2    CB    CG    CA    C4    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+2AS    plan-1           C   0.020
+2AS    plan-1          CA   0.020
+2AS    plan-1           O   0.020
+2AS    plan-1         OXT   0.020
+2AS    plan-2          CB   0.020
+2AS    plan-2          CG   0.020
+2AS    plan-2         OD1   0.020
+2AS    plan-2         OD2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2AS SMILES           ACDLabs              10.04 "O=C(O)C(C)C(N)C(=O)O"
+2AS SMILES_CANONICAL CACTVS               3.352 "C[C@H]([C]O)[C@H](N)[C](O)(=O)=O"
+2AS SMILES           CACTVS               3.352 "C[CH]([C]O)[CH](N)[C](O)(=O)=O"
+2AS SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C[C@H]([C]O)[C@@H](C(=O)(=O)O)N"
+2AS SMILES           "OpenEye OEToolkits" 1.7.0 "CC([C]O)C(C(=O)(=O)O)N"
+2AS InChI            InChI                1.03  "InChI=1S/C5H9NO4/c1-2(4(7)8)3(6)5(9)10/h2-3H,6H2,1H3,(H,7,8)(H,9,10)/t2-,3-/m0/s1"
+2AS InChIKey         InChI                1.03  LXRUAYBIUSUULX-HRFVKAFMSA-N
+2AS ?                acedrg               196         "dictionary generator"                  
+2AS ?                acedrg_database      11          "data source"                           
+2AS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2AS ?                refmac5              5.8.0222    "optimization tool"                     

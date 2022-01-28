@@ -1,0 +1,130 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+9O3     9O3      "3,3,3-trifluoro-2,2-dihydroxypropanoic acid"     NON-POLYMER     12     10     .     
+#
+data_comp_9O3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+9O3     CAA     C       CT      0       -0.970      -0.644      -0.086      
+9O3     CAB     C       C       0       1.493       -0.565      0.383       
+9O3     CAH     C       CT      0       0.250       0.261       0.005       
+9O3     FAE     F       F       0       -1.216      -1.258      1.068       
+9O3     FAF     F       F       0       -0.816      -1.586      -1.011      
+9O3     FAG     F       F       0       -2.060      0.047       -0.405      
+9O3     OAC     O       OC      -1      1.910       -0.536      1.559       
+9O3     OAD     O       O       0       2.048       -1.251      -0.501      
+9O3     OAI     O       OH1     0       -0.016      1.221       0.984       
+9O3     OAJ     O       OH1     0       0.428       0.848       -1.250      
+9O3     H2      H       H       0       0.601       1.791       1.037       
+9O3     H3      H       H       0       1.046       1.419       -1.242      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+9O3       CAH       OAI       SINGLE    n         1.396     0.0108    1.396     0.0108    
+9O3       CAA       FAE       SINGLE    n         1.329     0.0125    1.329     0.0125    
+9O3       CAA       FAG       SINGLE    n         1.329     0.0125    1.329     0.0125    
+9O3       CAA       CAH       SINGLE    n         1.521     0.0200    1.521     0.0200    
+9O3       CAA       FAF       SINGLE    n         1.329     0.0125    1.329     0.0125    
+9O3       CAH       OAJ       SINGLE    n         1.396     0.0108    1.396     0.0108    
+9O3       CAB       CAH       SINGLE    n         1.526     0.0200    1.526     0.0200    
+9O3       CAB       OAD       DOUBLE    n         1.247     0.0187    1.247     0.0187    
+9O3       CAB       OAC       SINGLE    n         1.247     0.0187    1.247     0.0187    
+9O3       OAI       H2        SINGLE    n         0.970     0.012     0.841     0.0200    
+9O3       OAJ       H3        SINGLE    n         0.970     0.012     0.841     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+9O3         FAE         CAA         FAG     106.868    1.50
+9O3         FAE         CAA         CAH     110.248    2.29
+9O3         FAE         CAA         FAF     106.868    1.50
+9O3         FAG         CAA         CAH     110.248    2.29
+9O3         FAG         CAA         FAF     106.868    1.50
+9O3         CAH         CAA         FAF     110.248    2.29
+9O3         CAH         CAB         OAD     118.693    3.00
+9O3         CAH         CAB         OAC     118.693    3.00
+9O3         OAD         CAB         OAC     122.613    1.75
+9O3         OAI         CAH         CAA     109.482    3.00
+9O3         OAI         CAH         OAJ     111.904    1.92
+9O3         OAI         CAH         CAB     110.427    2.31
+9O3         CAA         CAH         OAJ     109.482    3.00
+9O3         CAA         CAH         CAB     111.511    2.91
+9O3         OAJ         CAH         CAB     110.427    2.31
+9O3         CAH         OAI          H2     111.266    2.03
+9O3         CAH         OAJ          H3     111.266    2.03
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+9O3             sp3_sp3_5         FAE         CAA         CAH         OAI     -60.000   10.00     3
+9O3             sp2_sp3_1         OAD         CAB         CAH         OAI       0.000   10.00     6
+9O3             sp3_sp3_1         CAA         CAH         OAI          H2     180.000   10.00     3
+9O3            sp3_sp3_13         OAI         CAH         OAJ          H3     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+9O3    chir_1    CAA    FAE    FAG    FAF    both
+9O3    chir_2    CAH    OAI    OAJ    CAA    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+9O3    plan-1         CAB   0.020
+9O3    plan-1         CAH   0.020
+9O3    plan-1         OAC   0.020
+9O3    plan-1         OAD   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+9O3           SMILES              ACDLabs 12.01                                C(C(C(O)=O)(O)O)(F)(F)F
+9O3            InChI                InChI  1.03 InChI=1S/C3H3F3O4/c4-3(5,6)2(9,10)1(7)8/h9-10H,(H,7,8)
+9O3         InChIKey                InChI  1.03                            KWLJNSLMDANMQG-UHFFFAOYSA-N
+9O3 SMILES_CANONICAL               CACTVS 3.385                                  OC(=O)C(O)(O)C(F)(F)F
+9O3           SMILES               CACTVS 3.385                                  OC(=O)C(O)(O)C(F)(F)F
+9O3 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                C(=O)(C(C(F)(F)F)(O)O)O
+9O3           SMILES "OpenEye OEToolkits" 2.0.6                                C(=O)(C(C(F)(F)F)(O)O)O
+9O3 ?                acedrg               217         "dictionary generator"                  
+9O3 ?                acedrg_database      11          "data source"                           
+9O3 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+9O3 ?                refmac5              5.8.0253    "optimization tool"                     

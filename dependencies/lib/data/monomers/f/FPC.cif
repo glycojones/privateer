@@ -1,0 +1,225 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FPC      FPC 'D-FRUCTOSE-6-PHOSPHATE (OPEN FORM)  ' non-polymer        29  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FPC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FPC           O3P    O    OP       -0.666      0.000    0.000    0.000
+ FPC           P      P    P         0.000     -0.305    0.466    1.407
+ FPC           O1P    O    OP       -0.666     -0.499    1.966    1.410
+ FPC           O2P    O    OP       -0.666      0.848    0.106    2.318
+ FPC           O6     O    O2        0.000     -1.648   -0.249    1.929
+ FPC           C6     C    CH2       0.000     -2.694    0.128    1.033
+ FPC           H61    H    H         0.000     -2.444   -0.205    0.023
+ FPC           H62    H    H         0.000     -2.804    1.214    1.040
+ FPC           C5     C    CH1       0.000     -4.006   -0.522    1.475
+ FPC           H5     H    H         0.000     -3.894   -1.615    1.468
+ FPC           O5     O    OH1       0.000     -4.331   -0.086    2.796
+ FPC           HO5    H    H         0.000     -4.429    0.876    2.802
+ FPC           C4     C    CH1       0.000     -5.126   -0.118    0.515
+ FPC           H4     H    H         0.000     -5.238    0.975    0.522
+ FPC           O4     O    OH1       0.000     -4.800   -0.554   -0.806
+ FPC           HO4    H    H         0.000     -4.701   -1.516   -0.812
+ FPC           C3     C    CH1       0.000     -6.437   -0.768    0.957
+ FPC           H3     H    H         0.000     -6.325   -1.862    0.950
+ FPC           O3     O    OH1       0.000     -6.762   -0.331    2.278
+ FPC           HO3    H    H         0.000     -6.861    0.630    2.284
+ FPC           C2     C    CH1       0.000     -7.557   -0.365   -0.003
+ FPC           H2     H    H         0.000     -7.306   -0.700   -1.019
+ FPC           O2     O    OH1       0.000     -7.703    1.057    0.007
+ FPC           HO2    H    H         0.000     -7.923    1.351    0.901
+ FPC           C1     C    CH2       0.000     -8.868   -1.014    0.439
+ FPC           H11    H    H         0.000     -9.115   -0.680    1.449
+ FPC           H12    H    H         0.000     -8.756   -2.100    0.433
+ FPC           O1     O    OH1       0.000     -9.915   -0.637   -0.458
+ FPC           HO1    H    H         0.000    -10.743   -1.049   -0.177
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FPC      O3P    n/a    P      START
+ FPC      P      O3P    O6     .
+ FPC      O1P    P      .      .
+ FPC      O2P    P      .      .
+ FPC      O6     P      C6     .
+ FPC      C6     O6     C5     .
+ FPC      H61    C6     .      .
+ FPC      H62    C6     .      .
+ FPC      C5     C6     C4     .
+ FPC      H5     C5     .      .
+ FPC      O5     C5     HO5    .
+ FPC      HO5    O5     .      .
+ FPC      C4     C5     C3     .
+ FPC      H4     C4     .      .
+ FPC      O4     C4     HO4    .
+ FPC      HO4    O4     .      .
+ FPC      C3     C4     C2     .
+ FPC      H3     C3     .      .
+ FPC      O3     C3     HO3    .
+ FPC      HO3    O3     .      .
+ FPC      C2     C3     C1     .
+ FPC      H2     C2     .      .
+ FPC      O2     C2     HO2    .
+ FPC      HO2    O2     .      .
+ FPC      C1     C2     O1     .
+ FPC      H11    C1     .      .
+ FPC      H12    C1     .      .
+ FPC      O1     C1     HO1    .
+ FPC      HO1    O1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FPC       C6        O6        single    1.426     0.020     1.426     0.020     
+FPC       O6        P         single    1.610     0.020     1.610     0.020     
+FPC       C5        C6        single    1.524     0.020     1.524     0.020     
+FPC       H61       C6        single    1.089     0.010     0.989     0.005     
+FPC       H62       C6        single    1.089     0.010     0.989     0.005     
+FPC       O5        C5        single    1.432     0.020     1.432     0.020     
+FPC       C4        C5        single    1.524     0.020     1.524     0.020     
+FPC       H5        C5        single    1.089     0.010     0.989     0.005     
+FPC       HO5       O5        single    0.970     0.012     0.839     0.014     
+FPC       C1        C2        single    1.524     0.020     1.524     0.020     
+FPC       O2        C2        single    1.432     0.020     1.432     0.020     
+FPC       C2        C3        single    1.524     0.020     1.524     0.020     
+FPC       H2        C2        single    1.089     0.010     0.989     0.005     
+FPC       O1        C1        single    1.432     0.020     1.432     0.020     
+FPC       H11       C1        single    1.089     0.010     0.989     0.005     
+FPC       H12       C1        single    1.089     0.010     0.989     0.005     
+FPC       HO1       O1        single    0.970     0.012     0.839     0.014     
+FPC       HO2       O2        single    0.970     0.012     0.839     0.014     
+FPC       O3        C3        single    1.432     0.020     1.432     0.020     
+FPC       HO3       O3        single    0.970     0.012     0.839     0.014     
+FPC       C3        C4        single    1.524     0.020     1.524     0.020     
+FPC       H3        C3        single    1.089     0.010     0.989     0.005     
+FPC       O4        C4        single    1.432     0.020     1.432     0.020     
+FPC       H4        C4        single    1.089     0.010     0.989     0.005     
+FPC       HO4       O4        single    0.970     0.012     0.839     0.014     
+FPC       O1P       P         deloc     1.510     0.020     1.510     0.020     
+FPC       O2P       P         deloc     1.510     0.020     1.510     0.020     
+FPC       P         O3P       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FPC      O3P    P      O1P     119.900    3.000
+ FPC      O3P    P      O2P     119.900    3.000
+ FPC      O3P    P      O6      108.200    3.000
+ FPC      O1P    P      O2P     119.900    3.000
+ FPC      O1P    P      O6      108.200    3.000
+ FPC      O2P    P      O6      108.200    3.000
+ FPC      P      O6     C6      120.500    3.000
+ FPC      O6     C6     H61     109.470    3.000
+ FPC      O6     C6     H62     109.470    3.000
+ FPC      O6     C6     C5      109.470    3.000
+ FPC      H61    C6     H62     107.900    3.000
+ FPC      H61    C6     C5      109.470    3.000
+ FPC      H62    C6     C5      109.470    3.000
+ FPC      C6     C5     H5      108.340    3.000
+ FPC      C6     C5     O5      109.470    3.000
+ FPC      C6     C5     C4      111.000    3.000
+ FPC      H5     C5     O5      109.470    3.000
+ FPC      H5     C5     C4      108.340    3.000
+ FPC      O5     C5     C4      109.470    3.000
+ FPC      C5     O5     HO5     109.470    3.000
+ FPC      C5     C4     H4      108.340    3.000
+ FPC      C5     C4     O4      109.470    3.000
+ FPC      C5     C4     C3      111.000    3.000
+ FPC      H4     C4     O4      109.470    3.000
+ FPC      H4     C4     C3      108.340    3.000
+ FPC      O4     C4     C3      109.470    3.000
+ FPC      C4     O4     HO4     109.470    3.000
+ FPC      C4     C3     H3      108.340    3.000
+ FPC      C4     C3     O3      109.470    3.000
+ FPC      C4     C3     C2      111.000    3.000
+ FPC      H3     C3     O3      109.470    3.000
+ FPC      H3     C3     C2      108.340    3.000
+ FPC      O3     C3     C2      109.470    3.000
+ FPC      C3     O3     HO3     109.470    3.000
+ FPC      C3     C2     H2      108.340    3.000
+ FPC      C3     C2     O2      109.470    3.000
+ FPC      C3     C2     C1      111.000    3.000
+ FPC      H2     C2     O2      109.470    3.000
+ FPC      H2     C2     C1      108.340    3.000
+ FPC      O2     C2     C1      109.470    3.000
+ FPC      C2     O2     HO2     109.470    3.000
+ FPC      C2     C1     H11     109.470    3.000
+ FPC      C2     C1     H12     109.470    3.000
+ FPC      C2     C1     O1      109.470    3.000
+ FPC      H11    C1     H12     107.900    3.000
+ FPC      H11    C1     O1      109.470    3.000
+ FPC      H12    C1     O1      109.470    3.000
+ FPC      C1     O1     HO1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FPC      var_1    O3P    P      O6     C6       -59.961   20.000   1
+ FPC      var_2    P      O6     C6     C5       179.989   20.000   1
+ FPC      var_3    O6     C6     C5     C4      -179.968   20.000   3
+ FPC      var_4    C6     C5     O5     HO5       59.996   20.000   1
+ FPC      var_5    C6     C5     C4     C3       180.000   20.000   3
+ FPC      var_6    C5     C4     O4     HO4       60.024   20.000   1
+ FPC      var_7    C5     C4     C3     C2       180.000   20.000   3
+ FPC      var_8    C4     C3     O3     HO3       60.046   20.000   1
+ FPC      var_9    C4     C3     C2     C1      -179.968   20.000   3
+ FPC      var_10   C3     C2     O2     HO2      -60.019   20.000   1
+ FPC      var_11   C3     C2     C1     O1       179.993   20.000   3
+ FPC      var_12   C2     C1     O1     HO1      179.976   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FPC      chir_01  C5     C6     O5     C4        negativ
+ FPC      chir_02  C2     C1     O2     C3        negativ
+ FPC      chir_03  C3     C2     O3     C4        positiv
+ FPC      chir_04  C4     C5     C3     O4        positiv
+# ------------------------------------------------------

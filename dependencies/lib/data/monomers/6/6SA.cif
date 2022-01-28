@@ -1,0 +1,838 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+6SA      6SA 'ACARBOSE DERIVED HEXASACCHARIDE     ' non-polymer       129  66 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_6SA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 6SA           OV6    O    OH1       0.000      0.000    0.000    0.000
+ 6SA           HV6    H    H         0.000      0.848    0.440    0.149
+ 6SA           CV6    C    CH2       0.000     -0.045   -1.214    0.753
+ 6SA           HV61   H    H         0.000      0.066   -0.987    1.815
+ 6SA           HV62   H    H         0.000      0.768   -1.869    0.435
+ 6SA           CV5    C    CH1       0.000     -1.387   -1.910    0.516
+ 6SA           HV5    H    H         0.000     -2.206   -1.216    0.750
+ 6SA           CV4    C    CH1       0.000     -1.487   -3.139    1.422
+ 6SA           HV4    H    H         0.000     -0.683   -3.846    1.174
+ 6SA           OV4    O    OH1       0.000     -1.366   -2.737    2.788
+ 6SA           H12    H    H         0.000     -1.430   -3.514    3.360
+ 6SA           CV3    C    CH1       0.000     -2.847   -3.812    1.204
+ 6SA           HV3    H    H         0.000     -3.649   -3.145    1.550
+ 6SA           OV3    O    OH1       0.000     -2.897   -5.040    1.931
+ 6SA           H13    H    H         0.000     -3.756   -5.462    1.791
+ 6SA           CV2    C    CH1       0.000     -3.020   -4.089   -0.293
+ 6SA           HV2    H    H         0.000     -2.282   -4.837   -0.615
+ 6SA           OV2    O    OH1       0.000     -4.339   -4.581   -0.540
+ 6SA           H14    H    H         0.000     -4.447   -4.755   -1.485
+ 6SA           OV5    O    O2        0.000     -1.480   -2.309   -0.851
+ 6SA           CV1    C    CH1       0.000     -2.804   -2.789   -1.071
+ 6SA           HV1    H    H         0.000     -2.951   -2.977   -2.144
+ 6SA           OP4    O    O2        0.000     -3.745   -1.808   -0.627
+ 6SA           CP4    C    CH1       0.000     -3.799   -0.801   -1.639
+ 6SA           HP4    H    H         0.000     -2.802   -0.671   -2.082
+ 6SA           CP3    C    CH1       0.000     -4.794   -1.217   -2.728
+ 6SA           HP3    H    H         0.000     -5.765   -1.449   -2.270
+ 6SA           OP3    O    OH1       0.000     -4.300   -2.368   -3.415
+ 6SA           H15    H    H         0.000     -4.930   -2.628   -4.100
+ 6SA           CP2    C    CH1       0.000     -4.954   -0.055   -3.713
+ 6SA           HP2    H    H         0.000     -4.007    0.107   -4.247
+ 6SA           OU2    O    OH1       0.000     -5.985   -0.364   -4.654
+ 6SA           HU2    H    H         0.000     -6.084    0.370   -5.275
+ 6SA           CP5    C    CH1       0.000     -4.260    0.521   -1.021
+ 6SA           HP5    H    H         0.000     -5.267    0.396   -0.599
+ 6SA           CP6    C    CH2       0.000     -3.289    0.927    0.091
+ 6SA           HP61   H    H         0.000     -2.304    1.117   -0.339
+ 6SA           HP62   H    H         0.000     -3.216    0.119    0.822
+ 6SA           OP6    O    OH1       0.000     -3.768    2.111    0.732
+ 6SA           HP6    H    H         0.000     -3.198    2.323    1.484
+ 6SA           OP5    O    O2        0.000     -4.288    1.538   -2.020
+ 6SA           CP1    C    CH1       0.000     -5.328    1.210   -2.940
+ 6SA           HP1    H    H         0.000     -5.468    2.041   -3.645
+ 6SA           OQ4    O    O2        0.000     -6.544    0.986   -2.222
+ 6SA           CQ4    C    CH1       0.000     -7.275    2.213   -2.256
+ 6SA           HQ4    H    H         0.000     -6.747    2.935   -2.895
+ 6SA           CQ3    C    CH1       0.000     -8.670    1.953   -2.830
+ 6SA           HQ3    H    H         0.000     -9.131    1.102   -2.310
+ 6SA           OQ3    O    OH1       0.000     -8.569    1.666   -4.226
+ 6SA           H11    H    H         0.000     -9.452    1.503   -4.586
+ 6SA           CQ2    C    CH1       0.000     -9.521    3.208   -2.616
+ 6SA           HQ2    H    H         0.000     -8.990    4.086   -3.011
+ 6SA           OQ2    O    OH1       0.000    -10.772    3.061   -3.291
+ 6SA           H10    H    H         0.000    -10.615    2.936   -4.236
+ 6SA           CQ5    C    C         0.000     -7.384    2.766   -0.865
+ 6SA           CQ7    C    CH2       0.000     -6.158    2.720    0.011
+ 6SA           HQ71   H    H         0.000     -5.315    3.167   -0.520
+ 6SA           HQ72   H    H         0.000     -5.923    1.681    0.254
+ 6SA           OQ7    O    OH1       0.000     -6.405    3.448    1.215
+ 6SA           HQ7    H    H         0.000     -5.594    3.489    1.739
+ 6SA           CQ6    C    C1        0.000     -8.464    3.279   -0.370
+ 6SA           HQ6    H    H         0.000     -8.429    3.654    0.639
+ 6SA           CQ1    C    CH1       0.000     -9.762    3.385   -1.116
+ 6SA           HQ1    H    H         0.000    -10.208    4.373   -0.932
+ 6SA           NY4    N    NH1       0.000    -10.681    2.341   -0.643
+ 6SA           HY4    H    H         0.000    -10.805    1.421   -1.043
+ 6SA           CY4    C    CH1       0.000    -11.384    2.892    0.523
+ 6SA           H1     H    H         0.000    -10.739    3.623    1.030
+ 6SA           CY3    C    CH1       0.000    -12.677    3.578    0.065
+ 6SA           HY3    H    H         0.000    -13.276    2.876   -0.532
+ 6SA           OY3    O    OH1       0.000    -12.360    4.729   -0.721
+ 6SA           H2     H    H         0.000    -13.178    5.165   -0.996
+ 6SA           CY2    C    CH1       0.000    -13.468    4.005    1.307
+ 6SA           HY2    H    H         0.000    -12.913    4.785    1.847
+ 6SA           OY2    O    OH1       0.000    -14.744    4.514    0.910
+ 6SA           H3     H    H         0.000    -15.244    4.776    1.694
+ 6SA           CY5    C    CH1       0.000    -11.735    1.761    1.490
+ 6SA           HY5    H    H         0.000    -12.400    1.044    0.989
+ 6SA           CY6    C    CH3       0.000    -10.454    1.047    1.926
+ 6SA           HY63   H    H         0.000    -10.039    0.529    1.100
+ 6SA           HY62   H    H         0.000     -9.755    1.759    2.281
+ 6SA           HY61   H    H         0.000    -10.677    0.357    2.698
+ 6SA           OY5    O    O2        0.000    -12.393    2.295    2.638
+ 6SA           CY1    C    CH1       0.000    -13.663    2.790    2.217
+ 6SA           HY1    H    H         0.000    -14.251    3.083    3.097
+ 6SA           OR4    O    O2        0.000    -14.357    1.768    1.500
+ 6SA           CR4    C    CH1       0.000    -14.773    0.798    2.464
+ 6SA           HR4    H    H         0.000    -13.979    0.659    3.211
+ 6SA           CR3    C    CH1       0.000    -16.052    1.281    3.157
+ 6SA           HR3    H    H         0.000    -16.813    1.523    2.402
+ 6SA           OR3    O    OH1       0.000    -15.765    2.442    3.938
+ 6SA           H4     H    H         0.000    -16.573    2.744    4.375
+ 6SA           CR2    C    CH1       0.000    -16.570    0.160    4.067
+ 6SA           HR2    H    H         0.000    -15.855   -0.009    4.885
+ 6SA           OR2    O    OH1       0.000    -17.838    0.532    4.609
+ 6SA           H5     H    H         0.000    -18.162   -0.176    5.183
+ 6SA           CR5    C    CH1       0.000    -15.056   -0.533    1.763
+ 6SA           HR5    H    H         0.000    -15.864   -0.395    1.030
+ 6SA           CR6    C    CH2       0.000    -13.792   -1.007    1.041
+ 6SA           HR61   H    H         0.000    -13.014   -1.224    1.775
+ 6SA           HR62   H    H         0.000    -13.445   -0.224    0.364
+ 6SA           OR6    O    OH1       0.000    -14.086   -2.189    0.294
+ 6SA           HR6    H    H         0.000    -13.288   -2.489   -0.162
+ 6SA           OR5    O    O2        0.000    -15.449   -1.511    2.722
+ 6SA           CR1    C    CH1       0.000    -16.718   -1.121    3.244
+ 6SA           HR1    H    H         0.000    -17.112   -1.923    3.884
+ 6SA           OR1    O    O2        0.000    -17.623   -0.890    2.163
+ 6SA           CW6    C    CH2       0.000    -17.904   -2.164    1.579
+ 6SA           HW61   H    H         0.000    -18.354   -2.816    2.330
+ 6SA           HW62   H    H         0.000    -16.976   -2.612    1.219
+ 6SA           CW5    C    CH1       0.000    -18.873   -1.986    0.409
+ 6SA           HW5    H    H         0.000    -19.770   -1.454    0.756
+ 6SA           OW5    O    O2        0.000    -18.241   -1.226   -0.620
+ 6SA           CW1    C    CH1       0.000    -19.227   -0.930   -1.606
+ 6SA           HW1    H    H         0.000    -20.100   -0.469   -1.123
+ 6SA           OW1    O    OH1       0.000    -18.681   -0.022   -2.566
+ 6SA           H6     H    H         0.000    -18.413    0.793   -2.122
+ 6SA           CW4    C    CH1       0.000    -19.273   -3.359   -0.134
+ 6SA           HW4    H    H         0.000    -18.381   -3.883   -0.504
+ 6SA           OW4    O    OH1       0.000    -19.882   -4.126    0.907
+ 6SA           H9     H    H         0.000    -20.141   -4.991    0.560
+ 6SA           CW3    C    CH1       0.000    -20.272   -3.171   -1.282
+ 6SA           HW3    H    H         0.000    -21.206   -2.742   -0.893
+ 6SA           OW3    O    OH1       0.000    -20.542   -4.432   -1.898
+ 6SA           H8     H    H         0.000    -21.162   -4.307   -2.629
+ 6SA           CW2    C    CH1       0.000    -19.657   -2.217   -2.313
+ 6SA           HW2    H    H         0.000    -18.782   -2.692   -2.777
+ 6SA           OW2    O    OH1       0.000    -20.624   -1.910   -3.319
+ 6SA           H7     H    H         0.000    -20.235   -1.303   -3.963
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 6SA      OV6    n/a    CV6    START
+ 6SA      HV6    OV6    .      .
+ 6SA      CV6    OV6    CV5    .
+ 6SA      HV61   CV6    .      .
+ 6SA      HV62   CV6    .      .
+ 6SA      CV5    CV6    OV5    .
+ 6SA      HV5    CV5    .      .
+ 6SA      CV4    CV5    CV3    .
+ 6SA      HV4    CV4    .      .
+ 6SA      OV4    CV4    H12    .
+ 6SA      H12    OV4    .      .
+ 6SA      CV3    CV4    CV2    .
+ 6SA      HV3    CV3    .      .
+ 6SA      OV3    CV3    H13    .
+ 6SA      H13    OV3    .      .
+ 6SA      CV2    CV3    OV2    .
+ 6SA      HV2    CV2    .      .
+ 6SA      OV2    CV2    H14    .
+ 6SA      H14    OV2    .      .
+ 6SA      OV5    CV5    CV1    .
+ 6SA      CV1    OV5    OP4    .
+ 6SA      HV1    CV1    .      .
+ 6SA      OP4    CV1    CP4    .
+ 6SA      CP4    OP4    CP5    .
+ 6SA      HP4    CP4    .      .
+ 6SA      CP3    CP4    CP2    .
+ 6SA      HP3    CP3    .      .
+ 6SA      OP3    CP3    H15    .
+ 6SA      H15    OP3    .      .
+ 6SA      CP2    CP3    OU2    .
+ 6SA      HP2    CP2    .      .
+ 6SA      OU2    CP2    HU2    .
+ 6SA      HU2    OU2    .      .
+ 6SA      CP5    CP4    OP5    .
+ 6SA      HP5    CP5    .      .
+ 6SA      CP6    CP5    OP6    .
+ 6SA      HP61   CP6    .      .
+ 6SA      HP62   CP6    .      .
+ 6SA      OP6    CP6    HP6    .
+ 6SA      HP6    OP6    .      .
+ 6SA      OP5    CP5    CP1    .
+ 6SA      CP1    OP5    OQ4    .
+ 6SA      HP1    CP1    .      .
+ 6SA      OQ4    CP1    CQ4    .
+ 6SA      CQ4    OQ4    CQ5    .
+ 6SA      HQ4    CQ4    .      .
+ 6SA      CQ3    CQ4    CQ2    .
+ 6SA      HQ3    CQ3    .      .
+ 6SA      OQ3    CQ3    H11    .
+ 6SA      H11    OQ3    .      .
+ 6SA      CQ2    CQ3    OQ2    .
+ 6SA      HQ2    CQ2    .      .
+ 6SA      OQ2    CQ2    H10    .
+ 6SA      H10    OQ2    .      .
+ 6SA      CQ5    CQ4    CQ6    .
+ 6SA      CQ7    CQ5    OQ7    .
+ 6SA      HQ71   CQ7    .      .
+ 6SA      HQ72   CQ7    .      .
+ 6SA      OQ7    CQ7    HQ7    .
+ 6SA      HQ7    OQ7    .      .
+ 6SA      CQ6    CQ5    CQ1    .
+ 6SA      HQ6    CQ6    .      .
+ 6SA      CQ1    CQ6    NY4    .
+ 6SA      HQ1    CQ1    .      .
+ 6SA      NY4    CQ1    CY4    .
+ 6SA      HY4    NY4    .      .
+ 6SA      CY4    NY4    CY5    .
+ 6SA      H1     CY4    .      .
+ 6SA      CY3    CY4    CY2    .
+ 6SA      HY3    CY3    .      .
+ 6SA      OY3    CY3    H2     .
+ 6SA      H2     OY3    .      .
+ 6SA      CY2    CY3    OY2    .
+ 6SA      HY2    CY2    .      .
+ 6SA      OY2    CY2    H3     .
+ 6SA      H3     OY2    .      .
+ 6SA      CY5    CY4    OY5    .
+ 6SA      HY5    CY5    .      .
+ 6SA      CY6    CY5    HY61   .
+ 6SA      HY63   CY6    .      .
+ 6SA      HY62   CY6    .      .
+ 6SA      HY61   CY6    .      .
+ 6SA      OY5    CY5    CY1    .
+ 6SA      CY1    OY5    OR4    .
+ 6SA      HY1    CY1    .      .
+ 6SA      OR4    CY1    CR4    .
+ 6SA      CR4    OR4    CR5    .
+ 6SA      HR4    CR4    .      .
+ 6SA      CR3    CR4    CR2    .
+ 6SA      HR3    CR3    .      .
+ 6SA      OR3    CR3    H4     .
+ 6SA      H4     OR3    .      .
+ 6SA      CR2    CR3    OR2    .
+ 6SA      HR2    CR2    .      .
+ 6SA      OR2    CR2    H5     .
+ 6SA      H5     OR2    .      .
+ 6SA      CR5    CR4    OR5    .
+ 6SA      HR5    CR5    .      .
+ 6SA      CR6    CR5    OR6    .
+ 6SA      HR61   CR6    .      .
+ 6SA      HR62   CR6    .      .
+ 6SA      OR6    CR6    HR6    .
+ 6SA      HR6    OR6    .      .
+ 6SA      OR5    CR5    CR1    .
+ 6SA      CR1    OR5    OR1    .
+ 6SA      HR1    CR1    .      .
+ 6SA      OR1    CR1    CW6    .
+ 6SA      CW6    OR1    CW5    .
+ 6SA      HW61   CW6    .      .
+ 6SA      HW62   CW6    .      .
+ 6SA      CW5    CW6    CW4    .
+ 6SA      HW5    CW5    .      .
+ 6SA      OW5    CW5    CW1    .
+ 6SA      CW1    OW5    OW1    .
+ 6SA      HW1    CW1    .      .
+ 6SA      OW1    CW1    H6     .
+ 6SA      H6     OW1    .      .
+ 6SA      CW4    CW5    CW3    .
+ 6SA      HW4    CW4    .      .
+ 6SA      OW4    CW4    H9     .
+ 6SA      H9     OW4    .      .
+ 6SA      CW3    CW4    CW2    .
+ 6SA      HW3    CW3    .      .
+ 6SA      OW3    CW3    H8     .
+ 6SA      H8     OW3    .      .
+ 6SA      CW2    CW3    OW2    .
+ 6SA      HW2    CW2    .      .
+ 6SA      OW2    CW2    H7     .
+ 6SA      H7     OW2    .      END
+ 6SA      CR1    CR2    .    ADD
+ 6SA      CY1    CY2    .    ADD
+ 6SA      CQ1    CQ2    .    ADD
+ 6SA      CW1    CW2    .    ADD
+ 6SA      CP1    CP2    .    ADD
+ 6SA      CV1    CV2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+6SA       CR1       CR2       single    1.524     0.020     1.524     0.020     
+6SA       OR1       CR1       single    1.426     0.020     1.426     0.020     
+6SA       CR1       OR5       single    1.426     0.020     1.426     0.020     
+6SA       HR1       CR1       single    1.089     0.010     0.989     0.005     
+6SA       CR2       CR3       single    1.524     0.020     1.524     0.020     
+6SA       OR2       CR2       single    1.432     0.020     1.432     0.020     
+6SA       HR2       CR2       single    1.089     0.010     0.989     0.005     
+6SA       CR3       CR4       single    1.524     0.020     1.524     0.020     
+6SA       OR3       CR3       single    1.432     0.020     1.432     0.020     
+6SA       HR3       CR3       single    1.089     0.010     0.989     0.005     
+6SA       CR5       CR4       single    1.524     0.020     1.524     0.020     
+6SA       CR4       OR4       single    1.426     0.020     1.426     0.020     
+6SA       HR4       CR4       single    1.089     0.010     0.989     0.005     
+6SA       CR6       CR5       single    1.524     0.020     1.524     0.020     
+6SA       OR5       CR5       single    1.426     0.020     1.426     0.020     
+6SA       HR5       CR5       single    1.089     0.010     0.989     0.005     
+6SA       OR6       CR6       single    1.432     0.020     1.432     0.020     
+6SA       HR61      CR6       single    1.089     0.010     0.989     0.005     
+6SA       HR62      CR6       single    1.089     0.010     0.989     0.005     
+6SA       CW6       OR1       single    1.426     0.020     1.426     0.020     
+6SA       H5        OR2       single    0.970     0.012     0.839     0.014     
+6SA       H4        OR3       single    0.970     0.012     0.839     0.014     
+6SA       OR4       CY1       single    1.426     0.020     1.426     0.020     
+6SA       HR6       OR6       single    0.970     0.012     0.839     0.014     
+6SA       CY1       CY2       single    1.524     0.020     1.524     0.020     
+6SA       CY1       OY5       single    1.426     0.020     1.426     0.020     
+6SA       HY1       CY1       single    1.089     0.010     0.989     0.005     
+6SA       CY2       CY3       single    1.524     0.020     1.524     0.020     
+6SA       OY2       CY2       single    1.432     0.020     1.432     0.020     
+6SA       HY2       CY2       single    1.089     0.010     0.989     0.005     
+6SA       CY3       CY4       single    1.524     0.020     1.524     0.020     
+6SA       OY3       CY3       single    1.432     0.020     1.432     0.020     
+6SA       HY3       CY3       single    1.089     0.010     0.989     0.005     
+6SA       CY5       CY4       single    1.524     0.020     1.524     0.020     
+6SA       CY4       NY4       single    1.450     0.020     1.450     0.020     
+6SA       H1        CY4       single    1.089     0.010     0.989     0.005     
+6SA       CY6       CY5       single    1.524     0.020     1.524     0.020     
+6SA       OY5       CY5       single    1.426     0.020     1.426     0.020     
+6SA       HY5       CY5       single    1.089     0.010     0.989     0.005     
+6SA       HY61      CY6       single    1.089     0.010     0.989     0.005     
+6SA       HY62      CY6       single    1.089     0.010     0.989     0.005     
+6SA       HY63      CY6       single    1.089     0.010     0.989     0.005     
+6SA       H3        OY2       single    0.970     0.012     0.839     0.014     
+6SA       H2        OY3       single    0.970     0.012     0.839     0.014     
+6SA       NY4       CQ1       single    1.450     0.020     1.450     0.020     
+6SA       HY4       NY4       single    1.036     0.016     0.914     0.007     
+6SA       CQ1       CQ2       single    1.524     0.020     1.524     0.020     
+6SA       CQ1       CQ6       single    1.510     0.020     1.510     0.020     
+6SA       HQ1       CQ1       single    1.089     0.010     0.989     0.005     
+6SA       OQ2       CQ2       single    1.432     0.020     1.432     0.020     
+6SA       CQ2       CQ3       single    1.524     0.020     1.524     0.020     
+6SA       HQ2       CQ2       single    1.089     0.010     0.989     0.005     
+6SA       H10       OQ2       single    0.970     0.012     0.839     0.014     
+6SA       OQ3       CQ3       single    1.432     0.020     1.432     0.020     
+6SA       CQ3       CQ4       single    1.524     0.020     1.524     0.020     
+6SA       HQ3       CQ3       single    1.089     0.010     0.989     0.005     
+6SA       H11       OQ3       single    0.970     0.012     0.839     0.014     
+6SA       CQ4       OQ4       single    1.426     0.020     1.426     0.020     
+6SA       CQ5       CQ4       single    1.500     0.020     1.500     0.020     
+6SA       HQ4       CQ4       single    1.089     0.010     0.989     0.005     
+6SA       OQ4       CP1       single    1.426     0.020     1.426     0.020     
+6SA       CQ6       CQ5       double    1.340     0.020     1.340     0.020     
+6SA       CQ7       CQ5       single    1.510     0.020     1.510     0.020     
+6SA       HQ6       CQ6       single    1.082     0.013     0.975     0.010     
+6SA       OQ7       CQ7       single    1.432     0.020     1.432     0.020     
+6SA       HQ71      CQ7       single    1.089     0.010     0.989     0.005     
+6SA       HQ72      CQ7       single    1.089     0.010     0.989     0.005     
+6SA       HQ7       OQ7       single    0.970     0.012     0.839     0.014     
+6SA       CW1       CW2       single    1.524     0.020     1.524     0.020     
+6SA       CW1       OW5       single    1.426     0.020     1.426     0.020     
+6SA       OW1       CW1       single    1.432     0.020     1.432     0.020     
+6SA       HW1       CW1       single    1.089     0.010     0.989     0.005     
+6SA       CW2       CW3       single    1.524     0.020     1.524     0.020     
+6SA       OW2       CW2       single    1.432     0.020     1.432     0.020     
+6SA       HW2       CW2       single    1.089     0.010     0.989     0.005     
+6SA       CW3       CW4       single    1.524     0.020     1.524     0.020     
+6SA       OW3       CW3       single    1.432     0.020     1.432     0.020     
+6SA       HW3       CW3       single    1.089     0.010     0.989     0.005     
+6SA       CW4       CW5       single    1.524     0.020     1.524     0.020     
+6SA       OW4       CW4       single    1.432     0.020     1.432     0.020     
+6SA       HW4       CW4       single    1.089     0.010     0.989     0.005     
+6SA       CW5       CW6       single    1.524     0.020     1.524     0.020     
+6SA       OW5       CW5       single    1.426     0.020     1.426     0.020     
+6SA       HW5       CW5       single    1.089     0.010     0.989     0.005     
+6SA       HW61      CW6       single    1.089     0.010     0.989     0.005     
+6SA       HW62      CW6       single    1.089     0.010     0.989     0.005     
+6SA       H7        OW2       single    0.970     0.012     0.839     0.014     
+6SA       H8        OW3       single    0.970     0.012     0.839     0.014     
+6SA       H9        OW4       single    0.970     0.012     0.839     0.014     
+6SA       H6        OW1       single    0.970     0.012     0.839     0.014     
+6SA       CP1       CP2       single    1.524     0.020     1.524     0.020     
+6SA       CP1       OP5       single    1.426     0.020     1.426     0.020     
+6SA       HP1       CP1       single    1.089     0.010     0.989     0.005     
+6SA       CP2       CP3       single    1.524     0.020     1.524     0.020     
+6SA       OU2       CP2       single    1.432     0.020     1.432     0.020     
+6SA       HP2       CP2       single    1.089     0.010     0.989     0.005     
+6SA       CP3       CP4       single    1.524     0.020     1.524     0.020     
+6SA       OP3       CP3       single    1.432     0.020     1.432     0.020     
+6SA       HP3       CP3       single    1.089     0.010     0.989     0.005     
+6SA       CP5       CP4       single    1.524     0.020     1.524     0.020     
+6SA       CP4       OP4       single    1.426     0.020     1.426     0.020     
+6SA       HP4       CP4       single    1.089     0.010     0.989     0.005     
+6SA       CP6       CP5       single    1.524     0.020     1.524     0.020     
+6SA       OP5       CP5       single    1.426     0.020     1.426     0.020     
+6SA       HP5       CP5       single    1.089     0.010     0.989     0.005     
+6SA       OP6       CP6       single    1.432     0.020     1.432     0.020     
+6SA       HP61      CP6       single    1.089     0.010     0.989     0.005     
+6SA       HP62      CP6       single    1.089     0.010     0.989     0.005     
+6SA       HU2       OU2       single    0.970     0.012     0.839     0.014     
+6SA       H15       OP3       single    0.970     0.012     0.839     0.014     
+6SA       OP4       CV1       single    1.426     0.020     1.426     0.020     
+6SA       HP6       OP6       single    0.970     0.012     0.839     0.014     
+6SA       CV1       CV2       single    1.524     0.020     1.524     0.020     
+6SA       CV1       OV5       single    1.426     0.020     1.426     0.020     
+6SA       HV1       CV1       single    1.089     0.010     0.989     0.005     
+6SA       CV2       CV3       single    1.524     0.020     1.524     0.020     
+6SA       OV2       CV2       single    1.432     0.020     1.432     0.020     
+6SA       HV2       CV2       single    1.089     0.010     0.989     0.005     
+6SA       CV3       CV4       single    1.524     0.020     1.524     0.020     
+6SA       OV3       CV3       single    1.432     0.020     1.432     0.020     
+6SA       HV3       CV3       single    1.089     0.010     0.989     0.005     
+6SA       CV4       CV5       single    1.524     0.020     1.524     0.020     
+6SA       OV4       CV4       single    1.432     0.020     1.432     0.020     
+6SA       HV4       CV4       single    1.089     0.010     0.989     0.005     
+6SA       CV5       CV6       single    1.524     0.020     1.524     0.020     
+6SA       OV5       CV5       single    1.426     0.020     1.426     0.020     
+6SA       HV5       CV5       single    1.089     0.010     0.989     0.005     
+6SA       CV6       OV6       single    1.432     0.020     1.432     0.020     
+6SA       HV61      CV6       single    1.089     0.010     0.989     0.005     
+6SA       HV62      CV6       single    1.089     0.010     0.989     0.005     
+6SA       H14       OV2       single    0.970     0.012     0.839     0.014     
+6SA       H13       OV3       single    0.970     0.012     0.839     0.014     
+6SA       H12       OV4       single    0.970     0.012     0.839     0.014     
+6SA       HV6       OV6       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 6SA      HV6    OV6    CV6     109.470    3.000
+ 6SA      OV6    CV6    HV61    109.470    3.000
+ 6SA      OV6    CV6    HV62    109.470    3.000
+ 6SA      OV6    CV6    CV5     109.470    3.000
+ 6SA      HV61   CV6    HV62    107.900    3.000
+ 6SA      HV61   CV6    CV5     109.470    3.000
+ 6SA      HV62   CV6    CV5     109.470    3.000
+ 6SA      CV6    CV5    HV5     108.340    3.000
+ 6SA      CV6    CV5    CV4     111.000    3.000
+ 6SA      CV6    CV5    OV5     109.470    3.000
+ 6SA      HV5    CV5    CV4     108.340    3.000
+ 6SA      HV5    CV5    OV5     109.470    3.000
+ 6SA      CV4    CV5    OV5     109.470    3.000
+ 6SA      CV5    CV4    HV4     108.340    3.000
+ 6SA      CV5    CV4    OV4     109.470    3.000
+ 6SA      CV5    CV4    CV3     111.000    3.000
+ 6SA      HV4    CV4    OV4     109.470    3.000
+ 6SA      HV4    CV4    CV3     108.340    3.000
+ 6SA      OV4    CV4    CV3     109.470    3.000
+ 6SA      CV4    OV4    H12     109.470    3.000
+ 6SA      CV4    CV3    HV3     108.340    3.000
+ 6SA      CV4    CV3    OV3     109.470    3.000
+ 6SA      CV4    CV3    CV2     111.000    3.000
+ 6SA      HV3    CV3    OV3     109.470    3.000
+ 6SA      HV3    CV3    CV2     108.340    3.000
+ 6SA      OV3    CV3    CV2     109.470    3.000
+ 6SA      CV3    OV3    H13     109.470    3.000
+ 6SA      CV3    CV2    HV2     108.340    3.000
+ 6SA      CV3    CV2    OV2     109.470    3.000
+ 6SA      CV3    CV2    CV1     111.000    3.000
+ 6SA      HV2    CV2    OV2     109.470    3.000
+ 6SA      HV2    CV2    CV1     108.340    3.000
+ 6SA      OV2    CV2    CV1     109.470    3.000
+ 6SA      CV2    OV2    H14     109.470    3.000
+ 6SA      CV5    OV5    CV1     111.800    3.000
+ 6SA      OV5    CV1    HV1     109.470    3.000
+ 6SA      OV5    CV1    OP4     109.470    3.000
+ 6SA      OV5    CV1    CV2     109.470    3.000
+ 6SA      HV1    CV1    OP4     109.470    3.000
+ 6SA      HV1    CV1    CV2     108.340    3.000
+ 6SA      OP4    CV1    CV2     109.470    3.000
+ 6SA      CV1    OP4    CP4     111.800    3.000
+ 6SA      OP4    CP4    HP4     109.470    3.000
+ 6SA      OP4    CP4    CP3     109.470    3.000
+ 6SA      OP4    CP4    CP5     109.470    3.000
+ 6SA      HP4    CP4    CP3     108.340    3.000
+ 6SA      HP4    CP4    CP5     108.340    3.000
+ 6SA      CP3    CP4    CP5     111.000    3.000
+ 6SA      CP4    CP3    HP3     108.340    3.000
+ 6SA      CP4    CP3    OP3     109.470    3.000
+ 6SA      CP4    CP3    CP2     111.000    3.000
+ 6SA      HP3    CP3    OP3     109.470    3.000
+ 6SA      HP3    CP3    CP2     108.340    3.000
+ 6SA      OP3    CP3    CP2     109.470    3.000
+ 6SA      CP3    OP3    H15     109.470    3.000
+ 6SA      CP3    CP2    HP2     108.340    3.000
+ 6SA      CP3    CP2    OU2     109.470    3.000
+ 6SA      CP3    CP2    CP1     111.000    3.000
+ 6SA      HP2    CP2    OU2     109.470    3.000
+ 6SA      HP2    CP2    CP1     108.340    3.000
+ 6SA      OU2    CP2    CP1     109.470    3.000
+ 6SA      CP2    OU2    HU2     109.470    3.000
+ 6SA      CP4    CP5    HP5     108.340    3.000
+ 6SA      CP4    CP5    CP6     111.000    3.000
+ 6SA      CP4    CP5    OP5     109.470    3.000
+ 6SA      HP5    CP5    CP6     108.340    3.000
+ 6SA      HP5    CP5    OP5     109.470    3.000
+ 6SA      CP6    CP5    OP5     109.470    3.000
+ 6SA      CP5    CP6    HP61    109.470    3.000
+ 6SA      CP5    CP6    HP62    109.470    3.000
+ 6SA      CP5    CP6    OP6     109.470    3.000
+ 6SA      HP61   CP6    HP62    107.900    3.000
+ 6SA      HP61   CP6    OP6     109.470    3.000
+ 6SA      HP62   CP6    OP6     109.470    3.000
+ 6SA      CP6    OP6    HP6     109.470    3.000
+ 6SA      CP5    OP5    CP1     111.800    3.000
+ 6SA      OP5    CP1    HP1     109.470    3.000
+ 6SA      OP5    CP1    OQ4     109.470    3.000
+ 6SA      OP5    CP1    CP2     109.470    3.000
+ 6SA      HP1    CP1    OQ4     109.470    3.000
+ 6SA      HP1    CP1    CP2     108.340    3.000
+ 6SA      OQ4    CP1    CP2     109.470    3.000
+ 6SA      CP1    OQ4    CQ4     111.800    3.000
+ 6SA      OQ4    CQ4    HQ4     109.470    3.000
+ 6SA      OQ4    CQ4    CQ3     109.470    3.000
+ 6SA      OQ4    CQ4    CQ5     109.470    3.000
+ 6SA      HQ4    CQ4    CQ3     108.340    3.000
+ 6SA      HQ4    CQ4    CQ5     108.810    3.000
+ 6SA      CQ3    CQ4    CQ5     109.470    3.000
+ 6SA      CQ4    CQ3    HQ3     108.340    3.000
+ 6SA      CQ4    CQ3    OQ3     109.470    3.000
+ 6SA      CQ4    CQ3    CQ2     111.000    3.000
+ 6SA      HQ3    CQ3    OQ3     109.470    3.000
+ 6SA      HQ3    CQ3    CQ2     108.340    3.000
+ 6SA      OQ3    CQ3    CQ2     109.470    3.000
+ 6SA      CQ3    OQ3    H11     109.470    3.000
+ 6SA      CQ3    CQ2    HQ2     108.340    3.000
+ 6SA      CQ3    CQ2    OQ2     109.470    3.000
+ 6SA      CQ3    CQ2    CQ1     111.000    3.000
+ 6SA      HQ2    CQ2    OQ2     109.470    3.000
+ 6SA      HQ2    CQ2    CQ1     108.340    3.000
+ 6SA      OQ2    CQ2    CQ1     109.470    3.000
+ 6SA      CQ2    OQ2    H10     109.470    3.000
+ 6SA      CQ4    CQ5    CQ7     120.000    3.000
+ 6SA      CQ4    CQ5    CQ6     120.000    3.000
+ 6SA      CQ7    CQ5    CQ6     120.000    3.000
+ 6SA      CQ5    CQ7    HQ71    109.470    3.000
+ 6SA      CQ5    CQ7    HQ72    109.470    3.000
+ 6SA      CQ5    CQ7    OQ7     109.500    3.000
+ 6SA      HQ71   CQ7    HQ72    107.900    3.000
+ 6SA      HQ71   CQ7    OQ7     109.470    3.000
+ 6SA      HQ72   CQ7    OQ7     109.470    3.000
+ 6SA      CQ7    OQ7    HQ7     109.470    3.000
+ 6SA      CQ5    CQ6    HQ6     120.000    3.000
+ 6SA      CQ5    CQ6    CQ1     120.500    3.000
+ 6SA      HQ6    CQ6    CQ1     120.000    3.000
+ 6SA      CQ6    CQ1    HQ1     108.810    3.000
+ 6SA      CQ6    CQ1    NY4     111.600    3.000
+ 6SA      CQ6    CQ1    CQ2     109.470    3.000
+ 6SA      HQ1    CQ1    NY4     108.550    3.000
+ 6SA      HQ1    CQ1    CQ2     108.340    3.000
+ 6SA      NY4    CQ1    CQ2     110.000    3.000
+ 6SA      CQ1    NY4    HY4     118.500    3.000
+ 6SA      CQ1    NY4    CY4     120.000    3.000
+ 6SA      HY4    NY4    CY4     118.500    3.000
+ 6SA      NY4    CY4    H1      108.550    3.000
+ 6SA      NY4    CY4    CY3     110.000    3.000
+ 6SA      NY4    CY4    CY5     110.000    3.000
+ 6SA      H1     CY4    CY3     108.340    3.000
+ 6SA      H1     CY4    CY5     108.340    3.000
+ 6SA      CY3    CY4    CY5     111.000    3.000
+ 6SA      CY4    CY3    HY3     108.340    3.000
+ 6SA      CY4    CY3    OY3     109.470    3.000
+ 6SA      CY4    CY3    CY2     111.000    3.000
+ 6SA      HY3    CY3    OY3     109.470    3.000
+ 6SA      HY3    CY3    CY2     108.340    3.000
+ 6SA      OY3    CY3    CY2     109.470    3.000
+ 6SA      CY3    OY3    H2      109.470    3.000
+ 6SA      CY3    CY2    HY2     108.340    3.000
+ 6SA      CY3    CY2    OY2     109.470    3.000
+ 6SA      CY3    CY2    CY1     111.000    3.000
+ 6SA      HY2    CY2    OY2     109.470    3.000
+ 6SA      HY2    CY2    CY1     108.340    3.000
+ 6SA      OY2    CY2    CY1     109.470    3.000
+ 6SA      CY2    OY2    H3      109.470    3.000
+ 6SA      CY4    CY5    HY5     108.340    3.000
+ 6SA      CY4    CY5    CY6     111.000    3.000
+ 6SA      CY4    CY5    OY5     109.470    3.000
+ 6SA      HY5    CY5    CY6     108.340    3.000
+ 6SA      HY5    CY5    OY5     109.470    3.000
+ 6SA      CY6    CY5    OY5     109.470    3.000
+ 6SA      CY5    CY6    HY63    109.470    3.000
+ 6SA      CY5    CY6    HY62    109.470    3.000
+ 6SA      CY5    CY6    HY61    109.470    3.000
+ 6SA      HY63   CY6    HY62    109.470    3.000
+ 6SA      HY63   CY6    HY61    109.470    3.000
+ 6SA      HY62   CY6    HY61    109.470    3.000
+ 6SA      CY5    OY5    CY1     111.800    3.000
+ 6SA      OY5    CY1    HY1     109.470    3.000
+ 6SA      OY5    CY1    OR4     109.470    3.000
+ 6SA      OY5    CY1    CY2     109.470    3.000
+ 6SA      HY1    CY1    OR4     109.470    3.000
+ 6SA      HY1    CY1    CY2     108.340    3.000
+ 6SA      OR4    CY1    CY2     109.470    3.000
+ 6SA      CY1    OR4    CR4     111.800    3.000
+ 6SA      OR4    CR4    HR4     109.470    3.000
+ 6SA      OR4    CR4    CR3     109.470    3.000
+ 6SA      OR4    CR4    CR5     109.470    3.000
+ 6SA      HR4    CR4    CR3     108.340    3.000
+ 6SA      HR4    CR4    CR5     108.340    3.000
+ 6SA      CR3    CR4    CR5     111.000    3.000
+ 6SA      CR4    CR3    HR3     108.340    3.000
+ 6SA      CR4    CR3    OR3     109.470    3.000
+ 6SA      CR4    CR3    CR2     111.000    3.000
+ 6SA      HR3    CR3    OR3     109.470    3.000
+ 6SA      HR3    CR3    CR2     108.340    3.000
+ 6SA      OR3    CR3    CR2     109.470    3.000
+ 6SA      CR3    OR3    H4      109.470    3.000
+ 6SA      CR3    CR2    HR2     108.340    3.000
+ 6SA      CR3    CR2    OR2     109.470    3.000
+ 6SA      CR3    CR2    CR1     111.000    3.000
+ 6SA      HR2    CR2    OR2     109.470    3.000
+ 6SA      HR2    CR2    CR1     108.340    3.000
+ 6SA      OR2    CR2    CR1     109.470    3.000
+ 6SA      CR2    OR2    H5      109.470    3.000
+ 6SA      CR4    CR5    HR5     108.340    3.000
+ 6SA      CR4    CR5    CR6     111.000    3.000
+ 6SA      CR4    CR5    OR5     109.470    3.000
+ 6SA      HR5    CR5    CR6     108.340    3.000
+ 6SA      HR5    CR5    OR5     109.470    3.000
+ 6SA      CR6    CR5    OR5     109.470    3.000
+ 6SA      CR5    CR6    HR61    109.470    3.000
+ 6SA      CR5    CR6    HR62    109.470    3.000
+ 6SA      CR5    CR6    OR6     109.470    3.000
+ 6SA      HR61   CR6    HR62    107.900    3.000
+ 6SA      HR61   CR6    OR6     109.470    3.000
+ 6SA      HR62   CR6    OR6     109.470    3.000
+ 6SA      CR6    OR6    HR6     109.470    3.000
+ 6SA      CR5    OR5    CR1     111.800    3.000
+ 6SA      OR5    CR1    HR1     109.470    3.000
+ 6SA      OR5    CR1    OR1     109.470    3.000
+ 6SA      OR5    CR1    CR2     109.470    3.000
+ 6SA      HR1    CR1    OR1     109.470    3.000
+ 6SA      HR1    CR1    CR2     108.340    3.000
+ 6SA      OR1    CR1    CR2     109.470    3.000
+ 6SA      CR1    OR1    CW6     111.800    3.000
+ 6SA      OR1    CW6    HW61    109.470    3.000
+ 6SA      OR1    CW6    HW62    109.470    3.000
+ 6SA      OR1    CW6    CW5     109.470    3.000
+ 6SA      HW61   CW6    HW62    107.900    3.000
+ 6SA      HW61   CW6    CW5     109.470    3.000
+ 6SA      HW62   CW6    CW5     109.470    3.000
+ 6SA      CW6    CW5    HW5     108.340    3.000
+ 6SA      CW6    CW5    OW5     109.470    3.000
+ 6SA      CW6    CW5    CW4     111.000    3.000
+ 6SA      HW5    CW5    OW5     109.470    3.000
+ 6SA      HW5    CW5    CW4     108.340    3.000
+ 6SA      OW5    CW5    CW4     109.470    3.000
+ 6SA      CW5    OW5    CW1     111.800    3.000
+ 6SA      OW5    CW1    HW1     109.470    3.000
+ 6SA      OW5    CW1    OW1     109.470    3.000
+ 6SA      OW5    CW1    CW2     109.470    3.000
+ 6SA      HW1    CW1    OW1     109.470    3.000
+ 6SA      HW1    CW1    CW2     108.340    3.000
+ 6SA      OW1    CW1    CW2     109.470    3.000
+ 6SA      CW1    OW1    H6      109.470    3.000
+ 6SA      CW5    CW4    HW4     108.340    3.000
+ 6SA      CW5    CW4    OW4     109.470    3.000
+ 6SA      CW5    CW4    CW3     111.000    3.000
+ 6SA      HW4    CW4    OW4     109.470    3.000
+ 6SA      HW4    CW4    CW3     108.340    3.000
+ 6SA      OW4    CW4    CW3     109.470    3.000
+ 6SA      CW4    OW4    H9      109.470    3.000
+ 6SA      CW4    CW3    HW3     108.340    3.000
+ 6SA      CW4    CW3    OW3     109.470    3.000
+ 6SA      CW4    CW3    CW2     111.000    3.000
+ 6SA      HW3    CW3    OW3     109.470    3.000
+ 6SA      HW3    CW3    CW2     108.340    3.000
+ 6SA      OW3    CW3    CW2     109.470    3.000
+ 6SA      CW3    OW3    H8      109.470    3.000
+ 6SA      CW3    CW2    HW2     108.340    3.000
+ 6SA      CW3    CW2    OW2     109.470    3.000
+ 6SA      CW3    CW2    CW1     111.000    3.000
+ 6SA      HW2    CW2    OW2     109.470    3.000
+ 6SA      HW2    CW2    CW1     108.340    3.000
+ 6SA      OW2    CW2    CW1     109.470    3.000
+ 6SA      CW2    OW2    H7      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 6SA      var_1    HV6    OV6    CV6    CV5     -179.938   20.000   1
+ 6SA      var_2    OV6    CV6    CV5    OV5       65.013   20.000   3
+ 6SA      var_3    CV6    CV5    CV4    CV3      180.000   20.000   3
+ 6SA      var_4    CV5    CV4    OV4    H12      179.990   20.000   1
+ 6SA      var_5    CV5    CV4    CV3    CV2       60.000   20.000   3
+ 6SA      var_6    CV4    CV3    OV3    H13      179.988   20.000   1
+ 6SA      var_7    CV4    CV3    CV2    OV2      180.000   20.000   3
+ 6SA      var_8    CV3    CV2    OV2    H14      179.970   20.000   1
+ 6SA      var_9    CV6    CV5    OV5    CV1      180.000   20.000   1
+ 6SA      var_10   CV5    OV5    CV1    OP4       60.000   20.000   1
+ 6SA      var_11   OV5    CV1    CV2    CV3       60.000   20.000   3
+ 6SA      var_12   OV5    CV1    OP4    CP4       77.929   20.000   1
+ 6SA      var_13   CV1    OP4    CP4    CP5     -155.291   20.000   1
+ 6SA      var_14   OP4    CP4    CP3    CP2      180.000   20.000   3
+ 6SA      var_15   CP4    CP3    OP3    H15      179.979   20.000   1
+ 6SA      var_16   CP4    CP3    CP2    OU2      180.000   20.000   3
+ 6SA      var_17   CP3    CP2    OU2    HU2     -179.958   20.000   1
+ 6SA      var_18   OP4    CP4    CP5    OP5      180.000   20.000   3
+ 6SA      var_19   CP4    CP5    CP6    OP6     -175.972   20.000   3
+ 6SA      var_20   CP5    CP6    OP6    HP6      175.030   20.000   1
+ 6SA      var_21   CP4    CP5    OP5    CP1       60.000   20.000   1
+ 6SA      var_22   CP5    OP5    CP1    OQ4       60.000   20.000   1
+ 6SA      var_23   OP5    CP1    CP2    CP3       60.000   20.000   3
+ 6SA      var_24   OP5    CP1    OQ4    CQ4       96.011   20.000   1
+ 6SA      var_25   CP1    OQ4    CQ4    CQ5     -114.417   20.000   1
+ 6SA      var_26   OQ4    CQ4    CQ3    CQ2      180.000   20.000   3
+ 6SA      var_27   CQ4    CQ3    OQ3    H11     -179.976   20.000   1
+ 6SA      var_28   CQ4    CQ3    CQ2    OQ2      180.000   20.000   3
+ 6SA      var_29   CQ3    CQ2    OQ2    H10      -59.978   20.000   1
+ 6SA      var_30   OQ4    CQ4    CQ5    CQ6     -150.000   20.000   3
+ 6SA      var_31   CQ4    CQ5    CQ7    OQ7      172.171   20.000   3
+ 6SA      var_32   CQ5    CQ7    OQ7    HQ7     -174.751   20.000   1
+ 6SA      var_33   CQ4    CQ5    CQ6    CQ1        0.000   20.000   1
+ 6SA      var_34   CQ5    CQ6    CQ1    NY4       90.000   20.000   1
+ 6SA      var_35   CQ6    CQ1    CQ2    CQ3       60.000   20.000   3
+ 6SA      var_36   CQ6    CQ1    NY4    CY4       86.881   20.000   3
+ 6SA      var_37   CQ1    NY4    CY4    CY5     -149.376   20.000   3
+ 6SA      var_38   NY4    CY4    CY3    CY2      180.000   20.000   3
+ 6SA      var_39   CY4    CY3    OY3    H2      -179.178   20.000   1
+ 6SA      var_40   CY4    CY3    CY2    OY2      180.000   20.000   3
+ 6SA      var_41   CY3    CY2    OY2    H3       179.526   20.000   1
+ 6SA      var_42   NY4    CY4    CY5    OY5      180.000   20.000   3
+ 6SA      var_43   CY4    CY5    CY6    HY61     171.949   20.000   3
+ 6SA      var_44   CY4    CY5    OY5    CY1       60.000   20.000   1
+ 6SA      var_45   CY5    OY5    CY1    OR4       60.000   20.000   1
+ 6SA      var_46   OY5    CY1    CY2    CY3       60.000   20.000   3
+ 6SA      var_47   OY5    CY1    OR4    CR4       72.495   20.000   1
+ 6SA      var_48   CY1    OR4    CR4    CR5     -159.541   20.000   1
+ 6SA      var_49   OR4    CR4    CR3    CR2      180.000   20.000   3
+ 6SA      var_50   CR4    CR3    OR3    H4      -179.994   20.000   1
+ 6SA      var_51   CR4    CR3    CR2    OR2      180.000   20.000   3
+ 6SA      var_52   CR3    CR2    OR2    H5      -179.965   20.000   1
+ 6SA      var_53   OR4    CR4    CR5    OR5      180.000   20.000   3
+ 6SA      var_54   CR4    CR5    CR6    OR6     -175.118   20.000   3
+ 6SA      var_55   CR5    CR6    OR6    HR6     -179.998   20.000   1
+ 6SA      var_56   CR4    CR5    OR5    CR1       60.000   20.000   1
+ 6SA      var_57   CR5    OR5    CR1    OR1       60.000   20.000   1
+ 6SA      var_58   OR5    CR1    CR2    CR3       60.000   20.000   3
+ 6SA      var_59   OR5    CR1    OR1    CW6       69.688   20.000   1
+ 6SA      var_60   CR1    OR1    CW6    CW5      179.986   20.000   1
+ 6SA      var_61   OR1    CW6    CW5    CW4     -174.878   20.000   3
+ 6SA      var_62   CW6    CW5    OW5    CW1      180.000   20.000   1
+ 6SA      var_63   CW5    OW5    CW1    OW1      180.000   20.000   1
+ 6SA      var_64   OW5    CW1    CW2    CW3       60.000   20.000   3
+ 6SA      var_65   OW5    CW1    OW1    H6       -59.986   20.000   1
+ 6SA      var_66   CW6    CW5    CW4    CW3      180.000   20.000   3
+ 6SA      var_67   CW5    CW4    OW4    H9       179.528   20.000   1
+ 6SA      var_68   CW5    CW4    CW3    CW2       60.000   20.000   3
+ 6SA      var_69   CW4    CW3    OW3    H8      -179.239   20.000   1
+ 6SA      var_70   CW4    CW3    CW2    OW2      180.000   20.000   3
+ 6SA      var_71   CW3    CW2    OW2    H7       179.559   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 6SA      chir_01  CR1    CR2    OR1    OR5       negativ
+ 6SA      chir_02  CR2    CR1    CR3    OR2       negativ
+ 6SA      chir_03  CR3    CR2    CR4    OR3       positiv
+ 6SA      chir_04  CR4    CR3    CR5    OR4       negativ
+ 6SA      chir_05  CR5    CR4    CR6    OR5       negativ
+ 6SA      chir_06  CY1    OR4    CY2    OY5       positiv
+ 6SA      chir_07  CY2    CY1    CY3    OY2       negativ
+ 6SA      chir_08  CY3    CY2    CY4    OY3       positiv
+ 6SA      chir_09  CY4    CY3    CY5    NY4       negativ
+ 6SA      chir_10  CY5    CY4    CY6    OY5       negativ
+ 6SA      chir_11  CQ1    NY4    CQ2    CQ6       positiv
+ 6SA      chir_12  CQ2    CQ1    OQ2    CQ3       positiv
+ 6SA      chir_13  CQ3    CQ2    OQ3    CQ4       negativ
+ 6SA      chir_14  CQ4    CQ3    OQ4    CQ5       positiv
+ 6SA      chir_15  CW1    CW2    OW5    OW1       negativ
+ 6SA      chir_16  CW2    CW1    CW3    OW2       negativ
+ 6SA      chir_17  CW3    CW2    CW4    OW3       positiv
+ 6SA      chir_18  CW4    CW3    CW5    OW4       negativ
+ 6SA      chir_19  CW5    CW4    CW6    OW5       negativ
+ 6SA      chir_20  CP1    OQ4    CP2    OP5       positiv
+ 6SA      chir_21  CP2    CP1    CP3    OU2       negativ
+ 6SA      chir_22  CP3    CP2    CP4    OP3       positiv
+ 6SA      chir_23  CP4    CP3    CP5    OP4       negativ
+ 6SA      chir_24  CP5    CP4    CP6    OP5       negativ
+ 6SA      chir_25  CV1    OP4    CV2    OV5       positiv
+ 6SA      chir_26  CV2    CV1    CV3    OV2       negativ
+ 6SA      chir_27  CV3    CV2    CV4    OV3       positiv
+ 6SA      chir_28  CV4    CV3    CV5    OV4       negativ
+ 6SA      chir_29  CV5    CV4    CV6    OV5       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 6SA      plan-1    NY4       0.020
+ 6SA      plan-1    CY4       0.020
+ 6SA      plan-1    CQ1       0.020
+ 6SA      plan-1    HY4       0.020
+ 6SA      plan-2    CQ5       0.020
+ 6SA      plan-2    CQ4       0.020
+ 6SA      plan-2    CQ6       0.020
+ 6SA      plan-2    CQ7       0.020
+ 6SA      plan-2    HQ6       0.020
+ 6SA      plan-3    CQ6       0.020
+ 6SA      plan-3    CQ1       0.020
+ 6SA      plan-3    CQ5       0.020
+ 6SA      plan-3    HQ6       0.020
+# ------------------------------------------------------

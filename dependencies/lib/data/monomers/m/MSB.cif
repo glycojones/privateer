@@ -1,0 +1,162 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MSB     MSB      1-METHYLOXY-4-SULFONE-BENZENE     NON-POLYMER     19     11     .     
+#
+data_comp_MSB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MSB     S       S       SH1     0       3.356       0.210       -0.113      
+MSB     OB1     O       O       0       3.678       1.281       0.796       
+MSB     OB2     O       O       0       3.807       -1.076      0.359       
+MSB     CG      C       CR6     0       1.600       0.127       -0.184      
+MSB     CD1     C       CR16    0       0.947       0.303       -1.400      
+MSB     CD2     C       CR16    0       0.870       -0.114      0.974       
+MSB     CE1     C       CR16    0       -0.437      0.237       -1.455      
+MSB     CE2     C       CR16    0       -0.515      -0.179      0.919       
+MSB     CZ      C       CR6     0       -1.183      -0.004      -0.300      
+MSB     OH      O       O2      0       -2.540      -0.037      -0.524      
+MSB     CH      C       CH3     0       -3.450      -0.315      0.540       
+MSB     HS1     H       HSH1    0       3.817       0.441       -1.224      
+MSB     HD1     H       H       0       1.439       0.465       -2.183      
+MSB     HD2     H       H       0       1.310       -0.232      1.795       
+MSB     HE1     H       H       0       -0.874      0.356       -2.275      
+MSB     HE2     H       H       0       -0.995      -0.341      1.707       
+MSB     HH1     H       H       0       -3.359      0.364       1.228       
+MSB     HH2     H       H       0       -3.250      -1.187      0.916       
+MSB     HH3     H       H       0       -4.359      -0.310      0.197       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MSB       S         OB1       DOUBLE    n         1.441     0.020     1.441     0.020     
+MSB       S         OB2       DOUBLE    n         1.441     0.020     1.441     0.020     
+MSB       S         CG        SINGLE    n         1.760     0.010     1.760     0.010     
+MSB       CG        CD1       DOUBLE    y         1.385     0.010     1.385     0.010     
+MSB       CG        CD2       SINGLE    y         1.385     0.010     1.385     0.010     
+MSB       CD1       CE1       SINGLE    y         1.380     0.010     1.380     0.010     
+MSB       CD2       CE2       DOUBLE    y         1.380     0.010     1.380     0.010     
+MSB       CE1       CZ        DOUBLE    y         1.386     0.011     1.386     0.011     
+MSB       CE2       CZ        SINGLE    y         1.386     0.011     1.386     0.011     
+MSB       CZ        OH        SINGLE    n         1.369     0.010     1.369     0.010     
+MSB       OH        CH        SINGLE    n         1.424     0.012     1.424     0.012     
+MSB       S         HS1       SINGLE    n         1.338     0.010     1.171     0.208     
+MSB       CD1       HD1       SINGLE    n         1.082     0.013     0.975     0.010     
+MSB       CD2       HD2       SINGLE    n         1.082     0.013     0.975     0.010     
+MSB       CE1       HE1       SINGLE    n         1.082     0.013     0.975     0.010     
+MSB       CE2       HE2       SINGLE    n         1.082     0.013     0.975     0.010     
+MSB       CH        HH1       SINGLE    n         1.089     0.010     0.989     0.005     
+MSB       CH        HH2       SINGLE    n         1.089     0.010     0.989     0.005     
+MSB       CH        HH3       SINGLE    n         1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MSB         OB1           S         OB2     112.539    1.50
+MSB         OB1           S          CG     106.238    1.50
+MSB         OB1           S         HS1     109.471    3.00
+MSB         OB2           S          CG     106.238    1.50
+MSB         OB2           S         HS1     109.471    3.00
+MSB          CG           S         HS1     109.471    3.00
+MSB           S          CG         CD1     119.742    1.50
+MSB           S          CG         CD2     119.742    1.50
+MSB         CD1          CG         CD2     120.516    1.50
+MSB          CG         CD1         CE1     119.690    1.50
+MSB          CG         CD1         HD1     120.377    1.50
+MSB         CE1         CD1         HD1     119.933    1.50
+MSB          CG         CD2         CE2     119.690    1.50
+MSB          CG         CD2         HD2     120.377    1.50
+MSB         CE2         CD2         HD2     119.933    1.50
+MSB         CD1         CE1          CZ     120.056    1.50
+MSB         CD1         CE1         HE1     119.914    1.50
+MSB          CZ         CE1         HE1     120.030    1.50
+MSB         CD2         CE2          CZ     120.056    1.50
+MSB         CD2         CE2         HE2     119.914    1.50
+MSB          CZ         CE2         HE2     120.030    1.50
+MSB         CE1          CZ         CE2     119.992    1.50
+MSB         CE1          CZ          OH     120.004    3.00
+MSB         CE2          CZ          OH     120.004    3.00
+MSB          CZ          OH          CH     117.529    1.50
+MSB          OH          CH         HH1     109.428    1.50
+MSB          OH          CH         HH2     109.428    1.50
+MSB          OH          CH         HH3     109.428    1.50
+MSB         HH1          CH         HH2     109.509    1.50
+MSB         HH1          CH         HH3     109.509    1.50
+MSB         HH2          CH         HH3     109.509    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MSB             sp2_sp3_2         CD1          CG           S         OB1     -90.000   10.00     6
+MSB       const_sp2_sp2_2         CE1         CD1          CG           S     180.000   10.00     2
+MSB              const_22         CE2         CD2          CG           S     180.000   10.00     2
+MSB       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+MSB              const_17          CG         CD2         CE2          CZ       0.000   10.00     2
+MSB              const_10         CD1         CE1          CZ          OH     180.000   10.00     2
+MSB              const_14         CD2         CE2          CZ          OH     180.000   10.00     2
+MSB             sp2_sp2_1         CE1          CZ          OH          CH     180.000   10.00     2
+MSB             sp3_sp3_2         HH1          CH          OH          CZ     -60.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MSB    plan-1         CD1   0.020
+MSB    plan-1         CD2   0.020
+MSB    plan-1         CE1   0.020
+MSB    plan-1         CE2   0.020
+MSB    plan-1          CG   0.020
+MSB    plan-1          CZ   0.020
+MSB    plan-1         HD1   0.020
+MSB    plan-1         HD2   0.020
+MSB    plan-1         HE1   0.020
+MSB    plan-1         HE2   0.020
+MSB    plan-1          OH   0.020
+MSB    plan-1           S   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MSB SMILES           ACDLabs              10.04 "4-(dioxidosulfanyl)phenyl methyl ether"
+MSB SMILES_CANONICAL CACTVS               3.341 "COc1ccc(cc1)[SH](=O)=O"
+MSB SMILES           CACTVS               3.341 "COc1ccc(cc1)[SH](=O)=O"
+MSB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "COc1ccc(cc1)S(=O)=O"
+MSB SMILES           "OpenEye OEToolkits" 1.5.0 "COc1ccc(cc1)S(=O)=O"
+MSB InChI            InChI                1.03  "InChI=1S/C7H8O3S/c1-10-6-2-4-7(5-3-6)11(8)9/h2-5,11H,1H3"
+MSB InChIKey         InChI                1.03  XUNSZADDFLWFOL-UHFFFAOYSA-N
+MSB ?                acedrg               202         "dictionary generator"                  
+MSB ?                acedrg_database      11          "data source"                           
+MSB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MSB ?                refmac5              5.8.0189    "optimization tool"                     

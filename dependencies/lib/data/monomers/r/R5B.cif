@@ -1,0 +1,829 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+R5B      R5B 'RUTHENIUM WIRE WC5                  ' non-polymer       115  54 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_R5B
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ R5B           CM1    C    CH3       0.000      0.057    0.037   -0.048
+ R5B           HM13   H    H         0.000     -0.473   -0.290   -0.942
+ R5B           HM12   H    H         0.000     -0.396    0.954    0.329
+ R5B           HM11   H    H         0.000      1.103    0.221   -0.291
+ R5B           NNG    N    N         0.000     -0.028   -1.002    0.974
+ R5B           CM2    C    CH3       0.000      1.201   -1.547    1.569
+ R5B           HM21   H    H         0.000      1.471   -0.960    2.447
+ R5B           HM22   H    H         0.000      1.034   -2.584    1.862
+ R5B           HM23   H    H         0.000      2.009   -1.502    0.839
+ R5B           CNE    C    CR6       0.000     -1.281   -1.393    1.432
+ R5B           CND    C    CR16      0.000     -1.381   -2.368    2.392
+ R5B           HND    H    H         0.000     -0.486   -2.809    2.807
+ R5B           CNC    C    CR16      0.000     -2.607   -2.784    2.825
+ R5B           HNC    H    H         0.000     -2.624   -3.568    3.567
+ R5B           CNB    C    CR16      0.000     -3.807   -2.304    2.410
+ R5B           HNB    H    H         0.000     -4.737   -2.674    2.816
+ R5B           CNA    C    CR6       0.000     -3.780   -1.335    1.460
+ R5B           CNF    C    CR16      0.000     -2.524   -0.908    0.996
+ R5B           HNF    H    H         0.000     -2.514   -0.139    0.237
+ R5B           OL5    O    O2        0.000     -4.911   -0.779    0.964
+ R5B           CL4    C    CH2       0.000     -6.019   -1.396    1.611
+ R5B           HL51   H    H         0.000     -5.979   -1.221    2.685
+ R5B           HL52   H    H         0.000     -6.025   -2.468    1.418
+ R5B           CL3    C    CH2       0.000     -7.284   -0.767    1.039
+ R5B           HL41   H    H         0.000     -7.371   -0.936   -0.035
+ R5B           HL42   H    H         0.000     -7.334    0.302    1.243
+ R5B           CL2    C    CH2       0.000     -8.423   -1.479    1.762
+ R5B           HL31   H    H         0.000     -8.339   -1.314    2.836
+ R5B           HL32   H    H         0.000     -8.381   -2.549    1.555
+ R5B           CL1    C    CH2       0.000     -9.735   -0.920    1.266
+ R5B           HL21   H    H         0.000     -9.839   -1.095    0.195
+ R5B           HL22   H    H         0.000     -9.788    0.151    1.464
+ R5B           CL0    C    CH2       0.000    -10.857   -1.633    2.012
+ R5B           HL11   H    H         0.000    -10.814   -1.413    3.079
+ R5B           HL12   H    H         0.000    -10.797   -2.711    1.862
+ R5B           CAG    C    CR6       0.000    -12.139   -1.123    1.449
+ R5B           CAH    C    CR66      0.000    -12.905   -1.684    0.467
+ R5B           CAI    C    CR16      0.000    -12.468   -2.873   -0.196
+ R5B           HAJ    H    H         0.000    -11.549   -3.344    0.120
+ R5B           CAJ    C    CR16      0.000    -13.164   -3.416   -1.193
+ R5B           HAI    H    H         0.000    -12.797   -4.313   -1.667
+ R5B           CAF    C    CR16      0.000    -12.683    0.035    1.975
+ R5B           HAM    H    H         0.000    -12.130    0.547    2.755
+ R5B           CAE    C    CR16      0.000    -13.846    0.562    1.585
+ R5B           HAN    H    H         0.000    -14.202    1.423    2.137
+ R5B           NAD    N    NR6       0.000    -14.628    0.122    0.557
+ R5B           CAC    C    CR66      0.000    -14.132   -1.035   -0.046
+ R5B           RU     RU   RU        0.000    -16.381    0.659   -0.276
+ R5B           NAA    N    NR6       0.000    -16.043   -1.011   -1.386
+ R5B           CAB    C    CR66      0.000    -14.869   -1.624   -0.972
+ R5B           CAN    C    CR16      0.000    -16.637   -1.688   -2.434
+ R5B           HAE    H    H         0.000    -17.494   -1.213   -2.893
+ R5B           CAM    C    CR16      0.000    -16.262   -2.874   -2.943
+ R5B           HAF    H    H         0.000    -16.939   -3.382   -3.620
+ R5B           CA0    C    CR16      0.000    -15.062   -3.474   -2.646
+ R5B           HAG    H    H         0.000    -14.694   -4.355   -3.149
+ R5B           CAK    C    CR66      0.000    -14.384   -2.837   -1.646
+ R5B           NBA    N    NT        0.000    -17.557   -0.331    1.161
+ R5B           CBB    C    CH2       0.000    -16.776   -1.357    1.816
+ R5B           HCK    H    H         0.000    -16.164   -0.879    2.581
+ R5B           HBB1   H    H         0.000    -16.128   -1.816    1.068
+ R5B           CBC    C    CH2       0.000    -17.641   -2.418    2.452
+ R5B           HCJ    H    H         0.000    -17.330   -2.475    3.500
+ R5B           HBC1   H    H         0.000    -17.392   -3.356    1.947
+ R5B           CBD    C    CH2       0.000    -19.093   -2.191    2.381
+ R5B           HCI    H    H         0.000    -19.298   -1.651    3.308
+ R5B           HBD0   H    H         0.000    -19.499   -3.203    2.453
+ R5B           CBE    C    CH2       0.000    -19.649   -1.570    1.386
+ R5B           HBE0   H    H         0.000    -20.237   -0.772    1.772
+ R5B           HCH    H    H         0.000    -20.279   -2.256    0.871
+ R5B           CBF    C    CH1       0.000    -18.644   -1.037    0.460
+ R5B           HBF    H    H         0.000    -18.152   -1.941    0.063
+ R5B           CBG    C    CH1       0.000    -19.121   -0.353   -0.737
+ R5B           HBG    H    H         0.000    -18.723   -1.026   -1.529
+ R5B           CBH    C    CH2       0.000    -20.565   -0.292   -1.129
+ R5B           HCE    H    H         0.000    -21.086    0.504   -0.607
+ R5B           HBH1   H    H         0.000    -21.069   -1.234   -0.943
+ R5B           CBI    C    CH2       0.000    -20.560    0.000   -2.642
+ R5B           HCD    H    H         0.000    -21.592    0.115   -2.969
+ R5B           HBI1   H    H         0.000    -20.111   -0.852   -3.151
+ R5B           CBJ    C    CH2       0.000    -19.786    1.248   -2.972
+ R5B           HCC    H    H         0.000    -20.319    2.101   -2.548
+ R5B           HBJ1   H    H         0.000    -19.749    1.347   -4.058
+ R5B           CBK    C    CH2       0.000    -18.376    1.206   -2.418
+ R5B           HBK1   H    H         0.000    -17.925    2.188   -2.561
+ R5B           HCB    H    H         0.000    -17.812    0.463   -2.981
+ R5B           NBL    N    NT        0.000    -18.357    0.865   -1.012
+ R5B           NCA    N    NT        0.000    -15.564    1.976   -1.694
+ R5B           CCB    C    CH2       0.000    -14.653    1.271   -2.571
+ R5B           HBK    H    H         0.000    -15.186    0.494   -3.117
+ R5B           HCB1   H    H         0.000    -13.850    0.820   -1.992
+ R5B           CCC    C    CH2       0.000    -14.070    2.276   -3.555
+ R5B           HBJ    H    H         0.000    -14.898    2.704   -4.124
+ R5B           HCC1   H    H         0.000    -13.407    1.733   -4.232
+ R5B           CCD    C    CH2       0.000    -13.303    3.376   -2.878
+ R5B           HBI    H    H         0.000    -12.969    4.098   -3.623
+ R5B           HCD1   H    H         0.000    -12.437    2.955   -2.368
+ R5B           CCE    C    CH2       0.000    -14.206    4.073   -1.861
+ R5B           HCE1   H    H         0.000    -15.004    4.608   -2.361
+ R5B           HBH    H    H         0.000    -13.636    4.763   -1.252
+ R5B           CCF    C    CH1       0.000    -14.786    3.008   -0.998
+ R5B           HCF    H    H         0.000    -13.886    2.450   -0.656
+ R5B           CCG    C    CH1       0.000    -15.391    3.451    0.264
+ R5B           HCG    H    H         0.000    -14.633    2.982    0.927
+ R5B           NCL    N    NT        0.000    -16.507    2.579    0.668
+ R5B           CCH    C    C1        0.000    -15.304    4.843    0.883
+ R5B           HBE    H    H         0.000    -15.214    5.773    0.334
+ R5B           CCI    C    C1        0.000    -15.367    4.710    2.438
+ R5B           HBD    H    H         0.000    -14.671    5.201    3.117
+ R5B           CCJ    C    CH2       0.000    -16.512    3.813    2.895
+ R5B           HBC    H    H         0.000    -17.443    4.368    2.754
+ R5B           HCJ1   H    H         0.000    -16.369    3.610    3.959
+ R5B           CCK    C    CH2       0.000    -16.583    2.485    2.123
+ R5B           HCK1   H    H         0.000    -17.526    2.023    2.410
+ R5B           HBB    H    H         0.000    -15.757    1.881    2.493
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ R5B      CM1    n/a    NNG    START
+ R5B      HM13   CM1    .      .
+ R5B      HM12   CM1    .      .
+ R5B      HM11   CM1    .      .
+ R5B      NNG    CM1    CNE    .
+ R5B      CM2    NNG    HM23   .
+ R5B      HM21   CM2    .      .
+ R5B      HM22   CM2    .      .
+ R5B      HM23   CM2    .      .
+ R5B      CNE    NNG    CND    .
+ R5B      CND    CNE    CNC    .
+ R5B      HND    CND    .      .
+ R5B      CNC    CND    CNB    .
+ R5B      HNC    CNC    .      .
+ R5B      CNB    CNC    CNA    .
+ R5B      HNB    CNB    .      .
+ R5B      CNA    CNB    OL5    .
+ R5B      CNF    CNA    HNF    .
+ R5B      HNF    CNF    .      .
+ R5B      OL5    CNA    CL4    .
+ R5B      CL4    OL5    CL3    .
+ R5B      HL51   CL4    .      .
+ R5B      HL52   CL4    .      .
+ R5B      CL3    CL4    CL2    .
+ R5B      HL41   CL3    .      .
+ R5B      HL42   CL3    .      .
+ R5B      CL2    CL3    CL1    .
+ R5B      HL31   CL2    .      .
+ R5B      HL32   CL2    .      .
+ R5B      CL1    CL2    CL0    .
+ R5B      HL21   CL1    .      .
+ R5B      HL22   CL1    .      .
+ R5B      CL0    CL1    CAG    .
+ R5B      HL11   CL0    .      .
+ R5B      HL12   CL0    .      .
+ R5B      CAG    CL0    CAF    .
+ R5B      CAH    CAG    CAI    .
+ R5B      CAI    CAH    CAJ    .
+ R5B      HAJ    CAI    .      .
+ R5B      CAJ    CAI    HAI    .
+ R5B      HAI    CAJ    .      .
+ R5B      CAF    CAG    CAE    .
+ R5B      HAM    CAF    .      .
+ R5B      CAE    CAF    NAD    .
+ R5B      HAN    CAE    .      .
+ R5B      NAD    CAE    RU     .
+ R5B      CAC    NAD    .      .
+ R5B      RU     NAD    NCA    .
+ R5B      NAA    RU     CAN    .
+ R5B      CAB    NAA    .      .
+ R5B      CAN    NAA    CAM    .
+ R5B      HAE    CAN    .      .
+ R5B      CAM    CAN    CA0    .
+ R5B      HAF    CAM    .      .
+ R5B      CA0    CAM    CAK    .
+ R5B      HAG    CA0    .      .
+ R5B      CAK    CA0    .      .
+ R5B      NBA    RU     CBF    .
+ R5B      CBB    NBA    CBC    .
+ R5B      HCK    CBB    .      .
+ R5B      HBB1   CBB    .      .
+ R5B      CBC    CBB    CBD    .
+ R5B      HCJ    CBC    .      .
+ R5B      HBC1   CBC    .      .
+ R5B      CBD    CBC    CBE    .
+ R5B      HCI    CBD    .      .
+ R5B      HBD0   CBD    .      .
+ R5B      CBE    CBD    HCH    .
+ R5B      HBE0   CBE    .      .
+ R5B      HCH    CBE    .      .
+ R5B      CBF    NBA    CBG    .
+ R5B      HBF    CBF    .      .
+ R5B      CBG    CBF    NBL    .
+ R5B      HBG    CBG    .      .
+ R5B      CBH    CBG    CBI    .
+ R5B      HCE    CBH    .      .
+ R5B      HBH1   CBH    .      .
+ R5B      CBI    CBH    CBJ    .
+ R5B      HCD    CBI    .      .
+ R5B      HBI1   CBI    .      .
+ R5B      CBJ    CBI    CBK    .
+ R5B      HCC    CBJ    .      .
+ R5B      HBJ1   CBJ    .      .
+ R5B      CBK    CBJ    HCB    .
+ R5B      HBK1   CBK    .      .
+ R5B      HCB    CBK    .      .
+ R5B      NBL    CBG    .      .
+ R5B      NCA    RU     CCF    .
+ R5B      CCB    NCA    CCC    .
+ R5B      HBK    CCB    .      .
+ R5B      HCB1   CCB    .      .
+ R5B      CCC    CCB    CCD    .
+ R5B      HBJ    CCC    .      .
+ R5B      HCC1   CCC    .      .
+ R5B      CCD    CCC    CCE    .
+ R5B      HBI    CCD    .      .
+ R5B      HCD1   CCD    .      .
+ R5B      CCE    CCD    HBH    .
+ R5B      HCE1   CCE    .      .
+ R5B      HBH    CCE    .      .
+ R5B      CCF    NCA    CCG    .
+ R5B      HCF    CCF    .      .
+ R5B      CCG    CCF    CCH    .
+ R5B      HCG    CCG    .      .
+ R5B      NCL    CCG    .      .
+ R5B      CCH    CCG    CCI    .
+ R5B      HBE    CCH    .      .
+ R5B      CCI    CCH    CCJ    .
+ R5B      HBD    CCI    .      .
+ R5B      CCJ    CCI    CCK    .
+ R5B      HBC    CCJ    .      .
+ R5B      HCJ1   CCJ    .      .
+ R5B      CCK    CCJ    HBB    .
+ R5B      HCK1   CCK    .      .
+ R5B      HBB    CCK    .      END
+ R5B      CNE    CNF    .    ADD
+ R5B      CAK    CAJ    .    ADD
+ R5B      CAK    CAB    .    ADD
+ R5B      CAB    CAC    .    ADD
+ R5B      CAC    CAH    .    ADD
+ R5B      RU     NCL    .    ADD
+ R5B      RU     NBL    .    ADD
+ R5B      NCL    CCK    .    ADD
+ R5B      CCF    CCE    .    ADD
+ R5B      NBL    CBK    .    ADD
+ R5B      CBF    CBE    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+R5B       CM2       NNG       single    1.466     0.020     1.466     0.020     
+R5B       HM23      CM2       single    1.089     0.010     0.989     0.005     
+R5B       HM22      CM2       single    1.089     0.010     0.989     0.005     
+R5B       HM21      CM2       single    1.089     0.010     0.989     0.005     
+R5B       NNG       CM1       single    1.465     0.020     1.465     0.020     
+R5B       CNE       NNG       single    1.397     0.020     1.397     0.020     
+R5B       HM13      CM1       single    1.089     0.010     0.989     0.005     
+R5B       HM12      CM1       single    1.089     0.010     0.989     0.005     
+R5B       HM11      CM1       single    1.089     0.010     0.989     0.005     
+R5B       CNE       CNF       single    1.388     0.020     1.388     0.020     
+R5B       CND       CNE       double    1.389     0.020     1.389     0.020     
+R5B       CNF       CNA       double    1.386     0.020     1.386     0.020     
+R5B       HNF       CNF       single    1.082     0.013     0.975     0.010     
+R5B       CNA       CNB       single    1.387     0.020     1.387     0.020     
+R5B       OL5       CNA       single    1.359     0.020     1.359     0.020     
+R5B       CNB       CNC       double    1.383     0.020     1.383     0.020     
+R5B       HNB       CNB       single    1.082     0.013     0.975     0.010     
+R5B       CNC       CND       single    1.381     0.020     1.381     0.020     
+R5B       HNC       CNC       single    1.082     0.013     0.975     0.010     
+R5B       HND       CND       single    1.082     0.013     0.975     0.010     
+R5B       CL4       OL5       single    1.429     0.020     1.429     0.020     
+R5B       CL3       CL4       single    1.529     0.020     1.529     0.020     
+R5B       HL51      CL4       single    1.089     0.010     0.989     0.005     
+R5B       HL52      CL4       single    1.089     0.010     0.989     0.005     
+R5B       CL2       CL3       single    1.530     0.020     1.530     0.020     
+R5B       HL41      CL3       single    1.089     0.010     0.989     0.005     
+R5B       HL42      CL3       single    1.089     0.010     0.989     0.005     
+R5B       CL1       CL2       single    1.530     0.020     1.530     0.020     
+R5B       HL31      CL2       single    1.089     0.010     0.989     0.005     
+R5B       HL32      CL2       single    1.089     0.010     0.989     0.005     
+R5B       CL0       CL1       single    1.529     0.020     1.529     0.020     
+R5B       HL21      CL1       single    1.089     0.010     0.989     0.005     
+R5B       HL22      CL1       single    1.089     0.010     0.989     0.005     
+R5B       CAG       CL0       single    1.505     0.020     1.505     0.020     
+R5B       HL11      CL0       single    1.089     0.010     0.989     0.005     
+R5B       HL12      CL0       single    1.089     0.010     0.989     0.005     
+R5B       CAK       CAJ       single    1.459     0.020     1.459     0.020     
+R5B       CAK       CAB       single    1.469     0.020     1.469     0.020     
+R5B       CAK       CA0       double    1.389     0.020     1.389     0.020     
+R5B       CAJ       CAI       double    1.355     0.020     1.355     0.020     
+R5B       HAI       CAJ       single    1.082     0.013     0.975     0.010     
+R5B       CAB       CAC       double    1.323     0.020     1.323     0.020     
+R5B       CAB       NAA       single    1.396     0.020     1.396     0.020     
+R5B       CAC       CAH       single    1.470     0.020     1.470     0.020     
+R5B       CAC       NAD       single    1.397     0.020     1.397     0.020     
+R5B       CAI       CAH       single    1.458     0.020     1.458     0.020     
+R5B       CAH       CAG       double    1.389     0.020     1.389     0.020     
+R5B       HAJ       CAI       single    1.082     0.013     0.975     0.010     
+R5B       CAF       CAG       single    1.411     0.020     1.411     0.020     
+R5B       CA0       CAM       single    1.411     0.020     1.411     0.020     
+R5B       HAG       CA0       single    1.082     0.013     0.975     0.010     
+R5B       CAE       CAF       double    1.346     0.020     1.346     0.020     
+R5B       HAM       CAF       single    1.082     0.013     0.975     0.010     
+R5B       NAD       CAE       single    1.389     0.020     1.389     0.020     
+R5B       HAN       CAE       single    1.082     0.013     0.975     0.010     
+R5B       RU        NAD       single    2.030     0.020     2.030     0.020     
+R5B       CAN       NAA       single    1.388     0.020     1.388     0.020     
+R5B       NAA       RU        single    2.031     0.020     2.031     0.020     
+R5B       CAM       CAN       double    1.346     0.020     1.346     0.020     
+R5B       HAE       CAN       single    1.082     0.013     0.975     0.010     
+R5B       HAF       CAM       single    1.082     0.013     0.975     0.010     
+R5B       RU        NCL       single    2.122     0.020     2.122     0.020     
+R5B       NCA       RU        single    2.118     0.020     2.118     0.020     
+R5B       RU        NBL       single    2.123     0.020     2.123     0.020     
+R5B       NBA       RU        single    2.119     0.020     2.119     0.020     
+R5B       NCL       CCK       single    1.463     0.020     1.463     0.020     
+R5B       NCL       CCG       single    1.496     0.020     1.496     0.020     
+R5B       CCK       CCJ       single    1.536     0.020     1.536     0.020     
+R5B       HBB       CCK       single    1.089     0.010     0.989     0.005     
+R5B       HCK1      CCK       single    1.089     0.010     0.989     0.005     
+R5B       CCJ       CCI       single    1.531     0.020     1.531     0.020     
+R5B       HBC       CCJ       single    1.089     0.010     0.989     0.005     
+R5B       HCJ1      CCJ       single    1.089     0.010     0.989     0.005     
+R5B       CCI       CCH       double    1.542     0.020     1.542     0.020     
+R5B       HBD       CCI       single    1.082     0.013     0.975     0.010     
+R5B       CCH       CCG       single    1.520     0.020     1.520     0.020     
+R5B       CCG       CCF       single    1.489     0.020     1.489     0.020     
+R5B       HCG       CCG       single    1.089     0.010     0.989     0.005     
+R5B       HBE       CCH       single    1.082     0.013     0.975     0.010     
+R5B       CCF       CCE       single    1.521     0.020     1.521     0.020     
+R5B       CCF       NCA       single    1.493     0.020     1.493     0.020     
+R5B       HCF       CCF       single    1.089     0.010     0.989     0.005     
+R5B       CCE       CCD       single    1.543     0.020     1.543     0.020     
+R5B       HBH       CCE       single    1.089     0.010     0.989     0.005     
+R5B       HCE1      CCE       single    1.089     0.010     0.989     0.005     
+R5B       CCD       CCC       single    1.530     0.020     1.530     0.020     
+R5B       HBI       CCD       single    1.089     0.010     0.989     0.005     
+R5B       HCD1      CCD       single    1.089     0.010     0.989     0.005     
+R5B       CCC       CCB       single    1.534     0.020     1.534     0.020     
+R5B       HBJ       CCC       single    1.089     0.010     0.989     0.005     
+R5B       HCC1      CCC       single    1.089     0.010     0.989     0.005     
+R5B       CCB       NCA       single    1.463     0.020     1.463     0.020     
+R5B       HBK       CCB       single    1.089     0.010     0.989     0.005     
+R5B       HCB1      CCB       single    1.089     0.010     0.989     0.005     
+R5B       NBL       CBK       single    1.464     0.020     1.464     0.020     
+R5B       NBL       CBG       single    1.493     0.020     1.493     0.020     
+R5B       CBK       CBJ       single    1.534     0.020     1.534     0.020     
+R5B       HCB       CBK       single    1.089     0.010     0.989     0.005     
+R5B       HBK1      CBK       single    1.089     0.010     0.989     0.005     
+R5B       CBJ       CBI       single    1.530     0.020     1.530     0.020     
+R5B       HCC       CBJ       single    1.089     0.010     0.989     0.005     
+R5B       HBJ1      CBJ       single    1.089     0.010     0.989     0.005     
+R5B       CBI       CBH       single    1.541     0.020     1.541     0.020     
+R5B       HCD       CBI       single    1.089     0.010     0.989     0.005     
+R5B       HBI1      CBI       single    1.089     0.010     0.989     0.005     
+R5B       CBH       CBG       single    1.520     0.020     1.520     0.020     
+R5B       CBG       CBF       single    1.491     0.020     1.491     0.020     
+R5B       HBG       CBG       single    1.089     0.010     0.989     0.005     
+R5B       HCE       CBH       single    1.089     0.010     0.989     0.005     
+R5B       HBH1      CBH       single    1.089     0.010     0.989     0.005     
+R5B       CBF       CBE       single    1.503     0.020     1.503     0.020     
+R5B       CBF       NBA       single    1.499     0.020     1.499     0.020     
+R5B       HBF       CBF       single    1.089     0.010     0.989     0.005     
+R5B       CBE       CBD       single    1.324     0.020     1.324     0.020     
+R5B       HCH       CBE       single    1.089     0.010     0.989     0.005     
+R5B       CBD       CBC       single    1.502     0.020     1.502     0.020     
+R5B       HCI       CBD       single    1.089     0.010     0.989     0.005     
+R5B       CBC       CBB       single    1.526     0.020     1.526     0.020     
+R5B       HCJ       CBC       single    1.089     0.010     0.989     0.005     
+R5B       HBC1      CBC       single    1.089     0.010     0.989     0.005     
+R5B       CBB       NBA       single    1.457     0.020     1.457     0.020     
+R5B       HCK       CBB       single    1.089     0.010     0.989     0.005     
+R5B       HBB1      CBB       single    1.089     0.010     0.989     0.005     
+R5B       HBE0      CBE       single    1.089     0.010     0.989     0.005     
+R5B       HBD0      CBD       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ R5B      HM13   CM1    HM12    109.491    3.000
+ R5B      HM13   CM1    HM11    109.485    3.000
+ R5B      HM12   CM1    HM11    109.404    3.000
+ R5B      HM13   CM1    NNG     109.484    3.000
+ R5B      HM12   CM1    NNG     109.491    3.000
+ R5B      HM11   CM1    NNG     109.472    3.000
+ R5B      CM1    NNG    CM2     120.027    3.000
+ R5B      CM1    NNG    CNE     120.013    3.000
+ R5B      CM2    NNG    CNE     119.960    3.000
+ R5B      NNG    CM2    HM21    109.429    3.000
+ R5B      NNG    CM2    HM22    109.493    3.000
+ R5B      NNG    CM2    HM23    109.433    3.000
+ R5B      HM21   CM2    HM22    109.543    3.000
+ R5B      HM21   CM2    HM23    109.467    3.000
+ R5B      HM22   CM2    HM23    109.462    3.000
+ R5B      NNG    CNE    CND     120.066    3.000
+ R5B      NNG    CNE    CNF     120.003    3.000
+ R5B      CND    CNE    CNF     119.930    3.000
+ R5B      CNE    CND    HND     119.971    3.000
+ R5B      CNE    CND    CNC     120.082    3.000
+ R5B      HND    CND    CNC     119.947    3.000
+ R5B      CND    CNC    HNC     120.005    3.000
+ R5B      CND    CNC    CNB     120.054    3.000
+ R5B      HNC    CNC    CNB     119.940    3.000
+ R5B      CNC    CNB    HNB     119.899    3.000
+ R5B      CNC    CNB    CNA     120.120    3.000
+ R5B      HNB    CNB    CNA     119.980    3.000
+ R5B      CNB    CNA    CNF     119.971    3.000
+ R5B      CNB    CNA    OL5     120.005    3.000
+ R5B      CNF    CNA    OL5     120.024    3.000
+ R5B      CNA    CNF    HNF     120.102    3.000
+ R5B      CNA    CNF    CNE     119.839    3.000
+ R5B      HNF    CNF    CNE     120.057    3.000
+ R5B      CNA    OL5    CL4     106.833    3.000
+ R5B      OL5    CL4    HL51    109.398    3.000
+ R5B      OL5    CL4    HL52    109.483    3.000
+ R5B      OL5    CL4    CL3     109.482    3.000
+ R5B      HL51   CL4    HL52    109.469    3.000
+ R5B      HL51   CL4    CL3     109.496    3.000
+ R5B      HL52   CL4    CL3     109.500    3.000
+ R5B      CL4    CL3    HL41    109.512    3.000
+ R5B      CL4    CL3    HL42    109.475    3.000
+ R5B      CL4    CL3    CL2     109.492    3.000
+ R5B      HL41   CL3    HL42    109.463    3.000
+ R5B      HL41   CL3    CL2     109.462    3.000
+ R5B      HL42   CL3    CL2     109.424    3.000
+ R5B      CL3    CL2    HL31    109.462    3.000
+ R5B      CL3    CL2    HL32    109.424    3.000
+ R5B      CL3    CL2    CL1     109.530    3.000
+ R5B      HL31   CL2    HL32    109.463    3.000
+ R5B      HL31   CL2    CL1     109.515    3.000
+ R5B      HL32   CL2    CL1     109.434    3.000
+ R5B      CL2    CL1    HL21    109.462    3.000
+ R5B      CL2    CL1    HL22    109.404    3.000
+ R5B      CL2    CL1    CL0     109.519    3.000
+ R5B      HL21   CL1    HL22    109.424    3.000
+ R5B      HL21   CL1    CL0     109.493    3.000
+ R5B      HL22   CL1    CL0     109.525    3.000
+ R5B      CL1    CL0    HL11    109.493    3.000
+ R5B      CL1    CL0    HL12    109.486    3.000
+ R5B      CL1    CL0    CAG     109.515    3.000
+ R5B      HL11   CL0    HL12    109.415    3.000
+ R5B      HL11   CL0    CAG     109.452    3.000
+ R5B      HL12   CL0    CAG     109.466    3.000
+ R5B      CL0    CAG    CAH     120.265    3.000
+ R5B      CL0    CAG    CAF     120.167    3.000
+ R5B      CAH    CAG    CAF     119.569    3.000
+ R5B      CAG    CAH    CAI     122.367    3.000
+ R5B      CAG    CAH    CAC     118.175    3.000
+ R5B      CAI    CAH    CAC     119.459    3.000
+ R5B      CAH    CAI    HAJ     119.963    3.000
+ R5B      CAH    CAI    CAJ     120.085    3.000
+ R5B      HAJ    CAI    CAJ     119.952    3.000
+ R5B      CAI    CAJ    HAI     120.063    3.000
+ R5B      CAI    CAJ    CAK     119.995    3.000
+ R5B      HAI    CAJ    CAK     119.943    3.000
+ R5B      CAG    CAF    HAM     119.197    3.000
+ R5B      CAG    CAF    CAE     121.807    3.000
+ R5B      HAM    CAF    CAE     118.996    3.000
+ R5B      CAF    CAE    HAN     119.237    3.000
+ R5B      CAF    CAE    NAD     121.441    3.000
+ R5B      HAN    CAE    NAD     119.322    3.000
+ R5B      CAE    NAD    CAC     119.469    3.000
+ R5B      CAE    NAD    RU      132.553    3.000
+ R5B      CAC    NAD    RU      107.978    3.000
+ R5B      NAD    CAC    CAB     119.963    3.000
+ R5B      NAD    CAC    CAH     119.536    3.000
+ R5B      CAB    CAC    CAH     120.501    3.000
+ R5B      NAD    RU     NAA      84.083    3.000
+ R5B      NAD    RU     NBA      94.792    3.000
+ R5B      NAD    RU     NCA      95.278    3.000
+ R5B      NAD    RU     NCL      92.939    3.000
+ R5B      NAD    RU     NBL     170.116    3.000
+ R5B      NAA    RU     NBA      94.290    3.000
+ R5B      NAA    RU     NCA      95.129    3.000
+ R5B      NBA    RU     NCA     166.857    3.000
+ R5B      NCL    RU     NBL      91.750    3.000
+ R5B      NAA    RU     NCL     170.533    3.000
+ R5B      NBA    RU     NCL      94.914    3.000
+ R5B      NCA    RU     NCL      76.157    3.000
+ R5B      NAA    RU     NBL      92.602    3.000
+ R5B      NBA    RU     NBL      76.130    3.000
+ R5B      NCA    RU     NBL      94.290    3.000
+ R5B      RU     NAA    CAB     107.966    3.000
+ R5B      RU     NAA    CAN     132.482    3.000
+ R5B      CAB    NAA    CAN     119.552    3.000
+ R5B      NAA    CAB    CAK     119.485    3.000
+ R5B      NAA    CAB    CAC     120.005    3.000
+ R5B      CAK    CAB    CAC     120.510    3.000
+ R5B      NAA    CAN    HAE     119.378    3.000
+ R5B      NAA    CAN    CAM     121.424    3.000
+ R5B      HAE    CAN    CAM     119.198    3.000
+ R5B      CAN    CAM    HAF     119.010    3.000
+ R5B      CAN    CAM    CA0     121.799    3.000
+ R5B      HAF    CAM    CA0     119.190    3.000
+ R5B      CAM    CA0    HAG     120.185    3.000
+ R5B      CAM    CA0    CAK     119.524    3.000
+ R5B      HAG    CA0    CAK     120.291    3.000
+ R5B      CA0    CAK    CAJ     122.334    3.000
+ R5B      CA0    CAK    CAB     118.215    3.000
+ R5B      CAJ    CAK    CAB     119.451    3.000
+ R5B      RU     NBA    CBB     109.412    3.000
+ R5B      RU     NBA    CBF     104.244    3.000
+ R5B      CBB    NBA    CBF     103.987    3.000
+ R5B      NBA    CBB    HCK     109.056    3.000
+ R5B      NBA    CBB    HBB1    109.274    3.000
+ R5B      NBA    CBB    CBC     111.529    3.000
+ R5B      HCK    CBB    HBB1    108.908    3.000
+ R5B      HCK    CBB    CBC     108.926    3.000
+ R5B      HBB1   CBB    CBC     109.107    3.000
+ R5B      CBB    CBC    HCJ     108.428    3.000
+ R5B      CBB    CBC    HBC1    108.576    3.000
+ R5B      CBB    CBC    CBD     114.704    3.000
+ R5B      HCJ    CBC    HBC1    107.946    3.000
+ R5B      HCJ    CBC    CBD     108.357    3.000
+ R5B      HBC1   CBC    CBD     108.638    3.000
+ R5B      CBC    CBD    HCI     119.353    3.000
+ R5B      CBC    CBD    HBD0    109.470    3.000
+ R5B      CBC    CBD    CBE     120.538    3.000
+ R5B      HCI    CBD    HBD0    107.900    3.000
+ R5B      HCI    CBD    CBE     120.109    3.000
+ R5B      HBD0   CBD    CBE     109.470    3.000
+ R5B      CBD    CBE    HBE0    109.470    3.000
+ R5B      CBD    CBE    HCH     123.770    3.000
+ R5B      CBD    CBE    CBF     113.368    3.000
+ R5B      HBE0   CBE    HCH     107.900    3.000
+ R5B      HBE0   CBE    CBF     109.470    3.000
+ R5B      HCH    CBE    CBF     122.862    3.000
+ R5B      NBA    CBF    HBF     107.676    3.000
+ R5B      NBA    CBF    CBG     111.869    3.000
+ R5B      NBA    CBF    CBE     104.365    3.000
+ R5B      HBF    CBF    CBG     107.178    3.000
+ R5B      HBF    CBF    CBE     107.651    3.000
+ R5B      CBG    CBF    CBE     117.678    3.000
+ R5B      CBF    CBG    HBG     105.586    3.000
+ R5B      CBF    CBG    CBH     118.203    3.000
+ R5B      CBF    CBG    NBL     112.289    3.000
+ R5B      HBG    CBG    CBH     105.851    3.000
+ R5B      HBG    CBG    NBL     105.879    3.000
+ R5B      CBH    CBG    NBL     108.121    3.000
+ R5B      CBG    CBH    HCE     109.626    3.000
+ R5B      CBG    CBH    HBH1    109.502    3.000
+ R5B      CBG    CBH    CBI     106.097    3.000
+ R5B      HCE    CBH    HBH1    111.156    3.000
+ R5B      HCE    CBH    CBI     110.197    3.000
+ R5B      HBH1   CBH    CBI     110.132    3.000
+ R5B      CBH    CBI    HCD     109.363    3.000
+ R5B      CBH    CBI    HBI1    109.567    3.000
+ R5B      CBH    CBI    CBJ     109.754    3.000
+ R5B      HCD    CBI    HBI1    109.415    3.000
+ R5B      HCD    CBI    CBJ     109.316    3.000
+ R5B      HBI1   CBI    CBJ     109.412    3.000
+ R5B      CBI    CBJ    HCC     109.092    3.000
+ R5B      CBI    CBJ    HBJ1    109.174    3.000
+ R5B      CBI    CBJ    CBK     111.288    3.000
+ R5B      HCC    CBJ    HBJ1    108.901    3.000
+ R5B      HCC    CBJ    CBK     109.100    3.000
+ R5B      HBJ1   CBJ    CBK     109.250    3.000
+ R5B      CBJ    CBK    HBK1    109.728    3.000
+ R5B      CBJ    CBK    HCB     109.675    3.000
+ R5B      CBJ    CBK    NBL     108.415    3.000
+ R5B      HBK1   CBK    HCB     109.812    3.000
+ R5B      HBK1   CBK    NBL     109.578    3.000
+ R5B      HCB    CBK    NBL     109.611    3.000
+ R5B      CBG    NBL    RU      103.648    3.000
+ R5B      CBG    NBL    CBK     103.483    3.000
+ R5B      RU     NBL    CBK     108.831    3.000
+ R5B      RU     NCA    CCB     109.449    3.000
+ R5B      RU     NCA    CCF     104.086    3.000
+ R5B      CCB    NCA    CCF     103.403    3.000
+ R5B      NCA    CCB    HBK     109.528    3.000
+ R5B      NCA    CCB    HCB1    109.664    3.000
+ R5B      NCA    CCB    CCC     108.307    3.000
+ R5B      HBK    CCB    HCB1    109.858    3.000
+ R5B      HBK    CCB    CCC     109.702    3.000
+ R5B      HCB1   CCB    CCC     109.758    3.000
+ R5B      CCB    CCC    HBJ     109.080    3.000
+ R5B      CCB    CCC    HCC1    109.187    3.000
+ R5B      CCB    CCC    CCD     111.554    3.000
+ R5B      HBJ    CCC    HCC1    108.783    3.000
+ R5B      HBJ    CCC    CCD     109.025    3.000
+ R5B      HCC1   CCC    CCD     109.167    3.000
+ R5B      CCC    CCD    HBI     109.391    3.000
+ R5B      CCC    CCD    HCD1    109.410    3.000
+ R5B      CCC    CCD    CCE     109.749    3.000
+ R5B      HBI    CCD    HCD1    109.530    3.000
+ R5B      HBI    CCD    CCE     109.357    3.000
+ R5B      HCD1   CCD    CCE     109.390    3.000
+ R5B      CCD    CCE    HCE1    110.081    3.000
+ R5B      CCD    CCE    HBH     110.157    3.000
+ R5B      CCD    CCE    CCF     105.645    3.000
+ R5B      HCE1   CCE    HBH     111.326    3.000
+ R5B      HCE1   CCE    CCF     109.706    3.000
+ R5B      HBH    CCE    CCF     109.770    3.000
+ R5B      NCA    CCF    HCF     106.076    3.000
+ R5B      NCA    CCF    CCG     112.374    3.000
+ R5B      NCA    CCF    CCE     107.485    3.000
+ R5B      HCF    CCF    CCG     105.612    3.000
+ R5B      HCF    CCF    CCE     105.941    3.000
+ R5B      CCG    CCF    CCE     118.476    3.000
+ R5B      CCF    CCG    HCG     105.818    3.000
+ R5B      CCF    CCG    NCL     111.869    3.000
+ R5B      CCF    CCG    CCH     118.290    3.000
+ R5B      HCG    CCG    NCL     106.046    3.000
+ R5B      HCG    CCG    CCH     106.115    3.000
+ R5B      NCL    CCG    CCH     107.870    3.000
+ R5B      CCG    NCL    RU      103.710    3.000
+ R5B      CCG    NCL    CCK     103.527    3.000
+ R5B      RU     NCL    CCK     109.117    3.000
+ R5B      CCG    CCH    HBE     109.694    3.000
+ R5B      CCG    CCH    CCI     105.908    3.000
+ R5B      HBE    CCH    CCI     110.203    3.000
+ R5B      CCH    CCI    HBD     109.454    3.000
+ R5B      CCH    CCI    CCJ     109.537    3.000
+ R5B      HBD    CCI    CCJ     109.368    3.000
+ R5B      CCI    CCJ    HBC     109.056    3.000
+ R5B      CCI    CCJ    HCJ1    109.191    3.000
+ R5B      CCI    CCJ    CCK     111.300    3.000
+ R5B      HBC    CCJ    HCJ1    108.942    3.000
+ R5B      HBC    CCJ    CCK     109.091    3.000
+ R5B      HCJ1   CCJ    CCK     109.226    3.000
+ R5B      CCJ    CCK    HCK1    109.689    3.000
+ R5B      CCJ    CCK    HBB     109.569    3.000
+ R5B      CCJ    CCK    NCL     108.263    3.000
+ R5B      HCK1   CCK    HBB     109.938    3.000
+ R5B      HCK1   CCK    NCL     109.745    3.000
+ R5B      HBB    CCK    NCL     109.611    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ R5B      var_1    HM11   CM1    NNG    CNE     -179.952   20.000   3
+ R5B      var_2    CM1    NNG    CM2    HM23     -29.987   20.000   3
+ R5B      var_3    CM1    NNG    CNE    CND     -179.980   20.000   3
+ R5B      CONST_1  NNG    CNE    CNF    CNA      179.718    0.000   0
+ R5B      CONST_2  NNG    CNE    CND    CNC     -179.980    0.000   0
+ R5B      CONST_3  CNE    CND    CNC    CNB        0.000    0.000   0
+ R5B      CONST_4  CND    CNC    CNB    CNA       -0.020    0.000   0
+ R5B      CONST_5  CNC    CNB    CNA    OL5      180.000    0.000   0
+ R5B      CONST_6  CNB    CNA    CNF    CNE        0.538    0.000   0
+ R5B      var_4    CNB    CNA    OL5    CL4        0.028   20.000   3
+ R5B      var_5    CNA    OL5    CL4    CL3      180.000   20.000   3
+ R5B      var_6    OL5    CL4    CL3    CL2      179.956   20.000   3
+ R5B      var_7    CL4    CL3    CL2    CL1      179.956   20.000   3
+ R5B      var_8    CL3    CL2    CL1    CL0     -179.972   20.000   3
+ R5B      var_9    CL2    CL1    CL0    CAG      180.000   20.000   3
+ R5B      var_10   CL1    CL0    CAG    CAF      -84.884   20.000   2
+ R5B      CONST_7  CL0    CAG    CAH    CAI       -0.222    0.000   0
+ R5B      CONST_8  CAG    CAH    CAI    CAJ     -179.839    0.000   0
+ R5B      CONST_9  CAH    CAI    CAJ    CAK       -0.127    0.000   0
+ R5B      CONST_10 CL0    CAG    CAF    CAE     -179.780    0.000   0
+ R5B      CONST_11 CAG    CAF    CAE    NAD        0.194    0.000   0
+ R5B      CONST_12 CAF    CAE    NAD    RU       179.296    0.000   0
+ R5B      CONST_13 CAE    NAD    CAC    CAB     -179.476    0.000   0
+ R5B      CONST_14 NAD    CAC    CAH    CAG        0.028    0.000   0
+ R5B      var_11   CAE    NAD    RU     NCA       84.841   20.000   3
+ R5B      var_12   NAD    RU     NCL    CCG       47.800   20.000   3
+ R5B      var_13   NAD    RU     NBL    CBG      -23.260   20.000   3
+ R5B      CONST_15 NAD    RU     NAA    CAN     -179.500    0.000   0
+ R5B      CONST_16 RU     NAA    CAB    CAK      179.674    0.000   0
+ R5B      CONST_17 NAA    CAB    CAC    NAD       -0.131    0.000   0
+ R5B      CONST_18 RU     NAA    CAN    CAM     -179.829    0.000   0
+ R5B      CONST_19 NAA    CAN    CAM    CA0        0.093    0.000   0
+ R5B      CONST_20 CAN    CAM    CA0    CAK       -0.141    0.000   0
+ R5B      CONST_21 CAM    CA0    CAK    CAJ      179.960    0.000   0
+ R5B      CONST_22 CA0    CAK    CAJ    CAI      179.862    0.000   0
+ R5B      CONST_23 CA0    CAK    CAB    NAA        0.244    0.000   0
+ R5B      var_14   NAD    RU     NBA    CBF     -129.691   20.000   3
+ R5B      var_15   RU     NBA    CBB    CBC     -162.157   20.000   3
+ R5B      var_16   NBA    CBB    CBC    CBD        0.622   20.000   3
+ R5B      var_17   CBB    CBC    CBD    CBE       28.341   20.000   3
+ R5B      var_18   CBC    CBD    CBE    CBF       -0.261   20.000   3
+ R5B      var_19   RU     NBA    CBF    CBG      -37.129   20.000   3
+ R5B      var_20   NBA    CBF    CBE    CBD      -53.101   20.000   3
+ R5B      var_21   NBA    CBF    CBG    NBL       -1.480   20.000   3
+ R5B      var_22   CBF    CBG    CBH    CBI     -163.099   20.000   3
+ R5B      var_23   CBG    CBH    CBI    CBJ      -54.854   20.000   3
+ R5B      var_24   CBH    CBI    CBJ    CBK       51.654   20.000   3
+ R5B      var_25   CBI    CBJ    CBK    NBL      -59.133   20.000   3
+ R5B      var_26   CBF    CBG    NBL    RU        39.180   20.000   3
+ R5B      var_27   CBG    NBL    CBK    CBJ       68.207   20.000   3
+ R5B      var_28   NAD    RU     NCA    CCF      -45.405   20.000   3
+ R5B      var_29   RU     NCA    CCB    CCC     -178.752   20.000   3
+ R5B      var_30   NCA    CCB    CCC    CCD       58.342   20.000   3
+ R5B      var_31   CCB    CCC    CCD    CCE      -51.152   20.000   3
+ R5B      var_32   CCC    CCD    CCE    CCF       55.202   20.000   3
+ R5B      var_33   RU     NCA    CCF    CCG      -37.306   20.000   3
+ R5B      var_34   NCA    CCF    CCE    CCD      -69.049   20.000   3
+ R5B      var_35   NCA    CCF    CCG    CCH     -127.471   20.000   3
+ R5B      var_36   CCF    CCG    NCL    RU        38.975   20.000   3
+ R5B      var_37   CCG    NCL    CCK    CCJ       68.208   20.000   3
+ R5B      var_38   CCF    CCG    CCH    CCI     -163.418   20.000   3
+ R5B      var_39   CCG    CCH    CCI    CCJ      -55.420   20.000   3
+ R5B      var_40   CCH    CCI    CCJ    CCK       52.026   20.000   3
+ R5B      var_41   CCI    CCJ    CCK    NCL      -59.229   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ R5B      chir_01  NCL    RU     CCK    CCG       negativ
+                   .      .      .      .      .
+ R5B      chir_02  CCG    NCL    CCH    CCF       positiv
+                   .      .      .      .      .
+ R5B      chir_03  CCF    CCG    CCE    NCA       positiv
+                   .      .      .      .      .
+ R5B      chir_04  NCA    RU     CCF    CCB       negativ
+                   .      .      .      .      .
+ R5B      chir_05  NBL    RU     CBK    CBG       negativ
+                   .      .      .      .      .
+ R5B      chir_06  CBG    NBL    CBH    CBF       positiv
+                   .      .      .      .      .
+ R5B      chir_07  CBF    CBG    CBE    NBA       positiv
+                   .      .      .      .      .
+ R5B      chir_08  NBA    RU     CBF    CBB       negativ
+                   .      .      .      .      .
+ R5B      chir_09  RU     NAD    NBL    NCA       cross4
+                   NCL    NBA    NAA    .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ R5B      plan-1    NNG       0.020
+ R5B      plan-1    CM2       0.020
+ R5B      plan-1    CM1       0.020
+ R5B      plan-1    CNE       0.020
+ R5B      plan-2    CNE       0.020
+ R5B      plan-2    NNG       0.020
+ R5B      plan-2    CNF       0.020
+ R5B      plan-2    CND       0.020
+ R5B      plan-2    CNA       0.020
+ R5B      plan-2    CNB       0.020
+ R5B      plan-2    CNC       0.020
+ R5B      plan-2    HNF       0.020
+ R5B      plan-2    OL5       0.020
+ R5B      plan-2    HNB       0.020
+ R5B      plan-2    HNC       0.020
+ R5B      plan-2    HND       0.020
+ R5B      plan-3    CAK       0.020
+ R5B      plan-3    CAJ       0.020
+ R5B      plan-3    CAB       0.020
+ R5B      plan-3    CA0       0.020
+ R5B      plan-3    NAA       0.020
+ R5B      plan-3    CAN       0.020
+ R5B      plan-3    CAM       0.020
+ R5B      plan-3    CAI       0.020
+ R5B      plan-3    HAI       0.020
+ R5B      plan-3    CAC       0.020
+ R5B      plan-3    CAH       0.020
+ R5B      plan-3    NAD       0.020
+ R5B      plan-3    CAG       0.020
+ R5B      plan-3    CAF       0.020
+ R5B      plan-3    CAE       0.020
+ R5B      plan-3    HAJ       0.020
+ R5B      plan-3    CL0       0.020
+ R5B      plan-3    HAG       0.020
+ R5B      plan-3    HAM       0.020
+ R5B      plan-3    HAN       0.020
+ R5B      plan-3    RU        0.020
+ R5B      plan-3    HAE       0.020
+ R5B      plan-3    HAF       0.020
+ R5B      plan-4    CCI       0.020
+ R5B      plan-4    CCJ       0.020
+ R5B      plan-4    CCH       0.020
+ R5B      plan-4    HBD       0.020
+ R5B      plan-4    HBE       0.020
+ R5B      plan-5    CCH       0.020
+ R5B      plan-5    CCI       0.020
+ R5B      plan-5    CCG       0.020
+ R5B      plan-5    HBE       0.020
+ R5B      plan-5    HBD       0.020
+# ------------------------------------------------------

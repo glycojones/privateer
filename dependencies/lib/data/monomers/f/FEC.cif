@@ -1,0 +1,628 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FEC      FEC '1,3,5,8-TETRAMETHYL-PORPHINE-2,4,6,7' non-polymer        81  49 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FEC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FEC           O2D    O    OC       -0.500      0.000    0.000    0.000
+ FEC           CGD    C    C         0.000     -1.003   -0.704    0.250
+ FEC           O1D    O    OC       -0.500     -1.118   -1.930    0.030
+ FEC           CBD    C    CH2       0.000     -2.195   -0.031    0.874
+ FEC           HBD1   H    H         0.000     -2.875   -0.834    1.166
+ FEC           HBD2   H    H         0.000     -2.654    0.562    0.080
+ FEC           CAD    C    CH2       0.000     -1.913    0.861    2.078
+ FEC           HAD1   H    H         0.000     -0.915    1.271    1.911
+ FEC           HAD2   H    H         0.000     -1.891    0.190    2.940
+ FEC           C3D    C    CR5       0.000     -2.906    2.014    2.346
+ FEC           C4D    C    CR5       0.000     -4.055    1.895    3.220
+ FEC           CHA    C    C1        0.000     -4.439    0.748    3.877
+ FEC           HHA    H    H         0.000     -4.057   -0.223    3.609
+ FEC           C2D    C    CR5       0.000     -2.879    3.262    1.878
+ FEC           CMD    C    CH3       0.000     -1.854    3.907    0.925
+ FEC           HMD3   H    H         0.000     -2.342    4.245    0.045
+ FEC           HMD2   H    H         0.000     -1.389    4.734    1.402
+ FEC           HMD1   H    H         0.000     -1.111    3.197    0.659
+ FEC           C1D    C    CR5       0.000     -4.025    3.956    2.432
+ FEC           CHD    C    C1        0.000     -4.354    5.271    2.181
+ FEC           HHD    H    H         0.000     -3.672    5.849    1.581
+ FEC           C4C    C    CR5       0.000     -5.491    5.902    2.640
+ FEC           NC     N    NR5       0.000     -6.476    5.314    3.413
+ FEC           C1C    C    CR5       0.000     -7.415    6.309    3.636
+ FEC           C2C    C    CR5       0.000     -7.005    7.534    2.983
+ FEC           CAC    C    CH2       0.000     -7.763    8.876    3.026
+ FEC           HAC1   H    H         0.000     -7.290    9.451    2.227
+ FEC           HAC2   H    H         0.000     -7.473    9.292    3.993
+ FEC           CBC    C    CH2       0.000     -9.270    8.944    2.876
+ FEC           HBC1   H    H         0.000     -9.662    8.218    3.591
+ FEC           HBC2   H    H         0.000     -9.472    8.599    1.860
+ FEC           CGC    C    C         0.000     -9.934   10.276    3.096
+ FEC           O2C    O    OC       -0.500    -11.026   10.456    2.512
+ FEC           O1C    O    OC       -0.500     -9.373   11.119    3.831
+ FEC           C3C    C    CR5       0.000     -5.848    7.277    2.361
+ FEC           CMC    C    CH3       0.000     -4.953    8.237    1.548
+ FEC           HMC3   H    H         0.000     -4.012    8.349    2.029
+ FEC           HMC2   H    H         0.000     -4.798    7.849    0.572
+ FEC           HMC1   H    H         0.000     -5.418    9.189    1.473
+ FEC           FE     FE   FE        0.000     -6.540    3.418    4.036
+ FEC           ND     N    NT        1.000     -4.737    3.098    3.249
+ FEC           NB     N    NR5       1.000     -8.281    3.785    4.945
+ FEC           C4B    C    CR5       0.000     -8.971    4.984    4.990
+ FEC           CHC    C    C1        0.000     -8.559    6.147    4.383
+ FEC           HHC    H    H         0.000     -9.191    7.011    4.503
+ FEC           NA     N    NR5       0.000     -6.584    1.545    4.726
+ FEC           C1A    C    CR5       0.000     -6.333    1.115    6.016
+ FEC           C2A    C    CR5       0.000     -6.392   -0.330    6.070
+ FEC           CMA    C    CH3       0.000     -6.169   -1.149    7.361
+ FEC           HMA3   H    H         0.000     -7.036   -1.721    7.582
+ FEC           HMA2   H    H         0.000     -5.344   -1.806    7.235
+ FEC           HMA1   H    H         0.000     -5.969   -0.495    8.174
+ FEC           C4A    C    CR5       0.000     -6.818    0.397    3.993
+ FEC           C3A    C    CR5       0.000     -6.684   -0.768    4.845
+ FEC           CAA    C    CH2       0.000     -6.899   -2.205    4.325
+ FEC           HAA1   H    H         0.000     -6.376   -2.837    5.045
+ FEC           HAA2   H    H         0.000     -6.370   -2.231    3.369
+ FEC           CBA    C    CH2       0.000     -8.323   -2.717    4.134
+ FEC           HBA1   H    H         0.000     -8.704   -2.213    3.243
+ FEC           HBA2   H    H         0.000     -8.881   -2.377    5.010
+ FEC           CGA    C    C         0.000     -8.488   -4.206    3.980
+ FEC           O2A    O    OC       -0.500     -8.014   -4.730    2.948
+ FEC           O1A    O    OC       -0.500     -9.088   -4.809    4.898
+ FEC           CHB    C    C1        0.000     -7.176    0.357    2.664
+ FEC           HHB    H    H         0.000     -7.349   -0.611    2.225
+ FEC           C1B    C    CR5       0.000     -7.331    1.459    1.854
+ FEC           C2B    C    CR5       0.000     -7.743    1.418    0.466
+ FEC           CMB    C    CH3       0.000     -8.066    0.099   -0.273
+ FEC           HMB3   H    H         0.000     -9.064    0.123   -0.637
+ FEC           HMB2   H    H         0.000     -7.403   -0.029   -1.092
+ FEC           HMB1   H    H         0.000     -7.960   -0.723    0.390
+ FEC           C3B    C    CR5       0.000     -7.753    2.672    0.009
+ FEC           CAB    C    CH2       0.000     -8.147    3.198   -1.389
+ FEC           HAB1   H    H         0.000     -8.326    4.266   -1.248
+ FEC           HAB2   H    H         0.000     -9.091    2.700   -1.621
+ FEC           CBB    C    CH2       0.000     -7.171    2.993   -2.534
+ FEC           HBB1   H    H         0.000     -6.803    1.974   -2.397
+ FEC           HBB2   H    H         0.000     -6.364    3.701   -2.331
+ FEC           CGB    C    C         0.000     -7.648    3.168   -3.946
+ FEC           O1B    O    OC       -0.500     -8.872    3.071   -4.189
+ FEC           O2B    O    OC       -0.500     -6.769    3.396   -4.807
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FEC      O2D    n/a    CGD    START
+ FEC      CGD    O2D    CBD    .
+ FEC      O1D    CGD    .      .
+ FEC      CBD    CGD    CAD    .
+ FEC      HBD1   CBD    .      .
+ FEC      HBD2   CBD    .      .
+ FEC      CAD    CBD    C3D    .
+ FEC      HAD1   CAD    .      .
+ FEC      HAD2   CAD    .      .
+ FEC      C3D    CAD    C2D    .
+ FEC      C4D    C3D    CHA    .
+ FEC      CHA    C4D    HHA    .
+ FEC      HHA    CHA    .      .
+ FEC      C2D    C3D    C1D    .
+ FEC      CMD    C2D    HMD1   .
+ FEC      HMD3   CMD    .      .
+ FEC      HMD2   CMD    .      .
+ FEC      HMD1   CMD    .      .
+ FEC      C1D    C2D    CHD    .
+ FEC      CHD    C1D    C4C    .
+ FEC      HHD    CHD    .      .
+ FEC      C4C    CHD    NC     .
+ FEC      NC     C4C    FE     .
+ FEC      C1C    NC     C2C    .
+ FEC      C2C    C1C    C3C    .
+ FEC      CAC    C2C    CBC    .
+ FEC      HAC1   CAC    .      .
+ FEC      HAC2   CAC    .      .
+ FEC      CBC    CAC    CGC    .
+ FEC      HBC1   CBC    .      .
+ FEC      HBC2   CBC    .      .
+ FEC      CGC    CBC    O1C    .
+ FEC      O2C    CGC    .      .
+ FEC      O1C    CGC    .      .
+ FEC      C3C    C2C    CMC    .
+ FEC      CMC    C3C    HMC1   .
+ FEC      HMC3   CMC    .      .
+ FEC      HMC2   CMC    .      .
+ FEC      HMC1   CMC    .      .
+ FEC      FE     NC     NA     .
+ FEC      ND     FE     .      .
+ FEC      NB     FE     C4B    .
+ FEC      C4B    NB     CHC    .
+ FEC      CHC    C4B    HHC    .
+ FEC      HHC    CHC    .      .
+ FEC      NA     FE     C4A    .
+ FEC      C1A    NA     C2A    .
+ FEC      C2A    C1A    CMA    .
+ FEC      CMA    C2A    HMA1   .
+ FEC      HMA3   CMA    .      .
+ FEC      HMA2   CMA    .      .
+ FEC      HMA1   CMA    .      .
+ FEC      C4A    NA     CHB    .
+ FEC      C3A    C4A    CAA    .
+ FEC      CAA    C3A    CBA    .
+ FEC      HAA1   CAA    .      .
+ FEC      HAA2   CAA    .      .
+ FEC      CBA    CAA    CGA    .
+ FEC      HBA1   CBA    .      .
+ FEC      HBA2   CBA    .      .
+ FEC      CGA    CBA    O1A    .
+ FEC      O2A    CGA    .      .
+ FEC      O1A    CGA    .      .
+ FEC      CHB    C4A    C1B    .
+ FEC      HHB    CHB    .      .
+ FEC      C1B    CHB    C2B    .
+ FEC      C2B    C1B    C3B    .
+ FEC      CMB    C2B    HMB1   .
+ FEC      HMB3   CMB    .      .
+ FEC      HMB2   CMB    .      .
+ FEC      HMB1   CMB    .      .
+ FEC      C3B    C2B    CAB    .
+ FEC      CAB    C3B    CBB    .
+ FEC      HAB1   CAB    .      .
+ FEC      HAB2   CAB    .      .
+ FEC      CBB    CAB    CGB    .
+ FEC      HBB1   CBB    .      .
+ FEC      HBB2   CBB    .      .
+ FEC      CGB    CBB    O2B    .
+ FEC      O1B    CGB    .      .
+ FEC      O2B    CGB    .      END
+ FEC      C3A    C2A    .    ADD
+ FEC      C1A    CHA    .    ADD
+ FEC      C4D    ND     .    ADD
+ FEC      ND     C1D    .    ADD
+ FEC      C4C    C3C    .    ADD
+ FEC      C1C    CHC    .    ADD
+ FEC      C4B    C3B    .    ADD
+ FEC      C1B    NB     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FEC       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+FEC       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+FEC       CGA       CBA       single    1.510     0.020     1.510     0.020     
+FEC       CBA       CAA       single    1.524     0.020     1.524     0.020     
+FEC       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+FEC       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+FEC       CAA       C3A       single    1.510     0.020     1.510     0.020     
+FEC       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+FEC       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+FEC       C3A       C2A       double    1.490     0.020     1.490     0.020     
+FEC       C3A       C4A       single    1.490     0.020     1.490     0.020     
+FEC       C2A       C1A       single    1.490     0.020     1.490     0.020     
+FEC       CMA       C2A       single    1.506     0.020     1.506     0.020     
+FEC       C1A       CHA       double    1.483     0.020     1.483     0.020     
+FEC       C1A       NA        single    1.337     0.020     1.337     0.020     
+FEC       CHA       C4D       single    1.483     0.020     1.483     0.020     
+FEC       HHA       CHA       single    1.082     0.013     0.975     0.010     
+FEC       C4D       ND        double    1.455     0.020     1.455     0.020     
+FEC       C4D       C3D       single    1.490     0.020     1.490     0.020     
+FEC       ND        C1D       single    1.455     0.020     1.455     0.020     
+FEC       ND        FE        single    1.945     0.020     1.945     0.020     
+FEC       CHD       C1D       double    1.483     0.020     1.483     0.020     
+FEC       C1D       C2D       single    1.490     0.020     1.490     0.020     
+FEC       C4C       CHD       single    1.483     0.020     1.483     0.020     
+FEC       HHD       CHD       single    1.082     0.013     0.975     0.010     
+FEC       C4C       C3C       double    1.490     0.020     1.490     0.020     
+FEC       NC        C4C       single    1.337     0.020     1.337     0.020     
+FEC       C3C       C2C       single    1.490     0.020     1.490     0.020     
+FEC       CMC       C3C       single    1.506     0.020     1.506     0.020     
+FEC       C2C       C1C       double    1.490     0.020     1.490     0.020     
+FEC       CAC       C2C       single    1.510     0.020     1.510     0.020     
+FEC       C1C       CHC       single    1.483     0.020     1.483     0.020     
+FEC       C1C       NC        single    1.337     0.020     1.337     0.020     
+FEC       CHC       C4B       double    1.483     0.020     1.483     0.020     
+FEC       HHC       CHC       single    1.082     0.013     0.975     0.010     
+FEC       C4B       C3B       single    1.490     0.020     1.490     0.020     
+FEC       C4B       NB        single    1.337     0.020     1.337     0.020     
+FEC       C3B       C2B       double    1.490     0.020     1.490     0.020     
+FEC       CAB       C3B       single    1.510     0.020     1.510     0.020     
+FEC       C2B       C1B       single    1.490     0.020     1.490     0.020     
+FEC       CMB       C2B       single    1.506     0.020     1.506     0.020     
+FEC       C1B       NB        double    1.337     0.020     1.337     0.020     
+FEC       C1B       CHB       single    1.483     0.020     1.483     0.020     
+FEC       NB        FE        single    2.090     0.020     2.090     0.020     
+FEC       NA        FE        single    2.090     0.020     2.090     0.020     
+FEC       FE        NC        single    2.090     0.020     2.090     0.020     
+FEC       C4A       NA        single    1.337     0.020     1.337     0.020     
+FEC       CHB       C4A       double    1.483     0.020     1.483     0.020     
+FEC       HHB       CHB       single    1.082     0.013     0.975     0.010     
+FEC       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+FEC       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+FEC       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+FEC       CBB       CAB       single    1.524     0.020     1.524     0.020     
+FEC       HAB1      CAB       single    1.089     0.010     0.989     0.005     
+FEC       HAB2      CAB       single    1.089     0.010     0.989     0.005     
+FEC       CGB       CBB       single    1.510     0.020     1.510     0.020     
+FEC       HBB1      CBB       single    1.089     0.010     0.989     0.005     
+FEC       HBB2      CBB       single    1.089     0.010     0.989     0.005     
+FEC       O1B       CGB       deloc     1.250     0.020     1.250     0.020     
+FEC       O2B       CGB       deloc     1.250     0.020     1.250     0.020     
+FEC       CBC       CAC       single    1.524     0.020     1.524     0.020     
+FEC       HAC1      CAC       single    1.089     0.010     0.989     0.005     
+FEC       HAC2      CAC       single    1.089     0.010     0.989     0.005     
+FEC       CGC       CBC       single    1.510     0.020     1.510     0.020     
+FEC       HBC1      CBC       single    1.089     0.010     0.989     0.005     
+FEC       HBC2      CBC       single    1.089     0.010     0.989     0.005     
+FEC       O1C       CGC       deloc     1.250     0.020     1.250     0.020     
+FEC       O2C       CGC       deloc     1.250     0.020     1.250     0.020     
+FEC       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+FEC       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+FEC       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+FEC       C2D       C3D       double    1.490     0.020     1.490     0.020     
+FEC       CMD       C2D       single    1.506     0.020     1.506     0.020     
+FEC       C3D       CAD       single    1.510     0.020     1.510     0.020     
+FEC       CAD       CBD       single    1.524     0.020     1.524     0.020     
+FEC       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+FEC       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+FEC       CBD       CGD       single    1.510     0.020     1.510     0.020     
+FEC       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+FEC       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+FEC       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+FEC       CGD       O2D       deloc     1.250     0.020     1.250     0.020     
+FEC       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+FEC       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+FEC       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+FEC       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+FEC       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+FEC       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FEC      O2D    CGD    O1D     123.000    3.000
+ FEC      O2D    CGD    CBD     118.500    3.000
+ FEC      O1D    CGD    CBD     118.500    3.000
+ FEC      CGD    CBD    HBD1    109.470    3.000
+ FEC      CGD    CBD    HBD2    109.470    3.000
+ FEC      CGD    CBD    CAD     109.470    3.000
+ FEC      HBD1   CBD    HBD2    107.900    3.000
+ FEC      HBD1   CBD    CAD     109.470    3.000
+ FEC      HBD2   CBD    CAD     109.470    3.000
+ FEC      CBD    CAD    HAD1    109.470    3.000
+ FEC      CBD    CAD    HAD2    109.470    3.000
+ FEC      CBD    CAD    C3D     109.470    3.000
+ FEC      HAD1   CAD    HAD2    107.900    3.000
+ FEC      HAD1   CAD    C3D     109.470    3.000
+ FEC      HAD2   CAD    C3D     109.470    3.000
+ FEC      CAD    C3D    C4D     126.000    3.000
+ FEC      CAD    C3D    C2D     126.000    3.000
+ FEC      C4D    C3D    C2D     108.000    3.000
+ FEC      C3D    C4D    CHA     117.000    3.000
+ FEC      C3D    C4D    ND      108.000    3.000
+ FEC      CHA    C4D    ND      108.000    3.000
+ FEC      C4D    CHA    HHA     120.000    3.000
+ FEC      C4D    CHA    C1A     120.000    3.000
+ FEC      HHA    CHA    C1A     120.000    3.000
+ FEC      C3D    C2D    CMD     126.000    3.000
+ FEC      C3D    C2D    C1D     108.000    3.000
+ FEC      CMD    C2D    C1D     126.000    3.000
+ FEC      C2D    CMD    HMD3    109.470    3.000
+ FEC      C2D    CMD    HMD2    109.470    3.000
+ FEC      C2D    CMD    HMD1    109.470    3.000
+ FEC      HMD3   CMD    HMD2    109.470    3.000
+ FEC      HMD3   CMD    HMD1    109.470    3.000
+ FEC      HMD2   CMD    HMD1    109.470    3.000
+ FEC      C2D    C1D    CHD     117.000    3.000
+ FEC      C2D    C1D    ND      108.000    3.000
+ FEC      CHD    C1D    ND      108.000    3.000
+ FEC      C1D    CHD    HHD     120.000    3.000
+ FEC      C1D    CHD    C4C     120.000    3.000
+ FEC      HHD    CHD    C4C     120.000    3.000
+ FEC      CHD    C4C    NC      108.000    3.000
+ FEC      CHD    C4C    C3C     117.000    3.000
+ FEC      NC     C4C    C3C     108.000    3.000
+ FEC      C4C    NC     C1C     108.000    3.000
+ FEC      C4C    NC     FE      126.000    3.000
+ FEC      C1C    NC     FE      126.000    3.000
+ FEC      NC     C1C    C2C     108.000    3.000
+ FEC      NC     C1C    CHC     108.000    3.000
+ FEC      C2C    C1C    CHC     117.000    3.000
+ FEC      C1C    C2C    CAC     126.000    3.000
+ FEC      C1C    C2C    C3C     108.000    3.000
+ FEC      CAC    C2C    C3C     126.000    3.000
+ FEC      C2C    CAC    HAC1    109.470    3.000
+ FEC      C2C    CAC    HAC2    109.470    3.000
+ FEC      C2C    CAC    CBC     109.470    3.000
+ FEC      HAC1   CAC    HAC2    107.900    3.000
+ FEC      HAC1   CAC    CBC     109.470    3.000
+ FEC      HAC2   CAC    CBC     109.470    3.000
+ FEC      CAC    CBC    HBC1    109.470    3.000
+ FEC      CAC    CBC    HBC2    109.470    3.000
+ FEC      CAC    CBC    CGC     109.470    3.000
+ FEC      HBC1   CBC    HBC2    107.900    3.000
+ FEC      HBC1   CBC    CGC     109.470    3.000
+ FEC      HBC2   CBC    CGC     109.470    3.000
+ FEC      CBC    CGC    O2C     118.500    3.000
+ FEC      CBC    CGC    O1C     118.500    3.000
+ FEC      O2C    CGC    O1C     123.000    3.000
+ FEC      C2C    C3C    CMC     126.000    3.000
+ FEC      C2C    C3C    C4C     108.000    3.000
+ FEC      CMC    C3C    C4C     126.000    3.000
+ FEC      C3C    CMC    HMC3    109.470    3.000
+ FEC      C3C    CMC    HMC2    109.470    3.000
+ FEC      C3C    CMC    HMC1    109.470    3.000
+ FEC      HMC3   CMC    HMC2    109.470    3.000
+ FEC      HMC3   CMC    HMC1    109.470    3.000
+ FEC      HMC2   CMC    HMC1    109.470    3.000
+ FEC      NC     FE     ND       90.000    3.000
+ FEC      NC     FE     NB       90.000    3.000
+ FEC      NC     FE     NA      180.000    3.000
+ FEC      ND     FE     NB      180.000    3.000
+ FEC      ND     FE     NA       90.000    3.000
+ FEC      NB     FE     NA       90.000    3.000
+ FEC      FE     ND     C4D     109.500    3.000
+ FEC      FE     ND     C1D     109.500    3.000
+ FEC      C4D    ND     C1D     109.500    3.000
+ FEC      FE     NB     C4B     126.000    3.000
+ FEC      FE     NB     C1B     126.000    3.000
+ FEC      C4B    NB     C1B     108.000    3.000
+ FEC      NB     C4B    CHC     108.000    3.000
+ FEC      NB     C4B    C3B     108.000    3.000
+ FEC      CHC    C4B    C3B     117.000    3.000
+ FEC      C4B    CHC    HHC     120.000    3.000
+ FEC      C4B    CHC    C1C     120.000    3.000
+ FEC      HHC    CHC    C1C     120.000    3.000
+ FEC      FE     NA     C1A     126.000    3.000
+ FEC      FE     NA     C4A     126.000    3.000
+ FEC      C1A    NA     C4A     108.000    3.000
+ FEC      NA     C1A    C2A     108.000    3.000
+ FEC      NA     C1A    CHA     108.000    3.000
+ FEC      C2A    C1A    CHA     117.000    3.000
+ FEC      C1A    C2A    CMA     126.000    3.000
+ FEC      C1A    C2A    C3A     108.000    3.000
+ FEC      CMA    C2A    C3A     126.000    3.000
+ FEC      C2A    CMA    HMA3    109.470    3.000
+ FEC      C2A    CMA    HMA2    109.470    3.000
+ FEC      C2A    CMA    HMA1    109.470    3.000
+ FEC      HMA3   CMA    HMA2    109.470    3.000
+ FEC      HMA3   CMA    HMA1    109.470    3.000
+ FEC      HMA2   CMA    HMA1    109.470    3.000
+ FEC      NA     C4A    C3A     108.000    3.000
+ FEC      NA     C4A    CHB     108.000    3.000
+ FEC      C3A    C4A    CHB     117.000    3.000
+ FEC      C4A    C3A    CAA     126.000    3.000
+ FEC      C4A    C3A    C2A     108.000    3.000
+ FEC      CAA    C3A    C2A     126.000    3.000
+ FEC      C3A    CAA    HAA1    109.470    3.000
+ FEC      C3A    CAA    HAA2    109.470    3.000
+ FEC      C3A    CAA    CBA     109.470    3.000
+ FEC      HAA1   CAA    HAA2    107.900    3.000
+ FEC      HAA1   CAA    CBA     109.470    3.000
+ FEC      HAA2   CAA    CBA     109.470    3.000
+ FEC      CAA    CBA    HBA1    109.470    3.000
+ FEC      CAA    CBA    HBA2    109.470    3.000
+ FEC      CAA    CBA    CGA     109.470    3.000
+ FEC      HBA1   CBA    HBA2    107.900    3.000
+ FEC      HBA1   CBA    CGA     109.470    3.000
+ FEC      HBA2   CBA    CGA     109.470    3.000
+ FEC      CBA    CGA    O2A     118.500    3.000
+ FEC      CBA    CGA    O1A     118.500    3.000
+ FEC      O2A    CGA    O1A     123.000    3.000
+ FEC      C4A    CHB    HHB     120.000    3.000
+ FEC      C4A    CHB    C1B     120.000    3.000
+ FEC      HHB    CHB    C1B     120.000    3.000
+ FEC      CHB    C1B    C2B     117.000    3.000
+ FEC      CHB    C1B    NB      108.000    3.000
+ FEC      C2B    C1B    NB      108.000    3.000
+ FEC      C1B    C2B    CMB     126.000    3.000
+ FEC      C1B    C2B    C3B     108.000    3.000
+ FEC      CMB    C2B    C3B     126.000    3.000
+ FEC      C2B    CMB    HMB3    109.470    3.000
+ FEC      C2B    CMB    HMB2    109.470    3.000
+ FEC      C2B    CMB    HMB1    109.470    3.000
+ FEC      HMB3   CMB    HMB2    109.470    3.000
+ FEC      HMB3   CMB    HMB1    109.470    3.000
+ FEC      HMB2   CMB    HMB1    109.470    3.000
+ FEC      C2B    C3B    CAB     126.000    3.000
+ FEC      C2B    C3B    C4B     108.000    3.000
+ FEC      CAB    C3B    C4B     126.000    3.000
+ FEC      C3B    CAB    HAB1    109.470    3.000
+ FEC      C3B    CAB    HAB2    109.470    3.000
+ FEC      C3B    CAB    CBB     109.470    3.000
+ FEC      HAB1   CAB    HAB2    107.900    3.000
+ FEC      HAB1   CAB    CBB     109.470    3.000
+ FEC      HAB2   CAB    CBB     109.470    3.000
+ FEC      CAB    CBB    HBB1    109.470    3.000
+ FEC      CAB    CBB    HBB2    109.470    3.000
+ FEC      CAB    CBB    CGB     109.470    3.000
+ FEC      HBB1   CBB    HBB2    107.900    3.000
+ FEC      HBB1   CBB    CGB     109.470    3.000
+ FEC      HBB2   CBB    CGB     109.470    3.000
+ FEC      CBB    CGB    O1B     118.500    3.000
+ FEC      CBB    CGB    O2B     118.500    3.000
+ FEC      O1B    CGB    O2B     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FEC      var_1    O2D    CGD    CBD    CAD      -48.467   20.000   3
+ FEC      var_2    CGD    CBD    CAD    C3D      153.386   20.000   3
+ FEC      var_3    CBD    CAD    C3D    C2D      -89.169   20.000   2
+ FEC      CONST_1  CAD    C3D    C4D    CHA        0.000    0.000   0
+ FEC      CONST_2  C3D    C4D    ND     FE       180.000    0.000   0
+ FEC      var_4    C3D    C4D    CHA    C1A      180.000   20.000   1
+ FEC      CONST_3  CAD    C3D    C2D    C1D      180.000    0.000   0
+ FEC      var_5    C3D    C2D    CMD    HMD1       0.020   20.000   1
+ FEC      CONST_4  C3D    C2D    C1D    CHD      180.000    0.000   0
+ FEC      var_6    C2D    C1D    CHD    C4C      180.000   20.000   1
+ FEC      var_7    C1D    CHD    C4C    NC         0.000   20.000   1
+ FEC      CONST_5  CHD    C4C    C3C    C2C      180.000    0.000   0
+ FEC      CONST_6  CHD    C4C    NC     FE         0.000    0.000   0
+ FEC      CONST_7  C4C    NC     C1C    C2C        0.000    0.000   0
+ FEC      var_8    NC     C1C    CHC    C4B        0.000   20.000   1
+ FEC      CONST_8  NC     C1C    C2C    C3C        0.000    0.000   0
+ FEC      var_9    C1C    C2C    CAC    CBC      -42.835   20.000   2
+ FEC      var_10   C2C    CAC    CBC    CGC      172.780   20.000   3
+ FEC      var_11   CAC    CBC    CGC    O1C      -25.632   20.000   3
+ FEC      CONST_9  C1C    C2C    C3C    CMC      180.000    0.000   0
+ FEC      var_12   C2C    C3C    CMC    HMC1      -4.005   20.000   1
+ FEC      var_13   C4C    NC     FE     ND         0.000   20.000   1
+ FEC      var_14   C1D    ND     FE     NC         0.000   20.000   1
+ FEC      CONST_10 FE     ND     C1D    C2D      180.000    0.000   0
+ FEC      var_15   C4B    NB     FE     NC         0.000   20.000   1
+ FEC      CONST_11 FE     NB     C4B    CHC        0.000    0.000   0
+ FEC      CONST_12 NB     C4B    C3B    C2B        0.000    0.000   0
+ FEC      var_16   NB     C4B    CHC    C1C        0.000   20.000   1
+ FEC      var_17   C1A    NA     FE     ND         0.000   20.000   1
+ FEC      CONST_13 FE     NA     C1A    C2A      180.000    0.000   0
+ FEC      var_18   NA     C1A    CHA    C4D        0.000   20.000   1
+ FEC      CONST_14 NA     C1A    C2A    CMA      180.000    0.000   0
+ FEC      var_19   C1A    C2A    CMA    HMA1      -0.132   20.000   1
+ FEC      CONST_15 FE     NA     C4A    CHB        0.000    0.000   0
+ FEC      CONST_16 NA     C4A    C3A    CAA      180.000    0.000   0
+ FEC      CONST_17 C4A    C3A    C2A    C1A        0.000    0.000   0
+ FEC      var_20   C4A    C3A    CAA    CBA      -78.283   20.000   2
+ FEC      var_21   C3A    CAA    CBA    CGA     -164.422   20.000   3
+ FEC      var_22   CAA    CBA    CGA    O1A      113.280   20.000   3
+ FEC      var_23   NA     C4A    CHB    C1B        0.000   20.000   1
+ FEC      var_24   C4A    CHB    C1B    C2B      180.000   20.000   1
+ FEC      CONST_18 CHB    C1B    NB     FE         0.000    0.000   0
+ FEC      CONST_19 CHB    C1B    C2B    C3B      180.000    0.000   0
+ FEC      var_25   C1B    C2B    CMB    HMB1       1.254   20.000   1
+ FEC      CONST_20 C1B    C2B    C3B    CAB      180.000    0.000   0
+ FEC      var_26   C2B    C3B    CAB    CBB      -75.485   20.000   2
+ FEC      var_27   C3B    CAB    CBB    CGB      164.640   20.000   3
+ FEC      var_28   CAB    CBB    CGB    O2B      158.805   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FEC      chir_02  FE     NC     NA     ND        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FEC      plan-1    CGA       0.020
+ FEC      plan-1    O1A       0.020
+ FEC      plan-1    O2A       0.020
+ FEC      plan-1    CBA       0.020
+ FEC      plan-2    C3A       0.020
+ FEC      plan-2    CAA       0.020
+ FEC      plan-2    C2A       0.020
+ FEC      plan-2    C4A       0.020
+ FEC      plan-2    C1A       0.020
+ FEC      plan-2    NA        0.020
+ FEC      plan-2    CMA       0.020
+ FEC      plan-2    CHA       0.020
+ FEC      plan-2    FE        0.020
+ FEC      plan-2    CHB       0.020
+ FEC      plan-2    HHA       0.020
+ FEC      plan-2    HHB       0.020
+ FEC      plan-3    CHA       0.020
+ FEC      plan-3    C1A       0.020
+ FEC      plan-3    C4D       0.020
+ FEC      plan-3    HHA       0.020
+ FEC      plan-4    C4D       0.020
+ FEC      plan-4    CHA       0.020
+ FEC      plan-4    ND        0.020
+ FEC      plan-4    C3D       0.020
+ FEC      plan-4    C1D       0.020
+ FEC      plan-4    C2D       0.020
+ FEC      plan-4    CHD       0.020
+ FEC      plan-4    CMD       0.020
+ FEC      plan-4    CAD       0.020
+ FEC      plan-4    HHA       0.020
+ FEC      plan-4    HHD       0.020
+ FEC      plan-5    CHD       0.020
+ FEC      plan-5    C1D       0.020
+ FEC      plan-5    C4C       0.020
+ FEC      plan-5    HHD       0.020
+ FEC      plan-6    C4C       0.020
+ FEC      plan-6    CHD       0.020
+ FEC      plan-6    C3C       0.020
+ FEC      plan-6    NC        0.020
+ FEC      plan-6    C2C       0.020
+ FEC      plan-6    C1C       0.020
+ FEC      plan-6    CMC       0.020
+ FEC      plan-6    CAC       0.020
+ FEC      plan-6    CHC       0.020
+ FEC      plan-6    FE        0.020
+ FEC      plan-6    HHD       0.020
+ FEC      plan-6    HHC       0.020
+ FEC      plan-7    CHC       0.020
+ FEC      plan-7    C1C       0.020
+ FEC      plan-7    C4B       0.020
+ FEC      plan-7    HHC       0.020
+ FEC      plan-8    C4B       0.020
+ FEC      plan-8    CHC       0.020
+ FEC      plan-8    C3B       0.020
+ FEC      plan-8    NB        0.020
+ FEC      plan-8    C2B       0.020
+ FEC      plan-8    C1B       0.020
+ FEC      plan-8    CAB       0.020
+ FEC      plan-8    CMB       0.020
+ FEC      plan-8    CHB       0.020
+ FEC      plan-8    FE        0.020
+ FEC      plan-8    HHC       0.020
+ FEC      plan-8    HHB       0.020
+ FEC      plan-9    CHB       0.020
+ FEC      plan-9    C1B       0.020
+ FEC      plan-9    C4A       0.020
+ FEC      plan-9    HHB       0.020
+ FEC      plan-10   CGB       0.020
+ FEC      plan-10   CBB       0.020
+ FEC      plan-10   O1B       0.020
+ FEC      plan-10   O2B       0.020
+ FEC      plan-11   CGC       0.020
+ FEC      plan-11   CBC       0.020
+ FEC      plan-11   O1C       0.020
+ FEC      plan-11   O2C       0.020
+ FEC      plan-12   CGD       0.020
+ FEC      plan-12   CBD       0.020
+ FEC      plan-12   O1D       0.020
+ FEC      plan-12   O2D       0.020
+# ------------------------------------------------------

@@ -1,0 +1,697 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ROC      ROC '"N~1~-{(1S,2R)-1-benzyl-3-[(3R,4aR,8' non-polymer        99  49 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ROC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ROC           O3     O    O         0.000      0.000    0.000    0.000
+ ROC           CC     C    C         0.000      0.589    0.006    1.060
+ ROC           N3     N    NH1       0.000      1.485    0.977    1.326
+ ROC           HN1    H    H         0.000      1.976    0.982    2.209
+ ROC           CD     C    CT        0.000      1.749    2.023    0.336
+ ROC           C32    C    CH3       0.000      2.267    1.386   -0.954
+ ROC           H33    H    H         0.000      2.458    2.143   -1.671
+ ROC           H321   H    H         0.000      3.163    0.857   -0.754
+ ROC           H311   H    H         0.000      1.540    0.716   -1.335
+ ROC           C22    C    CH3       0.000      2.798    2.992    0.884
+ ROC           H23    H    H         0.000      2.989    3.749    0.168
+ ROC           H22    H    H         0.000      2.440    3.434    1.778
+ ROC           H21    H    H         0.000      3.695    2.465    1.086
+ ROC           C11    C    CH3       0.000      0.455    2.786    0.044
+ ROC           H13    H    H         0.000      0.644    3.544   -0.672
+ ROC           H12    H    H         0.000     -0.273    2.117   -0.335
+ ROC           H11    H    H         0.000      0.095    3.228    0.938
+ ROC           C21    C    CH1       0.000      0.319   -1.070    2.078
+ ROC           H2     H    H         0.000      0.297   -0.626    3.083
+ ROC           C31    C    CH2       0.000      1.427   -2.125    2.012
+ ROC           H31    H    H         0.000      2.387   -1.661    2.244
+ ROC           H32    H    H         0.000      1.463   -2.554    1.009
+ ROC           C3A    C    CH1       0.000      1.133   -3.229    3.030
+ ROC           H3A    H    H         0.000      1.128   -2.800    4.042
+ ROC           C7A    C    CH1       0.000     -0.240   -3.838    2.730
+ ROC           H7A    H    H         0.000     -0.473   -4.614    3.473
+ ROC           C71    C    CH2       0.000     -0.230   -4.452    1.328
+ ROC           H71    H    H         0.000     -0.015   -3.673    0.593
+ ROC           H72    H    H         0.000     -1.208   -4.889    1.117
+ ROC           C61    C    CH2       0.000      0.845   -5.538    1.252
+ ROC           H61    H    H         0.000      0.847   -5.979    0.253
+ ROC           H62    H    H         0.000      0.631   -6.314    1.990
+ ROC           C51    C    CH2       0.000      2.215   -4.919    1.541
+ ROC           H51    H    H         0.000      2.425   -4.140    0.805
+ ROC           H52    H    H         0.000      2.984   -5.692    1.481
+ ROC           C41    C    CH2       0.000      2.209   -4.310    2.944
+ ROC           H42    H    H         0.000      3.187   -3.870    3.151
+ ROC           H41    H    H         0.000      2.001   -5.092    3.677
+ ROC           C81    C    CH2       0.000     -1.299   -2.733    2.786
+ ROC           H81    H    H         0.000     -1.311   -2.291    3.784
+ ROC           H82    H    H         0.000     -2.280   -3.158    2.565
+ ROC           N11    N    NT        0.000     -0.977   -1.699    1.794
+ ROC           CM     C    CH2       0.000     -2.045   -0.693    1.717
+ ROC           HM1    H    H         0.000     -1.685    0.177    1.163
+ ROC           HM2    H    H         0.000     -2.330   -0.388    2.726
+ ROC           C9     C    CH1       0.000     -3.258   -1.290    1.000
+ ROC           HC     H    H         0.000     -2.941   -1.715    0.037
+ ROC           O2     O    OH1       0.000     -3.831   -2.318    1.809
+ ROC           HO     H    H         0.000     -4.109   -1.944    2.655
+ ROC           CA1    C    CH1       0.000     -4.297   -0.194    0.756
+ ROC           HA1    H    H         0.000     -3.830    0.638    0.209
+ ROC           CB1    C    CH2       0.000     -4.828    0.312    2.098
+ ROC           HB21   H    H         0.000     -3.992    0.634    2.722
+ ROC           HB31   H    H         0.000     -5.368   -0.493    2.602
+ ROC           CG1    C    CR6       0.000     -5.759    1.474    1.864
+ ROC           CD2    C    CR16      0.000     -5.263    2.763    1.843
+ ROC           HD2    H    H         0.000     -4.206    2.939    1.994
+ ROC           CE2    C    CR16      0.000     -6.117    3.830    1.628
+ ROC           HE2    H    H         0.000     -5.728    4.840    1.612
+ ROC           CZ     C    CR16      0.000     -7.467    3.606    1.435
+ ROC           HZ     H    H         0.000     -8.135    4.440    1.264
+ ROC           CE1    C    CR16      0.000     -7.964    2.316    1.460
+ ROC           HE1    H    H         0.000     -9.022    2.140    1.312
+ ROC           CD1    C    CR16      0.000     -7.110    1.250    1.675
+ ROC           HD1    H    H         0.000     -7.499    0.240    1.695
+ ROC           N2     N    NH1       0.000     -5.403   -0.737   -0.035
+ ROC           H1     H    H         0.000     -5.601   -1.728   -0.013
+ ROC           C1     C    C         0.000     -6.159    0.084   -0.791
+ ROC           O1     O    O         0.000     -5.923    1.273   -0.816
+ ROC           CA     C    CH1       0.000     -7.298   -0.475   -1.604
+ ROC           HA     H    H         0.000     -8.022   -0.961   -0.935
+ ROC           CB     C    CH2       0.000     -6.757   -1.501   -2.602
+ ROC           HB2    H    H         0.000     -6.174   -2.254   -2.068
+ ROC           HB3    H    H         0.000     -6.117   -0.997   -3.330
+ ROC           CG     C    C         0.000     -7.907   -2.164   -3.315
+ ROC           ND2    N    NH2       0.000     -7.668   -3.023   -4.325
+ ROC           HD22   H    H         0.000     -8.438   -3.472   -4.807
+ ROC           HD21   H    H         0.000     -6.717   -3.226   -4.609
+ ROC           OD1    O    O         0.000     -9.047   -1.924   -2.979
+ ROC           N      N    NH1       0.000     -7.958    0.611   -2.332
+ ROC           H      H    H         0.000     -7.571    0.943   -3.204
+ ROC           C      C    C         0.000     -9.082    1.168   -1.837
+ ROC           O      O    O         0.000     -9.588    0.721   -0.827
+ ROC           C2     C    CR6       0.000     -9.696    2.332   -2.521
+ ROC           C3     C    CR16      0.000    -10.862    2.902   -1.990
+ ROC           H3     H    H         0.000    -11.305    2.493   -1.090
+ ROC           C4     C    CR16      0.000    -11.437    3.974   -2.610
+ ROC           H4     H    H         0.000    -12.337    4.428   -2.215
+ ROC           C4A    C    CR66      0.000    -10.829    4.473   -3.778
+ ROC           C8A    C    CR66      0.000     -9.650    3.849   -4.263
+ ROC           N1     N    NRD6      0.000     -9.133    2.806   -3.616
+ ROC           C8     C    CR16      0.000     -9.043    4.351   -5.431
+ ROC           H8     H    H         0.000     -8.143    3.890   -5.817
+ ROC           C7     C    CR16      0.000     -9.593    5.417   -6.072
+ ROC           H7     H    H         0.000     -9.122    5.799   -6.970
+ ROC           C6     C    CR16      0.000    -10.751    6.027   -5.593
+ ROC           H6     H    H         0.000    -11.167    6.875   -6.123
+ ROC           C5     C    CR16      0.000    -11.367    5.571   -4.467
+ ROC           H5     H    H         0.000    -12.267    6.054   -4.105
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ROC      O3     n/a    CC     START
+ ROC      CC     O3     C21    .
+ ROC      N3     CC     CD     .
+ ROC      HN1    N3     .      .
+ ROC      CD     N3     C11    .
+ ROC      C32    CD     H311   .
+ ROC      H33    C32    .      .
+ ROC      H321   C32    .      .
+ ROC      H311   C32    .      .
+ ROC      C22    CD     H21    .
+ ROC      H23    C22    .      .
+ ROC      H22    C22    .      .
+ ROC      H21    C22    .      .
+ ROC      C11    CD     H11    .
+ ROC      H13    C11    .      .
+ ROC      H12    C11    .      .
+ ROC      H11    C11    .      .
+ ROC      C21    CC     C31    .
+ ROC      H2     C21    .      .
+ ROC      C31    C21    C3A    .
+ ROC      H31    C31    .      .
+ ROC      H32    C31    .      .
+ ROC      C3A    C31    C7A    .
+ ROC      H3A    C3A    .      .
+ ROC      C7A    C3A    C81    .
+ ROC      H7A    C7A    .      .
+ ROC      C71    C7A    C61    .
+ ROC      H71    C71    .      .
+ ROC      H72    C71    .      .
+ ROC      C61    C71    C51    .
+ ROC      H61    C61    .      .
+ ROC      H62    C61    .      .
+ ROC      C51    C61    C41    .
+ ROC      H51    C51    .      .
+ ROC      H52    C51    .      .
+ ROC      C41    C51    H41    .
+ ROC      H42    C41    .      .
+ ROC      H41    C41    .      .
+ ROC      C81    C7A    N11    .
+ ROC      H81    C81    .      .
+ ROC      H82    C81    .      .
+ ROC      N11    C81    CM     .
+ ROC      CM     N11    C9     .
+ ROC      HM1    CM     .      .
+ ROC      HM2    CM     .      .
+ ROC      C9     CM     CA1    .
+ ROC      HC     C9     .      .
+ ROC      O2     C9     HO     .
+ ROC      HO     O2     .      .
+ ROC      CA1    C9     N2     .
+ ROC      HA1    CA1    .      .
+ ROC      CB1    CA1    CG1    .
+ ROC      HB21   CB1    .      .
+ ROC      HB31   CB1    .      .
+ ROC      CG1    CB1    CD2    .
+ ROC      CD2    CG1    CE2    .
+ ROC      HD2    CD2    .      .
+ ROC      CE2    CD2    CZ     .
+ ROC      HE2    CE2    .      .
+ ROC      CZ     CE2    CE1    .
+ ROC      HZ     CZ     .      .
+ ROC      CE1    CZ     CD1    .
+ ROC      HE1    CE1    .      .
+ ROC      CD1    CE1    HD1    .
+ ROC      HD1    CD1    .      .
+ ROC      N2     CA1    C1     .
+ ROC      H1     N2     .      .
+ ROC      C1     N2     CA     .
+ ROC      O1     C1     .      .
+ ROC      CA     C1     N      .
+ ROC      HA     CA     .      .
+ ROC      CB     CA     CG     .
+ ROC      HB2    CB     .      .
+ ROC      HB3    CB     .      .
+ ROC      CG     CB     OD1    .
+ ROC      ND2    CG     HD21   .
+ ROC      HD22   ND2    .      .
+ ROC      HD21   ND2    .      .
+ ROC      OD1    CG     .      .
+ ROC      N      CA     C      .
+ ROC      H      N      .      .
+ ROC      C      N      C2     .
+ ROC      O      C      .      .
+ ROC      C2     C      C3     .
+ ROC      C3     C2     C4     .
+ ROC      H3     C3     .      .
+ ROC      C4     C3     C4A    .
+ ROC      H4     C4     .      .
+ ROC      C4A    C4     C8A    .
+ ROC      C8A    C4A    C8     .
+ ROC      N1     C8A    .      .
+ ROC      C8     C8A    C7     .
+ ROC      H8     C8     .      .
+ ROC      C7     C8     C6     .
+ ROC      H7     C7     .      .
+ ROC      C6     C7     C5     .
+ ROC      H6     C6     .      .
+ ROC      C5     C6     H5     .
+ ROC      H5     C5     .      END
+ ROC      N1     C2     .    ADD
+ ROC      C4A    C5     .    ADD
+ ROC      CG1    CD1    .    ADD
+ ROC      N11    C21    .    ADD
+ ROC      C3A    C41    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ROC       O         C         double    1.220     0.020     1.220     0.020     
+ROC       C2        C         single    1.500     0.020     1.500     0.020     
+ROC       N1        C2        double    1.350     0.020     1.350     0.020     
+ROC       N1        C8A       single    1.350     0.020     1.350     0.020     
+ROC       C3        C2        single    1.390     0.020     1.390     0.020     
+ROC       C4        C3        double    1.390     0.020     1.390     0.020     
+ROC       H3        C3        single    1.082     0.013     0.975     0.010     
+ROC       C4A       C4        single    1.390     0.020     1.390     0.020     
+ROC       H4        C4        single    1.082     0.013     0.975     0.010     
+ROC       C4A       C5        double    1.390     0.020     1.390     0.020     
+ROC       C8A       C4A       single    1.490     0.020     1.490     0.020     
+ROC       C5        C6        single    1.390     0.020     1.390     0.020     
+ROC       H5        C5        single    1.082     0.013     0.975     0.010     
+ROC       C6        C7        double    1.390     0.020     1.390     0.020     
+ROC       H6        C6        single    1.082     0.013     0.975     0.010     
+ROC       C7        C8        single    1.390     0.020     1.390     0.020     
+ROC       H7        C7        single    1.082     0.013     0.975     0.010     
+ROC       C8        C8A       double    1.390     0.020     1.390     0.020     
+ROC       H8        C8        single    1.082     0.013     0.975     0.010     
+ROC       N         CA        single    1.450     0.020     1.450     0.020     
+ROC       H         N         single    1.016     0.010     0.899     0.007     
+ROC       CA        C1        single    1.500     0.020     1.500     0.020     
+ROC       CB        CA        single    1.524     0.020     1.524     0.020     
+ROC       HA        CA        single    1.089     0.010     0.989     0.005     
+ROC       O1        C1        double    1.220     0.020     1.220     0.020     
+ROC       CG        CB        single    1.510     0.020     1.510     0.020     
+ROC       HB2       CB        single    1.089     0.010     0.989     0.005     
+ROC       HB3       CB        single    1.089     0.010     0.989     0.005     
+ROC       OD1       CG        double    1.220     0.020     1.220     0.020     
+ROC       ND2       CG        single    1.332     0.020     1.332     0.020     
+ROC       HD21      ND2       single    1.016     0.010     0.899     0.007     
+ROC       HD22      ND2       single    1.016     0.010     0.899     0.007     
+ROC       O2        C9        single    1.432     0.020     1.432     0.020     
+ROC       CA1       C9        single    1.524     0.020     1.524     0.020     
+ROC       HC        C9        single    1.089     0.010     0.989     0.005     
+ROC       HO        O2        single    0.970     0.012     0.839     0.014     
+ROC       N2        CA1       single    1.450     0.020     1.450     0.020     
+ROC       CB1       CA1       single    1.524     0.020     1.524     0.020     
+ROC       HA1       CA1       single    1.089     0.010     0.989     0.005     
+ROC       H1        N2        single    1.016     0.010     0.899     0.007     
+ROC       CG1       CB1       single    1.511     0.020     1.511     0.020     
+ROC       HB21      CB1       single    1.089     0.010     0.989     0.005     
+ROC       HB31      CB1       single    1.089     0.010     0.989     0.005     
+ROC       CG1       CD1       double    1.390     0.020     1.390     0.020     
+ROC       CD2       CG1       single    1.390     0.020     1.390     0.020     
+ROC       CD1       CE1       single    1.390     0.020     1.390     0.020     
+ROC       HD1       CD1       single    1.082     0.013     0.975     0.010     
+ROC       CE2       CD2       double    1.390     0.020     1.390     0.020     
+ROC       HD2       CD2       single    1.082     0.013     0.975     0.010     
+ROC       CE1       CZ        double    1.390     0.020     1.390     0.020     
+ROC       HE1       CE1       single    1.082     0.013     0.975     0.010     
+ROC       CZ        CE2       single    1.390     0.020     1.390     0.020     
+ROC       HE2       CE2       single    1.082     0.013     0.975     0.010     
+ROC       HZ        CZ        single    1.082     0.013     0.975     0.010     
+ROC       CM        N11       single    1.469     0.020     1.469     0.020     
+ROC       N11       C21       single    1.469     0.020     1.469     0.020     
+ROC       N11       C81       single    1.469     0.020     1.469     0.020     
+ROC       HM1       CM        single    1.089     0.010     0.989     0.005     
+ROC       HM2       CM        single    1.089     0.010     0.989     0.005     
+ROC       C21       CC        single    1.500     0.020     1.500     0.020     
+ROC       C31       C21       single    1.524     0.020     1.524     0.020     
+ROC       H2        C21       single    1.089     0.010     0.989     0.005     
+ROC       CC        O3        double    1.220     0.020     1.220     0.020     
+ROC       C3A       C31       single    1.524     0.020     1.524     0.020     
+ROC       H31       C31       single    1.089     0.010     0.989     0.005     
+ROC       H32       C31       single    1.089     0.010     0.989     0.005     
+ROC       C3A       C41       single    1.524     0.020     1.524     0.020     
+ROC       C7A       C3A       single    1.524     0.020     1.524     0.020     
+ROC       H3A       C3A       single    1.089     0.010     0.989     0.005     
+ROC       C41       C51       single    1.524     0.020     1.524     0.020     
+ROC       H41       C41       single    1.089     0.010     0.989     0.005     
+ROC       H42       C41       single    1.089     0.010     0.989     0.005     
+ROC       C51       C61       single    1.524     0.020     1.524     0.020     
+ROC       H51       C51       single    1.089     0.010     0.989     0.005     
+ROC       H52       C51       single    1.089     0.010     0.989     0.005     
+ROC       C61       C71       single    1.524     0.020     1.524     0.020     
+ROC       H61       C61       single    1.089     0.010     0.989     0.005     
+ROC       H62       C61       single    1.089     0.010     0.989     0.005     
+ROC       C71       C7A       single    1.524     0.020     1.524     0.020     
+ROC       H71       C71       single    1.089     0.010     0.989     0.005     
+ROC       H72       C71       single    1.089     0.010     0.989     0.005     
+ROC       C81       C7A       single    1.524     0.020     1.524     0.020     
+ROC       H7A       C7A       single    1.089     0.010     0.989     0.005     
+ROC       H81       C81       single    1.089     0.010     0.989     0.005     
+ROC       H82       C81       single    1.089     0.010     0.989     0.005     
+ROC       CD        N3        single    1.450     0.020     1.450     0.020     
+ROC       HN1       N3        single    1.016     0.010     0.899     0.007     
+ROC       C11       CD        single    1.524     0.020     1.524     0.020     
+ROC       C22       CD        single    1.524     0.020     1.524     0.020     
+ROC       C32       CD        single    1.524     0.020     1.524     0.020     
+ROC       H11       C11       single    1.089     0.010     0.989     0.005     
+ROC       H12       C11       single    1.089     0.010     0.989     0.005     
+ROC       H13       C11       single    1.089     0.010     0.989     0.005     
+ROC       H21       C22       single    1.089     0.010     0.989     0.005     
+ROC       H22       C22       single    1.089     0.010     0.989     0.005     
+ROC       H23       C22       single    1.089     0.010     0.989     0.005     
+ROC       H311      C32       single    1.089     0.010     0.989     0.005     
+ROC       H321      C32       single    1.089     0.010     0.989     0.005     
+ROC       H33       C32       single    1.089     0.010     0.989     0.005     
+ROC       C         N         single    1.330     0.020     1.330     0.020     
+ROC       C1        N2        single    1.330     0.020     1.330     0.020     
+ROC       C9        CM        single    1.524     0.020     1.524     0.020     
+ROC       N3        CC        single    1.330     0.020     1.330     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ROC      O3     CC     N3      123.000    3.000
+ ROC      O3     CC     C21     120.500    3.000
+ ROC      N3     CC     C21     116.500    3.000
+ ROC      CC     N3     HN1     120.000    3.000
+ ROC      CC     N3     CD      121.500    3.000
+ ROC      HN1    N3     CD      118.500    3.000
+ ROC      N3     CD     C32     110.000    3.000
+ ROC      N3     CD     C22     110.000    3.000
+ ROC      N3     CD     C11     110.000    3.000
+ ROC      C32    CD     C22     111.000    3.000
+ ROC      C32    CD     C11     111.000    3.000
+ ROC      C22    CD     C11     111.000    3.000
+ ROC      CD     C32    H33     109.470    3.000
+ ROC      CD     C32    H321    109.470    3.000
+ ROC      CD     C32    H311    109.470    3.000
+ ROC      H33    C32    H321    109.470    3.000
+ ROC      H33    C32    H311    109.470    3.000
+ ROC      H321   C32    H311    109.470    3.000
+ ROC      CD     C22    H23     109.470    3.000
+ ROC      CD     C22    H22     109.470    3.000
+ ROC      CD     C22    H21     109.470    3.000
+ ROC      H23    C22    H22     109.470    3.000
+ ROC      H23    C22    H21     109.470    3.000
+ ROC      H22    C22    H21     109.470    3.000
+ ROC      CD     C11    H13     109.470    3.000
+ ROC      CD     C11    H12     109.470    3.000
+ ROC      CD     C11    H11     109.470    3.000
+ ROC      H13    C11    H12     109.470    3.000
+ ROC      H13    C11    H11     109.470    3.000
+ ROC      H12    C11    H11     109.470    3.000
+ ROC      CC     C21    H2      108.810    3.000
+ ROC      CC     C21    C31     109.470    3.000
+ ROC      CC     C21    N11     109.500    3.000
+ ROC      H2     C21    C31     108.340    3.000
+ ROC      H2     C21    N11     109.500    3.000
+ ROC      C31    C21    N11     109.500    3.000
+ ROC      C21    C31    H31     109.470    3.000
+ ROC      C21    C31    H32     109.470    3.000
+ ROC      C21    C31    C3A     111.000    3.000
+ ROC      H31    C31    H32     107.900    3.000
+ ROC      H31    C31    C3A     109.470    3.000
+ ROC      H32    C31    C3A     109.470    3.000
+ ROC      C31    C3A    H3A     108.340    3.000
+ ROC      C31    C3A    C7A     111.000    3.000
+ ROC      C31    C3A    C41     109.470    3.000
+ ROC      H3A    C3A    C7A     108.340    3.000
+ ROC      H3A    C3A    C41     108.340    3.000
+ ROC      C7A    C3A    C41     111.000    3.000
+ ROC      C3A    C7A    H7A     108.340    3.000
+ ROC      C3A    C7A    C71     111.000    3.000
+ ROC      C3A    C7A    C81     111.000    3.000
+ ROC      H7A    C7A    C71     108.340    3.000
+ ROC      H7A    C7A    C81     108.340    3.000
+ ROC      C71    C7A    C81     109.470    3.000
+ ROC      C7A    C71    H71     109.470    3.000
+ ROC      C7A    C71    H72     109.470    3.000
+ ROC      C7A    C71    C61     111.000    3.000
+ ROC      H71    C71    H72     107.900    3.000
+ ROC      H71    C71    C61     109.470    3.000
+ ROC      H72    C71    C61     109.470    3.000
+ ROC      C71    C61    H61     109.470    3.000
+ ROC      C71    C61    H62     109.470    3.000
+ ROC      C71    C61    C51     111.000    3.000
+ ROC      H61    C61    H62     107.900    3.000
+ ROC      H61    C61    C51     109.470    3.000
+ ROC      H62    C61    C51     109.470    3.000
+ ROC      C61    C51    H51     109.470    3.000
+ ROC      C61    C51    H52     109.470    3.000
+ ROC      C61    C51    C41     111.000    3.000
+ ROC      H51    C51    H52     107.900    3.000
+ ROC      H51    C51    C41     109.470    3.000
+ ROC      H52    C51    C41     109.470    3.000
+ ROC      C51    C41    H42     109.470    3.000
+ ROC      C51    C41    H41     109.470    3.000
+ ROC      C51    C41    C3A     111.000    3.000
+ ROC      H42    C41    H41     107.900    3.000
+ ROC      H42    C41    C3A     109.470    3.000
+ ROC      H41    C41    C3A     109.470    3.000
+ ROC      C7A    C81    H81     109.470    3.000
+ ROC      C7A    C81    H82     109.470    3.000
+ ROC      C7A    C81    N11     109.500    3.000
+ ROC      H81    C81    H82     107.900    3.000
+ ROC      H81    C81    N11     109.470    3.000
+ ROC      H82    C81    N11     109.470    3.000
+ ROC      C81    N11    CM      109.470    3.000
+ ROC      C81    N11    C21     109.470    3.000
+ ROC      CM     N11    C21     109.470    3.000
+ ROC      N11    CM     HM1     109.470    3.000
+ ROC      N11    CM     HM2     109.470    3.000
+ ROC      N11    CM     C9      109.500    3.000
+ ROC      HM1    CM     HM2     107.900    3.000
+ ROC      HM1    CM     C9      109.470    3.000
+ ROC      HM2    CM     C9      109.470    3.000
+ ROC      CM     C9     HC      108.340    3.000
+ ROC      CM     C9     O2      109.470    3.000
+ ROC      CM     C9     CA1     111.000    3.000
+ ROC      HC     C9     O2      109.470    3.000
+ ROC      HC     C9     CA1     108.340    3.000
+ ROC      O2     C9     CA1     109.470    3.000
+ ROC      C9     O2     HO      109.470    3.000
+ ROC      C9     CA1    HA1     108.340    3.000
+ ROC      C9     CA1    CB1     111.000    3.000
+ ROC      C9     CA1    N2      110.000    3.000
+ ROC      HA1    CA1    CB1     108.340    3.000
+ ROC      HA1    CA1    N2      108.550    3.000
+ ROC      CB1    CA1    N2      110.000    3.000
+ ROC      CA1    CB1    HB21    109.470    3.000
+ ROC      CA1    CB1    HB31    109.470    3.000
+ ROC      CA1    CB1    CG1     109.470    3.000
+ ROC      HB21   CB1    HB31    107.900    3.000
+ ROC      HB21   CB1    CG1     109.470    3.000
+ ROC      HB31   CB1    CG1     109.470    3.000
+ ROC      CB1    CG1    CD2     120.000    3.000
+ ROC      CB1    CG1    CD1     120.000    3.000
+ ROC      CD2    CG1    CD1     120.000    3.000
+ ROC      CG1    CD2    HD2     120.000    3.000
+ ROC      CG1    CD2    CE2     120.000    3.000
+ ROC      HD2    CD2    CE2     120.000    3.000
+ ROC      CD2    CE2    HE2     120.000    3.000
+ ROC      CD2    CE2    CZ      120.000    3.000
+ ROC      HE2    CE2    CZ      120.000    3.000
+ ROC      CE2    CZ     HZ      120.000    3.000
+ ROC      CE2    CZ     CE1     120.000    3.000
+ ROC      HZ     CZ     CE1     120.000    3.000
+ ROC      CZ     CE1    HE1     120.000    3.000
+ ROC      CZ     CE1    CD1     120.000    3.000
+ ROC      HE1    CE1    CD1     120.000    3.000
+ ROC      CE1    CD1    HD1     120.000    3.000
+ ROC      CE1    CD1    CG1     120.000    3.000
+ ROC      HD1    CD1    CG1     120.000    3.000
+ ROC      CA1    N2     H1      118.500    3.000
+ ROC      CA1    N2     C1      121.500    3.000
+ ROC      H1     N2     C1      120.000    3.000
+ ROC      N2     C1     O1      123.000    3.000
+ ROC      N2     C1     CA      116.500    3.000
+ ROC      O1     C1     CA      120.500    3.000
+ ROC      C1     CA     HA      108.810    3.000
+ ROC      C1     CA     CB      109.470    3.000
+ ROC      C1     CA     N       111.600    3.000
+ ROC      HA     CA     CB      108.340    3.000
+ ROC      HA     CA     N       108.550    3.000
+ ROC      CB     CA     N       110.000    3.000
+ ROC      CA     CB     HB2     109.470    3.000
+ ROC      CA     CB     HB3     109.470    3.000
+ ROC      CA     CB     CG      109.470    3.000
+ ROC      HB2    CB     HB3     107.900    3.000
+ ROC      HB2    CB     CG      109.470    3.000
+ ROC      HB3    CB     CG      109.470    3.000
+ ROC      CB     CG     ND2     116.500    3.000
+ ROC      CB     CG     OD1     120.500    3.000
+ ROC      ND2    CG     OD1     123.000    3.000
+ ROC      CG     ND2    HD22    120.000    3.000
+ ROC      CG     ND2    HD21    120.000    3.000
+ ROC      HD22   ND2    HD21    120.000    3.000
+ ROC      CA     N      H       118.500    3.000
+ ROC      CA     N      C       121.500    3.000
+ ROC      H      N      C       120.000    3.000
+ ROC      N      C      O       123.000    3.000
+ ROC      N      C      C2      120.000    3.000
+ ROC      O      C      C2      120.500    3.000
+ ROC      C      C2     C3      120.000    3.000
+ ROC      C      C2     N1      120.000    3.000
+ ROC      C3     C2     N1      120.000    3.000
+ ROC      C2     C3     H3      120.000    3.000
+ ROC      C2     C3     C4      120.000    3.000
+ ROC      H3     C3     C4      120.000    3.000
+ ROC      C3     C4     H4      120.000    3.000
+ ROC      C3     C4     C4A     120.000    3.000
+ ROC      H4     C4     C4A     120.000    3.000
+ ROC      C4     C4A    C8A     120.000    3.000
+ ROC      C4     C4A    C5      120.000    3.000
+ ROC      C8A    C4A    C5      120.000    3.000
+ ROC      C4A    C8A    N1      120.000    3.000
+ ROC      C4A    C8A    C8      120.000    3.000
+ ROC      N1     C8A    C8      120.000    3.000
+ ROC      C8A    N1     C2      120.000    3.000
+ ROC      C8A    C8     H8      120.000    3.000
+ ROC      C8A    C8     C7      120.000    3.000
+ ROC      H8     C8     C7      120.000    3.000
+ ROC      C8     C7     H7      120.000    3.000
+ ROC      C8     C7     C6      120.000    3.000
+ ROC      H7     C7     C6      120.000    3.000
+ ROC      C7     C6     H6      120.000    3.000
+ ROC      C7     C6     C5      120.000    3.000
+ ROC      H6     C6     C5      120.000    3.000
+ ROC      C6     C5     H5      120.000    3.000
+ ROC      C6     C5     C4A     120.000    3.000
+ ROC      H5     C5     C4A     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ROC      CONST_1  O3     CC     N3     CD         0.000    0.000   0
+ ROC      var_1    CC     N3     CD     C11       60.028   20.000   1
+ ROC      var_2    N3     CD     C32    H311      60.008   20.000   1
+ ROC      var_3    N3     CD     C22    H21       60.027   20.000   1
+ ROC      var_4    N3     CD     C11    H11       59.989   20.000   1
+ ROC      var_5    O3     CC     C21    C31      100.105   20.000   3
+ ROC      var_6    CC     C21    C31    C3A      180.000   20.000   3
+ ROC      var_7    C21    C31    C3A    C7A       60.000   20.000   3
+ ROC      var_8    C31    C3A    C41    C51      -60.000   20.000   3
+ ROC      var_9    C31    C3A    C7A    C81      -60.000   20.000   3
+ ROC      var_10   C3A    C7A    C71    C61       60.000   20.000   3
+ ROC      var_11   C7A    C71    C61    C51      -60.000   20.000   3
+ ROC      var_12   C71    C61    C51    C41       60.000   20.000   3
+ ROC      var_13   C61    C51    C41    C3A      -60.000   20.000   3
+ ROC      var_14   C3A    C7A    C81    N11       60.000   20.000   3
+ ROC      var_15   C7A    C81    N11    CM       180.000   20.000   1
+ ROC      var_16   C81    N11    C21    CC       180.000   20.000   1
+ ROC      var_17   C81    N11    CM     C9       -73.410   20.000   1
+ ROC      var_18   N11    CM     C9     CA1     -172.623   20.000   3
+ ROC      var_19   CM     C9     O2     HO        60.050   20.000   1
+ ROC      var_20   CM     C9     CA1    N2       175.008   20.000   3
+ ROC      var_21   C9     CA1    CB1    CG1      175.021   20.000   3
+ ROC      var_22   CA1    CB1    CG1    CD2      -90.248   20.000   2
+ ROC      CONST_2  CB1    CG1    CD1    CE1      180.000    0.000   0
+ ROC      CONST_3  CB1    CG1    CD2    CE2      180.000    0.000   0
+ ROC      CONST_4  CG1    CD2    CE2    CZ         0.000    0.000   0
+ ROC      CONST_5  CD2    CE2    CZ     CE1        0.000    0.000   0
+ ROC      CONST_6  CE2    CZ     CE1    CD1        0.000    0.000   0
+ ROC      CONST_7  CZ     CE1    CD1    CG1        0.000    0.000   0
+ ROC      var_23   C9     CA1    N2     C1      -154.992   20.000   3
+ ROC      CONST_8  CA1    N2     C1     CA       180.000    0.000   0
+ ROC      var_24   N2     C1     CA     N        179.997   20.000   3
+ ROC      var_25   C1     CA     CB     CG       174.134   20.000   3
+ ROC      var_26   CA     CB     CG     OD1       -5.711   20.000   3
+ ROC      CONST_9  CB     CG     ND2    HD21       0.000    0.000   0
+ ROC      var_27   C1     CA     N      C        -97.903   20.000   3
+ ROC      CONST_10 CA     N      C      C2       180.000    0.000   0
+ ROC      var_28   N      C      C2     C3      -179.750   20.000   1
+ ROC      CONST_11 C      C2     C3     C4       180.000    0.000   0
+ ROC      CONST_12 C2     C3     C4     C4A        0.000    0.000   0
+ ROC      CONST_13 C3     C4     C4A    C8A        0.000    0.000   0
+ ROC      CONST_14 C4     C4A    C5     C6       180.000    0.000   0
+ ROC      CONST_15 C4     C4A    C8A    C8       180.000    0.000   0
+ ROC      CONST_16 C4A    C8A    N1     C2         0.000    0.000   0
+ ROC      CONST_17 C8A    N1     C2     C        180.000    0.000   0
+ ROC      CONST_18 C4A    C8A    C8     C7         0.000    0.000   0
+ ROC      CONST_19 C8A    C8     C7     C6         0.000    0.000   0
+ ROC      CONST_20 C8     C7     C6     C5         0.000    0.000   0
+ ROC      CONST_21 C7     C6     C5     C4A        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ROC      chir_01  CA     N      C1     CB        positiv
+ ROC      chir_02  C9     O2     CA1    CM        negativ
+ ROC      chir_03  CA1    C9     N2     CB1       negativ
+ ROC      chir_04  N11    CM     C21    C81       negativ
+ ROC      chir_05  C21    N11    CC     C31       positiv
+ ROC      chir_06  C3A    C31    C41    C7A       positiv
+ ROC      chir_07  C7A    C3A    C71    C81       positiv
+ ROC      chir_08  CD     N3     C11    C22       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ROC      plan-1    C         0.020
+ ROC      plan-1    O         0.020
+ ROC      plan-1    C2        0.020
+ ROC      plan-1    N         0.020
+ ROC      plan-1    H         0.020
+ ROC      plan-2    N1        0.020
+ ROC      plan-2    C2        0.020
+ ROC      plan-2    C8A       0.020
+ ROC      plan-2    C3        0.020
+ ROC      plan-2    C4        0.020
+ ROC      plan-2    C         0.020
+ ROC      plan-2    H3        0.020
+ ROC      plan-2    C4A       0.020
+ ROC      plan-2    H4        0.020
+ ROC      plan-2    C5        0.020
+ ROC      plan-2    C6        0.020
+ ROC      plan-2    C7        0.020
+ ROC      plan-2    C8        0.020
+ ROC      plan-2    H5        0.020
+ ROC      plan-2    H6        0.020
+ ROC      plan-2    H7        0.020
+ ROC      plan-2    H8        0.020
+ ROC      plan-3    N         0.020
+ ROC      plan-3    C         0.020
+ ROC      plan-3    CA        0.020
+ ROC      plan-3    H         0.020
+ ROC      plan-4    C1        0.020
+ ROC      plan-4    CA        0.020
+ ROC      plan-4    O1        0.020
+ ROC      plan-4    N2        0.020
+ ROC      plan-4    H1        0.020
+ ROC      plan-5    CG        0.020
+ ROC      plan-5    CB        0.020
+ ROC      plan-5    OD1       0.020
+ ROC      plan-5    ND2       0.020
+ ROC      plan-5    HD22      0.020
+ ROC      plan-5    HD21      0.020
+ ROC      plan-6    ND2       0.020
+ ROC      plan-6    CG        0.020
+ ROC      plan-6    HD21      0.020
+ ROC      plan-6    HD22      0.020
+ ROC      plan-7    N2        0.020
+ ROC      plan-7    C1        0.020
+ ROC      plan-7    CA1       0.020
+ ROC      plan-7    H1        0.020
+ ROC      plan-8    CG1       0.020
+ ROC      plan-8    CB1       0.020
+ ROC      plan-8    CD1       0.020
+ ROC      plan-8    CD2       0.020
+ ROC      plan-8    CE1       0.020
+ ROC      plan-8    CE2       0.020
+ ROC      plan-8    CZ        0.020
+ ROC      plan-8    HD1       0.020
+ ROC      plan-8    HD2       0.020
+ ROC      plan-8    HE1       0.020
+ ROC      plan-8    HE2       0.020
+ ROC      plan-8    HZ        0.020
+ ROC      plan-9    CC        0.020
+ ROC      plan-9    C21       0.020
+ ROC      plan-9    O3        0.020
+ ROC      plan-9    N3        0.020
+ ROC      plan-9    HN1       0.020
+ ROC      plan-10   N3        0.020
+ ROC      plan-10   CC        0.020
+ ROC      plan-10   CD        0.020
+ ROC      plan-10   HN1       0.020
+# ------------------------------------------------------

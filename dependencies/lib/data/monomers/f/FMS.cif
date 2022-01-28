@@ -1,0 +1,103 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FMS     FMS      "TRIFLUOROMETHANE SULFONAMIDE"     NON-POLYMER     10     8     .     
+#
+data_comp_FMS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FMS     C       C       CT      0       -6.540      1.685       17.348      
+FMS     F1      F       F       0       -7.720      1.283       16.904      
+FMS     F2      F       F       0       -6.552      3.005       17.435      
+FMS     F3      F       F       0       -6.357      1.187       18.561      
+FMS     S       S       S3      0       -5.258      1.150       16.263      
+FMS     N       N       NT2     0       -5.338      -0.451      16.180      
+FMS     O1      O       O       0       -4.033      1.512       16.907      
+FMS     O2      O       O       0       -5.589      1.690       14.981      
+FMS     HN1     H       H       0       -5.073      -0.761      15.391      
+FMS     HN2     H       H       0       -4.982      -0.843      16.892      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FMS       C         F1        SINGLE    n         1.323     0.011     1.323     0.011     
+FMS       C         F2        SINGLE    n         1.323     0.011     1.323     0.011     
+FMS       C         F3        SINGLE    n         1.323     0.011     1.323     0.011     
+FMS       C         S         SINGLE    n         1.763     0.020     1.763     0.020     
+FMS       S         N         SINGLE    n         1.605     0.020     1.605     0.020     
+FMS       S         O1        DOUBLE    n         1.430     0.011     1.430     0.011     
+FMS       S         O2        DOUBLE    n         1.430     0.011     1.430     0.011     
+FMS       N         HN1       SINGLE    n         1.036     0.016     0.888     0.020     
+FMS       N         HN2       SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FMS          F1           C          F2     108.248    1.50
+FMS          F1           C          F3     108.248    1.50
+FMS          F1           C           S     110.241    1.50
+FMS          F2           C          F3     108.248    1.50
+FMS          F2           C           S     110.241    1.50
+FMS          F3           C           S     110.241    1.50
+FMS           C           S           N     106.340    1.53
+FMS           C           S          O1     104.493    1.50
+FMS           C           S          O2     104.493    1.50
+FMS           N           S          O1     106.907    1.78
+FMS           N           S          O2     106.907    1.78
+FMS          O1           S          O2     119.199    1.50
+FMS           S           N         HN1     112.300    3.00
+FMS           S           N         HN2     112.300    3.00
+FMS         HN1           N         HN2     115.991    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FMS             sp3_sp3_1          F1           C           S           N     180.000   10.00     3
+FMS            sp3_sp3_10         HN1           N           S           C     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FMS SMILES           ACDLabs              10.04 "FC(F)(F)S(=O)(=O)N"
+FMS SMILES_CANONICAL CACTVS               3.341 "N[S](=O)(=O)C(F)(F)F"
+FMS SMILES           CACTVS               3.341 "N[S](=O)(=O)C(F)(F)F"
+FMS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(F)(F)(F)S(=O)(=O)N"
+FMS SMILES           "OpenEye OEToolkits" 1.5.0 "C(F)(F)(F)S(=O)(=O)N"
+FMS InChI            InChI                1.03  "InChI=1S/CH2F3NO2S/c2-1(3,4)8(5,6)7/h(H2,5,6,7)"
+FMS InChIKey         InChI                1.03  KAKQVSNHTBLJCH-UHFFFAOYSA-N
+FMS ?                acedrg               202         "dictionary generator"                  
+FMS ?                acedrg_database      11          "data source"                           
+FMS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FMS ?                refmac5              5.8.0189    "optimization tool"                     

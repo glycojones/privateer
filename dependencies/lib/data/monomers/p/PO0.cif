@@ -1,0 +1,232 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PO0      PO0 '1-BENZYL-(R)-PROPYLAMINE            ' non-polymer        26  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PO0
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PO0           N      N    NH2       0.000      0.000    0.000    0.000
+ PO0           H      H    H         0.000      0.830    0.287    0.506
+ PO0           HN2    H    H         0.000     -0.681   -0.593    0.459
+ PO0           CA     C    CH1       0.000     -0.213    0.440   -1.385
+ PO0           HA     H    H         0.000     -0.169   -0.429   -2.056
+ PO0           C      C    CH2       0.000      0.877    1.440   -1.775
+ PO0           HC1    H    H         0.000      0.833    2.303   -1.108
+ PO0           HC2    H    H         0.000      0.717    1.768   -2.804
+ PO0           CM     C    CH3       0.000      2.248    0.772   -1.658
+ PO0           HM3    H    H         0.000      2.405    0.453   -0.659
+ PO0           HM2    H    H         0.000      2.293   -0.067   -2.304
+ PO0           HM1    H    H         0.000      3.006    1.463   -1.927
+ PO0           CB     C    CH2       0.000     -1.585    1.107   -1.502
+ PO0           HB1    H    H         0.000     -1.743    1.435   -2.532
+ PO0           HB2    H    H         0.000     -1.627    1.971   -0.836
+ PO0           CG     C    CR6       0.000     -2.657    0.121   -1.117
+ PO0           CD2    C    CR16      0.000     -3.231   -0.686   -2.081
+ PO0           HD2    H    H         0.000     -2.911   -0.609   -3.113
+ PO0           CE2    C    CR16      0.000     -4.213   -1.593   -1.728
+ PO0           HE2    H    H         0.000     -4.657   -2.230   -2.482
+ PO0           CZ     C    CR16      0.000     -4.627   -1.685   -0.413
+ PO0           HZ     H    H         0.000     -5.399   -2.393   -0.137
+ PO0           CE1    C    CR16      0.000     -4.056   -0.875    0.550
+ PO0           HE1    H    H         0.000     -4.379   -0.948    1.580
+ PO0           CD1    C    CR16      0.000     -3.072    0.029    0.197
+ PO0           HD1    H    H         0.000     -2.626    0.666    0.952
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PO0      N      n/a    CA     START
+ PO0      H      N      .      .
+ PO0      HN2    N      .      .
+ PO0      CA     N      CB     .
+ PO0      HA     CA     .      .
+ PO0      C      CA     CM     .
+ PO0      HC1    C      .      .
+ PO0      HC2    C      .      .
+ PO0      CM     C      HM1    .
+ PO0      HM3    CM     .      .
+ PO0      HM2    CM     .      .
+ PO0      HM1    CM     .      .
+ PO0      CB     CA     CG     .
+ PO0      HB1    CB     .      .
+ PO0      HB2    CB     .      .
+ PO0      CG     CB     CD2    .
+ PO0      CD2    CG     CE2    .
+ PO0      HD2    CD2    .      .
+ PO0      CE2    CD2    CZ     .
+ PO0      HE2    CE2    .      .
+ PO0      CZ     CE2    CE1    .
+ PO0      HZ     CZ     .      .
+ PO0      CE1    CZ     CD1    .
+ PO0      HE1    CE1    .      .
+ PO0      CD1    CE1    HD1    .
+ PO0      HD1    CD1    .      END
+ PO0      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PO0       CA        N         single    1.450     0.020     1.450     0.020     
+PO0       H         N         single    1.036     0.016     0.914     0.007     
+PO0       HN2       N         single    1.036     0.016     0.914     0.007     
+PO0       C         CA        single    1.524     0.020     1.524     0.020     
+PO0       CB        CA        single    1.524     0.020     1.524     0.020     
+PO0       HA        CA        single    1.089     0.010     0.989     0.005     
+PO0       CM        C         single    1.513     0.020     1.513     0.020     
+PO0       HC1       C         single    1.089     0.010     0.989     0.005     
+PO0       HC2       C         single    1.089     0.010     0.989     0.005     
+PO0       CG        CB        single    1.511     0.020     1.511     0.020     
+PO0       HB1       CB        single    1.089     0.010     0.989     0.005     
+PO0       HB2       CB        single    1.089     0.010     0.989     0.005     
+PO0       CG        CD1       double    1.390     0.020     1.390     0.020     
+PO0       CD2       CG        single    1.390     0.020     1.390     0.020     
+PO0       CD1       CE1       single    1.390     0.020     1.390     0.020     
+PO0       HD1       CD1       single    1.082     0.013     0.975     0.010     
+PO0       CE2       CD2       double    1.390     0.020     1.390     0.020     
+PO0       HD2       CD2       single    1.082     0.013     0.975     0.010     
+PO0       CE1       CZ        double    1.390     0.020     1.390     0.020     
+PO0       HE1       CE1       single    1.082     0.013     0.975     0.010     
+PO0       CZ        CE2       single    1.390     0.020     1.390     0.020     
+PO0       HE2       CE2       single    1.082     0.013     0.975     0.010     
+PO0       HZ        CZ        single    1.082     0.013     0.975     0.010     
+PO0       HM1       CM        single    1.089     0.010     0.989     0.005     
+PO0       HM2       CM        single    1.089     0.010     0.989     0.005     
+PO0       HM3       CM        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PO0      H      N      HN2     120.000    3.000
+ PO0      H      N      CA      120.000    3.000
+ PO0      HN2    N      CA      120.000    3.000
+ PO0      N      CA     HA      109.470    3.000
+ PO0      N      CA     C       109.470    3.000
+ PO0      N      CA     CB      109.470    3.000
+ PO0      HA     CA     C       108.340    3.000
+ PO0      HA     CA     CB      108.340    3.000
+ PO0      C      CA     CB      109.470    3.000
+ PO0      CA     C      HC1     109.470    3.000
+ PO0      CA     C      HC2     109.470    3.000
+ PO0      CA     C      CM      111.000    3.000
+ PO0      HC1    C      HC2     107.900    3.000
+ PO0      HC1    C      CM      109.470    3.000
+ PO0      HC2    C      CM      109.470    3.000
+ PO0      C      CM     HM3     109.470    3.000
+ PO0      C      CM     HM2     109.470    3.000
+ PO0      C      CM     HM1     109.470    3.000
+ PO0      HM3    CM     HM2     109.470    3.000
+ PO0      HM3    CM     HM1     109.470    3.000
+ PO0      HM2    CM     HM1     109.470    3.000
+ PO0      CA     CB     HB1     109.470    3.000
+ PO0      CA     CB     HB2     109.470    3.000
+ PO0      CA     CB     CG      109.470    3.000
+ PO0      HB1    CB     HB2     107.900    3.000
+ PO0      HB1    CB     CG      109.470    3.000
+ PO0      HB2    CB     CG      109.470    3.000
+ PO0      CB     CG     CD2     120.000    3.000
+ PO0      CB     CG     CD1     120.000    3.000
+ PO0      CD2    CG     CD1     120.000    3.000
+ PO0      CG     CD2    HD2     120.000    3.000
+ PO0      CG     CD2    CE2     120.000    3.000
+ PO0      HD2    CD2    CE2     120.000    3.000
+ PO0      CD2    CE2    HE2     120.000    3.000
+ PO0      CD2    CE2    CZ      120.000    3.000
+ PO0      HE2    CE2    CZ      120.000    3.000
+ PO0      CE2    CZ     HZ      120.000    3.000
+ PO0      CE2    CZ     CE1     120.000    3.000
+ PO0      HZ     CZ     CE1     120.000    3.000
+ PO0      CZ     CE1    HE1     120.000    3.000
+ PO0      CZ     CE1    CD1     120.000    3.000
+ PO0      HE1    CE1    CD1     120.000    3.000
+ PO0      CE1    CD1    HD1     120.000    3.000
+ PO0      CE1    CD1    CG      120.000    3.000
+ PO0      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PO0      var_1    HN2    N      CA     CB        53.783   20.000   1
+ PO0      var_2    N      CA     C      CM        60.023   20.000   3
+ PO0      var_3    CA     C      CM     HM1     -179.988   20.000   3
+ PO0      var_4    N      CA     CB     CG       -59.984   20.000   3
+ PO0      var_5    CA     CB     CG     CD2      -90.311   20.000   2
+ PO0      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ PO0      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ PO0      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ PO0      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ PO0      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ PO0      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PO0      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PO0      plan-1    N         0.020
+ PO0      plan-1    CA        0.020
+ PO0      plan-1    H         0.020
+ PO0      plan-1    HN2       0.020
+ PO0      plan-2    CG        0.020
+ PO0      plan-2    CB        0.020
+ PO0      plan-2    CD1       0.020
+ PO0      plan-2    CD2       0.020
+ PO0      plan-2    CE1       0.020
+ PO0      plan-2    CE2       0.020
+ PO0      plan-2    CZ        0.020
+ PO0      plan-2    HD1       0.020
+ PO0      plan-2    HD2       0.020
+ PO0      plan-2    HE1       0.020
+ PO0      plan-2    HE2       0.020
+ PO0      plan-2    HZ        0.020
+# ------------------------------------------------------

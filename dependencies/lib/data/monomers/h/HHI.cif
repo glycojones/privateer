@@ -1,0 +1,177 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HHI      HHI '(2Z)-3-(1H-imidazol-5-yl)-2-iminopro' non-polymer        17  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HHI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HHI           OXT    O    OC       -0.500      0.000    0.000    0.000
+ HHI           C      C    C         0.000     -1.087    0.615   -0.069
+ HHI           O      O    OC       -0.500     -1.096    1.858   -0.211
+ HHI           CA     C    C         0.000     -2.366   -0.131    0.010
+ HHI           N      N    N         0.000     -2.358   -1.404    0.150
+ HHI           HN     H    H         0.000     -3.181   -1.890    0.202
+ HHI           CB     C    CH2       0.000     -3.676    0.609   -0.074
+ HHI           HB     H    H         0.000     -3.736    1.136   -1.028
+ HHI           HBA    H    H         0.000     -3.739    1.330    0.744
+ HHI           CG     C    CR5       0.000     -4.815   -0.372    0.032
+ HHI           CD2    C    CR15      0.000     -5.362   -1.078   -0.976
+ HHI           HD2    H    H         0.000     -5.060   -1.043   -2.016
+ HHI           NE2    N    NRD5      0.000     -6.347   -1.834   -0.466
+ HHI           CE1    C    CR15      0.000     -6.434   -1.620    0.817
+ HHI           HE1    H    H         0.000     -7.140   -2.091    1.490
+ HHI           ND1    N    NR15      0.000     -5.497   -0.713    1.169
+ HHI           HND1   H    H         0.000     -5.326   -0.342    2.125
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HHI      OXT    n/a    C      START
+ HHI      C      OXT    CA     .
+ HHI      O      C      .      .
+ HHI      CA     C      CB     .
+ HHI      N      CA     HN     .
+ HHI      HN     N      .      .
+ HHI      CB     CA     CG     .
+ HHI      HB     CB     .      .
+ HHI      HBA    CB     .      .
+ HHI      CG     CB     CD2    .
+ HHI      CD2    CG     NE2    .
+ HHI      HD2    CD2    .      .
+ HHI      NE2    CD2    CE1    .
+ HHI      CE1    NE2    ND1    .
+ HHI      HE1    CE1    .      .
+ HHI      ND1    CE1    HND1   .
+ HHI      HND1   ND1    .      END
+ HHI      CG     ND1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HHI       O         C         deloc     1.250     0.020     1.250     0.020     
+HHI       C         OXT       deloc     1.250     0.020     1.250     0.020     
+HHI       CA        C         single    1.460     0.020     1.460     0.020     
+HHI       N         CA        double    1.260     0.020     1.260     0.020     
+HHI       HN        N         single    1.016     0.010     0.899     0.007     
+HHI       CB        CA        single    1.510     0.020     1.510     0.020     
+HHI       CG        CB        single    1.510     0.020     1.510     0.020     
+HHI       HB        CB        single    1.089     0.010     0.989     0.005     
+HHI       HBA       CB        single    1.089     0.010     0.989     0.005     
+HHI       CG        ND1       single    1.340     0.020     1.340     0.020     
+HHI       CD2       CG        double    1.387     0.020     1.387     0.020     
+HHI       ND1       CE1       single    1.350     0.020     1.350     0.020     
+HHI       NE2       CD2       single    1.350     0.020     1.350     0.020     
+HHI       HD2       CD2       single    1.082     0.013     0.975     0.010     
+HHI       CE1       NE2       double    1.350     0.020     1.350     0.020     
+HHI       HE1       CE1       single    1.082     0.013     0.975     0.010     
+HHI       HND1      ND1       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HHI      OXT    C      O       123.000    3.000
+ HHI      OXT    C      CA      120.000    3.000
+ HHI      O      C      CA      120.000    3.000
+ HHI      C      CA     N       116.500    3.000
+ HHI      C      CA     CB      120.000    3.000
+ HHI      N      CA     CB      116.500    3.000
+ HHI      CA     N      HN      120.000    3.000
+ HHI      CA     CB     HB      109.470    3.000
+ HHI      CA     CB     HBA     109.470    3.000
+ HHI      CA     CB     CG      109.500    3.000
+ HHI      HB     CB     HBA     107.900    3.000
+ HHI      HB     CB     CG      109.470    3.000
+ HHI      HBA    CB     CG      109.470    3.000
+ HHI      CB     CG     CD2     126.000    3.000
+ HHI      CB     CG     ND1     126.000    3.000
+ HHI      CD2    CG     ND1     108.000    3.000
+ HHI      CG     CD2    HD2     126.000    3.000
+ HHI      CG     CD2    NE2     108.000    3.000
+ HHI      HD2    CD2    NE2     126.000    3.000
+ HHI      CD2    NE2    CE1     108.000    3.000
+ HHI      NE2    CE1    HE1     126.000    3.000
+ HHI      NE2    CE1    ND1     108.000    3.000
+ HHI      HE1    CE1    ND1     126.000    3.000
+ HHI      CE1    ND1    HND1    126.000    3.000
+ HHI      CE1    ND1    CG      108.000    3.000
+ HHI      HND1   ND1    CG      126.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HHI      var_1    OXT    C      CA     CB      -179.979   20.000   1
+ HHI      CONST_1  C      CA     N      HN       180.000    0.000   0
+ HHI      var_2    C      CA     CB     CG      -179.969   20.000   3
+ HHI      var_3    CA     CB     CG     CD2      -85.335   20.000   2
+ HHI      CONST_2  CB     CG     ND1    CE1      180.000    0.000   0
+ HHI      CONST_3  CB     CG     CD2    NE2      180.000    0.000   0
+ HHI      CONST_4  CG     CD2    NE2    CE1        0.000    0.000   0
+ HHI      CONST_5  CD2    NE2    CE1    ND1        0.000    0.000   0
+ HHI      CONST_6  NE2    CE1    ND1    CG         0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HHI      plan-1    C         0.020
+ HHI      plan-1    O         0.020
+ HHI      plan-1    CA        0.020
+ HHI      plan-1    OXT       0.020
+ HHI      plan-2    N         0.020
+ HHI      plan-2    CA        0.020
+ HHI      plan-2    HN        0.020
+ HHI      plan-2    C         0.020
+ HHI      plan-2    CB        0.020
+ HHI      plan-3    CG        0.020
+ HHI      plan-3    CB        0.020
+ HHI      plan-3    ND1       0.020
+ HHI      plan-3    CD2       0.020
+ HHI      plan-3    CE1       0.020
+ HHI      plan-3    NE2       0.020
+ HHI      plan-3    HND1      0.020
+ HHI      plan-3    HD2       0.020
+ HHI      plan-3    HE1       0.020
+# ------------------------------------------------------

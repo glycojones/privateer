@@ -1,0 +1,120 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+7BZ     7BZ      N,N-dimethylboranamine     NON-POLYMER     12     4     .     
+#
+data_comp_7BZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+7BZ     BN1     B       B       0       19.720      30.813      17.776      
+7BZ     N1      N       NT      0       20.358      29.767      17.063      
+7BZ     C3      C       CH3     0       21.806      29.968      17.090      
+7BZ     C2      C       CH3     0       19.883      28.471      17.548      
+7BZ     HN12    H       H       0       19.789      30.847      18.887      
+7BZ     HN11    H       H       0       19.156      31.595      17.219      
+7BZ     H32     H       H       0       22.020      30.845      16.716      
+7BZ     H31     H       H       0       22.241      29.273      16.559      
+7BZ     H33     H       H       0       22.125      29.920      18.012      
+7BZ     H23     H       H       0       19.483      27.976      16.807      
+7BZ     H22     H       H       0       19.210      28.612      18.242      
+7BZ     H21     H       H       0       20.626      27.955      17.918      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+7BZ       N1        C3        SINGLE    n         1.460     0.010     1.460     0.010     
+7BZ       N1        C2        SINGLE    n         1.460     0.010     1.460     0.010     
+7BZ       BN1       N1        SINGLE    n         1.417     0.018     1.417     0.018     
+7BZ       BN1       HN12      SINGLE    n         1.027     0.020     1.027     0.020     
+7BZ       BN1       HN11      SINGLE    n         1.027     0.020     1.027     0.020     
+7BZ       C3        H32       SINGLE    n         1.089     0.010     0.989     0.005     
+7BZ       C3        H31       SINGLE    n         1.089     0.010     0.989     0.005     
+7BZ       C3        H33       SINGLE    n         1.089     0.010     0.989     0.005     
+7BZ       C2        H23       SINGLE    n         1.089     0.010     0.989     0.005     
+7BZ       C2        H22       SINGLE    n         1.089     0.010     0.989     0.005     
+7BZ       C2        H21       SINGLE    n         1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+7BZ          N1         BN1        HN12     119.737    2.67
+7BZ          N1         BN1        HN11     119.737    2.67
+7BZ        HN12         BN1        HN11     120.527    3.00
+7BZ          C3          N1          C2     114.423    1.72
+7BZ          C3          N1         BN1     109.471    3.00
+7BZ          C2          N1         BN1     109.471    3.00
+7BZ          N1          C3         H32     109.483    1.50
+7BZ          N1          C3         H31     109.483    1.50
+7BZ          N1          C3         H33     109.483    1.50
+7BZ         H32          C3         H31     109.429    1.50
+7BZ         H32          C3         H33     109.429    1.50
+7BZ         H31          C3         H33     109.429    1.50
+7BZ          N1          C2         H23     109.483    1.50
+7BZ          N1          C2         H22     109.483    1.50
+7BZ          N1          C2         H21     109.483    1.50
+7BZ         H23          C2         H22     109.429    1.50
+7BZ         H23          C2         H21     109.429    1.50
+7BZ         H22          C2         H21     109.429    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+7BZ            sp3_sp3_13        HN12         BN1          N1          C3     180.000   10.00     3
+7BZ             sp3_sp3_1         H32          C3          N1          C2     180.000   10.00     3
+7BZ             sp3_sp3_7         H23          C2          N1          C3     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+7BZ    plan-1         BN1   0.020
+7BZ    plan-1        HN11   0.020
+7BZ    plan-1        HN12   0.020
+7BZ    plan-1          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+7BZ SMILES           ACDLabs              12.01 "BN(C)C"
+7BZ InChI            InChI                1.03  "InChI=1S/C2H8BN/c1-4(2)3/h3H2,1-2H3"
+7BZ InChIKey         InChI                1.03  SDWBRBLWPQDUQP-UHFFFAOYSA-N
+7BZ SMILES_CANONICAL CACTVS               3.385 "BN(C)C"
+7BZ SMILES           CACTVS               3.385 "BN(C)C"
+7BZ SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "BN(C)C"
+7BZ SMILES           "OpenEye OEToolkits" 2.0.6 "BN(C)C"
+7BZ ?                acedrg               202         "dictionary generator"                  
+7BZ ?                acedrg_database      11          "data source"                           
+7BZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+7BZ ?                refmac5              5.8.0189    "optimization tool"                     

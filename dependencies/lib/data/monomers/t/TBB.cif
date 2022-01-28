@@ -1,0 +1,153 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TBB     TBB      "tert-butylcarbamic acid"     NON-POLYMER     19     8     .     
+#
+data_comp_TBB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TBB     C24     C       C       0       1.387       0.136       0.413       
+TBB     N30     N       NH1     0       0.199       0.726       0.119       
+TBB     O31     O       O       0       1.520       -0.987      0.851       
+TBB     C35     C       CT      0       -1.119      0.053       -0.065      
+TBB     C40     C       CH3     0       -1.007      -1.057      -1.105      
+TBB     C41     C       CH3     0       -1.586      -0.518      1.269       
+TBB     C42     C       CH3     0       -2.133      1.085       -0.547      
+TBB     OXT     O       OH1     0       2.443       0.913       0.157       
+TBB     H27     H       H       0       0.188       1.599       0.040       
+TBB     H31     H       H       0       -1.897      -1.378      -1.338      
+TBB     H32     H       H       0       -0.483      -1.796      -0.748      
+TBB     H33     H       H       0       -0.571      -0.710      -1.904      
+TBB     H34     H       H       0       -1.466      0.150       1.967       
+TBB     H35     H       H       0       -1.066      -1.311      1.489       
+TBB     H36     H       H       0       -2.528      -0.758      1.210       
+TBB     H37     H       H       0       -1.805      1.509       -1.360      
+TBB     H38     H       H       0       -2.261      1.761       0.141       
+TBB     H39     H       H       0       -2.984      0.647       -0.732      
+TBB     HXT     H       H       0       2.900       1.059       0.891       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TBB       C24       O31       DOUBLE    n         1.210     0.012     1.210     0.012     
+TBB       C24       N30       SINGLE    n         1.340     0.015     1.340     0.015     
+TBB       C35       C40       SINGLE    n         1.522     0.011     1.522     0.011     
+TBB       N30       C35       SINGLE    n         1.481     0.011     1.481     0.011     
+TBB       C35       C41       SINGLE    n         1.522     0.011     1.522     0.011     
+TBB       C35       C42       SINGLE    n         1.522     0.011     1.522     0.011     
+TBB       C24       OXT       SINGLE    n         1.331     0.020     1.331     0.020     
+TBB       N30       H27       SINGLE    n         1.016     0.010     0.872     0.020     
+TBB       C40       H31       SINGLE    n         1.089     0.010     0.974     0.015     
+TBB       C40       H32       SINGLE    n         1.089     0.010     0.974     0.015     
+TBB       C40       H33       SINGLE    n         1.089     0.010     0.974     0.015     
+TBB       C41       H34       SINGLE    n         1.089     0.010     0.974     0.015     
+TBB       C41       H35       SINGLE    n         1.089     0.010     0.974     0.015     
+TBB       C41       H36       SINGLE    n         1.089     0.010     0.974     0.015     
+TBB       C42       H37       SINGLE    n         1.089     0.010     0.974     0.015     
+TBB       C42       H38       SINGLE    n         1.089     0.010     0.974     0.015     
+TBB       C42       H39       SINGLE    n         1.089     0.010     0.974     0.015     
+TBB       OXT       HXT       SINGLE    n         0.970     0.012     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TBB         O31         C24         N30     123.802    1.50
+TBB         O31         C24         OXT     122.478    1.50
+TBB         N30         C24         OXT     113.719    3.00
+TBB         C24         N30         C35     122.681    2.35
+TBB         C24         N30         H27     120.004    1.99
+TBB         C35         N30         H27     117.315    2.13
+TBB         C40         C35         N30     108.718    2.15
+TBB         C40         C35         C41     110.075    1.50
+TBB         C40         C35         C42     110.075    1.50
+TBB         N30         C35         C41     108.718    2.15
+TBB         N30         C35         C42     108.718    2.15
+TBB         C41         C35         C42     110.075    1.50
+TBB         C35         C40         H31     109.538    1.50
+TBB         C35         C40         H32     109.538    1.50
+TBB         C35         C40         H33     109.538    1.50
+TBB         H31         C40         H32     109.412    1.50
+TBB         H31         C40         H33     109.412    1.50
+TBB         H32         C40         H33     109.412    1.50
+TBB         C35         C41         H34     109.538    1.50
+TBB         C35         C41         H35     109.538    1.50
+TBB         C35         C41         H36     109.538    1.50
+TBB         H34         C41         H35     109.412    1.50
+TBB         H34         C41         H36     109.412    1.50
+TBB         H35         C41         H36     109.412    1.50
+TBB         C35         C42         H37     109.538    1.50
+TBB         C35         C42         H38     109.538    1.50
+TBB         C35         C42         H39     109.538    1.50
+TBB         H37         C42         H38     109.412    1.50
+TBB         H37         C42         H39     109.412    1.50
+TBB         H38         C42         H39     109.412    1.50
+TBB         C24         OXT         HXT     110.339    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TBB             sp2_sp2_3         O31         C24         N30         C35       0.000   10.00     2
+TBB             sp2_sp3_1         C24         N30         C35         C40       0.000   10.00     6
+TBB             sp3_sp3_1         N30         C35         C40         H31     180.000   10.00     3
+TBB            sp3_sp3_10         C40         C35         C41         H34     180.000   10.00     3
+TBB            sp3_sp3_19         C40         C35         C42         H37     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TBB    plan-1         C24   0.020
+TBB    plan-1         N30   0.020
+TBB    plan-1         O31   0.020
+TBB    plan-1         OXT   0.020
+TBB    plan-2         C24   0.020
+TBB    plan-2         C35   0.020
+TBB    plan-2         H27   0.020
+TBB    plan-2         N30   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TBB SMILES           ACDLabs              12.01 "O=C(O)NC(C)(C)C"
+TBB InChI            InChI                1.03  "InChI=1S/C5H11NO2/c1-5(2,3)6-4(7)8/h6H,1-3H3,(H,7,8)"
+TBB InChIKey         InChI                1.03  XBXCNNQPRYLIDE-UHFFFAOYSA-N
+TBB SMILES_CANONICAL CACTVS               3.370 "CC(C)(C)NC(O)=O"
+TBB SMILES           CACTVS               3.370 "CC(C)(C)NC(O)=O"
+TBB SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "CC(C)(C)NC(=O)O"
+TBB SMILES           "OpenEye OEToolkits" 1.7.6 "CC(C)(C)NC(=O)O"
+TBB ?                acedrg               202         "dictionary generator"                  
+TBB ?                acedrg_database      11          "data source"                           
+TBB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TBB ?                refmac5              5.8.0189    "optimization tool"                     

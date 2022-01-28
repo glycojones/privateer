@@ -1,0 +1,590 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HEG      HEG 'PROTOPORPHYRIN IX CONTAINING MG     ' non-polymer        73  43 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HEG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HEG           O2D    O    OC       -0.500     -2.700    5.144   15.814
+ HEG           CGD    C    C         0.000     -2.684    6.299   16.294
+ HEG           O1D    O    OC       -0.500     -2.522    7.335   15.611
+ HEG           CBD    C    CH2       0.000     -2.673    6.412   17.808
+ HEG           HBD1   H    H         0.000     -3.621    6.055   18.216
+ HEG           HBD2   H    H         0.000     -2.520    7.452   18.104
+ HEG           CAD    C    CH2       0.000     -1.501    5.533   18.359
+ HEG           HAD1   H    H         0.000     -0.585    5.807   17.831
+ HEG           HAD2   H    H         0.000     -1.733    4.484   18.162
+ HEG           C3D    C    CR5       0.000     -1.304    5.743   19.877
+ HEG           C2D    C    CR5       0.000     -0.678    6.792   20.439
+ HEG           CMD    C    CH3       0.000      0.076    7.965   19.779
+ HEG           HMD3   H    H         0.000     -0.349    8.888   20.088
+ HEG           HMD2   H    H         0.000      1.099    7.943   20.063
+ HEG           HMD1   H    H         0.000      0.008    7.889   18.722
+ HEG           C1D    C    CR5       0.000     -0.780    6.596   21.880
+ HEG           CHD    C    C1        0.000     -0.225    7.493   22.793
+ HEG           HHD    H    H         0.000      0.445    8.251   22.424
+ HEG           C4D    C    CR5       0.000     -1.843    4.913   20.911
+ HEG           CHA    C    C1        0.000     -2.584    3.760   20.753
+ HEG           HHA    H    H         0.000     -2.703    3.393   19.747
+ HEG           ND     N    NT        0.000     -1.537    5.493   22.145
+ HEG           MG     MG   MG        0.000     -1.748    4.648   23.968
+ HEG           NB     N    NT        0.000     -2.670    4.244   25.770
+ HEG           C4B    C    CR5       0.000     -2.421    4.852   26.972
+ HEG           C3B    C    CR5       0.000     -2.968    4.067   28.059
+ HEG           CAB    C    C1        0.000     -2.790    4.501   29.548
+ HEG           HAB    H    H         0.000     -1.793    4.659   29.923
+ HEG           CBB    C    C2        0.000     -3.793    4.679   30.353
+ HEG           HBB2   H    H         0.000     -3.612    4.978   31.367
+ HEG           HBB1   H    H         0.000     -4.793    4.525   29.996
+ HEG           C2B    C    CR5       0.000     -3.576    2.993   27.514
+ HEG           CMB    C    CH3       0.000     -4.385    1.886   28.207
+ HEG           HMB3   H    H         0.000     -5.394    1.918   27.879
+ HEG           HMB2   H    H         0.000     -3.973    0.937   27.971
+ HEG           HMB1   H    H         0.000     -4.357    2.025   29.259
+ HEG           C1B    C    CR5       0.000     -3.402    3.110   26.082
+ HEG           CHB    C    C1        0.000     -3.927    2.210   25.147
+ HEG           HHB    H    H         0.000     -4.423    1.329   25.518
+ HEG           NC     N    NR5       1.000     -1.073    6.390   24.810
+ HEG           C4C    C    CR5       0.000     -0.496    7.456   24.159
+ HEG           C3C    C    CR5       0.000     -0.142    8.508   25.104
+ HEG           CAC    C    C1        0.000      0.563    9.835   24.745
+ HEG           HAC    H    H         0.000      1.273    9.861   23.936
+ HEG           CBC    C    C2        0.000      0.292   10.978   25.448
+ HEG           HBC2   H    H         0.000      0.784   11.915   25.201
+ HEG           HBC1   H    H         0.000     -0.421   10.973   26.268
+ HEG           C2C    C    CR5       0.000     -0.554    8.097   26.311
+ HEG           CMC    C    CH3       0.000     -0.515    8.866   27.648
+ HEG           HMC3   H    H         0.000     -1.504    9.064   27.980
+ HEG           HMC2   H    H         0.000     -0.012    8.288   28.383
+ HEG           HMC1   H    H         0.000     -0.002    9.787   27.521
+ HEG           C1C    C    CR5       0.000     -1.182    6.786   26.114
+ HEG           CHC    C    C1        0.000     -1.682    6.025   27.157
+ HEG           HHC    H    H         0.000     -1.492    6.354   28.165
+ HEG           NA     N    NR5       1.000     -2.995    3.231   23.136
+ HEG           C4A    C    CR5       0.000     -3.848    2.382   23.774
+ HEG           C3A    C    CR5       0.000     -4.564    1.552   22.784
+ HEG           CMA    C    CH3       0.000     -5.587    0.484   23.208
+ HEG           HMA3   H    H         0.000     -6.549    0.739   22.838
+ HEG           HMA2   H    H         0.000     -5.304   -0.462   22.817
+ HEG           HMA1   H    H         0.000     -5.628    0.424   24.267
+ HEG           C2A    C    CR5       0.000     -4.183    1.966   21.602
+ HEG           C1A    C    CR5       0.000     -3.191    3.027   21.761
+ HEG           CAA    C    CH2       0.000     -4.674    1.520   20.192
+ HEG           HAA1   H    H         0.000     -4.872    2.407   19.586
+ HEG           HAA2   H    H         0.000     -5.594    0.942   20.301
+ HEG           CBA    C    CH2       0.000     -3.610    0.663   19.510
+ HEG           HBA1   H    H         0.000     -3.389   -0.162   20.190
+ HEG           HBA2   H    H         0.000     -2.723    1.291   19.402
+ HEG           CGA    C    C         0.000     -4.008    0.113   18.160
+ HEG           O1A    O    OC       -0.500     -5.119    0.483   17.721
+ HEG           O2A    O    OC       -0.500     -3.181   -0.676   17.651
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HEG      O2D    n/a    CGD    START
+ HEG      CGD    O2D    CBD    .
+ HEG      O1D    CGD    .      .
+ HEG      CBD    CGD    CAD    .
+ HEG      HBD1   CBD    .      .
+ HEG      HBD2   CBD    .      .
+ HEG      CAD    CBD    C3D    .
+ HEG      HAD1   CAD    .      .
+ HEG      HAD2   CAD    .      .
+ HEG      C3D    CAD    C4D    .
+ HEG      C2D    C3D    C1D    .
+ HEG      CMD    C2D    HMD1   .
+ HEG      HMD3   CMD    .      .
+ HEG      HMD2   CMD    .      .
+ HEG      HMD1   CMD    .      .
+ HEG      C1D    C2D    CHD    .
+ HEG      CHD    C1D    HHD    .
+ HEG      HHD    CHD    .      .
+ HEG      C4D    C3D    ND     .
+ HEG      CHA    C4D    HHA    .
+ HEG      HHA    CHA    .      .
+ HEG      ND     C4D    MG     .
+ HEG      MG     ND     NA     .
+ HEG      NB     MG     C4B    .
+ HEG      C4B    NB     C3B    .
+ HEG      C3B    C4B    C2B    .
+ HEG      CAB    C3B    CBB    .
+ HEG      HAB    CAB    .      .
+ HEG      CBB    CAB    HBB1   .
+ HEG      HBB2   CBB    .      .
+ HEG      HBB1   CBB    .      .
+ HEG      C2B    C3B    C1B    .
+ HEG      CMB    C2B    HMB1   .
+ HEG      HMB3   CMB    .      .
+ HEG      HMB2   CMB    .      .
+ HEG      HMB1   CMB    .      .
+ HEG      C1B    C2B    CHB    .
+ HEG      CHB    C1B    HHB    .
+ HEG      HHB    CHB    .      .
+ HEG      NC     MG     C4C    .
+ HEG      C4C    NC     C3C    .
+ HEG      C3C    C4C    C2C    .
+ HEG      CAC    C3C    CBC    .
+ HEG      HAC    CAC    .      .
+ HEG      CBC    CAC    HBC1   .
+ HEG      HBC2   CBC    .      .
+ HEG      HBC1   CBC    .      .
+ HEG      C2C    C3C    C1C    .
+ HEG      CMC    C2C    HMC1   .
+ HEG      HMC3   CMC    .      .
+ HEG      HMC2   CMC    .      .
+ HEG      HMC1   CMC    .      .
+ HEG      C1C    C2C    CHC    .
+ HEG      CHC    C1C    HHC    .
+ HEG      HHC    CHC    .      .
+ HEG      NA     MG     C4A    .
+ HEG      C4A    NA     C3A    .
+ HEG      C3A    C4A    C2A    .
+ HEG      CMA    C3A    HMA1   .
+ HEG      HMA3   CMA    .      .
+ HEG      HMA2   CMA    .      .
+ HEG      HMA1   CMA    .      .
+ HEG      C2A    C3A    CAA    .
+ HEG      C1A    C2A    .      .
+ HEG      CAA    C2A    CBA    .
+ HEG      HAA1   CAA    .      .
+ HEG      HAA2   CAA    .      .
+ HEG      CBA    CAA    CGA    .
+ HEG      HBA1   CBA    .      .
+ HEG      HBA2   CBA    .      .
+ HEG      CGA    CBA    O2A    .
+ HEG      O1A    CGA    .      .
+ HEG      O2A    CGA    .      END
+ HEG      CHA    C1A    .    ADD
+ HEG      CHB    C4A    .    ADD
+ HEG      CHC    C4B    .    ADD
+ HEG      CHD    C4C    .    ADD
+ HEG      NA     C1A    .    ADD
+ HEG      NB     C1B    .    ADD
+ HEG      NC     C1C    .    ADD
+ HEG      ND     C1D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HEG       NA        MG        single    2.035     0.020     2.035     0.020     
+HEG       NB        MG        single    2.045     0.020     2.045     0.020     
+HEG       NC        MG        single    2.035     0.020     2.035     0.020     
+HEG       MG        ND        single    2.045     0.020     2.045     0.020     
+HEG       CHA       C1A       double    1.483     0.020     1.483     0.020     
+HEG       CHA       C4D       single    1.483     0.020     1.483     0.020     
+HEG       HHA       CHA       single    1.082     0.013     0.975     0.010     
+HEG       CHB       C4A       single    1.483     0.020     1.483     0.020     
+HEG       CHB       C1B       double    1.483     0.020     1.483     0.020     
+HEG       HHB       CHB       single    1.082     0.013     0.975     0.010     
+HEG       CHC       C4B       double    1.483     0.020     1.483     0.020     
+HEG       CHC       C1C       single    1.483     0.020     1.483     0.020     
+HEG       HHC       CHC       single    1.082     0.013     0.975     0.010     
+HEG       CHD       C4C       double    1.483     0.020     1.483     0.020     
+HEG       CHD       C1D       single    1.483     0.020     1.483     0.020     
+HEG       HHD       CHD       single    1.082     0.013     0.975     0.010     
+HEG       NA        C1A       single    1.337     0.020     1.337     0.020     
+HEG       C4A       NA        double    1.337     0.020     1.337     0.020     
+HEG       C1A       C2A       single    1.490     0.020     1.490     0.020     
+HEG       C2A       C3A       double    1.490     0.020     1.490     0.020     
+HEG       CAA       C2A       single    1.510     0.020     1.510     0.020     
+HEG       C3A       C4A       single    1.490     0.020     1.490     0.020     
+HEG       CMA       C3A       single    1.506     0.020     1.506     0.020     
+HEG       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+HEG       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+HEG       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+HEG       CBA       CAA       single    1.524     0.020     1.524     0.020     
+HEG       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+HEG       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+HEG       CGA       CBA       single    1.510     0.020     1.510     0.020     
+HEG       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+HEG       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+HEG       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+HEG       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+HEG       NB        C1B       single    1.455     0.020     1.455     0.020     
+HEG       C4B       NB        single    1.455     0.020     1.455     0.020     
+HEG       C1B       C2B       single    1.490     0.020     1.490     0.020     
+HEG       C2B       C3B       double    1.490     0.020     1.490     0.020     
+HEG       CMB       C2B       single    1.506     0.020     1.506     0.020     
+HEG       C3B       C4B       single    1.490     0.020     1.490     0.020     
+HEG       CAB       C3B       single    1.483     0.020     1.483     0.020     
+HEG       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+HEG       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+HEG       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+HEG       CBB       CAB       double    1.320     0.020     1.320     0.020     
+HEG       HAB       CAB       single    1.082     0.013     0.975     0.010     
+HEG       HBB1      CBB       single    1.082     0.013     0.975     0.010     
+HEG       HBB2      CBB       single    1.082     0.013     0.975     0.010     
+HEG       NC        C1C       double    1.337     0.020     1.337     0.020     
+HEG       C4C       NC        single    1.337     0.020     1.337     0.020     
+HEG       C1C       C2C       single    1.490     0.020     1.490     0.020     
+HEG       C2C       C3C       double    1.490     0.020     1.490     0.020     
+HEG       CMC       C2C       single    1.506     0.020     1.506     0.020     
+HEG       C3C       C4C       single    1.490     0.020     1.490     0.020     
+HEG       CAC       C3C       single    1.483     0.020     1.483     0.020     
+HEG       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+HEG       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+HEG       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+HEG       CBC       CAC       double    1.320     0.020     1.320     0.020     
+HEG       HAC       CAC       single    1.082     0.013     0.975     0.010     
+HEG       HBC1      CBC       single    1.082     0.013     0.975     0.010     
+HEG       HBC2      CBC       single    1.082     0.013     0.975     0.010     
+HEG       ND        C1D       single    1.455     0.020     1.455     0.020     
+HEG       ND        C4D       single    1.455     0.020     1.455     0.020     
+HEG       C1D       C2D       double    1.490     0.020     1.490     0.020     
+HEG       C2D       C3D       single    1.490     0.020     1.490     0.020     
+HEG       CMD       C2D       single    1.506     0.020     1.506     0.020     
+HEG       C4D       C3D       double    1.490     0.020     1.490     0.020     
+HEG       C3D       CAD       single    1.510     0.020     1.510     0.020     
+HEG       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+HEG       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+HEG       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+HEG       CAD       CBD       single    1.524     0.020     1.524     0.020     
+HEG       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+HEG       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+HEG       CBD       CGD       single    1.510     0.020     1.510     0.020     
+HEG       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+HEG       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+HEG       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+HEG       CGD       O2D       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HEG      O2D    CGD    O1D     123.000    3.000
+ HEG      O2D    CGD    CBD     118.500    3.000
+ HEG      O1D    CGD    CBD     118.500    3.000
+ HEG      CGD    CBD    HBD1    109.470    3.000
+ HEG      CGD    CBD    HBD2    109.470    3.000
+ HEG      CGD    CBD    CAD     109.470    3.000
+ HEG      HBD1   CBD    HBD2    107.900    3.000
+ HEG      HBD1   CBD    CAD     109.470    3.000
+ HEG      HBD2   CBD    CAD     109.470    3.000
+ HEG      CBD    CAD    HAD1    109.470    3.000
+ HEG      CBD    CAD    HAD2    109.470    3.000
+ HEG      CBD    CAD    C3D     109.470    3.000
+ HEG      HAD1   CAD    HAD2    107.900    3.000
+ HEG      HAD1   CAD    C3D     109.470    3.000
+ HEG      HAD2   CAD    C3D     109.470    3.000
+ HEG      CAD    C3D    C2D     126.000    3.000
+ HEG      CAD    C3D    C4D     126.000    3.000
+ HEG      C2D    C3D    C4D     108.000    3.000
+ HEG      C3D    C2D    CMD     126.000    3.000
+ HEG      C3D    C2D    C1D     108.000    3.000
+ HEG      CMD    C2D    C1D     126.000    3.000
+ HEG      C2D    CMD    HMD3    109.470    3.000
+ HEG      C2D    CMD    HMD2    109.470    3.000
+ HEG      C2D    CMD    HMD1    109.470    3.000
+ HEG      HMD3   CMD    HMD2    109.470    3.000
+ HEG      HMD3   CMD    HMD1    109.470    3.000
+ HEG      HMD2   CMD    HMD1    109.470    3.000
+ HEG      C2D    C1D    CHD     117.000    3.000
+ HEG      C2D    C1D    ND      108.000    3.000
+ HEG      CHD    C1D    ND      108.000    3.000
+ HEG      C1D    CHD    HHD     120.000    3.000
+ HEG      C1D    CHD    C4C     120.000    3.000
+ HEG      HHD    CHD    C4C     120.000    3.000
+ HEG      C3D    C4D    CHA     117.000    3.000
+ HEG      C3D    C4D    ND      108.000    3.000
+ HEG      CHA    C4D    ND      108.000    3.000
+ HEG      C4D    CHA    HHA     120.000    3.000
+ HEG      C4D    CHA    C1A     120.000    3.000
+ HEG      HHA    CHA    C1A     120.000    3.000
+ HEG      C4D    ND     MG      109.500    3.000
+ HEG      C4D    ND     C1D     109.500    3.000
+ HEG      MG     ND     C1D     109.500    3.000
+ HEG      ND     MG     NB       90.000    3.000
+ HEG      ND     MG     NC       90.000    3.000
+ HEG      ND     MG     NA       90.000    3.000
+ HEG      NB     MG     NC       90.000    3.000
+ HEG      NB     MG     NA       90.000    3.000
+ HEG      NC     MG     NA       90.000    3.000
+ HEG      MG     NB     C4B     109.500    3.000
+ HEG      MG     NB     C1B     109.500    3.000
+ HEG      C4B    NB     C1B     109.500    3.000
+ HEG      NB     C4B    C3B     108.000    3.000
+ HEG      NB     C4B    CHC     108.000    3.000
+ HEG      C3B    C4B    CHC     117.000    3.000
+ HEG      C4B    C3B    CAB     117.000    3.000
+ HEG      C4B    C3B    C2B     108.000    3.000
+ HEG      CAB    C3B    C2B     117.000    3.000
+ HEG      C3B    CAB    HAB     120.000    3.000
+ HEG      C3B    CAB    CBB     120.000    3.000
+ HEG      HAB    CAB    CBB     120.000    3.000
+ HEG      CAB    CBB    HBB2    120.000    3.000
+ HEG      CAB    CBB    HBB1    120.000    3.000
+ HEG      HBB2   CBB    HBB1    120.000    3.000
+ HEG      C3B    C2B    CMB     126.000    3.000
+ HEG      C3B    C2B    C1B     108.000    3.000
+ HEG      CMB    C2B    C1B     126.000    3.000
+ HEG      C2B    CMB    HMB3    109.470    3.000
+ HEG      C2B    CMB    HMB2    109.470    3.000
+ HEG      C2B    CMB    HMB1    109.470    3.000
+ HEG      HMB3   CMB    HMB2    109.470    3.000
+ HEG      HMB3   CMB    HMB1    109.470    3.000
+ HEG      HMB2   CMB    HMB1    109.470    3.000
+ HEG      C2B    C1B    CHB     117.000    3.000
+ HEG      C2B    C1B    NB      108.000    3.000
+ HEG      CHB    C1B    NB      108.000    3.000
+ HEG      C1B    CHB    HHB     120.000    3.000
+ HEG      C1B    CHB    C4A     120.000    3.000
+ HEG      HHB    CHB    C4A     120.000    3.000
+ HEG      MG     NC     C4C     126.000    3.000
+ HEG      MG     NC     C1C     126.000    3.000
+ HEG      C4C    NC     C1C     108.000    3.000
+ HEG      NC     C4C    C3C     108.000    3.000
+ HEG      NC     C4C    CHD     108.000    3.000
+ HEG      C3C    C4C    CHD     117.000    3.000
+ HEG      C4C    C3C    CAC     117.000    3.000
+ HEG      C4C    C3C    C2C     108.000    3.000
+ HEG      CAC    C3C    C2C     117.000    3.000
+ HEG      C3C    CAC    HAC     120.000    3.000
+ HEG      C3C    CAC    CBC     120.000    3.000
+ HEG      HAC    CAC    CBC     120.000    3.000
+ HEG      CAC    CBC    HBC2    120.000    3.000
+ HEG      CAC    CBC    HBC1    120.000    3.000
+ HEG      HBC2   CBC    HBC1    120.000    3.000
+ HEG      C3C    C2C    CMC     126.000    3.000
+ HEG      C3C    C2C    C1C     108.000    3.000
+ HEG      CMC    C2C    C1C     126.000    3.000
+ HEG      C2C    CMC    HMC3    109.470    3.000
+ HEG      C2C    CMC    HMC2    109.470    3.000
+ HEG      C2C    CMC    HMC1    109.470    3.000
+ HEG      HMC3   CMC    HMC2    109.470    3.000
+ HEG      HMC3   CMC    HMC1    109.470    3.000
+ HEG      HMC2   CMC    HMC1    109.470    3.000
+ HEG      C2C    C1C    CHC     117.000    3.000
+ HEG      C2C    C1C    NC      108.000    3.000
+ HEG      CHC    C1C    NC      108.000    3.000
+ HEG      C1C    CHC    HHC     120.000    3.000
+ HEG      C1C    CHC    C4B     120.000    3.000
+ HEG      HHC    CHC    C4B     120.000    3.000
+ HEG      MG     NA     C4A     126.000    3.000
+ HEG      MG     NA     C1A     126.000    3.000
+ HEG      C4A    NA     C1A     108.000    3.000
+ HEG      NA     C4A    C3A     108.000    3.000
+ HEG      NA     C4A    CHB     108.000    3.000
+ HEG      C3A    C4A    CHB     117.000    3.000
+ HEG      C4A    C3A    CMA     126.000    3.000
+ HEG      C4A    C3A    C2A     108.000    3.000
+ HEG      CMA    C3A    C2A     126.000    3.000
+ HEG      C3A    CMA    HMA3    109.470    3.000
+ HEG      C3A    CMA    HMA2    109.470    3.000
+ HEG      C3A    CMA    HMA1    109.470    3.000
+ HEG      HMA3   CMA    HMA2    109.470    3.000
+ HEG      HMA3   CMA    HMA1    109.470    3.000
+ HEG      HMA2   CMA    HMA1    109.470    3.000
+ HEG      C3A    C2A    C1A     108.000    3.000
+ HEG      C3A    C2A    CAA     126.000    3.000
+ HEG      C1A    C2A    CAA     126.000    3.000
+ HEG      C2A    C1A    CHA     117.000    3.000
+ HEG      C2A    C1A    NA      108.000    3.000
+ HEG      CHA    C1A    NA      108.000    3.000
+ HEG      C2A    CAA    HAA1    109.470    3.000
+ HEG      C2A    CAA    HAA2    109.470    3.000
+ HEG      C2A    CAA    CBA     109.470    3.000
+ HEG      HAA1   CAA    HAA2    107.900    3.000
+ HEG      HAA1   CAA    CBA     109.470    3.000
+ HEG      HAA2   CAA    CBA     109.470    3.000
+ HEG      CAA    CBA    HBA1    109.470    3.000
+ HEG      CAA    CBA    HBA2    109.470    3.000
+ HEG      CAA    CBA    CGA     109.470    3.000
+ HEG      HBA1   CBA    HBA2    107.900    3.000
+ HEG      HBA1   CBA    CGA     109.470    3.000
+ HEG      HBA2   CBA    CGA     109.470    3.000
+ HEG      CBA    CGA    O1A     118.500    3.000
+ HEG      CBA    CGA    O2A     118.500    3.000
+ HEG      O1A    CGA    O2A     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HEG      var_1    O2D    CGD    CBD    CAD       52.469   20.000   3
+ HEG      var_2    CGD    CBD    CAD    C3D      172.383   20.000   3
+ HEG      var_3    CBD    CAD    C3D    C4D       96.469   20.000   2
+ HEG      CONST_1  CAD    C3D    C2D    C1D      180.000    0.000   0
+ HEG      var_4    C3D    C2D    CMD    HMD1       3.184   20.000   1
+ HEG      CONST_2  C3D    C2D    C1D    CHD      180.000    0.000   0
+ HEG      var_5    C2D    C1D    CHD    C4C      168.814   20.000   1
+ HEG      var_6    C1D    CHD    C4C    NC        15.412   20.000   1
+ HEG      CONST_3  CAD    C3D    C4D    ND       180.000    0.000   0
+ HEG      var_7    C3D    C4D    CHA    C1A     -174.352   20.000   1
+ HEG      var_8    C4D    CHA    C1A    C2A      167.177   20.000   1
+ HEG      CONST_4  C3D    C4D    ND     MG         0.000    0.000   0
+ HEG      CONST_5  C4D    ND     C1D    C2D        4.369    0.000   0
+ HEG      var_9    C4D    ND     MG     NA       -16.800   20.000   1
+ HEG      var_10   ND     MG     NB     C4B      -97.018   20.000   1
+ HEG      CONST_6  MG     NB     C1B    C2B        0.000    0.000   0
+ HEG      CONST_7  MG     NB     C4B    C3B        0.000    0.000   0
+ HEG      CONST_8  NB     C4B    C3B    C2B        0.000    0.000   0
+ HEG      var_11   C4B    C3B    CAB    CBB      123.926   20.000   1
+ HEG      CONST_9  C3B    CAB    CBB    HBB1       0.024    0.000   0
+ HEG      CONST_10 C4B    C3B    C2B    C1B        0.000    0.000   0
+ HEG      var_12   C3B    C2B    CMB    HMB1      -4.417   20.000   1
+ HEG      CONST_11 C3B    C2B    C1B    CHB      180.000    0.000   0
+ HEG      var_13   C2B    C1B    CHB    C4A      174.697   20.000   1
+ HEG      var_14   C1B    CHB    C4A    NA        17.205   20.000   1
+ HEG      var_15   ND     MG     NC     C4C      -11.081   20.000   1
+ HEG      CONST_12 MG     NC     C1C    C2C      179.379    0.000   0
+ HEG      CONST_13 MG     NC     C4C    C3C     -179.707    0.000   0
+ HEG      CONST_14 NC     C4C    C3C    C2C        0.000    0.000   0
+ HEG      var_16   C4C    C3C    CAC    CBC      147.655   20.000   1
+ HEG      CONST_15 C3C    CAC    CBC    HBC1      -0.001    0.000   0
+ HEG      CONST_16 C4C    C3C    C2C    C1C        0.000    0.000   0
+ HEG      var_17   C3C    C2C    CMC    HMC1      -6.022   20.000   1
+ HEG      CONST_17 C3C    C2C    C1C    CHC      180.000    0.000   0
+ HEG      var_18   C2C    C1C    CHC    C4B      172.180   20.000   1
+ HEG      var_19   C1C    CHC    C4B    NB         4.992   20.000   1
+ HEG      var_20   ND     MG     NA     C4A     -164.330   20.000   1
+ HEG      CONST_18 MG     NA     C1A    C2A     -178.001    0.000   0
+ HEG      CONST_19 MG     NA     C4A    C3A      179.026    0.000   0
+ HEG      CONST_20 NA     C4A    C3A    C2A        0.000    0.000   0
+ HEG      var_21   C4A    C3A    CMA    HMA1      -3.307   20.000   1
+ HEG      CONST_21 C4A    C3A    C2A    CAA      180.000    0.000   0
+ HEG      CONST_22 C3A    C2A    C1A    CHA      180.000    0.000   0
+ HEG      var_22   C3A    C2A    CAA    CBA     -106.787   20.000   2
+ HEG      var_23   C2A    CAA    CBA    CGA      176.996   20.000   3
+ HEG      var_24   CAA    CBA    CGA    O2A     -174.473   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HEG      chir_01  NB     MG     C1B    C4B       negativ
+ HEG      chir_02  ND     MG     C1D    C4D       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HEG      plan-1    CHA       0.020
+ HEG      plan-1    C1A       0.020
+ HEG      plan-1    C4D       0.020
+ HEG      plan-1    HHA       0.020
+ HEG      plan-2    CHB       0.020
+ HEG      plan-2    C4A       0.020
+ HEG      plan-2    C1B       0.020
+ HEG      plan-2    HHB       0.020
+ HEG      plan-3    CHC       0.020
+ HEG      plan-3    C4B       0.020
+ HEG      plan-3    C1C       0.020
+ HEG      plan-3    HHC       0.020
+ HEG      plan-4    CHD       0.020
+ HEG      plan-4    C4C       0.020
+ HEG      plan-4    C1D       0.020
+ HEG      plan-4    HHD       0.020
+ HEG      plan-5    NA        0.020
+ HEG      plan-5    MG        0.020
+ HEG      plan-5    C1A       0.020
+ HEG      plan-5    C4A       0.020
+ HEG      plan-5    C2A       0.020
+ HEG      plan-5    C3A       0.020
+ HEG      plan-5    CHA       0.020
+ HEG      plan-5    CAA       0.020
+ HEG      plan-5    CMA       0.020
+ HEG      plan-5    CHB       0.020
+ HEG      plan-5    HHA       0.020
+ HEG      plan-5    HHB       0.020
+ HEG      plan-6    CGA       0.020
+ HEG      plan-6    CBA       0.020
+ HEG      plan-6    O1A       0.020
+ HEG      plan-6    O2A       0.020
+ HEG      plan-7    C1B       0.020
+ HEG      plan-7    CHB       0.020
+ HEG      plan-7    NB        0.020
+ HEG      plan-7    C2B       0.020
+ HEG      plan-7    C3B       0.020
+ HEG      plan-7    C4B       0.020
+ HEG      plan-7    CMB       0.020
+ HEG      plan-7    CAB       0.020
+ HEG      plan-7    CHC       0.020
+ HEG      plan-7    HHB       0.020
+ HEG      plan-7    HAB       0.020
+ HEG      plan-7    HHC       0.020
+ HEG      plan-8    CAB       0.020
+ HEG      plan-8    C3B       0.020
+ HEG      plan-8    CBB       0.020
+ HEG      plan-8    HAB       0.020
+ HEG      plan-8    HBB1      0.020
+ HEG      plan-8    HBB2      0.020
+ HEG      plan-9    NC        0.020
+ HEG      plan-9    MG        0.020
+ HEG      plan-9    C1C       0.020
+ HEG      plan-9    C4C       0.020
+ HEG      plan-9    C2C       0.020
+ HEG      plan-9    C3C       0.020
+ HEG      plan-9    CHC       0.020
+ HEG      plan-9    CMC       0.020
+ HEG      plan-9    CAC       0.020
+ HEG      plan-9    CHD       0.020
+ HEG      plan-9    HHC       0.020
+ HEG      plan-9    HAC       0.020
+ HEG      plan-9    HHD       0.020
+ HEG      plan-10   CAC       0.020
+ HEG      plan-10   C3C       0.020
+ HEG      plan-10   CBC       0.020
+ HEG      plan-10   HAC       0.020
+ HEG      plan-10   HBC1      0.020
+ HEG      plan-10   HBC2      0.020
+ HEG      plan-11   C1D       0.020
+ HEG      plan-11   CHD       0.020
+ HEG      plan-11   ND        0.020
+ HEG      plan-11   C2D       0.020
+ HEG      plan-11   C3D       0.020
+ HEG      plan-11   C4D       0.020
+ HEG      plan-11   CMD       0.020
+ HEG      plan-11   CAD       0.020
+ HEG      plan-11   CHA       0.020
+ HEG      plan-11   HHD       0.020
+ HEG      plan-11   HHA       0.020
+ HEG      plan-12   CGD       0.020
+ HEG      plan-12   CBD       0.020
+ HEG      plan-12   O1D       0.020
+ HEG      plan-12   O2D       0.020
+# ------------------------------------------------------

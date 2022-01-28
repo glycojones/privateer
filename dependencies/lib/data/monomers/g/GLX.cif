@@ -1,0 +1,193 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GLX      GLX 'GLU/GLN AMBIGUOUS                   ' peptide            20  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GLX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GLX           N      N    NH1      -1.000      0.000    0.000    0.000
+ GLX           H      H    HNH1      0.000     -0.572    0.062    0.769
+ GLX           CA     C    CH1       0.000      1.035    1.071    0.062
+ GLX           HA     H    H         0.000      1.540    0.965    0.896
+ GLX           CB     C    CH2       0.000      1.989    0.907   -1.095
+ GLX           HB1    H    H         0.000      1.481    0.986   -1.918
+ GLX           HB2    H    H         0.000      2.379    0.021   -1.042
+ GLX           CG     C    CH2       0.000      3.083    1.941   -1.077
+ GLX           HG1    H    H         0.000      3.603    1.845   -0.264
+ GLX           HG2    H    H         0.000      2.688    2.827   -1.105
+ GLX           CD     C    C         0.000      3.978    1.752   -2.273
+ GLX           XE1    N    NH2       0.000      3.800    0.755   -3.315
+ GLX           HE11   H    H         0.000      3.108    0.032   -3.375
+ GLX           HE12   H    H         0.000      4.449    0.718   -4.089
+ GLX           XE2    N    NH2       0.000      5.071    2.701   -2.464
+ GLX           HE21   H    H         0.000      5.299    3.458   -1.830
+ GLX           HE22   H    H         0.000      5.698    2.627   -3.256
+ GLX           C      C    C         0.000      0.359    2.442    0.081
+ GLX           O      O    OC       -0.500     -0.760    2.667   -0.392
+ GLX           OXT    O    OC       -0.500      0.855    3.388    0.705
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GLX      N      n/a    CA     START
+ GLX      H      N      .      .
+ GLX      CA     N      C      .
+ GLX      HA     CA     .      .
+ GLX      CB     CA     CG     .
+ GLX      HB1    CB     .      .
+ GLX      HB2    CB     .      .
+ GLX      CG     CB     CD     .
+ GLX      HG1    CG     .      .
+ GLX      HG2    CG     .      .
+ GLX      CD     CG     XE2    .
+ GLX      XE1    CD     HE12   .
+ GLX      HE11   XE1    .      .
+ GLX      HE12   XE1    .      .
+ GLX      XE2    CD     HE22   .
+ GLX      HE21   XE2    .      .
+ GLX      HE22   XE2    .      .
+ GLX      C      CA     OXT    .
+ GLX      O      C      .      .
+ GLX      OXT    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GLX       N         CA        single    1.491     0.021     1.491     0.021     
+GLX       CA        HA        single    1.089     0.010     0.989     0.005     
+GLX       CA        CB        single    1.530     0.020     1.530     0.020     
+GLX       CB        HB1       single    1.089     0.010     0.989     0.005     
+GLX       CB        HB2       single    1.089     0.010     0.989     0.005     
+GLX       CB        CG        single    1.520     0.020     1.520     0.020     
+GLX       CG        HG1       single    1.089     0.010     0.989     0.005     
+GLX       CG        HG2       single    1.089     0.010     0.989     0.005     
+GLX       CG        CD        single    1.516     0.020     1.516     0.020     
+GLX       XE1       CD        single    1.450     0.020     1.450     0.020     
+GLX       XE2       CD        single    1.450     0.020     1.450     0.020     
+GLX       HE11      XE1       single    1.016     0.010     0.899     0.007     
+GLX       HE12      XE1       single    1.016     0.010     0.899     0.007     
+GLX       HE21      XE2       single    1.016     0.010     0.899     0.007     
+GLX       HE22      XE2       single    1.016     0.010     0.899     0.007     
+GLX       CA        C         single    1.525     0.021     1.525     0.021     
+GLX       C         O         deloc     1.231     0.020     1.231     0.020     
+GLX       N         H         single    1.016     0.010     0.899     0.007     
+GLX       C         OXT       deloc     1.231     0.020     1.231     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GLX      O      C      CA      121.000    3.000
+ GLX      C      CA     HA      108.810    3.000
+ GLX      C      CA     N       109.470    3.000
+ GLX      C      CA     CB      109.470    3.000
+ GLX      HA     CA     N       109.470    3.000
+ GLX      HA     CA     CB      108.340    3.000
+ GLX      N      CA     CB      109.470    3.000
+ GLX      CA     CB     HB1     109.470    3.000
+ GLX      CA     CB     HB2     109.470    3.000
+ GLX      CA     CB     CG      111.000    3.000
+ GLX      HB1    CB     HB2     107.900    3.000
+ GLX      HB1    CB     CG      109.470    3.000
+ GLX      HB2    CB     CG      109.470    3.000
+ GLX      CB     CG     HG1     109.470    3.000
+ GLX      CB     CG     HG2     109.470    3.000
+ GLX      CB     CG     CD      111.000    3.000
+ GLX      HG1    CG     HG2     107.900    3.000
+ GLX      HG1    CG     CD      109.470    3.000
+ GLX      HG2    CG     CD      109.470    3.000
+ GLX      CG     CD     XE2     120.000    3.000
+ GLX      CG     CD     XE1     120.000    3.000
+ GLX      XE2    CD     XE1     120.000    3.000
+ GLX      CD     XE2    HE22    120.000    3.000
+ GLX      CD     XE2    HE21    120.000    3.000
+ GLX      HE22   XE2    HE21    120.000    3.000
+ GLX      CD     XE1    HE12    120.000    3.000
+ GLX      CD     XE1    HE11    120.000    3.000
+ GLX      HE12   XE1    HE11    120.000    3.000
+ GLX      H      N      CA      109.470    3.000
+ GLX      CA     C      OXT     121.000    3.000
+ GLX      O      C      OXT     118.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GLX      chi1             N      CA     CB     CG               180.000           15.000   3
+ GLX      chi2             CA     CB     CG     CD               180.000           15.000   3
+ GLX      chi3             CB     CG     CD     XE1                0.000           30.000   2
+ GLX      hh2              CG     CD     XE2    HE21               0.000           30.000   2
+ GLX      hh1              CG     CD     XE1    HE11               0.000           30.000   2
+ GLX      psi              N      CA     C      OXT              160.000           30.000   2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GLX      chir_01          CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GLX      plan-2            CG        0.020
+ GLX      plan-2            CD        0.020
+ GLX      plan-2            XE1       0.020
+ GLX      plan-2            XE2       0.020
+ GLX      plan-3            XE1       0.020
+ GLX      plan-3            CD        0.020
+ GLX      plan-3            HE11      0.020
+ GLX      plan-3            HE12      0.020
+ GLX      plan-4            XE2       0.020
+ GLX      plan-4            CD        0.020
+ GLX      plan-4            HE21      0.020
+ GLX      plan-4            HE22      0.020
+ GLX      oxt               C         0.020
+ GLX      oxt               CA        0.020
+ GLX      oxt               O         0.020
+ GLX      oxt               OXT       0.020
+# ------------------------------------------------------

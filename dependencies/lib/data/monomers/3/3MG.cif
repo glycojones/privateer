@@ -1,0 +1,222 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3MG      3MG '3-O-methyl-beta-D-glucopyranose     ' pyranose           27  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_3MG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 3MG           C1     C    CH1       0.000      0.000    0.000    0.000
+ 3MG           H1     H    H         0.000      0.111    0.223   -1.070
+ 3MG           C2     C    CH1       0.000     -1.353   -0.672    0.244
+ 3MG           H2     H    H         0.000     -1.448   -0.933    1.307
+ 3MG           O2     O    OH1       0.000     -1.448   -1.857   -0.550
+ 3MG           HO2    H    H         0.000     -0.740   -2.467   -0.302
+ 3MG           C3     C    CH1       0.000     -2.474    0.297   -0.149
+ 3MG           H3     H    H         0.000     -2.410    0.518   -1.223
+ 3MG           O3     O    O2        0.000     -3.741   -0.294    0.145
+ 3MG           C7     C    CH3       0.000     -4.289   -1.058   -0.933
+ 3MG           H73    H    H         0.000     -4.424   -0.432   -1.777
+ 3MG           H72    H    H         0.000     -3.627   -1.846   -1.180
+ 3MG           H71    H    H         0.000     -5.224   -1.461   -0.641
+ 3MG           C4     C    CH1       0.000     -2.316    1.593    0.652
+ 3MG           H4     H    H         0.000     -2.430    1.378    1.724
+ 3MG           O4     O    OH1       0.000     -3.313    2.532    0.244
+ 3MG           HO4    H    H         0.000     -3.209    3.351    0.747
+ 3MG           C5     C    CH1       0.000     -0.925    2.178    0.393
+ 3MG           H5     H    H         0.000     -0.826    2.430   -0.672
+ 3MG           C6     C    CH2       0.000     -0.737    3.441    1.235
+ 3MG           H61    H    H         0.000     -0.749    3.175    2.295
+ 3MG           H62    H    H         0.000     -1.550    4.140    1.028
+ 3MG           O6     O    OH1       0.000      0.514    4.051    0.909
+ 3MG           HO6    H    H         0.000      0.631    4.848    1.442
+ 3MG           O1     O    OH1       0.000      1.049   -0.877    0.415
+ 3MG           HO1    H    H         0.000      1.938   -0.514    0.290
+ 3MG           O5     O    O2        0.000      0.069    1.215    0.750
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 3MG      C1     n/a    O5     START
+ 3MG      H1     C1     .      .
+ 3MG      C2     C1     C3     .
+ 3MG      H2     C2     .      .
+ 3MG      O2     C2     HO2    .
+ 3MG      HO2    O2     .      .
+ 3MG      C3     C2     C4     .
+ 3MG      H3     C3     .      .
+ 3MG      O3     C3     C7     .
+ 3MG      C7     O3     H71    .
+ 3MG      H73    C7     .      .
+ 3MG      H72    C7     .      .
+ 3MG      H71    C7     .      .
+ 3MG      C4     C3     C5     .
+ 3MG      H4     C4     .      .
+ 3MG      O4     C4     HO4    .
+ 3MG      HO4    O4     .      .
+ 3MG      C5     C4     C6     .
+ 3MG      H5     C5     .      .
+ 3MG      C6     C5     O6     .
+ 3MG      H61    C6     .      .
+ 3MG      H62    C6     .      .
+ 3MG      O6     C6     HO6    .
+ 3MG      HO6    O6     .      .
+ 3MG      O1     C1     .      .
+ 3MG      HO1    O1     .      .
+ 3MG      O5     C1     .      END
+ 3MG      C5     O5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3MG       C7        O3        single    1.426     0.020     1.426     0.020     
+3MG       O3        C3        single    1.426     0.020     1.426     0.020     
+3MG       O2        C2        single    1.432     0.020     1.432     0.020     
+3MG       C3        C2        single    1.524     0.020     1.524     0.020     
+3MG       C4        C3        single    1.524     0.020     1.524     0.020     
+3MG       O4        C4        single    1.432     0.020     1.432     0.020     
+3MG       C2        C1        single    1.524     0.020     1.524     0.020     
+3MG       C5        C4        single    1.524     0.020     1.524     0.020     
+3MG       O1        C1        single    1.432     0.020     1.432     0.020     
+3MG       O5        C1        single    1.426     0.020     1.426     0.020     
+3MG       C5        O5        single    1.426     0.020     1.426     0.020     
+3MG       C6        C5        single    1.524     0.020     1.524     0.020     
+3MG       O6        C6        single    1.432     0.020     1.432     0.020     
+3MG       HO6       O6        single    0.970     0.012     0.839     0.014     
+3MG       H61       C6        single    1.089     0.010     0.989     0.005     
+3MG       H62       C6        single    1.089     0.010     0.989     0.005     
+3MG       H5        C5        single    1.089     0.010     0.989     0.005     
+3MG       H4        C4        single    1.089     0.010     0.989     0.005     
+3MG       HO4       O4        single    0.970     0.012     0.839     0.014     
+3MG       H3        C3        single    1.089     0.010     0.989     0.005     
+3MG       H71       C7        single    1.089     0.010     0.989     0.005     
+3MG       H72       C7        single    1.089     0.010     0.989     0.005     
+3MG       H73       C7        single    1.089     0.010     0.989     0.005     
+3MG       H2        C2        single    1.089     0.010     0.989     0.005     
+3MG       HO2       O2        single    0.970     0.012     0.839     0.014     
+3MG       H1        C1        single    1.089     0.010     0.989     0.005     
+3MG       HO1       O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 3MG      H1     C1     C2      108.340    3.000
+ 3MG      H1     C1     O1      109.470    3.000
+ 3MG      C2     C1     O1      109.470    3.000
+ 3MG      H1     C1     O5      109.470    3.000
+ 3MG      C2     C1     O5      109.470    3.000
+ 3MG      O1     C1     O5      109.470    3.000
+ 3MG      C1     C2     H2      108.340    3.000
+ 3MG      C1     C2     O2      109.470    3.000
+ 3MG      C1     C2     C3      111.000    3.000
+ 3MG      H2     C2     O2      109.470    3.000
+ 3MG      H2     C2     C3      108.340    3.000
+ 3MG      O2     C2     C3      109.470    3.000
+ 3MG      C2     O2     HO2     109.470    3.000
+ 3MG      C2     C3     H3      108.340    3.000
+ 3MG      C2     C3     O3      109.470    3.000
+ 3MG      C2     C3     C4      111.000    3.000
+ 3MG      H3     C3     O3      109.470    3.000
+ 3MG      H3     C3     C4      108.340    3.000
+ 3MG      O3     C3     C4      109.470    3.000
+ 3MG      C3     O3     C7      111.800    3.000
+ 3MG      O3     C7     H73     109.470    3.000
+ 3MG      O3     C7     H72     109.470    3.000
+ 3MG      O3     C7     H71     109.470    3.000
+ 3MG      H73    C7     H72     109.470    3.000
+ 3MG      H73    C7     H71     109.470    3.000
+ 3MG      H72    C7     H71     109.470    3.000
+ 3MG      C3     C4     H4      108.340    3.000
+ 3MG      C3     C4     O4      109.470    3.000
+ 3MG      C3     C4     C5      111.000    3.000
+ 3MG      H4     C4     O4      109.470    3.000
+ 3MG      H4     C4     C5      108.340    3.000
+ 3MG      O4     C4     C5      109.470    3.000
+ 3MG      C4     O4     HO4     109.470    3.000
+ 3MG      C4     C5     H5      108.340    3.000
+ 3MG      C4     C5     C6      111.000    3.000
+ 3MG      C4     C5     O5      109.470    3.000
+ 3MG      H5     C5     C6      108.340    3.000
+ 3MG      H5     C5     O5      109.470    3.000
+ 3MG      C6     C5     O5      109.470    3.000
+ 3MG      C5     C6     H61     109.470    3.000
+ 3MG      C5     C6     H62     109.470    3.000
+ 3MG      C5     C6     O6      109.470    3.000
+ 3MG      H61    C6     H62     107.900    3.000
+ 3MG      H61    C6     O6      109.470    3.000
+ 3MG      H62    C6     O6      109.470    3.000
+ 3MG      C6     O6     HO6     109.470    3.000
+ 3MG      C1     O1     HO1     109.470    3.000
+ 3MG      C1     O5     C5      111.800    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 3MG      var_1    O5     C1     C2     C3        60.000   20.000   3
+ 3MG      var_2    C1     C2     O2     HO2       60.295   20.000   1
+ 3MG      var_3    C1     C2     C3     C4       -60.000   20.000   3
+ 3MG      var_4    C2     C3     O3     C7       -89.983   20.000   1
+ 3MG      var_5    C3     O3     C7     H71     -179.971   20.000   1
+ 3MG      var_6    C2     C3     C4     C5        60.000   20.000   3
+ 3MG      var_7    C3     C4     O4     HO4     -179.683   20.000   1
+ 3MG      var_8    C3     C4     C5     C6       180.000   20.000   3
+ 3MG      var_9    C4     C5     O5     C1        60.000   20.000   1
+ 3MG      var_10   C4     C5     C6     O6      -175.076   20.000   3
+ 3MG      var_11   C5     C6     O6     HO6     -179.997   20.000   1
+ 3MG      var_12   O1     C1     O5     C5       180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 3MG      chir_01  C5     C6     O5     C4        negativ
+ 3MG      chir_02  C4     C5     O4     C3        negativ
+ 3MG      chir_03  C3     C4     O3     C2        positiv
+ 3MG      chir_04  C2     C3     O2     C1        negativ
+ 3MG      chir_05  C1     O5     C2     O1        positiv
+# ------------------------------------------------------

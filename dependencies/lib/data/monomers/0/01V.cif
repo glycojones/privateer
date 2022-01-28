@@ -1,0 +1,153 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+01V     01V      "1-(2,5-dichlorophenyl)methanamine"     NON-POLYMER     17     10     .     
+#
+data_comp_01V
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+01V     "N'"    N       NT2     0       15.086      -12.245     21.011      
+01V     "CA'"   C       CH2     0       13.946      -11.332     20.875      
+01V     "CB'"   C       CR6     0       12.946      -11.465     22.001      
+01V     "CG'"   C       CR6     0       12.221      -12.647     22.202      
+01V     "CD'"   C       CR16    0       11.302      -12.770     23.239      
+01V     "CE'"   C       CR16    0       11.088      -11.708     24.100      
+01V     CDB     C       CR6     0       11.799      -10.530     23.914      
+01V     CGB     C       CR16    0       12.716      -10.403     22.883      
+01V     CL1     CL      CL      0       12.453      -14.018     21.144      
+01V     CL2     CL      CL      0       11.532      -9.192      24.997      
+01V     "HN'"   H       H       0       15.702      -11.974     20.320      
+01V     H2      H       H       0       14.740      -13.111     20.760      
+01V     HA11    H       H       0       13.497      -11.517     20.018      
+01V     HA12    H       H       0       14.290      -10.410     20.845      
+01V     "HD'"   H       H       0       10.828      -13.573     23.353      
+01V     "HE'"   H       H       0       10.467      -11.785     24.804      
+01V     "HG'"   H       H       0       13.187      -9.600      22.773      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+01V       "N'"      "CA'"     SINGLE    n         1.467     0.015     1.467     0.015     
+01V       "CA'"     "CB'"     SINGLE    n         1.509     0.011     1.509     0.011     
+01V       "CB'"     "CG'"     DOUBLE    y         1.392     0.010     1.392     0.010     
+01V       "CB'"     CGB       SINGLE    y         1.389     0.011     1.389     0.011     
+01V       "CG'"     "CD'"     SINGLE    y         1.384     0.010     1.384     0.010     
+01V       "CG'"     CL1       SINGLE    n         1.746     0.013     1.746     0.013     
+01V       "CD'"     "CE'"     DOUBLE    y         1.377     0.010     1.377     0.010     
+01V       "CE'"     CDB       SINGLE    y         1.382     0.010     1.382     0.010     
+01V       CDB       CGB       DOUBLE    y         1.379     0.010     1.379     0.010     
+01V       CDB       CL2       SINGLE    n         1.742     0.010     1.742     0.010     
+01V       "N'"      "HN'"     SINGLE    n         1.036     0.016     0.965     0.020     
+01V       "N'"      H2        SINGLE    n         1.036     0.016     0.965     0.020     
+01V       "CA'"     HA11      SINGLE    n         1.089     0.010     0.985     0.020     
+01V       "CA'"     HA12      SINGLE    n         1.089     0.010     0.985     0.020     
+01V       "CD'"     "HD'"     SINGLE    n         1.082     0.013     0.939     0.011     
+01V       "CE'"     "HE'"     SINGLE    n         1.082     0.013     0.942     0.016     
+01V       CGB       "HG'"     SINGLE    n         1.082     0.013     0.937     0.012     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+01V       "CA'"        "N'"       "HN'"     104.789    3.00
+01V       "CA'"        "N'"          H2     104.789    3.00
+01V       "HN'"        "N'"          H2     107.163    3.00
+01V        "N'"       "CA'"       "CB'"     112.424    2.20
+01V        "N'"       "CA'"        HA11     107.542    2.93
+01V        "N'"       "CA'"        HA12     107.542    2.93
+01V       "CB'"       "CA'"        HA11     109.005    1.50
+01V       "CB'"       "CA'"        HA12     109.005    1.50
+01V        HA11       "CA'"        HA12     107.838    1.50
+01V       "CA'"       "CB'"       "CG'"     121.383    1.50
+01V       "CA'"       "CB'"         CGB     120.918    1.50
+01V       "CG'"       "CB'"         CGB     117.699    1.50
+01V       "CB'"       "CG'"       "CD'"     121.867    1.50
+01V       "CB'"       "CG'"         CL1     119.798    1.50
+01V       "CD'"       "CG'"         CL1     118.335    1.50
+01V       "CG'"       "CD'"       "CE'"     119.633    1.50
+01V       "CG'"       "CD'"       "HD'"     120.134    1.50
+01V       "CE'"       "CD'"       "HD'"     120.233    1.50
+01V       "CD'"       "CE'"         CDB     119.202    1.50
+01V       "CD'"       "CE'"       "HE'"     120.346    1.50
+01V         CDB       "CE'"       "HE'"     120.452    1.50
+01V       "CE'"         CDB         CGB     121.306    1.50
+01V       "CE'"         CDB         CL2     119.254    1.50
+01V         CGB         CDB         CL2     119.440    1.50
+01V       "CB'"         CGB         CDB     120.293    1.50
+01V       "CB'"         CGB       "HG'"     119.541    1.50
+01V         CDB         CGB       "HG'"     120.166    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+01V             sp3_sp3_1       "CB'"       "CA'"        "N'"       "HN'"     180.000   10.00     3
+01V             sp2_sp3_2       "CG'"       "CB'"       "CA'"        "N'"     -90.000   10.00     6
+01V       const_sp2_sp2_4       "CA'"       "CB'"       "CG'"         CL1       0.000   10.00     2
+01V              const_23       "CA'"       "CB'"         CGB         CDB     180.000   10.00     2
+01V       const_sp2_sp2_6       "CE'"       "CD'"       "CG'"         CL1     180.000   10.00     2
+01V       const_sp2_sp2_9       "CG'"       "CD'"       "CE'"         CDB       0.000   10.00     2
+01V              const_15         CL2         CDB       "CE'"       "CD'"     180.000   10.00     2
+01V              const_19         CL2         CDB         CGB       "CB'"     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+01V    plan-1       "CA'"   0.020
+01V    plan-1       "CB'"   0.020
+01V    plan-1       "CD'"   0.020
+01V    plan-1         CDB   0.020
+01V    plan-1       "CE'"   0.020
+01V    plan-1       "CG'"   0.020
+01V    plan-1         CGB   0.020
+01V    plan-1         CL1   0.020
+01V    plan-1         CL2   0.020
+01V    plan-1       "HD'"   0.020
+01V    plan-1       "HE'"   0.020
+01V    plan-1       "HG'"   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+01V SMILES           ACDLabs              12.01 "Clc1ccc(Cl)cc1CN"
+01V SMILES_CANONICAL CACTVS               3.370 "NCc1cc(Cl)ccc1Cl"
+01V SMILES           CACTVS               3.370 "NCc1cc(Cl)ccc1Cl"
+01V SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc(c(cc1Cl)CN)Cl"
+01V SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(c(cc1Cl)CN)Cl"
+01V InChI            InChI                1.03  "InChI=1S/C7H7Cl2N/c8-6-1-2-7(9)5(3-6)4-10/h1-3H,4,10H2"
+01V InChIKey         InChI                1.03  AKGJLIXNRPNPCH-UHFFFAOYSA-N
+01V ?                acedrg               202         "dictionary generator"                  
+01V ?                acedrg_database      11          "data source"                           
+01V ?                rdkit                2017.03.2   "Chemoinformatics tool"
+01V ?                refmac5              5.8.0189    "optimization tool"                     

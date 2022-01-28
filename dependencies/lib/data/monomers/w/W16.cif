@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+W16     W16      "5-(2-CHLOROETHYL)-1,3,4-THIADIAZOL-2-AMINE"     NON-POLYMER     15     9     .     
+#
+data_comp_W16
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+W16     CLA     CL      CL      0       52.835      -19.629     8.888       
+W16     CAC     C       CH2     0       53.958      -18.296     8.487       
+W16     CAD     C       CH2     0       53.316      -17.331     7.546       
+W16     CAI     C       CR5     0       54.208      -16.177     7.176       
+W16     SAG     S       S2      0       54.745      -15.891     5.546       
+W16     NAF     N       NRD5    0       54.648      -15.303     8.033       
+W16     NAE     N       NRD5    0       55.479      -14.347     7.464       
+W16     CAH     C       CR5     0       55.611      -14.517     6.168       
+W16     NAA     N       NH2     0       56.341      -13.719     5.378       
+W16     HAC1    H       H       0       54.772      -18.667     8.076       
+W16     HAC2    H       H       0       54.217      -17.828     9.313       
+W16     HAD1    H       H       0       52.502      -16.979     7.954       
+W16     HAD2    H       H       0       53.061      -17.803     6.729       
+W16     HAA1    H       H       0       56.763      -13.040     5.716       
+W16     HAA2    H       H       0       56.391      -13.882     4.527       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+W16       CLA       CAC       SINGLE    n         1.789     0.016     1.789     0.016     
+W16       CAC       CAD       SINGLE    n         1.493     0.020     1.493     0.020     
+W16       CAD       CAI       SINGLE    n         1.505     0.019     1.505     0.019     
+W16       CAI       SAG       SINGLE    n         1.741     0.018     1.741     0.018     
+W16       CAI       NAF       DOUBLE    n         1.302     0.020     1.302     0.020     
+W16       SAG       CAH       SINGLE    n         1.739     0.010     1.739     0.010     
+W16       NAF       NAE       SINGLE    n         1.388     0.010     1.388     0.010     
+W16       NAE       CAH       DOUBLE    n         1.313     0.010     1.313     0.010     
+W16       CAH       NAA       SINGLE    n         1.339     0.010     1.339     0.010     
+W16       CAC       HAC1      SINGLE    n         1.089     0.010     0.984     0.010     
+W16       CAC       HAC2      SINGLE    n         1.089     0.010     0.984     0.010     
+W16       CAD       HAD1      SINGLE    n         1.089     0.010     0.977     0.015     
+W16       CAD       HAD2      SINGLE    n         1.089     0.010     0.977     0.015     
+W16       NAA       HAA1      SINGLE    n         1.016     0.010     0.868     0.020     
+W16       NAA       HAA2      SINGLE    n         1.016     0.010     0.868     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+W16         CLA         CAC         CAD     110.601    2.06
+W16         CLA         CAC        HAC1     109.363    1.50
+W16         CLA         CAC        HAC2     109.363    1.50
+W16         CAD         CAC        HAC1     109.520    1.50
+W16         CAD         CAC        HAC2     109.520    1.50
+W16        HAC1         CAC        HAC2     108.190    1.50
+W16         CAC         CAD         CAI     113.269    1.50
+W16         CAC         CAD        HAD1     109.072    1.50
+W16         CAC         CAD        HAD2     109.072    1.50
+W16         CAI         CAD        HAD1     108.553    1.50
+W16         CAI         CAD        HAD2     108.553    1.50
+W16        HAD1         CAD        HAD2     107.721    1.50
+W16         CAD         CAI         SAG     122.600    1.50
+W16         CAD         CAI         NAF     123.517    2.52
+W16         SAG         CAI         NAF     113.883    1.50
+W16         CAI         SAG         CAH      87.078    1.50
+W16         CAI         NAF         NAE     113.298    1.50
+W16         NAF         NAE         CAH     111.868    1.50
+W16         SAG         CAH         NAE     113.805    1.50
+W16         SAG         CAH         NAA     122.153    1.50
+W16         NAE         CAH         NAA     124.042    1.50
+W16         CAH         NAA        HAA1     119.968    1.50
+W16         CAH         NAA        HAA2     119.968    1.50
+W16        HAA1         NAA        HAA2     120.064    2.21
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+W16             sp3_sp3_1         CLA         CAC         CAD         CAI     180.000   10.00     3
+W16             sp2_sp3_6         SAG         CAI         CAD         CAC     -90.000   10.00     6
+W16             sp2_sp2_5         CAD         CAI         NAF         NAE     180.000   10.00     2
+W16             sp2_sp2_3         CAH         NAE         NAF         CAI       0.000   10.00     2
+W16             sp2_sp2_2         NAA         CAH         NAE         NAF     180.000   10.00     2
+W16             sp2_sp2_6         SAG         CAH         NAA        HAA1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+W16    plan-1         CAD   0.020
+W16    plan-1         CAI   0.020
+W16    plan-1         NAF   0.020
+W16    plan-1         SAG   0.020
+W16    plan-2         CAH   0.020
+W16    plan-2         NAA   0.020
+W16    plan-2         NAE   0.020
+W16    plan-2         SAG   0.020
+W16    plan-3         CAH   0.020
+W16    plan-3        HAA1   0.020
+W16    plan-3        HAA2   0.020
+W16    plan-3         NAA   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+W16 SMILES           ACDLabs              12.01 "ClCCc1nnc(s1)N"
+W16 SMILES_CANONICAL CACTVS               3.370 "Nc1sc(CCCl)nn1"
+W16 SMILES           CACTVS               3.370 "Nc1sc(CCCl)nn1"
+W16 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "C(CCl)c1nnc(s1)N"
+W16 SMILES           "OpenEye OEToolkits" 1.7.2 "C(CCl)c1nnc(s1)N"
+W16 InChI            InChI                1.03  "InChI=1S/C4H6ClN3S/c5-2-1-3-7-8-4(6)9-3/h1-2H2,(H2,6,8)"
+W16 InChIKey         InChI                1.03  XGIWQRDVHNRICP-UHFFFAOYSA-N
+W16 ?                acedrg               202         "dictionary generator"                  
+W16 ?                acedrg_database      11          "data source"                           
+W16 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+W16 ?                refmac5              5.8.0189    "optimization tool"                     

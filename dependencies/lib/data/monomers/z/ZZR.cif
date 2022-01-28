@@ -1,0 +1,163 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZZR     ZZR      "3,6-diamino-1,5-dihydro[1,2,4]triazolo[4,3-b][1,2,4]triazol-4-ium"     non-polymer     16     10     .     
+#
+data_comp_ZZR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ZZR     NAC     N       NRD5    0       -11.354     -2.645      -6.132      
+ZZR     NAF     N       NT1     0       -11.773     -3.211      -7.353      
+ZZR     CAI     C       CR55    0       -11.786     -2.228      -8.316      
+ZZR     NAD     N       NRD5    0       -12.079     -2.118      -9.633      
+ZZR     CAG     C       CR5     0       -11.824     -0.748      -9.838      
+ZZR     NAA     N       NH2     0       -11.971     -0.135      -11.018     
+ZZR     NAE     N       NT1     0       -11.401     -0.098      -8.677      
+ZZR     NAJ     N       NT      1       -11.398     -1.116      -7.724      
+ZZR     CAH     C       CR5     0       -11.142     -1.385      -6.410      
+ZZR     NAB     N       NH2     0       -10.723     -0.483      -5.500      
+ZZR     HAF     H       H       0       -12.367     -3.893      -7.349      
+ZZR     HAA1    H       H       0       -11.749     0.700       -11.099     
+ZZR     HAA2    H       H       0       -12.289     -0.577      -11.694     
+ZZR     HAE     H       H       0       -11.169     0.740       -8.488      
+ZZR     HAB1    H       H       0       -10.865     -0.625      -4.640      
+ZZR     HAB2    H       H       0       -10.306     0.251       -5.765      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZZR       NAC       NAF       SINGLE    n         1.379     0.019     1.379     0.019     
+ZZR       NAC       CAH       DOUBLE    n         1.300     0.013     1.300     0.013     
+ZZR       NAF       CAI       SINGLE    n         1.374     0.020     1.374     0.020     
+ZZR       CAI       NAD       SINGLE    y         1.361     0.020     1.361     0.020     
+ZZR       CAI       NAJ       DOUBLE    y         1.391     0.020     1.391     0.020     
+ZZR       NAD       CAG       DOUBLE    y         1.370     0.020     1.370     0.020     
+ZZR       CAG       NAA       SINGLE    n         1.338     0.019     1.338     0.019     
+ZZR       CAG       NAE       SINGLE    y         1.367     0.020     1.367     0.020     
+ZZR       NAE       NAJ       SINGLE    y         1.417     0.020     1.417     0.020     
+ZZR       NAJ       CAH       SINGLE    n         1.388     0.020     1.388     0.020     
+ZZR       CAH       NAB       SINGLE    n         1.348     0.020     1.348     0.020     
+ZZR       NAF       HAF       SINGLE    n         1.016     0.010     0.905     0.020     
+ZZR       NAA       HAA1      SINGLE    n         1.016     0.010     0.868     0.020     
+ZZR       NAA       HAA2      SINGLE    n         1.016     0.010     0.868     0.020     
+ZZR       NAE       HAE       SINGLE    n         1.016     0.010     0.890     0.020     
+ZZR       NAB       HAB1      SINGLE    n         1.016     0.010     0.884     0.020     
+ZZR       NAB       HAB2      SINGLE    n         1.016     0.010     0.884     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ZZR         NAF         NAC         CAH     107.218    2.18
+ZZR         NAC         NAF         CAI     111.935    1.68
+ZZR         NAC         NAF         HAF     119.638    2.89
+ZZR         CAI         NAF         HAF     122.363    3.00
+ZZR         NAF         CAI         NAD     132.597    1.50
+ZZR         NAF         CAI         NAJ     109.177    1.69
+ZZR         NAD         CAI         NAJ     118.226    1.50
+ZZR         CAI         NAD         CAG     109.947    3.00
+ZZR         NAD         CAG         NAA     123.368    1.93
+ZZR         NAD         CAG         NAE     113.182    2.45
+ZZR         NAA         CAG         NAE     123.450    1.50
+ZZR         CAG         NAA        HAA1     119.667    1.80
+ZZR         CAG         NAA        HAA2     119.667    1.80
+ZZR        HAA1         NAA        HAA2     120.665    2.04
+ZZR         CAG         NAE         NAJ     110.719    2.91
+ZZR         CAG         NAE         HAE     124.261    3.00
+ZZR         NAJ         NAE         HAE     113.066    3.00
+ZZR         CAI         NAJ         NAE     110.719    2.91
+ZZR         CAI         NAJ         CAH     110.017    2.77
+ZZR         NAE         NAJ         CAH     109.471    3.00
+ZZR         NAC         CAH         NAJ     115.577    1.50
+ZZR         NAC         CAH         NAB     121.840    1.93
+ZZR         NAJ         CAH         NAB     122.583    2.40
+ZZR         CAH         NAB        HAB1     119.971    2.47
+ZZR         CAH         NAB        HAB2     119.971    2.47
+ZZR        HAB1         NAB        HAB2     120.058    2.09
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ZZR            sp2_sp2_13         CAH         NAC         NAF         CAI       0.000   10.00     2
+ZZR            sp2_sp2_28         NAB         CAH         NAC         NAF     180.000   10.00     2
+ZZR            sp2_sp2_17         NAD         CAI         NAF         NAC     180.000   10.00     2
+ZZR             sp2_sp2_2         NAF         CAI         NAD         CAG     180.000   10.00     2
+ZZR            sp2_sp2_20         NAF         CAI         NAJ         NAE     180.000   10.00     2
+ZZR             sp2_sp2_4         NAA         CAG         NAD         CAI     180.000   10.00     2
+ZZR            sp2_sp2_31         NAD         CAG         NAA        HAA1       0.000   10.00     2
+ZZR             sp2_sp2_7         NAA         CAG         NAE         NAJ     180.000   10.00     2
+ZZR             sp2_sp2_9         CAG         NAE         NAJ         CAI       0.000   10.00     2
+ZZR            sp2_sp2_25         NAB         CAH         NAJ         CAI     180.000   10.00     2
+ZZR            sp2_sp2_35         NAC         CAH         NAB        HAB1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ZZR    plan-1         CAG   0.020
+ZZR    plan-1         CAH   0.020
+ZZR    plan-1         CAI   0.020
+ZZR    plan-1         HAE   0.020
+ZZR    plan-1         NAA   0.020
+ZZR    plan-1         NAD   0.020
+ZZR    plan-1         NAE   0.020
+ZZR    plan-1         NAF   0.020
+ZZR    plan-1         NAJ   0.020
+ZZR    plan-2         CAG   0.020
+ZZR    plan-2        HAA1   0.020
+ZZR    plan-2        HAA2   0.020
+ZZR    plan-2         NAA   0.020
+ZZR    plan-3         CAH   0.020
+ZZR    plan-3         NAB   0.020
+ZZR    plan-3         NAC   0.020
+ZZR    plan-3         NAJ   0.020
+ZZR    plan-4         CAH   0.020
+ZZR    plan-4        HAB1   0.020
+ZZR    plan-4        HAB2   0.020
+ZZR    plan-4         NAB   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ZZR SMILES           ACDLabs              10.04 "n1c(N)n[n+]2c(nnc12)N"
+ZZR SMILES_CANONICAL CACTVS               3.352 "Nc1[nH][n+]2c(N)n[nH]c2n1"
+ZZR SMILES           CACTVS               3.352 "Nc1[nH][n+]2c(N)n[nH]c2n1"
+ZZR SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "c1([nH][n+]2c(n[nH]c2n1)N)N"
+ZZR SMILES           "OpenEye OEToolkits" 1.6.1 "c1([nH][n+]2c(n[nH]c2n1)N)N"
+ZZR InChI            InChI                1.03  "InChI=1S/C3H5N7/c4-1-6-3-8-7-2(5)10(3)9-1/h(H5,4,5,6,7,8,9)/p+1"
+ZZR InChIKey         InChI                1.03  JFMHNXXJHXPFLE-UHFFFAOYSA-O
+ZZR ?                acedrg               202         "dictionary generator"                  
+ZZR ?                acedrg_database      11          "data source"                           
+ZZR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ZZR ?                refmac5              5.8.0189    "optimization tool"                     

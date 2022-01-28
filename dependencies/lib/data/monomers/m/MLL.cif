@@ -1,0 +1,215 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MLL      MLL 'METHYL L-LEUCINATE                  ' non-polymer        25  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MLL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MLL           O      O    O        -0.500      0.000    0.000    0.000
+ MLL           C      C    C         0.000     -0.463    0.728    0.906
+ MLL           O9     O    O2       -0.500     -0.488    1.978    0.898
+ MLL           C10    C    CH3       0.000      0.066    2.715   -0.266
+ MLL           H103   H    H         0.000     -0.155    2.196   -1.168
+ MLL           H102   H    H         0.000     -0.357    3.689   -0.320
+ MLL           H101   H    H         0.000      1.122    2.806   -0.174
+ MLL           CA     C    CH1       0.000     -1.032    0.225    2.219
+ MLL           HA     H    H         0.000     -1.029   -0.874    2.218
+ MLL           N      N    NH2       0.000     -0.152    0.703    3.254
+ MLL           H2     H    H         0.000      0.727    1.131    3.007
+ MLL           H      H    H         0.000     -0.418    0.607    4.222
+ MLL           CB     C    CH2       0.000     -2.470    0.725    2.393
+ MLL           HB2    H    H         0.000     -2.429    1.816    2.362
+ MLL           HB3    H    H         0.000     -2.798    0.402    3.383
+ MLL           CG     C    CH1       0.000     -3.462    0.216    1.329
+ MLL           HG     H    H         0.000     -3.122    0.565    0.344
+ MLL           CD1    C    CH3       0.000     -4.882    0.737    1.560
+ MLL           HD13   H    H         0.000     -5.541    0.292    0.860
+ MLL           HD12   H    H         0.000     -5.194    0.494    2.542
+ MLL           HD11   H    H         0.000     -4.897    1.790    1.436
+ MLL           CD2    C    CH3       0.000     -3.471   -1.315    1.319
+ MLL           HD23   H    H         0.000     -3.792   -1.674    2.263
+ MLL           HD22   H    H         0.000     -4.132   -1.661    0.568
+ MLL           HD21   H    H         0.000     -2.494   -1.674    1.121
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MLL      O      n/a    C      START
+ MLL      C      O      CA     .
+ MLL      O9     C      C10    .
+ MLL      C10    O9     H101   .
+ MLL      H103   C10    .      .
+ MLL      H102   C10    .      .
+ MLL      H101   C10    .      .
+ MLL      CA     C      CB     .
+ MLL      HA     CA     .      .
+ MLL      N      CA     H      .
+ MLL      H2     N      .      .
+ MLL      H      N      .      .
+ MLL      CB     CA     CG     .
+ MLL      HB2    CB     .      .
+ MLL      HB3    CB     .      .
+ MLL      CG     CB     CD2    .
+ MLL      HG     CG     .      .
+ MLL      CD1    CG     HD11   .
+ MLL      HD13   CD1    .      .
+ MLL      HD12   CD1    .      .
+ MLL      HD11   CD1    .      .
+ MLL      CD2    CG     HD21   .
+ MLL      HD23   CD2    .      .
+ MLL      HD22   CD2    .      .
+ MLL      HD21   CD2    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MLL       N         CA        single    1.450     0.020     1.450     0.020     
+MLL       H         N         single    1.036     0.016     0.914     0.007     
+MLL       H2        N         single    1.036     0.016     0.914     0.007     
+MLL       CB        CA        single    1.524     0.020     1.524     0.020     
+MLL       CA        C         single    1.500     0.020     1.500     0.020     
+MLL       HA        CA        single    1.089     0.010     0.989     0.005     
+MLL       CG        CB        single    1.524     0.020     1.524     0.020     
+MLL       HB2       CB        single    1.089     0.010     0.989     0.005     
+MLL       HB3       CB        single    1.089     0.010     0.989     0.005     
+MLL       CD2       CG        single    1.524     0.020     1.524     0.020     
+MLL       CD1       CG        single    1.524     0.020     1.524     0.020     
+MLL       HG        CG        single    1.089     0.010     0.989     0.005     
+MLL       HD21      CD2       single    1.089     0.010     0.989     0.005     
+MLL       HD22      CD2       single    1.089     0.010     0.989     0.005     
+MLL       HD23      CD2       single    1.089     0.010     0.989     0.005     
+MLL       HD11      CD1       single    1.089     0.010     0.989     0.005     
+MLL       HD12      CD1       single    1.089     0.010     0.989     0.005     
+MLL       HD13      CD1       single    1.089     0.010     0.989     0.005     
+MLL       C         O         deloc     1.220     0.020     1.220     0.020     
+MLL       O9        C         deloc     1.454     0.020     1.454     0.020     
+MLL       C10       O9        single    1.426     0.020     1.426     0.020     
+MLL       H101      C10       single    1.089     0.010     0.989     0.005     
+MLL       H102      C10       single    1.089     0.010     0.989     0.005     
+MLL       H103      C10       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MLL      O      C      O9      119.000    3.000
+ MLL      O      C      CA      120.500    3.000
+ MLL      O9     C      CA      120.000    3.000
+ MLL      C      O9     C10     120.000    3.000
+ MLL      O9     C10    H103    109.470    3.000
+ MLL      O9     C10    H102    109.470    3.000
+ MLL      O9     C10    H101    109.470    3.000
+ MLL      H103   C10    H102    109.470    3.000
+ MLL      H103   C10    H101    109.470    3.000
+ MLL      H102   C10    H101    109.470    3.000
+ MLL      C      CA     HA      108.810    3.000
+ MLL      C      CA     N       109.470    3.000
+ MLL      C      CA     CB      109.470    3.000
+ MLL      HA     CA     N       109.470    3.000
+ MLL      HA     CA     CB      108.340    3.000
+ MLL      N      CA     CB      109.470    3.000
+ MLL      CA     N      H2      120.000    3.000
+ MLL      CA     N      H       120.000    3.000
+ MLL      H2     N      H       120.000    3.000
+ MLL      CA     CB     HB2     109.470    3.000
+ MLL      CA     CB     HB3     109.470    3.000
+ MLL      CA     CB     CG      111.000    3.000
+ MLL      HB2    CB     HB3     107.900    3.000
+ MLL      HB2    CB     CG      109.470    3.000
+ MLL      HB3    CB     CG      109.470    3.000
+ MLL      CB     CG     HG      108.340    3.000
+ MLL      CB     CG     CD1     111.000    3.000
+ MLL      CB     CG     CD2     111.000    3.000
+ MLL      HG     CG     CD1     108.340    3.000
+ MLL      HG     CG     CD2     108.340    3.000
+ MLL      CD1    CG     CD2     111.000    3.000
+ MLL      CG     CD1    HD13    109.470    3.000
+ MLL      CG     CD1    HD12    109.470    3.000
+ MLL      CG     CD1    HD11    109.470    3.000
+ MLL      HD13   CD1    HD12    109.470    3.000
+ MLL      HD13   CD1    HD11    109.470    3.000
+ MLL      HD12   CD1    HD11    109.470    3.000
+ MLL      CG     CD2    HD23    109.470    3.000
+ MLL      CG     CD2    HD22    109.470    3.000
+ MLL      CG     CD2    HD21    109.470    3.000
+ MLL      HD23   CD2    HD22    109.470    3.000
+ MLL      HD23   CD2    HD21    109.470    3.000
+ MLL      HD22   CD2    HD21    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MLL      var_1    O      C      O9     C10        0.009   20.000   1
+ MLL      var_2    C      O9     C10    H101     -82.543   20.000   1
+ MLL      var_3    O      C      CA     CB      -123.323   20.000   3
+ MLL      var_4    C      CA     N      H        170.497   20.000   1
+ MLL      var_5    C      CA     CB     CG        62.883   20.000   3
+ MLL      var_6    CA     CB     CG     CD2       57.179   20.000   3
+ MLL      var_7    CB     CG     CD1    HD11      65.171   20.000   3
+ MLL      var_8    CB     CG     CD2    HD21     -58.334   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MLL      chir_01  CA     N      CB     C         negativ
+ MLL      chir_02  CG     CB     CD2    CD1       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MLL      plan-1    N         0.020
+ MLL      plan-1    CA        0.020
+ MLL      plan-1    H         0.020
+ MLL      plan-1    H2        0.020
+ MLL      plan-2    C         0.020
+ MLL      plan-2    CA        0.020
+ MLL      plan-2    O         0.020
+ MLL      plan-2    O9        0.020
+# ------------------------------------------------------

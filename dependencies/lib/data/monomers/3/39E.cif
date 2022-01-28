@@ -1,0 +1,464 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+39E      39E '(R)-2,4-DIAMINO-5-((7,8-DICARBAUNDEC' non-polymer        41  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_39E
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 39E           "N4'"  N    NH2       0.000      0.000    0.000    0.000
+ 39E           HA1    H    H         0.000     -0.711    0.610   -0.388
+ 39E           HB2    H    H         0.000      0.087   -0.083    1.007
+ 39E           C4     C    CR6       0.000      0.837   -0.707   -0.830
+ 39E           N3     N    NRD6      0.000      0.264   -1.286   -1.885
+ 39E           C2     C    CR6       0.000      1.022   -1.963   -2.739
+ 39E           "N2'"  N    NH2       0.000      0.425   -2.612   -3.755
+ 39E           HA2    H    H         0.000     -0.580   -2.680   -3.783
+ 39E           "H2'1" H    H         0.000      0.985   -3.027   -4.483
+ 39E           C5     C    CR6       0.000      2.248   -0.812   -0.554
+ 39E           C6     C    CR6       0.000      2.984   -1.541   -1.457
+ 39E           "C6'"  C    CH3       0.000      4.482   -1.804   -1.346
+ 39E           HE3    H    H         0.000      4.650   -2.831   -1.141
+ 39E           HD2    H    H         0.000      4.960   -1.547   -2.257
+ 39E           HC1    H    H         0.000      4.891   -1.220   -0.560
+ 39E           N1     N    NRD6      0.000      2.362   -2.126   -2.581
+ 39E           "C5'"  C    CH2       0.000      2.829   -0.211    0.702
+ 39E           HB1    H    H         0.000      3.458   -1.009    1.102
+ 39E           HC2    H    H         0.000      1.959   -0.077    1.349
+ 39E           C1C    C    C         0.000      3.628    1.088    0.645
+ 39E           B6     B    B         0.000      2.829    2.488    1.297
+ 39E           HB6    H    H         0.000      1.772    2.499    1.707
+ 39E           B11    B    B         0.000      4.158    3.462    1.912
+ 39E           HB11   H    H         0.000      4.024    4.187    2.773
+ 39E           B5     B    B         0.000      4.157    1.732    2.149
+ 39E           HB5    H    H         0.000      3.938    1.241    3.147
+ 39E           B12    B    B         0.000      5.233    3.817    0.535
+ 39E           HB12   H    H         0.000      5.802    4.795    0.482
+ 39E           B7     B    B         0.000      3.475    3.778    0.311
+ 39E           HB7    H    H         0.000      2.869    4.682   -0.004
+ 39E           B9     B    B         0.000      5.961    2.327   -0.025
+ 39E           HB9A   H    H         0.000      7.071    2.166   -0.186
+ 39E           HB9    H    H         0.000      5.389    1.431   -0.417
+ 39E           B8     B    B         0.000      4.540    3.040   -0.895
+ 39E           HB8    H    H         0.000    -27.176   -0.760    0.639
+ 39E           C2C    C    C         0.000      3.243    2.214   -0.352
+ 39E           H2C    H    H         0.000      2.502    2.033   -0.996
+ 39E           B10    B    B         0.000      5.637    2.526    1.705
+ 39E           HB10   H    H         0.000      6.516    2.607    2.415
+ 39E           B4     B    B         0.000      5.196    1.017    0.934
+ 39E           HB4    H    H         0.000      5.762    0.047    1.085
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 39E      "N4'"  n/a    C4     START
+ 39E      HA1    "N4'"  .      .
+ 39E      HB2    "N4'"  .      .
+ 39E      C4     "N4'"  C5     .
+ 39E      N3     C4     C2     .
+ 39E      C2     N3     "N2'"  .
+ 39E      "N2'"  C2     "H2'1" .
+ 39E      HA2    "N2'"  .      .
+ 39E      "H2'1" "N2'"  .      .
+ 39E      C5     C4     "C5'"  .
+ 39E      C6     C5     N1     .
+ 39E      "C6'"  C6     HC1    .
+ 39E      HE3    "C6'"  .      .
+ 39E      HD2    "C6'"  .      .
+ 39E      HC1    "C6'"  .      .
+ 39E      N1     C6     .      .
+ 39E      "C5'"  C5     C1C    .
+ 39E      HB1    "C5'"  .      .
+ 39E      HC2    "C5'"  .      .
+ 39E      C1C    "C5'"  B6     .
+ 39E      B6     C1C    B11    .
+ 39E      HB6    B6     .      .
+ 39E      B11    B6     B12    .
+ 39E      HB11   B11    .      .
+ 39E      B5     B11    HB5    .
+ 39E      HB5    B5     .      .
+ 39E      B12    B11    B10    .
+ 39E      HB12   B12    .      .
+ 39E      B7     B12    HB7    .
+ 39E      HB7    B7     .      .
+ 39E      B9     B12    HB9    .
+ 39E      HB9A   B9     .      .
+ 39E      HB9    B9     .      .
+ 39E      B8     B12    C2C    .
+ 39E      HB8    B8     .      .
+ 39E      C2C    B8     H2C    .
+ 39E      H2C    C2C    .      .
+ 39E      B10    B12    B4     .
+ 39E      HB10   B10    .      .
+ 39E      B4     B10    HB4    .
+ 39E      HB4    B4     .      END
+ 39E      N1     C2     .    ADD
+ 39E      C1C    C2C    .    ADD
+ 39E      C1C    B4     .    ADD
+ 39E      C1C    B5     .    ADD
+ 39E      C2C    B6     .    ADD
+ 39E      C2C    B7     .    ADD
+ 39E      B4     B5     .    ADD
+ 39E      B5     B6     .    ADD
+ 39E      B5     B10    .    ADD
+ 39E      B6     B7     .    ADD
+ 39E      B7     B8     .    ADD
+ 39E      B7     B11    .    ADD
+ 39E      B8     HB9    .    ADD
+ 39E      B9     B10    .    ADD
+ 39E      B10    B11    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+39E       N1        C2        single    1.350     0.020     1.350     0.020     
+39E       C2        N3        double    1.350     0.020     1.350     0.020     
+39E       N3        C4        single    1.350     0.020     1.350     0.020     
+39E       C5        C4        double    1.487     0.020     1.487     0.020     
+39E       N1        C6        double    1.350     0.020     1.350     0.020     
+39E       C6        C5        single    1.487     0.020     1.487     0.020     
+39E       "N2'"     C2        single    1.355     0.020     1.355     0.020     
+39E       C4        "N4'"     single    1.355     0.020     1.355     0.020     
+39E       "C6'"     C6        single    1.506     0.020     1.506     0.020     
+39E       "C5'"     C5        single    1.511     0.020     1.511     0.020     
+39E       C1C       "C5'"     single    1.510     0.020     1.510     0.020     
+39E       C1C       C2C       single    1.460     0.020     1.460     0.020     
+39E       C1C       B4        single    1.465     0.020     1.465     0.020     
+39E       C1C       B5        single    1.465     0.020     1.465     0.020     
+39E       B4        B5        single    1.600     0.020     1.600     0.020     
+39E       B5        B6        single    1.600     0.020     1.600     0.020     
+39E       B6        C1C       single    1.465     0.020     1.465     0.020     
+39E       C2C       B6        single    1.465     0.020     1.465     0.020     
+39E       B6        B7        single    1.600     0.020     1.600     0.020     
+39E       C2C       B7        single    1.465     0.020     1.465     0.020     
+39E       B7        B8        single    1.600     0.020     1.600     0.020     
+39E       C2C       B8        single    1.465     0.020     1.465     0.020     
+39E       B4        B10       single    1.600     0.020     1.600     0.020     
+39E       B5        B10       single    1.600     0.020     1.600     0.020     
+39E       B9        B10       single    1.600     0.020     1.600     0.020     
+39E       B5        B11       single    1.600     0.020     1.600     0.020     
+39E       B11       B6        single    1.600     0.020     1.600     0.020     
+39E       B7        B11       single    1.600     0.020     1.600     0.020     
+39E       B10       B11       single    1.600     0.020     1.600     0.020     
+39E       B7        B12       single    1.600     0.020     1.600     0.020     
+39E       B8        B12       single    1.600     0.020     1.600     0.020     
+39E       B9        B12       single    1.600     0.020     1.600     0.020     
+39E       B10       B12       single    1.600     0.020     1.600     0.020     
+39E       B12       B11       single    1.600     0.020     1.600     0.020     
+39E       "H2'1"    "N2'"     single    1.016     0.010     0.899     0.007     
+39E       HA2       "N2'"     single    1.016     0.010     0.899     0.007     
+39E       HA1       "N4'"     single    1.016     0.010     0.899     0.007     
+39E       HB2       "N4'"     single    1.016     0.010     0.899     0.007     
+39E       HB1       "C5'"     single    1.089     0.010     0.989     0.005     
+39E       HC2       "C5'"     single    1.089     0.010     0.989     0.005     
+39E       HC1       "C6'"     single    1.089     0.010     0.989     0.005     
+39E       HD2       "C6'"     single    1.089     0.010     0.989     0.005     
+39E       HE3       "C6'"     single    1.089     0.010     0.989     0.005     
+39E       HB4       B4        single    1.027     0.020     1.027     0.020     
+39E       HB5       B5        single    1.027     0.020     1.027     0.020     
+39E       HB6       B6        single    1.027     0.020     1.027     0.020     
+39E       HB7       B7        single    1.027     0.020     1.027     0.020     
+39E       B8        HB9       single    1.027     0.020     1.027     0.020     
+39E       HB9       B9        single    1.027     0.020     1.027     0.020     
+39E       HB10      B10       single    1.027     0.020     1.027     0.020     
+39E       H2C       C2C       single    0.998     0.020     0.998     0.020     
+39E       HB8       B8        single    1.027     0.020     1.027     0.020     
+39E       HB9A      B9        single    1.027     0.020     1.027     0.020     
+39E       HB11      B11       single    1.027     0.020     1.027     0.020     
+39E       HB12      B12       single    1.027     0.020     1.027     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 39E      HA1    "N4'"  HB2     120.000    3.000
+ 39E      HA1    "N4'"  C4      120.000    3.000
+ 39E      HB2    "N4'"  C4      120.000    3.000
+ 39E      "N4'"  C4     N3      120.000    3.000
+ 39E      "N4'"  C4     C5      120.000    3.000
+ 39E      N3     C4     C5      120.000    3.000
+ 39E      C4     N3     C2      120.000    3.000
+ 39E      N3     C2     "N2'"   120.000    3.000
+ 39E      N3     C2     N1      120.000    3.000
+ 39E      "N2'"  C2     N1      120.000    3.000
+ 39E      C2     "N2'"  HA2     120.000    3.000
+ 39E      C2     "N2'"  "H2'1"  120.000    3.000
+ 39E      HA2    "N2'"  "H2'1"  120.000    3.000
+ 39E      C4     C5     C6      120.000    3.000
+ 39E      C4     C5     "C5'"   120.000    3.000
+ 39E      C6     C5     "C5'"   120.000    3.000
+ 39E      C5     C6     "C6'"   120.000    3.000
+ 39E      C5     C6     N1      120.000    3.000
+ 39E      "C6'"  C6     N1      120.000    3.000
+ 39E      C6     "C6'"  HE3     109.470    3.000
+ 39E      C6     "C6'"  HD2     109.470    3.000
+ 39E      C6     "C6'"  HC1     109.470    3.000
+ 39E      HE3    "C6'"  HD2     109.470    3.000
+ 39E      HE3    "C6'"  HC1     109.470    3.000
+ 39E      HD2    "C6'"  HC1     109.470    3.000
+ 39E      C6     N1     C2      120.000    3.000
+ 39E      C5     "C5'"  HB1     109.470    3.000
+ 39E      C5     "C5'"  HC2     109.470    3.000
+ 39E      C5     "C5'"  C1C     109.470    3.000
+ 39E      HB1    "C5'"  HC2     107.900    3.000
+ 39E      HB1    "C5'"  C1C     109.470    3.000
+ 39E      HC2    "C5'"  C1C     109.470    3.000
+ 39E      "C5'"  C1C    B6      120.000    3.000
+ 39E      "C5'"  C1C    C2C     120.000    3.000
+ 39E      "C5'"  C1C    B4      120.000    3.000
+ 39E      "C5'"  C1C    B5      120.000    3.000
+ 39E      C2C    C1C    B4      120.000    3.000
+ 39E      C2C    C1C    B5      120.000    3.000
+ 39E      B4     C1C    B5       66.196    3.000
+ 39E      B6     C1C    C2C      60.113    3.000
+ 39E      B6     C1C    B4      120.000    3.000
+ 39E      B6     C1C    B5       66.196    3.000
+ 39E      C1C    B6     HB6     120.000    3.000
+ 39E      C1C    B6     B11     120.000    3.000
+ 39E      C1C    B6     C2C      59.774    3.000
+ 39E      C1C    B6     B5       56.902    3.000
+ 39E      C1C    B6     B7      120.000    3.000
+ 39E      HB6    B6     B11     120.000    3.000
+ 39E      C2C    B6     B5      120.000    3.000
+ 39E      C2C    B6     B7       56.902    3.000
+ 39E      B5     B6     B7      120.000    3.000
+ 39E      HB6    B6     C2C     120.000    3.000
+ 39E      B11    B6     C2C     120.000    3.000
+ 39E      HB6    B6     B5      120.000    3.000
+ 39E      B11    B6     B5       60.000    3.000
+ 39E      HB6    B6     B7      120.000    3.000
+ 39E      B11    B6     B7       60.000    3.000
+ 39E      B6     B11    HB11    120.000    3.000
+ 39E      B6     B11    B5       60.000    3.000
+ 39E      B6     B11    B12     120.000    3.000
+ 39E      B6     B11    B7       60.000    3.000
+ 39E      B6     B11    B10     120.000    3.000
+ 39E      HB11   B11    B5      120.000    3.000
+ 39E      HB11   B11    B12     120.000    3.000
+ 39E      B5     B11    B12     120.000    3.000
+ 39E      B7     B11    B10     120.000    3.000
+ 39E      HB11   B11    B7      120.000    3.000
+ 39E      B5     B11    B7      120.000    3.000
+ 39E      B12    B11    B7       60.000    3.000
+ 39E      HB11   B11    B10     120.000    3.000
+ 39E      B5     B11    B10      60.000    3.000
+ 39E      B12    B11    B10      60.000    3.000
+ 39E      B11    B5     HB5     120.000    3.000
+ 39E      B11    B5     C1C     120.000    3.000
+ 39E      B11    B5     B4      120.000    3.000
+ 39E      B11    B5     B6       60.000    3.000
+ 39E      B11    B5     B10      60.000    3.000
+ 39E      C1C    B5     B4       56.902    3.000
+ 39E      C1C    B5     B6       56.902    3.000
+ 39E      B4     B5     B6      120.000    3.000
+ 39E      C1C    B5     B10     120.000    3.000
+ 39E      B4     B5     B10      60.000    3.000
+ 39E      B6     B5     B10     120.000    3.000
+ 39E      HB5    B5     C1C     120.000    3.000
+ 39E      HB5    B5     B4      120.000    3.000
+ 39E      HB5    B5     B6      120.000    3.000
+ 39E      HB5    B5     B10     120.000    3.000
+ 39E      B11    B12    HB12    120.000    3.000
+ 39E      B11    B12    B7       60.000    3.000
+ 39E      B11    B12    B8      120.000    3.000
+ 39E      B11    B12    B9      120.000    3.000
+ 39E      B11    B12    B10      60.000    3.000
+ 39E      HB12   B12    B7      120.000    3.000
+ 39E      HB12   B12    B8      120.000    3.000
+ 39E      B7     B12    B8       60.000    3.000
+ 39E      HB12   B12    B9      120.000    3.000
+ 39E      B7     B12    B9      120.000    3.000
+ 39E      B8     B12    B9      120.000    3.000
+ 39E      HB12   B12    B10     120.000    3.000
+ 39E      B7     B12    B10     120.000    3.000
+ 39E      B8     B12    B10     120.000    3.000
+ 39E      B9     B12    B10      60.000    3.000
+ 39E      B12    B7     HB7     120.000    3.000
+ 39E      B12    B7     C2C     120.000    3.000
+ 39E      B12    B7     B6      120.000    3.000
+ 39E      B12    B7     B8       60.000    3.000
+ 39E      B12    B7     B11      60.000    3.000
+ 39E      C2C    B7     B6       56.902    3.000
+ 39E      C2C    B7     B8       56.902    3.000
+ 39E      B6     B7     B8      120.000    3.000
+ 39E      C2C    B7     B11     120.000    3.000
+ 39E      B6     B7     B11      60.000    3.000
+ 39E      B8     B7     B11     120.000    3.000
+ 39E      HB7    B7     C2C     120.000    3.000
+ 39E      HB7    B7     B6      120.000    3.000
+ 39E      HB7    B7     B8      120.000    3.000
+ 39E      HB7    B7     B11     120.000    3.000
+ 39E      B12    B8     HB8     120.000    3.000
+ 39E      B12    B8     C2C     120.000    3.000
+ 39E      B12    B8     B7       60.000    3.000
+ 39E      B12    B8     HB9     120.000    3.000
+ 39E      HB8    B8     C2C     120.000    3.000
+ 39E      B7     B8     HB9     120.000    3.000
+ 39E      HB8    B8     B7      120.000    3.000
+ 39E      C2C    B8     B7       56.902    3.000
+ 39E      HB8    B8     HB9     120.000    3.000
+ 39E      C2C    B8     HB9     120.000    3.000
+ 39E      B8     C2C    H2C     120.000    3.000
+ 39E      B8     C2C    C1C     120.000    3.000
+ 39E      B8     C2C    B6      120.000    3.000
+ 39E      B8     C2C    B7       66.196    3.000
+ 39E      C1C    C2C    B6       60.113    3.000
+ 39E      C1C    C2C    B7      120.000    3.000
+ 39E      B6     C2C    B7       66.196    3.000
+ 39E      H2C    C2C    C1C     120.000    3.000
+ 39E      H2C    C2C    B6      120.000    3.000
+ 39E      H2C    C2C    B7      120.000    3.000
+ 39E      B12    B9     HB9A    120.000    3.000
+ 39E      B12    B9     HB9     120.000    3.000
+ 39E      B12    B9     B10      60.000    3.000
+ 39E      HB9A   B9     HB9     120.000    3.000
+ 39E      HB9A   B9     B10     120.000    3.000
+ 39E      HB9    B9     B10     120.000    3.000
+ 39E      B9     HB9    B8      109.500    3.000
+ 39E      B12    B10    HB10    120.000    3.000
+ 39E      B12    B10    B4      120.000    3.000
+ 39E      B12    B10    B5      120.000    3.000
+ 39E      B12    B10    B9       60.000    3.000
+ 39E      B12    B10    B11      60.000    3.000
+ 39E      HB10   B10    B4      120.000    3.000
+ 39E      B5     B10    B9      120.000    3.000
+ 39E      B5     B10    B11      60.000    3.000
+ 39E      B9     B10    B11     120.000    3.000
+ 39E      HB10   B10    B5      120.000    3.000
+ 39E      B4     B10    B5       60.000    3.000
+ 39E      HB10   B10    B9      120.000    3.000
+ 39E      B4     B10    B9      120.000    3.000
+ 39E      HB10   B10    B11     120.000    3.000
+ 39E      B4     B10    B11     120.000    3.000
+ 39E      B10    B4     HB4     120.000    3.000
+ 39E      B10    B4     C1C     120.000    3.000
+ 39E      B10    B4     B5       60.000    3.000
+ 39E      C1C    B4     B5       56.902    3.000
+ 39E      HB4    B4     C1C     120.000    3.000
+ 39E      HB4    B4     B5      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 39E      CONST_1  HB2    "N4'"  C4     C5       -42.796    0.000   0
+ 39E      CONST_2  "N4'"  C4     N3     C2       180.000    0.000   0
+ 39E      CONST_3  C4     N3     C2     "N2'"    180.000    0.000   0
+ 39E      CONST_4  N3     C2     "N2'"  "H2'1"   171.836    0.000   0
+ 39E      CONST_5  "N4'"  C4     C5     "C5'"      0.000    0.000   0
+ 39E      CONST_6  C4     C5     C6     N1         0.000    0.000   0
+ 39E      var_1    C5     C6     "C6'"  HC1       -8.815   20.000   1
+ 39E      CONST_7  C5     C6     N1     C2         0.000    0.000   0
+ 39E      CONST_8  C6     N1     C2     N3         0.000    0.000   0
+ 39E      var_2    C4     C5     "C5'"  C1C     -104.447   20.000   2
+ 39E      var_3    C5     "C5'"  C1C    B6       107.730   20.000   3
+ 39E      var_4    "C5'"  C1C    C2C    B8      -150.000   20.000   1
+ 39E      var_5    "C5'"  C1C    B4     B10     -150.000   20.000   1
+ 39E      var_6    "C5'"  C1C    B5     B11     -148.252   20.000   1
+ 39E      var_7    "C5'"  C1C    B6     B11      149.254   20.000   1
+ 39E      var_8    C1C    B6     B7     B12      -60.495   20.000   1
+ 39E      var_9    C1C    B6     B11    B12       59.329   20.000   1
+ 39E      var_10   B6     B11    B5     C1C       30.000   20.000   1
+ 39E      var_11   B11    B5     B6     C1C      131.322   20.000   1
+ 39E      var_12   B11    B5     B10    B12      -30.000   20.000   1
+ 39E      var_13   B6     B11    B12    B10      -90.000   20.000   1
+ 39E      var_14   B11    B12    B7     C2C      -99.407   20.000   1
+ 39E      var_15   B12    B7     B11    B6      -150.000   20.000   1
+ 39E      var_16   B11    B12    B8     C2C       -4.031   20.000   1
+ 39E      var_17   B12    B8     HB9    B9       -68.410   20.000   1
+ 39E      var_18   B12    B8     C2C    C1C      -63.296   20.000   1
+ 39E      var_19   B8     C2C    B6     C1C     -103.933   20.000   1
+ 39E      var_20   B8     C2C    B7     B12      -30.000   20.000   1
+ 39E      var_21   B11    B12    B9     B10      -30.000   20.000   1
+ 39E      var_22   B12    B9     HB9    B8        66.275   20.000   1
+ 39E      var_23   B11    B12    B10    B4       101.103   20.000   1
+ 39E      var_24   B12    B10    B11    B6        90.000   20.000   1
+ 39E      var_25   B12    B10    B4     C1C      -60.000   20.000   1
+ 39E      var_26   B10    B4     B5     B11       38.962   20.000   1
+ 39E      var_1    B5     B10    B9     B12      -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 39E      chir_01  C1C    "C5'"  C2C    B4        positiv
+ 39E      chir_02  C2C    C1C    B6     B7        negativ
+ 39E      chir_03  B4     C1C    B5     B10       positiv
+ 39E      chir_04  B5     C1C    B4     B6        negativ
+ 39E      chir_05  B6     C1C    C2C    B5        positiv
+ 39E      chir_06  B7     C2C    B6     B8        negativ
+ 39E      chir_07  B8     C2C    B7     B12       negativ
+ 39E      chir_08  B10    B4     B5     B9        positiv
+ 39E      chir_09  B11    B5     B6     B7        positiv
+ 39E      chir_10  B12    B7     B8     B9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 39E      plan-1    N1        0.020
+ 39E      plan-1    C2        0.020
+ 39E      plan-1    C6        0.020
+ 39E      plan-1    N3        0.020
+ 39E      plan-1    C4        0.020
+ 39E      plan-1    C5        0.020
+ 39E      plan-1    "N2'"     0.020
+ 39E      plan-1    "N4'"     0.020
+ 39E      plan-1    "C5'"     0.020
+ 39E      plan-1    "C6'"     0.020
+ 39E      plan-1    HA2       0.020
+ 39E      plan-1    "H2'1"    0.020
+ 39E      plan-1    HA1       0.020
+ 39E      plan-1    HB2       0.020
+ 39E      plan-2    "N2'"     0.020
+ 39E      plan-2    C2        0.020
+ 39E      plan-2    "H2'1"    0.020
+ 39E      plan-2    HA2       0.020
+ 39E      plan-3    "N4'"     0.020
+ 39E      plan-3    C4        0.020
+ 39E      plan-3    HA1       0.020
+ 39E      plan-3    HB2       0.020
+# ------------------------------------------------------

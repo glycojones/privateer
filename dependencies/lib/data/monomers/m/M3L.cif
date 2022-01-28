@@ -1,0 +1,265 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+M3L     M3L     N-TRIMETHYLLYSINE     peptide     34     13     .
+#
+data_comp_M3L
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+M3L     N       N       NT3     1       -2.874      12.339      13.214
+M3L     CA      C       CH1     0       -2.878      11.412      14.381
+M3L     CB      C       CH2     0       -3.855      11.902      15.456
+M3L     CG      C       CH2     0       -3.506      13.241      16.094
+M3L     CD      C       CH2     0       -4.372      13.581      17.288
+M3L     CE      C       CH2     0       -3.964      14.928      17.859
+M3L     NZ      N       NT      1       -4.729      15.439      19.071
+M3L     C       C       C       0       -3.255      9.999       13.918
+M3L     O       O       O       0       -2.735      9.044       14.528
+M3L     OXT     O       OC      -1      -4.056      9.904       12.966
+M3L     CM1     C       CH3     0       -4.583      14.505      20.229
+M3L     CM2     C       CH3     0       -4.161      16.765      19.454
+M3L     CM3     C       CH3     0       -6.179      15.614      18.755
+M3L     H       H       H       0       -2.417      11.969      12.518
+M3L     H2      H       H       0       -2.473      13.124      13.440
+M3L     H3      H       H       0       -3.729      12.510      12.948
+M3L     HA      H       H       0       -1.970      11.388      14.762
+M3L     HB2     H       H       0       -3.900      11.225      16.163
+M3L     HB3     H       H       0       -4.746      11.973      15.054
+M3L     HG2     H       H       0       -3.602      13.946      15.419
+M3L     HG3     H       H       0       -2.567      13.221      16.376
+M3L     HD2     H       H       0       -4.270      12.881      17.967
+M3L     HD3     H       H       0       -5.311      13.602      17.007
+M3L     HE2     H       H       0       -4.047      15.593      17.149
+M3L     HE3     H       H       0       -3.019      14.880      18.099
+M3L     HM11    H       H       0       -4.960      14.917      21.022
+M3L     HM12    H       H       0       -3.642      14.323      20.372
+M3L     HM13    H       H       0       -5.051      13.679      20.039
+M3L     HM21    H       H       0       -4.637      17.107      20.226
+M3L     HM22    H       H       0       -4.260      17.379      18.711
+M3L     HM23    H       H       0       -3.222      16.659      19.669
+M3L     HM31    H       H       0       -6.615      16.067      19.492
+M3L     HM32    H       H       0       -6.588      14.746      18.620
+M3L     HM33    H       H       0       -6.265      16.145      17.948
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+M3L      N      n/a    CA     START
+M3L      H      N      .      .
+M3L      H2     N      .      .
+M3L      H3     N      .      .
+M3L      CA     N      C      .
+M3L      HA     CA     .      .
+M3L      CB     CA     CG     .
+M3L      HB2    CB     .      .
+M3L      HB3    CB     .      .
+M3L      CG     CB     CD     .
+M3L      HG2    CG     .      .
+M3L      HG3    CG     .      .
+M3L      CD     CG     CE     .
+M3L      HD2    CD     .      .
+M3L      HD3    CD     .      .
+M3L      CE     CD     NZ     .
+M3L      HE2    CE     .      .
+M3L      HE3    CE     .      .
+M3L      NZ     CE     CM1    .
+M3L      CM3    NZ     HM31   .
+M3L      HM33   CM3    .      .
+M3L      HM32   CM3    .      .
+M3L      HM31   CM3    .      .
+M3L      CM2    NZ     HM21   .
+M3L      HM23   CM2    .      .
+M3L      HM22   CM2    .      .
+M3L      HM21   CM2    .      .
+M3L      CM1    NZ     HM11   .
+M3L      HM13   CM1    .      .
+M3L      HM12   CM1    .      .
+M3L      HM11   CM1    .      .
+M3L      C      CA     .      END
+M3L      O      C      .      .
+M3L      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+M3L       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+M3L       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+M3L       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+M3L       CB        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+M3L       CG        CD        SINGLE    n         1.514     0.020     1.514     0.020     
+M3L       CD        CE        SINGLE    n         1.516     0.011     1.516     0.011     
+M3L       CE        NZ        SINGLE    n         1.517     0.010     1.517     0.010     
+M3L       NZ        CM1       SINGLE    n         1.488     0.017     1.488     0.017     
+M3L       NZ        CM2       SINGLE    n         1.488     0.017     1.488     0.017     
+M3L       NZ        CM3       SINGLE    n         1.488     0.017     1.488     0.017     
+M3L       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+M3L       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+M3L       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+M3L       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+M3L       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+M3L       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+M3L       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+M3L       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+M3L       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+M3L       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.016     
+M3L       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.016     
+M3L       CD        HD3       SINGLE    n         1.089     0.010     0.981     0.016     
+M3L       CE        HE2       SINGLE    n         1.089     0.010     0.976     0.017     
+M3L       CE        HE3       SINGLE    n         1.089     0.010     0.976     0.017     
+M3L       CM1       HM11      SINGLE    n         1.089     0.010     0.969     0.015     
+M3L       CM1       HM12      SINGLE    n         1.089     0.010     0.969     0.015     
+M3L       CM1       HM13      SINGLE    n         1.089     0.010     0.969     0.015     
+M3L       CM2       HM21      SINGLE    n         1.089     0.010     0.969     0.015     
+M3L       CM2       HM22      SINGLE    n         1.089     0.010     0.969     0.015     
+M3L       CM2       HM23      SINGLE    n         1.089     0.010     0.969     0.015     
+M3L       CM3       HM31      SINGLE    n         1.089     0.010     0.969     0.015     
+M3L       CM3       HM32      SINGLE    n         1.089     0.010     0.969     0.015     
+M3L       CM3       HM33      SINGLE    n         1.089     0.010     0.969     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+M3L          CA           N           H     110.062    1.93
+M3L          CA           N          H2     110.062    1.93
+M3L          CA           N          H3     110.062    1.93
+M3L           H           N          H2     109.028    2.41
+M3L           H           N          H3     109.028    2.41
+M3L          H2           N          H3     109.028    2.41
+M3L           N          CA          CB     110.374    1.62
+M3L           N          CA           C     109.241    1.50
+M3L           N          CA          HA     108.487    1.50
+M3L          CB          CA           C     111.037    2.40
+M3L          CB          CA          HA     108.967    1.50
+M3L           C          CA          HA     108.824    1.50
+M3L          CA          CB          CG     115.311    1.56
+M3L          CA          CB         HB2     108.549    1.50
+M3L          CA          CB         HB3     108.549    1.50
+M3L          CG          CB         HB2     108.650    1.50
+M3L          CG          CB         HB3     108.650    1.50
+M3L         HB2          CB         HB3     107.844    1.50
+M3L          CB          CG          CD     113.328    2.00
+M3L          CB          CG         HG2     108.601    1.50
+M3L          CB          CG         HG3     108.601    1.50
+M3L          CD          CG         HG2     108.806    1.50
+M3L          CD          CG         HG3     108.806    1.50
+M3L         HG2          CG         HG3     107.646    1.50
+M3L          CG          CD          CE     109.864    1.50
+M3L          CG          CD         HD2     109.041    1.50
+M3L          CG          CD         HD3     109.041    1.50
+M3L          CE          CD         HD2     109.624    1.50
+M3L          CE          CD         HD3     109.624    1.50
+M3L         HD2          CD         HD3     107.927    1.57
+M3L          CD          CE          NZ     115.564    1.50
+M3L          CD          CE         HE2     108.393    1.50
+M3L          CD          CE         HE3     108.393    1.50
+M3L          NZ          CE         HE2     108.216    1.50
+M3L          NZ          CE         HE3     108.216    1.50
+M3L         HE2          CE         HE3     107.519    1.50
+M3L          CE          NZ         CM1     109.793    1.98
+M3L          CE          NZ         CM2     109.793    1.98
+M3L          CE          NZ         CM3     109.793    1.98
+M3L         CM1          NZ         CM2     109.041    1.50
+M3L         CM1          NZ         CM3     109.041    1.50
+M3L         CM2          NZ         CM3     109.041    1.50
+M3L          CA           C           O     117.124    1.50
+M3L          CA           C         OXT     117.124    1.50
+M3L           O           C         OXT     125.752    1.50
+M3L          NZ         CM1        HM11     108.994    1.50
+M3L          NZ         CM1        HM12     108.994    1.50
+M3L          NZ         CM1        HM13     108.994    1.50
+M3L        HM11         CM1        HM12     109.693    1.55
+M3L        HM11         CM1        HM13     109.693    1.55
+M3L        HM12         CM1        HM13     109.693    1.55
+M3L          NZ         CM2        HM21     108.994    1.50
+M3L          NZ         CM2        HM22     108.994    1.50
+M3L          NZ         CM2        HM23     108.994    1.50
+M3L        HM21         CM2        HM22     109.693    1.55
+M3L        HM21         CM2        HM23     109.693    1.55
+M3L        HM22         CM2        HM23     109.693    1.55
+M3L          NZ         CM3        HM31     108.994    1.50
+M3L          NZ         CM3        HM32     108.994    1.50
+M3L          NZ         CM3        HM33     108.994    1.50
+M3L        HM31         CM3        HM32     109.693    1.55
+M3L        HM31         CM3        HM33     109.693    1.55
+M3L        HM32         CM3        HM33     109.693    1.55
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+M3L             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+M3L            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+M3L             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+M3L            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+M3L            sp3_sp3_28          CE          CD          CG          CB     180.000   10.00     3
+M3L            sp3_sp3_37          CG          CD          CE          NZ     180.000   10.00     3
+M3L            sp3_sp3_46          CD          CE          NZ         CM1     180.000   10.00     3
+M3L            sp3_sp3_55        HM11         CM1          NZ          CE     180.000   10.00     3
+M3L            sp3_sp3_64        HM21         CM2          NZ          CE     180.000   10.00     3
+M3L            sp3_sp3_73        HM31         CM3          NZ          CE     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+M3L    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+M3L    plan-1           C   0.020
+M3L    plan-1          CA   0.020
+M3L    plan-1           O   0.020
+M3L    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+M3L SMILES           ACDLabs              10.04 "O=C(O)C(N)CCCC[N+](C)(C)C"
+M3L SMILES_CANONICAL CACTVS               3.341 "C[N+](C)(C)CCCC[C@H](N)C(O)=O"
+M3L SMILES           CACTVS               3.341 "C[N+](C)(C)CCCC[CH](N)C(O)=O"
+M3L SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[N+](C)(C)CCCC[C@@H](C(=O)O)N"
+M3L SMILES           "OpenEye OEToolkits" 1.5.0 "C[N+](C)(C)CCCCC(C(=O)O)N"
+M3L InChI            InChI                1.03  "InChI=1S/C9H20N2O2/c1-11(2,3)7-5-4-6-8(10)9(12)13/h8H,4-7,10H2,1-3H3/p+1/t8-/m0/s1"
+M3L InChIKey         InChI                1.03  MXNRLFUSFKVQSK-QMMMGPOBSA-O
+M3L ?                acedrg               196         "dictionary generator"
+M3L ?                acedrg_database      11          "data source"
+M3L ?                rdkit                2017.03.2   "Chemoinformatics tool"
+M3L ?                refmac5              5.8.0222    "optimization tool"

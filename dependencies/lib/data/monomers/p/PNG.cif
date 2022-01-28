@@ -1,0 +1,295 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PNG      PNG '4'-NITROPHENYL-ALPHA-D-GLUCOPYRANOSI' pyranose           36  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PNG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PNG           C1     C    CH1       0.000      0.000    0.000    0.000
+ PNG           H1     H    H         0.000      0.835    0.046   -0.713
+ PNG           O1     O    O2        0.000     -0.763   -1.184   -0.237
+ PNG           C7     C    CR6       0.000     -1.111   -1.171   -1.551
+ PNG           C12    C    CR16      0.000     -1.958   -2.147   -2.055
+ PNG           H12    H    H         0.000     -2.340   -2.923   -1.402
+ PNG           C11    C    CR16      0.000     -2.315   -2.129   -3.390
+ PNG           H11    H    H         0.000     -2.982   -2.886   -3.782
+ PNG           C10    C    CR6       0.000     -1.819   -1.145   -4.225
+ PNG           C9     C    CR16      0.000     -0.970   -0.173   -3.725
+ PNG           H9     H    H         0.000     -0.584    0.597   -4.381
+ PNG           C8     C    CR16      0.000     -0.616   -0.185   -2.390
+ PNG           H8     H    H         0.000      0.048    0.576   -2.000
+ PNG           N1     N    N         1.000     -2.199   -1.129   -5.655
+ PNG           O7     O    O         0.000     -1.764   -0.262   -6.392
+ PNG           O8     O    O        -1.000     -2.946   -1.984   -6.096
+ PNG           O5     O    O2        0.000     -0.834    1.144   -0.172
+ PNG           C5     C    CH1       0.000     -1.994    0.958    0.638
+ PNG           H5     H    H         0.000     -2.445   -0.018    0.412
+ PNG           C6     C    CH2       0.000     -3.005    2.068    0.341
+ PNG           H61    H    H         0.000     -2.529    3.040    0.481
+ PNG           H62    H    H         0.000     -3.854    1.977    1.022
+ PNG           O6     O    OH1       0.000     -3.459    1.948   -1.009
+ PNG           HO6    H    H         0.000     -4.098    2.648   -1.196
+ PNG           C4     C    CH1       0.000     -1.603    1.009    2.118
+ PNG           H4     H    H         0.000     -1.129    1.975    2.341
+ PNG           O4     O    OH1       0.000     -2.772    0.851    2.925
+ PNG           HO4    H    H         0.000     -2.523    0.875    3.859
+ PNG           C3     C    CH1       0.000     -0.618   -0.127    2.413
+ PNG           H3     H    H         0.000     -1.123   -1.096    2.291
+ PNG           O3     O    OH1       0.000     -0.130   -0.007    3.751
+ PNG           HO3    H    H         0.000      0.501   -0.718    3.928
+ PNG           C2     C    CH1       0.000      0.552   -0.029    1.428
+ PNG           H2     H    H         0.000      1.119    0.892    1.622
+ PNG           O2     O    OH1       0.000      1.409   -1.162    1.586
+ PNG           HO2    H    H         0.000      2.143   -1.100    0.959
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PNG      C1     n/a    O5     START
+ PNG      H1     C1     .      .
+ PNG      O1     C1     C7     .
+ PNG      C7     O1     C12    .
+ PNG      C12    C7     C11    .
+ PNG      H12    C12    .      .
+ PNG      C11    C12    C10    .
+ PNG      H11    C11    .      .
+ PNG      C10    C11    N1     .
+ PNG      C9     C10    C8     .
+ PNG      H9     C9     .      .
+ PNG      C8     C9     H8     .
+ PNG      H8     C8     .      .
+ PNG      N1     C10    O8     .
+ PNG      O7     N1     .      .
+ PNG      O8     N1     .      .
+ PNG      O5     C1     .      END
+ PNG      C5     O5     C4     .
+ PNG      H5     C5     .      .
+ PNG      C6     C5     O6     .
+ PNG      H61    C6     .      .
+ PNG      H62    C6     .      .
+ PNG      O6     C6     HO6    .
+ PNG      HO6    O6     .      .
+ PNG      C4     C5     C3     .
+ PNG      H4     C4     .      .
+ PNG      O4     C4     HO4    .
+ PNG      HO4    O4     .      .
+ PNG      C3     C4     C2     .
+ PNG      H3     C3     .      .
+ PNG      O3     C3     HO3    .
+ PNG      HO3    O3     .      .
+ PNG      C2     C3     O2     .
+ PNG      H2     C2     .      .
+ PNG      O2     C2     HO2    .
+ PNG      HO2    O2     .      .
+ PNG      C1     C2     .    ADD
+ PNG      C7     C8     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PNG       C1        C2        single    1.524     0.020     1.524     0.020     
+PNG       O1        C1        single    1.426     0.020     1.426     0.020     
+PNG       O5        C1        single    1.426     0.020     1.426     0.020     
+PNG       H1        C1        single    1.089     0.010     0.989     0.005     
+PNG       C2        C3        single    1.524     0.020     1.524     0.020     
+PNG       O2        C2        single    1.432     0.020     1.432     0.020     
+PNG       H2        C2        single    1.089     0.010     0.989     0.005     
+PNG       C3        C4        single    1.524     0.020     1.524     0.020     
+PNG       O3        C3        single    1.432     0.020     1.432     0.020     
+PNG       H3        C3        single    1.089     0.010     0.989     0.005     
+PNG       C4        C5        single    1.524     0.020     1.524     0.020     
+PNG       O4        C4        single    1.432     0.020     1.432     0.020     
+PNG       H4        C4        single    1.089     0.010     0.989     0.005     
+PNG       C6        C5        single    1.524     0.020     1.524     0.020     
+PNG       C5        O5        single    1.426     0.020     1.426     0.020     
+PNG       H5        C5        single    1.089     0.010     0.989     0.005     
+PNG       O6        C6        single    1.432     0.020     1.432     0.020     
+PNG       H61       C6        single    1.089     0.010     0.989     0.005     
+PNG       H62       C6        single    1.089     0.010     0.989     0.005     
+PNG       C7        C8        double    1.390     0.020     1.390     0.020     
+PNG       C12       C7        single    1.390     0.020     1.390     0.020     
+PNG       C7        O1        single    1.370     0.020     1.370     0.020     
+PNG       C8        C9        single    1.390     0.020     1.390     0.020     
+PNG       H8        C8        single    1.082     0.013     0.975     0.010     
+PNG       C9        C10       double    1.390     0.020     1.390     0.020     
+PNG       H9        C9        single    1.082     0.013     0.975     0.010     
+PNG       C10       C11       single    1.390     0.020     1.390     0.020     
+PNG       N1        C10       single    1.400     0.020     1.400     0.020     
+PNG       C11       C12       double    1.390     0.020     1.390     0.020     
+PNG       H11       C11       single    1.082     0.013     0.975     0.010     
+PNG       H12       C12       single    1.082     0.013     0.975     0.010     
+PNG       O7        N1        double    1.220     0.020     1.220     0.020     
+PNG       O8        N1        single    1.400     0.020     1.400     0.020     
+PNG       HO2       O2        single    0.970     0.012     0.839     0.014     
+PNG       HO3       O3        single    0.970     0.012     0.839     0.014     
+PNG       HO4       O4        single    0.970     0.012     0.839     0.014     
+PNG       HO6       O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PNG      H1     C1     O1      109.470    3.000
+ PNG      H1     C1     O5      109.470    3.000
+ PNG      O1     C1     O5      109.470    3.000
+ PNG      H1     C1     C2      108.340    3.000
+ PNG      O1     C1     C2      109.470    3.000
+ PNG      O5     C1     C2      109.470    3.000
+ PNG      C1     O1     C7      120.000    3.000
+ PNG      O1     C7     C12     120.000    3.000
+ PNG      O1     C7     C8      120.000    3.000
+ PNG      C12    C7     C8      120.000    3.000
+ PNG      C7     C12    H12     120.000    3.000
+ PNG      C7     C12    C11     120.000    3.000
+ PNG      H12    C12    C11     120.000    3.000
+ PNG      C12    C11    H11     120.000    3.000
+ PNG      C12    C11    C10     120.000    3.000
+ PNG      H11    C11    C10     120.000    3.000
+ PNG      C11    C10    C9      120.000    3.000
+ PNG      C11    C10    N1      120.000    3.000
+ PNG      C9     C10    N1      120.000    3.000
+ PNG      C10    C9     H9      120.000    3.000
+ PNG      C10    C9     C8      120.000    3.000
+ PNG      H9     C9     C8      120.000    3.000
+ PNG      C9     C8     H8      120.000    3.000
+ PNG      C9     C8     C7      120.000    3.000
+ PNG      H8     C8     C7      120.000    3.000
+ PNG      C10    N1     O7      120.000    3.000
+ PNG      C10    N1     O8      120.000    3.000
+ PNG      O7     N1     O8      120.000    3.000
+ PNG      C1     O5     C5      111.800    3.000
+ PNG      O5     C5     H5      109.470    3.000
+ PNG      O5     C5     C6      109.470    3.000
+ PNG      O5     C5     C4      109.470    3.000
+ PNG      H5     C5     C6      108.340    3.000
+ PNG      H5     C5     C4      108.340    3.000
+ PNG      C6     C5     C4      111.000    3.000
+ PNG      C5     C6     H61     109.470    3.000
+ PNG      C5     C6     H62     109.470    3.000
+ PNG      C5     C6     O6      109.470    3.000
+ PNG      H61    C6     H62     107.900    3.000
+ PNG      H61    C6     O6      109.470    3.000
+ PNG      H62    C6     O6      109.470    3.000
+ PNG      C6     O6     HO6     109.470    3.000
+ PNG      C5     C4     H4      108.340    3.000
+ PNG      C5     C4     O4      109.470    3.000
+ PNG      C5     C4     C3      111.000    3.000
+ PNG      H4     C4     O4      109.470    3.000
+ PNG      H4     C4     C3      108.340    3.000
+ PNG      O4     C4     C3      109.470    3.000
+ PNG      C4     O4     HO4     109.470    3.000
+ PNG      C4     C3     H3      108.340    3.000
+ PNG      C4     C3     O3      109.470    3.000
+ PNG      C4     C3     C2      111.000    3.000
+ PNG      H3     C3     O3      109.470    3.000
+ PNG      H3     C3     C2      108.340    3.000
+ PNG      O3     C3     C2      109.470    3.000
+ PNG      C3     O3     HO3     109.470    3.000
+ PNG      C3     C2     H2      108.340    3.000
+ PNG      C3     C2     O2      109.470    3.000
+ PNG      C3     C2     C1      111.000    3.000
+ PNG      H2     C2     O2      109.470    3.000
+ PNG      H2     C2     C1      108.340    3.000
+ PNG      O2     C2     C1      109.470    3.000
+ PNG      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PNG      var_1    O5     C1     O1     C7        65.814   20.000   1
+ PNG      var_2    C1     O1     C7     C12     -174.584   20.000   1
+ PNG      CONST_1  O1     C7     C8     C9       180.000    0.000   0
+ PNG      CONST_2  O1     C7     C12    C11      180.000    0.000   0
+ PNG      CONST_3  C7     C12    C11    C10        0.000    0.000   0
+ PNG      CONST_4  C12    C11    C10    N1       180.000    0.000   0
+ PNG      CONST_5  C11    C10    C9     C8         0.000    0.000   0
+ PNG      CONST_6  C10    C9     C8     C7         0.000    0.000   0
+ PNG      var_3    C11    C10    N1     O8        -0.096   20.000   1
+ PNG      var_4    C1     O5     C5     C4        60.000   20.000   1
+ PNG      var_5    O5     C5     C6     O6        64.898   20.000   3
+ PNG      var_6    C5     C6     O6     HO6     -179.987   20.000   1
+ PNG      var_7    O5     C5     C4     C3       -60.000   20.000   3
+ PNG      var_8    C5     C4     O4     HO4      179.547   20.000   1
+ PNG      var_9    C5     C4     C3     C2        60.000   20.000   3
+ PNG      var_10   C4     C3     O3     HO3     -179.178   20.000   1
+ PNG      var_11   C4     C3     C2     O2       180.000   20.000   3
+ PNG      var_12   C3     C2     C1     O5        60.000   20.000   3
+ PNG      var_13   C3     C2     O2     HO2      179.582   20.000   1
+ PNG      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PNG      chir_01  C1     C2     O1     O5        negativ
+ PNG      chir_02  C2     C1     C3     O2        negativ
+ PNG      chir_03  C3     C2     C4     O3        positiv
+ PNG      chir_04  C4     C3     C5     O4        negativ
+ PNG      chir_05  C5     C4     C6     O5        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PNG      plan-1    C7        0.020
+ PNG      plan-1    C8        0.020
+ PNG      plan-1    C12       0.020
+ PNG      plan-1    O1        0.020
+ PNG      plan-1    C9        0.020
+ PNG      plan-1    C10       0.020
+ PNG      plan-1    C11       0.020
+ PNG      plan-1    H8        0.020
+ PNG      plan-1    H9        0.020
+ PNG      plan-1    N1        0.020
+ PNG      plan-1    H11       0.020
+ PNG      plan-1    H12       0.020
+ PNG      plan-2    N1        0.020
+ PNG      plan-2    C10       0.020
+ PNG      plan-2    O7        0.020
+ PNG      plan-2    O8        0.020
+# ------------------------------------------------------

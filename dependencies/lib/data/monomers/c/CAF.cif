@@ -1,0 +1,198 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CAF      CAF 'S-DIMETHYLARSINOYL-CYSTEINE         ' peptide            22  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CAF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CAF           N      N    NH2       0.000      0.000    0.000    0.000
+ CAF           H    H    H         0.000      0.989   -0.220   -0.022
+ CAF           H2    H    H         0.000     -0.313    0.832    0.487
+ CAF           CA     C    CH1       0.000     -0.971   -0.879   -0.667
+ CAF           HA     H    H         0.000     -1.632   -1.332    0.085
+ CAF           CB     C    CH2       0.000     -1.806   -0.059   -1.652
+ CAF           HB2    H    H         0.000     -2.503   -0.719   -2.174
+ CAF           HB3    H    H         0.000     -1.146    0.419   -2.378
+ CAF           SG     S    S2        0.000     -2.735    1.211   -0.749
+ CAF           AS     AS   AS        0.000     -4.349    0.033    0.262
+ CAF           CE1    C    CH3       0.000     -3.536   -1.187    1.607
+ CAF           HE13   H    H         0.000     -4.300   -1.654    2.177
+ CAF           HE12   H    H         0.000     -2.963   -1.933    1.116
+ CAF           HE11   H    H         0.000     -2.905   -0.635    2.257
+ CAF           CE2    C    CH3       0.000     -5.609    1.277    1.170
+ CAF           HE23   H    H         0.000     -6.375    0.723    1.651
+ CAF           HE22   H    H         0.000     -5.087    1.850    1.893
+ CAF           HE21   H    H         0.000     -6.045    1.929    0.456
+ CAF           O1     O    O         0.000     -5.135   -0.820   -0.817
+ CAF           C      C    C         0.000     -0.238   -1.965   -1.411
+ CAF           O      O    OC       -0.500      0.967   -1.815   -1.709
+ CAF           OXT    O    OC       -0.500     -0.836   -3.017   -1.729
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CAF      N      n/a    CA     START
+ CAF      H    N      .      .
+ CAF      H2    N      .      .
+ CAF      CA     N      C      .
+ CAF      HA     CA     .      .
+ CAF      CB     CA     SG     .
+ CAF      HB2    CB     .      .
+ CAF      HB3    CB     .      .
+ CAF      SG     CB     AS     .
+ CAF      AS     SG     O1     .
+ CAF      CE1    AS     HE11   .
+ CAF      HE13   CE1    .      .
+ CAF      HE12   CE1    .      .
+ CAF      HE11   CE1    .      .
+ CAF      CE2    AS     HE21   .
+ CAF      HE23   CE2    .      .
+ CAF      HE22   CE2    .      .
+ CAF      HE21   CE2    .      .
+ CAF      O1     AS     .      .
+ CAF      C      CA     .      END
+ CAF      O      C      .      .
+ CAF      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CAF       CA        N         single    1.450     0.020     1.450     0.020     
+CAF       CB        CA        single    1.524     0.020     1.524     0.020     
+CAF       C         CA        single    1.500     0.020     1.500     0.020     
+CAF       HA        CA        single    1.089     0.010     0.989     0.005     
+CAF       SG        CB        single    1.762     0.020     1.762     0.020     
+CAF       HB2       CB        single    1.089     0.010     0.989     0.005     
+CAF       HB3       CB        single    1.089     0.010     0.989     0.005     
+CAF       O         C         deloc     1.250     0.020     1.250     0.020     
+CAF       OXT       C         deloc     1.250     0.020     1.250     0.020     
+CAF       AS        SG        single    2.200     0.020     2.200     0.020     
+CAF       CE1       AS        single    1.962     0.020     1.962     0.020     
+CAF       CE2       AS        single    1.962     0.020     1.962     0.020     
+CAF       O1        AS        double    1.740     0.020     1.740     0.020     
+CAF       HE11      CE1       single    1.089     0.010     0.989     0.005     
+CAF       HE12      CE1       single    1.089     0.010     0.989     0.005     
+CAF       HE13      CE1       single    1.089     0.010     0.989     0.005     
+CAF       HE21      CE2       single    1.089     0.010     0.989     0.005     
+CAF       HE22      CE2       single    1.089     0.010     0.989     0.005     
+CAF       HE23      CE2       single    1.089     0.010     0.989     0.005     
+CAF       H         N         single    1.036     0.016     0.914     0.007     
+CAF       H2        N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CAF      H    N      H2     120.000    3.000
+ CAF      H    N      CA      120.000    3.000
+ CAF      H2    N      CA      120.000    3.000
+ CAF      N      CA     HA      109.470    3.000
+ CAF      N      CA     CB      109.470    3.000
+ CAF      N      CA     C       109.470    3.000
+ CAF      HA     CA     CB      108.340    3.000
+ CAF      HA     CA     C       108.810    3.000
+ CAF      CB     CA     C       109.470    3.000
+ CAF      CA     CB     HB2     109.470    3.000
+ CAF      CA     CB     HB3     109.470    3.000
+ CAF      CA     CB     SG      109.500    3.000
+ CAF      HB2    CB     HB3     107.900    3.000
+ CAF      HB2    CB     SG      109.500    3.000
+ CAF      HB3    CB     SG      109.500    3.000
+ CAF      CB     SG     AS      103.022    3.000
+ CAF      SG     AS     CE2     109.470    3.000
+ CAF      SG     AS     CE1     109.470    3.000
+ CAF      SG     AS     O1      109.470    3.000
+ CAF      CE2    AS     CE1     109.470    3.000
+ CAF      CE2    AS     O1      109.470    3.000
+ CAF      CE1    AS     O1      109.470    3.000
+ CAF      AS     CE2    HE23    109.500    3.000
+ CAF      AS     CE2    HE22    109.500    3.000
+ CAF      AS     CE2    HE21    109.500    3.000
+ CAF      HE23   CE2    HE22    109.470    3.000
+ CAF      HE23   CE2    HE21    109.470    3.000
+ CAF      HE22   CE2    HE21    109.470    3.000
+ CAF      AS     CE1    HE13    109.500    3.000
+ CAF      AS     CE1    HE12    109.500    3.000
+ CAF      AS     CE1    HE11    109.500    3.000
+ CAF      HE13   CE1    HE12    109.470    3.000
+ CAF      HE13   CE1    HE11    109.470    3.000
+ CAF      HE12   CE1    HE11    109.470    3.000
+ CAF      CA     C      O       118.500    3.000
+ CAF      CA     C      OXT     118.500    3.000
+ CAF      O      C      OXT     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CAF      var_1    H2    N      CA     C        175.000   20.000   1
+ CAF      var_2    N      CA     CB     SG       -61.992   20.000   3
+ CAF      var_3    CA     CB     SG     AS       -73.941   20.000   1
+ CAF      var_4    CB     SG     AS     O1       -54.209   20.000   1
+ CAF      var_5    SG     AS     CE2    HE21      60.034   20.000   1
+ CAF      var_6    SG     AS     CE1    HE11      52.618   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CAF      chir_01  CA     N      CB     C         negativ
+ CAF      chir_02  AS     SG     CE2    CE1       both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CAF      plan-1    N         0.020
+ CAF      plan-1    CA        0.020
+ CAF      plan-1    H       0.020
+ CAF      plan-1    H2       0.020
+ CAF      plan-2    C         0.020
+ CAF      plan-2    CA        0.020
+ CAF      plan-2    O         0.020
+ CAF      plan-2    OXT       0.020
+# ------------------------------------------------------

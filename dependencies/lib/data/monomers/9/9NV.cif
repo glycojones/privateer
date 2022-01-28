@@ -1,0 +1,349 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+9NV      9NV 'DANSYL-L-NORVALINE                  ' non-polymer        45  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_9NV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 9NV           O10    O    OS        0.000      0.000    0.000    0.000
+ 9NV           S8     S    ST        0.000     -1.171   -0.055   -0.801
+ 9NV           O9     O    OS        0.000     -1.279   -0.866   -1.964
+ 9NV           N      N    NH1       0.000     -1.482    1.498   -1.284
+ 9NV           H      H    H         0.000     -1.710    1.691   -2.248
+ 9NV           CA     C    CH1       0.000     -1.427    2.591   -0.311
+ 9NV           HA     H    H         0.000     -1.058    2.208    0.651
+ 9NV           CB     C    CH2       0.000     -0.484    3.683   -0.822
+ 9NV           HB1C   H    H         0.000     -0.512    4.536   -0.141
+ 9NV           HB2C   H    H         0.000     -0.803    4.002   -1.817
+ 9NV           CG     C    CH2       0.000      0.941    3.132   -0.894
+ 9NV           HG1C   H    H         0.000      0.967    2.278   -1.574
+ 9NV           HG2C   H    H         0.000      1.258    2.812    0.101
+ 9NV           CD     C    CH3       0.000      1.885    4.222   -1.406
+ 9NV           HD3C   H    H         0.000      1.862    5.053   -0.747
+ 9NV           HD2C   H    H         0.000      2.874    3.844   -1.456
+ 9NV           HD1C   H    H         0.000      1.580    4.534   -2.372
+ 9NV           C      C    C         0.000     -2.807    3.168   -0.125
+ 9NV           OXT    O    OC       -0.500     -2.986    4.118    0.668
+ 9NV           O      O    OC       -0.500     -3.773    2.695   -0.763
+ 9NV           C11    C    CR6       0.000     -2.484   -0.543    0.268
+ 9NV           C16    C    CR66      0.000     -3.800   -0.618   -0.218
+ 9NV           C17    C    CR16      0.000     -4.101   -0.312   -1.557
+ 9NV           H17    H    H         0.000     -3.311   -0.012   -2.235
+ 9NV           C18    C    CR16      0.000     -5.385   -0.394   -2.001
+ 9NV           H18    H    H         0.000     -5.608   -0.155   -3.034
+ 9NV           C19    C    CR16      0.000     -6.417   -0.778   -1.150
+ 9NV           H19    H    H         0.000     -7.431   -0.827   -1.526
+ 9NV           C20    C    CR6       0.000     -6.162   -1.098    0.166
+ 9NV           N21    N    NT        0.000     -7.203   -1.483    1.010
+ 9NV           C22    C    CH3       0.000     -7.859   -2.701    0.513
+ 9NV           H223   H    H         0.000     -8.645   -2.972    1.170
+ 9NV           H222   H    H         0.000     -8.254   -2.520   -0.453
+ 9NV           H221   H    H         0.000     -7.153   -3.488    0.465
+ 9NV           C23    C    CH3       0.000     -8.172   -0.394    1.181
+ 9NV           H233   H    H         0.000     -8.950   -0.712    1.825
+ 9NV           H232   H    H         0.000     -7.687    0.448    1.602
+ 9NV           H231   H    H         0.000     -8.579   -0.132    0.238
+ 9NV           C15    C    CR66      0.000     -4.841   -1.017    0.657
+ 9NV           C14    C    CR16      0.000     -4.540   -1.317    1.994
+ 9NV           H14    H    H         0.000     -5.327   -1.619    2.673
+ 9NV           C13    C    CR16      0.000     -3.254   -1.227    2.432
+ 9NV           H13    H    H         0.000     -3.025   -1.460    3.465
+ 9NV           C12    C    CR16      0.000     -2.229   -0.841    1.572
+ 9NV           H12    H    H         0.000     -1.214   -0.777    1.945
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 9NV      O10    n/a    S8     START
+ 9NV      S8     O10    C11    .
+ 9NV      O9     S8     .      .
+ 9NV      N      S8     CA     .
+ 9NV      H      N      .      .
+ 9NV      CA     N      C      .
+ 9NV      HA     CA     .      .
+ 9NV      CB     CA     CG     .
+ 9NV      HB1C   CB     .      .
+ 9NV      HB2C   CB     .      .
+ 9NV      CG     CB     CD     .
+ 9NV      HG1C   CG     .      .
+ 9NV      HG2C   CG     .      .
+ 9NV      CD     CG     HD1C   .
+ 9NV      HD3C   CD     .      .
+ 9NV      HD2C   CD     .      .
+ 9NV      HD1C   CD     .      .
+ 9NV      C      CA     O      .
+ 9NV      OXT    C      .      .
+ 9NV      O      C      .      .
+ 9NV      C11    S8     C16    .
+ 9NV      C16    C11    C17    .
+ 9NV      C17    C16    C18    .
+ 9NV      H17    C17    .      .
+ 9NV      C18    C17    C19    .
+ 9NV      H18    C18    .      .
+ 9NV      C19    C18    C20    .
+ 9NV      H19    C19    .      .
+ 9NV      C20    C19    C15    .
+ 9NV      N21    C20    C23    .
+ 9NV      C22    N21    H221   .
+ 9NV      H223   C22    .      .
+ 9NV      H222   C22    .      .
+ 9NV      H221   C22    .      .
+ 9NV      C23    N21    H231   .
+ 9NV      H233   C23    .      .
+ 9NV      H232   C23    .      .
+ 9NV      H231   C23    .      .
+ 9NV      C15    C20    C14    .
+ 9NV      C14    C15    C13    .
+ 9NV      H14    C14    .      .
+ 9NV      C13    C14    C12    .
+ 9NV      H13    C13    .      .
+ 9NV      C12    C13    H12    .
+ 9NV      H12    C12    .      END
+ 9NV      C11    C12    .    ADD
+ 9NV      C15    C16    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+9NV       CA        N         single    1.450     0.020     1.450     0.020     
+9NV       N         S8        single    1.600     0.020     1.600     0.020     
+9NV       CB        CA        single    1.524     0.020     1.524     0.020     
+9NV       C         CA        single    1.500     0.020     1.500     0.020     
+9NV       OXT       C         deloc     1.250     0.020     1.250     0.020     
+9NV       O         C         deloc     1.250     0.020     1.250     0.020     
+9NV       CG        CB        single    1.524     0.020     1.524     0.020     
+9NV       CD        CG        single    1.513     0.020     1.513     0.020     
+9NV       O9        S8        double    1.436     0.020     1.436     0.020     
+9NV       S8        O10       double    1.436     0.020     1.436     0.020     
+9NV       C11       S8        single    1.595     0.020     1.595     0.020     
+9NV       C11       C12       single    1.390     0.020     1.390     0.020     
+9NV       C16       C11       double    1.490     0.020     1.490     0.020     
+9NV       C12       C13       double    1.390     0.020     1.390     0.020     
+9NV       C13       C14       single    1.390     0.020     1.390     0.020     
+9NV       C14       C15       double    1.390     0.020     1.390     0.020     
+9NV       C15       C16       single    1.490     0.020     1.490     0.020     
+9NV       C15       C20       single    1.490     0.020     1.490     0.020     
+9NV       C17       C16       single    1.390     0.020     1.390     0.020     
+9NV       C18       C17       double    1.390     0.020     1.390     0.020     
+9NV       C19       C18       single    1.390     0.020     1.390     0.020     
+9NV       C20       C19       double    1.390     0.020     1.390     0.020     
+9NV       N21       C20       single    1.405     0.020     1.405     0.020     
+9NV       C22       N21       single    1.469     0.020     1.469     0.020     
+9NV       C23       N21       single    1.469     0.020     1.469     0.020     
+9NV       H         N         single    1.036     0.016     0.914     0.007     
+9NV       HA        CA        single    1.089     0.010     0.989     0.005     
+9NV       HB1C      CB        single    1.089     0.010     0.989     0.005     
+9NV       HB2C      CB        single    1.089     0.010     0.989     0.005     
+9NV       HG1C      CG        single    1.089     0.010     0.989     0.005     
+9NV       HG2C      CG        single    1.089     0.010     0.989     0.005     
+9NV       HD1C      CD        single    1.089     0.010     0.989     0.005     
+9NV       HD2C      CD        single    1.089     0.010     0.989     0.005     
+9NV       HD3C      CD        single    1.089     0.010     0.989     0.005     
+9NV       H12       C12       single    1.082     0.013     0.975     0.010     
+9NV       H13       C13       single    1.082     0.013     0.975     0.010     
+9NV       H14       C14       single    1.082     0.013     0.975     0.010     
+9NV       H17       C17       single    1.082     0.013     0.975     0.010     
+9NV       H18       C18       single    1.082     0.013     0.975     0.010     
+9NV       H19       C19       single    1.082     0.013     0.975     0.010     
+9NV       H221      C22       single    1.089     0.010     0.989     0.005     
+9NV       H222      C22       single    1.089     0.010     0.989     0.005     
+9NV       H223      C22       single    1.089     0.010     0.989     0.005     
+9NV       H231      C23       single    1.089     0.010     0.989     0.005     
+9NV       H232      C23       single    1.089     0.010     0.989     0.005     
+9NV       H233      C23       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 9NV      O10    S8     O9      109.500    3.000
+ 9NV      O10    S8     N       109.500    3.000
+ 9NV      O10    S8     C11     109.500    3.000
+ 9NV      O9     S8     N       109.500    3.000
+ 9NV      O9     S8     C11     109.500    3.000
+ 9NV      N      S8     C11     109.500    3.000
+ 9NV      S8     N      H       120.000    3.000
+ 9NV      S8     N      CA      120.000    3.000
+ 9NV      H      N      CA      118.500    3.000
+ 9NV      N      CA     HA      108.550    3.000
+ 9NV      N      CA     CB      110.000    3.000
+ 9NV      N      CA     C       111.600    3.000
+ 9NV      HA     CA     CB      108.340    3.000
+ 9NV      HA     CA     C       108.810    3.000
+ 9NV      CB     CA     C       109.470    3.000
+ 9NV      CA     CB     HB1C    109.470    3.000
+ 9NV      CA     CB     HB2C    109.470    3.000
+ 9NV      CA     CB     CG      111.000    3.000
+ 9NV      HB1C   CB     HB2C    107.900    3.000
+ 9NV      HB1C   CB     CG      109.470    3.000
+ 9NV      HB2C   CB     CG      109.470    3.000
+ 9NV      CB     CG     HG1C    109.470    3.000
+ 9NV      CB     CG     HG2C    109.470    3.000
+ 9NV      CB     CG     CD      111.000    3.000
+ 9NV      HG1C   CG     HG2C    107.900    3.000
+ 9NV      HG1C   CG     CD      109.470    3.000
+ 9NV      HG2C   CG     CD      109.470    3.000
+ 9NV      CG     CD     HD3C    109.470    3.000
+ 9NV      CG     CD     HD2C    109.470    3.000
+ 9NV      CG     CD     HD1C    109.470    3.000
+ 9NV      HD3C   CD     HD2C    109.470    3.000
+ 9NV      HD3C   CD     HD1C    109.470    3.000
+ 9NV      HD2C   CD     HD1C    109.470    3.000
+ 9NV      CA     C      OXT     118.500    3.000
+ 9NV      CA     C      O       118.500    3.000
+ 9NV      OXT    C      O       123.000    3.000
+ 9NV      S8     C11    C16     120.000    3.000
+ 9NV      S8     C11    C12     120.000    3.000
+ 9NV      C16    C11    C12     120.000    3.000
+ 9NV      C11    C16    C17     120.000    3.000
+ 9NV      C11    C16    C15     120.000    3.000
+ 9NV      C17    C16    C15     120.000    3.000
+ 9NV      C16    C17    H17     120.000    3.000
+ 9NV      C16    C17    C18     120.000    3.000
+ 9NV      H17    C17    C18     120.000    3.000
+ 9NV      C17    C18    H18     120.000    3.000
+ 9NV      C17    C18    C19     120.000    3.000
+ 9NV      H18    C18    C19     120.000    3.000
+ 9NV      C18    C19    H19     120.000    3.000
+ 9NV      C18    C19    C20     120.000    3.000
+ 9NV      H19    C19    C20     120.000    3.000
+ 9NV      C19    C20    N21     120.000    3.000
+ 9NV      C19    C20    C15     120.000    3.000
+ 9NV      N21    C20    C15     120.000    3.000
+ 9NV      C20    N21    C22     109.500    3.000
+ 9NV      C20    N21    C23     109.500    3.000
+ 9NV      C22    N21    C23     109.470    3.000
+ 9NV      N21    C22    H223    109.470    3.000
+ 9NV      N21    C22    H222    109.470    3.000
+ 9NV      N21    C22    H221    109.470    3.000
+ 9NV      H223   C22    H222    109.470    3.000
+ 9NV      H223   C22    H221    109.470    3.000
+ 9NV      H222   C22    H221    109.470    3.000
+ 9NV      N21    C23    H233    109.470    3.000
+ 9NV      N21    C23    H232    109.470    3.000
+ 9NV      N21    C23    H231    109.470    3.000
+ 9NV      H233   C23    H232    109.470    3.000
+ 9NV      H233   C23    H231    109.470    3.000
+ 9NV      H232   C23    H231    109.470    3.000
+ 9NV      C20    C15    C14     120.000    3.000
+ 9NV      C20    C15    C16     120.000    3.000
+ 9NV      C14    C15    C16     120.000    3.000
+ 9NV      C15    C14    H14     120.000    3.000
+ 9NV      C15    C14    C13     120.000    3.000
+ 9NV      H14    C14    C13     120.000    3.000
+ 9NV      C14    C13    H13     120.000    3.000
+ 9NV      C14    C13    C12     120.000    3.000
+ 9NV      H13    C13    C12     120.000    3.000
+ 9NV      C13    C12    H12     120.000    3.000
+ 9NV      C13    C12    C11     120.000    3.000
+ 9NV      H12    C12    C11     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 9NV      var_1    O10    S8     N      CA       -46.073   20.000   1
+ 9NV      var_2    S8     N      CA     C       -113.719   20.000   3
+ 9NV      var_3    N      CA     CB     CG       -64.969   20.000   3
+ 9NV      var_4    CA     CB     CG     CD       179.993   20.000   3
+ 9NV      var_5    CB     CG     CD     HD1C     -60.031   20.000   3
+ 9NV      var_6    N      CA     C      O          0.017   20.000   3
+ 9NV      var_7    O10    S8     C11    C16      176.546   20.000   1
+ 9NV      CONST_1  S8     C11    C12    C13      180.000    0.000   0
+ 9NV      CONST_2  S8     C11    C16    C17        0.000    0.000   0
+ 9NV      CONST_3  C11    C16    C17    C18      180.000    0.000   0
+ 9NV      CONST_4  C16    C17    C18    C19        0.000    0.000   0
+ 9NV      CONST_5  C17    C18    C19    C20        0.000    0.000   0
+ 9NV      CONST_6  C18    C19    C20    C15        0.000    0.000   0
+ 9NV      var_8    C19    C20    N21    C23      -63.152   20.000   1
+ 9NV      var_9    C20    N21    C22    H221      60.060   20.000   1
+ 9NV      var_10   C20    N21    C23    H231      60.000   20.000   1
+ 9NV      CONST_7  C19    C20    C15    C14      180.000    0.000   0
+ 9NV      CONST_8  C20    C15    C16    C11      180.000    0.000   0
+ 9NV      CONST_9  C20    C15    C14    C13      180.000    0.000   0
+ 9NV      CONST_10 C15    C14    C13    C12        0.000    0.000   0
+ 9NV      CONST_11 C14    C13    C12    C11        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 9NV      chir_01  CA     N      C      CB        positiv
+ 9NV      chir_02  S8     N      O9     O10       negativ
+ 9NV      chir_03  N21    C20    C23    C22       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 9NV      plan-1    N         0.020
+ 9NV      plan-1    CA        0.020
+ 9NV      plan-1    S8        0.020
+ 9NV      plan-1    H         0.020
+ 9NV      plan-2    C         0.020
+ 9NV      plan-2    CA        0.020
+ 9NV      plan-2    O         0.020
+ 9NV      plan-2    OXT       0.020
+ 9NV      plan-3    C11       0.020
+ 9NV      plan-3    S8        0.020
+ 9NV      plan-3    C12       0.020
+ 9NV      plan-3    C16       0.020
+ 9NV      plan-3    C13       0.020
+ 9NV      plan-3    C14       0.020
+ 9NV      plan-3    H12       0.020
+ 9NV      plan-3    H13       0.020
+ 9NV      plan-3    C15       0.020
+ 9NV      plan-3    H14       0.020
+ 9NV      plan-3    C20       0.020
+ 9NV      plan-3    C17       0.020
+ 9NV      plan-3    C18       0.020
+ 9NV      plan-3    C19       0.020
+ 9NV      plan-3    H17       0.020
+ 9NV      plan-3    H18       0.020
+ 9NV      plan-3    H19       0.020
+ 9NV      plan-3    N21       0.020
+# ------------------------------------------------------

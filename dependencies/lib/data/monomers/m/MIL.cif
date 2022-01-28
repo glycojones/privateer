@@ -1,0 +1,202 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MIL     MIL      MILRINONE     NON-POLYMER     25     16     .     
+#
+data_comp_MIL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MIL     C1      C       CR6     0       0.320       0.176       -0.058      
+MIL     C2      C       CR6     0       1.069       -0.985      0.308       
+MIL     C4      C       CR6     0       3.160       0.188       -0.144      
+MIL     C5      C       CR6     0       2.403       1.361       -0.516      
+MIL     C6      C       CR16    0       1.002       1.332       -0.467      
+MIL     C2A     C       CH3     0       0.425       -2.262      0.756       
+MIL     C5A     C       CSP     0       3.114       2.543       -0.933      
+MIL     "C1'"   C       CR6     0       -1.170      0.205       -0.027      
+MIL     "C2'"   C       CR16    0       -1.915      0.269       -1.195      
+MIL     "C3'"   C       CR16    0       -3.301      0.297       -1.125      
+MIL     "C5'"   C       CR16    0       -3.259      0.208       1.153       
+MIL     "C6'"   C       CR16    0       -1.872      0.178       1.169       
+MIL     O4      O       O       0       4.399       0.124       -0.158      
+MIL     N3      N       NR6     0       2.447       -0.933      0.253       
+MIL     N5A     N       N       0       3.651       3.486       -1.291      
+MIL     "N4'"   N       NRD6    0       -3.984      0.268       0.028       
+MIL     H6      H       H       0       0.511       2.099       -0.710      
+MIL     H2A1    H       H       0       1.094       -2.948      0.885       
+MIL     H2A2    H       H       0       -0.206      -2.557      0.084       
+MIL     H2A3    H       H       0       -0.042      -2.111      1.590       
+MIL     "H2'"   H       H       0       -1.483      0.291       -2.038      
+MIL     "H3'"   H       H       0       -3.792      0.339       -1.931      
+MIL     "H5'"   H       H       0       -3.720      0.187       1.978       
+MIL     "H6'"   H       H       0       -1.409      0.135       1.995       
+MIL     HN3     H       H       0       2.911       -1.643      0.478       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MIL       C1        C2        DOUBLE    y         1.405     0.017     1.405     0.017     
+MIL       C1        C6        SINGLE    y         1.385     0.016     1.385     0.016     
+MIL       C1        "C1'"     SINGLE    n         1.489     0.011     1.489     0.011     
+MIL       C2        C2A       SINGLE    n         1.494     0.010     1.494     0.010     
+MIL       C2        N3        SINGLE    y         1.363     0.014     1.363     0.014     
+MIL       C4        C5        SINGLE    y         1.437     0.010     1.437     0.010     
+MIL       C4        O4        DOUBLE    n         1.239     0.010     1.239     0.010     
+MIL       C4        N3        SINGLE    y         1.379     0.010     1.379     0.010     
+MIL       C5        C6        DOUBLE    y         1.390     0.013     1.390     0.013     
+MIL       C5        C5A       SINGLE    n         1.440     0.011     1.440     0.011     
+MIL       C5A       N5A       TRIPLE    n         1.143     0.010     1.143     0.010     
+MIL       "C1'"     "C2'"     DOUBLE    y         1.379     0.010     1.379     0.010     
+MIL       "C1'"     "C6'"     SINGLE    y         1.379     0.010     1.379     0.010     
+MIL       "C2'"     "C3'"     SINGLE    y         1.381     0.010     1.381     0.010     
+MIL       "C3'"     "N4'"     DOUBLE    y         1.332     0.011     1.332     0.011     
+MIL       "C5'"     "C6'"     DOUBLE    y         1.381     0.010     1.381     0.010     
+MIL       "C5'"     "N4'"     SINGLE    y         1.332     0.011     1.332     0.011     
+MIL       C6        H6        SINGLE    n         1.082     0.013     0.942     0.013     
+MIL       C2A       H2A1      SINGLE    n         1.089     0.010     0.968     0.020     
+MIL       C2A       H2A2      SINGLE    n         1.089     0.010     0.968     0.020     
+MIL       C2A       H2A3      SINGLE    n         1.089     0.010     0.968     0.020     
+MIL       "C2'"     "H2'"     SINGLE    n         1.082     0.013     0.948     0.020     
+MIL       "C3'"     "H3'"     SINGLE    n         1.082     0.013     0.945     0.020     
+MIL       "C5'"     "H5'"     SINGLE    n         1.082     0.013     0.945     0.020     
+MIL       "C6'"     "H6'"     SINGLE    n         1.082     0.013     0.948     0.020     
+MIL       N3        HN3       SINGLE    n         1.016     0.010     0.876     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MIL          C2          C1          C6     119.501    1.61
+MIL          C2          C1       "C1'"     121.097    2.46
+MIL          C6          C1       "C1'"     119.402    1.53
+MIL          C1          C2         C2A     122.770    1.50
+MIL          C1          C2          N3     119.583    1.50
+MIL         C2A          C2          N3     117.647    1.50
+MIL          C5          C4          O4     123.825    1.50
+MIL          C5          C4          N3     117.663    2.25
+MIL          O4          C4          N3     118.512    1.50
+MIL          C4          C5          C6     119.732    1.50
+MIL          C4          C5         C5A     118.272    1.50
+MIL          C6          C5         C5A     121.995    1.50
+MIL          C1          C6          C5     119.868    1.50
+MIL          C1          C6          H6     119.910    1.50
+MIL          C5          C6          H6     120.221    1.50
+MIL          C2         C2A        H2A1     109.504    1.50
+MIL          C2         C2A        H2A2     109.504    1.50
+MIL          C2         C2A        H2A3     109.504    1.50
+MIL        H2A1         C2A        H2A2     109.339    1.66
+MIL        H2A1         C2A        H2A3     109.339    1.66
+MIL        H2A2         C2A        H2A3     109.339    1.66
+MIL          C5         C5A         N5A     178.064    1.50
+MIL          C1       "C1'"       "C2'"     121.708    1.52
+MIL          C1       "C1'"       "C6'"     121.708    1.52
+MIL       "C2'"       "C1'"       "C6'"     116.585    1.50
+MIL       "C1'"       "C2'"       "C3'"     119.674    1.50
+MIL       "C1'"       "C2'"       "H2'"     120.360    1.50
+MIL       "C3'"       "C2'"       "H2'"     119.966    1.50
+MIL       "C2'"       "C3'"       "N4'"     123.770    1.50
+MIL       "C2'"       "C3'"       "H3'"     118.343    1.50
+MIL       "N4'"       "C3'"       "H3'"     117.887    1.50
+MIL       "C6'"       "C5'"       "N4'"     123.770    1.50
+MIL       "C6'"       "C5'"       "H5'"     118.343    1.50
+MIL       "N4'"       "C5'"       "H5'"     117.887    1.50
+MIL       "C1'"       "C6'"       "C5'"     119.674    1.50
+MIL       "C1'"       "C6'"       "H6'"     120.360    1.50
+MIL       "C5'"       "C6'"       "H6'"     119.966    1.50
+MIL          C2          N3          C4     123.653    1.50
+MIL          C2          N3         HN3     118.812    2.27
+MIL          C4          N3         HN3     117.535    1.78
+MIL       "C3'"       "N4'"       "C5'"     116.528    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MIL              const_18          C6          C1          C2         C2A     180.000   10.00     2
+MIL              const_37          C2          C1          C6          C5       0.000   10.00     2
+MIL             sp2_sp2_1          C2          C1       "C1'"       "C2'"     180.000   10.00     2
+MIL              const_13       "N4'"       "C5'"       "C6'"       "C1'"       0.000   10.00     2
+MIL              const_11       "C6'"       "C5'"       "N4'"       "C3'"       0.000   10.00     2
+MIL              const_23         C2A          C2          N3          C4     180.000   10.00     2
+MIL             sp2_sp3_1          C1          C2         C2A        H2A1     150.000   10.00     6
+MIL              const_27          O4          C4          N3          C2     180.000   10.00     2
+MIL              const_32          O4          C4          C5         C5A       0.000   10.00     2
+MIL              const_35         C5A          C5          C6          C1     180.000   10.00     2
+MIL           other_tor_1         N5A         C5A          C5          C4      90.000   10.00     1
+MIL              const_43          C1       "C1'"       "C6'"       "C5'"     180.000   10.00     2
+MIL       const_sp2_sp2_3          C1       "C1'"       "C2'"       "C3'"     180.000   10.00     2
+MIL       const_sp2_sp2_5       "C1'"       "C2'"       "C3'"       "N4'"       0.000   10.00     2
+MIL       const_sp2_sp2_9       "C2'"       "C3'"       "N4'"       "C5'"       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MIL    plan-1          C1   0.020
+MIL    plan-1       "C1'"   0.020
+MIL    plan-1          C2   0.020
+MIL    plan-1         C2A   0.020
+MIL    plan-1          C4   0.020
+MIL    plan-1          C5   0.020
+MIL    plan-1         C5A   0.020
+MIL    plan-1          C6   0.020
+MIL    plan-1          H6   0.020
+MIL    plan-1         HN3   0.020
+MIL    plan-1          N3   0.020
+MIL    plan-1          O4   0.020
+MIL    plan-2          C1   0.020
+MIL    plan-2       "C1'"   0.020
+MIL    plan-2       "C2'"   0.020
+MIL    plan-2       "C3'"   0.020
+MIL    plan-2       "C5'"   0.020
+MIL    plan-2       "C6'"   0.020
+MIL    plan-2       "H2'"   0.020
+MIL    plan-2       "H3'"   0.020
+MIL    plan-2       "H5'"   0.020
+MIL    plan-2       "H6'"   0.020
+MIL    plan-2       "N4'"   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MIL SMILES           ACDLabs              10.04 "N#CC1=CC(=C(NC1=O)C)c2ccncc2"
+MIL SMILES_CANONICAL CACTVS               3.341 "CC1=C(C=C(C#N)C(=O)N1)c2ccncc2"
+MIL SMILES           CACTVS               3.341 "CC1=C(C=C(C#N)C(=O)N1)c2ccncc2"
+MIL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC1=C(C=C(C(=O)N1)C#N)c2ccncc2"
+MIL SMILES           "OpenEye OEToolkits" 1.5.0 "CC1=C(C=C(C(=O)N1)C#N)c2ccncc2"
+MIL InChI            InChI                1.03  "InChI=1S/C12H9N3O/c1-8-11(9-2-4-14-5-3-9)6-10(7-13)12(16)15-8/h2-6H,1H3,(H,15,16)"
+MIL InChIKey         InChI                1.03  PZRHRDRVRGEVNW-UHFFFAOYSA-N
+MIL ?                acedrg               202         "dictionary generator"                  
+MIL ?                acedrg_database      11          "data source"                           
+MIL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MIL ?                refmac5              5.8.0189    "optimization tool"                     

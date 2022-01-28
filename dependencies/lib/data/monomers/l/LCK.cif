@@ -1,0 +1,266 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LCK     LCK     "(Z)-N~6~-(2-carboxy-1-methylethylidene)-L-lysine"     peptide   33     16     .
+#
+data_comp_LCK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LCK     OXT     O       OC      -1      22.491      43.932      76.450
+LCK     O2      O       O       0       29.536      40.105      83.353
+LCK     C4      C       C       0       29.164      39.489      82.339
+LCK     O1      O       OC      -1      28.058      38.929      82.235
+LCK     C3      C       CH2     0       30.120      39.416      81.152
+LCK     C2      C       C       0       30.424      40.758      80.544
+LCK     C1      C       CH3     0       31.766      41.343      80.858
+LCK     NZ      N       N       0       29.613      41.420      79.784
+LCK     CE      C       CH2     0       28.273      40.953      79.390
+LCK     CD      C       CH2     0       27.623      41.930      78.435
+LCK     CG      C       CH2     0       26.227      41.502      78.003
+LCK     CB      C       CH2     0       25.532      42.519      77.106
+LCK     CA      C       CH1     0       24.081      42.188      76.741
+LCK     N       N       NT3     1       24.013      40.927      75.951
+LCK     C       C       C       0       23.457      43.334      75.935
+LCK     O       O       O       0       23.960      43.586      74.822
+LCK     HC3     H       H       0       29.730      38.834      80.473
+LCK     H3A     H       H       0       30.953      39.005      81.452
+LCK     HC1     H       H       0       31.865      42.201      80.410
+LCK     H1A     H       H       0       32.463      40.737      80.552
+LCK     H1B     H       H       0       31.847      41.469      81.820
+LCK     HE      H       H       0       27.710      40.855      80.189
+LCK     HEA     H       H       0       28.345      40.074      78.959
+LCK     HD      H       H       0       28.190      42.020      77.640
+LCK     HDA     H       H       0       27.569      42.807      78.867
+LCK     HG      H       H       0       25.676      41.357      78.802
+LCK     HGA     H       H       0       26.289      40.649      77.523
+LCK     HB      H       H       0       26.048      42.604      76.277
+LCK     HBA     H       H       0       25.547      43.389      77.556
+LCK     HA      H       H       0       23.563      42.065      77.570
+LCK     H       H       H       0       23.187      40.830      75.578
+LCK     H2      H       H       0       24.172      40.211      76.492
+LCK     H3      H       H       0       24.637      40.939      75.287
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+LCK      N      n/a    CA     START
+LCK      H      N      .      .
+LCK      H2     N      .      .
+LCK      H3     N      .      .
+LCK      CA     N      C      .
+LCK      HA     CA     .      .
+LCK      CB     CA     CG     .
+LCK      HB     CB     .      .
+LCK      HBA    CB     .      .
+LCK      CG     CB     CD     .
+LCK      HG     CG     .      .
+LCK      HGA    CG     .      .
+LCK      CD     CG     CE     .
+LCK      HD     CD     .      .
+LCK      HDA    CD     .      .
+LCK      CE     CD     NZ     .
+LCK      HE     CE     .      .
+LCK      HEA    CE     .      .
+LCK      NZ     CE     C2     .
+LCK      C2     NZ     C3     .
+LCK      C1     C2     HC1    .
+LCK      H1B    C1     .      .
+LCK      H1A    C1     .      .
+LCK      HC1    C1     .      .
+LCK      C3     C2     C4     .
+LCK      HC3    C3     .      .
+LCK      H3A    C3     .      .
+LCK      C4     C3     O1     .
+LCK      O2     C4     .      .
+LCK      O1     C4     .      .
+LCK      C      CA     .      END
+LCK      OXT    C      .      .
+LCK      O      C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LCK       OXT       C         SINGLE    n         1.247     0.019     1.247     0.019     
+LCK       O2        C4        DOUBLE    n         1.244     0.020     1.244     0.020     
+LCK       C4        O1        SINGLE    n         1.244     0.020     1.244     0.020     
+LCK       C4        C3        SINGLE    n         1.525     0.014     1.525     0.014     
+LCK       C3        C2        SINGLE    n         1.502     0.010     1.502     0.010     
+LCK       C2        C1        SINGLE    n         1.496     0.010     1.496     0.010     
+LCK       C2        NZ        DOUBLE    n         1.281     0.020     1.281     0.020     
+LCK       NZ        CE        SINGLE    n         1.469     0.017     1.469     0.017     
+LCK       CE        CD        SINGLE    n         1.513     0.020     1.513     0.020     
+LCK       CD        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+LCK       CG        CB        SINGLE    n         1.523     0.012     1.523     0.012     
+LCK       CB        CA        SINGLE    n         1.532     0.010     1.532     0.010     
+LCK       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+LCK       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+LCK       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+LCK       C3        HC3       SINGLE    n         1.089     0.010     0.976     0.020     
+LCK       C3        H3A       SINGLE    n         1.089     0.010     0.976     0.020     
+LCK       C1        HC1       SINGLE    n         1.089     0.010     0.973     0.013     
+LCK       C1        H1A       SINGLE    n         1.089     0.010     0.973     0.013     
+LCK       C1        H1B       SINGLE    n         1.089     0.010     0.973     0.013     
+LCK       CE        HE        SINGLE    n         1.089     0.010     0.982     0.011     
+LCK       CE        HEA       SINGLE    n         1.089     0.010     0.982     0.011     
+LCK       CD        HD        SINGLE    n         1.089     0.010     0.980     0.016     
+LCK       CD        HDA       SINGLE    n         1.089     0.010     0.980     0.016     
+LCK       CG        HG        SINGLE    n         1.089     0.010     0.981     0.016     
+LCK       CG        HGA       SINGLE    n         1.089     0.010     0.981     0.016     
+LCK       CB        HB        SINGLE    n         1.089     0.010     0.980     0.016     
+LCK       CB        HBA       SINGLE    n         1.089     0.010     0.980     0.016     
+LCK       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+LCK       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+LCK       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+LCK       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LCK          O2          C4          O1     123.857    1.50
+LCK          O2          C4          C3     118.071    1.50
+LCK          O1          C4          C3     118.071    1.50
+LCK          C4          C3          C2     111.575    3.00
+LCK          C4          C3         HC3     108.236    1.50
+LCK          C4          C3         H3A     108.236    1.50
+LCK          C2          C3         HC3     108.781    1.50
+LCK          C2          C3         H3A     108.781    1.50
+LCK         HC3          C3         H3A     107.538    1.50
+LCK          C3          C2          C1     117.196    1.65
+LCK          C3          C2          NZ     121.402    3.00
+LCK          C1          C2          NZ     121.402    3.00
+LCK          C2          C1         HC1     109.466    1.50
+LCK          C2          C1         H1A     109.466    1.50
+LCK          C2          C1         H1B     109.466    1.50
+LCK         HC1          C1         H1A     109.402    1.50
+LCK         HC1          C1         H1B     109.402    1.50
+LCK         H1A          C1         H1B     109.402    1.50
+LCK          C2          NZ          CE     119.132    2.76
+LCK          NZ          CE          CD     111.086    2.02
+LCK          NZ          CE          HE     109.578    1.50
+LCK          NZ          CE         HEA     109.578    1.50
+LCK          CD          CE          HE     109.449    1.50
+LCK          CD          CE         HEA     109.449    1.50
+LCK          HE          CE         HEA     108.106    1.50
+LCK          CE          CD          CG     112.984    1.50
+LCK          CE          CD          HD     108.887    1.50
+LCK          CE          CD         HDA     108.887    1.50
+LCK          CG          CD          HD     109.041    1.50
+LCK          CG          CD         HDA     109.041    1.50
+LCK          HD          CD         HDA     107.927    1.57
+LCK          CD          CG          CB     113.328    2.00
+LCK          CD          CG          HG     108.806    1.50
+LCK          CD          CG         HGA     108.806    1.50
+LCK          CB          CG          HG     108.601    1.50
+LCK          CB          CG         HGA     108.601    1.50
+LCK          HG          CG         HGA     107.646    1.50
+LCK          CG          CB          CA     115.311    1.56
+LCK          CG          CB          HB     108.650    1.50
+LCK          CG          CB         HBA     108.650    1.50
+LCK          CA          CB          HB     108.549    1.50
+LCK          CA          CB         HBA     108.549    1.50
+LCK          HB          CB         HBA     107.844    1.50
+LCK          CB          CA           N     110.374    1.62
+LCK          CB          CA           C     111.037    2.40
+LCK          CB          CA          HA     108.967    1.50
+LCK           N          CA           C     109.241    1.50
+LCK           N          CA          HA     108.487    1.50
+LCK           C          CA          HA     108.824    1.50
+LCK          CA           N           H     110.062    1.93
+LCK          CA           N          H2     110.062    1.93
+LCK          CA           N          H3     110.062    1.93
+LCK           H           N          H2     109.028    2.41
+LCK           H           N          H3     109.028    2.41
+LCK          H2           N          H3     109.028    2.41
+LCK         OXT           C          CA     117.124    1.50
+LCK         OXT           C           O     125.752    1.50
+LCK          CA           C           O     117.124    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LCK            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+LCK            sp3_sp3_31           N          CA          CB          CG      60.000   10.00     3
+LCK            sp3_sp3_37          CB          CA           N           H     180.000   10.00     3
+LCK            sp2_sp3_23         OXT           C          CA          CB     120.000   10.00     6
+LCK             sp2_sp3_2          O2          C4          C3          C2     120.000   10.00     6
+LCK             sp2_sp3_8          C1          C2          C3          C4     120.000   10.00     6
+LCK            sp2_sp3_13          C3          C2          C1         HC1       0.000   10.00     6
+LCK             sp2_sp2_1          C3          C2          NZ          CE     180.000   10.00     2
+LCK            sp2_sp3_20          C2          NZ          CE          CD     120.000   10.00     6
+LCK             sp3_sp3_1          CG          CD          CE          NZ     180.000   10.00     3
+LCK            sp3_sp3_10          CE          CD          CG          CB     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+LCK    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LCK    plan-1          C3   0.020
+LCK    plan-1          C4   0.020
+LCK    plan-1          O1   0.020
+LCK    plan-1          O2   0.020
+LCK    plan-2          C1   0.020
+LCK    plan-2          C2   0.020
+LCK    plan-2          C3   0.020
+LCK    plan-2          NZ   0.020
+LCK    plan-3           C   0.020
+LCK    plan-3          CA   0.020
+LCK    plan-3           O   0.020
+LCK    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LCK SMILES           ACDLabs              10.04 "O=C(O)CC(=N/CCCCC(N)C(=O)O)\C"
+LCK SMILES_CANONICAL CACTVS               3.341 "CC(CC(O)=O)=NCCCC[C@H](N)C(O)=O"
+LCK SMILES           CACTVS               3.341 "CC(CC(O)=O)=NCCCC[CH](N)C(O)=O"
+LCK SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C/C(=N/CCCC[C@@H](C(=O)O)N)/CC(=O)O"
+LCK SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=NCCCCC(C(=O)O)N)CC(=O)O"
+LCK InChI            InChI                1.03  "InChI=1S/C10H18N2O4/c1-7(6-9(13)14)12-5-3-2-4-8(11)10(15)16/h8H,2-6,11H2,1H3,(H,13,14)(H,15,16)/b12-7-/t8-/m0/s1"
+LCK InChIKey         InChI                1.03  PCARXDDZXPRYII-VQLBTBKJSA-N
+LCK ?                acedrg               202         "dictionary generator"
+LCK ?                acedrg_database      11          "data source"
+LCK ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LCK ?                refmac5              5.8.0222    "optimization tool"

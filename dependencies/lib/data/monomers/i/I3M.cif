@@ -1,0 +1,62 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+I3M     I3M      "Tri-iodode Anion"     NON-POLYMER     3     3     .     
+#
+data_comp_I3M
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+I3M     I01     I       I       0       -42.768     5.134       11.096      
+I3M     I02     I       I       -1      -40.699     3.408       12.181      
+I3M     I03     I       I       0       -42.777     5.124       11.098      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+I3M       I01       I02       SINGLE    n         2.904     0.020     2.904     0.020     
+I3M       I02       I03       SINGLE    n         2.904     0.020     2.904     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+I3M         I01         I02         I03     180.000    3.00
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+I3M SMILES_CANONICAL CACTVS               3.370 "I[I-]I"
+I3M SMILES           CACTVS               3.370 "I[I-]I"
+I3M SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "I[I-]I"
+I3M SMILES           "OpenEye OEToolkits" 1.7.0 "I[I-]I"
+I3M InChI            InChI                1.03  InChI=1S/I3/c1-3-2/q-1
+I3M InChIKey         InChI                1.03  WRTMQOHKMFDUKX-UHFFFAOYSA-N
+I3M ?                acedrg               202         "dictionary generator"                  
+I3M ?                acedrg_database      11          "data source"                           
+I3M ?                rdkit                2017.03.2   "Chemoinformatics tool"
+I3M ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CNV     CNV      propanenitrile     non-polymer     9     4     .     
+#
+data_comp_CNV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CNV     NAB     N       N       0       23.554      109.497     18.498      
+CNV     CAC     C       CSP     0       22.639      110.040     18.076      
+CNV     CAD     C       CH2     0       21.442      110.707     17.555      
+CNV     CAA     C       CH3     0       20.174      110.273     18.212      
+CNV     HXT     H       H       0       21.374      110.529     16.586      
+CNV     HAD     H       H       0       21.543      111.682     17.672      
+CNV     HAA1    H       H       0       19.746      111.043     18.625      
+CNV     HAA2    H       H       0       20.358      109.604     18.895      
+CNV     HAA3    H       H       0       19.578      109.894     17.543      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CNV       NAB       CAC       TRIPLE    n         1.145     0.020     1.145     0.020     
+CNV       CAC       CAD       SINGLE    n         1.463     0.014     1.463     0.014     
+CNV       CAD       CAA       SINGLE    n         1.482     0.020     1.482     0.020     
+CNV       CAD       HXT       SINGLE    n         1.089     0.010     0.987     0.010     
+CNV       CAD       HAD       SINGLE    n         1.089     0.010     0.987     0.010     
+CNV       CAA       HAA1      SINGLE    n         1.089     0.010     0.973     0.015     
+CNV       CAA       HAA2      SINGLE    n         1.089     0.010     0.973     0.015     
+CNV       CAA       HAA3      SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CNV         NAB         CAC         CAD     178.308    1.50
+CNV         CAC         CAD         CAA     110.326    2.62
+CNV         CAC         CAD         HXT     109.018    1.50
+CNV         CAC         CAD         HAD     109.018    1.50
+CNV         CAA         CAD         HXT     108.835    1.50
+CNV         CAA         CAD         HAD     108.835    1.50
+CNV         HXT         CAD         HAD     107.713    1.50
+CNV         CAD         CAA        HAA1     109.473    1.50
+CNV         CAD         CAA        HAA2     109.473    1.50
+CNV         CAD         CAA        HAA3     109.473    1.50
+CNV        HAA1         CAA        HAA2     109.380    1.50
+CNV        HAA1         CAA        HAA3     109.380    1.50
+CNV        HAA2         CAA        HAA3     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CNV             sp3_sp3_1         NAB         CAC         CAD         CAA     180.000   10.00     3
+CNV             sp3_sp3_4        HAA1         CAA         CAD         CAC     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CNV SMILES           ACDLabs              12.01 N#CCC
+CNV InChI            InChI                1.03  InChI=1S/C3H5N/c1-2-3-4/h2H2,1H3
+CNV InChIKey         InChI                1.03  FVSKHRXBFJPNKK-UHFFFAOYSA-N
+CNV SMILES_CANONICAL CACTVS               3.385 CCC#N
+CNV SMILES           CACTVS               3.385 CCC#N
+CNV SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 CCC#N
+CNV SMILES           "OpenEye OEToolkits" 1.9.2 CCC#N
+CNV ?                acedrg               202         "dictionary generator"                  
+CNV ?                acedrg_database      11          "data source"                           
+CNV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CNV ?                refmac5              5.8.0189    "optimization tool"                     

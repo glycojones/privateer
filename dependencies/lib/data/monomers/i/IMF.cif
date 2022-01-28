@@ -1,0 +1,344 @@
+data_comp_list
+# 
+_chem_comp.id                  IMF 
+_chem_comp.three_letter_code   IMF 
+_chem_comp.name                'TETRA(IMIDAZOLE)DIAQUACOPPER (I)    ' 
+_chem_comp.group               non-polymer 
+_chem_comp.number_atoms_all    43 
+_chem_comp.number_atoms_nh     23 
+_chem_comp.desc_level          . 
+# 
+data_comp_IMF
+# 
+loop_
+_chem_comp_atom.comp_id 
+_chem_comp_atom.atom_id 
+_chem_comp_atom.type_symbol 
+_chem_comp_atom.type_energy 
+_chem_comp_atom.partial_charge 
+IMF O2   O  O    0.000 
+IMF HO21 H  H    0.000 
+IMF HO22 H  H    0.000 
+IMF CU   CU CU   1.000 
+IMF O1   O  O    0.000 
+IMF HO12 H  H    0.000 
+IMF HO11 H  H    0.000 
+IMF NE6  N  NR5  0.000 
+IMF CD6  C  CR15 0.000 
+IMF HD24 H  H    0.000 
+IMF CE5  C  CR15 0.000 
+IMF H4E1 H  H    0.000 
+IMF ND5  N  NR15 0.000 
+IMF HD14 H  H    0.000 
+IMF CG4  C  CR15 0.000 
+IMF HG4  H  H    0.000 
+IMF NEM  N  NR5  0.000 
+IMF CDM  C  CR15 0.000 
+IMF HD22 H  H    0.000 
+IMF CEL  C  CR15 0.000 
+IMF H2E1 H  H    0.000 
+IMF NDL  N  NR15 0.000 
+IMF HD12 H  H    0.000 
+IMF CG2  C  CR15 0.000 
+IMF HG2  H  H    0.000 
+IMF NEW  N  NR5  0.000 
+IMF CDW  C  CR15 0.000 
+IMF HD23 H  H    0.000 
+IMF CEV  C  CR15 0.000 
+IMF HC1  H  H    0.000 
+IMF NDV  N  NR15 0.000 
+IMF HD13 H  H    0.000 
+IMF CG3  C  CR15 0.000 
+IMF HG3  H  H    0.000 
+IMF NEC  N  NR5  0.000 
+IMF CDC  C  CR15 0.000 
+IMF HD21 H  H    0.000 
+IMF CEB  C  CR15 0.000 
+IMF H1E2 H  H    0.000 
+IMF NDB  N  NR15 0.000 
+IMF HD11 H  H    0.000 
+IMF CG1  C  CR15 0.000 
+IMF HG1  H  H    0.000 
+# 
+loop_
+_chem_comp_tree.comp_id 
+_chem_comp_tree.atom_id 
+_chem_comp_tree.atom_back 
+_chem_comp_tree.atom_forward 
+_chem_comp_tree.connect_type 
+IMF O2   n/a CU   START 
+IMF HO21 O2  .    .     
+IMF HO22 O2  .    .     
+IMF CU   O2  NEC  .     
+IMF O1   CU  HO11 .     
+IMF HO12 O1  .    .     
+IMF HO11 O1  .    .     
+IMF NE6  CU  CE5  .     
+IMF CD6  NE6 HD24 .     
+IMF HD24 CD6 .    .     
+IMF CE5  NE6 ND5  .     
+IMF H4E1 CE5 .    .     
+IMF ND5  CE5 CG4  .     
+IMF HD14 ND5 .    .     
+IMF CG4  ND5 HG4  .     
+IMF HG4  CG4 .    .     
+IMF NEM  CU  CEL  .     
+IMF CDM  NEM HD22 .     
+IMF HD22 CDM .    .     
+IMF CEL  NEM NDL  .     
+IMF H2E1 CEL .    .     
+IMF NDL  CEL CG2  .     
+IMF HD12 NDL .    .     
+IMF CG2  NDL HG2  .     
+IMF HG2  CG2 .    .     
+IMF NEW  CU  CEV  .     
+IMF CDW  NEW HD23 .     
+IMF HD23 CDW .    .     
+IMF CEV  NEW NDV  .     
+IMF HC1  CEV .    .     
+IMF NDV  CEV CG3  .     
+IMF HD13 NDV .    .     
+IMF CG3  NDV HG3  .     
+IMF HG3  CG3 .    .     
+IMF NEC  CU  CEB  .     
+IMF CDC  NEC HD21 .     
+IMF HD21 CDC .    .     
+IMF CEB  NEC NDB  .     
+IMF H1E2 CEB .    .     
+IMF NDB  CEB CG1  .     
+IMF HD11 NDB .    .     
+IMF CG1  NDB HG1  .     
+IMF HG1  CG1 .    END   
+IMF CG1  CDC .    ADD   
+IMF CG2  CDM .    ADD   
+IMF CG3  CDW .    ADD   
+IMF CG4  CD6 .    ADD   
+# 
+loop_
+_chem_comp_bond.comp_id 
+_chem_comp_bond.atom_id_1 
+_chem_comp_bond.atom_id_2 
+_chem_comp_bond.type 
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist 
+_chem_comp_bond.value_dist_esd 
+IMF       O1        CU        single    1.915     0.020     1.915     0.020     
+IMF       CU        O2        single    1.915     0.020     1.915     0.020     
+IMF       NEC       CU        single    2.075     0.020     2.075     0.020     
+IMF       NEM       CU        single    2.075     0.020     2.075     0.020     
+IMF       NEW       CU        single    2.075     0.020     2.075     0.020     
+IMF       NE6       CU        single    2.075     0.020     2.075     0.020     
+IMF       HO11      O1        single    0.970     0.012     0.839     0.014     
+IMF       HO12      O1        single    0.970     0.012     0.839     0.014     
+IMF       HO21      O2        single    0.970     0.012     0.839     0.014     
+IMF       HO22      O2        single    0.970     0.012     0.839     0.014     
+IMF       CG1       CDC       double    1.380     0.020     1.380     0.020     
+IMF       CG1       NDB       single    1.350     0.020     1.350     0.020     
+IMF       HG1       CG1       single    1.082     0.013     0.975     0.010     
+IMF       CDC       NEC       single    1.337     0.020     1.337     0.020     
+IMF       HD21      CDC       single    1.082     0.013     0.975     0.010     
+IMF       NDB       CEB       single    1.350     0.020     1.350     0.020     
+IMF       HD11      NDB       single    1.016     0.010     0.899     0.007     
+IMF       CEB       NEC       double    1.337     0.020     1.337     0.020     
+IMF       H1E2      CEB       single    1.082     0.013     0.975     0.010     
+IMF       CG2       CDM       double    1.380     0.020     1.380     0.020     
+IMF       CG2       NDL       single    1.350     0.020     1.350     0.020     
+IMF       HG2       CG2       single    1.082     0.013     0.975     0.010     
+IMF       CDM       NEM       single    1.337     0.020     1.337     0.020     
+IMF       HD22      CDM       single    1.082     0.013     0.975     0.010     
+IMF       NDL       CEL       single    1.350     0.020     1.350     0.020     
+IMF       HD12      NDL       single    1.016     0.010     0.899     0.007     
+IMF       CEL       NEM       double    1.337     0.020     1.337     0.020     
+IMF       H2E1      CEL       single    1.082     0.013     0.975     0.010     
+IMF       CG3       CDW       double    1.380     0.020     1.380     0.020     
+IMF       CG3       NDV       single    1.350     0.020     1.350     0.020     
+IMF       HG3       CG3       single    1.082     0.013     0.975     0.010     
+IMF       CDW       NEW       single    1.337     0.020     1.337     0.020     
+IMF       HD23      CDW       single    1.082     0.013     0.975     0.010     
+IMF       NDV       CEV       single    1.350     0.020     1.350     0.020     
+IMF       HD13      NDV       single    1.016     0.010     0.899     0.007     
+IMF       CEV       NEW       double    1.337     0.020     1.337     0.020     
+IMF       CG4       CD6       double    1.380     0.020     1.380     0.020     
+IMF       CG4       ND5       single    1.350     0.020     1.350     0.020     
+IMF       HG4       CG4       single    1.082     0.013     0.975     0.010     
+IMF       CD6       NE6       single    1.337     0.020     1.337     0.020     
+IMF       HD24      CD6       single    1.082     0.013     0.975     0.010     
+IMF       ND5       CE5       single    1.350     0.020     1.350     0.020     
+IMF       HD14      ND5       single    1.016     0.010     0.899     0.007     
+IMF       CE5       NE6       double    1.337     0.020     1.337     0.020     
+IMF       H4E1      CE5       single    1.082     0.013     0.975     0.010     
+IMF       HC1       CEV       single    1.082     0.013     0.975     0.010     
+# 
+loop_
+_chem_comp_angle.comp_id 
+_chem_comp_angle.atom_id_1 
+_chem_comp_angle.atom_id_2 
+_chem_comp_angle.atom_id_3 
+_chem_comp_angle.value_angle 
+_chem_comp_angle.value_angle_esd 
+IMF HO21 O2  HO22 120.000 3.000 
+IMF HO21 O2  CU   120.000 3.000 
+IMF HO22 O2  CU   120.000 3.000 
+IMF O2   CU  O1   90.000  3.000 
+IMF O2   CU  NE6  90.000  3.000 
+IMF O2   CU  NEM  90.000  3.000 
+IMF O2   CU  NEW  90.000  3.000 
+IMF O2   CU  NEC  90.000  3.000 
+IMF O1   CU  NE6  90.000  3.000 
+IMF O1   CU  NEM  90.000  3.000 
+IMF NE6  CU  NEM  90.000  3.000 
+IMF O1   CU  NEW  90.000  3.000 
+IMF NE6  CU  NEW  90.000  3.000 
+IMF NEM  CU  NEW  90.000  3.000 
+IMF O1   CU  NEC  90.000  3.000 
+IMF NE6  CU  NEC  90.000  3.000 
+IMF NEM  CU  NEC  90.000  3.000 
+IMF NEW  CU  NEC  90.000  3.000 
+IMF CU   O1  HO12 120.000 3.000 
+IMF CU   O1  HO11 120.000 3.000 
+IMF HO12 O1  HO11 120.000 3.000 
+IMF CU   NE6 CD6  108.000 3.000 
+IMF CU   NE6 CE5  108.000 3.000 
+IMF CD6  NE6 CE5  108.000 3.000 
+IMF NE6  CD6 HD24 126.000 3.000 
+IMF NE6  CD6 CG4  108.000 3.000 
+IMF HD24 CD6 CG4  126.000 3.000 
+IMF NE6  CE5 H4E1 126.000 3.000 
+IMF NE6  CE5 ND5  108.000 3.000 
+IMF H4E1 CE5 ND5  126.000 3.000 
+IMF CE5  ND5 HD14 126.000 3.000 
+IMF CE5  ND5 CG4  108.000 3.000 
+IMF HD14 ND5 CG4  126.000 3.000 
+IMF ND5  CG4 HG4  126.000 3.000 
+IMF ND5  CG4 CD6  108.000 3.000 
+IMF HG4  CG4 CD6  126.000 3.000 
+IMF CU   NEM CDM  108.000 3.000 
+IMF CU   NEM CEL  108.000 3.000 
+IMF CDM  NEM CEL  108.000 3.000 
+IMF NEM  CDM HD22 126.000 3.000 
+IMF NEM  CDM CG2  108.000 3.000 
+IMF HD22 CDM CG2  126.000 3.000 
+IMF NEM  CEL H2E1 126.000 3.000 
+IMF NEM  CEL NDL  108.000 3.000 
+IMF H2E1 CEL NDL  126.000 3.000 
+IMF CEL  NDL HD12 126.000 3.000 
+IMF CEL  NDL CG2  108.000 3.000 
+IMF HD12 NDL CG2  126.000 3.000 
+IMF NDL  CG2 HG2  126.000 3.000 
+IMF NDL  CG2 CDM  108.000 3.000 
+IMF HG2  CG2 CDM  126.000 3.000 
+IMF CU   NEW CDW  108.000 3.000 
+IMF CU   NEW CEV  108.000 3.000 
+IMF CDW  NEW CEV  108.000 3.000 
+IMF NEW  CDW HD23 126.000 3.000 
+IMF NEW  CDW CG3  108.000 3.000 
+IMF HD23 CDW CG3  126.000 3.000 
+IMF NEW  CEV HC1  126.000 3.000 
+IMF NEW  CEV NDV  108.000 3.000 
+IMF HC1  CEV NDV  126.000 3.000 
+IMF CEV  NDV HD13 126.000 3.000 
+IMF CEV  NDV CG3  108.000 3.000 
+IMF HD13 NDV CG3  126.000 3.000 
+IMF NDV  CG3 HG3  126.000 3.000 
+IMF NDV  CG3 CDW  108.000 3.000 
+IMF HG3  CG3 CDW  126.000 3.000 
+IMF CU   NEC CDC  108.000 3.000 
+IMF CU   NEC CEB  108.000 3.000 
+IMF CDC  NEC CEB  108.000 3.000 
+IMF NEC  CDC HD21 126.000 3.000 
+IMF NEC  CDC CG1  108.000 3.000 
+IMF HD21 CDC CG1  126.000 3.000 
+IMF NEC  CEB H1E2 126.000 3.000 
+IMF NEC  CEB NDB  108.000 3.000 
+IMF H1E2 CEB NDB  126.000 3.000 
+IMF CEB  NDB HD11 126.000 3.000 
+IMF CEB  NDB CG1  108.000 3.000 
+IMF HD11 NDB CG1  126.000 3.000 
+IMF NDB  CG1 HG1  126.000 3.000 
+IMF NDB  CG1 CDC  108.000 3.000 
+IMF HG1  CG1 CDC  126.000 3.000 
+# 
+loop_
+_chem_comp_tor.comp_id 
+_chem_comp_tor.id 
+_chem_comp_tor.atom_id_1 
+_chem_comp_tor.atom_id_2 
+_chem_comp_tor.atom_id_3 
+_chem_comp_tor.atom_id_4 
+_chem_comp_tor.value_angle 
+_chem_comp_tor.value_angle_esd 
+_chem_comp_tor.period 
+IMF var_1    HO22 O2  CU  NEC  0.000 20.000 1 
+IMF var_2    O2   CU  O1  HO11 0.000 20.000 1 
+IMF var_3    O2   CU  NE6 CE5  0.000 20.000 1 
+IMF CONST_1  CU   NE6 CD6 CG4  0.000 0.000  0 
+IMF CONST_2  CU   NE6 CE5 ND5  0.000 0.000  0 
+IMF CONST_3  NE6  CE5 ND5 CG4  0.000 0.000  0 
+IMF CONST_4  CE5  ND5 CG4 CD6  0.000 0.000  0 
+IMF CONST_5  ND5  CG4 CD6 NE6  0.000 0.000  0 
+IMF var_4    O2   CU  NEM CEL  0.000 20.000 1 
+IMF CONST_6  CU   NEM CDM CG2  0.000 0.000  0 
+IMF CONST_7  CU   NEM CEL NDL  0.000 0.000  0 
+IMF CONST_8  NEM  CEL NDL CG2  0.000 0.000  0 
+IMF CONST_9  CEL  NDL CG2 CDM  0.000 0.000  0 
+IMF CONST_10 NDL  CG2 CDM NEM  0.000 0.000  0 
+IMF var_5    O2   CU  NEW CEV  0.000 20.000 1 
+IMF CONST_11 CU   NEW CDW CG3  0.000 0.000  0 
+IMF CONST_12 CU   NEW CEV NDV  0.000 0.000  0 
+IMF CONST_13 NEW  CEV NDV CG3  0.000 0.000  0 
+IMF CONST_14 CEV  NDV CG3 CDW  0.000 0.000  0 
+IMF CONST_15 NDV  CG3 CDW NEW  0.000 0.000  0 
+IMF var_6    O2   CU  NEC CEB  0.000 20.000 1 
+IMF CONST_16 CU   NEC CDC CG1  0.000 0.000  0 
+IMF CONST_17 CU   NEC CEB NDB  0.000 0.000  0 
+IMF CONST_18 NEC  CEB NDB CG1  0.000 0.000  0 
+IMF CONST_19 CEB  NDB CG1 CDC  0.000 0.000  0 
+IMF CONST_20 NDB  CG1 CDC NEC  0.000 0.000  0 
+# 
+loop_
+_chem_comp_plane_atom.comp_id 
+_chem_comp_plane_atom.plane_id 
+_chem_comp_plane_atom.atom_id 
+_chem_comp_plane_atom.dist_esd 
+IMF plan-1 CG1  0.020 
+IMF plan-1 CDC  0.020 
+IMF plan-1 NDB  0.020 
+IMF plan-1 HG1  0.020 
+IMF plan-1 CEB  0.020 
+IMF plan-1 NEC  0.020 
+IMF plan-1 HD21 0.020 
+IMF plan-1 HD11 0.020 
+IMF plan-1 H1E2 0.020 
+IMF plan-1 CU   0.020 
+IMF plan-2 CG2  0.020 
+IMF plan-2 CDM  0.020 
+IMF plan-2 NDL  0.020 
+IMF plan-2 HG2  0.020 
+IMF plan-2 CEL  0.020 
+IMF plan-2 NEM  0.020 
+IMF plan-2 HD22 0.020 
+IMF plan-2 HD12 0.020 
+IMF plan-2 H2E1 0.020 
+IMF plan-2 CU   0.020 
+IMF plan-3 CG3  0.020 
+IMF plan-3 CDW  0.020 
+IMF plan-3 NDV  0.020 
+IMF plan-3 HG3  0.020 
+IMF plan-3 CEV  0.020 
+IMF plan-3 NEW  0.020 
+IMF plan-3 HD23 0.020 
+IMF plan-3 HD13 0.020 
+IMF plan-3 HC1  0.020 
+IMF plan-3 CU   0.020 
+IMF plan-4 CG4  0.020 
+IMF plan-4 CD6  0.020 
+IMF plan-4 ND5  0.020 
+IMF plan-4 HG4  0.020 
+IMF plan-4 CE5  0.020 
+IMF plan-4 NE6  0.020 
+IMF plan-4 HD24 0.020 
+IMF plan-4 HD14 0.020 
+IMF plan-4 H4E1 0.020 
+IMF plan-4 CU   0.020 
+# 

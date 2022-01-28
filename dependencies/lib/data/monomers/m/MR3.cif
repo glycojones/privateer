@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MR3     MR3     1-METHYL-1H-PYRROLE     NON-POLYMER     13     6     .     
+#
+data_comp_MR3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MR3     CAA     C       CH3     0       -16.131     24.784      -17.079     
+MR3     NAF     N       NR5     0       -15.337     24.063      -18.068     
+MR3     CAD     C       CR15    0       -15.542     22.770      -18.477     
+MR3     CAB     C       CR15    0       -14.600     22.460      -19.407     
+MR3     CAC     C       CR15    0       -13.789     23.589      -19.580     
+MR3     CAE     C       CR15    0       -14.256     24.560      -18.752     
+MR3     HAA1    H       H       0       -17.052     24.832      -17.376     
+MR3     HAA2    H       H       0       -15.779     25.681      -16.973     
+MR3     HAA3    H       H       0       -16.090     24.319      -16.230     
+MR3     HAD     H       H       0       -16.224     22.193      -18.163     
+MR3     HAB     H       H       0       -14.507     21.635      -19.855     
+MR3     HAC     H       H       0       -13.053     23.661      -20.165     
+MR3     HAE     H       H       0       -13.900     25.433      -18.660     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MR3       CAA       NAF       SINGLE    n         1.459     0.012     1.459     0.012     
+MR3       NAF       CAD       SINGLE    y         1.374     0.018     1.374     0.018     
+MR3       NAF       CAE       SINGLE    y         1.374     0.018     1.374     0.018     
+MR3       CAD       CAB       DOUBLE    y         1.359     0.010     1.359     0.010     
+MR3       CAB       CAC       SINGLE    y         1.400     0.010     1.400     0.010     
+MR3       CAC       CAE       DOUBLE    y         1.359     0.010     1.359     0.010     
+MR3       CAA       HAA1      SINGLE    n         1.089     0.010     0.969     0.016     
+MR3       CAA       HAA2      SINGLE    n         1.089     0.010     0.969     0.016     
+MR3       CAA       HAA3      SINGLE    n         1.089     0.010     0.969     0.016     
+MR3       CAD       HAD       SINGLE    n         1.082     0.013     0.947     0.010     
+MR3       CAB       HAB       SINGLE    n         1.082     0.013     0.943     0.010     
+MR3       CAC       HAC       SINGLE    n         1.082     0.013     0.943     0.010     
+MR3       CAE       HAE       SINGLE    n         1.082     0.013     0.947     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MR3         NAF         CAA        HAA1     109.484    1.50
+MR3         NAF         CAA        HAA2     109.484    1.50
+MR3         NAF         CAA        HAA3     109.484    1.50
+MR3        HAA1         CAA        HAA2     109.448    1.52
+MR3        HAA1         CAA        HAA3     109.448    1.52
+MR3        HAA2         CAA        HAA3     109.448    1.52
+MR3         CAA         NAF         CAD     125.850    1.50
+MR3         CAA         NAF         CAE     125.850    1.50
+MR3         CAD         NAF         CAE     108.300    1.50
+MR3         NAF         CAD         CAB     108.471    1.50
+MR3         NAF         CAD         HAD     125.556    1.86
+MR3         CAB         CAD         HAD     125.973    1.99
+MR3         CAD         CAB         CAC     107.379    1.50
+MR3         CAD         CAB         HAB     126.390    1.50
+MR3         CAC         CAB         HAB     126.230    1.50
+MR3         CAB         CAC         CAE     107.379    1.50
+MR3         CAB         CAC         HAC     126.230    1.50
+MR3         CAE         CAC         HAC     126.390    1.50
+MR3         NAF         CAE         CAC     108.471    1.50
+MR3         NAF         CAE         HAE     125.556    1.86
+MR3         CAC         CAE         HAE     125.973    1.99
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MR3             sp2_sp3_1         CAD         NAF         CAA        HAA1     150.000   10.00     6
+MR3       const_sp2_sp2_2         CAB         CAD         NAF         CAA     180.000   10.00     2
+MR3              const_18         CAC         CAE         NAF         CAA     180.000   10.00     2
+MR3       const_sp2_sp2_5         CAC         CAB         CAD         NAF       0.000   10.00     2
+MR3       const_sp2_sp2_9         CAD         CAB         CAC         CAE       0.000   10.00     2
+MR3              const_13         CAB         CAC         CAE         NAF       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MR3    plan-1         CAA   0.020
+MR3    plan-1         CAB   0.020
+MR3    plan-1         CAC   0.020
+MR3    plan-1         CAD   0.020
+MR3    plan-1         CAE   0.020
+MR3    plan-1         HAB   0.020
+MR3    plan-1         HAC   0.020
+MR3    plan-1         HAD   0.020
+MR3    plan-1         HAE   0.020
+MR3    plan-1         NAF   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MR3 SMILES           ACDLabs              10.04 c1cccn1C
+MR3 SMILES_CANONICAL CACTVS               3.341 Cn1cccc1
+MR3 SMILES           CACTVS               3.341 Cn1cccc1
+MR3 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 Cn1cccc1
+MR3 SMILES           "OpenEye OEToolkits" 1.5.0 Cn1cccc1
+MR3 InChI            InChI                1.03  InChI=1S/C5H7N/c1-6-4-2-3-5-6/h2-5H,1H3
+MR3 InChIKey         InChI                1.03  OXHNLMTVIGZXSG-UHFFFAOYSA-N
+MR3 ?                acedrg               190         "dictionary generator"                  
+MR3 ?                acedrg_database      11          "data source"                           
+MR3 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MR3 ?                refmac5              5.8.0158    "optimization tool"                     

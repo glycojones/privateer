@@ -1,0 +1,162 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VO3      VO3 'TETRAMETAVANADATE                   ' non-polymer        17  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VO3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ VO3           O00    O    O        -1.000      0.000    0.000    0.000
+ VO3           V4     V    V         0.000     -0.798    1.486    0.736
+ VO3           O10    O    O         0.000     -1.109    2.538   -0.407
+ VO3           O11    O    O        -1.000      0.334    2.240    1.974
+ VO3           O8     O    O2        0.000     -2.369    0.994    1.560
+ VO3           V3     V    V         0.000     -3.440    0.252    0.261
+ VO3           O5     O    O         0.000     -3.712    1.322   -0.874
+ VO3           O7     O    O        -1.000     -2.598   -1.214   -0.466
+ VO3           O6     O    O2        0.000     -5.039   -0.269    1.010
+ VO3           V2     V    V         0.000     -6.048   -0.997   -0.345
+ VO3           O2     O    O         0.000     -6.283    0.092   -1.472
+ VO3           O4     O    O        -1.000     -5.163   -2.441   -1.063
+ VO3           O3     O    O2        0.000     -7.672   -1.544    0.326
+ VO3           V1     V    V         0.000     -8.617   -2.256   -1.083
+ VO3           O0     O    O         0.000     -7.818   -3.481   -1.690
+ VO3           O1     O    O        -1.000     -8.846   -0.971   -2.380
+ VO3           O30    O    O        -1.000    -10.262   -2.830   -0.491
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VO3      O00    n/a    V4     START
+ VO3      V4     O00    O8     .
+ VO3      O10    V4     .      .
+ VO3      O11    V4     .      .
+ VO3      O8     V4     V3     .
+ VO3      V3     O8     O6     .
+ VO3      O5     V3     .      .
+ VO3      O7     V3     .      .
+ VO3      O6     V3     V2     .
+ VO3      V2     O6     O3     .
+ VO3      O2     V2     .      .
+ VO3      O4     V2     .      .
+ VO3      O3     V2     V1     .
+ VO3      V1     O3     O30    .
+ VO3      O0     V1     .      .
+ VO3      O1     V1     .      .
+ VO3      O30    V1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VO3       O0        V1        double    1.910     0.020     1.910     0.020     
+VO3       O1        V1        single    1.910     0.020     1.910     0.020     
+VO3       O30       V1        single    1.910     0.020     1.910     0.020     
+VO3       V1        O3        single    2.004     0.020     2.004     0.020     
+VO3       O2        V2        double    1.910     0.020     1.910     0.020     
+VO3       O3        V2        single    2.004     0.020     2.004     0.020     
+VO3       O4        V2        single    1.910     0.020     1.910     0.020     
+VO3       V2        O6        single    2.004     0.020     2.004     0.020     
+VO3       O5        V3        double    1.910     0.020     1.910     0.020     
+VO3       O6        V3        single    2.004     0.020     2.004     0.020     
+VO3       O7        V3        single    1.910     0.020     1.910     0.020     
+VO3       V3        O8        single    2.004     0.020     2.004     0.020     
+VO3       O8        V4        single    2.004     0.020     2.004     0.020     
+VO3       O10       V4        double    1.910     0.020     1.910     0.020     
+VO3       O11       V4        single    1.910     0.020     1.910     0.020     
+VO3       V4        O00       single    1.910     0.020     1.910     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VO3      O00    V4     O10     109.433    3.000
+ VO3      O00    V4     O11     109.454    3.000
+ VO3      O00    V4     O8      109.482    3.000
+ VO3      O10    V4     O11     109.486    3.000
+ VO3      O10    V4     O8      109.465    3.000
+ VO3      O11    V4     O8      109.507    3.000
+ VO3      V4     O8     V3      120.000    3.000
+ VO3      O8     V3     O5      109.463    3.000
+ VO3      O8     V3     O7      109.495    3.000
+ VO3      O8     V3     O6      109.441    3.000
+ VO3      O5     V3     O7      109.497    3.000
+ VO3      O5     V3     O6      109.474    3.000
+ VO3      O7     V3     O6      109.457    3.000
+ VO3      V3     O6     V2      120.000    3.000
+ VO3      O6     V2     O2      109.466    3.000
+ VO3      O6     V2     O4      109.502    3.000
+ VO3      O6     V2     O3      109.463    3.000
+ VO3      O2     V2     O4      109.483    3.000
+ VO3      O2     V2     O3      109.442    3.000
+ VO3      O4     V2     O3      109.471    3.000
+ VO3      V2     O3     V1      120.000    3.000
+ VO3      O3     V1     O0      109.498    3.000
+ VO3      O3     V1     O1      109.486    3.000
+ VO3      O3     V1     O30     109.447    3.000
+ VO3      O0     V1     O1      109.486    3.000
+ VO3      O0     V1     O30     109.448    3.000
+ VO3      O1     V1     O30     109.462    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VO3      var_1    O00    V4     O8     V3       -59.965   20.000   1
+ VO3      var_2    V4     O8     V3     O6       179.999   20.000   1
+ VO3      var_3    O8     V3     O6     V2       179.990   20.000   1
+ VO3      var_4    V3     O6     V2     O3      -179.989   20.000   1
+ VO3      var_5    O6     V2     O3     V1       179.997   20.000   1
+ VO3      var_6    V2     O3     V1     O30      179.997   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ VO3      chir_01  V1     O3     O0     O1        both
+ VO3      chir_02  V2     O6     O2     O4        both
+ VO3      chir_03  V3     O8     O5     O7        both
+ VO3      chir_04  V4     O00    O10    O11       both
+# ------------------------------------------------------

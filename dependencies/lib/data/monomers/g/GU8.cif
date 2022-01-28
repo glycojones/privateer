@@ -1,0 +1,254 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GU8      GU8 '2,3,6-TRI-O-METHYL-BETA-D-GLUCOPYRAN' pyranose           33  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GU8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GU8           C1     C    CH1       0.000      0.000    0.000    0.000
+ GU8           H1     H    H         0.000      0.299    0.232   -1.032
+ GU8           C2     C    CH1       0.000     -0.948   -1.200    0.001
+ GU8           H2     H    H         0.000     -1.140   -1.500    1.040
+ GU8           O2     O    O2        0.000     -0.341   -2.291   -0.690
+ GU8           C7     C    CH3       0.000     -0.094   -1.968   -2.049
+ GU8           H73    H    H         0.000      0.932   -2.118   -2.265
+ GU8           H72    H    H         0.000     -0.681   -2.591   -2.671
+ GU8           H71    H    H         0.000     -0.348   -0.955   -2.221
+ GU8           C3     C    CH1       0.000     -2.279   -0.858   -0.670
+ GU8           H3     H    H         0.000     -2.119   -0.760   -1.752
+ GU8           O3     O    O2        0.000     -3.214   -1.911   -0.431
+ GU8           C8     C    CH3       0.000     -4.452   -1.656   -1.075
+ GU8           H83    H    H         0.000     -5.113   -2.463   -0.896
+ GU8           H82    H    H         0.000     -4.870   -0.763   -0.690
+ GU8           H81    H    H         0.000     -4.291   -1.553   -2.116
+ GU8           C4     C    CH1       0.000     -2.848    0.456   -0.131
+ GU8           H4     H    H         0.000     -3.189    0.304    0.902
+ GU8           O4     O    OH1       0.000     -3.956    0.853   -0.936
+ GU8           HO4    H    H         0.000     -3.746    1.735   -1.279
+ GU8           C5     C    CH1       0.000     -1.785    1.557   -0.153
+ GU8           H5     H    H         0.000     -1.496    1.760   -1.194
+ GU8           C6     C    CH2       0.000     -2.294    2.845    0.487
+ GU8           H61    H    H         0.000     -2.574    2.659    1.526
+ GU8           H62    H    H         0.000     -3.162    3.215   -0.063
+ GU8           O6     O    O2        0.000     -1.259    3.810    0.442
+ GU8           C9     C    CH3       0.000     -1.664    5.044    1.024
+ GU8           H93    H    H         0.000     -2.434    4.865    1.728
+ GU8           H92    H    H         0.000     -0.837    5.492    1.511
+ GU8           H91    H    H         0.000     -2.021    5.691    0.266
+ GU8           O1     O    OH1       0.000      1.153   -0.353    0.763
+ GU8           HO1    H    H         0.000      1.222   -1.316    0.814
+ GU8           O5     O    O2        0.000     -0.634    1.137    0.580
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GU8      C1     n/a    O5     START
+ GU8      H1     C1     .      .
+ GU8      C2     C1     C3     .
+ GU8      H2     C2     .      .
+ GU8      O2     C2     C7     .
+ GU8      C7     O2     H71    .
+ GU8      H73    C7     .      .
+ GU8      H72    C7     .      .
+ GU8      H71    C7     .      .
+ GU8      C3     C2     C4     .
+ GU8      H3     C3     .      .
+ GU8      O3     C3     C8     .
+ GU8      C8     O3     H81    .
+ GU8      H83    C8     .      .
+ GU8      H82    C8     .      .
+ GU8      H81    C8     .      .
+ GU8      C4     C3     C5     .
+ GU8      H4     C4     .      .
+ GU8      O4     C4     .      .
+ GU8      HO4    O4     .      .
+ GU8      C5     C4     C6     .
+ GU8      H5     C5     .      .
+ GU8      C6     C5     O6     .
+ GU8      H61    C6     .      .
+ GU8      H62    C6     .      .
+ GU8      O6     C6     C9     .
+ GU8      C9     O6     H91    .
+ GU8      H93    C9     .      .
+ GU8      H92    C9     .      .
+ GU8      H91    C9     .      .
+ GU8      O1     C1     HO1    .
+ GU8      HO1    O1     .      .
+ GU8      O5     C1     .      END
+ GU8      C5     O5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GU8       C9        O6        single    1.426     0.020     1.426     0.020     
+GU8       H91       C9        single    1.089     0.010     0.989     0.005     
+GU8       H92       C9        single    1.089     0.010     0.989     0.005     
+GU8       H93       C9        single    1.089     0.010     0.989     0.005     
+GU8       O6        C6        single    1.426     0.020     1.426     0.020     
+GU8       C6        C5        single    1.524     0.020     1.524     0.020     
+GU8       H61       C6        single    1.089     0.010     0.989     0.005     
+GU8       H62       C6        single    1.089     0.010     0.989     0.005     
+GU8       C5        O5        single    1.426     0.020     1.426     0.020     
+GU8       C5        C4        single    1.524     0.020     1.524     0.020     
+GU8       H5        C5        single    1.089     0.010     0.989     0.005     
+GU8       O5        C1        single    1.426     0.020     1.426     0.020     
+GU8       O1        C1        single    1.432     0.020     1.432     0.020     
+GU8       C2        C1        single    1.524     0.020     1.524     0.020     
+GU8       H1        C1        single    1.089     0.010     0.989     0.005     
+GU8       HO1       O1        single    0.970     0.012     0.839     0.014     
+GU8       O2        C2        single    1.426     0.020     1.426     0.020     
+GU8       C3        C2        single    1.524     0.020     1.524     0.020     
+GU8       H2        C2        single    1.089     0.010     0.989     0.005     
+GU8       C7        O2        single    1.426     0.020     1.426     0.020     
+GU8       H71       C7        single    1.089     0.010     0.989     0.005     
+GU8       H72       C7        single    1.089     0.010     0.989     0.005     
+GU8       H73       C7        single    1.089     0.010     0.989     0.005     
+GU8       O3        C3        single    1.426     0.020     1.426     0.020     
+GU8       C4        C3        single    1.524     0.020     1.524     0.020     
+GU8       H3        C3        single    1.089     0.010     0.989     0.005     
+GU8       C8        O3        single    1.426     0.020     1.426     0.020     
+GU8       H81       C8        single    1.089     0.010     0.989     0.005     
+GU8       H82       C8        single    1.089     0.010     0.989     0.005     
+GU8       H83       C8        single    1.089     0.010     0.989     0.005     
+GU8       O4        C4        single    1.432     0.020     1.432     0.020     
+GU8       H4        C4        single    1.089     0.010     0.989     0.005     
+GU8       HO4       O4        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GU8      H1     C1     C2      108.340    3.000
+ GU8      H1     C1     O1      109.470    3.000
+ GU8      C2     C1     O1      109.470    3.000
+ GU8      H1     C1     O5      109.470    3.000
+ GU8      C2     C1     O5      109.470    3.000
+ GU8      O1     C1     O5      109.470    3.000
+ GU8      C1     C2     H2      108.340    3.000
+ GU8      C1     C2     O2      109.470    3.000
+ GU8      C1     C2     C3      111.000    3.000
+ GU8      H2     C2     O2      109.470    3.000
+ GU8      H2     C2     C3      108.340    3.000
+ GU8      O2     C2     C3      109.470    3.000
+ GU8      C2     O2     C7      111.800    3.000
+ GU8      O2     C7     H73     109.470    3.000
+ GU8      O2     C7     H72     109.470    3.000
+ GU8      O2     C7     H71     109.470    3.000
+ GU8      H73    C7     H72     109.470    3.000
+ GU8      H73    C7     H71     109.470    3.000
+ GU8      H72    C7     H71     109.470    3.000
+ GU8      C2     C3     H3      108.340    3.000
+ GU8      C2     C3     O3      109.470    3.000
+ GU8      C2     C3     C4      111.000    3.000
+ GU8      H3     C3     O3      109.470    3.000
+ GU8      H3     C3     C4      108.340    3.000
+ GU8      O3     C3     C4      109.470    3.000
+ GU8      C3     O3     C8      111.800    3.000
+ GU8      O3     C8     H83     109.470    3.000
+ GU8      O3     C8     H82     109.470    3.000
+ GU8      O3     C8     H81     109.470    3.000
+ GU8      H83    C8     H82     109.470    3.000
+ GU8      H83    C8     H81     109.470    3.000
+ GU8      H82    C8     H81     109.470    3.000
+ GU8      C3     C4     H4      108.340    3.000
+ GU8      C3     C4     O4      109.470    3.000
+ GU8      C3     C4     C5      111.000    3.000
+ GU8      H4     C4     O4      109.470    3.000
+ GU8      H4     C4     C5      108.340    3.000
+ GU8      O4     C4     C5      109.470    3.000
+ GU8      C4     O4     HO4     109.470    3.000
+ GU8      C4     C5     H5      108.340    3.000
+ GU8      C4     C5     C6      111.000    3.000
+ GU8      C4     C5     O5      109.470    3.000
+ GU8      H5     C5     C6      108.340    3.000
+ GU8      H5     C5     O5      109.470    3.000
+ GU8      C6     C5     O5      109.470    3.000
+ GU8      C5     C6     H61     109.470    3.000
+ GU8      C5     C6     H62     109.470    3.000
+ GU8      C5     C6     O6      109.470    3.000
+ GU8      H61    C6     H62     107.900    3.000
+ GU8      H61    C6     O6      109.470    3.000
+ GU8      H62    C6     O6      109.470    3.000
+ GU8      C6     O6     C9      111.800    3.000
+ GU8      O6     C9     H93     109.470    3.000
+ GU8      O6     C9     H92     109.470    3.000
+ GU8      O6     C9     H91     109.470    3.000
+ GU8      H93    C9     H92     109.470    3.000
+ GU8      H93    C9     H91     109.470    3.000
+ GU8      H92    C9     H91     109.470    3.000
+ GU8      C1     O1     HO1     109.470    3.000
+ GU8      C1     O5     C5      111.800    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GU8      var_1    O5     C1     C2     C3        60.000   20.000   3
+ GU8      var_2    C1     C2     O2     C7       -62.181   20.000   1
+ GU8      var_3    C2     O2     C7     H71        4.547   20.000   1
+ GU8      var_4    C1     C2     C3     C4       -60.000   20.000   3
+ GU8      var_5    C2     C3     O3     C8      -178.016   20.000   1
+ GU8      var_6    C3     O3     C8     H81       58.810   20.000   1
+ GU8      var_7    C2     C3     C4     C5        60.000   20.000   3
+ GU8      var_8    C3     C4     C5     C6       180.000   20.000   3
+ GU8      var_9    C4     C5     O5     C1        60.000   20.000   1
+ GU8      var_10   C4     C5     C6     O6       179.506   20.000   3
+ GU8      var_11   C5     C6     O6     C9      -179.982   20.000   1
+ GU8      var_12   C6     O6     C9     H91      -94.568   20.000   1
+ GU8      var_13   O5     C1     O1     HO1      141.330   20.000   1
+ GU8      var_14   O1     C1     O5     C5       180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GU8      chir_01  C5     C6     O5     C4        negativ
+ GU8      chir_02  C1     O5     O1     C2        negativ
+ GU8      chir_03  C2     C1     O2     C3        positiv
+ GU8      chir_04  C3     C2     O3     C4        negativ
+ GU8      chir_05  C4     C5     C3     O4        positiv
+# ------------------------------------------------------

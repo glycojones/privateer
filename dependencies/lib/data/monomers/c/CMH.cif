@@ -1,0 +1,171 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CMH      CMH 'S-(METHYLMERCURY)-L-CYSTEINE        ' peptide            17   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CMH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CMH           N      N    NH2       0.000      0.000    0.000    0.000
+ CMH           H    H    H         0.000      0.734   -0.640    0.280
+ CMH           H2    H    H         0.000     -0.323   -0.004   -0.960
+ CMH           CA     C    CH1       0.000     -0.590    0.925    0.977
+ CMH           HA     H    H         0.000     -0.356    1.960    0.690
+ CMH           CB     C    CH2       0.000     -2.108    0.735    1.009
+ CMH           HB2    H    H         0.000     -2.546    1.422    1.736
+ CMH           HB3    H    H         0.000     -2.340   -0.293    1.295
+ CMH           SG     S    S2        0.000     -2.793    1.075   -0.636
+ CMH           HG     HG   HG        0.000     -2.192   -0.836   -1.865
+ CMH           CM     C    CH3       0.000     -1.655   -2.543   -2.964
+ CMH           HM3    H    H         0.000     -1.939   -3.380   -2.403
+ CMH           HM2    H    H         0.000     -2.166   -2.503   -3.876
+ CMH           HM1    H    H         0.000     -0.618   -2.512   -3.105
+ CMH           C      C    C         0.000     -0.021    0.642    2.344
+ CMH           O      O    OC       -0.500      0.512   -0.465    2.583
+ CMH           OXT    O    OC       -0.500     -0.081    1.513    3.239
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CMH      N      n/a    CA     START
+ CMH      H    N      .      .
+ CMH      H2    N      .      .
+ CMH      CA     N      C      .
+ CMH      HA     CA     .      .
+ CMH      CB     CA     SG     .
+ CMH      HB2    CB     .      .
+ CMH      HB3    CB     .      .
+ CMH      SG     CB     HG     .
+ CMH      HG     SG     CM     .
+ CMH      CM     HG     HM1    .
+ CMH      HM3    CM     .      .
+ CMH      HM2    CM     .      .
+ CMH      HM1    CM     .      .
+ CMH      C      CA     .      END
+ CMH      O      C      .      .
+ CMH      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CMH       CA        N         single    1.450     0.020     1.450     0.020     
+CMH       C         CA        single    1.500     0.020     1.500     0.020     
+CMH       CB        CA        single    1.524     0.020     1.524     0.020     
+CMH       HA        CA        single    1.089     0.010     0.989     0.005     
+CMH       O         C         deloc     1.250     0.020     1.250     0.020     
+CMH       OXT       C         deloc     1.250     0.020     1.250     0.020     
+CMH       SG        CB        single    1.762     0.020     1.762     0.020     
+CMH       HB2       CB        single    1.089     0.010     0.989     0.005     
+CMH       HB3       CB        single    1.089     0.010     0.989     0.005     
+CMH       HG        SG        single    2.600     0.020     2.600     0.020     
+CMH       CM        HG        single    2.362     0.020     2.362     0.020     
+CMH       HM1       CM        single    1.089     0.010     0.989     0.005     
+CMH       HM2       CM        single    1.089     0.010     0.989     0.005     
+CMH       HM3       CM        single    1.089     0.010     0.989     0.005     
+CMH       H         N         single    1.036     0.016     0.914     0.007     
+CMH       H2        N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CMH      H    N      H2     120.000    3.000
+ CMH      H    N      CA      120.000    3.000
+ CMH      H2    N      CA      120.000    3.000
+ CMH      N      CA     HA      109.470    3.000
+ CMH      N      CA     CB      109.470    3.000
+ CMH      N      CA     C       109.470    3.000
+ CMH      HA     CA     CB      108.340    3.000
+ CMH      HA     CA     C       108.810    3.000
+ CMH      CB     CA     C       109.470    3.000
+ CMH      CA     CB     HB2     109.470    3.000
+ CMH      CA     CB     HB3     109.470    3.000
+ CMH      CA     CB     SG      109.500    3.000
+ CMH      HB2    CB     HB3     107.900    3.000
+ CMH      HB2    CB     SG      109.500    3.000
+ CMH      HB3    CB     SG      109.500    3.000
+ CMH      CB     SG     HG      103.000    3.000
+ CMH      SG     HG     CM      180.000    3.000
+ CMH      HG     CM     HM3     109.500    3.000
+ CMH      HG     CM     HM2     109.500    3.000
+ CMH      HG     CM     HM1     109.500    3.000
+ CMH      HM3    CM     HM2     109.470    3.000
+ CMH      HM3    CM     HM1     109.470    3.000
+ CMH      HM2    CM     HM1     109.470    3.000
+ CMH      CA     C      O       118.500    3.000
+ CMH      CA     C      OXT     118.500    3.000
+ CMH      O      C      OXT     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CMH      var_1    H2    N      CA     C        175.000   20.000   1
+ CMH      var_2    N      CA     CB     SG       -60.017   20.000   3
+ CMH      var_3    CA     CB     SG     HG        74.969   20.000   1
+ CMH      var_4    CB     SG     HG     CM       180.000   20.000   1
+ CMH      var_5    HM3    CM     HG     SG       180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CMH      chir_01  CA     N      C      CB        positiv
+ CMH      chir_02  HG     SG     CM     .         cross0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CMH      plan-1    N         0.020
+ CMH      plan-1    CA        0.020
+ CMH      plan-1    H       0.020
+ CMH      plan-1    H2       0.020
+ CMH      plan-2    C         0.020
+ CMH      plan-2    CA        0.020
+ CMH      plan-2    O         0.020
+ CMH      plan-2    OXT       0.020
+# ------------------------------------------------------

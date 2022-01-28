@@ -1,0 +1,136 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+6JN     6JN      "3-oxopentanedioic acid"     NON-POLYMER     14     10     .     
+#
+data_comp_6JN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+6JN     CAA     C       CH2     0       -3.602      37.864      32.081      
+6JN     CAB     C       C       0       -3.431      39.227      32.743      
+6JN     CAC     C       C       0       -4.587      37.879      30.937      
+6JN     CAD     C       CH2     0       -4.240      38.696      29.717      
+6JN     CAE     C       C       0       -5.156      39.902      29.526      
+6JN     OAF     O       OC      -1      -6.352      39.690      29.256      
+6JN     OAG     O       O       0       -4.664      41.038      29.649      
+6JN     OAH     O       O       0       -5.621      37.256      30.996      
+6JN     OAI     O       OC      -1      -2.317      39.776      32.674      
+6JN     OAJ     O       O       0       -4.415      39.724      33.320      
+6JN     H1      H       H       0       -3.907      37.226      32.754      
+6JN     H2      H       H       0       -2.733      37.570      31.746      
+6JN     H3      H       H       0       -4.306      38.127      28.927      
+6JN     H4      H       H       0       -3.319      39.012      29.797      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+6JN       CAE       OAG       DOUBLE    n         1.244     0.0200    1.244     0.0200    
+6JN       CAD       CAE       SINGLE    n         1.525     0.0126    1.525     0.0126    
+6JN       CAC       CAD       SINGLE    n         1.508     0.0200    1.508     0.0200    
+6JN       CAE       OAF       SINGLE    n         1.244     0.0200    1.244     0.0200    
+6JN       CAC       OAH       DOUBLE    n         1.209     0.0100    1.209     0.0100    
+6JN       CAA       CAC       SINGLE    n         1.508     0.0200    1.508     0.0200    
+6JN       CAA       CAB       SINGLE    n         1.525     0.0126    1.525     0.0126    
+6JN       CAB       OAJ       DOUBLE    n         1.244     0.0200    1.244     0.0200    
+6JN       CAB       OAI       SINGLE    n         1.244     0.0200    1.244     0.0200    
+6JN       CAA       H1        SINGLE    n         1.089     0.010     0.976     0.0200    
+6JN       CAA       H2        SINGLE    n         1.089     0.010     0.976     0.0200    
+6JN       CAD       H3        SINGLE    n         1.089     0.010     0.976     0.0200    
+6JN       CAD       H4        SINGLE    n         1.089     0.010     0.976     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+6JN         CAC         CAA         CAB     111.575    3.00
+6JN         CAC         CAA          H1     108.453    1.62
+6JN         CAC         CAA          H2     108.453    1.62
+6JN         CAB         CAA          H1     108.236    1.50
+6JN         CAB         CAA          H2     108.236    1.50
+6JN          H1         CAA          H2     108.195    1.50
+6JN         CAA         CAB         OAJ     118.071    1.50
+6JN         CAA         CAB         OAI     118.071    1.50
+6JN         OAJ         CAB         OAI     123.857    1.50
+6JN         CAD         CAC         OAH     121.103    1.57
+6JN         CAD         CAC         CAA     117.795    1.89
+6JN         OAH         CAC         CAA     121.103    1.57
+6JN         CAE         CAD         CAC     111.575    3.00
+6JN         CAE         CAD          H3     108.236    1.50
+6JN         CAE         CAD          H4     108.236    1.50
+6JN         CAC         CAD          H3     108.453    1.62
+6JN         CAC         CAD          H4     108.453    1.62
+6JN          H3         CAD          H4     108.195    1.50
+6JN         OAG         CAE         CAD     118.071    1.50
+6JN         OAG         CAE         OAF     123.857    1.50
+6JN         CAD         CAE         OAF     118.071    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+6JN            sp2_sp3_20         OAJ         CAB         CAA         CAC     120.000   10.00     6
+6JN            sp2_sp3_14         CAD         CAC         CAA         CAB     120.000   10.00     6
+6JN             sp2_sp3_8         OAH         CAC         CAD         CAE     120.000   10.00     6
+6JN             sp2_sp3_2         OAG         CAE         CAD         CAC     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+6JN    plan-1         CAA   0.020
+6JN    plan-1         CAB   0.020
+6JN    plan-1         OAI   0.020
+6JN    plan-1         OAJ   0.020
+6JN    plan-2         CAA   0.020
+6JN    plan-2         CAC   0.020
+6JN    plan-2         CAD   0.020
+6JN    plan-2         OAH   0.020
+6JN    plan-3         CAD   0.020
+6JN    plan-3         CAE   0.020
+6JN    plan-3         OAF   0.020
+6JN    plan-3         OAG   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+6JN           SMILES              ACDLabs 12.01                                        C(C(=O)O)C(CC(O)=O)=O
+6JN            InChI                InChI  1.03 InChI=1S/C5H6O5/c6-3(1-4(7)8)2-5(9)10/h1-2H2,(H,7,8)(H,9,10)
+6JN         InChIKey                InChI  1.03                                  OXTNCQMOKLOUAM-UHFFFAOYSA-N
+6JN SMILES_CANONICAL               CACTVS 3.385                                          OC(=O)CC(=O)CC(O)=O
+6JN           SMILES               CACTVS 3.385                                          OC(=O)CC(=O)CC(O)=O
+6JN SMILES_CANONICAL "OpenEye OEToolkits" 2.0.4                                        C(C(=O)CC(=O)O)C(=O)O
+6JN           SMILES "OpenEye OEToolkits" 2.0.4                                        C(C(=O)CC(=O)O)C(=O)O
+6JN ?                acedrg               217         "dictionary generator"                  
+6JN ?                acedrg_database      11          "data source"                           
+6JN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+6JN ?                refmac5              5.8.0253    "optimization tool"                     

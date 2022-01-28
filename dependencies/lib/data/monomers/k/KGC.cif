@@ -1,0 +1,286 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KGC      KGC 'N~6~-[(2R)-2-CARBOXY-5-OXOTETRAHYDRO' non-polymer        35  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_KGC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ KGC           OXT    O    OC       -0.500      0.000    0.000    0.000
+ KGC           C      C    C         0.000     -0.583    1.058   -0.324
+ KGC           O1     O    OC       -0.500     -0.046    1.846   -1.134
+ KGC           CA     C    CH1       0.000     -1.934    1.385    0.262
+ KGC           HA     H    H         0.000     -1.949    1.106    1.325
+ KGC           N      N    NH2       0.000     -2.189    2.825    0.129
+ KGC           H2     H    H         0.000     -2.344    3.396    0.953
+ KGC           H      H    H         0.000     -2.212    3.259   -0.786
+ KGC           CB     C    CH2       0.000     -3.016    0.604   -0.486
+ KGC           HB2    H    H         0.000     -2.776   -0.461   -0.464
+ KGC           HB3    H    H         0.000     -3.059    0.945   -1.522
+ KGC           CG     C    CH2       0.000     -4.371    0.838    0.187
+ KGC           HG2    H    H         0.000     -4.608    1.904    0.166
+ KGC           HG3    H    H         0.000     -4.325    0.497    1.224
+ KGC           CD     C    CH2       0.000     -5.453    0.058   -0.562
+ KGC           HD2    H    H         0.000     -5.213   -1.008   -0.540
+ KGC           HD3    H    H         0.000     -5.496    0.399   -1.598
+ KGC           CE     C    CH2       0.000     -6.806    0.291    0.111
+ KGC           HE2    H    H         0.000     -7.044    1.357    0.090
+ KGC           HE3    H    H         0.000     -6.760   -0.050    1.148
+ KGC           NZ     N    NH1       0.000     -7.846   -0.458   -0.606
+ KGC           HZ     H    H         0.000     -7.678   -1.035   -1.418
+ KGC           C11    C    CT        0.000     -9.163   -0.257    0.012
+ KGC           C13    C    C         0.000     -9.544    1.200   -0.045
+ KGC           O14    O    OC       -0.500     -8.782    2.065    0.442
+ KGC           O15    O    OC       -0.500    -10.622    1.543   -0.579
+ KGC           C12    C    CH2       0.000     -9.139   -0.741    1.477
+ KGC           H121   H    H         0.000     -9.440    0.039    2.180
+ KGC           H122   H    H         0.000     -8.165   -1.138    1.771
+ KGC           C27    C    CH2       0.000    -10.185   -1.877    1.489
+ KGC           H271   H    H         0.000    -11.138   -1.560    1.917
+ KGC           H272   H    H         0.000     -9.828   -2.764    2.017
+ KGC           C28    C    C         0.000    -10.372   -2.203    0.018
+ KGC           O30    O    O2       -0.500    -10.180   -1.144   -0.621
+ KGC           O29    O    O        -0.500    -10.666   -3.319   -0.465
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ KGC      OXT    n/a    C      START
+ KGC      C      OXT    CA     .
+ KGC      O1     C      .      .
+ KGC      CA     C      CB     .
+ KGC      HA     CA     .      .
+ KGC      N      CA     H      .
+ KGC      H2     N      .      .
+ KGC      H      N      .      .
+ KGC      CB     CA     CG     .
+ KGC      HB2    CB     .      .
+ KGC      HB3    CB     .      .
+ KGC      CG     CB     CD     .
+ KGC      HG2    CG     .      .
+ KGC      HG3    CG     .      .
+ KGC      CD     CG     CE     .
+ KGC      HD2    CD     .      .
+ KGC      HD3    CD     .      .
+ KGC      CE     CD     NZ     .
+ KGC      HE2    CE     .      .
+ KGC      HE3    CE     .      .
+ KGC      NZ     CE     C11    .
+ KGC      HZ     NZ     .      .
+ KGC      C11    NZ     C12    .
+ KGC      C13    C11    O15    .
+ KGC      O14    C13    .      .
+ KGC      O15    C13    .      .
+ KGC      C12    C11    C27    .
+ KGC      H121   C12    .      .
+ KGC      H122   C12    .      .
+ KGC      C27    C12    C28    .
+ KGC      H271   C27    .      .
+ KGC      H272   C27    .      .
+ KGC      C28    C27    O29    .
+ KGC      O30    C28    .      .
+ KGC      O29    C28    .      END
+ KGC      C11    O30    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KGC       N         CA        single    1.450     0.020     1.450     0.020     
+KGC       H         N         single    1.036     0.016     0.914     0.007     
+KGC       H2        N         single    1.036     0.016     0.914     0.007     
+KGC       CB        CA        single    1.524     0.020     1.524     0.020     
+KGC       CA        C         single    1.500     0.020     1.500     0.020     
+KGC       HA        CA        single    1.089     0.010     0.989     0.005     
+KGC       CG        CB        single    1.524     0.020     1.524     0.020     
+KGC       HB2       CB        single    1.089     0.010     0.989     0.005     
+KGC       HB3       CB        single    1.089     0.010     0.989     0.005     
+KGC       CD        CG        single    1.524     0.020     1.524     0.020     
+KGC       HG2       CG        single    1.089     0.010     0.989     0.005     
+KGC       HG3       CG        single    1.089     0.010     0.989     0.005     
+KGC       CE        CD        single    1.524     0.020     1.524     0.020     
+KGC       HD2       CD        single    1.089     0.010     0.989     0.005     
+KGC       HD3       CD        single    1.089     0.010     0.989     0.005     
+KGC       NZ        CE        single    1.450     0.020     1.450     0.020     
+KGC       HE2       CE        single    1.089     0.010     0.989     0.005     
+KGC       HE3       CE        single    1.089     0.010     0.989     0.005     
+KGC       C11       NZ        single    1.450     0.020     1.450     0.020     
+KGC       HZ        NZ        single    1.036     0.016     0.914     0.007     
+KGC       C12       C11       single    1.524     0.020     1.524     0.020     
+KGC       C13       C11       single    1.507     0.020     1.507     0.020     
+KGC       C11       O30       single    1.426     0.020     1.426     0.020     
+KGC       O15       C13       deloc     1.250     0.020     1.250     0.020     
+KGC       O14       C13       deloc     1.250     0.020     1.250     0.020     
+KGC       O30       C28       deloc     1.454     0.020     1.454     0.020     
+KGC       C28       C27       single    1.510     0.020     1.510     0.020     
+KGC       O29       C28       deloc     1.220     0.020     1.220     0.020     
+KGC       C27       C12       single    1.524     0.020     1.524     0.020     
+KGC       H271      C27       single    1.089     0.010     0.989     0.005     
+KGC       H272      C27       single    1.089     0.010     0.989     0.005     
+KGC       H121      C12       single    1.089     0.010     0.989     0.005     
+KGC       H122      C12       single    1.089     0.010     0.989     0.005     
+KGC       O1        C         deloc     1.250     0.020     1.250     0.020     
+KGC       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ KGC      OXT    C      O1      123.000    3.000
+ KGC      OXT    C      CA      118.500    3.000
+ KGC      O1     C      CA      118.500    3.000
+ KGC      C      CA     HA      108.810    3.000
+ KGC      C      CA     N       109.470    3.000
+ KGC      C      CA     CB      109.470    3.000
+ KGC      HA     CA     N       109.470    3.000
+ KGC      HA     CA     CB      108.340    3.000
+ KGC      N      CA     CB      109.470    3.000
+ KGC      CA     N      H2      120.000    3.000
+ KGC      CA     N      H       120.000    3.000
+ KGC      H2     N      H       120.000    3.000
+ KGC      CA     CB     HB2     109.470    3.000
+ KGC      CA     CB     HB3     109.470    3.000
+ KGC      CA     CB     CG      111.000    3.000
+ KGC      HB2    CB     HB3     107.900    3.000
+ KGC      HB2    CB     CG      109.470    3.000
+ KGC      HB3    CB     CG      109.470    3.000
+ KGC      CB     CG     HG2     109.470    3.000
+ KGC      CB     CG     HG3     109.470    3.000
+ KGC      CB     CG     CD      111.000    3.000
+ KGC      HG2    CG     HG3     107.900    3.000
+ KGC      HG2    CG     CD      109.470    3.000
+ KGC      HG3    CG     CD      109.470    3.000
+ KGC      CG     CD     HD2     109.470    3.000
+ KGC      CG     CD     HD3     109.470    3.000
+ KGC      CG     CD     CE      111.000    3.000
+ KGC      HD2    CD     HD3     107.900    3.000
+ KGC      HD2    CD     CE      109.470    3.000
+ KGC      HD3    CD     CE      109.470    3.000
+ KGC      CD     CE     HE2     109.470    3.000
+ KGC      CD     CE     HE3     109.470    3.000
+ KGC      CD     CE     NZ      112.000    3.000
+ KGC      HE2    CE     HE3     107.900    3.000
+ KGC      HE2    CE     NZ      109.470    3.000
+ KGC      HE3    CE     NZ      109.470    3.000
+ KGC      CE     NZ     HZ      118.500    3.000
+ KGC      CE     NZ     C11     120.000    3.000
+ KGC      HZ     NZ     C11     118.500    3.000
+ KGC      NZ     C11    C13     111.600    3.000
+ KGC      NZ     C11    C12     110.000    3.000
+ KGC      NZ     C11    O30     109.500    3.000
+ KGC      C13    C11    C12     109.470    3.000
+ KGC      C13    C11    O30     109.470    3.000
+ KGC      C12    C11    O30     109.470    3.000
+ KGC      C11    C13    O14     118.500    3.000
+ KGC      C11    C13    O15     118.500    3.000
+ KGC      O14    C13    O15     123.000    3.000
+ KGC      C11    C12    H121    109.470    3.000
+ KGC      C11    C12    H122    109.470    3.000
+ KGC      C11    C12    C27     111.000    3.000
+ KGC      H121   C12    H122    107.900    3.000
+ KGC      H121   C12    C27     109.470    3.000
+ KGC      H122   C12    C27     109.470    3.000
+ KGC      C12    C27    H271    109.470    3.000
+ KGC      C12    C27    H272    109.470    3.000
+ KGC      C12    C27    C28     109.470    3.000
+ KGC      H271   C27    H272    107.900    3.000
+ KGC      H271   C27    C28     109.470    3.000
+ KGC      H272   C27    C28     109.470    3.000
+ KGC      C27    C28    O30     120.000    3.000
+ KGC      C27    C28    O29     120.500    3.000
+ KGC      O30    C28    O29     119.000    3.000
+ KGC      C28    O30    C11     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ KGC      var_1    OXT    C      CA     CB       -79.991   20.000   3
+ KGC      var_2    C      CA     N      H         60.052   20.000   1
+ KGC      var_3    C      CA     CB     CG       174.998   20.000   3
+ KGC      var_4    CA     CB     CG     CD       179.976   20.000   3
+ KGC      var_5    CB     CG     CD     CE       179.970   20.000   3
+ KGC      var_6    CG     CD     CE     NZ      -179.990   20.000   3
+ KGC      var_7    CD     CE     NZ     C11     -179.969   20.000   3
+ KGC      var_8    CE     NZ     C11    C12      -59.991   20.000   1
+ KGC      var_9    NZ     C11    O30    C28       90.000   20.000   1
+ KGC      var_10   NZ     C11    C13    O15      124.340   20.000   1
+ KGC      var_11   NZ     C11    C12    C27     -120.000   20.000   1
+ KGC      var_12   C11    C12    C27    C28       30.000   20.000   3
+ KGC      var_13   C12    C27    C28    O29      150.000   20.000   3
+ KGC      var_14   C27    C28    O30    C11       30.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ KGC      chir_01  CA     N      CB     C         negativ
+ KGC      chir_02  C11    NZ     C13    O30       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ KGC      plan-1    N         0.020
+ KGC      plan-1    CA        0.020
+ KGC      plan-1    H         0.020
+ KGC      plan-1    H2        0.020
+ KGC      plan-2    NZ        0.020
+ KGC      plan-2    CE        0.020
+ KGC      plan-2    C11       0.020
+ KGC      plan-2    HZ        0.020
+ KGC      plan-3    C13       0.020
+ KGC      plan-3    C11       0.020
+ KGC      plan-3    O15       0.020
+ KGC      plan-3    O14       0.020
+ KGC      plan-4    C28       0.020
+ KGC      plan-4    O30       0.020
+ KGC      plan-4    O29       0.020
+ KGC      plan-4    C27       0.020
+ KGC      plan-5    C         0.020
+ KGC      plan-5    CA        0.020
+ KGC      plan-5    O1        0.020
+ KGC      plan-5    OXT       0.020
+# ------------------------------------------------------

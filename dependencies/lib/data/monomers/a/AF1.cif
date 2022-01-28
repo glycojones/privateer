@@ -1,0 +1,345 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AF1      AF1 '4,6-dideoxy-4-{[(1S,4S,5S,6S)-4,5,6-' pyranose           45  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AF1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AF1           C1     C    CH1       0.000      0.000    0.000    0.000
+ AF1           H1     H    H         0.000      0.258   -0.325   -1.018
+ AF1           O1     O    OH1       0.000      1.195    0.319    0.715
+ AF1           H23    H    H         0.000      1.663    1.032    0.259
+ AF1           O5     O    O2        0.000     -0.838    1.156   -0.066
+ AF1           C5     C    CH1       0.000     -2.056    0.952   -0.787
+ AF1           H5     H    H         0.000     -1.826    0.640   -1.815
+ AF1           C6     C    CH3       0.000     -2.855    2.257   -0.816
+ AF1           H6B    H    H         0.000     -2.297    3.003   -1.320
+ AF1           H6A    H    H         0.000     -3.772    2.100   -1.322
+ AF1           H6     H    H         0.000     -3.051    2.574    0.176
+ AF1           C4     C    CH1       0.000     -2.881   -0.136   -0.095
+ AF1           H4     H    H         0.000     -3.147    0.193    0.919
+ AF1           C3     C    CH1       0.000     -2.051   -1.422   -0.016
+ AF1           H3     H    H         0.000     -1.828   -1.779   -1.031
+ AF1           O3     O    OH1       0.000     -2.785   -2.422    0.694
+ AF1           HO3    H    H         0.000     -2.257   -3.230    0.748
+ AF1           C2     C    CH1       0.000     -0.741   -1.127    0.723
+ AF1           H2     H    H         0.000     -0.962   -0.819    1.755
+ AF1           O2     O    OH1       0.000      0.072   -2.301    0.739
+ AF1           HO2    H    H         0.000      0.900   -2.112    1.202
+ AF1           N4     N    NH1       0.000     -4.105   -0.390   -0.867
+ AF1           HN4    H    H         0.000     -4.149   -0.420   -1.875
+ AF1           C1H    C    CH1       0.000     -5.255   -0.594    0.023
+ AF1           H1H    H    H         0.000     -4.921   -1.101    0.939
+ AF1           C6H    C    C1        0.000     -5.850    0.737    0.381
+ AF1           H6H    H    H         0.000     -5.176    1.542    0.623
+ AF1           C5H    C    C         0.000     -7.121    0.977    0.417
+ AF1           C4H    C    CH1       0.000     -8.178   -0.039    0.097
+ AF1           H4H    H    H         0.000     -8.992    0.039    0.832
+ AF1           O4H    O    OH1       0.000     -8.695    0.212   -1.211
+ AF1           HO4H   H    H         0.000     -9.069    1.103   -1.243
+ AF1           C3H    C    CH1       0.000     -7.586   -1.449    0.146
+ AF1           H3H    H    H         0.000     -8.304   -2.167   -0.273
+ AF1           O3H    O    OH1       0.000     -7.289   -1.799    1.500
+ AF1           HO3H   H    H         0.000     -8.104   -1.789    2.020
+ AF1           C2H    C    CH1       0.000     -6.296   -1.463   -0.685
+ AF1           H2H    H    H         0.000     -5.922   -2.493   -0.771
+ AF1           O2H    O    OH1       0.000     -6.558   -0.935   -1.986
+ AF1           HO2H   H    H         0.000     -7.216   -1.487   -2.431
+ AF1           C7H    C    CH2       0.000     -7.567    2.363    0.806
+ AF1           H7H    H    H         0.000     -8.189    2.306    1.701
+ AF1           H7HA   H    H         0.000     -8.146    2.800   -0.010
+ AF1           O7H    O    OH1       0.000     -6.423    3.176    1.070
+ AF1           HO7H   H    H         0.000     -6.635    4.084    1.326
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AF1      C1     n/a    O5     START
+ AF1      H1     C1     .      .
+ AF1      O1     C1     H23    .
+ AF1      H23    O1     .      .
+ AF1      O5     C1     .      END
+ AF1      C5     O5     C4     .
+ AF1      H5     C5     .      .
+ AF1      C6     C5     H6     .
+ AF1      H6B    C6     .      .
+ AF1      H6A    C6     .      .
+ AF1      H6     C6     .      .
+ AF1      C4     C5     N4     .
+ AF1      H4     C4     .      .
+ AF1      C3     C4     C2     .
+ AF1      H3     C3     .      .
+ AF1      O3     C3     HO3    .
+ AF1      HO3    O3     .      .
+ AF1      C2     C3     O2     .
+ AF1      H2     C2     .      .
+ AF1      O2     C2     HO2    .
+ AF1      HO2    O2     .      .
+ AF1      N4     C4     C1H    .
+ AF1      HN4    N4     .      .
+ AF1      C1H    N4     C6H    .
+ AF1      H1H    C1H    .      .
+ AF1      C6H    C1H    C5H    .
+ AF1      H6H    C6H    .      .
+ AF1      C5H    C6H    C7H    .
+ AF1      C4H    C5H    C3H    .
+ AF1      H4H    C4H    .      .
+ AF1      O4H    C4H    HO4H   .
+ AF1      HO4H   O4H    .      .
+ AF1      C3H    C4H    C2H    .
+ AF1      H3H    C3H    .      .
+ AF1      O3H    C3H    HO3H   .
+ AF1      HO3H   O3H    .      .
+ AF1      C2H    C3H    O2H    .
+ AF1      H2H    C2H    .      .
+ AF1      O2H    C2H    HO2H   .
+ AF1      HO2H   O2H    .      .
+ AF1      C7H    C5H    O7H    .
+ AF1      H7H    C7H    .      .
+ AF1      H7HA   C7H    .      .
+ AF1      O7H    C7H    .      .
+ AF1      HO7H   O7H    .      .
+ AF1      C1     C2     .    ADD
+ AF1      C1H    C2H    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AF1       C1        C2        single    1.524     0.020     1.524     0.020     
+AF1       O1        C1        single    1.432     0.020     1.432     0.020     
+AF1       O5        C1        single    1.426     0.020     1.426     0.020     
+AF1       H1        C1        single    1.089     0.010     0.989     0.005     
+AF1       C2        C3        single    1.524     0.020     1.524     0.020     
+AF1       O2        C2        single    1.432     0.020     1.432     0.020     
+AF1       H2        C2        single    1.089     0.010     0.989     0.005     
+AF1       C3        C4        single    1.524     0.020     1.524     0.020     
+AF1       O3        C3        single    1.432     0.020     1.432     0.020     
+AF1       H3        C3        single    1.089     0.010     0.989     0.005     
+AF1       C4        C5        single    1.524     0.020     1.524     0.020     
+AF1       N4        C4        single    1.450     0.020     1.450     0.020     
+AF1       H4        C4        single    1.089     0.010     0.989     0.005     
+AF1       C6        C5        single    1.524     0.020     1.524     0.020     
+AF1       C5        O5        single    1.426     0.020     1.426     0.020     
+AF1       H5        C5        single    1.089     0.010     0.989     0.005     
+AF1       H6        C6        single    1.089     0.010     0.989     0.005     
+AF1       H6A       C6        single    1.089     0.010     0.989     0.005     
+AF1       H6B       C6        single    1.089     0.010     0.989     0.005     
+AF1       HO2       O2        single    0.970     0.012     0.839     0.014     
+AF1       HO3       O3        single    0.970     0.012     0.839     0.014     
+AF1       C1H       N4        single    1.450     0.020     1.450     0.020     
+AF1       HN4       N4        single    1.036     0.016     0.914     0.007     
+AF1       C1H       C2H       single    1.524     0.020     1.524     0.020     
+AF1       C6H       C1H       single    1.510     0.020     1.510     0.020     
+AF1       H1H       C1H       single    1.089     0.010     0.989     0.005     
+AF1       C2H       C3H       single    1.524     0.020     1.524     0.020     
+AF1       O2H       C2H       single    1.432     0.020     1.432     0.020     
+AF1       H2H       C2H       single    1.089     0.010     0.989     0.005     
+AF1       C3H       C4H       single    1.524     0.020     1.524     0.020     
+AF1       O3H       C3H       single    1.432     0.020     1.432     0.020     
+AF1       H3H       C3H       single    1.089     0.010     0.989     0.005     
+AF1       C4H       C5H       single    1.500     0.020     1.500     0.020     
+AF1       O4H       C4H       single    1.432     0.020     1.432     0.020     
+AF1       H4H       C4H       single    1.089     0.010     0.989     0.005     
+AF1       C5H       C6H       double    1.340     0.020     1.340     0.020     
+AF1       C7H       C5H       single    1.510     0.020     1.510     0.020     
+AF1       H6H       C6H       single    1.082     0.013     0.975     0.010     
+AF1       O7H       C7H       single    1.432     0.020     1.432     0.020     
+AF1       H7H       C7H       single    1.089     0.010     0.989     0.005     
+AF1       H7HA      C7H       single    1.089     0.010     0.989     0.005     
+AF1       HO2H      O2H       single    0.970     0.012     0.839     0.014     
+AF1       HO3H      O3H       single    0.970     0.012     0.839     0.014     
+AF1       HO4H      O4H       single    0.970     0.012     0.839     0.014     
+AF1       HO7H      O7H       single    0.970     0.012     0.839     0.014     
+AF1       H23       O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AF1      H1     C1     O1      109.470    3.000
+ AF1      H1     C1     O5      109.470    3.000
+ AF1      O1     C1     O5      109.470    3.000
+ AF1      H1     C1     C2      108.340    3.000
+ AF1      O1     C1     C2      109.470    3.000
+ AF1      O5     C1     C2      109.470    3.000
+ AF1      C1     O1     H23     109.470    3.000
+ AF1      C1     O5     C5      111.800    3.000
+ AF1      O5     C5     H5      109.470    3.000
+ AF1      O5     C5     C6      109.470    3.000
+ AF1      O5     C5     C4      109.470    3.000
+ AF1      H5     C5     C6      108.340    3.000
+ AF1      H5     C5     C4      108.340    3.000
+ AF1      C6     C5     C4      111.000    3.000
+ AF1      C5     C6     H6B     109.470    3.000
+ AF1      C5     C6     H6A     109.470    3.000
+ AF1      C5     C6     H6      109.470    3.000
+ AF1      H6B    C6     H6A     109.470    3.000
+ AF1      H6B    C6     H6      109.470    3.000
+ AF1      H6A    C6     H6      109.470    3.000
+ AF1      C5     C4     H4      108.340    3.000
+ AF1      C5     C4     C3      111.000    3.000
+ AF1      C5     C4     N4      110.000    3.000
+ AF1      H4     C4     C3      108.340    3.000
+ AF1      H4     C4     N4      108.550    3.000
+ AF1      C3     C4     N4      110.000    3.000
+ AF1      C4     C3     H3      108.340    3.000
+ AF1      C4     C3     O3      109.470    3.000
+ AF1      C4     C3     C2      111.000    3.000
+ AF1      H3     C3     O3      109.470    3.000
+ AF1      H3     C3     C2      108.340    3.000
+ AF1      O3     C3     C2      109.470    3.000
+ AF1      C3     O3     HO3     109.470    3.000
+ AF1      C3     C2     H2      108.340    3.000
+ AF1      C3     C2     O2      109.470    3.000
+ AF1      C3     C2     C1      111.000    3.000
+ AF1      H2     C2     O2      109.470    3.000
+ AF1      H2     C2     C1      108.340    3.000
+ AF1      O2     C2     C1      109.470    3.000
+ AF1      C2     O2     HO2     109.470    3.000
+ AF1      C4     N4     HN4     118.500    3.000
+ AF1      C4     N4     C1H     120.000    3.000
+ AF1      HN4    N4     C1H     118.500    3.000
+ AF1      N4     C1H    H1H     108.550    3.000
+ AF1      N4     C1H    C6H     111.600    3.000
+ AF1      N4     C1H    C2H     110.000    3.000
+ AF1      H1H    C1H    C6H     108.810    3.000
+ AF1      H1H    C1H    C2H     108.340    3.000
+ AF1      C6H    C1H    C2H     109.470    3.000
+ AF1      C1H    C6H    H6H     120.000    3.000
+ AF1      C1H    C6H    C5H     120.500    3.000
+ AF1      H6H    C6H    C5H     120.000    3.000
+ AF1      C6H    C5H    C4H     120.000    3.000
+ AF1      C6H    C5H    C7H     120.000    3.000
+ AF1      C4H    C5H    C7H     120.000    3.000
+ AF1      C5H    C4H    H4H     108.810    3.000
+ AF1      C5H    C4H    O4H     109.470    3.000
+ AF1      C5H    C4H    C3H     109.470    3.000
+ AF1      H4H    C4H    O4H     109.470    3.000
+ AF1      H4H    C4H    C3H     108.340    3.000
+ AF1      O4H    C4H    C3H     109.470    3.000
+ AF1      C4H    O4H    HO4H    109.470    3.000
+ AF1      C4H    C3H    H3H     108.340    3.000
+ AF1      C4H    C3H    O3H     109.470    3.000
+ AF1      C4H    C3H    C2H     111.000    3.000
+ AF1      H3H    C3H    O3H     109.470    3.000
+ AF1      H3H    C3H    C2H     108.340    3.000
+ AF1      O3H    C3H    C2H     109.470    3.000
+ AF1      C3H    O3H    HO3H    109.470    3.000
+ AF1      C3H    C2H    H2H     108.340    3.000
+ AF1      C3H    C2H    O2H     109.470    3.000
+ AF1      C3H    C2H    C1H     111.000    3.000
+ AF1      H2H    C2H    O2H     109.470    3.000
+ AF1      H2H    C2H    C1H     108.340    3.000
+ AF1      O2H    C2H    C1H     109.470    3.000
+ AF1      C2H    O2H    HO2H    109.470    3.000
+ AF1      C5H    C7H    H7H     109.470    3.000
+ AF1      C5H    C7H    H7HA    109.470    3.000
+ AF1      C5H    C7H    O7H     109.500    3.000
+ AF1      H7H    C7H    H7HA    107.900    3.000
+ AF1      H7H    C7H    O7H     109.470    3.000
+ AF1      H7HA   C7H    O7H     109.470    3.000
+ AF1      C7H    O7H    HO7H    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AF1      var_1    O5     C1     O1     H23      -60.012   20.000   1
+ AF1      var_2    C1     O5     C5     C4        60.000   20.000   1
+ AF1      var_3    O5     C5     C6     H6       -58.179   20.000   3
+ AF1      var_4    O5     C5     C4     N4       180.000   20.000   3
+ AF1      var_5    C5     C4     C3     C2        60.000   20.000   3
+ AF1      var_6    C4     C3     O3     HO3     -179.567   20.000   1
+ AF1      var_7    C4     C3     C2     O2       180.000   20.000   3
+ AF1      var_8    C3     C2     C1     O5        60.000   20.000   3
+ AF1      var_9    C3     C2     O2     HO2      179.683   20.000   1
+ AF1      var_10   C5     C4     N4     C1H     -140.093   20.000   3
+ AF1      var_11   C4     N4     C1H    C6H       85.638   20.000   3
+ AF1      var_12   N4     C1H    C2H    C3H      180.000   20.000   3
+ AF1      var_13   N4     C1H    C6H    C5H      150.000   20.000   1
+ AF1      var_14   C1H    C6H    C5H    C7H      180.000   20.000   1
+ AF1      var_15   C6H    C5H    C4H    C3H       30.000   20.000   3
+ AF1      var_16   C5H    C4H    O4H    HO4H     -59.259   20.000   1
+ AF1      var_17   C5H    C4H    C3H    C2H      -60.000   20.000   3
+ AF1      var_18   C4H    C3H    O3H    HO3H      61.034   20.000   1
+ AF1      var_19   C4H    C3H    C2H    O2H      -60.000   20.000   3
+ AF1      var_20   C3H    C2H    O2H    HO2H     -61.041   20.000   1
+ AF1      var_21   C6H    C5H    C7H    O7H        0.047   20.000   3
+ AF1      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AF1      chir_01  C1     C2     O1     O5        positiv
+ AF1      chir_02  C2     C1     C3     O2        negativ
+ AF1      chir_03  C3     C2     C4     O3        positiv
+ AF1      chir_04  C4     C3     C5     N4        negativ
+ AF1      chir_05  C5     C4     C6     O5        negativ
+ AF1      chir_06  C1H    N4     C2H    C6H       positiv
+ AF1      chir_07  C2H    C1H    C3H    O2H       negativ
+ AF1      chir_08  C3H    C2H    C4H    O3H       positiv
+ AF1      chir_09  C4H    C3H    C5H    O4H       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AF1      plan-1    N4        0.020
+ AF1      plan-1    C4        0.020
+ AF1      plan-1    C1H       0.020
+ AF1      plan-1    HN4       0.020
+ AF1      plan-2    C5H       0.020
+ AF1      plan-2    C4H       0.020
+ AF1      plan-2    C6H       0.020
+ AF1      plan-2    C7H       0.020
+ AF1      plan-2    H6H       0.020
+ AF1      plan-3    C6H       0.020
+ AF1      plan-3    C1H       0.020
+ AF1      plan-3    C5H       0.020
+ AF1      plan-3    H6H       0.020
+# ------------------------------------------------------

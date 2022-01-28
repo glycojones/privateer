@@ -1,0 +1,115 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AS8     AS8     ACETYLSULFATE     non-polymer     11     8     .     
+#
+data_comp_AS8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AS8     O1S     O       O       0       67.422      -4.310      2.259       
+AS8     O2S     O       OS      -1      66.738      -2.971      4.142       
+AS8     O3S     O       O       0       68.322      -2.092      2.552       
+AS8     C1M     C       CH3     0       71.150      -4.599      4.619       
+AS8     C1      C       C       0       70.186      -4.229      3.549       
+AS8     O2      O       O       0       70.448      -4.244      2.371       
+AS8     O1      O       O2      0       68.995      -3.891      4.083       
+AS8     S       S       S3      0       67.787      -3.271      3.195       
+AS8     H1M1    H       H       0       71.990      -4.875      4.218       
+AS8     H1M2    H       H       0       70.788      -5.332      5.144       
+AS8     H1M3    H       H       0       71.304      -3.834      5.197       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AS8       O1S       S         DOUBLE    n         1.445     0.016     1.445     0.016     
+AS8       O2S       S         SINGLE    n         1.445     0.016     1.445     0.016     
+AS8       O3S       S         DOUBLE    n         1.445     0.016     1.445     0.016     
+AS8       C1M       C1        SINGLE    n         1.487     0.017     1.487     0.017     
+AS8       C1        O2        DOUBLE    n         1.203     0.015     1.203     0.015     
+AS8       C1        O1        SINGLE    n         1.334     0.018     1.334     0.018     
+AS8       O1        S         SINGLE    n         1.609     0.020     1.609     0.020     
+AS8       C1M       H1M1      SINGLE    n         1.089     0.010     0.971     0.014     
+AS8       C1M       H1M2      SINGLE    n         1.089     0.010     0.971     0.014     
+AS8       C1M       H1M3      SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AS8          C1         C1M        H1M1     109.529    1.50
+AS8          C1         C1M        H1M2     109.529    1.50
+AS8          C1         C1M        H1M3     109.529    1.50
+AS8        H1M1         C1M        H1M2     109.424    1.50
+AS8        H1M1         C1M        H1M3     109.424    1.50
+AS8        H1M2         C1M        H1M3     109.424    1.50
+AS8         C1M          C1          O2     125.123    2.35
+AS8         C1M          C1          O1     111.232    1.81
+AS8          O2          C1          O1     123.645    1.74
+AS8          C1          O1           S     120.206    1.50
+AS8         O1S           S         O2S     113.532    1.50
+AS8         O1S           S         O3S     113.532    1.50
+AS8         O1S           S          O1     106.980    3.00
+AS8         O2S           S         O3S     113.532    1.50
+AS8         O2S           S          O1     106.980    3.00
+AS8         O3S           S          O1     106.980    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AS8             sp2_sp3_1          O2          C1         C1M        H1M1       0.000   10.00     6
+AS8             sp2_sp2_1         C1M          C1          O1           S     180.000   10.00     2
+AS8             sp3_sp3_1         O1S           S          O1          C1      90.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AS8    plan-1          C1   0.020
+AS8    plan-1         C1M   0.020
+AS8    plan-1          O1   0.020
+AS8    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AS8 SMILES_CANONICAL CACTVS               3.352 "CC(=O)O[S](O)(=O)=O"
+AS8 SMILES           CACTVS               3.352 "CC(=O)O[S](O)(=O)=O"
+AS8 SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "CC(=O)OS(=O)(=O)O"
+AS8 SMILES           "OpenEye OEToolkits" 1.6.1 "CC(=O)OS(=O)(=O)O"
+AS8 InChI            InChI                1.03  "InChI=1S/C2H4O5S/c1-2(3)7-8(4,5)6/h1H3,(H,4,5,6)"
+AS8 InChIKey         InChI                1.03  HZWXJJCSDBQVLF-UHFFFAOYSA-N
+AS8 ?                acedrg               190         "dictionary generator"                  
+AS8 ?                acedrg_database      11          "data source"                           
+AS8 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AS8 ?                refmac5              5.8.0158    "optimization tool"                     

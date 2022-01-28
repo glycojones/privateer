@@ -1,0 +1,152 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SA9     SA9      "2-(hydroxymethyl)phenol"     NON-POLYMER     17     9     .     
+#
+data_comp_SA9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SA9     OAA     O       OH1     0       2.487       -0.468      -1.173      
+SA9     OAB     O       OH1     0       1.024       1.925       0.255       
+SA9     CAC     C       CR16    0       -2.294      0.397       0.101       
+SA9     CAD     C       CR16    0       -1.967      -0.942      -0.003      
+SA9     CAE     C       CR16    0       -1.295      1.358       0.187       
+SA9     CAF     C       CR16    0       -0.631      -1.329      -0.020      
+SA9     CAG     C       CH2     0       1.846       -0.819      0.045       
+SA9     CAH     C       CR6     0       0.045       0.976       0.170       
+SA9     CAI     C       CR6     0       0.402       -0.385      0.065       
+SA9     HOAA    H       H       0       3.310       -0.671      -1.116      
+SA9     HOAB    H       H       0       1.391       2.004       -0.517      
+SA9     HAC     H       H       0       -3.199      0.661       0.113       
+SA9     HAD     H       H       0       -2.648      -1.593      -0.061      
+SA9     HAE     H       H       0       -1.521      2.271       0.258       
+SA9     HAF     H       H       0       -0.416      -2.245      -0.091      
+SA9     HAG     H       H       0       2.321       -0.396      0.789       
+SA9     HAGA    H       H       0       1.900       -1.789      0.166       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SA9       OAA       CAG       SINGLE    n         1.420     0.014     1.420     0.014     
+SA9       OAB       CAH       SINGLE    n         1.364     0.013     1.364     0.013     
+SA9       CAC       CAD       DOUBLE    y         1.375     0.011     1.375     0.011     
+SA9       CAC       CAE       SINGLE    y         1.382     0.011     1.382     0.011     
+SA9       CAD       CAF       SINGLE    y         1.384     0.010     1.384     0.010     
+SA9       CAE       CAH       DOUBLE    y         1.387     0.010     1.387     0.010     
+SA9       CAF       CAI       DOUBLE    y         1.394     0.010     1.394     0.010     
+SA9       CAG       CAI       SINGLE    n         1.506     0.010     1.506     0.010     
+SA9       CAH       CAI       SINGLE    y         1.402     0.010     1.402     0.010     
+SA9       OAA       HOAA      SINGLE    n         0.970     0.012     0.849     0.020     
+SA9       OAB       HOAB      SINGLE    n         0.970     0.012     0.858     0.020     
+SA9       CAC       HAC       SINGLE    n         1.082     0.013     0.943     0.018     
+SA9       CAD       HAD       SINGLE    n         1.082     0.013     0.944     0.018     
+SA9       CAE       HAE       SINGLE    n         1.082     0.013     0.943     0.017     
+SA9       CAF       HAF       SINGLE    n         1.082     0.013     0.943     0.017     
+SA9       CAG       HAG       SINGLE    n         1.089     0.010     0.979     0.018     
+SA9       CAG       HAGA      SINGLE    n         1.089     0.010     0.979     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SA9         CAG         OAA        HOAA     108.716    3.00
+SA9         CAH         OAB        HOAB     108.378    3.00
+SA9         CAD         CAC         CAE     120.498    1.50
+SA9         CAD         CAC         HAC     119.936    1.50
+SA9         CAE         CAC         HAC     119.567    1.50
+SA9         CAC         CAD         CAF     119.997    1.50
+SA9         CAC         CAD         HAD     120.047    1.50
+SA9         CAF         CAD         HAD     119.956    1.50
+SA9         CAC         CAE         CAH     120.024    1.50
+SA9         CAC         CAE         HAE     120.226    1.50
+SA9         CAH         CAE         HAE     119.749    1.50
+SA9         CAD         CAF         CAI     121.047    1.50
+SA9         CAD         CAF         HAF     119.582    1.50
+SA9         CAI         CAF         HAF     119.372    1.50
+SA9         OAA         CAG         CAI     111.996    1.50
+SA9         OAA         CAG         HAG     109.107    1.50
+SA9         OAA         CAG        HAGA     109.107    1.50
+SA9         CAI         CAG         HAG     109.316    1.50
+SA9         CAI         CAG        HAGA     109.316    1.50
+SA9         HAG         CAG        HAGA     107.986    1.50
+SA9         OAB         CAH         CAE     120.446    1.65
+SA9         OAB         CAH         CAI     118.991    1.50
+SA9         CAE         CAH         CAI     120.563    1.50
+SA9         CAF         CAI         CAG     121.056    1.50
+SA9         CAF         CAI         CAH     117.871    1.50
+SA9         CAG         CAI         CAH     121.073    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SA9             sp3_sp3_1         CAI         CAG         OAA        HOAA     180.000   10.00     3
+SA9       const_sp2_sp2_1         CAE         CAC         CAD         CAF       0.000   10.00     2
+SA9              const_21         CAD         CAC         CAE         CAH       0.000   10.00     2
+SA9       const_sp2_sp2_5         CAC         CAD         CAF         CAI       0.000   10.00     2
+SA9              const_18         CAC         CAE         CAH         OAB     180.000   10.00     2
+SA9              const_10         CAD         CAF         CAI         CAG     180.000   10.00     2
+SA9             sp2_sp3_4         CAF         CAI         CAG         OAA     -90.000   10.00     6
+SA9              const_16         OAB         CAH         CAI         CAG       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SA9    plan-1         CAC   0.020
+SA9    plan-1         CAD   0.020
+SA9    plan-1         CAE   0.020
+SA9    plan-1         CAF   0.020
+SA9    plan-1         CAG   0.020
+SA9    plan-1         CAH   0.020
+SA9    plan-1         CAI   0.020
+SA9    plan-1         HAC   0.020
+SA9    plan-1         HAD   0.020
+SA9    plan-1         HAE   0.020
+SA9    plan-1         HAF   0.020
+SA9    plan-1         OAB   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SA9 SMILES           ACDLabs              12.01 OCc1ccccc1O
+SA9 InChI            InChI                1.03  "InChI=1S/C7H8O2/c8-5-6-3-1-2-4-7(6)9/h1-4,8-9H,5H2"
+SA9 InChIKey         InChI                1.03  CQRYARSYNCAZFO-UHFFFAOYSA-N
+SA9 SMILES_CANONICAL CACTVS               3.370 OCc1ccccc1O
+SA9 SMILES           CACTVS               3.370 OCc1ccccc1O
+SA9 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "c1ccc(c(c1)CO)O"
+SA9 SMILES           "OpenEye OEToolkits" 1.7.2 "c1ccc(c(c1)CO)O"
+SA9 ?                acedrg               202         "dictionary generator"                  
+SA9 ?                acedrg_database      11          "data source"                           
+SA9 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SA9 ?                refmac5              5.8.0189    "optimization tool"                     

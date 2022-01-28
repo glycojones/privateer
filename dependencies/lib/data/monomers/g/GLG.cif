@@ -1,0 +1,237 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GLG      GLG 'ALPHA-D-GLUCOPYRANOSYL-2-CARBOXYLIC ' pyranose           27  14 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GLG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GLG           C1     C    CH1       0.000      0.000    0.000    0.000
+ GLG           H1     H    H         0.000      0.855   -0.041    0.689
+ GLG           C7     C    C         0.000     -1.137    0.738    0.657
+ GLG           N      N    NH2       0.000     -2.127    0.053    1.261
+ GLG           HN2    H    H         0.000     -2.111   -0.959    1.277
+ GLG           HN1    H    H         0.000     -2.893    0.546    1.704
+ GLG           O7     O    O         0.000     -1.161    1.951    0.641
+ GLG           O5     O    O2        0.000     -0.417   -1.326   -0.317
+ GLG           C5     C    CH1       0.000     -1.629   -1.230   -1.062
+ GLG           H5     H    H         0.000     -2.348   -0.607   -0.511
+ GLG           C6     C    CH2       0.000     -2.214   -2.629   -1.261
+ GLG           H61    H    H         0.000     -1.499   -3.248   -1.807
+ GLG           H62    H    H         0.000     -3.142   -2.557   -1.834
+ GLG           O6     O    OH1       0.000     -2.483   -3.220    0.011
+ GLG           HO6    H    H         0.000     -2.853   -4.104   -0.117
+ GLG           C4     C    CH1       0.000     -1.348   -0.599   -2.427
+ GLG           H4     H    H         0.000     -0.611   -1.207   -2.970
+ GLG           O4     O    OH1       0.000     -2.561   -0.531   -3.180
+ GLG           HO4    H    H         0.000     -2.382   -0.131   -4.042
+ GLG           C3     C    CH1       0.000     -0.793    0.814   -2.218
+ GLG           H3     H    H         0.000     -1.568    1.452   -1.769
+ GLG           O3     O    OH1       0.000     -0.390    1.361   -3.475
+ GLG           HO3    H    H         0.000     -0.040    2.252   -3.340
+ GLG           C2     C    CH1       0.000      0.412    0.732   -1.277
+ GLG           H2     H    H         0.000      1.226    0.182   -1.770
+ GLG           O2     O    OH1       0.000      0.855    2.051   -0.953
+ GLG           HO2    H    H         0.000      1.616    1.998   -0.360
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GLG      C1     n/a    O5     START
+ GLG      H1     C1     .      .
+ GLG      C7     C1     O7     .
+ GLG      N      C7     HN1    .
+ GLG      HN2    N      .      .
+ GLG      HN1    N      .      .
+ GLG      O7     C7     .      .
+ GLG      O5     C1     .      END
+ GLG      C5     O5     C4     .
+ GLG      H5     C5     .      .
+ GLG      C6     C5     O6     .
+ GLG      H61    C6     .      .
+ GLG      H62    C6     .      .
+ GLG      O6     C6     HO6    .
+ GLG      HO6    O6     .      .
+ GLG      C4     C5     C3     .
+ GLG      H4     C4     .      .
+ GLG      O4     C4     HO4    .
+ GLG      HO4    O4     .      .
+ GLG      C3     C4     C2     .
+ GLG      H3     C3     .      .
+ GLG      O3     C3     HO3    .
+ GLG      HO3    O3     .      .
+ GLG      C2     C3     O2     .
+ GLG      H2     C2     .      .
+ GLG      O2     C2     HO2    .
+ GLG      HO2    O2     .      .
+ GLG      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GLG       C1        C2        single    1.524     0.020     1.524     0.020     
+GLG       O5        C1        single    1.426     0.020     1.426     0.020     
+GLG       C7        C1        single    1.500     0.020     1.500     0.020     
+GLG       H1        C1        single    1.089     0.010     0.989     0.005     
+GLG       C2        C3        single    1.524     0.020     1.524     0.020     
+GLG       O2        C2        single    1.432     0.020     1.432     0.020     
+GLG       H2        C2        single    1.089     0.010     0.989     0.005     
+GLG       C3        C4        single    1.524     0.020     1.524     0.020     
+GLG       O3        C3        single    1.432     0.020     1.432     0.020     
+GLG       H3        C3        single    1.089     0.010     0.989     0.005     
+GLG       C4        C5        single    1.524     0.020     1.524     0.020     
+GLG       O4        C4        single    1.432     0.020     1.432     0.020     
+GLG       H4        C4        single    1.089     0.010     0.989     0.005     
+GLG       C6        C5        single    1.524     0.020     1.524     0.020     
+GLG       C5        O5        single    1.426     0.020     1.426     0.020     
+GLG       H5        C5        single    1.089     0.010     0.989     0.005     
+GLG       O6        C6        single    1.432     0.020     1.432     0.020     
+GLG       H61       C6        single    1.089     0.010     0.989     0.005     
+GLG       H62       C6        single    1.089     0.010     0.989     0.005     
+GLG       HO2       O2        single    0.970     0.012     0.839     0.014     
+GLG       HO3       O3        single    0.970     0.012     0.839     0.014     
+GLG       HO4       O4        single    0.970     0.012     0.839     0.014     
+GLG       HO6       O6        single    0.970     0.012     0.839     0.014     
+GLG       N         C7        single    1.332     0.020     1.332     0.020     
+GLG       HN1       N         single    1.016     0.010     0.899     0.007     
+GLG       HN2       N         single    1.016     0.010     0.899     0.007     
+GLG       O7        C7        double    1.220     0.020     1.220     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GLG      H1     C1     C7      108.810    3.000
+ GLG      H1     C1     O5      109.470    3.000
+ GLG      C7     C1     O5      109.470    3.000
+ GLG      H1     C1     C2      108.340    3.000
+ GLG      C7     C1     C2      109.470    3.000
+ GLG      O5     C1     C2      109.470    3.000
+ GLG      C1     C7     N       120.000    3.000
+ GLG      C1     C7     O7      120.500    3.000
+ GLG      N      C7     O7      123.000    3.000
+ GLG      C7     N      HN2     120.000    3.000
+ GLG      C7     N      HN1     120.000    3.000
+ GLG      HN2    N      HN1     120.000    3.000
+ GLG      C1     O5     C5      111.800    3.000
+ GLG      O5     C5     H5      109.470    3.000
+ GLG      O5     C5     C6      109.470    3.000
+ GLG      O5     C5     C4      109.470    3.000
+ GLG      H5     C5     C6      108.340    3.000
+ GLG      H5     C5     C4      108.340    3.000
+ GLG      C6     C5     C4      111.000    3.000
+ GLG      C5     C6     H61     109.470    3.000
+ GLG      C5     C6     H62     109.470    3.000
+ GLG      C5     C6     O6      109.470    3.000
+ GLG      H61    C6     H62     107.900    3.000
+ GLG      H61    C6     O6      109.470    3.000
+ GLG      H62    C6     O6      109.470    3.000
+ GLG      C6     O6     HO6     109.470    3.000
+ GLG      C5     C4     H4      108.340    3.000
+ GLG      C5     C4     O4      109.470    3.000
+ GLG      C5     C4     C3      111.000    3.000
+ GLG      H4     C4     O4      109.470    3.000
+ GLG      H4     C4     C3      108.340    3.000
+ GLG      O4     C4     C3      109.470    3.000
+ GLG      C4     O4     HO4     109.470    3.000
+ GLG      C4     C3     H3      108.340    3.000
+ GLG      C4     C3     O3      109.470    3.000
+ GLG      C4     C3     C2      111.000    3.000
+ GLG      H3     C3     O3      109.470    3.000
+ GLG      H3     C3     C2      108.340    3.000
+ GLG      O3     C3     C2      109.470    3.000
+ GLG      C3     O3     HO3     109.470    3.000
+ GLG      C3     C2     H2      108.340    3.000
+ GLG      C3     C2     O2      109.470    3.000
+ GLG      C3     C2     C1      111.000    3.000
+ GLG      H2     C2     O2      109.470    3.000
+ GLG      H2     C2     C1      108.340    3.000
+ GLG      O2     C2     C1      109.470    3.000
+ GLG      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GLG      var_1    O5     C1     C7     O7      -157.538   20.000   3
+ GLG      CONST_1  C1     C7     N      HN1      180.000    0.000   0
+ GLG      var_2    C1     O5     C5     C4        60.000   20.000   1
+ GLG      var_3    O5     C5     C6     O6        60.080   20.000   3
+ GLG      var_4    C5     C6     O6     HO6      179.976   20.000   1
+ GLG      var_5    O5     C5     C4     C3       -60.000   20.000   3
+ GLG      var_6    C5     C4     O4     HO4      179.979   20.000   1
+ GLG      var_7    C5     C4     C3     C2        60.000   20.000   3
+ GLG      var_8    C4     C3     O3     HO3     -179.988   20.000   1
+ GLG      var_9    C4     C3     C2     O2       180.000   20.000   3
+ GLG      var_10   C3     C2     C1     O5        60.000   20.000   3
+ GLG      var_11   C3     C2     O2     HO2     -179.986   20.000   1
+ GLG      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GLG      chir_01  C1     C2     O5     C7        positiv
+ GLG      chir_02  C2     C1     C3     O2        negativ
+ GLG      chir_03  C3     C2     C4     O3        positiv
+ GLG      chir_04  C4     C3     C5     O4        negativ
+ GLG      chir_05  C5     C4     C6     O5        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GLG      plan-1    N         0.020
+ GLG      plan-1    C7        0.020
+ GLG      plan-1    HN1       0.020
+ GLG      plan-1    HN2       0.020
+ GLG      plan-2    C7        0.020
+ GLG      plan-2    C1        0.020
+ GLG      plan-2    N         0.020
+ GLG      plan-2    O7        0.020
+ GLG      plan-2    HN2       0.020
+ GLG      plan-2    HN1       0.020
+# ------------------------------------------------------

@@ -1,0 +1,400 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GHC      GHC '"N-({4-[(2-amino-6-ethyl-4-oxo-3,4-d' non-polymer        50  32 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GHC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GHC           OAC    O    OC       -0.500      0.000    0.000    0.000
+ GHC           CAV    C    C         0.000     -0.791    0.782   -0.573
+ GHC           OAF    O    OC       -0.500     -0.465    1.975   -0.762
+ GHC           CAN    C    CH2       0.000     -2.137    0.287   -1.035
+ GHC           HAN    H    H         0.000     -2.221    0.417   -2.116
+ GHC           HANA   H    H         0.000     -2.924    0.859   -0.539
+ GHC           CBG    C    CH2       0.000     -2.284   -1.195   -0.685
+ GHC           HBG    H    H         0.000     -2.199   -1.323    0.397
+ GHC           HBGA   H    H         0.000     -1.495   -1.766   -1.180
+ GHC           CAP    C    CH1       0.000     -3.650   -1.697   -1.154
+ GHC           HAP    H    H         0.000     -3.769   -1.487   -2.226
+ GHC           CAW    C    C         0.000     -3.747   -3.183   -0.919
+ GHC           OAD    O    OC       -0.500     -4.640   -3.642   -0.173
+ GHC           OAG    O    OC       -0.500     -2.935   -3.957   -1.472
+ GHC           NAS    N    NH1       0.000     -4.706   -1.015   -0.402
+ GHC           HNAS   H    H         0.000     -4.511   -0.639    0.515
+ GHC           CAX    C    C         0.000     -5.939   -0.887   -0.933
+ GHC           OAE    O    O         0.000     -6.174   -1.340   -2.038
+ GHC           CBA    C    CR6       0.000     -7.001   -0.201   -0.176
+ GHC           CAL    C    CR16      0.000     -8.280   -0.069   -0.727
+ GHC           HAL    H    H         0.000     -8.491   -0.471   -1.710
+ GHC           CAJ    C    CR16      0.000     -9.262    0.568   -0.023
+ GHC           HAJ    H    H         0.000    -10.253    0.671   -0.449
+ GHC           CAK    C    CR16      0.000     -6.730    0.324    1.091
+ GHC           HAK    H    H         0.000     -5.740    0.227    1.518
+ GHC           CAI    C    CR16      0.000     -7.717    0.960    1.791
+ GHC           HAI    H    H         0.000     -7.508    1.366    2.773
+ GHC           CAZ    C    CR6       0.000     -8.992    1.085    1.243
+ GHC           SAT    S    S2        0.000    -10.261    1.905    2.147
+ GHC           C1     C    CR5       0.000    -11.647    1.809    1.063
+ GHC           C5     C    CR56      0.000    -12.589    0.701    1.090
+ GHC           C3     C    CR5       0.000    -11.913    2.739    0.158
+ GHC           C13    C    CH2       0.000    -11.082    3.977   -0.060
+ GHC           H13    H    H         0.000    -10.617    4.272    0.883
+ GHC           H13A   H    H         0.000    -11.723    4.786   -0.417
+ GHC           C29    C    CH3       0.000     -9.997    3.687   -1.098
+ GHC           H29B   H    H         0.000    -10.446    3.401   -2.014
+ GHC           H29A   H    H         0.000     -9.409    4.556   -1.252
+ GHC           H29    H    H         0.000     -9.374    2.901   -0.753
+ GHC           S4     S    S2        0.000    -13.357    2.343   -0.755
+ GHC           C4     C    CR56      0.000    -13.598    0.849    0.140
+ GHC           N3     N    NRD6      0.000    -14.553   -0.097    0.031
+ GHC           C2     C    CR6       0.000    -14.564   -1.155    0.805
+ GHC           N2     N    NH2       0.000    -15.563   -2.085    0.655
+ GHC           HN2A   H    H         0.000    -16.283   -1.952   -0.045
+ GHC           HN2    H    H         0.000    -15.586   -2.910    1.242
+ GHC           N1     N    NR16      0.000    -13.605   -1.356    1.753
+ GHC           HN1    H    H         0.000    -13.638   -2.206    2.350
+ GHC           C6     C    CR6       0.000    -12.614   -0.458    1.919
+ GHC           O6     O    O         0.000    -11.754   -0.633    2.765
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GHC      OAC    n/a    CAV    START
+ GHC      CAV    OAC    CAN    .
+ GHC      OAF    CAV    .      .
+ GHC      CAN    CAV    CBG    .
+ GHC      HAN    CAN    .      .
+ GHC      HANA   CAN    .      .
+ GHC      CBG    CAN    CAP    .
+ GHC      HBG    CBG    .      .
+ GHC      HBGA   CBG    .      .
+ GHC      CAP    CBG    NAS    .
+ GHC      HAP    CAP    .      .
+ GHC      CAW    CAP    OAG    .
+ GHC      OAD    CAW    .      .
+ GHC      OAG    CAW    .      .
+ GHC      NAS    CAP    CAX    .
+ GHC      HNAS   NAS    .      .
+ GHC      CAX    NAS    CBA    .
+ GHC      OAE    CAX    .      .
+ GHC      CBA    CAX    CAK    .
+ GHC      CAL    CBA    CAJ    .
+ GHC      HAL    CAL    .      .
+ GHC      CAJ    CAL    HAJ    .
+ GHC      HAJ    CAJ    .      .
+ GHC      CAK    CBA    CAI    .
+ GHC      HAK    CAK    .      .
+ GHC      CAI    CAK    CAZ    .
+ GHC      HAI    CAI    .      .
+ GHC      CAZ    CAI    SAT    .
+ GHC      SAT    CAZ    C1     .
+ GHC      C1     SAT    C3     .
+ GHC      C5     C1     .      .
+ GHC      C3     C1     S4     .
+ GHC      C13    C3     C29    .
+ GHC      H13    C13    .      .
+ GHC      H13A   C13    .      .
+ GHC      C29    C13    H29    .
+ GHC      H29B   C29    .      .
+ GHC      H29A   C29    .      .
+ GHC      H29    C29    .      .
+ GHC      S4     C3     C4     .
+ GHC      C4     S4     N3     .
+ GHC      N3     C4     C2     .
+ GHC      C2     N3     N1     .
+ GHC      N2     C2     HN2    .
+ GHC      HN2A   N2     .      .
+ GHC      HN2    N2     .      .
+ GHC      N1     C2     C6     .
+ GHC      HN1    N1     .      .
+ GHC      C6     N1     O6     .
+ GHC      O6     C6     .      END
+ GHC      C4     C5     .    ADD
+ GHC      C5     C6     .    ADD
+ GHC      CAZ    CAJ    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GHC       N3        C4        single    1.355     0.020     1.355     0.020     
+GHC       C4        C5        double    1.490     0.020     1.490     0.020     
+GHC       C4        S4        single    1.695     0.020     1.695     0.020     
+GHC       C5        C6        single    1.490     0.020     1.490     0.020     
+GHC       C5        C1        single    1.490     0.020     1.490     0.020     
+GHC       C6        N1        single    1.337     0.020     1.337     0.020     
+GHC       O6        C6        double    1.250     0.020     1.250     0.020     
+GHC       C13       C3        single    1.510     0.020     1.510     0.020     
+GHC       C29       C13       single    1.513     0.020     1.513     0.020     
+GHC       H13       C13       single    1.089     0.010     0.989     0.005     
+GHC       H13A      C13       single    1.089     0.010     0.989     0.005     
+GHC       N1        C2        single    1.337     0.020     1.337     0.020     
+GHC       HN1       N1        single    1.016     0.010     0.899     0.007     
+GHC       N2        C2        single    1.355     0.020     1.355     0.020     
+GHC       HN2       N2        single    1.016     0.010     0.899     0.007     
+GHC       HN2A      N2        single    1.016     0.010     0.899     0.007     
+GHC       S4        C3        single    1.745     0.020     1.745     0.020     
+GHC       C3        C1        double    1.490     0.020     1.490     0.020     
+GHC       C2        N3        double    1.350     0.020     1.350     0.020     
+GHC       H29       C29       single    1.089     0.010     0.989     0.005     
+GHC       H29A      C29       single    1.089     0.010     0.989     0.005     
+GHC       H29B      C29       single    1.089     0.010     0.989     0.005     
+GHC       C1        SAT       single    1.745     0.020     1.745     0.020     
+GHC       SAT       CAZ       single    1.695     0.020     1.695     0.020     
+GHC       CAZ       CAJ       double    1.390     0.020     1.390     0.020     
+GHC       CAZ       CAI       single    1.390     0.020     1.390     0.020     
+GHC       CAJ       CAL       single    1.390     0.020     1.390     0.020     
+GHC       HAJ       CAJ       single    1.082     0.013     0.975     0.010     
+GHC       CAL       CBA       double    1.390     0.020     1.390     0.020     
+GHC       HAL       CAL       single    1.082     0.013     0.975     0.010     
+GHC       CAI       CAK       double    1.390     0.020     1.390     0.020     
+GHC       HAI       CAI       single    1.082     0.013     0.975     0.010     
+GHC       CAK       CBA       single    1.390     0.020     1.390     0.020     
+GHC       HAK       CAK       single    1.082     0.013     0.975     0.010     
+GHC       CBA       CAX       single    1.500     0.020     1.500     0.020     
+GHC       CAX       NAS       single    1.330     0.020     1.330     0.020     
+GHC       OAE       CAX       double    1.220     0.020     1.220     0.020     
+GHC       NAS       CAP       single    1.450     0.020     1.450     0.020     
+GHC       HNAS      NAS       single    1.016     0.010     0.899     0.007     
+GHC       CAP       CBG       single    1.524     0.020     1.524     0.020     
+GHC       CAW       CAP       single    1.500     0.020     1.500     0.020     
+GHC       HAP       CAP       single    1.089     0.010     0.989     0.005     
+GHC       OAD       CAW       deloc     1.250     0.020     1.250     0.020     
+GHC       OAG       CAW       deloc     1.250     0.020     1.250     0.020     
+GHC       CBG       CAN       single    1.524     0.020     1.524     0.020     
+GHC       HBG       CBG       single    1.089     0.010     0.989     0.005     
+GHC       HBGA      CBG       single    1.089     0.010     0.989     0.005     
+GHC       CAN       CAV       single    1.510     0.020     1.510     0.020     
+GHC       HAN       CAN       single    1.089     0.010     0.989     0.005     
+GHC       HANA      CAN       single    1.089     0.010     0.989     0.005     
+GHC       CAV       OAC       deloc     1.250     0.020     1.250     0.020     
+GHC       OAF       CAV       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GHC      OAC    CAV    OAF     123.000    3.000
+ GHC      OAC    CAV    CAN     118.500    3.000
+ GHC      OAF    CAV    CAN     118.500    3.000
+ GHC      CAV    CAN    HAN     109.470    3.000
+ GHC      CAV    CAN    HANA    109.470    3.000
+ GHC      CAV    CAN    CBG     109.470    3.000
+ GHC      HAN    CAN    HANA    107.900    3.000
+ GHC      HAN    CAN    CBG     109.470    3.000
+ GHC      HANA   CAN    CBG     109.470    3.000
+ GHC      CAN    CBG    HBG     109.470    3.000
+ GHC      CAN    CBG    HBGA    109.470    3.000
+ GHC      CAN    CBG    CAP     111.000    3.000
+ GHC      HBG    CBG    HBGA    107.900    3.000
+ GHC      HBG    CBG    CAP     109.470    3.000
+ GHC      HBGA   CBG    CAP     109.470    3.000
+ GHC      CBG    CAP    HAP     108.340    3.000
+ GHC      CBG    CAP    CAW     109.470    3.000
+ GHC      CBG    CAP    NAS     110.000    3.000
+ GHC      HAP    CAP    CAW     108.810    3.000
+ GHC      HAP    CAP    NAS     108.550    3.000
+ GHC      CAW    CAP    NAS     111.600    3.000
+ GHC      CAP    CAW    OAD     118.500    3.000
+ GHC      CAP    CAW    OAG     118.500    3.000
+ GHC      OAD    CAW    OAG     123.000    3.000
+ GHC      CAP    NAS    HNAS    118.500    3.000
+ GHC      CAP    NAS    CAX     121.500    3.000
+ GHC      HNAS   NAS    CAX     120.000    3.000
+ GHC      NAS    CAX    OAE     123.000    3.000
+ GHC      NAS    CAX    CBA     120.000    3.000
+ GHC      OAE    CAX    CBA     120.500    3.000
+ GHC      CAX    CBA    CAL     120.000    3.000
+ GHC      CAX    CBA    CAK     120.000    3.000
+ GHC      CAL    CBA    CAK     120.000    3.000
+ GHC      CBA    CAL    HAL     120.000    3.000
+ GHC      CBA    CAL    CAJ     120.000    3.000
+ GHC      HAL    CAL    CAJ     120.000    3.000
+ GHC      CAL    CAJ    HAJ     120.000    3.000
+ GHC      CAL    CAJ    CAZ     120.000    3.000
+ GHC      HAJ    CAJ    CAZ     120.000    3.000
+ GHC      CBA    CAK    HAK     120.000    3.000
+ GHC      CBA    CAK    CAI     120.000    3.000
+ GHC      HAK    CAK    CAI     120.000    3.000
+ GHC      CAK    CAI    HAI     120.000    3.000
+ GHC      CAK    CAI    CAZ     120.000    3.000
+ GHC      HAI    CAI    CAZ     120.000    3.000
+ GHC      CAI    CAZ    SAT     120.000    3.000
+ GHC      CAI    CAZ    CAJ     120.000    3.000
+ GHC      SAT    CAZ    CAJ     120.000    3.000
+ GHC      CAZ    SAT    C1      103.054    3.000
+ GHC      SAT    C1     C5      108.000    3.000
+ GHC      SAT    C1     C3      108.000    3.000
+ GHC      C5     C1     C3      108.000    3.000
+ GHC      C1     C5     C4      108.000    3.000
+ GHC      C1     C5     C6      132.000    3.000
+ GHC      C4     C5     C6      120.000    3.000
+ GHC      C1     C3     C13     126.000    3.000
+ GHC      C1     C3     S4      108.000    3.000
+ GHC      C13    C3     S4      108.000    3.000
+ GHC      C3     C13    H13     109.470    3.000
+ GHC      C3     C13    H13A    109.470    3.000
+ GHC      C3     C13    C29     109.470    3.000
+ GHC      H13    C13    H13A    107.900    3.000
+ GHC      H13    C13    C29     109.470    3.000
+ GHC      H13A   C13    C29     109.470    3.000
+ GHC      C13    C29    H29B    109.470    3.000
+ GHC      C13    C29    H29A    109.470    3.000
+ GHC      C13    C29    H29     109.470    3.000
+ GHC      H29B   C29    H29A    109.470    3.000
+ GHC      H29B   C29    H29     109.470    3.000
+ GHC      H29A   C29    H29     109.470    3.000
+ GHC      C3     S4     C4       92.269    3.000
+ GHC      S4     C4     N3      120.000    3.000
+ GHC      S4     C4     C5      120.000    3.000
+ GHC      N3     C4     C5      120.000    3.000
+ GHC      C4     N3     C2      120.000    3.000
+ GHC      N3     C2     N2      120.000    3.000
+ GHC      N3     C2     N1      120.000    3.000
+ GHC      N2     C2     N1      120.000    3.000
+ GHC      C2     N2     HN2A    120.000    3.000
+ GHC      C2     N2     HN2     120.000    3.000
+ GHC      HN2A   N2     HN2     120.000    3.000
+ GHC      C2     N1     HN1     120.000    3.000
+ GHC      C2     N1     C6      120.000    3.000
+ GHC      HN1    N1     C6      120.000    3.000
+ GHC      N1     C6     O6      120.000    3.000
+ GHC      N1     C6     C5      120.000    3.000
+ GHC      O6     C6     C5      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GHC      var_1    OAC    CAV    CAN    CBG       -0.047   20.000   3
+ GHC      var_2    CAV    CAN    CBG    CAP     -179.984   20.000   3
+ GHC      var_3    CAN    CBG    CAP    NAS      -64.972   20.000   3
+ GHC      var_4    CBG    CAP    CAW    OAG      -60.058   20.000   3
+ GHC      var_5    CBG    CAP    NAS    CAX      155.006   20.000   3
+ GHC      CONST_1  CAP    NAS    CAX    CBA      180.000    0.000   0
+ GHC      var_6    NAS    CAX    CBA    CAK        0.253   20.000   1
+ GHC      CONST_2  CAX    CBA    CAL    CAJ      180.000    0.000   0
+ GHC      CONST_3  CBA    CAL    CAJ    CAZ        0.000    0.000   0
+ GHC      CONST_4  CAX    CBA    CAK    CAI      180.000    0.000   0
+ GHC      CONST_5  CBA    CAK    CAI    CAZ        0.000    0.000   0
+ GHC      CONST_6  CAK    CAI    CAZ    SAT      180.000    0.000   0
+ GHC      CONST_7  CAI    CAZ    CAJ    CAL        0.000    0.000   0
+ GHC      var_7    CAI    CAZ    SAT    C1       179.951   20.000   1
+ GHC      var_8    CAZ    SAT    C1     C3       -89.975   20.000   1
+ GHC      CONST_8  SAT    C1     C5     C4       180.000    0.000   0
+ GHC      CONST_9  C1     C5     C6     N1       180.000    0.000   0
+ GHC      CONST_10 SAT    C1     C3     S4       180.000    0.000   0
+ GHC      var_9    C1     C3     C13    C29       89.936   20.000   2
+ GHC      var_10   C3     C13    C29    H29      -59.941   20.000   3
+ GHC      CONST_11 C1     C3     S4     C4         0.000    0.000   0
+ GHC      CONST_12 C3     S4     C4     N3       180.000    0.000   0
+ GHC      CONST_13 S4     C4     C5     C1         0.000    0.000   0
+ GHC      CONST_14 S4     C4     N3     C2       180.000    0.000   0
+ GHC      CONST_15 C4     N3     C2     N1         0.000    0.000   0
+ GHC      CONST_16 N3     C2     N2     HN2      179.795    0.000   0
+ GHC      CONST_17 N3     C2     N1     C6         0.000    0.000   0
+ GHC      CONST_18 C2     N1     C6     O6       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GHC      chir_01  CAP    NAS    CAW    CBG       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GHC      plan-1    C4        0.020
+ GHC      plan-1    C5        0.020
+ GHC      plan-1    N3        0.020
+ GHC      plan-1    S4        0.020
+ GHC      plan-1    C3        0.020
+ GHC      plan-1    C1        0.020
+ GHC      plan-1    C6        0.020
+ GHC      plan-1    N1        0.020
+ GHC      plan-1    O6        0.020
+ GHC      plan-1    C2        0.020
+ GHC      plan-1    HN1       0.020
+ GHC      plan-1    C13       0.020
+ GHC      plan-1    N2        0.020
+ GHC      plan-1    SAT       0.020
+ GHC      plan-1    HN2A      0.020
+ GHC      plan-1    HN2       0.020
+ GHC      plan-2    N2        0.020
+ GHC      plan-2    C2        0.020
+ GHC      plan-2    HN2       0.020
+ GHC      plan-2    HN2A      0.020
+ GHC      plan-3    CAZ       0.020
+ GHC      plan-3    SAT       0.020
+ GHC      plan-3    CAJ       0.020
+ GHC      plan-3    CAI       0.020
+ GHC      plan-3    CAL       0.020
+ GHC      plan-3    CAK       0.020
+ GHC      plan-3    CBA       0.020
+ GHC      plan-3    HAJ       0.020
+ GHC      plan-3    HAL       0.020
+ GHC      plan-3    HAI       0.020
+ GHC      plan-3    HAK       0.020
+ GHC      plan-3    CAX       0.020
+ GHC      plan-4    CAX       0.020
+ GHC      plan-4    CBA       0.020
+ GHC      plan-4    OAE       0.020
+ GHC      plan-4    NAS       0.020
+ GHC      plan-4    HNAS      0.020
+ GHC      plan-5    NAS       0.020
+ GHC      plan-5    CAX       0.020
+ GHC      plan-5    CAP       0.020
+ GHC      plan-5    HNAS      0.020
+ GHC      plan-6    CAW       0.020
+ GHC      plan-6    CAP       0.020
+ GHC      plan-6    OAG       0.020
+ GHC      plan-6    OAD       0.020
+ GHC      plan-7    CAV       0.020
+ GHC      plan-7    CAN       0.020
+ GHC      plan-7    OAF       0.020
+ GHC      plan-7    OAC       0.020
+# ------------------------------------------------------

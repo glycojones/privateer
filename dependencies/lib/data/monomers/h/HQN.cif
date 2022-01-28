@@ -1,0 +1,141 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HQN     HQN      benzene-1,2,4-triol     NON-POLYMER     15     9     .     
+#
+data_comp_HQN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HQN     C1      C       CR16    0       24.818      60.739      290.900     
+HQN     O1      O       OH1     0       24.318      59.313      294.240     
+HQN     C2      C       CR6     0       24.208      60.386      292.103     
+HQN     O2      O       OH1     0       22.912      60.751      292.351     
+HQN     C3      C       CR6     0       24.920      59.654      293.067     
+HQN     O3      O       OH1     0       26.728      60.710      289.480     
+HQN     C4      C       CR16    0       26.234      59.284      292.815     
+HQN     C5      C       CR16    0       26.845      59.639      291.607     
+HQN     C6      C       CR6     0       26.137      60.364      290.654     
+HQN     H1      H       H       0       24.340      61.226      290.260     
+HQN     HO1     H       H       0       24.273      58.459      294.309     
+HQN     HO2     H       H       0       22.887      61.335      292.979     
+HQN     HO3     H       H       0       27.391      61.233      289.628     
+HQN     H4      H       H       0       26.715      58.793      293.460     
+HQN     H5      H       H       0       27.737      59.386      291.440     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HQN       C1        C6        DOUBLE    y         1.386     0.010     1.386     0.010     
+HQN       C1        C2        SINGLE    y         1.386     0.010     1.386     0.010     
+HQN       O1        C3        SINGLE    n         1.361     0.010     1.361     0.010     
+HQN       C2        O2        SINGLE    n         1.368     0.010     1.368     0.010     
+HQN       C2        C3        DOUBLE    y         1.395     0.010     1.395     0.010     
+HQN       C3        C4        SINGLE    y         1.381     0.010     1.381     0.010     
+HQN       O3        C6        SINGLE    n         1.359     0.010     1.359     0.010     
+HQN       C4        C5        DOUBLE    y         1.393     0.010     1.393     0.010     
+HQN       C5        C6        SINGLE    y         1.386     0.010     1.386     0.010     
+HQN       C1        H1        SINGLE    n         1.082     0.013     0.936     0.020     
+HQN       O1        HO1       SINGLE    n         0.970     0.012     0.858     0.020     
+HQN       O2        HO2       SINGLE    n         0.970     0.012     0.858     0.020     
+HQN       O3        HO3       SINGLE    n         0.970     0.012     0.858     0.020     
+HQN       C4        H4        SINGLE    n         1.082     0.013     0.942     0.016     
+HQN       C5        H5        SINGLE    n         1.082     0.013     0.942     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HQN          C6          C1          C2     119.618    1.50
+HQN          C6          C1          H1     120.317    1.50
+HQN          C2          C1          H1     120.066    1.50
+HQN          C3          O1         HO1     110.003    2.63
+HQN          C1          C2          O2     121.402    2.56
+HQN          C1          C2          C3     119.905    1.50
+HQN          O2          C2          C3     118.693    2.41
+HQN          C2          O2         HO2     110.003    2.63
+HQN          O1          C3          C2     118.892    2.41
+HQN          O1          C3          C4     121.494    2.46
+HQN          C2          C3          C4     119.615    1.50
+HQN          C6          O3         HO3     110.017    2.50
+HQN          C3          C4          C5     120.042    1.50
+HQN          C3          C4          H4     119.913    1.50
+HQN          C5          C4          H4     120.045    1.50
+HQN          C4          C5          C6     120.397    1.50
+HQN          C4          C5          H5     119.771    1.50
+HQN          C6          C5          H5     119.832    1.50
+HQN          C1          C6          O3     119.567    2.39
+HQN          C1          C6          C5     120.424    1.50
+HQN          O3          C6          C5     120.010    2.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HQN              const_22          C6          C1          C2          O2     180.000   10.00     2
+HQN       const_sp2_sp2_2          C2          C1          C6          O3     180.000   10.00     2
+HQN              const_20          O2          C2          C3          O1       0.000   10.00     2
+HQN              const_15          O1          C3          C4          C5     180.000   10.00     2
+HQN       const_sp2_sp2_9          C3          C4          C5          C6       0.000   10.00     2
+HQN       const_sp2_sp2_6          C4          C5          C6          O3     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HQN    plan-1          C1   0.020
+HQN    plan-1          C2   0.020
+HQN    plan-1          C3   0.020
+HQN    plan-1          C4   0.020
+HQN    plan-1          C5   0.020
+HQN    plan-1          C6   0.020
+HQN    plan-1          H1   0.020
+HQN    plan-1          H4   0.020
+HQN    plan-1          H5   0.020
+HQN    plan-1          O1   0.020
+HQN    plan-1          O2   0.020
+HQN    plan-1          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HQN SMILES           ACDLabs              12.01 "Oc1cc(O)c(O)cc1"
+HQN SMILES_CANONICAL CACTVS               3.370 "Oc1ccc(O)c(O)c1"
+HQN SMILES           CACTVS               3.370 "Oc1ccc(O)c(O)c1"
+HQN SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc(c(cc1O)O)O"
+HQN SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(c(cc1O)O)O"
+HQN InChI            InChI                1.03  "InChI=1S/C6H6O3/c7-4-1-2-5(8)6(9)3-4/h1-3,7-9H"
+HQN InChIKey         InChI                1.03  GGNQRNBDZQJCCN-UHFFFAOYSA-N
+HQN ?                acedrg               202         "dictionary generator"                  
+HQN ?                acedrg_database      11          "data source"                           
+HQN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HQN ?                refmac5              5.8.0189    "optimization tool"                     

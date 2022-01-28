@@ -1,0 +1,219 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TYB      TYB 'TYROSINAL                           ' non-polymer        23  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TYB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TYB           O      O    O         0.000      0.000    0.000    0.000
+ TYB           C      C    C1        0.000     -1.035   -0.037    0.619
+ TYB           HC     H    H         0.000     -1.034   -0.335    1.654
+ TYB           CA     C    CH1       0.000     -2.331    0.334   -0.056
+ TYB           HA     H    H         0.000     -2.785    1.188    0.466
+ TYB           N      N    NH2       0.000     -2.067    0.700   -1.454
+ TYB           H2     H    H         0.000     -2.303    1.625   -1.794
+ TYB           H      H    H         0.000     -1.647    0.030   -2.087
+ TYB           CB     C    CH2       0.000     -3.288   -0.858   -0.014
+ TYB           HB2    H    H         0.000     -3.483   -1.130    1.026
+ TYB           HB3    H    H         0.000     -2.836   -1.706   -0.532
+ TYB           CG     C    CR6       0.000     -4.582   -0.486   -0.689
+ TYB           CD2    C    CR16      0.000     -5.613    0.064    0.051
+ TYB           HD2    H    H         0.000     -5.491    0.224    1.115
+ TYB           CE2    C    CR16      0.000     -6.799    0.410   -0.567
+ TYB           HE2    H    H         0.000     -7.603    0.849    0.010
+ TYB           CZ     C    CR6       0.000     -6.961    0.193   -1.927
+ TYB           OH     O    OH1       0.000     -8.129    0.528   -2.535
+ TYB           HH     H    H         0.000     -8.733   -0.226   -2.508
+ TYB           CE1    C    CR16      0.000     -5.927   -0.364   -2.665
+ TYB           HE1    H    H         0.000     -6.050   -0.532   -3.728
+ TYB           CD1    C    CR16      0.000     -4.741   -0.704   -2.044
+ TYB           HD1    H    H         0.000     -3.934   -1.141   -2.620
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TYB      O      n/a    C      START
+ TYB      C      O      CA     .
+ TYB      HC     C      .      .
+ TYB      CA     C      CB     .
+ TYB      HA     CA     .      .
+ TYB      N      CA     H      .
+ TYB      H2     N      .      .
+ TYB      H      N      .      .
+ TYB      CB     CA     CG     .
+ TYB      HB2    CB     .      .
+ TYB      HB3    CB     .      .
+ TYB      CG     CB     CD2    .
+ TYB      CD2    CG     CE2    .
+ TYB      HD2    CD2    .      .
+ TYB      CE2    CD2    CZ     .
+ TYB      HE2    CE2    .      .
+ TYB      CZ     CE2    CE1    .
+ TYB      OH     CZ     HH     .
+ TYB      HH     OH     .      .
+ TYB      CE1    CZ     CD1    .
+ TYB      HE1    CE1    .      .
+ TYB      CD1    CE1    HD1    .
+ TYB      HD1    CD1    .      END
+ TYB      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TYB       N         CA        single    1.450     0.020     1.450     0.020     
+TYB       H         N         single    1.036     0.016     0.914     0.007     
+TYB       H2        N         single    1.036     0.016     0.914     0.007     
+TYB       CA        C         single    1.510     0.020     1.510     0.020     
+TYB       CB        CA        single    1.524     0.020     1.524     0.020     
+TYB       HA        CA        single    1.089     0.010     0.989     0.005     
+TYB       C         O         double    1.220     0.020     1.220     0.020     
+TYB       HC        C         single    1.082     0.013     0.975     0.010     
+TYB       CG        CB        single    1.511     0.020     1.511     0.020     
+TYB       HB2       CB        single    1.089     0.010     0.989     0.005     
+TYB       HB3       CB        single    1.089     0.010     0.989     0.005     
+TYB       CG        CD1       double    1.390     0.020     1.390     0.020     
+TYB       CD2       CG        single    1.390     0.020     1.390     0.020     
+TYB       CD1       CE1       single    1.390     0.020     1.390     0.020     
+TYB       HD1       CD1       single    1.082     0.013     0.975     0.010     
+TYB       CE2       CD2       double    1.390     0.020     1.390     0.020     
+TYB       HD2       CD2       single    1.082     0.013     0.975     0.010     
+TYB       CE1       CZ        double    1.390     0.020     1.390     0.020     
+TYB       HE1       CE1       single    1.082     0.013     0.975     0.010     
+TYB       CZ        CE2       single    1.390     0.020     1.390     0.020     
+TYB       HE2       CE2       single    1.082     0.013     0.975     0.010     
+TYB       OH        CZ        single    1.362     0.020     1.362     0.020     
+TYB       HH        OH        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TYB      O      C      HC      123.000    3.000
+ TYB      O      C      CA      120.500    3.000
+ TYB      HC     C      CA      120.000    3.000
+ TYB      C      CA     HA      108.810    3.000
+ TYB      C      CA     N       109.470    3.000
+ TYB      C      CA     CB      109.470    3.000
+ TYB      HA     CA     N       109.470    3.000
+ TYB      HA     CA     CB      108.340    3.000
+ TYB      N      CA     CB      109.470    3.000
+ TYB      CA     N      H2      120.000    3.000
+ TYB      CA     N      H       120.000    3.000
+ TYB      H2     N      H       120.000    3.000
+ TYB      CA     CB     HB2     109.470    3.000
+ TYB      CA     CB     HB3     109.470    3.000
+ TYB      CA     CB     CG      109.470    3.000
+ TYB      HB2    CB     HB3     107.900    3.000
+ TYB      HB2    CB     CG      109.470    3.000
+ TYB      HB3    CB     CG      109.470    3.000
+ TYB      CB     CG     CD2     120.000    3.000
+ TYB      CB     CG     CD1     120.000    3.000
+ TYB      CD2    CG     CD1     120.000    3.000
+ TYB      CG     CD2    HD2     120.000    3.000
+ TYB      CG     CD2    CE2     120.000    3.000
+ TYB      HD2    CD2    CE2     120.000    3.000
+ TYB      CD2    CE2    HE2     120.000    3.000
+ TYB      CD2    CE2    CZ      120.000    3.000
+ TYB      HE2    CE2    CZ      120.000    3.000
+ TYB      CE2    CZ     OH      120.000    3.000
+ TYB      CE2    CZ     CE1     120.000    3.000
+ TYB      OH     CZ     CE1     120.000    3.000
+ TYB      CZ     OH     HH      109.470    3.000
+ TYB      CZ     CE1    HE1     120.000    3.000
+ TYB      CZ     CE1    CD1     120.000    3.000
+ TYB      HE1    CE1    CD1     120.000    3.000
+ TYB      CE1    CD1    HD1     120.000    3.000
+ TYB      CE1    CD1    CG      120.000    3.000
+ TYB      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TYB      var_1    O      C      CA     CB       120.024   20.000   1
+ TYB      var_2    C      CA     N      H         59.983   20.000   1
+ TYB      var_3    C      CA     CB     CG      -179.996   20.000   3
+ TYB      var_4    CA     CB     CG     CD2      -90.364   20.000   2
+ TYB      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ TYB      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ TYB      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ TYB      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ TYB      var_5    CE2    CZ     OH     HH       -89.973   20.000   1
+ TYB      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ TYB      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TYB      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TYB      plan-1    N         0.020
+ TYB      plan-1    CA        0.020
+ TYB      plan-1    H         0.020
+ TYB      plan-1    H2        0.020
+ TYB      plan-2    C         0.020
+ TYB      plan-2    CA        0.020
+ TYB      plan-2    O         0.020
+ TYB      plan-2    HC        0.020
+ TYB      plan-3    CG        0.020
+ TYB      plan-3    CB        0.020
+ TYB      plan-3    CD1       0.020
+ TYB      plan-3    CD2       0.020
+ TYB      plan-3    CE1       0.020
+ TYB      plan-3    CE2       0.020
+ TYB      plan-3    CZ        0.020
+ TYB      plan-3    HD1       0.020
+ TYB      plan-3    HD2       0.020
+ TYB      plan-3    HE1       0.020
+ TYB      plan-3    HE2       0.020
+ TYB      plan-3    OH        0.020
+# ------------------------------------------------------

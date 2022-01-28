@@ -1,0 +1,129 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2AI     2AI      1H-imidazol-2-amine     NON-POLYMER     11     6     .     
+#
+data_comp_2AI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2AI     CG      C       CR15    0       1.061       -28.377     -40.556     
+2AI     CD2     C       CR15    0       0.639       -27.847     -39.398     
+2AI     NE2     N       NRD5    0       -0.752      -27.847     -39.356     
+2AI     CE1     C       CR5     0       -1.154      -28.385     -40.506     
+2AI     ND1     N       NR5     0       -0.078      -28.721     -41.265     
+2AI     NT      N       NH2     0       -2.419      -28.582     -40.895     
+2AI     HG      H       H       0       1.962       -28.504     -40.857     
+2AI     HD2     H       H       0       1.197       -27.519     -38.705     
+2AI     HND1    H       H       0       -0.074      -29.091     -42.065     
+2AI     HNT     H       H       0       -3.075      -28.343     -40.369     
+2AI     HNTA    H       H       0       -2.579      -28.949     -41.672     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2AI       CG        CD2       DOUBLE    y         1.342     0.011     1.342     0.011     
+2AI       CG        ND1       SINGLE    y         1.384     0.010     1.384     0.010     
+2AI       CD2       NE2       SINGLE    y         1.392     0.010     1.392     0.010     
+2AI       NE2       CE1       DOUBLE    y         1.332     0.012     1.332     0.012     
+2AI       CE1       ND1       SINGLE    y         1.359     0.013     1.359     0.013     
+2AI       CE1       NT        SINGLE    n         1.338     0.012     1.338     0.012     
+2AI       CG        HG        SINGLE    n         1.082     0.013     0.958     0.010     
+2AI       CD2       HD2       SINGLE    n         1.082     0.013     0.948     0.010     
+2AI       ND1       HND1      SINGLE    n         1.016     0.010     0.881     0.012     
+2AI       NT        HNT       SINGLE    n         1.016     0.010     0.874     0.019     
+2AI       NT        HNTA      SINGLE    n         1.016     0.010     0.874     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2AI         CD2          CG         ND1     106.108    1.50
+2AI         CD2          CG          HG     128.379    2.17
+2AI         ND1          CG          HG     125.513    2.03
+2AI          CG         CD2         NE2     109.947    1.50
+2AI          CG         CD2         HD2     125.545    1.50
+2AI         NE2         CD2         HD2     124.508    1.50
+2AI         CD2         NE2         CE1     106.368    1.50
+2AI         NE2         CE1         ND1     110.097    1.50
+2AI         NE2         CE1          NT     126.591    1.50
+2AI         ND1         CE1          NT     123.312    1.50
+2AI          CG         ND1         CE1     107.480    1.50
+2AI          CG         ND1        HND1     124.490    1.50
+2AI         CE1         ND1        HND1     128.031    1.84
+2AI         CE1          NT         HNT     119.586    1.87
+2AI         CE1          NT        HNTA     119.586    1.87
+2AI         HNT          NT        HNTA     120.828    2.45
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2AI       const_sp2_sp2_1         NE2         CD2          CG         ND1       0.000   10.00     2
+2AI              const_13         CD2          CG         ND1         CE1       0.000   10.00     2
+2AI       const_sp2_sp2_5          CG         CD2         NE2         CE1       0.000   10.00     2
+2AI       const_sp2_sp2_8          NT         CE1         NE2         CD2     180.000   10.00     2
+2AI              const_11          NT         CE1         ND1          CG     180.000   10.00     2
+2AI             sp2_sp2_3         NE2         CE1          NT         HNT       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+2AI    plan-1         CD2   0.020
+2AI    plan-1         CE1   0.020
+2AI    plan-1          CG   0.020
+2AI    plan-1         HD2   0.020
+2AI    plan-1          HG   0.020
+2AI    plan-1        HND1   0.020
+2AI    plan-1         ND1   0.020
+2AI    plan-1         NE2   0.020
+2AI    plan-1          NT   0.020
+2AI    plan-2         CE1   0.020
+2AI    plan-2         HNT   0.020
+2AI    plan-2        HNTA   0.020
+2AI    plan-2          NT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2AI SMILES           ACDLabs              10.04 n1ccnc1N
+2AI SMILES_CANONICAL CACTVS               3.341 "Nc1[nH]ccn1"
+2AI SMILES           CACTVS               3.341 "Nc1[nH]ccn1"
+2AI SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cnc([nH]1)N"
+2AI SMILES           "OpenEye OEToolkits" 1.5.0 "c1cnc([nH]1)N"
+2AI InChI            InChI                1.03  "InChI=1S/C3H5N3/c4-3-5-1-2-6-3/h1-2H,(H3,4,5,6)"
+2AI InChIKey         InChI                1.03  DEPDDPLQZYCHOH-UHFFFAOYSA-N
+2AI ?                acedrg               202         "dictionary generator"                  
+2AI ?                acedrg_database      11          "data source"                           
+2AI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2AI ?                refmac5              5.8.0189    "optimization tool"                     

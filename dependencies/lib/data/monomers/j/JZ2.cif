@@ -1,0 +1,148 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+JZ2     JZ2      5-chloro-2-methylphenol     NON-POLYMER     16     9     .     
+#
+data_comp_JZ2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+JZ2     CL      CL      CL      0       22.210      -27.467     -5.865      
+JZ2     C14     C       CR6     0       22.467      -26.438     -4.487      
+JZ2     C5      C       CR16    0       23.024      -25.181     -4.675      
+JZ2     C6      C       CR6     0       23.234      -24.350     -3.575      
+JZ2     C11     C       CR6     0       22.888      -24.768     -2.279      
+JZ2     C7      C       CH3     0       23.116      -23.867     -1.092      
+JZ2     C12     C       CR16    0       22.329      -26.040     -2.122      
+JZ2     C13     C       CR16    0       22.115      -26.884     -3.227      
+JZ2     OAB     O       OH1     0       23.782      -23.116     -3.777      
+JZ2     H5      H       H       0       23.259      -24.892     -5.536      
+JZ2     H7      H       H       0       22.797      -24.298     -0.283      
+JZ2     H7A     H       H       0       22.636      -23.032     -1.221      
+JZ2     H7B     H       H       0       24.065      -23.681     -1.003      
+JZ2     H12     H       H       0       22.092      -26.337     -1.259      
+JZ2     H13     H       H       0       21.739      -27.737     -3.110      
+JZ2     HOAB    H       H       0       24.587      -23.126     -3.479      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+JZ2       CL        C14       SINGLE    n         1.739     0.011     1.739     0.011     
+JZ2       C14       C5        DOUBLE    y         1.381     0.011     1.381     0.011     
+JZ2       C14       C13       SINGLE    y         1.376     0.011     1.376     0.011     
+JZ2       C5        C6        SINGLE    y         1.387     0.010     1.387     0.010     
+JZ2       C6        C11       DOUBLE    y         1.394     0.010     1.394     0.010     
+JZ2       C6        OAB       SINGLE    n         1.364     0.013     1.364     0.013     
+JZ2       C11       C7        SINGLE    n         1.499     0.020     1.499     0.020     
+JZ2       C11       C12       SINGLE    y         1.389     0.010     1.389     0.010     
+JZ2       C12       C13       DOUBLE    y         1.380     0.020     1.380     0.020     
+JZ2       C5        H5        SINGLE    n         1.082     0.013     0.938     0.010     
+JZ2       C7        H7        SINGLE    n         1.089     0.010     0.971     0.013     
+JZ2       C7        H7A       SINGLE    n         1.089     0.010     0.971     0.013     
+JZ2       C7        H7B       SINGLE    n         1.089     0.010     0.971     0.013     
+JZ2       C12       H12       SINGLE    n         1.082     0.013     0.943     0.017     
+JZ2       C13       H13       SINGLE    n         1.082     0.013     0.939     0.018     
+JZ2       OAB       HOAB      SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+JZ2          CL         C14          C5     118.943    1.50
+JZ2          CL         C14         C13     119.325    1.50
+JZ2          C5         C14         C13     121.732    1.50
+JZ2         C14          C5          C6     119.384    1.50
+JZ2         C14          C5          H5     120.324    1.50
+JZ2          C6          C5          H5     120.292    1.50
+JZ2          C5          C6         C11     120.757    1.50
+JZ2          C5          C6         OAB     119.535    1.50
+JZ2         C11          C6         OAB     119.709    2.35
+JZ2          C6         C11          C7     120.622    1.50
+JZ2          C6         C11         C12     118.065    1.50
+JZ2          C7         C11         C12     121.313    1.50
+JZ2         C11          C7          H7     109.597    1.50
+JZ2         C11          C7         H7A     109.597    1.50
+JZ2         C11          C7         H7B     109.597    1.50
+JZ2          H7          C7         H7A     109.348    1.50
+JZ2          H7          C7         H7B     109.348    1.50
+JZ2         H7A          C7         H7B     109.348    1.50
+JZ2         C11         C12         C13     120.948    1.50
+JZ2         C11         C12         H12     119.387    1.50
+JZ2         C13         C12         H12     119.665    1.50
+JZ2         C14         C13         C12     119.114    1.50
+JZ2         C14         C13         H13     120.415    1.50
+JZ2         C12         C13         H13     120.471    1.50
+JZ2          C6         OAB        HOAB     108.378    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+JZ2       const_sp2_sp2_3          CL         C14          C5          C6     180.000   10.00     2
+JZ2              const_22         C12         C13         C14          CL     180.000   10.00     2
+JZ2       const_sp2_sp2_6         C14          C5          C6         OAB     180.000   10.00     2
+JZ2              const_12          C7         C11          C6         OAB       0.000   10.00     2
+JZ2             sp2_sp3_3          C6         C11          C7          H7     150.000   10.00     6
+JZ2              const_15          C7         C11         C12         C13     180.000   10.00     2
+JZ2              const_17         C11         C12         C13         C14       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+JZ2    plan-1         C11   0.020
+JZ2    plan-1         C12   0.020
+JZ2    plan-1         C13   0.020
+JZ2    plan-1         C14   0.020
+JZ2    plan-1          C5   0.020
+JZ2    plan-1          C6   0.020
+JZ2    plan-1          C7   0.020
+JZ2    plan-1          CL   0.020
+JZ2    plan-1         H12   0.020
+JZ2    plan-1         H13   0.020
+JZ2    plan-1          H5   0.020
+JZ2    plan-1         OAB   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+JZ2 SMILES           ACDLabs              12.01 "Clc1cc(O)c(cc1)C"
+JZ2 SMILES_CANONICAL CACTVS               3.370 "Cc1ccc(Cl)cc1O"
+JZ2 SMILES           CACTVS               3.370 "Cc1ccc(Cl)cc1O"
+JZ2 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "Cc1ccc(cc1O)Cl"
+JZ2 SMILES           "OpenEye OEToolkits" 1.7.0 "Cc1ccc(cc1O)Cl"
+JZ2 InChI            InChI                1.03  "InChI=1S/C7H7ClO/c1-5-2-3-6(8)4-7(5)9/h2-4,9H,1H3"
+JZ2 InChIKey         InChI                1.03  KKFPXGXMSBBNJI-UHFFFAOYSA-N
+JZ2 ?                acedrg               202         "dictionary generator"                  
+JZ2 ?                acedrg_database      11          "data source"                           
+JZ2 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+JZ2 ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,197 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DGN     DGN     D-GLUTAMINE     peptide     20     10     .
+#
+data_comp_DGN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DGN     N       N       NT3     1       1.898       1.263       -1.322
+DGN     CA      C       CH1     0       1.115       0.057       -0.933
+DGN     C       C       C       0       2.075       -1.060      -0.501
+DGN     O       O       O       0       2.916       -0.779      0.376
+DGN     OXT     O       OC      -1      1.945       -2.167      -1.059
+DGN     CB      C       CH2     0       0.129       0.401       0.187
+DGN     CG      C       CH2     0       -0.939      -0.660      0.415
+DGN     CD      C       C       0       -1.961      -0.221      1.438
+DGN     OE1     O       O       0       -1.620      0.078       2.581
+DGN     NE2     N       NH2     0       -3.228      -0.175      1.048
+DGN     H       H       H       0       2.199       1.695       -0.578
+DGN     H2      H       H       0       1.371       1.833       -1.800
+DGN     H3      H       H       0       2.613       1.027       -1.836
+DGN     HA      H       H       0       0.607       -0.250      -1.719
+DGN     HB2     H       H       0       -0.308      1.250       -0.035
+DGN     HB3     H       H       0       0.632       0.532       1.017
+DGN     HG2     H       H       0       -0.512      -1.486      0.727
+DGN     HG3     H       H       0       -1.384      -0.856      -0.436
+DGN     HE21    H       H       0       -3.856      0.074       1.618
+DGN     HE22    H       H       0       -3.454      -0.392      0.221
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DGN      N      n/a    CA     START
+DGN      H      N      .      .
+DGN      H2     N      .      .
+DGN      H3     N      .      .
+DGN      CA     N      C      .
+DGN      HA     CA     .      .
+DGN      CB     CA     CG     .
+DGN      HB2    CB     .      .
+DGN      HB3    CB     .      .
+DGN      CG     CB     CD     .
+DGN      HG2    CG     .      .
+DGN      HG3    CG     .      .
+DGN      CD     CG     OE1    .
+DGN      NE2    CD     HE21   .
+DGN      HE22   NE2    .      .
+DGN      HE21   NE2    .      .
+DGN      OE1    CD     .      .
+DGN      C      CA     .      END
+DGN      O      C      .      .
+DGN      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DGN       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+DGN       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DGN       CA        CB        SINGLE    n         1.530     0.011     1.530     0.011     
+DGN       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DGN       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DGN       CB        CG        SINGLE    n         1.522     0.013     1.522     0.013     
+DGN       CG        CD        SINGLE    n         1.509     0.010     1.509     0.010     
+DGN       CD        OE1       DOUBLE    n         1.229     0.012     1.229     0.012     
+DGN       CD        NE2       SINGLE    n         1.323     0.011     1.323     0.011     
+DGN       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DGN       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DGN       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DGN       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+DGN       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.018     
+DGN       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.018     
+DGN       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.019     
+DGN       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.019     
+DGN       NE2       HE21      SINGLE    n         1.016     0.010     0.884     0.020     
+DGN       NE2       HE22      SINGLE    n         1.016     0.010     0.884     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DGN          CA           N           H     110.062    1.93
+DGN          CA           N          H2     110.062    1.93
+DGN          CA           N          H3     110.062    1.93
+DGN           H           N          H2     109.028    2.41
+DGN           H           N          H3     109.028    2.41
+DGN          H2           N          H3     109.028    2.41
+DGN           N          CA           C     109.241    1.50
+DGN           N          CA          CB     110.374    1.62
+DGN           N          CA          HA     108.487    1.50
+DGN           C          CA          CB     111.037    2.40
+DGN           C          CA          HA     108.824    1.50
+DGN          CB          CA          HA     108.967    1.50
+DGN          CA           C           O     117.124    1.50
+DGN          CA           C         OXT     117.124    1.50
+DGN           O           C         OXT     125.752    1.50
+DGN          CA          CB          CG     113.607    1.50
+DGN          CA          CB         HB2     108.549    1.50
+DGN          CA          CB         HB3     108.549    1.50
+DGN          CG          CB         HB2     109.107    1.50
+DGN          CG          CB         HB3     109.107    1.50
+DGN         HB2          CB         HB3     107.844    1.50
+DGN          CB          CG          CD     112.220    2.15
+DGN          CB          CG         HG2     109.204    1.50
+DGN          CB          CG         HG3     109.204    1.50
+DGN          CD          CG         HG2     109.082    1.50
+DGN          CD          CG         HG3     109.082    1.50
+DGN         HG2          CG         HG3     107.846    1.50
+DGN          CG          CD         OE1     121.405    1.50
+DGN          CG          CD         NE2     116.125    1.50
+DGN         OE1          CD         NE2     122.470    1.50
+DGN          CD         NE2        HE21     120.022    1.65
+DGN          CD         NE2        HE22     120.022    1.65
+DGN        HE21         NE2        HE22     119.956    2.38
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DGN             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+DGN             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DGN            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+DGN            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+DGN             sp2_sp3_8         OE1          CD          CG          CB     120.000   10.00     6
+DGN             sp2_sp2_1          CG          CD         NE2        HE21     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DGN    chir_1    CA    N    C    CB    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DGN    plan-1           C   0.020
+DGN    plan-1          CA   0.020
+DGN    plan-1           O   0.020
+DGN    plan-1         OXT   0.020
+DGN    plan-2          CD   0.020
+DGN    plan-2          CG   0.020
+DGN    plan-2         NE2   0.020
+DGN    plan-2         OE1   0.020
+DGN    plan-3          CD   0.020
+DGN    plan-3        HE21   0.020
+DGN    plan-3        HE22   0.020
+DGN    plan-3         NE2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DGN SMILES           ACDLabs              10.04 "O=C(N)CCC(N)C(=O)O"
+DGN SMILES_CANONICAL CACTVS               3.341 "N[C@H](CCC(N)=O)C(O)=O"
+DGN SMILES           CACTVS               3.341 "N[CH](CCC(N)=O)C(O)=O"
+DGN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CC(=O)N)[C@H](C(=O)O)N"
+DGN SMILES           "OpenEye OEToolkits" 1.5.0 "C(CC(=O)N)C(C(=O)O)N"
+DGN InChI            InChI                1.03  "InChI=1S/C5H10N2O3/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H2,7,8)(H,9,10)/t3-/m1/s1"
+DGN InChIKey         InChI                1.03  ZDXPYRJPNDTMRX-GSVOUGTGSA-N
+DGN ?                acedrg               196         "dictionary generator"
+DGN ?                acedrg_database      11          "data source"
+DGN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DGN ?                refmac5              5.8.0222    "optimization tool"

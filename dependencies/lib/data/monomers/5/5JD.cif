@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5JD     5JD      3,4-dichlorophenol     NON-POLYMER     13     9     .     
+#
+data_comp_5JD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+5JD     CAF     C       CR16    0       7.128       30.693      -6.510      
+5JD     CAI     C       CR6     0       7.531       30.736      -5.178      
+5JD     CL1     CL      CL      0       9.047       30.025      -4.752      
+5JD     CAH     C       CR6     0       6.720       31.342      -4.218      
+5JD     CL2     CL      CL      0       7.198       31.409      -2.556      
+5JD     CAE     C       CR16    0       5.509       31.903      -4.595      
+5JD     CAD     C       CR16    0       5.097       31.866      -5.922      
+5JD     CAG     C       CR6     0       5.910       31.259      -6.876      
+5JD     OAA     O       OH1     0       5.511       31.218      -8.191      
+5JD     H1      H       H       0       7.671       30.287      -7.151      
+5JD     H2      H       H       0       4.967       32.309      -3.950      
+5JD     H3      H       H       0       4.273       32.248      -6.172      
+5JD     H4      H       H       0       4.777       30.779      -8.262      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5JD       CAG       OAA       SINGLE    n         1.375     0.010     1.375     0.010     
+5JD       CAF       CAG       DOUBLE    y         1.386     0.010     1.386     0.010     
+5JD       CAD       CAG       SINGLE    y         1.386     0.010     1.386     0.010     
+5JD       CAF       CAI       SINGLE    y         1.385     0.010     1.385     0.010     
+5JD       CAE       CAD       DOUBLE    y         1.383     0.010     1.383     0.010     
+5JD       CAI       CL1       SINGLE    n         1.728     0.010     1.728     0.010     
+5JD       CAI       CAH       DOUBLE    y         1.387     0.010     1.387     0.010     
+5JD       CAH       CAE       SINGLE    y         1.380     0.010     1.380     0.010     
+5JD       CAH       CL2       SINGLE    n         1.730     0.010     1.730     0.010     
+5JD       CAF       H1        SINGLE    n         1.082     0.013     0.933     0.010     
+5JD       CAE       H2        SINGLE    n         1.082     0.013     0.935     0.010     
+5JD       CAD       H3        SINGLE    n         1.082     0.013     0.942     0.020     
+5JD       OAA       H4        SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+5JD         CAG         CAF         CAI     119.239    1.50
+5JD         CAG         CAF          H1     120.469    1.50
+5JD         CAI         CAF          H1     120.292    1.50
+5JD         CAF         CAI         CL1     118.594    1.50
+5JD         CAF         CAI         CAH     120.136    1.50
+5JD         CL1         CAI         CAH     121.269    1.50
+5JD         CAI         CAH         CAE     119.804    1.50
+5JD         CAI         CAH         CL2     121.035    1.50
+5JD         CAE         CAH         CL2     119.161    1.50
+5JD         CAD         CAE         CAH     120.368    1.50
+5JD         CAD         CAE          H2     119.955    1.50
+5JD         CAH         CAE          H2     119.677    1.50
+5JD         CAG         CAD         CAE     119.639    1.50
+5JD         CAG         CAD          H3     120.280    1.50
+5JD         CAE         CAD          H3     120.080    1.50
+5JD         OAA         CAG         CAF     119.399    2.33
+5JD         OAA         CAG         CAD     119.788    2.50
+5JD         CAF         CAG         CAD     120.814    1.50
+5JD         CAG         OAA          H4     110.017    2.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+5JD              const_22         CAG         CAF         CAI         CL1     180.000   10.00     2
+5JD       const_sp2_sp2_2         CAI         CAF         CAG         OAA     180.000   10.00     2
+5JD              const_20         CL2         CAH         CAI         CL1       0.000   10.00     2
+5JD              const_14         CAD         CAE         CAH         CL2     180.000   10.00     2
+5JD       const_sp2_sp2_9         CAG         CAD         CAE         CAH       0.000   10.00     2
+5JD       const_sp2_sp2_6         CAE         CAD         CAG         OAA     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+5JD    plan-1         CAD   0.020
+5JD    plan-1         CAE   0.020
+5JD    plan-1         CAF   0.020
+5JD    plan-1         CAG   0.020
+5JD    plan-1         CAH   0.020
+5JD    plan-1         CAI   0.020
+5JD    plan-1         CL1   0.020
+5JD    plan-1         CL2   0.020
+5JD    plan-1          H1   0.020
+5JD    plan-1          H2   0.020
+5JD    plan-1          H3   0.020
+5JD    plan-1         OAA   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+5JD SMILES           ACDLabs              12.01 "c1c(Cl)c(Cl)ccc1O"
+5JD InChI            InChI                1.03  "InChI=1S/C6H4Cl2O/c7-5-2-1-4(9)3-6(5)8/h1-3,9H"
+5JD InChIKey         InChI                1.03  WDNBURPWRNALGP-UHFFFAOYSA-N
+5JD SMILES_CANONICAL CACTVS               3.385 "Oc1ccc(Cl)c(Cl)c1"
+5JD SMILES           CACTVS               3.385 "Oc1ccc(Cl)c(Cl)c1"
+5JD SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "c1cc(c(cc1O)Cl)Cl"
+5JD SMILES           "OpenEye OEToolkits" 1.9.2 "c1cc(c(cc1O)Cl)Cl"
+5JD ?                acedrg               202         "dictionary generator"                  
+5JD ?                acedrg_database      11          "data source"                           
+5JD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+5JD ?                refmac5              5.8.0189    "optimization tool"                     

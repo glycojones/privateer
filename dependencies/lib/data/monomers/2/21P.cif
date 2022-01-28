@@ -1,0 +1,403 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+21P      21P '"4-[2-(1,1,3,3-tetramethyl-2,3-dihyd' non-polymer        52  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_21P
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 21P           O1     O    OC       -0.500      0.000    0.000    0.000
+ 21P           C22    C    C         0.000     -0.638   -0.441   -0.981
+ 21P           O2     O    OC       -0.500     -0.117   -0.436   -2.119
+ 21P           C19    C    CR6       0.000     -2.006   -0.967   -0.797
+ 21P           C20    C    CR16      0.000     -2.588   -0.979    0.472
+ 21P           H20    H    H         0.000     -2.039   -0.598    1.324
+ 21P           C21    C    CR16      0.000     -3.864   -1.476    0.637
+ 21P           H21    H    H         0.000     -4.317   -1.485    1.621
+ 21P           C16    C    CR6       0.000     -4.567   -1.963   -0.451
+ 21P           C17    C    CR16      0.000     -3.996   -1.955   -1.711
+ 21P           H17    H    H         0.000     -4.551   -2.337   -2.558
+ 21P           C18    C    CR16      0.000     -2.720   -1.460   -1.891
+ 21P           H18    H    H         0.000     -2.275   -1.453   -2.878
+ 21P           C13    C    CT        0.000     -5.960   -2.505   -0.261
+ 21P           O3     O    O2        0.000     -6.211   -3.535   -1.233
+ 21P           C14    C    CH2       0.000     -7.028   -4.508   -0.539
+ 21P           H14A   H    H         0.000     -6.928   -5.518   -0.941
+ 21P           H14    H    H         0.000     -8.084   -4.235   -0.503
+ 21P           O4     O    O2        0.000     -6.084   -3.068    1.051
+ 21P           C15    C    CH2       0.000     -6.431   -4.458    0.890
+ 21P           H15A   H    H         0.000     -7.181   -4.789    1.611
+ 21P           H15    H    H         0.000     -5.561   -5.116    0.946
+ 21P           C10    C    CR6       0.000     -6.962   -1.394   -0.433
+ 21P           C11    C    CR16      0.000     -7.491   -1.119   -1.680
+ 21P           H11    H    H         0.000     -7.187   -1.701   -2.541
+ 21P           C9     C    CR16      0.000     -7.359   -0.644    0.654
+ 21P           H9     H    H         0.000     -6.944   -0.861    1.630
+ 21P           C8     C    CR6       0.000     -8.285    0.386    0.517
+ 21P           C7     C    CR6       0.000     -8.813    0.660   -0.728
+ 21P           C12    C    CR16      0.000     -8.407   -0.101   -1.822
+ 21P           H12    H    H         0.000     -8.819    0.112   -2.801
+ 21P           SI2    SI   SI        0.000    -10.043    2.084   -0.713
+ 21P           C5     C    CH3       0.000    -11.554    1.648   -1.711
+ 21P           H5B    H    H         0.000    -11.292    1.528   -2.733
+ 21P           H5A    H    H         0.000    -11.976    0.741   -1.354
+ 21P           H5     H    H         0.000    -12.278    2.421   -1.629
+ 21P           C6     C    CH3       0.000     -9.251    3.633   -1.379
+ 21P           H6B    H    H         0.000     -8.391    3.877   -0.806
+ 21P           H6A    H    H         0.000     -8.961    3.487   -2.391
+ 21P           H6     H    H         0.000     -9.938    4.442   -1.331
+ 21P           C3     C    CH2       0.000    -10.496    2.303    1.110
+ 21P           H3     H    H         0.000    -11.381    1.750    1.431
+ 21P           H3A    H    H         0.000    -10.577    3.341    1.440
+ 21P           SI1    SI   SI        0.000     -8.951    1.518    1.865
+ 21P           C2     C    CH3       0.000     -7.696    2.827    2.294
+ 21P           H2B    H    H         0.000     -8.078    3.462    3.055
+ 21P           H2A    H    H         0.000     -6.801    2.372    2.641
+ 21P           H2     H    H         0.000     -7.474    3.413    1.435
+ 21P           C1     C    CH3       0.000     -9.398    0.530    3.380
+ 21P           H1B    H    H         0.000     -9.772    1.174    4.137
+ 21P           H1A    H    H         0.000    -10.144   -0.188    3.139
+ 21P           H1     H    H         0.000     -8.540    0.024    3.750
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 21P      O1     n/a    C22    START
+ 21P      C22    O1     C19    .
+ 21P      O2     C22    .      .
+ 21P      C19    C22    C20    .
+ 21P      C20    C19    C21    .
+ 21P      H20    C20    .      .
+ 21P      C21    C20    C16    .
+ 21P      H21    C21    .      .
+ 21P      C16    C21    C13    .
+ 21P      C17    C16    C18    .
+ 21P      H17    C17    .      .
+ 21P      C18    C17    H18    .
+ 21P      H18    C18    .      .
+ 21P      C13    C16    C10    .
+ 21P      O3     C13    C14    .
+ 21P      C14    O3     H14    .
+ 21P      H14A   C14    .      .
+ 21P      H14    C14    .      .
+ 21P      O4     C13    C15    .
+ 21P      C15    O4     H15    .
+ 21P      H15A   C15    .      .
+ 21P      H15    C15    .      .
+ 21P      C10    C13    C9     .
+ 21P      C11    C10    H11    .
+ 21P      H11    C11    .      .
+ 21P      C9     C10    C8     .
+ 21P      H9     C9     .      .
+ 21P      C8     C9     C7     .
+ 21P      C7     C8     SI2    .
+ 21P      C12    C7     H12    .
+ 21P      H12    C12    .      .
+ 21P      SI2    C7     C3     .
+ 21P      C5     SI2    H5     .
+ 21P      H5B    C5     .      .
+ 21P      H5A    C5     .      .
+ 21P      H5     C5     .      .
+ 21P      C6     SI2    H6     .
+ 21P      H6B    C6     .      .
+ 21P      H6A    C6     .      .
+ 21P      H6     C6     .      .
+ 21P      C3     SI2    SI1    .
+ 21P      H3     C3     .      .
+ 21P      H3A    C3     .      .
+ 21P      SI1    C3     C1     .
+ 21P      C2     SI1    H2     .
+ 21P      H2B    C2     .      .
+ 21P      H2A    C2     .      .
+ 21P      H2     C2     .      .
+ 21P      C1     SI1    H1     .
+ 21P      H1B    C1     .      .
+ 21P      H1A    C1     .      .
+ 21P      H1     C1     .      END
+ 21P      C11    C12    .    ADD
+ 21P      C14    C15    .    ADD
+ 21P      C8     SI1    .    ADD
+ 21P      C19    C18    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+21P       C11       C12       double    1.390     0.020     1.390     0.020     
+21P       C11       C10       single    1.390     0.020     1.390     0.020     
+21P       C14       C15       single    1.524     0.020     1.524     0.020     
+21P       C14       O3        single    1.426     0.020     1.426     0.020     
+21P       C8        C9        single    1.390     0.020     1.390     0.020     
+21P       C9        C10       double    1.390     0.020     1.390     0.020     
+21P       C10       C13       single    1.500     0.020     1.500     0.020     
+21P       C13       C16       single    1.500     0.020     1.500     0.020     
+21P       O4        C13       single    1.426     0.020     1.426     0.020     
+21P       O3        C13       single    1.426     0.020     1.426     0.020     
+21P       C8        SI1       single    1.745     0.020     1.745     0.020     
+21P       C7        C8        double    1.487     0.020     1.487     0.020     
+21P       C5        SI2       single    1.812     0.020     1.812     0.020     
+21P       C1        SI1       single    1.812     0.020     1.812     0.020     
+21P       C12       C7        single    1.390     0.020     1.390     0.020     
+21P       C19       C18       double    1.390     0.020     1.390     0.020     
+21P       C20       C19       single    1.390     0.020     1.390     0.020     
+21P       C19       C22       single    1.500     0.020     1.500     0.020     
+21P       SI1       C3        single    1.812     0.020     1.812     0.020     
+21P       C3        SI2       single    1.812     0.020     1.812     0.020     
+21P       C6        SI2       single    1.812     0.020     1.812     0.020     
+21P       C18       C17       single    1.390     0.020     1.390     0.020     
+21P       C21       C20       double    1.390     0.020     1.390     0.020     
+21P       C16       C21       single    1.390     0.020     1.390     0.020     
+21P       C17       C16       double    1.390     0.020     1.390     0.020     
+21P       O2        C22       deloc     1.250     0.020     1.250     0.020     
+21P       C22       O1        deloc     1.250     0.020     1.250     0.020     
+21P       C15       O4        single    1.426     0.020     1.426     0.020     
+21P       C2        SI1       single    1.812     0.020     1.812     0.020     
+21P       SI2       C7        single    1.745     0.020     1.745     0.020     
+21P       H11       C11       single    1.082     0.013     0.975     0.010     
+21P       H14       C14       single    1.089     0.010     0.989     0.005     
+21P       H14A      C14       single    1.089     0.010     0.989     0.005     
+21P       H9        C9        single    1.082     0.013     0.975     0.010     
+21P       H5        C5        single    1.089     0.010     0.989     0.005     
+21P       H5A       C5        single    1.089     0.010     0.989     0.005     
+21P       H5B       C5        single    1.089     0.010     0.989     0.005     
+21P       H1        C1        single    1.089     0.010     0.989     0.005     
+21P       H1A       C1        single    1.089     0.010     0.989     0.005     
+21P       H1B       C1        single    1.089     0.010     0.989     0.005     
+21P       H12       C12       single    1.082     0.013     0.975     0.010     
+21P       H3        C3        single    1.089     0.010     0.989     0.005     
+21P       H3A       C3        single    1.089     0.010     0.989     0.005     
+21P       H6        C6        single    1.089     0.010     0.989     0.005     
+21P       H6A       C6        single    1.089     0.010     0.989     0.005     
+21P       H6B       C6        single    1.089     0.010     0.989     0.005     
+21P       H18       C18       single    1.082     0.013     0.975     0.010     
+21P       H21       C21       single    1.082     0.013     0.975     0.010     
+21P       H20       C20       single    1.082     0.013     0.975     0.010     
+21P       H17       C17       single    1.082     0.013     0.975     0.010     
+21P       H15       C15       single    1.089     0.010     0.989     0.005     
+21P       H15A      C15       single    1.089     0.010     0.989     0.005     
+21P       H2        C2        single    1.089     0.010     0.989     0.005     
+21P       H2A       C2        single    1.089     0.010     0.989     0.005     
+21P       H2B       C2        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 21P      O1     C22    O2      123.000    3.000
+ 21P      O1     C22    C19     120.000    3.000
+ 21P      O2     C22    C19     120.000    3.000
+ 21P      C22    C19    C20     120.000    3.000
+ 21P      C22    C19    C18     120.000    3.000
+ 21P      C20    C19    C18     120.000    3.000
+ 21P      C19    C20    H20     120.000    3.000
+ 21P      C19    C20    C21     120.000    3.000
+ 21P      H20    C20    C21     120.000    3.000
+ 21P      C20    C21    H21     120.000    3.000
+ 21P      C20    C21    C16     120.000    3.000
+ 21P      H21    C21    C16     120.000    3.000
+ 21P      C21    C16    C17     120.000    3.000
+ 21P      C21    C16    C13     120.000    3.000
+ 21P      C17    C16    C13     120.000    3.000
+ 21P      C16    C17    H17     120.000    3.000
+ 21P      C16    C17    C18     120.000    3.000
+ 21P      H17    C17    C18     120.000    3.000
+ 21P      C17    C18    H18     120.000    3.000
+ 21P      C17    C18    C19     120.000    3.000
+ 21P      H18    C18    C19     120.000    3.000
+ 21P      C16    C13    O3      109.500    3.000
+ 21P      C16    C13    O4      109.500    3.000
+ 21P      C16    C13    C10     109.500    3.000
+ 21P      O3     C13    O4      109.500    3.000
+ 21P      O3     C13    C10     109.500    3.000
+ 21P      O4     C13    C10     109.500    3.000
+ 21P      C13    O3     C14     111.800    3.000
+ 21P      O3     C14    H14A    109.470    3.000
+ 21P      O3     C14    H14     109.470    3.000
+ 21P      O3     C14    C15     109.470    3.000
+ 21P      H14A   C14    H14     107.900    3.000
+ 21P      H14A   C14    C15     109.470    3.000
+ 21P      H14    C14    C15     109.470    3.000
+ 21P      C13    O4     C15     111.800    3.000
+ 21P      O4     C15    H15A    109.470    3.000
+ 21P      O4     C15    H15     109.470    3.000
+ 21P      O4     C15    C14     109.470    3.000
+ 21P      H15A   C15    H15     107.900    3.000
+ 21P      H15A   C15    C14     109.470    3.000
+ 21P      H15    C15    C14     109.470    3.000
+ 21P      C13    C10    C11     120.000    3.000
+ 21P      C13    C10    C9      120.000    3.000
+ 21P      C11    C10    C9      120.000    3.000
+ 21P      C10    C11    H11     120.000    3.000
+ 21P      C10    C11    C12     120.000    3.000
+ 21P      H11    C11    C12     120.000    3.000
+ 21P      C10    C9     H9      120.000    3.000
+ 21P      C10    C9     C8      120.000    3.000
+ 21P      H9     C9     C8      120.000    3.000
+ 21P      C9     C8     C7      120.000    3.000
+ 21P      C9     C8     SI1     120.000    3.000
+ 21P      C7     C8     SI1     120.000    3.000
+ 21P      C8     C7     C12     120.000    3.000
+ 21P      C8     C7     SI2     120.000    3.000
+ 21P      C12    C7     SI2     120.000    3.000
+ 21P      C7     C12    H12     120.000    3.000
+ 21P      C7     C12    C11     120.000    3.000
+ 21P      H12    C12    C11     120.000    3.000
+ 21P      C7     SI2    C5      109.500    3.000
+ 21P      C7     SI2    C6      109.500    3.000
+ 21P      C7     SI2    C3      109.500    3.000
+ 21P      C5     SI2    C6      109.500    3.000
+ 21P      C5     SI2    C3      109.500    3.000
+ 21P      C6     SI2    C3      109.500    3.000
+ 21P      SI2    C5     H5B     109.500    3.000
+ 21P      SI2    C5     H5A     109.500    3.000
+ 21P      SI2    C5     H5      109.500    3.000
+ 21P      H5B    C5     H5A     109.470    3.000
+ 21P      H5B    C5     H5      109.470    3.000
+ 21P      H5A    C5     H5      109.470    3.000
+ 21P      SI2    C6     H6B     109.500    3.000
+ 21P      SI2    C6     H6A     109.500    3.000
+ 21P      SI2    C6     H6      109.500    3.000
+ 21P      H6B    C6     H6A     109.470    3.000
+ 21P      H6B    C6     H6      109.470    3.000
+ 21P      H6A    C6     H6      109.470    3.000
+ 21P      SI2    C3     H3      109.500    3.000
+ 21P      SI2    C3     H3A     109.500    3.000
+ 21P      SI2    C3     SI1     109.500    3.000
+ 21P      H3     C3     H3A     107.900    3.000
+ 21P      H3     C3     SI1     109.500    3.000
+ 21P      H3A    C3     SI1     109.500    3.000
+ 21P      C3     SI1    C2      109.500    3.000
+ 21P      C3     SI1    C1      109.500    3.000
+ 21P      C3     SI1    C8      109.500    3.000
+ 21P      C2     SI1    C1      109.500    3.000
+ 21P      C2     SI1    C8      109.500    3.000
+ 21P      C1     SI1    C8      109.500    3.000
+ 21P      SI1    C2     H2B     109.500    3.000
+ 21P      SI1    C2     H2A     109.500    3.000
+ 21P      SI1    C2     H2      109.500    3.000
+ 21P      H2B    C2     H2A     109.470    3.000
+ 21P      H2B    C2     H2      109.470    3.000
+ 21P      H2A    C2     H2      109.470    3.000
+ 21P      SI1    C1     H1B     109.500    3.000
+ 21P      SI1    C1     H1A     109.500    3.000
+ 21P      SI1    C1     H1      109.500    3.000
+ 21P      H1B    C1     H1A     109.470    3.000
+ 21P      H1B    C1     H1      109.470    3.000
+ 21P      H1A    C1     H1      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 21P      var_1    O1     C22    C19    C20       -0.289   20.000   1
+ 21P      CONST_1  C22    C19    C18    C17      180.000    0.000   0
+ 21P      CONST_2  C22    C19    C20    C21      180.000    0.000   0
+ 21P      CONST_3  C19    C20    C21    C16        0.000    0.000   0
+ 21P      CONST_4  C20    C21    C16    C13      180.000    0.000   0
+ 21P      CONST_5  C21    C16    C17    C18        0.000    0.000   0
+ 21P      CONST_6  C16    C17    C18    C19        0.000    0.000   0
+ 21P      var_2    C21    C16    C13    C10       90.049   20.000   1
+ 21P      var_3    C16    C13    O3     C14      150.000   20.000   1
+ 21P      var_4    C13    O3     C14    C15      -30.000   20.000   1
+ 21P      var_5    O3     C14    C15    O4        30.000   20.000   3
+ 21P      var_6    C16    C13    O4     C15     -120.000   20.000   1
+ 21P      var_7    C13    O4     C15    C14      -30.000   20.000   1
+ 21P      var_8    C16    C13    C10    C9       -90.066   20.000   1
+ 21P      CONST_7  C13    C10    C11    C12      180.000    0.000   0
+ 21P      CONST_8  C10    C11    C12    C7         0.000    0.000   0
+ 21P      CONST_9  C13    C10    C9     C8       180.000    0.000   0
+ 21P      CONST_10 C10    C9     C8     C7         0.000    0.000   0
+ 21P      var_9    C9     C8     SI1    C3      -150.000   20.000   1
+ 21P      CONST_11 C9     C8     C7     SI2      180.000    0.000   0
+ 21P      CONST_12 C8     C7     C12    C11        0.000    0.000   0
+ 21P      var_10   C8     C7     SI2    C3       -30.000   20.000   1
+ 21P      var_11   C7     SI2    C5     H5       175.147   20.000   1
+ 21P      var_12   C7     SI2    C6     H6      -177.724   20.000   1
+ 21P      var_13   C7     SI2    C3     SI1       30.000   20.000   1
+ 21P      var_14   SI2    C3     SI1    C1      -150.000   20.000   1
+ 21P      var_15   C3     SI1    C2     H2       -55.298   20.000   1
+ 21P      var_16   C3     SI1    C1     H1       175.151   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 21P      chir_01  C13    C10    C16    O4        negativ
+ 21P      chir_02  SI1    C3     C2     C1        both
+ 21P      chir_03  SI2    C7     C5     C6        both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 21P      plan-1    C11       0.020
+ 21P      plan-1    C12       0.020
+ 21P      plan-1    C10       0.020
+ 21P      plan-1    H11       0.020
+ 21P      plan-1    C9        0.020
+ 21P      plan-1    C8        0.020
+ 21P      plan-1    C7        0.020
+ 21P      plan-1    H9        0.020
+ 21P      plan-1    SI1       0.020
+ 21P      plan-1    H12       0.020
+ 21P      plan-1    C13       0.020
+ 21P      plan-1    SI2       0.020
+ 21P      plan-2    C19       0.020
+ 21P      plan-2    C18       0.020
+ 21P      plan-2    C20       0.020
+ 21P      plan-2    C22       0.020
+ 21P      plan-2    C21       0.020
+ 21P      plan-2    C16       0.020
+ 21P      plan-2    C17       0.020
+ 21P      plan-2    H18       0.020
+ 21P      plan-2    H21       0.020
+ 21P      plan-2    H20       0.020
+ 21P      plan-2    C13       0.020
+ 21P      plan-2    H17       0.020
+ 21P      plan-3    C22       0.020
+ 21P      plan-3    C19       0.020
+ 21P      plan-3    O2        0.020
+ 21P      plan-3    O1        0.020
+# ------------------------------------------------------

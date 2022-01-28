@@ -1,0 +1,222 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MBG      MBG 'METHYL-BETA-GALACTOSE               ' pyranose           27  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MBG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MBG           C1     C    CH1       0.000      0.000    0.000    0.000
+ MBG           H1     H    H         0.000      0.209    1.074    0.097
+ MBG           O1     O    O2        0.000      1.231   -0.724   -0.007
+ MBG           C7     C    CH3       0.000      1.883   -0.444    1.232
+ MBG           H73    H    H         0.000      2.061    0.597    1.310
+ MBG           H72    H    H         0.000      1.267   -0.758    2.035
+ MBG           H71    H    H         0.000      2.805   -0.963    1.271
+ MBG           O5     O    O2        0.000     -0.797   -0.429    1.102
+ MBG           C5     C    CH1       0.000     -1.926    0.437    1.182
+ MBG           H5     H    H         0.000     -1.585    1.482    1.200
+ MBG           C4     C    CH1       0.000     -2.832    0.219   -0.033
+ MBG           H4     H    H         0.000     -3.712    0.874    0.042
+ MBG           O4     O    OH1       0.000     -3.255   -1.146   -0.074
+ MBG           HO4    H    H         0.000     -3.828   -1.282   -0.841
+ MBG           C3     C    CH1       0.000     -2.050    0.554   -1.306
+ MBG           H3     H    H         0.000     -1.817    1.628   -1.324
+ MBG           O3     O    OH1       0.000     -2.832    0.215   -2.453
+ MBG           HO3    H    H         0.000     -2.336    0.428   -3.255
+ MBG           C2     C    CH1       0.000     -0.749   -0.255   -1.310
+ MBG           H2     H    H         0.000     -0.982   -1.325   -1.398
+ MBG           O2     O    OH1       0.000      0.063    0.150   -2.412
+ MBG           HO2    H    H         0.000      0.884   -0.361   -2.412
+ MBG           C6     C    CH2       0.000     -2.709    0.135    2.460
+ MBG           H61    H    H         0.000     -3.047   -0.903    2.443
+ MBG           H62    H    H         0.000     -3.576    0.797    2.521
+ MBG           O6     O    OH1       0.000     -1.867    0.345    3.596
+ MBG           HO6    H    H         0.000     -2.398    0.145    4.378
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MBG      C1     n/a    O5     START
+ MBG      H1     C1     .      .
+ MBG      O1     C1     C7     .
+ MBG      C7     O1     H71    .
+ MBG      H73    C7     .      .
+ MBG      H72    C7     .      .
+ MBG      H71    C7     .      .
+ MBG      O5     C1     .      END
+ MBG      C5     O5     C6     .
+ MBG      H5     C5     .      .
+ MBG      C4     C5     C3     .
+ MBG      H4     C4     .      .
+ MBG      O4     C4     HO4    .
+ MBG      HO4    O4     .      .
+ MBG      C3     C4     C2     .
+ MBG      H3     C3     .      .
+ MBG      O3     C3     HO3    .
+ MBG      HO3    O3     .      .
+ MBG      C2     C3     O2     .
+ MBG      H2     C2     .      .
+ MBG      O2     C2     HO2    .
+ MBG      HO2    O2     .      .
+ MBG      C6     C5     O6     .
+ MBG      H61    C6     .      .
+ MBG      H62    C6     .      .
+ MBG      O6     C6     .      .
+ MBG      HO6    O6     .      .
+ MBG      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MBG       C1        C2        single    1.524     0.020     1.524     0.020     
+MBG       O1        C1        single    1.426     0.020     1.426     0.020     
+MBG       O5        C1        single    1.426     0.020     1.426     0.020     
+MBG       H1        C1        single    1.089     0.010     0.989     0.005     
+MBG       C2        C3        single    1.524     0.020     1.524     0.020     
+MBG       O2        C2        single    1.432     0.020     1.432     0.020     
+MBG       H2        C2        single    1.089     0.010     0.989     0.005     
+MBG       C3        C4        single    1.524     0.020     1.524     0.020     
+MBG       O3        C3        single    1.432     0.020     1.432     0.020     
+MBG       H3        C3        single    1.089     0.010     0.989     0.005     
+MBG       C4        C5        single    1.524     0.020     1.524     0.020     
+MBG       O4        C4        single    1.432     0.020     1.432     0.020     
+MBG       H4        C4        single    1.089     0.010     0.989     0.005     
+MBG       C6        C5        single    1.524     0.020     1.524     0.020     
+MBG       C5        O5        single    1.426     0.020     1.426     0.020     
+MBG       H5        C5        single    1.089     0.010     0.989     0.005     
+MBG       O6        C6        single    1.432     0.020     1.432     0.020     
+MBG       H61       C6        single    1.089     0.010     0.989     0.005     
+MBG       H62       C6        single    1.089     0.010     0.989     0.005     
+MBG       C7        O1        single    1.426     0.020     1.426     0.020     
+MBG       H71       C7        single    1.089     0.010     0.989     0.005     
+MBG       H72       C7        single    1.089     0.010     0.989     0.005     
+MBG       H73       C7        single    1.089     0.010     0.989     0.005     
+MBG       HO2       O2        single    0.970     0.012     0.839     0.014     
+MBG       HO3       O3        single    0.970     0.012     0.839     0.014     
+MBG       HO4       O4        single    0.970     0.012     0.839     0.014     
+MBG       HO6       O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MBG      H1     C1     O1      109.470    3.000
+ MBG      H1     C1     O5      109.470    3.000
+ MBG      O1     C1     O5      109.470    3.000
+ MBG      H1     C1     C2      108.340    3.000
+ MBG      O1     C1     C2      109.470    3.000
+ MBG      O5     C1     C2      109.470    3.000
+ MBG      C1     O1     C7      111.800    3.000
+ MBG      O1     C7     H73     109.470    3.000
+ MBG      O1     C7     H72     109.470    3.000
+ MBG      O1     C7     H71     109.470    3.000
+ MBG      H73    C7     H72     109.470    3.000
+ MBG      H73    C7     H71     109.470    3.000
+ MBG      H72    C7     H71     109.470    3.000
+ MBG      C1     O5     C5      111.800    3.000
+ MBG      O5     C5     H5      109.470    3.000
+ MBG      O5     C5     C4      109.470    3.000
+ MBG      O5     C5     C6      109.470    3.000
+ MBG      H5     C5     C4      108.340    3.000
+ MBG      H5     C5     C6      108.340    3.000
+ MBG      C4     C5     C6      111.000    3.000
+ MBG      C5     C4     H4      108.340    3.000
+ MBG      C5     C4     O4      109.470    3.000
+ MBG      C5     C4     C3      111.000    3.000
+ MBG      H4     C4     O4      109.470    3.000
+ MBG      H4     C4     C3      108.340    3.000
+ MBG      O4     C4     C3      109.470    3.000
+ MBG      C4     O4     HO4     109.470    3.000
+ MBG      C4     C3     H3      108.340    3.000
+ MBG      C4     C3     O3      109.470    3.000
+ MBG      C4     C3     C2      111.000    3.000
+ MBG      H3     C3     O3      109.470    3.000
+ MBG      H3     C3     C2      108.340    3.000
+ MBG      O3     C3     C2      109.470    3.000
+ MBG      C3     O3     HO3     109.470    3.000
+ MBG      C3     C2     H2      108.340    3.000
+ MBG      C3     C2     O2      109.470    3.000
+ MBG      C3     C2     C1      111.000    3.000
+ MBG      H2     C2     O2      109.470    3.000
+ MBG      H2     C2     C1      108.340    3.000
+ MBG      O2     C2     C1      109.470    3.000
+ MBG      C2     O2     HO2     109.470    3.000
+ MBG      C5     C6     H61     109.470    3.000
+ MBG      C5     C6     H62     109.470    3.000
+ MBG      C5     C6     O6      109.470    3.000
+ MBG      H61    C6     H62     107.900    3.000
+ MBG      H61    C6     O6      109.470    3.000
+ MBG      H62    C6     O6      109.470    3.000
+ MBG      C6     O6     HO6     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MBG      var_1    O5     C1     O1     C7       -59.852   20.000   1
+ MBG      var_2    C1     O1     C7     H71      179.973   20.000   1
+ MBG      var_3    C1     O5     C5     C6       180.000   20.000   1
+ MBG      var_4    O5     C5     C4     C3       -60.000   20.000   3
+ MBG      var_5    C5     C4     O4     HO4      179.946   20.000   1
+ MBG      var_6    C5     C4     C3     C2        60.000   20.000   3
+ MBG      var_7    C4     C3     O3     HO3      179.967   20.000   1
+ MBG      var_8    C4     C3     C2     O2       180.000   20.000   3
+ MBG      var_9    C3     C2     C1     O5        60.000   20.000   3
+ MBG      var_10   C3     C2     O2     HO2      179.948   20.000   1
+ MBG      var_11   O5     C5     C6     O6        60.025   20.000   3
+ MBG      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MBG      chir_01  C1     C2     O1     O5        positiv
+ MBG      chir_02  C2     C1     C3     O2        negativ
+ MBG      chir_03  C3     C2     C4     O3        positiv
+ MBG      chir_04  C4     C3     C5     O4        positiv
+ MBG      chir_05  C5     C4     C6     O5        negativ
+# ------------------------------------------------------

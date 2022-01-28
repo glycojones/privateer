@@ -1,0 +1,594 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZEM      ZEM '20-OXO-PROTOPORPHYRIN IX CONTAINING ' non-polymer        74  44 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ZEM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ZEM           O2D    O    OC       -0.500      0.000    0.000    0.000
+ ZEM           CGD    C    C         0.000      1.031    0.704    0.079
+ ZEM           O1D    O    OC       -0.500      2.079    0.309    0.637
+ ZEM           CBD    C    CH2       0.000      1.026    2.098   -0.528
+ ZEM           HBD1   H    H         0.000      1.683    2.077   -1.400
+ ZEM           HBD2   H    H         0.000      1.436    2.782    0.218
+ ZEM           CAD    C    CH2       0.000     -0.364    2.571   -0.947
+ ZEM           HAD1   H    H         0.000     -1.029    2.509   -0.082
+ ZEM           HAD2   H    H         0.000     -0.734    1.913   -1.736
+ ZEM           C3D    C    CR5       0.000     -0.322    4.016   -1.461
+ ZEM           C4D    C    CR5       0.000     -0.360    5.210   -0.651
+ ZEM           CHA    C    C1        0.000     -0.342    5.240    0.737
+ ZEM           HHA    H    H         0.000     -0.125    4.314    1.242
+ ZEM           C2D    C    CR5       0.000     -0.282    4.421   -2.753
+ ZEM           CMD    C    CH3       0.000     -0.318    3.524   -3.986
+ ZEM           HMD3   H    H         0.000     -1.208    3.704   -4.533
+ ZEM           HMD2   H    H         0.000      0.520    3.731   -4.603
+ ZEM           HMD1   H    H         0.000     -0.290    2.507   -3.689
+ ZEM           C1D    C    CR5       0.000     -0.304    5.867   -2.744
+ ZEM           ND     N    NR5       0.000     -0.563    6.303   -1.464
+ ZEM           CHD    C    C1        0.000     -0.234    6.681   -3.871
+ ZEM           HHD    H    H         0.000      0.029    6.212   -4.804
+ ZEM           C4C    C    CR5       0.000     -0.477    8.054   -3.891
+ ZEM           NC     N    NR5       0.000     -0.857    8.798   -2.792
+ ZEM           ZN     ZN   ZN        0.000     -1.114    8.182   -0.875
+ ZEM           C3C    C    CR5       0.000     -0.376    8.908   -5.053
+ ZEM           CAC    C    C1        0.000      0.069    8.494   -6.323
+ ZEM           HAC    H    H         0.000      0.850    7.752   -6.339
+ ZEM           CBC    C    C2        0.000     -0.411    8.956   -7.612
+ ZEM           HBC2   H    H         0.000     -0.005    8.576   -8.567
+ ZEM           HBC1   H    H         0.000     -1.209    9.714   -7.710
+ ZEM           C2C    C    CR5       0.000     -0.766   10.151   -4.665
+ ZEM           CMC    C    CH3       0.000     -0.887   11.413   -5.528
+ ZEM           HMC3   H    H         0.000     -1.882   11.781   -5.488
+ ZEM           HMC2   H    H         0.000     -0.225   12.160   -5.168
+ ZEM           HMC1   H    H         0.000     -0.641   11.185   -6.535
+ ZEM           C1C    C    CR5       0.000     -1.028   10.092   -3.244
+ ZEM           CHC    C    C1        0.000     -1.361   11.190   -2.449
+ ZEM           HHC    H    H         0.000     -1.485   12.132   -2.957
+ ZEM           C4B    C    CR5       0.000     -1.551   11.195   -1.067
+ ZEM           NB     N    NR5       0.000     -1.425   10.097   -0.244
+ ZEM           C3B    C    CR5       0.000     -1.931   12.348   -0.281
+ ZEM           CAB    C    C1        0.000     -2.330   13.593   -0.802
+ ZEM           HAB    H    H         0.000     -1.783   13.970   -1.651
+ ZEM           CBB    C    C2        0.000     -3.413   14.412   -0.295
+ ZEM           HBB2   H    H         0.000     -3.681   15.384   -0.746
+ ZEM           HBB1   H    H         0.000     -4.029   14.108    0.570
+ ZEM           C2B    C    CR5       0.000     -1.835   11.986    1.023
+ ZEM           CMB    C    CH3       0.000     -2.088   12.902    2.227
+ ZEM           HMB3   H    H         0.000     -2.886   12.516    2.811
+ ZEM           HMB2   H    H         0.000     -1.214   12.958    2.827
+ ZEM           HMB1   H    H         0.000     -2.342   13.875    1.890
+ ZEM           C1B    C    CR5       0.000     -1.465   10.580    1.050
+ ZEM           CHB    C    C         0.000     -1.254    9.802    2.203
+ ZEM           OZ     O    OH1       0.000     -1.320   10.433    3.400
+ ZEM           HZ     H    H         0.000     -1.159    9.798    4.114
+ ZEM           C4A    C    CR5       0.000     -0.989    8.422    2.211
+ ZEM           NA     N    NR5       0.000     -0.886    7.625    1.086
+ ZEM           C3A    C    CR5       0.000     -0.875    7.588    3.393
+ ZEM           CMA    C    CH3       0.000     -1.024    7.947    4.871
+ ZEM           HMA3   H    H         0.000     -0.304    8.680    5.135
+ ZEM           HMA2   H    H         0.000     -1.996    8.331    5.050
+ ZEM           HMA1   H    H         0.000     -0.875    7.081    5.466
+ ZEM           C2A    C    CR5       0.000     -0.637    6.325    2.972
+ ZEM           C1A    C    CR5       0.000     -0.579    6.354    1.535
+ ZEM           CAA    C    CH2       0.000     -0.500    5.073    3.829
+ ZEM           HAA1   H    H         0.000     -1.002    4.262    3.298
+ ZEM           HAA2   H    H         0.000     -1.019    5.267    4.770
+ ZEM           CBA    C    CH2       0.000      0.938    4.680    4.113
+ ZEM           HBA1   H    H         0.000      1.409    5.491    4.672
+ ZEM           HBA2   H    H         0.000      1.452    4.552    3.158
+ ZEM           CGA    C    C         0.000      1.027    3.399    4.911
+ ZEM           O1A    O    OC       -0.500      0.383    3.324    5.981
+ ZEM           O2A    O    OC       -0.500      1.739    2.469    4.470
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ZEM      O2D    n/a    CGD    START
+ ZEM      CGD    O2D    CBD    .
+ ZEM      O1D    CGD    .      .
+ ZEM      CBD    CGD    CAD    .
+ ZEM      HBD1   CBD    .      .
+ ZEM      HBD2   CBD    .      .
+ ZEM      CAD    CBD    C3D    .
+ ZEM      HAD1   CAD    .      .
+ ZEM      HAD2   CAD    .      .
+ ZEM      C3D    CAD    C2D    .
+ ZEM      C4D    C3D    CHA    .
+ ZEM      CHA    C4D    HHA    .
+ ZEM      HHA    CHA    .      .
+ ZEM      C2D    C3D    C1D    .
+ ZEM      CMD    C2D    HMD1   .
+ ZEM      HMD3   CMD    .      .
+ ZEM      HMD2   CMD    .      .
+ ZEM      HMD1   CMD    .      .
+ ZEM      C1D    C2D    CHD    .
+ ZEM      ND     C1D    .      .
+ ZEM      CHD    C1D    C4C    .
+ ZEM      HHD    CHD    .      .
+ ZEM      C4C    CHD    C3C    .
+ ZEM      NC     C4C    ZN     .
+ ZEM      ZN     NC     .      .
+ ZEM      C3C    C4C    C2C    .
+ ZEM      CAC    C3C    CBC    .
+ ZEM      HAC    CAC    .      .
+ ZEM      CBC    CAC    HBC1   .
+ ZEM      HBC2   CBC    .      .
+ ZEM      HBC1   CBC    .      .
+ ZEM      C2C    C3C    C1C    .
+ ZEM      CMC    C2C    HMC1   .
+ ZEM      HMC3   CMC    .      .
+ ZEM      HMC2   CMC    .      .
+ ZEM      HMC1   CMC    .      .
+ ZEM      C1C    C2C    CHC    .
+ ZEM      CHC    C1C    C4B    .
+ ZEM      HHC    CHC    .      .
+ ZEM      C4B    CHC    C3B    .
+ ZEM      NB     C4B    .      .
+ ZEM      C3B    C4B    C2B    .
+ ZEM      CAB    C3B    CBB    .
+ ZEM      HAB    CAB    .      .
+ ZEM      CBB    CAB    HBB1   .
+ ZEM      HBB2   CBB    .      .
+ ZEM      HBB1   CBB    .      .
+ ZEM      C2B    C3B    C1B    .
+ ZEM      CMB    C2B    HMB1   .
+ ZEM      HMB3   CMB    .      .
+ ZEM      HMB2   CMB    .      .
+ ZEM      HMB1   CMB    .      .
+ ZEM      C1B    C2B    CHB    .
+ ZEM      CHB    C1B    C4A    .
+ ZEM      OZ     CHB    HZ     .
+ ZEM      HZ     OZ     .      .
+ ZEM      C4A    CHB    C3A    .
+ ZEM      NA     C4A    .      .
+ ZEM      C3A    C4A    C2A    .
+ ZEM      CMA    C3A    HMA1   .
+ ZEM      HMA3   CMA    .      .
+ ZEM      HMA2   CMA    .      .
+ ZEM      HMA1   CMA    .      .
+ ZEM      C2A    C3A    CAA    .
+ ZEM      C1A    C2A    .      .
+ ZEM      CAA    C2A    CBA    .
+ ZEM      HAA1   CAA    .      .
+ ZEM      HAA2   CAA    .      .
+ ZEM      CBA    CAA    CGA    .
+ ZEM      HBA1   CBA    .      .
+ ZEM      HBA2   CBA    .      .
+ ZEM      CGA    CBA    O2A    .
+ ZEM      O1A    CGA    .      .
+ ZEM      O2A    CGA    .      END
+ ZEM      ZN     NA     .    ADD
+ ZEM      ZN     NB     .    ADD
+ ZEM      ZN     ND     .    ADD
+ ZEM      NA     C1A    .    ADD
+ ZEM      NB     C1B    .    ADD
+ ZEM      NC     C1C    .    ADD
+ ZEM      ND     C4D    .    ADD
+ ZEM      C1A    CHA    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZEM       ZN        NA        single    2.150     0.020     2.150     0.020     
+ZEM       ZN        NB        single    2.150     0.020     2.150     0.020     
+ZEM       ZN        NC        single    2.150     0.020     2.150     0.020     
+ZEM       ZN        ND        single    2.150     0.020     2.150     0.020     
+ZEM       NA        C1A       single    1.337     0.020     1.337     0.020     
+ZEM       NA        C4A       single    1.337     0.020     1.337     0.020     
+ZEM       NB        C1B       single    1.337     0.020     1.337     0.020     
+ZEM       NB        C4B       double    1.337     0.020     1.337     0.020     
+ZEM       NC        C1C       single    1.337     0.020     1.337     0.020     
+ZEM       NC        C4C       single    1.337     0.020     1.337     0.020     
+ZEM       ND        C4D       single    1.337     0.020     1.337     0.020     
+ZEM       ND        C1D       double    1.337     0.020     1.337     0.020     
+ZEM       C1A       CHA       single    1.483     0.020     1.483     0.020     
+ZEM       C1A       C2A       double    1.490     0.020     1.490     0.020     
+ZEM       CHA       C4D       double    1.483     0.020     1.483     0.020     
+ZEM       HHA       CHA       single    1.082     0.013     0.975     0.010     
+ZEM       C4D       C3D       single    1.490     0.020     1.490     0.020     
+ZEM       CHB       C1B       double    1.490     0.020     1.490     0.020     
+ZEM       C1B       C2B       single    1.490     0.020     1.490     0.020     
+ZEM       OZ        CHB       single    1.330     0.020     1.330     0.020     
+ZEM       C4A       CHB       single    1.490     0.020     1.490     0.020     
+ZEM       HZ        OZ        single    0.970     0.012     0.839     0.014     
+ZEM       C3A       C4A       double    1.490     0.020     1.490     0.020     
+ZEM       CHC       C1C       double    1.483     0.020     1.483     0.020     
+ZEM       C1C       C2C       single    1.490     0.020     1.490     0.020     
+ZEM       C4B       CHC       single    1.483     0.020     1.483     0.020     
+ZEM       HHC       CHC       single    1.082     0.013     0.975     0.010     
+ZEM       C3B       C4B       single    1.490     0.020     1.490     0.020     
+ZEM       CHD       C1D       single    1.483     0.020     1.483     0.020     
+ZEM       C1D       C2D       single    1.490     0.020     1.490     0.020     
+ZEM       C4C       CHD       double    1.483     0.020     1.483     0.020     
+ZEM       HHD       CHD       single    1.082     0.013     0.975     0.010     
+ZEM       C3C       C4C       single    1.490     0.020     1.490     0.020     
+ZEM       CAA       C2A       single    1.510     0.020     1.510     0.020     
+ZEM       C2A       C3A       single    1.490     0.020     1.490     0.020     
+ZEM       CBA       CAA       single    1.524     0.020     1.524     0.020     
+ZEM       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+ZEM       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+ZEM       CMA       C3A       single    1.506     0.020     1.506     0.020     
+ZEM       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+ZEM       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+ZEM       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+ZEM       CGA       CBA       single    1.510     0.020     1.510     0.020     
+ZEM       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+ZEM       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+ZEM       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+ZEM       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+ZEM       CMB       C2B       single    1.506     0.020     1.506     0.020     
+ZEM       C2B       C3B       double    1.490     0.020     1.490     0.020     
+ZEM       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+ZEM       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+ZEM       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+ZEM       CAB       C3B       single    1.483     0.020     1.483     0.020     
+ZEM       CBB       CAB       double    1.320     0.020     1.320     0.020     
+ZEM       HAB       CAB       single    1.082     0.013     0.975     0.010     
+ZEM       HBB1      CBB       single    1.082     0.013     0.975     0.010     
+ZEM       HBB2      CBB       single    1.082     0.013     0.975     0.010     
+ZEM       CMC       C2C       single    1.506     0.020     1.506     0.020     
+ZEM       C2C       C3C       double    1.490     0.020     1.490     0.020     
+ZEM       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+ZEM       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+ZEM       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+ZEM       CAC       C3C       single    1.483     0.020     1.483     0.020     
+ZEM       CBC       CAC       double    1.320     0.020     1.320     0.020     
+ZEM       HAC       CAC       single    1.082     0.013     0.975     0.010     
+ZEM       HBC1      CBC       single    1.082     0.013     0.975     0.010     
+ZEM       HBC2      CBC       single    1.082     0.013     0.975     0.010     
+ZEM       CMD       C2D       single    1.506     0.020     1.506     0.020     
+ZEM       C2D       C3D       double    1.490     0.020     1.490     0.020     
+ZEM       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+ZEM       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+ZEM       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+ZEM       C3D       CAD       single    1.510     0.020     1.510     0.020     
+ZEM       CAD       CBD       single    1.524     0.020     1.524     0.020     
+ZEM       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+ZEM       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+ZEM       CBD       CGD       single    1.510     0.020     1.510     0.020     
+ZEM       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+ZEM       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+ZEM       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+ZEM       CGD       O2D       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ZEM      O2D    CGD    O1D     123.000    3.000
+ ZEM      O2D    CGD    CBD     118.500    3.000
+ ZEM      O1D    CGD    CBD     118.500    3.000
+ ZEM      CGD    CBD    HBD1    109.470    3.000
+ ZEM      CGD    CBD    HBD2    109.470    3.000
+ ZEM      CGD    CBD    CAD     109.470    3.000
+ ZEM      HBD1   CBD    HBD2    107.900    3.000
+ ZEM      HBD1   CBD    CAD     109.470    3.000
+ ZEM      HBD2   CBD    CAD     109.470    3.000
+ ZEM      CBD    CAD    HAD1    109.470    3.000
+ ZEM      CBD    CAD    HAD2    109.470    3.000
+ ZEM      CBD    CAD    C3D     109.470    3.000
+ ZEM      HAD1   CAD    HAD2    107.900    3.000
+ ZEM      HAD1   CAD    C3D     109.470    3.000
+ ZEM      HAD2   CAD    C3D     109.470    3.000
+ ZEM      CAD    C3D    C4D     126.000    3.000
+ ZEM      CAD    C3D    C2D     126.000    3.000
+ ZEM      C4D    C3D    C2D     108.000    3.000
+ ZEM      C3D    C4D    CHA     117.000    3.000
+ ZEM      C3D    C4D    ND      108.000    3.000
+ ZEM      CHA    C4D    ND      108.000    3.000
+ ZEM      C4D    CHA    HHA     120.000    3.000
+ ZEM      C4D    CHA    C1A     120.000    3.000
+ ZEM      HHA    CHA    C1A     120.000    3.000
+ ZEM      C3D    C2D    CMD     126.000    3.000
+ ZEM      C3D    C2D    C1D     108.000    3.000
+ ZEM      CMD    C2D    C1D     126.000    3.000
+ ZEM      C2D    CMD    HMD3    109.470    3.000
+ ZEM      C2D    CMD    HMD2    109.470    3.000
+ ZEM      C2D    CMD    HMD1    109.470    3.000
+ ZEM      HMD3   CMD    HMD2    109.470    3.000
+ ZEM      HMD3   CMD    HMD1    109.470    3.000
+ ZEM      HMD2   CMD    HMD1    109.470    3.000
+ ZEM      C2D    C1D    ND      108.000    3.000
+ ZEM      C2D    C1D    CHD     117.000    3.000
+ ZEM      ND     C1D    CHD     108.000    3.000
+ ZEM      C1D    ND     ZN      108.000    3.000
+ ZEM      C1D    ND     C4D     108.000    3.000
+ ZEM      ZN     ND     C4D     108.000    3.000
+ ZEM      C1D    CHD    HHD     120.000    3.000
+ ZEM      C1D    CHD    C4C     120.000    3.000
+ ZEM      HHD    CHD    C4C     120.000    3.000
+ ZEM      CHD    C4C    NC      108.000    3.000
+ ZEM      CHD    C4C    C3C     117.000    3.000
+ ZEM      NC     C4C    C3C     108.000    3.000
+ ZEM      C4C    NC     ZN      108.000    3.000
+ ZEM      C4C    NC     C1C     108.000    3.000
+ ZEM      ZN     NC     C1C     108.000    3.000
+ ZEM      NC     ZN     NA      180.000    3.000
+ ZEM      NC     ZN     NB       90.000    3.000
+ ZEM      NC     ZN     ND       90.000    3.000
+ ZEM      NA     ZN     NB       90.000    3.000
+ ZEM      NA     ZN     ND       90.000    3.000
+ ZEM      NB     ZN     ND      180.000    3.000
+ ZEM      C4C    C3C    CAC     117.000    3.000
+ ZEM      C4C    C3C    C2C     108.000    3.000
+ ZEM      CAC    C3C    C2C     117.000    3.000
+ ZEM      C3C    CAC    HAC     120.000    3.000
+ ZEM      C3C    CAC    CBC     120.000    3.000
+ ZEM      HAC    CAC    CBC     120.000    3.000
+ ZEM      CAC    CBC    HBC2    120.000    3.000
+ ZEM      CAC    CBC    HBC1    120.000    3.000
+ ZEM      HBC2   CBC    HBC1    120.000    3.000
+ ZEM      C3C    C2C    CMC     126.000    3.000
+ ZEM      C3C    C2C    C1C     108.000    3.000
+ ZEM      CMC    C2C    C1C     126.000    3.000
+ ZEM      C2C    CMC    HMC3    109.470    3.000
+ ZEM      C2C    CMC    HMC2    109.470    3.000
+ ZEM      C2C    CMC    HMC1    109.470    3.000
+ ZEM      HMC3   CMC    HMC2    109.470    3.000
+ ZEM      HMC3   CMC    HMC1    109.470    3.000
+ ZEM      HMC2   CMC    HMC1    109.470    3.000
+ ZEM      C2C    C1C    CHC     117.000    3.000
+ ZEM      C2C    C1C    NC      108.000    3.000
+ ZEM      CHC    C1C    NC      108.000    3.000
+ ZEM      C1C    CHC    HHC     120.000    3.000
+ ZEM      C1C    CHC    C4B     120.000    3.000
+ ZEM      HHC    CHC    C4B     120.000    3.000
+ ZEM      CHC    C4B    NB      108.000    3.000
+ ZEM      CHC    C4B    C3B     117.000    3.000
+ ZEM      NB     C4B    C3B     108.000    3.000
+ ZEM      C4B    NB     ZN      108.000    3.000
+ ZEM      C4B    NB     C1B     108.000    3.000
+ ZEM      ZN     NB     C1B     108.000    3.000
+ ZEM      C4B    C3B    CAB     117.000    3.000
+ ZEM      C4B    C3B    C2B     108.000    3.000
+ ZEM      CAB    C3B    C2B     117.000    3.000
+ ZEM      C3B    CAB    HAB     120.000    3.000
+ ZEM      C3B    CAB    CBB     120.000    3.000
+ ZEM      HAB    CAB    CBB     120.000    3.000
+ ZEM      CAB    CBB    HBB2    120.000    3.000
+ ZEM      CAB    CBB    HBB1    120.000    3.000
+ ZEM      HBB2   CBB    HBB1    120.000    3.000
+ ZEM      C3B    C2B    CMB     126.000    3.000
+ ZEM      C3B    C2B    C1B     108.000    3.000
+ ZEM      CMB    C2B    C1B     126.000    3.000
+ ZEM      C2B    CMB    HMB3    109.470    3.000
+ ZEM      C2B    CMB    HMB2    109.470    3.000
+ ZEM      C2B    CMB    HMB1    109.470    3.000
+ ZEM      HMB3   CMB    HMB2    109.470    3.000
+ ZEM      HMB3   CMB    HMB1    109.470    3.000
+ ZEM      HMB2   CMB    HMB1    109.470    3.000
+ ZEM      C2B    C1B    CHB     117.000    3.000
+ ZEM      C2B    C1B    NB      108.000    3.000
+ ZEM      CHB    C1B    NB      126.000    3.000
+ ZEM      C1B    CHB    OZ      120.000    3.000
+ ZEM      C1B    CHB    C4A     120.000    3.000
+ ZEM      OZ     CHB    C4A     120.000    3.000
+ ZEM      CHB    OZ     HZ      109.470    3.000
+ ZEM      CHB    C4A    NA      126.000    3.000
+ ZEM      CHB    C4A    C3A     117.000    3.000
+ ZEM      NA     C4A    C3A     108.000    3.000
+ ZEM      C4A    NA     ZN      108.000    3.000
+ ZEM      C4A    NA     C1A     108.000    3.000
+ ZEM      ZN     NA     C1A     108.000    3.000
+ ZEM      C4A    C3A    CMA     126.000    3.000
+ ZEM      C4A    C3A    C2A     108.000    3.000
+ ZEM      CMA    C3A    C2A     126.000    3.000
+ ZEM      C3A    CMA    HMA3    109.470    3.000
+ ZEM      C3A    CMA    HMA2    109.470    3.000
+ ZEM      C3A    CMA    HMA1    109.470    3.000
+ ZEM      HMA3   CMA    HMA2    109.470    3.000
+ ZEM      HMA3   CMA    HMA1    109.470    3.000
+ ZEM      HMA2   CMA    HMA1    109.470    3.000
+ ZEM      C3A    C2A    C1A     108.000    3.000
+ ZEM      C3A    C2A    CAA     126.000    3.000
+ ZEM      C1A    C2A    CAA     126.000    3.000
+ ZEM      C2A    C1A    NA      108.000    3.000
+ ZEM      C2A    C1A    CHA     117.000    3.000
+ ZEM      NA     C1A    CHA     108.000    3.000
+ ZEM      C2A    CAA    HAA1    109.470    3.000
+ ZEM      C2A    CAA    HAA2    109.470    3.000
+ ZEM      C2A    CAA    CBA     109.470    3.000
+ ZEM      HAA1   CAA    HAA2    107.900    3.000
+ ZEM      HAA1   CAA    CBA     109.470    3.000
+ ZEM      HAA2   CAA    CBA     109.470    3.000
+ ZEM      CAA    CBA    HBA1    109.470    3.000
+ ZEM      CAA    CBA    HBA2    109.470    3.000
+ ZEM      CAA    CBA    CGA     109.470    3.000
+ ZEM      HBA1   CBA    HBA2    107.900    3.000
+ ZEM      HBA1   CBA    CGA     109.470    3.000
+ ZEM      HBA2   CBA    CGA     109.470    3.000
+ ZEM      CBA    CGA    O1A     118.500    3.000
+ ZEM      CBA    CGA    O2A     118.500    3.000
+ ZEM      O1A    CGA    O2A     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ZEM      var_1    O2D    CGD    CBD    CAD       10.923   20.000   3
+ ZEM      var_2    CGD    CBD    CAD    C3D      176.060   20.000   3
+ ZEM      var_3    CBD    CAD    C3D    C2D       98.538   20.000   2
+ ZEM      CONST_1  CAD    C3D    C4D    CHA        0.000    0.000   0
+ ZEM      var_4    C3D    C4D    CHA    C1A      180.000   20.000   1
+ ZEM      CONST_2  CAD    C3D    C2D    C1D      180.000    0.000   0
+ ZEM      var_5    C3D    C2D    CMD    HMD1      -5.223   20.000   1
+ ZEM      CONST_3  C3D    C2D    C1D    CHD      180.000    0.000   0
+ ZEM      CONST_4  C2D    C1D    ND     ZN       180.000    0.000   0
+ ZEM      CONST_5  C1D    ND     C4D    C3D      -30.000    0.000   0
+ ZEM      var_6    C2D    C1D    CHD    C4C      180.000   20.000   1
+ ZEM      var_7    C1D    CHD    C4C    C3C      180.000   20.000   1
+ ZEM      CONST_6  CHD    C4C    NC     ZN         0.000    0.000   0
+ ZEM      CONST_7  C4C    NC     C1C    C2C        0.000    0.000   0
+ ZEM      var_8    C1C    NC     ZN     NB         0.000   20.000   1
+ ZEM      var_9    C4A    NA     ZN     NB         0.000   20.000   1
+ ZEM      var_10   C4B    NB     ZN     NC         0.000   20.000   1
+ ZEM      var_11   C1D    ND     ZN     NC         0.000   20.000   1
+ ZEM      CONST_8  CHD    C4C    C3C    C2C      180.000    0.000   0
+ ZEM      var_12   C4C    C3C    CAC    CBC      144.697   20.000   1
+ ZEM      CONST_9  C3C    CAC    CBC    HBC1      -0.013    0.000   0
+ ZEM      CONST_10 C4C    C3C    C2C    C1C        0.000    0.000   0
+ ZEM      var_13   C3C    C2C    CMC    HMC1       1.625   20.000   1
+ ZEM      CONST_11 C3C    C2C    C1C    CHC      180.000    0.000   0
+ ZEM      var_14   C2C    C1C    CHC    C4B      180.000   20.000   1
+ ZEM      var_15   C1C    CHC    C4B    C3B      180.000   20.000   1
+ ZEM      CONST_12 CHC    C4B    NB     ZN         0.000    0.000   0
+ ZEM      CONST_13 C4B    NB     C1B    C2B        0.000    0.000   0
+ ZEM      CONST_14 CHC    C4B    C3B    C2B      180.000    0.000   0
+ ZEM      var_16   C4B    C3B    CAB    CBB      138.964   20.000   1
+ ZEM      CONST_15 C3B    CAB    CBB    HBB1      -0.030    0.000   0
+ ZEM      CONST_16 C4B    C3B    C2B    C1B        0.000    0.000   0
+ ZEM      var_17   C3B    C2B    CMB    HMB1      -0.671   20.000   1
+ ZEM      CONST_17 C3B    C2B    C1B    CHB      180.000    0.000   0
+ ZEM      var_18   C2B    C1B    CHB    C4A      180.000   20.000   1
+ ZEM      var_19   C1B    CHB    OZ     HZ       179.968   20.000   1
+ ZEM      var_20   C1B    CHB    C4A    C3A      180.000   20.000   1
+ ZEM      CONST_18 CHB    C4A    NA     ZN         0.000    0.000   0
+ ZEM      CONST_19 C4A    NA     C1A    C2A        0.000    0.000   0
+ ZEM      CONST_20 CHB    C4A    C3A    C2A      180.000    0.000   0
+ ZEM      var_21   C4A    C3A    CMA    HMA1     179.988   20.000   1
+ ZEM      CONST_21 C4A    C3A    C2A    CAA      180.000    0.000   0
+ ZEM      CONST_22 C3A    C2A    C1A    NA         0.000    0.000   0
+ ZEM      var_22   C2A    C1A    CHA    C4D      180.000   20.000   1
+ ZEM      var_23   C3A    C2A    CAA    CBA      -98.298   20.000   2
+ ZEM      var_24   C2A    CAA    CBA    CGA     -177.355   20.000   3
+ ZEM      var_25   CAA    CBA    CGA    O2A      126.743   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ZEM      chir_01  ZN     NC     NA     NB        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ZEM      plan-1    NA        0.020
+ ZEM      plan-1    ZN        0.020
+ ZEM      plan-1    C1A       0.020
+ ZEM      plan-1    C4A       0.020
+ ZEM      plan-1    C2A       0.020
+ ZEM      plan-1    C3A       0.020
+ ZEM      plan-1    CHA       0.020
+ ZEM      plan-1    CHB       0.020
+ ZEM      plan-1    CAA       0.020
+ ZEM      plan-1    CMA       0.020
+ ZEM      plan-1    HHA       0.020
+ ZEM      plan-2    NB        0.020
+ ZEM      plan-2    ZN        0.020
+ ZEM      plan-2    C1B       0.020
+ ZEM      plan-2    C4B       0.020
+ ZEM      plan-2    C2B       0.020
+ ZEM      plan-2    C3B       0.020
+ ZEM      plan-2    CHB       0.020
+ ZEM      plan-2    CHC       0.020
+ ZEM      plan-2    CMB       0.020
+ ZEM      plan-2    CAB       0.020
+ ZEM      plan-2    HHC       0.020
+ ZEM      plan-2    HAB       0.020
+ ZEM      plan-3    NC        0.020
+ ZEM      plan-3    ZN        0.020
+ ZEM      plan-3    C1C       0.020
+ ZEM      plan-3    C4C       0.020
+ ZEM      plan-3    C2C       0.020
+ ZEM      plan-3    C3C       0.020
+ ZEM      plan-3    CHC       0.020
+ ZEM      plan-3    CHD       0.020
+ ZEM      plan-3    CMC       0.020
+ ZEM      plan-3    CAC       0.020
+ ZEM      plan-3    HHC       0.020
+ ZEM      plan-3    HHD       0.020
+ ZEM      plan-3    HAC       0.020
+ ZEM      plan-4    ND        0.020
+ ZEM      plan-4    ZN        0.020
+ ZEM      plan-4    C4D       0.020
+ ZEM      plan-4    C1D       0.020
+ ZEM      plan-4    C2D       0.020
+ ZEM      plan-4    C3D       0.020
+ ZEM      plan-4    CHA       0.020
+ ZEM      plan-4    CHD       0.020
+ ZEM      plan-4    CMD       0.020
+ ZEM      plan-4    CAD       0.020
+ ZEM      plan-4    HHA       0.020
+ ZEM      plan-4    HHD       0.020
+ ZEM      plan-5    CHA       0.020
+ ZEM      plan-5    C1A       0.020
+ ZEM      plan-5    C4D       0.020
+ ZEM      plan-5    HHA       0.020
+ ZEM      plan-6    CHB       0.020
+ ZEM      plan-6    C1B       0.020
+ ZEM      plan-6    OZ        0.020
+ ZEM      plan-6    C4A       0.020
+ ZEM      plan-7    CHC       0.020
+ ZEM      plan-7    C1C       0.020
+ ZEM      plan-7    C4B       0.020
+ ZEM      plan-7    HHC       0.020
+ ZEM      plan-8    CHD       0.020
+ ZEM      plan-8    C1D       0.020
+ ZEM      plan-8    C4C       0.020
+ ZEM      plan-8    HHD       0.020
+ ZEM      plan-9    CGA       0.020
+ ZEM      plan-9    CBA       0.020
+ ZEM      plan-9    O1A       0.020
+ ZEM      plan-9    O2A       0.020
+ ZEM      plan-10   CAB       0.020
+ ZEM      plan-10   C3B       0.020
+ ZEM      plan-10   CBB       0.020
+ ZEM      plan-10   HAB       0.020
+ ZEM      plan-10   HBB1      0.020
+ ZEM      plan-10   HBB2      0.020
+ ZEM      plan-11   CAC       0.020
+ ZEM      plan-11   C3C       0.020
+ ZEM      plan-11   CBC       0.020
+ ZEM      plan-11   HAC       0.020
+ ZEM      plan-11   HBC1      0.020
+ ZEM      plan-11   HBC2      0.020
+ ZEM      plan-12   CGD       0.020
+ ZEM      plan-12   CBD       0.020
+ ZEM      plan-12   O1D       0.020
+ ZEM      plan-12   O2D       0.020
+# ------------------------------------------------------

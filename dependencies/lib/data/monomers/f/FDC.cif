@@ -1,0 +1,447 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FDC      FDC 'IRON(III) DICITRATE                 ' non-polymer        56  28 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FDC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FDC           O14    O    OH1       0.000      0.000    0.000    0.000
+ FDC           HO14   H    H         0.000      0.127   -0.113   -0.938
+ FDC           C12    C    CH1       0.000     -0.978   -0.687    0.318
+ FDC           H12    H    H         0.000     -0.330   -1.569    0.416
+ FDC           O9     O    O         0.000     -1.703   -1.314   -0.560
+ FDC           HO9    H    H         0.000     -1.285   -1.356   -1.512
+ FDC           C10    C    CH2       0.000     -1.319   -0.768    1.816
+ FDC           H101   H    H         0.000     -1.491    0.264    2.131
+ FDC           H102   H    H         0.000     -0.417   -1.149    2.300
+ FDC           C9     C    CT        0.000     -2.521   -1.633    2.216
+ FDC           O3     O    O         0.000     -3.642   -1.149    1.348
+ FDC           HO3    H    H         0.000     -3.587   -0.124    1.181
+ FDC           C8     C    CH2       0.000     -2.770   -1.577    3.755
+ FDC           H81    H    H         0.000     -2.978   -0.532    3.995
+ FDC           H82    H    H         0.000     -1.835   -1.880    4.229
+ FDC           C5     C    CH1       0.000     -3.915   -2.459    4.268
+ FDC           H5     H    H         0.000     -4.486   -1.565    4.555
+ FDC           O6     O    OH1       0.000     -3.931   -2.856    5.437
+ FDC           HO6    H    H         0.000     -4.757   -3.314    5.563
+ FDC           O2     O    O         0.000     -4.810   -2.785    3.466
+ FDC           HO2    H    H         0.000     -5.251   -3.716    3.605
+ FDC           C11    C    CH1       0.000     -2.133   -3.113    1.888
+ FDC           H11    H    H         0.000     -2.999   -3.469    2.464
+ FDC           O13    O    OH1       0.000     -1.378   -3.730    2.639
+ FDC           HO13   H    H         0.000     -1.332   -4.624    2.312
+ FDC           O11    O    O         0.000     -2.639   -3.572    0.842
+ FDC           H11O   H    H         0.000     -2.624   -4.588    0.620
+ FDC           FE2    FE   FE        0.000     -3.487   -2.214   -0.395
+ FDC           O4     O    O         0.000     -5.319   -2.749    0.236
+ FDC           HO4    H    H         0.000     -5.357   -3.771    0.424
+ FDC           FE1    FE   FE        0.000     -5.465   -1.705    1.961
+ FDC           O10    O    O         0.000     -4.215   -1.184   -1.917
+ FDC           H10O   H    H         0.000     -3.882   -0.211   -2.073
+ FDC           C7     C    CH1       0.000     -5.090   -1.683   -2.723
+ FDC           H7     H    H         0.000     -5.690   -0.764   -2.660
+ FDC           O12    O    OH1       0.000     -5.008   -1.562   -3.947
+ FDC           HO12   H    H         0.000     -5.716   -2.075   -4.326
+ FDC           C4     C    CH2       0.000     -6.241   -2.496   -2.130
+ FDC           H41    H    H         0.000     -6.026   -3.542   -2.358
+ FDC           H42    H    H         0.000     -7.141   -2.186   -2.665
+ FDC           C3     C    CT        0.000     -6.464   -2.332   -0.597
+ FDC           C6     C    CH1       0.000     -6.868   -0.840   -0.287
+ FDC           H6     H    H         0.000     -6.035   -0.480   -0.906
+ FDC           O8     O    OH1       0.000     -7.662   -0.247   -1.000
+ FDC           HO8    H    H         0.000     -7.820    0.599   -0.591
+ FDC           O5     O    O         0.000     -6.332   -0.358    0.724
+ FDC           HO5    H    H         0.000     -6.329    0.663    0.920
+ FDC           C2     C    CH2       0.000     -7.639   -3.225   -0.168
+ FDC           H21    H    H         0.000     -7.380   -4.232   -0.503
+ FDC           H22    H    H         0.000     -8.502   -2.866   -0.733
+ FDC           C1     C    CH1       0.000     -7.981   -3.254    1.324
+ FDC           H1     H    H         0.000     -8.665   -2.405    1.188
+ FDC           O7     O    OH1       0.000     -8.926   -3.967    1.665
+ FDC           HO7    H    H         0.000     -8.963   -3.941    2.617
+ FDC           O1     O    O         0.000     -7.278   -2.560    2.169
+ FDC           HO1    H    H         0.000     -7.722   -2.424    3.100
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FDC      O14    n/a    C12    START
+ FDC      HO14   O14    .      .
+ FDC      C12    O14    C10    .
+ FDC      H12    C12    .      .
+ FDC      O9     C12    HO9    .
+ FDC      HO9    O9     .      .
+ FDC      C10    C12    C9     .
+ FDC      H101   C10    .      .
+ FDC      H102   C10    .      .
+ FDC      C9     C10    C11    .
+ FDC      O3     C9     HO3    .
+ FDC      HO3    O3     .      .
+ FDC      C8     C9     C5     .
+ FDC      H81    C8     .      .
+ FDC      H82    C8     .      .
+ FDC      C5     C8     O2     .
+ FDC      H5     C5     .      .
+ FDC      O6     C5     HO6    .
+ FDC      HO6    O6     .      .
+ FDC      O2     C5     HO2    .
+ FDC      HO2    O2     .      .
+ FDC      C11    C9     O11    .
+ FDC      H11    C11    .      .
+ FDC      O13    C11    HO13   .
+ FDC      HO13   O13    .      .
+ FDC      O11    C11    FE2    .
+ FDC      H11O   O11    .      .
+ FDC      FE2    O11    O10    .
+ FDC      O4     FE2    FE1    .
+ FDC      HO4    O4     .      .
+ FDC      FE1    O4     .      .
+ FDC      O10    FE2    C7     .
+ FDC      H10O   O10    .      .
+ FDC      C7     O10    C4     .
+ FDC      H7     C7     .      .
+ FDC      O12    C7     HO12   .
+ FDC      HO12   O12    .      .
+ FDC      C4     C7     C3     .
+ FDC      H41    C4     .      .
+ FDC      H42    C4     .      .
+ FDC      C3     C4     C2     .
+ FDC      C6     C3     O5     .
+ FDC      H6     C6     .      .
+ FDC      O8     C6     HO8    .
+ FDC      HO8    O8     .      .
+ FDC      O5     C6     HO5    .
+ FDC      HO5    O5     .      .
+ FDC      C2     C3     C1     .
+ FDC      H21    C2     .      .
+ FDC      H22    C2     .      .
+ FDC      C1     C2     O1     .
+ FDC      H1     C1     .      .
+ FDC      O7     C1     HO7    .
+ FDC      HO7    O7     .      .
+ FDC      O1     C1     HO1    .
+ FDC      HO1    O1     .      END
+ FDC      FE1    O1     .    ADD
+ FDC      FE1    O2     .    ADD
+ FDC      FE1    O3     .    ADD
+ FDC      FE1    O5     .    ADD
+ FDC      O3     FE2    .    ADD
+ FDC      O4     C3     .    ADD
+ FDC      FE2    O9     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FDC       FE1       O1        single    2.040     0.020     2.040     0.020     
+FDC       FE1       O2        single    2.040     0.020     2.040     0.020     
+FDC       FE1       O3        single    2.040     0.020     2.040     0.020     
+FDC       FE1       O4        single    2.040     0.020     2.040     0.020     
+FDC       FE1       O5        single    2.040     0.020     2.040     0.020     
+FDC       O1        C1        single    1.420     0.020     1.420     0.020     
+FDC       HO1       O1        single    0.970     0.012     0.839     0.014     
+FDC       O2        C5        single    1.420     0.020     1.420     0.020     
+FDC       HO2       O2        single    0.970     0.012     0.839     0.014     
+FDC       O3        FE2       single    2.040     0.020     2.040     0.020     
+FDC       O3        C9        single    1.430     0.020     1.430     0.020     
+FDC       HO3       O3        single    0.970     0.012     0.839     0.014     
+FDC       O4        C3        single    1.430     0.020     1.430     0.020     
+FDC       O4        FE2       single    2.040     0.020     2.040     0.020     
+FDC       HO4       O4        single    0.970     0.012     0.839     0.014     
+FDC       O5        C6        single    1.420     0.020     1.420     0.020     
+FDC       HO5       O5        single    0.970     0.012     0.839     0.014     
+FDC       O6        C5        single    1.432     0.020     1.432     0.020     
+FDC       O7        C1        single    1.432     0.020     1.432     0.020     
+FDC       O8        C6        single    1.432     0.020     1.432     0.020     
+FDC       C1        C2        single    1.524     0.020     1.524     0.020     
+FDC       H1        C1        single    1.089     0.010     0.989     0.005     
+FDC       C2        C3        single    1.524     0.020     1.524     0.020     
+FDC       H21       C2        single    1.089     0.010     0.989     0.005     
+FDC       H22       C2        single    1.089     0.010     0.989     0.005     
+FDC       C3        C4        single    1.524     0.020     1.524     0.020     
+FDC       C6        C3        single    1.524     0.020     1.524     0.020     
+FDC       C4        C7        single    1.524     0.020     1.524     0.020     
+FDC       H41       C4        single    1.089     0.010     0.989     0.005     
+FDC       H42       C4        single    1.089     0.010     0.989     0.005     
+FDC       C5        C8        single    1.524     0.020     1.524     0.020     
+FDC       H5        C5        single    1.089     0.010     0.989     0.005     
+FDC       H6        C6        single    1.089     0.010     0.989     0.005     
+FDC       FE2       O9        single    2.040     0.020     2.040     0.020     
+FDC       O10       FE2       single    2.040     0.020     2.040     0.020     
+FDC       FE2       O11       single    2.040     0.020     2.040     0.020     
+FDC       C7        O10       single    1.420     0.020     1.420     0.020     
+FDC       O12       C7        single    1.432     0.020     1.432     0.020     
+FDC       H7        C7        single    1.089     0.010     0.989     0.005     
+FDC       C8        C9        single    1.524     0.020     1.524     0.020     
+FDC       H81       C8        single    1.089     0.010     0.989     0.005     
+FDC       H82       C8        single    1.089     0.010     0.989     0.005     
+FDC       C9        C10       single    1.524     0.020     1.524     0.020     
+FDC       C11       C9        single    1.524     0.020     1.524     0.020     
+FDC       O9        C12       single    1.420     0.020     1.420     0.020     
+FDC       HO9       O9        single    0.970     0.012     0.839     0.014     
+FDC       H10O      O10       single    0.970     0.012     0.839     0.014     
+FDC       O11       C11       single    1.420     0.020     1.420     0.020     
+FDC       H11O      O11       single    0.970     0.012     0.839     0.014     
+FDC       C10       C12       single    1.524     0.020     1.524     0.020     
+FDC       H101      C10       single    1.089     0.010     0.989     0.005     
+FDC       H102      C10       single    1.089     0.010     0.989     0.005     
+FDC       O13       C11       single    1.432     0.020     1.432     0.020     
+FDC       H11       C11       single    1.089     0.010     0.989     0.005     
+FDC       C12       O14       single    1.432     0.020     1.432     0.020     
+FDC       H12       C12       single    1.089     0.010     0.989     0.005     
+FDC       HO6       O6        single    0.970     0.012     0.839     0.014     
+FDC       HO7       O7        single    0.970     0.012     0.839     0.014     
+FDC       HO8       O8        single    0.970     0.012     0.839     0.014     
+FDC       HO12      O12       single    0.970     0.012     0.839     0.014     
+FDC       HO13      O13       single    0.970     0.012     0.839     0.014     
+FDC       HO14      O14       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FDC      HO14   O14    C12     109.470    3.000
+ FDC      O14    C12    H12     109.470    3.000
+ FDC      O14    C12    O9      109.470    3.000
+ FDC      O14    C12    C10     109.470    3.000
+ FDC      H12    C12    O9      109.470    3.000
+ FDC      H12    C12    C10     108.340    3.000
+ FDC      O9     C12    C10     109.470    3.000
+ FDC      C12    O9     HO9     120.000    3.000
+ FDC      C12    O9     FE2     120.000    3.000
+ FDC      HO9    O9     FE2     120.000    3.000
+ FDC      C12    C10    H101    109.470    3.000
+ FDC      C12    C10    H102    109.470    3.000
+ FDC      C12    C10    C9      111.000    3.000
+ FDC      H101   C10    H102    107.900    3.000
+ FDC      H101   C10    C9      109.470    3.000
+ FDC      H102   C10    C9      109.470    3.000
+ FDC      C10    C9     O3      109.500    3.000
+ FDC      C10    C9     C8      111.000    3.000
+ FDC      C10    C9     C11     111.000    3.000
+ FDC      O3     C9     C8      109.500    3.000
+ FDC      O3     C9     C11     109.500    3.000
+ FDC      C8     C9     C11     111.000    3.000
+ FDC      C9     O3     HO3     120.000    3.000
+ FDC      C9     O3     FE1     120.000    3.000
+ FDC      C9     O3     FE2     120.000    3.000
+ FDC      FE1    O3     FE2     120.000    3.000
+ FDC      HO3    O3     FE1     120.000    3.000
+ FDC      HO3    O3     FE2     120.000    3.000
+ FDC      C9     C8     H81     109.470    3.000
+ FDC      C9     C8     H82     109.470    3.000
+ FDC      C9     C8     C5      111.000    3.000
+ FDC      H81    C8     H82     107.900    3.000
+ FDC      H81    C8     C5      109.470    3.000
+ FDC      H82    C8     C5      109.470    3.000
+ FDC      C8     C5     H5      108.340    3.000
+ FDC      C8     C5     O6      109.470    3.000
+ FDC      C8     C5     O2      109.470    3.000
+ FDC      H5     C5     O6      109.470    3.000
+ FDC      H5     C5     O2      109.470    3.000
+ FDC      O6     C5     O2      109.470    3.000
+ FDC      C5     O6     HO6     109.470    3.000
+ FDC      C5     O2     HO2     120.000    3.000
+ FDC      C5     O2     FE1     120.000    3.000
+ FDC      HO2    O2     FE1     120.000    3.000
+ FDC      C9     C11    H11     108.340    3.000
+ FDC      C9     C11    O13     109.470    3.000
+ FDC      C9     C11    O11     109.500    3.000
+ FDC      H11    C11    O13     109.470    3.000
+ FDC      H11    C11    O11     109.470    3.000
+ FDC      O13    C11    O11     109.470    3.000
+ FDC      C11    O13    HO13    109.470    3.000
+ FDC      C11    O11    H11O    120.000    3.000
+ FDC      C11    O11    FE2     120.000    3.000
+ FDC      H11O   O11    FE2     120.000    3.000
+ FDC      O11    FE2    O4       90.000    3.000
+ FDC      O11    FE2    O10     180.000    3.000
+ FDC      O11    FE2    O3       90.000    3.000
+ FDC      O11    FE2    O9       90.000    3.000
+ FDC      O4     FE2    O10      90.000    3.000
+ FDC      O3     FE2    O9       90.000    3.000
+ FDC      O4     FE2    O3       90.000    3.000
+ FDC      O10    FE2    O3       90.000    3.000
+ FDC      O4     FE2    O9      180.000    3.000
+ FDC      O10    FE2    O9       90.000    3.000
+ FDC      FE2    O4     HO4     120.000    3.000
+ FDC      FE2    O4     FE1     120.000    3.000
+ FDC      FE2    O4     C3      120.000    3.000
+ FDC      HO4    O4     FE1     120.000    3.000
+ FDC      HO4    O4     C3      120.000    3.000
+ FDC      FE1    O4     C3      120.000    3.000
+ FDC      O4     FE1    O1       90.000    3.000
+ FDC      O4     FE1    O2       90.000    3.000
+ FDC      O4     FE1    O3       90.000    3.000
+ FDC      O4     FE1    O5       90.000    3.000
+ FDC      O1     FE1    O2       90.000    3.000
+ FDC      O1     FE1    O3      180.000    3.000
+ FDC      O2     FE1    O3       90.000    3.000
+ FDC      O1     FE1    O5       90.000    3.000
+ FDC      O2     FE1    O5      180.000    3.000
+ FDC      O3     FE1    O5       90.000    3.000
+ FDC      FE2    O10    H10O    120.000    3.000
+ FDC      FE2    O10    C7      120.000    3.000
+ FDC      H10O   O10    C7      120.000    3.000
+ FDC      O10    C7     H7      109.470    3.000
+ FDC      O10    C7     O12     109.470    3.000
+ FDC      O10    C7     C4      109.470    3.000
+ FDC      H7     C7     O12     109.470    3.000
+ FDC      H7     C7     C4      108.340    3.000
+ FDC      O12    C7     C4      109.470    3.000
+ FDC      C7     O12    HO12    109.470    3.000
+ FDC      C7     C4     H41     109.470    3.000
+ FDC      C7     C4     H42     109.470    3.000
+ FDC      C7     C4     C3      111.000    3.000
+ FDC      H41    C4     H42     107.900    3.000
+ FDC      H41    C4     C3      109.470    3.000
+ FDC      H42    C4     C3      109.470    3.000
+ FDC      C4     C3     C6      111.000    3.000
+ FDC      C4     C3     C2      111.000    3.000
+ FDC      C4     C3     O4      109.500    3.000
+ FDC      C6     C3     C2      111.000    3.000
+ FDC      C6     C3     O4      109.500    3.000
+ FDC      C2     C3     O4      109.500    3.000
+ FDC      C3     C6     H6      108.340    3.000
+ FDC      C3     C6     O8      109.470    3.000
+ FDC      C3     C6     O5      109.500    3.000
+ FDC      H6     C6     O8      109.470    3.000
+ FDC      H6     C6     O5      109.470    3.000
+ FDC      O8     C6     O5      109.470    3.000
+ FDC      C6     O8     HO8     109.470    3.000
+ FDC      C6     O5     HO5     120.000    3.000
+ FDC      C6     O5     FE1     120.000    3.000
+ FDC      HO5    O5     FE1     120.000    3.000
+ FDC      C3     C2     H21     109.470    3.000
+ FDC      C3     C2     H22     109.470    3.000
+ FDC      C3     C2     C1      111.000    3.000
+ FDC      H21    C2     H22     107.900    3.000
+ FDC      H21    C2     C1      109.470    3.000
+ FDC      H22    C2     C1      109.470    3.000
+ FDC      C2     C1     H1      108.340    3.000
+ FDC      C2     C1     O7      109.470    3.000
+ FDC      C2     C1     O1      109.470    3.000
+ FDC      H1     C1     O7      109.470    3.000
+ FDC      H1     C1     O1      109.470    3.000
+ FDC      O7     C1     O1      109.470    3.000
+ FDC      C1     O7     HO7     109.470    3.000
+ FDC      C1     O1     HO1     120.000    3.000
+ FDC      C1     O1     FE1     120.000    3.000
+ FDC      HO1    O1     FE1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FDC      var_1    HO14   O14    C12    C10      175.000   20.000   1
+ FDC      var_2    O14    C12    O9     FE2      180.000   20.000   1
+ FDC      var_3    O14    C12    C10    C9       180.000   20.000   3
+ FDC      var_4    C12    C10    C9     C11       60.000   20.000   1
+ FDC      var_5    C10    C9     O3     FE1     -150.000   20.000   1
+ FDC      var_6    FE1    O3     FE2    O4         0.000   20.000   1
+ FDC      var_7    C10    C9     C8     C5       180.000   20.000   1
+ FDC      var_8    C9     C8     C5     O2       -30.000   20.000   3
+ FDC      var_9    C8     C5     O6     HO6      175.000   20.000   1
+ FDC      var_10   C8     C5     O2     FE1      -30.000   20.000   1
+ FDC      var_11   C10    C9     C11    O11     -102.321   20.000   1
+ FDC      var_12   C9     C11    O13    HO13     175.000   20.000   1
+ FDC      var_13   C9     C11    O11    FE2       13.147   20.000   1
+ FDC      var_14   C11    O11    FE2    O4         0.000   20.000   1
+ FDC      var_15   C12    O9     FE2    O3         0.000   20.000   1
+ FDC      var_16   C3     O4     FE2    O10        0.000   20.000   1
+ FDC      var_17   FE2    O4     C3     C4        30.000   20.000   1
+ FDC      var_18   C3     O4     FE1    O1         0.000   20.000   1
+ FDC      var_19   C1     O1     FE1    O4         0.000   20.000   1
+ FDC      var_20   C5     O2     FE1    O3         0.000   20.000   1
+ FDC      var_21   FE2    O3     FE1    O4         0.000   20.000   1
+ FDC      var_22   C6     O5     FE1    O1         0.000   20.000   1
+ FDC      var_23   C7     O10    FE2    O4         0.000   20.000   1
+ FDC      var_24   FE2    O10    C7     C4        30.000   20.000   1
+ FDC      var_25   O10    C7     O12    HO12     175.000   20.000   1
+ FDC      var_26   O10    C7     C4     C3        30.000   20.000   3
+ FDC      var_27   C7     C4     C3     C2       180.000   20.000   1
+ FDC      var_28   C4     C3     C6     O5      -138.503   20.000   1
+ FDC      var_29   C3     C6     O8     HO8      175.000   20.000   1
+ FDC      var_30   C3     C6     O5     FE1      -14.709   20.000   1
+ FDC      var_31   C4     C3     C2     C1       180.000   20.000   1
+ FDC      var_32   C3     C2     C1     O1         0.000   20.000   3
+ FDC      var_33   C2     C1     O7     HO7      175.000   20.000   1
+ FDC      var_34   C2     C1     O1     FE1      -30.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ FDC      chir_01  O3     FE1    FE2    C9        positiv
+                   .      .      .      .      .
+ FDC      chir_02  O4     FE1    C3     FE2       negativ
+                   .      .      .      .      .
+ FDC      chir_03  C1     O1     O7     C2        positiv
+                   .      .      .      .      .
+ FDC      chir_04  C3     O4     C2     C4        positiv
+                   .      .      .      .      .
+ FDC      chir_05  C5     O2     O6     C8        negativ
+                   .      .      .      .      .
+ FDC      chir_06  C6     O5     O8     C3        positiv
+                   .      .      .      .      .
+ FDC      chir_07  C7     C4     O10    O12       negativ
+                   .      .      .      .      .
+ FDC      chir_08  C9     O3     C8     C10       positiv
+                   .      .      .      .      .
+ FDC      chir_09  C11    C9     O11    O13       negativ
+                   .      .      .      .      .
+ FDC      chir_10  C12    O9     C10    O14       positiv
+                   .      .      .      .      .
+ FDC      chir_11  FE1    O1     O3     O4        cross4
+                   O2     .      O5     .      .
+ FDC      chir_12  FE2    O11    O10    O4        cross4
+                   O3     O9     .      .      .
+# ------------------------------------------------------

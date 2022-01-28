@@ -1,0 +1,123 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UZ1     UZ1      cyclopropanamine     non-polymer     11     4     .     
+#
+data_comp_UZ1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+UZ1     N33     N       NT2     0       8.960       9.910       31.578      
+UZ1     C34     C       CH1     0       7.997       9.364       32.515      
+UZ1     C35     C       CH2     0       7.746       10.135      33.765      
+UZ1     C36     C       CH2     0       6.717       10.106      32.691      
+UZ1     H1      H       H       0       9.637       10.370      31.923      
+UZ1     H2      H       H       0       8.633       10.321      30.863      
+UZ1     H4      H       H       0       7.955       8.399       32.581      
+UZ1     H5      H       H       0       7.566       9.628       34.581      
+UZ1     H6      H       H       0       8.247       10.964      33.895      
+UZ1     H7      H       H       0       5.908       9.582       32.849      
+UZ1     H8      H       H       0       6.588       10.918      32.163      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UZ1       N33       C34       SINGLE    n         1.450     0.0100    1.450     0.0100    
+UZ1       C34       C36       SINGLE    n         1.490     0.0100    1.490     0.0100    
+UZ1       C34       C35       SINGLE    n         1.490     0.0100    1.490     0.0100    
+UZ1       C35       C36       SINGLE    n         1.486     0.0159    1.486     0.0159    
+UZ1       N33       H1        SINGLE    n         1.036     0.016     0.888     0.0200    
+UZ1       N33       H2        SINGLE    n         1.036     0.016     0.888     0.0200    
+UZ1       C34       H4        SINGLE    n         1.089     0.010     0.969     0.0200    
+UZ1       C35       H5        SINGLE    n         1.089     0.010     0.977     0.0155    
+UZ1       C35       H6        SINGLE    n         1.089     0.010     0.977     0.0155    
+UZ1       C36       H7        SINGLE    n         1.089     0.010     0.977     0.0155    
+UZ1       C36       H8        SINGLE    n         1.089     0.010     0.977     0.0155    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+UZ1         C34         N33          H1     116.768    3.00
+UZ1         C34         N33          H2     116.768    3.00
+UZ1          H1         N33          H2     110.637    3.00
+UZ1         N33         C34         C36     117.259    1.99
+UZ1         N33         C34         C35     117.259    1.99
+UZ1         N33         C34          H4     116.449    1.63
+UZ1         C36         C34         C35      60.272    1.50
+UZ1         C36         C34          H4     116.756    1.50
+UZ1         C35         C34          H4     116.756    1.50
+UZ1         C34         C35         C36      60.005    1.50
+UZ1         C34         C35          H5     117.644    1.50
+UZ1         C34         C35          H6     117.644    1.50
+UZ1         C36         C35          H5     117.795    1.50
+UZ1         C36         C35          H6     117.795    1.50
+UZ1          H5         C35          H6     115.138    1.50
+UZ1         C34         C36         C35      60.005    1.50
+UZ1         C34         C36          H7     117.644    1.50
+UZ1         C34         C36          H8     117.644    1.50
+UZ1         C35         C36          H7     117.795    1.50
+UZ1         C35         C36          H8     117.795    1.50
+UZ1          H7         C36          H8     115.138    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+UZ1            sp3_sp3_21         C36         C34         N33          H1      60.000   10.00     3
+UZ1            sp3_sp3_28         N33         C34         C35         C36      60.000   10.00     3
+UZ1             sp3_sp3_1         N33         C34         C36         C35      60.000   10.00     3
+UZ1            sp3_sp3_10         C34         C35         C36         C34     -60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+UZ1    chir_1    C34    N33    C36    C35    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+UZ1           SMILES              ACDLabs 12.01                                NC1CC1
+UZ1            InChI                InChI  1.03 InChI=1S/C3H7N/c4-3-1-2-3/h3H,1-2,4H2
+UZ1         InChIKey                InChI  1.03           HTJDQJBWANPRPF-UHFFFAOYSA-N
+UZ1 SMILES_CANONICAL               CACTVS 3.385                                NC1CC1
+UZ1           SMILES               CACTVS 3.385                                NC1CC1
+UZ1 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                C1CC1N
+UZ1           SMILES "OpenEye OEToolkits" 2.0.7                                C1CC1N
+UZ1 ?                acedrg               217         "dictionary generator"                  
+UZ1 ?                acedrg_database      11          "data source"                           
+UZ1 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+UZ1 ?                refmac5              5.8.0253    "optimization tool"                     

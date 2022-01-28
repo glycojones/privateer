@@ -1,0 +1,948 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BH1      BH1 'BACTERIOPHEOPHYTIN                  ' non-polymer       143  65 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BH1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BH1           O1A    O    O        -0.500      0.000    0.000    0.000
+ BH1           CGA    C    C         0.000      0.175   -0.963   -0.779
+ BH1           O2A    O    O2       -0.500      1.061   -1.042   -1.659
+ BH1           C1     C    CH2       0.000      2.015    0.080   -1.840
+ BH1           H1C1   H    H         0.000      2.963   -0.296   -2.231
+ BH1           H1C2   H    H         0.000      2.190    0.579   -0.884
+ BH1           C2     C    C1        0.000      1.423    1.052   -2.812
+ BH1           H2     H    H         0.000      1.278    0.687   -3.815
+ BH1           C3     C    C         0.000      1.047    2.328   -2.590
+ BH1           C5     C    CH2       0.000      0.429    3.223   -3.654
+ BH1           H5C1   H    H         0.000      0.373    2.602   -4.550
+ BH1           H5C2   H    H         0.000      1.156    4.022   -3.811
+ BH1           C6     C    CH2       0.000     -0.951    3.834   -3.365
+ BH1           H6C1   H    H         0.000     -1.254    4.436   -4.224
+ BH1           H6C2   H    H         0.000     -0.872    4.474   -2.483
+ BH1           C7     C    CH2       0.000     -1.997    2.738   -3.112
+ BH1           H7C1   H    H         0.000     -1.659    2.161   -2.249
+ BH1           H7C2   H    H         0.000     -2.012    2.096   -3.994
+ BH1           C8     C    CH1       0.000     -3.416    3.282   -2.846
+ BH1           H8     H    H         0.000     -4.090    2.425   -2.707
+ BH1           C10    C    CH2       0.000     -3.466    4.146   -1.565
+ BH1           H101   H    H         0.000     -4.516    4.411   -1.426
+ BH1           H102   H    H         0.000     -2.892    5.047   -1.791
+ BH1           C11    C    CH2       0.000     -2.925    3.500   -0.282
+ BH1           H111   H    H         0.000     -1.900    3.183   -0.483
+ BH1           H112   H    H         0.000     -3.541    2.624   -0.072
+ BH1           C12    C    CH2       0.000     -2.943    4.442    0.927
+ BH1           H121   H    H         0.000     -3.977    4.774    1.045
+ BH1           H122   H    H         0.000     -2.316    5.296    0.663
+ BH1           C13    C    CH1       0.000     -2.444    3.823    2.252
+ BH1           H13    H    H         0.000     -2.501    4.610    3.017
+ BH1           C15    C    CH2       0.000     -3.353    2.669    2.722
+ BH1           H151   H    H         0.000     -3.250    1.854    2.003
+ BH1           H152   H    H         0.000     -4.382    3.034    2.712
+ BH1           C16    C    CH2       0.000     -3.003    2.160    4.127
+ BH1           H161   H    H         0.000     -3.051    2.999    4.825
+ BH1           H162   H    H         0.000     -1.987    1.760    4.111
+ BH1           C17    C    CH2       0.000     -3.979    1.064    4.573
+ BH1           H171   H    H         0.000     -3.881    0.251    3.851
+ BH1           H172   H    H         0.000     -4.980    1.495    4.501
+ BH1           C18    C    CH1       0.000     -3.753    0.520    5.996
+ BH1           H18    H    H         0.000     -4.573   -0.180    6.208
+ BH1           C20    C    CH3       0.000     -2.448   -0.267    6.119
+ BH1           H203   H    H         0.000     -2.407   -0.737    7.068
+ BH1           H202   H    H         0.000     -2.406   -1.004    5.359
+ BH1           H201   H    H         0.000     -1.626    0.392    6.017
+ BH1           C19    C    CH3       0.000     -3.815    1.619    7.057
+ BH1           H193   H    H         0.000     -4.708    2.176    6.938
+ BH1           H192   H    H         0.000     -3.799    1.181    8.021
+ BH1           H191   H    H         0.000     -2.981    2.263    6.949
+ BH1           C14    C    CH3       0.000     -0.977    3.398    2.152
+ BH1           H143   H    H         0.000     -0.900    2.526    1.554
+ BH1           H142   H    H         0.000     -0.411    4.178    1.712
+ BH1           H141   H    H         0.000     -0.600    3.193    3.121
+ BH1           C9     C    CH3       0.000     -3.939    4.115   -4.022
+ BH1           H9C3   H    H         0.000     -3.873    3.549   -4.915
+ BH1           H9C2   H    H         0.000     -4.951    4.379   -3.848
+ BH1           H9C1   H    H         0.000     -3.358    4.996   -4.120
+ BH1           C4     C    CH3       0.000      1.201    3.028   -1.261
+ BH1           H4C3   H    H         0.000      1.700    3.952   -1.403
+ BH1           H4C2   H    H         0.000      0.245    3.205   -0.840
+ BH1           H4C1   H    H         0.000      1.768    2.420   -0.603
+ BH1           CBA    C    CH2       0.000     -0.654   -2.227   -0.803
+ BH1           HBA1   H    H         0.000      0.010   -3.077   -0.634
+ BH1           HBA2   H    H         0.000     -1.115   -2.316   -1.789
+ BH1           CAA    C    CH2       0.000     -1.737   -2.207    0.265
+ BH1           HAA1   H    H         0.000     -2.378   -1.339    0.096
+ BH1           HAA2   H    H         0.000     -1.260   -2.120    1.244
+ BH1           C2A    C    CH1       0.000     -2.582   -3.483    0.219
+ BH1           H2A    H    H         0.000     -2.996   -3.637   -0.787
+ BH1           C3A    C    CH1       0.000     -1.728   -4.718    0.657
+ BH1           H3A    H    H         0.000     -0.656   -4.503    0.546
+ BH1           CMA    C    CH3       0.000     -2.108   -5.967   -0.141
+ BH1           HMA3   H    H         0.000     -1.427   -6.097   -0.942
+ BH1           HMA2   H    H         0.000     -2.074   -6.816    0.492
+ BH1           HMA1   H    H         0.000     -3.089   -5.856   -0.527
+ BH1           C1A    C    C         0.000     -3.698   -3.454    1.259
+ BH1           CHA    C    CR5       0.000     -4.865   -2.793    1.145
+ BH1           NA     N    NH1       0.000     -3.259   -4.206    2.322
+ BH1           HA     H    H         0.000     -3.769   -4.254    3.193
+ BH1           C4A    C    C         0.000     -2.089   -4.884    2.129
+ BH1           CHB    C    C1        0.000     -1.315   -5.542    3.008
+ BH1           HHB    H    H         0.000     -0.420   -6.006    2.628
+ BH1           C1B    C    CR5       0.000     -1.578   -5.676    4.397
+ BH1           C2B    C    CR5       0.000     -0.729   -5.730    5.485
+ BH1           CMB    C    CH3       0.000      0.745   -5.606    5.448
+ BH1           HMB3   H    H         0.000      1.036   -5.198    4.517
+ BH1           HMB2   H    H         0.000      1.059   -4.971    6.232
+ BH1           HMB1   H    H         0.000      1.177   -6.564    5.569
+ BH1           C3B    C    CR5       0.000     -1.515   -5.932    6.644
+ BH1           CAB    C    C         0.000     -1.053   -6.058    8.000
+ BH1           OBB    O    O         0.000     -0.739   -7.122    8.562
+ BH1           CBB    C    CH3       0.000     -0.928   -4.803    8.828
+ BH1           HBB3   H    H         0.000     -0.659   -5.058    9.821
+ BH1           HBB2   H    H         0.000     -0.183   -4.176    8.411
+ BH1           HBB1   H    H         0.000     -1.855   -4.290    8.837
+ BH1           NB     N    NR15      0.000     -2.856   -5.867    4.881
+ BH1           HB     H    H         0.000     -3.713   -5.908    4.293
+ BH1           C4B    C    CR5       0.000     -2.837   -5.998    6.254
+ BH1           CHC    C    C1        0.000     -4.023   -6.262    6.986
+ BH1           HHC    H    H         0.000     -3.958   -6.978    7.788
+ BH1           C1C    C    C         0.000     -5.221   -5.694    6.764
+ BH1           C2C    C    CH1       0.000     -6.464   -6.064    7.568
+ BH1           H2C    H    H         0.000     -6.240   -6.058    8.644
+ BH1           CMC    C    CH3       0.000     -7.004   -7.433    7.144
+ BH1           HMC3   H    H         0.000     -6.361   -7.859    6.418
+ BH1           HMC2   H    H         0.000     -7.053   -8.072    7.988
+ BH1           HMC1   H    H         0.000     -7.974   -7.320    6.733
+ BH1           C3C    C    CH1       0.000     -7.476   -4.930    7.218
+ BH1           H3C    H    H         0.000     -8.473   -5.352    7.028
+ BH1           CAC    C    CH2       0.000     -7.543   -3.886    8.335
+ BH1           HAC1   H    H         0.000     -8.196   -3.072    8.016
+ BH1           HAC2   H    H         0.000     -6.538   -3.497    8.512
+ BH1           CBC    C    CH3       0.000     -8.079   -4.495    9.605
+ BH1           HBC3   H    H         0.000     -7.446   -5.287    9.909
+ BH1           HBC2   H    H         0.000     -8.111   -3.757   10.362
+ BH1           HBC1   H    H         0.000     -9.054   -4.868    9.432
+ BH1           NC     N    NH1       0.000     -5.594   -4.734    5.865
+ BH1           HC     H    H         0.000     -4.948   -4.349    5.190
+ BH1           C4C    C    C         0.000     -6.902   -4.327    5.939
+ BH1           CHD    C    C1        0.000     -7.644   -3.568    5.112
+ BH1           HHD    H    H         0.000     -8.657   -3.360    5.411
+ BH1           C1D    C    CR5       0.000     -7.207   -3.016    3.877
+ BH1           ND     N    NR15      0.000     -6.115   -3.560    3.220
+ BH1           HD     H    H         0.000     -5.588   -4.409    3.509
+ BH1           C4D    C    CR55      0.000     -5.857   -2.797    2.143
+ BH1           C2D    C    CR5       0.000     -7.713   -1.994    3.065
+ BH1           CMD    C    CH3       0.000     -8.919   -1.179    3.318
+ BH1           HMD3   H    H         0.000     -9.427   -1.565    4.160
+ BH1           HMD2   H    H         0.000     -8.629   -0.180    3.500
+ BH1           HMD1   H    H         0.000     -9.548   -1.221    2.470
+ BH1           C3D    C    CR55      0.000     -6.852   -1.889    1.966
+ BH1           CAD    C    CR5       0.000     -6.610   -1.201    0.720
+ BH1           OBD    O    O         0.000     -7.315   -0.323    0.245
+ BH1           CBD    C    CH1       0.000     -5.319   -1.802    0.049
+ BH1           HBD    H    H         0.000     -4.562   -1.024   -0.117
+ BH1           CGD    C    C         0.000     -5.618   -2.537   -1.216
+ BH1           O1D    O    O        -0.500     -5.421   -3.761   -1.378
+ BH1           O2D    O    O2       -0.500     -6.086   -1.741   -2.060
+ BH1           CED    C    CH3       0.000     -6.461   -2.245   -3.404
+ BH1           HED3   H    H         0.000     -5.817   -1.833   -4.143
+ BH1           HED2   H    H         0.000     -6.381   -3.305   -3.433
+ BH1           HED1   H    H         0.000     -7.463   -1.971   -3.632
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BH1      O1A    n/a    CGA    START
+ BH1      CGA    O1A    CBA    .
+ BH1      O2A    CGA    C1     .
+ BH1      C1     O2A    C2     .
+ BH1      H1C1   C1     .      .
+ BH1      H1C2   C1     .      .
+ BH1      C2     C1     C3     .
+ BH1      H2     C2     .      .
+ BH1      C3     C2     C4     .
+ BH1      C5     C3     C6     .
+ BH1      H5C1   C5     .      .
+ BH1      H5C2   C5     .      .
+ BH1      C6     C5     C7     .
+ BH1      H6C1   C6     .      .
+ BH1      H6C2   C6     .      .
+ BH1      C7     C6     C8     .
+ BH1      H7C1   C7     .      .
+ BH1      H7C2   C7     .      .
+ BH1      C8     C7     C9     .
+ BH1      H8     C8     .      .
+ BH1      C10    C8     C11    .
+ BH1      H101   C10    .      .
+ BH1      H102   C10    .      .
+ BH1      C11    C10    C12    .
+ BH1      H111   C11    .      .
+ BH1      H112   C11    .      .
+ BH1      C12    C11    C13    .
+ BH1      H121   C12    .      .
+ BH1      H122   C12    .      .
+ BH1      C13    C12    C14    .
+ BH1      H13    C13    .      .
+ BH1      C15    C13    C16    .
+ BH1      H151   C15    .      .
+ BH1      H152   C15    .      .
+ BH1      C16    C15    C17    .
+ BH1      H161   C16    .      .
+ BH1      H162   C16    .      .
+ BH1      C17    C16    C18    .
+ BH1      H171   C17    .      .
+ BH1      H172   C17    .      .
+ BH1      C18    C17    C19    .
+ BH1      H18    C18    .      .
+ BH1      C20    C18    H201   .
+ BH1      H203   C20    .      .
+ BH1      H202   C20    .      .
+ BH1      H201   C20    .      .
+ BH1      C19    C18    H191   .
+ BH1      H193   C19    .      .
+ BH1      H192   C19    .      .
+ BH1      H191   C19    .      .
+ BH1      C14    C13    H141   .
+ BH1      H143   C14    .      .
+ BH1      H142   C14    .      .
+ BH1      H141   C14    .      .
+ BH1      C9     C8     H9C1   .
+ BH1      H9C3   C9     .      .
+ BH1      H9C2   C9     .      .
+ BH1      H9C1   C9     .      .
+ BH1      C4     C3     H4C1   .
+ BH1      H4C3   C4     .      .
+ BH1      H4C2   C4     .      .
+ BH1      H4C1   C4     .      .
+ BH1      CBA    CGA    CAA    .
+ BH1      HBA1   CBA    .      .
+ BH1      HBA2   CBA    .      .
+ BH1      CAA    CBA    C2A    .
+ BH1      HAA1   CAA    .      .
+ BH1      HAA2   CAA    .      .
+ BH1      C2A    CAA    C1A    .
+ BH1      H2A    C2A    .      .
+ BH1      C3A    C2A    CMA    .
+ BH1      H3A    C3A    .      .
+ BH1      CMA    C3A    HMA1   .
+ BH1      HMA3   CMA    .      .
+ BH1      HMA2   CMA    .      .
+ BH1      HMA1   CMA    .      .
+ BH1      C1A    C2A    NA     .
+ BH1      CHA    C1A    .      .
+ BH1      NA     C1A    C4A    .
+ BH1      HA     NA     .      .
+ BH1      C4A    NA     CHB    .
+ BH1      CHB    C4A    C1B    .
+ BH1      HHB    CHB    .      .
+ BH1      C1B    CHB    NB     .
+ BH1      C2B    C1B    C3B    .
+ BH1      CMB    C2B    HMB1   .
+ BH1      HMB3   CMB    .      .
+ BH1      HMB2   CMB    .      .
+ BH1      HMB1   CMB    .      .
+ BH1      C3B    C2B    CAB    .
+ BH1      CAB    C3B    CBB    .
+ BH1      OBB    CAB    .      .
+ BH1      CBB    CAB    HBB1   .
+ BH1      HBB3   CBB    .      .
+ BH1      HBB2   CBB    .      .
+ BH1      HBB1   CBB    .      .
+ BH1      NB     C1B    C4B    .
+ BH1      HB     NB     .      .
+ BH1      C4B    NB     CHC    .
+ BH1      CHC    C4B    C1C    .
+ BH1      HHC    CHC    .      .
+ BH1      C1C    CHC    NC     .
+ BH1      C2C    C1C    C3C    .
+ BH1      H2C    C2C    .      .
+ BH1      CMC    C2C    HMC1   .
+ BH1      HMC3   CMC    .      .
+ BH1      HMC2   CMC    .      .
+ BH1      HMC1   CMC    .      .
+ BH1      C3C    C2C    CAC    .
+ BH1      H3C    C3C    .      .
+ BH1      CAC    C3C    CBC    .
+ BH1      HAC1   CAC    .      .
+ BH1      HAC2   CAC    .      .
+ BH1      CBC    CAC    HBC1   .
+ BH1      HBC3   CBC    .      .
+ BH1      HBC2   CBC    .      .
+ BH1      HBC1   CBC    .      .
+ BH1      NC     C1C    C4C    .
+ BH1      HC     NC     .      .
+ BH1      C4C    NC     CHD    .
+ BH1      CHD    C4C    C1D    .
+ BH1      HHD    CHD    .      .
+ BH1      C1D    CHD    C2D    .
+ BH1      ND     C1D    C4D    .
+ BH1      HD     ND     .      .
+ BH1      C4D    ND     .      .
+ BH1      C2D    C1D    C3D    .
+ BH1      CMD    C2D    HMD1   .
+ BH1      HMD3   CMD    .      .
+ BH1      HMD2   CMD    .      .
+ BH1      HMD1   CMD    .      .
+ BH1      C3D    C2D    CAD    .
+ BH1      CAD    C3D    CBD    .
+ BH1      OBD    CAD    .      .
+ BH1      CBD    CAD    CGD    .
+ BH1      HBD    CBD    .      .
+ BH1      CGD    CBD    O2D    .
+ BH1      O1D    CGD    .      .
+ BH1      O2D    CGD    CED    .
+ BH1      CED    O2D    HED1   .
+ BH1      HED3   CED    .      .
+ BH1      HED2   CED    .      .
+ BH1      HED1   CED    .      END
+ BH1      CBD    CHA    .    ADD
+ BH1      CHA    C4D    .    ADD
+ BH1      C4D    C3D    .    ADD
+ BH1      C4C    C3C    .    ADD
+ BH1      C4B    C3B    .    ADD
+ BH1      C4A    C3A    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BH1       O1D       CGD       deloc     1.220     0.020     1.220     0.020     
+BH1       O2D       CGD       deloc     1.454     0.020     1.454     0.020     
+BH1       CGD       CBD       single    1.500     0.020     1.500     0.020     
+BH1       CED       O2D       single    1.426     0.020     1.426     0.020     
+BH1       HED1      CED       single    1.089     0.010     0.989     0.005     
+BH1       HED2      CED       single    1.089     0.010     0.989     0.005     
+BH1       HED3      CED       single    1.089     0.010     0.989     0.005     
+BH1       CBD       CHA       single    1.480     0.020     1.480     0.020     
+BH1       CBD       CAD       single    1.480     0.020     1.480     0.020     
+BH1       HBD       CBD       single    1.089     0.010     0.989     0.005     
+BH1       CHA       C4D       single    1.490     0.020     1.490     0.020     
+BH1       CHA       C1A       double    1.490     0.020     1.490     0.020     
+BH1       C4D       C3D       double    1.390     0.020     1.390     0.020     
+BH1       C4D       ND        single    1.395     0.020     1.395     0.020     
+BH1       CAD       C3D       single    1.490     0.020     1.490     0.020     
+BH1       C3D       C2D       single    1.490     0.020     1.490     0.020     
+BH1       OBD       CAD       double    1.285     0.020     1.285     0.020     
+BH1       CMD       C2D       single    1.506     0.020     1.506     0.020     
+BH1       C2D       C1D       double    1.490     0.020     1.490     0.020     
+BH1       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+BH1       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+BH1       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+BH1       ND        C1D       single    1.340     0.020     1.340     0.020     
+BH1       C1D       CHD       single    1.483     0.020     1.483     0.020     
+BH1       HD        ND        single    1.016     0.010     0.899     0.007     
+BH1       CHD       C4C       double    1.340     0.020     1.340     0.020     
+BH1       HHD       CHD       single    1.082     0.013     0.975     0.010     
+BH1       C4C       C3C       single    1.500     0.020     1.500     0.020     
+BH1       C4C       NC        single    1.330     0.020     1.330     0.020     
+BH1       CAC       C3C       single    1.524     0.020     1.524     0.020     
+BH1       C3C       C2C       single    1.524     0.020     1.524     0.020     
+BH1       H3C       C3C       single    1.089     0.010     0.989     0.005     
+BH1       CBC       CAC       single    1.513     0.020     1.513     0.020     
+BH1       HAC1      CAC       single    1.089     0.010     0.989     0.005     
+BH1       HAC2      CAC       single    1.089     0.010     0.989     0.005     
+BH1       HBC1      CBC       single    1.089     0.010     0.989     0.005     
+BH1       HBC2      CBC       single    1.089     0.010     0.989     0.005     
+BH1       HBC3      CBC       single    1.089     0.010     0.989     0.005     
+BH1       CMC       C2C       single    1.524     0.020     1.524     0.020     
+BH1       C2C       C1C       single    1.500     0.020     1.500     0.020     
+BH1       H2C       C2C       single    1.089     0.010     0.989     0.005     
+BH1       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+BH1       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+BH1       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+BH1       NC        C1C       single    1.330     0.020     1.330     0.020     
+BH1       C1C       CHC       double    1.340     0.020     1.340     0.020     
+BH1       HC        NC        single    1.016     0.010     0.899     0.007     
+BH1       CHC       C4B       single    1.483     0.020     1.483     0.020     
+BH1       HHC       CHC       single    1.082     0.013     0.975     0.010     
+BH1       C4B       C3B       double    1.490     0.020     1.490     0.020     
+BH1       C4B       NB        single    1.340     0.020     1.340     0.020     
+BH1       CAB       C3B       single    1.490     0.020     1.490     0.020     
+BH1       C3B       C2B       single    1.490     0.020     1.490     0.020     
+BH1       CBB       CAB       single    1.500     0.020     1.500     0.020     
+BH1       OBB       CAB       double    1.220     0.020     1.220     0.020     
+BH1       HBB1      CBB       single    1.089     0.010     0.989     0.005     
+BH1       HBB2      CBB       single    1.089     0.010     0.989     0.005     
+BH1       HBB3      CBB       single    1.089     0.010     0.989     0.005     
+BH1       CMB       C2B       single    1.506     0.020     1.506     0.020     
+BH1       C2B       C1B       double    1.490     0.020     1.490     0.020     
+BH1       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+BH1       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+BH1       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+BH1       NB        C1B       single    1.340     0.020     1.340     0.020     
+BH1       C1B       CHB       single    1.483     0.020     1.483     0.020     
+BH1       HB        NB        single    1.016     0.010     0.899     0.007     
+BH1       CHB       C4A       double    1.340     0.020     1.340     0.020     
+BH1       HHB       CHB       single    1.082     0.013     0.975     0.010     
+BH1       C4A       C3A       single    1.500     0.020     1.500     0.020     
+BH1       C4A       NA        single    1.330     0.020     1.330     0.020     
+BH1       CMA       C3A       single    1.524     0.020     1.524     0.020     
+BH1       C3A       C2A       single    1.524     0.020     1.524     0.020     
+BH1       H3A       C3A       single    1.089     0.010     0.989     0.005     
+BH1       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+BH1       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+BH1       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+BH1       C1A       C2A       single    1.500     0.020     1.500     0.020     
+BH1       C2A       CAA       single    1.524     0.020     1.524     0.020     
+BH1       H2A       C2A       single    1.089     0.010     0.989     0.005     
+BH1       NA        C1A       single    1.330     0.020     1.330     0.020     
+BH1       HA        NA        single    1.016     0.010     0.899     0.007     
+BH1       CAA       CBA       single    1.524     0.020     1.524     0.020     
+BH1       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+BH1       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+BH1       CBA       CGA       single    1.510     0.020     1.510     0.020     
+BH1       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+BH1       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+BH1       CGA       O1A       deloc     1.220     0.020     1.220     0.020     
+BH1       O2A       CGA       deloc     1.454     0.020     1.454     0.020     
+BH1       C1        O2A       single    1.426     0.020     1.426     0.020     
+BH1       C2        C1        single    1.510     0.020     1.510     0.020     
+BH1       H1C1      C1        single    1.089     0.010     0.989     0.005     
+BH1       H1C2      C1        single    1.089     0.010     0.989     0.005     
+BH1       C3        C2        double    1.340     0.020     1.340     0.020     
+BH1       H2        C2        single    1.082     0.013     0.975     0.010     
+BH1       C4        C3        single    1.500     0.020     1.500     0.020     
+BH1       C5        C3        single    1.510     0.020     1.510     0.020     
+BH1       H4C1      C4        single    1.089     0.010     0.989     0.005     
+BH1       H4C2      C4        single    1.089     0.010     0.989     0.005     
+BH1       H4C3      C4        single    1.089     0.010     0.989     0.005     
+BH1       C6        C5        single    1.524     0.020     1.524     0.020     
+BH1       H5C1      C5        single    1.089     0.010     0.989     0.005     
+BH1       H5C2      C5        single    1.089     0.010     0.989     0.005     
+BH1       C7        C6        single    1.524     0.020     1.524     0.020     
+BH1       H6C1      C6        single    1.089     0.010     0.989     0.005     
+BH1       H6C2      C6        single    1.089     0.010     0.989     0.005     
+BH1       C8        C7        single    1.524     0.020     1.524     0.020     
+BH1       H7C1      C7        single    1.089     0.010     0.989     0.005     
+BH1       H7C2      C7        single    1.089     0.010     0.989     0.005     
+BH1       C9        C8        single    1.524     0.020     1.524     0.020     
+BH1       C10       C8        single    1.524     0.020     1.524     0.020     
+BH1       H8        C8        single    1.089     0.010     0.989     0.005     
+BH1       H9C1      C9        single    1.089     0.010     0.989     0.005     
+BH1       H9C2      C9        single    1.089     0.010     0.989     0.005     
+BH1       H9C3      C9        single    1.089     0.010     0.989     0.005     
+BH1       C11       C10       single    1.524     0.020     1.524     0.020     
+BH1       H101      C10       single    1.089     0.010     0.989     0.005     
+BH1       H102      C10       single    1.089     0.010     0.989     0.005     
+BH1       C12       C11       single    1.524     0.020     1.524     0.020     
+BH1       H111      C11       single    1.089     0.010     0.989     0.005     
+BH1       H112      C11       single    1.089     0.010     0.989     0.005     
+BH1       C13       C12       single    1.524     0.020     1.524     0.020     
+BH1       H121      C12       single    1.089     0.010     0.989     0.005     
+BH1       H122      C12       single    1.089     0.010     0.989     0.005     
+BH1       C14       C13       single    1.524     0.020     1.524     0.020     
+BH1       C15       C13       single    1.524     0.020     1.524     0.020     
+BH1       H13       C13       single    1.089     0.010     0.989     0.005     
+BH1       H141      C14       single    1.089     0.010     0.989     0.005     
+BH1       H142      C14       single    1.089     0.010     0.989     0.005     
+BH1       H143      C14       single    1.089     0.010     0.989     0.005     
+BH1       C16       C15       single    1.524     0.020     1.524     0.020     
+BH1       H151      C15       single    1.089     0.010     0.989     0.005     
+BH1       H152      C15       single    1.089     0.010     0.989     0.005     
+BH1       C17       C16       single    1.524     0.020     1.524     0.020     
+BH1       H161      C16       single    1.089     0.010     0.989     0.005     
+BH1       H162      C16       single    1.089     0.010     0.989     0.005     
+BH1       C18       C17       single    1.524     0.020     1.524     0.020     
+BH1       H171      C17       single    1.089     0.010     0.989     0.005     
+BH1       H172      C17       single    1.089     0.010     0.989     0.005     
+BH1       C19       C18       single    1.524     0.020     1.524     0.020     
+BH1       C20       C18       single    1.524     0.020     1.524     0.020     
+BH1       H18       C18       single    1.089     0.010     0.989     0.005     
+BH1       H191      C19       single    1.089     0.010     0.989     0.005     
+BH1       H192      C19       single    1.089     0.010     0.989     0.005     
+BH1       H193      C19       single    1.089     0.010     0.989     0.005     
+BH1       H201      C20       single    1.089     0.010     0.989     0.005     
+BH1       H202      C20       single    1.089     0.010     0.989     0.005     
+BH1       H203      C20       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BH1      O1A    CGA    O2A     119.000    3.000
+ BH1      O1A    CGA    CBA     120.500    3.000
+ BH1      O2A    CGA    CBA     120.000    3.000
+ BH1      CGA    O2A    C1      120.000    3.000
+ BH1      O2A    C1     H1C1    109.470    3.000
+ BH1      O2A    C1     H1C2    109.470    3.000
+ BH1      O2A    C1     C2      109.500    3.000
+ BH1      H1C1   C1     H1C2    107.900    3.000
+ BH1      H1C1   C1     C2      109.470    3.000
+ BH1      H1C2   C1     C2      109.470    3.000
+ BH1      C1     C2     H2      120.000    3.000
+ BH1      C1     C2     C3      120.500    3.000
+ BH1      H2     C2     C3      120.000    3.000
+ BH1      C2     C3     C5      120.000    3.000
+ BH1      C2     C3     C4      120.000    3.000
+ BH1      C5     C3     C4      120.000    3.000
+ BH1      C3     C5     H5C1    109.470    3.000
+ BH1      C3     C5     H5C2    109.470    3.000
+ BH1      C3     C5     C6      109.470    3.000
+ BH1      H5C1   C5     H5C2    107.900    3.000
+ BH1      H5C1   C5     C6      109.470    3.000
+ BH1      H5C2   C5     C6      109.470    3.000
+ BH1      C5     C6     H6C1    109.470    3.000
+ BH1      C5     C6     H6C2    109.470    3.000
+ BH1      C5     C6     C7      111.000    3.000
+ BH1      H6C1   C6     H6C2    107.900    3.000
+ BH1      H6C1   C6     C7      109.470    3.000
+ BH1      H6C2   C6     C7      109.470    3.000
+ BH1      C6     C7     H7C1    109.470    3.000
+ BH1      C6     C7     H7C2    109.470    3.000
+ BH1      C6     C7     C8      111.000    3.000
+ BH1      H7C1   C7     H7C2    107.900    3.000
+ BH1      H7C1   C7     C8      109.470    3.000
+ BH1      H7C2   C7     C8      109.470    3.000
+ BH1      C7     C8     H8      108.340    3.000
+ BH1      C7     C8     C10     109.470    3.000
+ BH1      C7     C8     C9      111.000    3.000
+ BH1      H8     C8     C10     108.340    3.000
+ BH1      H8     C8     C9      108.340    3.000
+ BH1      C10    C8     C9      111.000    3.000
+ BH1      C8     C10    H101    109.470    3.000
+ BH1      C8     C10    H102    109.470    3.000
+ BH1      C8     C10    C11     111.000    3.000
+ BH1      H101   C10    H102    107.900    3.000
+ BH1      H101   C10    C11     109.470    3.000
+ BH1      H102   C10    C11     109.470    3.000
+ BH1      C10    C11    H111    109.470    3.000
+ BH1      C10    C11    H112    109.470    3.000
+ BH1      C10    C11    C12     111.000    3.000
+ BH1      H111   C11    H112    107.900    3.000
+ BH1      H111   C11    C12     109.470    3.000
+ BH1      H112   C11    C12     109.470    3.000
+ BH1      C11    C12    H121    109.470    3.000
+ BH1      C11    C12    H122    109.470    3.000
+ BH1      C11    C12    C13     111.000    3.000
+ BH1      H121   C12    H122    107.900    3.000
+ BH1      H121   C12    C13     109.470    3.000
+ BH1      H122   C12    C13     109.470    3.000
+ BH1      C12    C13    H13     108.340    3.000
+ BH1      C12    C13    C15     109.470    3.000
+ BH1      C12    C13    C14     111.000    3.000
+ BH1      H13    C13    C15     108.340    3.000
+ BH1      H13    C13    C14     108.340    3.000
+ BH1      C15    C13    C14     111.000    3.000
+ BH1      C13    C15    H151    109.470    3.000
+ BH1      C13    C15    H152    109.470    3.000
+ BH1      C13    C15    C16     111.000    3.000
+ BH1      H151   C15    H152    107.900    3.000
+ BH1      H151   C15    C16     109.470    3.000
+ BH1      H152   C15    C16     109.470    3.000
+ BH1      C15    C16    H161    109.470    3.000
+ BH1      C15    C16    H162    109.470    3.000
+ BH1      C15    C16    C17     111.000    3.000
+ BH1      H161   C16    H162    107.900    3.000
+ BH1      H161   C16    C17     109.470    3.000
+ BH1      H162   C16    C17     109.470    3.000
+ BH1      C16    C17    H171    109.470    3.000
+ BH1      C16    C17    H172    109.470    3.000
+ BH1      C16    C17    C18     111.000    3.000
+ BH1      H171   C17    H172    107.900    3.000
+ BH1      H171   C17    C18     109.470    3.000
+ BH1      H172   C17    C18     109.470    3.000
+ BH1      C17    C18    H18     108.340    3.000
+ BH1      C17    C18    C20     111.000    3.000
+ BH1      C17    C18    C19     111.000    3.000
+ BH1      H18    C18    C20     108.340    3.000
+ BH1      H18    C18    C19     108.340    3.000
+ BH1      C20    C18    C19     111.000    3.000
+ BH1      C18    C20    H203    109.470    3.000
+ BH1      C18    C20    H202    109.470    3.000
+ BH1      C18    C20    H201    109.470    3.000
+ BH1      H203   C20    H202    109.470    3.000
+ BH1      H203   C20    H201    109.470    3.000
+ BH1      H202   C20    H201    109.470    3.000
+ BH1      C18    C19    H193    109.470    3.000
+ BH1      C18    C19    H192    109.470    3.000
+ BH1      C18    C19    H191    109.470    3.000
+ BH1      H193   C19    H192    109.470    3.000
+ BH1      H193   C19    H191    109.470    3.000
+ BH1      H192   C19    H191    109.470    3.000
+ BH1      C13    C14    H143    109.470    3.000
+ BH1      C13    C14    H142    109.470    3.000
+ BH1      C13    C14    H141    109.470    3.000
+ BH1      H143   C14    H142    109.470    3.000
+ BH1      H143   C14    H141    109.470    3.000
+ BH1      H142   C14    H141    109.470    3.000
+ BH1      C8     C9     H9C3    109.470    3.000
+ BH1      C8     C9     H9C2    109.470    3.000
+ BH1      C8     C9     H9C1    109.470    3.000
+ BH1      H9C3   C9     H9C2    109.470    3.000
+ BH1      H9C3   C9     H9C1    109.470    3.000
+ BH1      H9C2   C9     H9C1    109.470    3.000
+ BH1      C3     C4     H4C3    109.470    3.000
+ BH1      C3     C4     H4C2    109.470    3.000
+ BH1      C3     C4     H4C1    109.470    3.000
+ BH1      H4C3   C4     H4C2    109.470    3.000
+ BH1      H4C3   C4     H4C1    109.470    3.000
+ BH1      H4C2   C4     H4C1    109.470    3.000
+ BH1      CGA    CBA    HBA1    109.470    3.000
+ BH1      CGA    CBA    HBA2    109.470    3.000
+ BH1      CGA    CBA    CAA     109.470    3.000
+ BH1      HBA1   CBA    HBA2    107.900    3.000
+ BH1      HBA1   CBA    CAA     109.470    3.000
+ BH1      HBA2   CBA    CAA     109.470    3.000
+ BH1      CBA    CAA    HAA1    109.470    3.000
+ BH1      CBA    CAA    HAA2    109.470    3.000
+ BH1      CBA    CAA    C2A     111.000    3.000
+ BH1      HAA1   CAA    HAA2    107.900    3.000
+ BH1      HAA1   CAA    C2A     109.470    3.000
+ BH1      HAA2   CAA    C2A     109.470    3.000
+ BH1      CAA    C2A    H2A     108.340    3.000
+ BH1      CAA    C2A    C3A     111.000    3.000
+ BH1      CAA    C2A    C1A     109.470    3.000
+ BH1      H2A    C2A    C3A     108.340    3.000
+ BH1      H2A    C2A    C1A     108.810    3.000
+ BH1      C3A    C2A    C1A     109.470    3.000
+ BH1      C2A    C3A    H3A     108.340    3.000
+ BH1      C2A    C3A    CMA     111.000    3.000
+ BH1      C2A    C3A    C4A     109.470    3.000
+ BH1      H3A    C3A    CMA     108.340    3.000
+ BH1      H3A    C3A    C4A     108.810    3.000
+ BH1      CMA    C3A    C4A     109.470    3.000
+ BH1      C3A    CMA    HMA3    109.470    3.000
+ BH1      C3A    CMA    HMA2    109.470    3.000
+ BH1      C3A    CMA    HMA1    109.470    3.000
+ BH1      HMA3   CMA    HMA2    109.470    3.000
+ BH1      HMA3   CMA    HMA1    109.470    3.000
+ BH1      HMA2   CMA    HMA1    109.470    3.000
+ BH1      C2A    C1A    CHA     120.000    3.000
+ BH1      C2A    C1A    NA      116.500    3.000
+ BH1      CHA    C1A    NA      120.000    3.000
+ BH1      C1A    CHA    CBD     108.000    3.000
+ BH1      C1A    CHA    C4D     108.000    3.000
+ BH1      CBD    CHA    C4D     108.000    3.000
+ BH1      C1A    NA     HA      120.000    3.000
+ BH1      C1A    NA     C4A     120.000    3.000
+ BH1      HA     NA     C4A     120.000    3.000
+ BH1      NA     C4A    CHB     120.000    3.000
+ BH1      NA     C4A    C3A     116.500    3.000
+ BH1      CHB    C4A    C3A     120.000    3.000
+ BH1      C4A    CHB    HHB     120.000    3.000
+ BH1      C4A    CHB    C1B     120.000    3.000
+ BH1      HHB    CHB    C1B     120.000    3.000
+ BH1      CHB    C1B    C2B     117.000    3.000
+ BH1      CHB    C1B    NB      108.000    3.000
+ BH1      C2B    C1B    NB      108.000    3.000
+ BH1      C1B    C2B    CMB     126.000    3.000
+ BH1      C1B    C2B    C3B     108.000    3.000
+ BH1      CMB    C2B    C3B     126.000    3.000
+ BH1      C2B    CMB    HMB3    109.470    3.000
+ BH1      C2B    CMB    HMB2    109.470    3.000
+ BH1      C2B    CMB    HMB1    109.470    3.000
+ BH1      HMB3   CMB    HMB2    109.470    3.000
+ BH1      HMB3   CMB    HMB1    109.470    3.000
+ BH1      HMB2   CMB    HMB1    109.470    3.000
+ BH1      C2B    C3B    CAB     117.000    3.000
+ BH1      C2B    C3B    C4B     108.000    3.000
+ BH1      CAB    C3B    C4B     117.000    3.000
+ BH1      C3B    CAB    OBB     120.500    3.000
+ BH1      C3B    CAB    CBB     116.500    3.000
+ BH1      OBB    CAB    CBB     123.000    3.000
+ BH1      CAB    CBB    HBB3    109.470    3.000
+ BH1      CAB    CBB    HBB2    109.470    3.000
+ BH1      CAB    CBB    HBB1    109.470    3.000
+ BH1      HBB3   CBB    HBB2    109.470    3.000
+ BH1      HBB3   CBB    HBB1    109.470    3.000
+ BH1      HBB2   CBB    HBB1    109.470    3.000
+ BH1      C1B    NB     HB      126.000    3.000
+ BH1      C1B    NB     C4B     108.000    3.000
+ BH1      HB     NB     C4B     126.000    3.000
+ BH1      NB     C4B    CHC     108.000    3.000
+ BH1      NB     C4B    C3B     108.000    3.000
+ BH1      CHC    C4B    C3B     117.000    3.000
+ BH1      C4B    CHC    HHC     120.000    3.000
+ BH1      C4B    CHC    C1C     120.000    3.000
+ BH1      HHC    CHC    C1C     120.000    3.000
+ BH1      CHC    C1C    C2C     120.000    3.000
+ BH1      CHC    C1C    NC      120.000    3.000
+ BH1      C2C    C1C    NC      116.500    3.000
+ BH1      C1C    C2C    H2C     108.810    3.000
+ BH1      C1C    C2C    CMC     109.470    3.000
+ BH1      C1C    C2C    C3C     109.470    3.000
+ BH1      H2C    C2C    CMC     108.340    3.000
+ BH1      H2C    C2C    C3C     108.340    3.000
+ BH1      CMC    C2C    C3C     111.000    3.000
+ BH1      C2C    CMC    HMC3    109.470    3.000
+ BH1      C2C    CMC    HMC2    109.470    3.000
+ BH1      C2C    CMC    HMC1    109.470    3.000
+ BH1      HMC3   CMC    HMC2    109.470    3.000
+ BH1      HMC3   CMC    HMC1    109.470    3.000
+ BH1      HMC2   CMC    HMC1    109.470    3.000
+ BH1      C2C    C3C    H3C     108.340    3.000
+ BH1      C2C    C3C    CAC     111.000    3.000
+ BH1      C2C    C3C    C4C     109.470    3.000
+ BH1      H3C    C3C    CAC     108.340    3.000
+ BH1      H3C    C3C    C4C     108.810    3.000
+ BH1      CAC    C3C    C4C     109.470    3.000
+ BH1      C3C    CAC    HAC1    109.470    3.000
+ BH1      C3C    CAC    HAC2    109.470    3.000
+ BH1      C3C    CAC    CBC     111.000    3.000
+ BH1      HAC1   CAC    HAC2    107.900    3.000
+ BH1      HAC1   CAC    CBC     109.470    3.000
+ BH1      HAC2   CAC    CBC     109.470    3.000
+ BH1      CAC    CBC    HBC3    109.470    3.000
+ BH1      CAC    CBC    HBC2    109.470    3.000
+ BH1      CAC    CBC    HBC1    109.470    3.000
+ BH1      HBC3   CBC    HBC2    109.470    3.000
+ BH1      HBC3   CBC    HBC1    109.470    3.000
+ BH1      HBC2   CBC    HBC1    109.470    3.000
+ BH1      C1C    NC     HC      120.000    3.000
+ BH1      C1C    NC     C4C     120.000    3.000
+ BH1      HC     NC     C4C     120.000    3.000
+ BH1      NC     C4C    CHD     120.000    3.000
+ BH1      NC     C4C    C3C     116.500    3.000
+ BH1      CHD    C4C    C3C     120.000    3.000
+ BH1      C4C    CHD    HHD     120.000    3.000
+ BH1      C4C    CHD    C1D     120.000    3.000
+ BH1      HHD    CHD    C1D     120.000    3.000
+ BH1      CHD    C1D    ND      108.000    3.000
+ BH1      CHD    C1D    C2D     117.000    3.000
+ BH1      ND     C1D    C2D     108.000    3.000
+ BH1      C1D    ND     HD      126.000    3.000
+ BH1      C1D    ND     C4D     108.000    3.000
+ BH1      HD     ND     C4D     108.000    3.000
+ BH1      ND     C4D    CHA     108.000    3.000
+ BH1      ND     C4D    C3D     108.000    3.000
+ BH1      CHA    C4D    C3D     108.000    3.000
+ BH1      C1D    C2D    CMD     126.000    3.000
+ BH1      C1D    C2D    C3D     108.000    3.000
+ BH1      CMD    C2D    C3D     108.000    3.000
+ BH1      C2D    CMD    HMD3    109.470    3.000
+ BH1      C2D    CMD    HMD2    109.470    3.000
+ BH1      C2D    CMD    HMD1    109.470    3.000
+ BH1      HMD3   CMD    HMD2    109.470    3.000
+ BH1      HMD3   CMD    HMD1    109.470    3.000
+ BH1      HMD2   CMD    HMD1    109.470    3.000
+ BH1      C2D    C3D    CAD     108.000    3.000
+ BH1      C2D    C3D    C4D     108.000    3.000
+ BH1      CAD    C3D    C4D     108.000    3.000
+ BH1      C3D    CAD    OBD     108.000    3.000
+ BH1      C3D    CAD    CBD     108.000    3.000
+ BH1      OBD    CAD    CBD     108.000    3.000
+ BH1      CAD    CBD    HBD     109.470    3.000
+ BH1      CAD    CBD    CGD     109.500    3.000
+ BH1      CAD    CBD    CHA     109.500    3.000
+ BH1      HBD    CBD    CGD     108.810    3.000
+ BH1      HBD    CBD    CHA     109.470    3.000
+ BH1      CGD    CBD    CHA     109.500    3.000
+ BH1      CBD    CGD    O1D     120.500    3.000
+ BH1      CBD    CGD    O2D     120.000    3.000
+ BH1      O1D    CGD    O2D     119.000    3.000
+ BH1      CGD    O2D    CED     120.000    3.000
+ BH1      O2D    CED    HED3    109.470    3.000
+ BH1      O2D    CED    HED2    109.470    3.000
+ BH1      O2D    CED    HED1    109.470    3.000
+ BH1      HED3   CED    HED2    109.470    3.000
+ BH1      HED3   CED    HED1    109.470    3.000
+ BH1      HED2   CED    HED1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BH1      var_1    O1A    CGA    O2A    C1        -0.066   20.000   1
+ BH1      var_2    CGA    O2A    C1     C2       -88.608   20.000   1
+ BH1      var_3    O2A    C1     C2     C3       115.486   20.000   1
+ BH1      CONST_1  C1     C2     C3     C4         1.526    0.000   0
+ BH1      var_4    C2     C3     C5     C6       122.760   20.000   3
+ BH1      var_5    C3     C5     C6     C7       -58.932   20.000   3
+ BH1      var_6    C5     C6     C7     C8      -178.698   20.000   3
+ BH1      var_7    C6     C7     C8     C9        59.430   20.000   3
+ BH1      var_8    C7     C8     C10    C11      -53.625   20.000   3
+ BH1      var_9    C8     C10    C11    C12      177.076   20.000   3
+ BH1      var_10   C10    C11    C12    C13      178.353   20.000   3
+ BH1      var_11   C11    C12    C13    C14       62.483   20.000   3
+ BH1      var_12   C12    C13    C15    C16     -172.022   20.000   3
+ BH1      var_13   C13    C15    C16    C17      177.117   20.000   3
+ BH1      var_14   C15    C16    C17    C18     -177.677   20.000   3
+ BH1      var_15   C16    C17    C18    C19       57.511   20.000   3
+ BH1      var_16   C17    C18    C20    H201      68.225   20.000   3
+ BH1      var_17   C17    C18    C19    H191     -68.359   20.000   3
+ BH1      var_18   C12    C13    C14    H141     166.783   20.000   3
+ BH1      var_19   C7     C8     C9     H9C1     -66.224   20.000   3
+ BH1      var_20   C2     C3     C4     H4C1       8.372   20.000   1
+ BH1      var_21   O1A    CGA    CBA    CAA       -0.959   20.000   3
+ BH1      var_22   CGA    CBA    CAA    C2A      179.263   20.000   3
+ BH1      var_23   CBA    CAA    C2A    C1A     -178.265   20.000   3
+ BH1      var_24   CAA    C2A    C3A    CMA     -150.000   20.000   3
+ BH1      var_25   C2A    C3A    CMA    HMA1     -22.462   20.000   3
+ BH1      var_26   CAA    C2A    C1A    NA       -90.000   20.000   3
+ BH1      CONST_2  C2A    C1A    CHA    CBD       -7.000    0.000   0
+ BH1      CONST_3  C1A    CHA    C4D    ND       -30.000    0.000   0
+ BH1      CONST_4  C2A    C1A    NA     C4A        0.000    0.000   0
+ BH1      CONST_5  C1A    NA     C4A    CHB      180.000    0.000   0
+ BH1      var_27   NA     C4A    C3A    C2A       30.000   20.000   3
+ BH1      CONST_6  NA     C4A    CHB    C1B        0.339    0.000   0
+ BH1      var_28   C4A    CHB    C1B    NB        38.465   20.000   1
+ BH1      CONST_7  CHB    C1B    C2B    C3B      180.000    0.000   0
+ BH1      var_29   C1B    C2B    CMB    HMB1    -103.929   20.000   1
+ BH1      CONST_8  C1B    C2B    C3B    CAB      180.000    0.000   0
+ BH1      var_30   C2B    C3B    CAB    CBB       89.945   20.000   1
+ BH1      var_31   C3B    CAB    CBB    HBB1      55.277   20.000   1
+ BH1      CONST_9  CHB    C1B    NB     C4B      180.000    0.000   0
+ BH1      CONST_10 C1B    NB     C4B    CHC      180.000    0.000   0
+ BH1      CONST_11 NB     C4B    C3B    C2B        0.000    0.000   0
+ BH1      var_32   NB     C4B    CHC    C1C      -41.726   20.000   1
+ BH1      CONST_12 C4B    CHC    C1C    NC        -2.535    0.000   0
+ BH1      var_33   CHC    C1C    C2C    C3C      180.000   20.000   3
+ BH1      var_34   C1C    C2C    CMC    HMC1    -116.670   20.000   3
+ BH1      var_35   C1C    C2C    C3C    CAC      -90.000   20.000   3
+ BH1      var_36   C2C    C3C    CAC    CBC      -64.180   20.000   3
+ BH1      var_37   C3C    CAC    CBC    HBC1     -60.249   20.000   3
+ BH1      CONST_13 CHC    C1C    NC     C4C      180.000    0.000   0
+ BH1      CONST_14 C1C    NC     C4C    CHD      180.000    0.000   0
+ BH1      var_38   NC     C4C    C3C    C2C      -30.000   20.000   3
+ BH1      CONST_15 NC     C4C    CHD    C1D        1.938    0.000   0
+ BH1      var_39   C4C    CHD    C1D    C2D     -163.273   20.000   1
+ BH1      CONST_16 CHD    C1D    ND     C4D      180.000    0.000   0
+ BH1      CONST_17 C1D    ND     C4D    CHA      180.000    0.000   0
+ BH1      CONST_18 ND     C4D    C3D    C2D        0.000    0.000   0
+ BH1      CONST_19 CHD    C1D    C2D    C3D      180.000    0.000   0
+ BH1      var_40   C1D    C2D    CMD    HMD1    -127.043   20.000   1
+ BH1      CONST_20 C1D    C2D    C3D    CAD      180.000    0.000   0
+ BH1      CONST_21 C2D    C3D    CAD    CBD      180.000    0.000   0
+ BH1      CONST_22 C3D    CAD    CBD    CGD      120.000    0.000   0
+ BH1      CONST_23 CAD    CBD    CHA    C1A      180.000    0.000   0
+ BH1      var_41   CAD    CBD    CGD    O2D       63.311   20.000   3
+ BH1      var_42   CBD    CGD    O2D    CED      179.958   20.000   1
+ BH1      var_43   CGD    O2D    CED    HED1     126.985   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BH1      chir_01  CBD    CGD    CHA    CAD       positiv
+ BH1      chir_02  C3C    C4C    CAC    C2C       positiv
+ BH1      chir_03  C2C    C3C    CMC    C1C       negativ
+ BH1      chir_04  C3A    C4A    CMA    C2A       negativ
+ BH1      chir_05  C2A    C3A    C1A    CAA       negativ
+ BH1      chir_06  C8     C7     C9     C10       positiv
+ BH1      chir_07  C13    C12    C14    C15       positiv
+ BH1      chir_08  C18    C17    C19    C20       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BH1      plan-1    CGD       0.020
+ BH1      plan-1    O1D       0.020
+ BH1      plan-1    O2D       0.020
+ BH1      plan-1    CBD       0.020
+ BH1      plan-2    CHA       0.020
+ BH1      plan-2    CBD       0.020
+ BH1      plan-2    C4D       0.020
+ BH1      plan-2    C1A       0.020
+ BH1      plan-2    CAD       0.020
+ BH1      plan-2    C3D       0.020
+ BH1      plan-2    ND        0.020
+ BH1      plan-2    C2D       0.020
+ BH1      plan-2    C1D       0.020
+ BH1      plan-2    OBD       0.020
+ BH1      plan-2    CMD       0.020
+ BH1      plan-2    CHD       0.020
+ BH1      plan-2    HD        0.020
+ BH1      plan-2    C2A       0.020
+ BH1      plan-2    NA        0.020
+ BH1      plan-2    HHD       0.020
+ BH1      plan-2    HA        0.020
+ BH1      plan-3    CHD       0.020
+ BH1      plan-3    C1D       0.020
+ BH1      plan-3    C4C       0.020
+ BH1      plan-3    HHD       0.020
+ BH1      plan-3    C3C       0.020
+ BH1      plan-3    NC        0.020
+ BH1      plan-3    HC        0.020
+ BH1      plan-4    C1C       0.020
+ BH1      plan-4    C2C       0.020
+ BH1      plan-4    NC        0.020
+ BH1      plan-4    CHC       0.020
+ BH1      plan-4    C4B       0.020
+ BH1      plan-4    HHC       0.020
+ BH1      plan-4    HC        0.020
+ BH1      plan-5    NC        0.020
+ BH1      plan-5    C4C       0.020
+ BH1      plan-5    C1C       0.020
+ BH1      plan-5    HC        0.020
+ BH1      plan-6    C4B       0.020
+ BH1      plan-6    CHC       0.020
+ BH1      plan-6    C3B       0.020
+ BH1      plan-6    NB        0.020
+ BH1      plan-6    C2B       0.020
+ BH1      plan-6    C1B       0.020
+ BH1      plan-6    CAB       0.020
+ BH1      plan-6    CMB       0.020
+ BH1      plan-6    CHB       0.020
+ BH1      plan-6    HB        0.020
+ BH1      plan-6    HHC       0.020
+ BH1      plan-6    HHB       0.020
+ BH1      plan-7    CAB       0.020
+ BH1      plan-7    C3B       0.020
+ BH1      plan-7    CBB       0.020
+ BH1      plan-7    OBB       0.020
+ BH1      plan-8    CHB       0.020
+ BH1      plan-8    C1B       0.020
+ BH1      plan-8    C4A       0.020
+ BH1      plan-8    HHB       0.020
+ BH1      plan-8    C3A       0.020
+ BH1      plan-8    NA        0.020
+ BH1      plan-8    HA        0.020
+ BH1      plan-9    NA        0.020
+ BH1      plan-9    C4A       0.020
+ BH1      plan-9    C1A       0.020
+ BH1      plan-9    HA        0.020
+ BH1      plan-10   CGA       0.020
+ BH1      plan-10   CBA       0.020
+ BH1      plan-10   O1A       0.020
+ BH1      plan-10   O2A       0.020
+ BH1      plan-11   C2        0.020
+ BH1      plan-11   C1        0.020
+ BH1      plan-11   C3        0.020
+ BH1      plan-11   H2        0.020
+ BH1      plan-11   C4        0.020
+ BH1      plan-11   C5        0.020
+# ------------------------------------------------------

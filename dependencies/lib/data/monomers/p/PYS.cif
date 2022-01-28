@@ -1,0 +1,130 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PYS     PYS      2-PYRIDINETHIOL     NON-POLYMER     12     7     .     
+#
+data_comp_PYS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PYS     N1      N       NRD6    0       0.095       -1.389      -0.428      
+PYS     C2      C       CR6     0       1.009       -0.403      -0.366      
+PYS     C3      C       CR16    0       0.671       0.918       -0.034      
+PYS     C4      C       CR16    0       -0.649      1.217       0.239       
+PYS     C5      C       CR16    0       -1.602      0.216       0.180       
+PYS     C6      C       CR16    0       -1.186      -1.065      -0.156      
+PYS     S2      S       SH1     0       2.680       -0.836      -0.723      
+PYS     H3      H       H       0       1.332       1.584       0.001       
+PYS     H4      H       H       0       -0.896      2.093       0.462       
+PYS     H5      H       H       0       -2.510      0.398       0.363       
+PYS     H6      H       H       0       -1.829      -1.746      -0.197      
+PYS     HS2     H       HSH1    0       3.287       0.229       -0.589      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PYS       N1        C2        DOUBLE    y         1.331     0.014     1.331     0.014     
+PYS       N1        C6        SINGLE    y         1.342     0.010     1.342     0.010     
+PYS       C2        C3        SINGLE    y         1.388     0.015     1.388     0.015     
+PYS       C2        S2        SINGLE    n         1.762     0.016     1.762     0.016     
+PYS       C3        C4        DOUBLE    y         1.372     0.011     1.372     0.011     
+PYS       C4        C5        SINGLE    y         1.375     0.011     1.375     0.011     
+PYS       C5        C6        DOUBLE    y         1.374     0.015     1.374     0.015     
+PYS       C3        H3        SINGLE    n         1.082     0.013     0.975     0.010     
+PYS       C4        H4        SINGLE    n         1.082     0.013     0.975     0.010     
+PYS       C5        H5        SINGLE    n         1.082     0.013     0.975     0.010     
+PYS       C6        H6        SINGLE    n         1.082     0.013     0.975     0.010     
+PYS       S2        HS2       SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PYS          C2          N1          C6     116.810    1.50
+PYS          N1          C2          C3     122.588    1.50
+PYS          N1          C2          S2     116.977    3.00
+PYS          C3          C2          S2     120.435    2.83
+PYS          C2          C3          C4     118.838    1.50
+PYS          C2          C3          H3     120.393    1.50
+PYS          C4          C3          H3     120.770    1.50
+PYS          C3          C4          C5     119.445    1.50
+PYS          C3          C4          H4     120.187    1.50
+PYS          C5          C4          H4     120.368    1.50
+PYS          C4          C5          C6     118.419    1.50
+PYS          C4          C5          H5     120.863    1.50
+PYS          C6          C5          H5     120.722    1.50
+PYS          N1          C6          C5     123.896    1.50
+PYS          N1          C6          H6     117.838    1.50
+PYS          C5          C6          H6     118.266    1.50
+PYS          C2          S2         HS2     103.495    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PYS       const_sp2_sp2_2          S2          C2          N1          C6     180.000   10.00     2
+PYS              const_19          C5          C6          N1          C2       0.000   10.00     2
+PYS       const_sp2_sp2_5          S2          C2          C3          C4     180.000   10.00     2
+PYS       const_sp2_sp2_7          C2          C3          C4          C5       0.000   10.00     2
+PYS              const_11          C3          C4          C5          C6       0.000   10.00     2
+PYS              const_15          C4          C5          C6          N1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PYS    plan-1          C2   0.020
+PYS    plan-1          C3   0.020
+PYS    plan-1          C4   0.020
+PYS    plan-1          C5   0.020
+PYS    plan-1          C6   0.020
+PYS    plan-1          H3   0.020
+PYS    plan-1          H4   0.020
+PYS    plan-1          H5   0.020
+PYS    plan-1          H6   0.020
+PYS    plan-1          N1   0.020
+PYS    plan-1          S2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PYS SMILES           ACDLabs              10.04 Sc1ncccc1
+PYS SMILES_CANONICAL CACTVS               3.341 Sc1ccccn1
+PYS SMILES           CACTVS               3.341 Sc1ccccn1
+PYS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccnc(c1)S"
+PYS SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccnc(c1)S"
+PYS InChI            InChI                1.03  "InChI=1S/C5H5NS/c7-5-3-1-2-4-6-5/h1-4H,(H,6,7)"
+PYS InChIKey         InChI                1.03  WHMDPDGBKYUEMW-UHFFFAOYSA-N
+PYS ?                acedrg               202         "dictionary generator"                  
+PYS ?                acedrg_database      11          "data source"                           
+PYS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PYS ?                refmac5              5.8.0189    "optimization tool"                     

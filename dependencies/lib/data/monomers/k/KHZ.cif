@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KHZ     KHZ      1~{H}-1,2,3,4-tetrazol-5-ylmethyldiazane     NON-POLYMER     14     8     .     
+#
+data_comp_KHZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KHZ     C1      C       CR5     0       -13.865     2.374       -0.389      
+KHZ     N       N       NT2     0       -10.844     2.268       -0.373      
+KHZ     C       C       CH2     0       -12.994     1.258       -0.865      
+KHZ     N1      N       NT1     0       -11.732     1.181       -0.146      
+KHZ     N2      N       NRD5    0       -14.699     2.286       0.618       
+KHZ     N3      N       NRD5    0       -15.297     3.503       0.729       
+KHZ     N4      N       NRD5    0       -14.843     4.304       -0.178      
+KHZ     N5      N       NR5     0       -13.940     3.605       -0.888      
+KHZ     H1      H       H       0       -11.067     2.997       0.105       
+KHZ     H2      H       H       0       -10.797     2.507       -1.240      
+KHZ     H3      H       H       0       -12.808     1.379       -1.820      
+KHZ     H4      H       H       0       -13.471     0.408       -0.756      
+KHZ     H5      H       H       0       -11.766     0.961       0.712       
+KHZ     H6      H       H       0       -13.502     3.967       -1.568      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KHZ       C         N1        SINGLE    n         1.454     0.0100    1.454     0.0100    
+KHZ       C1        C         SINGLE    n         1.493     0.0100    1.493     0.0100    
+KHZ       C1        N5        SINGLE    y         1.330     0.0100    1.330     0.0100    
+KHZ       N4        N5        SINGLE    y         1.345     0.0100    1.345     0.0100    
+KHZ       N         N1        SINGLE    n         1.420     0.0126    1.420     0.0126    
+KHZ       C1        N2        DOUBLE    y         1.310     0.0100    1.310     0.0100    
+KHZ       N3        N4        DOUBLE    y         1.293     0.0100    1.293     0.0100    
+KHZ       N2        N3        SINGLE    y         1.361     0.0121    1.361     0.0121    
+KHZ       N         H1        SINGLE    n         1.036     0.016     0.900     0.0200    
+KHZ       N         H2        SINGLE    n         1.036     0.016     0.900     0.0200    
+KHZ       C         H3        SINGLE    n         1.089     0.010     0.981     0.0105    
+KHZ       C         H4        SINGLE    n         1.089     0.010     0.981     0.0105    
+KHZ       N1        H5        SINGLE    n         1.036     0.016     0.886     0.0200    
+KHZ       N5        H6        SINGLE    n         1.016     0.010     0.886     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KHZ           C          C1          N5     127.265    1.59
+KHZ           C          C1          N2     124.510    2.54
+KHZ          N5          C1          N2     108.225    1.50
+KHZ          N1           N          H1     111.837    3.00
+KHZ          N1           N          H2     111.837    3.00
+KHZ          H1           N          H2     107.713    3.00
+KHZ          N1           C          C1     112.622    2.07
+KHZ          N1           C          H3     108.790    1.50
+KHZ          N1           C          H4     108.790    1.50
+KHZ          C1           C          H3     109.254    1.50
+KHZ          C1           C          H4     109.254    1.50
+KHZ          H3           C          H4     107.966    1.50
+KHZ           C          N1           N     113.051    3.00
+KHZ           C          N1          H5     117.419    2.72
+KHZ           N          N1          H5     111.837    3.00
+KHZ          C1          N2          N3     106.517    1.50
+KHZ          N4          N3          N2     110.220    1.50
+KHZ          N5          N4          N3     106.495    1.50
+KHZ          C1          N5          N4     108.543    1.50
+KHZ          C1          N5          H6     129.732    3.00
+KHZ          N4          N5          H6     121.725    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KHZ             sp2_sp3_2          N5          C1           C          N1     -90.000   10.00     6
+KHZ              const_10           C          C1          N2          N3     180.000   10.00     2
+KHZ       const_sp2_sp2_3           C          C1          N5          N4     180.000   10.00     2
+KHZ             sp3_sp3_8          H1           N          N1           C     -60.000   10.00     3
+KHZ             sp3_sp3_1          C1           C          N1           N     180.000   10.00     3
+KHZ       const_sp2_sp2_8          C1          N2          N3          N4       0.000   10.00     2
+KHZ       const_sp2_sp2_7          N2          N3          N4          N5       0.000   10.00     2
+KHZ       const_sp2_sp2_5          N3          N4          N5          C1       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+KHZ    chir_1    N1    N    C    H5    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KHZ    plan-1           C   0.020
+KHZ    plan-1          C1   0.020
+KHZ    plan-1          H6   0.020
+KHZ    plan-1          N2   0.020
+KHZ    plan-1          N3   0.020
+KHZ    plan-1          N4   0.020
+KHZ    plan-1          N5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KHZ            InChI                InChI  1.03 InChI=1S/C2H6N6/c3-4-1-2-5-7-8-6-2/h4H,1,3H2,(H,5,6,7,8)
+KHZ         InChIKey                InChI  1.03                              LKTRPEVOGNHGTR-UHFFFAOYSA-N
+KHZ SMILES_CANONICAL               CACTVS 3.385                                            NNCc1[nH]nnn1
+KHZ           SMILES               CACTVS 3.385                                            NNCc1[nH]nnn1
+KHZ SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                          C(c1[nH]nnn1)NN
+KHZ           SMILES "OpenEye OEToolkits" 2.0.7                                          C(c1[nH]nnn1)NN
+KHZ ?                acedrg               217         "dictionary generator"                  
+KHZ ?                acedrg_database      11          "data source"                           
+KHZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KHZ ?                refmac5              5.8.0253    "optimization tool"                     

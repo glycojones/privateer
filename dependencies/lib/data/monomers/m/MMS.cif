@@ -1,0 +1,195 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MMS     MMS      MIMOSINE     NON-POLYMER     24     14     .     
+#
+data_comp_MMS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MMS     O4      O       OH1     0       2.979       1.970       -1.540      
+MMS     C1      C       C       0       -1.869      0.362       1.367       
+MMS     O1      O       O       0       -2.197      -0.583      2.112       
+MMS     O2      O       OC      -1      -1.486      1.487       1.744       
+MMS     N1      N       NT3     1       -3.320      -0.322      -0.524      
+MMS     C2      C       CH1     0       -1.943      0.117       -0.148      
+MMS     C3      C       CH2     0       -0.889      -0.904      -0.613      
+MMS     N2      N       NR6     0       0.496       -0.466      -0.328      
+MMS     C8      C       CR16    0       1.052       0.546       -1.088      
+MMS     C4      C       CR16    0       1.222       -1.057      0.681       
+MMS     C7      C       CR6     0       2.416       0.976       -0.803      
+MMS     C5      C       CR16    0       2.500       -0.688      0.980       
+MMS     C6      C       CR6     0       3.169       0.347       0.259       
+MMS     O3      O       O       0       4.350       0.710       0.513       
+MMS     HO4     H       H       0       3.128       2.648       -1.035      
+MMS     HN11    H       H       0       -3.308      -0.786      -1.309      
+MMS     HN12    H       H       0       -3.854      0.409       -0.632      
+MMS     H13     H       H       0       -3.681      -0.857      0.123       
+MMS     HC2     H       H       0       -1.760      0.970       -0.606      
+MMS     HC31    H       H       0       -0.982      -1.037      -1.578      
+MMS     HC32    H       H       0       -1.064      -1.762      -0.174      
+MMS     HC8     H       H       0       0.547       0.949       -1.778      
+MMS     HC4     H       H       0       0.826       -1.745      1.187       
+MMS     HC5     H       H       0       2.955       -1.125      1.682       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MMS       O4        C7        SINGLE    n         1.359     0.010     1.359     0.010     
+MMS       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+MMS       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+MMS       C1        C2        SINGLE    n         1.533     0.011     1.533     0.011     
+MMS       N1        C2        SINGLE    n         1.488     0.011     1.488     0.011     
+MMS       C2        C3        SINGLE    n         1.535     0.011     1.535     0.011     
+MMS       C3        N2        SINGLE    n         1.476     0.010     1.476     0.010     
+MMS       N2        C8        SINGLE    y         1.369     0.013     1.369     0.013     
+MMS       N2        C4        SINGLE    y         1.362     0.013     1.362     0.013     
+MMS       C8        C7        DOUBLE    y         1.435     0.020     1.435     0.020     
+MMS       C4        C5        DOUBLE    y         1.357     0.010     1.357     0.010     
+MMS       C7        C6        SINGLE    y         1.440     0.010     1.440     0.010     
+MMS       C5        C6        SINGLE    y         1.422     0.011     1.422     0.011     
+MMS       C6        O3        DOUBLE    n         1.260     0.015     1.260     0.015     
+MMS       O4        HO4       SINGLE    n         0.970     0.012     0.858     0.020     
+MMS       N1        HN11      SINGLE    n         1.036     0.016     0.911     0.020     
+MMS       N1        HN12      SINGLE    n         1.036     0.016     0.911     0.020     
+MMS       N1        H13       SINGLE    n         1.036     0.016     0.911     0.020     
+MMS       C2        HC2       SINGLE    n         1.089     0.010     0.985     0.020     
+MMS       C3        HC31      SINGLE    n         1.089     0.010     0.979     0.015     
+MMS       C3        HC32      SINGLE    n         1.089     0.010     0.979     0.015     
+MMS       C8        HC8       SINGLE    n         1.082     0.013     0.945     0.020     
+MMS       C4        HC4       SINGLE    n         1.082     0.013     0.941     0.015     
+MMS       C5        HC5       SINGLE    n         1.082     0.013     0.944     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MMS          C7          O4         HO4     109.337    3.00
+MMS          O1          C1          O2     125.721    1.50
+MMS          O1          C1          C2     117.139    1.50
+MMS          O2          C1          C2     117.139    1.50
+MMS          C2          N1        HN11     109.853    1.85
+MMS          C2          N1        HN12     109.853    1.85
+MMS          C2          N1         H13     109.853    1.85
+MMS        HN11          N1        HN12     109.028    2.41
+MMS        HN11          N1         H13     109.028    2.41
+MMS        HN12          N1         H13     109.028    2.41
+MMS          C1          C2          N1     109.414    1.50
+MMS          C1          C2          C3     111.500    2.27
+MMS          C1          C2         HC2     108.600    1.50
+MMS          N1          C2          C3     110.327    1.50
+MMS          N1          C2         HC2     108.444    1.50
+MMS          C3          C2         HC2     108.202    1.50
+MMS          C2          C3          N2     112.079    1.50
+MMS          C2          C3        HC31     108.744    1.50
+MMS          C2          C3        HC32     108.744    1.50
+MMS          N2          C3        HC31     108.980    1.50
+MMS          N2          C3        HC32     108.980    1.50
+MMS        HC31          C3        HC32     107.893    1.50
+MMS          C3          N2          C8     120.023    1.50
+MMS          C3          N2          C4     120.023    1.50
+MMS          C8          N2          C4     119.955    1.50
+MMS          N2          C8          C7     118.489    1.50
+MMS          N2          C8         HC8     120.133    1.50
+MMS          C7          C8         HC8     121.378    1.50
+MMS          N2          C4          C5     122.562    1.50
+MMS          N2          C4         HC4     118.783    1.50
+MMS          C5          C4         HC4     118.655    1.50
+MMS          O4          C7          C8     119.956    2.55
+MMS          O4          C7          C6     119.437    1.50
+MMS          C8          C7          C6     120.607    1.50
+MMS          C4          C5          C6     121.780    1.50
+MMS          C4          C5         HC5     119.268    1.50
+MMS          C6          C5         HC5     118.951    1.50
+MMS          C7          C6          C5     116.607    1.50
+MMS          C7          C6          O3     120.186    1.50
+MMS          C5          C6          O3     123.207    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MMS              const_12          O3          C6          C7          O4       0.000   10.00     2
+MMS              const_14          C4          C5          C6          O3     180.000   10.00     2
+MMS             sp2_sp3_3          O1          C1          C2          N1       0.000   10.00     6
+MMS             sp3_sp3_4          C1          C2          N1        HN11      60.000   10.00     3
+MMS            sp3_sp3_10          C1          C2          C3          N2     180.000   10.00     3
+MMS            sp2_sp3_10          C8          N2          C3          C2     -90.000   10.00     6
+MMS       const_sp2_sp2_2          C7          C8          N2          C3     180.000   10.00     2
+MMS              const_22          C5          C4          N2          C3     180.000   10.00     2
+MMS       const_sp2_sp2_7          O4          C7          C8          N2     180.000   10.00     2
+MMS              const_17          N2          C4          C5          C6       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MMS    chir_1    C2    N1    C1    C3    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MMS    plan-1          C3   0.020
+MMS    plan-1          C4   0.020
+MMS    plan-1          C5   0.020
+MMS    plan-1          C6   0.020
+MMS    plan-1          C7   0.020
+MMS    plan-1          C8   0.020
+MMS    plan-1         HC4   0.020
+MMS    plan-1         HC5   0.020
+MMS    plan-1         HC8   0.020
+MMS    plan-1          N2   0.020
+MMS    plan-1          O3   0.020
+MMS    plan-1          O4   0.020
+MMS    plan-2          C1   0.020
+MMS    plan-2          C2   0.020
+MMS    plan-2          O1   0.020
+MMS    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MMS SMILES           ACDLabs              10.04 "O=C(O)C(N)CN1C=CC(=O)C(O)=C1"
+MMS SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CN1C=CC(=O)C(=C1)O)C(O)=O"
+MMS SMILES           CACTVS               3.341 "N[CH](CN1C=CC(=O)C(=C1)O)C(O)=O"
+MMS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1=CN(C=C(C1=O)O)C[C@@H](C(=O)O)N"
+MMS SMILES           "OpenEye OEToolkits" 1.5.0 "C1=CN(C=C(C1=O)O)CC(C(=O)O)N"
+MMS InChI            InChI                1.03  "InChI=1S/C8H10N2O4/c9-5(8(13)14)3-10-2-1-6(11)7(12)4-10/h1-2,4-5,12H,3,9H2,(H,13,14)/t5-/m0/s1"
+MMS InChIKey         InChI                1.03  WZNJWVWKTVETCG-YFKPBYRVSA-N
+MMS ?                acedrg               202         "dictionary generator"                  
+MMS ?                acedrg_database      11          "data source"                           
+MMS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MMS ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,551 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LOS      LOS '.                                   ' non-polymer        71  30 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LOS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LOS           HE21   H    H         0.000     -0.662   -0.355    0.335
+ LOS           NE2    N    NH1       0.000     -0.164   -0.960   -0.302
+ LOS           CD2    C    CH2       0.000      0.863   -1.832   -0.031
+ LOS           HD22   H    H         0.000      0.517   -2.570    0.696
+ LOS           HD21   H    H         0.000      1.701   -1.273    0.390
+ LOS           CE1    C    CH2       0.000     -0.337   -1.108   -1.599
+ LOS           HE11   H    H         0.000     -0.190   -0.122   -2.044
+ LOS           HE12   H    H         0.000     -1.374   -1.419   -1.738
+ LOS           ND1    N    N         0.000      0.468   -1.980   -2.181
+ LOS           CG     C    CH2       0.000      1.261   -2.462   -1.162
+ LOS           HG2    H    H         0.000      2.313   -2.242   -1.352
+ LOS           HG1    H    H         0.000      1.130   -3.540   -1.045
+ LOS           OS     OS   OS        2.000      0.946   -2.849   -3.989
+ LOS           N37    N    N         0.000     -0.456   -1.504   -4.816
+ LOS           C36    C    CH2       0.000     -1.238   -0.609   -4.148
+ LOS           H361   H    H         0.000     -0.503   -0.029   -3.586
+ LOS           H362   H    H         0.000     -1.795   -1.251   -3.462
+ LOS           C35    C    CH2       0.000     -2.118    0.256   -4.793
+ LOS           H351   H    H         0.000     -1.799    1.252   -4.478
+ LOS           H352   H    H         0.000     -3.092    0.030   -4.353
+ LOS           C34    C    CH2       0.000     -2.214    0.217   -6.169
+ LOS           H341   H    H         0.000     -1.975    1.234   -6.487
+ LOS           H342   H    H         0.000     -3.269    0.014   -6.363
+ LOS           C33    C    CH2       0.000     -1.442   -0.672   -6.864
+ LOS           H33B   H    H         0.000     -0.868   -0.047   -7.551
+ LOS           H33A   H    H         0.000     -2.163   -1.266   -7.429
+ LOS           C32    C    CH1       0.000     -0.567   -1.532   -6.164
+ LOS           H332   H    H         0.000     -1.365   -2.283   -6.085
+ LOS           C31    C    CH1       0.000      0.274   -2.494   -6.848
+ LOS           H331   H    H         0.000      1.073   -1.744   -6.927
+ LOS           C30    C    CH2       0.000      0.302   -2.675   -8.241
+ LOS           H301   H    H         0.000      0.562   -1.688   -8.628
+ LOS           H302   H    H         0.000     -0.735   -2.904   -8.496
+ LOS           C29    C    CH2       0.000      1.127   -3.615   -8.794
+ LOS           H291   H    H         0.000      1.747   -3.043   -9.487
+ LOS           H292   H    H         0.000      0.449   -4.257   -9.359
+ LOS           C28    C    CH2       0.000      1.937   -4.395   -7.985
+ LOS           H281   H    H         0.000      2.952   -4.210   -8.343
+ LOS           H282   H    H         0.000      1.653   -5.424   -8.214
+ LOS           C27    C    CH2       0.000      1.884   -4.192   -6.604
+ LOS           H272   H    H         0.000      2.924   -3.968   -6.356
+ LOS           H271   H    H         0.000      1.627   -5.184   -6.227
+ LOS           N26    N    N         0.000      1.069   -3.262   -6.034
+ LOS           N13    N    N         0.000      2.535   -1.524   -4.086
+ LOS           C12    C    CH2       0.000      2.446   -0.215   -4.442
+ LOS           H121   H    H         0.000      1.771    0.201   -3.691
+ LOS           H122   H    H         0.000      1.935   -0.255   -5.407
+ LOS           C11    C    CH2       0.000      3.575    0.587   -4.547
+ LOS           H111   H    H         0.000      3.385    1.413   -3.859
+ LOS           H112   H    H         0.000      3.549    0.957   -5.575
+ LOS           C10    C    CH2       0.000      4.822    0.042   -4.283
+ LOS           H101   H    H         0.000      5.226    0.672   -3.487
+ LOS           H102   H    H         0.000      5.388    0.210   -5.202
+ LOS           C9     C    CH2       0.000      4.921   -1.279   -3.918
+ LOS           H92    H    H         0.000      5.427   -1.253   -2.951
+ LOS           H91    H    H         0.000      5.589   -1.714   -4.665
+ LOS           C8     C    CH1       0.000      3.754   -2.058   -3.818
+ LOS           H88    H    H         0.000      3.650   -1.769   -2.763
+ LOS           C7     C    CH1       0.000      3.750   -3.469   -3.434
+ LOS           H77    H    H         0.000      3.857   -3.760   -4.489
+ LOS           N2     N    N         0.000      2.519   -4.059   -3.393
+ LOS           C6     C    C1        0.000      4.880   -4.230   -3.107
+ LOS           H61    H    H         0.000      5.857   -3.776   -3.136
+ LOS           C5     C    C1        0.000      4.754   -5.547   -2.750
+ LOS           H51    H    H         0.000      5.633   -6.120   -2.504
+ LOS           C4     C    CH2       0.000      3.507   -6.150   -2.702
+ LOS           H41    H    H         0.000      3.401   -6.514   -1.678
+ LOS           H42    H    H         0.000      3.570   -7.000   -3.384
+ LOS           C3     C    CH2       0.000      2.405   -5.367   -3.034
+ LOS           H32    H    H         0.000      1.778   -5.447   -2.143
+ LOS           H31    H    H         0.000      1.949   -5.931   -3.850
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LOS      HE21   n/a    NE2    START
+ LOS      NE2    HE21   CE1    .
+ LOS      CD2    NE2    HD21   .
+ LOS      HD22   CD2    .      .
+ LOS      HD21   CD2    .      .
+ LOS      CE1    NE2    ND1    .
+ LOS      HE11   CE1    .      .
+ LOS      HE12   CE1    .      .
+ LOS      ND1    CE1    OS     .
+ LOS      CG     ND1    HG1    .
+ LOS      HG2    CG     .      .
+ LOS      HG1    CG     .      .
+ LOS      OS     ND1    N13    .
+ LOS      N37    OS     C32    .
+ LOS      C36    N37    C35    .
+ LOS      H361   C36    .      .
+ LOS      H362   C36    .      .
+ LOS      C35    C36    C34    .
+ LOS      H351   C35    .      .
+ LOS      H352   C35    .      .
+ LOS      C34    C35    C33    .
+ LOS      H341   C34    .      .
+ LOS      H342   C34    .      .
+ LOS      C33    C34    H33A   .
+ LOS      H33B   C33    .      .
+ LOS      H33A   C33    .      .
+ LOS      C32    N37    C31    .
+ LOS      H332   C32    .      .
+ LOS      C31    C32    N26    .
+ LOS      H331   C31    .      .
+ LOS      C30    C31    C29    .
+ LOS      H301   C30    .      .
+ LOS      H302   C30    .      .
+ LOS      C29    C30    C28    .
+ LOS      H291   C29    .      .
+ LOS      H292   C29    .      .
+ LOS      C28    C29    C27    .
+ LOS      H281   C28    .      .
+ LOS      H282   C28    .      .
+ LOS      C27    C28    H271   .
+ LOS      H272   C27    .      .
+ LOS      H271   C27    .      .
+ LOS      N26    C31    .      .
+ LOS      N13    OS     C8     .
+ LOS      C12    N13    C11    .
+ LOS      H121   C12    .      .
+ LOS      H122   C12    .      .
+ LOS      C11    C12    C10    .
+ LOS      H111   C11    .      .
+ LOS      H112   C11    .      .
+ LOS      C10    C11    C9     .
+ LOS      H101   C10    .      .
+ LOS      H102   C10    .      .
+ LOS      C9     C10    H91    .
+ LOS      H92    C9     .      .
+ LOS      H91    C9     .      .
+ LOS      C8     N13    C7     .
+ LOS      H88    C8     .      .
+ LOS      C7     C8     C6     .
+ LOS      H77    C7     .      .
+ LOS      N2     C7     .      .
+ LOS      C6     C7     C5     .
+ LOS      H61    C6     .      .
+ LOS      C5     C6     C4     .
+ LOS      H51    C5     .      .
+ LOS      C4     C5     C3     .
+ LOS      H41    C4     .      .
+ LOS      H42    C4     .      .
+ LOS      C3     C4     H31    .
+ LOS      H32    C3     .      .
+ LOS      H31    C3     .      END
+ LOS      OS     N2     .    ADD
+ LOS      OS     N26    .    ADD
+ LOS      N2     C3     .    ADD
+ LOS      C8     C9     .    ADD
+ LOS      N26    C27    .    ADD
+ LOS      C32    C33    .    ADD
+ LOS      CG     CD2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LOS       OS        N2        single    2.072     0.020     2.072     0.020     
+LOS       N13       OS        single    2.071     0.020     2.071     0.020     
+LOS       OS        N26       single    2.090     0.020     2.090     0.020     
+LOS       N37       OS        single    2.112     0.020     2.112     0.020     
+LOS       OS        ND1       single    2.063     0.020     2.063     0.020     
+LOS       N2        C3        single    1.455     0.020     1.455     0.020     
+LOS       N2        C7        single    1.455     0.020     1.455     0.020     
+LOS       C3        C4        single    1.524     0.020     1.524     0.020     
+LOS       H31       C3        single    1.089     0.010     0.989     0.005     
+LOS       H32       C3        single    1.089     0.010     0.989     0.005     
+LOS       C4        C5        single    1.510     0.020     1.510     0.020     
+LOS       H41       C4        single    1.089     0.010     0.989     0.005     
+LOS       H42       C4        single    1.089     0.010     0.989     0.005     
+LOS       C5        C6        double    1.330     0.020     1.330     0.020     
+LOS       H51       C5        single    1.082     0.013     0.975     0.010     
+LOS       C6        C7        single    1.510     0.020     1.510     0.020     
+LOS       H61       C6        single    1.082     0.013     0.975     0.010     
+LOS       C7        C8        single    1.524     0.020     1.524     0.020     
+LOS       H77       C7        single    1.089     0.010     0.989     0.005     
+LOS       C8        C9        single    1.524     0.020     1.524     0.020     
+LOS       C8        N13       single    1.455     0.020     1.455     0.020     
+LOS       H88       C8        single    1.089     0.010     0.989     0.005     
+LOS       C9        C10       single    1.524     0.020     1.524     0.020     
+LOS       H91       C9        single    1.089     0.010     0.989     0.005     
+LOS       H92       C9        single    1.089     0.010     0.989     0.005     
+LOS       C10       C11       single    1.524     0.020     1.524     0.020     
+LOS       H101      C10       single    1.089     0.010     0.989     0.005     
+LOS       H102      C10       single    1.089     0.010     0.989     0.005     
+LOS       C11       C12       single    1.524     0.020     1.524     0.020     
+LOS       H111      C11       single    1.089     0.010     0.989     0.005     
+LOS       H112      C11       single    1.089     0.010     0.989     0.005     
+LOS       C12       N13       single    1.455     0.020     1.455     0.020     
+LOS       H121      C12       single    1.089     0.010     0.989     0.005     
+LOS       H122      C12       single    1.089     0.010     0.989     0.005     
+LOS       N26       C27       single    1.455     0.020     1.455     0.020     
+LOS       N26       C31       single    1.455     0.020     1.455     0.020     
+LOS       C27       C28       single    1.524     0.020     1.524     0.020     
+LOS       H271      C27       single    1.089     0.010     0.989     0.005     
+LOS       H272      C27       single    1.089     0.010     0.989     0.005     
+LOS       C28       C29       single    1.524     0.020     1.524     0.020     
+LOS       H281      C28       single    1.089     0.010     0.989     0.005     
+LOS       H282      C28       single    1.089     0.010     0.989     0.005     
+LOS       C29       C30       single    1.524     0.020     1.524     0.020     
+LOS       H291      C29       single    1.089     0.010     0.989     0.005     
+LOS       H292      C29       single    1.089     0.010     0.989     0.005     
+LOS       C30       C31       single    1.524     0.020     1.524     0.020     
+LOS       H301      C30       single    1.089     0.010     0.989     0.005     
+LOS       H302      C30       single    1.089     0.010     0.989     0.005     
+LOS       C31       C32       single    1.524     0.020     1.524     0.020     
+LOS       H331      C31       single    1.089     0.010     0.989     0.005     
+LOS       C32       C33       single    1.524     0.020     1.524     0.020     
+LOS       C32       N37       single    1.455     0.020     1.455     0.020     
+LOS       H332      C32       single    1.089     0.010     0.989     0.005     
+LOS       C33       C34       single    1.524     0.020     1.524     0.020     
+LOS       H33A      C33       single    1.089     0.010     0.989     0.005     
+LOS       H33B      C33       single    1.089     0.010     0.989     0.005     
+LOS       C34       C35       single    1.524     0.020     1.524     0.020     
+LOS       H341      C34       single    1.089     0.010     0.989     0.005     
+LOS       H342      C34       single    1.089     0.010     0.989     0.005     
+LOS       C35       C36       single    1.524     0.020     1.524     0.020     
+LOS       H351      C35       single    1.089     0.010     0.989     0.005     
+LOS       H352      C35       single    1.089     0.010     0.989     0.005     
+LOS       C36       N37       single    1.455     0.020     1.455     0.020     
+LOS       H361      C36       single    1.089     0.010     0.989     0.005     
+LOS       H362      C36       single    1.089     0.010     0.989     0.005     
+LOS       CG        CD2       single    1.524     0.020     1.524     0.020     
+LOS       CG        ND1       single    1.455     0.020     1.455     0.020     
+LOS       HG1       CG        single    1.089     0.010     0.989     0.005     
+LOS       HG2       CG        single    1.089     0.010     0.989     0.005     
+LOS       CD2       NE2       single    1.450     0.020     1.450     0.020     
+LOS       HD21      CD2       single    1.089     0.010     0.989     0.005     
+LOS       HD22      CD2       single    1.089     0.010     0.989     0.005     
+LOS       ND1       CE1       single    1.455     0.020     1.455     0.020     
+LOS       CE1       NE2       single    1.450     0.020     1.450     0.020     
+LOS       HE11      CE1       single    1.089     0.010     0.989     0.005     
+LOS       HE12      CE1       single    1.089     0.010     0.989     0.005     
+LOS       NE2       HE21      single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LOS      HE21   NE2    CD2     118.500    3.000
+ LOS      HE21   NE2    CE1     118.500    3.000
+ LOS      CD2    NE2    CE1     120.000    3.000
+ LOS      NE2    CD2    HD22    109.470    3.000
+ LOS      NE2    CD2    HD21    109.470    3.000
+ LOS      NE2    CD2    CG      112.000    3.000
+ LOS      HD22   CD2    HD21    107.900    3.000
+ LOS      HD22   CD2    CG      109.470    3.000
+ LOS      HD21   CD2    CG      109.470    3.000
+ LOS      NE2    CE1    HE11    109.470    3.000
+ LOS      NE2    CE1    HE12    109.470    3.000
+ LOS      NE2    CE1    ND1     109.500    3.000
+ LOS      HE11   CE1    HE12    107.900    3.000
+ LOS      HE11   CE1    ND1     109.470    3.000
+ LOS      HE12   CE1    ND1     109.470    3.000
+ LOS      CE1    ND1    CG      120.000    3.000
+ LOS      CE1    ND1    OS      120.000    3.000
+ LOS      CG     ND1    OS      120.000    3.000
+ LOS      ND1    CG     HG2     109.470    3.000
+ LOS      ND1    CG     HG1     109.470    3.000
+ LOS      ND1    CG     CD2     105.000    3.000
+ LOS      HG2    CG     HG1     107.900    3.000
+ LOS      HG2    CG     CD2     109.470    3.000
+ LOS      HG1    CG     CD2     109.470    3.000
+ LOS      ND1    OS     N37      90.000    3.000
+ LOS      ND1    OS     N13      90.000    3.000
+ LOS      ND1    OS     N2       90.000    3.000
+ LOS      ND1    OS     N26     180.000    3.000
+ LOS      N37    OS     N13      90.000    3.000
+ LOS      N2     OS     N26      90.000    3.000
+ LOS      N37    OS     N2      180.000    3.000
+ LOS      N13    OS     N2       90.000    3.000
+ LOS      N37    OS     N26      90.000    3.000
+ LOS      N13    OS     N26      90.000    3.000
+ LOS      OS     N37    C36     120.000    3.000
+ LOS      OS     N37    C32     120.000    3.000
+ LOS      C36    N37    C32     112.000    3.000
+ LOS      N37    C36    H361    109.470    3.000
+ LOS      N37    C36    H362    109.470    3.000
+ LOS      N37    C36    C35     105.000    3.000
+ LOS      H361   C36    H362    107.900    3.000
+ LOS      H361   C36    C35     109.470    3.000
+ LOS      H362   C36    C35     109.470    3.000
+ LOS      C36    C35    H351    109.470    3.000
+ LOS      C36    C35    H352    109.470    3.000
+ LOS      C36    C35    C34     111.000    3.000
+ LOS      H351   C35    H352    107.900    3.000
+ LOS      H351   C35    C34     109.470    3.000
+ LOS      H352   C35    C34     109.470    3.000
+ LOS      C35    C34    H341    109.470    3.000
+ LOS      C35    C34    H342    109.470    3.000
+ LOS      C35    C34    C33     111.000    3.000
+ LOS      H341   C34    H342    107.900    3.000
+ LOS      H341   C34    C33     109.470    3.000
+ LOS      H342   C34    C33     109.470    3.000
+ LOS      C34    C33    H33B    109.470    3.000
+ LOS      C34    C33    H33A    109.470    3.000
+ LOS      C34    C33    C32     111.000    3.000
+ LOS      H33B   C33    H33A    107.900    3.000
+ LOS      H33B   C33    C32     109.470    3.000
+ LOS      H33A   C33    C32     109.470    3.000
+ LOS      N37    C32    H332    109.470    3.000
+ LOS      N37    C32    C31     105.000    3.000
+ LOS      N37    C32    C33     105.000    3.000
+ LOS      H332   C32    C31     108.340    3.000
+ LOS      H332   C32    C33     108.340    3.000
+ LOS      C31    C32    C33     111.000    3.000
+ LOS      C32    C31    H331    108.340    3.000
+ LOS      C32    C31    C30     111.000    3.000
+ LOS      C32    C31    N26     105.000    3.000
+ LOS      H331   C31    C30     108.340    3.000
+ LOS      H331   C31    N26     109.470    3.000
+ LOS      C30    C31    N26     105.000    3.000
+ LOS      C31    C30    H301    109.470    3.000
+ LOS      C31    C30    H302    109.470    3.000
+ LOS      C31    C30    C29     111.000    3.000
+ LOS      H301   C30    H302    107.900    3.000
+ LOS      H301   C30    C29     109.470    3.000
+ LOS      H302   C30    C29     109.470    3.000
+ LOS      C30    C29    H291    109.470    3.000
+ LOS      C30    C29    H292    109.470    3.000
+ LOS      C30    C29    C28     111.000    3.000
+ LOS      H291   C29    H292    107.900    3.000
+ LOS      H291   C29    C28     109.470    3.000
+ LOS      H292   C29    C28     109.470    3.000
+ LOS      C29    C28    H281    109.470    3.000
+ LOS      C29    C28    H282    109.470    3.000
+ LOS      C29    C28    C27     111.000    3.000
+ LOS      H281   C28    H282    107.900    3.000
+ LOS      H281   C28    C27     109.470    3.000
+ LOS      H282   C28    C27     109.470    3.000
+ LOS      C28    C27    H272    109.470    3.000
+ LOS      C28    C27    H271    109.470    3.000
+ LOS      C28    C27    N26     105.000    3.000
+ LOS      H272   C27    H271    107.900    3.000
+ LOS      H272   C27    N26     109.470    3.000
+ LOS      H271   C27    N26     109.470    3.000
+ LOS      C31    N26    OS      120.000    3.000
+ LOS      C31    N26    C27     112.000    3.000
+ LOS      OS     N26    C27     120.000    3.000
+ LOS      OS     N13    C12     120.000    3.000
+ LOS      OS     N13    C8      120.000    3.000
+ LOS      C12    N13    C8      112.000    3.000
+ LOS      N13    C12    H121    109.470    3.000
+ LOS      N13    C12    H122    109.470    3.000
+ LOS      N13    C12    C11     105.000    3.000
+ LOS      H121   C12    H122    107.900    3.000
+ LOS      H121   C12    C11     109.470    3.000
+ LOS      H122   C12    C11     109.470    3.000
+ LOS      C12    C11    H111    109.470    3.000
+ LOS      C12    C11    H112    109.470    3.000
+ LOS      C12    C11    C10     111.000    3.000
+ LOS      H111   C11    H112    107.900    3.000
+ LOS      H111   C11    C10     109.470    3.000
+ LOS      H112   C11    C10     109.470    3.000
+ LOS      C11    C10    H101    109.470    3.000
+ LOS      C11    C10    H102    109.470    3.000
+ LOS      C11    C10    C9      111.000    3.000
+ LOS      H101   C10    H102    107.900    3.000
+ LOS      H101   C10    C9      109.470    3.000
+ LOS      H102   C10    C9      109.470    3.000
+ LOS      C10    C9     H92     109.470    3.000
+ LOS      C10    C9     H91     109.470    3.000
+ LOS      C10    C9     C8      111.000    3.000
+ LOS      H92    C9     H91     107.900    3.000
+ LOS      H92    C9     C8      109.470    3.000
+ LOS      H91    C9     C8      109.470    3.000
+ LOS      N13    C8     H88     109.470    3.000
+ LOS      N13    C8     C7      105.000    3.000
+ LOS      N13    C8     C9      105.000    3.000
+ LOS      H88    C8     C7      108.340    3.000
+ LOS      H88    C8     C9      108.340    3.000
+ LOS      C7     C8     C9      111.000    3.000
+ LOS      C8     C7     H77     108.340    3.000
+ LOS      C8     C7     N2      105.000    3.000
+ LOS      C8     C7     C6      109.470    3.000
+ LOS      H77    C7     N2      109.470    3.000
+ LOS      H77    C7     C6      108.810    3.000
+ LOS      N2     C7     C6      111.600    3.000
+ LOS      C7     N2     OS      120.000    3.000
+ LOS      C7     N2     C3      112.000    3.000
+ LOS      OS     N2     C3      120.000    3.000
+ LOS      C7     C6     H61     120.000    3.000
+ LOS      C7     C6     C5      120.000    3.000
+ LOS      H61    C6     C5      120.000    3.000
+ LOS      C6     C5     H51     120.000    3.000
+ LOS      C6     C5     C4      120.000    3.000
+ LOS      H51    C5     C4      120.000    3.000
+ LOS      C5     C4     H41     109.470    3.000
+ LOS      C5     C4     H42     109.470    3.000
+ LOS      C5     C4     C3      109.470    3.000
+ LOS      H41    C4     H42     107.900    3.000
+ LOS      H41    C4     C3      109.470    3.000
+ LOS      H42    C4     C3      109.470    3.000
+ LOS      C4     C3     H32     109.470    3.000
+ LOS      C4     C3     H31     109.470    3.000
+ LOS      C4     C3     N2      105.000    3.000
+ LOS      H32    C3     H31     107.900    3.000
+ LOS      H32    C3     N2      109.470    3.000
+ LOS      H31    C3     N2      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LOS      var_1    HE21   NE2    CD2    CG      -120.000   20.000   3
+ LOS      var_2    HE21   NE2    CE1    ND1      120.000   20.000   3
+ LOS      var_3    NE2    CE1    ND1    OS       180.000   20.000   1
+ LOS      var_4    CE1    ND1    CG     CD2        0.000   20.000   1
+ LOS      var_5    ND1    CG     CD2    NE2        0.000   20.000   3
+ LOS      var_6    CE1    ND1    OS     N13        0.000   20.000   1
+ LOS      var_7    C7     N2     OS     N13        0.000   20.000   1
+ LOS      var_8    C31    N26    OS     N37        0.000   20.000   1
+ LOS      var_9    C32    N37    OS     N26        0.000   20.000   1
+ LOS      var_10   OS     N37    C36    C35      180.000   20.000   1
+ LOS      var_11   N37    C36    C35    C34        0.000   20.000   3
+ LOS      var_12   C36    C35    C34    C33        0.000   20.000   3
+ LOS      var_13   C35    C34    C33    C32        0.000   20.000   3
+ LOS      var_14   OS     N37    C32    C31        0.000   20.000   3
+ LOS      var_15   N37    C32    C33    C34        0.000   20.000   3
+ LOS      var_16   N37    C32    C31    N26        0.000   20.000   3
+ LOS      var_17   C32    C31    C30    C29      180.000   20.000   3
+ LOS      var_18   C31    C30    C29    C28        0.000   20.000   3
+ LOS      var_19   C30    C29    C28    C27        0.000   20.000   3
+ LOS      var_20   C29    C28    C27    N26        0.000   20.000   3
+ LOS      var_21   C32    C31    N26    OS         0.000   20.000   3
+ LOS      var_22   C31    N26    C27    C28        0.000   20.000   1
+ LOS      var_23   C8     N13    OS     N2         0.000   20.000   1
+ LOS      var_24   OS     N13    C12    C11      180.000   20.000   1
+ LOS      var_25   N13    C12    C11    C10        0.000   20.000   3
+ LOS      var_26   C12    C11    C10    C9         0.000   20.000   3
+ LOS      var_27   C11    C10    C9     C8         0.000   20.000   3
+ LOS      var_28   OS     N13    C8     C7         0.000   20.000   3
+ LOS      var_29   N13    C8     C9     C10        0.000   20.000   3
+ LOS      var_30   N13    C8     C7     C6       180.000   20.000   3
+ LOS      var_31   C8     C7     N2     OS         0.000   20.000   3
+ LOS      var_32   C7     N2     C3     C4         0.000   20.000   1
+ LOS      var_33   C8     C7     C6     C5       180.000   20.000   1
+ LOS      var_34   C7     C6     C5     C4         0.000   20.000   1
+ LOS      var_35   C6     C5     C4     C3         0.000   20.000   1
+ LOS      var_36   C5     C4     C3     N2         0.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ LOS      chir_01  C7     N2     C6     C8        positiv
+                   .      .      .      .      .
+ LOS      chir_02  C8     C7     C9     N13       negativ
+                   .      .      .      .      .
+ LOS      chir_03  C31    N26    C30    C32       negativ
+                   .      .      .      .      .
+ LOS      chir_04  C32    C31    C33    N37       positiv
+                   .      .      .      .      .
+ LOS      chir_05  OS     ND1    N26    N13       cross4
+                   N37    .      N2     .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LOS      plan-1    N2        0.020
+ LOS      plan-1    OS        0.020
+ LOS      plan-1    C3        0.020
+ LOS      plan-1    C7        0.020
+ LOS      plan-2    C5        0.020
+ LOS      plan-2    C4        0.020
+ LOS      plan-2    C6        0.020
+ LOS      plan-2    H51       0.020
+ LOS      plan-2    H61       0.020
+ LOS      plan-3    C6        0.020
+ LOS      plan-3    C5        0.020
+ LOS      plan-3    C7        0.020
+ LOS      plan-3    H61       0.020
+ LOS      plan-3    H51       0.020
+ LOS      plan-4    N13       0.020
+ LOS      plan-4    OS        0.020
+ LOS      plan-4    C8        0.020
+ LOS      plan-4    C12       0.020
+ LOS      plan-5    N26       0.020
+ LOS      plan-5    OS        0.020
+ LOS      plan-5    C27       0.020
+ LOS      plan-5    C31       0.020
+ LOS      plan-6    N37       0.020
+ LOS      plan-6    OS        0.020
+ LOS      plan-6    C32       0.020
+ LOS      plan-6    C36       0.020
+ LOS      plan-7    ND1       0.020
+ LOS      plan-7    OS        0.020
+ LOS      plan-7    CG        0.020
+ LOS      plan-7    CE1       0.020
+ LOS      plan-8    NE2       0.020
+ LOS      plan-8    CD2       0.020
+ LOS      plan-8    CE1       0.020
+ LOS      plan-8    HE21      0.020
+# ------------------------------------------------------

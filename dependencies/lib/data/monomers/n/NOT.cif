@@ -1,0 +1,211 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NOT     NOT     6-azido-L-norleucine     peptide   24     12     .
+#
+data_comp_NOT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NOT     N       N       NT3     1       14.555      -0.030      19.460
+NOT     CA      C       CH1     0       14.295      1.431       19.344
+NOT     C       C       C       0       15.357      2.204       20.137
+NOT     O       O       OC      -1      15.778      1.680       21.189
+NOT     CB      C       CH2     0       12.886      1.766       19.844
+NOT     CG      C       CH2     0       11.749      1.297       18.946
+NOT     C1      C       CH2     0       10.385      1.836       19.357
+NOT     C2      C       CH2     0       9.249       1.232       18.559
+NOT     OXT     O       O       0       15.723      3.303       19.675
+NOT     N1      N       N       0       7.982       1.907       18.904
+NOT     N2      N       N       1       7.472       1.568       19.968
+NOT     N3      N       N       -1      6.892       1.356       20.916
+NOT     H       H       H       0       15.407      -0.220      19.196
+NOT     H2      H       H       0       13.976      -0.495      18.933
+NOT     H3      H       H       0       14.448      -0.298      20.324
+NOT     HA      H       H       0       14.364      1.684       18.394
+NOT     HB      H       H       0       12.816      2.739       19.948
+NOT     HBA     H       H       0       12.769      1.364       20.730
+NOT     HG      H       H       0       11.720      0.316       18.961
+NOT     HGA     H       H       0       11.938      1.577       18.025
+NOT     H1      H       H       0       10.377      2.809       19.237
+NOT     H1A     H       H       0       10.241      1.649       20.308
+NOT     HC2     H       H       0       9.180       0.275       18.763
+NOT     H2A     H       H       0       9.430       1.344       17.601
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+NOT      N      n/a    CA     START
+NOT      H      N      .      .
+NOT      H2     N      .      .
+NOT      H3     N      .      .
+NOT      CA     N      C      .
+NOT      HA     CA     .      .
+NOT      CB     CA     CG     .
+NOT      HB     CB     .      .
+NOT      HBA    CB     .      .
+NOT      CG     CB     C1     .
+NOT      HG     CG     .      .
+NOT      HGA    CG     .      .
+NOT      C1     CG     C2     .
+NOT      H1     C1     .      .
+NOT      H1A    C1     .      .
+NOT      C2     C1     N1     .
+NOT      HC2    C2     .      .
+NOT      H2A    C2     .      .
+NOT      N1     C2     N2     .
+NOT      N2     N1     N3     .
+NOT      N3     N2     .      .
+NOT      C      CA     .      END
+NOT      O      C      .      .
+NOT      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NOT       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+NOT       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+NOT       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+NOT       C         OXT       DOUBLE    n         1.247     0.019     1.247     0.019     
+NOT       C         O         SINGLE    n         1.247     0.019     1.247     0.019     
+NOT       CB        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+NOT       CG        C1        SINGLE    n         1.523     0.012     1.523     0.012     
+NOT       C1        C2        SINGLE    n         1.514     0.020     1.514     0.020     
+NOT       C2        N1        SINGLE    n         1.474     0.020     1.474     0.020     
+NOT       N1        N2        DOUBLE    n         1.227     0.016     1.227     0.016     
+NOT       N2        N3        DOUBLE    n         1.131     0.010     1.131     0.010     
+NOT       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+NOT       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+NOT       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+NOT       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+NOT       CB        HB        SINGLE    n         1.089     0.010     0.980     0.016     
+NOT       CB        HBA       SINGLE    n         1.089     0.010     0.980     0.016     
+NOT       CG        HG        SINGLE    n         1.089     0.010     0.981     0.016     
+NOT       CG        HGA       SINGLE    n         1.089     0.010     0.981     0.016     
+NOT       C1        H1        SINGLE    n         1.089     0.010     0.980     0.016     
+NOT       C1        H1A       SINGLE    n         1.089     0.010     0.980     0.016     
+NOT       C2        HC2       SINGLE    n         1.089     0.010     0.981     0.014     
+NOT       C2        H2A       SINGLE    n         1.089     0.010     0.981     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NOT          CA           N           H     110.062    1.93
+NOT          CA           N          H2     110.062    1.93
+NOT          CA           N          H3     110.062    1.93
+NOT           H           N          H2     109.028    2.41
+NOT           H           N          H3     109.028    2.41
+NOT          H2           N          H3     109.028    2.41
+NOT           N          CA          CB     110.374    1.62
+NOT           N          CA           C     109.241    1.50
+NOT           N          CA          HA     108.487    1.50
+NOT          CB          CA           C     111.037    2.40
+NOT          CB          CA          HA     108.967    1.50
+NOT           C          CA          HA     108.824    1.50
+NOT          CA           C         OXT     117.124    1.50
+NOT          CA           C           O     117.124    1.50
+NOT         OXT           C           O     125.752    1.50
+NOT          CA          CB          CG     115.311    1.56
+NOT          CA          CB          HB     108.549    1.50
+NOT          CA          CB         HBA     108.549    1.50
+NOT          CG          CB          HB     108.650    1.50
+NOT          CG          CB         HBA     108.650    1.50
+NOT          HB          CB         HBA     107.844    1.50
+NOT          CB          CG          C1     113.328    2.00
+NOT          CB          CG          HG     108.601    1.50
+NOT          CB          CG         HGA     108.601    1.50
+NOT          C1          CG          HG     108.806    1.50
+NOT          C1          CG         HGA     108.806    1.50
+NOT          HG          CG         HGA     107.646    1.50
+NOT          CG          C1          C2     112.881    1.50
+NOT          CG          C1          H1     109.041    1.50
+NOT          CG          C1         H1A     109.041    1.50
+NOT          C2          C1          H1     109.004    1.50
+NOT          C2          C1         H1A     109.004    1.50
+NOT          H1          C1         H1A     107.927    1.57
+NOT          C1          C2          N1     109.662    2.15
+NOT          C1          C2         HC2     109.405    1.50
+NOT          C1          C2         H2A     109.405    1.50
+NOT          N1          C2         HC2     109.598    1.50
+NOT          N1          C2         H2A     109.598    1.50
+NOT         HC2          C2         H2A     109.398    2.65
+NOT          C2          N1          N2     115.457    1.50
+NOT          N1          N2          N3     172.297    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NOT             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+NOT             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+NOT            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+NOT            sp3_sp3_19          CA          CB          CG          C1     180.000   10.00     3
+NOT            sp3_sp3_28          C2          C1          CG          CB     180.000   10.00     3
+NOT            sp3_sp3_37          CG          C1          C2          N1     180.000   10.00     3
+NOT             sp2_sp3_8          N2          N1          C2          C1     120.000   10.00     6
+NOT             sp2_sp2_1          C2          N1          N2          N3     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+NOT    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NOT    plan-1           C   0.020
+NOT    plan-1          CA   0.020
+NOT    plan-1           O   0.020
+NOT    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NOT SMILES           ACDLabs              10.04 "[N-]=[N+]=N/CCCCC(N)C(=O)O"
+NOT SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCCCN=[N+]=[N-])C(O)=O"
+NOT SMILES           CACTVS               3.341 "N[CH](CCCCN=[N+]=[N-])C(O)=O"
+NOT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CCN=[N+]=[N-])C[C@@H](C(=O)O)N"
+NOT SMILES           "OpenEye OEToolkits" 1.5.0 "C(CCN=[N+]=[N-])CC(C(=O)O)N"
+NOT InChI            InChI                1.03  "InChI=1S/C6H12N4O2/c7-5(6(11)12)3-1-2-4-9-10-8/h5H,1-4,7H2,(H,11,12)/t5-/m0/s1"
+NOT InChIKey         InChI                1.03  HTFFMYRVHHNNBE-YFKPBYRVSA-N
+NOT ?                acedrg               202         "dictionary generator"
+NOT ?                acedrg_database      11          "data source"
+NOT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NOT ?                refmac5              5.8.0222    "optimization tool"

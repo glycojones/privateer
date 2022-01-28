@@ -1,0 +1,170 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RTD     RTD      "(2R)-phenyl(sulfanyl)ethanoic acid"     NON-POLYMER     18     11     .     
+#
+data_comp_RTD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+RTD     O1      O       O       0       3.011       -1.563      -0.220      
+RTD     C       C       C       0       2.485       -0.722      0.533       
+RTD     O2      O       OC      -1      2.538       -0.735      1.777       
+RTD     CA      C       CH1     0       1.707       0.420       -0.126      
+RTD     S1      S       SH1     0       2.009       2.006       0.704       
+RTD     CB      C       CR6     0       0.224       0.098       -0.123      
+RTD     CG1     C       CR16    0       -0.495      0.049       1.073       
+RTD     CD1     C       CR16    0       -1.856      -0.246      1.079       
+RTD     CE      C       CR16    0       -2.518      -0.492      -0.113      
+RTD     CD2     C       CR16    0       -1.822      -0.446      -1.309      
+RTD     CG2     C       CR16    0       -0.461      -0.152      -1.315      
+RTD     HA      H       H       0       2.015       0.497       -1.069      
+RTD     H2      H       HSH1    0       1.375       2.710       -0.047      
+RTD     HG1     H       H       0       -0.052      0.213       1.890       
+RTD     HD1     H       H       0       -2.327      -0.277      1.896       
+RTD     HE      H       H       0       -3.441      -0.691      -0.109      
+RTD     HD2     H       H       0       -2.271      -0.613      -2.123      
+RTD     HG2     H       H       0       0.004       -0.123      -2.136      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RTD       CD2       CG2       SINGLE    y         1.386     0.010     1.386     0.010     
+RTD       CE        CD2       DOUBLE    y         1.376     0.012     1.376     0.012     
+RTD       CB        CG2       DOUBLE    y         1.389     0.010     1.389     0.010     
+RTD       O1        C         DOUBLE    n         1.244     0.020     1.244     0.020     
+RTD       CD1       CE        SINGLE    y         1.376     0.012     1.376     0.012     
+RTD       C         O2        SINGLE    n         1.244     0.020     1.244     0.020     
+RTD       C         CA        SINGLE    n         1.526     0.020     1.526     0.020     
+RTD       CA        CB        SINGLE    n         1.516     0.010     1.516     0.010     
+RTD       CB        CG1       SINGLE    y         1.389     0.010     1.389     0.010     
+RTD       CA        S1        SINGLE    n         1.815     0.014     1.815     0.014     
+RTD       CG1       CD1       DOUBLE    y         1.386     0.010     1.386     0.010     
+RTD       CA        HA        SINGLE    n         1.089     0.010     0.989     0.005     
+RTD       S1        H2        SINGLE    n         1.338     0.010     1.171     0.208     
+RTD       CG1       HG1       SINGLE    n         1.082     0.013     0.975     0.010     
+RTD       CD1       HD1       SINGLE    n         1.082     0.013     0.975     0.010     
+RTD       CE        HE        SINGLE    n         1.082     0.013     0.975     0.010     
+RTD       CD2       HD2       SINGLE    n         1.082     0.013     0.975     0.010     
+RTD       CG2       HG2       SINGLE    n         1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+RTD          O1           C          O2     125.567    1.75
+RTD          O1           C          CA     117.217    1.53
+RTD          O2           C          CA     117.217    1.53
+RTD           C          CA          CB     109.875    1.76
+RTD           C          CA          S1     111.968    3.00
+RTD           C          CA          HA     108.456    1.50
+RTD          CB          CA          S1     111.115    3.00
+RTD          CB          CA          HA     108.886    1.50
+RTD          S1          CA          HA     109.066    1.50
+RTD          CA          S1          H2      97.885    3.00
+RTD         CG2          CB          CA     120.764    1.50
+RTD         CG2          CB         CG1     118.472    1.50
+RTD          CA          CB         CG1     120.764    1.50
+RTD          CB         CG1         CD1     120.817    1.50
+RTD          CB         CG1         HG1     119.592    1.50
+RTD         CD1         CG1         HG1     119.591    1.50
+RTD          CE         CD1         CG1     120.059    1.50
+RTD          CE         CD1         HD1     120.016    1.50
+RTD         CG1         CD1         HD1     119.925    1.50
+RTD         CD2          CE         CD1     119.777    1.50
+RTD         CD2          CE          HE     120.112    1.50
+RTD         CD1          CE          HE     120.112    1.50
+RTD         CG2         CD2          CE     120.059    1.50
+RTD         CG2         CD2         HD2     119.925    1.50
+RTD          CE         CD2         HD2     120.016    1.50
+RTD         CD2         CG2          CB     120.817    1.50
+RTD         CD2         CG2         HG2     119.591    1.50
+RTD          CB         CG2         HG2     119.592    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+RTD             sp2_sp3_2          O1           C          CA          S1     120.000   10.00     6
+RTD             sp3_sp3_1           C          CA          S1          H2     180.000   10.00     3
+RTD             sp2_sp3_7         CG2          CB          CA           C     150.000   10.00     6
+RTD       const_sp2_sp2_3          CA          CB         CG2         CD2     180.000   10.00     2
+RTD              const_23          CA          CB         CG1         CD1     180.000   10.00     2
+RTD              const_17          CE         CD1         CG1          CB       0.000   10.00     2
+RTD              const_13         CG1         CD1          CE         CD2       0.000   10.00     2
+RTD       const_sp2_sp2_9         CG2         CD2          CE         CD1       0.000   10.00     2
+RTD       const_sp2_sp2_5          CE         CD2         CG2          CB       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+RTD    chir_1    CA    S1    C    CB    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+RTD    plan-1          CA   0.020
+RTD    plan-1          CB   0.020
+RTD    plan-1         CD1   0.020
+RTD    plan-1         CD2   0.020
+RTD    plan-1          CE   0.020
+RTD    plan-1         CG1   0.020
+RTD    plan-1         CG2   0.020
+RTD    plan-1         HD1   0.020
+RTD    plan-1         HD2   0.020
+RTD    plan-1          HE   0.020
+RTD    plan-1         HG1   0.020
+RTD    plan-1         HG2   0.020
+RTD    plan-2           C   0.020
+RTD    plan-2          CA   0.020
+RTD    plan-2          O1   0.020
+RTD    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+RTD SMILES           ACDLabs              12.01 "O=C(O)C(S)c1ccccc1"
+RTD InChI            InChI                1.03  "InChI=1S/C8H8O2S/c9-8(10)7(11)6-4-2-1-3-5-6/h1-5,7,11H,(H,9,10)/t7-/m1/s1"
+RTD InChIKey         InChI                1.03  QYIGFZOHYGYBLX-SSDOTTSWSA-N
+RTD SMILES_CANONICAL CACTVS               3.370 "OC(=O)[C@H](S)c1ccccc1"
+RTD SMILES           CACTVS               3.370 "OC(=O)[CH](S)c1ccccc1"
+RTD SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1ccc(cc1)[C@H](C(=O)O)S"
+RTD SMILES           "OpenEye OEToolkits" 1.7.6 "c1ccc(cc1)C(C(=O)O)S"
+RTD ?                acedrg               202         "dictionary generator"                  
+RTD ?                acedrg_database      11          "data source"                           
+RTD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+RTD ?                refmac5              5.8.0189    "optimization tool"                     

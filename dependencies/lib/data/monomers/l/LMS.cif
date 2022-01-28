@@ -1,0 +1,314 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LMS      LMS '"[(2R,3S,4R,5R)-5-(6-AMINO-9H-PURIN-' non-polymer        37  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LMS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LMS           O2P    O    OS        0.000      0.000    0.000    0.000
+ LMS           S      S    ST        0.000     -1.049    0.350    0.893
+ LMS           O1P    O    OS        0.000     -0.961    1.434    1.808
+ LMS           N      N    NH2       0.000     -1.363   -1.001    1.798
+ LMS           HN2    H    H         0.000     -0.671   -1.364    2.453
+ LMS           HN1    H    H         0.000     -2.252   -1.491    1.714
+ LMS           "O5'"  O    O2        0.000     -2.276    0.611    0.032
+ LMS           "C5'"  C    CH2       0.000     -3.382    1.163    0.749
+ LMS           "H5'1" H    H         0.000     -3.088    2.117    1.192
+ LMS           "H5'2" H    H         0.000     -3.683    0.473    1.541
+ LMS           "C4'"  C    CH1       0.000     -4.554    1.384   -0.210
+ LMS           "H4'"  H    H         0.000     -4.231    1.999   -1.061
+ LMS           "C3'"  C    CH1       0.000     -5.713    2.078    0.531
+ LMS           "H3'"  H    H         0.000     -5.464    2.218    1.592
+ LMS           "O3'"  O    OH1       0.000     -6.018    3.333   -0.082
+ LMS           HA     H    H         0.000     -6.746    3.755    0.394
+ LMS           "C2'"  C    CH1       0.000     -6.902    1.098    0.377
+ LMS           "H2'"  H    H         0.000     -7.006    0.466    1.270
+ LMS           "O2'"  O    OH1       0.000     -8.115    1.804    0.110
+ LMS           HB     H    H         0.000     -8.315    2.393    0.851
+ LMS           "C1'"  C    CH1       0.000     -6.472    0.255   -0.850
+ LMS           "H1'"  H    H         0.000     -6.701    0.786   -1.785
+ LMS           "O4'"  O    O2        0.000     -5.044    0.117   -0.680
+ LMS           N9     N    NR5       0.000     -7.122   -1.057   -0.829
+ LMS           C4     C    CR56      0.000     -8.338   -1.370   -1.383
+ LMS           C5     C    CR56      0.000     -8.550   -2.732   -1.109
+ LMS           N7     N    NRD5      0.000     -7.474   -3.172   -0.414
+ LMS           C8     C    CR15      0.000     -6.635   -2.190   -0.249
+ LMS           H8     H    H         0.000     -5.689   -2.263    0.273
+ LMS           N3     N    NRD6      0.000     -9.260   -0.696   -2.062
+ LMS           C2     C    CR16      0.000    -10.359   -1.294   -2.473
+ LMS           H2     H    H         0.000    -11.091   -0.716   -3.024
+ LMS           N1     N    NRD6      0.000    -10.603   -2.570   -2.240
+ LMS           C6     C    CR6       0.000     -9.738   -3.324   -1.569
+ LMS           N6     N    NH2       0.000    -10.002   -4.661   -1.329
+ LMS           H6N2   H    H         0.000    -10.862   -5.084   -1.664
+ LMS           H6N1   H    H         0.000     -9.340   -5.233   -0.815
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LMS      O2P    n/a    S      START
+ LMS      S      O2P    "O5'"  .
+ LMS      O1P    S      .      .
+ LMS      N      S      HN1    .
+ LMS      HN2    N      .      .
+ LMS      HN1    N      .      .
+ LMS      "O5'"  S      "C5'"  .
+ LMS      "C5'"  "O5'"  "C4'"  .
+ LMS      "H5'1" "C5'"  .      .
+ LMS      "H5'2" "C5'"  .      .
+ LMS      "C4'"  "C5'"  "C3'"  .
+ LMS      "H4'"  "C4'"  .      .
+ LMS      "C3'"  "C4'"  "C2'"  .
+ LMS      "H3'"  "C3'"  .      .
+ LMS      "O3'"  "C3'"  HA     .
+ LMS      HA     "O3'"  .      .
+ LMS      "C2'"  "C3'"  "C1'"  .
+ LMS      "H2'"  "C2'"  .      .
+ LMS      "O2'"  "C2'"  HB     .
+ LMS      HB     "O2'"  .      .
+ LMS      "C1'"  "C2'"  N9     .
+ LMS      "H1'"  "C1'"  .      .
+ LMS      "O4'"  "C1'"  .      .
+ LMS      N9     "C1'"  C4     .
+ LMS      C4     N9     N3     .
+ LMS      C5     C4     N7     .
+ LMS      N7     C5     C8     .
+ LMS      C8     N7     H8     .
+ LMS      H8     C8     .      .
+ LMS      N3     C4     C2     .
+ LMS      C2     N3     N1     .
+ LMS      H2     C2     .      .
+ LMS      N1     C2     C6     .
+ LMS      C6     N1     N6     .
+ LMS      N6     C6     H6N1   .
+ LMS      H6N2   N6     .      .
+ LMS      H6N1   N6     .      END
+ LMS      N9     C8     .    ADD
+ LMS      C5     C6     .    ADD
+ LMS      "C4'"  "O4'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LMS       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+LMS       N9        C8        single    1.337     0.020     1.337     0.020     
+LMS       C8        N7        double    1.350     0.020     1.350     0.020     
+LMS       N7        C5        single    1.350     0.020     1.350     0.020     
+LMS       C5        C6        double    1.490     0.020     1.490     0.020     
+LMS       N6        C6        single    1.355     0.020     1.355     0.020     
+LMS       C6        N1        single    1.350     0.020     1.350     0.020     
+LMS       N1        C2        double    1.337     0.020     1.337     0.020     
+LMS       C2        N3        single    1.337     0.020     1.337     0.020     
+LMS       C4        N9        single    1.337     0.020     1.337     0.020     
+LMS       C5        C4        single    1.490     0.020     1.490     0.020     
+LMS       N3        C4        double    1.355     0.020     1.355     0.020     
+LMS       "O5'"     S         single    1.535     0.020     1.535     0.020     
+LMS       O1P       S         double    1.436     0.020     1.436     0.020     
+LMS       S         O2P       double    1.436     0.020     1.436     0.020     
+LMS       N         S         single    1.600     0.020     1.600     0.020     
+LMS       HA        "O3'"     single    0.970     0.012     0.839     0.014     
+LMS       HB        "O2'"     single    0.970     0.012     0.839     0.014     
+LMS       H8        C8        single    1.082     0.013     0.975     0.010     
+LMS       H2        C2        single    1.082     0.013     0.975     0.010     
+LMS       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+LMS       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+LMS       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+LMS       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+LMS       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+LMS       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+LMS       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+LMS       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+LMS       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+LMS       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+LMS       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+LMS       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+LMS       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+LMS       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+LMS       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+LMS       H6N1      N6        single    1.016     0.010     0.899     0.007     
+LMS       H6N2      N6        single    1.016     0.010     0.899     0.007     
+LMS       HN1       N         single    1.036     0.016     0.914     0.007     
+LMS       HN2       N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LMS      O2P    S      O1P     109.500    3.000
+ LMS      O2P    S      N       109.500    3.000
+ LMS      O2P    S      "O5'"   109.500    3.000
+ LMS      O1P    S      N       109.500    3.000
+ LMS      O1P    S      "O5'"   109.500    3.000
+ LMS      N      S      "O5'"   109.500    3.000
+ LMS      S      N      HN2     120.000    3.000
+ LMS      S      N      HN1     120.000    3.000
+ LMS      HN2    N      HN1     120.000    3.000
+ LMS      S      "O5'"  "C5'"   120.000    3.000
+ LMS      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ LMS      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ LMS      "O5'"  "C5'"  "C4'"   109.470    3.000
+ LMS      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ LMS      "H5'1" "C5'"  "C4'"   109.470    3.000
+ LMS      "H5'2" "C5'"  "C4'"   109.470    3.000
+ LMS      "C5'"  "C4'"  "H4'"   108.340    3.000
+ LMS      "C5'"  "C4'"  "C3'"   111.000    3.000
+ LMS      "C5'"  "C4'"  "O4'"   109.470    3.000
+ LMS      "H4'"  "C4'"  "C3'"   108.340    3.000
+ LMS      "H4'"  "C4'"  "O4'"   109.470    3.000
+ LMS      "C3'"  "C4'"  "O4'"   109.470    3.000
+ LMS      "C4'"  "C3'"  "H3'"   108.340    3.000
+ LMS      "C4'"  "C3'"  "O3'"   109.470    3.000
+ LMS      "C4'"  "C3'"  "C2'"   111.000    3.000
+ LMS      "H3'"  "C3'"  "O3'"   109.470    3.000
+ LMS      "H3'"  "C3'"  "C2'"   108.340    3.000
+ LMS      "O3'"  "C3'"  "C2'"   109.470    3.000
+ LMS      "C3'"  "O3'"  HA      109.470    3.000
+ LMS      "C3'"  "C2'"  "H2'"   108.340    3.000
+ LMS      "C3'"  "C2'"  "O2'"   109.470    3.000
+ LMS      "C3'"  "C2'"  "C1'"   111.000    3.000
+ LMS      "H2'"  "C2'"  "O2'"   109.470    3.000
+ LMS      "H2'"  "C2'"  "C1'"   108.340    3.000
+ LMS      "O2'"  "C2'"  "C1'"   109.470    3.000
+ LMS      "C2'"  "O2'"  HB      109.470    3.000
+ LMS      "C2'"  "C1'"  "H1'"   108.340    3.000
+ LMS      "C2'"  "C1'"  "O4'"   109.470    3.000
+ LMS      "C2'"  "C1'"  N9      109.470    3.000
+ LMS      "H1'"  "C1'"  "O4'"   109.470    3.000
+ LMS      "H1'"  "C1'"  N9      109.470    3.000
+ LMS      "O4'"  "C1'"  N9      109.470    3.000
+ LMS      "C1'"  "O4'"  "C4'"   111.800    3.000
+ LMS      "C1'"  N9     C4      126.000    3.000
+ LMS      "C1'"  N9     C8      126.000    3.000
+ LMS      C4     N9     C8      108.000    3.000
+ LMS      N9     C4     C5      108.000    3.000
+ LMS      N9     C4     N3      132.000    3.000
+ LMS      C5     C4     N3      120.000    3.000
+ LMS      C4     C5     N7      108.000    3.000
+ LMS      C4     C5     C6      120.000    3.000
+ LMS      N7     C5     C6      132.000    3.000
+ LMS      C5     N7     C8      108.000    3.000
+ LMS      N7     C8     H8      126.000    3.000
+ LMS      N7     C8     N9      108.000    3.000
+ LMS      H8     C8     N9      126.000    3.000
+ LMS      C4     N3     C2      120.000    3.000
+ LMS      N3     C2     H2      120.000    3.000
+ LMS      N3     C2     N1      120.000    3.000
+ LMS      H2     C2     N1      120.000    3.000
+ LMS      C2     N1     C6      120.000    3.000
+ LMS      N1     C6     N6      120.000    3.000
+ LMS      N1     C6     C5      120.000    3.000
+ LMS      N6     C6     C5      120.000    3.000
+ LMS      C6     N6     H6N2    120.000    3.000
+ LMS      C6     N6     H6N1    120.000    3.000
+ LMS      H6N2   N6     H6N1    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LMS      var_1    O2P    S      N      HN1     -113.570   20.000   1
+ LMS      var_2    O2P    S      "O5'"  "C5'"   -171.497   20.000   1
+ LMS      var_3    S      "O5'"  "C5'"  "C4'"   -179.994   20.000   1
+ LMS      var_4    "O5'"  "C5'"  "C4'"  "C3'"   -175.673   20.000   3
+ LMS      var_5    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ LMS      var_6    "C5'"  "C4'"  "C3'"  "C2'"   -120.000   20.000   3
+ LMS      var_7    "C4'"  "C3'"  "O3'"  HA       179.950   20.000   1
+ LMS      var_8    "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ LMS      var_9    "C3'"  "C2'"  "O2'"  HB       -61.387   20.000   1
+ LMS      var_10   "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ LMS      var_11   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ LMS      var_12   "C2'"  "C1'"  N9     C4        89.172   20.000   1
+ LMS      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ LMS      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ LMS      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ LMS      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ LMS      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ LMS      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ LMS      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ LMS      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ LMS      CONST_9  N3     C2     N1     C6         0.000    0.000   0
+ LMS      CONST_10 C2     N1     C6     N6       180.000    0.000   0
+ LMS      CONST_11 N1     C6     N6     H6N1    -179.982    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LMS      chir_01  S      N      O1P    O2P       negativ
+ LMS      chir_02  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ LMS      chir_03  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ LMS      chir_04  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ LMS      chir_05  "C1'"  N9     "O4'"  "C2'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LMS      plan-1    N9        0.020
+ LMS      plan-1    C8        0.020
+ LMS      plan-1    C4        0.020
+ LMS      plan-1    "C1'"     0.020
+ LMS      plan-1    N7        0.020
+ LMS      plan-1    H8        0.020
+ LMS      plan-1    C5        0.020
+ LMS      plan-1    C6        0.020
+ LMS      plan-1    N1        0.020
+ LMS      plan-1    C2        0.020
+ LMS      plan-1    N3        0.020
+ LMS      plan-1    N6        0.020
+ LMS      plan-1    H2        0.020
+ LMS      plan-1    H6N2      0.020
+ LMS      plan-1    H6N1      0.020
+ LMS      plan-2    N6        0.020
+ LMS      plan-2    C6        0.020
+ LMS      plan-2    H6N1      0.020
+ LMS      plan-2    H6N2      0.020
+ LMS      plan-3    N         0.020
+ LMS      plan-3    S         0.020
+ LMS      plan-3    HN1       0.020
+ LMS      plan-3    HN2       0.020
+# ------------------------------------------------------

@@ -1,0 +1,228 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BUC     BUC     S,S-BUTYLTHIOCYSTEINE  peptide    27     12     .     
+#
+data_comp_BUC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BUC     N       N       NT3     1       -4.039      -1.443      0.114       
+BUC     CA      C       CH1     0       -3.343      -0.132      -0.013      
+BUC     CB      C       CH2     0       -2.048      -0.260      -0.791      
+BUC     SG      S       S2      0       -0.961      1.192       -0.736      
+BUC     SD      S       S2      0       -0.024      1.011       1.047       
+BUC     C1      C       CH2     0       1.519       0.148       0.630       
+BUC     C2      C       CH2     0       2.608       1.058       0.080       
+BUC     C3      C       CH2     0       3.773       0.306       -0.527      
+BUC     C4      C       CH3     0       4.626       -0.383      0.511       
+BUC     C       C       C       0       -4.300      0.906       -0.613      
+BUC     O       O       O       0       -4.770      0.661       -1.742      
+BUC     OXT     O       OC      -1      -4.541      1.920       0.071       
+BUC     H       H       H       0       -4.904      -1.316      0.375       
+BUC     H2      H       H       0       -3.616      -1.955      0.738       
+BUC     H3      H       H       0       -4.029      -1.878      -0.687      
+BUC     HA      H       H       0       -3.100      0.164       0.895       
+BUC     HB2     H       H       0       -2.278      -0.444      -1.737      
+BUC     HB3     H       H       0       -1.551      -1.037      -0.431      
+BUC     H11     H       H       0       1.319       -0.547      -0.032      
+BUC     H12     H       H       0       1.854       -0.299      1.437       
+BUC     H21     H       H       0       2.939       1.628       0.807       
+BUC     H22     H       H       0       2.214       1.643       -0.602      
+BUC     H31     H       H       0       4.333       0.935       -1.033      
+BUC     H32     H       H       0       3.431       -0.365      -1.156      
+BUC     H41     H       H       0       5.420       -0.752      0.087       
+BUC     H42     H       H       0       4.117       -1.103      0.925       
+BUC     H43     H       H       0       4.892       0.258       1.193       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BUC      N      n/a    CA     START
+ BUC      H      N      .      .
+ BUC      H2     N      .      .
+ BUC      H3     N      .      .
+ BUC      CA     N      C      .
+ BUC      HA     CA     .      .
+ BUC      CB     CA     SG     .
+ BUC      HB2    CB     .      .
+ BUC      HB3    CB     .      .
+ BUC      SG     CB     SD     .
+ BUC      SD     SG     C1     .
+ BUC      C1     SD     C2     .
+ BUC      H11    C1     .      .
+ BUC      H12    C1     .      .
+ BUC      C2     C1     C3     .
+ BUC      H21    C2     .      .
+ BUC      H22    C2     .      .
+ BUC      C3     C2     C4     .
+ BUC      H31    C3     .      .
+ BUC      H32    C3     .      .
+ BUC      C4     C3     H41    .
+ BUC      H43    C4     .      .
+ BUC      H42    C4     .      .
+ BUC      H41    C4     .      .
+ BUC      C      CA     .      END
+ BUC      O      C      .      .
+ BUC      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BUC       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+BUC       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+BUC       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+BUC       CB        SG        SINGLE    n         1.814     0.010     1.814     0.010     
+BUC       SG        SD        SINGLE    n         2.023     0.016     2.023     0.016     
+BUC       SD        C1        SINGLE    n         1.816     0.011     1.816     0.011     
+BUC       C1        C2        SINGLE    n         1.522     0.011     1.522     0.011     
+BUC       C2        C3        SINGLE    n         1.514     0.020     1.514     0.020     
+BUC       C3        C4        SINGLE    n         1.510     0.020     1.510     0.020     
+BUC       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+BUC       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+BUC       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+BUC       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+BUC       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+BUC       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+BUC       CB        HB2       SINGLE    n         1.089     0.010     0.991     0.010     
+BUC       CB        HB3       SINGLE    n         1.089     0.010     0.991     0.010     
+BUC       C1        H11       SINGLE    n         1.089     0.010     0.981     0.013     
+BUC       C1        H12       SINGLE    n         1.089     0.010     0.981     0.013     
+BUC       C2        H21       SINGLE    n         1.089     0.010     0.981     0.016     
+BUC       C2        H22       SINGLE    n         1.089     0.010     0.981     0.016     
+BUC       C3        H31       SINGLE    n         1.089     0.010     0.982     0.015     
+BUC       C3        H32       SINGLE    n         1.089     0.010     0.982     0.015     
+BUC       C4        H41       SINGLE    n         1.089     0.010     0.973     0.016     
+BUC       C4        H42       SINGLE    n         1.089     0.010     0.973     0.016     
+BUC       C4        H43       SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BUC          CA           N           H     109.671    1.50
+BUC          CA           N          H2     109.671    1.50
+BUC          CA           N          H3     109.671    1.50
+BUC           H           N          H2     109.028    2.41
+BUC           H           N          H3     109.028    2.41
+BUC          H2           N          H3     109.028    2.41
+BUC           N          CA          CB     111.909    1.50
+BUC           N          CA           C     109.494    1.50
+BUC           N          CA          HA     107.983    1.50
+BUC          CB          CA           C     113.463    1.50
+BUC          CB          CA          HA     107.198    1.50
+BUC           C          CA          HA     108.606    1.50
+BUC          CA          CB          SG     115.472    1.77
+BUC          CA          CB         HB2     107.935    1.50
+BUC          CA          CB         HB3     107.935    1.50
+BUC          SG          CB         HB2     108.472    1.50
+BUC          SG          CB         HB3     108.472    1.50
+BUC         HB2          CB         HB3     108.536    1.50
+BUC          CB          SG          SD     103.493    1.52
+BUC          SG          SD          C1     103.571    1.50
+BUC          SD          C1          C2     114.114    1.50
+BUC          SD          C1         H11     108.628    1.50
+BUC          SD          C1         H12     108.628    1.50
+BUC          C2          C1         H11     109.079    1.50
+BUC          C2          C1         H12     109.079    1.50
+BUC         H11          C1         H12     107.680    1.50
+BUC          C1          C2          C3     113.790    2.08
+BUC          C1          C2         H21     108.867    1.50
+BUC          C1          C2         H22     108.867    1.50
+BUC          C3          C2         H21     109.182    1.50
+BUC          C3          C2         H22     109.182    1.50
+BUC         H21          C2         H22     107.852    1.50
+BUC          C2          C3          C4     112.648    1.59
+BUC          C2          C3         H31     109.087    1.50
+BUC          C2          C3         H32     109.087    1.50
+BUC          C4          C3         H31     108.918    1.50
+BUC          C4          C3         H32     108.918    1.50
+BUC         H31          C3         H32     107.763    1.50
+BUC          C3          C4         H41     109.554    1.50
+BUC          C3          C4         H42     109.554    1.50
+BUC          C3          C4         H43     109.554    1.50
+BUC         H41          C4         H42     109.380    1.50
+BUC         H41          C4         H43     109.380    1.50
+BUC         H42          C4         H43     109.380    1.50
+BUC          CA           C           O     117.134    1.50
+BUC          CA           C         OXT     117.134    1.50
+BUC           O           C         OXT     125.732    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BUC             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+BUC            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+BUC             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+BUC            sp3_sp3_19          CA          CB          SG          SD     180.000   10.00     3
+BUC            sp3_sp3_22          C1          SD          SG          CB     180.000   10.00     3
+BUC            sp3_sp3_23          C2          C1          SD          SG     180.000   10.00     3
+BUC            sp3_sp3_26          SD          C1          C2          C3     180.000   10.00     3
+BUC            sp3_sp3_35          C1          C2          C3          C4     180.000   10.00     3
+BUC            sp3_sp3_44          C2          C3          C4         H41     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+BUC    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BUC    plan-1           C   0.020
+BUC    plan-1          CA   0.020
+BUC    plan-1           O   0.020
+BUC    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BUC SMILES           ACDLabs              10.04 "O=C(O)C(N)CSSCCCC"
+BUC SMILES_CANONICAL CACTVS               3.341 "CCCCSSC[C@H](N)C(O)=O"
+BUC SMILES           CACTVS               3.341 "CCCCSSC[CH](N)C(O)=O"
+BUC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCCCSSC[C@@H](C(=O)O)N"
+BUC SMILES           "OpenEye OEToolkits" 1.5.0 "CCCCSSCC(C(=O)O)N"
+BUC InChI            InChI                1.03  "InChI=1S/C7H15NO2S2/c1-2-3-4-11-12-5-6(8)7(9)10/h6H,2-5,8H2,1H3,(H,9,10)/t6-/m0/s1"
+BUC InChIKey         InChI                1.03  XWJGTZVISFJZPH-LURJTMIESA-N
+BUC ?                acedrg               196         "dictionary generator"                  
+BUC ?                acedrg_database      11          "data source"                           
+BUC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BUC ?                refmac5              5.8.0222    "optimization tool"                     

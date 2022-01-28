@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GPJ     GPJ      GLYPHOSATE     NON-POLYMER     16     10     .     
+#
+data_comp_GPJ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GPJ     P1      P       P       0       60.251      8.816       26.808      
+GPJ     O1      O       O       0       59.888      10.259      26.919      
+GPJ     O2      O       OP      -1      59.478      8.103       25.749      
+GPJ     O3      O       OP      -1      61.722      8.595       26.700      
+GPJ     O4      O       OC      -1      61.586      9.488       31.828      
+GPJ     O5      O       O       0       60.476      8.064       33.123      
+GPJ     C1      C       CH2     0       59.754      8.064       28.369      
+GPJ     C2      C       CH2     0       60.054      7.993       30.801      
+GPJ     C3      C       C       0       60.766      8.564       32.018      
+GPJ     N1      N       NT2     1       60.473      8.656       29.535      
+GPJ     H11     H       H       0       59.937      7.102       28.342      
+GPJ     H12     H       H       0       58.791      8.185       28.500      
+GPJ     H21     H       H       0       59.087      8.105       30.908      
+GPJ     H22     H       H       0       60.245      7.036       30.732      
+GPJ     HN      H       H       0       60.289      9.550       29.559      
+GPJ     HN11    H       H       0       61.370      8.557       29.397      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GPJ       P1        O1        DOUBLE    n         1.492     0.020     1.492     0.020     
+GPJ       P1        O2        SINGLE    n         1.492     0.020     1.492     0.020     
+GPJ       P1        O3        SINGLE    n         1.492     0.020     1.492     0.020     
+GPJ       P1        C1        SINGLE    n         1.803     0.020     1.803     0.020     
+GPJ       O4        C3        SINGLE    n         1.247     0.019     1.247     0.019     
+GPJ       O5        C3        DOUBLE    n         1.247     0.019     1.247     0.019     
+GPJ       C1        N1        SINGLE    n         1.492     0.011     1.492     0.011     
+GPJ       C2        C3        SINGLE    n         1.519     0.012     1.519     0.012     
+GPJ       C2        N1        SINGLE    n         1.488     0.011     1.488     0.011     
+GPJ       C1        H11       SINGLE    n         1.089     0.010     0.980     0.020     
+GPJ       C1        H12       SINGLE    n         1.089     0.010     0.980     0.020     
+GPJ       C2        H21       SINGLE    n         1.089     0.010     0.979     0.020     
+GPJ       C2        H22       SINGLE    n         1.089     0.010     0.979     0.020     
+GPJ       N1        HN        SINGLE    n         1.036     0.016     0.913     0.020     
+GPJ       N1        HN11      SINGLE    n         1.036     0.016     0.913     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GPJ          O1          P1          O2     112.887    1.64
+GPJ          O1          P1          O3     112.887    1.64
+GPJ          O1          P1          C1     105.785    2.12
+GPJ          O2          P1          O3     112.887    1.64
+GPJ          O2          P1          C1     105.785    2.12
+GPJ          O3          P1          C1     105.785    2.12
+GPJ          P1          C1          N1     112.239    3.00
+GPJ          P1          C1         H11     109.545    1.50
+GPJ          P1          C1         H12     109.545    1.50
+GPJ          N1          C1         H11     108.689    1.50
+GPJ          N1          C1         H12     108.689    1.50
+GPJ         H11          C1         H12     107.939    1.50
+GPJ          C3          C2          N1     111.539    1.50
+GPJ          C3          C2         H21     109.452    1.50
+GPJ          C3          C2         H22     109.452    1.50
+GPJ          N1          C2         H21     108.676    1.50
+GPJ          N1          C2         H22     108.676    1.50
+GPJ         H21          C2         H22     108.244    1.50
+GPJ          O4          C3          O5     125.985    1.50
+GPJ          O4          C3          C2     117.008    1.56
+GPJ          O5          C3          C2     117.008    1.56
+GPJ          C1          N1          C2     110.351    2.60
+GPJ          C1          N1          HN     107.837    3.00
+GPJ          C1          N1        HN11     107.837    3.00
+GPJ          C2          N1          HN     110.635    2.54
+GPJ          C2          N1        HN11     110.635    2.54
+GPJ          HN          N1        HN11     107.564    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GPJ             sp3_sp3_1          N1          C1          P1          O1     180.000   10.00     3
+GPJ            sp3_sp3_10          P1          C1          N1          C2     180.000   10.00     3
+GPJ             sp2_sp3_2          O4          C3          C2          N1     120.000   10.00     6
+GPJ            sp3_sp3_19          C3          C2          N1          C1     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GPJ    plan-1          C2   0.020
+GPJ    plan-1          C3   0.020
+GPJ    plan-1          O4   0.020
+GPJ    plan-1          O5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GPJ SMILES           ACDLabs              10.04 "O=C(O)C[NH2+]CP(=O)(O)O"
+GPJ SMILES_CANONICAL CACTVS               3.341 "OC(=O)C[NH2+]C[P](O)(O)=O"
+GPJ SMILES           CACTVS               3.341 "OC(=O)C[NH2+]C[P](O)(O)=O"
+GPJ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)[NH2+]CP(=O)(O)O"
+GPJ SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)[NH2+]CP(=O)(O)O"
+GPJ InChI            InChI                1.03  "InChI=1S/C3H8NO5P/c5-3(6)1-4-2-10(7,8)9/h4H,1-2H2,(H,5,6)(H2,7,8,9)/p+1"
+GPJ InChIKey         InChI                1.03  XDDAORKBJWWYJS-UHFFFAOYSA-O
+GPJ ?                acedrg               202         "dictionary generator"                  
+GPJ ?                acedrg_database      11          "data source"                           
+GPJ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GPJ ?                refmac5              5.8.0189    "optimization tool"                     

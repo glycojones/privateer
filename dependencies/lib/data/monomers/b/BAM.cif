@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BAM     BAM      BENZAMIDINE     NON-POLYMER     18     9     .     
+#
+data_comp_BAM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BAM     C1      C       CR6     0       -0.900      25.985      31.744      
+BAM     C2      C       CR16    0       -0.424      27.295      31.658      
+BAM     C3      C       CR16    0       -0.513      27.997      30.460      
+BAM     C4      C       CR16    0       -1.073      27.402      29.343      
+BAM     C5      C       CR16    0       -1.548      26.102      29.418      
+BAM     C6      C       CR16    0       -1.464      25.393      30.611      
+BAM     C       C       C       0       -0.808      25.230      33.024      
+BAM     N1      N       NH2     0       -0.219      24.046      33.048      
+BAM     N2      N       NH2     1       -1.310      25.743      34.124      
+BAM     HC21    H       H       0       -0.042      27.707      32.413      
+BAM     HC31    H       H       0       -0.189      28.881      30.410      
+BAM     HC41    H       H       0       -1.131      27.881      28.532      
+BAM     HC51    H       H       0       -1.930      25.697      28.657      
+BAM     HC61    H       H       0       -1.789      24.511      30.654      
+BAM     HN11    H       H       0       -0.197      23.568      33.795      
+BAM     HN12    H       H       0       0.163       23.718      32.316      
+BAM     HN21    H       H       0       -1.212      25.334      34.897      
+BAM     HN22    H       H       0       -1.756      26.502      34.099      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BAM       C1        C2        DOUBLE    y         1.390     0.010     1.390     0.010     
+BAM       C1        C6        SINGLE    y         1.390     0.010     1.390     0.010     
+BAM       C1        C         SINGLE    n         1.485     0.013     1.485     0.013     
+BAM       C2        C3        SINGLE    y         1.384     0.010     1.384     0.010     
+BAM       C3        C4        DOUBLE    y         1.376     0.011     1.376     0.011     
+BAM       C4        C5        SINGLE    y         1.376     0.012     1.376     0.012     
+BAM       C5        C6        DOUBLE    y         1.384     0.010     1.384     0.010     
+BAM       C         N1        SINGLE    n         1.313     0.017     1.313     0.017     
+BAM       C         N2        DOUBLE    n         1.309     0.010     1.309     0.010     
+BAM       C2        HC21      SINGLE    n         1.082     0.013     0.941     0.017     
+BAM       C3        HC31      SINGLE    n         1.082     0.013     0.943     0.018     
+BAM       C4        HC41      SINGLE    n         1.082     0.013     0.944     0.016     
+BAM       C5        HC51      SINGLE    n         1.082     0.013     0.943     0.018     
+BAM       C6        HC61      SINGLE    n         1.082     0.013     0.941     0.017     
+BAM       N1        HN11      SINGLE    n         1.016     0.010     0.887     0.020     
+BAM       N1        HN12      SINGLE    n         1.016     0.010     0.887     0.020     
+BAM       N2        HN21      SINGLE    n         1.016     0.010     0.879     0.020     
+BAM       N2        HN22      SINGLE    n         1.016     0.010     0.879     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BAM          C2          C1          C6     119.132    1.50
+BAM          C2          C1           C     120.434    1.50
+BAM          C6          C1           C     120.434    1.50
+BAM          C1          C2          C3     120.257    1.50
+BAM          C1          C2        HC21     119.975    1.50
+BAM          C3          C2        HC21     119.768    1.50
+BAM          C2          C3          C4     120.212    1.50
+BAM          C2          C3        HC31     119.848    1.50
+BAM          C4          C3        HC31     119.939    1.50
+BAM          C3          C4          C5     119.930    1.50
+BAM          C3          C4        HC41     120.035    1.50
+BAM          C5          C4        HC41     120.035    1.50
+BAM          C4          C5          C6     120.212    1.50
+BAM          C4          C5        HC51     119.939    1.50
+BAM          C6          C5        HC51     119.848    1.50
+BAM          C1          C6          C5     120.257    1.50
+BAM          C1          C6        HC61     119.975    1.50
+BAM          C5          C6        HC61     119.768    1.50
+BAM          C1           C          N1     120.060    1.50
+BAM          C1           C          N2     120.060    1.50
+BAM          N1           C          N2     119.881    1.50
+BAM           C          N1        HN11     120.106    1.76
+BAM           C          N1        HN12     120.102    1.76
+BAM        HN11          N1        HN12     119.783    2.70
+BAM           C          N2        HN21     120.106    1.76
+BAM           C          N2        HN22     120.102    1.76
+BAM        HN21          N2        HN22     119.783    2.70
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BAM       const_sp2_sp2_3           C          C1          C2          C3     180.000   10.00     2
+BAM              const_23           C          C1          C6          C5     180.000   10.00     2
+BAM             sp2_sp2_1          N1           C          C1          C2     180.000   10.00     2
+BAM       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+BAM       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+BAM              const_13          C3          C4          C5          C6       0.000   10.00     2
+BAM              const_17          C4          C5          C6          C1       0.000   10.00     2
+BAM             sp2_sp2_7          N2           C          N1        HN11       0.000   10.00     2
+BAM            sp2_sp2_11          N1           C          N2        HN21       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BAM    plan-1           C   0.020
+BAM    plan-1          C1   0.020
+BAM    plan-1          C2   0.020
+BAM    plan-1          C3   0.020
+BAM    plan-1          C4   0.020
+BAM    plan-1          C5   0.020
+BAM    plan-1          C6   0.020
+BAM    plan-1        HC21   0.020
+BAM    plan-1        HC31   0.020
+BAM    plan-1        HC41   0.020
+BAM    plan-1        HC51   0.020
+BAM    plan-1        HC61   0.020
+BAM    plan-2           C   0.020
+BAM    plan-2          C1   0.020
+BAM    plan-2          N1   0.020
+BAM    plan-2          N2   0.020
+BAM    plan-3           C   0.020
+BAM    plan-3        HN11   0.020
+BAM    plan-3        HN12   0.020
+BAM    plan-3          N1   0.020
+BAM    plan-4           C   0.020
+BAM    plan-4        HN21   0.020
+BAM    plan-4        HN22   0.020
+BAM    plan-4          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BAM SMILES           ACDLabs              10.04 "[NH2+]=C(/N)c1ccccc1"
+BAM SMILES_CANONICAL CACTVS               3.341 "NC(=[NH2+])c1ccccc1"
+BAM SMILES           CACTVS               3.341 "NC(=[NH2+])c1ccccc1"
+BAM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)C(=[NH2+])N"
+BAM SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)C(=[NH2+])N"
+BAM InChI            InChI                1.03  "InChI=1S/C7H8N2/c8-7(9)6-4-2-1-3-5-6/h1-5H,(H3,8,9)/p+1"
+BAM InChIKey         InChI                1.03  PXXJHWLDUBFPOL-UHFFFAOYSA-O
+BAM ?                acedrg               202         "dictionary generator"                  
+BAM ?                acedrg_database      11          "data source"                           
+BAM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BAM ?                refmac5              5.8.0189    "optimization tool"                     

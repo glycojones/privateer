@@ -1,0 +1,639 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HDM      HDM 'DIMETHYL PROPIONATE ESTER HEME      ' non-polymer        81  45 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HDM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HDM           O1D    O    O        -0.500      0.000    0.000    0.000
+ HDM           CGD    C    C         0.000     -0.553   -1.086    0.284
+ HDM           O2D    O    O2       -0.500      0.123   -2.136    0.343
+ HDM           CSD    C    CH3       0.000      1.600   -2.173    0.087
+ HDM           HSD3   H    H         0.000      1.815   -1.834   -0.899
+ HDM           HSD2   H    H         0.000      2.113   -1.546    0.779
+ HDM           HSD1   H    H         0.000      1.971   -3.166    0.192
+ HDM           CBD    C    CH2       0.000     -2.035   -1.127    0.553
+ HDM           HP63   H    H         0.000     -2.210   -1.499    1.565
+ HDM           HP64   H    H         0.000     -2.516   -1.794   -0.166
+ HDM           CAD    C    CH2       0.000     -2.619    0.280    0.416
+ HDM           HP61   H    H         0.000     -2.442    0.650   -0.596
+ HDM           HP62   H    H         0.000     -2.135    0.945    1.135
+ HDM           C3D    C    CR5       0.000     -4.100    0.239    0.686
+ HDM           C4D    C    CR5       0.000     -5.133    0.024   -0.281
+ HDM           CHA    C    C1        0.000     -4.991   -0.423   -1.554
+ HDM           HGM    H    H         0.000     -4.049   -0.838   -1.870
+ HDM           C1A    C    CR5       0.000     -6.052   -0.352   -2.459
+ HDM           ND     N    NR5       0.000     -6.324    0.363    0.292
+ HDM           FE     FE   FE        0.000     -7.910    0.850   -0.573
+ HDM           C2D    C    CR5       0.000     -4.707    0.396    1.876
+ HDM           CMD    C    CH3       0.000     -4.051    0.686    3.198
+ HDM           HM53   H    H         0.000     -4.418    1.604    3.579
+ HDM           HM52   H    H         0.000     -4.272   -0.093    3.879
+ HDM           HM51   H    H         0.000     -3.003    0.753    3.064
+ HDM           C1D    C    CR5       0.000     -6.104    0.234    1.639
+ HDM           CHD    C    C1        0.000     -7.087   -0.001    2.545
+ HDM           HBM    H    H         0.000     -6.835   -0.187    3.575
+ HDM           C4C    C    CR5       0.000     -8.427   -0.002    2.144
+ HDM           NC     N    NR5       0.000     -8.910    0.493    0.984
+ HDM           C3C    C    CR5       0.000     -9.507   -0.509    2.898
+ HDM           CAC    C    C1        0.000     -9.423   -1.261    4.156
+ HDM           HV4A   H    H         0.000     -8.891   -2.197    4.190
+ HDM           CBC    C    C2        0.000    -10.003   -0.785    5.256
+ HDM           HV4T   H    H         0.000    -10.536    0.152    5.225
+ HDM           HV4C   H    H         0.000     -9.943   -1.335    6.182
+ HDM           C2C    C    CR5       0.000    -10.667   -0.083    2.237
+ HDM           CMC    C    CH3       0.000    -12.093   -0.362    2.629
+ HDM           HM33   H    H         0.000    -12.699   -0.391    1.761
+ HDM           HM32   H    H         0.000    -12.146   -1.295    3.127
+ HDM           HM31   H    H         0.000    -12.438    0.403    3.275
+ HDM           C1C    C    CR5       0.000    -10.252    0.650    1.145
+ HDM           CHC    C    C1        0.000    -11.087    1.436    0.261
+ HDM           HAM    H    H         0.000    -12.127    1.580    0.500
+ HDM           C4B    C    CR5       0.000    -10.581    1.984   -0.851
+ HDM           NB     N    NR5       0.000     -9.371    1.678   -1.403
+ HDM           C3B    C    CR5       0.000    -11.190    3.053   -1.685
+ HDM           CAB    C    C1        0.000    -12.360    3.875   -1.344
+ HDM           HV2A   H    H         0.000    -12.771    4.555   -2.072
+ HDM           CBB    C    C2        0.000    -12.912    3.779   -0.138
+ HDM           HV2T   H    H         0.000    -12.443    3.178    0.626
+ HDM           HV2C   H    H         0.000    -13.830    4.301    0.083
+ HDM           C2B    C    CR5       0.000    -10.439    3.110   -2.825
+ HDM           CMB    C    CH3       0.000    -10.606    4.064   -3.975
+ HDM           HM13   H    H         0.000     -9.719    4.629   -4.096
+ HDM           HM12   H    H         0.000    -10.800    3.518   -4.861
+ HDM           HM11   H    H         0.000    -11.416    4.716   -3.777
+ HDM           C1B    C    CR5       0.000     -9.460    2.084   -2.715
+ HDM           CHB    C    C1        0.000     -8.717    1.546   -3.718
+ HDM           HDM    H    H         0.000     -8.875    1.880   -4.730
+ HDM           C4A    C    CR5       0.000     -7.750    0.566   -3.460
+ HDM           NA     N    NR5       0.000     -7.203    0.340   -2.239
+ HDM           C3A    C    CR5       0.000     -7.171   -0.311   -4.374
+ HDM           CMA    C    CH3       0.000     -7.592   -0.510   -5.806
+ HDM           HM83   H    H         0.000     -7.989    0.396   -6.186
+ HDM           HM82   H    H         0.000     -6.752   -0.797   -6.384
+ HDM           HM81   H    H         0.000     -8.330   -1.267   -5.856
+ HDM           C2A    C    CR5       0.000     -6.147   -0.965   -3.709
+ HDM           CAA    C    CH2       0.000     -5.251   -2.037   -4.263
+ HDM           HP71   H    H         0.000     -5.792   -2.607   -5.021
+ HDM           HP72   H    H         0.000     -4.943   -2.706   -3.457
+ HDM           CBA    C    CH2       0.000     -4.015   -1.392   -4.893
+ HDM           HP73   H    H         0.000     -3.475   -0.822   -4.134
+ HDM           HP74   H    H         0.000     -4.324   -0.723   -5.698
+ HDM           CGA    C    C         0.000     -3.116   -2.467   -5.448
+ HDM           O1A    O    O        -0.500     -3.443   -3.670   -5.347
+ HDM           O2A    O    O2       -0.500     -2.043   -2.156   -6.010
+ HDM           CSA    C    CH3       0.000     -1.098   -3.169   -6.587
+ HDM           HSA3   H    H         0.000     -0.759   -3.835   -5.828
+ HDM           HSA2   H    H         0.000     -1.583   -3.738   -7.345
+ HDM           HSA1   H    H         0.000     -0.252   -2.685   -7.016
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HDM      O1D    n/a    CGD    START
+ HDM      CGD    O1D    CBD    .
+ HDM      O2D    CGD    CSD    .
+ HDM      CSD    O2D    HSD1   .
+ HDM      HSD3   CSD    .      .
+ HDM      HSD2   CSD    .      .
+ HDM      HSD1   CSD    .      .
+ HDM      CBD    CGD    CAD    .
+ HDM      HP63   CBD    .      .
+ HDM      HP64   CBD    .      .
+ HDM      CAD    CBD    C3D    .
+ HDM      HP61   CAD    .      .
+ HDM      HP62   CAD    .      .
+ HDM      C3D    CAD    C2D    .
+ HDM      C4D    C3D    ND     .
+ HDM      CHA    C4D    C1A    .
+ HDM      HGM    CHA    .      .
+ HDM      C1A    CHA    .      .
+ HDM      ND     C4D    FE     .
+ HDM      FE     ND     .      .
+ HDM      C2D    C3D    C1D    .
+ HDM      CMD    C2D    HM51   .
+ HDM      HM53   CMD    .      .
+ HDM      HM52   CMD    .      .
+ HDM      HM51   CMD    .      .
+ HDM      C1D    C2D    CHD    .
+ HDM      CHD    C1D    C4C    .
+ HDM      HBM    CHD    .      .
+ HDM      C4C    CHD    C3C    .
+ HDM      NC     C4C    .      .
+ HDM      C3C    C4C    C2C    .
+ HDM      CAC    C3C    CBC    .
+ HDM      HV4A   CAC    .      .
+ HDM      CBC    CAC    HV4C   .
+ HDM      HV4T   CBC    .      .
+ HDM      HV4C   CBC    .      .
+ HDM      C2C    C3C    C1C    .
+ HDM      CMC    C2C    HM31   .
+ HDM      HM33   CMC    .      .
+ HDM      HM32   CMC    .      .
+ HDM      HM31   CMC    .      .
+ HDM      C1C    C2C    CHC    .
+ HDM      CHC    C1C    C4B    .
+ HDM      HAM    CHC    .      .
+ HDM      C4B    CHC    C3B    .
+ HDM      NB     C4B    .      .
+ HDM      C3B    C4B    C2B    .
+ HDM      CAB    C3B    CBB    .
+ HDM      HV2A   CAB    .      .
+ HDM      CBB    CAB    HV2C   .
+ HDM      HV2T   CBB    .      .
+ HDM      HV2C   CBB    .      .
+ HDM      C2B    C3B    C1B    .
+ HDM      CMB    C2B    HM11   .
+ HDM      HM13   CMB    .      .
+ HDM      HM12   CMB    .      .
+ HDM      HM11   CMB    .      .
+ HDM      C1B    C2B    CHB    .
+ HDM      CHB    C1B    C4A    .
+ HDM      HDM    CHB    .      .
+ HDM      C4A    CHB    C3A    .
+ HDM      NA     C4A    .      .
+ HDM      C3A    C4A    C2A    .
+ HDM      CMA    C3A    HM81   .
+ HDM      HM83   CMA    .      .
+ HDM      HM82   CMA    .      .
+ HDM      HM81   CMA    .      .
+ HDM      C2A    C3A    CAA    .
+ HDM      CAA    C2A    CBA    .
+ HDM      HP71   CAA    .      .
+ HDM      HP72   CAA    .      .
+ HDM      CBA    CAA    CGA    .
+ HDM      HP73   CBA    .      .
+ HDM      HP74   CBA    .      .
+ HDM      CGA    CBA    O2A    .
+ HDM      O1A    CGA    .      .
+ HDM      O2A    CGA    CSA    .
+ HDM      CSA    O2A    HSA1   .
+ HDM      HSA3   CSA    .      .
+ HDM      HSA2   CSA    .      .
+ HDM      HSA1   CSA    .      END
+ HDM      FE     NA     .    ADD
+ HDM      FE     NB     .    ADD
+ HDM      FE     NC     .    ADD
+ HDM      NA     C1A    .    ADD
+ HDM      C1A    C2A    .    ADD
+ HDM      C1B    NB     .    ADD
+ HDM      C1C    NC     .    ADD
+ HDM      C1D    ND     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HDM       FE        NA        single    2.090     0.020     2.090     0.020     
+HDM       FE        NB        single    2.090     0.020     2.090     0.020     
+HDM       FE        NC        single    2.090     0.020     2.090     0.020     
+HDM       FE        ND        single    2.090     0.020     2.090     0.020     
+HDM       NA        C1A       single    1.337     0.020     1.337     0.020     
+HDM       NA        C4A       single    1.337     0.020     1.337     0.020     
+HDM       C1A       C2A       double    1.490     0.020     1.490     0.020     
+HDM       C1A       CHA       single    1.483     0.020     1.483     0.020     
+HDM       CAA       C2A       single    1.510     0.020     1.510     0.020     
+HDM       C2A       C3A       single    1.490     0.020     1.490     0.020     
+HDM       CBA       CAA       single    1.524     0.020     1.524     0.020     
+HDM       HP71      CAA       single    1.089     0.010     0.989     0.005     
+HDM       HP72      CAA       single    1.089     0.010     0.989     0.005     
+HDM       CGA       CBA       single    1.510     0.020     1.510     0.020     
+HDM       HP73      CBA       single    1.089     0.010     0.989     0.005     
+HDM       HP74      CBA       single    1.089     0.010     0.989     0.005     
+HDM       O1A       CGA       deloc     1.220     0.020     1.220     0.020     
+HDM       O2A       CGA       deloc     1.454     0.020     1.454     0.020     
+HDM       CSA       O2A       single    1.426     0.020     1.426     0.020     
+HDM       HSA1      CSA       single    1.089     0.010     0.989     0.005     
+HDM       HSA2      CSA       single    1.089     0.010     0.989     0.005     
+HDM       HSA3      CSA       single    1.089     0.010     0.989     0.005     
+HDM       CMA       C3A       single    1.506     0.020     1.506     0.020     
+HDM       C3A       C4A       double    1.490     0.020     1.490     0.020     
+HDM       HM81      CMA       single    1.089     0.010     0.989     0.005     
+HDM       HM82      CMA       single    1.089     0.010     0.989     0.005     
+HDM       HM83      CMA       single    1.089     0.010     0.989     0.005     
+HDM       C4A       CHB       single    1.483     0.020     1.483     0.020     
+HDM       CHB       C1B       double    1.483     0.020     1.483     0.020     
+HDM       HDM       CHB       single    1.082     0.013     0.975     0.010     
+HDM       C1B       NB        single    1.337     0.020     1.337     0.020     
+HDM       C1B       C2B       single    1.490     0.020     1.490     0.020     
+HDM       NB        C4B       single    1.337     0.020     1.337     0.020     
+HDM       CMB       C2B       single    1.506     0.020     1.506     0.020     
+HDM       C2B       C3B       double    1.490     0.020     1.490     0.020     
+HDM       HM11      CMB       single    1.089     0.010     0.989     0.005     
+HDM       HM12      CMB       single    1.089     0.010     0.989     0.005     
+HDM       HM13      CMB       single    1.089     0.010     0.989     0.005     
+HDM       CAB       C3B       single    1.483     0.020     1.483     0.020     
+HDM       C3B       C4B       single    1.490     0.020     1.490     0.020     
+HDM       CBB       CAB       double    1.320     0.020     1.320     0.020     
+HDM       HV2A      CAB       single    1.082     0.013     0.975     0.010     
+HDM       HV2C      CBB       single    1.082     0.013     0.975     0.010     
+HDM       HV2T      CBB       single    1.082     0.013     0.975     0.010     
+HDM       C4B       CHC       double    1.483     0.020     1.483     0.020     
+HDM       CHC       C1C       single    1.483     0.020     1.483     0.020     
+HDM       HAM       CHC       single    1.082     0.013     0.975     0.010     
+HDM       C1C       NC        single    1.337     0.020     1.337     0.020     
+HDM       C1C       C2C       double    1.490     0.020     1.490     0.020     
+HDM       NC        C4C       single    1.337     0.020     1.337     0.020     
+HDM       CMC       C2C       single    1.506     0.020     1.506     0.020     
+HDM       C2C       C3C       single    1.490     0.020     1.490     0.020     
+HDM       HM31      CMC       single    1.089     0.010     0.989     0.005     
+HDM       HM32      CMC       single    1.089     0.010     0.989     0.005     
+HDM       HM33      CMC       single    1.089     0.010     0.989     0.005     
+HDM       CAC       C3C       single    1.483     0.020     1.483     0.020     
+HDM       C3C       C4C       double    1.490     0.020     1.490     0.020     
+HDM       CBC       CAC       double    1.320     0.020     1.320     0.020     
+HDM       HV4A      CAC       single    1.082     0.013     0.975     0.010     
+HDM       HV4C      CBC       single    1.082     0.013     0.975     0.010     
+HDM       HV4T      CBC       single    1.082     0.013     0.975     0.010     
+HDM       C4C       CHD       single    1.483     0.020     1.483     0.020     
+HDM       CHD       C1D       double    1.483     0.020     1.483     0.020     
+HDM       HBM       CHD       single    1.082     0.013     0.975     0.010     
+HDM       C1D       ND        single    1.337     0.020     1.337     0.020     
+HDM       C1D       C2D       single    1.490     0.020     1.490     0.020     
+HDM       ND        C4D       single    1.337     0.020     1.337     0.020     
+HDM       CMD       C2D       single    1.506     0.020     1.506     0.020     
+HDM       C2D       C3D       double    1.490     0.020     1.490     0.020     
+HDM       HM51      CMD       single    1.089     0.010     0.989     0.005     
+HDM       HM52      CMD       single    1.089     0.010     0.989     0.005     
+HDM       HM53      CMD       single    1.089     0.010     0.989     0.005     
+HDM       C4D       C3D       single    1.490     0.020     1.490     0.020     
+HDM       C3D       CAD       single    1.510     0.020     1.510     0.020     
+HDM       CHA       C4D       double    1.483     0.020     1.483     0.020     
+HDM       HGM       CHA       single    1.082     0.013     0.975     0.010     
+HDM       CAD       CBD       single    1.524     0.020     1.524     0.020     
+HDM       HP61      CAD       single    1.089     0.010     0.989     0.005     
+HDM       HP62      CAD       single    1.089     0.010     0.989     0.005     
+HDM       CBD       CGD       single    1.510     0.020     1.510     0.020     
+HDM       HP63      CBD       single    1.089     0.010     0.989     0.005     
+HDM       HP64      CBD       single    1.089     0.010     0.989     0.005     
+HDM       CGD       O1D       deloc     1.220     0.020     1.220     0.020     
+HDM       O2D       CGD       deloc     1.454     0.020     1.454     0.020     
+HDM       CSD       O2D       single    1.426     0.020     1.426     0.020     
+HDM       HSD1      CSD       single    1.089     0.010     0.989     0.005     
+HDM       HSD2      CSD       single    1.089     0.010     0.989     0.005     
+HDM       HSD3      CSD       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HDM      O1D    CGD    O2D     119.000    3.000
+ HDM      O1D    CGD    CBD     120.500    3.000
+ HDM      O2D    CGD    CBD     120.000    3.000
+ HDM      CGD    O2D    CSD     120.000    3.000
+ HDM      O2D    CSD    HSD3    109.470    3.000
+ HDM      O2D    CSD    HSD2    109.470    3.000
+ HDM      O2D    CSD    HSD1    109.470    3.000
+ HDM      HSD3   CSD    HSD2    109.470    3.000
+ HDM      HSD3   CSD    HSD1    109.470    3.000
+ HDM      HSD2   CSD    HSD1    109.470    3.000
+ HDM      CGD    CBD    HP63    109.470    3.000
+ HDM      CGD    CBD    HP64    109.470    3.000
+ HDM      CGD    CBD    CAD     109.470    3.000
+ HDM      HP63   CBD    HP64    107.900    3.000
+ HDM      HP63   CBD    CAD     109.470    3.000
+ HDM      HP64   CBD    CAD     109.470    3.000
+ HDM      CBD    CAD    HP61    109.470    3.000
+ HDM      CBD    CAD    HP62    109.470    3.000
+ HDM      CBD    CAD    C3D     109.470    3.000
+ HDM      HP61   CAD    HP62    107.900    3.000
+ HDM      HP61   CAD    C3D     109.470    3.000
+ HDM      HP62   CAD    C3D     109.470    3.000
+ HDM      CAD    C3D    C4D     126.000    3.000
+ HDM      CAD    C3D    C2D     126.000    3.000
+ HDM      C4D    C3D    C2D     108.000    3.000
+ HDM      C3D    C4D    CHA     117.000    3.000
+ HDM      C3D    C4D    ND      108.000    3.000
+ HDM      CHA    C4D    ND      108.000    3.000
+ HDM      C4D    CHA    HGM     120.000    3.000
+ HDM      C4D    CHA    C1A     120.000    3.000
+ HDM      HGM    CHA    C1A     120.000    3.000
+ HDM      CHA    C1A    NA      108.000    3.000
+ HDM      CHA    C1A    C2A     117.000    3.000
+ HDM      NA     C1A    C2A     108.000    3.000
+ HDM      C4D    ND     FE      126.000    3.000
+ HDM      C4D    ND     C1D     108.000    3.000
+ HDM      FE     ND     C1D     126.000    3.000
+ HDM      ND     FE     NA       90.000    3.000
+ HDM      ND     FE     NB      180.000    3.000
+ HDM      ND     FE     NC       90.000    3.000
+ HDM      NA     FE     NB       90.000    3.000
+ HDM      NA     FE     NC      144.000    3.000
+ HDM      NB     FE     NC       90.000    3.000
+ HDM      C3D    C2D    CMD     126.000    3.000
+ HDM      C3D    C2D    C1D     108.000    3.000
+ HDM      CMD    C2D    C1D     126.000    3.000
+ HDM      C2D    CMD    HM53    109.470    3.000
+ HDM      C2D    CMD    HM52    109.470    3.000
+ HDM      C2D    CMD    HM51    109.470    3.000
+ HDM      HM53   CMD    HM52    109.470    3.000
+ HDM      HM53   CMD    HM51    109.470    3.000
+ HDM      HM52   CMD    HM51    109.470    3.000
+ HDM      C2D    C1D    CHD     117.000    3.000
+ HDM      C2D    C1D    ND      108.000    3.000
+ HDM      CHD    C1D    ND      108.000    3.000
+ HDM      C1D    CHD    HBM     120.000    3.000
+ HDM      C1D    CHD    C4C     120.000    3.000
+ HDM      HBM    CHD    C4C     120.000    3.000
+ HDM      CHD    C4C    NC      108.000    3.000
+ HDM      CHD    C4C    C3C     117.000    3.000
+ HDM      NC     C4C    C3C     108.000    3.000
+ HDM      C4C    NC     FE      126.000    3.000
+ HDM      C4C    NC     C1C     108.000    3.000
+ HDM      FE     NC     C1C     126.000    3.000
+ HDM      C4C    C3C    CAC     117.000    3.000
+ HDM      C4C    C3C    C2C     108.000    3.000
+ HDM      CAC    C3C    C2C     117.000    3.000
+ HDM      C3C    CAC    HV4A    120.000    3.000
+ HDM      C3C    CAC    CBC     120.000    3.000
+ HDM      HV4A   CAC    CBC     120.000    3.000
+ HDM      CAC    CBC    HV4T    120.000    3.000
+ HDM      CAC    CBC    HV4C    120.000    3.000
+ HDM      HV4T   CBC    HV4C    120.000    3.000
+ HDM      C3C    C2C    CMC     126.000    3.000
+ HDM      C3C    C2C    C1C     108.000    3.000
+ HDM      CMC    C2C    C1C     126.000    3.000
+ HDM      C2C    CMC    HM33    109.470    3.000
+ HDM      C2C    CMC    HM32    109.470    3.000
+ HDM      C2C    CMC    HM31    109.470    3.000
+ HDM      HM33   CMC    HM32    109.470    3.000
+ HDM      HM33   CMC    HM31    109.470    3.000
+ HDM      HM32   CMC    HM31    109.470    3.000
+ HDM      C2C    C1C    CHC     117.000    3.000
+ HDM      C2C    C1C    NC      108.000    3.000
+ HDM      CHC    C1C    NC      108.000    3.000
+ HDM      C1C    CHC    HAM     120.000    3.000
+ HDM      C1C    CHC    C4B     120.000    3.000
+ HDM      HAM    CHC    C4B     120.000    3.000
+ HDM      CHC    C4B    NB      108.000    3.000
+ HDM      CHC    C4B    C3B     117.000    3.000
+ HDM      NB     C4B    C3B     108.000    3.000
+ HDM      C4B    NB     FE      126.000    3.000
+ HDM      C4B    NB     C1B     108.000    3.000
+ HDM      FE     NB     C1B     126.000    3.000
+ HDM      C4B    C3B    CAB     117.000    3.000
+ HDM      C4B    C3B    C2B     108.000    3.000
+ HDM      CAB    C3B    C2B     117.000    3.000
+ HDM      C3B    CAB    HV2A    120.000    3.000
+ HDM      C3B    CAB    CBB     120.000    3.000
+ HDM      HV2A   CAB    CBB     120.000    3.000
+ HDM      CAB    CBB    HV2T    120.000    3.000
+ HDM      CAB    CBB    HV2C    120.000    3.000
+ HDM      HV2T   CBB    HV2C    120.000    3.000
+ HDM      C3B    C2B    CMB     126.000    3.000
+ HDM      C3B    C2B    C1B     108.000    3.000
+ HDM      CMB    C2B    C1B     126.000    3.000
+ HDM      C2B    CMB    HM13    109.470    3.000
+ HDM      C2B    CMB    HM12    109.470    3.000
+ HDM      C2B    CMB    HM11    109.470    3.000
+ HDM      HM13   CMB    HM12    109.470    3.000
+ HDM      HM13   CMB    HM11    109.470    3.000
+ HDM      HM12   CMB    HM11    109.470    3.000
+ HDM      C2B    C1B    CHB     117.000    3.000
+ HDM      C2B    C1B    NB      108.000    3.000
+ HDM      CHB    C1B    NB      108.000    3.000
+ HDM      C1B    CHB    HDM     120.000    3.000
+ HDM      C1B    CHB    C4A     120.000    3.000
+ HDM      HDM    CHB    C4A     120.000    3.000
+ HDM      CHB    C4A    NA      108.000    3.000
+ HDM      CHB    C4A    C3A     117.000    3.000
+ HDM      NA     C4A    C3A     108.000    3.000
+ HDM      C4A    NA     FE      126.000    3.000
+ HDM      C4A    NA     C1A     108.000    3.000
+ HDM      FE     NA     C1A     126.000    3.000
+ HDM      C4A    C3A    CMA     126.000    3.000
+ HDM      C4A    C3A    C2A     108.000    3.000
+ HDM      CMA    C3A    C2A     126.000    3.000
+ HDM      C3A    CMA    HM83    109.470    3.000
+ HDM      C3A    CMA    HM82    109.470    3.000
+ HDM      C3A    CMA    HM81    109.470    3.000
+ HDM      HM83   CMA    HM82    109.470    3.000
+ HDM      HM83   CMA    HM81    109.470    3.000
+ HDM      HM82   CMA    HM81    109.470    3.000
+ HDM      C3A    C2A    CAA     126.000    3.000
+ HDM      C3A    C2A    C1A     108.000    3.000
+ HDM      CAA    C2A    C1A     126.000    3.000
+ HDM      C2A    CAA    HP71    109.470    3.000
+ HDM      C2A    CAA    HP72    109.470    3.000
+ HDM      C2A    CAA    CBA     109.470    3.000
+ HDM      HP71   CAA    HP72    107.900    3.000
+ HDM      HP71   CAA    CBA     109.470    3.000
+ HDM      HP72   CAA    CBA     109.470    3.000
+ HDM      CAA    CBA    HP73    109.470    3.000
+ HDM      CAA    CBA    HP74    109.470    3.000
+ HDM      CAA    CBA    CGA     109.470    3.000
+ HDM      HP73   CBA    HP74    107.900    3.000
+ HDM      HP73   CBA    CGA     109.470    3.000
+ HDM      HP74   CBA    CGA     109.470    3.000
+ HDM      CBA    CGA    O1A     120.500    3.000
+ HDM      CBA    CGA    O2A     120.000    3.000
+ HDM      O1A    CGA    O2A     119.000    3.000
+ HDM      CGA    O2A    CSA     120.000    3.000
+ HDM      O2A    CSA    HSA3    109.470    3.000
+ HDM      O2A    CSA    HSA2    109.470    3.000
+ HDM      O2A    CSA    HSA1    109.470    3.000
+ HDM      HSA3   CSA    HSA2    109.470    3.000
+ HDM      HSA3   CSA    HSA1    109.470    3.000
+ HDM      HSA2   CSA    HSA1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HDM      var_1    O1D    CGD    O2D    CSD       -0.026   20.000   1
+ HDM      var_2    CGD    O2D    CSD    HSD1     179.978   20.000   1
+ HDM      var_3    O1D    CGD    CBD    CAD       -0.030   20.000   3
+ HDM      var_4    CGD    CBD    CAD    C3D     -179.999   20.000   3
+ HDM      var_5    CBD    CAD    C3D    C2D       90.039   20.000   2
+ HDM      CONST_1  CAD    C3D    C4D    ND       180.000    0.000   0
+ HDM      var_6    C3D    C4D    CHA    C1A      180.000   20.000   1
+ HDM      var_7    C4D    CHA    C1A    NA         0.000   20.000   1
+ HDM      CONST_2  CHA    C1A    C2A    C3A     -150.000    0.000   0
+ HDM      CONST_3  C3D    C4D    ND     FE       150.000    0.000   0
+ HDM      var_8    C4D    ND     FE     NA         0.000   20.000   1
+ HDM      var_9    C1A    NA     FE     ND         0.000   20.000   1
+ HDM      var_10   C1B    NB     FE     NA         0.000   20.000   1
+ HDM      var_11   C4C    NC     FE     ND         0.000   20.000   1
+ HDM      CONST_4  CAD    C3D    C2D    C1D      180.000    0.000   0
+ HDM      var_12   C3D    C2D    CMD    HM51      -0.042   20.000   1
+ HDM      CONST_5  C3D    C2D    C1D    CHD      150.000    0.000   0
+ HDM      CONST_6  C2D    C1D    ND     C4D       30.000    0.000   0
+ HDM      var_13   C2D    C1D    CHD    C4C      180.000   20.000   1
+ HDM      var_14   C1D    CHD    C4C    C3C      180.000   20.000   1
+ HDM      CONST_7  CHD    C4C    NC     FE        30.000    0.000   0
+ HDM      CONST_8  CHD    C4C    C3C    C2C      180.000    0.000   0
+ HDM      var_15   C4C    C3C    CAC    CBC      120.041   20.000   1
+ HDM      CONST_9  C3C    CAC    CBC    HV4C    -179.973    0.000   0
+ HDM      CONST_10 C4C    C3C    C2C    C1C        0.000    0.000   0
+ HDM      var_16   C3C    C2C    CMC    HM31      89.966   20.000   1
+ HDM      CONST_11 C3C    C2C    C1C    CHC      180.000    0.000   0
+ HDM      CONST_12 C2C    C1C    NC     C4C      -30.000    0.000   0
+ HDM      var_17   C2C    C1C    CHC    C4B      180.000   20.000   1
+ HDM      var_18   C1C    CHC    C4B    C3B     -150.000   20.000   1
+ HDM      CONST_13 CHC    C4B    NB     FE       -30.000    0.000   0
+ HDM      CONST_14 CHC    C4B    C3B    C2B      180.000    0.000   0
+ HDM      var_19   C4B    C3B    CAB    CBB        6.067   20.000   1
+ HDM      CONST_15 C3B    CAB    CBB    HV2C    -173.604    0.000   0
+ HDM      CONST_16 C4B    C3B    C2B    C1B        0.000    0.000   0
+ HDM      var_20   C3B    C2B    CMB    HM11       0.056   20.000   1
+ HDM      CONST_17 C3B    C2B    C1B    CHB      150.000    0.000   0
+ HDM      CONST_18 C2B    C1B    NB     C4B       30.000    0.000   0
+ HDM      var_21   C2B    C1B    CHB    C4A      180.000   20.000   1
+ HDM      var_22   C1B    CHB    C4A    C3A      150.000   20.000   1
+ HDM      CONST_19 CHB    C4A    NA     FE        30.000    0.000   0
+ HDM      CONST_20 C4A    NA     C1A    CHA      150.000    0.000   0
+ HDM      CONST_21 CHB    C4A    C3A    C2A      180.000    0.000   0
+ HDM      var_23   C4A    C3A    CMA    HM81     -89.540   20.000   1
+ HDM      CONST_22 C4A    C3A    C2A    CAA      180.000    0.000   0
+ HDM      var_24   C3A    C2A    CAA    CBA       90.053   20.000   2
+ HDM      var_25   C2A    CAA    CBA    CGA      179.986   20.000   3
+ HDM      var_26   CAA    CBA    CGA    O2A     -179.972   20.000   3
+ HDM      var_27   CBA    CGA    O2A    CSA     -179.981   20.000   1
+ HDM      var_28   CGA    O2A    CSA    HSA1     179.951   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ HDM      chir_01  FE     ND     NB     NA        cross5
+                   .      .      NC     .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HDM      plan-1    NA        0.020
+ HDM      plan-1    FE        0.020
+ HDM      plan-1    C1A       0.020
+ HDM      plan-1    C4A       0.020
+ HDM      plan-1    C2A       0.020
+ HDM      plan-1    C3A       0.020
+ HDM      plan-1    CHA       0.020
+ HDM      plan-1    CAA       0.020
+ HDM      plan-1    CMA       0.020
+ HDM      plan-1    CHB       0.020
+ HDM      plan-1    HGM       0.020
+ HDM      plan-1    HDM       0.020
+ HDM      plan-2    CGA       0.020
+ HDM      plan-2    CBA       0.020
+ HDM      plan-2    O1A       0.020
+ HDM      plan-2    O2A       0.020
+ HDM      plan-3    CHB       0.020
+ HDM      plan-3    C4A       0.020
+ HDM      plan-3    C1B       0.020
+ HDM      plan-3    HDM       0.020
+ HDM      plan-4    C1B       0.020
+ HDM      plan-4    CHB       0.020
+ HDM      plan-4    NB        0.020
+ HDM      plan-4    C2B       0.020
+ HDM      plan-4    C3B       0.020
+ HDM      plan-4    C4B       0.020
+ HDM      plan-4    FE        0.020
+ HDM      plan-4    CMB       0.020
+ HDM      plan-4    CAB       0.020
+ HDM      plan-4    CHC       0.020
+ HDM      plan-4    HDM       0.020
+ HDM      plan-4    HV2A      0.020
+ HDM      plan-4    HAM       0.020
+ HDM      plan-5    CAB       0.020
+ HDM      plan-5    C3B       0.020
+ HDM      plan-5    CBB       0.020
+ HDM      plan-5    HV2A      0.020
+ HDM      plan-5    HV2C      0.020
+ HDM      plan-5    HV2T      0.020
+ HDM      plan-6    CHC       0.020
+ HDM      plan-6    C4B       0.020
+ HDM      plan-6    C1C       0.020
+ HDM      plan-6    HAM       0.020
+ HDM      plan-7    C1C       0.020
+ HDM      plan-7    CHC       0.020
+ HDM      plan-7    NC        0.020
+ HDM      plan-7    C2C       0.020
+ HDM      plan-7    C3C       0.020
+ HDM      plan-7    C4C       0.020
+ HDM      plan-7    FE        0.020
+ HDM      plan-7    CMC       0.020
+ HDM      plan-7    CAC       0.020
+ HDM      plan-7    CHD       0.020
+ HDM      plan-7    HAM       0.020
+ HDM      plan-7    HV4A      0.020
+ HDM      plan-7    HBM       0.020
+ HDM      plan-8    CAC       0.020
+ HDM      plan-8    C3C       0.020
+ HDM      plan-8    CBC       0.020
+ HDM      plan-8    HV4A      0.020
+ HDM      plan-8    HV4C      0.020
+ HDM      plan-8    HV4T      0.020
+ HDM      plan-9    CHD       0.020
+ HDM      plan-9    C4C       0.020
+ HDM      plan-9    C1D       0.020
+ HDM      plan-9    HBM       0.020
+ HDM      plan-10   C1D       0.020
+ HDM      plan-10   CHD       0.020
+ HDM      plan-10   ND        0.020
+ HDM      plan-10   C2D       0.020
+ HDM      plan-10   C3D       0.020
+ HDM      plan-10   C4D       0.020
+ HDM      plan-10   FE        0.020
+ HDM      plan-10   CMD       0.020
+ HDM      plan-10   CAD       0.020
+ HDM      plan-10   CHA       0.020
+ HDM      plan-10   HBM       0.020
+ HDM      plan-10   HGM       0.020
+ HDM      plan-11   CHA       0.020
+ HDM      plan-11   C1A       0.020
+ HDM      plan-11   C4D       0.020
+ HDM      plan-11   HGM       0.020
+ HDM      plan-12   CGD       0.020
+ HDM      plan-12   CBD       0.020
+ HDM      plan-12   O1D       0.020
+ HDM      plan-12   O2D       0.020
+# ------------------------------------------------------

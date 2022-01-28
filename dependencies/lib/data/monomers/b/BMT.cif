@@ -1,0 +1,264 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BMT     BMT     "4-METHYL-4-[(E)-2-BUTENYL]-4,N-METHYL-THREONINE"  M-peptide    32     14     .     
+#
+data_comp_BMT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BMT     N       N       NT1     0       -2.298      -0.662      1.313       
+BMT     CN      C       CH3     0       -3.283      -1.712      1.588       
+BMT     CA      C       CH1     0       -2.366      -0.085      -0.039      
+BMT     C       C       C       0       -3.625      0.777       -0.253      
+BMT     O       O       O       0       -3.835      1.697       0.563       
+BMT     OXT     O       OC      -1      -4.351      0.501       -1.228      
+BMT     CB      C       CH1     0       -1.115      0.735       -0.365      
+BMT     OG1     O       OH1     0       -1.165      1.125       -1.742      
+BMT     CG2     C       CH1     0       0.232       0.034       -0.093      
+BMT     CD1     C       CH3     0       0.391       -1.253      -0.896      
+BMT     CD2     C       CH2     0       1.421       0.978       -0.341      
+BMT     CE      C       C1      0       2.716       0.518       0.258       
+BMT     CZ      C       C1      0       3.717       0.047       -0.372      
+BMT     CH      C       CH3     0       5.007       -0.421      0.228       
+BMT     H       H       H       0       -2.421      0.000       1.898       
+BMT     HN1     H       H       0       -3.066      -2.160      2.428       
+BMT     HN2     H       H       0       -3.280      -2.372      0.867       
+BMT     HN3     H       H       0       -4.177      -1.323      1.660       
+BMT     HA      H       H       0       -2.416      -0.828      -0.690      
+BMT     HB      H       H       0       -1.146      1.562       0.188       
+BMT     HG1     H       H       0       -0.873      1.917       -1.827      
+BMT     HG2     H       H       0       0.249       -0.210      0.865       
+BMT     HD11    H       H       0       0.331       -1.057      -1.847      
+BMT     HD12    H       H       0       -0.309      -1.882      -0.652      
+BMT     HD13    H       H       0       1.257       -1.653      -0.706      
+BMT     HD22    H       H       0       1.204       1.860       0.029       
+BMT     HD23    H       H       0       1.541       1.084       -1.308      
+BMT     HE      H       H       0       2.806       0.580       1.196       
+BMT     HZ      H       H       0       3.636       -0.011      -1.312      
+BMT     HH1     H       H       0       4.886       -0.578      1.179       
+BMT     HH2     H       H       0       5.691       0.255       0.098       
+BMT     HH3     H       H       0       5.285       -1.247      -0.201      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BMT      N      n/a    CA     START
+ BMT      H      N      .      .
+ BMT      CN     N      HN1    .
+ BMT      HN3    CN     .      .
+ BMT      HN2    CN     .      .
+ BMT      HN1    CN     .      .
+ BMT      CA     N      C      .
+ BMT      HA     CA     .      .
+ BMT      CB     CA     CG2    .
+ BMT      HB     CB     .      .
+ BMT      OG1    CB     HG1    .
+ BMT      HG1    OG1    .      .
+ BMT      CG2    CB     CD2    .
+ BMT      HG2    CG2    .      .
+ BMT      CD1    CG2    HD11   .
+ BMT      HD13   CD1    .      .
+ BMT      HD12   CD1    .      .
+ BMT      HD11   CD1    .      .
+ BMT      CD2    CG2    CE     .
+ BMT      HD22   CD2    .      .
+ BMT      HD23   CD2    .      .
+ BMT      CE     CD2    CZ     .
+ BMT      HE     CE     .      .
+ BMT      CZ     CE     CH     .
+ BMT      HZ     CZ     .      .
+ BMT      CH     CZ     HH1    .
+ BMT      HH3    CH     .      .
+ BMT      HH2    CH     .      .
+ BMT      HH1    CH     .      .
+ BMT      C      CA     .      END
+ BMT      O      C      .      .
+ BMT      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BMT       N         CN        SINGLE    n         1.463     0.015     1.463     0.015     
+BMT       N         CA        SINGLE    n         1.468     0.014     1.468     0.014     
+BMT       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+BMT       CA        CB        SINGLE    n         1.516     0.020     1.516     0.020     
+BMT       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+BMT       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+BMT       CB        OG1       SINGLE    n         1.426     0.019     1.426     0.019     
+BMT       CB        CG2       SINGLE    n         1.535     0.013     1.535     0.013     
+BMT       CG2       CD1       SINGLE    n         1.521     0.014     1.521     0.014     
+BMT       CG2       CD2       SINGLE    n         1.535     0.014     1.535     0.014     
+BMT       CD2       CE        SINGLE    n         1.498     0.011     1.498     0.011     
+BMT       CE        CZ        DOUBLE    n         1.270     0.020     1.270     0.020     
+BMT       CZ        CH        SINGLE    n         1.497     0.011     1.497     0.011     
+BMT       N         H         SINGLE    n         1.036     0.016     0.890     0.020     
+BMT       CN        HN1       SINGLE    n         1.089     0.010     0.977     0.013     
+BMT       CN        HN2       SINGLE    n         1.089     0.010     0.977     0.013     
+BMT       CN        HN3       SINGLE    n         1.089     0.010     0.977     0.013     
+BMT       CA        HA        SINGLE    n         1.089     0.010     0.990     0.020     
+BMT       CB        HB        SINGLE    n         1.089     0.010     0.995     0.020     
+BMT       OG1       HG1       SINGLE    n         0.970     0.012     0.848     0.020     
+BMT       CG2       HG2       SINGLE    n         1.089     0.010     0.989     0.018     
+BMT       CD1       HD11      SINGLE    n         1.089     0.010     0.973     0.015     
+BMT       CD1       HD12      SINGLE    n         1.089     0.010     0.973     0.015     
+BMT       CD1       HD13      SINGLE    n         1.089     0.010     0.973     0.015     
+BMT       CD2       HD22      SINGLE    n         1.089     0.010     0.981     0.019     
+BMT       CD2       HD23      SINGLE    n         1.089     0.010     0.981     0.019     
+BMT       CE        HE        SINGLE    n         1.082     0.013     0.945     0.020     
+BMT       CZ        HZ        SINGLE    n         1.082     0.013     0.945     0.020     
+BMT       CH        HH1       SINGLE    n         1.089     0.010     0.971     0.014     
+BMT       CH        HH2       SINGLE    n         1.089     0.010     0.971     0.014     
+BMT       CH        HH3       SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BMT          CN           N          CA     112.615    2.70
+BMT          CN           N           H     108.144    3.00
+BMT          CA           N           H     106.958    3.00
+BMT           N          CN         HN1     110.215    1.50
+BMT           N          CN         HN2     110.215    1.50
+BMT           N          CN         HN3     110.215    1.50
+BMT         HN1          CN         HN2     109.279    1.79
+BMT         HN1          CN         HN3     109.279    1.79
+BMT         HN2          CN         HN3     109.279    1.79
+BMT           N          CA           C     113.481    2.07
+BMT           N          CA          CB     111.883    2.59
+BMT           N          CA          HA     108.712    1.50
+BMT           C          CA          CB     110.275    1.50
+BMT           C          CA          HA     107.601    1.50
+BMT          CB          CA          HA     108.179    1.50
+BMT          CA           C           O     117.371    1.50
+BMT          CA           C         OXT     117.371    1.50
+BMT           O           C         OXT     125.259    1.50
+BMT          CA          CB         OG1     108.919    1.50
+BMT          CA          CB         CG2     111.094    2.85
+BMT          CA          CB          HB     108.267    2.06
+BMT         OG1          CB         CG2     109.580    2.17
+BMT         OG1          CB          HB     108.183    1.96
+BMT         CG2          CB          HB     108.131    1.50
+BMT          CB         OG1         HG1     109.265    3.00
+BMT          CB         CG2         CD1     111.475    1.50
+BMT          CB         CG2         CD2     112.320    1.95
+BMT          CB         CG2         HG2     107.173    1.50
+BMT         CD1         CG2         CD2     110.659    1.50
+BMT         CD1         CG2         HG2     107.528    1.50
+BMT         CD2         CG2         HG2     107.526    1.50
+BMT         CG2         CD1        HD11     109.636    1.50
+BMT         CG2         CD1        HD12     109.636    1.50
+BMT         CG2         CD1        HD13     109.636    1.50
+BMT        HD11         CD1        HD12     109.411    1.50
+BMT        HD11         CD1        HD13     109.411    1.50
+BMT        HD12         CD1        HD13     109.411    1.50
+BMT         CG2         CD2          CE     113.813    2.40
+BMT         CG2         CD2        HD22     108.947    1.50
+BMT         CG2         CD2        HD23     108.947    1.50
+BMT          CE         CD2        HD22     108.801    1.50
+BMT          CE         CD2        HD23     108.801    1.50
+BMT        HD22         CD2        HD23     107.820    1.50
+BMT         CD2          CE          CZ     126.503    2.53
+BMT         CD2          CE          HE     117.372    1.70
+BMT          CZ          CE          HE     116.125    2.02
+BMT          CE          CZ          CH     126.121    3.00
+BMT          CE          CZ          HZ     116.658    2.20
+BMT          CH          CZ          HZ     117.221    1.69
+BMT          CZ          CH         HH1     109.554    1.50
+BMT          CZ          CH         HH2     109.554    1.50
+BMT          CZ          CH         HH3     109.554    1.50
+BMT         HH1          CH         HH2     109.305    1.50
+BMT         HH1          CH         HH3     109.305    1.50
+BMT         HH2          CH         HH3     109.305    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BMT             sp3_sp3_1         HN1          CN           N          CA     180.000   10.00     3
+BMT             sp3_sp3_9           C          CA           N          CN      60.000   10.00     3
+BMT             sp2_sp3_8          CZ          CE         CD2         CG2     120.000   10.00     6
+BMT             sp2_sp2_1         CD2          CE          CZ          CH     180.000   10.00     2
+BMT            sp2_sp3_13          CE          CZ          CH         HH1       0.000   10.00     6
+BMT             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+BMT            sp3_sp3_16           N          CA          CB         OG1      60.000   10.00     3
+BMT            sp3_sp3_22          CA          CB         OG1         HG1     180.000   10.00     3
+BMT            sp3_sp3_25          CA          CB         CG2         CD1     180.000   10.00     3
+BMT            sp3_sp3_43          CE         CD2         CG2          CB     180.000   10.00     3
+BMT            sp3_sp3_35        HD11         CD1         CG2          CB     -60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+BMT    chir_1    N    CA    CN    H    positive
+BMT    chir_2    CA    N    C    CB    both
+BMT    chir_3    CB    OG1    CA    CG2    negative
+BMT    chir_4    CG2    CB    CD2    CD1    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BMT    plan-1           C   0.020
+BMT    plan-1          CA   0.020
+BMT    plan-1           O   0.020
+BMT    plan-1         OXT   0.020
+BMT    plan-2         CD2   0.020
+BMT    plan-2          CE   0.020
+BMT    plan-2          CZ   0.020
+BMT    plan-2          HE   0.020
+BMT    plan-3          CE   0.020
+BMT    plan-3          CH   0.020
+BMT    plan-3          CZ   0.020
+BMT    plan-3          HZ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BMT SMILES           ACDLabs              12.01 "O=C(O)C(NC)C(O)C(C/C=C/C)C"
+BMT InChI            InChI                1.03  "InChI=1S/C10H19NO3/c1-4-5-6-7(2)9(12)8(11-3)10(13)14/h4-5,7-9,11-12H,6H2,1-3H3,(H,13,14)/b5-4+/t7-,8+,9-/m1/s1"
+BMT InChIKey         InChI                1.03  AHQFCPOIMVMDEZ-UNISNWAASA-N
+BMT SMILES_CANONICAL CACTVS               3.370 "CN[C@@H]([C@H](O)[C@H](C)C\C=C\C)C(O)=O"
+BMT SMILES           CACTVS               3.370 "CN[CH]([CH](O)[CH](C)CC=CC)C(O)=O"
+BMT SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "C/C=C/C[C@@H](C)[C@H]([C@@H](C(=O)O)NC)O"
+BMT SMILES           "OpenEye OEToolkits" 1.7.2 "CC=CCC(C)C(C(C(=O)O)NC)O"
+BMT ?                acedrg               196         "dictionary generator"                  
+BMT ?                acedrg_database      11          "data source"                           
+BMT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BMT ?                refmac5              5.8.0222    "optimization tool"                     

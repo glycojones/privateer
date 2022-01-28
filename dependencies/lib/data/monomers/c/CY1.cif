@@ -1,0 +1,218 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CY1     CY1     ACETAMIDOMETHYLCYSTEINE     peptide     24     12     .
+#
+data_comp_CY1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CY1     N       N       NT3     1       -3.921      -1.041      -0.254
+CY1     CA      C       CH1     0       -2.843      -0.407      0.555
+CY1     CB      C       CH2     0       -1.532      -0.478      -0.205
+CY1     SG      S       S2      0       -0.068      0.007       0.748
+CY1     CD      C       CH2     0       1.223       -0.085      -0.502
+CY1     NE      N       NH1     0       2.531       0.291       0.028
+CY1     CZ      C       C       0       3.645       0.272       -0.721
+CY1     OAC     O       O       0       3.641       -0.072      -1.902
+CY1     CM      C       CH3     0       4.917       0.693       -0.052
+CY1     C       C       C       0       -3.216      1.048       0.869
+CY1     O       O       O       0       -3.136      1.413       2.059
+CY1     OXT     O       OC      -1      -3.572      1.763       -0.089
+CY1     H       H       H       0       -4.723      -0.947      0.170
+CY1     H2      H       H       0       -3.743      -1.928      -0.360
+CY1     H3      H       H       0       -3.966      -0.644      -1.073
+CY1     HA      H       H       0       -2.760      -0.905      1.401
+CY1     HB2     H       H       0       -1.597      0.096       -0.984
+CY1     HB3     H       H       0       -1.409      -1.388      -0.518
+CY1     HD2     H       H       0       0.990       0.512       -1.242
+CY1     HD3     H       H       0       1.265       -1.001      -0.847
+CY1     HE      H       H       0       2.578       0.535       0.864
+CY1     HM1     H       H       0       4.740       0.983       0.857
+CY1     HM2     H       H       0       5.316       1.425       -0.548
+CY1     HM3     H       H       0       5.536       -0.055      -0.033
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+CY1      N      n/a    CA     START
+CY1      H      N      .      .
+CY1      H2     N      .      .
+CY1      H3     N      .      .
+CY1      CA     N      C      .
+CY1      HA     CA     .      .
+CY1      CB     CA     SG     .
+CY1      HB2    CB     .      .
+CY1      HB3    CB     .      .
+CY1      SG     CB     CD     .
+CY1      CD     SG     NE     .
+CY1      HD2    CD     .      .
+CY1      HD3    CD     .      .
+CY1      NE     CD     CZ     .
+CY1      HE     NE     .      .
+CY1      CZ     NE     CM     .
+CY1      OAC    CZ     .      .
+CY1      CM     CZ     HM1    .
+CY1      HM3    CM     .      .
+CY1      HM2    CM     .      .
+CY1      HM1    CM     .      .
+CY1      C      CA     .      END
+CY1      O      C      .      .
+CY1      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CY1       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+CY1       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+CY1       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+CY1       CB        SG        SINGLE    n         1.813     0.011     1.813     0.011     
+CY1       SG        CD        SINGLE    n         1.799     0.010     1.799     0.010     
+CY1       CD        NE        SINGLE    n         1.457     0.014     1.457     0.014     
+CY1       NE        CZ        SINGLE    n         1.337     0.011     1.337     0.011     
+CY1       CZ        OAC       DOUBLE    n         1.229     0.012     1.229     0.012     
+CY1       CZ        CM        SINGLE    n         1.495     0.010     1.495     0.010     
+CY1       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+CY1       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+CY1       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+CY1       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+CY1       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+CY1       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+CY1       CB        HB2       SINGLE    n         1.089     0.010     0.970     0.010     
+CY1       CB        HB3       SINGLE    n         1.089     0.010     0.970     0.010     
+CY1       CD        HD2       SINGLE    n         1.089     0.010     0.979     0.015     
+CY1       CD        HD3       SINGLE    n         1.089     0.010     0.979     0.015     
+CY1       NE        HE        SINGLE    n         1.016     0.010     0.872     0.020     
+CY1       CM        HM1       SINGLE    n         1.089     0.010     0.971     0.014     
+CY1       CM        HM2       SINGLE    n         1.089     0.010     0.971     0.014     
+CY1       CM        HM3       SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CY1          CA           N           H     109.671    1.50
+CY1          CA           N          H2     109.671    1.50
+CY1          CA           N          H3     109.671    1.50
+CY1           H           N          H2     109.028    2.41
+CY1           H           N          H3     109.028    2.41
+CY1          H2           N          H3     109.028    2.41
+CY1           N          CA          CB     109.354    1.50
+CY1           N          CA           C     109.494    1.50
+CY1           N          CA          HA     107.983    1.50
+CY1          CB          CA           C     110.419    2.31
+CY1          CB          CA          HA     109.209    1.50
+CY1           C          CA          HA     108.606    1.50
+CY1          CA          CB          SG     114.974    1.55
+CY1          CA          CB         HB2     108.537    1.50
+CY1          CA          CB         HB3     108.537    1.50
+CY1          SG          CB         HB2     108.654    1.50
+CY1          SG          CB         HB3     108.654    1.50
+CY1         HB2          CB         HB3     107.812    1.50
+CY1          CB          SG          CD     101.627    1.50
+CY1          SG          CD          NE     109.471    3.00
+CY1          SG          CD         HD2     108.707    1.51
+CY1          SG          CD         HD3     108.707    1.51
+CY1          NE          CD         HD2     109.150    1.50
+CY1          NE          CD         HD3     109.150    1.50
+CY1         HD2          CD         HD3     108.188    1.50
+CY1          CD          NE          CZ     122.168    2.35
+CY1          CD          NE          HE     118.756    2.23
+CY1          CZ          NE          HE     119.076    1.94
+CY1          NE          CZ         OAC     122.594    1.50
+CY1          NE          CZ          CM     115.848    1.50
+CY1         OAC          CZ          CM     121.558    1.50
+CY1          CZ          CM         HM1     109.678    1.50
+CY1          CZ          CM         HM2     109.678    1.50
+CY1          CZ          CM         HM3     109.678    1.50
+CY1         HM1          CM         HM2     109.365    1.50
+CY1         HM1          CM         HM3     109.365    1.50
+CY1         HM2          CM         HM3     109.365    1.50
+CY1          CA           C           O     117.134    1.50
+CY1          CA           C         OXT     117.134    1.50
+CY1           O           C         OXT     125.732    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CY1             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+CY1            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+CY1             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+CY1            sp3_sp3_19          CA          CB          SG          CD     180.000   10.00     3
+CY1            sp3_sp3_22          NE          CD          SG          CB     180.000   10.00     3
+CY1             sp2_sp3_8          CZ          NE          CD          SG     120.000   10.00     6
+CY1             sp2_sp2_3         OAC          CZ          NE          CD       0.000   10.00     2
+CY1            sp2_sp3_13          NE          CZ          CM         HM1       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+CY1    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CY1    plan-1          CD   0.020
+CY1    plan-1          CZ   0.020
+CY1    plan-1          HE   0.020
+CY1    plan-1          NE   0.020
+CY1    plan-2          CM   0.020
+CY1    plan-2          CZ   0.020
+CY1    plan-2          NE   0.020
+CY1    plan-2         OAC   0.020
+CY1    plan-3           C   0.020
+CY1    plan-3          CA   0.020
+CY1    plan-3           O   0.020
+CY1    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CY1 SMILES           ACDLabs              10.04 "O=C(NCSCC(C(=O)O)N)C"
+CY1 SMILES_CANONICAL CACTVS               3.341 "CC(=O)NCSC[C@H](N)C(O)=O"
+CY1 SMILES           CACTVS               3.341 "CC(=O)NCSC[CH](N)C(O)=O"
+CY1 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)NCSC[C@@H](C(=O)O)N"
+CY1 SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)NCSCC(C(=O)O)N"
+CY1 InChI            InChI                1.03  "InChI=1S/C6H12N2O3S/c1-4(9)8-3-12-2-5(7)6(10)11/h5H,2-3,7H2,1H3,(H,8,9)(H,10,11)/t5-/m0/s1"
+CY1 InChIKey         InChI                1.03  QFQYGJMNIDGZSG-YFKPBYRVSA-N
+CY1 ?                acedrg               196         "dictionary generator"
+CY1 ?                acedrg_database      11          "data source"
+CY1 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CY1 ?                refmac5              5.8.0222    "optimization tool"

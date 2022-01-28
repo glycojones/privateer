@@ -1,0 +1,220 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ASL     ASL      "ASPARTIC ACID-4-CARBOXYETHYL ESTER"  peptide  24     14     .     
+#
+data_comp_ASL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ASL     N       N       NT3     1       3.542       0.015       -0.525      
+ASL     CA      C       CH1     0       2.134       -0.434      -0.345      
+ASL     C       C       C       0       2.019       -1.218      0.968       
+ASL     O       O       O       0       1.289       -2.230      0.964       
+ASL     CB      C       CH2     0       1.168       0.755       -0.371      
+ASL     CG      C       C       0       -0.262      0.366       -0.620      
+ASL     OD1     O       O2      0       -1.061      0.762       0.408       
+ASL     OD2     O       O       0       -0.635      -0.207      -1.613      
+ASL     C3      C       CH3     0       -3.257      1.102       -0.503      
+ASL     C2      C       CH1     0       -2.446      0.332       0.534       
+ASL     C1      C       C       0       -2.602      -1.197      0.484       
+ASL     O1      O       O       0       -3.146      -1.698      -0.523      
+ASL     O2      O       OC      -1      -2.170      -1.838      1.463       
+ASL     OXT     O       OC      -1      2.661       -0.788      1.947       
+ASL     H       H       H       0       4.103       -0.703      -0.525      
+ASL     H2      H       H       0       3.780       0.576       0.152       
+ASL     H3      H       H       0       3.630       0.456       -1.318      
+ASL     H4      H       H       0       1.906       -1.036      -1.092      
+ASL     H6      H       H       0       1.448       1.372       -1.077      
+ASL     H7      H       H       0       1.225       1.229       0.485       
+ASL     H8      H       H       0       -3.049      0.779       -1.396      
+ASL     H9      H       H       0       -3.041      2.049       -0.445      
+ASL     H10     H       H       0       -4.206      0.977       -0.328      
+ASL     H11     H       H       0       -2.763      0.623       1.426       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ASL      N      n/a    CA     START
+ ASL      H      N      .      .
+ ASL      H2     N      .      .
+ ASL      H3     N      .      .
+ ASL      CA     N      C      .
+ ASL      H4     CA     .      .
+ ASL      CB     CA     CG     .
+ ASL      H6     CB     .      .
+ ASL      H7     CB     .      .
+ ASL      CG     CB     OD1    .
+ ASL      OD2    CG     .      .
+ ASL      OD1    CG     C2     .
+ ASL      C2     OD1    C1     .
+ ASL      H11    C2     .      .
+ ASL      C3     C2     H8     .
+ ASL      H10    C3     .      .
+ ASL      H9     C3     .      .
+ ASL      H8     C3     .      .
+ ASL      C1     C2     O2     .
+ ASL      O1     C1     .      .
+ ASL      O2     C1     .      .
+ ASL      C      CA     .      END
+ ASL      O      C      .      .
+ ASL      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ASL       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+ASL       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+ASL       CA        CB        SINGLE    n         1.531     0.011     1.531     0.011     
+ASL       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+ASL       CB        CG        SINGLE    n         1.502     0.010     1.502     0.010     
+ASL       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+ASL       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+ASL       CG        OD1       SINGLE    n         1.334     0.020     1.334     0.020     
+ASL       CG        OD2       DOUBLE    n         1.203     0.015     1.203     0.015     
+ASL       OD1       C2        SINGLE    n         1.442     0.014     1.442     0.014     
+ASL       C2        C1        SINGLE    n         1.533     0.010     1.533     0.010     
+ASL       C3        C2        SINGLE    n         1.510     0.020     1.510     0.020     
+ASL       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+ASL       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+ASL       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+ASL       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+ASL       CA        H4        SINGLE    n         1.089     0.010     0.986     0.020     
+ASL       CB        H6        SINGLE    n         1.089     0.010     0.979     0.016     
+ASL       CB        H7        SINGLE    n         1.089     0.010     0.979     0.016     
+ASL       C3        H8        SINGLE    n         1.089     0.010     0.973     0.014     
+ASL       C3        H9        SINGLE    n         1.089     0.010     0.973     0.014     
+ASL       C3        H10       SINGLE    n         1.089     0.010     0.973     0.014     
+ASL       C2        H11       SINGLE    n         1.089     0.010     0.990     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ASL          CA           N           H     110.062    1.93
+ASL          CA           N          H2     110.062    1.93
+ASL          CA           N          H3     110.062    1.93
+ASL           H           N          H2     109.028    2.41
+ASL           H           N          H3     109.028    2.41
+ASL          H2           N          H3     109.028    2.41
+ASL           N          CA           C     109.241    1.50
+ASL           N          CA          CB     111.338    1.50
+ASL           N          CA          H4     108.487    1.50
+ASL           C          CA          CB     111.804    2.58
+ASL           C          CA          H4     108.824    1.50
+ASL          CB          CA          H4     108.666    1.69
+ASL          CA           C           O     117.124    1.50
+ASL          CA           C         OXT     117.124    1.50
+ASL           O           C         OXT     125.752    1.50
+ASL          CA          CB          CG     113.374    1.50
+ASL          CA          CB          H6     108.488    2.17
+ASL          CA          CB          H7     108.488    2.17
+ASL          CG          CB          H6     108.336    1.50
+ASL          CG          CB          H7     108.336    1.50
+ASL          H6          CB          H7     107.891    1.66
+ASL          CB          CG         OD1     111.995    1.92
+ASL          CB          CG         OD2     124.906    1.50
+ASL         OD1          CG         OD2     123.099    2.43
+ASL          CG         OD1          C2     116.394    1.84
+ASL          C2          C3          H8     109.471    1.50
+ASL          C2          C3          H9     109.471    1.50
+ASL          C2          C3         H10     109.471    1.50
+ASL          H8          C3          H9     109.425    1.50
+ASL          H8          C3         H10     109.425    1.50
+ASL          H9          C3         H10     109.425    1.50
+ASL         OD1          C2          C1     110.354    2.51
+ASL         OD1          C2          C3     107.112    1.50
+ASL         OD1          C2         H11     109.487    1.88
+ASL          C1          C2          C3     111.511    2.91
+ASL          C1          C2         H11     108.330    1.50
+ASL          C3          C2         H11     109.378    1.87
+ASL          O1          C1          O2     125.666    1.50
+ASL          O1          C1          C2     117.167    1.52
+ASL          O2          C1          C2     117.167    1.52
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ASL             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+ASL             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+ASL            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+ASL             sp2_sp3_8         OD1          CG          CB          CA     120.000   10.00     6
+ASL             sp2_sp2_1          CB          CG         OD1          C2     180.000   10.00     2
+ASL            sp3_sp3_19          C1          C2         OD1          CG     180.000   10.00     3
+ASL            sp3_sp3_25         OD1          C2          C3          H8      60.000   10.00     3
+ASL            sp2_sp3_13          O1          C1          C2         OD1       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ASL    chir_1    CA    N    C    CB    both
+ASL    chir_2    C2    OD1    C1    C3    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ASL    plan-1           C   0.020
+ASL    plan-1          CA   0.020
+ASL    plan-1           O   0.020
+ASL    plan-1         OXT   0.020
+ASL    plan-2          CB   0.020
+ASL    plan-2          CG   0.020
+ASL    plan-2         OD1   0.020
+ASL    plan-2         OD2   0.020
+ASL    plan-3          C1   0.020
+ASL    plan-3          C2   0.020
+ASL    plan-3          O1   0.020
+ASL    plan-3          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ASL SMILES           ACDLabs              12.01 "O=C(OC(C(=O)O)C)CC(C(=O)O)N"
+ASL InChI            InChI                1.03  "InChI=1S/C7H11NO6/c1-3(6(10)11)14-5(9)2-4(8)7(12)13/h3-4H,2,8H2,1H3,(H,10,11)(H,12,13)"
+ASL InChIKey         InChI                1.03  CWUGTWXZZHPDGI-UHFFFAOYSA-N
+ASL SMILES_CANONICAL CACTVS               3.370 "CC(OC(=O)CC(N)C(O)=O)C(O)=O"
+ASL SMILES           CACTVS               3.370 "CC(OC(=O)CC(N)C(O)=O)C(O)=O"
+ASL SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "CC(C(=O)O)OC(=O)CC(C(=O)O)N"
+ASL SMILES           "OpenEye OEToolkits" 1.7.6 "CC(C(=O)O)OC(=O)CC(C(=O)O)N"
+ASL ?                acedrg               202         "dictionary generator"                  
+ASL ?                acedrg_database      11          "data source"                           
+ASL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ASL ?                refmac5              5.8.0222    "optimization tool"                     

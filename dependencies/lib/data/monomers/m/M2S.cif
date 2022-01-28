@@ -1,0 +1,228 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+M2S     M2S     "3-{[(R)-methylsulfinyl]methyl}-L-valine"     peptide     27     12     .
+#
+data_comp_M2S
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+M2S     N       N       NT3     1       -14.013     -0.440      4.018
+M2S     CA      C       CH1     0       -14.643     0.806       4.549
+M2S     CB      C       CT      0       -14.386     1.076       6.089
+M2S     CG1     C       CH3     0       -15.251     2.262       6.546
+M2S     CG2     C       CH3     0       -14.817     -0.182      6.857
+M2S     CG      C       CH2     0       -12.893     1.386       6.411
+M2S     SD      S       S3      0       -12.539     1.684       8.157
+M2S     OE      O       O       0       -12.705     3.161       8.376
+M2S     CE      C       CH3     0       -10.789     1.386       8.121
+M2S     C       C       C       0       -14.253     1.997       3.659
+M2S     O       O       O       0       -13.071     2.053       3.261
+M2S     OXT     O       OC      -1      -15.149     2.823       3.391
+M2S     H       H       H       0       -13.864     -0.366      3.121
+M2S     H2      H       H       0       -14.570     -1.148      4.158
+M2S     H3      H       H       0       -13.221     -0.608      4.430
+M2S     HA      H       H       0       -15.617     0.690       4.472
+M2S     HG11    H       H       0       -15.388     2.227       7.508
+M2S     HG12    H       H       0       -16.115     2.231       6.101
+M2S     HG13    H       H       0       -14.804     3.097       6.318
+M2S     HG21    H       H       0       -14.929     0.022       7.801
+M2S     HG22    H       H       0       -14.138     -0.872      6.756
+M2S     HG23    H       H       0       -15.662     -0.509      6.501
+M2S     HG2     H       H       0       -12.626     2.178       5.903
+M2S     HG3     H       H       0       -12.351     0.632       6.106
+M2S     HE1     H       H       0       -10.425     1.503       9.009
+M2S     HE2     H       H       0       -10.369     2.012       7.514
+M2S     HE3     H       H       0       -10.623     0.483       7.820
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+M2S      N      n/a    CA     START
+M2S      H      N      .      .
+M2S      H2     N      .      .
+M2S      H3     N      .      .
+M2S      CA     N      C      .
+M2S      HA     CA     .      .
+M2S      CB     CA     CG     .
+M2S      CG1    CB     HG11   .
+M2S      HG13   CG1    .      .
+M2S      HG12   CG1    .      .
+M2S      HG11   CG1    .      .
+M2S      CG2    CB     HG21   .
+M2S      HG23   CG2    .      .
+M2S      HG22   CG2    .      .
+M2S      HG21   CG2    .      .
+M2S      CG     CB     SD     .
+M2S      HG2    CG     .      .
+M2S      HG3    CG     .      .
+M2S      SD     CG     CE     .
+M2S      OE     SD     .      .
+M2S      CE     SD     HE1    .
+M2S      HE3    CE     .      .
+M2S      HE2    CE     .      .
+M2S      HE1    CE     .      .
+M2S      C      CA     OXT    .
+M2S      O      C      .      .
+M2S      OXT    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+M2S       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+M2S       CA        CB        SINGLE    n         1.567     0.015     1.567     0.015     
+M2S       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+M2S       CB        CG1       SINGLE    n         1.533     0.010     1.533     0.010     
+M2S       CB        CG2       SINGLE    n         1.533     0.010     1.533     0.010     
+M2S       CB        CG        SINGLE    n         1.546     0.014     1.546     0.014     
+M2S       CG        SD        SINGLE    n         1.804     0.010     1.804     0.010     
+M2S       SD        OE        DOUBLE    n         1.503     0.020     1.503     0.020     
+M2S       SD        CE        SINGLE    n         1.775     0.018     1.775     0.018     
+M2S       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+M2S       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+M2S       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+M2S       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+M2S       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+M2S       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+M2S       CG1       HG11      SINGLE    n         1.089     0.010     0.973     0.015     
+M2S       CG1       HG12      SINGLE    n         1.089     0.010     0.973     0.015     
+M2S       CG1       HG13      SINGLE    n         1.089     0.010     0.973     0.015     
+M2S       CG2       HG21      SINGLE    n         1.089     0.010     0.973     0.015     
+M2S       CG2       HG22      SINGLE    n         1.089     0.010     0.973     0.015     
+M2S       CG2       HG23      SINGLE    n         1.089     0.010     0.973     0.015     
+M2S       CG        HG2       SINGLE    n         1.089     0.010     0.979     0.015     
+M2S       CG        HG3       SINGLE    n         1.089     0.010     0.979     0.015     
+M2S       CE        HE1       SINGLE    n         1.089     0.010     0.967     0.014     
+M2S       CE        HE2       SINGLE    n         1.089     0.010     0.967     0.014     
+M2S       CE        HE3       SINGLE    n         1.089     0.010     0.967     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+M2S          CA           N           H     109.853    1.85
+M2S          CA           N          H2     109.853    1.85
+M2S          CA           N          H3     109.853    1.85
+M2S           H           N          H2     109.028    2.41
+M2S           H           N          H3     109.028    2.41
+M2S          H2           N          H3     109.028    2.41
+M2S           N          CA          CB     112.810    3.00
+M2S           N          CA           C     109.414    1.50
+M2S           N          CA          HA     108.444    1.50
+M2S          CB          CA           C     111.511    2.91
+M2S          CB          CA          HA     105.876    1.50
+M2S           C          CA          HA     108.600    1.50
+M2S          CA          CB         CG1     110.196    2.15
+M2S          CA          CB         CG2     110.196    2.15
+M2S          CA          CB          CG     111.094    2.85
+M2S         CG1          CB         CG2     108.765    1.50
+M2S         CG1          CB          CG     109.100    2.16
+M2S         CG2          CB          CG     109.100    2.16
+M2S          CB         CG1        HG11     109.575    1.50
+M2S          CB         CG1        HG12     109.575    1.50
+M2S          CB         CG1        HG13     109.575    1.50
+M2S        HG11         CG1        HG12     109.377    1.50
+M2S        HG11         CG1        HG13     109.377    1.50
+M2S        HG12         CG1        HG13     109.377    1.50
+M2S          CB         CG2        HG21     109.575    1.50
+M2S          CB         CG2        HG22     109.575    1.50
+M2S          CB         CG2        HG23     109.575    1.50
+M2S        HG21         CG2        HG22     109.377    1.50
+M2S        HG21         CG2        HG23     109.377    1.50
+M2S        HG22         CG2        HG23     109.377    1.50
+M2S          CB          CG          SD     108.220    3.00
+M2S          CB          CG         HG2     108.067    1.50
+M2S          CB          CG         HG3     108.067    1.50
+M2S          SD          CG         HG2     109.128    1.59
+M2S          SD          CG         HG3     109.128    1.59
+M2S         HG2          CG         HG3     108.193    1.50
+M2S          CG          SD          OE     106.316    1.50
+M2S          CG          SD          CE      98.345    1.79
+M2S          OE          SD          CE     106.048    1.50
+M2S          SD          CE         HE1     109.408    1.50
+M2S          SD          CE         HE2     109.408    1.50
+M2S          SD          CE         HE3     109.408    1.50
+M2S         HE1          CE         HE2     109.545    1.50
+M2S         HE1          CE         HE3     109.545    1.50
+M2S         HE2          CE         HE3     109.545    1.50
+M2S          CA           C           O     117.139    1.50
+M2S          CA           C         OXT     117.139    1.50
+M2S           O           C         OXT     125.721    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+M2S             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+M2S            sp3_sp3_13           N          CA          CB         CG1      60.000   10.00     3
+M2S             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+M2S            sp3_sp3_19          CA          CB         CG1        HG11     180.000   10.00     3
+M2S            sp3_sp3_28          CA          CB         CG2        HG21     180.000   10.00     3
+M2S            sp3_sp3_37          CA          CB          CG          SD     180.000   10.00     3
+M2S            sp3_sp3_46          CB          CG          SD          OE     180.000   10.00     3
+M2S            sp3_sp3_52         HE1          CE          SD          CG     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+M2S    chir_1    CA    N    C    CB    both
+M2S    chir_2    SD    OE    CG    CE    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+M2S    plan-1           C   0.020
+M2S    plan-1          CA   0.020
+M2S    plan-1           O   0.020
+M2S    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+M2S SMILES           ACDLabs              10.04 "O=S(C)CC(C)(C)C(N)C(=O)O"
+M2S SMILES_CANONICAL CACTVS               3.341 "C[S@@](=O)CC(C)(C)[C@H](N)C(O)=O"
+M2S SMILES           CACTVS               3.341 "C[S](=O)CC(C)(C)[CH](N)C(O)=O"
+M2S SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)(C[S@](=O)C)[C@@H](C(=O)O)N"
+M2S SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)(CS(=O)C)C(C(=O)O)N"
+M2S InChI            InChI                1.03  "InChI=1S/C7H15NO3S/c1-7(2,4-12(3)11)5(8)6(9)10/h5H,4,8H2,1-3H3,(H,9,10)/t5-,12-/m1/s1"
+M2S InChIKey         InChI                1.03  MOBZVMLNWJMVLB-DAZVOFDJSA-N
+M2S ?                acedrg               196         "dictionary generator"
+M2S ?                acedrg_database      11          "data source"
+M2S ?                rdkit                2017.03.2   "Chemoinformatics tool"
+M2S ?                refmac5              5.8.0222    "optimization tool"

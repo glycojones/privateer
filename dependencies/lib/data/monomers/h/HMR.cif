@@ -1,0 +1,244 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HMR      HMR 'BETA-HOMOARGININE                   ' non-polymer        28  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HMR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HMR           OXT    O    OC       -0.500      0.000    0.000    0.000
+ HMR           C      C    C         0.000     -1.057    0.109   -0.661
+ HMR           O      O    OC       -0.500     -1.005    0.348   -1.888
+ HMR           CH2    C    CH2       0.000     -2.392   -0.045    0.021
+ HMR           HC1    H    H         0.000     -2.489    0.710    0.804
+ HMR           HC2    H    H         0.000     -2.459   -1.040    0.467
+ HMR           CA     C    CH1       0.000     -3.513    0.133   -1.004
+ HMR           HA     H    H         0.000     -3.444    1.135   -1.450
+ HMR           N      N    NH2       0.000     -3.380   -0.881   -2.056
+ HMR           H2     H    H         0.000     -2.575   -1.495   -2.075
+ HMR           H      H    H         0.000     -4.093   -0.973   -2.771
+ HMR           CB     C    CH2       0.000     -4.868   -0.023   -0.312
+ HMR           HB2    H    H         0.000     -4.965    0.732    0.471
+ HMR           HB3    H    H         0.000     -4.935   -1.018    0.134
+ HMR           CG     C    CH2       0.000     -5.988    0.155   -1.336
+ HMR           HG2    H    H         0.000     -5.888   -0.600   -2.119
+ HMR           HG3    H    H         0.000     -5.918    1.150   -1.781
+ HMR           CD     C    CH2       0.000     -7.343   -0.002   -0.645
+ HMR           HD2    H    H         0.000     -7.440    0.753    0.138
+ HMR           HD3    H    H         0.000     -7.410   -0.997   -0.200
+ HMR           NE     N    NH1       0.000     -8.416    0.169   -1.626
+ HMR           HE     H    H         0.000     -8.191    0.359   -2.592
+ HMR           CZ     C    C         0.000     -9.730    0.070   -1.234
+ HMR           NH2    N    NH2       0.000    -10.738    0.232   -2.154
+ HMR           HH22   H    H         0.000    -10.525    0.425   -3.131
+ HMR           HH21   H    H         0.000    -11.714    0.161   -1.875
+ HMR           NH1    N    N         0.000    -10.021   -0.176    0.013
+ HMR           HH1    H    H         0.000    -10.936   -0.247    0.300
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HMR      OXT    n/a    C      START
+ HMR      C      OXT    CH2    .
+ HMR      O      C      .      .
+ HMR      CH2    C      CA     .
+ HMR      HC1    CH2    .      .
+ HMR      HC2    CH2    .      .
+ HMR      CA     CH2    CB     .
+ HMR      HA     CA     .      .
+ HMR      N      CA     H      .
+ HMR      H2     N      .      .
+ HMR      H      N      .      .
+ HMR      CB     CA     CG     .
+ HMR      HB2    CB     .      .
+ HMR      HB3    CB     .      .
+ HMR      CG     CB     CD     .
+ HMR      HG2    CG     .      .
+ HMR      HG3    CG     .      .
+ HMR      CD     CG     NE     .
+ HMR      HD2    CD     .      .
+ HMR      HD3    CD     .      .
+ HMR      NE     CD     CZ     .
+ HMR      HE     NE     .      .
+ HMR      CZ     NE     NH1    .
+ HMR      NH2    CZ     HH21   .
+ HMR      HH22   NH2    .      .
+ HMR      HH21   NH2    .      .
+ HMR      NH1    CZ     HH1    .
+ HMR      HH1    NH1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HMR       N         CA        single    1.450     0.020     1.450     0.020     
+HMR       H         N         single    1.036     0.016     0.914     0.007     
+HMR       H2        N         single    1.036     0.016     0.914     0.007     
+HMR       CB        CA        single    1.524     0.020     1.524     0.020     
+HMR       CA        CH2       single    1.524     0.020     1.524     0.020     
+HMR       HA        CA        single    1.089     0.010     0.989     0.005     
+HMR       CG        CB        single    1.524     0.020     1.524     0.020     
+HMR       HB2       CB        single    1.089     0.010     0.989     0.005     
+HMR       HB3       CB        single    1.089     0.010     0.989     0.005     
+HMR       CD        CG        single    1.524     0.020     1.524     0.020     
+HMR       HG2       CG        single    1.089     0.010     0.989     0.005     
+HMR       HG3       CG        single    1.089     0.010     0.989     0.005     
+HMR       NE        CD        single    1.450     0.020     1.450     0.020     
+HMR       HD2       CD        single    1.089     0.010     0.989     0.005     
+HMR       HD3       CD        single    1.089     0.010     0.989     0.005     
+HMR       CZ        NE        single    1.330     0.020     1.330     0.020     
+HMR       HE        NE        single    1.016     0.010     0.899     0.007     
+HMR       NH1       CZ        double    1.260     0.020     1.260     0.020     
+HMR       NH2       CZ        single    1.332     0.020     1.332     0.020     
+HMR       HH1       NH1       single    1.016     0.010     0.899     0.007     
+HMR       HH21      NH2       single    1.016     0.010     0.899     0.007     
+HMR       HH22      NH2       single    1.016     0.010     0.899     0.007     
+HMR       O         C         deloc     1.250     0.020     1.250     0.020     
+HMR       CH2       C         single    1.510     0.020     1.510     0.020     
+HMR       C         OXT       deloc     1.250     0.020     1.250     0.020     
+HMR       HC1       CH2       single    1.089     0.010     0.989     0.005     
+HMR       HC2       CH2       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HMR      OXT    C      O       123.000    3.000
+ HMR      OXT    C      CH2     118.500    3.000
+ HMR      O      C      CH2     118.500    3.000
+ HMR      C      CH2    HC1     109.470    3.000
+ HMR      C      CH2    HC2     109.470    3.000
+ HMR      C      CH2    CA      109.470    3.000
+ HMR      HC1    CH2    HC2     107.900    3.000
+ HMR      HC1    CH2    CA      109.470    3.000
+ HMR      HC2    CH2    CA      109.470    3.000
+ HMR      CH2    CA     HA      108.340    3.000
+ HMR      CH2    CA     N       109.470    3.000
+ HMR      CH2    CA     CB      109.470    3.000
+ HMR      HA     CA     N       109.470    3.000
+ HMR      HA     CA     CB      108.340    3.000
+ HMR      N      CA     CB      109.470    3.000
+ HMR      CA     N      H2      120.000    3.000
+ HMR      CA     N      H       120.000    3.000
+ HMR      H2     N      H       120.000    3.000
+ HMR      CA     CB     HB2     109.470    3.000
+ HMR      CA     CB     HB3     109.470    3.000
+ HMR      CA     CB     CG      111.000    3.000
+ HMR      HB2    CB     HB3     107.900    3.000
+ HMR      HB2    CB     CG      109.470    3.000
+ HMR      HB3    CB     CG      109.470    3.000
+ HMR      CB     CG     HG2     109.470    3.000
+ HMR      CB     CG     HG3     109.470    3.000
+ HMR      CB     CG     CD      111.000    3.000
+ HMR      HG2    CG     HG3     107.900    3.000
+ HMR      HG2    CG     CD      109.470    3.000
+ HMR      HG3    CG     CD      109.470    3.000
+ HMR      CG     CD     HD2     109.470    3.000
+ HMR      CG     CD     HD3     109.470    3.000
+ HMR      CG     CD     NE      112.000    3.000
+ HMR      HD2    CD     HD3     107.900    3.000
+ HMR      HD2    CD     NE      109.470    3.000
+ HMR      HD3    CD     NE      109.470    3.000
+ HMR      CD     NE     HE      118.500    3.000
+ HMR      CD     NE     CZ      121.500    3.000
+ HMR      HE     NE     CZ      120.000    3.000
+ HMR      NE     CZ     NH2     120.000    3.000
+ HMR      NE     CZ     NH1     120.000    3.000
+ HMR      NH2    CZ     NH1     120.000    3.000
+ HMR      CZ     NH2    HH22    120.000    3.000
+ HMR      CZ     NH2    HH21    120.000    3.000
+ HMR      HH22   NH2    HH21    120.000    3.000
+ HMR      CZ     NH1    HH1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HMR      var_1    OXT    C      CH2    CA      -179.993   20.000   3
+ HMR      var_2    C      CH2    CA     CB      -179.985   20.000   3
+ HMR      var_3    CH2    CA     N      H        173.797   20.000   1
+ HMR      var_4    CH2    CA     CB     CG      -179.999   20.000   3
+ HMR      var_5    CA     CB     CG     CD       179.961   20.000   3
+ HMR      var_6    CB     CG     CD     NE       179.988   20.000   3
+ HMR      var_7    CG     CD     NE     CZ      -180.000   20.000   3
+ HMR      CONST_1  CD     NE     CZ     NH1        0.000    0.000   0
+ HMR      CONST_2  NE     CZ     NH2    HH21     180.000    0.000   0
+ HMR      CONST_3  NE     CZ     NH1    HH1      180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HMR      chir_01  CA     N      CB     CH2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HMR      plan-1    N         0.020
+ HMR      plan-1    CA        0.020
+ HMR      plan-1    H         0.020
+ HMR      plan-1    H2        0.020
+ HMR      plan-2    NE        0.020
+ HMR      plan-2    CD        0.020
+ HMR      plan-2    CZ        0.020
+ HMR      plan-2    HE        0.020
+ HMR      plan-3    CZ        0.020
+ HMR      plan-3    NE        0.020
+ HMR      plan-3    NH1       0.020
+ HMR      plan-3    NH2       0.020
+ HMR      plan-3    HH1       0.020
+ HMR      plan-3    HE        0.020
+ HMR      plan-3    HH22      0.020
+ HMR      plan-3    HH21      0.020
+ HMR      plan-4    NH2       0.020
+ HMR      plan-4    CZ        0.020
+ HMR      plan-4    HH21      0.020
+ HMR      plan-4    HH22      0.020
+ HMR      plan-5    C         0.020
+ HMR      plan-5    O         0.020
+ HMR      plan-5    CH2       0.020
+ HMR      plan-5    OXT       0.020
+# ------------------------------------------------------

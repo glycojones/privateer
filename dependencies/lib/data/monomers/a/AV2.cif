@@ -1,0 +1,343 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AV2      AV2 '.                                   ' non-polymer        42  30 .
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AV2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AV2           O1B    O    OP       -0.660    -10.871   -1.313    2.242
+ AV2           PB     P    P         0.000    -10.557   -2.561    1.453
+ AV2           O3B    O    OP       -0.660    -10.097   -3.730    2.292
+ AV2           O2B    O    OP       -0.660    -11.596   -2.915    0.417
+ AV2           O3A    O    O2        0.000     -9.264   -2.157    0.579
+ AV2           PA     P    P         0.000     -7.798   -2.087    1.245
+ AV2           O1A    O    OP       -0.500     -7.241   -3.489    1.298
+ AV2           O2A    O    OP       -0.500     -7.889   -1.268    2.510
+ AV2           "O5'"  O    O2        0.000     -6.941   -1.250    0.168
+ AV2           "C5'"  C    CH2       0.000     -5.629   -0.803    0.505
+ AV2           "H5'1" H    H         0.000     -5.084   -1.630    0.966
+ AV2           "H5'2" H    H         0.000     -5.711    0.020    1.218
+ AV2           "C4'"  C    CH1       0.000     -4.882   -0.329   -0.737
+ AV2           "H4'"  H    H         0.000     -4.988   -1.087   -1.526
+ AV2           "C3'"  C    CH1       0.000     -3.400   -0.120   -0.451
+ AV2           "H3'"  H    H         0.000     -3.238   -0.099    0.636
+ AV2           "O3'"  O    O2        0.000     -2.619   -1.171   -1.027
+ AV2           "O4'"  O    O2        0.000     -5.391    0.918   -1.222
+ AV2           "C1'"  C    CH1       0.000     -4.325    1.708   -1.761
+ AV2           "H1'"  H    H         0.000     -4.227    1.509   -2.837
+ AV2           "C2'"  C    CH1       0.000     -3.064    1.253   -1.041
+ AV2           "H2'"  H    H         0.000     -2.862    1.949   -0.215
+ AV2           "O2'"  O    O2        0.000     -1.928    1.237   -1.913
+ AV2           V      V    V         0.000     -1.043   -0.544   -2.076
+ AV2           O2V    O    OH1       0.000     -0.979   -1.296   -4.041
+ AV2           HO2V   H    H         0.000     -1.775   -1.279   -4.590
+ AV2           O1V    O    OH1       0.000      0.604   -0.668   -1.117
+ AV2           HO1V   H    H         0.000      1.111   -1.491   -1.132
+ AV2           N9     N    NR5       0.000     -4.577    3.157   -1.542
+ AV2           C8     C    CR15      0.000     -5.367    3.661   -0.572
+ AV2           H8     H    H         0.000     -5.906    3.064    0.152
+ AV2           N7     N    NRD5      0.000     -5.396    5.015   -0.624
+ AV2           C5     C    CR56      0.000     -4.607    5.401   -1.639
+ AV2           C6     C    CR6       0.000     -4.205    6.697   -2.235
+ AV2           N6     N    NH2       0.000     -4.667    7.864   -1.721
+ AV2           HN61   H    H         0.000     -4.382    8.743   -2.131
+ AV2           HN62   H    H         0.000     -5.295    7.852   -0.929
+ AV2           N1     N    NRD6      0.000     -3.360    6.667   -3.294
+ AV2           C2     C    CR16      0.000     -2.893    5.507   -3.806
+ AV2           H2     H    H         0.000     -2.218    5.550   -4.653
+ AV2           N3     N    NRD6      0.000     -3.228    4.296   -3.311
+ AV2           C4     C    CR56      0.000     -4.063    4.174   -2.245
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AV2      O1B    n/a    PB     START
+ AV2      PB     O1B    O3A    .
+ AV2      O3B    PB     .      .
+ AV2      O2B    PB     .      .
+ AV2      O3A    PB     PA     .
+ AV2      PA     O3A    "O5'"  .
+ AV2      O1A    PA     .      .
+ AV2      O2A    PA     .      .
+ AV2      "O5'"  PA     "C5'"  .
+ AV2      "C5'"  "O5'"  "C4'"  .
+ AV2      "H5'1" "C5'"  .      .
+ AV2      "H5'2" "C5'"  .      .
+ AV2      "C4'"  "C5'"  "O4'"  .
+ AV2      "H4'"  "C4'"  .      .
+ AV2      "C3'"  "C4'"  "O3'"  .
+ AV2      "H3'"  "C3'"  .      .
+ AV2      "O3'"  "C3'"  .      .
+ AV2      "O4'"  "C4'"  "C1'"  .
+ AV2      "C1'"  "O4'"  N9     .
+ AV2      "H1'"  "C1'"  .      .
+ AV2      "C2'"  "C1'"  "O2'"  .
+ AV2      "H2'"  "C2'"  .      .
+ AV2      "O2'"  "C2'"  V      .
+ AV2      V      "O2'"  O1V    .
+ AV2      O2V    V      HO2V   .
+ AV2      HO2V   O2V    .      .
+ AV2      O1V    V      HO1V   .
+ AV2      HO1V   O1V    .      .
+ AV2      N9     "C1'"  C8     .
+ AV2      C8     N9     N7     .
+ AV2      H8     C8     .      .
+ AV2      N7     C8     C5     .
+ AV2      C5     N7     C6     .
+ AV2      C6     C5     N1     .
+ AV2      N6     C6     HN62   .
+ AV2      HN61   N6     .      .
+ AV2      HN62   N6     .      .
+ AV2      N1     C6     C2     .
+ AV2      C2     N1     N3     .
+ AV2      H2     C2     .      .
+ AV2      N3     C2     C4     .
+ AV2      C4     N3     .      END
+ AV2      V      "O3'"  .    ADD
+ AV2      "C2'"  "C3'"  .    ADD
+ AV2      N9     C4     .    ADD
+ AV2      C4     C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AV2       O1V       V         metal     1.910     0.020     1.910     0.020     
+AV2       V         "O3'"     single    1.994     0.020     1.994     0.020     
+AV2       O2V       V         single    2.105     0.020     2.105     0.020     
+AV2       V         "O2'"     single    1.995     0.020     1.995     0.020     
+AV2       "O3'"     "C3'"     single    1.431     0.020     1.431     0.020     
+AV2       HO2V      O2V       single    0.970     0.012     0.839     0.014     
+AV2       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+AV2       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+AV2       "C2'"     "C3'"     single    1.532     0.020     1.532     0.020     
+AV2       "C2'"     "C1'"     single    1.522     0.020     1.522     0.020     
+AV2       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+AV2       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+AV2       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+AV2       "C4'"     "C5'"     single    1.525     0.020     1.525     0.020     
+AV2       "O4'"     "C4'"     single    1.432     0.020     1.432     0.020     
+AV2       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+AV2       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+AV2       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+AV2       "O5'"     PA        single    1.611     0.020     1.611     0.020     
+AV2       O1A       PA        deloc     1.510     0.020     1.510     0.020     
+AV2       O2A       PA        deloc     1.510     0.020     1.510     0.020     
+AV2       PA        O3A       single    1.612     0.020     1.612     0.020     
+AV2       O3A       PB        single    1.612     0.020     1.612     0.020     
+AV2       O3B       PB        deloc     1.511     0.020     1.511     0.020     
+AV2       O2B       PB        deloc     1.509     0.020     1.509     0.020     
+AV2       PB        O1B       deloc     1.510     0.020     1.510     0.020     
+AV2       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+AV2       "C1'"     "O4'"     single    1.432     0.020     1.432     0.020     
+AV2       N9        "C1'"     single    1.487     0.020     1.487     0.020     
+AV2       N9        C4        deloc     1.339     0.020     1.339     0.020     
+AV2       C8        N9        deloc     1.349     0.020     1.349     0.020     
+AV2       C4        C5        single    1.473     0.020     1.473     0.020     
+AV2       C4        N3        aromatic  1.360     0.020     1.360     0.020     
+AV2       C5        N7        double    1.342     0.020     1.342     0.020     
+AV2       C6        C5        single    1.482     0.020     1.482     0.020     
+AV2       N7        C8        aromatic  1.355     0.020     1.355     0.020     
+AV2       H8        C8        single    1.082     0.013     0.975     0.010     
+AV2       N3        C2        deloc     1.350     0.020     1.350     0.020     
+AV2       H2        C2        single    1.082     0.013     0.975     0.010     
+AV2       C2        N1        deloc     1.351     0.020     1.351     0.020     
+AV2       N1        C6        double    1.355     0.020     1.355     0.020     
+AV2       N6        C6        single    1.356     0.020     1.356     0.020     
+AV2       HN62      N6        single    1.016     0.010     0.899     0.007     
+AV2       HN61      N6        single    1.016     0.010     0.899     0.007     
+AV2       HO1V      O1V       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AV2      O1B    PB     O3B     114.382    3.000
+ AV2      O1B    PB     O2B     114.172    3.000
+ AV2      O1B    PB     O3A     104.065    3.000
+ AV2      O3B    PB     O2B     114.163    3.000
+ AV2      O3B    PB     O3A     104.525    3.000
+ AV2      O2B    PB     O3A     103.814    3.000
+ AV2      PB     O3A    PA      121.091    3.000
+ AV2      O3A    PA     O1A     108.047    3.000
+ AV2      O3A    PA     O2A     108.359    3.000
+ AV2      O3A    PA     "O5'"   103.309    3.000
+ AV2      O1A    PA     O2A     119.780    3.000
+ AV2      O1A    PA     "O5'"   108.044    3.000
+ AV2      O2A    PA     "O5'"   108.083    3.000
+ AV2      PA     "O5'"  "C5'"   119.617    3.000
+ AV2      "O5'"  "C5'"  "H5'1"  109.421    3.000
+ AV2      "O5'"  "C5'"  "H5'2"  109.583    3.000
+ AV2      "O5'"  "C5'"  "C4'"   110.828    3.000
+ AV2      "H5'1" "C5'"  "H5'2"  107.915    3.000
+ AV2      "H5'1" "C5'"  "C4'"   109.453    3.000
+ AV2      "H5'2" "C5'"  "C4'"   109.588    3.000
+ AV2      "C5'"  "C4'"  "H4'"   108.407    3.000
+ AV2      "C5'"  "C4'"  "C3'"   111.482    3.000
+ AV2      "C5'"  "C4'"  "O4'"   111.872    3.000
+ AV2      "H4'"  "C4'"  "C3'"   108.621    3.000
+ AV2      "H4'"  "C4'"  "O4'"   109.547    3.000
+ AV2      "C3'"  "C4'"  "O4'"   106.854    3.000
+ AV2      "C4'"  "C3'"  "H3'"   109.253    3.000
+ AV2      "C4'"  "C3'"  "O3'"   110.772    3.000
+ AV2      "C4'"  "C3'"  "C2'"   105.308    3.000
+ AV2      "H3'"  "C3'"  "O3'"   110.030    3.000
+ AV2      "H3'"  "C3'"  "C2'"   108.768    3.000
+ AV2      "O3'"  "C3'"  "C2'"   112.564    3.000
+ AV2      "C3'"  "O3'"  V       114.346    3.000
+ AV2      "C4'"  "O4'"  "C1'"   110.082    3.000
+ AV2      "O4'"  "C1'"  "H1'"   109.955    3.000
+ AV2      "O4'"  "C1'"  "C2'"   105.891    3.000
+ AV2      "O4'"  "C1'"  N9      110.853    3.000
+ AV2      "H1'"  "C1'"  "C2'"   108.812    3.000
+ AV2      "H1'"  "C1'"  N9      110.005    3.000
+ AV2      "C2'"  "C1'"  N9      111.231    3.000
+ AV2      "C1'"  "C2'"  "H2'"   108.412    3.000
+ AV2      "C1'"  "C2'"  "O2'"   111.874    3.000
+ AV2      "C1'"  "C2'"  "C3'"   105.575    3.000
+ AV2      "H2'"  "C2'"  "O2'"   109.195    3.000
+ AV2      "H2'"  "C2'"  "C3'"   108.097    3.000
+ AV2      "O2'"  "C2'"  "C3'"   113.485    3.000
+ AV2      "C2'"  "O2'"  V       114.299    3.000
+ AV2      "O2'"  V      O2V     114.117    3.000
+ AV2      "O2'"  V      O1V     113.540    3.000
+ AV2      "O2'"  V      "O3'"    83.521    3.000
+ AV2      O2V    V      O1V     114.792    3.000
+ AV2      O2V    V      "O3'"   113.749    3.000
+ AV2      O1V    V      "O3'"   113.387    3.000
+ AV2      V      O2V    HO2V    119.909    3.000
+ AV2      V      O1V    HO1V    120.000    3.000
+ AV2      "C1'"  N9     C8      124.704    3.000
+ AV2      "C1'"  N9     C4      126.712    3.000
+ AV2      C8     N9     C4      108.581    3.000
+ AV2      N9     C8     H8      124.666    3.000
+ AV2      N9     C8     N7      110.994    3.000
+ AV2      H8     C8     N7      124.340    3.000
+ AV2      C8     N7     C5      107.682    3.000
+ AV2      N7     C5     C6      135.644    3.000
+ AV2      N7     C5     C4      106.780    3.000
+ AV2      C6     C5     C4      117.576    3.000
+ AV2      C5     C6     N6      120.506    3.000
+ AV2      C5     C6     N1      117.648    3.000
+ AV2      N6     C6     N1      121.844    3.000
+ AV2      C6     N6     HN61    120.216    3.000
+ AV2      C6     N6     HN62    119.890    3.000
+ AV2      HN61   N6     HN62    119.893    3.000
+ AV2      C6     N1     C2      122.047    3.000
+ AV2      N1     C2     H2      118.496    3.000
+ AV2      N1     C2     N3      123.038    3.000
+ AV2      H2     C2     N3      118.466    3.000
+ AV2      C2     N3     C4      121.346    3.000
+ AV2      N3     C4     N9      135.693    3.000
+ AV2      N3     C4     C5      118.343    3.000
+ AV2      N9     C4     C5      105.962    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AV2      var_1    O1B    PB     O3A    PA        76.907   20.000   3
+ AV2      var_2    PB     O3A    PA     "O5'"   -163.857   20.000   3
+ AV2      var_3    O3A    PA     "O5'"  "C5'"    170.374   20.000   3
+ AV2      var_4    PA     "O5'"  "C5'"  "C4'"    166.766   20.000   3
+ AV2      var_5    "O5'"  "C5'"  "C4'"  "O4'"     72.102   20.000   3
+ AV2      var_6    "C5'"  "C4'"  "C3'"  "O3'"    105.818   20.000   3
+ AV2      var_7    "C4'"  "C3'"  "O3'"  V        131.710   20.000   3
+ AV2      var_8    "C5'"  "C4'"  "O4'"  "C1'"    145.088   20.000   3
+ AV2      var_9    "C4'"  "O4'"  "C1'"  N9      -147.107   20.000   3
+ AV2      var_10   "O4'"  "C1'"  "C2'"  "O2'"    142.849   20.000   3
+ AV2      var_11   "C1'"  "C2'"  "C3'"  "C4'"     -5.605   20.000   3
+ AV2      var_12   "C1'"  "C2'"  "O2'"  V       -121.541   20.000   3
+ AV2      var_13   "C2'"  "O2'"  V      O1V     -104.887   20.000   3
+ AV2      var_14   "O2'"  V      "O3'"  "C3'"    -12.361   20.000   3
+ AV2      var_15   "O2'"  V      O2V    HO2V     -47.145   20.000   3
+ AV2      var_16   "O2'"  V      O1V    HO1V     180.000   20.000   3
+ AV2      var_17   "O4'"  "C1'"  N9     C8        23.746   20.000   3
+ AV2      CONST_1  "C1'"  N9     C4     N3         0.859    0.000   0
+ AV2      CONST_2  "C1'"  N9     C8     N7       179.826    0.000   0
+ AV2      CONST_3  N9     C8     N7     C5        -0.336    0.000   0
+ AV2      CONST_4  C8     N7     C5     C6       179.755    0.000   0
+ AV2      CONST_5  N7     C5     C6     N1      -179.888    0.000   0
+ AV2      CONST_6  C5     C6     N6     HN62      -0.385    0.000   0
+ AV2      CONST_7  C5     C6     N1     C2         0.225    0.000   0
+ AV2      CONST_8  C6     N1     C2     N3         0.099    0.000   0
+ AV2      CONST_9  N1     C2     N3     C4        -0.408    0.000   0
+ AV2      CONST_10 C2     N3     C4     N9       179.704    0.000   0
+ AV2      CONST_11 N3     C4     C5     N7       179.708    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AV2      chir_01  "C2'"  "O2'"  "C3'"  "C1'"     positiv
+ AV2      chir_02  "C3'"  "O3'"  "C2'"  "C4'"     negativ
+ AV2      chir_03  "C4'"  "C3'"  "C5'"  "O4'"     negativ
+ AV2      chir_04  "C1'"  "C2'"  "O4'"  N9        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AV2      plan-1    N9        0.020
+ AV2      plan-1    "C1'"     0.020
+ AV2      plan-1    C4        0.020
+ AV2      plan-1    C8        0.020
+ AV2      plan-1    N7        0.020
+ AV2      plan-1    C5        0.020
+ AV2      plan-1    N3        0.020
+ AV2      plan-1    C2        0.020
+ AV2      plan-1    N1        0.020
+ AV2      plan-1    C6        0.020
+ AV2      plan-1    H8        0.020
+ AV2      plan-1    H2        0.020
+ AV2      plan-1    N6        0.020
+ AV2      plan-1    HN61      0.020
+ AV2      plan-1    HN62      0.020
+ AV2      plan-2    N6        0.020
+ AV2      plan-2    C6        0.020
+ AV2      plan-2    HN62      0.020
+ AV2      plan-2    HN61      0.020
+# ------------------------------------------------------
+# ------------------------------------------------------
+# ------------------------------------------------------

@@ -1,0 +1,361 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CR7      CR7 '"[(4Z)-2-[(1S)-1,5-DIAMINOPENTYL]-4-' non-polymer        46  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CR7
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CR7           O1     O    OC       -0.500      0.000    0.000    0.000
+ CR7           C3     C    C         0.000     -0.942   -0.757    0.324
+ CR7           O3     O    OC       -0.500     -0.816   -1.723    1.109
+ CR7           CA3    C    CH2       0.000     -2.202   -0.328   -0.364
+ CR7           HA31   H    H         0.000     -2.072   -0.390   -1.446
+ CR7           HA32   H    H         0.000     -2.444    0.700   -0.086
+ CR7           N3     N    NR5       0.000     -3.279   -1.208    0.048
+ CR7           C1     C    CR5       0.000     -4.106   -1.052    1.112
+ CR7           CA1    C    CH1       0.000     -3.978    0.122    2.024
+ CR7           HA1    H    H         0.000     -2.929    0.447    2.078
+ CR7           CB1    C    CH2       0.000     -4.497   -0.211    3.418
+ CR7           HB11   H    H         0.000     -3.947   -1.080    3.784
+ CR7           HB12   H    H         0.000     -5.556   -0.463    3.331
+ CR7           CG1    C    CH2       0.000     -4.327    0.955    4.399
+ CR7           HG11   H    H         0.000     -4.917    1.801    4.040
+ CR7           HG12   H    H         0.000     -3.272    1.235    4.427
+ CR7           CD     C    CH2       0.000     -4.791    0.566    5.806
+ CR7           HD1A   H    H         0.000     -4.233   -0.324    6.104
+ CR7           HD2A   H    H         0.000     -5.855    0.324    5.748
+ CR7           CE     C    CH2       0.000     -4.574    1.675    6.838
+ CR7           HE1A   H    H         0.000     -5.154    2.547    6.527
+ CR7           HE2A   H    H         0.000     -3.512    1.929    6.846
+ CR7           NZ     N    NH2       0.000     -4.988    1.266    8.174
+ CR7           HNZ2   H    H         0.000     -4.295    1.092    8.890
+ CR7           HNZ1   H    H         0.000     -5.970    1.154    8.390
+ CR7           N1     N    NH2       0.000     -4.801    1.167    1.384
+ CR7           HN12   H    H         0.000     -5.732    1.372    1.731
+ CR7           HN11   H    H         0.000     -4.443    1.691    0.592
+ CR7           C2     C    CR5       0.000     -3.634   -2.366   -0.594
+ CR7           O2     O    O         0.000     -3.176   -2.899   -1.586
+ CR7           CA2    C    CR5       0.000     -4.765   -2.854    0.235
+ CR7           N2     N    NRD5      0.000     -4.997   -1.985    1.274
+ CR7           CB2    C    C1        0.000     -5.432   -3.979   -0.028
+ CR7           HB2    H    H         0.000     -5.126   -4.552   -0.887
+ CR7           CG2    C    CR6       0.000     -6.528   -4.479    0.750
+ CR7           CD2    C    CR16      0.000     -7.852   -4.138    0.426
+ CR7           HD2    H    H         0.000     -8.047   -3.490   -0.419
+ CR7           CE2    C    CR16      0.000     -8.918   -4.625    1.183
+ CR7           HE2    H    H         0.000     -9.935   -4.354    0.923
+ CR7           CZ     C    CR6       0.000     -8.676   -5.460    2.274
+ CR7           OH     O    OH1       0.000     -9.716   -5.934    3.012
+ CR7           HOH    H    H         0.000     -9.404   -6.167    3.897
+ CR7           CE1    C    CR16      0.000     -7.367   -5.807    2.609
+ CR7           HE1    H    H         0.000     -7.178   -6.455    3.456
+ CR7           CD1    C    CR16      0.000     -6.301   -5.321    1.852
+ CR7           HD1    H    H         0.000     -5.287   -5.594    2.117
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CR7      O1     n/a    C3     START
+ CR7      C3     O1     CA3    .
+ CR7      O3     C3     .      .
+ CR7      CA3    C3     N3     .
+ CR7      HA31   CA3    .      .
+ CR7      HA32   CA3    .      .
+ CR7      N3     CA3    C2     .
+ CR7      C1     N3     CA1    .
+ CR7      CA1    C1     N1     .
+ CR7      HA1    CA1    .      .
+ CR7      CB1    CA1    CG1    .
+ CR7      HB11   CB1    .      .
+ CR7      HB12   CB1    .      .
+ CR7      CG1    CB1    CD     .
+ CR7      HG11   CG1    .      .
+ CR7      HG12   CG1    .      .
+ CR7      CD     CG1    CE     .
+ CR7      HD1A   CD     .      .
+ CR7      HD2A   CD     .      .
+ CR7      CE     CD     NZ     .
+ CR7      HE1A   CE     .      .
+ CR7      HE2A   CE     .      .
+ CR7      NZ     CE     HNZ1   .
+ CR7      HNZ2   NZ     .      .
+ CR7      HNZ1   NZ     .      .
+ CR7      N1     CA1    HN11   .
+ CR7      HN12   N1     .      .
+ CR7      HN11   N1     .      .
+ CR7      C2     N3     CA2    .
+ CR7      O2     C2     .      .
+ CR7      CA2    C2     CB2    .
+ CR7      N2     CA2    .      .
+ CR7      CB2    CA2    CG2    .
+ CR7      HB2    CB2    .      .
+ CR7      CG2    CB2    CD2    .
+ CR7      CD2    CG2    CE2    .
+ CR7      HD2    CD2    .      .
+ CR7      CE2    CD2    CZ     .
+ CR7      HE2    CE2    .      .
+ CR7      CZ     CE2    CE1    .
+ CR7      OH     CZ     HOH    .
+ CR7      HOH    OH     .      .
+ CR7      CE1    CZ     CD1    .
+ CR7      HE1    CE1    .      .
+ CR7      CD1    CE1    HD1    .
+ CR7      HD1    CD1    .      END
+ CR7      C1     N2     .    ADD
+ CR7      CG2    CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CR7       N1        CA1       single    1.450     0.020     1.450     0.020     
+CR7       HN11      N1        single    1.036     0.016     0.914     0.007     
+CR7       HN12      N1        single    1.036     0.016     0.914     0.007     
+CR7       CB1       CA1       single    1.524     0.020     1.524     0.020     
+CR7       CA1       C1        single    1.480     0.020     1.480     0.020     
+CR7       HA1       CA1       single    1.089     0.010     0.989     0.005     
+CR7       CG1       CB1       single    1.524     0.020     1.524     0.020     
+CR7       HB11      CB1       single    1.089     0.010     0.989     0.005     
+CR7       HB12      CB1       single    1.089     0.010     0.989     0.005     
+CR7       CD        CG1       single    1.524     0.020     1.524     0.020     
+CR7       HG11      CG1       single    1.089     0.010     0.989     0.005     
+CR7       HG12      CG1       single    1.089     0.010     0.989     0.005     
+CR7       C1        N2        double    1.350     0.020     1.350     0.020     
+CR7       C1        N3        single    1.337     0.020     1.337     0.020     
+CR7       N2        CA2       single    1.350     0.020     1.350     0.020     
+CR7       C2        N3        single    1.337     0.020     1.337     0.020     
+CR7       N3        CA3       single    1.462     0.020     1.462     0.020     
+CR7       O2        C2        double    1.285     0.020     1.285     0.020     
+CR7       CA2       C2        single    1.490     0.020     1.490     0.020     
+CR7       CB2       CA2       double    1.483     0.020     1.483     0.020     
+CR7       CA3       C3        single    1.510     0.020     1.510     0.020     
+CR7       HA31      CA3       single    1.089     0.010     0.989     0.005     
+CR7       HA32      CA3       single    1.089     0.010     0.989     0.005     
+CR7       O3        C3        deloc     1.250     0.020     1.250     0.020     
+CR7       C3        O1        deloc     1.250     0.020     1.250     0.020     
+CR7       CG2       CB2       single    1.480     0.020     1.480     0.020     
+CR7       HB2       CB2       single    1.082     0.013     0.975     0.010     
+CR7       CG2       CD1       double    1.390     0.020     1.390     0.020     
+CR7       CD2       CG2       single    1.390     0.020     1.390     0.020     
+CR7       CD1       CE1       single    1.390     0.020     1.390     0.020     
+CR7       HD1       CD1       single    1.082     0.013     0.975     0.010     
+CR7       CE2       CD2       double    1.390     0.020     1.390     0.020     
+CR7       HD2       CD2       single    1.082     0.013     0.975     0.010     
+CR7       CE1       CZ        double    1.390     0.020     1.390     0.020     
+CR7       HE1       CE1       single    1.082     0.013     0.975     0.010     
+CR7       CZ        CE2       single    1.390     0.020     1.390     0.020     
+CR7       HE2       CE2       single    1.082     0.013     0.975     0.010     
+CR7       OH        CZ        single    1.362     0.020     1.362     0.020     
+CR7       HOH       OH        single    0.970     0.012     0.839     0.014     
+CR7       CE        CD        single    1.524     0.020     1.524     0.020     
+CR7       HD1A      CD        single    1.089     0.010     0.989     0.005     
+CR7       HD2A      CD        single    1.089     0.010     0.989     0.005     
+CR7       NZ        CE        single    1.450     0.020     1.450     0.020     
+CR7       HE1A      CE        single    1.089     0.010     0.989     0.005     
+CR7       HE2A      CE        single    1.089     0.010     0.989     0.005     
+CR7       HNZ1      NZ        single    1.036     0.016     0.914     0.007     
+CR7       HNZ2      NZ        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CR7      O1     C3     O3      123.000    3.000
+ CR7      O1     C3     CA3     118.500    3.000
+ CR7      O3     C3     CA3     118.500    3.000
+ CR7      C3     CA3    HA31    109.470    3.000
+ CR7      C3     CA3    HA32    109.470    3.000
+ CR7      C3     CA3    N3      109.500    3.000
+ CR7      HA31   CA3    HA32    107.900    3.000
+ CR7      HA31   CA3    N3      109.500    3.000
+ CR7      HA32   CA3    N3      109.500    3.000
+ CR7      CA3    N3     C1      126.000    3.000
+ CR7      CA3    N3     C2      126.000    3.000
+ CR7      C1     N3     C2      108.000    3.000
+ CR7      N3     C1     CA1     126.000    3.000
+ CR7      N3     C1     N2      108.000    3.000
+ CR7      CA1    C1     N2      126.000    3.000
+ CR7      C1     CA1    HA1     109.470    3.000
+ CR7      C1     CA1    CB1     109.470    3.000
+ CR7      C1     CA1    N1      109.470    3.000
+ CR7      HA1    CA1    CB1     108.340    3.000
+ CR7      HA1    CA1    N1      109.470    3.000
+ CR7      CB1    CA1    N1      109.470    3.000
+ CR7      CA1    CB1    HB11    109.470    3.000
+ CR7      CA1    CB1    HB12    109.470    3.000
+ CR7      CA1    CB1    CG1     111.000    3.000
+ CR7      HB11   CB1    HB12    107.900    3.000
+ CR7      HB11   CB1    CG1     109.470    3.000
+ CR7      HB12   CB1    CG1     109.470    3.000
+ CR7      CB1    CG1    HG11    109.470    3.000
+ CR7      CB1    CG1    HG12    109.470    3.000
+ CR7      CB1    CG1    CD      111.000    3.000
+ CR7      HG11   CG1    HG12    107.900    3.000
+ CR7      HG11   CG1    CD      109.470    3.000
+ CR7      HG12   CG1    CD      109.470    3.000
+ CR7      CG1    CD     HD1A    109.470    3.000
+ CR7      CG1    CD     HD2A    109.470    3.000
+ CR7      CG1    CD     CE      111.000    3.000
+ CR7      HD1A   CD     HD2A    107.900    3.000
+ CR7      HD1A   CD     CE      109.470    3.000
+ CR7      HD2A   CD     CE      109.470    3.000
+ CR7      CD     CE     HE1A    109.470    3.000
+ CR7      CD     CE     HE2A    109.470    3.000
+ CR7      CD     CE     NZ      109.470    3.000
+ CR7      HE1A   CE     HE2A    107.900    3.000
+ CR7      HE1A   CE     NZ      109.470    3.000
+ CR7      HE2A   CE     NZ      109.470    3.000
+ CR7      CE     NZ     HNZ2    120.000    3.000
+ CR7      CE     NZ     HNZ1    120.000    3.000
+ CR7      HNZ2   NZ     HNZ1    120.000    3.000
+ CR7      CA1    N1     HN12    120.000    3.000
+ CR7      CA1    N1     HN11    120.000    3.000
+ CR7      HN12   N1     HN11    120.000    3.000
+ CR7      N3     C2     O2      108.000    3.000
+ CR7      N3     C2     CA2     108.000    3.000
+ CR7      O2     C2     CA2     108.000    3.000
+ CR7      C2     CA2    N2      108.000    3.000
+ CR7      C2     CA2    CB2     117.000    3.000
+ CR7      N2     CA2    CB2     108.000    3.000
+ CR7      CA2    N2     C1      108.000    3.000
+ CR7      CA2    CB2    HB2     120.000    3.000
+ CR7      CA2    CB2    CG2     120.000    3.000
+ CR7      HB2    CB2    CG2     120.000    3.000
+ CR7      CB2    CG2    CD2     120.000    3.000
+ CR7      CB2    CG2    CD1     120.000    3.000
+ CR7      CD2    CG2    CD1     120.000    3.000
+ CR7      CG2    CD2    HD2     120.000    3.000
+ CR7      CG2    CD2    CE2     120.000    3.000
+ CR7      HD2    CD2    CE2     120.000    3.000
+ CR7      CD2    CE2    HE2     120.000    3.000
+ CR7      CD2    CE2    CZ      120.000    3.000
+ CR7      HE2    CE2    CZ      120.000    3.000
+ CR7      CE2    CZ     OH      120.000    3.000
+ CR7      CE2    CZ     CE1     120.000    3.000
+ CR7      OH     CZ     CE1     120.000    3.000
+ CR7      CZ     OH     HOH     109.470    3.000
+ CR7      CZ     CE1    HE1     120.000    3.000
+ CR7      CZ     CE1    CD1     120.000    3.000
+ CR7      HE1    CE1    CD1     120.000    3.000
+ CR7      CE1    CD1    HD1     120.000    3.000
+ CR7      CE1    CD1    CG2     120.000    3.000
+ CR7      HD1    CD1    CG2     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CR7      var_1    O1     C3     CA3    N3      -179.044   20.000   3
+ CR7      var_2    C3     CA3    N3     C2       -90.582   20.000   1
+ CR7      CONST_1  CA3    N3     C1     CA1        0.000    0.000   0
+ CR7      CONST_2  N3     C1     N2     CA2        0.000    0.000   0
+ CR7      var_3    N3     C1     CA1    N1        86.899   20.000   1
+ CR7      var_4    C1     CA1    CB1    CG1      177.585   20.000   3
+ CR7      var_5    CA1    CB1    CG1    CD      -177.085   20.000   3
+ CR7      var_6    CB1    CG1    CD     CE       177.078   20.000   3
+ CR7      var_7    CG1    CD     CE     NZ      -178.327   20.000   3
+ CR7      var_8    CD     CE     NZ     HNZ1     -70.935   20.000   1
+ CR7      var_9    C1     CA1    N1     HN11     -78.649   20.000   1
+ CR7      CONST_3  CA3    N3     C2     CA2      180.000    0.000   0
+ CR7      CONST_4  N3     C2     CA2    CB2      180.000    0.000   0
+ CR7      CONST_5  C2     CA2    N2     C1         0.000    0.000   0
+ CR7      CONST_6  C2     CA2    CB2    CG2     -179.986    0.000   0
+ CR7      var_10   CA2    CB2    CG2    CD2       91.725   20.000   1
+ CR7      CONST_7  CB2    CG2    CD1    CE1      180.000    0.000   0
+ CR7      CONST_8  CB2    CG2    CD2    CE2      180.000    0.000   0
+ CR7      CONST_9  CG2    CD2    CE2    CZ         0.000    0.000   0
+ CR7      CONST_10 CD2    CE2    CZ     CE1        0.000    0.000   0
+ CR7      var_11   CE2    CZ     OH     HOH     -156.565   20.000   1
+ CR7      CONST_11 CE2    CZ     CE1    CD1        0.000    0.000   0
+ CR7      CONST_12 CZ     CE1    CD1    CG2        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CR7      chir_01  CA1    N1     CB1    C1        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CR7      plan-1    N1        0.020
+ CR7      plan-1    CA1       0.020
+ CR7      plan-1    HN11      0.020
+ CR7      plan-1    HN12      0.020
+ CR7      plan-2    C1        0.020
+ CR7      plan-2    CA1       0.020
+ CR7      plan-2    N2        0.020
+ CR7      plan-2    N3        0.020
+ CR7      plan-2    C2        0.020
+ CR7      plan-2    CA2       0.020
+ CR7      plan-2    CA3       0.020
+ CR7      plan-2    O2        0.020
+ CR7      plan-2    CB2       0.020
+ CR7      plan-2    CG2       0.020
+ CR7      plan-2    HB2       0.020
+ CR7      plan-3    C3        0.020
+ CR7      plan-3    CA3       0.020
+ CR7      plan-3    O3        0.020
+ CR7      plan-3    O1        0.020
+ CR7      plan-4    CG2       0.020
+ CR7      plan-4    CB2       0.020
+ CR7      plan-4    CD1       0.020
+ CR7      plan-4    CD2       0.020
+ CR7      plan-4    CE1       0.020
+ CR7      plan-4    CE2       0.020
+ CR7      plan-4    CZ        0.020
+ CR7      plan-4    HD1       0.020
+ CR7      plan-4    HD2       0.020
+ CR7      plan-4    HE1       0.020
+ CR7      plan-4    HE2       0.020
+ CR7      plan-4    OH        0.020
+ CR7      plan-4    HB2       0.020
+ CR7      plan-5    NZ        0.020
+ CR7      plan-5    CE        0.020
+ CR7      plan-5    HNZ1      0.020
+ CR7      plan-5    HNZ2      0.020
+# ------------------------------------------------------

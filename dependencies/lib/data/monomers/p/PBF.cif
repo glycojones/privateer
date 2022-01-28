@@ -1,0 +1,305 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PBF     PBF     "PARA-(BENZOYL)-PHENYLALANINE"     peptide     35     20     .
+#
+data_comp_PBF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PBF     N       N       NT3     1       -5.037      1.853       1.101
+PBF     C       C       C       0       -3.128      0.822       2.273
+PBF     O       O       O       0       -2.732      -0.335      2.518
+PBF     CA      C       CH1     0       -3.788      1.068       0.910
+PBF     CB      C       CH2     0       -2.842      1.797       -0.049
+PBF     CG      C       CR6     0       -1.622      1.011       -0.463
+PBF     CD1     C       CR16    0       -0.340      1.460       -0.163
+PBF     CD2     C       CR16    0       -1.747      -0.183      -1.162
+PBF     CE1     C       CR16    0       0.783       0.741       -0.545
+PBF     CE2     C       CR16    0       -0.633      -0.913      -1.547
+PBF     CZ      C       CR6     0       0.650       -0.460      -1.242
+PBF     CN1     C       C       0       1.843       -1.247      -1.664
+PBF     ON2     O       O       0       1.864       -1.766      -2.773
+PBF     CT      C       CR6     0       3.013       -1.409      -0.755
+PBF     CI1     C       CR16    0       4.307       -1.263      -1.251
+PBF     CI2     C       CR16    0       2.840       -1.710      0.595
+PBF     CK1     C       CR16    0       5.402       -1.415      -0.412
+PBF     CK2     C       CR16    0       3.941       -1.859      1.426
+PBF     CL      C       CR16    0       5.217       -1.712      0.923
+PBF     OXT     O       OC      -1      -3.032      1.798       3.043
+PBF     H       H       H       0       -5.440      1.991       0.296
+PBF     H2      H       H       0       -4.840      2.659       1.479
+PBF     H3      H       H       0       -5.608      1.398       1.646
+PBF     HCA     H       H       0       -4.028      0.191       0.515
+PBF     HB2     H       H       0       -2.555      2.631       0.378
+PBF     HB3     H       H       0       -3.348      2.037       -0.854
+PBF     HD1     H       H       0       -0.232      2.269       0.309
+PBF     HD2     H       H       0       -2.608      -0.505      -1.375
+PBF     HE1     H       H       0       1.638       1.068       -0.329
+PBF     HE2     H       H       0       -0.744      -1.719      -2.019
+PBF     HI1     H       H       0       4.441       -1.061      -2.160
+PBF     HI2     H       H       0       1.973       -1.813      0.946
+PBF     HK1     H       H       0       6.274       -1.314      -0.755
+PBF     HK2     H       H       0       3.815       -2.062      2.338
+PBF     HCL     H       H       0       5.964       -1.814      1.492
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+PBF      N      n/a    CA     START
+PBF      H      N      .      .
+PBF      H2     N      .      .
+PBF      H3     N      .      .
+PBF      CA     N      C      .
+PBF      HCA    CA     .      .
+PBF      CB     CA     CG     .
+PBF      HB2    CB     .      .
+PBF      HB3    CB     .      .
+PBF      CG     CB     CD2    .
+PBF      CD2    CG     CE2    .
+PBF      HD2    CD2    .      .
+PBF      CE2    CD2    CZ     .
+PBF      HE2    CE2    .      .
+PBF      CZ     CE2    CN1    .
+PBF      CE1    CZ     CD1    .
+PBF      HE1    CE1    .      .
+PBF      CD1    CE1    HD1    .
+PBF      HD1    CD1    .      .
+PBF      CN1    CZ     CT     .
+PBF      ON2    CN1    .      .
+PBF      CT     CN1    CI2    .
+PBF      CI2    CT     CK2    .
+PBF      HI2    CI2    .      .
+PBF      CK2    CI2    CL     .
+PBF      HK2    CK2    .      .
+PBF      CL     CK2    CK1    .
+PBF      HCL    CL     .      .
+PBF      CK1    CL     CI1    .
+PBF      HK1    CK1    .      .
+PBF      CI1    CK1    HI1    .
+PBF      HI1    CI1    .      .
+PBF      C      CA     .      END
+PBF      O      C      .      .
+PBF      OXT    C      .      .
+PBF      CG     CD1    .    ADD
+PBF      CT     CI1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PBF       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+PBF       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+PBF       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+PBF       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+PBF       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+PBF       CB        CG        SINGLE    n         1.508     0.010     1.508     0.010     
+PBF       CG        CD1       DOUBLE    y         1.385     0.011     1.385     0.011     
+PBF       CG        CD2       SINGLE    y         1.385     0.011     1.385     0.011     
+PBF       CD1       CE1       SINGLE    y         1.383     0.010     1.383     0.010     
+PBF       CD2       CE2       DOUBLE    y         1.383     0.010     1.383     0.010     
+PBF       CE1       CZ        DOUBLE    y         1.391     0.010     1.391     0.010     
+PBF       CE2       CZ        SINGLE    y         1.391     0.010     1.391     0.010     
+PBF       CZ        CN1       SINGLE    n         1.488     0.010     1.488     0.010     
+PBF       CN1       ON2       DOUBLE    n         1.224     0.011     1.224     0.011     
+PBF       CN1       CT        SINGLE    n         1.488     0.010     1.488     0.010     
+PBF       CT        CI1       DOUBLE    y         1.390     0.010     1.390     0.010     
+PBF       CT        CI2       SINGLE    y         1.390     0.010     1.390     0.010     
+PBF       CI1       CK1       SINGLE    y         1.384     0.010     1.384     0.010     
+PBF       CI2       CK2       DOUBLE    y         1.384     0.010     1.384     0.010     
+PBF       CK1       CL        DOUBLE    y         1.376     0.011     1.376     0.011     
+PBF       CK2       CL        SINGLE    y         1.376     0.011     1.376     0.011     
+PBF       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+PBF       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+PBF       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+PBF       CA        HCA       SINGLE    n         1.089     0.010     0.991     0.020     
+PBF       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+PBF       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+PBF       CD1       HD1       SINGLE    n         1.082     0.013     0.943     0.017     
+PBF       CD2       HD2       SINGLE    n         1.082     0.013     0.943     0.017     
+PBF       CE1       HE1       SINGLE    n         1.082     0.013     0.941     0.017     
+PBF       CE2       HE2       SINGLE    n         1.082     0.013     0.941     0.017     
+PBF       CI1       HI1       SINGLE    n         1.082     0.013     0.941     0.017     
+PBF       CI2       HI2       SINGLE    n         1.082     0.013     0.941     0.017     
+PBF       CK1       HK1       SINGLE    n         1.082     0.013     0.943     0.018     
+PBF       CK2       HK2       SINGLE    n         1.082     0.013     0.943     0.018     
+PBF       CL        HCL       SINGLE    n         1.082     0.013     0.944     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PBF          CA           N           H     109.646    1.54
+PBF          CA           N          H2     109.646    1.54
+PBF          CA           N          H3     109.646    1.54
+PBF           H           N          H2     109.028    2.41
+PBF           H           N          H3     109.028    2.41
+PBF          H2           N          H3     109.028    2.41
+PBF           O           C          CA     117.229    2.13
+PBF           O           C         OXT     125.543    1.50
+PBF          CA           C         OXT     117.229    2.13
+PBF           N          CA           C     109.448    1.50
+PBF           N          CA          CB     110.494    1.50
+PBF           N          CA         HCA     108.601    1.50
+PBF           C          CA          CB     111.331    2.53
+PBF           C          CA         HCA     108.450    1.50
+PBF          CB          CA         HCA     108.690    1.50
+PBF          CA          CB          CG     114.745    1.55
+PBF          CA          CB         HB2     108.434    1.50
+PBF          CA          CB         HB3     108.434    1.50
+PBF          CG          CB         HB2     108.862    1.50
+PBF          CG          CB         HB3     108.862    1.50
+PBF         HB2          CB         HB3     107.782    1.50
+PBF          CB          CG         CD1     121.048    1.50
+PBF          CB          CG         CD2     121.048    1.50
+PBF         CD1          CG         CD2     117.905    1.50
+PBF          CG         CD1         CE1     121.089    1.50
+PBF          CG         CD1         HD1     119.380    1.50
+PBF         CE1         CD1         HD1     119.530    1.50
+PBF          CG         CD2         CE2     121.089    1.50
+PBF          CG         CD2         HD2     119.380    1.50
+PBF         CE2         CD2         HD2     119.530    1.50
+PBF         CD1         CE1          CZ     120.484    1.50
+PBF         CD1         CE1         HE1     119.691    1.50
+PBF          CZ         CE1         HE1     119.825    1.50
+PBF         CD2         CE2          CZ     120.484    1.50
+PBF         CD2         CE2         HE2     119.691    1.50
+PBF          CZ         CE2         HE2     119.825    1.50
+PBF         CE1          CZ         CE2     118.957    1.50
+PBF         CE1          CZ         CN1     120.518    2.06
+PBF         CE2          CZ         CN1     120.518    2.06
+PBF          CZ         CN1         ON2     119.965    1.50
+PBF          CZ         CN1          CT     120.070    1.79
+PBF         ON2         CN1          CT     119.965    1.50
+PBF         CN1          CT         CI1     120.499    2.06
+PBF         CN1          CT         CI2     120.499    2.06
+PBF         CI1          CT         CI2     119.002    1.50
+PBF          CT         CI1         CK1     120.306    1.50
+PBF          CT         CI1         HI1     119.891    1.50
+PBF         CK1         CI1         HI1     119.803    1.50
+PBF          CT         CI2         CK2     120.306    1.50
+PBF          CT         CI2         HI2     119.891    1.50
+PBF         CK2         CI2         HI2     119.803    1.50
+PBF         CI1         CK1          CL     120.223    1.50
+PBF         CI1         CK1         HK1     119.843    1.50
+PBF          CL         CK1         HK1     119.934    1.50
+PBF         CI2         CK2          CL     120.223    1.50
+PBF         CI2         CK2         HK2     119.843    1.50
+PBF          CL         CK2         HK2     119.934    1.50
+PBF         CK1          CL         CK2     119.940    1.50
+PBF         CK1          CL         HCL     120.030    1.50
+PBF         CK2          CL         HCL     120.030    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PBF             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+PBF             sp2_sp2_3         ON2         CN1          CZ         CE1       0.000   10.00     2
+PBF             sp2_sp2_7         ON2         CN1          CT         CI1       0.000   10.00     2
+PBF              const_22         CK1         CI1          CT         CN1     180.000   10.00     2
+PBF              const_46         CK2         CI2          CT         CN1     180.000   10.00     2
+PBF              const_25          CT         CI1         CK1          CL       0.000   10.00     2
+PBF              const_37          CT         CI2         CK2          CL       0.000   10.00     2
+PBF              const_29         CI1         CK1          CL         CK2       0.000   10.00     2
+PBF              const_33         CI2         CK2          CL         CK1       0.000   10.00     2
+PBF             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+PBF            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+PBF             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+PBF       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+PBF              const_42         CE2         CD2          CG          CB     180.000   10.00     2
+PBF       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+PBF              const_17          CG         CD2         CE2          CZ       0.000   10.00     2
+PBF              const_10         CD1         CE1          CZ         CN1     180.000   10.00     2
+PBF              const_14         CD2         CE2          CZ         CN1     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PBF    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PBF    plan-1          CB   0.020
+PBF    plan-1         CD1   0.020
+PBF    plan-1         CD2   0.020
+PBF    plan-1         CE1   0.020
+PBF    plan-1         CE2   0.020
+PBF    plan-1          CG   0.020
+PBF    plan-1         CN1   0.020
+PBF    plan-1          CZ   0.020
+PBF    plan-1         HD1   0.020
+PBF    plan-1         HD2   0.020
+PBF    plan-1         HE1   0.020
+PBF    plan-1         HE2   0.020
+PBF    plan-2         CI1   0.020
+PBF    plan-2         CI2   0.020
+PBF    plan-2         CK1   0.020
+PBF    plan-2         CK2   0.020
+PBF    plan-2          CL   0.020
+PBF    plan-2         CN1   0.020
+PBF    plan-2          CT   0.020
+PBF    plan-2         HCL   0.020
+PBF    plan-2         HI1   0.020
+PBF    plan-2         HI2   0.020
+PBF    plan-2         HK1   0.020
+PBF    plan-2         HK2   0.020
+PBF    plan-3           C   0.020
+PBF    plan-3          CA   0.020
+PBF    plan-3           O   0.020
+PBF    plan-3         OXT   0.020
+PBF    plan-4         CN1   0.020
+PBF    plan-4          CT   0.020
+PBF    plan-4          CZ   0.020
+PBF    plan-4         ON2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PBF SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc1ccc(cc1)C(=O)c2ccccc2"
+PBF SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1ccc(cc1)C(=O)c2ccccc2)C(O)=O"
+PBF SMILES           CACTVS               3.341 "N[CH](Cc1ccc(cc1)C(=O)c2ccccc2)C(O)=O"
+PBF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)C(=O)c2ccc(cc2)C[C@@H](C(=O)O)N"
+PBF SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)C(=O)c2ccc(cc2)CC(C(=O)O)N"
+PBF InChI            InChI                1.03  "InChI=1S/C16H15NO3/c17-14(16(19)20)10-11-6-8-13(9-7-11)15(18)12-4-2-1-3-5-12/h1-9,14H,10,17H2,(H,19,20)/t14-/m0/s1"
+PBF InChIKey         InChI                1.03  TVIDEEHSOPHZBR-AWEZNQCLSA-N
+PBF ?                acedrg               196         "dictionary generator"
+PBF ?                acedrg_database      11          "data source"
+PBF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PBF ?                refmac5              5.8.0222    "optimization tool"

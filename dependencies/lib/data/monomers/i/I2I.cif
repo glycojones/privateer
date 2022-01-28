@@ -1,0 +1,53 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+I2I     I2I      "molecular iodine"     NON-POLYMER     2     2     .     
+#
+data_comp_I2I
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+I2I     I1      I       I       0       3.101       52.542      0.501       
+I2I     I2      I       I       0       5.106       51.853      2.485       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+I2I       I1        I2        SINGLE    n         2.904     0.020     2.904     0.020     
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+I2I SMILES           ACDLabs              12.01 II
+I2I InChI            InChI                1.03  InChI=1S/I2/c1-2
+I2I InChIKey         InChI                1.03  PNDPGZBMCMUPRI-UHFFFAOYSA-N
+I2I SMILES_CANONICAL CACTVS               3.385 II
+I2I SMILES           CACTVS               3.385 II
+I2I SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 II
+I2I SMILES           "OpenEye OEToolkits" 1.7.6 II
+I2I ?                acedrg               202         "dictionary generator"                  
+I2I ?                acedrg_database      11          "data source"                           
+I2I ?                rdkit                2017.03.2   "Chemoinformatics tool"
+I2I ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,1226 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EOV      EOV '.                                   ' non-polymer       196  85 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_EOV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ EOV           OA     O    O         0.000      0.000    0.000    0.000
+ EOV           CC     C    C         0.000      0.585    0.249    1.036
+ EOV           N      N    N         0.000      0.600    1.479    1.567
+ EOV           CN     C    CH3       0.000      0.782    1.626    3.029
+ EOV           HN3    H    H         0.000      1.339    0.806    3.406
+ EOV           HN2    H    H         0.000      1.303    2.527    3.237
+ EOV           HN1    H    H         0.000     -0.165    1.654    3.507
+ EOV           CAA    C    CH1       0.000      1.271   -0.913    1.714
+ EOV           HAB    H    H         0.000      1.961   -0.533    2.480
+ EOV           CB9    C    CH1       0.000      2.058   -1.720    0.673
+ EOV           HB4    H    H         0.000      1.384   -2.030   -0.137
+ EOV           CG22   C    CH3       0.000      2.659   -2.960    1.338
+ EOV           HG27   H    H         0.000      3.204   -3.517    0.621
+ EOV           HG26   H    H         0.000      3.309   -2.662    2.120
+ EOV           HG25   H    H         0.000      1.883   -3.561    1.735
+ EOV           CG12   C    CH3       0.000      3.182   -0.853    0.099
+ EOV           HG17   H    H         0.000      3.806   -1.446   -0.519
+ EOV           HG16   H    H         0.000      2.765   -0.066   -0.473
+ EOV           HG15   H    H         0.000      3.756   -0.447    0.892
+ EOV           NA     N    N         0.000      0.263   -1.797    2.352
+ EOV           CN6    C    CH3       0.000      0.202   -1.904    3.813
+ EOV           HN36   H    H         0.000      1.137   -2.240    4.185
+ EOV           HN26   H    H         0.000     -0.021   -0.956    4.231
+ EOV           HN16   H    H         0.000     -0.553   -2.596    4.088
+ EOV           C9     C    C         0.000     -0.542   -2.493    1.511
+ EOV           O9     O    O         0.000     -0.975   -1.965    0.500
+ EOV           CA9    C    CH1       0.000     -0.958   -3.906    1.811
+ EOV           HAA    H    H         0.000     -1.670   -3.921    2.648
+ EOV           CB8    C    CH2       0.000      0.264   -4.767    2.144
+ EOV           HB26   H    H         0.000      0.803   -4.323    2.984
+ EOV           HB36   H    H         0.000      0.924   -4.814    1.275
+ EOV           CG5    C    CH1       0.000     -0.192   -6.179    2.518
+ EOV           HG6    H    H         0.000     -0.810   -6.591    1.708
+ EOV           CD24   C    CH3       0.000     -1.013   -6.125    3.808
+ EOV           HD2E   H    H         0.000     -0.419   -5.728    4.590
+ EOV           HD2D   H    H         0.000     -1.862   -5.508    3.663
+ EOV           HD2C   H    H         0.000     -1.329   -7.102    4.068
+ EOV           CD14   C    CH3       0.000      1.033   -7.071    2.730
+ EOV           HD1F   H    H         0.000      0.718   -8.049    2.988
+ EOV           HD1E   H    H         0.000      1.603   -7.108    1.838
+ EOV           HD1D   H    H         0.000      1.629   -6.675    3.512
+ EOV           N9     N    N         0.000     -1.590   -4.471    0.592
+ EOV           CN5    C    CH3       0.000     -0.760   -5.018   -0.480
+ EOV           HN35   H    H         0.000     -0.120   -4.261   -0.854
+ EOV           HN25   H    H         0.000     -0.176   -5.818   -0.103
+ EOV           HN15   H    H         0.000     -1.380   -5.373   -1.262
+ EOV           C8     C    C         0.000     -2.948   -4.444    0.545
+ EOV           O8     O    O         0.000     -3.556   -3.865    1.428
+ EOV           CA8    C    CH1       0.000     -3.697   -5.127   -0.564
+ EOV           HA9    H    H         0.000     -3.092   -5.972   -0.921
+ EOV           CB7    C    CH2       0.000     -3.932   -4.177   -1.733
+ EOV           HB25   H    H         0.000     -2.993   -3.685   -1.996
+ EOV           HB35   H    H         0.000     -4.669   -3.424   -1.448
+ EOV           CG4    C    CH1       0.000     -4.449   -4.969   -2.937
+ EOV           HG5    H    H         0.000     -3.784   -5.823   -3.127
+ EOV           CD23   C    CH3       0.000     -4.477   -4.061   -4.169
+ EOV           HD2B   H    H         0.000     -4.835   -4.608   -5.003
+ EOV           HD2A   H    H         0.000     -5.117   -3.237   -3.987
+ EOV           HD29   H    H         0.000     -3.498   -3.710   -4.372
+ EOV           CD13   C    CH3       0.000     -5.862   -5.476   -2.645
+ EOV           HD1C   H    H         0.000     -5.825   -6.202   -1.874
+ EOV           HD1B   H    H         0.000     -6.473   -4.667   -2.339
+ EOV           HD1A   H    H         0.000     -6.269   -5.913   -3.521
+ EOV           N8     N    N         0.000     -4.983   -5.659   -0.050
+ EOV           CN4    C    CH3       0.000     -5.156   -7.114    0.116
+ EOV           HN34   H    H         0.000     -5.009   -7.600   -0.816
+ EOV           HN24   H    H         0.000     -4.449   -7.481    0.816
+ EOV           HN14   H    H         0.000     -6.135   -7.321    0.466
+ EOV           C7     C    C         0.000     -5.965   -4.765    0.222
+ EOV           O7     O    O         0.000     -5.719   -3.573    0.366
+ EOV           CA7    C    CH1       0.000     -7.409   -5.188    0.401
+ EOV           HA8    H    H         0.000     -7.495   -6.272    0.240
+ EOV           CB6    C    CH3       0.000     -7.828   -4.850    1.833
+ EOV           HB34   H    H         0.000     -7.222   -5.388    2.516
+ EOV           HB24   H    H         0.000     -7.710   -3.810    2.001
+ EOV           HB12   H    H         0.000     -8.843   -5.117    1.977
+ EOV           N7     N    NH1       0.000     -8.204   -4.479   -0.609
+ EOV           H3     H    H         0.000     -7.884   -4.515   -1.566
+ EOV           C6     C    C         0.000     -9.327   -3.785   -0.352
+ EOV           O6     O    O         0.000    -10.055   -3.997    0.600
+ EOV           CA6    C    CH1       0.000     -9.769   -2.723   -1.337
+ EOV           HA7    H    H         0.000    -10.452   -3.161   -2.079
+ EOV           CB5    C    CH3       0.000     -8.548   -2.126   -2.041
+ EOV           HB33   H    H         0.000     -8.043   -2.885   -2.580
+ EOV           HB23   H    H         0.000     -8.862   -1.367   -2.712
+ EOV           HB11   H    H         0.000     -7.892   -1.709   -1.321
+ EOV           N6     N    NH1       0.000    -10.456   -1.645   -0.593
+ EOV           H2     H    H         0.000    -10.226   -1.429    0.367
+ EOV           C5     C    C         0.000    -11.418   -0.959   -1.276
+ EOV           O5     O    O         0.000    -11.794   -1.335   -2.368
+ EOV           CA5    C    CH1       0.000    -12.026    0.263   -0.638
+ EOV           HA6    H    H         0.000    -11.889    0.220    0.452
+ EOV           CB4    C    CH2       0.000    -13.517    0.327   -0.969
+ EOV           HB22   H    H         0.000    -13.648    0.340   -2.053
+ EOV           HB32   H    H         0.000    -13.945    1.236   -0.541
+ EOV           CG3    C    CH1       0.000    -14.223   -0.896   -0.383
+ EOV           HG4    H    H         0.000    -13.744   -1.811   -0.759
+ EOV           CD22   C    CH3       0.000    -15.696   -0.884   -0.800
+ EOV           HD28   H    H         0.000    -16.186   -1.731   -0.395
+ EOV           HD27   H    H         0.000    -16.160   -0.003   -0.438
+ EOV           HD26   H    H         0.000    -15.765   -0.910   -1.857
+ EOV           CD12   C    CH3       0.000    -14.125   -0.859    1.144
+ EOV           HD19   H    H         0.000    -13.108   -0.796    1.432
+ EOV           HD18   H    H         0.000    -14.649   -0.014    1.512
+ EOV           HD17   H    H         0.000    -14.552   -1.741    1.548
+ EOV           N5     N    N         0.000    -11.344    1.464   -1.181
+ EOV           CN3    C    CH3       0.000    -11.735    2.010   -2.481
+ EOV           HN33   H    H         0.000    -11.685    1.249   -3.216
+ EOV           HN23   H    H         0.000    -12.726    2.381   -2.427
+ EOV           HN13   H    H         0.000    -11.079    2.799   -2.748
+ EOV           C4     C    C         0.000    -10.358    1.989   -0.409
+ EOV           O4     O    O         0.000    -10.259    1.633    0.752
+ EOV           CA4    C    CH1       0.000     -9.392    3.013   -0.959
+ EOV           HA5    H    H         0.000     -9.885    3.624   -1.727
+ EOV           CB3    C    CH1       0.000     -8.206    2.253   -1.570
+ EOV           HB1    H    H         0.000     -7.468    2.972   -1.953
+ EOV           CG21   C    CH3       0.000     -8.702    1.371   -2.716
+ EOV           HG24   H    H         0.000     -7.885    0.845   -3.139
+ EOV           HG23   H    H         0.000     -9.413    0.677   -2.347
+ EOV           HG22   H    H         0.000     -9.154    1.976   -3.460
+ EOV           CG11   C    CH3       0.000     -7.555    1.377   -0.498
+ EOV           HG14   H    H         0.000     -6.682    0.925   -0.892
+ EOV           HG13   H    H         0.000     -7.296    1.973    0.339
+ EOV           HG12   H    H         0.000     -8.235    0.623   -0.195
+ EOV           N4     N    NH1       0.000     -8.932    3.864    0.147
+ EOV           H1     H    H         0.000     -8.703    3.417    1.023
+ EOV           C3     C    C         0.000     -8.796    5.200    0.068
+ EOV           O3     O    O         0.000     -9.231    5.840    1.044
+ EOV           CA3    C    CH1       0.000     -8.193    6.006   -1.026
+ EOV           HA4    H    H         0.000     -8.440    7.057   -0.821
+ EOV           CB2    C    CH2       0.000     -8.734    5.688   -2.414
+ EOV           HB21   H    H         0.000     -9.825    5.648   -2.378
+ EOV           HB31   H    H         0.000     -8.347    4.721   -2.742
+ EOV           CG1    C    CH1       0.000     -8.294    6.776   -3.394
+ EOV           HG     H    H         0.000     -7.200    6.875   -3.363
+ EOV           CD21   C    CH3       0.000     -8.938    8.107   -3.003
+ EOV           HD25   H    H         0.000     -8.636    8.372   -2.023
+ EOV           HD24   H    H         0.000     -8.632    8.861   -3.681
+ EOV           HD21   H    H         0.000     -9.993    8.013   -3.033
+ EOV           CD11   C    CH3       0.000     -8.730    6.394   -4.810
+ EOV           HD16   H    H         0.000     -8.426    7.148   -5.490
+ EOV           HD15   H    H         0.000     -8.283    5.473   -5.083
+ EOV           HD14   H    H         0.000     -9.785    6.296   -4.842
+ EOV           N3     N    N         0.000     -6.715    5.905   -1.033
+ EOV           CN2    C    CH3       0.000     -6.017    4.933   -1.878
+ EOV           HN32   H    H         0.000     -6.236    3.951   -1.546
+ EOV           HN22   H    H         0.000     -6.335    5.043   -2.883
+ EOV           HN12   H    H         0.000     -4.972    5.099   -1.821
+ EOV           C2     C    C         0.000     -6.061    6.785   -0.221
+ EOV           O2     O    O         0.000     -6.709    7.457    0.569
+ EOV           CA2    C    CH2       0.000     -4.571    6.948   -0.293
+ EOV           HA2    H    H         0.000     -4.325    8.006   -0.179
+ EOV           HA3    H    H         0.000     -4.223    6.598   -1.267
+ EOV           N2     N    N         0.000     -3.912    6.168    0.778
+ EOV           CN1    C    CH3       0.000     -4.675    5.354    1.724
+ EOV           HN31   H    H         0.000     -5.342    5.973    2.267
+ EOV           HN21   H    H         0.000     -5.228    4.621    1.195
+ EOV           HN11   H    H         0.000     -4.011    4.876    2.397
+ EOV           C1     C    C         0.000     -2.554    6.268    0.795
+ EOV           O1     O    O         0.000     -2.003    6.896   -0.093
+ EOV           CA1    C    CH1       0.000     -1.716    5.639    1.874
+ EOV           HA1    H    H         0.000     -2.333    4.968    2.488
+ EOV           CB1    C    CH2       0.000     -1.112    6.747    2.749
+ EOV           HB3    H    H         0.000     -1.913    7.371    3.150
+ EOV           HB2    H    H         0.000     -0.441    7.361    2.145
+ EOV           CG     C    CH3       0.000     -0.329    6.116    3.902
+ EOV           HG21   H    H         0.000      0.451    5.511    3.515
+ EOV           HG3    H    H         0.000      0.088    6.879    4.509
+ EOV           HG11   H    H         0.000     -0.978    5.518    4.489
+ EOV           N1     N    NH1       0.000     -0.616    4.881    1.242
+ EOV           H      H    H         0.000      0.159    5.352    0.799
+ EOV           C      C    C         0.000     -0.692    3.523    1.283
+ EOV           O      O    O         0.000     -1.690    2.975    1.688
+ EOV           CA     C    CH1       0.000      0.493    2.719    0.802
+ EOV           HA     H    H         0.000      1.397    3.311    1.002
+ EOV           CB     C    CH1       0.000      0.397    2.525   -0.702
+ EOV           HB     H    H         0.000      0.431    3.504   -1.201
+ EOV           OG1    O    OH1       0.000     -0.834    1.871   -1.020
+ EOV           HG1    H    H         0.000     -1.094    1.300   -0.284
+ EOV           CG2    C    CH1       0.000      1.569    1.667   -1.181
+ EOV           HG2    H    H         0.000      1.545    0.695   -0.669
+ EOV           CD1    C    CH3       0.000      2.886    2.378   -0.863
+ EOV           HD13   H    H         0.000      2.964    2.529    0.183
+ EOV           HD12   H    H         0.000      3.698    1.784   -1.195
+ EOV           HD11   H    H         0.000      2.910    3.315   -1.356
+ EOV           CD2    C    CH2       0.000      1.458    1.450   -2.692
+ EOV           HD22   H    H         0.000      1.569    2.406   -3.206
+ EOV           HD23   H    H         0.000      0.480    1.023   -2.927
+ EOV           CE     C    C1        0.000      2.541    0.505   -3.144
+ EOV           HE     H    H         0.000      3.573    0.722   -2.922
+ EOV           CZ     C    C1        0.000      2.229   -0.580   -3.808
+ EOV           HZ     H    H         0.000      1.198   -0.797   -4.030
+ EOV           CH     C    CH3       0.000      3.313   -1.525   -4.261
+ EOV           HH3    H    H         0.000      3.979   -1.013   -4.906
+ EOV           HH2    H    H         0.000      3.843   -1.883   -3.418
+ EOV           HH1    H    H         0.000      2.877   -2.339   -4.778
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ EOV      OA     n/a    CC     START
+ EOV      CC     OA     CAA    .
+ EOV      N      CC     CN     .
+ EOV      CN     N      HN1    .
+ EOV      HN3    CN     .      .
+ EOV      HN2    CN     .      .
+ EOV      HN1    CN     .      .
+ EOV      CAA    CC     NA     .
+ EOV      HAB    CAA    .      .
+ EOV      CB9    CAA    CG12   .
+ EOV      HB4    CB9    .      .
+ EOV      CG22   CB9    HG25   .
+ EOV      HG27   CG22   .      .
+ EOV      HG26   CG22   .      .
+ EOV      HG25   CG22   .      .
+ EOV      CG12   CB9    HG15   .
+ EOV      HG17   CG12   .      .
+ EOV      HG16   CG12   .      .
+ EOV      HG15   CG12   .      .
+ EOV      NA     CAA    C9     .
+ EOV      CN6    NA     HN16   .
+ EOV      HN36   CN6    .      .
+ EOV      HN26   CN6    .      .
+ EOV      HN16   CN6    .      .
+ EOV      C9     NA     CA9    .
+ EOV      O9     C9     .      .
+ EOV      CA9    C9     N9     .
+ EOV      HAA    CA9    .      .
+ EOV      CB8    CA9    CG5    .
+ EOV      HB26   CB8    .      .
+ EOV      HB36   CB8    .      .
+ EOV      CG5    CB8    CD14   .
+ EOV      HG6    CG5    .      .
+ EOV      CD24   CG5    HD2C   .
+ EOV      HD2E   CD24   .      .
+ EOV      HD2D   CD24   .      .
+ EOV      HD2C   CD24   .      .
+ EOV      CD14   CG5    HD1D   .
+ EOV      HD1F   CD14   .      .
+ EOV      HD1E   CD14   .      .
+ EOV      HD1D   CD14   .      .
+ EOV      N9     CA9    C8     .
+ EOV      CN5    N9     HN15   .
+ EOV      HN35   CN5    .      .
+ EOV      HN25   CN5    .      .
+ EOV      HN15   CN5    .      .
+ EOV      C8     N9     CA8    .
+ EOV      O8     C8     .      .
+ EOV      CA8    C8     N8     .
+ EOV      HA9    CA8    .      .
+ EOV      CB7    CA8    CG4    .
+ EOV      HB25   CB7    .      .
+ EOV      HB35   CB7    .      .
+ EOV      CG4    CB7    CD13   .
+ EOV      HG5    CG4    .      .
+ EOV      CD23   CG4    HD29   .
+ EOV      HD2B   CD23   .      .
+ EOV      HD2A   CD23   .      .
+ EOV      HD29   CD23   .      .
+ EOV      CD13   CG4    HD1A   .
+ EOV      HD1C   CD13   .      .
+ EOV      HD1B   CD13   .      .
+ EOV      HD1A   CD13   .      .
+ EOV      N8     CA8    C7     .
+ EOV      CN4    N8     HN14   .
+ EOV      HN34   CN4    .      .
+ EOV      HN24   CN4    .      .
+ EOV      HN14   CN4    .      .
+ EOV      C7     N8     CA7    .
+ EOV      O7     C7     .      .
+ EOV      CA7    C7     N7     .
+ EOV      HA8    CA7    .      .
+ EOV      CB6    CA7    HB12   .
+ EOV      HB34   CB6    .      .
+ EOV      HB24   CB6    .      .
+ EOV      HB12   CB6    .      .
+ EOV      N7     CA7    C6     .
+ EOV      H3     N7     .      .
+ EOV      C6     N7     CA6    .
+ EOV      O6     C6     .      .
+ EOV      CA6    C6     N6     .
+ EOV      HA7    CA6    .      .
+ EOV      CB5    CA6    HB11   .
+ EOV      HB33   CB5    .      .
+ EOV      HB23   CB5    .      .
+ EOV      HB11   CB5    .      .
+ EOV      N6     CA6    C5     .
+ EOV      H2     N6     .      .
+ EOV      C5     N6     CA5    .
+ EOV      O5     C5     .      .
+ EOV      CA5    C5     N5     .
+ EOV      HA6    CA5    .      .
+ EOV      CB4    CA5    CG3    .
+ EOV      HB22   CB4    .      .
+ EOV      HB32   CB4    .      .
+ EOV      CG3    CB4    CD12   .
+ EOV      HG4    CG3    .      .
+ EOV      CD22   CG3    HD26   .
+ EOV      HD28   CD22   .      .
+ EOV      HD27   CD22   .      .
+ EOV      HD26   CD22   .      .
+ EOV      CD12   CG3    HD17   .
+ EOV      HD19   CD12   .      .
+ EOV      HD18   CD12   .      .
+ EOV      HD17   CD12   .      .
+ EOV      N5     CA5    C4     .
+ EOV      CN3    N5     HN13   .
+ EOV      HN33   CN3    .      .
+ EOV      HN23   CN3    .      .
+ EOV      HN13   CN3    .      .
+ EOV      C4     N5     CA4    .
+ EOV      O4     C4     .      .
+ EOV      CA4    C4     N4     .
+ EOV      HA5    CA4    .      .
+ EOV      CB3    CA4    CG11   .
+ EOV      HB1    CB3    .      .
+ EOV      CG21   CB3    HG22   .
+ EOV      HG24   CG21   .      .
+ EOV      HG23   CG21   .      .
+ EOV      HG22   CG21   .      .
+ EOV      CG11   CB3    HG12   .
+ EOV      HG14   CG11   .      .
+ EOV      HG13   CG11   .      .
+ EOV      HG12   CG11   .      .
+ EOV      N4     CA4    C3     .
+ EOV      H1     N4     .      .
+ EOV      C3     N4     CA3    .
+ EOV      O3     C3     .      .
+ EOV      CA3    C3     N3     .
+ EOV      HA4    CA3    .      .
+ EOV      CB2    CA3    CG1    .
+ EOV      HB21   CB2    .      .
+ EOV      HB31   CB2    .      .
+ EOV      CG1    CB2    CD11   .
+ EOV      HG     CG1    .      .
+ EOV      CD21   CG1    HD21   .
+ EOV      HD25   CD21   .      .
+ EOV      HD24   CD21   .      .
+ EOV      HD21   CD21   .      .
+ EOV      CD11   CG1    HD14   .
+ EOV      HD16   CD11   .      .
+ EOV      HD15   CD11   .      .
+ EOV      HD14   CD11   .      .
+ EOV      N3     CA3    C2     .
+ EOV      CN2    N3     HN12   .
+ EOV      HN32   CN2    .      .
+ EOV      HN22   CN2    .      .
+ EOV      HN12   CN2    .      .
+ EOV      C2     N3     CA2    .
+ EOV      O2     C2     .      .
+ EOV      CA2    C2     N2     .
+ EOV      HA2    CA2    .      .
+ EOV      HA3    CA2    .      .
+ EOV      N2     CA2    C1     .
+ EOV      CN1    N2     HN11   .
+ EOV      HN31   CN1    .      .
+ EOV      HN21   CN1    .      .
+ EOV      HN11   CN1    .      .
+ EOV      C1     N2     CA1    .
+ EOV      O1     C1     .      .
+ EOV      CA1    C1     N1     .
+ EOV      HA1    CA1    .      .
+ EOV      CB1    CA1    CG     .
+ EOV      HB3    CB1    .      .
+ EOV      HB2    CB1    .      .
+ EOV      CG     CB1    HG11   .
+ EOV      HG21   CG     .      .
+ EOV      HG3    CG     .      .
+ EOV      HG11   CG     .      .
+ EOV      N1     CA1    C      .
+ EOV      H      N1     .      .
+ EOV      C      N1     CA     .
+ EOV      O      C      .      .
+ EOV      CA     C      CB     .
+ EOV      HA     CA     .      .
+ EOV      CB     CA     CG2    .
+ EOV      HB     CB     .      .
+ EOV      OG1    CB     HG1    .
+ EOV      HG1    OG1    .      .
+ EOV      CG2    CB     CD2    .
+ EOV      HG2    CG2    .      .
+ EOV      CD1    CG2    HD11   .
+ EOV      HD13   CD1    .      .
+ EOV      HD12   CD1    .      .
+ EOV      HD11   CD1    .      .
+ EOV      CD2    CG2    CE     .
+ EOV      HD22   CD2    .      .
+ EOV      HD23   CD2    .      .
+ EOV      CE     CD2    CZ     .
+ EOV      HE     CE     .      .
+ EOV      CZ     CE     CH     .
+ EOV      HZ     CZ     .      .
+ EOV      CH     CZ     HH1    .
+ EOV      HH3    CH     .      .
+ EOV      HH2    CH     .      .
+ EOV      HH1    CH     .      END
+ EOV      N      CA     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EOV       CN        N         single    1.455     0.020     1.455     0.020     
+EOV       N         CA        single    1.455     0.020     1.455     0.020     
+EOV       HN1       CN        single    1.089     0.010     0.989     0.005     
+EOV       HN2       CN        single    1.089     0.010     0.989     0.005     
+EOV       HN3       CN        single    1.089     0.010     0.989     0.005     
+EOV       CA        C         single    1.500     0.020     1.500     0.020     
+EOV       CB        CA        single    1.524     0.020     1.524     0.020     
+EOV       HA        CA        single    1.089     0.010     0.989     0.005     
+EOV       O         C         double    1.220     0.020     1.220     0.020     
+EOV       OG1       CB        single    1.432     0.020     1.432     0.020     
+EOV       CG2       CB        single    1.524     0.020     1.524     0.020     
+EOV       HB        CB        single    1.089     0.010     0.989     0.005     
+EOV       HG1       OG1       single    0.970     0.012     0.839     0.014     
+EOV       CD1       CG2       single    1.524     0.020     1.524     0.020     
+EOV       CD2       CG2       single    1.524     0.020     1.524     0.020     
+EOV       HG2       CG2       single    1.089     0.010     0.989     0.005     
+EOV       HD11      CD1       single    1.089     0.010     0.989     0.005     
+EOV       HD12      CD1       single    1.089     0.010     0.989     0.005     
+EOV       HD13      CD1       single    1.089     0.010     0.989     0.005     
+EOV       CE        CD2       single    1.510     0.020     1.510     0.020     
+EOV       HD22      CD2       single    1.089     0.010     0.989     0.005     
+EOV       HD23      CD2       single    1.089     0.010     0.989     0.005     
+EOV       CZ        CE        double    1.330     0.020     1.330     0.020     
+EOV       HE        CE        single    1.082     0.013     0.975     0.010     
+EOV       CH        CZ        single    1.510     0.020     1.510     0.020     
+EOV       HZ        CZ        single    1.082     0.013     0.975     0.010     
+EOV       HH1       CH        single    1.089     0.010     0.989     0.005     
+EOV       HH2       CH        single    1.089     0.010     0.989     0.005     
+EOV       HH3       CH        single    1.089     0.010     0.989     0.005     
+EOV       N1        CA1       single    1.450     0.020     1.450     0.020     
+EOV       H         N1        single    1.016     0.010     0.899     0.007     
+EOV       CA1       C1        single    1.500     0.020     1.500     0.020     
+EOV       CB1       CA1       single    1.524     0.020     1.524     0.020     
+EOV       HA1       CA1       single    1.089     0.010     0.989     0.005     
+EOV       O1        C1        double    1.220     0.020     1.220     0.020     
+EOV       CG        CB1       single    1.513     0.020     1.513     0.020     
+EOV       HB3       CB1       single    1.089     0.010     0.989     0.005     
+EOV       HB2       CB1       single    1.089     0.010     0.989     0.005     
+EOV       HG11      CG        single    1.089     0.010     0.989     0.005     
+EOV       HG3       CG        single    1.089     0.010     0.989     0.005     
+EOV       HG21      CG        single    1.089     0.010     0.989     0.005     
+EOV       N2        CA2       single    1.455     0.020     1.455     0.020     
+EOV       CN1       N2        single    1.455     0.020     1.455     0.020     
+EOV       CA2       C2        single    1.510     0.020     1.510     0.020     
+EOV       HA2       CA2       single    1.089     0.010     0.989     0.005     
+EOV       HA3       CA2       single    1.089     0.010     0.989     0.005     
+EOV       O2        C2        double    1.220     0.020     1.220     0.020     
+EOV       HN11      CN1       single    1.089     0.010     0.989     0.005     
+EOV       HN21      CN1       single    1.089     0.010     0.989     0.005     
+EOV       HN31      CN1       single    1.089     0.010     0.989     0.005     
+EOV       CN2       N3        single    1.455     0.020     1.455     0.020     
+EOV       N3        CA3       single    1.455     0.020     1.455     0.020     
+EOV       HN12      CN2       single    1.089     0.010     0.989     0.005     
+EOV       HN22      CN2       single    1.089     0.010     0.989     0.005     
+EOV       HN32      CN2       single    1.089     0.010     0.989     0.005     
+EOV       CB2       CA3       single    1.524     0.020     1.524     0.020     
+EOV       CA3       C3        single    1.500     0.020     1.500     0.020     
+EOV       HA4       CA3       single    1.089     0.010     0.989     0.005     
+EOV       CG1       CB2       single    1.524     0.020     1.524     0.020     
+EOV       HB21      CB2       single    1.089     0.010     0.989     0.005     
+EOV       HB31      CB2       single    1.089     0.010     0.989     0.005     
+EOV       CD11      CG1       single    1.524     0.020     1.524     0.020     
+EOV       CD21      CG1       single    1.524     0.020     1.524     0.020     
+EOV       HG        CG1       single    1.089     0.010     0.989     0.005     
+EOV       HD14      CD11      single    1.089     0.010     0.989     0.005     
+EOV       HD15      CD11      single    1.089     0.010     0.989     0.005     
+EOV       HD16      CD11      single    1.089     0.010     0.989     0.005     
+EOV       HD21      CD21      single    1.089     0.010     0.989     0.005     
+EOV       HD24      CD21      single    1.089     0.010     0.989     0.005     
+EOV       HD25      CD21      single    1.089     0.010     0.989     0.005     
+EOV       O3        C3        double    1.220     0.020     1.220     0.020     
+EOV       N4        CA4       single    1.450     0.020     1.450     0.020     
+EOV       H1        N4        single    1.016     0.010     0.899     0.007     
+EOV       CA4       C4        single    1.500     0.020     1.500     0.020     
+EOV       CB3       CA4       single    1.524     0.020     1.524     0.020     
+EOV       HA5       CA4       single    1.089     0.010     0.989     0.005     
+EOV       O4        C4        double    1.220     0.020     1.220     0.020     
+EOV       CG11      CB3       single    1.524     0.020     1.524     0.020     
+EOV       CG21      CB3       single    1.524     0.020     1.524     0.020     
+EOV       HB1       CB3       single    1.089     0.010     0.989     0.005     
+EOV       HG12      CG11      single    1.089     0.010     0.989     0.005     
+EOV       HG13      CG11      single    1.089     0.010     0.989     0.005     
+EOV       HG14      CG11      single    1.089     0.010     0.989     0.005     
+EOV       HG22      CG21      single    1.089     0.010     0.989     0.005     
+EOV       HG23      CG21      single    1.089     0.010     0.989     0.005     
+EOV       HG24      CG21      single    1.089     0.010     0.989     0.005     
+EOV       CN3       N5        single    1.455     0.020     1.455     0.020     
+EOV       N5        CA5       single    1.455     0.020     1.455     0.020     
+EOV       HN13      CN3       single    1.089     0.010     0.989     0.005     
+EOV       HN23      CN3       single    1.089     0.010     0.989     0.005     
+EOV       HN33      CN3       single    1.089     0.010     0.989     0.005     
+EOV       CB4       CA5       single    1.524     0.020     1.524     0.020     
+EOV       CA5       C5        single    1.500     0.020     1.500     0.020     
+EOV       HA6       CA5       single    1.089     0.010     0.989     0.005     
+EOV       CG3       CB4       single    1.524     0.020     1.524     0.020     
+EOV       HB22      CB4       single    1.089     0.010     0.989     0.005     
+EOV       HB32      CB4       single    1.089     0.010     0.989     0.005     
+EOV       CD12      CG3       single    1.524     0.020     1.524     0.020     
+EOV       CD22      CG3       single    1.524     0.020     1.524     0.020     
+EOV       HG4       CG3       single    1.089     0.010     0.989     0.005     
+EOV       HD17      CD12      single    1.089     0.010     0.989     0.005     
+EOV       HD18      CD12      single    1.089     0.010     0.989     0.005     
+EOV       HD19      CD12      single    1.089     0.010     0.989     0.005     
+EOV       HD26      CD22      single    1.089     0.010     0.989     0.005     
+EOV       HD27      CD22      single    1.089     0.010     0.989     0.005     
+EOV       HD28      CD22      single    1.089     0.010     0.989     0.005     
+EOV       O5        C5        double    1.220     0.020     1.220     0.020     
+EOV       N6        CA6       single    1.450     0.020     1.450     0.020     
+EOV       H2        N6        single    1.016     0.010     0.899     0.007     
+EOV       CA6       C6        single    1.500     0.020     1.500     0.020     
+EOV       CB5       CA6       single    1.524     0.020     1.524     0.020     
+EOV       HA7       CA6       single    1.089     0.010     0.989     0.005     
+EOV       O6        C6        double    1.220     0.020     1.220     0.020     
+EOV       HB11      CB5       single    1.089     0.010     0.989     0.005     
+EOV       HB23      CB5       single    1.089     0.010     0.989     0.005     
+EOV       HB33      CB5       single    1.089     0.010     0.989     0.005     
+EOV       N7        CA7       single    1.450     0.020     1.450     0.020     
+EOV       H3        N7        single    1.016     0.010     0.899     0.007     
+EOV       CB6       CA7       single    1.524     0.020     1.524     0.020     
+EOV       CA7       C7        single    1.500     0.020     1.500     0.020     
+EOV       HA8       CA7       single    1.089     0.010     0.989     0.005     
+EOV       HB12      CB6       single    1.089     0.010     0.989     0.005     
+EOV       HB24      CB6       single    1.089     0.010     0.989     0.005     
+EOV       HB34      CB6       single    1.089     0.010     0.989     0.005     
+EOV       O7        C7        double    1.220     0.020     1.220     0.020     
+EOV       CN4       N8        single    1.455     0.020     1.455     0.020     
+EOV       N8        CA8       single    1.455     0.020     1.455     0.020     
+EOV       HN14      CN4       single    1.089     0.010     0.989     0.005     
+EOV       HN24      CN4       single    1.089     0.010     0.989     0.005     
+EOV       HN34      CN4       single    1.089     0.010     0.989     0.005     
+EOV       CB7       CA8       single    1.524     0.020     1.524     0.020     
+EOV       CA8       C8        single    1.500     0.020     1.500     0.020     
+EOV       HA9       CA8       single    1.089     0.010     0.989     0.005     
+EOV       CG4       CB7       single    1.524     0.020     1.524     0.020     
+EOV       HB25      CB7       single    1.089     0.010     0.989     0.005     
+EOV       HB35      CB7       single    1.089     0.010     0.989     0.005     
+EOV       CD13      CG4       single    1.524     0.020     1.524     0.020     
+EOV       CD23      CG4       single    1.524     0.020     1.524     0.020     
+EOV       HG5       CG4       single    1.089     0.010     0.989     0.005     
+EOV       HD1A      CD13      single    1.089     0.010     0.989     0.005     
+EOV       HD1B      CD13      single    1.089     0.010     0.989     0.005     
+EOV       HD1C      CD13      single    1.089     0.010     0.989     0.005     
+EOV       HD29      CD23      single    1.089     0.010     0.989     0.005     
+EOV       HD2A      CD23      single    1.089     0.010     0.989     0.005     
+EOV       HD2B      CD23      single    1.089     0.010     0.989     0.005     
+EOV       O8        C8        double    1.220     0.020     1.220     0.020     
+EOV       CN5       N9        single    1.455     0.020     1.455     0.020     
+EOV       N9        CA9       single    1.455     0.020     1.455     0.020     
+EOV       HN15      CN5       single    1.089     0.010     0.989     0.005     
+EOV       HN25      CN5       single    1.089     0.010     0.989     0.005     
+EOV       HN35      CN5       single    1.089     0.010     0.989     0.005     
+EOV       CB8       CA9       single    1.524     0.020     1.524     0.020     
+EOV       CA9       C9        single    1.500     0.020     1.500     0.020     
+EOV       HAA       CA9       single    1.089     0.010     0.989     0.005     
+EOV       CG5       CB8       single    1.524     0.020     1.524     0.020     
+EOV       HB26      CB8       single    1.089     0.010     0.989     0.005     
+EOV       HB36      CB8       single    1.089     0.010     0.989     0.005     
+EOV       CD14      CG5       single    1.524     0.020     1.524     0.020     
+EOV       CD24      CG5       single    1.524     0.020     1.524     0.020     
+EOV       HG6       CG5       single    1.089     0.010     0.989     0.005     
+EOV       HD1D      CD14      single    1.089     0.010     0.989     0.005     
+EOV       HD1E      CD14      single    1.089     0.010     0.989     0.005     
+EOV       HD1F      CD14      single    1.089     0.010     0.989     0.005     
+EOV       HD2C      CD24      single    1.089     0.010     0.989     0.005     
+EOV       HD2D      CD24      single    1.089     0.010     0.989     0.005     
+EOV       HD2E      CD24      single    1.089     0.010     0.989     0.005     
+EOV       O9        C9        double    1.220     0.020     1.220     0.020     
+EOV       CN6       NA        single    1.455     0.020     1.455     0.020     
+EOV       NA        CAA       single    1.455     0.020     1.455     0.020     
+EOV       HN16      CN6       single    1.089     0.010     0.989     0.005     
+EOV       HN26      CN6       single    1.089     0.010     0.989     0.005     
+EOV       HN36      CN6       single    1.089     0.010     0.989     0.005     
+EOV       CB9       CAA       single    1.524     0.020     1.524     0.020     
+EOV       CAA       CC        single    1.500     0.020     1.500     0.020     
+EOV       HAB       CAA       single    1.089     0.010     0.989     0.005     
+EOV       CG12      CB9       single    1.524     0.020     1.524     0.020     
+EOV       CG22      CB9       single    1.524     0.020     1.524     0.020     
+EOV       HB4       CB9       single    1.089     0.010     0.989     0.005     
+EOV       HG15      CG12      single    1.089     0.010     0.989     0.005     
+EOV       HG16      CG12      single    1.089     0.010     0.989     0.005     
+EOV       HG17      CG12      single    1.089     0.010     0.989     0.005     
+EOV       HG25      CG22      single    1.089     0.010     0.989     0.005     
+EOV       HG26      CG22      single    1.089     0.010     0.989     0.005     
+EOV       HG27      CG22      single    1.089     0.010     0.989     0.005     
+EOV       CC        OA        double    1.220     0.020     1.220     0.020     
+EOV       N         CC        single    1.330     0.020     1.330     0.020     
+EOV       C         N1        single    1.330     0.020     1.330     0.020     
+EOV       C1        N2        single    1.330     0.020     1.330     0.020     
+EOV       C2        N3        single    1.330     0.020     1.330     0.020     
+EOV       C3        N4        single    1.330     0.020     1.330     0.020     
+EOV       C4        N5        single    1.330     0.020     1.330     0.020     
+EOV       C5        N6        single    1.330     0.020     1.330     0.020     
+EOV       C6        N7        single    1.330     0.020     1.330     0.020     
+EOV       C7        N8        single    1.330     0.020     1.330     0.020     
+EOV       C8        N9        single    1.330     0.020     1.330     0.020     
+EOV       C9        NA        single    1.330     0.020     1.330     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ EOV      OA     CC     N       123.000    3.000
+ EOV      OA     CC     CAA     120.500    3.000
+ EOV      N      CC     CAA     116.500    3.000
+ EOV      CC     N      CN      127.000    3.000
+ EOV      CC     N      CA      121.000    3.000
+ EOV      CN     N      CA      120.000    3.000
+ EOV      N      CN     HN3     109.470    3.000
+ EOV      N      CN     HN2     109.470    3.000
+ EOV      N      CN     HN1     109.470    3.000
+ EOV      HN3    CN     HN2     109.470    3.000
+ EOV      HN3    CN     HN1     109.470    3.000
+ EOV      HN2    CN     HN1     109.470    3.000
+ EOV      CC     CAA    HAB     108.810    3.000
+ EOV      CC     CAA    CB9     109.470    3.000
+ EOV      CC     CAA    NA      111.600    3.000
+ EOV      HAB    CAA    CB9     108.340    3.000
+ EOV      HAB    CAA    NA      109.470    3.000
+ EOV      CB9    CAA    NA      105.000    3.000
+ EOV      CAA    CB9    HB4     108.340    3.000
+ EOV      CAA    CB9    CG22    111.000    3.000
+ EOV      CAA    CB9    CG12    111.000    3.000
+ EOV      HB4    CB9    CG22    108.340    3.000
+ EOV      HB4    CB9    CG12    108.340    3.000
+ EOV      CG22   CB9    CG12    111.000    3.000
+ EOV      CB9    CG22   HG27    109.470    3.000
+ EOV      CB9    CG22   HG26    109.470    3.000
+ EOV      CB9    CG22   HG25    109.470    3.000
+ EOV      HG27   CG22   HG26    109.470    3.000
+ EOV      HG27   CG22   HG25    109.470    3.000
+ EOV      HG26   CG22   HG25    109.470    3.000
+ EOV      CB9    CG12   HG17    109.470    3.000
+ EOV      CB9    CG12   HG16    109.470    3.000
+ EOV      CB9    CG12   HG15    109.470    3.000
+ EOV      HG17   CG12   HG16    109.470    3.000
+ EOV      HG17   CG12   HG15    109.470    3.000
+ EOV      HG16   CG12   HG15    109.470    3.000
+ EOV      CAA    NA     CN6     120.000    3.000
+ EOV      CAA    NA     C9      121.000    3.000
+ EOV      CN6    NA     C9      127.000    3.000
+ EOV      NA     CN6    HN36    109.470    3.000
+ EOV      NA     CN6    HN26    109.470    3.000
+ EOV      NA     CN6    HN16    109.470    3.000
+ EOV      HN36   CN6    HN26    109.470    3.000
+ EOV      HN36   CN6    HN16    109.470    3.000
+ EOV      HN26   CN6    HN16    109.470    3.000
+ EOV      NA     C9     O9      123.000    3.000
+ EOV      NA     C9     CA9     116.500    3.000
+ EOV      O9     C9     CA9     120.500    3.000
+ EOV      C9     CA9    HAA     108.810    3.000
+ EOV      C9     CA9    CB8     109.470    3.000
+ EOV      C9     CA9    N9      111.600    3.000
+ EOV      HAA    CA9    CB8     108.340    3.000
+ EOV      HAA    CA9    N9      109.470    3.000
+ EOV      CB8    CA9    N9      105.000    3.000
+ EOV      CA9    CB8    HB26    109.470    3.000
+ EOV      CA9    CB8    HB36    109.470    3.000
+ EOV      CA9    CB8    CG5     111.000    3.000
+ EOV      HB26   CB8    HB36    107.900    3.000
+ EOV      HB26   CB8    CG5     109.470    3.000
+ EOV      HB36   CB8    CG5     109.470    3.000
+ EOV      CB8    CG5    HG6     108.340    3.000
+ EOV      CB8    CG5    CD24    111.000    3.000
+ EOV      CB8    CG5    CD14    111.000    3.000
+ EOV      HG6    CG5    CD24    108.340    3.000
+ EOV      HG6    CG5    CD14    108.340    3.000
+ EOV      CD24   CG5    CD14    111.000    3.000
+ EOV      CG5    CD24   HD2E    109.470    3.000
+ EOV      CG5    CD24   HD2D    109.470    3.000
+ EOV      CG5    CD24   HD2C    109.470    3.000
+ EOV      HD2E   CD24   HD2D    109.470    3.000
+ EOV      HD2E   CD24   HD2C    109.470    3.000
+ EOV      HD2D   CD24   HD2C    109.470    3.000
+ EOV      CG5    CD14   HD1F    109.470    3.000
+ EOV      CG5    CD14   HD1E    109.470    3.000
+ EOV      CG5    CD14   HD1D    109.470    3.000
+ EOV      HD1F   CD14   HD1E    109.470    3.000
+ EOV      HD1F   CD14   HD1D    109.470    3.000
+ EOV      HD1E   CD14   HD1D    109.470    3.000
+ EOV      CA9    N9     CN5     120.000    3.000
+ EOV      CA9    N9     C8      121.000    3.000
+ EOV      CN5    N9     C8      127.000    3.000
+ EOV      N9     CN5    HN35    109.470    3.000
+ EOV      N9     CN5    HN25    109.470    3.000
+ EOV      N9     CN5    HN15    109.470    3.000
+ EOV      HN35   CN5    HN25    109.470    3.000
+ EOV      HN35   CN5    HN15    109.470    3.000
+ EOV      HN25   CN5    HN15    109.470    3.000
+ EOV      N9     C8     O8      123.000    3.000
+ EOV      N9     C8     CA8     116.500    3.000
+ EOV      O8     C8     CA8     120.500    3.000
+ EOV      C8     CA8    HA9     108.810    3.000
+ EOV      C8     CA8    CB7     109.470    3.000
+ EOV      C8     CA8    N8      111.600    3.000
+ EOV      HA9    CA8    CB7     108.340    3.000
+ EOV      HA9    CA8    N8      109.470    3.000
+ EOV      CB7    CA8    N8      105.000    3.000
+ EOV      CA8    CB7    HB25    109.470    3.000
+ EOV      CA8    CB7    HB35    109.470    3.000
+ EOV      CA8    CB7    CG4     111.000    3.000
+ EOV      HB25   CB7    HB35    107.900    3.000
+ EOV      HB25   CB7    CG4     109.470    3.000
+ EOV      HB35   CB7    CG4     109.470    3.000
+ EOV      CB7    CG4    HG5     108.340    3.000
+ EOV      CB7    CG4    CD23    111.000    3.000
+ EOV      CB7    CG4    CD13    111.000    3.000
+ EOV      HG5    CG4    CD23    108.340    3.000
+ EOV      HG5    CG4    CD13    108.340    3.000
+ EOV      CD23   CG4    CD13    111.000    3.000
+ EOV      CG4    CD23   HD2B    109.470    3.000
+ EOV      CG4    CD23   HD2A    109.470    3.000
+ EOV      CG4    CD23   HD29    109.470    3.000
+ EOV      HD2B   CD23   HD2A    109.470    3.000
+ EOV      HD2B   CD23   HD29    109.470    3.000
+ EOV      HD2A   CD23   HD29    109.470    3.000
+ EOV      CG4    CD13   HD1C    109.470    3.000
+ EOV      CG4    CD13   HD1B    109.470    3.000
+ EOV      CG4    CD13   HD1A    109.470    3.000
+ EOV      HD1C   CD13   HD1B    109.470    3.000
+ EOV      HD1C   CD13   HD1A    109.470    3.000
+ EOV      HD1B   CD13   HD1A    109.470    3.000
+ EOV      CA8    N8     CN4     120.000    3.000
+ EOV      CA8    N8     C7      121.000    3.000
+ EOV      CN4    N8     C7      127.000    3.000
+ EOV      N8     CN4    HN34    109.470    3.000
+ EOV      N8     CN4    HN24    109.470    3.000
+ EOV      N8     CN4    HN14    109.470    3.000
+ EOV      HN34   CN4    HN24    109.470    3.000
+ EOV      HN34   CN4    HN14    109.470    3.000
+ EOV      HN24   CN4    HN14    109.470    3.000
+ EOV      N8     C7     O7      123.000    3.000
+ EOV      N8     C7     CA7     116.500    3.000
+ EOV      O7     C7     CA7     120.500    3.000
+ EOV      C7     CA7    HA8     108.810    3.000
+ EOV      C7     CA7    CB6     109.470    3.000
+ EOV      C7     CA7    N7      111.600    3.000
+ EOV      HA8    CA7    CB6     108.340    3.000
+ EOV      HA8    CA7    N7      108.550    3.000
+ EOV      CB6    CA7    N7      110.000    3.000
+ EOV      CA7    CB6    HB34    109.470    3.000
+ EOV      CA7    CB6    HB24    109.470    3.000
+ EOV      CA7    CB6    HB12    109.470    3.000
+ EOV      HB34   CB6    HB24    109.470    3.000
+ EOV      HB34   CB6    HB12    109.470    3.000
+ EOV      HB24   CB6    HB12    109.470    3.000
+ EOV      CA7    N7     H3      118.500    3.000
+ EOV      CA7    N7     C6      121.500    3.000
+ EOV      H3     N7     C6      120.000    3.000
+ EOV      N7     C6     O6      123.000    3.000
+ EOV      N7     C6     CA6     116.500    3.000
+ EOV      O6     C6     CA6     120.500    3.000
+ EOV      C6     CA6    HA7     108.810    3.000
+ EOV      C6     CA6    CB5     109.470    3.000
+ EOV      C6     CA6    N6      111.600    3.000
+ EOV      HA7    CA6    CB5     108.340    3.000
+ EOV      HA7    CA6    N6      108.550    3.000
+ EOV      CB5    CA6    N6      110.000    3.000
+ EOV      CA6    CB5    HB33    109.470    3.000
+ EOV      CA6    CB5    HB23    109.470    3.000
+ EOV      CA6    CB5    HB11    109.470    3.000
+ EOV      HB33   CB5    HB23    109.470    3.000
+ EOV      HB33   CB5    HB11    109.470    3.000
+ EOV      HB23   CB5    HB11    109.470    3.000
+ EOV      CA6    N6     H2      118.500    3.000
+ EOV      CA6    N6     C5      121.500    3.000
+ EOV      H2     N6     C5      120.000    3.000
+ EOV      N6     C5     O5      123.000    3.000
+ EOV      N6     C5     CA5     116.500    3.000
+ EOV      O5     C5     CA5     120.500    3.000
+ EOV      C5     CA5    HA6     108.810    3.000
+ EOV      C5     CA5    CB4     109.470    3.000
+ EOV      C5     CA5    N5      111.600    3.000
+ EOV      HA6    CA5    CB4     108.340    3.000
+ EOV      HA6    CA5    N5      109.470    3.000
+ EOV      CB4    CA5    N5      105.000    3.000
+ EOV      CA5    CB4    HB22    109.470    3.000
+ EOV      CA5    CB4    HB32    109.470    3.000
+ EOV      CA5    CB4    CG3     111.000    3.000
+ EOV      HB22   CB4    HB32    107.900    3.000
+ EOV      HB22   CB4    CG3     109.470    3.000
+ EOV      HB32   CB4    CG3     109.470    3.000
+ EOV      CB4    CG3    HG4     108.340    3.000
+ EOV      CB4    CG3    CD22    111.000    3.000
+ EOV      CB4    CG3    CD12    111.000    3.000
+ EOV      HG4    CG3    CD22    108.340    3.000
+ EOV      HG4    CG3    CD12    108.340    3.000
+ EOV      CD22   CG3    CD12    111.000    3.000
+ EOV      CG3    CD22   HD28    109.470    3.000
+ EOV      CG3    CD22   HD27    109.470    3.000
+ EOV      CG3    CD22   HD26    109.470    3.000
+ EOV      HD28   CD22   HD27    109.470    3.000
+ EOV      HD28   CD22   HD26    109.470    3.000
+ EOV      HD27   CD22   HD26    109.470    3.000
+ EOV      CG3    CD12   HD19    109.470    3.000
+ EOV      CG3    CD12   HD18    109.470    3.000
+ EOV      CG3    CD12   HD17    109.470    3.000
+ EOV      HD19   CD12   HD18    109.470    3.000
+ EOV      HD19   CD12   HD17    109.470    3.000
+ EOV      HD18   CD12   HD17    109.470    3.000
+ EOV      CA5    N5     CN3     120.000    3.000
+ EOV      CA5    N5     C4      121.000    3.000
+ EOV      CN3    N5     C4      127.000    3.000
+ EOV      N5     CN3    HN33    109.470    3.000
+ EOV      N5     CN3    HN23    109.470    3.000
+ EOV      N5     CN3    HN13    109.470    3.000
+ EOV      HN33   CN3    HN23    109.470    3.000
+ EOV      HN33   CN3    HN13    109.470    3.000
+ EOV      HN23   CN3    HN13    109.470    3.000
+ EOV      N5     C4     O4      123.000    3.000
+ EOV      N5     C4     CA4     116.500    3.000
+ EOV      O4     C4     CA4     120.500    3.000
+ EOV      C4     CA4    HA5     108.810    3.000
+ EOV      C4     CA4    CB3     109.470    3.000
+ EOV      C4     CA4    N4      111.600    3.000
+ EOV      HA5    CA4    CB3     108.340    3.000
+ EOV      HA5    CA4    N4      108.550    3.000
+ EOV      CB3    CA4    N4      110.000    3.000
+ EOV      CA4    CB3    HB1     108.340    3.000
+ EOV      CA4    CB3    CG21    111.000    3.000
+ EOV      CA4    CB3    CG11    111.000    3.000
+ EOV      HB1    CB3    CG21    108.340    3.000
+ EOV      HB1    CB3    CG11    108.340    3.000
+ EOV      CG21   CB3    CG11    111.000    3.000
+ EOV      CB3    CG21   HG24    109.470    3.000
+ EOV      CB3    CG21   HG23    109.470    3.000
+ EOV      CB3    CG21   HG22    109.470    3.000
+ EOV      HG24   CG21   HG23    109.470    3.000
+ EOV      HG24   CG21   HG22    109.470    3.000
+ EOV      HG23   CG21   HG22    109.470    3.000
+ EOV      CB3    CG11   HG14    109.470    3.000
+ EOV      CB3    CG11   HG13    109.470    3.000
+ EOV      CB3    CG11   HG12    109.470    3.000
+ EOV      HG14   CG11   HG13    109.470    3.000
+ EOV      HG14   CG11   HG12    109.470    3.000
+ EOV      HG13   CG11   HG12    109.470    3.000
+ EOV      CA4    N4     H1      118.500    3.000
+ EOV      CA4    N4     C3      121.500    3.000
+ EOV      H1     N4     C3      120.000    3.000
+ EOV      N4     C3     O3      123.000    3.000
+ EOV      N4     C3     CA3     116.500    3.000
+ EOV      O3     C3     CA3     120.500    3.000
+ EOV      C3     CA3    HA4     108.810    3.000
+ EOV      C3     CA3    CB2     109.470    3.000
+ EOV      C3     CA3    N3      111.600    3.000
+ EOV      HA4    CA3    CB2     108.340    3.000
+ EOV      HA4    CA3    N3      109.470    3.000
+ EOV      CB2    CA3    N3      105.000    3.000
+ EOV      CA3    CB2    HB21    109.470    3.000
+ EOV      CA3    CB2    HB31    109.470    3.000
+ EOV      CA3    CB2    CG1     111.000    3.000
+ EOV      HB21   CB2    HB31    107.900    3.000
+ EOV      HB21   CB2    CG1     109.470    3.000
+ EOV      HB31   CB2    CG1     109.470    3.000
+ EOV      CB2    CG1    HG      108.340    3.000
+ EOV      CB2    CG1    CD21    111.000    3.000
+ EOV      CB2    CG1    CD11    111.000    3.000
+ EOV      HG     CG1    CD21    108.340    3.000
+ EOV      HG     CG1    CD11    108.340    3.000
+ EOV      CD21   CG1    CD11    111.000    3.000
+ EOV      CG1    CD21   HD25    109.470    3.000
+ EOV      CG1    CD21   HD24    109.470    3.000
+ EOV      CG1    CD21   HD21    109.470    3.000
+ EOV      HD25   CD21   HD24    109.470    3.000
+ EOV      HD25   CD21   HD21    109.470    3.000
+ EOV      HD24   CD21   HD21    109.470    3.000
+ EOV      CG1    CD11   HD16    109.470    3.000
+ EOV      CG1    CD11   HD15    109.470    3.000
+ EOV      CG1    CD11   HD14    109.470    3.000
+ EOV      HD16   CD11   HD15    109.470    3.000
+ EOV      HD16   CD11   HD14    109.470    3.000
+ EOV      HD15   CD11   HD14    109.470    3.000
+ EOV      CA3    N3     CN2     120.000    3.000
+ EOV      CA3    N3     C2      121.000    3.000
+ EOV      CN2    N3     C2      127.000    3.000
+ EOV      N3     CN2    HN32    109.470    3.000
+ EOV      N3     CN2    HN22    109.470    3.000
+ EOV      N3     CN2    HN12    109.470    3.000
+ EOV      HN32   CN2    HN22    109.470    3.000
+ EOV      HN32   CN2    HN12    109.470    3.000
+ EOV      HN22   CN2    HN12    109.470    3.000
+ EOV      N3     C2     O2      123.000    3.000
+ EOV      N3     C2     CA2     116.500    3.000
+ EOV      O2     C2     CA2     120.500    3.000
+ EOV      C2     CA2    HA2     109.470    3.000
+ EOV      C2     CA2    HA3     109.470    3.000
+ EOV      C2     CA2    N2      109.500    3.000
+ EOV      HA2    CA2    HA3     107.900    3.000
+ EOV      HA2    CA2    N2      109.470    3.000
+ EOV      HA3    CA2    N2      109.470    3.000
+ EOV      CA2    N2     CN1     120.000    3.000
+ EOV      CA2    N2     C1      127.000    3.000
+ EOV      CN1    N2     C1      127.000    3.000
+ EOV      N2     CN1    HN31    109.470    3.000
+ EOV      N2     CN1    HN21    109.470    3.000
+ EOV      N2     CN1    HN11    109.470    3.000
+ EOV      HN31   CN1    HN21    109.470    3.000
+ EOV      HN31   CN1    HN11    109.470    3.000
+ EOV      HN21   CN1    HN11    109.470    3.000
+ EOV      N2     C1     O1      123.000    3.000
+ EOV      N2     C1     CA1     116.500    3.000
+ EOV      O1     C1     CA1     120.500    3.000
+ EOV      C1     CA1    HA1     108.810    3.000
+ EOV      C1     CA1    CB1     109.470    3.000
+ EOV      C1     CA1    N1      111.600    3.000
+ EOV      HA1    CA1    CB1     108.340    3.000
+ EOV      HA1    CA1    N1      108.550    3.000
+ EOV      CB1    CA1    N1      110.000    3.000
+ EOV      CA1    CB1    HB3     109.470    3.000
+ EOV      CA1    CB1    HB2     109.470    3.000
+ EOV      CA1    CB1    CG      111.000    3.000
+ EOV      HB3    CB1    HB2     107.900    3.000
+ EOV      HB3    CB1    CG      109.470    3.000
+ EOV      HB2    CB1    CG      109.470    3.000
+ EOV      CB1    CG     HG21    109.470    3.000
+ EOV      CB1    CG     HG3     109.470    3.000
+ EOV      CB1    CG     HG11    109.470    3.000
+ EOV      HG21   CG     HG3     109.470    3.000
+ EOV      HG21   CG     HG11    109.470    3.000
+ EOV      HG3    CG     HG11    109.470    3.000
+ EOV      CA1    N1     H       118.500    3.000
+ EOV      CA1    N1     C       121.500    3.000
+ EOV      H      N1     C       120.000    3.000
+ EOV      N1     C      O       123.000    3.000
+ EOV      N1     C      CA      116.500    3.000
+ EOV      O      C      CA      120.500    3.000
+ EOV      C      CA     HA      108.810    3.000
+ EOV      C      CA     CB      109.470    3.000
+ EOV      C      CA     N       111.600    3.000
+ EOV      HA     CA     CB      108.340    3.000
+ EOV      HA     CA     N       109.470    3.000
+ EOV      CB     CA     N       105.000    3.000
+ EOV      CA     CB     HB      108.340    3.000
+ EOV      CA     CB     OG1     109.470    3.000
+ EOV      CA     CB     CG2     111.000    3.000
+ EOV      HB     CB     OG1     109.470    3.000
+ EOV      HB     CB     CG2     108.340    3.000
+ EOV      OG1    CB     CG2     109.470    3.000
+ EOV      CB     OG1    HG1     109.470    3.000
+ EOV      CB     CG2    HG2     108.340    3.000
+ EOV      CB     CG2    CD1     111.000    3.000
+ EOV      CB     CG2    CD2     111.000    3.000
+ EOV      HG2    CG2    CD1     108.340    3.000
+ EOV      HG2    CG2    CD2     108.340    3.000
+ EOV      CD1    CG2    CD2     111.000    3.000
+ EOV      CG2    CD1    HD13    109.470    3.000
+ EOV      CG2    CD1    HD12    109.470    3.000
+ EOV      CG2    CD1    HD11    109.470    3.000
+ EOV      HD13   CD1    HD12    109.470    3.000
+ EOV      HD13   CD1    HD11    109.470    3.000
+ EOV      HD12   CD1    HD11    109.470    3.000
+ EOV      CG2    CD2    HD22    109.470    3.000
+ EOV      CG2    CD2    HD23    109.470    3.000
+ EOV      CG2    CD2    CE      109.470    3.000
+ EOV      HD22   CD2    HD23    107.900    3.000
+ EOV      HD22   CD2    CE      109.470    3.000
+ EOV      HD23   CD2    CE      109.470    3.000
+ EOV      CD2    CE     HE      120.000    3.000
+ EOV      CD2    CE     CZ      120.000    3.000
+ EOV      HE     CE     CZ      120.000    3.000
+ EOV      CE     CZ     HZ      120.000    3.000
+ EOV      CE     CZ     CH      120.000    3.000
+ EOV      HZ     CZ     CH      120.000    3.000
+ EOV      CZ     CH     HH3     109.470    3.000
+ EOV      CZ     CH     HH2     109.470    3.000
+ EOV      CZ     CH     HH1     109.470    3.000
+ EOV      HH3    CH     HH2     109.470    3.000
+ EOV      HH3    CH     HH1     109.470    3.000
+ EOV      HH2    CH     HH1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ EOV      CONST_1  OA     CC     N      CN       180.000    0.000   0
+ EOV      var_1    CC     N      CA     C        122.117   20.000   3
+ EOV      var_2    CC     N      CN     HN1      -91.959   20.000   1
+ EOV      var_3    OA     CC     CAA    NA       -73.853   20.000   3
+ EOV      var_4    CC     CAA    CB9    CG12      64.573   20.000   3
+ EOV      var_5    CAA    CB9    CG22   HG25      60.061   20.000   3
+ EOV      var_6    CAA    CB9    CG12   HG15      52.382   20.000   3
+ EOV      var_7    CC     CAA    NA     C9        68.846   20.000   3
+ EOV      var_8    CAA    NA     CN6    HN16    -178.399   20.000   1
+ EOV      CONST_2  CAA    NA     C9     CA9      180.000    0.000   0
+ EOV      var_9    NA     C9     CA9    N9      -168.619   20.000   3
+ EOV      var_10   C9     CA9    CB8    CG5      176.976   20.000   3
+ EOV      var_11   CA9    CB8    CG5    CD14     175.009   20.000   3
+ EOV      var_12   CB8    CG5    CD24   HD2C    -179.966   20.000   3
+ EOV      var_13   CB8    CG5    CD14   HD1D      60.065   20.000   3
+ EOV      var_14   C9     CA9    N9     C8       -97.609   20.000   3
+ EOV      var_15   CA9    N9     CN5    HN15     179.977   20.000   1
+ EOV      CONST_3  CA9    N9     C8     CA8      180.000    0.000   0
+ EOV      var_16   N9     C8     CA8    N8       146.519   20.000   3
+ EOV      var_17   C8     CA8    CB7    CG4      169.191   20.000   3
+ EOV      var_18   CA8    CB7    CG4    CD13      68.737   20.000   3
+ EOV      var_19   CB7    CG4    CD23   HD29      60.003   20.000   3
+ EOV      var_20   CB7    CG4    CD13   HD1A     172.617   20.000   3
+ EOV      var_21   C8     CA8    N8     C7        73.051   20.000   3
+ EOV      var_22   CA8    N8     CN4    HN14    -178.579   20.000   1
+ EOV      CONST_4  CA8    N8     C7     CA7      180.000    0.000   0
+ EOV      var_23   N8     C7     CA7    N7      -120.779   20.000   3
+ EOV      var_24   C7     CA7    CB6    HB12     178.709   20.000   3
+ EOV      var_25   C7     CA7    N7     C6      -129.939   20.000   3
+ EOV      CONST_5  CA7    N7     C6     CA6      180.000    0.000   0
+ EOV      var_26   N7     C6     CA6    N6      -148.234   20.000   3
+ EOV      var_27   C6     CA6    CB5    HB11     -58.651   20.000   3
+ EOV      var_28   C6     CA6    N6     C5      -150.849   20.000   3
+ EOV      CONST_6  CA6    N6     C5     CA5      180.000    0.000   0
+ EOV      var_29   N6     C5     CA5    N5        97.859   20.000   3
+ EOV      var_30   C5     CA5    CB4    CG3       62.297   20.000   3
+ EOV      var_31   CA5    CB4    CG3    CD12      64.070   20.000   3
+ EOV      var_32   CB4    CG3    CD22   HD26      59.998   20.000   3
+ EOV      var_33   CB4    CG3    CD12   HD17    -175.876   20.000   3
+ EOV      var_34   C5     CA5    N5     C4       -98.257   20.000   3
+ EOV      var_35   CA5    N5     CN3    HN13    -174.263   20.000   1
+ EOV      CONST_7  CA5    N5     C4     CA4      180.000    0.000   0
+ EOV      var_36   N5     C4     CA4    N4       151.730   20.000   3
+ EOV      var_37   C4     CA4    CB3    CG11     -58.320   20.000   3
+ EOV      var_38   CA4    CB3    CG21   HG22      60.027   20.000   3
+ EOV      var_39   CA4    CB3    CG11   HG12      65.456   20.000   3
+ EOV      var_40   C4     CA4    N4     C3      -137.692   20.000   3
+ EOV      CONST_8  CA4    N4     C3     CA3        0.000    0.000   0
+ EOV      var_41   N4     C3     CA3    N3       -74.247   20.000   3
+ EOV      var_42   C3     CA3    CB2    CG1      167.016   20.000   3
+ EOV      var_43   CA3    CB2    CG1    CD11     174.993   20.000   3
+ EOV      var_44   CB2    CG1    CD21   HD21     -60.060   20.000   3
+ EOV      var_45   CB2    CG1    CD11   HD14      59.938   20.000   3
+ EOV      var_46   C3     CA3    N3     C2       -86.313   20.000   3
+ EOV      var_47   CA3    N3     CN2    HN12     173.474   20.000   1
+ EOV      CONST_9  CA3    N3     C2     CA2      180.000    0.000   0
+ EOV      var_48   N3     C2     CA2    N2       -98.812   20.000   3
+ EOV      var_49   C2     CA2    N2     C1      -179.456   20.000   1
+ EOV      var_50   CA2    N2     CN1    HN11     179.527   20.000   1
+ EOV      CONST_10 CA2    N2     C1     CA1      180.000    0.000   0
+ EOV      var_51   N2     C1     CA1    N1       131.177   20.000   3
+ EOV      var_52   C1     CA1    CB1    CG       176.478   20.000   3
+ EOV      var_53   CA1    CB1    CG     HG11     -59.910   20.000   3
+ EOV      var_54   C1     CA1    N1     C       -108.022   20.000   3
+ EOV      CONST_11 CA1    N1     C      CA       180.000    0.000   0
+ EOV      var_55   N1     C      CA     CB       -85.992   20.000   3
+ EOV      var_56   C      CA     CB     CG2     -177.898   20.000   3
+ EOV      var_57   CA     CB     OG1    HG1      -29.849   20.000   1
+ EOV      var_58   CA     CB     CG2    CD2      178.933   20.000   3
+ EOV      var_59   CB     CG2    CD1    HD11     -60.004   20.000   3
+ EOV      var_60   CB     CG2    CD2    CE      -175.014   20.000   3
+ EOV      var_61   CG2    CD2    CE     CZ       125.045   20.000   1
+ EOV      CONST_12 CD2    CE     CZ     CH       179.963    0.000   0
+ EOV      var_62   CE     CZ     CH     HH1      179.985   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ EOV      chir_01  CA     N      C      CB        positiv
+ EOV      chir_02  CB     CA     OG1    CG2       positiv
+ EOV      chir_03  CG2    CB     CD1    CD2       positiv
+ EOV      chir_04  CA1    N1     C1     CB1       positiv
+ EOV      chir_05  CA3    N3     CB2    C3        negativ
+ EOV      chir_06  CG1    CB2    CD11   CD21      negativ
+ EOV      chir_07  CA4    N4     C4     CB3       positiv
+ EOV      chir_08  CB3    CA4    CG11   CG21      negativ
+ EOV      chir_09  CA5    N5     CB4    C5        negativ
+ EOV      chir_10  CG3    CB4    CD12   CD22      negativ
+ EOV      chir_11  CA6    N6     C6     CB5       positiv
+ EOV      chir_12  CA7    N7     CB6    C7        positiv
+ EOV      chir_13  CA8    N8     CB7    C8        negativ
+ EOV      chir_14  CG4    CB7    CD13   CD23      negativ
+ EOV      chir_15  CA9    N9     CB8    C9        negativ
+ EOV      chir_16  CG5    CB8    CD14   CD24      negativ
+ EOV      chir_17  CAA    NA     CB9    CC        negativ
+ EOV      chir_18  CB9    CAA    CG12   CG22      negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ EOV      plan-1    N         0.020
+ EOV      plan-1    CN        0.020
+ EOV      plan-1    CA        0.020
+ EOV      plan-1    CC        0.020
+ EOV      plan-2    C         0.020
+ EOV      plan-2    CA        0.020
+ EOV      plan-2    O         0.020
+ EOV      plan-2    N1        0.020
+ EOV      plan-2    H         0.020
+ EOV      plan-3    CE        0.020
+ EOV      plan-3    CD2       0.020
+ EOV      plan-3    CZ        0.020
+ EOV      plan-3    HE        0.020
+ EOV      plan-3    CH        0.020
+ EOV      plan-3    HZ        0.020
+ EOV      plan-4    N1        0.020
+ EOV      plan-4    C         0.020
+ EOV      plan-4    CA1       0.020
+ EOV      plan-4    H         0.020
+ EOV      plan-5    C1        0.020
+ EOV      plan-5    CA1       0.020
+ EOV      plan-5    O1        0.020
+ EOV      plan-5    N2        0.020
+ EOV      plan-6    N2        0.020
+ EOV      plan-6    C1        0.020
+ EOV      plan-6    CA2       0.020
+ EOV      plan-6    CN1       0.020
+ EOV      plan-7    C2        0.020
+ EOV      plan-7    CA2       0.020
+ EOV      plan-7    O2        0.020
+ EOV      plan-7    N3        0.020
+ EOV      plan-8    N3        0.020
+ EOV      plan-8    C2        0.020
+ EOV      plan-8    CN2       0.020
+ EOV      plan-8    CA3       0.020
+ EOV      plan-9    C3        0.020
+ EOV      plan-9    CA3       0.020
+ EOV      plan-9    O3        0.020
+ EOV      plan-9    N4        0.020
+ EOV      plan-9    H1        0.020
+ EOV      plan-10   N4        0.020
+ EOV      plan-10   C3        0.020
+ EOV      plan-10   CA4       0.020
+ EOV      plan-10   H1        0.020
+ EOV      plan-11   C4        0.020
+ EOV      plan-11   CA4       0.020
+ EOV      plan-11   O4        0.020
+ EOV      plan-11   N5        0.020
+ EOV      plan-12   N5        0.020
+ EOV      plan-12   C4        0.020
+ EOV      plan-12   CN3       0.020
+ EOV      plan-12   CA5       0.020
+ EOV      plan-13   C5        0.020
+ EOV      plan-13   CA5       0.020
+ EOV      plan-13   O5        0.020
+ EOV      plan-13   N6        0.020
+ EOV      plan-13   H2        0.020
+ EOV      plan-14   N6        0.020
+ EOV      plan-14   C5        0.020
+ EOV      plan-14   CA6       0.020
+ EOV      plan-14   H2        0.020
+ EOV      plan-15   C6        0.020
+ EOV      plan-15   CA6       0.020
+ EOV      plan-15   O6        0.020
+ EOV      plan-15   N7        0.020
+ EOV      plan-15   H3        0.020
+ EOV      plan-16   N7        0.020
+ EOV      plan-16   C6        0.020
+ EOV      plan-16   CA7       0.020
+ EOV      plan-16   H3        0.020
+ EOV      plan-17   C7        0.020
+ EOV      plan-17   CA7       0.020
+ EOV      plan-17   O7        0.020
+ EOV      plan-17   N8        0.020
+ EOV      plan-18   N8        0.020
+ EOV      plan-18   C7        0.020
+ EOV      plan-18   CN4       0.020
+ EOV      plan-18   CA8       0.020
+ EOV      plan-19   C8        0.020
+ EOV      plan-19   CA8       0.020
+ EOV      plan-19   O8        0.020
+ EOV      plan-19   N9        0.020
+ EOV      plan-20   N9        0.020
+ EOV      plan-20   C8        0.020
+ EOV      plan-20   CN5       0.020
+ EOV      plan-20   CA9       0.020
+ EOV      plan-21   C9        0.020
+ EOV      plan-21   CA9       0.020
+ EOV      plan-21   O9        0.020
+ EOV      plan-21   NA        0.020
+ EOV      plan-22   NA        0.020
+ EOV      plan-22   C9        0.020
+ EOV      plan-22   CN6       0.020
+ EOV      plan-22   CAA       0.020
+ EOV      plan-23   CC        0.020
+ EOV      plan-23   N         0.020
+ EOV      plan-23   CAA       0.020
+ EOV      plan-23   OA        0.020
+# ------------------------------------------------------

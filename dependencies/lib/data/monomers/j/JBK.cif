@@ -1,0 +1,158 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+JBK     JBK      2-azanyl-3-nitro-phenol     NON-POLYMER     17     11     .     
+#
+data_comp_JBK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+JBK     C10     C       CR6     0       -19.931     -18.242     12.186      
+JBK     O01     O       O       0       -19.307     -15.297     12.172      
+JBK     N02     N       N       1       -20.189     -15.816     12.837      
+JBK     O03     O       OC      -1      -20.636     -15.318     13.859      
+JBK     C04     C       CR6     0       -20.734     -17.092     12.392      
+JBK     C05     C       CR16    0       -22.111     -17.169     12.161      
+JBK     C06     C       CR16    0       -22.678     -18.360     11.737      
+JBK     C07     C       CR16    0       -21.901     -19.489     11.533      
+JBK     C08     C       CR6     0       -20.523     -19.444     11.754      
+JBK     O09     O       OH1     0       -19.779     -20.549     11.552      
+JBK     N11     N       NH2     0       -18.583     -18.211     12.399      
+JBK     H1      H       H       0       -22.651     -16.411     12.295      
+JBK     H2      H       H       0       -23.606     -18.403     11.584      
+JBK     H3      H       H       0       -22.300     -20.292     11.244      
+JBK     H4      H       H       0       -19.987     -21.142     12.136      
+JBK     H5      H       H       0       -18.266     -17.845     13.130      
+JBK     H6      H       H       0       -18.040     -18.558     11.804      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+JBK       C08       O09       SINGLE    n         1.346     0.0142    1.346     0.0142    
+JBK       C07       C08       SINGLE    y         1.392     0.0109    1.392     0.0109    
+JBK       C10       C08       DOUBLE    y         1.401     0.0113    1.401     0.0113    
+JBK       C06       C07       DOUBLE    y         1.382     0.0116    1.382     0.0116    
+JBK       C10       N11       SINGLE    n         1.363     0.0184    1.363     0.0184    
+JBK       C10       C04       SINGLE    y         1.408     0.0158    1.408     0.0158    
+JBK       C05       C06       SINGLE    y         1.382     0.0100    1.382     0.0100    
+JBK       C04       C05       DOUBLE    y         1.394     0.0127    1.394     0.0127    
+JBK       N02       C04       SINGLE    n         1.457     0.0200    1.457     0.0200    
+JBK       O01       N02       DOUBLE    n         1.221     0.0162    1.221     0.0162    
+JBK       N02       O03       SINGLE    n         1.221     0.0162    1.221     0.0162    
+JBK       C05       H1        SINGLE    n         1.082     0.013     0.941     0.0200    
+JBK       C06       H2        SINGLE    n         1.082     0.013     0.942     0.0141    
+JBK       C07       H3        SINGLE    n         1.082     0.013     0.942     0.0151    
+JBK       O09       H4        SINGLE    n         0.970     0.012     0.858     0.0200    
+JBK       N11       H5        SINGLE    n         1.016     0.010     0.877     0.0200    
+JBK       N11       H6        SINGLE    n         1.016     0.010     0.877     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+JBK         C08         C10         N11     118.524    1.50
+JBK         C08         C10         C04     119.679    1.58
+JBK         N11         C10         C04     121.797    2.52
+JBK         C04         N02         O01     118.439    1.50
+JBK         C04         N02         O03     118.439    1.50
+JBK         O01         N02         O03     123.122    1.50
+JBK         C10         C04         C05     119.227    2.53
+JBK         C10         C04         N02     122.920    1.50
+JBK         C05         C04         N02     117.853    1.50
+JBK         C06         C05         C04     120.289    1.50
+JBK         C06         C05          H1     120.019    1.50
+JBK         C04         C05          H1     119.692    1.50
+JBK         C07         C06         C05     121.369    1.50
+JBK         C07         C06          H2     119.272    1.50
+JBK         C05         C06          H2     119.359    1.50
+JBK         C08         C07         C06     120.198    1.50
+JBK         C08         C07          H3     119.652    1.50
+JBK         C06         C07          H3     120.150    1.50
+JBK         O09         C08         C07     120.723    3.00
+JBK         O09         C08         C10     120.038    3.00
+JBK         C07         C08         C10     119.238    1.50
+JBK         C08         O09          H4     109.343    2.75
+JBK         C10         N11          H5     119.789    2.29
+JBK         C10         N11          H6     119.789    2.29
+JBK          H5         N11          H6     120.421    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+JBK             sp2_sp2_1         C08         C10         N11          H5     180.000   10.00     2
+JBK              const_24         N02         C04         C10         N11       0.000   10.00     2
+JBK       const_sp2_sp2_4         O09         C08         C10         N11       0.000   10.00     2
+JBK             sp2_sp2_5         C10         C04         N02         O01     180.000   10.00     2
+JBK              const_19         N02         C04         C05         C06     180.000   10.00     2
+JBK              const_13         C04         C05         C06         C07       0.000   10.00     2
+JBK       const_sp2_sp2_9         C05         C06         C07         C08       0.000   10.00     2
+JBK       const_sp2_sp2_6         C06         C07         C08         O09     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+JBK    plan-1         C04   0.020
+JBK    plan-1         C05   0.020
+JBK    plan-1         C06   0.020
+JBK    plan-1         C07   0.020
+JBK    plan-1         C08   0.020
+JBK    plan-1         C10   0.020
+JBK    plan-1          H1   0.020
+JBK    plan-1          H2   0.020
+JBK    plan-1          H3   0.020
+JBK    plan-1         N02   0.020
+JBK    plan-1         N11   0.020
+JBK    plan-1         O09   0.020
+JBK    plan-2         C04   0.020
+JBK    plan-2         N02   0.020
+JBK    plan-2         O01   0.020
+JBK    plan-2         O03   0.020
+JBK    plan-3         C10   0.020
+JBK    plan-3          H5   0.020
+JBK    plan-3          H6   0.020
+JBK    plan-3         N11   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+JBK            InChI                InChI  1.03 InChI=1S/C6H6N2O3/c7-6-4(8(10)11)2-1-3-5(6)9/h1-3,9H,7H2
+JBK         InChIKey                InChI  1.03                              KUCWUAFNGCMZDB-UHFFFAOYSA-N
+JBK SMILES_CANONICAL               CACTVS 3.385                                 Nc1c(O)cccc1[N+]([O-])=O
+JBK           SMILES               CACTVS 3.385                                 Nc1c(O)cccc1[N+]([O-])=O
+JBK SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                             c1cc(c(c(c1)O)N)[N+](=O)[O-]
+JBK           SMILES "OpenEye OEToolkits" 2.0.7                             c1cc(c(c(c1)O)N)[N+](=O)[O-]
+JBK ?                acedrg               217         "dictionary generator"                  
+JBK ?                acedrg_database      11          "data source"                           
+JBK ?                rdkit                2017.03.2   "Chemoinformatics tool"
+JBK ?                refmac5              5.8.0253    "optimization tool"                     

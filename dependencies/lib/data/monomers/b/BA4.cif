@@ -1,0 +1,386 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BA4      BA4 '"[[(3R,4R,5S,6R)-3-(butanoylamino)-4' non-polymer        50  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BA4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BA4           OAN    O    O         0.000      0.000    0.000    0.000
+ BA4           CAG    C    C         0.000     -0.311   -0.497    1.061
+ BA4           CAH    C    CH2       0.000     -0.070   -1.964    1.306
+ BA4           HAH    H    H         0.000     -1.021   -2.459    1.514
+ BA4           HAHA   H    H         0.000      0.597   -2.086    2.162
+ BA4           C1     C    CH2       0.000      0.571   -2.589    0.066
+ BA4           H1     H    H         0.000      1.521   -2.093   -0.142
+ BA4           H1A    H    H         0.000     -0.097   -2.467   -0.790
+ BA4           C2     C    CH3       0.000      0.816   -4.079    0.314
+ BA4           H2B    H    H         0.000     -0.106   -4.563    0.516
+ BA4           H2A    H    H         0.000      1.260   -4.515   -0.544
+ BA4           H2     H    H         0.000      1.464   -4.200    1.144
+ BA4           NAI    N    NH1       0.000     -0.871    0.263    2.023
+ BA4           HNAI   H    H         0.000     -1.130   -0.150    2.907
+ BA4           CAB    C    CH1       0.000     -1.105    1.690    1.785
+ BA4           HAB    H    H         0.000     -0.292    2.101    1.170
+ BA4           CAC    C    CH1       0.000     -1.164    2.432    3.122
+ BA4           HAC    H    H         0.000     -1.882    1.933    3.787
+ BA4           OAJ    O    OH1       0.000      0.130    2.432    3.728
+ BA4           HOAJ   H    H         0.000      0.092    2.907    4.569
+ BA4           CAD    C    CH1       0.000     -1.615    3.875    2.872
+ BA4           HAD    H    H         0.000     -0.894    4.375    2.209
+ BA4           OAK    O    OH1       0.000     -1.682    4.574    4.116
+ BA4           HOAK   H    H         0.000     -1.968    5.484    3.958
+ BA4           CAE    C    CH1       0.000     -2.997    3.869    2.214
+ BA4           HAE    H    H         0.000     -3.722    3.391    2.887
+ BA4           CAF    C    CH2       0.000     -3.433    5.307    1.929
+ BA4           HAF    H    H         0.000     -2.760    5.752    1.194
+ BA4           H22    H    H         0.000     -3.396    5.887    2.854
+ BA4           OAM    O    OH1       0.000     -4.767    5.308    1.418
+ BA4           H23    H    H         0.000     -5.042    6.218    1.239
+ BA4           OAL    O    O2        0.000     -2.931    3.137    0.984
+ BA4           CAA    C    C         0.000     -2.427    1.879    1.073
+ BA4           NAY    N    N         0.000     -3.058    0.873    0.569
+ BA4           OAQ    O    O2        0.000     -4.124    1.044    0.004
+ BA4           CAP    C    C         0.000     -4.731   -0.047   -0.499
+ BA4           OAR    O    O         0.000     -4.215   -1.140   -0.378
+ BA4           NAO    N    NH1       0.000     -5.915    0.073   -1.132
+ BA4           HNAO   H    H         0.000     -6.383    0.968   -1.162
+ BA4           CAS    C    CR6       0.000     -6.496   -1.042   -1.747
+ BA4           CAX    C    CR16      0.000     -5.692   -2.015   -2.326
+ BA4           HAX    H    H         0.000     -4.614   -1.910   -2.306
+ BA4           CAW    C    CR16      0.000     -6.268   -3.116   -2.927
+ BA4           HAW    H    H         0.000     -5.641   -3.879   -3.373
+ BA4           CAV    C    CR16      0.000     -7.644   -3.247   -2.962
+ BA4           HAV    H    H         0.000     -8.093   -4.110   -3.437
+ BA4           CAU    C    CR16      0.000     -8.447   -2.278   -2.389
+ BA4           HAU    H    H         0.000     -9.525   -2.383   -2.417
+ BA4           CAT    C    CR16      0.000     -7.877   -1.176   -1.782
+ BA4           HAT    H    H         0.000     -8.507   -0.417   -1.334
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BA4      OAN    n/a    CAG    START
+ BA4      CAG    OAN    NAI    .
+ BA4      CAH    CAG    C1     .
+ BA4      HAH    CAH    .      .
+ BA4      HAHA   CAH    .      .
+ BA4      C1     CAH    C2     .
+ BA4      H1     C1     .      .
+ BA4      H1A    C1     .      .
+ BA4      C2     C1     H2     .
+ BA4      H2B    C2     .      .
+ BA4      H2A    C2     .      .
+ BA4      H2     C2     .      .
+ BA4      NAI    CAG    CAB    .
+ BA4      HNAI   NAI    .      .
+ BA4      CAB    NAI    CAA    .
+ BA4      HAB    CAB    .      .
+ BA4      CAC    CAB    CAD    .
+ BA4      HAC    CAC    .      .
+ BA4      OAJ    CAC    HOAJ   .
+ BA4      HOAJ   OAJ    .      .
+ BA4      CAD    CAC    CAE    .
+ BA4      HAD    CAD    .      .
+ BA4      OAK    CAD    HOAK   .
+ BA4      HOAK   OAK    .      .
+ BA4      CAE    CAD    OAL    .
+ BA4      HAE    CAE    .      .
+ BA4      CAF    CAE    OAM    .
+ BA4      HAF    CAF    .      .
+ BA4      H22    CAF    .      .
+ BA4      OAM    CAF    H23    .
+ BA4      H23    OAM    .      .
+ BA4      OAL    CAE    .      .
+ BA4      CAA    CAB    NAY    .
+ BA4      NAY    CAA    OAQ    .
+ BA4      OAQ    NAY    CAP    .
+ BA4      CAP    OAQ    NAO    .
+ BA4      OAR    CAP    .      .
+ BA4      NAO    CAP    CAS    .
+ BA4      HNAO   NAO    .      .
+ BA4      CAS    NAO    CAX    .
+ BA4      CAX    CAS    CAW    .
+ BA4      HAX    CAX    .      .
+ BA4      CAW    CAX    CAV    .
+ BA4      HAW    CAW    .      .
+ BA4      CAV    CAW    CAU    .
+ BA4      HAV    CAV    .      .
+ BA4      CAU    CAV    CAT    .
+ BA4      HAU    CAU    .      .
+ BA4      CAT    CAU    HAT    .
+ BA4      HAT    CAT    .      END
+ BA4      CAS    CAT    .    ADD
+ BA4      CAA    OAL    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BA4       OAR       CAP       double    1.220     0.020     1.220     0.020     
+BA4       CAP       OAQ       single    1.454     0.020     1.454     0.020     
+BA4       NAO       CAP       single    1.330     0.020     1.330     0.020     
+BA4       HNAO      NAO       single    1.016     0.010     0.899     0.007     
+BA4       CAS       NAO       single    1.350     0.020     1.350     0.020     
+BA4       CAS       CAT       double    1.390     0.020     1.390     0.020     
+BA4       HAT       CAT       single    1.082     0.013     0.975     0.010     
+BA4       CAT       CAU       single    1.390     0.020     1.390     0.020     
+BA4       HAU       CAU       single    1.082     0.013     0.975     0.010     
+BA4       CAU       CAV       double    1.390     0.020     1.390     0.020     
+BA4       CAV       CAW       single    1.390     0.020     1.390     0.020     
+BA4       HAV       CAV       single    1.082     0.013     0.975     0.010     
+BA4       CAW       CAX       double    1.390     0.020     1.390     0.020     
+BA4       HAW       CAW       single    1.082     0.013     0.975     0.010     
+BA4       CAX       CAS       single    1.390     0.020     1.390     0.020     
+BA4       HAX       CAX       single    1.082     0.013     0.975     0.010     
+BA4       OAQ       NAY       single    1.255     0.020     1.255     0.020     
+BA4       NAY       CAA       double    1.260     0.020     1.260     0.020     
+BA4       CAA       OAL       single    1.454     0.020     1.454     0.020     
+BA4       CAA       CAB       single    1.500     0.020     1.500     0.020     
+BA4       OAL       CAE       single    1.426     0.020     1.426     0.020     
+BA4       CAF       CAE       single    1.524     0.020     1.524     0.020     
+BA4       CAE       CAD       single    1.524     0.020     1.524     0.020     
+BA4       HAE       CAE       single    1.089     0.010     0.989     0.005     
+BA4       OAM       CAF       single    1.432     0.020     1.432     0.020     
+BA4       HAF       CAF       single    1.089     0.010     0.989     0.005     
+BA4       OAK       CAD       single    1.432     0.020     1.432     0.020     
+BA4       HAD       CAD       single    1.089     0.010     0.989     0.005     
+BA4       HOAK      OAK       single    0.970     0.012     0.839     0.014     
+BA4       CAD       CAC       single    1.524     0.020     1.524     0.020     
+BA4       OAJ       CAC       single    1.432     0.020     1.432     0.020     
+BA4       HAC       CAC       single    1.089     0.010     0.989     0.005     
+BA4       HOAJ      OAJ       single    0.970     0.012     0.839     0.014     
+BA4       CAC       CAB       single    1.524     0.020     1.524     0.020     
+BA4       HAB       CAB       single    1.089     0.010     0.989     0.005     
+BA4       CAB       NAI       single    1.450     0.020     1.450     0.020     
+BA4       NAI       CAG       single    1.330     0.020     1.330     0.020     
+BA4       HNAI      NAI       single    1.016     0.010     0.899     0.007     
+BA4       CAG       OAN       double    1.220     0.020     1.220     0.020     
+BA4       CAH       CAG       single    1.510     0.020     1.510     0.020     
+BA4       HAH       CAH       single    1.089     0.010     0.989     0.005     
+BA4       HAHA      CAH       single    1.089     0.010     0.989     0.005     
+BA4       C1        CAH       single    1.524     0.020     1.524     0.020     
+BA4       H1        C1        single    1.089     0.010     0.989     0.005     
+BA4       H1A       C1        single    1.089     0.010     0.989     0.005     
+BA4       C2        C1        single    1.513     0.020     1.513     0.020     
+BA4       H2        C2        single    1.089     0.010     0.989     0.005     
+BA4       H2A       C2        single    1.089     0.010     0.989     0.005     
+BA4       H2B       C2        single    1.089     0.010     0.989     0.005     
+BA4       H22       CAF       single    1.089     0.010     0.989     0.005     
+BA4       H23       OAM       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BA4      OAN    CAG    CAH     120.500    3.000
+ BA4      OAN    CAG    NAI     123.000    3.000
+ BA4      CAH    CAG    NAI     116.500    3.000
+ BA4      CAG    CAH    HAH     109.470    3.000
+ BA4      CAG    CAH    HAHA    109.470    3.000
+ BA4      CAG    CAH    C1      109.470    3.000
+ BA4      HAH    CAH    HAHA    107.900    3.000
+ BA4      HAH    CAH    C1      109.470    3.000
+ BA4      HAHA   CAH    C1      109.470    3.000
+ BA4      CAH    C1     H1      109.470    3.000
+ BA4      CAH    C1     H1A     109.470    3.000
+ BA4      CAH    C1     C2      111.000    3.000
+ BA4      H1     C1     H1A     107.900    3.000
+ BA4      H1     C1     C2      109.470    3.000
+ BA4      H1A    C1     C2      109.470    3.000
+ BA4      C1     C2     H2B     109.470    3.000
+ BA4      C1     C2     H2A     109.470    3.000
+ BA4      C1     C2     H2      109.470    3.000
+ BA4      H2B    C2     H2A     109.470    3.000
+ BA4      H2B    C2     H2      109.470    3.000
+ BA4      H2A    C2     H2      109.470    3.000
+ BA4      CAG    NAI    HNAI    120.000    3.000
+ BA4      CAG    NAI    CAB     121.500    3.000
+ BA4      HNAI   NAI    CAB     118.500    3.000
+ BA4      NAI    CAB    HAB     108.550    3.000
+ BA4      NAI    CAB    CAC     110.000    3.000
+ BA4      NAI    CAB    CAA     111.600    3.000
+ BA4      HAB    CAB    CAC     108.340    3.000
+ BA4      HAB    CAB    CAA     108.810    3.000
+ BA4      CAC    CAB    CAA     109.470    3.000
+ BA4      CAB    CAC    HAC     108.340    3.000
+ BA4      CAB    CAC    OAJ     109.470    3.000
+ BA4      CAB    CAC    CAD     111.000    3.000
+ BA4      HAC    CAC    OAJ     109.470    3.000
+ BA4      HAC    CAC    CAD     108.340    3.000
+ BA4      OAJ    CAC    CAD     109.470    3.000
+ BA4      CAC    OAJ    HOAJ    109.470    3.000
+ BA4      CAC    CAD    HAD     108.340    3.000
+ BA4      CAC    CAD    OAK     109.470    3.000
+ BA4      CAC    CAD    CAE     111.000    3.000
+ BA4      HAD    CAD    OAK     109.470    3.000
+ BA4      HAD    CAD    CAE     108.340    3.000
+ BA4      OAK    CAD    CAE     109.470    3.000
+ BA4      CAD    OAK    HOAK    109.470    3.000
+ BA4      CAD    CAE    HAE     108.340    3.000
+ BA4      CAD    CAE    CAF     111.000    3.000
+ BA4      CAD    CAE    OAL     109.470    3.000
+ BA4      HAE    CAE    CAF     108.340    3.000
+ BA4      HAE    CAE    OAL     109.470    3.000
+ BA4      CAF    CAE    OAL     109.470    3.000
+ BA4      CAE    CAF    HAF     109.470    3.000
+ BA4      CAE    CAF    H22     109.470    3.000
+ BA4      CAE    CAF    OAM     109.470    3.000
+ BA4      HAF    CAF    H22     107.900    3.000
+ BA4      HAF    CAF    OAM     109.470    3.000
+ BA4      H22    CAF    OAM     109.470    3.000
+ BA4      CAF    OAM    H23     109.470    3.000
+ BA4      CAE    OAL    CAA     111.800    3.000
+ BA4      CAB    CAA    NAY     116.500    3.000
+ BA4      CAB    CAA    OAL     120.000    3.000
+ BA4      NAY    CAA    OAL     120.000    3.000
+ BA4      CAA    NAY    OAQ     120.000    3.000
+ BA4      NAY    OAQ    CAP     120.000    3.000
+ BA4      OAQ    CAP    OAR     119.000    3.000
+ BA4      OAQ    CAP    NAO     118.000    3.000
+ BA4      OAR    CAP    NAO     123.000    3.000
+ BA4      CAP    NAO    HNAO    120.000    3.000
+ BA4      CAP    NAO    CAS     120.000    3.000
+ BA4      HNAO   NAO    CAS     120.000    3.000
+ BA4      NAO    CAS    CAX     120.000    3.000
+ BA4      NAO    CAS    CAT     120.000    3.000
+ BA4      CAX    CAS    CAT     120.000    3.000
+ BA4      CAS    CAX    HAX     120.000    3.000
+ BA4      CAS    CAX    CAW     120.000    3.000
+ BA4      HAX    CAX    CAW     120.000    3.000
+ BA4      CAX    CAW    HAW     120.000    3.000
+ BA4      CAX    CAW    CAV     120.000    3.000
+ BA4      HAW    CAW    CAV     120.000    3.000
+ BA4      CAW    CAV    HAV     120.000    3.000
+ BA4      CAW    CAV    CAU     120.000    3.000
+ BA4      HAV    CAV    CAU     120.000    3.000
+ BA4      CAV    CAU    HAU     120.000    3.000
+ BA4      CAV    CAU    CAT     120.000    3.000
+ BA4      HAU    CAU    CAT     120.000    3.000
+ BA4      CAU    CAT    HAT     120.000    3.000
+ BA4      CAU    CAT    CAS     120.000    3.000
+ BA4      HAT    CAT    CAS     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BA4      var_1    OAN    CAG    CAH    C1        -0.018   20.000   3
+ BA4      var_2    CAG    CAH    C1     C2       179.988   20.000   3
+ BA4      var_3    CAH    C1     C2     H2       -60.015   20.000   3
+ BA4      CONST_1  OAN    CAG    NAI    CAB        0.000    0.000   0
+ BA4      var_4    CAG    NAI    CAB    CAA       85.036   20.000   3
+ BA4      var_5    NAI    CAB    CAC    CAD      180.000   20.000   3
+ BA4      var_6    CAB    CAC    OAJ    HOAJ     179.574   20.000   1
+ BA4      var_7    CAB    CAC    CAD    CAE       60.000   20.000   3
+ BA4      var_8    CAC    CAD    OAK    HOAK    -179.903   20.000   1
+ BA4      var_9    CAC    CAD    CAE    OAL      -60.000   20.000   3
+ BA4      var_10   CAD    CAE    CAF    OAM     -175.220   20.000   3
+ BA4      var_11   CAE    CAF    OAM    H23      179.974   20.000   1
+ BA4      var_12   CAD    CAE    OAL    CAA       60.000   20.000   1
+ BA4      var_13   NAI    CAB    CAA    NAY        0.000   20.000   3
+ BA4      var_14   CAB    CAA    OAL    CAE      -60.000   20.000   1
+ BA4      CONST_2  CAB    CAA    NAY    OAQ      180.000    0.000   0
+ BA4      var_15   CAA    NAY    OAQ    CAP     -179.984   20.000   1
+ BA4      var_16   NAY    OAQ    CAP    NAO      179.773   20.000   1
+ BA4      CONST_3  OAQ    CAP    NAO    CAS      180.000    0.000   0
+ BA4      var_17   CAP    NAO    CAS    CAX      -33.426   20.000   1
+ BA4      CONST_4  NAO    CAS    CAT    CAU      180.000    0.000   0
+ BA4      CONST_5  NAO    CAS    CAX    CAW      180.000    0.000   0
+ BA4      CONST_6  CAS    CAX    CAW    CAV        0.000    0.000   0
+ BA4      CONST_7  CAX    CAW    CAV    CAU        0.000    0.000   0
+ BA4      CONST_8  CAW    CAV    CAU    CAT        0.000    0.000   0
+ BA4      CONST_9  CAV    CAU    CAT    CAS        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BA4      chir_01  CAE    OAL    CAF    CAD       positiv
+ BA4      chir_02  CAD    CAE    OAK    CAC       negativ
+ BA4      chir_03  CAC    CAD    OAJ    CAB       positiv
+ BA4      chir_04  CAB    CAA    CAC    NAI       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BA4      plan-1    CAP       0.020
+ BA4      plan-1    OAR       0.020
+ BA4      plan-1    NAO       0.020
+ BA4      plan-1    OAQ       0.020
+ BA4      plan-1    HNAO      0.020
+ BA4      plan-2    NAO       0.020
+ BA4      plan-2    CAP       0.020
+ BA4      plan-2    CAS       0.020
+ BA4      plan-2    HNAO      0.020
+ BA4      plan-3    CAS       0.020
+ BA4      plan-3    NAO       0.020
+ BA4      plan-3    CAT       0.020
+ BA4      plan-3    CAX       0.020
+ BA4      plan-3    CAU       0.020
+ BA4      plan-3    CAV       0.020
+ BA4      plan-3    CAW       0.020
+ BA4      plan-3    HAT       0.020
+ BA4      plan-3    HAU       0.020
+ BA4      plan-3    HAV       0.020
+ BA4      plan-3    HAW       0.020
+ BA4      plan-3    HAX       0.020
+ BA4      plan-3    HNAO      0.020
+ BA4      plan-4    NAY       0.020
+ BA4      plan-4    OAQ       0.020
+ BA4      plan-4    CAA       0.020
+ BA4      plan-4    OAL       0.020
+ BA4      plan-4    CAB       0.020
+ BA4      plan-5    NAI       0.020
+ BA4      plan-5    CAB       0.020
+ BA4      plan-5    CAG       0.020
+ BA4      plan-5    HNAI      0.020
+ BA4      plan-6    CAG       0.020
+ BA4      plan-6    NAI       0.020
+ BA4      plan-6    OAN       0.020
+ BA4      plan-6    CAH       0.020
+ BA4      plan-6    HNAI      0.020
+# ------------------------------------------------------

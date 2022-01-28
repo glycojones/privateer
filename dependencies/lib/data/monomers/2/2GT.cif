@@ -1,0 +1,311 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2GT      2GT '.                                   ' DNA                40  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_2GT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 2GT           OP3    O    OP       -0.666      0.000    0.000    0.000
+ 2GT           P      P    P         0.000     -0.530    1.416    0.049
+ 2GT           OP1    O    OP       -0.666      0.531    2.491    0.149
+ 2GT           OP2    O    OP       -0.666     -1.420    1.497   -1.172
+ 2GT           "O5'"  O    O2        0.000     -1.575    1.370    1.285
+ 2GT           "C5'"  C    CH2       0.000     -2.598    0.391    1.268
+ 2GT           "H5'"  H    H         0.000     -2.156   -0.607    1.248
+ 2GT           "H5''" H    H         0.000     -3.226    0.527    0.385
+ 2GT           "C4'"  C    CH1       0.000     -3.444    0.549    2.524
+ 2GT           "H4'"  H    H         0.000     -2.807    0.459    3.415
+ 2GT           "C3'"  C    CH1       0.000     -4.591   -0.451    2.607
+ 2GT           "H3'"  H    H         0.000     -4.330   -1.416    2.151
+ 2GT           "C2'"  C    CH1       0.000     -5.687    0.260    1.843
+ 2GT           "H2'"  H    H         0.000     -5.523    0.146    0.762
+ 2GT           "O2'"  O    O2        0.000     -6.974   -0.213    2.186
+ 2GT           "CB'"  C    CH2       0.000     -7.118   -1.603    1.913
+ 2GT           "HB'1" H    H         0.000     -6.373   -2.156    2.490
+ 2GT           "HB'2" H    H         0.000     -6.951   -1.774    0.848
+ 2GT           "CC'"  C    CSP       0.000     -8.458   -2.061    2.278
+ 2GT           "CD'"  C    CSP1      0.000     -9.558   -2.439    2.578
+ 2GT           "HD'"  H    H         0.000    -10.437   -2.740    2.818
+ 2GT           "C1'"  C    CH1       0.000     -5.468    1.707    2.248
+ 2GT           "H1'"  H    H         0.000     -6.026    1.920    3.171
+ 2GT           "O4'"  O    O2        0.000     -4.059    1.855    2.492
+ 2GT           N1     N    NR6       0.000     -5.864    2.630    1.223
+ 2GT           C2     C    CR6       0.000     -7.152    3.209    1.216
+ 2GT           O2     O    O         0.000     -8.013    2.975    2.065
+ 2GT           N3     N    NR16      0.000     -7.401    4.090    0.157
+ 2GT           HN3    H    H         0.000     -8.344    4.528    0.129
+ 2GT           C4     C    CR6       0.000     -6.526    4.441   -0.860
+ 2GT           C5     C    CR6       0.000     -5.190    3.791   -0.785
+ 2GT           C5M    C    CH3       0.000     -4.190    4.118   -1.847
+ 2GT           H73    H    H         0.000     -4.589    4.859   -2.488
+ 2GT           H72    H    H         0.000     -3.304    4.480   -1.394
+ 2GT           H71    H    H         0.000     -3.972    3.246   -2.404
+ 2GT           C6     C    CR16      0.000     -4.948    2.948    0.226
+ 2GT           H6     H    H         0.000     -3.972    2.481    0.271
+ 2GT           O4     O    O         0.000     -6.811    5.225   -1.761
+ 2GT           "O3'"  O    OH1       0.000     -4.954   -0.589    3.981
+ 2GT           "HO3'" H    H         0.000     -4.548    0.157    4.448
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 2GT      OP3    n/a    P      START
+ 2GT      P      OP3    "O5'"  .
+ 2GT      OP1    P      .      .
+ 2GT      OP2    P      .      .
+ 2GT      "O5'"  P      "C5'"  .
+ 2GT      "C5'"  "O5'"  "C4'"  .
+ 2GT      "H5'"  "C5'"  .      .
+ 2GT      "H5''" "C5'"  .      .
+ 2GT      "C4'"  "C5'"  "C3'"  .
+ 2GT      "H4'"  "C4'"  .      .
+ 2GT      "C3'"  "C4'"  "O3'"  .
+ 2GT      "H3'"  "C3'"  .      .
+ 2GT      "C2'"  "C3'"  "C1'"  .
+ 2GT      "H2'"  "C2'"  .      .
+ 2GT      "O2'"  "C2'"  "CB'"  .
+ 2GT      "CB'"  "O2'"  "CC'"  .
+ 2GT      "HB'1" "CB'"  .      .
+ 2GT      "HB'2" "CB'"  .      .
+ 2GT      "CC'"  "CB'"  "CD'"  .
+ 2GT      "CD'"  "CC'"  "HD'"  .
+ 2GT      "HD'"  "CD'"  .      .
+ 2GT      "C1'"  "C2'"  N1     .
+ 2GT      "H1'"  "C1'"  .      .
+ 2GT      "O4'"  "C1'"  .      .
+ 2GT      N1     "C1'"  C2     .
+ 2GT      C2     N1     N3     .
+ 2GT      O2     C2     .      .
+ 2GT      N3     C2     C4     .
+ 2GT      HN3    N3     .      .
+ 2GT      C4     N3     O4     .
+ 2GT      C5     C4     C6     .
+ 2GT      C5M    C5     H71    .
+ 2GT      H73    C5M    .      .
+ 2GT      H72    C5M    .      .
+ 2GT      H71    C5M    .      .
+ 2GT      C6     C5     H6     .
+ 2GT      H6     C6     .      .
+ 2GT      O4     C4     .      .
+ 2GT      "O3'"  "C3'"  .      END
+ 2GT      "HO3'" "O3'"  .      .
+ 2GT      "C4'"  "O4'"  .    ADD
+ 2GT      N1     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2GT       OP1       P         deloc     1.510     0.020     1.510     0.020     
+2GT       OP2       P         deloc     1.510     0.020     1.510     0.020     
+2GT       "O5'"     P         single    1.610     0.020     1.610     0.020     
+2GT       P         OP3       deloc     1.510     0.020     1.510     0.020     
+2GT       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+2GT       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+2GT       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+2GT       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+2GT       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+2GT       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+2GT       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+2GT       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+2GT       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+2GT       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+2GT       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+2GT       N1        C6        single    1.337     0.020     1.337     0.020     
+2GT       C2        N1        single    1.410     0.020     1.410     0.020     
+2GT       C6        C5        double    1.390     0.020     1.390     0.020     
+2GT       H6        C6        single    1.082     0.013     0.975     0.010     
+2GT       O2        C2        double    1.250     0.020     1.250     0.020     
+2GT       N3        C2        single    1.337     0.020     1.337     0.020     
+2GT       C4        N3        single    1.337     0.020     1.337     0.020     
+2GT       HN3       N3        single    1.016     0.010     0.899     0.007     
+2GT       O4        C4        double    1.250     0.020     1.250     0.020     
+2GT       C5        C4        single    1.487     0.020     1.487     0.020     
+2GT       C5M       C5        single    1.506     0.020     1.506     0.020     
+2GT       H71       C5M       single    1.089     0.010     0.989     0.005     
+2GT       H72       C5M       single    1.089     0.010     0.989     0.005     
+2GT       H73       C5M       single    1.089     0.010     0.989     0.005     
+2GT       "O2'"     "C2'"     single    1.426     0.020     1.426     0.020     
+2GT       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+2GT       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+2GT       "CB'"     "O2'"     single    1.426     0.020     1.426     0.020     
+2GT       "CC'"     "CB'"     single    1.470     0.020     1.470     0.020     
+2GT       "HB'1"    "CB'"     single    1.089     0.010     0.989     0.005     
+2GT       "HB'2"    "CB'"     single    1.089     0.010     0.989     0.005     
+2GT       "CD'"     "CC'"     triple    1.278     0.020     1.278     0.020     
+2GT       "HD'"     "CD'"     single    1.048     0.010     0.921     0.024     
+2GT       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+2GT       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+2GT       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 2GT      OP3    P      OP1     119.900    3.000
+ 2GT      OP3    P      OP2     119.900    3.000
+ 2GT      OP3    P      "O5'"   108.200    3.000
+ 2GT      OP1    P      OP2     119.900    3.000
+ 2GT      OP1    P      "O5'"   108.200    3.000
+ 2GT      OP2    P      "O5'"   108.200    3.000
+ 2GT      P      "O5'"  "C5'"   120.500    3.000
+ 2GT      "O5'"  "C5'"  "H5'"   109.470    3.000
+ 2GT      "O5'"  "C5'"  "H5''"  109.470    3.000
+ 2GT      "O5'"  "C5'"  "C4'"   109.470    3.000
+ 2GT      "H5'"  "C5'"  "H5''"  107.900    3.000
+ 2GT      "H5'"  "C5'"  "C4'"   109.470    3.000
+ 2GT      "H5''" "C5'"  "C4'"   109.470    3.000
+ 2GT      "C5'"  "C4'"  "H4'"   108.340    3.000
+ 2GT      "C5'"  "C4'"  "C3'"   111.000    3.000
+ 2GT      "C5'"  "C4'"  "O4'"   109.470    3.000
+ 2GT      "H4'"  "C4'"  "C3'"   108.340    3.000
+ 2GT      "H4'"  "C4'"  "O4'"   109.470    3.000
+ 2GT      "C3'"  "C4'"  "O4'"   109.470    3.000
+ 2GT      "C4'"  "C3'"  "H3'"   108.340    3.000
+ 2GT      "C4'"  "C3'"  "C2'"   111.000    3.000
+ 2GT      "C4'"  "C3'"  "O3'"   109.470    3.000
+ 2GT      "H3'"  "C3'"  "C2'"   108.340    3.000
+ 2GT      "H3'"  "C3'"  "O3'"   109.470    3.000
+ 2GT      "C2'"  "C3'"  "O3'"   109.470    3.000
+ 2GT      "C3'"  "C2'"  "H2'"   108.340    3.000
+ 2GT      "C3'"  "C2'"  "O2'"   109.470    3.000
+ 2GT      "C3'"  "C2'"  "C1'"   111.000    3.000
+ 2GT      "H2'"  "C2'"  "O2'"   109.470    3.000
+ 2GT      "H2'"  "C2'"  "C1'"   108.340    3.000
+ 2GT      "O2'"  "C2'"  "C1'"   109.470    3.000
+ 2GT      "C2'"  "O2'"  "CB'"   111.800    3.000
+ 2GT      "O2'"  "CB'"  "HB'1"  109.470    3.000
+ 2GT      "O2'"  "CB'"  "HB'2"  109.470    3.000
+ 2GT      "O2'"  "CB'"  "CC'"   109.500    3.000
+ 2GT      "HB'1" "CB'"  "HB'2"  107.900    3.000
+ 2GT      "HB'1" "CB'"  "CC'"   109.500    3.000
+ 2GT      "HB'2" "CB'"  "CC'"   109.500    3.000
+ 2GT      "CB'"  "CC'"  "CD'"   180.000    3.000
+ 2GT      "CC'"  "CD'"  "HD'"   179.966    3.000
+ 2GT      "C2'"  "C1'"  "H1'"   108.340    3.000
+ 2GT      "C2'"  "C1'"  "O4'"   109.470    3.000
+ 2GT      "C2'"  "C1'"  N1      109.470    3.000
+ 2GT      "H1'"  "C1'"  "O4'"   109.470    3.000
+ 2GT      "H1'"  "C1'"  N1      109.470    3.000
+ 2GT      "O4'"  "C1'"  N1      109.470    3.000
+ 2GT      "C1'"  "O4'"  "C4'"   111.800    3.000
+ 2GT      "C1'"  N1     C2      120.000    3.000
+ 2GT      "C1'"  N1     C6      120.000    3.000
+ 2GT      C2     N1     C6      120.000    3.000
+ 2GT      N1     C2     O2      120.000    3.000
+ 2GT      N1     C2     N3      120.000    3.000
+ 2GT      O2     C2     N3      120.000    3.000
+ 2GT      C2     N3     HN3     120.000    3.000
+ 2GT      C2     N3     C4      120.000    3.000
+ 2GT      HN3    N3     C4      120.000    3.000
+ 2GT      N3     C4     C5      120.000    3.000
+ 2GT      N3     C4     O4      120.000    3.000
+ 2GT      C5     C4     O4      120.000    3.000
+ 2GT      C4     C5     C5M     120.000    3.000
+ 2GT      C4     C5     C6      120.000    3.000
+ 2GT      C5M    C5     C6      120.000    3.000
+ 2GT      C5     C5M    H73     109.470    3.000
+ 2GT      C5     C5M    H72     109.470    3.000
+ 2GT      C5     C5M    H71     109.470    3.000
+ 2GT      H73    C5M    H72     109.470    3.000
+ 2GT      H73    C5M    H71     109.470    3.000
+ 2GT      H72    C5M    H71     109.470    3.000
+ 2GT      C5     C6     H6      120.000    3.000
+ 2GT      C5     C6     N1      120.000    3.000
+ 2GT      H6     C6     N1      120.000    3.000
+ 2GT      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 2GT      var_1    OP3    P      "O5'"  "C5'"    -54.172   20.000   1
+ 2GT      var_2    P      "O5'"  "C5'"  "C4'"   -179.986   20.000   1
+ 2GT      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.497   20.000   3
+ 2GT      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ 2GT      var_5    "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ 2GT      var_6    "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ 2GT      var_7    "C3'"  "C2'"  "O2'"  "CB'"    -59.966   20.000   1
+ 2GT      var_8    "C2'"  "O2'"  "CB'"  "CC'"   -179.993   20.000   1
+ 2GT      var_9    "O2'"  "CB'"  "CC'"  "CD'"   -166.004   20.000   1
+ 2GT      var_10   "CB'"  "CC'"  "CD'"  "HD'"    179.937   20.000   1
+ 2GT      var_11   "C3'"  "C2'"  "C1'"  N1       150.000   20.000   3
+ 2GT      var_12   "C2'"  "C1'"  "O4'"  "C4'"      0.000   20.000   1
+ 2GT      var_13   "C2'"  "C1'"  N1     C2        94.305   20.000   1
+ 2GT      CONST_1  "C1'"  N1     C6     C5       180.000    0.000   0
+ 2GT      CONST_2  "C1'"  N1     C2     N3       180.000    0.000   0
+ 2GT      CONST_3  N1     C2     N3     C4         0.000    0.000   0
+ 2GT      CONST_4  C2     N3     C4     O4       180.000    0.000   0
+ 2GT      CONST_5  N3     C4     C5     C6         0.000    0.000   0
+ 2GT      var_14   C4     C5     C5M    H71     -115.793   20.000   1
+ 2GT      CONST_6  C4     C5     C6     N1         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 2GT      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ 2GT      chir_02  "C1'"  "O4'"  N1     "C2'"     negativ
+ 2GT      chir_03  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ 2GT      chir_04  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 2GT      plan-1    N1        0.020
+ 2GT      plan-1    "C1'"     0.020
+ 2GT      plan-1    C6        0.020
+ 2GT      plan-1    C2        0.020
+ 2GT      plan-1    N3        0.020
+ 2GT      plan-1    C4        0.020
+ 2GT      plan-1    C5        0.020
+ 2GT      plan-1    H6        0.020
+ 2GT      plan-1    O2        0.020
+ 2GT      plan-1    HN3       0.020
+ 2GT      plan-1    O4        0.020
+ 2GT      plan-1    C5M       0.020
+# ------------------------------------------------------

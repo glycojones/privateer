@@ -1,0 +1,146 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CCU     CCU      "(2Z,4Z)-HEXA-2,4-DIENEDIOIC ACID"     NON-POLYMER     14     10     .     
+#
+data_comp_CCU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CCU     C2      C       C1      0       1.692       0.263       -0.712      
+CCU     C3      C       C1      0       0.359       0.233       -0.640      
+CCU     C4      C       C1      0       -0.417      -0.637      0.140       
+CCU     C6      C       C       0       -2.612      0.653       0.310       
+CCU     O4      O       O       0       -3.821      0.478       0.166       
+CCU     O3      O       OC      -1      -2.101      1.762       0.469       
+CCU     C5      C       C1      0       -1.735      -0.565      0.341       
+CCU     C1      C       C       0       2.687       -0.151      0.333       
+CCU     O1      O       O       0       3.836       -0.384      -0.038      
+CCU     O2      O       OC      -1      2.331       -0.202      1.511       
+CCU     H2      H       H       0       2.066       0.583       -1.517      
+CCU     H3      H       H       0       -0.118      0.850       -1.169      
+CCU     H4      H       H       0       0.047       -1.347      0.553       
+CCU     H5      H       H       0       -2.180      -1.375      0.527       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CCU       C2        C3        DOUBLE    n         1.332     0.010     1.332     0.010     
+CCU       C2        C1        SINGLE    n         1.492     0.020     1.492     0.020     
+CCU       C3        C4        SINGLE    n         1.391     0.020     1.391     0.020     
+CCU       C4        C5        DOUBLE    n         1.332     0.010     1.332     0.010     
+CCU       C6        O4        DOUBLE    n         1.230     0.020     1.230     0.020     
+CCU       C6        O3        SINGLE    n         1.230     0.020     1.230     0.020     
+CCU       C6        C5        SINGLE    n         1.492     0.020     1.492     0.020     
+CCU       C1        O1        DOUBLE    n         1.230     0.020     1.230     0.020     
+CCU       C1        O2        SINGLE    n         1.230     0.020     1.230     0.020     
+CCU       C2        H2        SINGLE    n         1.082     0.013     0.943     0.020     
+CCU       C3        H3        SINGLE    n         1.082     0.013     0.943     0.020     
+CCU       C4        H4        SINGLE    n         1.082     0.013     0.943     0.020     
+CCU       C5        H5        SINGLE    n         1.082     0.013     0.943     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CCU          C3          C2          C1     125.766    1.98
+CCU          C3          C2          H2     117.890    1.94
+CCU          C1          C2          H2     116.344    1.98
+CCU          C2          C3          C4     125.553    1.50
+CCU          C2          C3          H3     118.051    1.60
+CCU          C4          C3          H3     116.396    1.85
+CCU          C3          C4          C5     125.553    1.50
+CCU          C3          C4          H4     116.396    1.85
+CCU          C5          C4          H4     118.051    1.60
+CCU          O4          C6          O3     123.843    1.50
+CCU          O4          C6          C5     118.078    1.84
+CCU          O3          C6          C5     118.078    1.84
+CCU          C4          C5          C6     125.766    1.98
+CCU          C4          C5          H5     117.890    1.94
+CCU          C6          C5          H5     116.344    1.98
+CCU          C2          C1          O1     118.078    1.84
+CCU          C2          C1          O2     118.078    1.84
+CCU          O1          C1          O2     123.843    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CCU             sp2_sp2_1          C1          C2          C3          C4     180.000   10.00     2
+CCU             sp2_sp2_5          O1          C1          C2          C3     180.000   10.00     2
+CCU             sp2_sp2_9          C2          C3          C4          C5     180.000   10.00     2
+CCU            sp2_sp2_13          C3          C4          C5          C6     180.000   10.00     2
+CCU            sp2_sp2_17          C4          C5          C6          O4     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CCU    plan-1          C1   0.020
+CCU    plan-1          C2   0.020
+CCU    plan-1          C3   0.020
+CCU    plan-1          H2   0.020
+CCU    plan-2          C2   0.020
+CCU    plan-2          C3   0.020
+CCU    plan-2          C4   0.020
+CCU    plan-2          H3   0.020
+CCU    plan-3          C3   0.020
+CCU    plan-3          C4   0.020
+CCU    plan-3          C5   0.020
+CCU    plan-3          H4   0.020
+CCU    plan-4          C5   0.020
+CCU    plan-4          C6   0.020
+CCU    plan-4          O3   0.020
+CCU    plan-4          O4   0.020
+CCU    plan-5          C4   0.020
+CCU    plan-5          C5   0.020
+CCU    plan-5          C6   0.020
+CCU    plan-5          H5   0.020
+CCU    plan-6          C1   0.020
+CCU    plan-6          C2   0.020
+CCU    plan-6          O1   0.020
+CCU    plan-6          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CCU SMILES           ACDLabs              10.04 "O=C(O)\C=C/C=C\C(=O)O"
+CCU SMILES_CANONICAL CACTVS               3.341 "OC(=O)/C=C\C=C/C(O)=O"
+CCU SMILES           CACTVS               3.341 "OC(=O)C=CC=CC(O)=O"
+CCU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=C/C(=O)O)/C=C\C(=O)O"
+CCU SMILES           "OpenEye OEToolkits" 1.5.0 "C(=CC(=O)O)C=CC(=O)O"
+CCU InChI            InChI                1.03  "InChI=1S/C6H6O4/c7-5(8)3-1-2-4-6(9)10/h1-4H,(H,7,8)(H,9,10)/b3-1-,4-2-"
+CCU InChIKey         InChI                1.03  TXXHDPDFNKHHGW-CCAGOZQPSA-N
+CCU ?                acedrg               202         "dictionary generator"                  
+CCU ?                acedrg_database      11          "data source"                           
+CCU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CCU ?                refmac5              5.8.0189    "optimization tool"                     

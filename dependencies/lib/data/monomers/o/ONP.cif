@@ -1,0 +1,278 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ONP      ONP 'O-NITROPHENYL AMINOETHYLDIPHOSPHATE ' non-polymer        34  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ONP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ONP           O2B    O    O        -1.000      0.000    0.000    0.000
+ ONP           N2     N    N         1.000      0.693   -0.895   -0.601
+ ONP           O2A    O    O         0.000      0.365   -1.563   -1.577
+ ONP           C2     C    CR6       0.000      2.015   -1.213   -0.027
+ ONP           C3     C    CR16      0.000      2.835   -2.165   -0.624
+ ONP           H3     H    H         0.000      2.504   -2.687   -1.513
+ ONP           C4     C    CR16      0.000      4.097   -2.446   -0.066
+ ONP           H4     H    H         0.000      4.774   -3.146   -0.540
+ ONP           C5     C    CR16      0.000      4.448   -1.798    1.110
+ ONP           H5     H    H         0.000      5.401   -2.025    1.572
+ ONP           C6     C    CR16      0.000      3.595   -0.847    1.723
+ ONP           H6     H    H         0.000      3.888   -0.370    2.650
+ ONP           C1     C    CR6       0.000      2.411   -0.540    1.140
+ ONP           NA3    N    NH1       0.000      1.556    0.401    1.758
+ ONP           HNA1   H    H         0.000      0.632    0.639    1.427
+ ONP           CA2    C    CH2       0.000      2.178    0.973    2.918
+ ONP           HA21   H    H         0.000      3.047    1.565    2.620
+ ONP           HA22   H    H         0.000      2.496    0.179    3.598
+ ONP           CA1    C    CH2       0.000      1.175    1.863    3.614
+ ONP           HA11   H    H         0.000      1.690    2.503    4.334
+ ONP           HA12   H    H         0.000      0.439    1.248    4.136
+ ONP           OE2    O    O2        0.000      0.523    2.666    2.651
+ ONP           PA     P    P         0.000      0.099    4.158    3.077
+ ONP           OA1    O    OP       -0.500     -0.689    4.678    1.933
+ ONP           OA2    O    OP       -0.500      1.292    4.995    3.356
+ ONP           OA3    O    O2        0.000     -0.772    4.108    4.383
+ ONP           PB     P    P         0.000     -1.698    5.246    5.055
+ ONP           OB1    O    OP       -0.500     -3.091    4.736    5.043
+ ONP           OB2    O    OP       -0.500     -1.512    6.471    4.241
+ ONP           OB3    O    O2        0.000     -1.118    5.387    6.551
+ ONP           BE     BE   BE       -1.000     -0.922    6.669    7.478
+ ONP           F1     F    F         0.000     -2.247    6.939    8.138
+ ONP           F2     F    F         0.000     -0.597    7.847    6.620
+ ONP           F3     F    F         0.000      0.226    6.401    8.427
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ONP      O2B    n/a    N2     START
+ ONP      N2     O2B    C2     .
+ ONP      O2A    N2     .      .
+ ONP      C2     N2     C1     .
+ ONP      C3     C2     C4     .
+ ONP      H3     C3     .      .
+ ONP      C4     C3     C5     .
+ ONP      H4     C4     .      .
+ ONP      C5     C4     C6     .
+ ONP      H5     C5     .      .
+ ONP      C6     C5     H6     .
+ ONP      H6     C6     .      .
+ ONP      C1     C2     NA3    .
+ ONP      NA3    C1     CA2    .
+ ONP      HNA1   NA3    .      .
+ ONP      CA2    NA3    CA1    .
+ ONP      HA21   CA2    .      .
+ ONP      HA22   CA2    .      .
+ ONP      CA1    CA2    OE2    .
+ ONP      HA11   CA1    .      .
+ ONP      HA12   CA1    .      .
+ ONP      OE2    CA1    PA     .
+ ONP      PA     OE2    OA3    .
+ ONP      OA1    PA     .      .
+ ONP      OA2    PA     .      .
+ ONP      OA3    PA     PB     .
+ ONP      PB     OA3    OB3    .
+ ONP      OB1    PB     .      .
+ ONP      OB2    PB     .      .
+ ONP      OB3    PB     BE     .
+ ONP      BE     OB3    F3     .
+ ONP      F1     BE     .      .
+ ONP      F2     BE     .      .
+ ONP      F3     BE     .      END
+ ONP      C1     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ONP       F1        BE        single    1.765     0.020     1.765     0.020     
+ONP       F2        BE        single    1.765     0.020     1.765     0.020     
+ONP       F3        BE        single    1.765     0.020     1.765     0.020     
+ONP       BE        OB3       single    1.750     0.020     1.750     0.020     
+ONP       OB1       PB        deloc     1.510     0.020     1.510     0.020     
+ONP       OB2       PB        deloc     1.510     0.020     1.510     0.020     
+ONP       OB3       PB        single    1.610     0.020     1.610     0.020     
+ONP       PB        OA3       single    1.610     0.020     1.610     0.020     
+ONP       OA3       PA        single    1.610     0.020     1.610     0.020     
+ONP       OA1       PA        deloc     1.510     0.020     1.510     0.020     
+ONP       OA2       PA        deloc     1.510     0.020     1.510     0.020     
+ONP       PA        OE2       single    1.610     0.020     1.610     0.020     
+ONP       OE2       CA1       single    1.426     0.020     1.426     0.020     
+ONP       CA2       NA3       single    1.450     0.020     1.450     0.020     
+ONP       NA3       C1        single    1.350     0.020     1.350     0.020     
+ONP       HNA1      NA3       single    1.016     0.010     0.899     0.007     
+ONP       CA1       CA2       single    1.524     0.020     1.524     0.020     
+ONP       HA21      CA2       single    1.089     0.010     0.989     0.005     
+ONP       HA22      CA2       single    1.089     0.010     0.989     0.005     
+ONP       HA11      CA1       single    1.089     0.010     0.989     0.005     
+ONP       HA12      CA1       single    1.089     0.010     0.989     0.005     
+ONP       C1        C6        double    1.390     0.020     1.390     0.020     
+ONP       C1        C2        single    1.487     0.020     1.487     0.020     
+ONP       C6        C5        single    1.390     0.020     1.390     0.020     
+ONP       H6        C6        single    1.082     0.013     0.975     0.010     
+ONP       C5        C4        double    1.390     0.020     1.390     0.020     
+ONP       H5        C5        single    1.082     0.013     0.975     0.010     
+ONP       C4        C3        single    1.390     0.020     1.390     0.020     
+ONP       H4        C4        single    1.082     0.013     0.975     0.010     
+ONP       C3        C2        double    1.390     0.020     1.390     0.020     
+ONP       H3        C3        single    1.082     0.013     0.975     0.010     
+ONP       C2        N2        single    1.400     0.020     1.400     0.020     
+ONP       O2A       N2        double    1.220     0.020     1.220     0.020     
+ONP       N2        O2B       single    1.400     0.020     1.400     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ONP      O2B    N2     O2A     120.000    3.000
+ ONP      O2B    N2     C2      120.000    3.000
+ ONP      O2A    N2     C2      120.000    3.000
+ ONP      N2     C2     C3      120.000    3.000
+ ONP      N2     C2     C1      120.000    3.000
+ ONP      C3     C2     C1      120.000    3.000
+ ONP      C2     C3     H3      120.000    3.000
+ ONP      C2     C3     C4      120.000    3.000
+ ONP      H3     C3     C4      120.000    3.000
+ ONP      C3     C4     H4      120.000    3.000
+ ONP      C3     C4     C5      120.000    3.000
+ ONP      H4     C4     C5      120.000    3.000
+ ONP      C4     C5     H5      120.000    3.000
+ ONP      C4     C5     C6      120.000    3.000
+ ONP      H5     C5     C6      120.000    3.000
+ ONP      C5     C6     H6      120.000    3.000
+ ONP      C5     C6     C1      120.000    3.000
+ ONP      H6     C6     C1      120.000    3.000
+ ONP      C2     C1     NA3     120.000    3.000
+ ONP      C2     C1     C6      120.000    3.000
+ ONP      NA3    C1     C6      120.000    3.000
+ ONP      C1     NA3    HNA1    120.000    3.000
+ ONP      C1     NA3    CA2     120.000    3.000
+ ONP      HNA1   NA3    CA2     118.500    3.000
+ ONP      NA3    CA2    HA21    109.470    3.000
+ ONP      NA3    CA2    HA22    109.470    3.000
+ ONP      NA3    CA2    CA1     112.000    3.000
+ ONP      HA21   CA2    HA22    107.900    3.000
+ ONP      HA21   CA2    CA1     109.470    3.000
+ ONP      HA22   CA2    CA1     109.470    3.000
+ ONP      CA2    CA1    HA11    109.470    3.000
+ ONP      CA2    CA1    HA12    109.470    3.000
+ ONP      CA2    CA1    OE2     109.470    3.000
+ ONP      HA11   CA1    HA12    107.900    3.000
+ ONP      HA11   CA1    OE2     109.470    3.000
+ ONP      HA12   CA1    OE2     109.470    3.000
+ ONP      CA1    OE2    PA      120.500    3.000
+ ONP      OE2    PA     OA1     108.200    3.000
+ ONP      OE2    PA     OA2     108.200    3.000
+ ONP      OE2    PA     OA3     102.600    3.000
+ ONP      OA1    PA     OA2     119.900    3.000
+ ONP      OA1    PA     OA3     108.200    3.000
+ ONP      OA2    PA     OA3     108.200    3.000
+ ONP      PA     OA3    PB      120.500    3.000
+ ONP      OA3    PB     OB1     108.200    3.000
+ ONP      OA3    PB     OB2     108.200    3.000
+ ONP      OA3    PB     OB3     102.600    3.000
+ ONP      OB1    PB     OB2     119.900    3.000
+ ONP      OB1    PB     OB3     108.200    3.000
+ ONP      OB2    PB     OB3     108.200    3.000
+ ONP      PB     OB3    BE      120.000    3.000
+ ONP      OB3    BE     F1      120.000    3.000
+ ONP      OB3    BE     F2      120.000    3.000
+ ONP      OB3    BE     F3      120.000    3.000
+ ONP      F1     BE     F2      120.000    3.000
+ ONP      F1     BE     F3      120.000    3.000
+ ONP      F2     BE     F3      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ONP      var_1    O2B    N2     C2     C1         1.205   20.000   1
+ ONP      CONST_1  N2     C2     C3     C4       180.000    0.000   0
+ ONP      CONST_2  C2     C3     C4     C5         0.000    0.000   0
+ ONP      CONST_3  C3     C4     C5     C6         0.000    0.000   0
+ ONP      CONST_4  C4     C5     C6     C1         0.000    0.000   0
+ ONP      CONST_5  N2     C2     C1     NA3        0.000    0.000   0
+ ONP      CONST_6  C2     C1     C6     C5         0.000    0.000   0
+ ONP      var_2    C2     C1     NA3    CA2     -179.097   20.000   1
+ ONP      var_3    C1     NA3    CA2    CA1     -174.403   20.000   3
+ ONP      var_4    NA3    CA2    CA1    OE2      -45.370   20.000   3
+ ONP      var_5    CA2    CA1    OE2    PA      -145.743   20.000   1
+ ONP      var_6    CA1    OE2    PA     OA3      -54.225   20.000   1
+ ONP      var_7    OE2    PA     OA3    PB      -165.662   20.000   1
+ ONP      var_8    PA     OA3    PB     OB3     -123.883   20.000   1
+ ONP      var_9    OA3    PB     OB3    BE       142.245   20.000   1
+ ONP      var_10   PB     OB3    BE     F3      -152.022   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ONP      chir_01  BE     OB3    F1     F2        both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ONP      plan-1    NA3       0.020
+ ONP      plan-1    CA2       0.020
+ ONP      plan-1    C1        0.020
+ ONP      plan-1    HNA1      0.020
+ ONP      plan-2    C1        0.020
+ ONP      plan-2    NA3       0.020
+ ONP      plan-2    C6        0.020
+ ONP      plan-2    C2        0.020
+ ONP      plan-2    C5        0.020
+ ONP      plan-2    C4        0.020
+ ONP      plan-2    C3        0.020
+ ONP      plan-2    H6        0.020
+ ONP      plan-2    H5        0.020
+ ONP      plan-2    H4        0.020
+ ONP      plan-2    H3        0.020
+ ONP      plan-2    N2        0.020
+ ONP      plan-2    HNA1      0.020
+ ONP      plan-3    N2        0.020
+ ONP      plan-3    C2        0.020
+ ONP      plan-3    O2A       0.020
+ ONP      plan-3    O2B       0.020
+# ------------------------------------------------------

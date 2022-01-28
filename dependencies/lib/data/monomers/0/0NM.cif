@@ -1,0 +1,77 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0NM     0NM      "cyanic acid"     NON-POLYMER     4     3     .     
+#
+data_comp_0NM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+0NM     N       N       N       0       -5.861      -0.023      15.928      
+0NM     C       C       CSP     0       -5.635      0.364       16.989      
+0NM     O       O       OH1     0       -5.366      0.823       18.245      
+0NM     H       H       H       0       -6.109      0.977       18.660      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0NM       N         C         TRIPLE    n         1.151     0.012     1.151     0.012     
+0NM       C         O         SINGLE    n         1.364     0.020     1.364     0.020     
+0NM       O         H         SINGLE    n         0.970     0.012     0.865     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+0NM           N           C           O     180.000    3.00
+0NM           C           O           H     109.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+0NM             sp3_sp3_1           N           C           O           H     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+0NM SMILES           ACDLabs              12.01 N#CO
+0NM InChI            InChI                1.03  InChI=1S/CHNO/c2-1-3/h3H
+0NM InChIKey         InChI                1.03  XLJMAIOERFSOGZ-UHFFFAOYSA-N
+0NM SMILES_CANONICAL CACTVS               3.370 OC#N
+0NM SMILES           CACTVS               3.370 OC#N
+0NM SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C(#N)O"
+0NM SMILES           "OpenEye OEToolkits" 1.7.6 "C(#N)O"
+0NM ?                acedrg               202         "dictionary generator"                  
+0NM ?                acedrg_database      11          "data source"                           
+0NM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+0NM ?                refmac5              5.8.0189    "optimization tool"                     

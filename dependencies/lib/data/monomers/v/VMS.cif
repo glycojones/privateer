@@ -1,0 +1,409 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VMS      VMS '5'O-[N-(L-VALYL)SULPHAMOYL]ADENOSINE' non-polymer        53  30 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VMS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ VMS           OBC    O    OS        0.000      0.000    0.000    0.000
+ VMS           SBD    S    ST        0.000     -1.004    0.463    0.892
+ VMS           OAZ    O    OS        0.000     -0.820    1.447    1.900
+ VMS           NAS    N    NH1       0.000     -1.567   -0.883    1.676
+ VMS           HAS    H    H         0.000     -1.669   -0.877    2.680
+ VMS           C      C    C         0.000     -1.888   -1.987    0.972
+ VMS           O      O    O         0.000     -1.765   -1.994   -0.235
+ VMS           CA     C    CH1       0.000     -2.400   -3.212    1.685
+ VMS           HA     H    H         0.000     -3.086   -2.909    2.488
+ VMS           N      N    NH2       0.000     -3.113   -4.072    0.730
+ VMS           H2     H    H         0.000     -4.090   -4.296    0.875
+ VMS           H      H    H         0.000     -2.632   -4.446   -0.079
+ VMS           CB     C    CH1       0.000     -1.222   -3.984    2.284
+ VMS           HB     H    H         0.000     -0.536   -4.287    1.481
+ VMS           CG1    C    CH3       0.000     -1.742   -5.227    3.007
+ VMS           HG13   H    H         0.000     -2.256   -5.847    2.319
+ VMS           HG12   H    H         0.000     -0.927   -5.762    3.422
+ VMS           HG11   H    H         0.000     -2.403   -4.936    3.782
+ VMS           CG2    C    CH3       0.000     -0.480   -3.088    3.278
+ VMS           HG23   H    H         0.000     -1.140   -2.795    4.052
+ VMS           HG22   H    H         0.000      0.336   -3.620    3.694
+ VMS           HG21   H    H         0.000     -0.119   -2.226    2.777
+ VMS           "O5'"  O    O2        0.000     -2.132    0.981    0.011
+ VMS           "C5'"  C    CH2       0.000     -3.075    1.616    0.877
+ VMS           "H5'1" H    H         0.000     -2.587    2.437    1.406
+ VMS           "H5'2" H    H         0.000     -3.449    0.889    1.601
+ VMS           "C4'"  C    CH1       0.000     -4.241    2.161    0.050
+ VMS           "H4'"  H    H         0.000     -3.860    2.815   -0.747
+ VMS           "C3'"  C    CH1       0.000     -5.205    2.949    0.959
+ VMS           "H3'"  H    H         0.000     -4.871    2.902    2.005
+ VMS           "O3'"  O    OH1       0.000     -5.310    4.308    0.528
+ VMS           "HO3'" H    H         0.000     -5.963    4.768    1.073
+ VMS           "C2'"  C    CH1       0.000     -6.562    2.219    0.789
+ VMS           H1     H    H         0.000     -6.727    1.503    1.606
+ VMS           "O2'"  O    OH1       0.000     -7.638    3.156    0.707
+ VMS           "H2'"  H    H         0.000     -7.741    3.603    1.558
+ VMS           "C1'"  C    CH1       0.000     -6.368    1.481   -0.560
+ VMS           "H1'"  H    H         0.000     -6.549    2.162   -1.403
+ VMS           "O4'"  O    O2        0.000     -4.984    1.074   -0.525
+ VMS           N9     N    NR5       0.000     -7.248    0.312   -0.644
+ VMS           C4     C    CR56      0.000     -8.530    0.295   -1.131
+ VMS           N3     N    NRD6      0.000     -9.349    1.203   -1.654
+ VMS           C2     C    CR16      0.000    -10.559    0.868   -2.049
+ VMS           H3     H    H         0.000    -11.201    1.633   -2.466
+ VMS           N1     N    NRD6      0.000    -11.018   -0.367   -1.956
+ VMS           C6     C    CR6       0.000    -10.271   -1.344   -1.451
+ VMS           N6     N    NH2       0.000    -10.761   -2.634   -1.356
+ VMS           HN62   H    H         0.000    -11.701   -2.852   -1.672
+ VMS           HN61   H    H         0.000    -10.187   -3.376   -0.970
+ VMS           C5     C    CR56      0.000     -8.971   -1.034   -1.015
+ VMS           N7     N    NRD5      0.000     -7.956   -1.745   -0.466
+ VMS           C8     C    CR15      0.000     -6.945   -0.956   -0.248
+ VMS           H8     H    H         0.000     -6.000   -1.262    0.185
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VMS      OBC    n/a    SBD    START
+ VMS      SBD    OBC    "O5'"  .
+ VMS      OAZ    SBD    .      .
+ VMS      NAS    SBD    C      .
+ VMS      HAS    NAS    .      .
+ VMS      C      NAS    CA     .
+ VMS      O      C      .      .
+ VMS      CA     C      CB     .
+ VMS      HA     CA     .      .
+ VMS      N      CA     H      .
+ VMS      H2     N      .      .
+ VMS      H      N      .      .
+ VMS      CB     CA     CG2    .
+ VMS      HB     CB     .      .
+ VMS      CG1    CB     HG11   .
+ VMS      HG13   CG1    .      .
+ VMS      HG12   CG1    .      .
+ VMS      HG11   CG1    .      .
+ VMS      CG2    CB     HG21   .
+ VMS      HG23   CG2    .      .
+ VMS      HG22   CG2    .      .
+ VMS      HG21   CG2    .      .
+ VMS      "O5'"  SBD    "C5'"  .
+ VMS      "C5'"  "O5'"  "C4'"  .
+ VMS      "H5'1" "C5'"  .      .
+ VMS      "H5'2" "C5'"  .      .
+ VMS      "C4'"  "C5'"  "C3'"  .
+ VMS      "H4'"  "C4'"  .      .
+ VMS      "C3'"  "C4'"  "C2'"  .
+ VMS      "H3'"  "C3'"  .      .
+ VMS      "O3'"  "C3'"  "HO3'" .
+ VMS      "HO3'" "O3'"  .      .
+ VMS      "C2'"  "C3'"  "C1'"  .
+ VMS      H1     "C2'"  .      .
+ VMS      "O2'"  "C2'"  "H2'"  .
+ VMS      "H2'"  "O2'"  .      .
+ VMS      "C1'"  "C2'"  N9     .
+ VMS      "H1'"  "C1'"  .      .
+ VMS      "O4'"  "C1'"  .      .
+ VMS      N9     "C1'"  C4     .
+ VMS      C4     N9     N3     .
+ VMS      N3     C4     C2     .
+ VMS      C2     N3     N1     .
+ VMS      H3     C2     .      .
+ VMS      N1     C2     C6     .
+ VMS      C6     N1     C5     .
+ VMS      N6     C6     HN61   .
+ VMS      HN62   N6     .      .
+ VMS      HN61   N6     .      .
+ VMS      C5     C6     N7     .
+ VMS      N7     C5     C8     .
+ VMS      C8     N7     H8     .
+ VMS      H8     C8     .      END
+ VMS      "C4'"  "O4'"  .    ADD
+ VMS      N9     C8     .    ADD
+ VMS      C5     C4     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VMS       CG2       CB        single    1.524     0.020     1.524     0.020     
+VMS       HG21      CG2       single    1.089     0.010     0.989     0.005     
+VMS       HG22      CG2       single    1.089     0.010     0.989     0.005     
+VMS       HG23      CG2       single    1.089     0.010     0.989     0.005     
+VMS       CG1       CB        single    1.524     0.020     1.524     0.020     
+VMS       CB        CA        single    1.524     0.020     1.524     0.020     
+VMS       HB        CB        single    1.089     0.010     0.989     0.005     
+VMS       HG11      CG1       single    1.089     0.010     0.989     0.005     
+VMS       HG12      CG1       single    1.089     0.010     0.989     0.005     
+VMS       HG13      CG1       single    1.089     0.010     0.989     0.005     
+VMS       N         CA        single    1.450     0.020     1.450     0.020     
+VMS       CA        C         single    1.500     0.020     1.500     0.020     
+VMS       HA        CA        single    1.089     0.010     0.989     0.005     
+VMS       H         N         single    1.036     0.016     0.914     0.007     
+VMS       H2        N         single    1.036     0.016     0.914     0.007     
+VMS       O         C         double    1.220     0.020     1.220     0.020     
+VMS       C         NAS       single    1.330     0.020     1.330     0.020     
+VMS       NAS       SBD       single    1.600     0.020     1.600     0.020     
+VMS       HAS       NAS       single    1.016     0.010     0.899     0.007     
+VMS       OAZ       SBD       double    1.436     0.020     1.436     0.020     
+VMS       SBD       OBC       double    1.436     0.020     1.436     0.020     
+VMS       "O5'"     SBD       single    1.535     0.020     1.535     0.020     
+VMS       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+VMS       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+VMS       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+VMS       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+VMS       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+VMS       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+VMS       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+VMS       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+VMS       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+VMS       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+VMS       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+VMS       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+VMS       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+VMS       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+VMS       H1        "C2'"     single    1.089     0.010     0.989     0.005     
+VMS       "H2'"     "O2'"     single    0.970     0.012     0.839     0.014     
+VMS       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+VMS       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+VMS       N9        C8        single    1.337     0.020     1.337     0.020     
+VMS       C4        N9        single    1.337     0.020     1.337     0.020     
+VMS       C8        N7        double    1.350     0.020     1.350     0.020     
+VMS       H8        C8        single    1.082     0.013     0.975     0.010     
+VMS       N7        C5        single    1.350     0.020     1.350     0.020     
+VMS       C5        C4        double    1.490     0.020     1.490     0.020     
+VMS       C5        C6        single    1.490     0.020     1.490     0.020     
+VMS       N3        C4        single    1.355     0.020     1.355     0.020     
+VMS       C2        N3        double    1.337     0.020     1.337     0.020     
+VMS       N1        C2        single    1.337     0.020     1.337     0.020     
+VMS       H3        C2        single    1.082     0.013     0.975     0.010     
+VMS       C6        N1        double    1.350     0.020     1.350     0.020     
+VMS       N6        C6        single    1.355     0.020     1.355     0.020     
+VMS       HN61      N6        single    1.016     0.010     0.899     0.007     
+VMS       HN62      N6        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VMS      OBC    SBD    OAZ     109.500    3.000
+ VMS      OBC    SBD    NAS     109.500    3.000
+ VMS      OBC    SBD    "O5'"   109.500    3.000
+ VMS      OAZ    SBD    NAS     109.500    3.000
+ VMS      OAZ    SBD    "O5'"   109.500    3.000
+ VMS      NAS    SBD    "O5'"   109.500    3.000
+ VMS      SBD    NAS    HAS     120.000    3.000
+ VMS      SBD    NAS    C       120.000    3.000
+ VMS      HAS    NAS    C       120.000    3.000
+ VMS      NAS    C      O       123.000    3.000
+ VMS      NAS    C      CA      116.500    3.000
+ VMS      O      C      CA      120.500    3.000
+ VMS      C      CA     HA      108.810    3.000
+ VMS      C      CA     N       109.470    3.000
+ VMS      C      CA     CB      109.470    3.000
+ VMS      HA     CA     N       109.470    3.000
+ VMS      HA     CA     CB      108.340    3.000
+ VMS      N      CA     CB      109.470    3.000
+ VMS      CA     N      H2      120.000    3.000
+ VMS      CA     N      H       120.000    3.000
+ VMS      H2     N      H       120.000    3.000
+ VMS      CA     CB     HB      108.340    3.000
+ VMS      CA     CB     CG1     111.000    3.000
+ VMS      CA     CB     CG2     111.000    3.000
+ VMS      HB     CB     CG1     108.340    3.000
+ VMS      HB     CB     CG2     108.340    3.000
+ VMS      CG1    CB     CG2     111.000    3.000
+ VMS      CB     CG1    HG13    109.470    3.000
+ VMS      CB     CG1    HG12    109.470    3.000
+ VMS      CB     CG1    HG11    109.470    3.000
+ VMS      HG13   CG1    HG12    109.470    3.000
+ VMS      HG13   CG1    HG11    109.470    3.000
+ VMS      HG12   CG1    HG11    109.470    3.000
+ VMS      CB     CG2    HG23    109.470    3.000
+ VMS      CB     CG2    HG22    109.470    3.000
+ VMS      CB     CG2    HG21    109.470    3.000
+ VMS      HG23   CG2    HG22    109.470    3.000
+ VMS      HG23   CG2    HG21    109.470    3.000
+ VMS      HG22   CG2    HG21    109.470    3.000
+ VMS      SBD    "O5'"  "C5'"   120.000    3.000
+ VMS      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ VMS      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ VMS      "O5'"  "C5'"  "C4'"   109.470    3.000
+ VMS      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ VMS      "H5'1" "C5'"  "C4'"   109.470    3.000
+ VMS      "H5'2" "C5'"  "C4'"   109.470    3.000
+ VMS      "C5'"  "C4'"  "H4'"   108.340    3.000
+ VMS      "C5'"  "C4'"  "C3'"   111.000    3.000
+ VMS      "C5'"  "C4'"  "O4'"   109.470    3.000
+ VMS      "H4'"  "C4'"  "C3'"   108.340    3.000
+ VMS      "H4'"  "C4'"  "O4'"   109.470    3.000
+ VMS      "C3'"  "C4'"  "O4'"   109.470    3.000
+ VMS      "C4'"  "C3'"  "H3'"   108.340    3.000
+ VMS      "C4'"  "C3'"  "O3'"   109.470    3.000
+ VMS      "C4'"  "C3'"  "C2'"   111.000    3.000
+ VMS      "H3'"  "C3'"  "O3'"   109.470    3.000
+ VMS      "H3'"  "C3'"  "C2'"   108.340    3.000
+ VMS      "O3'"  "C3'"  "C2'"   109.470    3.000
+ VMS      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ VMS      "C3'"  "C2'"  H1      108.340    3.000
+ VMS      "C3'"  "C2'"  "O2'"   109.470    3.000
+ VMS      "C3'"  "C2'"  "C1'"   111.000    3.000
+ VMS      H1     "C2'"  "O2'"   109.470    3.000
+ VMS      H1     "C2'"  "C1'"   108.340    3.000
+ VMS      "O2'"  "C2'"  "C1'"   109.470    3.000
+ VMS      "C2'"  "O2'"  "H2'"   109.470    3.000
+ VMS      "C2'"  "C1'"  "H1'"   108.340    3.000
+ VMS      "C2'"  "C1'"  "O4'"   109.470    3.000
+ VMS      "C2'"  "C1'"  N9      109.470    3.000
+ VMS      "H1'"  "C1'"  "O4'"   109.470    3.000
+ VMS      "H1'"  "C1'"  N9      109.470    3.000
+ VMS      "O4'"  "C1'"  N9      109.470    3.000
+ VMS      "C1'"  "O4'"  "C4'"   111.800    3.000
+ VMS      "C1'"  N9     C4      126.000    3.000
+ VMS      "C1'"  N9     C8      126.000    3.000
+ VMS      C4     N9     C8      108.000    3.000
+ VMS      N9     C4     N3      132.000    3.000
+ VMS      N9     C4     C5      108.000    3.000
+ VMS      N3     C4     C5      120.000    3.000
+ VMS      C4     N3     C2      120.000    3.000
+ VMS      N3     C2     H3      120.000    3.000
+ VMS      N3     C2     N1      120.000    3.000
+ VMS      H3     C2     N1      120.000    3.000
+ VMS      C2     N1     C6      120.000    3.000
+ VMS      N1     C6     N6      120.000    3.000
+ VMS      N1     C6     C5      120.000    3.000
+ VMS      N6     C6     C5      120.000    3.000
+ VMS      C6     N6     HN62    120.000    3.000
+ VMS      C6     N6     HN61    120.000    3.000
+ VMS      HN62   N6     HN61    120.000    3.000
+ VMS      C6     C5     N7      132.000    3.000
+ VMS      C6     C5     C4      120.000    3.000
+ VMS      N7     C5     C4      108.000    3.000
+ VMS      C5     N7     C8      108.000    3.000
+ VMS      N7     C8     H8      126.000    3.000
+ VMS      N7     C8     N9      108.000    3.000
+ VMS      H8     C8     N9      126.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VMS      var_1    OBC    SBD    NAS    C        -47.614   20.000   1
+ VMS      CONST_1  SBD    NAS    C      CA       180.000    0.000   0
+ VMS      var_2    NAS    C      CA     CB       -79.965   20.000   3
+ VMS      var_3    C      CA     N      H         60.040   20.000   1
+ VMS      var_4    C      CA     CB     CG2       59.977   20.000   3
+ VMS      var_5    CA     CB     CG1    HG11     -60.038   20.000   3
+ VMS      var_6    CA     CB     CG2    HG21     -59.983   20.000   3
+ VMS      var_7    OBC    SBD    "O5'"  "C5'"   -172.368   20.000   1
+ VMS      var_8    SBD    "O5'"  "C5'"  "C4'"   -179.966   20.000   1
+ VMS      var_9    "O5'"  "C5'"  "C4'"  "C3'"   -175.305   20.000   3
+ VMS      var_10   "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ VMS      var_11   "C5'"  "C4'"  "C3'"  "C2'"   -120.000   20.000   3
+ VMS      var_12   "C4'"  "C3'"  "O3'"  "HO3'"   176.190   20.000   1
+ VMS      var_13   "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ VMS      var_14   "C3'"  "C2'"  "O2'"  "H2'"    -67.279   20.000   1
+ VMS      var_15   "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ VMS      var_16   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ VMS      var_17   "C2'"  "C1'"  N9     C4        89.105   20.000   1
+ VMS      CONST_2  "C1'"  N9     C8     N7       180.000    0.000   0
+ VMS      CONST_3  "C1'"  N9     C4     N3         0.000    0.000   0
+ VMS      CONST_4  N9     C4     N3     C2       180.000    0.000   0
+ VMS      CONST_5  C4     N3     C2     N1         0.000    0.000   0
+ VMS      CONST_6  N3     C2     N1     C6         0.000    0.000   0
+ VMS      CONST_7  C2     N1     C6     C5         0.000    0.000   0
+ VMS      CONST_8  N1     C6     N6     HN61     179.996    0.000   0
+ VMS      CONST_9  N1     C6     C5     N7       180.000    0.000   0
+ VMS      CONST_10 C6     C5     C4     N9       180.000    0.000   0
+ VMS      CONST_11 C6     C5     N7     C8       180.000    0.000   0
+ VMS      CONST_12 C5     N7     C8     N9         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ VMS      chir_01  CB     CG2    CG1    CA        negativ
+ VMS      chir_02  CA     CB     N      C         positiv
+ VMS      chir_03  SBD    NAS    OAZ    OBC       negativ
+ VMS      chir_04  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ VMS      chir_05  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ VMS      chir_06  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ VMS      chir_07  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ VMS      plan-1    N         0.020
+ VMS      plan-1    CA        0.020
+ VMS      plan-1    H         0.020
+ VMS      plan-1    H2        0.020
+ VMS      plan-2    C         0.020
+ VMS      plan-2    CA        0.020
+ VMS      plan-2    O         0.020
+ VMS      plan-2    NAS       0.020
+ VMS      plan-2    HAS       0.020
+ VMS      plan-3    NAS       0.020
+ VMS      plan-3    C         0.020
+ VMS      plan-3    SBD       0.020
+ VMS      plan-3    HAS       0.020
+ VMS      plan-4    N9        0.020
+ VMS      plan-4    "C1'"     0.020
+ VMS      plan-4    C8        0.020
+ VMS      plan-4    C4        0.020
+ VMS      plan-4    N7        0.020
+ VMS      plan-4    H8        0.020
+ VMS      plan-4    C5        0.020
+ VMS      plan-4    C6        0.020
+ VMS      plan-4    N3        0.020
+ VMS      plan-4    C2        0.020
+ VMS      plan-4    N1        0.020
+ VMS      plan-4    H3        0.020
+ VMS      plan-4    N6        0.020
+ VMS      plan-4    HN62      0.020
+ VMS      plan-4    HN61      0.020
+ VMS      plan-5    N6        0.020
+ VMS      plan-5    C6        0.020
+ VMS      plan-5    HN61      0.020
+ VMS      plan-5    HN62      0.020
+# ------------------------------------------------------

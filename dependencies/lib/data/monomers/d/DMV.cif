@@ -1,0 +1,169 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DMV     DMV      "2,3-DIHYDROXY-VALERIANIC ACID"     NON-POLYMER     21     10     .     
+#
+data_comp_DMV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DMV     C1      C       C       0       2.265       0.731       0.910       
+DMV     C2      C       CH1     0       1.295       0.812       -0.280      
+DMV     C3      C       CT      0       0.137       -0.220      -0.259      
+DMV     C32     C       CH3     0       -0.605      -0.148      -1.585      
+DMV     C4      C       CH2     0       -0.856      0.001       0.904       
+DMV     C5      C       CH3     0       -1.948      -1.045      1.078       
+DMV     O11     O       OC      -1      1.985       1.396       1.930       
+DMV     O12     O       O       0       3.268       0.001       0.776       
+DMV     O21     O       OH1     0       0.751       2.129       -0.378      
+DMV     O31     O       OH1     0       0.717       -1.542      -0.149      
+DMV     H2      H       H       0       1.833       0.651       -1.094      
+DMV     H323    H       H       0       0.030       -0.135      -2.320      
+DMV     H322    H       H       0       -1.146      0.659       -1.611      
+DMV     H321    H       H       0       -1.182      -0.924      -1.676      
+DMV     H42     H       H       0       -1.292      0.877       0.774       
+DMV     H41     H       H       0       -0.347      0.048       1.747       
+DMV     H53     H       H       0       -2.471      -0.836      1.872       
+DMV     H52     H       H       0       -1.549      -1.926      1.182       
+DMV     H51     H       H       0       -2.533      -1.044      0.301       
+DMV     H21     H       H       0       0.735       2.381       -1.189      
+DMV     H31     H       H       0       0.830       -1.749      0.668       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DMV       C1        C2        SINGLE    n         1.533     0.010     1.533     0.010     
+DMV       C1        O11       SINGLE    n         1.247     0.019     1.247     0.019     
+DMV       C1        O12       DOUBLE    n         1.247     0.019     1.247     0.019     
+DMV       C2        C3        SINGLE    n         1.530     0.015     1.530     0.015     
+DMV       C2        O21       SINGLE    n         1.419     0.017     1.419     0.017     
+DMV       C3        C32       SINGLE    n         1.517     0.010     1.517     0.010     
+DMV       C3        C4        SINGLE    n         1.533     0.012     1.533     0.012     
+DMV       C3        O31       SINGLE    n         1.443     0.010     1.443     0.010     
+DMV       C4        C5        SINGLE    n         1.521     0.010     1.521     0.010     
+DMV       C2        H2        SINGLE    n         1.089     0.010     0.988     0.014     
+DMV       C32       H323      SINGLE    n         1.089     0.010     0.972     0.015     
+DMV       C32       H322      SINGLE    n         1.089     0.010     0.972     0.015     
+DMV       C32       H321      SINGLE    n         1.089     0.010     0.972     0.015     
+DMV       C4        H42       SINGLE    n         1.089     0.010     0.987     0.010     
+DMV       C4        H41       SINGLE    n         1.089     0.010     0.987     0.010     
+DMV       C5        H53       SINGLE    n         1.089     0.010     0.973     0.016     
+DMV       C5        H52       SINGLE    n         1.089     0.010     0.973     0.016     
+DMV       C5        H51       SINGLE    n         1.089     0.010     0.973     0.016     
+DMV       O21       H21       SINGLE    n         0.970     0.012     0.848     0.020     
+DMV       O31       H31       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DMV          C2          C1         O11     117.167    1.52
+DMV          C2          C1         O12     117.167    1.52
+DMV         O11          C1         O12     125.666    1.50
+DMV          C1          C2          C3     111.511    2.91
+DMV          C1          C2         O21     111.343    1.72
+DMV          C1          C2          H2     108.330    1.50
+DMV          C3          C2         O21     109.482    3.00
+DMV          C3          C2          H2     109.155    1.50
+DMV         O21          C2          H2     108.675    1.50
+DMV          C2          C3         C32     111.094    2.85
+DMV          C2          C3          C4     111.094    2.85
+DMV          C2          C3         O31     109.482    3.00
+DMV         C32          C3          C4     111.119    1.58
+DMV         C32          C3         O31     109.714    1.50
+DMV          C4          C3         O31     107.760    2.12
+DMV          C3         C32        H323     109.470    1.50
+DMV          C3         C32        H322     109.470    1.50
+DMV          C3         C32        H321     109.470    1.50
+DMV        H323         C32        H322     109.441    1.50
+DMV        H323         C32        H321     109.441    1.50
+DMV        H322         C32        H321     109.441    1.50
+DMV          C3          C4          C5     115.422    1.50
+DMV          C3          C4         H42     108.201    1.50
+DMV          C3          C4         H41     108.201    1.50
+DMV          C5          C4         H42     108.468    1.50
+DMV          C5          C4         H41     108.468    1.50
+DMV         H42          C4         H41     107.500    1.50
+DMV          C4          C5         H53     109.481    1.50
+DMV          C4          C5         H52     109.481    1.50
+DMV          C4          C5         H51     109.481    1.50
+DMV         H53          C5         H52     109.380    1.50
+DMV         H53          C5         H51     109.380    1.50
+DMV         H52          C5         H51     109.380    1.50
+DMV          C2         O21         H21     108.894    3.00
+DMV          C3         O31         H31     109.053    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DMV             sp2_sp3_1         O11          C1          C2          C3       0.000   10.00     6
+DMV             sp3_sp3_3          C1          C2          C3         C32      60.000   10.00     3
+DMV            sp3_sp3_10          C1          C2         O21         H21     180.000   10.00     3
+DMV            sp3_sp3_16          C2          C3         C32        H323      60.000   10.00     3
+DMV            sp3_sp3_22          C2          C3          C4          C5     180.000   10.00     3
+DMV            sp3_sp3_32          C2          C3         O31         H31      60.000   10.00     3
+DMV            sp3_sp3_34          C3          C4          C5         H53     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DMV    chir_1    C2    O21    C1    C3    negative
+DMV    chir_2    C3    O31    C2    C4    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DMV    plan-1          C1   0.020
+DMV    plan-1          C2   0.020
+DMV    plan-1         O11   0.020
+DMV    plan-1         O12   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DMV SMILES           ACDLabs              10.04 "O=C(O)C(O)C(O)(C)CC"
+DMV SMILES_CANONICAL CACTVS               3.341 "CC[C@@](C)(O)[C@@H](O)C(O)=O"
+DMV SMILES           CACTVS               3.341 "CC[C](C)(O)[CH](O)C(O)=O"
+DMV SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC[C@](C)([C@H](C(=O)O)O)O"
+DMV SMILES           "OpenEye OEToolkits" 1.5.0 "CCC(C)(C(C(=O)O)O)O"
+DMV InChI            InChI                1.03  "InChI=1S/C6H12O4/c1-3-6(2,10)4(7)5(8)9/h4,7,10H,3H2,1-2H3,(H,8,9)/t4-,6+/m0/s1"
+DMV InChIKey         InChI                1.03  PDGXJDXVGMHUIR-UJURSFKZSA-N
+DMV ?                acedrg               202         "dictionary generator"                  
+DMV ?                acedrg_database      11          "data source"                           
+DMV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DMV ?                refmac5              5.8.0189    "optimization tool"                     

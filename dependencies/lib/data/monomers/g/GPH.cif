@@ -1,0 +1,245 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GPH      GPH '4-O-phosphono-D-glycero-beta-D-manno' pyranose           31  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GPH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GPH           C1     C    CH1       0.000      0.000    0.000    0.000
+ GPH           H1     H    H         0.000      0.306    0.191   -1.038
+ GPH           O101   O    OH1       0.000      1.095    0.271    0.877
+ GPH           H15    H    H         0.000      1.361    1.196    0.784
+ GPH           O5     O    O2        0.000     -1.101    0.847    0.337
+ GPH           C5     C    CH1       0.000     -2.246    0.674   -0.499
+ GPH           H5     H    H         0.000     -1.971    0.874   -1.544
+ GPH           C4     C    CH1       0.000     -2.758   -0.763   -0.372
+ GPH           H4     H    H         0.000     -3.072   -0.951    0.664
+ GPH           C3     C    CH1       0.000     -1.633   -1.731   -0.750
+ GPH           H3     H    H         0.000     -1.353   -1.578   -1.802
+ GPH           O3     O    OH1       0.000     -2.079   -3.076   -0.564
+ GPH           HO3    H    H         0.000     -1.366   -3.687   -0.796
+ GPH           C2     C    CH1       0.000     -0.421   -1.465    0.147
+ GPH           H2     H    H         0.000      0.410   -2.118   -0.153
+ GPH           O2     O    OH1       0.000     -0.768   -1.727    1.509
+ GPH           HO2    H    H         0.000     -0.003   -1.554    2.075
+ GPH           O4     O    O2        0.000     -3.869   -0.954   -1.252
+ GPH           P1     P    P         0.000     -5.278   -1.562   -0.764
+ GPH           O8     O    OP       -0.666     -5.049   -2.911   -0.120
+ GPH           O9     O    OP       -0.666     -5.911   -0.624    0.240
+ GPH           O10    O    OP       -0.666     -6.197   -1.721   -1.956
+ GPH           C6     C    CH1       0.000     -3.345    1.647   -0.066
+ GPH           H6     H    H         0.000     -3.694    1.381    0.941
+ GPH           O6     O    OH1       0.000     -4.438    1.570   -0.984
+ GPH           HO6    H    H         0.000     -4.130    1.805   -1.870
+ GPH           C7     C    CH2       0.000     -2.789    3.073   -0.054
+ GPH           H7     H    H         0.000     -2.524    3.368   -1.071
+ GPH           H7A    H    H         0.000     -1.899    3.110    0.578
+ GPH           O7     O    OH1       0.000     -3.779    3.966    0.461
+ GPH           HO7    H    H         0.000     -3.427    4.866    0.469
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GPH      C1     n/a    O5     START
+ GPH      H1     C1     .      .
+ GPH      O101   C1     H15    .
+ GPH      H15    O101   .      .
+ GPH      O5     C1     .      END
+ GPH      C5     O5     C6     .
+ GPH      H5     C5     .      .
+ GPH      C4     C5     O4     .
+ GPH      H4     C4     .      .
+ GPH      C3     C4     C2     .
+ GPH      H3     C3     .      .
+ GPH      O3     C3     HO3    .
+ GPH      HO3    O3     .      .
+ GPH      C2     C3     O2     .
+ GPH      H2     C2     .      .
+ GPH      O2     C2     HO2    .
+ GPH      HO2    O2     .      .
+ GPH      O4     C4     P1     .
+ GPH      P1     O4     O10    .
+ GPH      O8     P1     .      .
+ GPH      O9     P1     .      .
+ GPH      O10    P1     .      .
+ GPH      C6     C5     C7     .
+ GPH      H6     C6     .      .
+ GPH      O6     C6     HO6    .
+ GPH      HO6    O6     .      .
+ GPH      C7     C6     O7     .
+ GPH      H7     C7     .      .
+ GPH      H7A    C7     .      .
+ GPH      O7     C7     HO7    .
+ GPH      HO7    O7     .      .
+ GPH      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GPH       C1        C2        single    1.524     0.020     1.524     0.020     
+GPH       O5        C1        single    1.426     0.020     1.426     0.020     
+GPH       O101      C1        single    1.432     0.020     1.432     0.020     
+GPH       H1        C1        single    1.089     0.010     0.989     0.005     
+GPH       C2        C3        single    1.524     0.020     1.524     0.020     
+GPH       O2        C2        single    1.432     0.020     1.432     0.020     
+GPH       H2        C2        single    1.089     0.010     0.989     0.005     
+GPH       C3        C4        single    1.524     0.020     1.524     0.020     
+GPH       O3        C3        single    1.432     0.020     1.432     0.020     
+GPH       H3        C3        single    1.089     0.010     0.989     0.005     
+GPH       C4        C5        single    1.524     0.020     1.524     0.020     
+GPH       O4        C4        single    1.426     0.020     1.426     0.020     
+GPH       H4        C4        single    1.089     0.010     0.989     0.005     
+GPH       C6        C5        single    1.524     0.020     1.524     0.020     
+GPH       C5        O5        single    1.426     0.020     1.426     0.020     
+GPH       H5        C5        single    1.089     0.010     0.989     0.005     
+GPH       C7        C6        single    1.524     0.020     1.524     0.020     
+GPH       O6        C6        single    1.432     0.020     1.432     0.020     
+GPH       H6        C6        single    1.089     0.010     0.989     0.005     
+GPH       O7        C7        single    1.432     0.020     1.432     0.020     
+GPH       H7        C7        single    1.089     0.010     0.989     0.005     
+GPH       H7A       C7        single    1.089     0.010     0.989     0.005     
+GPH       HO2       O2        single    0.970     0.012     0.839     0.014     
+GPH       HO3       O3        single    0.970     0.012     0.839     0.014     
+GPH       P1        O4        single    1.610     0.020     1.610     0.020     
+GPH       O8        P1        deloc     1.510     0.020     1.510     0.020     
+GPH       O9        P1        deloc     1.510     0.020     1.510     0.020     
+GPH       O10       P1        deloc     1.510     0.020     1.510     0.020     
+GPH       HO6       O6        single    0.970     0.012     0.839     0.014     
+GPH       HO7       O7        single    0.970     0.012     0.839     0.014     
+GPH       H15       O101      single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GPH      H1     C1     O101    109.470    3.000
+ GPH      H1     C1     O5      109.470    3.000
+ GPH      O101   C1     O5      109.470    3.000
+ GPH      H1     C1     C2      108.340    3.000
+ GPH      O101   C1     C2      109.470    3.000
+ GPH      O5     C1     C2      109.470    3.000
+ GPH      C1     O101   H15     109.470    3.000
+ GPH      C1     O5     C5      111.800    3.000
+ GPH      O5     C5     H5      109.470    3.000
+ GPH      O5     C5     C4      109.470    3.000
+ GPH      O5     C5     C6      109.470    3.000
+ GPH      H5     C5     C4      108.340    3.000
+ GPH      H5     C5     C6      108.340    3.000
+ GPH      C4     C5     C6      111.000    3.000
+ GPH      C5     C4     H4      108.340    3.000
+ GPH      C5     C4     C3      111.000    3.000
+ GPH      C5     C4     O4      109.470    3.000
+ GPH      H4     C4     C3      108.340    3.000
+ GPH      H4     C4     O4      109.470    3.000
+ GPH      C3     C4     O4      109.470    3.000
+ GPH      C4     C3     H3      108.340    3.000
+ GPH      C4     C3     O3      109.470    3.000
+ GPH      C4     C3     C2      111.000    3.000
+ GPH      H3     C3     O3      109.470    3.000
+ GPH      H3     C3     C2      108.340    3.000
+ GPH      O3     C3     C2      109.470    3.000
+ GPH      C3     O3     HO3     109.470    3.000
+ GPH      C3     C2     H2      108.340    3.000
+ GPH      C3     C2     O2      109.470    3.000
+ GPH      C3     C2     C1      111.000    3.000
+ GPH      H2     C2     O2      109.470    3.000
+ GPH      H2     C2     C1      108.340    3.000
+ GPH      O2     C2     C1      109.470    3.000
+ GPH      C2     O2     HO2     109.470    3.000
+ GPH      C4     O4     P1      120.500    3.000
+ GPH      O4     P1     O8      108.200    3.000
+ GPH      O4     P1     O9      108.200    3.000
+ GPH      O4     P1     O10     108.200    3.000
+ GPH      O8     P1     O9      119.900    3.000
+ GPH      O8     P1     O10     119.900    3.000
+ GPH      O9     P1     O10     119.900    3.000
+ GPH      C5     C6     H6      108.340    3.000
+ GPH      C5     C6     O6      109.470    3.000
+ GPH      C5     C6     C7      111.000    3.000
+ GPH      H6     C6     O6      109.470    3.000
+ GPH      H6     C6     C7      108.340    3.000
+ GPH      O6     C6     C7      109.470    3.000
+ GPH      C6     O6     HO6     109.470    3.000
+ GPH      C6     C7     H7      109.470    3.000
+ GPH      C6     C7     H7A     109.470    3.000
+ GPH      C6     C7     O7      109.470    3.000
+ GPH      H7     C7     H7A     107.900    3.000
+ GPH      H7     C7     O7      109.470    3.000
+ GPH      H7A    C7     O7      109.470    3.000
+ GPH      C7     O7     HO7     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GPH      var_1    O5     C1     O101   H15      -60.072   20.000   1
+ GPH      var_2    C1     O5     C5     C6       180.000   20.000   1
+ GPH      var_3    O5     C5     C4     O4       180.000   20.000   3
+ GPH      var_4    C5     C4     C3     C2        60.000   20.000   3
+ GPH      var_5    C4     C3     O3     HO3     -179.525   20.000   1
+ GPH      var_6    C4     C3     C2     O2        60.000   20.000   3
+ GPH      var_7    C3     C2     C1     O5        60.000   20.000   3
+ GPH      var_8    C3     C2     O2     HO2     -179.685   20.000   1
+ GPH      var_9    C5     C4     O4     P1      -128.289   20.000   1
+ GPH      var_10   C4     O4     P1     O10     -176.049   20.000   1
+ GPH      var_11   O5     C5     C6     C7        54.188   20.000   3
+ GPH      var_12   C5     C6     O6     HO6      -60.006   20.000   1
+ GPH      var_13   C5     C6     C7     O7      -175.001   20.000   3
+ GPH      var_14   C6     C7     O7     HO7     -179.984   20.000   1
+ GPH      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GPH      chir_01  C1     C2     O5     O101      negativ
+ GPH      chir_02  C2     C1     C3     O2        positiv
+ GPH      chir_03  C3     C2     C4     O3        positiv
+ GPH      chir_04  C4     C3     C5     O4        negativ
+ GPH      chir_05  C5     C4     C6     O5        negativ
+ GPH      chir_06  C6     C5     C7     O6        negativ
+# ------------------------------------------------------

@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1Y6     1Y6      "4-fluorobenzoic acid"     NON-POLYMER     14     10     .     
+#
+data_comp_1Y6
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+1Y6     CBH     C       C       0       2.321       -0.298      0.409       
+1Y6     OAF     O       O       0       2.670       -1.283      1.084       
+1Y6     CBJ     C       CR6     0       0.857       -0.113      0.147       
+1Y6     CAP     C       CR16    0       0.234       1.096       0.443       
+1Y6     CAN     C       CR16    0       -1.125      1.273       0.202       
+1Y6     CBI     C       CR6     0       -1.835      0.226       -0.335      
+1Y6     FAM     F       F       0       -3.165      0.394       -0.573      
+1Y6     CAO     C       CR16    0       -1.258      -0.983      -0.642      
+1Y6     CAQ     C       CR16    0       0.102       -1.149      -0.396      
+1Y6     OXT     O       OC      -1      3.105       0.545       -0.063      
+1Y6     H26     H       H       0       0.736       1.802       0.811       
+1Y6     H27     H       H       0       -1.548      2.089       0.402       
+1Y6     H28     H       H       0       -1.771      -1.682      -1.009      
+1Y6     H29     H       H       0       0.513       -1.970      -0.600      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1Y6       CBH       OAF       DOUBLE    n         1.244     0.020     1.244     0.020     
+1Y6       CBH       CBJ       SINGLE    n         1.498     0.020     1.498     0.020     
+1Y6       CBJ       CAP       DOUBLE    y         1.385     0.010     1.385     0.010     
+1Y6       CBJ       CAQ       SINGLE    y         1.385     0.010     1.385     0.010     
+1Y6       CAP       CAN       SINGLE    y         1.384     0.010     1.384     0.010     
+1Y6       CAO       CAQ       DOUBLE    y         1.384     0.010     1.384     0.010     
+1Y6       CAN       CBI       DOUBLE    y         1.368     0.010     1.368     0.010     
+1Y6       CBI       CAO       SINGLE    y         1.368     0.010     1.368     0.010     
+1Y6       CBI       FAM       SINGLE    n         1.361     0.010     1.361     0.010     
+1Y6       CBH       OXT       SINGLE    n         1.244     0.020     1.244     0.020     
+1Y6       CAP       H26       SINGLE    n         1.082     0.013     0.941     0.017     
+1Y6       CAN       H27       SINGLE    n         1.082     0.013     0.941     0.015     
+1Y6       CAO       H28       SINGLE    n         1.082     0.013     0.941     0.015     
+1Y6       CAQ       H29       SINGLE    n         1.082     0.013     0.941     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+1Y6         OAF         CBH         CBJ     117.791    1.50
+1Y6         OAF         CBH         OXT     124.418    1.50
+1Y6         CBJ         CBH         OXT     117.791    1.50
+1Y6         CBH         CBJ         CAP     120.404    1.50
+1Y6         CBH         CBJ         CAQ     120.404    1.50
+1Y6         CAP         CBJ         CAQ     119.193    1.50
+1Y6         CBJ         CAP         CAN     120.561    1.50
+1Y6         CBJ         CAP         H26     119.828    1.50
+1Y6         CAN         CAP         H26     119.611    1.50
+1Y6         CAP         CAN         CBI     118.316    1.50
+1Y6         CAP         CAN         H27     120.912    1.50
+1Y6         CBI         CAN         H27     120.772    1.50
+1Y6         CAN         CBI         CAO     123.054    1.50
+1Y6         CAN         CBI         FAM     118.473    1.50
+1Y6         CAO         CBI         FAM     118.473    1.50
+1Y6         CAQ         CAO         CBI     118.316    1.50
+1Y6         CAQ         CAO         H28     120.912    1.50
+1Y6         CBI         CAO         H28     120.772    1.50
+1Y6         CBJ         CAQ         CAO     120.561    1.50
+1Y6         CBJ         CAQ         H29     119.828    1.50
+1Y6         CAO         CAQ         H29     119.611    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+1Y6             sp2_sp2_1         OAF         CBH         CBJ         CAP     180.000   10.00     2
+1Y6       const_sp2_sp2_2         CAN         CAP         CBJ         CBH     180.000   10.00     2
+1Y6              const_22         CAO         CAQ         CBJ         CBH     180.000   10.00     2
+1Y6       const_sp2_sp2_5         CBI         CAN         CAP         CBJ       0.000   10.00     2
+1Y6              const_10         CAP         CAN         CBI         FAM     180.000   10.00     2
+1Y6              const_14         CAQ         CAO         CBI         FAM     180.000   10.00     2
+1Y6              const_17         CBI         CAO         CAQ         CBJ       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+1Y6    plan-1         CAN   0.020
+1Y6    plan-1         CAO   0.020
+1Y6    plan-1         CAP   0.020
+1Y6    plan-1         CAQ   0.020
+1Y6    plan-1         CBH   0.020
+1Y6    plan-1         CBI   0.020
+1Y6    plan-1         CBJ   0.020
+1Y6    plan-1         FAM   0.020
+1Y6    plan-1         H26   0.020
+1Y6    plan-1         H27   0.020
+1Y6    plan-1         H28   0.020
+1Y6    plan-1         H29   0.020
+1Y6    plan-2         CBH   0.020
+1Y6    plan-2         CBJ   0.020
+1Y6    plan-2         OAF   0.020
+1Y6    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+1Y6 SMILES           ACDLabs              12.01 "Fc1ccc(C(=O)O)cc1"
+1Y6 InChI            InChI                1.03  "InChI=1S/C7H5FO2/c8-6-3-1-5(2-4-6)7(9)10/h1-4H,(H,9,10)"
+1Y6 InChIKey         InChI                1.03  BBYDXOIZLAWGSL-UHFFFAOYSA-N
+1Y6 SMILES_CANONICAL CACTVS               3.385 "OC(=O)c1ccc(F)cc1"
+1Y6 SMILES           CACTVS               3.385 "OC(=O)c1ccc(F)cc1"
+1Y6 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1cc(ccc1C(=O)O)F"
+1Y6 SMILES           "OpenEye OEToolkits" 1.7.6 "c1cc(ccc1C(=O)O)F"
+1Y6 ?                acedrg               202         "dictionary generator"                  
+1Y6 ?                acedrg_database      11          "data source"                           
+1Y6 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+1Y6 ?                refmac5              5.8.0189    "optimization tool"                     

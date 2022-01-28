@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NIS     NIS     2-NITROPROPANE     NON-POLYMER     13     6     .     
+#
+data_comp_NIS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NIS     C1      C       CH3     0       1.221       -0.695      -0.196      
+NIS     C2      C       CH1     0       -0.097      0.041       -0.408      
+NIS     C4      C       CH3     0       -0.194      1.342       0.382       
+NIS     N3      N       N       1       -1.252      -0.877      -0.047      
+NIS     O6      O       O       0       -1.348      -1.257      1.104       
+NIS     O5      O       OC      -1      -2.026      -1.189      -0.930      
+NIS     H11     H       H       0       1.135       -1.612      -0.508      
+NIS     H12     H       H       0       1.451       -0.698      0.748       
+NIS     H13     H       H       0       1.925       -0.250      -0.699      
+NIS     H2      H       H       0       -0.154      0.272       -1.365      
+NIS     H41     H       H       0       -1.129      1.556       0.548       
+NIS     H42     H       H       0       0.212       2.062       -0.129      
+NIS     H43     H       H       0       0.268       1.250       1.231       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NIS       C1        C2        SINGLE    n         1.520     0.015     1.520     0.015     
+NIS       C2        C4        SINGLE    n         1.520     0.015     1.520     0.015     
+NIS       C2        N3        SINGLE    n         1.514     0.015     1.514     0.015     
+NIS       N3        O6        DOUBLE    n         1.215     0.012     1.215     0.012     
+NIS       N3        O5        SINGLE    n         1.215     0.012     1.215     0.012     
+NIS       C1        H11       SINGLE    n         1.089     0.010     0.972     0.015     
+NIS       C1        H12       SINGLE    n         1.089     0.010     0.972     0.015     
+NIS       C1        H13       SINGLE    n         1.089     0.010     0.972     0.015     
+NIS       C2        H2        SINGLE    n         1.089     0.010     0.986     0.020     
+NIS       C4        H41       SINGLE    n         1.089     0.010     0.972     0.015     
+NIS       C4        H42       SINGLE    n         1.089     0.010     0.972     0.015     
+NIS       C4        H43       SINGLE    n         1.089     0.010     0.972     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NIS          C2          C1         H11     109.520    1.50
+NIS          C2          C1         H12     109.520    1.50
+NIS          C2          C1         H13     109.520    1.50
+NIS         H11          C1         H12     109.386    1.50
+NIS         H11          C1         H13     109.386    1.50
+NIS         H12          C1         H13     109.386    1.50
+NIS          C1          C2          C4     111.834    1.50
+NIS          C1          C2          N3     107.790    2.06
+NIS          C1          C2          H2     107.146    1.50
+NIS          C4          C2          N3     107.790    2.06
+NIS          C4          C2          H2     107.146    1.50
+NIS          N3          C2          H2     108.956    1.50
+NIS          C2          C4         H41     109.520    1.50
+NIS          C2          C4         H42     109.520    1.50
+NIS          C2          C4         H43     109.520    1.50
+NIS         H41          C4         H42     109.386    1.50
+NIS         H41          C4         H43     109.386    1.50
+NIS         H42          C4         H43     109.386    1.50
+NIS          C2          N3          O6     117.990    1.50
+NIS          C2          N3          O5     117.995    1.50
+NIS          O6          N3          O5     124.025    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NIS             sp3_sp3_1         H11          C1          C2          C4     180.000   10.00     3
+NIS            sp3_sp3_10          C1          C2          C4         H41     180.000   10.00     3
+NIS             sp2_sp3_2          O6          N3          C2          C1     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NIS    plan-1          C2   0.020
+NIS    plan-1          N3   0.020
+NIS    plan-1          O5   0.020
+NIS    plan-1          O6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NIS SMILES           ACDLabs              10.04 "[O-][N+](=O)C(C)C"
+NIS SMILES_CANONICAL CACTVS               3.341 "CC(C)[N+]([O-])=O"
+NIS SMILES           CACTVS               3.341 "CC(C)[N+]([O-])=O"
+NIS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)[N+](=O)[O-]"
+NIS SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)[N+](=O)[O-]"
+NIS InChI            InChI                1.03  "InChI=1S/C3H7NO2/c1-3(2)4(5)6/h3H,1-2H3"
+NIS InChIKey         InChI                1.03  FGLBSLMDCBOPQK-UHFFFAOYSA-N
+NIS ?                acedrg               190         "dictionary generator"                  
+NIS ?                acedrg_database      11          "data source"                           
+NIS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NIS ?                refmac5              5.8.0158    "optimization tool"                     

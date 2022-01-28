@@ -1,0 +1,151 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BET     BET      "TRIMETHYL GLYCINE"     NON-POLYMER     19     8     .     
+#
+data_comp_BET
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BET     N       N       NT      1       -0.059      36.153      32.964      
+BET     CA      C       CH2     0       0.166       36.661      31.557      
+BET     C       C       C       0       0.360       35.662      30.426      
+BET     O1      O       O       0       -0.670      35.236      29.865      
+BET     O2      O       OC      -1      1.534       35.348      30.149      
+BET     C1      C       CH3     0       -0.220      37.336      33.873      
+BET     C2      C       CH3     0       -1.304      35.318      33.038      
+BET     C3      C       CH3     0       1.114       35.344      33.433      
+BET     HA1     H       H       0       0.965       37.236      31.580      
+BET     HA2     H       H       0       -0.609      37.222      31.323      
+BET     H11     H       H       0       -0.364      37.027      34.780      
+BET     H12     H       H       0       -0.982      37.859      33.582      
+BET     H13     H       H       0       0.582       37.877      33.836      
+BET     H21     H       H       0       -1.500      35.117      33.966      
+BET     H22     H       H       0       -1.171      34.492      32.550      
+BET     H23     H       H       0       -2.040      35.813      32.648      
+BET     H31     H       H       0       1.009       35.143      34.375      
+BET     H32     H       H       0       1.925       35.857      33.297      
+BET     H33     H       H       0       1.162       34.518      32.930      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BET       N         CA        SINGLE    n         1.504     0.012     1.504     0.012     
+BET       N         C1        SINGLE    n         1.497     0.010     1.497     0.010     
+BET       N         C2        SINGLE    n         1.497     0.010     1.497     0.010     
+BET       N         C3        SINGLE    n         1.497     0.010     1.497     0.010     
+BET       CA        C         SINGLE    n         1.519     0.012     1.519     0.012     
+BET       C         O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+BET       C         O2        SINGLE    n         1.247     0.019     1.247     0.019     
+BET       CA        HA1       SINGLE    n         1.089     0.010     0.985     0.020     
+BET       CA        HA2       SINGLE    n         1.089     0.010     0.985     0.020     
+BET       C1        H11       SINGLE    n         1.089     0.010     0.969     0.015     
+BET       C1        H12       SINGLE    n         1.089     0.010     0.969     0.015     
+BET       C1        H13       SINGLE    n         1.089     0.010     0.969     0.015     
+BET       C2        H21       SINGLE    n         1.089     0.010     0.969     0.015     
+BET       C2        H22       SINGLE    n         1.089     0.010     0.969     0.015     
+BET       C2        H23       SINGLE    n         1.089     0.010     0.969     0.015     
+BET       C3        H31       SINGLE    n         1.089     0.010     0.969     0.015     
+BET       C3        H32       SINGLE    n         1.089     0.010     0.969     0.015     
+BET       C3        H33       SINGLE    n         1.089     0.010     0.969     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BET          CA           N          C1     109.725    1.96
+BET          CA           N          C2     109.725    1.96
+BET          CA           N          C3     109.725    1.96
+BET          C1           N          C2     109.041    1.50
+BET          C1           N          C3     109.041    1.50
+BET          C2           N          C3     109.041    1.50
+BET           N          CA           C     117.716    1.50
+BET           N          CA         HA1     107.358    1.50
+BET           N          CA         HA2     107.358    1.50
+BET           C          CA         HA1     107.795    1.50
+BET           C          CA         HA2     107.795    1.50
+BET         HA1          CA         HA2     108.926    2.58
+BET          CA           C          O1     116.827    3.00
+BET          CA           C          O2     116.827    3.00
+BET          O1           C          O2     126.346    1.50
+BET           N          C1         H11     108.994    1.50
+BET           N          C1         H12     108.994    1.50
+BET           N          C1         H13     108.994    1.50
+BET         H11          C1         H12     109.693    1.55
+BET         H11          C1         H13     109.693    1.55
+BET         H12          C1         H13     109.693    1.55
+BET           N          C2         H21     108.994    1.50
+BET           N          C2         H22     108.994    1.50
+BET           N          C2         H23     108.994    1.50
+BET         H21          C2         H22     109.693    1.55
+BET         H21          C2         H23     109.693    1.55
+BET         H22          C2         H23     109.693    1.55
+BET           N          C3         H31     108.994    1.50
+BET           N          C3         H32     108.994    1.50
+BET           N          C3         H33     108.994    1.50
+BET         H31          C3         H32     109.693    1.55
+BET         H31          C3         H33     109.693    1.55
+BET         H32          C3         H33     109.693    1.55
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BET             sp3_sp3_1           C          CA           N          C1     180.000   10.00     3
+BET            sp3_sp3_10         H11          C1           N          CA     180.000   10.00     3
+BET            sp3_sp3_19         H21          C2           N          CA     180.000   10.00     3
+BET            sp3_sp3_28         H31          C3           N          CA     180.000   10.00     3
+BET             sp2_sp3_2          O1           C          CA           N     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BET    plan-1           C   0.020
+BET    plan-1          CA   0.020
+BET    plan-1          O1   0.020
+BET    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BET SMILES           ACDLabs              10.04 "O=C(O)C[N+](C)(C)C"
+BET SMILES_CANONICAL CACTVS               3.341 "C[N+](C)(C)CC(O)=O"
+BET SMILES           CACTVS               3.341 "C[N+](C)(C)CC(O)=O"
+BET SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[N+](C)(C)CC(=O)O"
+BET SMILES           "OpenEye OEToolkits" 1.5.0 "C[N+](C)(C)CC(=O)O"
+BET InChI            InChI                1.03  "InChI=1S/C5H11NO2/c1-6(2,3)4-5(7)8/h4H2,1-3H3/p+1"
+BET InChIKey         InChI                1.03  KWIUHFFTVRNATP-UHFFFAOYSA-O
+BET ?                acedrg               202         "dictionary generator"                  
+BET ?                acedrg_database      11          "data source"                           
+BET ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BET ?                refmac5              5.8.0189    "optimization tool"                     

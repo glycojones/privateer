@@ -1,0 +1,154 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3AW     3AW     6-METHYL-1,3,5-TRIAZINE-2,4-DIAMINE     non-polymer     16     9     .     
+#
+data_comp_3AW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3AW     N1      N       NRD6    0       11.507      2.055       13.643      
+3AW     C6      C       CR6     0       11.185      0.765       13.460      
+3AW     C5      C       CH3     0       10.735      -0.010      14.651      
+3AW     NAA     N       NRD6    0       11.233      0.122       12.282      
+3AW     C2      C       CR6     0       11.911      2.723       12.527      
+3AW     CAI     C       CR6     0       11.648      0.871       11.221      
+3AW     NAH     N       NRD6    0       11.997      2.175       11.294      
+3AW     NAI     N       NH2     0       11.710      0.270       10.034      
+3AW     N3      N       NH2     0       12.242      4.005       12.667      
+3AW     H51C    H       H       0       11.177      0.329       15.447      
+3AW     H52C    H       H       0       10.958      -0.948      14.535      
+3AW     H53C    H       H       0       9.774       0.082       14.753      
+3AW     HAI1    H       H       0       12.366      0.459       9.482       
+3AW     HAI2    H       H       0       11.095      -0.313      9.805       
+3AW     H31N    H       H       0       12.739      4.256       13.345      
+3AW     H32N    H       H       0       11.961      4.595       12.081      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3AW       C6        NAA       SINGLE    y         1.335     0.010     1.335     0.010     
+3AW       NAA       CAI       DOUBLE    y         1.355     0.010     1.355     0.010     
+3AW       C6        C5        SINGLE    n         1.489     0.010     1.489     0.010     
+3AW       N1        C6        DOUBLE    y         1.335     0.010     1.335     0.010     
+3AW       N1        C2        SINGLE    y         1.355     0.010     1.355     0.010     
+3AW       C2        NAH       DOUBLE    y         1.343     0.010     1.343     0.010     
+3AW       C2        N3        SINGLE    n         1.331     0.010     1.331     0.010     
+3AW       CAI       NAH       SINGLE    y         1.343     0.010     1.343     0.010     
+3AW       CAI       NAI       SINGLE    n         1.331     0.010     1.331     0.010     
+3AW       C5        H51C      SINGLE    n         1.089     0.010     0.971     0.014     
+3AW       C5        H52C      SINGLE    n         1.089     0.010     0.971     0.014     
+3AW       C5        H53C      SINGLE    n         1.089     0.010     0.971     0.014     
+3AW       NAI       HAI1      SINGLE    n         1.016     0.010     0.877     0.020     
+3AW       NAI       HAI2      SINGLE    n         1.016     0.010     0.877     0.020     
+3AW       N3        H31N      SINGLE    n         1.016     0.010     0.877     0.020     
+3AW       N3        H32N      SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3AW          C6          N1          C2     115.648    1.50
+3AW         NAA          C6          C5     117.297    1.50
+3AW         NAA          C6          N1     125.406    1.50
+3AW          C5          C6          N1     117.297    1.50
+3AW          C6          C5        H51C     109.546    1.50
+3AW          C6          C5        H52C     109.546    1.50
+3AW          C6          C5        H53C     109.546    1.50
+3AW        H51C          C5        H52C     109.397    1.50
+3AW        H51C          C5        H53C     109.397    1.50
+3AW        H52C          C5        H53C     109.397    1.50
+3AW          C6         NAA         CAI     115.648    1.50
+3AW          N1          C2         NAH     124.460    1.50
+3AW          N1          C2          N3     117.383    1.50
+3AW         NAH          C2          N3     118.157    1.50
+3AW         NAA         CAI         NAH     124.460    1.50
+3AW         NAA         CAI         NAI     117.383    1.50
+3AW         NAH         CAI         NAI     118.157    1.50
+3AW          C2         NAH         CAI     114.379    1.50
+3AW         CAI         NAI        HAI1     119.826    1.50
+3AW         CAI         NAI        HAI2     119.826    1.50
+3AW        HAI1         NAI        HAI2     120.348    1.96
+3AW          C2          N3        H31N     119.826    1.50
+3AW          C2          N3        H32N     119.826    1.50
+3AW        H31N          N3        H32N     120.348    1.96
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3AW       const_sp2_sp2_2          C5          C6          N1          C2     180.000   10.00     2
+3AW              const_12          N3          C2          N1          C6     180.000   10.00     2
+3AW             sp2_sp3_1         NAA          C6          C5        H51C     150.000   10.00     6
+3AW       const_sp2_sp2_4          C5          C6         NAA         CAI     180.000   10.00     2
+3AW       const_sp2_sp2_6         NAI         CAI         NAA          C6     180.000   10.00     2
+3AW              const_10          N3          C2         NAH         CAI     180.000   10.00     2
+3AW             sp2_sp2_1          N1          C2          N3        H31N     180.000   10.00     2
+3AW       const_sp2_sp2_8         NAI         CAI         NAH          C2     180.000   10.00     2
+3AW             sp2_sp2_5         NAA         CAI         NAI        HAI1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3AW    plan-1          C2   0.020
+3AW    plan-1          C5   0.020
+3AW    plan-1          C6   0.020
+3AW    plan-1         CAI   0.020
+3AW    plan-1          N1   0.020
+3AW    plan-1          N3   0.020
+3AW    plan-1         NAA   0.020
+3AW    plan-1         NAH   0.020
+3AW    plan-1         NAI   0.020
+3AW    plan-2         CAI   0.020
+3AW    plan-2        HAI1   0.020
+3AW    plan-2        HAI2   0.020
+3AW    plan-2         NAI   0.020
+3AW    plan-3          C2   0.020
+3AW    plan-3        H31N   0.020
+3AW    plan-3        H32N   0.020
+3AW    plan-3          N3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3AW SMILES           ACDLabs              10.04 "n1c(nc(nc1C)N)N"
+3AW SMILES_CANONICAL CACTVS               3.352 "Cc1nc(N)nc(N)n1"
+3AW SMILES           CACTVS               3.352 "Cc1nc(N)nc(N)n1"
+3AW SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "Cc1nc(nc(n1)N)N"
+3AW SMILES           "OpenEye OEToolkits" 1.6.1 "Cc1nc(nc(n1)N)N"
+3AW InChI            InChI                1.03  "InChI=1S/C4H7N5/c1-2-7-3(5)9-4(6)8-2/h1H3,(H4,5,6,7,8,9)"
+3AW InChIKey         InChI                1.03  NJYZCEFQAIUHSD-UHFFFAOYSA-N
+3AW ?                acedrg               190         "dictionary generator"                  
+3AW ?                acedrg_database      11          "data source"                           
+3AW ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3AW ?                refmac5              5.8.0158    "optimization tool"                     

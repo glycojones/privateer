@@ -1,0 +1,156 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+WCE     WCE      3-CHLORO-BENZAMIDE     NON-POLYMER     16     10     .     
+#
+data_comp_WCE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+WCE     C1      C       CR6     0       -1.555      1.084       0.221       
+WCE     CL      CL      CL      0       -2.318      2.609       0.573       
+WCE     C2      C       CR16    0       -0.177      1.030       0.064       
+WCE     C3      C       CR6     0       0.435       -0.193      -0.216      
+WCE     C4      C       CR16    0       -0.347      -1.342      -0.340      
+WCE     C5      C       CR16    0       -1.725      -1.268      -0.180      
+WCE     C6      C       CR16    0       -2.342      -0.058      0.101       
+WCE     C7      C       C       0       1.924       -0.270      -0.390      
+WCE     N       N       NH2     0       2.702       0.221       0.567       
+WCE     O       O       O       0       2.392       -0.785      -1.419      
+WCE     H2      H       H       0       0.338       1.813       0.150       
+WCE     H4      H       H       0       0.059       -2.169      -0.530      
+WCE     H5      H       H       0       -2.245      -2.043      -0.263      
+WCE     H6      H       H       0       -3.275      -0.010      0.208       
+WCE     HN1     H       H       0       3.587       0.230       0.460       
+WCE     HN2     H       H       0       2.359       0.540       1.327       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+WCE       C1        CL        SINGLE    n         1.742     0.010     1.742     0.010     
+WCE       C1        C2        DOUBLE    y         1.381     0.010     1.381     0.010     
+WCE       C1        C6        SINGLE    y         1.378     0.014     1.378     0.014     
+WCE       C2        C3        SINGLE    y         1.388     0.010     1.388     0.010     
+WCE       C3        C4        DOUBLE    y         1.389     0.010     1.389     0.010     
+WCE       C3        C7        SINGLE    n         1.500     0.010     1.500     0.010     
+WCE       C4        C5        SINGLE    y         1.383     0.010     1.383     0.010     
+WCE       C5        C6        DOUBLE    y         1.378     0.011     1.378     0.011     
+WCE       C7        N         SINGLE    n         1.326     0.010     1.326     0.010     
+WCE       C7        O         DOUBLE    n         1.241     0.011     1.241     0.011     
+WCE       C2        H2        SINGLE    n         1.082     0.013     0.941     0.016     
+WCE       C4        H4        SINGLE    n         1.082     0.013     0.941     0.017     
+WCE       C5        H5        SINGLE    n         1.082     0.013     0.937     0.012     
+WCE       C6        H6        SINGLE    n         1.082     0.013     0.941     0.017     
+WCE       N         HN1       SINGLE    n         1.016     0.010     0.891     0.020     
+WCE       N         HN2       SINGLE    n         1.016     0.010     0.891     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+WCE          CL          C1          C2     119.462    1.50
+WCE          CL          C1          C6     119.275    1.50
+WCE          C2          C1          C6     121.263    1.50
+WCE          C1          C2          C3     119.257    1.50
+WCE          C1          C2          H2     120.112    1.50
+WCE          C3          C2          H2     120.631    1.50
+WCE          C2          C3          C4     119.730    1.50
+WCE          C2          C3          C7     119.920    2.89
+WCE          C4          C3          C7     120.350    2.37
+WCE          C3          C4          C5     120.309    1.50
+WCE          C3          C4          H4     119.920    1.50
+WCE          C5          C4          H4     119.771    1.50
+WCE          C4          C5          C6     120.714    1.50
+WCE          C4          C5          H5     119.719    1.50
+WCE          C6          C5          H5     119.568    1.50
+WCE          C1          C6          C5     118.727    1.50
+WCE          C1          C6          H6     120.627    1.50
+WCE          C5          C6          H6     120.646    1.50
+WCE          C3          C7           N     118.026    1.50
+WCE          C3          C7           O     119.820    1.50
+WCE           N          C7           O     122.155    1.50
+WCE          C7           N         HN1     120.236    2.75
+WCE          C7           N         HN2     120.236    2.75
+WCE         HN1           N         HN2     119.529    2.83
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+WCE       const_sp2_sp2_3          CL          C1          C2          C3     180.000   10.00     2
+WCE              const_23          CL          C1          C6          C5     180.000   10.00     2
+WCE       const_sp2_sp2_6          C1          C2          C3          C7     180.000   10.00     2
+WCE              const_11          C7          C3          C4          C5     180.000   10.00     2
+WCE             sp2_sp2_1          C2          C3          C7           N     180.000   10.00     2
+WCE              const_13          C3          C4          C5          C6       0.000   10.00     2
+WCE              const_17          C4          C5          C6          C1       0.000   10.00     2
+WCE             sp2_sp2_7           O          C7           N         HN1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+WCE    plan-1          C1   0.020
+WCE    plan-1          C2   0.020
+WCE    plan-1          C3   0.020
+WCE    plan-1          C4   0.020
+WCE    plan-1          C5   0.020
+WCE    plan-1          C6   0.020
+WCE    plan-1          C7   0.020
+WCE    plan-1          CL   0.020
+WCE    plan-1          H2   0.020
+WCE    plan-1          H4   0.020
+WCE    plan-1          H5   0.020
+WCE    plan-1          H6   0.020
+WCE    plan-2          C3   0.020
+WCE    plan-2          C7   0.020
+WCE    plan-2           N   0.020
+WCE    plan-2           O   0.020
+WCE    plan-3          C7   0.020
+WCE    plan-3         HN1   0.020
+WCE    plan-3         HN2   0.020
+WCE    plan-3           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+WCE SMILES           ACDLabs              12.01 "O=C(c1cc(Cl)ccc1)N"
+WCE InChI            InChI                1.03  "InChI=1S/C7H6ClNO/c8-6-3-1-2-5(4-6)7(9)10/h1-4H,(H2,9,10)"
+WCE InChIKey         InChI                1.03  MJTGQALMWUUPQM-UHFFFAOYSA-N
+WCE SMILES_CANONICAL CACTVS               3.385 "NC(=O)c1cccc(Cl)c1"
+WCE SMILES           CACTVS               3.385 "NC(=O)c1cccc(Cl)c1"
+WCE SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1cc(cc(c1)Cl)C(=O)N"
+WCE SMILES           "OpenEye OEToolkits" 1.7.6 "c1cc(cc(c1)Cl)C(=O)N"
+WCE ?                acedrg               202         "dictionary generator"                  
+WCE ?                acedrg_database      11          "data source"                           
+WCE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+WCE ?                refmac5              5.8.0189    "optimization tool"                     

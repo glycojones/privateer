@@ -1,0 +1,103 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NEH     NEH      ETHANAMINE     NON-POLYMER     10     3     .     
+#
+data_comp_NEH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NEH     N       N       NT2     0       -2.036      -3.054      -2.280      
+NEH     CA      C       CH2     0       -1.885      -4.098      -1.262      
+NEH     CB      C       CH3     0       -1.723      -5.480      -1.851      
+NEH     H       H       H       0       -2.225      -2.278      -1.893      
+NEH     HN1     H       H       0       -2.714      -3.252      -2.818      
+NEH     HA2     H       H       0       -2.673      -4.088      -0.679      
+NEH     HA3     H       H       0       -1.101      -3.891      -0.710      
+NEH     HB1     H       H       0       -0.905      -5.881      -1.514      
+NEH     HB2     H       H       0       -1.678      -5.422      -2.819      
+NEH     HB3     H       H       0       -2.481      -6.031      -1.596      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NEH       N         CA        SINGLE    n         1.464     0.020     1.464     0.020     
+NEH       CA        CB        SINGLE    n         1.508     0.017     1.508     0.017     
+NEH       N         H         SINGLE    n         1.036     0.016     0.888     0.020     
+NEH       N         HN1       SINGLE    n         1.036     0.016     0.888     0.020     
+NEH       CA        HA2       SINGLE    n         1.089     0.010     0.980     0.015     
+NEH       CA        HA3       SINGLE    n         1.089     0.010     0.980     0.015     
+NEH       CB        HB1       SINGLE    n         1.089     0.010     0.971     0.015     
+NEH       CB        HB2       SINGLE    n         1.089     0.010     0.971     0.015     
+NEH       CB        HB3       SINGLE    n         1.089     0.010     0.971     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NEH          CA           N           H     109.962    3.00
+NEH          CA           N         HN1     109.962    3.00
+NEH           H           N         HN1     107.243    3.00
+NEH           N          CA          CB     111.883    2.59
+NEH           N          CA         HA2     108.870    1.50
+NEH           N          CA         HA3     108.870    1.50
+NEH          CB          CA         HA2     109.131    1.50
+NEH          CB          CA         HA3     109.131    1.50
+NEH         HA2          CA         HA3     107.873    1.50
+NEH          CA          CB         HB1     109.538    1.50
+NEH          CA          CB         HB2     109.538    1.50
+NEH          CA          CB         HB3     109.538    1.50
+NEH         HB1          CB         HB2     109.415    1.50
+NEH         HB1          CB         HB3     109.415    1.50
+NEH         HB2          CB         HB3     109.415    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NEH             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+NEH             sp3_sp3_7           N          CA          CB         HB1     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NEH SMILES           ACDLabs              10.04 NCC
+NEH SMILES_CANONICAL CACTVS               3.341 CCN
+NEH SMILES           CACTVS               3.341 CCN
+NEH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCN
+NEH SMILES           "OpenEye OEToolkits" 1.5.0 CCN
+NEH InChI            InChI                1.03  InChI=1S/C2H7N/c1-2-3/h2-3H2,1H3
+NEH InChIKey         InChI                1.03  QUSNBJAOOMFDIB-UHFFFAOYSA-N
+NEH ?                acedrg               202         "dictionary generator"                  
+NEH ?                acedrg_database      11          "data source"                           
+NEH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NEH ?                refmac5              5.8.0189    "optimization tool"                     

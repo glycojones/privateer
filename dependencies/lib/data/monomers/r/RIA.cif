@@ -1,0 +1,416 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RIA      RIA '2'-O-[(5'-PHOSPHO)RIBOSYL]ADENOSINE-' non-polymer        55  36 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RIA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RIA           O3X    O    OP       -0.666      0.000    0.000    0.000
+ RIA           "P'"   P    P         0.000     -1.375   -0.237    0.584
+ RIA           O1X    O    OP       -0.666     -1.732    0.904    1.511
+ RIA           O2X    O    OP       -0.666     -1.376   -1.536    1.360
+ RIA           "O5'"  O    O2        0.000     -2.457   -0.321   -0.604
+ RIA           "C5'"  C    CH2       0.000     -2.408    0.928   -1.296
+ RIA           "H5'1" H    H         0.000     -1.404    1.084   -1.694
+ RIA           "H5'2" H    H         0.000     -2.654    1.737   -0.604
+ RIA           "C4'"  C    CH1       0.000     -3.418    0.914   -2.445
+ RIA           "H4'"  H    H         0.000     -3.176    0.114   -3.158
+ RIA           "O1'"  O    O2        0.000     -4.759    0.743   -1.934
+ RIA           "C3'"  C    CH1       0.000     -3.441    2.283   -3.161
+ RIA           "H3'"  H    H         0.000     -3.093    3.077   -2.485
+ RIA           "O3'"  O    OH1       0.000     -2.638    2.243   -4.342
+ RIA           "HO3'" H    H         0.000     -2.663    3.106   -4.777
+ RIA           "C2'"  C    CH1       0.000     -4.930    2.493   -3.523
+ RIA           "H2'"  H    H         0.000     -5.323    3.392   -3.028
+ RIA           "O2'"  O    OH1       0.000     -5.091    2.593   -4.939
+ RIA           "HO2'" H    H         0.000     -6.025    2.724   -5.148
+ RIA           "C1'"  C    CH1       0.000     -5.629    1.228   -2.980
+ RIA           "H1'"  H    H         0.000     -5.729    0.475   -3.774
+ RIA           O2A    O    O2        0.000     -6.911    1.560   -2.445
+ RIA           C2A    C    CH1       0.000     -7.471    0.348   -1.934
+ RIA           H2A    H    H         0.000     -6.677   -0.320   -1.572
+ RIA           C3A    C    CH1       0.000     -8.319   -0.357   -3.018
+ RIA           H3A    H    H         0.000     -7.946   -1.375   -3.196
+ RIA           O3A    O    OH1       0.000     -8.311    0.399   -4.231
+ RIA           HO3A   H    H         0.000     -8.893   -0.023   -4.877
+ RIA           C4A    C    CH1       0.000     -9.741   -0.398   -2.415
+ RIA           H4A    H    H         0.000    -10.329    0.463   -2.765
+ RIA           C5A    C    CH2       0.000    -10.442   -1.706   -2.785
+ RIA           "H5''" H    H         0.000     -9.838   -2.550   -2.445
+ RIA           "H5'"  H    H         0.000    -10.562   -1.760   -3.869
+ RIA           O5A    O    O2        0.000    -11.725   -1.753   -2.159
+ RIA           P      P    P         0.000    -12.401   -3.150   -2.589
+ RIA           OP2    O    OP       -0.666    -13.770   -3.262   -1.955
+ RIA           OP1    O    OP       -0.666    -11.532   -4.296   -2.120
+ RIA           OP3    O    OP       -0.666    -12.537   -3.202   -4.095
+ RIA           C1A    C    CH1       0.000     -8.482    0.646   -0.805
+ RIA           H1A    H    H         0.000     -8.876    1.667   -0.904
+ RIA           "O4'"  O    O2        0.000     -9.539   -0.321   -0.988
+ RIA           N9     N    NR5       0.000     -7.850    0.468    0.505
+ RIA           C4     C    CR56      0.000     -7.219    1.439    1.239
+ RIA           C5     C    CR56      0.000     -6.770    0.808    2.412
+ RIA           N7     N    NRD5      0.000     -7.151   -0.489    2.336
+ RIA           C8     C    CR15      0.000     -7.783   -0.691    1.217
+ RIA           H8     H    H         0.000     -8.194   -1.640    0.899
+ RIA           N3     N    NRD6      0.000     -6.972    2.734    1.069
+ RIA           C2     C    CR16      0.000     -6.320    3.419    1.984
+ RIA           H2     H    H         0.000     -6.134    4.472    1.813
+ RIA           N1     N    NRD6      0.000     -5.885    2.871    3.104
+ RIA           C6     C    CR6       0.000     -6.084    1.583    3.362
+ RIA           N6     N    NH2       0.000     -5.624    1.016    4.538
+ RIA           HN62   H    H         0.000     -5.779    0.032    4.731
+ RIA           HN61   H    H         0.000     -5.125    1.578    5.221
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RIA      O3X    n/a    "P'"   START
+ RIA      "P'"   O3X    "O5'"  .
+ RIA      O1X    "P'"   .      .
+ RIA      O2X    "P'"   .      .
+ RIA      "O5'"  "P'"   "C5'"  .
+ RIA      "C5'"  "O5'"  "C4'"  .
+ RIA      "H5'1" "C5'"  .      .
+ RIA      "H5'2" "C5'"  .      .
+ RIA      "C4'"  "C5'"  "C3'"  .
+ RIA      "H4'"  "C4'"  .      .
+ RIA      "O1'"  "C4'"  .      .
+ RIA      "C3'"  "C4'"  "C2'"  .
+ RIA      "H3'"  "C3'"  .      .
+ RIA      "O3'"  "C3'"  "HO3'" .
+ RIA      "HO3'" "O3'"  .      .
+ RIA      "C2'"  "C3'"  "C1'"  .
+ RIA      "H2'"  "C2'"  .      .
+ RIA      "O2'"  "C2'"  "HO2'" .
+ RIA      "HO2'" "O2'"  .      .
+ RIA      "C1'"  "C2'"  O2A    .
+ RIA      "H1'"  "C1'"  .      .
+ RIA      O2A    "C1'"  C2A    .
+ RIA      C2A    O2A    C1A    .
+ RIA      H2A    C2A    .      .
+ RIA      C3A    C2A    C4A    .
+ RIA      H3A    C3A    .      .
+ RIA      O3A    C3A    HO3A   .
+ RIA      HO3A   O3A    .      .
+ RIA      C4A    C3A    C5A    .
+ RIA      H4A    C4A    .      .
+ RIA      C5A    C4A    O5A    .
+ RIA      "H5''" C5A    .      .
+ RIA      "H5'"  C5A    .      .
+ RIA      O5A    C5A    P      .
+ RIA      P      O5A    OP3    .
+ RIA      OP2    P      .      .
+ RIA      OP1    P      .      .
+ RIA      OP3    P      .      .
+ RIA      C1A    C2A    N9     .
+ RIA      H1A    C1A    .      .
+ RIA      "O4'"  C1A    .      .
+ RIA      N9     C1A    C4     .
+ RIA      C4     N9     N3     .
+ RIA      C5     C4     N7     .
+ RIA      N7     C5     C8     .
+ RIA      C8     N7     H8     .
+ RIA      H8     C8     .      .
+ RIA      N3     C4     C2     .
+ RIA      C2     N3     N1     .
+ RIA      H2     C2     .      .
+ RIA      N1     C2     C6     .
+ RIA      C6     N1     N6     .
+ RIA      N6     C6     HN61   .
+ RIA      HN62   N6     .      .
+ RIA      HN61   N6     .      END
+ RIA      C4A    "O4'"  .    ADD
+ RIA      N9     C8     .    ADD
+ RIA      C5     C6     .    ADD
+ RIA      "C1'"  "O1'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RIA       OP1       P         deloc     1.510     0.020     1.510     0.020     
+RIA       OP2       P         deloc     1.510     0.020     1.510     0.020     
+RIA       OP3       P         deloc     1.510     0.020     1.510     0.020     
+RIA       P         O5A       single    1.610     0.020     1.610     0.020     
+RIA       O5A       C5A       single    1.426     0.020     1.426     0.020     
+RIA       C5A       C4A       single    1.524     0.020     1.524     0.020     
+RIA       "H5'"     C5A       single    1.089     0.010     0.989     0.005     
+RIA       "H5''"    C5A       single    1.089     0.010     0.989     0.005     
+RIA       C4A       "O4'"     single    1.426     0.020     1.426     0.020     
+RIA       C4A       C3A       single    1.524     0.020     1.524     0.020     
+RIA       H4A       C4A       single    1.089     0.010     0.989     0.005     
+RIA       "O4'"     C1A       single    1.426     0.020     1.426     0.020     
+RIA       O3A       C3A       single    1.432     0.020     1.432     0.020     
+RIA       C3A       C2A       single    1.524     0.020     1.524     0.020     
+RIA       H3A       C3A       single    1.089     0.010     0.989     0.005     
+RIA       HO3A      O3A       single    0.970     0.012     0.839     0.014     
+RIA       C2A       O2A       single    1.426     0.020     1.426     0.020     
+RIA       C1A       C2A       single    1.524     0.020     1.524     0.020     
+RIA       H2A       C2A       single    1.089     0.010     0.989     0.005     
+RIA       O2A       "C1'"     single    1.426     0.020     1.426     0.020     
+RIA       N9        C1A       single    1.485     0.020     1.485     0.020     
+RIA       H1A       C1A       single    1.089     0.010     0.989     0.005     
+RIA       N9        C8        single    1.337     0.020     1.337     0.020     
+RIA       C4        N9        single    1.337     0.020     1.337     0.020     
+RIA       C8        N7        double    1.350     0.020     1.350     0.020     
+RIA       H8        C8        single    1.082     0.013     0.975     0.010     
+RIA       N7        C5        single    1.350     0.020     1.350     0.020     
+RIA       C5        C6        single    1.490     0.020     1.490     0.020     
+RIA       C5        C4        double    1.490     0.020     1.490     0.020     
+RIA       N6        C6        single    1.355     0.020     1.355     0.020     
+RIA       C6        N1        double    1.350     0.020     1.350     0.020     
+RIA       HN61      N6        single    1.016     0.010     0.899     0.007     
+RIA       HN62      N6        single    1.016     0.010     0.899     0.007     
+RIA       N1        C2        single    1.337     0.020     1.337     0.020     
+RIA       C2        N3        double    1.337     0.020     1.337     0.020     
+RIA       H2        C2        single    1.082     0.013     0.975     0.010     
+RIA       N3        C4        single    1.355     0.020     1.355     0.020     
+RIA       "C1'"     "O1'"     single    1.426     0.020     1.426     0.020     
+RIA       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+RIA       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+RIA       "O1'"     "C4'"     single    1.426     0.020     1.426     0.020     
+RIA       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+RIA       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+RIA       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+RIA       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+RIA       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+RIA       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+RIA       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+RIA       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+RIA       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+RIA       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+RIA       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+RIA       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+RIA       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+RIA       "O5'"     "P'"      single    1.610     0.020     1.610     0.020     
+RIA       O1X       "P'"      deloc     1.510     0.020     1.510     0.020     
+RIA       O2X       "P'"      deloc     1.510     0.020     1.510     0.020     
+RIA       "P'"      O3X       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RIA      O3X    "P'"   O1X     119.900    3.000
+ RIA      O3X    "P'"   O2X     119.900    3.000
+ RIA      O3X    "P'"   "O5'"   108.200    3.000
+ RIA      O1X    "P'"   O2X     119.900    3.000
+ RIA      O1X    "P'"   "O5'"   108.200    3.000
+ RIA      O2X    "P'"   "O5'"   108.200    3.000
+ RIA      "P'"   "O5'"  "C5'"   120.500    3.000
+ RIA      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ RIA      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ RIA      "O5'"  "C5'"  "C4'"   109.470    3.000
+ RIA      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ RIA      "H5'1" "C5'"  "C4'"   109.470    3.000
+ RIA      "H5'2" "C5'"  "C4'"   109.470    3.000
+ RIA      "C5'"  "C4'"  "H4'"   108.340    3.000
+ RIA      "C5'"  "C4'"  "O1'"   109.470    3.000
+ RIA      "C5'"  "C4'"  "C3'"   111.000    3.000
+ RIA      "H4'"  "C4'"  "O1'"   109.470    3.000
+ RIA      "H4'"  "C4'"  "C3'"   108.340    3.000
+ RIA      "O1'"  "C4'"  "C3'"   109.470    3.000
+ RIA      "C4'"  "O1'"  "C1'"   111.800    3.000
+ RIA      "C4'"  "C3'"  "H3'"   108.340    3.000
+ RIA      "C4'"  "C3'"  "O3'"   109.470    3.000
+ RIA      "C4'"  "C3'"  "C2'"   111.000    3.000
+ RIA      "H3'"  "C3'"  "O3'"   109.470    3.000
+ RIA      "H3'"  "C3'"  "C2'"   108.340    3.000
+ RIA      "O3'"  "C3'"  "C2'"   109.470    3.000
+ RIA      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ RIA      "C3'"  "C2'"  "H2'"   108.340    3.000
+ RIA      "C3'"  "C2'"  "O2'"   109.470    3.000
+ RIA      "C3'"  "C2'"  "C1'"   111.000    3.000
+ RIA      "H2'"  "C2'"  "O2'"   109.470    3.000
+ RIA      "H2'"  "C2'"  "C1'"   108.340    3.000
+ RIA      "O2'"  "C2'"  "C1'"   109.470    3.000
+ RIA      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ RIA      "C2'"  "C1'"  "H1'"   108.340    3.000
+ RIA      "C2'"  "C1'"  O2A     109.470    3.000
+ RIA      "C2'"  "C1'"  "O1'"   109.470    3.000
+ RIA      "H1'"  "C1'"  O2A     109.470    3.000
+ RIA      "H1'"  "C1'"  "O1'"   109.470    3.000
+ RIA      O2A    "C1'"  "O1'"   109.470    3.000
+ RIA      "C1'"  O2A    C2A     111.800    3.000
+ RIA      O2A    C2A    H2A     109.470    3.000
+ RIA      O2A    C2A    C3A     109.470    3.000
+ RIA      O2A    C2A    C1A     109.470    3.000
+ RIA      H2A    C2A    C3A     108.340    3.000
+ RIA      H2A    C2A    C1A     108.340    3.000
+ RIA      C3A    C2A    C1A     111.000    3.000
+ RIA      C2A    C3A    H3A     108.340    3.000
+ RIA      C2A    C3A    O3A     109.470    3.000
+ RIA      C2A    C3A    C4A     111.000    3.000
+ RIA      H3A    C3A    O3A     109.470    3.000
+ RIA      H3A    C3A    C4A     108.340    3.000
+ RIA      O3A    C3A    C4A     109.470    3.000
+ RIA      C3A    O3A    HO3A    109.470    3.000
+ RIA      C3A    C4A    H4A     108.340    3.000
+ RIA      C3A    C4A    C5A     111.000    3.000
+ RIA      C3A    C4A    "O4'"   109.470    3.000
+ RIA      H4A    C4A    C5A     108.340    3.000
+ RIA      H4A    C4A    "O4'"   109.470    3.000
+ RIA      C5A    C4A    "O4'"   109.470    3.000
+ RIA      C4A    C5A    "H5''"  109.470    3.000
+ RIA      C4A    C5A    "H5'"   109.470    3.000
+ RIA      C4A    C5A    O5A     109.470    3.000
+ RIA      "H5''" C5A    "H5'"   107.900    3.000
+ RIA      "H5''" C5A    O5A     109.470    3.000
+ RIA      "H5'"  C5A    O5A     109.470    3.000
+ RIA      C5A    O5A    P       120.500    3.000
+ RIA      O5A    P      OP2     108.200    3.000
+ RIA      O5A    P      OP1     108.200    3.000
+ RIA      O5A    P      OP3     108.200    3.000
+ RIA      OP2    P      OP1     119.900    3.000
+ RIA      OP2    P      OP3     119.900    3.000
+ RIA      OP1    P      OP3     119.900    3.000
+ RIA      C2A    C1A    H1A     108.340    3.000
+ RIA      C2A    C1A    "O4'"   109.470    3.000
+ RIA      C2A    C1A    N9      109.470    3.000
+ RIA      H1A    C1A    "O4'"   109.470    3.000
+ RIA      H1A    C1A    N9      109.470    3.000
+ RIA      "O4'"  C1A    N9      109.470    3.000
+ RIA      C1A    "O4'"  C4A     111.800    3.000
+ RIA      C1A    N9     C4      126.000    3.000
+ RIA      C1A    N9     C8      126.000    3.000
+ RIA      C4     N9     C8      108.000    3.000
+ RIA      N9     C4     C5      108.000    3.000
+ RIA      N9     C4     N3      132.000    3.000
+ RIA      C5     C4     N3      120.000    3.000
+ RIA      C4     C5     N7      108.000    3.000
+ RIA      C4     C5     C6      120.000    3.000
+ RIA      N7     C5     C6      132.000    3.000
+ RIA      C5     N7     C8      108.000    3.000
+ RIA      N7     C8     H8      126.000    3.000
+ RIA      N7     C8     N9      108.000    3.000
+ RIA      H8     C8     N9      126.000    3.000
+ RIA      C4     N3     C2      120.000    3.000
+ RIA      N3     C2     H2      120.000    3.000
+ RIA      N3     C2     N1      120.000    3.000
+ RIA      H2     C2     N1      120.000    3.000
+ RIA      C2     N1     C6      120.000    3.000
+ RIA      N1     C6     N6      120.000    3.000
+ RIA      N1     C6     C5      120.000    3.000
+ RIA      N6     C6     C5      120.000    3.000
+ RIA      C6     N6     HN62    120.000    3.000
+ RIA      C6     N6     HN61    120.000    3.000
+ RIA      HN62   N6     HN61    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RIA      var_1    O3X    "P'"   "O5'"  "C5'"    -59.985   20.000   1
+ RIA      var_2    "P'"   "O5'"  "C5'"  "C4'"    179.979   20.000   1
+ RIA      var_3    "O5'"  "C5'"  "C4'"  "C3'"    176.879   20.000   3
+ RIA      var_4    "C5'"  "C4'"  "O1'"  "C1'"    150.000   20.000   1
+ RIA      var_5    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ RIA      var_6    "C4'"  "C3'"  "O3'"  "HO3'"  -179.982   20.000   1
+ RIA      var_7    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ RIA      var_8    "C3'"  "C2'"  "O2'"  "HO2'"  -179.998   20.000   1
+ RIA      var_9    "C3'"  "C2'"  "C1'"  O2A      150.000   20.000   3
+ RIA      var_10   "C2'"  "C1'"  "O1'"  "C4'"    -30.000   20.000   1
+ RIA      var_11   "C2'"  "C1'"  O2A    C2A     -178.464   20.000   1
+ RIA      var_12   "C1'"  O2A    C2A    C1A      153.879   20.000   1
+ RIA      var_13   O2A    C2A    C3A    C4A     -120.000   20.000   3
+ RIA      var_14   C2A    C3A    O3A    HO3A    -176.105   20.000   1
+ RIA      var_15   C2A    C3A    C4A    C5A     -150.000   20.000   3
+ RIA      var_16   C3A    C4A    "O4'"  C1A       30.000   20.000   1
+ RIA      var_17   C3A    C4A    C5A    O5A      176.924   20.000   3
+ RIA      var_18   C4A    C5A    O5A    P       -179.962   20.000   1
+ RIA      var_19   C5A    O5A    P      OP3      -60.059   20.000   1
+ RIA      var_20   O2A    C2A    C1A    N9       -90.000   20.000   3
+ RIA      var_21   C2A    C1A    "O4'"  C4A      -30.000   20.000   1
+ RIA      var_22   C2A    C1A    N9     C4        91.589   20.000   1
+ RIA      CONST_1  C1A    N9     C8     N7       180.000    0.000   0
+ RIA      CONST_2  C1A    N9     C4     N3         0.000    0.000   0
+ RIA      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ RIA      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ RIA      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ RIA      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ RIA      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ RIA      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ RIA      CONST_9  N3     C2     N1     C6         0.000    0.000   0
+ RIA      CONST_10 C2     N1     C6     N6       180.000    0.000   0
+ RIA      CONST_11 N1     C6     N6     HN61      -0.075    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RIA      chir_01  C4A    C5A    "O4'"  C3A       negativ
+ RIA      chir_02  C3A    C4A    O3A    C2A       negativ
+ RIA      chir_03  C2A    C3A    O2A    C1A       negativ
+ RIA      chir_04  C1A    "O4'"  C2A    N9        positiv
+ RIA      chir_05  "C1'"  O2A    "O1'"  "C2'"     positiv
+ RIA      chir_06  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ RIA      chir_07  "C3'"  "C2'"  "O3'"  "C4'"     positiv
+ RIA      chir_08  "C4'"  "O1'"  "C3'"  "C5'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RIA      plan-1    N9        0.020
+ RIA      plan-1    C1A       0.020
+ RIA      plan-1    C8        0.020
+ RIA      plan-1    C4        0.020
+ RIA      plan-1    N7        0.020
+ RIA      plan-1    H8        0.020
+ RIA      plan-1    C5        0.020
+ RIA      plan-1    C6        0.020
+ RIA      plan-1    N1        0.020
+ RIA      plan-1    C2        0.020
+ RIA      plan-1    N3        0.020
+ RIA      plan-1    N6        0.020
+ RIA      plan-1    H2        0.020
+ RIA      plan-1    HN62      0.020
+ RIA      plan-1    HN61      0.020
+ RIA      plan-2    N6        0.020
+ RIA      plan-2    C6        0.020
+ RIA      plan-2    HN61      0.020
+ RIA      plan-2    HN62      0.020
+# ------------------------------------------------------

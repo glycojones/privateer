@@ -1,0 +1,307 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HNC     HNC     "S-[(1S,2R)-2-hydroxy-1-(2-oxoethyl)heptyl]-L-cysteine"     peptide   41     18     .
+#
+data_comp_HNC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HNC     C       C       C       0       1.827       -0.370      -10.909
+HNC     N       N       NT3     1       2.594       -2.727      -10.867
+HNC     O       O       O       0       0.761       -0.792      -11.405
+HNC     CA      C       CH1     0       3.041       -1.309      -10.934
+HNC     CB      C       CH2     0       3.871       -1.097      -12.187
+HNC     SG      S       S2      0       3.060       -1.571      -13.738
+HNC     CAA     C       CH3     0       9.834       -4.834      -17.347
+HNC     OAC     O       O       0       2.769       -3.991      -17.208
+HNC     OAE     O       OH1     0       5.082       -2.315      -15.942
+HNC     CAF     C       C1      0       2.383       -3.598      -16.150
+HNC     CAH     C       CH2     0       9.573       -5.335      -15.946
+HNC     CAI     C       CH2     0       8.110       -5.502      -15.626
+HNC     CAJ     C       CH2     0       7.365       -4.206      -15.423
+HNC     CAK     C       CH2     0       2.819       -4.111      -14.819
+HNC     CAL     C       CH2     0       5.914       -4.365      -15.042
+HNC     CAP     C       CH1     0       5.184       -3.066      -14.733
+HNC     CAQ     C       CH1     0       3.802       -3.221      -14.065
+HNC     OXT     O       OC      -1      1.991       0.753       -10.392
+HNC     H       H       H       0       3.319       -3.279      -10.880
+HNC     H2      H       H       0       2.061       -2.917      -11.581
+HNC     H3      H       H       0       2.126       -2.867      -10.098
+HNC     HA      H       H       0       3.597       -1.126      -10.142
+HNC     HB      H       H       0       4.691       -1.608      -12.100
+HNC     HBA     H       H       0       4.113       -0.159      -12.240
+HNC     HAA     H       H       0       10.792      -4.823      -17.515
+HNC     HAAA    H       H       0       9.480       -3.932      -17.441
+HNC     HAAB    H       H       0       9.399       -5.421      -17.989
+HNC     HOAE    H       H       0       4.809       -1.532      -15.763
+HNC     HAF     H       H       0       1.746       -2.903      -16.157
+HNC     HAH     H       H       0       9.966       -4.705      -15.304
+HNC     HAHA    H       H       0       10.022      -6.200      -15.829
+HNC     HAI     H       H       0       8.027       -6.043      -14.811
+HNC     HAIA    H       H       0       7.683       -5.999      -16.356
+HNC     HAJ     H       H       0       7.414       -3.683      -16.251
+HNC     HAJA    H       H       0       7.817       -3.691      -14.721
+HNC     HAK     H       H       0       3.221       -4.996      -14.940
+HNC     HAKA    H       H       0       2.022       -4.229      -14.259
+HNC     HAL     H       H       0       5.859       -4.948      -14.254
+HNC     HALA    H       H       0       5.447       -4.818      -15.776
+HNC     HAP     H       H       0       5.753       -2.539      -14.114
+HNC     HAQ     H       H       0       3.964       -3.644      -13.183
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+HNC      N      n/a    CA     START
+HNC      H      N      .      .
+HNC      H2     N      .      .
+HNC      H3     N      .      .
+HNC      CA     N      C      .
+HNC      HA     CA     .      .
+HNC      CB     CA     SG     .
+HNC      HB     CB     .      .
+HNC      HBA    CB     .      .
+HNC      SG     CB     CAQ    .
+HNC      CAQ    SG     CAP    .
+HNC      HAQ    CAQ    .      .
+HNC      CAK    CAQ    CAF    .
+HNC      HAK    CAK    .      .
+HNC      HAKA   CAK    .      .
+HNC      CAF    CAK    OAC    .
+HNC      HAF    CAF    .      .
+HNC      OAC    CAF    .      .
+HNC      CAP    CAQ    CAL    .
+HNC      HAP    CAP    .      .
+HNC      OAE    CAP    HOAE   .
+HNC      HOAE   OAE    .      .
+HNC      CAL    CAP    CAJ    .
+HNC      HAL    CAL    .      .
+HNC      HALA   CAL    .      .
+HNC      CAJ    CAL    CAI    .
+HNC      HAJ    CAJ    .      .
+HNC      HAJA   CAJ    .      .
+HNC      CAI    CAJ    CAH    .
+HNC      HAI    CAI    .      .
+HNC      HAIA   CAI    .      .
+HNC      CAH    CAI    CAA    .
+HNC      HAH    CAH    .      .
+HNC      HAHA   CAH    .      .
+HNC      CAA    CAH    HAA    .
+HNC      HAAB   CAA    .      .
+HNC      HAAA   CAA    .      .
+HNC      HAA    CAA    .      .
+HNC      C      CA     .      END
+HNC      O      C      .      .
+HNC      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HNC       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+HNC       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+HNC       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+HNC       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+HNC       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+HNC       CB        SG        SINGLE    n         1.813     0.011     1.813     0.011     
+HNC       SG        CAQ       SINGLE    n         1.838     0.012     1.838     0.012     
+HNC       CAA       CAH       SINGLE    n         1.510     0.020     1.510     0.020     
+HNC       OAC       CAF       DOUBLE    n         1.192     0.020     1.192     0.020     
+HNC       OAE       CAP       SINGLE    n         1.424     0.020     1.424     0.020     
+HNC       CAF       CAK       SINGLE    n         1.490     0.012     1.490     0.012     
+HNC       CAH       CAI       SINGLE    n         1.507     0.020     1.507     0.020     
+HNC       CAI       CAJ       SINGLE    n         1.509     0.020     1.509     0.020     
+HNC       CAJ       CAL       SINGLE    n         1.509     0.020     1.509     0.020     
+HNC       CAK       CAQ       SINGLE    n         1.521     0.012     1.521     0.012     
+HNC       CAL       CAP       SINGLE    n         1.520     0.017     1.520     0.017     
+HNC       CAP       CAQ       SINGLE    n         1.532     0.018     1.532     0.018     
+HNC       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+HNC       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+HNC       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+HNC       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+HNC       CB        HB        SINGLE    n         1.089     0.010     0.970     0.010     
+HNC       CB        HBA       SINGLE    n         1.089     0.010     0.970     0.010     
+HNC       CAA       HAA       SINGLE    n         1.089     0.010     0.973     0.016     
+HNC       CAA       HAAA      SINGLE    n         1.089     0.010     0.973     0.016     
+HNC       CAA       HAAB      SINGLE    n         1.089     0.010     0.973     0.016     
+HNC       OAE       HOAE      SINGLE    n         0.970     0.012     0.848     0.020     
+HNC       CAF       HAF       SINGLE    n         1.082     0.013     0.943     0.011     
+HNC       CAH       HAH       SINGLE    n         1.089     0.010     0.982     0.015     
+HNC       CAH       HAHA      SINGLE    n         1.089     0.010     0.982     0.015     
+HNC       CAI       HAI       SINGLE    n         1.089     0.010     0.981     0.016     
+HNC       CAI       HAIA      SINGLE    n         1.089     0.010     0.981     0.016     
+HNC       CAJ       HAJ       SINGLE    n         1.089     0.010     0.981     0.016     
+HNC       CAJ       HAJA      SINGLE    n         1.089     0.010     0.981     0.016     
+HNC       CAK       HAK       SINGLE    n         1.089     0.010     0.981     0.019     
+HNC       CAK       HAKA      SINGLE    n         1.089     0.010     0.981     0.019     
+HNC       CAL       HAL       SINGLE    n         1.089     0.010     0.981     0.016     
+HNC       CAL       HALA      SINGLE    n         1.089     0.010     0.981     0.016     
+HNC       CAP       HAP       SINGLE    n         1.089     0.010     0.992     0.019     
+HNC       CAQ       HAQ       SINGLE    n         1.089     0.010     0.991     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HNC           O           C          CA     117.134    1.50
+HNC           O           C         OXT     125.732    1.50
+HNC          CA           C         OXT     117.134    1.50
+HNC          CA           N           H     109.671    1.50
+HNC          CA           N          H2     109.671    1.50
+HNC          CA           N          H3     109.671    1.50
+HNC           H           N          H2     109.028    2.41
+HNC           H           N          H3     109.028    2.41
+HNC          H2           N          H3     109.028    2.41
+HNC           C          CA           N     109.494    1.50
+HNC           C          CA          CB     110.419    2.31
+HNC           C          CA          HA     108.606    1.50
+HNC           N          CA          CB     109.354    1.50
+HNC           N          CA          HA     107.983    1.50
+HNC          CB          CA          HA     109.209    1.50
+HNC          CA          CB          SG     114.974    1.55
+HNC          CA          CB          HB     108.537    1.50
+HNC          CA          CB         HBA     108.537    1.50
+HNC          SG          CB          HB     108.654    1.50
+HNC          SG          CB         HBA     108.654    1.50
+HNC          HB          CB         HBA     107.812    1.50
+HNC          CB          SG         CAQ     101.840    1.86
+HNC         CAH         CAA         HAA     109.554    1.50
+HNC         CAH         CAA        HAAA     109.554    1.50
+HNC         CAH         CAA        HAAB     109.554    1.50
+HNC         HAA         CAA        HAAA     109.380    1.50
+HNC         HAA         CAA        HAAB     109.380    1.50
+HNC        HAAA         CAA        HAAB     109.380    1.50
+HNC         CAP         OAE        HOAE     109.265    3.00
+HNC         OAC         CAF         CAK     125.770    1.96
+HNC         OAC         CAF         HAF     117.130    1.50
+HNC         CAK         CAF         HAF     117.100    1.50
+HNC         CAA         CAH         CAI     113.719    3.00
+HNC         CAA         CAH         HAH     108.918    1.50
+HNC         CAA         CAH        HAHA     108.918    1.50
+HNC         CAI         CAH         HAH     108.758    1.50
+HNC         CAI         CAH        HAHA     108.758    1.50
+HNC         HAH         CAH        HAHA     107.763    1.50
+HNC         CAH         CAI         CAJ     114.362    3.00
+HNC         CAH         CAI         HAI     108.653    1.50
+HNC         CAH         CAI        HAIA     108.653    1.50
+HNC         CAJ         CAI         HAI     108.698    1.50
+HNC         CAJ         CAI        HAIA     108.698    1.50
+HNC         HAI         CAI        HAIA     107.646    1.50
+HNC         CAI         CAJ         CAL     114.776    2.10
+HNC         CAI         CAJ         HAJ     108.698    1.50
+HNC         CAI         CAJ        HAJA     108.698    1.50
+HNC         CAL         CAJ         HAJ     108.597    1.50
+HNC         CAL         CAJ        HAJA     108.597    1.50
+HNC         HAJ         CAJ        HAJA     107.646    1.50
+HNC         CAF         CAK         CAQ     111.511    2.91
+HNC         CAF         CAK         HAK     108.942    1.50
+HNC         CAF         CAK        HAKA     108.942    1.50
+HNC         CAQ         CAK         HAK     108.757    1.50
+HNC         CAQ         CAK        HAKA     108.757    1.50
+HNC         HAK         CAK        HAKA     107.705    1.50
+HNC         CAJ         CAL         CAP     115.049    1.72
+HNC         CAJ         CAL         HAL     108.572    1.50
+HNC         CAJ         CAL        HALA     108.572    1.50
+HNC         CAP         CAL         HAL     108.468    1.50
+HNC         CAP         CAL        HALA     108.468    1.50
+HNC         HAL         CAL        HALA     107.428    1.50
+HNC         OAE         CAP         CAL     109.024    2.32
+HNC         OAE         CAP         CAQ     109.285    2.10
+HNC         OAE         CAP         HAP     108.183    1.96
+HNC         CAL         CAP         CAQ     114.970    2.03
+HNC         CAL         CAP         HAP     108.603    1.50
+HNC         CAQ         CAP         HAP     108.479    1.81
+HNC          SG         CAQ         CAK     112.239    3.00
+HNC          SG         CAQ         CAP     112.239    3.00
+HNC          SG         CAQ         HAQ     108.307    1.50
+HNC         CAK         CAQ         CAP     112.748    1.86
+HNC         CAK         CAQ         HAQ     108.718    1.50
+HNC         CAP         CAQ         HAQ     108.479    1.81
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HNC             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+HNC            sp3_sp3_37         CAA         CAH         CAI         CAJ     180.000   10.00     3
+HNC            sp3_sp3_46         CAH         CAI         CAJ         CAL     180.000   10.00     3
+HNC            sp3_sp3_55         CAI         CAJ         CAL         CAP     180.000   10.00     3
+HNC            sp3_sp3_65         CAF         CAK         CAQ          SG     -60.000   10.00     3
+HNC            sp3_sp3_73         CAJ         CAL         CAP         OAE     180.000   10.00     3
+HNC            sp3_sp3_82         OAE         CAP         CAQ          SG     180.000   10.00     3
+HNC             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+HNC            sp3_sp3_10           C          CA          CB          SG     180.000   10.00     3
+HNC            sp3_sp3_19          CA          CB          SG         CAQ     180.000   10.00     3
+HNC            sp3_sp3_22         CAK         CAQ          SG          CB     180.000   10.00     3
+HNC            sp3_sp3_25         HAA         CAA         CAH         CAI     180.000   10.00     3
+HNC            sp3_sp3_34         CAL         CAP         OAE        HOAE     180.000   10.00     3
+HNC             sp2_sp3_8         OAC         CAF         CAK         CAQ     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+HNC    chir_1    CA    N    CB    C    negative
+HNC    chir_2    CAP    OAE    CAQ    CAL    negative
+HNC    chir_3    CAQ    SG    CAP    CAK    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HNC    plan-1           C   0.020
+HNC    plan-1          CA   0.020
+HNC    plan-1           O   0.020
+HNC    plan-1         OXT   0.020
+HNC    plan-2         CAF   0.020
+HNC    plan-2         CAK   0.020
+HNC    plan-2         HAF   0.020
+HNC    plan-2         OAC   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HNC SMILES           ACDLabs              11.02 "O=C(O)C(N)CSC(C(O)CCCCC)CC=O"
+HNC SMILES_CANONICAL CACTVS               3.352 "CCCCC[C@@H](O)[C@H](CC=O)SC[C@H](N)C(O)=O"
+HNC SMILES           CACTVS               3.352 "CCCCC[CH](O)[CH](CC=O)SC[CH](N)C(O)=O"
+HNC SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "CCCCC[C@H]([C@H](CC=O)SC[C@@H](C(=O)O)N)O"
+HNC SMILES           "OpenEye OEToolkits" 1.7.0 "CCCCCC(C(CC=O)SCC(C(=O)O)N)O"
+HNC InChI            InChI                1.03  "InChI=1S/C12H23NO4S/c1-2-3-4-5-10(15)11(6-7-14)18-8-9(13)12(16)17/h7,9-11,15H,2-6,8,13H2,1H3,(H,16,17)/t9-,10+,11-/m0/s1"
+HNC InChIKey         InChI                1.03  SALPDUSHMTYYOH-AXFHLTTASA-N
+HNC ?                acedrg               202         "dictionary generator"
+HNC ?                acedrg_database      11          "data source"
+HNC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HNC ?                refmac5              5.8.0222    "optimization tool"

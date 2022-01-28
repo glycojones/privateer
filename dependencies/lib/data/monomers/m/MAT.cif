@@ -1,0 +1,257 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MAT      MAT '2,4-DIDEOXY-4-[2-(PROPYL)AMINO]-3-O-' pyranose           32  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MAT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MAT           C1     C    CH1       0.000      0.000    0.000    0.000
+ MAT           H1     H    H         0.000      0.992   -0.290   -0.373
+ MAT           O1     O    OH1       0.000      0.029    0.073    1.427
+ MAT           HO1    H    H         0.000      0.664    0.713    1.775
+ MAT           O5     O    O2        0.000     -0.356    1.276   -0.534
+ MAT           C5     C    CH2       0.000     -1.624    1.762   -0.091
+ MAT           H51    H    H         0.000     -1.810    2.746   -0.527
+ MAT           H52    H    H         0.000     -1.622    1.842    0.998
+ MAT           C4     C    CH1       0.000     -2.724    0.792   -0.531
+ MAT           H4     H    H         0.000     -2.754    0.743   -1.628
+ MAT           C3     C    CH1       0.000     -2.422   -0.600    0.035
+ MAT           H3     H    H         0.000     -2.443   -0.563    1.133
+ MAT           O3     O    O2        0.000     -3.404   -1.528   -0.432
+ MAT           C9     C    CH3       0.000     -3.656   -2.608    0.469
+ MAT           H93    H    H         0.000     -2.761   -3.152    0.628
+ MAT           H92    H    H         0.000     -4.004   -2.224    1.393
+ MAT           H91    H    H         0.000     -4.390   -3.250    0.055
+ MAT           C2     C    CH2       0.000     -1.034   -1.042   -0.437
+ MAT           H22    H    H         0.000     -1.027   -1.128   -1.526
+ MAT           H21    H    H         0.000     -0.787   -2.009    0.005
+ MAT           N4     N    NH1       0.000     -4.022    1.258   -0.025
+ MAT           HN4    H    H         0.000     -4.446    0.944    0.837
+ MAT           C6     C    CH1       0.000     -4.621    2.240   -0.938
+ MAT           H6     H    H         0.000     -3.828    2.854   -1.387
+ MAT           C8     C    CH3       0.000     -5.582    3.140   -0.159
+ MAT           H83    H    H         0.000     -5.052    3.646    0.606
+ MAT           H82    H    H         0.000     -6.015    3.849   -0.816
+ MAT           H81    H    H         0.000     -6.347    2.549    0.275
+ MAT           C7     C    CH3       0.000     -5.388    1.509   -2.042
+ MAT           H73    H    H         0.000     -5.821    2.216   -2.701
+ MAT           H72    H    H         0.000     -4.723    0.885   -2.582
+ MAT           H71    H    H         0.000     -6.153    0.916   -1.609
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MAT      C1     n/a    O5     START
+ MAT      H1     C1     .      .
+ MAT      O1     C1     .      .
+ MAT      HO1    O1     .      .
+ MAT      O5     C1     .      END
+ MAT      C5     O5     C4     .
+ MAT      H51    C5     .      .
+ MAT      H52    C5     .      .
+ MAT      C4     C5     N4     .
+ MAT      H4     C4     .      .
+ MAT      C3     C4     C2     .
+ MAT      H3     C3     .      .
+ MAT      O3     C3     C9     .
+ MAT      C9     O3     H91    .
+ MAT      H93    C9     .      .
+ MAT      H92    C9     .      .
+ MAT      H91    C9     .      .
+ MAT      C2     C3     H21    .
+ MAT      H22    C2     .      .
+ MAT      H21    C2     .      .
+ MAT      N4     C4     C6     .
+ MAT      HN4    N4     .      .
+ MAT      C6     N4     C7     .
+ MAT      H6     C6     .      .
+ MAT      C8     C6     H81    .
+ MAT      H83    C8     .      .
+ MAT      H82    C8     .      .
+ MAT      H81    C8     .      .
+ MAT      C7     C6     H71    .
+ MAT      H73    C7     .      .
+ MAT      H72    C7     .      .
+ MAT      H71    C7     .      .
+ MAT      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MAT       C1        C2        single    1.524     0.020     1.524     0.020     
+MAT       O1        C1        single    1.432     0.020     1.432     0.020     
+MAT       O5        C1        single    1.426     0.020     1.426     0.020     
+MAT       H1        C1        single    1.089     0.010     0.989     0.005     
+MAT       C2        C3        single    1.524     0.020     1.524     0.020     
+MAT       H21       C2        single    1.089     0.010     0.989     0.005     
+MAT       H22       C2        single    1.089     0.010     0.989     0.005     
+MAT       C3        C4        single    1.524     0.020     1.524     0.020     
+MAT       O3        C3        single    1.426     0.020     1.426     0.020     
+MAT       H3        C3        single    1.089     0.010     0.989     0.005     
+MAT       C4        C5        single    1.524     0.020     1.524     0.020     
+MAT       N4        C4        single    1.450     0.020     1.450     0.020     
+MAT       H4        C4        single    1.089     0.010     0.989     0.005     
+MAT       C5        O5        single    1.426     0.020     1.426     0.020     
+MAT       H51       C5        single    1.089     0.010     0.989     0.005     
+MAT       H52       C5        single    1.089     0.010     0.989     0.005     
+MAT       C7        C6        single    1.524     0.020     1.524     0.020     
+MAT       C8        C6        single    1.524     0.020     1.524     0.020     
+MAT       C6        N4        single    1.450     0.020     1.450     0.020     
+MAT       H6        C6        single    1.089     0.010     0.989     0.005     
+MAT       H71       C7        single    1.089     0.010     0.989     0.005     
+MAT       H72       C7        single    1.089     0.010     0.989     0.005     
+MAT       H73       C7        single    1.089     0.010     0.989     0.005     
+MAT       H81       C8        single    1.089     0.010     0.989     0.005     
+MAT       H82       C8        single    1.089     0.010     0.989     0.005     
+MAT       H83       C8        single    1.089     0.010     0.989     0.005     
+MAT       C9        O3        single    1.426     0.020     1.426     0.020     
+MAT       H91       C9        single    1.089     0.010     0.989     0.005     
+MAT       H92       C9        single    1.089     0.010     0.989     0.005     
+MAT       H93       C9        single    1.089     0.010     0.989     0.005     
+MAT       HO1       O1        single    0.970     0.012     0.839     0.014     
+MAT       HN4       N4        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MAT      H1     C1     O1      109.470    3.000
+ MAT      H1     C1     O5      109.470    3.000
+ MAT      O1     C1     O5      109.470    3.000
+ MAT      H1     C1     C2      108.340    3.000
+ MAT      O1     C1     C2      109.470    3.000
+ MAT      O5     C1     C2      109.470    3.000
+ MAT      C1     O1     HO1     109.470    3.000
+ MAT      C1     O5     C5      111.800    3.000
+ MAT      O5     C5     H51     109.470    3.000
+ MAT      O5     C5     H52     109.470    3.000
+ MAT      O5     C5     C4      109.470    3.000
+ MAT      H51    C5     H52     107.900    3.000
+ MAT      H51    C5     C4      109.470    3.000
+ MAT      H52    C5     C4      109.470    3.000
+ MAT      C5     C4     H4      108.340    3.000
+ MAT      C5     C4     C3      111.000    3.000
+ MAT      C5     C4     N4      110.000    3.000
+ MAT      H4     C4     C3      108.340    3.000
+ MAT      H4     C4     N4      108.550    3.000
+ MAT      C3     C4     N4      110.000    3.000
+ MAT      C4     C3     H3      108.340    3.000
+ MAT      C4     C3     O3      109.470    3.000
+ MAT      C4     C3     C2      111.000    3.000
+ MAT      H3     C3     O3      109.470    3.000
+ MAT      H3     C3     C2      108.340    3.000
+ MAT      O3     C3     C2      109.470    3.000
+ MAT      C3     O3     C9      111.800    3.000
+ MAT      O3     C9     H93     109.470    3.000
+ MAT      O3     C9     H92     109.470    3.000
+ MAT      O3     C9     H91     109.470    3.000
+ MAT      H93    C9     H92     109.470    3.000
+ MAT      H93    C9     H91     109.470    3.000
+ MAT      H92    C9     H91     109.470    3.000
+ MAT      C3     C2     H22     109.470    3.000
+ MAT      C3     C2     H21     109.470    3.000
+ MAT      C3     C2     C1      111.000    3.000
+ MAT      H22    C2     H21     107.900    3.000
+ MAT      H22    C2     C1      109.470    3.000
+ MAT      H21    C2     C1      109.470    3.000
+ MAT      C4     N4     HN4     118.500    3.000
+ MAT      C4     N4     C6      120.000    3.000
+ MAT      HN4    N4     C6      118.500    3.000
+ MAT      N4     C6     H6      108.550    3.000
+ MAT      N4     C6     C8      110.000    3.000
+ MAT      N4     C6     C7      110.000    3.000
+ MAT      H6     C6     C8      108.340    3.000
+ MAT      H6     C6     C7      108.340    3.000
+ MAT      C8     C6     C7      111.000    3.000
+ MAT      C6     C8     H83     109.470    3.000
+ MAT      C6     C8     H82     109.470    3.000
+ MAT      C6     C8     H81     109.470    3.000
+ MAT      H83    C8     H82     109.470    3.000
+ MAT      H83    C8     H81     109.470    3.000
+ MAT      H82    C8     H81     109.470    3.000
+ MAT      C6     C7     H73     109.470    3.000
+ MAT      C6     C7     H72     109.470    3.000
+ MAT      C6     C7     H71     109.470    3.000
+ MAT      H73    C7     H72     109.470    3.000
+ MAT      H73    C7     H71     109.470    3.000
+ MAT      H72    C7     H71     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MAT      var_1    C1     O5     C5     C4       -60.000   20.000   1
+ MAT      var_2    O5     C5     C4     N4       180.000   20.000   3
+ MAT      var_3    C5     C4     C3     C2       -60.000   20.000   3
+ MAT      var_4    C4     C3     O3     C9      -150.412   20.000   1
+ MAT      var_5    C3     O3     C9     H91     -179.965   20.000   1
+ MAT      var_6    C4     C3     C2     C1        60.000   20.000   3
+ MAT      var_7    C3     C2     C1     O5       -60.000   20.000   3
+ MAT      var_8    C5     C4     N4     C6        85.296   20.000   3
+ MAT      var_9    C4     N4     C6     C7        84.995   20.000   3
+ MAT      var_10   N4     C6     C8     H81      -59.999   20.000   3
+ MAT      var_11   N4     C6     C7     H71       59.987   20.000   3
+ MAT      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MAT      chir_01  C1     C2     O1     O5        positiv
+ MAT      chir_02  C3     C2     C4     O3        negativ
+ MAT      chir_03  C4     C3     C5     N4        positiv
+ MAT      chir_04  C6     C7     C8     N4        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MAT      plan-1    N4        0.020
+ MAT      plan-1    C4        0.020
+ MAT      plan-1    C6        0.020
+ MAT      plan-1    HN4       0.020
+# ------------------------------------------------------

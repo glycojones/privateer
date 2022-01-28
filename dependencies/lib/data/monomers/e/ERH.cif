@@ -1,0 +1,160 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ERH     ERH     3,4-DIMETHYLPHENOL     non-polymer     19     9     .     
+#
+data_comp_ERH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ERH     O01     O       OH1     0       -14.497     -6.537      -0.812      
+ERH     C02     C       CR6     0       -13.482     -5.455      2.546       
+ERH     C03     C       CR6     0       -12.702     -7.729      2.160       
+ERH     C04     C       CR16    0       -12.818     -6.603      2.971       
+ERH     C05     C       CR16    0       -14.047     -5.442      1.265       
+ERH     C06     C       CR16    0       -13.273     -7.697      0.882       
+ERH     C07     C       CR6     0       -13.941     -6.559      0.440       
+ERH     C08     C       CH3     0       -13.592     -4.247      3.448       
+ERH     C09     C       CH3     0       -11.975     -8.961      2.648       
+ERH     H01     H       H       0       -15.108     -7.136      -0.873      
+ERH     H04     H       H       0       -12.436     -6.618      3.831       
+ERH     H05     H       H       0       -14.502     -4.673      0.957       
+ERH     H06     H       H       0       -13.206     -8.451      0.316       
+ERH     H081    H       H       0       -14.044     -3.526      2.982       
+ERH     H082    H       H       0       -12.703     -3.954      3.707       
+ERH     H083    H       H       0       -14.097     -4.482      4.244       
+ERH     H091    H       H       0       -11.930     -9.622      1.938       
+ERH     H092    H       H       0       -12.449     -9.338      3.408       
+ERH     H093    H       H       0       -11.074     -8.720      2.919       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ERH       O01       C07       SINGLE    n         1.370     0.010     1.370     0.010     
+ERH       C02       C04       DOUBLE    y         1.386     0.010     1.386     0.010     
+ERH       C02       C05       SINGLE    y         1.393     0.010     1.393     0.010     
+ERH       C02       C08       SINGLE    n         1.510     0.010     1.510     0.010     
+ERH       C03       C04       SINGLE    y         1.386     0.010     1.386     0.010     
+ERH       C03       C06       DOUBLE    y         1.393     0.010     1.393     0.010     
+ERH       C03       C09       SINGLE    n         1.510     0.010     1.510     0.010     
+ERH       C05       C07       DOUBLE    y         1.385     0.010     1.385     0.010     
+ERH       C06       C07       SINGLE    y         1.385     0.010     1.385     0.010     
+ERH       O01       H01       SINGLE    n         0.970     0.012     0.858     0.020     
+ERH       C04       H04       SINGLE    n         1.082     0.013     0.941     0.016     
+ERH       C05       H05       SINGLE    n         1.082     0.013     0.945     0.016     
+ERH       C06       H06       SINGLE    n         1.082     0.013     0.945     0.016     
+ERH       C08       H081      SINGLE    n         1.089     0.010     0.971     0.013     
+ERH       C08       H082      SINGLE    n         1.089     0.010     0.971     0.013     
+ERH       C08       H083      SINGLE    n         1.089     0.010     0.971     0.013     
+ERH       C09       H091      SINGLE    n         1.089     0.010     0.971     0.013     
+ERH       C09       H092      SINGLE    n         1.089     0.010     0.971     0.013     
+ERH       C09       H093      SINGLE    n         1.089     0.010     0.971     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ERH         C07         O01         H01     110.017    2.50
+ERH         C04         C02         C05     118.706    1.50
+ERH         C04         C02         C08     121.009    1.50
+ERH         C05         C02         C08     120.285    1.50
+ERH         C04         C03         C06     118.706    1.50
+ERH         C04         C03         C09     121.009    1.50
+ERH         C06         C03         C09     120.285    1.50
+ERH         C02         C04         C03     122.035    1.50
+ERH         C02         C04         H04     118.982    1.50
+ERH         C03         C04         H04     118.982    1.50
+ERH         C02         C05         C07     120.197    1.50
+ERH         C02         C05         H05     119.923    1.50
+ERH         C07         C05         H05     119.880    1.50
+ERH         C03         C06         C07     120.197    1.50
+ERH         C03         C06         H06     119.923    1.50
+ERH         C07         C06         H06     119.880    1.50
+ERH         O01         C07         C05     119.921    2.43
+ERH         O01         C07         C06     119.921    2.43
+ERH         C05         C07         C06     120.159    1.50
+ERH         C02         C08        H081     109.567    1.50
+ERH         C02         C08        H082     109.567    1.50
+ERH         C02         C08        H083     109.567    1.50
+ERH        H081         C08        H082     109.348    1.50
+ERH        H081         C08        H083     109.348    1.50
+ERH        H082         C08        H083     109.348    1.50
+ERH         C03         C09        H091     109.567    1.50
+ERH         C03         C09        H092     109.567    1.50
+ERH         C03         C09        H093     109.567    1.50
+ERH        H091         C09        H092     109.348    1.50
+ERH        H091         C09        H093     109.348    1.50
+ERH        H092         C09        H093     109.348    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ERH       const_sp2_sp2_3         C08         C02         C04         C03     180.000   10.00     2
+ERH              const_23         C08         C02         C05         C07     180.000   10.00     2
+ERH             sp2_sp3_3         C04         C02         C08        H081     150.000   10.00     6
+ERH       const_sp2_sp2_7         C09         C03         C04         C02     180.000   10.00     2
+ERH              const_11         C09         C03         C06         C07     180.000   10.00     2
+ERH             sp2_sp3_9         C04         C03         C09        H091     150.000   10.00     6
+ERH              const_18         C02         C05         C07         O01     180.000   10.00     2
+ERH              const_14         C03         C06         C07         O01     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ERH    plan-1         C02   0.020
+ERH    plan-1         C03   0.020
+ERH    plan-1         C04   0.020
+ERH    plan-1         C05   0.020
+ERH    plan-1         C06   0.020
+ERH    plan-1         C07   0.020
+ERH    plan-1         C08   0.020
+ERH    plan-1         C09   0.020
+ERH    plan-1         H04   0.020
+ERH    plan-1         H05   0.020
+ERH    plan-1         H06   0.020
+ERH    plan-1         O01   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ERH InChI            InChI                1.03  "InChI=1S/C8H10O/c1-6-3-7(2)5-8(9)4-6/h3-5,9H,1-2H3"
+ERH InChIKey         InChI                1.03  TUAMRELNJMMDMT-UHFFFAOYSA-N
+ERH SMILES_CANONICAL CACTVS               3.385 "Cc1cc(C)cc(O)c1"
+ERH SMILES           CACTVS               3.385 "Cc1cc(C)cc(O)c1"
+ERH SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "Cc1cc(cc(c1)O)C"
+ERH SMILES           "OpenEye OEToolkits" 1.7.6 "Cc1cc(cc(c1)O)C"
+ERH ?                acedrg               190         "dictionary generator"                  
+ERH ?                acedrg_database      11          "data source"                           
+ERH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ERH ?                refmac5              5.8.0158    "optimization tool"                     

@@ -1,0 +1,155 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MOR     MOR      "morpholine-4-carboxylic acid"     NON-POLYMER     18     9     .     
+#
+data_comp_MOR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MOR     O1      O       O2      0       -2.058      -0.383      -0.005      
+MOR     C2      C       CH2     0       -1.624      0.976       -0.064      
+MOR     C3      C       CH2     0       -0.304      1.176       0.653       
+MOR     N4      N       NR6     0       0.703       0.248       0.118       
+MOR     C5      C       CH2     0       0.257       -1.154      0.098       
+MOR     C6      C       CH2     0       -1.093      -1.262      -0.583      
+MOR     C       C       C       0       1.906       0.670       -0.348      
+MOR     O       O       O       0       2.070       1.641       -1.053      
+MOR     O3      O       OH1     0       2.916       -0.066      0.126       
+MOR     H21     H       H       0       -1.527      1.245       -1.001      
+MOR     H22     H       H       0       -2.304      1.548       0.348       
+MOR     H31     H       H       0       -0.424      1.007       1.609       
+MOR     H32     H       H       0       -0.009      2.102       0.542       
+MOR     H51     H       H       0       0.188       -1.487      1.015       
+MOR     H52     H       H       0       0.905       -1.709      -0.381      
+MOR     H61     H       H       0       -0.992      -1.049      -1.535      
+MOR     H62     H       H       0       -1.416      -2.184      -0.512      
+MOR     H9      H       H       0       3.412       0.412       0.670       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MOR       O1        C2        SINGLE    n         1.423     0.011     1.423     0.011     
+MOR       O1        C6        SINGLE    n         1.423     0.011     1.423     0.011     
+MOR       C2        C3        SINGLE    n         1.510     0.012     1.510     0.012     
+MOR       C3        N4        SINGLE    n         1.463     0.010     1.463     0.010     
+MOR       N4        C5        SINGLE    n         1.463     0.010     1.463     0.010     
+MOR       N4        C         SINGLE    n         1.351     0.010     1.351     0.010     
+MOR       C5        C6        SINGLE    n         1.510     0.012     1.510     0.012     
+MOR       C         O         DOUBLE    n         1.211     0.010     1.211     0.010     
+MOR       C         O3        SINGLE    n         1.331     0.020     1.331     0.020     
+MOR       C2        H21       SINGLE    n         1.089     0.010     0.980     0.015     
+MOR       C2        H22       SINGLE    n         1.089     0.010     0.980     0.015     
+MOR       C3        H31       SINGLE    n         1.089     0.010     0.978     0.014     
+MOR       C3        H32       SINGLE    n         1.089     0.010     0.978     0.014     
+MOR       C5        H51       SINGLE    n         1.089     0.010     0.978     0.014     
+MOR       C5        H52       SINGLE    n         1.089     0.010     0.978     0.014     
+MOR       C6        H61       SINGLE    n         1.089     0.010     0.980     0.015     
+MOR       C6        H62       SINGLE    n         1.089     0.010     0.980     0.015     
+MOR       O3        H9        SINGLE    n         0.970     0.012     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MOR          C2          O1          C6     109.829    1.50
+MOR          O1          C2          C3     111.652    1.50
+MOR          O1          C2         H21     109.195    1.50
+MOR          O1          C2         H22     109.195    1.50
+MOR          C3          C2         H21     109.301    1.50
+MOR          C3          C2         H22     109.301    1.50
+MOR         H21          C2         H22     108.175    1.50
+MOR          C2          C3          N4     109.656    1.50
+MOR          C2          C3         H31     109.668    1.50
+MOR          C2          C3         H32     109.668    1.50
+MOR          N4          C3         H31     109.531    1.50
+MOR          N4          C3         H32     109.531    1.50
+MOR         H31          C3         H32     108.316    1.50
+MOR          C3          N4          C5     113.902    1.50
+MOR          C3          N4           C     123.049    2.71
+MOR          C5          N4           C     123.049    2.71
+MOR          N4          C5          C6     109.656    1.50
+MOR          N4          C5         H51     109.531    1.50
+MOR          N4          C5         H52     109.531    1.50
+MOR          C6          C5         H51     109.668    1.50
+MOR          C6          C5         H52     109.668    1.50
+MOR         H51          C5         H52     108.316    1.50
+MOR          O1          C6          C5     111.652    1.50
+MOR          O1          C6         H61     109.195    1.50
+MOR          O1          C6         H62     109.195    1.50
+MOR          C5          C6         H61     109.301    1.50
+MOR          C5          C6         H62     109.301    1.50
+MOR         H61          C6         H62     108.175    1.50
+MOR          N4           C           O     124.800    1.50
+MOR          N4           C          O3     111.446    1.50
+MOR           O           C          O3     123.754    1.50
+MOR           C          O3          H9     110.339    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MOR             sp3_sp3_1          C3          C2          O1          C6      60.000   10.00     3
+MOR            sp3_sp3_22          C5          C6          O1          C2     180.000   10.00     3
+MOR             sp3_sp3_4          O1          C2          C3          N4     -60.000   10.00     3
+MOR             sp2_sp3_4           C          N4          C3          C2     180.000   10.00     6
+MOR            sp2_sp3_10           C          N4          C5          C6     180.000   10.00     6
+MOR             sp2_sp2_3           O           C          N4          C3       0.000   10.00     2
+MOR            sp3_sp3_13          N4          C5          C6          O1      60.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MOR    plan-1           C   0.020
+MOR    plan-1          C3   0.020
+MOR    plan-1          C5   0.020
+MOR    plan-1          N4   0.020
+MOR    plan-2           C   0.020
+MOR    plan-2          N4   0.020
+MOR    plan-2           O   0.020
+MOR    plan-2          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MOR SMILES           ACDLabs              12.01 "O=C(O)N1CCOCC1"
+MOR SMILES_CANONICAL CACTVS               3.370 "OC(=O)N1CCOCC1"
+MOR SMILES           CACTVS               3.370 "OC(=O)N1CCOCC1"
+MOR SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C1COCCN1C(=O)O"
+MOR SMILES           "OpenEye OEToolkits" 1.7.0 "C1COCCN1C(=O)O"
+MOR InChI            InChI                1.03  "InChI=1S/C5H9NO3/c7-5(8)6-1-3-9-4-2-6/h1-4H2,(H,7,8)"
+MOR InChIKey         InChI                1.03  STUHQDIOZQUPGP-UHFFFAOYSA-N
+MOR ?                acedrg               202         "dictionary generator"                  
+MOR ?                acedrg_database      11          "data source"                           
+MOR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MOR ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,134 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FFQ     FFQ      "[(1R)-1-hydroxypropyl]phosphonic acid"     non-polymer     15     8     .     
+#
+data_comp_FFQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FFQ     C1      C       CH2     0       54.464      44.062      154.409     
+FFQ     O1      O       OH1     0       54.438      46.466      154.640     
+FFQ     P1      P       P       0       56.664      45.345      155.605     
+FFQ     C2      C       CH1     0       54.864      45.268      155.262     
+FFQ     O2      O       OP      -1      56.848      46.282      156.751     
+FFQ     C3      C       CH3     0       55.032      44.017      152.997     
+FFQ     O3      O       O       0       57.326      45.853      154.368     
+FFQ     O4      O       OP      -1      57.120      43.966      155.945     
+FFQ     H       H       H       0       53.486      44.046      154.349     
+FFQ     H3B     H       H       0       54.739      43.249      154.881     
+FFQ     H2      H       H       0       54.962      46.701      154.014     
+FFQ     H1      H       H       0       54.390      45.200      156.131     
+FFQ     H20     H       H       0       54.635      43.271      152.514     
+FFQ     HO2     H       H       0       55.996      43.897      153.034     
+FFQ     H3      H       H       0       54.827      44.845      152.532     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FFQ       C1        C2        SINGLE    n         1.524     0.014     1.524     0.014     
+FFQ       O1        C2        SINGLE    n         1.413     0.010     1.413     0.010     
+FFQ       P1        O4        SINGLE    n         1.492     0.020     1.492     0.020     
+FFQ       P1        O2        SINGLE    n         1.492     0.020     1.492     0.020     
+FFQ       P1        C2        SINGLE    n         1.823     0.020     1.823     0.020     
+FFQ       C1        C3        SINGLE    n         1.515     0.020     1.515     0.020     
+FFQ       P1        O3        DOUBLE    n         1.492     0.020     1.492     0.020     
+FFQ       C1        H         SINGLE    n         1.089     0.010     0.980     0.016     
+FFQ       C1        H3B       SINGLE    n         1.089     0.010     0.980     0.016     
+FFQ       O1        H2        SINGLE    n         0.970     0.012     0.848     0.020     
+FFQ       C2        H1        SINGLE    n         1.089     0.010     0.992     0.016     
+FFQ       C3        H20       SINGLE    n         1.089     0.010     0.973     0.016     
+FFQ       C3        HO2       SINGLE    n         1.089     0.010     0.973     0.016     
+FFQ       C3        H3        SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FFQ          C2          C1          C3     114.088    2.07
+FFQ          C2          C1           H     108.492    1.50
+FFQ          C2          C1         H3B     108.492    1.50
+FFQ          C3          C1           H     108.957    1.50
+FFQ          C3          C1         H3B     108.957    1.50
+FFQ           H          C1         H3B     107.715    1.50
+FFQ          C2          O1          H2     109.133    3.00
+FFQ          O4          P1          O2     112.502    1.50
+FFQ          O4          P1          C2     110.326    3.00
+FFQ          O4          P1          O3     112.502    1.50
+FFQ          O2          P1          C2     110.326    3.00
+FFQ          O2          P1          O3     112.502    1.50
+FFQ          C2          P1          O3     110.326    3.00
+FFQ          C1          C2          O1     109.182    2.31
+FFQ          C1          C2          P1     111.410    2.87
+FFQ          C1          C2          H1     108.563    1.50
+FFQ          O1          C2          P1     108.256    2.94
+FFQ          O1          C2          H1     108.198    1.81
+FFQ          P1          C2          H1     108.528    1.50
+FFQ          C1          C3         H20     109.557    1.50
+FFQ          C1          C3         HO2     109.557    1.50
+FFQ          C1          C3          H3     109.557    1.50
+FFQ         H20          C3         HO2     109.380    1.50
+FFQ         H20          C3          H3     109.380    1.50
+FFQ         HO2          C3          H3     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FFQ             sp3_sp3_1          C3          C1          C2          O1     180.000   10.00     3
+FFQ            sp3_sp3_22          C2          C1          C3         H20     180.000   10.00     3
+FFQ            sp3_sp3_10          C1          C2          O1          H2     180.000   10.00     3
+FFQ            sp3_sp3_13          C1          C2          P1          O4     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+FFQ    chir_1    C2    P1    O1    C1    negative
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FFQ SMILES           ACDLabs              12.01 "O=P(O)(O)C(O)CC"
+FFQ InChI            InChI                1.03  "InChI=1S/C3H9O4P/c1-2-3(4)8(5,6)7/h3-4H,2H2,1H3,(H2,5,6,7)/t3-/m1/s1"
+FFQ InChIKey         InChI                1.03  MVIJUJBSAAUHEM-GSVOUGTGSA-N
+FFQ SMILES_CANONICAL CACTVS               3.370 "CC[C@H](O)[P](O)(O)=O"
+FFQ SMILES           CACTVS               3.370 "CC[CH](O)[P](O)(O)=O"
+FFQ SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "CC[C@H](O)P(=O)(O)O"
+FFQ SMILES           "OpenEye OEToolkits" 1.7.6 "CCC(O)P(=O)(O)O"
+FFQ ?                acedrg               202         "dictionary generator"                  
+FFQ ?                acedrg_database      11          "data source"                           
+FFQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FFQ ?                refmac5              5.8.0189    "optimization tool"                     

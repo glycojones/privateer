@@ -1,0 +1,192 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AZS     AZS      O-DIAZOACETYL-L-SERINE  peptide    19     12     .     
+#
+data_comp_AZS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AZS     O       O       OC      -1      12.624      -33.029     -23.084     
+AZS     C       C       C       0       13.711      -33.638     -23.093     
+AZS     OXT     O       O       0       14.642      -33.474     -22.279     
+AZS     CA      C       CH1     0       13.921      -34.679     -24.202     
+AZS     N       N       NT3     1       12.825      -35.689     -24.183     
+AZS     CB      C       CH2     0       14.030      -34.018     -25.564     
+AZS     OG      O       O2      0       14.412      -35.041     -26.555     
+AZS     CH      C       C       0       15.546      -34.893     -27.265     
+AZS     CI      C       C1      0       15.643      -35.897     -28.316     
+AZS     NJ      N       N       1       16.685      -35.944     -29.119     
+AZS     NK      N       N       -1      17.595      -35.953     -29.790     
+AZS     OH      O       O       0       16.408      -34.056     -27.083     
+AZS     HA      H       H       0       14.775      -35.157     -24.019     
+AZS     H       H       H       0       12.535      -35.855     -25.032     
+AZS     H2      H       H       0       12.123      -35.386     -23.686     
+AZS     H3      H       H       0       13.132      -36.467     -23.820     
+AZS     HB1     H       H       0       14.691      -33.295     -25.527     
+AZS     HB2     H       H       0       13.164      -33.628     -25.810     
+AZS     HI      H       H       0       14.939      -36.526     -28.415     
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AZS      N      n/a    CA     START
+ AZS      H      N      .      .
+ AZS      H2     N      .      .
+ AZS      H3     N      .      .
+ AZS      CA     N      C      .
+ AZS      HA     CA     .      .
+ AZS      CB     CA     OG     .
+ AZS      HB1    CB     .      .
+ AZS      HB2    CB     .      .
+ AZS      OG     CB     CH     .
+ AZS      CH     OG     OH     .
+ AZS      CI     CH     NJ     .
+ AZS      HI     CI     .      .
+ AZS      NJ     CI     NK     .
+ AZS      NK     NJ     .      .
+ AZS      OH     CH     .      .
+ AZS      C      CA     .      END
+ AZS      O      C      .      .
+ AZS      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AZS       O         C         SINGLE    n         1.247     0.019     1.247     0.019     
+AZS       C         OXT       DOUBLE    n         1.247     0.019     1.247     0.019     
+AZS       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+AZS       CA        N         SINGLE    n         1.487     0.010     1.487     0.010     
+AZS       CA        CB        SINGLE    n         1.515     0.017     1.515     0.017     
+AZS       CB        OG        SINGLE    n         1.458     0.019     1.458     0.019     
+AZS       OG        CH        SINGLE    n         1.335     0.015     1.335     0.015     
+AZS       CH        OH        DOUBLE    n         1.211     0.016     1.211     0.016     
+AZS       CH        CI        SINGLE    n         1.452     0.020     1.452     0.020     
+AZS       CI        NJ        DOUBLE    n         1.316     0.010     1.316     0.010     
+AZS       NJ        NK        DOUBLE    n         1.131     0.017     1.131     0.017     
+AZS       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+AZS       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+AZS       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+AZS       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+AZS       CB        HB1       SINGLE    n         1.089     0.010     0.981     0.010     
+AZS       CB        HB2       SINGLE    n         1.089     0.010     0.981     0.010     
+AZS       CI        HI        SINGLE    n         1.082     0.013     0.949     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AZS           O           C         OXT     125.637    1.50
+AZS           O           C          CA     117.181    1.50
+AZS         OXT           C          CA     117.181    1.50
+AZS           C          CA           N     109.829    1.50
+AZS           C          CA          CB     111.527    1.50
+AZS           C          CA          HA     108.255    1.50
+AZS           N          CA          CB     110.608    1.50
+AZS           N          CA          HA     108.049    1.50
+AZS          CB          CA          HA     108.597    1.50
+AZS          CA           N           H     109.619    1.50
+AZS          CA           N          H2     109.619    1.50
+AZS          CA           N          H3     109.619    1.50
+AZS           H           N          H2     109.028    2.41
+AZS           H           N          H3     109.028    2.41
+AZS          H2           N          H3     109.028    2.41
+AZS          CA          CB          OG     108.730    1.77
+AZS          CA          CB         HB1     109.469    1.50
+AZS          CA          CB         HB2     109.469    1.50
+AZS          OG          CB         HB1     109.566    1.50
+AZS          OG          CB         HB2     109.566    1.50
+AZS         HB1          CB         HB2     108.098    1.50
+AZS          CB          OG          CH     116.454    1.50
+AZS          OG          CH          OH     124.939    1.72
+AZS          OG          CH          CI     111.831    1.50
+AZS          OH          CH          CI     123.230    2.15
+AZS          CH          CI          NJ     120.694    3.00
+AZS          CH          CI          HI     119.089    1.72
+AZS          NJ          CI          HI     120.217    1.50
+AZS          CI          NJ          NK     177.973    1.55
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AZS             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+AZS             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+AZS            sp3_sp3_10           C          CA          CB          OG     180.000   10.00     3
+AZS            sp3_sp3_19          CA          CB          OG          CH     180.000   10.00     3
+AZS             sp2_sp2_1          OH          CH          OG          CB     180.000   10.00     2
+AZS             sp2_sp2_3          OG          CH          CI          NJ     180.000   10.00     2
+AZS             sp2_sp2_7          CH          CI          NJ          NK     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+AZS    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AZS    plan-1           C   0.020
+AZS    plan-1          CA   0.020
+AZS    plan-1           O   0.020
+AZS    plan-1         OXT   0.020
+AZS    plan-2          CH   0.020
+AZS    plan-2          CI   0.020
+AZS    plan-2          OG   0.020
+AZS    plan-2          OH   0.020
+AZS    plan-3          CH   0.020
+AZS    plan-3          CI   0.020
+AZS    plan-3          HI   0.020
+AZS    plan-3          NJ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AZS SMILES           ACDLabs              10.04 "O=C(OCC(N)C(=O)O)\C=[N+]=[N-]"
+AZS SMILES_CANONICAL CACTVS               3.341 "N[C@@H](COC(=O)C=[N+]=[N-])C(O)=O"
+AZS SMILES           CACTVS               3.341 "N[CH](COC(=O)C=[N+]=[N-])C(O)=O"
+AZS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)OC(=O)C=[N+]=[N-]"
+AZS SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)OC(=O)C=[N+]=[N-]"
+AZS InChI            InChI                1.03  "InChI=1S/C5H7N3O4/c6-3(5(10)11)2-12-4(9)1-8-7/h1,3H,2,6H2,(H,10,11)/t3-/m0/s1"
+AZS InChIKey         InChI                1.03  MZZGOOYMKKIOOX-VKHMYHEASA-N
+AZS ?                acedrg               202         "dictionary generator"                  
+AZS ?                acedrg_database      11          "data source"                           
+AZS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AZS ?                refmac5              5.8.0222    "optimization tool"                     

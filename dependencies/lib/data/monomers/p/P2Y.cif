@@ -1,0 +1,190 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+P2Y      P2Y '(2S)-PYRROLIDIN-2-YLMETHYLAMINE     ' non-polymer        19   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_P2Y
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ P2Y           NA     N    NH2       0.000      0.000    0.000    0.000
+ P2Y           HNA1   H    H         0.000      0.836   -0.571   -0.038
+ P2Y           HNA2   H    H         0.000     -0.306    0.375    0.890
+ P2Y           C      C    CH2       0.000     -0.762    0.282   -1.223
+ P2Y           H1     H    H         0.000     -0.220   -0.111   -2.086
+ P2Y           H2     H    H         0.000     -0.886    1.361   -1.333
+ P2Y           CA     C    CH1       0.000     -2.136   -0.385   -1.134
+ P2Y           HA     H    H         0.000     -2.027   -1.472   -1.011
+ P2Y           CB     C    CH2       0.000     -2.969   -0.067   -2.393
+ P2Y           HB2    H    H         0.000     -2.935   -0.886   -3.115
+ P2Y           HB3    H    H         0.000     -2.637    0.855   -2.873
+ P2Y           CG     C    CH2       0.000     -4.414    0.109   -1.882
+ P2Y           HG3    H    H         0.000     -5.089   -0.627   -2.323
+ P2Y           HG2    H    H         0.000     -4.791    1.114   -2.083
+ P2Y           CD     C    CH2       0.000     -4.331   -0.115   -0.357
+ P2Y           HD3    H    H         0.000     -4.560   -1.148   -0.087
+ P2Y           HD2    H    H         0.000     -4.994    0.559    0.188
+ P2Y           N      N    NH1       0.000     -2.917    0.187   -0.009
+ P2Y           H      H    H         0.000     -2.569    0.671    0.806
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ P2Y      NA     n/a    C      START
+ P2Y      HNA1   NA     .      .
+ P2Y      HNA2   NA     .      .
+ P2Y      C      NA     CA     .
+ P2Y      H1     C      .      .
+ P2Y      H2     C      .      .
+ P2Y      CA     C      CB     .
+ P2Y      HA     CA     .      .
+ P2Y      CB     CA     CG     .
+ P2Y      HB2    CB     .      .
+ P2Y      HB3    CB     .      .
+ P2Y      CG     CB     CD     .
+ P2Y      HG3    CG     .      .
+ P2Y      HG2    CG     .      .
+ P2Y      CD     CG     N      .
+ P2Y      HD3    CD     .      .
+ P2Y      HD2    CD     .      .
+ P2Y      N      CD     H      .
+ P2Y      H      N      .      END
+ P2Y      CA     N      .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+P2Y       C         NA        single    1.450     0.020     1.450     0.020     
+P2Y       HNA1      NA        single    1.036     0.016     0.914     0.007     
+P2Y       HNA2      NA        single    1.036     0.016     0.914     0.007     
+P2Y       CA        C         single    1.524     0.020     1.524     0.020     
+P2Y       H1        C         single    1.089     0.010     0.989     0.005     
+P2Y       H2        C         single    1.089     0.010     0.989     0.005     
+P2Y       CA        N         single    1.450     0.020     1.450     0.020     
+P2Y       CB        CA        single    1.524     0.020     1.524     0.020     
+P2Y       HA        CA        single    1.089     0.010     0.989     0.005     
+P2Y       N         CD        single    1.450     0.020     1.450     0.020     
+P2Y       H         N         single    1.036     0.016     0.914     0.007     
+P2Y       CD        CG        single    1.524     0.020     1.524     0.020     
+P2Y       HD3       CD        single    1.089     0.010     0.989     0.005     
+P2Y       HD2       CD        single    1.089     0.010     0.989     0.005     
+P2Y       CG        CB        single    1.524     0.020     1.524     0.020     
+P2Y       HG3       CG        single    1.089     0.010     0.989     0.005     
+P2Y       HG2       CG        single    1.089     0.010     0.989     0.005     
+P2Y       HB2       CB        single    1.089     0.010     0.989     0.005     
+P2Y       HB3       CB        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ P2Y      HNA1   NA     HNA2    120.000    3.000
+ P2Y      HNA1   NA     C       120.000    3.000
+ P2Y      HNA2   NA     C       120.000    3.000
+ P2Y      NA     C      H1      109.470    3.000
+ P2Y      NA     C      H2      109.470    3.000
+ P2Y      NA     C      CA      109.470    3.000
+ P2Y      H1     C      H2      107.900    3.000
+ P2Y      H1     C      CA      109.470    3.000
+ P2Y      H2     C      CA      109.470    3.000
+ P2Y      C      CA     HA      108.340    3.000
+ P2Y      C      CA     CB      109.470    3.000
+ P2Y      C      CA     N       110.000    3.000
+ P2Y      HA     CA     CB      108.340    3.000
+ P2Y      HA     CA     N       108.550    3.000
+ P2Y      CB     CA     N       110.000    3.000
+ P2Y      CA     CB     HB2     109.470    3.000
+ P2Y      CA     CB     HB3     109.470    3.000
+ P2Y      CA     CB     CG      111.000    3.000
+ P2Y      HB2    CB     HB3     107.900    3.000
+ P2Y      HB2    CB     CG      109.470    3.000
+ P2Y      HB3    CB     CG      109.470    3.000
+ P2Y      CB     CG     HG3     109.470    3.000
+ P2Y      CB     CG     HG2     109.470    3.000
+ P2Y      CB     CG     CD      111.000    3.000
+ P2Y      HG3    CG     HG2     107.900    3.000
+ P2Y      HG3    CG     CD      109.470    3.000
+ P2Y      HG2    CG     CD      109.470    3.000
+ P2Y      CG     CD     HD3     109.470    3.000
+ P2Y      CG     CD     HD2     109.470    3.000
+ P2Y      CG     CD     N       112.000    3.000
+ P2Y      HD3    CD     HD2     107.900    3.000
+ P2Y      HD3    CD     N       109.470    3.000
+ P2Y      HD2    CD     N       109.470    3.000
+ P2Y      CD     N      H       118.500    3.000
+ P2Y      CD     N      CA      120.000    3.000
+ P2Y      H      N      CA      118.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ P2Y      var_1    HNA2   NA     C      CA       -66.125   20.000   1
+ P2Y      var_2    NA     C      CA     CB       178.354   20.000   3
+ P2Y      var_3    C      CA     N      CD       150.000   20.000   3
+ P2Y      var_4    C      CA     CB     CG      -150.000   20.000   3
+ P2Y      var_5    CA     CB     CG     CD         0.000   20.000   3
+ P2Y      var_6    CB     CG     CD     N         30.000   20.000   3
+ P2Y      var_7    CG     CD     N      CA       -30.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ P2Y      chir_01  CA     C      N      CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ P2Y      plan-1    NA        0.020
+ P2Y      plan-1    C         0.020
+ P2Y      plan-1    HNA1      0.020
+ P2Y      plan-1    HNA2      0.020
+ P2Y      plan-2    N         0.020
+ P2Y      plan-2    CA        0.020
+ P2Y      plan-2    CD        0.020
+ P2Y      plan-2    H         0.020
+# ------------------------------------------------------

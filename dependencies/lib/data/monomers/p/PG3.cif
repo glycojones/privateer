@@ -1,0 +1,165 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PG3     PG3      GUANIDINE-3-PROPANOL     NON-POLYMER     20     8     .     
+#
+data_comp_PG3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PG3     OA      O       OH1     0       35.116      27.177      9.972       
+PG3     CB      C       CH2     0       34.665      26.349      11.029      
+PG3     CG      C       CH2     0       33.419      26.903      11.684      
+PG3     CD      C       CH2     0       33.670      28.204      12.426      
+PG3     NE      N       NH1     0       32.470      28.743      13.063      
+PG3     CZ      C       C       0       31.785      28.165      14.058      
+PG3     NH1     N       NH2     1       32.355      27.261      14.841      
+PG3     NH2     N       NH2     0       30.519      28.495      14.268      
+PG3     HA      H       H       0       35.887      26.919      9.738       
+PG3     HB1     H       H       0       35.376      26.269      11.701      
+PG3     HB2     H       H       0       34.477      25.453      10.679      
+PG3     HG1     H       H       0       33.065      26.239      12.313      
+PG3     HG2     H       H       0       32.735      27.057      10.998      
+PG3     HD1     H       H       0       34.017      28.867      11.792      
+PG3     HD2     H       H       0       34.359      28.055      13.107      
+PG3     HE      H       H       0       32.185      29.518      12.778      
+PG3     HH11    H       H       0       31.863      26.638      15.220      
+PG3     HH12    H       H       0       33.210      27.313      15.033      
+PG3     HH21    H       H       0       30.096      28.184      14.976      
+PG3     HH22    H       H       0       30.094      29.017      13.698      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PG3       OA        CB        SINGLE    n         1.417     0.020     1.417     0.020     
+PG3       CB        CG        SINGLE    n         1.513     0.010     1.513     0.010     
+PG3       CG        CD        SINGLE    n         1.517     0.010     1.517     0.010     
+PG3       CD        NE        SINGLE    n         1.456     0.014     1.456     0.014     
+PG3       NE        CZ        SINGLE    n         1.328     0.013     1.328     0.013     
+PG3       CZ        NH1       DOUBLE    n         1.322     0.010     1.322     0.010     
+PG3       CZ        NH2       SINGLE    n         1.321     0.011     1.321     0.011     
+PG3       OA        HA        SINGLE    n         0.970     0.012     0.846     0.020     
+PG3       CB        HB1       SINGLE    n         1.089     0.010     0.981     0.017     
+PG3       CB        HB2       SINGLE    n         1.089     0.010     0.981     0.017     
+PG3       CG        HG1       SINGLE    n         1.089     0.010     0.981     0.012     
+PG3       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.012     
+PG3       CD        HD1       SINGLE    n         1.089     0.010     0.981     0.015     
+PG3       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.015     
+PG3       NE        HE        SINGLE    n         1.016     0.010     0.872     0.020     
+PG3       NH1       HH11      SINGLE    n         1.016     0.010     0.879     0.020     
+PG3       NH1       HH12      SINGLE    n         1.016     0.010     0.879     0.020     
+PG3       NH2       HH21      SINGLE    n         1.016     0.010     0.881     0.020     
+PG3       NH2       HH22      SINGLE    n         1.016     0.010     0.881     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PG3          CB          OA          HA     108.576    2.78
+PG3          OA          CB          CG     111.826    2.06
+PG3          OA          CB         HB1     109.258    1.50
+PG3          OA          CB         HB2     109.258    1.50
+PG3          CG          CB         HB1     109.435    1.50
+PG3          CG          CB         HB2     109.435    1.50
+PG3         HB1          CB         HB2     108.120    1.50
+PG3          CB          CG          CD     113.087    1.51
+PG3          CB          CG         HG1     109.317    1.50
+PG3          CB          CG         HG2     109.317    1.50
+PG3          CD          CG         HG1     108.901    1.50
+PG3          CD          CG         HG2     108.901    1.50
+PG3         HG1          CG         HG2     107.717    1.50
+PG3          CG          CD          NE     112.309    1.89
+PG3          CG          CD         HD1     109.069    1.50
+PG3          CG          CD         HD2     109.069    1.50
+PG3          NE          CD         HD1     109.183    1.50
+PG3          NE          CD         HD2     109.183    1.50
+PG3         HD1          CD         HD2     107.877    1.50
+PG3          CD          NE          CZ     124.510    1.50
+PG3          CD          NE          HE     117.883    1.50
+PG3          CZ          NE          HE     117.606    1.50
+PG3          NE          CZ         NH1     120.052    1.50
+PG3          NE          CZ         NH2     120.052    1.50
+PG3         NH1          CZ         NH2     119.896    1.50
+PG3          CZ         NH1        HH11     119.855    2.01
+PG3          CZ         NH1        HH12     119.855    2.01
+PG3        HH11         NH1        HH12     120.290    2.09
+PG3          CZ         NH2        HH21     119.855    2.01
+PG3          CZ         NH2        HH22     119.855    2.01
+PG3        HH21         NH2        HH22     120.290    2.09
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PG3             sp3_sp3_1          CG          CB          OA          HA     180.000   10.00     3
+PG3             sp3_sp3_4          OA          CB          CG          CD     180.000   10.00     3
+PG3            sp3_sp3_13          NE          CD          CG          CB     180.000   10.00     3
+PG3             sp2_sp3_2          CZ          NE          CD          CG     120.000   10.00     6
+PG3             sp2_sp2_1         NH1          CZ          NE          CD     180.000   10.00     2
+PG3             sp2_sp2_5          NE          CZ         NH1        HH11     180.000   10.00     2
+PG3             sp2_sp2_9          NE          CZ         NH2        HH21     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PG3    plan-1          CD   0.020
+PG3    plan-1          CZ   0.020
+PG3    plan-1          HE   0.020
+PG3    plan-1          NE   0.020
+PG3    plan-2          CZ   0.020
+PG3    plan-2          NE   0.020
+PG3    plan-2         NH1   0.020
+PG3    plan-2         NH2   0.020
+PG3    plan-3          CZ   0.020
+PG3    plan-3        HH11   0.020
+PG3    plan-3        HH12   0.020
+PG3    plan-3         NH1   0.020
+PG3    plan-4          CZ   0.020
+PG3    plan-4        HH21   0.020
+PG3    plan-4        HH22   0.020
+PG3    plan-4         NH2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PG3 SMILES           ACDLabs              10.04 "OCCCNC(=[NH2+])\N"
+PG3 SMILES_CANONICAL CACTVS               3.341 "NC(=[NH2+])NCCCO"
+PG3 SMILES           CACTVS               3.341 "NC(=[NH2+])NCCCO"
+PG3 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CNC(=[NH2+])N)CO"
+PG3 SMILES           "OpenEye OEToolkits" 1.5.0 "C(CNC(=[NH2+])N)CO"
+PG3 InChI            InChI                1.03  "InChI=1S/C4H11N3O/c5-4(6)7-2-1-3-8/h8H,1-3H2,(H4,5,6,7)/p+1"
+PG3 InChIKey         InChI                1.03  JDXXTKLHHZMVIO-UHFFFAOYSA-O
+PG3 ?                acedrg               202         "dictionary generator"                  
+PG3 ?                acedrg_database      11          "data source"                           
+PG3 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PG3 ?                refmac5              5.8.0189    "optimization tool"                     

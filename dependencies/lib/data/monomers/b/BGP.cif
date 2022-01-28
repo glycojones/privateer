@@ -1,0 +1,223 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BGP      BGP 'BETA-GALACTOSE-6-PHOSPHATE          ' pyranose           27  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BGP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BGP           C1     C    CH1       0.000      0.000    0.000    0.000
+ BGP           H1     H    H         0.000      0.131    1.084    0.128
+ BGP           O1     O    OH1       0.000      1.125   -0.683    0.556
+ BGP           HO1    H    H         0.000      1.195   -0.475    1.497
+ BGP           O5     O    O2        0.000     -1.186   -0.415    0.673
+ BGP           C5     C    CH1       0.000     -2.254    0.413    0.220
+ BGP           H5     H    H         0.000     -1.970    1.469    0.335
+ BGP           C6     C    CH2       0.000     -3.506    0.130    1.050
+ BGP           H61    H    H         0.000     -3.788   -0.919    0.938
+ BGP           H62    H    H         0.000     -4.324    0.764    0.702
+ BGP           O6     O    O2        0.000     -3.238    0.408    2.425
+ BGP           P      P    P         0.000     -4.593    0.091    3.236
+ BGP           O1P    O    OP       -0.666     -4.966   -1.363    3.045
+ BGP           O2P    O    OP       -0.666     -4.375    0.365    4.708
+ BGP           O3P    O    OP       -0.666     -5.709    0.971    2.718
+ BGP           C4     C    CH1       0.000     -2.546    0.122   -1.255
+ BGP           H4     H    H         0.000     -3.382    0.749   -1.595
+ BGP           O4     O    OH1       0.000     -2.888   -1.255   -1.411
+ BGP           HO4    H    H         0.000     -3.072   -1.436   -2.342
+ BGP           C3     C    CH1       0.000     -1.296    0.440   -2.084
+ BGP           H3     H    H         0.000     -1.094    1.520   -2.049
+ BGP           O3     O    OH1       0.000     -1.504    0.035   -3.438
+ BGP           HO3    H    H         0.000     -0.714    0.235   -3.959
+ BGP           C2     C    CH1       0.000     -0.109   -0.325   -1.491
+ BGP           H2     H    H         0.000     -0.265   -1.405   -1.622
+ BGP           O2     O    OH1       0.000      1.094    0.069   -2.155
+ BGP           HO2    H    H         0.000      1.842   -0.415   -1.779
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BGP      C1     n/a    O5     START
+ BGP      H1     C1     .      .
+ BGP      O1     C1     HO1    .
+ BGP      HO1    O1     .      .
+ BGP      O5     C1     .      END
+ BGP      C5     O5     C4     .
+ BGP      H5     C5     .      .
+ BGP      C6     C5     O6     .
+ BGP      H61    C6     .      .
+ BGP      H62    C6     .      .
+ BGP      O6     C6     P      .
+ BGP      P      O6     O3P    .
+ BGP      O1P    P      .      .
+ BGP      O2P    P      .      .
+ BGP      O3P    P      .      .
+ BGP      C4     C5     C3     .
+ BGP      H4     C4     .      .
+ BGP      O4     C4     HO4    .
+ BGP      HO4    O4     .      .
+ BGP      C3     C4     C2     .
+ BGP      H3     C3     .      .
+ BGP      O3     C3     HO3    .
+ BGP      HO3    O3     .      .
+ BGP      C2     C3     O2     .
+ BGP      H2     C2     .      .
+ BGP      O2     C2     HO2    .
+ BGP      HO2    O2     .      .
+ BGP      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BGP       C1        C2        single    1.524     0.020     1.524     0.020     
+BGP       O1        C1        single    1.432     0.020     1.432     0.020     
+BGP       O5        C1        single    1.426     0.020     1.426     0.020     
+BGP       H1        C1        single    1.089     0.010     0.989     0.005     
+BGP       C2        C3        single    1.524     0.020     1.524     0.020     
+BGP       O2        C2        single    1.432     0.020     1.432     0.020     
+BGP       H2        C2        single    1.089     0.010     0.989     0.005     
+BGP       C3        C4        single    1.524     0.020     1.524     0.020     
+BGP       O3        C3        single    1.432     0.020     1.432     0.020     
+BGP       H3        C3        single    1.089     0.010     0.989     0.005     
+BGP       C4        C5        single    1.524     0.020     1.524     0.020     
+BGP       O4        C4        single    1.432     0.020     1.432     0.020     
+BGP       H4        C4        single    1.089     0.010     0.989     0.005     
+BGP       C6        C5        single    1.524     0.020     1.524     0.020     
+BGP       C5        O5        single    1.426     0.020     1.426     0.020     
+BGP       H5        C5        single    1.089     0.010     0.989     0.005     
+BGP       O6        C6        single    1.426     0.020     1.426     0.020     
+BGP       H61       C6        single    1.089     0.010     0.989     0.005     
+BGP       H62       C6        single    1.089     0.010     0.989     0.005     
+BGP       HO1       O1        single    0.970     0.012     0.839     0.014     
+BGP       HO2       O2        single    0.970     0.012     0.839     0.014     
+BGP       HO3       O3        single    0.970     0.012     0.839     0.014     
+BGP       HO4       O4        single    0.970     0.012     0.839     0.014     
+BGP       P         O6        single    1.610     0.020     1.610     0.020     
+BGP       O1P       P         deloc     1.510     0.020     1.510     0.020     
+BGP       O2P       P         deloc     1.510     0.020     1.510     0.020     
+BGP       O3P       P         deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BGP      H1     C1     O1      109.470    3.000
+ BGP      H1     C1     O5      109.470    3.000
+ BGP      O1     C1     O5      109.470    3.000
+ BGP      H1     C1     C2      108.340    3.000
+ BGP      O1     C1     C2      109.470    3.000
+ BGP      O5     C1     C2      109.470    3.000
+ BGP      C1     O1     HO1     109.470    3.000
+ BGP      C1     O5     C5      111.800    3.000
+ BGP      O5     C5     H5      109.470    3.000
+ BGP      O5     C5     C6      109.470    3.000
+ BGP      O5     C5     C4      109.470    3.000
+ BGP      H5     C5     C6      108.340    3.000
+ BGP      H5     C5     C4      108.340    3.000
+ BGP      C6     C5     C4      111.000    3.000
+ BGP      C5     C6     H61     109.470    3.000
+ BGP      C5     C6     H62     109.470    3.000
+ BGP      C5     C6     O6      109.470    3.000
+ BGP      H61    C6     H62     107.900    3.000
+ BGP      H61    C6     O6      109.470    3.000
+ BGP      H62    C6     O6      109.470    3.000
+ BGP      C6     O6     P       120.500    3.000
+ BGP      O6     P      O1P     108.200    3.000
+ BGP      O6     P      O2P     108.200    3.000
+ BGP      O6     P      O3P     108.200    3.000
+ BGP      O1P    P      O2P     119.900    3.000
+ BGP      O1P    P      O3P     119.900    3.000
+ BGP      O2P    P      O3P     119.900    3.000
+ BGP      C5     C4     H4      108.340    3.000
+ BGP      C5     C4     O4      109.470    3.000
+ BGP      C5     C4     C3      111.000    3.000
+ BGP      H4     C4     O4      109.470    3.000
+ BGP      H4     C4     C3      108.340    3.000
+ BGP      O4     C4     C3      109.470    3.000
+ BGP      C4     O4     HO4     109.470    3.000
+ BGP      C4     C3     H3      108.340    3.000
+ BGP      C4     C3     O3      109.470    3.000
+ BGP      C4     C3     C2      111.000    3.000
+ BGP      H3     C3     O3      109.470    3.000
+ BGP      H3     C3     C2      108.340    3.000
+ BGP      O3     C3     C2      109.470    3.000
+ BGP      C3     O3     HO3     109.470    3.000
+ BGP      C3     C2     H2      108.340    3.000
+ BGP      C3     C2     O2      109.470    3.000
+ BGP      C3     C2     C1      111.000    3.000
+ BGP      H2     C2     O2      109.470    3.000
+ BGP      H2     C2     C1      108.340    3.000
+ BGP      O2     C2     C1      109.470    3.000
+ BGP      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BGP      var_1    O5     C1     O1     HO1      -59.778   20.000   1
+ BGP      var_2    C1     O5     C5     C4        60.000   20.000   1
+ BGP      var_3    O5     C5     C6     O6        60.021   20.000   3
+ BGP      var_4    C5     C6     O6     P        179.984   20.000   1
+ BGP      var_5    C6     O6     P      O3P      -60.001   20.000   1
+ BGP      var_6    O5     C5     C4     C3       -60.000   20.000   3
+ BGP      var_7    C5     C4     O4     HO4     -179.998   20.000   1
+ BGP      var_8    C5     C4     C3     C2        60.000   20.000   3
+ BGP      var_9    C4     C3     O3     HO3     -179.932   20.000   1
+ BGP      var_10   C4     C3     C2     O2       180.000   20.000   3
+ BGP      var_11   C3     C2     C1     O5        60.000   20.000   3
+ BGP      var_12   C3     C2     O2     HO2      179.966   20.000   1
+ BGP      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BGP      chir_01  C1     C2     O1     O5        positiv
+ BGP      chir_02  C2     C1     C3     O2        negativ
+ BGP      chir_03  C3     C2     C4     O3        positiv
+ BGP      chir_04  C4     C3     C5     O4        positiv
+ BGP      chir_05  C5     C4     C6     O5        negativ
+# ------------------------------------------------------

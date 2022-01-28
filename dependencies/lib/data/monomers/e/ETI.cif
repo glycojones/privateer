@@ -1,0 +1,95 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ETI     ETI      IODOETHANE     NON-POLYMER     8     3     .     
+#
+data_comp_ETI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ETI     C1      C       CH2     0       0.621       -0.318      -0.053      
+ETI     C2      C       CH3     0       -0.789      0.136       0.011       
+ETI     I       I       I       0       2.033       1.261       0.286       
+ETI     H11     H       H       0       0.789       -0.710      -0.934      
+ETI     H12     H       H       0       0.761       -1.018      0.617       
+ETI     H21     H       H       0       -1.380      -0.620      -0.151      
+ETI     H22     H       H       0       -0.940      0.819       -0.665      
+ETI     H23     H       H       0       -0.969      0.507       0.893       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ETI       C1        C2        SINGLE    n         1.482     0.020     1.482     0.020     
+ETI       C1        I         SINGLE    n         2.145     0.020     2.145     0.020     
+ETI       C1        H11       SINGLE    n         1.089     0.010     0.979     0.012     
+ETI       C1        H12       SINGLE    n         1.089     0.010     0.979     0.012     
+ETI       C2        H21       SINGLE    n         1.089     0.010     0.973     0.015     
+ETI       C2        H22       SINGLE    n         1.089     0.010     0.973     0.015     
+ETI       C2        H23       SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ETI          C2          C1           I     113.388    1.50
+ETI          C2          C1         H11     109.260    1.85
+ETI          C2          C1         H12     109.260    1.85
+ETI           I          C1         H11     109.101    1.50
+ETI           I          C1         H12     109.101    1.50
+ETI         H11          C1         H12     107.865    1.50
+ETI          C1          C2         H21     109.260    1.85
+ETI          C1          C2         H22     109.260    1.85
+ETI          C1          C2         H23     109.260    1.85
+ETI         H21          C2         H22     109.399    1.50
+ETI         H21          C2         H23     109.399    1.50
+ETI         H22          C2         H23     109.399    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ETI             sp3_sp3_1           I          C1          C2         H21     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ETI SMILES           ACDLabs              11.02 ICC
+ETI SMILES_CANONICAL CACTVS               3.352 CCI
+ETI SMILES           CACTVS               3.352 CCI
+ETI SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 CCI
+ETI SMILES           "OpenEye OEToolkits" 1.7.0 CCI
+ETI InChI            InChI                1.03  InChI=1S/C2H5I/c1-2-3/h2H2,1H3
+ETI InChIKey         InChI                1.03  HVTICUPFWKNHNG-UHFFFAOYSA-N
+ETI ?                acedrg               202         "dictionary generator"                  
+ETI ?                acedrg_database      11          "data source"                           
+ETI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ETI ?                refmac5              5.8.0189    "optimization tool"                     

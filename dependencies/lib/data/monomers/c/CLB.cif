@@ -1,0 +1,331 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CLB     CLB      "D-PARA-CHLOROPHENYL-1-ACETAMIDOBORONIC ACID ALANINE"  peptide  42     23     .     
+#
+data_comp_CLB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CLB     N       N       NT3     1       17.142      3.532       27.349      
+CLB     CA      C       CH1     0       18.344      2.993       26.658      
+CLB     CB      C       CH2     0       18.414      3.506       25.234      
+CLB     OB3     O       O2      0       17.284      3.067       24.479      
+CLB     C       C       C       0       19.606      3.360       27.448      
+CLB     O       O       O       0       20.326      2.420       27.844      
+CLB     OXT     O       OC      -1      19.825      4.572       27.639      
+CLB     N9      N       NH1     0       16.259      1.541       22.080      
+CLB     C8      C       CH1     0       15.810      2.894       22.407      
+CLB     C7      C       CH2     0       14.519      2.835       23.240      
+CLB     C1      C       CR6     0       13.357      2.182       22.524      
+CLB     C2      C       CR16    0       12.753      2.795       21.433      
+CLB     C3      C       CR16    0       11.684      2.201       20.763      
+CLB     C6      C       CR16    0       12.865      0.946       22.928      
+CLB     C5      C       CR16    0       11.797      0.338       22.269      
+CLB     C4      C       CR6     0       11.222      0.978       21.193      
+CLB     CL4     CL      CL      0       9.888       0.227       20.364      
+CLB     OB1     O       OH1     0       16.650      5.115       23.335      
+CLB     OB2     O       OH1     0       18.259      3.596       22.311      
+CLB     B       B       B       -1      17.030      3.681       23.157      
+CLB     C10     C       C       0       16.112      0.938       20.890      
+CLB     O10     O       O       0       15.811      1.540       19.860      
+CLB     C11     C       CH3     0       16.317      -0.544      20.882      
+CLB     H       H       H       0       17.086      3.182       28.188      
+CLB     H2      H       H       0       16.393      3.309       26.881      
+CLB     H3      H       H       0       17.200      4.440       27.405      
+CLB     HA      H       H       0       18.266      2.001       26.634      
+CLB     HB2     H       H       0       19.238      3.179       24.811      
+CLB     HB3     H       H       0       18.443      4.487       25.243      
+CLB     HN9     H       H       0       16.658      1.104       22.722      
+CLB     H8      H       H       0       15.604      3.370       21.564      
+CLB     H71     H       H       0       14.263      3.750       23.488      
+CLB     H72     H       H       0       14.701      2.343       24.069      
+CLB     HC2     H       H       0       13.072      3.633       21.141      
+CLB     HC3     H       H       0       11.285      2.629       20.028      
+CLB     H6      H       H       0       13.260      0.510       23.664      
+CLB     H5      H       H       0       11.474      -0.496      22.554      
+CLB     HOB1    H       H       0       16.329      5.433       22.617      
+CLB     HOB2    H       H       0       18.084      3.794       21.505      
+CLB     H111    H       H       0       16.153      -0.892      19.990      
+CLB     H112    H       H       0       15.703      -0.961      21.508      
+CLB     H113    H       H       0       17.230      -0.749      21.143      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CLB      N      n/a    CA     START
+ CLB      H      N      .      .
+ CLB      H2     N      .      .
+ CLB      H3     N      .      .
+ CLB      CA     N      C      .
+ CLB      HA     CA     .      .
+ CLB      CB     CA     OB3    .
+ CLB      HB2    CB     .      .
+ CLB      HB3    CB     .      .
+ CLB      OB3    CB     B      .
+ CLB      B      OB3    C8     .
+ CLB      OB1    B      HOB1   .
+ CLB      HOB1   OB1    .      .
+ CLB      OB2    B      HOB2   .
+ CLB      HOB2   OB2    .      .
+ CLB      C8     B      C7     .
+ CLB      H8     C8     .      .
+ CLB      N9     C8     C10    .
+ CLB      HN9    N9     .      .
+ CLB      C10    N9     O10    .
+ CLB      C11    C10    H111   .
+ CLB      H113   C11    .      .
+ CLB      H112   C11    .      .
+ CLB      H111   C11    .      .
+ CLB      O10    C10    .      .
+ CLB      C7     C8     C1     .
+ CLB      H71    C7     .      .
+ CLB      H72    C7     .      .
+ CLB      C1     C7     C6     .
+ CLB      C6     C1     C5     .
+ CLB      H6     C6     .      .
+ CLB      C5     C6     C4     .
+ CLB      H5     C5     .      .
+ CLB      C4     C5     C3     .
+ CLB      CL4    C4     .      .
+ CLB      C3     C4     C2     .
+ CLB      HC3    C3     .      .
+ CLB      C2     C3     HC2    .
+ CLB      HC2    C2     .      .
+ CLB      C      CA     .      END
+ CLB      O      C      .      .
+ CLB      OXT    C      .      .
+ CLB      C1     C2     .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CLB       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+CLB       CA        CB        SINGLE    n         1.515     0.017     1.515     0.017     
+CLB       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+CLB       CB        OB3       SINGLE    n         1.425     0.020     1.425     0.020     
+CLB       OB3       B         SINGLE    n         1.477     0.020     1.477     0.020     
+CLB       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+CLB       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+CLB       N9        C8        SINGLE    n         1.459     0.011     1.459     0.011     
+CLB       N9        C10       SINGLE    n         1.337     0.011     1.337     0.011     
+CLB       C8        C7        SINGLE    n         1.538     0.010     1.538     0.010     
+CLB       C8        B         SINGLE    n         1.633     0.020     1.633     0.020     
+CLB       C7        C1        SINGLE    n         1.512     0.011     1.512     0.011     
+CLB       C1        C2        DOUBLE    y         1.385     0.011     1.385     0.011     
+CLB       C1        C6        SINGLE    y         1.385     0.011     1.385     0.011     
+CLB       C2        C3        SINGLE    y         1.380     0.020     1.380     0.020     
+CLB       C3        C4        DOUBLE    y         1.373     0.011     1.373     0.011     
+CLB       C6        C5        DOUBLE    y         1.380     0.020     1.380     0.020     
+CLB       C5        C4        SINGLE    y         1.373     0.011     1.373     0.011     
+CLB       C4        CL4       SINGLE    n         1.741     0.010     1.741     0.010     
+CLB       OB1       B         SINGLE    n         1.494     0.020     1.494     0.020     
+CLB       OB2       B         SINGLE    n         1.494     0.020     1.494     0.020     
+CLB       C10       O10       DOUBLE    n         1.229     0.012     1.229     0.012     
+CLB       C10       C11       SINGLE    n         1.495     0.010     1.495     0.010     
+CLB       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+CLB       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+CLB       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+CLB       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+CLB       CB        HB2       SINGLE    n         1.089     0.010     0.982     0.020     
+CLB       CB        HB3       SINGLE    n         1.089     0.010     0.982     0.020     
+CLB       N9        HN9       SINGLE    n         1.016     0.010     0.872     0.020     
+CLB       C8        H8        SINGLE    n         1.089     0.010     0.990     0.014     
+CLB       C7        H71       SINGLE    n         1.089     0.010     0.981     0.015     
+CLB       C7        H72       SINGLE    n         1.089     0.010     0.981     0.015     
+CLB       C2        HC2       SINGLE    n         1.082     0.013     0.943     0.017     
+CLB       C3        HC3       SINGLE    n         1.082     0.013     0.939     0.018     
+CLB       C6        H6        SINGLE    n         1.082     0.013     0.943     0.017     
+CLB       C5        H5        SINGLE    n         1.082     0.013     0.939     0.018     
+CLB       OB1       HOB1      SINGLE    n         0.970     0.012     0.848     0.020     
+CLB       OB2       HOB2      SINGLE    n         0.970     0.012     0.848     0.020     
+CLB       C11       H111      SINGLE    n         1.089     0.010     0.971     0.014     
+CLB       C11       H112      SINGLE    n         1.089     0.010     0.971     0.014     
+CLB       C11       H113      SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CLB          CA           N           H     109.619    1.50
+CLB          CA           N          H2     109.619    1.50
+CLB          CA           N          H3     109.619    1.50
+CLB           H           N          H2     109.028    2.41
+CLB           H           N          H3     109.028    2.41
+CLB          H2           N          H3     109.028    2.41
+CLB           N          CA          CB     110.608    1.50
+CLB           N          CA           C     109.829    1.50
+CLB           N          CA          HA     108.049    1.50
+CLB          CB          CA           C     111.527    1.50
+CLB          CB          CA          HA     108.597    1.50
+CLB           C          CA          HA     108.255    1.50
+CLB          CA          CB         OB3     110.589    2.35
+CLB          CA          CB         HB2     109.469    1.50
+CLB          CA          CB         HB3     109.469    1.50
+CLB         OB3          CB         HB2     109.664    1.50
+CLB         OB3          CB         HB3     109.664    1.50
+CLB         HB2          CB         HB3     108.319    1.50
+CLB          CB         OB3           B     118.513    2.13
+CLB          CA           C           O     117.181    1.50
+CLB          CA           C         OXT     117.181    1.50
+CLB           O           C         OXT     125.637    1.50
+CLB          C8          N9         C10     123.657    1.62
+CLB          C8          N9         HN9     117.696    2.87
+CLB         C10          N9         HN9     118.647    1.94
+CLB          N9          C8          C7     110.142    1.50
+CLB          N9          C8           B     109.471    3.00
+CLB          N9          C8          H8     108.049    1.50
+CLB          C7          C8           B     114.075    3.00
+CLB          C7          C8          H8     108.202    1.50
+CLB           B          C8          H8     109.037    1.50
+CLB          C8          C7          C1     113.900    1.50
+CLB          C8          C7         H71     108.744    1.50
+CLB          C8          C7         H72     108.744    1.50
+CLB          C1          C7         H71     108.906    1.50
+CLB          C1          C7         H72     108.906    1.50
+CLB         H71          C7         H72     107.735    1.50
+CLB          C7          C1          C2     121.074    1.50
+CLB          C7          C1          C6     121.074    1.50
+CLB          C2          C1          C6     117.852    1.50
+CLB          C1          C2          C3     121.402    1.50
+CLB          C1          C2         HC2     119.287    1.50
+CLB          C3          C2         HC2     119.311    1.50
+CLB          C2          C3          C4     119.041    1.50
+CLB          C2          C3         HC3     120.507    1.50
+CLB          C4          C3         HC3     120.452    1.50
+CLB          C1          C6          C5     121.402    1.50
+CLB          C1          C6          H6     119.287    1.50
+CLB          C5          C6          H6     119.311    1.50
+CLB          C6          C5          C4     119.041    1.50
+CLB          C6          C5          H5     120.507    1.50
+CLB          C4          C5          H5     120.452    1.50
+CLB          C3          C4          C5     121.262    1.50
+CLB          C3          C4         CL4     119.369    1.50
+CLB          C5          C4         CL4     119.369    1.50
+CLB           B         OB1        HOB1     110.747    3.00
+CLB           B         OB2        HOB2     110.747    3.00
+CLB         OB3           B          C8     109.544    1.93
+CLB         OB3           B         OB1     110.049    3.00
+CLB         OB3           B         OB2     110.049    3.00
+CLB          C8           B         OB1     109.544    1.93
+CLB          C8           B         OB2     109.544    1.93
+CLB         OB1           B         OB2     110.049    3.00
+CLB          N9         C10         O10     122.594    1.50
+CLB          N9         C10         C11     115.848    1.50
+CLB         O10         C10         C11     121.558    1.50
+CLB         C10         C11        H111     109.678    1.50
+CLB         C10         C11        H112     109.678    1.50
+CLB         C10         C11        H113     109.678    1.50
+CLB        H111         C11        H112     109.365    1.50
+CLB        H111         C11        H113     109.365    1.50
+CLB        H112         C11        H113     109.365    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CLB             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+CLB       const_sp2_sp2_3          C7          C1          C2          C3     180.000   10.00     2
+CLB              const_23          C7          C1          C6          C5     180.000   10.00     2
+CLB       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+CLB              const_10          C2          C3          C4         CL4     180.000   10.00     2
+CLB              const_17          C4          C5          C6          C1       0.000   10.00     2
+CLB              const_15         CL4          C4          C5          C6     180.000   10.00     2
+CLB            sp3_sp3_43         OB3           B         OB1        HOB1     180.000   10.00     3
+CLB            sp3_sp3_46         OB3           B         OB2        HOB2     180.000   10.00     3
+CLB            sp3_sp3_10           N          CA          CB         OB3     180.000   10.00     3
+CLB             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+CLB            sp2_sp3_19          N9         C10         C11        H111       0.000   10.00     6
+CLB            sp3_sp3_19          CA          CB         OB3           B     180.000   10.00     3
+CLB            sp3_sp3_22          C8           B         OB3          CB     180.000   10.00     3
+CLB             sp2_sp2_3         O10         C10          N9          C8       0.000   10.00     2
+CLB             sp2_sp3_8         C10          N9          C8          C7     120.000   10.00     6
+CLB            sp3_sp3_35         OB3           B          C8          N9     -60.000   10.00     3
+CLB            sp3_sp3_25          C1          C7          C8          N9     180.000   10.00     3
+CLB            sp2_sp3_14          C2          C1          C7          C8     -90.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+CLB    chir_1    CA    N    C    CB    positive
+CLB    chir_2    C8    N9    C7    B    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CLB    plan-1          C1   0.020
+CLB    plan-1          C2   0.020
+CLB    plan-1          C3   0.020
+CLB    plan-1          C4   0.020
+CLB    plan-1          C5   0.020
+CLB    plan-1          C6   0.020
+CLB    plan-1          C7   0.020
+CLB    plan-1         CL4   0.020
+CLB    plan-1          H5   0.020
+CLB    plan-1          H6   0.020
+CLB    plan-1         HC2   0.020
+CLB    plan-1         HC3   0.020
+CLB    plan-2           C   0.020
+CLB    plan-2          CA   0.020
+CLB    plan-2           O   0.020
+CLB    plan-2         OXT   0.020
+CLB    plan-3         C10   0.020
+CLB    plan-3          C8   0.020
+CLB    plan-3         HN9   0.020
+CLB    plan-3          N9   0.020
+CLB    plan-4         C10   0.020
+CLB    plan-4         C11   0.020
+CLB    plan-4          N9   0.020
+CLB    plan-4         O10   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CLB SMILES           ACDLabs              10.04 "Clc1ccc(cc1)CC(NC(=O)C)[B-](O)(O)OCC(C(=O)O)N"
+CLB SMILES_CANONICAL CACTVS               3.341 "CC(=O)N[C@@H](Cc1ccc(Cl)cc1)[B-](O)(O)OC[C@H](N)C(O)=O"
+CLB SMILES           CACTVS               3.341 "CC(=O)N[CH](Cc1ccc(Cl)cc1)[B-](O)(O)OC[CH](N)C(O)=O"
+CLB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[B-]([C@H](Cc1ccc(cc1)Cl)NC(=O)C)(O)(O)OC[C@@H](C(=O)O)N"
+CLB SMILES           "OpenEye OEToolkits" 1.5.0 "[B-](C(Cc1ccc(cc1)Cl)NC(=O)C)(O)(O)OCC(C(=O)O)N"
+CLB InChI            InChI                1.03  "InChI=1S/C13H19BClN2O6/c1-8(18)17-12(6-9-2-4-10(15)5-3-9)14(21,22)23-7-11(16)13(19)20/h2-5,11-12,21-22H,6-7,16H2,1H3,(H,17,18)(H,19,20)/q-1/t11-,12-/m0/s1"
+CLB InChIKey         InChI                1.03  RJXOEUFRQATKAB-RYUDHWBXSA-N
+CLB ?                acedrg               202         "dictionary generator"                  
+CLB ?                acedrg_database      11          "data source"                           
+CLB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CLB ?                refmac5              5.8.0222    "optimization tool"                     

@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3OH     3OH      "3-HYDROXY-PROPANOIC ACID"     NON-POLYMER     11     6     .     
+#
+data_comp_3OH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3OH     C1      C       C       0       29.938      6.428       11.526      
+3OH     O1      O       O       0       29.359      7.428       11.057      
+3OH     O2      O       OC      -1      30.766      6.483       12.457      
+3OH     C2      C       CH2     0       29.618      5.068       10.930      
+3OH     C3      C       CH2     0       28.386      4.431       11.539      
+3OH     O3      O       OH1     0       28.615      4.087       12.899      
+3OH     H21     H       H       0       30.385      4.473       11.070      
+3OH     H22     H       H       0       29.476      5.172       9.964       
+3OH     H31     H       H       0       28.150      3.622       11.035      
+3OH     H32     H       H       0       27.631      5.057       11.485      
+3OH     HO3     H       H       0       27.903      3.759       13.217      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3OH       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+3OH       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+3OH       C1        C2        SINGLE    n         1.519     0.012     1.519     0.012     
+3OH       C2        C3        SINGLE    n         1.515     0.010     1.515     0.010     
+3OH       C3        O3        SINGLE    n         1.421     0.020     1.421     0.020     
+3OH       C2        H21       SINGLE    n         1.089     0.010     0.981     0.019     
+3OH       C2        H22       SINGLE    n         1.089     0.010     0.981     0.019     
+3OH       C3        H31       SINGLE    n         1.089     0.010     0.982     0.020     
+3OH       C3        H32       SINGLE    n         1.089     0.010     0.982     0.020     
+3OH       O3        HO3       SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3OH          O1          C1          O2     123.625    1.50
+3OH          O1          C1          C2     118.187    1.67
+3OH          O2          C1          C2     118.187    1.67
+3OH          C1          C2          C3     111.511    2.91
+3OH          C1          C2         H21     108.416    1.50
+3OH          C1          C2         H22     108.416    1.50
+3OH          C3          C2         H21     108.485    1.50
+3OH          C3          C2         H22     108.485    1.50
+3OH         H21          C2         H22     108.097    1.58
+3OH          C2          C3          O3     110.777    1.54
+3OH          C2          C3         H31     109.480    1.94
+3OH          C2          C3         H32     109.480    1.94
+3OH          O3          C3         H31     109.258    1.50
+3OH          O3          C3         H32     109.258    1.50
+3OH         H31          C3         H32     108.120    1.50
+3OH          C3          O3         HO3     108.576    2.78
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3OH             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+3OH             sp3_sp3_1          C1          C2          C3          O3     180.000   10.00     3
+3OH            sp3_sp3_10          C2          C3          O3         HO3     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3OH    plan-1          C1   0.020
+3OH    plan-1          C2   0.020
+3OH    plan-1          O1   0.020
+3OH    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3OH SMILES           ACDLabs              10.04 "O=C(O)CCO"
+3OH SMILES_CANONICAL CACTVS               3.341 "OCCC(O)=O"
+3OH SMILES           CACTVS               3.341 "OCCC(O)=O"
+3OH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CO)C(=O)O"
+3OH SMILES           "OpenEye OEToolkits" 1.5.0 "C(CO)C(=O)O"
+3OH InChI            InChI                1.03  "InChI=1S/C3H6O3/c4-2-1-3(5)6/h4H,1-2H2,(H,5,6)"
+3OH InChIKey         InChI                1.03  ALRHLSYJTWAHJZ-UHFFFAOYSA-N
+3OH ?                acedrg               202         "dictionary generator"                  
+3OH ?                acedrg_database      11          "data source"                           
+3OH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3OH ?                refmac5              5.8.0189    "optimization tool"                     

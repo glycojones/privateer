@@ -1,0 +1,201 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PMM     PMM      PTERIN-6-YL-METHYL-MONOPHOSPHATE     NON-POLYMER     24     18     .     
+#
+data_comp_PMM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PMM     N5      N       NRD6    0       33.465      5.249       38.891      
+PMM     C6      C       CR6     0       32.335      5.462       39.552      
+PMM     C7      C       CR16    0       32.153      4.948       40.872      
+PMM     N8      N       NRD6    0       33.094      4.242       41.491      
+PMM     N1      N       NRD6    0       35.263      3.274       41.465      
+PMM     C2      C       CR6     0       36.427      3.034       40.831      
+PMM     N2      N       NH2     0       37.390      2.327       41.433      
+PMM     N3      N       NR6     0       36.672      3.500       39.555      
+PMM     C4      C       CR6     0       35.737      4.242       38.847      
+PMM     O4      O       O       0       36.012      4.628       37.718      
+PMM     C4A     C       CR66    0       34.458      4.521       39.509      
+PMM     C8A     C       CR66    0       34.268      4.013       40.825      
+PMM     C9      C       CH2     0       31.258      6.257       38.873      
+PMM     O10     O       O2      0       30.340      5.384       38.219      
+PMM     PA      P       P       0       29.029      5.952       37.468      
+PMM     O1P     O       O       0       28.280      4.733       36.964      
+PMM     O2P     O       OP      -1      29.545      6.832       36.345      
+PMM     O3P     O       OP      -1      28.255      6.728       38.516      
+PMM     H7      H       H       0       31.340      5.111       41.323      
+PMM     HN21    H       H       0       38.232      2.519       41.284      
+PMM     HN22    H       H       0       37.175      1.673       41.977      
+PMM     HN3     H       H       0       37.453      3.320       39.172      
+PMM     H91     H       H       0       31.653      6.863       38.211      
+PMM     H92     H       H       0       30.775      6.796       39.533      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PMM       N5        C6        DOUBLE    y         1.315     0.012     1.315     0.012     
+PMM       N5        C4A       SINGLE    y         1.370     0.011     1.370     0.011     
+PMM       C6        C7        SINGLE    y         1.410     0.015     1.410     0.015     
+PMM       C6        C9        SINGLE    n         1.501     0.010     1.501     0.010     
+PMM       C7        N8        DOUBLE    y         1.319     0.011     1.319     0.011     
+PMM       N8        C8A       SINGLE    y         1.362     0.010     1.362     0.010     
+PMM       N1        C2        DOUBLE    y         1.321     0.017     1.321     0.017     
+PMM       N1        C8A       SINGLE    y         1.378     0.015     1.378     0.015     
+PMM       C2        N2        SINGLE    n         1.337     0.012     1.337     0.012     
+PMM       C2        N3        SINGLE    y         1.372     0.010     1.372     0.010     
+PMM       N3        C4        SINGLE    y         1.377     0.013     1.377     0.013     
+PMM       C4        O4        DOUBLE    n         1.223     0.013     1.223     0.013     
+PMM       C4        C4A       SINGLE    y         1.463     0.010     1.463     0.010     
+PMM       C4A       C8A       DOUBLE    y         1.410     0.012     1.410     0.012     
+PMM       C9        O10       SINGLE    n         1.425     0.016     1.425     0.016     
+PMM       O10       PA        SINGLE    n         1.614     0.019     1.614     0.019     
+PMM       PA        O1P       DOUBLE    n         1.517     0.019     1.517     0.019     
+PMM       PA        O2P       SINGLE    n         1.517     0.019     1.517     0.019     
+PMM       PA        O3P       SINGLE    n         1.517     0.019     1.517     0.019     
+PMM       C7        H7        SINGLE    n         1.082     0.013     0.944     0.020     
+PMM       N2        HN21      SINGLE    n         1.016     0.010     0.877     0.020     
+PMM       N2        HN22      SINGLE    n         1.016     0.010     0.877     0.020     
+PMM       N3        HN3       SINGLE    n         1.016     0.010     0.886     0.020     
+PMM       C9        H91       SINGLE    n         1.089     0.010     0.980     0.016     
+PMM       C9        H92       SINGLE    n         1.089     0.010     0.980     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PMM          C6          N5         C4A     118.081    1.50
+PMM          N5          C6          C7     121.047    1.50
+PMM          N5          C6          C9     117.769    1.58
+PMM          C7          C6          C9     121.185    1.56
+PMM          C6          C7          N8     121.921    1.50
+PMM          C6          C7          H7     119.362    1.50
+PMM          N8          C7          H7     118.717    1.50
+PMM          C7          N8         C8A     117.033    1.50
+PMM          C2          N1         C8A     118.238    1.50
+PMM          N1          C2          N2     120.690    1.50
+PMM          N1          C2          N3     121.391    1.50
+PMM          N2          C2          N3     117.918    1.50
+PMM          C2          N2        HN21     119.834    1.50
+PMM          C2          N2        HN22     119.834    1.50
+PMM        HN21          N2        HN22     120.331    1.96
+PMM          C2          N3          C4     122.190    1.50
+PMM          C2          N3         HN3     119.035    1.59
+PMM          C4          N3         HN3     118.775    1.50
+PMM          N3          C4          O4     118.647    1.50
+PMM          N3          C4         C4A     118.476    1.65
+PMM          O4          C4         C4A     122.877    1.50
+PMM          N5         C4A          C4     120.344    1.50
+PMM          N5         C4A         C8A     120.874    1.50
+PMM          C4         C4A         C8A     118.783    1.50
+PMM          N8         C8A          N1     118.033    1.50
+PMM          N8         C8A         C4A     121.044    1.50
+PMM          N1         C8A         C4A     120.923    1.50
+PMM          C6          C9         O10     110.009    2.52
+PMM          C6          C9         H91     109.851    1.50
+PMM          C6          C9         H92     109.851    1.50
+PMM         O10          C9         H91     109.177    1.50
+PMM         O10          C9         H92     109.177    1.50
+PMM         H91          C9         H92     108.289    1.50
+PMM          C9         O10          PA     121.496    2.55
+PMM         O10          PA         O1P     105.808    2.07
+PMM         O10          PA         O2P     105.808    2.07
+PMM         O10          PA         O3P     105.808    2.07
+PMM         O1P          PA         O2P     112.864    1.69
+PMM         O1P          PA         O3P     112.864    1.69
+PMM         O2P          PA         O3P     112.864    1.69
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PMM              const_20          C9          C6          N5         C4A     180.000   10.00     2
+PMM              const_30          C4         C4A          N5          C6     180.000   10.00     2
+PMM              const_15          N5         C4A         C8A          N8       0.000   10.00     2
+PMM             sp3_sp3_1          C6          C9         O10          PA     180.000   10.00     3
+PMM             sp3_sp3_4          C9         O10          PA         O1P     180.000   10.00     3
+PMM             sp2_sp3_2          N5          C6          C9         O10     -90.000   10.00     6
+PMM              const_23          C9          C6          C7          N8     180.000   10.00     2
+PMM              const_25          C6          C7          N8         C8A       0.000   10.00     2
+PMM              const_28          N1         C8A          N8          C7     180.000   10.00     2
+PMM              const_32          N8         C8A          N1          C2     180.000   10.00     2
+PMM       const_sp2_sp2_2          N2          C2          N1         C8A     180.000   10.00     2
+PMM             sp2_sp2_3          N1          C2          N2        HN21       0.000   10.00     2
+PMM       const_sp2_sp2_5          N2          C2          N3          C4     180.000   10.00     2
+PMM       const_sp2_sp2_9          O4          C4          N3          C2     180.000   10.00     2
+PMM              const_14          O4          C4         C4A          N5       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PMM    plan-1          C4   0.020
+PMM    plan-1         C4A   0.020
+PMM    plan-1          C6   0.020
+PMM    plan-1          C7   0.020
+PMM    plan-1         C8A   0.020
+PMM    plan-1          C9   0.020
+PMM    plan-1          H7   0.020
+PMM    plan-1          N1   0.020
+PMM    plan-1          N5   0.020
+PMM    plan-1          N8   0.020
+PMM    plan-2          C2   0.020
+PMM    plan-2          C4   0.020
+PMM    plan-2         C4A   0.020
+PMM    plan-2         C8A   0.020
+PMM    plan-2         HN3   0.020
+PMM    plan-2          N1   0.020
+PMM    plan-2          N2   0.020
+PMM    plan-2          N3   0.020
+PMM    plan-2          N5   0.020
+PMM    plan-2          N8   0.020
+PMM    plan-2          O4   0.020
+PMM    plan-3          C2   0.020
+PMM    plan-3        HN21   0.020
+PMM    plan-3        HN22   0.020
+PMM    plan-3          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PMM SMILES           ACDLabs              10.04 "O=P(O)(O)OCc1nc2C(=O)NC(=Nc2nc1)N"
+PMM SMILES_CANONICAL CACTVS               3.341 "NC1=Nc2ncc(CO[P](O)(O)=O)nc2C(=O)N1"
+PMM SMILES           CACTVS               3.341 "NC1=Nc2ncc(CO[P](O)(O)=O)nc2C(=O)N1"
+PMM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(nc2c(n1)N=C(NC2=O)N)COP(=O)(O)O"
+PMM SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(nc2c(n1)N=C(NC2=O)N)COP(=O)(O)O"
+PMM InChI            InChI                1.03  "InChI=1S/C7H8N5O5P/c8-7-11-5-4(6(13)12-7)10-3(1-9-5)2-17-18(14,15)16/h1H,2H2,(H2,14,15,16)(H3,8,9,11,12,13)"
+PMM InChIKey         InChI                1.03  AJXFJEHKGGCFNM-UHFFFAOYSA-N
+PMM ?                acedrg               202         "dictionary generator"                  
+PMM ?                acedrg_database      11          "data source"                           
+PMM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PMM ?                refmac5              5.8.0189    "optimization tool"                     

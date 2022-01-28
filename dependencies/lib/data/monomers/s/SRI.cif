@@ -1,0 +1,131 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SRI      SRI '(2Z)-3-HYDROXY-2-IMINOPROPANOIC ACID' non-polymer        11   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SRI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SRI           O      O    OC       -0.500      0.000    0.000    0.000
+ SRI           C      C    C         0.000     -0.695   -0.723   -0.747
+ SRI           OXT    O    OC       -0.500     -0.457   -1.069   -1.926
+ SRI           CA     C    C         0.000     -1.953   -1.121   -0.035
+ SRI           N      N    N         0.000     -1.936   -2.218    0.643
+ SRI           HN     H    H         0.000     -2.717   -2.512    1.115
+ SRI           CB     C    CH2       0.000     -3.147   -0.216   -0.138
+ SRI           HB1    H    H         0.000     -4.064   -0.803   -0.049
+ SRI           HB2    H    H         0.000     -3.138    0.300   -1.100
+ SRI           OG     O    OH1       0.000     -3.090    0.733    0.908
+ SRI           HOG    H    H         0.000     -3.326    0.304    1.741
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SRI      O      n/a    C      START
+ SRI      C      O      CA     .
+ SRI      OXT    C      .      .
+ SRI      CA     C      CB     .
+ SRI      N      CA     HN     .
+ SRI      HN     N      .      .
+ SRI      CB     CA     OG     .
+ SRI      HB1    CB     .      .
+ SRI      HB2    CB     .      .
+ SRI      OG     CB     HOG    .
+ SRI      HOG    OG     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SRI       OXT       C         deloc     1.250     0.020     1.250     0.020     
+SRI       CA        C         single    1.460     0.020     1.460     0.020     
+SRI       C         O         deloc     1.250     0.020     1.250     0.020     
+SRI       N         CA        double    1.260     0.020     1.260     0.020     
+SRI       CB        CA        single    1.510     0.020     1.510     0.020     
+SRI       HN        N         single    1.016     0.010     0.899     0.007     
+SRI       OG        CB        single    1.432     0.020     1.432     0.020     
+SRI       HB1       CB        single    1.089     0.010     0.989     0.005     
+SRI       HB2       CB        single    1.089     0.010     0.989     0.005     
+SRI       HOG       OG        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SRI      O      C      OXT     123.000    3.000
+ SRI      O      C      CA      120.000    3.000
+ SRI      OXT    C      CA      120.000    3.000
+ SRI      C      CA     N       116.500    3.000
+ SRI      C      CA     CB      120.000    3.000
+ SRI      N      CA     CB      116.500    3.000
+ SRI      CA     N      HN      120.000    3.000
+ SRI      CA     CB     HB1     109.470    3.000
+ SRI      CA     CB     HB2     109.470    3.000
+ SRI      CA     CB     OG      109.500    3.000
+ SRI      HB1    CB     HB2     107.900    3.000
+ SRI      HB1    CB     OG      109.470    3.000
+ SRI      HB2    CB     OG      109.470    3.000
+ SRI      CB     OG     HOG     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SRI      var_1    O      C      CA     CB        88.297   20.000   1
+ SRI      CONST_1  C      CA     N      HN       180.000    0.000   0
+ SRI      var_2    C      CA     CB     OG       -89.126   20.000   3
+ SRI      var_3    CA     CB     OG     HOG      -74.556   20.000   1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SRI      plan-1    C         0.020
+ SRI      plan-1    OXT       0.020
+ SRI      plan-1    O         0.020
+ SRI      plan-1    CA        0.020
+ SRI      plan-2    CA        0.020
+ SRI      plan-2    C         0.020
+ SRI      plan-2    N         0.020
+ SRI      plan-2    CB        0.020
+ SRI      plan-2    HN        0.020
+# ------------------------------------------------------

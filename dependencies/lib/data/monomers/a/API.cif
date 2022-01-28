@@ -1,0 +1,222 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+API      API '2,6-DIAMINOPIMELIC ACID             ' non-polymer        25  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_API
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ API           O4     O    OC       -0.500      0.000    0.000    0.000
+ API           C7     C    C         0.000     -0.640   -0.413    0.993
+ API           O3     O    OC       -0.500     -0.261   -1.442    1.595
+ API           C6     C    CH1       0.000     -1.866    0.326    1.460
+ API           H6     H    H         0.000     -1.762    1.394    1.225
+ API           N6     N    NH2       0.000     -2.015    0.157    2.912
+ API           HN62   H    H         0.000     -2.010    0.965    3.524
+ API           HN61   H    H         0.000     -2.123   -0.767    3.311
+ API           C5     C    CH2       0.000     -3.100   -0.233    0.753
+ API           H51    H    H         0.000     -3.203   -1.295    0.986
+ API           H52    H    H         0.000     -2.988   -0.108   -0.326
+ API           C4     C    CH2       0.000     -4.345    0.517    1.228
+ API           H41    H    H         0.000     -4.240    1.579    0.994
+ API           H42    H    H         0.000     -4.454    0.392    2.307
+ API           C3     C    CH2       0.000     -5.580   -0.042    0.520
+ API           H31    H    H         0.000     -5.683   -1.104    0.754
+ API           H32    H    H         0.000     -5.468    0.082   -0.559
+ API           C2     C    CH1       0.000     -6.826    0.709    0.995
+ API           H2     H    H         0.000     -6.721    1.777    0.759
+ API           N2     N    NH2       0.000     -6.975    0.540    2.447
+ API           HN22   H    H         0.000     -6.970    1.347    3.059
+ API           HN21   H    H         0.000     -7.083   -0.386    2.845
+ API           C1     C    C         0.000     -8.042    0.158    0.298
+ API           O1     O    OC       -0.500     -8.677   -0.793    0.807
+ API           O2     O    OC       -0.500     -8.417    0.649   -0.789
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ API      O4     n/a    C7     START
+ API      C7     O4     C6     .
+ API      O3     C7     .      .
+ API      C6     C7     C5     .
+ API      H6     C6     .      .
+ API      N6     C6     HN61   .
+ API      HN62   N6     .      .
+ API      HN61   N6     .      .
+ API      C5     C6     C4     .
+ API      H51    C5     .      .
+ API      H52    C5     .      .
+ API      C4     C5     C3     .
+ API      H41    C4     .      .
+ API      H42    C4     .      .
+ API      C3     C4     C2     .
+ API      H31    C3     .      .
+ API      H32    C3     .      .
+ API      C2     C3     C1     .
+ API      H2     C2     .      .
+ API      N2     C2     HN21   .
+ API      HN22   N2     .      .
+ API      HN21   N2     .      .
+ API      C1     C2     O2     .
+ API      O1     C1     .      .
+ API      O2     C1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+API       C1        C2        single    1.500     0.020     1.500     0.020     
+API       O1        C1        deloc     1.250     0.020     1.250     0.020     
+API       O2        C1        deloc     1.250     0.020     1.250     0.020     
+API       C2        C3        single    1.524     0.020     1.524     0.020     
+API       N2        C2        single    1.450     0.020     1.450     0.020     
+API       H2        C2        single    1.089     0.010     0.989     0.005     
+API       C3        C4        single    1.524     0.020     1.524     0.020     
+API       H31       C3        single    1.089     0.010     0.989     0.005     
+API       H32       C3        single    1.089     0.010     0.989     0.005     
+API       C4        C5        single    1.524     0.020     1.524     0.020     
+API       H41       C4        single    1.089     0.010     0.989     0.005     
+API       H42       C4        single    1.089     0.010     0.989     0.005     
+API       C5        C6        single    1.524     0.020     1.524     0.020     
+API       H51       C5        single    1.089     0.010     0.989     0.005     
+API       H52       C5        single    1.089     0.010     0.989     0.005     
+API       C6        C7        single    1.500     0.020     1.500     0.020     
+API       N6        C6        single    1.450     0.020     1.450     0.020     
+API       H6        C6        single    1.089     0.010     0.989     0.005     
+API       O3        C7        deloc     1.250     0.020     1.250     0.020     
+API       C7        O4        deloc     1.250     0.020     1.250     0.020     
+API       HN21      N2        single    1.036     0.016     0.914     0.007     
+API       HN22      N2        single    1.036     0.016     0.914     0.007     
+API       HN61      N6        single    1.036     0.016     0.914     0.007     
+API       HN62      N6        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ API      O4     C7     O3      123.000    3.000
+ API      O4     C7     C6      118.500    3.000
+ API      O3     C7     C6      118.500    3.000
+ API      C7     C6     H6      108.810    3.000
+ API      C7     C6     N6      109.470    3.000
+ API      C7     C6     C5      109.470    3.000
+ API      H6     C6     N6      109.470    3.000
+ API      H6     C6     C5      108.340    3.000
+ API      N6     C6     C5      109.470    3.000
+ API      C6     N6     HN62    120.000    3.000
+ API      C6     N6     HN61    120.000    3.000
+ API      HN62   N6     HN61    120.000    3.000
+ API      C6     C5     H51     109.470    3.000
+ API      C6     C5     H52     109.470    3.000
+ API      C6     C5     C4      111.000    3.000
+ API      H51    C5     H52     107.900    3.000
+ API      H51    C5     C4      109.470    3.000
+ API      H52    C5     C4      109.470    3.000
+ API      C5     C4     H41     109.470    3.000
+ API      C5     C4     H42     109.470    3.000
+ API      C5     C4     C3      111.000    3.000
+ API      H41    C4     H42     107.900    3.000
+ API      H41    C4     C3      109.470    3.000
+ API      H42    C4     C3      109.470    3.000
+ API      C4     C3     H31     109.470    3.000
+ API      C4     C3     H32     109.470    3.000
+ API      C4     C3     C2      111.000    3.000
+ API      H31    C3     H32     107.900    3.000
+ API      H31    C3     C2      109.470    3.000
+ API      H32    C3     C2      109.470    3.000
+ API      C3     C2     H2      108.340    3.000
+ API      C3     C2     N2      109.470    3.000
+ API      C3     C2     C1      109.470    3.000
+ API      H2     C2     N2      109.470    3.000
+ API      H2     C2     C1      108.810    3.000
+ API      N2     C2     C1      109.470    3.000
+ API      C2     N2     HN22    120.000    3.000
+ API      C2     N2     HN21    120.000    3.000
+ API      HN22   N2     HN21    120.000    3.000
+ API      C2     C1     O1      118.500    3.000
+ API      C2     C1     O2      118.500    3.000
+ API      O1     C1     O2      123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ API      var_1    O4     C7     C6     C5        89.904   20.000   3
+ API      var_2    C7     C6     N6     HN61     -60.050   20.000   1
+ API      var_3    C7     C6     C5     C4      -179.996   20.000   3
+ API      var_4    C6     C5     C4     C3      -179.973   20.000   3
+ API      var_5    C5     C4     C3     C2      -179.973   20.000   3
+ API      var_6    C4     C3     C2     C1       179.998   20.000   3
+ API      var_7    C3     C2     N2     HN21     -60.002   20.000   1
+ API      var_8    C3     C2     C1     O2       -89.990   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ API      chir_01  C2     C1     C3     N2        positiv
+ API      chir_02  C6     C5     C7     N6        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ API      plan-1    C1        0.020
+ API      plan-1    C2        0.020
+ API      plan-1    O1        0.020
+ API      plan-1    O2        0.020
+ API      plan-2    C7        0.020
+ API      plan-2    C6        0.020
+ API      plan-2    O3        0.020
+ API      plan-2    O4        0.020
+ API      plan-3    N2        0.020
+ API      plan-3    C2        0.020
+ API      plan-3    HN21      0.020
+ API      plan-3    HN22      0.020
+ API      plan-4    N6        0.020
+ API      plan-4    C6        0.020
+ API      plan-4    HN61      0.020
+ API      plan-4    HN62      0.020
+# ------------------------------------------------------

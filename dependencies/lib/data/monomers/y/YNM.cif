@@ -1,0 +1,235 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+YNM      YNM 'N-METHYL-L-TYROSINE                 ' non-polymer        26  14 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_YNM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ YNM           OXT    O    OC       -0.500      0.000    0.000    0.000
+ YNM           C      C    C         0.000     -0.965    0.777   -0.171
+ YNM           O      O    OC       -0.500     -0.769    1.929   -0.617
+ YNM           CA     C    CH1       0.000     -2.364    0.327    0.162
+ YNM           HA     H    H         0.000     -2.420    0.063    1.227
+ YNM           N      N    NH1       0.000     -3.310    1.413   -0.124
+ YNM           H      H    H         0.000     -3.826    1.511   -0.987
+ YNM           CM     C    CH3       0.000     -3.407    2.340    1.012
+ YNM           HM3C   H    H         0.000     -2.455    2.764    1.210
+ YNM           HM2C   H    H         0.000     -4.094    3.115    0.784
+ YNM           HM1C   H    H         0.000     -3.742    1.817    1.872
+ YNM           CB     C    CH2       0.000     -2.721   -0.897   -0.685
+ YNM           HB1C   H    H         0.000     -1.966   -1.672   -0.540
+ YNM           HB2C   H    H         0.000     -2.751   -0.612   -1.739
+ YNM           CG     C    CR6       0.000     -4.069   -1.422   -0.266
+ YNM           CD2    C    CR16      0.000     -4.160   -2.379    0.728
+ YNM           HD2    H    H         0.000     -3.261   -2.751    1.205
+ YNM           CE2    C    CR16      0.000     -5.395   -2.863    1.113
+ YNM           HE2    H    H         0.000     -5.465   -3.612    1.892
+ YNM           CZ     C    CR6       0.000     -6.545   -2.387    0.501
+ YNM           OH     O    OH1       0.000     -7.763   -2.861    0.879
+ YNM           HH     H    H         0.000     -7.987   -3.633    0.343
+ YNM           CE1    C    CR16      0.000     -6.453   -1.430   -0.499
+ YNM           HE1    H    H         0.000     -7.350   -1.060   -0.980
+ YNM           CD1    C    CR16      0.000     -5.215   -0.950   -0.881
+ YNM           HD1    H    H         0.000     -5.141   -0.204   -1.663
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ YNM      OXT    n/a    C      START
+ YNM      C      OXT    CA     .
+ YNM      O      C      .      .
+ YNM      CA     C      CB     .
+ YNM      HA     CA     .      .
+ YNM      N      CA     CM     .
+ YNM      H      N      .      .
+ YNM      CM     N      HM1C   .
+ YNM      HM3C   CM     .      .
+ YNM      HM2C   CM     .      .
+ YNM      HM1C   CM     .      .
+ YNM      CB     CA     CG     .
+ YNM      HB1C   CB     .      .
+ YNM      HB2C   CB     .      .
+ YNM      CG     CB     CD2    .
+ YNM      CD2    CG     CE2    .
+ YNM      HD2    CD2    .      .
+ YNM      CE2    CD2    CZ     .
+ YNM      HE2    CE2    .      .
+ YNM      CZ     CE2    CE1    .
+ YNM      OH     CZ     HH     .
+ YNM      HH     OH     .      .
+ YNM      CE1    CZ     CD1    .
+ YNM      HE1    CE1    .      .
+ YNM      CD1    CE1    HD1    .
+ YNM      HD1    CD1    .      END
+ YNM      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+YNM       N         CA        single    1.450     0.020     1.450     0.020     
+YNM       CM        N         single    1.450     0.020     1.450     0.020     
+YNM       CA        C         single    1.500     0.020     1.500     0.020     
+YNM       CB        CA        single    1.524     0.020     1.524     0.020     
+YNM       O         C         deloc     1.250     0.020     1.250     0.020     
+YNM       CG        CB        single    1.511     0.020     1.511     0.020     
+YNM       CG        CD1       single    1.390     0.020     1.390     0.020     
+YNM       CD2       CG        double    1.390     0.020     1.390     0.020     
+YNM       CD1       CE1       double    1.390     0.020     1.390     0.020     
+YNM       CE2       CD2       single    1.390     0.020     1.390     0.020     
+YNM       CE1       CZ        single    1.390     0.020     1.390     0.020     
+YNM       CZ        CE2       double    1.390     0.020     1.390     0.020     
+YNM       OH        CZ        single    1.362     0.020     1.362     0.020     
+YNM       C         OXT       deloc     1.250     0.020     1.250     0.020     
+YNM       H         N         single    1.036     0.016     0.914     0.007     
+YNM       HA        CA        single    1.089     0.010     0.989     0.005     
+YNM       HM1C      CM        single    1.089     0.010     0.989     0.005     
+YNM       HM2C      CM        single    1.089     0.010     0.989     0.005     
+YNM       HM3C      CM        single    1.089     0.010     0.989     0.005     
+YNM       HB1C      CB        single    1.089     0.010     0.989     0.005     
+YNM       HB2C      CB        single    1.089     0.010     0.989     0.005     
+YNM       HD1       CD1       single    1.082     0.013     0.975     0.010     
+YNM       HD2       CD2       single    1.082     0.013     0.975     0.010     
+YNM       HE1       CE1       single    1.082     0.013     0.975     0.010     
+YNM       HE2       CE2       single    1.082     0.013     0.975     0.010     
+YNM       HH        OH        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ YNM      OXT    C      O       123.000    3.000
+ YNM      OXT    C      CA      118.500    3.000
+ YNM      O      C      CA      118.500    3.000
+ YNM      C      CA     HA      108.810    3.000
+ YNM      C      CA     N       111.600    3.000
+ YNM      C      CA     CB      109.470    3.000
+ YNM      HA     CA     N       108.550    3.000
+ YNM      HA     CA     CB      108.340    3.000
+ YNM      N      CA     CB      110.000    3.000
+ YNM      CA     N      H       118.500    3.000
+ YNM      CA     N      CM      120.000    3.000
+ YNM      H      N      CM      118.500    3.000
+ YNM      N      CM     HM3C    109.470    3.000
+ YNM      N      CM     HM2C    109.470    3.000
+ YNM      N      CM     HM1C    109.470    3.000
+ YNM      HM3C   CM     HM2C    109.470    3.000
+ YNM      HM3C   CM     HM1C    109.470    3.000
+ YNM      HM2C   CM     HM1C    109.470    3.000
+ YNM      CA     CB     HB1C    109.470    3.000
+ YNM      CA     CB     HB2C    109.470    3.000
+ YNM      CA     CB     CG      109.470    3.000
+ YNM      HB1C   CB     HB2C    107.900    3.000
+ YNM      HB1C   CB     CG      109.470    3.000
+ YNM      HB2C   CB     CG      109.470    3.000
+ YNM      CB     CG     CD2     120.000    3.000
+ YNM      CB     CG     CD1     120.000    3.000
+ YNM      CD2    CG     CD1     120.000    3.000
+ YNM      CG     CD2    HD2     120.000    3.000
+ YNM      CG     CD2    CE2     120.000    3.000
+ YNM      HD2    CD2    CE2     120.000    3.000
+ YNM      CD2    CE2    HE2     120.000    3.000
+ YNM      CD2    CE2    CZ      120.000    3.000
+ YNM      HE2    CE2    CZ      120.000    3.000
+ YNM      CE2    CZ     OH      120.000    3.000
+ YNM      CE2    CZ     CE1     120.000    3.000
+ YNM      OH     CZ     CE1     120.000    3.000
+ YNM      CZ     OH     HH      109.470    3.000
+ YNM      CZ     CE1    HE1     120.000    3.000
+ YNM      CZ     CE1    CD1     120.000    3.000
+ YNM      HE1    CE1    CD1     120.000    3.000
+ YNM      CE1    CD1    HD1     120.000    3.000
+ YNM      CE1    CD1    CG      120.000    3.000
+ YNM      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ YNM      var_1    OXT    C      CA     CB       -60.022   20.000   3
+ YNM      var_2    C      CA     N      CM       -85.019   20.000   3
+ YNM      var_3    CA     N      CM     HM1C     -59.996   20.000   1
+ YNM      var_4    C      CA     CB     CG       174.968   20.000   3
+ YNM      var_5    CA     CB     CG     CD2      -90.276   20.000   2
+ YNM      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ YNM      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ YNM      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ YNM      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ YNM      var_6    CE2    CZ     OH     HH       -89.761   20.000   1
+ YNM      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ YNM      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ YNM      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ YNM      plan-1    N         0.020
+ YNM      plan-1    CA        0.020
+ YNM      plan-1    CM        0.020
+ YNM      plan-1    H         0.020
+ YNM      plan-2    C         0.020
+ YNM      plan-2    CA        0.020
+ YNM      plan-2    O         0.020
+ YNM      plan-2    OXT       0.020
+ YNM      plan-3    CG        0.020
+ YNM      plan-3    CB        0.020
+ YNM      plan-3    CD1       0.020
+ YNM      plan-3    CD2       0.020
+ YNM      plan-3    CE1       0.020
+ YNM      plan-3    CE2       0.020
+ YNM      plan-3    CZ        0.020
+ YNM      plan-3    HD1       0.020
+ YNM      plan-3    HD2       0.020
+ YNM      plan-3    HE1       0.020
+ YNM      plan-3    HE2       0.020
+ YNM      plan-3    OH        0.020
+# ------------------------------------------------------

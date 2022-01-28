@@ -1,0 +1,966 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DGD      DGD 'DIGALACTOSYL DIACYL GLYCEROL (DGDG) ' non-polymer       162  66 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DGD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DGD           O1B    O    O        -0.500      0.000    0.000    0.000
+ DGD           C1B    C    C         0.000     -0.908    0.118    0.852
+ DGD           C2B    C    CH2       0.000     -0.661   -0.297    2.278
+ DGD           HB21   H    H         0.000     -1.369   -1.081    2.555
+ DGD           HB22   H    H         0.000     -0.798    0.564    2.936
+ DGD           C3B    C    CH2       0.000      0.768   -0.825    2.417
+ DGD           HB31   H    H         0.000      1.474   -0.040    2.138
+ DGD           HB32   H    H         0.000      0.903   -1.685    1.758
+ DGD           C4B    C    CH2       0.000      1.019   -1.247    3.865
+ DGD           HB41   H    H         0.000      0.311   -2.031    4.143
+ DGD           HB42   H    H         0.000      0.882   -0.385    4.523
+ DGD           C5B    C    CH2       0.000      2.448   -1.775    4.003
+ DGD           HB51   H    H         0.000      3.154   -0.990    3.724
+ DGD           HB52   H    H         0.000      2.583   -2.635    3.343
+ DGD           C6B    C    CH2       0.000      2.699   -2.197    5.452
+ DGD           HB61   H    H         0.000      1.991   -2.981    5.729
+ DGD           HB62   H    H         0.000      2.562   -1.336    6.110
+ DGD           C7B    C    CH2       0.000      4.128   -2.725    5.590
+ DGD           HB71   H    H         0.000      4.834   -1.940    5.310
+ DGD           HB72   H    H         0.000      4.262   -3.586    4.931
+ DGD           C8B    C    CH2       0.000      4.379   -3.147    7.039
+ DGD           HB81   H    H         0.000      3.672   -3.931    7.317
+ DGD           HB82   H    H         0.000      4.243   -2.286    7.697
+ DGD           C9B    C    CH2       0.000      5.808   -3.675    7.177
+ DGD           HB91   H    H         0.000      6.515   -2.890    6.898
+ DGD           HB92   H    H         0.000      5.943   -4.535    6.517
+ DGD           CAB    C    CH2       0.000      6.058   -4.097    8.626
+ DGD           HBT1   H    H         0.000      5.351   -4.881    8.903
+ DGD           HBT2   H    H         0.000      5.922   -3.236    9.284
+ DGD           CBB    C    CH2       0.000      7.488   -4.625    8.764
+ DGD           HBE1   H    H         0.000      8.193   -3.840    8.483
+ DGD           HBE2   H    H         0.000      7.622   -5.486    8.105
+ DGD           CCB    C    CH2       0.000      7.739   -5.046   10.212
+ DGD           HBW1   H    H         0.000      7.032   -5.830   10.491
+ DGD           HBW2   H    H         0.000      7.603   -4.185   10.869
+ DGD           CDB    C    CH2       0.000      9.169   -5.574   10.350
+ DGD           HBH1   H    H         0.000      9.875   -4.789   10.071
+ DGD           HBH2   H    H         0.000      9.304   -6.434    9.690
+ DGD           CEB    C    CH2       0.000      9.418   -5.996   11.799
+ DGD           HBF1   H    H         0.000      8.711   -6.781   12.076
+ DGD           HBF2   H    H         0.000      9.282   -5.136   12.457
+ DGD           CFB    C    CH2       0.000     10.848   -6.525   11.937
+ DGD           HBN1   H    H         0.000     11.554   -5.740   11.657
+ DGD           HBN2   H    H         0.000     10.982   -7.385   11.277
+ DGD           CGB    C    CH2       0.000     11.099   -6.946   13.386
+ DGD           HBS1   H    H         0.000     10.391   -7.730   13.664
+ DGD           HBS2   H    H         0.000     10.963   -6.085   14.043
+ DGD           CHB    C    CH2       0.000     12.528   -7.474   13.524
+ DGD           HBV1   H    H         0.000     13.234   -6.689   13.245
+ DGD           HBV2   H    H         0.000     12.663   -8.334   12.864
+ DGD           CIB    C    CH3       0.000     12.778   -7.896   14.973
+ DGD           HBG3   H    H         0.000     12.648   -7.063   15.615
+ DGD           HBG2   H    H         0.000     12.093   -8.659   15.246
+ DGD           HBG1   H    H         0.000     13.768   -8.263   15.072
+ DGD           O2G    O    O2       -0.500     -2.021    0.582    0.519
+ DGD           C2G    C    CH1       0.000     -2.341    1.017   -0.880
+ DGD           HG2    H    H         0.000     -1.414    1.361   -1.360
+ DGD           C3G    C    CH2       0.000     -2.887   -0.175   -1.671
+ DGD           HG31   H    H         0.000     -2.160   -0.989   -1.649
+ DGD           HG32   H    H         0.000     -3.064    0.126   -2.706
+ DGD           O3G    O    O2        0.000     -4.113   -0.613   -1.084
+ DGD           C1D    C    CH1       0.000     -4.569   -1.722   -1.863
+ DGD           HD1    H    H         0.000     -3.815   -2.521   -1.838
+ DGD           O6D    O    O2        0.000     -4.770   -1.302   -3.211
+ DGD           C5D    C    CH1       0.000     -5.049   -2.465   -3.988
+ DGD           HD5    H    H         0.000     -4.262   -3.213   -3.820
+ DGD           C6D    C    CH2       0.000     -5.085   -2.089   -5.471
+ DGD           HD61   H    H         0.000     -5.866   -1.344   -5.638
+ DGD           HD62   H    H         0.000     -5.300   -2.979   -6.066
+ DGD           O5D    O    O2        0.000     -3.820   -1.549   -5.856
+ DGD           C1E    C    CH1       0.000     -3.916   -1.220   -7.244
+ DGD           HE1    H    H         0.000     -4.146   -2.128   -7.819
+ DGD           O6E    O    O2        0.000     -4.957   -0.263   -7.432
+ DGD           C5E    C    CH1       0.000     -4.715    0.819   -6.536
+ DGD           HE5    H    H         0.000     -4.587    0.428   -5.517
+ DGD           C6E    C    CH2       0.000     -5.906    1.779   -6.565
+ DGD           HE61   H    H         0.000     -6.035    2.167   -7.578
+ DGD           HE62   H    H         0.000     -5.721    2.608   -5.880
+ DGD           O5E    O    OH1       0.000     -7.088    1.085   -6.166
+ DGD           HO5E   H    H         0.000     -7.840    1.693   -6.185
+ DGD           C4E    C    CH1       0.000     -3.449    1.567   -6.957
+ DGD           HE4    H    H         0.000     -3.277    2.412   -6.276
+ DGD           O4E    O    OH1       0.000     -3.601    2.053   -8.292
+ DGD           HO4E   H    H         0.000     -2.800    2.525   -8.556
+ DGD           C3E    C    CH1       0.000     -2.256    0.606   -6.892
+ DGD           HE3    H    H         0.000     -2.072    0.315   -5.848
+ DGD           O3E    O    OH1       0.000     -1.095    1.247   -7.423
+ DGD           HO3E   H    H         0.000     -0.344    0.639   -7.381
+ DGD           C2E    C    CH1       0.000     -2.585   -0.638   -7.723
+ DGD           HE2    H    H         0.000     -2.664   -0.362   -8.783
+ DGD           O2E    O    OH1       0.000     -1.551   -1.610   -7.558
+ DGD           HO2E   H    H         0.000     -1.760   -2.394   -8.082
+ DGD           C4D    C    CH1       0.000     -6.403   -3.050   -3.579
+ DGD           HD4    H    H         0.000     -6.623   -3.934   -4.194
+ DGD           O4D    O    OH1       0.000     -7.425   -2.068   -3.771
+ DGD           HO4D   H    H         0.000     -8.279   -2.439   -3.512
+ DGD           C3D    C    CH1       0.000     -6.347   -3.453   -2.102
+ DGD           HD3    H    H         0.000     -5.637   -4.281   -1.972
+ DGD           O3D    O    OH1       0.000     -7.646   -3.862   -1.667
+ DGD           HO3D   H    H         0.000     -7.608   -4.116   -0.735
+ DGD           C2D    C    CH1       0.000     -5.884   -2.243   -1.281
+ DGD           HD2    H    H         0.000     -6.646   -1.453   -1.327
+ DGD           O2D    O    OH1       0.000     -5.684   -2.637    0.078
+ DGD           HO2D   H    H         0.000     -5.391   -1.873    0.594
+ DGD           C1G    C    CH2       0.000     -3.357    2.158   -0.910
+ DGD           HG11   H    H         0.000     -3.504    2.450   -1.952
+ DGD           HG12   H    H         0.000     -2.936    2.998   -0.354
+ DGD           O1G    O    O2       -0.500     -4.675    1.768   -0.309
+ DGD           C1A    C    C         0.000     -5.647    2.551   -0.232
+ DGD           O1A    O    O        -0.500     -5.546    3.720   -0.668
+ DGD           C2A    C    CH2       0.000     -6.941    2.088    0.387
+ DGD           HA21   H    H         0.000     -6.761    1.785    1.421
+ DGD           HA22   H    H         0.000     -7.329    1.237   -0.177
+ DGD           C3A    C    CH2       0.000     -7.958    3.229    0.357
+ DGD           HA31   H    H         0.000     -8.136    3.531   -0.677
+ DGD           HA32   H    H         0.000     -7.567    4.079    0.921
+ DGD           C4A    C    CH2       0.000     -9.272    2.758    0.986
+ DGD           HA41   H    H         0.000     -9.092    2.456    2.020
+ DGD           HA42   H    H         0.000     -9.661    1.908    0.422
+ DGD           C5A    C    CH2       0.000    -10.289    3.901    0.956
+ DGD           HA51   H    H         0.000    -10.466    4.203   -0.079
+ DGD           HA52   H    H         0.000     -9.898    4.751    1.520
+ DGD           C6A    C    CH2       0.000    -11.602    3.430    1.583
+ DGD           HA61   H    H         0.000    -11.423    3.128    2.617
+ DGD           HA62   H    H         0.000    -11.990    2.580    1.019
+ DGD           C7A    C    CH2       0.000    -12.620    4.572    1.553
+ DGD           HA71   H    H         0.000    -12.798    4.873    0.519
+ DGD           HA72   H    H         0.000    -12.230    5.422    2.116
+ DGD           C8A    C    CH2       0.000    -13.933    4.101    2.182
+ DGD           HA81   H    H         0.000    -13.753    3.799    3.216
+ DGD           HA82   H    H         0.000    -14.321    3.250    1.618
+ DGD           C9A    C    CH2       0.000    -14.951    5.243    2.152
+ DGD           HA91   H    H         0.000    -15.129    5.544    1.117
+ DGD           HA92   H    H         0.000    -14.561    6.093    2.715
+ DGD           CAA    C    CH2       0.000    -16.265    4.773    2.780
+ DGD           HAT1   H    H         0.000    -16.084    4.472    3.814
+ DGD           HAT2   H    H         0.000    -16.653    3.922    2.217
+ DGD           CBA    C    CH2       0.000    -17.283    5.914    2.751
+ DGD           HAE1   H    H         0.000    -17.460    6.215    1.716
+ DGD           HAE2   H    H         0.000    -16.891    6.764    3.313
+ DGD           CCA    C    CH2       0.000    -18.595    5.445    3.379
+ DGD           HAW1   H    H         0.000    -18.415    5.144    4.413
+ DGD           HAW2   H    H         0.000    -18.984    4.594    2.816
+ DGD           CDA    C    CH2       0.000    -19.613    6.586    3.349
+ DGD           HAH1   H    H         0.000    -19.790    6.887    2.315
+ DGD           HAH2   H    H         0.000    -19.223    7.436    3.913
+ DGD           CEA    C    CH2       0.000    -20.926    6.116    3.977
+ DGD           HAF1   H    H         0.000    -20.746    5.813    5.011
+ DGD           HAF2   H    H         0.000    -21.314    5.265    3.412
+ DGD           CFA    C    CH2       0.000    -21.945    7.257    3.948
+ DGD           HAN1   H    H         0.000    -22.123    7.558    2.913
+ DGD           HAN2   H    H         0.000    -21.554    8.107    4.511
+ DGD           CGA    C    CH2       0.000    -23.257    6.787    4.576
+ DGD           HAS1   H    H         0.000    -23.077    6.485    5.610
+ DGD           HAS2   H    H         0.000    -23.645    5.936    4.012
+ DGD           CHA    C    CH2       0.000    -24.276    7.929    4.545
+ DGD           HAV1   H    H         0.000    -24.453    8.230    3.511
+ DGD           HAV2   H    H         0.000    -23.885    8.779    5.109
+ DGD           CIA    C    CH3       0.000    -25.589    7.458    5.174
+ DGD           HAG3   H    H         0.000    -25.971    6.633    4.628
+ DGD           HAG2   H    H         0.000    -25.419    7.164    6.179
+ DGD           HAG1   H    H         0.000    -26.297    8.247    5.156
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DGD      O1B    n/a    C1B    START
+ DGD      C1B    O1B    O2G    .
+ DGD      C2B    C1B    C3B    .
+ DGD      HB21   C2B    .      .
+ DGD      HB22   C2B    .      .
+ DGD      C3B    C2B    C4B    .
+ DGD      HB31   C3B    .      .
+ DGD      HB32   C3B    .      .
+ DGD      C4B    C3B    C5B    .
+ DGD      HB41   C4B    .      .
+ DGD      HB42   C4B    .      .
+ DGD      C5B    C4B    C6B    .
+ DGD      HB51   C5B    .      .
+ DGD      HB52   C5B    .      .
+ DGD      C6B    C5B    C7B    .
+ DGD      HB61   C6B    .      .
+ DGD      HB62   C6B    .      .
+ DGD      C7B    C6B    C8B    .
+ DGD      HB71   C7B    .      .
+ DGD      HB72   C7B    .      .
+ DGD      C8B    C7B    C9B    .
+ DGD      HB81   C8B    .      .
+ DGD      HB82   C8B    .      .
+ DGD      C9B    C8B    CAB    .
+ DGD      HB91   C9B    .      .
+ DGD      HB92   C9B    .      .
+ DGD      CAB    C9B    CBB    .
+ DGD      HBT1   CAB    .      .
+ DGD      HBT2   CAB    .      .
+ DGD      CBB    CAB    CCB    .
+ DGD      HBE1   CBB    .      .
+ DGD      HBE2   CBB    .      .
+ DGD      CCB    CBB    CDB    .
+ DGD      HBW1   CCB    .      .
+ DGD      HBW2   CCB    .      .
+ DGD      CDB    CCB    CEB    .
+ DGD      HBH1   CDB    .      .
+ DGD      HBH2   CDB    .      .
+ DGD      CEB    CDB    CFB    .
+ DGD      HBF1   CEB    .      .
+ DGD      HBF2   CEB    .      .
+ DGD      CFB    CEB    CGB    .
+ DGD      HBN1   CFB    .      .
+ DGD      HBN2   CFB    .      .
+ DGD      CGB    CFB    CHB    .
+ DGD      HBS1   CGB    .      .
+ DGD      HBS2   CGB    .      .
+ DGD      CHB    CGB    CIB    .
+ DGD      HBV1   CHB    .      .
+ DGD      HBV2   CHB    .      .
+ DGD      CIB    CHB    HBG1   .
+ DGD      HBG3   CIB    .      .
+ DGD      HBG2   CIB    .      .
+ DGD      HBG1   CIB    .      .
+ DGD      O2G    C1B    C2G    .
+ DGD      C2G    O2G    C1G    .
+ DGD      HG2    C2G    .      .
+ DGD      C3G    C2G    O3G    .
+ DGD      HG31   C3G    .      .
+ DGD      HG32   C3G    .      .
+ DGD      O3G    C3G    C1D    .
+ DGD      C1D    O3G    O6D    .
+ DGD      HD1    C1D    .      .
+ DGD      O6D    C1D    C5D    .
+ DGD      C5D    O6D    C4D    .
+ DGD      HD5    C5D    .      .
+ DGD      C6D    C5D    O5D    .
+ DGD      HD61   C6D    .      .
+ DGD      HD62   C6D    .      .
+ DGD      O5D    C6D    C1E    .
+ DGD      C1E    O5D    O6E    .
+ DGD      HE1    C1E    .      .
+ DGD      O6E    C1E    C5E    .
+ DGD      C5E    O6E    C4E    .
+ DGD      HE5    C5E    .      .
+ DGD      C6E    C5E    O5E    .
+ DGD      HE61   C6E    .      .
+ DGD      HE62   C6E    .      .
+ DGD      O5E    C6E    HO5E   .
+ DGD      HO5E   O5E    .      .
+ DGD      C4E    C5E    C3E    .
+ DGD      HE4    C4E    .      .
+ DGD      O4E    C4E    HO4E   .
+ DGD      HO4E   O4E    .      .
+ DGD      C3E    C4E    C2E    .
+ DGD      HE3    C3E    .      .
+ DGD      O3E    C3E    HO3E   .
+ DGD      HO3E   O3E    .      .
+ DGD      C2E    C3E    O2E    .
+ DGD      HE2    C2E    .      .
+ DGD      O2E    C2E    HO2E   .
+ DGD      HO2E   O2E    .      .
+ DGD      C4D    C5D    C3D    .
+ DGD      HD4    C4D    .      .
+ DGD      O4D    C4D    HO4D   .
+ DGD      HO4D   O4D    .      .
+ DGD      C3D    C4D    C2D    .
+ DGD      HD3    C3D    .      .
+ DGD      O3D    C3D    HO3D   .
+ DGD      HO3D   O3D    .      .
+ DGD      C2D    C3D    O2D    .
+ DGD      HD2    C2D    .      .
+ DGD      O2D    C2D    HO2D   .
+ DGD      HO2D   O2D    .      .
+ DGD      C1G    C2G    O1G    .
+ DGD      HG11   C1G    .      .
+ DGD      HG12   C1G    .      .
+ DGD      O1G    C1G    C1A    .
+ DGD      C1A    O1G    C2A    .
+ DGD      O1A    C1A    .      .
+ DGD      C2A    C1A    C3A    .
+ DGD      HA21   C2A    .      .
+ DGD      HA22   C2A    .      .
+ DGD      C3A    C2A    C4A    .
+ DGD      HA31   C3A    .      .
+ DGD      HA32   C3A    .      .
+ DGD      C4A    C3A    C5A    .
+ DGD      HA41   C4A    .      .
+ DGD      HA42   C4A    .      .
+ DGD      C5A    C4A    C6A    .
+ DGD      HA51   C5A    .      .
+ DGD      HA52   C5A    .      .
+ DGD      C6A    C5A    C7A    .
+ DGD      HA61   C6A    .      .
+ DGD      HA62   C6A    .      .
+ DGD      C7A    C6A    C8A    .
+ DGD      HA71   C7A    .      .
+ DGD      HA72   C7A    .      .
+ DGD      C8A    C7A    C9A    .
+ DGD      HA81   C8A    .      .
+ DGD      HA82   C8A    .      .
+ DGD      C9A    C8A    CAA    .
+ DGD      HA91   C9A    .      .
+ DGD      HA92   C9A    .      .
+ DGD      CAA    C9A    CBA    .
+ DGD      HAT1   CAA    .      .
+ DGD      HAT2   CAA    .      .
+ DGD      CBA    CAA    CCA    .
+ DGD      HAE1   CBA    .      .
+ DGD      HAE2   CBA    .      .
+ DGD      CCA    CBA    CDA    .
+ DGD      HAW1   CCA    .      .
+ DGD      HAW2   CCA    .      .
+ DGD      CDA    CCA    CEA    .
+ DGD      HAH1   CDA    .      .
+ DGD      HAH2   CDA    .      .
+ DGD      CEA    CDA    CFA    .
+ DGD      HAF1   CEA    .      .
+ DGD      HAF2   CEA    .      .
+ DGD      CFA    CEA    CGA    .
+ DGD      HAN1   CFA    .      .
+ DGD      HAN2   CFA    .      .
+ DGD      CGA    CFA    CHA    .
+ DGD      HAS1   CGA    .      .
+ DGD      HAS2   CGA    .      .
+ DGD      CHA    CGA    CIA    .
+ DGD      HAV1   CHA    .      .
+ DGD      HAV2   CHA    .      .
+ DGD      CIA    CHA    HAG1   .
+ DGD      HAG3   CIA    .      .
+ DGD      HAG2   CIA    .      .
+ DGD      HAG1   CIA    .      END
+ DGD      C1D    C2D    .    ADD
+ DGD      C1E    C2E    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DGD       C2A       C1A       single    1.510     0.020     1.510     0.020     
+DGD       O1A       C1A       deloc     1.220     0.020     1.220     0.020     
+DGD       C1A       O1G       deloc     1.454     0.020     1.454     0.020     
+DGD       C3A       C2A       single    1.524     0.020     1.524     0.020     
+DGD       HA21      C2A       single    1.089     0.010     0.989     0.005     
+DGD       HA22      C2A       single    1.089     0.010     0.989     0.005     
+DGD       C4A       C3A       single    1.524     0.020     1.524     0.020     
+DGD       HA31      C3A       single    1.089     0.010     0.989     0.005     
+DGD       HA32      C3A       single    1.089     0.010     0.989     0.005     
+DGD       C5A       C4A       single    1.524     0.020     1.524     0.020     
+DGD       HA41      C4A       single    1.089     0.010     0.989     0.005     
+DGD       HA42      C4A       single    1.089     0.010     0.989     0.005     
+DGD       C6A       C5A       single    1.524     0.020     1.524     0.020     
+DGD       HA51      C5A       single    1.089     0.010     0.989     0.005     
+DGD       HA52      C5A       single    1.089     0.010     0.989     0.005     
+DGD       C7A       C6A       single    1.524     0.020     1.524     0.020     
+DGD       HA61      C6A       single    1.089     0.010     0.989     0.005     
+DGD       HA62      C6A       single    1.089     0.010     0.989     0.005     
+DGD       C8A       C7A       single    1.524     0.020     1.524     0.020     
+DGD       HA71      C7A       single    1.089     0.010     0.989     0.005     
+DGD       HA72      C7A       single    1.089     0.010     0.989     0.005     
+DGD       C9A       C8A       single    1.524     0.020     1.524     0.020     
+DGD       HA81      C8A       single    1.089     0.010     0.989     0.005     
+DGD       HA82      C8A       single    1.089     0.010     0.989     0.005     
+DGD       CAA       C9A       single    1.524     0.020     1.524     0.020     
+DGD       HA91      C9A       single    1.089     0.010     0.989     0.005     
+DGD       HA92      C9A       single    1.089     0.010     0.989     0.005     
+DGD       CBA       CAA       single    1.524     0.020     1.524     0.020     
+DGD       HAT1      CAA       single    1.089     0.010     0.989     0.005     
+DGD       HAT2      CAA       single    1.089     0.010     0.989     0.005     
+DGD       CCA       CBA       single    1.524     0.020     1.524     0.020     
+DGD       HAE1      CBA       single    1.089     0.010     0.989     0.005     
+DGD       HAE2      CBA       single    1.089     0.010     0.989     0.005     
+DGD       CDA       CCA       single    1.524     0.020     1.524     0.020     
+DGD       HAW1      CCA       single    1.089     0.010     0.989     0.005     
+DGD       HAW2      CCA       single    1.089     0.010     0.989     0.005     
+DGD       CEA       CDA       single    1.524     0.020     1.524     0.020     
+DGD       HAH1      CDA       single    1.089     0.010     0.989     0.005     
+DGD       HAH2      CDA       single    1.089     0.010     0.989     0.005     
+DGD       CFA       CEA       single    1.524     0.020     1.524     0.020     
+DGD       HAF1      CEA       single    1.089     0.010     0.989     0.005     
+DGD       HAF2      CEA       single    1.089     0.010     0.989     0.005     
+DGD       CGA       CFA       single    1.524     0.020     1.524     0.020     
+DGD       HAN1      CFA       single    1.089     0.010     0.989     0.005     
+DGD       HAN2      CFA       single    1.089     0.010     0.989     0.005     
+DGD       CHA       CGA       single    1.524     0.020     1.524     0.020     
+DGD       HAS1      CGA       single    1.089     0.010     0.989     0.005     
+DGD       HAS2      CGA       single    1.089     0.010     0.989     0.005     
+DGD       CIA       CHA       single    1.513     0.020     1.513     0.020     
+DGD       HAV1      CHA       single    1.089     0.010     0.989     0.005     
+DGD       HAV2      CHA       single    1.089     0.010     0.989     0.005     
+DGD       HAG1      CIA       single    1.089     0.010     0.989     0.005     
+DGD       HAG2      CIA       single    1.089     0.010     0.989     0.005     
+DGD       HAG3      CIA       single    1.089     0.010     0.989     0.005     
+DGD       C2B       C1B       single    1.510     0.020     1.510     0.020     
+DGD       C1B       O1B       deloc     1.220     0.020     1.220     0.020     
+DGD       O2G       C1B       deloc     1.454     0.020     1.454     0.020     
+DGD       C3B       C2B       single    1.524     0.020     1.524     0.020     
+DGD       HB21      C2B       single    1.089     0.010     0.989     0.005     
+DGD       HB22      C2B       single    1.089     0.010     0.989     0.005     
+DGD       C4B       C3B       single    1.524     0.020     1.524     0.020     
+DGD       HB31      C3B       single    1.089     0.010     0.989     0.005     
+DGD       HB32      C3B       single    1.089     0.010     0.989     0.005     
+DGD       C5B       C4B       single    1.524     0.020     1.524     0.020     
+DGD       HB41      C4B       single    1.089     0.010     0.989     0.005     
+DGD       HB42      C4B       single    1.089     0.010     0.989     0.005     
+DGD       C6B       C5B       single    1.524     0.020     1.524     0.020     
+DGD       HB51      C5B       single    1.089     0.010     0.989     0.005     
+DGD       HB52      C5B       single    1.089     0.010     0.989     0.005     
+DGD       C7B       C6B       single    1.524     0.020     1.524     0.020     
+DGD       HB61      C6B       single    1.089     0.010     0.989     0.005     
+DGD       HB62      C6B       single    1.089     0.010     0.989     0.005     
+DGD       C8B       C7B       single    1.524     0.020     1.524     0.020     
+DGD       HB71      C7B       single    1.089     0.010     0.989     0.005     
+DGD       HB72      C7B       single    1.089     0.010     0.989     0.005     
+DGD       C9B       C8B       single    1.524     0.020     1.524     0.020     
+DGD       HB81      C8B       single    1.089     0.010     0.989     0.005     
+DGD       HB82      C8B       single    1.089     0.010     0.989     0.005     
+DGD       CAB       C9B       single    1.524     0.020     1.524     0.020     
+DGD       HB91      C9B       single    1.089     0.010     0.989     0.005     
+DGD       HB92      C9B       single    1.089     0.010     0.989     0.005     
+DGD       CBB       CAB       single    1.524     0.020     1.524     0.020     
+DGD       HBT1      CAB       single    1.089     0.010     0.989     0.005     
+DGD       HBT2      CAB       single    1.089     0.010     0.989     0.005     
+DGD       CCB       CBB       single    1.524     0.020     1.524     0.020     
+DGD       HBE1      CBB       single    1.089     0.010     0.989     0.005     
+DGD       HBE2      CBB       single    1.089     0.010     0.989     0.005     
+DGD       CDB       CCB       single    1.524     0.020     1.524     0.020     
+DGD       HBW1      CCB       single    1.089     0.010     0.989     0.005     
+DGD       HBW2      CCB       single    1.089     0.010     0.989     0.005     
+DGD       CEB       CDB       single    1.524     0.020     1.524     0.020     
+DGD       HBH1      CDB       single    1.089     0.010     0.989     0.005     
+DGD       HBH2      CDB       single    1.089     0.010     0.989     0.005     
+DGD       CFB       CEB       single    1.524     0.020     1.524     0.020     
+DGD       HBF1      CEB       single    1.089     0.010     0.989     0.005     
+DGD       HBF2      CEB       single    1.089     0.010     0.989     0.005     
+DGD       CGB       CFB       single    1.524     0.020     1.524     0.020     
+DGD       HBN1      CFB       single    1.089     0.010     0.989     0.005     
+DGD       HBN2      CFB       single    1.089     0.010     0.989     0.005     
+DGD       CHB       CGB       single    1.524     0.020     1.524     0.020     
+DGD       HBS1      CGB       single    1.089     0.010     0.989     0.005     
+DGD       HBS2      CGB       single    1.089     0.010     0.989     0.005     
+DGD       CIB       CHB       single    1.513     0.020     1.513     0.020     
+DGD       HBV1      CHB       single    1.089     0.010     0.989     0.005     
+DGD       HBV2      CHB       single    1.089     0.010     0.989     0.005     
+DGD       HBG1      CIB       single    1.089     0.010     0.989     0.005     
+DGD       HBG2      CIB       single    1.089     0.010     0.989     0.005     
+DGD       HBG3      CIB       single    1.089     0.010     0.989     0.005     
+DGD       O1G       C1G       single    1.426     0.020     1.426     0.020     
+DGD       C1G       C2G       single    1.524     0.020     1.524     0.020     
+DGD       HG11      C1G       single    1.089     0.010     0.989     0.005     
+DGD       HG12      C1G       single    1.089     0.010     0.989     0.005     
+DGD       C2G       O2G       single    1.426     0.020     1.426     0.020     
+DGD       C3G       C2G       single    1.524     0.020     1.524     0.020     
+DGD       HG2       C2G       single    1.089     0.010     0.989     0.005     
+DGD       O3G       C3G       single    1.426     0.020     1.426     0.020     
+DGD       HG31      C3G       single    1.089     0.010     0.989     0.005     
+DGD       HG32      C3G       single    1.089     0.010     0.989     0.005     
+DGD       C1D       O3G       single    1.426     0.020     1.426     0.020     
+DGD       C1D       C2D       single    1.524     0.020     1.524     0.020     
+DGD       O6D       C1D       single    1.426     0.020     1.426     0.020     
+DGD       HD1       C1D       single    1.089     0.010     0.989     0.005     
+DGD       O2D       C2D       single    1.432     0.020     1.432     0.020     
+DGD       C2D       C3D       single    1.524     0.020     1.524     0.020     
+DGD       HD2       C2D       single    1.089     0.010     0.989     0.005     
+DGD       HO2D      O2D       single    0.970     0.012     0.839     0.014     
+DGD       O3D       C3D       single    1.432     0.020     1.432     0.020     
+DGD       C3D       C4D       single    1.524     0.020     1.524     0.020     
+DGD       HD3       C3D       single    1.089     0.010     0.989     0.005     
+DGD       HO3D      O3D       single    0.970     0.012     0.839     0.014     
+DGD       O4D       C4D       single    1.432     0.020     1.432     0.020     
+DGD       C4D       C5D       single    1.524     0.020     1.524     0.020     
+DGD       HD4       C4D       single    1.089     0.010     0.989     0.005     
+DGD       HO4D      O4D       single    0.970     0.012     0.839     0.014     
+DGD       C6D       C5D       single    1.524     0.020     1.524     0.020     
+DGD       C5D       O6D       single    1.426     0.020     1.426     0.020     
+DGD       HD5       C5D       single    1.089     0.010     0.989     0.005     
+DGD       O5D       C6D       single    1.426     0.020     1.426     0.020     
+DGD       C1E       O5D       single    1.426     0.020     1.426     0.020     
+DGD       HD61      C6D       single    1.089     0.010     0.989     0.005     
+DGD       HD62      C6D       single    1.089     0.010     0.989     0.005     
+DGD       C1E       C2E       single    1.524     0.020     1.524     0.020     
+DGD       O6E       C1E       single    1.426     0.020     1.426     0.020     
+DGD       HE1       C1E       single    1.089     0.010     0.989     0.005     
+DGD       O2E       C2E       single    1.432     0.020     1.432     0.020     
+DGD       C2E       C3E       single    1.524     0.020     1.524     0.020     
+DGD       HE2       C2E       single    1.089     0.010     0.989     0.005     
+DGD       HO2E      O2E       single    0.970     0.012     0.839     0.014     
+DGD       O3E       C3E       single    1.432     0.020     1.432     0.020     
+DGD       C3E       C4E       single    1.524     0.020     1.524     0.020     
+DGD       HE3       C3E       single    1.089     0.010     0.989     0.005     
+DGD       HO3E      O3E       single    0.970     0.012     0.839     0.014     
+DGD       O4E       C4E       single    1.432     0.020     1.432     0.020     
+DGD       C4E       C5E       single    1.524     0.020     1.524     0.020     
+DGD       HE4       C4E       single    1.089     0.010     0.989     0.005     
+DGD       HO4E      O4E       single    0.970     0.012     0.839     0.014     
+DGD       C5E       O6E       single    1.426     0.020     1.426     0.020     
+DGD       C6E       C5E       single    1.524     0.020     1.524     0.020     
+DGD       HE5       C5E       single    1.089     0.010     0.989     0.005     
+DGD       O5E       C6E       single    1.432     0.020     1.432     0.020     
+DGD       HE61      C6E       single    1.089     0.010     0.989     0.005     
+DGD       HE62      C6E       single    1.089     0.010     0.989     0.005     
+DGD       HO5E      O5E       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DGD      O1B    C1B    C2B     120.500    3.000
+ DGD      O1B    C1B    O2G     119.000    3.000
+ DGD      C2B    C1B    O2G     120.000    3.000
+ DGD      C1B    C2B    HB21    109.470    3.000
+ DGD      C1B    C2B    HB22    109.470    3.000
+ DGD      C1B    C2B    C3B     109.470    3.000
+ DGD      HB21   C2B    HB22    107.900    3.000
+ DGD      HB21   C2B    C3B     109.470    3.000
+ DGD      HB22   C2B    C3B     109.470    3.000
+ DGD      C2B    C3B    HB31    109.470    3.000
+ DGD      C2B    C3B    HB32    109.470    3.000
+ DGD      C2B    C3B    C4B     111.000    3.000
+ DGD      HB31   C3B    HB32    107.900    3.000
+ DGD      HB31   C3B    C4B     109.470    3.000
+ DGD      HB32   C3B    C4B     109.470    3.000
+ DGD      C3B    C4B    HB41    109.470    3.000
+ DGD      C3B    C4B    HB42    109.470    3.000
+ DGD      C3B    C4B    C5B     111.000    3.000
+ DGD      HB41   C4B    HB42    107.900    3.000
+ DGD      HB41   C4B    C5B     109.470    3.000
+ DGD      HB42   C4B    C5B     109.470    3.000
+ DGD      C4B    C5B    HB51    109.470    3.000
+ DGD      C4B    C5B    HB52    109.470    3.000
+ DGD      C4B    C5B    C6B     111.000    3.000
+ DGD      HB51   C5B    HB52    107.900    3.000
+ DGD      HB51   C5B    C6B     109.470    3.000
+ DGD      HB52   C5B    C6B     109.470    3.000
+ DGD      C5B    C6B    HB61    109.470    3.000
+ DGD      C5B    C6B    HB62    109.470    3.000
+ DGD      C5B    C6B    C7B     111.000    3.000
+ DGD      HB61   C6B    HB62    107.900    3.000
+ DGD      HB61   C6B    C7B     109.470    3.000
+ DGD      HB62   C6B    C7B     109.470    3.000
+ DGD      C6B    C7B    HB71    109.470    3.000
+ DGD      C6B    C7B    HB72    109.470    3.000
+ DGD      C6B    C7B    C8B     111.000    3.000
+ DGD      HB71   C7B    HB72    107.900    3.000
+ DGD      HB71   C7B    C8B     109.470    3.000
+ DGD      HB72   C7B    C8B     109.470    3.000
+ DGD      C7B    C8B    HB81    109.470    3.000
+ DGD      C7B    C8B    HB82    109.470    3.000
+ DGD      C7B    C8B    C9B     111.000    3.000
+ DGD      HB81   C8B    HB82    107.900    3.000
+ DGD      HB81   C8B    C9B     109.470    3.000
+ DGD      HB82   C8B    C9B     109.470    3.000
+ DGD      C8B    C9B    HB91    109.470    3.000
+ DGD      C8B    C9B    HB92    109.470    3.000
+ DGD      C8B    C9B    CAB     111.000    3.000
+ DGD      HB91   C9B    HB92    107.900    3.000
+ DGD      HB91   C9B    CAB     109.470    3.000
+ DGD      HB92   C9B    CAB     109.470    3.000
+ DGD      C9B    CAB    HBT1    109.470    3.000
+ DGD      C9B    CAB    HBT2    109.470    3.000
+ DGD      C9B    CAB    CBB     111.000    3.000
+ DGD      HBT1   CAB    HBT2    107.900    3.000
+ DGD      HBT1   CAB    CBB     109.470    3.000
+ DGD      HBT2   CAB    CBB     109.470    3.000
+ DGD      CAB    CBB    HBE1    109.470    3.000
+ DGD      CAB    CBB    HBE2    109.470    3.000
+ DGD      CAB    CBB    CCB     111.000    3.000
+ DGD      HBE1   CBB    HBE2    107.900    3.000
+ DGD      HBE1   CBB    CCB     109.470    3.000
+ DGD      HBE2   CBB    CCB     109.470    3.000
+ DGD      CBB    CCB    HBW1    109.470    3.000
+ DGD      CBB    CCB    HBW2    109.470    3.000
+ DGD      CBB    CCB    CDB     111.000    3.000
+ DGD      HBW1   CCB    HBW2    107.900    3.000
+ DGD      HBW1   CCB    CDB     109.470    3.000
+ DGD      HBW2   CCB    CDB     109.470    3.000
+ DGD      CCB    CDB    HBH1    109.470    3.000
+ DGD      CCB    CDB    HBH2    109.470    3.000
+ DGD      CCB    CDB    CEB     111.000    3.000
+ DGD      HBH1   CDB    HBH2    107.900    3.000
+ DGD      HBH1   CDB    CEB     109.470    3.000
+ DGD      HBH2   CDB    CEB     109.470    3.000
+ DGD      CDB    CEB    HBF1    109.470    3.000
+ DGD      CDB    CEB    HBF2    109.470    3.000
+ DGD      CDB    CEB    CFB     111.000    3.000
+ DGD      HBF1   CEB    HBF2    107.900    3.000
+ DGD      HBF1   CEB    CFB     109.470    3.000
+ DGD      HBF2   CEB    CFB     109.470    3.000
+ DGD      CEB    CFB    HBN1    109.470    3.000
+ DGD      CEB    CFB    HBN2    109.470    3.000
+ DGD      CEB    CFB    CGB     111.000    3.000
+ DGD      HBN1   CFB    HBN2    107.900    3.000
+ DGD      HBN1   CFB    CGB     109.470    3.000
+ DGD      HBN2   CFB    CGB     109.470    3.000
+ DGD      CFB    CGB    HBS1    109.470    3.000
+ DGD      CFB    CGB    HBS2    109.470    3.000
+ DGD      CFB    CGB    CHB     111.000    3.000
+ DGD      HBS1   CGB    HBS2    107.900    3.000
+ DGD      HBS1   CGB    CHB     109.470    3.000
+ DGD      HBS2   CGB    CHB     109.470    3.000
+ DGD      CGB    CHB    HBV1    109.470    3.000
+ DGD      CGB    CHB    HBV2    109.470    3.000
+ DGD      CGB    CHB    CIB     111.000    3.000
+ DGD      HBV1   CHB    HBV2    107.900    3.000
+ DGD      HBV1   CHB    CIB     109.470    3.000
+ DGD      HBV2   CHB    CIB     109.470    3.000
+ DGD      CHB    CIB    HBG3    109.470    3.000
+ DGD      CHB    CIB    HBG2    109.470    3.000
+ DGD      CHB    CIB    HBG1    109.470    3.000
+ DGD      HBG3   CIB    HBG2    109.470    3.000
+ DGD      HBG3   CIB    HBG1    109.470    3.000
+ DGD      HBG2   CIB    HBG1    109.470    3.000
+ DGD      C1B    O2G    C2G     111.800    3.000
+ DGD      O2G    C2G    HG2     109.470    3.000
+ DGD      O2G    C2G    C3G     109.470    3.000
+ DGD      O2G    C2G    C1G     109.470    3.000
+ DGD      HG2    C2G    C3G     108.340    3.000
+ DGD      HG2    C2G    C1G     108.340    3.000
+ DGD      C3G    C2G    C1G     109.470    3.000
+ DGD      C2G    C3G    HG31    109.470    3.000
+ DGD      C2G    C3G    HG32    109.470    3.000
+ DGD      C2G    C3G    O3G     109.470    3.000
+ DGD      HG31   C3G    HG32    107.900    3.000
+ DGD      HG31   C3G    O3G     109.470    3.000
+ DGD      HG32   C3G    O3G     109.470    3.000
+ DGD      C3G    O3G    C1D     111.800    3.000
+ DGD      O3G    C1D    HD1     109.470    3.000
+ DGD      O3G    C1D    O6D     109.470    3.000
+ DGD      O3G    C1D    C2D     109.470    3.000
+ DGD      HD1    C1D    O6D     109.470    3.000
+ DGD      HD1    C1D    C2D     108.340    3.000
+ DGD      O6D    C1D    C2D     109.470    3.000
+ DGD      C1D    O6D    C5D     111.800    3.000
+ DGD      O6D    C5D    HD5     109.470    3.000
+ DGD      O6D    C5D    C6D     109.470    3.000
+ DGD      O6D    C5D    C4D     109.470    3.000
+ DGD      HD5    C5D    C6D     108.340    3.000
+ DGD      HD5    C5D    C4D     108.340    3.000
+ DGD      C6D    C5D    C4D     111.000    3.000
+ DGD      C5D    C6D    HD61    109.470    3.000
+ DGD      C5D    C6D    HD62    109.470    3.000
+ DGD      C5D    C6D    O5D     109.470    3.000
+ DGD      HD61   C6D    HD62    107.900    3.000
+ DGD      HD61   C6D    O5D     109.470    3.000
+ DGD      HD62   C6D    O5D     109.470    3.000
+ DGD      C6D    O5D    C1E     111.800    3.000
+ DGD      O5D    C1E    HE1     109.470    3.000
+ DGD      O5D    C1E    O6E     109.470    3.000
+ DGD      O5D    C1E    C2E     109.470    3.000
+ DGD      HE1    C1E    O6E     109.470    3.000
+ DGD      HE1    C1E    C2E     108.340    3.000
+ DGD      O6E    C1E    C2E     109.470    3.000
+ DGD      C1E    O6E    C5E     111.800    3.000
+ DGD      O6E    C5E    HE5     109.470    3.000
+ DGD      O6E    C5E    C6E     109.470    3.000
+ DGD      O6E    C5E    C4E     109.470    3.000
+ DGD      HE5    C5E    C6E     108.340    3.000
+ DGD      HE5    C5E    C4E     108.340    3.000
+ DGD      C6E    C5E    C4E     111.000    3.000
+ DGD      C5E    C6E    HE61    109.470    3.000
+ DGD      C5E    C6E    HE62    109.470    3.000
+ DGD      C5E    C6E    O5E     109.470    3.000
+ DGD      HE61   C6E    HE62    107.900    3.000
+ DGD      HE61   C6E    O5E     109.470    3.000
+ DGD      HE62   C6E    O5E     109.470    3.000
+ DGD      C6E    O5E    HO5E    109.470    3.000
+ DGD      C5E    C4E    HE4     108.340    3.000
+ DGD      C5E    C4E    O4E     109.470    3.000
+ DGD      C5E    C4E    C3E     111.000    3.000
+ DGD      HE4    C4E    O4E     109.470    3.000
+ DGD      HE4    C4E    C3E     108.340    3.000
+ DGD      O4E    C4E    C3E     109.470    3.000
+ DGD      C4E    O4E    HO4E    109.470    3.000
+ DGD      C4E    C3E    HE3     108.340    3.000
+ DGD      C4E    C3E    O3E     109.470    3.000
+ DGD      C4E    C3E    C2E     111.000    3.000
+ DGD      HE3    C3E    O3E     109.470    3.000
+ DGD      HE3    C3E    C2E     108.340    3.000
+ DGD      O3E    C3E    C2E     109.470    3.000
+ DGD      C3E    O3E    HO3E    109.470    3.000
+ DGD      C3E    C2E    HE2     108.340    3.000
+ DGD      C3E    C2E    O2E     109.470    3.000
+ DGD      C3E    C2E    C1E     111.000    3.000
+ DGD      HE2    C2E    O2E     109.470    3.000
+ DGD      HE2    C2E    C1E     108.340    3.000
+ DGD      O2E    C2E    C1E     109.470    3.000
+ DGD      C2E    O2E    HO2E    109.470    3.000
+ DGD      C5D    C4D    HD4     108.340    3.000
+ DGD      C5D    C4D    O4D     109.470    3.000
+ DGD      C5D    C4D    C3D     111.000    3.000
+ DGD      HD4    C4D    O4D     109.470    3.000
+ DGD      HD4    C4D    C3D     108.340    3.000
+ DGD      O4D    C4D    C3D     109.470    3.000
+ DGD      C4D    O4D    HO4D    109.470    3.000
+ DGD      C4D    C3D    HD3     108.340    3.000
+ DGD      C4D    C3D    O3D     109.470    3.000
+ DGD      C4D    C3D    C2D     111.000    3.000
+ DGD      HD3    C3D    O3D     109.470    3.000
+ DGD      HD3    C3D    C2D     108.340    3.000
+ DGD      O3D    C3D    C2D     109.470    3.000
+ DGD      C3D    O3D    HO3D    109.470    3.000
+ DGD      C3D    C2D    HD2     108.340    3.000
+ DGD      C3D    C2D    O2D     109.470    3.000
+ DGD      C3D    C2D    C1D     111.000    3.000
+ DGD      HD2    C2D    O2D     109.470    3.000
+ DGD      HD2    C2D    C1D     108.340    3.000
+ DGD      O2D    C2D    C1D     109.470    3.000
+ DGD      C2D    O2D    HO2D    109.470    3.000
+ DGD      C2G    C1G    HG11    109.470    3.000
+ DGD      C2G    C1G    HG12    109.470    3.000
+ DGD      C2G    C1G    O1G     109.470    3.000
+ DGD      HG11   C1G    HG12    107.900    3.000
+ DGD      HG11   C1G    O1G     109.470    3.000
+ DGD      HG12   C1G    O1G     109.470    3.000
+ DGD      C1G    O1G    C1A     120.000    3.000
+ DGD      O1G    C1A    O1A     119.000    3.000
+ DGD      O1G    C1A    C2A     120.000    3.000
+ DGD      O1A    C1A    C2A     120.500    3.000
+ DGD      C1A    C2A    HA21    109.470    3.000
+ DGD      C1A    C2A    HA22    109.470    3.000
+ DGD      C1A    C2A    C3A     109.470    3.000
+ DGD      HA21   C2A    HA22    107.900    3.000
+ DGD      HA21   C2A    C3A     109.470    3.000
+ DGD      HA22   C2A    C3A     109.470    3.000
+ DGD      C2A    C3A    HA31    109.470    3.000
+ DGD      C2A    C3A    HA32    109.470    3.000
+ DGD      C2A    C3A    C4A     111.000    3.000
+ DGD      HA31   C3A    HA32    107.900    3.000
+ DGD      HA31   C3A    C4A     109.470    3.000
+ DGD      HA32   C3A    C4A     109.470    3.000
+ DGD      C3A    C4A    HA41    109.470    3.000
+ DGD      C3A    C4A    HA42    109.470    3.000
+ DGD      C3A    C4A    C5A     111.000    3.000
+ DGD      HA41   C4A    HA42    107.900    3.000
+ DGD      HA41   C4A    C5A     109.470    3.000
+ DGD      HA42   C4A    C5A     109.470    3.000
+ DGD      C4A    C5A    HA51    109.470    3.000
+ DGD      C4A    C5A    HA52    109.470    3.000
+ DGD      C4A    C5A    C6A     111.000    3.000
+ DGD      HA51   C5A    HA52    107.900    3.000
+ DGD      HA51   C5A    C6A     109.470    3.000
+ DGD      HA52   C5A    C6A     109.470    3.000
+ DGD      C5A    C6A    HA61    109.470    3.000
+ DGD      C5A    C6A    HA62    109.470    3.000
+ DGD      C5A    C6A    C7A     111.000    3.000
+ DGD      HA61   C6A    HA62    107.900    3.000
+ DGD      HA61   C6A    C7A     109.470    3.000
+ DGD      HA62   C6A    C7A     109.470    3.000
+ DGD      C6A    C7A    HA71    109.470    3.000
+ DGD      C6A    C7A    HA72    109.470    3.000
+ DGD      C6A    C7A    C8A     111.000    3.000
+ DGD      HA71   C7A    HA72    107.900    3.000
+ DGD      HA71   C7A    C8A     109.470    3.000
+ DGD      HA72   C7A    C8A     109.470    3.000
+ DGD      C7A    C8A    HA81    109.470    3.000
+ DGD      C7A    C8A    HA82    109.470    3.000
+ DGD      C7A    C8A    C9A     111.000    3.000
+ DGD      HA81   C8A    HA82    107.900    3.000
+ DGD      HA81   C8A    C9A     109.470    3.000
+ DGD      HA82   C8A    C9A     109.470    3.000
+ DGD      C8A    C9A    HA91    109.470    3.000
+ DGD      C8A    C9A    HA92    109.470    3.000
+ DGD      C8A    C9A    CAA     111.000    3.000
+ DGD      HA91   C9A    HA92    107.900    3.000
+ DGD      HA91   C9A    CAA     109.470    3.000
+ DGD      HA92   C9A    CAA     109.470    3.000
+ DGD      C9A    CAA    HAT1    109.470    3.000
+ DGD      C9A    CAA    HAT2    109.470    3.000
+ DGD      C9A    CAA    CBA     111.000    3.000
+ DGD      HAT1   CAA    HAT2    107.900    3.000
+ DGD      HAT1   CAA    CBA     109.470    3.000
+ DGD      HAT2   CAA    CBA     109.470    3.000
+ DGD      CAA    CBA    HAE1    109.470    3.000
+ DGD      CAA    CBA    HAE2    109.470    3.000
+ DGD      CAA    CBA    CCA     111.000    3.000
+ DGD      HAE1   CBA    HAE2    107.900    3.000
+ DGD      HAE1   CBA    CCA     109.470    3.000
+ DGD      HAE2   CBA    CCA     109.470    3.000
+ DGD      CBA    CCA    HAW1    109.470    3.000
+ DGD      CBA    CCA    HAW2    109.470    3.000
+ DGD      CBA    CCA    CDA     111.000    3.000
+ DGD      HAW1   CCA    HAW2    107.900    3.000
+ DGD      HAW1   CCA    CDA     109.470    3.000
+ DGD      HAW2   CCA    CDA     109.470    3.000
+ DGD      CCA    CDA    HAH1    109.470    3.000
+ DGD      CCA    CDA    HAH2    109.470    3.000
+ DGD      CCA    CDA    CEA     111.000    3.000
+ DGD      HAH1   CDA    HAH2    107.900    3.000
+ DGD      HAH1   CDA    CEA     109.470    3.000
+ DGD      HAH2   CDA    CEA     109.470    3.000
+ DGD      CDA    CEA    HAF1    109.470    3.000
+ DGD      CDA    CEA    HAF2    109.470    3.000
+ DGD      CDA    CEA    CFA     111.000    3.000
+ DGD      HAF1   CEA    HAF2    107.900    3.000
+ DGD      HAF1   CEA    CFA     109.470    3.000
+ DGD      HAF2   CEA    CFA     109.470    3.000
+ DGD      CEA    CFA    HAN1    109.470    3.000
+ DGD      CEA    CFA    HAN2    109.470    3.000
+ DGD      CEA    CFA    CGA     111.000    3.000
+ DGD      HAN1   CFA    HAN2    107.900    3.000
+ DGD      HAN1   CFA    CGA     109.470    3.000
+ DGD      HAN2   CFA    CGA     109.470    3.000
+ DGD      CFA    CGA    HAS1    109.470    3.000
+ DGD      CFA    CGA    HAS2    109.470    3.000
+ DGD      CFA    CGA    CHA     111.000    3.000
+ DGD      HAS1   CGA    HAS2    107.900    3.000
+ DGD      HAS1   CGA    CHA     109.470    3.000
+ DGD      HAS2   CGA    CHA     109.470    3.000
+ DGD      CGA    CHA    HAV1    109.470    3.000
+ DGD      CGA    CHA    HAV2    109.470    3.000
+ DGD      CGA    CHA    CIA     111.000    3.000
+ DGD      HAV1   CHA    HAV2    107.900    3.000
+ DGD      HAV1   CHA    CIA     109.470    3.000
+ DGD      HAV2   CHA    CIA     109.470    3.000
+ DGD      CHA    CIA    HAG3    109.470    3.000
+ DGD      CHA    CIA    HAG2    109.470    3.000
+ DGD      CHA    CIA    HAG1    109.470    3.000
+ DGD      HAG3   CIA    HAG2    109.470    3.000
+ DGD      HAG3   CIA    HAG1    109.470    3.000
+ DGD      HAG2   CIA    HAG1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DGD      var_1    O1B    C1B    C2B    C3B        0.022   20.000   3
+ DGD      var_2    C1B    C2B    C3B    C4B      179.976   20.000   3
+ DGD      var_3    C2B    C3B    C4B    C5B      179.991   20.000   3
+ DGD      var_4    C3B    C4B    C5B    C6B     -179.970   20.000   3
+ DGD      var_5    C4B    C5B    C6B    C7B      180.000   20.000   3
+ DGD      var_6    C5B    C6B    C7B    C8B      179.961   20.000   3
+ DGD      var_7    C6B    C7B    C8B    C9B      180.000   20.000   3
+ DGD      var_8    C7B    C8B    C9B    CAB     -179.961   20.000   3
+ DGD      var_9    C8B    C9B    CAB    CBB      180.000   20.000   3
+ DGD      var_10   C9B    CAB    CBB    CCB      179.931   20.000   3
+ DGD      var_11   CAB    CBB    CCB    CDB      180.000   20.000   3
+ DGD      var_12   CBB    CCB    CDB    CEB     -179.931   20.000   3
+ DGD      var_13   CCB    CDB    CEB    CFB      180.000   20.000   3
+ DGD      var_14   CDB    CEB    CFB    CGB      179.961   20.000   3
+ DGD      var_15   CEB    CFB    CGB    CHB      180.000   20.000   3
+ DGD      var_16   CFB    CGB    CHB    CIB     -179.961   20.000   3
+ DGD      var_17   CGB    CHB    CIB    HBG1     179.992   20.000   3
+ DGD      var_18   O1B    C1B    O2G    C2G       -0.055   20.000   1
+ DGD      var_19   C1B    O2G    C2G    C1G     -149.370   20.000   1
+ DGD      var_20   O2G    C2G    C3G    O3G       63.251   20.000   3
+ DGD      var_21   C2G    C3G    O3G    C1D     -179.948   20.000   1
+ DGD      var_22   C3G    O3G    C1D    O6D      -59.931   20.000   1
+ DGD      var_23   O3G    C1D    C2D    C3D      180.000   20.000   3
+ DGD      var_24   O3G    C1D    O6D    C5D      180.000   20.000   1
+ DGD      var_25   C1D    O6D    C5D    C4D       60.000   20.000   1
+ DGD      var_26   O6D    C5D    C6D    O5D       59.991   20.000   3
+ DGD      var_27   C5D    C6D    O5D    C1E      179.961   20.000   1
+ DGD      var_28   C6D    O5D    C1E    O6E       59.874   20.000   1
+ DGD      var_29   O5D    C1E    C2E    C3E      -60.000   20.000   3
+ DGD      var_30   O5D    C1E    O6E    C5E       60.000   20.000   1
+ DGD      var_31   C1E    O6E    C5E    C4E       60.000   20.000   1
+ DGD      var_32   O6E    C5E    C6E    O5E       59.966   20.000   3
+ DGD      var_33   C5E    C6E    O5E    HO5E     179.988   20.000   1
+ DGD      var_34   O6E    C5E    C4E    C3E      -60.000   20.000   3
+ DGD      var_35   C5E    C4E    O4E    HO4E    -179.976   20.000   1
+ DGD      var_36   C5E    C4E    C3E    C2E       60.000   20.000   3
+ DGD      var_37   C4E    C3E    O3E    HO3E    -179.957   20.000   1
+ DGD      var_38   C4E    C3E    C2E    O2E      180.000   20.000   3
+ DGD      var_39   C3E    C2E    O2E    HO2E     179.972   20.000   1
+ DGD      var_40   O6D    C5D    C4D    C3D      -60.000   20.000   3
+ DGD      var_41   C5D    C4D    O4D    HO4D    -179.978   20.000   1
+ DGD      var_42   C5D    C4D    C3D    C2D       60.000   20.000   3
+ DGD      var_43   C4D    C3D    O3D    HO3D     179.990   20.000   1
+ DGD      var_44   C4D    C3D    C2D    O2D      180.000   20.000   3
+ DGD      var_45   C3D    C2D    O2D    HO2D     180.000   20.000   1
+ DGD      var_46   O2G    C2G    C1G    O1G      -61.659   20.000   3
+ DGD      var_47   C2G    C1G    O1G    C1A     -179.983   20.000   1
+ DGD      var_48   C1G    O1G    C1A    C2A     -179.976   20.000   1
+ DGD      var_49   O1G    C1A    C2A    C3A      179.996   20.000   3
+ DGD      var_50   C1A    C2A    C3A    C4A     -179.989   20.000   3
+ DGD      var_51   C2A    C3A    C4A    C5A      179.984   20.000   3
+ DGD      var_52   C3A    C4A    C5A    C6A      179.968   20.000   3
+ DGD      var_53   C4A    C5A    C6A    C7A     -179.967   20.000   3
+ DGD      var_54   C5A    C6A    C7A    C8A     -179.951   20.000   3
+ DGD      var_55   C6A    C7A    C8A    C9A      180.000   20.000   3
+ DGD      var_56   C7A    C8A    C9A    CAA      179.999   20.000   3
+ DGD      var_57   C8A    C9A    CAA    CBA      179.999   20.000   3
+ DGD      var_58   C9A    CAA    CBA    CCA     -179.984   20.000   3
+ DGD      var_59   CAA    CBA    CCA    CDA      180.000   20.000   3
+ DGD      var_60   CBA    CCA    CDA    CEA      179.952   20.000   3
+ DGD      var_61   CCA    CDA    CEA    CFA      179.984   20.000   3
+ DGD      var_62   CDA    CEA    CFA    CGA     -179.983   20.000   3
+ DGD      var_63   CEA    CFA    CGA    CHA     -179.984   20.000   3
+ DGD      var_64   CFA    CGA    CHA    CIA      180.000   20.000   3
+ DGD      var_65   CGA    CHA    CIA    HAG1     179.943   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DGD      chir_01  C2G    C1G    O2G    C3G       negativ
+ DGD      chir_02  C1D    O3G    C2D    O6D       negativ
+ DGD      chir_03  C2D    C1D    O2D    C3D       positiv
+ DGD      chir_04  C3D    C2D    O3D    C4D       negativ
+ DGD      chir_05  C4D    C3D    O4D    C5D       negativ
+ DGD      chir_06  C5D    C4D    C6D    O6D       negativ
+ DGD      chir_07  C1E    O5D    C2E    O6E       positiv
+ DGD      chir_08  C2E    C1E    O2E    C3E       positiv
+ DGD      chir_09  C3E    C2E    O3E    C4E       negativ
+ DGD      chir_10  C4E    C3E    O4E    C5E       negativ
+ DGD      chir_11  C5E    C4E    O6E    C6E       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DGD      plan-1    C1A       0.020
+ DGD      plan-1    C2A       0.020
+ DGD      plan-1    O1A       0.020
+ DGD      plan-1    O1G       0.020
+ DGD      plan-2    C1B       0.020
+ DGD      plan-2    C2B       0.020
+ DGD      plan-2    O1B       0.020
+ DGD      plan-2    O2G       0.020
+# ------------------------------------------------------

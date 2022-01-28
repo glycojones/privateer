@@ -1,0 +1,179 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1LP     1LP      TRANYLCYPROMINE     NON-POLYMER     20     10     .     
+#
+data_comp_1LP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+1LP     O2      O       O       0       52.963      148.934     25.996      
+1LP     C1      C       C1      0       53.204      149.061     24.833      
+1LP     C2      C       CH1     0       54.365      149.937     24.339      
+1LP     C3      C       CH3     0       54.649      149.676     22.862      
+1LP     "C1'"   C       CR6     0       54.097      151.407     24.643      
+1LP     "C6'"   C       CR16    0       54.962      152.148     25.453      
+1LP     "C5'"   C       CR16    0       54.707      153.490     25.723      
+1LP     "C4'"   C       CR16    0       53.591      154.109     25.190      
+1LP     "C3'"   C       CR16    0       52.725      153.390     24.385      
+1LP     "C2'"   C       CR16    0       52.975      152.047     24.111      
+1LP     H1C1    H       H       0       52.686      148.625     24.166      
+1LP     H2      H       H       0       55.160      149.661     24.853      
+1LP     H3C1    H       H       0       53.865      149.909     22.334      
+1LP     H3C2    H       H       0       54.859      148.735     22.733      
+1LP     H3C3    H       H       0       55.404      150.218     22.576      
+1LP     "H6'"   H       H       0       55.726      151.734     25.822      
+1LP     "H5'"   H       H       0       55.300      153.978     26.273      
+1LP     "H4'"   H       H       0       53.421      155.019     25.374      
+1LP     "H3'"   H       H       0       51.963      153.810     24.019      
+1LP     "H2'"   H       H       0       52.380      151.563     23.561      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1LP       O2        C1        DOUBLE    n         1.195     0.020     1.195     0.020     
+1LP       C1        C2        SINGLE    n         1.534     0.020     1.534     0.020     
+1LP       C2        C3        SINGLE    n         1.526     0.012     1.526     0.012     
+1LP       C2        "C1'"     SINGLE    n         1.523     0.010     1.523     0.010     
+1LP       "C1'"     "C6'"     DOUBLE    y         1.389     0.010     1.389     0.010     
+1LP       "C1'"     "C2'"     SINGLE    y         1.389     0.010     1.389     0.010     
+1LP       "C6'"     "C5'"     SINGLE    y         1.386     0.010     1.386     0.010     
+1LP       "C5'"     "C4'"     DOUBLE    y         1.374     0.013     1.374     0.013     
+1LP       "C4'"     "C3'"     SINGLE    y         1.376     0.012     1.376     0.012     
+1LP       "C3'"     "C2'"     DOUBLE    y         1.386     0.010     1.386     0.010     
+1LP       C1        H1C1      SINGLE    n         1.082     0.013     0.950     0.020     
+1LP       C2        H2        SINGLE    n         1.089     0.010     0.987     0.020     
+1LP       C3        H3C1      SINGLE    n         1.089     0.010     0.973     0.016     
+1LP       C3        H3C2      SINGLE    n         1.089     0.010     0.973     0.016     
+1LP       C3        H3C3      SINGLE    n         1.089     0.010     0.973     0.016     
+1LP       "C6'"     "H6'"     SINGLE    n         1.082     0.013     0.944     0.017     
+1LP       "C5'"     "H5'"     SINGLE    n         1.082     0.013     0.944     0.018     
+1LP       "C4'"     "H4'"     SINGLE    n         1.082     0.013     0.944     0.016     
+1LP       "C3'"     "H3'"     SINGLE    n         1.082     0.013     0.944     0.018     
+1LP       "C2'"     "H2'"     SINGLE    n         1.082     0.013     0.944     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+1LP          O2          C1          C2     121.843    1.75
+1LP          O2          C1        H1C1     121.765    1.50
+1LP          C2          C1        H1C1     116.393    3.00
+1LP          C1          C2          C3     110.921    3.00
+1LP          C1          C2       "C1'"     110.945    2.64
+1LP          C1          C2          H2     106.938    1.92
+1LP          C3          C2       "C1'"     113.237    1.59
+1LP          C3          C2          H2     108.168    1.50
+1LP       "C1'"          C2          H2     107.645    1.61
+1LP          C2          C3        H3C1     109.459    1.84
+1LP          C2          C3        H3C2     109.459    1.84
+1LP          C2          C3        H3C3     109.459    1.84
+1LP        H3C1          C3        H3C2     109.411    1.50
+1LP        H3C1          C3        H3C3     109.411    1.50
+1LP        H3C2          C3        H3C3     109.411    1.50
+1LP          C2       "C1'"       "C6'"     120.902    1.50
+1LP          C2       "C1'"       "C2'"     120.902    1.50
+1LP       "C6'"       "C1'"       "C2'"     118.196    1.50
+1LP       "C1'"       "C6'"       "C5'"     120.460    1.50
+1LP       "C1'"       "C6'"       "H6'"     119.666    1.50
+1LP       "C5'"       "C6'"       "H6'"     119.874    1.50
+1LP       "C6'"       "C5'"       "C4'"     120.389    1.50
+1LP       "C6'"       "C5'"       "H5'"     119.760    1.50
+1LP       "C4'"       "C5'"       "H5'"     119.851    1.50
+1LP       "C5'"       "C4'"       "C3'"     120.107    1.50
+1LP       "C5'"       "C4'"       "H4'"     119.947    1.50
+1LP       "C3'"       "C4'"       "H4'"     119.947    1.50
+1LP       "C4'"       "C3'"       "C2'"     120.389    1.50
+1LP       "C4'"       "C3'"       "H3'"     119.851    1.50
+1LP       "C2'"       "C3'"       "H3'"     119.760    1.50
+1LP       "C1'"       "C2'"       "C3'"     120.460    1.50
+1LP       "C1'"       "C2'"       "H2'"     119.666    1.50
+1LP       "C3'"       "C2'"       "H2'"     119.874    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+1LP             sp2_sp3_1          O2          C1          C2          C3       0.000   10.00     6
+1LP             sp3_sp3_4          C1          C2          C3        H3C1      60.000   10.00     3
+1LP             sp2_sp3_7       "C6'"       "C1'"          C2          C1     150.000   10.00     6
+1LP       const_sp2_sp2_3          C2       "C1'"       "C6'"       "C5'"     180.000   10.00     2
+1LP              const_23          C2       "C1'"       "C2'"       "C3'"     180.000   10.00     2
+1LP       const_sp2_sp2_5       "C4'"       "C5'"       "C6'"       "C1'"       0.000   10.00     2
+1LP       const_sp2_sp2_9       "C3'"       "C4'"       "C5'"       "C6'"       0.000   10.00     2
+1LP              const_13       "C2'"       "C3'"       "C4'"       "C5'"       0.000   10.00     2
+1LP              const_17       "C1'"       "C2'"       "C3'"       "C4'"       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+1LP    chir_1    C2    C1    "C1'"    C3    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+1LP    plan-1       "C1'"   0.020
+1LP    plan-1          C2   0.020
+1LP    plan-1       "C2'"   0.020
+1LP    plan-1       "C3'"   0.020
+1LP    plan-1       "C4'"   0.020
+1LP    plan-1       "C5'"   0.020
+1LP    plan-1       "C6'"   0.020
+1LP    plan-1       "H2'"   0.020
+1LP    plan-1       "H3'"   0.020
+1LP    plan-1       "H4'"   0.020
+1LP    plan-1       "H5'"   0.020
+1LP    plan-1       "H6'"   0.020
+1LP    plan-2          C1   0.020
+1LP    plan-2          C2   0.020
+1LP    plan-2        H1C1   0.020
+1LP    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+1LP SMILES           ACDLabs              10.04 "O=CC(c1ccccc1)C"
+1LP SMILES_CANONICAL CACTVS               3.341 "C[C@H](C=O)c1ccccc1"
+1LP SMILES           CACTVS               3.341 "C[CH](C=O)c1ccccc1"
+1LP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@H](C=O)c1ccccc1"
+1LP SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C=O)c1ccccc1"
+1LP InChI            InChI                1.03  "InChI=1S/C9H10O/c1-8(7-10)9-5-3-2-4-6-9/h2-8H,1H3/t8-/m1/s1"
+1LP InChIKey         InChI                1.03  IQVAERDLDAZARL-MRVPVSSYSA-N
+1LP ?                acedrg               202         "dictionary generator"                  
+1LP ?                acedrg_database      11          "data source"                           
+1LP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+1LP ?                refmac5              5.8.0189    "optimization tool"                     

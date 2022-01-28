@@ -1,0 +1,124 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3NP     3NP      "3-NITROPROPANOIC ACID"     NON-POLYMER     12     8     .     
+#
+data_comp_3NP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3NP     O1      O       OC      -1      21.793      5.903       123.828     
+3NP     O2      O       O       0       20.201      7.380       124.166     
+3NP     O4      O       O       0       18.527      3.087       121.548     
+3NP     O3      O       OC      -1      17.153      4.681       121.135     
+3NP     C1      C       C       0       20.595      6.250       123.817     
+3NP     C2      C       CH2     0       19.560      5.240       123.354     
+3NP     C3      C       CH2     0       19.288      5.264       121.861     
+3NP     N1      N       N       1       18.241      4.266       121.485     
+3NP     H21     H       H       0       18.723      5.413       123.833     
+3NP     H22     H       H       0       19.865      4.345       123.608     
+3NP     H31     H       H       0       20.115      5.062       121.378     
+3NP     H32     H       H       0       18.993      6.160       121.599     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3NP       O1        C1        SINGLE    n         1.247     0.019     1.247     0.019     
+3NP       O2        C1        DOUBLE    n         1.247     0.019     1.247     0.019     
+3NP       O4        N1        DOUBLE    n         1.215     0.012     1.215     0.012     
+3NP       O3        N1        SINGLE    n         1.215     0.012     1.215     0.012     
+3NP       C1        C2        SINGLE    n         1.519     0.012     1.519     0.012     
+3NP       C2        C3        SINGLE    n         1.518     0.018     1.518     0.018     
+3NP       C3        N1        SINGLE    n         1.494     0.015     1.494     0.015     
+3NP       C2        H21       SINGLE    n         1.089     0.010     0.979     0.016     
+3NP       C2        H22       SINGLE    n         1.089     0.010     0.979     0.016     
+3NP       C3        H31       SINGLE    n         1.089     0.010     0.979     0.019     
+3NP       C3        H32       SINGLE    n         1.089     0.010     0.979     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3NP          O1          C1          O2     123.626    1.50
+3NP          O1          C1          C2     118.187    1.50
+3NP          O2          C1          C2     118.187    1.50
+3NP          C1          C2          C3     114.481    1.97
+3NP          C1          C2         H21     108.506    1.50
+3NP          C1          C2         H22     108.506    1.50
+3NP          C3          C2         H21     109.090    1.50
+3NP          C3          C2         H22     109.090    1.50
+3NP         H21          C2         H22     107.647    1.50
+3NP          C2          C3          N1     110.667    2.04
+3NP          C2          C3         H31     109.053    1.50
+3NP          C2          C3         H32     109.053    1.50
+3NP          N1          C3         H31     109.030    1.50
+3NP          N1          C3         H32     109.030    1.50
+3NP         H31          C3         H32     107.873    1.50
+3NP          O4          N1          O3     123.855    1.50
+3NP          O4          N1          C3     118.065    1.50
+3NP          O3          N1          C3     118.065    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3NP             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+3NP             sp3_sp3_1          C1          C2          C3          N1     180.000   10.00     3
+3NP             sp2_sp3_8          O4          N1          C3          C2     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3NP    plan-1          C1   0.020
+3NP    plan-1          C2   0.020
+3NP    plan-1          O1   0.020
+3NP    plan-1          O2   0.020
+3NP    plan-2          C3   0.020
+3NP    plan-2          N1   0.020
+3NP    plan-2          O3   0.020
+3NP    plan-2          O4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3NP SMILES           ACDLabs              10.04 "[O-][N+](=O)CCC(=O)O"
+3NP SMILES_CANONICAL CACTVS               3.341 "OC(=O)CC[N+]([O-])=O"
+3NP SMILES           CACTVS               3.341 "OC(=O)CC[N+]([O-])=O"
+3NP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C[N+](=O)[O-])C(=O)O"
+3NP SMILES           "OpenEye OEToolkits" 1.5.0 "C(C[N+](=O)[O-])C(=O)O"
+3NP InChI            InChI                1.03  "InChI=1S/C3H5NO4/c5-3(6)1-2-4(7)8/h1-2H2,(H,5,6)"
+3NP InChIKey         InChI                1.03  WBLZUCOIBUDNBV-UHFFFAOYSA-N
+3NP ?                acedrg               202         "dictionary generator"                  
+3NP ?                acedrg_database      11          "data source"                           
+3NP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3NP ?                refmac5              5.8.0189    "optimization tool"                     

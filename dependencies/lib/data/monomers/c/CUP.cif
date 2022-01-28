@@ -1,0 +1,314 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CUP      CUP '(N-SALICYLIDEN-L-PHENYLALANATO)-COPP' non-polymer        34  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CUP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CUP           O3     O    O        -0.500      0.000    0.000    0.000
+ CUP           C8     C    C         0.000     -0.803    0.513    0.811
+ CUP           C9     C    CH1       0.000     -1.038    1.993    0.913
+ CUP           H9     H    H         0.000     -0.873    2.488   -0.054
+ CUP           C10    C    CH2       0.000     -0.017    2.466    1.961
+ CUP           H101   H    H         0.000      0.959    2.118    1.615
+ CUP           H102   H    H         0.000     -0.275    1.957    2.891
+ CUP           C11    C    CR6       0.000      0.034    3.955    2.198
+ CUP           C12    C    CR16      0.000     -0.434    4.461    3.417
+ CUP           H12    H    H         0.000     -0.817    3.790    4.177
+ CUP           C13    C    CR16      0.000     -0.403    5.852    3.646
+ CUP           H13    H    H         0.000     -0.783    6.261    4.573
+ CUP           C14    C    CR16      0.000      0.124    6.698    2.665
+ CUP           H14    H    H         0.000      0.171    7.764    2.852
+ CUP           C15    C    CR16      0.000      0.590    6.195    1.446
+ CUP           H15    H    H         0.000      0.978    6.866    0.689
+ CUP           C16    C    CR16      0.000      0.550    4.811    1.215
+ CUP           H16    H    H         0.000      0.917    4.406    0.280
+ CUP           N1     N    N         0.000     -2.370    2.317    1.458
+ CUP           C1     C    C1        0.000     -2.920    3.414    1.127
+ CUP           H1     H    H         0.000     -2.318    4.068    0.519
+ CUP           C2     C    CR6       0.000     -4.274    3.921    1.461
+ CUP           C3     C    CR16      0.000     -4.624    5.122    0.830
+ CUP           H3     H    H         0.000     -3.912    5.607    0.174
+ CUP           C4     C    CR16      0.000     -5.867    5.695    1.035
+ CUP           H4     H    H         0.000     -6.122    6.624    0.540
+ CUP           C5     C    CR16      0.000     -6.784    5.083    1.873
+ CUP           H5     H    H         0.000     -7.760    5.525    2.026
+ CUP           C6     C    CR16      0.000     -6.447    3.904    2.514
+ CUP           H6     H    H         0.000     -7.158    3.439    3.186
+ CUP           C7     C    CR6       0.000     -5.195    3.302    2.303
+ CUP           O1     O    O2        0.000     -4.935    2.152    2.982
+ CUP           CU1    CU   CU        0.000     -3.180    1.074    2.666
+ CUP           O2     O    O2       -0.500     -1.446   -0.166    1.642
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CUP      O3     n/a    C8     START
+ CUP      C8     O3     C9     .
+ CUP      C9     C8     N1     .
+ CUP      H9     C9     .      .
+ CUP      C10    C9     C11    .
+ CUP      H101   C10    .      .
+ CUP      H102   C10    .      .
+ CUP      C11    C10    C12    .
+ CUP      C12    C11    C13    .
+ CUP      H12    C12    .      .
+ CUP      C13    C12    C14    .
+ CUP      H13    C13    .      .
+ CUP      C14    C13    C15    .
+ CUP      H14    C14    .      .
+ CUP      C15    C14    C16    .
+ CUP      H15    C15    .      .
+ CUP      C16    C15    H16    .
+ CUP      H16    C16    .      .
+ CUP      N1     C9     C1     .
+ CUP      C1     N1     C2     .
+ CUP      H1     C1     .      .
+ CUP      C2     C1     C3     .
+ CUP      C3     C2     C4     .
+ CUP      H3     C3     .      .
+ CUP      C4     C3     C5     .
+ CUP      H4     C4     .      .
+ CUP      C5     C4     C6     .
+ CUP      H5     C5     .      .
+ CUP      C6     C5     C7     .
+ CUP      H6     C6     .      .
+ CUP      C7     C6     O1     .
+ CUP      O1     C7     CU1    .
+ CUP      CU1    O1     O2     .
+ CUP      O2     CU1    .      END
+ CUP      C8     O2     .    ADD
+ CUP      C11    C16    .    ADD
+ CUP      N1     CU1    .    ADD
+ CUP      C2     C7     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CUP       C8        O3        deloc     1.220     0.020     1.220     0.020     
+CUP       C9        C8        single    1.500     0.020     1.500     0.020     
+CUP       C8        O2        deloc     1.454     0.020     1.454     0.020     
+CUP       O2        CU1       single    2.010     0.020     2.010     0.020     
+CUP       C10       C9        single    1.524     0.020     1.524     0.020     
+CUP       H9        C9        single    1.089     0.010     0.989     0.005     
+CUP       N1        C9        single    1.455     0.020     1.455     0.020     
+CUP       C11       C10       single    1.511     0.020     1.511     0.020     
+CUP       H101      C10       single    1.089     0.010     0.989     0.005     
+CUP       H102      C10       single    1.089     0.010     0.989     0.005     
+CUP       C12       C11       single    1.390     0.020     1.390     0.020     
+CUP       C11       C16       double    1.390     0.020     1.390     0.020     
+CUP       H16       C16       single    1.082     0.013     0.975     0.010     
+CUP       C16       C15       single    1.390     0.020     1.390     0.020     
+CUP       C15       C14       double    1.390     0.020     1.390     0.020     
+CUP       H15       C15       single    1.082     0.013     0.975     0.010     
+CUP       H14       C14       single    1.082     0.013     0.975     0.010     
+CUP       C14       C13       single    1.390     0.020     1.390     0.020     
+CUP       H13       C13       single    1.082     0.013     0.975     0.010     
+CUP       C13       C12       double    1.390     0.020     1.390     0.020     
+CUP       H12       C12       single    1.082     0.013     0.975     0.010     
+CUP       C1        N1        double    1.260     0.020     1.260     0.020     
+CUP       N1        CU1       single    1.995     0.020     1.995     0.020     
+CUP       CU1       O1        single    2.010     0.020     2.010     0.020     
+CUP       C2        C1        single    1.480     0.020     1.480     0.020     
+CUP       H1        C1        single    1.082     0.013     0.975     0.010     
+CUP       C3        C2        double    1.390     0.020     1.390     0.020     
+CUP       C2        C7        single    1.487     0.020     1.487     0.020     
+CUP       O1        C7        single    1.370     0.020     1.370     0.020     
+CUP       C7        C6        double    1.390     0.020     1.390     0.020     
+CUP       H6        C6        single    1.082     0.013     0.975     0.010     
+CUP       C6        C5        single    1.390     0.020     1.390     0.020     
+CUP       H5        C5        single    1.082     0.013     0.975     0.010     
+CUP       C5        C4        double    1.390     0.020     1.390     0.020     
+CUP       H4        C4        single    1.082     0.013     0.975     0.010     
+CUP       C4        C3        single    1.390     0.020     1.390     0.020     
+CUP       H3        C3        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CUP      O3     C8     C9      120.500    3.000
+ CUP      O3     C8     O2      119.000    3.000
+ CUP      C9     C8     O2      120.000    3.000
+ CUP      C8     C9     H9      108.810    3.000
+ CUP      C8     C9     C10     109.470    3.000
+ CUP      C8     C9     N1      111.600    3.000
+ CUP      H9     C9     C10     108.340    3.000
+ CUP      H9     C9     N1      109.470    3.000
+ CUP      C10    C9     N1      105.000    3.000
+ CUP      C9     C10    H101    109.470    3.000
+ CUP      C9     C10    H102    109.470    3.000
+ CUP      C9     C10    C11     109.470    3.000
+ CUP      H101   C10    H102    107.900    3.000
+ CUP      H101   C10    C11     109.470    3.000
+ CUP      H102   C10    C11     109.470    3.000
+ CUP      C10    C11    C12     120.000    3.000
+ CUP      C10    C11    C16     120.000    3.000
+ CUP      C12    C11    C16     120.000    3.000
+ CUP      C11    C12    H12     120.000    3.000
+ CUP      C11    C12    C13     120.000    3.000
+ CUP      H12    C12    C13     120.000    3.000
+ CUP      C12    C13    H13     120.000    3.000
+ CUP      C12    C13    C14     120.000    3.000
+ CUP      H13    C13    C14     120.000    3.000
+ CUP      C13    C14    H14     120.000    3.000
+ CUP      C13    C14    C15     120.000    3.000
+ CUP      H14    C14    C15     120.000    3.000
+ CUP      C14    C15    H15     120.000    3.000
+ CUP      C14    C15    C16     120.000    3.000
+ CUP      H15    C15    C16     120.000    3.000
+ CUP      C15    C16    H16     120.000    3.000
+ CUP      C15    C16    C11     120.000    3.000
+ CUP      H16    C16    C11     120.000    3.000
+ CUP      C9     N1     C1      120.000    3.000
+ CUP      C9     N1     CU1     120.000    3.000
+ CUP      C1     N1     CU1     120.000    3.000
+ CUP      N1     C1     H1      120.000    3.000
+ CUP      N1     C1     C2      120.000    3.000
+ CUP      H1     C1     C2      120.000    3.000
+ CUP      C1     C2     C3      120.000    3.000
+ CUP      C1     C2     C7      120.000    3.000
+ CUP      C3     C2     C7      120.000    3.000
+ CUP      C2     C3     H3      120.000    3.000
+ CUP      C2     C3     C4      120.000    3.000
+ CUP      H3     C3     C4      120.000    3.000
+ CUP      C3     C4     H4      120.000    3.000
+ CUP      C3     C4     C5      120.000    3.000
+ CUP      H4     C4     C5      120.000    3.000
+ CUP      C4     C5     H5      120.000    3.000
+ CUP      C4     C5     C6      120.000    3.000
+ CUP      H5     C5     C6      120.000    3.000
+ CUP      C5     C6     H6      120.000    3.000
+ CUP      C5     C6     C7      120.000    3.000
+ CUP      H6     C6     C7      120.000    3.000
+ CUP      C6     C7     O1      120.000    3.000
+ CUP      C6     C7     C2      120.000    3.000
+ CUP      O1     C7     C2      120.000    3.000
+ CUP      C7     O1     CU1     120.000    3.000
+ CUP      O1     CU1    O2      180.000    3.000
+ CUP      O1     CU1    N1       90.000    3.000
+ CUP      O2     CU1    N1       90.000    3.000
+ CUP      CU1    O2     C8      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CUP      var_1    O3     C8     O2     CU1      180.000   20.000   1
+ CUP      var_2    O3     C8     C9     N1       150.000   20.000   3
+ CUP      var_3    C8     C9     C10    C11      175.991   20.000   3
+ CUP      var_4    C9     C10    C11    C12      110.259   20.000   2
+ CUP      CONST_1  C10    C11    C16    C15      180.000    0.000   0
+ CUP      CONST_2  C10    C11    C12    C13      180.000    0.000   0
+ CUP      CONST_3  C11    C12    C13    C14        0.000    0.000   0
+ CUP      CONST_4  C12    C13    C14    C15        0.000    0.000   0
+ CUP      CONST_5  C13    C14    C15    C16        0.000    0.000   0
+ CUP      CONST_6  C14    C15    C16    C11        0.000    0.000   0
+ CUP      var_5    C8     C9     N1     C1      -150.000   20.000   3
+ CUP      var_6    C1     N1     CU1    O1         0.000   20.000   1
+ CUP      var_7    C9     N1     C1     C2       180.000   20.000   1
+ CUP      var_8    N1     C1     C2     C3       180.000   20.000   1
+ CUP      CONST_7  C1     C2     C7     C6       180.000    0.000   0
+ CUP      CONST_8  C1     C2     C3     C4       180.000    0.000   0
+ CUP      CONST_9  C2     C3     C4     C5         0.000    0.000   0
+ CUP      CONST_10 C3     C4     C5     C6         0.000    0.000   0
+ CUP      CONST_11 C4     C5     C6     C7         0.000    0.000   0
+ CUP      CONST_12 C5     C6     C7     O1       180.000    0.000   0
+ CUP      var_9    C6     C7     O1     CU1      180.000   20.000   1
+ CUP      var_10   C7     O1     CU1    N1         0.000   20.000   1
+ CUP      var_11   C8     O2     CU1    N1         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CUP      chir_01  C9     C8     C10    N1        positiv
+ CUP      chir_02  CU1    O1     O2     N1        cross1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CUP      plan-1    C8        0.020
+ CUP      plan-1    O3        0.020
+ CUP      plan-1    O2        0.020
+ CUP      plan-1    C9        0.020
+ CUP      plan-2    C11       0.020
+ CUP      plan-2    C10       0.020
+ CUP      plan-2    C16       0.020
+ CUP      plan-2    C12       0.020
+ CUP      plan-2    C15       0.020
+ CUP      plan-2    C14       0.020
+ CUP      plan-2    C13       0.020
+ CUP      plan-2    H16       0.020
+ CUP      plan-2    H15       0.020
+ CUP      plan-2    H14       0.020
+ CUP      plan-2    H13       0.020
+ CUP      plan-2    H12       0.020
+ CUP      plan-3    N1        0.020
+ CUP      plan-3    C9        0.020
+ CUP      plan-3    CU1       0.020
+ CUP      plan-3    C1        0.020
+ CUP      plan-3    H1        0.020
+ CUP      plan-4    C1        0.020
+ CUP      plan-4    N1        0.020
+ CUP      plan-4    C2        0.020
+ CUP      plan-4    H1        0.020
+ CUP      plan-5    C2        0.020
+ CUP      plan-5    C1        0.020
+ CUP      plan-5    C7        0.020
+ CUP      plan-5    C3        0.020
+ CUP      plan-5    C6        0.020
+ CUP      plan-5    C5        0.020
+ CUP      plan-5    C4        0.020
+ CUP      plan-5    O1        0.020
+ CUP      plan-5    H6        0.020
+ CUP      plan-5    H5        0.020
+ CUP      plan-5    H4        0.020
+ CUP      plan-5    H3        0.020
+ CUP      plan-5    H1        0.020
+# ------------------------------------------------------

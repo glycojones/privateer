@@ -1,0 +1,86 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MEE     MEE      METHANETHIOL     NON-POLYMER     6     2     .     
+#
+data_comp_MEE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MEE     C       C       CH3     0       -0.484      0.014       -0.041      
+MEE     S       S       SH1     0       1.103       -0.756      -0.370      
+MEE     H1      H       H       0       -0.367      0.971       0.018       
+MEE     H2      H       H       0       -0.834      -0.323      0.794       
+MEE     H3      H       H       0       -1.095      -0.196      -0.759      
+MEE     HS      H       HSH1    0       1.782       0.244       -0.341      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MEE       C         S         SINGLE    n         1.794     0.016     1.794     0.016     
+MEE       C         H1        SINGLE    n         1.089     0.010     0.989     0.005     
+MEE       C         H2        SINGLE    n         1.089     0.010     0.989     0.005     
+MEE       C         H3        SINGLE    n         1.089     0.010     0.989     0.005     
+MEE       S         HS        SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MEE           S           C          H1     109.066    1.50
+MEE           S           C          H2     109.066    1.50
+MEE           S           C          H3     109.066    1.50
+MEE          H1           C          H2     109.484    1.50
+MEE          H1           C          H3     109.484    1.50
+MEE          H2           C          H3     109.484    1.50
+MEE           C           S          HS      97.885    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MEE             sp3_sp3_1          H1           C           S          HS     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MEE SMILES           ACDLabs              10.04 SC
+MEE SMILES_CANONICAL CACTVS               3.341 CS
+MEE SMILES           CACTVS               3.341 CS
+MEE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CS
+MEE SMILES           "OpenEye OEToolkits" 1.5.0 CS
+MEE InChI            InChI                1.03  InChI=1S/CH4S/c1-2/h2H,1H3
+MEE InChIKey         InChI                1.03  LSDPWZHWYPCBBB-UHFFFAOYSA-N
+MEE ?                acedrg               202         "dictionary generator"                  
+MEE ?                acedrg_database      11          "data source"                           
+MEE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MEE ?                refmac5              5.8.0189    "optimization tool"                     

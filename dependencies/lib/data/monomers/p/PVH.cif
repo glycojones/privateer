@@ -1,0 +1,223 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PVH      PVH 'HISTIDINE-METHYL-ESTER              ' non-polymer        24  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PVH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PVH           O      O    O        -0.500      0.000    0.000    0.000
+ PVH           C      C    C         0.000     -0.934    0.750   -0.361
+ PVH           OE     O    O2       -0.500     -0.720    1.968   -0.553
+ PVH           CM     C    CH3       0.000      0.629    2.599   -0.371
+ PVH           HM3    H    H         0.000      1.337    2.158   -1.033
+ PVH           HM2    H    H         0.000      0.580    3.643   -0.573
+ PVH           HM1    H    H         0.000      0.970    2.463    0.629
+ PVH           CA     C    CH1       0.000     -2.317    0.187   -0.565
+ PVH           HA     H    H         0.000     -2.772    0.645   -1.455
+ PVH           N      N    NH2       0.000     -2.231   -1.267   -0.752
+ PVH           H2     H    H         0.000     -2.779   -1.891   -0.171
+ PVH           H      H    H         0.000     -1.623   -1.656   -1.463
+ PVH           CB     C    CH2       0.000     -3.178    0.494    0.662
+ PVH           HB2    H    H         0.000     -3.167    1.569    0.854
+ PVH           HB3    H    H         0.000     -2.775   -0.033    1.529
+ PVH           CG     C    CR5       0.000     -4.593    0.041    0.409
+ PVH           CD2    C    CR15      0.000     -5.071   -1.203    0.601
+ PVH           HD2    H    H         0.000     -4.516   -2.060    0.964
+ PVH           NE2    N    NR15      0.000     -6.394   -1.177    0.250
+ PVH           HE2    H    H         0.000     -7.056   -1.978    0.280
+ PVH           CE1    C    CR15      0.000     -6.679    0.083   -0.144
+ PVH           HE1    H    H         0.000     -7.644    0.434   -0.487
+ PVH           ND1    N    NR15      1.000     -5.597    0.807   -0.042
+ PVH           HD1    H    H         0.000     -5.526    1.818   -0.274
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PVH      O      n/a    C      START
+ PVH      C      O      CA     .
+ PVH      OE     C      CM     .
+ PVH      CM     OE     HM1    .
+ PVH      HM3    CM     .      .
+ PVH      HM2    CM     .      .
+ PVH      HM1    CM     .      .
+ PVH      CA     C      CB     .
+ PVH      HA     CA     .      .
+ PVH      N      CA     H      .
+ PVH      H2     N      .      .
+ PVH      H      N      .      .
+ PVH      CB     CA     CG     .
+ PVH      HB2    CB     .      .
+ PVH      HB3    CB     .      .
+ PVH      CG     CB     CD2    .
+ PVH      CD2    CG     NE2    .
+ PVH      HD2    CD2    .      .
+ PVH      NE2    CD2    CE1    .
+ PVH      HE2    NE2    .      .
+ PVH      CE1    NE2    ND1    .
+ PVH      HE1    CE1    .      .
+ PVH      ND1    CE1    HD1    .
+ PVH      HD1    ND1    .      END
+ PVH      CG     ND1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PVH       N         CA        single    1.450     0.020     1.450     0.020     
+PVH       H         N         single    1.036     0.016     0.914     0.007     
+PVH       H2        N         single    1.036     0.016     0.914     0.007     
+PVH       CA        C         single    1.500     0.020     1.500     0.020     
+PVH       CB        CA        single    1.524     0.020     1.524     0.020     
+PVH       HA        CA        single    1.089     0.010     0.989     0.005     
+PVH       C         O         deloc     1.220     0.020     1.220     0.020     
+PVH       OE        C         deloc     1.454     0.020     1.454     0.020     
+PVH       CG        CB        single    1.510     0.020     1.510     0.020     
+PVH       HB2       CB        single    1.089     0.010     0.989     0.005     
+PVH       HB3       CB        single    1.089     0.010     0.989     0.005     
+PVH       CG        ND1       single    1.340     0.020     1.340     0.020     
+PVH       CD2       CG        double    1.387     0.020     1.387     0.020     
+PVH       ND1       CE1       double    1.350     0.020     1.350     0.020     
+PVH       HD1       ND1       single    1.016     0.010     0.899     0.007     
+PVH       NE2       CD2       single    1.350     0.020     1.350     0.020     
+PVH       HD2       CD2       single    1.082     0.013     0.975     0.010     
+PVH       CE1       NE2       single    1.350     0.020     1.350     0.020     
+PVH       HE1       CE1       single    1.082     0.013     0.975     0.010     
+PVH       HE2       NE2       single    1.016     0.010     0.899     0.007     
+PVH       CM        OE        single    1.426     0.020     1.426     0.020     
+PVH       HM1       CM        single    1.089     0.010     0.989     0.005     
+PVH       HM2       CM        single    1.089     0.010     0.989     0.005     
+PVH       HM3       CM        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PVH      O      C      OE      119.000    3.000
+ PVH      O      C      CA      120.500    3.000
+ PVH      OE     C      CA      120.000    3.000
+ PVH      C      OE     CM      120.000    3.000
+ PVH      OE     CM     HM3     109.470    3.000
+ PVH      OE     CM     HM2     109.470    3.000
+ PVH      OE     CM     HM1     109.470    3.000
+ PVH      HM3    CM     HM2     109.470    3.000
+ PVH      HM3    CM     HM1     109.470    3.000
+ PVH      HM2    CM     HM1     109.470    3.000
+ PVH      C      CA     HA      108.810    3.000
+ PVH      C      CA     N       109.470    3.000
+ PVH      C      CA     CB      109.470    3.000
+ PVH      HA     CA     N       109.470    3.000
+ PVH      HA     CA     CB      108.340    3.000
+ PVH      N      CA     CB      109.470    3.000
+ PVH      CA     N      H2      120.000    3.000
+ PVH      CA     N      H       120.000    3.000
+ PVH      H2     N      H       120.000    3.000
+ PVH      CA     CB     HB2     109.470    3.000
+ PVH      CA     CB     HB3     109.470    3.000
+ PVH      CA     CB     CG      109.470    3.000
+ PVH      HB2    CB     HB3     107.900    3.000
+ PVH      HB2    CB     CG      109.470    3.000
+ PVH      HB3    CB     CG      109.470    3.000
+ PVH      CB     CG     CD2     126.000    3.000
+ PVH      CB     CG     ND1     126.000    3.000
+ PVH      CD2    CG     ND1     108.000    3.000
+ PVH      CG     CD2    HD2     126.000    3.000
+ PVH      CG     CD2    NE2     108.000    3.000
+ PVH      HD2    CD2    NE2     126.000    3.000
+ PVH      CD2    NE2    HE2     126.000    3.000
+ PVH      CD2    NE2    CE1     108.000    3.000
+ PVH      HE2    NE2    CE1     126.000    3.000
+ PVH      NE2    CE1    HE1     126.000    3.000
+ PVH      NE2    CE1    ND1     108.000    3.000
+ PVH      HE1    CE1    ND1     126.000    3.000
+ PVH      CE1    ND1    HD1     126.000    3.000
+ PVH      CE1    ND1    CG      108.000    3.000
+ PVH      HD1    ND1    CG      126.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PVH      var_1    O      C      OE     CM         0.088   20.000   1
+ PVH      var_2    C      OE     CM     HM1      -59.214   20.000   1
+ PVH      var_3    O      C      CA     CB        99.999   20.000   3
+ PVH      var_4    C      CA     N      H        -53.823   20.000   1
+ PVH      var_5    C      CA     CB     CG       174.989   20.000   3
+ PVH      var_6    CA     CB     CG     CD2       85.008   20.000   2
+ PVH      CONST_1  CB     CG     ND1    CE1      180.000    0.000   0
+ PVH      CONST_2  CB     CG     CD2    NE2      180.000    0.000   0
+ PVH      CONST_3  CG     CD2    NE2    CE1        0.000    0.000   0
+ PVH      CONST_4  CD2    NE2    CE1    ND1        0.000    0.000   0
+ PVH      CONST_5  NE2    CE1    ND1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PVH      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PVH      plan-1    N         0.020
+ PVH      plan-1    CA        0.020
+ PVH      plan-1    H         0.020
+ PVH      plan-1    H2        0.020
+ PVH      plan-2    C         0.020
+ PVH      plan-2    CA        0.020
+ PVH      plan-2    O         0.020
+ PVH      plan-2    OE        0.020
+ PVH      plan-3    CG        0.020
+ PVH      plan-3    CB        0.020
+ PVH      plan-3    ND1       0.020
+ PVH      plan-3    CD2       0.020
+ PVH      plan-3    CE1       0.020
+ PVH      plan-3    NE2       0.020
+ PVH      plan-3    HD1       0.020
+ PVH      plan-3    HD2       0.020
+ PVH      plan-3    HE1       0.020
+ PVH      plan-3    HE2       0.020
+# ------------------------------------------------------

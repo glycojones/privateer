@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RRO     RRO      "5-bromo-2,6-dioxo-1,2,3,6-tetrahydropyrimidine-4-carboxylic acid"     NON-POLYMER     14     12     .     
+#
+data_comp_RRO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+RRO     OAA     O       OC      -1      4.557       52.353      74.870      
+RRO     CAH     C       C       0       5.686       52.096      75.251      
+RRO     OAD     O       O       0       6.492       52.890      75.703      
+RRO     CAI     C       CR6     0       6.125       50.663      75.152      
+RRO     CAJ     C       CR6     0       7.088       50.225      74.220      
+RRO     BR      BR      BR      0       7.905       51.439      73.010      
+RRO     CAL     C       CR6     0       7.445       48.879      74.189      
+RRO     OAC     O       O       0       8.285       48.410      73.399      
+RRO     NAG     N       NR6     0       6.823       48.028      75.091      
+RRO     CAK     C       CR6     0       5.878       48.407      76.019      
+RRO     OAB     O       O       0       5.368       47.601      76.788      
+RRO     NAF     N       NR6     0       5.548       49.749      76.023      
+RRO     H3      H       H       0       7.047       47.165      75.077      
+RRO     H2      H       H       0       4.946       50.020      76.606      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RRO       CAJ       BR        SINGLE    n         1.897     0.011     1.897     0.011     
+RRO       CAL       OAC       DOUBLE    n         1.242     0.018     1.242     0.018     
+RRO       CAJ       CAL       SINGLE    y         1.380     0.016     1.380     0.016     
+RRO       CAL       NAG       SINGLE    y         1.381     0.010     1.381     0.010     
+RRO       CAI       CAJ       DOUBLE    y         1.391     0.017     1.391     0.017     
+RRO       NAG       CAK       SINGLE    y         1.370     0.010     1.370     0.010     
+RRO       CAH       OAD       DOUBLE    n         1.219     0.020     1.219     0.020     
+RRO       CAH       CAI       SINGLE    n         1.496     0.020     1.496     0.020     
+RRO       CAI       NAF       SINGLE    y         1.365     0.017     1.365     0.017     
+RRO       OAA       CAH       SINGLE    n         1.219     0.020     1.219     0.020     
+RRO       CAK       NAF       SINGLE    y         1.374     0.010     1.374     0.010     
+RRO       CAK       OAB       DOUBLE    n         1.225     0.010     1.225     0.010     
+RRO       NAG       H3        SINGLE    n         1.016     0.010     0.889     0.020     
+RRO       NAF       H2        SINGLE    n         1.016     0.010     0.879     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+RRO         OAD         CAH         CAI     116.880    1.50
+RRO         OAD         CAH         OAA     126.239    1.50
+RRO         CAI         CAH         OAA     116.880    1.50
+RRO         CAJ         CAI         CAH     122.368    1.55
+RRO         CAJ         CAI         NAF     119.898    1.64
+RRO         CAH         CAI         NAF     117.734    1.50
+RRO          BR         CAJ         CAL     119.421    1.50
+RRO          BR         CAJ         CAI     120.410    1.61
+RRO         CAL         CAJ         CAI     120.170    1.50
+RRO         OAC         CAL         CAJ     122.807    3.00
+RRO         OAC         CAL         NAG     118.872    1.50
+RRO         CAJ         CAL         NAG     118.321    2.98
+RRO         CAL         NAG         CAK     124.999    1.50
+RRO         CAL         NAG          H3     118.121    1.78
+RRO         CAK         NAG          H3     116.881    2.30
+RRO         NAG         CAK         NAF     114.963    1.50
+RRO         NAG         CAK         OAB     122.107    1.50
+RRO         NAF         CAK         OAB     122.929    1.50
+RRO         CAI         NAF         CAK     121.649    1.50
+RRO         CAI         NAF          H2     120.027    2.44
+RRO         CAK         NAF          H2     118.323    1.73
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+RRO             sp2_sp2_1         OAD         CAH         CAI         CAJ     180.000   10.00     2
+RRO              const_23         CAH         CAI         NAF         CAK     180.000   10.00     2
+RRO       const_sp2_sp2_4         CAH         CAI         CAJ          BR       0.000   10.00     2
+RRO       const_sp2_sp2_8          BR         CAJ         CAL         OAC       0.000   10.00     2
+RRO              const_11         OAC         CAL         NAG         CAK     180.000   10.00     2
+RRO              const_15         OAB         CAK         NAG         CAL     180.000   10.00     2
+RRO              const_19         OAB         CAK         NAF         CAI     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+RRO    plan-1          BR   0.020
+RRO    plan-1         CAH   0.020
+RRO    plan-1         CAI   0.020
+RRO    plan-1         CAJ   0.020
+RRO    plan-1         CAK   0.020
+RRO    plan-1         CAL   0.020
+RRO    plan-1          H2   0.020
+RRO    plan-1          H3   0.020
+RRO    plan-1         NAF   0.020
+RRO    plan-1         NAG   0.020
+RRO    plan-1         OAB   0.020
+RRO    plan-1         OAC   0.020
+RRO    plan-2         CAH   0.020
+RRO    plan-2         CAI   0.020
+RRO    plan-2         OAA   0.020
+RRO    plan-2         OAD   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+RRO SMILES           ACDLabs              12.01 "O=C1NC(C(=O)O)=C(Br)C(=O)N1"
+RRO InChI            InChI                1.03  "InChI=1S/C5H3BrN2O4/c6-1-2(4(10)11)7-5(12)8-3(1)9/h(H,10,11)(H2,7,8,9,12)"
+RRO InChIKey         InChI                1.03  YQYHIPBLZSIHDI-UHFFFAOYSA-N
+RRO SMILES_CANONICAL CACTVS               3.370 "OC(=O)C1=C(Br)C(=O)NC(=O)N1"
+RRO SMILES           CACTVS               3.370 "OC(=O)C1=C(Br)C(=O)NC(=O)N1"
+RRO SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C1(=C(NC(=O)NC1=O)C(=O)O)Br"
+RRO SMILES           "OpenEye OEToolkits" 1.7.6 "C1(=C(NC(=O)NC1=O)C(=O)O)Br"
+RRO ?                acedrg               202         "dictionary generator"                  
+RRO ?                acedrg_database      11          "data source"                           
+RRO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+RRO ?                refmac5              5.8.0189    "optimization tool"                     

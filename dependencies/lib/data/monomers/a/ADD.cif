@@ -1,0 +1,399 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ADD      ADD '2,6,8-TRIMETHYL-3-AMINO-9-BENZYL-9-M' non-polymer        56  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ADD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ADD           O2     O    OC       -0.500      0.000    0.000    0.000
+ ADD           C1     C    C         0.000     -1.109    0.205   -0.541
+ ADD           O1     O    OC       -0.500     -1.164    0.737   -1.672
+ ADD           C2     C    CH1       0.000     -2.378   -0.186    0.169
+ ADD           H2     H    H         0.000     -2.372   -1.269    0.359
+ ADD           CM2    C    CH3       0.000     -2.471    0.563    1.500
+ ADD           HM23   H    H         0.000     -3.363    0.287    2.000
+ ADD           HM22   H    H         0.000     -1.637    0.315    2.104
+ ADD           HM21   H    H         0.000     -2.477    1.607    1.319
+ ADD           C3     C    CH1       0.000     -3.583    0.171   -0.702
+ ADD           H3     H    H         0.000     -3.590    1.254   -0.892
+ ADD           N3     N    NH2       0.000     -3.495   -0.549   -1.980
+ ADD           HN32   H    H         0.000     -3.451   -0.037   -2.853
+ ADD           HN31   H    H         0.000     -3.477   -1.562   -1.996
+ ADD           C4     C    CH2       0.000     -4.872   -0.227    0.018
+ ADD           H41    H    H         0.000     -4.937    0.308    0.968
+ ADD           H42    H    H         0.000     -4.865   -1.303    0.208
+ ADD           C5     C    CH2       0.000     -6.077    0.130   -0.853
+ ADD           H51    H    H         0.000     -6.010   -0.405   -1.803
+ ADD           H52    H    H         0.000     -6.082    1.206   -1.043
+ ADD           C6     C    CH1       0.000     -7.365   -0.267   -0.132
+ ADD           H6     H    H         0.000     -7.359   -1.350    0.057
+ ADD           CM6    C    CH3       0.000     -7.459    0.482    1.198
+ ADD           HM63   H    H         0.000     -8.351    0.206    1.698
+ ADD           HM62   H    H         0.000     -6.625    0.234    1.803
+ ADD           HM61   H    H         0.000     -7.465    1.526    1.017
+ ADD           C7     C    CH2       0.000     -8.569    0.090   -1.005
+ ADD           H71    H    H         0.000     -8.502   -0.446   -1.954
+ ADD           H72    H    H         0.000     -8.574    1.165   -1.195
+ ADD           C8     C    CH1       0.000     -9.858   -0.307   -0.283
+ ADD           H8     H    H         0.000     -9.925    0.232    0.672
+ ADD           CM8    C    CH3       0.000     -9.850   -1.814   -0.019
+ ADD           HM83   H    H         0.000     -9.017   -2.064    0.586
+ ADD           HM82   H    H         0.000    -10.743   -2.092    0.480
+ ADD           HM81   H    H         0.000     -9.786   -2.335   -0.940
+ ADD           C9     C    CH1       0.000    -11.063    0.050   -1.156
+ ADD           H9     H    H         0.000    -11.069    1.132   -1.346
+ ADD           O9     O    O2        0.000    -10.977   -0.650   -2.397
+ ADD           CM9    C    CH3       0.000    -11.616    0.168   -3.378
+ ADD           HM93   H    H         0.000    -12.628    0.323   -3.105
+ ADD           HM92   H    H         0.000    -11.120    1.102   -3.438
+ ADD           HM91   H    H         0.000    -11.576   -0.313   -4.321
+ ADD           "C'"   C    CH2       0.000    -12.352   -0.348   -0.434
+ ADD           "H'1"  H    H         0.000    -12.417    0.188    0.516
+ ADD           "H'2"  H    H         0.000    -12.345   -1.423   -0.244
+ ADD           "C1'"  C    CR6       0.000    -13.539    0.005   -1.293
+ ADD           "C6'"  C    CR16      0.000    -14.135    1.246   -1.173
+ ADD           "H6'"  H    H         0.000    -13.751    1.964   -0.458
+ ADD           "C5'"  C    CR16      0.000    -15.220    1.571   -1.963
+ ADD           "H5'"  H    H         0.000    -15.682    2.547   -1.874
+ ADD           "C4'"  C    CR16      0.000    -15.715    0.652   -2.868
+ ADD           "H4'"  H    H         0.000    -16.569    0.905   -3.485
+ ADD           "C3'"  C    CR16      0.000    -15.123   -0.591   -2.986
+ ADD           "H3'"  H    H         0.000    -15.511   -1.311   -3.695
+ ADD           "C2'"  C    CR16      0.000    -14.034   -0.914   -2.198
+ ADD           "H2'"  H    H         0.000    -13.570   -1.888   -2.289
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ADD      O2     n/a    C1     START
+ ADD      C1     O2     C2     .
+ ADD      O1     C1     .      .
+ ADD      C2     C1     C3     .
+ ADD      H2     C2     .      .
+ ADD      CM2    C2     HM21   .
+ ADD      HM23   CM2    .      .
+ ADD      HM22   CM2    .      .
+ ADD      HM21   CM2    .      .
+ ADD      C3     C2     C4     .
+ ADD      H3     C3     .      .
+ ADD      N3     C3     HN31   .
+ ADD      HN32   N3     .      .
+ ADD      HN31   N3     .      .
+ ADD      C4     C3     C5     .
+ ADD      H41    C4     .      .
+ ADD      H42    C4     .      .
+ ADD      C5     C4     C6     .
+ ADD      H51    C5     .      .
+ ADD      H52    C5     .      .
+ ADD      C6     C5     C7     .
+ ADD      H6     C6     .      .
+ ADD      CM6    C6     HM61   .
+ ADD      HM63   CM6    .      .
+ ADD      HM62   CM6    .      .
+ ADD      HM61   CM6    .      .
+ ADD      C7     C6     C8     .
+ ADD      H71    C7     .      .
+ ADD      H72    C7     .      .
+ ADD      C8     C7     C9     .
+ ADD      H8     C8     .      .
+ ADD      CM8    C8     HM81   .
+ ADD      HM83   CM8    .      .
+ ADD      HM82   CM8    .      .
+ ADD      HM81   CM8    .      .
+ ADD      C9     C8     "C'"   .
+ ADD      H9     C9     .      .
+ ADD      O9     C9     CM9    .
+ ADD      CM9    O9     HM91   .
+ ADD      HM93   CM9    .      .
+ ADD      HM92   CM9    .      .
+ ADD      HM91   CM9    .      .
+ ADD      "C'"   C9     "C1'"  .
+ ADD      "H'1"  "C'"   .      .
+ ADD      "H'2"  "C'"   .      .
+ ADD      "C1'"  "C'"   "C6'"  .
+ ADD      "C6'"  "C1'"  "C5'"  .
+ ADD      "H6'"  "C6'"  .      .
+ ADD      "C5'"  "C6'"  "C4'"  .
+ ADD      "H5'"  "C5'"  .      .
+ ADD      "C4'"  "C5'"  "C3'"  .
+ ADD      "H4'"  "C4'"  .      .
+ ADD      "C3'"  "C4'"  "C2'"  .
+ ADD      "H3'"  "C3'"  .      .
+ ADD      "C2'"  "C3'"  "H2'"  .
+ ADD      "H2'"  "C2'"  .      END
+ ADD      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ADD       O1        C1        deloc     1.250     0.020     1.250     0.020     
+ADD       C1        O2        deloc     1.250     0.020     1.250     0.020     
+ADD       C2        C1        single    1.500     0.020     1.500     0.020     
+ADD       CM2       C2        single    1.524     0.020     1.524     0.020     
+ADD       C3        C2        single    1.524     0.020     1.524     0.020     
+ADD       H2        C2        single    1.089     0.010     0.989     0.005     
+ADD       HM21      CM2       single    1.089     0.010     0.989     0.005     
+ADD       HM22      CM2       single    1.089     0.010     0.989     0.005     
+ADD       HM23      CM2       single    1.089     0.010     0.989     0.005     
+ADD       N3        C3        single    1.450     0.020     1.450     0.020     
+ADD       C4        C3        single    1.524     0.020     1.524     0.020     
+ADD       H3        C3        single    1.089     0.010     0.989     0.005     
+ADD       HN31      N3        single    1.036     0.016     0.914     0.007     
+ADD       HN32      N3        single    1.036     0.016     0.914     0.007     
+ADD       C5        C4        single    1.524     0.020     1.524     0.020     
+ADD       H41       C4        single    1.089     0.010     0.989     0.005     
+ADD       H42       C4        single    1.089     0.010     0.989     0.005     
+ADD       C6        C5        single    1.524     0.020     1.524     0.020     
+ADD       H51       C5        single    1.089     0.010     0.989     0.005     
+ADD       H52       C5        single    1.089     0.010     0.989     0.005     
+ADD       CM6       C6        single    1.524     0.020     1.524     0.020     
+ADD       C7        C6        single    1.524     0.020     1.524     0.020     
+ADD       H6        C6        single    1.089     0.010     0.989     0.005     
+ADD       HM61      CM6       single    1.089     0.010     0.989     0.005     
+ADD       HM62      CM6       single    1.089     0.010     0.989     0.005     
+ADD       HM63      CM6       single    1.089     0.010     0.989     0.005     
+ADD       C8        C7        single    1.524     0.020     1.524     0.020     
+ADD       H71       C7        single    1.089     0.010     0.989     0.005     
+ADD       H72       C7        single    1.089     0.010     0.989     0.005     
+ADD       CM8       C8        single    1.524     0.020     1.524     0.020     
+ADD       C9        C8        single    1.524     0.020     1.524     0.020     
+ADD       H8        C8        single    1.089     0.010     0.989     0.005     
+ADD       HM81      CM8       single    1.089     0.010     0.989     0.005     
+ADD       HM82      CM8       single    1.089     0.010     0.989     0.005     
+ADD       HM83      CM8       single    1.089     0.010     0.989     0.005     
+ADD       O9        C9        single    1.426     0.020     1.426     0.020     
+ADD       "C'"      C9        single    1.524     0.020     1.524     0.020     
+ADD       H9        C9        single    1.089     0.010     0.989     0.005     
+ADD       CM9       O9        single    1.426     0.020     1.426     0.020     
+ADD       HM91      CM9       single    1.089     0.010     0.989     0.005     
+ADD       HM92      CM9       single    1.089     0.010     0.989     0.005     
+ADD       HM93      CM9       single    1.089     0.010     0.989     0.005     
+ADD       "C1'"     "C'"      single    1.511     0.020     1.511     0.020     
+ADD       "H'1"     "C'"      single    1.089     0.010     0.989     0.005     
+ADD       "H'2"     "C'"      single    1.089     0.010     0.989     0.005     
+ADD       "C1'"     "C2'"     double    1.390     0.020     1.390     0.020     
+ADD       "C6'"     "C1'"     single    1.390     0.020     1.390     0.020     
+ADD       "C2'"     "C3'"     single    1.390     0.020     1.390     0.020     
+ADD       "H2'"     "C2'"     single    1.082     0.013     0.975     0.010     
+ADD       "C3'"     "C4'"     double    1.390     0.020     1.390     0.020     
+ADD       "H3'"     "C3'"     single    1.082     0.013     0.975     0.010     
+ADD       "C4'"     "C5'"     single    1.390     0.020     1.390     0.020     
+ADD       "H4'"     "C4'"     single    1.082     0.013     0.975     0.010     
+ADD       "C5'"     "C6'"     double    1.390     0.020     1.390     0.020     
+ADD       "H5'"     "C5'"     single    1.082     0.013     0.975     0.010     
+ADD       "H6'"     "C6'"     single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ADD      O2     C1     O1      123.000    3.000
+ ADD      O2     C1     C2      118.500    3.000
+ ADD      O1     C1     C2      118.500    3.000
+ ADD      C1     C2     H2      108.810    3.000
+ ADD      C1     C2     CM2     109.470    3.000
+ ADD      C1     C2     C3      109.470    3.000
+ ADD      H2     C2     CM2     108.340    3.000
+ ADD      H2     C2     C3      108.340    3.000
+ ADD      CM2    C2     C3      111.000    3.000
+ ADD      C2     CM2    HM23    109.470    3.000
+ ADD      C2     CM2    HM22    109.470    3.000
+ ADD      C2     CM2    HM21    109.470    3.000
+ ADD      HM23   CM2    HM22    109.470    3.000
+ ADD      HM23   CM2    HM21    109.470    3.000
+ ADD      HM22   CM2    HM21    109.470    3.000
+ ADD      C2     C3     H3      108.340    3.000
+ ADD      C2     C3     N3      109.470    3.000
+ ADD      C2     C3     C4      111.000    3.000
+ ADD      H3     C3     N3      109.470    3.000
+ ADD      H3     C3     C4      108.340    3.000
+ ADD      N3     C3     C4      109.470    3.000
+ ADD      C3     N3     HN32    120.000    3.000
+ ADD      C3     N3     HN31    120.000    3.000
+ ADD      HN32   N3     HN31    120.000    3.000
+ ADD      C3     C4     H41     109.470    3.000
+ ADD      C3     C4     H42     109.470    3.000
+ ADD      C3     C4     C5      111.000    3.000
+ ADD      H41    C4     H42     107.900    3.000
+ ADD      H41    C4     C5      109.470    3.000
+ ADD      H42    C4     C5      109.470    3.000
+ ADD      C4     C5     H51     109.470    3.000
+ ADD      C4     C5     H52     109.470    3.000
+ ADD      C4     C5     C6      111.000    3.000
+ ADD      H51    C5     H52     107.900    3.000
+ ADD      H51    C5     C6      109.470    3.000
+ ADD      H52    C5     C6      109.470    3.000
+ ADD      C5     C6     H6      108.340    3.000
+ ADD      C5     C6     CM6     111.000    3.000
+ ADD      C5     C6     C7      109.470    3.000
+ ADD      H6     C6     CM6     108.340    3.000
+ ADD      H6     C6     C7      108.340    3.000
+ ADD      CM6    C6     C7      111.000    3.000
+ ADD      C6     CM6    HM63    109.470    3.000
+ ADD      C6     CM6    HM62    109.470    3.000
+ ADD      C6     CM6    HM61    109.470    3.000
+ ADD      HM63   CM6    HM62    109.470    3.000
+ ADD      HM63   CM6    HM61    109.470    3.000
+ ADD      HM62   CM6    HM61    109.470    3.000
+ ADD      C6     C7     H71     109.470    3.000
+ ADD      C6     C7     H72     109.470    3.000
+ ADD      C6     C7     C8      111.000    3.000
+ ADD      H71    C7     H72     107.900    3.000
+ ADD      H71    C7     C8      109.470    3.000
+ ADD      H72    C7     C8      109.470    3.000
+ ADD      C7     C8     H8      108.340    3.000
+ ADD      C7     C8     CM8     111.000    3.000
+ ADD      C7     C8     C9      111.000    3.000
+ ADD      H8     C8     CM8     108.340    3.000
+ ADD      H8     C8     C9      108.340    3.000
+ ADD      CM8    C8     C9      111.000    3.000
+ ADD      C8     CM8    HM83    109.470    3.000
+ ADD      C8     CM8    HM82    109.470    3.000
+ ADD      C8     CM8    HM81    109.470    3.000
+ ADD      HM83   CM8    HM82    109.470    3.000
+ ADD      HM83   CM8    HM81    109.470    3.000
+ ADD      HM82   CM8    HM81    109.470    3.000
+ ADD      C8     C9     H9      108.340    3.000
+ ADD      C8     C9     O9      109.470    3.000
+ ADD      C8     C9     "C'"    111.000    3.000
+ ADD      H9     C9     O9      109.470    3.000
+ ADD      H9     C9     "C'"    108.340    3.000
+ ADD      O9     C9     "C'"    109.470    3.000
+ ADD      C9     O9     CM9     111.800    3.000
+ ADD      O9     CM9    HM93    109.470    3.000
+ ADD      O9     CM9    HM92    109.470    3.000
+ ADD      O9     CM9    HM91    109.470    3.000
+ ADD      HM93   CM9    HM92    109.470    3.000
+ ADD      HM93   CM9    HM91    109.470    3.000
+ ADD      HM92   CM9    HM91    109.470    3.000
+ ADD      C9     "C'"   "H'1"   109.470    3.000
+ ADD      C9     "C'"   "H'2"   109.470    3.000
+ ADD      C9     "C'"   "C1'"   109.470    3.000
+ ADD      "H'1"  "C'"   "H'2"   107.900    3.000
+ ADD      "H'1"  "C'"   "C1'"   109.470    3.000
+ ADD      "H'2"  "C'"   "C1'"   109.470    3.000
+ ADD      "C'"   "C1'"  "C6'"   120.000    3.000
+ ADD      "C'"   "C1'"  "C2'"   120.000    3.000
+ ADD      "C6'"  "C1'"  "C2'"   120.000    3.000
+ ADD      "C1'"  "C6'"  "H6'"   120.000    3.000
+ ADD      "C1'"  "C6'"  "C5'"   120.000    3.000
+ ADD      "H6'"  "C6'"  "C5'"   120.000    3.000
+ ADD      "C6'"  "C5'"  "H5'"   120.000    3.000
+ ADD      "C6'"  "C5'"  "C4'"   120.000    3.000
+ ADD      "H5'"  "C5'"  "C4'"   120.000    3.000
+ ADD      "C5'"  "C4'"  "H4'"   120.000    3.000
+ ADD      "C5'"  "C4'"  "C3'"   120.000    3.000
+ ADD      "H4'"  "C4'"  "C3'"   120.000    3.000
+ ADD      "C4'"  "C3'"  "H3'"   120.000    3.000
+ ADD      "C4'"  "C3'"  "C2'"   120.000    3.000
+ ADD      "H3'"  "C3'"  "C2'"   120.000    3.000
+ ADD      "C3'"  "C2'"  "H2'"   120.000    3.000
+ ADD      "C3'"  "C2'"  "C1'"   120.000    3.000
+ ADD      "H2'"  "C2'"  "C1'"   120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ADD      var_1    O2     C1     C2     C3       179.983   20.000   3
+ ADD      var_2    C1     C2     CM2    HM21      60.050   20.000   3
+ ADD      var_3    C1     C2     C3     C4       179.955   20.000   3
+ ADD      var_4    C2     C3     N3     HN31      60.009   20.000   1
+ ADD      var_5    C2     C3     C4     C5       180.000   20.000   3
+ ADD      var_6    C3     C4     C5     C6      -179.963   20.000   3
+ ADD      var_7    C4     C5     C6     C7      -179.984   20.000   3
+ ADD      var_8    C5     C6     CM6    HM61      60.022   20.000   3
+ ADD      var_9    C5     C6     C7     C8      -179.984   20.000   3
+ ADD      var_10   C6     C7     C8     C9      -179.999   20.000   3
+ ADD      var_11   C7     C8     CM8    HM81     -59.954   20.000   3
+ ADD      var_12   C7     C8     C9     "C'"     180.000   20.000   3
+ ADD      var_13   C8     C9     O9     CM9     -149.994   20.000   1
+ ADD      var_14   C9     O9     CM9    HM91     179.966   20.000   1
+ ADD      var_15   C8     C9     "C'"   "C1'"    179.976   20.000   3
+ ADD      var_16   C9     "C'"   "C1'"  "C6'"    -90.277   20.000   2
+ ADD      CONST_1  "C'"   "C1'"  "C2'"  "C3'"    180.000    0.000   0
+ ADD      CONST_2  "C'"   "C1'"  "C6'"  "C5'"    180.000    0.000   0
+ ADD      CONST_3  "C1'"  "C6'"  "C5'"  "C4'"      0.000    0.000   0
+ ADD      CONST_4  "C6'"  "C5'"  "C4'"  "C3'"      0.000    0.000   0
+ ADD      CONST_5  "C5'"  "C4'"  "C3'"  "C2'"      0.000    0.000   0
+ ADD      CONST_6  "C4'"  "C3'"  "C2'"  "C1'"      0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ADD      chir_01  C2     C1     CM2    C3        negativ
+ ADD      chir_02  C3     C2     N3     C4        negativ
+ ADD      chir_03  C6     C5     CM6    C7        negativ
+ ADD      chir_04  C8     C7     CM8    C9        positiv
+ ADD      chir_05  C9     C8     O9     "C'"      negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ADD      plan-1    C1        0.020
+ ADD      plan-1    O1        0.020
+ ADD      plan-1    O2        0.020
+ ADD      plan-1    C2        0.020
+ ADD      plan-2    N3        0.020
+ ADD      plan-2    C3        0.020
+ ADD      plan-2    HN31      0.020
+ ADD      plan-2    HN32      0.020
+ ADD      plan-3    "C1'"     0.020
+ ADD      plan-3    "C'"      0.020
+ ADD      plan-3    "C2'"     0.020
+ ADD      plan-3    "C6'"     0.020
+ ADD      plan-3    "C3'"     0.020
+ ADD      plan-3    "C4'"     0.020
+ ADD      plan-3    "C5'"     0.020
+ ADD      plan-3    "H2'"     0.020
+ ADD      plan-3    "H3'"     0.020
+ ADD      plan-3    "H4'"     0.020
+ ADD      plan-3    "H5'"     0.020
+ ADD      plan-3    "H6'"     0.020
+# ------------------------------------------------------

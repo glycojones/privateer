@@ -1,0 +1,852 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LRB      LRB '.                                   ' non-polymer       116  59 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LRB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LRB           O47    O    O         0.000      0.000    0.000    0.000
+ LRB           C48    C    C         0.000     -0.296   -0.771    0.889
+ LRB           N49    N    NH1       0.000      0.671   -1.369    1.612
+ LRB           H49    H    H         0.000      0.425   -2.011    2.352
+ LRB           C53    C    CH1       0.000      2.080   -1.090    1.323
+ LRB           H53    H    H         0.000      2.190   -0.040    1.016
+ LRB           C54    C    CH1       0.000      2.561   -2.004    0.195
+ LRB           H54    H    H         0.000      1.959   -1.821   -0.707
+ LRB           C55    C    CH2       0.000      4.033   -1.711   -0.107
+ LRB           H552   H    H         0.000      4.141   -0.669   -0.413
+ LRB           H551   H    H         0.000      4.375   -2.363   -0.913
+ LRB           C56    C    CH1       0.000      4.870   -1.966    1.148
+ LRB           H56    H    H         0.000      5.927   -1.756    0.932
+ LRB           C57    C    CH2       0.000      4.718   -3.427    1.574
+ LRB           H571   H    H         0.000      5.317   -3.610    2.468
+ LRB           H572   H    H         0.000      5.062   -4.079    0.768
+ LRB           C59    C    CH2       0.000      4.389   -1.053    2.277
+ LRB           H592   H    H         0.000      4.500   -0.010    1.972
+ LRB           H591   H    H         0.000      4.989   -1.235    3.171
+ LRB           C52    C    CH1       0.000      2.918   -1.345    2.578
+ LRB           H52    H    H         0.000      2.573   -0.688    3.389
+ LRB           C51    C    CH2       0.000      2.765   -2.807    3.004
+ LRB           H511   H    H         0.000      1.715   -3.014    3.219
+ LRB           H512   H    H         0.000      3.362   -2.988    3.900
+ LRB           C58    C    CH2       0.000      2.409   -3.465    0.620
+ LRB           H582   H    H         0.000      2.753   -4.116   -0.186
+ LRB           H581   H    H         0.000      1.359   -3.674    0.833
+ LRB           C50    C    CH1       0.000      3.246   -3.720    1.876
+ LRB           H50    H    H         0.000      3.136   -4.770    2.182
+ LRB           C46    C    CH2       0.000     -1.745   -1.059    1.186
+ LRB           H462   H    H         0.000     -1.969   -0.775    2.216
+ LRB           H461   H    H         0.000     -1.938   -2.126    1.054
+ LRB           C45    C    CH2       0.000     -2.630   -0.257    0.229
+ LRB           H452   H    H         0.000     -2.404   -0.542   -0.800
+ LRB           H451   H    H         0.000     -2.435    0.809    0.362
+ LRB           C44    C    CH2       0.000     -4.102   -0.550    0.530
+ LRB           H442   H    H         0.000     -4.326   -0.265    1.560
+ LRB           H441   H    H         0.000     -4.295   -1.616    0.398
+ LRB           C43    C    CH2       0.000     -4.987    0.252   -0.426
+ LRB           H432   H    H         0.000     -4.761   -0.032   -1.456
+ LRB           H431   H    H         0.000     -4.792    1.319   -0.294
+ LRB           C42    C    CH2       0.000     -6.459   -0.040   -0.126
+ LRB           H422   H    H         0.000     -6.683    0.244    0.905
+ LRB           H421   H    H         0.000     -6.651   -1.107   -0.258
+ LRB           C41    C    CH2       0.000     -7.344    0.762   -1.082
+ LRB           H412   H    H         0.000     -7.117    0.477   -2.112
+ LRB           H411   H    H         0.000     -7.149    1.828   -0.949
+ LRB           C40    C    CH2       0.000     -8.815    0.469   -0.781
+ LRB           H402   H    H         0.000     -9.039    0.754    0.249
+ LRB           H401   H    H         0.000     -9.008   -0.598   -0.913
+ LRB           C39    C    CH2       0.000     -9.700    1.271   -1.738
+ LRB           H392   H    H         0.000     -9.474    0.986   -2.767
+ LRB           H391   H    H         0.000     -9.505    2.338   -1.605
+ LRB           C22    C    CR6       0.000    -11.149    0.983   -1.441
+ LRB           C21    C    CR16      0.000    -11.848    1.800   -0.624
+ LRB           H21    H    H         0.000    -11.362    2.662   -0.183
+ LRB           C23    C    CR16      0.000    -11.802   -0.180   -2.036
+ LRB           H23    H    H         0.000    -11.251   -0.837   -2.697
+ LRB           C24    C    CR16      0.000    -13.087   -0.426   -1.758
+ LRB           H24    H    H         0.000    -13.572   -1.289   -2.198
+ LRB           N25    N    NR6       0.000    -13.810    0.411   -0.909
+ LRB           C20    C    CR6       0.000    -13.227    1.537   -0.333
+ LRB           C19    C    CR6       0.000    -13.999    2.339    0.485
+ LRB           C18    C    CR16      0.000    -13.499    3.524    1.120
+ LRB           H18    H    H         0.000    -12.470    3.822    0.966
+ LRB           C17    C    CR6       0.000    -14.301    4.271    1.908
+ LRB           C38    C    CH3       0.000    -13.763    5.513    2.570
+ LRB           H381   H    H         0.000    -13.910    6.345    1.932
+ LRB           H382   H    H         0.000    -14.273    5.674    3.484
+ LRB           H383   H    H         0.000    -12.728    5.392    2.760
+ LRB           C16    C    CR16      0.000    -15.690    3.872    2.115
+ LRB           H16    H    H         0.000    -16.341    4.466    2.744
+ LRB           C15    C    CR16      0.000    -16.152    2.765    1.522
+ LRB           H15    H    H         0.000    -17.183    2.470    1.676
+ LRB           N14    N    NR6       0.000    -15.329    1.987    0.709
+ LRB           RU     RU   RU        2.000    -15.747    0.271   -0.300
+ LRB           N37    N    NR6       0.000    -15.956   -1.526   -1.233
+ LRB           C36    C    CR16      0.000    -16.336   -1.806   -2.544
+ LRB           H36    H    H         0.000    -16.572   -0.990   -3.217
+ LRB           C35    C    CR16      0.000    -16.415   -3.067   -2.985
+ LRB           H35    H    H         0.000    -16.711   -3.271   -4.007
+ LRB           C34    C    CR16      0.000    -16.097   -4.166   -2.076
+ LRB           H34    H    H         0.000    -16.154   -5.191   -2.422
+ LRB           C33    C    CR16      0.000    -15.731   -3.900   -0.805
+ LRB           H33    H    H         0.000    -15.497   -4.716   -0.133
+ LRB           C32    C    CR6       0.000    -15.649   -2.547   -0.336
+ LRB           C31    C    CR6       0.000    -15.282   -2.213    0.953
+ LRB           C30    C    CR16      0.000    -14.953   -3.183    1.957
+ LRB           H30    H    H         0.000    -14.995   -4.238    1.718
+ LRB           C29    C    CR16      0.000    -14.592   -2.792    3.198
+ LRB           H29    H    H         0.000    -14.344   -3.532    3.949
+ LRB           C28    C    CR16      0.000    -14.535   -1.370    3.525
+ LRB           H28    H    H         0.000    -14.243   -1.048    4.518
+ LRB           C27    C    CR16      0.000    -14.847   -0.468    2.587
+ LRB           H27    H    H         0.000    -14.807    0.587    2.827
+ LRB           N26    N    NR6       0.000    -15.223   -0.866    1.305
+ LRB           N13    N    NR6       0.000    -17.703    0.274    0.257
+ LRB           C12    C    CR16      0.000    -18.846   -0.193   -0.393
+ LRB           H12    H    H         0.000    -18.753   -0.652   -1.370
+ LRB           C11    C    CR16      0.000    -20.054   -0.084    0.172
+ LRB           H11    H    H         0.000    -20.933   -0.450   -0.345
+ LRB           C10    C    CR16      0.000    -20.178    0.532    1.490
+ LRB           H10    H    H         0.000    -21.151    0.625    1.957
+ LRB           C9     C    CR16      0.000    -19.076    0.987    2.124
+ LRB           H9     H    H         0.000    -19.172    1.467    3.090
+ LRB           C8     C    CR6       0.000    -17.780    0.838    1.529
+ LRB           C7     C    CR6       0.000    -16.613    1.267    2.136
+ LRB           N2     N    NR6       0.000    -15.408    1.113    1.452
+ LRB           C6     C    CR16      0.000    -16.579    1.866    3.437
+ LRB           H6     H    H         0.000    -17.500    1.997    3.992
+ LRB           C5     C    CR16      0.000    -15.409    2.268    3.978
+ LRB           H5     H    H         0.000    -15.392    2.721    4.961
+ LRB           C4     C    CR16      0.000    -14.166    2.088    3.232
+ LRB           H4     H    H         0.000    -13.223    2.406    3.659
+ LRB           C3     C    CR16      0.000    -14.202    1.527    2.017
+ LRB           H3     H    H         0.000    -13.280    1.393    1.465
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LRB      O47    n/a    C48    START
+ LRB      C48    O47    C46    .
+ LRB      N49    C48    C53    .
+ LRB      H49    N49    .      .
+ LRB      C53    N49    C54    .
+ LRB      H53    C53    .      .
+ LRB      C54    C53    C58    .
+ LRB      H54    C54    .      .
+ LRB      C55    C54    C56    .
+ LRB      H552   C55    .      .
+ LRB      H551   C55    .      .
+ LRB      C56    C55    C59    .
+ LRB      H56    C56    .      .
+ LRB      C57    C56    H572   .
+ LRB      H571   C57    .      .
+ LRB      H572   C57    .      .
+ LRB      C59    C56    C52    .
+ LRB      H592   C59    .      .
+ LRB      H591   C59    .      .
+ LRB      C52    C59    C51    .
+ LRB      H52    C52    .      .
+ LRB      C51    C52    H512   .
+ LRB      H511   C51    .      .
+ LRB      H512   C51    .      .
+ LRB      C58    C54    C50    .
+ LRB      H582   C58    .      .
+ LRB      H581   C58    .      .
+ LRB      C50    C58    H50    .
+ LRB      H50    C50    .      .
+ LRB      C46    C48    C45    .
+ LRB      H462   C46    .      .
+ LRB      H461   C46    .      .
+ LRB      C45    C46    C44    .
+ LRB      H452   C45    .      .
+ LRB      H451   C45    .      .
+ LRB      C44    C45    C43    .
+ LRB      H442   C44    .      .
+ LRB      H441   C44    .      .
+ LRB      C43    C44    C42    .
+ LRB      H432   C43    .      .
+ LRB      H431   C43    .      .
+ LRB      C42    C43    C41    .
+ LRB      H422   C42    .      .
+ LRB      H421   C42    .      .
+ LRB      C41    C42    C40    .
+ LRB      H412   C41    .      .
+ LRB      H411   C41    .      .
+ LRB      C40    C41    C39    .
+ LRB      H402   C40    .      .
+ LRB      H401   C40    .      .
+ LRB      C39    C40    C22    .
+ LRB      H392   C39    .      .
+ LRB      H391   C39    .      .
+ LRB      C22    C39    C23    .
+ LRB      C21    C22    H21    .
+ LRB      H21    C21    .      .
+ LRB      C23    C22    C24    .
+ LRB      H23    C23    .      .
+ LRB      C24    C23    N25    .
+ LRB      H24    C24    .      .
+ LRB      N25    C24    RU     .
+ LRB      C20    N25    C19    .
+ LRB      C19    C20    N14    .
+ LRB      C18    C19    C17    .
+ LRB      H18    C18    .      .
+ LRB      C17    C18    C16    .
+ LRB      C38    C17    H383   .
+ LRB      H381   C38    .      .
+ LRB      H382   C38    .      .
+ LRB      H383   C38    .      .
+ LRB      C16    C17    C15    .
+ LRB      H16    C16    .      .
+ LRB      C15    C16    H15    .
+ LRB      H15    C15    .      .
+ LRB      N14    C19    .      .
+ LRB      RU     N25    N13    .
+ LRB      N37    RU     C32    .
+ LRB      C36    N37    C35    .
+ LRB      H36    C36    .      .
+ LRB      C35    C36    C34    .
+ LRB      H35    C35    .      .
+ LRB      C34    C35    C33    .
+ LRB      H34    C34    .      .
+ LRB      C33    C34    H33    .
+ LRB      H33    C33    .      .
+ LRB      C32    N37    C31    .
+ LRB      C31    C32    N26    .
+ LRB      C30    C31    C29    .
+ LRB      H30    C30    .      .
+ LRB      C29    C30    C28    .
+ LRB      H29    C29    .      .
+ LRB      C28    C29    C27    .
+ LRB      H28    C28    .      .
+ LRB      C27    C28    H27    .
+ LRB      H27    C27    .      .
+ LRB      N26    C31    .      .
+ LRB      N13    RU     C8     .
+ LRB      C12    N13    C11    .
+ LRB      H12    C12    .      .
+ LRB      C11    C12    C10    .
+ LRB      H11    C11    .      .
+ LRB      C10    C11    C9     .
+ LRB      H10    C10    .      .
+ LRB      C9     C10    H9     .
+ LRB      H9     C9     .      .
+ LRB      C8     N13    C7     .
+ LRB      C7     C8     C6     .
+ LRB      N2     C7     .      .
+ LRB      C6     C7     C5     .
+ LRB      H6     C6     .      .
+ LRB      C5     C6     C4     .
+ LRB      H5     C5     .      .
+ LRB      C4     C5     C3     .
+ LRB      H4     C4     .      .
+ LRB      C3     C4     H3     .
+ LRB      H3     C3     .      END
+ LRB      RU     N2     .    ADD
+ LRB      RU     N14    .    ADD
+ LRB      RU     N26    .    ADD
+ LRB      N2     C3     .    ADD
+ LRB      C8     C9     .    ADD
+ LRB      N14    C15    .    ADD
+ LRB      C20    C21    .    ADD
+ LRB      N26    C27    .    ADD
+ LRB      C32    C33    .    ADD
+ LRB      C50    C51    .    ADD
+ LRB      C50    C57    .    ADD
+ LRB      C52    C53    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LRB       RU        N2        single    2.034     0.020     2.034     0.020     
+LRB       N13       RU        single    2.034     0.020     2.034     0.020     
+LRB       RU        N14       single    2.033     0.020     2.033     0.020     
+LRB       RU        N25       single    2.035     0.020     2.035     0.020     
+LRB       RU        N26       single    2.035     0.020     2.035     0.020     
+LRB       N37       RU        single    2.036     0.020     2.036     0.020     
+LRB       N2        C3        single    1.337     0.020     1.337     0.020     
+LRB       N2        C7        single    1.410     0.020     1.410     0.020     
+LRB       C3        C4        double    1.390     0.020     1.390     0.020     
+LRB       H3        C3        single    1.082     0.013     0.975     0.010     
+LRB       C4        C5        single    1.390     0.020     1.390     0.020     
+LRB       H4        C4        single    1.082     0.013     0.975     0.010     
+LRB       C5        C6        double    1.390     0.020     1.390     0.020     
+LRB       H5        C5        single    1.082     0.013     0.975     0.010     
+LRB       C6        C7        single    1.390     0.020     1.390     0.020     
+LRB       H6        C6        single    1.082     0.013     0.975     0.010     
+LRB       C7        C8        double    1.487     0.020     1.487     0.020     
+LRB       C8        C9        single    1.390     0.020     1.390     0.020     
+LRB       C8        N13       single    1.410     0.020     1.410     0.020     
+LRB       C9        C10       double    1.390     0.020     1.390     0.020     
+LRB       H9        C9        single    1.082     0.013     0.975     0.010     
+LRB       C10       C11       single    1.390     0.020     1.390     0.020     
+LRB       H10       C10       single    1.082     0.013     0.975     0.010     
+LRB       C11       C12       double    1.390     0.020     1.390     0.020     
+LRB       H11       C11       single    1.082     0.013     0.975     0.010     
+LRB       C12       N13       single    1.337     0.020     1.337     0.020     
+LRB       H12       C12       single    1.082     0.013     0.975     0.010     
+LRB       N14       C15       single    1.337     0.020     1.337     0.020     
+LRB       N14       C19       single    1.410     0.020     1.410     0.020     
+LRB       C15       C16       double    1.390     0.020     1.390     0.020     
+LRB       H15       C15       single    1.082     0.013     0.975     0.010     
+LRB       C16       C17       single    1.390     0.020     1.390     0.020     
+LRB       H16       C16       single    1.082     0.013     0.975     0.010     
+LRB       C17       C18       double    1.390     0.020     1.390     0.020     
+LRB       C38       C17       single    1.506     0.020     1.506     0.020     
+LRB       C18       C19       single    1.390     0.020     1.390     0.020     
+LRB       H18       C18       single    1.082     0.013     0.975     0.010     
+LRB       C19       C20       double    1.487     0.020     1.487     0.020     
+LRB       C20       C21       single    1.390     0.020     1.390     0.020     
+LRB       C20       N25       single    1.410     0.020     1.410     0.020     
+LRB       C21       C22       double    1.390     0.020     1.390     0.020     
+LRB       H21       C21       single    1.082     0.013     0.975     0.010     
+LRB       C23       C22       single    1.390     0.020     1.390     0.020     
+LRB       C22       C39       single    1.511     0.020     1.511     0.020     
+LRB       C24       C23       double    1.390     0.020     1.390     0.020     
+LRB       H23       C23       single    1.082     0.013     0.975     0.010     
+LRB       N25       C24       single    1.337     0.020     1.337     0.020     
+LRB       H24       C24       single    1.082     0.013     0.975     0.010     
+LRB       N26       C27       single    1.337     0.020     1.337     0.020     
+LRB       N26       C31       single    1.410     0.020     1.410     0.020     
+LRB       C27       C28       double    1.390     0.020     1.390     0.020     
+LRB       H27       C27       single    1.082     0.013     0.975     0.010     
+LRB       C28       C29       single    1.390     0.020     1.390     0.020     
+LRB       H28       C28       single    1.082     0.013     0.975     0.010     
+LRB       C29       C30       double    1.390     0.020     1.390     0.020     
+LRB       H29       C29       single    1.082     0.013     0.975     0.010     
+LRB       C30       C31       single    1.390     0.020     1.390     0.020     
+LRB       H30       C30       single    1.082     0.013     0.975     0.010     
+LRB       C31       C32       double    1.487     0.020     1.487     0.020     
+LRB       C32       C33       single    1.390     0.020     1.390     0.020     
+LRB       C32       N37       single    1.410     0.020     1.410     0.020     
+LRB       C33       C34       double    1.390     0.020     1.390     0.020     
+LRB       H33       C33       single    1.082     0.013     0.975     0.010     
+LRB       C34       C35       single    1.390     0.020     1.390     0.020     
+LRB       H34       C34       single    1.082     0.013     0.975     0.010     
+LRB       C35       C36       double    1.390     0.020     1.390     0.020     
+LRB       H35       C35       single    1.082     0.013     0.975     0.010     
+LRB       C36       N37       single    1.337     0.020     1.337     0.020     
+LRB       H36       C36       single    1.082     0.013     0.975     0.010     
+LRB       H383      C38       single    1.089     0.010     0.989     0.005     
+LRB       H382      C38       single    1.089     0.010     0.989     0.005     
+LRB       H381      C38       single    1.089     0.010     0.989     0.005     
+LRB       C39       C40       single    1.524     0.020     1.524     0.020     
+LRB       H392      C39       single    1.089     0.010     0.989     0.005     
+LRB       H391      C39       single    1.089     0.010     0.989     0.005     
+LRB       C40       C41       single    1.524     0.020     1.524     0.020     
+LRB       H402      C40       single    1.089     0.010     0.989     0.005     
+LRB       H401      C40       single    1.089     0.010     0.989     0.005     
+LRB       C41       C42       single    1.524     0.020     1.524     0.020     
+LRB       H412      C41       single    1.089     0.010     0.989     0.005     
+LRB       H411      C41       single    1.089     0.010     0.989     0.005     
+LRB       C42       C43       single    1.524     0.020     1.524     0.020     
+LRB       H422      C42       single    1.089     0.010     0.989     0.005     
+LRB       H421      C42       single    1.089     0.010     0.989     0.005     
+LRB       C43       C44       single    1.524     0.020     1.524     0.020     
+LRB       H432      C43       single    1.089     0.010     0.989     0.005     
+LRB       H431      C43       single    1.089     0.010     0.989     0.005     
+LRB       C44       C45       single    1.524     0.020     1.524     0.020     
+LRB       H442      C44       single    1.089     0.010     0.989     0.005     
+LRB       H441      C44       single    1.089     0.010     0.989     0.005     
+LRB       C45       C46       single    1.524     0.020     1.524     0.020     
+LRB       H452      C45       single    1.089     0.010     0.989     0.005     
+LRB       H451      C45       single    1.089     0.010     0.989     0.005     
+LRB       C46       C48       single    1.510     0.020     1.510     0.020     
+LRB       H462      C46       single    1.089     0.010     0.989     0.005     
+LRB       H461      C46       single    1.089     0.010     0.989     0.005     
+LRB       C48       O47       double    1.220     0.020     1.220     0.020     
+LRB       N49       C48       single    1.330     0.020     1.330     0.020     
+LRB       C53       N49       single    1.450     0.020     1.450     0.020     
+LRB       H49       N49       single    1.016     0.010     0.899     0.007     
+LRB       C50       C51       single    1.524     0.020     1.524     0.020     
+LRB       C50       C57       single    1.524     0.020     1.524     0.020     
+LRB       C50       C58       single    1.524     0.020     1.524     0.020     
+LRB       H50       C50       single    1.089     0.010     0.989     0.005     
+LRB       C51       C52       single    1.524     0.020     1.524     0.020     
+LRB       H512      C51       single    1.089     0.010     0.989     0.005     
+LRB       H511      C51       single    1.089     0.010     0.989     0.005     
+LRB       C52       C53       single    1.524     0.020     1.524     0.020     
+LRB       C52       C59       single    1.524     0.020     1.524     0.020     
+LRB       H52       C52       single    1.089     0.010     0.989     0.005     
+LRB       C54       C53       single    1.524     0.020     1.524     0.020     
+LRB       H53       C53       single    1.089     0.010     0.989     0.005     
+LRB       C55       C54       single    1.524     0.020     1.524     0.020     
+LRB       C58       C54       single    1.524     0.020     1.524     0.020     
+LRB       H54       C54       single    1.089     0.010     0.989     0.005     
+LRB       C56       C55       single    1.524     0.020     1.524     0.020     
+LRB       H552      C55       single    1.089     0.010     0.989     0.005     
+LRB       H551      C55       single    1.089     0.010     0.989     0.005     
+LRB       C57       C56       single    1.524     0.020     1.524     0.020     
+LRB       C59       C56       single    1.524     0.020     1.524     0.020     
+LRB       H56       C56       single    1.089     0.010     0.989     0.005     
+LRB       H572      C57       single    1.089     0.010     0.989     0.005     
+LRB       H571      C57       single    1.089     0.010     0.989     0.005     
+LRB       H582      C58       single    1.089     0.010     0.989     0.005     
+LRB       H581      C58       single    1.089     0.010     0.989     0.005     
+LRB       H592      C59       single    1.089     0.010     0.989     0.005     
+LRB       H591      C59       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LRB      O47    C48    N49     123.000    3.000
+ LRB      O47    C48    C46     120.500    3.000
+ LRB      N49    C48    C46     116.500    3.000
+ LRB      C48    N49    H49     120.000    3.000
+ LRB      C48    N49    C53     121.500    3.000
+ LRB      H49    N49    C53     118.500    3.000
+ LRB      N49    C53    H53     108.550    3.000
+ LRB      N49    C53    C54     110.000    3.000
+ LRB      N49    C53    C52     110.000    3.000
+ LRB      H53    C53    C54     108.340    3.000
+ LRB      H53    C53    C52     108.340    3.000
+ LRB      C54    C53    C52     111.000    3.000
+ LRB      C53    C54    H54     108.340    3.000
+ LRB      C53    C54    C55     111.000    3.000
+ LRB      C53    C54    C58     111.000    3.000
+ LRB      H54    C54    C55     108.340    3.000
+ LRB      H54    C54    C58     108.340    3.000
+ LRB      C55    C54    C58     109.470    3.000
+ LRB      C54    C55    H552    109.470    3.000
+ LRB      C54    C55    H551    109.470    3.000
+ LRB      C54    C55    C56     111.000    3.000
+ LRB      H552   C55    H551    107.900    3.000
+ LRB      H552   C55    C56     109.470    3.000
+ LRB      H551   C55    C56     109.470    3.000
+ LRB      C55    C56    H56     108.340    3.000
+ LRB      C55    C56    C57     109.470    3.000
+ LRB      C55    C56    C59     109.470    3.000
+ LRB      H56    C56    C57     108.340    3.000
+ LRB      H56    C56    C59     108.340    3.000
+ LRB      C57    C56    C59     109.470    3.000
+ LRB      C56    C57    H571    109.470    3.000
+ LRB      C56    C57    H572    109.470    3.000
+ LRB      C56    C57    C50     111.000    3.000
+ LRB      H571   C57    H572    107.900    3.000
+ LRB      H571   C57    C50     109.470    3.000
+ LRB      H572   C57    C50     109.470    3.000
+ LRB      C56    C59    H592    109.470    3.000
+ LRB      C56    C59    H591    109.470    3.000
+ LRB      C56    C59    C52     111.000    3.000
+ LRB      H592   C59    H591    107.900    3.000
+ LRB      H592   C59    C52     109.470    3.000
+ LRB      H591   C59    C52     109.470    3.000
+ LRB      C59    C52    H52     108.340    3.000
+ LRB      C59    C52    C51     109.470    3.000
+ LRB      C59    C52    C53     111.000    3.000
+ LRB      H52    C52    C51     108.340    3.000
+ LRB      H52    C52    C53     108.340    3.000
+ LRB      C51    C52    C53     111.000    3.000
+ LRB      C52    C51    H511    109.470    3.000
+ LRB      C52    C51    H512    109.470    3.000
+ LRB      C52    C51    C50     111.000    3.000
+ LRB      H511   C51    H512    107.900    3.000
+ LRB      H511   C51    C50     109.470    3.000
+ LRB      H512   C51    C50     109.470    3.000
+ LRB      C54    C58    H582    109.470    3.000
+ LRB      C54    C58    H581    109.470    3.000
+ LRB      C54    C58    C50     111.000    3.000
+ LRB      H582   C58    H581    107.900    3.000
+ LRB      H582   C58    C50     109.470    3.000
+ LRB      H581   C58    C50     109.470    3.000
+ LRB      C58    C50    H50     108.340    3.000
+ LRB      C58    C50    C51     109.470    3.000
+ LRB      C58    C50    C57     109.470    3.000
+ LRB      C51    C50    C57     109.470    3.000
+ LRB      H50    C50    C51     108.340    3.000
+ LRB      H50    C50    C57     108.340    3.000
+ LRB      C48    C46    H462    109.470    3.000
+ LRB      C48    C46    H461    109.470    3.000
+ LRB      C48    C46    C45     109.470    3.000
+ LRB      H462   C46    H461    107.900    3.000
+ LRB      H462   C46    C45     109.470    3.000
+ LRB      H461   C46    C45     109.470    3.000
+ LRB      C46    C45    H452    109.470    3.000
+ LRB      C46    C45    H451    109.470    3.000
+ LRB      C46    C45    C44     111.000    3.000
+ LRB      H452   C45    H451    107.900    3.000
+ LRB      H452   C45    C44     109.470    3.000
+ LRB      H451   C45    C44     109.470    3.000
+ LRB      C45    C44    H442    109.470    3.000
+ LRB      C45    C44    H441    109.470    3.000
+ LRB      C45    C44    C43     111.000    3.000
+ LRB      H442   C44    H441    107.900    3.000
+ LRB      H442   C44    C43     109.470    3.000
+ LRB      H441   C44    C43     109.470    3.000
+ LRB      C44    C43    H432    109.470    3.000
+ LRB      C44    C43    H431    109.470    3.000
+ LRB      C44    C43    C42     111.000    3.000
+ LRB      H432   C43    H431    107.900    3.000
+ LRB      H432   C43    C42     109.470    3.000
+ LRB      H431   C43    C42     109.470    3.000
+ LRB      C43    C42    H422    109.470    3.000
+ LRB      C43    C42    H421    109.470    3.000
+ LRB      C43    C42    C41     111.000    3.000
+ LRB      H422   C42    H421    107.900    3.000
+ LRB      H422   C42    C41     109.470    3.000
+ LRB      H421   C42    C41     109.470    3.000
+ LRB      C42    C41    H412    109.470    3.000
+ LRB      C42    C41    H411    109.470    3.000
+ LRB      C42    C41    C40     111.000    3.000
+ LRB      H412   C41    H411    107.900    3.000
+ LRB      H412   C41    C40     109.470    3.000
+ LRB      H411   C41    C40     109.470    3.000
+ LRB      C41    C40    H402    109.470    3.000
+ LRB      C41    C40    H401    109.470    3.000
+ LRB      C41    C40    C39     111.000    3.000
+ LRB      H402   C40    H401    107.900    3.000
+ LRB      H402   C40    C39     109.470    3.000
+ LRB      H401   C40    C39     109.470    3.000
+ LRB      C40    C39    H392    109.470    3.000
+ LRB      C40    C39    H391    109.470    3.000
+ LRB      C40    C39    C22     109.470    3.000
+ LRB      H392   C39    H391    107.900    3.000
+ LRB      H392   C39    C22     109.470    3.000
+ LRB      H391   C39    C22     109.470    3.000
+ LRB      C39    C22    C21     120.000    3.000
+ LRB      C39    C22    C23     120.000    3.000
+ LRB      C21    C22    C23     120.000    3.000
+ LRB      C22    C21    H21     120.000    3.000
+ LRB      C22    C21    C20     120.000    3.000
+ LRB      H21    C21    C20     120.000    3.000
+ LRB      C22    C23    H23     120.000    3.000
+ LRB      C22    C23    C24     120.000    3.000
+ LRB      H23    C23    C24     120.000    3.000
+ LRB      C23    C24    H24     120.000    3.000
+ LRB      C23    C24    N25     120.000    3.000
+ LRB      H24    C24    N25     120.000    3.000
+ LRB      C24    N25    C20     120.000    3.000
+ LRB      C24    N25    RU      120.000    3.000
+ LRB      C20    N25    RU      120.000    3.000
+ LRB      N25    C20    C19     120.000    3.000
+ LRB      N25    C20    C21     120.000    3.000
+ LRB      C19    C20    C21     120.000    3.000
+ LRB      C20    C19    C18     120.000    3.000
+ LRB      C20    C19    N14     120.000    3.000
+ LRB      C18    C19    N14     120.000    3.000
+ LRB      C19    C18    H18     120.000    3.000
+ LRB      C19    C18    C17     120.000    3.000
+ LRB      H18    C18    C17     120.000    3.000
+ LRB      C18    C17    C38     120.000    3.000
+ LRB      C18    C17    C16     120.000    3.000
+ LRB      C38    C17    C16     120.000    3.000
+ LRB      C17    C38    H381    109.470    3.000
+ LRB      C17    C38    H382    109.470    3.000
+ LRB      C17    C38    H383    109.470    3.000
+ LRB      H381   C38    H382    109.470    3.000
+ LRB      H381   C38    H383    109.470    3.000
+ LRB      H382   C38    H383    109.470    3.000
+ LRB      C17    C16    H16     120.000    3.000
+ LRB      C17    C16    C15     120.000    3.000
+ LRB      H16    C16    C15     120.000    3.000
+ LRB      C16    C15    H15     120.000    3.000
+ LRB      C16    C15    N14     120.000    3.000
+ LRB      H15    C15    N14     120.000    3.000
+ LRB      C19    N14    RU      120.000    3.000
+ LRB      C19    N14    C15     120.000    3.000
+ LRB      RU     N14    C15     120.000    3.000
+ LRB      N25    RU     N37      90.000    3.000
+ LRB      N25    RU     N13     180.000    3.000
+ LRB      N25    RU     N2       90.000    3.000
+ LRB      N25    RU     N14      90.000    3.000
+ LRB      N25    RU     N26      90.000    3.000
+ LRB      N37    RU     N13      90.000    3.000
+ LRB      N2     RU     N14      90.000    3.000
+ LRB      N2     RU     N26     180.000    3.000
+ LRB      N14    RU     N26      90.000    3.000
+ LRB      N37    RU     N2       90.000    3.000
+ LRB      N13    RU     N2       90.000    3.000
+ LRB      N37    RU     N14     180.000    3.000
+ LRB      N13    RU     N14      90.000    3.000
+ LRB      N37    RU     N26      90.000    3.000
+ LRB      N13    RU     N26      90.000    3.000
+ LRB      RU     N37    C36     120.000    3.000
+ LRB      RU     N37    C32     120.000    3.000
+ LRB      C36    N37    C32     120.000    3.000
+ LRB      N37    C36    H36     120.000    3.000
+ LRB      N37    C36    C35     120.000    3.000
+ LRB      H36    C36    C35     120.000    3.000
+ LRB      C36    C35    H35     120.000    3.000
+ LRB      C36    C35    C34     120.000    3.000
+ LRB      H35    C35    C34     120.000    3.000
+ LRB      C35    C34    H34     120.000    3.000
+ LRB      C35    C34    C33     120.000    3.000
+ LRB      H34    C34    C33     120.000    3.000
+ LRB      C34    C33    H33     120.000    3.000
+ LRB      C34    C33    C32     120.000    3.000
+ LRB      H33    C33    C32     120.000    3.000
+ LRB      N37    C32    C31     120.000    3.000
+ LRB      N37    C32    C33     120.000    3.000
+ LRB      C31    C32    C33     120.000    3.000
+ LRB      C32    C31    C30     120.000    3.000
+ LRB      C32    C31    N26     120.000    3.000
+ LRB      C30    C31    N26     120.000    3.000
+ LRB      C31    C30    H30     120.000    3.000
+ LRB      C31    C30    C29     120.000    3.000
+ LRB      H30    C30    C29     120.000    3.000
+ LRB      C30    C29    H29     120.000    3.000
+ LRB      C30    C29    C28     120.000    3.000
+ LRB      H29    C29    C28     120.000    3.000
+ LRB      C29    C28    H28     120.000    3.000
+ LRB      C29    C28    C27     120.000    3.000
+ LRB      H28    C28    C27     120.000    3.000
+ LRB      C28    C27    H27     120.000    3.000
+ LRB      C28    C27    N26     120.000    3.000
+ LRB      H27    C27    N26     120.000    3.000
+ LRB      C31    N26    RU      120.000    3.000
+ LRB      C31    N26    C27     120.000    3.000
+ LRB      RU     N26    C27     120.000    3.000
+ LRB      RU     N13    C12     120.000    3.000
+ LRB      RU     N13    C8      120.000    3.000
+ LRB      C12    N13    C8      120.000    3.000
+ LRB      N13    C12    H12     120.000    3.000
+ LRB      N13    C12    C11     120.000    3.000
+ LRB      H12    C12    C11     120.000    3.000
+ LRB      C12    C11    H11     120.000    3.000
+ LRB      C12    C11    C10     120.000    3.000
+ LRB      H11    C11    C10     120.000    3.000
+ LRB      C11    C10    H10     120.000    3.000
+ LRB      C11    C10    C9      120.000    3.000
+ LRB      H10    C10    C9      120.000    3.000
+ LRB      C10    C9     H9      120.000    3.000
+ LRB      C10    C9     C8      120.000    3.000
+ LRB      H9     C9     C8      120.000    3.000
+ LRB      N13    C8     C7      120.000    3.000
+ LRB      N13    C8     C9      120.000    3.000
+ LRB      C7     C8     C9      120.000    3.000
+ LRB      C8     C7     N2      120.000    3.000
+ LRB      C8     C7     C6      120.000    3.000
+ LRB      N2     C7     C6      120.000    3.000
+ LRB      C7     N2     RU      120.000    3.000
+ LRB      C7     N2     C3      120.000    3.000
+ LRB      RU     N2     C3      120.000    3.000
+ LRB      C7     C6     H6      120.000    3.000
+ LRB      C7     C6     C5      120.000    3.000
+ LRB      H6     C6     C5      120.000    3.000
+ LRB      C6     C5     H5      120.000    3.000
+ LRB      C6     C5     C4      120.000    3.000
+ LRB      H5     C5     C4      120.000    3.000
+ LRB      C5     C4     H4      120.000    3.000
+ LRB      C5     C4     C3      120.000    3.000
+ LRB      H4     C4     C3      120.000    3.000
+ LRB      C4     C3     H3      120.000    3.000
+ LRB      C4     C3     N2      120.000    3.000
+ LRB      H3     C3     N2      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LRB      CONST_1  O47    C48    N49    C53        0.000    0.000   0
+ LRB      var_1    C48    N49    C53    C54      -85.012   20.000   3
+ LRB      var_2    N49    C53    C54    C58      -60.000   20.000   3
+ LRB      var_3    C53    C54    C55    C56       60.028   20.000   3
+ LRB      var_4    C54    C55    C56    C59      -59.994   20.000   3
+ LRB      var_5    C55    C56    C57    C50      -60.050   20.000   3
+ LRB      var_6    C55    C56    C59    C52       59.998   20.000   3
+ LRB      var_7    C56    C59    C52    C51       59.942   20.000   3
+ LRB      var_8    C59    C52    C53    N49      180.000   20.000   3
+ LRB      var_9    C59    C52    C51    C50      -60.000   20.000   3
+ LRB      var_10   C53    C54    C58    C50      -60.000   20.000   3
+ LRB      var_11   C54    C58    C50    C51       60.000   20.000   3
+ LRB      var_12   C58    C50    C51    C52      -60.000   20.000   3
+ LRB      var_13   C58    C50    C57    C56       60.059   20.000   3
+ LRB      var_14   O47    C48    C46    C45       -0.019   20.000   3
+ LRB      var_15   C48    C46    C45    C44      179.991   20.000   3
+ LRB      var_16   C46    C45    C44    C43      180.000   20.000   3
+ LRB      var_17   C45    C44    C43    C42      180.000   20.000   3
+ LRB      var_18   C44    C43    C42    C41      180.000   20.000   3
+ LRB      var_19   C43    C42    C41    C40      180.000   20.000   3
+ LRB      var_20   C42    C41    C40    C39      180.000   20.000   3
+ LRB      var_21   C41    C40    C39    C22     -179.993   20.000   3
+ LRB      var_22   C40    C39    C22    C23      -84.992   20.000   2
+ LRB      CONST_2  C39    C22    C21    C20      180.000    0.000   0
+ LRB      CONST_3  C39    C22    C23    C24      180.000    0.000   0
+ LRB      CONST_4  C22    C23    C24    N25        0.000    0.000   0
+ LRB      CONST_5  C23    C24    N25    RU       180.000    0.000   0
+ LRB      CONST_6  C24    N25    C20    C19      180.000    0.000   0
+ LRB      CONST_7  N25    C20    C21    C22        0.000    0.000   0
+ LRB      CONST_8  N25    C20    C19    N14        0.000    0.000   0
+ LRB      CONST_9  C20    C19    C18    C17      180.000    0.000   0
+ LRB      CONST_10 C19    C18    C17    C16        0.000    0.000   0
+ LRB      var_23   C18    C17    C38    H383     -30.067   20.000   1
+ LRB      CONST_11 C18    C17    C16    C15        0.000    0.000   0
+ LRB      CONST_12 C17    C16    C15    N14        0.000    0.000   0
+ LRB      CONST_13 C20    C19    N14    RU         0.000    0.000   0
+ LRB      CONST_14 C19    N14    C15    C16        0.000    0.000   0
+ LRB      var_24   C20    N25    RU     N14        0.000   20.000   1
+ LRB      var_25   C7     N2     RU     N13        0.000   20.000   1
+ LRB      CONST_15 C19    N14    RU     N25        0.000    0.000   0
+ LRB      var_26   C31    N26    RU     N37        0.000   20.000   1
+ LRB      var_27   C32    N37    RU     N26        0.000   20.000   1
+ LRB      CONST_16 RU     N37    C36    C35      180.000    0.000   0
+ LRB      CONST_17 N37    C36    C35    C34        0.000    0.000   0
+ LRB      CONST_18 C36    C35    C34    C33        0.000    0.000   0
+ LRB      CONST_19 C35    C34    C33    C32        0.000    0.000   0
+ LRB      CONST_20 RU     N37    C32    C31        0.000    0.000   0
+ LRB      CONST_21 N37    C32    C33    C34        0.000    0.000   0
+ LRB      CONST_22 N37    C32    C31    N26        0.000    0.000   0
+ LRB      CONST_23 C32    C31    C30    C29      180.000    0.000   0
+ LRB      CONST_24 C31    C30    C29    C28        0.000    0.000   0
+ LRB      CONST_25 C30    C29    C28    C27        0.000    0.000   0
+ LRB      CONST_26 C29    C28    C27    N26        0.000    0.000   0
+ LRB      CONST_27 C32    C31    N26    RU         0.000    0.000   0
+ LRB      CONST_28 C31    N26    C27    C28        0.000    0.000   0
+ LRB      var_28   C8     N13    RU     N2         0.000   20.000   1
+ LRB      CONST_29 RU     N13    C12    C11      180.000    0.000   0
+ LRB      CONST_30 N13    C12    C11    C10        0.000    0.000   0
+ LRB      CONST_31 C12    C11    C10    C9         0.000    0.000   0
+ LRB      CONST_32 C11    C10    C9     C8         0.000    0.000   0
+ LRB      CONST_33 RU     N13    C8     C7         0.000    0.000   0
+ LRB      CONST_34 N13    C8     C9     C10        0.000    0.000   0
+ LRB      CONST_35 N13    C8     C7     C6       180.000    0.000   0
+ LRB      CONST_36 C8     C7     N2     RU         0.000    0.000   0
+ LRB      CONST_37 C7     N2     C3     C4         0.000    0.000   0
+ LRB      CONST_38 C8     C7     C6     C5       180.000    0.000   0
+ LRB      CONST_39 C7     C6     C5     C4         0.000    0.000   0
+ LRB      CONST_40 C6     C5     C4     C3         0.000    0.000   0
+ LRB      CONST_41 C5     C4     C3     N2         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ LRB      chir_01  C50    C51    C57    C58       positiv
+                   .      .      .      .      .
+ LRB      chir_02  C52    C51    C53    C59       positiv
+                   .      .      .      .      .
+ LRB      chir_03  C53    N49    C52    C54       negativ
+                   .      .      .      .      .
+ LRB      chir_04  C54    C53    C55    C58       negativ
+                   .      .      .      .      .
+ LRB      chir_05  C56    C55    C57    C59       positiv
+                   .      .      .      .      .
+ LRB      chir_06  RU     N25    N13    N37       cross4
+                   N2     N14    N26    .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LRB      plan-1    N2        0.020
+ LRB      plan-1    RU        0.020
+ LRB      plan-1    C3        0.020
+ LRB      plan-1    C7        0.020
+ LRB      plan-1    C4        0.020
+ LRB      plan-1    C5        0.020
+ LRB      plan-1    C6        0.020
+ LRB      plan-1    H3        0.020
+ LRB      plan-1    H4        0.020
+ LRB      plan-1    H5        0.020
+ LRB      plan-1    H6        0.020
+ LRB      plan-1    C8        0.020
+ LRB      plan-1    C9        0.020
+ LRB      plan-1    N13       0.020
+ LRB      plan-1    C10       0.020
+ LRB      plan-1    C11       0.020
+ LRB      plan-1    C12       0.020
+ LRB      plan-1    H9        0.020
+ LRB      plan-1    H10       0.020
+ LRB      plan-1    H11       0.020
+ LRB      plan-1    H12       0.020
+ LRB      plan-2    N14       0.020
+ LRB      plan-2    RU        0.020
+ LRB      plan-2    C15       0.020
+ LRB      plan-2    C19       0.020
+ LRB      plan-2    C16       0.020
+ LRB      plan-2    C17       0.020
+ LRB      plan-2    C18       0.020
+ LRB      plan-2    H15       0.020
+ LRB      plan-2    H16       0.020
+ LRB      plan-2    C38       0.020
+ LRB      plan-2    H18       0.020
+ LRB      plan-2    C20       0.020
+ LRB      plan-2    C21       0.020
+ LRB      plan-2    N25       0.020
+ LRB      plan-2    C22       0.020
+ LRB      plan-2    C23       0.020
+ LRB      plan-2    C24       0.020
+ LRB      plan-2    H21       0.020
+ LRB      plan-2    C39       0.020
+ LRB      plan-2    H23       0.020
+ LRB      plan-2    H24       0.020
+ LRB      plan-3    N26       0.020
+ LRB      plan-3    RU        0.020
+ LRB      plan-3    C27       0.020
+ LRB      plan-3    C31       0.020
+ LRB      plan-3    C28       0.020
+ LRB      plan-3    C29       0.020
+ LRB      plan-3    C30       0.020
+ LRB      plan-3    H27       0.020
+ LRB      plan-3    H28       0.020
+ LRB      plan-3    H29       0.020
+ LRB      plan-3    H30       0.020
+ LRB      plan-3    C32       0.020
+ LRB      plan-3    C33       0.020
+ LRB      plan-3    N37       0.020
+ LRB      plan-3    C34       0.020
+ LRB      plan-3    C35       0.020
+ LRB      plan-3    C36       0.020
+ LRB      plan-3    H33       0.020
+ LRB      plan-3    H34       0.020
+ LRB      plan-3    H35       0.020
+ LRB      plan-3    H36       0.020
+ LRB      plan-4    C48       0.020
+ LRB      plan-4    C46       0.020
+ LRB      plan-4    O47       0.020
+ LRB      plan-4    N49       0.020
+ LRB      plan-4    H49       0.020
+ LRB      plan-5    N49       0.020
+ LRB      plan-5    C48       0.020
+ LRB      plan-5    C53       0.020
+ LRB      plan-5    H49       0.020
+# ------------------------------------------------------

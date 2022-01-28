@@ -1,0 +1,657 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2FH      2FH '2-PHENYLHEME                        ' non-polymer        83  49 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_2FH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 2FH           O2D    O    OC       -0.500     -4.885   -3.440   -2.795
+ 2FH           CGD    C    C         0.000     -4.971   -3.342   -1.551
+ 2FH           O1D    O    OC       -0.500     -6.063   -3.556   -0.980
+ 2FH           CBD    C    CH2       0.000     -3.757   -2.967   -0.740
+ 2FH           HBD1   H    H         0.000     -3.533   -3.766   -0.030
+ 2FH           HBD2   H    H         0.000     -3.956   -2.042   -0.194
+ 2FH           CAD    C    CH2       0.000     -2.563   -2.763   -1.674
+ 2FH           HAD1   H    H         0.000     -2.789   -1.965   -2.384
+ 2FH           HAD2   H    H         0.000     -2.366   -3.688   -2.219
+ 2FH           C3D    C    CR5       0.000     -1.349   -2.387   -0.863
+ 2FH           C2D    C    CR5       0.000     -0.428   -3.272   -0.322
+ 2FH           CMD    C    CH3       0.000     -0.466   -4.773   -0.444
+ 2FH           HMD3   H    H         0.000     -0.929   -5.041   -1.358
+ 2FH           HMD2   H    H         0.000      0.522   -5.154   -0.423
+ 2FH           HMD1   H    H         0.000     -1.018   -5.179    0.364
+ 2FH           C1D    C    CR5       0.000      0.537   -2.532    0.352
+ 2FH           CHD    C    C1        0.000      1.467   -2.733    1.374
+ 2FH           HHD    H    H         0.000      1.468   -3.706    1.836
+ 2FH           C4D    C    CR5       0.000     -0.962   -1.098   -0.528
+ 2FH           ND     N    NT        0.000      0.373   -1.287   -0.229
+ 2FH           FE     FE   FE        0.000      1.575    0.108   -0.008
+ 2FH           NC     N    NT        1.000      2.673   -0.640    1.266
+ 2FH           C4C    C    CR5       0.000      2.401   -1.808    1.867
+ 2FH           C3C    C    CR5       0.000      3.395   -1.845    2.949
+ 2FH           CAC    C    C1        0.000      3.321   -2.590    4.218
+ 2FH           HAC    H    H         0.000      4.128   -2.526    4.928
+ 2FH           CBC    C    C2        0.000      2.259   -3.341    4.486
+ 2FH           HBC2   H    H         0.000      1.450   -3.408    3.776
+ 2FH           HBC1   H    H         0.000      2.202   -3.887    5.415
+ 2FH           C2C    C    CR5       0.000      4.424   -1.015    2.503
+ 2FH           CMC    C    CH3       0.000      5.714   -0.708    3.219
+ 2FH           HMC3   H    H         0.000      5.991   -1.536    3.818
+ 2FH           HMC2   H    H         0.000      6.475   -0.516    2.508
+ 2FH           HMC1   H    H         0.000      5.582    0.144    3.834
+ 2FH           C1C    C    CR5       0.000      4.015   -0.523    1.246
+ 2FH           CHC    C    C1        0.000      4.730   -0.120    0.094
+ 2FH           HHC    H    H         0.000      5.799   -0.250    0.124
+ 2FH           NB     N    NT        0.000      2.867    0.738   -1.184
+ 2FH           C4B    C    CR5       0.000      4.205    0.425   -1.072
+ 2FH           C3B    C    CR5       0.000      4.717    0.905   -2.293
+ 2FH           CAB    C    C1        0.000      5.974    0.487   -2.940
+ 2FH           HAB    H    H         0.000      6.268    0.925   -3.879
+ 2FH           CBB    C    C2        0.000      6.745   -0.430   -2.365
+ 2FH           HBB2   H    H         0.000      6.454   -0.871   -1.424
+ 2FH           HBB1   H    H         0.000      7.665   -0.737   -2.836
+ 2FH           C2B    C    CR5       0.000      3.802    1.860   -2.779
+ 2FH           CMB    C    CH3       0.000      3.962    2.680   -4.033
+ 2FH           HMB3   H    H         0.000      4.528    2.134   -4.742
+ 2FH           HMB2   H    H         0.000      3.007    2.899   -4.436
+ 2FH           HMB1   H    H         0.000      4.463    3.584   -3.802
+ 2FH           C1B    C    CR5       0.000      2.726    1.915   -1.901
+ 2FH           CHB    C    C1        0.000      1.708    2.829   -1.615
+ 2FH           HHB    H    H         0.000      1.709    3.740   -2.189
+ 2FH           CHA    C    C         0.000     -1.563    0.167   -0.398
+ 2FH           CG     C    CR6       0.000     -3.017    0.231   -0.644
+ 2FH           CD2    C    CR16      0.000     -3.508    0.238   -1.953
+ 2FH           HD2    H    H         0.000     -2.822    0.197   -2.790
+ 2FH           CE2    C    CR16      0.000     -4.867    0.297   -2.175
+ 2FH           HE2    H    H         0.000     -5.249    0.302   -3.188
+ 2FH           CZ     C    CR16      0.000     -5.745    0.350   -1.106
+ 2FH           HZ     H    H         0.000     -6.812    0.392   -1.287
+ 2FH           CE1    C    CR16      0.000     -5.266    0.349    0.192
+ 2FH           HE1    H    H         0.000     -5.959    0.395    1.023
+ 2FH           CD1    C    CR16      0.000     -3.909    0.290    0.430
+ 2FH           HD1    H    H         0.000     -3.536    0.289    1.447
+ 2FH           C1A    C    CR5       0.000     -0.927    1.391   -0.056
+ 2FH           NA     N    NT        1.000      0.409    1.530   -0.043
+ 2FH           C4A    C    CR5       0.000      0.683    2.694   -0.663
+ 2FH           C3A    C    CR5       0.000     -0.389    3.555   -0.184
+ 2FH           CMA    C    CH3       0.000     -0.394    5.061   -0.121
+ 2FH           HMA3   H    H         0.000      0.212    5.449   -0.898
+ 2FH           HMA2   H    H         0.000     -1.385    5.416   -0.236
+ 2FH           HMA1   H    H         0.000     -0.013    5.377    0.815
+ 2FH           C2A    C    CR5       0.000     -1.399    2.697    0.200
+ 2FH           CAA    C    CH2       0.000     -2.738    3.077    0.777
+ 2FH           HAA1   H    H         0.000     -3.500    2.386    0.411
+ 2FH           HAA2   H    H         0.000     -2.991    4.093    0.468
+ 2FH           CBA    C    CH2       0.000     -2.674    3.007    2.304
+ 2FH           HBA1   H    H         0.000     -1.972    3.758    2.673
+ 2FH           HBA2   H    H         0.000     -2.337    2.014    2.609
+ 2FH           CGA    C    C         0.000     -4.043    3.272    2.876
+ 2FH           O1A    O    OC       -0.500     -5.007    3.502    2.112
+ 2FH           O2A    O    OC       -0.500     -4.214    3.262    4.115
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 2FH      O2D    n/a    CGD    START
+ 2FH      CGD    O2D    CBD    .
+ 2FH      O1D    CGD    .      .
+ 2FH      CBD    CGD    CAD    .
+ 2FH      HBD1   CBD    .      .
+ 2FH      HBD2   CBD    .      .
+ 2FH      CAD    CBD    C3D    .
+ 2FH      HAD1   CAD    .      .
+ 2FH      HAD2   CAD    .      .
+ 2FH      C3D    CAD    C4D    .
+ 2FH      C2D    C3D    C1D    .
+ 2FH      CMD    C2D    HMD1   .
+ 2FH      HMD3   CMD    .      .
+ 2FH      HMD2   CMD    .      .
+ 2FH      HMD1   CMD    .      .
+ 2FH      C1D    C2D    CHD    .
+ 2FH      CHD    C1D    HHD    .
+ 2FH      HHD    CHD    .      .
+ 2FH      C4D    C3D    CHA    .
+ 2FH      ND     C4D    FE     .
+ 2FH      FE     ND     NB     .
+ 2FH      NC     FE     C4C    .
+ 2FH      C4C    NC     C3C    .
+ 2FH      C3C    C4C    C2C    .
+ 2FH      CAC    C3C    CBC    .
+ 2FH      HAC    CAC    .      .
+ 2FH      CBC    CAC    HBC1   .
+ 2FH      HBC2   CBC    .      .
+ 2FH      HBC1   CBC    .      .
+ 2FH      C2C    C3C    C1C    .
+ 2FH      CMC    C2C    HMC1   .
+ 2FH      HMC3   CMC    .      .
+ 2FH      HMC2   CMC    .      .
+ 2FH      HMC1   CMC    .      .
+ 2FH      C1C    C2C    CHC    .
+ 2FH      CHC    C1C    HHC    .
+ 2FH      HHC    CHC    .      .
+ 2FH      NB     FE     C4B    .
+ 2FH      C4B    NB     C3B    .
+ 2FH      C3B    C4B    C2B    .
+ 2FH      CAB    C3B    CBB    .
+ 2FH      HAB    CAB    .      .
+ 2FH      CBB    CAB    HBB1   .
+ 2FH      HBB2   CBB    .      .
+ 2FH      HBB1   CBB    .      .
+ 2FH      C2B    C3B    C1B    .
+ 2FH      CMB    C2B    HMB1   .
+ 2FH      HMB3   CMB    .      .
+ 2FH      HMB2   CMB    .      .
+ 2FH      HMB1   CMB    .      .
+ 2FH      C1B    C2B    CHB    .
+ 2FH      CHB    C1B    HHB    .
+ 2FH      HHB    CHB    .      .
+ 2FH      CHA    C4D    C1A    .
+ 2FH      CG     CHA    CD2    .
+ 2FH      CD2    CG     CE2    .
+ 2FH      HD2    CD2    .      .
+ 2FH      CE2    CD2    CZ     .
+ 2FH      HE2    CE2    .      .
+ 2FH      CZ     CE2    CE1    .
+ 2FH      HZ     CZ     .      .
+ 2FH      CE1    CZ     CD1    .
+ 2FH      HE1    CE1    .      .
+ 2FH      CD1    CE1    HD1    .
+ 2FH      HD1    CD1    .      .
+ 2FH      C1A    CHA    NA     .
+ 2FH      NA     C1A    C4A    .
+ 2FH      C4A    NA     C3A    .
+ 2FH      C3A    C4A    C2A    .
+ 2FH      CMA    C3A    HMA1   .
+ 2FH      HMA3   CMA    .      .
+ 2FH      HMA2   CMA    .      .
+ 2FH      HMA1   CMA    .      .
+ 2FH      C2A    C3A    CAA    .
+ 2FH      CAA    C2A    CBA    .
+ 2FH      HAA1   CAA    .      .
+ 2FH      HAA2   CAA    .      .
+ 2FH      CBA    CAA    CGA    .
+ 2FH      HBA1   CBA    .      .
+ 2FH      HBA2   CBA    .      .
+ 2FH      CGA    CBA    O2A    .
+ 2FH      O1A    CGA    .      .
+ 2FH      O2A    CGA    .      END
+ 2FH      FE     NA     .    ADD
+ 2FH      CHB    C4A    .    ADD
+ 2FH      CHC    C4B    .    ADD
+ 2FH      CHD    C4C    .    ADD
+ 2FH      C1A    C2A    .    ADD
+ 2FH      NB     C1B    .    ADD
+ 2FH      NC     C1C    .    ADD
+ 2FH      ND     C1D    .    ADD
+ 2FH      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2FH       FE        NA        single    1.945     0.020     1.945     0.020     
+2FH       NB        FE        single    1.945     0.020     1.945     0.020     
+2FH       NC        FE        single    1.945     0.020     1.945     0.020     
+2FH       FE        ND        single    1.945     0.020     1.945     0.020     
+2FH       C1A       CHA       double    1.490     0.020     1.490     0.020     
+2FH       CHA       C4D       single    1.490     0.020     1.490     0.020     
+2FH       CG        CHA       single    1.500     0.020     1.500     0.020     
+2FH       CHB       C4A       single    1.483     0.020     1.483     0.020     
+2FH       CHB       C1B       double    1.483     0.020     1.483     0.020     
+2FH       HHB       CHB       single    1.082     0.013     0.975     0.010     
+2FH       CHC       C4B       double    1.483     0.020     1.483     0.020     
+2FH       CHC       C1C       single    1.483     0.020     1.483     0.020     
+2FH       HHC       CHC       single    1.082     0.013     0.975     0.010     
+2FH       CHD       C4C       double    1.483     0.020     1.483     0.020     
+2FH       CHD       C1D       single    1.483     0.020     1.483     0.020     
+2FH       HHD       CHD       single    1.082     0.013     0.975     0.010     
+2FH       NA        C1A       single    1.455     0.020     1.455     0.020     
+2FH       C4A       NA        double    1.455     0.020     1.455     0.020     
+2FH       C1A       C2A       single    1.490     0.020     1.490     0.020     
+2FH       C2A       C3A       double    1.490     0.020     1.490     0.020     
+2FH       CAA       C2A       single    1.510     0.020     1.510     0.020     
+2FH       C3A       C4A       single    1.490     0.020     1.490     0.020     
+2FH       CMA       C3A       single    1.506     0.020     1.506     0.020     
+2FH       CBA       CAA       single    1.524     0.020     1.524     0.020     
+2FH       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+2FH       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+2FH       CGA       CBA       single    1.510     0.020     1.510     0.020     
+2FH       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+2FH       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+2FH       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+2FH       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+2FH       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+2FH       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+2FH       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+2FH       NB        C1B       single    1.455     0.020     1.455     0.020     
+2FH       C4B       NB        single    1.455     0.020     1.455     0.020     
+2FH       C1B       C2B       single    1.490     0.020     1.490     0.020     
+2FH       C2B       C3B       double    1.490     0.020     1.490     0.020     
+2FH       CMB       C2B       single    1.506     0.020     1.506     0.020     
+2FH       C3B       C4B       single    1.490     0.020     1.490     0.020     
+2FH       CAB       C3B       single    1.483     0.020     1.483     0.020     
+2FH       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+2FH       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+2FH       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+2FH       CBB       CAB       double    1.320     0.020     1.320     0.020     
+2FH       HAB       CAB       single    1.082     0.013     0.975     0.010     
+2FH       HBB1      CBB       single    1.082     0.013     0.975     0.010     
+2FH       HBB2      CBB       single    1.082     0.013     0.975     0.010     
+2FH       NC        C1C       double    1.455     0.020     1.455     0.020     
+2FH       C4C       NC        single    1.455     0.020     1.455     0.020     
+2FH       C1C       C2C       single    1.490     0.020     1.490     0.020     
+2FH       C2C       C3C       double    1.490     0.020     1.490     0.020     
+2FH       CMC       C2C       single    1.506     0.020     1.506     0.020     
+2FH       C3C       C4C       single    1.490     0.020     1.490     0.020     
+2FH       CAC       C3C       single    1.483     0.020     1.483     0.020     
+2FH       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+2FH       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+2FH       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+2FH       CBC       CAC       double    1.320     0.020     1.320     0.020     
+2FH       HAC       CAC       single    1.082     0.013     0.975     0.010     
+2FH       HBC1      CBC       single    1.082     0.013     0.975     0.010     
+2FH       HBC2      CBC       single    1.082     0.013     0.975     0.010     
+2FH       ND        C1D       single    1.455     0.020     1.455     0.020     
+2FH       ND        C4D       single    1.455     0.020     1.455     0.020     
+2FH       C1D       C2D       double    1.490     0.020     1.490     0.020     
+2FH       C2D       C3D       single    1.490     0.020     1.490     0.020     
+2FH       CMD       C2D       single    1.506     0.020     1.506     0.020     
+2FH       C4D       C3D       double    1.490     0.020     1.490     0.020     
+2FH       C3D       CAD       single    1.510     0.020     1.510     0.020     
+2FH       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+2FH       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+2FH       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+2FH       CAD       CBD       single    1.524     0.020     1.524     0.020     
+2FH       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+2FH       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+2FH       CBD       CGD       single    1.510     0.020     1.510     0.020     
+2FH       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+2FH       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+2FH       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+2FH       CGD       O2D       deloc     1.250     0.020     1.250     0.020     
+2FH       CG        CD1       double    1.390     0.020     1.390     0.020     
+2FH       CD2       CG        single    1.390     0.020     1.390     0.020     
+2FH       CD1       CE1       single    1.390     0.020     1.390     0.020     
+2FH       HD1       CD1       single    1.082     0.013     0.975     0.010     
+2FH       CE2       CD2       double    1.390     0.020     1.390     0.020     
+2FH       HD2       CD2       single    1.082     0.013     0.975     0.010     
+2FH       CE1       CZ        double    1.390     0.020     1.390     0.020     
+2FH       HE1       CE1       single    1.082     0.013     0.975     0.010     
+2FH       CZ        CE2       single    1.390     0.020     1.390     0.020     
+2FH       HE2       CE2       single    1.082     0.013     0.975     0.010     
+2FH       HZ        CZ        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 2FH      O2D    CGD    O1D     123.000    3.000
+ 2FH      O2D    CGD    CBD     118.500    3.000
+ 2FH      O1D    CGD    CBD     118.500    3.000
+ 2FH      CGD    CBD    HBD1    109.470    3.000
+ 2FH      CGD    CBD    HBD2    109.470    3.000
+ 2FH      CGD    CBD    CAD     109.470    3.000
+ 2FH      HBD1   CBD    HBD2    107.900    3.000
+ 2FH      HBD1   CBD    CAD     109.470    3.000
+ 2FH      HBD2   CBD    CAD     109.470    3.000
+ 2FH      CBD    CAD    HAD1    109.470    3.000
+ 2FH      CBD    CAD    HAD2    109.470    3.000
+ 2FH      CBD    CAD    C3D     109.470    3.000
+ 2FH      HAD1   CAD    HAD2    107.900    3.000
+ 2FH      HAD1   CAD    C3D     109.470    3.000
+ 2FH      HAD2   CAD    C3D     109.470    3.000
+ 2FH      CAD    C3D    C2D     126.000    3.000
+ 2FH      CAD    C3D    C4D     126.000    3.000
+ 2FH      C2D    C3D    C4D     108.000    3.000
+ 2FH      C3D    C2D    CMD     126.000    3.000
+ 2FH      C3D    C2D    C1D     108.000    3.000
+ 2FH      CMD    C2D    C1D     126.000    3.000
+ 2FH      C2D    CMD    HMD3    109.470    3.000
+ 2FH      C2D    CMD    HMD2    109.470    3.000
+ 2FH      C2D    CMD    HMD1    109.470    3.000
+ 2FH      HMD3   CMD    HMD2    109.470    3.000
+ 2FH      HMD3   CMD    HMD1    109.470    3.000
+ 2FH      HMD2   CMD    HMD1    109.470    3.000
+ 2FH      C2D    C1D    CHD     117.000    3.000
+ 2FH      C2D    C1D    ND      108.000    3.000
+ 2FH      CHD    C1D    ND      108.000    3.000
+ 2FH      C1D    CHD    HHD     120.000    3.000
+ 2FH      C1D    CHD    C4C     120.000    3.000
+ 2FH      HHD    CHD    C4C     120.000    3.000
+ 2FH      C3D    C4D    ND      108.000    3.000
+ 2FH      C3D    C4D    CHA     117.000    3.000
+ 2FH      ND     C4D    CHA     108.000    3.000
+ 2FH      C4D    ND     FE      109.500    3.000
+ 2FH      C4D    ND     C1D     109.500    3.000
+ 2FH      FE     ND     C1D     109.500    3.000
+ 2FH      ND     FE     NC       90.000    3.000
+ 2FH      ND     FE     NB       90.000    3.000
+ 2FH      ND     FE     NA       90.000    3.000
+ 2FH      NC     FE     NB       90.000    3.000
+ 2FH      NC     FE     NA       90.000    3.000
+ 2FH      NB     FE     NA       90.000    3.000
+ 2FH      FE     NC     C4C     109.500    3.000
+ 2FH      FE     NC     C1C     109.500    3.000
+ 2FH      C4C    NC     C1C     109.500    3.000
+ 2FH      NC     C4C    C3C     108.000    3.000
+ 2FH      NC     C4C    CHD     108.000    3.000
+ 2FH      C3C    C4C    CHD     117.000    3.000
+ 2FH      C4C    C3C    CAC     117.000    3.000
+ 2FH      C4C    C3C    C2C     108.000    3.000
+ 2FH      CAC    C3C    C2C     117.000    3.000
+ 2FH      C3C    CAC    HAC     120.000    3.000
+ 2FH      C3C    CAC    CBC     120.000    3.000
+ 2FH      HAC    CAC    CBC     120.000    3.000
+ 2FH      CAC    CBC    HBC2    120.000    3.000
+ 2FH      CAC    CBC    HBC1    120.000    3.000
+ 2FH      HBC2   CBC    HBC1    120.000    3.000
+ 2FH      C3C    C2C    CMC     126.000    3.000
+ 2FH      C3C    C2C    C1C     108.000    3.000
+ 2FH      CMC    C2C    C1C     126.000    3.000
+ 2FH      C2C    CMC    HMC3    109.470    3.000
+ 2FH      C2C    CMC    HMC2    109.470    3.000
+ 2FH      C2C    CMC    HMC1    109.470    3.000
+ 2FH      HMC3   CMC    HMC2    109.470    3.000
+ 2FH      HMC3   CMC    HMC1    109.470    3.000
+ 2FH      HMC2   CMC    HMC1    109.470    3.000
+ 2FH      C2C    C1C    CHC     117.000    3.000
+ 2FH      C2C    C1C    NC      108.000    3.000
+ 2FH      CHC    C1C    NC      108.000    3.000
+ 2FH      C1C    CHC    HHC     120.000    3.000
+ 2FH      C1C    CHC    C4B     120.000    3.000
+ 2FH      HHC    CHC    C4B     120.000    3.000
+ 2FH      FE     NB     C4B     109.500    3.000
+ 2FH      FE     NB     C1B     109.500    3.000
+ 2FH      C4B    NB     C1B     109.500    3.000
+ 2FH      NB     C4B    C3B     108.000    3.000
+ 2FH      NB     C4B    CHC     108.000    3.000
+ 2FH      C3B    C4B    CHC     117.000    3.000
+ 2FH      C4B    C3B    CAB     117.000    3.000
+ 2FH      C4B    C3B    C2B     108.000    3.000
+ 2FH      CAB    C3B    C2B     117.000    3.000
+ 2FH      C3B    CAB    HAB     120.000    3.000
+ 2FH      C3B    CAB    CBB     120.000    3.000
+ 2FH      HAB    CAB    CBB     120.000    3.000
+ 2FH      CAB    CBB    HBB2    120.000    3.000
+ 2FH      CAB    CBB    HBB1    120.000    3.000
+ 2FH      HBB2   CBB    HBB1    120.000    3.000
+ 2FH      C3B    C2B    CMB     126.000    3.000
+ 2FH      C3B    C2B    C1B     108.000    3.000
+ 2FH      CMB    C2B    C1B     126.000    3.000
+ 2FH      C2B    CMB    HMB3    109.470    3.000
+ 2FH      C2B    CMB    HMB2    109.470    3.000
+ 2FH      C2B    CMB    HMB1    109.470    3.000
+ 2FH      HMB3   CMB    HMB2    109.470    3.000
+ 2FH      HMB3   CMB    HMB1    109.470    3.000
+ 2FH      HMB2   CMB    HMB1    109.470    3.000
+ 2FH      C2B    C1B    CHB     117.000    3.000
+ 2FH      C2B    C1B    NB      108.000    3.000
+ 2FH      CHB    C1B    NB      108.000    3.000
+ 2FH      C1B    CHB    HHB     120.000    3.000
+ 2FH      C1B    CHB    C4A     120.000    3.000
+ 2FH      HHB    CHB    C4A     120.000    3.000
+ 2FH      C4D    CHA    CG      120.000    3.000
+ 2FH      C4D    CHA    C1A     120.000    3.000
+ 2FH      CG     CHA    C1A     120.000    3.000
+ 2FH      CHA    CG     CD2     120.000    3.000
+ 2FH      CHA    CG     CD1     120.000    3.000
+ 2FH      CD2    CG     CD1     120.000    3.000
+ 2FH      CG     CD2    HD2     120.000    3.000
+ 2FH      CG     CD2    CE2     120.000    3.000
+ 2FH      HD2    CD2    CE2     120.000    3.000
+ 2FH      CD2    CE2    HE2     120.000    3.000
+ 2FH      CD2    CE2    CZ      120.000    3.000
+ 2FH      HE2    CE2    CZ      120.000    3.000
+ 2FH      CE2    CZ     HZ      120.000    3.000
+ 2FH      CE2    CZ     CE1     120.000    3.000
+ 2FH      HZ     CZ     CE1     120.000    3.000
+ 2FH      CZ     CE1    HE1     120.000    3.000
+ 2FH      CZ     CE1    CD1     120.000    3.000
+ 2FH      HE1    CE1    CD1     120.000    3.000
+ 2FH      CE1    CD1    HD1     120.000    3.000
+ 2FH      CE1    CD1    CG      120.000    3.000
+ 2FH      HD1    CD1    CG      120.000    3.000
+ 2FH      CHA    C1A    NA      108.000    3.000
+ 2FH      CHA    C1A    C2A     117.000    3.000
+ 2FH      NA     C1A    C2A     108.000    3.000
+ 2FH      C1A    NA     C4A     109.500    3.000
+ 2FH      C1A    NA     FE      109.500    3.000
+ 2FH      C4A    NA     FE      109.500    3.000
+ 2FH      NA     C4A    C3A     108.000    3.000
+ 2FH      NA     C4A    CHB     108.000    3.000
+ 2FH      C3A    C4A    CHB     117.000    3.000
+ 2FH      C4A    C3A    CMA     126.000    3.000
+ 2FH      C4A    C3A    C2A     108.000    3.000
+ 2FH      CMA    C3A    C2A     126.000    3.000
+ 2FH      C3A    CMA    HMA3    109.470    3.000
+ 2FH      C3A    CMA    HMA2    109.470    3.000
+ 2FH      C3A    CMA    HMA1    109.470    3.000
+ 2FH      HMA3   CMA    HMA2    109.470    3.000
+ 2FH      HMA3   CMA    HMA1    109.470    3.000
+ 2FH      HMA2   CMA    HMA1    109.470    3.000
+ 2FH      C3A    C2A    CAA     126.000    3.000
+ 2FH      C3A    C2A    C1A     108.000    3.000
+ 2FH      CAA    C2A    C1A     126.000    3.000
+ 2FH      C2A    CAA    HAA1    109.470    3.000
+ 2FH      C2A    CAA    HAA2    109.470    3.000
+ 2FH      C2A    CAA    CBA     109.470    3.000
+ 2FH      HAA1   CAA    HAA2    107.900    3.000
+ 2FH      HAA1   CAA    CBA     109.470    3.000
+ 2FH      HAA2   CAA    CBA     109.470    3.000
+ 2FH      CAA    CBA    HBA1    109.470    3.000
+ 2FH      CAA    CBA    HBA2    109.470    3.000
+ 2FH      CAA    CBA    CGA     109.470    3.000
+ 2FH      HBA1   CBA    HBA2    107.900    3.000
+ 2FH      HBA1   CBA    CGA     109.470    3.000
+ 2FH      HBA2   CBA    CGA     109.470    3.000
+ 2FH      CBA    CGA    O1A     118.500    3.000
+ 2FH      CBA    CGA    O2A     118.500    3.000
+ 2FH      O1A    CGA    O2A     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 2FH      var_1    O2D    CGD    CBD    CAD        0.048   20.000   3
+ 2FH      var_2    CGD    CBD    CAD    C3D      179.961   20.000   3
+ 2FH      var_3    CBD    CAD    C3D    C4D      -89.909   20.000   2
+ 2FH      CONST_1  CAD    C3D    C2D    C1D      180.000    0.000   0
+ 2FH      var_4    C3D    C2D    CMD    HMD1     -90.009   20.000   1
+ 2FH      CONST_2  C3D    C2D    C1D    CHD      180.000    0.000   0
+ 2FH      var_5    C2D    C1D    CHD    C4C      177.424   20.000   1
+ 2FH      var_6    C1D    CHD    C4C    NC       -11.043   20.000   1
+ 2FH      CONST_3  CAD    C3D    C4D    CHA        0.000    0.000   0
+ 2FH      CONST_4  C3D    C4D    ND     FE         0.000    0.000   0
+ 2FH      CONST_5  C4D    ND     C1D    C2D       34.197    0.000   0
+ 2FH      var_7    C4D    ND     FE     NB      -102.698   20.000   1
+ 2FH      var_8    ND     FE     NA     C1A        7.187   20.000   1
+ 2FH      var_9    ND     FE     NC     C4C       -7.331   20.000   1
+ 2FH      CONST_6  FE     NC     C1C    C2C        0.000    0.000   0
+ 2FH      CONST_7  FE     NC     C4C    C3C        0.000    0.000   0
+ 2FH      CONST_8  NC     C4C    C3C    C2C        0.000    0.000   0
+ 2FH      var_10   C4C    C3C    CAC    CBC        0.059   20.000   1
+ 2FH      CONST_9  C3C    CAC    CBC    HBC1    -179.953    0.000   0
+ 2FH      CONST_10 C4C    C3C    C2C    C1C        0.000    0.000   0
+ 2FH      var_11   C3C    C2C    CMC    HMC1     -90.073   20.000   1
+ 2FH      CONST_11 C3C    C2C    C1C    CHC      180.000    0.000   0
+ 2FH      var_12   C2C    C1C    CHC    C4B     -176.022   20.000   1
+ 2FH      var_13   C1C    CHC    C4B    NB         5.349   20.000   1
+ 2FH      var_14   ND     FE     NB     C4B     -100.925   20.000   1
+ 2FH      CONST_12 FE     NB     C1B    C2B        0.000    0.000   0
+ 2FH      CONST_13 FE     NB     C4B    C3B        0.000    0.000   0
+ 2FH      CONST_14 NB     C4B    C3B    C2B        0.000    0.000   0
+ 2FH      var_15   C4B    C3B    CAB    CBB        0.021   20.000   1
+ 2FH      CONST_15 C3B    CAB    CBB    HBB1    -179.987    0.000   0
+ 2FH      CONST_16 C4B    C3B    C2B    C1B        0.000    0.000   0
+ 2FH      var_16   C3B    C2B    CMB    HMB1     -90.039   20.000   1
+ 2FH      CONST_17 C3B    C2B    C1B    CHB      180.000    0.000   0
+ 2FH      var_17   C2B    C1B    CHB    C4A      179.901   20.000   1
+ 2FH      var_18   C1B    CHB    C4A    NA       -12.090   20.000   1
+ 2FH      var_19   C3D    C4D    CHA    C1A     -178.512   20.000   1
+ 2FH      var_20   C4D    CHA    CG     CD2      -78.442   20.000   1
+ 2FH      CONST_18 CHA    CG     CD1    CE1      180.000    0.000   0
+ 2FH      CONST_19 CHA    CG     CD2    CE2      180.000    0.000   0
+ 2FH      CONST_20 CG     CD2    CE2    CZ         0.000    0.000   0
+ 2FH      CONST_21 CD2    CE2    CZ     CE1        0.000    0.000   0
+ 2FH      CONST_22 CE2    CZ     CE1    CD1        0.000    0.000   0
+ 2FH      CONST_23 CZ     CE1    CD1    CG         0.000    0.000   0
+ 2FH      var_21   C4D    CHA    C1A    NA        12.344   20.000   1
+ 2FH      CONST_24 CHA    C1A    C2A    C3A      180.000    0.000   0
+ 2FH      CONST_25 CHA    C1A    NA     C4A      134.885    0.000   0
+ 2FH      CONST_26 C1A    NA     C4A    C3A       38.965    0.000   0
+ 2FH      CONST_27 NA     C4A    C3A    C2A        0.000    0.000   0
+ 2FH      var_22   C4A    C3A    CMA    HMA1     -89.974   20.000   1
+ 2FH      CONST_28 C4A    C3A    C2A    CAA      180.000    0.000   0
+ 2FH      var_23   C3A    C2A    CAA    CBA      -95.740   20.000   2
+ 2FH      var_24   C2A    CAA    CBA    CGA     -175.202   20.000   3
+ 2FH      var_25   CAA    CBA    CGA    O2A      179.996   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 2FH      chir_01  NA     FE     C1A    C4A       positiv
+ 2FH      chir_02  NB     FE     C1B    C4B       negativ
+ 2FH      chir_03  NC     FE     C1C    C4C       positiv
+ 2FH      chir_04  ND     FE     C1D    C4D       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 2FH      plan-1    CHA       0.020
+ 2FH      plan-1    C1A       0.020
+ 2FH      plan-1    C4D       0.020
+ 2FH      plan-1    CG        0.020
+ 2FH      plan-2    CHB       0.020
+ 2FH      plan-2    C4A       0.020
+ 2FH      plan-2    C1B       0.020
+ 2FH      plan-2    HHB       0.020
+ 2FH      plan-3    CHC       0.020
+ 2FH      plan-3    C4B       0.020
+ 2FH      plan-3    C1C       0.020
+ 2FH      plan-3    HHC       0.020
+ 2FH      plan-4    CHD       0.020
+ 2FH      plan-4    C4C       0.020
+ 2FH      plan-4    C1D       0.020
+ 2FH      plan-4    HHD       0.020
+ 2FH      plan-5    C1A       0.020
+ 2FH      plan-5    CHA       0.020
+ 2FH      plan-5    NA        0.020
+ 2FH      plan-5    C2A       0.020
+ 2FH      plan-5    C3A       0.020
+ 2FH      plan-5    C4A       0.020
+ 2FH      plan-5    CAA       0.020
+ 2FH      plan-5    CMA       0.020
+ 2FH      plan-5    CHB       0.020
+ 2FH      plan-5    HHB       0.020
+ 2FH      plan-6    CGA       0.020
+ 2FH      plan-6    CBA       0.020
+ 2FH      plan-6    O1A       0.020
+ 2FH      plan-6    O2A       0.020
+ 2FH      plan-7    C1B       0.020
+ 2FH      plan-7    CHB       0.020
+ 2FH      plan-7    NB        0.020
+ 2FH      plan-7    C2B       0.020
+ 2FH      plan-7    C3B       0.020
+ 2FH      plan-7    C4B       0.020
+ 2FH      plan-7    CMB       0.020
+ 2FH      plan-7    CAB       0.020
+ 2FH      plan-7    CHC       0.020
+ 2FH      plan-7    HHB       0.020
+ 2FH      plan-7    HAB       0.020
+ 2FH      plan-7    HHC       0.020
+ 2FH      plan-8    CAB       0.020
+ 2FH      plan-8    C3B       0.020
+ 2FH      plan-8    CBB       0.020
+ 2FH      plan-8    HAB       0.020
+ 2FH      plan-8    HBB1      0.020
+ 2FH      plan-8    HBB2      0.020
+ 2FH      plan-9    C1C       0.020
+ 2FH      plan-9    CHC       0.020
+ 2FH      plan-9    NC        0.020
+ 2FH      plan-9    C2C       0.020
+ 2FH      plan-9    C3C       0.020
+ 2FH      plan-9    C4C       0.020
+ 2FH      plan-9    CMC       0.020
+ 2FH      plan-9    CAC       0.020
+ 2FH      plan-9    CHD       0.020
+ 2FH      plan-9    HHC       0.020
+ 2FH      plan-9    HAC       0.020
+ 2FH      plan-9    HHD       0.020
+ 2FH      plan-10   CAC       0.020
+ 2FH      plan-10   C3C       0.020
+ 2FH      plan-10   CBC       0.020
+ 2FH      plan-10   HAC       0.020
+ 2FH      plan-10   HBC1      0.020
+ 2FH      plan-10   HBC2      0.020
+ 2FH      plan-11   C1D       0.020
+ 2FH      plan-11   CHD       0.020
+ 2FH      plan-11   ND        0.020
+ 2FH      plan-11   C2D       0.020
+ 2FH      plan-11   C3D       0.020
+ 2FH      plan-11   C4D       0.020
+ 2FH      plan-11   CMD       0.020
+ 2FH      plan-11   CAD       0.020
+ 2FH      plan-11   CHA       0.020
+ 2FH      plan-11   HHD       0.020
+ 2FH      plan-12   CGD       0.020
+ 2FH      plan-12   CBD       0.020
+ 2FH      plan-12   O1D       0.020
+ 2FH      plan-12   O2D       0.020
+ 2FH      plan-13   CG        0.020
+ 2FH      plan-13   CHA       0.020
+ 2FH      plan-13   CD1       0.020
+ 2FH      plan-13   CD2       0.020
+ 2FH      plan-13   CE1       0.020
+ 2FH      plan-13   CE2       0.020
+ 2FH      plan-13   CZ        0.020
+ 2FH      plan-13   HD1       0.020
+ 2FH      plan-13   HD2       0.020
+ 2FH      plan-13   HE1       0.020
+ 2FH      plan-13   HE2       0.020
+ 2FH      plan-13   HZ        0.020
+# ------------------------------------------------------

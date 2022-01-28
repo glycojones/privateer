@@ -1,0 +1,158 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+JIM     JIM      "(2R)-2,3-dihydroxypropyl acetate"     NON-POLYMER     19     9     .     
+#
+data_comp_JIM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+JIM     OAA     O       OH1     0       -3.088      0.887       -0.737      
+JIM     CAB     C       CH2     0       -2.691      -0.322      -0.095      
+JIM     CAC     C       CH1     0       -1.228      -0.628      -0.339      
+JIM     CAD     C       CH2     0       -0.293      0.330       0.367       
+JIM     OAE     O       O2      0       1.057       0.096       -0.098      
+JIM     CAF     C       C       0       2.071       0.775       0.472       
+JIM     OAG     O       O       0       1.962       1.753       1.167       
+JIM     OAH     O       OH1     0       -0.929      -1.962      0.074       
+JIM     CAI     C       CH3     0       3.370       0.148       0.107       
+JIM     HOAA    H       H       0       -3.880      1.066       -0.497      
+JIM     HAB     H       H       0       -3.240      -1.068      -0.438      
+JIM     HABA    H       H       0       -2.848      -0.242      0.877       
+JIM     HAC     H       H       0       -1.061      -0.560      -1.309      
+JIM     HAD     H       H       0       -0.342      0.187       1.341       
+JIM     HADA    H       H       0       -0.555      1.259       0.169       
+JIM     HOAH    H       H       0       -1.088      -2.047      0.904       
+JIM     HAI     H       H       0       4.097       0.659       0.497       
+JIM     HAIA    H       H       0       3.464       0.138       -0.859      
+JIM     HAIB    H       H       0       3.397       -0.762      0.444       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+JIM       OAA       CAB       SINGLE    n         1.425     0.010     1.425     0.010     
+JIM       CAB       CAC       SINGLE    n         1.514     0.011     1.514     0.011     
+JIM       CAC       CAD       SINGLE    n         1.512     0.011     1.512     0.011     
+JIM       CAC       OAH       SINGLE    n         1.427     0.010     1.427     0.010     
+JIM       CAD       OAE       SINGLE    n         1.444     0.010     1.444     0.010     
+JIM       OAE       CAF       SINGLE    n         1.338     0.015     1.338     0.015     
+JIM       CAF       OAG       DOUBLE    n         1.199     0.017     1.199     0.017     
+JIM       CAF       CAI       SINGLE    n         1.487     0.016     1.487     0.016     
+JIM       OAA       HOAA      SINGLE    n         0.970     0.012     0.846     0.020     
+JIM       CAB       HAB       SINGLE    n         1.089     0.010     0.988     0.020     
+JIM       CAB       HABA      SINGLE    n         1.089     0.010     0.988     0.020     
+JIM       CAC       HAC       SINGLE    n         1.089     0.010     0.987     0.019     
+JIM       CAD       HAD       SINGLE    n         1.089     0.010     0.985     0.019     
+JIM       CAD       HADA      SINGLE    n         1.089     0.010     0.985     0.019     
+JIM       OAH       HOAH      SINGLE    n         0.970     0.012     0.848     0.020     
+JIM       CAI       HAI       SINGLE    n         1.089     0.010     0.971     0.014     
+JIM       CAI       HAIA      SINGLE    n         1.089     0.010     0.971     0.014     
+JIM       CAI       HAIB      SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+JIM         CAB         OAA        HOAA     108.280    3.00
+JIM         OAA         CAB         CAC     111.586    1.51
+JIM         OAA         CAB         HAB     109.268    1.50
+JIM         OAA         CAB        HABA     109.268    1.50
+JIM         CAC         CAB         HAB     109.193    1.50
+JIM         CAC         CAB        HABA     109.193    1.50
+JIM         HAB         CAB        HABA     108.313    1.50
+JIM         CAB         CAC         CAD     113.504    1.50
+JIM         CAB         CAC         OAH     110.247    1.72
+JIM         CAB         CAC         HAC     108.441    1.50
+JIM         CAD         CAC         OAH     109.314    1.96
+JIM         CAD         CAC         HAC     108.656    1.50
+JIM         OAH         CAC         HAC     108.721    1.50
+JIM         CAC         CAD         OAE     108.641    1.70
+JIM         CAC         CAD         HAD     109.582    1.50
+JIM         CAC         CAD        HADA     109.582    1.50
+JIM         OAE         CAD         HAD     109.514    1.50
+JIM         OAE         CAD        HADA     109.514    1.50
+JIM         HAD         CAD        HADA     108.601    1.50
+JIM         CAD         OAE         CAF     117.188    1.50
+JIM         OAE         CAF         OAG     122.259    3.00
+JIM         OAE         CAF         CAI     112.082    2.88
+JIM         OAG         CAF         CAI     125.657    2.23
+JIM         CAC         OAH        HOAH     107.936    3.00
+JIM         CAF         CAI         HAI     109.509    1.50
+JIM         CAF         CAI        HAIA     109.509    1.50
+JIM         CAF         CAI        HAIB     109.509    1.50
+JIM         HAI         CAI        HAIA     109.424    1.50
+JIM         HAI         CAI        HAIB     109.424    1.50
+JIM        HAIA         CAI        HAIB     109.424    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+JIM             sp3_sp3_1         CAC         CAB         OAA        HOAA     180.000   10.00     3
+JIM             sp3_sp3_4         OAA         CAB         CAC         CAD     180.000   10.00     3
+JIM            sp3_sp3_16         CAB         CAC         CAD         OAE      60.000   10.00     3
+JIM            sp3_sp3_22         CAB         CAC         OAH        HOAH     180.000   10.00     3
+JIM            sp3_sp3_25         CAC         CAD         OAE         CAF     180.000   10.00     3
+JIM             sp2_sp2_1         OAG         CAF         OAE         CAD     180.000   10.00     2
+JIM             sp2_sp3_1         OAE         CAF         CAI         HAI       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+JIM    chir_1    CAC    OAH    CAD    CAB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+JIM    plan-1         CAF   0.020
+JIM    plan-1         CAI   0.020
+JIM    plan-1         OAE   0.020
+JIM    plan-1         OAG   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+JIM SMILES_CANONICAL CACTVS               3.352 "CC(=O)OC[C@H](O)CO"
+JIM SMILES           CACTVS               3.352 "CC(=O)OC[CH](O)CO"
+JIM SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "CC(=O)OC[C@@H](CO)O"
+JIM SMILES           "OpenEye OEToolkits" 1.7.0 "CC(=O)OCC(CO)O"
+JIM InChI            InChI                1.03  "InChI=1S/C5H10O4/c1-4(7)9-3-5(8)2-6/h5-6,8H,2-3H2,1H3/t5-/m1/s1"
+JIM InChIKey         InChI                1.03  KMZHZAAOEWVPSE-RXMQYKEDSA-N
+JIM ?                acedrg               202         "dictionary generator"                  
+JIM ?                acedrg_database      11          "data source"                           
+JIM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+JIM ?                refmac5              5.8.0189    "optimization tool"                     

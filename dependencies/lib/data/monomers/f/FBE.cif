@@ -1,0 +1,162 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FBE      FBE '1-FORMYL-4-AMINO-2-BUTENE           ' non-polymer        16   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FBE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FBE           O      O    O         0.000      0.000    0.000    0.000
+ FBE           C      C    C1        0.000     -1.001    0.459    0.493
+ FBE           H      H    H         0.000     -0.969    0.876    1.486
+ FBE           C1     C    CH2       0.000     -2.295    0.449   -0.278
+ FBE           H11    H    H         0.000     -2.131   -0.009   -1.256
+ FBE           H12    H    H         0.000     -2.646    1.475   -0.412
+ FBE           C2     C    C1        0.000     -3.327   -0.341    0.483
+ FBE           H2     H    H         0.000     -3.151   -1.379    0.709
+ FBE           C3     C    C1        0.000     -4.439    0.233    0.868
+ FBE           H3     H    H         0.000     -4.616    1.271    0.641
+ FBE           C4     C    CH2       0.000     -5.471   -0.557    1.630
+ FBE           H41    H    H         0.000     -5.119   -1.582    1.763
+ FBE           H42    H    H         0.000     -6.409   -0.565    1.070
+ FBE           N      N    NH2       0.000     -5.690    0.060    2.943
+ FBE           HN2    H    H         0.000     -5.176    0.892    3.209
+ FBE           HN1    H    H         0.000     -6.357   -0.341    3.592
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FBE      O      n/a    C      START
+ FBE      C      O      C1     .
+ FBE      H      C      .      .
+ FBE      C1     C      C2     .
+ FBE      H11    C1     .      .
+ FBE      H12    C1     .      .
+ FBE      C2     C1     C3     .
+ FBE      H2     C2     .      .
+ FBE      C3     C2     C4     .
+ FBE      H3     C3     .      .
+ FBE      C4     C3     N      .
+ FBE      H41    C4     .      .
+ FBE      H42    C4     .      .
+ FBE      N      C4     HN1    .
+ FBE      HN2    N      .      .
+ FBE      HN1    N      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FBE       C         O         double    1.220     0.020     1.220     0.020     
+FBE       C1        C         single    1.510     0.020     1.510     0.020     
+FBE       H         C         single    1.082     0.013     0.975     0.010     
+FBE       C2        C1        single    1.510     0.020     1.510     0.020     
+FBE       H11       C1        single    1.089     0.010     0.989     0.005     
+FBE       H12       C1        single    1.089     0.010     0.989     0.005     
+FBE       C3        C2        double    1.330     0.020     1.330     0.020     
+FBE       H2        C2        single    1.082     0.013     0.975     0.010     
+FBE       C4        C3        single    1.510     0.020     1.510     0.020     
+FBE       H3        C3        single    1.082     0.013     0.975     0.010     
+FBE       N         C4        single    1.450     0.020     1.450     0.020     
+FBE       H41       C4        single    1.089     0.010     0.989     0.005     
+FBE       H42       C4        single    1.089     0.010     0.989     0.005     
+FBE       HN1       N         single    1.036     0.016     0.914     0.007     
+FBE       HN2       N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FBE      O      C      H       123.000    3.000
+ FBE      O      C      C1      120.500    3.000
+ FBE      H      C      C1      120.000    3.000
+ FBE      C      C1     H11     109.470    3.000
+ FBE      C      C1     H12     109.470    3.000
+ FBE      C      C1     C2      109.470    3.000
+ FBE      H11    C1     H12     107.900    3.000
+ FBE      H11    C1     C2      109.470    3.000
+ FBE      H12    C1     C2      109.470    3.000
+ FBE      C1     C2     H2      120.000    3.000
+ FBE      C1     C2     C3      120.000    3.000
+ FBE      H2     C2     C3      120.000    3.000
+ FBE      C2     C3     H3      120.000    3.000
+ FBE      C2     C3     C4      120.000    3.000
+ FBE      H3     C3     C4      120.000    3.000
+ FBE      C3     C4     H41     109.470    3.000
+ FBE      C3     C4     H42     109.470    3.000
+ FBE      C3     C4     N       111.600    3.000
+ FBE      H41    C4     H42     107.900    3.000
+ FBE      H41    C4     N       109.470    3.000
+ FBE      H42    C4     N       109.470    3.000
+ FBE      C4     N      HN2     120.000    3.000
+ FBE      C4     N      HN1     120.000    3.000
+ FBE      HN2    N      HN1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FBE      var_1    O      C      C1     C2       120.012   20.000   1
+ FBE      var_2    C      C1     C2     C3       120.042   20.000   1
+ FBE      CONST_1  C1     C2     C3     C4      -179.947    0.000   0
+ FBE      var_3    C2     C3     C4     N        119.963   20.000   1
+ FBE      var_4    C3     C4     N      HN1      179.966   20.000   1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FBE      plan-1    C         0.020
+ FBE      plan-1    O         0.020
+ FBE      plan-1    C1        0.020
+ FBE      plan-1    H         0.020
+ FBE      plan-2    C2        0.020
+ FBE      plan-2    C1        0.020
+ FBE      plan-2    C3        0.020
+ FBE      plan-2    H2        0.020
+ FBE      plan-2    C4        0.020
+ FBE      plan-2    H3        0.020
+ FBE      plan-3    N         0.020
+ FBE      plan-3    C4        0.020
+ FBE      plan-3    HN1       0.020
+ FBE      plan-3    HN2       0.020
+# ------------------------------------------------------

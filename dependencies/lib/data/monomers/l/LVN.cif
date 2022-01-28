@@ -1,0 +1,183 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LVN     LVN     "(3S)-4-oxo-L-valine"     peptide     18     9     .
+#
+data_comp_LVN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LVN     C       C       C       0       -44.010     -30.055     -30.541
+LVN     N       N       NT3     1       -44.514     -28.055     -29.200
+LVN     O       O       O       0       -42.767     -29.989     -30.464
+LVN     CA      C       CH1     0       -44.785     -28.730     -30.500
+LVN     CB      C       CH1     0       -44.450     -27.843     -31.732
+LVN     CG1     C       C1      0       -44.759     -28.537     -33.024
+LVN     OG1     O       O       0       -45.826     -28.893     -33.399
+LVN     CG2     C       CH3     0       -45.159     -26.485     -31.674
+LVN     OXT     O       OC      -1      -44.679     -31.101     -30.649
+LVN     H       H       H       0       -43.704     -27.639     -29.227
+LVN     H2      H       H       0       -44.511     -28.663     -28.519
+LVN     H3      H       H       0       -45.158     -27.436     -29.027
+LVN     HA      H       H       0       -45.749     -28.931     -30.549
+LVN     HB      H       H       0       -43.479     -27.679     -31.709
+LVN     HG11    H       H       0       -44.008     -28.711     -33.607
+LVN     HG21    H       H       0       -45.015     -26.007     -32.509
+LVN     HG22    H       H       0       -44.801     -25.961     -30.936
+LVN     HG23    H       H       0       -46.113     -26.621     -31.540
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+LVN      N      n/a    CA     START
+LVN      H      N      .      .
+LVN      H2     N      .      .
+LVN      H3     N      .      .
+LVN      CA     N      C      .
+LVN      HA     CA     .      .
+LVN      CB     CA     CG1    .
+LVN      HB     CB     .      .
+LVN      CG2    CB     HG21   .
+LVN      HG23   CG2    .      .
+LVN      HG22   CG2    .      .
+LVN      HG21   CG2    .      .
+LVN      CG1    CB     OG1    .
+LVN      HG11   CG1    .      .
+LVN      OG1    CG1    .      .
+LVN      C      CA     OXT    .
+LVN      O      C      .      .
+LVN      OXT    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LVN       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+LVN       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+LVN       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+LVN       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+LVN       CA        CB        SINGLE    n         1.548     0.016     1.548     0.016     
+LVN       CB        CG1       SINGLE    n         1.498     0.010     1.498     0.010     
+LVN       CB        CG2       SINGLE    n         1.532     0.014     1.532     0.014     
+LVN       CG1       OG1       DOUBLE    n         1.186     0.020     1.186     0.020     
+LVN       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+LVN       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+LVN       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+LVN       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+LVN       CB        HB        SINGLE    n         1.089     0.010     0.985     0.020     
+LVN       CG1       HG11      SINGLE    n         1.082     0.013     0.967     0.020     
+LVN       CG2       HG21      SINGLE    n         1.089     0.010     0.973     0.014     
+LVN       CG2       HG22      SINGLE    n         1.089     0.010     0.973     0.014     
+LVN       CG2       HG23      SINGLE    n         1.089     0.010     0.973     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LVN           O           C          CA     117.133    1.50
+LVN           O           C         OXT     125.734    1.50
+LVN          CA           C         OXT     117.133    1.50
+LVN          CA           N           H     110.089    1.83
+LVN          CA           N          H2     110.089    1.83
+LVN          CA           N          H3     110.089    1.83
+LVN           H           N          H2     109.028    2.41
+LVN           H           N          H3     109.028    2.41
+LVN          H2           N          H3     109.028    2.41
+LVN           C          CA           N     108.763    1.50
+LVN           C          CA          CB     110.967    2.64
+LVN           C          CA          HA     108.542    1.50
+LVN           N          CA          CB     112.810    3.00
+LVN           N          CA          HA     108.396    1.50
+LVN          CB          CA          HA     107.007    2.25
+LVN          CA          CB         CG1     110.967    2.64
+LVN          CA          CB         CG2     111.865    1.50
+LVN          CA          CB          HB     107.007    2.25
+LVN         CG1          CB         CG2     110.920    1.69
+LVN         CG1          CB          HB     107.537    1.66
+LVN         CG2          CB          HB     108.016    1.51
+LVN          CB         CG1         OG1     126.676    1.92
+LVN          CB         CG1        HG11     116.277    1.50
+LVN         OG1         CG1        HG11     117.045    1.69
+LVN          CB         CG2        HG21     109.591    1.50
+LVN          CB         CG2        HG22     109.591    1.50
+LVN          CB         CG2        HG23     109.591    1.50
+LVN        HG21         CG2        HG22     109.411    1.50
+LVN        HG21         CG2        HG23     109.411    1.50
+LVN        HG22         CG2        HG23     109.411    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LVN             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+LVN             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+LVN            sp3_sp3_10           C          CA          CB         CG1     180.000   10.00     3
+LVN             sp2_sp3_7         OG1         CG1          CB          CA       0.000   10.00     6
+LVN            sp3_sp3_19          CA          CB         CG2        HG21     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+LVN    chir_1    CA    N    C    CB    both
+LVN    chir_2    CB    CG1    CA    CG2    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LVN    plan-1           C   0.020
+LVN    plan-1          CA   0.020
+LVN    plan-1           O   0.020
+LVN    plan-1         OXT   0.020
+LVN    plan-2          CB   0.020
+LVN    plan-2         CG1   0.020
+LVN    plan-2        HG11   0.020
+LVN    plan-2         OG1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LVN SMILES_CANONICAL CACTVS               3.352 "C[C@H](C=O)[C@H](N)C(O)=O"
+LVN SMILES           CACTVS               3.352 "C[CH](C=O)[CH](N)C(O)=O"
+LVN SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C[C@H](C=O)[C@@H](C(=O)O)N"
+LVN SMILES           "OpenEye OEToolkits" 1.7.0 "CC(C=O)C(C(=O)O)N"
+LVN InChI            InChI                1.03  "InChI=1S/C5H9NO3/c1-3(2-7)4(6)5(8)9/h2-4H,6H2,1H3,(H,8,9)/t3-,4+/m1/s1"
+LVN InChIKey         InChI                1.03  JHWQDNUTTOUUKV-DMTCNVIQSA-N
+LVN ?                acedrg               196         "dictionary generator"
+LVN ?                acedrg_database      11          "data source"
+LVN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LVN ?                refmac5              5.8.0222    "optimization tool"

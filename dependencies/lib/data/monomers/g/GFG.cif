@@ -1,0 +1,451 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GFG      GFG '"ALPHA-D-GLUCOPYRANOSYL-(1->3)-ALPHA' pyranose           66  34 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GFG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GFG           C1     C    CH1       0.000      0.000    0.000    0.000
+ GFG           H1     H    H         0.000     -1.061   -0.249    0.141
+ GFG           O1     O    O2        0.000      0.079    1.105   -0.899
+ GFG           C22    C    CT        0.000     -0.458    0.771   -2.177
+ GFG           C12    C    CH2       0.000     -0.233    1.932   -3.143
+ GFG           H121   H    H         0.000     -0.757    2.820   -2.783
+ GFG           H122   H    H         0.000     -0.607    1.667   -4.134
+ GFG           O12    O    OH1       0.000      1.157    2.199   -3.218
+ GFG           HO12   H    H         0.000      1.642    1.364   -3.235
+ GFG           O52    O    O2        0.000      0.193   -0.395   -2.721
+ GFG           C52    C    CH1       0.000     -0.800   -1.386   -3.031
+ GFG           H52    H    H         0.000     -0.825   -2.137   -2.229
+ GFG           C62    C    CH2       0.000     -0.446   -2.065   -4.342
+ GFG           H621   H    H         0.000     -0.387   -1.322   -5.139
+ GFG           H622   H    H         0.000     -1.208   -2.807   -4.592
+ GFG           O62    O    OH1       0.000      0.810   -2.706   -4.198
+ GFG           HO62   H    H         0.000      1.514   -2.080   -4.410
+ GFG           C42    C    CH1       0.000     -2.129   -0.653   -3.073
+ GFG           H42    H    H         0.000     -2.277   -0.168   -4.048
+ GFG           O42    O    OH1       0.000     -3.214   -1.508   -2.767
+ GFG           HO42   H    H         0.000     -4.015   -0.980   -2.657
+ GFG           C32    C    CH1       0.000     -1.925    0.377   -1.987
+ GFG           H32    H    H         0.000     -2.060   -0.089   -1.001
+ GFG           O13    O    O2        0.000     -2.825    1.460   -2.134
+ GFG           C13    C    CH1       0.000     -3.639    1.620   -0.973
+ GFG           H13    H    H         0.000     -4.233    0.707   -0.821
+ GFG           O53    O    O2        0.000     -2.826    1.846    0.177
+ GFG           C23    C    CH1       0.000     -4.584    2.800   -1.204
+ GFG           H23    H    H         0.000     -5.249    2.562   -2.047
+ GFG           O23    O    OH1       0.000     -3.825    3.964   -1.531
+ GFG           HO23   H    H         0.000     -3.459    3.870   -2.421
+ GFG           C33    C    CH1       0.000     -5.438    3.078    0.036
+ GFG           H33    H    H         0.000     -5.944    4.046   -0.093
+ GFG           O33    O    OH1       0.000     -6.423    2.055    0.144
+ GFG           HO33   H    H         0.000     -6.373    1.654    1.022
+ GFG           C43    C    CH1       0.000     -4.591    3.130    1.313
+ GFG           H43    H    H         0.000     -5.255    3.079    2.188
+ GFG           O43    O    OH1       0.000     -3.898    4.382    1.324
+ GFG           HO43   H    H         0.000     -3.757    4.664    2.237
+ GFG           C53    C    CH1       0.000     -3.549    2.001    1.406
+ GFG           H53    H    H         0.000     -2.816    2.311    2.164
+ GFG           C63    C    CH2       0.000     -4.128    0.667    1.877
+ GFG           H631   H    H         0.000     -4.906    0.335    1.186
+ GFG           H632   H    H         0.000     -4.554    0.779    2.876
+ GFG           O63    O    OH1       0.000     -3.085   -0.289    1.911
+ GFG           HO63   H    H         0.000     -3.132   -0.839    1.118
+ GFG           O5     O    O2        0.000      0.662   -1.156   -0.519
+ GFG           C5     C    CH1       0.000      2.076   -0.976   -0.702
+ GFG           H5     H    H         0.000      2.239   -0.149   -1.407
+ GFG           C4     C    CH1       0.000      2.756   -0.633    0.629
+ GFG           H4     H    H         0.000      3.820   -0.422    0.452
+ GFG           O4     O    OH1       0.000      2.635   -1.752    1.512
+ GFG           HO4    H    H         0.000      1.700   -1.919    1.693
+ GFG           C3     C    CH1       0.000      2.093    0.594    1.263
+ GFG           H3     H    H         0.000      2.294    1.475    0.637
+ GFG           O3     O    OH1       0.000      2.623    0.815    2.567
+ GFG           HO3    H    H         0.000      2.121    0.298    3.210
+ GFG           C2     C    CH1       0.000      0.582    0.384    1.362
+ GFG           H2     H    H         0.000      0.382   -0.427    2.076
+ GFG           O2     O    OH1       0.000     -0.052    1.572    1.826
+ GFG           HO2    H    H         0.000     -0.889    1.343    2.251
+ GFG           C6     C    CH2       0.000      2.618   -2.262   -1.317
+ GFG           H61    H    H         0.000      2.104   -2.470   -2.258
+ GFG           H62    H    H         0.000      2.466   -3.096   -0.629
+ GFG           O6     O    OH1       0.000      4.004   -2.096   -1.562
+ GFG           HO6    H    H         0.000      4.437   -2.934   -1.326
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GFG      C1     n/a    O5     START
+ GFG      H1     C1     .      .
+ GFG      O1     C1     C22    .
+ GFG      C22    O1     C32    .
+ GFG      C12    C22    O12    .
+ GFG      H121   C12    .      .
+ GFG      H122   C12    .      .
+ GFG      O12    C12    HO12   .
+ GFG      HO12   O12    .      .
+ GFG      O52    C22    C52    .
+ GFG      C52    O52    C42    .
+ GFG      H52    C52    .      .
+ GFG      C62    C52    O62    .
+ GFG      H621   C62    .      .
+ GFG      H622   C62    .      .
+ GFG      O62    C62    HO62   .
+ GFG      HO62   O62    .      .
+ GFG      C42    C52    O42    .
+ GFG      H42    C42    .      .
+ GFG      O42    C42    HO42   .
+ GFG      HO42   O42    .      .
+ GFG      C32    C22    O13    .
+ GFG      H32    C32    .      .
+ GFG      O13    C32    C13    .
+ GFG      C13    O13    C23    .
+ GFG      H13    C13    .      .
+ GFG      O53    C13    .      .
+ GFG      C23    C13    C33    .
+ GFG      H23    C23    .      .
+ GFG      O23    C23    HO23   .
+ GFG      HO23   O23    .      .
+ GFG      C33    C23    C43    .
+ GFG      H33    C33    .      .
+ GFG      O33    C33    HO33   .
+ GFG      HO33   O33    .      .
+ GFG      C43    C33    C53    .
+ GFG      H43    C43    .      .
+ GFG      O43    C43    HO43   .
+ GFG      HO43   O43    .      .
+ GFG      C53    C43    C63    .
+ GFG      H53    C53    .      .
+ GFG      C63    C53    O63    .
+ GFG      H631   C63    .      .
+ GFG      H632   C63    .      .
+ GFG      O63    C63    HO63   .
+ GFG      HO63   O63    .      .
+ GFG      O5     C1     .      END
+ GFG      C5     O5     C6     .
+ GFG      H5     C5     .      .
+ GFG      C4     C5     C3     .
+ GFG      H4     C4     .      .
+ GFG      O4     C4     HO4    .
+ GFG      HO4    O4     .      .
+ GFG      C3     C4     C2     .
+ GFG      H3     C3     .      .
+ GFG      O3     C3     HO3    .
+ GFG      HO3    O3     .      .
+ GFG      C2     C3     O2     .
+ GFG      H2     C2     .      .
+ GFG      O2     C2     HO2    .
+ GFG      HO2    O2     .      .
+ GFG      C6     C5     O6     .
+ GFG      H61    C6     .      .
+ GFG      H62    C6     .      .
+ GFG      O6     C6     .      .
+ GFG      HO6    O6     .      .
+ GFG      C53    O53    .    ADD
+ GFG      C32    C42    .    ADD
+ GFG      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GFG       O63       C63       single    1.432     0.020     1.432     0.020     
+GFG       HO63      O63       single    0.970     0.012     0.839     0.014     
+GFG       C63       C53       single    1.524     0.020     1.524     0.020     
+GFG       H631      C63       single    1.089     0.010     0.989     0.005     
+GFG       H632      C63       single    1.089     0.010     0.989     0.005     
+GFG       C53       C43       single    1.524     0.020     1.524     0.020     
+GFG       C53       O53       single    1.426     0.020     1.426     0.020     
+GFG       H53       C53       single    1.089     0.010     0.989     0.005     
+GFG       O53       C13       single    1.426     0.020     1.426     0.020     
+GFG       O43       C43       single    1.432     0.020     1.432     0.020     
+GFG       C43       C33       single    1.524     0.020     1.524     0.020     
+GFG       H43       C43       single    1.089     0.010     0.989     0.005     
+GFG       HO43      O43       single    0.970     0.012     0.839     0.014     
+GFG       O33       C33       single    1.432     0.020     1.432     0.020     
+GFG       C33       C23       single    1.524     0.020     1.524     0.020     
+GFG       H33       C33       single    1.089     0.010     0.989     0.005     
+GFG       HO33      O33       single    0.970     0.012     0.839     0.014     
+GFG       C23       C13       single    1.524     0.020     1.524     0.020     
+GFG       O23       C23       single    1.432     0.020     1.432     0.020     
+GFG       H23       C23       single    1.089     0.010     0.989     0.005     
+GFG       HO23      O23       single    0.970     0.012     0.839     0.014     
+GFG       C13       O13       single    1.426     0.020     1.426     0.020     
+GFG       H13       C13       single    1.089     0.010     0.989     0.005     
+GFG       O13       C32       single    1.426     0.020     1.426     0.020     
+GFG       C32       C22       single    1.524     0.020     1.524     0.020     
+GFG       C32       C42       single    1.524     0.020     1.524     0.020     
+GFG       H32       C32       single    1.089     0.010     0.989     0.005     
+GFG       C42       C52       single    1.524     0.020     1.524     0.020     
+GFG       O42       C42       single    1.432     0.020     1.432     0.020     
+GFG       H42       C42       single    1.089     0.010     0.989     0.005     
+GFG       HO42      O42       single    0.970     0.012     0.839     0.014     
+GFG       C52       O52       single    1.426     0.020     1.426     0.020     
+GFG       C62       C52       single    1.524     0.020     1.524     0.020     
+GFG       H52       C52       single    1.089     0.010     0.989     0.005     
+GFG       O52       C22       single    1.426     0.020     1.426     0.020     
+GFG       O62       C62       single    1.432     0.020     1.432     0.020     
+GFG       H621      C62       single    1.089     0.010     0.989     0.005     
+GFG       H622      C62       single    1.089     0.010     0.989     0.005     
+GFG       HO62      O62       single    0.970     0.012     0.839     0.014     
+GFG       C22       O1        single    1.426     0.020     1.426     0.020     
+GFG       C12       C22       single    1.524     0.020     1.524     0.020     
+GFG       O12       C12       single    1.432     0.020     1.432     0.020     
+GFG       H121      C12       single    1.089     0.010     0.989     0.005     
+GFG       H122      C12       single    1.089     0.010     0.989     0.005     
+GFG       HO12      O12       single    0.970     0.012     0.839     0.014     
+GFG       O1        C1        single    1.426     0.020     1.426     0.020     
+GFG       O5        C1        single    1.426     0.020     1.426     0.020     
+GFG       C1        C2        single    1.524     0.020     1.524     0.020     
+GFG       H1        C1        single    1.089     0.010     0.989     0.005     
+GFG       C2        C3        single    1.524     0.020     1.524     0.020     
+GFG       O2        C2        single    1.432     0.020     1.432     0.020     
+GFG       H2        C2        single    1.089     0.010     0.989     0.005     
+GFG       HO2       O2        single    0.970     0.012     0.839     0.014     
+GFG       C3        C4        single    1.524     0.020     1.524     0.020     
+GFG       O3        C3        single    1.432     0.020     1.432     0.020     
+GFG       H3        C3        single    1.089     0.010     0.989     0.005     
+GFG       HO3       O3        single    0.970     0.012     0.839     0.014     
+GFG       O4        C4        single    1.432     0.020     1.432     0.020     
+GFG       C4        C5        single    1.524     0.020     1.524     0.020     
+GFG       H4        C4        single    1.089     0.010     0.989     0.005     
+GFG       HO4       O4        single    0.970     0.012     0.839     0.014     
+GFG       C6        C5        single    1.524     0.020     1.524     0.020     
+GFG       C5        O5        single    1.426     0.020     1.426     0.020     
+GFG       H5        C5        single    1.089     0.010     0.989     0.005     
+GFG       O6        C6        single    1.432     0.020     1.432     0.020     
+GFG       H61       C6        single    1.089     0.010     0.989     0.005     
+GFG       H62       C6        single    1.089     0.010     0.989     0.005     
+GFG       HO6       O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GFG      H1     C1     O1      109.470    3.000
+ GFG      H1     C1     O5      109.470    3.000
+ GFG      O1     C1     O5      109.470    3.000
+ GFG      H1     C1     C2      108.340    3.000
+ GFG      O1     C1     C2      109.470    3.000
+ GFG      O5     C1     C2      109.470    3.000
+ GFG      C1     O1     C22     111.800    3.000
+ GFG      O1     C22    O52     109.500    3.000
+ GFG      O1     C22    C12     109.470    3.000
+ GFG      O1     C22    C32     109.470    3.000
+ GFG      O52    C22    C12     109.470    3.000
+ GFG      O52    C22    C32     109.470    3.000
+ GFG      C12    C22    C32     111.000    3.000
+ GFG      C22    O52    C52     111.800    3.000
+ GFG      O52    C52    H52     109.470    3.000
+ GFG      O52    C52    C62     109.470    3.000
+ GFG      O52    C52    C42     109.470    3.000
+ GFG      H52    C52    C62     108.340    3.000
+ GFG      H52    C52    C42     108.340    3.000
+ GFG      C62    C52    C42     111.000    3.000
+ GFG      C52    C62    H621    109.470    3.000
+ GFG      C52    C62    H622    109.470    3.000
+ GFG      C52    C62    O62     109.470    3.000
+ GFG      H621   C62    H622    107.900    3.000
+ GFG      H621   C62    O62     109.470    3.000
+ GFG      H622   C62    O62     109.470    3.000
+ GFG      C62    O62    HO62    109.470    3.000
+ GFG      C52    C42    H42     108.340    3.000
+ GFG      C52    C42    O42     109.470    3.000
+ GFG      C52    C42    C32     111.000    3.000
+ GFG      H42    C42    O42     109.470    3.000
+ GFG      H42    C42    C32     108.340    3.000
+ GFG      O42    C42    C32     109.470    3.000
+ GFG      C42    O42    HO42    109.470    3.000
+ GFG      C22    C12    H121    109.470    3.000
+ GFG      C22    C12    H122    109.470    3.000
+ GFG      C22    C12    O12     109.470    3.000
+ GFG      H121   C12    H122    107.900    3.000
+ GFG      H121   C12    O12     109.470    3.000
+ GFG      H122   C12    O12     109.470    3.000
+ GFG      C12    O12    HO12    109.470    3.000
+ GFG      C22    C32    H32     108.340    3.000
+ GFG      C22    C32    O13     109.470    3.000
+ GFG      C22    C32    C42     111.000    3.000
+ GFG      H32    C32    O13     109.470    3.000
+ GFG      H32    C32    C42     108.340    3.000
+ GFG      O13    C32    C42     109.470    3.000
+ GFG      C32    O13    C13     111.800    3.000
+ GFG      O13    C13    H13     109.470    3.000
+ GFG      O13    C13    O53     109.470    3.000
+ GFG      O13    C13    C23     109.470    3.000
+ GFG      H13    C13    O53     109.470    3.000
+ GFG      H13    C13    C23     108.340    3.000
+ GFG      O53    C13    C23     109.470    3.000
+ GFG      C13    O53    C53     111.800    3.000
+ GFG      C13    C23    H23     108.340    3.000
+ GFG      C13    C23    O23     109.470    3.000
+ GFG      C13    C23    C33     111.000    3.000
+ GFG      H23    C23    O23     109.470    3.000
+ GFG      H23    C23    C33     108.340    3.000
+ GFG      O23    C23    C33     109.470    3.000
+ GFG      C23    O23    HO23    109.470    3.000
+ GFG      C23    C33    H33     108.340    3.000
+ GFG      C23    C33    O33     109.470    3.000
+ GFG      C23    C33    C43     111.000    3.000
+ GFG      H33    C33    O33     109.470    3.000
+ GFG      H33    C33    C43     108.340    3.000
+ GFG      O33    C33    C43     109.470    3.000
+ GFG      C33    O33    HO33    109.470    3.000
+ GFG      C33    C43    H43     108.340    3.000
+ GFG      C33    C43    O43     109.470    3.000
+ GFG      C33    C43    C53     111.000    3.000
+ GFG      H43    C43    O43     109.470    3.000
+ GFG      H43    C43    C53     108.340    3.000
+ GFG      O43    C43    C53     109.470    3.000
+ GFG      C43    O43    HO43    109.470    3.000
+ GFG      C43    C53    H53     108.340    3.000
+ GFG      C43    C53    C63     111.000    3.000
+ GFG      C43    C53    O53     109.470    3.000
+ GFG      H53    C53    C63     108.340    3.000
+ GFG      H53    C53    O53     109.470    3.000
+ GFG      C63    C53    O53     109.470    3.000
+ GFG      C53    C63    H631    109.470    3.000
+ GFG      C53    C63    H632    109.470    3.000
+ GFG      C53    C63    O63     109.470    3.000
+ GFG      H631   C63    H632    107.900    3.000
+ GFG      H631   C63    O63     109.470    3.000
+ GFG      H632   C63    O63     109.470    3.000
+ GFG      C63    O63    HO63    109.470    3.000
+ GFG      C1     O5     C5      111.800    3.000
+ GFG      O5     C5     H5      109.470    3.000
+ GFG      O5     C5     C4      109.470    3.000
+ GFG      O5     C5     C6      109.470    3.000
+ GFG      H5     C5     C4      108.340    3.000
+ GFG      H5     C5     C6      108.340    3.000
+ GFG      C4     C5     C6      111.000    3.000
+ GFG      C5     C4     H4      108.340    3.000
+ GFG      C5     C4     O4      109.470    3.000
+ GFG      C5     C4     C3      111.000    3.000
+ GFG      H4     C4     O4      109.470    3.000
+ GFG      H4     C4     C3      108.340    3.000
+ GFG      O4     C4     C3      109.470    3.000
+ GFG      C4     O4     HO4     109.470    3.000
+ GFG      C4     C3     H3      108.340    3.000
+ GFG      C4     C3     O3      109.470    3.000
+ GFG      C4     C3     C2      111.000    3.000
+ GFG      H3     C3     O3      109.470    3.000
+ GFG      H3     C3     C2      108.340    3.000
+ GFG      O3     C3     C2      109.470    3.000
+ GFG      C3     O3     HO3     109.470    3.000
+ GFG      C3     C2     H2      108.340    3.000
+ GFG      C3     C2     O2      109.470    3.000
+ GFG      C3     C2     C1      111.000    3.000
+ GFG      H2     C2     O2      109.470    3.000
+ GFG      H2     C2     C1      108.340    3.000
+ GFG      O2     C2     C1      109.470    3.000
+ GFG      C2     O2     HO2     109.470    3.000
+ GFG      C5     C6     H61     109.470    3.000
+ GFG      C5     C6     H62     109.470    3.000
+ GFG      C5     C6     O6      109.470    3.000
+ GFG      H61    C6     H62     107.900    3.000
+ GFG      H61    C6     O6      109.470    3.000
+ GFG      H62    C6     O6      109.470    3.000
+ GFG      C6     O6     HO6     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GFG      var_1    O5     C1     O1     C22       56.714   20.000   1
+ GFG      var_2    C1     O1     C22    C32       60.013   20.000   1
+ GFG      var_3    O1     C22    O52    C52      120.000   20.000   1
+ GFG      var_4    C22    O52    C52    C42       30.000   20.000   1
+ GFG      var_5    O52    C52    C62    O62       61.231   20.000   3
+ GFG      var_6    C52    C62    O62    HO62     -87.621   20.000   1
+ GFG      var_7    O52    C52    C42    O42     -150.000   20.000   3
+ GFG      var_8    C52    C42    O42    HO42     170.465   20.000   1
+ GFG      var_9    O1     C22    C12    O12       57.976   20.000   1
+ GFG      var_10   C22    C12    O12    HO12      40.653   20.000   1
+ GFG      var_11   O1     C22    C32    O13       90.000   20.000   1
+ GFG      var_12   C22    C32    C42    C52       30.000   20.000   3
+ GFG      var_13   C22    C32    O13    C13     -123.685   20.000   1
+ GFG      var_14   C32    O13    C13    C23     -179.875   20.000   1
+ GFG      var_15   O13    C13    O53    C53      180.000   20.000   1
+ GFG      var_16   O13    C13    C23    C33      180.000   20.000   3
+ GFG      var_17   C13    C23    O23    HO23      71.554   20.000   1
+ GFG      var_18   C13    C23    C33    C43       60.000   20.000   3
+ GFG      var_19   C23    C33    O33    HO33     126.003   20.000   1
+ GFG      var_20   C23    C33    C43    C53      -30.000   20.000   3
+ GFG      var_21   C33    C43    O43    HO43     149.800   20.000   1
+ GFG      var_22   C33    C43    C53    C63      -90.000   20.000   3
+ GFG      var_23   C43    C53    O53    C13      -60.000   20.000   1
+ GFG      var_24   C43    C53    C63    O63      179.512   20.000   3
+ GFG      var_25   C53    C63    O63    HO63    -100.129   20.000   1
+ GFG      var_26   C1     O5     C5     C6       180.000   20.000   1
+ GFG      var_27   O5     C5     C4     C3       -60.000   20.000   3
+ GFG      var_28   C5     C4     O4     HO4      -62.423   20.000   1
+ GFG      var_29   C5     C4     C3     C2        60.000   20.000   3
+ GFG      var_30   C4     C3     O3     HO3      -87.293   20.000   1
+ GFG      var_31   C4     C3     C2     O2       180.000   20.000   3
+ GFG      var_32   C3     C2     C1     O5        60.000   20.000   3
+ GFG      var_33   C3     C2     O2     HO2     -155.098   20.000   1
+ GFG      var_34   O5     C5     C6     O6       177.641   20.000   3
+ GFG      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GFG      chir_01  C53    C63    O53    C43       negativ
+ GFG      chir_02  C43    C53    O43    C33       negativ
+ GFG      chir_03  C33    C43    O33    C23       positiv
+ GFG      chir_04  C23    C33    O23    C13       negativ
+ GFG      chir_05  C13    O53    C23    O13       negativ
+ GFG      chir_06  C32    O13    C42    C22       negativ
+ GFG      chir_07  C42    C32    O42    C52       positiv
+ GFG      chir_08  C52    C42    O52    C62       positiv
+ GFG      chir_09  C22    C32    O52    C12       negativ
+ GFG      chir_10  C1     O1     C2     O5        positiv
+ GFG      chir_11  C2     C1     O2     C3        positiv
+ GFG      chir_12  C3     C2     O3     C4        negativ
+ GFG      chir_13  C4     C3     O4     C5        negativ
+ GFG      chir_14  C5     C4     O5     C6        positiv
+# ------------------------------------------------------

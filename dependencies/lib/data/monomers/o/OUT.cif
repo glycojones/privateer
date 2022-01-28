@@ -1,0 +1,101 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OUT     OUT     "CARBAMICACID"     NON-POLYMER     7     4     .     
+#
+data_comp_OUT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OUT     N       N       NH2     0       25.023      17.851      61.349      
+OUT     C       C       C       0       25.342      19.153      61.401      
+OUT     O1      O       O       0       25.770      19.783      60.461      
+OUT     O2      O       OH1     0       25.148      19.719      62.594      
+OUT     HN1     H       H       0       25.124      17.406      60.592      
+OUT     HN2     H       H       0       24.713      17.429      62.064      
+OUT     HXT     H       H       0       24.561      20.367      62.533      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OUT       N         C         SINGLE    n         1.335     0.020     1.335     0.020     
+OUT       C         O1        DOUBLE    n         1.210     0.012     1.210     0.012     
+OUT       C         O2        SINGLE    n         1.331     0.020     1.331     0.020     
+OUT       N         HN1       SINGLE    n         1.016     0.010     0.884     0.020     
+OUT       N         HN2       SINGLE    n         1.016     0.010     0.884     0.020     
+OUT       O2        HXT       SINGLE    n         0.970     0.012     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OUT           C           N         HN1     119.996    2.41
+OUT           C           N         HN2     119.996    2.41
+OUT         HN1           N         HN2     120.007    3.00
+OUT           N           C          O1     124.470    1.50
+OUT           N           C          O2     113.385    3.00
+OUT          O1           C          O2     122.144    1.50
+OUT           C          O2         HXT     110.339    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OUT             sp2_sp2_3          O1           C           N         HN1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OUT    plan-1           C   0.020
+OUT    plan-1         HN1   0.020
+OUT    plan-1         HN2   0.020
+OUT    plan-1           N   0.020
+OUT    plan-2           C   0.020
+OUT    plan-2           N   0.020
+OUT    plan-2          O1   0.020
+OUT    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OUT SMILES           ACDLabs              10.04 "O=C(O)N"
+OUT SMILES_CANONICAL CACTVS               3.341 "NC(O)=O"
+OUT SMILES           CACTVS               3.341 "NC(O)=O"
+OUT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=O)(N)O"
+OUT SMILES           "OpenEye OEToolkits" 1.5.0 "C(=O)(N)O"
+OUT InChI            InChI                1.03  "InChI=1S/CH3NO2/c2-1(3)4/h2H2,(H,3,4)"
+OUT InChIKey         InChI                1.03  KXDHJXZQYSOELW-UHFFFAOYSA-N
+OUT ?                acedrg               190         "dictionary generator"                  
+OUT ?                acedrg_database      11          "data source"                           
+OUT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OUT ?                refmac5              5.8.0158    "optimization tool"                     

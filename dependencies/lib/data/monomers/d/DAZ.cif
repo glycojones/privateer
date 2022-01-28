@@ -1,0 +1,118 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DAZ      DAZ 'diaminozinc                         ' non-polymer         7   3 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DAZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DAZ           N2     N    NH2       0.000      0.000    0.000    0.000
+ DAZ           H21    H    H         0.000      0.341   -0.949   -0.008
+ DAZ           H22    H    H         0.000      0.356    0.520   -0.788
+ DAZ           ZN     ZN   ZN        0.000     -1.789    0.038    0.036
+ DAZ           N1     N    NH2       0.000     -3.579    0.076    0.072
+ DAZ           H12    H    H         0.000     -3.967   -0.443   -0.701
+ DAZ           H11    H    H         0.000     -3.920    1.024    0.080
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DAZ      N2     n/a    ZN     START
+ DAZ      H21    N2     .      .
+ DAZ      H22    N2     .      .
+ DAZ      ZN     N2     N1     .
+ DAZ      N1     ZN     H11    .
+ DAZ      H12    N1     .      .
+ DAZ      H11    N1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DAZ       N1        ZN        single    2.150     0.020     2.150     0.020     
+DAZ       ZN        N2        single    2.150     0.020     2.150     0.020     
+DAZ       H11       N1        single    1.036     0.016     0.914     0.007     
+DAZ       H12       N1        single    1.036     0.016     0.914     0.007     
+DAZ       H21       N2        single    1.036     0.016     0.914     0.007     
+DAZ       H22       N2        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DAZ      H21    N2     H22     120.000    3.000
+ DAZ      H21    N2     ZN      120.000    3.000
+ DAZ      H22    N2     ZN      120.000    3.000
+ DAZ      N2     ZN     N1      180.000    3.000
+ DAZ      ZN     N1     H12     120.000    3.000
+ DAZ      ZN     N1     H11     120.000    3.000
+ DAZ      H12    N1     H11     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DAZ      var_1    H21    N2     ZN     N1       180.000   20.000   1
+ DAZ      var_2    H12    N1     ZN     N2       180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DAZ      chir_01  ZN     N2     N1     .         cross0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DAZ      plan-1    N1        0.020
+ DAZ      plan-1    ZN        0.020
+ DAZ      plan-1    H11       0.020
+ DAZ      plan-1    H12       0.020
+ DAZ      plan-2    N2        0.020
+ DAZ      plan-2    ZN        0.020
+ DAZ      plan-2    H21       0.020
+ DAZ      plan-2    H22       0.020
+# ------------------------------------------------------

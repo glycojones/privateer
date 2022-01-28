@@ -1,0 +1,196 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AEA      AEA '(2-AMINO-2-CARBAMOYL-ETHYLSULFANYL)-' non-polymer        20  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AEA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AEA           O2     O    OC       -0.500      0.000    0.000    0.000
+ AEA           C5     C    C         0.000     -1.007    0.271   -0.691
+ AEA           O1     O    OC       -0.500     -0.875    0.865   -1.784
+ AEA           C4     C    CH2       0.000     -2.380   -0.120   -0.208
+ AEA           H41    H    H         0.000     -2.579    0.363    0.751
+ AEA           H42    H    H         0.000     -2.426   -1.204   -0.084
+ AEA           S1     S    S2        0.000     -3.621    0.406   -1.420
+ AEA           C3     C    CH2       0.000     -5.130   -0.176   -0.601
+ AEA           H31    H    H         0.000     -5.225    0.310    0.372
+ AEA           H32    H    H         0.000     -5.073   -1.258   -0.462
+ AEA           C1     C    CH1       0.000     -6.344    0.166   -1.464
+ AEA           H11    H    H         0.000     -6.400    1.255   -1.602
+ AEA           N1     N    NH2       0.000     -6.215   -0.487   -2.774
+ AEA           HN12   H    H         0.000     -5.365   -0.982   -3.017
+ AEA           HN11   H    H         0.000     -6.975   -0.446   -3.443
+ AEA           C2     C    C         0.000     -7.599   -0.317   -0.785
+ AEA           O3     O    O         0.000     -8.014   -1.436   -1.003
+ AEA           N2     N    NH2       0.000     -8.258    0.491    0.067
+ AEA           HN22   H    H         0.000     -7.915    1.426    0.254
+ AEA           HN21   H    H         0.000     -9.102    0.170    0.526
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AEA      O2     n/a    C5     START
+ AEA      C5     O2     C4     .
+ AEA      O1     C5     .      .
+ AEA      C4     C5     S1     .
+ AEA      H41    C4     .      .
+ AEA      H42    C4     .      .
+ AEA      S1     C4     C3     .
+ AEA      C3     S1     C1     .
+ AEA      H31    C3     .      .
+ AEA      H32    C3     .      .
+ AEA      C1     C3     C2     .
+ AEA      H11    C1     .      .
+ AEA      N1     C1     HN11   .
+ AEA      HN12   N1     .      .
+ AEA      HN11   N1     .      .
+ AEA      C2     C1     N2     .
+ AEA      O3     C2     .      .
+ AEA      N2     C2     HN21   .
+ AEA      HN22   N2     .      .
+ AEA      HN21   N2     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AEA       N1        C1        single    1.450     0.020     1.450     0.020     
+AEA       HN11      N1        single    1.036     0.016     0.914     0.007     
+AEA       HN12      N1        single    1.036     0.016     0.914     0.007     
+AEA       C1        C3        single    1.524     0.020     1.524     0.020     
+AEA       C2        C1        single    1.500     0.020     1.500     0.020     
+AEA       H11       C1        single    1.089     0.010     0.989     0.005     
+AEA       C3        S1        single    1.762     0.020     1.762     0.020     
+AEA       H31       C3        single    1.089     0.010     0.989     0.005     
+AEA       H32       C3        single    1.089     0.010     0.989     0.005     
+AEA       N2        C2        single    1.332     0.020     1.332     0.020     
+AEA       O3        C2        double    1.220     0.020     1.220     0.020     
+AEA       HN21      N2        single    1.016     0.010     0.899     0.007     
+AEA       HN22      N2        single    1.016     0.010     0.899     0.007     
+AEA       S1        C4        single    1.762     0.020     1.762     0.020     
+AEA       C4        C5        single    1.510     0.020     1.510     0.020     
+AEA       H41       C4        single    1.089     0.010     0.989     0.005     
+AEA       H42       C4        single    1.089     0.010     0.989     0.005     
+AEA       O1        C5        deloc     1.250     0.020     1.250     0.020     
+AEA       C5        O2        deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AEA      O2     C5     O1      123.000    3.000
+ AEA      O2     C5     C4      118.500    3.000
+ AEA      O1     C5     C4      118.500    3.000
+ AEA      C5     C4     H41     109.470    3.000
+ AEA      C5     C4     H42     109.470    3.000
+ AEA      C5     C4     S1      109.500    3.000
+ AEA      H41    C4     H42     107.900    3.000
+ AEA      H41    C4     S1      109.500    3.000
+ AEA      H42    C4     S1      109.500    3.000
+ AEA      C4     S1     C3      100.034    3.000
+ AEA      S1     C3     H31     109.500    3.000
+ AEA      S1     C3     H32     109.500    3.000
+ AEA      S1     C3     C1      109.500    3.000
+ AEA      H31    C3     H32     107.900    3.000
+ AEA      H31    C3     C1      109.470    3.000
+ AEA      H32    C3     C1      109.470    3.000
+ AEA      C3     C1     H11     108.340    3.000
+ AEA      C3     C1     N1      109.470    3.000
+ AEA      C3     C1     C2      109.470    3.000
+ AEA      H11    C1     N1      109.470    3.000
+ AEA      H11    C1     C2      108.810    3.000
+ AEA      N1     C1     C2      109.470    3.000
+ AEA      C1     N1     HN12    120.000    3.000
+ AEA      C1     N1     HN11    120.000    3.000
+ AEA      HN12   N1     HN11    120.000    3.000
+ AEA      C1     C2     O3      120.500    3.000
+ AEA      C1     C2     N2      120.000    3.000
+ AEA      O3     C2     N2      123.000    3.000
+ AEA      C2     N2     HN22    120.000    3.000
+ AEA      C2     N2     HN21    120.000    3.000
+ AEA      HN22   N2     HN21    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AEA      var_1    O2     C5     C4     S1      -179.982   20.000   3
+ AEA      var_2    C5     C4     S1     C3      -179.945   20.000   1
+ AEA      var_3    C4     S1     C3     C1      -179.974   20.000   1
+ AEA      var_4    S1     C3     C1     C2       179.987   20.000   3
+ AEA      var_5    C3     C1     N1     HN11     173.838   20.000   1
+ AEA      var_6    C3     C1     C2     N2        89.883   20.000   3
+ AEA      CONST_1  C1     C2     N2     HN21     180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AEA      chir_01  C1     N1     C3     C2        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AEA      plan-1    N1        0.020
+ AEA      plan-1    C1        0.020
+ AEA      plan-1    HN11      0.020
+ AEA      plan-1    HN12      0.020
+ AEA      plan-2    C2        0.020
+ AEA      plan-2    C1        0.020
+ AEA      plan-2    N2        0.020
+ AEA      plan-2    O3        0.020
+ AEA      plan-2    HN22      0.020
+ AEA      plan-2    HN21      0.020
+ AEA      plan-3    N2        0.020
+ AEA      plan-3    C2        0.020
+ AEA      plan-3    HN21      0.020
+ AEA      plan-3    HN22      0.020
+ AEA      plan-4    C5        0.020
+ AEA      plan-4    C4        0.020
+ AEA      plan-4    O1        0.020
+ AEA      plan-4    O2        0.020
+# ------------------------------------------------------

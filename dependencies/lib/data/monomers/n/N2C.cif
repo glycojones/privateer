@@ -1,0 +1,185 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+N2C     N2C     N,S-DIMETHYLCYSTEINE     M-peptide     19     9     .
+#
+data_comp_N2C
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+N2C     N       N       NT1     0       2.953       -1.589      -0.390
+N2C     CA      C       CH1     0       1.654       -1.108      -0.882
+N2C     CB      C       CH2     0       1.017       -0.179      0.146
+N2C     SG      S       S2      0       -0.750      0.111       -0.141
+N2C     CD      C       CH3     0       -1.096      1.321       1.135
+N2C     CN      C       CH3     0       3.487       -2.748      -1.110
+N2C     C       C       C       0       1.738       -0.408      -2.251
+N2C     O       O       O       0       2.553       0.530       -2.363
+N2C     OXT     O       OC      -1      0.987       -0.827      -3.154
+N2C     H       H       H       0       3.537       -0.921      -0.463
+N2C     HA      H       H       0       1.052       -1.888      -0.983
+N2C     HB2     H       H       0       1.481       0.673       0.130
+N2C     HB3     H       H       0       1.130       -0.565      1.029
+N2C     HD1     H       H       0       -2.004      1.635       1.042
+N2C     HD2     H       H       0       -0.487      2.064       1.047
+N2C     HD3     H       H       0       -0.984      0.913       2.003
+N2C     HN1     H       H       0       4.267       -3.101      -0.640
+N2C     HN2     H       H       0       3.753       -2.489      -2.013
+N2C     HN3     H       H       0       2.809       -3.450      -1.167
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+N2C      N      n/a    CA     START
+N2C      H      N      .      .
+N2C      CN     N      HN1    .
+N2C      HN3    CN     .      .
+N2C      HN2    CN     .      .
+N2C      HN1    CN     .      .
+N2C      CA     N      C      .
+N2C      HA     CA     .      .
+N2C      CB     CA     SG     .
+N2C      HB2    CB     .      .
+N2C      HB3    CB     .      .
+N2C      SG     CB     CD     .
+N2C      CD     SG     HD1    .
+N2C      HD3    CD     .      .
+N2C      HD2    CD     .      .
+N2C      HD1    CD     .      .
+N2C      C      CA     .      END
+N2C      O      C      .      .
+N2C      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+N2C       N         CA        SINGLE    n         1.468     0.014     1.468     0.014     
+N2C       N         CN        SINGLE    n         1.463     0.015     1.463     0.015     
+N2C       CA        CB        SINGLE    n         1.525     0.010     1.525     0.010     
+N2C       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+N2C       CB        SG        SINGLE    n         1.813     0.011     1.813     0.011     
+N2C       SG        CD        SINGLE    n         1.792     0.010     1.792     0.010     
+N2C       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+N2C       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+N2C       N         H         SINGLE    n         1.036     0.016     0.890     0.020     
+N2C       CA        HA        SINGLE    n         1.089     0.010     0.990     0.020     
+N2C       CB        HB2       SINGLE    n         1.089     0.010     0.970     0.010     
+N2C       CB        HB3       SINGLE    n         1.089     0.010     0.970     0.010     
+N2C       CD        HD1       SINGLE    n         1.089     0.010     0.965     0.017     
+N2C       CD        HD2       SINGLE    n         1.089     0.010     0.965     0.017     
+N2C       CD        HD3       SINGLE    n         1.089     0.010     0.965     0.017     
+N2C       CN        HN1       SINGLE    n         1.089     0.010     0.977     0.013     
+N2C       CN        HN2       SINGLE    n         1.089     0.010     0.977     0.013     
+N2C       CN        HN3       SINGLE    n         1.089     0.010     0.977     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+N2C          CA           N          CN     112.615    2.70
+N2C          CA           N           H     106.958    3.00
+N2C          CN           N           H     108.144    3.00
+N2C           N          CA          CB     111.883    2.59
+N2C           N          CA           C     113.481    2.07
+N2C           N          CA          HA     108.712    1.50
+N2C          CB          CA           C     110.594    1.50
+N2C          CB          CA          HA     107.802    1.50
+N2C           C          CA          HA     108.169    1.50
+N2C          CA          CB          SG     112.239    3.00
+N2C          CA          CB         HB2     108.695    1.50
+N2C          CA          CB         HB3     108.695    1.50
+N2C          SG          CB         HB2     108.654    1.50
+N2C          SG          CB         HB3     108.654    1.50
+N2C         HB2          CB         HB3     107.812    1.50
+N2C          CB          SG          CD     100.600    1.50
+N2C          SG          CD         HD1     109.425    1.50
+N2C          SG          CD         HD2     109.425    1.50
+N2C          SG          CD         HD3     109.425    1.50
+N2C         HD1          CD         HD2     109.509    1.50
+N2C         HD1          CD         HD3     109.509    1.50
+N2C         HD2          CD         HD3     109.509    1.50
+N2C           N          CN         HN1     110.215    1.50
+N2C           N          CN         HN2     110.215    1.50
+N2C           N          CN         HN3     110.215    1.50
+N2C         HN1          CN         HN2     109.279    1.79
+N2C         HN1          CN         HN3     109.279    1.79
+N2C         HN2          CN         HN3     109.279    1.79
+N2C          CA           C           O     117.226    1.56
+N2C          CA           C         OXT     117.226    1.56
+N2C           O           C         OXT     125.548    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+N2C             sp3_sp3_1          CB          CA           N          CN     180.000   10.00     3
+N2C             sp3_sp3_7         HN1          CN           N          CA     180.000   10.00     3
+N2C            sp3_sp3_13           N          CA          CB          SG     180.000   10.00     3
+N2C             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+N2C            sp3_sp3_22          CA          CB          SG          CD     180.000   10.00     3
+N2C            sp3_sp3_25         HD1          CD          SG          CB     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+N2C    chir_1    N    CA    CN    H    negative
+N2C    chir_2    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+N2C    plan-1           C   0.020
+N2C    plan-1          CA   0.020
+N2C    plan-1           O   0.020
+N2C    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+N2C SMILES           ACDLabs              10.04 "O=C(O)C(NC)CSC"
+N2C SMILES_CANONICAL CACTVS               3.341 "CN[C@@H](CSC)C(O)=O"
+N2C SMILES           CACTVS               3.341 "CN[CH](CSC)C(O)=O"
+N2C SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CN[C@@H](CSC)C(=O)O"
+N2C SMILES           "OpenEye OEToolkits" 1.5.0 "CNC(CSC)C(=O)O"
+N2C InChI            InChI                1.03  "InChI=1S/C5H11NO2S/c1-6-4(3-9-2)5(7)8/h4,6H,3H2,1-2H3,(H,7,8)/t4-/m0/s1"
+N2C InChIKey         InChI                1.03  WQSNCKZPJSHACB-BYPYZUCNSA-N
+N2C ?                acedrg               196         "dictionary generator"
+N2C ?                acedrg_database      11          "data source"
+N2C ?                rdkit                2017.03.2   "Chemoinformatics tool"
+N2C ?                refmac5              5.8.0222    "optimization tool"

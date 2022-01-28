@@ -1,0 +1,200 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5SP      5SP '5-O-phosphono-D-xylulose            ' non-polymer        23  14 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_5SP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 5SP           O12    O    OP       -0.666      0.000    0.000    0.000
+ 5SP           P9     P    P         0.000     -1.277   -0.647    0.490
+ 5SP           O10    O    OP       -0.666     -1.294   -0.645    2.003
+ 5SP           O11    O    OP       -0.666     -1.345   -2.072   -0.013
+ 5SP           O8     O    O2        0.000     -2.544    0.178   -0.063
+ 5SP           C7     C    CH2       0.000     -3.890   -0.120    0.310
+ 5SP           H7     H    H         0.000     -3.998   -0.020    1.392
+ 5SP           H7A    H    H         0.000     -4.130   -1.144    0.015
+ 5SP           C6     C    CH1       0.000     -4.842    0.851   -0.391
+ 5SP           H6     H    H         0.000     -4.543    1.884   -0.165
+ 5SP           O14    O    OH1       0.000     -4.784    0.637   -1.803
+ 5SP           HO14   H    H         0.000     -5.048   -0.272   -2.002
+ 5SP           C5     C    CH1       0.000     -6.270    0.613    0.103
+ 5SP           H5     H    H         0.000     -6.335    0.863    1.171
+ 5SP           O13    O    OH1       0.000     -6.616   -0.761   -0.086
+ 5SP           HO13   H    H         0.000     -6.559   -0.981   -1.025
+ 5SP           C3     C    C         0.000     -7.222    1.482   -0.676
+ 5SP           O4     O    O         0.000     -7.925    0.995   -1.529
+ 5SP           C2     C    CH2       0.000     -7.299    2.960   -0.390
+ 5SP           H2     H    H         0.000     -6.321    3.415   -0.565
+ 5SP           H2A    H    H         0.000     -7.590    3.115    0.651
+ 5SP           O1     O    OH1       0.000     -8.267    3.563   -1.252
+ 5SP           HO1    H    H         0.000     -8.315    4.511   -1.068
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 5SP      O12    n/a    P9     START
+ 5SP      P9     O12    O8     .
+ 5SP      O10    P9     .      .
+ 5SP      O11    P9     .      .
+ 5SP      O8     P9     C7     .
+ 5SP      C7     O8     C6     .
+ 5SP      H7     C7     .      .
+ 5SP      H7A    C7     .      .
+ 5SP      C6     C7     C5     .
+ 5SP      H6     C6     .      .
+ 5SP      O14    C6     HO14   .
+ 5SP      HO14   O14    .      .
+ 5SP      C5     C6     C3     .
+ 5SP      H5     C5     .      .
+ 5SP      O13    C5     HO13   .
+ 5SP      HO13   O13    .      .
+ 5SP      C3     C5     C2     .
+ 5SP      O4     C3     .      .
+ 5SP      C2     C3     O1     .
+ 5SP      H2     C2     .      .
+ 5SP      H2A    C2     .      .
+ 5SP      O1     C2     HO1    .
+ 5SP      HO1    O1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5SP       O1        C2        single    1.432     0.020     1.432     0.020     
+5SP       C2        C3        single    1.510     0.020     1.510     0.020     
+5SP       O4        C3        double    1.220     0.020     1.220     0.020     
+5SP       C3        C5        single    1.500     0.020     1.500     0.020     
+5SP       C5        C6        single    1.524     0.020     1.524     0.020     
+5SP       O13       C5        single    1.432     0.020     1.432     0.020     
+5SP       C6        C7        single    1.524     0.020     1.524     0.020     
+5SP       O14       C6        single    1.432     0.020     1.432     0.020     
+5SP       C7        O8        single    1.426     0.020     1.426     0.020     
+5SP       O8        P9        single    1.610     0.020     1.610     0.020     
+5SP       O10       P9        deloc     1.510     0.020     1.510     0.020     
+5SP       O11       P9        deloc     1.510     0.020     1.510     0.020     
+5SP       P9        O12       deloc     1.510     0.020     1.510     0.020     
+5SP       HO1       O1        single    0.970     0.012     0.839     0.014     
+5SP       H2        C2        single    1.089     0.010     0.989     0.005     
+5SP       H2A       C2        single    1.089     0.010     0.989     0.005     
+5SP       H5        C5        single    1.089     0.010     0.989     0.005     
+5SP       H6        C6        single    1.089     0.010     0.989     0.005     
+5SP       H7        C7        single    1.089     0.010     0.989     0.005     
+5SP       H7A       C7        single    1.089     0.010     0.989     0.005     
+5SP       HO13      O13       single    0.970     0.012     0.839     0.014     
+5SP       HO14      O14       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 5SP      O12    P9     O10     119.900    3.000
+ 5SP      O12    P9     O11     119.900    3.000
+ 5SP      O12    P9     O8      108.200    3.000
+ 5SP      O10    P9     O11     119.900    3.000
+ 5SP      O10    P9     O8      108.200    3.000
+ 5SP      O11    P9     O8      108.200    3.000
+ 5SP      P9     O8     C7      120.500    3.000
+ 5SP      O8     C7     H7      109.470    3.000
+ 5SP      O8     C7     H7A     109.470    3.000
+ 5SP      O8     C7     C6      109.470    3.000
+ 5SP      H7     C7     H7A     107.900    3.000
+ 5SP      H7     C7     C6      109.470    3.000
+ 5SP      H7A    C7     C6      109.470    3.000
+ 5SP      C7     C6     H6      108.340    3.000
+ 5SP      C7     C6     O14     109.470    3.000
+ 5SP      C7     C6     C5      111.000    3.000
+ 5SP      H6     C6     O14     109.470    3.000
+ 5SP      H6     C6     C5      108.340    3.000
+ 5SP      O14    C6     C5      109.470    3.000
+ 5SP      C6     O14    HO14    109.470    3.000
+ 5SP      C6     C5     H5      108.340    3.000
+ 5SP      C6     C5     O13     109.470    3.000
+ 5SP      C6     C5     C3      109.470    3.000
+ 5SP      H5     C5     O13     109.470    3.000
+ 5SP      H5     C5     C3      108.810    3.000
+ 5SP      O13    C5     C3      109.470    3.000
+ 5SP      C5     O13    HO13    109.470    3.000
+ 5SP      C5     C3     O4      120.500    3.000
+ 5SP      C5     C3     C2      120.000    3.000
+ 5SP      O4     C3     C2      120.500    3.000
+ 5SP      C3     C2     H2      109.470    3.000
+ 5SP      C3     C2     H2A     109.470    3.000
+ 5SP      C3     C2     O1      109.500    3.000
+ 5SP      H2     C2     H2A     107.900    3.000
+ 5SP      H2     C2     O1      109.470    3.000
+ 5SP      H2A    C2     O1      109.470    3.000
+ 5SP      C2     O1     HO1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 5SP      var_1    O12    P9     O8     C7      -175.010   20.000   1
+ 5SP      var_2    P9     O8     C7     C6       179.988   20.000   1
+ 5SP      var_3    O8     C7     C6     C5      -175.007   20.000   3
+ 5SP      var_4    C7     C6     O14    HO14      60.061   20.000   1
+ 5SP      var_5    C7     C6     C5     C3      -174.985   20.000   3
+ 5SP      var_6    C6     C5     O13    HO13     -60.020   20.000   1
+ 5SP      var_7    C6     C5     C3     C2       -75.011   20.000   3
+ 5SP      var_8    C5     C3     C2     O1       179.983   20.000   3
+ 5SP      var_9    C3     C2     O1     HO1      179.988   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 5SP      chir_01  C5     C3     C6     O13       positiv
+ 5SP      chir_02  C6     C5     C7     O14       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 5SP      plan-1    C3        0.020
+ 5SP      plan-1    C2        0.020
+ 5SP      plan-1    O4        0.020
+ 5SP      plan-1    C5        0.020
+# ------------------------------------------------------

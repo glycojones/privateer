@@ -1,0 +1,159 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BHA     BHA      "2-HYDROXY-4-AMINOBENZOIC ACID"     NON-POLYMER     17     11     .     
+#
+data_comp_BHA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BHA     "C1'"   C       C       0       17.042      97.104      45.631      
+BHA     "O1'"   O       O       0       18.042      97.812      45.415      
+BHA     "O2'"   O       OC      -1      15.894      97.553      45.801      
+BHA     C1      C       CR6     0       17.232      95.615      45.691      
+BHA     C2      C       CR6     0       18.196      95.024      46.534      
+BHA     C3      C       CR16    0       18.356      93.645      46.574      
+BHA     C4      C       CR6     0       17.562      92.806      45.778      
+BHA     C5      C       CR16    0       16.594      93.395      44.932      
+BHA     C6      C       CR16    0       16.444      94.761      44.899      
+BHA     O2      O       OH1     0       19.004      95.767      47.335      
+BHA     N4      N       NH2     0       17.724      91.438      45.821      
+BHA     H3      H       H       0       19.011      93.275      47.149      
+BHA     H5      H       H       0       16.053      92.846      44.391      
+BHA     H6      H       H       0       15.794      95.138      44.329      
+BHA     HO2     H       H       0       18.733      95.683      48.145      
+BHA     HN41    H       H       0       17.230      90.923      45.311      
+BHA     HN42    H       H       0       18.320      91.082      46.358      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BHA       "C1'"     "O1'"     DOUBLE    n         1.244     0.020     1.244     0.020     
+BHA       "C1'"     "O2'"     SINGLE    n         1.244     0.020     1.244     0.020     
+BHA       "C1'"     C1        SINGLE    n         1.498     0.020     1.498     0.020     
+BHA       C1        C2        DOUBLE    y         1.401     0.010     1.401     0.010     
+BHA       C1        C6        SINGLE    y         1.398     0.011     1.398     0.011     
+BHA       C2        C3        SINGLE    y         1.381     0.010     1.381     0.010     
+BHA       C2        O2        SINGLE    n         1.358     0.010     1.358     0.010     
+BHA       C3        C4        DOUBLE    y         1.396     0.010     1.396     0.010     
+BHA       C4        C5        SINGLE    y         1.408     0.010     1.408     0.010     
+BHA       C4        N4        SINGLE    n         1.375     0.018     1.375     0.018     
+BHA       C5        C6        DOUBLE    y         1.368     0.010     1.368     0.010     
+BHA       C3        H3        SINGLE    n         1.082     0.013     0.947     0.020     
+BHA       C5        H5        SINGLE    n         1.082     0.013     0.942     0.020     
+BHA       C6        H6        SINGLE    n         1.082     0.013     0.943     0.020     
+BHA       O2        HO2       SINGLE    n         0.970     0.012     0.858     0.020     
+BHA       N4        HN41      SINGLE    n         1.016     0.010     0.877     0.020     
+BHA       N4        HN42      SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BHA       "O1'"       "C1'"       "O2'"     124.103    1.50
+BHA       "O1'"       "C1'"          C1     117.949    1.50
+BHA       "O2'"       "C1'"          C1     117.949    1.50
+BHA       "C1'"          C1          C2     121.186    1.50
+BHA       "C1'"          C1          C6     121.050    1.50
+BHA          C2          C1          C6     117.764    1.50
+BHA          C1          C2          C3     120.783    1.50
+BHA          C1          C2          O2     121.518    1.50
+BHA          C3          C2          O2     117.699    1.50
+BHA          C2          C3          C4     120.542    1.50
+BHA          C2          C3          H3     119.195    1.50
+BHA          C4          C3          H3     120.264    1.63
+BHA          C3          C4          C5     118.702    1.50
+BHA          C3          C4          N4     120.518    1.50
+BHA          C5          C4          N4     120.780    1.50
+BHA          C4          C5          C6     120.368    1.50
+BHA          C4          C5          H5     119.528    1.50
+BHA          C6          C5          H5     120.104    1.50
+BHA          C1          C6          C5     121.841    1.50
+BHA          C1          C6          H6     118.941    1.50
+BHA          C5          C6          H6     119.219    1.50
+BHA          C2          O2         HO2     108.378    3.00
+BHA          C4          N4        HN41     119.811    2.73
+BHA          C4          N4        HN42     119.811    2.73
+BHA        HN41          N4        HN42     120.379    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BHA             sp2_sp2_1          C2          C1       "C1'"       "O1'"     180.000   10.00     2
+BHA       const_sp2_sp2_4       "C1'"          C1          C2          O2       0.000   10.00     2
+BHA              const_23       "C1'"          C1          C6          C5     180.000   10.00     2
+BHA       const_sp2_sp2_7          O2          C2          C3          C4     180.000   10.00     2
+BHA              const_10          C2          C3          C4          N4     180.000   10.00     2
+BHA             sp2_sp2_5          C3          C4          N4        HN41     180.000   10.00     2
+BHA              const_15          N4          C4          C5          C6     180.000   10.00     2
+BHA              const_17          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BHA    plan-1          C1   0.020
+BHA    plan-1       "C1'"   0.020
+BHA    plan-1          C2   0.020
+BHA    plan-1          C3   0.020
+BHA    plan-1          C4   0.020
+BHA    plan-1          C5   0.020
+BHA    plan-1          C6   0.020
+BHA    plan-1          H3   0.020
+BHA    plan-1          H5   0.020
+BHA    plan-1          H6   0.020
+BHA    plan-1          N4   0.020
+BHA    plan-1          O2   0.020
+BHA    plan-2          C1   0.020
+BHA    plan-2       "C1'"   0.020
+BHA    plan-2       "O1'"   0.020
+BHA    plan-2       "O2'"   0.020
+BHA    plan-3          C4   0.020
+BHA    plan-3        HN41   0.020
+BHA    plan-3        HN42   0.020
+BHA    plan-3          N4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BHA SMILES           ACDLabs              10.04 "O=C(O)c1ccc(cc1O)N"
+BHA SMILES_CANONICAL CACTVS               3.341 "Nc1ccc(C(O)=O)c(O)c1"
+BHA SMILES           CACTVS               3.341 "Nc1ccc(C(O)=O)c(O)c1"
+BHA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1N)O)C(=O)O"
+BHA SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1N)O)C(=O)O"
+BHA InChI            InChI                1.03  "InChI=1S/C7H7NO3/c8-4-1-2-5(7(10)11)6(9)3-4/h1-3,9H,8H2,(H,10,11)"
+BHA InChIKey         InChI                1.03  WUBBRNOQWQTFEX-UHFFFAOYSA-N
+BHA ?                acedrg               202         "dictionary generator"                  
+BHA ?                acedrg_database      11          "data source"                           
+BHA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BHA ?                refmac5              5.8.0189    "optimization tool"                     

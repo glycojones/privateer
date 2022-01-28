@@ -1,0 +1,242 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3FM      3FM '3-O-FORMAMIDO-ALPHA-D-MANNOPYRANOSID' pyranose           28  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_3FM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 3FM           C1     C    CH1       0.000      0.000    0.000    0.000
+ 3FM           H1     H    H         0.000      0.771   -0.400   -0.674
+ 3FM           O1     O    OH1       0.000      0.122    1.422    0.070
+ 3FM           HO1    H    H         0.000      0.997    1.653    0.409
+ 3FM           C2     C    CH1       0.000     -1.385   -0.365   -0.537
+ 3FM           H2     H    H         0.000     -1.508    0.047   -1.548
+ 3FM           O2     O    OH1       0.000     -1.522   -1.787   -0.580
+ 3FM           HO2    H    H         0.000     -0.848   -2.158   -1.165
+ 3FM           C3     C    CH1       0.000     -2.452    0.225    0.389
+ 3FM           H3     H    H         0.000     -2.418    1.322    0.338
+ 3FM           O3     O    O2        0.000     -3.765   -0.241   -0.019
+ 3FM           CA     C    C         0.000     -4.483    0.465   -0.912
+ 3FM           NCA    N    NH2       0.000     -5.701    0.032   -1.292
+ 3FM           HNC2   H    H         0.000     -6.082   -0.824   -0.908
+ 3FM           HNC1   H    H         0.000     -6.244    0.561   -1.964
+ 3FM           OCA    O    O         0.000     -4.033    1.494   -1.376
+ 3FM           C4     C    CH1       0.000     -2.168   -0.231    1.824
+ 3FM           H4     H    H         0.000     -2.309   -1.319    1.897
+ 3FM           O4     O    OH1       0.000     -3.058    0.426    2.728
+ 3FM           HO4    H    H         0.000     -2.870    0.138    3.632
+ 3FM           C5     C    CH1       0.000     -0.722    0.121    2.183
+ 3FM           H5     H    H         0.000     -0.577    1.206    2.088
+ 3FM           C6     C    CH2       0.000     -0.438   -0.305    3.624
+ 3FM           H61    H    H         0.000     -0.579   -1.384    3.718
+ 3FM           H62    H    H         0.000     -1.125    0.211    4.298
+ 3FM           O6     O    OH1       0.000      0.909    0.032    3.964
+ 3FM           H6     H    H         0.000      1.087   -0.237    4.875
+ 3FM           O5     O    O2        0.000      0.175   -0.553    1.303
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 3FM      C1     n/a    C2     START
+ 3FM      H1     C1     .      .
+ 3FM      O1     C1     HO1    .
+ 3FM      HO1    O1     .      .
+ 3FM      C2     C1     C3     .
+ 3FM      H2     C2     .      .
+ 3FM      O2     C2     HO2    .
+ 3FM      HO2    O2     .      .
+ 3FM      C3     C2     C4     .
+ 3FM      H3     C3     .      .
+ 3FM      O3     C3     CA     .
+ 3FM      CA     O3     OCA    .
+ 3FM      NCA    CA     HNC1   .
+ 3FM      HNC2   NCA    .      .
+ 3FM      HNC1   NCA    .      .
+ 3FM      OCA    CA     .      .
+ 3FM      C4     C3     C5     .
+ 3FM      H4     C4     .      .
+ 3FM      O4     C4     HO4    .
+ 3FM      HO4    O4     .      .
+ 3FM      C5     C4     O5     .
+ 3FM      H5     C5     .      .
+ 3FM      C6     C5     O6     .
+ 3FM      H61    C6     .      .
+ 3FM      H62    C6     .      .
+ 3FM      O6     C6     H6     .
+ 3FM      H6     O6     .      .
+ 3FM      O5     C5     .      END
+ 3FM      O5     C1     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3FM       O5        C1        single    1.426     0.020     1.426     0.020     
+3FM       O5        C5        single    1.426     0.020     1.426     0.020     
+3FM       O1        C1        single    1.432     0.020     1.432     0.020     
+3FM       C2        C1        single    1.524     0.020     1.524     0.020     
+3FM       H1        C1        single    1.089     0.010     0.989     0.005     
+3FM       HO1       O1        single    0.970     0.012     0.839     0.014     
+3FM       O2        C2        single    1.432     0.020     1.432     0.020     
+3FM       C3        C2        single    1.524     0.020     1.524     0.020     
+3FM       H2        C2        single    1.089     0.010     0.989     0.005     
+3FM       HO2       O2        single    0.970     0.012     0.839     0.014     
+3FM       O3        C3        single    1.426     0.020     1.426     0.020     
+3FM       C4        C3        single    1.524     0.020     1.524     0.020     
+3FM       H3        C3        single    1.089     0.010     0.989     0.005     
+3FM       CA        O3        single    1.454     0.020     1.454     0.020     
+3FM       OCA       CA        double    1.220     0.020     1.220     0.020     
+3FM       NCA       CA        single    1.332     0.020     1.332     0.020     
+3FM       HNC1      NCA       single    1.016     0.010     0.899     0.007     
+3FM       HNC2      NCA       single    1.016     0.010     0.899     0.007     
+3FM       O4        C4        single    1.432     0.020     1.432     0.020     
+3FM       C5        C4        single    1.524     0.020     1.524     0.020     
+3FM       H4        C4        single    1.089     0.010     0.989     0.005     
+3FM       HO4       O4        single    0.970     0.012     0.839     0.014     
+3FM       C6        C5        single    1.524     0.020     1.524     0.020     
+3FM       H5        C5        single    1.089     0.010     0.989     0.005     
+3FM       O6        C6        single    1.432     0.020     1.432     0.020     
+3FM       H61       C6        single    1.089     0.010     0.989     0.005     
+3FM       H62       C6        single    1.089     0.010     0.989     0.005     
+3FM       H6        O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 3FM      H1     C1     O1      109.470    3.000
+ 3FM      H1     C1     C2      108.340    3.000
+ 3FM      O1     C1     C2      109.470    3.000
+ 3FM      H1     C1     O5      109.470    3.000
+ 3FM      O1     C1     O5      109.470    3.000
+ 3FM      C2     C1     O5      109.470    3.000
+ 3FM      C1     O1     HO1     109.470    3.000
+ 3FM      C1     C2     H2      108.340    3.000
+ 3FM      C1     C2     O2      109.470    3.000
+ 3FM      C1     C2     C3      111.000    3.000
+ 3FM      H2     C2     O2      109.470    3.000
+ 3FM      H2     C2     C3      108.340    3.000
+ 3FM      O2     C2     C3      109.470    3.000
+ 3FM      C2     O2     HO2     109.470    3.000
+ 3FM      C2     C3     H3      108.340    3.000
+ 3FM      C2     C3     O3      109.470    3.000
+ 3FM      C2     C3     C4      111.000    3.000
+ 3FM      H3     C3     O3      109.470    3.000
+ 3FM      H3     C3     C4      108.340    3.000
+ 3FM      O3     C3     C4      109.470    3.000
+ 3FM      C3     O3     CA      111.800    3.000
+ 3FM      O3     CA     NCA     120.000    3.000
+ 3FM      O3     CA     OCA     119.000    3.000
+ 3FM      NCA    CA     OCA     123.000    3.000
+ 3FM      CA     NCA    HNC2    120.000    3.000
+ 3FM      CA     NCA    HNC1    120.000    3.000
+ 3FM      HNC2   NCA    HNC1    120.000    3.000
+ 3FM      C3     C4     H4      108.340    3.000
+ 3FM      C3     C4     O4      109.470    3.000
+ 3FM      C3     C4     C5      111.000    3.000
+ 3FM      H4     C4     O4      109.470    3.000
+ 3FM      H4     C4     C5      108.340    3.000
+ 3FM      O4     C4     C5      109.470    3.000
+ 3FM      C4     O4     HO4     109.470    3.000
+ 3FM      C4     C5     H5      108.340    3.000
+ 3FM      C4     C5     C6      111.000    3.000
+ 3FM      C4     C5     O5      109.470    3.000
+ 3FM      H5     C5     C6      108.340    3.000
+ 3FM      H5     C5     O5      109.470    3.000
+ 3FM      C6     C5     O5      109.470    3.000
+ 3FM      C5     C6     H61     109.470    3.000
+ 3FM      C5     C6     H62     109.470    3.000
+ 3FM      C5     C6     O6      109.470    3.000
+ 3FM      H61    C6     H62     107.900    3.000
+ 3FM      H61    C6     O6      109.470    3.000
+ 3FM      H62    C6     O6      109.470    3.000
+ 3FM      C6     O6     H6      109.470    3.000
+ 3FM      C5     O5     C1      111.800    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 3FM      var_1    C2     C1     O1     HO1      179.991   20.000   1
+ 3FM      var_2    O1     C1     C2     C3       -60.000   20.000   3
+ 3FM      var_3    C1     C2     O2     HO2      -60.438   20.000   1
+ 3FM      var_4    C1     C2     C3     C4       -60.000   20.000   3
+ 3FM      var_5    C2     C3     O3     CA       -90.281   20.000   1
+ 3FM      var_6    C3     O3     CA     OCA       -0.098   20.000   1
+ 3FM      CONST_1  O3     CA     NCA    HNC1     180.000    0.000   0
+ 3FM      var_7    C2     C3     C4     C5        60.000   20.000   3
+ 3FM      var_8    C3     C4     O4     HO4     -179.628   20.000   1
+ 3FM      var_9    C3     C4     C5     O5       -60.000   20.000   3
+ 3FM      var_10   C4     C5     C6     O6      -179.561   20.000   3
+ 3FM      var_11   C5     C6     O6     H6       179.976   20.000   1
+ 3FM      var_12   C4     C5     O5     C1        60.000   20.000   1
+ 3FM      var_13   C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 3FM      chir_01  C1     O5     O1     C2        positiv
+ 3FM      chir_02  C2     C1     O2     C3        negativ
+ 3FM      chir_03  C3     C2     O3     C4        negativ
+ 3FM      chir_04  C4     C3     O4     C5        positiv
+ 3FM      chir_05  C5     O5     C4     C6        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 3FM      plan-1    CA        0.020
+ 3FM      plan-1    O3        0.020
+ 3FM      plan-1    OCA       0.020
+ 3FM      plan-1    NCA       0.020
+ 3FM      plan-1    HNC2      0.020
+ 3FM      plan-1    HNC1      0.020
+ 3FM      plan-2    NCA       0.020
+ 3FM      plan-2    CA        0.020
+ 3FM      plan-2    HNC1      0.020
+ 3FM      plan-2    HNC2      0.020
+# ------------------------------------------------------

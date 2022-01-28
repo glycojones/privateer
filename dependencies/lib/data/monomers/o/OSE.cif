@@ -1,0 +1,174 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OSE     OSE     O-SULFO-L-SERINE     peptide     17     11     .
+#
+data_comp_OSE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OSE     N       N       NT3     1       -0.902      -2.007      -1.543
+OSE     CA      C       CH1     0       -0.435      -2.152      -0.136
+OSE     CB      C       CH2     0       -0.561      -0.836      0.611
+OSE     OG      O       O2      0       0.049       -0.930      1.914
+OSE     C       C       C       0       -1.210      -3.273      0.570
+OSE     O       O       O       0       -2.450      -3.154      0.636
+OSE     S       S       S3      0       -0.062      0.347       2.867
+OSE     O1S     O       O       0       0.569       1.429       2.143
+OSE     O2S     O       O       0       -1.477      0.550       3.086
+OSE     O3S     O       OS      -1      0.652       -0.030      4.066
+OSE     OXT     O       OC      -1      -0.546      -4.224      1.027
+OSE     H       H       H       0       -1.142      -2.820      -1.879
+OSE     H2      H       H       0       -0.230      -1.662      -2.054
+OSE     H3      H       H       0       -1.621      -1.446      -1.576
+OSE     HA      H       H       0       0.526       -2.409      -0.158
+OSE     HB2     H       H       0       -1.511      -0.607      0.705
+OSE     HB3     H       H       0       -0.123      -0.126      0.093
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+OSE      N      n/a    CA     START
+OSE      H      N      .      .
+OSE      H2     N      .      .
+OSE      H3     N      .      .
+OSE      CA     N      C      .
+OSE      HA     CA     .      .
+OSE      CB     CA     OG     .
+OSE      HB2    CB     .      .
+OSE      HB3    CB     .      .
+OSE      OG     CB     S      .
+OSE      S      OG     O3S    .
+OSE      O1S    S      .      .
+OSE      O2S    S      .      .
+OSE      O3S    S      .      .
+OSE      C      CA     .      END
+OSE      O      C      .      .
+OSE      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OSE       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+OSE       CA        CB        SINGLE    n         1.515     0.017     1.515     0.017     
+OSE       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+OSE       CB        OG        SINGLE    n         1.437     0.020     1.437     0.020     
+OSE       OG        S         SINGLE    n         1.592     0.020     1.592     0.020     
+OSE       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+OSE       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+OSE       S         O1S       DOUBLE    n         1.446     0.016     1.446     0.016     
+OSE       S         O2S       DOUBLE    n         1.446     0.016     1.446     0.016     
+OSE       S         O3S       SINGLE    n         1.446     0.016     1.446     0.016     
+OSE       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+OSE       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+OSE       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+OSE       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+OSE       CB        HB2       SINGLE    n         1.089     0.010     0.982     0.020     
+OSE       CB        HB3       SINGLE    n         1.089     0.010     0.982     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OSE          CA           N           H     109.619    1.50
+OSE          CA           N          H2     109.619    1.50
+OSE          CA           N          H3     109.619    1.50
+OSE           H           N          H2     109.028    2.41
+OSE           H           N          H3     109.028    2.41
+OSE          H2           N          H3     109.028    2.41
+OSE           N          CA          CB     110.608    1.50
+OSE           N          CA           C     109.829    1.50
+OSE           N          CA          HA     108.049    1.50
+OSE          CB          CA           C     111.527    1.50
+OSE          CB          CA          HA     108.597    1.50
+OSE           C          CA          HA     108.255    1.50
+OSE          CA          CB          OG     110.589    2.35
+OSE          CA          CB         HB2     109.469    1.50
+OSE          CA          CB         HB3     109.469    1.50
+OSE          OG          CB         HB2     109.340    2.33
+OSE          OG          CB         HB3     109.340    2.33
+OSE         HB2          CB         HB3     108.319    1.50
+OSE          CB          OG           S     116.432    1.50
+OSE          CA           C           O     117.181    1.50
+OSE          CA           C         OXT     117.181    1.50
+OSE           O           C         OXT     125.637    1.50
+OSE          OG           S         O1S     105.233    2.47
+OSE          OG           S         O2S     105.233    2.47
+OSE          OG           S         O3S     105.233    2.47
+OSE         O1S           S         O2S     113.532    1.50
+OSE         O1S           S         O3S     113.532    1.50
+OSE         O2S           S         O3S     113.532    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OSE             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+OSE            sp3_sp3_10           N          CA          CB          OG     180.000   10.00     3
+OSE             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+OSE            sp3_sp3_19          CA          CB          OG           S     180.000   10.00     3
+OSE            sp3_sp3_22          CB          OG           S         O1S     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+OSE    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OSE    plan-1           C   0.020
+OSE    plan-1          CA   0.020
+OSE    plan-1           O   0.020
+OSE    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OSE SMILES           ACDLabs              10.04 "O=S(=O)(O)OCC(C(=O)O)N"
+OSE SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CO[S](O)(=O)=O)C(O)=O"
+OSE SMILES           CACTVS               3.341 "N[CH](CO[S](O)(=O)=O)C(O)=O"
+OSE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)OS(=O)(=O)O"
+OSE SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)OS(=O)(=O)O"
+OSE InChI            InChI                1.03  "InChI=1S/C3H7NO6S/c4-2(3(5)6)1-10-11(7,8)9/h2H,1,4H2,(H,5,6)(H,7,8,9)/t2-/m0/s1"
+OSE InChIKey         InChI                1.03  LFZGUGJDVUUGLK-REOHCLBHSA-N
+OSE ?                acedrg               196         "dictionary generator"
+OSE ?                acedrg_database      11          "data source"
+OSE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OSE ?                refmac5              5.8.0222    "optimization tool"

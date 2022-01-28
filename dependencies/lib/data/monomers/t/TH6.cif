@@ -1,0 +1,180 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TH6     TH6     4-HYDROXY-L-THREONINE     peptide   18     9     .
+#
+data_comp_TH6
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TH6     N       N       NT3     1       36.114      27.370      48.843
+TH6     CA      C       CH1     0       37.558      27.065      48.619
+TH6     CB      C       CH1     0       38.450      27.880      49.565
+TH6     OB1     O       OH1     0       38.072      29.251      49.451
+TH6     CG      C       CH2     0       39.945      27.765      49.318
+TH6     OG1     O       OH1     0       40.282      28.084      47.971
+TH6     C       C       C       0       37.803      25.558      48.778
+TH6     O       O       O       0       38.271      24.950      47.793
+TH6     OXT     O       OC      -1      37.516      25.051      49.881
+TH6     H       H       H       0       35.621      26.602      48.840
+TH6     H2      H       H       0       35.808      27.915      48.181
+TH6     H3      H       H       0       36.000      27.788      49.645
+TH6     HA      H       H       0       37.773      27.319      47.692
+TH6     HB      H       H       0       38.263      27.590      50.498
+TH6     HB1     H       H       0       38.379      29.682      50.113
+TH6     HG1C    H       H       0       40.246      26.846      49.520
+TH6     HG2C    H       H       0       40.424      28.383      49.923
+TH6     HG1     H       H       0       41.113      27.963      47.869
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+TH6      N      n/a    CA     START
+TH6      H      N      .      .
+TH6      H2     N      .      .
+TH6      H3     N      .      .
+TH6      CA     N      C      .
+TH6      HA     CA     .      .
+TH6      CB     CA     CG     .
+TH6      HB     CB     .      .
+TH6      OB1    CB     HB1    .
+TH6      HB1    OB1    .      .
+TH6      CG     CB     OG1    .
+TH6      HG1C   CG     .      .
+TH6      HG2C   CG     .      .
+TH6      OG1    CG     HG1    .
+TH6      HG1    OG1    .      .
+TH6      C      CA     .      END
+TH6      O      C      .      .
+TH6      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TH6       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+TH6       CA        CB        SINGLE    n         1.530     0.012     1.530     0.012     
+TH6       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+TH6       CB        OB1       SINGLE    n         1.426     0.019     1.426     0.019     
+TH6       CB        CG        SINGLE    n         1.517     0.012     1.517     0.012     
+TH6       CG        OG1       SINGLE    n         1.425     0.010     1.425     0.010     
+TH6       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TH6       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TH6       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+TH6       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+TH6       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+TH6       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+TH6       CB        HB        SINGLE    n         1.089     0.010     0.995     0.020     
+TH6       OB1       HB1       SINGLE    n         0.970     0.012     0.848     0.020     
+TH6       CG        HG1C      SINGLE    n         1.089     0.010     0.988     0.020     
+TH6       CG        HG2C      SINGLE    n         1.089     0.010     0.988     0.020     
+TH6       OG1       HG1       SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TH6          CA           N           H     109.889    1.50
+TH6          CA           N          H2     109.889    1.50
+TH6          CA           N          H3     109.889    1.50
+TH6           H           N          H2     109.028    2.41
+TH6           H           N          H3     109.028    2.41
+TH6          H2           N          H3     109.028    2.41
+TH6           N          CA          CB     111.007    1.50
+TH6           N          CA           C     109.414    1.50
+TH6           N          CA          HA     108.031    1.50
+TH6          CB          CA           C     111.511    2.91
+TH6          CB          CA          HA     108.678    1.50
+TH6           C          CA          HA     108.600    1.50
+TH6          CA          CB         OB1     108.269    2.42
+TH6          CA          CB          CG     114.038    2.06
+TH6          CA          CB          HB     108.492    1.50
+TH6         OB1          CB          CG     109.314    1.96
+TH6         OB1          CB          HB     108.183    1.96
+TH6          CG          CB          HB     108.656    1.50
+TH6          CB         OB1         HB1     109.265    3.00
+TH6          CB          CG         OG1     111.469    1.50
+TH6          CB          CG        HG1C     109.582    1.50
+TH6          CB          CG        HG2C     109.582    1.50
+TH6         OG1          CG        HG1C     109.268    1.50
+TH6         OG1          CG        HG2C     109.268    1.50
+TH6        HG1C          CG        HG2C     108.313    1.50
+TH6          CG         OG1         HG1     108.280    3.00
+TH6          CA           C           O     117.003    1.50
+TH6          CA           C         OXT     117.003    1.50
+TH6           O           C         OXT     125.994    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TH6             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+TH6            sp3_sp3_13           N          CA          CB         OB1      60.000   10.00     3
+TH6             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+TH6            sp3_sp3_19          CA          CB         OB1         HB1     180.000   10.00     3
+TH6            sp3_sp3_22          CA          CB          CG         OG1     180.000   10.00     3
+TH6            sp3_sp3_31          CB          CG         OG1         HG1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TH6    chir_1    CA    N    C    CB    both
+TH6    chir_2    CB    OB1    CG    CA    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TH6    plan-1           C   0.020
+TH6    plan-1          CA   0.020
+TH6    plan-1           O   0.020
+TH6    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TH6 SMILES           ACDLabs              10.04 "O=C(O)C(N)C(O)CO"
+TH6 SMILES_CANONICAL CACTVS               3.352 "N[C@@H]([C@H](O)CO)C(O)=O"
+TH6 SMILES           CACTVS               3.352 "N[CH]([CH](O)CO)C(O)=O"
+TH6 SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "C([C@H]([C@@H](C(=O)O)N)O)O"
+TH6 SMILES           "OpenEye OEToolkits" 1.6.1 "C(C(C(C(=O)O)N)O)O"
+TH6 InChI            InChI                1.03  "InChI=1S/C4H9NO4/c5-3(4(8)9)2(7)1-6/h2-3,6-7H,1,5H2,(H,8,9)/t2-,3+/m1/s1"
+TH6 InChIKey         InChI                1.03  JBNUARFQOCGDRK-GBXIJSLDSA-N
+TH6 ?                acedrg               202         "dictionary generator"
+TH6 ?                acedrg_database      11          "data source"
+TH6 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TH6 ?                refmac5              5.8.0222    "optimization tool"

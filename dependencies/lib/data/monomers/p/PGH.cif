@@ -1,0 +1,131 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PGH     PGH      "PHOSPHOGLYCOLOHYDROXAMIC ACID"     NON-POLYMER     14     10     .     
+#
+data_comp_PGH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PGH     C1      C       C       0       23.470      29.845      19.947      
+PGH     C2      C       CH2     0       24.807      30.498      20.151      
+PGH     N2      N       NH1     0       22.937      29.963      18.737      
+PGH     O2      O       OH1     0       21.678      29.440      18.461      
+PGH     O1      O       O       0       22.934      29.244      20.877      
+PGH     O1P     O       O2      0       24.647      31.901      20.339      
+PGH     O2P     O       O       0       26.465      32.288      22.008      
+PGH     O3P     O       OP      -1      26.861      32.748      19.553      
+PGH     O4P     O       OP      -1      25.319      34.244      20.887      
+PGH     P       P       P       0       25.895      32.850      20.719      
+PGH     H21     H       H       0       25.374      30.326      19.369      
+PGH     H22     H       H       0       25.246      30.101      20.934      
+PGH     HN      H       H       0       23.352      30.367      18.079      
+PGH     HO2     H       H       0       21.759      28.582      18.367      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PGH       C1        C2        SINGLE    n         1.498     0.020     1.498     0.020     
+PGH       C1        N2        SINGLE    n         1.322     0.012     1.322     0.012     
+PGH       C1        O1        DOUBLE    n         1.229     0.012     1.229     0.012     
+PGH       C2        O1P       SINGLE    n         1.425     0.016     1.425     0.016     
+PGH       N2        O2        SINGLE    n         1.389     0.013     1.389     0.013     
+PGH       O1P       P         SINGLE    n         1.614     0.019     1.614     0.019     
+PGH       O2P       P         DOUBLE    n         1.517     0.019     1.517     0.019     
+PGH       O3P       P         SINGLE    n         1.517     0.019     1.517     0.019     
+PGH       O4P       P         SINGLE    n         1.517     0.019     1.517     0.019     
+PGH       C2        H21       SINGLE    n         1.089     0.010     0.981     0.014     
+PGH       C2        H22       SINGLE    n         1.089     0.010     0.981     0.014     
+PGH       N2        HN        SINGLE    n         1.016     0.010     0.875     0.020     
+PGH       O2        HO2       SINGLE    n         0.970     0.012     0.867     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PGH          C2          C1          N2     116.180    1.98
+PGH          C2          C1          O1     120.296    1.50
+PGH          N2          C1          O1     123.524    1.50
+PGH          C1          C2         O1P     110.575    2.78
+PGH          C1          C2         H21     109.364    1.50
+PGH          C1          C2         H22     109.364    1.50
+PGH         O1P          C2         H21     110.196    2.06
+PGH         O1P          C2         H22     110.196    2.06
+PGH         H21          C2         H22     107.985    1.50
+PGH          C1          N2          O2     120.051    1.50
+PGH          C1          N2          HN     122.120    2.48
+PGH          O2          N2          HN     117.829    2.59
+PGH          N2          O2         HO2     108.051    2.18
+PGH          C2         O1P           P     121.496    2.55
+PGH         O1P           P         O2P     105.795    2.09
+PGH         O1P           P         O3P     105.795    2.09
+PGH         O1P           P         O4P     105.795    2.09
+PGH         O2P           P         O3P     112.864    1.69
+PGH         O2P           P         O4P     112.864    1.69
+PGH         O3P           P         O4P     112.864    1.69
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PGH             sp2_sp3_2          N2          C1          C2         O1P     120.000   10.00     6
+PGH             sp2_sp2_1          C2          C1          N2          O2     180.000   10.00     2
+PGH             sp3_sp3_1          C1          C2         O1P           P     180.000   10.00     3
+PGH             sp3_sp3_4          C2         O1P           P         O2P     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PGH    plan-1          C1   0.020
+PGH    plan-1          C2   0.020
+PGH    plan-1          N2   0.020
+PGH    plan-1          O1   0.020
+PGH    plan-2          C1   0.020
+PGH    plan-2          HN   0.020
+PGH    plan-2          N2   0.020
+PGH    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PGH SMILES           ACDLabs              10.04 "O=P(O)(O)OCC(=O)NO"
+PGH SMILES_CANONICAL CACTVS               3.341 "ONC(=O)CO[P](O)(O)=O"
+PGH SMILES           CACTVS               3.341 "ONC(=O)CO[P](O)(O)=O"
+PGH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)NO)OP(=O)(O)O"
+PGH SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)NO)OP(=O)(O)O"
+PGH InChI            InChI                1.03  "InChI=1S/C2H6NO6P/c4-2(3-5)1-9-10(6,7)8/h5H,1H2,(H,3,4)(H2,6,7,8)"
+PGH InChIKey         InChI                1.03  BAXHHWZKQZIJID-UHFFFAOYSA-N
+PGH ?                acedrg               202         "dictionary generator"                  
+PGH ?                acedrg_database      11          "data source"                           
+PGH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PGH ?                refmac5              5.8.0189    "optimization tool"                     

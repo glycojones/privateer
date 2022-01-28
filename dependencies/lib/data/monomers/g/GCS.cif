@@ -1,0 +1,220 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GCS      GCS 'D-GLUCOSAMINE                       ' pyranose           25  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GCS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GCS           C1     C    CH1       0.000      0.000    0.000    0.000
+ GCS           H1     H    H         0.000      0.051   -1.095   -0.077
+ GCS           O1     O    OH1       0.000      1.319    0.527    0.148
+ GCS           HO1    H    H         0.000      1.851    0.284   -0.622
+ GCS           O5     O    O2        0.000     -0.592    0.531   -1.184
+ GCS           C5     C    CH1       0.000     -1.826   -0.151   -1.392
+ GCS           H5     H    H         0.000     -1.652   -1.235   -1.375
+ GCS           C6     C    CH2       0.000     -2.405    0.249   -2.751
+ GCS           H61    H    H         0.000     -2.578    1.327   -2.769
+ GCS           H62    H    H         0.000     -3.350   -0.274   -2.910
+ GCS           O6     O    OH1       0.000     -1.485   -0.103   -3.784
+ GCS           HO6    H    H         0.000     -1.887    0.165   -4.621
+ GCS           C4     C    CH1       0.000     -2.818    0.222   -0.288
+ GCS           H4     H    H         0.000     -2.976    1.309   -0.289
+ GCS           O4     O    OH1       0.000     -4.062   -0.443   -0.518
+ GCS           HO4    H    H         0.000     -4.418   -0.172   -1.376
+ GCS           C3     C    CH1       0.000     -2.245   -0.211    1.066
+ GCS           H31    H    H         0.000     -2.186   -1.307    1.107
+ GCS           O3     O    OH1       0.000     -3.091    0.262    2.116
+ GCS           H32    H    H         0.000     -2.727   -0.012    2.969
+ GCS           C2     C    CH1       0.000     -0.842    0.384    1.218
+ GCS           H2     H    H         0.000     -0.913    1.479    1.284
+ GCS           N2     N    NH2       0.000     -0.214   -0.142    2.437
+ GCS           HN22   H    H         0.000     -0.713   -0.795    3.029
+ GCS           HN21   H    H         0.000      0.724    0.145    2.694
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GCS      C1     n/a    O5     START
+ GCS      H1     C1     .      .
+ GCS      O1     C1     HO1    .
+ GCS      HO1    O1     .      .
+ GCS      O5     C1     .      END
+ GCS      C5     O5     C4     .
+ GCS      H5     C5     .      .
+ GCS      C6     C5     O6     .
+ GCS      H61    C6     .      .
+ GCS      H62    C6     .      .
+ GCS      O6     C6     .      .
+ GCS      HO6    O6     .      .
+ GCS      C4     C5     C3     .
+ GCS      H4     C4     .      .
+ GCS      O4     C4     HO4    .
+ GCS      HO4    O4     .      .
+ GCS      C3     C4     C2     .
+ GCS      H31    C3     .      .
+ GCS      O3     C3     H32    .
+ GCS      H32    O3     .      .
+ GCS      C2     C3     N2     .
+ GCS      H2     C2     .      .
+ GCS      N2     C2     HN21   .
+ GCS      HN22   N2     .      .
+ GCS      HN21   N2     .      .
+ GCS      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GCS       C1        C2        single    1.524     0.020     1.524     0.020     
+GCS       O1        C1        single    1.432     0.020     1.432     0.020     
+GCS       O5        C1        single    1.426     0.020     1.426     0.020     
+GCS       H1        C1        single    1.089     0.010     0.989     0.005     
+GCS       C2        C3        single    1.524     0.020     1.524     0.020     
+GCS       N2        C2        single    1.450     0.020     1.450     0.020     
+GCS       H2        C2        single    1.089     0.010     0.989     0.005     
+GCS       C3        C4        single    1.524     0.020     1.524     0.020     
+GCS       O3        C3        single    1.432     0.020     1.432     0.020     
+GCS       H31       C3        single    1.089     0.010     0.989     0.005     
+GCS       C4        C5        single    1.524     0.020     1.524     0.020     
+GCS       O4        C4        single    1.432     0.020     1.432     0.020     
+GCS       H4        C4        single    1.089     0.010     0.989     0.005     
+GCS       C6        C5        single    1.524     0.020     1.524     0.020     
+GCS       C5        O5        single    1.426     0.020     1.426     0.020     
+GCS       H5        C5        single    1.089     0.010     0.989     0.005     
+GCS       O6        C6        single    1.432     0.020     1.432     0.020     
+GCS       H61       C6        single    1.089     0.010     0.989     0.005     
+GCS       H62       C6        single    1.089     0.010     0.989     0.005     
+GCS       HN21      N2        single    1.036     0.016     0.914     0.007     
+GCS       HN22      N2        single    1.036     0.016     0.914     0.007     
+GCS       HO1       O1        single    0.970     0.012     0.839     0.014     
+GCS       H32       O3        single    0.970     0.012     0.839     0.014     
+GCS       HO4       O4        single    0.970     0.012     0.839     0.014     
+GCS       HO6       O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GCS      H1     C1     O1      109.470    3.000
+ GCS      H1     C1     O5      109.470    3.000
+ GCS      O1     C1     O5      109.470    3.000
+ GCS      H1     C1     C2      108.340    3.000
+ GCS      O1     C1     C2      109.470    3.000
+ GCS      O5     C1     C2      109.470    3.000
+ GCS      C1     O1     HO1     109.470    3.000
+ GCS      C1     O5     C5      111.800    3.000
+ GCS      O5     C5     H5      109.470    3.000
+ GCS      O5     C5     C6      109.470    3.000
+ GCS      O5     C5     C4      109.470    3.000
+ GCS      H5     C5     C6      108.340    3.000
+ GCS      H5     C5     C4      108.340    3.000
+ GCS      C6     C5     C4      111.000    3.000
+ GCS      C5     C6     H61     109.470    3.000
+ GCS      C5     C6     H62     109.470    3.000
+ GCS      C5     C6     O6      109.470    3.000
+ GCS      H61    C6     H62     107.900    3.000
+ GCS      H61    C6     O6      109.470    3.000
+ GCS      H62    C6     O6      109.470    3.000
+ GCS      C6     O6     HO6     109.470    3.000
+ GCS      C5     C4     H4      108.340    3.000
+ GCS      C5     C4     O4      109.470    3.000
+ GCS      C5     C4     C3      111.000    3.000
+ GCS      H4     C4     O4      109.470    3.000
+ GCS      H4     C4     C3      108.340    3.000
+ GCS      O4     C4     C3      109.470    3.000
+ GCS      C4     O4     HO4     109.470    3.000
+ GCS      C4     C3     H31     108.340    3.000
+ GCS      C4     C3     O3      109.470    3.000
+ GCS      C4     C3     C2      111.000    3.000
+ GCS      H31    C3     O3      109.470    3.000
+ GCS      H31    C3     C2      108.340    3.000
+ GCS      O3     C3     C2      109.470    3.000
+ GCS      C3     O3     H32     109.470    3.000
+ GCS      C3     C2     H2      108.340    3.000
+ GCS      C3     C2     N2      109.470    3.000
+ GCS      C3     C2     C1      111.000    3.000
+ GCS      H2     C2     N2      109.470    3.000
+ GCS      H2     C2     C1      108.340    3.000
+ GCS      N2     C2     C1      109.470    3.000
+ GCS      C2     N2     HN22    120.000    3.000
+ GCS      C2     N2     HN21    120.000    3.000
+ GCS      HN22   N2     HN21    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GCS      var_1    O5     C1     O1     HO1      -59.628   20.000   1
+ GCS      var_2    C1     O5     C5     C4        60.000   20.000   1
+ GCS      var_3    O5     C5     C6     O6        59.910   20.000   3
+ GCS      var_4    O5     C5     C4     C3       -60.000   20.000   3
+ GCS      var_5    C5     C4     O4     HO4      -59.915   20.000   1
+ GCS      var_6    C5     C4     C3     C2        60.000   20.000   3
+ GCS      var_7    C4     C3     O3     H32     -179.972   20.000   1
+ GCS      var_8    C4     C3     C2     N2       180.000   20.000   3
+ GCS      var_9    C3     C2     C1     O5        60.000   20.000   3
+ GCS      var_10   C3     C2     N2     HN21     179.840   20.000   1
+ GCS      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GCS      chir_01  C1     C2     O1     O5        positiv
+ GCS      chir_02  C2     C1     C3     N2        negativ
+ GCS      chir_03  C3     C2     C4     O3        positiv
+ GCS      chir_04  C4     C3     C5     O4        negativ
+ GCS      chir_05  C5     C4     C6     O5        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GCS      plan-1    N2        0.020
+ GCS      plan-1    C2        0.020
+ GCS      plan-1    HN21      0.020
+ GCS      plan-1    HN22      0.020
+# ------------------------------------------------------

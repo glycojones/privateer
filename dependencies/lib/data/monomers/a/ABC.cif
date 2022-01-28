@@ -1,0 +1,828 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ABC      ABC 'MODIFIED ACARBOSE HEXASACCHARIDE    ' non-polymer       127  64 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ABC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ABC           O1L    O    OH1       0.000      0.000    0.000    0.000
+ ABC           HO1L   H    H         0.000      0.209    0.880   -0.341
+ ABC           C1L    C    CH1       0.000     -0.902   -0.655   -0.895
+ ABC           H1L    H    H         0.000     -0.433   -0.744   -1.885
+ ABC           O5L    O    O2        0.000     -2.099    0.112   -1.005
+ ABC           C5L    C    CH1       0.000     -2.893   -0.473   -2.036
+ ABC           H5L    H    H         0.000     -2.290   -0.575   -2.949
+ ABC           C6L    C    CH3       0.000     -4.099    0.425   -2.320
+ ABC           H6L3   H    H         0.000     -4.641    0.040   -3.144
+ ABC           H6L2   H    H         0.000     -4.727    0.454   -1.468
+ ABC           H6L1   H    H         0.000     -3.765    1.405   -2.544
+ ABC           C4L    C    CH1       0.000     -3.381   -1.854   -1.593
+ ABC           H4L    H    H         0.000     -3.967   -1.758   -0.668
+ ABC           C3L    C    CH1       0.000     -2.168   -2.756   -1.340
+ ABC           H3L    H    H         0.000     -1.642   -2.940   -2.287
+ ABC           O3L    O    OH1       0.000     -2.596   -4.000   -0.782
+ ABC           HO3L   H    H         0.000     -1.826   -4.560   -0.615
+ ABC           C2L    C    CH1       0.000     -1.227   -2.050   -0.359
+ ABC           H2L    H    H         0.000     -1.716   -1.962    0.621
+ ABC           O2L    O    OH1       0.000     -0.020   -2.804   -0.224
+ ABC           HO2L   H    H         0.000      0.575   -2.353    0.391
+ ABC           O4L    O    O2        0.000     -4.196   -2.425   -2.618
+ ABC           C1K    C    CH1       0.000     -5.104   -3.320   -1.973
+ ABC           H1K    H    H         0.000     -4.564   -3.908   -1.218
+ ABC           O5K    O    O2        0.000     -6.137   -2.569   -1.338
+ ABC           C5K    C    CH1       0.000     -6.696   -1.689   -2.312
+ ABC           H5K    H    H         0.000     -5.890   -1.110   -2.784
+ ABC           C6K    C    CH2       0.000     -7.677   -0.734   -1.631
+ ABC           H6K1   H    H         0.000     -8.370   -1.306   -1.011
+ ABC           H6K2   H    H         0.000     -8.237   -0.186   -2.391
+ ABC           O6K    O    OH1       0.000     -6.953    0.187   -0.813
+ ABC           HO6K   H    H         0.000     -7.565    0.840   -0.445
+ ABC           C4K    C    CH1       0.000     -7.432   -2.499   -3.381
+ ABC           H4K    H    H         0.000     -8.226   -3.095   -2.908
+ ABC           C3K    C    CH1       0.000     -6.436   -3.432   -4.078
+ ABC           H3K    H    H         0.000     -5.703   -2.836   -4.641
+ ABC           O3K    O    OH1       0.000     -7.136   -4.299   -4.973
+ ABC           HO3K   H    H         0.000     -6.505   -4.886   -5.412
+ ABC           C2K    C    CH1       0.000     -5.713   -4.263   -3.013
+ ABC           H2K    H    H         0.000     -6.430   -4.937   -2.523
+ ABC           O2K    O    OH1       0.000     -4.678   -5.032   -3.628
+ ABC           HO2K   H    H         0.000     -4.223   -5.556   -2.954
+ ABC           O4K    O    O2        0.000     -8.009   -1.612   -4.341
+ ABC           C1J    C    CH1       0.000     -9.108   -2.305   -4.936
+ ABC           H1J    H    H         0.000     -8.762   -3.273   -5.324
+ ABC           O5J    O    O2        0.000    -10.119   -2.521   -3.955
+ ABC           C5J    C    CH1       0.000    -10.411   -1.263   -3.351
+ ABC           H5J    H    H         0.000     -9.478   -0.801   -2.999
+ ABC           C6J    C    CH3       0.000    -11.351   -1.476   -2.163
+ ABC           H6J3   H    H         0.000    -11.614   -0.538   -1.746
+ ABC           H6J2   H    H         0.000    -12.228   -1.974   -2.490
+ ABC           H6J1   H    H         0.000    -10.866   -2.064   -1.428
+ ABC           C4J    C    CH1       0.000    -11.082   -0.341   -4.371
+ ABC           H4J    H    H         0.000    -12.004   -0.810   -4.740
+ ABC           C3J    C    CH1       0.000    -10.122   -0.107   -5.543
+ ABC           H3J    H    H         0.000     -9.246    0.458   -5.194
+ ABC           O3J    O    OH1       0.000    -10.784    0.626   -6.575
+ ABC           HO3J   H    H         0.000    -10.176    0.760   -7.314
+ ABC           C2J    C    CH1       0.000     -9.671   -1.468   -6.087
+ ABC           H2J    H    H         0.000    -10.531   -1.988   -6.532
+ ABC           O2J    O    OH1       0.000     -8.662   -1.278   -7.079
+ ABC           HO2J   H    H         0.000     -8.376   -2.138   -7.416
+ ABC           N1J    N    NH1       0.000    -11.405    0.943   -3.736
+ ABC           HN1    H    H         0.000    -10.865    1.416   -3.025
+ ABC           C1I    C    CH1       0.000    -12.663    1.406   -4.333
+ ABC           H1I    H    H         0.000    -12.669    1.161   -5.405
+ ABC           C7I    C    C1        0.000    -13.812    0.718   -3.660
+ ABC           H7I    H    H         0.000    -14.020   -0.304   -3.932
+ ABC           C5I    C    C         0.000    -14.570    1.275   -2.772
+ ABC           C6I    C    CH2       0.000    -15.681    0.451   -2.174
+ ABC           H6I1   H    H         0.000    -16.631    0.973   -2.305
+ ABC           H6I2   H    H         0.000    -15.491    0.304   -1.108
+ ABC           O6I    O    OH1       0.000    -15.738   -0.818   -2.828
+ ABC           HO6I   H    H         0.000    -16.499   -1.316   -2.498
+ ABC           C4I    C    CH1       0.000    -14.418    2.691   -2.302
+ ABC           H4I    H    H         0.000    -15.186    3.317   -2.776
+ ABC           C3I    C    CH1       0.000    -13.032    3.220   -2.674
+ ABC           H3I    H    H         0.000    -12.268    2.720   -2.063
+ ABC           O3I    O    OH1       0.000    -12.980    4.630   -2.449
+ ABC           HO3I   H    H         0.000    -12.103    4.961   -2.687
+ ABC           C2I    C    CH1       0.000    -12.781    2.921   -4.158
+ ABC           H2I    H    H         0.000    -13.621    3.298   -4.758
+ ABC           O2I    O    OH1       0.000    -11.569    3.553   -4.578
+ ABC           HO2I   H    H         0.000    -11.644    4.508   -4.451
+ ABC           O4I    O    O2        0.000    -14.577    2.739   -0.882
+ ABC           C1H    C    CH1       0.000    -15.781    3.465   -0.626
+ ABC           H1H    H    H         0.000    -16.069    4.025   -1.527
+ ABC           O5H    O    O2        0.000    -16.820    2.552   -0.283
+ ABC           C5H    C    CH1       0.000    -16.339    1.726    0.775
+ ABC           H5H    H    H         0.000    -15.376    1.284    0.482
+ ABC           C6H    C    CH2       0.000    -17.349    0.609    1.047
+ ABC           H6H1   H    H         0.000    -18.298    1.046    1.364
+ ABC           H6H2   H    H         0.000    -16.967   -0.041    1.837
+ ABC           O6H    O    OH1       0.000    -17.548   -0.154   -0.145
+ ABC           HHO6   H    H         0.000    -18.242   -0.810    0.004
+ ABC           C4H    C    CH1       0.000    -16.150    2.562    2.042
+ ABC           H4H    H    H         0.000    -17.107    3.022    2.324
+ ABC           C3H    C    CH1       0.000    -15.114    3.657    1.768
+ ABC           H3H    H    H         0.000    -14.131    3.199    1.590
+ ABC           O3H    O    OH1       0.000    -15.037    4.536    2.893
+ ABC           HHO3   H    H         0.000    -14.384    5.226    2.718
+ ABC           C2H    C    CH1       0.000    -15.548    4.444    0.527
+ ABC           H2H    H    H         0.000    -16.479    4.986    0.742
+ ABC           O2H    O    OH1       0.000    -14.524    5.374    0.168
+ ABC           HHO2   H    H         0.000    -14.800    5.869   -0.615
+ ABC           O4H    O    O2        0.000    -15.691    1.724    3.103
+ ABC           C1G    C    CH1       0.000    -15.982    2.405    4.325
+ ABC           H1G    H    H         0.000    -15.784    3.479    4.200
+ ABC           O5G    O    O2        0.000    -17.354    2.214    4.659
+ ABC           C5G    C    CH1       0.000    -17.611    0.811    4.636
+ ABC           H5G    H    H         0.000    -17.276    0.394    3.676
+ ABC           C6G    C    CH3       0.000    -19.113    0.566    4.800
+ ABC           H6G3   H    H         0.000    -19.306   -0.476    4.781
+ ABC           H6G2   H    H         0.000    -19.438    0.967    5.726
+ ABC           H6G1   H    H         0.000    -19.637    1.036    4.009
+ ABC           C4G    C    CH1       0.000    -16.856    0.127    5.778
+ ABC           H4G    H    H         0.000    -17.171    0.559    6.738
+ ABC           O4G    O    OH1       0.000    -17.139   -1.273    5.768
+ ABC           HO4G   H    H         0.000    -18.088   -1.411    5.890
+ ABC           C3G    C    CH1       0.000    -15.352    0.348    5.585
+ ABC           H3G    H    H         0.000    -15.015   -0.173    4.677
+ ABC           O3G    O    OH1       0.000    -14.641   -0.153    6.718
+ ABC           HO3G   H    H         0.000    -13.694   -0.001    6.597
+ ABC           C2G    C    CH1       0.000    -15.094    1.852    5.440
+ ABC           H2G    H    H         0.000    -15.333    2.358    6.386
+ ABC           O2G    O    OH1       0.000    -13.721    2.074    5.113
+ ABC           HO2G   H    H         0.000    -13.562    3.022    5.016
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ABC      O1L    n/a    C1L    START
+ ABC      HO1L   O1L    .      .
+ ABC      C1L    O1L    O5L    .
+ ABC      H1L    C1L    .      .
+ ABC      O5L    C1L    C5L    .
+ ABC      C5L    O5L    C4L    .
+ ABC      H5L    C5L    .      .
+ ABC      C6L    C5L    H6L1   .
+ ABC      H6L3   C6L    .      .
+ ABC      H6L2   C6L    .      .
+ ABC      H6L1   C6L    .      .
+ ABC      C4L    C5L    O4L    .
+ ABC      H4L    C4L    .      .
+ ABC      C3L    C4L    C2L    .
+ ABC      H3L    C3L    .      .
+ ABC      O3L    C3L    HO3L   .
+ ABC      HO3L   O3L    .      .
+ ABC      C2L    C3L    O2L    .
+ ABC      H2L    C2L    .      .
+ ABC      O2L    C2L    HO2L   .
+ ABC      HO2L   O2L    .      .
+ ABC      O4L    C4L    C1K    .
+ ABC      C1K    O4L    O5K    .
+ ABC      H1K    C1K    .      .
+ ABC      O5K    C1K    C5K    .
+ ABC      C5K    O5K    C4K    .
+ ABC      H5K    C5K    .      .
+ ABC      C6K    C5K    O6K    .
+ ABC      H6K1   C6K    .      .
+ ABC      H6K2   C6K    .      .
+ ABC      O6K    C6K    HO6K   .
+ ABC      HO6K   O6K    .      .
+ ABC      C4K    C5K    O4K    .
+ ABC      H4K    C4K    .      .
+ ABC      C3K    C4K    C2K    .
+ ABC      H3K    C3K    .      .
+ ABC      O3K    C3K    HO3K   .
+ ABC      HO3K   O3K    .      .
+ ABC      C2K    C3K    O2K    .
+ ABC      H2K    C2K    .      .
+ ABC      O2K    C2K    HO2K   .
+ ABC      HO2K   O2K    .      .
+ ABC      O4K    C4K    C1J    .
+ ABC      C1J    O4K    O5J    .
+ ABC      H1J    C1J    .      .
+ ABC      O5J    C1J    C5J    .
+ ABC      C5J    O5J    C4J    .
+ ABC      H5J    C5J    .      .
+ ABC      C6J    C5J    H6J1   .
+ ABC      H6J3   C6J    .      .
+ ABC      H6J2   C6J    .      .
+ ABC      H6J1   C6J    .      .
+ ABC      C4J    C5J    N1J    .
+ ABC      H4J    C4J    .      .
+ ABC      C3J    C4J    C2J    .
+ ABC      H3J    C3J    .      .
+ ABC      O3J    C3J    HO3J   .
+ ABC      HO3J   O3J    .      .
+ ABC      C2J    C3J    O2J    .
+ ABC      H2J    C2J    .      .
+ ABC      O2J    C2J    HO2J   .
+ ABC      HO2J   O2J    .      .
+ ABC      N1J    C4J    C1I    .
+ ABC      HN1    N1J    .      .
+ ABC      C1I    N1J    C7I    .
+ ABC      H1I    C1I    .      .
+ ABC      C7I    C1I    C5I    .
+ ABC      H7I    C7I    .      .
+ ABC      C5I    C7I    C4I    .
+ ABC      C6I    C5I    O6I    .
+ ABC      H6I1   C6I    .      .
+ ABC      H6I2   C6I    .      .
+ ABC      O6I    C6I    HO6I   .
+ ABC      HO6I   O6I    .      .
+ ABC      C4I    C5I    O4I    .
+ ABC      H4I    C4I    .      .
+ ABC      C3I    C4I    C2I    .
+ ABC      H3I    C3I    .      .
+ ABC      O3I    C3I    HO3I   .
+ ABC      HO3I   O3I    .      .
+ ABC      C2I    C3I    O2I    .
+ ABC      H2I    C2I    .      .
+ ABC      O2I    C2I    HO2I   .
+ ABC      HO2I   O2I    .      .
+ ABC      O4I    C4I    C1H    .
+ ABC      C1H    O4I    O5H    .
+ ABC      H1H    C1H    .      .
+ ABC      O5H    C1H    C5H    .
+ ABC      C5H    O5H    C4H    .
+ ABC      H5H    C5H    .      .
+ ABC      C6H    C5H    O6H    .
+ ABC      H6H1   C6H    .      .
+ ABC      H6H2   C6H    .      .
+ ABC      O6H    C6H    HHO6   .
+ ABC      HHO6   O6H    .      .
+ ABC      C4H    C5H    O4H    .
+ ABC      H4H    C4H    .      .
+ ABC      C3H    C4H    C2H    .
+ ABC      H3H    C3H    .      .
+ ABC      O3H    C3H    HHO3   .
+ ABC      HHO3   O3H    .      .
+ ABC      C2H    C3H    O2H    .
+ ABC      H2H    C2H    .      .
+ ABC      O2H    C2H    HHO2   .
+ ABC      HHO2   O2H    .      .
+ ABC      O4H    C4H    C1G    .
+ ABC      C1G    O4H    O5G    .
+ ABC      H1G    C1G    .      .
+ ABC      O5G    C1G    C5G    .
+ ABC      C5G    O5G    C4G    .
+ ABC      H5G    C5G    .      .
+ ABC      C6G    C5G    H6G1   .
+ ABC      H6G3   C6G    .      .
+ ABC      H6G2   C6G    .      .
+ ABC      H6G1   C6G    .      .
+ ABC      C4G    C5G    C3G    .
+ ABC      H4G    C4G    .      .
+ ABC      O4G    C4G    HO4G   .
+ ABC      HO4G   O4G    .      .
+ ABC      C3G    C4G    C2G    .
+ ABC      H3G    C3G    .      .
+ ABC      O3G    C3G    HO3G   .
+ ABC      HO3G   O3G    .      .
+ ABC      C2G    C3G    O2G    .
+ ABC      H2G    C2G    .      .
+ ABC      O2G    C2G    HO2G   .
+ ABC      HO2G   O2G    .      END
+ ABC      C1G    C2G    .    ADD
+ ABC      C1H    C2H    .    ADD
+ ABC      C1I    C2I    .    ADD
+ ABC      C1J    C2J    .    ADD
+ ABC      C1K    C2K    .    ADD
+ ABC      C1L    C2L    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ABC       C1G       C2G       single    1.524     0.020     1.524     0.020     
+ABC       O5G       C1G       single    1.426     0.020     1.426     0.020     
+ABC       C1G       O4H       single    1.426     0.020     1.426     0.020     
+ABC       H1G       C1G       single    1.089     0.010     0.989     0.005     
+ABC       C2G       C3G       single    1.524     0.020     1.524     0.020     
+ABC       O2G       C2G       single    1.432     0.020     1.432     0.020     
+ABC       H2G       C2G       single    1.089     0.010     0.989     0.005     
+ABC       C3G       C4G       single    1.524     0.020     1.524     0.020     
+ABC       O3G       C3G       single    1.432     0.020     1.432     0.020     
+ABC       H3G       C3G       single    1.089     0.010     0.989     0.005     
+ABC       C4G       C5G       single    1.524     0.020     1.524     0.020     
+ABC       O4G       C4G       single    1.432     0.020     1.432     0.020     
+ABC       H4G       C4G       single    1.089     0.010     0.989     0.005     
+ABC       C6G       C5G       single    1.524     0.020     1.524     0.020     
+ABC       C5G       O5G       single    1.426     0.020     1.426     0.020     
+ABC       H5G       C5G       single    1.089     0.010     0.989     0.005     
+ABC       H6G1      C6G       single    1.089     0.010     0.989     0.005     
+ABC       H6G2      C6G       single    1.089     0.010     0.989     0.005     
+ABC       H6G3      C6G       single    1.089     0.010     0.989     0.005     
+ABC       HO2G      O2G       single    0.970     0.012     0.839     0.014     
+ABC       HO3G      O3G       single    0.970     0.012     0.839     0.014     
+ABC       HO4G      O4G       single    0.970     0.012     0.839     0.014     
+ABC       C1H       C2H       single    1.524     0.020     1.524     0.020     
+ABC       O5H       C1H       single    1.426     0.020     1.426     0.020     
+ABC       C1H       O4I       single    1.426     0.020     1.426     0.020     
+ABC       H1H       C1H       single    1.089     0.010     0.989     0.005     
+ABC       C2H       C3H       single    1.524     0.020     1.524     0.020     
+ABC       O2H       C2H       single    1.432     0.020     1.432     0.020     
+ABC       H2H       C2H       single    1.089     0.010     0.989     0.005     
+ABC       C3H       C4H       single    1.524     0.020     1.524     0.020     
+ABC       O3H       C3H       single    1.432     0.020     1.432     0.020     
+ABC       H3H       C3H       single    1.089     0.010     0.989     0.005     
+ABC       C4H       C5H       single    1.524     0.020     1.524     0.020     
+ABC       O4H       C4H       single    1.426     0.020     1.426     0.020     
+ABC       H4H       C4H       single    1.089     0.010     0.989     0.005     
+ABC       C6H       C5H       single    1.524     0.020     1.524     0.020     
+ABC       C5H       O5H       single    1.426     0.020     1.426     0.020     
+ABC       H5H       C5H       single    1.089     0.010     0.989     0.005     
+ABC       O6H       C6H       single    1.432     0.020     1.432     0.020     
+ABC       H6H1      C6H       single    1.089     0.010     0.989     0.005     
+ABC       H6H2      C6H       single    1.089     0.010     0.989     0.005     
+ABC       HHO2      O2H       single    0.970     0.012     0.839     0.014     
+ABC       HHO3      O3H       single    0.970     0.012     0.839     0.014     
+ABC       HHO6      O6H       single    0.970     0.012     0.839     0.014     
+ABC       C1I       C2I       single    1.524     0.020     1.524     0.020     
+ABC       C7I       C1I       single    1.510     0.020     1.510     0.020     
+ABC       C1I       N1J       single    1.450     0.020     1.450     0.020     
+ABC       H1I       C1I       single    1.089     0.010     0.989     0.005     
+ABC       C2I       C3I       single    1.524     0.020     1.524     0.020     
+ABC       O2I       C2I       single    1.432     0.020     1.432     0.020     
+ABC       H2I       C2I       single    1.089     0.010     0.989     0.005     
+ABC       C3I       C4I       single    1.524     0.020     1.524     0.020     
+ABC       O3I       C3I       single    1.432     0.020     1.432     0.020     
+ABC       H3I       C3I       single    1.089     0.010     0.989     0.005     
+ABC       C4I       C5I       single    1.500     0.020     1.500     0.020     
+ABC       O4I       C4I       single    1.426     0.020     1.426     0.020     
+ABC       H4I       C4I       single    1.089     0.010     0.989     0.005     
+ABC       C6I       C5I       single    1.510     0.020     1.510     0.020     
+ABC       C5I       C7I       double    1.340     0.020     1.340     0.020     
+ABC       O6I       C6I       single    1.432     0.020     1.432     0.020     
+ABC       H6I1      C6I       single    1.089     0.010     0.989     0.005     
+ABC       H6I2      C6I       single    1.089     0.010     0.989     0.005     
+ABC       H7I       C7I       single    1.082     0.013     0.975     0.010     
+ABC       HO2I      O2I       single    0.970     0.012     0.839     0.014     
+ABC       HO3I      O3I       single    0.970     0.012     0.839     0.014     
+ABC       HO6I      O6I       single    0.970     0.012     0.839     0.014     
+ABC       C1J       C2J       single    1.524     0.020     1.524     0.020     
+ABC       O5J       C1J       single    1.426     0.020     1.426     0.020     
+ABC       C1J       O4K       single    1.426     0.020     1.426     0.020     
+ABC       H1J       C1J       single    1.089     0.010     0.989     0.005     
+ABC       C2J       C3J       single    1.524     0.020     1.524     0.020     
+ABC       O2J       C2J       single    1.432     0.020     1.432     0.020     
+ABC       H2J       C2J       single    1.089     0.010     0.989     0.005     
+ABC       C3J       C4J       single    1.524     0.020     1.524     0.020     
+ABC       O3J       C3J       single    1.432     0.020     1.432     0.020     
+ABC       H3J       C3J       single    1.089     0.010     0.989     0.005     
+ABC       C4J       C5J       single    1.524     0.020     1.524     0.020     
+ABC       N1J       C4J       single    1.450     0.020     1.450     0.020     
+ABC       H4J       C4J       single    1.089     0.010     0.989     0.005     
+ABC       C6J       C5J       single    1.524     0.020     1.524     0.020     
+ABC       C5J       O5J       single    1.426     0.020     1.426     0.020     
+ABC       H5J       C5J       single    1.089     0.010     0.989     0.005     
+ABC       H6J1      C6J       single    1.089     0.010     0.989     0.005     
+ABC       H6J2      C6J       single    1.089     0.010     0.989     0.005     
+ABC       H6J3      C6J       single    1.089     0.010     0.989     0.005     
+ABC       HO2J      O2J       single    0.970     0.012     0.839     0.014     
+ABC       HO3J      O3J       single    0.970     0.012     0.839     0.014     
+ABC       HN1       N1J       single    1.036     0.016     0.914     0.007     
+ABC       C1K       C2K       single    1.524     0.020     1.524     0.020     
+ABC       O5K       C1K       single    1.426     0.020     1.426     0.020     
+ABC       C1K       O4L       single    1.426     0.020     1.426     0.020     
+ABC       H1K       C1K       single    1.089     0.010     0.989     0.005     
+ABC       C2K       C3K       single    1.524     0.020     1.524     0.020     
+ABC       O2K       C2K       single    1.432     0.020     1.432     0.020     
+ABC       H2K       C2K       single    1.089     0.010     0.989     0.005     
+ABC       C3K       C4K       single    1.524     0.020     1.524     0.020     
+ABC       O3K       C3K       single    1.432     0.020     1.432     0.020     
+ABC       H3K       C3K       single    1.089     0.010     0.989     0.005     
+ABC       C4K       C5K       single    1.524     0.020     1.524     0.020     
+ABC       O4K       C4K       single    1.426     0.020     1.426     0.020     
+ABC       H4K       C4K       single    1.089     0.010     0.989     0.005     
+ABC       C6K       C5K       single    1.524     0.020     1.524     0.020     
+ABC       C5K       O5K       single    1.426     0.020     1.426     0.020     
+ABC       H5K       C5K       single    1.089     0.010     0.989     0.005     
+ABC       O6K       C6K       single    1.432     0.020     1.432     0.020     
+ABC       H6K1      C6K       single    1.089     0.010     0.989     0.005     
+ABC       H6K2      C6K       single    1.089     0.010     0.989     0.005     
+ABC       HO2K      O2K       single    0.970     0.012     0.839     0.014     
+ABC       HO3K      O3K       single    0.970     0.012     0.839     0.014     
+ABC       HO6K      O6K       single    0.970     0.012     0.839     0.014     
+ABC       C1L       C2L       single    1.524     0.020     1.524     0.020     
+ABC       O5L       C1L       single    1.426     0.020     1.426     0.020     
+ABC       C1L       O1L       single    1.432     0.020     1.432     0.020     
+ABC       H1L       C1L       single    1.089     0.010     0.989     0.005     
+ABC       C2L       C3L       single    1.524     0.020     1.524     0.020     
+ABC       O2L       C2L       single    1.432     0.020     1.432     0.020     
+ABC       H2L       C2L       single    1.089     0.010     0.989     0.005     
+ABC       C3L       C4L       single    1.524     0.020     1.524     0.020     
+ABC       O3L       C3L       single    1.432     0.020     1.432     0.020     
+ABC       H3L       C3L       single    1.089     0.010     0.989     0.005     
+ABC       C4L       C5L       single    1.524     0.020     1.524     0.020     
+ABC       O4L       C4L       single    1.426     0.020     1.426     0.020     
+ABC       H4L       C4L       single    1.089     0.010     0.989     0.005     
+ABC       C6L       C5L       single    1.524     0.020     1.524     0.020     
+ABC       C5L       O5L       single    1.426     0.020     1.426     0.020     
+ABC       H5L       C5L       single    1.089     0.010     0.989     0.005     
+ABC       H6L1      C6L       single    1.089     0.010     0.989     0.005     
+ABC       H6L2      C6L       single    1.089     0.010     0.989     0.005     
+ABC       H6L3      C6L       single    1.089     0.010     0.989     0.005     
+ABC       HO2L      O2L       single    0.970     0.012     0.839     0.014     
+ABC       HO3L      O3L       single    0.970     0.012     0.839     0.014     
+ABC       HO1L      O1L       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ABC      HO1L   O1L    C1L     109.470    3.000
+ ABC      O1L    C1L    H1L     109.470    3.000
+ ABC      O1L    C1L    O5L     109.470    3.000
+ ABC      O1L    C1L    C2L     109.470    3.000
+ ABC      H1L    C1L    O5L     109.470    3.000
+ ABC      H1L    C1L    C2L     108.340    3.000
+ ABC      O5L    C1L    C2L     109.470    3.000
+ ABC      C1L    O5L    C5L     111.800    3.000
+ ABC      O5L    C5L    H5L     109.470    3.000
+ ABC      O5L    C5L    C6L     109.470    3.000
+ ABC      O5L    C5L    C4L     109.470    3.000
+ ABC      H5L    C5L    C6L     108.340    3.000
+ ABC      H5L    C5L    C4L     108.340    3.000
+ ABC      C6L    C5L    C4L     111.000    3.000
+ ABC      C5L    C6L    H6L3    109.470    3.000
+ ABC      C5L    C6L    H6L2    109.470    3.000
+ ABC      C5L    C6L    H6L1    109.470    3.000
+ ABC      H6L3   C6L    H6L2    109.470    3.000
+ ABC      H6L3   C6L    H6L1    109.470    3.000
+ ABC      H6L2   C6L    H6L1    109.470    3.000
+ ABC      C5L    C4L    H4L     108.340    3.000
+ ABC      C5L    C4L    C3L     111.000    3.000
+ ABC      C5L    C4L    O4L     109.470    3.000
+ ABC      H4L    C4L    C3L     108.340    3.000
+ ABC      H4L    C4L    O4L     109.470    3.000
+ ABC      C3L    C4L    O4L     109.470    3.000
+ ABC      C4L    C3L    H3L     108.340    3.000
+ ABC      C4L    C3L    O3L     109.470    3.000
+ ABC      C4L    C3L    C2L     111.000    3.000
+ ABC      H3L    C3L    O3L     109.470    3.000
+ ABC      H3L    C3L    C2L     108.340    3.000
+ ABC      O3L    C3L    C2L     109.470    3.000
+ ABC      C3L    O3L    HO3L    109.470    3.000
+ ABC      C3L    C2L    H2L     108.340    3.000
+ ABC      C3L    C2L    O2L     109.470    3.000
+ ABC      C3L    C2L    C1L     111.000    3.000
+ ABC      H2L    C2L    O2L     109.470    3.000
+ ABC      H2L    C2L    C1L     108.340    3.000
+ ABC      O2L    C2L    C1L     109.470    3.000
+ ABC      C2L    O2L    HO2L    109.470    3.000
+ ABC      C4L    O4L    C1K     111.800    3.000
+ ABC      O4L    C1K    H1K     109.470    3.000
+ ABC      O4L    C1K    O5K     109.470    3.000
+ ABC      O4L    C1K    C2K     109.470    3.000
+ ABC      H1K    C1K    O5K     109.470    3.000
+ ABC      H1K    C1K    C2K     108.340    3.000
+ ABC      O5K    C1K    C2K     109.470    3.000
+ ABC      C1K    O5K    C5K     111.800    3.000
+ ABC      O5K    C5K    H5K     109.470    3.000
+ ABC      O5K    C5K    C6K     109.470    3.000
+ ABC      O5K    C5K    C4K     109.470    3.000
+ ABC      H5K    C5K    C6K     108.340    3.000
+ ABC      H5K    C5K    C4K     108.340    3.000
+ ABC      C6K    C5K    C4K     111.000    3.000
+ ABC      C5K    C6K    H6K1    109.470    3.000
+ ABC      C5K    C6K    H6K2    109.470    3.000
+ ABC      C5K    C6K    O6K     109.470    3.000
+ ABC      H6K1   C6K    H6K2    107.900    3.000
+ ABC      H6K1   C6K    O6K     109.470    3.000
+ ABC      H6K2   C6K    O6K     109.470    3.000
+ ABC      C6K    O6K    HO6K    109.470    3.000
+ ABC      C5K    C4K    H4K     108.340    3.000
+ ABC      C5K    C4K    C3K     111.000    3.000
+ ABC      C5K    C4K    O4K     109.470    3.000
+ ABC      H4K    C4K    C3K     108.340    3.000
+ ABC      H4K    C4K    O4K     109.470    3.000
+ ABC      C3K    C4K    O4K     109.470    3.000
+ ABC      C4K    C3K    H3K     108.340    3.000
+ ABC      C4K    C3K    O3K     109.470    3.000
+ ABC      C4K    C3K    C2K     111.000    3.000
+ ABC      H3K    C3K    O3K     109.470    3.000
+ ABC      H3K    C3K    C2K     108.340    3.000
+ ABC      O3K    C3K    C2K     109.470    3.000
+ ABC      C3K    O3K    HO3K    109.470    3.000
+ ABC      C3K    C2K    H2K     108.340    3.000
+ ABC      C3K    C2K    O2K     109.470    3.000
+ ABC      C3K    C2K    C1K     111.000    3.000
+ ABC      H2K    C2K    O2K     109.470    3.000
+ ABC      H2K    C2K    C1K     108.340    3.000
+ ABC      O2K    C2K    C1K     109.470    3.000
+ ABC      C2K    O2K    HO2K    109.470    3.000
+ ABC      C4K    O4K    C1J     111.800    3.000
+ ABC      O4K    C1J    H1J     109.470    3.000
+ ABC      O4K    C1J    O5J     109.470    3.000
+ ABC      O4K    C1J    C2J     109.470    3.000
+ ABC      H1J    C1J    O5J     109.470    3.000
+ ABC      H1J    C1J    C2J     108.340    3.000
+ ABC      O5J    C1J    C2J     109.470    3.000
+ ABC      C1J    O5J    C5J     111.800    3.000
+ ABC      O5J    C5J    H5J     109.470    3.000
+ ABC      O5J    C5J    C6J     109.470    3.000
+ ABC      O5J    C5J    C4J     109.470    3.000
+ ABC      H5J    C5J    C6J     108.340    3.000
+ ABC      H5J    C5J    C4J     108.340    3.000
+ ABC      C6J    C5J    C4J     111.000    3.000
+ ABC      C5J    C6J    H6J3    109.470    3.000
+ ABC      C5J    C6J    H6J2    109.470    3.000
+ ABC      C5J    C6J    H6J1    109.470    3.000
+ ABC      H6J3   C6J    H6J2    109.470    3.000
+ ABC      H6J3   C6J    H6J1    109.470    3.000
+ ABC      H6J2   C6J    H6J1    109.470    3.000
+ ABC      C5J    C4J    H4J     108.340    3.000
+ ABC      C5J    C4J    C3J     111.000    3.000
+ ABC      C5J    C4J    N1J     110.000    3.000
+ ABC      H4J    C4J    C3J     108.340    3.000
+ ABC      H4J    C4J    N1J     108.550    3.000
+ ABC      C3J    C4J    N1J     110.000    3.000
+ ABC      C4J    C3J    H3J     108.340    3.000
+ ABC      C4J    C3J    O3J     109.470    3.000
+ ABC      C4J    C3J    C2J     111.000    3.000
+ ABC      H3J    C3J    O3J     109.470    3.000
+ ABC      H3J    C3J    C2J     108.340    3.000
+ ABC      O3J    C3J    C2J     109.470    3.000
+ ABC      C3J    O3J    HO3J    109.470    3.000
+ ABC      C3J    C2J    H2J     108.340    3.000
+ ABC      C3J    C2J    O2J     109.470    3.000
+ ABC      C3J    C2J    C1J     111.000    3.000
+ ABC      H2J    C2J    O2J     109.470    3.000
+ ABC      H2J    C2J    C1J     108.340    3.000
+ ABC      O2J    C2J    C1J     109.470    3.000
+ ABC      C2J    O2J    HO2J    109.470    3.000
+ ABC      C4J    N1J    HN1     118.500    3.000
+ ABC      C4J    N1J    C1I     120.000    3.000
+ ABC      HN1    N1J    C1I     118.500    3.000
+ ABC      N1J    C1I    H1I     108.550    3.000
+ ABC      N1J    C1I    C7I     111.600    3.000
+ ABC      N1J    C1I    C2I     110.000    3.000
+ ABC      H1I    C1I    C7I     108.810    3.000
+ ABC      H1I    C1I    C2I     108.340    3.000
+ ABC      C7I    C1I    C2I     109.470    3.000
+ ABC      C1I    C7I    H7I     120.000    3.000
+ ABC      C1I    C7I    C5I     120.500    3.000
+ ABC      H7I    C7I    C5I     120.000    3.000
+ ABC      C7I    C5I    C6I     120.000    3.000
+ ABC      C7I    C5I    C4I     120.000    3.000
+ ABC      C6I    C5I    C4I     120.000    3.000
+ ABC      C5I    C6I    H6I1    109.470    3.000
+ ABC      C5I    C6I    H6I2    109.470    3.000
+ ABC      C5I    C6I    O6I     109.500    3.000
+ ABC      H6I1   C6I    H6I2    107.900    3.000
+ ABC      H6I1   C6I    O6I     109.470    3.000
+ ABC      H6I2   C6I    O6I     109.470    3.000
+ ABC      C6I    O6I    HO6I    109.470    3.000
+ ABC      C5I    C4I    H4I     108.810    3.000
+ ABC      C5I    C4I    C3I     109.470    3.000
+ ABC      C5I    C4I    O4I     109.470    3.000
+ ABC      H4I    C4I    C3I     108.340    3.000
+ ABC      H4I    C4I    O4I     109.470    3.000
+ ABC      C3I    C4I    O4I     109.470    3.000
+ ABC      C4I    C3I    H3I     108.340    3.000
+ ABC      C4I    C3I    O3I     109.470    3.000
+ ABC      C4I    C3I    C2I     111.000    3.000
+ ABC      H3I    C3I    O3I     109.470    3.000
+ ABC      H3I    C3I    C2I     108.340    3.000
+ ABC      O3I    C3I    C2I     109.470    3.000
+ ABC      C3I    O3I    HO3I    109.470    3.000
+ ABC      C3I    C2I    H2I     108.340    3.000
+ ABC      C3I    C2I    O2I     109.470    3.000
+ ABC      C3I    C2I    C1I     111.000    3.000
+ ABC      H2I    C2I    O2I     109.470    3.000
+ ABC      H2I    C2I    C1I     108.340    3.000
+ ABC      O2I    C2I    C1I     109.470    3.000
+ ABC      C2I    O2I    HO2I    109.470    3.000
+ ABC      C4I    O4I    C1H     111.800    3.000
+ ABC      O4I    C1H    H1H     109.470    3.000
+ ABC      O4I    C1H    O5H     109.470    3.000
+ ABC      O4I    C1H    C2H     109.470    3.000
+ ABC      H1H    C1H    O5H     109.470    3.000
+ ABC      H1H    C1H    C2H     108.340    3.000
+ ABC      O5H    C1H    C2H     109.470    3.000
+ ABC      C1H    O5H    C5H     111.800    3.000
+ ABC      O5H    C5H    H5H     109.470    3.000
+ ABC      O5H    C5H    C6H     109.470    3.000
+ ABC      O5H    C5H    C4H     109.470    3.000
+ ABC      H5H    C5H    C6H     108.340    3.000
+ ABC      H5H    C5H    C4H     108.340    3.000
+ ABC      C6H    C5H    C4H     111.000    3.000
+ ABC      C5H    C6H    H6H1    109.470    3.000
+ ABC      C5H    C6H    H6H2    109.470    3.000
+ ABC      C5H    C6H    O6H     109.470    3.000
+ ABC      H6H1   C6H    H6H2    107.900    3.000
+ ABC      H6H1   C6H    O6H     109.470    3.000
+ ABC      H6H2   C6H    O6H     109.470    3.000
+ ABC      C6H    O6H    HHO6    109.470    3.000
+ ABC      C5H    C4H    H4H     108.340    3.000
+ ABC      C5H    C4H    C3H     111.000    3.000
+ ABC      C5H    C4H    O4H     109.470    3.000
+ ABC      H4H    C4H    C3H     108.340    3.000
+ ABC      H4H    C4H    O4H     109.470    3.000
+ ABC      C3H    C4H    O4H     109.470    3.000
+ ABC      C4H    C3H    H3H     108.340    3.000
+ ABC      C4H    C3H    O3H     109.470    3.000
+ ABC      C4H    C3H    C2H     111.000    3.000
+ ABC      H3H    C3H    O3H     109.470    3.000
+ ABC      H3H    C3H    C2H     108.340    3.000
+ ABC      O3H    C3H    C2H     109.470    3.000
+ ABC      C3H    O3H    HHO3    109.470    3.000
+ ABC      C3H    C2H    H2H     108.340    3.000
+ ABC      C3H    C2H    O2H     109.470    3.000
+ ABC      C3H    C2H    C1H     111.000    3.000
+ ABC      H2H    C2H    O2H     109.470    3.000
+ ABC      H2H    C2H    C1H     108.340    3.000
+ ABC      O2H    C2H    C1H     109.470    3.000
+ ABC      C2H    O2H    HHO2    109.470    3.000
+ ABC      C4H    O4H    C1G     111.800    3.000
+ ABC      O4H    C1G    H1G     109.470    3.000
+ ABC      O4H    C1G    O5G     109.470    3.000
+ ABC      O4H    C1G    C2G     109.470    3.000
+ ABC      H1G    C1G    O5G     109.470    3.000
+ ABC      H1G    C1G    C2G     108.340    3.000
+ ABC      O5G    C1G    C2G     109.470    3.000
+ ABC      C1G    O5G    C5G     111.800    3.000
+ ABC      O5G    C5G    H5G     109.470    3.000
+ ABC      O5G    C5G    C6G     109.470    3.000
+ ABC      O5G    C5G    C4G     109.470    3.000
+ ABC      H5G    C5G    C6G     108.340    3.000
+ ABC      H5G    C5G    C4G     108.340    3.000
+ ABC      C6G    C5G    C4G     111.000    3.000
+ ABC      C5G    C6G    H6G3    109.470    3.000
+ ABC      C5G    C6G    H6G2    109.470    3.000
+ ABC      C5G    C6G    H6G1    109.470    3.000
+ ABC      H6G3   C6G    H6G2    109.470    3.000
+ ABC      H6G3   C6G    H6G1    109.470    3.000
+ ABC      H6G2   C6G    H6G1    109.470    3.000
+ ABC      C5G    C4G    H4G     108.340    3.000
+ ABC      C5G    C4G    O4G     109.470    3.000
+ ABC      C5G    C4G    C3G     111.000    3.000
+ ABC      H4G    C4G    O4G     109.470    3.000
+ ABC      H4G    C4G    C3G     108.340    3.000
+ ABC      O4G    C4G    C3G     109.470    3.000
+ ABC      C4G    O4G    HO4G    109.470    3.000
+ ABC      C4G    C3G    H3G     108.340    3.000
+ ABC      C4G    C3G    O3G     109.470    3.000
+ ABC      C4G    C3G    C2G     111.000    3.000
+ ABC      H3G    C3G    O3G     109.470    3.000
+ ABC      H3G    C3G    C2G     108.340    3.000
+ ABC      O3G    C3G    C2G     109.470    3.000
+ ABC      C3G    O3G    HO3G    109.470    3.000
+ ABC      C3G    C2G    H2G     108.340    3.000
+ ABC      C3G    C2G    O2G     109.470    3.000
+ ABC      C3G    C2G    C1G     111.000    3.000
+ ABC      H2G    C2G    O2G     109.470    3.000
+ ABC      H2G    C2G    C1G     108.340    3.000
+ ABC      O2G    C2G    C1G     109.470    3.000
+ ABC      C2G    O2G    HO2G    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ABC      var_1    HO1L   O1L    C1L    O5L      -59.974   20.000   1
+ ABC      var_2    O1L    C1L    C2L    C3L      180.000   20.000   3
+ ABC      var_3    O1L    C1L    O5L    C5L      180.000   20.000   1
+ ABC      var_4    C1L    O5L    C5L    C4L       60.000   20.000   1
+ ABC      var_5    O5L    C5L    C6L    H6L1      54.794   20.000   3
+ ABC      var_6    O5L    C5L    C4L    O4L      180.000   20.000   3
+ ABC      var_7    C5L    C4L    C3L    C2L       60.000   20.000   3
+ ABC      var_8    C4L    C3L    O3L    HO3L    -179.319   20.000   1
+ ABC      var_9    C4L    C3L    C2L    O2L      180.000   20.000   3
+ ABC      var_10   C3L    C2L    O2L    HO2L     179.663   20.000   1
+ ABC      var_11   C5L    C4L    O4L    C1K     -152.733   20.000   1
+ ABC      var_12   C4L    O4L    C1K    O5K       76.417   20.000   1
+ ABC      var_13   O4L    C1K    C2K    C3K      -60.000   20.000   3
+ ABC      var_14   O4L    C1K    O5K    C5K       60.000   20.000   1
+ ABC      var_15   C1K    O5K    C5K    C4K       60.000   20.000   1
+ ABC      var_16   O5K    C5K    C6K    O6K       70.168   20.000   3
+ ABC      var_17   C5K    C6K    O6K    HO6K     175.009   20.000   1
+ ABC      var_18   O5K    C5K    C4K    O4K      180.000   20.000   3
+ ABC      var_19   C5K    C4K    C3K    C2K       60.000   20.000   3
+ ABC      var_20   C4K    C3K    O3K    HO3K     179.933   20.000   1
+ ABC      var_21   C4K    C3K    C2K    O2K      180.000   20.000   3
+ ABC      var_22   C3K    C2K    O2K    HO2K    -179.990   20.000   1
+ ABC      var_23   C5K    C4K    O4K    C1J     -155.527   20.000   1
+ ABC      var_24   C4K    O4K    C1J    O5J       66.040   20.000   1
+ ABC      var_25   O4K    C1J    C2J    C3J      -60.000   20.000   3
+ ABC      var_26   O4K    C1J    O5J    C5J       60.000   20.000   1
+ ABC      var_27   C1J    O5J    C5J    C4J       60.000   20.000   1
+ ABC      var_28   O5J    C5J    C6J    H6J1      63.232   20.000   3
+ ABC      var_29   O5J    C5J    C4J    N1J      180.000   20.000   3
+ ABC      var_30   C5J    C4J    C3J    C2J       60.000   20.000   3
+ ABC      var_31   C4J    C3J    O3J    HO3J    -179.342   20.000   1
+ ABC      var_32   C4J    C3J    C2J    O2J      180.000   20.000   3
+ ABC      var_33   C3J    C2J    O2J    HO2J     179.663   20.000   1
+ ABC      var_34   C5J    C4J    N1J    C1I     -145.182   20.000   3
+ ABC      var_35   C4J    N1J    C1I    C7I       81.544   20.000   3
+ ABC      var_36   N1J    C1I    C2I    C3I      -60.000   20.000   3
+ ABC      var_37   N1J    C1I    C7I    C5I       90.000   20.000   1
+ ABC      var_38   C1I    C7I    C5I    C4I        0.000   20.000   1
+ ABC      var_39   C7I    C5I    C6I    O6I       -4.881   20.000   3
+ ABC      var_40   C5I    C6I    O6I    HO6I    -175.042   20.000   1
+ ABC      var_41   C7I    C5I    C4I    O4I     -150.000   20.000   3
+ ABC      var_42   C5I    C4I    C3I    C2I       60.000   20.000   3
+ ABC      var_43   C4I    C3I    O3I    HO3I    -179.955   20.000   1
+ ABC      var_44   C4I    C3I    C2I    O2I      180.000   20.000   3
+ ABC      var_45   C3I    C2I    O2I    HO2I     -60.006   20.000   1
+ ABC      var_46   C5I    C4I    O4I    C1H     -113.134   20.000   1
+ ABC      var_47   C4I    O4I    C1H    O5H      103.002   20.000   1
+ ABC      var_48   O4I    C1H    C2H    C3H      -60.000   20.000   3
+ ABC      var_49   O4I    C1H    O5H    C5H       60.000   20.000   1
+ ABC      var_50   C1H    O5H    C5H    C4H       60.000   20.000   1
+ ABC      var_51   O5H    C5H    C6H    O6H       58.332   20.000   3
+ ABC      var_52   C5H    C6H    O6H    HHO6    -175.044   20.000   1
+ ABC      var_53   O5H    C5H    C4H    O4H      180.000   20.000   3
+ ABC      var_54   C5H    C4H    C3H    C2H       60.000   20.000   3
+ ABC      var_55   C4H    C3H    O3H    HHO3    -179.983   20.000   1
+ ABC      var_56   C4H    C3H    C2H    O2H      180.000   20.000   3
+ ABC      var_57   C3H    C2H    O2H    HHO2    -179.990   20.000   1
+ ABC      var_58   C5H    C4H    O4H    C1G     -159.859   20.000   1
+ ABC      var_59   C4H    O4H    C1G    O5G       80.266   20.000   1
+ ABC      var_60   O4H    C1G    C2G    C3G      -60.000   20.000   3
+ ABC      var_61   O4H    C1G    O5G    C5G       60.000   20.000   1
+ ABC      var_62   C1G    O5G    C5G    C4G       60.000   20.000   1
+ ABC      var_63   O5G    C5G    C6G    H6G1      59.839   20.000   3
+ ABC      var_64   O5G    C5G    C4G    C3G      -60.000   20.000   3
+ ABC      var_65   C5G    C4G    O4G    HO4G     -60.483   20.000   1
+ ABC      var_66   C5G    C4G    C3G    C2G       60.000   20.000   3
+ ABC      var_67   C4G    C3G    O3G    HO3G    -179.190   20.000   1
+ ABC      var_68   C4G    C3G    C2G    O2G      180.000   20.000   3
+ ABC      var_69   C3G    C2G    O2G    HO2G     179.592   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ABC      chir_01  C1G    C2G    O5G    O4H       positiv
+ ABC      chir_02  C2G    C1G    C3G    O2G       negativ
+ ABC      chir_03  C3G    C2G    C4G    O3G       positiv
+ ABC      chir_04  C4G    C3G    C5G    O4G       negativ
+ ABC      chir_05  C5G    C4G    C6G    O5G       negativ
+ ABC      chir_06  C1H    C2H    O5H    O4I       positiv
+ ABC      chir_07  C2H    C1H    C3H    O2H       negativ
+ ABC      chir_08  C3H    C2H    C4H    O3H       positiv
+ ABC      chir_09  C4H    C3H    C5H    O4H       negativ
+ ABC      chir_10  C5H    C4H    C6H    O5H       negativ
+ ABC      chir_11  C1I    C2I    C7I    N1J       positiv
+ ABC      chir_12  C2I    C1I    C3I    O2I       negativ
+ ABC      chir_13  C3I    C2I    C4I    O3I       positiv
+ ABC      chir_14  C4I    C3I    C5I    O4I       negativ
+ ABC      chir_15  C1J    C2J    O5J    O4K       positiv
+ ABC      chir_16  C2J    C1J    C3J    O2J       negativ
+ ABC      chir_17  C3J    C2J    C4J    O3J       positiv
+ ABC      chir_18  C4J    C3J    C5J    N1J       negativ
+ ABC      chir_19  C5J    C4J    C6J    O5J       negativ
+ ABC      chir_20  C1K    C2K    O5K    O4L       positiv
+ ABC      chir_21  C2K    C1K    C3K    O2K       negativ
+ ABC      chir_22  C3K    C2K    C4K    O3K       positiv
+ ABC      chir_23  C4K    C3K    C5K    O4K       negativ
+ ABC      chir_24  C5K    C4K    C6K    O5K       negativ
+ ABC      chir_25  C1L    C2L    O5L    O1L       negativ
+ ABC      chir_26  C2L    C1L    C3L    O2L       negativ
+ ABC      chir_27  C3L    C2L    C4L    O3L       positiv
+ ABC      chir_28  C4L    C3L    C5L    O4L       negativ
+ ABC      chir_29  C5L    C4L    C6L    O5L       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ABC      plan-1    C5I       0.020
+ ABC      plan-1    C4I       0.020
+ ABC      plan-1    C6I       0.020
+ ABC      plan-1    C7I       0.020
+ ABC      plan-1    H7I       0.020
+ ABC      plan-2    C7I       0.020
+ ABC      plan-2    C1I       0.020
+ ABC      plan-2    C5I       0.020
+ ABC      plan-2    H7I       0.020
+ ABC      plan-3    N1J       0.020
+ ABC      plan-3    C1I       0.020
+ ABC      plan-3    C4J       0.020
+ ABC      plan-3    HN1       0.020
+# ------------------------------------------------------

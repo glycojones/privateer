@@ -1,0 +1,221 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PHE     PHE     PHENYLALANINE     L-peptide     23     12     .     
+#
+data_comp_PHE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PHE     N       N       NT3     1       -3.039      0.791       0.513       
+PHE     H       H       H       0       -3.492      -0.110      0.568       
+PHE     H2      H       H       0       -3.585      1.393       0.002       
+PHE     H3      H       H       0       -2.924      1.144       1.398       
+PHE     CA      C       CH1     0       -1.704      0.636       -0.139      
+PHE     HA      H       H       0       -1.256      1.520       -0.151      
+PHE     CB      C       CH2     0       -0.833      -0.342      0.655       
+PHE     HB3     H       H       0       -0.903      -0.117      1.606       
+PHE     HB2     H       H       0       -1.195      -1.245      0.536       
+PHE     CG      C       CR6     0       0.625       -0.348      0.267       
+PHE     CD1     C       CR16    0       1.128       -1.311      -0.606      
+PHE     HD1     H       H       0       0.548       -1.968      -0.959      
+PHE     CE1     C       CR16    0       2.474       -1.316      -0.964      
+PHE     HE1     H       H       0       2.801       -1.975      -1.556      
+PHE     CZ      C       CR16    0       3.333       -0.359      -0.452      
+PHE     HZ      H       H       0       4.246       -0.362      -0.695      
+PHE     CD2     C       CR16    0       1.502       0.610       0.774       
+PHE     HD2     H       H       0       1.178       1.269       1.366       
+PHE     CE2     C       CR16    0       2.848       0.604       0.416       
+PHE     HE2     H       H       0       3.431       1.259       0.767       
+PHE     C       C       C       0       -1.893      0.170       -1.587      
+PHE     O       O       O       0       -1.478      0.845       -2.530      
+PHE     OXT     O       OC      -1      -2.464      -0.890      -1.843      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PHE      N      n/a    CA     START
+ PHE      H      N      .      .
+ PHE      H2     N      .      .
+ PHE      H3     N      .      .
+ PHE      CA     N      C      .
+ PHE      HA     CA     .      .
+ PHE      CB     CA     CG     .
+ PHE      HB3    CB     .      .
+ PHE      HB2    CB     .      .
+ PHE      CG     CB     CD1    .
+ PHE      CD1    CG     CE1    .
+ PHE      HD1    CD1    .      .
+ PHE      CE1    CD1    CZ     .
+ PHE      HE1    CE1    .      .
+ PHE      CZ     CE1    CE2    .
+ PHE      HZ     CZ     .      .
+ PHE      CE2    CZ     CD2    .
+ PHE      HE2    CE2    .      .
+ PHE      CD2    CE2    HD2    .
+ PHE      HD2    CD2    .      .
+ PHE      C      CA     .      END
+ PHE      O      C      .      .
+ PHE      OXT    C      .      .
+ PHE      CD2    CG     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PHE       CZ        CE1       DOUBLE    y         1.376     0.012     1.376     0.012     
+PHE       CE1       CD1       SINGLE    y         1.386     0.010     1.386     0.010     
+PHE       CD1       CG        DOUBLE    y         1.385     0.011     1.385     0.011     
+PHE       CG        CD2       SINGLE    y         1.385     0.011     1.385     0.011     
+PHE       CD2       CE2       DOUBLE    y         1.386     0.010     1.386     0.010     
+PHE       CG        CB        SINGLE    n         1.508     0.010     1.508     0.010     
+PHE       CB        CA        SINGLE    n         1.531     0.010     1.531     0.010     
+PHE       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+PHE       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+PHE       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+PHE       CA        N         SINGLE    n         1.487     0.010     1.487     0.010     
+PHE       CZ        CE2       SINGLE    y         1.376     0.012     1.376     0.012     
+PHE       CZ        HZ        SINGLE    n         1.082     0.013     0.944     0.016     
+PHE       CE1       HE1       SINGLE    n         1.082     0.013     0.944     0.018     
+PHE       CD1       HD1       SINGLE    n         1.082     0.013     0.944     0.017     
+PHE       CD2       HD2       SINGLE    n         1.082     0.013     0.944     0.017     
+PHE       CE2       HE2       SINGLE    n         1.082     0.013     0.944     0.018     
+PHE       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+PHE       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+PHE       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+PHE       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+PHE       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+PHE       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PHE         CE1          CZ         CE2     120.043    1.50
+PHE         CE1          CZ          HZ     119.979    1.50
+PHE         CE2          CZ          HZ     119.979    1.50
+PHE          CZ         CE1         CD1     120.325    1.50
+PHE          CZ         CE1         HE1     119.883    1.50
+PHE         CD1         CE1         HE1     119.792    1.50
+PHE         CE1         CD1          CG     120.624    1.50
+PHE         CE1         CD1         HD1     119.786    1.50
+PHE          CG         CD1         HD1     119.591    1.50
+PHE         CD1          CG         CD2     118.059    1.50
+PHE         CD1          CG          CB     120.970    1.50
+PHE         CD2          CG          CB     120.970    1.50
+PHE          CG         CD2         CE2     120.624    1.50
+PHE          CG         CD2         HD2     119.591    1.50
+PHE         CE2         CD2         HD2     119.786    1.50
+PHE         CD2         CE2          CZ     120.325    1.50
+PHE         CD2         CE2         HE2     119.792    1.50
+PHE          CZ         CE2         HE2     119.883    1.50
+PHE          CG          CB          CA     114.745    1.55
+PHE          CG          CB         HB3     108.862    1.50
+PHE          CG          CB         HB2     108.862    1.50
+PHE          CA          CB         HB3     108.434    1.50
+PHE          CA          CB         HB2     108.434    1.50
+PHE         HB3          CB         HB2     107.782    1.50
+PHE          CB          CA           C     111.331    2.53
+PHE          CB          CA           N     110.494    1.50
+PHE          CB          CA          HA     108.690    1.50
+PHE           C          CA           N     109.448    1.50
+PHE           C          CA          HA     108.450    1.50
+PHE           N          CA          HA     108.601    1.50
+PHE          CA           C           O     117.228    2.13
+PHE          CA           C         OXT     117.228    2.13
+PHE           O           C         OXT     125.543    1.50
+PHE          CA           N           H     109.646    1.54
+PHE          CA           N          H2     109.646    1.54
+PHE          CA           N          H3     109.646    1.54
+PHE           H           N          H2     109.028    2.41
+PHE           H           N          H3     109.028    2.41
+PHE          H2           N          H3     109.028    2.41
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PHE      chi1     N      CA     CB     CG       180.000   15.000   3
+ PHE      chi2     CA     CB     CG     CD1       90.000   20.000   2
+ PHE      CONST_01 CB     CG     CD1    CE1      180.000    0.000   0
+ PHE      CONST_02 CG     CD1    CE1    CZ         0.000    0.000   0
+ PHE      CONST_03 CD1    CE1    CZ     CE2        0.000    0.000   0
+ PHE      CONST_04 CE1    CZ     CE2    CD2        0.000    0.000   0
+ PHE      CONST_05 CZ     CE2    CD2    CG         0.000    0.000   0
+PHE            sp3_sp3_10          CB          CA           N           H     180.000   10.00     3
+PHE             sp2_sp3_7           O           C          CA          CB       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PHE    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PHE    plan-1          CB   0.020
+PHE    plan-1         CD1   0.020
+PHE    plan-1         CD2   0.020
+PHE    plan-1         CE1   0.020
+PHE    plan-1         CE2   0.020
+PHE    plan-1          CG   0.020
+PHE    plan-1          CZ   0.020
+PHE    plan-1         HD1   0.020
+PHE    plan-1         HD2   0.020
+PHE    plan-1         HE1   0.020
+PHE    plan-1         HE2   0.020
+PHE    plan-1          HZ   0.020
+PHE    plan-2           C   0.020
+PHE    plan-2          CA   0.020
+PHE    plan-2           O   0.020
+PHE    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PHE SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc1ccccc1"
+PHE SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1ccccc1)C(O)=O"
+PHE SMILES           CACTVS               3.341 "N[CH](Cc1ccccc1)C(O)=O"
+PHE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)C[C@@H](C(=O)O)N"
+PHE SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)CC(C(=O)O)N"
+PHE InChI            InChI                1.03  "InChI=1S/C9H11NO2/c10-8(9(11)12)6-7-4-2-1-3-5-7/h1-5,8H,6,10H2,(H,11,12)/t8-/m0/s1"
+PHE InChIKey         InChI                1.03  COLNVLDHVKWLRT-QMMMGPOBSA-N
+PHE ?                acedrg               195         "dictionary generator"                  
+PHE ?                acedrg_database      11          "data source"                           
+PHE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PHE ?                refmac5              5.8.0189    "optimization tool"                     

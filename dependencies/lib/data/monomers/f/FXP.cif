@@ -1,0 +1,281 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FXP      FXP '2-deoxy-2-fluoro-4-O-beta-D-xylopyra' non-polymer        36  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FXP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FXP           F2A    F    F         0.000      0.000    0.000    0.000
+ FXP           C2A    C    CH1       0.000     -1.256   -0.034    0.615
+ FXP           H2A    H    H         0.000     -1.349   -0.953    1.211
+ FXP           C3A    C    CH1       0.000     -2.351   -0.004   -0.456
+ FXP           H3A    H    H         0.000     -2.227    0.889   -1.084
+ FXP           O3A    O    OH1       0.000     -2.258   -1.177   -1.267
+ FXP           HO3A   H    H         0.000     -1.390   -1.205   -1.694
+ FXP           C4A    C    CH1       0.000     -3.720    0.037    0.230
+ FXP           H4A    H    H         0.000     -3.865   -0.880    0.818
+ FXP           C5A    C    CH2       0.000     -3.780    1.255    1.157
+ FXP           H5A    H    H         0.000     -4.739    1.267    1.679
+ FXP           H5AA   H    H         0.000     -3.678    2.167    0.565
+ FXP           O5A    O    O2        0.000     -2.718    1.181    2.109
+ FXP           C1A    C    CH1       0.000     -1.412    1.186    1.527
+ FXP           H1A    H    H         0.000     -0.656    1.147    2.323
+ FXP           O1     O    OH1       0.000     -1.237    2.380    0.761
+ FXP           H17    H    H         0.000     -1.335    3.150    1.337
+ FXP           O4A    O    O2        0.000     -4.747    0.139   -0.759
+ FXP           C1B    C    CH1       0.000     -5.983   -0.467   -0.376
+ FXP           H1B    H    H         0.000     -6.316   -0.045    0.583
+ FXP           O5B    O    O2        0.000     -5.801   -1.878   -0.240
+ FXP           C5B    C    CH2       0.000     -6.977   -2.581    0.167
+ FXP           H5B    H    H         0.000     -7.320   -2.191    1.127
+ FXP           H5BA   H    H         0.000     -6.748   -3.644    0.268
+ FXP           C4B    C    CH1       0.000     -8.072   -2.392   -0.885
+ FXP           H4B    H    H         0.000     -7.742   -2.822   -1.841
+ FXP           O4B    O    OH1       0.000     -9.267   -3.046   -0.453
+ FXP           HO4B   H    H         0.000     -9.094   -3.990   -0.342
+ FXP           C3B    C    CH1       0.000     -8.344   -0.894   -1.063
+ FXP           H3B    H    H         0.000     -8.723   -0.474   -0.120
+ FXP           O3B    O    OH1       0.000     -9.314   -0.704   -2.095
+ FXP           HO3B   H    H         0.000    -10.137   -1.148   -1.849
+ FXP           C2B    C    CH1       0.000     -7.039   -0.192   -1.450
+ FXP           H2B    H    H         0.000     -6.688   -0.576   -2.418
+ FXP           O2B    O    OH1       0.000     -7.266    1.216   -1.547
+ FXP           HO2B   H    H         0.000     -6.441    1.659   -1.787
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FXP      F2A    n/a    C2A    START
+ FXP      C2A    F2A    C3A    .
+ FXP      H2A    C2A    .      .
+ FXP      C3A    C2A    C4A    .
+ FXP      H3A    C3A    .      .
+ FXP      O3A    C3A    HO3A   .
+ FXP      HO3A   O3A    .      .
+ FXP      C4A    C3A    O4A    .
+ FXP      H4A    C4A    .      .
+ FXP      C5A    C4A    O5A    .
+ FXP      H5A    C5A    .      .
+ FXP      H5AA   C5A    .      .
+ FXP      O5A    C5A    C1A    .
+ FXP      C1A    O5A    O1     .
+ FXP      H1A    C1A    .      .
+ FXP      O1     C1A    H17    .
+ FXP      H17    O1     .      .
+ FXP      O4A    C4A    C1B    .
+ FXP      C1B    O4A    O5B    .
+ FXP      H1B    C1B    .      .
+ FXP      O5B    C1B    C5B    .
+ FXP      C5B    O5B    C4B    .
+ FXP      H5B    C5B    .      .
+ FXP      H5BA   C5B    .      .
+ FXP      C4B    C5B    C3B    .
+ FXP      H4B    C4B    .      .
+ FXP      O4B    C4B    HO4B   .
+ FXP      HO4B   O4B    .      .
+ FXP      C3B    C4B    C2B    .
+ FXP      H3B    C3B    .      .
+ FXP      O3B    C3B    HO3B   .
+ FXP      HO3B   O3B    .      .
+ FXP      C2B    C3B    O2B    .
+ FXP      H2B    C2B    .      .
+ FXP      O2B    C2B    HO2B   .
+ FXP      HO2B   O2B    .      END
+ FXP      C1A    C2A    .    ADD
+ FXP      C1B    C2B    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FXP       O1        C1A       single    1.432     0.020     1.432     0.020     
+FXP       C1A       C2A       single    1.524     0.020     1.524     0.020     
+FXP       C1A       O5A       single    1.426     0.020     1.426     0.020     
+FXP       H1A       C1A       single    1.089     0.010     0.989     0.005     
+FXP       C3A       C2A       single    1.524     0.020     1.524     0.020     
+FXP       C2A       F2A       single    1.370     0.020     1.370     0.020     
+FXP       H2A       C2A       single    1.089     0.010     0.989     0.005     
+FXP       C4A       C3A       single    1.524     0.020     1.524     0.020     
+FXP       O3A       C3A       single    1.432     0.020     1.432     0.020     
+FXP       H3A       C3A       single    1.089     0.010     0.989     0.005     
+FXP       C5A       C4A       single    1.524     0.020     1.524     0.020     
+FXP       O4A       C4A       single    1.426     0.020     1.426     0.020     
+FXP       H4A       C4A       single    1.089     0.010     0.989     0.005     
+FXP       O5A       C5A       single    1.426     0.020     1.426     0.020     
+FXP       H5A       C5A       single    1.089     0.010     0.989     0.005     
+FXP       H5AA      C5A       single    1.089     0.010     0.989     0.005     
+FXP       HO3A      O3A       single    0.970     0.012     0.839     0.014     
+FXP       C1B       O4A       single    1.426     0.020     1.426     0.020     
+FXP       C1B       C2B       single    1.524     0.020     1.524     0.020     
+FXP       O5B       C1B       single    1.426     0.020     1.426     0.020     
+FXP       H1B       C1B       single    1.089     0.010     0.989     0.005     
+FXP       C2B       C3B       single    1.524     0.020     1.524     0.020     
+FXP       O2B       C2B       single    1.432     0.020     1.432     0.020     
+FXP       H2B       C2B       single    1.089     0.010     0.989     0.005     
+FXP       C3B       C4B       single    1.524     0.020     1.524     0.020     
+FXP       O3B       C3B       single    1.432     0.020     1.432     0.020     
+FXP       H3B       C3B       single    1.089     0.010     0.989     0.005     
+FXP       C4B       C5B       single    1.524     0.020     1.524     0.020     
+FXP       O4B       C4B       single    1.432     0.020     1.432     0.020     
+FXP       H4B       C4B       single    1.089     0.010     0.989     0.005     
+FXP       C5B       O5B       single    1.426     0.020     1.426     0.020     
+FXP       H5B       C5B       single    1.089     0.010     0.989     0.005     
+FXP       H5BA      C5B       single    1.089     0.010     0.989     0.005     
+FXP       HO2B      O2B       single    0.970     0.012     0.839     0.014     
+FXP       HO3B      O3B       single    0.970     0.012     0.839     0.014     
+FXP       HO4B      O4B       single    0.970     0.012     0.839     0.014     
+FXP       H17       O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FXP      F2A    C2A    H2A     109.500    3.000
+ FXP      F2A    C2A    C3A     109.500    3.000
+ FXP      F2A    C2A    C1A     109.500    3.000
+ FXP      H2A    C2A    C3A     108.340    3.000
+ FXP      H2A    C2A    C1A     108.340    3.000
+ FXP      C3A    C2A    C1A     111.000    3.000
+ FXP      C2A    C3A    H3A     108.340    3.000
+ FXP      C2A    C3A    O3A     109.470    3.000
+ FXP      C2A    C3A    C4A     111.000    3.000
+ FXP      H3A    C3A    O3A     109.470    3.000
+ FXP      H3A    C3A    C4A     108.340    3.000
+ FXP      O3A    C3A    C4A     109.470    3.000
+ FXP      C3A    O3A    HO3A    109.470    3.000
+ FXP      C3A    C4A    H4A     108.340    3.000
+ FXP      C3A    C4A    C5A     111.000    3.000
+ FXP      C3A    C4A    O4A     109.470    3.000
+ FXP      H4A    C4A    C5A     108.340    3.000
+ FXP      H4A    C4A    O4A     109.470    3.000
+ FXP      C5A    C4A    O4A     109.470    3.000
+ FXP      C4A    C5A    H5A     109.470    3.000
+ FXP      C4A    C5A    H5AA    109.470    3.000
+ FXP      C4A    C5A    O5A     109.470    3.000
+ FXP      H5A    C5A    H5AA    107.900    3.000
+ FXP      H5A    C5A    O5A     109.470    3.000
+ FXP      H5AA   C5A    O5A     109.470    3.000
+ FXP      C5A    O5A    C1A     111.800    3.000
+ FXP      O5A    C1A    H1A     109.470    3.000
+ FXP      O5A    C1A    O1      109.470    3.000
+ FXP      O5A    C1A    C2A     109.470    3.000
+ FXP      H1A    C1A    O1      109.470    3.000
+ FXP      H1A    C1A    C2A     108.340    3.000
+ FXP      O1     C1A    C2A     109.470    3.000
+ FXP      C1A    O1     H17     109.470    3.000
+ FXP      C4A    O4A    C1B     111.800    3.000
+ FXP      O4A    C1B    H1B     109.470    3.000
+ FXP      O4A    C1B    O5B     109.470    3.000
+ FXP      O4A    C1B    C2B     109.470    3.000
+ FXP      H1B    C1B    O5B     109.470    3.000
+ FXP      H1B    C1B    C2B     108.340    3.000
+ FXP      O5B    C1B    C2B     109.470    3.000
+ FXP      C1B    O5B    C5B     111.800    3.000
+ FXP      O5B    C5B    H5B     109.470    3.000
+ FXP      O5B    C5B    H5BA    109.470    3.000
+ FXP      O5B    C5B    C4B     109.470    3.000
+ FXP      H5B    C5B    H5BA    107.900    3.000
+ FXP      H5B    C5B    C4B     109.470    3.000
+ FXP      H5BA   C5B    C4B     109.470    3.000
+ FXP      C5B    C4B    H4B     108.340    3.000
+ FXP      C5B    C4B    O4B     109.470    3.000
+ FXP      C5B    C4B    C3B     111.000    3.000
+ FXP      H4B    C4B    O4B     109.470    3.000
+ FXP      H4B    C4B    C3B     108.340    3.000
+ FXP      O4B    C4B    C3B     109.470    3.000
+ FXP      C4B    O4B    HO4B    109.470    3.000
+ FXP      C4B    C3B    H3B     108.340    3.000
+ FXP      C4B    C3B    O3B     109.470    3.000
+ FXP      C4B    C3B    C2B     111.000    3.000
+ FXP      H3B    C3B    O3B     109.470    3.000
+ FXP      H3B    C3B    C2B     108.340    3.000
+ FXP      O3B    C3B    C2B     109.470    3.000
+ FXP      C3B    O3B    HO3B    109.470    3.000
+ FXP      C3B    C2B    H2B     108.340    3.000
+ FXP      C3B    C2B    O2B     109.470    3.000
+ FXP      C3B    C2B    C1B     111.000    3.000
+ FXP      H2B    C2B    O2B     109.470    3.000
+ FXP      H2B    C2B    C1B     108.340    3.000
+ FXP      O2B    C2B    C1B     109.470    3.000
+ FXP      C2B    O2B    HO2B    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FXP      var_1    F2A    C2A    C3A    C4A      180.000   20.000   3
+ FXP      var_2    C2A    C3A    O3A    HO3A     -59.998   20.000   1
+ FXP      var_3    C2A    C3A    C4A    O4A      180.000   20.000   3
+ FXP      var_4    C3A    C4A    C5A    O5A      -60.000   20.000   3
+ FXP      var_5    C4A    C5A    O5A    C1A       60.000   20.000   1
+ FXP      var_6    C5A    O5A    C1A    O1        60.000   20.000   1
+ FXP      var_7    O5A    C1A    C2A    F2A      180.000   20.000   3
+ FXP      var_8    O5A    C1A    O1     H17       60.033   20.000   1
+ FXP      var_9    C3A    C4A    O4A    C1B      150.024   20.000   1
+ FXP      var_10   C4A    O4A    C1B    O5B      -65.090   20.000   1
+ FXP      var_11   O4A    C1B    C2B    C3B      180.000   20.000   3
+ FXP      var_12   O4A    C1B    O5B    C5B      180.000   20.000   1
+ FXP      var_13   C1B    O5B    C5B    C4B       60.000   20.000   1
+ FXP      var_14   O5B    C5B    C4B    C3B      -60.000   20.000   3
+ FXP      var_15   C5B    C4B    O4B    HO4B     -60.377   20.000   1
+ FXP      var_16   C5B    C4B    C3B    C2B       60.000   20.000   3
+ FXP      var_17   C4B    C3B    O3B    HO3B      60.477   20.000   1
+ FXP      var_18   C4B    C3B    C2B    O2B      180.000   20.000   3
+ FXP      var_19   C3B    C2B    O2B    HO2B     179.702   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FXP      chir_01  C1A    O1     C2A    O5A       positiv
+ FXP      chir_02  C2A    C1A    C3A    F2A       negativ
+ FXP      chir_03  C3A    C2A    C4A    O3A       positiv
+ FXP      chir_04  C4A    C3A    C5A    O4A       negativ
+ FXP      chir_05  C1B    O4A    C2B    O5B       negativ
+ FXP      chir_06  C2B    C1B    C3B    O2B       negativ
+ FXP      chir_07  C3B    C2B    C4B    O3B       positiv
+ FXP      chir_08  C4B    C3B    C5B    O4B       negativ
+# ------------------------------------------------------

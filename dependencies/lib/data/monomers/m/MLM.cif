@@ -1,0 +1,123 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MLM     MLM      "3-AMINO-3-OXOPROPANOIC ACID"     NON-POLYMER     11     7     .     
+#
+data_comp_MLM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MLM     C1      C       C       0       -1.491      0.569       0.174       
+MLM     O1      O       OC      -1      -1.493      1.301       -0.832      
+MLM     O2      O       O       0       -2.176      0.786       1.189       
+MLM     C2      C       CH2     0       -0.596      -0.665      0.162       
+MLM     C3      C       C       0       0.726       -0.451      0.881       
+MLM     O3      O       O       0       0.971       -1.019      1.952       
+MLM     N6      N       NH2     0       1.585       0.371       0.294       
+MLM     H2C1    H       H       0       -0.419      -0.914      -0.769      
+MLM     H2C2    H       H       0       -1.077      -1.405      0.588       
+MLM     H6N1    H       H       0       2.370       0.532       0.670       
+MLM     H6N2    H       H       0       1.381       0.762       -0.474      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MLM       C1        O1        SINGLE    n         1.244     0.020     1.244     0.020     
+MLM       C1        O2        DOUBLE    n         1.244     0.020     1.244     0.020     
+MLM       C1        C2        SINGLE    n         1.525     0.014     1.525     0.014     
+MLM       C2        C3        SINGLE    n         1.518     0.012     1.518     0.012     
+MLM       C3        O3        DOUBLE    n         1.237     0.012     1.237     0.012     
+MLM       C3        N6        SINGLE    n         1.324     0.010     1.324     0.010     
+MLM       C2        H2C1      SINGLE    n         1.089     0.010     0.980     0.011     
+MLM       C2        H2C2      SINGLE    n         1.089     0.010     0.980     0.011     
+MLM       N6        H6N1      SINGLE    n         1.016     0.010     0.884     0.020     
+MLM       N6        H6N2      SINGLE    n         1.016     0.010     0.884     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MLM          O1          C1          O2     123.857    1.50
+MLM          O1          C1          C2     118.071    1.50
+MLM          O2          C1          C2     118.071    1.50
+MLM          C1          C2          C3     111.575    3.00
+MLM          C1          C2        H2C1     108.236    1.50
+MLM          C1          C2        H2C2     108.236    1.50
+MLM          C3          C2        H2C1     108.097    2.54
+MLM          C3          C2        H2C2     108.097    2.54
+MLM        H2C1          C2        H2C2     107.635    1.72
+MLM          C2          C3          O3     121.527    1.50
+MLM          C2          C3          N6     115.619    1.97
+MLM          O3          C3          N6     122.853    1.50
+MLM          C3          N6        H6N1     120.022    1.65
+MLM          C3          N6        H6N2     120.022    1.65
+MLM        H6N1          N6        H6N2     119.956    2.38
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MLM             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+MLM             sp2_sp3_8          O3          C3          C2          C1     120.000   10.00     6
+MLM             sp2_sp2_1          C2          C3          N6        H6N1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MLM    plan-1          C1   0.020
+MLM    plan-1          C2   0.020
+MLM    plan-1          O1   0.020
+MLM    plan-1          O2   0.020
+MLM    plan-2          C2   0.020
+MLM    plan-2          C3   0.020
+MLM    plan-2          N6   0.020
+MLM    plan-2          O3   0.020
+MLM    plan-3          C3   0.020
+MLM    plan-3        H6N1   0.020
+MLM    plan-3        H6N2   0.020
+MLM    plan-3          N6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MLM SMILES           ACDLabs              10.04 "O=C(N)CC(=O)O"
+MLM SMILES_CANONICAL CACTVS               3.341 "NC(=O)CC(O)=O"
+MLM SMILES           CACTVS               3.341 "NC(=O)CC(O)=O"
+MLM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)N)C(=O)O"
+MLM SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)N)C(=O)O"
+MLM InChI            InChI                1.03  "InChI=1S/C3H5NO3/c4-2(5)1-3(6)7/h1H2,(H2,4,5)(H,6,7)"
+MLM InChIKey         InChI                1.03  CGJMROBVSBIBKP-UHFFFAOYSA-N
+MLM ?                acedrg               202         "dictionary generator"                  
+MLM ?                acedrg_database      11          "data source"                           
+MLM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MLM ?                refmac5              5.8.0189    "optimization tool"                     

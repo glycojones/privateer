@@ -1,0 +1,148 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SOT     SOT      "morpholine-4-sulfonic acid"     NON-POLYMER     19     10     .     
+#
+data_comp_SOT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SOT     O1      O       O2      0       -26.004     62.198      33.662      
+SOT     C2      C       CH2     0       -25.349     62.880      34.733      
+SOT     C3      C       CH2     0       -23.886     63.107      34.438      
+SOT     N4      N       NT      0       -23.247     61.816      34.124      
+SOT     C5      C       CH2     0       -23.937     61.072      33.057      
+SOT     C6      C       CH2     0       -25.398     60.930      33.411      
+SOT     S       S       S3      0       -21.609     61.772      34.102      
+SOT     O1S     O       O       0       -21.193     60.419      34.220      
+SOT     O2S     O       O       0       -21.173     62.484      32.953      
+SOT     O4      O       OH1     0       -21.040     62.506      35.365      
+SOT     H21     H       H       0       -25.785     63.739      34.877      
+SOT     H22     H       H       0       -25.437     62.356      35.549      
+SOT     H31     H       H       0       -23.457     63.514      35.211      
+SOT     H32     H       H       0       -23.790     63.712      33.681      
+SOT     H51     H       H       0       -23.537     60.189      32.954      
+SOT     H52     H       H       0       -23.845     61.550      32.213      
+SOT     H61     H       H       0       -25.865     60.494      32.676      
+SOT     H62     H       H       0       -25.486     60.368      34.202      
+SOT     H9      H       H       0       -20.261     62.797      35.199      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SOT       O1        C2        SINGLE    n         1.424     0.010     1.424     0.010     
+SOT       O1        C6        SINGLE    n         1.424     0.010     1.424     0.010     
+SOT       C2        C3        SINGLE    n         1.506     0.010     1.506     0.010     
+SOT       C3        N4        SINGLE    n         1.464     0.012     1.464     0.012     
+SOT       N4        C5        SINGLE    n         1.464     0.012     1.464     0.012     
+SOT       N4        S         SINGLE    n         1.633     0.013     1.633     0.013     
+SOT       C5        C6        SINGLE    n         1.506     0.010     1.506     0.010     
+SOT       S         O1S       DOUBLE    n         1.420     0.011     1.420     0.011     
+SOT       S         O2S       DOUBLE    n         1.420     0.011     1.420     0.011     
+SOT       S         O4        SINGLE    n         1.565     0.020     1.565     0.020     
+SOT       C2        H21       SINGLE    n         1.089     0.010     0.974     0.010     
+SOT       C2        H22       SINGLE    n         1.089     0.010     0.974     0.010     
+SOT       C3        H31       SINGLE    n         1.089     0.010     0.974     0.010     
+SOT       C3        H32       SINGLE    n         1.089     0.010     0.974     0.010     
+SOT       C5        H51       SINGLE    n         1.089     0.010     0.974     0.010     
+SOT       C5        H52       SINGLE    n         1.089     0.010     0.974     0.010     
+SOT       C6        H61       SINGLE    n         1.089     0.010     0.974     0.010     
+SOT       C6        H62       SINGLE    n         1.089     0.010     0.974     0.010     
+SOT       O4        H9        SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SOT          C2          O1          C6     109.829    1.50
+SOT          O1          C2          C3     111.284    1.50
+SOT          O1          C2         H21     109.195    1.50
+SOT          O1          C2         H22     109.195    1.50
+SOT          C3          C2         H21     109.378    1.50
+SOT          C3          C2         H22     109.378    1.50
+SOT         H21          C2         H22     108.175    1.50
+SOT          C2          C3          N4     108.320    1.50
+SOT          C2          C3         H31     110.011    1.50
+SOT          C2          C3         H32     110.011    1.50
+SOT          N4          C3         H31     109.668    1.50
+SOT          N4          C3         H32     109.668    1.50
+SOT         H31          C3         H32     108.374    1.50
+SOT          C3          N4          C5     112.437    1.50
+SOT          C3          N4           S     117.823    2.12
+SOT          C5          N4           S     117.823    2.12
+SOT          N4          C5          C6     108.320    1.50
+SOT          N4          C5         H51     109.668    1.50
+SOT          N4          C5         H52     109.668    1.50
+SOT          C6          C5         H51     110.011    1.50
+SOT          C6          C5         H52     110.011    1.50
+SOT         H51          C5         H52     108.374    1.50
+SOT          O1          C6          C5     111.284    1.50
+SOT          O1          C6         H61     109.195    1.50
+SOT          O1          C6         H62     109.195    1.50
+SOT          C5          C6         H61     109.378    1.50
+SOT          C5          C6         H62     109.378    1.50
+SOT         H61          C6         H62     108.175    1.50
+SOT          N4           S         O1S     109.765    2.13
+SOT          N4           S         O2S     109.765    2.13
+SOT          N4           S          O4     109.471    3.00
+SOT         O1S           S         O2S     118.684    1.97
+SOT         O1S           S          O4     110.180    2.87
+SOT         O2S           S          O4     110.180    2.87
+SOT           S          O4          H9     109.576    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SOT             sp3_sp3_1          C3          C2          O1          C6      60.000   10.00     3
+SOT            sp3_sp3_34          C5          C6          O1          C2     180.000   10.00     3
+SOT             sp3_sp3_4          O1          C2          C3          N4     -60.000   10.00     3
+SOT            sp3_sp3_14          C2          C3          N4           S     180.000   10.00     3
+SOT            sp3_sp3_20          C6          C5          N4           S      60.000   10.00     3
+SOT            sp3_sp3_37          C3          N4           S         O1S     180.000   10.00     3
+SOT            sp3_sp3_25          N4          C5          C6          O1      60.000   10.00     3
+SOT            sp3_sp3_44          H9          O4           S         O1S     -60.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SOT SMILES           ACDLabs              12.01 "O=S(=O)(O)N1CCOCC1"
+SOT SMILES_CANONICAL CACTVS               3.370 "O[S](=O)(=O)N1CCOCC1"
+SOT SMILES           CACTVS               3.370 "O[S](=O)(=O)N1CCOCC1"
+SOT SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C1COCCN1S(=O)(=O)O"
+SOT SMILES           "OpenEye OEToolkits" 1.7.0 "C1COCCN1S(=O)(=O)O"
+SOT InChI            InChI                1.03  "InChI=1S/C4H9NO4S/c6-10(7,8)5-1-3-9-4-2-5/h1-4H2,(H,6,7,8)"
+SOT InChIKey         InChI                1.03  GLGNSAPAWZUDRT-UHFFFAOYSA-N
+SOT ?                acedrg               202         "dictionary generator"                  
+SOT ?                acedrg_database      11          "data source"                           
+SOT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SOT ?                refmac5              5.8.0189    "optimization tool"                     

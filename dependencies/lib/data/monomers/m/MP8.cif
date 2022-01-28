@@ -1,0 +1,194 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MP8     MP8     "(4R)-4-methyl-L-proline"     P-peptide     19     9     .
+#
+data_comp_MP8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MP8     C       C       C       0       -1.484      -0.351      1.234
+MP8     N       N       NT1     0       -1.802      0.108       3.649
+MP8     O       O       O       0       -1.485      0.819       0.893
+MP8     CA      C       CH1     0       -2.259      -0.708      2.512
+MP8     CB      C       CH2     0       -3.756      -0.387      2.367
+MP8     CD      C       CH2     0       -2.938      0.748       4.323
+MP8     CE      C       CH3     0       -5.395      1.039       3.718
+MP8     CG      C       CH1     0       -3.972      0.883       3.207
+MP8     OXT     O       OC      -1      -0.925      -1.264      0.653
+MP8     H2      H       H       0       -1.396      -0.413      4.241
+MP8     HA      H       H       0       -2.132      -1.666      2.727
+MP8     HB      H       H       0       -4.304      -1.124      2.711
+MP8     HBA     H       H       0       -3.996      -0.227      1.430
+MP8     HD      H       H       0       -2.682      1.625       4.680
+MP8     HDA     H       H       0       -3.273      0.183       5.052
+MP8     HE      H       H       0       -5.463      1.849       4.249
+MP8     HEA     H       H       0       -5.629      0.273       4.267
+MP8     HEB     H       H       0       -6.006      1.095       2.965
+MP8     HG      H       H       0       -3.748      1.675       2.653
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+MP8      N      n/a    CD     START
+MP8      H2     N      .      .
+MP8      CD     N      CG     .
+MP8      HD     CD     .      .
+MP8      HDA    CD     .      .
+MP8      CG     CD     CB     .
+MP8      HG     CG     .      .
+MP8      CE     CG     HE     .
+MP8      HEB    CE     .      .
+MP8      HEA    CE     .      .
+MP8      HE     CE     .      .
+MP8      CB     CG     CA     .
+MP8      HB     CB     .      .
+MP8      HBA    CB     .      .
+MP8      CA     CB     C      .
+MP8      HA     CA     .      .
+MP8      C      CA     .      END
+MP8      O      C      .      .
+MP8      OXT    C      .      .
+MP8      N      CA     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MP8       C         O         DOUBLE    n         1.218     0.020     1.218     0.020     
+MP8       C         CA        SINGLE    n         1.536     0.010     1.536     0.010     
+MP8       C         OXT       SINGLE    n         1.218     0.020     1.218     0.020     
+MP8       N         CA        SINGLE    n         1.468     0.015     1.468     0.015     
+MP8       N         CD        SINGLE    n         1.468     0.016     1.468     0.016     
+MP8       CA        CB        SINGLE    n         1.534     0.013     1.534     0.013     
+MP8       CB        CG        SINGLE    n         1.538     0.010     1.538     0.010     
+MP8       CD        CG        SINGLE    n         1.528     0.010     1.528     0.010     
+MP8       CE        CG        SINGLE    n         1.520     0.014     1.520     0.014     
+MP8       N         H2        SINGLE    n         1.036     0.016     0.887     0.020     
+MP8       CA        HA        SINGLE    n         1.089     0.010     0.990     0.012     
+MP8       CB        HB        SINGLE    n         1.089     0.010     0.980     0.011     
+MP8       CB        HBA       SINGLE    n         1.089     0.010     0.980     0.011     
+MP8       CD        HD        SINGLE    n         1.089     0.010     0.981     0.019     
+MP8       CD        HDA       SINGLE    n         1.089     0.010     0.981     0.019     
+MP8       CE        HE        SINGLE    n         1.089     0.010     0.971     0.017     
+MP8       CE        HEA       SINGLE    n         1.089     0.010     0.971     0.017     
+MP8       CE        HEB       SINGLE    n         1.089     0.010     0.971     0.017     
+MP8       CG        HG        SINGLE    n         1.089     0.010     0.992     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MP8           O           C          CA     117.013    1.95
+MP8           O           C         OXT     125.975    1.50
+MP8          CA           C         OXT     117.013    1.95
+MP8          CA           N          CD     109.056    3.00
+MP8          CA           N          H2     109.307    3.00
+MP8          CD           N          H2     107.738    2.27
+MP8           C          CA           N     111.420    2.45
+MP8           C          CA          CB     110.031    2.42
+MP8           C          CA          HA     110.011    1.50
+MP8           N          CA          CB     103.430    2.23
+MP8           N          CA          HA     109.296    1.50
+MP8          CB          CA          HA     110.393    1.50
+MP8          CA          CB          CG     104.443    2.26
+MP8          CA          CB          HB     110.853    1.50
+MP8          CA          CB         HBA     110.853    1.50
+MP8          CG          CB          HB     110.718    1.50
+MP8          CG          CB         HBA     110.718    1.50
+MP8          HB          CB         HBA     108.859    1.50
+MP8           N          CD          CG     103.104    2.01
+MP8           N          CD          HD     110.393    1.50
+MP8           N          CD         HDA     110.393    1.50
+MP8          CG          CD          HD     110.966    1.50
+MP8          CG          CD         HDA     110.966    1.50
+MP8          HD          CD         HDA     109.055    1.50
+MP8          CG          CE          HE     109.481    1.50
+MP8          CG          CE         HEA     109.481    1.50
+MP8          CG          CE         HEB     109.481    1.50
+MP8          HE          CE         HEA     109.347    1.50
+MP8          HE          CE         HEB     109.347    1.50
+MP8         HEA          CE         HEB     109.347    1.50
+MP8          CB          CG          CD     103.649    1.50
+MP8          CB          CG          CE     112.678    3.00
+MP8          CB          CG          HG     108.453    1.91
+MP8          CD          CG          CE     113.156    1.80
+MP8          CD          CG          HG     108.836    1.50
+MP8          CE          CG          HG     108.105    1.90
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MP8             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+MP8             sp3_sp3_3           C          CA           N          CD     -60.000   10.00     3
+MP8            sp3_sp3_34          CG          CD           N          CA     180.000   10.00     3
+MP8            sp3_sp3_13           C          CA          CB          CG      60.000   10.00     3
+MP8            sp3_sp3_17          CA          CB          CG          CE     180.000   10.00     3
+MP8            sp3_sp3_26           N          CD          CG          CE      60.000   10.00     3
+MP8            sp3_sp3_40          HE          CE          CG          CB     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MP8    chir_1    N    CA    CD    H2    negative
+MP8    chir_2    CA    N    C    CB    both
+MP8    chir_3    CG    CD    CB    CE    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MP8    plan-1           C   0.020
+MP8    plan-1          CA   0.020
+MP8    plan-1           O   0.020
+MP8    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MP8 SMILES           ACDLabs              12.01 "O=C(O)C1NCC(C)C1"
+MP8 SMILES_CANONICAL CACTVS               3.370 "C[C@H]1CN[C@@H](C1)C(O)=O"
+MP8 SMILES           CACTVS               3.370 "C[CH]1CN[CH](C1)C(O)=O"
+MP8 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C[C@@H]1C[C@H](NC1)C(=O)O"
+MP8 SMILES           "OpenEye OEToolkits" 1.7.0 "CC1CC(NC1)C(=O)O"
+MP8 InChI            InChI                1.03  "InChI=1S/C6H11NO2/c1-4-2-5(6(8)9)7-3-4/h4-5,7H,2-3H2,1H3,(H,8,9)/t4-,5+/m1/s1"
+MP8 InChIKey         InChI                1.03  KKJQZEWNZXRJFG-UHNVWZDZSA-N
+MP8 ?                acedrg               196         "dictionary generator"
+MP8 ?                acedrg_database      11          "data source"
+MP8 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MP8 ?                refmac5              5.8.0222    "optimization tool"

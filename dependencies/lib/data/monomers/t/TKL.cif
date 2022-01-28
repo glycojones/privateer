@@ -1,0 +1,331 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TKL      TKL '(S)-2-(4-((S)-1,5-DIAMINOPENTYL)-1H-' non-polymer        44  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TKL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TKL           O      O    OH1       0.000      0.000    0.000    0.000
+ TKL           HO     H    H         0.000      0.000    0.000    0.000
+ TKL           C      C    CH2       0.000      0.000    0.000    0.000
+ TKL           H1     H    H         0.000      0.000    0.000    0.000
+ TKL           H2     H    H         0.000      0.000    0.000    0.000
+ TKL           CA     C    CH1       0.000      0.000    0.000    0.000
+ TKL           HA     H    H         0.000      0.000    0.000    0.000
+ TKL           CB     C    CH2       0.000      0.000    0.000    0.000
+ TKL           HB1    H    H         0.000      0.000    0.000    0.000
+ TKL           HB2    H    H         0.000      0.000    0.000    0.000
+ TKL           CG     C    CH1       0.000      0.000    0.000    0.000
+ TKL           HG     H    H         0.000      0.000    0.000    0.000
+ TKL           CD2    C    CH3       0.000      0.000    0.000    0.000
+ TKL           HD23   H    H         0.000      0.000    0.000    0.000
+ TKL           HD22   H    H         0.000      0.000    0.000    0.000
+ TKL           HD21   H    H         0.000      0.000    0.000    0.000
+ TKL           CD1    C    CH3       0.000      0.000    0.000    0.000
+ TKL           HD13   H    H         0.000      0.000    0.000    0.000
+ TKL           HD12   H    H         0.000      0.000    0.000    0.000
+ TKL           HD11   H    H         0.000      0.000    0.000    0.000
+ TKL           NT1    N    NR5       0.000      0.000    0.000    0.000
+ TKL           CT5    C    CR15      0.000      0.000    0.000    0.000
+ TKL           HT5    H    H         0.000      0.000    0.000    0.000
+ TKL           CT4    C    CR5       0.000      0.000    0.000    0.000
+ TKL           NT3    N    NRD5      0.000      0.000    0.000    0.000
+ TKL           NT2    N    NRD5      0.000      0.000    0.000    0.000
+ TKL           CT6    C    CH1       0.000      0.000    0.000    0.000
+ TKL           HT6    H    H         0.000      0.000    0.000    0.000
+ TKL           N      N    NH2       0.000      0.000    0.000    0.000
+ TKL           HN2    H    H         0.000      0.000    0.000    0.000
+ TKL           HN1    H    H         0.000      0.000    0.000    0.000
+ TKL           CI     C    CH2       0.000      0.000    0.000    0.000
+ TKL           HI1    H    H         0.000      0.000    0.000    0.000
+ TKL           HI2    H    H         0.000      0.000    0.000    0.000
+ TKL           CJ     C    CH2       0.000      0.000    0.000    0.000
+ TKL           HJ1    H    H         0.000      0.000    0.000    0.000
+ TKL           HJ2    H    H         0.000      0.000    0.000    0.000
+ TKL           CK     C    CH2       0.000      0.000    0.000    0.000
+ TKL           HK1    H    H         0.000      0.000    0.000    0.000
+ TKL           HK2    H    H         0.000      0.000    0.000    0.000
+ TKL           CL     CL   CL        0.000      0.000    0.000    0.000
+ TKL           NZ     N    NH2       0.000      0.000    0.000    0.000
+ TKL           HNZ2   H    H         0.000      0.000    0.000    0.000
+ TKL           HNZ1   H    H         0.000      0.000    0.000    0.000
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TKL      O      n/a    C      START
+ TKL      HO     O      .      .
+ TKL      C      O      CA     .
+ TKL      H1     C      .      .
+ TKL      H2     C      .      .
+ TKL      CA     C      NT1    .
+ TKL      HA     CA     .      .
+ TKL      CB     CA     CG     .
+ TKL      HB1    CB     .      .
+ TKL      HB2    CB     .      .
+ TKL      CG     CB     CD1    .
+ TKL      HG     CG     .      .
+ TKL      CD2    CG     HD21   .
+ TKL      HD23   CD2    .      .
+ TKL      HD22   CD2    .      .
+ TKL      HD21   CD2    .      .
+ TKL      CD1    CG     HD11   .
+ TKL      HD13   CD1    .      .
+ TKL      HD12   CD1    .      .
+ TKL      HD11   CD1    .      .
+ TKL      NT1    CA     CT5    .
+ TKL      CT5    NT1    CT4    .
+ TKL      HT5    CT5    .      .
+ TKL      CT4    CT5    CT6    .
+ TKL      NT3    CT4    NT2    .
+ TKL      NT2    NT3    .      .
+ TKL      CT6    CT4    CI     .
+ TKL      HT6    CT6    .      .
+ TKL      N      CT6    HN1    .
+ TKL      HN2    N      .      .
+ TKL      HN1    N      .      .
+ TKL      CI     CT6    CJ     .
+ TKL      HI1    CI     .      .
+ TKL      HI2    CI     .      .
+ TKL      CJ     CI     CK     .
+ TKL      HJ1    CJ     .      .
+ TKL      HJ2    CJ     .      .
+ TKL      CK     CJ     CL     .
+ TKL      HK1    CK     .      .
+ TKL      HK2    CK     .      .
+ TKL      CL     CK     NZ     .
+ TKL      NZ     CL     HNZ1   .
+ TKL      HNZ2   NZ     .      .
+ TKL      HNZ1   NZ     .      END
+ TKL      NT1    NT2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TKL       C         O         single    1.432     0.020     1.432     0.020     
+TKL       HO        O         single    0.970     0.012     0.839     0.014     
+TKL       CA        C         single    1.524     0.020     1.524     0.020     
+TKL       H1        C         single    1.089     0.010     0.989     0.005     
+TKL       H2        C         single    1.089     0.010     0.989     0.005     
+TKL       CB        CA        single    1.524     0.020     1.524     0.020     
+TKL       NT1       CA        single    1.485     0.020     1.485     0.020     
+TKL       HA        CA        single    1.089     0.010     0.989     0.005     
+TKL       CG        CB        single    1.524     0.020     1.524     0.020     
+TKL       HB1       CB        single    1.089     0.010     0.989     0.005     
+TKL       HB2       CB        single    1.089     0.010     0.989     0.005     
+TKL       CD1       CG        single    1.524     0.020     1.524     0.020     
+TKL       CD2       CG        single    1.524     0.020     1.524     0.020     
+TKL       HG        CG        single    1.089     0.010     0.989     0.005     
+TKL       HD11      CD1       single    1.089     0.010     0.989     0.005     
+TKL       HD12      CD1       single    1.089     0.010     0.989     0.005     
+TKL       HD13      CD1       single    1.089     0.010     0.989     0.005     
+TKL       HD21      CD2       single    1.089     0.010     0.989     0.005     
+TKL       HD22      CD2       single    1.089     0.010     0.989     0.005     
+TKL       HD23      CD2       single    1.089     0.010     0.989     0.005     
+TKL       NT1       NT2       single    1.402     0.020     1.402     0.020     
+TKL       CT5       NT1       single    1.337     0.020     1.337     0.020     
+TKL       NT2       NT3       double    1.404     0.020     1.404     0.020     
+TKL       NT3       CT4       single    1.350     0.020     1.350     0.020     
+TKL       CT4       CT5       double    1.387     0.020     1.387     0.020     
+TKL       CT6       CT4       single    1.480     0.020     1.480     0.020     
+TKL       HT5       CT5       single    1.082     0.013     0.975     0.010     
+TKL       N         CT6       single    1.450     0.020     1.450     0.020     
+TKL       CI        CT6       single    1.524     0.020     1.524     0.020     
+TKL       HT6       CT6       single    1.089     0.010     0.989     0.005     
+TKL       HN1       N         single    1.036     0.016     0.914     0.007     
+TKL       HN2       N         single    1.036     0.016     0.914     0.007     
+TKL       CJ        CI        single    1.524     0.020     1.524     0.020     
+TKL       HI1       CI        single    1.089     0.010     0.989     0.005     
+TKL       HI2       CI        single    1.089     0.010     0.989     0.005     
+TKL       CK        CJ        single    1.524     0.020     1.524     0.020     
+TKL       HJ1       CJ        single    1.089     0.010     0.989     0.005     
+TKL       HJ2       CJ        single    1.089     0.010     0.989     0.005     
+TKL       CL        CK        single    1.790     0.020     1.790     0.020     
+TKL       HK1       CK        single    1.089     0.010     0.989     0.005     
+TKL       HK2       CK        single    1.089     0.010     0.989     0.005     
+TKL       NZ        CL        single    1.800     0.020     1.800     0.020     
+TKL       HNZ1      NZ        single    1.036     0.016     0.914     0.007     
+TKL       HNZ2      NZ        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TKL      HO     O      C       109.470    3.000
+ TKL      O      C      H1      109.470    3.000
+ TKL      O      C      H2      109.470    3.000
+ TKL      O      C      CA      109.470    3.000
+ TKL      H1     C      H2      107.900    3.000
+ TKL      H1     C      CA      109.470    3.000
+ TKL      H2     C      CA      109.470    3.000
+ TKL      C      CA     HA      108.340    3.000
+ TKL      C      CA     CB      109.470    3.000
+ TKL      C      CA     NT1     109.470    3.000
+ TKL      HA     CA     CB      108.340    3.000
+ TKL      HA     CA     NT1     109.470    3.000
+ TKL      CB     CA     NT1     109.470    3.000
+ TKL      CA     CB     HB1     109.470    3.000
+ TKL      CA     CB     HB2     109.470    3.000
+ TKL      CA     CB     CG      111.000    3.000
+ TKL      HB1    CB     HB2     107.900    3.000
+ TKL      HB1    CB     CG      109.470    3.000
+ TKL      HB2    CB     CG      109.470    3.000
+ TKL      CB     CG     HG      108.340    3.000
+ TKL      CB     CG     CD2     111.000    3.000
+ TKL      CB     CG     CD1     111.000    3.000
+ TKL      HG     CG     CD2     108.340    3.000
+ TKL      HG     CG     CD1     108.340    3.000
+ TKL      CD2    CG     CD1     111.000    3.000
+ TKL      CG     CD2    HD23    109.470    3.000
+ TKL      CG     CD2    HD22    109.470    3.000
+ TKL      CG     CD2    HD21    109.470    3.000
+ TKL      HD23   CD2    HD22    109.470    3.000
+ TKL      HD23   CD2    HD21    109.470    3.000
+ TKL      HD22   CD2    HD21    109.470    3.000
+ TKL      CG     CD1    HD13    109.470    3.000
+ TKL      CG     CD1    HD12    109.470    3.000
+ TKL      CG     CD1    HD11    109.470    3.000
+ TKL      HD13   CD1    HD12    109.470    3.000
+ TKL      HD13   CD1    HD11    109.470    3.000
+ TKL      HD12   CD1    HD11    109.470    3.000
+ TKL      CA     NT1    CT5     126.000    3.000
+ TKL      CA     NT1    NT2     108.000    3.000
+ TKL      CT5    NT1    NT2     108.000    3.000
+ TKL      NT1    CT5    HT5     126.000    3.000
+ TKL      NT1    CT5    CT4     108.000    3.000
+ TKL      HT5    CT5    CT4     126.000    3.000
+ TKL      CT5    CT4    NT3     108.000    3.000
+ TKL      CT5    CT4    CT6     108.000    3.000
+ TKL      NT3    CT4    CT6     126.000    3.000
+ TKL      CT4    NT3    NT2     108.000    3.000
+ TKL      NT3    NT2    NT1     108.000    3.000
+ TKL      CT4    CT6    HT6     109.470    3.000
+ TKL      CT4    CT6    N       109.470    3.000
+ TKL      CT4    CT6    CI      109.470    3.000
+ TKL      HT6    CT6    N       109.470    3.000
+ TKL      HT6    CT6    CI      108.340    3.000
+ TKL      N      CT6    CI      109.470    3.000
+ TKL      CT6    N      HN2     120.000    3.000
+ TKL      CT6    N      HN1     120.000    3.000
+ TKL      HN2    N      HN1     120.000    3.000
+ TKL      CT6    CI     HI1     109.470    3.000
+ TKL      CT6    CI     HI2     109.470    3.000
+ TKL      CT6    CI     CJ      111.000    3.000
+ TKL      HI1    CI     HI2     107.900    3.000
+ TKL      HI1    CI     CJ      109.470    3.000
+ TKL      HI2    CI     CJ      109.470    3.000
+ TKL      CI     CJ     HJ1     109.470    3.000
+ TKL      CI     CJ     HJ2     109.470    3.000
+ TKL      CI     CJ     CK      111.000    3.000
+ TKL      HJ1    CJ     HJ2     107.900    3.000
+ TKL      HJ1    CJ     CK      109.470    3.000
+ TKL      HJ2    CJ     CK      109.470    3.000
+ TKL      CJ     CK     HK1     109.470    3.000
+ TKL      CJ     CK     HK2     109.470    3.000
+ TKL      CJ     CK     CL      109.500    3.000
+ TKL      HK1    CK     HK2     107.900    3.000
+ TKL      HK1    CK     CL      109.500    3.000
+ TKL      HK2    CK     CL      109.500    3.000
+ TKL      CK     CL     NZ       90.000    3.000
+ TKL      CL     NZ     HNZ2    120.000    3.000
+ TKL      CL     NZ     HNZ1    120.000    3.000
+ TKL      HNZ2   NZ     HNZ1    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TKL      var_1    HO     O      C      CA         0.000   20.000   1
+ TKL      var_2    O      C      CA     NT1        0.000   20.000   3
+ TKL      var_3    C      CA     CB     CG         0.000   20.000   3
+ TKL      var_4    CA     CB     CG     CD1        0.000   20.000   3
+ TKL      var_5    CB     CG     CD2    HD21       0.000   20.000   3
+ TKL      var_6    CB     CG     CD1    HD11       0.000   20.000   3
+ TKL      var_7    C      CA     NT1    CT5        0.000   20.000   1
+ TKL      CONST_1  CA     NT1    NT2    NT3        0.000    0.000   0
+ TKL      CONST_2  CA     NT1    CT5    CT4        0.000    0.000   0
+ TKL      CONST_3  NT1    CT5    CT4    CT6        0.000    0.000   0
+ TKL      CONST_4  CT5    CT4    NT3    NT2        0.000    0.000   0
+ TKL      CONST_5  CT4    NT3    NT2    NT1        0.000    0.000   0
+ TKL      var_8    CT5    CT4    CT6    CI         0.000   20.000   1
+ TKL      var_9    CT4    CT6    N      HN1        0.000   20.000   1
+ TKL      var_10   CT4    CT6    CI     CJ         0.000   20.000   3
+ TKL      var_11   CT6    CI     CJ     CK         0.000   20.000   3
+ TKL      var_12   CI     CJ     CK     CL         0.000   20.000   3
+ TKL      var_13   CJ     CK     CL     NZ         0.000   20.000   1
+ TKL      var_14   HNZ2   NZ     CL     CK         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TKL      chir_01  CA     C      CB     NT1       positiv
+ TKL      chir_02  CG     CB     CD1    CD2       positiv
+ TKL      chir_03  CT6    CT4    N      CI        positiv
+ TKL      chir_04  CL     CK     .      NZ        cross1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TKL      plan-1    NT1       0.020
+ TKL      plan-1    CA        0.020
+ TKL      plan-1    NT2       0.020
+ TKL      plan-1    CT5       0.020
+ TKL      plan-1    NT3       0.020
+ TKL      plan-1    CT4       0.020
+ TKL      plan-1    CT6       0.020
+ TKL      plan-1    HT5       0.020
+ TKL      plan-2    N         0.020
+ TKL      plan-2    CT6       0.020
+ TKL      plan-2    HN1       0.020
+ TKL      plan-2    HN2       0.020
+ TKL      plan-3    NZ        0.020
+ TKL      plan-3    CL        0.020
+ TKL      plan-3    HNZ1      0.020
+ TKL      plan-3    HNZ2      0.020
+# ------------------------------------------------------

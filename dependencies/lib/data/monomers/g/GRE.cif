@@ -1,0 +1,150 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GRE     GRE      "2,6-DIHYDROXYBENZOIC ACID"     NON-POLYMER     16     11     .     
+#
+data_comp_GRE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GRE     C1A     C       C       0       60.871      35.714      27.273      
+GRE     O1A     O       O       0       61.593      35.552      28.273      
+GRE     O2A     O       OC      -1      60.893      34.973      26.273      
+GRE     C1      C       CR6     0       59.910      36.876      27.272      
+GRE     C2      C       CR6     0       60.352      38.195      27.554      
+GRE     C3      C       CR16    0       59.458      39.263      27.552      
+GRE     C4      C       CR16    0       58.120      39.041      27.271      
+GRE     C5      C       CR16    0       57.651      37.769      26.990      
+GRE     C6      C       CR6     0       58.531      36.690      26.989      
+GRE     O2      O       OH1     0       61.661      38.462      27.837      
+GRE     O6      O       OH1     0       58.024      35.454      26.707      
+GRE     H3      H       H       0       59.765      40.132      27.741      
+GRE     H4      H       H       0       57.518      39.770      27.270      
+GRE     H5      H       H       0       56.740      37.630      26.801      
+GRE     HO2     H       H       0       61.724      38.652      28.671      
+GRE     HO6     H       H       0       58.014      34.994      27.431      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GRE       C1A       O1A       DOUBLE    n         1.244     0.020     1.244     0.020     
+GRE       C1A       O2A       SINGLE    n         1.244     0.020     1.244     0.020     
+GRE       C1A       C1        SINGLE    n         1.498     0.020     1.498     0.020     
+GRE       C1        C2        DOUBLE    y         1.410     0.010     1.410     0.010     
+GRE       C1        C6        SINGLE    y         1.410     0.010     1.410     0.010     
+GRE       C2        C3        SINGLE    y         1.386     0.010     1.386     0.010     
+GRE       C2        O2        SINGLE    n         1.363     0.015     1.363     0.015     
+GRE       C3        C4        DOUBLE    y         1.379     0.010     1.379     0.010     
+GRE       C4        C5        SINGLE    y         1.379     0.010     1.379     0.010     
+GRE       C5        C6        DOUBLE    y         1.386     0.010     1.386     0.010     
+GRE       C6        O6        SINGLE    n         1.363     0.015     1.363     0.015     
+GRE       C3        H3        SINGLE    n         1.082     0.013     0.941     0.018     
+GRE       C4        H4        SINGLE    n         1.082     0.013     0.945     0.013     
+GRE       C5        H5        SINGLE    n         1.082     0.013     0.941     0.018     
+GRE       O2        HO2       SINGLE    n         0.970     0.012     0.858     0.020     
+GRE       O6        HO6       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GRE         O1A         C1A         O2A     123.953    1.50
+GRE         O1A         C1A          C1     118.024    1.50
+GRE         O2A         C1A          C1     118.024    1.50
+GRE         C1A          C1          C2     121.240    1.50
+GRE         C1A          C1          C6     121.240    1.50
+GRE          C2          C1          C6     117.519    1.50
+GRE          C1          C2          C3     120.716    1.50
+GRE          C1          C2          O2     120.879    1.50
+GRE          C3          C2          O2     118.405    1.65
+GRE          C2          C3          C4     119.901    1.50
+GRE          C2          C3          H3     119.811    1.50
+GRE          C4          C3          H3     120.288    1.50
+GRE          C3          C4          C5     121.248    1.50
+GRE          C3          C4          H4     119.376    1.50
+GRE          C5          C4          H4     119.376    1.50
+GRE          C4          C5          C6     119.901    1.50
+GRE          C4          C5          H5     120.288    1.50
+GRE          C6          C5          H5     119.811    1.50
+GRE          C1          C6          C5     120.716    1.50
+GRE          C1          C6          O6     120.879    1.50
+GRE          C5          C6          O6     118.405    1.65
+GRE          C2          O2         HO2     108.378    3.00
+GRE          C6          O6         HO6     108.378    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GRE             sp2_sp2_1          C2          C1         C1A         O1A     180.000   10.00     2
+GRE       const_sp2_sp2_4         C1A          C1          C2          O2       0.000   10.00     2
+GRE              const_24         C1A          C1          C6          O6       0.000   10.00     2
+GRE       const_sp2_sp2_7          O2          C2          C3          C4     180.000   10.00     2
+GRE       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+GRE              const_13          C3          C4          C5          C6       0.000   10.00     2
+GRE              const_18          C4          C5          C6          O6     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GRE    plan-1          C1   0.020
+GRE    plan-1         C1A   0.020
+GRE    plan-1          C2   0.020
+GRE    plan-1          C3   0.020
+GRE    plan-1          C4   0.020
+GRE    plan-1          C5   0.020
+GRE    plan-1          C6   0.020
+GRE    plan-1          H3   0.020
+GRE    plan-1          H4   0.020
+GRE    plan-1          H5   0.020
+GRE    plan-1          O2   0.020
+GRE    plan-1          O6   0.020
+GRE    plan-2          C1   0.020
+GRE    plan-2         C1A   0.020
+GRE    plan-2         O1A   0.020
+GRE    plan-2         O2A   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GRE SMILES           ACDLabs              10.04 "O=C(O)c1c(O)cccc1O"
+GRE SMILES_CANONICAL CACTVS               3.341 "OC(=O)c1c(O)cccc1O"
+GRE SMILES           CACTVS               3.341 "OC(=O)c1c(O)cccc1O"
+GRE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)O)C(=O)O)O"
+GRE SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)O)C(=O)O)O"
+GRE InChI            InChI                1.03  "InChI=1S/C7H6O4/c8-4-2-1-3-5(9)6(4)7(10)11/h1-3,8-9H,(H,10,11)"
+GRE InChIKey         InChI                1.03  AKEUNCKRJATALU-UHFFFAOYSA-N
+GRE ?                acedrg               202         "dictionary generator"                  
+GRE ?                acedrg_database      11          "data source"                           
+GRE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GRE ?                refmac5              5.8.0189    "optimization tool"                     

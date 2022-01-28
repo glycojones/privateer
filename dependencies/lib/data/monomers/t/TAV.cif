@@ -1,0 +1,536 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TAV      TAV '"N-METHYL-N-{2-[(2-NAPHTHYLSULFONYL)' non-polymer        70  46 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TAV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TAV           O66    O    OC       -0.500      0.000    0.000    0.000
+ TAV           C64    C    C         0.000      0.896    0.474   -0.734
+ TAV           O65    O    OC       -0.500      1.542   -0.278   -1.497
+ TAV           C67    C    CH2       0.000      1.197    1.950   -0.698
+ TAV           H671   H    H         0.000      1.036    2.378   -1.690
+ TAV           H672   H    H         0.000      2.236    2.102   -0.401
+ TAV           C57    C    CH1       0.000      0.271    2.634    0.310
+ TAV           H57    H    H         0.000      0.434    2.203    1.308
+ TAV           C61    C    C         0.000      0.572    4.110    0.345
+ TAV           O63    O    OC       -0.500      1.427    4.555    1.143
+ TAV           O62    O    OC       -0.500     -0.033    4.890   -0.423
+ TAV           N49    N    N         0.000     -1.122    2.429   -0.089
+ TAV           C56    C    CH3       0.000     -1.592    2.918   -1.387
+ TAV           H563   H    H         0.000     -1.562    3.977   -1.401
+ TAV           H562   H    H         0.000     -0.969    2.539   -2.156
+ TAV           H561   H    H         0.000     -2.588    2.593   -1.550
+ TAV           C29    C    C         0.000     -1.974    1.791    0.739
+ TAV           O50    O    O         0.000     -1.617    1.487    1.860
+ TAV           C24    C    CR6       0.000     -3.338    1.464    0.284
+ TAV           C25    C    CR16      0.000     -3.529    0.722   -0.885
+ TAV           H25    H    H         0.000     -2.675    0.386   -1.460
+ TAV           C26    C    CR6       0.000     -4.810    0.419   -1.306
+ TAV           O51    O    O2        0.000     -4.996   -0.303   -2.443
+ TAV           S31    S    ST        0.000     -4.965   -1.770   -2.044
+ TAV           O52    O    OS        0.000     -5.034   -2.503   -3.259
+ TAV           O53    O    OS        0.000     -3.935   -1.884   -1.072
+ TAV           C45    C    CR6       0.000     -6.467   -2.116   -1.191
+ TAV           C46    C    CR16      0.000     -7.557   -2.621   -1.897
+ TAV           H46    H    H         0.000     -7.468   -2.795   -2.962
+ TAV           C41    C    CR16      0.000     -8.731   -2.900   -1.269
+ TAV           H41    H    H         0.000     -9.569   -3.293   -1.831
+ TAV           C34    C    CR66      0.000     -8.851   -2.675    0.113
+ TAV           C33    C    CR16      0.000    -10.047   -2.950    0.797
+ TAV           H33    H    H         0.000    -10.903   -3.343    0.261
+ TAV           C42    C    CR16      0.000     -6.545   -1.890    0.150
+ TAV           H42    H    H         0.000     -5.687   -1.503    0.687
+ TAV           C35    C    CR66      0.000     -7.743   -2.161    0.833
+ TAV           C36    C    CR16      0.000     -7.862   -1.936    2.213
+ TAV           H36    H    H         0.000     -7.024   -1.544    2.775
+ TAV           C37    C    CR16      0.000     -9.036   -2.214    2.842
+ TAV           H37    H    H         0.000     -9.126   -2.039    3.907
+ TAV           C32    C    CR16      0.000    -10.126   -2.720    2.136
+ TAV           H32    H    H         0.000    -11.049   -2.933    2.660
+ TAV           C21    C    CR16      0.000     -5.907    0.847   -0.569
+ TAV           H21    H    H         0.000     -6.908    0.604   -0.904
+ TAV           C23    C    CR6       0.000     -4.450    1.888    1.026
+ TAV           C22    C    CR16      0.000     -5.730    1.579    0.588
+ TAV           H22    H    H         0.000     -6.591    1.913    1.153
+ TAV           N20    N    NH1       0.000     -4.271    2.625    2.191
+ TAV           H20    H    H         0.000     -3.856    3.545    2.149
+ TAV           S18    S    ST        0.000     -4.738    1.994    3.650
+ TAV           O19    O    OS        0.000     -4.359    2.956    4.625
+ TAV           O54    O    OS        0.000     -6.054    1.498    3.452
+ TAV           C1     C    CR6       0.000     -3.733    0.580    3.958
+ TAV           C6     C    CR16      0.000     -2.584    0.712    4.734
+ TAV           H6     H    H         0.000     -2.321    1.681    5.138
+ TAV           C5     C    CR16      0.000     -1.786   -0.361    4.991
+ TAV           H5     H    H         0.000     -0.895   -0.244    5.595
+ TAV           C4     C    CR66      0.000     -2.125   -1.621    4.468
+ TAV           C10    C    CR16      0.000     -1.327   -2.750    4.712
+ TAV           H10    H    H         0.000     -0.430   -2.664    5.313
+ TAV           C13    C    CR16      0.000     -1.686   -3.955    4.189
+ TAV           H13    H    H         0.000     -1.069   -4.824    4.378
+ TAV           C14    C    CR16      0.000     -2.836   -4.085    3.414
+ TAV           H14    H    H         0.000     -3.100   -5.055    3.010
+ TAV           C9     C    CR16      0.000     -3.633   -3.012    3.156
+ TAV           H9     H    H         0.000     -4.524   -3.128    2.552
+ TAV           C3     C    CR66      0.000     -3.293   -1.753    3.678
+ TAV           C2     C    CR16      0.000     -4.096   -0.623    3.439
+ TAV           H2     H    H         0.000     -4.997   -0.711    2.845
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TAV      O66    n/a    C64    START
+ TAV      C64    O66    C67    .
+ TAV      O65    C64    .      .
+ TAV      C67    C64    C57    .
+ TAV      H671   C67    .      .
+ TAV      H672   C67    .      .
+ TAV      C57    C67    N49    .
+ TAV      H57    C57    .      .
+ TAV      C61    C57    O62    .
+ TAV      O63    C61    .      .
+ TAV      O62    C61    .      .
+ TAV      N49    C57    C29    .
+ TAV      C56    N49    H561   .
+ TAV      H563   C56    .      .
+ TAV      H562   C56    .      .
+ TAV      H561   C56    .      .
+ TAV      C29    N49    C24    .
+ TAV      O50    C29    .      .
+ TAV      C24    C29    C23    .
+ TAV      C25    C24    C26    .
+ TAV      H25    C25    .      .
+ TAV      C26    C25    C21    .
+ TAV      O51    C26    S31    .
+ TAV      S31    O51    C45    .
+ TAV      O52    S31    .      .
+ TAV      O53    S31    .      .
+ TAV      C45    S31    C42    .
+ TAV      C46    C45    C41    .
+ TAV      H46    C46    .      .
+ TAV      C41    C46    C34    .
+ TAV      H41    C41    .      .
+ TAV      C34    C41    C33    .
+ TAV      C33    C34    H33    .
+ TAV      H33    C33    .      .
+ TAV      C42    C45    C35    .
+ TAV      H42    C42    .      .
+ TAV      C35    C42    C36    .
+ TAV      C36    C35    C37    .
+ TAV      H36    C36    .      .
+ TAV      C37    C36    C32    .
+ TAV      H37    C37    .      .
+ TAV      C32    C37    H32    .
+ TAV      H32    C32    .      .
+ TAV      C21    C26    H21    .
+ TAV      H21    C21    .      .
+ TAV      C23    C24    N20    .
+ TAV      C22    C23    H22    .
+ TAV      H22    C22    .      .
+ TAV      N20    C23    S18    .
+ TAV      H20    N20    .      .
+ TAV      S18    N20    C1     .
+ TAV      O19    S18    .      .
+ TAV      O54    S18    .      .
+ TAV      C1     S18    C6     .
+ TAV      C6     C1     C5     .
+ TAV      H6     C6     .      .
+ TAV      C5     C6     C4     .
+ TAV      H5     C5     .      .
+ TAV      C4     C5     C10    .
+ TAV      C10    C4     C13    .
+ TAV      H10    C10    .      .
+ TAV      C13    C10    C14    .
+ TAV      H13    C13    .      .
+ TAV      C14    C13    C9     .
+ TAV      H14    C14    .      .
+ TAV      C9     C14    C3     .
+ TAV      H9     C9     .      .
+ TAV      C3     C9     C2     .
+ TAV      C2     C3     H2     .
+ TAV      H2     C2     .      END
+ TAV      C1     C2     .    ADD
+ TAV      C3     C4     .    ADD
+ TAV      C21    C22    .    ADD
+ TAV      C32    C33    .    ADD
+ TAV      C34    C35    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TAV       C1        C2        double    1.390     0.020     1.390     0.020     
+TAV       C6        C1        single    1.390     0.020     1.390     0.020     
+TAV       C1        S18       single    1.595     0.020     1.595     0.020     
+TAV       C2        C3        single    1.390     0.020     1.390     0.020     
+TAV       H2        C2        single    1.082     0.013     0.975     0.010     
+TAV       C3        C4        double    1.490     0.020     1.490     0.020     
+TAV       C3        C9        single    1.390     0.020     1.390     0.020     
+TAV       C4        C5        single    1.390     0.020     1.390     0.020     
+TAV       C10       C4        single    1.390     0.020     1.390     0.020     
+TAV       C5        C6        double    1.390     0.020     1.390     0.020     
+TAV       H5        C5        single    1.082     0.013     0.975     0.010     
+TAV       H6        C6        single    1.082     0.013     0.975     0.010     
+TAV       C9        C14       double    1.390     0.020     1.390     0.020     
+TAV       H9        C9        single    1.082     0.013     0.975     0.010     
+TAV       C13       C10       double    1.390     0.020     1.390     0.020     
+TAV       H10       C10       single    1.082     0.013     0.975     0.010     
+TAV       C14       C13       single    1.390     0.020     1.390     0.020     
+TAV       H13       C13       single    1.082     0.013     0.975     0.010     
+TAV       H14       C14       single    1.082     0.013     0.975     0.010     
+TAV       O19       S18       double    1.436     0.020     1.436     0.020     
+TAV       S18       N20       single    1.600     0.020     1.600     0.020     
+TAV       O54       S18       double    1.436     0.020     1.436     0.020     
+TAV       N20       C23       single    1.350     0.020     1.350     0.020     
+TAV       H20       N20       single    1.016     0.010     0.899     0.007     
+TAV       C21       C22       double    1.390     0.020     1.390     0.020     
+TAV       C21       C26       single    1.390     0.020     1.390     0.020     
+TAV       H21       C21       single    1.082     0.013     0.975     0.010     
+TAV       C22       C23       single    1.390     0.020     1.390     0.020     
+TAV       H22       C22       single    1.082     0.013     0.975     0.010     
+TAV       C23       C24       double    1.487     0.020     1.487     0.020     
+TAV       C25       C24       single    1.390     0.020     1.390     0.020     
+TAV       C24       C29       single    1.500     0.020     1.500     0.020     
+TAV       C26       C25       double    1.390     0.020     1.390     0.020     
+TAV       H25       C25       single    1.082     0.013     0.975     0.010     
+TAV       O51       C26       single    1.370     0.020     1.370     0.020     
+TAV       C29       N49       single    1.330     0.020     1.330     0.020     
+TAV       O50       C29       double    1.220     0.020     1.220     0.020     
+TAV       C45       S31       single    1.595     0.020     1.595     0.020     
+TAV       S31       O51       single    1.535     0.020     1.535     0.020     
+TAV       O52       S31       double    1.436     0.020     1.436     0.020     
+TAV       O53       S31       double    1.436     0.020     1.436     0.020     
+TAV       C32       C33       double    1.390     0.020     1.390     0.020     
+TAV       C32       C37       single    1.390     0.020     1.390     0.020     
+TAV       H32       C32       single    1.082     0.013     0.975     0.010     
+TAV       C33       C34       single    1.390     0.020     1.390     0.020     
+TAV       H33       C33       single    1.082     0.013     0.975     0.010     
+TAV       C34       C35       double    1.490     0.020     1.490     0.020     
+TAV       C34       C41       single    1.390     0.020     1.390     0.020     
+TAV       C36       C35       single    1.390     0.020     1.390     0.020     
+TAV       C35       C42       single    1.390     0.020     1.390     0.020     
+TAV       C37       C36       double    1.390     0.020     1.390     0.020     
+TAV       H36       C36       single    1.082     0.013     0.975     0.010     
+TAV       H37       C37       single    1.082     0.013     0.975     0.010     
+TAV       C41       C46       double    1.390     0.020     1.390     0.020     
+TAV       H41       C41       single    1.082     0.013     0.975     0.010     
+TAV       C42       C45       double    1.390     0.020     1.390     0.020     
+TAV       H42       C42       single    1.082     0.013     0.975     0.010     
+TAV       C46       C45       single    1.390     0.020     1.390     0.020     
+TAV       H46       C46       single    1.082     0.013     0.975     0.010     
+TAV       C56       N49       single    1.455     0.020     1.455     0.020     
+TAV       N49       C57       single    1.455     0.020     1.455     0.020     
+TAV       H561      C56       single    1.089     0.010     0.989     0.005     
+TAV       H562      C56       single    1.089     0.010     0.989     0.005     
+TAV       H563      C56       single    1.089     0.010     0.989     0.005     
+TAV       C61       C57       single    1.500     0.020     1.500     0.020     
+TAV       C57       C67       single    1.524     0.020     1.524     0.020     
+TAV       H57       C57       single    1.089     0.010     0.989     0.005     
+TAV       O62       C61       deloc     1.250     0.020     1.250     0.020     
+TAV       O63       C61       deloc     1.250     0.020     1.250     0.020     
+TAV       O65       C64       deloc     1.250     0.020     1.250     0.020     
+TAV       C64       O66       deloc     1.250     0.020     1.250     0.020     
+TAV       C67       C64       single    1.510     0.020     1.510     0.020     
+TAV       H671      C67       single    1.089     0.010     0.989     0.005     
+TAV       H672      C67       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TAV      O66    C64    O65     123.000    3.000
+ TAV      O66    C64    C67     118.500    3.000
+ TAV      O65    C64    C67     118.500    3.000
+ TAV      C64    C67    H671    109.470    3.000
+ TAV      C64    C67    H672    109.470    3.000
+ TAV      C64    C67    C57     109.470    3.000
+ TAV      H671   C67    H672    107.900    3.000
+ TAV      H671   C67    C57     109.470    3.000
+ TAV      H672   C67    C57     109.470    3.000
+ TAV      C67    C57    H57     108.340    3.000
+ TAV      C67    C57    C61     109.470    3.000
+ TAV      C67    C57    N49     105.000    3.000
+ TAV      H57    C57    C61     108.810    3.000
+ TAV      H57    C57    N49     109.470    3.000
+ TAV      C61    C57    N49     111.600    3.000
+ TAV      C57    C61    O63     118.500    3.000
+ TAV      C57    C61    O62     118.500    3.000
+ TAV      O63    C61    O62     123.000    3.000
+ TAV      C57    N49    C56     120.000    3.000
+ TAV      C57    N49    C29     121.000    3.000
+ TAV      C56    N49    C29     127.000    3.000
+ TAV      N49    C56    H563    109.470    3.000
+ TAV      N49    C56    H562    109.470    3.000
+ TAV      N49    C56    H561    109.470    3.000
+ TAV      H563   C56    H562    109.470    3.000
+ TAV      H563   C56    H561    109.470    3.000
+ TAV      H562   C56    H561    109.470    3.000
+ TAV      N49    C29    O50     123.000    3.000
+ TAV      N49    C29    C24     120.000    3.000
+ TAV      O50    C29    C24     120.500    3.000
+ TAV      C29    C24    C25     120.000    3.000
+ TAV      C29    C24    C23     120.000    3.000
+ TAV      C25    C24    C23     120.000    3.000
+ TAV      C24    C25    H25     120.000    3.000
+ TAV      C24    C25    C26     120.000    3.000
+ TAV      H25    C25    C26     120.000    3.000
+ TAV      C25    C26    O51     120.000    3.000
+ TAV      C25    C26    C21     120.000    3.000
+ TAV      O51    C26    C21     120.000    3.000
+ TAV      C26    O51    S31     120.000    3.000
+ TAV      O51    S31    O52     109.500    3.000
+ TAV      O51    S31    O53     109.500    3.000
+ TAV      O51    S31    C45     109.500    3.000
+ TAV      O52    S31    O53     109.500    3.000
+ TAV      O52    S31    C45     109.500    3.000
+ TAV      O53    S31    C45     109.500    3.000
+ TAV      S31    C45    C46     120.000    3.000
+ TAV      S31    C45    C42     120.000    3.000
+ TAV      C46    C45    C42     120.000    3.000
+ TAV      C45    C46    H46     120.000    3.000
+ TAV      C45    C46    C41     120.000    3.000
+ TAV      H46    C46    C41     120.000    3.000
+ TAV      C46    C41    H41     120.000    3.000
+ TAV      C46    C41    C34     120.000    3.000
+ TAV      H41    C41    C34     120.000    3.000
+ TAV      C41    C34    C33     120.000    3.000
+ TAV      C41    C34    C35     120.000    3.000
+ TAV      C33    C34    C35     120.000    3.000
+ TAV      C34    C33    H33     120.000    3.000
+ TAV      C34    C33    C32     120.000    3.000
+ TAV      H33    C33    C32     120.000    3.000
+ TAV      C45    C42    H42     120.000    3.000
+ TAV      C45    C42    C35     120.000    3.000
+ TAV      H42    C42    C35     120.000    3.000
+ TAV      C42    C35    C36     120.000    3.000
+ TAV      C42    C35    C34     120.000    3.000
+ TAV      C36    C35    C34     120.000    3.000
+ TAV      C35    C36    H36     120.000    3.000
+ TAV      C35    C36    C37     120.000    3.000
+ TAV      H36    C36    C37     120.000    3.000
+ TAV      C36    C37    H37     120.000    3.000
+ TAV      C36    C37    C32     120.000    3.000
+ TAV      H37    C37    C32     120.000    3.000
+ TAV      C37    C32    H32     120.000    3.000
+ TAV      C37    C32    C33     120.000    3.000
+ TAV      H32    C32    C33     120.000    3.000
+ TAV      C26    C21    H21     120.000    3.000
+ TAV      C26    C21    C22     120.000    3.000
+ TAV      H21    C21    C22     120.000    3.000
+ TAV      C24    C23    C22     120.000    3.000
+ TAV      C24    C23    N20     120.000    3.000
+ TAV      C22    C23    N20     120.000    3.000
+ TAV      C23    C22    H22     120.000    3.000
+ TAV      C23    C22    C21     120.000    3.000
+ TAV      H22    C22    C21     120.000    3.000
+ TAV      C23    N20    H20     120.000    3.000
+ TAV      C23    N20    S18     120.000    3.000
+ TAV      H20    N20    S18     120.000    3.000
+ TAV      N20    S18    O19     109.500    3.000
+ TAV      N20    S18    O54     109.500    3.000
+ TAV      N20    S18    C1      109.500    3.000
+ TAV      O19    S18    O54     109.500    3.000
+ TAV      O19    S18    C1      109.500    3.000
+ TAV      O54    S18    C1      109.500    3.000
+ TAV      S18    C1     C6      120.000    3.000
+ TAV      S18    C1     C2      120.000    3.000
+ TAV      C6     C1     C2      120.000    3.000
+ TAV      C1     C6     H6      120.000    3.000
+ TAV      C1     C6     C5      120.000    3.000
+ TAV      H6     C6     C5      120.000    3.000
+ TAV      C6     C5     H5      120.000    3.000
+ TAV      C6     C5     C4      120.000    3.000
+ TAV      H5     C5     C4      120.000    3.000
+ TAV      C5     C4     C10     120.000    3.000
+ TAV      C5     C4     C3      120.000    3.000
+ TAV      C10    C4     C3      120.000    3.000
+ TAV      C4     C10    H10     120.000    3.000
+ TAV      C4     C10    C13     120.000    3.000
+ TAV      H10    C10    C13     120.000    3.000
+ TAV      C10    C13    H13     120.000    3.000
+ TAV      C10    C13    C14     120.000    3.000
+ TAV      H13    C13    C14     120.000    3.000
+ TAV      C13    C14    H14     120.000    3.000
+ TAV      C13    C14    C9      120.000    3.000
+ TAV      H14    C14    C9      120.000    3.000
+ TAV      C14    C9     H9      120.000    3.000
+ TAV      C14    C9     C3      120.000    3.000
+ TAV      H9     C9     C3      120.000    3.000
+ TAV      C9     C3     C2      120.000    3.000
+ TAV      C9     C3     C4      120.000    3.000
+ TAV      C2     C3     C4      120.000    3.000
+ TAV      C3     C2     H2      120.000    3.000
+ TAV      C3     C2     C1      120.000    3.000
+ TAV      H2     C2     C1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TAV      var_1    O66    C64    C67    C57       -0.047   20.000   3
+ TAV      var_2    C64    C67    C57    N49      -59.969   20.000   3
+ TAV      var_3    C67    C57    C61    O62       90.007   20.000   3
+ TAV      var_4    C67    C57    N49    C29      120.027   20.000   3
+ TAV      var_5    C57    N49    C56    H561     173.982   20.000   1
+ TAV      CONST_1  C57    N49    C29    C24      180.000    0.000   0
+ TAV      var_6    N49    C29    C24    C23     -125.157   20.000   1
+ TAV      CONST_2  C29    C24    C25    C26      180.000    0.000   0
+ TAV      CONST_3  C24    C25    C26    C21        0.000    0.000   0
+ TAV      var_7    C25    C26    O51    S31       87.843   20.000   1
+ TAV      var_8    C26    O51    S31    C45       72.776   20.000   1
+ TAV      var_9    O51    S31    C45    C42      -86.524   20.000   1
+ TAV      CONST_4  S31    C45    C46    C41      180.000    0.000   0
+ TAV      CONST_5  C45    C46    C41    C34        0.000    0.000   0
+ TAV      CONST_6  C46    C41    C34    C33      180.000    0.000   0
+ TAV      CONST_7  C41    C34    C35    C42        0.000    0.000   0
+ TAV      CONST_8  C41    C34    C33    C32      180.000    0.000   0
+ TAV      CONST_9  S31    C45    C42    C35      180.000    0.000   0
+ TAV      CONST_10 C45    C42    C35    C36      180.000    0.000   0
+ TAV      CONST_11 C42    C35    C36    C37      180.000    0.000   0
+ TAV      CONST_12 C35    C36    C37    C32        0.000    0.000   0
+ TAV      CONST_13 C36    C37    C32    C33        0.000    0.000   0
+ TAV      CONST_14 C37    C32    C33    C34        0.000    0.000   0
+ TAV      CONST_15 C25    C26    C21    C22        0.000    0.000   0
+ TAV      CONST_16 C26    C21    C22    C23        0.000    0.000   0
+ TAV      CONST_17 C29    C24    C23    N20        0.000    0.000   0
+ TAV      CONST_18 C24    C23    C22    C21        0.000    0.000   0
+ TAV      var_10   C24    C23    N20    S18     -115.548   20.000   1
+ TAV      var_11   C23    N20    S18    C1        64.563   20.000   1
+ TAV      var_12   N20    S18    C1     C6        95.147   20.000   1
+ TAV      CONST_19 S18    C1     C2     C3       180.000    0.000   0
+ TAV      CONST_20 S18    C1     C6     C5       180.000    0.000   0
+ TAV      CONST_21 C1     C6     C5     C4         0.000    0.000   0
+ TAV      CONST_22 C6     C5     C4     C10      180.000    0.000   0
+ TAV      CONST_23 C5     C4     C10    C13      180.000    0.000   0
+ TAV      CONST_24 C4     C10    C13    C14        0.000    0.000   0
+ TAV      CONST_25 C10    C13    C14    C9         0.000    0.000   0
+ TAV      CONST_26 C13    C14    C9     C3         0.000    0.000   0
+ TAV      CONST_27 C14    C9     C3     C2       180.000    0.000   0
+ TAV      CONST_28 C9     C3     C4     C5       180.000    0.000   0
+ TAV      CONST_29 C9     C3     C2     C1       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TAV      chir_01  S18    C1     O19    N20       negativ
+ TAV      chir_02  S31    C45    O51    O52       positiv
+ TAV      chir_03  C57    N49    C61    C67       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TAV      plan-1    C1        0.020
+ TAV      plan-1    C2        0.020
+ TAV      plan-1    C6        0.020
+ TAV      plan-1    S18       0.020
+ TAV      plan-1    C5        0.020
+ TAV      plan-1    C3        0.020
+ TAV      plan-1    H2        0.020
+ TAV      plan-1    C4        0.020
+ TAV      plan-1    C9        0.020
+ TAV      plan-1    C10       0.020
+ TAV      plan-1    C13       0.020
+ TAV      plan-1    C14       0.020
+ TAV      plan-1    H5        0.020
+ TAV      plan-1    H6        0.020
+ TAV      plan-1    H9        0.020
+ TAV      plan-1    H10       0.020
+ TAV      plan-1    H13       0.020
+ TAV      plan-1    H14       0.020
+ TAV      plan-2    N20       0.020
+ TAV      plan-2    S18       0.020
+ TAV      plan-2    C23       0.020
+ TAV      plan-2    H20       0.020
+ TAV      plan-3    C21       0.020
+ TAV      plan-3    C22       0.020
+ TAV      plan-3    C26       0.020
+ TAV      plan-3    H21       0.020
+ TAV      plan-3    C23       0.020
+ TAV      plan-3    C24       0.020
+ TAV      plan-3    C25       0.020
+ TAV      plan-3    H22       0.020
+ TAV      plan-3    N20       0.020
+ TAV      plan-3    C29       0.020
+ TAV      plan-3    H25       0.020
+ TAV      plan-3    O51       0.020
+ TAV      plan-3    H20       0.020
+ TAV      plan-4    C29       0.020
+ TAV      plan-4    C24       0.020
+ TAV      plan-4    N49       0.020
+ TAV      plan-4    O50       0.020
+ TAV      plan-5    C32       0.020
+ TAV      plan-5    C33       0.020
+ TAV      plan-5    C37       0.020
+ TAV      plan-5    H32       0.020
+ TAV      plan-5    C36       0.020
+ TAV      plan-5    C34       0.020
+ TAV      plan-5    H33       0.020
+ TAV      plan-5    C35       0.020
+ TAV      plan-5    C41       0.020
+ TAV      plan-5    C42       0.020
+ TAV      plan-5    C45       0.020
+ TAV      plan-5    C46       0.020
+ TAV      plan-5    H36       0.020
+ TAV      plan-5    H37       0.020
+ TAV      plan-5    H41       0.020
+ TAV      plan-5    H42       0.020
+ TAV      plan-5    S31       0.020
+ TAV      plan-5    H46       0.020
+ TAV      plan-6    N49       0.020
+ TAV      plan-6    C29       0.020
+ TAV      plan-6    C56       0.020
+ TAV      plan-6    C57       0.020
+ TAV      plan-7    C61       0.020
+ TAV      plan-7    C57       0.020
+ TAV      plan-7    O62       0.020
+ TAV      plan-7    O63       0.020
+ TAV      plan-8    C64       0.020
+ TAV      plan-8    O65       0.020
+ TAV      plan-8    O66       0.020
+ TAV      plan-8    C67       0.020
+# ------------------------------------------------------

@@ -1,0 +1,238 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+32S     32S     "(S)-2-AMINO-3-(4H-SELENOLO[3,2-B]-PYRROL-6-YL)-PROPIONICACID"     peptide     24     14     .     
+#
+data_comp_32S
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+32S     CZ2     C       CR15    0       3.613       -0.187      0.620       
+32S     CZ3     C       CR15    0       3.582       1.088       1.134       
+32S     SEL     SE      SE      0       1.943       1.983       0.928       
+32S     CD2     C       CR55    0       1.379       0.416       0.070       
+32S     CE2     C       CR55    0       2.359       -0.563      0.012       
+32S     NE1     N       NR5     0       1.818       -1.641      -0.634      
+32S     CD1     C       CR15    0       0.527       -1.330      -0.967      
+32S     CG      C       CR5     0       0.242       -0.063      -0.539      
+32S     CB      C       CH2     0       -1.067      0.647       -0.711      
+32S     CA      C       CH1     0       -1.974      0.634       0.528       
+32S     C       C       C       0       -3.241      1.464       0.287       
+32S     O       O       O       0       -3.234      2.644       0.691       
+32S     OXT     O       OC      -1      -4.189      0.900       -0.295      
+32S     N       N       NT3     1       -2.343      -0.762      0.897       
+32S     HZ2     H       H       0       4.372       -0.746      0.664       
+32S     HZ3     H       H       0       4.323       1.505       1.566       
+32S     HE1     H       H       0       2.215       -2.400      -0.809      
+32S     HD1     H       H       0       -0.068      -1.906      -1.422      
+32S     HB1     H       H       0       -1.556      0.236       -1.453      
+32S     HB2     H       H       0       -0.892      1.580       -0.952      
+32S     HA      H       H       0       -1.475      1.026       1.283       
+32S     H       H       H       0       -3.043      -0.755      1.481       
+32S     H2      H       H       0       -1.634      -1.172      1.296       
+32S     H3      H       H       0       -2.579      -1.226      0.149       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 32S      N      n/a    CA     START
+ 32S      H      N      .      .
+ 32S      H2     N      .      .
+ 32S      H3     N      .      .
+ 32S      CA     N      C      .
+ 32S      HA     CA     .      .
+ 32S      CB     CA     CG     .
+ 32S      HB1    CB     .      .
+ 32S      HB2    CB     .      .
+ 32S      CG     CB     CD1    .
+ 32S      CD1    CG     NE1    .
+ 32S      HD1    CD1    .      .
+ 32S      NE1    CD1    CE2    .
+ 32S      HE1    NE1    .      .
+ 32S      CE2    NE1    CZ2    .
+ 32S      CZ2    CE2    CZ3    .
+ 32S      HZ2    CZ2    .      .
+ 32S      CZ3    CZ2    SEL    .
+ 32S      HZ3    CZ3    .      .
+ 32S      SEL    CZ3    CD2    .
+ 32S      CD2    SEL    .      .
+ 32S      C      CA     .      END
+ 32S      O      C      .      .
+ 32S      OXT    C      .      .
+ 32S      CG     CD2    .    ADD
+ 32S      CD2    CE2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+32S       CZ2       CZ3       DOUBLE    n         1.358     0.016     1.358     0.016     
+32S       CZ3       SEL       SINGLE    n         1.884     0.020     1.884     0.020     
+32S       SEL       CD2       SINGLE    n         1.887     0.013     1.887     0.013     
+32S       CD2       CE2       DOUBLE    y         1.403     0.020     1.403     0.020     
+32S       CE2       NE1       SINGLE    y         1.368     0.016     1.368     0.016     
+32S       NE1       CD1       SINGLE    y         1.363     0.015     1.363     0.015     
+32S       CD1       CG        DOUBLE    y         1.365     0.012     1.365     0.012     
+32S       CG        CB        SINGLE    n         1.499     0.010     1.499     0.010     
+32S       CB        CA        SINGLE    n         1.534     0.012     1.534     0.012     
+32S       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+32S       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+32S       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+32S       CA        N         SINGLE    n         1.488     0.010     1.488     0.010     
+32S       CZ2       CE2       SINGLE    n         1.423     0.017     1.423     0.017     
+32S       CD2       CG        SINGLE    y         1.383     0.020     1.383     0.020     
+32S       CZ2       HZ2       SINGLE    n         1.082     0.013     0.944     0.011     
+32S       CZ3       HZ3       SINGLE    n         1.082     0.013     0.953     0.020     
+32S       NE1       HE1       SINGLE    n         1.016     0.010     0.874     0.010     
+32S       CD1       HD1       SINGLE    n         1.082     0.013     0.945     0.019     
+32S       CB        HB1       SINGLE    n         1.089     0.010     0.979     0.019     
+32S       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.019     
+32S       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+32S       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+32S       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+32S       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+32S         CZ3         CZ2         CE2     110.604    1.50
+32S         CZ3         CZ2         HZ2     124.239    1.60
+32S         CE2         CZ2         HZ2     125.157    1.50
+32S         CZ2         CZ3         SEL     114.814    3.00
+32S         CZ2         CZ3         HZ3     123.832    1.68
+32S         SEL         CZ3         HZ3     121.354    2.66
+32S         CZ3         SEL         CD2     109.471    3.00
+32S         SEL         CD2         CE2     122.468    2.80
+32S         SEL         CD2          CG     129.629    3.00
+32S         CE2         CD2          CG     107.902    3.00
+32S         CD2         CE2         NE1     108.108    1.50
+32S         CD2         CE2         CZ2     113.937    2.01
+32S         NE1         CE2         CZ2     137.955    1.50
+32S         CE2         NE1         CD1     107.741    1.50
+32S         CE2         NE1         HE1     126.985    3.00
+32S         CD1         NE1         HE1     125.274    1.84
+32S         NE1         CD1          CG     108.917    1.50
+32S         NE1         CD1         HD1     125.174    1.61
+32S          CG         CD1         HD1     125.910    1.50
+32S         CD1          CG          CB     125.698    2.31
+32S         CD1          CG         CD2     107.333    1.50
+32S          CB          CG         CD2     126.969    1.99
+32S          CG          CB          CA     114.435    1.50
+32S          CG          CB         HB1     108.947    1.50
+32S          CG          CB         HB2     108.947    1.50
+32S          CA          CB         HB1     108.290    1.50
+32S          CA          CB         HB2     108.290    1.50
+32S         HB1          CB         HB2     107.724    1.50
+32S          CB          CA           C     111.332    1.67
+32S          CB          CA           N     110.324    1.50
+32S          CB          CA          HA     108.492    1.50
+32S           C          CA           N     109.666    1.50
+32S           C          CA          HA     108.922    1.50
+32S           N          CA          HA     108.030    1.50
+32S          CA           C           O     117.134    1.50
+32S          CA           C         OXT     117.134    1.50
+32S           O           C         OXT     125.731    1.50
+32S          CA           N           H     109.321    1.91
+32S          CA           N          H2     109.321    1.91
+32S          CA           N          H3     109.321    1.91
+32S           H           N          H2     109.028    2.41
+32S           H           N          H3     109.028    2.41
+32S          H2           N          H3     109.028    2.41
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+32S             sp2_sp2_1         CE2         CZ2         CZ3         SEL       0.000   10.00     2
+32S             sp2_sp2_5         CD2         CE2         CZ2         CZ3       0.000   10.00     2
+32S       const_sp2_sp2_2         SEL         CD2         CE2         NE1     180.000   10.00     2
+32S              const_20         SEL         CD2          CG          CB       0.000   10.00     2
+32S       const_sp2_sp2_5         CD2         CE2         NE1         CD1       0.000   10.00     2
+32S       const_sp2_sp2_9          CG         CD1         NE1         CE2       0.000   10.00     2
+32S              const_14         NE1         CD1          CG          CB     180.000   10.00     2
+32S             sp2_sp3_6         CD1          CG          CB          CA     -90.000   10.00     6
+32S             sp3_sp3_1           C          CA          CB          CG     180.000   10.00     3
+32S            sp2_sp3_11           O           C          CA          CB       0.000   10.00     6
+32S            sp3_sp3_10          CB          CA           N           H     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+32S    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+32S    plan-1          CB   0.020
+32S    plan-1         CD1   0.020
+32S    plan-1         CD2   0.020
+32S    plan-1         CE2   0.020
+32S    plan-1          CG   0.020
+32S    plan-1         CZ2   0.020
+32S    plan-1         HD1   0.020
+32S    plan-1         HE1   0.020
+32S    plan-1         NE1   0.020
+32S    plan-1         SEL   0.020
+32S    plan-2         CE2   0.020
+32S    plan-2         CZ2   0.020
+32S    plan-2         CZ3   0.020
+32S    plan-2         HZ2   0.020
+32S    plan-3         CZ2   0.020
+32S    plan-3         CZ3   0.020
+32S    plan-3         HZ3   0.020
+32S    plan-3         SEL   0.020
+32S    plan-4           C   0.020
+32S    plan-4          CA   0.020
+32S    plan-4           O   0.020
+32S    plan-4         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+32S SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc2c1[se]ccc1nc2"
+32S SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1c[nH]c2cc[se]c12)C(O)=O"
+32S SMILES           CACTVS               3.341 "N[CH](Cc1c[nH]c2cc[se]c12)C(O)=O"
+32S SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c[se]c2c1[nH]cc2C[C@@H](C(=O)O)N"
+32S SMILES           "OpenEye OEToolkits" 1.5.0 "c1c[se]c2c1[nH]cc2CC(C(=O)O)N"
+32S InChI            InChI                1.03  "InChI=1S/C9H10N2O2Se/c10-6(9(12)13)3-5-4-11-7-1-2-14-8(5)7/h1-2,4,6,11H,3,10H2,(H,12,13)/t6-/m0/s1"
+32S InChIKey         InChI                1.03  RKIAGDNYTCWCNV-LURJTMIESA-N
+32S ?                acedrg               196         "dictionary generator"                  
+32S ?                acedrg_database      11          "data source"                           
+32S ?                rdkit                2017.03.2   "Chemoinformatics tool"
+32S ?                refmac5              5.8.0222    "optimization tool"                     

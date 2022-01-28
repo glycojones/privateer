@@ -1,0 +1,271 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TYX     TYX     "S-(2-ANILINO-2-OXOETHYL)-L-CYSTEINE"     peptide     31     17     .
+#
+data_comp_TYX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TYX     N       N       NT3     1       -5.479      0.408       0.195
+TYX     CA      C       CH1     0       -4.076      0.743       0.563
+TYX     C       C       C       0       -3.771      2.194       0.169
+TYX     O       O       O       0       -3.269      2.929       1.043
+TYX     CB      C       CH2     0       -3.126      -0.218      -0.128
+TYX     SG      S       S2      0       -1.403      -0.101      0.404
+TYX     C6      C       CR16    0       5.732       0.130       0.081
+TYX     C5      C       CR16    0       5.257       0.218       -1.212
+TYX     C4      C       CR16    0       3.905       0.045       -1.478
+TYX     C7      C       C       0       0.878       -1.466      -0.417
+TYX     C8      C       CH2     0       -0.597      -1.298      -0.699
+TYX     C3      C       CR6     0       3.022       -0.219      -0.438
+TYX     C1      C       CR16    0       4.856       -0.132      1.115
+TYX     O1      O       O       0       1.322       -2.509      0.038
+TYX     N1      N       NH1     0       1.644       -0.395      -0.708
+TYX     C2      C       CR16    0       3.502       -0.307      0.862
+TYX     OXT     O       OC      -1      -4.046      2.535       -0.998
+TYX     H       H       H       0       -5.672      -0.443      0.458
+TYX     H2      H       H       0       -5.585      0.475       -0.707
+TYX     H3      H       H       0       -6.052      0.984       0.608
+TYX     HA      H       H       0       -3.983      0.651       1.539
+TYX     HB1     H       H       0       -3.166      -0.055      -1.083
+TYX     HB2     H       H       0       -3.437      -1.123      0.030
+TYX     HC6     H       H       0       6.652       0.248       0.258
+TYX     HC5     H       H       0       5.852       0.397       -1.921
+TYX     HC4     H       H       0       3.586       0.106       -2.363
+TYX     H81     H       H       0       -0.712      -1.003      -1.620
+TYX     H82     H       H       0       -1.038      -2.161      -0.602
+TYX     HC1     H       H       0       5.177       -0.193      2.000
+TYX     HNN1    H       H       0       1.251       0.274       -1.112
+TYX     HC2     H       H       0       2.907       -0.486      1.572
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+TYX      N      n/a    CA     START
+TYX      H      N      .      .
+TYX      H2     N      .      .
+TYX      H3     N      .      .
+TYX      CA     N      C      .
+TYX      HA     CA     .      .
+TYX      CB     CA     SG     .
+TYX      HB1    CB     .      .
+TYX      HB2    CB     .      .
+TYX      SG     CB     C8     .
+TYX      C8     SG     C7     .
+TYX      H81    C8     .      .
+TYX      H82    C8     .      .
+TYX      C7     C8     N1     .
+TYX      O1     C7     .      .
+TYX      N1     C7     C3     .
+TYX      HNN1   N1     .      .
+TYX      C3     N1     C2     .
+TYX      C4     C3     C5     .
+TYX      HC4    C4     .      .
+TYX      C5     C4     HC5    .
+TYX      HC5    C5     .      .
+TYX      C2     C3     C1     .
+TYX      HC2    C2     .      .
+TYX      C1     C2     C6     .
+TYX      HC1    C1     .      .
+TYX      C6     C1     HC6    .
+TYX      HC6    C6     .      .
+TYX      C      CA     .      END
+TYX      O      C      .      .
+TYX      OXT    C      .      .
+TYX      C6     C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TYX       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+TYX       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+TYX       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+TYX       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TYX       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TYX       CB        SG        SINGLE    n         1.807     0.010     1.807     0.010     
+TYX       SG        C8        SINGLE    n         1.816     0.013     1.816     0.013     
+TYX       C6        C1        DOUBLE    y         1.376     0.012     1.376     0.012     
+TYX       C6        C5        SINGLE    y         1.376     0.012     1.376     0.012     
+TYX       C5        C4        DOUBLE    y         1.385     0.010     1.385     0.010     
+TYX       C4        C3        SINGLE    y         1.385     0.010     1.385     0.010     
+TYX       C7        C8        SINGLE    n         1.510     0.011     1.510     0.011     
+TYX       C7        N1        SINGLE    n         1.346     0.010     1.346     0.010     
+TYX       C7        O1        DOUBLE    n         1.221     0.010     1.221     0.010     
+TYX       C3        N1        SINGLE    n         1.414     0.010     1.414     0.010     
+TYX       C3        C2        DOUBLE    y         1.385     0.010     1.385     0.010     
+TYX       C1        C2        SINGLE    y         1.385     0.010     1.385     0.010     
+TYX       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+TYX       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+TYX       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+TYX       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+TYX       CB        HB1       SINGLE    n         1.089     0.010     0.970     0.010     
+TYX       CB        HB2       SINGLE    n         1.089     0.010     0.970     0.010     
+TYX       C6        HC6       SINGLE    n         1.082     0.013     0.944     0.016     
+TYX       C5        HC5       SINGLE    n         1.082     0.013     0.943     0.017     
+TYX       C4        HC4       SINGLE    n         1.082     0.013     0.943     0.018     
+TYX       C8        H81       SINGLE    n         1.089     0.010     0.974     0.020     
+TYX       C8        H82       SINGLE    n         1.089     0.010     0.974     0.020     
+TYX       C1        HC1       SINGLE    n         1.082     0.013     0.943     0.017     
+TYX       N1        HNN1      SINGLE    n         1.016     0.010     0.874     0.020     
+TYX       C2        HC2       SINGLE    n         1.082     0.013     0.943     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TYX          CA           N           H     109.671    1.50
+TYX          CA           N          H2     109.671    1.50
+TYX          CA           N          H3     109.671    1.50
+TYX           H           N          H2     109.028    2.41
+TYX           H           N          H3     109.028    2.41
+TYX          H2           N          H3     109.028    2.41
+TYX           N          CA           C     109.494    1.50
+TYX           N          CA          CB     109.354    1.50
+TYX           N          CA          HA     107.983    1.50
+TYX           C          CA          CB     110.419    2.31
+TYX           C          CA          HA     108.606    1.50
+TYX          CB          CA          HA     109.209    1.50
+TYX          CA           C           O     117.134    1.50
+TYX          CA           C         OXT     117.134    1.50
+TYX           O           C         OXT     125.732    1.50
+TYX          CA          CB          SG     114.974    1.55
+TYX          CA          CB         HB1     108.537    1.50
+TYX          CA          CB         HB2     108.537    1.50
+TYX          SG          CB         HB1     108.759    1.50
+TYX          SG          CB         HB2     108.759    1.50
+TYX         HB1          CB         HB2     107.812    1.50
+TYX          CB          SG          C8     101.660    1.50
+TYX          C1          C6          C5     119.909    1.50
+TYX          C1          C6         HC6     120.046    1.50
+TYX          C5          C6         HC6     120.046    1.50
+TYX          C6          C5          C4     120.518    1.50
+TYX          C6          C5         HC5     119.882    1.50
+TYX          C4          C5         HC5     119.600    1.50
+TYX          C5          C4          C3     119.830    1.50
+TYX          C5          C4         HC4     120.151    1.50
+TYX          C3          C4         HC4     120.019    1.50
+TYX          C8          C7          N1     114.883    1.61
+TYX          C8          C7          O1     121.808    1.66
+TYX          N1          C7          O1     123.309    1.50
+TYX          SG          C8          C7     111.968    3.00
+TYX          SG          C8         H81     108.570    1.78
+TYX          SG          C8         H82     108.570    1.78
+TYX          C7          C8         H81     108.792    1.50
+TYX          C7          C8         H82     108.792    1.50
+TYX         H81          C8         H82     107.880    1.50
+TYX          C4          C3          N1     120.302    3.00
+TYX          C4          C3          C2     119.396    1.50
+TYX          N1          C3          C2     120.302    3.00
+TYX          C6          C1          C2     120.518    1.50
+TYX          C6          C1         HC1     119.882    1.50
+TYX          C2          C1         HC1     119.600    1.50
+TYX          C7          N1          C3     127.369    1.50
+TYX          C7          N1        HNN1     116.711    1.50
+TYX          C3          N1        HNN1     115.920    1.69
+TYX          C3          C2          C1     119.830    1.50
+TYX          C3          C2         HC2     120.019    1.50
+TYX          C1          C2         HC2     120.151    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TYX             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+TYX             sp2_sp2_5          C4          C3          N1          C7     180.000   10.00     2
+TYX              const_10          C1          C2          C3          N1     180.000   10.00     2
+TYX       const_sp2_sp2_5          C6          C1          C2          C3       0.000   10.00     2
+TYX             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+TYX            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+TYX            sp3_sp3_19          CA          CB          SG          C8     180.000   10.00     3
+TYX            sp3_sp3_22          C7          C8          SG          CB     180.000   10.00     3
+TYX       const_sp2_sp2_1          C2          C1          C6          C5       0.000   10.00     2
+TYX              const_21          C4          C5          C6          C1       0.000   10.00     2
+TYX              const_17          C3          C4          C5          C6       0.000   10.00     2
+TYX              const_15          N1          C3          C4          C5     180.000   10.00     2
+TYX             sp2_sp3_8          N1          C7          C8          SG     120.000   10.00     6
+TYX             sp2_sp2_1          C8          C7          N1          C3     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TYX    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TYX    plan-1          C1   0.020
+TYX    plan-1          C2   0.020
+TYX    plan-1          C3   0.020
+TYX    plan-1          C4   0.020
+TYX    plan-1          C5   0.020
+TYX    plan-1          C6   0.020
+TYX    plan-1         HC1   0.020
+TYX    plan-1         HC2   0.020
+TYX    plan-1         HC4   0.020
+TYX    plan-1         HC5   0.020
+TYX    plan-1         HC6   0.020
+TYX    plan-1          N1   0.020
+TYX    plan-2           C   0.020
+TYX    plan-2          CA   0.020
+TYX    plan-2           O   0.020
+TYX    plan-2         OXT   0.020
+TYX    plan-3          C7   0.020
+TYX    plan-3          C8   0.020
+TYX    plan-3          N1   0.020
+TYX    plan-3          O1   0.020
+TYX    plan-4          C3   0.020
+TYX    plan-4          C7   0.020
+TYX    plan-4        HNN1   0.020
+TYX    plan-4          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TYX SMILES           ACDLabs              10.04 "O=C(Nc1ccccc1)CSCC(C(=O)O)N"
+TYX SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CSCC(=O)Nc1ccccc1)C(O)=O"
+TYX SMILES           CACTVS               3.341 "N[CH](CSCC(=O)Nc1ccccc1)C(O)=O"
+TYX SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)NC(=O)CSC[C@@H](C(=O)O)N"
+TYX SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)NC(=O)CSCC(C(=O)O)N"
+TYX InChI            InChI                1.03  "InChI=1S/C11H14N2O3S/c12-9(11(15)16)6-17-7-10(14)13-8-4-2-1-3-5-8/h1-5,9H,6-7,12H2,(H,13,14)(H,15,16)/t9-/m0/s1"
+TYX InChIKey         InChI                1.03  KIOKPANRTZJOEP-VIFPVBQESA-N
+TYX ?                acedrg               202         "dictionary generator"
+TYX ?                acedrg_database      11          "data source"
+TYX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TYX ?                refmac5              5.8.0222    "optimization tool"

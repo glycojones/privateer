@@ -1,0 +1,141 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+7FN     7FN      "2,5 Furan Dicarboxylic Acid"     NON-POLYMER     13     11     .     
+#
+data_comp_7FN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+7FN     OAH     O       OC      -1      -2.761      2.626       26.191      
+7FN     CAF     C       C       0       -2.674      3.096       25.072      
+7FN     OAI     O       O       0       -3.185      2.607       24.074      
+7FN     CAA     C       CR5     0       -1.898      4.338       24.927      
+7FN     OAE     O       O2      0       -1.816      4.861       23.666      
+7FN     CAD     C       CR5     0       -1.059      5.996       23.770      
+7FN     CAG     C       C       0       -0.827      6.745       22.524      
+7FN     OAK     O       OC      -1      -0.159      7.759       22.605      
+7FN     OAJ     O       O       0       -1.311      6.317       21.486      
+7FN     CAC     C       CR15    0       -0.677      6.181       25.055      
+7FN     CAB     C       CR15    0       -1.215      5.119       25.796      
+7FN     H3      H       H       0       -0.154      6.883       25.386      
+7FN     H4      H       H       0       -1.119      4.977       26.717      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+7FN       CAG       OAJ       DOUBLE    n         1.217     0.020     1.217     0.020     
+7FN       CAG       OAK       SINGLE    n         1.217     0.020     1.217     0.020     
+7FN       CAD       CAG       SINGLE    n         1.458     0.020     1.458     0.020     
+7FN       OAE       CAD       SINGLE    y         1.367     0.010     1.367     0.010     
+7FN       CAA       OAE       SINGLE    y         1.367     0.010     1.367     0.010     
+7FN       CAD       CAC       DOUBLE    y         1.353     0.010     1.353     0.010     
+7FN       CAF       OAI       DOUBLE    n         1.217     0.020     1.217     0.020     
+7FN       CAF       CAA       SINGLE    n         1.458     0.020     1.458     0.020     
+7FN       CAA       CAB       DOUBLE    y         1.353     0.010     1.353     0.010     
+7FN       CAC       CAB       SINGLE    y         1.399     0.020     1.399     0.020     
+7FN       OAH       CAF       SINGLE    n         1.217     0.020     1.217     0.020     
+7FN       CAC       H3        SINGLE    n         1.082     0.013     0.937     0.017     
+7FN       CAB       H4        SINGLE    n         1.082     0.013     0.937     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+7FN         OAI         CAF         CAA     117.513    1.50
+7FN         OAI         CAF         OAH     124.973    1.50
+7FN         CAA         CAF         OAH     117.513    1.50
+7FN         OAE         CAA         CAF     115.440    1.50
+7FN         OAE         CAA         CAB     110.334    1.50
+7FN         CAF         CAA         CAB     134.226    1.50
+7FN         CAD         OAE         CAA     106.298    1.50
+7FN         CAG         CAD         OAE     115.440    1.50
+7FN         CAG         CAD         CAC     134.226    1.50
+7FN         OAE         CAD         CAC     110.334    1.50
+7FN         OAJ         CAG         OAK     124.973    1.50
+7FN         OAJ         CAG         CAD     117.513    1.50
+7FN         OAK         CAG         CAD     117.513    1.50
+7FN         CAD         CAC         CAB     106.517    1.50
+7FN         CAD         CAC          H3     126.753    1.50
+7FN         CAB         CAC          H3     126.730    1.50
+7FN         CAA         CAB         CAC     106.517    1.50
+7FN         CAA         CAB          H4     126.753    1.50
+7FN         CAC         CAB          H4     126.730    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+7FN             sp2_sp2_7         OAE         CAA         CAF         OAI       0.000   10.00     2
+7FN              const_15         CAF         CAA         CAB         CAC     180.000   10.00     2
+7FN       const_sp2_sp2_2         CAF         CAA         OAE         CAD     180.000   10.00     2
+7FN       const_sp2_sp2_4         CAG         CAD         OAE         CAA     180.000   10.00     2
+7FN             sp2_sp2_3         OAE         CAD         CAG         OAJ       0.000   10.00     2
+7FN       const_sp2_sp2_6         CAB         CAC         CAD         CAG     180.000   10.00     2
+7FN       const_sp2_sp2_9         CAA         CAB         CAC         CAD       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+7FN    plan-1         CAA   0.020
+7FN    plan-1         CAB   0.020
+7FN    plan-1         CAC   0.020
+7FN    plan-1         CAD   0.020
+7FN    plan-1         CAF   0.020
+7FN    plan-1         CAG   0.020
+7FN    plan-1          H3   0.020
+7FN    plan-1          H4   0.020
+7FN    plan-1         OAE   0.020
+7FN    plan-2         CAA   0.020
+7FN    plan-2         CAF   0.020
+7FN    plan-2         OAH   0.020
+7FN    plan-2         OAI   0.020
+7FN    plan-3         CAD   0.020
+7FN    plan-3         CAG   0.020
+7FN    plan-3         OAJ   0.020
+7FN    plan-3         OAK   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+7FN SMILES           ACDLabs              12.01 "OC(=O)c1ccc(o1)C(O)=O"
+7FN InChI            InChI                1.03  "InChI=1S/C6H4O5/c7-5(8)3-1-2-4(11-3)6(9)10/h1-2H,(H,7,8)(H,9,10)"
+7FN InChIKey         InChI                1.03  CHTHALBTIRVDBM-UHFFFAOYSA-N
+7FN SMILES_CANONICAL CACTVS               3.385 "OC(=O)c1oc(cc1)C(O)=O"
+7FN SMILES           CACTVS               3.385 "OC(=O)c1oc(cc1)C(O)=O"
+7FN SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "c1cc(oc1C(=O)O)C(=O)O"
+7FN SMILES           "OpenEye OEToolkits" 2.0.6 "c1cc(oc1C(=O)O)C(=O)O"
+7FN ?                acedrg               202         "dictionary generator"                  
+7FN ?                acedrg_database      11          "data source"                           
+7FN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+7FN ?                refmac5              5.8.0189    "optimization tool"                     

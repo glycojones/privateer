@@ -1,0 +1,318 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XAR      XAR '"[(1R,4S,6S)-4-(6-AMINO-9H-PURIN-9-Y' non-polymer        37  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_XAR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ XAR           O2P    O    OP       -0.666      0.000    0.000    0.000
+ XAR           P      P    P         0.000     -1.163    0.203   -0.946
+ XAR           O3P    O    OP       -0.666     -1.632   -1.208   -1.230
+ XAR           O1P    O    OP       -0.666     -0.854    1.040   -2.168
+ XAR           "O5'"  O    O2        0.000     -2.318    0.804    0.019
+ XAR           "C5'"  C    CH2       0.000     -2.668    0.083    1.185
+ XAR           "H5'1" H    H         0.000     -1.798   -0.017    1.837
+ XAR           "H5'2" H    H         0.000     -3.034   -0.909    0.914
+ XAR           "C4'"  C    CH1       0.000     -3.770    0.853    1.916
+ XAR           "H4'"  H    H         0.000     -3.388    1.860    2.135
+ XAR           "C6'"  C    C1        0.000     -4.964    0.998    1.006
+ XAR           "H6'"  H    H         0.000     -4.876    1.652    0.154
+ XAR           "C7'"  C    C1        0.000     -6.128    0.362    1.194
+ XAR           "H7'"  H    H         0.000     -6.934    0.552    0.504
+ XAR           "C1'"  C    CH1       0.000     -6.365   -0.609    2.324
+ XAR           "H1'"  H    H         0.000     -7.004   -0.092    3.053
+ XAR           "C2'"  C    CH2       0.000     -5.076   -1.008    3.072
+ XAR           "H2'1" H    H         0.000     -4.573   -1.787    2.494
+ XAR           "H2'2" H    H         0.000     -5.357   -1.407    4.049
+ XAR           "C3'"  C    CH1       0.000     -4.131    0.183    3.257
+ XAR           "H3'"  H    H         0.000     -3.209   -0.165    3.742
+ XAR           "O3'"  O    OH1       0.000     -4.757    1.157    4.095
+ XAR           H3T    H    H         0.000     -4.454    2.040    3.843
+ XAR           N9     N    NR5       0.000     -7.110   -1.799    1.877
+ XAR           C4     C    CR56      0.000     -6.683   -2.736    0.987
+ XAR           N3     N    NRD6      0.000     -5.512   -2.777    0.333
+ XAR           C2     C    CR16      0.000     -5.456   -3.864   -0.466
+ XAR           H2     H    H         0.000     -4.542   -3.980   -1.035
+ XAR           N1     N    NRD6      0.000     -6.387   -4.830   -0.654
+ XAR           C6     C    CR6       0.000     -7.547   -4.725    0.040
+ XAR           N6     N    NH2       0.000     -8.551   -5.696   -0.110
+ XAR           HN62   H    H         0.000     -8.358   -6.681    0.070
+ XAR           HN61   H    H         0.000     -9.492   -5.435   -0.402
+ XAR           C5     C    CR56      0.000     -7.724   -3.646    0.899
+ XAR           N7     N    NRD5      0.000     -8.763   -3.275    1.716
+ XAR           C8     C    CR15      0.000     -8.360   -2.160    2.289
+ XAR           H8     H    H         0.000     -8.950   -1.596    3.001
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ XAR      O2P    n/a    P      START
+ XAR      P      O2P    "O5'"  .
+ XAR      O3P    P      .      .
+ XAR      O1P    P      .      .
+ XAR      "O5'"  P      "C5'"  .
+ XAR      "C5'"  "O5'"  "C4'"  .
+ XAR      "H5'1" "C5'"  .      .
+ XAR      "H5'2" "C5'"  .      .
+ XAR      "C4'"  "C5'"  "C6'"  .
+ XAR      "H4'"  "C4'"  .      .
+ XAR      "C6'"  "C4'"  "C7'"  .
+ XAR      "H6'"  "C6'"  .      .
+ XAR      "C7'"  "C6'"  "C1'"  .
+ XAR      "H7'"  "C7'"  .      .
+ XAR      "C1'"  "C7'"  N9     .
+ XAR      "H1'"  "C1'"  .      .
+ XAR      "C2'"  "C1'"  "C3'"  .
+ XAR      "H2'1" "C2'"  .      .
+ XAR      "H2'2" "C2'"  .      .
+ XAR      "C3'"  "C2'"  "O3'"  .
+ XAR      "H3'"  "C3'"  .      .
+ XAR      "O3'"  "C3'"  H3T    .
+ XAR      H3T    "O3'"  .      .
+ XAR      N9     "C1'"  C4     .
+ XAR      C4     N9     N3     .
+ XAR      N3     C4     C2     .
+ XAR      C2     N3     N1     .
+ XAR      H2     C2     .      .
+ XAR      N1     C2     C6     .
+ XAR      C6     N1     C5     .
+ XAR      N6     C6     HN61   .
+ XAR      HN62   N6     .      .
+ XAR      HN61   N6     .      .
+ XAR      C5     C6     N7     .
+ XAR      N7     C5     C8     .
+ XAR      C8     N7     H8     .
+ XAR      H8     C8     .      END
+ XAR      "C4'"  "C3'"  .    ADD
+ XAR      N9     C8     .    ADD
+ XAR      C5     C4     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XAR       O3P       P         deloc     1.510     0.020     1.510     0.020     
+XAR       O1P       P         deloc     1.510     0.020     1.510     0.020     
+XAR       P         O2P       deloc     1.510     0.020     1.510     0.020     
+XAR       "O5'"     P         single    1.610     0.020     1.610     0.020     
+XAR       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+XAR       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+XAR       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+XAR       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+XAR       "C6'"     "C4'"     single    1.510     0.020     1.510     0.020     
+XAR       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+XAR       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+XAR       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+XAR       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+XAR       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+XAR       H3T       "O3'"     single    0.970     0.012     0.839     0.014     
+XAR       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+XAR       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+XAR       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+XAR       "C1'"     "C7'"     single    1.510     0.020     1.510     0.020     
+XAR       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+XAR       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+XAR       "C7'"     "C6'"     double    1.330     0.020     1.330     0.020     
+XAR       "H7'"     "C7'"     single    1.082     0.013     0.975     0.010     
+XAR       "H6'"     "C6'"     single    1.082     0.013     0.975     0.010     
+XAR       N9        C8        single    1.337     0.020     1.337     0.020     
+XAR       C4        N9        single    1.337     0.020     1.337     0.020     
+XAR       C8        N7        double    1.350     0.020     1.350     0.020     
+XAR       H8        C8        single    1.082     0.013     0.975     0.010     
+XAR       N7        C5        single    1.350     0.020     1.350     0.020     
+XAR       C5        C4        double    1.490     0.020     1.490     0.020     
+XAR       C5        C6        single    1.490     0.020     1.490     0.020     
+XAR       N3        C4        single    1.355     0.020     1.355     0.020     
+XAR       C2        N3        double    1.337     0.020     1.337     0.020     
+XAR       C6        N1        double    1.350     0.020     1.350     0.020     
+XAR       N6        C6        single    1.355     0.020     1.355     0.020     
+XAR       HN61      N6        single    1.016     0.010     0.899     0.007     
+XAR       HN62      N6        single    1.016     0.010     0.899     0.007     
+XAR       N1        C2        single    1.337     0.020     1.337     0.020     
+XAR       H2        C2        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ XAR      O2P    P      O3P     119.900    3.000
+ XAR      O2P    P      O1P     119.900    3.000
+ XAR      O2P    P      "O5'"   108.200    3.000
+ XAR      O3P    P      O1P     119.900    3.000
+ XAR      O3P    P      "O5'"   108.200    3.000
+ XAR      O1P    P      "O5'"   108.200    3.000
+ XAR      P      "O5'"  "C5'"   120.500    3.000
+ XAR      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ XAR      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ XAR      "O5'"  "C5'"  "C4'"   109.470    3.000
+ XAR      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ XAR      "H5'1" "C5'"  "C4'"   109.470    3.000
+ XAR      "H5'2" "C5'"  "C4'"   109.470    3.000
+ XAR      "C5'"  "C4'"  "H4'"   108.340    3.000
+ XAR      "C5'"  "C4'"  "C6'"   109.470    3.000
+ XAR      "C5'"  "C4'"  "C3'"   111.000    3.000
+ XAR      "H4'"  "C4'"  "C6'"   108.810    3.000
+ XAR      "H4'"  "C4'"  "C3'"   108.340    3.000
+ XAR      "C6'"  "C4'"  "C3'"   109.470    3.000
+ XAR      "C4'"  "C6'"  "H6'"   120.000    3.000
+ XAR      "C4'"  "C6'"  "C7'"   120.000    3.000
+ XAR      "H6'"  "C6'"  "C7'"   120.000    3.000
+ XAR      "C6'"  "C7'"  "H7'"   120.000    3.000
+ XAR      "C6'"  "C7'"  "C1'"   120.000    3.000
+ XAR      "H7'"  "C7'"  "C1'"   120.000    3.000
+ XAR      "C7'"  "C1'"  "H1'"   108.810    3.000
+ XAR      "C7'"  "C1'"  "C2'"   109.470    3.000
+ XAR      "C7'"  "C1'"  N9      109.500    3.000
+ XAR      "H1'"  "C1'"  "C2'"   108.340    3.000
+ XAR      "H1'"  "C1'"  N9      109.470    3.000
+ XAR      "C2'"  "C1'"  N9      109.470    3.000
+ XAR      "C1'"  "C2'"  "H2'1"  109.470    3.000
+ XAR      "C1'"  "C2'"  "H2'2"  109.470    3.000
+ XAR      "C1'"  "C2'"  "C3'"   111.000    3.000
+ XAR      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ XAR      "H2'1" "C2'"  "C3'"   109.470    3.000
+ XAR      "H2'2" "C2'"  "C3'"   109.470    3.000
+ XAR      "C2'"  "C3'"  "H3'"   108.340    3.000
+ XAR      "C2'"  "C3'"  "O3'"   109.470    3.000
+ XAR      "C2'"  "C3'"  "C4'"   111.000    3.000
+ XAR      "H3'"  "C3'"  "O3'"   109.470    3.000
+ XAR      "H3'"  "C3'"  "C4'"   108.340    3.000
+ XAR      "O3'"  "C3'"  "C4'"   109.470    3.000
+ XAR      "C3'"  "O3'"  H3T     109.470    3.000
+ XAR      "C1'"  N9     C4      126.000    3.000
+ XAR      "C1'"  N9     C8      126.000    3.000
+ XAR      C4     N9     C8      108.000    3.000
+ XAR      N9     C4     N3      132.000    3.000
+ XAR      N9     C4     C5      108.000    3.000
+ XAR      N3     C4     C5      120.000    3.000
+ XAR      C4     N3     C2      120.000    3.000
+ XAR      N3     C2     H2      120.000    3.000
+ XAR      N3     C2     N1      120.000    3.000
+ XAR      H2     C2     N1      120.000    3.000
+ XAR      C2     N1     C6      120.000    3.000
+ XAR      N1     C6     N6      120.000    3.000
+ XAR      N1     C6     C5      120.000    3.000
+ XAR      N6     C6     C5      120.000    3.000
+ XAR      C6     N6     HN62    120.000    3.000
+ XAR      C6     N6     HN61    120.000    3.000
+ XAR      HN62   N6     HN61    120.000    3.000
+ XAR      C6     C5     N7      132.000    3.000
+ XAR      C6     C5     C4      120.000    3.000
+ XAR      N7     C5     C4      108.000    3.000
+ XAR      C5     N7     C8      108.000    3.000
+ XAR      N7     C8     H8      126.000    3.000
+ XAR      N7     C8     N9      108.000    3.000
+ XAR      H8     C8     N9      126.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ XAR      var_1    O2P    P      "O5'"  "C5'"    -54.199   20.000   1
+ XAR      var_2    P      "O5'"  "C5'"  "C4'"   -179.981   20.000   1
+ XAR      var_3    "O5'"  "C5'"  "C4'"  "C6'"     59.521   20.000   3
+ XAR      var_4    "C5'"  "C4'"  "C3'"  "C2'"    -90.000   20.000   3
+ XAR      var_5    "C5'"  "C4'"  "C6'"  "C7'"    120.000   20.000   1
+ XAR      var_6    "C4'"  "C6'"  "C7'"  "C1'"      0.000   20.000   1
+ XAR      var_7    "C6'"  "C7'"  "C1'"  N9      -150.000   20.000   1
+ XAR      var_8    "C7'"  "C1'"  "C2'"  "C3'"     30.000   20.000   3
+ XAR      var_9    "C1'"  "C2'"  "C3'"  "O3'"     60.000   20.000   3
+ XAR      var_10   "C2'"  "C3'"  "O3'"  H3T     -148.889   20.000   1
+ XAR      var_11   "C7'"  "C1'"  N9     C4        64.764   20.000   1
+ XAR      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ XAR      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ XAR      CONST_3  N9     C4     N3     C2       180.000    0.000   0
+ XAR      CONST_4  C4     N3     C2     N1         0.000    0.000   0
+ XAR      CONST_5  N3     C2     N1     C6         0.000    0.000   0
+ XAR      CONST_6  C2     N1     C6     C5         0.000    0.000   0
+ XAR      CONST_7  N1     C6     N6     HN61    -123.102    0.000   0
+ XAR      CONST_8  N1     C6     C5     N7       180.000    0.000   0
+ XAR      CONST_9  C6     C5     C4     N9       180.000    0.000   0
+ XAR      CONST_10 C6     C5     N7     C8       180.000    0.000   0
+ XAR      CONST_11 C5     N7     C8     N9         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ XAR      chir_01  "C4'"  "C5'"  "C3'"  "C6'"     positiv
+ XAR      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ XAR      chir_03  "C1'"  "C2'"  "C7'"  N9        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ XAR      plan-1    "C7'"     0.020
+ XAR      plan-1    "C1'"     0.020
+ XAR      plan-1    "C6'"     0.020
+ XAR      plan-1    "H7'"     0.020
+ XAR      plan-1    "H6'"     0.020
+ XAR      plan-2    "C6'"     0.020
+ XAR      plan-2    "C4'"     0.020
+ XAR      plan-2    "C7'"     0.020
+ XAR      plan-2    "H6'"     0.020
+ XAR      plan-2    "H7'"     0.020
+ XAR      plan-3    N9        0.020
+ XAR      plan-3    "C1'"     0.020
+ XAR      plan-3    C8        0.020
+ XAR      plan-3    C4        0.020
+ XAR      plan-3    N7        0.020
+ XAR      plan-3    H8        0.020
+ XAR      plan-3    C5        0.020
+ XAR      plan-3    C6        0.020
+ XAR      plan-3    N3        0.020
+ XAR      plan-3    N1        0.020
+ XAR      plan-3    C2        0.020
+ XAR      plan-3    N6        0.020
+ XAR      plan-3    H2        0.020
+ XAR      plan-3    HN62      0.020
+ XAR      plan-3    HN61      0.020
+ XAR      plan-4    N6        0.020
+ XAR      plan-4    C6        0.020
+ XAR      plan-4    HN61      0.020
+ XAR      plan-4    HN62      0.020
+# ------------------------------------------------------

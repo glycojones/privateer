@@ -1,0 +1,132 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BCF     BCF      1-chloro-2,3,4,5,6-pentafluorobenzene     NON-POLYMER     12     12     .     
+#
+data_comp_BCF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BCF     F6      F       F       0       27.758      7.565       1.096       
+BCF     C6      C       CR6     0       27.250      7.372       2.330       
+BCF     C1      C       CR6     0       27.009      8.468       3.156       
+BCF     CL1     CL      CL      0       27.355      10.064      2.617       
+BCF     C5      C       CR6     0       26.970      6.088       2.768       
+BCF     F5      F       F       0       27.209      5.045       1.956       
+BCF     C4      C       CR6     0       26.450      5.884       4.029       
+BCF     F4      F       F       0       26.180      4.638       4.450       
+BCF     C3      C       CR6     0       26.206      6.960       4.858       
+BCF     F3      F       F       0       25.699      6.768       6.088       
+BCF     C2      C       CR6     0       26.483      8.247       4.428       
+BCF     F2      F       F       0       26.243      9.294       5.243       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BCF       F6        C6        SINGLE    n         1.348     0.012     1.348     0.012     
+BCF       C6        C1        DOUBLE    y         1.379     0.014     1.379     0.014     
+BCF       C6        C5        SINGLE    y         1.375     0.011     1.375     0.011     
+BCF       C1        CL1       SINGLE    n         1.720     0.010     1.720     0.010     
+BCF       C1        C2        SINGLE    y         1.379     0.014     1.379     0.014     
+BCF       C5        F5        SINGLE    n         1.344     0.010     1.344     0.010     
+BCF       C5        C4        DOUBLE    y         1.371     0.010     1.371     0.010     
+BCF       C4        F4        SINGLE    n         1.343     0.010     1.343     0.010     
+BCF       C4        C3        SINGLE    y         1.371     0.010     1.371     0.010     
+BCF       C3        F3        SINGLE    n         1.344     0.010     1.344     0.010     
+BCF       C3        C2        DOUBLE    y         1.375     0.011     1.375     0.011     
+BCF       C2        F2        SINGLE    n         1.348     0.012     1.348     0.012     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BCF          F6          C6          C1     119.635    1.50
+BCF          F6          C6          C5     119.801    1.84
+BCF          C1          C6          C5     120.563    1.50
+BCF          C6          C1         CL1     120.521    1.50
+BCF          C6          C1          C2     118.958    1.50
+BCF         CL1          C1          C2     120.521    1.50
+BCF          C6          C5          F5     119.560    1.84
+BCF          C6          C5          C4     120.075    1.50
+BCF          F5          C5          C4     120.365    1.50
+BCF          C5          C4          F4     120.117    1.50
+BCF          C5          C4          C3     119.767    1.50
+BCF          F4          C4          C3     120.121    1.50
+BCF          C4          C3          F3     120.365    1.50
+BCF          C4          C3          C2     120.075    1.50
+BCF          F3          C3          C2     119.560    1.84
+BCF          C1          C2          C3     120.563    1.50
+BCF          C1          C2          F2     119.635    1.50
+BCF          C3          C2          F2     119.801    1.84
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BCF       const_sp2_sp2_4         CL1          C1          C6          F6       0.000   10.00     2
+BCF              const_24          F5          C5          C6          F6       0.000   10.00     2
+BCF       const_sp2_sp2_8         CL1          C1          C2          F2       0.000   10.00     2
+BCF              const_20          F4          C4          C5          F5       0.000   10.00     2
+BCF              const_16          F3          C3          C4          F4       0.000   10.00     2
+BCF              const_12          F2          C2          C3          F3       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BCF    plan-1          C1   0.020
+BCF    plan-1          C2   0.020
+BCF    plan-1          C3   0.020
+BCF    plan-1          C4   0.020
+BCF    plan-1          C5   0.020
+BCF    plan-1          C6   0.020
+BCF    plan-1         CL1   0.020
+BCF    plan-1          F2   0.020
+BCF    plan-1          F3   0.020
+BCF    plan-1          F4   0.020
+BCF    plan-1          F5   0.020
+BCF    plan-1          F6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BCF SMILES           ACDLabs              10.04 "Fc1c(F)c(F)c(F)c(Cl)c1F"
+BCF SMILES_CANONICAL CACTVS               3.341 "Fc1c(F)c(F)c(Cl)c(F)c1F"
+BCF SMILES           CACTVS               3.341 "Fc1c(F)c(F)c(Cl)c(F)c1F"
+BCF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1(c(c(c(c(c1F)F)Cl)F)F)F"
+BCF SMILES           "OpenEye OEToolkits" 1.5.0 "c1(c(c(c(c(c1F)F)Cl)F)F)F"
+BCF InChI            InChI                1.03  "InChI=1S/C6ClF5/c7-1-2(8)4(10)6(12)5(11)3(1)9"
+BCF InChIKey         InChI                1.03  KGCDGLXSBHJAHZ-UHFFFAOYSA-N
+BCF ?                acedrg               202         "dictionary generator"                  
+BCF ?                acedrg_database      11          "data source"                           
+BCF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BCF ?                refmac5              5.8.0189    "optimization tool"                     

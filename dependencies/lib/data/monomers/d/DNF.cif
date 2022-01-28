@@ -1,0 +1,159 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DNF     DNF      2,4-DINITROPHENOL     NON-POLYMER     17     13     .     
+#
+data_comp_DNF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DNF     C1      C       CR6     0       -1.325      0.617       -0.074      
+DNF     O1      O       OH1     0       -2.630      0.965       -0.217      
+DNF     C2      C       CR6     0       -0.841      -0.677      -0.365      
+DNF     N2      N       N       1       -1.725      -1.732      -0.842      
+DNF     O21     O       O       0       -2.321      -1.558      -1.894      
+DNF     O22     O       OC      -1      -1.833      -2.746      -0.170      
+DNF     C3      C       CR16    0       0.514       -0.995      -0.204      
+DNF     C4      C       CR6     0       1.381       0.003       0.254       
+DNF     N4      N       N       1       2.793       -0.314      0.426       
+DNF     O41     O       O       0       3.098       -1.171      1.240       
+DNF     O42     O       OC      -1      3.608       0.292       -0.252      
+DNF     C5      C       CR16    0       0.925       1.292       0.548       
+DNF     C6      C       CR16    0       -0.419      1.589       0.382       
+DNF     HO1     H       H       0       -2.970      1.116       0.556       
+DNF     H3      H       H       0       0.828       -1.862      -0.400      
+DNF     H5      H       H       0       1.519       1.954       0.855       
+DNF     H6      H       H       0       -0.733      2.457       0.579       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DNF       C1        O1        SINGLE    n         1.358     0.015     1.358     0.015     
+DNF       C1        C2        DOUBLE    y         1.404     0.010     1.404     0.010     
+DNF       C1        C6        SINGLE    y         1.391     0.012     1.391     0.012     
+DNF       C2        N2        SINGLE    n         1.457     0.020     1.457     0.020     
+DNF       C2        C3        SINGLE    y         1.392     0.012     1.392     0.012     
+DNF       N2        O21       DOUBLE    n         1.221     0.017     1.221     0.017     
+DNF       N2        O22       SINGLE    n         1.221     0.017     1.221     0.017     
+DNF       C3        C4        DOUBLE    y         1.392     0.012     1.392     0.012     
+DNF       C4        N4        SINGLE    n         1.457     0.020     1.457     0.020     
+DNF       C4        C5        SINGLE    y         1.393     0.011     1.393     0.011     
+DNF       N4        O41       DOUBLE    n         1.221     0.017     1.221     0.017     
+DNF       N4        O42       SINGLE    n         1.221     0.017     1.221     0.017     
+DNF       C5        C6        DOUBLE    y         1.379     0.010     1.379     0.010     
+DNF       O1        HO1       SINGLE    n         0.970     0.012     0.858     0.020     
+DNF       C3        H3        SINGLE    n         1.082     0.013     0.943     0.019     
+DNF       C5        H5        SINGLE    n         1.082     0.013     0.941     0.020     
+DNF       C6        H6        SINGLE    n         1.082     0.013     0.944     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DNF          O1          C1          C2     123.018    1.50
+DNF          O1          C1          C6     119.135    3.00
+DNF          C2          C1          C6     117.846    1.50
+DNF          C1          O1         HO1     109.343    2.75
+DNF          C1          C2          N2     121.614    1.50
+DNF          C1          C2          C3     120.897    1.59
+DNF          N2          C2          C3     117.489    1.50
+DNF          C2          N2         O21     118.308    1.50
+DNF          C2          N2         O22     118.308    1.50
+DNF         O21          N2         O22     123.383    1.50
+DNF          C2          C3          C4     118.862    1.50
+DNF          C2          C3          H3     120.167    1.50
+DNF          C4          C3          H3     120.971    1.50
+DNF          C3          C4          N4     118.415    1.50
+DNF          C3          C4          C5     122.677    1.50
+DNF          N4          C4          C5     118.902    1.50
+DNF          C4          N4         O41     118.257    1.50
+DNF          C4          N4         O42     118.257    1.50
+DNF         O41          N4         O42     123.486    1.50
+DNF          C4          C5          C6     119.382    1.50
+DNF          C4          C5          H5     120.669    1.50
+DNF          C6          C5          H5     119.949    1.50
+DNF          C1          C6          C5     120.335    1.50
+DNF          C1          C6          H6     119.687    1.50
+DNF          C5          C6          H6     119.977    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DNF              const_23          O1          C1          C6          C5     180.000   10.00     2
+DNF       const_sp2_sp2_4          O1          C1          C2          N2       0.000   10.00     2
+DNF              const_17          C4          C5          C6          C1       0.000   10.00     2
+DNF             sp2_sp2_1          C1          C2          N2         O21     180.000   10.00     2
+DNF       const_sp2_sp2_7          N2          C2          C3          C4     180.000   10.00     2
+DNF              const_10          C2          C3          C4          N4     180.000   10.00     2
+DNF              const_15          N4          C4          C5          C6     180.000   10.00     2
+DNF             sp2_sp2_5          C3          C4          N4         O41     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DNF    plan-1          C1   0.020
+DNF    plan-1          C2   0.020
+DNF    plan-1          C3   0.020
+DNF    plan-1          C4   0.020
+DNF    plan-1          C5   0.020
+DNF    plan-1          C6   0.020
+DNF    plan-1          H3   0.020
+DNF    plan-1          H5   0.020
+DNF    plan-1          H6   0.020
+DNF    plan-1          N2   0.020
+DNF    plan-1          N4   0.020
+DNF    plan-1          O1   0.020
+DNF    plan-2          C2   0.020
+DNF    plan-2          N2   0.020
+DNF    plan-2         O21   0.020
+DNF    plan-2         O22   0.020
+DNF    plan-3          C4   0.020
+DNF    plan-3          N4   0.020
+DNF    plan-3         O41   0.020
+DNF    plan-3         O42   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DNF SMILES           ACDLabs              10.04 "O=[N+]([O-])c1cc(ccc1O)[N+]([O-])=O"
+DNF SMILES_CANONICAL CACTVS               3.341 "Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O"
+DNF SMILES           CACTVS               3.341 "Oc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O"
+DNF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1[N+](=O)[O-])[N+](=O)[O-])O"
+DNF SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1[N+](=O)[O-])[N+](=O)[O-])O"
+DNF InChI            InChI                1.03  "InChI=1S/C6H4N2O5/c9-6-2-1-4(7(10)11)3-5(6)8(12)13/h1-3,9H"
+DNF InChIKey         InChI                1.03  UFBJCMHMOXMLKC-UHFFFAOYSA-N
+DNF ?                acedrg               202         "dictionary generator"                  
+DNF ?                acedrg_database      11          "data source"                           
+DNF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DNF ?                refmac5              5.8.0189    "optimization tool"                     

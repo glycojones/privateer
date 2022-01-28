@@ -1,0 +1,136 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XIX     XIX      "3,5-DIAMINO-1H-[1,2,4]TRIAZOLE"     non-polymer     12     7     .     
+#
+data_comp_XIX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+XIX     N1      N       NRD5    0       -21.980     -35.440     -1.245      
+XIX     N2      N       NR5     0       -22.397     -36.588     -0.635      
+XIX     N4      N       NH2     0       -22.899     -37.312     1.564       
+XIX     C6      C       CR5     0       -21.870     -34.605     -0.229      
+XIX     N7      N       NRD5    0       -22.176     -35.109     0.972       
+XIX     N8      N       NH2     0       -21.452     -33.254     -0.400      
+XIX     C2      C       CR5     0       -22.509     -36.374     0.686       
+XIX     H2      H       H       0       -22.552     -37.321     -1.086      
+XIX     H41N    H       H       0       -22.966     -37.106     2.411       
+XIX     H42N    H       H       0       -23.081     -38.118     1.279       
+XIX     H81N    H       H       0       -21.250     -32.960     -1.203      
+XIX     H82N    H       H       0       -21.399     -32.723     0.298       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XIX       N1        N2        SINGLE    y         1.367     0.014     1.367     0.014     
+XIX       N1        C6        DOUBLE    y         1.320     0.013     1.320     0.013     
+XIX       N2        C2        SINGLE    y         1.343     0.010     1.343     0.010     
+XIX       N4        C2        SINGLE    n         1.343     0.010     1.343     0.010     
+XIX       C6        N7        SINGLE    y         1.336     0.015     1.336     0.015     
+XIX       C6        N8        SINGLE    n         1.424     0.020     1.424     0.020     
+XIX       N7        C2        DOUBLE    y         1.338     0.010     1.338     0.010     
+XIX       N2        H2        SINGLE    n         1.016     0.010     0.875     0.020     
+XIX       N4        H41N      SINGLE    n         1.016     0.010     0.874     0.019     
+XIX       N4        H42N      SINGLE    n         1.016     0.010     0.874     0.019     
+XIX       N8        H81N      SINGLE    n         1.016     0.010     0.879     0.020     
+XIX       N8        H82N      SINGLE    n         1.016     0.010     0.879     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+XIX          N2          N1          C6     102.797    1.50
+XIX          N1          N2          C2     109.745    1.50
+XIX          N1          N2          H2     121.732    3.00
+XIX          C2          N2          H2     128.523    3.00
+XIX          C2          N4        H41N     119.443    1.89
+XIX          C2          N4        H42N     119.443    1.89
+XIX        H41N          N4        H42N     121.115    2.45
+XIX          N1          C6          N7     115.538    1.50
+XIX          N1          C6          N8     122.231    2.12
+XIX          N7          C6          N8     122.231    2.12
+XIX          C6          N7          C2     102.148    1.50
+XIX          C6          N8        H81N     119.678    1.50
+XIX          C6          N8        H82N     119.678    1.50
+XIX        H81N          N8        H82N     120.644    2.45
+XIX          N2          C2          N4     123.880    1.50
+XIX          N2          C2          N7     109.773    1.50
+XIX          N4          C2          N7     126.347    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+XIX       const_sp2_sp2_1          C6          N1          N2          C2       0.000   10.00     2
+XIX              const_12          N8          C6          N1          N2     180.000   10.00     2
+XIX       const_sp2_sp2_5          N4          C2          N2          N1     180.000   10.00     2
+XIX             sp2_sp2_1          N2          C2          N4        H41N     180.000   10.00     2
+XIX              const_10          N8          C6          N7          C2     180.000   10.00     2
+XIX             sp2_sp2_5          N1          C6          N8        H81N     180.000   10.00     2
+XIX       const_sp2_sp2_8          N4          C2          N7          C6     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+XIX    plan-1          C2   0.020
+XIX    plan-1          C6   0.020
+XIX    plan-1          H2   0.020
+XIX    plan-1          N1   0.020
+XIX    plan-1          N2   0.020
+XIX    plan-1          N4   0.020
+XIX    plan-1          N7   0.020
+XIX    plan-1          N8   0.020
+XIX    plan-2          C2   0.020
+XIX    plan-2        H41N   0.020
+XIX    plan-2        H42N   0.020
+XIX    plan-2          N4   0.020
+XIX    plan-3          C6   0.020
+XIX    plan-3        H81N   0.020
+XIX    plan-3        H82N   0.020
+XIX    plan-3          N8   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+XIX SMILES           ACDLabs              10.04 "n1c(nnc1N)N"
+XIX SMILES_CANONICAL CACTVS               3.352 "Nc1[nH]nc(N)n1"
+XIX SMILES           CACTVS               3.352 "Nc1[nH]nc(N)n1"
+XIX SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "c1([nH]nc(n1)N)N"
+XIX SMILES           "OpenEye OEToolkits" 1.6.1 "c1([nH]nc(n1)N)N"
+XIX InChI            InChI                1.03  "InChI=1S/C2H5N5/c3-1-5-2(4)7-6-1/h(H5,3,4,5,6,7)"
+XIX InChIKey         InChI                1.03  PKWIYNIDEDLDCJ-UHFFFAOYSA-N
+XIX ?                acedrg               202         "dictionary generator"                  
+XIX ?                acedrg_database      11          "data source"                           
+XIX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+XIX ?                refmac5              5.8.0189    "optimization tool"                     

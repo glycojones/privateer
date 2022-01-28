@@ -1,0 +1,398 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ABR      ABR '(R)-(N-PHENYL-2-HYDROXY-ETHYL)-2'-DE' DNA                51  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ABR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ABR           OP3    O    OP       -0.666      0.000    0.000    0.000
+ ABR           P      P    P         0.000     -1.254    0.229   -0.815
+ ABR           OP1    O    OP       -0.666     -1.699   -1.077   -1.436
+ ABR           OP2    O    OP       -0.666     -0.969    1.234   -1.908
+ ABR           "O5'"  O    O2        0.000     -2.420    0.792    0.141
+ ABR           "C5'"  C    CH2       0.000     -2.644   -0.196    1.147
+ ABR           "H5'"  H    H         0.000     -1.721   -0.355    1.710
+ ABR           "H5''" H    H         0.000     -2.947   -1.132    0.674
+ ABR           "C4'"  C    CH1       0.000     -3.746    0.279    2.095
+ ABR           "H4'"  H    H         0.000     -3.448    1.215    2.587
+ ABR           "C3'"  C    CH1       0.000     -4.065   -0.803    3.149
+ ABR           "H3'"  H    H         0.000     -3.783   -1.798    2.776
+ ABR           "C2'"  C    CH2       0.000     -5.595   -0.710    3.337
+ ABR           "H2'"  H    H         0.000     -5.867   -0.442    4.360
+ ABR           "H2''" H    H         0.000     -6.099   -1.638    3.058
+ ABR           "C1'"  C    CH1       0.000     -6.024    0.420    2.376
+ ABR           "H1'"  H    H         0.000     -6.079    1.378    2.912
+ ABR           "O4'"  O    O2        0.000     -4.986    0.464    1.372
+ ABR           N9     N    NR5       0.000     -7.316    0.105    1.763
+ ABR           C8     C    CR15      0.000     -7.512   -0.575    0.599
+ ABR           H8     H    H         0.000     -6.723   -0.974   -0.027
+ ABR           N7     N    NRD5      0.000     -8.785   -0.675    0.351
+ ABR           C5     C    CR56      0.000     -9.485   -0.066    1.337
+ ABR           C4     C    CR56      0.000     -8.552    0.437    2.258
+ ABR           C6     C    CR6       0.000    -10.851    0.137    1.598
+ ABR           N1     N    NRD6      0.000    -11.193    0.800    2.698
+ ABR           C2     C    CR16      0.000    -10.278    1.260    3.532
+ ABR           H2     H    H         0.000    -10.601    1.794    4.417
+ ABR           N3     N    NRD6      0.000     -8.988    1.092    3.328
+ ABR           N6     N    NH1       0.000    -11.817   -0.340    0.731
+ ABR           H6     H    H         0.000    -11.545   -0.843   -0.101
+ ABR           CB     C    CH2       0.000    -13.236   -0.117    1.020
+ ABR           HB1    H    H         0.000    -13.432    0.956    1.070
+ ABR           HB2    H    H         0.000    -13.489   -0.577    1.977
+ ABR           CA     C    CH1       0.000    -14.086   -0.742   -0.089
+ ABR           HA     H    H         0.000    -13.887   -1.822   -0.139
+ ABR           OA     O    OH1       0.000    -13.754   -0.139   -1.341
+ ABR           HOA    H    H         0.000    -13.929    0.811   -1.297
+ ABR           CS6    C    CR6       0.000    -15.546   -0.513    0.208
+ ABR           CS5    C    CR16      0.000    -16.254   -1.440    0.949
+ ABR           HS5    H    H         0.000    -15.760   -2.332    1.313
+ ABR           CS4    C    CR16      0.000    -17.591   -1.228    1.224
+ ABR           HS4    H    H         0.000    -18.145   -1.951    1.810
+ ABR           CS3    C    CR16      0.000    -18.223   -0.093    0.753
+ ABR           HS3    H    H         0.000    -19.272    0.072    0.967
+ ABR           CS2    C    CR16      0.000    -17.516    0.831    0.007
+ ABR           HS2    H    H         0.000    -18.011    1.720   -0.364
+ ABR           CS1    C    CR16      0.000    -16.177    0.621   -0.265
+ ABR           HS1    H    H         0.000    -15.623    1.346   -0.849
+ ABR           "O3'"  O    OH1       0.000     -3.391   -0.521    4.377
+ ABR           "HO3'" H    H         0.000     -3.650   -1.210    5.003
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ABR      OP3    n/a    P      START
+ ABR      P      OP3    "O5'"  .
+ ABR      OP1    P      .      .
+ ABR      OP2    P      .      .
+ ABR      "O5'"  P      "C5'"  .
+ ABR      "C5'"  "O5'"  "C4'"  .
+ ABR      "H5'"  "C5'"  .      .
+ ABR      "H5''" "C5'"  .      .
+ ABR      "C4'"  "C5'"  "C3'"  .
+ ABR      "H4'"  "C4'"  .      .
+ ABR      "C3'"  "C4'"  "O3'"  .
+ ABR      "H3'"  "C3'"  .      .
+ ABR      "C2'"  "C3'"  "C1'"  .
+ ABR      "H2'"  "C2'"  .      .
+ ABR      "H2''" "C2'"  .      .
+ ABR      "C1'"  "C2'"  N9     .
+ ABR      "H1'"  "C1'"  .      .
+ ABR      "O4'"  "C1'"  .      .
+ ABR      N9     "C1'"  C8     .
+ ABR      C8     N9     N7     .
+ ABR      H8     C8     .      .
+ ABR      N7     C8     C5     .
+ ABR      C5     N7     C6     .
+ ABR      C4     C5     .      .
+ ABR      C6     C5     N6     .
+ ABR      N1     C6     C2     .
+ ABR      C2     N1     N3     .
+ ABR      H2     C2     .      .
+ ABR      N3     C2     .      .
+ ABR      N6     C6     CB     .
+ ABR      H6     N6     .      .
+ ABR      CB     N6     CA     .
+ ABR      HB1    CB     .      .
+ ABR      HB2    CB     .      .
+ ABR      CA     CB     CS6    .
+ ABR      HA     CA     .      .
+ ABR      OA     CA     HOA    .
+ ABR      HOA    OA     .      .
+ ABR      CS6    CA     CS5    .
+ ABR      CS5    CS6    CS4    .
+ ABR      HS5    CS5    .      .
+ ABR      CS4    CS5    CS3    .
+ ABR      HS4    CS4    .      .
+ ABR      CS3    CS4    CS2    .
+ ABR      HS3    CS3    .      .
+ ABR      CS2    CS3    CS1    .
+ ABR      HS2    CS2    .      .
+ ABR      CS1    CS2    HS1    .
+ ABR      HS1    CS1    .      .
+ ABR      "O3'"  "C3'"  .      END
+ ABR      "HO3'" "O3'"  .      .
+ ABR      "C4'"  "O4'"  .    ADD
+ ABR      N9     C4     .    ADD
+ ABR      C4     N3     .    ADD
+ ABR      CS6    CS1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ABR       OP1       P         deloc     1.510     0.020     1.510     0.020     
+ABR       OP2       P         deloc     1.510     0.020     1.510     0.020     
+ABR       "O5'"     P         single    1.610     0.020     1.610     0.020     
+ABR       P         OP3       deloc     1.510     0.020     1.510     0.020     
+ABR       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+ABR       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+ABR       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+ABR       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+ABR       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+ABR       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+ABR       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+ABR       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+ABR       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+ABR       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+ABR       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+ABR       N9        C4        single    1.337     0.020     1.337     0.020     
+ABR       C8        N9        single    1.337     0.020     1.337     0.020     
+ABR       C4        N3        double    1.355     0.020     1.355     0.020     
+ABR       C4        C5        single    1.490     0.020     1.490     0.020     
+ABR       N3        C2        single    1.337     0.020     1.337     0.020     
+ABR       C2        N1        double    1.337     0.020     1.337     0.020     
+ABR       H2        C2        single    1.082     0.013     0.975     0.010     
+ABR       N1        C6        single    1.350     0.020     1.350     0.020     
+ABR       N6        C6        single    1.350     0.020     1.350     0.020     
+ABR       C6        C5        double    1.490     0.020     1.490     0.020     
+ABR       CB        N6        single    1.450     0.020     1.450     0.020     
+ABR       H6        N6        single    1.016     0.010     0.899     0.007     
+ABR       OA        CA        single    1.432     0.020     1.432     0.020     
+ABR       CA        CB        single    1.524     0.020     1.524     0.020     
+ABR       CS6       CA        single    1.480     0.020     1.480     0.020     
+ABR       HA        CA        single    1.089     0.010     0.989     0.005     
+ABR       HOA       OA        single    0.970     0.012     0.839     0.014     
+ABR       HB1       CB        single    1.089     0.010     0.989     0.005     
+ABR       HB2       CB        single    1.089     0.010     0.989     0.005     
+ABR       CS6       CS1       double    1.390     0.020     1.390     0.020     
+ABR       CS5       CS6       single    1.390     0.020     1.390     0.020     
+ABR       CS1       CS2       single    1.390     0.020     1.390     0.020     
+ABR       HS1       CS1       single    1.082     0.013     0.975     0.010     
+ABR       CS4       CS5       double    1.390     0.020     1.390     0.020     
+ABR       HS5       CS5       single    1.082     0.013     0.975     0.010     
+ABR       CS2       CS3       double    1.390     0.020     1.390     0.020     
+ABR       HS2       CS2       single    1.082     0.013     0.975     0.010     
+ABR       CS3       CS4       single    1.390     0.020     1.390     0.020     
+ABR       HS4       CS4       single    1.082     0.013     0.975     0.010     
+ABR       HS3       CS3       single    1.082     0.013     0.975     0.010     
+ABR       C5        N7        single    1.350     0.020     1.350     0.020     
+ABR       N7        C8        double    1.350     0.020     1.350     0.020     
+ABR       H8        C8        single    1.082     0.013     0.975     0.010     
+ABR       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+ABR       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+ABR       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+ABR       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+ABR       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+ABR       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ABR      OP3    P      OP1     119.900    3.000
+ ABR      OP3    P      OP2     119.900    3.000
+ ABR      OP3    P      "O5'"   108.200    3.000
+ ABR      OP1    P      OP2     119.900    3.000
+ ABR      OP1    P      "O5'"   108.200    3.000
+ ABR      OP2    P      "O5'"   108.200    3.000
+ ABR      P      "O5'"  "C5'"   120.500    3.000
+ ABR      "O5'"  "C5'"  "H5'"   109.470    3.000
+ ABR      "O5'"  "C5'"  "H5''"  109.470    3.000
+ ABR      "O5'"  "C5'"  "C4'"   109.470    3.000
+ ABR      "H5'"  "C5'"  "H5''"  107.900    3.000
+ ABR      "H5'"  "C5'"  "C4'"   109.470    3.000
+ ABR      "H5''" "C5'"  "C4'"   109.470    3.000
+ ABR      "C5'"  "C4'"  "H4'"   108.340    3.000
+ ABR      "C5'"  "C4'"  "C3'"   111.000    3.000
+ ABR      "C5'"  "C4'"  "O4'"   109.470    3.000
+ ABR      "H4'"  "C4'"  "C3'"   108.340    3.000
+ ABR      "H4'"  "C4'"  "O4'"   109.470    3.000
+ ABR      "C3'"  "C4'"  "O4'"   109.470    3.000
+ ABR      "C4'"  "C3'"  "H3'"   108.340    3.000
+ ABR      "C4'"  "C3'"  "C2'"   111.000    3.000
+ ABR      "C4'"  "C3'"  "O3'"   109.470    3.000
+ ABR      "H3'"  "C3'"  "C2'"   108.340    3.000
+ ABR      "H3'"  "C3'"  "O3'"   109.470    3.000
+ ABR      "C2'"  "C3'"  "O3'"   109.470    3.000
+ ABR      "C3'"  "C2'"  "H2'"   109.470    3.000
+ ABR      "C3'"  "C2'"  "H2''"  109.470    3.000
+ ABR      "C3'"  "C2'"  "C1'"   111.000    3.000
+ ABR      "H2'"  "C2'"  "H2''"  107.900    3.000
+ ABR      "H2'"  "C2'"  "C1'"   109.470    3.000
+ ABR      "H2''" "C2'"  "C1'"   109.470    3.000
+ ABR      "C2'"  "C1'"  "H1'"   108.340    3.000
+ ABR      "C2'"  "C1'"  "O4'"   109.470    3.000
+ ABR      "C2'"  "C1'"  N9      109.470    3.000
+ ABR      "H1'"  "C1'"  "O4'"   109.470    3.000
+ ABR      "H1'"  "C1'"  N9      109.470    3.000
+ ABR      "O4'"  "C1'"  N9      109.470    3.000
+ ABR      "C1'"  "O4'"  "C4'"   111.800    3.000
+ ABR      "C1'"  N9     C8      126.000    3.000
+ ABR      "C1'"  N9     C4      126.000    3.000
+ ABR      C8     N9     C4      108.000    3.000
+ ABR      N9     C8     H8      126.000    3.000
+ ABR      N9     C8     N7      108.000    3.000
+ ABR      H8     C8     N7      126.000    3.000
+ ABR      C8     N7     C5      108.000    3.000
+ ABR      N7     C5     C4      108.000    3.000
+ ABR      N7     C5     C6      132.000    3.000
+ ABR      C4     C5     C6      120.000    3.000
+ ABR      C5     C4     N9      108.000    3.000
+ ABR      C5     C4     N3      120.000    3.000
+ ABR      N9     C4     N3      132.000    3.000
+ ABR      C5     C6     N1      120.000    3.000
+ ABR      C5     C6     N6      120.000    3.000
+ ABR      N1     C6     N6      120.000    3.000
+ ABR      C6     N1     C2      120.000    3.000
+ ABR      N1     C2     H2      120.000    3.000
+ ABR      N1     C2     N3      120.000    3.000
+ ABR      H2     C2     N3      120.000    3.000
+ ABR      C2     N3     C4      120.000    3.000
+ ABR      C6     N6     H6      120.000    3.000
+ ABR      C6     N6     CB      120.000    3.000
+ ABR      H6     N6     CB      118.500    3.000
+ ABR      N6     CB     HB1     109.470    3.000
+ ABR      N6     CB     HB2     109.470    3.000
+ ABR      N6     CB     CA      110.000    3.000
+ ABR      HB1    CB     HB2     107.900    3.000
+ ABR      HB1    CB     CA      109.470    3.000
+ ABR      HB2    CB     CA      109.470    3.000
+ ABR      CB     CA     HA      108.340    3.000
+ ABR      CB     CA     OA      109.470    3.000
+ ABR      CB     CA     CS6     109.470    3.000
+ ABR      HA     CA     OA      109.470    3.000
+ ABR      HA     CA     CS6     109.470    3.000
+ ABR      OA     CA     CS6     109.470    3.000
+ ABR      CA     OA     HOA     109.470    3.000
+ ABR      CA     CS6    CS5     120.000    3.000
+ ABR      CA     CS6    CS1     120.000    3.000
+ ABR      CS5    CS6    CS1     120.000    3.000
+ ABR      CS6    CS5    HS5     120.000    3.000
+ ABR      CS6    CS5    CS4     120.000    3.000
+ ABR      HS5    CS5    CS4     120.000    3.000
+ ABR      CS5    CS4    HS4     120.000    3.000
+ ABR      CS5    CS4    CS3     120.000    3.000
+ ABR      HS4    CS4    CS3     120.000    3.000
+ ABR      CS4    CS3    HS3     120.000    3.000
+ ABR      CS4    CS3    CS2     120.000    3.000
+ ABR      HS3    CS3    CS2     120.000    3.000
+ ABR      CS3    CS2    HS2     120.000    3.000
+ ABR      CS3    CS2    CS1     120.000    3.000
+ ABR      HS2    CS2    CS1     120.000    3.000
+ ABR      CS2    CS1    HS1     120.000    3.000
+ ABR      CS2    CS1    CS6     120.000    3.000
+ ABR      HS1    CS1    CS6     120.000    3.000
+ ABR      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ABR      var_1    OP3    P      "O5'"  "C5'"    -60.023   20.000   1
+ ABR      var_2    P      "O5'"  "C5'"  "C4'"    179.974   20.000   1
+ ABR      var_3    "O5'"  "C5'"  "C4'"  "C3'"    176.876   20.000   3
+ ABR      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ ABR      var_5    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ ABR      var_6    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ ABR      var_7    "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ ABR      var_8    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ ABR      var_9    "C2'"  "C1'"  N9     C8       -90.012   20.000   1
+ ABR      CONST_1  "C1'"  N9     C4     C5       180.000    0.000   0
+ ABR      CONST_2  "C1'"  N9     C8     N7       180.000    0.000   0
+ ABR      CONST_3  N9     C8     N7     C5         0.000    0.000   0
+ ABR      CONST_4  C8     N7     C5     C6       180.000    0.000   0
+ ABR      CONST_5  N7     C5     C4     N9         0.000    0.000   0
+ ABR      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ ABR      CONST_7  N7     C5     C6     N6         0.000    0.000   0
+ ABR      CONST_8  C5     C6     N1     C2         0.000    0.000   0
+ ABR      CONST_9  C6     N1     C2     N3         0.000    0.000   0
+ ABR      CONST_10 N1     C2     N3     C4         0.000    0.000   0
+ ABR      var_10   C5     C6     N6     CB      -179.936   20.000   1
+ ABR      var_11   C6     N6     CB     CA       179.994   20.000   3
+ ABR      var_12   N6     CB     CA     CS6      179.986   20.000   3
+ ABR      var_13   CB     CA     OA     HOA      -59.954   20.000   1
+ ABR      var_14   CB     CA     CS6    CS5      -90.269   20.000   1
+ ABR      CONST_11 CA     CS6    CS1    CS2      180.000    0.000   0
+ ABR      CONST_12 CA     CS6    CS5    CS4      180.000    0.000   0
+ ABR      CONST_13 CS6    CS5    CS4    CS3        0.000    0.000   0
+ ABR      CONST_14 CS5    CS4    CS3    CS2        0.000    0.000   0
+ ABR      CONST_15 CS4    CS3    CS2    CS1        0.000    0.000   0
+ ABR      CONST_16 CS3    CS2    CS1    CS6        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ABR      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ ABR      chir_02  "C1'"  "O4'"  N9     "C2'"     negativ
+ ABR      chir_03  CA     OA     CB     CS6       negativ
+ ABR      chir_04  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ABR      plan-1    N9        0.020
+ ABR      plan-1    "C1'"     0.020
+ ABR      plan-1    C4        0.020
+ ABR      plan-1    C8        0.020
+ ABR      plan-1    N7        0.020
+ ABR      plan-1    N3        0.020
+ ABR      plan-1    C5        0.020
+ ABR      plan-1    C2        0.020
+ ABR      plan-1    N1        0.020
+ ABR      plan-1    C6        0.020
+ ABR      plan-1    H2        0.020
+ ABR      plan-1    N6        0.020
+ ABR      plan-1    H8        0.020
+ ABR      plan-1    H6        0.020
+ ABR      plan-2    N6        0.020
+ ABR      plan-2    C6        0.020
+ ABR      plan-2    CB        0.020
+ ABR      plan-2    H6        0.020
+ ABR      plan-3    CS6       0.020
+ ABR      plan-3    CA        0.020
+ ABR      plan-3    CS1       0.020
+ ABR      plan-3    CS5       0.020
+ ABR      plan-3    CS2       0.020
+ ABR      plan-3    CS4       0.020
+ ABR      plan-3    CS3       0.020
+ ABR      plan-3    HS1       0.020
+ ABR      plan-3    HS5       0.020
+ ABR      plan-3    HS2       0.020
+ ABR      plan-3    HS4       0.020
+ ABR      plan-3    HS3       0.020
+# ------------------------------------------------------

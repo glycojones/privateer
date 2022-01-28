@@ -1,0 +1,286 @@
+global_
+_lib_name         mon_lib
+_lib_version      5.41
+_lib_update       11/02/13
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BXP      BXP 'BETA-D-XYLOBIOPYRANOSE              ' non-polymer        37  19 .
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BXP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BXP           O1A    O    OH1       0.000     -5.145   -0.343    1.296
+ BXP           HO1A   H    H         0.000     -5.476   -1.105    1.790
+ BXP           C1A    C    CH1       0.000     -3.966   -0.610    0.535
+ BXP           H1A1   H    H         0.000     -4.172   -1.397   -0.190
+ BXP           C2A    C    CH1       0.000     -3.534    0.662   -0.201
+ BXP           H2A    H    H         0.000     -3.367    1.461    0.521
+ BXP           O2A    O    OH1       0.000     -4.556    1.052   -1.120
+ BXP           HO2A   H    H         0.000     -5.408    1.244   -0.704
+ BXP           C3A    C    CH1       0.000     -2.237    0.384   -0.966
+ BXP           H3A    H    H         0.000     -2.415   -0.381   -1.722
+ BXP           O3A    O    OH1       0.000     -1.787    1.585   -1.597
+ BXP           HO3A   H    H         0.000     -2.414    1.953   -2.234
+ BXP           O5A    O    O2        0.000     -2.918   -1.030    1.411
+ BXP           C5A    C    CH2       0.000     -1.694   -1.350    0.746
+ BXP           H5A1   H    H         0.000     -1.870   -2.147    0.024
+ BXP           H5A2   H    H         0.000     -0.958   -1.679    1.479
+ BXP           C4A    C    CH1       0.000     -1.171   -0.108    0.019
+ BXP           H4A    H    H         0.000     -0.956    0.676    0.745
+ BXP           O4A    O    O2        0.000      0.022   -0.440   -0.695
+ BXP           C1B    C    CH1       0.000      1.220   -0.261    0.063
+ BXP           H1B    H    H         0.000      1.151   -0.826    0.993
+ BXP           C2B    C    CH1       0.000      2.417   -0.761   -0.750
+ BXP           H2B    H    H         0.000      2.464   -0.224   -1.697
+ BXP           O2B    O    OH1       0.000      2.274   -2.161   -0.999
+ BXP           HO2B   H    H         0.000      1.479   -2.392   -1.499
+ BXP           C3B    C    CH1       0.000      3.703   -0.511    0.043
+ BXP           H3B    H    H         0.000      3.679   -1.087    0.969
+ BXP           O3B    O    OH1       0.000      4.832   -0.908   -0.738
+ BXP           HO3B   H    H         0.000      5.682   -0.771   -0.299
+ BXP           O5B    O    O2        0.000      1.394    1.126    0.361
+ BXP           C5B    C    CH2       0.000      2.556    1.414    1.141
+ BXP           H5B1   H    H         0.000      2.503    0.871    2.085
+ BXP           H5B2   H    H         0.000      2.603    2.484    1.340
+ BXP           C4B    C    CH1       0.000      3.806    0.981    0.372
+ BXP           H4B    H    H         0.000      3.881    1.554   -0.553
+ BXP           O4B    O    OH1       0.000      4.965    1.215    1.174
+ BXP           HO4B   H    H         0.000      5.090    2.141    1.424
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BXP      O1A    n/a    C1A    START
+ BXP      HO1A   O1A    .      .
+ BXP      C1A    O1A    O5A    .
+ BXP      H1A1   C1A    .      .
+ BXP      C2A    C1A    C3A    .
+ BXP      H2A    C2A    .      .
+ BXP      O2A    C2A    HO2A   .
+ BXP      HO2A   O2A    .      .
+ BXP      C3A    C2A    O3A    .
+ BXP      H3A    C3A    .      .
+ BXP      O3A    C3A    HO3A   .
+ BXP      HO3A   O3A    .      .
+ BXP      O5A    C1A    C5A    .
+ BXP      C5A    O5A    C4A    .
+ BXP      H5A1   C5A    .      .
+ BXP      H5A2   C5A    .      .
+ BXP      C4A    C5A    O4A    .
+ BXP      H4A    C4A    .      .
+ BXP      O4A    C4A    C1B    .
+ BXP      C1B    O4A    O5B    .
+ BXP      H1B    C1B    .      .
+ BXP      C2B    C1B    C3B    .
+ BXP      H2B    C2B    .      .
+ BXP      O2B    C2B    HO2B   .
+ BXP      HO2B   O2B    .      .
+ BXP      C3B    C2B    O3B    .
+ BXP      H3B    C3B    .      .
+ BXP      O3B    C3B    HO3B   .
+ BXP      HO3B   O3B    .      .
+ BXP      O5B    C1B    C5B    .
+ BXP      C5B    O5B    C4B    .
+ BXP      H5B1   C5B    .      .
+ BXP      H5B2   C5B    .      .
+ BXP      C4B    C5B    O4B    .
+ BXP      H4B    C4B    .      .
+ BXP      O4B    C4B    HO4B   .
+ BXP      HO4B   O4B    .      END
+ BXP      C4B    C3B    .    ADD
+ BXP      C4A    C3A    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BXP       O4B       C4B       single    1.432     0.020     1.432     0.020     
+BXP       HO4B      O4B       single    0.970     0.012     0.839     0.014     
+BXP       C4B       C3B       single    1.524     0.020     1.524     0.020     
+BXP       C4B       C5B       single    1.524     0.020     1.524     0.020     
+BXP       H4B       C4B       single    1.089     0.010     0.989     0.005     
+BXP       O3B       C3B       single    1.432     0.020     1.432     0.020     
+BXP       C3B       C2B       single    1.524     0.020     1.524     0.020     
+BXP       H3B       C3B       single    1.089     0.010     0.989     0.005     
+BXP       HO3B      O3B       single    0.970     0.012     0.839     0.014     
+BXP       O2B       C2B       single    1.432     0.020     1.432     0.020     
+BXP       C2B       C1B       single    1.524     0.020     1.524     0.020     
+BXP       H2B       C2B       single    1.089     0.010     0.989     0.005     
+BXP       HO2B      O2B       single    0.970     0.012     0.839     0.014     
+BXP       C5B       O5B       single    1.426     0.020     1.426     0.020     
+BXP       H5B1      C5B       single    1.089     0.010     0.989     0.005     
+BXP       H5B2      C5B       single    1.089     0.010     0.989     0.005     
+BXP       O5B       C1B       single    1.426     0.020     1.426     0.020     
+BXP       C1B       O4A       single    1.426     0.020     1.426     0.020     
+BXP       H1B       C1B       single    1.089     0.010     0.989     0.005     
+BXP       O4A       C4A       single    1.426     0.020     1.426     0.020     
+BXP       C4A       C3A       single    1.524     0.020     1.524     0.020     
+BXP       C4A       C5A       single    1.524     0.020     1.524     0.020     
+BXP       H4A       C4A       single    1.089     0.010     0.989     0.005     
+BXP       O3A       C3A       single    1.432     0.020     1.432     0.020     
+BXP       C3A       C2A       single    1.524     0.020     1.524     0.020     
+BXP       H3A       C3A       single    1.089     0.010     0.989     0.005     
+BXP       HO3A      O3A       single    0.970     0.012     0.839     0.014     
+BXP       C5A       O5A       single    1.426     0.020     1.426     0.020     
+BXP       H5A1      C5A       single    1.089     0.010     0.989     0.005     
+BXP       H5A2      C5A       single    1.089     0.010     0.989     0.005     
+BXP       O5A       C1A       single    1.426     0.020     1.426     0.020     
+BXP       C2A       C1A       single    1.524     0.020     1.524     0.020     
+BXP       H1A1      C1A       single    1.089     0.010     0.989     0.005     
+BXP       C1A       O1A       single    1.432     0.020     1.432     0.020     
+BXP       O2A       C2A       single    1.432     0.020     1.432     0.020     
+BXP       H2A       C2A       single    1.089     0.010     0.989     0.005     
+BXP       HO2A      O2A       single    0.970     0.012     0.839     0.014     
+BXP       HO1A      O1A       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BXP      HO1A   O1A    C1A     109.470    3.000
+ BXP      O1A    C1A    H1A1    109.470    3.000
+ BXP      O1A    C1A    C2A     109.470    3.000
+ BXP      O1A    C1A    O5A     109.470    3.000
+ BXP      H1A1   C1A    C2A     108.340    3.000
+ BXP      H1A1   C1A    O5A     109.470    3.000
+ BXP      C2A    C1A    O5A     109.470    3.000
+ BXP      C1A    C2A    H2A     108.340    3.000
+ BXP      C1A    C2A    O2A     109.470    3.000
+ BXP      C1A    C2A    C3A     111.000    3.000
+ BXP      H2A    C2A    O2A     109.470    3.000
+ BXP      H2A    C2A    C3A     108.340    3.000
+ BXP      O2A    C2A    C3A     109.470    3.000
+ BXP      C2A    O2A    HO2A    109.470    3.000
+ BXP      C2A    C3A    H3A     108.340    3.000
+ BXP      C2A    C3A    O3A     109.470    3.000
+ BXP      C2A    C3A    C4A     111.000    3.000
+ BXP      H3A    C3A    O3A     109.470    3.000
+ BXP      H3A    C3A    C4A     108.340    3.000
+ BXP      O3A    C3A    C4A     109.470    3.000
+ BXP      C3A    O3A    HO3A    109.470    3.000
+ BXP      C1A    O5A    C5A     111.800    3.000
+ BXP      O5A    C5A    H5A1    109.470    3.000
+ BXP      O5A    C5A    H5A2    109.470    3.000
+ BXP      O5A    C5A    C4A     109.470    3.000
+ BXP      H5A1   C5A    H5A2    107.900    3.000
+ BXP      H5A1   C5A    C4A     109.470    3.000
+ BXP      H5A2   C5A    C4A     109.470    3.000
+ BXP      C5A    C4A    H4A     108.340    3.000
+ BXP      C5A    C4A    O4A     109.470    3.000
+ BXP      C5A    C4A    C3A     111.000    3.000
+ BXP      H4A    C4A    O4A     109.470    3.000
+ BXP      H4A    C4A    C3A     108.340    3.000
+ BXP      O4A    C4A    C3A     109.470    3.000
+ BXP      C4A    O4A    C1B     111.800    3.000
+ BXP      O4A    C1B    H1B     109.470    3.000
+ BXP      O4A    C1B    C2B     109.470    3.000
+ BXP      O4A    C1B    O5B     109.470    3.000
+ BXP      H1B    C1B    C2B     108.340    3.000
+ BXP      H1B    C1B    O5B     109.470    3.000
+ BXP      C2B    C1B    O5B     109.470    3.000
+ BXP      C1B    C2B    H2B     108.340    3.000
+ BXP      C1B    C2B    O2B     109.470    3.000
+ BXP      C1B    C2B    C3B     111.000    3.000
+ BXP      H2B    C2B    O2B     109.470    3.000
+ BXP      H2B    C2B    C3B     108.340    3.000
+ BXP      O2B    C2B    C3B     109.470    3.000
+ BXP      C2B    O2B    HO2B    109.470    3.000
+ BXP      C2B    C3B    H3B     108.340    3.000
+ BXP      C2B    C3B    O3B     109.470    3.000
+ BXP      C2B    C3B    C4B     111.000    3.000
+ BXP      H3B    C3B    O3B     109.470    3.000
+ BXP      H3B    C3B    C4B     108.340    3.000
+ BXP      O3B    C3B    C4B     109.470    3.000
+ BXP      C3B    O3B    HO3B    109.470    3.000
+ BXP      C1B    O5B    C5B     111.800    3.000
+ BXP      O5B    C5B    H5B1    109.470    3.000
+ BXP      O5B    C5B    H5B2    109.470    3.000
+ BXP      O5B    C5B    C4B     109.470    3.000
+ BXP      H5B1   C5B    H5B2    107.900    3.000
+ BXP      H5B1   C5B    C4B     109.470    3.000
+ BXP      H5B2   C5B    C4B     109.470    3.000
+ BXP      C5B    C4B    H4B     108.340    3.000
+ BXP      C5B    C4B    O4B     109.470    3.000
+ BXP      C5B    C4B    C3B     111.000    3.000
+ BXP      H4B    C4B    O4B     109.470    3.000
+ BXP      H4B    C4B    C3B     108.340    3.000
+ BXP      O4B    C4B    C3B     109.470    3.000
+ BXP      C4B    O4B    HO4B    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BXP      var_1            HO1A   O1A    C1A    O5A              -60.043           20.000   3
+ BXP      var_2            O1A    C1A    C2A    C3A              180.000           20.000   3
+ BXP      var_3            C1A    C2A    O2A    HO2A              60.309           20.000   3
+ BXP      var_4            C1A    C2A    C3A    O3A              180.000           20.000   3
+ BXP      var_5            C2A    C3A    O3A    HO3A             -60.389           20.000   3
+ BXP      var_6            O1A    C1A    O5A    C5A              178.826           20.000   3
+ BXP      var_7            C1A    O5A    C5A    C4A               61.218           20.000   3
+ BXP      var_8            O5A    C5A    C4A    O4A              180.000           20.000   3
+ BXP      var_9            C5A    C4A    C3A    C2A              180.000           20.000   3
+ BXP      var_10           C5A    C4A    O4A    C1B              -90.046           20.000   3
+ BXP      var_11           C4A    O4A    C1B    O5B              -65.041           20.000   3
+ BXP      var_12           O4A    C1B    C2B    C3B              180.000           20.000   3
+ BXP      var_13           C1B    C2B    O2B    HO2B              60.357           20.000   3
+ BXP      var_14           C1B    C2B    C3B    O3B              180.000           20.000   3
+ BXP      var_15           C2B    C3B    O3B    HO3B             179.563           20.000   3
+ BXP      var_16           O4A    C1B    O5B    C5B              178.921           20.000   3
+ BXP      var_17           C1B    O5B    C5B    C4B               61.103           20.000   3
+ BXP      var_18           O5B    C5B    C4B    O4B              180.000           20.000   3
+ BXP      var_19           C5B    C4B    C3B    C2B              180.000           20.000   3
+ BXP      var_20           C5B    C4B    O4B    HO4B             -59.949           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BXP      chir_01          C4B    O4B    C3B    C5B       negativ
+ BXP      chir_02          C3B    C4B    O3B    C2B       positiv
+ BXP      chir_03          C2B    C3B    O2B    C1B       negativ
+ BXP      chir_04          C1B    C2B    O5B    O4A       negativ
+ BXP      chir_05          C4A    O4A    C3A    C5A       negativ
+ BXP      chir_06          C3A    C4A    O3A    C2A       positiv
+ BXP      chir_07          C1A    O5A    C2A    O1A       positiv
+ BXP      chir_08          C2A    C3A    C1A    O2A       positiv
+# ------------------------------------------------------
+# ------------------------------------------------------
+# ------------------------------------------------------

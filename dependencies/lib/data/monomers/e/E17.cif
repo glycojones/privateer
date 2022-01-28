@@ -1,0 +1,795 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+E17      E17 '.                                   ' non-polymer       118  56 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_E17
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ E17           OAM    O    O         0.000      0.000    0.000    0.000
+ E17           CBH    C    C         0.000      0.839    0.847    0.219
+ E17           NBB    N    NH1       0.000      2.148    0.529    0.166
+ E17           HNBB   H    H         0.000      2.847    1.234    0.349
+ E17           CBL    C    CH1       0.000      2.556   -0.841   -0.159
+ E17           HBL    H    H         0.000      1.853   -1.270   -0.886
+ E17           CAA    C    CH3       0.000      2.553   -1.689    1.116
+ E17           HAAB   H    H         0.000      1.579   -1.700    1.531
+ E17           HAAA   H    H         0.000      2.848   -2.679    0.883
+ E17           HAA    H    H         0.000      3.230   -1.275    1.818
+ E17           CBS    C    CT        0.000      3.964   -0.826   -0.757
+ E17           CAD    C    CH3       0.000      4.942   -0.227    0.255
+ E17           HADB   H    H         0.000      5.917   -0.216   -0.159
+ E17           HADA   H    H         0.000      4.648    0.763    0.490
+ E17           HAD    H    H         0.000      4.941   -0.814    1.138
+ E17           CAC    C    CH3       0.000      3.967    0.022   -2.031
+ E17           HACB   H    H         0.000      4.942    0.034   -2.446
+ E17           HACA   H    H         0.000      3.290   -0.391   -2.733
+ E17           HAC    H    H         0.000      3.671    1.012   -1.798
+ E17           CAB    C    CH3       0.000      4.390   -2.255   -1.095
+ E17           HABB   H    H         0.000      5.365   -2.246   -1.510
+ E17           HABA   H    H         0.000      4.388   -2.843   -0.214
+ E17           HAB    H    H         0.000      3.713   -2.670   -1.796
+ E17           CBQ    C    CH1       0.000      0.420    2.255    0.552
+ E17           HBQ    H    H         0.000      1.061    2.954   -0.002
+ E17           CBU    C    CT        0.000      0.624    2.490    2.067
+ E17           CAH    C    CH3       0.000      1.608    1.476    2.652
+ E17           HAHB   H    H         0.000      1.729    1.658    3.689
+ E17           HAHA   H    H         0.000      1.235    0.495    2.508
+ E17           HAH    H    H         0.000      2.545    1.571    2.167
+ E17           CAI    C    CH3       0.000      1.084    3.922    2.344
+ E17           HAIB   H    H         0.000      1.216    4.057    3.387
+ E17           HAIA   H    H         0.000      2.002    4.102    1.847
+ E17           HAI    H    H         0.000      0.353    4.604    1.992
+ E17           SBE    S    S2        0.000     -1.080    2.206    2.709
+ E17           CAZ    C    CH2       0.000     -1.895    2.856    1.189
+ E17           HAZ    H    H         0.000     -1.992    3.943    1.192
+ E17           HAZA   H    H         0.000     -2.873    2.405    1.007
+ E17           NBR    N    N         0.000     -0.957    2.447    0.124
+ E17           CBI    C    C         0.000     -1.348    2.269   -1.154
+ E17           OAN    O    O         0.000     -0.558    1.863   -1.978
+ E17           CBN    C    CH1       0.000     -2.767    2.577   -1.557
+ E17           HBN    H    H         0.000     -3.087    3.517   -1.085
+ E17           OAO    O    OH1       0.000     -2.840    2.709   -2.978
+ E17           HOAO   H    H         0.000     -2.558    1.882   -3.393
+ E17           CBO    C    CH1       0.000     -3.684    1.439   -1.103
+ E17           HBO    H    H         0.000     -3.561    1.278   -0.023
+ E17           CBA    C    CH2       0.000     -3.318    0.158   -1.855
+ E17           HBA    H    H         0.000     -2.256   -0.054   -1.715
+ E17           HBAA   H    H         0.000     -3.524    0.291   -2.919
+ E17           CBJ    C    CR6       0.000     -4.137   -0.990   -1.322
+ E17           CAV    C    CR16      0.000     -5.363   -1.284   -1.885
+ E17           HAV    H    H         0.000     -5.736   -0.690   -2.711
+ E17           CAR    C    CR16      0.000     -6.115   -2.336   -1.395
+ E17           HAR    H    H         0.000     -7.076   -2.567   -1.837
+ E17           CAW    C    CR16      0.000     -3.658   -1.750   -0.271
+ E17           HAW    H    H         0.000     -2.694   -1.522    0.168
+ E17           CAS    C    CR16      0.000     -4.408   -2.803    0.218
+ E17           HAS    H    H         0.000     -4.032   -3.400    1.040
+ E17           CAP    C    CR16      0.000     -5.639   -3.093   -0.341
+ E17           HAP    H    H         0.000     -6.230   -3.914    0.047
+ E17           NBC    N    NH1       0.000     -5.077    1.791   -1.388
+ E17           HNBC   H    H         0.000     -5.291    2.449   -2.124
+ E17           C      C    C         0.000     -6.073    1.238   -0.668
+ E17           O      O    O         0.000     -5.821    0.399    0.172
+ E17           CA     C    CH1       0.000     -7.500    1.661   -0.905
+ E17           HA     H    H         0.000     -7.724    1.608   -1.980
+ E17           CB     C    CT        0.000     -7.694    3.097   -0.414
+ E17           CG2    C    CH3       0.000     -9.175    3.473   -0.507
+ E17           HG2B   H    H         0.000     -9.310    4.467   -0.167
+ E17           HG2A   H    H         0.000     -9.497    3.398   -1.513
+ E17           HG2    H    H         0.000     -9.746    2.814    0.095
+ E17           CG1    C    CH3       0.000     -6.871    4.050   -1.283
+ E17           HG1B   H    H         0.000     -6.996    5.043   -0.937
+ E17           HG1A   H    H         0.000     -5.847    3.785   -1.229
+ E17           HG1    H    H         0.000     -7.199    3.984   -2.289
+ E17           CAG    C    CH3       0.000     -7.230    3.206    1.040
+ E17           HAGB   H    H         0.000     -7.365    4.200    1.382
+ E17           HAGA   H    H         0.000     -7.799    2.546    1.644
+ E17           HAG    H    H         0.000     -6.205    2.947    1.105
+ E17           N      N    NH1       0.000     -8.402    0.769   -0.173
+ E17           HN     H    H         0.000     -8.072    0.278    0.646
+ E17           CBF    C    C         0.000     -9.673    0.603   -0.593
+ E17           OAK    O    O         0.000    -10.069    1.193   -1.576
+ E17           CBM    C    CH1       0.000    -10.600   -0.315    0.160
+ E17           HBM    H    H         0.000    -10.705    0.039    1.195
+ E17           CBK    C    CR6       0.000    -10.033   -1.711    0.162
+ E17           CAX    C    CR16      0.000     -9.359   -2.181    1.274
+ E17           HAX    H    H         0.000     -9.239   -1.546    2.142
+ E17           CAT    C    CR16      0.000     -8.838   -3.462    1.277
+ E17           HAT    H    H         0.000     -8.309   -3.830    2.148
+ E17           CAY    C    CR16      0.000    -10.191   -2.524   -0.945
+ E17           HAY    H    H         0.000    -10.723   -2.157   -1.814
+ E17           CAU    C    CR16      0.000     -9.671   -3.804   -0.942
+ E17           HAU    H    H         0.000     -9.795   -4.440   -1.810
+ E17           CAQ    C    CR16      0.000     -8.992   -4.272    0.167
+ E17           HAQ    H    H         0.000     -8.581   -5.274    0.166
+ E17           NAJ    N    NH1       0.000    -11.913   -0.322   -0.491
+ E17           HNAJ   H    H         0.000    -11.992   -0.095   -1.472
+ E17           CB1    C    C         0.000    -13.015   -0.631    0.221
+ E17           OA1    O    O         0.000    -12.922   -0.897    1.401
+ E17           CB0    C    CH2       0.000    -14.365   -0.639   -0.448
+ E17           HB0    H    H         0.000    -14.365   -1.370   -1.259
+ E17           HB0A   H    H         0.000    -14.575    0.353   -0.854
+ E17           NB1    N    NT        0.000    -15.397   -0.996    0.535
+ E17           CA2    C    CH2       0.000    -16.745   -0.785   -0.015
+ E17           HA2    H    H         0.000    -16.893   -1.438   -0.878
+ E17           HA2A   H    H         0.000    -16.854    0.256   -0.325
+ E17           CA3    C    CH2       0.000    -17.785   -1.112    1.059
+ E17           HA3A   H    H         0.000    -18.788   -1.011    0.639
+ E17           HA3    H    H         0.000    -17.672   -0.423    1.899
+ E17           CA6    C    CH2       0.000    -15.233   -2.384    0.991
+ E17           HA6    H    H         0.000    -14.235   -2.513    1.417
+ E17           HA6A   H    H         0.000    -15.356   -3.063    0.145
+ E17           CA5    C    CH2       0.000    -16.288   -2.695    2.055
+ E17           HA5A   H    H         0.000    -16.130   -2.053    2.925
+ E17           HA5    H    H         0.000    -16.206   -3.741    2.357
+ E17           OA4    O    O2        0.000    -17.590   -2.454    1.513
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ E17      OAM    n/a    CBH    START
+ E17      CBH    OAM    CBQ    .
+ E17      NBB    CBH    CBL    .
+ E17      HNBB   NBB    .      .
+ E17      CBL    NBB    CBS    .
+ E17      HBL    CBL    .      .
+ E17      CAA    CBL    HAA    .
+ E17      HAAB   CAA    .      .
+ E17      HAAA   CAA    .      .
+ E17      HAA    CAA    .      .
+ E17      CBS    CBL    CAB    .
+ E17      CAD    CBS    HAD    .
+ E17      HADB   CAD    .      .
+ E17      HADA   CAD    .      .
+ E17      HAD    CAD    .      .
+ E17      CAC    CBS    HAC    .
+ E17      HACB   CAC    .      .
+ E17      HACA   CAC    .      .
+ E17      HAC    CAC    .      .
+ E17      CAB    CBS    HAB    .
+ E17      HABB   CAB    .      .
+ E17      HABA   CAB    .      .
+ E17      HAB    CAB    .      .
+ E17      CBQ    CBH    CBU    .
+ E17      HBQ    CBQ    .      .
+ E17      CBU    CBQ    SBE    .
+ E17      CAH    CBU    HAH    .
+ E17      HAHB   CAH    .      .
+ E17      HAHA   CAH    .      .
+ E17      HAH    CAH    .      .
+ E17      CAI    CBU    HAI    .
+ E17      HAIB   CAI    .      .
+ E17      HAIA   CAI    .      .
+ E17      HAI    CAI    .      .
+ E17      SBE    CBU    CAZ    .
+ E17      CAZ    SBE    NBR    .
+ E17      HAZ    CAZ    .      .
+ E17      HAZA   CAZ    .      .
+ E17      NBR    CAZ    CBI    .
+ E17      CBI    NBR    CBN    .
+ E17      OAN    CBI    .      .
+ E17      CBN    CBI    CBO    .
+ E17      HBN    CBN    .      .
+ E17      OAO    CBN    HOAO   .
+ E17      HOAO   OAO    .      .
+ E17      CBO    CBN    NBC    .
+ E17      HBO    CBO    .      .
+ E17      CBA    CBO    CBJ    .
+ E17      HBA    CBA    .      .
+ E17      HBAA   CBA    .      .
+ E17      CBJ    CBA    CAW    .
+ E17      CAV    CBJ    CAR    .
+ E17      HAV    CAV    .      .
+ E17      CAR    CAV    HAR    .
+ E17      HAR    CAR    .      .
+ E17      CAW    CBJ    CAS    .
+ E17      HAW    CAW    .      .
+ E17      CAS    CAW    CAP    .
+ E17      HAS    CAS    .      .
+ E17      CAP    CAS    HAP    .
+ E17      HAP    CAP    .      .
+ E17      NBC    CBO    C      .
+ E17      HNBC   NBC    .      .
+ E17      C      NBC    CA     .
+ E17      O      C      .      .
+ E17      CA     C      N      .
+ E17      HA     CA     .      .
+ E17      CB     CA     CAG    .
+ E17      CG2    CB     HG2    .
+ E17      HG2B   CG2    .      .
+ E17      HG2A   CG2    .      .
+ E17      HG2    CG2    .      .
+ E17      CG1    CB     HG1    .
+ E17      HG1B   CG1    .      .
+ E17      HG1A   CG1    .      .
+ E17      HG1    CG1    .      .
+ E17      CAG    CB     HAG    .
+ E17      HAGB   CAG    .      .
+ E17      HAGA   CAG    .      .
+ E17      HAG    CAG    .      .
+ E17      N      CA     CBF    .
+ E17      HN     N      .      .
+ E17      CBF    N      CBM    .
+ E17      OAK    CBF    .      .
+ E17      CBM    CBF    NAJ    .
+ E17      HBM    CBM    .      .
+ E17      CBK    CBM    CAY    .
+ E17      CAX    CBK    CAT    .
+ E17      HAX    CAX    .      .
+ E17      CAT    CAX    HAT    .
+ E17      HAT    CAT    .      .
+ E17      CAY    CBK    CAU    .
+ E17      HAY    CAY    .      .
+ E17      CAU    CAY    CAQ    .
+ E17      HAU    CAU    .      .
+ E17      CAQ    CAU    HAQ    .
+ E17      HAQ    CAQ    .      .
+ E17      NAJ    CBM    CB1    .
+ E17      HNAJ   NAJ    .      .
+ E17      CB1    NAJ    CB0    .
+ E17      OA1    CB1    .      .
+ E17      CB0    CB1    NB1    .
+ E17      HB0    CB0    .      .
+ E17      HB0A   CB0    .      .
+ E17      NB1    CB0    CA6    .
+ E17      CA2    NB1    CA3    .
+ E17      HA2    CA2    .      .
+ E17      HA2A   CA2    .      .
+ E17      CA3    CA2    HA3    .
+ E17      HA3A   CA3    .      .
+ E17      HA3    CA3    .      .
+ E17      CA6    NB1    CA5    .
+ E17      HA6    CA6    .      .
+ E17      HA6A   CA6    .      .
+ E17      CA5    CA6    OA4    .
+ E17      HA5A   CA5    .      .
+ E17      HA5    CA5    .      .
+ E17      OA4    CA5    .      END
+ E17      OA4    CA3    .    ADD
+ E17      CAQ    CAT    .    ADD
+ E17      CAP    CAR    .    ADD
+ E17      NBR    CBQ    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+E17       CB0       CB1       single    1.510     0.020     1.510     0.020     
+E17       OA1       CB1       double    1.220     0.020     1.220     0.020     
+E17       NB1       CB0       single    1.469     0.020     1.469     0.020     
+E17       CA2       NB1       single    1.469     0.020     1.469     0.020     
+E17       OA4       CA3       single    1.426     0.020     1.426     0.020     
+E17       CA3       CA2       single    1.524     0.020     1.524     0.020     
+E17       CA6       NB1       single    1.469     0.020     1.469     0.020     
+E17       CA5       CA6       single    1.524     0.020     1.524     0.020     
+E17       OA4       CA5       single    1.426     0.020     1.426     0.020     
+E17       HB0       CB0       single    1.089     0.010     0.989     0.005     
+E17       HB0A      CB0       single    1.089     0.010     0.989     0.005     
+E17       HA2       CA2       single    1.089     0.010     0.989     0.005     
+E17       HA2A      CA2       single    1.089     0.010     0.989     0.005     
+E17       HA6       CA6       single    1.089     0.010     0.989     0.005     
+E17       HA6A      CA6       single    1.089     0.010     0.989     0.005     
+E17       HA3       CA3       single    1.089     0.010     0.989     0.005     
+E17       HA3A      CA3       single    1.089     0.010     0.989     0.005     
+E17       HA5       CA5       single    1.089     0.010     0.989     0.005     
+E17       HA5A      CA5       single    1.089     0.010     0.989     0.005     
+E17       OAK       CBF       double    1.220     0.020     1.220     0.020     
+E17       HNAJ      NAJ       single    1.016     0.010     0.899     0.007     
+E17       CBM       CBF       single    1.500     0.020     1.500     0.020     
+E17       NAJ       CBM       single    1.450     0.020     1.450     0.020     
+E17       CBK       CBM       single    1.480     0.020     1.480     0.020     
+E17       HBM       CBM       single    1.089     0.010     0.989     0.005     
+E17       CAX       CBK       single    1.390     0.020     1.390     0.020     
+E17       CAQ       CAT       single    1.390     0.020     1.390     0.020     
+E17       HAQ       CAQ       single    1.082     0.013     0.975     0.010     
+E17       HAT       CAT       single    1.082     0.013     0.975     0.010     
+E17       CAQ       CAU       double    1.390     0.020     1.390     0.020     
+E17       HAU       CAU       single    1.082     0.013     0.975     0.010     
+E17       CAT       CAX       double    1.390     0.020     1.390     0.020     
+E17       HAX       CAX       single    1.082     0.013     0.975     0.010     
+E17       CAY       CBK       double    1.390     0.020     1.390     0.020     
+E17       CAU       CAY       single    1.390     0.020     1.390     0.020     
+E17       HAY       CAY       single    1.082     0.013     0.975     0.010     
+E17       N         CA        single    1.450     0.020     1.450     0.020     
+E17       HN        N         single    1.016     0.010     0.899     0.007     
+E17       CB        CA        single    1.524     0.020     1.524     0.020     
+E17       CA        C         single    1.500     0.020     1.500     0.020     
+E17       HA        CA        single    1.089     0.010     0.989     0.005     
+E17       CAG       CB        single    1.524     0.020     1.524     0.020     
+E17       CG1       CB        single    1.524     0.020     1.524     0.020     
+E17       CG2       CB        single    1.524     0.020     1.524     0.020     
+E17       HAG       CAG       single    1.089     0.010     0.989     0.005     
+E17       HAGA      CAG       single    1.089     0.010     0.989     0.005     
+E17       HAGB      CAG       single    1.089     0.010     0.989     0.005     
+E17       HG1       CG1       single    1.089     0.010     0.989     0.005     
+E17       HG1A      CG1       single    1.089     0.010     0.989     0.005     
+E17       HG1B      CG1       single    1.089     0.010     0.989     0.005     
+E17       HG2       CG2       single    1.089     0.010     0.989     0.005     
+E17       HG2A      CG2       single    1.089     0.010     0.989     0.005     
+E17       HG2B      CG2       single    1.089     0.010     0.989     0.005     
+E17       O         C         double    1.220     0.020     1.220     0.020     
+E17       CBN       CBI       single    1.500     0.020     1.500     0.020     
+E17       OAN       CBI       double    1.220     0.020     1.220     0.020     
+E17       NBC       CBO       single    1.450     0.020     1.450     0.020     
+E17       HNBC      NBC       single    1.016     0.010     0.899     0.007     
+E17       OAO       CBN       single    1.432     0.020     1.432     0.020     
+E17       HBN       CBN       single    1.089     0.010     0.989     0.005     
+E17       CBJ       CBA       single    1.511     0.020     1.511     0.020     
+E17       HBA       CBA       single    1.089     0.010     0.989     0.005     
+E17       HBAA      CBA       single    1.089     0.010     0.989     0.005     
+E17       CAP       CAR       double    1.390     0.020     1.390     0.020     
+E17       CAP       CAS       single    1.390     0.020     1.390     0.020     
+E17       HAP       CAP       single    1.082     0.013     0.975     0.010     
+E17       CBO       CBN       single    1.524     0.020     1.524     0.020     
+E17       CBA       CBO       single    1.524     0.020     1.524     0.020     
+E17       HBO       CBO       single    1.089     0.010     0.989     0.005     
+E17       HOAO      OAO       single    0.970     0.012     0.839     0.014     
+E17       CAV       CBJ       double    1.390     0.020     1.390     0.020     
+E17       HAV       CAV       single    1.082     0.013     0.975     0.010     
+E17       CAW       CBJ       single    1.390     0.020     1.390     0.020     
+E17       HAW       CAW       single    1.082     0.013     0.975     0.010     
+E17       CAR       CAV       single    1.390     0.020     1.390     0.020     
+E17       HAR       CAR       single    1.082     0.013     0.975     0.010     
+E17       CAS       CAW       double    1.390     0.020     1.390     0.020     
+E17       HAS       CAS       single    1.082     0.013     0.975     0.010     
+E17       CBQ       CBH       single    1.500     0.020     1.500     0.020     
+E17       CBH       OAM       double    1.220     0.020     1.220     0.020     
+E17       NBR       CBQ       single    1.455     0.020     1.455     0.020     
+E17       HBQ       CBQ       single    1.089     0.010     0.989     0.005     
+E17       CBU       CBQ       single    1.524     0.020     1.524     0.020     
+E17       CAI       CBU       single    1.524     0.020     1.524     0.020     
+E17       NBR       CAZ       single    1.455     0.020     1.455     0.020     
+E17       HAZ       CAZ       single    1.089     0.010     0.989     0.005     
+E17       HAZA      CAZ       single    1.089     0.010     0.989     0.005     
+E17       CAH       CBU       single    1.524     0.020     1.524     0.020     
+E17       HAH       CAH       single    1.089     0.010     0.989     0.005     
+E17       HAHA      CAH       single    1.089     0.010     0.989     0.005     
+E17       HAHB      CAH       single    1.089     0.010     0.989     0.005     
+E17       HAI       CAI       single    1.089     0.010     0.989     0.005     
+E17       HAIA      CAI       single    1.089     0.010     0.989     0.005     
+E17       HAIB      CAI       single    1.089     0.010     0.989     0.005     
+E17       SBE       CBU       single    1.762     0.020     1.762     0.020     
+E17       CAZ       SBE       single    1.762     0.020     1.762     0.020     
+E17       CBL       NBB       single    1.450     0.020     1.450     0.020     
+E17       HNBB      NBB       single    1.016     0.010     0.899     0.007     
+E17       CBS       CBL       single    1.524     0.020     1.524     0.020     
+E17       CAA       CBL       single    1.524     0.020     1.524     0.020     
+E17       HBL       CBL       single    1.089     0.010     0.989     0.005     
+E17       CAC       CBS       single    1.524     0.020     1.524     0.020     
+E17       CAB       CBS       single    1.524     0.020     1.524     0.020     
+E17       CAD       CBS       single    1.524     0.020     1.524     0.020     
+E17       HAA       CAA       single    1.089     0.010     0.989     0.005     
+E17       HAAA      CAA       single    1.089     0.010     0.989     0.005     
+E17       HAAB      CAA       single    1.089     0.010     0.989     0.005     
+E17       HAB       CAB       single    1.089     0.010     0.989     0.005     
+E17       HABA      CAB       single    1.089     0.010     0.989     0.005     
+E17       HABB      CAB       single    1.089     0.010     0.989     0.005     
+E17       HAC       CAC       single    1.089     0.010     0.989     0.005     
+E17       HACA      CAC       single    1.089     0.010     0.989     0.005     
+E17       HACB      CAC       single    1.089     0.010     0.989     0.005     
+E17       HAD       CAD       single    1.089     0.010     0.989     0.005     
+E17       HADA      CAD       single    1.089     0.010     0.989     0.005     
+E17       HADB      CAD       single    1.089     0.010     0.989     0.005     
+E17       CB1       NAJ       single    1.330     0.020     1.330     0.020     
+E17       CBF       N         single    1.330     0.020     1.330     0.020     
+E17       C         NBC       single    1.330     0.020     1.330     0.020     
+E17       CBI       NBR       single    1.330     0.020     1.330     0.020     
+E17       NBB       CBH       single    1.330     0.020     1.330     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ E17      OAM    CBH    NBB     123.000    3.000
+ E17      OAM    CBH    CBQ     120.500    3.000
+ E17      NBB    CBH    CBQ     116.500    3.000
+ E17      CBH    NBB    HNBB    120.000    3.000
+ E17      CBH    NBB    CBL     121.500    3.000
+ E17      HNBB   NBB    CBL     118.500    3.000
+ E17      NBB    CBL    HBL     108.550    3.000
+ E17      NBB    CBL    CAA     110.000    3.000
+ E17      NBB    CBL    CBS     110.000    3.000
+ E17      HBL    CBL    CAA     108.340    3.000
+ E17      HBL    CBL    CBS     108.340    3.000
+ E17      CAA    CBL    CBS     111.000    3.000
+ E17      CBL    CAA    HAAB    109.470    3.000
+ E17      CBL    CAA    HAAA    109.470    3.000
+ E17      CBL    CAA    HAA     109.470    3.000
+ E17      HAAB   CAA    HAAA    109.470    3.000
+ E17      HAAB   CAA    HAA     109.470    3.000
+ E17      HAAA   CAA    HAA     109.470    3.000
+ E17      CBL    CBS    CAD     111.000    3.000
+ E17      CBL    CBS    CAC     111.000    3.000
+ E17      CBL    CBS    CAB     111.000    3.000
+ E17      CAD    CBS    CAC     111.000    3.000
+ E17      CAD    CBS    CAB     111.000    3.000
+ E17      CAC    CBS    CAB     111.000    3.000
+ E17      CBS    CAD    HADB    109.470    3.000
+ E17      CBS    CAD    HADA    109.470    3.000
+ E17      CBS    CAD    HAD     109.470    3.000
+ E17      HADB   CAD    HADA    109.470    3.000
+ E17      HADB   CAD    HAD     109.470    3.000
+ E17      HADA   CAD    HAD     109.470    3.000
+ E17      CBS    CAC    HACB    109.470    3.000
+ E17      CBS    CAC    HACA    109.470    3.000
+ E17      CBS    CAC    HAC     109.470    3.000
+ E17      HACB   CAC    HACA    109.470    3.000
+ E17      HACB   CAC    HAC     109.470    3.000
+ E17      HACA   CAC    HAC     109.470    3.000
+ E17      CBS    CAB    HABB    109.470    3.000
+ E17      CBS    CAB    HABA    109.470    3.000
+ E17      CBS    CAB    HAB     109.470    3.000
+ E17      HABB   CAB    HABA    109.470    3.000
+ E17      HABB   CAB    HAB     109.470    3.000
+ E17      HABA   CAB    HAB     109.470    3.000
+ E17      CBH    CBQ    HBQ     108.810    3.000
+ E17      CBH    CBQ    CBU     109.470    3.000
+ E17      CBH    CBQ    NBR     111.600    3.000
+ E17      HBQ    CBQ    CBU     108.340    3.000
+ E17      HBQ    CBQ    NBR     109.470    3.000
+ E17      CBU    CBQ    NBR     109.500    3.000
+ E17      CBQ    CBU    CAH     111.000    3.000
+ E17      CBQ    CBU    CAI     111.000    3.000
+ E17      CBQ    CBU    SBE     109.500    3.000
+ E17      CAH    CBU    CAI     111.000    3.000
+ E17      CAH    CBU    SBE     109.500    3.000
+ E17      CAI    CBU    SBE     109.500    3.000
+ E17      CBU    CAH    HAHB    109.470    3.000
+ E17      CBU    CAH    HAHA    109.470    3.000
+ E17      CBU    CAH    HAH     109.470    3.000
+ E17      HAHB   CAH    HAHA    109.470    3.000
+ E17      HAHB   CAH    HAH     109.470    3.000
+ E17      HAHA   CAH    HAH     109.470    3.000
+ E17      CBU    CAI    HAIB    109.470    3.000
+ E17      CBU    CAI    HAIA    109.470    3.000
+ E17      CBU    CAI    HAI     109.470    3.000
+ E17      HAIB   CAI    HAIA    109.470    3.000
+ E17      HAIB   CAI    HAI     109.470    3.000
+ E17      HAIA   CAI    HAI     109.470    3.000
+ E17      CBU    SBE    CAZ      93.841    3.000
+ E17      SBE    CAZ    HAZ     109.500    3.000
+ E17      SBE    CAZ    HAZA    109.500    3.000
+ E17      SBE    CAZ    NBR     109.500    3.000
+ E17      HAZ    CAZ    HAZA    107.900    3.000
+ E17      HAZ    CAZ    NBR     109.470    3.000
+ E17      HAZA   CAZ    NBR     109.470    3.000
+ E17      CAZ    NBR    CBI     127.000    3.000
+ E17      CAZ    NBR    CBQ     112.000    3.000
+ E17      CBI    NBR    CBQ     121.000    3.000
+ E17      NBR    CBI    OAN     123.000    3.000
+ E17      NBR    CBI    CBN     116.500    3.000
+ E17      OAN    CBI    CBN     120.500    3.000
+ E17      CBI    CBN    HBN     108.810    3.000
+ E17      CBI    CBN    OAO     109.470    3.000
+ E17      CBI    CBN    CBO     109.470    3.000
+ E17      HBN    CBN    OAO     109.470    3.000
+ E17      HBN    CBN    CBO     108.340    3.000
+ E17      OAO    CBN    CBO     109.470    3.000
+ E17      CBN    OAO    HOAO    109.470    3.000
+ E17      CBN    CBO    HBO     108.340    3.000
+ E17      CBN    CBO    CBA     111.000    3.000
+ E17      CBN    CBO    NBC     110.000    3.000
+ E17      HBO    CBO    CBA     108.340    3.000
+ E17      HBO    CBO    NBC     108.550    3.000
+ E17      CBA    CBO    NBC     110.000    3.000
+ E17      CBO    CBA    HBA     109.470    3.000
+ E17      CBO    CBA    HBAA    109.470    3.000
+ E17      CBO    CBA    CBJ     109.470    3.000
+ E17      HBA    CBA    HBAA    107.900    3.000
+ E17      HBA    CBA    CBJ     109.470    3.000
+ E17      HBAA   CBA    CBJ     109.470    3.000
+ E17      CBA    CBJ    CAV     120.000    3.000
+ E17      CBA    CBJ    CAW     120.000    3.000
+ E17      CAV    CBJ    CAW     120.000    3.000
+ E17      CBJ    CAV    HAV     120.000    3.000
+ E17      CBJ    CAV    CAR     120.000    3.000
+ E17      HAV    CAV    CAR     120.000    3.000
+ E17      CAV    CAR    HAR     120.000    3.000
+ E17      CAV    CAR    CAP     120.000    3.000
+ E17      HAR    CAR    CAP     120.000    3.000
+ E17      CBJ    CAW    HAW     120.000    3.000
+ E17      CBJ    CAW    CAS     120.000    3.000
+ E17      HAW    CAW    CAS     120.000    3.000
+ E17      CAW    CAS    HAS     120.000    3.000
+ E17      CAW    CAS    CAP     120.000    3.000
+ E17      HAS    CAS    CAP     120.000    3.000
+ E17      CAS    CAP    HAP     120.000    3.000
+ E17      CAS    CAP    CAR     120.000    3.000
+ E17      HAP    CAP    CAR     120.000    3.000
+ E17      CBO    NBC    HNBC    118.500    3.000
+ E17      CBO    NBC    C       121.500    3.000
+ E17      HNBC   NBC    C       120.000    3.000
+ E17      NBC    C      O       123.000    3.000
+ E17      NBC    C      CA      116.500    3.000
+ E17      O      C      CA      120.500    3.000
+ E17      C      CA     HA      108.810    3.000
+ E17      C      CA     CB      109.470    3.000
+ E17      C      CA     N       111.600    3.000
+ E17      HA     CA     CB      108.340    3.000
+ E17      HA     CA     N       108.550    3.000
+ E17      CB     CA     N       110.000    3.000
+ E17      CA     CB     CG2     111.000    3.000
+ E17      CA     CB     CG1     111.000    3.000
+ E17      CA     CB     CAG     111.000    3.000
+ E17      CG2    CB     CG1     111.000    3.000
+ E17      CG2    CB     CAG     111.000    3.000
+ E17      CG1    CB     CAG     111.000    3.000
+ E17      CB     CG2    HG2B    109.470    3.000
+ E17      CB     CG2    HG2A    109.470    3.000
+ E17      CB     CG2    HG2     109.470    3.000
+ E17      HG2B   CG2    HG2A    109.470    3.000
+ E17      HG2B   CG2    HG2     109.470    3.000
+ E17      HG2A   CG2    HG2     109.470    3.000
+ E17      CB     CG1    HG1B    109.470    3.000
+ E17      CB     CG1    HG1A    109.470    3.000
+ E17      CB     CG1    HG1     109.470    3.000
+ E17      HG1B   CG1    HG1A    109.470    3.000
+ E17      HG1B   CG1    HG1     109.470    3.000
+ E17      HG1A   CG1    HG1     109.470    3.000
+ E17      CB     CAG    HAGB    109.470    3.000
+ E17      CB     CAG    HAGA    109.470    3.000
+ E17      CB     CAG    HAG     109.470    3.000
+ E17      HAGB   CAG    HAGA    109.470    3.000
+ E17      HAGB   CAG    HAG     109.470    3.000
+ E17      HAGA   CAG    HAG     109.470    3.000
+ E17      CA     N      HN      118.500    3.000
+ E17      CA     N      CBF     121.500    3.000
+ E17      HN     N      CBF     120.000    3.000
+ E17      N      CBF    OAK     123.000    3.000
+ E17      N      CBF    CBM     116.500    3.000
+ E17      OAK    CBF    CBM     120.500    3.000
+ E17      CBF    CBM    HBM     108.810    3.000
+ E17      CBF    CBM    CBK     109.500    3.000
+ E17      CBF    CBM    NAJ     111.600    3.000
+ E17      HBM    CBM    CBK     109.470    3.000
+ E17      HBM    CBM    NAJ     108.550    3.000
+ E17      CBK    CBM    NAJ     109.470    3.000
+ E17      CBM    CBK    CAX     120.000    3.000
+ E17      CBM    CBK    CAY     120.000    3.000
+ E17      CAX    CBK    CAY     120.000    3.000
+ E17      CBK    CAX    HAX     120.000    3.000
+ E17      CBK    CAX    CAT     120.000    3.000
+ E17      HAX    CAX    CAT     120.000    3.000
+ E17      CAX    CAT    HAT     120.000    3.000
+ E17      CAX    CAT    CAQ     120.000    3.000
+ E17      HAT    CAT    CAQ     120.000    3.000
+ E17      CBK    CAY    HAY     120.000    3.000
+ E17      CBK    CAY    CAU     120.000    3.000
+ E17      HAY    CAY    CAU     120.000    3.000
+ E17      CAY    CAU    HAU     120.000    3.000
+ E17      CAY    CAU    CAQ     120.000    3.000
+ E17      HAU    CAU    CAQ     120.000    3.000
+ E17      CAU    CAQ    HAQ     120.000    3.000
+ E17      CAU    CAQ    CAT     120.000    3.000
+ E17      HAQ    CAQ    CAT     120.000    3.000
+ E17      CBM    NAJ    HNAJ    118.500    3.000
+ E17      CBM    NAJ    CB1     121.500    3.000
+ E17      HNAJ   NAJ    CB1     120.000    3.000
+ E17      NAJ    CB1    OA1     123.000    3.000
+ E17      NAJ    CB1    CB0     116.500    3.000
+ E17      OA1    CB1    CB0     120.500    3.000
+ E17      CB1    CB0    HB0     109.470    3.000
+ E17      CB1    CB0    HB0A    109.470    3.000
+ E17      CB1    CB0    NB1     109.500    3.000
+ E17      HB0    CB0    HB0A    107.900    3.000
+ E17      HB0    CB0    NB1     109.470    3.000
+ E17      HB0A   CB0    NB1     109.470    3.000
+ E17      CB0    NB1    CA2     109.470    3.000
+ E17      CB0    NB1    CA6     109.470    3.000
+ E17      CA2    NB1    CA6     109.470    3.000
+ E17      NB1    CA2    HA2     109.470    3.000
+ E17      NB1    CA2    HA2A    109.470    3.000
+ E17      NB1    CA2    CA3     109.470    3.000
+ E17      HA2    CA2    HA2A    107.900    3.000
+ E17      HA2    CA2    CA3     109.470    3.000
+ E17      HA2A   CA2    CA3     109.470    3.000
+ E17      CA2    CA3    HA3A    109.470    3.000
+ E17      CA2    CA3    HA3     109.470    3.000
+ E17      CA2    CA3    OA4     109.470    3.000
+ E17      HA3A   CA3    HA3     107.900    3.000
+ E17      HA3A   CA3    OA4     109.470    3.000
+ E17      HA3    CA3    OA4     109.470    3.000
+ E17      NB1    CA6    HA6     109.470    3.000
+ E17      NB1    CA6    HA6A    109.470    3.000
+ E17      NB1    CA6    CA5     109.470    3.000
+ E17      HA6    CA6    HA6A    107.900    3.000
+ E17      HA6    CA6    CA5     109.470    3.000
+ E17      HA6A   CA6    CA5     109.470    3.000
+ E17      CA6    CA5    HA5A    109.470    3.000
+ E17      CA6    CA5    HA5     109.470    3.000
+ E17      CA6    CA5    OA4     109.470    3.000
+ E17      HA5A   CA5    HA5     107.900    3.000
+ E17      HA5A   CA5    OA4     109.470    3.000
+ E17      HA5    CA5    OA4     109.470    3.000
+ E17      CA5    OA4    CA3     111.800    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ E17      CONST_1  OAM    CBH    NBB    CBL        0.000    0.000   0
+ E17      var_1    CBH    NBB    CBL    CBS      154.983   20.000   3
+ E17      var_2    NBB    CBL    CAA    HAA      -59.990   20.000   3
+ E17      var_3    NBB    CBL    CBS    CAB      179.964   20.000   1
+ E17      var_4    CBL    CBS    CAD    HAD       60.034   20.000   1
+ E17      var_5    CBL    CBS    CAC    HAC       59.961   20.000   1
+ E17      var_6    CBL    CBS    CAB    HAB       59.976   20.000   1
+ E17      var_7    OAM    CBH    CBQ    CBU      105.118   20.000   3
+ E17      var_8    CBH    CBQ    CBU    SBE      -90.000   20.000   1
+ E17      var_9    CBQ    CBU    CAH    HAH       60.051   20.000   1
+ E17      var_10   CBQ    CBU    CAI    HAI       60.010   20.000   1
+ E17      var_11   CBQ    CBU    SBE    CAZ      -30.000   20.000   1
+ E17      var_12   CBU    SBE    CAZ    NBR       30.000   20.000   1
+ E17      var_13   SBE    CAZ    NBR    CBI      150.000   20.000   1
+ E17      var_14   CAZ    NBR    CBQ    CBH      120.000   20.000   3
+ E17      CONST_2  CAZ    NBR    CBI    CBN        0.000    0.000   0
+ E17      var_15   NBR    CBI    CBN    CBO      -77.576   20.000   3
+ E17      var_16   CBI    CBN    OAO    HOAO      59.949   20.000   1
+ E17      var_17   CBI    CBN    CBO    NBC      175.017   20.000   3
+ E17      var_18   CBN    CBO    CBA    CBJ      175.003   20.000   3
+ E17      var_19   CBO    CBA    CBJ    CAW      -90.232   20.000   2
+ E17      CONST_3  CBA    CBJ    CAV    CAR      180.000    0.000   0
+ E17      CONST_4  CBJ    CAV    CAR    CAP        0.000    0.000   0
+ E17      CONST_5  CBA    CBJ    CAW    CAS      180.000    0.000   0
+ E17      CONST_6  CBJ    CAW    CAS    CAP        0.000    0.000   0
+ E17      CONST_7  CAW    CAS    CAP    CAR        0.000    0.000   0
+ E17      CONST_8  CAS    CAP    CAR    CAV        0.000    0.000   0
+ E17      var_20   CBN    CBO    NBC    C       -154.974   20.000   3
+ E17      CONST_9  CBO    NBC    C      CA       180.000    0.000   0
+ E17      var_21   NBC    C      CA     N        170.566   20.000   3
+ E17      var_22   C      CA     CB     CAG      -53.603   20.000   1
+ E17      var_23   CA     CB     CG2    HG2       59.985   20.000   1
+ E17      var_24   CA     CB     CG1    HG1       60.646   20.000   1
+ E17      var_25   CA     CB     CAG    HAG       60.050   20.000   1
+ E17      var_26   C      CA     N      CBF     -155.001   20.000   3
+ E17      CONST_10 CA     N      CBF    CBM      180.000    0.000   0
+ E17      var_27   N      CBF    CBM    NAJ      179.958   20.000   3
+ E17      var_28   CBF    CBM    CBK    CAY      -80.217   20.000   1
+ E17      CONST_11 CBM    CBK    CAX    CAT      180.000    0.000   0
+ E17      CONST_12 CBK    CAX    CAT    CAQ        0.000    0.000   0
+ E17      CONST_13 CBM    CBK    CAY    CAU      180.000    0.000   0
+ E17      CONST_14 CBK    CAY    CAU    CAQ        0.000    0.000   0
+ E17      CONST_15 CAY    CAU    CAQ    CAT        0.000    0.000   0
+ E17      CONST_16 CAU    CAQ    CAT    CAX        0.000    0.000   0
+ E17      var_29   CBF    CBM    NAJ    CB1     -155.036   20.000   3
+ E17      CONST_17 CBM    NAJ    CB1    CB0      180.000    0.000   0
+ E17      var_30   NAJ    CB1    CB0    NB1     -179.664   20.000   3
+ E17      var_31   CB1    CB0    NB1    CA6      -66.388   20.000   1
+ E17      var_32   CB0    NB1    CA2    CA3      180.000   20.000   1
+ E17      var_33   NB1    CA2    CA3    OA4      -60.000   20.000   3
+ E17      var_34   CB0    NB1    CA6    CA5      180.000   20.000   1
+ E17      var_35   NB1    CA6    CA5    OA4       60.000   20.000   3
+ E17      var_36   CA6    CA5    OA4    CA3      -60.000   20.000   1
+ E17      var_37   CA5    OA4    CA3    CA2       60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ E17      chir_01  NB1    CB0    CA2    CA6       negativ
+ E17      chir_02  CBM    CBF    NAJ    CBK       negativ
+ E17      chir_03  CA     N      CB     C         negativ
+ E17      chir_04  CB     CA     CAG    CG1       negativ
+ E17      chir_05  CBN    CBI    CBO    OAO       positiv
+ E17      chir_06  CBO    NBC    CBN    CBA       positiv
+ E17      chir_07  CBQ    CBH    NBR    CBU       negativ
+ E17      chir_08  CBU    CBQ    CAH    CAI       negativ
+ E17      chir_09  CBL    NBB    CBS    CAA       negativ
+ E17      chir_10  CBS    CBL    CAB    CAC       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ E17      plan-1    CB1       0.020
+ E17      plan-1    OA1       0.020
+ E17      plan-1    CB0       0.020
+ E17      plan-1    NAJ       0.020
+ E17      plan-1    HNAJ      0.020
+ E17      plan-2    CBF       0.020
+ E17      plan-2    OAK       0.020
+ E17      plan-2    CBM       0.020
+ E17      plan-2    N         0.020
+ E17      plan-2    HN        0.020
+ E17      plan-3    NAJ       0.020
+ E17      plan-3    CB1       0.020
+ E17      plan-3    CBM       0.020
+ E17      plan-3    HNAJ      0.020
+ E17      plan-4    CBK       0.020
+ E17      plan-4    CBM       0.020
+ E17      plan-4    CAX       0.020
+ E17      plan-4    CAY       0.020
+ E17      plan-4    CAQ       0.020
+ E17      plan-4    CAT       0.020
+ E17      plan-4    CAU       0.020
+ E17      plan-4    HAQ       0.020
+ E17      plan-4    HAT       0.020
+ E17      plan-4    HAU       0.020
+ E17      plan-4    HAX       0.020
+ E17      plan-4    HAY       0.020
+ E17      plan-5    N         0.020
+ E17      plan-5    CBF       0.020
+ E17      plan-5    CA        0.020
+ E17      plan-5    HN        0.020
+ E17      plan-6    C         0.020
+ E17      plan-6    CA        0.020
+ E17      plan-6    O         0.020
+ E17      plan-6    NBC       0.020
+ E17      plan-6    HNBC      0.020
+ E17      plan-7    CBI       0.020
+ E17      plan-7    OAN       0.020
+ E17      plan-7    CBN       0.020
+ E17      plan-7    NBR       0.020
+ E17      plan-8    NBC       0.020
+ E17      plan-8    C         0.020
+ E17      plan-8    CBO       0.020
+ E17      plan-8    HNBC      0.020
+ E17      plan-9    CBJ       0.020
+ E17      plan-9    CBA       0.020
+ E17      plan-9    CAV       0.020
+ E17      plan-9    CAW       0.020
+ E17      plan-9    CAP       0.020
+ E17      plan-9    CAR       0.020
+ E17      plan-9    CAS       0.020
+ E17      plan-9    HAP       0.020
+ E17      plan-9    HAV       0.020
+ E17      plan-9    HAW       0.020
+ E17      plan-9    HAR       0.020
+ E17      plan-9    HAS       0.020
+ E17      plan-10   CBH       0.020
+ E17      plan-10   OAM       0.020
+ E17      plan-10   CBQ       0.020
+ E17      plan-10   NBB       0.020
+ E17      plan-10   HNBB      0.020
+ E17      plan-11   NBR       0.020
+ E17      plan-11   CBI       0.020
+ E17      plan-11   CBQ       0.020
+ E17      plan-11   CAZ       0.020
+ E17      plan-12   NBB       0.020
+ E17      plan-12   CBH       0.020
+ E17      plan-12   CBL       0.020
+ E17      plan-12   HNBB      0.020
+# ------------------------------------------------------

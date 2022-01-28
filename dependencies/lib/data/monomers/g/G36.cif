@@ -1,0 +1,330 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+G36      G36 'O6-ETHYL-2'-DEOXYGUANOSINE-5'-MONOPH' DNA                41  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_G36
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ G36           O3P    O    OP       -0.666      0.000    0.000    0.000
+ G36           P      P    P         0.000     -1.035    0.932    0.591
+ G36           O1P    O    OP       -0.666     -1.408    1.985   -0.429
+ G36           O2P    O    OP       -0.666     -0.464    1.602    1.822
+ G36           "O5'"  O    O2        0.000     -2.346    0.090    0.997
+ G36           "C5'"  C    CH2       0.000     -2.902   -0.418   -0.217
+ G36           "H5'1" H    H         0.000     -2.168   -1.057   -0.713
+ G36           "H5'2" H    H         0.000     -3.162    0.414   -0.874
+ G36           "C4'"  C    CH1       0.000     -4.159   -1.233    0.099
+ G36           "H4'"  H    H         0.000     -3.945   -1.990    0.866
+ G36           "C3'"  C    CH1       0.000     -4.713   -1.901   -1.185
+ G36           "H3'"  H    H         0.000     -4.603   -1.234   -2.052
+ G36           "O3'"  O    OH1       0.000     -4.075   -3.157   -1.423
+ G36           HA     H    H         0.000     -4.499   -3.596   -2.173
+ G36           "C2'"  C    CH2       0.000     -6.207   -2.099   -0.828
+ G36           "H2'1" H    H         0.000     -6.411   -3.111   -0.470
+ G36           "H2'2" H    H         0.000     -6.863   -1.872   -1.670
+ G36           "C1'"  C    CH1       0.000     -6.460   -1.090    0.309
+ G36           "H1'"  H    H         0.000     -6.745   -1.624    1.227
+ G36           "O4'"  O    O2        0.000     -5.236   -0.368    0.525
+ G36           N9     N    NR5       0.000     -7.525   -0.161   -0.076
+ G36           C4     C    CR56      0.000     -8.874   -0.369    0.065
+ G36           C5     C    CR56      0.000     -9.499    0.783   -0.445
+ G36           N7     N    NRD5      0.000     -8.515    1.622   -0.855
+ G36           C8     C    CR15      0.000     -7.358    1.069   -0.644
+ G36           H8     H    H         0.000     -6.401    1.518   -0.883
+ G36           N3     N    NRD6      0.000     -9.625   -1.355    0.542
+ G36           C2     C    CR6       0.000    -10.945   -1.255    0.542
+ G36           N2     N    NH2       0.000    -11.695   -2.305    1.047
+ G36           H2N2   H    H         0.000    -11.239   -3.137    1.411
+ G36           H2N1   H    H         0.000    -12.709   -2.256    1.060
+ G36           N1     N    NRD6      0.000    -11.574   -0.183    0.075
+ G36           C6     C    CR6       0.000    -10.900    0.847   -0.418
+ G36           O6     O    O2        0.000    -11.552    1.936   -0.892
+ G36           C1M    C    CH2       0.000    -12.949    1.684   -0.729
+ G36           H1M1   H    H         0.000    -13.169    1.529    0.330
+ G36           H1M2   H    H         0.000    -13.226    0.790   -1.291
+ G36           CM2    C    CH3       0.000    -13.747    2.883   -1.247
+ G36           HM23   H    H         0.000    -13.480    3.752   -0.701
+ G36           HM22   H    H         0.000    -13.535    3.036   -2.274
+ G36           HM21   H    H         0.000    -14.785    2.700   -1.127
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ G36      O3P    n/a    P      START
+ G36      P      O3P    "O5'"  .
+ G36      O1P    P      .      .
+ G36      O2P    P      .      .
+ G36      "O5'"  P      "C5'"  .
+ G36      "C5'"  "O5'"  "C4'"  .
+ G36      "H5'1" "C5'"  .      .
+ G36      "H5'2" "C5'"  .      .
+ G36      "C4'"  "C5'"  "C3'"  .
+ G36      "H4'"  "C4'"  .      .
+ G36      "C3'"  "C4'"  "C2'"  .
+ G36      "H3'"  "C3'"  .      .
+ G36      "O3'"  "C3'"  HA     .
+ G36      HA     "O3'"  .      .
+ G36      "C2'"  "C3'"  "C1'"  .
+ G36      "H2'1" "C2'"  .      .
+ G36      "H2'2" "C2'"  .      .
+ G36      "C1'"  "C2'"  N9     .
+ G36      "H1'"  "C1'"  .      .
+ G36      "O4'"  "C1'"  .      .
+ G36      N9     "C1'"  C4     .
+ G36      C4     N9     N3     .
+ G36      C5     C4     N7     .
+ G36      N7     C5     C8     .
+ G36      C8     N7     H8     .
+ G36      H8     C8     .      .
+ G36      N3     C4     C2     .
+ G36      C2     N3     N1     .
+ G36      N2     C2     H2N1   .
+ G36      H2N2   N2     .      .
+ G36      H2N1   N2     .      .
+ G36      N1     C2     C6     .
+ G36      C6     N1     O6     .
+ G36      O6     C6     C1M    .
+ G36      C1M    O6     CM2    .
+ G36      H1M1   C1M    .      .
+ G36      H1M2   C1M    .      .
+ G36      CM2    C1M    HM21   .
+ G36      HM23   CM2    .      .
+ G36      HM22   CM2    .      .
+ G36      HM21   CM2    .      END
+ G36      "C4'"  "O4'"  .    ADD
+ G36      N9     C8     .    ADD
+ G36      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+G36       O1P       P         deloc     1.510     0.020     1.510     0.020     
+G36       O2P       P         deloc     1.510     0.020     1.510     0.020     
+G36       P         O3P       deloc     1.510     0.020     1.510     0.020     
+G36       "O5'"     P         single    1.610     0.020     1.610     0.020     
+G36       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+G36       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+G36       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+G36       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+G36       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+G36       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+G36       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+G36       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+G36       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+G36       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+G36       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+G36       HA        "O3'"     single    0.970     0.012     0.839     0.014     
+G36       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+G36       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+G36       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+G36       CM2       C1M       single    1.513     0.020     1.513     0.020     
+G36       HM21      CM2       single    1.089     0.010     0.989     0.005     
+G36       HM22      CM2       single    1.089     0.010     0.989     0.005     
+G36       HM23      CM2       single    1.089     0.010     0.989     0.005     
+G36       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+G36       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+G36       N9        C8        single    1.337     0.020     1.337     0.020     
+G36       C4        N9        single    1.337     0.020     1.337     0.020     
+G36       C8        N7        double    1.350     0.020     1.350     0.020     
+G36       H8        C8        single    1.082     0.013     0.975     0.010     
+G36       N7        C5        single    1.350     0.020     1.350     0.020     
+G36       C5        C6        double    1.490     0.020     1.490     0.020     
+G36       C5        C4        single    1.490     0.020     1.490     0.020     
+G36       O6        C6        single    1.370     0.020     1.370     0.020     
+G36       C6        N1        single    1.350     0.020     1.350     0.020     
+G36       C1M       O6        single    1.426     0.020     1.426     0.020     
+G36       N1        C2        double    1.350     0.020     1.350     0.020     
+G36       N2        C2        single    1.355     0.020     1.355     0.020     
+G36       C2        N3        single    1.350     0.020     1.350     0.020     
+G36       H2N1      N2        single    1.016     0.010     0.899     0.007     
+G36       H2N2      N2        single    1.016     0.010     0.899     0.007     
+G36       H1M1      C1M       single    1.089     0.010     0.989     0.005     
+G36       H1M2      C1M       single    1.089     0.010     0.989     0.005     
+G36       N3        C4        double    1.355     0.020     1.355     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ G36      O3P    P      O1P     119.900    3.000
+ G36      O3P    P      O2P     119.900    3.000
+ G36      O3P    P      "O5'"   108.200    3.000
+ G36      O1P    P      O2P     119.900    3.000
+ G36      O1P    P      "O5'"   108.200    3.000
+ G36      O2P    P      "O5'"   108.200    3.000
+ G36      P      "O5'"  "C5'"   120.500    3.000
+ G36      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ G36      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ G36      "O5'"  "C5'"  "C4'"   109.470    3.000
+ G36      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ G36      "H5'1" "C5'"  "C4'"   109.470    3.000
+ G36      "H5'2" "C5'"  "C4'"   109.470    3.000
+ G36      "C5'"  "C4'"  "H4'"   108.340    3.000
+ G36      "C5'"  "C4'"  "C3'"   111.000    3.000
+ G36      "C5'"  "C4'"  "O4'"   109.470    3.000
+ G36      "H4'"  "C4'"  "C3'"   108.340    3.000
+ G36      "H4'"  "C4'"  "O4'"   109.470    3.000
+ G36      "C3'"  "C4'"  "O4'"   109.470    3.000
+ G36      "C4'"  "C3'"  "H3'"   108.340    3.000
+ G36      "C4'"  "C3'"  "O3'"   109.470    3.000
+ G36      "C4'"  "C3'"  "C2'"   111.000    3.000
+ G36      "H3'"  "C3'"  "O3'"   109.470    3.000
+ G36      "H3'"  "C3'"  "C2'"   108.340    3.000
+ G36      "O3'"  "C3'"  "C2'"   109.470    3.000
+ G36      "C3'"  "O3'"  HA      109.470    3.000
+ G36      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ G36      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ G36      "C3'"  "C2'"  "C1'"   111.000    3.000
+ G36      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ G36      "H2'1" "C2'"  "C1'"   109.470    3.000
+ G36      "H2'2" "C2'"  "C1'"   109.470    3.000
+ G36      "C2'"  "C1'"  "H1'"   108.340    3.000
+ G36      "C2'"  "C1'"  "O4'"   109.470    3.000
+ G36      "C2'"  "C1'"  N9      109.470    3.000
+ G36      "H1'"  "C1'"  "O4'"   109.470    3.000
+ G36      "H1'"  "C1'"  N9      109.470    3.000
+ G36      "O4'"  "C1'"  N9      109.470    3.000
+ G36      "C1'"  "O4'"  "C4'"   111.800    3.000
+ G36      "C1'"  N9     C4      126.000    3.000
+ G36      "C1'"  N9     C8      126.000    3.000
+ G36      C4     N9     C8      108.000    3.000
+ G36      N9     C4     C5      108.000    3.000
+ G36      N9     C4     N3      132.000    3.000
+ G36      C5     C4     N3      120.000    3.000
+ G36      C4     C5     N7      108.000    3.000
+ G36      C4     C5     C6      120.000    3.000
+ G36      N7     C5     C6      132.000    3.000
+ G36      C5     N7     C8      108.000    3.000
+ G36      N7     C8     H8      126.000    3.000
+ G36      N7     C8     N9      108.000    3.000
+ G36      H8     C8     N9      126.000    3.000
+ G36      C4     N3     C2      120.000    3.000
+ G36      N3     C2     N2      120.000    3.000
+ G36      N3     C2     N1      120.000    3.000
+ G36      N2     C2     N1      120.000    3.000
+ G36      C2     N2     H2N2    120.000    3.000
+ G36      C2     N2     H2N1    120.000    3.000
+ G36      H2N2   N2     H2N1    120.000    3.000
+ G36      C2     N1     C6      120.000    3.000
+ G36      N1     C6     O6      120.000    3.000
+ G36      N1     C6     C5      120.000    3.000
+ G36      O6     C6     C5      120.000    3.000
+ G36      C6     O6     C1M     120.000    3.000
+ G36      O6     C1M    H1M1    109.470    3.000
+ G36      O6     C1M    H1M2    109.470    3.000
+ G36      O6     C1M    CM2     109.470    3.000
+ G36      H1M1   C1M    H1M2    107.900    3.000
+ G36      H1M1   C1M    CM2     109.470    3.000
+ G36      H1M2   C1M    CM2     109.470    3.000
+ G36      C1M    CM2    HM23    109.470    3.000
+ G36      C1M    CM2    HM22    109.470    3.000
+ G36      C1M    CM2    HM21    109.470    3.000
+ G36      HM23   CM2    HM22    109.470    3.000
+ G36      HM23   CM2    HM21    109.470    3.000
+ G36      HM22   CM2    HM21    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ G36      var_1    O3P    P      "O5'"  "C5'"    -65.021   20.000   1
+ G36      var_2    P      "O5'"  "C5'"  "C4'"   -179.989   20.000   1
+ G36      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -175.007   20.000   3
+ G36      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ G36      var_5    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ G36      var_6    "C4'"  "C3'"  "O3'"  HA       174.139   20.000   1
+ G36      var_7    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ G36      var_8    "C3'"  "C2'"  "C1'"  N9       120.000   20.000   3
+ G36      var_9    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ G36      var_10   "C2'"  "C1'"  N9     C4        85.223   20.000   1
+ G36      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ G36      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ G36      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ G36      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ G36      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ G36      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ G36      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ G36      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ G36      CONST_9  N3     C2     N2     H2N1     179.996    0.000   0
+ G36      CONST_10 N3     C2     N1     C6         0.000    0.000   0
+ G36      CONST_11 C2     N1     C6     O6       180.000    0.000   0
+ G36      var_11   N1     C6     O6     C1M        0.065   20.000   1
+ G36      var_12   C6     O6     C1M    CM2      179.952   20.000   1
+ G36      var_13   O6     C1M    CM2    HM21     179.942   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ G36      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ G36      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ G36      chir_03  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ G36      plan-1    N9        0.020
+ G36      plan-1    "C1'"     0.020
+ G36      plan-1    C8        0.020
+ G36      plan-1    C4        0.020
+ G36      plan-1    N7        0.020
+ G36      plan-1    H8        0.020
+ G36      plan-1    C5        0.020
+ G36      plan-1    C6        0.020
+ G36      plan-1    N1        0.020
+ G36      plan-1    C2        0.020
+ G36      plan-1    N3        0.020
+ G36      plan-1    O6        0.020
+ G36      plan-1    N2        0.020
+ G36      plan-1    H2N2      0.020
+ G36      plan-1    H2N1      0.020
+ G36      plan-2    N2        0.020
+ G36      plan-2    C2        0.020
+ G36      plan-2    H2N1      0.020
+ G36      plan-2    H2N2      0.020
+# ------------------------------------------------------

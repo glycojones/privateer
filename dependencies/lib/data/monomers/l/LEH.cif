@@ -1,0 +1,436 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LEH      LEH 'N-[12-(1H-imidazol-1-yl)dodecanoyl]-' non-polymer        63  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LEH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LEH           O1     O    OC       -0.500      0.000    0.000    0.000
+ LEH           C1     C    C         0.000      0.409   -0.869    0.802
+ LEH           O2     O    OC       -0.500      1.450   -0.667    1.466
+ LEH           C6     C    CH1       0.000     -0.351   -2.159    0.968
+ LEH           H6     H    H         0.000     -0.679   -2.259    2.013
+ LEH           C5     C    CH2       0.000      0.555   -3.336    0.603
+ LEH           H5     H    H         0.000      1.456   -3.306    1.219
+ LEH           H5A    H    H         0.000      0.833   -3.268   -0.451
+ LEH           C4     C    CH1       0.000     -0.191   -4.650    0.852
+ LEH           H4     H    H         0.000     -1.149   -4.635    0.313
+ LEH           C2     C    CH3       0.000     -0.450   -4.813    2.351
+ LEH           H2B    H    H         0.000     -0.965   -5.722    2.524
+ LEH           H2A    H    H         0.000      0.474   -4.827    2.870
+ LEH           H2     H    H         0.000     -1.037   -4.003    2.699
+ LEH           C3     C    CH3       0.000      0.659   -5.820    0.350
+ LEH           H3B    H    H         0.000      0.800   -5.733   -0.696
+ LEH           H3A    H    H         0.000      1.602   -5.806    0.834
+ LEH           H3     H    H         0.000      0.167   -6.733    0.564
+ LEH           N1     N    NH1       0.000     -1.522   -2.153    0.088
+ LEH           HN1    H    H         0.000     -1.470   -2.582   -0.825
+ LEH           C7     C    C         0.000     -2.669   -1.574    0.497
+ LEH           O3     O    O         0.000     -2.732   -1.059    1.593
+ LEH           C8     C    CH2       0.000     -3.876   -1.573   -0.406
+ LEH           H8     H    H         0.000     -4.160   -2.603   -0.633
+ LEH           H8A    H    H         0.000     -3.634   -1.050   -1.334
+ LEH           C9     C    CH2       0.000     -5.037   -0.864    0.294
+ LEH           H9     H    H         0.000     -4.750    0.165    0.522
+ LEH           H9A    H    H         0.000     -5.276   -1.388    1.222
+ LEH           C10    C    CH2       0.000     -6.261   -0.862   -0.622
+ LEH           H10    H    H         0.000     -6.546   -1.892   -0.850
+ LEH           H10A   H    H         0.000     -6.020   -0.339   -1.549
+ LEH           C11    C    CH2       0.000     -7.422   -0.154    0.078
+ LEH           H11    H    H         0.000     -7.135    0.874    0.306
+ LEH           H11A   H    H         0.000     -7.661   -0.679    1.006
+ LEH           C12    C    CH2       0.000     -8.647   -0.153   -0.838
+ LEH           H12    H    H         0.000     -8.932   -1.182   -1.066
+ LEH           H12A   H    H         0.000     -8.407    0.371   -1.766
+ LEH           C13    C    CH2       0.000     -9.808    0.556   -0.137
+ LEH           H13    H    H         0.000     -9.521    1.585    0.091
+ LEH           H13A   H    H         0.000    -10.047    0.033    0.791
+ LEH           C14    C    CH2       0.000    -11.033    0.557   -1.054
+ LEH           H14    H    H         0.000    -11.318   -0.472   -1.281
+ LEH           H14A   H    H         0.000    -10.793    1.080   -1.982
+ LEH           C15    C    CH2       0.000    -12.194    1.266   -0.353
+ LEH           H15    H    H         0.000    -11.907    2.295   -0.125
+ LEH           H15A   H    H         0.000    -12.433    0.742    0.575
+ LEH           C16    C    CH2       0.000    -13.419    1.268   -1.269
+ LEH           H16    H    H         0.000    -13.703    0.238   -1.497
+ LEH           H16A   H    H         0.000    -13.178    1.791   -2.197
+ LEH           C17    C    CH2       0.000    -14.580    1.976   -0.569
+ LEH           H17    H    H         0.000    -14.293    3.005   -0.341
+ LEH           H17A   H    H         0.000    -14.818    1.452    0.359
+ LEH           C18    C    CH2       0.000    -15.805    1.978   -1.485
+ LEH           H18    H    H         0.000    -16.090    0.948   -1.713
+ LEH           H18A   H    H         0.000    -15.564    2.501   -2.413
+ LEH           N2     N    NR5       0.000    -16.916    2.656   -0.814
+ LEH           C19    C    CR15      0.000    -17.203    3.974   -0.874
+ LEH           H19    H    H         0.000    -16.645    4.717   -1.429
+ LEH           N3     N    NRD5      0.000    -18.265    4.205   -0.150
+ LEH           C21    C    CR15      0.000    -18.685    3.054    0.398
+ LEH           H21    H    H         0.000    -19.541    2.935    1.050
+ LEH           C20    C    CR15      0.000    -17.854    2.073   -0.005
+ LEH           H20    H    H         0.000    -17.916    1.025    0.259
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LEH      O1     n/a    C1     START
+ LEH      C1     O1     C6     .
+ LEH      O2     C1     .      .
+ LEH      C6     C1     N1     .
+ LEH      H6     C6     .      .
+ LEH      C5     C6     C4     .
+ LEH      H5     C5     .      .
+ LEH      H5A    C5     .      .
+ LEH      C4     C5     C3     .
+ LEH      H4     C4     .      .
+ LEH      C2     C4     H2     .
+ LEH      H2B    C2     .      .
+ LEH      H2A    C2     .      .
+ LEH      H2     C2     .      .
+ LEH      C3     C4     H3     .
+ LEH      H3B    C3     .      .
+ LEH      H3A    C3     .      .
+ LEH      H3     C3     .      .
+ LEH      N1     C6     C7     .
+ LEH      HN1    N1     .      .
+ LEH      C7     N1     C8     .
+ LEH      O3     C7     .      .
+ LEH      C8     C7     C9     .
+ LEH      H8     C8     .      .
+ LEH      H8A    C8     .      .
+ LEH      C9     C8     C10    .
+ LEH      H9     C9     .      .
+ LEH      H9A    C9     .      .
+ LEH      C10    C9     C11    .
+ LEH      H10    C10    .      .
+ LEH      H10A   C10    .      .
+ LEH      C11    C10    C12    .
+ LEH      H11    C11    .      .
+ LEH      H11A   C11    .      .
+ LEH      C12    C11    C13    .
+ LEH      H12    C12    .      .
+ LEH      H12A   C12    .      .
+ LEH      C13    C12    C14    .
+ LEH      H13    C13    .      .
+ LEH      H13A   C13    .      .
+ LEH      C14    C13    C15    .
+ LEH      H14    C14    .      .
+ LEH      H14A   C14    .      .
+ LEH      C15    C14    C16    .
+ LEH      H15    C15    .      .
+ LEH      H15A   C15    .      .
+ LEH      C16    C15    C17    .
+ LEH      H16    C16    .      .
+ LEH      H16A   C16    .      .
+ LEH      C17    C16    C18    .
+ LEH      H17    C17    .      .
+ LEH      H17A   C17    .      .
+ LEH      C18    C17    N2     .
+ LEH      H18    C18    .      .
+ LEH      H18A   C18    .      .
+ LEH      N2     C18    C19    .
+ LEH      C19    N2     N3     .
+ LEH      H19    C19    .      .
+ LEH      N3     C19    C21    .
+ LEH      C21    N3     C20    .
+ LEH      H21    C21    .      .
+ LEH      C20    C21    H20    .
+ LEH      H20    C20    .      END
+ LEH      N2     C20    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LEH       O3        C7        double    1.220     0.020     1.220     0.020     
+LEH       C7        N1        single    1.330     0.020     1.330     0.020     
+LEH       C8        C7        single    1.510     0.020     1.510     0.020     
+LEH       N1        C6        single    1.450     0.020     1.450     0.020     
+LEH       HN1       N1        single    1.016     0.010     0.899     0.007     
+LEH       C5        C6        single    1.524     0.020     1.524     0.020     
+LEH       C6        C1        single    1.500     0.020     1.500     0.020     
+LEH       H6        C6        single    1.089     0.010     0.989     0.005     
+LEH       C4        C5        single    1.524     0.020     1.524     0.020     
+LEH       H5        C5        single    1.089     0.010     0.989     0.005     
+LEH       H5A       C5        single    1.089     0.010     0.989     0.005     
+LEH       C2        C4        single    1.524     0.020     1.524     0.020     
+LEH       C3        C4        single    1.524     0.020     1.524     0.020     
+LEH       H4        C4        single    1.089     0.010     0.989     0.005     
+LEH       H3        C3        single    1.089     0.010     0.989     0.005     
+LEH       H3A       C3        single    1.089     0.010     0.989     0.005     
+LEH       H3B       C3        single    1.089     0.010     0.989     0.005     
+LEH       H2        C2        single    1.089     0.010     0.989     0.005     
+LEH       H2A       C2        single    1.089     0.010     0.989     0.005     
+LEH       H2B       C2        single    1.089     0.010     0.989     0.005     
+LEH       C1        O1        deloc     1.250     0.020     1.250     0.020     
+LEH       O2        C1        deloc     1.250     0.020     1.250     0.020     
+LEH       C9        C8        single    1.524     0.020     1.524     0.020     
+LEH       H8        C8        single    1.089     0.010     0.989     0.005     
+LEH       H8A       C8        single    1.089     0.010     0.989     0.005     
+LEH       C10       C9        single    1.524     0.020     1.524     0.020     
+LEH       H9        C9        single    1.089     0.010     0.989     0.005     
+LEH       H9A       C9        single    1.089     0.010     0.989     0.005     
+LEH       C11       C10       single    1.524     0.020     1.524     0.020     
+LEH       H10       C10       single    1.089     0.010     0.989     0.005     
+LEH       H10A      C10       single    1.089     0.010     0.989     0.005     
+LEH       C12       C11       single    1.524     0.020     1.524     0.020     
+LEH       H11       C11       single    1.089     0.010     0.989     0.005     
+LEH       H11A      C11       single    1.089     0.010     0.989     0.005     
+LEH       C13       C12       single    1.524     0.020     1.524     0.020     
+LEH       H12       C12       single    1.089     0.010     0.989     0.005     
+LEH       H12A      C12       single    1.089     0.010     0.989     0.005     
+LEH       C14       C13       single    1.524     0.020     1.524     0.020     
+LEH       H13       C13       single    1.089     0.010     0.989     0.005     
+LEH       H13A      C13       single    1.089     0.010     0.989     0.005     
+LEH       C15       C14       single    1.524     0.020     1.524     0.020     
+LEH       H14       C14       single    1.089     0.010     0.989     0.005     
+LEH       H14A      C14       single    1.089     0.010     0.989     0.005     
+LEH       C16       C15       single    1.524     0.020     1.524     0.020     
+LEH       H15       C15       single    1.089     0.010     0.989     0.005     
+LEH       H15A      C15       single    1.089     0.010     0.989     0.005     
+LEH       C17       C16       single    1.524     0.020     1.524     0.020     
+LEH       H16       C16       single    1.089     0.010     0.989     0.005     
+LEH       H16A      C16       single    1.089     0.010     0.989     0.005     
+LEH       C18       C17       single    1.524     0.020     1.524     0.020     
+LEH       H17       C17       single    1.089     0.010     0.989     0.005     
+LEH       H17A      C17       single    1.089     0.010     0.989     0.005     
+LEH       N2        C18       single    1.462     0.020     1.462     0.020     
+LEH       H18       C18       single    1.089     0.010     0.989     0.005     
+LEH       H18A      C18       single    1.089     0.010     0.989     0.005     
+LEH       N2        C20       single    1.337     0.020     1.337     0.020     
+LEH       C19       N2        single    1.337     0.020     1.337     0.020     
+LEH       C20       C21       double    1.380     0.020     1.380     0.020     
+LEH       H20       C20       single    1.082     0.013     0.975     0.010     
+LEH       C21       N3        single    1.350     0.020     1.350     0.020     
+LEH       H21       C21       single    1.082     0.013     0.975     0.010     
+LEH       N3        C19       double    1.350     0.020     1.350     0.020     
+LEH       H19       C19       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LEH      O1     C1     O2      123.000    3.000
+ LEH      O1     C1     C6      118.500    3.000
+ LEH      O2     C1     C6      118.500    3.000
+ LEH      C1     C6     H6      108.810    3.000
+ LEH      C1     C6     C5      109.470    3.000
+ LEH      C1     C6     N1      111.600    3.000
+ LEH      H6     C6     C5      108.340    3.000
+ LEH      H6     C6     N1      108.550    3.000
+ LEH      C5     C6     N1      110.000    3.000
+ LEH      C6     C5     H5      109.470    3.000
+ LEH      C6     C5     H5A     109.470    3.000
+ LEH      C6     C5     C4      111.000    3.000
+ LEH      H5     C5     H5A     107.900    3.000
+ LEH      H5     C5     C4      109.470    3.000
+ LEH      H5A    C5     C4      109.470    3.000
+ LEH      C5     C4     H4      108.340    3.000
+ LEH      C5     C4     C2      111.000    3.000
+ LEH      C5     C4     C3      111.000    3.000
+ LEH      H4     C4     C2      108.340    3.000
+ LEH      H4     C4     C3      108.340    3.000
+ LEH      C2     C4     C3      111.000    3.000
+ LEH      C4     C2     H2B     109.470    3.000
+ LEH      C4     C2     H2A     109.470    3.000
+ LEH      C4     C2     H2      109.470    3.000
+ LEH      H2B    C2     H2A     109.470    3.000
+ LEH      H2B    C2     H2      109.470    3.000
+ LEH      H2A    C2     H2      109.470    3.000
+ LEH      C4     C3     H3B     109.470    3.000
+ LEH      C4     C3     H3A     109.470    3.000
+ LEH      C4     C3     H3      109.470    3.000
+ LEH      H3B    C3     H3A     109.470    3.000
+ LEH      H3B    C3     H3      109.470    3.000
+ LEH      H3A    C3     H3      109.470    3.000
+ LEH      C6     N1     HN1     118.500    3.000
+ LEH      C6     N1     C7      121.500    3.000
+ LEH      HN1    N1     C7      120.000    3.000
+ LEH      N1     C7     O3      123.000    3.000
+ LEH      N1     C7     C8      116.500    3.000
+ LEH      O3     C7     C8      120.500    3.000
+ LEH      C7     C8     H8      109.470    3.000
+ LEH      C7     C8     H8A     109.470    3.000
+ LEH      C7     C8     C9      109.470    3.000
+ LEH      H8     C8     H8A     107.900    3.000
+ LEH      H8     C8     C9      109.470    3.000
+ LEH      H8A    C8     C9      109.470    3.000
+ LEH      C8     C9     H9      109.470    3.000
+ LEH      C8     C9     H9A     109.470    3.000
+ LEH      C8     C9     C10     111.000    3.000
+ LEH      H9     C9     H9A     107.900    3.000
+ LEH      H9     C9     C10     109.470    3.000
+ LEH      H9A    C9     C10     109.470    3.000
+ LEH      C9     C10    H10     109.470    3.000
+ LEH      C9     C10    H10A    109.470    3.000
+ LEH      C9     C10    C11     111.000    3.000
+ LEH      H10    C10    H10A    107.900    3.000
+ LEH      H10    C10    C11     109.470    3.000
+ LEH      H10A   C10    C11     109.470    3.000
+ LEH      C10    C11    H11     109.470    3.000
+ LEH      C10    C11    H11A    109.470    3.000
+ LEH      C10    C11    C12     111.000    3.000
+ LEH      H11    C11    H11A    107.900    3.000
+ LEH      H11    C11    C12     109.470    3.000
+ LEH      H11A   C11    C12     109.470    3.000
+ LEH      C11    C12    H12     109.470    3.000
+ LEH      C11    C12    H12A    109.470    3.000
+ LEH      C11    C12    C13     111.000    3.000
+ LEH      H12    C12    H12A    107.900    3.000
+ LEH      H12    C12    C13     109.470    3.000
+ LEH      H12A   C12    C13     109.470    3.000
+ LEH      C12    C13    H13     109.470    3.000
+ LEH      C12    C13    H13A    109.470    3.000
+ LEH      C12    C13    C14     111.000    3.000
+ LEH      H13    C13    H13A    107.900    3.000
+ LEH      H13    C13    C14     109.470    3.000
+ LEH      H13A   C13    C14     109.470    3.000
+ LEH      C13    C14    H14     109.470    3.000
+ LEH      C13    C14    H14A    109.470    3.000
+ LEH      C13    C14    C15     111.000    3.000
+ LEH      H14    C14    H14A    107.900    3.000
+ LEH      H14    C14    C15     109.470    3.000
+ LEH      H14A   C14    C15     109.470    3.000
+ LEH      C14    C15    H15     109.470    3.000
+ LEH      C14    C15    H15A    109.470    3.000
+ LEH      C14    C15    C16     111.000    3.000
+ LEH      H15    C15    H15A    107.900    3.000
+ LEH      H15    C15    C16     109.470    3.000
+ LEH      H15A   C15    C16     109.470    3.000
+ LEH      C15    C16    H16     109.470    3.000
+ LEH      C15    C16    H16A    109.470    3.000
+ LEH      C15    C16    C17     111.000    3.000
+ LEH      H16    C16    H16A    107.900    3.000
+ LEH      H16    C16    C17     109.470    3.000
+ LEH      H16A   C16    C17     109.470    3.000
+ LEH      C16    C17    H17     109.470    3.000
+ LEH      C16    C17    H17A    109.470    3.000
+ LEH      C16    C17    C18     111.000    3.000
+ LEH      H17    C17    H17A    107.900    3.000
+ LEH      H17    C17    C18     109.470    3.000
+ LEH      H17A   C17    C18     109.470    3.000
+ LEH      C17    C18    H18     109.470    3.000
+ LEH      C17    C18    H18A    109.470    3.000
+ LEH      C17    C18    N2      109.500    3.000
+ LEH      H18    C18    H18A    107.900    3.000
+ LEH      H18    C18    N2      109.500    3.000
+ LEH      H18A   C18    N2      109.500    3.000
+ LEH      C18    N2     C19     126.000    3.000
+ LEH      C18    N2     C20     126.000    3.000
+ LEH      C19    N2     C20     108.000    3.000
+ LEH      N2     C19    H19     126.000    3.000
+ LEH      N2     C19    N3      108.000    3.000
+ LEH      H19    C19    N3      126.000    3.000
+ LEH      C19    N3     C21     108.000    3.000
+ LEH      N3     C21    H21     126.000    3.000
+ LEH      N3     C21    C20     108.000    3.000
+ LEH      H21    C21    C20     126.000    3.000
+ LEH      C21    C20    H20     126.000    3.000
+ LEH      C21    C20    N2      108.000    3.000
+ LEH      H20    C20    N2      126.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LEH      var_1    O1     C1     C6     N1        -0.002   20.000   3
+ LEH      var_2    C1     C6     C5     C4       176.670   20.000   3
+ LEH      var_3    C6     C5     C4     C3       174.142   20.000   3
+ LEH      var_4    C5     C4     C2     H2        60.038   20.000   3
+ LEH      var_5    C5     C4     C3     H3       177.236   20.000   3
+ LEH      var_6    C1     C6     N1     C7       -84.998   20.000   3
+ LEH      CONST_1  C6     N1     C7     C8       180.000    0.000   0
+ LEH      var_7    N1     C7     C8     C9       179.755   20.000   3
+ LEH      var_8    C7     C8     C9     C10      179.981   20.000   3
+ LEH      var_9    C8     C9     C10    C11      179.963   20.000   3
+ LEH      var_10   C9     C10    C11    C12      179.999   20.000   3
+ LEH      var_11   C10    C11    C12    C13     -179.979   20.000   3
+ LEH      var_12   C11    C12    C13    C14     -179.979   20.000   3
+ LEH      var_13   C12    C13    C14    C15      180.000   20.000   3
+ LEH      var_14   C13    C14    C15    C16      179.979   20.000   3
+ LEH      var_15   C14    C15    C16    C17      179.979   20.000   3
+ LEH      var_16   C15    C16    C17    C18      180.000   20.000   3
+ LEH      var_17   C16    C17    C18    N2      -179.987   20.000   3
+ LEH      var_18   C17    C18    N2     C19       89.972   20.000   1
+ LEH      CONST_2  C18    N2     C20    C21      180.000    0.000   0
+ LEH      CONST_3  C18    N2     C19    N3       180.000    0.000   0
+ LEH      CONST_4  N2     C19    N3     C21        0.000    0.000   0
+ LEH      CONST_5  C19    N3     C21    C20        0.000    0.000   0
+ LEH      CONST_6  N3     C21    C20    N2         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LEH      chir_01  C6     N1     C5     C1        negativ
+ LEH      chir_02  C4     C5     C3     C2        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LEH      plan-1    C7        0.020
+ LEH      plan-1    O3        0.020
+ LEH      plan-1    N1        0.020
+ LEH      plan-1    C8        0.020
+ LEH      plan-1    HN1       0.020
+ LEH      plan-2    N1        0.020
+ LEH      plan-2    C7        0.020
+ LEH      plan-2    C6        0.020
+ LEH      plan-2    HN1       0.020
+ LEH      plan-3    C1        0.020
+ LEH      plan-3    C6        0.020
+ LEH      plan-3    O2        0.020
+ LEH      plan-3    O1        0.020
+ LEH      plan-4    N2        0.020
+ LEH      plan-4    C18       0.020
+ LEH      plan-4    C20       0.020
+ LEH      plan-4    C19       0.020
+ LEH      plan-4    C21       0.020
+ LEH      plan-4    N3        0.020
+ LEH      plan-4    H20       0.020
+ LEH      plan-4    H21       0.020
+ LEH      plan-4    H19       0.020
+# ------------------------------------------------------

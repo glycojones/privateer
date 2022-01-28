@@ -1,0 +1,133 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ABU     ABU      "GAMMA-AMINO-BUTANOIC ACID"     NON-POLYMER     15     7     .     
+#
+data_comp_ABU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ABU     N       N       NT2     0       13.075      -18.589     19.276      
+ABU     CA      C       CH2     0       12.148      -19.136     18.281      
+ABU     CB      C       CH2     0       11.782      -20.594     18.495      
+ABU     CG      C       CH2     0       10.680      -21.074     17.579      
+ABU     CD      C       C       0       11.096      -21.268     16.131      
+ABU     OE1     O       O       0       11.983      -22.108     15.880      
+ABU     OE2     O       OC      -1      10.532      -20.579     15.258      
+ABU     H       H       H       0       13.449      -17.840     18.981      
+ABU     HN2     H       H       0       13.733      -19.162     19.444      
+ABU     HA1     H       H       0       12.551      -19.043     17.393      
+ABU     HA2     H       H       0       11.327      -18.604     18.293      
+ABU     HB1     H       H       0       11.501      -20.713     19.426      
+ABU     HB2     H       H       0       12.582      -21.142     18.350      
+ABU     HG1     H       H       0       9.943       -20.427     17.605      
+ABU     HG2     H       H       0       10.336      -21.927     17.919      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ABU       N         CA        SINGLE    n         1.466     0.012     1.466     0.012     
+ABU       CA        CB        SINGLE    n         1.517     0.020     1.517     0.020     
+ABU       CB        CG        SINGLE    n         1.510     0.020     1.510     0.020     
+ABU       CG        CD        SINGLE    n         1.519     0.012     1.519     0.012     
+ABU       CD        OE1       DOUBLE    n         1.247     0.019     1.247     0.019     
+ABU       CD        OE2       SINGLE    n         1.247     0.019     1.247     0.019     
+ABU       N         H         SINGLE    n         1.036     0.016     0.888     0.020     
+ABU       N         HN2       SINGLE    n         1.036     0.016     0.888     0.020     
+ABU       CA        HA1       SINGLE    n         1.089     0.010     0.979     0.011     
+ABU       CA        HA2       SINGLE    n         1.089     0.010     0.979     0.011     
+ABU       CB        HB1       SINGLE    n         1.089     0.010     0.980     0.016     
+ABU       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+ABU       CG        HG1       SINGLE    n         1.089     0.010     0.981     0.019     
+ABU       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ABU          CA           N           H     110.839    3.00
+ABU          CA           N         HN2     110.839    3.00
+ABU           H           N         HN2     107.243    3.00
+ABU           N          CA          CB     114.751    2.00
+ABU           N          CA         HA1     108.763    1.50
+ABU           N          CA         HA2     108.763    1.50
+ABU          CB          CA         HA1     108.627    1.50
+ABU          CB          CA         HA2     108.627    1.50
+ABU         HA1          CA         HA2     107.806    1.50
+ABU          CA          CB          CG     113.078    1.50
+ABU          CA          CB         HB1     108.630    1.50
+ABU          CA          CB         HB2     108.630    1.50
+ABU          CG          CB         HB1     109.179    1.50
+ABU          CG          CB         HB2     109.179    1.50
+ABU         HB1          CB         HB2     107.927    1.57
+ABU          CB          CG          CD     114.629    2.24
+ABU          CB          CG         HG1     108.817    1.50
+ABU          CB          CG         HG2     108.817    1.50
+ABU          CD          CG         HG1     108.404    1.50
+ABU          CD          CG         HG2     108.404    1.50
+ABU         HG1          CG         HG2     107.521    1.50
+ABU          CG          CD         OE1     118.214    1.64
+ABU          CG          CD         OE2     118.214    1.64
+ABU         OE1          CD         OE2     123.571    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ABU             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+ABU             sp3_sp3_7           N          CA          CB          CG     180.000   10.00     3
+ABU            sp3_sp3_16          CA          CB          CG          CD     180.000   10.00     3
+ABU             sp2_sp3_2         OE1          CD          CG          CB     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ABU    plan-1          CD   0.020
+ABU    plan-1          CG   0.020
+ABU    plan-1         OE1   0.020
+ABU    plan-1         OE2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ABU SMILES           ACDLabs              12.01 "O=C(O)CCCN"
+ABU SMILES_CANONICAL CACTVS               3.370 "NCCCC(O)=O"
+ABU SMILES           CACTVS               3.370 "NCCCC(O)=O"
+ABU SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(CC(=O)O)CN"
+ABU SMILES           "OpenEye OEToolkits" 1.7.0 "C(CC(=O)O)CN"
+ABU InChI            InChI                1.03  "InChI=1S/C4H9NO2/c5-3-1-2-4(6)7/h1-3,5H2,(H,6,7)"
+ABU InChIKey         InChI                1.03  BTCSSZJGUNDROE-UHFFFAOYSA-N
+ABU ?                acedrg               202         "dictionary generator"                  
+ABU ?                acedrg_database      11          "data source"                           
+ABU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ABU ?                refmac5              5.8.0189    "optimization tool"                     

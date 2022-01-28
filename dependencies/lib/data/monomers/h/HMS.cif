@@ -1,0 +1,200 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HMS      HMS '5-O-phosphono-L-ribulose            ' non-polymer        23  14 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HMS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HMS           O7     O    O         0.000      0.000    0.000    0.000
+ HMS           C4     C    C         0.000     -0.847    0.571   -0.643
+ HMS           C5     C    CH2       0.000     -0.611    1.982   -1.118
+ HMS           H9     H    H         0.000     -1.380    2.638   -0.704
+ HMS           H10    H    H         0.000     -0.657    2.011   -2.208
+ HMS           O8     O    OH1       0.000      0.677    2.421   -0.682
+ HMS           H11    H    H         0.000      0.828    3.326   -0.986
+ HMS           C3     C    CH1       0.000     -2.141   -0.128   -0.974
+ HMS           H7     H    H         0.000     -2.390    0.041   -2.031
+ HMS           O6     O    OH1       0.000     -1.999   -1.530   -0.735
+ HMS           H8     H    H         0.000     -1.781   -1.678    0.195
+ HMS           C2     C    CH1       0.000     -3.261    0.428   -0.091
+ HMS           H5     H    H         0.000     -3.013    0.260    0.966
+ HMS           O5     O    OH1       0.000     -3.402    1.830   -0.330
+ HMS           H6     H    H         0.000     -3.622    1.977   -1.260
+ HMS           C1     C    CH2       0.000     -4.574   -0.282   -0.426
+ HMS           H3     H    H         0.000     -4.439   -1.361   -0.330
+ HMS           H4     H    H         0.000     -4.865   -0.042   -1.451
+ HMS           O4     O    O2        0.000     -5.595    0.154    0.475
+ HMS           P1     P    P         0.000     -7.108   -0.389    0.413
+ HMS           O1     O    OP       -0.666     -7.106   -1.899    0.493
+ HMS           O2     O    OP       -0.666     -7.748    0.047   -0.887
+ HMS           O3     O    OP       -0.666     -7.894    0.177    1.576
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HMS      O7     n/a    C4     START
+ HMS      C4     O7     C3     .
+ HMS      C5     C4     O8     .
+ HMS      H9     C5     .      .
+ HMS      H10    C5     .      .
+ HMS      O8     C5     H11    .
+ HMS      H11    O8     .      .
+ HMS      C3     C4     C2     .
+ HMS      H7     C3     .      .
+ HMS      O6     C3     H8     .
+ HMS      H8     O6     .      .
+ HMS      C2     C3     C1     .
+ HMS      H5     C2     .      .
+ HMS      O5     C2     H6     .
+ HMS      H6     O5     .      .
+ HMS      C1     C2     O4     .
+ HMS      H3     C1     .      .
+ HMS      H4     C1     .      .
+ HMS      O4     C1     P1     .
+ HMS      P1     O4     O3     .
+ HMS      O1     P1     .      .
+ HMS      O2     P1     .      .
+ HMS      O3     P1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HMS       O1        P1        deloc     1.510     0.020     1.510     0.020     
+HMS       O2        P1        deloc     1.510     0.020     1.510     0.020     
+HMS       O3        P1        deloc     1.510     0.020     1.510     0.020     
+HMS       P1        O4        single    1.610     0.020     1.610     0.020     
+HMS       O4        C1        single    1.426     0.020     1.426     0.020     
+HMS       C1        C2        single    1.524     0.020     1.524     0.020     
+HMS       O5        C2        single    1.432     0.020     1.432     0.020     
+HMS       C2        C3        single    1.524     0.020     1.524     0.020     
+HMS       O6        C3        single    1.432     0.020     1.432     0.020     
+HMS       C3        C4        single    1.500     0.020     1.500     0.020     
+HMS       C4        O7        double    1.220     0.020     1.220     0.020     
+HMS       C5        C4        single    1.510     0.020     1.510     0.020     
+HMS       O8        C5        single    1.432     0.020     1.432     0.020     
+HMS       H3        C1        single    1.089     0.010     0.989     0.005     
+HMS       H4        C1        single    1.089     0.010     0.989     0.005     
+HMS       H5        C2        single    1.089     0.010     0.989     0.005     
+HMS       H6        O5        single    0.970     0.012     0.839     0.014     
+HMS       H7        C3        single    1.089     0.010     0.989     0.005     
+HMS       H8        O6        single    0.970     0.012     0.839     0.014     
+HMS       H9        C5        single    1.089     0.010     0.989     0.005     
+HMS       H10       C5        single    1.089     0.010     0.989     0.005     
+HMS       H11       O8        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HMS      O7     C4     C5      120.500    3.000
+ HMS      O7     C4     C3      120.500    3.000
+ HMS      C5     C4     C3      120.000    3.000
+ HMS      C4     C5     H9      109.470    3.000
+ HMS      C4     C5     H10     109.470    3.000
+ HMS      C4     C5     O8      109.500    3.000
+ HMS      H9     C5     H10     107.900    3.000
+ HMS      H9     C5     O8      109.470    3.000
+ HMS      H10    C5     O8      109.470    3.000
+ HMS      C5     O8     H11     109.470    3.000
+ HMS      C4     C3     H7      108.810    3.000
+ HMS      C4     C3     O6      109.470    3.000
+ HMS      C4     C3     C2      109.470    3.000
+ HMS      H7     C3     O6      109.470    3.000
+ HMS      H7     C3     C2      108.340    3.000
+ HMS      O6     C3     C2      109.470    3.000
+ HMS      C3     O6     H8      109.470    3.000
+ HMS      C3     C2     H5      108.340    3.000
+ HMS      C3     C2     O5      109.470    3.000
+ HMS      C3     C2     C1      111.000    3.000
+ HMS      H5     C2     O5      109.470    3.000
+ HMS      H5     C2     C1      108.340    3.000
+ HMS      O5     C2     C1      109.470    3.000
+ HMS      C2     O5     H6      109.470    3.000
+ HMS      C2     C1     H3      109.470    3.000
+ HMS      C2     C1     H4      109.470    3.000
+ HMS      C2     C1     O4      109.470    3.000
+ HMS      H3     C1     H4      107.900    3.000
+ HMS      H3     C1     O4      109.470    3.000
+ HMS      H4     C1     O4      109.470    3.000
+ HMS      C1     O4     P1      120.500    3.000
+ HMS      O4     P1     O1      108.200    3.000
+ HMS      O4     P1     O2      108.200    3.000
+ HMS      O4     P1     O3      108.200    3.000
+ HMS      O1     P1     O2      119.900    3.000
+ HMS      O1     P1     O3      119.900    3.000
+ HMS      O2     P1     O3      119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HMS      var_1    O7     C4     C5     O8        -0.070   20.000   3
+ HMS      var_2    C4     C5     O8     H11     -179.984   20.000   1
+ HMS      var_3    O7     C4     C3     C2       104.991   20.000   3
+ HMS      var_4    C4     C3     O6     H8        60.022   20.000   1
+ HMS      var_5    C4     C3     C2     C1      -179.973   20.000   3
+ HMS      var_6    C3     C2     O5     H6        60.042   20.000   1
+ HMS      var_7    C3     C2     C1     O4       175.044   20.000   3
+ HMS      var_8    C2     C1     O4     P1      -179.996   20.000   1
+ HMS      var_9    C1     O4     P1     O3       174.997   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HMS      chir_01  C2     C1     O5     C3        positiv
+ HMS      chir_02  C3     C2     O6     C4        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HMS      plan-1    C4        0.020
+ HMS      plan-1    C3        0.020
+ HMS      plan-1    O7        0.020
+ HMS      plan-1    C5        0.020
+# ------------------------------------------------------

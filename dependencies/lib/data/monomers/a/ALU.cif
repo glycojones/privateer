@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ALU     ALU      "METHYL HYDROGEN (S)-ACETYLPHOSPHONATE"     non-polymer     14     8     .     
+#
+data_comp_ALU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ALU     O3      O       O2      0       -1.185      -0.332      -0.737      
+ALU     C5      C       CH3     0       -2.077      0.254       0.231       
+ALU     C3      C       CH3     0       1.741       0.971       -0.327      
+ALU     C2      C       C       0       1.170       -0.148      0.473       
+ALU     O5      O       O       0       1.457       -0.309      1.637       
+ALU     O2      O       O       0       0.598       -1.797      -1.584      
+ALU     O1      O       OP      -1      -0.495      -2.266      0.633       
+ALU     P1      P       P       0       0.056       -1.253      -0.308      
+ALU     H5C1    H       H       0       -2.758      0.770       -0.229      
+ALU     H5C2    H       H       0       -1.576      0.836       0.823       
+ALU     H5C3    H       H       0       -2.500      -0.448      0.749       
+ALU     H3C1    H       H       0       1.304       1.014       -1.191      
+ALU     H3C2    H       H       0       2.691       0.826       -0.454      
+ALU     H3C3    H       H       0       1.604       1.807       0.143       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ALU       O3        C5        SINGLE    n         1.440     0.017     1.440     0.017     
+ALU       O3        P1        SINGLE    n         1.603     0.016     1.603     0.016     
+ALU       C3        C2        SINGLE    n         1.486     0.020     1.486     0.020     
+ALU       C2        O5        DOUBLE    n         1.210     0.020     1.210     0.020     
+ALU       C2        P1        SINGLE    n         1.750     0.020     1.750     0.020     
+ALU       O1        P1        SINGLE    n         1.489     0.012     1.489     0.012     
+ALU       O2        P1        DOUBLE    n         1.489     0.012     1.489     0.012     
+ALU       C5        H5C1      SINGLE    n         1.089     0.010     0.970     0.016     
+ALU       C5        H5C2      SINGLE    n         1.089     0.010     0.970     0.016     
+ALU       C5        H5C3      SINGLE    n         1.089     0.010     0.970     0.016     
+ALU       C3        H3C1      SINGLE    n         1.089     0.010     0.969     0.018     
+ALU       C3        H3C2      SINGLE    n         1.089     0.010     0.969     0.018     
+ALU       C3        H3C3      SINGLE    n         1.089     0.010     0.969     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ALU          C5          O3          P1     121.496    2.55
+ALU          O3          C5        H5C1     109.472    1.50
+ALU          O3          C5        H5C2     109.472    1.50
+ALU          O3          C5        H5C3     109.472    1.50
+ALU        H5C1          C5        H5C2     109.458    1.50
+ALU        H5C1          C5        H5C3     109.458    1.50
+ALU        H5C2          C5        H5C3     109.458    1.50
+ALU          C2          C3        H3C1     109.516    1.50
+ALU          C2          C3        H3C2     109.516    1.50
+ALU          C2          C3        H3C3     109.516    1.50
+ALU        H3C1          C3        H3C2     109.387    1.50
+ALU        H3C1          C3        H3C3     109.387    1.50
+ALU        H3C2          C3        H3C3     109.387    1.50
+ALU          C3          C2          O5     121.979    1.76
+ALU          C3          C2          P1     117.491    3.00
+ALU          O5          C2          P1     120.530    3.00
+ALU          O3          P1          C2     104.947    3.00
+ALU          O3          P1          O1     106.011    3.00
+ALU          O3          P1          O2     106.011    3.00
+ALU          C2          P1          O1     113.187    2.44
+ALU          C2          P1          O2     113.187    2.44
+ALU          O1          P1          O2     115.720    1.94
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ALU             sp3_sp3_1        H5C1          C5          O3          P1     180.000   10.00     3
+ALU             sp3_sp3_6          C5          O3          P1          C2      60.000   10.00     3
+ALU             sp2_sp3_1          O5          C2          C3        H3C1       0.000   10.00     6
+ALU             sp2_sp3_7          C3          C2          P1          O3       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ALU    chir_1    P1    O3    O1    O2    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ALU    plan-1          C2   0.020
+ALU    plan-1          C3   0.020
+ALU    plan-1          O5   0.020
+ALU    plan-1          P1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ALU SMILES           ACDLabs              10.04 "O=C(C)P(=O)(O)OC"
+ALU SMILES_CANONICAL CACTVS               3.341 "CO[P@](O)(=O)C(C)=O"
+ALU SMILES           CACTVS               3.341 "CO[P](O)(=O)C(C)=O"
+ALU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)[P@](=O)(O)OC"
+ALU SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)P(=O)(O)OC"
+ALU InChI            InChI                1.03  "InChI=1S/C3H7O4P/c1-3(4)8(5,6)7-2/h1-2H3,(H,5,6)"
+ALU InChIKey         InChI                1.03  QECABVMKPMRCRZ-UHFFFAOYSA-N
+ALU ?                acedrg               202         "dictionary generator"                  
+ALU ?                acedrg_database      11          "data source"                           
+ALU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ALU ?                refmac5              5.8.0189    "optimization tool"                     

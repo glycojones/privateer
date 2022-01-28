@@ -1,0 +1,172 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4HC     4HC     4-HYDROXY-2H-CHROMEN-2-ONE     NON-POLYMER     18     12     .     
+#
+data_comp_4HC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4HC     CA      C       CR16    0       63.813      -1.695      20.005      
+4HC     CA2     C       CR6     0       64.805      -2.728      20.061      
+4HC     CA4     C       CR66    0       66.328      -1.182      21.134      
+4HC     CA5     C       CR66    0       65.383      -0.141      21.098      
+4HC     CA6     C       CR6     0       64.089      -0.439      20.506      
+4HC     CD1     C       CR16    0       67.600      -1.010      21.677      
+4HC     CD2     C       CR16    0       67.936      0.225       22.195      
+4HC     CD3     C       CR16    0       67.011      1.290       22.175      
+4HC     CD4     C       CR16    0       65.755      1.105       21.633      
+4HC     OA2     O       O       0       64.675      -3.862      19.654      
+4HC     OA3     O       O2      0       66.031      -2.434      20.625      
+4HC     OA6     O       OH1     0       63.138      0.527       20.444      
+4HC     HA      H       H       0       62.973      -1.888      19.621      
+4HC     HD1     H       H       0       68.214      -1.721      21.689      
+4HC     HD2     H       H       0       68.791      0.357       22.566      
+4HC     HD3     H       H       0       67.251      2.130       22.532      
+4HC     HD4     H       H       0       65.144      1.820       21.623      
+4HC     HA6     H       H       0       63.407      1.139       19.903      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4HC       CA        CA2       SINGLE    y         1.406     0.020     1.406     0.020     
+4HC       CA        CA6       DOUBLE    y         1.373     0.010     1.373     0.010     
+4HC       CA2       OA2       DOUBLE    n         1.211     0.010     1.211     0.010     
+4HC       CA2       OA3       SINGLE    y         1.374     0.010     1.374     0.010     
+4HC       CA4       CA5       DOUBLE    y         1.395     0.010     1.395     0.010     
+4HC       CA4       CD1       SINGLE    y         1.387     0.010     1.387     0.010     
+4HC       CA4       OA3       SINGLE    y         1.378     0.010     1.378     0.010     
+4HC       CA5       CA6       SINGLE    y         1.440     0.014     1.440     0.014     
+4HC       CA5       CD4       SINGLE    y         1.398     0.010     1.398     0.010     
+4HC       CA6       OA6       SINGLE    n         1.356     0.010     1.356     0.010     
+4HC       CD1       CD2       DOUBLE    y         1.375     0.010     1.375     0.010     
+4HC       CD2       CD3       SINGLE    y         1.401     0.013     1.401     0.013     
+4HC       CD3       CD4       DOUBLE    y         1.372     0.011     1.372     0.011     
+4HC       CA        HA        SINGLE    n         1.082     0.013     0.943     0.017     
+4HC       CD1       HD1       SINGLE    n         1.082     0.013     0.939     0.015     
+4HC       CD2       HD2       SINGLE    n         1.082     0.013     0.941     0.015     
+4HC       CD3       HD3       SINGLE    n         1.082     0.013     0.944     0.018     
+4HC       CD4       HD4       SINGLE    n         1.082     0.013     0.941     0.020     
+4HC       OA6       HA6       SINGLE    n         0.970     0.012     0.860     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4HC         CA2          CA         CA6     119.767    1.50
+4HC         CA2          CA          HA     119.206    1.50
+4HC         CA6          CA          HA     121.027    1.50
+4HC          CA         CA2         OA2     126.155    1.50
+4HC          CA         CA2         OA3     117.960    1.50
+4HC         OA2         CA2         OA3     115.885    1.50
+4HC         CA5         CA4         CD1     121.919    1.50
+4HC         CA5         CA4         OA3     121.524    1.50
+4HC         CD1         CA4         OA3     116.557    1.50
+4HC         CA4         CA5         CA6     118.133    1.50
+4HC         CA4         CA5         CD4     117.837    1.50
+4HC         CA6         CA5         CD4     124.030    1.50
+4HC          CA         CA6         CA5     120.819    1.50
+4HC          CA         CA6         OA6     120.559    2.22
+4HC         CA5         CA6         OA6     118.622    2.43
+4HC         CA4         CD1         CD2     118.507    1.50
+4HC         CA4         CD1         HD1     120.587    1.50
+4HC         CD2         CD1         HD1     120.906    1.50
+4HC         CD1         CD2         CD3     120.844    1.50
+4HC         CD1         CD2         HD2     119.498    1.50
+4HC         CD3         CD2         HD2     119.659    1.50
+4HC         CD2         CD3         CD4     120.362    1.50
+4HC         CD2         CD3         HD3     119.795    1.50
+4HC         CD4         CD3         HD3     119.851    1.50
+4HC         CA5         CD4         CD3     120.525    1.50
+4HC         CA5         CD4         HD4     119.675    1.50
+4HC         CD3         CD4         HD4     119.800    1.50
+4HC         CA2         OA3         CA4     121.796    1.50
+4HC         CA6         OA6         HA6     108.410    2.72
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4HC       const_sp2_sp2_2         CA6          CA         CA2         OA2     180.000   10.00     2
+4HC              const_34         CA2          CA         CA6         OA6     180.000   10.00     2
+4HC       const_sp2_sp2_6         OA2         CA2         OA3         CA4     180.000   10.00     2
+4HC       const_sp2_sp2_7         CA5         CA4         OA3         CA2       0.000   10.00     2
+4HC              const_10         CD1         CA4         CA5         CA6     180.000   10.00     2
+4HC              const_37         CA5         CA4         CD1         CD2       0.000   10.00     2
+4HC              const_14         CA4         CA5         CA6         OA6     180.000   10.00     2
+4HC              const_17         CA4         CA5         CD4         CD3       0.000   10.00     2
+4HC              const_29         CA4         CD1         CD2         CD3       0.000   10.00     2
+4HC              const_25         CD1         CD2         CD3         CD4       0.000   10.00     2
+4HC              const_21         CD2         CD3         CD4         CA5       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4HC    plan-1          CA   0.020
+4HC    plan-1         CA2   0.020
+4HC    plan-1         CA4   0.020
+4HC    plan-1         CA5   0.020
+4HC    plan-1         CA6   0.020
+4HC    plan-1         CD1   0.020
+4HC    plan-1         CD4   0.020
+4HC    plan-1          HA   0.020
+4HC    plan-1         OA2   0.020
+4HC    plan-1         OA3   0.020
+4HC    plan-1         OA6   0.020
+4HC    plan-2         CA4   0.020
+4HC    plan-2         CA5   0.020
+4HC    plan-2         CA6   0.020
+4HC    plan-2         CD1   0.020
+4HC    plan-2         CD2   0.020
+4HC    plan-2         CD3   0.020
+4HC    plan-2         CD4   0.020
+4HC    plan-2         HD1   0.020
+4HC    plan-2         HD2   0.020
+4HC    plan-2         HD3   0.020
+4HC    plan-2         HD4   0.020
+4HC    plan-2         OA3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4HC SMILES           ACDLabs              10.04 "O=C2Oc1ccccc1C(O)=C2"
+4HC SMILES_CANONICAL CACTVS               3.341 "OC1=CC(=O)Oc2ccccc12"
+4HC SMILES           CACTVS               3.341 "OC1=CC(=O)Oc2ccccc12"
+4HC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)C(=CC(=O)O2)O"
+4HC SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)C(=CC(=O)O2)O"
+4HC InChI            InChI                1.03  "InChI=1S/C9H6O3/c10-7-5-9(11)12-8-4-2-1-3-6(7)8/h1-5,10H"
+4HC InChIKey         InChI                1.03  VXIXUWQIVKSKSA-UHFFFAOYSA-N
+4HC ?                acedrg               190         "dictionary generator"                  
+4HC ?                acedrg_database      11          "data source"                           
+4HC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4HC ?                refmac5              5.8.0158    "optimization tool"                     

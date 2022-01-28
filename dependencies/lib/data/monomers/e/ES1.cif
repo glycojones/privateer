@@ -1,0 +1,171 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ES1     ES1      quinolin-4-ol     NON-POLYMER     18     11     .     
+#
+data_comp_ES1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ES1     O01     O       OH1     0       26.433      45.257      14.297      
+ES1     CAD     C       CR16    0       27.614      46.185      16.127      
+ES1     CAE     C       CR16    0       28.451      46.000      17.248      
+ES1     CAF     C       CR6     0       27.238      45.090      15.378      
+ES1     CAG     C       CR16    0       27.863      41.384      15.474      
+ES1     NAH     N       NRD6    0       28.908      44.818      17.636      
+ES1     CAI     C       CR16    0       27.375      42.597      15.050      
+ES1     CAJ     C       CR16    0       29.033      42.437      17.314      
+ES1     CAK     C       CR16    0       28.696      41.309      16.613      
+ES1     CAL     C       CR66    0       27.702      43.791      15.751      
+ES1     CAM     C       CR66    0       28.549      43.704      16.907      
+ES1     HO01    H       H       0       25.674      44.888      14.464      
+ES1     HAD     H       H       0       27.315      47.047      15.890      
+ES1     HAE     H       H       0       28.701      46.759      17.751      
+ES1     HAG     H       H       0       27.641      40.597      15.003      
+ES1     HAI     H       H       0       26.819      42.634      14.288      
+ES1     HAJ     H       H       0       29.589      42.374      18.072      
+ES1     HAK     H       H       0       29.026      40.471      16.896      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ES1       O01       CAF       SINGLE    n         1.357     0.011     1.357     0.011     
+ES1       CAD       CAE       DOUBLE    y         1.404     0.010     1.404     0.010     
+ES1       CAD       CAF       SINGLE    y         1.373     0.010     1.373     0.010     
+ES1       CAE       NAH       SINGLE    y         1.317     0.010     1.317     0.010     
+ES1       CAF       CAL       DOUBLE    y         1.422     0.010     1.422     0.010     
+ES1       CAG       CAI       DOUBLE    y         1.368     0.010     1.368     0.010     
+ES1       CAG       CAK       SINGLE    y         1.403     0.012     1.403     0.012     
+ES1       NAH       CAM       DOUBLE    y         1.370     0.010     1.370     0.010     
+ES1       CAI       CAL       SINGLE    y         1.416     0.010     1.416     0.010     
+ES1       CAJ       CAK       DOUBLE    y         1.363     0.010     1.363     0.010     
+ES1       CAJ       CAM       SINGLE    y         1.409     0.010     1.409     0.010     
+ES1       CAL       CAM       SINGLE    y         1.420     0.012     1.420     0.012     
+ES1       O01       HO01      SINGLE    n         0.970     0.012     0.860     0.020     
+ES1       CAD       HAD       SINGLE    n         1.082     0.013     0.943     0.017     
+ES1       CAE       HAE       SINGLE    n         1.082     0.013     0.944     0.020     
+ES1       CAG       HAG       SINGLE    n         1.082     0.013     0.944     0.018     
+ES1       CAI       HAI       SINGLE    n         1.082     0.013     0.944     0.020     
+ES1       CAJ       HAJ       SINGLE    n         1.082     0.013     0.943     0.020     
+ES1       CAK       HAK       SINGLE    n         1.082     0.013     0.944     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ES1         CAF         O01        HO01     108.410    2.72
+ES1         CAE         CAD         CAF     119.507    1.50
+ES1         CAE         CAD         HAD     120.385    1.50
+ES1         CAF         CAD         HAD     120.108    1.50
+ES1         CAD         CAE         NAH     123.121    1.50
+ES1         CAD         CAE         HAE     118.619    1.50
+ES1         NAH         CAE         HAE     118.260    1.50
+ES1         O01         CAF         CAD     120.689    2.22
+ES1         O01         CAF         CAL     118.752    2.43
+ES1         CAD         CAF         CAL     120.559    1.50
+ES1         CAI         CAG         CAK     120.210    1.50
+ES1         CAI         CAG         HAG     119.923    1.50
+ES1         CAK         CAG         HAG     119.867    1.50
+ES1         CAE         NAH         CAM     116.843    1.50
+ES1         CAG         CAI         CAL     120.589    1.50
+ES1         CAG         CAI         HAI     119.758    1.50
+ES1         CAL         CAI         HAI     119.653    1.50
+ES1         CAK         CAJ         CAM     120.120    1.50
+ES1         CAK         CAJ         HAJ     120.224    1.50
+ES1         CAM         CAJ         HAJ     119.656    1.50
+ES1         CAG         CAK         CAJ     120.606    1.50
+ES1         CAG         CAK         HAK     119.771    1.50
+ES1         CAJ         CAK         HAK     119.624    1.50
+ES1         CAF         CAL         CAI     122.702    1.50
+ES1         CAF         CAL         CAM     118.090    1.50
+ES1         CAI         CAL         CAM     119.207    1.50
+ES1         NAH         CAM         CAJ     118.852    1.50
+ES1         NAH         CAM         CAL     121.880    1.50
+ES1         CAJ         CAM         CAL     119.268    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ES1       const_sp2_sp2_1         CAF         CAD         CAE         NAH       0.000   10.00     2
+ES1              const_34         CAE         CAD         CAF         O01     180.000   10.00     2
+ES1       const_sp2_sp2_5         CAD         CAE         NAH         CAM       0.000   10.00     2
+ES1              const_16         O01         CAF         CAL         CAI       0.000   10.00     2
+ES1              const_17         CAK         CAG         CAI         CAL       0.000   10.00     2
+ES1              const_37         CAI         CAG         CAK         CAJ       0.000   10.00     2
+ES1       const_sp2_sp2_8         CAJ         CAM         NAH         CAE     180.000   10.00     2
+ES1              const_22         CAG         CAI         CAL         CAF     180.000   10.00     2
+ES1              const_26         CAK         CAJ         CAM         NAH     180.000   10.00     2
+ES1              const_29         CAM         CAJ         CAK         CAG       0.000   10.00     2
+ES1       const_sp2_sp2_9         CAF         CAL         CAM         NAH       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ES1    plan-1         CAD   0.020
+ES1    plan-1         CAE   0.020
+ES1    plan-1         CAF   0.020
+ES1    plan-1         CAI   0.020
+ES1    plan-1         CAJ   0.020
+ES1    plan-1         CAL   0.020
+ES1    plan-1         CAM   0.020
+ES1    plan-1         HAD   0.020
+ES1    plan-1         HAE   0.020
+ES1    plan-1         NAH   0.020
+ES1    plan-1         O01   0.020
+ES1    plan-2         CAF   0.020
+ES1    plan-2         CAG   0.020
+ES1    plan-2         CAI   0.020
+ES1    plan-2         CAJ   0.020
+ES1    plan-2         CAK   0.020
+ES1    plan-2         CAL   0.020
+ES1    plan-2         CAM   0.020
+ES1    plan-2         HAG   0.020
+ES1    plan-2         HAI   0.020
+ES1    plan-2         HAJ   0.020
+ES1    plan-2         HAK   0.020
+ES1    plan-2         NAH   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ES1 SMILES_CANONICAL CACTVS               3.352 Oc1ccnc2ccccc12
+ES1 SMILES           CACTVS               3.352 Oc1ccnc2ccccc12
+ES1 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1ccc2c(c1)c(ccn2)O"
+ES1 SMILES           "OpenEye OEToolkits" 1.7.0 "c1ccc2c(c1)c(ccn2)O"
+ES1 InChI            InChI                1.03  "InChI=1S/C9H7NO/c11-9-5-6-10-8-4-2-1-3-7(8)9/h1-6H,(H,10,11)"
+ES1 InChIKey         InChI                1.03  PMZDQRJGMBOQBF-UHFFFAOYSA-N
+ES1 ?                acedrg               202         "dictionary generator"                  
+ES1 ?                acedrg_database      11          "data source"                           
+ES1 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ES1 ?                refmac5              5.8.0189    "optimization tool"                     

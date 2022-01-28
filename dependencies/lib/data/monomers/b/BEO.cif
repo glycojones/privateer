@@ -1,0 +1,123 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BEO     BEO     "BUTENOICACID"     NON-POLYMER     11     6     .     
+#
+data_comp_BEO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BEO     C1      C       C       0       -2.072      -0.377      -0.130      
+BEO     O1      O       O       0       -2.777      -0.874      -1.008      
+BEO     O2      O       OC      -1      -2.520      0.032       0.945       
+BEO     C2      C       C1      0       -0.650      -0.283      -0.394      
+BEO     C3      C       C1      0       0.283       0.234       0.386       
+BEO     C4      C       CH3     0       1.750       0.289       0.086       
+BEO     H2      H       H       0       -0.345      -0.628      -1.218      
+BEO     H3      H       H       0       0.001       0.604       1.206       
+BEO     H41     H       H       0       1.926       -0.127      -0.774      
+BEO     H42     H       H       0       2.242       -0.184      0.777       
+BEO     H43     H       H       0       2.043       1.214       0.061       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BEO       C1        O1        DOUBLE    n         1.230     0.020     1.230     0.020     
+BEO       C1        O2        SINGLE    n         1.230     0.020     1.230     0.020     
+BEO       C1        C2        SINGLE    n         1.435     0.020     1.435     0.020     
+BEO       C2        C3        DOUBLE    n         1.317     0.011     1.317     0.011     
+BEO       C3        C4        SINGLE    n         1.497     0.020     1.497     0.020     
+BEO       C2        H2        SINGLE    n         1.082     0.013     0.943     0.020     
+BEO       C3        H3        SINGLE    n         1.082     0.013     0.943     0.018     
+BEO       C4        H41       SINGLE    n         1.089     0.010     0.971     0.014     
+BEO       C4        H42       SINGLE    n         1.089     0.010     0.971     0.014     
+BEO       C4        H43       SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BEO          O1          C1          O2     123.843    1.50
+BEO          O1          C1          C2     118.078    1.84
+BEO          O2          C1          C2     118.078    1.84
+BEO          C1          C2          C3     123.960    2.60
+BEO          C1          C2          H2     118.106    1.98
+BEO          C3          C2          H2     117.934    3.00
+BEO          C2          C3          C4     126.118    1.50
+BEO          C2          C3          H3     116.242    2.54
+BEO          C4          C3          H3     117.640    1.69
+BEO          C3          C4         H41     109.554    1.50
+BEO          C3          C4         H42     109.554    1.50
+BEO          C3          C4         H43     109.554    1.50
+BEO         H41          C4         H42     109.305    1.50
+BEO         H41          C4         H43     109.305    1.50
+BEO         H42          C4         H43     109.305    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BEO             sp2_sp2_1          O1          C1          C2          C3     180.000   10.00     2
+BEO             sp2_sp2_5          C1          C2          C3          C4     180.000   10.00     2
+BEO             sp2_sp3_1          C2          C3          C4         H41       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BEO    plan-1          C1   0.020
+BEO    plan-1          C2   0.020
+BEO    plan-1          O1   0.020
+BEO    plan-1          O2   0.020
+BEO    plan-2          C1   0.020
+BEO    plan-2          C2   0.020
+BEO    plan-2          C3   0.020
+BEO    plan-2          H2   0.020
+BEO    plan-3          C2   0.020
+BEO    plan-3          C3   0.020
+BEO    plan-3          C4   0.020
+BEO    plan-3          H3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BEO SMILES           ACDLabs              10.04 "O=C(O)/C=C/C"
+BEO SMILES_CANONICAL CACTVS               3.341 "C/C=C/C(O)=O"
+BEO SMILES           CACTVS               3.341 "CC=CC(O)=O"
+BEO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC=CC(=O)O"
+BEO SMILES           "OpenEye OEToolkits" 1.5.0 "CC=CC(=O)O"
+BEO InChI            InChI                1.03  "InChI=1S/C4H6O2/c1-2-3-4(5)6/h2-3H,1H3,(H,5,6)/b3-2+"
+BEO InChIKey         InChI                1.03  LDHQCZJRKDOVOX-NSCUHMNNSA-N
+BEO ?                acedrg               190         "dictionary generator"                  
+BEO ?                acedrg_database      11          "data source"                           
+BEO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BEO ?                refmac5              5.8.0158    "optimization tool"                     

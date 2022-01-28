@@ -1,0 +1,294 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CLP      CLP 'FE-S CLUSTER                        ' non-polymer        22  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CLP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CLP           HS4B   H    H         0.000      0.000    0.000    0.000
+ CLP           S4B    S    ST        0.000     -1.208   -0.088    0.235
+ CLP           FE5    FE   FE        0.000     -2.757    1.210   -0.608
+ CLP           FE7    FE   FE        0.000     -2.128    0.099    2.213
+ CLP           S2B    S    ST        0.000     -3.677    1.397    1.371
+ CLP           HS2B   H    H         0.000     -4.076    2.450    1.874
+ CLP           FE8    FE   FE        0.000     -2.452   -1.841   -0.178
+ CLP           S3B    S    ST        0.000     -3.372   -1.654    1.800
+ CLP           HS3B   H    H         0.000     -3.573   -2.586    2.584
+ CLP           FE6    FE   FE        0.000     -4.921   -0.357    0.957
+ CLP           S1B    S    ST        0.000     -4.001   -0.544   -1.021
+ CLP           S1A    S    ST        0.000     -5.459    0.677   -1.814
+ CLP           FE4    FE   FE        0.000     -4.749    2.334   -0.573
+ CLP           S4A    S    ST        0.000     -3.375    2.939   -2.168
+ CLP           HS4A   H    H         0.000     -2.193    3.253   -2.009
+ CLP           FE2    FE   FE        0.000     -4.086    1.281   -3.409
+ CLP           S3A    S    ST        0.000     -6.298    3.630   -1.417
+ CLP           HS3A   H    H         0.000     -7.017    4.395   -0.769
+ CLP           FE1    FE   FE        0.000     -7.009    1.973   -2.658
+ CLP           FE3    FE   FE        0.000     -4.924    4.235   -3.012
+ CLP           S2A    S    ST        0.000     -5.635    2.577   -4.253
+ CLP           HS2A   H    H         0.000     -5.924    2.656   -5.449
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CLP      HS4B   n/a    S4B    START
+ CLP      S4B    HS4B   FE8    .
+ CLP      FE5    S4B    .      .
+ CLP      FE7    S4B    S2B    .
+ CLP      S2B    FE7    HS2B   .
+ CLP      HS2B   S2B    .      .
+ CLP      FE8    S4B    S1B    .
+ CLP      S3B    FE8    FE6    .
+ CLP      HS3B   S3B    .      .
+ CLP      FE6    S3B    .      .
+ CLP      S1B    FE8    S1A    .
+ CLP      S1A    S1B    FE4    .
+ CLP      FE4    S1A    S3A    .
+ CLP      S4A    FE4    FE2    .
+ CLP      HS4A   S4A    .      .
+ CLP      FE2    S4A    .      .
+ CLP      S3A    FE4    FE3    .
+ CLP      HS3A   S3A    .      .
+ CLP      FE1    S3A    .      .
+ CLP      FE3    S3A    S2A    .
+ CLP      S2A    FE3    HS2A   .
+ CLP      HS2A   S2A    .      END
+ CLP      FE1    S1A    .    ADD
+ CLP      FE1    S2A    .    ADD
+ CLP      FE2    S1A    .    ADD
+ CLP      FE2    S2A    .    ADD
+ CLP      FE3    S4A    .    ADD
+ CLP      FE5    S1B    .    ADD
+ CLP      FE5    S2B    .    ADD
+ CLP      FE6    S1B    .    ADD
+ CLP      FE6    S2B    .    ADD
+ CLP      FE7    S3B    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CLP       FE1       S1A       single    2.135     0.020     2.135     0.020     
+CLP       FE1       S2A       single    2.135     0.020     2.135     0.020     
+CLP       FE1       S3A       single    2.135     0.020     2.135     0.020     
+CLP       FE2       S1A       single    2.135     0.020     2.135     0.020     
+CLP       FE2       S2A       single    2.135     0.020     2.135     0.020     
+CLP       FE2       S4A       single    2.135     0.020     2.135     0.020     
+CLP       S2A       FE3       single    2.135     0.020     2.135     0.020     
+CLP       FE3       S4A       single    2.135     0.020     2.135     0.020     
+CLP       FE3       S3A       single    2.135     0.020     2.135     0.020     
+CLP       FE4       S1A       single    2.135     0.020     2.135     0.020     
+CLP       S4A       FE4       single    2.135     0.020     2.135     0.020     
+CLP       S3A       FE4       single    2.135     0.020     2.135     0.020     
+CLP       S1A       S1B       single    1.800     0.020     1.800     0.020     
+CLP       FE5       S1B       single    2.135     0.020     2.135     0.020     
+CLP       FE5       S2B       single    2.135     0.020     2.135     0.020     
+CLP       FE5       S4B       single    2.135     0.020     2.135     0.020     
+CLP       FE6       S1B       single    2.135     0.020     2.135     0.020     
+CLP       FE6       S2B       single    2.135     0.020     2.135     0.020     
+CLP       FE6       S3B       single    2.135     0.020     2.135     0.020     
+CLP       S2B       FE7       single    2.135     0.020     2.135     0.020     
+CLP       FE7       S3B       single    2.135     0.020     2.135     0.020     
+CLP       FE7       S4B       single    2.135     0.020     2.135     0.020     
+CLP       S1B       FE8       single    2.135     0.020     2.135     0.020     
+CLP       S3B       FE8       single    2.135     0.020     2.135     0.020     
+CLP       FE8       S4B       single    2.135     0.020     2.135     0.020     
+CLP       HS2A      S2A       single    1.338     0.010     1.171     0.208     
+CLP       HS4A      S4A       single    1.338     0.010     1.171     0.208     
+CLP       HS3A      S3A       single    1.338     0.010     1.171     0.208     
+CLP       HS2B      S2B       single    1.338     0.010     1.171     0.208     
+CLP       HS3B      S3B       single    1.338     0.010     1.171     0.208     
+CLP       S4B       HS4B      single    1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CLP      HS4B   S4B    FE5     109.500    3.000
+ CLP      HS4B   S4B    FE7     109.500    3.000
+ CLP      HS4B   S4B    FE8     109.500    3.000
+ CLP      FE5    S4B    FE7     109.500    3.000
+ CLP      FE5    S4B    FE8     109.500    3.000
+ CLP      FE7    S4B    FE8     109.500    3.000
+ CLP      S4B    FE5    S1B      90.000    3.000
+ CLP      S4B    FE5    S2B      90.000    3.000
+ CLP      S1B    FE5    S2B      90.000    3.000
+ CLP      S4B    FE7    S2B      90.000    3.000
+ CLP      S4B    FE7    S3B      90.000    3.000
+ CLP      S2B    FE7    S3B      90.000    3.000
+ CLP      FE7    S2B    HS2B    109.500    3.000
+ CLP      FE7    S2B    FE5     109.500    3.000
+ CLP      FE7    S2B    FE6     109.500    3.000
+ CLP      FE5    S2B    FE6     109.500    3.000
+ CLP      HS2B   S2B    FE5     109.500    3.000
+ CLP      HS2B   S2B    FE6     109.500    3.000
+ CLP      S4B    FE8    S3B      90.000    3.000
+ CLP      S4B    FE8    S1B      90.000    3.000
+ CLP      S3B    FE8    S1B      90.000    3.000
+ CLP      FE8    S3B    HS3B    109.500    3.000
+ CLP      FE8    S3B    FE6     109.500    3.000
+ CLP      FE8    S3B    FE7     109.500    3.000
+ CLP      HS3B   S3B    FE6     109.500    3.000
+ CLP      HS3B   S3B    FE7     109.500    3.000
+ CLP      FE6    S3B    FE7     109.500    3.000
+ CLP      S3B    FE6    S1B      90.000    3.000
+ CLP      S3B    FE6    S2B      90.000    3.000
+ CLP      S1B    FE6    S2B      90.000    3.000
+ CLP      FE8    S1B    S1A     109.500    3.000
+ CLP      FE8    S1B    FE5     109.500    3.000
+ CLP      FE8    S1B    FE6     109.500    3.000
+ CLP      FE5    S1B    FE6     109.500    3.000
+ CLP      S1A    S1B    FE5     109.500    3.000
+ CLP      S1A    S1B    FE6     109.500    3.000
+ CLP      S1B    S1A    FE4     109.500    3.000
+ CLP      S1B    S1A    FE1     109.500    3.000
+ CLP      S1B    S1A    FE2     109.500    3.000
+ CLP      FE1    S1A    FE2     109.500    3.000
+ CLP      FE4    S1A    FE1     109.500    3.000
+ CLP      FE4    S1A    FE2     109.500    3.000
+ CLP      S1A    FE4    S4A      90.000    3.000
+ CLP      S1A    FE4    S3A      90.000    3.000
+ CLP      S4A    FE4    S3A      90.000    3.000
+ CLP      FE4    S4A    HS4A    109.500    3.000
+ CLP      FE4    S4A    FE2     109.500    3.000
+ CLP      FE4    S4A    FE3     109.500    3.000
+ CLP      HS4A   S4A    FE2     109.500    3.000
+ CLP      HS4A   S4A    FE3     109.500    3.000
+ CLP      FE2    S4A    FE3     109.500    3.000
+ CLP      S4A    FE2    S1A      90.000    3.000
+ CLP      S4A    FE2    S2A      90.000    3.000
+ CLP      S1A    FE2    S2A      90.000    3.000
+ CLP      FE4    S3A    HS3A    109.500    3.000
+ CLP      FE4    S3A    FE1     109.500    3.000
+ CLP      FE4    S3A    FE3     109.500    3.000
+ CLP      HS3A   S3A    FE1     109.500    3.000
+ CLP      HS3A   S3A    FE3     109.500    3.000
+ CLP      FE1    S3A    FE3     109.500    3.000
+ CLP      S3A    FE1    S1A      90.000    3.000
+ CLP      S3A    FE1    S2A      90.000    3.000
+ CLP      S1A    FE1    S2A      90.000    3.000
+ CLP      S3A    FE3    S2A      90.000    3.000
+ CLP      S3A    FE3    S4A      90.000    3.000
+ CLP      S2A    FE3    S4A      90.000    3.000
+ CLP      FE3    S2A    HS2A    109.500    3.000
+ CLP      FE3    S2A    FE1     109.500    3.000
+ CLP      FE3    S2A    FE2     109.500    3.000
+ CLP      FE1    S2A    FE2     109.500    3.000
+ CLP      HS2A   S2A    FE1     109.500    3.000
+ CLP      HS2A   S2A    FE2     109.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CLP      var_1    FE7    S4B    FE5    S1B        0.000   20.000   1
+ CLP      var_2    FE6    S1B    FE5    S4B        0.000   20.000   1
+ CLP      var_3    FE7    S2B    FE5    S4B        0.000   20.000   1
+ CLP      var_4    FE5    S4B    FE7    S2B        0.000   20.000   1
+ CLP      var_5    FE8    S3B    FE7    S4B        0.000   20.000   1
+ CLP      var_6    FE5    S2B    FE7    S4B        0.000   20.000   1
+ CLP      var_7    FE7    S4B    FE8    S3B        0.000   20.000   1
+ CLP      var_8    FE7    S3B    FE8    S4B        0.000   20.000   1
+ CLP      var_9    FE8    S3B    FE6    S1B        0.000   20.000   1
+ CLP      var_10   FE8    S1B    FE6    S3B        0.000   20.000   1
+ CLP      var_11   FE7    S2B    FE6    S1B        0.000   20.000   1
+ CLP      var_12   FE6    S1B    FE8    S3B        0.000   20.000   1
+ CLP      var_13   FE8    S1B    S1A    FE4      179.974   20.000   1
+ CLP      var_14   FE2    S1A    FE4    S4A        0.000   20.000   1
+ CLP      var_15   FE2    S4A    FE4    S1A        0.000   20.000   1
+ CLP      var_16   FE4    S4A    FE2    S1A        0.000   20.000   1
+ CLP      var_17   FE4    S1A    FE2    S4A        0.000   20.000   1
+ CLP      var_18   FE3    S2A    FE2    S4A        0.000   20.000   1
+ CLP      var_19   FE1    S3A    FE4    S1A        0.000   20.000   1
+ CLP      var_20   FE4    S3A    FE1    S1A        0.000   20.000   1
+ CLP      var_21   FE4    S1A    FE1    S3A        0.000   20.000   1
+ CLP      var_22   FE3    S2A    FE1    S3A        0.000   20.000   1
+ CLP      var_23   FE1    S3A    FE3    S2A        0.000   20.000   1
+ CLP      var_24   FE4    S4A    FE3    S3A        0.000   20.000   1
+ CLP      var_25   FE1    S2A    FE3    S3A        0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ CLP      chir_01  S1A    FE1    FE2    FE4       negativ
+                   .      .      .      .      .
+ CLP      chir_02  S2A    FE1    FE2    FE3       positiv
+                   .      .      .      .      .
+ CLP      chir_03  S4A    FE2    FE3    FE4       negativ
+                   .      .      .      .      .
+ CLP      chir_04  S3A    FE1    FE3    FE4       positiv
+                   .      .      .      .      .
+ CLP      chir_05  S1B    S1A    FE5    FE6       negativ
+                   .      .      .      .      .
+ CLP      chir_06  S2B    FE5    FE6    FE7       negativ
+                   .      .      .      .      .
+ CLP      chir_07  S3B    FE6    FE7    FE8       positiv
+                   .      .      .      .      .
+ CLP      chir_08  S4B    FE5    FE7    FE8       negativ
+                   .      .      .      .      .
+ CLP      chir_09  FE1    S3A    .      S1A       cross4
+                   S2A    .      .      .      .
+ CLP      chir_10  FE2    S4A    .      S1A       cross4
+                   S2A    .      .      .      .
+ CLP      chir_11  FE3    S3A    .      S2A       cross4
+                   S4A    .      .      .      .
+ CLP      chir_12  FE4    S1A    .      S4A       cross4
+                   S3A    .      .      .      .
+ CLP      chir_13  FE5    S4B    .      S1B       cross4
+                   S2B    .      .      .      .
+ CLP      chir_14  FE6    S3B    .      S1B       cross4
+                   S2B    .      .      .      .
+ CLP      chir_15  FE7    S4B    .      S2B       cross4
+                   S3B    .      .      .      .
+ CLP      chir_16  FE8    S4B    .      S3B       cross4
+                   S1B    .      .      .      .
+# ------------------------------------------------------

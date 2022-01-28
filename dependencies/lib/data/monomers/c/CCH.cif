@@ -1,0 +1,579 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CCH      CCH '[7-ETHENYL-12-FORMYL-3,8,13,17-TERTR' non-polymer        71  43 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CCH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CCH           O2D    O    OC       -0.500      0.000    0.000    0.000
+ CCH           CGD    C    C         0.000      0.928   -0.277   -0.791
+ CCH           O1D    O    OC       -0.500      0.990   -1.203   -1.630
+ CCH           CBD    C    CH2       0.000      2.131    0.623   -0.758
+ CCH           HBD1   H    H         0.000      2.132    1.192   -1.690
+ CCH           HBD2   H    H         0.000      3.012   -0.021   -0.724
+ CCH           CAD    C    CH2       0.000      2.155    1.586    0.429
+ CCH           HAD1   H    H         0.000      2.137    1.006    1.354
+ CCH           HAD2   H    H         0.000      1.269    2.224    0.384
+ CCH           C3D    C    CR5       0.000      3.412    2.453    0.394
+ CCH           C4D    C    CR5       0.000      4.676    2.012    0.959
+ CCH           CHA    C    C1        0.000      4.981    0.790    1.494
+ CCH           HHA    H    H         0.000      4.259   -0.002    1.391
+ CCH           C2D    C    CR5       0.000      3.547    3.740    0.070
+ CCH           CMD    C    CH3       0.000      2.471    4.745   -0.391
+ CCH           HMD3   H    H         0.000      2.287    5.455    0.377
+ CCH           HMD2   H    H         0.000      2.802    5.255   -1.261
+ CCH           HMD1   H    H         0.000      1.568    4.233   -0.612
+ CCH           C1D    C    CR5       0.000      4.887    4.139    0.442
+ CCH           ND     N    NT        0.000      5.585    3.044    0.888
+ CCH           CHD    C    C1        0.000      5.415    5.347    0.092
+ CCH           HHD    H    H         0.000      4.884    6.014   -0.565
+ CCH           C4C    C    CR5       0.000      6.645    5.688    0.603
+ CCH           NC     N    NT        0.000      7.437    4.986    1.482
+ CCH           FE     FE   FE        0.000      7.349    3.164    1.968
+ CCH           C3C    C    CR5       0.000      7.269    6.948    0.302
+ CCH           CAC    C    C1        0.000      6.701    7.904   -0.745
+ CCH           HAC    H    H         0.000      6.220    7.495   -1.617
+ CCH           CBC    C    C2        0.000      6.782    9.216   -0.613
+ CCH           HBC2   H    H         0.000      6.370    9.860   -1.372
+ CCH           HBC1   H    H         0.000      7.260    9.642    0.253
+ CCH           C2C    C    CR5       0.000      8.367    7.054    1.040
+ CCH           CMC    C    CH3       0.000      9.420    8.185    0.949
+ CCH           HMC3   H    H         0.000      9.740    8.463    1.923
+ CCH           HMC2   H    H         0.000     10.261    7.854    0.391
+ CCH           HMC1   H    H         0.000      9.000    9.034    0.469
+ CCH           C1C    C    CR5       0.000      8.588    5.755    1.631
+ CCH           CHC    C    C1        0.000      9.696    5.413    2.376
+ CCH           HHC    H    H         0.000     10.514    6.112    2.419
+ CCH           C4B    C    CR5       0.000      9.817    4.230    3.070
+ CCH           NB     N    NR5       0.000      9.120    3.055    2.863
+ CCH           C3B    C    CR5       0.000     11.090    3.901    3.629
+ CCH           CAB    C    C1        0.000     12.151    4.985    3.798
+ CCH           HAB    H    H         0.000     12.243    5.784    3.081
+ CCH           OBB    O    O         0.000     12.889    4.925    4.762
+ CCH           C2B    C    CR5       0.000     11.078    2.613    3.971
+ CCH           CMB    C    CH3       0.000     12.208    1.791    4.620
+ CCH           HMB3   H    H         0.000     11.838    1.279    5.473
+ CCH           HMB2   H    H         0.000     12.583    1.081    3.925
+ CCH           HMB1   H    H         0.000     12.998    2.435    4.918
+ CCH           C1B    C    CR5       0.000      9.844    2.062    3.448
+ CCH           CHB    C    C1        0.000      9.496    0.735    3.444
+ CCH           HHB    H    H         0.000     10.174   -0.045    3.749
+ CCH           C4A    C    CR5       0.000      8.204    0.476    3.015
+ CCH           NA     N    NR5       0.000      7.282    1.306    2.390
+ CCH           C3A    C    CR5       0.000      7.696   -0.864    3.037
+ CCH           CMA    C    CH3       0.000      8.399   -2.008    3.792
+ CCH           HMA3   H    H         0.000      9.379   -2.145    3.407
+ CCH           HMA2   H    H         0.000      8.461   -1.773    4.825
+ CCH           HMA1   H    H         0.000      7.850   -2.909    3.673
+ CCH           C2A    C    CR5       0.000      6.507   -0.865    2.414
+ CCH           C1A    C    CR5       0.000      6.157    0.511    2.158
+ CCH           CAA    C    CH2       0.000      5.449   -1.982    2.318
+ CCH           HAA1   H    H         0.000      4.489   -1.495    2.134
+ CCH           HAA2   H    H         0.000      5.423   -2.480    3.289
+ CCH           CBA    C    CH2       0.000      5.720   -3.022    1.211
+ CCH           HBA1   H    H         0.000      6.688   -3.471    1.447
+ CCH           HBA2   H    H         0.000      5.799   -2.461    0.278
+ CCH           CGA    C    C         0.000      4.680   -4.112    1.061
+ CCH           O1A    O    OC       -0.500      4.788   -5.126    1.785
+ CCH           O2A    O    OC       -0.500      3.793   -3.902    0.204
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CCH      O2D    n/a    CGD    START
+ CCH      CGD    O2D    CBD    .
+ CCH      O1D    CGD    .      .
+ CCH      CBD    CGD    CAD    .
+ CCH      HBD1   CBD    .      .
+ CCH      HBD2   CBD    .      .
+ CCH      CAD    CBD    C3D    .
+ CCH      HAD1   CAD    .      .
+ CCH      HAD2   CAD    .      .
+ CCH      C3D    CAD    C2D    .
+ CCH      C4D    C3D    CHA    .
+ CCH      CHA    C4D    HHA    .
+ CCH      HHA    CHA    .      .
+ CCH      C2D    C3D    C1D    .
+ CCH      CMD    C2D    HMD1   .
+ CCH      HMD3   CMD    .      .
+ CCH      HMD2   CMD    .      .
+ CCH      HMD1   CMD    .      .
+ CCH      C1D    C2D    CHD    .
+ CCH      ND     C1D    .      .
+ CCH      CHD    C1D    C4C    .
+ CCH      HHD    CHD    .      .
+ CCH      C4C    CHD    C3C    .
+ CCH      NC     C4C    FE     .
+ CCH      FE     NC     .      .
+ CCH      C3C    C4C    C2C    .
+ CCH      CAC    C3C    CBC    .
+ CCH      HAC    CAC    .      .
+ CCH      CBC    CAC    HBC1   .
+ CCH      HBC2   CBC    .      .
+ CCH      HBC1   CBC    .      .
+ CCH      C2C    C3C    C1C    .
+ CCH      CMC    C2C    HMC1   .
+ CCH      HMC3   CMC    .      .
+ CCH      HMC2   CMC    .      .
+ CCH      HMC1   CMC    .      .
+ CCH      C1C    C2C    CHC    .
+ CCH      CHC    C1C    C4B    .
+ CCH      HHC    CHC    .      .
+ CCH      C4B    CHC    C3B    .
+ CCH      NB     C4B    .      .
+ CCH      C3B    C4B    C2B    .
+ CCH      CAB    C3B    OBB    .
+ CCH      HAB    CAB    .      .
+ CCH      OBB    CAB    .      .
+ CCH      C2B    C3B    C1B    .
+ CCH      CMB    C2B    HMB1   .
+ CCH      HMB3   CMB    .      .
+ CCH      HMB2   CMB    .      .
+ CCH      HMB1   CMB    .      .
+ CCH      C1B    C2B    CHB    .
+ CCH      CHB    C1B    C4A    .
+ CCH      HHB    CHB    .      .
+ CCH      C4A    CHB    C3A    .
+ CCH      NA     C4A    .      .
+ CCH      C3A    C4A    C2A    .
+ CCH      CMA    C3A    HMA1   .
+ CCH      HMA3   CMA    .      .
+ CCH      HMA2   CMA    .      .
+ CCH      HMA1   CMA    .      .
+ CCH      C2A    C3A    CAA    .
+ CCH      C1A    C2A    .      .
+ CCH      CAA    C2A    CBA    .
+ CCH      HAA1   CAA    .      .
+ CCH      HAA2   CAA    .      .
+ CCH      CBA    CAA    CGA    .
+ CCH      HBA1   CBA    .      .
+ CCH      HBA2   CBA    .      .
+ CCH      CGA    CBA    O2A    .
+ CCH      O1A    CGA    .      .
+ CCH      O2A    CGA    .      END
+ CCH      FE     NA     .    ADD
+ CCH      FE     NB     .    ADD
+ CCH      FE     ND     .    ADD
+ CCH      NA     C1A    .    ADD
+ CCH      NB     C1B    .    ADD
+ CCH      NC     C1C    .    ADD
+ CCH      ND     C4D    .    ADD
+ CCH      C1A    CHA    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CCH       FE        NA        single    2.090     0.020     2.090     0.020     
+CCH       FE        NB        single    2.090     0.020     2.090     0.020     
+CCH       FE        NC        single    1.945     0.020     1.945     0.020     
+CCH       FE        ND        single    1.945     0.020     1.945     0.020     
+CCH       NA        C1A       single    1.337     0.020     1.337     0.020     
+CCH       NA        C4A       single    1.337     0.020     1.337     0.020     
+CCH       NB        C1B       double    1.337     0.020     1.337     0.020     
+CCH       NB        C4B       single    1.337     0.020     1.337     0.020     
+CCH       NC        C1C       single    1.455     0.020     1.455     0.020     
+CCH       NC        C4C       single    1.455     0.020     1.455     0.020     
+CCH       ND        C4D       double    1.455     0.020     1.455     0.020     
+CCH       ND        C1D       single    1.455     0.020     1.455     0.020     
+CCH       C1A       CHA       double    1.483     0.020     1.483     0.020     
+CCH       C1A       C2A       single    1.490     0.020     1.490     0.020     
+CCH       CHA       C4D       single    1.483     0.020     1.483     0.020     
+CCH       HHA       CHA       single    1.082     0.013     0.975     0.010     
+CCH       C4D       C3D       single    1.490     0.020     1.490     0.020     
+CCH       CHB       C1B       single    1.483     0.020     1.483     0.020     
+CCH       C1B       C2B       single    1.490     0.020     1.490     0.020     
+CCH       C4A       CHB       double    1.483     0.020     1.483     0.020     
+CCH       HHB       CHB       single    1.082     0.013     0.975     0.010     
+CCH       C3A       C4A       single    1.490     0.020     1.490     0.020     
+CCH       CHC       C1C       single    1.483     0.020     1.483     0.020     
+CCH       C1C       C2C       double    1.490     0.020     1.490     0.020     
+CCH       C4B       CHC       double    1.483     0.020     1.483     0.020     
+CCH       HHC       CHC       single    1.082     0.013     0.975     0.010     
+CCH       C3B       C4B       single    1.490     0.020     1.490     0.020     
+CCH       CHD       C1D       double    1.483     0.020     1.483     0.020     
+CCH       C1D       C2D       single    1.490     0.020     1.490     0.020     
+CCH       C4C       CHD       single    1.483     0.020     1.483     0.020     
+CCH       HHD       CHD       single    1.082     0.013     0.975     0.010     
+CCH       C3C       C4C       double    1.490     0.020     1.490     0.020     
+CCH       CAA       C2A       single    1.510     0.020     1.510     0.020     
+CCH       C2A       C3A       double    1.490     0.020     1.490     0.020     
+CCH       CBA       CAA       single    1.524     0.020     1.524     0.020     
+CCH       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+CCH       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+CCH       CMA       C3A       single    1.506     0.020     1.506     0.020     
+CCH       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+CCH       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+CCH       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+CCH       CGA       CBA       single    1.510     0.020     1.510     0.020     
+CCH       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+CCH       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+CCH       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+CCH       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+CCH       CMB       C2B       single    1.506     0.020     1.506     0.020     
+CCH       C2B       C3B       double    1.490     0.020     1.490     0.020     
+CCH       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+CCH       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+CCH       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+CCH       CAB       C3B       single    1.483     0.020     1.483     0.020     
+CCH       OBB       CAB       double    1.220     0.020     1.220     0.020     
+CCH       HAB       CAB       single    1.082     0.013     0.975     0.010     
+CCH       CMC       C2C       single    1.506     0.020     1.506     0.020     
+CCH       C2C       C3C       single    1.490     0.020     1.490     0.020     
+CCH       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+CCH       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+CCH       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+CCH       CAC       C3C       single    1.483     0.020     1.483     0.020     
+CCH       CBC       CAC       double    1.320     0.020     1.320     0.020     
+CCH       HAC       CAC       single    1.082     0.013     0.975     0.010     
+CCH       HBC1      CBC       single    1.082     0.013     0.975     0.010     
+CCH       HBC2      CBC       single    1.082     0.013     0.975     0.010     
+CCH       CMD       C2D       single    1.506     0.020     1.506     0.020     
+CCH       C2D       C3D       double    1.490     0.020     1.490     0.020     
+CCH       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+CCH       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+CCH       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+CCH       C3D       CAD       single    1.510     0.020     1.510     0.020     
+CCH       CAD       CBD       single    1.524     0.020     1.524     0.020     
+CCH       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+CCH       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+CCH       CBD       CGD       single    1.510     0.020     1.510     0.020     
+CCH       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+CCH       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+CCH       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+CCH       CGD       O2D       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CCH      O2D    CGD    O1D     123.000    3.000
+ CCH      O2D    CGD    CBD     118.500    3.000
+ CCH      O1D    CGD    CBD     118.500    3.000
+ CCH      CGD    CBD    HBD1    109.470    3.000
+ CCH      CGD    CBD    HBD2    109.470    3.000
+ CCH      CGD    CBD    CAD     109.470    3.000
+ CCH      HBD1   CBD    HBD2    107.900    3.000
+ CCH      HBD1   CBD    CAD     109.470    3.000
+ CCH      HBD2   CBD    CAD     109.470    3.000
+ CCH      CBD    CAD    HAD1    109.470    3.000
+ CCH      CBD    CAD    HAD2    109.470    3.000
+ CCH      CBD    CAD    C3D     109.470    3.000
+ CCH      HAD1   CAD    HAD2    107.900    3.000
+ CCH      HAD1   CAD    C3D     109.470    3.000
+ CCH      HAD2   CAD    C3D     109.470    3.000
+ CCH      CAD    C3D    C4D     126.000    3.000
+ CCH      CAD    C3D    C2D     126.000    3.000
+ CCH      C4D    C3D    C2D     108.000    3.000
+ CCH      C3D    C4D    CHA     117.000    3.000
+ CCH      C3D    C4D    ND      108.000    3.000
+ CCH      CHA    C4D    ND      108.000    3.000
+ CCH      C4D    CHA    HHA     120.000    3.000
+ CCH      C4D    CHA    C1A     120.000    3.000
+ CCH      HHA    CHA    C1A     120.000    3.000
+ CCH      C3D    C2D    CMD     126.000    3.000
+ CCH      C3D    C2D    C1D     108.000    3.000
+ CCH      CMD    C2D    C1D     126.000    3.000
+ CCH      C2D    CMD    HMD3    109.470    3.000
+ CCH      C2D    CMD    HMD2    109.470    3.000
+ CCH      C2D    CMD    HMD1    109.470    3.000
+ CCH      HMD3   CMD    HMD2    109.470    3.000
+ CCH      HMD3   CMD    HMD1    109.470    3.000
+ CCH      HMD2   CMD    HMD1    109.470    3.000
+ CCH      C2D    C1D    ND      108.000    3.000
+ CCH      C2D    C1D    CHD     117.000    3.000
+ CCH      ND     C1D    CHD     108.000    3.000
+ CCH      C1D    ND     FE      109.500    3.000
+ CCH      C1D    ND     C4D     109.500    3.000
+ CCH      FE     ND     C4D     109.500    3.000
+ CCH      C1D    CHD    HHD     120.000    3.000
+ CCH      C1D    CHD    C4C     120.000    3.000
+ CCH      HHD    CHD    C4C     120.000    3.000
+ CCH      CHD    C4C    NC      108.000    3.000
+ CCH      CHD    C4C    C3C     117.000    3.000
+ CCH      NC     C4C    C3C     108.000    3.000
+ CCH      C4C    NC     FE      109.500    3.000
+ CCH      C4C    NC     C1C     109.500    3.000
+ CCH      FE     NC     C1C     109.500    3.000
+ CCH      NC     FE     NA      180.000    3.000
+ CCH      NC     FE     NB       90.000    3.000
+ CCH      NC     FE     ND       90.000    3.000
+ CCH      NA     FE     NB       90.000    3.000
+ CCH      NA     FE     ND       90.000    3.000
+ CCH      NB     FE     ND      180.000    3.000
+ CCH      C4C    C3C    CAC     117.000    3.000
+ CCH      C4C    C3C    C2C     108.000    3.000
+ CCH      CAC    C3C    C2C     117.000    3.000
+ CCH      C3C    CAC    HAC     120.000    3.000
+ CCH      C3C    CAC    CBC     120.000    3.000
+ CCH      HAC    CAC    CBC     120.000    3.000
+ CCH      CAC    CBC    HBC2    120.000    3.000
+ CCH      CAC    CBC    HBC1    120.000    3.000
+ CCH      HBC2   CBC    HBC1    120.000    3.000
+ CCH      C3C    C2C    CMC     126.000    3.000
+ CCH      C3C    C2C    C1C     108.000    3.000
+ CCH      CMC    C2C    C1C     126.000    3.000
+ CCH      C2C    CMC    HMC3    109.470    3.000
+ CCH      C2C    CMC    HMC2    109.470    3.000
+ CCH      C2C    CMC    HMC1    109.470    3.000
+ CCH      HMC3   CMC    HMC2    109.470    3.000
+ CCH      HMC3   CMC    HMC1    109.470    3.000
+ CCH      HMC2   CMC    HMC1    109.470    3.000
+ CCH      C2C    C1C    CHC     117.000    3.000
+ CCH      C2C    C1C    NC      108.000    3.000
+ CCH      CHC    C1C    NC      108.000    3.000
+ CCH      C1C    CHC    HHC     120.000    3.000
+ CCH      C1C    CHC    C4B     120.000    3.000
+ CCH      HHC    CHC    C4B     120.000    3.000
+ CCH      CHC    C4B    NB      108.000    3.000
+ CCH      CHC    C4B    C3B     117.000    3.000
+ CCH      NB     C4B    C3B     108.000    3.000
+ CCH      C4B    NB     FE      126.000    3.000
+ CCH      C4B    NB     C1B     108.000    3.000
+ CCH      FE     NB     C1B     126.000    3.000
+ CCH      C4B    C3B    CAB     117.000    3.000
+ CCH      C4B    C3B    C2B     108.000    3.000
+ CCH      CAB    C3B    C2B     117.000    3.000
+ CCH      C3B    CAB    HAB     120.000    3.000
+ CCH      C3B    CAB    OBB     120.000    3.000
+ CCH      HAB    CAB    OBB     123.000    3.000
+ CCH      C3B    C2B    CMB     126.000    3.000
+ CCH      C3B    C2B    C1B     108.000    3.000
+ CCH      CMB    C2B    C1B     126.000    3.000
+ CCH      C2B    CMB    HMB3    109.470    3.000
+ CCH      C2B    CMB    HMB2    109.470    3.000
+ CCH      C2B    CMB    HMB1    109.470    3.000
+ CCH      HMB3   CMB    HMB2    109.470    3.000
+ CCH      HMB3   CMB    HMB1    109.470    3.000
+ CCH      HMB2   CMB    HMB1    109.470    3.000
+ CCH      C2B    C1B    CHB     117.000    3.000
+ CCH      C2B    C1B    NB      108.000    3.000
+ CCH      CHB    C1B    NB      108.000    3.000
+ CCH      C1B    CHB    HHB     120.000    3.000
+ CCH      C1B    CHB    C4A     120.000    3.000
+ CCH      HHB    CHB    C4A     120.000    3.000
+ CCH      CHB    C4A    NA      108.000    3.000
+ CCH      CHB    C4A    C3A     117.000    3.000
+ CCH      NA     C4A    C3A     108.000    3.000
+ CCH      C4A    NA     FE      126.000    3.000
+ CCH      C4A    NA     C1A     108.000    3.000
+ CCH      FE     NA     C1A     126.000    3.000
+ CCH      C4A    C3A    CMA     126.000    3.000
+ CCH      C4A    C3A    C2A     108.000    3.000
+ CCH      CMA    C3A    C2A     126.000    3.000
+ CCH      C3A    CMA    HMA3    109.470    3.000
+ CCH      C3A    CMA    HMA2    109.470    3.000
+ CCH      C3A    CMA    HMA1    109.470    3.000
+ CCH      HMA3   CMA    HMA2    109.470    3.000
+ CCH      HMA3   CMA    HMA1    109.470    3.000
+ CCH      HMA2   CMA    HMA1    109.470    3.000
+ CCH      C3A    C2A    C1A     108.000    3.000
+ CCH      C3A    C2A    CAA     126.000    3.000
+ CCH      C1A    C2A    CAA     126.000    3.000
+ CCH      C2A    C1A    NA      108.000    3.000
+ CCH      C2A    C1A    CHA     117.000    3.000
+ CCH      NA     C1A    CHA     108.000    3.000
+ CCH      C2A    CAA    HAA1    109.470    3.000
+ CCH      C2A    CAA    HAA2    109.470    3.000
+ CCH      C2A    CAA    CBA     109.470    3.000
+ CCH      HAA1   CAA    HAA2    107.900    3.000
+ CCH      HAA1   CAA    CBA     109.470    3.000
+ CCH      HAA2   CAA    CBA     109.470    3.000
+ CCH      CAA    CBA    HBA1    109.470    3.000
+ CCH      CAA    CBA    HBA2    109.470    3.000
+ CCH      CAA    CBA    CGA     109.470    3.000
+ CCH      HBA1   CBA    HBA2    107.900    3.000
+ CCH      HBA1   CBA    CGA     109.470    3.000
+ CCH      HBA2   CBA    CGA     109.470    3.000
+ CCH      CBA    CGA    O1A     118.500    3.000
+ CCH      CBA    CGA    O2A     118.500    3.000
+ CCH      O1A    CGA    O2A     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CCH      var_1    O2D    CGD    CBD    CAD       11.239   20.000   3
+ CCH      var_2    CGD    CBD    CAD    C3D      179.529   20.000   3
+ CCH      var_3    CBD    CAD    C3D    C2D      105.772   20.000   2
+ CCH      CONST_1  CAD    C3D    C4D    CHA        0.000    0.000   0
+ CCH      var_4    C3D    C4D    CHA    C1A      180.000   20.000   1
+ CCH      CONST_2  CAD    C3D    C2D    C1D      180.000    0.000   0
+ CCH      var_5    C3D    C2D    CMD    HMD1     -11.047   20.000   1
+ CCH      CONST_3  C3D    C2D    C1D    CHD      180.000    0.000   0
+ CCH      CONST_4  C2D    C1D    ND     FE      -150.000    0.000   0
+ CCH      CONST_5  C1D    ND     C4D    C3D        0.000    0.000   0
+ CCH      var_6    C2D    C1D    CHD    C4C      180.000   20.000   1
+ CCH      var_7    C1D    CHD    C4C    C3C      180.000   20.000   1
+ CCH      var_8    CHD    C4C    NC     FE        30.000   20.000   1
+ CCH      CONST_6  C4C    NC     C1C    C2C        0.000    0.000   0
+ CCH      var_9    C1C    NC     FE     NB         0.000   20.000   1
+ CCH      var_10   C4A    NA     FE     NB         0.000   20.000   1
+ CCH      var_11   C4B    NB     FE     NC         0.000   20.000   1
+ CCH      var_12   C1D    ND     FE     NC         0.000   20.000   1
+ CCH      CONST_7  CHD    C4C    C3C    C2C      180.000    0.000   0
+ CCH      var_13   C4C    C3C    CAC    CBC      145.834   20.000   1
+ CCH      CONST_8  C3C    CAC    CBC    HBC1      -0.030    0.000   0
+ CCH      CONST_9  C4C    C3C    C2C    C1C        0.000    0.000   0
+ CCH      var_14   C3C    C2C    CMC    HMC1      19.639   20.000   1
+ CCH      CONST_10 C3C    C2C    C1C    CHC      180.000    0.000   0
+ CCH      var_15   C2C    C1C    CHC    C4B      180.000   20.000   1
+ CCH      var_16   C1C    CHC    C4B    C3B      180.000   20.000   1
+ CCH      CONST_11 CHC    C4B    NB     FE       -30.000    0.000   0
+ CCH      CONST_12 C4B    NB     C1B    C2B        0.000    0.000   0
+ CCH      CONST_13 CHC    C4B    C3B    C2B      180.000    0.000   0
+ CCH      var_17   C4B    C3B    CAB    OBB      145.171   20.000   1
+ CCH      CONST_14 C4B    C3B    C2B    C1B        0.000    0.000   0
+ CCH      var_18   C3B    C2B    CMB    HMB1       8.997   20.000   1
+ CCH      CONST_15 C3B    C2B    C1B    CHB      180.000    0.000   0
+ CCH      var_19   C2B    C1B    CHB    C4A      180.000   20.000   1
+ CCH      var_20   C1B    CHB    C4A    C3A      180.000   20.000   1
+ CCH      CONST_16 CHB    C4A    NA     FE         0.000    0.000   0
+ CCH      CONST_17 C4A    NA     C1A    C2A        0.000    0.000   0
+ CCH      CONST_18 CHB    C4A    C3A    C2A      180.000    0.000   0
+ CCH      var_21   C4A    C3A    CMA    HMA1     179.969   20.000   1
+ CCH      CONST_19 C4A    C3A    C2A    CAA      180.000    0.000   0
+ CCH      CONST_20 C3A    C2A    C1A    NA         0.000    0.000   0
+ CCH      var_22   C2A    C1A    CHA    C4D      180.000   20.000   1
+ CCH      var_23   C3A    C2A    CAA    CBA      -82.988   20.000   2
+ CCH      var_24   C2A    CAA    CBA    CGA     -178.277   20.000   3
+ CCH      var_25   CAA    CBA    CGA    O2A       94.548   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CCH      chir_01  NC     FE     C1C    C4C       negativ
+ CCH      chir_02  ND     FE     C4D    C1D       negativ
+ CCH      chir_03  FE     NC     NA     NB        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CCH      plan-1    NA        0.020
+ CCH      plan-1    FE        0.020
+ CCH      plan-1    C1A       0.020
+ CCH      plan-1    C4A       0.020
+ CCH      plan-1    C2A       0.020
+ CCH      plan-1    C3A       0.020
+ CCH      plan-1    CHA       0.020
+ CCH      plan-1    CHB       0.020
+ CCH      plan-1    CAA       0.020
+ CCH      plan-1    CMA       0.020
+ CCH      plan-1    HHA       0.020
+ CCH      plan-1    HHB       0.020
+ CCH      plan-2    NB        0.020
+ CCH      plan-2    FE        0.020
+ CCH      plan-2    C1B       0.020
+ CCH      plan-2    C4B       0.020
+ CCH      plan-2    C2B       0.020
+ CCH      plan-2    C3B       0.020
+ CCH      plan-2    CHB       0.020
+ CCH      plan-2    CHC       0.020
+ CCH      plan-2    CMB       0.020
+ CCH      plan-2    CAB       0.020
+ CCH      plan-2    HHB       0.020
+ CCH      plan-2    HHC       0.020
+ CCH      plan-2    HAB       0.020
+ CCH      plan-3    CHA       0.020
+ CCH      plan-3    C1A       0.020
+ CCH      plan-3    C4D       0.020
+ CCH      plan-3    HHA       0.020
+ CCH      plan-4    C4D       0.020
+ CCH      plan-4    ND        0.020
+ CCH      plan-4    CHA       0.020
+ CCH      plan-4    C3D       0.020
+ CCH      plan-4    C1D       0.020
+ CCH      plan-4    C2D       0.020
+ CCH      plan-4    CHD       0.020
+ CCH      plan-4    CMD       0.020
+ CCH      plan-4    CAD       0.020
+ CCH      plan-4    HHA       0.020
+ CCH      plan-4    HHD       0.020
+ CCH      plan-5    CHB       0.020
+ CCH      plan-5    C1B       0.020
+ CCH      plan-5    C4A       0.020
+ CCH      plan-5    HHB       0.020
+ CCH      plan-6    C1C       0.020
+ CCH      plan-6    NC        0.020
+ CCH      plan-6    CHC       0.020
+ CCH      plan-6    C2C       0.020
+ CCH      plan-6    C4C       0.020
+ CCH      plan-6    C3C       0.020
+ CCH      plan-6    CHD       0.020
+ CCH      plan-6    CMC       0.020
+ CCH      plan-6    CAC       0.020
+ CCH      plan-6    HHC       0.020
+ CCH      plan-6    HHD       0.020
+ CCH      plan-6    HAC       0.020
+ CCH      plan-7    CHC       0.020
+ CCH      plan-7    C1C       0.020
+ CCH      plan-7    C4B       0.020
+ CCH      plan-7    HHC       0.020
+ CCH      plan-8    CHD       0.020
+ CCH      plan-8    C1D       0.020
+ CCH      plan-8    C4C       0.020
+ CCH      plan-8    HHD       0.020
+ CCH      plan-9    CGA       0.020
+ CCH      plan-9    CBA       0.020
+ CCH      plan-9    O1A       0.020
+ CCH      plan-9    O2A       0.020
+ CCH      plan-10   CAB       0.020
+ CCH      plan-10   C3B       0.020
+ CCH      plan-10   OBB       0.020
+ CCH      plan-10   HAB       0.020
+ CCH      plan-11   CAC       0.020
+ CCH      plan-11   C3C       0.020
+ CCH      plan-11   CBC       0.020
+ CCH      plan-11   HAC       0.020
+ CCH      plan-11   HBC1      0.020
+ CCH      plan-11   HBC2      0.020
+ CCH      plan-12   CGD       0.020
+ CCH      plan-12   CBD       0.020
+ CCH      plan-12   O1D       0.020
+ CCH      plan-12   O2D       0.020
+# ------------------------------------------------------

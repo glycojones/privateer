@@ -1,0 +1,129 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ATQ     ATQ      2-AMINOTHIAZOLINE     NON-POLYMER     12     6     .     
+#
+data_comp_ATQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ATQ     N1      N       NRD5    0       0.327       9.020       65.946      
+ATQ     C2      C       CR5     0       0.167       10.055      66.707      
+ATQ     S3      S       S2      0       0.630       9.838       68.377      
+ATQ     C4      C       CH2     0       1.030       8.120       68.131      
+ATQ     C5      C       CH2     0       0.917       7.873       66.647      
+ATQ     N2      N       NH2     0       -0.318      11.243      66.328      
+ATQ     H41     H       H       0       0.401       7.550       68.625      
+ATQ     H42     H       H       0       1.943       7.934       68.443      
+ATQ     H51     H       H       0       1.810       7.692       66.280      
+ATQ     H52     H       H       0       0.361       7.077       66.493      
+ATQ     HN21    H       H       0       -0.834      11.300      65.632      
+ATQ     HN22    H       H       0       -0.116      11.959      66.776      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ATQ       N1        C2        DOUBLE    n         1.292     0.020     1.292     0.020     
+ATQ       N1        C5        SINGLE    n         1.459     0.019     1.459     0.019     
+ATQ       C2        S3        SINGLE    n         1.752     0.017     1.752     0.017     
+ATQ       C2        N2        SINGLE    n         1.337     0.013     1.337     0.013     
+ATQ       S3        C4        SINGLE    n         1.787     0.020     1.787     0.020     
+ATQ       C4        C5        SINGLE    n         1.505     0.015     1.505     0.015     
+ATQ       C4        H41       SINGLE    n         1.089     0.010     0.983     0.010     
+ATQ       C4        H42       SINGLE    n         1.089     0.010     0.983     0.010     
+ATQ       C5        H51       SINGLE    n         1.089     0.010     0.983     0.010     
+ATQ       C5        H52       SINGLE    n         1.089     0.010     0.983     0.010     
+ATQ       N2        HN21      SINGLE    n         1.016     0.010     0.868     0.020     
+ATQ       N2        HN22      SINGLE    n         1.016     0.010     0.868     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ATQ          C2          N1          C5     110.991    3.00
+ATQ          N1          C2          S3     116.399    2.36
+ATQ          N1          C2          N2     125.595    1.72
+ATQ          S3          C2          N2     118.006    1.50
+ATQ          C2          S3          C4      95.004    1.69
+ATQ          S3          C4          C5     106.376    1.50
+ATQ          S3          C4         H41     110.144    1.50
+ATQ          S3          C4         H42     110.144    1.50
+ATQ          C5          C4         H41     110.433    1.50
+ATQ          C5          C4         H42     110.433    1.50
+ATQ         H41          C4         H42     108.760    1.50
+ATQ          N1          C5          C4     111.136    1.50
+ATQ          N1          C5         H51     109.454    1.50
+ATQ          N1          C5         H52     109.454    1.50
+ATQ          C4          C5         H51     109.397    1.50
+ATQ          C4          C5         H52     109.397    1.50
+ATQ         H51          C5         H52     107.999    1.50
+ATQ          C2          N2        HN21     120.060    1.50
+ATQ          C2          N2        HN22     120.060    1.50
+ATQ        HN21          N2        HN22     119.880    2.21
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ATQ             sp2_sp2_2          N2          C2          N1          C5     180.000   10.00     2
+ATQ             sp2_sp3_3          C2          N1          C5          C4       0.000   10.00     6
+ATQ             sp2_sp2_3          N1          C2          N2        HN21     180.000   10.00     2
+ATQ             sp3_sp3_1          C5          C4          S3          C2      60.000   10.00     3
+ATQ             sp3_sp3_4          S3          C4          C5          N1     -60.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ATQ    plan-1          C2   0.020
+ATQ    plan-1          N1   0.020
+ATQ    plan-1          N2   0.020
+ATQ    plan-1          S3   0.020
+ATQ    plan-2          C2   0.020
+ATQ    plan-2        HN21   0.020
+ATQ    plan-2        HN22   0.020
+ATQ    plan-2          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ATQ SMILES           ACDLabs              10.04 "N1=C(SCC1)N"
+ATQ SMILES_CANONICAL CACTVS               3.341 NC1=NCCS1
+ATQ SMILES           CACTVS               3.341 NC1=NCCS1
+ATQ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1CSC(=N1)N"
+ATQ SMILES           "OpenEye OEToolkits" 1.5.0 "C1CSC(=N1)N"
+ATQ InChI            InChI                1.03  "InChI=1S/C3H6N2S/c4-3-5-1-2-6-3/h1-2H2,(H2,4,5)"
+ATQ InChIKey         InChI                1.03  REGFWZVTTFGQOJ-UHFFFAOYSA-N
+ATQ ?                acedrg               202         "dictionary generator"                  
+ATQ ?                acedrg_database      11          "data source"                           
+ATQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ATQ ?                refmac5              5.8.0189    "optimization tool"                     

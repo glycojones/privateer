@@ -1,0 +1,149 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PFB     PFB      "2,3,4,5,6-PENTAFLUOROBENZYL ALCOHOL"     NON-POLYMER     16     13     .     
+#
+data_comp_PFB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PFB     C1      C       CR6     0       -0.563      0.014       -0.196      
+PFB     C2      C       CR6     0       0.145       1.216       -0.178      
+PFB     C3      C       CR6     0       1.522       1.256       -0.026      
+PFB     C4      C       CR6     0       2.233       0.083       0.115       
+PFB     C5      C       CR6     0       1.565       -1.124      0.105       
+PFB     C6      C       CR6     0       0.188       -1.151      -0.047      
+PFB     C7      C       CH2     0       -2.065      -0.020      -0.359      
+PFB     F2      F       F       0       -0.499      2.385       -0.311      
+PFB     F3      F       F       0       2.165       2.434       -0.017      
+PFB     F4      F       F       0       3.567       0.116       0.263       
+PFB     F5      F       F       0       2.251       -2.270      0.243       
+PFB     F6      F       F       0       -0.412      -2.351      -0.049      
+PFB     O1      O       OH1     0       -2.728      0.066       0.894       
+PFB     H71     H       H       0       -2.336      -0.847      -0.804      
+PFB     H72     H       H       0       -2.357      0.724       -0.923      
+PFB     HO1     H       H       0       -3.564      -0.013      0.765       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PFB       C1        C2        DOUBLE    y         1.384     0.010     1.384     0.010     
+PFB       C1        C6        SINGLE    y         1.384     0.010     1.384     0.010     
+PFB       C1        C7        SINGLE    n         1.507     0.010     1.507     0.010     
+PFB       C2        C3        SINGLE    y         1.378     0.010     1.378     0.010     
+PFB       C2        F2        SINGLE    n         1.341     0.010     1.341     0.010     
+PFB       C3        C4        DOUBLE    y         1.371     0.010     1.371     0.010     
+PFB       C3        F3        SINGLE    n         1.342     0.010     1.342     0.010     
+PFB       C4        C5        SINGLE    y         1.372     0.010     1.372     0.010     
+PFB       C4        F4        SINGLE    n         1.343     0.010     1.343     0.010     
+PFB       C5        C6        DOUBLE    y         1.378     0.010     1.378     0.010     
+PFB       C5        F5        SINGLE    n         1.342     0.010     1.342     0.010     
+PFB       C6        F6        SINGLE    n         1.341     0.010     1.341     0.010     
+PFB       C7        O1        SINGLE    n         1.420     0.014     1.420     0.014     
+PFB       C7        H71       SINGLE    n         1.089     0.010     0.979     0.018     
+PFB       C7        H72       SINGLE    n         1.089     0.010     0.979     0.018     
+PFB       O1        HO1       SINGLE    n         0.970     0.012     0.849     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PFB          C2          C1          C6     116.627    1.50
+PFB          C2          C1          C7     121.686    1.50
+PFB          C6          C1          C7     121.686    1.50
+PFB          C1          C2          C3     122.129    1.50
+PFB          C1          C2          F2     119.815    1.50
+PFB          C3          C2          F2     118.055    1.50
+PFB          C2          C3          C4     119.810    1.50
+PFB          C2          C3          F3     120.208    1.50
+PFB          C4          C3          F3     119.981    1.50
+PFB          C3          C4          C5     119.494    1.50
+PFB          C3          C4          F4     120.253    1.50
+PFB          C5          C4          F4     120.253    1.50
+PFB          C4          C5          C6     119.810    1.50
+PFB          C4          C5          F5     119.981    1.50
+PFB          C6          C5          F5     120.208    1.50
+PFB          C1          C6          C5     122.129    1.50
+PFB          C1          C6          F6     119.815    1.50
+PFB          C5          C6          F6     118.055    1.50
+PFB          C1          C7          O1     111.937    1.71
+PFB          C1          C7         H71     109.800    1.50
+PFB          C1          C7         H72     109.800    1.50
+PFB          O1          C7         H71     109.107    1.50
+PFB          O1          C7         H72     109.107    1.50
+PFB         H71          C7         H72     107.986    1.50
+PFB          C7          O1         HO1     108.716    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PFB       const_sp2_sp2_4          C7          C1          C2          F2       0.000   10.00     2
+PFB              const_24          C7          C1          C6          F6       0.000   10.00     2
+PFB             sp2_sp3_2          C2          C1          C7          O1     -90.000   10.00     6
+PFB       const_sp2_sp2_8          F2          C2          C3          F3       0.000   10.00     2
+PFB              const_12          F3          C3          C4          F4       0.000   10.00     2
+PFB              const_16          F4          C4          C5          F5       0.000   10.00     2
+PFB              const_20          F5          C5          C6          F6       0.000   10.00     2
+PFB             sp3_sp3_1          C1          C7          O1         HO1     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PFB    plan-1          C1   0.020
+PFB    plan-1          C2   0.020
+PFB    plan-1          C3   0.020
+PFB    plan-1          C4   0.020
+PFB    plan-1          C5   0.020
+PFB    plan-1          C6   0.020
+PFB    plan-1          C7   0.020
+PFB    plan-1          F2   0.020
+PFB    plan-1          F3   0.020
+PFB    plan-1          F4   0.020
+PFB    plan-1          F5   0.020
+PFB    plan-1          F6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PFB SMILES           ACDLabs              10.04 "Fc1c(c(F)c(F)c(F)c1F)CO"
+PFB SMILES_CANONICAL CACTVS               3.341 "OCc1c(F)c(F)c(F)c(F)c1F"
+PFB SMILES           CACTVS               3.341 "OCc1c(F)c(F)c(F)c(F)c1F"
+PFB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(c1c(c(c(c(c1F)F)F)F)F)O"
+PFB SMILES           "OpenEye OEToolkits" 1.5.0 "C(c1c(c(c(c(c1F)F)F)F)F)O"
+PFB InChI            InChI                1.03  "InChI=1S/C7H3F5O/c8-3-2(1-13)4(9)6(11)7(12)5(3)10/h13H,1H2"
+PFB InChIKey         InChI                1.03  PGJYYCIOYBZTPU-UHFFFAOYSA-N
+PFB ?                acedrg               202         "dictionary generator"                  
+PFB ?                acedrg_database      11          "data source"                           
+PFB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PFB ?                refmac5              5.8.0189    "optimization tool"                     

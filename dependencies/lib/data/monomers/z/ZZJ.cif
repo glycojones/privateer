@@ -1,0 +1,177 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZZJ      ZZJ 'N^2^-methyl-L-alaninamide           ' non-polymer        17   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ZZJ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ZZJ           O      O    O         0.000      0.000    0.000    0.000
+ ZZJ           C      C    C         0.000     -1.204   -0.106   -0.111
+ ZZJ           NXT    N    NH2       0.000     -1.804    0.224   -1.273
+ ZZJ           HXT2   H    H         0.000     -1.255    0.561   -2.055
+ ZZJ           HXT1   H    H         0.000     -2.809    0.138   -1.371
+ ZZJ           CA     C    CH1       0.000     -2.027   -0.606    1.047
+ ZZJ           HA     H    H         0.000     -2.556   -1.523    0.751
+ ZZJ           CB     C    CH3       0.000     -3.045    0.464    1.448
+ ZZJ           HB3C   H    H         0.000     -2.536    1.348    1.733
+ ZZJ           HB2C   H    H         0.000     -3.682    0.673    0.627
+ ZZJ           HB1C   H    H         0.000     -3.625    0.114    2.262
+ ZZJ           N      N    NH1       0.000     -1.145   -0.895    2.185
+ ZZJ           H      H    H         0.000     -0.244   -0.465    2.335
+ ZZJ           CM     C    CH3       0.000     -1.749   -1.894    3.078
+ ZZJ           HM3C   H    H         0.000     -2.673   -1.529    3.449
+ ZZJ           HM2C   H    H         0.000     -1.918   -2.795    2.544
+ ZZJ           HM1C   H    H         0.000     -1.097   -2.087    3.891
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ZZJ      O      n/a    C      START
+ ZZJ      C      O      CA     .
+ ZZJ      NXT    C      HXT1   .
+ ZZJ      HXT2   NXT    .      .
+ ZZJ      HXT1   NXT    .      .
+ ZZJ      CA     C      N      .
+ ZZJ      HA     CA     .      .
+ ZZJ      CB     CA     HB1C   .
+ ZZJ      HB3C   CB     .      .
+ ZZJ      HB2C   CB     .      .
+ ZZJ      HB1C   CB     .      .
+ ZZJ      N      CA     CM     .
+ ZZJ      H      N      .      .
+ ZZJ      CM     N      HM1C   .
+ ZZJ      HM3C   CM     .      .
+ ZZJ      HM2C   CM     .      .
+ ZZJ      HM1C   CM     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZZJ       N         CA        single    1.450     0.020     1.450     0.020     
+ZZJ       CM        N         single    1.450     0.020     1.450     0.020     
+ZZJ       CA        C         single    1.500     0.020     1.500     0.020     
+ZZJ       CB        CA        single    1.524     0.020     1.524     0.020     
+ZZJ       C         O         double    1.220     0.020     1.220     0.020     
+ZZJ       NXT       C         single    1.332     0.020     1.332     0.020     
+ZZJ       H         N         single    1.036     0.016     0.914     0.007     
+ZZJ       HA        CA        single    1.089     0.010     0.989     0.005     
+ZZJ       HM1C      CM        single    1.089     0.010     0.989     0.005     
+ZZJ       HM2C      CM        single    1.089     0.010     0.989     0.005     
+ZZJ       HM3C      CM        single    1.089     0.010     0.989     0.005     
+ZZJ       HB1C      CB        single    1.089     0.010     0.989     0.005     
+ZZJ       HB2C      CB        single    1.089     0.010     0.989     0.005     
+ZZJ       HB3C      CB        single    1.089     0.010     0.989     0.005     
+ZZJ       HXT1      NXT       single    1.016     0.010     0.899     0.007     
+ZZJ       HXT2      NXT       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ZZJ      O      C      NXT     123.000    3.000
+ ZZJ      O      C      CA      120.500    3.000
+ ZZJ      NXT    C      CA      120.000    3.000
+ ZZJ      C      NXT    HXT2    120.000    3.000
+ ZZJ      C      NXT    HXT1    120.000    3.000
+ ZZJ      HXT2   NXT    HXT1    120.000    3.000
+ ZZJ      C      CA     HA      108.810    3.000
+ ZZJ      C      CA     CB      109.470    3.000
+ ZZJ      C      CA     N       111.600    3.000
+ ZZJ      HA     CA     CB      108.340    3.000
+ ZZJ      HA     CA     N       108.550    3.000
+ ZZJ      CB     CA     N       110.000    3.000
+ ZZJ      CA     CB     HB3C    109.470    3.000
+ ZZJ      CA     CB     HB2C    109.470    3.000
+ ZZJ      CA     CB     HB1C    109.470    3.000
+ ZZJ      HB3C   CB     HB2C    109.470    3.000
+ ZZJ      HB3C   CB     HB1C    109.470    3.000
+ ZZJ      HB2C   CB     HB1C    109.470    3.000
+ ZZJ      CA     N      H       118.500    3.000
+ ZZJ      CA     N      CM      120.000    3.000
+ ZZJ      H      N      CM      118.500    3.000
+ ZZJ      N      CM     HM3C    109.470    3.000
+ ZZJ      N      CM     HM2C    109.470    3.000
+ ZZJ      N      CM     HM1C    109.470    3.000
+ ZZJ      HM3C   CM     HM2C    109.470    3.000
+ ZZJ      HM3C   CM     HM1C    109.470    3.000
+ ZZJ      HM2C   CM     HM1C    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ZZJ      CONST_1  O      C      NXT    HXT1     180.000    0.000   0
+ ZZJ      var_1    O      C      CA     N         -0.018   20.000   3
+ ZZJ      var_2    C      CA     CB     HB1C    -179.993   20.000   3
+ ZZJ      var_3    C      CA     N      CM      -155.021   20.000   3
+ ZZJ      var_4    CA     N      CM     HM1C    -179.970   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ZZJ      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ZZJ      plan-1    N         0.020
+ ZZJ      plan-1    CA        0.020
+ ZZJ      plan-1    CM        0.020
+ ZZJ      plan-1    H         0.020
+ ZZJ      plan-2    C         0.020
+ ZZJ      plan-2    CA        0.020
+ ZZJ      plan-2    O         0.020
+ ZZJ      plan-2    NXT       0.020
+ ZZJ      plan-2    HXT2      0.020
+ ZZJ      plan-2    HXT1      0.020
+ ZZJ      plan-3    NXT       0.020
+ ZZJ      plan-3    C         0.020
+ ZZJ      plan-3    HXT1      0.020
+ ZZJ      plan-3    HXT2      0.020
+# ------------------------------------------------------

@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5MP     5MP      5-METHYLPYRROLE     NON-POLYMER     13     6     .     
+#
+data_comp_5MP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+5MP     C1      C       CR5     0       26.734      5.949       4.346       
+5MP     C2      C       CR15    0       27.120      7.044       5.176       
+5MP     C3      C       CR15    0       27.376      6.128       3.141       
+5MP     C4      C       CH3     0       25.812      4.827       4.716       
+5MP     C5      C       CR15    0       27.967      7.827       4.447       
+5MP     N6      N       NR5     0       28.119      7.268       3.216       
+5MP     HC2     H       H       0       26.838      7.192       6.062       
+5MP     HC3     H       H       0       27.317      5.562       2.388       
+5MP     HC41    H       H       0       26.198      4.311       5.443       
+5MP     HC42    H       H       0       25.676      4.247       3.949       
+5MP     HC43    H       H       0       24.956      5.187       5.000       
+5MP     HC5     H       H       0       28.391      8.624       4.721       
+5MP     HN6     H       H       0       28.626      7.597       2.560       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5MP       C1        C2        SINGLE    y         1.430     0.013     1.430     0.013     
+5MP       C1        C3        DOUBLE    y         1.379     0.011     1.379     0.011     
+5MP       C1        C4        SINGLE    n         1.499     0.010     1.499     0.010     
+5MP       C2        C5        DOUBLE    y         1.364     0.014     1.364     0.014     
+5MP       C3        N6        SINGLE    y         1.362     0.010     1.362     0.010     
+5MP       C5        N6        SINGLE    y         1.358     0.010     1.358     0.010     
+5MP       C2        HC2       SINGLE    n         1.082     0.013     0.942     0.016     
+5MP       C3        HC3       SINGLE    n         1.082     0.013     0.944     0.010     
+5MP       C4        HC41      SINGLE    n         1.089     0.010     0.971     0.017     
+5MP       C4        HC42      SINGLE    n         1.089     0.010     0.971     0.017     
+5MP       C4        HC43      SINGLE    n         1.089     0.010     0.971     0.017     
+5MP       C5        HC5       SINGLE    n         1.082     0.013     0.943     0.010     
+5MP       N6        HN6       SINGLE    n         1.016     0.010     0.892     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+5MP          C2          C1          C3     107.194    1.50
+5MP          C2          C1          C4     126.292    1.50
+5MP          C3          C1          C4     126.514    1.50
+5MP          C1          C2          C5     107.671    1.50
+5MP          C1          C2         HC2     125.769    1.50
+5MP          C5          C2         HC2     126.560    1.50
+5MP          C1          C3          N6     108.495    1.50
+5MP          C1          C3         HC3     126.155    2.48
+5MP          N6          C3         HC3     125.349    1.50
+5MP          C1          C4        HC41     109.729    1.50
+5MP          C1          C4        HC42     109.729    1.50
+5MP          C1          C4        HC43     109.729    1.50
+5MP        HC41          C4        HC42     109.190    1.68
+5MP        HC41          C4        HC43     109.190    1.68
+5MP        HC42          C4        HC43     109.190    1.68
+5MP          C2          C5          N6     107.901    1.50
+5MP          C2          C5         HC5     127.658    1.85
+5MP          N6          C5         HC5     124.441    3.00
+5MP          C3          N6          C5     108.738    1.50
+5MP          C3          N6         HN6     125.425    1.50
+5MP          C5          N6         HN6     125.837    2.46
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+5MP       const_sp2_sp2_3          C4          C1          C2          C5     180.000   10.00     2
+5MP              const_19          C4          C1          C3          N6     180.000   10.00     2
+5MP             sp2_sp3_1          C2          C1          C4        HC41     150.000   10.00     6
+5MP       const_sp2_sp2_5          C1          C2          C5          N6       0.000   10.00     2
+5MP              const_13          C1          C3          N6          C5       0.000   10.00     2
+5MP       const_sp2_sp2_9          C2          C5          N6          C3       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+5MP    plan-1          C1   0.020
+5MP    plan-1          C2   0.020
+5MP    plan-1          C3   0.020
+5MP    plan-1          C4   0.020
+5MP    plan-1          C5   0.020
+5MP    plan-1         HC2   0.020
+5MP    plan-1         HC3   0.020
+5MP    plan-1         HC5   0.020
+5MP    plan-1         HN6   0.020
+5MP    plan-1          N6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+5MP SMILES           ACDLabs              10.04 "c1cc(cn1)C"
+5MP SMILES_CANONICAL CACTVS               3.341 "Cc1c[nH]cc1"
+5MP SMILES           CACTVS               3.341 "Cc1c[nH]cc1"
+5MP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "Cc1cc[nH]c1"
+5MP SMILES           "OpenEye OEToolkits" 1.5.0 "Cc1cc[nH]c1"
+5MP InChI            InChI                1.03  InChI=1S/C5H7N/c1-5-2-3-6-4-5/h2-4,6H,1H3
+5MP InChIKey         InChI                1.03  FEKWWZCCJDUWLY-UHFFFAOYSA-N
+5MP ?                acedrg               202         "dictionary generator"                  
+5MP ?                acedrg_database      11          "data source"                           
+5MP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+5MP ?                refmac5              5.8.0189    "optimization tool"                     

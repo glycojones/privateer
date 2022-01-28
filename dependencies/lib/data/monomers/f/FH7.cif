@@ -1,0 +1,211 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FH7      FH7 'N^5^-formyl-N^5^-hydroxy-D-ornithine' non-polymer        23  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FH7
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FH7           OX0    O    OC       -0.500      0.000    0.000    0.000
+ FH7           C      C    C         0.000     -0.884    0.875   -0.128
+ FH7           O      O    OC       -0.500     -0.633    2.066    0.162
+ FH7           CA     C    CH1       0.000     -2.253    0.497   -0.634
+ FH7           HA     H    H         0.000     -2.153   -0.242   -1.442
+ FH7           N      N    NH2       0.000     -2.935    1.693   -1.145
+ FH7           HN2    H    H         0.000     -2.500    2.604   -1.066
+ FH7           HN1    H    H         0.000     -3.847    1.615   -1.581
+ FH7           CB     C    CH2       0.000     -3.070   -0.106    0.511
+ FH7           HB1C   H    H         0.000     -3.244    0.655    1.274
+ FH7           HB2C   H    H         0.000     -2.520   -0.941    0.950
+ FH7           CG     C    CH2       0.000     -4.412   -0.606   -0.029
+ FH7           HG1C   H    H         0.000     -4.237   -1.366   -0.792
+ FH7           HG2C   H    H         0.000     -4.961    0.230   -0.468
+ FH7           CD     C    CH2       0.000     -5.229   -1.208    1.116
+ FH7           HD1C   H    H         0.000     -5.403   -0.447    1.878
+ FH7           HD2C   H    H         0.000     -4.678   -2.043    1.555
+ FH7           NE     N    N         0.000     -6.514   -1.687    0.600
+ FH7           OZ     O    OH1       0.000     -7.697   -0.953    0.856
+ FH7           H11    H    H         0.000     -8.455   -1.399    0.449
+ FH7           CZ     C    C1        0.000     -6.570   -2.824   -0.120
+ FH7           HZ     H    H         0.000     -5.670   -3.382   -0.316
+ FH7           OH     O    O         0.000     -7.634   -3.220   -0.548
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FH7      OX0    n/a    C      START
+ FH7      C      OX0    CA     .
+ FH7      O      C      .      .
+ FH7      CA     C      CB     .
+ FH7      HA     CA     .      .
+ FH7      N      CA     HN1    .
+ FH7      HN2    N      .      .
+ FH7      HN1    N      .      .
+ FH7      CB     CA     CG     .
+ FH7      HB1C   CB     .      .
+ FH7      HB2C   CB     .      .
+ FH7      CG     CB     CD     .
+ FH7      HG1C   CG     .      .
+ FH7      HG2C   CG     .      .
+ FH7      CD     CG     NE     .
+ FH7      HD1C   CD     .      .
+ FH7      HD2C   CD     .      .
+ FH7      NE     CD     CZ     .
+ FH7      OZ     NE     H11    .
+ FH7      H11    OZ     .      .
+ FH7      CZ     NE     OH     .
+ FH7      HZ     CZ     .      .
+ FH7      OH     CZ     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FH7       N         CA        single    1.450     0.020     1.450     0.020     
+FH7       CB        CA        single    1.524     0.020     1.524     0.020     
+FH7       CA        C         single    1.500     0.020     1.500     0.020     
+FH7       CG        CB        single    1.524     0.020     1.524     0.020     
+FH7       CD        CG        single    1.524     0.020     1.524     0.020     
+FH7       NE        CD        single    1.455     0.020     1.455     0.020     
+FH7       OZ        NE        single    1.392     0.020     1.392     0.020     
+FH7       CZ        NE        single    1.260     0.020     1.260     0.020     
+FH7       OH        CZ        double    1.220     0.020     1.220     0.020     
+FH7       O         C         deloc     1.250     0.020     1.250     0.020     
+FH7       C         OX0       deloc     1.250     0.020     1.250     0.020     
+FH7       HN1       N         single    1.036     0.016     0.914     0.007     
+FH7       HN2       N         single    1.036     0.016     0.914     0.007     
+FH7       HA        CA        single    1.089     0.010     0.989     0.005     
+FH7       HB1C      CB        single    1.089     0.010     0.989     0.005     
+FH7       HB2C      CB        single    1.089     0.010     0.989     0.005     
+FH7       HG1C      CG        single    1.089     0.010     0.989     0.005     
+FH7       HG2C      CG        single    1.089     0.010     0.989     0.005     
+FH7       HD1C      CD        single    1.089     0.010     0.989     0.005     
+FH7       HD2C      CD        single    1.089     0.010     0.989     0.005     
+FH7       HZ        CZ        single    1.082     0.013     0.975     0.010     
+FH7       H11       OZ        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FH7      OX0    C      O       123.000    3.000
+ FH7      OX0    C      CA      118.500    3.000
+ FH7      O      C      CA      118.500    3.000
+ FH7      C      CA     HA      108.810    3.000
+ FH7      C      CA     N       109.470    3.000
+ FH7      C      CA     CB      109.470    3.000
+ FH7      HA     CA     N       109.470    3.000
+ FH7      HA     CA     CB      108.340    3.000
+ FH7      N      CA     CB      109.470    3.000
+ FH7      CA     N      HN2     120.000    3.000
+ FH7      CA     N      HN1     120.000    3.000
+ FH7      HN2    N      HN1     120.000    3.000
+ FH7      CA     CB     HB1C    109.470    3.000
+ FH7      CA     CB     HB2C    109.470    3.000
+ FH7      CA     CB     CG      111.000    3.000
+ FH7      HB1C   CB     HB2C    107.900    3.000
+ FH7      HB1C   CB     CG      109.470    3.000
+ FH7      HB2C   CB     CG      109.470    3.000
+ FH7      CB     CG     HG1C    109.470    3.000
+ FH7      CB     CG     HG2C    109.470    3.000
+ FH7      CB     CG     CD      111.000    3.000
+ FH7      HG1C   CG     HG2C    107.900    3.000
+ FH7      HG1C   CG     CD      109.470    3.000
+ FH7      HG2C   CG     CD      109.470    3.000
+ FH7      CG     CD     HD1C    109.470    3.000
+ FH7      CG     CD     HD2C    109.470    3.000
+ FH7      CG     CD     NE      105.000    3.000
+ FH7      HD1C   CD     HD2C    107.900    3.000
+ FH7      HD1C   CD     NE      109.470    3.000
+ FH7      HD2C   CD     NE      109.470    3.000
+ FH7      CD     NE     OZ      120.000    3.000
+ FH7      CD     NE     CZ      120.000    3.000
+ FH7      OZ     NE     CZ      120.000    3.000
+ FH7      NE     OZ     H11     109.470    3.000
+ FH7      NE     CZ     HZ      120.000    3.000
+ FH7      NE     CZ     OH      120.000    3.000
+ FH7      HZ     CZ     OH      123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FH7      var_1    OX0    C      CA     CB        79.998   20.000   3
+ FH7      var_2    C      CA     N      HN1      176.018   20.000   1
+ FH7      var_3    C      CA     CB     CG      -174.966   20.000   3
+ FH7      var_4    CA     CB     CG     CD      -179.998   20.000   3
+ FH7      var_5    CB     CG     CD     NE      -179.977   20.000   3
+ FH7      var_6    CG     CD     NE     CZ        74.959   20.000   1
+ FH7      var_7    CD     NE     OZ     H11      179.965   20.000   1
+ FH7      var_8    CD     NE     CZ     OH      -179.953   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FH7      chir_01  CA     N      CB     C         positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FH7      plan-1    N         0.020
+ FH7      plan-1    CA        0.020
+ FH7      plan-1    HN1       0.020
+ FH7      plan-1    HN2       0.020
+ FH7      plan-2    NE        0.020
+ FH7      plan-2    CD        0.020
+ FH7      plan-2    OZ        0.020
+ FH7      plan-2    CZ        0.020
+ FH7      plan-2    HZ        0.020
+ FH7      plan-3    CZ        0.020
+ FH7      plan-3    NE        0.020
+ FH7      plan-3    OH        0.020
+ FH7      plan-3    HZ        0.020
+ FH7      plan-4    C         0.020
+ FH7      plan-4    CA        0.020
+ FH7      plan-4    O         0.020
+ FH7      plan-4    OX0       0.020
+# ------------------------------------------------------

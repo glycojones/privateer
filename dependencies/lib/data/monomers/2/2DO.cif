@@ -1,0 +1,206 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2DO      2DO '(2S)-2-AMINOHEXANE-1,1-DIOL         ' non-polymer        24   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_2DO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 2DO           OXT    O    OH1       0.000      0.000    0.000    0.000
+ 2DO           HXT    H    H         0.000      0.087   -0.008   -0.963
+ 2DO           C      C    CH1       0.000     -1.187   -0.703    0.377
+ 2DO           HC     H    H         0.000     -1.285   -0.695    1.471
+ 2DO           O      O    OH1       0.000     -1.107   -2.053   -0.084
+ 2DO           HO     H    H         0.000     -0.338   -2.483    0.313
+ 2DO           CA     C    CH1       0.000     -2.404   -0.020   -0.250
+ 2DO           HCA    H    H         0.000     -2.305   -0.028   -1.344
+ 2DO           N      N    NH2       0.000     -3.623   -0.742    0.138
+ 2DO           H2     H    H         0.000     -4.222   -1.152   -0.569
+ 2DO           H      H    H         0.000     -3.874   -0.834    1.116
+ 2DO           CB     C    CH2       0.000     -2.488    1.425    0.244
+ 2DO           HB2    H    H         0.000     -1.546    1.936    0.035
+ 2DO           HB3    H    H         0.000     -2.674    1.432    1.320
+ 2DO           CG     C    CH2       0.000     -3.631    2.144   -0.477
+ 2DO           HG2    H    H         0.000     -4.572    1.631   -0.269
+ 2DO           HG3    H    H         0.000     -3.443    2.136   -1.553
+ 2DO           CD     C    CH2       0.000     -3.716    3.591    0.017
+ 2DO           HD2    H    H         0.000     -2.774    4.102   -0.191
+ 2DO           HD3    H    H         0.000     -3.902    3.597    1.093
+ 2DO           CE     C    CH3       0.000     -4.858    4.309   -0.704
+ 2DO           HE3    H    H         0.000     -4.679    4.303   -1.749
+ 2DO           HE2    H    H         0.000     -5.774    3.814   -0.503
+ 2DO           HE1    H    H         0.000     -4.919    5.311   -0.365
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 2DO      OXT    n/a    C      START
+ 2DO      HXT    OXT    .      .
+ 2DO      C      OXT    CA     .
+ 2DO      HC     C      .      .
+ 2DO      O      C      HO     .
+ 2DO      HO     O      .      .
+ 2DO      CA     C      CB     .
+ 2DO      HCA    CA     .      .
+ 2DO      N      CA     H      .
+ 2DO      H2     N      .      .
+ 2DO      H      N      .      .
+ 2DO      CB     CA     CG     .
+ 2DO      HB2    CB     .      .
+ 2DO      HB3    CB     .      .
+ 2DO      CG     CB     CD     .
+ 2DO      HG2    CG     .      .
+ 2DO      HG3    CG     .      .
+ 2DO      CD     CG     CE     .
+ 2DO      HD2    CD     .      .
+ 2DO      HD3    CD     .      .
+ 2DO      CE     CD     HE1    .
+ 2DO      HE3    CE     .      .
+ 2DO      HE2    CE     .      .
+ 2DO      HE1    CE     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2DO       N         CA        single    1.450     0.020     1.450     0.020     
+2DO       H         N         single    1.036     0.016     0.914     0.007     
+2DO       H2        N         single    1.036     0.016     0.914     0.007     
+2DO       CA        C         single    1.524     0.020     1.524     0.020     
+2DO       CB        CA        single    1.524     0.020     1.524     0.020     
+2DO       HCA       CA        single    1.089     0.010     0.989     0.005     
+2DO       O         C         single    1.432     0.020     1.432     0.020     
+2DO       C         OXT       single    1.432     0.020     1.432     0.020     
+2DO       HC        C         single    1.089     0.010     0.989     0.005     
+2DO       CG        CB        single    1.524     0.020     1.524     0.020     
+2DO       HB2       CB        single    1.089     0.010     0.989     0.005     
+2DO       HB3       CB        single    1.089     0.010     0.989     0.005     
+2DO       CD        CG        single    1.524     0.020     1.524     0.020     
+2DO       HG2       CG        single    1.089     0.010     0.989     0.005     
+2DO       HG3       CG        single    1.089     0.010     0.989     0.005     
+2DO       CE        CD        single    1.513     0.020     1.513     0.020     
+2DO       HD2       CD        single    1.089     0.010     0.989     0.005     
+2DO       HD3       CD        single    1.089     0.010     0.989     0.005     
+2DO       HE1       CE        single    1.089     0.010     0.989     0.005     
+2DO       HE2       CE        single    1.089     0.010     0.989     0.005     
+2DO       HE3       CE        single    1.089     0.010     0.989     0.005     
+2DO       HO        O         single    0.970     0.012     0.839     0.014     
+2DO       HXT       OXT       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 2DO      HXT    OXT    C       109.470    3.000
+ 2DO      OXT    C      HC      109.470    3.000
+ 2DO      OXT    C      O       109.500    3.000
+ 2DO      OXT    C      CA      109.470    3.000
+ 2DO      HC     C      O       109.470    3.000
+ 2DO      HC     C      CA      108.340    3.000
+ 2DO      O      C      CA      109.470    3.000
+ 2DO      C      O      HO      109.470    3.000
+ 2DO      C      CA     HCA     108.340    3.000
+ 2DO      C      CA     N       109.470    3.000
+ 2DO      C      CA     CB      111.000    3.000
+ 2DO      HCA    CA     N       109.470    3.000
+ 2DO      HCA    CA     CB      108.340    3.000
+ 2DO      N      CA     CB      109.470    3.000
+ 2DO      CA     N      H2      120.000    3.000
+ 2DO      CA     N      H       120.000    3.000
+ 2DO      H2     N      H       120.000    3.000
+ 2DO      CA     CB     HB2     109.470    3.000
+ 2DO      CA     CB     HB3     109.470    3.000
+ 2DO      CA     CB     CG      111.000    3.000
+ 2DO      HB2    CB     HB3     107.900    3.000
+ 2DO      HB2    CB     CG      109.470    3.000
+ 2DO      HB3    CB     CG      109.470    3.000
+ 2DO      CB     CG     HG2     109.470    3.000
+ 2DO      CB     CG     HG3     109.470    3.000
+ 2DO      CB     CG     CD      111.000    3.000
+ 2DO      HG2    CG     HG3     107.900    3.000
+ 2DO      HG2    CG     CD      109.470    3.000
+ 2DO      HG3    CG     CD      109.470    3.000
+ 2DO      CG     CD     HD2     109.470    3.000
+ 2DO      CG     CD     HD3     109.470    3.000
+ 2DO      CG     CD     CE      111.000    3.000
+ 2DO      HD2    CD     HD3     107.900    3.000
+ 2DO      HD2    CD     CE      109.470    3.000
+ 2DO      HD3    CD     CE      109.470    3.000
+ 2DO      CD     CE     HE3     109.470    3.000
+ 2DO      CD     CE     HE2     109.470    3.000
+ 2DO      CD     CE     HE1     109.470    3.000
+ 2DO      HE3    CE     HE2     109.470    3.000
+ 2DO      HE3    CE     HE1     109.470    3.000
+ 2DO      HE2    CE     HE1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 2DO      var_1    HXT    OXT    C      CA       -60.056   20.000   1
+ 2DO      var_2    OXT    C      O      HO        60.001   20.000   1
+ 2DO      var_3    OXT    C      CA     CB       -59.975   20.000   3
+ 2DO      var_4    C      CA     N      H         59.985   20.000   1
+ 2DO      var_5    C      CA     CB     CG       175.010   20.000   3
+ 2DO      var_6    CA     CB     CG     CD       179.969   20.000   3
+ 2DO      var_7    CB     CG     CD     CE       179.998   20.000   3
+ 2DO      var_8    CG     CD     CE     HE1     -179.957   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 2DO      chir_01  CA     N      C      CB        positiv
+ 2DO      chir_02  C      CA     O      OXT       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 2DO      plan-1    N         0.020
+ 2DO      plan-1    CA        0.020
+ 2DO      plan-1    H         0.020
+ 2DO      plan-1    H2        0.020
+# ------------------------------------------------------

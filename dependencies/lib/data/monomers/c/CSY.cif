@@ -1,0 +1,325 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CSY      CSY '"[4-(4-HYDROXY-BENZYL)-2-(2-HYDROXY-' non-polymer        40  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CSY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CSY           OXT    O    OC       -0.500      0.000    0.000    0.000
+ CSY           C3     C    C         0.000     -1.209    0.066    0.313
+ CSY           O3     O    OC       -0.500     -1.934   -0.950    0.232
+ CSY           CA3    C    CH2       0.000     -1.795    1.371    0.788
+ CSY           HA31   H    H         0.000     -1.680    2.126    0.008
+ CSY           HA32   H    H         0.000     -1.270    1.697    1.689
+ CSY           N3     N    N         0.000     -3.217    1.188    1.090
+ CSY           C1     C    CH1       0.000     -4.316    1.368    0.134
+ CSY           H1     H    H         0.000     -4.532    2.437    0.003
+ CSY           CA1    C    CH1       0.000     -3.951    0.736   -1.211
+ CSY           HA1    H    H         0.000     -3.055    1.227   -1.616
+ CSY           CB1    C    CH2       0.000     -5.115    0.911   -2.188
+ CSY           HB11   H    H         0.000     -5.315    1.976   -2.327
+ CSY           HB12   H    H         0.000     -6.005    0.424   -1.785
+ CSY           OG2    O    OH1       0.000     -4.774    0.321   -3.445
+ CSY           HOG    H    H         0.000     -5.510    0.432   -4.062
+ CSY           N1     N    NH2       0.000     -3.681   -0.695   -1.022
+ CSY           HN12   H    H         0.000     -2.774   -1.080   -1.258
+ CSY           HN11   H    H         0.000     -4.400   -1.307   -0.655
+ CSY           C2     C    C         0.000     -3.717    0.826    2.290
+ CSY           O2     O    O         0.000     -3.069    0.609    3.291
+ CSY           CA2    C    CH1       0.000     -5.222    0.738    2.175
+ CSY           HA2    H    H         0.000     -5.691    1.630    2.613
+ CSY           N2     N    NH1       0.000     -5.488    0.679    0.719
+ CSY           HN2    H    H         0.000     -6.277    0.268    0.241
+ CSY           CB2    C    CH2       0.000     -5.738   -0.526    2.863
+ CSY           HB21   H    H         0.000     -5.535   -0.465    3.934
+ CSY           HB22   H    H         0.000     -5.232   -1.399    2.446
+ CSY           CG     C    CR6       0.000     -7.223   -0.649    2.639
+ CSY           CD2    C    CR16      0.000     -8.107   -0.085    3.541
+ CSY           HD2    H    H         0.000     -7.731    0.442    4.409
+ CSY           CE2    C    CR16      0.000     -9.468   -0.192    3.334
+ CSY           HE2    H    H         0.000    -10.160    0.258    4.036
+ CSY           CZ     C    CR6       0.000     -9.950   -0.876    2.229
+ CSY           OH     O    OH1       0.000    -11.289   -0.988    2.027
+ CSY           HO     H    H         0.000    -11.615   -1.787    2.462
+ CSY           CE1    C    CR16      0.000     -9.062   -1.447    1.329
+ CSY           HE1    H    H         0.000     -9.435   -1.982    0.464
+ CSY           CD1    C    CR16      0.000     -7.701   -1.333    1.537
+ CSY           HD1    H    H         0.000     -7.007   -1.779    0.836
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CSY      OXT    n/a    C3     START
+ CSY      C3     OXT    CA3    .
+ CSY      O3     C3     .      .
+ CSY      CA3    C3     N3     .
+ CSY      HA31   CA3    .      .
+ CSY      HA32   CA3    .      .
+ CSY      N3     CA3    C2     .
+ CSY      C1     N3     CA1    .
+ CSY      H1     C1     .      .
+ CSY      CA1    C1     N1     .
+ CSY      HA1    CA1    .      .
+ CSY      CB1    CA1    OG2    .
+ CSY      HB11   CB1    .      .
+ CSY      HB12   CB1    .      .
+ CSY      OG2    CB1    HOG    .
+ CSY      HOG    OG2    .      .
+ CSY      N1     CA1    HN11   .
+ CSY      HN12   N1     .      .
+ CSY      HN11   N1     .      .
+ CSY      C2     N3     CA2    .
+ CSY      O2     C2     .      .
+ CSY      CA2    C2     CB2    .
+ CSY      HA2    CA2    .      .
+ CSY      N2     CA2    HN2    .
+ CSY      HN2    N2     .      .
+ CSY      CB2    CA2    CG     .
+ CSY      HB21   CB2    .      .
+ CSY      HB22   CB2    .      .
+ CSY      CG     CB2    CD2    .
+ CSY      CD2    CG     CE2    .
+ CSY      HD2    CD2    .      .
+ CSY      CE2    CD2    CZ     .
+ CSY      HE2    CE2    .      .
+ CSY      CZ     CE2    CE1    .
+ CSY      OH     CZ     HO     .
+ CSY      HO     OH     .      .
+ CSY      CE1    CZ     CD1    .
+ CSY      HE1    CE1    .      .
+ CSY      CD1    CE1    HD1    .
+ CSY      HD1    CD1    .      END
+ CSY      C1     N2     .    ADD
+ CSY      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CSY       C1        N2        single    1.450     0.020     1.450     0.020     
+CSY       C1        N3        single    1.455     0.020     1.455     0.020     
+CSY       CA1       C1        single    1.524     0.020     1.524     0.020     
+CSY       H1        C1        single    1.089     0.010     0.989     0.005     
+CSY       N2        CA2       single    1.450     0.020     1.450     0.020     
+CSY       HN2       N2        single    1.036     0.016     0.914     0.007     
+CSY       CA2       C2        single    1.500     0.020     1.500     0.020     
+CSY       CB2       CA2       single    1.524     0.020     1.524     0.020     
+CSY       HA2       CA2       single    1.089     0.010     0.989     0.005     
+CSY       O2        C2        double    1.220     0.020     1.220     0.020     
+CSY       C2        N3        single    1.330     0.020     1.330     0.020     
+CSY       N3        CA3       single    1.455     0.020     1.455     0.020     
+CSY       CA3       C3        single    1.510     0.020     1.510     0.020     
+CSY       HA31      CA3       single    1.089     0.010     0.989     0.005     
+CSY       HA32      CA3       single    1.089     0.010     0.989     0.005     
+CSY       O3        C3        deloc     1.250     0.020     1.250     0.020     
+CSY       C3        OXT       deloc     1.250     0.020     1.250     0.020     
+CSY       N1        CA1       single    1.450     0.020     1.450     0.020     
+CSY       CB1       CA1       single    1.524     0.020     1.524     0.020     
+CSY       HA1       CA1       single    1.089     0.010     0.989     0.005     
+CSY       HN11      N1        single    1.036     0.016     0.914     0.007     
+CSY       HN12      N1        single    1.036     0.016     0.914     0.007     
+CSY       OG2       CB1       single    1.432     0.020     1.432     0.020     
+CSY       HB11      CB1       single    1.089     0.010     0.989     0.005     
+CSY       HB12      CB1       single    1.089     0.010     0.989     0.005     
+CSY       HOG       OG2       single    0.970     0.012     0.839     0.014     
+CSY       CG        CB2       single    1.511     0.020     1.511     0.020     
+CSY       HB21      CB2       single    1.089     0.010     0.989     0.005     
+CSY       HB22      CB2       single    1.089     0.010     0.989     0.005     
+CSY       CG        CD1       double    1.390     0.020     1.390     0.020     
+CSY       CD2       CG        single    1.390     0.020     1.390     0.020     
+CSY       CD1       CE1       single    1.390     0.020     1.390     0.020     
+CSY       HD1       CD1       single    1.082     0.013     0.975     0.010     
+CSY       CE2       CD2       double    1.390     0.020     1.390     0.020     
+CSY       HD2       CD2       single    1.082     0.013     0.975     0.010     
+CSY       CE1       CZ        double    1.390     0.020     1.390     0.020     
+CSY       HE1       CE1       single    1.082     0.013     0.975     0.010     
+CSY       CZ        CE2       single    1.390     0.020     1.390     0.020     
+CSY       HE2       CE2       single    1.082     0.013     0.975     0.010     
+CSY       OH        CZ        single    1.362     0.020     1.362     0.020     
+CSY       HO        OH        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CSY      OXT    C3     O3      123.000    3.000
+ CSY      OXT    C3     CA3     118.500    3.000
+ CSY      O3     C3     CA3     118.500    3.000
+ CSY      C3     CA3    HA31    109.470    3.000
+ CSY      C3     CA3    HA32    109.470    3.000
+ CSY      C3     CA3    N3      109.500    3.000
+ CSY      HA31   CA3    HA32    107.900    3.000
+ CSY      HA31   CA3    N3      109.470    3.000
+ CSY      HA32   CA3    N3      109.470    3.000
+ CSY      CA3    N3     C1      112.000    3.000
+ CSY      CA3    N3     C2      127.000    3.000
+ CSY      C1     N3     C2      121.000    3.000
+ CSY      N3     C1     H1      109.470    3.000
+ CSY      N3     C1     CA1     105.000    3.000
+ CSY      N3     C1     N2      109.500    3.000
+ CSY      H1     C1     CA1     108.340    3.000
+ CSY      H1     C1     N2      108.550    3.000
+ CSY      CA1    C1     N2      110.000    3.000
+ CSY      C1     CA1    HA1     108.340    3.000
+ CSY      C1     CA1    CB1     111.000    3.000
+ CSY      C1     CA1    N1      109.470    3.000
+ CSY      HA1    CA1    CB1     108.340    3.000
+ CSY      HA1    CA1    N1      109.470    3.000
+ CSY      CB1    CA1    N1      109.470    3.000
+ CSY      CA1    CB1    HB11    109.470    3.000
+ CSY      CA1    CB1    HB12    109.470    3.000
+ CSY      CA1    CB1    OG2     109.470    3.000
+ CSY      HB11   CB1    HB12    107.900    3.000
+ CSY      HB11   CB1    OG2     109.470    3.000
+ CSY      HB12   CB1    OG2     109.470    3.000
+ CSY      CB1    OG2    HOG     109.470    3.000
+ CSY      CA1    N1     HN12    120.000    3.000
+ CSY      CA1    N1     HN11    120.000    3.000
+ CSY      HN12   N1     HN11    120.000    3.000
+ CSY      N3     C2     O2      123.000    3.000
+ CSY      N3     C2     CA2     116.500    3.000
+ CSY      O2     C2     CA2     120.500    3.000
+ CSY      C2     CA2    HA2     108.810    3.000
+ CSY      C2     CA2    N2      111.600    3.000
+ CSY      C2     CA2    CB2     109.470    3.000
+ CSY      HA2    CA2    N2      108.550    3.000
+ CSY      HA2    CA2    CB2     108.340    3.000
+ CSY      N2     CA2    CB2     110.000    3.000
+ CSY      CA2    N2     HN2     118.500    3.000
+ CSY      CA2    N2     C1      120.000    3.000
+ CSY      HN2    N2     C1      118.500    3.000
+ CSY      CA2    CB2    HB21    109.470    3.000
+ CSY      CA2    CB2    HB22    109.470    3.000
+ CSY      CA2    CB2    CG      109.470    3.000
+ CSY      HB21   CB2    HB22    107.900    3.000
+ CSY      HB21   CB2    CG      109.470    3.000
+ CSY      HB22   CB2    CG      109.470    3.000
+ CSY      CB2    CG     CD2     120.000    3.000
+ CSY      CB2    CG     CD1     120.000    3.000
+ CSY      CD2    CG     CD1     120.000    3.000
+ CSY      CG     CD2    HD2     120.000    3.000
+ CSY      CG     CD2    CE2     120.000    3.000
+ CSY      HD2    CD2    CE2     120.000    3.000
+ CSY      CD2    CE2    HE2     120.000    3.000
+ CSY      CD2    CE2    CZ      120.000    3.000
+ CSY      HE2    CE2    CZ      120.000    3.000
+ CSY      CE2    CZ     OH      120.000    3.000
+ CSY      CE2    CZ     CE1     120.000    3.000
+ CSY      OH     CZ     CE1     120.000    3.000
+ CSY      CZ     OH     HO      109.470    3.000
+ CSY      CZ     CE1    HE1     120.000    3.000
+ CSY      CZ     CE1    CD1     120.000    3.000
+ CSY      HE1    CE1    CD1     120.000    3.000
+ CSY      CE1    CD1    HD1     120.000    3.000
+ CSY      CE1    CD1    CG      120.000    3.000
+ CSY      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CSY      var_1    OXT    C3     CA3    N3       179.988   20.000   3
+ CSY      var_2    C3     CA3    N3     C2        90.018   20.000   1
+ CSY      var_3    CA3    N3     C1     CA1       30.000   20.000   3
+ CSY      var_4    N3     C1     N2     CA2       30.000   20.000   3
+ CSY      var_5    N3     C1     CA1    N1        59.083   20.000   3
+ CSY      var_6    C1     CA1    CB1    OG2     -179.988   20.000   3
+ CSY      var_7    CA1    CB1    OG2    HOG      179.990   20.000   1
+ CSY      var_8    C1     CA1    N1     HN11      60.033   20.000   1
+ CSY      CONST_1  CA3    N3     C2     CA2      180.000    0.000   0
+ CSY      var_9    N3     C2     CA2    CB2      150.000   20.000   3
+ CSY      var_10   C2     CA2    N2     C1       -30.000   20.000   3
+ CSY      var_11   C2     CA2    CB2    CG      -175.408   20.000   3
+ CSY      var_12   CA2    CB2    CG     CD2      -90.358   20.000   2
+ CSY      CONST_2  CB2    CG     CD1    CE1      180.000    0.000   0
+ CSY      CONST_3  CB2    CG     CD2    CE2      180.000    0.000   0
+ CSY      CONST_4  CG     CD2    CE2    CZ         0.000    0.000   0
+ CSY      CONST_5  CD2    CE2    CZ     CE1        0.000    0.000   0
+ CSY      var_13   CE2    CZ     OH     HO       -89.952   20.000   1
+ CSY      CONST_6  CE2    CZ     CE1    CD1        0.000    0.000   0
+ CSY      CONST_7  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CSY      chir_01  C1     N2     N3     CA1       negativ
+ CSY      chir_02  CA2    N2     C2     CB2       positiv
+ CSY      chir_03  CA1    C1     N1     CB1       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CSY      plan-1    N2        0.020
+ CSY      plan-1    C1        0.020
+ CSY      plan-1    CA2       0.020
+ CSY      plan-1    HN2       0.020
+ CSY      plan-2    C2        0.020
+ CSY      plan-2    CA2       0.020
+ CSY      plan-2    O2        0.020
+ CSY      plan-2    N3        0.020
+ CSY      plan-3    N3        0.020
+ CSY      plan-3    C1        0.020
+ CSY      plan-3    C2        0.020
+ CSY      plan-3    CA3       0.020
+ CSY      plan-4    C3        0.020
+ CSY      plan-4    CA3       0.020
+ CSY      plan-4    O3        0.020
+ CSY      plan-4    OXT       0.020
+ CSY      plan-6    CG        0.020
+ CSY      plan-6    CB2       0.020
+ CSY      plan-6    CD1       0.020
+ CSY      plan-6    CD2       0.020
+ CSY      plan-6    CE1       0.020
+ CSY      plan-6    CE2       0.020
+ CSY      plan-6    CZ        0.020
+ CSY      plan-6    HD1       0.020
+ CSY      plan-6    HD2       0.020
+ CSY      plan-6    HE1       0.020
+ CSY      plan-6    HE2       0.020
+ CSY      plan-6    OH        0.020
+# ------------------------------------------------------

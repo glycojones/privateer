@@ -1,0 +1,339 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CH6      CH6 '"{(4Z)-2-[(1S)-1-amino-3-(methylsulf' non-polymer        42  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CH6
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CH6           OXT    O    OC       -0.500      0.000    0.000    0.000
+ CH6           C3     C    C         0.000     -1.163   -0.437    0.148
+ CH6           O3     O    OC       -0.500     -1.749   -0.298    1.244
+ CH6           CA3    C    CH2       0.000     -1.857   -1.133   -0.995
+ CH6           HA31   H    H         0.000     -1.280   -2.011   -1.292
+ CH6           HA32   H    H         0.000     -1.938   -0.448   -1.842
+ CH6           N3     N    NR5       0.000     -3.197   -1.548   -0.573
+ CH6           C1     C    CR5       0.000     -4.337   -0.803   -0.683
+ CH6           CA1    C    CH1       0.000     -4.392    0.585   -1.269
+ CH6           HA1    H    H         0.000     -3.553    0.723   -1.964
+ CH6           CB1    C    CH2       0.000     -4.298    1.617   -0.143
+ CH6           HB11   H    H         0.000     -3.400    1.428    0.449
+ CH6           HB12   H    H         0.000     -5.178    1.537    0.498
+ CH6           CG1    C    CH2       0.000     -4.228    3.022   -0.744
+ CH6           HG11   H    H         0.000     -5.127    3.209   -1.336
+ CH6           HG12   H    H         0.000     -3.349    3.100   -1.386
+ CH6           SD     S    S2        0.000     -4.116    4.245    0.589
+ CH6           CE     C    CH3       0.000     -4.044    5.822   -0.307
+ CH6           HE3    H    H         0.000     -3.194    5.839   -0.944
+ CH6           HE2A   H    H         0.000     -4.919    5.946   -0.896
+ CH6           HE1A   H    H         0.000     -3.975    6.628    0.381
+ CH6           N1     N    NH2       0.000     -5.661    0.762   -1.990
+ CH6           HN12   H    H         0.000     -6.338    1.447   -1.674
+ CH6           HN11   H    H         0.000     -5.867    0.201   -2.808
+ CH6           C2     C    CR5       0.000     -3.514   -2.731   -0.002
+ CH6           O2     O    O         0.000     -2.762   -3.652    0.259
+ CH6           CA2    C    CR5       0.000     -4.969   -2.671    0.229
+ CH6           N2     N    NRD5      0.000     -5.367   -1.446   -0.227
+ CH6           CB2    C    C1        0.000     -5.762   -3.649    0.788
+ CH6           HB2    H    H         0.000     -5.315   -4.545    1.184
+ CH6           CG2    C    CR6       0.000     -7.215   -3.469    0.844
+ CH6           CD2    C    CR16      0.000     -7.789   -2.250    0.456
+ CH6           HD2    H    H         0.000     -7.159   -1.437    0.115
+ CH6           CD1    C    CR16      0.000     -8.036   -4.513    1.295
+ CH6           HD1    H    H         0.000     -7.598   -5.454    1.602
+ CH6           CE1    C    CR16      0.000     -9.395   -4.339    1.345
+ CH6           HE1    H    H         0.000    -10.031   -5.145    1.689
+ CH6           CZ     C    CR6       0.000     -9.959   -3.128    0.955
+ CH6           CE2    C    CR16      0.000     -9.150   -2.088    0.511
+ CH6           HE2    H    H         0.000     -9.595   -1.149    0.207
+ CH6           OH     O    OH1       0.000    -11.305   -2.961    1.007
+ CH6           HOH    H    H         0.000    -11.695   -3.232    0.165
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CH6      OXT    n/a    C3     START
+ CH6      C3     OXT    CA3    .
+ CH6      O3     C3     .      .
+ CH6      CA3    C3     N3     .
+ CH6      HA31   CA3    .      .
+ CH6      HA32   CA3    .      .
+ CH6      N3     CA3    C2     .
+ CH6      C1     N3     CA1    .
+ CH6      CA1    C1     N1     .
+ CH6      HA1    CA1    .      .
+ CH6      CB1    CA1    CG1    .
+ CH6      HB11   CB1    .      .
+ CH6      HB12   CB1    .      .
+ CH6      CG1    CB1    SD     .
+ CH6      HG11   CG1    .      .
+ CH6      HG12   CG1    .      .
+ CH6      SD     CG1    CE     .
+ CH6      CE     SD     HE1A   .
+ CH6      HE3    CE     .      .
+ CH6      HE2A   CE     .      .
+ CH6      HE1A   CE     .      .
+ CH6      N1     CA1    HN11   .
+ CH6      HN12   N1     .      .
+ CH6      HN11   N1     .      .
+ CH6      C2     N3     CA2    .
+ CH6      O2     C2     .      .
+ CH6      CA2    C2     CB2    .
+ CH6      N2     CA2    .      .
+ CH6      CB2    CA2    CG2    .
+ CH6      HB2    CB2    .      .
+ CH6      CG2    CB2    CD1    .
+ CH6      CD2    CG2    HD2    .
+ CH6      HD2    CD2    .      .
+ CH6      CD1    CG2    CE1    .
+ CH6      HD1    CD1    .      .
+ CH6      CE1    CD1    CZ     .
+ CH6      HE1    CE1    .      .
+ CH6      CZ     CE1    OH     .
+ CH6      CE2    CZ     HE2    .
+ CH6      HE2    CE2    .      .
+ CH6      OH     CZ     HOH    .
+ CH6      HOH    OH     .      END
+ CH6      C1     N2     .    ADD
+ CH6      CD2    CE2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CH6       CE        SD        single    1.762     0.020     1.762     0.020     
+CH6       SD        CG1       single    1.762     0.020     1.762     0.020     
+CH6       CG1       CB1       single    1.524     0.020     1.524     0.020     
+CH6       OH        CZ        single    1.362     0.020     1.362     0.020     
+CH6       CB1       CA1       single    1.524     0.020     1.524     0.020     
+CH6       C3        OXT       deloc     1.250     0.020     1.250     0.020     
+CH6       CZ        CE1       double    1.390     0.020     1.390     0.020     
+CH6       CE1       CD1       single    1.390     0.020     1.390     0.020     
+CH6       CE2       CZ        single    1.390     0.020     1.390     0.020     
+CH6       CD1       CG2       double    1.390     0.020     1.390     0.020     
+CH6       CA1       C1        single    1.480     0.020     1.480     0.020     
+CH6       N1        CA1       single    1.450     0.020     1.450     0.020     
+CH6       CD2       CE2       double    1.390     0.020     1.390     0.020     
+CH6       C1        N2        double    1.350     0.020     1.350     0.020     
+CH6       N2        CA2       single    1.350     0.020     1.350     0.020     
+CH6       C1        N3        single    1.337     0.020     1.337     0.020     
+CH6       CD2       CG2       single    1.390     0.020     1.390     0.020     
+CH6       CG2       CB2       single    1.480     0.020     1.480     0.020     
+CH6       O3        C3        deloc     1.250     0.020     1.250     0.020     
+CH6       CA3       C3        single    1.510     0.020     1.510     0.020     
+CH6       CB2       CA2       double    1.483     0.020     1.483     0.020     
+CH6       CA2       C2        single    1.490     0.020     1.490     0.020     
+CH6       C2        N3        single    1.337     0.020     1.337     0.020     
+CH6       N3        CA3       single    1.462     0.020     1.462     0.020     
+CH6       O2        C2        double    1.285     0.020     1.285     0.020     
+CH6       HN11      N1        single    1.036     0.016     0.914     0.007     
+CH6       HN12      N1        single    1.036     0.016     0.914     0.007     
+CH6       HE1A      CE        single    1.089     0.010     0.989     0.005     
+CH6       HE2A      CE        single    1.089     0.010     0.989     0.005     
+CH6       HE3       CE        single    1.089     0.010     0.989     0.005     
+CH6       HG11      CG1       single    1.089     0.010     0.989     0.005     
+CH6       HG12      CG1       single    1.089     0.010     0.989     0.005     
+CH6       HB11      CB1       single    1.089     0.010     0.989     0.005     
+CH6       HB12      CB1       single    1.089     0.010     0.989     0.005     
+CH6       HA1       CA1       single    1.089     0.010     0.989     0.005     
+CH6       HOH       OH        single    0.970     0.012     0.839     0.014     
+CH6       HD2       CD2       single    1.082     0.013     0.975     0.010     
+CH6       HE2       CE2       single    1.082     0.013     0.975     0.010     
+CH6       HE1       CE1       single    1.082     0.013     0.975     0.010     
+CH6       HD1       CD1       single    1.082     0.013     0.975     0.010     
+CH6       HB2       CB2       single    1.082     0.013     0.975     0.010     
+CH6       HA31      CA3       single    1.089     0.010     0.989     0.005     
+CH6       HA32      CA3       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CH6      OXT    C3     O3      123.000    3.000
+ CH6      OXT    C3     CA3     118.500    3.000
+ CH6      O3     C3     CA3     118.500    3.000
+ CH6      C3     CA3    HA31    109.470    3.000
+ CH6      C3     CA3    HA32    109.470    3.000
+ CH6      C3     CA3    N3      109.500    3.000
+ CH6      HA31   CA3    HA32    107.900    3.000
+ CH6      HA31   CA3    N3      109.500    3.000
+ CH6      HA32   CA3    N3      109.500    3.000
+ CH6      CA3    N3     C1      126.000    3.000
+ CH6      CA3    N3     C2      126.000    3.000
+ CH6      C1     N3     C2      108.000    3.000
+ CH6      N3     C1     CA1     126.000    3.000
+ CH6      N3     C1     N2      108.000    3.000
+ CH6      CA1    C1     N2      126.000    3.000
+ CH6      C1     CA1    HA1     109.470    3.000
+ CH6      C1     CA1    CB1     109.470    3.000
+ CH6      C1     CA1    N1      109.470    3.000
+ CH6      HA1    CA1    CB1     108.340    3.000
+ CH6      HA1    CA1    N1      109.470    3.000
+ CH6      CB1    CA1    N1      109.470    3.000
+ CH6      CA1    CB1    HB11    109.470    3.000
+ CH6      CA1    CB1    HB12    109.470    3.000
+ CH6      CA1    CB1    CG1     111.000    3.000
+ CH6      HB11   CB1    HB12    107.900    3.000
+ CH6      HB11   CB1    CG1     109.470    3.000
+ CH6      HB12   CB1    CG1     109.470    3.000
+ CH6      CB1    CG1    HG11    109.470    3.000
+ CH6      CB1    CG1    HG12    109.470    3.000
+ CH6      CB1    CG1    SD      109.500    3.000
+ CH6      HG11   CG1    HG12    107.900    3.000
+ CH6      HG11   CG1    SD      109.500    3.000
+ CH6      HG12   CG1    SD      109.500    3.000
+ CH6      CG1    SD     CE      103.023    3.000
+ CH6      SD     CE     HE3     109.500    3.000
+ CH6      SD     CE     HE2A    109.500    3.000
+ CH6      SD     CE     HE1A    109.500    3.000
+ CH6      HE3    CE     HE2A    109.470    3.000
+ CH6      HE3    CE     HE1A    109.470    3.000
+ CH6      HE2A   CE     HE1A    109.470    3.000
+ CH6      CA1    N1     HN12    120.000    3.000
+ CH6      CA1    N1     HN11    120.000    3.000
+ CH6      HN12   N1     HN11    120.000    3.000
+ CH6      N3     C2     O2      108.000    3.000
+ CH6      N3     C2     CA2     108.000    3.000
+ CH6      O2     C2     CA2     108.000    3.000
+ CH6      C2     CA2    N2      108.000    3.000
+ CH6      C2     CA2    CB2     117.000    3.000
+ CH6      N2     CA2    CB2     108.000    3.000
+ CH6      CA2    N2     C1      108.000    3.000
+ CH6      CA2    CB2    HB2     120.000    3.000
+ CH6      CA2    CB2    CG2     120.000    3.000
+ CH6      HB2    CB2    CG2     120.000    3.000
+ CH6      CB2    CG2    CD2     120.000    3.000
+ CH6      CB2    CG2    CD1     120.000    3.000
+ CH6      CD2    CG2    CD1     120.000    3.000
+ CH6      CG2    CD2    HD2     120.000    3.000
+ CH6      CG2    CD2    CE2     120.000    3.000
+ CH6      HD2    CD2    CE2     120.000    3.000
+ CH6      CG2    CD1    HD1     120.000    3.000
+ CH6      CG2    CD1    CE1     120.000    3.000
+ CH6      HD1    CD1    CE1     120.000    3.000
+ CH6      CD1    CE1    HE1     120.000    3.000
+ CH6      CD1    CE1    CZ      120.000    3.000
+ CH6      HE1    CE1    CZ      120.000    3.000
+ CH6      CE1    CZ     CE2     120.000    3.000
+ CH6      CE1    CZ     OH      120.000    3.000
+ CH6      CE2    CZ     OH      120.000    3.000
+ CH6      CZ     CE2    HE2     120.000    3.000
+ CH6      CZ     CE2    CD2     120.000    3.000
+ CH6      HE2    CE2    CD2     120.000    3.000
+ CH6      CZ     OH     HOH     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CH6      var_1    OXT    C3     CA3    N3       179.989   20.000   3
+ CH6      var_2    C3     CA3    N3     C2       -89.812   20.000   1
+ CH6      CONST_1  CA3    N3     C1     CA1        0.000    0.000   0
+ CH6      CONST_2  N3     C1     N2     CA2        0.000    0.000   0
+ CH6      var_3    N3     C1     CA1    N1       144.976   20.000   1
+ CH6      var_4    C1     CA1    CB1    CG1      175.005   20.000   3
+ CH6      var_5    CA1    CB1    CG1    SD      -179.988   20.000   3
+ CH6      var_6    CB1    CG1    SD     CE       179.983   20.000   1
+ CH6      var_7    CG1    SD     CE     HE1A    -179.999   20.000   1
+ CH6      var_8    C1     CA1    N1     HN11     -63.931   20.000   1
+ CH6      CONST_3  CA3    N3     C2     CA2      180.000    0.000   0
+ CH6      CONST_4  N3     C2     CA2    CB2      180.000    0.000   0
+ CH6      CONST_5  C2     CA2    N2     C1         0.000    0.000   0
+ CH6      var_9    C2     CA2    CB2    CG2     -174.934   20.000   1
+ CH6      var_10   CA2    CB2    CG2    CD1      173.909   20.000   1
+ CH6      CONST_6  CB2    CG2    CD2    CE2      180.000    0.000   0
+ CH6      CONST_7  CG2    CD2    CE2    CZ         0.000    0.000   0
+ CH6      CONST_8  CB2    CG2    CD1    CE1      180.000    0.000   0
+ CH6      CONST_9  CG2    CD1    CE1    CZ         0.000    0.000   0
+ CH6      CONST_10 CD1    CE1    CZ     OH       180.000    0.000   0
+ CH6      CONST_11 CE1    CZ     CE2    CD2        0.000    0.000   0
+ CH6      var_11   CE1    CZ     OH     HOH      -89.876   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CH6      chir_01  CA1    N1     CB1    C1        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CH6      plan-1    N1        0.020
+ CH6      plan-1    CA1       0.020
+ CH6      plan-1    HN11      0.020
+ CH6      plan-1    HN12      0.020
+ CH6      plan-2    C1        0.020
+ CH6      plan-2    CA1       0.020
+ CH6      plan-2    N2        0.020
+ CH6      plan-2    N3        0.020
+ CH6      plan-2    CA2       0.020
+ CH6      plan-2    C2        0.020
+ CH6      plan-2    CB2       0.020
+ CH6      plan-2    O2        0.020
+ CH6      plan-2    CA3       0.020
+ CH6      plan-2    HB2       0.020
+ CH6      plan-3    CD2       0.020
+ CH6      plan-3    CE2       0.020
+ CH6      plan-3    CG2       0.020
+ CH6      plan-3    HD2       0.020
+ CH6      plan-3    CZ        0.020
+ CH6      plan-3    CE1       0.020
+ CH6      plan-3    CD1       0.020
+ CH6      plan-3    HE2       0.020
+ CH6      plan-3    OH        0.020
+ CH6      plan-3    HE1       0.020
+ CH6      plan-3    HD1       0.020
+ CH6      plan-3    CB2       0.020
+ CH6      plan-3    HB2       0.020
+ CH6      plan-4    CB2       0.020
+ CH6      plan-4    CG2       0.020
+ CH6      plan-4    CA2       0.020
+ CH6      plan-4    HB2       0.020
+ CH6      plan-5    C3        0.020
+ CH6      plan-5    CA3       0.020
+ CH6      plan-5    O3        0.020
+ CH6      plan-5    OXT       0.020
+# ------------------------------------------------------

@@ -1,0 +1,360 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KAG      KAG '.                                   ' RNA                46  28 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_KAG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ KAG           OP3    O    OP       -0.666      0.000    0.000    0.000
+ KAG           P      P    P         0.000     -0.419   -1.099    0.952
+ KAG           OP1    O    OP       -0.666      0.337   -2.307    0.444
+ KAG           OP2    O    OP       -0.666     -0.223   -0.793    2.421
+ KAG           "O5'"  O    O2        0.000     -1.947   -1.419    0.519
+ KAG           "C5'"  C    CH2       0.000     -2.216   -1.717   -0.840
+ KAG           "H5'"  H    H         0.000     -1.655   -2.603   -1.143
+ KAG           "H5''" H    H         0.000     -1.926   -0.872   -1.468
+ KAG           "C4'"  C    CH1       0.000     -3.707   -1.979   -0.995
+ KAG           "H4'"  H    H         0.000     -4.009   -2.804   -0.335
+ KAG           "C3'"  C    CH1       0.000     -4.101   -2.299   -2.434
+ KAG           "H3'"  H    H         0.000     -3.271   -2.756   -2.992
+ KAG           "C2'"  C    CH2       0.000     -4.478   -0.949   -2.996
+ KAG           "H2''" H    H         0.000     -5.212   -1.008   -3.802
+ KAG           "H2'"  H    H         0.000     -3.617   -0.367   -3.331
+ KAG           "C1'"  C    CH1       0.000     -5.107   -0.276   -1.783
+ KAG           "H1'"  H    H         0.000     -6.160   -0.583   -1.719
+ KAG           "O4'"  O    O2        0.000     -4.414   -0.776   -0.627
+ KAG           N9     N    NR5       0.000     -5.048    1.181   -1.808
+ KAG           C8     C    CR15      0.000     -4.007    1.958   -1.356
+ KAG           H8     H    H         0.000     -3.099    1.556   -0.925
+ KAG           N7     N    NRD5      0.000     -4.237    3.248   -1.507
+ KAG           C5     C    CR56      0.000     -5.474    3.295   -2.077
+ KAG           C4     C    CR56      0.000     -6.001    2.042   -2.275
+ KAG           C6     C    CR6       0.000     -6.239    4.447   -2.469
+ KAG           O6     O    O         0.000     -5.853    5.600   -2.330
+ KAG           N1     N    NR16      0.000     -7.470    4.063   -3.021
+ KAG           H1     H    H         0.000     -8.108    4.820   -3.341
+ KAG           C2     C    CR6       0.000     -7.914    2.729   -3.179
+ KAG           N3     N    NRD6      0.000     -7.192    1.692   -2.811
+ KAG           N2     N    NH1       0.000     -9.154    2.586   -3.744
+ KAG           H2     H    H         0.000     -9.679    3.405   -4.014
+ KAG           C1A    C    CH1       0.000     -9.712    1.282   -3.955
+ KAG           H1A    H    H         0.000     -8.922    0.607   -4.313
+ KAG           C1M    C    CH3       0.000    -10.246    0.761   -2.625
+ KAG           H3M    H    H         0.000    -10.644   -0.211   -2.761
+ KAG           H2M    H    H         0.000     -9.459    0.725   -1.918
+ KAG           H1M    H    H         0.000    -11.008    1.408   -2.273
+ KAG           C2B    C    CH2       0.000    -10.824    1.352   -5.002
+ KAG           H2B    H    H         0.000    -11.603    2.008   -4.607
+ KAG           H1B    H    H         0.000    -11.225    0.343   -5.119
+ KAG           C3G    C    C1        0.000    -10.359    1.871   -6.345
+ KAG           H3G    H    H         0.000    -11.079    1.897   -7.145
+ KAG           O2G    O    O         0.000     -9.224    2.264   -6.590
+ KAG           "O3'"  O    OH1       0.000     -5.260   -3.129   -2.438
+ KAG           HO3    H    H         0.000     -5.887   -2.730   -1.815
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ KAG      OP3    n/a    P      START
+ KAG      P      OP3    "O5'"  .
+ KAG      OP1    P      .      .
+ KAG      OP2    P      .      .
+ KAG      "O5'"  P      "C5'"  .
+ KAG      "C5'"  "O5'"  "C4'"  .
+ KAG      "H5'"  "C5'"  .      .
+ KAG      "H5''" "C5'"  .      .
+ KAG      "C4'"  "C5'"  "C3'"  .
+ KAG      "H4'"  "C4'"  .      .
+ KAG      "C3'"  "C4'"  "O3'"  .
+ KAG      "H3'"  "C3'"  .      .
+ KAG      "C2'"  "C3'"  "C1'"  .
+ KAG      "H2''" "C2'"  .      .
+ KAG      "H2'"  "C2'"  .      .
+ KAG      "C1'"  "C2'"  N9     .
+ KAG      "H1'"  "C1'"  .      .
+ KAG      "O4'"  "C1'"  .      .
+ KAG      N9     "C1'"  C8     .
+ KAG      C8     N9     N7     .
+ KAG      H8     C8     .      .
+ KAG      N7     C8     C5     .
+ KAG      C5     N7     C6     .
+ KAG      C4     C5     .      .
+ KAG      C6     C5     N1     .
+ KAG      O6     C6     .      .
+ KAG      N1     C6     C2     .
+ KAG      H1     N1     .      .
+ KAG      C2     N1     N2     .
+ KAG      N3     C2     .      .
+ KAG      N2     C2     C1A    .
+ KAG      H2     N2     .      .
+ KAG      C1A    N2     C2B    .
+ KAG      H1A    C1A    .      .
+ KAG      C1M    C1A    H1M    .
+ KAG      H3M    C1M    .      .
+ KAG      H2M    C1M    .      .
+ KAG      H1M    C1M    .      .
+ KAG      C2B    C1A    C3G    .
+ KAG      H2B    C2B    .      .
+ KAG      H1B    C2B    .      .
+ KAG      C3G    C2B    O2G    .
+ KAG      H3G    C3G    .      .
+ KAG      O2G    C3G    .      .
+ KAG      "O3'"  "C3'"  .      END
+ KAG      HO3    "O3'"  .      .
+ KAG      "C4'"  "O4'"  .    ADD
+ KAG      N9     C4     .    ADD
+ KAG      C4     N3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KAG       P         OP3       deloc     1.510     0.020     1.510     0.020     
+KAG       OP1       P         deloc     1.510     0.020     1.510     0.020     
+KAG       OP2       P         deloc     1.510     0.020     1.510     0.020     
+KAG       "O5'"     P         single    1.610     0.020     1.610     0.020     
+KAG       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+KAG       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+KAG       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+KAG       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+KAG       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+KAG       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+KAG       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+KAG       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+KAG       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+KAG       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+KAG       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+KAG       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+KAG       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+KAG       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+KAG       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+KAG       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+KAG       N9        C4        single    1.337     0.020     1.337     0.020     
+KAG       C8        N9        single    1.337     0.020     1.337     0.020     
+KAG       C4        N3        single    1.355     0.020     1.355     0.020     
+KAG       C4        C5        double    1.490     0.020     1.490     0.020     
+KAG       N3        C2        double    1.350     0.020     1.350     0.020     
+KAG       N7        C8        double    1.350     0.020     1.350     0.020     
+KAG       H8        C8        single    1.082     0.013     0.975     0.010     
+KAG       C5        N7        single    1.350     0.020     1.350     0.020     
+KAG       C6        C5        single    1.490     0.020     1.490     0.020     
+KAG       O6        C6        double    1.250     0.020     1.250     0.020     
+KAG       N1        C6        single    1.337     0.020     1.337     0.020     
+KAG       C2        N1        single    1.337     0.020     1.337     0.020     
+KAG       H1        N1        single    1.016     0.010     0.899     0.007     
+KAG       N2        C2        single    1.350     0.020     1.350     0.020     
+KAG       C1A       N2        single    1.450     0.020     1.450     0.020     
+KAG       H2        N2        single    1.016     0.010     0.899     0.007     
+KAG       C1M       C1A       single    1.524     0.020     1.524     0.020     
+KAG       C2B       C1A       single    1.524     0.020     1.524     0.020     
+KAG       H1A       C1A       single    1.089     0.010     0.989     0.005     
+KAG       H1M       C1M       single    1.089     0.010     0.989     0.005     
+KAG       H2M       C1M       single    1.089     0.010     0.989     0.005     
+KAG       H3M       C1M       single    1.089     0.010     0.989     0.005     
+KAG       C3G       C2B       single    1.510     0.020     1.510     0.020     
+KAG       H2B       C2B       single    1.089     0.010     0.989     0.005     
+KAG       H1B       C2B       single    1.089     0.010     0.989     0.005     
+KAG       O2G       C3G       double    1.220     0.020     1.220     0.020     
+KAG       H3G       C3G       single    1.082     0.013     0.975     0.010     
+KAG       HO3       "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ KAG      OP3    P      OP1     119.900    3.000
+ KAG      OP3    P      OP2     119.900    3.000
+ KAG      OP3    P      "O5'"   108.200    3.000
+ KAG      OP1    P      OP2     119.900    3.000
+ KAG      OP1    P      "O5'"   108.200    3.000
+ KAG      OP2    P      "O5'"   108.200    3.000
+ KAG      P      "O5'"  "C5'"   120.500    3.000
+ KAG      "O5'"  "C5'"  "H5'"   109.470    3.000
+ KAG      "O5'"  "C5'"  "H5''"  109.470    3.000
+ KAG      "O5'"  "C5'"  "C4'"   109.470    3.000
+ KAG      "H5'"  "C5'"  "H5''"  107.900    3.000
+ KAG      "H5'"  "C5'"  "C4'"   109.470    3.000
+ KAG      "H5''" "C5'"  "C4'"   109.470    3.000
+ KAG      "C5'"  "C4'"  "H4'"   108.340    3.000
+ KAG      "C5'"  "C4'"  "C3'"   111.000    3.000
+ KAG      "C5'"  "C4'"  "O4'"   109.470    3.000
+ KAG      "H4'"  "C4'"  "C3'"   108.340    3.000
+ KAG      "H4'"  "C4'"  "O4'"   109.470    3.000
+ KAG      "C3'"  "C4'"  "O4'"   109.470    3.000
+ KAG      "C4'"  "C3'"  "H3'"   108.340    3.000
+ KAG      "C4'"  "C3'"  "C2'"   111.000    3.000
+ KAG      "C4'"  "C3'"  "O3'"   109.470    3.000
+ KAG      "H3'"  "C3'"  "C2'"   108.340    3.000
+ KAG      "H3'"  "C3'"  "O3'"   109.470    3.000
+ KAG      "C2'"  "C3'"  "O3'"   109.470    3.000
+ KAG      "C3'"  "C2'"  "H2''"  109.470    3.000
+ KAG      "C3'"  "C2'"  "H2'"   109.470    3.000
+ KAG      "C3'"  "C2'"  "C1'"   111.000    3.000
+ KAG      "H2''" "C2'"  "H2'"   107.900    3.000
+ KAG      "H2''" "C2'"  "C1'"   109.470    3.000
+ KAG      "H2'"  "C2'"  "C1'"   109.470    3.000
+ KAG      "C2'"  "C1'"  "H1'"   108.340    3.000
+ KAG      "C2'"  "C1'"  "O4'"   109.470    3.000
+ KAG      "C2'"  "C1'"  N9      109.470    3.000
+ KAG      "H1'"  "C1'"  "O4'"   109.470    3.000
+ KAG      "H1'"  "C1'"  N9      109.470    3.000
+ KAG      "O4'"  "C1'"  N9      109.470    3.000
+ KAG      "C1'"  "O4'"  "C4'"   111.800    3.000
+ KAG      "C1'"  N9     C8      126.000    3.000
+ KAG      "C1'"  N9     C4      126.000    3.000
+ KAG      C8     N9     C4      108.000    3.000
+ KAG      N9     C8     H8      126.000    3.000
+ KAG      N9     C8     N7      108.000    3.000
+ KAG      H8     C8     N7      126.000    3.000
+ KAG      C8     N7     C5      108.000    3.000
+ KAG      N7     C5     C4      108.000    3.000
+ KAG      N7     C5     C6      132.000    3.000
+ KAG      C4     C5     C6      120.000    3.000
+ KAG      C5     C4     N9      108.000    3.000
+ KAG      C5     C4     N3      120.000    3.000
+ KAG      N9     C4     N3      132.000    3.000
+ KAG      C5     C6     O6      120.000    3.000
+ KAG      C5     C6     N1      120.000    3.000
+ KAG      O6     C6     N1      120.000    3.000
+ KAG      C6     N1     H1      120.000    3.000
+ KAG      C6     N1     C2      120.000    3.000
+ KAG      H1     N1     C2      120.000    3.000
+ KAG      N1     C2     N3      120.000    3.000
+ KAG      N1     C2     N2      120.000    3.000
+ KAG      N3     C2     N2      120.000    3.000
+ KAG      C2     N3     C4      120.000    3.000
+ KAG      C2     N2     H2      120.000    3.000
+ KAG      C2     N2     C1A     120.000    3.000
+ KAG      H2     N2     C1A     118.500    3.000
+ KAG      N2     C1A    H1A     108.550    3.000
+ KAG      N2     C1A    C1M     110.000    3.000
+ KAG      N2     C1A    C2B     110.000    3.000
+ KAG      H1A    C1A    C1M     108.340    3.000
+ KAG      H1A    C1A    C2B     108.340    3.000
+ KAG      C1M    C1A    C2B     111.000    3.000
+ KAG      C1A    C1M    H3M     109.470    3.000
+ KAG      C1A    C1M    H2M     109.470    3.000
+ KAG      C1A    C1M    H1M     109.470    3.000
+ KAG      H3M    C1M    H2M     109.470    3.000
+ KAG      H3M    C1M    H1M     109.470    3.000
+ KAG      H2M    C1M    H1M     109.470    3.000
+ KAG      C1A    C2B    H2B     109.470    3.000
+ KAG      C1A    C2B    H1B     109.470    3.000
+ KAG      C1A    C2B    C3G     109.470    3.000
+ KAG      H2B    C2B    H1B     107.900    3.000
+ KAG      H2B    C2B    C3G     109.470    3.000
+ KAG      H1B    C2B    C3G     109.470    3.000
+ KAG      C2B    C3G    H3G     120.000    3.000
+ KAG      C2B    C3G    O2G     120.500    3.000
+ KAG      H3G    C3G    O2G     123.000    3.000
+ KAG      "C3'"  "O3'"  HO3     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ KAG      var_1    OP3    P      "O5'"  "C5'"     53.225   20.000   1
+ KAG      var_2    P      "O5'"  "C5'"  "C4'"    179.992   20.000   1
+ KAG      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.515   20.000   3
+ KAG      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ KAG      var_5    "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ KAG      var_6    "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ KAG      var_7    "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ KAG      var_8    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ KAG      var_9    "C2'"  "C1'"  N9     C8       -86.576   20.000   1
+ KAG      CONST_1  "C1'"  N9     C4     C5       180.000    0.000   0
+ KAG      CONST_2  "C1'"  N9     C8     N7       180.000    0.000   0
+ KAG      CONST_3  N9     C8     N7     C5         0.000    0.000   0
+ KAG      CONST_4  C8     N7     C5     C6       180.000    0.000   0
+ KAG      CONST_5  N7     C5     C4     N9         0.000    0.000   0
+ KAG      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ KAG      CONST_7  N7     C5     C6     N1       180.000    0.000   0
+ KAG      CONST_8  C5     C6     N1     C2         0.000    0.000   0
+ KAG      CONST_9  C6     N1     C2     N2       180.000    0.000   0
+ KAG      CONST_10 N1     C2     N3     C4         0.000    0.000   0
+ KAG      var_10   N1     C2     N2     C1A     -179.956   20.000   1
+ KAG      var_11   C2     N2     C1A    C2B     -160.286   20.000   3
+ KAG      var_12   N2     C1A    C1M    H1M       61.209   20.000   3
+ KAG      var_13   N2     C1A    C2B    C3G       59.430   20.000   3
+ KAG      var_14   C1A    C2B    C3G    O2G       -3.191   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ KAG      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ KAG      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ KAG      chir_03  "C1'"  "O4'"  "C2'"  N9        positiv
+ KAG      chir_04  C1A    N2     C1M    C2B       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ KAG      plan-1    N9        0.020
+ KAG      plan-1    "C1'"     0.020
+ KAG      plan-1    C4        0.020
+ KAG      plan-1    C8        0.020
+ KAG      plan-1    N7        0.020
+ KAG      plan-1    N3        0.020
+ KAG      plan-1    C5        0.020
+ KAG      plan-1    C6        0.020
+ KAG      plan-1    N1        0.020
+ KAG      plan-1    C2        0.020
+ KAG      plan-1    H8        0.020
+ KAG      plan-1    O6        0.020
+ KAG      plan-1    H1        0.020
+ KAG      plan-1    N2        0.020
+ KAG      plan-1    H2        0.020
+ KAG      plan-2    N2        0.020
+ KAG      plan-2    C2        0.020
+ KAG      plan-2    C1A       0.020
+ KAG      plan-2    H2        0.020
+ KAG      plan-3    C3G       0.020
+ KAG      plan-3    C2B       0.020
+ KAG      plan-3    O2G       0.020
+ KAG      plan-3    H3G       0.020
+# ------------------------------------------------------

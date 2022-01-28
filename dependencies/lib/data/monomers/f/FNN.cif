@@ -1,0 +1,147 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FNN     FNN      3-fluoro-4-nitrophenol     NON-POLYMER     15     11     .     
+#
+data_comp_FNN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FNN     F       F       F       0       0.409       2.059       1.437       
+FNN     N       N       N       1       2.474       0.163       0.807       
+FNN     O       O       OH1     0       -2.809      -0.348      -1.039      
+FNN     C1      C       CR6     0       -1.529      -0.216      -0.587      
+FNN     O1      O       OC      -1      3.114       1.155       0.492       
+FNN     C2      C       CR16    0       -1.192      0.874       0.213       
+FNN     O2      O       O       0       2.929       -0.739      1.494       
+FNN     C3      C       CR6     0       0.111       0.997       0.666       
+FNN     C4      C       CR6     0       1.098       0.052       0.341       
+FNN     C5      C       CR16    0       0.734       -1.040      -0.469      
+FNN     C6      C       CR16    0       -0.568      -1.167      -0.925      
+FNN     HO      H       H       0       -3.159      -1.066      -0.726      
+FNN     H2      H       H       0       -1.843      1.511       0.438       
+FNN     H5      H       H       0       1.377       -1.687      -0.701      
+FNN     H6      H       H       0       -0.806      -1.901      -1.466      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FNN       F         C3        SINGLE    n         1.346     0.012     1.346     0.012     
+FNN       N         O1        SINGLE    n         1.221     0.017     1.221     0.017     
+FNN       N         O2        DOUBLE    n         1.221     0.017     1.221     0.017     
+FNN       N         C4        SINGLE    n         1.457     0.020     1.457     0.020     
+FNN       O         C1        SINGLE    n         1.365     0.011     1.365     0.011     
+FNN       C1        C2        DOUBLE    y         1.386     0.010     1.386     0.010     
+FNN       C1        C6        SINGLE    y         1.386     0.010     1.386     0.010     
+FNN       C2        C3        SINGLE    y         1.376     0.011     1.376     0.011     
+FNN       C3        C4        DOUBLE    y         1.392     0.014     1.392     0.014     
+FNN       C4        C5        SINGLE    y         1.394     0.014     1.394     0.014     
+FNN       C5        C6        DOUBLE    y         1.379     0.010     1.379     0.010     
+FNN       O         HO        SINGLE    n         0.970     0.012     0.858     0.020     
+FNN       C2        H2        SINGLE    n         1.082     0.013     0.938     0.011     
+FNN       C5        H5        SINGLE    n         1.082     0.013     0.941     0.020     
+FNN       C6        H6        SINGLE    n         1.082     0.013     0.942     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FNN          O1           N          O2     123.343    1.50
+FNN          O1           N          C4     118.328    1.50
+FNN          O2           N          C4     118.328    1.50
+FNN          C1           O          HO     110.017    2.50
+FNN           O          C1          C2     119.610    2.52
+FNN           O          C1          C6     120.085    2.50
+FNN          C2          C1          C6     120.305    1.50
+FNN          C1          C2          C3     118.636    1.50
+FNN          C1          C2          H2     120.227    1.50
+FNN          C3          C2          H2     121.137    1.50
+FNN           F          C3          C2     117.670    1.50
+FNN           F          C3          C4     120.468    1.50
+FNN          C2          C3          C4     121.862    1.82
+FNN           N          C4          C3     122.396    1.50
+FNN           N          C4          C5     118.952    1.50
+FNN          C3          C4          C5     118.653    1.59
+FNN          C4          C5          C6     120.177    1.50
+FNN          C4          C5          H5     119.970    1.50
+FNN          C6          C5          H5     119.852    1.50
+FNN          C1          C6          C5     120.367    1.50
+FNN          C1          C6          H6     119.823    1.50
+FNN          C5          C6          H6     119.810    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FNN             sp2_sp2_1          C3          C4           N          O1     180.000   10.00     2
+FNN              const_23           O          C1          C6          C5     180.000   10.00     2
+FNN       const_sp2_sp2_3           O          C1          C2          C3     180.000   10.00     2
+FNN       const_sp2_sp2_6          C1          C2          C3           F     180.000   10.00     2
+FNN              const_12           F          C3          C4           N       0.000   10.00     2
+FNN              const_15           N          C4          C5          C6     180.000   10.00     2
+FNN              const_17          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FNN    plan-1          C1   0.020
+FNN    plan-1          C2   0.020
+FNN    plan-1          C3   0.020
+FNN    plan-1          C4   0.020
+FNN    plan-1          C5   0.020
+FNN    plan-1          C6   0.020
+FNN    plan-1           F   0.020
+FNN    plan-1          H2   0.020
+FNN    plan-1          H5   0.020
+FNN    plan-1          H6   0.020
+FNN    plan-1           N   0.020
+FNN    plan-1           O   0.020
+FNN    plan-2          C4   0.020
+FNN    plan-2           N   0.020
+FNN    plan-2          O1   0.020
+FNN    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FNN SMILES           ACDLabs              12.01 "Fc1c([N+]([O-])=O)ccc(O)c1"
+FNN InChI            InChI                1.03  "InChI=1S/C6H4FNO3/c7-5-3-4(9)1-2-6(5)8(10)11/h1-3,9H"
+FNN InChIKey         InChI                1.03  CSSGKHVRDGATJL-UHFFFAOYSA-N
+FNN SMILES_CANONICAL CACTVS               3.370 "Oc1ccc(c(F)c1)[N+]([O-])=O"
+FNN SMILES           CACTVS               3.370 "Oc1ccc(c(F)c1)[N+]([O-])=O"
+FNN SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "c1cc(c(cc1O)F)[N+](=O)[O-]"
+FNN SMILES           "OpenEye OEToolkits" 1.7.2 "c1cc(c(cc1O)F)[N+](=O)[O-]"
+FNN ?                acedrg               202         "dictionary generator"                  
+FNN ?                acedrg_database      11          "data source"                           
+FNN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FNN ?                refmac5              5.8.0189    "optimization tool"                     

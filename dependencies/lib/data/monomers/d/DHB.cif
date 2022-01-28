@@ -1,0 +1,150 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DHB     DHB      "3,4-DIHYDROXYBENZOIC ACID"     NON-POLYMER     16     11     .     
+#
+data_comp_DHB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DHB     C1      C       CR6     0       1.309       -0.161      0.032       
+DHB     C2      C       CR16    0       0.360       -1.060      0.539       
+DHB     C3      C       CR6     0       -1.004      -0.776      0.430       
+DHB     O3      O       OH1     0       -1.941      -1.644      0.920       
+DHB     C4      C       CR6     0       -1.419      0.415       -0.192      
+DHB     O4      O       OH1     0       -2.748      0.693       -0.299      
+DHB     C5      C       CR16    0       -0.477      1.301       -0.692      
+DHB     C6      C       CR16    0       0.881       1.013       -0.580      
+DHB     C       C       C       0       2.769       -0.471      0.152       
+DHB     O1      O       O       0       3.506       0.393       0.660       
+DHB     O2      O       OC      -1      3.164       -1.576      -0.261      
+DHB     H2      H       H       0       0.639       -1.857      0.955       
+DHB     HO3     H       H       0       -2.337      -1.296      1.597       
+DHB     HO4     H       H       0       -2.937      1.402       0.146       
+DHB     H5      H       H       0       -0.759      2.097       -1.107      
+DHB     H6      H       H       0       1.512       1.620       -0.923      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DHB       C1        C2        DOUBLE    y         1.396     0.010     1.396     0.010     
+DHB       C1        C6        SINGLE    y         1.386     0.010     1.386     0.010     
+DHB       C1        C         SINGLE    n         1.498     0.020     1.498     0.020     
+DHB       C2        C3        SINGLE    y         1.381     0.015     1.381     0.015     
+DHB       C3        O3        SINGLE    n         1.367     0.010     1.367     0.010     
+DHB       C3        C4        DOUBLE    y         1.396     0.010     1.396     0.010     
+DHB       C4        O4        SINGLE    n         1.361     0.010     1.361     0.010     
+DHB       C4        C5        SINGLE    y         1.379     0.010     1.379     0.010     
+DHB       C5        C6        DOUBLE    y         1.386     0.010     1.386     0.010     
+DHB       C         O1        DOUBLE    n         1.244     0.020     1.244     0.020     
+DHB       C         O2        SINGLE    n         1.244     0.020     1.244     0.020     
+DHB       C2        H2        SINGLE    n         1.082     0.013     0.941     0.017     
+DHB       O3        HO3       SINGLE    n         0.970     0.012     0.858     0.020     
+DHB       O4        HO4       SINGLE    n         0.970     0.012     0.858     0.020     
+DHB       C5        H5        SINGLE    n         1.082     0.013     0.940     0.020     
+DHB       C6        H6        SINGLE    n         1.082     0.013     0.941     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DHB          C2          C1          C6     120.023    1.50
+DHB          C2          C1           C     119.556    1.50
+DHB          C6          C1           C     120.422    1.50
+DHB          C1          C2          C3     120.012    1.50
+DHB          C1          C2          H2     120.243    1.50
+DHB          C3          C2          H2     119.746    1.50
+DHB          C2          C3          O3     121.997    2.52
+DHB          C2          C3          C4     119.332    1.50
+DHB          O3          C3          C4     118.671    2.41
+DHB          C3          O3         HO3     110.003    2.63
+DHB          C3          C4          O4     118.816    2.41
+DHB          C3          C4          C5     119.765    1.50
+DHB          O4          C4          C5     121.418    2.46
+DHB          C4          O4         HO4     110.003    2.63
+DHB          C4          C5          C6     119.802    1.50
+DHB          C4          C5          H5     119.921    1.50
+DHB          C6          C5          H5     120.277    1.50
+DHB          C1          C6          C5     121.067    1.50
+DHB          C1          C6          H6     119.668    1.50
+DHB          C5          C6          H6     119.265    1.50
+DHB          C1           C          O1     117.791    1.50
+DHB          C1           C          O2     117.791    1.50
+DHB          O1           C          O2     124.418    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DHB       const_sp2_sp2_3           C          C1          C2          C3     180.000   10.00     2
+DHB              const_23           C          C1          C6          C5     180.000   10.00     2
+DHB             sp2_sp2_1          O1           C          C1          C2     180.000   10.00     2
+DHB       const_sp2_sp2_6          C1          C2          C3          O3     180.000   10.00     2
+DHB              const_12          O3          C3          C4          O4       0.000   10.00     2
+DHB              const_15          O4          C4          C5          C6     180.000   10.00     2
+DHB              const_17          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DHB    plan-1           C   0.020
+DHB    plan-1          C1   0.020
+DHB    plan-1          C2   0.020
+DHB    plan-1          C3   0.020
+DHB    plan-1          C4   0.020
+DHB    plan-1          C5   0.020
+DHB    plan-1          C6   0.020
+DHB    plan-1          H2   0.020
+DHB    plan-1          H5   0.020
+DHB    plan-1          H6   0.020
+DHB    plan-1          O3   0.020
+DHB    plan-1          O4   0.020
+DHB    plan-2           C   0.020
+DHB    plan-2          C1   0.020
+DHB    plan-2          O1   0.020
+DHB    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DHB SMILES           ACDLabs              10.04 "O=C(O)c1cc(O)c(O)cc1"
+DHB SMILES_CANONICAL CACTVS               3.341 "OC(=O)c1ccc(O)c(O)c1"
+DHB SMILES           CACTVS               3.341 "OC(=O)c1ccc(O)c(O)c1"
+DHB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1C(=O)O)O)O"
+DHB SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1C(=O)O)O)O"
+DHB InChI            InChI                1.03  "InChI=1S/C7H6O4/c8-5-2-1-4(7(10)11)3-6(5)9/h1-3,8-9H,(H,10,11)"
+DHB InChIKey         InChI                1.03  YQUVCSBJEUQKSH-UHFFFAOYSA-N
+DHB ?                acedrg               202         "dictionary generator"                  
+DHB ?                acedrg_database      11          "data source"                           
+DHB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DHB ?                refmac5              5.8.0189    "optimization tool"                     

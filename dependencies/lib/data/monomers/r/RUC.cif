@@ -1,0 +1,192 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RUC      RUC '(eta6-benzene)ruthenium             ' non-polymer        13   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RUC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RUC           H28    H    H         0.000     11.579   13.247   18.529
+ RUC           C28    C    CH1       0.000     12.120   12.373   18.140
+ RUC           RU11   RU   RU        0.000     11.546   11.519   16.153
+ RUC           C29    C    CH1       0.000     11.610   11.115   18.351
+ RUC           H29    H    H         0.000     10.679   10.980   18.919
+ RUC           C27    C    CH1       0.000     13.179   12.560   17.281
+ RUC           H27    H    H         0.000     13.461   13.582   16.993
+ RUC           C26    C    CH1       0.000     13.735   11.500   16.612
+ RUC           H26    H    H         0.000     14.473   11.669   15.815
+ RUC           C31    C    CH1       0.000     13.248   10.244   16.851
+ RUC           H31    H    H         0.000     13.586    9.409   16.221
+ RUC           C30    C    CH1       0.000     12.196   10.050   17.714
+ RUC           H30    H    H         0.000     11.712    9.064   17.759
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RUC      H28    n/a    C28    START
+ RUC      C28    H28    C27    .
+ RUC      RU11   C28    .      .
+ RUC      C29    C28    H29    .
+ RUC      H29    C29    .      .
+ RUC      C27    C28    C26    .
+ RUC      H27    C27    .      .
+ RUC      C26    C27    C31    .
+ RUC      H26    C26    .      .
+ RUC      C31    C26    C30    .
+ RUC      H31    C31    .      .
+ RUC      C30    C31    H30    .
+ RUC      H30    C30    .      END
+ RUC      RU11   C29    .    ADD
+ RUC      RU11   C30    .    ADD
+ RUC      RU11   C31    .    ADD
+ RUC      RU11   C26    .    ADD
+ RUC      RU11   C27    .    ADD
+ RUC      C29    C30    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RUC       C29       C30       double    1.524     0.020     1.524     0.020     
+RUC       C29       C28       single    1.524     0.020     1.524     0.020     
+RUC       C30       C31       single    1.524     0.020     1.524     0.020     
+RUC       C31       C26       double    1.524     0.020     1.524     0.020     
+RUC       C26       C27       single    1.524     0.020     1.524     0.020     
+RUC       C27       C28       double    1.524     0.020     1.524     0.020     
+RUC       H29       C29       single    1.089     0.010     0.989     0.005     
+RUC       H30       C30       single    1.089     0.010     0.989     0.005     
+RUC       H31       C31       single    1.089     0.010     0.989     0.005     
+RUC       H26       C26       single    1.089     0.010     0.989     0.005     
+RUC       H27       C27       single    1.089     0.010     0.989     0.005     
+RUC       C28       H28       single    1.089     0.010     0.989     0.005     
+RUC       RU11      C29       single    2.236     0.020     2.236     0.020     
+RUC       RU11      C30       single    2.240     0.020     2.240     0.020     
+RUC       RU11      C31       single    2.238     0.020     2.238     0.020     
+RUC       RU11      C26       single    2.237     0.020     2.237     0.020     
+RUC       RU11      C27       single    2.241     0.020     2.241     0.020     
+RUC       RU11      C28       single    2.238     0.020     2.238     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RUC      H28    C28    RU11    109.500    3.000
+ RUC      H28    C28    C29     108.340    3.000
+ RUC      H28    C28    C27     108.340    3.000
+ RUC      RU11   C28    C29      70.015    3.000
+ RUC      RU11   C28    C27      70.231    3.000
+ RUC      C29    C28    C27     111.000    3.000
+ RUC      C28    RU11   C29      39.837    3.000
+ RUC      C28    RU11   C30      63.705    3.000
+ RUC      C28    RU11   C31      75.251    3.000
+ RUC      C28    RU11   C26      64.530    3.000
+ RUC      C28    RU11   C27      39.787    3.000
+ RUC      C29    RU11   C30      39.816    3.000
+ RUC      C29    RU11   C31      64.450    3.000
+ RUC      C30    RU11   C31      39.793    3.000
+ RUC      C29    RU11   C26      76.626    3.000
+ RUC      C30    RU11   C26      64.368    3.000
+ RUC      C31    RU11   C26      39.823    3.000
+ RUC      C29    RU11   C27      64.422    3.000
+ RUC      C30    RU11   C27      75.074    3.000
+ RUC      C31    RU11   C27      63.484    3.000
+ RUC      C26    RU11   C27      39.795    3.000
+ RUC      C28    C29    H29     108.340    3.000
+ RUC      C28    C29    RU11     70.148    3.000
+ RUC      C28    C29    C30     111.000    3.000
+ RUC      RU11   C29    C30      70.240    3.000
+ RUC      H29    C29    RU11    109.500    3.000
+ RUC      H29    C29    C30     108.340    3.000
+ RUC      C28    C27    H27     108.340    3.000
+ RUC      C28    C27    C26     111.000    3.000
+ RUC      C28    C27    RU11     69.982    3.000
+ RUC      H27    C27    C26     108.340    3.000
+ RUC      H27    C27    RU11    109.500    3.000
+ RUC      C26    C27    RU11     69.944    3.000
+ RUC      C27    C26    H26     108.340    3.000
+ RUC      C27    C26    C31     111.000    3.000
+ RUC      C27    C26    RU11     70.260    3.000
+ RUC      H26    C26    C31     108.340    3.000
+ RUC      H26    C26    RU11    109.500    3.000
+ RUC      C31    C26    RU11     70.143    3.000
+ RUC      C26    C31    H31     108.340    3.000
+ RUC      C26    C31    C30     111.000    3.000
+ RUC      C26    C31    RU11     70.034    3.000
+ RUC      H31    C31    C30     108.340    3.000
+ RUC      H31    C31    RU11    109.500    3.000
+ RUC      C30    C31    RU11     70.163    3.000
+ RUC      C31    C30    H30     108.340    3.000
+ RUC      C31    C30    RU11     70.044    3.000
+ RUC      C31    C30    C29     111.000    3.000
+ RUC      RU11   C30    C29      69.945    3.000
+ RUC      H30    C30    RU11    109.500    3.000
+ RUC      H30    C30    C29     108.340    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RUC      var_1    H28    C28    RU11   C29     -114.238   20.000   1
+ RUC      var_2    C28    RU11   C30    C31     -101.558   20.000   1
+ RUC      var_3    C28    RU11   C31    C26      -66.661   20.000   1
+ RUC      var_4    C28    RU11   C26    C27      -28.690   20.000   1
+ RUC      var_5    H28    C28    C29    RU11     153.553   20.000   3
+ RUC      var_6    C28    C29    C30    C31       -1.891   20.000   3
+ RUC      var_7    H28    C28    C27    C26      151.299   20.000   3
+ RUC      var_8    C28    C27    C26    C31       -2.319   20.000   3
+ RUC      var_9    C27    C26    C31    C30        1.913   20.000   3
+ RUC      var_10   C26    C31    C30    RU11      55.506   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RUC      chir_01  C29    RU11   C30    C28       negativ
+ RUC      chir_02  C30    RU11   C29    C31       positiv
+ RUC      chir_03  C31    RU11   C30    C26       positiv
+ RUC      chir_04  C26    RU11   C31    C27       positiv
+ RUC      chir_05  C27    RU11   C26    C28       positiv
+ RUC      chir_06  C28    RU11   C29    C27       negativ
+# ------------------------------------------------------

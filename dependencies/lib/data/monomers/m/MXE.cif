@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MXE     MXE      2-METHOXYETHANOL     NON-POLYMER     13     5     .     
+#
+data_comp_MXE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MXE     O1      O       OH1     0       2.601       -0.648      0.042       
+MXE     C1      C       CH2     0       1.567       0.303       -0.122      
+MXE     C2      C       CH2     0       0.213       -0.286      0.114       
+MXE     O2      O       O2      0       -0.779      0.721       -0.032      
+MXE     C3      C       CH3     0       -2.142      0.345       0.152       
+MXE     HO1     H       H       0       3.327       -0.326      -0.251      
+MXE     H11     H       H       0       1.608       0.665       -1.032      
+MXE     H12     H       H       0       1.711       1.042       0.506       
+MXE     H21     H       H       0       0.168       -0.666      1.018       
+MXE     H22     H       H       0       0.047       -1.008      -0.532      
+MXE     H31     H       H       0       -2.522      0.864       0.880       
+MXE     H32     H       H       0       -2.207      -0.601      0.364       
+MXE     H33     H       H       0       -2.637      0.527       -0.663      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MXE       O1        C1        SINGLE    n         1.414     0.020     1.414     0.020     
+MXE       C1        C2        SINGLE    n         1.496     0.020     1.496     0.020     
+MXE       C2        O2        SINGLE    n         1.414     0.020     1.414     0.020     
+MXE       O2        C3        SINGLE    n         1.415     0.020     1.415     0.020     
+MXE       O1        HO1       SINGLE    n         0.970     0.012     0.846     0.020     
+MXE       C1        H11       SINGLE    n         1.089     0.010     0.980     0.014     
+MXE       C1        H12       SINGLE    n         1.089     0.010     0.980     0.014     
+MXE       C2        H21       SINGLE    n         1.089     0.010     0.982     0.018     
+MXE       C2        H22       SINGLE    n         1.089     0.010     0.982     0.018     
+MXE       C3        H31       SINGLE    n         1.089     0.010     0.971     0.015     
+MXE       C3        H32       SINGLE    n         1.089     0.010     0.971     0.015     
+MXE       C3        H33       SINGLE    n         1.089     0.010     0.971     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MXE          C1          O1         HO1     109.347    1.86
+MXE          O1          C1          C2     112.284    1.56
+MXE          O1          C1         H11     109.012    1.50
+MXE          O1          C1         H12     109.012    1.50
+MXE          C2          C1         H11     109.198    1.50
+MXE          C2          C1         H12     109.198    1.50
+MXE         H11          C1         H12     108.093    1.50
+MXE          C1          C2          O2     109.629    1.89
+MXE          C1          C2         H21     109.795    1.50
+MXE          C1          C2         H22     109.795    1.50
+MXE          O2          C2         H21     109.622    1.50
+MXE          O2          C2         H22     109.622    1.50
+MXE         H21          C2         H22     108.274    1.50
+MXE          C2          O2          C3     112.505    3.00
+MXE          O2          C3         H31     109.470    1.50
+MXE          O2          C3         H32     109.470    1.50
+MXE          O2          C3         H33     109.470    1.50
+MXE         H31          C3         H32     109.532    1.53
+MXE         H31          C3         H33     109.532    1.53
+MXE         H32          C3         H33     109.532    1.53
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MXE             sp3_sp3_1          C2          C1          O1         HO1     180.000   10.00     3
+MXE             sp3_sp3_4          O1          C1          C2          O2     180.000   10.00     3
+MXE            sp3_sp3_13          C1          C2          O2          C3     180.000   10.00     3
+MXE            sp3_sp3_16         H31          C3          O2          C2     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MXE SMILES           ACDLabs              10.04 OCCOC
+MXE SMILES_CANONICAL CACTVS               3.341 COCCO
+MXE SMILES           CACTVS               3.341 COCCO
+MXE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 COCCO
+MXE SMILES           "OpenEye OEToolkits" 1.5.0 COCCO
+MXE InChI            InChI                1.03  InChI=1S/C3H8O2/c1-5-3-2-4/h4H,2-3H2,1H3
+MXE InChIKey         InChI                1.03  XNWFRZJHXBZDAG-UHFFFAOYSA-N
+MXE ?                acedrg               202         "dictionary generator"                  
+MXE ?                acedrg_database      11          "data source"                           
+MXE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MXE ?                refmac5              5.8.0189    "optimization tool"                     

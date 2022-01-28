@@ -1,0 +1,175 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+QSC     QSC      "(1R)-1-phenylethanamine"     NON-POLYMER     20     9     .     
+#
+data_comp_QSC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+QSC     CAE     C       CH3     0       -2.162      -0.834      -0.599      
+QSC     CAT     C       CR16    0       2.846       -0.088      -0.207      
+QSC     CAY     C       CR16    0       2.111       -0.932      0.607       
+QSC     CAZ     C       CR16    0       2.200       0.894       -0.938      
+QSC     CBE     C       CR16    0       0.728       -0.794      0.691       
+QSC     CBF     C       CR16    0       0.817       1.033       -0.855      
+QSC     NBR     N       NT2     0       -1.940      0.515       1.441       
+QSC     CCI     C       CR6     0       0.064       0.191       -0.036      
+QSC     CCL     C       CH1     0       -1.448      0.332       0.061       
+QSC     HAE     H       H       0       -1.898      -0.891      -1.533      
+QSC     HAEA    H       H       0       -3.125      -0.700      -0.543      
+QSC     HAEB    H       H       0       -1.924      -1.661      -0.145      
+QSC     HAT     H       H       0       3.784       -0.182      -0.264      
+QSC     HAY     H       H       0       2.548       -1.603      1.107       
+QSC     HAZ     H       H       0       2.698       1.471       -1.495      
+QSC     HBE     H       H       0       0.235       -1.373      1.250       
+QSC     HBF     H       H       0       0.386       1.706       -1.358      
+QSC     HNBR    H       H       0       -1.426      1.152       1.863       
+QSC     H2      H       H       0       -1.819      -0.269      1.907       
+QSC     HCL     H       H       0       -1.701      1.141       -0.438      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+QSC       CAE       CCL       SINGLE    n         1.518     0.010     1.518     0.010     
+QSC       CAT       CAY       DOUBLE    y         1.374     0.013     1.374     0.013     
+QSC       CAT       CAZ       SINGLE    y         1.374     0.013     1.374     0.013     
+QSC       CAY       CBE       SINGLE    y         1.386     0.010     1.386     0.010     
+QSC       CAZ       CBF       DOUBLE    y         1.386     0.010     1.386     0.010     
+QSC       CBE       CCI       DOUBLE    y         1.386     0.010     1.386     0.010     
+QSC       CBF       CCI       SINGLE    y         1.386     0.010     1.386     0.010     
+QSC       NBR       CCL       SINGLE    n         1.475     0.014     1.475     0.014     
+QSC       CCI       CCL       SINGLE    n         1.519     0.010     1.519     0.010     
+QSC       CAE       HAE       SINGLE    n         1.089     0.010     0.973     0.017     
+QSC       CAE       HAEA      SINGLE    n         1.089     0.010     0.973     0.017     
+QSC       CAE       HAEB      SINGLE    n         1.089     0.010     0.973     0.017     
+QSC       CAT       HAT       SINGLE    n         1.082     0.013     0.944     0.016     
+QSC       CAY       HAY       SINGLE    n         1.082     0.013     0.944     0.018     
+QSC       CAZ       HAZ       SINGLE    n         1.082     0.013     0.944     0.018     
+QSC       CBE       HBE       SINGLE    n         1.082     0.013     0.944     0.017     
+QSC       CBF       HBF       SINGLE    n         1.082     0.013     0.944     0.017     
+QSC       NBR       HNBR      SINGLE    n         1.036     0.016     0.920     0.020     
+QSC       NBR       H2        SINGLE    n         1.036     0.016     0.920     0.020     
+QSC       CCL       HCL       SINGLE    n         1.089     0.010     0.983     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+QSC         CCL         CAE         HAE     109.566    1.50
+QSC         CCL         CAE        HAEA     109.566    1.50
+QSC         CCL         CAE        HAEB     109.566    1.50
+QSC         HAE         CAE        HAEA     109.407    1.50
+QSC         HAE         CAE        HAEB     109.407    1.50
+QSC        HAEA         CAE        HAEB     109.407    1.50
+QSC         CAY         CAT         CAZ     119.933    1.50
+QSC         CAY         CAT         HAT     120.033    1.50
+QSC         CAZ         CAT         HAT     120.033    1.50
+QSC         CAT         CAY         CBE     120.216    1.50
+QSC         CAT         CAY         HAY     119.938    1.50
+QSC         CBE         CAY         HAY     119.847    1.50
+QSC         CAT         CAZ         CBF     120.216    1.50
+QSC         CAT         CAZ         HAZ     119.938    1.50
+QSC         CBF         CAZ         HAZ     119.847    1.50
+QSC         CAY         CBE         CCI     120.588    1.50
+QSC         CAY         CBE         HBE     119.730    1.50
+QSC         CCI         CBE         HBE     119.682    1.50
+QSC         CAZ         CBF         CCI     120.588    1.50
+QSC         CAZ         CBF         HBF     119.730    1.50
+QSC         CCI         CBF         HBF     119.682    1.50
+QSC         CCL         NBR        HNBR     107.811    3.00
+QSC         CCL         NBR          H2     107.811    3.00
+QSC        HNBR         NBR          H2     105.995    3.00
+QSC         CBE         CCI         CBF     118.460    1.50
+QSC         CBE         CCI         CCL     120.770    1.53
+QSC         CBF         CCI         CCL     120.770    1.53
+QSC         CAE         CCL         NBR     111.883    2.59
+QSC         CAE         CCL         CCI     112.585    1.68
+QSC         CAE         CCL         HCL     107.678    1.50
+QSC         NBR         CCL         CCI     113.691    2.29
+QSC         NBR         CCL         HCL     107.543    1.50
+QSC         CCI         CCL         HCL     107.531    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+QSC             sp3_sp3_1         HAE         CAE         CCL         NBR     180.000   10.00     3
+QSC       const_sp2_sp2_1         CAZ         CAT         CAY         CBE       0.000   10.00     2
+QSC              const_21         CAY         CAT         CAZ         CBF       0.000   10.00     2
+QSC       const_sp2_sp2_5         CAT         CAY         CBE         CCI       0.000   10.00     2
+QSC              const_17         CAT         CAZ         CBF         CCI       0.000   10.00     2
+QSC              const_10         CAY         CBE         CCI         CCL     180.000   10.00     2
+QSC              const_14         CAZ         CBF         CCI         CCL     180.000   10.00     2
+QSC            sp3_sp3_10         CAE         CCL         NBR        HNBR     180.000   10.00     3
+QSC             sp2_sp3_1         CBE         CCI         CCL         CAE     150.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+QSC    chir_1    CCL    NBR    CCI    CAE    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+QSC    plan-1         CAT   0.020
+QSC    plan-1         CAY   0.020
+QSC    plan-1         CAZ   0.020
+QSC    plan-1         CBE   0.020
+QSC    plan-1         CBF   0.020
+QSC    plan-1         CCI   0.020
+QSC    plan-1         CCL   0.020
+QSC    plan-1         HAT   0.020
+QSC    plan-1         HAY   0.020
+QSC    plan-1         HAZ   0.020
+QSC    plan-1         HBE   0.020
+QSC    plan-1         HBF   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+QSC SMILES           ACDLabs              12.01 "NC(c1ccccc1)C"
+QSC InChI            InChI                1.03  "InChI=1S/C8H11N/c1-7(9)8-5-3-2-4-6-8/h2-7H,9H2,1H3/t7-/m1/s1"
+QSC InChIKey         InChI                1.03  RQEUFEKYXDPUSK-SSDOTTSWSA-N
+QSC SMILES_CANONICAL CACTVS               3.370 "C[C@@H](N)c1ccccc1"
+QSC SMILES           CACTVS               3.370 "C[CH](N)c1ccccc1"
+QSC SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C[C@H](c1ccccc1)N"
+QSC SMILES           "OpenEye OEToolkits" 1.7.6 "CC(c1ccccc1)N"
+QSC ?                acedrg               202         "dictionary generator"                  
+QSC ?                acedrg_database      11          "data source"                           
+QSC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+QSC ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,179 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IPG     IPG     "N-ISOPROPYLGLYCINE"     M-peptide     18     8     .
+#
+data_comp_IPG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+IPG     N       N       NT1     0       0.461       -0.076      -0.499
+IPG     CA      C       CH2     0       1.605       -0.112      0.411
+IPG     C       C       C       0       2.949       0.111       -0.281
+IPG     O       O       O       0       3.971       -0.229      0.347
+IPG     CN      C       CH1     0       -0.854      -0.238      0.155
+IPG     CG1     C       CH3     0       -1.334      1.078       0.751
+IPG     CG2     C       CH3     0       -1.861      -0.797      -0.839
+IPG     OXT     O       OC      -1      2.932       0.619       -1.422
+IPG     H       H       H       0       0.481       0.707       -0.921
+IPG     HA1     H       H       0       1.627       -0.976      0.855
+IPG     HA2     H       H       0       1.491       0.570       1.091
+IPG     HCN     H       H       0       -0.757      -0.893      0.894
+IPG     HG11    H       H       0       -2.197      0.943       1.180
+IPG     HG12    H       H       0       -1.424      1.742       0.045
+IPG     HG13    H       H       0       -0.692      1.391       1.411
+IPG     HG21    H       H       0       -2.713      -0.939      -0.392
+IPG     HG22    H       H       0       -1.535      -1.643      -1.191
+IPG     HG23    H       H       0       -1.979      -0.166      -1.570
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+IPG      N      n/a    CA     START
+IPG      H      N      .      .
+IPG      CN     N      CG1    .
+IPG      HCN    CN     .      .
+IPG      CG2    CN     HG21   .
+IPG      HG23   CG2    .      .
+IPG      HG22   CG2    .      .
+IPG      HG21   CG2    .      .
+IPG      CG1    CN     HG11   .
+IPG      HG13   CG1    .      .
+IPG      HG12   CG1    .      .
+IPG      HG11   CG1    .      .
+IPG      CA     N      C      .
+IPG      HA1    CA     .      .
+IPG      HA2    CA     .      .
+IPG      C      CA     .      END
+IPG      O      C      .      .
+IPG      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IPG       N         CA        SINGLE    n         1.459     0.013     1.459     0.013     
+IPG       N         CN        SINGLE    n         1.475     0.010     1.475     0.010     
+IPG       CA        C         SINGLE    n         1.527     0.012     1.527     0.012     
+IPG       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+IPG       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+IPG       CN        CG1       SINGLE    n         1.521     0.011     1.521     0.011     
+IPG       CN        CG2       SINGLE    n         1.521     0.011     1.521     0.011     
+IPG       N         H         SINGLE    n         1.036     0.016     0.888     0.020     
+IPG       CA        HA1       SINGLE    n         1.089     0.010     0.971     0.020     
+IPG       CA        HA2       SINGLE    n         1.089     0.010     0.971     0.020     
+IPG       CN        HCN       SINGLE    n         1.089     0.010     0.992     0.014     
+IPG       CG1       HG11      SINGLE    n         1.089     0.010     0.973     0.015     
+IPG       CG1       HG12      SINGLE    n         1.089     0.010     0.973     0.015     
+IPG       CG1       HG13      SINGLE    n         1.089     0.010     0.973     0.015     
+IPG       CG2       HG21      SINGLE    n         1.089     0.010     0.973     0.015     
+IPG       CG2       HG22      SINGLE    n         1.089     0.010     0.973     0.015     
+IPG       CG2       HG23      SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+IPG          CA           N          CN     112.615    2.70
+IPG          CA           N           H     106.682    3.00
+IPG          CN           N           H     108.160    2.24
+IPG           N          CA           C     112.134    2.59
+IPG           N          CA         HA1     108.963    1.50
+IPG           N          CA         HA2     108.963    1.50
+IPG           C          CA         HA1     108.590    1.50
+IPG           C          CA         HA2     108.590    1.50
+IPG         HA1          CA         HA2     107.999    1.50
+IPG          CA           C           O     117.139    1.80
+IPG          CA           C         OXT     117.139    1.80
+IPG           O           C         OXT     125.722    1.50
+IPG           N          CN         CG1     110.448    1.66
+IPG           N          CN         CG2     110.448    1.66
+IPG           N          CN         HCN     108.459    1.50
+IPG         CG1          CN         CG2     111.835    1.50
+IPG         CG1          CN         HCN     108.408    1.50
+IPG         CG2          CN         HCN     108.408    1.50
+IPG          CN         CG1        HG11     109.432    1.50
+IPG          CN         CG1        HG12     109.432    1.50
+IPG          CN         CG1        HG13     109.432    1.50
+IPG        HG11         CG1        HG12     109.386    1.50
+IPG        HG11         CG1        HG13     109.386    1.50
+IPG        HG12         CG1        HG13     109.386    1.50
+IPG          CN         CG2        HG21     109.432    1.50
+IPG          CN         CG2        HG22     109.432    1.50
+IPG          CN         CG2        HG23     109.432    1.50
+IPG        HG21         CG2        HG22     109.386    1.50
+IPG        HG21         CG2        HG23     109.386    1.50
+IPG        HG22         CG2        HG23     109.386    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+IPG             sp3_sp3_1           C          CA           N          CN     180.000   10.00     3
+IPG             sp3_sp3_8         CG1          CN           N          CA     -60.000   10.00     3
+IPG             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+IPG            sp3_sp3_13        HG11         CG1          CN           N     180.000   10.00     3
+IPG            sp3_sp3_22        HG21         CG2          CN           N     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+IPG    chir_1    N    CN    CA    H    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+IPG    plan-1           C   0.020
+IPG    plan-1          CA   0.020
+IPG    plan-1           O   0.020
+IPG    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+IPG SMILES           ACDLabs              10.04 "O=C(O)CNC(C)C"
+IPG SMILES_CANONICAL CACTVS               3.341 "CC(C)NCC(O)=O"
+IPG SMILES           CACTVS               3.341 "CC(C)NCC(O)=O"
+IPG SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)NCC(=O)O"
+IPG SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)NCC(=O)O"
+IPG InChI            InChI                1.03  "InChI=1S/C5H11NO2/c1-4(2)6-3-5(7)8/h4,6H,3H2,1-2H3,(H,7,8)"
+IPG InChIKey         InChI                1.03  HEPOIJKOXBKKNJ-UHFFFAOYSA-N
+IPG ?                acedrg               196         "dictionary generator"
+IPG ?                acedrg_database      11          "data source"
+IPG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+IPG ?                refmac5              5.8.0222    "optimization tool"

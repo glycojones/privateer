@@ -1,0 +1,119 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SLP     SLP      "3-selanylpropanoic acid"     NON-POLYMER     11     6     .     
+#
+data_comp_SLP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SLP     C6      C       CH2     0       -0.533      -0.249      -0.531      
+SLP     C2      C       CH2     0       0.744       0.083       0.184       
+SLP     SE      SE      SE      0       2.271       0.147       -1.048      
+SLP     C7      C       C       0       -1.729      -0.308      0.404       
+SLP     O1      O       O       0       -2.062      0.734       1.001       
+SLP     O2      O       OC      -1      -2.323      -1.397      0.532       
+SLP     H6      H       H       0       -0.441      -1.107      -0.973      
+SLP     H6A     H       H       0       -0.704      0.421       -1.212      
+SLP     H2      H       H       0       0.915       -0.593      0.874       
+SLP     H2A     H       H       0       0.652       0.952       0.629       
+SLP     HSE     H       H       0       3.267       0.396       -0.436      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SLP          C6          C2      SINGLE       n     1.501  0.0200     1.501  0.0200
+SLP          C2          SE      SINGLE       n     1.963  0.0200     1.963  0.0200
+SLP          C6          C7      SINGLE       n     1.519  0.0109     1.519  0.0109
+SLP          C7          O1      DOUBLE       n     1.247  0.0187     1.247  0.0187
+SLP          C7          O2      SINGLE       n     1.247  0.0187     1.247  0.0187
+SLP          C6          H6      SINGLE       n     1.089  0.0100     0.970  0.0100
+SLP          C6         H6A      SINGLE       n     1.089  0.0100     0.970  0.0100
+SLP          C2          H2      SINGLE       n     1.089  0.0100     0.981  0.0167
+SLP          C2         H2A      SINGLE       n     1.089  0.0100     0.981  0.0167
+SLP          SE         HSE      SINGLE       n     1.195  0.0100     1.195  0.0100
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SLP          C2          C6          C7     111.511    2.91
+SLP          C2          C6          H6     109.055    1.50
+SLP          C2          C6         H6A     109.055    1.50
+SLP          C7          C6          H6     108.416    1.50
+SLP          C7          C6         H6A     108.416    1.50
+SLP          H6          C6         H6A     107.705    1.50
+SLP          C6          C2          SE     111.593    3.00
+SLP          C6          C2          H2     109.359    1.50
+SLP          C6          C2         H2A     109.359    1.50
+SLP          SE          C2          H2     109.134    1.50
+SLP          SE          C2         H2A     109.134    1.50
+SLP          H2          C2         H2A     107.871    1.50
+SLP          C2          SE         HSE     109.471    3.00
+SLP          C6          C7          O1     118.187    1.67
+SLP          C6          C7          O2     118.187    1.67
+SLP          O1          C7          O2     123.625    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SLP             sp3_sp3_1          SE          C2          C6          C7     180.000   10.00     3
+SLP             sp2_sp3_2          O1          C7          C6          C2     120.000   10.00     6
+SLP            sp3_sp3_10          C6          C2          SE         HSE     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SLP    plan-1          C6   0.020
+SLP    plan-1          C7   0.020
+SLP    plan-1          O1   0.020
+SLP    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SLP SMILES_CANONICAL CACTVS               3.352 "OC(=O)CC[SeH]"
+SLP SMILES           CACTVS               3.352 "OC(=O)CC[SeH]"
+SLP SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(C[SeH])C(=O)O"
+SLP SMILES           "OpenEye OEToolkits" 1.7.0 "C(C[SeH])C(=O)O"
+SLP InChI            InChI                1.03  "InChI=1S/C3H6O2Se/c4-3(5)1-2-6/h6H,1-2H2,(H,4,5)"
+SLP InChIKey         InChI                1.03  DGRAMMLRUJGIJS-UHFFFAOYSA-N
+SLP ?                acedrg               202         "dictionary generator"
+SLP ?                acedrg_database      11          "data source"
+SLP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SLP ?                refmac5              5.8.0189    "optimization tool"
+SLP ?                acedrg               226         "dictionary generator"                  
+SLP ?                acedrg_database      11          "data source"                           
+SLP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SLP ?                refmac5              5.8.0267    "optimization tool"                     

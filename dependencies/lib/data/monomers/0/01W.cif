@@ -1,0 +1,277 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+01W     01W     "(2S)-2-ammonio-4-[(2,4-dinitrophenyl)amino]butanoate"     peptide     32     20     .     
+#
+data_comp_01W
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+01W     C6      C       CR16    0       -3.013      1.344       0.185       
+01W     C7      C       CR16    0       -1.930      0.826       0.869       
+01W     C2      C       CR6     0       -1.364      -0.419      0.519       
+01W     C3      C       CR6     0       -1.954      -1.122      -0.568      
+01W     C4      C       CR16    0       -3.048      -0.608      -1.264      
+01W     C5      C       CR6     0       -3.563      0.626       -0.875      
+01W     N5      N       N       1       -4.707      1.174       -1.595      
+01W     O52     O       O       0       -4.598      1.368       -2.796      
+01W     O5      O       OC      -1      -5.723      1.417       -0.963      
+01W     N3      N       N       1       -1.455      -2.415      -1.018      
+01W     O32     O       O       0       -1.495      -3.356      -0.241      
+01W     O3      O       OC      -1      -1.018      -2.506      -2.154      
+01W     N13     N       NT1     0       -0.289      -0.910      1.215       
+01W     C1      C       CH2     0       1.052       -0.953      0.661       
+01W     CB      C       CH2     0       1.766       0.381       0.792       
+01W     CA      C       CH1     0       3.065       0.465       -0.017      
+01W     C       C       C       0       3.643       1.885       0.053       
+01W     O       O       O       0       3.215       2.713       -0.775      
+01W     OXT     O       OC      -1      4.498       2.112       0.934       
+01W     N       N       NT3     1       4.066       -0.513      0.495       
+01W     H6      H       H       0       -3.372      2.177       0.438       
+01W     H7      H       H       0       -1.560      1.310       1.582       
+01W     H4      H       H       0       -3.422      -1.091      -1.982      
+01W     HN13    H       H       0       -0.327      -0.822      2.086       
+01W     H11     H       H       0       1.003       -1.199      -0.285      
+01W     H21     H       H       0       1.570       -1.641      1.126       
+01W     H1B     H       H       0       1.972       0.541       1.737       
+01W     H2B     H       H       0       1.163       1.095       0.496       
+01W     HA      H       H       0       2.872       0.248       -0.959      
+01W     H       H       H       0       4.888       -0.340      0.141       
+01W     H2      H       H       0       3.824       -1.360      0.262       
+01W     H3      H       H       0       4.119       -0.461      1.403       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 01W      N      n/a    CA     START
+ 01W      H      N      .      .
+ 01W      H2     N      .      .
+ 01W      H3     N      .      .
+ 01W      CA     N      C      .
+ 01W      HA     CA     .      .
+ 01W      CB     CA     C1     .
+ 01W      H1B    CB     .      .
+ 01W      H2B    CB     .      .
+ 01W      C1     CB     N13    .
+ 01W      H11    C1     .      .
+ 01W      H21    C1     .      .
+ 01W      N13    C1     C2     .
+ 01W      HN13   N13    .      .
+ 01W      C2     N13    C3     .
+ 01W      C7     C2     C6     .
+ 01W      H7     C7     .      .
+ 01W      C6     C7     H6     .
+ 01W      H6     C6     .      .
+ 01W      C3     C2     C4     .
+ 01W      N3     C3     O32    .
+ 01W      O3     N3     .      .
+ 01W      O32    N3     .      .
+ 01W      C4     C3     C5     .
+ 01W      H4     C4     .      .
+ 01W      C5     C4     N5     .
+ 01W      N5     C5     O5     .
+ 01W      O52    N5     .      .
+ 01W      O5     N5     .      .
+ 01W      C      CA     .      END
+ 01W      O      C      .      .
+ 01W      OXT    C      .      .
+ 01W      C5     C6     .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+01W       C6        C7        DOUBLE    y         1.377     0.010     1.377     0.010     
+01W       C7        C2        SINGLE    y         1.401     0.012     1.401     0.012     
+01W       C2        C3        DOUBLE    y         1.410     0.015     1.410     0.015     
+01W       C3        C4        SINGLE    y         1.392     0.012     1.392     0.012     
+01W       C4        C5        DOUBLE    y         1.392     0.012     1.392     0.012     
+01W       C5        N5        SINGLE    n         1.457     0.020     1.457     0.020     
+01W       N5        O52       DOUBLE    n         1.221     0.017     1.221     0.017     
+01W       N5        O5        SINGLE    n         1.221     0.017     1.221     0.017     
+01W       C3        N3        SINGLE    n         1.457     0.020     1.457     0.020     
+01W       N3        O32       DOUBLE    n         1.221     0.017     1.221     0.017     
+01W       N3        O3        SINGLE    n         1.221     0.017     1.221     0.017     
+01W       C2        N13       SINGLE    n         1.372     0.010     1.372     0.010     
+01W       N13       C1        SINGLE    n         1.451     0.012     1.451     0.012     
+01W       C1        CB        SINGLE    n         1.518     0.020     1.518     0.020     
+01W       CB        CA        SINGLE    n         1.532     0.010     1.532     0.010     
+01W       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+01W       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+01W       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+01W       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+01W       C6        C5        SINGLE    y         1.393     0.011     1.393     0.011     
+01W       C6        H6        SINGLE    n         1.082     0.013     0.941     0.020     
+01W       C7        H7        SINGLE    n         1.082     0.013     0.938     0.015     
+01W       C4        H4        SINGLE    n         1.082     0.013     0.943     0.019     
+01W       N13       HN13      SINGLE    n         1.016     0.010     0.876     0.020     
+01W       C1        H11       SINGLE    n         1.089     0.010     0.979     0.013     
+01W       C1        H21       SINGLE    n         1.089     0.010     0.979     0.013     
+01W       CB        H1B       SINGLE    n         1.089     0.010     0.980     0.016     
+01W       CB        H2B       SINGLE    n         1.089     0.010     0.980     0.016     
+01W       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+01W       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+01W       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+01W       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+01W          C7          C6          C5     119.696    1.50
+01W          C7          C6          H6     119.792    1.50
+01W          C5          C6          H6     120.512    1.50
+01W          C6          C7          C2     120.512    1.50
+01W          C6          C7          H7     119.909    1.50
+01W          C2          C7          H7     119.579    1.50
+01W          C7          C2          C3     116.161    1.50
+01W          C7          C2         N13     120.895    1.50
+01W          C3          C2         N13     122.944    1.50
+01W          C2          C3          C4     121.405    1.50
+01W          C2          C3          N3     122.326    1.50
+01W          C4          C3          N3     116.270    1.50
+01W          C3          C4          C5     119.413    1.50
+01W          C3          C4          H4     119.711    1.50
+01W          C5          C4          H4     120.876    1.50
+01W          C4          C5          N5     118.347    1.50
+01W          C4          C5          C6     122.813    1.50
+01W          N5          C5          C6     118.840    1.50
+01W          C5          N5         O52     118.257    1.50
+01W          C5          N5          O5     118.257    1.50
+01W         O52          N5          O5     123.486    1.50
+01W          C3          N3         O32     118.439    1.50
+01W          C3          N3          O3     118.439    1.50
+01W         O32          N3          O3     123.122    1.50
+01W          C2         N13          C1     122.396    3.00
+01W          C2         N13        HN13     115.718    3.00
+01W          C1         N13        HN13     114.979    3.00
+01W         N13          C1          CB     111.856    2.54
+01W         N13          C1         H11     109.180    1.50
+01W         N13          C1         H21     109.180    1.50
+01W          CB          C1         H11     109.077    1.50
+01W          CB          C1         H21     109.077    1.50
+01W         H11          C1         H21     107.909    1.50
+01W          C1          CB          CA     113.189    1.50
+01W          C1          CB         H1B     108.829    1.50
+01W          C1          CB         H2B     108.829    1.50
+01W          CA          CB         H1B     108.567    1.50
+01W          CA          CB         H2B     108.567    1.50
+01W         H1B          CB         H2B     107.469    1.50
+01W          CB          CA           C     110.728    2.07
+01W          CB          CA           N     110.245    1.51
+01W          CB          CA          HA     109.207    1.50
+01W           C          CA           N     109.241    1.50
+01W           C          CA          HA     108.824    1.50
+01W           N          CA          HA     108.487    1.50
+01W          CA           C           O     117.124    1.50
+01W          CA           C         OXT     117.124    1.50
+01W           O           C         OXT     125.752    1.50
+01W          CA           N           H     110.062    1.93
+01W          CA           N          H2     110.062    1.93
+01W          CA           N          H3     110.062    1.93
+01W           H           N          H2     109.028    2.41
+01W           H           N          H3     109.028    2.41
+01W          H2           N          H3     109.028    2.41
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+01W       const_sp2_sp2_1          C5          C6          C7          C2       0.000   10.00     2
+01W              const_23          N5          C5          C6          C7     180.000   10.00     2
+01W             sp2_sp3_2          C2         N13          C1          CB     120.000   10.00     6
+01W             sp3_sp3_1         N13          C1          CB          CA     180.000   10.00     3
+01W            sp3_sp3_10           C          CA          CB          C1     180.000   10.00     3
+01W             sp2_sp3_7           O           C          CA          CB       0.000   10.00     6
+01W            sp3_sp3_19          CB          CA           N           H     180.000   10.00     3
+01W       const_sp2_sp2_7         N13          C2          C7          C6     180.000   10.00     2
+01W             sp2_sp2_9          C7          C2         N13          C1     180.000   10.00     2
+01W              const_12         N13          C2          C3          N3       0.000   10.00     2
+01W              const_15          N3          C3          C4          C5     180.000   10.00     2
+01W             sp2_sp2_5          C2          C3          N3         O32     180.000   10.00     2
+01W              const_18          C3          C4          C5          N5     180.000   10.00     2
+01W             sp2_sp2_1          C4          C5          N5         O52     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+01W    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+01W    plan-1          C2   0.020
+01W    plan-1          C3   0.020
+01W    plan-1          C4   0.020
+01W    plan-1          C5   0.020
+01W    plan-1          C6   0.020
+01W    plan-1          C7   0.020
+01W    plan-1          H4   0.020
+01W    plan-1          H6   0.020
+01W    plan-1          H7   0.020
+01W    plan-1         N13   0.020
+01W    plan-1          N3   0.020
+01W    plan-1          N5   0.020
+01W    plan-2          C5   0.020
+01W    plan-2          N5   0.020
+01W    plan-2          O5   0.020
+01W    plan-2         O52   0.020
+01W    plan-3          C3   0.020
+01W    plan-3          N3   0.020
+01W    plan-3          O3   0.020
+01W    plan-3         O32   0.020
+01W    plan-4           C   0.020
+01W    plan-4          CA   0.020
+01W    plan-4           O   0.020
+01W    plan-4         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+01W SMILES           ACDLabs              10.04 "[O-][N+](=O)c1ccc(NCCC(C([O-])=O)[NH3+])c(c1)[N+]([O-])=O"
+01W SMILES_CANONICAL CACTVS               3.341 "[NH3+][C@@H](CCNc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O)C([O-])=O"
+01W SMILES           CACTVS               3.341 "[NH3+][CH](CCNc1ccc(cc1[N+]([O-])=O)[N+]([O-])=O)C([O-])=O"
+01W SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1[N+](=O)[O-])[N+](=O)[O-])NCC[C@@H](C(=O)[O-])[NH3+]"
+01W SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1[N+](=O)[O-])[N+](=O)[O-])NCCC(C(=O)[O-])[NH3+]"
+01W InChI            InChI                1.03  "InChI=1S/C10H12N4O6/c11-7(10(15)16)3-4-12-8-2-1-6(13(17)18)5-9(8)14(19)20/h1-2,5,7,12H,3-4,11H2,(H,15,16)/t7-/m0/s1"
+01W InChIKey         InChI                1.03  ZSHUSDSLXWTXDN-ZETCQYMHSA-N
+01W ?                acedrg               196         "dictionary generator"                  
+01W ?                acedrg_database      11          "data source"                           
+01W ?                rdkit                2017.03.2   "Chemoinformatics tool"
+01W ?                refmac5              5.8.0222    "optimization tool"                     

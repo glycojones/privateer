@@ -1,0 +1,184 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ROR      ROR 'L-ribose                            ' non-polymer        20  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ROR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ROR    C1     C   CH2       0       2.418       0.481      -0.406
+ROR    O1     O    O2   0.000       3.619      -0.047       0.098
+ROR    C2     C   CH2   0.000       1.222      -0.121       0.268
+ROR    O2     O    O2   0.000       1.148      -1.531       0.004
+ROR    C3     C   CH2   0.000      -0.085       0.551      -0.148
+ROR    O3     O    O2   0.000      -0.027       1.981       0.125
+ROR    C4     C   CH2   0.000      -1.268      -0.081       0.516
+ROR    O4     O    O2   0.000      -1.345      -1.475       0.260
+ROR    C5     C    C2   0.000      -2.545       0.627       0.065
+ROR    O5     O     O   0.000      -3.407       0.029      -0.460
+ROR    H1     H     H   0.000       2.395       1.463      -0.272
+ROR    H2     H     H   0.000       2.366       0.337      -1.356
+ROR    H3     H     H   0.000       4.255       0.300      -0.320
+ROR    H4     H     H   0.000       1.329      -0.010       1.235
+ROR    H5     H     H   0.000       1.054      -1.679      -0.859
+ROR    H6     H     H   0.000      -0.177       0.428      -1.126
+ROR    H7     H     H   0.000       0.095       2.124       0.935
+ROR    H8     H     H   0.000      -1.165       0.057       1.463
+ROR    H9     H     H   0.000      -1.437      -1.606      -0.566
+ROR   H10     H     H   0.000      -2.675       1.579       0.251
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ROR       O1        C1        SING      1.425     0.010     1.425     0.010     
+ROR       C1        C2        SING      1.515     0.011     1.515     0.011     
+ROR       O2        C2        SING      1.430     0.010     1.430     0.010     
+ROR       C2        C3        SING      1.530     0.010     1.530     0.010     
+ROR       O4        C4        SING      1.417     0.013     1.417     0.013     
+ROR       C3        C4        SING      1.516     0.020     1.516     0.020     
+ROR       C3        O3        SING      1.428     0.010     1.428     0.010     
+ROR       C5        C4        SING      1.532     0.011     1.532     0.011     
+ROR       C5        O5        DOUB      1.196     0.017     1.196     0.017     
+ROR       C1        H1        SING      1.089     0.010     0.982     0.020     
+ROR       C1        H2        SING      1.089     0.010     0.982     0.020     
+ROR       O1        H3        SING      0.970     0.012     0.850     0.020     
+ROR       C2        H4        SING      1.089     0.010     0.997     0.020     
+ROR       O2        H5        SING      0.970     0.012     0.853     0.020     
+ROR       C3        H6        SING      1.089     0.010     0.990     0.020     
+ROR       O3        H7        SING      0.970     0.012     0.853     0.020     
+ROR       C4        H8        SING      1.089     0.010     0.985     0.020     
+ROR       O4        H9        SING      0.970     0.012     0.853     0.020     
+ROR       C5        H10       SING      1.082     0.013     0.956     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ROR    O1    C1      C2   110.819    2.13
+ROR    O1    C1      H1   109.396    1.12
+ROR    O1    C1      H2   109.396    1.12
+ROR    C2    C1      H1   109.249    1.48
+ROR    C2    C1      H2   109.249    1.48
+ROR    H1    C1      H2   108.380    2.24
+ROR    C1    O1      H3   108.573    3.00
+ROR    C1    C2      O2   108.958    2.39
+ROR    C1    C2      C3   114.784    1.89
+ROR    C1    C2      H4   108.418    1.76
+ROR    O2    C2      C3   109.626    1.82
+ROR    O2    C2      H4   108.673    1.58
+ROR    C3    C2      H4   108.560    1.66
+ROR    C2    O2      H5   110.678    3.00
+ROR    C2    C3      C4   110.705    3.00
+ROR    C2    C3      O3   108.751    2.03
+ROR    C2    C3      H6   108.398    1.51
+ROR    C4    C3      O3   108.810    1.46
+ROR    C4    C3      H6   107.969    2.02
+ROR    O3    C3      H6   108.629    1.68
+ROR    C3    O3      H7   109.088    3.00
+ROR    O4    C4      C3   110.585    1.36
+ROR    O4    C4      C5   110.961    0.43
+ROR    O4    C4      H8   108.796    1.89
+ROR    C3    C4      C5   111.454    3.00
+ROR    C3    C4      H8   108.694    1.04
+ROR    C5    C4      H8   108.245    0.16
+ROR    C4    O4      H9   109.123    3.00
+ROR    C4    C5      O5   120.626    1.86
+ROR    C4    C5     H10   118.644    3.00
+ROR    O5    C5     H10   120.730    2.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ROR       sp3_sp3_1      C2      C1      O1      H3     180.000   10.00     3
+ROR       sp3_sp3_2      H1      C1      O1      H3     -60.000   10.00     3
+ROR       sp3_sp3_3      H2      C1      O1      H3      60.000   10.00     3
+ROR       sp3_sp3_4      O1      C1      C2      O2     180.000   10.00     3
+ROR       sp3_sp3_5      O1      C1      C2      C3     -60.000   10.00     3
+ROR       sp3_sp3_6      O1      C1      C2      H4      60.000   10.00     3
+ROR       sp3_sp3_7      H1      C1      C2      O2      60.000   10.00     3
+ROR       sp3_sp3_8      H1      C1      C2      C3     180.000   10.00     3
+ROR       sp3_sp3_9      H1      C1      C2      H4     -60.000   10.00     3
+ROR      sp3_sp3_10      H2      C1      C2      O2     -60.000   10.00     3
+ROR      sp3_sp3_11      H2      C1      C2      C3      60.000   10.00     3
+ROR      sp3_sp3_12      H2      C1      C2      H4     180.000   10.00     3
+ROR      sp3_sp3_13      C1      C2      O2      H5     180.000   10.00     3
+ROR      sp3_sp3_14      C3      C2      O2      H5     -60.000   10.00     3
+ROR      sp3_sp3_15      H4      C2      O2      H5      60.000   10.00     3
+ROR      sp3_sp3_16      C1      C2      C3      C4     180.000   10.00     3
+ROR      sp3_sp3_17      C1      C2      C3      O3     -60.000   10.00     3
+ROR      sp3_sp3_18      C1      C2      C3      H6      60.000   10.00     3
+ROR      sp3_sp3_19      O2      C2      C3      C4      60.000   10.00     3
+ROR      sp3_sp3_20      O2      C2      C3      O3     180.000   10.00     3
+ROR      sp3_sp3_21      O2      C2      C3      H6     -60.000   10.00     3
+ROR      sp3_sp3_22      H4      C2      C3      C4     -60.000   10.00     3
+ROR      sp3_sp3_23      H4      C2      C3      O3      60.000   10.00     3
+ROR      sp3_sp3_24      H4      C2      C3      H6     180.000   10.00     3
+ROR      sp3_sp3_25      C3      C4      O4      H9     180.000   10.00     3
+ROR      sp3_sp3_26      C5      C4      O4      H9     -60.000   10.00     3
+ROR      sp3_sp3_27      H8      C4      O4      H9      60.000   10.00     3
+ROR      sp3_sp3_28      C2      C3      C4      O4     180.000   10.00     3
+ROR      sp3_sp3_29      C2      C3      C4      C5     -60.000   10.00     3
+ROR      sp3_sp3_30      C2      C3      C4      H8      60.000   10.00     3
+ROR      sp3_sp3_31      O3      C3      C4      O4      60.000   10.00     3
+ROR      sp3_sp3_32      O3      C3      C4      C5     180.000   10.00     3
+ROR      sp3_sp3_33      O3      C3      C4      H8     -60.000   10.00     3
+ROR      sp3_sp3_34      H6      C3      C4      O4     -60.000   10.00     3
+ROR      sp3_sp3_35      H6      C3      C4      C5      60.000   10.00     3
+ROR      sp3_sp3_36      H6      C3      C4      H8     180.000   10.00     3
+ROR      sp3_sp3_37      C2      C3      O3      H7     180.000   10.00     3
+ROR      sp3_sp3_38      C4      C3      O3      H7     -60.000   10.00     3
+ROR      sp3_sp3_39      H6      C3      O3      H7      60.000   10.00     3
+ROR       sp2_sp3_1      O5      C5      C4      H8       0.000   10.00     6
+ROR       sp2_sp3_2      O5      C5      C4      O4     120.000   10.00     6
+ROR       sp2_sp3_3      O5      C5      C4      C3    -120.000   10.00     6
+ROR       sp2_sp3_4     H10      C5      C4      H8     180.000   10.00     6
+ROR       sp2_sp3_5     H10      C5      C4      O4     -60.000   10.00     6
+ROR       sp2_sp3_6     H10      C5      C4      C3      60.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ROR    plan-1    C4   0.020
+ROR    plan-1    C5   0.020
+ROR    plan-1   H10   0.020
+ROR    plan-1    O5   0.020

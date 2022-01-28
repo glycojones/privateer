@@ -1,0 +1,453 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GTH      GTH '3-O-GLUCOPYRANOSYL-THREONINE-[2-DEOX' non-polymer        64  33 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GTH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GTH           O11    O    O         0.000      0.000    0.000    0.000
+ GTH           C13    C    C         0.000     -0.373    0.929   -0.685
+ GTH           C14    C    CH3       0.000      0.637    1.832   -1.345
+ GTH           H143   H    H         0.000      0.507    1.800   -2.396
+ GTH           H142   H    H         0.000      0.500    2.826   -1.003
+ GTH           H141   H    H         0.000      1.615    1.508   -1.101
+ GTH           N      N    NH1       0.000     -1.690    1.152   -0.856
+ GTH           HN     H    H         0.000     -2.001    1.925   -1.427
+ GTH           C9     C    CH1       0.000     -2.673    0.274   -0.216
+ GTH           H9     H    H         0.000     -2.250   -0.735   -0.109
+ GTH           C8     C    CH1       0.000     -3.029    0.828    1.166
+ GTH           H8     H    H         0.000     -3.474    1.827    1.055
+ GTH           O7     O    O2        0.000     -3.964   -0.038    1.805
+ GTH           O8     O    O2        0.000     -1.847    0.921    1.961
+ GTH           CB     C    CH1       0.000     -2.242    1.445    3.231
+ GTH           HB     H    H         0.000     -3.274    1.136    3.449
+ GTH           CG     C    CH3       0.000     -2.164    2.972    3.199
+ GTH           HG3    H    H         0.000     -2.810    3.344    2.446
+ GTH           HG2    H    H         0.000     -2.457    3.361    4.139
+ GTH           HG1    H    H         0.000     -1.169    3.271    2.989
+ GTH           CA     C    CH1       0.000     -1.308    0.908    4.317
+ GTH           HA     H    H         0.000     -1.613    1.310    5.293
+ GTH           C      C    C         0.000     -1.386   -0.596    4.348
+ GTH           OXT    O    OC       -0.500     -2.226   -1.164    5.081
+ GTH           O      O    OC       -0.500     -0.612   -1.277    3.640
+ GTH           N1     N    NH2       0.000      0.070    1.320    4.026
+ GTH           HN12   H    H         0.000      0.583    1.891    4.688
+ GTH           HN11   H    H         0.000      0.516    1.037    3.162
+ GTH           C10    C    CH1       0.000     -3.941    0.211   -1.072
+ GTH           H10    H    H         0.000     -4.306    1.229   -1.266
+ GTH           C11    C    CH1       0.000     -5.008   -0.581   -0.309
+ GTH           H11    H    H         0.000     -5.959   -0.539   -0.858
+ GTH           O9     O    OH1       0.000     -4.592   -1.941   -0.176
+ GTH           HO9    H    H         0.000     -5.264   -2.436    0.311
+ GTH           C7     C    CH1       0.000     -5.189    0.036    1.079
+ GTH           H7     H    H         0.000     -5.488    1.089    0.975
+ GTH           C12    C    CH2       0.000     -6.277   -0.728    1.836
+ GTH           H121   H    H         0.000     -5.981   -1.774    1.940
+ GTH           H122   H    H         0.000     -7.216   -0.671    1.280
+ GTH           O10    O    OH1       0.000     -6.453   -0.150    3.130
+ GTH           HOA    H    H         0.000     -7.141   -0.633    3.608
+ GTH           O2     O    O2        0.000     -3.655   -0.440   -2.311
+ GTH           C2     C    CH1       0.000     -4.554    0.103   -3.281
+ GTH           H2     H    H         0.000     -4.391    1.187   -3.362
+ GTH           O1     O    O2        0.000     -5.897   -0.145   -2.874
+ GTH           C3     C    CH1       0.000     -4.295   -0.553   -4.639
+ GTH           H3     H    H         0.000     -4.481   -1.633   -4.566
+ GTH           O3     O    OH1       0.000     -2.939   -0.326   -5.029
+ GTH           HO3    H    H         0.000     -2.346   -0.715   -4.372
+ GTH           C4     C    CH1       0.000     -5.238    0.061   -5.678
+ GTH           H4     H    H         0.000     -4.984    1.120   -5.828
+ GTH           O4     O    OH1       0.000     -5.115   -0.641   -6.916
+ GTH           HO4    H    H         0.000     -4.207   -0.567   -7.239
+ GTH           C5     C    CH1       0.000     -6.676   -0.054   -5.163
+ GTH           H5     H    H         0.000     -7.354    0.482   -5.841
+ GTH           O5     O    OH1       0.000     -7.055   -1.429   -5.099
+ GTH           HO5    H    H         0.000     -7.004   -1.818   -5.982
+ GTH           C1     C    CH1       0.000     -6.756    0.565   -3.765
+ GTH           H1     H    H         0.000     -6.444    1.618   -3.813
+ GTH           C6     C    CH2       0.000     -8.196    0.484   -3.255
+ GTH           H61    H    H         0.000     -8.505   -0.563   -3.206
+ GTH           H62    H    H         0.000     -8.854    1.025   -3.937
+ GTH           O6     O    OH1       0.000     -8.274    1.066   -1.953
+ GTH           HO6    H    H         0.000     -9.184    1.016   -1.632
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GTH      O11    n/a    C13    START
+ GTH      C13    O11    N      .
+ GTH      C14    C13    H141   .
+ GTH      H143   C14    .      .
+ GTH      H142   C14    .      .
+ GTH      H141   C14    .      .
+ GTH      N      C13    C9     .
+ GTH      HN     N      .      .
+ GTH      C9     N      C10    .
+ GTH      H9     C9     .      .
+ GTH      C8     C9     O8     .
+ GTH      H8     C8     .      .
+ GTH      O7     C8     .      .
+ GTH      O8     C8     CB     .
+ GTH      CB     O8     CA     .
+ GTH      HB     CB     .      .
+ GTH      CG     CB     HG1    .
+ GTH      HG3    CG     .      .
+ GTH      HG2    CG     .      .
+ GTH      HG1    CG     .      .
+ GTH      CA     CB     N1     .
+ GTH      HA     CA     .      .
+ GTH      C      CA     O      .
+ GTH      OXT    C      .      .
+ GTH      O      C      .      .
+ GTH      N1     CA     HN11   .
+ GTH      HN12   N1     .      .
+ GTH      HN11   N1     .      .
+ GTH      C10    C9     O2     .
+ GTH      H10    C10    .      .
+ GTH      C11    C10    C7     .
+ GTH      H11    C11    .      .
+ GTH      O9     C11    HO9    .
+ GTH      HO9    O9     .      .
+ GTH      C7     C11    C12    .
+ GTH      H7     C7     .      .
+ GTH      C12    C7     O10    .
+ GTH      H121   C12    .      .
+ GTH      H122   C12    .      .
+ GTH      O10    C12    HOA    .
+ GTH      HOA    O10    .      .
+ GTH      O2     C10    C2     .
+ GTH      C2     O2     C3     .
+ GTH      H2     C2     .      .
+ GTH      O1     C2     .      .
+ GTH      C3     C2     C4     .
+ GTH      H3     C3     .      .
+ GTH      O3     C3     HO3    .
+ GTH      HO3    O3     .      .
+ GTH      C4     C3     C5     .
+ GTH      H4     C4     .      .
+ GTH      O4     C4     HO4    .
+ GTH      HO4    O4     .      .
+ GTH      C5     C4     C1     .
+ GTH      H5     C5     .      .
+ GTH      O5     C5     HO5    .
+ GTH      HO5    O5     .      .
+ GTH      C1     C5     C6     .
+ GTH      H1     C1     .      .
+ GTH      C6     C1     O6     .
+ GTH      H61    C6     .      .
+ GTH      H62    C6     .      .
+ GTH      O6     C6     HO6    .
+ GTH      HO6    O6     .      END
+ GTH      C1     O1     .    ADD
+ GTH      C7     O7     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GTH       C9        N         single    1.450     0.020     1.450     0.020     
+GTH       N         C13       single    1.330     0.020     1.330     0.020     
+GTH       HN        N         single    1.016     0.010     0.899     0.007     
+GTH       N1        CA        single    1.450     0.020     1.450     0.020     
+GTH       HN11      N1        single    1.036     0.016     0.914     0.007     
+GTH       HN12      N1        single    1.036     0.016     0.914     0.007     
+GTH       C         CA        single    1.500     0.020     1.500     0.020     
+GTH       CA        CB        single    1.524     0.020     1.524     0.020     
+GTH       HA        CA        single    1.089     0.010     0.989     0.005     
+GTH       O         C         deloc     1.250     0.020     1.250     0.020     
+GTH       OXT       C         deloc     1.250     0.020     1.250     0.020     
+GTH       CG        CB        single    1.524     0.020     1.524     0.020     
+GTH       CB        O8        single    1.426     0.020     1.426     0.020     
+GTH       HB        CB        single    1.089     0.010     0.989     0.005     
+GTH       HG1       CG        single    1.089     0.010     0.989     0.005     
+GTH       HG2       CG        single    1.089     0.010     0.989     0.005     
+GTH       HG3       CG        single    1.089     0.010     0.989     0.005     
+GTH       C1        O1        single    1.426     0.020     1.426     0.020     
+GTH       C1        C5        single    1.524     0.020     1.524     0.020     
+GTH       C6        C1        single    1.524     0.020     1.524     0.020     
+GTH       H1        C1        single    1.089     0.010     0.989     0.005     
+GTH       O1        C2        single    1.426     0.020     1.426     0.020     
+GTH       C2        O2        single    1.426     0.020     1.426     0.020     
+GTH       C3        C2        single    1.524     0.020     1.524     0.020     
+GTH       H2        C2        single    1.089     0.010     0.989     0.005     
+GTH       O2        C10       single    1.426     0.020     1.426     0.020     
+GTH       O3        C3        single    1.432     0.020     1.432     0.020     
+GTH       C4        C3        single    1.524     0.020     1.524     0.020     
+GTH       H3        C3        single    1.089     0.010     0.989     0.005     
+GTH       HO3       O3        single    0.970     0.012     0.839     0.014     
+GTH       O4        C4        single    1.432     0.020     1.432     0.020     
+GTH       C5        C4        single    1.524     0.020     1.524     0.020     
+GTH       H4        C4        single    1.089     0.010     0.989     0.005     
+GTH       HO4       O4        single    0.970     0.012     0.839     0.014     
+GTH       O5        C5        single    1.432     0.020     1.432     0.020     
+GTH       H5        C5        single    1.089     0.010     0.989     0.005     
+GTH       HO5       O5        single    0.970     0.012     0.839     0.014     
+GTH       O6        C6        single    1.432     0.020     1.432     0.020     
+GTH       H61       C6        single    1.089     0.010     0.989     0.005     
+GTH       H62       C6        single    1.089     0.010     0.989     0.005     
+GTH       HO6       O6        single    0.970     0.012     0.839     0.014     
+GTH       C7        O7        single    1.426     0.020     1.426     0.020     
+GTH       C7        C11       single    1.524     0.020     1.524     0.020     
+GTH       C12       C7        single    1.524     0.020     1.524     0.020     
+GTH       H7        C7        single    1.089     0.010     0.989     0.005     
+GTH       O7        C8        single    1.426     0.020     1.426     0.020     
+GTH       O8        C8        single    1.426     0.020     1.426     0.020     
+GTH       C8        C9        single    1.524     0.020     1.524     0.020     
+GTH       H8        C8        single    1.089     0.010     0.989     0.005     
+GTH       C10       C9        single    1.524     0.020     1.524     0.020     
+GTH       H9        C9        single    1.089     0.010     0.989     0.005     
+GTH       C11       C10       single    1.524     0.020     1.524     0.020     
+GTH       H10       C10       single    1.089     0.010     0.989     0.005     
+GTH       O9        C11       single    1.432     0.020     1.432     0.020     
+GTH       H11       C11       single    1.089     0.010     0.989     0.005     
+GTH       HO9       O9        single    0.970     0.012     0.839     0.014     
+GTH       O10       C12       single    1.432     0.020     1.432     0.020     
+GTH       H121      C12       single    1.089     0.010     0.989     0.005     
+GTH       H122      C12       single    1.089     0.010     0.989     0.005     
+GTH       HOA       O10       single    0.970     0.012     0.839     0.014     
+GTH       C13       O11       double    1.220     0.020     1.220     0.020     
+GTH       C14       C13       single    1.500     0.020     1.500     0.020     
+GTH       H141      C14       single    1.089     0.010     0.989     0.005     
+GTH       H142      C14       single    1.089     0.010     0.989     0.005     
+GTH       H143      C14       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GTH      O11    C13    C14     123.000    3.000
+ GTH      O11    C13    N       123.000    3.000
+ GTH      C14    C13    N       116.500    3.000
+ GTH      C13    C14    H143    109.470    3.000
+ GTH      C13    C14    H142    109.470    3.000
+ GTH      C13    C14    H141    109.470    3.000
+ GTH      H143   C14    H142    109.470    3.000
+ GTH      H143   C14    H141    109.470    3.000
+ GTH      H142   C14    H141    109.470    3.000
+ GTH      C13    N      HN      120.000    3.000
+ GTH      C13    N      C9      121.500    3.000
+ GTH      HN     N      C9      118.500    3.000
+ GTH      N      C9     H9      108.550    3.000
+ GTH      N      C9     C8      110.000    3.000
+ GTH      N      C9     C10     110.000    3.000
+ GTH      H9     C9     C8      108.340    3.000
+ GTH      H9     C9     C10     108.340    3.000
+ GTH      C8     C9     C10     111.000    3.000
+ GTH      C9     C8     H8      108.340    3.000
+ GTH      C9     C8     O7      109.470    3.000
+ GTH      C9     C8     O8      109.470    3.000
+ GTH      H8     C8     O7      109.470    3.000
+ GTH      H8     C8     O8      109.470    3.000
+ GTH      O7     C8     O8      109.470    3.000
+ GTH      C8     O7     C7      111.800    3.000
+ GTH      C8     O8     CB      111.800    3.000
+ GTH      O8     CB     HB      109.470    3.000
+ GTH      O8     CB     CG      109.470    3.000
+ GTH      O8     CB     CA      109.470    3.000
+ GTH      HB     CB     CG      108.340    3.000
+ GTH      HB     CB     CA      108.340    3.000
+ GTH      CG     CB     CA      111.000    3.000
+ GTH      CB     CG     HG3     109.470    3.000
+ GTH      CB     CG     HG2     109.470    3.000
+ GTH      CB     CG     HG1     109.470    3.000
+ GTH      HG3    CG     HG2     109.470    3.000
+ GTH      HG3    CG     HG1     109.470    3.000
+ GTH      HG2    CG     HG1     109.470    3.000
+ GTH      CB     CA     HA      108.340    3.000
+ GTH      CB     CA     C       109.470    3.000
+ GTH      CB     CA     N1      109.470    3.000
+ GTH      HA     CA     C       108.810    3.000
+ GTH      HA     CA     N1      109.470    3.000
+ GTH      C      CA     N1      109.470    3.000
+ GTH      CA     C      OXT     118.500    3.000
+ GTH      CA     C      O       118.500    3.000
+ GTH      OXT    C      O       123.000    3.000
+ GTH      CA     N1     HN12    120.000    3.000
+ GTH      CA     N1     HN11    120.000    3.000
+ GTH      HN12   N1     HN11    120.000    3.000
+ GTH      C9     C10    H10     108.340    3.000
+ GTH      C9     C10    C11     111.000    3.000
+ GTH      C9     C10    O2      109.470    3.000
+ GTH      H10    C10    C11     108.340    3.000
+ GTH      H10    C10    O2      109.470    3.000
+ GTH      C11    C10    O2      109.470    3.000
+ GTH      C10    C11    H11     108.340    3.000
+ GTH      C10    C11    O9      109.470    3.000
+ GTH      C10    C11    C7      111.000    3.000
+ GTH      H11    C11    O9      109.470    3.000
+ GTH      H11    C11    C7      108.340    3.000
+ GTH      O9     C11    C7      109.470    3.000
+ GTH      C11    O9     HO9     109.470    3.000
+ GTH      C11    C7     H7      108.340    3.000
+ GTH      C11    C7     C12     111.000    3.000
+ GTH      C11    C7     O7      109.470    3.000
+ GTH      H7     C7     C12     108.340    3.000
+ GTH      H7     C7     O7      109.470    3.000
+ GTH      C12    C7     O7      109.470    3.000
+ GTH      C7     C12    H121    109.470    3.000
+ GTH      C7     C12    H122    109.470    3.000
+ GTH      C7     C12    O10     109.470    3.000
+ GTH      H121   C12    H122    107.900    3.000
+ GTH      H121   C12    O10     109.470    3.000
+ GTH      H122   C12    O10     109.470    3.000
+ GTH      C12    O10    HOA     109.470    3.000
+ GTH      C10    O2     C2      111.800    3.000
+ GTH      O2     C2     H2      109.470    3.000
+ GTH      O2     C2     O1      109.470    3.000
+ GTH      O2     C2     C3      109.470    3.000
+ GTH      H2     C2     O1      109.470    3.000
+ GTH      H2     C2     C3      108.340    3.000
+ GTH      O1     C2     C3      109.470    3.000
+ GTH      C2     O1     C1      111.800    3.000
+ GTH      C2     C3     H3      108.340    3.000
+ GTH      C2     C3     O3      109.470    3.000
+ GTH      C2     C3     C4      111.000    3.000
+ GTH      H3     C3     O3      109.470    3.000
+ GTH      H3     C3     C4      108.340    3.000
+ GTH      O3     C3     C4      109.470    3.000
+ GTH      C3     O3     HO3     109.470    3.000
+ GTH      C3     C4     H4      108.340    3.000
+ GTH      C3     C4     O4      109.470    3.000
+ GTH      C3     C4     C5      111.000    3.000
+ GTH      H4     C4     O4      109.470    3.000
+ GTH      H4     C4     C5      108.340    3.000
+ GTH      O4     C4     C5      109.470    3.000
+ GTH      C4     O4     HO4     109.470    3.000
+ GTH      C4     C5     H5      108.340    3.000
+ GTH      C4     C5     O5      109.470    3.000
+ GTH      C4     C5     C1      111.000    3.000
+ GTH      H5     C5     O5      109.470    3.000
+ GTH      H5     C5     C1      108.340    3.000
+ GTH      O5     C5     C1      109.470    3.000
+ GTH      C5     O5     HO5     109.470    3.000
+ GTH      C5     C1     H1      108.340    3.000
+ GTH      C5     C1     C6      111.000    3.000
+ GTH      C5     C1     O1      109.470    3.000
+ GTH      H1     C1     C6      108.340    3.000
+ GTH      H1     C1     O1      109.470    3.000
+ GTH      C6     C1     O1      109.470    3.000
+ GTH      C1     C6     H61     109.470    3.000
+ GTH      C1     C6     H62     109.470    3.000
+ GTH      C1     C6     O6      109.470    3.000
+ GTH      H61    C6     H62     107.900    3.000
+ GTH      H61    C6     O6      109.470    3.000
+ GTH      H62    C6     O6      109.470    3.000
+ GTH      C6     O6     HO6     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GTH      var_1    O11    C13    C14    H141      -0.058   20.000   1
+ GTH      CONST_1  O11    C13    N      C9         0.000    0.000   0
+ GTH      var_2    C13    N      C9     C10     -149.993   20.000   3
+ GTH      var_3    N      C9     C8     O8       -60.000   20.000   3
+ GTH      var_4    C9     C8     O7     C7       -60.000   20.000   1
+ GTH      var_5    C9     C8     O8     CB       179.858   20.000   1
+ GTH      var_6    C8     O8     CB     CA       149.999   20.000   1
+ GTH      var_7    O8     CB     CG     HG1      -60.061   20.000   3
+ GTH      var_8    O8     CB     CA     N1        60.050   20.000   3
+ GTH      var_9    CB     CA     C      O         90.036   20.000   3
+ GTH      var_10   CB     CA     N1     HN11     -60.038   20.000   1
+ GTH      var_11   N      C9     C10    O2        60.000   20.000   3
+ GTH      var_12   C9     C10    C11    C7        60.000   20.000   3
+ GTH      var_13   C10    C11    O9     HO9      179.558   20.000   1
+ GTH      var_14   C10    C11    C7     C12      180.000   20.000   3
+ GTH      var_15   C11    C7     O7     C8        60.000   20.000   1
+ GTH      var_16   C11    C7     C12    O10     -179.734   20.000   3
+ GTH      var_17   C7     C12    O10    HOA      179.981   20.000   1
+ GTH      var_18   C9     C10    O2     C2      -150.799   20.000   1
+ GTH      var_19   C10    O2     C2     C3       179.813   20.000   1
+ GTH      var_20   O2     C2     O1     C1       180.000   20.000   1
+ GTH      var_21   O2     C2     C3     C4       180.000   20.000   3
+ GTH      var_22   C2     C3     O3     HO3       60.419   20.000   1
+ GTH      var_23   C2     C3     C4     C5       -60.000   20.000   3
+ GTH      var_24   C3     C4     O4     HO4      -60.775   20.000   1
+ GTH      var_25   C3     C4     C5     C1        60.000   20.000   3
+ GTH      var_26   C4     C5     O5     HO5      -60.425   20.000   1
+ GTH      var_27   C4     C5     C1     C6       180.000   20.000   3
+ GTH      var_28   C5     C1     O1     C2        60.000   20.000   1
+ GTH      var_29   C5     C1     C6     O6      -179.741   20.000   3
+ GTH      var_30   C1     C6     O6     HO6      179.911   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GTH      chir_01  CA     N1     C      CB        positiv
+ GTH      chir_02  CB     CA     CG     O8        negativ
+ GTH      chir_03  C1     O1     C5     C6        negativ
+ GTH      chir_04  C2     O1     O2     C3        negativ
+ GTH      chir_05  C3     C2     O3     C4        positiv
+ GTH      chir_06  C4     C3     O4     C5        negativ
+ GTH      chir_07  C5     C1     C4     O5        negativ
+ GTH      chir_08  C7     O7     C11    C12       negativ
+ GTH      chir_09  C8     O7     O8     C9        negativ
+ GTH      chir_10  C9     N      C8     C10       negativ
+ GTH      chir_11  C10    O2     C9     C11       positiv
+ GTH      chir_12  C11    C7     C10    O9        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GTH      plan-1    N         0.020
+ GTH      plan-1    C9        0.020
+ GTH      plan-1    C13       0.020
+ GTH      plan-1    HN        0.020
+ GTH      plan-2    N1        0.020
+ GTH      plan-2    CA        0.020
+ GTH      plan-2    HN11      0.020
+ GTH      plan-2    HN12      0.020
+ GTH      plan-3    C         0.020
+ GTH      plan-3    CA        0.020
+ GTH      plan-3    O         0.020
+ GTH      plan-3    OXT       0.020
+ GTH      plan-4    C13       0.020
+ GTH      plan-4    N         0.020
+ GTH      plan-4    O11       0.020
+ GTH      plan-4    C14       0.020
+ GTH      plan-4    HN        0.020
+# ------------------------------------------------------

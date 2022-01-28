@@ -1,0 +1,255 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KYQ     KYQ     "(E)-N~6~-(1-carboxy-2-hydroxyethylidene)-L-lysine"     peptide   31     16     .
+#
+data_comp_KYQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KYQ     N       N       NT3     1       -0.401      30.569      -3.376
+KYQ     CA      C       CH1     0       0.792       30.699      -4.258
+KYQ     CB      C       CH2     0       0.460       31.567      -5.477
+KYQ     CG      C       CH2     0       1.480       31.518      -6.607
+KYQ     CD      C       CH2     0       1.057       32.297      -7.846
+KYQ     CE      C       CH2     0       2.109       32.290      -8.934
+KYQ     NZ      N       N       0       1.742       33.215      -10.036
+KYQ     C11     C       C       0       2.317       33.267      -11.180
+KYQ     C12     C       C       0       1.674       33.959      -12.149
+KYQ     O16     O       OC      -1      0.903       34.871      -11.833
+KYQ     O15     O       O       0       1.891       33.679      -13.331
+KYQ     C13     C       CH2     0       3.669       32.623      -11.441
+KYQ     O14     O       OH1     0       3.510       31.291      -11.890
+KYQ     C       C       C       0       1.956       31.295      -3.456
+KYQ     O       O       O       0       1.740       32.359      -2.843
+KYQ     OXT     O       OC      -1      3.036       30.672      -3.474
+KYQ     H       H       H       0       -0.176      30.152      -2.597
+KYQ     H2      H       H       0       -1.044      30.079      -3.795
+KYQ     H3      H       H       0       -0.738      31.394      -3.184
+KYQ     HA      H       H       0       1.049       29.800      -4.567
+KYQ     HB      H       H       0       0.368       32.496      -5.180
+KYQ     HBA     H       H       0       -0.409      31.281      -5.831
+KYQ     HG      H       H       0       1.630       30.582      -6.856
+KYQ     HGA     H       H       0       2.331       31.881      -6.280
+KYQ     HD      H       H       0       0.870       33.225      -7.592
+KYQ     HDA     H       H       0       0.230       31.909      -8.201
+KYQ     HE      H       H       0       2.204       31.379      -9.288
+KYQ     HEA     H       H       0       2.973       32.560      -8.554
+KYQ     H13     H       H       0       4.203       32.631      -10.620
+KYQ     H13A    H       H       0       4.154       33.141      -12.117
+KYQ     HO14    H       H       0       4.245       31.025      -12.220
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+KYQ      N      n/a    CA     START
+KYQ      H      N      .      .
+KYQ      H2     N      .      .
+KYQ      H3     N      .      .
+KYQ      CA     N      C      .
+KYQ      HA     CA     .      .
+KYQ      CB     CA     CG     .
+KYQ      HB     CB     .      .
+KYQ      HBA    CB     .      .
+KYQ      CG     CB     CD     .
+KYQ      HG     CG     .      .
+KYQ      HGA    CG     .      .
+KYQ      CD     CG     CE     .
+KYQ      HD     CD     .      .
+KYQ      HDA    CD     .      .
+KYQ      CE     CD     NZ     .
+KYQ      HE     CE     .      .
+KYQ      HEA    CE     .      .
+KYQ      NZ     CE     C11    .
+KYQ      C11    NZ     C13    .
+KYQ      C12    C11    O16    .
+KYQ      O15    C12    .      .
+KYQ      O16    C12    .      .
+KYQ      C13    C11    O14    .
+KYQ      H13    C13    .      .
+KYQ      H13A   C13    .      .
+KYQ      O14    C13    HO14   .
+KYQ      HO14   O14    .      .
+KYQ      C      CA     OXT    .
+KYQ      O      C      .      .
+KYQ      OXT    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KYQ       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+KYQ       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+KYQ       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+KYQ       CB        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+KYQ       CG        CD        SINGLE    n         1.523     0.012     1.523     0.012     
+KYQ       CD        CE        SINGLE    n         1.513     0.020     1.513     0.020     
+KYQ       CE        NZ        SINGLE    n         1.480     0.017     1.480     0.017     
+KYQ       NZ        C11       DOUBLE    n         1.277     0.010     1.277     0.010     
+KYQ       C11       C12       SINGLE    n         1.331     0.020     1.331     0.020     
+KYQ       C11       C13       SINGLE    n         1.504     0.019     1.504     0.019     
+KYQ       C12       O15       DOUBLE    n         1.230     0.020     1.230     0.020     
+KYQ       C12       O16       SINGLE    n         1.230     0.020     1.230     0.020     
+KYQ       C13       O14       SINGLE    n         1.415     0.020     1.415     0.020     
+KYQ       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+KYQ       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+KYQ       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+KYQ       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+KYQ       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+KYQ       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+KYQ       CB        HB        SINGLE    n         1.089     0.010     0.980     0.016     
+KYQ       CB        HBA       SINGLE    n         1.089     0.010     0.980     0.016     
+KYQ       CG        HG        SINGLE    n         1.089     0.010     0.981     0.016     
+KYQ       CG        HGA       SINGLE    n         1.089     0.010     0.981     0.016     
+KYQ       CD        HD        SINGLE    n         1.089     0.010     0.980     0.016     
+KYQ       CD        HDA       SINGLE    n         1.089     0.010     0.980     0.016     
+KYQ       CE        HE        SINGLE    n         1.089     0.010     0.982     0.011     
+KYQ       CE        HEA       SINGLE    n         1.089     0.010     0.982     0.011     
+KYQ       C13       H13       SINGLE    n         1.089     0.010     0.980     0.012     
+KYQ       C13       H13A      SINGLE    n         1.089     0.010     0.980     0.012     
+KYQ       O14       HO14      SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KYQ          CA           N           H     110.062    1.93
+KYQ          CA           N          H2     110.062    1.93
+KYQ          CA           N          H3     110.062    1.93
+KYQ           H           N          H2     109.028    2.41
+KYQ           H           N          H3     109.028    2.41
+KYQ          H2           N          H3     109.028    2.41
+KYQ           N          CA          CB     110.374    1.62
+KYQ           N          CA           C     109.241    1.50
+KYQ           N          CA          HA     108.487    1.50
+KYQ          CB          CA           C     111.037    2.40
+KYQ          CB          CA          HA     108.967    1.50
+KYQ           C          CA          HA     108.824    1.50
+KYQ          CA          CB          CG     115.311    1.56
+KYQ          CA          CB          HB     108.549    1.50
+KYQ          CA          CB         HBA     108.549    1.50
+KYQ          CG          CB          HB     108.650    1.50
+KYQ          CG          CB         HBA     108.650    1.50
+KYQ          HB          CB         HBA     107.844    1.50
+KYQ          CB          CG          CD     113.328    2.00
+KYQ          CB          CG          HG     108.601    1.50
+KYQ          CB          CG         HGA     108.601    1.50
+KYQ          CD          CG          HG     108.806    1.50
+KYQ          CD          CG         HGA     108.806    1.50
+KYQ          HG          CG         HGA     107.646    1.50
+KYQ          CG          CD          CE     112.984    1.50
+KYQ          CG          CD          HD     109.041    1.50
+KYQ          CG          CD         HDA     109.041    1.50
+KYQ          CE          CD          HD     108.887    1.50
+KYQ          CE          CD         HDA     108.887    1.50
+KYQ          HD          CD         HDA     107.927    1.57
+KYQ          CD          CE          NZ     111.086    2.02
+KYQ          CD          CE          HE     109.449    1.50
+KYQ          CD          CE         HEA     109.449    1.50
+KYQ          NZ          CE          HE     109.578    1.50
+KYQ          NZ          CE         HEA     109.578    1.50
+KYQ          HE          CE         HEA     108.106    1.50
+KYQ          CE          NZ         C11     121.141    2.35
+KYQ          NZ         C11         C12     117.980    3.00
+KYQ          NZ         C11         C13     120.685    3.00
+KYQ         C12         C11         C13     121.335    3.00
+KYQ         C11         C12         O15     118.654    3.00
+KYQ         C11         C12         O16     118.654    3.00
+KYQ         O15         C12         O16     122.692    1.63
+KYQ         C11         C13         O14     110.427    2.31
+KYQ         C11         C13         H13     109.227    1.50
+KYQ         C11         C13        H13A     109.227    1.50
+KYQ         O14         C13         H13     109.407    1.50
+KYQ         O14         C13        H13A     109.407    1.50
+KYQ         H13         C13        H13A     107.985    1.50
+KYQ         C13         O14        HO14     108.779    2.21
+KYQ          CA           C           O     117.124    1.50
+KYQ          CA           C         OXT     117.124    1.50
+KYQ           O           C         OXT     125.752    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KYQ             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+KYQ            sp3_sp3_46         C11         C13         O14        HO14     180.000   10.00     3
+KYQ             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+KYQ            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+KYQ            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+KYQ            sp3_sp3_28          CE          CD          CG          CB     180.000   10.00     3
+KYQ            sp3_sp3_37          CG          CD          CE          NZ     180.000   10.00     3
+KYQ             sp2_sp3_8         C11          NZ          CE          CD     120.000   10.00     6
+KYQ             sp2_sp2_1         C12         C11          NZ          CE     180.000   10.00     2
+KYQ            sp2_sp3_11          NZ         C11         C13         O14     120.000   10.00     6
+KYQ             sp2_sp2_5          NZ         C11         C12         O15       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+KYQ    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KYQ    plan-1         C11   0.020
+KYQ    plan-1         C12   0.020
+KYQ    plan-1         C13   0.020
+KYQ    plan-1          NZ   0.020
+KYQ    plan-2         C11   0.020
+KYQ    plan-2         C12   0.020
+KYQ    plan-2         O15   0.020
+KYQ    plan-2         O16   0.020
+KYQ    plan-3           C   0.020
+KYQ    plan-3          CA   0.020
+KYQ    plan-3           O   0.020
+KYQ    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KYQ SMILES           ACDLabs              10.04 "O=C(O)C(N)CCCC/N=C(/C(=O)O)CO"
+KYQ SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCCCN=C(CO)C(O)=O)C(O)=O"
+KYQ SMILES           CACTVS               3.341 "N[CH](CCCCN=C(CO)C(O)=O)C(O)=O"
+KYQ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CC/N=C(\CO)/C(=O)O)C[C@@H](C(=O)O)N"
+KYQ SMILES           "OpenEye OEToolkits" 1.5.0 "C(CCN=C(CO)C(=O)O)CC(C(=O)O)N"
+KYQ InChI            InChI                1.03  "InChI=1S/C9H16N2O5/c10-6(8(13)14)3-1-2-4-11-7(5-12)9(15)16/h6,12H,1-5,10H2,(H,13,14)(H,15,16)/b11-7+/t6-/m0/s1"
+KYQ InChIKey         InChI                1.03  KPQVRBQSBOCTRG-BYPFVBTMSA-N
+KYQ ?                acedrg               202         "dictionary generator"
+KYQ ?                acedrg_database      11          "data source"
+KYQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KYQ ?                refmac5              5.8.0222    "optimization tool"

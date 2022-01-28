@@ -1,0 +1,77 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PEO     PEO     "HYDROGENPEROXIDE"     NON-POLYMER     4     2     .     
+#
+data_comp_PEO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PEO     O1      O       OH1     0       -0.552      0.494       0.133       
+PEO     O2      O       OH1     0       0.586       -0.358      0.467       
+PEO     HO1     H       H       0       -0.177      1.029       -0.445      
+PEO     HO2     H       H       0       0.979       0.141       1.066       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PEO       O1        O2        SINGLE    n         1.461     0.012     1.461     0.012     
+PEO       O1        HO1       SINGLE    n         0.970     0.012     0.873     0.020     
+PEO       O2        HO2       SINGLE    n         0.970     0.012     0.873     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PEO          O2          O1         HO1     100.028    2.85
+PEO          O1          O2         HO2     100.028    2.85
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PEO             sp3_sp3_1         HO1          O1          O2         HO2     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PEO SMILES           ACDLabs              10.04 OO
+PEO SMILES_CANONICAL CACTVS               3.341 OO
+PEO SMILES           CACTVS               3.341 OO
+PEO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 OO
+PEO SMILES           "OpenEye OEToolkits" 1.5.0 OO
+PEO InChI            InChI                1.03  InChI=1S/H2O2/c1-2/h1-2H
+PEO InChIKey         InChI                1.03  MHAJPDPJQMAIIY-UHFFFAOYSA-N
+PEO ?                acedrg               190         "dictionary generator"                  
+PEO ?                acedrg_database      11          "data source"                           
+PEO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PEO ?                refmac5              5.8.0158    "optimization tool"                     

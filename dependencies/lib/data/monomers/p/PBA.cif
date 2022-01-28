@@ -1,0 +1,178 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PBA     PBA      "PHENYLETHANE BORONIC ACID"     NON-POLYMER     22     11     .     
+#
+data_comp_PBA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PBA     B       B       B       0       24.733      19.557      35.444      
+PBA     O1      O       OH1     0       25.062      18.463      36.178      
+PBA     O2      O       OH1     0       23.794      19.460      34.468      
+PBA     CA      C       CH2     0       25.445      20.932      35.727      
+PBA     CB      C       CH2     0       24.553      21.847      36.548      
+PBA     CG      C       CR6     0       23.381      22.408      35.773      
+PBA     CD1     C       CR16    0       23.581      23.356      34.769      
+PBA     CD2     C       CR16    0       22.075      21.997      36.042      
+PBA     CE1     C       CR16    0       22.506      23.876      34.053      
+PBA     CE2     C       CR16    0       21.000      22.519      35.326      
+PBA     CZ      C       CR16    0       21.216      23.458      34.333      
+PBA     HO1     H       H       0       25.901      18.358      36.230      
+PBA     HO2     H       H       0       23.947      19.993      33.827      
+PBA     HA1     H       H       0       25.667      21.369      34.877      
+PBA     HA2     H       H       0       26.282      20.774      36.213      
+PBA     HB1     H       H       0       25.091      22.598      36.887      
+PBA     HB2     H       H       0       24.212      21.349      37.325      
+PBA     HD1     H       H       0       24.457      23.646      34.573      
+PBA     HD2     H       H       0       21.918      21.357      36.718      
+PBA     HE1     H       H       0       22.658      24.517      33.376      
+PBA     HE2     H       H       0       20.122      22.231      35.520      
+PBA     HZ      H       H       0       20.488      23.811      33.847      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PBA       B         O1        SINGLE    n         1.358     0.012     1.358     0.012     
+PBA       B         O2        SINGLE    n         1.358     0.012     1.358     0.012     
+PBA       B         CA        SINGLE    n         1.573     0.020     1.573     0.020     
+PBA       CA        CB        SINGLE    n         1.517     0.017     1.517     0.017     
+PBA       CB        CG        SINGLE    n         1.512     0.011     1.512     0.011     
+PBA       CG        CD1       DOUBLE    y         1.385     0.011     1.385     0.011     
+PBA       CG        CD2       SINGLE    y         1.385     0.011     1.385     0.011     
+PBA       CD1       CE1       SINGLE    y         1.386     0.010     1.386     0.010     
+PBA       CD2       CE2       DOUBLE    y         1.386     0.010     1.386     0.010     
+PBA       CE1       CZ        DOUBLE    y         1.376     0.012     1.376     0.012     
+PBA       CE2       CZ        SINGLE    y         1.376     0.012     1.376     0.012     
+PBA       O1        HO1       SINGLE    n         0.970     0.012     0.847     0.020     
+PBA       O2        HO2       SINGLE    n         0.970     0.012     0.847     0.020     
+PBA       CA        HA1       SINGLE    n         1.089     0.010     0.981     0.015     
+PBA       CA        HA2       SINGLE    n         1.089     0.010     0.981     0.015     
+PBA       CB        HB1       SINGLE    n         1.089     0.010     0.984     0.010     
+PBA       CB        HB2       SINGLE    n         1.089     0.010     0.984     0.010     
+PBA       CD1       HD1       SINGLE    n         1.082     0.013     0.944     0.017     
+PBA       CD2       HD2       SINGLE    n         1.082     0.013     0.944     0.017     
+PBA       CE1       HE1       SINGLE    n         1.082     0.013     0.944     0.018     
+PBA       CE2       HE2       SINGLE    n         1.082     0.013     0.944     0.018     
+PBA       CZ        HZ        SINGLE    n         1.082     0.013     0.944     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PBA          O1           B          O2     119.999    3.00
+PBA          O1           B          CA     120.000    3.00
+PBA          O2           B          CA     120.000    3.00
+PBA           B          O1         HO1     111.858    3.00
+PBA           B          O2         HO2     111.858    3.00
+PBA           B          CA          CB     109.534    3.00
+PBA           B          CA         HA1     109.347    1.86
+PBA           B          CA         HA2     109.347    1.86
+PBA          CB          CA         HA1     109.134    1.50
+PBA          CB          CA         HA2     109.134    1.50
+PBA         HA1          CA         HA2     107.808    1.50
+PBA          CA          CB          CG     113.104    2.49
+PBA          CA          CB         HB1     109.079    1.50
+PBA          CA          CB         HB2     109.079    1.50
+PBA          CG          CB         HB1     108.545    1.50
+PBA          CG          CB         HB2     108.545    1.50
+PBA         HB1          CB         HB2     107.735    1.50
+PBA          CB          CG         CD1     120.970    1.50
+PBA          CB          CG         CD2     120.970    1.50
+PBA         CD1          CG         CD2     118.060    1.50
+PBA          CG         CD1         CE1     120.624    1.50
+PBA          CG         CD1         HD1     119.591    1.50
+PBA         CE1         CD1         HD1     119.786    1.50
+PBA          CG         CD2         CE2     120.624    1.50
+PBA          CG         CD2         HD2     119.591    1.50
+PBA         CE2         CD2         HD2     119.786    1.50
+PBA         CD1         CE1          CZ     120.325    1.50
+PBA         CD1         CE1         HE1     119.792    1.50
+PBA          CZ         CE1         HE1     119.883    1.50
+PBA         CD2         CE2          CZ     120.325    1.50
+PBA         CD2         CE2         HE2     119.792    1.50
+PBA          CZ         CE2         HE2     119.883    1.50
+PBA         CE1          CZ         CE2     120.043    1.50
+PBA         CE1          CZ          HZ     119.979    1.50
+PBA         CE2          CZ          HZ     119.979    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PBA             sp3_sp3_1          O2           B          O1         HO1     180.000   10.00     3
+PBA             sp3_sp3_3          O1           B          O2         HO2     180.000   10.00     3
+PBA             sp3_sp3_5          O1           B          CA          CB     180.000   10.00     3
+PBA            sp3_sp3_11           B          CA          CB          CG     180.000   10.00     3
+PBA             sp2_sp3_2         CD1          CG          CB          CA     -90.000   10.00     6
+PBA       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+PBA              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+PBA       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+PBA              const_17          CG         CD2         CE2          CZ       0.000   10.00     2
+PBA       const_sp2_sp2_9         CD1         CE1          CZ         CE2       0.000   10.00     2
+PBA              const_13         CD2         CE2          CZ         CE1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PBA    plan-1          CB   0.020
+PBA    plan-1         CD1   0.020
+PBA    plan-1         CD2   0.020
+PBA    plan-1         CE1   0.020
+PBA    plan-1         CE2   0.020
+PBA    plan-1          CG   0.020
+PBA    plan-1          CZ   0.020
+PBA    plan-1         HD1   0.020
+PBA    plan-1         HD2   0.020
+PBA    plan-1         HE1   0.020
+PBA    plan-1         HE2   0.020
+PBA    plan-1          HZ   0.020
+PBA    plan-2           B   0.020
+PBA    plan-2          CA   0.020
+PBA    plan-2          O1   0.020
+PBA    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PBA SMILES           ACDLabs              10.04 "OB(O)CCc1ccccc1"
+PBA SMILES_CANONICAL CACTVS               3.341 "OB(O)CCc1ccccc1"
+PBA SMILES           CACTVS               3.341 "OB(O)CCc1ccccc1"
+PBA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "B(CCc1ccccc1)(O)O"
+PBA SMILES           "OpenEye OEToolkits" 1.5.0 "B(CCc1ccccc1)(O)O"
+PBA InChI            InChI                1.03  "InChI=1S/C8H11BO2/c10-9(11)7-6-8-4-2-1-3-5-8/h1-5,10-11H,6-7H2"
+PBA InChIKey         InChI                1.03  VPRUMANMDWQMNF-UHFFFAOYSA-N
+PBA ?                acedrg               202         "dictionary generator"                  
+PBA ?                acedrg_database      11          "data source"                           
+PBA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PBA ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,98 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CB0     CB0      CIS-DIBROMOETHENE     non-polymer     6     4     .     
+#
+data_comp_CB0
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CB0     BR1     BR      BR      0       -2.301      -52.428     -14.832     
+CB0     C02     C       C1      0       -2.337      -52.205     -16.706     
+CB0     C03     C       C1      0       -3.613      -52.358     -17.521     
+CB0     BR4     BR      BR      0       -5.272      -52.786     -16.732     
+CB0     H02     H       H       0       -1.551      -51.989     -17.187     
+CB0     H03     H       H       0       -3.535      -52.228     -18.456     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CB0       BR1       C02       SINGLE    n         1.887     0.017     1.887     0.017     
+CB0       C02       C03       DOUBLE    n         1.522     0.020     1.522     0.020     
+CB0       C03       BR4       SINGLE    n         1.887     0.017     1.887     0.017     
+CB0       C02       H02       SINGLE    n         1.082     0.013     0.947     0.020     
+CB0       C03       H03       SINGLE    n         1.082     0.013     0.947     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CB0         BR1         C02         C03     122.409    3.00
+CB0         BR1         C02         H02     121.069    2.51
+CB0         C03         C02         H02     116.522    3.00
+CB0         C02         C03         BR4     122.409    3.00
+CB0         C02         C03         H03     116.522    3.00
+CB0         BR4         C03         H03     121.069    2.51
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CB0             sp2_sp2_1         BR1         C02         C03         BR4     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CB0    plan-1         BR1   0.020
+CB0    plan-1         C02   0.020
+CB0    plan-1         C03   0.020
+CB0    plan-1         H02   0.020
+CB0    plan-2         BR4   0.020
+CB0    plan-2         C02   0.020
+CB0    plan-2         C03   0.020
+CB0    plan-2         H03   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CB0 SMILES           ACDLabs              12.01 "Br[C@H]=[C@H]Br"
+CB0 InChI            InChI                1.03  InChI=1S/C2H2Br2/c3-1-2-4/h1-2H/b2-1-
+CB0 InChIKey         InChI                1.03  UWTUEMKLYAGTNQ-UPHRSURJSA-N
+CB0 SMILES_CANONICAL CACTVS               3.385 Br\C=C/Br
+CB0 SMILES           CACTVS               3.385 BrC=CBr
+CB0 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C(=C\Br)\Br"
+CB0 SMILES           "OpenEye OEToolkits" 1.7.6 "C(=CBr)Br"
+CB0 ?                acedrg               202         "dictionary generator"                  
+CB0 ?                acedrg_database      11          "data source"                           
+CB0 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CB0 ?                refmac5              5.8.0189    "optimization tool"                     

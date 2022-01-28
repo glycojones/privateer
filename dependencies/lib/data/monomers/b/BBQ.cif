@@ -1,0 +1,638 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BBQ      BBQ '"CYCLOPENTYL N-[(2S)-1-[(2S,4R)-2-[[' non-polymer        90  46 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BBQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BBQ           O3     O    O         0.000      0.000    0.000    0.000
+ BBQ           C12    C    C         0.000     -1.177   -0.227    0.186
+ BBQ           C5     C    CH1       0.000     -1.694   -0.426    1.588
+ BBQ           H5     H    H         0.000     -2.622   -1.013    1.556
+ BBQ           C2     C    CT        0.000     -1.973    0.936    2.227
+ BBQ           C4     C    CH3       0.000     -0.682    1.757    2.261
+ BBQ           H43C   H    H         0.000     -0.874    2.701    2.703
+ BBQ           H42C   H    H         0.000      0.050    1.245    2.829
+ BBQ           H41C   H    H         0.000     -0.326    1.897    1.273
+ BBQ           C3     C    CH3       0.000     -2.485    0.734    3.654
+ BBQ           H33C   H    H         0.000     -2.678    1.676    4.098
+ BBQ           H32C   H    H         0.000     -3.379    0.166    3.632
+ BBQ           H31C   H    H         0.000     -1.755    0.219    4.223
+ BBQ           C1     C    CH3       0.000     -3.029    1.678    1.406
+ BBQ           H13C   H    H         0.000     -3.285    2.584    1.893
+ BBQ           H12C   H    H         0.000     -2.642    1.894    0.443
+ BBQ           H11C   H    H         0.000     -3.893    1.073    1.310
+ BBQ           N1     N    NH1       0.000     -0.691   -1.142    2.380
+ BBQ           H1     H    H         0.000      0.285   -1.093    2.124
+ BBQ           C6     C    C         0.000     -1.070   -1.867    3.451
+ BBQ           O1     O    O         0.000     -2.244   -1.927    3.760
+ BBQ           O2     O    O2        0.000     -0.148   -2.524    4.180
+ BBQ           C7     C    CH1       0.000     -0.628   -3.286    5.319
+ BBQ           H7     H    H         0.000     -1.559   -2.850    5.708
+ BBQ           C11    C    CH2       0.000     -0.845   -4.768    4.929
+ BBQ           H111   H    H         0.000     -0.072   -5.143    4.255
+ BBQ           H112   H    H         0.000     -1.828   -4.948    4.488
+ BBQ           C10    C    CH2       0.000     -0.745   -5.499    6.290
+ BBQ           H101   H    H         0.000     -0.464   -6.548    6.173
+ BBQ           H102   H    H         0.000     -1.675   -5.435    6.859
+ BBQ           C9     C    CH2       0.000      0.373   -4.746    7.042
+ BBQ           H91C   H    H         0.000      1.333   -5.251    6.917
+ BBQ           H92C   H    H         0.000      0.140   -4.667    8.106
+ BBQ           C8     C    CH2       0.000      0.447   -3.339    6.425
+ BBQ           H82C   H    H         0.000      1.430   -3.157    5.987
+ BBQ           H81C   H    H         0.000      0.237   -2.574    7.175
+ BBQ           N2     N    N         0.000     -2.023   -0.300   -0.861
+ BBQ           C13    C    CH2       0.000     -3.447   -0.675   -0.790
+ BBQ           H131   H    H         0.000     -3.924   -0.281    0.110
+ BBQ           H132   H    H         0.000     -3.581   -1.759   -0.827
+ BBQ           C14    C    CH1       0.000     -4.091   -0.031   -2.043
+ BBQ           H14    H    H         0.000     -4.307    1.033   -1.870
+ BBQ           C15    C    CH2       0.000     -2.964   -0.205   -3.096
+ BBQ           H151   H    H         0.000     -3.003    0.553   -3.881
+ BBQ           H152   H    H         0.000     -2.964   -1.198   -3.550
+ BBQ           C16    C    CH1       0.000     -1.679   -0.019   -2.262
+ BBQ           H16    H    H         0.000     -0.904   -0.719   -2.606
+ BBQ           C17    C    C         0.000     -1.185    1.400   -2.393
+ BBQ           O4     O    O         0.000     -1.122    2.113   -1.414
+ BBQ           N3     N    NH1       0.000     -0.812    1.875   -3.598
+ BBQ           H3     H    H         0.000     -0.864    1.280   -4.413
+ BBQ           C18    C    CH1       0.000     -0.330    3.252   -3.725
+ BBQ           H18    H    H         0.000     -0.013    3.651   -2.752
+ BBQ           C19    C    CH2       0.000      0.818    3.349   -4.770
+ BBQ           H191   H    H         0.000      0.716    2.652   -5.605
+ BBQ           H192   H    H         0.000      1.817    3.253   -4.338
+ BBQ           C20    C    CH2       0.000      0.609    4.800   -5.277
+ BBQ           H202   H    H         0.000      1.010    4.927   -6.284
+ BBQ           H201   H    H         0.000      1.078    5.523   -4.606
+ BBQ           O5     O    O2        0.000     -0.809    5.011   -5.294
+ BBQ           B      B    B         0.000     -1.448    4.196   -4.400
+ BBQ           O6     O    O2        0.000     -2.050    4.944   -3.431
+ BBQ           C30    C    CH2       0.000     -3.043    5.849   -3.925
+ BBQ           H302   H    H         0.000     -2.581    6.575   -4.598
+ BBQ           H301   H    H         0.000     -3.514    6.375   -3.092
+ BBQ           O8     O    O2        0.000     -2.363    3.416   -5.048
+ BBQ           C31    C    CH2       0.000     -3.389    4.156   -5.717
+ BBQ           H311   H    H         0.000     -4.108    3.469   -6.167
+ BBQ           H312   H    H         0.000     -2.948    4.781   -6.496
+ BBQ           C32    C    CH1       0.000     -4.103    5.044   -4.689
+ BBQ           H32    H    H         0.000     -4.668    4.416   -3.986
+ BBQ           O9     O    OH1       0.000     -4.994    5.937   -5.359
+ BBQ           H9     H    H         0.000     -5.660    5.426   -5.839
+ BBQ           O7     O    O2        0.000     -5.271   -0.735   -2.433
+ BBQ           C21    C    CR6       0.000     -6.456   -0.224   -2.022
+ BBQ           C29    C    CR66      0.000     -7.663   -0.863   -2.375
+ BBQ           C28    C    CR16      0.000     -7.688   -2.031   -3.150
+ BBQ           H28    H    H         0.000     -6.764   -2.467   -3.510
+ BBQ           C27    C    CR16      0.000     -8.882   -2.615   -3.446
+ BBQ           H27    H    H         0.000     -8.899   -3.525   -4.033
+ BBQ           C26    C    CR16      0.000    -10.082   -2.061   -3.007
+ BBQ           H26    H    H         0.000    -11.018   -2.541   -3.265
+ BBQ           C25    C    CR16      0.000    -10.096   -0.923   -2.258
+ BBQ           H25    H    H         0.000    -11.036   -0.502   -1.922
+ BBQ           C24    C    CR66      0.000     -8.884   -0.301   -1.924
+ BBQ           C23    C    CR16      0.000     -8.832    0.875   -1.152
+ BBQ           H23    H    H         0.000     -9.742    1.338   -0.791
+ BBQ           C22    C    CR16      0.000     -7.618    1.420   -0.869
+ BBQ           H22    H    H         0.000     -7.574    2.326   -0.276
+ BBQ           N4     N    NRD6      0.000     -6.487    0.876   -1.296
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BBQ      O3     n/a    C12    START
+ BBQ      C12    O3     N2     .
+ BBQ      C5     C12    N1     .
+ BBQ      H5     C5     .      .
+ BBQ      C2     C5     C1     .
+ BBQ      C4     C2     H41C   .
+ BBQ      H43C   C4     .      .
+ BBQ      H42C   C4     .      .
+ BBQ      H41C   C4     .      .
+ BBQ      C3     C2     H31C   .
+ BBQ      H33C   C3     .      .
+ BBQ      H32C   C3     .      .
+ BBQ      H31C   C3     .      .
+ BBQ      C1     C2     H11C   .
+ BBQ      H13C   C1     .      .
+ BBQ      H12C   C1     .      .
+ BBQ      H11C   C1     .      .
+ BBQ      N1     C5     C6     .
+ BBQ      H1     N1     .      .
+ BBQ      C6     N1     O2     .
+ BBQ      O1     C6     .      .
+ BBQ      O2     C6     C7     .
+ BBQ      C7     O2     C11    .
+ BBQ      H7     C7     .      .
+ BBQ      C11    C7     C10    .
+ BBQ      H111   C11    .      .
+ BBQ      H112   C11    .      .
+ BBQ      C10    C11    C9     .
+ BBQ      H101   C10    .      .
+ BBQ      H102   C10    .      .
+ BBQ      C9     C10    C8     .
+ BBQ      H91C   C9     .      .
+ BBQ      H92C   C9     .      .
+ BBQ      C8     C9     H81C   .
+ BBQ      H82C   C8     .      .
+ BBQ      H81C   C8     .      .
+ BBQ      N2     C12    C13    .
+ BBQ      C13    N2     C14    .
+ BBQ      H131   C13    .      .
+ BBQ      H132   C13    .      .
+ BBQ      C14    C13    O7     .
+ BBQ      H14    C14    .      .
+ BBQ      C15    C14    C16    .
+ BBQ      H151   C15    .      .
+ BBQ      H152   C15    .      .
+ BBQ      C16    C15    C17    .
+ BBQ      H16    C16    .      .
+ BBQ      C17    C16    N3     .
+ BBQ      O4     C17    .      .
+ BBQ      N3     C17    C18    .
+ BBQ      H3     N3     .      .
+ BBQ      C18    N3     B      .
+ BBQ      H18    C18    .      .
+ BBQ      C19    C18    C20    .
+ BBQ      H191   C19    .      .
+ BBQ      H192   C19    .      .
+ BBQ      C20    C19    O5     .
+ BBQ      H202   C20    .      .
+ BBQ      H201   C20    .      .
+ BBQ      O5     C20    .      .
+ BBQ      B      C18    O8     .
+ BBQ      O6     B      C30    .
+ BBQ      C30    O6     H301   .
+ BBQ      H302   C30    .      .
+ BBQ      H301   C30    .      .
+ BBQ      O8     B      C31    .
+ BBQ      C31    O8     C32    .
+ BBQ      H311   C31    .      .
+ BBQ      H312   C31    .      .
+ BBQ      C32    C31    O9     .
+ BBQ      H32    C32    .      .
+ BBQ      O9     C32    H9     .
+ BBQ      H9     O9     .      .
+ BBQ      O7     C14    C21    .
+ BBQ      C21    O7     C29    .
+ BBQ      C29    C21    C28    .
+ BBQ      C28    C29    C27    .
+ BBQ      H28    C28    .      .
+ BBQ      C27    C28    C26    .
+ BBQ      H27    C27    .      .
+ BBQ      C26    C27    C25    .
+ BBQ      H26    C26    .      .
+ BBQ      C25    C26    C24    .
+ BBQ      H25    C25    .      .
+ BBQ      C24    C25    C23    .
+ BBQ      C23    C24    C22    .
+ BBQ      H23    C23    .      .
+ BBQ      C22    C23    N4     .
+ BBQ      H22    C22    .      .
+ BBQ      N4     C22    .      END
+ BBQ      C32    C30    .    ADD
+ BBQ      B      O5     .    ADD
+ BBQ      C16    N2     .    ADD
+ BBQ      C7     C8     .    ADD
+ BBQ      C21    N4     .    ADD
+ BBQ      C24    C29    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BBQ       O9        C32       single    1.432     0.020     1.432     0.020     
+BBQ       C32       C30       single    1.524     0.020     1.524     0.020     
+BBQ       C32       C31       single    1.524     0.020     1.524     0.020     
+BBQ       C30       O6        single    1.426     0.020     1.426     0.020     
+BBQ       O6        B         single    1.434     0.020     1.434     0.020     
+BBQ       C31       O8        single    1.426     0.020     1.426     0.020     
+BBQ       O8        B         single    1.434     0.020     1.434     0.020     
+BBQ       B         O5        single    1.434     0.020     1.434     0.020     
+BBQ       B         C18       single    1.600     0.020     1.600     0.020     
+BBQ       O5        C20       single    1.426     0.020     1.426     0.020     
+BBQ       C20       C19       single    1.524     0.020     1.524     0.020     
+BBQ       C19       C18       single    1.524     0.020     1.524     0.020     
+BBQ       C18       N3        single    1.450     0.020     1.450     0.020     
+BBQ       N3        C17       single    1.330     0.020     1.330     0.020     
+BBQ       O4        C17       double    1.220     0.020     1.220     0.020     
+BBQ       C17       C16       single    1.500     0.020     1.500     0.020     
+BBQ       C16       N2        single    1.455     0.020     1.455     0.020     
+BBQ       C16       C15       single    1.524     0.020     1.524     0.020     
+BBQ       N2        C12       single    1.330     0.020     1.330     0.020     
+BBQ       C13       N2        single    1.455     0.020     1.455     0.020     
+BBQ       C5        C12       single    1.500     0.020     1.500     0.020     
+BBQ       C12       O3        double    1.220     0.020     1.220     0.020     
+BBQ       N1        C5        single    1.450     0.020     1.450     0.020     
+BBQ       C2        C5        single    1.524     0.020     1.524     0.020     
+BBQ       C6        N1        single    1.330     0.020     1.330     0.020     
+BBQ       O2        C6        single    1.454     0.020     1.454     0.020     
+BBQ       O1        C6        double    1.220     0.020     1.220     0.020     
+BBQ       C7        O2        single    1.426     0.020     1.426     0.020     
+BBQ       C7        C8        single    1.524     0.020     1.524     0.020     
+BBQ       C11       C7        single    1.524     0.020     1.524     0.020     
+BBQ       C8        C9        single    1.524     0.020     1.524     0.020     
+BBQ       C9        C10       single    1.524     0.020     1.524     0.020     
+BBQ       C10       C11       single    1.524     0.020     1.524     0.020     
+BBQ       C1        C2        single    1.524     0.020     1.524     0.020     
+BBQ       C3        C2        single    1.524     0.020     1.524     0.020     
+BBQ       C4        C2        single    1.524     0.020     1.524     0.020     
+BBQ       C15       C14       single    1.524     0.020     1.524     0.020     
+BBQ       C14       C13       single    1.524     0.020     1.524     0.020     
+BBQ       O7        C14       single    1.426     0.020     1.426     0.020     
+BBQ       C21       O7        single    1.370     0.020     1.370     0.020     
+BBQ       C21       N4        single    1.350     0.020     1.350     0.020     
+BBQ       C29       C21       double    1.490     0.020     1.490     0.020     
+BBQ       N4        C22       double    1.337     0.020     1.337     0.020     
+BBQ       C22       C23       single    1.390     0.020     1.390     0.020     
+BBQ       C23       C24       double    1.390     0.020     1.390     0.020     
+BBQ       C24       C29       single    1.490     0.020     1.490     0.020     
+BBQ       C24       C25       single    1.390     0.020     1.390     0.020     
+BBQ       C28       C29       single    1.390     0.020     1.390     0.020     
+BBQ       C25       C26       double    1.390     0.020     1.390     0.020     
+BBQ       C26       C27       single    1.390     0.020     1.390     0.020     
+BBQ       C27       C28       double    1.390     0.020     1.390     0.020     
+BBQ       H9        O9        single    0.970     0.012     0.839     0.014     
+BBQ       H32       C32       single    1.089     0.010     0.989     0.005     
+BBQ       H301      C30       single    1.089     0.010     0.989     0.005     
+BBQ       H302      C30       single    1.089     0.010     0.989     0.005     
+BBQ       H311      C31       single    1.089     0.010     0.989     0.005     
+BBQ       H312      C31       single    1.089     0.010     0.989     0.005     
+BBQ       H18       C18       single    1.089     0.010     0.989     0.005     
+BBQ       H201      C20       single    1.089     0.010     0.989     0.005     
+BBQ       H202      C20       single    1.089     0.010     0.989     0.005     
+BBQ       H191      C19       single    1.089     0.010     0.989     0.005     
+BBQ       H192      C19       single    1.089     0.010     0.989     0.005     
+BBQ       H3        N3        single    1.016     0.010     0.899     0.007     
+BBQ       H16       C16       single    1.089     0.010     0.989     0.005     
+BBQ       H151      C15       single    1.089     0.010     0.989     0.005     
+BBQ       H152      C15       single    1.089     0.010     0.989     0.005     
+BBQ       H131      C13       single    1.089     0.010     0.989     0.005     
+BBQ       H132      C13       single    1.089     0.010     0.989     0.005     
+BBQ       H5        C5        single    1.089     0.010     0.989     0.005     
+BBQ       H1        N1        single    1.016     0.010     0.899     0.007     
+BBQ       H7        C7        single    1.089     0.010     0.989     0.005     
+BBQ       H81C      C8        single    1.089     0.010     0.989     0.005     
+BBQ       H82C      C8        single    1.089     0.010     0.989     0.005     
+BBQ       H111      C11       single    1.089     0.010     0.989     0.005     
+BBQ       H112      C11       single    1.089     0.010     0.989     0.005     
+BBQ       H91C      C9        single    1.089     0.010     0.989     0.005     
+BBQ       H92C      C9        single    1.089     0.010     0.989     0.005     
+BBQ       H101      C10       single    1.089     0.010     0.989     0.005     
+BBQ       H102      C10       single    1.089     0.010     0.989     0.005     
+BBQ       H11C      C1        single    1.089     0.010     0.989     0.005     
+BBQ       H12C      C1        single    1.089     0.010     0.989     0.005     
+BBQ       H13C      C1        single    1.089     0.010     0.989     0.005     
+BBQ       H31C      C3        single    1.089     0.010     0.989     0.005     
+BBQ       H32C      C3        single    1.089     0.010     0.989     0.005     
+BBQ       H33C      C3        single    1.089     0.010     0.989     0.005     
+BBQ       H41C      C4        single    1.089     0.010     0.989     0.005     
+BBQ       H42C      C4        single    1.089     0.010     0.989     0.005     
+BBQ       H43C      C4        single    1.089     0.010     0.989     0.005     
+BBQ       H14       C14       single    1.089     0.010     0.989     0.005     
+BBQ       H22       C22       single    1.082     0.013     0.975     0.010     
+BBQ       H23       C23       single    1.082     0.013     0.975     0.010     
+BBQ       H25       C25       single    1.082     0.013     0.975     0.010     
+BBQ       H28       C28       single    1.082     0.013     0.975     0.010     
+BBQ       H26       C26       single    1.082     0.013     0.975     0.010     
+BBQ       H27       C27       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BBQ      O3     C12    C5      120.500    3.000
+ BBQ      O3     C12    N2      123.000    3.000
+ BBQ      C5     C12    N2      116.500    3.000
+ BBQ      C12    C5     H5      108.810    3.000
+ BBQ      C12    C5     C2      109.470    3.000
+ BBQ      C12    C5     N1      111.600    3.000
+ BBQ      H5     C5     C2      108.340    3.000
+ BBQ      H5     C5     N1      108.550    3.000
+ BBQ      C2     C5     N1      110.000    3.000
+ BBQ      C5     C2     C4      111.000    3.000
+ BBQ      C5     C2     C3      111.000    3.000
+ BBQ      C5     C2     C1      111.000    3.000
+ BBQ      C4     C2     C3      111.000    3.000
+ BBQ      C4     C2     C1      111.000    3.000
+ BBQ      C3     C2     C1      111.000    3.000
+ BBQ      C2     C4     H43C    109.470    3.000
+ BBQ      C2     C4     H42C    109.470    3.000
+ BBQ      C2     C4     H41C    109.470    3.000
+ BBQ      H43C   C4     H42C    109.470    3.000
+ BBQ      H43C   C4     H41C    109.470    3.000
+ BBQ      H42C   C4     H41C    109.470    3.000
+ BBQ      C2     C3     H33C    109.470    3.000
+ BBQ      C2     C3     H32C    109.470    3.000
+ BBQ      C2     C3     H31C    109.470    3.000
+ BBQ      H33C   C3     H32C    109.470    3.000
+ BBQ      H33C   C3     H31C    109.470    3.000
+ BBQ      H32C   C3     H31C    109.470    3.000
+ BBQ      C2     C1     H13C    109.470    3.000
+ BBQ      C2     C1     H12C    109.470    3.000
+ BBQ      C2     C1     H11C    109.470    3.000
+ BBQ      H13C   C1     H12C    109.470    3.000
+ BBQ      H13C   C1     H11C    109.470    3.000
+ BBQ      H12C   C1     H11C    109.470    3.000
+ BBQ      C5     N1     H1      118.500    3.000
+ BBQ      C5     N1     C6      121.500    3.000
+ BBQ      H1     N1     C6      120.000    3.000
+ BBQ      N1     C6     O1      123.000    3.000
+ BBQ      N1     C6     O2      118.000    3.000
+ BBQ      O1     C6     O2      119.000    3.000
+ BBQ      C6     O2     C7      111.800    3.000
+ BBQ      O2     C7     H7      109.470    3.000
+ BBQ      O2     C7     C11     109.470    3.000
+ BBQ      O2     C7     C8      109.470    3.000
+ BBQ      H7     C7     C11     108.340    3.000
+ BBQ      H7     C7     C8      108.340    3.000
+ BBQ      C11    C7     C8      109.470    3.000
+ BBQ      C7     C11    H111    109.470    3.000
+ BBQ      C7     C11    H112    109.470    3.000
+ BBQ      C7     C11    C10     111.000    3.000
+ BBQ      H111   C11    H112    107.900    3.000
+ BBQ      H111   C11    C10     109.470    3.000
+ BBQ      H112   C11    C10     109.470    3.000
+ BBQ      C11    C10    H101    109.470    3.000
+ BBQ      C11    C10    H102    109.470    3.000
+ BBQ      C11    C10    C9      111.000    3.000
+ BBQ      H101   C10    H102    107.900    3.000
+ BBQ      H101   C10    C9      109.470    3.000
+ BBQ      H102   C10    C9      109.470    3.000
+ BBQ      C10    C9     H91C    109.470    3.000
+ BBQ      C10    C9     H92C    109.470    3.000
+ BBQ      C10    C9     C8      111.000    3.000
+ BBQ      H91C   C9     H92C    107.900    3.000
+ BBQ      H91C   C9     C8      109.470    3.000
+ BBQ      H92C   C9     C8      109.470    3.000
+ BBQ      C9     C8     H82C    109.470    3.000
+ BBQ      C9     C8     H81C    109.470    3.000
+ BBQ      C9     C8     C7      111.000    3.000
+ BBQ      H82C   C8     H81C    107.900    3.000
+ BBQ      H82C   C8     C7      109.470    3.000
+ BBQ      H81C   C8     C7      109.470    3.000
+ BBQ      C12    N2     C13     127.000    3.000
+ BBQ      C12    N2     C16     121.000    3.000
+ BBQ      C13    N2     C16     112.000    3.000
+ BBQ      N2     C13    H131    109.470    3.000
+ BBQ      N2     C13    H132    109.470    3.000
+ BBQ      N2     C13    C14     105.000    3.000
+ BBQ      H131   C13    H132    107.900    3.000
+ BBQ      H131   C13    C14     109.470    3.000
+ BBQ      H132   C13    C14     109.470    3.000
+ BBQ      C13    C14    H14     108.340    3.000
+ BBQ      C13    C14    C15     109.470    3.000
+ BBQ      C13    C14    O7      109.470    3.000
+ BBQ      H14    C14    C15     108.340    3.000
+ BBQ      H14    C14    O7      109.470    3.000
+ BBQ      C15    C14    O7      109.470    3.000
+ BBQ      C14    C15    H151    109.470    3.000
+ BBQ      C14    C15    H152    109.470    3.000
+ BBQ      C14    C15    C16     111.000    3.000
+ BBQ      H151   C15    H152    107.900    3.000
+ BBQ      H151   C15    C16     109.470    3.000
+ BBQ      H152   C15    C16     109.470    3.000
+ BBQ      C15    C16    H16     108.340    3.000
+ BBQ      C15    C16    C17     109.470    3.000
+ BBQ      C15    C16    N2      105.000    3.000
+ BBQ      H16    C16    C17     108.810    3.000
+ BBQ      H16    C16    N2      109.470    3.000
+ BBQ      C17    C16    N2      111.600    3.000
+ BBQ      C16    C17    O4      120.500    3.000
+ BBQ      C16    C17    N3      116.500    3.000
+ BBQ      O4     C17    N3      123.000    3.000
+ BBQ      C17    N3     H3      120.000    3.000
+ BBQ      C17    N3     C18     121.500    3.000
+ BBQ      H3     N3     C18     118.500    3.000
+ BBQ      N3     C18    H18     108.550    3.000
+ BBQ      N3     C18    C19     110.000    3.000
+ BBQ      N3     C18    B       109.500    3.000
+ BBQ      H18    C18    C19     108.340    3.000
+ BBQ      H18    C18    B       109.470    3.000
+ BBQ      C19    C18    B       109.470    3.000
+ BBQ      C18    C19    H191    109.470    3.000
+ BBQ      C18    C19    H192    109.470    3.000
+ BBQ      C18    C19    C20     111.000    3.000
+ BBQ      H191   C19    H192    107.900    3.000
+ BBQ      H191   C19    C20     109.470    3.000
+ BBQ      H192   C19    C20     109.470    3.000
+ BBQ      C19    C20    H202    109.470    3.000
+ BBQ      C19    C20    H201    109.470    3.000
+ BBQ      C19    C20    O5      109.470    3.000
+ BBQ      H202   C20    H201    107.900    3.000
+ BBQ      H202   C20    O5      109.470    3.000
+ BBQ      H201   C20    O5      109.470    3.000
+ BBQ      C20    O5     B       120.000    3.000
+ BBQ      C18    B      O6      120.000    3.000
+ BBQ      C18    B      O8      120.000    3.000
+ BBQ      C18    B      O5      120.000    3.000
+ BBQ      O6     B      O8      120.000    3.000
+ BBQ      O6     B      O5      120.000    3.000
+ BBQ      O8     B      O5      120.000    3.000
+ BBQ      B      O6     C30     120.000    3.000
+ BBQ      O6     C30    H302    109.470    3.000
+ BBQ      O6     C30    H301    109.470    3.000
+ BBQ      O6     C30    C32     109.470    3.000
+ BBQ      H302   C30    H301    107.900    3.000
+ BBQ      H302   C30    C32     109.470    3.000
+ BBQ      H301   C30    C32     109.470    3.000
+ BBQ      B      O8     C31     120.000    3.000
+ BBQ      O8     C31    H311    109.470    3.000
+ BBQ      O8     C31    H312    109.470    3.000
+ BBQ      O8     C31    C32     109.470    3.000
+ BBQ      H311   C31    H312    107.900    3.000
+ BBQ      H311   C31    C32     109.470    3.000
+ BBQ      H312   C31    C32     109.470    3.000
+ BBQ      C31    C32    H32     108.340    3.000
+ BBQ      C31    C32    O9      109.470    3.000
+ BBQ      C31    C32    C30     109.470    3.000
+ BBQ      H32    C32    O9      109.470    3.000
+ BBQ      H32    C32    C30     108.340    3.000
+ BBQ      O9     C32    C30     109.470    3.000
+ BBQ      C32    O9     H9      109.470    3.000
+ BBQ      C14    O7     C21     120.000    3.000
+ BBQ      O7     C21    C29     120.000    3.000
+ BBQ      O7     C21    N4      120.000    3.000
+ BBQ      C29    C21    N4      120.000    3.000
+ BBQ      C21    C29    C28     120.000    3.000
+ BBQ      C21    C29    C24     120.000    3.000
+ BBQ      C28    C29    C24     120.000    3.000
+ BBQ      C29    C28    H28     120.000    3.000
+ BBQ      C29    C28    C27     120.000    3.000
+ BBQ      H28    C28    C27     120.000    3.000
+ BBQ      C28    C27    H27     120.000    3.000
+ BBQ      C28    C27    C26     120.000    3.000
+ BBQ      H27    C27    C26     120.000    3.000
+ BBQ      C27    C26    H26     120.000    3.000
+ BBQ      C27    C26    C25     120.000    3.000
+ BBQ      H26    C26    C25     120.000    3.000
+ BBQ      C26    C25    H25     120.000    3.000
+ BBQ      C26    C25    C24     120.000    3.000
+ BBQ      H25    C25    C24     120.000    3.000
+ BBQ      C25    C24    C23     120.000    3.000
+ BBQ      C25    C24    C29     120.000    3.000
+ BBQ      C23    C24    C29     120.000    3.000
+ BBQ      C24    C23    H23     120.000    3.000
+ BBQ      C24    C23    C22     120.000    3.000
+ BBQ      H23    C23    C22     120.000    3.000
+ BBQ      C23    C22    H22     120.000    3.000
+ BBQ      C23    C22    N4      120.000    3.000
+ BBQ      H22    C22    N4      120.000    3.000
+ BBQ      C22    N4     C21     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BBQ      var_1    O3     C12    C5     N1       -36.472   20.000   3
+ BBQ      var_2    C12    C5     C2     C1        60.491   20.000   1
+ BBQ      var_3    C5     C2     C4     H41C      59.971   20.000   1
+ BBQ      var_4    C5     C2     C3     H31C      59.969   20.000   1
+ BBQ      var_5    C5     C2     C1     H11C      55.064   20.000   1
+ BBQ      var_6    C12    C5     N1     C6      -155.055   20.000   3
+ BBQ      CONST_1  C5     N1     C6     O2       180.000    0.000   0
+ BBQ      var_7    N1     C6     O2     C7      -179.965   20.000   1
+ BBQ      var_8    C6     O2     C7     C11       95.256   20.000   1
+ BBQ      var_9    O2     C7     C8     C9      -150.000   20.000   3
+ BBQ      var_10   O2     C7     C11    C10      150.000   20.000   3
+ BBQ      var_11   C7     C11    C10    C9       -30.000   20.000   3
+ BBQ      var_12   C11    C10    C9     C8        30.000   20.000   3
+ BBQ      var_13   C10    C9     C8     C7         0.000   20.000   3
+ BBQ      CONST_2  O3     C12    N2     C13      180.000    0.000   0
+ BBQ      var_14   C12    N2     C13    C14      150.000   20.000   1
+ BBQ      var_15   N2     C13    C14    O7       150.000   20.000   3
+ BBQ      var_16   C13    C14    C15    C16      -30.000   20.000   3
+ BBQ      var_17   C14    C15    C16    C17      -90.000   20.000   3
+ BBQ      var_18   C15    C16    N2     C12      180.000   20.000   3
+ BBQ      var_19   C15    C16    C17    N3       -62.203   20.000   3
+ BBQ      CONST_3  C16    C17    N3     C18      180.000    0.000   0
+ BBQ      var_20   C17    N3     C18    B       -104.989   20.000   3
+ BBQ      var_21   N3     C18    C19    C20      150.000   20.000   3
+ BBQ      var_22   C18    C19    C20    O5       -30.000   20.000   3
+ BBQ      var_23   C19    C20    O5     B         30.000   20.000   1
+ BBQ      var_24   N3     C18    B      O8       -30.000   20.000   1
+ BBQ      var_25   C18    B      O5     C20        0.000   20.000   1
+ BBQ      var_26   C18    B      O6     C30      180.000   20.000   1
+ BBQ      var_27   B      O6     C30    C32       60.000   20.000   1
+ BBQ      var_28   C18    B      O8     C31      180.000   20.000   1
+ BBQ      var_29   B      O8     C31    C32      -60.000   20.000   1
+ BBQ      var_30   O8     C31    C32    O9       180.000   20.000   3
+ BBQ      var_31   C31    C32    C30    O6       -60.000   20.000   3
+ BBQ      var_32   C31    C32    O9     H9        61.059   20.000   1
+ BBQ      var_33   C13    C14    O7     C21       97.801   20.000   1
+ BBQ      var_34   C14    O7     C21    C29      179.726   20.000   1
+ BBQ      CONST_4  O7     C21    N4     C22      180.000    0.000   0
+ BBQ      CONST_5  O7     C21    C29    C28        0.000    0.000   0
+ BBQ      CONST_6  C21    C29    C28    C27      180.000    0.000   0
+ BBQ      CONST_7  C29    C28    C27    C26        0.000    0.000   0
+ BBQ      CONST_8  C28    C27    C26    C25        0.000    0.000   0
+ BBQ      CONST_9  C27    C26    C25    C24        0.000    0.000   0
+ BBQ      CONST_10 C26    C25    C24    C23      180.000    0.000   0
+ BBQ      CONST_11 C25    C24    C29    C21      180.000    0.000   0
+ BBQ      CONST_12 C25    C24    C23    C22      180.000    0.000   0
+ BBQ      CONST_13 C24    C23    C22    N4         0.000    0.000   0
+ BBQ      CONST_14 C23    C22    N4     C21        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BBQ      chir_01  C32    O9     C30    C31       positiv
+ BBQ      chir_02  B      O6     O8     O5        negativ
+ BBQ      chir_03  C18    B      C19    N3        positiv
+ BBQ      chir_04  C16    C17    N2     C15       negativ
+ BBQ      chir_05  C5     C12    N1     C2        negativ
+ BBQ      chir_06  C7     O2     C8     C11       positiv
+ BBQ      chir_07  C2     C5     C1     C3        negativ
+ BBQ      chir_08  C14    C15    C13    O7        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BBQ      plan-1    N3        0.020
+ BBQ      plan-1    C18       0.020
+ BBQ      plan-1    C17       0.020
+ BBQ      plan-1    H3        0.020
+ BBQ      plan-2    C17       0.020
+ BBQ      plan-2    N3        0.020
+ BBQ      plan-2    O4        0.020
+ BBQ      plan-2    C16       0.020
+ BBQ      plan-2    H3        0.020
+ BBQ      plan-3    N2        0.020
+ BBQ      plan-3    C16       0.020
+ BBQ      plan-3    C12       0.020
+ BBQ      plan-3    C13       0.020
+ BBQ      plan-4    C12       0.020
+ BBQ      plan-4    N2        0.020
+ BBQ      plan-4    C5        0.020
+ BBQ      plan-4    O3        0.020
+ BBQ      plan-5    N1        0.020
+ BBQ      plan-5    C5        0.020
+ BBQ      plan-5    C6        0.020
+ BBQ      plan-5    H1        0.020
+ BBQ      plan-6    C6        0.020
+ BBQ      plan-6    N1        0.020
+ BBQ      plan-6    O2        0.020
+ BBQ      plan-6    O1        0.020
+ BBQ      plan-6    H1        0.020
+ BBQ      plan-7    C21       0.020
+ BBQ      plan-7    O7        0.020
+ BBQ      plan-7    N4        0.020
+ BBQ      plan-7    C29       0.020
+ BBQ      plan-7    C22       0.020
+ BBQ      plan-7    C23       0.020
+ BBQ      plan-7    H22       0.020
+ BBQ      plan-7    C24       0.020
+ BBQ      plan-7    H23       0.020
+ BBQ      plan-7    C25       0.020
+ BBQ      plan-7    C26       0.020
+ BBQ      plan-7    C27       0.020
+ BBQ      plan-7    C28       0.020
+ BBQ      plan-7    H25       0.020
+ BBQ      plan-7    H26       0.020
+ BBQ      plan-7    H27       0.020
+ BBQ      plan-7    H28       0.020
+# ------------------------------------------------------

@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3PP     3PP      "3-PHOSPHONOPROPANOIC ACID"     NON-POLYMER     13     9     .     
+#
+data_comp_3PP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3PP     CB      C       CH2     0       -0.226      0.166       0.598       
+3PP     CG      C       CH2     0       0.715       -0.034      -0.586      
+3PP     P       P       P       0       -1.895      -0.407      0.226       
+3PP     CD      C       C       0       2.142       0.426       -0.345      
+3PP     OE1     O       O       0       2.339       1.634       -0.107      
+3PP     OE2     O       OC      -1      3.052       -0.425      -0.397      
+3PP     O1      O       OP      -1      -2.738      -0.135      1.426       
+3PP     O2      O       O       0       -1.810      -1.869      -0.062      
+3PP     O3      O       OP      -1      -2.374      0.356       -0.963      
+3PP     HCB1    H       H       0       -0.251      1.116       0.835       
+3PP     HCB2    H       H       0       0.122       -0.319      1.374       
+3PP     HCG1    H       H       0       0.357       0.454       -1.356      
+3PP     HCG2    H       H       0       0.730       -0.985      -0.817      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3PP       CB        CG        SINGLE    n         1.526     0.010     1.526     0.010     
+3PP       CB        P         SINGLE    n         1.803     0.020     1.803     0.020     
+3PP       CG        CD        SINGLE    n         1.519     0.012     1.519     0.012     
+3PP       P         O1        SINGLE    n         1.492     0.020     1.492     0.020     
+3PP       P         O2        DOUBLE    n         1.492     0.020     1.492     0.020     
+3PP       P         O3        SINGLE    n         1.492     0.020     1.492     0.020     
+3PP       CD        OE1       DOUBLE    n         1.247     0.019     1.247     0.019     
+3PP       CD        OE2       SINGLE    n         1.247     0.019     1.247     0.019     
+3PP       CB        HCB1      SINGLE    n         1.089     0.010     0.979     0.020     
+3PP       CB        HCB2      SINGLE    n         1.089     0.010     0.979     0.020     
+3PP       CG        HCG1      SINGLE    n         1.089     0.010     0.979     0.016     
+3PP       CG        HCG2      SINGLE    n         1.089     0.010     0.979     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3PP          CG          CB           P     111.410    2.87
+3PP          CG          CB        HCB1     109.239    1.50
+3PP          CG          CB        HCB2     109.239    1.50
+3PP           P          CB        HCB1     109.545    1.50
+3PP           P          CB        HCB2     109.545    1.50
+3PP        HCB1          CB        HCB2     107.240    1.91
+3PP          CB          CG          CD     114.504    2.22
+3PP          CB          CG        HCG1     108.632    1.50
+3PP          CB          CG        HCG2     108.632    1.50
+3PP          CD          CG        HCG1     108.416    1.50
+3PP          CD          CG        HCG2     108.416    1.50
+3PP        HCG1          CG        HCG2     107.694    1.50
+3PP          CB           P          O1     108.625    3.00
+3PP          CB           P          O2     108.625    3.00
+3PP          CB           P          O3     108.625    3.00
+3PP          O1           P          O2     111.786    1.50
+3PP          O1           P          O3     111.786    1.50
+3PP          O2           P          O3     111.786    1.50
+3PP          CG          CD         OE1     118.187    1.67
+3PP          CG          CD         OE2     118.187    1.67
+3PP         OE1          CD         OE2     123.625    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3PP             sp3_sp3_1           P          CB          CG          CD     180.000   10.00     3
+3PP            sp3_sp3_10          CG          CB           P          O1     180.000   10.00     3
+3PP             sp2_sp3_2         OE1          CD          CG          CB     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3PP    plan-1          CD   0.020
+3PP    plan-1          CG   0.020
+3PP    plan-1         OE1   0.020
+3PP    plan-1         OE2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3PP SMILES           ACDLabs              10.04 "O=C(O)CCP(=O)(O)O"
+3PP SMILES_CANONICAL CACTVS               3.341 "OC(=O)CC[P](O)(O)=O"
+3PP SMILES           CACTVS               3.341 "OC(=O)CC[P](O)(O)=O"
+3PP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CP(=O)(O)O)C(=O)O"
+3PP SMILES           "OpenEye OEToolkits" 1.5.0 "C(CP(=O)(O)O)C(=O)O"
+3PP InChI            InChI                1.03  "InChI=1S/C3H7O5P/c4-3(5)1-2-9(6,7)8/h1-2H2,(H,4,5)(H2,6,7,8)"
+3PP InChIKey         InChI                1.03  NLBSQHGCGGFVJW-UHFFFAOYSA-N
+3PP ?                acedrg               202         "dictionary generator"                  
+3PP ?                acedrg_database      11          "data source"                           
+3PP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3PP ?                refmac5              5.8.0189    "optimization tool"                     

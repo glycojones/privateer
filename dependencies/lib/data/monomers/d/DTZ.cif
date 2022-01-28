@@ -1,0 +1,95 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DTZ      DTZ 'zinc(II)hydrogensulfide             ' non-polymer         5   3 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DTZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DTZ           S2     S    SH1       0.000      0.000    0.000    0.000
+ DTZ           H2     H    H         0.000      0.402    1.246    0.000
+ DTZ           ZN     ZN   ZN        0.000     -2.099    0.042    0.000
+ DTZ           S1     S    SH1       0.000     -4.198    0.084    0.000
+ DTZ           H1     H    H         0.000     -4.550    1.345    0.000
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DTZ      S2     n/a    ZN     START
+ DTZ      H2     S2     .      .
+ DTZ      ZN     S2     S1     .
+ DTZ      S1     ZN     H1     .
+ DTZ      H1     S1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DTZ       S1        ZN        single    2.475     0.020     2.475     0.020     
+DTZ       ZN        S2        single    2.475     0.020     2.475     0.020     
+DTZ       H1        S1        single    1.338     0.010     1.171     0.208     
+DTZ       H2        S2        single    1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DTZ      H2     S2     ZN      109.500    3.000
+ DTZ      S2     ZN     S1      180.000    3.000
+ DTZ      ZN     S1     H1      109.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DTZ      var_1    H2     S2     ZN     S1       180.000   20.000   1
+ DTZ      var_2    H1     S1     ZN     S2       180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DTZ      chir_01  ZN     S2     S1     .         cross0
+# ------------------------------------------------------

@@ -1,0 +1,202 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+7JZ      7JZ '2-deoxy-2,2-difluoro-beta-D-lyxo-hex' pyranose           23  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_7JZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 7JZ           C1     C    CH1       0.000      0.000    0.000    0.000
+ 7JZ           H1     H    H         0.000      0.295   -0.022   -1.058
+ 7JZ           O1     O    OH1       0.000      0.999    0.683    0.760
+ 7JZ           H10    H    H         0.000      1.091    1.588    0.431
+ 7JZ           O5     O    O2        0.000     -1.248    0.682    0.133
+ 7JZ           C5     C    CH1       0.000     -2.319    0.090   -0.612
+ 7JZ           H5     H    H         0.000     -2.054    0.069   -1.679
+ 7JZ           C6     C    CH2       0.000     -3.593    0.916   -0.419
+ 7JZ           H6     H    H         0.000     -3.806    1.010    0.648
+ 7JZ           H6A    H    H         0.000     -4.428    0.416   -0.913
+ 7JZ           O6     O    OH1       0.000     -3.410    2.214   -0.986
+ 7JZ           HO6    H    H         0.000     -4.215    2.735   -0.863
+ 7JZ           C4     C    CH1       0.000     -2.556   -1.339   -0.117
+ 7JZ           H4     H    H         0.000     -3.347   -1.809   -0.717
+ 7JZ           O4     O    OH1       0.000     -2.951   -1.309    1.256
+ 7JZ           HO4    H    H         0.000     -3.095   -2.212    1.569
+ 7JZ           C3     C    CH1       0.000     -1.258   -2.141   -0.258
+ 7JZ           H3     H    H         0.000     -0.980   -2.207   -1.319
+ 7JZ           O3     O    OH1       0.000     -1.449   -3.455    0.270
+ 7JZ           HO3    H    H         0.000     -0.628   -3.958    0.186
+ 7JZ           C2     C    CT        0.000     -0.145   -1.433    0.520
+ 7JZ           F2A    F    F         0.000     -0.470   -1.406    1.880
+ 7JZ           F2B    F    F         0.000      1.060   -2.119    0.340
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 7JZ      C1     n/a    O5     START
+ 7JZ      H1     C1     .      .
+ 7JZ      O1     C1     H10    .
+ 7JZ      H10    O1     .      .
+ 7JZ      O5     C1     .      END
+ 7JZ      C5     O5     C4     .
+ 7JZ      H5     C5     .      .
+ 7JZ      C6     C5     O6     .
+ 7JZ      H6     C6     .      .
+ 7JZ      H6A    C6     .      .
+ 7JZ      O6     C6     HO6    .
+ 7JZ      HO6    O6     .      .
+ 7JZ      C4     C5     C3     .
+ 7JZ      H4     C4     .      .
+ 7JZ      O4     C4     HO4    .
+ 7JZ      HO4    O4     .      .
+ 7JZ      C3     C4     C2     .
+ 7JZ      H3     C3     .      .
+ 7JZ      O3     C3     HO3    .
+ 7JZ      HO3    O3     .      .
+ 7JZ      C2     C3     F2B    .
+ 7JZ      F2A    C2     .      .
+ 7JZ      F2B    C2     .      .
+ 7JZ      C2     C1     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+7JZ       F2A       C2        single    1.320     0.020     1.320     0.020     
+7JZ       F2B       C2        single    1.320     0.020     1.320     0.020     
+7JZ       C2        C1        single    1.524     0.020     1.524     0.020     
+7JZ       C2        C3        single    1.524     0.020     1.524     0.020     
+7JZ       O5        C1        single    1.426     0.020     1.426     0.020     
+7JZ       O1        C1        single    1.432     0.020     1.432     0.020     
+7JZ       H1        C1        single    1.089     0.010     0.989     0.005     
+7JZ       O3        C3        single    1.432     0.020     1.432     0.020     
+7JZ       C3        C4        single    1.524     0.020     1.524     0.020     
+7JZ       H3        C3        single    1.089     0.010     0.989     0.005     
+7JZ       HO3       O3        single    0.970     0.012     0.839     0.014     
+7JZ       O4        C4        single    1.432     0.020     1.432     0.020     
+7JZ       C4        C5        single    1.524     0.020     1.524     0.020     
+7JZ       H4        C4        single    1.089     0.010     0.989     0.005     
+7JZ       HO4       O4        single    0.970     0.012     0.839     0.014     
+7JZ       C5        O5        single    1.426     0.020     1.426     0.020     
+7JZ       C6        C5        single    1.524     0.020     1.524     0.020     
+7JZ       H5        C5        single    1.089     0.010     0.989     0.005     
+7JZ       O6        C6        single    1.432     0.020     1.432     0.020     
+7JZ       H6        C6        single    1.089     0.010     0.989     0.005     
+7JZ       H6A       C6        single    1.089     0.010     0.989     0.005     
+7JZ       HO6       O6        single    0.970     0.012     0.839     0.014     
+7JZ       H10       O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 7JZ      H1     C1     O1      109.470    3.000
+ 7JZ      H1     C1     O5      109.470    3.000
+ 7JZ      O1     C1     O5      109.470    3.000
+ 7JZ      H1     C1     C2      108.340    3.000
+ 7JZ      O1     C1     C2      109.470    3.000
+ 7JZ      O5     C1     C2      109.470    3.000
+ 7JZ      C1     O1     H10     109.470    3.000
+ 7JZ      C1     O5     C5      111.800    3.000
+ 7JZ      O5     C5     H5      109.470    3.000
+ 7JZ      O5     C5     C6      109.470    3.000
+ 7JZ      O5     C5     C4      109.470    3.000
+ 7JZ      H5     C5     C6      108.340    3.000
+ 7JZ      H5     C5     C4      108.340    3.000
+ 7JZ      C6     C5     C4      111.000    3.000
+ 7JZ      C5     C6     H6      109.470    3.000
+ 7JZ      C5     C6     H6A     109.470    3.000
+ 7JZ      C5     C6     O6      109.470    3.000
+ 7JZ      H6     C6     H6A     107.900    3.000
+ 7JZ      H6     C6     O6      109.470    3.000
+ 7JZ      H6A    C6     O6      109.470    3.000
+ 7JZ      C6     O6     HO6     109.470    3.000
+ 7JZ      C5     C4     H4      108.340    3.000
+ 7JZ      C5     C4     O4      109.470    3.000
+ 7JZ      C5     C4     C3      111.000    3.000
+ 7JZ      H4     C4     O4      109.470    3.000
+ 7JZ      H4     C4     C3      108.340    3.000
+ 7JZ      O4     C4     C3      109.470    3.000
+ 7JZ      C4     O4     HO4     109.470    3.000
+ 7JZ      C4     C3     H3      108.340    3.000
+ 7JZ      C4     C3     O3      109.470    3.000
+ 7JZ      C4     C3     C2      111.000    3.000
+ 7JZ      H3     C3     O3      109.470    3.000
+ 7JZ      H3     C3     C2      108.340    3.000
+ 7JZ      O3     C3     C2      109.470    3.000
+ 7JZ      C3     O3     HO3     109.470    3.000
+ 7JZ      C3     C2     F2A     109.470    3.000
+ 7JZ      C3     C2     F2B     109.470    3.000
+ 7JZ      C3     C2     C1      111.000    3.000
+ 7JZ      F2A    C2     F2B     109.470    3.000
+ 7JZ      F2A    C2     C1      109.470    3.000
+ 7JZ      F2B    C2     C1      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 7JZ      var_1    O5     C1     O1     H10      -60.159   20.000   1
+ 7JZ      var_2    C1     O5     C5     C4        60.000   20.000   1
+ 7JZ      var_3    O5     C5     C6     O6        64.969   20.000   3
+ 7JZ      var_4    C5     C6     O6     HO6     -179.969   20.000   1
+ 7JZ      var_5    O5     C5     C4     C3       -60.000   20.000   3
+ 7JZ      var_6    C5     C4     O4     HO4     -179.665   20.000   1
+ 7JZ      var_7    C5     C4     C3     C2        60.000   20.000   3
+ 7JZ      var_8    C4     C3     O3     HO3     -179.546   20.000   1
+ 7JZ      var_9    C4     C3     C2     F2B      180.000   20.000   1
+ 7JZ      var_10   C3     C2     C1     O5        60.000   20.000   1
+ 7JZ      var_1    C2     C1     O5     C5       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 7JZ      chir_01  C2     F2A    F2B    C1        positiv
+ 7JZ      chir_02  C1     C2     O5     O1        negativ
+ 7JZ      chir_03  C3     C2     O3     C4        negativ
+ 7JZ      chir_04  C4     C3     O4     C5        negativ
+ 7JZ      chir_05  C5     C4     O5     C6        positiv
+# ------------------------------------------------------

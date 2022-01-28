@@ -1,0 +1,233 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KCX     KCX     "LYSINE     peptide     ACID"     peptide     27     13     .
+#
+data_comp_KCX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KCX     N       N       NT3     1       28.275      43.519      28.536
+KCX     CA      C       CH1     0       27.999      43.285      29.983
+KCX     CB      C       CH2     0       28.914      42.189      30.546
+KCX     CG      C       CH2     0       30.414      42.417      30.387
+KCX     CD      C       CH2     0       31.269      41.285      30.932
+KCX     CE      C       CH2     0       31.235      41.129      32.443
+KCX     NZ      N       NH1     0       31.603      42.348      33.153
+KCX     C       C       C       0       28.152      44.598      30.765
+KCX     O       O       O       0       28.898      45.474      30.280
+KCX     CX      C       C       0       32.865      42.818      33.172
+KCX     OXT     O       OC      -1      27.522      44.693      31.837
+KCX     OQ1     O       O       0       33.808      42.258      32.657
+KCX     OQ2     O       OH1     0       32.998      43.979      33.816
+KCX     H       H       H       0       27.588      43.986      28.162
+KCX     H2      H       H       0       28.360      42.723      28.101
+KCX     H3      H       H       0       29.045      43.996      28.431
+KCX     HA      H       H       0       27.065      42.984      30.067
+KCX     HB2     H       H       0       28.683      41.344      30.108
+KCX     HB3     H       H       0       28.715      42.090      31.500
+KCX     HG2     H       H       0       30.660      43.250      30.841
+KCX     HG3     H       H       0       30.615      42.529      29.434
+KCX     HD2     H       H       0       32.198      41.433      30.653
+KCX     HD3     H       H       0       30.970      40.444      30.525
+KCX     HE2     H       H       0       31.850      40.411      32.704
+KCX     HE3     H       H       0       30.332      40.862      32.718
+KCX     HZ      H       H       0       30.981      42.786      33.582
+KCX     HQ2     H       H       0       33.558      43.895      34.485
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+KCX      N      n/a    CA     START
+KCX      H      N      .      .
+KCX      H2     N      .      .
+KCX      H3     N      .      .
+KCX      CA     N      C      .
+KCX      HA     CA     .      .
+KCX      CB     CA     CG     .
+KCX      HB2    CB     .      .
+KCX      HB3    CB     .      .
+KCX      CG     CB     CD     .
+KCX      HG2    CG     .      .
+KCX      HG3    CG     .      .
+KCX      CD     CG     CE     .
+KCX      HD2    CD     .      .
+KCX      HD3    CD     .      .
+KCX      CE     CD     NZ     .
+KCX      HE2    CE     .      .
+KCX      HE3    CE     .      .
+KCX      NZ     CE     CX     .
+KCX      HZ     NZ     .      .
+KCX      CX     NZ     OQ1    .
+KCX      OQ2    CX     HQ2    .
+KCX      HQ2    OQ2    .      .
+KCX      OQ1    CX     .      .
+KCX      C      CA     .      END
+KCX      O      C      .      .
+KCX      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KCX       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+KCX       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+KCX       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+KCX       CB        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+KCX       CG        CD        SINGLE    n         1.514     0.020     1.514     0.020     
+KCX       CD        CE        SINGLE    n         1.517     0.015     1.517     0.015     
+KCX       CE        NZ        SINGLE    n         1.455     0.014     1.455     0.014     
+KCX       NZ        CX        SINGLE    n         1.340     0.015     1.340     0.015     
+KCX       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+KCX       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+KCX       CX        OQ1       DOUBLE    n         1.210     0.012     1.210     0.012     
+KCX       CX        OQ2       SINGLE    n         1.331     0.020     1.331     0.020     
+KCX       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+KCX       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+KCX       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+KCX       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+KCX       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+KCX       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+KCX       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+KCX       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.016     
+KCX       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.016     
+KCX       CD        HD3       SINGLE    n         1.089     0.010     0.981     0.016     
+KCX       CE        HE2       SINGLE    n         1.089     0.010     0.981     0.015     
+KCX       CE        HE3       SINGLE    n         1.089     0.010     0.981     0.015     
+KCX       NZ        HZ        SINGLE    n         1.016     0.010     0.872     0.020     
+KCX       OQ2       HQ2       SINGLE    n         0.970     0.012     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KCX          CA           N           H     110.062    1.93
+KCX          CA           N          H2     110.062    1.93
+KCX          CA           N          H3     110.062    1.93
+KCX           H           N          H2     109.028    2.41
+KCX           H           N          H3     109.028    2.41
+KCX          H2           N          H3     109.028    2.41
+KCX           N          CA          CB     110.374    1.62
+KCX           N          CA           C     109.241    1.50
+KCX           N          CA          HA     108.487    1.50
+KCX          CB          CA           C     111.037    2.40
+KCX          CB          CA          HA     108.967    1.50
+KCX           C          CA          HA     108.824    1.50
+KCX          CA          CB          CG     115.311    1.56
+KCX          CA          CB         HB2     108.549    1.50
+KCX          CA          CB         HB3     108.549    1.50
+KCX          CG          CB         HB2     108.650    1.50
+KCX          CG          CB         HB3     108.650    1.50
+KCX         HB2          CB         HB3     107.844    1.50
+KCX          CB          CG          CD     113.328    2.00
+KCX          CB          CG         HG2     108.601    1.50
+KCX          CB          CG         HG3     108.601    1.50
+KCX          CD          CG         HG2     108.806    1.50
+KCX          CD          CG         HG3     108.806    1.50
+KCX         HG2          CG         HG3     107.646    1.50
+KCX          CG          CD          CE     113.159    3.00
+KCX          CG          CD         HD2     109.041    1.50
+KCX          CG          CD         HD3     109.041    1.50
+KCX          CE          CD         HD2     108.956    1.50
+KCX          CE          CD         HD3     108.956    1.50
+KCX         HD2          CD         HD3     107.927    1.57
+KCX          CD          CE          NZ     112.766    1.50
+KCX          CD          CE         HE2     109.197    1.51
+KCX          CD          CE         HE3     109.197    1.51
+KCX          NZ          CE         HE2     109.015    1.50
+KCX          NZ          CE         HE3     109.015    1.50
+KCX         HE2          CE         HE3     107.877    1.50
+KCX          CE          NZ          CX     121.802    1.50
+KCX          CE          NZ          HZ     119.041    1.50
+KCX          CX          NZ          HZ     119.157    1.99
+KCX          CA           C           O     117.124    1.50
+KCX          CA           C         OXT     117.124    1.50
+KCX           O           C         OXT     125.752    1.50
+KCX          NZ          CX         OQ1     123.802    1.50
+KCX          NZ          CX         OQ2     113.719    3.00
+KCX         OQ1          CX         OQ2     122.478    1.50
+KCX          CX         OQ2         HQ2     110.339    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KCX             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+KCX            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+KCX             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+KCX            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+KCX            sp3_sp3_28          CE          CD          CG          CB     180.000   10.00     3
+KCX            sp3_sp3_37          CG          CD          CE          NZ     180.000   10.00     3
+KCX             sp2_sp3_8          CX          NZ          CE          CD     120.000   10.00     6
+KCX             sp2_sp2_3         OQ1          CX          NZ          CE       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+KCX    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KCX    plan-1          CE   0.020
+KCX    plan-1          CX   0.020
+KCX    plan-1          HZ   0.020
+KCX    plan-1          NZ   0.020
+KCX    plan-2           C   0.020
+KCX    plan-2          CA   0.020
+KCX    plan-2           O   0.020
+KCX    plan-2         OXT   0.020
+KCX    plan-3          CX   0.020
+KCX    plan-3          NZ   0.020
+KCX    plan-3         OQ1   0.020
+KCX    plan-3         OQ2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KCX SMILES           ACDLabs              12.01 "O=C(O)NCCCCC(C(=O)O)N"
+KCX SMILES_CANONICAL CACTVS               3.370 "N[C@@H](CCCCNC(O)=O)C(O)=O"
+KCX SMILES           CACTVS               3.370 "N[CH](CCCCNC(O)=O)C(O)=O"
+KCX SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(CCNC(=O)O)C[C@@H](C(=O)O)N"
+KCX SMILES           "OpenEye OEToolkits" 1.7.0 "C(CCNC(=O)O)CC(C(=O)O)N"
+KCX InChI            InChI                1.03  "InChI=1S/C7H14N2O4/c8-5(6(10)11)3-1-2-4-9-7(12)13/h5,9H,1-4,8H2,(H,10,11)(H,12,13)/t5-/m0/s1"
+KCX InChIKey         InChI                1.03  PWIKLEYMFKCERQ-YFKPBYRVSA-N
+KCX ?                acedrg               202         "dictionary generator"
+KCX ?                acedrg_database      11          "data source"
+KCX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KCX ?                refmac5              5.8.0222    "optimization tool"

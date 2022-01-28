@@ -1,0 +1,111 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MTF     MTF      N-METHYLTHIOFORMAMIDE     NON-POLYMER     9     4     .     
+#
+data_comp_MTF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MTF     C       C       C1      0       -3.400      30.535      17.610      
+MTF     S       S       S1      0       -4.424      31.828      17.711      
+MTF     N       N       NH1     0       -3.621      29.288      18.035      
+MTF     CM      C       CH3     0       -4.735      28.865      18.865      
+MTF     H       H       H       0       -2.556      30.681      17.206      
+MTF     HN      H       H       0       -3.051      28.676      17.790      
+MTF     HM1     H       H       0       -4.918      29.531      19.546      
+MTF     HM2     H       H       0       -4.514      28.024      19.300      
+MTF     HM3     H       H       0       -5.525      28.740      18.315      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MTF       C         S         DOUBLE    n         1.649     0.013     1.649     0.013     
+MTF       C         N         SINGLE    n         1.325     0.016     1.325     0.016     
+MTF       N         CM        SINGLE    n         1.450     0.011     1.450     0.011     
+MTF       C         H         SINGLE    n         1.082     0.013     0.947     0.020     
+MTF       N         HN        SINGLE    n         1.016     0.010     0.872     0.020     
+MTF       CM        HM1       SINGLE    n         1.089     0.010     0.971     0.020     
+MTF       CM        HM2       SINGLE    n         1.089     0.010     0.971     0.020     
+MTF       CM        HM3       SINGLE    n         1.089     0.010     0.971     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MTF           S           C           N     123.622    2.99
+MTF           S           C           H     118.632    1.62
+MTF           N           C           H     117.745    2.13
+MTF           C           N          CM     122.386    2.35
+MTF           C           N          HN     118.762    1.75
+MTF          CM           N          HN     118.852    1.83
+MTF           N          CM         HM1     109.708    1.50
+MTF           N          CM         HM2     109.708    1.50
+MTF           N          CM         HM3     109.708    1.50
+MTF         HM1          CM         HM2     109.279    1.79
+MTF         HM1          CM         HM3     109.279    1.79
+MTF         HM2          CM         HM3     109.279    1.79
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MTF             sp2_sp2_1           S           C           N          CM     180.000   10.00     2
+MTF             sp2_sp3_1           C           N          CM         HM1       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MTF    plan-1           C   0.020
+MTF    plan-1           H   0.020
+MTF    plan-1           N   0.020
+MTF    plan-1           S   0.020
+MTF    plan-2           C   0.020
+MTF    plan-2          CM   0.020
+MTF    plan-2          HN   0.020
+MTF    plan-2           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MTF SMILES           ACDLabs              10.04 S=CNC
+MTF SMILES_CANONICAL CACTVS               3.341 CNC=S
+MTF SMILES           CACTVS               3.341 CNC=S
+MTF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CNC=S
+MTF SMILES           "OpenEye OEToolkits" 1.5.0 CNC=S
+MTF InChI            InChI                1.03  "InChI=1S/C2H5NS/c1-3-2-4/h2H,1H3,(H,3,4)"
+MTF InChIKey         InChI                1.03  YGQNFDNQDVKVAW-UHFFFAOYSA-N
+MTF ?                acedrg               202         "dictionary generator"                  
+MTF ?                acedrg_database      11          "data source"                           
+MTF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MTF ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,191 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XCP      XCP '(1S,2S)-2-aminocyclopentanecarboxyli' non-polymer        19   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_XCP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ XCP           OXT    O    OC       -0.500      0.000    0.000    0.000
+ XCP           C      C    C         0.000     -1.092   -0.542   -0.282
+ XCP           O      O    OC       -0.500     -1.124   -1.508   -1.077
+ XCP           CA     C    CH1       0.000     -2.368   -0.033    0.337
+ XCP           HA     H    H         0.000     -2.329   -0.129    1.431
+ XCP           CB     C    CH1       0.000     -3.585   -0.793   -0.230
+ XCP           HB     H    H         0.000     -3.336   -1.223   -1.210
+ XCP           N      N    NH2       0.000     -3.990   -1.857    0.698
+ XCP           HNA    H    H         0.000     -3.472   -2.013    1.555
+ XCP           HN     H    H         0.000     -4.790   -2.442    0.488
+ XCP           CE     C    CH2       0.000     -2.618    1.441   -0.069
+ XCP           HE     H    H         0.000     -2.346    1.643   -1.108
+ XCP           HEA    H    H         0.000     -2.106    2.151    0.584
+ XCP           CD     C    CH2       0.000     -4.149    1.589    0.104
+ XCP           HD     H    H         0.000     -4.554    2.395   -0.510
+ XCP           HDA    H    H         0.000     -4.429    1.751    1.147
+ XCP           CG     C    CH2       0.000     -4.717    0.238   -0.379
+ XCP           HGA    H    H         0.000     -5.022    0.296   -1.425
+ XCP           HG     H    H         0.000     -5.570   -0.066    0.232
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ XCP      OXT    n/a    C      START
+ XCP      C      OXT    CA     .
+ XCP      O      C      .      .
+ XCP      CA     C      CE     .
+ XCP      HA     CA     .      .
+ XCP      CB     CA     N      .
+ XCP      HB     CB     .      .
+ XCP      N      CB     HN     .
+ XCP      HNA    N      .      .
+ XCP      HN     N      .      .
+ XCP      CE     CA     CD     .
+ XCP      HE     CE     .      .
+ XCP      HEA    CE     .      .
+ XCP      CD     CE     CG     .
+ XCP      HD     CD     .      .
+ XCP      HDA    CD     .      .
+ XCP      CG     CD     HG     .
+ XCP      HGA    CG     .      .
+ XCP      HG     CG     .      END
+ XCP      CB     CG     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XCP       HN        N         single    1.036     0.016     0.914     0.007     
+XCP       HNA       N         single    1.036     0.016     0.914     0.007     
+XCP       N         CB        single    1.450     0.020     1.450     0.020     
+XCP       CB        CG        single    1.524     0.020     1.524     0.020     
+XCP       HGA       CG        single    1.089     0.010     0.989     0.005     
+XCP       CG        CD        single    1.524     0.020     1.524     0.020     
+XCP       HD        CD        single    1.089     0.010     0.989     0.005     
+XCP       CD        CE        single    1.524     0.020     1.524     0.020     
+XCP       CE        CA        single    1.524     0.020     1.524     0.020     
+XCP       HE        CE        single    1.089     0.010     0.989     0.005     
+XCP       CB        CA        single    1.524     0.020     1.524     0.020     
+XCP       HA        CA        single    1.089     0.010     0.989     0.005     
+XCP       CA        C         single    1.500     0.020     1.500     0.020     
+XCP       C         OXT       deloc     1.250     0.020     1.250     0.020     
+XCP       O         C         deloc     1.250     0.020     1.250     0.020     
+XCP       HB        CB        single    1.089     0.010     0.989     0.005     
+XCP       HG        CG        single    1.089     0.010     0.989     0.005     
+XCP       HDA       CD        single    1.089     0.010     0.989     0.005     
+XCP       HEA       CE        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ XCP      OXT    C      O       123.000    3.000
+ XCP      OXT    C      CA      118.500    3.000
+ XCP      O      C      CA      118.500    3.000
+ XCP      C      CA     HA      108.810    3.000
+ XCP      C      CA     CB      109.470    3.000
+ XCP      C      CA     CE      109.470    3.000
+ XCP      HA     CA     CB      108.340    3.000
+ XCP      HA     CA     CE      108.340    3.000
+ XCP      CB     CA     CE      111.000    3.000
+ XCP      CA     CB     HB      108.340    3.000
+ XCP      CA     CB     N       109.470    3.000
+ XCP      CA     CB     CG      111.000    3.000
+ XCP      HB     CB     N       109.470    3.000
+ XCP      HB     CB     CG      108.340    3.000
+ XCP      N      CB     CG      109.470    3.000
+ XCP      CB     N      HNA     120.000    3.000
+ XCP      CB     N      HN      120.000    3.000
+ XCP      HNA    N      HN      120.000    3.000
+ XCP      CA     CE     HE      109.470    3.000
+ XCP      CA     CE     HEA     109.470    3.000
+ XCP      CA     CE     CD      111.000    3.000
+ XCP      HE     CE     HEA     107.900    3.000
+ XCP      HE     CE     CD      109.470    3.000
+ XCP      HEA    CE     CD      109.470    3.000
+ XCP      CE     CD     HD      109.470    3.000
+ XCP      CE     CD     HDA     109.470    3.000
+ XCP      CE     CD     CG      111.000    3.000
+ XCP      HD     CD     HDA     107.900    3.000
+ XCP      HD     CD     CG      109.470    3.000
+ XCP      HDA    CD     CG      109.470    3.000
+ XCP      CD     CG     HGA     109.470    3.000
+ XCP      CD     CG     HG      109.470    3.000
+ XCP      CD     CG     CB      111.000    3.000
+ XCP      HGA    CG     HG      107.900    3.000
+ XCP      HGA    CG     CB      109.470    3.000
+ XCP      HG     CG     CB      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ XCP      var_1    OXT    C      CA     CE        61.473   20.000   3
+ XCP      var_2    C      CA     CB     N         90.000   20.000   3
+ XCP      var_3    CA     CB     CG     CD         0.000   20.000   3
+ XCP      var_4    CA     CB     N      HN       178.631   20.000   1
+ XCP      var_5    C      CA     CE     CD       150.000   20.000   3
+ XCP      var_6    CA     CE     CD     CG       -30.000   20.000   3
+ XCP      var_7    CE     CD     CG     CB        30.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ XCP      chir_01  CB     N      CG     CA        negativ
+ XCP      chir_02  CA     CB     CE     C         positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ XCP      plan-1    N         0.020
+ XCP      plan-1    CB        0.020
+ XCP      plan-1    HN        0.020
+ XCP      plan-1    HNA       0.020
+ XCP      plan-2    C         0.020
+ XCP      plan-2    CA        0.020
+ XCP      plan-2    O         0.020
+ XCP      plan-2    OXT       0.020
+# ------------------------------------------------------

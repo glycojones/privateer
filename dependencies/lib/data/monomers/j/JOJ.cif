@@ -1,0 +1,154 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+JOJ     JOJ      2-(4,5-dichloro-1H-imidazol-1-yl)ethanethioamide     NON-POLYMER     16     11     .     
+#
+data_comp_JOJ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+JOJ     C10     C       CR5     0       -23.256     23.272      -25.088     
+JOJ     N01     N       NH2     0       -22.148     19.331      -25.558     
+JOJ     C02     C       C       0       -23.027     20.117      -26.163     
+JOJ     S03     S       S1      0       -24.638     19.694      -26.363     
+JOJ     C04     C       CH2     0       -22.509     21.430      -26.670     
+JOJ     N05     N       NT      0       -22.313     22.403      -25.596     
+JOJ     C06     C       CR15    0       -21.172     22.639      -24.890     
+JOJ     N07     N       NRD5    0       -21.338     23.585      -23.990     
+JOJ     C08     C       CR5     0       -22.629     23.972      -24.117     
+JOJ     CL09    CL      CL      0       -23.285     25.202      -23.124     
+JOJ     CL11    CL      CL      0       -24.866     23.374      -25.635     
+JOJ     H011    H       H       0       -22.403     18.546      -25.248     
+JOJ     H012    H       H       0       -21.310     19.592      -25.465     
+JOJ     H041    H       H       0       -23.136     21.787      -27.322     
+JOJ     H042    H       H       0       -21.662     21.278      -27.124     
+JOJ     H061    H       H       0       -20.366     22.176      -25.038     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+JOJ       C10       CL11      SINGLE    n         1.703     0.0100    1.703     0.0100    
+JOJ       N01       C02       SINGLE    n         1.324     0.0100    1.324     0.0100    
+JOJ       C02       C04       SINGLE    n         1.496     0.0200    1.496     0.0200    
+JOJ       C04       N05       SINGLE    n         1.462     0.0102    1.462     0.0102    
+JOJ       C02       S03       DOUBLE    n         1.676     0.0200    1.676     0.0200    
+JOJ       C10       N05       SINGLE    y         1.390     0.0188    1.390     0.0188    
+JOJ       C10       C08       DOUBLE    y         1.349     0.0200    1.349     0.0200    
+JOJ       N05       C06       SINGLE    y         1.368     0.0147    1.368     0.0147    
+JOJ       C08       CL09      SINGLE    n         1.712     0.0100    1.712     0.0100    
+JOJ       N07       C08       SINGLE    y         1.338     0.0200    1.338     0.0200    
+JOJ       C06       N07       DOUBLE    y         1.314     0.0106    1.314     0.0106    
+JOJ       N01       H011      SINGLE    n         1.016     0.010     0.881     0.0200    
+JOJ       N01       H012      SINGLE    n         1.016     0.010     0.881     0.0200    
+JOJ       C04       H041      SINGLE    n         1.089     0.010     0.973     0.0156    
+JOJ       C04       H042      SINGLE    n         1.089     0.010     0.973     0.0156    
+JOJ       C06       H061      SINGLE    n         1.082     0.013     0.941     0.0173    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+JOJ        CL11         C10         N05     121.605    3.00
+JOJ        CL11         C10         C08     128.865    2.18
+JOJ         N05         C10         C08     109.530    2.05
+JOJ         C02         N01        H011     119.769    1.81
+JOJ         C02         N01        H012     119.769    1.81
+JOJ        H011         N01        H012     120.461    3.00
+JOJ         N01         C02         C04     116.008    1.97
+JOJ         N01         C02         S03     123.064    2.99
+JOJ         C04         C02         S03     120.928    2.68
+JOJ         C02         C04         N05     112.772    1.96
+JOJ         C02         C04        H041     109.038    1.50
+JOJ         C02         C04        H042     109.038    1.50
+JOJ         N05         C04        H041     109.576    1.50
+JOJ         N05         C04        H042     109.576    1.50
+JOJ        H041         C04        H042     108.085    1.50
+JOJ         C04         N05         C10     121.985    2.29
+JOJ         C04         N05         C06     125.852    1.50
+JOJ         C10         N05         C06     108.641    1.96
+JOJ         N05         C06         N07     113.014    1.50
+JOJ         N05         C06        H061     122.802    1.68
+JOJ         N07         C06        H061     124.184    1.50
+JOJ         C08         N07         C06     104.899    1.50
+JOJ         C10         C08        CL09     127.572    2.18
+JOJ         C10         C08         N07     111.398    1.50
+JOJ        CL09         C08         N07     121.030    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+JOJ       const_sp2_sp2_4        CL11         C10         N05         C04       0.000   10.00     2
+JOJ              const_16        CL09         C08         C10        CL11       0.000   10.00     2
+JOJ             sp2_sp2_1         C04         C02         N01        H011     180.000   10.00     2
+JOJ             sp2_sp3_2         N01         C02         C04         N05     120.000   10.00     6
+JOJ             sp2_sp3_8         C10         N05         C04         C02     -90.000   10.00     6
+JOJ       const_sp2_sp2_6         N07         C06         N05         C04     180.000   10.00     2
+JOJ       const_sp2_sp2_9         N05         C06         N07         C08       0.000   10.00     2
+JOJ              const_12        CL09         C08         N07         C06     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+JOJ    plan-1         C04   0.020
+JOJ    plan-1         C06   0.020
+JOJ    plan-1         C08   0.020
+JOJ    plan-1         C10   0.020
+JOJ    plan-1        CL09   0.020
+JOJ    plan-1        CL11   0.020
+JOJ    plan-1        H061   0.020
+JOJ    plan-1         N05   0.020
+JOJ    plan-1         N07   0.020
+JOJ    plan-2         C02   0.020
+JOJ    plan-2        H011   0.020
+JOJ    plan-2        H012   0.020
+JOJ    plan-2         N01   0.020
+JOJ    plan-3         C02   0.020
+JOJ    plan-3         C04   0.020
+JOJ    plan-3         N01   0.020
+JOJ    plan-3         S03   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+JOJ           SMILES              ACDLabs 12.01                                           c1(n(CC(N)=S)cnc1Cl)Cl
+JOJ            InChI                InChI  1.03 InChI=1S/C5H5Cl2N3S/c6-4-5(7)10(2-9-4)1-3(8)11/h2H,1H2,(H2,8,11)
+JOJ         InChIKey                InChI  1.03                                      LDYDMLUTTJALOR-UHFFFAOYSA-N
+JOJ SMILES_CANONICAL               CACTVS 3.385                                             NC(=S)Cn1cnc(Cl)c1Cl
+JOJ           SMILES               CACTVS 3.385                                             NC(=S)Cn1cnc(Cl)c1Cl
+JOJ SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                           c1nc(c(n1CC(=S)N)Cl)Cl
+JOJ           SMILES "OpenEye OEToolkits" 2.0.6                                           c1nc(c(n1CC(=S)N)Cl)Cl
+JOJ ?                acedrg               217         "dictionary generator"                  
+JOJ ?                acedrg_database      11          "data source"                           
+JOJ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+JOJ ?                refmac5              5.8.0253    "optimization tool"                     

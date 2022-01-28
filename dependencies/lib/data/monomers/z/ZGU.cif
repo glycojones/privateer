@@ -1,0 +1,263 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZGU      ZGU '(S)-1'-(2',3'-DIHYDROXYPROPYL)-GUANI' non-polymer        30  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ZGU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ZGU           OXT    O    OP       -0.666      0.000    0.000    0.000
+ ZGU           P      P    P         0.000      0.448   -0.007   -1.445
+ ZGU           O1P    O    OP       -0.666      1.777   -0.729   -1.473
+ ZGU           O2P    O    OP       -0.666      0.290    1.348   -2.100
+ ZGU           O3G    O    O2        0.000     -0.649   -0.996   -2.063
+ ZGU           C3G    C    CH2       0.000     -1.198   -0.751   -3.350
+ ZGU           H3G1   H    H         0.000     -0.398   -0.460   -4.034
+ ZGU           H3G2   H    H         0.000     -1.929    0.057   -3.283
+ ZGU           C2G    C    CH1       0.000     -1.874   -2.007   -3.867
+ ZGU           H2G    H    H         0.000     -2.486   -1.780   -4.751
+ ZGU           O2G    O    OH1       0.000     -0.861   -2.960   -4.189
+ ZGU           HA     H    H         0.000     -0.761   -3.582   -3.456
+ ZGU           C1G    C    CH2       0.000     -2.736   -2.634   -2.762
+ ZGU           H1G1   H    H         0.000     -3.472   -1.908   -2.411
+ ZGU           H1G2   H    H         0.000     -2.101   -2.939   -1.927
+ ZGU           N9     N    NR5       0.000     -3.427   -3.809   -3.308
+ ZGU           C4     C    CR56      0.000     -4.644   -3.819   -3.859
+ ZGU           N3     N    NRD6      0.000     -5.511   -2.797   -4.047
+ ZGU           C2     C    CR6       0.000     -6.659   -3.093   -4.639
+ ZGU           N2     N    NH2       0.000     -7.565   -2.128   -4.841
+ ZGU           H2N2   H    H         0.000     -7.366   -1.187   -4.542
+ ZGU           H2N1   H    H         0.000     -8.438   -2.349   -5.291
+ ZGU           N1     N    NR16      0.000     -6.940   -4.341   -5.051
+ ZGU           H1     H    H         0.000     -7.856   -4.508   -5.515
+ ZGU           C6     C    CR6       0.000     -6.101   -5.396   -4.899
+ ZGU           O6     O    O         0.000     -6.461   -6.541   -5.308
+ ZGU           C5     C    CR56      0.000     -4.892   -5.122   -4.253
+ ZGU           N7     N    NRD5      0.000     -3.823   -5.886   -3.936
+ ZGU           C8     C    CR15      0.000     -2.935   -5.059   -3.375
+ ZGU           H8     H    H         0.000     -1.955   -5.355   -3.022
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ZGU      OXT    n/a    P      START
+ ZGU      P      OXT    O3G    .
+ ZGU      O1P    P      .      .
+ ZGU      O2P    P      .      .
+ ZGU      O3G    P      C3G    .
+ ZGU      C3G    O3G    C2G    .
+ ZGU      H3G1   C3G    .      .
+ ZGU      H3G2   C3G    .      .
+ ZGU      C2G    C3G    C1G    .
+ ZGU      H2G    C2G    .      .
+ ZGU      O2G    C2G    HA     .
+ ZGU      HA     O2G    .      .
+ ZGU      C1G    C2G    N9     .
+ ZGU      H1G1   C1G    .      .
+ ZGU      H1G2   C1G    .      .
+ ZGU      N9     C1G    C4     .
+ ZGU      C4     N9     N3     .
+ ZGU      N3     C4     C2     .
+ ZGU      C2     N3     N1     .
+ ZGU      N2     C2     H2N1   .
+ ZGU      H2N2   N2     .      .
+ ZGU      H2N1   N2     .      .
+ ZGU      N1     C2     C6     .
+ ZGU      H1     N1     .      .
+ ZGU      C6     N1     C5     .
+ ZGU      O6     C6     .      .
+ ZGU      C5     C6     N7     .
+ ZGU      N7     C5     C8     .
+ ZGU      C8     N7     H8     .
+ ZGU      H8     C8     .      END
+ ZGU      N9     C8     .    ADD
+ ZGU      C4     C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZGU       O1P       P         deloc     1.510     0.020     1.510     0.020     
+ZGU       O2P       P         deloc     1.510     0.020     1.510     0.020     
+ZGU       O3G       P         single    1.610     0.020     1.610     0.020     
+ZGU       P         OXT       deloc     1.510     0.020     1.510     0.020     
+ZGU       C3G       O3G       single    1.426     0.020     1.426     0.020     
+ZGU       C2G       C3G       single    1.524     0.020     1.524     0.020     
+ZGU       O2G       C2G       single    1.432     0.020     1.432     0.020     
+ZGU       C1G       C2G       single    1.524     0.020     1.524     0.020     
+ZGU       N9        C1G       single    1.462     0.020     1.462     0.020     
+ZGU       N9        C8        single    1.337     0.020     1.337     0.020     
+ZGU       C4        N9        single    1.337     0.020     1.337     0.020     
+ZGU       C8        N7        double    1.350     0.020     1.350     0.020     
+ZGU       N7        C5        single    1.350     0.020     1.350     0.020     
+ZGU       C4        C5        double    1.490     0.020     1.490     0.020     
+ZGU       N3        C4        single    1.355     0.020     1.355     0.020     
+ZGU       C5        C6        single    1.490     0.020     1.490     0.020     
+ZGU       C2        N3        double    1.350     0.020     1.350     0.020     
+ZGU       N2        C2        single    1.355     0.020     1.355     0.020     
+ZGU       N1        C2        single    1.337     0.020     1.337     0.020     
+ZGU       C6        N1        single    1.337     0.020     1.337     0.020     
+ZGU       O6        C6        double    1.250     0.020     1.250     0.020     
+ZGU       H3G1      C3G       single    1.089     0.010     0.989     0.005     
+ZGU       H3G2      C3G       single    1.089     0.010     0.989     0.005     
+ZGU       H2G       C2G       single    1.089     0.010     0.989     0.005     
+ZGU       HA        O2G       single    0.970     0.012     0.839     0.014     
+ZGU       H1G1      C1G       single    1.089     0.010     0.989     0.005     
+ZGU       H1G2      C1G       single    1.089     0.010     0.989     0.005     
+ZGU       H8        C8        single    1.082     0.013     0.975     0.010     
+ZGU       H2N1      N2        single    1.016     0.010     0.899     0.007     
+ZGU       H2N2      N2        single    1.016     0.010     0.899     0.007     
+ZGU       H1        N1        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ZGU      OXT    P      O1P     119.900    3.000
+ ZGU      OXT    P      O2P     119.900    3.000
+ ZGU      OXT    P      O3G     108.200    3.000
+ ZGU      O1P    P      O2P     119.900    3.000
+ ZGU      O1P    P      O3G     108.200    3.000
+ ZGU      O2P    P      O3G     108.200    3.000
+ ZGU      P      O3G    C3G     120.500    3.000
+ ZGU      O3G    C3G    H3G1    109.470    3.000
+ ZGU      O3G    C3G    H3G2    109.470    3.000
+ ZGU      O3G    C3G    C2G     109.470    3.000
+ ZGU      H3G1   C3G    H3G2    107.900    3.000
+ ZGU      H3G1   C3G    C2G     109.470    3.000
+ ZGU      H3G2   C3G    C2G     109.470    3.000
+ ZGU      C3G    C2G    H2G     108.340    3.000
+ ZGU      C3G    C2G    O2G     109.470    3.000
+ ZGU      C3G    C2G    C1G     109.470    3.000
+ ZGU      H2G    C2G    O2G     109.470    3.000
+ ZGU      H2G    C2G    C1G     108.340    3.000
+ ZGU      O2G    C2G    C1G     109.470    3.000
+ ZGU      C2G    O2G    HA      109.470    3.000
+ ZGU      C2G    C1G    H1G1    109.470    3.000
+ ZGU      C2G    C1G    H1G2    109.470    3.000
+ ZGU      C2G    C1G    N9      109.500    3.000
+ ZGU      H1G1   C1G    H1G2    107.900    3.000
+ ZGU      H1G1   C1G    N9      109.500    3.000
+ ZGU      H1G2   C1G    N9      109.500    3.000
+ ZGU      C1G    N9     C4      126.000    3.000
+ ZGU      C1G    N9     C8      126.000    3.000
+ ZGU      C4     N9     C8      108.000    3.000
+ ZGU      N9     C4     N3      132.000    3.000
+ ZGU      N9     C4     C5      108.000    3.000
+ ZGU      N3     C4     C5      120.000    3.000
+ ZGU      C4     N3     C2      120.000    3.000
+ ZGU      N3     C2     N2      120.000    3.000
+ ZGU      N3     C2     N1      120.000    3.000
+ ZGU      N2     C2     N1      120.000    3.000
+ ZGU      C2     N2     H2N2    120.000    3.000
+ ZGU      C2     N2     H2N1    120.000    3.000
+ ZGU      H2N2   N2     H2N1    120.000    3.000
+ ZGU      C2     N1     H1      120.000    3.000
+ ZGU      C2     N1     C6      120.000    3.000
+ ZGU      H1     N1     C6      120.000    3.000
+ ZGU      N1     C6     O6      120.000    3.000
+ ZGU      N1     C6     C5      120.000    3.000
+ ZGU      O6     C6     C5      120.000    3.000
+ ZGU      C6     C5     N7      132.000    3.000
+ ZGU      C6     C5     C4      120.000    3.000
+ ZGU      N7     C5     C4      108.000    3.000
+ ZGU      C5     N7     C8      108.000    3.000
+ ZGU      N7     C8     H8      126.000    3.000
+ ZGU      N7     C8     N9      108.000    3.000
+ ZGU      H8     C8     N9      126.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ZGU      var_1    OXT    P      O3G    C3G      141.522   20.000   1
+ ZGU      var_2    P      O3G    C3G    C2G      163.353   20.000   1
+ ZGU      var_3    O3G    C3G    C2G    C1G       45.278   20.000   3
+ ZGU      var_4    C3G    C2G    O2G    HA        97.994   20.000   1
+ ZGU      var_5    C3G    C2G    C1G    N9       177.348   20.000   3
+ ZGU      var_6    C2G    C1G    N9     C4       -92.096   20.000   1
+ ZGU      CONST_1  C1G    N9     C8     N7       180.000    0.000   0
+ ZGU      CONST_2  C1G    N9     C4     N3         0.000    0.000   0
+ ZGU      CONST_3  N9     C4     C5     C6       180.000    0.000   0
+ ZGU      CONST_4  N9     C4     N3     C2       180.000    0.000   0
+ ZGU      CONST_5  C4     N3     C2     N1         0.000    0.000   0
+ ZGU      CONST_6  N3     C2     N2     H2N1     179.975    0.000   0
+ ZGU      CONST_7  N3     C2     N1     C6         0.000    0.000   0
+ ZGU      CONST_8  C2     N1     C6     C5         0.000    0.000   0
+ ZGU      CONST_9  N1     C6     C5     N7       180.000    0.000   0
+ ZGU      CONST_10 C6     C5     N7     C8       180.000    0.000   0
+ ZGU      CONST_11 C5     N7     C8     N9         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ZGU      chir_01  C2G    C3G    O2G    C1G       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ZGU      plan-1    N9        0.020
+ ZGU      plan-1    C1G       0.020
+ ZGU      plan-1    C8        0.020
+ ZGU      plan-1    C4        0.020
+ ZGU      plan-1    N7        0.020
+ ZGU      plan-1    H8        0.020
+ ZGU      plan-1    C5        0.020
+ ZGU      plan-1    N3        0.020
+ ZGU      plan-1    C2        0.020
+ ZGU      plan-1    N1        0.020
+ ZGU      plan-1    C6        0.020
+ ZGU      plan-1    N2        0.020
+ ZGU      plan-1    H1        0.020
+ ZGU      plan-1    O6        0.020
+ ZGU      plan-1    H2N2      0.020
+ ZGU      plan-1    H2N1      0.020
+ ZGU      plan-2    N2        0.020
+ ZGU      plan-2    C2        0.020
+ ZGU      plan-2    H2N1      0.020
+ ZGU      plan-2    H2N2      0.020
+# ------------------------------------------------------

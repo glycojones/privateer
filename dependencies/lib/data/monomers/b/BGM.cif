@@ -1,0 +1,298 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BGM      BGM '8-BROMO-2'-DEOXYGUANOSINE-5'-MONOPHO' DNA                35  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BGM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BGM           OP3    O    OP       -0.666      0.000    0.000    0.000
+ BGM           P      P    P         0.000     -0.502    1.424   -0.103
+ BGM           OP1    O    OP       -0.666      0.543    2.490    0.147
+ BGM           OP2    O    OP       -0.666     -1.156    1.465   -1.466
+ BGM           "O5'"  O    O2        0.000     -1.754    1.442    0.924
+ BGM           "C5'"  C    CH2       0.000     -2.777    0.476    0.759
+ BGM           "H5'"  H    H         0.000     -2.358   -0.438    0.333
+ BGM           "H5''" H    H         0.000     -3.550    0.865    0.093
+ BGM           "C4'"  C    CH1       0.000     -3.384    0.171    2.121
+ BGM           "H4'"  H    H         0.000     -2.602   -0.184    2.806
+ BGM           "C3'"  C    CH1       0.000     -4.509   -0.856    2.048
+ BGM           "H3'"  H    H         0.000     -4.383   -1.538    1.195
+ BGM           "C2'"  C    CH2       0.000     -5.748   -0.001    1.903
+ BGM           "H2'"  H    H         0.000     -6.647   -0.475    2.304
+ BGM           "H2''" H    H         0.000     -5.933    0.317    0.875
+ BGM           "C1'"  C    CH1       0.000     -5.387    1.208    2.754
+ BGM           "H1'"  H    H         0.000     -5.624    0.981    3.803
+ BGM           "O4'"  O    O2        0.000     -3.965    1.389    2.634
+ BGM           N9     N    NR5       0.000     -6.078    2.435    2.377
+ BGM           C4     C    CR56      0.000     -5.681    3.332    1.425
+ BGM           N3     N    NRD6      0.000     -4.571    3.240    0.662
+ BGM           C2     C    CR6       0.000     -4.436    4.246   -0.175
+ BGM           N2     N    NH2       0.000     -3.374    4.338   -1.037
+ BGM           H22    H    H         0.000     -3.062    3.523   -1.552
+ BGM           H21    H    H         0.000     -2.894    5.221   -1.164
+ BGM           N1     N    NR16      0.000     -5.370    5.306   -0.251
+ BGM           H1     H    H         0.000     -5.183    6.060   -0.942
+ BGM           C6     C    CR6       0.000     -6.528    5.422    0.531
+ BGM           O6     O    O         0.000     -7.338    6.338    0.467
+ BGM           C5     C    CR56      0.000     -6.647    4.311    1.433
+ BGM           N7     N    NRD5      0.000     -7.624    4.058    2.350
+ BGM           C8     C    CR5       0.000     -7.254    2.920    2.904
+ BGM           BR     BR   BR        0.000     -8.264    2.074    4.280
+ BGM           "O3'"  O    OH1       0.000     -4.592   -1.563    3.282
+ BGM           "HO3'" H    H         0.000     -4.557   -0.897    3.985
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BGM      OP3    n/a    P      START
+ BGM      P      OP3    "O5'"  .
+ BGM      OP1    P      .      .
+ BGM      OP2    P      .      .
+ BGM      "O5'"  P      "C5'"  .
+ BGM      "C5'"  "O5'"  "C4'"  .
+ BGM      "H5'"  "C5'"  .      .
+ BGM      "H5''" "C5'"  .      .
+ BGM      "C4'"  "C5'"  "C3'"  .
+ BGM      "H4'"  "C4'"  .      .
+ BGM      "C3'"  "C4'"  "O3'"  .
+ BGM      "H3'"  "C3'"  .      .
+ BGM      "C2'"  "C3'"  "C1'"  .
+ BGM      "H2'"  "C2'"  .      .
+ BGM      "H2''" "C2'"  .      .
+ BGM      "C1'"  "C2'"  N9     .
+ BGM      "H1'"  "C1'"  .      .
+ BGM      "O4'"  "C1'"  .      .
+ BGM      N9     "C1'"  C4     .
+ BGM      C4     N9     N3     .
+ BGM      N3     C4     C2     .
+ BGM      C2     N3     N1     .
+ BGM      N2     C2     H21    .
+ BGM      H22    N2     .      .
+ BGM      H21    N2     .      .
+ BGM      N1     C2     C6     .
+ BGM      H1     N1     .      .
+ BGM      C6     N1     C5     .
+ BGM      O6     C6     .      .
+ BGM      C5     C6     N7     .
+ BGM      N7     C5     C8     .
+ BGM      C8     N7     BR     .
+ BGM      BR     C8     .      .
+ BGM      "O3'"  "C3'"  .      END
+ BGM      "HO3'" "O3'"  .      .
+ BGM      "C4'"  "O4'"  .    ADD
+ BGM      N9     C8     .    ADD
+ BGM      C5     C4     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BGM       OP1       P         deloc     1.510     0.020     1.510     0.020     
+BGM       OP2       P         deloc     1.510     0.020     1.510     0.020     
+BGM       "O5'"     P         single    1.610     0.020     1.610     0.020     
+BGM       P         OP3       deloc     1.510     0.020     1.510     0.020     
+BGM       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+BGM       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+BGM       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+BGM       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+BGM       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+BGM       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+BGM       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+BGM       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+BGM       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+BGM       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+BGM       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+BGM       N9        C8        single    1.337     0.020     1.337     0.020     
+BGM       C4        N9        single    1.337     0.020     1.337     0.020     
+BGM       C8        N7        double    1.350     0.020     1.350     0.020     
+BGM       BR        C8        single    1.995     0.020     1.995     0.020     
+BGM       N7        C5        single    1.350     0.020     1.350     0.020     
+BGM       C5        C4        double    1.490     0.020     1.490     0.020     
+BGM       C5        C6        single    1.490     0.020     1.490     0.020     
+BGM       N3        C4        single    1.355     0.020     1.355     0.020     
+BGM       C2        N3        double    1.350     0.020     1.350     0.020     
+BGM       N2        C2        single    1.355     0.020     1.355     0.020     
+BGM       N1        C2        single    1.337     0.020     1.337     0.020     
+BGM       H21       N2        single    1.016     0.010     0.899     0.007     
+BGM       H22       N2        single    1.016     0.010     0.899     0.007     
+BGM       C6        N1        single    1.337     0.020     1.337     0.020     
+BGM       H1        N1        single    1.016     0.010     0.899     0.007     
+BGM       O6        C6        double    1.250     0.020     1.250     0.020     
+BGM       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+BGM       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+BGM       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+BGM       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+BGM       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+BGM       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BGM      OP3    P      OP1     119.900    3.000
+ BGM      OP3    P      OP2     119.900    3.000
+ BGM      OP3    P      "O5'"   108.200    3.000
+ BGM      OP1    P      OP2     119.900    3.000
+ BGM      OP1    P      "O5'"   108.200    3.000
+ BGM      OP2    P      "O5'"   108.200    3.000
+ BGM      P      "O5'"  "C5'"   120.500    3.000
+ BGM      "O5'"  "C5'"  "H5'"   109.470    3.000
+ BGM      "O5'"  "C5'"  "H5''"  109.470    3.000
+ BGM      "O5'"  "C5'"  "C4'"   109.470    3.000
+ BGM      "H5'"  "C5'"  "H5''"  107.900    3.000
+ BGM      "H5'"  "C5'"  "C4'"   109.470    3.000
+ BGM      "H5''" "C5'"  "C4'"   109.470    3.000
+ BGM      "C5'"  "C4'"  "H4'"   108.340    3.000
+ BGM      "C5'"  "C4'"  "C3'"   111.000    3.000
+ BGM      "C5'"  "C4'"  "O4'"   109.470    3.000
+ BGM      "H4'"  "C4'"  "C3'"   108.340    3.000
+ BGM      "H4'"  "C4'"  "O4'"   109.470    3.000
+ BGM      "C3'"  "C4'"  "O4'"   109.470    3.000
+ BGM      "C4'"  "C3'"  "H3'"   108.340    3.000
+ BGM      "C4'"  "C3'"  "C2'"   111.000    3.000
+ BGM      "C4'"  "C3'"  "O3'"   109.470    3.000
+ BGM      "H3'"  "C3'"  "C2'"   108.340    3.000
+ BGM      "H3'"  "C3'"  "O3'"   109.470    3.000
+ BGM      "C2'"  "C3'"  "O3'"   109.470    3.000
+ BGM      "C3'"  "C2'"  "H2'"   109.470    3.000
+ BGM      "C3'"  "C2'"  "H2''"  109.470    3.000
+ BGM      "C3'"  "C2'"  "C1'"   111.000    3.000
+ BGM      "H2'"  "C2'"  "H2''"  107.900    3.000
+ BGM      "H2'"  "C2'"  "C1'"   109.470    3.000
+ BGM      "H2''" "C2'"  "C1'"   109.470    3.000
+ BGM      "C2'"  "C1'"  "H1'"   108.340    3.000
+ BGM      "C2'"  "C1'"  "O4'"   109.470    3.000
+ BGM      "C2'"  "C1'"  N9      109.470    3.000
+ BGM      "H1'"  "C1'"  "O4'"   109.470    3.000
+ BGM      "H1'"  "C1'"  N9      109.470    3.000
+ BGM      "O4'"  "C1'"  N9      109.470    3.000
+ BGM      "C1'"  "O4'"  "C4'"   111.800    3.000
+ BGM      "C1'"  N9     C4      126.000    3.000
+ BGM      "C1'"  N9     C8      126.000    3.000
+ BGM      C4     N9     C8      108.000    3.000
+ BGM      N9     C4     N3      132.000    3.000
+ BGM      N9     C4     C5      108.000    3.000
+ BGM      N3     C4     C5      120.000    3.000
+ BGM      C4     N3     C2      120.000    3.000
+ BGM      N3     C2     N2      120.000    3.000
+ BGM      N3     C2     N1      120.000    3.000
+ BGM      N2     C2     N1      120.000    3.000
+ BGM      C2     N2     H22     120.000    3.000
+ BGM      C2     N2     H21     120.000    3.000
+ BGM      H22    N2     H21     120.000    3.000
+ BGM      C2     N1     H1      120.000    3.000
+ BGM      C2     N1     C6      120.000    3.000
+ BGM      H1     N1     C6      120.000    3.000
+ BGM      N1     C6     O6      120.000    3.000
+ BGM      N1     C6     C5      120.000    3.000
+ BGM      O6     C6     C5      120.000    3.000
+ BGM      C6     C5     N7      132.000    3.000
+ BGM      C6     C5     C4      120.000    3.000
+ BGM      N7     C5     C4      108.000    3.000
+ BGM      C5     N7     C8      108.000    3.000
+ BGM      N7     C8     BR      108.000    3.000
+ BGM      N7     C8     N9      108.000    3.000
+ BGM      BR     C8     N9      108.000    3.000
+ BGM      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BGM      var_1    OP3    P      "O5'"  "C5'"    -54.190   20.000   1
+ BGM      var_2    P      "O5'"  "C5'"  "C4'"    149.957   20.000   1
+ BGM      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.546   20.000   3
+ BGM      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ BGM      var_5    "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ BGM      var_6    "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ BGM      var_7    "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ BGM      var_8    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ BGM      var_9    "C2'"  "C1'"  N9     C4       -86.558   20.000   1
+ BGM      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ BGM      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ BGM      CONST_3  N9     C4     N3     C2       180.000    0.000   0
+ BGM      CONST_4  C4     N3     C2     N1         0.000    0.000   0
+ BGM      CONST_5  N3     C2     N2     H21     -136.126    0.000   0
+ BGM      CONST_6  N3     C2     N1     C6         0.000    0.000   0
+ BGM      CONST_7  C2     N1     C6     C5         0.000    0.000   0
+ BGM      CONST_8  N1     C6     C5     N7       180.000    0.000   0
+ BGM      CONST_9  C6     C5     C4     N9       180.000    0.000   0
+ BGM      CONST_10 C6     C5     N7     C8       180.000    0.000   0
+ BGM      CONST_11 C5     N7     C8     BR       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BGM      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ BGM      chir_02  "C1'"  "O4'"  N9     "C2'"     negativ
+ BGM      chir_03  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BGM      plan-1    N9        0.020
+ BGM      plan-1    "C1'"     0.020
+ BGM      plan-1    C8        0.020
+ BGM      plan-1    C4        0.020
+ BGM      plan-1    N7        0.020
+ BGM      plan-1    BR        0.020
+ BGM      plan-1    C5        0.020
+ BGM      plan-1    C6        0.020
+ BGM      plan-1    N3        0.020
+ BGM      plan-1    C2        0.020
+ BGM      plan-1    N1        0.020
+ BGM      plan-1    N2        0.020
+ BGM      plan-1    H1        0.020
+ BGM      plan-1    O6        0.020
+ BGM      plan-1    H22       0.020
+ BGM      plan-1    H21       0.020
+ BGM      plan-2    N2        0.020
+ BGM      plan-2    C2        0.020
+ BGM      plan-2    H21       0.020
+ BGM      plan-2    H22       0.020
+# ------------------------------------------------------

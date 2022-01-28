@@ -1,0 +1,84 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+S4P     S4P      "Dihydrogen tetrasulfide"     NON-POLYMER     6     4     .     
+#
+data_comp_S4P
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+S4P     S4      S       SH1     0       -2.108      -0.633      0.419       
+S4P     S3      S       S2      0       -0.213      -1.408      0.254       
+S4P     S2      S       S2      0       0.555       -0.542      -1.460      
+S4P     S1      S       SH1     0       1.329       1.253       -0.829      
+S4P     H1      H       HSH1    0       -2.632      -1.054      1.439       
+S4P     H2      H       HSH1    0       1.347       1.282       0.392       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+S4P       S2        S1        SINGLE    n         2.054     0.0200    2.054     0.0200    
+S4P       S4        S3        SINGLE    n         2.054     0.0200    2.054     0.0200    
+S4P       S3        S2        SINGLE    n         2.068     0.0100    2.068     0.0100    
+S4P       S4        H1        SINGLE    n         1.338     0.010     1.171     0.208     
+S4P       S1        H2        SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+S4P          S3          S4          H1     109.471    3.00
+S4P          S4          S3          S2     104.568    3.00
+S4P          S1          S2          S3     104.568    3.00
+S4P          S2          S1          H2     109.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+S4P             sp3_sp3_2          S2          S3          S4          H1     180.000   10.00     3
+S4P             sp3_sp3_3          S1          S2          S3          S4     180.000   10.00     3
+S4P             sp3_sp3_1          H2          S1          S2          S3     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+S4P            InChI                InChI  1.03 InChI=1S/H2S4/c1-3-4-2/h1-2H
+S4P         InChIKey                InChI  1.03  IKRMQEUTISXXQP-UHFFFAOYSA-N
+S4P SMILES_CANONICAL               CACTVS 3.385                         SSSS
+S4P           SMILES               CACTVS 3.385                         SSSS
+S4P SMILES_CANONICAL "OpenEye OEToolkits" 2.0.5                         SSSS
+S4P           SMILES "OpenEye OEToolkits" 2.0.5                         SSSS
+S4P ?                acedrg               217         "dictionary generator"                  
+S4P ?                acedrg_database      11          "data source"                           
+S4P ?                rdkit                2017.03.2   "Chemoinformatics tool"
+S4P ?                refmac5              5.8.0253    "optimization tool"                     

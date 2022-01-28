@@ -1,0 +1,201 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LEU     LEU     LEUCINE     L-peptide     22     9     .     
+#
+data_comp_LEU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LEU     N       N       NT3     1       2.437       1.031       0.013       
+LEU     H       H       H       0       2.268       1.776       -0.648      
+LEU     H2      H       H       0       3.309       0.658       -0.144      
+LEU     H3      H       H       0       2.412       1.385       0.905       
+LEU     CA      C       CH1     0       1.382       -0.022      -0.142      
+LEU     HA      H       H       0       1.488       -0.675      0.588       
+LEU     CB      C       CH2     0       -0.005      0.632       -0.044      
+LEU     HB3     H       H       0       0.100       1.492       0.409       
+LEU     HB2     H       H       0       -0.334      0.819       -0.947      
+LEU     CG      C       CH1     0       -1.069      -0.181      0.701       
+LEU     HG      H       H       0       -0.681      -0.462      1.566       
+LEU     CD1     C       CH3     0       -2.325      0.645       1.003       
+LEU     HD11    H       H       0       -2.133      1.595       0.927       
+LEU     HD12    H       H       0       -2.623      0.452       1.909       
+LEU     HD13    H       H       0       -3.034      0.413       0.377       
+LEU     CD2     C       CH3     0       -1.429      -1.442      -0.076      
+LEU     HD21    H       H       0       -1.646      -1.207      -0.995      
+LEU     HD22    H       H       0       -2.198      -1.870      0.339       
+LEU     HD23    H       H       0       -0.674      -2.056      -0.068      
+LEU     C       C       C       0       1.585       -0.748      -1.480      
+LEU     O       O       O       0       1.663       -0.121      -2.537      
+LEU     OXT     O       OC      -1      1.676       -1.975      -1.529      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LEU      N      n/a    CA     START
+ LEU      H      N      .      .
+ LEU      H2     N      .      .
+ LEU      H3     N      .      .
+ LEU      CA     N      C      .
+ LEU      HA     CA     .      .
+ LEU      CB     CA     CG     .
+ LEU      HB3    CB     .      .
+ LEU      HB2    CB     .      .
+ LEU      CG     CB     CD2    .
+ LEU      HG     CG     .      .
+ LEU      CD1    CG     HD13   .
+ LEU      HD11   CD1    .      .
+ LEU      HD12   CD1    .      .
+ LEU      HD13   CD1    .      .
+ LEU      CD2    CG     HD23   .
+ LEU      HD21   CD2    .      .
+ LEU      HD22   CD2    .      .
+ LEU      HD23   CD2    .      .
+ LEU      C      CA     .      END
+ LEU      O      C      .      .
+ LEU      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LEU       CD1       CG        SINGLE    n         1.521     0.015     1.521     0.015     
+LEU       CG        CD2       SINGLE    n         1.521     0.015     1.521     0.015     
+LEU       CG        CB        SINGLE    n         1.528     0.011     1.528     0.011     
+LEU       CB        CA        SINGLE    n         1.532     0.010     1.532     0.010     
+LEU       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+LEU       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+LEU       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+LEU       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+LEU       CD1       HD11      SINGLE    n         1.089     0.010     0.973     0.015     
+LEU       CD1       HD12      SINGLE    n         1.089     0.010     0.973     0.015     
+LEU       CD1       HD13      SINGLE    n         1.089     0.010     0.973     0.015     
+LEU       CG        HG        SINGLE    n         1.089     0.010     0.989     0.016     
+LEU       CD2       HD21      SINGLE    n         1.089     0.010     0.973     0.015     
+LEU       CD2       HD22      SINGLE    n         1.089     0.010     0.973     0.015     
+LEU       CD2       HD23      SINGLE    n         1.089     0.010     0.973     0.015     
+LEU       CB        HB3       SINGLE    n         1.089     0.010     0.978     0.012     
+LEU       CB        HB2       SINGLE    n         1.089     0.010     0.978     0.012     
+LEU       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+LEU       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+LEU       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+LEU       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LEU          CG         CD1        HD11     109.488    1.50
+LEU          CG         CD1        HD12     109.488    1.50
+LEU          CG         CD1        HD13     109.488    1.50
+LEU        HD11         CD1        HD12     109.411    1.50
+LEU        HD11         CD1        HD13     109.411    1.50
+LEU        HD12         CD1        HD13     109.411    1.50
+LEU         CD1          CG         CD2     110.507    1.50
+LEU         CD1          CG          CB     110.880    1.50
+LEU         CD1          CG          HG     108.052    1.50
+LEU         CD2          CG          CB     110.880    1.50
+LEU         CD2          CG          HG     108.052    1.50
+LEU          CB          CG          HG     108.053    1.50
+LEU          CG         CD2        HD21     109.488    1.50
+LEU          CG         CD2        HD22     109.488    1.50
+LEU          CG         CD2        HD23     109.488    1.50
+LEU        HD21         CD2        HD22     109.411    1.50
+LEU        HD21         CD2        HD23     109.411    1.50
+LEU        HD22         CD2        HD23     109.411    1.50
+LEU          CG          CB          CA     115.442    1.50
+LEU          CG          CB         HB3     108.478    1.50
+LEU          CG          CB         HB2     108.478    1.50
+LEU          CA          CB         HB3     108.332    1.50
+LEU          CA          CB         HB2     108.332    1.50
+LEU         HB3          CB         HB2     107.542    1.50
+LEU          CB          CA           C     111.075    1.50
+LEU          CB          CA           N     108.955    1.50
+LEU          CB          CA          HA     109.549    1.50
+LEU           C          CA           N     109.241    1.50
+LEU           C          CA          HA     108.824    1.50
+LEU           N          CA          HA     108.487    1.50
+LEU          CA           C           O     117.124    1.50
+LEU          CA           C         OXT     117.124    1.50
+LEU           O           C         OXT     125.752    1.50
+LEU          CA           N           H     110.062    1.93
+LEU          CA           N          H2     110.062    1.93
+LEU          CA           N          H3     110.062    1.93
+LEU           H           N          H2     109.028    2.41
+LEU           H           N          H3     109.028    2.41
+LEU          H2           N          H3     109.028    2.41
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LEU      chi1     N      CA     CB     CG       180.000   15.000   3
+ LEU      chi2     CA     CB     CG     CD2      180.000   15.000   3
+ LEU      hh1      CB     CG     CD1    HD13      60.000   30.000   3
+ LEU      hh2      CB     CG     CD2    HD23      60.000   30.000   3
+LEU             sp2_sp3_1           O           C          CA          CB       0.000   10.00     6
+LEU            sp3_sp3_37          CB          CA           N           H     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+LEU    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LEU    plan-1           C   0.020
+LEU    plan-1          CA   0.020
+LEU    plan-1           O   0.020
+LEU    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LEU SMILES           ACDLabs              10.04 "O=C(O)C(N)CC(C)C"
+LEU SMILES_CANONICAL CACTVS               3.341 "CC(C)C[C@H](N)C(O)=O"
+LEU SMILES           CACTVS               3.341 "CC(C)C[CH](N)C(O)=O"
+LEU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)C[C@@H](C(=O)O)N"
+LEU SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)CC(C(=O)O)N"
+LEU InChI            InChI                1.03  "InChI=1S/C6H13NO2/c1-4(2)3-5(7)6(8)9/h4-5H,3,7H2,1-2H3,(H,8,9)/t5-/m0/s1"
+LEU InChIKey         InChI                1.03  ROHFNLRQFUQHCH-YFKPBYRVSA-N
+LEU ?                acedrg               195         "dictionary generator"                  
+LEU ?                acedrg_database      11          "data source"                           
+LEU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LEU ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,244 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TYQ     TYQ     3-AMINO-6-HYDROXY-TYROSINE     peptide     27     15     .
+#
+data_comp_TYQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TYQ     N       N       NT3     1       -2.688      0.585       -0.313
+TYQ     CA      C       CH1     0       -2.406      -0.524      0.640
+TYQ     C       C       C       0       -2.101      0.050       2.030
+TYQ     O       O       O       0       -2.514      -0.593      3.015
+TYQ     CB      C       CH2     0       -1.264      -1.414      0.135
+TYQ     CG      C       CR6     0       0.026       -0.689      -0.176
+TYQ     CD1     C       CR6     0       0.264       -0.112      -1.435
+TYQ     CD2     C       CR16    0       1.020       -0.586      0.793
+TYQ     CE1     C       CR16    0       1.455       0.553       -1.715
+TYQ     CE2     C       CR6     0       2.229       0.086       0.518
+TYQ     CZ      C       CR6     0       2.445       0.658       -0.747
+TYQ     OZ      O       OH1     0       -0.685      -0.191      -2.413
+TYQ     N5      N       NH2     0       3.213       0.186       1.492
+TYQ     OH      O       OH1     0       3.615       1.296       -0.984
+TYQ     OXT     O       OC      -1      -1.460      1.119       2.081
+TYQ     H       H       H       0       -2.661      0.272       -1.169
+TYQ     H2      H       H       0       -2.069      1.248       -0.217
+TYQ     H3      H       H       0       -3.516      0.927       -0.149
+TYQ     HA      H       H       0       -3.223      -1.082      0.713
+TYQ     HB2     H       H       0       -1.570      -1.882      -0.669
+TYQ     HB3     H       H       0       -1.083      -2.093      0.818
+TYQ     HD2     H       H       0       0.883       -0.966      1.644
+TYQ     HE1     H       H       0       1.592       0.935       -2.567
+TYQ     HZ      H       H       0       -0.400      -0.723      -3.024
+TYQ     HN51    H       H       0       4.059       0.135       1.265
+TYQ     HN52    H       H       0       2.986       0.298       2.332
+TYQ     HH      H       H       0       3.615       2.051       -0.576
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+TYQ      N      n/a    CA     START
+TYQ      H      N      .      .
+TYQ      H2     N      .      .
+TYQ      H3     N      .      .
+TYQ      CA     N      C      .
+TYQ      HA     CA     .      .
+TYQ      CB     CA     CG     .
+TYQ      HB2    CB     .      .
+TYQ      HB3    CB     .      .
+TYQ      CG     CB     CD2    .
+TYQ      CD2    CG     CE2    .
+TYQ      HD2    CD2    .      .
+TYQ      CE2    CD2    CZ     .
+TYQ      N5     CE2    HN51   .
+TYQ      HN52   N5     .      .
+TYQ      HN51   N5     .      .
+TYQ      CZ     CE2    CE1    .
+TYQ      OH     CZ     HH     .
+TYQ      HH     OH     .      .
+TYQ      CE1    CZ     CD1    .
+TYQ      HE1    CE1    .      .
+TYQ      CD1    CE1    OZ     .
+TYQ      OZ     CD1    HZ     .
+TYQ      HZ     OZ     .      .
+TYQ      C      CA     .      END
+TYQ      O      C      .      .
+TYQ      OXT    C      .      .
+TYQ      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TYQ       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+TYQ       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+TYQ       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+TYQ       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TYQ       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TYQ       CB        CG        SINGLE    n         1.509     0.010     1.509     0.010     
+TYQ       CG        CD1       DOUBLE    y         1.398     0.010     1.398     0.010     
+TYQ       CG        CD2       SINGLE    y         1.388     0.010     1.388     0.010     
+TYQ       CD1       CE1       SINGLE    y         1.387     0.010     1.387     0.010     
+TYQ       CD1       OZ        SINGLE    n         1.364     0.013     1.364     0.013     
+TYQ       CD2       CE2       DOUBLE    y         1.403     0.018     1.403     0.018     
+TYQ       CE1       CZ        DOUBLE    y         1.385     0.011     1.385     0.011     
+TYQ       CE2       CZ        SINGLE    y         1.402     0.010     1.402     0.010     
+TYQ       CE2       N5        SINGLE    n         1.386     0.017     1.386     0.017     
+TYQ       CZ        OH        SINGLE    n         1.353     0.010     1.353     0.010     
+TYQ       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+TYQ       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+TYQ       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+TYQ       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+TYQ       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+TYQ       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+TYQ       CD2       HD2       SINGLE    n         1.082     0.013     0.942     0.014     
+TYQ       CE1       HE1       SINGLE    n         1.082     0.013     0.943     0.018     
+TYQ       OZ        HZ        SINGLE    n         0.970     0.012     0.858     0.020     
+TYQ       N5        HN51      SINGLE    n         1.016     0.010     0.877     0.020     
+TYQ       N5        HN52      SINGLE    n         1.016     0.010     0.877     0.020     
+TYQ       OH        HH        SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TYQ          CA           N           H     109.646    1.54
+TYQ          CA           N          H2     109.646    1.54
+TYQ          CA           N          H3     109.646    1.54
+TYQ           H           N          H2     109.028    2.41
+TYQ           H           N          H3     109.028    2.41
+TYQ          H2           N          H3     109.028    2.41
+TYQ           N          CA           C     109.448    1.50
+TYQ           N          CA          CB     110.494    1.50
+TYQ           N          CA          HA     108.601    1.50
+TYQ           C          CA          CB     111.331    2.53
+TYQ           C          CA          HA     108.450    1.50
+TYQ          CB          CA          HA     108.690    1.50
+TYQ          CA           C           O     117.228    2.13
+TYQ          CA           C         OXT     117.228    2.13
+TYQ           O           C         OXT     125.543    1.50
+TYQ          CA          CB          CG     114.187    1.55
+TYQ          CA          CB         HB2     108.434    1.50
+TYQ          CA          CB         HB3     108.434    1.50
+TYQ          CG          CB         HB2     108.906    1.50
+TYQ          CG          CB         HB3     108.906    1.50
+TYQ         HB2          CB         HB3     107.782    1.50
+TYQ          CB          CG         CD1     120.872    1.68
+TYQ          CB          CG         CD2     120.855    1.50
+TYQ         CD1          CG         CD2     118.273    1.50
+TYQ          CG         CD1         CE1     120.964    1.50
+TYQ          CG         CD1          OZ     119.433    1.50
+TYQ         CE1         CD1          OZ     119.603    2.16
+TYQ          CG         CD2         CE2     120.777    1.50
+TYQ          CG         CD2         HD2     119.709    1.50
+TYQ         CE2         CD2         HD2     119.513    1.50
+TYQ         CD1         CE1          CZ     119.829    1.50
+TYQ         CD1         CE1         HE1     120.276    1.50
+TYQ          CZ         CE1         HE1     119.895    1.50
+TYQ         CD2         CE2          CZ     120.815    1.59
+TYQ         CD2         CE2          N5     120.336    1.50
+TYQ          CZ         CE2          N5     118.849    1.50
+TYQ         CE1          CZ         CE2     119.342    1.50
+TYQ         CE1          CZ          OH     122.324    3.00
+TYQ         CE2          CZ          OH     118.334    1.50
+TYQ         CD1          OZ          HZ     108.378    3.00
+TYQ         CE2          N5        HN51     119.866    1.50
+TYQ         CE2          N5        HN52     119.866    1.50
+TYQ        HN51          N5        HN52     120.268    3.00
+TYQ          CZ          OH          HH     109.343    2.75
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TYQ             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+TYQ             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+TYQ            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+TYQ             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+TYQ       const_sp2_sp2_4          OZ         CD1          CG          CB       0.000   10.00     2
+TYQ              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+TYQ       const_sp2_sp2_7          OZ         CD1         CE1          CZ     180.000   10.00     2
+TYQ              const_18          CG         CD2         CE2          N5     180.000   10.00     2
+TYQ              const_10         CD1         CE1          CZ          OH     180.000   10.00     2
+TYQ              const_16          N5         CE2          CZ          OH       0.000   10.00     2
+TYQ             sp2_sp2_1         CD2         CE2          N5        HN51     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TYQ    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TYQ    plan-1          CB   0.020
+TYQ    plan-1         CD1   0.020
+TYQ    plan-1         CD2   0.020
+TYQ    plan-1         CE1   0.020
+TYQ    plan-1         CE2   0.020
+TYQ    plan-1          CG   0.020
+TYQ    plan-1          CZ   0.020
+TYQ    plan-1         HD2   0.020
+TYQ    plan-1         HE1   0.020
+TYQ    plan-1          N5   0.020
+TYQ    plan-1          OH   0.020
+TYQ    plan-1          OZ   0.020
+TYQ    plan-2           C   0.020
+TYQ    plan-2          CA   0.020
+TYQ    plan-2           O   0.020
+TYQ    plan-2         OXT   0.020
+TYQ    plan-3         CE2   0.020
+TYQ    plan-3        HN51   0.020
+TYQ    plan-3        HN52   0.020
+TYQ    plan-3          N5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TYQ SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc1c(O)cc(O)c(N)c1"
+TYQ SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1cc(N)c(O)cc1O)C(O)=O"
+TYQ SMILES           CACTVS               3.341 "N[CH](Cc1cc(N)c(O)cc1O)C(O)=O"
+TYQ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(c(cc(c1N)O)O)C[C@@H](C(=O)O)N"
+TYQ SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(c(cc(c1N)O)O)CC(C(=O)O)N"
+TYQ InChI            InChI                1.03  "InChI=1S/C9H12N2O4/c10-5-1-4(2-6(11)9(14)15)7(12)3-8(5)13/h1,3,6,12-13H,2,10-11H2,(H,14,15)/t6-/m0/s1"
+TYQ InChIKey         InChI                1.03  OIXIYIGKZVEKPI-LURJTMIESA-N
+TYQ ?                acedrg               196         "dictionary generator"
+TYQ ?                acedrg_database      11          "data source"
+TYQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TYQ ?                refmac5              5.8.0222    "optimization tool"

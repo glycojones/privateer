@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NBZ     NBZ      NITROBENZENE     NON-POLYMER     14     9     .     
+#
+data_comp_NBZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NBZ     C1      C       CR16    0       0.251       -1.159      -0.363      
+NBZ     C2      C       CR16    0       -1.136      -1.214      -0.404      
+NBZ     C3      C       CR16    0       -1.902      -0.108      -0.068      
+NBZ     C4      C       CR16    0       -1.289      1.073       0.314       
+NBZ     C5      C       CR16    0       0.096       1.173       0.368       
+NBZ     C6      C       CR6     0       0.851       0.045       0.026       
+NBZ     N1      N       N       1       2.305       0.127       0.075       
+NBZ     O1      O       OC      -1      2.864       0.927       -0.659      
+NBZ     O2      O       O       0       2.900       -0.606      0.850       
+NBZ     H1      H       H       0       0.769       -1.911      -0.591      
+NBZ     H2      H       H       0       -1.560      -2.015      -0.663      
+NBZ     H3      H       H       0       -2.844      -0.161      -0.100      
+NBZ     H4      H       H       0       -1.816      1.821       0.541       
+NBZ     H5      H       H       0       0.509       1.977       0.628       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NBZ       C1        C2        DOUBLE    y         1.382     0.010     1.382     0.010     
+NBZ       C1        C6        SINGLE    y         1.393     0.011     1.393     0.011     
+NBZ       C2        C3        SINGLE    y         1.376     0.012     1.376     0.012     
+NBZ       C3        C4        DOUBLE    y         1.376     0.011     1.376     0.011     
+NBZ       C4        C5        SINGLE    y         1.382     0.010     1.382     0.010     
+NBZ       C5        C6        DOUBLE    y         1.393     0.011     1.393     0.011     
+NBZ       C6        N1        SINGLE    n         1.457     0.020     1.457     0.020     
+NBZ       N1        O1        SINGLE    n         1.221     0.017     1.221     0.017     
+NBZ       N1        O2        DOUBLE    n         1.221     0.017     1.221     0.017     
+NBZ       C1        H1        SINGLE    n         1.082     0.013     0.941     0.020     
+NBZ       C2        H2        SINGLE    n         1.082     0.013     0.943     0.017     
+NBZ       C3        H3        SINGLE    n         1.082     0.013     0.944     0.016     
+NBZ       C4        H4        SINGLE    n         1.082     0.013     0.943     0.017     
+NBZ       C5        H5        SINGLE    n         1.082     0.013     0.941     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NBZ          C2          C1          C6     118.088    1.50
+NBZ          C2          C1          H1     120.653    1.50
+NBZ          C6          C1          H1     121.259    1.50
+NBZ          C1          C2          C3     120.649    1.50
+NBZ          C1          C2          H2     119.534    1.50
+NBZ          C3          C2          H2     119.817    1.50
+NBZ          C2          C3          C4     120.040    1.50
+NBZ          C2          C3          H3     119.980    1.50
+NBZ          C4          C3          H3     119.980    1.50
+NBZ          C3          C4          C5     120.649    1.50
+NBZ          C3          C4          H4     119.817    1.50
+NBZ          C5          C4          H4     119.534    1.50
+NBZ          C4          C5          C6     118.088    1.50
+NBZ          C4          C5          H5     120.653    1.50
+NBZ          C6          C5          H5     121.259    1.50
+NBZ          C1          C6          C5     122.486    1.50
+NBZ          C1          C6          N1     118.757    1.50
+NBZ          C5          C6          N1     118.757    1.50
+NBZ          C6          N1          O1     118.257    1.50
+NBZ          C6          N1          O2     118.257    1.50
+NBZ          O1          N1          O2     123.486    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NBZ       const_sp2_sp2_1          C6          C1          C2          C3       0.000   10.00     2
+NBZ              const_22          C2          C1          C6          N1     180.000   10.00     2
+NBZ       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+NBZ       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+NBZ              const_13          C3          C4          C5          C6       0.000   10.00     2
+NBZ              const_18          C4          C5          C6          N1     180.000   10.00     2
+NBZ             sp2_sp2_1          C1          C6          N1          O1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NBZ    plan-1          C1   0.020
+NBZ    plan-1          C2   0.020
+NBZ    plan-1          C3   0.020
+NBZ    plan-1          C4   0.020
+NBZ    plan-1          C5   0.020
+NBZ    plan-1          C6   0.020
+NBZ    plan-1          H1   0.020
+NBZ    plan-1          H2   0.020
+NBZ    plan-1          H3   0.020
+NBZ    plan-1          H4   0.020
+NBZ    plan-1          H5   0.020
+NBZ    plan-1          N1   0.020
+NBZ    plan-2          C6   0.020
+NBZ    plan-2          N1   0.020
+NBZ    plan-2          O1   0.020
+NBZ    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NBZ SMILES           ACDLabs              10.04 "[O-][N+](=O)c1ccccc1"
+NBZ SMILES_CANONICAL CACTVS               3.341 "[O-][N+](=O)c1ccccc1"
+NBZ SMILES           CACTVS               3.341 "[O-][N+](=O)c1ccccc1"
+NBZ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)[N+](=O)[O-]"
+NBZ SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)[N+](=O)[O-]"
+NBZ InChI            InChI                1.03  "InChI=1S/C6H5NO2/c8-7(9)6-4-2-1-3-5-6/h1-5H"
+NBZ InChIKey         InChI                1.03  LQNUZADURLCDLV-UHFFFAOYSA-N
+NBZ ?                acedrg               202         "dictionary generator"                  
+NBZ ?                acedrg_database      11          "data source"                           
+NBZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NBZ ?                refmac5              5.8.0189    "optimization tool"                     

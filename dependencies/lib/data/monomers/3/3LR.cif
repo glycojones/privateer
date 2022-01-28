@@ -1,0 +1,196 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3LR      3LR '3,6-dideoxy-L-arabino-hexonic acid  ' non-polymer        22  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_3LR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 3LR           O1B    O    OC       -0.500      0.000    0.000    0.000
+ 3LR           C1     C    C         0.000     -1.071   -0.554    0.333
+ 3LR           O1A    O    OC       -0.500     -1.112   -1.282    1.349
+ 3LR           C2     C    CH1       0.000     -2.315   -0.343   -0.493
+ 3LR           H2     H    H         0.000     -2.721   -1.318   -0.799
+ 3LR           O2     O    OH1       0.000     -1.992    0.424   -1.655
+ 3LR           HO2    H    H         0.000     -1.635    1.281   -1.385
+ 3LR           C3     C    CH2       0.000     -3.358    0.406    0.339
+ 3LR           H3     H    H         0.000     -2.989    1.408    0.568
+ 3LR           H3A    H    H         0.000     -3.538   -0.136    1.270
+ 3LR           C4     C    CH1       0.000     -4.664    0.510   -0.453
+ 3LR           H4     H    H         0.000     -4.464    0.976   -1.429
+ 3LR           O4     O    OH1       0.000     -5.206   -0.797   -0.651
+ 3LR           HO4    H    H         0.000     -5.381   -1.206    0.207
+ 3LR           C5     C    CH1       0.000     -5.665    1.365    0.326
+ 3LR           H5     H    H         0.000     -5.865    0.899    1.301
+ 3LR           O5     O    OH1       0.000     -5.123    2.672    0.525
+ 3LR           HO5    H    H         0.000     -4.947    3.081   -0.334
+ 3LR           C6     C    CH3       0.000     -6.970    1.470   -0.466
+ 3LR           H6B    H    H         0.000     -7.665    2.062    0.072
+ 3LR           H6A    H    H         0.000     -6.779    1.920   -1.406
+ 3LR           H6     H    H         0.000     -7.373    0.502   -0.615
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 3LR      O1B    n/a    C1     START
+ 3LR      C1     O1B    C2     .
+ 3LR      O1A    C1     .      .
+ 3LR      C2     C1     C3     .
+ 3LR      H2     C2     .      .
+ 3LR      O2     C2     HO2    .
+ 3LR      HO2    O2     .      .
+ 3LR      C3     C2     C4     .
+ 3LR      H3     C3     .      .
+ 3LR      H3A    C3     .      .
+ 3LR      C4     C3     C5     .
+ 3LR      H4     C4     .      .
+ 3LR      O4     C4     HO4    .
+ 3LR      HO4    O4     .      .
+ 3LR      C5     C4     C6     .
+ 3LR      H5     C5     .      .
+ 3LR      O5     C5     HO5    .
+ 3LR      HO5    O5     .      .
+ 3LR      C6     C5     H6     .
+ 3LR      H6B    C6     .      .
+ 3LR      H6A    C6     .      .
+ 3LR      H6     C6     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3LR       O1A       C1        deloc     1.250     0.020     1.250     0.020     
+3LR       C1        O1B       deloc     1.250     0.020     1.250     0.020     
+3LR       C2        C1        single    1.500     0.020     1.500     0.020     
+3LR       O2        C2        single    1.432     0.020     1.432     0.020     
+3LR       C3        C2        single    1.524     0.020     1.524     0.020     
+3LR       H2        C2        single    1.089     0.010     0.989     0.005     
+3LR       HO2       O2        single    0.970     0.012     0.839     0.014     
+3LR       C4        C3        single    1.524     0.020     1.524     0.020     
+3LR       H3        C3        single    1.089     0.010     0.989     0.005     
+3LR       H3A       C3        single    1.089     0.010     0.989     0.005     
+3LR       O4        C4        single    1.432     0.020     1.432     0.020     
+3LR       C5        C4        single    1.524     0.020     1.524     0.020     
+3LR       H4        C4        single    1.089     0.010     0.989     0.005     
+3LR       HO4       O4        single    0.970     0.012     0.839     0.014     
+3LR       O5        C5        single    1.432     0.020     1.432     0.020     
+3LR       C6        C5        single    1.524     0.020     1.524     0.020     
+3LR       H5        C5        single    1.089     0.010     0.989     0.005     
+3LR       H6        C6        single    1.089     0.010     0.989     0.005     
+3LR       H6A       C6        single    1.089     0.010     0.989     0.005     
+3LR       H6B       C6        single    1.089     0.010     0.989     0.005     
+3LR       HO5       O5        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 3LR      O1B    C1     O1A     123.000    3.000
+ 3LR      O1B    C1     C2      118.500    3.000
+ 3LR      O1A    C1     C2      118.500    3.000
+ 3LR      C1     C2     H2      108.810    3.000
+ 3LR      C1     C2     O2      109.470    3.000
+ 3LR      C1     C2     C3      109.470    3.000
+ 3LR      H2     C2     O2      109.470    3.000
+ 3LR      H2     C2     C3      108.340    3.000
+ 3LR      O2     C2     C3      109.470    3.000
+ 3LR      C2     O2     HO2     109.470    3.000
+ 3LR      C2     C3     H3      109.470    3.000
+ 3LR      C2     C3     H3A     109.470    3.000
+ 3LR      C2     C3     C4      111.000    3.000
+ 3LR      H3     C3     H3A     107.900    3.000
+ 3LR      H3     C3     C4      109.470    3.000
+ 3LR      H3A    C3     C4      109.470    3.000
+ 3LR      C3     C4     H4      108.340    3.000
+ 3LR      C3     C4     O4      109.470    3.000
+ 3LR      C3     C4     C5      111.000    3.000
+ 3LR      H4     C4     O4      109.470    3.000
+ 3LR      H4     C4     C5      108.340    3.000
+ 3LR      O4     C4     C5      109.470    3.000
+ 3LR      C4     O4     HO4     109.470    3.000
+ 3LR      C4     C5     H5      108.340    3.000
+ 3LR      C4     C5     O5      109.470    3.000
+ 3LR      C4     C5     C6      111.000    3.000
+ 3LR      H5     C5     O5      109.470    3.000
+ 3LR      H5     C5     C6      108.340    3.000
+ 3LR      O5     C5     C6      109.470    3.000
+ 3LR      C5     O5     HO5     109.470    3.000
+ 3LR      C5     C6     H6B     109.470    3.000
+ 3LR      C5     C6     H6A     109.470    3.000
+ 3LR      C5     C6     H6      109.470    3.000
+ 3LR      H6B    C6     H6A     109.470    3.000
+ 3LR      H6B    C6     H6      109.470    3.000
+ 3LR      H6A    C6     H6      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 3LR      var_1    O1B    C1     C2     C3      -115.020   20.000   3
+ 3LR      var_2    C1     C2     O2     HO2      -59.927   20.000   1
+ 3LR      var_3    C1     C2     C3     C4      -174.990   20.000   3
+ 3LR      var_4    C2     C3     C4     C5      -175.006   20.000   3
+ 3LR      var_5    C3     C4     O4     HO4       59.975   20.000   1
+ 3LR      var_6    C3     C4     C5     C6       179.965   20.000   3
+ 3LR      var_7    C4     C5     O5     HO5       59.923   20.000   1
+ 3LR      var_8    C4     C5     C6     H6        59.981   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 3LR      chir_01  C2     C1     O2     C3        positiv
+ 3LR      chir_02  C4     C3     O4     C5        negativ
+ 3LR      chir_03  C5     C4     C6     O5        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 3LR      plan-1    C1        0.020
+ 3LR      plan-1    O1A       0.020
+ 3LR      plan-1    O1B       0.020
+ 3LR      plan-1    C2        0.020
+# ------------------------------------------------------

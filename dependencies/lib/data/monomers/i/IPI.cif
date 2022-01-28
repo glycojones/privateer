@@ -1,0 +1,146 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IPI     IPI      "3-methylbutylphosphonic acid"     non-polymer     20     9     .     
+#
+data_comp_IPI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+IPI     P       P       P       0       2.451       0.173       -0.935      
+IPI     O1      O       OP      -1      2.966       0.502       0.425       
+IPI     O2      O       O       0       3.510       -0.450      -1.781      
+IPI     C5      C       CH2     0       1.129       -1.048      -0.764      
+IPI     C4      C       CH2     0       0.202       -0.829      0.432       
+IPI     C2      C       CH1     0       -0.695      0.411       0.400       
+IPI     C3      C       CH3     0       -1.395      0.605       1.737       
+IPI     C1      C       CH3     0       -1.719      0.337       -0.725      
+IPI     OXT     O       OP      -1      1.862       1.372       -1.600      
+IPI     H51C    H       H       0       1.526       -1.940      -0.681      
+IPI     H52C    H       H       0       0.590       -1.060      -1.582      
+IPI     H41C    H       H       0       0.747       -0.783      1.245       
+IPI     H42C    H       H       0       -0.378      -1.613      0.520       
+IPI     HA      H       H       0       -0.123      1.201       0.241       
+IPI     H31C    H       H       0       -1.926      1.420       1.711       
+IPI     H32C    H       H       0       -0.730      0.675       2.445       
+IPI     H33C    H       H       0       -1.976      -0.155      1.913       
+IPI     H11C    H       H       0       -2.376      1.046       -0.615      
+IPI     H12C    H       H       0       -2.167      -0.527      -0.699      
+IPI     H13C    H       H       0       -1.270      0.443       -1.581      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IPI       P         O1        SINGLE    n         1.492     0.020     1.492     0.020     
+IPI       P         O2        DOUBLE    n         1.492     0.020     1.492     0.020     
+IPI       P         C5        SINGLE    n         1.803     0.020     1.803     0.020     
+IPI       P         OXT       SINGLE    n         1.492     0.020     1.492     0.020     
+IPI       C5        C4        SINGLE    n         1.520     0.017     1.520     0.017     
+IPI       C4        C2        SINGLE    n         1.527     0.013     1.527     0.013     
+IPI       C2        C3        SINGLE    n         1.521     0.015     1.521     0.015     
+IPI       C2        C1        SINGLE    n         1.521     0.015     1.521     0.015     
+IPI       C5        H51C      SINGLE    n         1.089     0.010     0.980     0.014     
+IPI       C5        H52C      SINGLE    n         1.089     0.010     0.980     0.014     
+IPI       C4        H41C      SINGLE    n         1.089     0.010     0.980     0.016     
+IPI       C4        H42C      SINGLE    n         1.089     0.010     0.980     0.016     
+IPI       C2        HA        SINGLE    n         1.089     0.010     0.989     0.016     
+IPI       C3        H31C      SINGLE    n         1.089     0.010     0.973     0.015     
+IPI       C3        H32C      SINGLE    n         1.089     0.010     0.973     0.015     
+IPI       C3        H33C      SINGLE    n         1.089     0.010     0.973     0.015     
+IPI       C1        H11C      SINGLE    n         1.089     0.010     0.973     0.015     
+IPI       C1        H12C      SINGLE    n         1.089     0.010     0.973     0.015     
+IPI       C1        H13C      SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+IPI          O1           P          O2     111.786    1.50
+IPI          O1           P          C5     108.625    3.00
+IPI          O1           P         OXT     111.786    1.50
+IPI          O2           P          C5     108.625    3.00
+IPI          O2           P         OXT     111.786    1.50
+IPI          C5           P         OXT     108.625    3.00
+IPI           P          C5          C4     111.410    2.87
+IPI           P          C5        H51C     109.545    1.50
+IPI           P          C5        H52C     109.545    1.50
+IPI          C4          C5        H51C     108.554    1.50
+IPI          C4          C5        H52C     108.554    1.50
+IPI        H51C          C5        H52C     107.240    1.91
+IPI          C5          C4          C2     115.648    1.80
+IPI          C5          C4        H41C     109.217    1.50
+IPI          C5          C4        H42C     109.217    1.50
+IPI          C2          C4        H41C     108.471    1.50
+IPI          C2          C4        H42C     108.471    1.50
+IPI        H41C          C4        H42C     107.715    1.50
+IPI          C4          C2          C3     111.118    1.50
+IPI          C4          C2          C1     111.118    1.50
+IPI          C4          C2          HA     107.675    1.50
+IPI          C3          C2          C1     110.507    1.50
+IPI          C3          C2          HA     108.052    1.50
+IPI          C1          C2          HA     108.052    1.50
+IPI          C2          C3        H31C     109.488    1.50
+IPI          C2          C3        H32C     109.488    1.50
+IPI          C2          C3        H33C     109.488    1.50
+IPI        H31C          C3        H32C     109.411    1.50
+IPI        H31C          C3        H33C     109.411    1.50
+IPI        H32C          C3        H33C     109.411    1.50
+IPI          C2          C1        H11C     109.488    1.50
+IPI          C2          C1        H12C     109.488    1.50
+IPI          C2          C1        H13C     109.488    1.50
+IPI        H11C          C1        H12C     109.411    1.50
+IPI        H11C          C1        H13C     109.411    1.50
+IPI        H12C          C1        H13C     109.411    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+IPI             sp3_sp3_1          C4          C5           P          O1     180.000   10.00     3
+IPI            sp3_sp3_10          C2          C4          C5           P     180.000   10.00     3
+IPI            sp3_sp3_19          C3          C2          C4          C5     180.000   10.00     3
+IPI            sp3_sp3_28          C4          C2          C3        H31C     180.000   10.00     3
+IPI            sp3_sp3_37        H11C          C1          C2          C4     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+IPI SMILES_CANONICAL CACTVS               3.352 "CC(C)CC[P](O)(O)=O"
+IPI SMILES           CACTVS               3.352 "CC(C)CC[P](O)(O)=O"
+IPI SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "CC(C)CCP(=O)(O)O"
+IPI SMILES           "OpenEye OEToolkits" 1.6.1 "CC(C)CCP(=O)(O)O"
+IPI InChI            InChI                1.03  "InChI=1S/C5H13O3P/c1-5(2)3-4-9(6,7)8/h5H,3-4H2,1-2H3,(H2,6,7,8)"
+IPI InChIKey         InChI                1.03  OHMSWSFFCKZMGL-UHFFFAOYSA-N
+IPI ?                acedrg               202         "dictionary generator"                  
+IPI ?                acedrg_database      11          "data source"                           
+IPI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+IPI ?                refmac5              5.8.0189    "optimization tool"                     

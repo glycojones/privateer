@@ -1,0 +1,67 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PO3     PO3      "PHOSPHITE ION"     NON-POLYMER     4     4     .     
+#
+data_comp_PO3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PO3     P       P       P1      -1      0.037       0.012       0.377       
+PO3     O1      O       O       0       1.429       -0.075      -0.157      
+PO3     O2      O       OP      -1      -0.757      -1.156      -0.112      
+PO3     O3      O       OP      -1      -0.599      1.279       -0.094      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PO3       P         O1        DOUBLE    n         1.494     0.010     1.494     0.010     
+PO3       P         O2        SINGLE    n         1.494     0.010     1.494     0.010     
+PO3       P         O3        SINGLE    n         1.494     0.010     1.494     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PO3          O1           P          O2     109.471    3.00
+PO3          O1           P          O3     109.471    3.00
+PO3          O2           P          O3     109.471    3.00
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PO3 SMILES           ACDLabs              10.04 "[O-][PH2-]([O-])=O"
+PO3 SMILES_CANONICAL CACTVS               3.341 "[O-][P-]([O-])=O"
+PO3 SMILES           CACTVS               3.341 "[O-][P-]([O-])=O"
+PO3 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[O-][P-](=O)[O-]"
+PO3 SMILES           "OpenEye OEToolkits" 1.5.0 "[O-][P-](=O)[O-]"
+PO3 InChI            InChI                1.03  "InChI=1S/O3P/c1-4(2)3/q-3"
+PO3 InChIKey         InChI                1.03  AQSJGOWTSHOLKH-UHFFFAOYSA-N
+PO3 ?                acedrg               205         "dictionary generator"                  
+PO3 ?                acedrg_database      11          "data source"                           
+PO3 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PO3 ?                refmac5              5.8.0235    "optimization tool"                     

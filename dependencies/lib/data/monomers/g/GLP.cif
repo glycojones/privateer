@@ -1,0 +1,237 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GLP      GLP 'GLUCOSAMINE 6-PHOSPHATE             ' pyranose           28  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GLP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GLP           C1     C    CH1       0.000      0.000    0.000    0.000
+ GLP           H1     H    H         0.000      0.906    0.439   -0.442
+ GLP           O1     O    OH1       0.000      0.058   -1.423   -0.112
+ GLP           HO1    H    H         0.000      0.113   -1.670   -1.045
+ GLP           O5     O    O2        0.000     -1.149    0.483   -0.695
+ GLP           C5     C    CH1       0.000     -2.279   -0.241   -0.216
+ GLP           H5     H    H         0.000     -2.079   -1.320   -0.288
+ GLP           C6     C    CH2       0.000     -3.502    0.106   -1.064
+ GLP           H61    H    H         0.000     -3.700    1.177   -0.995
+ GLP           H62    H    H         0.000     -4.368   -0.448   -0.696
+ GLP           O6     O    O2        0.000     -3.254   -0.246   -2.427
+ GLP           P      P    P         0.000     -4.575    0.144   -3.258
+ GLP           O1P    O    OP       -0.666     -4.832    1.629   -3.127
+ GLP           O2P    O    OP       -0.666     -4.376   -0.205   -4.716
+ GLP           O3P    O    OP       -0.666     -5.760   -0.624   -2.713
+ GLP           C4     C    CH1       0.000     -2.551    0.129    1.243
+ GLP           H4     H    H         0.000     -2.729    1.211    1.319
+ GLP           O4     O    OH1       0.000     -3.702   -0.577    1.709
+ GLP           HO4    H    H         0.000     -3.873   -0.341    2.631
+ GLP           C3     C    CH1       0.000     -1.333   -0.250    2.093
+ GLP           H3     H    H         0.000     -1.218   -1.343    2.104
+ GLP           O3     O    OH1       0.000     -1.514    0.224    3.430
+ GLP           HO3    H    H         0.000     -0.745   -0.017    3.963
+ GLP           C2     C    CH1       0.000     -0.086    0.391    1.477
+ GLP           H2     H    H         0.000     -0.154    1.484    1.565
+ GLP           N2     N    NH2       0.000      1.111   -0.085    2.183
+ GLP           HN22   H    H         0.000      1.025   -0.738    2.953
+ GLP           HN21   H    H         0.000      2.030    0.236    1.904
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GLP      C1     n/a    O5     START
+ GLP      H1     C1     .      .
+ GLP      O1     C1     HO1    .
+ GLP      HO1    O1     .      .
+ GLP      O5     C1     .      END
+ GLP      C5     O5     C4     .
+ GLP      H5     C5     .      .
+ GLP      C6     C5     O6     .
+ GLP      H61    C6     .      .
+ GLP      H62    C6     .      .
+ GLP      O6     C6     P      .
+ GLP      P      O6     O3P    .
+ GLP      O1P    P      .      .
+ GLP      O2P    P      .      .
+ GLP      O3P    P      .      .
+ GLP      C4     C5     C3     .
+ GLP      H4     C4     .      .
+ GLP      O4     C4     HO4    .
+ GLP      HO4    O4     .      .
+ GLP      C3     C4     C2     .
+ GLP      H3     C3     .      .
+ GLP      O3     C3     HO3    .
+ GLP      HO3    O3     .      .
+ GLP      C2     C3     N2     .
+ GLP      H2     C2     .      .
+ GLP      N2     C2     HN21   .
+ GLP      HN22   N2     .      .
+ GLP      HN21   N2     .      .
+ GLP      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GLP       C1        C2        single    1.524     0.020     1.524     0.020     
+GLP       O1        C1        single    1.432     0.020     1.432     0.020     
+GLP       O5        C1        single    1.426     0.020     1.426     0.020     
+GLP       H1        C1        single    1.089     0.010     0.989     0.005     
+GLP       C2        C3        single    1.524     0.020     1.524     0.020     
+GLP       N2        C2        single    1.450     0.020     1.450     0.020     
+GLP       H2        C2        single    1.089     0.010     0.989     0.005     
+GLP       C3        C4        single    1.524     0.020     1.524     0.020     
+GLP       O3        C3        single    1.432     0.020     1.432     0.020     
+GLP       H3        C3        single    1.089     0.010     0.989     0.005     
+GLP       C4        C5        single    1.524     0.020     1.524     0.020     
+GLP       O4        C4        single    1.432     0.020     1.432     0.020     
+GLP       H4        C4        single    1.089     0.010     0.989     0.005     
+GLP       C6        C5        single    1.524     0.020     1.524     0.020     
+GLP       C5        O5        single    1.426     0.020     1.426     0.020     
+GLP       H5        C5        single    1.089     0.010     0.989     0.005     
+GLP       O6        C6        single    1.426     0.020     1.426     0.020     
+GLP       H61       C6        single    1.089     0.010     0.989     0.005     
+GLP       H62       C6        single    1.089     0.010     0.989     0.005     
+GLP       HO1       O1        single    0.970     0.012     0.839     0.014     
+GLP       HN21      N2        single    1.036     0.016     0.914     0.007     
+GLP       HN22      N2        single    1.036     0.016     0.914     0.007     
+GLP       HO3       O3        single    0.970     0.012     0.839     0.014     
+GLP       HO4       O4        single    0.970     0.012     0.839     0.014     
+GLP       P         O6        single    1.610     0.020     1.610     0.020     
+GLP       O1P       P         deloc     1.510     0.020     1.510     0.020     
+GLP       O2P       P         deloc     1.510     0.020     1.510     0.020     
+GLP       O3P       P         deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GLP      H1     C1     O1      109.470    3.000
+ GLP      H1     C1     O5      109.470    3.000
+ GLP      O1     C1     O5      109.470    3.000
+ GLP      H1     C1     C2      108.340    3.000
+ GLP      O1     C1     C2      109.470    3.000
+ GLP      O5     C1     C2      109.470    3.000
+ GLP      C1     O1     HO1     109.470    3.000
+ GLP      C1     O5     C5      111.800    3.000
+ GLP      O5     C5     H5      109.470    3.000
+ GLP      O5     C5     C6      109.470    3.000
+ GLP      O5     C5     C4      109.470    3.000
+ GLP      H5     C5     C6      108.340    3.000
+ GLP      H5     C5     C4      108.340    3.000
+ GLP      C6     C5     C4      111.000    3.000
+ GLP      C5     C6     H61     109.470    3.000
+ GLP      C5     C6     H62     109.470    3.000
+ GLP      C5     C6     O6      109.470    3.000
+ GLP      H61    C6     H62     107.900    3.000
+ GLP      H61    C6     O6      109.470    3.000
+ GLP      H62    C6     O6      109.470    3.000
+ GLP      C6     O6     P       120.500    3.000
+ GLP      O6     P      O1P     108.200    3.000
+ GLP      O6     P      O2P     108.200    3.000
+ GLP      O6     P      O3P     108.200    3.000
+ GLP      O1P    P      O2P     119.900    3.000
+ GLP      O1P    P      O3P     119.900    3.000
+ GLP      O2P    P      O3P     119.900    3.000
+ GLP      C5     C4     H4      108.340    3.000
+ GLP      C5     C4     O4      109.470    3.000
+ GLP      C5     C4     C3      111.000    3.000
+ GLP      H4     C4     O4      109.470    3.000
+ GLP      H4     C4     C3      108.340    3.000
+ GLP      O4     C4     C3      109.470    3.000
+ GLP      C4     O4     HO4     109.470    3.000
+ GLP      C4     C3     H3      108.340    3.000
+ GLP      C4     C3     O3      109.470    3.000
+ GLP      C4     C3     C2      111.000    3.000
+ GLP      H3     C3     O3      109.470    3.000
+ GLP      H3     C3     C2      108.340    3.000
+ GLP      O3     C3     C2      109.470    3.000
+ GLP      C3     O3     HO3     109.470    3.000
+ GLP      C3     C2     H2      108.340    3.000
+ GLP      C3     C2     N2      109.470    3.000
+ GLP      C3     C2     C1      111.000    3.000
+ GLP      H2     C2     N2      109.470    3.000
+ GLP      H2     C2     C1      108.340    3.000
+ GLP      N2     C2     C1      109.470    3.000
+ GLP      C2     N2     HN22    120.000    3.000
+ GLP      C2     N2     HN21    120.000    3.000
+ GLP      HN22   N2     HN21    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GLP      var_1    O5     C1     O1     HO1       59.754   20.000   1
+ GLP      var_2    C1     O5     C5     C4        60.000   20.000   1
+ GLP      var_3    O5     C5     C6     O6        60.002   20.000   3
+ GLP      var_4    C5     C6     O6     P        179.986   20.000   1
+ GLP      var_5    C6     O6     P      O3P      -59.990   20.000   1
+ GLP      var_6    O5     C5     C4     C3       -60.000   20.000   3
+ GLP      var_7    C5     C4     O4     HO4      179.999   20.000   1
+ GLP      var_8    C5     C4     C3     C2        60.000   20.000   3
+ GLP      var_9    C4     C3     O3     HO3      179.957   20.000   1
+ GLP      var_10   C4     C3     C2     N2       180.000   20.000   3
+ GLP      var_11   C3     C2     C1     O5        60.000   20.000   3
+ GLP      var_12   C3     C2     N2     HN21     179.797   20.000   1
+ GLP      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GLP      chir_01  C1     C2     O1     O5        negativ
+ GLP      chir_02  C2     C1     C3     N2        negativ
+ GLP      chir_03  C3     C2     C4     O3        positiv
+ GLP      chir_04  C4     C3     C5     O4        negativ
+ GLP      chir_05  C5     C4     C6     O5        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GLP      plan-1    N2        0.020
+ GLP      plan-1    C2        0.020
+ GLP      plan-1    HN21      0.020
+ GLP      plan-1    HN22      0.020
+# ------------------------------------------------------

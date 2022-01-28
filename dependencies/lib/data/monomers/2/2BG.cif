@@ -1,0 +1,169 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2BG     2BG      "1-(1,3-benzothiazol-2-yl)methanamine"     NON-POLYMER     19     11     .     
+#
+data_comp_2BG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2BG     NAG     N       NRD5    0       -0.748      0.765       -0.572      
+2BG     CAJ     C       CR56    0       0.608       0.558       -0.323      
+2BG     CAD     C       CR16    0       1.579       1.559       -0.213      
+2BG     CAB     C       CR16    0       2.889       1.192       0.038       
+2BG     CAC     C       CR16    0       3.253       -0.149      0.181       
+2BG     CAE     C       CR16    0       2.309       -1.154      0.075       
+2BG     CAK     C       CR56    0       0.982       -0.789      -0.178      
+2BG     SAH     S       S2      0       -0.414      -1.796      -0.363      
+2BG     CAI     C       CR5     0       -1.379      -0.362      -0.610      
+2BG     CAF     C       CH2     0       -2.856      -0.450      -0.852      
+2BG     NAA     N       NT2     0       -3.659      -0.454      0.380       
+2BG     H1      H       H       0       1.338       2.461       -0.308      
+2BG     H2      H       H       0       3.546       1.860       0.113       
+2BG     H3      H       H       0       4.152       -0.371      0.351       
+2BG     H4      H       H       0       2.551       -2.057      0.171       
+2BG     H5      H       H       0       -3.059      -1.275      -1.348      
+2BG     H6      H       H       0       -3.145      0.315       -1.399      
+2BG     H7      H       H       0       -3.441      0.306       0.823       
+2BG     H8      H       H       0       -3.362      -1.155      0.870       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2BG       CAC       CAE       DOUBLE    y         1.376     0.010     1.376     0.010     
+2BG       CAE       CAK       SINGLE    y         1.393     0.010     1.393     0.010     
+2BG       CAB       CAC       SINGLE    y         1.388     0.012     1.388     0.012     
+2BG       CAK       SAH       SINGLE    n         1.731     0.010     1.731     0.010     
+2BG       SAH       CAI       SINGLE    n         1.745     0.010     1.745     0.010     
+2BG       CAJ       CAK       DOUBLE    y         1.400     0.010     1.400     0.010     
+2BG       CAD       CAB       DOUBLE    y         1.377     0.010     1.377     0.010     
+2BG       CAJ       CAD       SINGLE    y         1.392     0.010     1.392     0.010     
+2BG       NAG       CAJ       SINGLE    n         1.394     0.010     1.394     0.010     
+2BG       NAG       CAI       DOUBLE    n         1.292     0.010     1.292     0.010     
+2BG       CAI       CAF       SINGLE    n         1.498     0.010     1.498     0.010     
+2BG       CAF       NAA       SINGLE    n         1.467     0.015     1.467     0.015     
+2BG       CAD       H1        SINGLE    n         1.082     0.013     0.938     0.016     
+2BG       CAB       H2        SINGLE    n         1.082     0.013     0.940     0.013     
+2BG       CAC       H3        SINGLE    n         1.082     0.013     0.942     0.020     
+2BG       CAE       H4        SINGLE    n         1.082     0.013     0.939     0.013     
+2BG       CAF       H5        SINGLE    n         1.089     0.010     0.984     0.012     
+2BG       CAF       H6        SINGLE    n         1.089     0.010     0.984     0.012     
+2BG       NAA       H7        SINGLE    n         1.036     0.016     0.905     0.020     
+2BG       NAA       H8        SINGLE    n         1.036     0.016     0.905     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2BG         CAJ         NAG         CAI     110.445    1.50
+2BG         CAK         CAJ         CAD     119.444    1.50
+2BG         CAK         CAJ         NAG     115.142    1.50
+2BG         CAD         CAJ         NAG     125.415    1.50
+2BG         CAB         CAD         CAJ     118.664    1.50
+2BG         CAB         CAD          H1     121.159    1.50
+2BG         CAJ         CAD          H1     120.177    1.50
+2BG         CAC         CAB         CAD     121.604    1.50
+2BG         CAC         CAB          H2     119.326    1.50
+2BG         CAD         CAB          H2     119.070    1.50
+2BG         CAE         CAC         CAB     121.023    1.50
+2BG         CAE         CAC          H3     119.512    1.50
+2BG         CAB         CAC          H3     119.465    1.50
+2BG         CAC         CAE         CAK     117.935    1.50
+2BG         CAC         CAE          H4     121.100    1.50
+2BG         CAK         CAE          H4     120.959    1.50
+2BG         CAE         CAK         SAH     128.968    1.50
+2BG         CAE         CAK         CAJ     121.335    1.50
+2BG         SAH         CAK         CAJ     109.697    1.50
+2BG         CAK         SAH         CAI      88.946    1.50
+2BG         SAH         CAI         NAG     115.909    1.50
+2BG         SAH         CAI         CAF     121.472    2.45
+2BG         NAG         CAI         CAF     122.619    2.19
+2BG         CAI         CAF         NAA     111.849    2.38
+2BG         CAI         CAF          H5     109.372    1.50
+2BG         CAI         CAF          H6     109.372    1.50
+2BG         NAA         CAF          H5     107.542    2.93
+2BG         NAA         CAF          H6     107.542    2.93
+2BG          H5         CAF          H6     108.002    1.50
+2BG         CAF         NAA          H7     104.789    3.00
+2BG         CAF         NAA          H8     104.789    3.00
+2BG          H7         NAA          H8     107.163    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2BG             sp2_sp2_1         CAK         CAJ         NAG         CAI       0.000   10.00     2
+2BG             sp2_sp2_4         CAF         CAI         NAG         CAJ     180.000   10.00     2
+2BG              const_21         CAB         CAD         CAJ         CAK       0.000   10.00     2
+2BG       const_sp2_sp2_1         CAD         CAJ         CAK         CAE       0.000   10.00     2
+2BG              const_17         CAC         CAB         CAD         CAJ       0.000   10.00     2
+2BG              const_13         CAD         CAB         CAC         CAE       0.000   10.00     2
+2BG       const_sp2_sp2_9         CAB         CAC         CAE         CAK       0.000   10.00     2
+2BG       const_sp2_sp2_6         CAC         CAE         CAK         SAH     180.000   10.00     2
+2BG             sp2_sp3_6         SAH         CAI         CAF         NAA     -90.000   10.00     6
+2BG             sp3_sp3_1         CAI         CAF         NAA          H7     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+2BG    plan-1         CAB   0.020
+2BG    plan-1         CAC   0.020
+2BG    plan-1         CAD   0.020
+2BG    plan-1         CAE   0.020
+2BG    plan-1         CAJ   0.020
+2BG    plan-1         CAK   0.020
+2BG    plan-1          H1   0.020
+2BG    plan-1          H2   0.020
+2BG    plan-1          H3   0.020
+2BG    plan-1          H4   0.020
+2BG    plan-1         NAG   0.020
+2BG    plan-1         SAH   0.020
+2BG    plan-2         CAF   0.020
+2BG    plan-2         CAI   0.020
+2BG    plan-2         NAG   0.020
+2BG    plan-2         SAH   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2BG SMILES           ACDLabs              12.01 n1c2ccccc2sc1CN
+2BG InChI            InChI                1.03  "InChI=1S/C8H8N2S/c9-5-8-10-6-3-1-2-4-7(6)11-8/h1-4H,5,9H2"
+2BG InChIKey         InChI                1.03  VLBUERZRFSORRZ-UHFFFAOYSA-N
+2BG SMILES_CANONICAL CACTVS               3.385 NCc1sc2ccccc2n1
+2BG SMILES           CACTVS               3.385 NCc1sc2ccccc2n1
+2BG SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1ccc2c(c1)nc(s2)CN"
+2BG SMILES           "OpenEye OEToolkits" 1.7.6 "c1ccc2c(c1)nc(s2)CN"
+2BG ?                acedrg               202         "dictionary generator"                  
+2BG ?                acedrg_database      11          "data source"                           
+2BG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2BG ?                refmac5              5.8.0189    "optimization tool"                     

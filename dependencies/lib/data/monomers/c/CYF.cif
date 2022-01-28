@@ -1,0 +1,462 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CYF      CYF '"5-[2-(2-AMINO-2-CARBAMOYL-ETHYLSULF' non-polymer        58  36 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CYF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CYF           O      O    O         0.000      0.000    0.000    0.000
+ CYF           C      C    C         0.000     -0.582   -0.829   -0.665
+ CYF           NT     N    NH2       0.000      0.013   -1.357   -1.753
+ CYF           HNT2   H    H         0.000     -0.468   -2.051   -2.313
+ CYF           HNT1   H    H         0.000      0.946   -1.064   -2.018
+ CYF           CA     C    CH1       0.000     -1.970   -1.269   -0.278
+ CYF           HA     H    H         0.000     -2.126   -2.310   -0.593
+ CYF           N      N    NH2       0.000     -2.125   -1.170    1.179
+ CYF           H2     H    H         0.000     -2.344   -1.993    1.727
+ CYF           H      H    H         0.000     -2.014   -0.277    1.646
+ CYF           CB     C    CH2       0.000     -3.000   -0.369   -0.962
+ CYF           HB3    H    H         0.000     -2.883   -0.441   -2.045
+ CYF           HB2    H    H         0.000     -2.844    0.665   -0.648
+ CYF           SG     S    S2        0.000     -4.671   -0.898   -0.496
+ CYF           CAL    C    CH2       0.000     -5.656    0.308   -1.425
+ CYF           HAL3   H    H         0.000     -5.440    0.209   -2.491
+ CYF           HAL2   H    H         0.000     -5.400    1.317   -1.095
+ CYF           CL     C    C         0.000     -7.121    0.054   -1.182
+ CYF           OL     O    O         0.000     -7.467   -0.852   -0.454
+ CYF           NL     N    NH1       0.000     -8.047    0.833   -1.774
+ CYF           HNL    H    H         0.000     -7.760    1.635   -2.317
+ CYF           C17    C    CR6       0.000     -9.408    0.531   -1.637
+ CYF           C16    C    CR16      0.000    -10.346    1.555   -1.608
+ CYF           H16    H    H         0.000    -10.023    2.586   -1.690
+ CYF           C15    C    CR16      0.000    -11.690    1.263   -1.474
+ CYF           H15    H    H         0.000    -12.417    2.066   -1.453
+ CYF           C18    C    CR16      0.000     -9.818   -0.787   -1.537
+ CYF           H18    H    H         0.000     -9.088   -1.587   -1.568
+ CYF           C19    C    CR6       0.000    -11.174   -1.083   -1.396
+ CYF           C20    C    C         0.000    -11.619   -2.487   -1.282
+ CYF           O5     O    OC       -0.500    -11.100   -3.367   -2.004
+ CYF           O4     O    OC       -0.500    -12.515   -2.796   -0.466
+ CYF           C14    C    CR6       0.000    -12.109   -0.046   -1.368
+ CYF           C10    C    CH1       0.000    -13.576   -0.360   -1.222
+ CYF           H10    H    H         0.000    -13.728   -1.448   -1.252
+ CYF           C9     C    CR6       0.000    -14.085    0.189    0.086
+ CYF           C8     C    CR16      0.000    -13.898   -0.544    1.245
+ CYF           H8     H    H         0.000    -13.380   -1.494    1.205
+ CYF           C7     C    CR16      0.000    -14.370   -0.069    2.452
+ CYF           H7     H    H         0.000    -14.222   -0.643    3.358
+ CYF           C6     C    CR6       0.000    -15.033    1.148    2.499
+ CYF           O3     O    OH1       0.000    -15.505    1.619    3.684
+ CYF           HO3    H    H         0.000    -14.824    2.158    4.110
+ CYF           C5     C    CR16      0.000    -15.215    1.883    1.342
+ CYF           H5     H    H         0.000    -15.734    2.832    1.384
+ CYF           C4     C    CR6       0.000    -14.734    1.409    0.120
+ CYF           O2     O    O2        0.000    -14.903    2.183   -0.966
+ CYF           C11    C    CR6       0.000    -14.350    0.295   -2.339
+ CYF           C3     C    CR6       0.000    -14.975    1.510   -2.127
+ CYF           C2     C    CR16      0.000    -15.713    2.077   -3.167
+ CYF           HC2    H    H         0.000    -16.219    3.023   -3.014
+ CYF           C12    C    CR16      0.000    -14.434   -0.340   -3.564
+ CYF           H12    H    H         0.000    -13.932   -1.287   -3.717
+ CYF           C13    C    CR16      0.000    -15.157    0.229   -4.594
+ CYF           H13    H    H         0.000    -15.220   -0.267   -5.554
+ CYF           C1     C    CR6       0.000    -15.803    1.440   -4.391
+ CYF           O1     O    OH1       0.000    -16.524    2.002   -5.397
+ CYF           HO1    H    H         0.000    -15.951    2.578   -5.921
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CYF      O      n/a    C      START
+ CYF      C      O      CA     .
+ CYF      NT     C      HNT1   .
+ CYF      HNT2   NT     .      .
+ CYF      HNT1   NT     .      .
+ CYF      CA     C      CB     .
+ CYF      HA     CA     .      .
+ CYF      N      CA     H      .
+ CYF      H2     N      .      .
+ CYF      H      N      .      .
+ CYF      CB     CA     SG     .
+ CYF      HB3    CB     .      .
+ CYF      HB2    CB     .      .
+ CYF      SG     CB     CAL    .
+ CYF      CAL    SG     CL     .
+ CYF      HAL3   CAL    .      .
+ CYF      HAL2   CAL    .      .
+ CYF      CL     CAL    NL     .
+ CYF      OL     CL     .      .
+ CYF      NL     CL     C17    .
+ CYF      HNL    NL     .      .
+ CYF      C17    NL     C18    .
+ CYF      C16    C17    C15    .
+ CYF      H16    C16    .      .
+ CYF      C15    C16    H15    .
+ CYF      H15    C15    .      .
+ CYF      C18    C17    C19    .
+ CYF      H18    C18    .      .
+ CYF      C19    C18    C14    .
+ CYF      C20    C19    O4     .
+ CYF      O5     C20    .      .
+ CYF      O4     C20    .      .
+ CYF      C14    C19    C10    .
+ CYF      C10    C14    C11    .
+ CYF      H10    C10    .      .
+ CYF      C9     C10    C4     .
+ CYF      C8     C9     C7     .
+ CYF      H8     C8     .      .
+ CYF      C7     C8     C6     .
+ CYF      H7     C7     .      .
+ CYF      C6     C7     C5     .
+ CYF      O3     C6     HO3    .
+ CYF      HO3    O3     .      .
+ CYF      C5     C6     H5     .
+ CYF      H5     C5     .      .
+ CYF      C4     C9     O2     .
+ CYF      O2     C4     .      .
+ CYF      C11    C10    C12    .
+ CYF      C3     C11    C2     .
+ CYF      C2     C3     HC2    .
+ CYF      HC2    C2     .      .
+ CYF      C12    C11    C13    .
+ CYF      H12    C12    .      .
+ CYF      C13    C12    C1     .
+ CYF      H13    C13    .      .
+ CYF      C1     C13    O1     .
+ CYF      O1     C1     HO1    .
+ CYF      HO1    O1     .      END
+ CYF      C1     C2     .    ADD
+ CYF      C3     O2     .    ADD
+ CYF      C4     C5     .    ADD
+ CYF      C14    C15    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CYF       O1        C1        single    1.362     0.020     1.362     0.020     
+CYF       C1        C2        double    1.390     0.020     1.390     0.020     
+CYF       C1        C13       single    1.390     0.020     1.390     0.020     
+CYF       HO1       O1        single    0.970     0.012     0.839     0.014     
+CYF       C2        C3        single    1.390     0.020     1.390     0.020     
+CYF       HC2       C2        single    1.082     0.013     0.975     0.010     
+CYF       C3        O2        single    1.370     0.020     1.370     0.020     
+CYF       C3        C11       double    1.487     0.020     1.487     0.020     
+CYF       O2        C4        single    1.370     0.020     1.370     0.020     
+CYF       C4        C5        double    1.390     0.020     1.390     0.020     
+CYF       C4        C9        single    1.487     0.020     1.487     0.020     
+CYF       C5        C6        single    1.390     0.020     1.390     0.020     
+CYF       H5        C5        single    1.082     0.013     0.975     0.010     
+CYF       O3        C6        single    1.362     0.020     1.362     0.020     
+CYF       C6        C7        double    1.390     0.020     1.390     0.020     
+CYF       HO3       O3        single    0.970     0.012     0.839     0.014     
+CYF       C7        C8        single    1.390     0.020     1.390     0.020     
+CYF       H7        C7        single    1.082     0.013     0.975     0.010     
+CYF       C8        C9        double    1.390     0.020     1.390     0.020     
+CYF       H8        C8        single    1.082     0.013     0.975     0.010     
+CYF       C9        C10       single    1.480     0.020     1.480     0.020     
+CYF       C11       C10       single    1.480     0.020     1.480     0.020     
+CYF       C10       C14       single    1.480     0.020     1.480     0.020     
+CYF       H10       C10       single    1.089     0.010     0.989     0.005     
+CYF       C12       C11       single    1.390     0.020     1.390     0.020     
+CYF       C13       C12       double    1.390     0.020     1.390     0.020     
+CYF       H12       C12       single    1.082     0.013     0.975     0.010     
+CYF       H13       C13       single    1.082     0.013     0.975     0.010     
+CYF       C14       C15       double    1.390     0.020     1.390     0.020     
+CYF       C14       C19       single    1.487     0.020     1.487     0.020     
+CYF       C15       C16       single    1.390     0.020     1.390     0.020     
+CYF       H15       C15       single    1.082     0.013     0.975     0.010     
+CYF       C16       C17       double    1.390     0.020     1.390     0.020     
+CYF       H16       C16       single    1.082     0.013     0.975     0.010     
+CYF       C18       C17       single    1.390     0.020     1.390     0.020     
+CYF       C17       NL        single    1.350     0.020     1.350     0.020     
+CYF       C19       C18       double    1.390     0.020     1.390     0.020     
+CYF       H18       C18       single    1.082     0.013     0.975     0.010     
+CYF       C20       C19       single    1.500     0.020     1.500     0.020     
+CYF       O4        C20       deloc     1.250     0.020     1.250     0.020     
+CYF       O5        C20       deloc     1.250     0.020     1.250     0.020     
+CYF       NL        CL        single    1.330     0.020     1.330     0.020     
+CYF       HNL       NL        single    1.016     0.010     0.899     0.007     
+CYF       OL        CL        double    1.220     0.020     1.220     0.020     
+CYF       CL        CAL       single    1.510     0.020     1.510     0.020     
+CYF       CAL       SG        single    1.762     0.020     1.762     0.020     
+CYF       HAL3      CAL       single    1.089     0.010     0.989     0.005     
+CYF       HAL2      CAL       single    1.089     0.010     0.989     0.005     
+CYF       SG        CB        single    1.762     0.020     1.762     0.020     
+CYF       CB        CA        single    1.524     0.020     1.524     0.020     
+CYF       HB3       CB        single    1.089     0.010     0.989     0.005     
+CYF       HB2       CB        single    1.089     0.010     0.989     0.005     
+CYF       N         CA        single    1.450     0.020     1.450     0.020     
+CYF       CA        C         single    1.500     0.020     1.500     0.020     
+CYF       HA        CA        single    1.089     0.010     0.989     0.005     
+CYF       H         N         single    1.036     0.016     0.914     0.007     
+CYF       H2        N         single    1.036     0.016     0.914     0.007     
+CYF       C         O         double    1.220     0.020     1.220     0.020     
+CYF       NT        C         single    1.332     0.020     1.332     0.020     
+CYF       HNT1      NT        single    1.016     0.010     0.899     0.007     
+CYF       HNT2      NT        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CYF      O      C      NT      123.000    3.000
+ CYF      O      C      CA      120.500    3.000
+ CYF      NT     C      CA      120.000    3.000
+ CYF      C      NT     HNT2    120.000    3.000
+ CYF      C      NT     HNT1    120.000    3.000
+ CYF      HNT2   NT     HNT1    120.000    3.000
+ CYF      C      CA     HA      108.810    3.000
+ CYF      C      CA     N       109.470    3.000
+ CYF      C      CA     CB      109.470    3.000
+ CYF      HA     CA     N       109.470    3.000
+ CYF      HA     CA     CB      108.340    3.000
+ CYF      N      CA     CB      109.470    3.000
+ CYF      CA     N      H2      120.000    3.000
+ CYF      CA     N      H       120.000    3.000
+ CYF      H2     N      H       120.000    3.000
+ CYF      CA     CB     HB3     109.470    3.000
+ CYF      CA     CB     HB2     109.470    3.000
+ CYF      CA     CB     SG      109.500    3.000
+ CYF      HB3    CB     HB2     107.900    3.000
+ CYF      HB3    CB     SG      109.500    3.000
+ CYF      HB2    CB     SG      109.500    3.000
+ CYF      CB     SG     CAL     100.066    3.000
+ CYF      SG     CAL    HAL3    109.500    3.000
+ CYF      SG     CAL    HAL2    109.500    3.000
+ CYF      SG     CAL    CL      109.500    3.000
+ CYF      HAL3   CAL    HAL2    107.900    3.000
+ CYF      HAL3   CAL    CL      109.470    3.000
+ CYF      HAL2   CAL    CL      109.470    3.000
+ CYF      CAL    CL     OL      120.500    3.000
+ CYF      CAL    CL     NL      116.500    3.000
+ CYF      OL     CL     NL      123.000    3.000
+ CYF      CL     NL     HNL     120.000    3.000
+ CYF      CL     NL     C17     120.000    3.000
+ CYF      HNL    NL     C17     120.000    3.000
+ CYF      NL     C17    C16     120.000    3.000
+ CYF      NL     C17    C18     120.000    3.000
+ CYF      C16    C17    C18     120.000    3.000
+ CYF      C17    C16    H16     120.000    3.000
+ CYF      C17    C16    C15     120.000    3.000
+ CYF      H16    C16    C15     120.000    3.000
+ CYF      C16    C15    H15     120.000    3.000
+ CYF      C16    C15    C14     120.000    3.000
+ CYF      H15    C15    C14     120.000    3.000
+ CYF      C17    C18    H18     120.000    3.000
+ CYF      C17    C18    C19     120.000    3.000
+ CYF      H18    C18    C19     120.000    3.000
+ CYF      C18    C19    C20     120.000    3.000
+ CYF      C18    C19    C14     120.000    3.000
+ CYF      C20    C19    C14     120.000    3.000
+ CYF      C19    C20    O5      120.000    3.000
+ CYF      C19    C20    O4      120.000    3.000
+ CYF      O5     C20    O4      123.000    3.000
+ CYF      C19    C14    C10     120.000    3.000
+ CYF      C19    C14    C15     120.000    3.000
+ CYF      C10    C14    C15     120.000    3.000
+ CYF      C14    C10    H10     109.470    3.000
+ CYF      C14    C10    C9      109.500    3.000
+ CYF      C14    C10    C11     109.500    3.000
+ CYF      H10    C10    C9      109.470    3.000
+ CYF      H10    C10    C11     109.470    3.000
+ CYF      C9     C10    C11     109.500    3.000
+ CYF      C10    C9     C8      120.000    3.000
+ CYF      C10    C9     C4      120.000    3.000
+ CYF      C8     C9     C4      120.000    3.000
+ CYF      C9     C8     H8      120.000    3.000
+ CYF      C9     C8     C7      120.000    3.000
+ CYF      H8     C8     C7      120.000    3.000
+ CYF      C8     C7     H7      120.000    3.000
+ CYF      C8     C7     C6      120.000    3.000
+ CYF      H7     C7     C6      120.000    3.000
+ CYF      C7     C6     O3      120.000    3.000
+ CYF      C7     C6     C5      120.000    3.000
+ CYF      O3     C6     C5      120.000    3.000
+ CYF      C6     O3     HO3     109.470    3.000
+ CYF      C6     C5     H5      120.000    3.000
+ CYF      C6     C5     C4      120.000    3.000
+ CYF      H5     C5     C4      120.000    3.000
+ CYF      C9     C4     O2      120.000    3.000
+ CYF      C9     C4     C5      120.000    3.000
+ CYF      O2     C4     C5      120.000    3.000
+ CYF      C4     O2     C3      120.000    3.000
+ CYF      C10    C11    C3      120.000    3.000
+ CYF      C10    C11    C12     120.000    3.000
+ CYF      C3     C11    C12     120.000    3.000
+ CYF      C11    C3     C2      120.000    3.000
+ CYF      C11    C3     O2      120.000    3.000
+ CYF      C2     C3     O2      120.000    3.000
+ CYF      C3     C2     HC2     120.000    3.000
+ CYF      C3     C2     C1      120.000    3.000
+ CYF      HC2    C2     C1      120.000    3.000
+ CYF      C11    C12    H12     120.000    3.000
+ CYF      C11    C12    C13     120.000    3.000
+ CYF      H12    C12    C13     120.000    3.000
+ CYF      C12    C13    H13     120.000    3.000
+ CYF      C12    C13    C1      120.000    3.000
+ CYF      H13    C13    C1      120.000    3.000
+ CYF      C13    C1     O1      120.000    3.000
+ CYF      C13    C1     C2      120.000    3.000
+ CYF      O1     C1     C2      120.000    3.000
+ CYF      C1     O1     HO1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CYF      CONST_1  O      C      NT     HNT1       0.000    0.000   0
+ CYF      var_1    O      C      CA     CB        89.954   20.000   3
+ CYF      var_2    C      CA     N      H         59.974   20.000   1
+ CYF      var_3    C      CA     CB     SG       179.965   20.000   3
+ CYF      var_4    CA     CB     SG     CAL     -179.978   20.000   1
+ CYF      var_5    CB     SG     CAL    CL      -179.961   20.000   1
+ CYF      var_6    SG     CAL    CL     NL      -179.986   20.000   3
+ CYF      CONST_2  CAL    CL     NL     C17      180.000    0.000   0
+ CYF      var_7    CL     NL     C17    C18      -32.971   20.000   1
+ CYF      CONST_3  NL     C17    C16    C15      180.000    0.000   0
+ CYF      CONST_4  C17    C16    C15    C14        0.000    0.000   0
+ CYF      CONST_5  NL     C17    C18    C19      180.000    0.000   0
+ CYF      CONST_6  C17    C18    C19    C14        0.000    0.000   0
+ CYF      var_8    C18    C19    C20    O4       138.782   20.000   1
+ CYF      CONST_7  C18    C19    C14    C10      180.000    0.000   0
+ CYF      CONST_8  C19    C14    C15    C16        0.000    0.000   0
+ CYF      var_9    C19    C14    C10    C11     -126.259   20.000   1
+ CYF      var_10   C14    C10    C9     C4        90.000   20.000   1
+ CYF      CONST_9  C10    C9     C8     C7       180.000    0.000   0
+ CYF      CONST_10 C9     C8     C7     C6         0.000    0.000   0
+ CYF      CONST_11 C8     C7     C6     C5         0.000    0.000   0
+ CYF      var_11   C7     C6     O3     HO3       90.020   20.000   1
+ CYF      CONST_12 C7     C6     C5     C4         0.000    0.000   0
+ CYF      CONST_13 C10    C9     C4     O2         0.000    0.000   0
+ CYF      CONST_14 C9     C4     C5     C6         0.000    0.000   0
+ CYF      var_12   C9     C4     O2     C3        30.000   20.000   1
+ CYF      var_13   C14    C10    C11    C12       90.000   20.000   1
+ CYF      CONST_15 C10    C11    C3     C2       180.000    0.000   0
+ CYF      var_14   C11    C3     O2     C4       -30.000   20.000   1
+ CYF      CONST_16 C11    C3     C2     C1         0.000    0.000   0
+ CYF      CONST_17 C10    C11    C12    C13      180.000    0.000   0
+ CYF      CONST_18 C11    C12    C13    C1         0.000    0.000   0
+ CYF      CONST_19 C12    C13    C1     O1       180.000    0.000   0
+ CYF      CONST_20 C13    C1     C2     C3         0.000    0.000   0
+ CYF      var_15   C13    C1     O1     HO1      -89.936   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CYF      chir_01  C10    C9     C11    C14       negativ
+ CYF      chir_02  CA     CB     N      C         positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CYF      plan-1    C1        0.020
+ CYF      plan-1    O1        0.020
+ CYF      plan-1    C2        0.020
+ CYF      plan-1    C13       0.020
+ CYF      plan-1    C3        0.020
+ CYF      plan-1    C11       0.020
+ CYF      plan-1    C12       0.020
+ CYF      plan-1    HC2       0.020
+ CYF      plan-1    O2        0.020
+ CYF      plan-1    C10       0.020
+ CYF      plan-1    H12       0.020
+ CYF      plan-1    H13       0.020
+ CYF      plan-2    C4        0.020
+ CYF      plan-2    O2        0.020
+ CYF      plan-2    C5        0.020
+ CYF      plan-2    C9        0.020
+ CYF      plan-2    C6        0.020
+ CYF      plan-2    C7        0.020
+ CYF      plan-2    C8        0.020
+ CYF      plan-2    H5        0.020
+ CYF      plan-2    O3        0.020
+ CYF      plan-2    H7        0.020
+ CYF      plan-2    H8        0.020
+ CYF      plan-2    C10       0.020
+ CYF      plan-3    C14       0.020
+ CYF      plan-3    C10       0.020
+ CYF      plan-3    C15       0.020
+ CYF      plan-3    C19       0.020
+ CYF      plan-3    C16       0.020
+ CYF      plan-3    C17       0.020
+ CYF      plan-3    C18       0.020
+ CYF      plan-3    H15       0.020
+ CYF      plan-3    H16       0.020
+ CYF      plan-3    NL        0.020
+ CYF      plan-3    H18       0.020
+ CYF      plan-3    C20       0.020
+ CYF      plan-3    HNL       0.020
+ CYF      plan-4    C20       0.020
+ CYF      plan-4    C19       0.020
+ CYF      plan-4    O4        0.020
+ CYF      plan-4    O5        0.020
+ CYF      plan-5    NL        0.020
+ CYF      plan-5    C17       0.020
+ CYF      plan-5    CL        0.020
+ CYF      plan-5    HNL       0.020
+ CYF      plan-6    CL        0.020
+ CYF      plan-6    NL        0.020
+ CYF      plan-6    OL        0.020
+ CYF      plan-6    CAL       0.020
+ CYF      plan-6    HNL       0.020
+ CYF      plan-7    N         0.020
+ CYF      plan-7    CA        0.020
+ CYF      plan-7    H         0.020
+ CYF      plan-7    H2        0.020
+ CYF      plan-8    C         0.020
+ CYF      plan-8    CA        0.020
+ CYF      plan-8    O         0.020
+ CYF      plan-8    NT        0.020
+ CYF      plan-8    HNT2      0.020
+ CYF      plan-8    HNT1      0.020
+ CYF      plan-9    NT        0.020
+ CYF      plan-9    C         0.020
+ CYF      plan-9    HNT1      0.020
+ CYF      plan-9    HNT2      0.020
+# ------------------------------------------------------

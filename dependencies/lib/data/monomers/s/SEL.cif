@@ -1,0 +1,157 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SEL      SEL '2-AMINO-1,3-PROPANEDIOL             ' non-polymer        15   6 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SEL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SEL           OXT    O    OH1       0.000      0.000    0.000    0.000
+ SEL           HXT    H    H         0.000      0.766   -0.430   -0.404
+ SEL           C      C    CH2       0.000     -1.198   -0.611   -0.484
+ SEL           H21    H    H         0.000     -1.196   -1.672   -0.224
+ SEL           H22    H    H         0.000     -1.248   -0.504   -1.569
+ SEL           CA     C    CH1       0.000     -2.411    0.069    0.154
+ SEL           HA1    H    H         0.000     -2.314    0.039    1.249
+ SEL           N      N    NH2       0.000     -2.480    1.467   -0.293
+ SEL           HN2    H    H         0.000     -3.264    1.788   -0.848
+ SEL           HN1    H    H         0.000     -1.744    2.119   -0.049
+ SEL           CB     C    CH2       0.000     -3.686   -0.664   -0.266
+ SEL           HB1    H    H         0.000     -3.597   -1.723   -0.014
+ SEL           HB2    H    H         0.000     -3.828   -0.558   -1.344
+ SEL           OG     O    OH1       0.000     -4.807   -0.102    0.421
+ SEL           HOG    H    H         0.000     -5.613   -0.565    0.155
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SEL      OXT    n/a    C      START
+ SEL      HXT    OXT    .      .
+ SEL      C      OXT    CA     .
+ SEL      H21    C      .      .
+ SEL      H22    C      .      .
+ SEL      CA     C      CB     .
+ SEL      HA1    CA     .      .
+ SEL      N      CA     HN1    .
+ SEL      HN2    N      .      .
+ SEL      HN1    N      .      .
+ SEL      CB     CA     OG     .
+ SEL      HB1    CB     .      .
+ SEL      HB2    CB     .      .
+ SEL      OG     CB     HOG    .
+ SEL      HOG    OG     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SEL       N         CA        single    1.450     0.020     1.450     0.020     
+SEL       HN1       N         single    1.036     0.016     0.914     0.007     
+SEL       HN2       N         single    1.036     0.016     0.914     0.007     
+SEL       CB        CA        single    1.524     0.020     1.524     0.020     
+SEL       CA        C         single    1.524     0.020     1.524     0.020     
+SEL       HA1       CA        single    1.089     0.010     0.989     0.005     
+SEL       OG        CB        single    1.432     0.020     1.432     0.020     
+SEL       HB1       CB        single    1.089     0.010     0.989     0.005     
+SEL       HB2       CB        single    1.089     0.010     0.989     0.005     
+SEL       HOG       OG        single    0.970     0.012     0.839     0.014     
+SEL       C         OXT       single    1.432     0.020     1.432     0.020     
+SEL       H21       C         single    1.089     0.010     0.989     0.005     
+SEL       H22       C         single    1.089     0.010     0.989     0.005     
+SEL       HXT       OXT       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SEL      HXT    OXT    C       109.470    3.000
+ SEL      OXT    C      H21     109.470    3.000
+ SEL      OXT    C      H22     109.470    3.000
+ SEL      OXT    C      CA      109.470    3.000
+ SEL      H21    C      H22     107.900    3.000
+ SEL      H21    C      CA      109.470    3.000
+ SEL      H22    C      CA      109.470    3.000
+ SEL      C      CA     HA1     108.340    3.000
+ SEL      C      CA     N       109.470    3.000
+ SEL      C      CA     CB      109.470    3.000
+ SEL      HA1    CA     N       109.470    3.000
+ SEL      HA1    CA     CB      108.340    3.000
+ SEL      N      CA     CB      109.470    3.000
+ SEL      CA     N      HN2     120.000    3.000
+ SEL      CA     N      HN1     120.000    3.000
+ SEL      HN2    N      HN1     120.000    3.000
+ SEL      CA     CB     HB1     109.470    3.000
+ SEL      CA     CB     HB2     109.470    3.000
+ SEL      CA     CB     OG      109.470    3.000
+ SEL      HB1    CB     HB2     107.900    3.000
+ SEL      HB1    CB     OG      109.470    3.000
+ SEL      HB2    CB     OG      109.470    3.000
+ SEL      CB     OG     HOG     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SEL      var_1    HXT    OXT    C      CA      -179.966   20.000   1
+ SEL      var_2    OXT    C      CA     CB      -175.006   20.000   3
+ SEL      var_3    C      CA     N      HN1      -63.926   20.000   1
+ SEL      var_4    C      CA     CB     OG       174.978   20.000   3
+ SEL      var_5    CA     CB     OG     HOG      179.967   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SEL      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SEL      plan-1    N         0.020
+ SEL      plan-1    CA        0.020
+ SEL      plan-1    HN1       0.020
+ SEL      plan-1    HN2       0.020
+# ------------------------------------------------------

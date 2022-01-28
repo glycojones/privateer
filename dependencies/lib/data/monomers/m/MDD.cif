@@ -1,0 +1,111 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MDD     MDD      MALONALDEHYDE     NON-POLYMER     9     5     .     
+#
+data_comp_MDD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MDD     OA4     O       O       0       -1.553      1.116       -0.838      
+MDD     CA5     C       C1      0       -1.300      0.189       -0.127      
+MDD     CA6     C       CH2     0       0.049       -0.524      -0.154      
+MDD     CA7     C       C1      0       1.203       0.365       0.305       
+MDD     OA8     O       O       0       2.336       -0.014      0.330       
+MDD     HA5     H       H       0       -1.928      -0.156      0.497       
+MDD     HA61    H       H       0       0.228       -0.830      -1.064      
+MDD     HA62    H       H       0       0.005       -1.309      0.424       
+MDD     HA7     H       H       0       0.957       1.244       0.569       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MDD       OA4       CA5       DOUBLE    n         1.195     0.020     1.195     0.020     
+MDD       CA5       CA6       SINGLE    n         1.526     0.020     1.526     0.020     
+MDD       CA6       CA7       SINGLE    n         1.526     0.020     1.526     0.020     
+MDD       CA7       OA8       DOUBLE    n         1.195     0.020     1.195     0.020     
+MDD       CA5       HA5       SINGLE    n         1.082     0.013     0.950     0.020     
+MDD       CA6       HA61      SINGLE    n         1.089     0.010     0.976     0.020     
+MDD       CA6       HA62      SINGLE    n         1.089     0.010     0.976     0.020     
+MDD       CA7       HA7       SINGLE    n         1.082     0.013     0.950     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MDD         OA4         CA5         CA6     122.573    1.72
+MDD         OA4         CA5         HA5     122.229    1.50
+MDD         CA6         CA5         HA5     115.198    1.50
+MDD         CA5         CA6         CA7     111.575    3.00
+MDD         CA5         CA6        HA61     108.731    1.50
+MDD         CA5         CA6        HA62     108.731    1.50
+MDD         CA7         CA6        HA61     108.731    1.50
+MDD         CA7         CA6        HA62     108.731    1.50
+MDD        HA61         CA6        HA62     107.635    1.72
+MDD         CA6         CA7         OA8     122.573    1.72
+MDD         CA6         CA7         HA7     115.198    1.50
+MDD         OA8         CA7         HA7     122.229    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MDD             sp2_sp3_2         OA4         CA5         CA6         CA7     120.000   10.00     6
+MDD             sp2_sp3_8         OA8         CA7         CA6         CA5     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MDD    plan-1         CA5   0.020
+MDD    plan-1         CA6   0.020
+MDD    plan-1         HA5   0.020
+MDD    plan-1         OA4   0.020
+MDD    plan-2         CA6   0.020
+MDD    plan-2         CA7   0.020
+MDD    plan-2         HA7   0.020
+MDD    plan-2         OA8   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MDD SMILES           ACDLabs              10.04 O=CCC=O
+MDD SMILES_CANONICAL CACTVS               3.341 O=CCC=O
+MDD SMILES           CACTVS               3.341 O=CCC=O
+MDD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C=O)C=O"
+MDD SMILES           "OpenEye OEToolkits" 1.5.0 "C(C=O)C=O"
+MDD InChI            InChI                1.03  InChI=1S/C3H4O2/c4-2-1-3-5/h2-3H,1H2
+MDD InChIKey         InChI                1.03  WSMYVTOQOOLQHP-UHFFFAOYSA-N
+MDD ?                acedrg               202         "dictionary generator"                  
+MDD ?                acedrg_database      11          "data source"                           
+MDD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MDD ?                refmac5              5.8.0189    "optimization tool"                     

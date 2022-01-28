@@ -1,0 +1,157 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2CL     2CL     "(2,6-DICHLOROPHENYL)ACETICACID"     NON-POLYMER     17     12     .     
+#
+data_comp_2CL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2CL     C1      C       CR6     0       0.291       -0.041      0.321       
+2CL     C2      C       CR6     0       -0.411      -1.244      0.083       
+2CL     C3      C       CR16    0       -1.776      -1.273      -0.195      
+2CL     C4      C       CR16    0       -2.486      -0.082      -0.248      
+2CL     C5      C       CR16    0       -1.846      1.128       -0.027      
+2CL     C6      C       CR6     0       -0.480      1.139       0.250       
+2CL     C7      C       CH2     0       1.776       -0.009      0.618       
+2CL     C8      C       C       0       2.636       0.256       -0.614      
+2CL     CL1     CL      CL      0       0.405       -2.790      0.127       
+2CL     CL2     CL      CL      0       0.252       2.705       0.513       
+2CL     O1      O       O       0       3.192       1.365       -0.718      
+2CL     O2      O       OC      -1      2.742       -0.651      -1.460      
+2CL     H3      H       H       0       -2.210      -2.092      -0.345      
+2CL     H4      H       H       0       -3.408      -0.096      -0.435      
+2CL     H5      H       H       0       -2.327      1.934       -0.062      
+2CL     H71     H       H       0       2.054       -0.853      1.014       
+2CL     H72     H       H       0       1.959       0.681       1.282       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2CL       C1        C2        DOUBLE    y         1.399     0.010     1.399     0.010     
+2CL       C1        C6        SINGLE    y         1.399     0.010     1.399     0.010     
+2CL       C1        C7        SINGLE    n         1.508     0.010     1.508     0.010     
+2CL       C2        C3        SINGLE    y         1.387     0.010     1.387     0.010     
+2CL       C2        CL1       SINGLE    n         1.746     0.013     1.746     0.013     
+2CL       C3        C4        DOUBLE    y         1.376     0.014     1.376     0.014     
+2CL       C4        C5        SINGLE    y         1.376     0.014     1.376     0.014     
+2CL       C5        C6        DOUBLE    y         1.387     0.010     1.387     0.010     
+2CL       C6        CL2       SINGLE    n         1.746     0.013     1.746     0.013     
+2CL       C7        C8        SINGLE    n         1.525     0.014     1.525     0.014     
+2CL       C8        O1        DOUBLE    n         1.244     0.020     1.244     0.020     
+2CL       C8        O2        SINGLE    n         1.244     0.020     1.244     0.020     
+2CL       C3        H3        SINGLE    n         1.082     0.013     0.939     0.018     
+2CL       C4        H4        SINGLE    n         1.082     0.013     0.941     0.013     
+2CL       C5        H5        SINGLE    n         1.082     0.013     0.939     0.018     
+2CL       C7        H71       SINGLE    n         1.089     0.010     0.975     0.011     
+2CL       C7        H72       SINGLE    n         1.089     0.010     0.975     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2CL          C2          C1          C6     116.323    1.50
+2CL          C2          C1          C7     121.839    1.50
+2CL          C6          C1          C7     121.839    1.50
+2CL          C1          C2          C3     122.677    1.50
+2CL          C1          C2         CL1     119.350    1.50
+2CL          C3          C2         CL1     117.974    1.50
+2CL          C2          C3          C4     119.050    1.50
+2CL          C2          C3          H3     120.362    1.50
+2CL          C4          C3          H3     120.588    1.50
+2CL          C3          C4          C5     120.224    1.50
+2CL          C3          C4          H4     119.888    1.50
+2CL          C5          C4          H4     119.888    1.50
+2CL          C4          C5          C6     119.050    1.50
+2CL          C4          C5          H5     120.588    1.50
+2CL          C6          C5          H5     120.362    1.50
+2CL          C1          C6          C5     122.677    1.50
+2CL          C1          C6         CL2     119.350    1.50
+2CL          C5          C6         CL2     117.974    1.50
+2CL          C1          C7          C8     113.985    2.64
+2CL          C1          C7         H71     108.957    1.50
+2CL          C1          C7         H72     108.957    1.50
+2CL          C8          C7         H71     108.710    1.50
+2CL          C8          C7         H72     108.710    1.50
+2CL         H71          C7         H72     107.676    1.52
+2CL          C7          C8          O1     118.115    1.50
+2CL          C7          C8          O2     118.115    1.50
+2CL          O1          C8          O2     123.770    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2CL       const_sp2_sp2_4          C7          C1          C2         CL1       0.000   10.00     2
+2CL              const_24          C7          C1          C6         CL2       0.000   10.00     2
+2CL             sp2_sp3_2          C2          C1          C7          C8     -90.000   10.00     6
+2CL       const_sp2_sp2_7         CL1          C2          C3          C4     180.000   10.00     2
+2CL       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+2CL              const_13          C3          C4          C5          C6       0.000   10.00     2
+2CL              const_18          C4          C5          C6         CL2     180.000   10.00     2
+2CL             sp2_sp3_8          O1          C8          C7          C1     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+2CL    plan-1          C1   0.020
+2CL    plan-1          C2   0.020
+2CL    plan-1          C3   0.020
+2CL    plan-1          C4   0.020
+2CL    plan-1          C5   0.020
+2CL    plan-1          C6   0.020
+2CL    plan-1          C7   0.020
+2CL    plan-1         CL1   0.020
+2CL    plan-1         CL2   0.020
+2CL    plan-1          H3   0.020
+2CL    plan-1          H4   0.020
+2CL    plan-1          H5   0.020
+2CL    plan-2          C7   0.020
+2CL    plan-2          C8   0.020
+2CL    plan-2          O1   0.020
+2CL    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2CL SMILES           ACDLabs              10.04 "Clc1cccc(Cl)c1CC(=O)O"
+2CL SMILES_CANONICAL CACTVS               3.341 "OC(=O)Cc1c(Cl)cccc1Cl"
+2CL SMILES           CACTVS               3.341 "OC(=O)Cc1c(Cl)cccc1Cl"
+2CL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)Cl)CC(=O)O)Cl"
+2CL SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)Cl)CC(=O)O)Cl"
+2CL InChI            InChI                1.03  "InChI=1S/C8H6Cl2O2/c9-6-2-1-3-7(10)5(6)4-8(11)12/h1-3H,4H2,(H,11,12)"
+2CL InChIKey         InChI                1.03  SFAILOOQFZNOAU-UHFFFAOYSA-N
+2CL ?                acedrg               190         "dictionary generator"                  
+2CL ?                acedrg_database      11          "data source"                           
+2CL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2CL ?                refmac5              5.8.0158    "optimization tool"                     

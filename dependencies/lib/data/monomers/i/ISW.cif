@@ -1,0 +1,688 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ISW      ISW 'Isoporphyrin containing Fe          ' non-polymer        77  43 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ISW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ISW    FE    FE    FE       0      18.752      70.284       2.327
+ISW    NA     N     N   0.000      17.893      69.184       3.738
+ISW    NB     N     N   0.000      17.598      69.581       0.822
+ISW    NC     N     N   0.000      19.649      71.551       0.783
+ISW    ND     N     N   0.000      19.915      71.042       3.789
+ISW   C1A     C  CR56   0.000      18.199      69.085       5.075
+ISW   O1A     O     O   0.000      15.442      68.764       9.860
+ISW   C1B     C  CR56   0.000      16.641      68.617       1.050
+ISW   C1C     C  CR56   0.000      19.288      71.687      -0.548
+ISW   C1D     C  CR56   0.000      20.940      71.951       3.452
+ISW   O1D     O    O2   0.000      20.717      72.788      10.435
+ISW   C2A     C   CR5   0.000      17.479      67.982       5.648
+ISW   O2A     O    O2   0.000      17.437      67.836       9.907
+ISW   C2B     C   CR5   0.000      15.812      68.525      -0.116
+ISW   C2C     C   CR5   0.000      20.038      72.808      -1.132
+ISW   C2D     C   CR5   0.000      21.622      72.306       4.658
+ISW   O2D     O     O   0.000      21.026      70.660       9.877
+ISW   C3A     C   CR5   0.000      16.768      67.451       4.664
+ISW   C3B     C   CR5   0.000      16.327      69.341      -1.054
+ISW   C3C     C   CR5   0.000      21.076      73.046      -0.302
+ISW   C3D     C   CR5   0.000      20.950      71.539       5.789
+ISW   C4A     C  CR56   0.000      17.028      68.170       3.443
+ISW   C4B     C   CH2   0.000      17.438      70.040      -0.473
+ISW   C4C     C  CR56   0.000      20.756      72.347       0.980
+ISW   C4D     C  CR56   0.000      19.904      70.799       5.144
+ISW   CAA     C   CH2   0.000      17.549      67.610       7.132
+ISW   CAB     C    C2   0.000      15.784      69.615      -2.486
+ISW   CAC     C    C2   0.000      22.251      74.026      -0.688
+ISW   CAD     C   CH2   0.000      21.373      71.602       7.262
+ISW   CBA     C   CH2   0.000      16.479      68.493       7.774
+ISW   CBB     C    C2   0.000      14.251      69.753      -2.418
+ISW   CBC     C    C2   0.000      22.737      75.185       0.253
+ISW   CBD     C   CH2   0.000      20.345      72.249       8.157
+ISW   CGA     C     C   0.000      16.469      68.338       9.267
+ISW   CGD     C     C   0.000      20.742      71.883       9.571
+ISW   CHA     C  CR16   0.000      19.037      69.918       5.762
+ISW   CHB     C  CR16   0.000      16.461      67.904       2.211
+ISW   CHC     C   CH2   0.000      18.228      70.992      -1.115
+ISW   CHD     C  CR16   0.000      21.335      72.483       2.225
+ISW   CMA     C   CH3   0.000      15.851      66.252       4.740
+ISW   CMB     C   CH3   0.000      14.641      67.505      -0.227
+ISW   CMC     C   CH3   0.000      20.137      73.019      -2.652
+ISW   CMD     C   CH3   0.000      22.798      73.307       4.749
+ISW  HO1D     H     H   0.000      20.931      72.421      11.285
+ISW  HO2A     H     H   0.000      17.243      67.848      10.837
+ISW   HAA     H     H   0.000      17.338      66.542       7.290
+ISW  HAAA     H     H   0.000      18.545      67.814       7.552
+ISW   HAB     H     H   0.000      16.383      69.695      -3.381
+ISW   HAC     H     H   0.000      22.742      73.894      -1.641
+ISW   HAD     H     H   0.000      21.536      70.573       7.616
+ISW  HADA     H     H   0.000      22.301      72.189       7.327
+ISW   HBA     H     H   0.000      16.689      69.544       7.527
+ISW  HBAA     H     H   0.000      15.494      68.203       7.379
+ISW   HBB     H     H   0.000      13.686      69.947      -3.318
+ISW  HBBA     H     H   0.000      13.742      69.656      -1.471
+ISW   HBC     H     H   0.000      23.546      75.829      -0.058
+ISW  HBCA     H     H   0.000      22.262      75.338       1.211
+ISW   HBD     H     H   0.000      20.344      73.341       8.023
+ISW  HBDA     H     H   0.000      19.337      71.874       7.926
+ISW   HHA     H     H   0.000      19.021      69.886       6.841
+ISW   HHB     H     H   0.000      15.808      67.046       2.155
+ISW   HHC     H     H   0.000      17.518      71.777      -1.416
+ISW   HHD     H     H   0.000      22.227      73.092       2.253
+ISW   HMA     H     H   0.000      15.408      66.065       3.751
+ISW  HMAA     H     H   0.000      16.427      65.370       5.056
+ISW  HMAB     H     H   0.000      15.051      66.448       5.469
+ISW   HMB     H     H   0.000      14.149      67.616      -1.205
+ISW  HMBA     H     H   0.000      15.035      66.483      -0.129
+ISW  HMBB     H     H   0.000      13.912      67.696       0.574
+ISW   HMC     H     H   0.000      19.539      73.896      -2.941
+ISW  HMCA     H     H   0.000      21.188      73.183      -2.931
+ISW  HMCB     H     H   0.000      19.754      72.128      -3.171
+ISW   HMD     H     H   0.000      23.130      73.390       5.795
+ISW  HMDA     H     H   0.000      23.632      72.950       4.127
+ISW  HMDB     H     H   0.000      22.469      74.293       4.390
+ISW   H33     H     H   0.000      18.002      70.877      -0.910
+ISW   H34     H     H   0.000      18.679      70.448      -1.958
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ISW       FE        NA        SING      2.039     0.020     2.039     0.020     
+ISW       FE        ND        SING      2.039     0.020     2.039     0.020     
+ISW       NA        C1A       SING      1.382     0.010     1.382     0.010     
+ISW       NB        FE        SING      2.039     0.020     2.039     0.020     
+ISW       NB        C1B       DOUB      1.390     0.020     1.390     0.020     
+ISW       NC        FE        SING      2.039     0.020     2.039     0.020     
+ISW       NC        C4C       SING      1.382     0.010     1.382     0.010     
+ISW       ND        C4D       DOUB      1.382     0.010     1.382     0.010     
+ISW       C1A       C2A       SING      1.446     0.016     1.446     0.016     
+ISW       C1A       CHA       DOUB      1.382     0.019     1.382     0.019     
+ISW       C1B       CHB       SING      1.382     0.019     1.382     0.019     
+ISW       C1C       NC        SING      1.382     0.013     1.382     0.013     
+ISW       C1D       ND        SING      1.382     0.010     1.382     0.010     
+ISW       C1D       C2D       SING      1.418     0.020     1.418     0.020     
+ISW       O1D       HO1D      SING      0.970     0.012     0.888     0.020     
+ISW       C2A       CAA       SING      1.505     0.013     1.505     0.013     
+ISW       O2A       HO2A      SING      0.970     0.012     0.888     0.020     
+ISW       C2B       C1B       SING      1.418     0.020     1.418     0.020     
+ISW       C2C       C1C       DOUB      1.374     0.020     1.374     0.020     
+ISW       C2C       C3C       SING      1.446     0.018     1.446     0.018     
+ISW       C2D       CMD       SING      1.501     0.014     1.501     0.014     
+ISW       C2D       C3D       DOUB      1.362     0.020     1.362     0.020     
+ISW       C3A       C2A       DOUB      1.362     0.020     1.362     0.020     
+ISW       C3A       CMA       SING      1.501     0.014     1.501     0.014     
+ISW       C3B       C2B       DOUB      1.369     0.020     1.369     0.020     
+ISW       C3B       C4B       SING      1.512     0.013     1.512     0.013     
+ISW       C3C       C4C       DOUB      1.452     0.016     1.452     0.016     
+ISW       C3D       CAD       SING      1.505     0.013     1.505     0.013     
+ISW       C4A       NA        SING      1.382     0.010     1.382     0.010     
+ISW       C4A       C3A       SING      1.418     0.020     1.418     0.020     
+ISW       C4B       NB        SING      1.470     0.016     1.470     0.016     
+ISW       C4C       CHD       SING      1.382     0.019     1.382     0.019     
+ISW       C4D       C3D       SING      1.446     0.016     1.446     0.016     
+ISW       C4D       CHA       SING      1.382     0.019     1.382     0.019     
+ISW       CAA       CBA       SING      1.523     0.011     1.523     0.011     
+ISW       CAA       HAA       SING      1.089     0.010     0.982     0.017     
+ISW       CAA       HAAA      SING      1.089     0.010     0.982     0.017     
+ISW       CAB       C3B       SINGLE    1.483     0.020     1.483     0.020     
+ISW       CAB       CBB       DOUB      1.278     0.020     1.278     0.020     
+ISW       CAB       HAB       SING      1.082     0.013     0.943     0.020     
+ISW       CAC       C3C       SING      1.427     0.020     1.427     0.020     
+ISW       CAC       CBC       DOUB      1.278     0.020     1.278     0.020     
+ISW       CAC       HAC       SING      1.082     0.013     0.943     0.020     
+ISW       CAD       CBD       SING      1.523     0.011     1.523     0.011     
+ISW       CAD       HAD       SING      1.089     0.010     0.982     0.017     
+ISW       CAD       HADA      SING      1.089     0.010     0.982     0.017     
+ISW       CBA       CGA       SING      1.500     0.012     1.500     0.012     
+ISW       CBA       HBA       SING      1.089     0.010     0.978     0.020     
+ISW       CBA       HBAA      SING      1.089     0.010     0.978     0.020     
+ISW       CBB       HBB       SING      1.082     0.013     0.949     0.020     
+ISW       CBB       HBBA      SING      1.082     0.013     0.949     0.020     
+ISW       CBC       HBC       SING      1.082     0.013     0.949     0.020     
+ISW       CBC       HBCA      SING      1.082     0.013     0.949     0.020     
+ISW       CBD       CGD       SING      1.500     0.012     1.500     0.012     
+ISW       CBD       HBD       SING      1.089     0.010     0.978     0.020     
+ISW       CBD       HBDA      SING      1.089     0.010     0.978     0.020     
+ISW       CGA       O1A       DOUB      1.211     0.019     1.211     0.019     
+ISW       CGA       O2A       SING      1.311     0.019     1.311     0.019     
+ISW       CGD       O1D       SING      1.311     0.019     1.311     0.019     
+ISW       CGD       O2D       DOUB      1.211     0.019     1.211     0.019     
+ISW       CHA       HHA       SING      1.082     0.013     0.948     0.020     
+ISW       CHB       C4A       DOUB      1.382     0.019     1.382     0.019     
+ISW       CHB       HHB       SING      1.082     0.013     0.948     0.020     
+ISW       CHC       C1C       SING      1.498     0.017     1.498     0.017     
+ISW       CHC       C4B       SING      1.530     0.020     1.530     0.020     
+ISW       CHC       HHC       SING      1.089     0.010     0.978     0.015     
+ISW       CHD       C1D       DOUB      1.382     0.019     1.382     0.019     
+ISW       CHD       HHD       SING      1.082     0.013     0.948     0.020     
+ISW       CMA       HMA       SING      1.089     0.010     0.969     0.019     
+ISW       CMA       HMAA      SING      1.089     0.010     0.969     0.019     
+ISW       CMA       HMAB      SING      1.089     0.010     0.969     0.019     
+ISW       CMB       C2B       SING      1.501     0.014     1.501     0.014     
+ISW       CMB       HMB       SING      1.089     0.010     0.969     0.019     
+ISW       CMB       HMBA      SING      1.089     0.010     0.969     0.019     
+ISW       CMB       HMBB      SING      1.089     0.010     0.969     0.019     
+ISW       CMC       C2C       SING      1.501     0.014     1.501     0.014     
+ISW       CMC       HMC       SING      1.089     0.010     0.969     0.019     
+ISW       CMC       HMCA      SING      1.089     0.010     0.969     0.019     
+ISW       CMC       HMCB      SING      1.089     0.010     0.969     0.019     
+ISW       CMD       HMD       SING      1.089     0.010     0.969     0.019     
+ISW       CMD       HMDA      SING      1.089     0.010     0.969     0.019     
+ISW       CMD       HMDB      SING      1.089     0.010     0.969     0.019     
+ISW       C4B       H33       SING      1.089     0.010     0.987     0.020     
+ISW       CHC       H34       SING      1.089     0.010     0.978     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ISW    NA    FE      ND    90.000    3.00
+ISW    NA    FE      NB    90.000    3.00
+ISW    NA    FE      NC   180.000    3.00
+ISW    ND    FE      NB   180.000    3.00
+ISW    ND    FE      NC    90.000    3.00
+ISW    NB    FE      NC    90.000    3.00
+ISW    FE    NA     C1A   118.172    3.00
+ISW    FE    NA     C4A   118.023    3.00
+ISW   C1A    NA     C4A   106.556    0.24
+ISW    FE    NB     C1B   118.023    3.00
+ISW    FE    NB     C4B   127.042    3.00
+ISW   C1B    NB     C4B   114.935    1.23
+ISW    FE    NC     C4C   118.172    3.00
+ISW    FE    NC     C1C   132.494    3.00
+ISW   C4C    NC     C1C   109.334    3.00
+ISW    FE    ND     C4D   118.172    3.00
+ISW    FE    ND     C1D   118.172    3.00
+ISW   C4D    ND     C1D   106.556    0.24
+ISW    NA   C1A     C2A   109.854    0.74
+ISW    NA   C1A     CHA   120.386    0.83
+ISW   C2A   C1A     CHA   129.760    1.03
+ISW    NB   C1B     CHB   121.133    3.00
+ISW    NB   C1B     C2B   111.384    2.29
+ISW   CHB   C1B     C2B   127.482    2.29
+ISW    NC   C1C     C2C   107.329    0.65
+ISW    NC   C1C     CHC   126.039    1.13
+ISW   C2C   C1C     CHC   126.632    3.00
+ISW    ND   C1D     C2D   109.854    0.74
+ISW    ND   C1D     CHD   120.386    0.83
+ISW   C2D   C1D     CHD   129.760    2.29
+ISW  HO1D   O1D     CGD   110.447    3.00
+ISW   C1A   C2A     CAA   125.558    0.97
+ISW   C1A   C2A     C3A   105.664    2.79
+ISW   CAA   C2A     C3A   128.778    0.89
+ISW  HO2A   O2A     CGA   110.447    3.00
+ISW   C1B   C2B     C3B   112.588    0.87
+ISW   C1B   C2B     CMB   123.290    1.61
+ISW   C3B   C2B     CMB   124.121    3.00
+ISW   C1C   C2C     C3C   106.875    3.00
+ISW   C1C   C2C     CMC   127.247    2.86
+ISW   C3C   C2C     CMC   125.878    1.91
+ISW   C1D   C2D     CMD   125.896    1.61
+ISW   C1D   C2D     C3D   108.072    1.88
+ISW   CMD   C2D     C3D   126.032    2.46
+ISW   C2A   C3A     CMA   126.032    2.46
+ISW   C2A   C3A     C4A   108.072    1.88
+ISW   CMA   C3A     C4A   125.896    1.61
+ISW   C2B   C3B     C4B   112.577    3.00
+ISW   C2B   C3B     CAB   124.361    3.00
+ISW   C4B   C3B     CAB   123.063    3.00
+ISW   C2C   C3C     C4C   106.315    0.51
+ISW   C2C   C3C     CAC   126.116    3.00
+ISW   C4C   C3C     CAC   127.569    3.00
+ISW   C2D   C3D     CAD   128.778    0.89
+ISW   C2D   C3D     C4D   105.664    2.79
+ISW   CAD   C3D     C4D   125.558    0.97
+ISW    NA   C4A     C3A   109.854    0.74
+ISW    NA   C4A     CHB   120.237    0.83
+ISW   C3A   C4A     CHB   129.909    2.29
+ISW   C3B   C4B      NB   109.471    3.00
+ISW   C3B   C4B     CHC   111.808    3.00
+ISW   C3B   C4B     H33   110.613    3.00
+ISW    NB   C4B     CHC   113.154    3.00
+ISW    NB   C4B     H33   109.150    1.43
+ISW   CHC   C4B     H33   108.379    2.22
+ISW    NC   C4C     C3C   110.148    3.00
+ISW    NC   C4C     CHD   120.386    0.83
+ISW   C3C   C4C     CHD   129.466    3.00
+ISW    ND   C4D     C3D   109.854    0.74
+ISW    ND   C4D     CHA   120.386    0.83
+ISW   C3D   C4D     CHA   129.760    1.03
+ISW   C2A   CAA     CBA   113.577    0.19
+ISW   C2A   CAA     HAA   108.929    0.59
+ISW   C2A   CAA    HAAA   108.929    0.59
+ISW   CBA   CAA     HAA   109.002    1.44
+ISW   CBA   CAA    HAAA   109.002    1.44
+ISW   HAA   CAA    HAAA   107.813    0.92
+ISW   C3B   CAB     CBB   125.231    3.00
+ISW   C3B   CAB     HAB   117.939    0.50
+ISW   CBB   CAB     HAB   116.830    1.67
+ISW   C3C   CAC     CBC   127.851    3.00
+ISW   C3C   CAC     HAC   116.248    0.94
+ISW   CBC   CAC     HAC   115.901    1.67
+ISW   C3D   CAD     CBD   113.577    0.19
+ISW   C3D   CAD     HAD   108.929    0.59
+ISW   C3D   CAD    HADA   108.929    0.59
+ISW   CBD   CAD     HAD   109.002    1.44
+ISW   CBD   CAD    HADA   109.002    1.44
+ISW   HAD   CAD    HADA   107.813    0.92
+ISW   CAA   CBA     CGA   113.874    1.88
+ISW   CAA   CBA     HBA   108.801    1.64
+ISW   CAA   CBA    HBAA   108.801    1.64
+ISW   CGA   CBA     HBA   108.528    0.87
+ISW   CGA   CBA    HBAA   108.528    0.87
+ISW   HBA   CBA    HBAA   107.724    1.61
+ISW   CAB   CBB     HBB   120.057    3.00
+ISW   CAB   CBB    HBBA   120.057    3.00
+ISW   HBB   CBB    HBBA   119.886    2.37
+ISW   CAC   CBC     HBC   120.057    3.00
+ISW   CAC   CBC    HBCA   120.057    3.00
+ISW   HBC   CBC    HBCA   119.886    2.37
+ISW   CAD   CBD     CGD   113.874    1.88
+ISW   CAD   CBD     HBD   108.801    1.64
+ISW   CAD   CBD    HBDA   108.801    1.64
+ISW   CGD   CBD     HBD   108.528    0.87
+ISW   CGD   CBD    HBDA   108.528    0.87
+ISW   HBD   CBD    HBDA   107.724    1.61
+ISW   CBA   CGA     O1A   123.754    1.42
+ISW   CBA   CGA     O2A   113.315    1.57
+ISW   O1A   CGA     O2A   122.931    1.34
+ISW   CBD   CGD     O1D   113.315    1.57
+ISW   CBD   CGD     O2D   123.754    1.42
+ISW   O1D   CGD     O2D   122.931    1.34
+ISW   C1A   CHA     C4D   124.711    1.50
+ISW   C1A   CHA     HHA   117.644    0.74
+ISW   C4D   CHA     HHA   117.644    0.74
+ISW   C1B   CHB     C4A   124.562    1.50
+ISW   C1B   CHB     HHB   117.719    0.74
+ISW   C4A   CHB     HHB   117.719    0.74
+ISW   C1C   CHC     C4B   110.243    3.00
+ISW   C1C   CHC     HHC   109.984    3.00
+ISW   C1C   CHC     H34   109.984    3.00
+ISW   C4B   CHC     HHC   108.968    1.82
+ISW   C4B   CHC     H34   108.968    1.82
+ISW   HHC   CHC     H34   108.485    0.61
+ISW   C4C   CHD     C1D   124.711    1.50
+ISW   C4C   CHD     HHD   117.644    0.74
+ISW   C1D   CHD     HHD   117.644    0.74
+ISW   C3A   CMA     HMA   109.504    0.31
+ISW   C3A   CMA    HMAA   109.504    0.31
+ISW   C3A   CMA    HMAB   109.504    0.31
+ISW   HMA   CMA    HMAA   109.268    1.46
+ISW   HMA   CMA    HMAB   109.268    1.46
+ISW  HMAA   CMA    HMAB   109.268    1.46
+ISW   C2B   CMB     HMB   109.504    0.31
+ISW   C2B   CMB    HMBA   109.504    0.31
+ISW   C2B   CMB    HMBB   109.504    0.31
+ISW   HMB   CMB    HMBA   109.268    1.46
+ISW   HMB   CMB    HMBB   109.268    1.46
+ISW  HMBA   CMB    HMBB   109.268    1.46
+ISW   C2C   CMC     HMC   109.504    0.31
+ISW   C2C   CMC    HMCA   109.504    0.31
+ISW   C2C   CMC    HMCB   109.504    0.31
+ISW   HMC   CMC    HMCA   109.268    1.46
+ISW   HMC   CMC    HMCB   109.268    1.46
+ISW  HMCA   CMC    HMCB   109.268    1.46
+ISW   C2D   CMD     HMD   109.504    0.31
+ISW   C2D   CMD    HMDA   109.504    0.31
+ISW   C2D   CMD    HMDB   109.504    0.31
+ISW   HMD   CMD    HMDA   109.268    1.46
+ISW   HMD   CMD    HMDB   109.268    1.46
+ISW  HMDA   CMD    HMDB   109.268    1.46
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ISW     P_sp2_sp2_1     C2A     C1A      NA     C4A       0.000   10.00     2
+ISW       sp2_sp2_1     C2A     C1A      NA      FE     180.000   10.00     2
+ISW     P_sp2_sp2_2     CHA     C1A      NA     C4A     180.000   10.00     2
+ISW       sp2_sp2_2     CHA     C1A      NA      FE       0.000   10.00     2
+ISW     P_sp2_sp2_3      NA     C1A     C2A     C3A       0.000   10.00     2
+ISW     P_sp2_sp2_4      NA     C1A     C2A     CAA     180.000   10.00     2
+ISW     P_sp2_sp2_5     CHA     C1A     C2A     C3A     180.000   10.00     2
+ISW     P_sp2_sp2_6     CHA     C1A     C2A     CAA       0.000   10.00     2
+ISW     P_sp2_sp2_7     C1A     C2A     C3A     C4A       0.000   10.00     2
+ISW     P_sp2_sp2_8     C1A     C2A     C3A     CMA     180.000   10.00     2
+ISW     P_sp2_sp2_9     CAA     C2A     C3A     C4A     180.000   10.00     2
+ISW    P_sp2_sp2_10     CAA     C2A     C3A     CMA       0.000   10.00     2
+ISW    P_sp2_sp2_11     C2A     C3A     C4A      NA       0.000   10.00     2
+ISW    P_sp2_sp2_12     C2A     C3A     C4A     CHB     180.000   10.00     2
+ISW    P_sp2_sp2_13     CMA     C3A     C4A      NA     180.000   10.00     2
+ISW    P_sp2_sp2_14     CMA     C3A     C4A     CHB       0.000   10.00     2
+ISW     other_tor_1      ND      FE      NA     C1A       0.000   10.00     1
+ISW     other_tor_2      ND      FE      NA     C4A     180.000   10.00     1
+ISW    P_sp2_sp2_15     C2A     C1A      NA     C4A       0.000   10.00     2
+ISW       sp2_sp2_3     C2A     C1A      NA      FE     180.000   10.00     2
+ISW    P_sp2_sp2_16     CHA     C1A      NA     C4A     180.000   10.00     2
+ISW       sp2_sp2_4     CHA     C1A      NA      FE       0.000   10.00     2
+ISW       sp2_sp2_5      NA     C1A     CHA     C4D       0.000   10.00     2
+ISW       sp2_sp2_6      NA     C1A     CHA     HHA     180.000   10.00     2
+ISW       sp2_sp2_7     C2A     C1A     CHA     C4D     180.000   10.00     2
+ISW       sp2_sp2_8     C2A     C1A     CHA     HHA       0.000   10.00     2
+ISW       sp2_sp2_9      ND     C4D     CHA     C1A       0.000   10.00     2
+ISW      sp2_sp2_10      ND     C4D     CHA     HHA     180.000   10.00     2
+ISW      sp2_sp2_11     C3D     C4D     CHA     C1A     180.000   10.00     2
+ISW      sp2_sp2_12     C3D     C4D     CHA     HHA       0.000   10.00     2
+ISW    P_sp2_sp2_17     C3D     C4D      ND     C1D       0.000   10.00     2
+ISW      sp2_sp2_13     C3D     C4D      ND      FE     180.000   10.00     2
+ISW    P_sp2_sp2_18     CHA     C4D      ND     C1D     180.000   10.00     2
+ISW      sp2_sp2_14     CHA     C4D      ND      FE       0.000   10.00     2
+ISW      sp2_sp2_15     CHB     C1B      NB      FE       0.000   10.00     2
+ISW      sp2_sp2_16     CHB     C1B      NB     C4B     180.000   10.00     2
+ISW      sp2_sp2_17     C2B     C1B      NB      FE     180.000   10.00     2
+ISW      sp2_sp2_18     C2B     C1B      NB     C4B       0.000   10.00     2
+ISW      sp2_sp2_19      NB     C1B     C2B     C3B       0.000   10.00     2
+ISW      sp2_sp2_20      NB     C1B     C2B     CMB     180.000   10.00     2
+ISW      sp2_sp2_21     CHB     C1B     C2B     C3B     180.000   10.00     2
+ISW      sp2_sp2_22     CHB     C1B     C2B     CMB       0.000   10.00     2
+ISW      sp2_sp2_23     C1B     C2B     C3B     C4B       0.000   10.00     2
+ISW      sp2_sp2_24     C1B     C2B     C3B     CAB     180.000   10.00     2
+ISW      sp2_sp2_25     CMB     C2B     C3B     C4B     180.000   10.00     2
+ISW      sp2_sp2_26     CMB     C2B     C3B     CAB       0.000   10.00     2
+ISW       sp2_sp3_1     C2B     C3B     C4B      NB       0.000   10.00     6
+ISW       sp2_sp3_2     C2B     C3B     C4B     H33     120.000   10.00     6
+ISW       sp2_sp3_3     C2B     C3B     C4B     CHC    -120.000   10.00     6
+ISW       sp2_sp3_4     CAB     C3B     C4B      NB     180.000   10.00     6
+ISW       sp2_sp3_5     CAB     C3B     C4B     H33     -60.000   10.00     6
+ISW       sp2_sp3_6     CAB     C3B     C4B     CHC      60.000   10.00     6
+ISW     other_tor_3      ND      FE      NA     C1A       0.000   10.00     1
+ISW     other_tor_4      ND      FE      NA     C4A     180.000   10.00     1
+ISW    P_sp2_sp2_19     C3A     C4A      NA     C1A       0.000   10.00     2
+ISW      sp2_sp2_27     C3A     C4A      NA      FE     180.000   10.00     2
+ISW    P_sp2_sp2_20     CHB     C4A      NA     C1A     180.000   10.00     2
+ISW      sp2_sp2_28     CHB     C4A      NA      FE       0.000   10.00     2
+ISW      sp2_sp2_29      NA     C4A     CHB     C1B       0.000   10.00     2
+ISW      sp2_sp2_30      NA     C4A     CHB     HHB     180.000   10.00     2
+ISW      sp2_sp2_31     C3A     C4A     CHB     C1B     180.000   10.00     2
+ISW      sp2_sp2_32     C3A     C4A     CHB     HHB       0.000   10.00     2
+ISW      sp2_sp2_33      NB     C1B     CHB     C4A       0.000   10.00     2
+ISW      sp2_sp2_34      NB     C1B     CHB     HHB     180.000   10.00     2
+ISW      sp2_sp2_35     C2B     C1B     CHB     C4A     180.000   10.00     2
+ISW      sp2_sp2_36     C2B     C1B     CHB     HHB       0.000   10.00     2
+ISW      sp2_sp2_37     CHB     C1B      NB      FE       0.000   10.00     2
+ISW      sp2_sp2_38     CHB     C1B      NB     C4B     180.000   10.00     2
+ISW      sp2_sp2_39     C2B     C1B      NB      FE     180.000   10.00     2
+ISW      sp2_sp2_40     C2B     C1B      NB     C4B       0.000   10.00     2
+ISW    P_sp2_sp2_21     C3C     C4C      NC     C1C       0.000   10.00     2
+ISW      sp2_sp2_41     C3C     C4C      NC      FE     180.000   10.00     2
+ISW    P_sp2_sp2_22     CHD     C4C      NC     C1C     180.000   10.00     2
+ISW      sp2_sp2_42     CHD     C4C      NC      FE       0.000   10.00     2
+ISW    P_sp2_sp2_23     C2C     C3C     C4C      NC       0.000   10.00     2
+ISW    P_sp2_sp2_24     C2C     C3C     C4C     CHD     180.000   10.00     2
+ISW    P_sp2_sp2_25     CAC     C3C     C4C      NC     180.000   10.00     2
+ISW    P_sp2_sp2_26     CAC     C3C     C4C     CHD       0.000   10.00     2
+ISW    P_sp2_sp2_27     C1C     C2C     C3C     C4C       0.000   10.00     2
+ISW    P_sp2_sp2_28     C1C     C2C     C3C     CAC     180.000   10.00     2
+ISW    P_sp2_sp2_29     CMC     C2C     C3C     C4C     180.000   10.00     2
+ISW    P_sp2_sp2_30     CMC     C2C     C3C     CAC       0.000   10.00     2
+ISW    P_sp2_sp2_31      NC     C1C     C2C     C3C       0.000   10.00     2
+ISW    P_sp2_sp2_32      NC     C1C     C2C     CMC     180.000   10.00     2
+ISW    P_sp2_sp2_33     CHC     C1C     C2C     C3C     180.000   10.00     2
+ISW    P_sp2_sp2_34     CHC     C1C     C2C     CMC       0.000   10.00     2
+ISW     other_tor_5      NA      FE      NB     C1B       0.000   10.00     1
+ISW     other_tor_6      NA      FE      NB     C4B     180.000   10.00     1
+ISW       sp2_sp3_7      FE      NB     C4B     CHC       0.000   10.00     6
+ISW       sp2_sp3_8      FE      NB     C4B     H33     120.000   10.00     6
+ISW       sp2_sp3_9      FE      NB     C4B     C3B    -120.000   10.00     6
+ISW      sp2_sp3_10     C1B      NB     C4B     CHC     180.000   10.00     6
+ISW      sp2_sp3_11     C1B      NB     C4B     H33     -60.000   10.00     6
+ISW      sp2_sp3_12     C1B      NB     C4B     C3B      60.000   10.00     6
+ISW       sp3_sp3_1      NB     C4B     CHC     C1C      60.000   10.00     3
+ISW       sp3_sp3_2      NB     C4B     CHC     HHC     180.000   10.00     3
+ISW       sp3_sp3_3      NB     C4B     CHC     H34     -60.000   10.00     3
+ISW       sp3_sp3_4     C3B     C4B     CHC     C1C     -60.000   10.00     3
+ISW       sp3_sp3_5     C3B     C4B     CHC     HHC      60.000   10.00     3
+ISW       sp3_sp3_6     C3B     C4B     CHC     H34     180.000   10.00     3
+ISW       sp3_sp3_7     H33     C4B     CHC     C1C     180.000   10.00     3
+ISW       sp3_sp3_8     H33     C4B     CHC     HHC     -60.000   10.00     3
+ISW       sp3_sp3_9     H33     C4B     CHC     H34      60.000   10.00     3
+ISW      sp2_sp3_13      NC     C1C     CHC     C4B       0.000   10.00     6
+ISW      sp2_sp3_14      NC     C1C     CHC     HHC     120.000   10.00     6
+ISW      sp2_sp3_15      NC     C1C     CHC     H34    -120.000   10.00     6
+ISW      sp2_sp3_16     C2C     C1C     CHC     C4B     180.000   10.00     6
+ISW      sp2_sp3_17     C2C     C1C     CHC     HHC     -60.000   10.00     6
+ISW      sp2_sp3_18     C2C     C1C     CHC     H34      60.000   10.00     6
+ISW    P_sp2_sp2_35     C2C     C1C      NC     C4C       0.000   10.00     2
+ISW      sp2_sp2_43     C2C     C1C      NC      FE     180.000   10.00     2
+ISW    P_sp2_sp2_36     CHC     C1C      NC     C4C     180.000   10.00     2
+ISW      sp2_sp2_44     CHC     C1C      NC      FE       0.000   10.00     2
+ISW    P_sp2_sp2_37     C3D     C4D      ND     C1D       0.000   10.00     2
+ISW      sp2_sp2_45     C3D     C4D      ND      FE     180.000   10.00     2
+ISW    P_sp2_sp2_38     CHA     C4D      ND     C1D     180.000   10.00     2
+ISW      sp2_sp2_46     CHA     C4D      ND      FE       0.000   10.00     2
+ISW    P_sp2_sp2_39     C2D     C3D     C4D      ND       0.000   10.00     2
+ISW    P_sp2_sp2_40     C2D     C3D     C4D     CHA     180.000   10.00     2
+ISW    P_sp2_sp2_41     CAD     C3D     C4D      ND     180.000   10.00     2
+ISW    P_sp2_sp2_42     CAD     C3D     C4D     CHA       0.000   10.00     2
+ISW    P_sp2_sp2_43     C1D     C2D     C3D     C4D       0.000   10.00     2
+ISW    P_sp2_sp2_44     C1D     C2D     C3D     CAD     180.000   10.00     2
+ISW    P_sp2_sp2_45     CMD     C2D     C3D     C4D     180.000   10.00     2
+ISW    P_sp2_sp2_46     CMD     C2D     C3D     CAD       0.000   10.00     2
+ISW    P_sp2_sp2_47      ND     C1D     C2D     C3D       0.000   10.00     2
+ISW    P_sp2_sp2_48      ND     C1D     C2D     CMD     180.000   10.00     2
+ISW    P_sp2_sp2_49     CHD     C1D     C2D     C3D     180.000   10.00     2
+ISW    P_sp2_sp2_50     CHD     C1D     C2D     CMD       0.000   10.00     2
+ISW     other_tor_7      NA      FE      ND     C4D       0.000   10.00     1
+ISW     other_tor_8      NA      FE      ND     C1D     180.000   10.00     1
+ISW    P_sp2_sp2_51     C2D     C1D      ND     C4D       0.000   10.00     2
+ISW      sp2_sp2_47     C2D     C1D      ND      FE     180.000   10.00     2
+ISW    P_sp2_sp2_52     CHD     C1D      ND     C4D     180.000   10.00     2
+ISW      sp2_sp2_48     CHD     C1D      ND      FE       0.000   10.00     2
+ISW      sp2_sp2_49      ND     C1D     CHD     C4C       0.000   10.00     2
+ISW      sp2_sp2_50      ND     C1D     CHD     HHD     180.000   10.00     2
+ISW      sp2_sp2_51     C2D     C1D     CHD     C4C     180.000   10.00     2
+ISW      sp2_sp2_52     C2D     C1D     CHD     HHD       0.000   10.00     2
+ISW      sp2_sp2_53      NC     C4C     CHD     C1D       0.000   10.00     2
+ISW      sp2_sp2_54      NC     C4C     CHD     HHD     180.000   10.00     2
+ISW      sp2_sp2_55     C3C     C4C     CHD     C1D     180.000   10.00     2
+ISW      sp2_sp2_56     C3C     C4C     CHD     HHD       0.000   10.00     2
+ISW    P_sp2_sp2_53     C3C     C4C      NC     C1C       0.000   10.00     2
+ISW      sp2_sp2_57     C3C     C4C      NC      FE     180.000   10.00     2
+ISW    P_sp2_sp2_54     CHD     C4C      NC     C1C     180.000   10.00     2
+ISW      sp2_sp2_58     CHD     C4C      NC      FE       0.000   10.00     2
+ISW     other_tor_9      NA      FE      NC     C4C      90.000   10.00     1
+ISW    other_tor_10      NA      FE      NC     C1C     -90.000   10.00     1
+ISW      sp2_sp3_19     C1A     C2A     CAA     HAA     150.000   10.00     6
+ISW      sp2_sp3_20     C1A     C2A     CAA     CBA     -90.000   10.00     6
+ISW      sp2_sp3_21     C1A     C2A     CAA    HAAA      30.000   10.00     6
+ISW      sp2_sp3_22     C3A     C2A     CAA     HAA     -30.000   10.00     6
+ISW      sp2_sp3_23     C3A     C2A     CAA     CBA      90.000   10.00     6
+ISW      sp2_sp3_24     C3A     C2A     CAA    HAAA    -150.000   10.00     6
+ISW      sp2_sp3_25     C1D     C2D     CMD     HMD     150.000   10.00     6
+ISW      sp2_sp3_26     C1D     C2D     CMD    HMDA     -90.000   10.00     6
+ISW      sp2_sp3_27     C1D     C2D     CMD    HMDB      30.000   10.00     6
+ISW      sp2_sp3_28     C3D     C2D     CMD     HMD     -30.000   10.00     6
+ISW      sp2_sp3_29     C3D     C2D     CMD    HMDA      90.000   10.00     6
+ISW      sp2_sp3_30     C3D     C2D     CMD    HMDB    -150.000   10.00     6
+ISW      sp2_sp3_31     C2A     C3A     CMA     HMA     150.000   10.00     6
+ISW      sp2_sp3_32     C2A     C3A     CMA    HMAA     -90.000   10.00     6
+ISW      sp2_sp3_33     C2A     C3A     CMA    HMAB      30.000   10.00     6
+ISW      sp2_sp3_34     C4A     C3A     CMA     HMA     -30.000   10.00     6
+ISW      sp2_sp3_35     C4A     C3A     CMA    HMAA      90.000   10.00     6
+ISW      sp2_sp3_36     C4A     C3A     CMA    HMAB    -150.000   10.00     6
+ISW      sp2_sp3_37     C2D     C3D     CAD     HAD     150.000   10.00     6
+ISW      sp2_sp3_38     C2D     C3D     CAD     CBD     -90.000   10.00     6
+ISW      sp2_sp3_39     C2D     C3D     CAD    HADA      30.000   10.00     6
+ISW      sp2_sp3_40     C4D     C3D     CAD     HAD     -30.000   10.00     6
+ISW      sp2_sp3_41     C4D     C3D     CAD     CBD      90.000   10.00     6
+ISW      sp2_sp3_42     C4D     C3D     CAD    HADA    -150.000   10.00     6
+ISW      sp3_sp3_10     C2A     CAA     CBA     CGA     180.000   10.00     3
+ISW      sp3_sp3_11     C2A     CAA     CBA     HBA     -60.000   10.00     3
+ISW      sp3_sp3_12     C2A     CAA     CBA    HBAA      60.000   10.00     3
+ISW      sp3_sp3_13     HAA     CAA     CBA     CGA      60.000   10.00     3
+ISW      sp3_sp3_14     HAA     CAA     CBA     HBA     180.000   10.00     3
+ISW      sp3_sp3_15     HAA     CAA     CBA    HBAA     -60.000   10.00     3
+ISW      sp3_sp3_16    HAAA     CAA     CBA     CGA     -60.000   10.00     3
+ISW      sp3_sp3_17    HAAA     CAA     CBA     HBA      60.000   10.00     3
+ISW      sp3_sp3_18    HAAA     CAA     CBA    HBAA     180.000   10.00     3
+ISW      sp2_sp2_59     C4B     C3B     CAB     CBB     180.000   10.00     2
+ISW      sp2_sp2_60     C4B     C3B     CAB     HAB       0.000   10.00     2
+ISW      sp2_sp2_61     C2B     C3B     CAB     CBB       0.000   10.00     2
+ISW      sp2_sp2_62     C2B     C3B     CAB     HAB     180.000   10.00     2
+ISW      sp2_sp2_63     C3B     CAB     CBB     HBB     180.000   10.00     2
+ISW      sp2_sp2_64     C3B     CAB     CBB    HBBA       0.000   10.00     2
+ISW      sp2_sp2_65     HAB     CAB     CBB     HBB       0.000   10.00     2
+ISW      sp2_sp2_66     HAB     CAB     CBB    HBBA     180.000   10.00     2
+ISW      sp2_sp2_67     C2C     C3C     CAC     CBC     180.000   10.00     2
+ISW      sp2_sp2_68     C2C     C3C     CAC     HAC       0.000   10.00     2
+ISW      sp2_sp2_69     C4C     C3C     CAC     CBC       0.000   10.00     2
+ISW      sp2_sp2_70     C4C     C3C     CAC     HAC     180.000   10.00     2
+ISW      sp2_sp2_71     C3C     CAC     CBC     HBC     180.000   10.00     2
+ISW      sp2_sp2_72     C3C     CAC     CBC    HBCA       0.000   10.00     2
+ISW      sp2_sp2_73     HAC     CAC     CBC     HBC       0.000   10.00     2
+ISW      sp2_sp2_74     HAC     CAC     CBC    HBCA     180.000   10.00     2
+ISW      sp3_sp3_19     C3D     CAD     CBD     CGD     180.000   10.00     3
+ISW      sp3_sp3_20     C3D     CAD     CBD     HBD     -60.000   10.00     3
+ISW      sp3_sp3_21     C3D     CAD     CBD    HBDA      60.000   10.00     3
+ISW      sp3_sp3_22     HAD     CAD     CBD     CGD      60.000   10.00     3
+ISW      sp3_sp3_23     HAD     CAD     CBD     HBD     180.000   10.00     3
+ISW      sp3_sp3_24     HAD     CAD     CBD    HBDA     -60.000   10.00     3
+ISW      sp3_sp3_25    HADA     CAD     CBD     CGD     -60.000   10.00     3
+ISW      sp3_sp3_26    HADA     CAD     CBD     HBD      60.000   10.00     3
+ISW      sp3_sp3_27    HADA     CAD     CBD    HBDA     180.000   10.00     3
+ISW      sp2_sp3_43     O1A     CGA     CBA     HBA       0.000   10.00     6
+ISW      sp2_sp3_44     O1A     CGA     CBA     CAA     120.000   10.00     6
+ISW      sp2_sp3_45     O1A     CGA     CBA    HBAA    -120.000   10.00     6
+ISW      sp2_sp3_46     O2A     CGA     CBA     HBA     180.000   10.00     6
+ISW      sp2_sp3_47     O2A     CGA     CBA     CAA     -60.000   10.00     6
+ISW      sp2_sp3_48     O2A     CGA     CBA    HBAA      60.000   10.00     6
+ISW      sp2_sp3_49     O1D     CGD     CBD     HBD       0.000   10.00     6
+ISW      sp2_sp3_50     O1D     CGD     CBD     CAD     120.000   10.00     6
+ISW      sp2_sp3_51     O1D     CGD     CBD    HBDA    -120.000   10.00     6
+ISW      sp2_sp3_52     O2D     CGD     CBD     HBD     180.000   10.00     6
+ISW      sp2_sp3_53     O2D     CGD     CBD     CAD     -60.000   10.00     6
+ISW      sp2_sp3_54     O2D     CGD     CBD    HBDA      60.000   10.00     6
+ISW      sp2_sp2_75     CBA     CGA     O2A    HO2A     180.000   10.00     2
+ISW      sp2_sp2_76     O1A     CGA     O2A    HO2A       0.000   10.00     2
+ISW      sp2_sp2_77     CBD     CGD     O1D    HO1D     180.000   10.00     2
+ISW      sp2_sp2_78     O2D     CGD     O1D    HO1D       0.000   10.00     2
+ISW      sp2_sp3_55     C1B     C2B     CMB     HMB     150.000   10.00     6
+ISW      sp2_sp3_56     C1B     C2B     CMB    HMBA     -90.000   10.00     6
+ISW      sp2_sp3_57     C1B     C2B     CMB    HMBB      30.000   10.00     6
+ISW      sp2_sp3_58     C3B     C2B     CMB     HMB     -30.000   10.00     6
+ISW      sp2_sp3_59     C3B     C2B     CMB    HMBA      90.000   10.00     6
+ISW      sp2_sp3_60     C3B     C2B     CMB    HMBB    -150.000   10.00     6
+ISW      sp2_sp3_61     C1C     C2C     CMC     HMC     150.000   10.00     6
+ISW      sp2_sp3_62     C1C     C2C     CMC    HMCA     -90.000   10.00     6
+ISW      sp2_sp3_63     C1C     C2C     CMC    HMCB      30.000   10.00     6
+ISW      sp2_sp3_64     C3C     C2C     CMC     HMC     -30.000   10.00     6
+ISW      sp2_sp3_65     C3C     C2C     CMC    HMCA      90.000   10.00     6
+ISW      sp2_sp3_66     C3C     C2C     CMC    HMCB    -150.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ISW    plan-1   C1B   0.020
+ISW    plan-1   C2B   0.020
+ISW    plan-1   CHB   0.020
+ISW    plan-1    NB   0.020
+ISW    plan-2   C1B   0.020
+ISW    plan-2   C2B   0.020
+ISW    plan-2   C3B   0.020
+ISW    plan-2   CMB   0.020
+ISW    plan-3   C2B   0.020
+ISW    plan-3   C3B   0.020
+ISW    plan-3   C4B   0.020
+ISW    plan-3   CAB   0.020
+ISW    plan-4   C1A   0.020
+ISW    plan-4   C2A   0.020
+ISW    plan-4   C3A   0.020
+ISW    plan-4   C4A   0.020
+ISW    plan-4   CAA   0.020
+ISW    plan-4   CHA   0.020
+ISW    plan-4   CHB   0.020
+ISW    plan-4   CMA   0.020
+ISW    plan-4    NA   0.020
+ISW    plan-5   C1C   0.020
+ISW    plan-5   C2C   0.020
+ISW    plan-5   C3C   0.020
+ISW    plan-5   C4C   0.020
+ISW    plan-5   CAC   0.020
+ISW    plan-5   CHC   0.020
+ISW    plan-5   CHD   0.020
+ISW    plan-5   CMC   0.020
+ISW    plan-5    NC   0.020
+ISW    plan-6   C1D   0.020
+ISW    plan-6   C2D   0.020
+ISW    plan-6   C3D   0.020
+ISW    plan-6   C4D   0.020
+ISW    plan-6   CAD   0.020
+ISW    plan-6   CHA   0.020
+ISW    plan-6   CHD   0.020
+ISW    plan-6   CMD   0.020
+ISW    plan-6    ND   0.020
+ISW    plan-7   C3B   0.020
+ISW    plan-7   CAB   0.020
+ISW    plan-7   CBB   0.020
+ISW    plan-7   HAB   0.020
+ISW    plan-8   C3C   0.020
+ISW    plan-8   CAC   0.020
+ISW    plan-8   CBC   0.020
+ISW    plan-8   HAC   0.020
+ISW    plan-9   CAB   0.020
+ISW    plan-9   CBB   0.020
+ISW    plan-9   HBB   0.020
+ISW    plan-9  HBBA   0.020
+ISW   plan-10   CAC   0.020
+ISW   plan-10   CBC   0.020
+ISW   plan-10   HBC   0.020
+ISW   plan-10  HBCA   0.020
+ISW   plan-11   CBA   0.020
+ISW   plan-11   CGA   0.020
+ISW   plan-11   O1A   0.020
+ISW   plan-11   O2A   0.020
+ISW   plan-12   CBD   0.020
+ISW   plan-12   CGD   0.020
+ISW   plan-12   O1D   0.020
+ISW   plan-12   O2D   0.020
+ISW   plan-13   C1A   0.020
+ISW   plan-13   C4D   0.020
+ISW   plan-13   CHA   0.020
+ISW   plan-13   HHA   0.020
+ISW   plan-14   C1B   0.020
+ISW   plan-14   C4A   0.020
+ISW   plan-14   CHB   0.020
+ISW   plan-14   HHB   0.020
+ISW   plan-15   C1D   0.020
+ISW   plan-15   C4C   0.020
+ISW   plan-15   CHD   0.020
+ISW   plan-15   HHD   0.020

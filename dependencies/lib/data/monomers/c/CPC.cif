@@ -1,0 +1,195 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CPC     CPC     "2-METHYL-1-METHYLAMINO-CYCLOPROPANECARBOXYLICACID"   M-peptide  19     9     .     
+#
+data_comp_CPC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CPC     N       N       NT1     0       1.844       1.116       -0.089      
+CPC     CN      C       CH3     0       3.290       0.882       -0.110      
+CPC     CA      C       CT      0       0.977       0.168       0.541       
+CPC     CB      C       CH1     0       0.783       -1.170      -0.158      
+CPC     CG1     C       CH2     0       -0.328      -0.172      -0.139      
+CPC     CG2     C       CH3     0       0.703       -2.454      0.632       
+CPC     C       C       C       0       1.079       0.237       2.036       
+CPC     O       O       O       0       2.009       -0.279      2.592       
+CPC     OXT     O       OC      -1      0.226       0.810       2.657       
+CPC     H       H       H       0       1.677       1.968       0.068       
+CPC     HCN1    H       H       0       3.721       1.557       -0.670      
+CPC     HCN2    H       H       0       3.474       -0.006      -0.474      
+CPC     HCN3    H       H       0       3.644       0.940       0.799       
+CPC     HB      H       H       0       1.238       -1.276      -1.030      
+CPC     HG13    H       H       0       -0.539      0.297       -0.979      
+CPC     HG12    H       H       0       -1.105      -0.361      0.437       
+CPC     HG21    H       H       0       -0.076      -2.435      1.207       
+CPC     HG22    H       H       0       1.497       -2.554      1.175       
+CPC     HG23    H       H       0       0.634       -3.206      0.027       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CPC      N      n/a    CA     START
+ CPC      H      N      .      .
+ CPC      CN     N      HCN1   .
+ CPC      HCN3   CN     .      .
+ CPC      HCN2   CN     .      .
+ CPC      HCN1   CN     .      .
+ CPC      CA     N      C      .
+ CPC      CG1    CA     CB     .
+ CPC      HG13   CG1    .      .
+ CPC      HG12   CG1    .      .
+ CPC      CB     CG1    CG2    .
+ CPC      HB     CB     .      .
+ CPC      CG2    CB     HG21   .
+ CPC      HG23   CG2    .      .
+ CPC      HG22   CG2    .      .
+ CPC      HG21   CG2    .      .
+ CPC      C      CA     .      END
+ CPC      O      C      .      .
+ CPC      OXT    C      .      .
+ CPC      CA     CB     .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CPC       N         CN        SINGLE    n         1.463     0.015     1.463     0.015     
+CPC       N         CA        SINGLE    n         1.426     0.020     1.426     0.020     
+CPC       CA        CB        SINGLE    n         1.521     0.015     1.521     0.015     
+CPC       CA        CG1       SINGLE    n         1.512     0.013     1.512     0.013     
+CPC       CA        C         SINGLE    n         1.497     0.015     1.497     0.015     
+CPC       CB        CG1       SINGLE    n         1.490     0.014     1.490     0.014     
+CPC       CB        CG2       SINGLE    n         1.508     0.013     1.508     0.013     
+CPC       C         O         DOUBLE    n         1.200     0.020     1.200     0.020     
+CPC       C         OXT       SINGLE    n         1.200     0.020     1.200     0.020     
+CPC       N         H         SINGLE    n         1.036     0.016     0.882     0.020     
+CPC       CN        HCN1      SINGLE    n         1.089     0.010     0.977     0.013     
+CPC       CN        HCN2      SINGLE    n         1.089     0.010     0.977     0.013     
+CPC       CN        HCN3      SINGLE    n         1.089     0.010     0.977     0.013     
+CPC       CB        HB        SINGLE    n         1.089     0.010     0.989     0.013     
+CPC       CG1       HG13      SINGLE    n         1.089     0.010     0.985     0.010     
+CPC       CG1       HG12      SINGLE    n         1.089     0.010     0.985     0.010     
+CPC       CG2       HG21      SINGLE    n         1.089     0.010     0.968     0.018     
+CPC       CG2       HG22      SINGLE    n         1.089     0.010     0.968     0.018     
+CPC       CG2       HG23      SINGLE    n         1.089     0.010     0.968     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CPC          CN           N          CA     118.510    3.00
+CPC          CN           N           H     110.352    3.00
+CPC          CA           N           H     116.768    3.00
+CPC           N          CN        HCN1     109.533    1.50
+CPC           N          CN        HCN2     109.533    1.50
+CPC           N          CN        HCN3     109.533    1.50
+CPC        HCN1          CN        HCN2     109.391    1.50
+CPC        HCN1          CN        HCN3     109.391    1.50
+CPC        HCN2          CN        HCN3     109.391    1.50
+CPC           N          CA          CB     117.259    1.99
+CPC           N          CA         CG1     117.259    1.99
+CPC           N          CA           C     109.471    3.00
+CPC          CB          CA         CG1      60.077    2.22
+CPC          CB          CA           C     118.746    2.87
+CPC         CG1          CA           C     118.746    2.87
+CPC          CA          CB         CG1      60.077    2.22
+CPC          CA          CB         CG2     120.272    3.00
+CPC          CA          CB          HB     116.814    1.94
+CPC         CG1          CB         CG2     121.918    1.50
+CPC         CG1          CB          HB     115.552    1.50
+CPC         CG2          CB          HB     113.983    1.50
+CPC          CA         CG1          CB      60.077    2.22
+CPC          CA         CG1        HG13     117.451    1.54
+CPC          CA         CG1        HG12     117.451    1.54
+CPC          CB         CG1        HG13     117.752    1.50
+CPC          CB         CG1        HG12     117.752    1.50
+CPC        HG13         CG1        HG12     114.868    1.50
+CPC          CB         CG2        HG21     109.759    1.50
+CPC          CB         CG2        HG22     109.759    1.50
+CPC          CB         CG2        HG23     109.759    1.50
+CPC        HG21         CG2        HG22     109.208    1.50
+CPC        HG21         CG2        HG23     109.208    1.50
+CPC        HG22         CG2        HG23     109.208    1.50
+CPC          CA           C           O     119.446    2.76
+CPC          CA           C         OXT     119.446    2.76
+CPC           O           C         OXT     121.108    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CPC            sp3_sp3_19        HCN1          CN           N          CA     180.000   10.00     3
+CPC            sp3_sp3_29           C          CA           N          CN     -60.000   10.00     3
+CPC             sp3_sp3_2           N          CA          CB         CG2     180.000   10.00     3
+CPC            sp3_sp3_31           N          CA         CG1          CB     180.000   10.00     3
+CPC             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+CPC            sp3_sp3_13         CG2          CB         CG1          CA     180.000   10.00     3
+CPC            sp3_sp3_40          CA          CB         CG2        HG21     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+CPC    chir_1    N    CA    CN    H    positive
+CPC    chir_2    CA    N    C    CB    positive
+CPC    chir_3    CB    CA    CG1    CG2    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CPC    plan-1           C   0.020
+CPC    plan-1          CA   0.020
+CPC    plan-1           O   0.020
+CPC    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CPC SMILES           ACDLabs              10.04 "O=C(O)C1(NC)CC1C"
+CPC SMILES_CANONICAL CACTVS               3.341 "CN[C@]1(C[C@@H]1C)C(O)=O"
+CPC SMILES           CACTVS               3.341 "CN[C]1(C[CH]1C)C(O)=O"
+CPC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@H]1C[C@]1(C(=O)O)NC"
+CPC SMILES           "OpenEye OEToolkits" 1.5.0 "CC1CC1(C(=O)O)NC"
+CPC InChI            InChI                1.03  "InChI=1S/C6H11NO2/c1-4-3-6(4,7-2)5(8)9/h4,7H,3H2,1-2H3,(H,8,9)/t4-,6-/m0/s1"
+CPC InChIKey         InChI                1.03  DYSUVIPLCIOCKL-NJGYIYPDSA-N
+CPC ?                acedrg               196         "dictionary generator"                  
+CPC ?                acedrg_database      11          "data source"                           
+CPC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CPC ?                refmac5              5.8.0222    "optimization tool"                     

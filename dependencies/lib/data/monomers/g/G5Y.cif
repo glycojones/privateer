@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+G5Y     G5Y      "3-hydroxy-4-oxo-4H-pyran-2-carboxylic acid"     NON-POLYMER     14     11     .     
+#
+data_comp_G5Y
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+G5Y     OAI     O       O       0       3.087       -0.044      -0.176      
+G5Y     CAH     C       C       0       2.245       -0.927      -0.219      
+G5Y     OAK     O       OC      -1      2.446       -2.129      -0.276      
+G5Y     CAG     C       CR6     0       0.792       -0.485      -0.204      
+G5Y     OAC     O       O2      0       -0.038      -1.226      -1.014      
+G5Y     CAB     C       CR16    0       -1.375      -0.925      -1.085      
+G5Y     CAA     C       CR16    0       -1.941      0.149       -0.335      
+G5Y     CAE     C       CR6     0       -1.093      0.941       0.522       
+G5Y     OAD     O       O       0       -1.511      1.906       1.218       
+G5Y     CAF     C       CR6     0       0.326       0.562       0.550       
+G5Y     OAJ     O       OH1     0       1.168       1.270       1.334       
+G5Y     H2      H       H       0       -1.903      -1.472      -1.664      
+G5Y     H3      H       H       0       -2.859      0.333       -0.403      
+G5Y     H4      H       H       0       1.206       2.092       1.091       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+G5Y       CAE       OAD       DOUBLE    n         1.260     0.0151    1.260     0.0151    
+G5Y       CAF       OAJ       SINGLE    n         1.350     0.0100    1.350     0.0100    
+G5Y       CAE       CAF       SINGLE    y         1.462     0.0100    1.462     0.0100    
+G5Y       CAA       CAE       SINGLE    y         1.440     0.0100    1.440     0.0100    
+G5Y       CAG       CAF       DOUBLE    y         1.363     0.0100    1.363     0.0100    
+G5Y       CAB       CAA       DOUBLE    y         1.433     0.0200    1.433     0.0200    
+G5Y       CAH       CAG       SINGLE    n         1.516     0.0103    1.516     0.0103    
+G5Y       CAG       OAC       SINGLE    y         1.372     0.0107    1.372     0.0107    
+G5Y       OAI       CAH       DOUBLE    n         1.219     0.0200    1.219     0.0200    
+G5Y       OAC       CAB       SINGLE    y         1.375     0.0200    1.375     0.0200    
+G5Y       CAH       OAK       SINGLE    n         1.219     0.0200    1.219     0.0200    
+G5Y       CAB       H2        SINGLE    n         1.082     0.013     0.956     0.0200    
+G5Y       CAA       H3        SINGLE    n         1.082     0.013     0.939     0.0137    
+G5Y       OAJ       H4        SINGLE    n         0.970     0.012     0.858     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+G5Y         CAG         CAH         OAI     116.468    1.69
+G5Y         CAG         CAH         OAK     116.458    1.69
+G5Y         OAI         CAH         OAK     127.056    1.50
+G5Y         CAF         CAG         CAH     123.477    1.50
+G5Y         CAF         CAG         OAC     121.358    1.50
+G5Y         CAH         CAG         OAC     115.165    1.50
+G5Y         CAG         OAC         CAB     120.536    1.84
+G5Y         CAA         CAB         OAC     123.623    1.50
+G5Y         CAA         CAB          H2     121.013    3.00
+G5Y         OAC         CAB          H2     115.365    3.00
+G5Y         CAE         CAA         CAB     120.309    1.50
+G5Y         CAE         CAA          H3     120.264    1.50
+G5Y         CAB         CAA          H3     119.427    1.50
+G5Y         OAD         CAE         CAF     120.769    1.50
+G5Y         OAD         CAE         CAA     124.336    1.50
+G5Y         CAF         CAE         CAA     114.895    1.50
+G5Y         OAJ         CAF         CAE     119.131    1.69
+G5Y         OAJ         CAF         CAG     121.589    3.00
+G5Y         CAE         CAF         CAG     119.279    1.50
+G5Y         CAF         OAJ          H4     111.278    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+G5Y             sp2_sp2_1         CAF         CAG         CAH         OAI     180.000   10.00     2
+G5Y              const_20         CAH         CAG         OAC         CAB     180.000   10.00     2
+G5Y       const_sp2_sp2_4         OAJ         CAF         CAG         CAH       0.000   10.00     2
+G5Y              const_17         CAA         CAB         OAC         CAG       0.000   10.00     2
+G5Y              const_13         CAE         CAA         CAB         OAC       0.000   10.00     2
+G5Y              const_10         CAB         CAA         CAE         OAD     180.000   10.00     2
+G5Y       const_sp2_sp2_8         OAD         CAE         CAF         OAJ       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+G5Y    plan-1         CAA   0.020
+G5Y    plan-1         CAB   0.020
+G5Y    plan-1         CAE   0.020
+G5Y    plan-1         CAF   0.020
+G5Y    plan-1         CAG   0.020
+G5Y    plan-1         CAH   0.020
+G5Y    plan-1          H2   0.020
+G5Y    plan-1          H3   0.020
+G5Y    plan-1         OAC   0.020
+G5Y    plan-1         OAD   0.020
+G5Y    plan-1         OAJ   0.020
+G5Y    plan-2         CAG   0.020
+G5Y    plan-2         CAH   0.020
+G5Y    plan-2         OAI   0.020
+G5Y    plan-2         OAK   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+G5Y           SMILES              ACDLabs 12.01                                      O=C(O)C=1OC=CC(C=1O)=O
+G5Y            InChI                InChI  1.03 InChI=1S/C6H4O5/c7-3-1-2-11-5(4(3)8)6(9)10/h1-2,8H,(H,9,10)
+G5Y         InChIKey                InChI  1.03                                 XZUDOWCTKOXYCZ-UHFFFAOYSA-N
+G5Y SMILES_CANONICAL               CACTVS 3.385                                     OC(=O)C1=C(O)C(=O)C=CO1
+G5Y           SMILES               CACTVS 3.385                                     OC(=O)C1=C(O)C(=O)C=CO1
+G5Y SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                     C1=COC(=C(C1=O)O)C(=O)O
+G5Y           SMILES "OpenEye OEToolkits" 2.0.6                                     C1=COC(=C(C1=O)O)C(=O)O
+G5Y ?                acedrg               217         "dictionary generator"                  
+G5Y ?                acedrg_database      11          "data source"                           
+G5Y ?                rdkit                2017.03.2   "Chemoinformatics tool"
+G5Y ?                refmac5              5.8.0253    "optimization tool"                     

@@ -1,0 +1,265 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+C4R      C4R '(R)-2-amino-3-(bicyclo[2.2.1]hepta-2' peptide            28  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_C4R
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ C4R           N      N    NH2       0.000    -18.267  -41.963    2.274
+ C4R           H   H    H         0.000    -17.772  -41.717    1.424
+ C4R           H2    H    H         0.000    -17.995  -42.799    2.780
+ C4R           CA     C    CH1       0.000    -19.368  -41.116    2.768
+ C4R           HA     H    H         0.000    -20.313  -41.675    2.713
+ C4R           CB     C    CH2       0.000    -19.117  -40.677    4.221
+ C4R           HB     H    H         0.000    -18.102  -40.982    4.483
+ C4R           HBA    H    H         0.000    -19.831  -41.212    4.851
+ C4R           SG     S    ST        0.000    -19.296  -38.919    4.475
+ C4R           HSG    H    H         0.000    -18.737  -38.212    3.632
+ C4R           RH     RH   RH        1.000    -18.745  -38.467    6.606
+ C4R           C12    C    C         0.000    -21.091  -38.263    6.888
+ C4R           C11    C    C         0.000    -21.034  -37.070    6.298
+ C4R           C10    C    CH1       0.000    -21.503  -37.271    4.883
+ C4R           H10    H    H         0.000    -21.208  -36.504    4.154
+ C4R           C15    C    CH1       0.000    -21.043  -38.690    4.599
+ C4R           H15    H    H         0.000    -21.559  -39.104    3.721
+ C4R           C17    C    CH2       0.000    -22.995  -37.483    5.080
+ C4R           H17    H    H         0.000    -23.555  -37.430    4.144
+ C4R           H17A   H    H         0.000    -23.427  -36.786    5.801
+ C4R           C16    C    CH2       0.000    -23.065  -38.911    5.640
+ C4R           H16    H    H         0.000    -23.499  -39.618    4.930
+ C4R           H16A   H    H         0.000    -23.611  -38.964    6.584
+ C4R           C13    C    CH1       0.000    -21.608  -39.258    5.876
+ C4R           H13    H    H         0.000    -21.387  -40.315    6.077
+ C4R           C      C    C         0.000    -19.453  -39.891    1.879
+ C4R           OXT    O    OC       -0.500    -18.354  -39.346    1.634
+ C4R           O      O    OC       -0.500    -20.466  -39.441    1.299
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ C4R      N      n/a    CA     START
+ C4R      H   N      .      .
+ C4R      H2    N      .      .
+ C4R      CA     N      C      .
+ C4R      HA     CA     .      .
+ C4R      CB     CA     SG     .
+ C4R      HB     CB     .      .
+ C4R      HBA    CB     .      .
+ C4R      SG     CB     RH     .
+ C4R      HSG    SG     .      .
+ C4R      RH     SG     C11    .
+ C4R      C12    RH     .      .
+ C4R      C11    RH     C10    .
+ C4R      C10    C11    C17    .
+ C4R      H10    C10    .      .
+ C4R      C15    C10    H15    .
+ C4R      H15    C15    .      .
+ C4R      C17    C10    C16    .
+ C4R      H17    C17    .      .
+ C4R      H17A   C17    .      .
+ C4R      C16    C17    C13    .
+ C4R      H16    C16    .      .
+ C4R      H16A   C16    .      .
+ C4R      C13    C16    H13    .
+ C4R      H13    C13    .      .
+ C4R      C      CA     .      END
+ C4R      OXT    C      .      .
+ C4R      O      C      .      .
+ C4R      SG     C15    .    ADD
+ C4R      C15    C13    .    ADD
+ C4R      C13    C12    .    ADD
+ C4R      C12    C11    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+C4R       OXT       C         deloc     1.250     0.020     1.250     0.020     
+C4R       O         C         deloc     1.250     0.020     1.250     0.020     
+C4R       C         CA        single    1.500     0.020     1.500     0.020     
+C4R       CA        N         single    1.450     0.020     1.450     0.020     
+C4R       CB        CA        single    1.524     0.020     1.524     0.020     
+C4R       HA        CA        single    1.089     0.010     0.989     0.005     
+C4R       SG        CB        single    1.662     0.020     1.662     0.020     
+C4R       HB        CB        single    1.089     0.010     0.989     0.005     
+C4R       HBA       CB        single    1.089     0.010     0.989     0.005     
+C4R       SG        C15       single    1.665     0.020     1.665     0.020     
+C4R       RH        SG        single    2.247     0.020     2.247     0.020     
+C4R       C15       C10       single    1.524     0.020     1.524     0.020     
+C4R       C15       C13       single    1.524     0.020     1.524     0.020     
+C4R       H15       C15       single    1.089     0.010     0.989     0.005     
+C4R       C13       C16       single    1.524     0.020     1.524     0.020     
+C4R       C13       C12       single    1.500     0.020     1.500     0.020     
+C4R       H13       C13       single    1.089     0.010     0.989     0.005     
+C4R       C12       C11       double    1.330     0.020     1.330     0.020     
+C4R       C12       RH        single    2.372     0.020     2.372     0.020     
+C4R       C11       RH        single    1.800     0.020     1.800     0.020     
+C4R       C10       C11       single    1.500     0.020     1.500     0.020     
+C4R       C16       C17       single    1.524     0.020     1.524     0.020     
+C4R       H16       C16       single    1.089     0.010     0.989     0.005     
+C4R       H16A      C16       single    1.089     0.010     0.989     0.005     
+C4R       C17       C10       single    1.524     0.020     1.524     0.020     
+C4R       H17       C17       single    1.089     0.010     0.989     0.005     
+C4R       H17A      C17       single    1.089     0.010     0.989     0.005     
+C4R       H10       C10       single    1.089     0.010     0.989     0.005     
+C4R       HSG       SG        single    1.338     0.010     1.171     0.208     
+C4R       H         N         single    1.036     0.016     0.914     0.007     
+C4R       H2        N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ C4R      H   N      H2     120.000    3.000
+ C4R      H   N      CA      120.000    3.000
+ C4R      H2    N      CA      120.000    3.000
+ C4R      N      CA     HA      109.470    3.000
+ C4R      N      CA     CB      109.470    3.000
+ C4R      N      CA     C       109.470    3.000
+ C4R      HA     CA     CB      108.340    3.000
+ C4R      HA     CA     C       108.810    3.000
+ C4R      CB     CA     C       109.470    3.000
+ C4R      CA     CB     HB      109.470    3.000
+ C4R      CA     CB     HBA     109.470    3.000
+ C4R      CA     CB     SG      109.500    3.000
+ C4R      HB     CB     HBA     107.900    3.000
+ C4R      HB     CB     SG      109.500    3.000
+ C4R      HBA    CB     SG      109.500    3.000
+ C4R      CB     SG     HSG     109.500    3.000
+ C4R      CB     SG     RH      109.500    3.000
+ C4R      CB     SG     C15     109.500    3.000
+ C4R      HSG    SG     RH      109.500    3.000
+ C4R      HSG    SG     C15     109.500    3.000
+ C4R      RH     SG     C15     109.500    3.000
+ C4R      SG     RH     C12      83.541    3.000
+ C4R      SG     RH     C11      77.757    3.000
+ C4R      C12    RH     C11      33.788    3.000
+ C4R      RH     C12    C13     120.000    3.000
+ C4R      RH     C12    C11      48.820    3.000
+ C4R      C13    C12    C11     120.000    3.000
+ C4R      RH     C11    C10     120.000    3.000
+ C4R      RH     C11    C12      97.391    3.000
+ C4R      C10    C11    C12     120.000    3.000
+ C4R      C11    C10    H10     108.810    3.000
+ C4R      C11    C10    C15     109.470    3.000
+ C4R      C11    C10    C17     109.470    3.000
+ C4R      H10    C10    C15     108.340    3.000
+ C4R      H10    C10    C17     108.340    3.000
+ C4R      C15    C10    C17     111.000    3.000
+ C4R      C10    C15    H15     108.340    3.000
+ C4R      C10    C15    SG      109.500    3.000
+ C4R      C10    C15    C13     111.000    3.000
+ C4R      SG     C15    C13     109.500    3.000
+ C4R      H15    C15    SG      109.500    3.000
+ C4R      H15    C15    C13     108.340    3.000
+ C4R      C10    C17    H17     109.470    3.000
+ C4R      C10    C17    H17A    109.470    3.000
+ C4R      C10    C17    C16     111.000    3.000
+ C4R      H17    C17    H17A    107.900    3.000
+ C4R      H17    C17    C16     109.470    3.000
+ C4R      H17A   C17    C16     109.470    3.000
+ C4R      C17    C16    H16     109.470    3.000
+ C4R      C17    C16    H16A    109.470    3.000
+ C4R      C17    C16    C13     111.000    3.000
+ C4R      H16    C16    H16A    107.900    3.000
+ C4R      H16    C16    C13     109.470    3.000
+ C4R      H16A   C16    C13     109.470    3.000
+ C4R      C16    C13    H13     108.340    3.000
+ C4R      C16    C13    C15     111.000    3.000
+ C4R      C16    C13    C12     109.470    3.000
+ C4R      C15    C13    C12     109.470    3.000
+ C4R      H13    C13    C15     108.340    3.000
+ C4R      H13    C13    C12     108.810    3.000
+ C4R      CA     C      OXT     118.500    3.000
+ C4R      CA     C      O       118.500    3.000
+ C4R      OXT    C      O       123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ C4R      var_1    H2    N      CA     C        175.000   20.000   1
+ C4R      var_2    N      CA     CB     SG       129.565   20.000   3
+ C4R      var_3    CA     CB     SG     RH      -175.903   20.000   1
+ C4R      var_4    CB     SG     C15    C10      177.417   20.000   1
+ C4R      var_5    CB     SG     RH     C11     -133.836   20.000   1
+ C4R      var_6    SG     RH     C12    C13       31.570   20.000   1
+ C4R      var_7    SG     RH     C11    C10       -0.980   20.000   1
+ C4R      var_8    RH     C11    C10    C17      137.141   20.000   3
+ C4R      var_9    C11    C10    C15    SG       -69.095   20.000   3
+ C4R      var_10   C10    C15    C13    C16       60.408   20.000   3
+ C4R      var_11   C11    C10    C17    C16      -74.849   20.000   3
+ C4R      var_12   C10    C17    C16    C13        7.713   20.000   3
+ C4R      var_13   C17    C16    C13    C15      -42.714   20.000   3
+ C4R      var_14   C16    C13    C12    RH      -162.220   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ C4R      chir_01  CA     C      N      CB        negativ
+ C4R      chir_02  SG     CB     C15    RH        negativ
+ C4R      chir_03  C15    SG     C13    C10       negativ
+ C4R      chir_04  C13    C15    C12    C16       negativ
+ C4R      chir_05  C10    C15    C11    C17       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ C4R      plan-1    C         0.020
+ C4R      plan-1    OXT       0.020
+ C4R      plan-1    O         0.020
+ C4R      plan-1    CA        0.020
+ C4R      plan-2    N         0.020
+ C4R      plan-2    CA        0.020
+ C4R      plan-2    H      0.020
+ C4R      plan-2    H2       0.020
+ C4R      plan-3    C12       0.020
+ C4R      plan-3    C13       0.020
+ C4R      plan-3    C11       0.020
+ C4R      plan-3    RH        0.020
+# ------------------------------------------------------

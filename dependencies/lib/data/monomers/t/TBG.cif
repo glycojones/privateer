@@ -1,0 +1,201 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TBG     TBG     3-methyl-L-valine     peptide     22     9     .
+#
+data_comp_TBG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TBG     N       N       NT3     1       1.233       1.586       -0.580
+TBG     CA      C       CH1     0       0.847       0.145       -0.630
+TBG     CB      C       CT      0       -0.526      -0.209      0.080
+TBG     CG1     C       CH3     0       -0.928      -1.656      -0.233
+TBG     CG2     C       CH3     0       -1.637      0.709       -0.443
+TBG     CG3     C       CH3     0       -0.465      -0.051      1.605
+TBG     C       C       C       0       2.018       -0.700      -0.104
+TBG     O       O       O       0       2.253       -1.775      -0.691
+TBG     OXT     O       OC      -1      2.650       -0.253      0.874
+TBG     H       H       H       0       2.089       1.692       -0.879
+TBG     H2      H       H       0       1.181       1.900       0.271
+TBG     H3      H       H       0       0.684       2.077       -1.115
+TBG     HA      H       H       0       0.711       -0.090      -1.577
+TBG     HG11    H       H       0       -1.845      -1.810      0.053
+TBG     HG12    H       H       0       -0.340      -2.271      0.239
+TBG     HG13    H       H       0       -0.858      -1.815      -1.190
+TBG     HG21    H       H       0       -2.493      0.433       -0.070
+TBG     HG22    H       H       0       -1.676      0.653       -1.414
+TBG     HG23    H       H       0       -1.454      1.627       -0.179
+TBG     HG31    H       H       0       -1.360      -0.141      1.976
+TBG     HG32    H       H       0       -0.112      0.826       1.831
+TBG     HG33    H       H       0       0.109       -0.738      1.986
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+TBG      N      n/a    CA     START
+TBG      H      N      .      .
+TBG      H2     N      .      .
+TBG      H3     N      .      .
+TBG      CA     N      C      .
+TBG      HA     CA     .      .
+TBG      CB     CA     CG1    .
+TBG      CG3    CB     HG31   .
+TBG      HG33   CG3    .      .
+TBG      HG32   CG3    .      .
+TBG      HG31   CG3    .      .
+TBG      CG2    CB     HG21   .
+TBG      HG23   CG2    .      .
+TBG      HG22   CG2    .      .
+TBG      HG21   CG2    .      .
+TBG      CG1    CB     HG11   .
+TBG      HG13   CG1    .      .
+TBG      HG12   CG1    .      .
+TBG      HG11   CG1    .      .
+TBG      C      CA     .      END
+TBG      O      C      .      .
+TBG      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TBG       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+TBG       CA        CB        SINGLE    n         1.573     0.014     1.573     0.014     
+TBG       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+TBG       CB        CG1       SINGLE    n         1.531     0.012     1.531     0.012     
+TBG       CB        CG2       SINGLE    n         1.531     0.012     1.531     0.012     
+TBG       CB        CG3       SINGLE    n         1.531     0.012     1.531     0.012     
+TBG       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TBG       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TBG       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+TBG       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+TBG       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+TBG       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+TBG       CG1       HG11      SINGLE    n         1.089     0.010     0.973     0.015     
+TBG       CG1       HG12      SINGLE    n         1.089     0.010     0.973     0.015     
+TBG       CG1       HG13      SINGLE    n         1.089     0.010     0.973     0.015     
+TBG       CG2       HG21      SINGLE    n         1.089     0.010     0.973     0.015     
+TBG       CG2       HG22      SINGLE    n         1.089     0.010     0.973     0.015     
+TBG       CG2       HG23      SINGLE    n         1.089     0.010     0.973     0.015     
+TBG       CG3       HG31      SINGLE    n         1.089     0.010     0.973     0.015     
+TBG       CG3       HG32      SINGLE    n         1.089     0.010     0.973     0.015     
+TBG       CG3       HG33      SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TBG          CA           N           H     109.853    1.85
+TBG          CA           N          H2     109.853    1.85
+TBG          CA           N          H3     109.853    1.85
+TBG           H           N          H2     109.028    2.41
+TBG           H           N          H3     109.028    2.41
+TBG          H2           N          H3     109.028    2.41
+TBG           N          CA          CB     112.810    3.00
+TBG           N          CA           C     109.414    1.50
+TBG           N          CA          HA     108.444    1.50
+TBG          CB          CA           C     111.511    2.91
+TBG          CB          CA          HA     105.876    1.50
+TBG           C          CA          HA     108.600    1.50
+TBG          CA          CB         CG1     110.196    2.15
+TBG          CA          CB         CG2     110.196    2.15
+TBG          CA          CB         CG3     110.196    2.15
+TBG         CG1          CB         CG2     108.477    1.50
+TBG         CG1          CB         CG3     108.477    1.50
+TBG         CG2          CB         CG3     108.477    1.50
+TBG          CB         CG1        HG11     109.547    1.50
+TBG          CB         CG1        HG12     109.547    1.50
+TBG          CB         CG1        HG13     109.547    1.50
+TBG        HG11         CG1        HG12     109.377    1.50
+TBG        HG11         CG1        HG13     109.377    1.50
+TBG        HG12         CG1        HG13     109.377    1.50
+TBG          CB         CG2        HG21     109.547    1.50
+TBG          CB         CG2        HG22     109.547    1.50
+TBG          CB         CG2        HG23     109.547    1.50
+TBG        HG21         CG2        HG22     109.377    1.50
+TBG        HG21         CG2        HG23     109.377    1.50
+TBG        HG22         CG2        HG23     109.377    1.50
+TBG          CB         CG3        HG31     109.547    1.50
+TBG          CB         CG3        HG32     109.547    1.50
+TBG          CB         CG3        HG33     109.547    1.50
+TBG        HG31         CG3        HG32     109.377    1.50
+TBG        HG31         CG3        HG33     109.377    1.50
+TBG        HG32         CG3        HG33     109.377    1.50
+TBG          CA           C           O     117.139    1.50
+TBG          CA           C         OXT     117.139    1.50
+TBG           O           C         OXT     125.721    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TBG             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+TBG            sp3_sp3_13           N          CA          CB         CG1      60.000   10.00     3
+TBG             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+TBG            sp3_sp3_19          CA          CB         CG1        HG11     180.000   10.00     3
+TBG            sp3_sp3_28          CA          CB         CG2        HG21     180.000   10.00     3
+TBG            sp3_sp3_37          CA          CB         CG3        HG31     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TBG    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TBG    plan-1           C   0.020
+TBG    plan-1          CA   0.020
+TBG    plan-1           O   0.020
+TBG    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TBG SMILES           ACDLabs              12.01 "O=C(O)C(N)C(C)(C)C"
+TBG SMILES_CANONICAL CACTVS               3.370 "CC(C)(C)[C@H](N)C(O)=O"
+TBG SMILES           CACTVS               3.370 "CC(C)(C)[CH](N)C(O)=O"
+TBG SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "CC(C)(C)[C@@H](C(=O)O)N"
+TBG SMILES           "OpenEye OEToolkits" 1.7.0 "CC(C)(C)C(C(=O)O)N"
+TBG InChI            InChI                1.03  "InChI=1S/C6H13NO2/c1-6(2,3)4(7)5(8)9/h4H,7H2,1-3H3,(H,8,9)/t4-/m1/s1"
+TBG InChIKey         InChI                1.03  NPDBDJFLKKQMCM-SCSAIBSYSA-N
+TBG ?                acedrg               196         "dictionary generator"
+TBG ?                acedrg_database      11          "data source"
+TBG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TBG ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,332 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PAQ     PAQ     "2-OXY-4-HYDROXY-5-(2-HYDRAZINOPYRIDINE)PHENYLALANINE"     peptide    38     22     .
+#
+data_comp_PAQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PAQ     N       N       NT3     1       66.404      75.785      -3.723
+PAQ     CA      C       CH1     0       65.472      74.768      -3.157
+PAQ     CB      C       CH2     0       65.871      74.379      -1.729
+PAQ     CG      C       CH1     0       67.231      73.660      -1.544
+PAQ     CD1     C       CR6     0       67.395      72.400      -2.353
+PAQ     O2      O       O       0       66.518      71.548      -2.308
+PAQ     CD2     C       CR16    0       68.393      74.557      -1.596
+PAQ     CE1     C       CR16    0       68.584      72.215      -3.163
+PAQ     CE2     C       CR6     0       69.478      74.350      -2.347
+PAQ     CZ      C       CR6     0       69.599      73.174      -3.171
+PAQ     OH      O       OH1     0       70.663      72.973      -3.954
+PAQ     N1      N       NH1     0       70.527      75.276      -2.371
+PAQ     N2      N       NH1     0       70.957      75.932      -1.218
+PAQ     C1      C       CR6     0       71.768      77.074      -1.264
+PAQ     C2      C       CR16    0       71.785      77.954      -2.356
+PAQ     C3      C       CR16    0       72.621      79.048      -2.295
+PAQ     C4      C       CR16    0       73.408      79.261      -1.177
+PAQ     C5      C       CR16    0       73.332      78.352      -0.141
+PAQ     N3      N       NRD6    0       72.533      77.269      -0.158
+PAQ     C       C       C       0       64.038      75.314      -3.177
+PAQ     O       O       O       0       63.819      76.361      -2.536
+PAQ     OXT     O       OC      -1      63.195      74.671      -3.833
+PAQ     H       H       H       0       66.021      76.201      -4.440
+PAQ     H2      H       H       0       67.171      75.381      -4.001
+PAQ     H3      H       H       0       66.607      76.411      -3.093
+PAQ     HA      H       H       0       65.507      73.964      -3.723
+PAQ     HB2     H       H       0       65.167      73.793      -1.363
+PAQ     HB3     H       H       0       65.880      75.197      -1.179
+PAQ     HG      H       H       0       67.190      73.377      -0.599
+PAQ     HD2     H       H       0       68.368      75.336      -1.064
+PAQ     HE1     H       H       0       68.660      71.436      -3.687
+PAQ     HH      H       H       0       71.360      72.777      -3.477
+PAQ     HN1     H       H       0       70.929      75.432      -3.133
+PAQ     HN2     H       H       0       70.728      75.637      -0.424
+PAQ     HC2     H       H       0       71.244      77.798      -3.115
+PAQ     HC3     H       H       0       72.651      79.653      -3.019
+PAQ     HC4     H       H       0       73.983      80.008      -1.124
+PAQ     HC5     H       H       0       73.867      78.493      0.622
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+PAQ      N      n/a    CA     START
+PAQ      H      N      .      .
+PAQ      H2     N      .      .
+PAQ      H3     N      .      .
+PAQ      CA     N      C      .
+PAQ      HA     CA     .      .
+PAQ      CB     CA     CG     .
+PAQ      HB2    CB     .      .
+PAQ      HB3    CB     .      .
+PAQ      CG     CB     CD2    .
+PAQ      HG     CG     .      .
+PAQ      CD2    CG     CE2    .
+PAQ      HD2    CD2    .      .
+PAQ      CE2    CD2    N1     .
+PAQ      CZ     CE2    CE1    .
+PAQ      OH     CZ     HH     .
+PAQ      HH     OH     .      .
+PAQ      CE1    CZ     CD1    .
+PAQ      HE1    CE1    .      .
+PAQ      CD1    CE1    O2     .
+PAQ      O2     CD1    .      .
+PAQ      N1     CE2    N2     .
+PAQ      HN1    N1     .      .
+PAQ      N2     N1     C1     .
+PAQ      HN2    N2     .      .
+PAQ      C1     N2     N3     .
+PAQ      N3     C1     C5     .
+PAQ      C5     N3     C4     .
+PAQ      HC5    C5     .      .
+PAQ      C4     C5     C3     .
+PAQ      HC4    C4     .      .
+PAQ      C3     C4     C2     .
+PAQ      HC3    C3     .      .
+PAQ      C2     C3     HC2    .
+PAQ      HC2    C2     .      .
+PAQ      C      CA     .      END
+PAQ      O      C      .      .
+PAQ      OXT    C      .      .
+PAQ      CG     CD1    .    ADD
+PAQ      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PAQ       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+PAQ       CA        CB        SINGLE    n         1.528     0.013     1.528     0.013     
+PAQ       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+PAQ       CB        CG        SINGLE    n         1.541     0.018     1.541     0.018     
+PAQ       CG        CD1       SINGLE    n         1.504     0.020     1.504     0.020     
+PAQ       CG        CD2       SINGLE    n         1.450     0.020     1.450     0.020     
+PAQ       CD1       O2        DOUBLE    n         1.223     0.010     1.223     0.010     
+PAQ       CD1       CE1       SINGLE    n         1.456     0.020     1.456     0.020     
+PAQ       CD2       CE2       DOUBLE    n         1.324     0.012     1.324     0.012     
+PAQ       CE1       CZ        DOUBLE    n         1.390     0.018     1.390     0.018     
+PAQ       CE2       CZ        SINGLE    n         1.413     0.020     1.413     0.020     
+PAQ       CE2       N1        SINGLE    n         1.388     0.020     1.388     0.020     
+PAQ       CZ        OH        SINGLE    n         1.335     0.014     1.335     0.014     
+PAQ       N1        N2        SINGLE    n         1.392     0.010     1.392     0.010     
+PAQ       N2        C1        SINGLE    n         1.389     0.020     1.389     0.020     
+PAQ       C1        C2        DOUBLE    y         1.384     0.020     1.384     0.020     
+PAQ       C1        N3        SINGLE    y         1.344     0.020     1.344     0.020     
+PAQ       C2        C3        SINGLE    y         1.374     0.010     1.374     0.010     
+PAQ       C3        C4        DOUBLE    y         1.379     0.011     1.379     0.011     
+PAQ       C4        C5        SINGLE    y         1.374     0.015     1.374     0.015     
+PAQ       C5        N3        DOUBLE    y         1.343     0.010     1.343     0.010     
+PAQ       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+PAQ       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+PAQ       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+PAQ       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+PAQ       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+PAQ       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+PAQ       CB        HB2       SINGLE    n         1.089     0.010     0.986     0.013     
+PAQ       CB        HB3       SINGLE    n         1.089     0.010     0.986     0.013     
+PAQ       CG        HG        SINGLE    n         1.089     0.010     0.988     0.018     
+PAQ       CD2       HD2       SINGLE    n         1.082     0.013     0.944     0.015     
+PAQ       CE1       HE1       SINGLE    n         1.082     0.013     0.942     0.016     
+PAQ       OH        HH        SINGLE    n         0.970     0.012     0.867     0.020     
+PAQ       N1        HN1       SINGLE    n         1.016     0.010     0.876     0.020     
+PAQ       N2        HN2       SINGLE    n         1.016     0.010     0.876     0.020     
+PAQ       C2        HC2       SINGLE    n         1.082     0.013     0.945     0.020     
+PAQ       C3        HC3       SINGLE    n         1.082     0.013     0.944     0.018     
+PAQ       C4        HC4       SINGLE    n         1.082     0.013     0.944     0.020     
+PAQ       C5        HC5       SINGLE    n         1.082     0.013     0.943     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PAQ          CA           N           H     109.853    1.85
+PAQ          CA           N          H2     109.853    1.85
+PAQ          CA           N          H3     109.853    1.85
+PAQ           H           N          H2     109.028    2.41
+PAQ           H           N          H3     109.028    2.41
+PAQ          H2           N          H3     109.028    2.41
+PAQ           N          CA          CB     110.361    1.54
+PAQ           N          CA           C     109.414    1.50
+PAQ           N          CA          HA     108.444    1.50
+PAQ          CB          CA           C     110.778    2.06
+PAQ          CB          CA          HA     108.236    1.50
+PAQ           C          CA          HA     108.600    1.50
+PAQ          CA          CB          CG     113.198    2.74
+PAQ          CA          CB         HB2     108.507    1.50
+PAQ          CA          CB         HB3     108.507    1.50
+PAQ          CG          CB         HB2     109.001    2.17
+PAQ          CG          CB         HB3     109.001    2.17
+PAQ         HB2          CB         HB3     107.474    1.50
+PAQ          CB          CG         CD1     112.838    3.00
+PAQ          CB          CG         CD2     112.838    3.00
+PAQ          CB          CG          HG     102.514    3.00
+PAQ         CD1          CG         CD2     113.307    2.71
+PAQ         CD1          CG          HG     106.591    3.00
+PAQ         CD2          CG          HG     104.404    3.00
+PAQ          CG         CD1          O2     118.310    1.50
+PAQ          CG         CD1         CE1     121.074    1.81
+PAQ          O2         CD1         CE1     120.615    1.50
+PAQ          CG         CD2         CE2     121.839    3.00
+PAQ          CG         CD2         HD2     119.151    1.50
+PAQ         CE2         CD2         HD2     119.010    1.50
+PAQ         CD1         CE1          CZ     121.206    1.50
+PAQ         CD1         CE1         HE1     118.606    1.50
+PAQ          CZ         CE1         HE1     120.189    1.50
+PAQ         CD2         CE2          CZ     119.173    1.50
+PAQ         CD2         CE2          N1     120.413    2.97
+PAQ          CZ         CE2          N1     120.413    2.97
+PAQ         CE1          CZ         CE2     118.333    1.50
+PAQ         CE1          CZ          OH     119.929    2.84
+PAQ         CE2          CZ          OH     121.738    1.92
+PAQ          CZ          OH          HH     110.574    3.00
+PAQ         CE2          N1          N2     121.141    1.50
+PAQ         CE2          N1         HN1     119.305    2.07
+PAQ          N2          N1         HN1     119.554    1.96
+PAQ          N1          N2          C1     120.634    3.00
+PAQ          N1          N2         HN2     121.499    1.96
+PAQ          C1          N2         HN2     117.867    2.10
+PAQ          N2          C1          C2     121.447    2.90
+PAQ          N2          C1          N3     115.418    3.00
+PAQ          C2          C1          N3     123.134    1.50
+PAQ          C1          C2          C3     117.770    1.50
+PAQ          C1          C2         HC2     121.106    1.50
+PAQ          C3          C2         HC2     121.123    1.50
+PAQ          C2          C3          C4     119.700    1.50
+PAQ          C2          C3         HC3     119.865    1.50
+PAQ          C4          C3         HC3     120.435    1.50
+PAQ          C3          C4          C5     118.224    1.50
+PAQ          C3          C4         HC4     120.959    1.50
+PAQ          C5          C4         HC4     120.818    1.50
+PAQ          C4          C5          N3     123.782    1.50
+PAQ          C4          C5         HC5     118.443    1.50
+PAQ          N3          C5         HC5     117.774    1.50
+PAQ          C1          N3          C5     117.389    1.50
+PAQ          CA           C           O     117.139    1.50
+PAQ          CA           C         OXT     117.139    1.50
+PAQ           O           C         OXT     125.721    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PAQ             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+PAQ            sp2_sp2_21         CE2          N1          N2          C1     180.000   10.00     2
+PAQ            sp2_sp2_25          C2          C1          N2          N1     180.000   10.00     2
+PAQ       const_sp2_sp2_3          N2          C1          C2          C3     180.000   10.00     2
+PAQ              const_20          N2          C1          N3          C5     180.000   10.00     2
+PAQ       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+PAQ       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+PAQ              const_13          C3          C4          C5          N3       0.000   10.00     2
+PAQ              const_17          C4          C5          N3          C1       0.000   10.00     2
+PAQ             sp2_sp3_7           O           C          CA           N       0.000   10.00     6
+PAQ            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+PAQ            sp3_sp3_19          CA          CB          CG         CD1     180.000   10.00     3
+PAQ             sp2_sp3_5          O2         CD1          CG          CB     -60.000   10.00     6
+PAQ            sp2_sp3_14         CE2         CD2          CG          CB     120.000   10.00     6
+PAQ             sp2_sp2_3          O2         CD1         CE1          CZ     180.000   10.00     2
+PAQ            sp2_sp2_14          CG         CD2         CE2          N1     180.000   10.00     2
+PAQ             sp2_sp2_6         CD1         CE1          CZ          OH     180.000   10.00     2
+PAQ            sp2_sp2_17         CD2         CE2          N1          N2     180.000   10.00     2
+PAQ            sp2_sp2_12          N1         CE2          CZ          OH       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PAQ    chir_1    CA    N    C    CB    positive
+PAQ    chir_2    CG    CD1    CD2    CB    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PAQ    plan-1          C1   0.020
+PAQ    plan-1          C2   0.020
+PAQ    plan-1          C3   0.020
+PAQ    plan-1          C4   0.020
+PAQ    plan-1          C5   0.020
+PAQ    plan-1         HC2   0.020
+PAQ    plan-1         HC3   0.020
+PAQ    plan-1         HC4   0.020
+PAQ    plan-1         HC5   0.020
+PAQ    plan-1          N2   0.020
+PAQ    plan-1          N3   0.020
+PAQ    plan-2         CD1   0.020
+PAQ    plan-2         CE1   0.020
+PAQ    plan-2          CG   0.020
+PAQ    plan-2          O2   0.020
+PAQ    plan-3         CD2   0.020
+PAQ    plan-3         CE2   0.020
+PAQ    plan-3          CG   0.020
+PAQ    plan-3         HD2   0.020
+PAQ    plan-4         CD1   0.020
+PAQ    plan-4         CE1   0.020
+PAQ    plan-4          CZ   0.020
+PAQ    plan-4         HE1   0.020
+PAQ    plan-5         CD2   0.020
+PAQ    plan-5         CE2   0.020
+PAQ    plan-5          CZ   0.020
+PAQ    plan-5          N1   0.020
+PAQ    plan-6         CE1   0.020
+PAQ    plan-6         CE2   0.020
+PAQ    plan-6          CZ   0.020
+PAQ    plan-6          OH   0.020
+PAQ    plan-7         CE2   0.020
+PAQ    plan-7         HN1   0.020
+PAQ    plan-7          N1   0.020
+PAQ    plan-7          N2   0.020
+PAQ    plan-8          C1   0.020
+PAQ    plan-8         HN2   0.020
+PAQ    plan-8          N1   0.020
+PAQ    plan-8          N2   0.020
+PAQ    plan-9           C   0.020
+PAQ    plan-9          CA   0.020
+PAQ    plan-9           O   0.020
+PAQ    plan-9         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PAQ SMILES           ACDLabs              10.04 "O=C(O)C(N)CC2C=C(NNc1ncccc1)C(O)=CC2=O"
+PAQ SMILES_CANONICAL CACTVS               3.341 "N[C@@H](C[C@@H]1C=C(NNc2ccccn2)C(=CC1=O)O)C(O)=O"
+PAQ SMILES           CACTVS               3.341 "N[CH](C[CH]1C=C(NNc2ccccn2)C(=CC1=O)O)C(O)=O"
+PAQ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccnc(c1)NNC2=CC(C(=O)C=C2O)C[C@@H](C(=O)O)N"
+PAQ SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccnc(c1)NNC2=CC(C(=O)C=C2O)CC(C(=O)O)N"
+PAQ InChI            InChI                1.03  "InChI=1S/C14H16N4O4/c15-9(14(21)22)5-8-6-10(12(20)7-11(8)19)17-18-13-3-1-2-4-16-13/h1-4,6-9,17,20H,5,15H2,(H,16,18)(H,21,22)/t8-,9+/m1/s1"
+PAQ InChIKey         InChI                1.03  AZUQIXJQZOMXAS-BDAKNGLRSA-N
+PAQ ?                acedrg               202         "dictionary generator"
+PAQ ?                acedrg_database      11          "data source"
+PAQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PAQ ?                refmac5              5.8.0222    "optimization tool"

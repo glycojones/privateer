@@ -1,0 +1,122 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AGU     AGU      AMINOGUANIDINE     NON-POLYMER     11     5     .     
+#
+data_comp_AGU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AGU     C       C       C       0       67.846      -5.005      53.103      
+AGU     N1      N       NH1     0       67.162      -5.843      53.840      
+AGU     N2      N       NH2     0       67.766      -3.696      53.397      
+AGU     N3      N       NH1     0       68.679      -5.429      52.081      
+AGU     N4      N       NT2     0       69.141      -4.584      51.047      
+AGU     HN1     H       H       0       67.120      -6.689      53.448      
+AGU     HN21    H       H       0       67.266      -3.430      54.074      
+AGU     HN22    H       H       0       68.205      -3.096      52.929      
+AGU     HN3     H       H       0       68.929      -6.263      52.109      
+AGU     HN41    H       H       0       69.780      -4.046      51.393      
+AGU     HN42    H       H       0       69.532      -5.103      50.418      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AGU       C         N1        DOUBLE    n         1.301     0.013     1.301     0.013     
+AGU       C         N2        SINGLE    n         1.334     0.015     1.334     0.015     
+AGU       C         N3        SINGLE    n         1.358     0.020     1.358     0.020     
+AGU       N3        N4        SINGLE    n         1.411     0.011     1.411     0.011     
+AGU       N1        HN1       SINGLE    n         1.016     0.010     0.932     0.020     
+AGU       N2        HN21      SINGLE    n         1.016     0.010     0.881     0.020     
+AGU       N2        HN22      SINGLE    n         1.016     0.010     0.881     0.020     
+AGU       N3        HN3       SINGLE    n         1.016     0.010     0.871     0.020     
+AGU       N4        HN41      SINGLE    n         1.036     0.016     0.904     0.020     
+AGU       N4        HN42      SINGLE    n         1.036     0.016     0.904     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AGU          N1           C          N2     121.033    2.38
+AGU          N1           C          N3     121.677    3.00
+AGU          N2           C          N3     117.289    2.35
+AGU           C          N1         HN1     110.271    1.50
+AGU           C          N2        HN21     119.894    2.29
+AGU           C          N2        HN22     119.894    2.29
+AGU        HN21          N2        HN22     120.211    2.09
+AGU           C          N3          N4     121.489    2.19
+AGU           C          N3         HN3     117.077    2.17
+AGU          N4          N3         HN3     121.434    1.59
+AGU          N3          N4        HN41     107.887    2.44
+AGU          N3          N4        HN42     107.887    2.44
+AGU        HN41          N4        HN42     107.713    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AGU             sp2_sp2_1          N2           C          N1         HN1     180.000   10.00     2
+AGU             sp2_sp2_5          N1           C          N2        HN21       0.000   10.00     2
+AGU             sp2_sp2_9          N1           C          N3          N4       0.000   10.00     2
+AGU             sp2_sp3_1           C          N3          N4        HN41       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AGU    plan-1           C   0.020
+AGU    plan-1          N1   0.020
+AGU    plan-1          N2   0.020
+AGU    plan-1          N3   0.020
+AGU    plan-2           C   0.020
+AGU    plan-2        HN21   0.020
+AGU    plan-2        HN22   0.020
+AGU    plan-2          N2   0.020
+AGU    plan-3           C   0.020
+AGU    plan-3         HN3   0.020
+AGU    plan-3          N3   0.020
+AGU    plan-3          N4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AGU SMILES           ACDLabs              10.04 "[N@H]=C(N)NN"
+AGU SMILES_CANONICAL CACTVS               3.341 "NNC(N)=N"
+AGU SMILES           CACTVS               3.341 "NNC(N)=N"
+AGU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=N)(N)NN"
+AGU SMILES           "OpenEye OEToolkits" 1.5.0 "C(=N)(N)NN"
+AGU InChI            InChI                1.03  "InChI=1S/CH6N4/c2-1(3)5-4/h4H2,(H4,2,3,5)"
+AGU InChIKey         InChI                1.03  HAMNKKUPIHEESI-UHFFFAOYSA-N
+AGU ?                acedrg               202         "dictionary generator"                  
+AGU ?                acedrg_database      11          "data source"                           
+AGU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AGU ?                refmac5              5.8.0189    "optimization tool"                     

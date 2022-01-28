@@ -1,0 +1,185 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SU8     SU8      "(2R)-2-butylbutanedioic acid"     NON-POLYMER     24     12     .     
+#
+data_comp_SU8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SU8     CAJ     C       C       0       -1.664      -1.774      -1.137      
+SU8     CAK     C       CH1     0       -1.374      -0.401      -0.514      
+SU8     CAL     C       CH2     0       -2.462      0.000       0.514       
+SU8     OAM     O       O       0       -1.826      -2.746      -0.371      
+SU8     CAN     C       C       0       -2.650      1.498       0.732       
+SU8     OAO     O       OC      -1      -3.728      1.870       1.237       
+SU8     OAP     O       O       0       -1.737      2.292       0.414       
+SU8     CAQ     C       CH2     0       0.027       -0.381      0.126       
+SU8     CAR     C       CH2     0       1.186       -0.299      -0.860      
+SU8     CAS     C       CH2     0       2.534       -0.244      -0.188      
+SU8     CAT     C       CH3     0       2.893       1.123       0.343       
+SU8     OXT     O       OC      -1      -1.722      -1.853      -2.380      
+SU8     HAK     H       H       0       -1.379      0.256       -1.248      
+SU8     HAL     H       H       0       -2.247      -0.404      1.371       
+SU8     HALA    H       H       0       -3.318      -0.366      0.231       
+SU8     HAQ     H       H       0       0.137       -1.192      0.666       
+SU8     HAQA    H       H       0       0.085       0.385       0.732       
+SU8     HAR     H       H       0       1.076       0.501       -1.416      
+SU8     HARA    H       H       0       1.160       -1.082      -1.451      
+SU8     HAS     H       H       0       3.219       -0.525      -0.833      
+SU8     HASA    H       H       0       2.542       -0.886      0.555       
+SU8     HAT     H       H       0       3.793       1.103       0.712       
+SU8     HATA    H       H       0       2.264       1.377       1.040       
+SU8     HATB    H       H       0       2.855       1.773       -0.380      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SU8       CAJ       CAK       SINGLE    n         1.533     0.012     1.533     0.012     
+SU8       CAJ       OAM       DOUBLE    n         1.247     0.019     1.247     0.019     
+SU8       CAJ       OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SU8       CAK       CAL       SINGLE    n         1.539     0.015     1.539     0.015     
+SU8       CAK       CAQ       SINGLE    n         1.531     0.020     1.531     0.020     
+SU8       CAL       CAN       SINGLE    n         1.519     0.012     1.519     0.012     
+SU8       CAN       OAP       DOUBLE    n         1.247     0.019     1.247     0.019     
+SU8       CAN       OAO       SINGLE    n         1.247     0.019     1.247     0.019     
+SU8       CAQ       CAR       SINGLE    n         1.523     0.012     1.523     0.012     
+SU8       CAR       CAS       SINGLE    n         1.507     0.020     1.507     0.020     
+SU8       CAS       CAT       SINGLE    n         1.510     0.020     1.510     0.020     
+SU8       CAK       HAK       SINGLE    n         1.089     0.010     0.985     0.020     
+SU8       CAL       HAL       SINGLE    n         1.089     0.010     0.972     0.013     
+SU8       CAL       HALA      SINGLE    n         1.089     0.010     0.972     0.013     
+SU8       CAQ       HAQ       SINGLE    n         1.089     0.010     0.980     0.016     
+SU8       CAQ       HAQA      SINGLE    n         1.089     0.010     0.980     0.016     
+SU8       CAR       HAR       SINGLE    n         1.089     0.010     0.981     0.016     
+SU8       CAR       HARA      SINGLE    n         1.089     0.010     0.981     0.016     
+SU8       CAS       HAS       SINGLE    n         1.089     0.010     0.982     0.015     
+SU8       CAS       HASA      SINGLE    n         1.089     0.010     0.982     0.015     
+SU8       CAT       HAT       SINGLE    n         1.089     0.010     0.973     0.016     
+SU8       CAT       HATA      SINGLE    n         1.089     0.010     0.973     0.016     
+SU8       CAT       HATB      SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SU8         CAK         CAJ         OAM     118.051    1.50
+SU8         CAK         CAJ         OXT     118.051    1.50
+SU8         OAM         CAJ         OXT     123.899    1.50
+SU8         CAJ         CAK         CAL     111.066    2.42
+SU8         CAJ         CAK         CAQ     110.778    2.06
+SU8         CAJ         CAK         HAK     107.706    1.93
+SU8         CAL         CAK         CAQ     110.760    1.86
+SU8         CAL         CAK         HAK     108.361    1.50
+SU8         CAQ         CAK         HAK     107.780    1.50
+SU8         CAK         CAL         CAN     113.398    1.64
+SU8         CAK         CAL         HAL     109.189    1.50
+SU8         CAK         CAL        HALA     109.189    1.50
+SU8         CAN         CAL         HAL     108.462    1.50
+SU8         CAN         CAL        HALA     108.462    1.50
+SU8         HAL         CAL        HALA     107.639    1.50
+SU8         CAL         CAN         OAP     118.129    1.68
+SU8         CAL         CAN         OAO     118.129    1.68
+SU8         OAP         CAN         OAO     123.742    1.50
+SU8         CAK         CAQ         CAR     114.798    1.57
+SU8         CAK         CAQ         HAQ     108.447    1.50
+SU8         CAK         CAQ        HAQA     108.447    1.50
+SU8         CAR         CAQ         HAQ     108.469    1.50
+SU8         CAR         CAQ        HAQA     108.469    1.50
+SU8         HAQ         CAQ        HAQA     107.657    1.50
+SU8         CAQ         CAR         CAS     112.909    2.09
+SU8         CAQ         CAR         HAR     108.762    1.50
+SU8         CAQ         CAR        HARA     108.762    1.50
+SU8         CAS         CAR         HAR     108.653    1.50
+SU8         CAS         CAR        HARA     108.653    1.50
+SU8         HAR         CAR        HARA     107.646    1.50
+SU8         CAR         CAS         CAT     113.719    3.00
+SU8         CAR         CAS         HAS     108.758    1.50
+SU8         CAR         CAS        HASA     108.758    1.50
+SU8         CAT         CAS         HAS     108.918    1.50
+SU8         CAT         CAS        HASA     108.918    1.50
+SU8         HAS         CAS        HASA     107.763    1.50
+SU8         CAS         CAT         HAT     109.554    1.50
+SU8         CAS         CAT        HATA     109.554    1.50
+SU8         CAS         CAT        HATB     109.554    1.50
+SU8         HAT         CAT        HATA     109.380    1.50
+SU8         HAT         CAT        HATB     109.380    1.50
+SU8        HATA         CAT        HATB     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SU8             sp2_sp3_1         OAM         CAJ         CAK         CAL       0.000   10.00     6
+SU8             sp3_sp3_1         CAJ         CAK         CAL         CAN     180.000   10.00     3
+SU8            sp3_sp3_10         CAJ         CAK         CAQ         CAR     180.000   10.00     3
+SU8             sp2_sp3_8         OAP         CAN         CAL         CAK     120.000   10.00     6
+SU8            sp3_sp3_19         CAK         CAQ         CAR         CAS     180.000   10.00     3
+SU8            sp3_sp3_28         CAQ         CAR         CAS         CAT     180.000   10.00     3
+SU8            sp3_sp3_37         CAR         CAS         CAT         HAT     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SU8    chir_1    CAK    CAJ    CAL    CAQ    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SU8    plan-1         CAJ   0.020
+SU8    plan-1         CAK   0.020
+SU8    plan-1         OAM   0.020
+SU8    plan-1         OXT   0.020
+SU8    plan-2         CAL   0.020
+SU8    plan-2         CAN   0.020
+SU8    plan-2         OAO   0.020
+SU8    plan-2         OAP   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SU8 SMILES           ACDLabs              12.01 "O=C(O)C(CC(=O)O)CCCC"
+SU8 InChI            InChI                1.03  "InChI=1S/C8H14O4/c1-2-3-4-6(8(11)12)5-7(9)10/h6H,2-5H2,1H3,(H,9,10)(H,11,12)/t6-/m1/s1"
+SU8 InChIKey         InChI                1.03  WOPLHDNLGYOSPG-ZCFIWIBFSA-N
+SU8 SMILES_CANONICAL CACTVS               3.385 "CCCC[C@H](CC(O)=O)C(O)=O"
+SU8 SMILES           CACTVS               3.385 "CCCC[CH](CC(O)=O)C(O)=O"
+SU8 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "CCCC[C@H](CC(=O)O)C(=O)O"
+SU8 SMILES           "OpenEye OEToolkits" 1.7.6 "CCCCC(CC(=O)O)C(=O)O"
+SU8 ?                acedrg               202         "dictionary generator"                  
+SU8 ?                acedrg_database      11          "data source"                           
+SU8 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SU8 ?                refmac5              5.8.0189    "optimization tool"                     

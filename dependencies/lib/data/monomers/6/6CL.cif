@@ -1,0 +1,232 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+6CL     6CL     6-CARBOXYLYSINE peptide     27     13     .     
+#
+data_comp_6CL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+6CL     N       N       NT3     1       2.802       0.434       -1.201      
+6CL     CA      C       CH1     0       2.596       -0.270      0.096       
+6CL     CB      C       CH2     0       1.252       0.124       0.717       
+6CL     CG      C       CH2     0       0.020       -0.260      -0.094      
+6CL     CD      C       CH2     0       -1.303      0.073       0.583       
+6CL     CE      C       CH1     0       -2.550      -0.498      -0.102      
+6CL     CZ      C       C       0       -3.782      -0.359      0.802       
+6CL     OH1     O       O       0       -4.348      -1.412      1.161       
+6CL     OH2     O       OC      -1      -4.129      0.797       1.115       
+6CL     NZ      N       NT3     1       -2.805      0.206       -1.389      
+6CL     C       C       C       0       3.747       0.069       1.052       
+6CL     O       O       O       0       4.421       -0.883      1.494       
+6CL     OXT     O       OC      -1      3.926       1.274       1.319       
+6CL     H2      H       H       0       3.669       0.351       -1.473      
+6CL     H       H       H       0       2.605       1.320       -1.112      
+6CL     H3      H       H       0       2.264       0.074       -1.841      
+6CL     HA      H       H       0       2.598       -1.241      -0.074      
+6CL     HB2     H       H       0       1.245       1.094       0.850       
+6CL     HB3     H       H       0       1.185       -0.298      1.600       
+6CL     HG2     H       H       0       0.049       -1.224      -0.271      
+6CL     HG3     H       H       0       0.056       0.204       -0.957      
+6CL     HD2     H       H       0       -1.393      1.048       0.626       
+6CL     HD3     H       H       0       -1.273      -0.264      1.503       
+6CL     HE      H       H       0       -2.400      -1.452      -0.293      
+6CL     HZ1     H       H       0       -3.570      -0.108      -1.773      
+6CL     HZ2     H       H       0       -2.113      0.068       -1.964      
+6CL     HZ3     H       H       0       -2.894      1.101       -1.243      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 6CL      N      n/a    CA     START
+ 6CL      H2     N      .      .
+ 6CL      H      N      .      .
+ 6CL      H3     N      .      .
+ 6CL      CA     N      C      .
+ 6CL      HA     CA     .      .
+ 6CL      CB     CA     CG     .
+ 6CL      HB2    CB     .      .
+ 6CL      HB3    CB     .      .
+ 6CL      CG     CB     CD     .
+ 6CL      HG2    CG     .      .
+ 6CL      HG3    CG     .      .
+ 6CL      CD     CG     CE     .
+ 6CL      HD2    CD     .      .
+ 6CL      HD3    CD     .      .
+ 6CL      CE     CD     CZ     .
+ 6CL      HE     CE     .      .
+ 6CL      NZ     CE     HZ1    .
+ 6CL      HZ3    NZ     .      .
+ 6CL      HZ2    NZ     .      .
+ 6CL      HZ1    NZ     .      .
+ 6CL      CZ     CE     OH2    .
+ 6CL      OH1    CZ     .      .
+ 6CL      OH2    CZ     .      .
+ 6CL      C      CA     .      END
+ 6CL      O      C      .      .
+ 6CL      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+6CL       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+6CL       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+6CL       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+6CL       CB        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+6CL       CG        CD        SINGLE    n         1.523     0.012     1.523     0.012     
+6CL       CD        CE        SINGLE    n         1.532     0.010     1.532     0.010     
+6CL       CE        CZ        SINGLE    n         1.533     0.011     1.533     0.011     
+6CL       CE        NZ        SINGLE    n         1.488     0.011     1.488     0.011     
+6CL       CZ        OH1       DOUBLE    n         1.247     0.019     1.247     0.019     
+6CL       CZ        OH2       SINGLE    n         1.247     0.019     1.247     0.019     
+6CL       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+6CL       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+6CL       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+6CL       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+6CL       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+6CL       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+6CL       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+6CL       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+6CL       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+6CL       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.016     
+6CL       CD        HD2       SINGLE    n         1.089     0.010     0.980     0.016     
+6CL       CD        HD3       SINGLE    n         1.089     0.010     0.980     0.016     
+6CL       CE        HE        SINGLE    n         1.089     0.010     0.985     0.020     
+6CL       NZ        HZ1       SINGLE    n         1.036     0.016     0.911     0.020     
+6CL       NZ        HZ2       SINGLE    n         1.036     0.016     0.911     0.020     
+6CL       NZ        HZ3       SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+6CL          CA           N          H2     110.062    1.93
+6CL          CA           N           H     110.062    1.93
+6CL          CA           N          H3     110.062    1.93
+6CL          H2           N           H     109.028    2.41
+6CL          H2           N          H3     109.028    2.41
+6CL           H           N          H3     109.028    2.41
+6CL           N          CA          CB     110.374    1.62
+6CL           N          CA           C     109.241    1.50
+6CL           N          CA          HA     108.487    1.50
+6CL          CB          CA           C     111.037    2.40
+6CL          CB          CA          HA     108.967    1.50
+6CL           C          CA          HA     108.824    1.50
+6CL          CA          CB          CG     115.311    1.56
+6CL          CA          CB         HB2     108.549    1.50
+6CL          CA          CB         HB3     108.549    1.50
+6CL          CG          CB         HB2     108.650    1.50
+6CL          CG          CB         HB3     108.650    1.50
+6CL         HB2          CB         HB3     107.844    1.50
+6CL          CB          CG          CD     114.183    2.57
+6CL          CB          CG         HG2     108.601    1.50
+6CL          CB          CG         HG3     108.601    1.50
+6CL          CD          CG         HG2     108.601    1.50
+6CL          CD          CG         HG3     108.601    1.50
+6CL         HG2          CG         HG3     107.646    1.50
+6CL          CG          CD          CE     115.311    1.56
+6CL          CG          CD         HD2     108.650    1.50
+6CL          CG          CD         HD3     108.650    1.50
+6CL          CE          CD         HD2     108.549    1.50
+6CL          CE          CD         HD3     108.549    1.50
+6CL         HD2          CD         HD3     107.844    1.50
+6CL          CD          CE          CZ     111.037    2.40
+6CL          CD          CE          NZ     110.374    1.62
+6CL          CD          CE          HE     108.967    1.50
+6CL          CZ          CE          NZ     109.241    1.50
+6CL          CZ          CE          HE     108.824    1.50
+6CL          NZ          CE          HE     108.487    1.50
+6CL          CE          CZ         OH1     117.124    1.50
+6CL          CE          CZ         OH2     117.124    1.50
+6CL         OH1          CZ         OH2     125.752    1.50
+6CL          CE          NZ         HZ1     110.062    1.93
+6CL          CE          NZ         HZ2     110.062    1.93
+6CL          CE          NZ         HZ3     110.062    1.93
+6CL         HZ1          NZ         HZ2     109.028    2.41
+6CL         HZ1          NZ         HZ3     109.028    2.41
+6CL         HZ2          NZ         HZ3     109.028    2.41
+6CL          CA           C           O     117.124    1.50
+6CL          CA           C         OXT     117.124    1.50
+6CL           O           C         OXT     125.752    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+6CL             sp3_sp3_1          CB          CA           N          H2     180.000   10.00     3
+6CL             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+6CL            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+6CL            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+6CL            sp3_sp3_28          CE          CD          CG          CB     180.000   10.00     3
+6CL            sp3_sp3_37          CG          CD          CE          CZ     180.000   10.00     3
+6CL             sp2_sp3_8         OH1          CZ          CE          CD     120.000   10.00     6
+6CL            sp3_sp3_46          CD          CE          NZ         HZ1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+6CL    chir_1    CA    N    C    CB    both
+6CL    chir_2    CE    NZ    CZ    CD    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+6CL    plan-1          CE   0.020
+6CL    plan-1          CZ   0.020
+6CL    plan-1         OH1   0.020
+6CL    plan-1         OH2   0.020
+6CL    plan-2           C   0.020
+6CL    plan-2          CA   0.020
+6CL    plan-2           O   0.020
+6CL    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+6CL SMILES           ACDLabs              10.04 "O=C(O)C(CCCC(N)C(=O)O)[NH3+]"
+6CL SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCC[C@@H]([NH3+])C(O)=O)C(O)=O"
+6CL SMILES           CACTVS               3.341 "N[CH](CCC[CH]([NH3+])C(O)=O)C(O)=O"
+6CL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C[C@H](C(=O)O)[NH3+])C[C@@H](C(=O)O)N"
+6CL SMILES           "OpenEye OEToolkits" 1.5.0 "C(CC(C(=O)O)[NH3+])CC(C(=O)O)N"
+6CL InChI            InChI                1.03  "InChI=1S/C7H14N2O4/c8-4(6(10)11)2-1-3-5(9)7(12)13/h4-5H,1-3,8-9H2,(H,10,11)(H,12,13)/p+1/t4-,5+"
+6CL InChIKey         InChI                1.03  GMKMEZVLHJARHF-SYDPRGILSA-O
+6CL ?                acedrg               196         "dictionary generator"                  
+6CL ?                acedrg_database      11          "data source"                           
+6CL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+6CL ?                refmac5              5.8.0222    "optimization tool"                     

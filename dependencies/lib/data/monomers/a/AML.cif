@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AML     AML      AMYLAMINE     NON-POLYMER     19     6     .     
+#
+data_comp_AML
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AML     C1      C       CH3     0       -2.962      0.103       -0.058      
+AML     C2      C       CH2     0       -1.628      -0.554      0.199       
+AML     C3      C       CH2     0       -0.449      0.349       -0.061      
+AML     C4      C       CH2     0       0.894       -0.301      0.193       
+AML     C5      C       CH2     0       2.074       0.624       -0.063      
+AML     N1      N       NT2     0       3.386       0.023       0.193       
+AML     HC11    H       H       0       -3.678      -0.529      0.127       
+AML     HC12    H       H       0       -3.013      0.385       -0.988      
+AML     HC13    H       H       0       -3.060      0.880       0.520       
+AML     HC21    H       H       0       -1.549      -1.348      -0.373      
+AML     HC22    H       H       0       -1.596      -0.853      1.134       
+AML     HC31    H       H       0       -0.530      1.143       0.511       
+AML     HC32    H       H       0       -0.484      0.650       -0.994      
+AML     HC41    H       H       0       0.983       -1.089      -0.385      
+AML     HC42    H       H       0       0.931       -0.605      1.125       
+AML     HC51    H       H       0       1.976       1.417       0.504       
+AML     HC52    H       H       0       2.041       0.919       -0.996      
+AML     HN11    H       H       0       3.612       -0.533      -0.461      
+AML     HN12    H       H       0       3.378       -0.446      0.947       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AML       C1        C2        SINGLE    n         1.510     0.020     1.510     0.020     
+AML       C2        C3        SINGLE    n         1.507     0.020     1.507     0.020     
+AML       C3        C4        SINGLE    n         1.514     0.020     1.514     0.020     
+AML       C4        C5        SINGLE    n         1.521     0.010     1.521     0.010     
+AML       C5        N1        SINGLE    n         1.466     0.012     1.466     0.012     
+AML       C1        HC11      SINGLE    n         1.089     0.010     0.973     0.016     
+AML       C1        HC12      SINGLE    n         1.089     0.010     0.973     0.016     
+AML       C1        HC13      SINGLE    n         1.089     0.010     0.973     0.016     
+AML       C2        HC21      SINGLE    n         1.089     0.010     0.982     0.015     
+AML       C2        HC22      SINGLE    n         1.089     0.010     0.982     0.015     
+AML       C3        HC31      SINGLE    n         1.089     0.010     0.981     0.016     
+AML       C3        HC32      SINGLE    n         1.089     0.010     0.981     0.016     
+AML       C4        HC41      SINGLE    n         1.089     0.010     0.981     0.016     
+AML       C4        HC42      SINGLE    n         1.089     0.010     0.981     0.016     
+AML       C5        HC51      SINGLE    n         1.089     0.010     0.979     0.011     
+AML       C5        HC52      SINGLE    n         1.089     0.010     0.979     0.011     
+AML       N1        HN11      SINGLE    n         1.036     0.016     0.888     0.020     
+AML       N1        HN12      SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AML          C2          C1        HC11     109.554    1.50
+AML          C2          C1        HC12     109.554    1.50
+AML          C2          C1        HC13     109.554    1.50
+AML        HC11          C1        HC12     109.380    1.50
+AML        HC11          C1        HC13     109.380    1.50
+AML        HC12          C1        HC13     109.380    1.50
+AML          C1          C2          C3     113.719    3.00
+AML          C1          C2        HC21     108.918    1.50
+AML          C1          C2        HC22     108.918    1.50
+AML          C3          C2        HC21     108.758    1.50
+AML          C3          C2        HC22     108.758    1.50
+AML        HC21          C2        HC22     107.763    1.50
+AML          C2          C3          C4     114.022    2.49
+AML          C2          C3        HC31     108.653    1.50
+AML          C2          C3        HC32     108.653    1.50
+AML          C4          C3        HC31     108.806    1.50
+AML          C4          C3        HC32     108.806    1.50
+AML        HC31          C3        HC32     107.646    1.50
+AML          C3          C4          C5     113.515    1.50
+AML          C3          C4        HC41     109.041    1.50
+AML          C3          C4        HC42     109.041    1.50
+AML          C5          C4        HC41     108.630    1.50
+AML          C5          C4        HC42     108.630    1.50
+AML        HC41          C4        HC42     107.927    1.57
+AML          C4          C5          N1     114.751    2.00
+AML          C4          C5        HC51     108.627    1.50
+AML          C4          C5        HC52     108.627    1.50
+AML          N1          C5        HC51     108.763    1.50
+AML          N1          C5        HC52     108.763    1.50
+AML        HC51          C5        HC52     107.806    1.50
+AML          C5          N1        HN11     110.839    3.00
+AML          C5          N1        HN12     110.839    3.00
+AML        HN11          N1        HN12     107.243    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AML             sp3_sp3_1        HC11          C1          C2          C3     180.000   10.00     3
+AML            sp3_sp3_10          C1          C2          C3          C4     180.000   10.00     3
+AML            sp3_sp3_19          C2          C3          C4          C5     180.000   10.00     3
+AML            sp3_sp3_28          C3          C4          C5          N1     180.000   10.00     3
+AML            sp3_sp3_37          C4          C5          N1        HN11     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AML SMILES           ACDLabs              10.04 NCCCCC
+AML SMILES_CANONICAL CACTVS               3.341 CCCCCN
+AML SMILES           CACTVS               3.341 CCCCCN
+AML SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCCCCN
+AML SMILES           "OpenEye OEToolkits" 1.5.0 CCCCCN
+AML InChI            InChI                1.03  InChI=1S/C5H13N/c1-2-3-4-5-6/h2-6H2,1H3
+AML InChIKey         InChI                1.03  DPBLXKKOBLCELK-UHFFFAOYSA-N
+AML ?                acedrg               202         "dictionary generator"                  
+AML ?                acedrg_database      11          "data source"                           
+AML ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AML ?                refmac5              5.8.0189    "optimization tool"                     

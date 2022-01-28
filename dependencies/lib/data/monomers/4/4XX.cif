@@ -1,0 +1,141 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4XX     4XX     "4-hydroxy-5-methylfuran-3(2H)-one"     NON-POLYMER     14     8     .     
+#
+data_comp_4XX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4XX     CAA     C       CH3     0       -1.894      -0.157      -0.579      
+4XX     CAG     C       CR5     0       -0.471      -0.171      -0.160      
+4XX     OAE     O       O2      0       0.181       -1.349      -0.271      
+4XX     CAD     C       CH2     0       1.541       -1.191      0.188       
+4XX     CAF     C       CR5     0       1.628       0.250       0.571       
+4XX     OAB     O       O       0       2.619       0.828       1.005       
+4XX     CAH     C       CR5     0       0.323       0.826       0.334       
+4XX     OAC     O       OH1     0       -0.006      2.119       0.571       
+4XX     H1      H       H       0       -2.033      -0.818      -1.270      
+4XX     H2      H       H       0       -2.121      0.718       -0.921      
+4XX     H3      H       H       0       -2.455      -0.361      0.180       
+4XX     H4      H       H       0       2.170       -1.401      -0.521      
+4XX     H5      H       H       0       1.716       -1.765      0.950       
+4XX     H6      H       H       0       0.575       2.639       0.210       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4XX       CAF       OAB       DOUBLE    n         1.226     0.016     1.226     0.016     
+4XX       CAD       CAF       SINGLE    n         1.502     0.020     1.502     0.020     
+4XX       CAF       CAH       SINGLE    n         1.451     0.016     1.451     0.016     
+4XX       OAE       CAD       SINGLE    n         1.442     0.012     1.442     0.012     
+4XX       CAH       OAC       SINGLE    n         1.355     0.012     1.355     0.012     
+4XX       CAG       CAH       DOUBLE    n         1.366     0.013     1.366     0.013     
+4XX       CAG       OAE       SINGLE    n         1.349     0.011     1.349     0.011     
+4XX       CAA       CAG       SINGLE    n         1.483     0.010     1.483     0.010     
+4XX       CAA       H1        SINGLE    n         1.089     0.010     0.966     0.010     
+4XX       CAA       H2        SINGLE    n         1.089     0.010     0.966     0.010     
+4XX       CAA       H3        SINGLE    n         1.089     0.010     0.966     0.010     
+4XX       CAD       H4        SINGLE    n         1.089     0.010     0.970     0.010     
+4XX       CAD       H5        SINGLE    n         1.089     0.010     0.970     0.010     
+4XX       OAC       H6        SINGLE    n         0.970     0.012     0.860     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4XX         CAG         CAA          H1     109.470    1.50
+4XX         CAG         CAA          H2     109.470    1.50
+4XX         CAG         CAA          H3     109.470    1.50
+4XX          H1         CAA          H2     109.473    1.50
+4XX          H1         CAA          H3     109.473    1.50
+4XX          H2         CAA          H3     109.473    1.50
+4XX         CAH         CAG         OAE     112.258    2.48
+4XX         CAH         CAG         CAA     130.975    2.04
+4XX         OAE         CAG         CAA     116.767    1.50
+4XX         CAD         OAE         CAG     108.743    2.23
+4XX         CAF         CAD         OAE     106.275    3.00
+4XX         CAF         CAD          H4     110.629    1.50
+4XX         CAF         CAD          H5     110.629    1.50
+4XX         OAE         CAD          H4     110.470    1.50
+4XX         OAE         CAD          H5     110.470    1.50
+4XX          H4         CAD          H5     108.827    1.50
+4XX         OAB         CAF         CAD     124.069    2.66
+4XX         OAB         CAF         CAH     125.808    1.77
+4XX         CAD         CAF         CAH     110.123    2.72
+4XX         CAF         CAH         OAC     123.498    3.00
+4XX         CAF         CAH         CAG     109.605    3.00
+4XX         OAC         CAH         CAG     126.897    3.00
+4XX         CAH         OAC          H6     109.772    2.05
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4XX             sp2_sp3_9         CAH         CAG         CAA          H1     150.000   10.00     6
+4XX            sp2_sp2_10         CAA         CAG         OAE         CAD     180.000   10.00     2
+4XX             sp2_sp2_4         CAA         CAG         CAH         OAC       0.000   10.00     2
+4XX             sp3_sp3_1         CAF         CAD         OAE         CAG     -60.000   10.00     3
+4XX             sp2_sp3_4         OAB         CAF         CAD         OAE     180.000   10.00     6
+4XX             sp2_sp2_8         OAB         CAF         CAH         OAC       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4XX    plan-1         CAA   0.020
+4XX    plan-1         CAG   0.020
+4XX    plan-1         CAH   0.020
+4XX    plan-1         OAE   0.020
+4XX    plan-2         CAD   0.020
+4XX    plan-2         CAF   0.020
+4XX    plan-2         CAH   0.020
+4XX    plan-2         OAB   0.020
+4XX    plan-3         CAF   0.020
+4XX    plan-3         CAG   0.020
+4XX    plan-3         CAH   0.020
+4XX    plan-3         OAC   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4XX SMILES           ACDLabs              12.01 "O=C1C(O)=C(OC1)C"
+4XX InChI            InChI                1.03  "InChI=1S/C5H6O3/c1-3-5(7)4(6)2-8-3/h7H,2H2,1H3"
+4XX InChIKey         InChI                1.03  DLVYTANECMRFGX-UHFFFAOYSA-N
+4XX SMILES_CANONICAL CACTVS               3.370 "CC1=C(O)C(=O)CO1"
+4XX SMILES           CACTVS               3.370 "CC1=C(O)C(=O)CO1"
+4XX SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "CC1=C(C(=O)CO1)O"
+4XX SMILES           "OpenEye OEToolkits" 1.7.6 "CC1=C(C(=O)CO1)O"
+4XX ?                acedrg               190         "dictionary generator"                  
+4XX ?                acedrg_database      11          "data source"                           
+4XX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4XX ?                refmac5              5.8.0158    "optimization tool"                     

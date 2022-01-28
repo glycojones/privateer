@@ -1,0 +1,287 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CRA      CRA '1-DEOXY-1-METHOXYCARBAMIDO-BETA-D-GL' pyranose           35  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CRA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CRA           C1     C    CT        0.000      0.000    0.000    0.000
+ CRA           C9     C    C         0.000      0.455    1.266   -0.678
+ CRA           N1     N    NH2       0.000     -0.052    2.455   -0.297
+ CRA           H2N1   H    H         0.000      0.251    3.309   -0.750
+ CRA           H1N1   H    H         0.000     -0.739    2.503    0.446
+ CRA           O9     O    O         0.000      1.277    1.215   -1.567
+ CRA           N2     N    NH1       0.000      0.269    0.094    1.436
+ CRA           H1N2   H    H         0.000      0.638    0.949    1.826
+ CRA           C7     C    C         0.000      0.024   -0.961    2.238
+ CRA           O8     O    O2        0.000      0.375   -0.915    3.537
+ CRA           C8     C    CH3       0.000      0.110   -2.053    4.401
+ CRA           H83    H    H         0.000     -0.933   -2.249    4.427
+ CRA           H82    H    H         0.000      0.616   -2.910    4.032
+ CRA           H81    H    H         0.000      0.450   -1.844    5.384
+ CRA           O7     O    O         0.000     -0.515   -1.953    1.789
+ CRA           O5     O    O2        0.000     -1.400   -0.172   -0.209
+ CRA           C5     C    CH1       0.000     -1.642   -0.077   -1.612
+ CRA           H51    H    H         0.000     -1.199    0.852   -1.997
+ CRA           C6     C    CH2       0.000     -3.150   -0.066   -1.868
+ CRA           H61    H    H         0.000     -3.591   -0.988   -1.485
+ CRA           H62    H    H         0.000     -3.336    0.006   -2.942
+ CRA           O6     O    OH1       0.000     -3.737    1.056   -1.206
+ CRA           H1O6   H    H         0.000     -4.690    1.063   -1.368
+ CRA           C4     C    CH1       0.000     -1.015   -1.274   -2.328
+ CRA           H41    H    H         0.000     -1.440   -2.205   -1.928
+ CRA           O4     O    OH1       0.000     -1.284   -1.188   -3.728
+ CRA           H1O4   H    H         0.000     -2.240   -1.193   -3.873
+ CRA           C3     C    CH1       0.000      0.500   -1.260   -2.092
+ CRA           H31    H    H         0.000      0.941   -0.381   -2.583
+ CRA           O3     O    OH1       0.000      1.081   -2.449   -2.629
+ CRA           H1O3   H    H         0.000      0.903   -2.494   -3.578
+ CRA           C2     C    CH1       0.000      0.761   -1.190   -0.584
+ CRA           H21    H    H         0.000      0.414   -2.118   -0.108
+ CRA           O2     O    OH1       0.000      2.161   -1.028   -0.349
+ CRA           H1O2   H    H         0.000      2.640   -1.778   -0.725
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CRA      C1     n/a    O5     START
+ CRA      C9     C1     O9     .
+ CRA      N1     C9     H1N1   .
+ CRA      H2N1   N1     .      .
+ CRA      H1N1   N1     .      .
+ CRA      O9     C9     .      .
+ CRA      N2     C1     C7     .
+ CRA      H1N2   N2     .      .
+ CRA      C7     N2     O7     .
+ CRA      O8     C7     C8     .
+ CRA      C8     O8     H81    .
+ CRA      H83    C8     .      .
+ CRA      H82    C8     .      .
+ CRA      H81    C8     .      .
+ CRA      O7     C7     .      .
+ CRA      O5     C1     .      END
+ CRA      C5     O5     C4     .
+ CRA      H51    C5     .      .
+ CRA      C6     C5     O6     .
+ CRA      H61    C6     .      .
+ CRA      H62    C6     .      .
+ CRA      O6     C6     H1O6   .
+ CRA      H1O6   O6     .      .
+ CRA      C4     C5     C3     .
+ CRA      H41    C4     .      .
+ CRA      O4     C4     H1O4   .
+ CRA      H1O4   O4     .      .
+ CRA      C3     C4     C2     .
+ CRA      H31    C3     .      .
+ CRA      O3     C3     H1O3   .
+ CRA      H1O3   O3     .      .
+ CRA      C2     C3     O2     .
+ CRA      H21    C2     .      .
+ CRA      O2     C2     H1O2   .
+ CRA      H1O2   O2     .      .
+ CRA      C2     C1     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CRA       N1        C9        single    1.332     0.020     1.332     0.020     
+CRA       H1N1      N1        single    1.016     0.010     0.899     0.007     
+CRA       H2N1      N1        single    1.016     0.010     0.899     0.007     
+CRA       O2        C2        single    1.432     0.020     1.432     0.020     
+CRA       C2        C1        single    1.524     0.020     1.524     0.020     
+CRA       C2        C3        single    1.524     0.020     1.524     0.020     
+CRA       H21       C2        single    1.089     0.010     0.989     0.005     
+CRA       H1O2      O2        single    0.970     0.012     0.839     0.014     
+CRA       C4        C5        single    1.524     0.020     1.524     0.020     
+CRA       C3        C4        single    1.524     0.020     1.524     0.020     
+CRA       O4        C4        single    1.432     0.020     1.432     0.020     
+CRA       H41       C4        single    1.089     0.010     0.989     0.005     
+CRA       C6        C5        single    1.524     0.020     1.524     0.020     
+CRA       C5        O5        single    1.426     0.020     1.426     0.020     
+CRA       H51       C5        single    1.089     0.010     0.989     0.005     
+CRA       O6        C6        single    1.432     0.020     1.432     0.020     
+CRA       H61       C6        single    1.089     0.010     0.989     0.005     
+CRA       H62       C6        single    1.089     0.010     0.989     0.005     
+CRA       O5        C1        single    1.426     0.020     1.426     0.020     
+CRA       N2        C1        single    1.450     0.020     1.450     0.020     
+CRA       C9        C1        single    1.507     0.020     1.507     0.020     
+CRA       O3        C3        single    1.432     0.020     1.432     0.020     
+CRA       H31       C3        single    1.089     0.010     0.989     0.005     
+CRA       H1O3      O3        single    0.970     0.012     0.839     0.014     
+CRA       H1O4      O4        single    0.970     0.012     0.839     0.014     
+CRA       C7        N2        single    1.330     0.020     1.330     0.020     
+CRA       H1N2      N2        single    1.016     0.010     0.899     0.007     
+CRA       H1O6      O6        single    0.970     0.012     0.839     0.014     
+CRA       O7        C7        double    1.220     0.020     1.220     0.020     
+CRA       O8        C7        single    1.454     0.020     1.454     0.020     
+CRA       C8        O8        single    1.426     0.020     1.426     0.020     
+CRA       H81       C8        single    1.089     0.010     0.989     0.005     
+CRA       H82       C8        single    1.089     0.010     0.989     0.005     
+CRA       H83       C8        single    1.089     0.010     0.989     0.005     
+CRA       O9        C9        double    1.220     0.020     1.220     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CRA      C9     C1     N2      111.600    3.000
+ CRA      C9     C1     O5      109.470    3.000
+ CRA      N2     C1     O5      109.500    3.000
+ CRA      C9     C1     C2      109.470    3.000
+ CRA      N2     C1     C2      110.000    3.000
+ CRA      O5     C1     C2      109.470    3.000
+ CRA      C1     C9     N1      120.000    3.000
+ CRA      C1     C9     O9      120.500    3.000
+ CRA      N1     C9     O9      123.000    3.000
+ CRA      C9     N1     H2N1    120.000    3.000
+ CRA      C9     N1     H1N1    120.000    3.000
+ CRA      H2N1   N1     H1N1    120.000    3.000
+ CRA      C1     N2     H1N2    118.500    3.000
+ CRA      C1     N2     C7      121.500    3.000
+ CRA      H1N2   N2     C7      120.000    3.000
+ CRA      N2     C7     O8      118.000    3.000
+ CRA      N2     C7     O7      123.000    3.000
+ CRA      O8     C7     O7      119.000    3.000
+ CRA      C7     O8     C8      120.000    3.000
+ CRA      O8     C8     H83     109.470    3.000
+ CRA      O8     C8     H82     109.470    3.000
+ CRA      O8     C8     H81     109.470    3.000
+ CRA      H83    C8     H82     109.470    3.000
+ CRA      H83    C8     H81     109.470    3.000
+ CRA      H82    C8     H81     109.470    3.000
+ CRA      C1     O5     C5      111.800    3.000
+ CRA      O5     C5     H51     109.470    3.000
+ CRA      O5     C5     C6      109.470    3.000
+ CRA      O5     C5     C4      109.470    3.000
+ CRA      H51    C5     C6      108.340    3.000
+ CRA      H51    C5     C4      108.340    3.000
+ CRA      C6     C5     C4      111.000    3.000
+ CRA      C5     C6     H61     109.470    3.000
+ CRA      C5     C6     H62     109.470    3.000
+ CRA      C5     C6     O6      109.470    3.000
+ CRA      H61    C6     H62     107.900    3.000
+ CRA      H61    C6     O6      109.470    3.000
+ CRA      H62    C6     O6      109.470    3.000
+ CRA      C6     O6     H1O6    109.470    3.000
+ CRA      C5     C4     H41     108.340    3.000
+ CRA      C5     C4     O4      109.470    3.000
+ CRA      C5     C4     C3      111.000    3.000
+ CRA      H41    C4     O4      109.470    3.000
+ CRA      H41    C4     C3      108.340    3.000
+ CRA      O4     C4     C3      109.470    3.000
+ CRA      C4     O4     H1O4    109.470    3.000
+ CRA      C4     C3     H31     108.340    3.000
+ CRA      C4     C3     O3      109.470    3.000
+ CRA      C4     C3     C2      111.000    3.000
+ CRA      H31    C3     O3      109.470    3.000
+ CRA      H31    C3     C2      108.340    3.000
+ CRA      O3     C3     C2      109.470    3.000
+ CRA      C3     O3     H1O3    109.470    3.000
+ CRA      C3     C2     H21     108.340    3.000
+ CRA      C3     C2     O2      109.470    3.000
+ CRA      C3     C2     C1      111.000    3.000
+ CRA      H21    C2     O2      109.470    3.000
+ CRA      H21    C2     C1      108.340    3.000
+ CRA      O2     C2     C1      109.470    3.000
+ CRA      C2     O2     H1O2    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CRA      var_1    O5     C1     C9     O9      -118.342   20.000   1
+ CRA      CONST_1  C1     C9     N1     H1N1       0.000    0.000   0
+ CRA      var_2    O5     C1     N2     C7        64.488   20.000   1
+ CRA      CONST_2  C1     N2     C7     O7         0.000    0.000   0
+ CRA      var_3    N2     C7     O8     C8       180.000   20.000   1
+ CRA      var_4    C7     O8     C8     H81      179.996   20.000   1
+ CRA      var_5    C1     O5     C5     C4        60.000   20.000   1
+ CRA      var_6    O5     C5     C6     O6        59.985   20.000   3
+ CRA      var_7    C5     C6     O6     H1O6    -179.989   20.000   1
+ CRA      var_8    O5     C5     C4     C3       -60.000   20.000   3
+ CRA      var_9    C5     C4     O4     H1O4     -60.096   20.000   1
+ CRA      var_10   C5     C4     C3     C2        60.000   20.000   3
+ CRA      var_11   C4     C3     O3     H1O3      59.952   20.000   1
+ CRA      var_12   C4     C3     C2     O2       180.000   20.000   3
+ CRA      var_13   C3     C2     C1     O5        60.000   20.000   1
+ CRA      var_14   C3     C2     O2     H1O2     -59.943   20.000   1
+ CRA      var_1    C2     C1     O5     C5         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CRA      chir_01  C2     O2     C1     C3        negativ
+ CRA      chir_02  C4     C5     C3     O4        positiv
+ CRA      chir_03  C5     C4     C6     O5        negativ
+ CRA      chir_04  C1     C2     O5     N2        negativ
+ CRA      chir_05  C3     C2     C4     O3        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CRA      plan-1    N1        0.020
+ CRA      plan-1    C9        0.020
+ CRA      plan-1    H1N1      0.020
+ CRA      plan-1    H2N1      0.020
+ CRA      plan-2    N2        0.020
+ CRA      plan-2    C1        0.020
+ CRA      plan-2    C7        0.020
+ CRA      plan-2    H1N2      0.020
+ CRA      plan-3    C7        0.020
+ CRA      plan-3    N2        0.020
+ CRA      plan-3    O7        0.020
+ CRA      plan-3    O8        0.020
+ CRA      plan-3    H1N2      0.020
+ CRA      plan-4    C9        0.020
+ CRA      plan-4    N1        0.020
+ CRA      plan-4    C1        0.020
+ CRA      plan-4    O9        0.020
+ CRA      plan-4    H2N1      0.020
+ CRA      plan-4    H1N1      0.020
+# ------------------------------------------------------

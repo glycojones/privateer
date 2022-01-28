@@ -1,0 +1,269 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CFM      CFM 'FE-MO-S CLUSTER                     ' non-polymer        23  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CFM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CFM           HS4B   H    H         0.000     91.787  -25.638   42.499
+ CFM           S4B    S    ST        0.000     92.941  -25.242   42.314
+ CFM           FE5    FE   FE        0.000     94.937  -26.169   41.906
+ CFM           S3A    S    S2        0.000     95.286  -28.364   42.276
+ CFM           FE7    FE   FE        0.000     94.420  -24.066   43.420
+ CFM           S5     S    S2        0.000     94.112  -23.751   45.541
+ CFM           FE3    FE   FE        0.000     95.894  -25.046   45.327
+ CFM           S4A    S    ST        0.000     95.858  -27.131   46.008
+ CFM           HS4A   H    H         0.000     95.182  -27.814   46.782
+ CFM           FE4    FE   FE        0.000     96.413  -27.180   43.799
+ CFM           S2A    S    ST        0.000     97.943  -24.367   45.730
+ CFM           HS2A   H    H         0.000     98.452  -23.452   46.382
+ CFM           FE1    FE   FE        0.000     98.001  -26.535   45.807
+ CFM           MO1    MO   MO        0.000     94.034  -23.875   40.793
+ CFM           S1B    S    ST        0.000     95.779  -25.238   40.017
+ CFM           HS1B   H    H         0.000     96.226  -25.619   38.933
+ CFM           S3B    S    ST        0.000     95.088  -22.325   42.191
+ CFM           HS3B   H    H         0.000     95.145  -21.098   42.308
+ CFM           FE6    FE   FE        0.000     96.511  -24.014   41.831
+ CFM           S2B    S    S2        0.000     98.609  -23.670   42.057
+ CFM           FE2    FE   FE        0.000     98.030  -25.022   43.664
+ CFM           S1A    S    ST        0.000     98.674  -27.188   43.732
+ CFM           HS1A   H    H         0.000     99.566  -27.886   43.244
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CFM      HS4B   n/a    S4B    START
+ CFM      S4B    HS4B   MO1    .
+ CFM      FE5    S4B    S3A    .
+ CFM      S3A    FE5    .      .
+ CFM      FE7    S4B    S5     .
+ CFM      S5     FE7    FE3    .
+ CFM      FE3    S5     S2A    .
+ CFM      S4A    FE3    FE4    .
+ CFM      HS4A   S4A    .      .
+ CFM      FE4    S4A    .      .
+ CFM      S2A    FE3    FE1    .
+ CFM      HS2A   S2A    .      .
+ CFM      FE1    S2A    .      .
+ CFM      MO1    S4B    S3B    .
+ CFM      S1B    MO1    HS1B   .
+ CFM      HS1B   S1B    .      .
+ CFM      S3B    MO1    FE6    .
+ CFM      HS3B   S3B    .      .
+ CFM      FE6    S3B    S2B    .
+ CFM      S2B    FE6    FE2    .
+ CFM      FE2    S2B    S1A    .
+ CFM      S1A    FE2    HS1A   .
+ CFM      HS1A   S1A    .      END
+ CFM      FE1    S1A    .    ADD
+ CFM      FE1    S4A    .    ADD
+ CFM      FE2    S2A    .    ADD
+ CFM      FE4    S1A    .    ADD
+ CFM      FE4    S3A    .    ADD
+ CFM      FE5    S1B    .    ADD
+ CFM      FE6    S1B    .    ADD
+ CFM      FE7    S3B    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CFM       FE1       S1A       single    2.135     0.020     2.135     0.020     
+CFM       FE1       S4A       single    2.135     0.020     2.135     0.020     
+CFM       FE1       S2A       single    2.135     0.020     2.135     0.020     
+CFM       S1A       FE2       single    2.135     0.020     2.135     0.020     
+CFM       FE2       S2A       single    2.135     0.020     2.135     0.020     
+CFM       FE2       S2B       single    2.235     0.020     2.235     0.020     
+CFM       S4A       FE3       single    2.135     0.020     2.135     0.020     
+CFM       S2A       FE3       single    2.135     0.020     2.135     0.020     
+CFM       FE3       S5        single    2.235     0.020     2.235     0.020     
+CFM       FE4       S1A       single    2.135     0.020     2.135     0.020     
+CFM       FE4       S4A       single    2.135     0.020     2.135     0.020     
+CFM       FE4       S3A       single    2.235     0.020     2.235     0.020     
+CFM       S3A       FE5       single    2.235     0.020     2.235     0.020     
+CFM       FE5       S1B       single    2.135     0.020     2.135     0.020     
+CFM       FE5       S4B       single    2.135     0.020     2.135     0.020     
+CFM       FE6       S1B       single    2.135     0.020     2.135     0.020     
+CFM       S2B       FE6       single    2.235     0.020     2.235     0.020     
+CFM       FE6       S3B       single    2.135     0.020     2.135     0.020     
+CFM       FE7       S3B       single    2.135     0.020     2.135     0.020     
+CFM       FE7       S4B       single    2.135     0.020     2.135     0.020     
+CFM       S5        FE7       single    2.235     0.020     2.235     0.020     
+CFM       S1B       MO1       single    2.225     0.020     2.225     0.020     
+CFM       S3B       MO1       single    2.225     0.020     2.225     0.020     
+CFM       MO1       S4B       single    2.225     0.020     2.225     0.020     
+CFM       HS1A      S1A       single    1.338     0.010     1.171     0.208     
+CFM       HS4A      S4A       single    1.338     0.010     1.171     0.208     
+CFM       HS2A      S2A       single    1.338     0.010     1.171     0.208     
+CFM       HS1B      S1B       single    1.338     0.010     1.171     0.208     
+CFM       HS3B      S3B       single    1.338     0.010     1.171     0.208     
+CFM       S4B       HS4B      single    1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CFM      HS4B   S4B    FE5     109.500    3.000
+ CFM      HS4B   S4B    FE7     109.500    3.000
+ CFM      HS4B   S4B    MO1     109.500    3.000
+ CFM      FE5    S4B    FE7     109.500    3.000
+ CFM      FE5    S4B    MO1     109.500    3.000
+ CFM      FE7    S4B    MO1     109.500    3.000
+ CFM      S4B    FE5    S3A      90.000    3.000
+ CFM      S4B    FE5    S1B      90.000    3.000
+ CFM      S3A    FE5    S1B      90.000    3.000
+ CFM      FE5    S3A    FE4      70.962    3.000
+ CFM      S4B    FE7    S5      120.000    3.000
+ CFM      S4B    FE7    S3B     120.000    3.000
+ CFM      S5     FE7    S3B     120.000    3.000
+ CFM      FE7    S5     FE3      72.889    3.000
+ CFM      S5     FE3    S4A      90.000    3.000
+ CFM      S5     FE3    S2A      90.000    3.000
+ CFM      S4A    FE3    S2A      90.000    3.000
+ CFM      FE3    S4A    HS4A    109.500    3.000
+ CFM      FE3    S4A    FE4     109.500    3.000
+ CFM      FE3    S4A    FE1     109.500    3.000
+ CFM      HS4A   S4A    FE4     109.500    3.000
+ CFM      HS4A   S4A    FE1     109.500    3.000
+ CFM      FE4    S4A    FE1     109.500    3.000
+ CFM      S4A    FE4    S1A      90.000    3.000
+ CFM      S4A    FE4    S3A      90.000    3.000
+ CFM      S1A    FE4    S3A      90.000    3.000
+ CFM      FE3    S2A    HS2A    109.500    3.000
+ CFM      FE3    S2A    FE1     109.500    3.000
+ CFM      FE3    S2A    FE2     109.500    3.000
+ CFM      HS2A   S2A    FE1     109.500    3.000
+ CFM      HS2A   S2A    FE2     109.500    3.000
+ CFM      FE1    S2A    FE2     109.500    3.000
+ CFM      S2A    FE1    S1A      90.000    3.000
+ CFM      S2A    FE1    S4A      90.000    3.000
+ CFM      S1A    FE1    S4A      90.000    3.000
+ CFM      S4B    MO1    S1B      90.000    3.000
+ CFM      S4B    MO1    S3B      90.000    3.000
+ CFM      S1B    MO1    S3B      90.000    3.000
+ CFM      MO1    S1B    HS1B    109.500    3.000
+ CFM      MO1    S1B    FE5     109.500    3.000
+ CFM      MO1    S1B    FE6     109.500    3.000
+ CFM      FE5    S1B    FE6     109.500    3.000
+ CFM      HS1B   S1B    FE5     109.500    3.000
+ CFM      HS1B   S1B    FE6     109.500    3.000
+ CFM      MO1    S3B    HS3B    109.500    3.000
+ CFM      MO1    S3B    FE6     109.500    3.000
+ CFM      MO1    S3B    FE7     109.500    3.000
+ CFM      HS3B   S3B    FE6     109.500    3.000
+ CFM      HS3B   S3B    FE7     109.500    3.000
+ CFM      FE6    S3B    FE7     109.500    3.000
+ CFM      S3B    FE6    S2B      90.000    3.000
+ CFM      S3B    FE6    S1B      90.000    3.000
+ CFM      S2B    FE6    S1B      90.000    3.000
+ CFM      FE6    S2B    FE2      73.579    3.000
+ CFM      S2B    FE2    S1A      90.000    3.000
+ CFM      S2B    FE2    S2A      90.000    3.000
+ CFM      S1A    FE2    S2A      90.000    3.000
+ CFM      FE2    S1A    HS1A    109.500    3.000
+ CFM      FE2    S1A    FE1     109.500    3.000
+ CFM      FE2    S1A    FE4     109.500    3.000
+ CFM      FE1    S1A    FE4     109.500    3.000
+ CFM      HS1A   S1A    FE1     109.500    3.000
+ CFM      HS1A   S1A    FE4     109.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CFM      var_1    HS4B   S4B    FE5    S3A      175.000   20.000   1
+ CFM      var_2    S4B    FE5    S1B    MO1       16.214   20.000   1
+ CFM      var_3    S4B    FE5    S3A    FE4     -109.641   20.000   1
+ CFM      var_4    FE5    S4B    FE7    S3B        0.000   20.000   1
+ CFM      var_5    FE6    S3B    FE7    S4B        0.000   20.000   1
+ CFM      var_6    FE3    S5     FE7    S4B        0.000   20.000   1
+ CFM      var_7    FE7    S5     FE3    S2A      108.640   20.000   1
+ CFM      var_8    S5     FE3    S4A    FE4      123.019   20.000   1
+ CFM      var_9    FE3    S4A    FE4    S1A       93.434   20.000   1
+ CFM      var_10   S4A    FE4    S1A    FE2      -91.080   20.000   1
+ CFM      var_11   S4A    FE4    S3A    FE5      110.747   20.000   1
+ CFM      var_12   S5     FE3    S2A    FE1      160.757   20.000   1
+ CFM      var_13   FE3    S2A    FE1    S1A       95.731   20.000   1
+ CFM      var_14   S2A    FE1    S1A    FE2      -15.121   20.000   1
+ CFM      var_15   S2A    FE1    S4A    FE3       16.556   20.000   1
+ CFM      var_16   HS4B   S4B    MO1    S1B        0.000   20.000   1
+ CFM      var_17   HS1B   S1B    MO1    S4B        0.000   20.000   1
+ CFM      var_18   HS3B   S3B    MO1    S4B        0.000   20.000   1
+ CFM      var_19   MO1    S3B    FE6    S2B      156.570   20.000   1
+ CFM      var_20   S3B    FE6    S1B    MO1      -16.179   20.000   1
+ CFM      var_21   S3B    FE6    S2B    FE2      112.288   20.000   1
+ CFM      var_22   FE6    S2B    FE2    S1A      110.426   20.000   1
+ CFM      var_23   S2B    FE2    S2A    FE3      120.970   20.000   1
+ CFM      var_24   S2B    FE2    S1A    FE1      161.455   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ CFM      chir_01  S1A    FE1    FE2    FE4       positiv
+                   .      .      .      .      .
+ CFM      chir_02  S4A    FE1    FE3    FE4       negativ
+                   .      .      .      .      .
+ CFM      chir_03  S2A    FE1    FE2    FE3       negativ
+                   .      .      .      .      .
+ CFM      chir_04  S1B    FE5    FE6    MO1       positiv
+                   .      .      .      .      .
+ CFM      chir_05  S3B    FE6    FE7    MO1       positiv
+                   .      .      .      .      .
+ CFM      chir_06  S4B    FE5    FE7    MO1       negativ
+                   .      .      .      .      .
+ CFM      chir_07  FE1    S2A    S1A    S4A       both
+                   .      .      .      .      .
+ CFM      chir_08  FE7    .      .      S4B       cross3
+                   S5     S3B    .      .      .
+ CFM      chir_09  MO1    S4B    .      S1B       cross4
+                   S3B    .      .      .      .
+# ------------------------------------------------------

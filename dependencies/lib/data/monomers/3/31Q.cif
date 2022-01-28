@@ -1,0 +1,236 @@
+# Created using JLigand 1.0.40
+# and
+# dictionary  5.41    ( 11/02/2013 )
+# libcheck    5.2.1   ( 10/04/2013 )
+# refmac      5.8.73  ( 25/05/2014 )
+#
+# Authors: Andrey Lebedev, Paul Young, Alexei Vagin, Garib Murshudov
+# E-mail: andrey.lebedev@stfc.ac.uk
+#
+
+global_
+_lib_name         mon_lib
+_lib_version      5.41
+_lib_update       11/02/2013
+
+data_comp_list
+
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+31Q      31Q '(4-carboxyphenyl)(L-cysteinato-kappa' peptide            25  16 .
+
+data_comp_31Q
+
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 31Q           O01    O    O         0.000     -5.279    1.351    1.842
+ 31Q           C02    C    C         0.000     -4.084    1.466    2.044
+ 31Q           O03    O    OH1       0.000     -3.658    2.320    2.973
+ 31Q           C04    C    CR6       0.000     -3.090    0.659    1.266
+ 31Q           C05    C    CR16      0.000     -3.162    0.577   -0.127
+ 31Q           C06    C    CR16      0.000     -2.223   -0.178   -0.830
+ 31Q           C07    C    CR6       0.000     -1.237   -0.850   -0.116
+ 31Q           HG     Hg   HG        0.000      0.401   -2.104   -1.085
+ 31Q           SG     S    S2        0.000      2.291   -3.502   -2.166
+ 31Q           CB     C    CH2       0.000      3.612   -2.474   -1.602
+ 31Q           CA     C    CH1       0.000      2.997   -1.094   -1.300
+ 31Q           N      N    NH1       1.000      2.608   -0.420   -2.576
+ 31Q           C      C    C1        0.000      3.878   -0.207   -0.448
+ 31Q           O      O    O         0.000      4.517   -0.686    0.474
+ 31Q           C15    C    CR16      0.000     -1.156   -0.752    1.266
+ 31Q           C16    C    CR16      0.000     -2.088   -0.004    1.961
+ 31Q           H1     H    H         0.000     -2.793    2.678    2.723
+ 31Q           H4     H    H         0.000     -3.947    1.097   -0.661
+ 31Q           H3     H    H         0.000     -2.268   -0.251   -1.910
+ 31Q           HB1    H    H         0.000      4.388   -2.392   -2.363
+ 31Q           HB2    H    H         0.000      4.048   -2.902   -0.697
+ 31Q           HA     H    H         0.000      2.087   -1.254   -0.713
+ 31Q           H      H    HNH1      0.000      2.549   -1.118   -3.337
+ 31Q           H11    H    H         0.000     -0.370   -1.273    1.798
+ 31Q           H12    H    H         0.000     -2.035    0.063    3.041
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 31Q      N      n/a    CA     START
+ 31Q      H      N      .      .
+ 31Q      CA     N      C      .
+ 31Q      HA     CA     .      .
+ 31Q      CB     CA     SG     .
+ 31Q      HB1    CB     .      .
+ 31Q      HB2    CB     .      .
+ 31Q      SG     CB     HG     .
+ 31Q      HG     SG     C07    .
+ 31Q      C07    HG     C15    .
+ 31Q      C06    C07    C05    .
+ 31Q      H3     C06    .      .
+ 31Q      C05    C06    H4     .
+ 31Q      H4     C05    .      .
+ 31Q      C15    C07    C16    .
+ 31Q      H11    C15    .      .
+ 31Q      C16    C15    C04    .
+ 31Q      H12    C16    .      .
+ 31Q      C04    C16    C02    .
+ 31Q      C02    C04    O03    .
+ 31Q      O01    C02    .      .
+ 31Q      O03    C02    H1     .
+ 31Q      H1     O03    .      .
+ 31Q      C04    C05    .    ADD
+ 31Q      C      CA     .      END
+ 31Q      O      C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+31Q       O01       C02       double    1.220     0.020     1.220     0.020     
+31Q       C02       O03       single    1.330     0.020     1.330     0.020     
+31Q       C02       C04       single    1.500     0.020     1.500     0.020     
+31Q       O03       H1        single    0.970     0.012     0.839     0.014     
+31Q       C04       C05       aromatic  1.390     0.020     1.390     0.020     
+31Q       C04       C16       aromatic  1.390     0.020     1.390     0.020     
+31Q       C05       C06       aromatic  1.390     0.020     1.390     0.020     
+31Q       C05       H4        single    1.082     0.013     0.975     0.010     
+31Q       C06       C07       aromatic  1.390     0.020     1.390     0.020     
+31Q       C06       H3        single    1.082     0.013     0.975     0.010     
+31Q       C07       HG        single    2.295     0.020     2.295     0.020     
+31Q       C07       C15       aromatic  1.390     0.020     1.390     0.020     
+31Q       HG        SG        single    2.600     0.020     2.600     0.020     
+31Q       SG        CB        single    1.762     0.020     1.762     0.020     
+31Q       CB        CA        single    1.524     0.020     1.524     0.020     
+31Q       CB        HB1       single    1.089     0.010     0.989     0.005     
+31Q       CB        HB2       single    1.089     0.010     0.989     0.005     
+31Q       CA        N         single    1.488     0.020     1.488     0.020     
+31Q       CA        C         single    1.510     0.020     1.510     0.020     
+31Q       CA        HA        single    1.089     0.010     0.989     0.005     
+31Q       N         H         single    1.016     0.010     0.899     0.007     
+31Q       C         O         double    1.220     0.020     1.220     0.020     
+31Q       C15       C16       aromatic  1.390     0.020     1.390     0.020     
+31Q       C15       H11       single    1.082     0.013     0.975     0.010     
+31Q       C16       H12       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 31Q      O01    C02    O03     119.000    3.000
+ 31Q      O01    C02    C04     120.500    3.000
+ 31Q      C02    O03    H1      109.470    3.000
+ 31Q      C02    C04    C05     120.000    3.000
+ 31Q      C02    C04    C16     120.000    3.000
+ 31Q      O03    C02    C04     120.000    3.000
+ 31Q      C04    C05    C06     120.000    3.000
+ 31Q      C04    C05    H4      120.000    3.000
+ 31Q      C04    C16    C15     120.000    3.000
+ 31Q      C04    C16    H12     120.000    3.000
+ 31Q      C05    C04    C16     120.000    3.000
+ 31Q      C05    C06    C07     120.000    3.000
+ 31Q      C05    C06    H3      120.000    3.000
+ 31Q      C06    C05    H4      120.000    3.000
+ 31Q      C06    C07    HG      120.000    3.000
+ 31Q      C06    C07    C15     120.000    3.000
+ 31Q      C07    C06    H3      120.000    3.000
+ 31Q      C07    HG     SG      180.000    3.000
+ 31Q      C07    C15    C16     120.000    3.000
+ 31Q      C07    C15    H11     120.000    3.000
+ 31Q      HG     C07    C15     120.000    3.000
+ 31Q      HG     SG     CB      109.470    3.000
+ 31Q      SG     CB     CA      109.500    3.000
+ 31Q      SG     CB     HB1     109.500    3.000
+ 31Q      SG     CB     HB2     109.500    3.000
+ 31Q      CB     CA     N       110.000    3.000
+ 31Q      CB     CA     C       109.470    3.000
+ 31Q      CB     CA     HA      108.340    3.000
+ 31Q      CA     CB     HB1     109.470    3.000
+ 31Q      CA     CB     HB2     109.470    3.000
+ 31Q      CA     N      H       109.470    3.000
+ 31Q      CA     C      O       120.500    3.000
+ 31Q      N      CA     C       111.600    3.000
+ 31Q      N      CA     HA      108.550    3.000
+ 31Q      C      CA     HA      108.810    3.000
+ 31Q      C15    C16    H12     120.000    3.000
+ 31Q      C16    C15    H11     120.000    3.000
+ 31Q      HB1    CB     HB2     107.900    3.000
+
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 31Q      CONST_5  C02    C04    C16    C15        0.000    0.000   0
+ 31Q      var_7    O03    C02    C04    C16      180.000   20.000   3
+ 31Q      var_8    C04    C02    O03    H1       180.000   20.000   3
+ 31Q      CONST_2  C04    C05    C06    C07        0.000    0.000   0
+ 31Q      CONST_4  C04    C16    C15    C07        0.000    0.000   0
+ 31Q      CONST_1  C05    C06    C07    HG         0.000    0.000   0
+ 31Q      CONST_6  C06    C05    C04    C16        0.000    0.000   0
+ 31Q      var_6    C06    C07    HG     SG       180.000   20.000   3
+ 31Q      var_5    C07    HG     SG     CB       180.000   20.000   3
+ 31Q      CONST_3  HG     C07    C15    C16        0.000    0.000   0
+ 31Q      var_4    HG     SG     CB     CA       180.000   20.000   3
+ 31Q      var_3    SG     CB     CA     C        180.000   20.000   3
+ 31Q      var_1    CB     CA     C      O        180.000   20.000   3
+
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 31Q      chir_01  HG     C07    SG     .         cross0
+ 31Q      chir_02  CA     N      CB     C         negativ
+
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 31Q      plan-1    O01       0.020
+ 31Q      plan-1    C02       0.020
+ 31Q      plan-1    O03       0.020
+ 31Q      plan-1    C04       0.020
+ 31Q      plan-3    CA        0.020
+ 31Q      plan-3    C         0.020
+ 31Q      plan-3    O         0.020
+ 31Q      plan-3    H2        0.020
+ 31Q      plan-2    C02       0.020
+ 31Q      plan-2    C04       0.020
+ 31Q      plan-2    C05       0.020
+ 31Q      plan-2    C06       0.020
+ 31Q      plan-2    C07       0.020
+ 31Q      plan-2    HG        0.020
+ 31Q      plan-2    C15       0.020
+ 31Q      plan-2    C16       0.020
+ 31Q      plan-2    H4        0.020
+ 31Q      plan-2    H3        0.020
+ 31Q      plan-2    H11       0.020
+ 31Q      plan-2    H12       0.020
+

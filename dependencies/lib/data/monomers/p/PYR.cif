@@ -1,0 +1,111 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PYR     PYR      "PYRUVIC ACID"     NON-POLYMER     9     6     .     
+#
+data_comp_PYR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PYR     C1      C       C       0       35.485      2.853       6.827       
+PYR     O1      O       O       0       34.365      3.087       6.351       
+PYR     O2      O       OC      -1      36.474      2.738       6.094       
+PYR     C2      C       C       0       35.645      2.735       8.143       
+PYR     O3      O       O       0       34.751      3.076       8.933       
+PYR     C3      C       CH3     0       36.905      2.174       8.748       
+PYR     H31     H       H       0       36.806      2.102       9.711       
+PYR     H32     H       H       0       37.650      2.759       8.545       
+PYR     H33     H       H       0       37.077      1.295       8.378       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PYR       C1        O1        DOUBLE    n         1.230     0.020     1.230     0.020     
+PYR       C1        O2        SINGLE    n         1.230     0.020     1.230     0.020     
+PYR       C1        C2        SINGLE    n         1.299     0.020     1.299     0.020     
+PYR       C2        O3        DOUBLE    n         1.230     0.019     1.230     0.019     
+PYR       C2        C3        SINGLE    n         1.501     0.012     1.501     0.012     
+PYR       C3        H31       SINGLE    n         1.089     0.010     0.969     0.018     
+PYR       C3        H32       SINGLE    n         1.089     0.010     0.969     0.018     
+PYR       C3        H33       SINGLE    n         1.089     0.010     0.969     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PYR          O1          C1          O2     122.692    1.63
+PYR          O1          C1          C2     118.654    3.00
+PYR          O2          C1          C2     118.654    3.00
+PYR          C1          C2          O3     119.994    3.00
+PYR          C1          C2          C3     121.909    3.00
+PYR          O3          C2          C3     118.097    1.73
+PYR          C2          C3         H31     109.540    1.50
+PYR          C2          C3         H32     109.540    1.50
+PYR          C2          C3         H33     109.540    1.50
+PYR         H31          C3         H32     109.400    1.50
+PYR         H31          C3         H33     109.400    1.50
+PYR         H32          C3         H33     109.400    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PYR             sp2_sp2_2          O1          C1          C2          O3       0.000   10.00     2
+PYR             sp2_sp3_1          C1          C2          C3         H31       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PYR    plan-1          C1   0.020
+PYR    plan-1          C2   0.020
+PYR    plan-1          O1   0.020
+PYR    plan-1          O2   0.020
+PYR    plan-2          C1   0.020
+PYR    plan-2          C2   0.020
+PYR    plan-2          C3   0.020
+PYR    plan-2          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PYR SMILES           ACDLabs              12.01 "O=C(C(=O)O)C"
+PYR InChI            InChI                1.03  "InChI=1S/C3H4O3/c1-2(4)3(5)6/h1H3,(H,5,6)"
+PYR InChIKey         InChI                1.03  LCTONWCANYUPML-UHFFFAOYSA-N
+PYR SMILES_CANONICAL CACTVS               3.385 "CC(=O)C(O)=O"
+PYR SMILES           CACTVS               3.385 "CC(=O)C(O)=O"
+PYR SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "CC(=O)C(=O)O"
+PYR SMILES           "OpenEye OEToolkits" 1.7.6 "CC(=O)C(=O)O"
+PYR ?                acedrg               202         "dictionary generator"                  
+PYR ?                acedrg_database      11          "data source"                           
+PYR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PYR ?                refmac5              5.8.0189    "optimization tool"                     

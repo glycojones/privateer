@@ -1,0 +1,143 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EVJ     EVJ      thiophene-2-sulfonamide     NON-POLYMER     14     9     .     
+#
+data_comp_EVJ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+EVJ     S       S       S3      0       31.640      -0.964      13.776      
+EVJ     O1      O       O       0       31.430      -2.193      14.475      
+EVJ     S1      S       S2      0       33.202      -2.846      12.012      
+EVJ     C2      C       CR5     0       32.873      -1.263      12.577      
+EVJ     O2      O       O       0       30.551      -0.342      13.090      
+EVJ     C3      C       CR15    0       33.666      -0.323      11.986      
+EVJ     C4      C       CR15    0       34.554      -0.918      11.055      
+EVJ     C5      C       CR15    0       34.439      -2.263      10.997      
+EVJ     NH      N       NT2     0       32.225      0.095       14.822      
+EVJ     H3      H       H       0       33.622      0.596       12.177      
+EVJ     H4      H       H       0       35.165      -0.442      10.525      
+EVJ     H5      H       H       0       34.978      -2.814      10.459      
+EVJ     HNH     H       H       0       31.797      0.149       15.564      
+EVJ     HNHA    H       H       0       33.081      0.116       14.879      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EVJ       S         C2        SINGLE    n         1.744     0.014     1.744     0.014     
+EVJ       S         O2        DOUBLE    n         1.429     0.010     1.429     0.010     
+EVJ       S         O1        DOUBLE    n         1.429     0.010     1.429     0.010     
+EVJ       S         NH        SINGLE    n         1.600     0.013     1.600     0.013     
+EVJ       S1        C5        SINGLE    n         1.704     0.011     1.704     0.011     
+EVJ       S1        C2        SINGLE    n         1.713     0.010     1.713     0.010     
+EVJ       C2        C3        DOUBLE    n         1.363     0.017     1.363     0.017     
+EVJ       C3        C4        SINGLE    n         1.416     0.011     1.416     0.011     
+EVJ       C4        C5        DOUBLE    n         1.351     0.019     1.351     0.019     
+EVJ       C3        H3        SINGLE    n         1.082     0.013     0.940     0.012     
+EVJ       C4        H4        SINGLE    n         1.082     0.013     0.939     0.015     
+EVJ       C5        H5        SINGLE    n         1.082     0.013     0.940     0.017     
+EVJ       NH        HNH       SINGLE    n         1.036     0.016     0.858     0.010     
+EVJ       NH        HNHA      SINGLE    n         1.036     0.016     0.858     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+EVJ          C2           S          O2     106.787    1.64
+EVJ          C2           S          O1     106.787    1.64
+EVJ          C2           S          NH     107.946    1.50
+EVJ          O2           S          O1     120.146    1.50
+EVJ          O2           S          NH     108.005    1.50
+EVJ          O1           S          NH     108.005    1.50
+EVJ          C5          S1          C2      91.606    1.50
+EVJ           S          C2          S1     120.991    1.50
+EVJ           S          C2          C3     126.315    1.50
+EVJ          S1          C2          C3     112.694    1.50
+EVJ          C2          C3          C4     110.753    1.98
+EVJ          C2          C3          H3     124.096    1.50
+EVJ          C4          C3          H3     125.150    1.62
+EVJ          C3          C4          C5     112.986    1.50
+EVJ          C3          C4          H4     124.610    1.62
+EVJ          C5          C4          H4     122.404    1.50
+EVJ          S1          C5          C4     112.224    1.50
+EVJ          S1          C5          H5     123.798    1.50
+EVJ          C4          C5          H5     123.978    1.50
+EVJ           S          NH         HNH     115.124    3.00
+EVJ           S          NH        HNHA     115.124    3.00
+EVJ         HNH          NH        HNHA     116.039    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+EVJ             sp2_sp3_3          S1          C2           S          O2     150.000   10.00     6
+EVJ             sp3_sp3_2         HNH          NH           S          O2     -60.000   10.00     3
+EVJ            sp2_sp2_11           S          C2          C3          C4     180.000   10.00     2
+EVJ             sp2_sp2_5          C2          C3          C4          C5       0.000   10.00     2
+EVJ             sp2_sp2_1          C3          C4          C5          S1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+EVJ    plan-1          C2   0.020
+EVJ    plan-1          C3   0.020
+EVJ    plan-1           S   0.020
+EVJ    plan-1          S1   0.020
+EVJ    plan-2          C2   0.020
+EVJ    plan-2          C3   0.020
+EVJ    plan-2          C4   0.020
+EVJ    plan-2          H3   0.020
+EVJ    plan-3          C3   0.020
+EVJ    plan-3          C4   0.020
+EVJ    plan-3          C5   0.020
+EVJ    plan-3          H4   0.020
+EVJ    plan-4          C4   0.020
+EVJ    plan-4          C5   0.020
+EVJ    plan-4          H5   0.020
+EVJ    plan-4          S1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+EVJ SMILES           ACDLabs              12.01 "O=S(=O)(N)c1sccc1"
+EVJ SMILES_CANONICAL CACTVS               3.370 "N[S](=O)(=O)c1sccc1"
+EVJ SMILES           CACTVS               3.370 "N[S](=O)(=O)c1sccc1"
+EVJ SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "c1cc(sc1)S(=O)(=O)N"
+EVJ SMILES           "OpenEye OEToolkits" 1.7.2 "c1cc(sc1)S(=O)(=O)N"
+EVJ InChI            InChI                1.03  "InChI=1S/C4H5NO2S2/c5-9(6,7)4-2-1-3-8-4/h1-3H,(H2,5,6,7)"
+EVJ InChIKey         InChI                1.03  KTFDYVNEGTXQCV-UHFFFAOYSA-N
+EVJ ?                acedrg               202         "dictionary generator"                  
+EVJ ?                acedrg_database      11          "data source"                           
+EVJ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+EVJ ?                refmac5              5.8.0189    "optimization tool"                     

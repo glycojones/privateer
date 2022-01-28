@@ -1,0 +1,300 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FSI      FSI '5-(ACETYLAMINO)-2,6-ANHYDRO-3,5-DIDE' non-polymer        38  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FSI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FSI           O10    O    O         0.000      0.000    0.000    0.000
+ FSI           C10    C    C         0.000     -0.343    0.954    0.665
+ FSI           C11    C    CH3       0.000      0.689    1.760    1.413
+ FSI           H113   H    H         0.000      0.668    2.764    1.074
+ FSI           H112   H    H         0.000      0.475    1.735    2.450
+ FSI           H111   H    H         0.000      1.651    1.351    1.241
+ FSI           N5     N    NH1       0.000     -1.644    1.294    0.736
+ FSI           HN5    H    H         0.000     -1.929    2.089    1.290
+ FSI           C5     C    CH1       0.000     -2.646    0.509    0.010
+ FSI           H5     H    H         0.000     -2.309   -0.533   -0.072
+ FSI           C4     C    CH1       0.000     -2.839    1.098   -1.393
+ FSI           H4     H    H         0.000     -3.072    2.169   -1.314
+ FSI           O4     O    OH1       0.000     -1.644    0.921   -2.155
+ FSI           HO4    H    H         0.000     -1.769    1.293   -3.039
+ FSI           C3     C    CH1       0.000     -4.000    0.367   -2.075
+ FSI           H3     H    H         0.000     -4.227    0.852   -3.035
+ FSI           F1     F    F         0.000     -3.648   -0.968   -2.296
+ FSI           C6     C    CH1       0.000     -3.979    0.559    0.760
+ FSI           H6     H    H         0.000     -4.324    1.600    0.822
+ FSI           O6     O    O2        0.000     -4.951   -0.220    0.070
+ FSI           C2     C    CH1       0.000     -5.230    0.429   -1.167
+ FSI           H2     H    H         0.000     -5.491    1.480   -0.977
+ FSI           C1     C    C         0.000     -6.388   -0.259   -1.843
+ FSI           O1A    O    OC       -0.500     -6.932   -1.246   -1.301
+ FSI           O1B    O    OC       -0.500     -6.805    0.156   -2.947
+ FSI           C7     C    CH1       0.000     -3.789    0.003    2.173
+ FSI           H7     H    H         0.000     -3.039    0.605    2.706
+ FSI           O7     O    OH1       0.000     -3.345   -1.352    2.095
+ FSI           HO7    H    H         0.000     -4.005   -1.881    1.626
+ FSI           C8     C    CH1       0.000     -5.118    0.062    2.927
+ FSI           H8     H    H         0.000     -5.868   -0.539    2.394
+ FSI           O8     O    OH1       0.000     -5.562    1.418    3.006
+ FSI           HO8    H    H         0.000     -4.901    1.945    3.475
+ FSI           C9     C    CH2       0.000     -4.929   -0.494    4.340
+ FSI           H91    H    H         0.000     -4.183    0.104    4.868
+ FSI           H92    H    H         0.000     -4.588   -1.529    4.279
+ FSI           O9     O    OH1       0.000     -6.171   -0.440    5.044
+ FSI           HO9    H    H         0.000     -6.050   -0.791    5.937
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FSI      O10    n/a    C10    START
+ FSI      C10    O10    N5     .
+ FSI      C11    C10    H111   .
+ FSI      H113   C11    .      .
+ FSI      H112   C11    .      .
+ FSI      H111   C11    .      .
+ FSI      N5     C10    C5     .
+ FSI      HN5    N5     .      .
+ FSI      C5     N5     C6     .
+ FSI      H5     C5     .      .
+ FSI      C4     C5     C3     .
+ FSI      H4     C4     .      .
+ FSI      O4     C4     HO4    .
+ FSI      HO4    O4     .      .
+ FSI      C3     C4     F1     .
+ FSI      H3     C3     .      .
+ FSI      F1     C3     .      .
+ FSI      C6     C5     C7     .
+ FSI      H6     C6     .      .
+ FSI      O6     C6     C2     .
+ FSI      C2     O6     C1     .
+ FSI      H2     C2     .      .
+ FSI      C1     C2     O1B    .
+ FSI      O1A    C1     .      .
+ FSI      O1B    C1     .      .
+ FSI      C7     C6     C8     .
+ FSI      H7     C7     .      .
+ FSI      O7     C7     HO7    .
+ FSI      HO7    O7     .      .
+ FSI      C8     C7     C9     .
+ FSI      H8     C8     .      .
+ FSI      O8     C8     HO8    .
+ FSI      HO8    O8     .      .
+ FSI      C9     C8     O9     .
+ FSI      H91    C9     .      .
+ FSI      H92    C9     .      .
+ FSI      O9     C9     HO9    .
+ FSI      HO9    O9     .      END
+ FSI      C2     C3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FSI       O1B       C1        deloc     1.250     0.020     1.250     0.020     
+FSI       O1A       C1        deloc     1.250     0.020     1.250     0.020     
+FSI       C1        C2        single    1.500     0.020     1.500     0.020     
+FSI       C2        C3        single    1.524     0.020     1.524     0.020     
+FSI       C2        O6        single    1.426     0.020     1.426     0.020     
+FSI       H2        C2        single    1.089     0.010     0.989     0.005     
+FSI       F1        C3        single    1.370     0.020     1.370     0.020     
+FSI       C3        C4        single    1.524     0.020     1.524     0.020     
+FSI       H3        C3        single    1.089     0.010     0.989     0.005     
+FSI       O4        C4        single    1.432     0.020     1.432     0.020     
+FSI       C4        C5        single    1.524     0.020     1.524     0.020     
+FSI       H4        C4        single    1.089     0.010     0.989     0.005     
+FSI       HO4       O4        single    0.970     0.012     0.839     0.014     
+FSI       O6        C6        single    1.426     0.020     1.426     0.020     
+FSI       C6        C5        single    1.524     0.020     1.524     0.020     
+FSI       C7        C6        single    1.524     0.020     1.524     0.020     
+FSI       H6        C6        single    1.089     0.010     0.989     0.005     
+FSI       C5        N5        single    1.450     0.020     1.450     0.020     
+FSI       H5        C5        single    1.089     0.010     0.989     0.005     
+FSI       N5        C10       single    1.330     0.020     1.330     0.020     
+FSI       HN5       N5        single    1.016     0.010     0.899     0.007     
+FSI       C11       C10       single    1.500     0.020     1.500     0.020     
+FSI       C10       O10       double    1.220     0.020     1.220     0.020     
+FSI       H111      C11       single    1.089     0.010     0.989     0.005     
+FSI       H112      C11       single    1.089     0.010     0.989     0.005     
+FSI       H113      C11       single    1.089     0.010     0.989     0.005     
+FSI       O7        C7        single    1.432     0.020     1.432     0.020     
+FSI       C8        C7        single    1.524     0.020     1.524     0.020     
+FSI       H7        C7        single    1.089     0.010     0.989     0.005     
+FSI       HO7       O7        single    0.970     0.012     0.839     0.014     
+FSI       O8        C8        single    1.432     0.020     1.432     0.020     
+FSI       C9        C8        single    1.524     0.020     1.524     0.020     
+FSI       H8        C8        single    1.089     0.010     0.989     0.005     
+FSI       HO8       O8        single    0.970     0.012     0.839     0.014     
+FSI       O9        C9        single    1.432     0.020     1.432     0.020     
+FSI       H91       C9        single    1.089     0.010     0.989     0.005     
+FSI       H92       C9        single    1.089     0.010     0.989     0.005     
+FSI       HO9       O9        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FSI      O10    C10    C11     123.000    3.000
+ FSI      O10    C10    N5      123.000    3.000
+ FSI      C11    C10    N5      116.500    3.000
+ FSI      C10    C11    H113    109.470    3.000
+ FSI      C10    C11    H112    109.470    3.000
+ FSI      C10    C11    H111    109.470    3.000
+ FSI      H113   C11    H112    109.470    3.000
+ FSI      H113   C11    H111    109.470    3.000
+ FSI      H112   C11    H111    109.470    3.000
+ FSI      C10    N5     HN5     120.000    3.000
+ FSI      C10    N5     C5      121.500    3.000
+ FSI      HN5    N5     C5      118.500    3.000
+ FSI      N5     C5     H5      108.550    3.000
+ FSI      N5     C5     C4      110.000    3.000
+ FSI      N5     C5     C6      110.000    3.000
+ FSI      H5     C5     C4      108.340    3.000
+ FSI      H5     C5     C6      108.340    3.000
+ FSI      C4     C5     C6      111.000    3.000
+ FSI      C5     C4     H4      108.340    3.000
+ FSI      C5     C4     O4      109.470    3.000
+ FSI      C5     C4     C3      111.000    3.000
+ FSI      H4     C4     O4      109.470    3.000
+ FSI      H4     C4     C3      108.340    3.000
+ FSI      O4     C4     C3      109.470    3.000
+ FSI      C4     O4     HO4     109.470    3.000
+ FSI      C4     C3     H3      108.340    3.000
+ FSI      C4     C3     F1      109.500    3.000
+ FSI      C4     C3     C2      111.000    3.000
+ FSI      H3     C3     F1      109.500    3.000
+ FSI      H3     C3     C2      108.340    3.000
+ FSI      F1     C3     C2      109.500    3.000
+ FSI      C5     C6     H6      108.340    3.000
+ FSI      C5     C6     O6      109.470    3.000
+ FSI      C5     C6     C7      111.000    3.000
+ FSI      H6     C6     O6      109.470    3.000
+ FSI      H6     C6     C7      108.340    3.000
+ FSI      O6     C6     C7      109.470    3.000
+ FSI      C6     O6     C2      111.800    3.000
+ FSI      O6     C2     H2      109.470    3.000
+ FSI      O6     C2     C1      109.470    3.000
+ FSI      O6     C2     C3      109.470    3.000
+ FSI      H2     C2     C1      108.810    3.000
+ FSI      H2     C2     C3      108.340    3.000
+ FSI      C1     C2     C3      109.470    3.000
+ FSI      C2     C1     O1A     118.500    3.000
+ FSI      C2     C1     O1B     118.500    3.000
+ FSI      O1A    C1     O1B     123.000    3.000
+ FSI      C6     C7     H7      108.340    3.000
+ FSI      C6     C7     O7      109.470    3.000
+ FSI      C6     C7     C8      111.000    3.000
+ FSI      H7     C7     O7      109.470    3.000
+ FSI      H7     C7     C8      108.340    3.000
+ FSI      O7     C7     C8      109.470    3.000
+ FSI      C7     O7     HO7     109.470    3.000
+ FSI      C7     C8     H8      108.340    3.000
+ FSI      C7     C8     O8      109.470    3.000
+ FSI      C7     C8     C9      111.000    3.000
+ FSI      H8     C8     O8      109.470    3.000
+ FSI      H8     C8     C9      108.340    3.000
+ FSI      O8     C8     C9      109.470    3.000
+ FSI      C8     O8     HO8     109.470    3.000
+ FSI      C8     C9     H91     109.470    3.000
+ FSI      C8     C9     H92     109.470    3.000
+ FSI      C8     C9     O9      109.470    3.000
+ FSI      H91    C9     H92     107.900    3.000
+ FSI      H91    C9     O9      109.470    3.000
+ FSI      H92    C9     O9      109.470    3.000
+ FSI      C9     O9     HO9     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FSI      var_1    O10    C10    C11    H111       0.018   20.000   1
+ FSI      CONST_1  O10    C10    N5     C5         0.000    0.000   0
+ FSI      var_2    C10    N5     C5     C6       150.160   20.000   3
+ FSI      var_3    N5     C5     C4     C3       180.000   20.000   3
+ FSI      var_4    C5     C4     O4     HO4      179.950   20.000   1
+ FSI      var_5    C5     C4     C3     F1       -60.000   20.000   3
+ FSI      var_6    N5     C5     C6     C7       -60.000   20.000   3
+ FSI      var_7    C5     C6     O6     C2       -60.000   20.000   1
+ FSI      var_8    C6     O6     C2     C1       180.000   20.000   1
+ FSI      var_9    O6     C2     C3     C4       -60.000   20.000   3
+ FSI      var_10   O6     C2     C1     O1B      179.696   20.000   3
+ FSI      var_11   C5     C6     C7     C8       179.604   20.000   3
+ FSI      var_12   C6     C7     O7     HO7      -60.013   20.000   1
+ FSI      var_13   C6     C7     C8     C9       179.980   20.000   3
+ FSI      var_14   C7     C8     O8     HO8      -59.979   20.000   1
+ FSI      var_15   C7     C8     C9     O9      -179.977   20.000   3
+ FSI      var_16   C8     C9     O9     HO9     -179.997   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FSI      chir_01  C2     C1     C3     O6        positiv
+ FSI      chir_02  C3     C2     F1     C4        positiv
+ FSI      chir_03  C4     C3     O4     C5        positiv
+ FSI      chir_04  C6     O6     C5     C7        positiv
+ FSI      chir_05  C5     C4     C6     N5        positiv
+ FSI      chir_06  C7     C6     O7     C8        positiv
+ FSI      chir_07  C8     C7     O8     C9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FSI      plan-1    C1        0.020
+ FSI      plan-1    O1B       0.020
+ FSI      plan-1    O1A       0.020
+ FSI      plan-1    C2        0.020
+ FSI      plan-2    N5        0.020
+ FSI      plan-2    C5        0.020
+ FSI      plan-2    C10       0.020
+ FSI      plan-2    HN5       0.020
+ FSI      plan-3    C10       0.020
+ FSI      plan-3    N5        0.020
+ FSI      plan-3    C11       0.020
+ FSI      plan-3    O10       0.020
+ FSI      plan-3    HN5       0.020
+# ------------------------------------------------------

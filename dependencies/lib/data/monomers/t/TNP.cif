@@ -1,0 +1,305 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TNP      TNP '3,5,6,8-TETRAMETHYL-N-METHYL PHENANT' non-polymer        38  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TNP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TNP           C19    C    CH3       0.000      0.000    0.000    0.000
+ TNP           H191   H    H         0.000      0.273   -0.257    0.990
+ TNP           H192   H    H         0.000      0.018   -0.867   -0.608
+ TNP           H193   H    H         0.000      0.685    0.712   -0.381
+ TNP           N10    N    NR6       1.000     -1.350    0.570   -0.002
+ TNP           C9     C    CR16      0.000     -1.496    1.876   -0.007
+ TNP           H9     H    H         0.000     -0.616    2.507   -0.010
+ TNP           C8     C    CR6       0.000     -2.755    2.465   -0.010
+ TNP           C18    C    CH3       0.000     -2.886    3.967   -0.017
+ TNP           H183   H    H         0.000     -2.056    4.391   -0.518
+ TNP           H182   H    H         0.000     -3.779    4.241   -0.517
+ TNP           H181   H    H         0.000     -2.917    4.323    0.980
+ TNP           C11    C    CR66      0.000     -2.400   -0.245    0.001
+ TNP           C14    C    CR66      0.000     -3.709    0.284   -0.001
+ TNP           C7     C    CR16      0.000     -3.876    1.679   -0.007
+ TNP           H7     H    H         0.000     -4.865    2.121   -0.010
+ TNP           C6     C    CR6       0.000     -4.826   -0.583    0.002
+ TNP           C17    C    CH3       0.000     -6.215    0.003    0.000
+ TNP           H173   H    H         0.000     -6.188    0.975   -0.419
+ TNP           H172   H    H         0.000     -6.857   -0.612   -0.576
+ TNP           H171   H    H         0.000     -6.577    0.057    0.994
+ TNP           C12    C    CR66      0.000     -2.233   -1.703    0.007
+ TNP           N1     N    NRD6      0.000     -1.025   -2.260    0.011
+ TNP           C13    C    CR66      0.000     -3.389   -2.514    0.011
+ TNP           C5     C    CR6       0.000     -4.673   -1.923    0.008
+ TNP           C16    C    CH3       0.000     -5.893   -2.806    0.011
+ TNP           H163   H    H         0.000     -6.656   -2.356   -0.570
+ TNP           H162   H    H         0.000     -5.647   -3.750   -0.400
+ TNP           H161   H    H         0.000     -6.235   -2.932    1.005
+ TNP           C4     C    CR16      0.000     -3.236   -3.910    0.011
+ TNP           H4     H    H         0.000     -4.099   -4.564    0.006
+ TNP           C3     C    CR6       0.000     -1.967   -4.423    0.020
+ TNP           C15    C    CH3       0.000     -1.755   -5.915    0.027
+ TNP           H153   H    H         0.000     -2.561   -6.388   -0.470
+ TNP           H152   H    H         0.000     -0.849   -6.145   -0.470
+ TNP           H151   H    H         0.000     -1.706   -6.259    1.028
+ TNP           C2     C    CR16      0.000     -0.874   -3.565    0.017
+ TNP           H2     H    H         0.000      0.126   -3.982    0.019
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TNP      C19    n/a    N10    START
+ TNP      H191   C19    .      .
+ TNP      H192   C19    .      .
+ TNP      H193   C19    .      .
+ TNP      N10    C19    C11    .
+ TNP      C9     N10    C8     .
+ TNP      H9     C9     .      .
+ TNP      C8     C9     C18    .
+ TNP      C18    C8     H181   .
+ TNP      H183   C18    .      .
+ TNP      H182   C18    .      .
+ TNP      H181   C18    .      .
+ TNP      C11    N10    C12    .
+ TNP      C14    C11    C6     .
+ TNP      C7     C14    H7     .
+ TNP      H7     C7     .      .
+ TNP      C6     C14    C17    .
+ TNP      C17    C6     H171   .
+ TNP      H173   C17    .      .
+ TNP      H172   C17    .      .
+ TNP      H171   C17    .      .
+ TNP      C12    C11    C13    .
+ TNP      N1     C12    .      .
+ TNP      C13    C12    C4     .
+ TNP      C5     C13    C16    .
+ TNP      C16    C5     H161   .
+ TNP      H163   C16    .      .
+ TNP      H162   C16    .      .
+ TNP      H161   C16    .      .
+ TNP      C4     C13    C3     .
+ TNP      H4     C4     .      .
+ TNP      C3     C4     C2     .
+ TNP      C15    C3     H151   .
+ TNP      H153   C15    .      .
+ TNP      H152   C15    .      .
+ TNP      H151   C15    .      .
+ TNP      C2     C3     H2     .
+ TNP      H2     C2     .      END
+ TNP      N1     C2     .    ADD
+ TNP      C5     C6     .    ADD
+ TNP      C7     C8     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TNP       N1        C2        double    1.337     0.020     1.337     0.020     
+TNP       N1        C12       single    1.350     0.020     1.350     0.020     
+TNP       C2        C3        single    1.390     0.020     1.390     0.020     
+TNP       H2        C2        single    1.082     0.013     0.975     0.010     
+TNP       C3        C4        double    1.390     0.020     1.390     0.020     
+TNP       C15       C3        single    1.506     0.020     1.506     0.020     
+TNP       C4        C13       single    1.390     0.020     1.390     0.020     
+TNP       H4        C4        single    1.082     0.013     0.975     0.010     
+TNP       C5        C6        double    1.487     0.020     1.487     0.020     
+TNP       C5        C13       single    1.490     0.020     1.490     0.020     
+TNP       C16       C5        single    1.506     0.020     1.506     0.020     
+TNP       C6        C14       single    1.490     0.020     1.490     0.020     
+TNP       C17       C6        single    1.506     0.020     1.506     0.020     
+TNP       C7        C8        double    1.390     0.020     1.390     0.020     
+TNP       C7        C14       single    1.390     0.020     1.390     0.020     
+TNP       H7        C7        single    1.082     0.013     0.975     0.010     
+TNP       C8        C9        single    1.390     0.020     1.390     0.020     
+TNP       C18       C8        single    1.506     0.020     1.506     0.020     
+TNP       C9        N10       double    1.337     0.020     1.337     0.020     
+TNP       H9        C9        single    1.082     0.013     0.975     0.010     
+TNP       C11       N10       single    1.410     0.020     1.410     0.020     
+TNP       N10       C19       single    1.465     0.020     1.465     0.020     
+TNP       C12       C11       single    1.490     0.020     1.490     0.020     
+TNP       C14       C11       double    1.490     0.020     1.490     0.020     
+TNP       C13       C12       double    1.490     0.020     1.490     0.020     
+TNP       H151      C15       single    1.089     0.010     0.989     0.005     
+TNP       H152      C15       single    1.089     0.010     0.989     0.005     
+TNP       H153      C15       single    1.089     0.010     0.989     0.005     
+TNP       H161      C16       single    1.089     0.010     0.989     0.005     
+TNP       H162      C16       single    1.089     0.010     0.989     0.005     
+TNP       H163      C16       single    1.089     0.010     0.989     0.005     
+TNP       H171      C17       single    1.089     0.010     0.989     0.005     
+TNP       H172      C17       single    1.089     0.010     0.989     0.005     
+TNP       H173      C17       single    1.089     0.010     0.989     0.005     
+TNP       H181      C18       single    1.089     0.010     0.989     0.005     
+TNP       H182      C18       single    1.089     0.010     0.989     0.005     
+TNP       H183      C18       single    1.089     0.010     0.989     0.005     
+TNP       H191      C19       single    1.089     0.010     0.989     0.005     
+TNP       H192      C19       single    1.089     0.010     0.989     0.005     
+TNP       H193      C19       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TNP      H191   C19    H192    109.470    3.000
+ TNP      H191   C19    H193    109.470    3.000
+ TNP      H192   C19    H193    109.470    3.000
+ TNP      H191   C19    N10     109.470    3.000
+ TNP      H192   C19    N10     109.470    3.000
+ TNP      H193   C19    N10     109.470    3.000
+ TNP      C19    N10    C9      120.000    3.000
+ TNP      C19    N10    C11     120.000    3.000
+ TNP      C9     N10    C11     120.000    3.000
+ TNP      N10    C9     H9      120.000    3.000
+ TNP      N10    C9     C8      120.000    3.000
+ TNP      H9     C9     C8      120.000    3.000
+ TNP      C9     C8     C18     120.000    3.000
+ TNP      C9     C8     C7      120.000    3.000
+ TNP      C18    C8     C7      120.000    3.000
+ TNP      C8     C18    H183    109.470    3.000
+ TNP      C8     C18    H182    109.470    3.000
+ TNP      C8     C18    H181    109.470    3.000
+ TNP      H183   C18    H182    109.470    3.000
+ TNP      H183   C18    H181    109.470    3.000
+ TNP      H182   C18    H181    109.470    3.000
+ TNP      N10    C11    C14     120.000    3.000
+ TNP      N10    C11    C12     120.000    3.000
+ TNP      C14    C11    C12     120.000    3.000
+ TNP      C11    C14    C7      120.000    3.000
+ TNP      C11    C14    C6      120.000    3.000
+ TNP      C7     C14    C6      120.000    3.000
+ TNP      C14    C7     H7      120.000    3.000
+ TNP      C14    C7     C8      120.000    3.000
+ TNP      H7     C7     C8      120.000    3.000
+ TNP      C14    C6     C17     120.000    3.000
+ TNP      C14    C6     C5      120.000    3.000
+ TNP      C17    C6     C5      120.000    3.000
+ TNP      C6     C17    H173    109.470    3.000
+ TNP      C6     C17    H172    109.470    3.000
+ TNP      C6     C17    H171    109.470    3.000
+ TNP      H173   C17    H172    109.470    3.000
+ TNP      H173   C17    H171    109.470    3.000
+ TNP      H172   C17    H171    109.470    3.000
+ TNP      C11    C12    N1      120.000    3.000
+ TNP      C11    C12    C13     120.000    3.000
+ TNP      N1     C12    C13     120.000    3.000
+ TNP      C12    N1     C2      120.000    3.000
+ TNP      C12    C13    C5      120.000    3.000
+ TNP      C12    C13    C4      120.000    3.000
+ TNP      C5     C13    C4      120.000    3.000
+ TNP      C13    C5     C16     120.000    3.000
+ TNP      C13    C5     C6      120.000    3.000
+ TNP      C16    C5     C6      120.000    3.000
+ TNP      C5     C16    H163    109.470    3.000
+ TNP      C5     C16    H162    109.470    3.000
+ TNP      C5     C16    H161    109.470    3.000
+ TNP      H163   C16    H162    109.470    3.000
+ TNP      H163   C16    H161    109.470    3.000
+ TNP      H162   C16    H161    109.470    3.000
+ TNP      C13    C4     H4      120.000    3.000
+ TNP      C13    C4     C3      120.000    3.000
+ TNP      H4     C4     C3      120.000    3.000
+ TNP      C4     C3     C15     120.000    3.000
+ TNP      C4     C3     C2      120.000    3.000
+ TNP      C15    C3     C2      120.000    3.000
+ TNP      C3     C15    H153    109.470    3.000
+ TNP      C3     C15    H152    109.470    3.000
+ TNP      C3     C15    H151    109.470    3.000
+ TNP      H153   C15    H152    109.470    3.000
+ TNP      H153   C15    H151    109.470    3.000
+ TNP      H152   C15    H151    109.470    3.000
+ TNP      C3     C2     H2      120.000    3.000
+ TNP      C3     C2     N1      120.000    3.000
+ TNP      H2     C2     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TNP      var_1    H193   C19    N10    C11      157.708   20.000   1
+ TNP      CONST_1  C19    N10    C9     C8       180.000    0.000   0
+ TNP      CONST_2  N10    C9     C8     C18      180.000    0.000   0
+ TNP      var_2    C9     C8     C18    H181     -89.964   20.000   1
+ TNP      CONST_3  C19    N10    C11    C12        0.000    0.000   0
+ TNP      CONST_4  N10    C11    C14    C6       180.000    0.000   0
+ TNP      CONST_5  C11    C14    C7     C8         0.000    0.000   0
+ TNP      CONST_6  C14    C7     C8     C9         0.000    0.000   0
+ TNP      CONST_7  C11    C14    C6     C17      180.000    0.000   0
+ TNP      var_3    C14    C6     C17    H171     -95.401   20.000   1
+ TNP      CONST_8  N10    C11    C12    C13      180.000    0.000   0
+ TNP      CONST_9  C11    C12    N1     C2       180.000    0.000   0
+ TNP      CONST_10 C12    N1     C2     C3         0.000    0.000   0
+ TNP      CONST_11 C11    C12    C13    C4       180.000    0.000   0
+ TNP      CONST_12 C12    C13    C5     C16      180.000    0.000   0
+ TNP      CONST_13 C13    C5     C6     C14        0.000    0.000   0
+ TNP      var_4    C13    C5     C16    H161      95.421   20.000   1
+ TNP      CONST_14 C12    C13    C4     C3         0.000    0.000   0
+ TNP      CONST_15 C13    C4     C3     C2         0.000    0.000   0
+ TNP      var_5    C4     C3     C15    H151     -90.257   20.000   1
+ TNP      CONST_16 C4     C3     C2     N1         0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TNP      plan-1    N1        0.020
+ TNP      plan-1    C2        0.020
+ TNP      plan-1    C12       0.020
+ TNP      plan-1    C3        0.020
+ TNP      plan-1    C4        0.020
+ TNP      plan-1    H2        0.020
+ TNP      plan-1    C15       0.020
+ TNP      plan-1    C13       0.020
+ TNP      plan-1    H4        0.020
+ TNP      plan-1    C5        0.020
+ TNP      plan-1    C6        0.020
+ TNP      plan-1    C16       0.020
+ TNP      plan-1    C14       0.020
+ TNP      plan-1    C17       0.020
+ TNP      plan-1    C11       0.020
+ TNP      plan-1    C7        0.020
+ TNP      plan-1    C8        0.020
+ TNP      plan-1    C9        0.020
+ TNP      plan-1    N10       0.020
+ TNP      plan-1    H7        0.020
+ TNP      plan-1    C18       0.020
+ TNP      plan-1    H9        0.020
+ TNP      plan-1    C19       0.020
+# ------------------------------------------------------

@@ -1,0 +1,252 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+K1R      K1R '"(2S)-2-AMINO-4-[({[(2R)-2-AMINO-2-C' non-polymer        30  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_K1R
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ K1R           O21    O    OC       -0.500      0.000    0.000    0.000
+ K1R           C2     C    C         0.000      0.060    0.530    1.132
+ K1R           O2     O    OC       -0.500      0.658    1.607    1.348
+ K1R           CA2    C    CH1       0.000     -0.678   -0.256    2.203
+ K1R           HA2    H    H         0.000     -0.225   -1.257    2.229
+ K1R           N2     N    NH2       0.000     -0.494    0.316    3.514
+ K1R           H2N2   H    H         0.000     -1.225    0.878    3.923
+ K1R           H2N1   H    H         0.000      0.364    0.152    4.017
+ K1R           CB2    C    CH2       0.000     -2.159   -0.450    1.866
+ K1R           HB21   H    H         0.000     -2.601   -1.036    2.675
+ K1R           HB22   H    H         0.000     -2.207   -1.022    0.937
+ K1R           SG2    S    S2        0.000     -3.071    1.098    1.673
+ K1R           NAF    N    NH1       0.000     -4.567    0.477    1.329
+ K1R           HA     H    H         0.000     -4.753   -0.491    1.113
+ K1R           SAG    S    S3        0.000     -5.722    1.677    1.392
+ K1R           OE1    O    O         0.000     -5.875    2.323    2.735
+ K1R           CG1    C    CH2       0.000     -7.101    0.503    1.204
+ K1R           HG11   H    H         0.000     -7.073   -0.211    2.030
+ K1R           HG12   H    H         0.000     -6.984   -0.032    0.259
+ K1R           CB1    C    CH2       0.000     -8.438    1.239    1.212
+ K1R           HB11   H    H         0.000     -8.434    1.950    0.383
+ K1R           HB12   H    H         0.000     -8.516    1.783    2.156
+ K1R           CA1    C    CH1       0.000     -9.632    0.289    1.067
+ K1R           HA1    H    H         0.000     -9.633   -0.434    1.895
+ K1R           N1     N    NH2       0.000     -9.544   -0.423   -0.209
+ K1R           H1N2   H    H         0.000     -9.146   -1.353   -0.247
+ K1R           H1N1   H    H         0.000     -9.881    0.012   -1.059
+ K1R           C1     C    C         0.000    -10.940    1.051    1.052
+ K1R           O11    O    OC       -0.500    -11.130    1.623    2.148
+ K1R           O12    O    OC       -0.500    -11.750    1.099    0.100
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ K1R      O21    n/a    C2     START
+ K1R      C2     O21    CA2    .
+ K1R      O2     C2     .      .
+ K1R      CA2    C2     CB2    .
+ K1R      HA2    CA2    .      .
+ K1R      N2     CA2    H2N1   .
+ K1R      H2N2   N2     .      .
+ K1R      H2N1   N2     .      .
+ K1R      CB2    CA2    SG2    .
+ K1R      HB21   CB2    .      .
+ K1R      HB22   CB2    .      .
+ K1R      SG2    CB2    NAF    .
+ K1R      NAF    SG2    SAG    .
+ K1R      HA     NAF    .      .
+ K1R      SAG    NAF    CG1    .
+ K1R      OE1    SAG    .      .
+ K1R      CG1    SAG    CB1    .
+ K1R      HG11   CG1    .      .
+ K1R      HG12   CG1    .      .
+ K1R      CB1    CG1    CA1    .
+ K1R      HB11   CB1    .      .
+ K1R      HB12   CB1    .      .
+ K1R      CA1    CB1    C1     .
+ K1R      HA1    CA1    .      .
+ K1R      N1     CA1    H1N1   .
+ K1R      H1N2   N1     .      .
+ K1R      H1N1   N1     .      .
+ K1R      C1     CA1    O12    .
+ K1R      O11    C1     .      .
+ K1R      O12    C1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+K1R       N1        CA1       single    1.450     0.020     1.450     0.020     
+K1R       H1N1      N1        single    1.036     0.016     0.914     0.007     
+K1R       H1N2      N1        single    1.036     0.016     0.914     0.007     
+K1R       C1        CA1       single    1.500     0.020     1.500     0.020     
+K1R       CA1       CB1       single    1.524     0.020     1.524     0.020     
+K1R       HA1       CA1       single    1.089     0.010     0.989     0.005     
+K1R       O11       C1        deloc     1.250     0.020     1.250     0.020     
+K1R       O12       C1        deloc     1.250     0.020     1.250     0.020     
+K1R       CB1       CG1       single    1.524     0.020     1.524     0.020     
+K1R       HB11      CB1       single    1.089     0.010     0.989     0.005     
+K1R       HB12      CB1       single    1.089     0.010     0.989     0.005     
+K1R       CG1       SAG       single    1.707     0.020     1.707     0.020     
+K1R       HG11      CG1       single    1.089     0.010     0.989     0.005     
+K1R       HG12      CG1       single    1.089     0.010     0.989     0.005     
+K1R       OE1       SAG       double    1.480     0.020     1.480     0.020     
+K1R       N2        CA2       single    1.450     0.020     1.450     0.020     
+K1R       H2N1      N2        single    1.036     0.016     0.914     0.007     
+K1R       H2N2      N2        single    1.036     0.016     0.914     0.007     
+K1R       CA2       C2        single    1.500     0.020     1.500     0.020     
+K1R       CB2       CA2       single    1.524     0.020     1.524     0.020     
+K1R       HA2       CA2       single    1.089     0.010     0.989     0.005     
+K1R       O2        C2        deloc     1.250     0.020     1.250     0.020     
+K1R       C2        O21       deloc     1.250     0.020     1.250     0.020     
+K1R       SAG       NAF       single    1.645     0.020     1.645     0.020     
+K1R       NAF       SG2       single    1.700     0.020     1.700     0.020     
+K1R       HA        NAF       single    1.036     0.016     0.914     0.007     
+K1R       SG2       CB2       single    1.762     0.020     1.762     0.020     
+K1R       HB21      CB2       single    1.089     0.010     0.989     0.005     
+K1R       HB22      CB2       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ K1R      O21    C2     O2      123.000    3.000
+ K1R      O21    C2     CA2     118.500    3.000
+ K1R      O2     C2     CA2     118.500    3.000
+ K1R      C2     CA2    HA2     108.810    3.000
+ K1R      C2     CA2    N2      109.470    3.000
+ K1R      C2     CA2    CB2     109.470    3.000
+ K1R      HA2    CA2    N2      109.470    3.000
+ K1R      HA2    CA2    CB2     108.340    3.000
+ K1R      N2     CA2    CB2     109.470    3.000
+ K1R      CA2    N2     H2N2    120.000    3.000
+ K1R      CA2    N2     H2N1    120.000    3.000
+ K1R      H2N2   N2     H2N1    120.000    3.000
+ K1R      CA2    CB2    HB21    109.470    3.000
+ K1R      CA2    CB2    HB22    109.470    3.000
+ K1R      CA2    CB2    SG2     109.500    3.000
+ K1R      HB21   CB2    HB22    107.900    3.000
+ K1R      HB21   CB2    SG2     109.500    3.000
+ K1R      HB22   CB2    SG2     109.500    3.000
+ K1R      CB2    SG2    NAF      99.042    3.000
+ K1R      SG2    NAF    HA      120.000    3.000
+ K1R      SG2    NAF    SAG     120.000    3.000
+ K1R      HA     NAF    SAG     120.000    3.000
+ K1R      NAF    SAG    OE1     114.504    3.000
+ K1R      NAF    SAG    CG1      93.277    3.000
+ K1R      OE1    SAG    CG1     107.067    3.000
+ K1R      SAG    CG1    HG11    109.500    3.000
+ K1R      SAG    CG1    HG12    109.500    3.000
+ K1R      SAG    CG1    CB1     109.500    3.000
+ K1R      HG11   CG1    HG12    107.900    3.000
+ K1R      HG11   CG1    CB1     109.470    3.000
+ K1R      HG12   CG1    CB1     109.470    3.000
+ K1R      CG1    CB1    HB11    109.470    3.000
+ K1R      CG1    CB1    HB12    109.470    3.000
+ K1R      CG1    CB1    CA1     111.000    3.000
+ K1R      HB11   CB1    HB12    107.900    3.000
+ K1R      HB11   CB1    CA1     109.470    3.000
+ K1R      HB12   CB1    CA1     109.470    3.000
+ K1R      CB1    CA1    HA1     108.340    3.000
+ K1R      CB1    CA1    N1      109.470    3.000
+ K1R      CB1    CA1    C1      109.470    3.000
+ K1R      HA1    CA1    N1      109.470    3.000
+ K1R      HA1    CA1    C1      108.810    3.000
+ K1R      N1     CA1    C1      109.470    3.000
+ K1R      CA1    N1     H1N2    120.000    3.000
+ K1R      CA1    N1     H1N1    120.000    3.000
+ K1R      H1N2   N1     H1N1    120.000    3.000
+ K1R      CA1    C1     O11     118.500    3.000
+ K1R      CA1    C1     O12     118.500    3.000
+ K1R      O11    C1     O12     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ K1R      var_1    O21    C2     CA2    CB2      -58.071   20.000   3
+ K1R      var_2    C2     CA2    N2     H2N1     -78.269   20.000   1
+ K1R      var_3    C2     CA2    CB2    SG2      -59.718   20.000   3
+ K1R      var_4    CA2    CB2    SG2    NAF     -179.985   20.000   1
+ K1R      var_5    CB2    SG2    NAF    SAG      168.682   20.000   1
+ K1R      var_6    SG2    NAF    SAG    CG1     -172.445   20.000   1
+ K1R      var_7    NAF    SAG    CG1    CB1      179.973   20.000   1
+ K1R      var_8    SAG    CG1    CB1    CA1     -179.569   20.000   3
+ K1R      var_9    CG1    CB1    CA1    C1      -178.936   20.000   3
+ K1R      var_10   CB1    CA1    N1     H1N1     -83.120   20.000   1
+ K1R      var_11   CB1    CA1    C1     O12      116.823   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ K1R      chir_01  CA1    N1     C1     CB1       positiv
+ K1R      chir_02  CA2    N2     C2     CB2       positiv
+ K1R      chir_03  SAG    CG1    OE1    NAF       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ K1R      plan-1    N1        0.020
+ K1R      plan-1    CA1       0.020
+ K1R      plan-1    H1N1      0.020
+ K1R      plan-1    H1N2      0.020
+ K1R      plan-2    C1        0.020
+ K1R      plan-2    CA1       0.020
+ K1R      plan-2    O11       0.020
+ K1R      plan-2    O12       0.020
+ K1R      plan-3    N2        0.020
+ K1R      plan-3    CA2       0.020
+ K1R      plan-3    H2N1      0.020
+ K1R      plan-3    H2N2      0.020
+ K1R      plan-4    C2        0.020
+ K1R      plan-4    CA2       0.020
+ K1R      plan-4    O2        0.020
+ K1R      plan-4    O21       0.020
+ K1R      plan-5    NAF       0.020
+ K1R      plan-5    SAG       0.020
+ K1R      plan-5    SG2       0.020
+ K1R      plan-5    HA        0.020
+# ------------------------------------------------------

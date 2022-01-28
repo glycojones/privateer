@@ -1,0 +1,164 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MPB     MPB      "4-HYDROXY-BENZOIC ACID METHYL ESTER"     NON-POLYMER     19     11     .     
+#
+data_comp_MPB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MPB     C       C       C       0       1.466       -0.474      -0.475      
+MPB     O1      O       O       0       1.783       -1.266      -1.330      
+MPB     O2      O       O2      0       2.359       0.220       0.246       
+MPB     CM      C       CH3     0       3.773       0.048       -0.034      
+MPB     C1      C       CR6     0       0.044       -0.170      -0.112      
+MPB     C2      C       CR16    0       -0.311      0.751       0.883       
+MPB     C3      C       CR16    0       -1.640      1.005       1.191       
+MPB     C4      C       CR6     0       -2.656      0.340       0.508       
+MPB     C5      C       CR16    0       -2.324      -0.579      -0.485      
+MPB     C6      C       CR16    0       -0.992      -0.827      -0.786      
+MPB     O4      O       OH1     0       -3.965      0.587       0.808       
+MPB     HM1     H       H       0       3.952       0.289       -0.957      
+MPB     HM2     H       H       0       4.023       -0.877      0.116       
+MPB     HM3     H       H       0       4.288       0.621       0.555       
+MPB     H2      H       H       0       0.353       1.213       1.360       
+MPB     H3      H       H       0       -1.857      1.627       1.863       
+MPB     H5      H       H       0       -3.004      -1.032      -0.951      
+MPB     H6      H       H       0       -0.792      -1.451      -1.460      
+MPB     HO4     H       H       0       -4.341      -0.130      1.092       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MPB       C         O1        DOUBLE    n         1.204     0.010     1.204     0.010     
+MPB       C         O2        SINGLE    n         1.332     0.011     1.332     0.011     
+MPB       C         C1        SINGLE    n         1.486     0.010     1.486     0.010     
+MPB       O2        CM        SINGLE    n         1.448     0.010     1.448     0.010     
+MPB       C1        C2        DOUBLE    y         1.388     0.010     1.388     0.010     
+MPB       C1        C6        SINGLE    y         1.388     0.010     1.388     0.010     
+MPB       C2        C3        SINGLE    y         1.381     0.010     1.381     0.010     
+MPB       C3        C4        DOUBLE    y         1.388     0.010     1.388     0.010     
+MPB       C4        C5        SINGLE    y         1.388     0.010     1.388     0.010     
+MPB       C4        O4        SINGLE    n         1.365     0.012     1.365     0.012     
+MPB       C5        C6        DOUBLE    y         1.381     0.010     1.381     0.010     
+MPB       CM        HM1       SINGLE    n         1.089     0.010     0.970     0.018     
+MPB       CM        HM2       SINGLE    n         1.089     0.010     0.970     0.018     
+MPB       CM        HM3       SINGLE    n         1.089     0.010     0.970     0.018     
+MPB       C2        H2        SINGLE    n         1.082     0.013     0.941     0.017     
+MPB       C3        H3        SINGLE    n         1.082     0.013     0.941     0.018     
+MPB       C5        H5        SINGLE    n         1.082     0.013     0.941     0.018     
+MPB       C6        H6        SINGLE    n         1.082     0.013     0.941     0.017     
+MPB       O4        HO4       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MPB          O1           C          O2     123.344    1.50
+MPB          O1           C          C1     124.380    1.50
+MPB          O2           C          C1     112.291    1.50
+MPB           C          O2          CM     115.869    1.50
+MPB          O2          CM         HM1     109.389    1.50
+MPB          O2          CM         HM2     109.389    1.50
+MPB          O2          CM         HM3     109.389    1.50
+MPB         HM1          CM         HM2     109.532    1.53
+MPB         HM1          CM         HM3     109.532    1.53
+MPB         HM2          CM         HM3     109.532    1.53
+MPB           C          C1          C2     120.471    2.12
+MPB           C          C1          C6     120.471    2.12
+MPB          C2          C1          C6     119.057    1.50
+MPB          C1          C2          C3     120.841    1.50
+MPB          C1          C2          H2     119.781    1.50
+MPB          C3          C2          H2     119.378    1.50
+MPB          C2          C3          C4     119.838    1.50
+MPB          C2          C3          H3     120.162    1.50
+MPB          C4          C3          H3     120.000    1.50
+MPB          C3          C4          C5     119.584    1.50
+MPB          C3          C4          O4     120.208    2.50
+MPB          C5          C4          O4     120.208    2.50
+MPB          C4          C5          C6     119.838    1.50
+MPB          C4          C5          H5     120.000    1.50
+MPB          C6          C5          H5     120.162    1.50
+MPB          C1          C6          C5     120.841    1.50
+MPB          C1          C6          H6     119.781    1.50
+MPB          C5          C6          H6     119.378    1.50
+MPB          C4          O4         HO4     110.017    2.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MPB             sp2_sp2_1          O1           C          O2          CM     180.000   10.00     2
+MPB             sp2_sp2_5          O1           C          C1          C2       0.000   10.00     2
+MPB             sp3_sp3_2         HM1          CM          O2           C     -60.000   10.00     3
+MPB       const_sp2_sp2_3           C          C1          C2          C3     180.000   10.00     2
+MPB              const_23           C          C1          C6          C5     180.000   10.00     2
+MPB       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+MPB              const_10          C2          C3          C4          O4     180.000   10.00     2
+MPB              const_15          O4          C4          C5          C6     180.000   10.00     2
+MPB              const_17          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MPB    plan-1           C   0.020
+MPB    plan-1          C1   0.020
+MPB    plan-1          C2   0.020
+MPB    plan-1          C3   0.020
+MPB    plan-1          C4   0.020
+MPB    plan-1          C5   0.020
+MPB    plan-1          C6   0.020
+MPB    plan-1          H2   0.020
+MPB    plan-1          H3   0.020
+MPB    plan-1          H5   0.020
+MPB    plan-1          H6   0.020
+MPB    plan-1          O4   0.020
+MPB    plan-2           C   0.020
+MPB    plan-2          C1   0.020
+MPB    plan-2          O1   0.020
+MPB    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MPB SMILES           ACDLabs              10.04 "O=C(OC)c1ccc(O)cc1"
+MPB SMILES_CANONICAL CACTVS               3.341 "COC(=O)c1ccc(O)cc1"
+MPB SMILES           CACTVS               3.341 "COC(=O)c1ccc(O)cc1"
+MPB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "COC(=O)c1ccc(cc1)O"
+MPB SMILES           "OpenEye OEToolkits" 1.5.0 "COC(=O)c1ccc(cc1)O"
+MPB InChI            InChI                1.03  "InChI=1S/C8H8O3/c1-11-8(10)6-2-4-7(9)5-3-6/h2-5,9H,1H3"
+MPB InChIKey         InChI                1.03  LXCFILQKKLGQFO-UHFFFAOYSA-N
+MPB ?                acedrg               202         "dictionary generator"                  
+MPB ?                acedrg_database      11          "data source"                           
+MPB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MPB ?                refmac5              5.8.0189    "optimization tool"                     

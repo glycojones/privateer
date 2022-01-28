@@ -1,0 +1,276 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DYS     DYS     "S-[5-(2-aminoethyl)-2,3-dihydroxyphenyl]-L-cysteine"     peptide   34     18     .
+#
+data_comp_DYS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DYS     O       O       O       0       -25.793     46.283      -53.454
+DYS     C       C       C       0       -27.002     45.981      -53.394
+DYS     CA      C       CH1     0       -27.629     45.879      -51.998
+DYS     N       N       NT3     1       -26.867     44.895      -51.183
+DYS     CB      C       CH2     0       -27.686     47.233      -51.320
+DYS     SG      S       S2      0       -28.831     48.385      -52.123
+DYS     CXP     C       CR6     0       -28.686     49.844      -51.127
+DYS     CXH     C       CR16    0       -29.475     49.991      -49.984
+DYS     CXQ     C       CR6     0       -27.766     50.839      -51.498
+DYS     OXF     O       OH1     0       -26.984     50.712      -52.611
+DYS     CXO     C       CR6     0       -27.657     51.983      -50.703
+DYS     OXE     O       OH1     0       -26.768     52.958      -51.055
+DYS     CXG     C       CR16    0       -28.449     52.119      -49.570
+DYS     CXN     C       CR6     0       -29.362     51.135      -49.195
+DYS     CXJ     C       CH2     0       -30.209     51.311      -47.955
+DYS     CXI     C       CH2     0       -29.619     50.599      -46.743
+DYS     NXA     N       NT2     0       -30.528     50.625      -45.596
+DYS     OXT     O       OC      -1      -27.745     45.753      -54.369
+DYS     HA      H       H       0       -28.549     45.540      -52.096
+DYS     H       H       H       0       -27.238     44.831      -50.353
+DYS     H2      H       H       0       -26.001     45.167      -51.102
+DYS     H3      H       H       0       -26.889     44.078      -51.585
+DYS     HB1     H       H       0       -26.791     47.633      -51.319
+DYS     HB2     H       H       0       -27.963     47.117      -50.388
+DYS     HXH     H       H       0       -30.078     49.309      -49.761
+DYS     HOXF    H       H       0       -26.448     50.050      -52.508
+DYS     HOXE    H       H       0       -25.965     52.683      -50.928
+DYS     HXG     H       H       0       -28.367     52.897      -49.040
+DYS     HXJ1    H       H       0       -31.109     50.959      -48.126
+DYS     HXJ2    H       H       0       -30.294     52.267      -47.754
+DYS     HXI1    H       H       0       -28.773     51.031      -46.492
+DYS     HXI2    H       H       0       -29.425     49.665      -46.977
+DYS     HXA1    H       H       0       -30.112     50.321      -44.872
+DYS     HXA2    H       H       0       -30.777     51.460      -45.425
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DYS      N      n/a    CA     START
+DYS      H      N      .      .
+DYS      H2     N      .      .
+DYS      H3     N      .      .
+DYS      CA     N      C      .
+DYS      HA     CA     .      .
+DYS      CB     CA     SG     .
+DYS      HB1    CB     .      .
+DYS      HB2    CB     .      .
+DYS      SG     CB     CXP    .
+DYS      CXP    SG     CXQ    .
+DYS      CXQ    CXP    CXO    .
+DYS      OXF    CXQ    HOXF   .
+DYS      HOXF   OXF    .      .
+DYS      CXO    CXQ    CXG    .
+DYS      OXE    CXO    HOXE   .
+DYS      HOXE   OXE    .      .
+DYS      CXG    CXO    CXN    .
+DYS      HXG    CXG    .      .
+DYS      CXN    CXG    CXJ    .
+DYS      CXH    CXN    HXH    .
+DYS      HXH    CXH    .      .
+DYS      CXJ    CXN    CXI    .
+DYS      HXJ1   CXJ    .      .
+DYS      HXJ2   CXJ    .      .
+DYS      CXI    CXJ    NXA    .
+DYS      HXI1   CXI    .      .
+DYS      HXI2   CXI    .      .
+DYS      NXA    CXI    HXA1   .
+DYS      HXA2   NXA    .      .
+DYS      HXA1   NXA    .      .
+DYS      C      CA     .      END
+DYS      O      C      .      .
+DYS      OXT    C      .      .
+DYS      CXP    CXH    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DYS       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DYS       O         C         DOUBLE    n         1.247     0.019     1.247     0.019     
+DYS       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+DYS       CXQ       OXF       SINGLE    n         1.364     0.013     1.364     0.013     
+DYS       CB        SG        SINGLE    n         1.812     0.017     1.812     0.017     
+DYS       SG        CXP       SINGLE    n         1.772     0.010     1.772     0.010     
+DYS       CA        CB        SINGLE    n         1.515     0.012     1.515     0.012     
+DYS       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+DYS       CXP       CXQ       DOUBLE    y         1.400     0.013     1.400     0.013     
+DYS       CXQ       CXO       SINGLE    y         1.393     0.010     1.393     0.010     
+DYS       CXP       CXH       SINGLE    y         1.394     0.018     1.394     0.018     
+DYS       CXO       OXE       SINGLE    n         1.365     0.010     1.365     0.010     
+DYS       CXO       CXG       DOUBLE    y         1.383     0.010     1.383     0.010     
+DYS       CXH       CXN       DOUBLE    y         1.392     0.010     1.392     0.010     
+DYS       CXG       CXN       SINGLE    y         1.388     0.010     1.388     0.010     
+DYS       CXN       CXJ       SINGLE    n         1.511     0.010     1.511     0.010     
+DYS       CXJ       CXI       SINGLE    n         1.525     0.019     1.525     0.019     
+DYS       CXI       NXA       SINGLE    n         1.464     0.020     1.464     0.020     
+DYS       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+DYS       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DYS       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DYS       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DYS       CB        HB1       SINGLE    n         1.089     0.010     0.980     0.015     
+DYS       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.015     
+DYS       CXH       HXH       SINGLE    n         1.082     0.013     0.937     0.010     
+DYS       OXF       HOXF      SINGLE    n         0.970     0.012     0.858     0.020     
+DYS       OXE       HOXE      SINGLE    n         0.970     0.012     0.858     0.020     
+DYS       CXG       HXG       SINGLE    n         1.082     0.013     0.945     0.016     
+DYS       CXJ       HXJ1      SINGLE    n         1.089     0.010     0.981     0.016     
+DYS       CXJ       HXJ2      SINGLE    n         1.089     0.010     0.981     0.016     
+DYS       CXI       HXI1      SINGLE    n         1.089     0.010     0.982     0.015     
+DYS       CXI       HXI2      SINGLE    n         1.089     0.010     0.982     0.015     
+DYS       NXA       HXA1      SINGLE    n         1.036     0.016     0.888     0.020     
+DYS       NXA       HXA2      SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DYS         OXT           C           O     125.732    1.50
+DYS         OXT           C          CA     117.134    1.50
+DYS           O           C          CA     117.134    1.50
+DYS           C          CA          CB     111.511    2.91
+DYS           C          CA           N     109.494    1.50
+DYS           C          CA          HA     108.606    1.50
+DYS          CB          CA           N     112.810    3.00
+DYS          CB          CA          HA     108.763    1.50
+DYS           N          CA          HA     107.983    1.50
+DYS          CA           N           H     109.671    1.50
+DYS          CA           N          H2     109.671    1.50
+DYS          CA           N          H3     109.671    1.50
+DYS           H           N          H2     109.028    2.41
+DYS           H           N          H3     109.028    2.41
+DYS          H2           N          H3     109.028    2.41
+DYS          SG          CB          CA     112.239    3.00
+DYS          SG          CB         HB1     108.737    1.50
+DYS          SG          CB         HB2     108.737    1.50
+DYS          CA          CB         HB1     109.493    1.50
+DYS          CA          CB         HB2     109.493    1.50
+DYS         HB1          CB         HB2     107.984    1.50
+DYS          CB          SG         CXP     103.360    1.67
+DYS          SG         CXP         CXQ     117.490    2.26
+DYS          SG         CXP         CXH     120.538    3.00
+DYS         CXQ         CXP         CXH     121.972    1.50
+DYS         CXP         CXH         CXN     120.677    1.50
+DYS         CXP         CXH         HXH     118.667    1.50
+DYS         CXN         CXH         HXH     120.656    2.08
+DYS         OXF         CXQ         CXP     120.998    2.25
+DYS         OXF         CXQ         CXO     119.593    2.54
+DYS         CXP         CXQ         CXO     119.409    1.50
+DYS         CXQ         OXF        HOXF     109.337    3.00
+DYS         CXQ         CXO         OXE     118.961    2.54
+DYS         CXQ         CXO         CXG     119.218    1.50
+DYS         OXE         CXO         CXG     121.822    2.52
+DYS         CXO         OXE        HOXE     110.003    2.63
+DYS         CXO         CXG         CXN     120.562    1.50
+DYS         CXO         CXG         HXG     119.784    1.50
+DYS         CXN         CXG         HXG     119.655    1.50
+DYS         CXH         CXN         CXG     118.162    1.50
+DYS         CXH         CXN         CXJ     121.267    1.50
+DYS         CXG         CXN         CXJ     120.571    1.50
+DYS         CXN         CXJ         CXI     112.597    2.54
+DYS         CXN         CXJ        HXJ1     109.239    1.50
+DYS         CXN         CXJ        HXJ2     109.239    1.50
+DYS         CXI         CXJ        HXJ1     108.999    1.50
+DYS         CXI         CXJ        HXJ2     108.999    1.50
+DYS        HXJ1         CXJ        HXJ2     107.823    1.50
+DYS         CXJ         CXI         NXA     111.320    2.66
+DYS         CXJ         CXI        HXI1     109.149    1.50
+DYS         CXJ         CXI        HXI2     109.149    1.50
+DYS         NXA         CXI        HXI1     108.870    1.50
+DYS         NXA         CXI        HXI2     108.870    1.50
+DYS        HXI1         CXI        HXI2     107.873    1.50
+DYS         CXI         NXA        HXA1     109.962    3.00
+DYS         CXI         NXA        HXA2     109.962    3.00
+DYS        HXA1         NXA        HXA2     107.243    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DYS              const_10         CXN         CXG         CXO         OXE     180.000   10.00     2
+DYS              const_14         CXO         CXG         CXN         CXJ     180.000   10.00     2
+DYS            sp2_sp3_14         CXH         CXN         CXJ         CXI     -90.000   10.00     6
+DYS            sp3_sp3_22         NXA         CXI         CXJ         CXN     180.000   10.00     3
+DYS            sp3_sp3_31         CXJ         CXI         NXA        HXA1     180.000   10.00     3
+DYS             sp2_sp3_1         OXT           C          CA          CB       0.000   10.00     6
+DYS            sp3_sp3_13           C          CA           N           H     180.000   10.00     3
+DYS             sp3_sp3_4           C          CA          CB          SG     180.000   10.00     3
+DYS             sp3_sp3_1          CA          CB          SG         CXP     180.000   10.00     3
+DYS              const_22         CXN         CXH         CXP          SG     180.000   10.00     2
+DYS       const_sp2_sp2_4          SG         CXP         CXQ         OXF       0.000   10.00     2
+DYS              const_18         CXP         CXH         CXN         CXJ     180.000   10.00     2
+DYS       const_sp2_sp2_8         OXE         CXO         CXQ         OXF       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DYS    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DYS    plan-1         CXG   0.020
+DYS    plan-1         CXH   0.020
+DYS    plan-1         CXJ   0.020
+DYS    plan-1         CXN   0.020
+DYS    plan-1         CXO   0.020
+DYS    plan-1         CXP   0.020
+DYS    plan-1         CXQ   0.020
+DYS    plan-1         HXG   0.020
+DYS    plan-1         HXH   0.020
+DYS    plan-1         OXE   0.020
+DYS    plan-1         OXF   0.020
+DYS    plan-1          SG   0.020
+DYS    plan-2           C   0.020
+DYS    plan-2          CA   0.020
+DYS    plan-2           O   0.020
+DYS    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DYS SMILES           ACDLabs              10.04 "O=C(O)C(N)CSc1cc(cc(O)c1O)CCN"
+DYS SMILES_CANONICAL CACTVS               3.341 "NCCc1cc(O)c(O)c(SC[C@H](N)C(O)=O)c1"
+DYS SMILES           CACTVS               3.341 "NCCc1cc(O)c(O)c(SC[CH](N)C(O)=O)c1"
+DYS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(cc(c(c1O)O)SC[C@@H](C(=O)O)N)CCN"
+DYS SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(cc(c(c1O)O)SCC(C(=O)O)N)CCN"
+DYS InChI            InChI                1.03  "InChI=1S/C11H16N2O4S/c12-2-1-6-3-8(14)10(15)9(4-6)18-5-7(13)11(16)17/h3-4,7,14-15H,1-2,5,12-13H2,(H,16,17)/t7-/m0/s1"
+DYS InChIKey         InChI                1.03  BZYHBWCVRKSWDB-ZETCQYMHSA-N
+DYS ?                acedrg               202         "dictionary generator"
+DYS ?                acedrg_database      11          "data source"
+DYS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DYS ?                refmac5              5.8.0222    "optimization tool"

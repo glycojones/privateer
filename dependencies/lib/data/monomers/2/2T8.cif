@@ -1,0 +1,107 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2T8      2T8 'carbonyl(tetrachloro)oxidoiridium   ' non-polymer         8   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_2T8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2T8    IR    IR    IR       0       0.000       0.000      -0.116
+2T8     C     C     C   0.000      -0.000       0.000       2.034
+2T8     O     O     O   1.000      -0.000       0.000       3.038
+2T8   CL1    CL    CL   0.000      -0.022      -2.360      -0.116
+2T8   CL2    CL    CL   0.000       2.360      -0.022      -0.116
+2T8    O2     O     O  -1.000       0.000      -0.000      -2.116
+2T8   CL3    CL    CL   0.000       0.022       2.360      -0.116
+2T8   CL4    CL    CL   0.000      -2.360       0.022      -0.116
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2T8       IR        C         SING      1.899     0.020     1.899     0.020     
+2T8       IR        CL2       SING      2.399     0.020     2.399     0.020     
+2T8       IR        CL4       SING      2.399     0.020     2.399     0.020     
+2T8       C         O         TRIP      1.143     0.020     1.143     0.020     
+2T8       IR        CL3       SING      2.399     0.020     2.399     0.020     
+2T8       IR        CL1       SING      2.399     0.020     2.399     0.020     
+2T8       IR        O2        SING      2.090     0.020     2.090     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2T8     C    IR   CL2  90.000      3.00
+2T8     C    IR   CL2 180.000      3.00
+2T8     C    IR   CL4  90.000      3.00
+2T8     C    IR   CL4 180.000      3.00
+2T8     C    IR   CL3  90.000      3.00
+2T8     C    IR   CL3 180.000      3.00
+2T8     C    IR   CL1  90.000      3.00
+2T8     C    IR   CL1 180.000      3.00
+2T8     C    IR    O2  90.000      3.00
+2T8     C    IR    O2 180.000      3.00
+2T8   CL2    IR   CL4  90.000      3.00
+2T8   CL2    IR   CL4 180.000      3.00
+2T8   CL2    IR   CL3  90.000      3.00
+2T8   CL2    IR   CL3 180.000      3.00
+2T8   CL2    IR   CL1  90.000      3.00
+2T8   CL2    IR   CL1 180.000      3.00
+2T8   CL2    IR    O2  90.000      3.00
+2T8   CL2    IR    O2 180.000      3.00
+2T8   CL4    IR   CL3  90.000      3.00
+2T8   CL4    IR   CL3 180.000      3.00
+2T8   CL4    IR   CL1  90.000      3.00
+2T8   CL4    IR   CL1 180.000      3.00
+2T8   CL4    IR    O2  90.000      3.00
+2T8   CL4    IR    O2 180.000      3.00
+2T8   CL3    IR   CL1  90.000      3.00
+2T8   CL3    IR   CL1 180.000      3.00
+2T8   CL3    IR    O2  90.000      3.00
+2T8   CL3    IR    O2 180.000      3.00
+2T8   CL1    IR    O2  90.000      3.00
+2T8   CL1    IR    O2 180.000      3.00
+2T8    IR     C     O 176.395      2.53
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2T8     other_tor_1       O       C      IR     CL2     180.000   10.00     1

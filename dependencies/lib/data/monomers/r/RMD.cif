@@ -1,0 +1,433 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RMD      RMD '"[(1,2,5,6-eta)-cyclooctane-1,2,5,6-' non-polymer        47  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RMD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RMD           O2A    O    O         0.000     28.384  -13.585  -20.179
+ RMD           C4A    C    C         0.000     28.063  -14.489  -20.907
+ RMD           C3A    C    CH2       0.000     26.706  -15.168  -21.011
+ RMD           H3     H    H         0.000     25.882  -14.444  -21.091
+ RMD           H4     H    H         0.000     26.514  -15.849  -20.169
+ RMD           C2A    C    CH2       0.000     26.809  -15.988  -22.330
+ RMD           H2     H    H         0.000     26.270  -15.554  -23.184
+ RMD           H1     H    H         0.000     26.544  -17.051  -22.232
+ RMD           NA     N    N         0.000     28.925  -14.995  -21.784
+ RMD           C1A    C    C         0.000     28.311  -15.856  -22.555
+ RMD           O1A    O    O         0.000     28.904  -16.479  -23.411
+ RMD           C1B    C    CH2       0.000     30.364  -14.589  -21.912
+ RMD           H5     H    H         0.000     31.016  -15.262  -21.335
+ RMD           H6     H    H         0.000     30.513  -13.554  -21.570
+ RMD           C2B    C    CH2       0.000     30.713  -14.693  -23.413
+ RMD           H7     H    H         0.000     31.102  -13.729  -23.772
+ RMD           H8     H    H         0.000     29.813  -14.960  -23.986
+ RMD           C3B    C    CT        0.000     31.778  -15.776  -23.598
+ RMD           RH     RH   RH        0.000     32.014  -17.103  -25.407
+ RMD           C7B    C    CH1       0.000     31.667  -17.062  -23.240
+ RMD           H9     H    H         0.000     30.791  -17.499  -22.738
+ RMD           C6B    C    CH1       0.000     32.845  -17.713  -23.450
+ RMD           H10    H    H         0.000     33.117  -18.728  -23.124
+ RMD           C5B    C    CH1       0.000     33.707  -16.721  -24.069
+ RMD           H11    H    H         0.000     34.773  -16.843  -24.313
+ RMD           C4B    C    CH1       0.000     33.000  -15.578  -24.128
+ RMD           H12    H    H         0.000     33.388  -14.611  -24.481
+ RMD           C5C    C    CH1       0.000     33.676  -16.328  -26.472
+ RMD           H24    H    H         0.000     34.451  -15.845  -25.859
+ RMD           C6C    C    CH2       0.000     34.069  -17.713  -27.098
+ RMD           H16    H    H         0.000     35.090  -17.900  -26.732
+ RMD           H17    H    H         0.000     34.098  -17.526  -28.182
+ RMD           C7C    C    CH2       0.000     33.204  -18.917  -26.817
+ RMD           H15    H    H         0.000     33.677  -19.389  -25.943
+ RMD           H14    H    H         0.000     33.343  -19.559  -27.699
+ RMD           C4C    C    CH1       0.000     32.490  -15.621  -26.607
+ RMD           H23    H    H         0.000     32.556  -14.691  -26.023
+ RMD           C3C    C    CH2       0.000     31.435  -15.433  -27.763
+ RMD           H21    H    H         0.000     31.961  -15.080  -28.662
+ RMD           H22    H    H         0.000     30.702  -14.676  -27.448
+ RMD           C2C    C    CH2       0.000     30.709  -16.752  -28.076
+ RMD           H19    H    H         0.000     31.144  -17.236  -28.963
+ RMD           H20    H    H         0.000     29.636  -16.576  -28.245
+ RMD           C1C    C    CH1       0.000     30.894  -17.660  -26.853
+ RMD           H18    H    H         0.000     29.896  -17.866  -26.439
+ RMD           C8C    C    CH1       0.000     31.697  -18.729  -26.549
+ RMD           H13    H    H         0.000     31.196  -19.570  -26.047
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RMD      O2A    n/a    C4A    START
+ RMD      C4A    O2A    NA     .
+ RMD      C3A    C4A    C2A    .
+ RMD      H3     C3A    .      .
+ RMD      H4     C3A    .      .
+ RMD      C2A    C3A    H1     .
+ RMD      H2     C2A    .      .
+ RMD      H1     C2A    .      .
+ RMD      NA     C4A    C1B    .
+ RMD      C1A    NA     O1A    .
+ RMD      O1A    C1A    .      .
+ RMD      C1B    NA     C2B    .
+ RMD      H5     C1B    .      .
+ RMD      H6     C1B    .      .
+ RMD      C2B    C1B    C3B    .
+ RMD      H7     C2B    .      .
+ RMD      H8     C2B    .      .
+ RMD      C3B    C2B    RH     .
+ RMD      RH     C3B    C5C    .
+ RMD      C7B    RH     H9     .
+ RMD      H9     C7B    .      .
+ RMD      C6B    RH     H10    .
+ RMD      H10    C6B    .      .
+ RMD      C5B    RH     H11    .
+ RMD      H11    C5B    .      .
+ RMD      C4B    RH     H12    .
+ RMD      H12    C4B    .      .
+ RMD      C5C    RH     C4C    .
+ RMD      H24    C5C    .      .
+ RMD      C6C    C5C    C7C    .
+ RMD      H16    C6C    .      .
+ RMD      H17    C6C    .      .
+ RMD      C7C    C6C    H14    .
+ RMD      H15    C7C    .      .
+ RMD      H14    C7C    .      .
+ RMD      C4C    C5C    C3C    .
+ RMD      H23    C4C    .      .
+ RMD      C3C    C4C    C2C    .
+ RMD      H21    C3C    .      .
+ RMD      H22    C3C    .      .
+ RMD      C2C    C3C    C1C    .
+ RMD      H19    C2C    .      .
+ RMD      H20    C2C    .      .
+ RMD      C1C    C2C    C8C    .
+ RMD      H18    C1C    .      .
+ RMD      C8C    C1C    H13    .
+ RMD      H13    C8C    .      END
+ RMD      C2A    C1A    .    ADD
+ RMD      C3B    C7B    .    ADD
+ RMD      C3B    C4B    .    ADD
+ RMD      C7B    C6B    .    ADD
+ RMD      C6B    C5B    .    ADD
+ RMD      C5B    C4B    .    ADD
+ RMD      RH     C8C    .    ADD
+ RMD      RH     C1C    .    ADD
+ RMD      RH     C4C    .    ADD
+ RMD      C8C    C7C    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RMD       C2A       C1A       single    1.524     0.020     1.524     0.020     
+RMD       C2A       C3A       single    1.557     0.020     1.557     0.020     
+RMD       O1A       C1A       double    1.213     0.020     1.213     0.020     
+RMD       C1A       NA        single    1.309     0.020     1.309     0.020     
+RMD       C3A       C4A       single    1.521     0.020     1.521     0.020     
+RMD       C4A       O2A       double    1.204     0.020     1.204     0.020     
+RMD       NA        C4A       single    1.330     0.020     1.330     0.020     
+RMD       C1B       NA        single    1.501     0.020     1.501     0.020     
+RMD       C2B       C1B       single    1.545     0.020     1.545     0.020     
+RMD       C3B       C2B       single    1.530     0.020     1.530     0.020     
+RMD       C3B       C7B       single    1.340     0.020     1.340     0.020     
+RMD       C3B       C4B       single    1.347     0.020     1.347     0.020     
+RMD       RH        C3B       single    2.256     0.020     2.256     0.020     
+RMD       C7B       C6B       single    1.362     0.020     1.362     0.020     
+RMD       C7B       RH        single    2.195     0.020     2.195     0.020     
+RMD       C6B       C5B       single    1.453     0.020     1.453     0.020     
+RMD       C6B       RH        single    2.212     0.020     2.212     0.020     
+RMD       C5B       C4B       single    1.345     0.020     1.345     0.020     
+RMD       C5B       RH        single    2.191     0.020     2.191     0.020     
+RMD       C4B       RH        single    2.221     0.020     2.221     0.020     
+RMD       RH        C8C       single    2.012     0.020     2.012     0.020     
+RMD       RH        C1C       single    1.912     0.020     1.912     0.020     
+RMD       RH        C4C       single    1.965     0.020     1.965     0.020     
+RMD       C5C       RH        single    2.121     0.020     2.121     0.020     
+RMD       C8C       C7C       single    1.542     0.020     1.542     0.020     
+RMD       C8C       C1C       single    1.371     0.020     1.371     0.020     
+RMD       C7C       C6C       single    1.509     0.020     1.509     0.020     
+RMD       C6C       C5C       single    1.570     0.020     1.570     0.020     
+RMD       C1C       C2C       single    1.534     0.020     1.534     0.020     
+RMD       C2C       C3C       single    1.538     0.020     1.538     0.020     
+RMD       C3C       C4C       single    1.576     0.020     1.576     0.020     
+RMD       C4C       C5C       single    1.387     0.020     1.387     0.020     
+RMD       H1        C2A       single    1.089     0.010     0.989     0.005     
+RMD       H2        C2A       single    1.089     0.010     0.989     0.005     
+RMD       H3        C3A       single    1.089     0.010     0.989     0.005     
+RMD       H4        C3A       single    1.089     0.010     0.989     0.005     
+RMD       H5        C1B       single    1.089     0.010     0.989     0.005     
+RMD       H6        C1B       single    1.089     0.010     0.989     0.005     
+RMD       H7        C2B       single    1.089     0.010     0.989     0.005     
+RMD       H8        C2B       single    1.089     0.010     0.989     0.005     
+RMD       H9        C7B       single    1.089     0.010     0.989     0.005     
+RMD       H10       C6B       single    1.089     0.010     0.989     0.005     
+RMD       H11       C5B       single    1.089     0.010     0.989     0.005     
+RMD       H12       C4B       single    1.089     0.010     0.989     0.005     
+RMD       H13       C8C       single    1.089     0.010     0.989     0.005     
+RMD       H14       C7C       single    1.089     0.010     0.989     0.005     
+RMD       H15       C7C       single    1.089     0.010     0.989     0.005     
+RMD       H16       C6C       single    1.089     0.010     0.989     0.005     
+RMD       H17       C6C       single    1.089     0.010     0.989     0.005     
+RMD       H18       C1C       single    1.089     0.010     0.989     0.005     
+RMD       H19       C2C       single    1.089     0.010     0.989     0.005     
+RMD       H20       C2C       single    1.089     0.010     0.989     0.005     
+RMD       H21       C3C       single    1.089     0.010     0.989     0.005     
+RMD       H22       C3C       single    1.089     0.010     0.989     0.005     
+RMD       H23       C4C       single    1.089     0.010     0.989     0.005     
+RMD       H24       C5C       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RMD      O2A    C4A    C3A     127.899    3.000
+ RMD      O2A    C4A    NA      120.767    3.000
+ RMD      C3A    C4A    NA      111.309    3.000
+ RMD      C4A    C3A    H3      110.930    3.000
+ RMD      C4A    C3A    H4      110.953    3.000
+ RMD      C4A    C3A    C2A     103.538    3.000
+ RMD      H3     C3A    H4      109.457    3.000
+ RMD      H3     C3A    C2A     110.924    3.000
+ RMD      H4     C3A    C2A     110.942    3.000
+ RMD      C3A    C2A    H2      112.213    3.000
+ RMD      C3A    C2A    H1      112.190    3.000
+ RMD      C3A    C2A    C1A      98.317    3.000
+ RMD      H2     C2A    H1      109.461    3.000
+ RMD      H2     C2A    C1A     112.173    3.000
+ RMD      H1     C2A    C1A     112.168    3.000
+ RMD      C4A    NA     C1A     109.558    3.000
+ RMD      C4A    NA     C1B     125.094    3.000
+ RMD      C1A    NA     C1B     125.284    3.000
+ RMD      NA     C1A    O1A     121.606    3.000
+ RMD      NA     C1A    C2A     115.611    3.000
+ RMD      O1A    C1A    C2A     122.761    3.000
+ RMD      NA     C1B    H5      110.257    3.000
+ RMD      NA     C1B    H6      110.268    3.000
+ RMD      NA     C1B    C2B     106.341    3.000
+ RMD      H5     C1B    H6      109.457    3.000
+ RMD      H5     C1B    C2B     110.249    3.000
+ RMD      H6     C1B    C2B     110.233    3.000
+ RMD      C1B    C2B    H7      109.668    3.000
+ RMD      C1B    C2B    H8      109.642    3.000
+ RMD      C1B    C2B    C3B     108.809    3.000
+ RMD      H7     C2B    H8      109.461    3.000
+ RMD      H7     C2B    C3B     109.596    3.000
+ RMD      H8     C2B    C3B     109.650    3.000
+ RMD      C2B    C3B    RH      125.881    3.000
+ RMD      C2B    C3B    C7B     126.123    3.000
+ RMD      C2B    C3B    C4B     125.108    3.000
+ RMD      C7B    C3B    C4B     108.757    3.000
+ RMD      RH     C3B    C7B      70.016    3.000
+ RMD      RH     C3B    C4B      71.092    3.000
+ RMD      C3B    RH     C7B      34.996    3.000
+ RMD      C3B    RH     C6B      59.472    3.000
+ RMD      C3B    RH     C5B      59.248    3.000
+ RMD      C3B    RH     C4B      34.998    3.000
+ RMD      C3B    RH     C5C     105.648    3.000
+ RMD      C3B    RH     C8C     156.065    3.000
+ RMD      C3B    RH     C1C     135.771    3.000
+ RMD      C3B    RH     C4C      94.094    3.000
+ RMD      C7B    RH     C6B      36.008    3.000
+ RMD      C7B    RH     C5B      61.060    3.000
+ RMD      C6B    RH     C5B      38.522    3.000
+ RMD      C7B    RH     C4B      59.261    3.000
+ RMD      C6B    RH     C4B      60.864    3.000
+ RMD      C5B    RH     C4B      35.493    3.000
+ RMD      C7B    RH     C5C     127.798    3.000
+ RMD      C6B    RH     C5C     104.518    3.000
+ RMD      C5B    RH     C5C      68.743    3.000
+ RMD      C4B    RH     C5C      71.963    3.000
+ RMD      C8C    RH     C1C      40.803    3.000
+ RMD      C8C    RH     C4C     107.516    3.000
+ RMD      C1C    RH     C4C      84.248    3.000
+ RMD      C7B    RH     C8C     123.403    3.000
+ RMD      C6B    RH     C8C     109.785    3.000
+ RMD      C5B    RH     C8C     127.525    3.000
+ RMD      C4B    RH     C8C     162.097    3.000
+ RMD      C5C    RH     C8C      97.687    3.000
+ RMD      C7B    RH     C1C     131.261    3.000
+ RMD      C6B    RH     C1C     143.986    3.000
+ RMD      C5B    RH     C1C     164.817    3.000
+ RMD      C4B    RH     C1C     153.578    3.000
+ RMD      C5C    RH     C1C     100.705    3.000
+ RMD      C7B    RH     C4C     128.827    3.000
+ RMD      C6B    RH     C4C     131.083    3.000
+ RMD      C5B    RH     C4C      93.109    3.000
+ RMD      C4B    RH     C4C      74.119    3.000
+ RMD      C5C    RH     C4C      39.466    3.000
+ RMD      RH     C7B    H9      110.332    3.000
+ RMD      RH     C7B    C3B      74.988    3.000
+ RMD      RH     C7B    C6B      72.672    3.000
+ RMD      C3B    C7B    C6B     110.240    3.000
+ RMD      H9     C7B    C3B     124.744    3.000
+ RMD      H9     C7B    C6B     124.079    3.000
+ RMD      RH     C6B    H10     112.482    3.000
+ RMD      RH     C6B    C7B      71.319    3.000
+ RMD      RH     C6B    C5B      69.977    3.000
+ RMD      C7B    C6B    C5B     104.625    3.000
+ RMD      H10    C6B    C7B     128.359    3.000
+ RMD      H10    C6B    C5B     125.593    3.000
+ RMD      RH     C5B    H11     112.129    3.000
+ RMD      RH     C5B    C6B      71.501    3.000
+ RMD      RH     C5B    C4B      73.460    3.000
+ RMD      C6B    C5B    C4B     106.681    3.000
+ RMD      H11    C5B    C6B     124.632    3.000
+ RMD      H11    C5B    C4B     127.838    3.000
+ RMD      RH     C4B    H12     110.044    3.000
+ RMD      RH     C4B    C3B      73.910    3.000
+ RMD      RH     C4B    C5B      71.047    3.000
+ RMD      C3B    C4B    C5B     109.555    3.000
+ RMD      H12    C4B    C3B     124.409    3.000
+ RMD      H12    C4B    C5B     124.442    3.000
+ RMD      RH     C5C    H24     107.311    3.000
+ RMD      RH     C5C    C6C      94.246    3.000
+ RMD      RH     C5C    C4C      64.222    3.000
+ RMD      H24    C5C    C6C     113.716    3.000
+ RMD      H24    C5C    C4C     117.057    3.000
+ RMD      C6C    C5C    C4C     128.668    3.000
+ RMD      C5C    C6C    H16     107.013    3.000
+ RMD      C5C    C6C    H17     107.028    3.000
+ RMD      C5C    C6C    C7C     119.090    3.000
+ RMD      H16    C6C    H17     109.490    3.000
+ RMD      H16    C6C    C7C     107.005    3.000
+ RMD      H17    C6C    C7C     107.002    3.000
+ RMD      C6C    C7C    H15     106.880    3.000
+ RMD      C6C    C7C    H14     106.856    3.000
+ RMD      C6C    C7C    C8C     119.689    3.000
+ RMD      H15    C7C    H14     109.488    3.000
+ RMD      H15    C7C    C8C     106.831    3.000
+ RMD      H14    C7C    C8C     106.858    3.000
+ RMD      C5C    C4C    H23     111.449    3.000
+ RMD      C5C    C4C    C3C     134.774    3.000
+ RMD      C5C    C4C    RH       76.312    3.000
+ RMD      H23    C4C    C3C     108.828    3.000
+ RMD      H23    C4C    RH      104.957    3.000
+ RMD      C3C    C4C    RH      112.061    3.000
+ RMD      C4C    C3C    H21     109.013    3.000
+ RMD      C4C    C3C    H22     109.049    3.000
+ RMD      C4C    C3C    C2C     111.281    3.000
+ RMD      H21    C3C    H22     109.479    3.000
+ RMD      H21    C3C    C2C     109.002    3.000
+ RMD      H22    C3C    C2C     108.997    3.000
+ RMD      C3C    C2C    H19     110.113    3.000
+ RMD      C3C    C2C    H20     110.167    3.000
+ RMD      C3C    C2C    C1C     106.763    3.000
+ RMD      H19    C2C    H20     109.452    3.000
+ RMD      H19    C2C    C1C     110.170    3.000
+ RMD      H20    C2C    C1C     110.146    3.000
+ RMD      C2C    C1C    H18     107.499    3.000
+ RMD      C2C    C1C    C8C     135.129    3.000
+ RMD      C2C    C1C    RH      120.069    3.000
+ RMD      H18    C1C    C8C     109.711    3.000
+ RMD      H18    C1C    RH      103.998    3.000
+ RMD      C8C    C1C    RH       73.524    3.000
+ RMD      C1C    C8C    H13     116.804    3.000
+ RMD      C1C    C8C    RH       65.673    3.000
+ RMD      C1C    C8C    C7C     128.963    3.000
+ RMD      RH     C8C    C7C      92.476    3.000
+ RMD      H13    C8C    RH      107.893    3.000
+ RMD      H13    C8C    C7C     113.680    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RMD      var_1            O2A    C4A    C3A    C2A              166.606           20.000   3
+ RMD      var_2            C4A    C3A    C2A    C1A               11.856           20.000   3
+ RMD      var_3            C3A    C2A    C1A    NA               -10.512           20.000   3
+ RMD      var_4            O2A    C4A    NA     C1B                4.113           20.000   2
+ RMD      var_5            C4A    NA     C1A    O1A             -177.812           20.000   2
+ RMD      var_6            C4A    NA     C1B    C2B             -146.046           20.000   3
+ RMD      var_7            NA     C1B    C2B    C3B             -115.813           20.000   3
+ RMD      var_8            C1B    C2B    C3B    RH               148.445           20.000   3
+ RMD      var_9            C2B    C3B    C7B    RH               120.443           20.000   3
+ RMD      var_10           C2B    C3B    C4B    RH              -121.098           20.000   3
+ RMD      var_11           C2B    C3B    RH     C5C              104.053           20.000   3
+ RMD      var_12           C3B    RH     C8C    C1C               95.343           20.000   3
+ RMD      var_13           C3B    RH     C1C    C2C               82.329           20.000   3
+ RMD      var_14           C3B    RH     C4C    C5C              109.787           20.000   3
+ RMD      var_15           C3B    RH     C6B    C7B               36.269           20.000   3
+ RMD      var_16           C3B    RH     C5B    C6B               78.368           20.000   3
+ RMD      var_17           C3B    RH     C5C    C4C              -77.080           20.000   3
+ RMD      var_18           RH     C5C    C6C    C7C                2.807           20.000   3
+ RMD      var_19           C5C    C6C    C7C    C8C               29.261           20.000   3
+ RMD      var_20           RH     C5C    C4C    C3C             -107.633           20.000   3
+ RMD      var_21           C5C    C4C    C3C    C2C               65.973           20.000   3
+ RMD      var_22           C4C    C3C    C2C    C1C               19.607           20.000   3
+ RMD      var_23           C3C    C2C    C1C    C8C             -102.196           20.000   3
+ RMD      var_24           C2C    C1C    C8C    RH               116.326           20.000   3
+ RMD      var_25           C1C    C8C    C7C    C6C               18.888           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RMD      chir_01          C3B    C2B    C7B    C4B       positiv
+ RMD      chir_02          C7B    C3B    C6B    RH        positiv
+ RMD      chir_03          C6B    C7B    C5B    RH        positiv
+ RMD      chir_04          C5B    C6B    C4B    RH        positiv
+ RMD      chir_05          C4B    C3B    C5B    RH        negativ
+ RMD      chir_06          C8C    RH     C7C    C1C       positiv
+ RMD      chir_07          C1C    RH     C8C    C2C       positiv
+ RMD      chir_08          C4C    RH     C3C    C5C       positiv
+ RMD      chir_09          C5C    RH     C6C    C4C       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RMD      plan-1            C1A       0.020
+ RMD      plan-1            C2A       0.020
+ RMD      plan-1            O1A       0.020
+ RMD      plan-1            NA        0.020
+ RMD      plan-2            C4A       0.020
+ RMD      plan-2            C3A       0.020
+ RMD      plan-2            O2A       0.020
+ RMD      plan-2            NA        0.020
+ RMD      plan-3            NA        0.020
+ RMD      plan-3            C1A       0.020
+ RMD      plan-3            C4A       0.020
+ RMD      plan-3            C1B       0.020
+# ------------------------------------------------------

@@ -1,0 +1,175 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0CS     0CS     "3-[(S)-HYDROPEROXYSULFINYL]-L-ALANINE"     peptide     17     10     .     
+#
+data_comp_0CS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+0CS     N       N       NT3     1       -1.733      1.390       0.292       
+0CS     CA      C       CH1     0       -0.850      0.260       0.694       
+0CS     CB      C       CH2     0       0.296       0.070       -0.303      
+0CS     C       C       C       0       -1.681      -1.023      0.833       
+0CS     O       O       O       0       -1.594      -1.646      1.910       
+0CS     SG      S       S3      0       1.611       -0.957      0.420       
+0CS     OD1     O       O       0       1.206       -2.363      0.193       
+0CS     OD2     O       O2      0       2.967       -0.726      -0.389      
+0CS     OD3     O       OH1     0       3.910       0.030       0.437       
+0CS     OXT     O       OC      -1      -2.384      -1.353      -0.143      
+0CS     H       H       H       0       -2.494      1.386       0.794       
+0CS     H2      H       H       0       -1.954      1.310       -0.589      
+0CS     H3      H       H       0       -1.297      2.180       0.420       
+0CS     HA      H       H       0       -0.460      0.479       1.573       
+0CS     HB2     H       H       0       0.659       0.946       -0.546      
+0CS     HB3     H       H       0       -0.049      -0.359      -1.114      
+0CS     HD3     H       H       0       4.534       0.221       -0.153      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 0CS      N      n/a    CA     START
+ 0CS      H      N      .      .
+ 0CS      H2     N      .      .
+ 0CS      H3     N      .      .
+ 0CS      CA     N      C      .
+ 0CS      HA     CA     .      .
+ 0CS      CB     CA     SG     .
+ 0CS      HB2    CB     .      .
+ 0CS      HB3    CB     .      .
+ 0CS      SG     CB     OD2    .
+ 0CS      OD1    SG     .      .
+ 0CS      OD2    SG     OD3    .
+ 0CS      OD3    OD2    HD3    .
+ 0CS      HD3    OD3    .      .
+ 0CS      C      CA     .      END
+ 0CS      O      C      .      .
+ 0CS      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0CS       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+0CS       CA        CB        SINGLE    n         1.530     0.013     1.530     0.013     
+0CS       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+0CS       CB        SG        SINGLE    n         1.817     0.020     1.817     0.020     
+0CS       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+0CS       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+0CS       SG        OD1       DOUBLE    n         1.480     0.015     1.480     0.015     
+0CS       SG        OD2       SINGLE    n         1.596     0.020     1.596     0.020     
+0CS       OD2       OD3       SINGLE    n         1.464     0.016     1.464     0.016     
+0CS       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+0CS       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+0CS       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+0CS       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+0CS       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.019     
+0CS       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.019     
+0CS       OD3       HD3       SINGLE    n         0.970     0.012     0.880     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+0CS          CA           N           H     109.671    1.50
+0CS          CA           N          H2     109.671    1.50
+0CS          CA           N          H3     109.671    1.50
+0CS           H           N          H2     109.028    2.41
+0CS           H           N          H3     109.028    2.41
+0CS          H2           N          H3     109.028    2.41
+0CS           N          CA          CB     111.386    1.50
+0CS           N          CA           C     109.494    1.50
+0CS           N          CA          HA     107.983    1.50
+0CS          CB          CA           C     111.066    2.42
+0CS          CB          CA          HA     108.253    1.50
+0CS           C          CA          HA     108.606    1.50
+0CS          CA          CB          SG     108.220    3.00
+0CS          CA          CB         HB2     108.870    1.50
+0CS          CA          CB         HB3     108.870    1.50
+0CS          SG          CB         HB2     109.362    1.50
+0CS          SG          CB         HB3     109.362    1.50
+0CS         HB2          CB         HB3     108.193    1.50
+0CS          CA           C           O     117.134    1.50
+0CS          CA           C         OXT     117.134    1.50
+0CS           O           C         OXT     125.732    1.50
+0CS          CB          SG         OD1     106.041    1.50
+0CS          CB          SG         OD2     109.471    3.00
+0CS         OD1          SG         OD2     107.227    3.00
+0CS          SG         OD2         OD3     109.471    3.00
+0CS         OD2         OD3         HD3     100.984    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+0CS             sp3_sp3_4          CB          CA           N           H      60.000   10.00     3
+0CS            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+0CS             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+0CS            sp3_sp3_19          CA          CB          SG         OD1     180.000   10.00     3
+0CS            sp3_sp3_25         OD3         OD2          SG          CB     180.000   10.00     3
+0CS            sp3_sp3_27          SG         OD2         OD3         HD3     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+0CS    chir_1    CA    N    CB    C    both
+0CS    chir_2    SG    OD1    OD2    CB    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+0CS    plan-1           C   0.020
+0CS    plan-1          CA   0.020
+0CS    plan-1           O   0.020
+0CS    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+0CS SMILES           ACDLabs              10.04 "O=C(O)C(N)CS(=O)OO"
+0CS SMILES_CANONICAL CACTVS               3.341 "N[C@@H](C[S@@](=O)OO)C(O)=O"
+0CS SMILES           CACTVS               3.341 "N[CH](C[S](=O)OO)C(O)=O"
+0CS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)[S@@](=O)OO"
+0CS SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)S(=O)OO"
+0CS InChI            InChI                1.03  "InChI=1S/C3H7NO5S/c4-2(3(5)6)1-10(8)9-7/h2,7H,1,4H2,(H,5,6)/t2-,10-/m0/s1"
+0CS InChIKey         InChI                1.03  XWVCSZNIYHRFRC-HWEYBBGXSA-N
+0CS ?                acedrg               196         "dictionary generator"                  
+0CS ?                acedrg_database      11          "data source"                           
+0CS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+0CS ?                refmac5              5.8.0222    "optimization tool"                     

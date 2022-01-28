@@ -1,0 +1,177 @@
+global_
+_lib_name         mon_lib
+_lib_version      5.44
+_lib_update       30/05/14
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OHX      OHX 'osmium(III)hexammine                ' non-polymer        19   7 .
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_OHX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ OHX           N6     N    NT2       0.000      0.902   -1.798   -0.551
+ OHX           HN6    H    H         0.000      0.558   -2.114   -1.446
+ OHX           HN6A   H    H         0.000      1.908   -1.712   -0.561
+ OHX           OS     OS   OS        0.000      0.001    0.004    0.004
+ OHX           N5     N    NT2       0.000     -1.381   -0.209   -1.550
+ OHX           HN5A   H    H         0.000     -2.316   -0.002   -1.233
+ OHX           HN5    H    H         0.000     -1.332   -1.132   -1.954
+ OHX           N2     N    NT2       0.000      1.284    1.041   -1.279
+ OHX           HN2A   H    H         0.000      2.234    0.714   -1.182
+ OHX           HN2    H    H         0.000      1.227    2.036   -1.121
+ OHX           N3     N    NT2       0.000     -1.282   -1.033    1.287
+ OHX           HN3A   H    H         0.000     -1.225   -2.029    1.129
+ OHX           HN3    H    H         0.000     -2.232   -0.706    1.190
+ OHX           N4     N    NT2       0.000      1.382    0.216    1.558
+ OHX           HN4A   H    H         0.000      2.318    0.009    1.241
+ OHX           HN4    H    H         0.000      1.132   -0.362    2.346
+ OHX           N1     N    NT2       0.000     -0.901    1.806    0.559
+ OHX           HN1A   H    H         0.000     -1.906    1.719    0.569
+ OHX           HN1    H    H         0.000     -0.608    2.558   -0.046
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ OHX      N6     n/a    OS     START
+ OHX      HN6    N6     .      .
+ OHX      HN6A   N6     .      .
+ OHX      OS     N6     N1     .
+ OHX      N5     OS     HN5    .
+ OHX      HN5A   N5     .      .
+ OHX      HN5    N5     .      .
+ OHX      N2     OS     HN2    .
+ OHX      HN2A   N2     .      .
+ OHX      HN2    N2     .      .
+ OHX      N3     OS     HN3    .
+ OHX      HN3A   N3     .      .
+ OHX      HN3    N3     .      .
+ OHX      N4     OS     HN4    .
+ OHX      HN4A   N4     .      .
+ OHX      HN4    N4     .      .
+ OHX      N1     OS     HN1    .
+ OHX      HN1A   N1     .      .
+ OHX      HN1    N1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OHX       N1        OS        single    2.090     0.020     2.090     0.020     
+OHX       N2        OS        single    2.090     0.020     2.090     0.020     
+OHX       N3        OS        single    2.090     0.020     2.090     0.020     
+OHX       N4        OS        single    2.090     0.020     2.090     0.020     
+OHX       N5        OS        single    2.090     0.020     2.090     0.020     
+OHX       OS        N6        single    2.090     0.020     2.090     0.020     
+OHX       HN1       N1        single    1.036     0.016     0.914     0.007     
+OHX       HN1A      N1        single    1.036     0.016     0.914     0.007     
+OHX       HN2       N2        single    1.036     0.016     0.914     0.007     
+OHX       HN2A      N2        single    1.036     0.016     0.914     0.007     
+OHX       HN3       N3        single    1.036     0.016     0.914     0.007     
+OHX       HN3A      N3        single    1.036     0.016     0.914     0.007     
+OHX       HN4       N4        single    1.036     0.016     0.914     0.007     
+OHX       HN4A      N4        single    1.036     0.016     0.914     0.007     
+OHX       HN5       N5        single    1.036     0.016     0.914     0.007     
+OHX       HN5A      N5        single    1.036     0.016     0.914     0.007     
+OHX       HN6       N6        single    1.036     0.016     0.914     0.007     
+OHX       HN6A      N6        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ OHX      HN6    N6     HN6A    109.500    3.000
+ OHX      HN6    N6     OS      109.500    3.000
+ OHX      HN6A   N6     OS      109.500    3.000
+ OHX      N6     OS     N5       90.000    3.000
+ OHX      N6     OS     N2       90.000    3.000
+ OHX      N6     OS     N3       90.000    3.000
+ OHX      N6     OS     N4       90.000    3.000
+ OHX      N6     OS     N1      180.000    3.000
+ OHX      N5     OS     N2       90.000    3.000
+ OHX      N5     OS     N3       90.000    3.000
+ OHX      N2     OS     N3      180.000    3.000
+ OHX      N5     OS     N4      180.000    3.000
+ OHX      N2     OS     N4       90.000    3.000
+ OHX      N3     OS     N4       90.000    3.000
+ OHX      N5     OS     N1       90.000    3.000
+ OHX      N2     OS     N1       90.000    3.000
+ OHX      N3     OS     N1       90.000    3.000
+ OHX      N4     OS     N1       90.000    3.000
+ OHX      OS     N5     HN5A    109.500    3.000
+ OHX      OS     N5     HN5     109.500    3.000
+ OHX      HN5A   N5     HN5     109.500    3.000
+ OHX      OS     N2     HN2A    109.500    3.000
+ OHX      OS     N2     HN2     109.500    3.000
+ OHX      HN2A   N2     HN2     109.500    3.000
+ OHX      OS     N3     HN3A    109.500    3.000
+ OHX      OS     N3     HN3     109.500    3.000
+ OHX      HN3A   N3     HN3     109.500    3.000
+ OHX      OS     N4     HN4A    109.500    3.000
+ OHX      OS     N4     HN4     109.500    3.000
+ OHX      HN4A   N4     HN4     109.500    3.000
+ OHX      OS     N1     HN1A    109.500    3.000
+ OHX      OS     N1     HN1     109.500    3.000
+ OHX      HN1A   N1     HN1     109.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ OHX      var_1            HN6A   N6     OS     N1               177.880           20.000   3
+ OHX      var_2            N6     OS     N5     HN5               11.005           20.000   3
+ OHX      var_3            N6     OS     N2     HN2             -168.929           20.000   3
+ OHX      var_4            N6     OS     N3     HN3             -134.952           20.000   3
+ OHX      var_5            N6     OS     N4     HN4              -78.893           20.000   3
+ OHX      var_6            N6     OS     N1     HN1             -121.725           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ OHX      chir_01          OS     N6     N1     N3        cross4
+                   N5     N2     N4     .      .
+# ------------------------------------------------------
+# ------------------------------------------------------
+# ------------------------------------------------------

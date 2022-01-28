@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ETF     ETF     TRIFLUOROETHANOL     NON-POLYMER     9     6     .     
+#
+data_comp_ETF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ETF     C1      C       CT      0       -8.975      -4.737      -20.527     
+ETF     C2      C       CH2     0       -10.438     -4.976      -20.461     
+ETF     O       O       OH1     0       -11.154     -3.860      -20.914     
+ETF     F1      F       F       0       -8.273      -5.806      -20.146     
+ETF     F2      F       F       0       -8.570      -4.434      -21.762     
+ETF     F3      F       F       0       -8.594      -3.729      -19.741     
+ETF     H21     H       H       0       -10.682     -5.168      -19.531     
+ETF     H22     H       H       0       -10.654     -5.753      -21.019     
+ETF     HO      H       H       0       -11.986     -4.012      -20.871     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ETF       C1        C2        SINGLE    n         1.484     0.013     1.484     0.013     
+ETF       C1        F1        SINGLE    n         1.334     0.012     1.334     0.012     
+ETF       C1        F2        SINGLE    n         1.334     0.012     1.334     0.012     
+ETF       C1        F3        SINGLE    n         1.334     0.012     1.334     0.012     
+ETF       C2        O         SINGLE    n         1.401     0.014     1.401     0.014     
+ETF       C2        H21       SINGLE    n         1.089     0.010     0.981     0.019     
+ETF       C2        H22       SINGLE    n         1.089     0.010     0.981     0.019     
+ETF       O         HO        SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ETF          C2          C1          F1     112.398    1.50
+ETF          C2          C1          F2     112.398    1.50
+ETF          C2          C1          F3     112.398    1.50
+ETF          F1          C1          F2     106.951    1.50
+ETF          F1          C1          F3     106.951    1.50
+ETF          F2          C1          F3     106.951    1.50
+ETF          C1          C2           O     111.206    1.50
+ETF          C1          C2         H21     108.638    1.50
+ETF          C1          C2         H22     108.638    1.50
+ETF           O          C2         H21     109.531    1.50
+ETF           O          C2         H22     109.531    1.50
+ETF         H21          C2         H22     109.213    2.78
+ETF          C2           O          HO     110.098    1.83
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ETF             sp3_sp3_1          F1          C1          C2           O     180.000   10.00     3
+ETF            sp3_sp3_10          C1          C2           O          HO     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ETF SMILES           ACDLabs              10.04 "FC(F)(F)CO"
+ETF SMILES_CANONICAL CACTVS               3.341 "OCC(F)(F)F"
+ETF SMILES           CACTVS               3.341 "OCC(F)(F)F"
+ETF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(F)(F)F)O"
+ETF SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(F)(F)F)O"
+ETF InChI            InChI                1.03  "InChI=1S/C2H3F3O/c3-2(4,5)1-6/h6H,1H2"
+ETF InChIKey         InChI                1.03  RHQDFWAXVIIEBN-UHFFFAOYSA-N
+ETF ?                acedrg               190         "dictionary generator"                  
+ETF ?                acedrg_database      11          "data source"                           
+ETF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ETF ?                refmac5              5.8.0158    "optimization tool"                     

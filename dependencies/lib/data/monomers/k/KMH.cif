@@ -1,0 +1,166 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KMH     KMH      "(5S)-5-AMINO-3-OXO-HEXANOIC ACID"     non-polymer     20     10     .     
+#
+data_comp_KMH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KMH     N       N       NT2     0       -27.222     -39.976     32.228      
+KMH     CB      C       CH1     0       -26.029     -40.556     32.873      
+KMH     CG      C       CH3     0       -25.833     -39.938     34.265      
+KMH     CE      C       C       0       -24.939     -44.870     31.068      
+KMH     OF1     O       O       0       -25.313     -45.487     30.054      
+KMH     OF2     O       OC      -1      -24.560     -45.425     32.115      
+KMH     CA      C       CH2     0       -26.134     -42.092     32.939      
+KMH     C       C       C       0       -26.201     -42.751     31.584      
+KMH     C2      C       CH2     0       -24.945     -43.346     31.024      
+KMH     O       O       O       0       -27.242     -42.799     30.962      
+KMH     HN1     H       H       0       -27.956     -40.199     32.674      
+KMH     HN2     H       H       0       -27.171     -39.089     32.218      
+KMH     HB      H       H       0       -25.243     -40.333     32.324      
+KMH     HG1C    H       H       0       -25.647     -40.635     34.919      
+KMH     HG2C    H       H       0       -26.637     -39.458     34.529      
+KMH     HG3C    H       H       0       -25.084     -39.318     34.237      
+KMH     HA1C    H       H       0       -26.941     -42.333     33.441      
+KMH     HA2C    H       H       0       -25.362     -42.447     33.428      
+KMH     H21C    H       H       0       -24.853     -43.063     30.094      
+KMH     H22C    H       H       0       -24.175     -43.016     31.523      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KMH       N         CB        SINGLE    n         1.473     0.013     1.473     0.013     
+KMH       CB        CG        SINGLE    n         1.527     0.014     1.527     0.014     
+KMH       CB        CA        SINGLE    n         1.535     0.016     1.535     0.016     
+KMH       CE        OF2       SINGLE    n         1.244     0.020     1.244     0.020     
+KMH       CE        OF1       DOUBLE    n         1.244     0.020     1.244     0.020     
+KMH       CE        C2        SINGLE    n         1.525     0.014     1.525     0.014     
+KMH       CA        C         SINGLE    n         1.506     0.010     1.506     0.010     
+KMH       C         O         DOUBLE    n         1.214     0.010     1.214     0.010     
+KMH       C         C2        SINGLE    n         1.491     0.020     1.491     0.020     
+KMH       N         HN1       SINGLE    n         1.036     0.016     0.888     0.020     
+KMH       N         HN2       SINGLE    n         1.036     0.016     0.888     0.020     
+KMH       CB        HB        SINGLE    n         1.089     0.010     0.985     0.015     
+KMH       CG        HG1C      SINGLE    n         1.089     0.010     0.973     0.015     
+KMH       CG        HG2C      SINGLE    n         1.089     0.010     0.973     0.015     
+KMH       CG        HG3C      SINGLE    n         1.089     0.010     0.973     0.015     
+KMH       CA        HA1C      SINGLE    n         1.089     0.010     0.981     0.019     
+KMH       CA        HA2C      SINGLE    n         1.089     0.010     0.981     0.019     
+KMH       C2        H21C      SINGLE    n         1.089     0.010     0.976     0.020     
+KMH       C2        H22C      SINGLE    n         1.089     0.010     0.976     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KMH          CB           N         HN1     110.246    3.00
+KMH          CB           N         HN2     110.246    3.00
+KMH         HN1           N         HN2     107.559    3.00
+KMH           N          CB          CG     109.538    2.08
+KMH           N          CB          CA     111.883    2.59
+KMH           N          CB          HB     108.540    1.50
+KMH          CG          CB          CA     110.255    1.88
+KMH          CG          CB          HB     108.561    1.50
+KMH          CA          CB          HB     108.052    1.50
+KMH          CB          CG        HG1C     109.460    1.50
+KMH          CB          CG        HG2C     109.460    1.50
+KMH          CB          CG        HG3C     109.460    1.50
+KMH        HG1C          CG        HG2C     109.386    1.50
+KMH        HG1C          CG        HG3C     109.386    1.50
+KMH        HG2C          CG        HG3C     109.386    1.50
+KMH         OF2          CE         OF1     123.857    1.50
+KMH         OF2          CE          C2     118.071    1.50
+KMH         OF1          CE          C2     118.071    1.50
+KMH          CB          CA           C     113.078    3.00
+KMH          CB          CA        HA1C     108.853    1.50
+KMH          CB          CA        HA2C     108.853    1.50
+KMH           C          CA        HA1C     108.499    1.50
+KMH           C          CA        HA2C     108.499    1.50
+KMH        HA1C          CA        HA2C     107.705    1.50
+KMH          CA           C           O     121.690    1.50
+KMH          CA           C          C2     116.817    2.07
+KMH           O           C          C2     121.493    1.57
+KMH          CE          C2           C     111.575    3.00
+KMH          CE          C2        H21C     108.236    1.50
+KMH          CE          C2        H22C     108.236    1.50
+KMH           C          C2        H21C     108.453    1.62
+KMH           C          C2        H22C     108.453    1.62
+KMH        H21C          C2        H22C     108.195    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KMH             sp3_sp3_1          CG          CB           N         HN1     180.000   10.00     3
+KMH            sp3_sp3_10           N          CB          CG        HG1C      60.000   10.00     3
+KMH            sp3_sp3_16           C          CA          CB           N     180.000   10.00     3
+KMH             sp2_sp3_2         OF2          CE          C2           C     120.000   10.00     6
+KMH             sp2_sp3_8           O           C          CA          CB     120.000   10.00     6
+KMH            sp2_sp3_14          CA           C          C2          CE     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+KMH    chir_1    CB    N    CA    CG    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KMH    plan-1          C2   0.020
+KMH    plan-1          CE   0.020
+KMH    plan-1         OF1   0.020
+KMH    plan-1         OF2   0.020
+KMH    plan-2           C   0.020
+KMH    plan-2          C2   0.020
+KMH    plan-2          CA   0.020
+KMH    plan-2           O   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KMH SMILES_CANONICAL CACTVS               3.352 "C[C@H](N)CC(=O)CC(O)=O"
+KMH SMILES           CACTVS               3.352 "C[CH](N)CC(=O)CC(O)=O"
+KMH SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "C[C@@H](CC(=O)CC(=O)O)N"
+KMH SMILES           "OpenEye OEToolkits" 1.6.1 "CC(CC(=O)CC(=O)O)N"
+KMH InChI            InChI                1.03  "InChI=1S/C6H11NO3/c1-4(7)2-5(8)3-6(9)10/h4H,2-3,7H2,1H3,(H,9,10)/t4-/m0/s1"
+KMH InChIKey         InChI                1.03  FAASBXNEOGMQHS-BYPYZUCNSA-N
+KMH ?                acedrg               202         "dictionary generator"                  
+KMH ?                acedrg_database      11          "data source"                           
+KMH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KMH ?                refmac5              5.8.0189    "optimization tool"                     

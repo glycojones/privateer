@@ -1,0 +1,613 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CHY      CHY 'CHYMOSTATIN                         ' non-polymer        84  44 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CHY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CHY           O6     O    O         0.000      0.000    0.000    0.000
+ CHY           C9     C    C1        0.000      0.224    1.079    0.494
+ CHY           H9     H    H         0.000      1.130    1.606    0.249
+ CHY           C8     C    CH1       0.000     -0.766    1.688    1.455
+ CHY           H8     H    H         0.000     -1.118    2.650    1.058
+ CHY           C7     C    CH2       0.000     -0.089    1.911    2.809
+ CHY           H71    H    H         0.000      0.812    2.513    2.670
+ CHY           H72    H    H         0.000      0.182    0.947    3.244
+ CHY           C4     C    CR6       0.000     -1.040    2.632    3.732
+ CHY           C5     C    CR16      0.000     -1.051    4.013    3.770
+ CHY           H5     H    H         0.000     -0.379    4.578    3.136
+ CHY           C6     C    CR16      0.000     -1.921    4.673    4.617
+ CHY           H6     H    H         0.000     -1.929    5.756    4.648
+ CHY           C1     C    CR16      0.000     -2.780    3.952    5.425
+ CHY           H1     H    H         0.000     -3.462    4.470    6.089
+ CHY           C2     C    CR16      0.000     -2.769    2.570    5.386
+ CHY           H2     H    H         0.000     -3.442    2.005    6.019
+ CHY           C3     C    CR16      0.000     -1.898    1.910    4.539
+ CHY           H3     H    H         0.000     -1.889    0.827    4.508
+ CHY           N1     N    NH1       0.000     -1.906    0.782    1.621
+ CHY           HN1    H    H         0.000     -1.924    0.130    2.392
+ CHY           C10    C    C         0.000     -2.929    0.820    0.745
+ CHY           O1     O    O         0.000     -2.859    1.524   -0.240
+ CHY           C11    C    CH1       0.000     -4.160   -0.014    0.990
+ CHY           H11    H    H         0.000     -4.418    0.018    2.058
+ CHY           C12    C    CH2       0.000     -3.887   -1.461    0.574
+ CHY           H121   H    H         0.000     -3.635   -1.493   -0.488
+ CHY           H122   H    H         0.000     -4.779   -2.065    0.753
+ CHY           C13    C    CH1       0.000     -2.720   -2.016    1.394
+ CHY           H13    H    H         0.000     -1.859   -1.339    1.311
+ CHY           C15    C    CH3       0.000     -2.336   -3.398    0.863
+ CHY           H153   H    H         0.000     -1.528   -3.783    1.430
+ CHY           H152   H    H         0.000     -3.165   -4.052    0.943
+ CHY           H151   H    H         0.000     -2.046   -3.319   -0.153
+ CHY           C14    C    CH3       0.000     -3.138   -2.132    2.861
+ CHY           H143   H    H         0.000     -3.926   -2.835    2.951
+ CHY           H142   H    H         0.000     -2.312   -2.455    3.441
+ CHY           H141   H    H         0.000     -3.467   -1.188    3.212
+ CHY           N2     N    NH1       0.000     -5.275    0.518    0.202
+ CHY           HN2    H    H         0.000     -5.091    1.080   -0.617
+ CHY           C16    C    C         0.000     -6.545    0.257    0.569
+ CHY           O2     O    O         0.000     -6.767   -0.333    1.605
+ CHY           C17    C    CH1       0.000     -7.689    0.695   -0.309
+ CHY           H17    H    H         0.000     -7.416    0.555   -1.364
+ CHY           C18    C    CH1       0.000     -7.989    2.173   -0.053
+ CHY           H18    H    H         0.000     -8.171    2.332    1.019
+ CHY           N3     N    NH1       0.000     -6.849    2.993   -0.488
+ CHY           HN3    H    H         0.000     -5.965    2.572   -0.739
+ CHY           C21    C    C         0.000     -7.032    4.366   -0.542
+ CHY           N4     N    N         0.000     -6.124    5.197   -0.111
+ CHY           HN41   H    H         0.000     -6.265    6.147   -0.154
+ CHY           C19    C    CH2       0.000     -9.229    2.592   -0.853
+ CHY           H191   H    H         0.000    -10.101    2.046   -0.490
+ CHY           H192   H    H         0.000     -9.075    2.366   -1.911
+ CHY           C20    C    CH2       0.000     -9.456    4.098   -0.678
+ CHY           H201   H    H         0.000     -9.681    4.319    0.367
+ CHY           H202   H    H         0.000    -10.288    4.422   -1.305
+ CHY           N5     N    NH1       0.000     -8.231    4.808   -1.078
+ CHY           H41    H    H         0.000     -8.263    5.588   -1.719
+ CHY           N6     N    NH1       0.000     -8.876   -0.106   -0.001
+ CHY           HN6    H    H         0.000     -8.975   -0.533    0.909
+ CHY           C22    C    C         0.000     -9.836   -0.274   -0.932
+ CHY           O3     O    O         0.000     -9.716    0.240   -2.028
+ CHY           N7     N    NH1       0.000    -10.928   -1.011   -0.649
+ CHY           HN7    H    H         0.000    -11.028   -1.437    0.261
+ CHY           C23    C    CH1       0.000    -11.972   -1.193   -1.661
+ CHY           H23    H    H         0.000    -11.510   -1.251   -2.657
+ CHY           C24    C    C         0.000    -12.924   -0.026   -1.616
+ CHY           O4     O    OC       -0.500    -13.896    0.018   -2.403
+ CHY           O5     O    OC       -0.500    -12.744    0.897   -0.791
+ CHY           C25    C    CH2       0.000    -12.736   -2.487   -1.377
+ CHY           H251   H    H         0.000    -13.570   -2.578   -2.076
+ CHY           H252   H    H         0.000    -13.119   -2.466   -0.355
+ CHY           C26    C    CR6       0.000    -11.810   -3.664   -1.544
+ CHY           C31    C    CR16      0.000    -11.691   -4.283   -2.775
+ CHY           H31    H    H         0.000    -12.266   -3.924   -3.619
+ CHY           C30    C    CR16      0.000    -10.838   -5.360   -2.927
+ CHY           H30    H    H         0.000    -10.740   -5.840   -3.893
+ CHY           C29    C    CR16      0.000    -10.110   -5.824   -1.848
+ CHY           H29    H    H         0.000     -9.444   -6.670   -1.967
+ CHY           C28    C    CR16      0.000    -10.233   -5.210   -0.616
+ CHY           H28    H    H         0.000     -9.663   -5.573    0.230
+ CHY           C27    C    CR16      0.000    -11.083   -4.130   -0.464
+ CHY           H27    H    H         0.000    -11.180   -3.649    0.501
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CHY      O6     n/a    C9     START
+ CHY      C9     O6     C8     .
+ CHY      H9     C9     .      .
+ CHY      C8     C9     N1     .
+ CHY      H8     C8     .      .
+ CHY      C7     C8     C4     .
+ CHY      H71    C7     .      .
+ CHY      H72    C7     .      .
+ CHY      C4     C7     C5     .
+ CHY      C5     C4     C6     .
+ CHY      H5     C5     .      .
+ CHY      C6     C5     C1     .
+ CHY      H6     C6     .      .
+ CHY      C1     C6     C2     .
+ CHY      H1     C1     .      .
+ CHY      C2     C1     C3     .
+ CHY      H2     C2     .      .
+ CHY      C3     C2     H3     .
+ CHY      H3     C3     .      .
+ CHY      N1     C8     C10    .
+ CHY      HN1    N1     .      .
+ CHY      C10    N1     C11    .
+ CHY      O1     C10    .      .
+ CHY      C11    C10    N2     .
+ CHY      H11    C11    .      .
+ CHY      C12    C11    C13    .
+ CHY      H121   C12    .      .
+ CHY      H122   C12    .      .
+ CHY      C13    C12    C14    .
+ CHY      H13    C13    .      .
+ CHY      C15    C13    H151   .
+ CHY      H153   C15    .      .
+ CHY      H152   C15    .      .
+ CHY      H151   C15    .      .
+ CHY      C14    C13    H141   .
+ CHY      H143   C14    .      .
+ CHY      H142   C14    .      .
+ CHY      H141   C14    .      .
+ CHY      N2     C11    C16    .
+ CHY      HN2    N2     .      .
+ CHY      C16    N2     C17    .
+ CHY      O2     C16    .      .
+ CHY      C17    C16    N6     .
+ CHY      H17    C17    .      .
+ CHY      C18    C17    C19    .
+ CHY      H18    C18    .      .
+ CHY      N3     C18    C21    .
+ CHY      HN3    N3     .      .
+ CHY      C21    N3     N4     .
+ CHY      N4     C21    HN41   .
+ CHY      HN41   N4     .      .
+ CHY      C19    C18    C20    .
+ CHY      H191   C19    .      .
+ CHY      H192   C19    .      .
+ CHY      C20    C19    N5     .
+ CHY      H201   C20    .      .
+ CHY      H202   C20    .      .
+ CHY      N5     C20    H41    .
+ CHY      H41    N5     .      .
+ CHY      N6     C17    C22    .
+ CHY      HN6    N6     .      .
+ CHY      C22    N6     N7     .
+ CHY      O3     C22    .      .
+ CHY      N7     C22    C23    .
+ CHY      HN7    N7     .      .
+ CHY      C23    N7     C25    .
+ CHY      H23    C23    .      .
+ CHY      C24    C23    O5     .
+ CHY      O4     C24    .      .
+ CHY      O5     C24    .      .
+ CHY      C25    C23    C26    .
+ CHY      H251   C25    .      .
+ CHY      H252   C25    .      .
+ CHY      C26    C25    C31    .
+ CHY      C31    C26    C30    .
+ CHY      H31    C31    .      .
+ CHY      C30    C31    C29    .
+ CHY      H30    C30    .      .
+ CHY      C29    C30    C28    .
+ CHY      H29    C29    .      .
+ CHY      C28    C29    C27    .
+ CHY      H28    C28    .      .
+ CHY      C27    C28    H27    .
+ CHY      H27    C27    .      END
+ CHY      C26    C27    .    ADD
+ CHY      N5     C21    .    ADD
+ CHY      C4     C3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CHY       C2        C1        double    1.390     0.020     1.390     0.020     
+CHY       C1        C6        single    1.390     0.020     1.390     0.020     
+CHY       H1        C1        single    1.082     0.013     0.975     0.010     
+CHY       C3        C2        single    1.390     0.020     1.390     0.020     
+CHY       H2        C2        single    1.082     0.013     0.975     0.010     
+CHY       C4        C3        double    1.390     0.020     1.390     0.020     
+CHY       H3        C3        single    1.082     0.013     0.975     0.010     
+CHY       C5        C4        single    1.390     0.020     1.390     0.020     
+CHY       C4        C7        single    1.511     0.020     1.511     0.020     
+CHY       C6        C5        double    1.390     0.020     1.390     0.020     
+CHY       H5        C5        single    1.082     0.013     0.975     0.010     
+CHY       H6        C6        single    1.082     0.013     0.975     0.010     
+CHY       C7        C8        single    1.524     0.020     1.524     0.020     
+CHY       H71       C7        single    1.089     0.010     0.989     0.005     
+CHY       H72       C7        single    1.089     0.010     0.989     0.005     
+CHY       C8        C9        single    1.510     0.020     1.510     0.020     
+CHY       N1        C8        single    1.450     0.020     1.450     0.020     
+CHY       H8        C8        single    1.089     0.010     0.989     0.005     
+CHY       C9        O6        double    1.220     0.020     1.220     0.020     
+CHY       H9        C9        single    1.082     0.013     0.975     0.010     
+CHY       C11       C10       single    1.500     0.020     1.500     0.020     
+CHY       C10       N1        single    1.330     0.020     1.330     0.020     
+CHY       O1        C10       double    1.220     0.020     1.220     0.020     
+CHY       C12       C11       single    1.524     0.020     1.524     0.020     
+CHY       N2        C11       single    1.450     0.020     1.450     0.020     
+CHY       H11       C11       single    1.089     0.010     0.989     0.005     
+CHY       C13       C12       single    1.524     0.020     1.524     0.020     
+CHY       H121      C12       single    1.089     0.010     0.989     0.005     
+CHY       H122      C12       single    1.089     0.010     0.989     0.005     
+CHY       C14       C13       single    1.524     0.020     1.524     0.020     
+CHY       C15       C13       single    1.524     0.020     1.524     0.020     
+CHY       H13       C13       single    1.089     0.010     0.989     0.005     
+CHY       H141      C14       single    1.089     0.010     0.989     0.005     
+CHY       H142      C14       single    1.089     0.010     0.989     0.005     
+CHY       H143      C14       single    1.089     0.010     0.989     0.005     
+CHY       H151      C15       single    1.089     0.010     0.989     0.005     
+CHY       H152      C15       single    1.089     0.010     0.989     0.005     
+CHY       H153      C15       single    1.089     0.010     0.989     0.005     
+CHY       C17       C16       single    1.500     0.020     1.500     0.020     
+CHY       C16       N2        single    1.330     0.020     1.330     0.020     
+CHY       O2        C16       double    1.220     0.020     1.220     0.020     
+CHY       C18       C17       single    1.524     0.020     1.524     0.020     
+CHY       N6        C17       single    1.450     0.020     1.450     0.020     
+CHY       H17       C17       single    1.089     0.010     0.989     0.005     
+CHY       C19       C18       single    1.524     0.020     1.524     0.020     
+CHY       N3        C18       single    1.450     0.020     1.450     0.020     
+CHY       H18       C18       single    1.089     0.010     0.989     0.005     
+CHY       C20       C19       single    1.524     0.020     1.524     0.020     
+CHY       H191      C19       single    1.089     0.010     0.989     0.005     
+CHY       H192      C19       single    1.089     0.010     0.989     0.005     
+CHY       N5        C20       single    1.450     0.020     1.450     0.020     
+CHY       H201      C20       single    1.089     0.010     0.989     0.005     
+CHY       H202      C20       single    1.089     0.010     0.989     0.005     
+CHY       C21       N3        single    1.330     0.020     1.330     0.020     
+CHY       N4        C21       double    1.260     0.020     1.260     0.020     
+CHY       N5        C21       single    1.330     0.020     1.330     0.020     
+CHY       C22       N6        single    1.330     0.020     1.330     0.020     
+CHY       N7        C22       single    1.330     0.020     1.330     0.020     
+CHY       O3        C22       double    1.220     0.020     1.220     0.020     
+CHY       C24       C23       single    1.500     0.020     1.500     0.020     
+CHY       C25       C23       single    1.524     0.020     1.524     0.020     
+CHY       C23       N7        single    1.450     0.020     1.450     0.020     
+CHY       H23       C23       single    1.089     0.010     0.989     0.005     
+CHY       O4        C24       deloc     1.250     0.020     1.250     0.020     
+CHY       O5        C24       deloc     1.250     0.020     1.250     0.020     
+CHY       C26       C25       single    1.511     0.020     1.511     0.020     
+CHY       H251      C25       single    1.089     0.010     0.989     0.005     
+CHY       H252      C25       single    1.089     0.010     0.989     0.005     
+CHY       C26       C27       double    1.390     0.020     1.390     0.020     
+CHY       C31       C26       single    1.390     0.020     1.390     0.020     
+CHY       C27       C28       single    1.390     0.020     1.390     0.020     
+CHY       H27       C27       single    1.082     0.013     0.975     0.010     
+CHY       C28       C29       double    1.390     0.020     1.390     0.020     
+CHY       H28       C28       single    1.082     0.013     0.975     0.010     
+CHY       C29       C30       single    1.390     0.020     1.390     0.020     
+CHY       H29       C29       single    1.082     0.013     0.975     0.010     
+CHY       C30       C31       double    1.390     0.020     1.390     0.020     
+CHY       H30       C30       single    1.082     0.013     0.975     0.010     
+CHY       H31       C31       single    1.082     0.013     0.975     0.010     
+CHY       HN1       N1        single    1.016     0.010     0.899     0.007     
+CHY       HN2       N2        single    1.016     0.010     0.899     0.007     
+CHY       HN3       N3        single    1.016     0.010     0.899     0.007     
+CHY       HN41      N4        single    1.016     0.010     0.899     0.007     
+CHY       HN6       N6        single    1.016     0.010     0.899     0.007     
+CHY       HN7       N7        single    1.016     0.010     0.899     0.007     
+CHY       H41       N5        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CHY      O6     C9     H9      123.000    3.000
+ CHY      O6     C9     C8      120.500    3.000
+ CHY      H9     C9     C8      120.000    3.000
+ CHY      C9     C8     H8      108.810    3.000
+ CHY      C9     C8     C7      109.470    3.000
+ CHY      C9     C8     N1      111.600    3.000
+ CHY      H8     C8     C7      108.340    3.000
+ CHY      H8     C8     N1      108.550    3.000
+ CHY      C7     C8     N1      110.000    3.000
+ CHY      C8     C7     H71     109.470    3.000
+ CHY      C8     C7     H72     109.470    3.000
+ CHY      C8     C7     C4      109.470    3.000
+ CHY      H71    C7     H72     107.900    3.000
+ CHY      H71    C7     C4      109.470    3.000
+ CHY      H72    C7     C4      109.470    3.000
+ CHY      C7     C4     C5      120.000    3.000
+ CHY      C7     C4     C3      120.000    3.000
+ CHY      C5     C4     C3      120.000    3.000
+ CHY      C4     C5     H5      120.000    3.000
+ CHY      C4     C5     C6      120.000    3.000
+ CHY      H5     C5     C6      120.000    3.000
+ CHY      C5     C6     H6      120.000    3.000
+ CHY      C5     C6     C1      120.000    3.000
+ CHY      H6     C6     C1      120.000    3.000
+ CHY      C6     C1     H1      120.000    3.000
+ CHY      C6     C1     C2      120.000    3.000
+ CHY      H1     C1     C2      120.000    3.000
+ CHY      C1     C2     H2      120.000    3.000
+ CHY      C1     C2     C3      120.000    3.000
+ CHY      H2     C2     C3      120.000    3.000
+ CHY      C2     C3     H3      120.000    3.000
+ CHY      C2     C3     C4      120.000    3.000
+ CHY      H3     C3     C4      120.000    3.000
+ CHY      C8     N1     HN1     118.500    3.000
+ CHY      C8     N1     C10     121.500    3.000
+ CHY      HN1    N1     C10     120.000    3.000
+ CHY      N1     C10    O1      123.000    3.000
+ CHY      N1     C10    C11     116.500    3.000
+ CHY      O1     C10    C11     120.500    3.000
+ CHY      C10    C11    H11     108.810    3.000
+ CHY      C10    C11    C12     109.470    3.000
+ CHY      C10    C11    N2      111.600    3.000
+ CHY      H11    C11    C12     108.340    3.000
+ CHY      H11    C11    N2      108.550    3.000
+ CHY      C12    C11    N2      110.000    3.000
+ CHY      C11    C12    H121    109.470    3.000
+ CHY      C11    C12    H122    109.470    3.000
+ CHY      C11    C12    C13     111.000    3.000
+ CHY      H121   C12    H122    107.900    3.000
+ CHY      H121   C12    C13     109.470    3.000
+ CHY      H122   C12    C13     109.470    3.000
+ CHY      C12    C13    H13     108.340    3.000
+ CHY      C12    C13    C15     111.000    3.000
+ CHY      C12    C13    C14     111.000    3.000
+ CHY      H13    C13    C15     108.340    3.000
+ CHY      H13    C13    C14     108.340    3.000
+ CHY      C15    C13    C14     111.000    3.000
+ CHY      C13    C15    H153    109.470    3.000
+ CHY      C13    C15    H152    109.470    3.000
+ CHY      C13    C15    H151    109.470    3.000
+ CHY      H153   C15    H152    109.470    3.000
+ CHY      H153   C15    H151    109.470    3.000
+ CHY      H152   C15    H151    109.470    3.000
+ CHY      C13    C14    H143    109.470    3.000
+ CHY      C13    C14    H142    109.470    3.000
+ CHY      C13    C14    H141    109.470    3.000
+ CHY      H143   C14    H142    109.470    3.000
+ CHY      H143   C14    H141    109.470    3.000
+ CHY      H142   C14    H141    109.470    3.000
+ CHY      C11    N2     HN2     118.500    3.000
+ CHY      C11    N2     C16     121.500    3.000
+ CHY      HN2    N2     C16     120.000    3.000
+ CHY      N2     C16    O2      123.000    3.000
+ CHY      N2     C16    C17     116.500    3.000
+ CHY      O2     C16    C17     120.500    3.000
+ CHY      C16    C17    H17     108.810    3.000
+ CHY      C16    C17    C18     109.470    3.000
+ CHY      C16    C17    N6      111.600    3.000
+ CHY      H17    C17    C18     108.340    3.000
+ CHY      H17    C17    N6      108.550    3.000
+ CHY      C18    C17    N6      110.000    3.000
+ CHY      C17    C18    H18     108.340    3.000
+ CHY      C17    C18    N3      110.000    3.000
+ CHY      C17    C18    C19     111.000    3.000
+ CHY      H18    C18    N3      108.550    3.000
+ CHY      H18    C18    C19     108.340    3.000
+ CHY      N3     C18    C19     110.000    3.000
+ CHY      C18    N3     HN3     118.500    3.000
+ CHY      C18    N3     C21     121.500    3.000
+ CHY      HN3    N3     C21     120.000    3.000
+ CHY      N3     C21    N4      120.000    3.000
+ CHY      N3     C21    N5      120.000    3.000
+ CHY      N4     C21    N5      120.000    3.000
+ CHY      C21    N4     HN41    120.000    3.000
+ CHY      C18    C19    H191    109.470    3.000
+ CHY      C18    C19    H192    109.470    3.000
+ CHY      C18    C19    C20     111.000    3.000
+ CHY      H191   C19    H192    107.900    3.000
+ CHY      H191   C19    C20     109.470    3.000
+ CHY      H192   C19    C20     109.470    3.000
+ CHY      C19    C20    H201    109.470    3.000
+ CHY      C19    C20    H202    109.470    3.000
+ CHY      C19    C20    N5      112.000    3.000
+ CHY      H201   C20    H202    107.900    3.000
+ CHY      H201   C20    N5      109.470    3.000
+ CHY      H202   C20    N5      109.470    3.000
+ CHY      C20    N5     H41     118.500    3.000
+ CHY      C20    N5     C21     121.500    3.000
+ CHY      H41    N5     C21     120.000    3.000
+ CHY      C17    N6     HN6     118.500    3.000
+ CHY      C17    N6     C22     121.500    3.000
+ CHY      HN6    N6     C22     120.000    3.000
+ CHY      N6     C22    O3      123.000    3.000
+ CHY      N6     C22    N7      120.000    3.000
+ CHY      O3     C22    N7      123.000    3.000
+ CHY      C22    N7     HN7     120.000    3.000
+ CHY      C22    N7     C23     121.500    3.000
+ CHY      HN7    N7     C23     118.500    3.000
+ CHY      N7     C23    H23     108.550    3.000
+ CHY      N7     C23    C24     111.600    3.000
+ CHY      N7     C23    C25     110.000    3.000
+ CHY      H23    C23    C24     108.810    3.000
+ CHY      H23    C23    C25     108.340    3.000
+ CHY      C24    C23    C25     109.470    3.000
+ CHY      C23    C24    O4      118.500    3.000
+ CHY      C23    C24    O5      118.500    3.000
+ CHY      O4     C24    O5      123.000    3.000
+ CHY      C23    C25    H251    109.470    3.000
+ CHY      C23    C25    H252    109.470    3.000
+ CHY      C23    C25    C26     109.470    3.000
+ CHY      H251   C25    H252    107.900    3.000
+ CHY      H251   C25    C26     109.470    3.000
+ CHY      H252   C25    C26     109.470    3.000
+ CHY      C25    C26    C31     120.000    3.000
+ CHY      C25    C26    C27     120.000    3.000
+ CHY      C31    C26    C27     120.000    3.000
+ CHY      C26    C31    H31     120.000    3.000
+ CHY      C26    C31    C30     120.000    3.000
+ CHY      H31    C31    C30     120.000    3.000
+ CHY      C31    C30    H30     120.000    3.000
+ CHY      C31    C30    C29     120.000    3.000
+ CHY      H30    C30    C29     120.000    3.000
+ CHY      C30    C29    H29     120.000    3.000
+ CHY      C30    C29    C28     120.000    3.000
+ CHY      H29    C29    C28     120.000    3.000
+ CHY      C29    C28    H28     120.000    3.000
+ CHY      C29    C28    C27     120.000    3.000
+ CHY      H28    C28    C27     120.000    3.000
+ CHY      C28    C27    H27     120.000    3.000
+ CHY      C28    C27    C26     120.000    3.000
+ CHY      H27    C27    C26     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CHY      var_1    O6     C9     C8     N1        -0.023   20.000   1
+ CHY      var_2    C9     C8     C7     C4       174.982   20.000   3
+ CHY      var_3    C8     C7     C4     C5       -90.040   20.000   2
+ CHY      CONST_1  C7     C4     C3     C2       180.000    0.000   0
+ CHY      CONST_2  C7     C4     C5     C6       180.000    0.000   0
+ CHY      CONST_3  C4     C5     C6     C1         0.000    0.000   0
+ CHY      CONST_4  C5     C6     C1     C2         0.000    0.000   0
+ CHY      CONST_5  C6     C1     C2     C3         0.000    0.000   0
+ CHY      CONST_6  C1     C2     C3     C4         0.000    0.000   0
+ CHY      var_4    C9     C8     N1     C10      -84.993   20.000   3
+ CHY      CONST_7  C8     N1     C10    C11      180.000    0.000   0
+ CHY      var_5    N1     C10    C11    N2       160.722   20.000   3
+ CHY      var_6    C10    C11    C12    C13       59.844   20.000   3
+ CHY      var_7    C11    C12    C13    C14       66.923   20.000   3
+ CHY      var_8    C12    C13    C15    H151      60.009   20.000   3
+ CHY      var_9    C12    C13    C14    H141     -56.241   20.000   3
+ CHY      var_10   C10    C11    N2     C16     -157.572   20.000   3
+ CHY      CONST_8  C11    N2     C16    C17      180.000    0.000   0
+ CHY      var_11   N2     C16    C17    N6       158.621   20.000   3
+ CHY      var_12   C16    C17    C18    C19     -175.154   20.000   3
+ CHY      var_13   C17    C18    N3     C21      180.000   20.000   3
+ CHY      CONST_9  C18    N3     C21    N4       150.000    0.000   0
+ CHY      CONST_10 N3     C21    N4     HN41     180.000    0.000   0
+ CHY      var_14   C17    C18    C19    C20      180.000   20.000   3
+ CHY      var_15   C18    C19    C20    N5        60.000   20.000   3
+ CHY      var_16   C19    C20    N5     C21      -60.000   20.000   3
+ CHY      CONST_11 C20    N5     C21    N3        30.000    0.000   0
+ CHY      var_17   C16    C17    N6     C22     -155.024   20.000   3
+ CHY      CONST_12 C17    N6     C22    N7       180.000    0.000   0
+ CHY      CONST_13 N6     C22    N7     C23      180.000    0.000   0
+ CHY      var_18   C22    N7     C23    C25      155.009   20.000   3
+ CHY      var_19   N7     C23    C24    O5        -0.008   20.000   3
+ CHY      var_20   N7     C23    C25    C26      -65.065   20.000   3
+ CHY      var_21   C23    C25    C26    C31      -90.230   20.000   2
+ CHY      CONST_14 C25    C26    C27    C28      180.000    0.000   0
+ CHY      CONST_15 C25    C26    C31    C30      180.000    0.000   0
+ CHY      CONST_16 C26    C31    C30    C29        0.000    0.000   0
+ CHY      CONST_17 C31    C30    C29    C28        0.000    0.000   0
+ CHY      CONST_18 C30    C29    C28    C27        0.000    0.000   0
+ CHY      CONST_19 C29    C28    C27    C26        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CHY      chir_01  C23    N7     C24    C25       positiv
+ CHY      chir_02  C18    C19    N3     C17       positiv
+ CHY      chir_03  C17    C18    N6     C16       positiv
+ CHY      chir_04  C11    N2     C10    C12       positiv
+ CHY      chir_05  C13    C12    C14    C15       negativ
+ CHY      chir_06  C8     N1     C9     C7        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CHY      plan-1    N7        0.020
+ CHY      plan-1    C23       0.020
+ CHY      plan-1    C22       0.020
+ CHY      plan-1    HN7       0.020
+ CHY      plan-2    C24       0.020
+ CHY      plan-2    C23       0.020
+ CHY      plan-2    O5        0.020
+ CHY      plan-2    O4        0.020
+ CHY      plan-3    C26       0.020
+ CHY      plan-3    C25       0.020
+ CHY      plan-3    C27       0.020
+ CHY      plan-3    C31       0.020
+ CHY      plan-3    C28       0.020
+ CHY      plan-3    C30       0.020
+ CHY      plan-3    C29       0.020
+ CHY      plan-3    H27       0.020
+ CHY      plan-3    H31       0.020
+ CHY      plan-3    H28       0.020
+ CHY      plan-3    H30       0.020
+ CHY      plan-3    H29       0.020
+ CHY      plan-4    N5        0.020
+ CHY      plan-4    C21       0.020
+ CHY      plan-4    C20       0.020
+ CHY      plan-4    H41       0.020
+ CHY      plan-5    C21       0.020
+ CHY      plan-5    N5        0.020
+ CHY      plan-5    N4        0.020
+ CHY      plan-5    N3        0.020
+ CHY      plan-5    HN41      0.020
+ CHY      plan-5    H41       0.020
+ CHY      plan-5    HN3       0.020
+ CHY      plan-6    N3        0.020
+ CHY      plan-6    C21       0.020
+ CHY      plan-6    C18       0.020
+ CHY      plan-6    HN3       0.020
+ CHY      plan-7    N6        0.020
+ CHY      plan-7    C17       0.020
+ CHY      plan-7    C22       0.020
+ CHY      plan-7    HN6       0.020
+ CHY      plan-8    C16       0.020
+ CHY      plan-8    C17       0.020
+ CHY      plan-8    O2        0.020
+ CHY      plan-8    N2        0.020
+ CHY      plan-8    HN2       0.020
+ CHY      plan-9    C22       0.020
+ CHY      plan-9    N7        0.020
+ CHY      plan-9    N6        0.020
+ CHY      plan-9    O3        0.020
+ CHY      plan-9    HN7       0.020
+ CHY      plan-9    HN6       0.020
+ CHY      plan-10   N2        0.020
+ CHY      plan-10   C16       0.020
+ CHY      plan-10   C11       0.020
+ CHY      plan-10   HN2       0.020
+ CHY      plan-11   C10       0.020
+ CHY      plan-11   C11       0.020
+ CHY      plan-11   O1        0.020
+ CHY      plan-11   N1        0.020
+ CHY      plan-11   HN1       0.020
+ CHY      plan-12   N1        0.020
+ CHY      plan-12   C10       0.020
+ CHY      plan-12   C8        0.020
+ CHY      plan-12   HN1       0.020
+ CHY      plan-13   C9        0.020
+ CHY      plan-13   C8        0.020
+ CHY      plan-13   O6        0.020
+ CHY      plan-13   H9        0.020
+ CHY      plan-14   C4        0.020
+ CHY      plan-14   C7        0.020
+ CHY      plan-14   C3        0.020
+ CHY      plan-14   C5        0.020
+ CHY      plan-14   C2        0.020
+ CHY      plan-14   C6        0.020
+ CHY      plan-14   C1        0.020
+ CHY      plan-14   H3        0.020
+ CHY      plan-14   H5        0.020
+ CHY      plan-14   H2        0.020
+ CHY      plan-14   H6        0.020
+ CHY      plan-14   H1        0.020
+# ------------------------------------------------------

@@ -1,0 +1,306 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CRK      CRK '"4-{(Z)-[2-[3-(METHYLSULFANYL)PROPAN' non-polymer        38  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CRK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CRK           OH     O    O        -1.000      0.000    0.000    0.000
+ CRK           CZ     C    CR6       0.000     -1.233   -0.553   -0.113
+ CRK           CE2    C    CR16      0.000     -1.364   -1.871   -0.542
+ CRK           HE2    H    H         0.000     -0.483   -2.450   -0.789
+ CRK           CE1    C    CR16      0.000     -2.362    0.199    0.202
+ CRK           HE1    H    H         0.000     -2.252    1.224    0.535
+ CRK           CD1    C    CR16      0.000     -3.605   -0.351    0.090
+ CRK           HD1    H    H         0.000     -4.482    0.236    0.334
+ CRK           CG2    C    CR6       0.000     -3.745   -1.680   -0.342
+ CRK           CD2    C    CR16      0.000     -2.603   -2.436   -0.652
+ CRK           HD2    H    H         0.000     -2.704   -3.464   -0.977
+ CRK           CB2    C    C1        0.000     -5.035   -2.258   -0.460
+ CRK           HB2    H    H         0.000     -5.137   -3.311   -0.661
+ CRK           CA2    C    CR5       0.000     -6.166   -1.467   -0.316
+ CRK           N2     N    NRD5      0.000     -6.203   -0.127   -0.180
+ CRK           C2     C    CR5       0.000     -7.567   -1.925   -0.280
+ CRK           O2     O    O         0.000     -7.971   -3.071   -0.370
+ CRK           N3     N    NR5       0.000     -8.307   -0.806   -0.119
+ CRK           CA3    C    CH2       0.000     -9.769   -0.745   -0.025
+ CRK           HA31   H    H         0.000    -10.205   -1.562   -0.604
+ CRK           HA32   H    H         0.000    -10.119    0.210   -0.425
+ CRK           C3     C    C1        0.000    -10.185   -0.870    1.417
+ CRK           H3     H    H         0.000     -9.857   -1.714    2.001
+ CRK           O3     O    O         0.000    -10.887   -0.025    1.919
+ CRK           C1     C    CR5       0.000     -7.444    0.270   -0.068
+ CRK           CA1    C    C         0.000     -7.861    1.667    0.096
+ CRK           O1     O    O         0.000     -9.039    1.941    0.191
+ CRK           CB     C    CH2       0.000     -6.826    2.762    0.144
+ CRK           HB1    H    H         0.000     -6.255    2.763   -0.787
+ CRK           HB2A   H    H         0.000     -6.151    2.588    0.984
+ CRK           CG     C    CH2       0.000     -7.522    4.114    0.318
+ CRK           HG1    H    H         0.000     -8.094    4.110    1.248
+ CRK           HG2    H    H         0.000     -8.197    4.286   -0.522
+ CRK           SD     S    S2        0.000     -6.277    5.431    0.377
+ CRK           CE     C    CH3       0.000     -7.355    6.875    0.584
+ CRK           HE3    H    H         0.000     -7.922    6.781    1.478
+ CRK           HE2A   H    H         0.000     -6.771    7.761    0.638
+ CRK           HE1A   H    H         0.000     -8.022    6.952   -0.240
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CRK      OH     n/a    CZ     START
+ CRK      CZ     OH     CE1    .
+ CRK      CE2    CZ     HE2    .
+ CRK      HE2    CE2    .      .
+ CRK      CE1    CZ     CD1    .
+ CRK      HE1    CE1    .      .
+ CRK      CD1    CE1    CG2    .
+ CRK      HD1    CD1    .      .
+ CRK      CG2    CD1    CB2    .
+ CRK      CD2    CG2    HD2    .
+ CRK      HD2    CD2    .      .
+ CRK      CB2    CG2    CA2    .
+ CRK      HB2    CB2    .      .
+ CRK      CA2    CB2    C2     .
+ CRK      N2     CA2    .      .
+ CRK      C2     CA2    N3     .
+ CRK      O2     C2     .      .
+ CRK      N3     C2     C1     .
+ CRK      CA3    N3     C3     .
+ CRK      HA31   CA3    .      .
+ CRK      HA32   CA3    .      .
+ CRK      C3     CA3    O3     .
+ CRK      H3     C3     .      .
+ CRK      O3     C3     .      .
+ CRK      C1     N3     CA1    .
+ CRK      CA1    C1     CB     .
+ CRK      O1     CA1    .      .
+ CRK      CB     CA1    CG     .
+ CRK      HB1    CB     .      .
+ CRK      HB2A   CB     .      .
+ CRK      CG     CB     SD     .
+ CRK      HG1    CG     .      .
+ CRK      HG2    CG     .      .
+ CRK      SD     CG     CE     .
+ CRK      CE     SD     HE1A   .
+ CRK      HE3    CE     .      .
+ CRK      HE2A   CE     .      .
+ CRK      HE1A   CE     .      END
+ CRK      C1     N2     .    ADD
+ CRK      CD2    CE2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CRK       CA1       C1        single    1.490     0.020     1.490     0.020     
+CRK       C1        N2        double    1.350     0.020     1.350     0.020     
+CRK       C1        N3        single    1.337     0.020     1.337     0.020     
+CRK       C2        CA2       single    1.490     0.020     1.490     0.020     
+CRK       N3        C2        single    1.337     0.020     1.337     0.020     
+CRK       O2        C2        double    1.285     0.020     1.285     0.020     
+CRK       C3        CA3       single    1.510     0.020     1.510     0.020     
+CRK       O3        C3        double    1.220     0.020     1.220     0.020     
+CRK       H3        C3        single    1.082     0.013     0.975     0.010     
+CRK       CB        CA1       single    1.510     0.020     1.510     0.020     
+CRK       O1        CA1       double    1.220     0.020     1.220     0.020     
+CRK       CA2       CB2       double    1.483     0.020     1.483     0.020     
+CRK       N2        CA2       single    1.350     0.020     1.350     0.020     
+CRK       CA3       N3        single    1.462     0.020     1.462     0.020     
+CRK       HA31      CA3       single    1.089     0.010     0.989     0.005     
+CRK       HA32      CA3       single    1.089     0.010     0.989     0.005     
+CRK       CG        CB        single    1.524     0.020     1.524     0.020     
+CRK       HB1       CB        single    1.089     0.010     0.989     0.005     
+CRK       HB2A      CB        single    1.089     0.010     0.989     0.005     
+CRK       CB2       CG2       single    1.480     0.020     1.480     0.020     
+CRK       HB2       CB2       single    1.082     0.013     0.975     0.010     
+CRK       CD2       CE2       double    1.390     0.020     1.390     0.020     
+CRK       CD2       CG2       single    1.390     0.020     1.390     0.020     
+CRK       HD2       CD2       single    1.082     0.013     0.975     0.010     
+CRK       CD1       CE1       single    1.390     0.020     1.390     0.020     
+CRK       CG2       CD1       double    1.390     0.020     1.390     0.020     
+CRK       HD1       CD1       single    1.082     0.013     0.975     0.010     
+CRK       CE        SD        single    1.762     0.020     1.762     0.020     
+CRK       HE1A      CE        single    1.089     0.010     0.989     0.005     
+CRK       HE2A      CE        single    1.089     0.010     0.989     0.005     
+CRK       HE3       CE        single    1.089     0.010     0.989     0.005     
+CRK       CE2       CZ        single    1.390     0.020     1.390     0.020     
+CRK       HE2       CE2       single    1.082     0.013     0.975     0.010     
+CRK       CE1       CZ        double    1.390     0.020     1.390     0.020     
+CRK       HE1       CE1       single    1.082     0.013     0.975     0.010     
+CRK       SD        CG        single    1.762     0.020     1.762     0.020     
+CRK       HG1       CG        single    1.089     0.010     0.989     0.005     
+CRK       HG2       CG        single    1.089     0.010     0.989     0.005     
+CRK       CZ        OH        single    1.330     0.020     1.330     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CRK      OH     CZ     CE2     120.000    3.000
+ CRK      OH     CZ     CE1     120.000    3.000
+ CRK      CE2    CZ     CE1     120.000    3.000
+ CRK      CZ     CE2    HE2     120.000    3.000
+ CRK      CZ     CE2    CD2     120.000    3.000
+ CRK      HE2    CE2    CD2     120.000    3.000
+ CRK      CZ     CE1    HE1     120.000    3.000
+ CRK      CZ     CE1    CD1     120.000    3.000
+ CRK      HE1    CE1    CD1     120.000    3.000
+ CRK      CE1    CD1    HD1     120.000    3.000
+ CRK      CE1    CD1    CG2     120.000    3.000
+ CRK      HD1    CD1    CG2     120.000    3.000
+ CRK      CD1    CG2    CD2     120.000    3.000
+ CRK      CD1    CG2    CB2     120.000    3.000
+ CRK      CD2    CG2    CB2     120.000    3.000
+ CRK      CG2    CD2    HD2     120.000    3.000
+ CRK      CG2    CD2    CE2     120.000    3.000
+ CRK      HD2    CD2    CE2     120.000    3.000
+ CRK      CG2    CB2    HB2     120.000    3.000
+ CRK      CG2    CB2    CA2     120.000    3.000
+ CRK      HB2    CB2    CA2     120.000    3.000
+ CRK      CB2    CA2    N2      108.000    3.000
+ CRK      CB2    CA2    C2      117.000    3.000
+ CRK      N2     CA2    C2      108.000    3.000
+ CRK      CA2    N2     C1      108.000    3.000
+ CRK      CA2    C2     O2      108.000    3.000
+ CRK      CA2    C2     N3      108.000    3.000
+ CRK      O2     C2     N3      108.000    3.000
+ CRK      C2     N3     CA3     126.000    3.000
+ CRK      C2     N3     C1      108.000    3.000
+ CRK      CA3    N3     C1      126.000    3.000
+ CRK      N3     CA3    HA31    109.500    3.000
+ CRK      N3     CA3    HA32    109.500    3.000
+ CRK      N3     CA3    C3      109.500    3.000
+ CRK      HA31   CA3    HA32    107.900    3.000
+ CRK      HA31   CA3    C3      109.470    3.000
+ CRK      HA32   CA3    C3      109.470    3.000
+ CRK      CA3    C3     H3      120.000    3.000
+ CRK      CA3    C3     O3      120.500    3.000
+ CRK      H3     C3     O3      123.000    3.000
+ CRK      N3     C1     CA1     126.000    3.000
+ CRK      N3     C1     N2      108.000    3.000
+ CRK      CA1    C1     N2      126.000    3.000
+ CRK      C1     CA1    O1      120.500    3.000
+ CRK      C1     CA1    CB      116.500    3.000
+ CRK      O1     CA1    CB      120.500    3.000
+ CRK      CA1    CB     HB1     109.470    3.000
+ CRK      CA1    CB     HB2A    109.470    3.000
+ CRK      CA1    CB     CG      109.470    3.000
+ CRK      HB1    CB     HB2A    107.900    3.000
+ CRK      HB1    CB     CG      109.470    3.000
+ CRK      HB2A   CB     CG      109.470    3.000
+ CRK      CB     CG     HG1     109.470    3.000
+ CRK      CB     CG     HG2     109.470    3.000
+ CRK      CB     CG     SD      109.500    3.000
+ CRK      HG1    CG     HG2     107.900    3.000
+ CRK      HG1    CG     SD      109.500    3.000
+ CRK      HG2    CG     SD      109.500    3.000
+ CRK      CG     SD     CE      100.000    3.000
+ CRK      SD     CE     HE3     109.500    3.000
+ CRK      SD     CE     HE2A    109.500    3.000
+ CRK      SD     CE     HE1A    109.500    3.000
+ CRK      HE3    CE     HE2A    109.470    3.000
+ CRK      HE3    CE     HE1A    109.470    3.000
+ CRK      HE2A   CE     HE1A    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CRK      CONST_1  OH     CZ     CE2    CD2      180.000    0.000   0
+ CRK      CONST_2  OH     CZ     CE1    CD1      180.000    0.000   0
+ CRK      CONST_3  CZ     CE1    CD1    CG2        0.000    0.000   0
+ CRK      CONST_4  CE1    CD1    CG2    CB2      180.000    0.000   0
+ CRK      CONST_5  CD1    CG2    CD2    CE2        0.000    0.000   0
+ CRK      CONST_6  CG2    CD2    CE2    CZ         0.000    0.000   0
+ CRK      var_1    CD1    CG2    CB2    CA2        8.273   20.000   1
+ CRK      CONST_7  CG2    CB2    CA2    C2      -173.712    0.000   0
+ CRK      CONST_8  CB2    CA2    N2     C1       180.000    0.000   0
+ CRK      CONST_9  CB2    CA2    C2     N3       180.000    0.000   0
+ CRK      CONST_10 CA2    C2     N3     C1         0.000    0.000   0
+ CRK      var_2    C2     N3     CA3    C3        90.036   20.000   1
+ CRK      var_3    N3     CA3    C3     O3       125.029   20.000   1
+ CRK      CONST_11 C2     N3     C1     CA1      180.000    0.000   0
+ CRK      CONST_12 N3     C1     N2     CA2        0.000    0.000   0
+ CRK      var_4    N3     C1     CA1    CB       179.697   20.000   1
+ CRK      var_5    C1     CA1    CB     CG       179.953   20.000   3
+ CRK      var_6    CA1    CB     CG     SD       179.968   20.000   3
+ CRK      var_7    CB     CG     SD     CE      -179.979   20.000   1
+ CRK      var_8    CG     SD     CE     HE1A     -60.005   20.000   1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CRK      plan-1    C1        0.020
+ CRK      plan-1    CA1       0.020
+ CRK      plan-1    N2        0.020
+ CRK      plan-1    N3        0.020
+ CRK      plan-1    C2        0.020
+ CRK      plan-1    CA2       0.020
+ CRK      plan-1    O2        0.020
+ CRK      plan-1    CB2       0.020
+ CRK      plan-1    CG2       0.020
+ CRK      plan-1    HB2       0.020
+ CRK      plan-1    CA3       0.020
+ CRK      plan-2    C3        0.020
+ CRK      plan-2    CA3       0.020
+ CRK      plan-2    O3        0.020
+ CRK      plan-2    H3        0.020
+ CRK      plan-3    CA1       0.020
+ CRK      plan-3    C1        0.020
+ CRK      plan-3    CB        0.020
+ CRK      plan-3    O1        0.020
+ CRK      plan-4    CD2       0.020
+ CRK      plan-4    CE2       0.020
+ CRK      plan-4    CG2       0.020
+ CRK      plan-4    HD2       0.020
+ CRK      plan-4    CD1       0.020
+ CRK      plan-4    CE1       0.020
+ CRK      plan-4    CZ        0.020
+ CRK      plan-4    HD1       0.020
+ CRK      plan-4    HE2       0.020
+ CRK      plan-4    HE1       0.020
+ CRK      plan-4    CB2       0.020
+ CRK      plan-4    OH        0.020
+ CRK      plan-4    HB2       0.020
+# ------------------------------------------------------

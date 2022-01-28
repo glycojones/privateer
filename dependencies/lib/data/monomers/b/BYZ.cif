@@ -1,0 +1,117 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BYZ     BYZ     4-bromo-1H-pyrazole     NON-POLYMER     9     6     .     
+#
+data_comp_BYZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BYZ     BR4     BR      BR      0       15.329      10.765      -29.199     
+BYZ     C4      C       CR5     0       14.689      11.600      -30.741     
+BYZ     C5      C       CR15    0       13.948      12.739      -30.755     
+BYZ     N1      N       NR5     0       13.685      13.018      -32.036     
+BYZ     N2      N       NRD5    0       14.231      12.098      -32.856     
+BYZ     C3      C       CR15    0       14.849      11.224      -32.068     
+BYZ     H1      H       H       0       13.666      13.245      -30.008     
+BYZ     H2      H       H       0       13.214      13.715      -32.332     
+BYZ     H3      H       H       0       15.320      10.467      -32.379     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BYZ       N2        C3        DOUBLE    y         1.327     0.013     1.327     0.013     
+BYZ       N1        N2        SINGLE    y         1.346     0.010     1.346     0.010     
+BYZ       C4        C3        SINGLE    y         1.389     0.015     1.389     0.015     
+BYZ       C5        N1        SINGLE    y         1.338     0.010     1.338     0.010     
+BYZ       C4        C5        DOUBLE    y         1.366     0.019     1.366     0.019     
+BYZ       BR4       C4        SINGLE    n         1.867     0.012     1.867     0.012     
+BYZ       C5        H1        SINGLE    n         1.082     0.013     0.945     0.019     
+BYZ       N1        H2        SINGLE    n         1.016     0.010     0.892     0.020     
+BYZ       C3        H3        SINGLE    n         1.082     0.013     0.944     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BYZ          C3          C4          C5     106.859    1.50
+BYZ          C3          C4         BR4     128.568    2.81
+BYZ          C5          C4         BR4     124.573    1.90
+BYZ          N1          C5          C4     107.493    1.50
+BYZ          N1          C5          H1     125.635    1.72
+BYZ          C4          C5          H1     126.872    1.57
+BYZ          N2          N1          C5     111.020    1.50
+BYZ          N2          N1          H2     123.144    2.09
+BYZ          C5          N1          H2     125.836    2.30
+BYZ          C3          N2          N1     105.264    1.50
+BYZ          N2          C3          C4     109.364    1.50
+BYZ          N2          C3          H3     124.399    2.33
+BYZ          C4          C3          H3     126.236    2.40
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BYZ              const_15         BR4          C4          C5          N1     180.000   10.00     2
+BYZ       const_sp2_sp2_2          N2          C3          C4         BR4     180.000   10.00     2
+BYZ       const_sp2_sp2_9          C4          C5          N1          N2       0.000   10.00     2
+BYZ       const_sp2_sp2_7          C5          N1          N2          C3       0.000   10.00     2
+BYZ       const_sp2_sp2_5          C4          C3          N2          N1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BYZ    plan-1         BR4   0.020
+BYZ    plan-1          C3   0.020
+BYZ    plan-1          C4   0.020
+BYZ    plan-1          C5   0.020
+BYZ    plan-1          H1   0.020
+BYZ    plan-1          H2   0.020
+BYZ    plan-1          H3   0.020
+BYZ    plan-1          N1   0.020
+BYZ    plan-1          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BYZ SMILES           ACDLabs              12.01 Brc1cnnc1
+BYZ InChI            InChI                1.03  "InChI=1S/C3H3BrN2/c4-3-1-5-6-2-3/h1-2H,(H,5,6)"
+BYZ InChIKey         InChI                1.03  WVGCPEDBFHEHEZ-UHFFFAOYSA-N
+BYZ SMILES_CANONICAL CACTVS               3.370 "Brc1c[nH]nc1"
+BYZ SMILES           CACTVS               3.370 "Brc1c[nH]nc1"
+BYZ SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1c(cn[nH]1)Br"
+BYZ SMILES           "OpenEye OEToolkits" 1.7.6 "c1c(cn[nH]1)Br"
+BYZ ?                acedrg               190         "dictionary generator"                  
+BYZ ?                acedrg_database      11          "data source"                           
+BYZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BYZ ?                refmac5              5.8.0158    "optimization tool"                     

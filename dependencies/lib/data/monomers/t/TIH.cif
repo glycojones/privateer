@@ -1,0 +1,209 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TIH     TIH     "BETA(2-THIENYL)ALANINE"     peptide     20     11     .
+#
+data_comp_TIH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TIH     N       N       NT3     1       -1.474      0.700       1.143
+TIH     CA      C       CH1     0       -1.389      0.600       -0.341
+TIH     C       C       C       0       -2.801      0.520       -0.937
+TIH     O       O       O       0       -3.215      1.519       -1.560
+TIH     OXT     O       OC      -1      -3.436      -0.538      -0.754
+TIH     CB      C       CH2     0       -0.536      -0.605      -0.761
+TIH     CG      C       CR5     0       0.915       -0.464      -0.395
+TIH     CD      C       CR15    0       1.617       -1.121      0.561
+TIH     CE1     C       CR15    0       2.971       -0.692      0.610
+TIH     CE2     C       CR15    0       3.250       0.288       -0.268
+TIH     SD      S       S2      0       1.915       0.651       -1.251
+TIH     H       H       H       0       -0.674      0.971       1.483
+TIH     H2      H       H       0       -1.690      -0.111      1.497
+TIH     H3      H       H       0       -2.111      1.307       1.380
+TIH     HA      H       H       0       -0.959      1.421       -0.676
+TIH     HB2     H       H       0       -0.608      -0.721      -1.728
+TIH     HB3     H       H       0       -0.893      -1.409      -0.337
+TIH     HD      H       H       0       1.246       -1.781      1.121
+TIH     HE1     H       H       0       3.610       -1.058      1.197
+TIH     HE2     H       H       0       4.081       0.721       -0.333
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+TIH      N      n/a    CA     START
+TIH      H      N      .      .
+TIH      H2     N      .      .
+TIH      H3     N      .      .
+TIH      CA     N      C      .
+TIH      HA     CA     .      .
+TIH      CB     CA     CG     .
+TIH      HB2    CB     .      .
+TIH      HB3    CB     .      .
+TIH      CG     CB     SD     .
+TIH      SD     CG     CE2    .
+TIH      CE2    SD     CE1    .
+TIH      HE2    CE2    .      .
+TIH      CE1    CE2    CD     .
+TIH      HE1    CE1    .      .
+TIH      CD     CE1    HD     .
+TIH      HD     CD     .      .
+TIH      C      CA     .      END
+TIH      O      C      .      .
+TIH      OXT    C      .      .
+TIH      CG     CD     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TIH       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+TIH       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+TIH       CA        CB        SINGLE    n         1.533     0.010     1.533     0.010     
+TIH       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TIH       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+TIH       CB        CG        SINGLE    n         1.502     0.012     1.502     0.012     
+TIH       CG        CD        DOUBLE    n         1.354     0.010     1.354     0.010     
+TIH       CG        SD        SINGLE    n         1.721     0.018     1.721     0.018     
+TIH       CD        CE1       SINGLE    n         1.421     0.020     1.421     0.020     
+TIH       CE1       CE2       DOUBLE    n         1.351     0.019     1.351     0.019     
+TIH       CE2       SD        SINGLE    n         1.700     0.014     1.700     0.014     
+TIH       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+TIH       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+TIH       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+TIH       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+TIH       CB        HB2       SINGLE    n         1.089     0.010     0.976     0.019     
+TIH       CB        HB3       SINGLE    n         1.089     0.010     0.976     0.019     
+TIH       CD        HD        SINGLE    n         1.082     0.013     0.941     0.016     
+TIH       CE1       HE1       SINGLE    n         1.082     0.013     0.941     0.015     
+TIH       CE2       HE2       SINGLE    n         1.082     0.013     0.939     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TIH          CA           N           H     109.834    1.50
+TIH          CA           N          H2     109.834    1.50
+TIH          CA           N          H3     109.834    1.50
+TIH           H           N          H2     109.028    2.41
+TIH           H           N          H3     109.028    2.41
+TIH          H2           N          H3     109.028    2.41
+TIH           N          CA           C     109.655    1.50
+TIH           N          CA          CB     110.484    1.50
+TIH           N          CA          HA     108.059    1.50
+TIH           C          CA          CB     112.128    2.24
+TIH           C          CA          HA     108.268    1.50
+TIH          CB          CA          HA     108.678    1.66
+TIH          CA           C           O     117.101    1.50
+TIH          CA           C         OXT     117.101    1.50
+TIH           O           C         OXT     125.798    1.50
+TIH          CA          CB          CG     111.339    2.21
+TIH          CA          CB         HB2     108.752    1.50
+TIH          CA          CB         HB3     108.752    1.50
+TIH          CG          CB         HB2     108.800    1.50
+TIH          CG          CB         HB3     108.800    1.50
+TIH         HB2          CB         HB3     107.721    1.50
+TIH          CB          CG          CD     129.074    1.50
+TIH          CB          CG          SD     119.963    1.58
+TIH          CD          CG          SD     110.952    1.50
+TIH          CG          CD         CE1     111.357    2.56
+TIH          CG          CD          HD     123.943    1.50
+TIH         CE1          CD          HD     124.700    1.50
+TIH          CD         CE1         CE2     113.702    1.50
+TIH          CD         CE1         HE1     123.177    1.50
+TIH         CE2         CE1         HE1     123.121    1.50
+TIH         CE1         CE2          SD     112.502    1.50
+TIH         CE1         CE2         HE2     124.007    1.50
+TIH          SD         CE2         HE2     123.472    1.50
+TIH          CG          SD         CE2      92.136    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TIH             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+TIH             sp2_sp3_3           O           C          CA           N       0.000   10.00     6
+TIH            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+TIH            sp2_sp3_10          CD          CG          CB          CA     -90.000   10.00     6
+TIH             sp2_sp2_2         CE1          CD          CG          CB     180.000   10.00     2
+TIH             sp2_sp2_5          CG          CD         CE1         CE2       0.000   10.00     2
+TIH             sp2_sp2_9          CD         CE1         CE2          SD       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TIH    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TIH    plan-1           C   0.020
+TIH    plan-1          CA   0.020
+TIH    plan-1           O   0.020
+TIH    plan-1         OXT   0.020
+TIH    plan-2          CB   0.020
+TIH    plan-2          CD   0.020
+TIH    plan-2          CG   0.020
+TIH    plan-2          SD   0.020
+TIH    plan-3          CD   0.020
+TIH    plan-3         CE1   0.020
+TIH    plan-3          CG   0.020
+TIH    plan-3          HD   0.020
+TIH    plan-4          CD   0.020
+TIH    plan-4         CE1   0.020
+TIH    plan-4         CE2   0.020
+TIH    plan-4         HE1   0.020
+TIH    plan-5         CE1   0.020
+TIH    plan-5         CE2   0.020
+TIH    plan-5         HE2   0.020
+TIH    plan-5          SD   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TIH SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc1sccc1"
+TIH SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1sccc1)C(O)=O"
+TIH SMILES           CACTVS               3.341 "N[CH](Cc1sccc1)C(O)=O"
+TIH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(sc1)C[C@@H](C(=O)O)N"
+TIH SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(sc1)CC(C(=O)O)N"
+TIH InChI            InChI                1.03  "InChI=1S/C7H9NO2S/c8-6(7(9)10)4-5-2-1-3-11-5/h1-3,6H,4,8H2,(H,9,10)/t6-/m0/s1"
+TIH InChIKey         InChI                1.03  WTOFYLAWDLQMBZ-LURJTMIESA-N
+TIH ?                acedrg               196         "dictionary generator"
+TIH ?                acedrg_database      11          "data source"
+TIH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TIH ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,53 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HDZ     HDZ      "NITROGEN MOLECULE"     NON-POLYMER     2     2     .     
+#
+data_comp_HDZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HDZ     N6A     N       N       0       0.650       0.000       0.000       
+HDZ     N6B     N       N       0       -0.650      0.000       0.000       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HDZ       N6A       N6B       TRIPLE    n         1.300     0.020     1.300     0.020     
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HDZ SMILES           ACDLabs              10.04 N#N
+HDZ SMILES_CANONICAL CACTVS               3.341 N#N
+HDZ SMILES           CACTVS               3.341 N#N
+HDZ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 N#N
+HDZ SMILES           "OpenEye OEToolkits" 1.5.0 N#N
+HDZ InChI            InChI                1.03  InChI=1S/N2/c1-2
+HDZ InChIKey         InChI                1.03  IJGRMHOSHXDMSA-UHFFFAOYSA-N
+HDZ ?                acedrg               202         "dictionary generator"                  
+HDZ ?                acedrg_database      11          "data source"                           
+HDZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HDZ ?                refmac5              5.8.0189    "optimization tool"                     

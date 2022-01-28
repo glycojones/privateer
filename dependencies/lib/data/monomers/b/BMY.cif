@@ -1,0 +1,1207 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BMY      BMY 'BALHIMYCIN                          ' non-polymer       176 102 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BMY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BMY           O80    O    OC       -0.500      0.000    0.000    0.000
+ BMY           C70    C    C         0.000     -0.436   -1.115   -0.362
+ BMY           O71    O    OC       -0.500     -0.698   -1.420   -1.547
+ BMY           C69    C    CH1       0.000     -0.597   -2.027    0.815
+ BMY           H69    H    H         0.000     -0.832   -1.411    1.694
+ BMY           C72    C    CR6       0.000      0.622   -2.883    1.150
+ BMY           C74    C    CR16      0.000      1.709   -2.952    0.256
+ BMY           H74    H    H         0.000      1.660   -2.409   -0.680
+ BMY           C77    C    CR6       0.000      2.848   -3.705    0.548
+ BMY           O78    O    OH1       0.000      3.881   -3.744   -0.339
+ BMY           H78    H    H         0.000      3.609   -3.330   -1.169
+ BMY           C76    C    CR16      0.000      2.930   -4.411    1.740
+ BMY           H76    H    H         0.000      3.817   -4.989    1.970
+ BMY           C75    C    CR6       0.000      1.868   -4.371    2.639
+ BMY           O79    O    OH1       0.000      1.982   -5.102    3.791
+ BMY           H79    H    H         0.000      2.120   -4.505    4.540
+ BMY           C73    C    CR6       0.000      0.704   -3.624    2.366
+ BMY           C50    C    CR6       0.000     -0.390   -3.671    3.351
+ BMY           C48    C    CR16      0.000     -1.531   -4.451    3.099
+ BMY           H48    H    H         0.000     -1.545   -5.098    2.231
+ BMY           C52    C    CR6       0.000     -0.339   -2.943    4.545
+ BMY           O53    O    OH1       0.000      0.749   -2.179    4.856
+ BMY           H53    H    H         0.000      1.007   -1.654    4.086
+ BMY           C51    C    CR16      0.000     -1.415   -2.962    5.435
+ BMY           H51    H    H         0.000     -1.350   -2.418    6.369
+ BMY           C49    C    CR16      0.000     -2.573   -3.680    5.129
+ BMY           H49    H    H         0.000     -3.413   -3.668    5.814
+ BMY           C47    C    CR6       0.000     -2.653   -4.413    3.941
+ BMY           C44    C    CH1       0.000     -3.945   -5.037    3.463
+ BMY           H44    H    H         0.000     -3.739   -5.577    2.528
+ BMY           N43    N    NH1       0.000     -4.540   -5.975    4.405
+ BMY           H43    H    H         0.000     -5.266   -5.649    5.028
+ BMY           C34    C    C         0.000     -4.139   -7.305    4.473
+ BMY           O35    O    O         0.000     -3.118   -7.755    3.955
+ BMY           N68    N    NH1       0.000     -1.770   -2.828    0.500
+ BMY           H68    H    H         0.000     -1.639   -3.723    0.050
+ BMY           C56    C    C         0.000     -3.066   -2.413    0.793
+ BMY           O57    O    O         0.000     -3.390   -1.260    1.068
+ BMY           C55    C    CH1       0.000     -4.055   -3.574    0.793
+ BMY           H55    H    H         0.000     -3.494   -4.500    0.987
+ BMY           N54    N    NH1       0.000     -4.948   -3.335    1.934
+ BMY           H54    H    H         0.000     -5.639   -2.612    1.795
+ BMY           C45    C    C         0.000     -4.982   -3.952    3.167
+ BMY           O46    O    O         0.000     -5.804   -3.604    4.021
+ BMY           C58    C    CH1       0.000     -4.834   -3.754   -0.523
+ BMY           H58    H    H         0.000     -4.110   -3.849   -1.345
+ BMY           O59    O    O2        0.000     -5.653   -2.616   -0.774
+ BMY           "C1'"  C    CH1       0.000     -5.812   -2.386   -2.173
+ BMY           "H1'"  H    H         0.000     -5.781   -3.345   -2.710
+ BMY           "O6'"  O    O2        0.000     -4.769   -1.539   -2.648
+ BMY           "C5'"  C    CH1       0.000     -4.840   -1.211   -4.041
+ BMY           "H5'"  H    H         0.000     -4.088   -0.424   -4.195
+ BMY           C2B    C    CH3       0.000     -4.379   -2.386   -4.903
+ BMY           "H2'3" H    H         0.000     -3.372   -2.621   -4.673
+ BMY           H2A2   H    H         0.000     -4.991   -3.229   -4.709
+ BMY           H2A1   H    H         0.000     -4.454   -2.125   -5.927
+ BMY           "C4'"  C    CT        0.000     -6.199   -0.556   -4.391
+ BMY           "O9'"  O    OH1       0.000     -6.328   -0.368   -5.798
+ BMY           "HO'9" H    H         0.000     -7.219   -0.052   -5.999
+ BMY           "O1'"  O    OH1       0.000     -6.142    0.742   -3.771
+ BMY           "HO'1" H    H         0.000     -5.980    0.642   -2.822
+ BMY           "C3'"  C    CT        0.000     -7.430   -1.323   -3.835
+ BMY           "N8'"  N    NH2       0.000     -7.646   -2.575   -4.642
+ BMY           "H8'2" H    H         0.000     -7.721   -3.481   -4.186
+ BMY           "H8'1" H    H         0.000     -7.720   -2.533   -5.656
+ BMY           "C7'"  C    CH3       0.000     -8.749   -0.541   -3.949
+ BMY           "H7'3" H    H         0.000     -8.727    0.291   -3.292
+ BMY           "H7'2" H    H         0.000     -8.875   -0.199   -4.944
+ BMY           "H7'1" H    H         0.000     -9.560   -1.172   -3.689
+ BMY           "C2'"  C    CH2       0.000     -7.179   -1.732   -2.376
+ BMY           "H2'2" H    H         0.000     -7.966   -2.431   -2.085
+ BMY           "H2'1" H    H         0.000     -7.248   -0.832   -1.760
+ BMY           C60    C    CR6       0.000     -5.638   -5.045   -0.439
+ BMY           C62    C    CR16      0.000     -5.030   -6.259   -0.798
+ BMY           H62    H    H         0.000     -4.081   -6.250   -1.320
+ BMY           C64    C    CR6       0.000     -5.637   -7.477   -0.489
+ BMY           CL2    CL   CL        0.000     -4.821   -8.942   -0.894
+ BMY           C65    C    CR6       0.000     -6.846   -7.482    0.206
+ BMY           C63    C    CR16      0.000     -7.512   -6.288    0.483
+ BMY           H63    H    H         0.000     -8.492   -6.305    0.944
+ BMY           C61    C    CR16      0.000     -6.908   -5.074    0.160
+ BMY           H61    H    H         0.000     -7.422   -4.145    0.373
+ BMY           O66    O    O2        0.000     -7.353   -8.686    0.643
+ BMY           C39    C    CR6       0.000     -7.330   -8.879    2.015
+ BMY           C37    C    CR16      0.000     -6.259   -8.466    2.829
+ BMY           H37    H    H         0.000     -5.396   -7.994    2.374
+ BMY           C41    C    CR6       0.000     -8.411   -9.562    2.571
+ BMY           O42    O    O2        0.000     -9.428  -10.007    1.785
+ BMY           C3B    C    CH1       0.000    -10.150   -9.026    1.043
+ BMY           "H3'"  H    H         0.000     -9.465   -8.506    0.358
+ BMY           "O8'"  O    O2        0.000    -10.738   -8.083    1.936
+ BMY           C7B    C    CH1       0.000    -11.458   -7.057    1.252
+ BMY           "H7'"  H    H         0.000    -10.784   -6.554    0.543
+ BMY           C3A    C    CH2       0.000    -11.929   -6.049    2.296
+ BMY           H3A1   H    H         0.000    -12.591   -6.539    3.013
+ BMY           H3A2   H    H         0.000    -12.463   -5.231    1.809
+ BMY           O4A    O    OH1       0.000    -10.794   -5.538    2.972
+ BMY           H4A    H    H         0.000    -10.000   -5.969    2.632
+ BMY           "C6'"  C    CH1       0.000    -12.633   -7.666    0.483
+ BMY           "H6'"  H    H         0.000    -13.342   -8.105    1.198
+ BMY           O2A    O    OH1       0.000    -13.291   -6.644   -0.261
+ BMY           HOA2   H    H         0.000    -12.637   -6.011   -0.586
+ BMY           C5B    C    CH1       0.000    -12.149   -8.755   -0.474
+ BMY           H5B    H    H         0.000    -11.597   -8.285   -1.300
+ BMY           O1A    O    OH1       0.000    -13.276   -9.453   -1.007
+ BMY           HOA1   H    H         0.000    -13.018  -10.358   -1.230
+ BMY           C4B    C    CH1       0.000    -11.229   -9.748    0.237
+ BMY           "H4'"  H    H         0.000    -11.830  -10.365    0.920
+ BMY           O9B    O    OH1       0.000    -10.615  -10.598   -0.732
+ BMY           "H9'"  H    H         0.000    -11.065  -10.494   -1.581
+ BMY           C40    C    CR6       0.000     -8.429   -9.795    3.945
+ BMY           C38    C    CR16      0.000     -7.401   -9.304    4.766
+ BMY           H38    H    H         0.000     -7.471   -9.430    5.840
+ BMY           C36    C    CR6       0.000     -6.288   -8.655    4.220
+ BMY           C33    C    CH1       0.000     -5.182   -8.186    5.155
+ BMY           H33    H    H         0.000     -5.639   -7.613    5.973
+ BMY           N32    N    NH1       0.000     -4.450   -9.314    5.734
+ BMY           H32    H    H         0.000     -3.790   -9.809    5.151
+ BMY           C26    C    C         0.000     -4.618   -9.737    7.044
+ BMY           O27    O    O         0.000     -5.501   -9.326    7.799
+ BMY           C25    C    CH1       0.000     -3.665  -10.841    7.501
+ BMY           H25    H    H         0.000     -3.619  -10.795    8.598
+ BMY           C28    C    CH2       0.000     -2.238  -10.708    6.986
+ BMY           H281   H    H         0.000     -2.269  -10.733    5.895
+ BMY           H282   H    H         0.000     -1.666  -11.564    7.352
+ BMY           C29    C    C         0.000     -1.580   -9.427    7.445
+ BMY           N31    N    NH2       0.000     -0.281   -9.321    6.996
+ BMY           H312   H    H         0.000      0.288   -8.508    7.228
+ BMY           H311   H    H         0.000      0.135  -10.055    6.424
+ BMY           O30    O    O         0.000     -2.134   -8.576    8.136
+ BMY           N24    N    NH1       0.000     -4.240  -12.132    7.151
+ BMY           H24    H    H         0.000     -4.012  -12.525    6.250
+ BMY           C12    C    C         0.000     -5.081  -12.851    7.986
+ BMY           O13    O    O         0.000     -5.470  -12.452    9.085
+ BMY           O22    O    O2        0.000     -9.481  -10.529    4.469
+ BMY           C21    C    CR6       0.000     -9.063  -11.607    5.222
+ BMY           C19    C    CR6       0.000     -9.119  -11.524    6.612
+ BMY           C17    C    CR16      0.000     -8.486  -12.503    7.375
+ BMY           H17    H    H         0.000     -8.500  -12.432    8.455
+ BMY           CL1    CL   CL        0.000     -9.893  -10.208    7.409
+ BMY           C20    C    CR16      0.000     -8.512  -12.723    4.592
+ BMY           H20    H    H         0.000     -8.558  -12.821    3.514
+ BMY           C18    C    CR16      0.000     -7.904  -13.710    5.362
+ BMY           H18    H    H         0.000     -7.485  -14.585    4.881
+ BMY           C16    C    CR6       0.000     -7.830  -13.581    6.757
+ BMY           C14    C    CH1       0.000     -6.985  -14.519    7.593
+ BMY           H14    H    H         0.000     -7.270  -14.378    8.645
+ BMY           O15    O    OH1       0.000     -7.274  -15.871    7.241
+ BMY           H15    H    H         0.000     -7.790  -16.283    7.947
+ BMY           C11    C    CH1       0.000     -5.465  -14.249    7.476
+ BMY           H11    H    H         0.000     -4.973  -14.967    8.148
+ BMY           N10    N    NH1       0.000     -4.953  -14.519    6.154
+ BMY           H10    H    H         0.000     -5.299  -13.971    5.380
+ BMY           C4     C    C         0.000     -4.005  -15.500    5.904
+ BMY           O5     O    O         0.000     -3.506  -16.233    6.756
+ BMY           C3     C    CH1       0.000     -3.643  -15.588    4.429
+ BMY           H3     H    H         0.000     -4.489  -15.222    3.830
+ BMY           N2     N    NH1       0.000     -3.368  -17.006    4.062
+ BMY           H2A    H    H         0.000     -3.459  -17.770    4.716
+ BMY           C1     C    CH3       0.000     -2.947  -17.198    2.650
+ BMY           H1C    H    H         0.000     -2.372  -16.365    2.327
+ BMY           H1B    H    H         0.000     -2.359  -18.078    2.564
+ BMY           H1A    H    H         0.000     -3.802  -17.291    2.027
+ BMY           C6     C    CH2       0.000     -2.409  -14.725    4.130
+ BMY           H6A    H    H         0.000     -2.677  -13.706    4.417
+ BMY           H6B    H    H         0.000     -2.264  -14.771    3.048
+ BMY           C7     C    CH1       0.000     -1.106  -15.136    4.843
+ BMY           H7     H    H         0.000     -0.298  -14.476    4.496
+ BMY           C9     C    CH3       0.000     -1.264  -14.950    6.355
+ BMY           H9C    H    H         0.000     -2.040  -15.579    6.711
+ BMY           H9B    H    H         0.000     -0.357  -15.202    6.841
+ BMY           H9A    H    H         0.000     -1.506  -13.940    6.565
+ BMY           C8     C    CH3       0.000     -0.708  -16.582    4.542
+ BMY           H8C    H    H         0.000     -1.508  -17.229    4.794
+ BMY           H8B    H    H         0.000     -0.487  -16.681    3.510
+ BMY           H8A    H    H         0.000      0.147  -16.840    5.111
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BMY      O80    n/a    C70    START
+ BMY      C70    O80    C69    .
+ BMY      O71    C70    .      .
+ BMY      C69    C70    N68    .
+ BMY      H69    C69    .      .
+ BMY      C72    C69    C74    .
+ BMY      C74    C72    C77    .
+ BMY      H74    C74    .      .
+ BMY      C77    C74    C76    .
+ BMY      O78    C77    H78    .
+ BMY      H78    O78    .      .
+ BMY      C76    C77    C75    .
+ BMY      H76    C76    .      .
+ BMY      C75    C76    C73    .
+ BMY      O79    C75    H79    .
+ BMY      H79    O79    .      .
+ BMY      C73    C75    C50    .
+ BMY      C50    C73    C52    .
+ BMY      C48    C50    H48    .
+ BMY      H48    C48    .      .
+ BMY      C52    C50    C51    .
+ BMY      O53    C52    H53    .
+ BMY      H53    O53    .      .
+ BMY      C51    C52    C49    .
+ BMY      H51    C51    .      .
+ BMY      C49    C51    C47    .
+ BMY      H49    C49    .      .
+ BMY      C47    C49    C44    .
+ BMY      C44    C47    N43    .
+ BMY      H44    C44    .      .
+ BMY      N43    C44    C34    .
+ BMY      H43    N43    .      .
+ BMY      C34    N43    O35    .
+ BMY      O35    C34    .      .
+ BMY      N68    C69    C56    .
+ BMY      H68    N68    .      .
+ BMY      C56    N68    C55    .
+ BMY      O57    C56    .      .
+ BMY      C55    C56    C58    .
+ BMY      H55    C55    .      .
+ BMY      N54    C55    C45    .
+ BMY      H54    N54    .      .
+ BMY      C45    N54    O46    .
+ BMY      O46    C45    .      .
+ BMY      C58    C55    C60    .
+ BMY      H58    C58    .      .
+ BMY      O59    C58    "C1'"  .
+ BMY      "C1'"  O59    "O6'"  .
+ BMY      "H1'"  "C1'"  .      .
+ BMY      "O6'"  "C1'"  "C5'"  .
+ BMY      "C5'"  "O6'"  "C4'"  .
+ BMY      "H5'"  "C5'"  .      .
+ BMY      C2B    "C5'"  H2A1   .
+ BMY      "H2'3" C2B    .      .
+ BMY      H2A2   C2B    .      .
+ BMY      H2A1   C2B    .      .
+ BMY      "C4'"  "C5'"  "C3'"  .
+ BMY      "O9'"  "C4'"  "HO'9" .
+ BMY      "HO'9" "O9'"  .      .
+ BMY      "O1'"  "C4'"  "HO'1" .
+ BMY      "HO'1" "O1'"  .      .
+ BMY      "C3'"  "C4'"  "C2'"  .
+ BMY      "N8'"  "C3'"  "H8'1" .
+ BMY      "H8'2" "N8'"  .      .
+ BMY      "H8'1" "N8'"  .      .
+ BMY      "C7'"  "C3'"  "H7'1" .
+ BMY      "H7'3" "C7'"  .      .
+ BMY      "H7'2" "C7'"  .      .
+ BMY      "H7'1" "C7'"  .      .
+ BMY      "C2'"  "C3'"  "H2'1" .
+ BMY      "H2'2" "C2'"  .      .
+ BMY      "H2'1" "C2'"  .      .
+ BMY      C60    C58    C62    .
+ BMY      C62    C60    C64    .
+ BMY      H62    C62    .      .
+ BMY      C64    C62    C65    .
+ BMY      CL2    C64    .      .
+ BMY      C65    C64    O66    .
+ BMY      C63    C65    C61    .
+ BMY      H63    C63    .      .
+ BMY      C61    C63    H61    .
+ BMY      H61    C61    .      .
+ BMY      O66    C65    C39    .
+ BMY      C39    O66    C41    .
+ BMY      C37    C39    H37    .
+ BMY      H37    C37    .      .
+ BMY      C41    C39    C40    .
+ BMY      O42    C41    C3B    .
+ BMY      C3B    O42    "O8'"  .
+ BMY      "H3'"  C3B    .      .
+ BMY      "O8'"  C3B    C7B    .
+ BMY      C7B    "O8'"  "C6'"  .
+ BMY      "H7'"  C7B    .      .
+ BMY      C3A    C7B    O4A    .
+ BMY      H3A1   C3A    .      .
+ BMY      H3A2   C3A    .      .
+ BMY      O4A    C3A    H4A    .
+ BMY      H4A    O4A    .      .
+ BMY      "C6'"  C7B    C5B    .
+ BMY      "H6'"  "C6'"  .      .
+ BMY      O2A    "C6'"  HOA2   .
+ BMY      HOA2   O2A    .      .
+ BMY      C5B    "C6'"  C4B    .
+ BMY      H5B    C5B    .      .
+ BMY      O1A    C5B    HOA1   .
+ BMY      HOA1   O1A    .      .
+ BMY      C4B    C5B    O9B    .
+ BMY      "H4'"  C4B    .      .
+ BMY      O9B    C4B    "H9'"  .
+ BMY      "H9'"  O9B    .      .
+ BMY      C40    C41    O22    .
+ BMY      C38    C40    C36    .
+ BMY      H38    C38    .      .
+ BMY      C36    C38    C33    .
+ BMY      C33    C36    N32    .
+ BMY      H33    C33    .      .
+ BMY      N32    C33    C26    .
+ BMY      H32    N32    .      .
+ BMY      C26    N32    C25    .
+ BMY      O27    C26    .      .
+ BMY      C25    C26    N24    .
+ BMY      H25    C25    .      .
+ BMY      C28    C25    C29    .
+ BMY      H281   C28    .      .
+ BMY      H282   C28    .      .
+ BMY      C29    C28    O30    .
+ BMY      N31    C29    H311   .
+ BMY      H312   N31    .      .
+ BMY      H311   N31    .      .
+ BMY      O30    C29    .      .
+ BMY      N24    C25    C12    .
+ BMY      H24    N24    .      .
+ BMY      C12    N24    O13    .
+ BMY      O13    C12    .      .
+ BMY      O22    C40    C21    .
+ BMY      C21    O22    C20    .
+ BMY      C19    C21    CL1    .
+ BMY      C17    C19    H17    .
+ BMY      H17    C17    .      .
+ BMY      CL1    C19    .      .
+ BMY      C20    C21    C18    .
+ BMY      H20    C20    .      .
+ BMY      C18    C20    C16    .
+ BMY      H18    C18    .      .
+ BMY      C16    C18    C14    .
+ BMY      C14    C16    C11    .
+ BMY      H14    C14    .      .
+ BMY      O15    C14    H15    .
+ BMY      H15    O15    .      .
+ BMY      C11    C14    N10    .
+ BMY      H11    C11    .      .
+ BMY      N10    C11    C4     .
+ BMY      H10    N10    .      .
+ BMY      C4     N10    C3     .
+ BMY      O5     C4     .      .
+ BMY      C3     C4     C6     .
+ BMY      H3     C3     .      .
+ BMY      N2     C3     C1     .
+ BMY      H2A    N2     .      .
+ BMY      C1     N2     H1A    .
+ BMY      H1C    C1     .      .
+ BMY      H1B    C1     .      .
+ BMY      H1A    C1     .      .
+ BMY      C6     C3     C7     .
+ BMY      H6A    C6     .      .
+ BMY      H6B    C6     .      .
+ BMY      C7     C6     C8     .
+ BMY      H7     C7     .      .
+ BMY      C9     C7     H9A    .
+ BMY      H9C    C9     .      .
+ BMY      H9B    C9     .      .
+ BMY      H9A    C9     .      .
+ BMY      C8     C7     H8A    .
+ BMY      H8C    C8     .      .
+ BMY      H8B    C8     .      .
+ BMY      H8A    C8     .      END
+ BMY      C11    C12    .    ADD
+ BMY      C16    C17    .    ADD
+ BMY      C33    C34    .    ADD
+ BMY      C36    C37    .    ADD
+ BMY      C44    C45    .    ADD
+ BMY      C47    C48    .    ADD
+ BMY      C60    C61    .    ADD
+ BMY      C72    C73    .    ADD
+ BMY      "C1'"  "C2'"  .    ADD
+ BMY      C3B    C4B    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BMY       C1        N2        single    1.450     0.020     1.450     0.020     
+BMY       H1A       C1        single    1.089     0.010     0.989     0.005     
+BMY       H1B       C1        single    1.089     0.010     0.989     0.005     
+BMY       H1C       C1        single    1.089     0.010     0.989     0.005     
+BMY       N2        C3        single    1.450     0.020     1.450     0.020     
+BMY       H2A       N2        single    1.036     0.016     0.914     0.007     
+BMY       C3        C4        single    1.500     0.020     1.500     0.020     
+BMY       C6        C3        single    1.524     0.020     1.524     0.020     
+BMY       H3        C3        single    1.089     0.010     0.989     0.005     
+BMY       O5        C4        double    1.220     0.020     1.220     0.020     
+BMY       C4        N10       single    1.330     0.020     1.330     0.020     
+BMY       C7        C6        single    1.524     0.020     1.524     0.020     
+BMY       H6A       C6        single    1.089     0.010     0.989     0.005     
+BMY       H6B       C6        single    1.089     0.010     0.989     0.005     
+BMY       C8        C7        single    1.524     0.020     1.524     0.020     
+BMY       C9        C7        single    1.524     0.020     1.524     0.020     
+BMY       H7        C7        single    1.089     0.010     0.989     0.005     
+BMY       H8A       C8        single    1.089     0.010     0.989     0.005     
+BMY       H8B       C8        single    1.089     0.010     0.989     0.005     
+BMY       H8C       C8        single    1.089     0.010     0.989     0.005     
+BMY       H9A       C9        single    1.089     0.010     0.989     0.005     
+BMY       H9B       C9        single    1.089     0.010     0.989     0.005     
+BMY       H9C       C9        single    1.089     0.010     0.989     0.005     
+BMY       N10       C11       single    1.450     0.020     1.450     0.020     
+BMY       H10       N10       single    1.016     0.010     0.899     0.007     
+BMY       CL1       C19       single    1.795     0.020     1.795     0.020     
+BMY       CL2       C64       single    1.795     0.020     1.795     0.020     
+BMY       C11       C12       single    1.500     0.020     1.500     0.020     
+BMY       C11       C14       single    1.524     0.020     1.524     0.020     
+BMY       H11       C11       single    1.089     0.010     0.989     0.005     
+BMY       O13       C12       double    1.220     0.020     1.220     0.020     
+BMY       C12       N24       single    1.330     0.020     1.330     0.020     
+BMY       O15       C14       single    1.432     0.020     1.432     0.020     
+BMY       C14       C16       single    1.480     0.020     1.480     0.020     
+BMY       H14       C14       single    1.089     0.010     0.989     0.005     
+BMY       H15       O15       single    0.970     0.012     0.839     0.014     
+BMY       C16       C17       double    1.390     0.020     1.390     0.020     
+BMY       C16       C18       single    1.390     0.020     1.390     0.020     
+BMY       C17       C19       single    1.390     0.020     1.390     0.020     
+BMY       H17       C17       single    1.082     0.013     0.975     0.010     
+BMY       C18       C20       double    1.390     0.020     1.390     0.020     
+BMY       H18       C18       single    1.082     0.013     0.975     0.010     
+BMY       C19       C21       double    1.487     0.020     1.487     0.020     
+BMY       C20       C21       single    1.390     0.020     1.390     0.020     
+BMY       H20       C20       single    1.082     0.013     0.975     0.010     
+BMY       C21       O22       single    1.370     0.020     1.370     0.020     
+BMY       O22       C40       single    1.370     0.020     1.370     0.020     
+BMY       N24       C25       single    1.450     0.020     1.450     0.020     
+BMY       H24       N24       single    1.016     0.010     0.899     0.007     
+BMY       C25       C26       single    1.500     0.020     1.500     0.020     
+BMY       C28       C25       single    1.524     0.020     1.524     0.020     
+BMY       H25       C25       single    1.089     0.010     0.989     0.005     
+BMY       O27       C26       double    1.220     0.020     1.220     0.020     
+BMY       C26       N32       single    1.330     0.020     1.330     0.020     
+BMY       C29       C28       single    1.510     0.020     1.510     0.020     
+BMY       H281      C28       single    1.089     0.010     0.989     0.005     
+BMY       H282      C28       single    1.089     0.010     0.989     0.005     
+BMY       O30       C29       double    1.220     0.020     1.220     0.020     
+BMY       N31       C29       single    1.332     0.020     1.332     0.020     
+BMY       H311      N31       single    1.016     0.010     0.899     0.007     
+BMY       H312      N31       single    1.016     0.010     0.899     0.007     
+BMY       N32       C33       single    1.450     0.020     1.450     0.020     
+BMY       H32       N32       single    1.016     0.010     0.899     0.007     
+BMY       C33       C34       single    1.500     0.020     1.500     0.020     
+BMY       C33       C36       single    1.480     0.020     1.480     0.020     
+BMY       H33       C33       single    1.089     0.010     0.989     0.005     
+BMY       O35       C34       double    1.220     0.020     1.220     0.020     
+BMY       C34       N43       single    1.330     0.020     1.330     0.020     
+BMY       C36       C37       double    1.390     0.020     1.390     0.020     
+BMY       C36       C38       single    1.390     0.020     1.390     0.020     
+BMY       C37       C39       single    1.390     0.020     1.390     0.020     
+BMY       H37       C37       single    1.082     0.013     0.975     0.010     
+BMY       C38       C40       double    1.390     0.020     1.390     0.020     
+BMY       H38       C38       single    1.082     0.013     0.975     0.010     
+BMY       C41       C39       double    1.487     0.020     1.487     0.020     
+BMY       C39       O66       single    1.370     0.020     1.370     0.020     
+BMY       C40       C41       single    1.487     0.020     1.487     0.020     
+BMY       O42       C41       single    1.370     0.020     1.370     0.020     
+BMY       C3B       O42       single    1.426     0.020     1.426     0.020     
+BMY       N43       C44       single    1.450     0.020     1.450     0.020     
+BMY       H43       N43       single    1.016     0.010     0.899     0.007     
+BMY       C44       C45       single    1.500     0.020     1.500     0.020     
+BMY       C44       C47       single    1.480     0.020     1.480     0.020     
+BMY       H44       C44       single    1.089     0.010     0.989     0.005     
+BMY       O46       C45       double    1.220     0.020     1.220     0.020     
+BMY       C45       N54       single    1.330     0.020     1.330     0.020     
+BMY       C47       C48       double    1.390     0.020     1.390     0.020     
+BMY       C47       C49       single    1.390     0.020     1.390     0.020     
+BMY       C48       C50       single    1.390     0.020     1.390     0.020     
+BMY       H48       C48       single    1.082     0.013     0.975     0.010     
+BMY       C49       C51       double    1.390     0.020     1.390     0.020     
+BMY       H49       C49       single    1.082     0.013     0.975     0.010     
+BMY       C52       C50       double    1.487     0.020     1.487     0.020     
+BMY       C50       C73       single    1.487     0.020     1.487     0.020     
+BMY       C51       C52       single    1.390     0.020     1.390     0.020     
+BMY       H51       C51       single    1.082     0.013     0.975     0.010     
+BMY       O53       C52       single    1.362     0.020     1.362     0.020     
+BMY       H53       O53       single    0.970     0.012     0.839     0.014     
+BMY       N54       C55       single    1.450     0.020     1.450     0.020     
+BMY       H54       N54       single    1.016     0.010     0.899     0.007     
+BMY       C55       C56       single    1.500     0.020     1.500     0.020     
+BMY       C58       C55       single    1.524     0.020     1.524     0.020     
+BMY       H55       C55       single    1.089     0.010     0.989     0.005     
+BMY       O57       C56       double    1.220     0.020     1.220     0.020     
+BMY       C56       N68       single    1.330     0.020     1.330     0.020     
+BMY       O59       C58       single    1.426     0.020     1.426     0.020     
+BMY       C60       C58       single    1.480     0.020     1.480     0.020     
+BMY       H58       C58       single    1.089     0.010     0.989     0.005     
+BMY       "C1'"     O59       single    1.426     0.020     1.426     0.020     
+BMY       C60       C61       double    1.390     0.020     1.390     0.020     
+BMY       C62       C60       single    1.390     0.020     1.390     0.020     
+BMY       C61       C63       single    1.390     0.020     1.390     0.020     
+BMY       H61       C61       single    1.082     0.013     0.975     0.010     
+BMY       C64       C62       double    1.390     0.020     1.390     0.020     
+BMY       H62       C62       single    1.082     0.013     0.975     0.010     
+BMY       C63       C65       double    1.390     0.020     1.390     0.020     
+BMY       H63       C63       single    1.082     0.013     0.975     0.010     
+BMY       C65       C64       single    1.487     0.020     1.487     0.020     
+BMY       O66       C65       single    1.370     0.020     1.370     0.020     
+BMY       N68       C69       single    1.450     0.020     1.450     0.020     
+BMY       H68       N68       single    1.016     0.010     0.899     0.007     
+BMY       C69       C70       single    1.500     0.020     1.500     0.020     
+BMY       C72       C69       single    1.480     0.020     1.480     0.020     
+BMY       H69       C69       single    1.089     0.010     0.989     0.005     
+BMY       O71       C70       deloc     1.250     0.020     1.250     0.020     
+BMY       C70       O80       deloc     1.250     0.020     1.250     0.020     
+BMY       C72       C73       double    1.487     0.020     1.487     0.020     
+BMY       C74       C72       single    1.390     0.020     1.390     0.020     
+BMY       C73       C75       single    1.487     0.020     1.487     0.020     
+BMY       C77       C74       double    1.390     0.020     1.390     0.020     
+BMY       H74       C74       single    1.082     0.013     0.975     0.010     
+BMY       C75       C76       double    1.390     0.020     1.390     0.020     
+BMY       O79       C75       single    1.362     0.020     1.362     0.020     
+BMY       C76       C77       single    1.390     0.020     1.390     0.020     
+BMY       H76       C76       single    1.082     0.013     0.975     0.010     
+BMY       O78       C77       single    1.362     0.020     1.362     0.020     
+BMY       H78       O78       single    0.970     0.012     0.839     0.014     
+BMY       H79       O79       single    0.970     0.012     0.839     0.014     
+BMY       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+BMY       "O6'"     "C1'"     single    1.426     0.020     1.426     0.020     
+BMY       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+BMY       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+BMY       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+BMY       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+BMY       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+BMY       "C7'"     "C3'"     single    1.524     0.020     1.524     0.020     
+BMY       "N8'"     "C3'"     single    1.462     0.020     1.462     0.020     
+BMY       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+BMY       "O9'"     "C4'"     single    1.432     0.020     1.432     0.020     
+BMY       "O1'"     "C4'"     single    1.432     0.020     1.432     0.020     
+BMY       "C5'"     "O6'"     single    1.426     0.020     1.426     0.020     
+BMY       C2B       "C5'"     single    1.524     0.020     1.524     0.020     
+BMY       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+BMY       "H7'1"    "C7'"     single    1.089     0.010     0.989     0.005     
+BMY       "H7'2"    "C7'"     single    1.089     0.010     0.989     0.005     
+BMY       "H7'3"    "C7'"     single    1.089     0.010     0.989     0.005     
+BMY       "H8'1"    "N8'"     single    1.036     0.016     0.914     0.007     
+BMY       "H8'2"    "N8'"     single    1.036     0.016     0.914     0.007     
+BMY       "HO'9"    "O9'"     single    0.970     0.012     0.839     0.014     
+BMY       "HO'1"    "O1'"     single    0.970     0.012     0.839     0.014     
+BMY       H2A1      C2B       single    1.089     0.010     0.989     0.005     
+BMY       H2A2      C2B       single    1.089     0.010     0.989     0.005     
+BMY       "H2'3"    C2B       single    1.089     0.010     0.989     0.005     
+BMY       C3B       C4B       single    1.524     0.020     1.524     0.020     
+BMY       "O8'"     C3B       single    1.426     0.020     1.426     0.020     
+BMY       "H3'"     C3B       single    1.089     0.010     0.989     0.005     
+BMY       C4B       C5B       single    1.524     0.020     1.524     0.020     
+BMY       O9B       C4B       single    1.432     0.020     1.432     0.020     
+BMY       "H4'"     C4B       single    1.089     0.010     0.989     0.005     
+BMY       C5B       "C6'"     single    1.524     0.020     1.524     0.020     
+BMY       O1A       C5B       single    1.432     0.020     1.432     0.020     
+BMY       H5B       C5B       single    1.089     0.010     0.989     0.005     
+BMY       "C6'"     C7B       single    1.524     0.020     1.524     0.020     
+BMY       O2A       "C6'"     single    1.432     0.020     1.432     0.020     
+BMY       "H6'"     "C6'"     single    1.089     0.010     0.989     0.005     
+BMY       C7B       "O8'"     single    1.426     0.020     1.426     0.020     
+BMY       C3A       C7B       single    1.524     0.020     1.524     0.020     
+BMY       "H7'"     C7B       single    1.089     0.010     0.989     0.005     
+BMY       "H9'"     O9B       single    0.970     0.012     0.839     0.014     
+BMY       HOA1      O1A       single    0.970     0.012     0.839     0.014     
+BMY       HOA2      O2A       single    0.970     0.012     0.839     0.014     
+BMY       O4A       C3A       single    1.432     0.020     1.432     0.020     
+BMY       H3A1      C3A       single    1.089     0.010     0.989     0.005     
+BMY       H3A2      C3A       single    1.089     0.010     0.989     0.005     
+BMY       H4A       O4A       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BMY      O80    C70    O71     123.000    3.000
+ BMY      O80    C70    C69     118.500    3.000
+ BMY      O71    C70    C69     118.500    3.000
+ BMY      C70    C69    H69     108.810    3.000
+ BMY      C70    C69    C72     109.500    3.000
+ BMY      C70    C69    N68     111.600    3.000
+ BMY      H69    C69    C72     109.470    3.000
+ BMY      H69    C69    N68     108.550    3.000
+ BMY      C72    C69    N68     109.470    3.000
+ BMY      C69    C72    C74     120.000    3.000
+ BMY      C69    C72    C73     120.000    3.000
+ BMY      C74    C72    C73     120.000    3.000
+ BMY      C72    C74    H74     120.000    3.000
+ BMY      C72    C74    C77     120.000    3.000
+ BMY      H74    C74    C77     120.000    3.000
+ BMY      C74    C77    O78     120.000    3.000
+ BMY      C74    C77    C76     120.000    3.000
+ BMY      O78    C77    C76     120.000    3.000
+ BMY      C77    O78    H78     109.470    3.000
+ BMY      C77    C76    H76     120.000    3.000
+ BMY      C77    C76    C75     120.000    3.000
+ BMY      H76    C76    C75     120.000    3.000
+ BMY      C76    C75    O79     120.000    3.000
+ BMY      C76    C75    C73     120.000    3.000
+ BMY      O79    C75    C73     120.000    3.000
+ BMY      C75    O79    H79     109.470    3.000
+ BMY      C75    C73    C50     120.000    3.000
+ BMY      C75    C73    C72     120.000    3.000
+ BMY      C50    C73    C72     120.000    3.000
+ BMY      C73    C50    C48     120.000    3.000
+ BMY      C73    C50    C52     120.000    3.000
+ BMY      C48    C50    C52     120.000    3.000
+ BMY      C50    C48    H48     120.000    3.000
+ BMY      C50    C48    C47     120.000    3.000
+ BMY      H48    C48    C47     120.000    3.000
+ BMY      C50    C52    O53     120.000    3.000
+ BMY      C50    C52    C51     120.000    3.000
+ BMY      O53    C52    C51     120.000    3.000
+ BMY      C52    O53    H53     109.470    3.000
+ BMY      C52    C51    H51     120.000    3.000
+ BMY      C52    C51    C49     120.000    3.000
+ BMY      H51    C51    C49     120.000    3.000
+ BMY      C51    C49    H49     120.000    3.000
+ BMY      C51    C49    C47     120.000    3.000
+ BMY      H49    C49    C47     120.000    3.000
+ BMY      C49    C47    C44     120.000    3.000
+ BMY      C49    C47    C48     120.000    3.000
+ BMY      C44    C47    C48     120.000    3.000
+ BMY      C47    C44    H44     109.470    3.000
+ BMY      C47    C44    N43     109.470    3.000
+ BMY      C47    C44    C45     109.500    3.000
+ BMY      H44    C44    N43     108.550    3.000
+ BMY      H44    C44    C45     108.810    3.000
+ BMY      N43    C44    C45     111.600    3.000
+ BMY      C44    N43    H43     118.500    3.000
+ BMY      C44    N43    C34     121.500    3.000
+ BMY      H43    N43    C34     120.000    3.000
+ BMY      N43    C34    O35     123.000    3.000
+ BMY      N43    C34    C33     116.500    3.000
+ BMY      O35    C34    C33     120.500    3.000
+ BMY      C69    N68    H68     118.500    3.000
+ BMY      C69    N68    C56     121.500    3.000
+ BMY      H68    N68    C56     120.000    3.000
+ BMY      N68    C56    O57     123.000    3.000
+ BMY      N68    C56    C55     116.500    3.000
+ BMY      O57    C56    C55     120.500    3.000
+ BMY      C56    C55    H55     108.810    3.000
+ BMY      C56    C55    N54     111.600    3.000
+ BMY      C56    C55    C58     109.470    3.000
+ BMY      H55    C55    N54     108.550    3.000
+ BMY      H55    C55    C58     108.340    3.000
+ BMY      N54    C55    C58     110.000    3.000
+ BMY      C55    N54    H54     118.500    3.000
+ BMY      C55    N54    C45     121.500    3.000
+ BMY      H54    N54    C45     120.000    3.000
+ BMY      N54    C45    O46     123.000    3.000
+ BMY      N54    C45    C44     116.500    3.000
+ BMY      O46    C45    C44     120.500    3.000
+ BMY      C55    C58    H58     108.340    3.000
+ BMY      C55    C58    O59     109.470    3.000
+ BMY      C55    C58    C60     109.470    3.000
+ BMY      H58    C58    O59     109.470    3.000
+ BMY      H58    C58    C60     109.470    3.000
+ BMY      O59    C58    C60     109.470    3.000
+ BMY      C58    O59    "C1'"   111.800    3.000
+ BMY      O59    "C1'"  "H1'"   109.470    3.000
+ BMY      O59    "C1'"  "O6'"   109.470    3.000
+ BMY      O59    "C1'"  "C2'"   109.470    3.000
+ BMY      "H1'"  "C1'"  "O6'"   109.470    3.000
+ BMY      "H1'"  "C1'"  "C2'"   108.340    3.000
+ BMY      "O6'"  "C1'"  "C2'"   109.470    3.000
+ BMY      "C1'"  "O6'"  "C5'"   111.800    3.000
+ BMY      "O6'"  "C5'"  "H5'"   109.470    3.000
+ BMY      "O6'"  "C5'"  C2B     109.470    3.000
+ BMY      "O6'"  "C5'"  "C4'"   109.470    3.000
+ BMY      "H5'"  "C5'"  C2B     108.340    3.000
+ BMY      "H5'"  "C5'"  "C4'"   108.340    3.000
+ BMY      C2B    "C5'"  "C4'"   111.000    3.000
+ BMY      "C5'"  C2B    "H2'3"  109.470    3.000
+ BMY      "C5'"  C2B    H2A2    109.470    3.000
+ BMY      "C5'"  C2B    H2A1    109.470    3.000
+ BMY      "H2'3" C2B    H2A2    109.470    3.000
+ BMY      "H2'3" C2B    H2A1    109.470    3.000
+ BMY      H2A2   C2B    H2A1    109.470    3.000
+ BMY      "C5'"  "C4'"  "O9'"   109.470    3.000
+ BMY      "C5'"  "C4'"  "O1'"   109.470    3.000
+ BMY      "C5'"  "C4'"  "C3'"   111.000    3.000
+ BMY      "O9'"  "C4'"  "O1'"   109.470    3.000
+ BMY      "O9'"  "C4'"  "C3'"   109.470    3.000
+ BMY      "O1'"  "C4'"  "C3'"   109.470    3.000
+ BMY      "C4'"  "O9'"  "HO'9"  109.470    3.000
+ BMY      "C4'"  "O1'"  "HO'1"  109.470    3.000
+ BMY      "C4'"  "C3'"  "N8'"   109.500    3.000
+ BMY      "C4'"  "C3'"  "C7'"   111.000    3.000
+ BMY      "C4'"  "C3'"  "C2'"   111.000    3.000
+ BMY      "N8'"  "C3'"  "C7'"   109.500    3.000
+ BMY      "N8'"  "C3'"  "C2'"   109.500    3.000
+ BMY      "C7'"  "C3'"  "C2'"   111.000    3.000
+ BMY      "C3'"  "N8'"  "H8'2"  120.000    3.000
+ BMY      "C3'"  "N8'"  "H8'1"  120.000    3.000
+ BMY      "H8'2" "N8'"  "H8'1"  120.000    3.000
+ BMY      "C3'"  "C7'"  "H7'3"  109.470    3.000
+ BMY      "C3'"  "C7'"  "H7'2"  109.470    3.000
+ BMY      "C3'"  "C7'"  "H7'1"  109.470    3.000
+ BMY      "H7'3" "C7'"  "H7'2"  109.470    3.000
+ BMY      "H7'3" "C7'"  "H7'1"  109.470    3.000
+ BMY      "H7'2" "C7'"  "H7'1"  109.470    3.000
+ BMY      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ BMY      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ BMY      "C3'"  "C2'"  "C1'"   111.000    3.000
+ BMY      "H2'2" "C2'"  "H2'1"  107.900    3.000
+ BMY      "H2'2" "C2'"  "C1'"   109.470    3.000
+ BMY      "H2'1" "C2'"  "C1'"   109.470    3.000
+ BMY      C58    C60    C62     120.000    3.000
+ BMY      C58    C60    C61     120.000    3.000
+ BMY      C62    C60    C61     120.000    3.000
+ BMY      C60    C62    H62     120.000    3.000
+ BMY      C60    C62    C64     120.000    3.000
+ BMY      H62    C62    C64     120.000    3.000
+ BMY      C62    C64    CL2     120.000    3.000
+ BMY      C62    C64    C65     120.000    3.000
+ BMY      CL2    C64    C65     120.000    3.000
+ BMY      C64    C65    C63     120.000    3.000
+ BMY      C64    C65    O66     120.000    3.000
+ BMY      C63    C65    O66     120.000    3.000
+ BMY      C65    C63    H63     120.000    3.000
+ BMY      C65    C63    C61     120.000    3.000
+ BMY      H63    C63    C61     120.000    3.000
+ BMY      C63    C61    H61     120.000    3.000
+ BMY      C63    C61    C60     120.000    3.000
+ BMY      H61    C61    C60     120.000    3.000
+ BMY      C65    O66    C39     120.000    3.000
+ BMY      O66    C39    C37     120.000    3.000
+ BMY      O66    C39    C41     120.000    3.000
+ BMY      C37    C39    C41     120.000    3.000
+ BMY      C39    C37    H37     120.000    3.000
+ BMY      C39    C37    C36     120.000    3.000
+ BMY      H37    C37    C36     120.000    3.000
+ BMY      C39    C41    O42     120.000    3.000
+ BMY      C39    C41    C40     120.000    3.000
+ BMY      O42    C41    C40     120.000    3.000
+ BMY      C41    O42    C3B     120.000    3.000
+ BMY      O42    C3B    "H3'"   109.470    3.000
+ BMY      O42    C3B    "O8'"   109.470    3.000
+ BMY      O42    C3B    C4B     109.470    3.000
+ BMY      "H3'"  C3B    "O8'"   109.470    3.000
+ BMY      "H3'"  C3B    C4B     108.340    3.000
+ BMY      "O8'"  C3B    C4B     109.470    3.000
+ BMY      C3B    "O8'"  C7B     111.800    3.000
+ BMY      "O8'"  C7B    "H7'"   109.470    3.000
+ BMY      "O8'"  C7B    C3A     109.470    3.000
+ BMY      "O8'"  C7B    "C6'"   109.470    3.000
+ BMY      "H7'"  C7B    C3A     108.340    3.000
+ BMY      "H7'"  C7B    "C6'"   108.340    3.000
+ BMY      C3A    C7B    "C6'"   111.000    3.000
+ BMY      C7B    C3A    H3A1    109.470    3.000
+ BMY      C7B    C3A    H3A2    109.470    3.000
+ BMY      C7B    C3A    O4A     109.470    3.000
+ BMY      H3A1   C3A    H3A2    107.900    3.000
+ BMY      H3A1   C3A    O4A     109.470    3.000
+ BMY      H3A2   C3A    O4A     109.470    3.000
+ BMY      C3A    O4A    H4A     109.470    3.000
+ BMY      C7B    "C6'"  "H6'"   108.340    3.000
+ BMY      C7B    "C6'"  O2A     109.470    3.000
+ BMY      C7B    "C6'"  C5B     111.000    3.000
+ BMY      "H6'"  "C6'"  O2A     109.470    3.000
+ BMY      "H6'"  "C6'"  C5B     108.340    3.000
+ BMY      O2A    "C6'"  C5B     109.470    3.000
+ BMY      "C6'"  O2A    HOA2    109.470    3.000
+ BMY      "C6'"  C5B    H5B     108.340    3.000
+ BMY      "C6'"  C5B    O1A     109.470    3.000
+ BMY      "C6'"  C5B    C4B     111.000    3.000
+ BMY      H5B    C5B    O1A     109.470    3.000
+ BMY      H5B    C5B    C4B     108.340    3.000
+ BMY      O1A    C5B    C4B     109.470    3.000
+ BMY      C5B    O1A    HOA1    109.470    3.000
+ BMY      C5B    C4B    "H4'"   108.340    3.000
+ BMY      C5B    C4B    O9B     109.470    3.000
+ BMY      C5B    C4B    C3B     111.000    3.000
+ BMY      "H4'"  C4B    O9B     109.470    3.000
+ BMY      "H4'"  C4B    C3B     108.340    3.000
+ BMY      O9B    C4B    C3B     109.470    3.000
+ BMY      C4B    O9B    "H9'"   109.470    3.000
+ BMY      C41    C40    C38     120.000    3.000
+ BMY      C41    C40    O22     120.000    3.000
+ BMY      C38    C40    O22     120.000    3.000
+ BMY      C40    C38    H38     120.000    3.000
+ BMY      C40    C38    C36     120.000    3.000
+ BMY      H38    C38    C36     120.000    3.000
+ BMY      C38    C36    C33     120.000    3.000
+ BMY      C38    C36    C37     120.000    3.000
+ BMY      C33    C36    C37     120.000    3.000
+ BMY      C36    C33    H33     109.470    3.000
+ BMY      C36    C33    N32     109.470    3.000
+ BMY      C36    C33    C34     109.500    3.000
+ BMY      H33    C33    N32     108.550    3.000
+ BMY      H33    C33    C34     108.810    3.000
+ BMY      N32    C33    C34     111.600    3.000
+ BMY      C33    N32    H32     118.500    3.000
+ BMY      C33    N32    C26     121.500    3.000
+ BMY      H32    N32    C26     120.000    3.000
+ BMY      N32    C26    O27     123.000    3.000
+ BMY      N32    C26    C25     116.500    3.000
+ BMY      O27    C26    C25     120.500    3.000
+ BMY      C26    C25    H25     108.810    3.000
+ BMY      C26    C25    C28     109.470    3.000
+ BMY      C26    C25    N24     111.600    3.000
+ BMY      H25    C25    C28     108.340    3.000
+ BMY      H25    C25    N24     108.550    3.000
+ BMY      C28    C25    N24     110.000    3.000
+ BMY      C25    C28    H281    109.470    3.000
+ BMY      C25    C28    H282    109.470    3.000
+ BMY      C25    C28    C29     109.470    3.000
+ BMY      H281   C28    H282    107.900    3.000
+ BMY      H281   C28    C29     109.470    3.000
+ BMY      H282   C28    C29     109.470    3.000
+ BMY      C28    C29    N31     116.500    3.000
+ BMY      C28    C29    O30     120.500    3.000
+ BMY      N31    C29    O30     123.000    3.000
+ BMY      C29    N31    H312    120.000    3.000
+ BMY      C29    N31    H311    120.000    3.000
+ BMY      H312   N31    H311    120.000    3.000
+ BMY      C25    N24    H24     118.500    3.000
+ BMY      C25    N24    C12     121.500    3.000
+ BMY      H24    N24    C12     120.000    3.000
+ BMY      N24    C12    O13     123.000    3.000
+ BMY      N24    C12    C11     116.500    3.000
+ BMY      O13    C12    C11     120.500    3.000
+ BMY      C40    O22    C21     120.000    3.000
+ BMY      O22    C21    C19     120.000    3.000
+ BMY      O22    C21    C20     120.000    3.000
+ BMY      C19    C21    C20     120.000    3.000
+ BMY      C21    C19    C17     120.000    3.000
+ BMY      C21    C19    CL1     120.000    3.000
+ BMY      C17    C19    CL1     120.000    3.000
+ BMY      C19    C17    H17     120.000    3.000
+ BMY      C19    C17    C16     120.000    3.000
+ BMY      H17    C17    C16     120.000    3.000
+ BMY      C21    C20    H20     120.000    3.000
+ BMY      C21    C20    C18     120.000    3.000
+ BMY      H20    C20    C18     120.000    3.000
+ BMY      C20    C18    H18     120.000    3.000
+ BMY      C20    C18    C16     120.000    3.000
+ BMY      H18    C18    C16     120.000    3.000
+ BMY      C18    C16    C14     120.000    3.000
+ BMY      C18    C16    C17     120.000    3.000
+ BMY      C14    C16    C17     120.000    3.000
+ BMY      C16    C14    H14     109.470    3.000
+ BMY      C16    C14    O15     109.470    3.000
+ BMY      C16    C14    C11     109.470    3.000
+ BMY      H14    C14    O15     109.470    3.000
+ BMY      H14    C14    C11     108.340    3.000
+ BMY      O15    C14    C11     109.470    3.000
+ BMY      C14    O15    H15     109.470    3.000
+ BMY      C14    C11    H11     108.340    3.000
+ BMY      C14    C11    N10     110.000    3.000
+ BMY      C14    C11    C12     109.470    3.000
+ BMY      H11    C11    N10     108.550    3.000
+ BMY      H11    C11    C12     108.810    3.000
+ BMY      N10    C11    C12     111.600    3.000
+ BMY      C11    N10    H10     118.500    3.000
+ BMY      C11    N10    C4      121.500    3.000
+ BMY      H10    N10    C4      120.000    3.000
+ BMY      N10    C4     O5      123.000    3.000
+ BMY      N10    C4     C3      116.500    3.000
+ BMY      O5     C4     C3      120.500    3.000
+ BMY      C4     C3     H3      108.810    3.000
+ BMY      C4     C3     N2      111.600    3.000
+ BMY      C4     C3     C6      109.470    3.000
+ BMY      H3     C3     N2      108.550    3.000
+ BMY      H3     C3     C6      108.340    3.000
+ BMY      N2     C3     C6      110.000    3.000
+ BMY      C3     N2     H2A     118.500    3.000
+ BMY      C3     N2     C1      120.000    3.000
+ BMY      H2A    N2     C1      118.500    3.000
+ BMY      N2     C1     H1C     109.470    3.000
+ BMY      N2     C1     H1B     109.470    3.000
+ BMY      N2     C1     H1A     109.470    3.000
+ BMY      H1C    C1     H1B     109.470    3.000
+ BMY      H1C    C1     H1A     109.470    3.000
+ BMY      H1B    C1     H1A     109.470    3.000
+ BMY      C3     C6     H6A     109.470    3.000
+ BMY      C3     C6     H6B     109.470    3.000
+ BMY      C3     C6     C7      111.000    3.000
+ BMY      H6A    C6     H6B     107.900    3.000
+ BMY      H6A    C6     C7      109.470    3.000
+ BMY      H6B    C6     C7      109.470    3.000
+ BMY      C6     C7     H7      108.340    3.000
+ BMY      C6     C7     C9      111.000    3.000
+ BMY      C6     C7     C8      111.000    3.000
+ BMY      H7     C7     C9      108.340    3.000
+ BMY      H7     C7     C8      108.340    3.000
+ BMY      C9     C7     C8      111.000    3.000
+ BMY      C7     C9     H9C     109.470    3.000
+ BMY      C7     C9     H9B     109.470    3.000
+ BMY      C7     C9     H9A     109.470    3.000
+ BMY      H9C    C9     H9B     109.470    3.000
+ BMY      H9C    C9     H9A     109.470    3.000
+ BMY      H9B    C9     H9A     109.470    3.000
+ BMY      C7     C8     H8C     109.470    3.000
+ BMY      C7     C8     H8B     109.470    3.000
+ BMY      C7     C8     H8A     109.470    3.000
+ BMY      H8C    C8     H8B     109.470    3.000
+ BMY      H8C    C8     H8A     109.470    3.000
+ BMY      H8B    C8     H8A     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BMY      var_1    O80    C70    C69    N68      145.452   20.000   3
+ BMY      var_2    C70    C69    C72    C74      -10.469   20.000   1
+ BMY      CONST_1  C69    C72    C73    C75      180.000    0.000   0
+ BMY      CONST_2  C69    C72    C74    C77      180.000    0.000   0
+ BMY      CONST_3  C72    C74    C77    C76        0.000    0.000   0
+ BMY      var_3    C74    C77    O78    H78       -9.607   20.000   1
+ BMY      CONST_4  C74    C77    C76    C75        0.000    0.000   0
+ BMY      CONST_5  C77    C76    C75    C73        0.000    0.000   0
+ BMY      var_4    C76    C75    O79    H79      107.627   20.000   1
+ BMY      CONST_6  C76    C75    C73    C50      180.000    0.000   0
+ BMY      CONST_7  C75    C73    C50    C52        0.000    0.000   0
+ BMY      CONST_8  C73    C50    C48    C47      180.000    0.000   0
+ BMY      CONST_9  C73    C50    C52    C51      180.000    0.000   0
+ BMY      var_5    C50    C52    O53    H53       46.151   20.000   1
+ BMY      CONST_10 C50    C52    C51    C49        0.000    0.000   0
+ BMY      CONST_11 C52    C51    C49    C47        0.000    0.000   0
+ BMY      CONST_12 C51    C49    C47    C44      180.000    0.000   0
+ BMY      CONST_13 C49    C47    C48    C50        0.000    0.000   0
+ BMY      var_6    C49    C47    C44    N43      -58.088   20.000   1
+ BMY      var_7    C47    C44    C45    N54       83.939   20.000   3
+ BMY      var_8    C47    C44    N43    C34      -83.742   20.000   3
+ BMY      CONST_14 C44    N43    C34    O35        0.000    0.000   0
+ BMY      var_9    C70    C69    N68    C56      -86.318   20.000   3
+ BMY      CONST_15 C69    N68    C56    C55      180.000    0.000   0
+ BMY      var_10   N68    C56    C55    C58      -96.779   20.000   3
+ BMY      var_11   C56    C55    N54    C45     -104.400   20.000   3
+ BMY      CONST_16 C55    N54    C45    O46      180.000    0.000   0
+ BMY      var_12   C56    C55    C58    C60      172.746   20.000   3
+ BMY      var_13   C55    C58    O59    "C1'"    149.091   20.000   1
+ BMY      var_14   C58    O59    "C1'"  "O6'"    -89.237   20.000   1
+ BMY      var_15   O59    "C1'"  "C2'"  "C3'"    180.000   20.000   3
+ BMY      var_16   O59    "C1'"  "O6'"  "C5'"    180.000   20.000   1
+ BMY      var_17   "C1'"  "O6'"  "C5'"  "C4'"     60.000   20.000   1
+ BMY      var_18   "O6'"  "C5'"  C2B    H2A1     179.139   20.000   3
+ BMY      var_19   "O6'"  "C5'"  "C4'"  "C3'"    -60.000   20.000   1
+ BMY      var_20   "C5'"  "C4'"  "O9'"  "HO'9"   173.697   20.000   1
+ BMY      var_21   "C5'"  "C4'"  "O1'"  "HO'1"   -57.118   20.000   1
+ BMY      var_22   "C5'"  "C4'"  "C3'"  "C2'"     30.000   20.000   1
+ BMY      var_23   "C4'"  "C3'"  "N8'"  "H8'1"   -52.893   20.000   1
+ BMY      var_24   "C4'"  "C3'"  "C7'"  "H7'1"   171.586   20.000   1
+ BMY      var_25   "C4'"  "C3'"  "C2'"  "C1'"    -60.000   20.000   1
+ BMY      var_26   C55    C58    C60    C62      -86.116   20.000   1
+ BMY      CONST_17 C58    C60    C61    C63      180.000    0.000   0
+ BMY      CONST_18 C58    C60    C62    C64      180.000    0.000   0
+ BMY      CONST_19 C60    C62    C64    C65        0.000    0.000   0
+ BMY      CONST_20 C62    C64    C65    O66      180.000    0.000   0
+ BMY      CONST_21 C64    C65    C63    C61        0.000    0.000   0
+ BMY      CONST_22 C65    C63    C61    C60        0.000    0.000   0
+ BMY      var_27   C64    C65    O66    C39      110.173   20.000   1
+ BMY      var_28   C65    O66    C39    C41      143.322   20.000   1
+ BMY      CONST_23 O66    C39    C37    C36      180.000    0.000   0
+ BMY      CONST_24 O66    C39    C41    C40      180.000    0.000   0
+ BMY      var_29   C39    C41    O42    C3B      -59.978   20.000   1
+ BMY      var_30   C41    O42    C3B    "O8'"    -59.700   20.000   1
+ BMY      var_31   O42    C3B    C4B    C5B      180.000   20.000   3
+ BMY      var_32   O42    C3B    "O8'"  C7B      180.000   20.000   1
+ BMY      var_33   C3B    "O8'"  C7B    "C6'"     60.000   20.000   1
+ BMY      var_34   "O8'"  C7B    C3A    O4A       58.759   20.000   3
+ BMY      var_35   C7B    C3A    O4A    H4A       -1.908   20.000   1
+ BMY      var_36   "O8'"  C7B    "C6'"  C5B      -60.000   20.000   3
+ BMY      var_37   C7B    "C6'"  O2A    HOA2      35.799   20.000   1
+ BMY      var_38   C7B    "C6'"  C5B    C4B       60.000   20.000   3
+ BMY      var_39   "C6'"  C5B    O1A    HOA1    -152.021   20.000   1
+ BMY      var_40   "C6'"  C5B    C4B    O9B      180.000   20.000   3
+ BMY      var_41   C5B    C4B    O9B    "H9'"    -12.964   20.000   1
+ BMY      CONST_25 C39    C41    C40    O22      180.000    0.000   0
+ BMY      CONST_26 C41    C40    C38    C36        0.000    0.000   0
+ BMY      CONST_27 C40    C38    C36    C33      180.000    0.000   0
+ BMY      CONST_28 C38    C36    C37    C39        0.000    0.000   0
+ BMY      var_42   C38    C36    C33    N32       69.002   20.000   1
+ BMY      var_43   C36    C33    C34    N43       83.520   20.000   3
+ BMY      var_44   C36    C33    N32    C26     -104.602   20.000   3
+ BMY      CONST_29 C33    N32    C26    C25      180.000    0.000   0
+ BMY      var_45   N32    C26    C25    N24      -86.884   20.000   3
+ BMY      var_46   C26    C25    C28    C29       60.815   20.000   3
+ BMY      var_47   C25    C28    C29    O30       -1.085   20.000   3
+ BMY      CONST_30 C28    C29    N31    H311       0.000    0.000   0
+ BMY      var_48   C26    C25    N24    C12      -89.809   20.000   3
+ BMY      CONST_31 C25    N24    C12    O13        0.000    0.000   0
+ BMY      var_49   C41    C40    O22    C21      126.290   20.000   1
+ BMY      var_50   C40    O22    C21    C20      -72.394   20.000   1
+ BMY      CONST_32 O22    C21    C19    CL1        0.000    0.000   0
+ BMY      CONST_33 C21    C19    C17    C16        0.000    0.000   0
+ BMY      CONST_34 O22    C21    C20    C18      180.000    0.000   0
+ BMY      CONST_35 C21    C20    C18    C16        0.000    0.000   0
+ BMY      CONST_36 C20    C18    C16    C14      180.000    0.000   0
+ BMY      CONST_37 C18    C16    C17    C19        0.000    0.000   0
+ BMY      var_51   C18    C16    C14    C11       74.076   20.000   1
+ BMY      var_52   C16    C14    O15    H15     -106.874   20.000   1
+ BMY      var_53   C16    C14    C11    N10      -65.958   20.000   3
+ BMY      var_54   C14    C11    C12    N24     -132.930   20.000   3
+ BMY      var_55   C14    C11    N10    C4      -117.083   20.000   3
+ BMY      CONST_38 C11    N10    C4     C3       180.000    0.000   0
+ BMY      var_56   N10    C4     C3     C6        93.630   20.000   3
+ BMY      var_57   C4     C3     N2     C1      -177.575   20.000   3
+ BMY      var_58   C3     N2     C1     H1A      -85.958   20.000   1
+ BMY      var_59   C4     C3     C6     C7        62.809   20.000   3
+ BMY      var_60   C3     C6     C7     C8        57.092   20.000   3
+ BMY      var_61   C6     C7     C9     H9A      -58.132   20.000   3
+ BMY      var_62   C6     C7     C8     H8A     -175.605   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BMY      chir_01  C3     N2     C4     C6        negativ
+ BMY      chir_02  C7     C6     C8     C9        positiv
+ BMY      chir_03  C11    N10    C12    C14       negativ
+ BMY      chir_04  C14    C11    O15    C16       positiv
+ BMY      chir_05  C25    N24    C26    C28       positiv
+ BMY      chir_06  C33    N32    C34    C36       negativ
+ BMY      chir_07  C44    N43    C45    C47       negativ
+ BMY      chir_08  C55    N54    C56    C58       positiv
+ BMY      chir_09  C58    C55    O59    C60       positiv
+ BMY      chir_10  C69    N68    C70    C72       positiv
+ BMY      chir_11  "C1'"  O59    "C2'"  "O6'"     negativ
+ BMY      chir_12  "C3'"  "C2'"  "C4'"  "C7'"     positiv
+ BMY      chir_13  "C4'"  "C3'"  "C5'"  "O9'"     negativ
+ BMY      chir_14  "C5'"  "C4'"  "O6'"  C2B       negativ
+ BMY      chir_15  C3B    O42    C4B    "O8'"     negativ
+ BMY      chir_16  C4B    C3B    C5B    O9B       negativ
+ BMY      chir_17  C5B    C4B    "C6'"  O1A       positiv
+ BMY      chir_18  "C6'"  C5B    C7B    O2A       negativ
+ BMY      chir_19  C7B    "C6'"  "O8'"  C3A       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BMY      plan-1    N2        0.020
+ BMY      plan-1    C1        0.020
+ BMY      plan-1    C3        0.020
+ BMY      plan-1    H2A       0.020
+ BMY      plan-2    C4        0.020
+ BMY      plan-2    C3        0.020
+ BMY      plan-2    O5        0.020
+ BMY      plan-2    N10       0.020
+ BMY      plan-2    H10       0.020
+ BMY      plan-3    N10       0.020
+ BMY      plan-3    C4        0.020
+ BMY      plan-3    C11       0.020
+ BMY      plan-3    H10       0.020
+ BMY      plan-4    C12       0.020
+ BMY      plan-4    C11       0.020
+ BMY      plan-4    O13       0.020
+ BMY      plan-4    N24       0.020
+ BMY      plan-4    H24       0.020
+ BMY      plan-5    C16       0.020
+ BMY      plan-5    C14       0.020
+ BMY      plan-5    C17       0.020
+ BMY      plan-5    C18       0.020
+ BMY      plan-5    C19       0.020
+ BMY      plan-5    C20       0.020
+ BMY      plan-5    C21       0.020
+ BMY      plan-5    H17       0.020
+ BMY      plan-5    H18       0.020
+ BMY      plan-5    CL1       0.020
+ BMY      plan-5    H20       0.020
+ BMY      plan-5    O22       0.020
+ BMY      plan-6    N24       0.020
+ BMY      plan-6    C12       0.020
+ BMY      plan-6    C25       0.020
+ BMY      plan-6    H24       0.020
+ BMY      plan-7    C26       0.020
+ BMY      plan-7    C25       0.020
+ BMY      plan-7    O27       0.020
+ BMY      plan-7    N32       0.020
+ BMY      plan-7    H32       0.020
+ BMY      plan-8    C29       0.020
+ BMY      plan-8    C28       0.020
+ BMY      plan-8    O30       0.020
+ BMY      plan-8    N31       0.020
+ BMY      plan-8    H312      0.020
+ BMY      plan-8    H311      0.020
+ BMY      plan-9    N31       0.020
+ BMY      plan-9    C29       0.020
+ BMY      plan-9    H311      0.020
+ BMY      plan-9    H312      0.020
+ BMY      plan-10   N32       0.020
+ BMY      plan-10   C26       0.020
+ BMY      plan-10   C33       0.020
+ BMY      plan-10   H32       0.020
+ BMY      plan-11   C34       0.020
+ BMY      plan-11   C33       0.020
+ BMY      plan-11   O35       0.020
+ BMY      plan-11   N43       0.020
+ BMY      plan-11   H43       0.020
+ BMY      plan-12   C36       0.020
+ BMY      plan-12   C33       0.020
+ BMY      plan-12   C37       0.020
+ BMY      plan-12   C38       0.020
+ BMY      plan-12   C39       0.020
+ BMY      plan-12   C40       0.020
+ BMY      plan-12   C41       0.020
+ BMY      plan-12   H37       0.020
+ BMY      plan-12   H38       0.020
+ BMY      plan-12   O66       0.020
+ BMY      plan-12   O22       0.020
+ BMY      plan-12   O42       0.020
+ BMY      plan-13   N43       0.020
+ BMY      plan-13   C34       0.020
+ BMY      plan-13   C44       0.020
+ BMY      plan-13   H43       0.020
+ BMY      plan-14   C45       0.020
+ BMY      plan-14   C44       0.020
+ BMY      plan-14   O46       0.020
+ BMY      plan-14   N54       0.020
+ BMY      plan-14   H54       0.020
+ BMY      plan-15   C47       0.020
+ BMY      plan-15   C44       0.020
+ BMY      plan-15   C48       0.020
+ BMY      plan-15   C49       0.020
+ BMY      plan-15   C50       0.020
+ BMY      plan-15   C51       0.020
+ BMY      plan-15   C52       0.020
+ BMY      plan-15   H48       0.020
+ BMY      plan-15   H49       0.020
+ BMY      plan-15   C73       0.020
+ BMY      plan-15   H51       0.020
+ BMY      plan-15   O53       0.020
+ BMY      plan-16   N54       0.020
+ BMY      plan-16   C45       0.020
+ BMY      plan-16   C55       0.020
+ BMY      plan-16   H54       0.020
+ BMY      plan-17   C56       0.020
+ BMY      plan-17   C55       0.020
+ BMY      plan-17   O57       0.020
+ BMY      plan-17   N68       0.020
+ BMY      plan-17   H68       0.020
+ BMY      plan-18   C60       0.020
+ BMY      plan-18   C58       0.020
+ BMY      plan-18   C61       0.020
+ BMY      plan-18   C62       0.020
+ BMY      plan-18   C63       0.020
+ BMY      plan-18   C64       0.020
+ BMY      plan-18   C65       0.020
+ BMY      plan-18   H61       0.020
+ BMY      plan-18   H62       0.020
+ BMY      plan-18   H63       0.020
+ BMY      plan-18   CL2       0.020
+ BMY      plan-18   O66       0.020
+ BMY      plan-19   N68       0.020
+ BMY      plan-19   C56       0.020
+ BMY      plan-19   C69       0.020
+ BMY      plan-19   H68       0.020
+ BMY      plan-20   C70       0.020
+ BMY      plan-20   C69       0.020
+ BMY      plan-20   O71       0.020
+ BMY      plan-20   O80       0.020
+ BMY      plan-21   C72       0.020
+ BMY      plan-21   C69       0.020
+ BMY      plan-21   C73       0.020
+ BMY      plan-21   C74       0.020
+ BMY      plan-21   C75       0.020
+ BMY      plan-21   C76       0.020
+ BMY      plan-21   C77       0.020
+ BMY      plan-21   C50       0.020
+ BMY      plan-21   H74       0.020
+ BMY      plan-21   O79       0.020
+ BMY      plan-21   H76       0.020
+ BMY      plan-21   O78       0.020
+ BMY      plan-22   "N8'"     0.020
+ BMY      plan-22   "C3'"     0.020
+ BMY      plan-22   "H8'1"    0.020
+ BMY      plan-22   "H8'2"    0.020
+# ------------------------------------------------------

@@ -1,0 +1,158 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MHW      MHW '3-HYDROXYPICOLINIC ACID             ' non-polymer        14  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MHW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MHW           OXT    O    OC       -0.500      0.000    0.000    0.000
+ MHW           C      C    C         0.000     -1.217   -0.288   -0.008
+ MHW           O      O    OC       -0.500     -1.578   -1.486   -0.023
+ MHW           CA     C    CR6       0.000     -2.229    0.789    0.000
+ MHW           CB     C    CR6       0.000     -3.591    0.462   -0.008
+ MHW           OG1    O    OH1       0.000     -3.989   -0.833   -0.024
+ MHW           HG1    H    H         0.000     -4.086   -1.150    0.885
+ MHW           CG2    C    CR16      0.000     -4.530    1.492   -0.001
+ MHW           HG2    H    H         0.000     -5.591    1.274   -0.007
+ MHW           CD     C    CR16      0.000     -4.075    2.798    0.015
+ MHW           HD     H    H         0.000     -4.779    3.621    0.021
+ MHW           CE     C    CR16      0.000     -2.710    3.045    0.023
+ MHW           HE     H    H         0.000     -2.355    4.068    0.036
+ MHW           N      N    NRD6      0.000     -1.842    2.059    0.016
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MHW      OXT    n/a    C      START
+ MHW      C      OXT    CA     .
+ MHW      O      C      .      .
+ MHW      CA     C      CB     .
+ MHW      CB     CA     CG2    .
+ MHW      OG1    CB     HG1    .
+ MHW      HG1    OG1    .      .
+ MHW      CG2    CB     CD     .
+ MHW      HG2    CG2    .      .
+ MHW      CD     CG2    CE     .
+ MHW      HD     CD     .      .
+ MHW      CE     CD     N      .
+ MHW      HE     CE     .      .
+ MHW      N      CE     .      END
+ MHW      N      CA     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MHW       N         CA        double    1.350     0.020     1.350     0.020     
+MHW       N         CE        single    1.337     0.020     1.337     0.020     
+MHW       CA        C         single    1.500     0.020     1.500     0.020     
+MHW       CB        CA        single    1.487     0.020     1.487     0.020     
+MHW       O         C         deloc     1.250     0.020     1.250     0.020     
+MHW       C         OXT       deloc     1.250     0.020     1.250     0.020     
+MHW       OG1       CB        single    1.362     0.020     1.362     0.020     
+MHW       CG2       CB        double    1.390     0.020     1.390     0.020     
+MHW       CD        CG2       single    1.390     0.020     1.390     0.020     
+MHW       CE        CD        double    1.390     0.020     1.390     0.020     
+MHW       HE        CE        single    1.082     0.013     0.975     0.010     
+MHW       HG1       OG1       single    0.970     0.012     0.839     0.014     
+MHW       HG2       CG2       single    1.082     0.013     0.975     0.010     
+MHW       HD        CD        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MHW      OXT    C      O       123.000    3.000
+ MHW      OXT    C      CA      120.000    3.000
+ MHW      O      C      CA      120.000    3.000
+ MHW      C      CA     CB      120.000    3.000
+ MHW      C      CA     N       120.000    3.000
+ MHW      CB     CA     N       120.000    3.000
+ MHW      CA     CB     OG1     120.000    3.000
+ MHW      CA     CB     CG2     120.000    3.000
+ MHW      OG1    CB     CG2     120.000    3.000
+ MHW      CB     OG1    HG1     109.470    3.000
+ MHW      CB     CG2    HG2     120.000    3.000
+ MHW      CB     CG2    CD      120.000    3.000
+ MHW      HG2    CG2    CD      120.000    3.000
+ MHW      CG2    CD     HD      120.000    3.000
+ MHW      CG2    CD     CE      120.000    3.000
+ MHW      HD     CD     CE      120.000    3.000
+ MHW      CD     CE     HE      120.000    3.000
+ MHW      CD     CE     N       120.000    3.000
+ MHW      HE     CE     N       120.000    3.000
+ MHW      CE     N      CA      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MHW      var_1    OXT    C      CA     CB      -179.979   20.000   1
+ MHW      CONST_1  C      CA     CB     CG2      180.000    0.000   0
+ MHW      var_2    CA     CB     OG1    HG1       89.949   20.000   1
+ MHW      CONST_2  CA     CB     CG2    CD         0.000    0.000   0
+ MHW      CONST_3  CB     CG2    CD     CE         0.000    0.000   0
+ MHW      CONST_4  CG2    CD     CE     N          0.000    0.000   0
+ MHW      CONST_5  CD     CE     N      CA         0.000    0.000   0
+ MHW      CONST_6  CE     N      CA     C        180.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MHW      plan-1    N         0.020
+ MHW      plan-1    CA        0.020
+ MHW      plan-1    CE        0.020
+ MHW      plan-1    CB        0.020
+ MHW      plan-1    CG2       0.020
+ MHW      plan-1    CD        0.020
+ MHW      plan-1    C         0.020
+ MHW      plan-1    OG1       0.020
+ MHW      plan-1    HG2       0.020
+ MHW      plan-1    HD        0.020
+ MHW      plan-1    HE        0.020
+ MHW      plan-2    C         0.020
+ MHW      plan-2    CA        0.020
+ MHW      plan-2    O         0.020
+ MHW      plan-2    OXT       0.020
+# ------------------------------------------------------

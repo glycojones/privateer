@@ -1,0 +1,852 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DRB      DRB '.                                   ' non-polymer       116  59 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DRB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DRB           O47    O    O         0.000      0.000    0.000    0.000
+ DRB           C48    C    C         0.000     -0.296   -0.771    0.889
+ DRB           N49    N    NH1       0.000      0.671   -1.369    1.612
+ DRB           H49    H    H         0.000      0.425   -2.011    2.352
+ DRB           C53    C    CH1       0.000      2.080   -1.090    1.323
+ DRB           H53    H    H         0.000      2.190   -0.040    1.016
+ DRB           C54    C    CH1       0.000      2.561   -2.004    0.195
+ DRB           H54    H    H         0.000      1.959   -1.821   -0.707
+ DRB           C55    C    CH2       0.000      4.033   -1.711   -0.107
+ DRB           H552   H    H         0.000      4.141   -0.669   -0.413
+ DRB           H551   H    H         0.000      4.375   -2.363   -0.913
+ DRB           C56    C    CH1       0.000      4.870   -1.966    1.148
+ DRB           H56    H    H         0.000      5.927   -1.756    0.932
+ DRB           C57    C    CH2       0.000      4.718   -3.427    1.574
+ DRB           H571   H    H         0.000      5.317   -3.610    2.468
+ DRB           H572   H    H         0.000      5.062   -4.079    0.768
+ DRB           C59    C    CH2       0.000      4.389   -1.053    2.277
+ DRB           H592   H    H         0.000      4.500   -0.010    1.972
+ DRB           H591   H    H         0.000      4.989   -1.235    3.171
+ DRB           C52    C    CH1       0.000      2.918   -1.345    2.578
+ DRB           H52    H    H         0.000      2.573   -0.688    3.389
+ DRB           C51    C    CH2       0.000      2.765   -2.807    3.004
+ DRB           H511   H    H         0.000      1.715   -3.014    3.219
+ DRB           H512   H    H         0.000      3.362   -2.988    3.900
+ DRB           C58    C    CH2       0.000      2.409   -3.465    0.620
+ DRB           H582   H    H         0.000      2.753   -4.116   -0.186
+ DRB           H581   H    H         0.000      1.359   -3.674    0.833
+ DRB           C50    C    CH1       0.000      3.246   -3.720    1.876
+ DRB           H50    H    H         0.000      3.136   -4.770    2.182
+ DRB           C46    C    CH2       0.000     -1.745   -1.059    1.186
+ DRB           H462   H    H         0.000     -1.969   -0.775    2.216
+ DRB           H461   H    H         0.000     -1.938   -2.126    1.054
+ DRB           C45    C    CH2       0.000     -2.630   -0.257    0.229
+ DRB           H452   H    H         0.000     -2.404   -0.542   -0.800
+ DRB           H451   H    H         0.000     -2.435    0.809    0.362
+ DRB           C44    C    CH2       0.000     -4.102   -0.550    0.530
+ DRB           H442   H    H         0.000     -4.326   -0.265    1.560
+ DRB           H441   H    H         0.000     -4.295   -1.616    0.398
+ DRB           C43    C    CH2       0.000     -4.987    0.252   -0.426
+ DRB           H432   H    H         0.000     -4.761   -0.032   -1.456
+ DRB           H431   H    H         0.000     -4.792    1.319   -0.294
+ DRB           C42    C    CH2       0.000     -6.459   -0.040   -0.126
+ DRB           H422   H    H         0.000     -6.683    0.244    0.905
+ DRB           H421   H    H         0.000     -6.651   -1.107   -0.258
+ DRB           C41    C    CH2       0.000     -7.344    0.762   -1.082
+ DRB           H412   H    H         0.000     -7.117    0.477   -2.112
+ DRB           H411   H    H         0.000     -7.149    1.828   -0.949
+ DRB           C40    C    CH2       0.000     -8.815    0.469   -0.781
+ DRB           H402   H    H         0.000     -9.039    0.754    0.249
+ DRB           H401   H    H         0.000     -9.008   -0.598   -0.913
+ DRB           C39    C    CH2       0.000     -9.700    1.271   -1.738
+ DRB           H392   H    H         0.000     -9.474    0.986   -2.767
+ DRB           H391   H    H         0.000     -9.505    2.338   -1.605
+ DRB           C22    C    CR6       0.000    -11.149    0.983   -1.441
+ DRB           C21    C    CR16      0.000    -11.848    1.800   -0.624
+ DRB           H21    H    H         0.000    -11.362    2.662   -0.183
+ DRB           C23    C    CR16      0.000    -11.802   -0.180   -2.036
+ DRB           H23    H    H         0.000    -11.251   -0.837   -2.697
+ DRB           C24    C    CR16      0.000    -13.087   -0.426   -1.758
+ DRB           H24    H    H         0.000    -13.572   -1.289   -2.198
+ DRB           N25    N    NR6       0.000    -13.810    0.411   -0.909
+ DRB           C20    C    CR6       0.000    -13.227    1.537   -0.333
+ DRB           C19    C    CR6       0.000    -13.999    2.339    0.485
+ DRB           C18    C    CR16      0.000    -13.499    3.524    1.120
+ DRB           H18    H    H         0.000    -12.470    3.822    0.966
+ DRB           C17    C    CR6       0.000    -14.301    4.271    1.908
+ DRB           C38    C    CH3       0.000    -13.763    5.513    2.570
+ DRB           H381   H    H         0.000    -13.910    6.345    1.932
+ DRB           H382   H    H         0.000    -14.273    5.674    3.484
+ DRB           H383   H    H         0.000    -12.728    5.392    2.760
+ DRB           C16    C    CR16      0.000    -15.690    3.872    2.115
+ DRB           H16    H    H         0.000    -16.341    4.466    2.744
+ DRB           C15    C    CR16      0.000    -16.152    2.765    1.522
+ DRB           H15    H    H         0.000    -17.183    2.470    1.676
+ DRB           N14    N    NR6       0.000    -15.329    1.987    0.709
+ DRB           RU     RU   RU        2.000    -15.747    0.271   -0.300
+ DRB           N37    N    NR6       0.000    -15.956   -1.526   -1.233
+ DRB           C36    C    CR16      0.000    -16.336   -1.806   -2.544
+ DRB           H36    H    H         0.000    -16.572   -0.990   -3.217
+ DRB           C35    C    CR16      0.000    -16.415   -3.067   -2.985
+ DRB           H35    H    H         0.000    -16.711   -3.271   -4.007
+ DRB           C34    C    CR16      0.000    -16.097   -4.166   -2.076
+ DRB           H34    H    H         0.000    -16.154   -5.191   -2.422
+ DRB           C33    C    CR16      0.000    -15.731   -3.900   -0.805
+ DRB           H33    H    H         0.000    -15.497   -4.716   -0.133
+ DRB           C32    C    CR6       0.000    -15.649   -2.547   -0.336
+ DRB           C31    C    CR6       0.000    -15.282   -2.213    0.953
+ DRB           C30    C    CR16      0.000    -14.953   -3.183    1.957
+ DRB           H30    H    H         0.000    -14.995   -4.238    1.718
+ DRB           C29    C    CR16      0.000    -14.592   -2.792    3.198
+ DRB           H29    H    H         0.000    -14.344   -3.532    3.949
+ DRB           C28    C    CR16      0.000    -14.535   -1.370    3.525
+ DRB           H28    H    H         0.000    -14.243   -1.048    4.518
+ DRB           C27    C    CR16      0.000    -14.847   -0.468    2.587
+ DRB           H27    H    H         0.000    -14.807    0.587    2.827
+ DRB           N26    N    NR6       0.000    -15.223   -0.866    1.305
+ DRB           N13    N    NR6       0.000    -17.703    0.274    0.257
+ DRB           C12    C    CR16      0.000    -18.846   -0.193   -0.393
+ DRB           H12    H    H         0.000    -18.753   -0.652   -1.370
+ DRB           C11    C    CR16      0.000    -20.054   -0.084    0.172
+ DRB           H11    H    H         0.000    -20.933   -0.450   -0.345
+ DRB           C10    C    CR16      0.000    -20.178    0.532    1.490
+ DRB           H10    H    H         0.000    -21.151    0.625    1.957
+ DRB           C9     C    CR16      0.000    -19.076    0.987    2.124
+ DRB           H9     H    H         0.000    -19.172    1.467    3.090
+ DRB           C8     C    CR6       0.000    -17.780    0.838    1.529
+ DRB           C7     C    CR6       0.000    -16.613    1.267    2.136
+ DRB           N2     N    NR6       0.000    -15.408    1.113    1.452
+ DRB           C6     C    CR16      0.000    -16.579    1.866    3.437
+ DRB           H6     H    H         0.000    -17.500    1.997    3.992
+ DRB           C5     C    CR16      0.000    -15.409    2.268    3.978
+ DRB           H5     H    H         0.000    -15.392    2.721    4.961
+ DRB           C4     C    CR16      0.000    -14.166    2.088    3.232
+ DRB           H4     H    H         0.000    -13.223    2.406    3.659
+ DRB           C3     C    CR16      0.000    -14.202    1.527    2.017
+ DRB           H3     H    H         0.000    -13.280    1.393    1.465
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DRB      O47    n/a    C48    START
+ DRB      C48    O47    C46    .
+ DRB      N49    C48    C53    .
+ DRB      H49    N49    .      .
+ DRB      C53    N49    C54    .
+ DRB      H53    C53    .      .
+ DRB      C54    C53    C58    .
+ DRB      H54    C54    .      .
+ DRB      C55    C54    C56    .
+ DRB      H552   C55    .      .
+ DRB      H551   C55    .      .
+ DRB      C56    C55    C59    .
+ DRB      H56    C56    .      .
+ DRB      C57    C56    H572   .
+ DRB      H571   C57    .      .
+ DRB      H572   C57    .      .
+ DRB      C59    C56    C52    .
+ DRB      H592   C59    .      .
+ DRB      H591   C59    .      .
+ DRB      C52    C59    C51    .
+ DRB      H52    C52    .      .
+ DRB      C51    C52    H512   .
+ DRB      H511   C51    .      .
+ DRB      H512   C51    .      .
+ DRB      C58    C54    C50    .
+ DRB      H582   C58    .      .
+ DRB      H581   C58    .      .
+ DRB      C50    C58    H50    .
+ DRB      H50    C50    .      .
+ DRB      C46    C48    C45    .
+ DRB      H462   C46    .      .
+ DRB      H461   C46    .      .
+ DRB      C45    C46    C44    .
+ DRB      H452   C45    .      .
+ DRB      H451   C45    .      .
+ DRB      C44    C45    C43    .
+ DRB      H442   C44    .      .
+ DRB      H441   C44    .      .
+ DRB      C43    C44    C42    .
+ DRB      H432   C43    .      .
+ DRB      H431   C43    .      .
+ DRB      C42    C43    C41    .
+ DRB      H422   C42    .      .
+ DRB      H421   C42    .      .
+ DRB      C41    C42    C40    .
+ DRB      H412   C41    .      .
+ DRB      H411   C41    .      .
+ DRB      C40    C41    C39    .
+ DRB      H402   C40    .      .
+ DRB      H401   C40    .      .
+ DRB      C39    C40    C22    .
+ DRB      H392   C39    .      .
+ DRB      H391   C39    .      .
+ DRB      C22    C39    C23    .
+ DRB      C21    C22    H21    .
+ DRB      H21    C21    .      .
+ DRB      C23    C22    C24    .
+ DRB      H23    C23    .      .
+ DRB      C24    C23    N25    .
+ DRB      H24    C24    .      .
+ DRB      N25    C24    RU     .
+ DRB      C20    N25    C19    .
+ DRB      C19    C20    N14    .
+ DRB      C18    C19    C17    .
+ DRB      H18    C18    .      .
+ DRB      C17    C18    C16    .
+ DRB      C38    C17    H383   .
+ DRB      H381   C38    .      .
+ DRB      H382   C38    .      .
+ DRB      H383   C38    .      .
+ DRB      C16    C17    C15    .
+ DRB      H16    C16    .      .
+ DRB      C15    C16    H15    .
+ DRB      H15    C15    .      .
+ DRB      N14    C19    .      .
+ DRB      RU     N25    N13    .
+ DRB      N37    RU     C32    .
+ DRB      C36    N37    C35    .
+ DRB      H36    C36    .      .
+ DRB      C35    C36    C34    .
+ DRB      H35    C35    .      .
+ DRB      C34    C35    C33    .
+ DRB      H34    C34    .      .
+ DRB      C33    C34    H33    .
+ DRB      H33    C33    .      .
+ DRB      C32    N37    C31    .
+ DRB      C31    C32    N26    .
+ DRB      C30    C31    C29    .
+ DRB      H30    C30    .      .
+ DRB      C29    C30    C28    .
+ DRB      H29    C29    .      .
+ DRB      C28    C29    C27    .
+ DRB      H28    C28    .      .
+ DRB      C27    C28    H27    .
+ DRB      H27    C27    .      .
+ DRB      N26    C31    .      .
+ DRB      N13    RU     C8     .
+ DRB      C12    N13    C11    .
+ DRB      H12    C12    .      .
+ DRB      C11    C12    C10    .
+ DRB      H11    C11    .      .
+ DRB      C10    C11    C9     .
+ DRB      H10    C10    .      .
+ DRB      C9     C10    H9     .
+ DRB      H9     C9     .      .
+ DRB      C8     N13    C7     .
+ DRB      C7     C8     C6     .
+ DRB      N2     C7     .      .
+ DRB      C6     C7     C5     .
+ DRB      H6     C6     .      .
+ DRB      C5     C6     C4     .
+ DRB      H5     C5     .      .
+ DRB      C4     C5     C3     .
+ DRB      H4     C4     .      .
+ DRB      C3     C4     H3     .
+ DRB      H3     C3     .      END
+ DRB      RU     N2     .    ADD
+ DRB      RU     N14    .    ADD
+ DRB      RU     N26    .    ADD
+ DRB      N2     C3     .    ADD
+ DRB      C8     C9     .    ADD
+ DRB      N14    C15    .    ADD
+ DRB      C20    C21    .    ADD
+ DRB      N26    C27    .    ADD
+ DRB      C32    C33    .    ADD
+ DRB      C50    C51    .    ADD
+ DRB      C50    C57    .    ADD
+ DRB      C52    C53    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DRB       RU        N2        single    2.034     0.020     2.034     0.020     
+DRB       N13       RU        single    2.034     0.020     2.034     0.020     
+DRB       RU        N14       single    2.033     0.020     2.033     0.020     
+DRB       RU        N25       single    2.035     0.020     2.035     0.020     
+DRB       RU        N26       single    2.035     0.020     2.035     0.020     
+DRB       N37       RU        single    2.036     0.020     2.036     0.020     
+DRB       N2        C3        single    1.337     0.020     1.337     0.020     
+DRB       N2        C7        single    1.410     0.020     1.410     0.020     
+DRB       C3        C4        double    1.390     0.020     1.390     0.020     
+DRB       H3        C3        single    1.082     0.013     0.975     0.010     
+DRB       C4        C5        single    1.390     0.020     1.390     0.020     
+DRB       H4        C4        single    1.082     0.013     0.975     0.010     
+DRB       C5        C6        double    1.390     0.020     1.390     0.020     
+DRB       H5        C5        single    1.082     0.013     0.975     0.010     
+DRB       C6        C7        single    1.390     0.020     1.390     0.020     
+DRB       H6        C6        single    1.082     0.013     0.975     0.010     
+DRB       C7        C8        double    1.487     0.020     1.487     0.020     
+DRB       C8        C9        single    1.390     0.020     1.390     0.020     
+DRB       C8        N13       single    1.410     0.020     1.410     0.020     
+DRB       C9        C10       double    1.390     0.020     1.390     0.020     
+DRB       H9        C9        single    1.082     0.013     0.975     0.010     
+DRB       C10       C11       single    1.390     0.020     1.390     0.020     
+DRB       H10       C10       single    1.082     0.013     0.975     0.010     
+DRB       C11       C12       double    1.390     0.020     1.390     0.020     
+DRB       H11       C11       single    1.082     0.013     0.975     0.010     
+DRB       C12       N13       single    1.337     0.020     1.337     0.020     
+DRB       H12       C12       single    1.082     0.013     0.975     0.010     
+DRB       N14       C15       single    1.337     0.020     1.337     0.020     
+DRB       N14       C19       single    1.410     0.020     1.410     0.020     
+DRB       C15       C16       double    1.390     0.020     1.390     0.020     
+DRB       H15       C15       single    1.082     0.013     0.975     0.010     
+DRB       C16       C17       single    1.390     0.020     1.390     0.020     
+DRB       H16       C16       single    1.082     0.013     0.975     0.010     
+DRB       C17       C18       double    1.390     0.020     1.390     0.020     
+DRB       C38       C17       single    1.506     0.020     1.506     0.020     
+DRB       C18       C19       single    1.390     0.020     1.390     0.020     
+DRB       H18       C18       single    1.082     0.013     0.975     0.010     
+DRB       C19       C20       double    1.487     0.020     1.487     0.020     
+DRB       C20       C21       single    1.390     0.020     1.390     0.020     
+DRB       C20       N25       single    1.410     0.020     1.410     0.020     
+DRB       C21       C22       double    1.390     0.020     1.390     0.020     
+DRB       H21       C21       single    1.082     0.013     0.975     0.010     
+DRB       C23       C22       single    1.390     0.020     1.390     0.020     
+DRB       C22       C39       single    1.511     0.020     1.511     0.020     
+DRB       C24       C23       double    1.390     0.020     1.390     0.020     
+DRB       H23       C23       single    1.082     0.013     0.975     0.010     
+DRB       N25       C24       single    1.337     0.020     1.337     0.020     
+DRB       H24       C24       single    1.082     0.013     0.975     0.010     
+DRB       N26       C27       single    1.337     0.020     1.337     0.020     
+DRB       N26       C31       single    1.410     0.020     1.410     0.020     
+DRB       C27       C28       double    1.390     0.020     1.390     0.020     
+DRB       H27       C27       single    1.082     0.013     0.975     0.010     
+DRB       C28       C29       single    1.390     0.020     1.390     0.020     
+DRB       H28       C28       single    1.082     0.013     0.975     0.010     
+DRB       C29       C30       double    1.390     0.020     1.390     0.020     
+DRB       H29       C29       single    1.082     0.013     0.975     0.010     
+DRB       C30       C31       single    1.390     0.020     1.390     0.020     
+DRB       H30       C30       single    1.082     0.013     0.975     0.010     
+DRB       C31       C32       double    1.487     0.020     1.487     0.020     
+DRB       C32       C33       single    1.390     0.020     1.390     0.020     
+DRB       C32       N37       single    1.410     0.020     1.410     0.020     
+DRB       C33       C34       double    1.390     0.020     1.390     0.020     
+DRB       H33       C33       single    1.082     0.013     0.975     0.010     
+DRB       C34       C35       single    1.390     0.020     1.390     0.020     
+DRB       H34       C34       single    1.082     0.013     0.975     0.010     
+DRB       C35       C36       double    1.390     0.020     1.390     0.020     
+DRB       H35       C35       single    1.082     0.013     0.975     0.010     
+DRB       C36       N37       single    1.337     0.020     1.337     0.020     
+DRB       H36       C36       single    1.082     0.013     0.975     0.010     
+DRB       H383      C38       single    1.089     0.010     0.989     0.005     
+DRB       H382      C38       single    1.089     0.010     0.989     0.005     
+DRB       H381      C38       single    1.089     0.010     0.989     0.005     
+DRB       C39       C40       single    1.524     0.020     1.524     0.020     
+DRB       H392      C39       single    1.089     0.010     0.989     0.005     
+DRB       H391      C39       single    1.089     0.010     0.989     0.005     
+DRB       C40       C41       single    1.524     0.020     1.524     0.020     
+DRB       H402      C40       single    1.089     0.010     0.989     0.005     
+DRB       H401      C40       single    1.089     0.010     0.989     0.005     
+DRB       C41       C42       single    1.524     0.020     1.524     0.020     
+DRB       H412      C41       single    1.089     0.010     0.989     0.005     
+DRB       H411      C41       single    1.089     0.010     0.989     0.005     
+DRB       C42       C43       single    1.524     0.020     1.524     0.020     
+DRB       H422      C42       single    1.089     0.010     0.989     0.005     
+DRB       H421      C42       single    1.089     0.010     0.989     0.005     
+DRB       C43       C44       single    1.524     0.020     1.524     0.020     
+DRB       H432      C43       single    1.089     0.010     0.989     0.005     
+DRB       H431      C43       single    1.089     0.010     0.989     0.005     
+DRB       C44       C45       single    1.524     0.020     1.524     0.020     
+DRB       H442      C44       single    1.089     0.010     0.989     0.005     
+DRB       H441      C44       single    1.089     0.010     0.989     0.005     
+DRB       C45       C46       single    1.524     0.020     1.524     0.020     
+DRB       H452      C45       single    1.089     0.010     0.989     0.005     
+DRB       H451      C45       single    1.089     0.010     0.989     0.005     
+DRB       C46       C48       single    1.510     0.020     1.510     0.020     
+DRB       H462      C46       single    1.089     0.010     0.989     0.005     
+DRB       H461      C46       single    1.089     0.010     0.989     0.005     
+DRB       C48       O47       double    1.220     0.020     1.220     0.020     
+DRB       N49       C48       single    1.330     0.020     1.330     0.020     
+DRB       C53       N49       single    1.450     0.020     1.450     0.020     
+DRB       H49       N49       single    1.016     0.010     0.899     0.007     
+DRB       C50       C51       single    1.524     0.020     1.524     0.020     
+DRB       C50       C57       single    1.524     0.020     1.524     0.020     
+DRB       C50       C58       single    1.524     0.020     1.524     0.020     
+DRB       H50       C50       single    1.089     0.010     0.989     0.005     
+DRB       C51       C52       single    1.524     0.020     1.524     0.020     
+DRB       H512      C51       single    1.089     0.010     0.989     0.005     
+DRB       H511      C51       single    1.089     0.010     0.989     0.005     
+DRB       C52       C53       single    1.524     0.020     1.524     0.020     
+DRB       C52       C59       single    1.524     0.020     1.524     0.020     
+DRB       H52       C52       single    1.089     0.010     0.989     0.005     
+DRB       C54       C53       single    1.524     0.020     1.524     0.020     
+DRB       H53       C53       single    1.089     0.010     0.989     0.005     
+DRB       C55       C54       single    1.524     0.020     1.524     0.020     
+DRB       C58       C54       single    1.524     0.020     1.524     0.020     
+DRB       H54       C54       single    1.089     0.010     0.989     0.005     
+DRB       C56       C55       single    1.524     0.020     1.524     0.020     
+DRB       H552      C55       single    1.089     0.010     0.989     0.005     
+DRB       H551      C55       single    1.089     0.010     0.989     0.005     
+DRB       C57       C56       single    1.524     0.020     1.524     0.020     
+DRB       C59       C56       single    1.524     0.020     1.524     0.020     
+DRB       H56       C56       single    1.089     0.010     0.989     0.005     
+DRB       H572      C57       single    1.089     0.010     0.989     0.005     
+DRB       H571      C57       single    1.089     0.010     0.989     0.005     
+DRB       H582      C58       single    1.089     0.010     0.989     0.005     
+DRB       H581      C58       single    1.089     0.010     0.989     0.005     
+DRB       H592      C59       single    1.089     0.010     0.989     0.005     
+DRB       H591      C59       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DRB      O47    C48    N49     123.000    3.000
+ DRB      O47    C48    C46     120.500    3.000
+ DRB      N49    C48    C46     116.500    3.000
+ DRB      C48    N49    H49     120.000    3.000
+ DRB      C48    N49    C53     121.500    3.000
+ DRB      H49    N49    C53     118.500    3.000
+ DRB      N49    C53    H53     108.550    3.000
+ DRB      N49    C53    C54     110.000    3.000
+ DRB      N49    C53    C52     110.000    3.000
+ DRB      H53    C53    C54     108.340    3.000
+ DRB      H53    C53    C52     108.340    3.000
+ DRB      C54    C53    C52     111.000    3.000
+ DRB      C53    C54    H54     108.340    3.000
+ DRB      C53    C54    C55     111.000    3.000
+ DRB      C53    C54    C58     111.000    3.000
+ DRB      H54    C54    C55     108.340    3.000
+ DRB      H54    C54    C58     108.340    3.000
+ DRB      C55    C54    C58     109.470    3.000
+ DRB      C54    C55    H552    109.470    3.000
+ DRB      C54    C55    H551    109.470    3.000
+ DRB      C54    C55    C56     111.000    3.000
+ DRB      H552   C55    H551    107.900    3.000
+ DRB      H552   C55    C56     109.470    3.000
+ DRB      H551   C55    C56     109.470    3.000
+ DRB      C55    C56    H56     108.340    3.000
+ DRB      C55    C56    C57     109.470    3.000
+ DRB      C55    C56    C59     109.470    3.000
+ DRB      H56    C56    C57     108.340    3.000
+ DRB      H56    C56    C59     108.340    3.000
+ DRB      C57    C56    C59     109.470    3.000
+ DRB      C56    C57    H571    109.470    3.000
+ DRB      C56    C57    H572    109.470    3.000
+ DRB      C56    C57    C50     111.000    3.000
+ DRB      H571   C57    H572    107.900    3.000
+ DRB      H571   C57    C50     109.470    3.000
+ DRB      H572   C57    C50     109.470    3.000
+ DRB      C56    C59    H592    109.470    3.000
+ DRB      C56    C59    H591    109.470    3.000
+ DRB      C56    C59    C52     111.000    3.000
+ DRB      H592   C59    H591    107.900    3.000
+ DRB      H592   C59    C52     109.470    3.000
+ DRB      H591   C59    C52     109.470    3.000
+ DRB      C59    C52    H52     108.340    3.000
+ DRB      C59    C52    C51     109.470    3.000
+ DRB      C59    C52    C53     111.000    3.000
+ DRB      H52    C52    C51     108.340    3.000
+ DRB      H52    C52    C53     108.340    3.000
+ DRB      C51    C52    C53     111.000    3.000
+ DRB      C52    C51    H511    109.470    3.000
+ DRB      C52    C51    H512    109.470    3.000
+ DRB      C52    C51    C50     111.000    3.000
+ DRB      H511   C51    H512    107.900    3.000
+ DRB      H511   C51    C50     109.470    3.000
+ DRB      H512   C51    C50     109.470    3.000
+ DRB      C54    C58    H582    109.470    3.000
+ DRB      C54    C58    H581    109.470    3.000
+ DRB      C54    C58    C50     111.000    3.000
+ DRB      H582   C58    H581    107.900    3.000
+ DRB      H582   C58    C50     109.470    3.000
+ DRB      H581   C58    C50     109.470    3.000
+ DRB      C58    C50    H50     108.340    3.000
+ DRB      C58    C50    C51     109.470    3.000
+ DRB      C58    C50    C57     109.470    3.000
+ DRB      C51    C50    C57     109.470    3.000
+ DRB      H50    C50    C51     108.340    3.000
+ DRB      H50    C50    C57     108.340    3.000
+ DRB      C48    C46    H462    109.470    3.000
+ DRB      C48    C46    H461    109.470    3.000
+ DRB      C48    C46    C45     109.470    3.000
+ DRB      H462   C46    H461    107.900    3.000
+ DRB      H462   C46    C45     109.470    3.000
+ DRB      H461   C46    C45     109.470    3.000
+ DRB      C46    C45    H452    109.470    3.000
+ DRB      C46    C45    H451    109.470    3.000
+ DRB      C46    C45    C44     111.000    3.000
+ DRB      H452   C45    H451    107.900    3.000
+ DRB      H452   C45    C44     109.470    3.000
+ DRB      H451   C45    C44     109.470    3.000
+ DRB      C45    C44    H442    109.470    3.000
+ DRB      C45    C44    H441    109.470    3.000
+ DRB      C45    C44    C43     111.000    3.000
+ DRB      H442   C44    H441    107.900    3.000
+ DRB      H442   C44    C43     109.470    3.000
+ DRB      H441   C44    C43     109.470    3.000
+ DRB      C44    C43    H432    109.470    3.000
+ DRB      C44    C43    H431    109.470    3.000
+ DRB      C44    C43    C42     111.000    3.000
+ DRB      H432   C43    H431    107.900    3.000
+ DRB      H432   C43    C42     109.470    3.000
+ DRB      H431   C43    C42     109.470    3.000
+ DRB      C43    C42    H422    109.470    3.000
+ DRB      C43    C42    H421    109.470    3.000
+ DRB      C43    C42    C41     111.000    3.000
+ DRB      H422   C42    H421    107.900    3.000
+ DRB      H422   C42    C41     109.470    3.000
+ DRB      H421   C42    C41     109.470    3.000
+ DRB      C42    C41    H412    109.470    3.000
+ DRB      C42    C41    H411    109.470    3.000
+ DRB      C42    C41    C40     111.000    3.000
+ DRB      H412   C41    H411    107.900    3.000
+ DRB      H412   C41    C40     109.470    3.000
+ DRB      H411   C41    C40     109.470    3.000
+ DRB      C41    C40    H402    109.470    3.000
+ DRB      C41    C40    H401    109.470    3.000
+ DRB      C41    C40    C39     111.000    3.000
+ DRB      H402   C40    H401    107.900    3.000
+ DRB      H402   C40    C39     109.470    3.000
+ DRB      H401   C40    C39     109.470    3.000
+ DRB      C40    C39    H392    109.470    3.000
+ DRB      C40    C39    H391    109.470    3.000
+ DRB      C40    C39    C22     109.470    3.000
+ DRB      H392   C39    H391    107.900    3.000
+ DRB      H392   C39    C22     109.470    3.000
+ DRB      H391   C39    C22     109.470    3.000
+ DRB      C39    C22    C21     120.000    3.000
+ DRB      C39    C22    C23     120.000    3.000
+ DRB      C21    C22    C23     120.000    3.000
+ DRB      C22    C21    H21     120.000    3.000
+ DRB      C22    C21    C20     120.000    3.000
+ DRB      H21    C21    C20     120.000    3.000
+ DRB      C22    C23    H23     120.000    3.000
+ DRB      C22    C23    C24     120.000    3.000
+ DRB      H23    C23    C24     120.000    3.000
+ DRB      C23    C24    H24     120.000    3.000
+ DRB      C23    C24    N25     120.000    3.000
+ DRB      H24    C24    N25     120.000    3.000
+ DRB      C24    N25    C20     120.000    3.000
+ DRB      C24    N25    RU      120.000    3.000
+ DRB      C20    N25    RU      120.000    3.000
+ DRB      N25    C20    C19     120.000    3.000
+ DRB      N25    C20    C21     120.000    3.000
+ DRB      C19    C20    C21     120.000    3.000
+ DRB      C20    C19    C18     120.000    3.000
+ DRB      C20    C19    N14     120.000    3.000
+ DRB      C18    C19    N14     120.000    3.000
+ DRB      C19    C18    H18     120.000    3.000
+ DRB      C19    C18    C17     120.000    3.000
+ DRB      H18    C18    C17     120.000    3.000
+ DRB      C18    C17    C38     120.000    3.000
+ DRB      C18    C17    C16     120.000    3.000
+ DRB      C38    C17    C16     120.000    3.000
+ DRB      C17    C38    H381    109.470    3.000
+ DRB      C17    C38    H382    109.470    3.000
+ DRB      C17    C38    H383    109.470    3.000
+ DRB      H381   C38    H382    109.470    3.000
+ DRB      H381   C38    H383    109.470    3.000
+ DRB      H382   C38    H383    109.470    3.000
+ DRB      C17    C16    H16     120.000    3.000
+ DRB      C17    C16    C15     120.000    3.000
+ DRB      H16    C16    C15     120.000    3.000
+ DRB      C16    C15    H15     120.000    3.000
+ DRB      C16    C15    N14     120.000    3.000
+ DRB      H15    C15    N14     120.000    3.000
+ DRB      C19    N14    RU      120.000    3.000
+ DRB      C19    N14    C15     120.000    3.000
+ DRB      RU     N14    C15     120.000    3.000
+ DRB      N25    RU     N37      90.000    3.000
+ DRB      N25    RU     N13     180.000    3.000
+ DRB      N25    RU     N2       90.000    3.000
+ DRB      N25    RU     N14      90.000    3.000
+ DRB      N25    RU     N26      90.000    3.000
+ DRB      N37    RU     N13      90.000    3.000
+ DRB      N2     RU     N14      90.000    3.000
+ DRB      N2     RU     N26     180.000    3.000
+ DRB      N14    RU     N26      90.000    3.000
+ DRB      N37    RU     N2       90.000    3.000
+ DRB      N13    RU     N2       90.000    3.000
+ DRB      N37    RU     N14     180.000    3.000
+ DRB      N13    RU     N14      90.000    3.000
+ DRB      N37    RU     N26      90.000    3.000
+ DRB      N13    RU     N26      90.000    3.000
+ DRB      RU     N37    C36     120.000    3.000
+ DRB      RU     N37    C32     120.000    3.000
+ DRB      C36    N37    C32     120.000    3.000
+ DRB      N37    C36    H36     120.000    3.000
+ DRB      N37    C36    C35     120.000    3.000
+ DRB      H36    C36    C35     120.000    3.000
+ DRB      C36    C35    H35     120.000    3.000
+ DRB      C36    C35    C34     120.000    3.000
+ DRB      H35    C35    C34     120.000    3.000
+ DRB      C35    C34    H34     120.000    3.000
+ DRB      C35    C34    C33     120.000    3.000
+ DRB      H34    C34    C33     120.000    3.000
+ DRB      C34    C33    H33     120.000    3.000
+ DRB      C34    C33    C32     120.000    3.000
+ DRB      H33    C33    C32     120.000    3.000
+ DRB      N37    C32    C31     120.000    3.000
+ DRB      N37    C32    C33     120.000    3.000
+ DRB      C31    C32    C33     120.000    3.000
+ DRB      C32    C31    C30     120.000    3.000
+ DRB      C32    C31    N26     120.000    3.000
+ DRB      C30    C31    N26     120.000    3.000
+ DRB      C31    C30    H30     120.000    3.000
+ DRB      C31    C30    C29     120.000    3.000
+ DRB      H30    C30    C29     120.000    3.000
+ DRB      C30    C29    H29     120.000    3.000
+ DRB      C30    C29    C28     120.000    3.000
+ DRB      H29    C29    C28     120.000    3.000
+ DRB      C29    C28    H28     120.000    3.000
+ DRB      C29    C28    C27     120.000    3.000
+ DRB      H28    C28    C27     120.000    3.000
+ DRB      C28    C27    H27     120.000    3.000
+ DRB      C28    C27    N26     120.000    3.000
+ DRB      H27    C27    N26     120.000    3.000
+ DRB      C31    N26    RU      120.000    3.000
+ DRB      C31    N26    C27     120.000    3.000
+ DRB      RU     N26    C27     120.000    3.000
+ DRB      RU     N13    C12     120.000    3.000
+ DRB      RU     N13    C8      120.000    3.000
+ DRB      C12    N13    C8      120.000    3.000
+ DRB      N13    C12    H12     120.000    3.000
+ DRB      N13    C12    C11     120.000    3.000
+ DRB      H12    C12    C11     120.000    3.000
+ DRB      C12    C11    H11     120.000    3.000
+ DRB      C12    C11    C10     120.000    3.000
+ DRB      H11    C11    C10     120.000    3.000
+ DRB      C11    C10    H10     120.000    3.000
+ DRB      C11    C10    C9      120.000    3.000
+ DRB      H10    C10    C9      120.000    3.000
+ DRB      C10    C9     H9      120.000    3.000
+ DRB      C10    C9     C8      120.000    3.000
+ DRB      H9     C9     C8      120.000    3.000
+ DRB      N13    C8     C7      120.000    3.000
+ DRB      N13    C8     C9      120.000    3.000
+ DRB      C7     C8     C9      120.000    3.000
+ DRB      C8     C7     N2      120.000    3.000
+ DRB      C8     C7     C6      120.000    3.000
+ DRB      N2     C7     C6      120.000    3.000
+ DRB      C7     N2     RU      120.000    3.000
+ DRB      C7     N2     C3      120.000    3.000
+ DRB      RU     N2     C3      120.000    3.000
+ DRB      C7     C6     H6      120.000    3.000
+ DRB      C7     C6     C5      120.000    3.000
+ DRB      H6     C6     C5      120.000    3.000
+ DRB      C6     C5     H5      120.000    3.000
+ DRB      C6     C5     C4      120.000    3.000
+ DRB      H5     C5     C4      120.000    3.000
+ DRB      C5     C4     H4      120.000    3.000
+ DRB      C5     C4     C3      120.000    3.000
+ DRB      H4     C4     C3      120.000    3.000
+ DRB      C4     C3     H3      120.000    3.000
+ DRB      C4     C3     N2      120.000    3.000
+ DRB      H3     C3     N2      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DRB      CONST_1  O47    C48    N49    C53        0.000    0.000   0
+ DRB      var_1    C48    N49    C53    C54      -85.012   20.000   3
+ DRB      var_2    N49    C53    C54    C58      -60.000   20.000   3
+ DRB      var_3    C53    C54    C55    C56       60.028   20.000   3
+ DRB      var_4    C54    C55    C56    C59      -59.994   20.000   3
+ DRB      var_5    C55    C56    C57    C50      -60.050   20.000   3
+ DRB      var_6    C55    C56    C59    C52       59.998   20.000   3
+ DRB      var_7    C56    C59    C52    C51       59.942   20.000   3
+ DRB      var_8    C59    C52    C53    N49      180.000   20.000   3
+ DRB      var_9    C59    C52    C51    C50      -60.000   20.000   3
+ DRB      var_10   C53    C54    C58    C50      -60.000   20.000   3
+ DRB      var_11   C54    C58    C50    C51       60.000   20.000   3
+ DRB      var_12   C58    C50    C51    C52      -60.000   20.000   3
+ DRB      var_13   C58    C50    C57    C56       60.059   20.000   3
+ DRB      var_14   O47    C48    C46    C45       -0.019   20.000   3
+ DRB      var_15   C48    C46    C45    C44      179.991   20.000   3
+ DRB      var_16   C46    C45    C44    C43      180.000   20.000   3
+ DRB      var_17   C45    C44    C43    C42      180.000   20.000   3
+ DRB      var_18   C44    C43    C42    C41      180.000   20.000   3
+ DRB      var_19   C43    C42    C41    C40      180.000   20.000   3
+ DRB      var_20   C42    C41    C40    C39      180.000   20.000   3
+ DRB      var_21   C41    C40    C39    C22     -179.993   20.000   3
+ DRB      var_22   C40    C39    C22    C23      -84.992   20.000   2
+ DRB      CONST_2  C39    C22    C21    C20      180.000    0.000   0
+ DRB      CONST_3  C39    C22    C23    C24      180.000    0.000   0
+ DRB      CONST_4  C22    C23    C24    N25        0.000    0.000   0
+ DRB      CONST_5  C23    C24    N25    RU       180.000    0.000   0
+ DRB      CONST_6  C24    N25    C20    C19      180.000    0.000   0
+ DRB      CONST_7  N25    C20    C21    C22        0.000    0.000   0
+ DRB      CONST_8  N25    C20    C19    N14        0.000    0.000   0
+ DRB      CONST_9  C20    C19    C18    C17      180.000    0.000   0
+ DRB      CONST_10 C19    C18    C17    C16        0.000    0.000   0
+ DRB      var_23   C18    C17    C38    H383     -30.067   20.000   1
+ DRB      CONST_11 C18    C17    C16    C15        0.000    0.000   0
+ DRB      CONST_12 C17    C16    C15    N14        0.000    0.000   0
+ DRB      CONST_13 C20    C19    N14    RU         0.000    0.000   0
+ DRB      CONST_14 C19    N14    C15    C16        0.000    0.000   0
+ DRB      var_24   C20    N25    RU     N14        0.000   20.000   1
+ DRB      var_25   C7     N2     RU     N13        0.000   20.000   1
+ DRB      CONST_15 C19    N14    RU     N25        0.000    0.000   0
+ DRB      var_26   C31    N26    RU     N37        0.000   20.000   1
+ DRB      var_27   C32    N37    RU     N26        0.000   20.000   1
+ DRB      CONST_16 RU     N37    C36    C35      180.000    0.000   0
+ DRB      CONST_17 N37    C36    C35    C34        0.000    0.000   0
+ DRB      CONST_18 C36    C35    C34    C33        0.000    0.000   0
+ DRB      CONST_19 C35    C34    C33    C32        0.000    0.000   0
+ DRB      CONST_20 RU     N37    C32    C31        0.000    0.000   0
+ DRB      CONST_21 N37    C32    C33    C34        0.000    0.000   0
+ DRB      CONST_22 N37    C32    C31    N26        0.000    0.000   0
+ DRB      CONST_23 C32    C31    C30    C29      180.000    0.000   0
+ DRB      CONST_24 C31    C30    C29    C28        0.000    0.000   0
+ DRB      CONST_25 C30    C29    C28    C27        0.000    0.000   0
+ DRB      CONST_26 C29    C28    C27    N26        0.000    0.000   0
+ DRB      CONST_27 C32    C31    N26    RU         0.000    0.000   0
+ DRB      CONST_28 C31    N26    C27    C28        0.000    0.000   0
+ DRB      var_28   C8     N13    RU     N2         0.000   20.000   1
+ DRB      CONST_29 RU     N13    C12    C11      180.000    0.000   0
+ DRB      CONST_30 N13    C12    C11    C10        0.000    0.000   0
+ DRB      CONST_31 C12    C11    C10    C9         0.000    0.000   0
+ DRB      CONST_32 C11    C10    C9     C8         0.000    0.000   0
+ DRB      CONST_33 RU     N13    C8     C7         0.000    0.000   0
+ DRB      CONST_34 N13    C8     C9     C10        0.000    0.000   0
+ DRB      CONST_35 N13    C8     C7     C6       180.000    0.000   0
+ DRB      CONST_36 C8     C7     N2     RU         0.000    0.000   0
+ DRB      CONST_37 C7     N2     C3     C4         0.000    0.000   0
+ DRB      CONST_38 C8     C7     C6     C5       180.000    0.000   0
+ DRB      CONST_39 C7     C6     C5     C4         0.000    0.000   0
+ DRB      CONST_40 C6     C5     C4     C3         0.000    0.000   0
+ DRB      CONST_41 C5     C4     C3     N2         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ DRB      chir_01  C50    C51    C57    C58       positiv
+                   .      .      .      .      .
+ DRB      chir_02  C52    C51    C53    C59       positiv
+                   .      .      .      .      .
+ DRB      chir_03  C53    N49    C52    C54       negativ
+                   .      .      .      .      .
+ DRB      chir_04  C54    C53    C55    C58       negativ
+                   .      .      .      .      .
+ DRB      chir_05  C56    C55    C57    C59       positiv
+                   .      .      .      .      .
+ DRB      chir_06  RU     N25    N13    N37       cross4
+                   N2     N14    N26    .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DRB      plan-1    N2        0.020
+ DRB      plan-1    RU        0.020
+ DRB      plan-1    C3        0.020
+ DRB      plan-1    C7        0.020
+ DRB      plan-1    C4        0.020
+ DRB      plan-1    C5        0.020
+ DRB      plan-1    C6        0.020
+ DRB      plan-1    H3        0.020
+ DRB      plan-1    H4        0.020
+ DRB      plan-1    H5        0.020
+ DRB      plan-1    H6        0.020
+ DRB      plan-1    C8        0.020
+ DRB      plan-1    C9        0.020
+ DRB      plan-1    N13       0.020
+ DRB      plan-1    C10       0.020
+ DRB      plan-1    C11       0.020
+ DRB      plan-1    C12       0.020
+ DRB      plan-1    H9        0.020
+ DRB      plan-1    H10       0.020
+ DRB      plan-1    H11       0.020
+ DRB      plan-1    H12       0.020
+ DRB      plan-2    N14       0.020
+ DRB      plan-2    RU        0.020
+ DRB      plan-2    C15       0.020
+ DRB      plan-2    C19       0.020
+ DRB      plan-2    C16       0.020
+ DRB      plan-2    C17       0.020
+ DRB      plan-2    C18       0.020
+ DRB      plan-2    H15       0.020
+ DRB      plan-2    H16       0.020
+ DRB      plan-2    C38       0.020
+ DRB      plan-2    H18       0.020
+ DRB      plan-2    C20       0.020
+ DRB      plan-2    C21       0.020
+ DRB      plan-2    N25       0.020
+ DRB      plan-2    C22       0.020
+ DRB      plan-2    C23       0.020
+ DRB      plan-2    C24       0.020
+ DRB      plan-2    H21       0.020
+ DRB      plan-2    C39       0.020
+ DRB      plan-2    H23       0.020
+ DRB      plan-2    H24       0.020
+ DRB      plan-3    N26       0.020
+ DRB      plan-3    RU        0.020
+ DRB      plan-3    C27       0.020
+ DRB      plan-3    C31       0.020
+ DRB      plan-3    C28       0.020
+ DRB      plan-3    C29       0.020
+ DRB      plan-3    C30       0.020
+ DRB      plan-3    H27       0.020
+ DRB      plan-3    H28       0.020
+ DRB      plan-3    H29       0.020
+ DRB      plan-3    H30       0.020
+ DRB      plan-3    C32       0.020
+ DRB      plan-3    C33       0.020
+ DRB      plan-3    N37       0.020
+ DRB      plan-3    C34       0.020
+ DRB      plan-3    C35       0.020
+ DRB      plan-3    C36       0.020
+ DRB      plan-3    H33       0.020
+ DRB      plan-3    H34       0.020
+ DRB      plan-3    H35       0.020
+ DRB      plan-3    H36       0.020
+ DRB      plan-4    C48       0.020
+ DRB      plan-4    C46       0.020
+ DRB      plan-4    O47       0.020
+ DRB      plan-4    N49       0.020
+ DRB      plan-4    H49       0.020
+ DRB      plan-5    N49       0.020
+ DRB      plan-5    C48       0.020
+ DRB      plan-5    C53       0.020
+ DRB      plan-5    H49       0.020
+# ------------------------------------------------------

@@ -1,0 +1,161 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KNL     KNL      "(2,6-dichlorophenoxy)acetic acid"     non-polymer     18     13     .     
+#
+data_comp_KNL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KNL     CL1     CL      CL      0       12.787      17.511      21.168      
+KNL     O1      O       OC      -1      14.455      21.004      17.077      
+KNL     O2      O       O2      0       12.565      19.150      18.662      
+KNL     CL2     CL      CL      0       10.684      18.911      16.333      
+KNL     O3      O       O       0       15.556      20.181      18.818      
+KNL     C1      C       C       0       14.667      20.134      17.945      
+KNL     C2      C       CH2     0       13.763      18.912      17.936      
+KNL     C3      C       CR16    0       9.807       16.026      18.956      
+KNL     C4      C       CR16    0       10.721      16.224      19.978      
+KNL     C5      C       CR6     0       11.644      17.261      19.891      
+KNL     C6      C       CR6     0       11.660      18.126      18.758      
+KNL     C7      C       CR6     0       10.703      17.887      17.729      
+KNL     C8      C       CR16    0       9.791       16.844      17.838      
+KNL     H2      H       H       0       13.543      18.681      17.015      
+KNL     H3      H       H       0       14.237      18.158      18.330      
+KNL     H4      H       H       0       9.186       15.322      19.022      
+KNL     H5      H       H       0       10.720      15.661      20.729      
+KNL     H6      H       H       0       9.165       16.697      17.154      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KNL       CL1       C5        SINGLE    n         1.731     0.010     1.731     0.010     
+KNL       O1        C1        SINGLE    n         1.247     0.019     1.247     0.019     
+KNL       O2        C2        SINGLE    n         1.420     0.010     1.420     0.010     
+KNL       O2        C6        SINGLE    n         1.369     0.011     1.369     0.011     
+KNL       CL2       C7        SINGLE    n         1.731     0.010     1.731     0.010     
+KNL       O3        C1        DOUBLE    n         1.247     0.019     1.247     0.019     
+KNL       C1        C2        SINGLE    n         1.520     0.010     1.520     0.010     
+KNL       C3        C4        DOUBLE    y         1.373     0.012     1.373     0.012     
+KNL       C3        C8        SINGLE    y         1.373     0.012     1.373     0.012     
+KNL       C4        C5        SINGLE    y         1.379     0.013     1.379     0.013     
+KNL       C5        C6        DOUBLE    y         1.403     0.020     1.403     0.020     
+KNL       C6        C7        SINGLE    y         1.403     0.020     1.403     0.020     
+KNL       C7        C8        DOUBLE    y         1.379     0.013     1.379     0.013     
+KNL       C2        H2        SINGLE    n         1.089     0.010     0.974     0.010     
+KNL       C2        H3        SINGLE    n         1.089     0.010     0.974     0.010     
+KNL       C3        H4        SINGLE    n         1.082     0.013     0.941     0.013     
+KNL       C4        H5        SINGLE    n         1.082     0.013     0.939     0.019     
+KNL       C8        H6        SINGLE    n         1.082     0.013     0.939     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KNL          C2          O2          C6     117.343    1.83
+KNL          O1          C1          O3     125.570    1.50
+KNL          O1          C1          C2     117.215    2.48
+KNL          O3          C1          C2     117.215    2.48
+KNL          O2          C2          C1     111.607    2.58
+KNL          O2          C2          H2     109.378    1.50
+KNL          O2          C2          H3     109.378    1.50
+KNL          C1          C2          H2     109.314    1.50
+KNL          C1          C2          H3     109.314    1.50
+KNL          H2          C2          H3     108.052    1.50
+KNL          C4          C3          C8     120.585    1.50
+KNL          C4          C3          H4     119.708    1.50
+KNL          C8          C3          H4     119.708    1.50
+KNL          C3          C4          C5     119.587    1.50
+KNL          C3          C4          H5     120.435    1.50
+KNL          C5          C4          H5     119.982    1.50
+KNL         CL1          C5          C4     119.936    1.50
+KNL         CL1          C5          C6     119.131    1.50
+KNL          C4          C5          C6     120.924    1.50
+KNL          O2          C6          C5     120.806    1.87
+KNL          O2          C6          C7     120.806    1.87
+KNL          C5          C6          C7     118.388    1.50
+KNL         CL2          C7          C6     119.140    1.50
+KNL         CL2          C7          C8     119.927    1.50
+KNL          C6          C7          C8     120.924    1.50
+KNL          C3          C8          C7     119.587    1.50
+KNL          C3          C8          H6     120.435    1.50
+KNL          C7          C8          H6     119.982    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KNL              const_16          O2          C6          C7         CL2       0.000   10.00     2
+KNL              const_19         CL2          C7          C8          C3     180.000   10.00     2
+KNL             sp2_sp2_1          C5          C6          O2          C2     180.000   10.00     2
+KNL             sp3_sp3_1          C1          C2          O2          C6     180.000   10.00     3
+KNL             sp2_sp3_2          O1          C1          C2          O2     120.000   10.00     6
+KNL              const_21          C4          C3          C8          C7       0.000   10.00     2
+KNL       const_sp2_sp2_1          C8          C3          C4          C5       0.000   10.00     2
+KNL       const_sp2_sp2_6          C3          C4          C5         CL1     180.000   10.00     2
+KNL              const_12         CL1          C5          C6          O2       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KNL    plan-1          C3   0.020
+KNL    plan-1          C4   0.020
+KNL    plan-1          C5   0.020
+KNL    plan-1          C6   0.020
+KNL    plan-1          C7   0.020
+KNL    plan-1          C8   0.020
+KNL    plan-1         CL1   0.020
+KNL    plan-1         CL2   0.020
+KNL    plan-1          H4   0.020
+KNL    plan-1          H5   0.020
+KNL    plan-1          H6   0.020
+KNL    plan-1          O2   0.020
+KNL    plan-2          C1   0.020
+KNL    plan-2          C2   0.020
+KNL    plan-2          O1   0.020
+KNL    plan-2          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KNL SMILES           ACDLabs              12.01 "Clc1cccc(Cl)c1OCC(=O)O"
+KNL SMILES_CANONICAL CACTVS               3.370 "OC(=O)COc1c(Cl)cccc1Cl"
+KNL SMILES           CACTVS               3.370 "OC(=O)COc1c(Cl)cccc1Cl"
+KNL SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc(c(c(c1)Cl)OCC(=O)O)Cl"
+KNL SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(c(c(c1)Cl)OCC(=O)O)Cl"
+KNL InChI            InChI                1.03  "InChI=1S/C8H6Cl2O3/c9-5-2-1-3-6(10)8(5)13-4-7(11)12/h1-3H,4H2,(H,11,12)"
+KNL InChIKey         InChI                1.03  KHZWIIFEFQBNKL-UHFFFAOYSA-N
+KNL ?                acedrg               202         "dictionary generator"                  
+KNL ?                acedrg_database      11          "data source"                           
+KNL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KNL ?                refmac5              5.8.0189    "optimization tool"                     

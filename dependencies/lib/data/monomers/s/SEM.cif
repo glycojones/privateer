@@ -1,0 +1,243 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SEM     SEM     O-benzyl-L-serine     peptide     27     14     .
+#
+data_comp_SEM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SEM     C       C       C       0       -3.068      -1.036      0.704
+SEM     O       O       O       0       -2.836      -1.275      1.907
+SEM     CA      C       CH1     0       -2.877      0.408       0.225
+SEM     N       N       NT3     1       -4.137      0.907       -0.389
+SEM     CB      C       CH2     0       -1.727      0.521       -0.756
+SEM     OG      O       O2      0       -0.485      0.229       -0.121
+SEM     "C'"    C       CH2     0       0.636       0.302       -0.991
+SEM     "C1'"   C       CR6     0       1.906       -0.040      -0.247
+SEM     "C2'"   C       CR16    0       2.341       0.754       0.805
+SEM     "C3'"   C       CR16    0       3.509       0.443       1.491
+SEM     "C4'"   C       CR16    0       4.250       -0.665      1.131
+SEM     "C5'"   C       CR16    0       3.827       -1.462      0.088
+SEM     "C6'"   C       CR16    0       2.660       -1.152      -0.599
+SEM     OXT     O       OC      -1      -3.442      -1.872      -0.142
+SEM     HA      H       H       0       -2.674      0.977       1.016
+SEM     H       H       H       0       -4.811      0.877       0.224
+SEM     H2      H       H       0       -4.358      0.387       -1.104
+SEM     H3      H       H       0       -4.024      1.767       -0.667
+SEM     HB2     H       H       0       -1.698      1.431       -1.125
+SEM     HB3     H       H       0       -1.868      -0.106      -1.500
+SEM     "H'1"   H       H       0       0.704       1.208       -1.358
+SEM     "H'2"   H       H       0       0.510       -0.321      -1.737
+SEM     "H2'"   H       H       0       1.839       1.513       1.056
+SEM     "H3'"   H       H       0       3.795       0.991       2.204
+SEM     "H4'"   H       H       0       5.043       -0.876      1.597
+SEM     "H5'"   H       H       0       4.332       -2.220      -0.161
+SEM     "H6'"   H       H       0       2.377       -1.702      -1.312
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+SEM      N      n/a    CA     START
+SEM      H      N      .      .
+SEM      H2     N      .      .
+SEM      H3     N      .      .
+SEM      CA     N      C      .
+SEM      HA     CA     .      .
+SEM      CB     CA     OG     .
+SEM      HB2    CB     .      .
+SEM      HB3    CB     .      .
+SEM      OG     CB     "C'"   .
+SEM      "C'"   OG     "C1'"  .
+SEM      "H'1"  "C'"   .      .
+SEM      "H'2"  "C'"   .      .
+SEM      "C1'"  "C'"   "C6'"  .
+SEM      "C6'"  "C1'"  "C5'"  .
+SEM      "H6'"  "C6'"  .      .
+SEM      "C5'"  "C6'"  "C4'"  .
+SEM      "H5'"  "C5'"  .      .
+SEM      "C4'"  "C5'"  "C3'"  .
+SEM      "H4'"  "C4'"  .      .
+SEM      "C3'"  "C4'"  "C2'"  .
+SEM      "H3'"  "C3'"  .      .
+SEM      "C2'"  "C3'"  "H2'"  .
+SEM      "H2'"  "C2'"  .      .
+SEM      C      CA     .      END
+SEM      O      C      .      .
+SEM      OXT    C      .      .
+SEM      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SEM       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SEM       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+SEM       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+SEM       CA        N         SINGLE    n         1.487     0.010     1.487     0.010     
+SEM       CA        CB        SINGLE    n         1.515     0.017     1.515     0.017     
+SEM       CB        OG        SINGLE    n         1.424     0.012     1.424     0.012     
+SEM       OG        "C'"      SINGLE    n         1.420     0.012     1.420     0.012     
+SEM       "C'"      "C1'"     SINGLE    n         1.511     0.010     1.511     0.010     
+SEM       "C1'"     "C2'"     DOUBLE    y         1.383     0.011     1.383     0.011     
+SEM       "C1'"     "C6'"     SINGLE    y         1.383     0.011     1.383     0.011     
+SEM       "C2'"     "C3'"     SINGLE    y         1.386     0.010     1.386     0.010     
+SEM       "C3'"     "C4'"     DOUBLE    y         1.376     0.012     1.376     0.012     
+SEM       "C4'"     "C5'"     SINGLE    y         1.374     0.013     1.374     0.013     
+SEM       "C5'"     "C6'"     DOUBLE    y         1.386     0.010     1.386     0.010     
+SEM       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+SEM       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+SEM       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+SEM       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+SEM       CB        HB2       SINGLE    n         1.089     0.010     0.982     0.020     
+SEM       CB        HB3       SINGLE    n         1.089     0.010     0.982     0.020     
+SEM       "C'"      "H'1"     SINGLE    n         1.089     0.010     0.980     0.018     
+SEM       "C'"      "H'2"     SINGLE    n         1.089     0.010     0.980     0.018     
+SEM       "C2'"     "H2'"     SINGLE    n         1.082     0.013     0.944     0.017     
+SEM       "C3'"     "H3'"     SINGLE    n         1.082     0.013     0.944     0.018     
+SEM       "C4'"     "H4'"     SINGLE    n         1.082     0.013     0.944     0.016     
+SEM       "C5'"     "H5'"     SINGLE    n         1.082     0.013     0.944     0.018     
+SEM       "C6'"     "H6'"     SINGLE    n         1.082     0.013     0.944     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SEM         OXT           C           O     125.637    1.50
+SEM         OXT           C          CA     117.181    1.50
+SEM           O           C          CA     117.181    1.50
+SEM           C          CA           N     109.829    1.50
+SEM           C          CA          CB     111.527    1.50
+SEM           C          CA          HA     108.255    1.50
+SEM           N          CA          CB     110.608    1.50
+SEM           N          CA          HA     108.049    1.50
+SEM          CB          CA          HA     108.597    1.50
+SEM          CA           N           H     109.619    1.50
+SEM          CA           N          H2     109.619    1.50
+SEM          CA           N          H3     109.619    1.50
+SEM           H           N          H2     109.028    2.41
+SEM           H           N          H3     109.028    2.41
+SEM          H2           N          H3     109.028    2.41
+SEM          CA          CB          OG     110.589    2.35
+SEM          CA          CB         HB2     109.469    1.50
+SEM          CA          CB         HB3     109.469    1.50
+SEM          OG          CB         HB2     109.290    1.50
+SEM          OG          CB         HB3     109.290    1.50
+SEM         HB2          CB         HB3     108.098    1.50
+SEM          CB          OG        "C'"     113.742    1.50
+SEM          OG        "C'"       "C1'"     110.921    2.08
+SEM          OG        "C'"       "H'1"     109.541    1.50
+SEM          OG        "C'"       "H'2"     109.541    1.50
+SEM       "C1'"        "C'"       "H'1"     109.785    1.50
+SEM       "C1'"        "C'"       "H'2"     109.785    1.50
+SEM       "H'1"        "C'"       "H'2"     108.275    1.50
+SEM        "C'"       "C1'"       "C2'"     120.651    1.50
+SEM        "C'"       "C1'"       "C6'"     120.651    1.50
+SEM       "C2'"       "C1'"       "C6'"     118.697    1.50
+SEM       "C1'"       "C2'"       "C3'"     120.514    1.50
+SEM       "C1'"       "C2'"       "H2'"     119.732    1.50
+SEM       "C3'"       "C2'"       "H2'"     119.754    1.50
+SEM       "C2'"       "C3'"       "C4'"     120.186    1.50
+SEM       "C2'"       "C3'"       "H3'"     119.862    1.50
+SEM       "C4'"       "C3'"       "H3'"     119.952    1.50
+SEM       "C3'"       "C4'"       "C5'"     119.903    1.50
+SEM       "C3'"       "C4'"       "H4'"     120.048    1.50
+SEM       "C5'"       "C4'"       "H4'"     120.048    1.50
+SEM       "C4'"       "C5'"       "C6'"     120.186    1.50
+SEM       "C4'"       "C5'"       "H5'"     119.952    1.50
+SEM       "C6'"       "C5'"       "H5'"     119.862    1.50
+SEM       "C1'"       "C6'"       "C5'"     120.514    1.50
+SEM       "C1'"       "C6'"       "H6'"     119.732    1.50
+SEM       "C5'"       "C6'"       "H6'"     119.754    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SEM             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+SEM              const_13       "C3'"       "C4'"       "C5'"       "C6'"       0.000   10.00     2
+SEM              const_17       "C4'"       "C5'"       "C6'"       "C1'"       0.000   10.00     2
+SEM             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+SEM            sp3_sp3_10           C          CA          CB          OG     180.000   10.00     3
+SEM            sp3_sp3_19          CA          CB          OG        "C'"     180.000   10.00     3
+SEM            sp3_sp3_22       "C1'"        "C'"          OG          CB     180.000   10.00     3
+SEM             sp2_sp3_8       "C2'"       "C1'"        "C'"          OG     -90.000   10.00     6
+SEM              const_23        "C'"       "C1'"       "C6'"       "C5'"     180.000   10.00     2
+SEM       const_sp2_sp2_3        "C'"       "C1'"       "C2'"       "C3'"     180.000   10.00     2
+SEM       const_sp2_sp2_5       "C1'"       "C2'"       "C3'"       "C4'"       0.000   10.00     2
+SEM       const_sp2_sp2_9       "C2'"       "C3'"       "C4'"       "C5'"       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SEM    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SEM    plan-1        "C'"   0.020
+SEM    plan-1       "C1'"   0.020
+SEM    plan-1       "C2'"   0.020
+SEM    plan-1       "C3'"   0.020
+SEM    plan-1       "C4'"   0.020
+SEM    plan-1       "C5'"   0.020
+SEM    plan-1       "C6'"   0.020
+SEM    plan-1       "H2'"   0.020
+SEM    plan-1       "H3'"   0.020
+SEM    plan-1       "H4'"   0.020
+SEM    plan-1       "H5'"   0.020
+SEM    plan-1       "H6'"   0.020
+SEM    plan-2           C   0.020
+SEM    plan-2          CA   0.020
+SEM    plan-2           O   0.020
+SEM    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SEM SMILES           ACDLabs              12.01 "O=C(O)C(N)COCc1ccccc1"
+SEM SMILES_CANONICAL CACTVS               3.370 "N[C@@H](COCc1ccccc1)C(O)=O"
+SEM SMILES           CACTVS               3.370 "N[CH](COCc1ccccc1)C(O)=O"
+SEM SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1ccc(cc1)COC[C@@H](C(=O)O)N"
+SEM SMILES           "OpenEye OEToolkits" 1.7.0 "c1ccc(cc1)COCC(C(=O)O)N"
+SEM InChI            InChI                1.03  "InChI=1S/C10H13NO3/c11-9(10(12)13)7-14-6-8-4-2-1-3-5-8/h1-5,9H,6-7,11H2,(H,12,13)/t9-/m0/s1"
+SEM InChIKey         InChI                1.03  IDGQXGPQOGUGIX-VIFPVBQESA-N
+SEM ?                acedrg               196         "dictionary generator"
+SEM ?                acedrg_database      11          "data source"
+SEM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SEM ?                refmac5              5.8.0222    "optimization tool"

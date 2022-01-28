@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3CN     3CN      3-AMINOPROPANE     NON-POLYMER     13     4     .     
+#
+data_comp_3CN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3CN     CA      C       CH3     0       -1.506      9.984       5.181       
+3CN     CB      C       CH2     0       -1.813      11.146      4.260       
+3CN     CC      C       CH2     0       -0.629      12.066      4.102       
+3CN     ND      N       NT2     0       -0.885      13.187      3.192       
+3CN     HA1     H       H       0       -2.289      9.410       5.253       
+3CN     HA2     H       H       0       -1.270      10.321      6.063       
+3CN     HA3     H       H       0       -0.762      9.472       4.821       
+3CN     HB1     H       H       0       -2.567      11.658      4.621       
+3CN     HB2     H       H       0       -2.070      10.805      3.378       
+3CN     HC1     H       H       0       0.132       11.553      3.763       
+3CN     HC2     H       H       0       -0.382      12.424      4.980       
+3CN     HND1    H       H       0       -1.460      13.761      3.552       
+3CN     HND2    H       H       0       -1.239      12.901      2.430       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3CN       CA        CB        SINGLE    n         1.514     0.020     1.514     0.020     
+3CN       CB        CC        SINGLE    n         1.508     0.020     1.508     0.020     
+3CN       CC        ND        SINGLE    n         1.466     0.012     1.466     0.012     
+3CN       CA        HA1       SINGLE    n         1.089     0.010     0.973     0.016     
+3CN       CA        HA2       SINGLE    n         1.089     0.010     0.973     0.016     
+3CN       CA        HA3       SINGLE    n         1.089     0.010     0.973     0.016     
+3CN       CB        HB1       SINGLE    n         1.089     0.010     0.980     0.014     
+3CN       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.014     
+3CN       CC        HC1       SINGLE    n         1.089     0.010     0.979     0.011     
+3CN       CC        HC2       SINGLE    n         1.089     0.010     0.979     0.011     
+3CN       ND        HND1      SINGLE    n         1.036     0.016     0.888     0.020     
+3CN       ND        HND2      SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3CN          CB          CA         HA1     109.531    1.50
+3CN          CB          CA         HA2     109.531    1.50
+3CN          CB          CA         HA3     109.531    1.50
+3CN         HA1          CA         HA2     109.380    1.50
+3CN         HA1          CA         HA3     109.380    1.50
+3CN         HA2          CA         HA3     109.380    1.50
+3CN          CA          CB          CC     111.816    1.50
+3CN          CA          CB         HB1     109.408    1.50
+3CN          CA          CB         HB2     109.408    1.50
+3CN          CC          CB         HB1     108.805    1.50
+3CN          CC          CB         HB2     108.805    1.50
+3CN         HB1          CB         HB2     108.070    1.50
+3CN          CB          CC          ND     113.282    2.68
+3CN          CB          CC         HC1     109.099    1.50
+3CN          CB          CC         HC2     109.099    1.50
+3CN          ND          CC         HC1     108.763    1.50
+3CN          ND          CC         HC2     108.763    1.50
+3CN         HC1          CC         HC2     107.806    1.50
+3CN          CC          ND        HND1     110.839    3.00
+3CN          CC          ND        HND2     110.839    3.00
+3CN        HND1          ND        HND2     107.243    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3CN             sp3_sp3_1         HA1          CA          CB          CC     180.000   10.00     3
+3CN            sp3_sp3_10          CA          CB          CC          ND     180.000   10.00     3
+3CN            sp3_sp3_19          CB          CC          ND        HND1     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3CN SMILES           ACDLabs              10.04 NCCC
+3CN SMILES_CANONICAL CACTVS               3.341 CCCN
+3CN SMILES           CACTVS               3.341 CCCN
+3CN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCCN
+3CN SMILES           "OpenEye OEToolkits" 1.5.0 CCCN
+3CN InChI            InChI                1.03  InChI=1S/C3H9N/c1-2-3-4/h2-4H2,1H3
+3CN InChIKey         InChI                1.03  WGYKZJWCGVVSQN-UHFFFAOYSA-N
+3CN ?                acedrg               202         "dictionary generator"                  
+3CN ?                acedrg_database      11          "data source"                           
+3CN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3CN ?                refmac5              5.8.0189    "optimization tool"                     

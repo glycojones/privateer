@@ -1,0 +1,141 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+JZ5     JZ5      "(NZ)-N-(thiophen-2-ylmethylidene)hydroxylamine"     NON-POLYMER     13     8     .     
+#
+data_comp_JZ5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+JZ5     OAB     O       OH1     0       -2.685      1.424       0.382       
+JZ5     CAC     C       CR15    0       1.867       -0.341      -0.690      
+JZ5     CAD     C       CR15    0       2.029       0.389       0.430       
+JZ5     CAE     C       CR15    0       0.533       -0.770      -0.887      
+JZ5     NAF     N       N       0       -2.476      0.153       0.941       
+JZ5     SAG     S       S2      0       0.601       0.478       1.344       
+JZ5     CAH     C       C1      0       -1.717      -0.568      0.216       
+JZ5     CAI     C       CR5     0       -0.289      -0.357      0.123       
+JZ5     HOAB    H       H       0       -3.434      1.372       -0.038      
+JZ5     HAC     H       H       0       2.569       -0.546      -1.279      
+JZ5     HAD     H       H       0       2.834       0.802       0.680       
+JZ5     HAE     H       H       0       0.243       -1.278      -1.620      
+JZ5     HAH     H       H       0       -2.098      -1.267      -0.283      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+JZ5       OAB       NAF       SINGLE    n         1.404     0.017     1.404     0.017     
+JZ5       CAC       CAD       DOUBLE    n         1.351     0.019     1.351     0.019     
+JZ5       CAC       CAE       SINGLE    n         1.417     0.016     1.417     0.016     
+JZ5       CAD       SAG       SINGLE    n         1.698     0.014     1.698     0.014     
+JZ5       CAE       CAI       DOUBLE    n         1.365     0.010     1.365     0.010     
+JZ5       NAF       CAH       DOUBLE    n         1.272     0.011     1.272     0.011     
+JZ5       SAG       CAI       SINGLE    n         1.722     0.014     1.722     0.014     
+JZ5       CAH       CAI       SINGLE    n         1.444     0.010     1.444     0.010     
+JZ5       OAB       HOAB      SINGLE    n         0.970     0.012     0.861     0.020     
+JZ5       CAC       HAC       SINGLE    n         1.082     0.013     0.939     0.015     
+JZ5       CAD       HAD       SINGLE    n         1.082     0.013     0.939     0.018     
+JZ5       CAE       HAE       SINGLE    n         1.082     0.013     0.937     0.012     
+JZ5       CAH       HAH       SINGLE    n         1.082     0.013     0.940     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+JZ5         NAF         OAB        HOAB     105.569    3.00
+JZ5         CAD         CAC         CAE     113.702    1.50
+JZ5         CAD         CAC         HAC     123.121    1.50
+JZ5         CAE         CAC         HAC     123.177    1.50
+JZ5         CAC         CAD         SAG     112.502    1.50
+JZ5         CAC         CAD         HAD     124.007    1.50
+JZ5         SAG         CAD         HAD     123.472    1.50
+JZ5         CAC         CAE         CAI     112.029    1.50
+JZ5         CAC         CAE         HAE     124.300    1.50
+JZ5         CAI         CAE         HAE     123.671    1.50
+JZ5         OAB         NAF         CAH     111.842    1.50
+JZ5         CAD         SAG         CAI      91.448    1.50
+JZ5         NAF         CAH         CAI     121.596    2.79
+JZ5         NAF         CAH         HAH     119.442    1.50
+JZ5         CAI         CAH         HAH     118.962    1.50
+JZ5         CAE         CAI         SAG     111.219    1.50
+JZ5         CAE         CAI         CAH     127.147    1.50
+JZ5         SAG         CAI         CAH     121.634    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+JZ5             sp2_sp3_5         CAH         NAF         OAB        HOAB       0.000   10.00     6
+JZ5             sp2_sp2_1         CAE         CAC         CAD         SAG       0.000   10.00     2
+JZ5             sp2_sp2_9         CAD         CAC         CAE         CAI       0.000   10.00     2
+JZ5             sp2_sp2_6         CAC         CAE         CAI         CAH     180.000   10.00     2
+JZ5            sp2_sp2_13         CAI         CAH         NAF         OAB     180.000   10.00     2
+JZ5            sp2_sp2_15         NAF         CAH         CAI         CAE     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+JZ5    plan-1         CAC   0.020
+JZ5    plan-1         CAD   0.020
+JZ5    plan-1         CAE   0.020
+JZ5    plan-1         HAC   0.020
+JZ5    plan-2         CAC   0.020
+JZ5    plan-2         CAD   0.020
+JZ5    plan-2         HAD   0.020
+JZ5    plan-2         SAG   0.020
+JZ5    plan-3         CAC   0.020
+JZ5    plan-3         CAE   0.020
+JZ5    plan-3         CAI   0.020
+JZ5    plan-3         HAE   0.020
+JZ5    plan-4         CAH   0.020
+JZ5    plan-4         CAI   0.020
+JZ5    plan-4         HAH   0.020
+JZ5    plan-4         NAF   0.020
+JZ5    plan-5         CAE   0.020
+JZ5    plan-5         CAH   0.020
+JZ5    plan-5         CAI   0.020
+JZ5    plan-5         SAG   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+JZ5 SMILES_CANONICAL CACTVS               3.352 O\N=C/c1sccc1
+JZ5 SMILES           CACTVS               3.352 ON=Cc1sccc1
+JZ5 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc(sc1)/C=N\O"
+JZ5 SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(sc1)C=NO"
+JZ5 InChI            InChI                1.03  InChI=1S/C5H5NOS/c7-6-4-5-2-1-3-8-5/h1-4,7H/b6-4-
+JZ5 InChIKey         InChI                1.03  GASLBPLHYRZLLT-XQRVVYSFSA-N
+JZ5 ?                acedrg               202         "dictionary generator"                  
+JZ5 ?                acedrg_database      11          "data source"                           
+JZ5 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+JZ5 ?                refmac5              5.8.0189    "optimization tool"                     

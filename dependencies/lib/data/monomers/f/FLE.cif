@@ -1,0 +1,260 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FLE      FLE 'FUROYL-LEUCINE                      ' non-polymer        30  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FLE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FLE           O3     O    O         0.000      0.000    0.000    0.000
+ FLE           C2     C    C         0.000     -0.736    0.360   -0.900
+ FLE           C4     C    CR5       0.000     -0.178    1.023   -2.083
+ FLE           C5     C    CR15      0.000      1.140    1.304   -2.299
+ FLE           H5     H    H         0.000      1.966    1.080   -1.634
+ FLE           C6     C    CR15      0.000      1.219    1.938   -3.548
+ FLE           H6     H    H         0.000      2.119    2.296   -4.033
+ FLE           C7     C    CR15      0.000     -0.039    2.019   -4.033
+ FLE           H7     H    H         0.000     -0.322    2.457   -4.982
+ FLE           O8     O    O2        0.000     -0.879    1.469   -3.146
+ FLE           N      N    NH1       0.000     -2.064    0.147   -0.811
+ FLE           H      H    H         0.000     -2.675    0.445   -1.558
+ FLE           CA     C    CH1       0.000     -2.621   -0.516    0.372
+ FLE           HA     H    H         0.000     -2.048   -0.221    1.261
+ FLE           C      C    C         0.000     -2.541   -2.010    0.194
+ FLE           O      O    OC       -0.500     -2.049   -2.491   -0.851
+ FLE           OXT    O    OC       -0.500     -2.965   -2.771    1.092
+ FLE           CB     C    CH2       0.000     -4.084   -0.102    0.547
+ FLE           HB2    H    H         0.000     -4.524   -0.664    1.373
+ FLE           HB3    H    H         0.000     -4.635   -0.316   -0.371
+ FLE           CG     C    CH1       0.000     -4.156    1.396    0.850
+ FLE           HG     H    H         0.000     -3.633    1.956    0.062
+ FLE           CD2    C    CH3       0.000     -3.493    1.675    2.200
+ FLE           HD23   H    H         0.000     -3.543    2.712    2.412
+ FLE           HD22   H    H         0.000     -3.996    1.135    2.960
+ FLE           HD21   H    H         0.000     -2.478    1.371    2.165
+ FLE           CD1    C    CH3       0.000     -5.621    1.835    0.901
+ FLE           HD13   H    H         0.000     -5.673    2.873    1.111
+ FLE           HD12   H    H         0.000     -6.082    1.642   -0.033
+ FLE           HD11   H    H         0.000     -6.126    1.297    1.661
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FLE      O3     n/a    C2     START
+ FLE      C2     O3     N      .
+ FLE      C4     C2     C5     .
+ FLE      C5     C4     C6     .
+ FLE      H5     C5     .      .
+ FLE      C6     C5     C7     .
+ FLE      H6     C6     .      .
+ FLE      C7     C6     O8     .
+ FLE      H7     C7     .      .
+ FLE      O8     C7     .      .
+ FLE      N      C2     CA     .
+ FLE      H      N      .      .
+ FLE      CA     N      CB     .
+ FLE      HA     CA     .      .
+ FLE      C      CA     OXT    .
+ FLE      O      C      .      .
+ FLE      OXT    C      .      .
+ FLE      CB     CA     CG     .
+ FLE      HB2    CB     .      .
+ FLE      HB3    CB     .      .
+ FLE      CG     CB     CD1    .
+ FLE      HG     CG     .      .
+ FLE      CD2    CG     HD21   .
+ FLE      HD23   CD2    .      .
+ FLE      HD22   CD2    .      .
+ FLE      HD21   CD2    .      .
+ FLE      CD1    CG     HD11   .
+ FLE      HD13   CD1    .      .
+ FLE      HD12   CD1    .      .
+ FLE      HD11   CD1    .      END
+ FLE      C4     O8     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FLE       CA        N         single    1.450     0.020     1.450     0.020     
+FLE       N         C2        single    1.330     0.020     1.330     0.020     
+FLE       H         N         single    1.016     0.010     0.899     0.007     
+FLE       CB        CA        single    1.524     0.020     1.524     0.020     
+FLE       C         CA        single    1.500     0.020     1.500     0.020     
+FLE       HA        CA        single    1.089     0.010     0.989     0.005     
+FLE       CG        CB        single    1.524     0.020     1.524     0.020     
+FLE       HB2       CB        single    1.089     0.010     0.989     0.005     
+FLE       HB3       CB        single    1.089     0.010     0.989     0.005     
+FLE       CD1       CG        single    1.524     0.020     1.524     0.020     
+FLE       CD2       CG        single    1.524     0.020     1.524     0.020     
+FLE       HG        CG        single    1.089     0.010     0.989     0.005     
+FLE       HD11      CD1       single    1.089     0.010     0.989     0.005     
+FLE       HD12      CD1       single    1.089     0.010     0.989     0.005     
+FLE       HD13      CD1       single    1.089     0.010     0.989     0.005     
+FLE       HD21      CD2       single    1.089     0.010     0.989     0.005     
+FLE       HD22      CD2       single    1.089     0.010     0.989     0.005     
+FLE       HD23      CD2       single    1.089     0.010     0.989     0.005     
+FLE       OXT       C         deloc     1.250     0.020     1.250     0.020     
+FLE       O         C         deloc     1.250     0.020     1.250     0.020     
+FLE       C2        O3        double    1.220     0.020     1.220     0.020     
+FLE       C4        C2        single    1.490     0.020     1.490     0.020     
+FLE       C4        O8        single    1.370     0.020     1.370     0.020     
+FLE       C5        C4        double    1.387     0.020     1.387     0.020     
+FLE       O8        C7        single    1.380     0.020     1.380     0.020     
+FLE       C6        C5        single    1.380     0.020     1.380     0.020     
+FLE       H5        C5        single    1.082     0.013     0.975     0.010     
+FLE       C7        C6        double    1.380     0.020     1.380     0.020     
+FLE       H6        C6        single    1.082     0.013     0.975     0.010     
+FLE       H7        C7        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FLE      O3     C2     C4      120.500    3.000
+ FLE      O3     C2     N       123.000    3.000
+ FLE      C4     C2     N       120.000    3.000
+ FLE      C2     C4     C5      126.000    3.000
+ FLE      C2     C4     O8      108.000    3.000
+ FLE      C5     C4     O8      108.000    3.000
+ FLE      C4     C5     H5      126.000    3.000
+ FLE      C4     C5     C6      108.000    3.000
+ FLE      H5     C5     C6      126.000    3.000
+ FLE      C5     C6     H6      126.000    3.000
+ FLE      C5     C6     C7      108.000    3.000
+ FLE      H6     C6     C7      126.000    3.000
+ FLE      C6     C7     H7      126.000    3.000
+ FLE      C6     C7     O8      108.000    3.000
+ FLE      H7     C7     O8      126.000    3.000
+ FLE      C7     O8     C4      108.000    3.000
+ FLE      C2     N      H       120.000    3.000
+ FLE      C2     N      CA      121.500    3.000
+ FLE      H      N      CA      118.500    3.000
+ FLE      N      CA     HA      108.550    3.000
+ FLE      N      CA     C       111.600    3.000
+ FLE      N      CA     CB      110.000    3.000
+ FLE      HA     CA     C       108.810    3.000
+ FLE      HA     CA     CB      108.340    3.000
+ FLE      C      CA     CB      109.470    3.000
+ FLE      CA     C      O       118.500    3.000
+ FLE      CA     C      OXT     118.500    3.000
+ FLE      O      C      OXT     123.000    3.000
+ FLE      CA     CB     HB2     109.470    3.000
+ FLE      CA     CB     HB3     109.470    3.000
+ FLE      CA     CB     CG      111.000    3.000
+ FLE      HB2    CB     HB3     107.900    3.000
+ FLE      HB2    CB     CG      109.470    3.000
+ FLE      HB3    CB     CG      109.470    3.000
+ FLE      CB     CG     HG      108.340    3.000
+ FLE      CB     CG     CD2     111.000    3.000
+ FLE      CB     CG     CD1     111.000    3.000
+ FLE      HG     CG     CD2     108.340    3.000
+ FLE      HG     CG     CD1     108.340    3.000
+ FLE      CD2    CG     CD1     111.000    3.000
+ FLE      CG     CD2    HD23    109.470    3.000
+ FLE      CG     CD2    HD22    109.470    3.000
+ FLE      CG     CD2    HD21    109.470    3.000
+ FLE      HD23   CD2    HD22    109.470    3.000
+ FLE      HD23   CD2    HD21    109.470    3.000
+ FLE      HD22   CD2    HD21    109.470    3.000
+ FLE      CG     CD1    HD13    109.470    3.000
+ FLE      CG     CD1    HD12    109.470    3.000
+ FLE      CG     CD1    HD11    109.470    3.000
+ FLE      HD13   CD1    HD12    109.470    3.000
+ FLE      HD13   CD1    HD11    109.470    3.000
+ FLE      HD12   CD1    HD11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FLE      var_1    O3     C2     C4     C5        -0.323   20.000   1
+ FLE      CONST_1  C2     C4     O8     C7       180.000    0.000   0
+ FLE      CONST_2  C2     C4     C5     C6       180.000    0.000   0
+ FLE      CONST_3  C4     C5     C6     C7         0.000    0.000   0
+ FLE      CONST_4  C5     C6     C7     O8         0.000    0.000   0
+ FLE      CONST_5  C6     C7     O8     C4         0.000    0.000   0
+ FLE      CONST_6  O3     C2     N      CA         0.000    0.000   0
+ FLE      var_2    C2     N      CA     CB       155.002   20.000   3
+ FLE      var_3    N      CA     C      OXT     -179.962   20.000   3
+ FLE      var_4    N      CA     CB     CG       -64.965   20.000   3
+ FLE      var_5    CA     CB     CG     CD1      174.966   20.000   3
+ FLE      var_6    CB     CG     CD2    HD21      60.062   20.000   3
+ FLE      var_7    CB     CG     CD1    HD11      60.011   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FLE      chir_01  CA     N      CB     C         negativ
+ FLE      chir_02  CG     CB     CD1    CD2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FLE      plan-1    N         0.020
+ FLE      plan-1    CA        0.020
+ FLE      plan-1    C2        0.020
+ FLE      plan-1    H         0.020
+ FLE      plan-2    C         0.020
+ FLE      plan-2    CA        0.020
+ FLE      plan-2    OXT       0.020
+ FLE      plan-2    O         0.020
+ FLE      plan-3    C2        0.020
+ FLE      plan-3    N         0.020
+ FLE      plan-3    O3        0.020
+ FLE      plan-3    C4        0.020
+ FLE      plan-3    H         0.020
+ FLE      plan-4    C4        0.020
+ FLE      plan-4    C2        0.020
+ FLE      plan-4    O8        0.020
+ FLE      plan-4    C5        0.020
+ FLE      plan-4    C6        0.020
+ FLE      plan-4    C7        0.020
+ FLE      plan-4    H5        0.020
+ FLE      plan-4    H6        0.020
+ FLE      plan-4    H7        0.020
+# ------------------------------------------------------

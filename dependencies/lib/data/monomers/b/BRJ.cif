@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BRJ     BRJ      2-BROMOETHANOL     NON-POLYMER     9     4     .     
+#
+data_comp_BRJ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BRJ     OB1     O       OH1     0       76.991      64.313      39.593      
+BRJ     CB1     C       CH2     0       76.188      64.217      38.430      
+BRJ     CB      C       CH2     0       76.796      64.910      37.285      
+BRJ     BR1     BR      BR      0       76.906      66.823      37.619      
+BRJ     HB1     H       H       0       76.608      63.903      40.226      
+BRJ     HB11    H       H       0       75.308      64.609      38.615      
+BRJ     HB12    H       H       0       76.060      63.271      38.205      
+BRJ     HB1A    H       H       0       76.265      64.758      36.478      
+BRJ     HB2     H       H       0       77.696      64.564      37.121      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BRJ       OB1       CB1       SINGLE    n         1.417     0.020     1.417     0.020     
+BRJ       CB1       CB        SINGLE    n         1.470     0.020     1.470     0.020     
+BRJ       CB        BR1       SINGLE    n         1.945     0.019     1.945     0.019     
+BRJ       OB1       HB1       SINGLE    n         0.970     0.012     0.846     0.020     
+BRJ       CB1       HB11      SINGLE    n         1.089     0.010     0.981     0.017     
+BRJ       CB1       HB12      SINGLE    n         1.089     0.010     0.981     0.017     
+BRJ       CB        HB1A      SINGLE    n         1.089     0.010     0.978     0.020     
+BRJ       CB        HB2       SINGLE    n         1.089     0.010     0.978     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BRJ         CB1         OB1         HB1     108.972    3.00
+BRJ         OB1         CB1          CB     112.551    3.00
+BRJ         OB1         CB1        HB11     109.256    1.50
+BRJ         OB1         CB1        HB12     109.256    1.50
+BRJ          CB         CB1        HB11     109.763    2.66
+BRJ          CB         CB1        HB12     109.763    2.66
+BRJ        HB11         CB1        HB12     108.319    1.50
+BRJ         CB1          CB         BR1     110.700    1.50
+BRJ         CB1          CB        HB1A     110.262    3.00
+BRJ         CB1          CB         HB2     110.262    3.00
+BRJ         BR1          CB        HB1A     109.029    2.66
+BRJ         BR1          CB         HB2     109.029    2.66
+BRJ        HB1A          CB         HB2     107.879    2.45
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BRJ             sp3_sp3_1          CB         CB1         OB1         HB1     180.000   10.00     3
+BRJ             sp3_sp3_4         BR1          CB         CB1         OB1     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BRJ SMILES           ACDLabs              10.04 BrCCO
+BRJ SMILES_CANONICAL CACTVS               3.341 OCCBr
+BRJ SMILES           CACTVS               3.341 OCCBr
+BRJ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CBr)O"
+BRJ SMILES           "OpenEye OEToolkits" 1.5.0 "C(CBr)O"
+BRJ InChI            InChI                1.03  InChI=1S/C2H5BrO/c3-1-2-4/h4H,1-2H2
+BRJ InChIKey         InChI                1.03  LDLCZOVUSADOIV-UHFFFAOYSA-N
+BRJ ?                acedrg               202         "dictionary generator"                  
+BRJ ?                acedrg_database      11          "data source"                           
+BRJ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BRJ ?                refmac5              5.8.0189    "optimization tool"                     

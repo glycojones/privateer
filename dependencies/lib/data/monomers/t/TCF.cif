@@ -1,0 +1,182 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TCF     TCF      "3-(4-BROMOPHENYL)PROPANAMIDE"     NON-POLYMER     22     12     .     
+#
+data_comp_TCF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TCF     C1B     C       C       0       -7.721      57.216      80.989      
+TCF     O1B     O       O       0       -7.260      57.397      79.863      
+TCF     C2B     C       CH2     0       -7.186      56.123      81.883      
+TCF     C3B     C       CH2     0       -6.205      56.648      82.924      
+TCF     CB1     C       CR6     0       -5.652      55.577      83.836      
+TCF     CB2     C       CR16    0       -4.327      55.154      83.738      
+TCF     CB3     C       CR16    0       -3.815      54.168      84.575      
+TCF     CB6     C       CR16    0       -6.456      54.978      84.804      
+TCF     CB5     C       CR16    0       -5.963      53.990      85.650      
+TCF     CB4     C       CR6     0       -4.643      53.596      85.524      
+TCF     BR      BR      BR      0       -3.957      52.248      86.672      
+TCF     NXT     N       NH2     0       -8.703      57.960      81.477      
+TCF     H2B1    H       H       0       -6.737      55.460      81.334      
+TCF     H2B2    H       H       0       -7.928      55.695      82.337      
+TCF     H3B1    H       H       0       -6.660      57.324      83.471      
+TCF     H3B2    H       H       0       -5.461      57.090      82.461      
+TCF     HB2     H       H       0       -3.765      55.545      83.090      
+TCF     HB3     H       H       0       -2.918      53.893      84.496      
+TCF     HB6     H       H       0       -7.355      55.249      84.886      
+TCF     HB5     H       H       0       -6.519      53.595      86.299      
+TCF     HXT1    H       H       0       -9.004      57.824      82.299      
+TCF     HXT2    H       H       0       -9.065      58.597      80.981      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TCF       C1B       O1B       DOUBLE    n         1.229     0.012     1.229     0.012     
+TCF       C1B       C2B       SINGLE    n         1.508     0.013     1.508     0.013     
+TCF       C1B       NXT       SINGLE    n         1.323     0.011     1.323     0.011     
+TCF       C2B       C3B       SINGLE    n         1.524     0.020     1.524     0.020     
+TCF       C3B       CB1       SINGLE    n         1.510     0.010     1.510     0.010     
+TCF       CB1       CB2       DOUBLE    y         1.385     0.011     1.385     0.011     
+TCF       CB1       CB6       SINGLE    y         1.385     0.011     1.385     0.011     
+TCF       CB2       CB3       SINGLE    y         1.384     0.010     1.384     0.010     
+TCF       CB3       CB4       DOUBLE    y         1.374     0.012     1.374     0.012     
+TCF       CB6       CB5       DOUBLE    y         1.384     0.010     1.384     0.010     
+TCF       CB5       CB4       SINGLE    y         1.374     0.012     1.374     0.012     
+TCF       CB4       BR        SINGLE    n         1.899     0.010     1.899     0.010     
+TCF       C2B       H2B1      SINGLE    n         1.089     0.010     0.970     0.019     
+TCF       C2B       H2B2      SINGLE    n         1.089     0.010     0.970     0.019     
+TCF       C3B       H3B1      SINGLE    n         1.089     0.010     0.981     0.017     
+TCF       C3B       H3B2      SINGLE    n         1.089     0.010     0.981     0.017     
+TCF       CB2       HB2       SINGLE    n         1.082     0.013     0.943     0.017     
+TCF       CB3       HB3       SINGLE    n         1.082     0.013     0.941     0.014     
+TCF       CB6       HB6       SINGLE    n         1.082     0.013     0.943     0.017     
+TCF       CB5       HB5       SINGLE    n         1.082     0.013     0.941     0.014     
+TCF       NXT       HXT1      SINGLE    n         1.016     0.010     0.884     0.020     
+TCF       NXT       HXT2      SINGLE    n         1.016     0.010     0.884     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TCF         O1B         C1B         C2B     121.425    1.50
+TCF         O1B         C1B         NXT     122.315    1.50
+TCF         C2B         C1B         NXT     116.260    1.50
+TCF         C1B         C2B         C3B     112.429    2.96
+TCF         C1B         C2B        H2B1     108.929    1.50
+TCF         C1B         C2B        H2B2     108.929    1.50
+TCF         C3B         C2B        H2B1     108.976    1.50
+TCF         C3B         C2B        H2B2     108.976    1.50
+TCF        H2B1         C2B        H2B2     108.535    1.50
+TCF         C2B         C3B         CB1     113.835    1.79
+TCF         C2B         C3B        H3B1     108.600    1.50
+TCF         C2B         C3B        H3B2     108.600    1.50
+TCF         CB1         C3B        H3B1     108.803    1.50
+TCF         CB1         C3B        H3B2     108.803    1.50
+TCF        H3B1         C3B        H3B2     107.745    1.50
+TCF         C3B         CB1         CB2     121.076    1.50
+TCF         C3B         CB1         CB6     121.076    1.50
+TCF         CB2         CB1         CB6     117.849    1.50
+TCF         CB1         CB2         CB3     121.432    1.50
+TCF         CB1         CB2         HB2     119.243    1.50
+TCF         CB3         CB2         HB2     119.325    1.50
+TCF         CB2         CB3         CB4     118.966    1.50
+TCF         CB2         CB3         HB3     120.545    1.50
+TCF         CB4         CB3         HB3     120.489    1.50
+TCF         CB1         CB6         CB5     121.432    1.50
+TCF         CB1         CB6         HB6     119.243    1.50
+TCF         CB5         CB6         HB6     119.325    1.50
+TCF         CB6         CB5         CB4     118.966    1.50
+TCF         CB6         CB5         HB5     120.545    1.50
+TCF         CB4         CB5         HB5     120.489    1.50
+TCF         CB3         CB4         CB5     121.349    1.50
+TCF         CB3         CB4          BR     119.330    1.50
+TCF         CB5         CB4          BR     119.330    1.50
+TCF         C1B         NXT        HXT1     120.022    1.65
+TCF         C1B         NXT        HXT2     120.022    1.65
+TCF        HXT1         NXT        HXT2     119.956    2.38
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TCF             sp2_sp2_3         O1B         C1B         NXT        HXT1       0.000   10.00     2
+TCF             sp2_sp3_2         O1B         C1B         C2B         C3B     120.000   10.00     6
+TCF             sp3_sp3_1         C1B         C2B         C3B         CB1     180.000   10.00     3
+TCF             sp2_sp3_8         CB2         CB1         C3B         C2B     -90.000   10.00     6
+TCF       const_sp2_sp2_3         C3B         CB1         CB2         CB3     180.000   10.00     2
+TCF              const_23         C3B         CB1         CB6         CB5     180.000   10.00     2
+TCF       const_sp2_sp2_5         CB1         CB2         CB3         CB4       0.000   10.00     2
+TCF              const_10         CB2         CB3         CB4          BR     180.000   10.00     2
+TCF              const_17         CB4         CB5         CB6         CB1       0.000   10.00     2
+TCF              const_15          BR         CB4         CB5         CB6     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TCF    plan-1          BR   0.020
+TCF    plan-1         C3B   0.020
+TCF    plan-1         CB1   0.020
+TCF    plan-1         CB2   0.020
+TCF    plan-1         CB3   0.020
+TCF    plan-1         CB4   0.020
+TCF    plan-1         CB5   0.020
+TCF    plan-1         CB6   0.020
+TCF    plan-1         HB2   0.020
+TCF    plan-1         HB3   0.020
+TCF    plan-1         HB5   0.020
+TCF    plan-1         HB6   0.020
+TCF    plan-2         C1B   0.020
+TCF    plan-2         C2B   0.020
+TCF    plan-2         NXT   0.020
+TCF    plan-2         O1B   0.020
+TCF    plan-3         C1B   0.020
+TCF    plan-3        HXT1   0.020
+TCF    plan-3        HXT2   0.020
+TCF    plan-3         NXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TCF SMILES           ACDLabs              10.04 "Brc1ccc(cc1)CCC(=O)N"
+TCF SMILES_CANONICAL CACTVS               3.352 "NC(=O)CCc1ccc(Br)cc1"
+TCF SMILES           CACTVS               3.352 "NC(=O)CCc1ccc(Br)cc1"
+TCF SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "c1cc(ccc1CCC(=O)N)Br"
+TCF SMILES           "OpenEye OEToolkits" 1.6.1 "c1cc(ccc1CCC(=O)N)Br"
+TCF InChI            InChI                1.03  "InChI=1S/C9H10BrNO/c10-8-4-1-7(2-5-8)3-6-9(11)12/h1-2,4-5H,3,6H2,(H2,11,12)"
+TCF InChIKey         InChI                1.03  MSYVIHNLCVUBFM-UHFFFAOYSA-N
+TCF ?                acedrg               202         "dictionary generator"                  
+TCF ?                acedrg_database      11          "data source"                           
+TCF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TCF ?                refmac5              5.8.0189    "optimization tool"                     

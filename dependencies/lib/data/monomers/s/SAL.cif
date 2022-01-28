@@ -1,0 +1,147 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SAL     SAL     "2-HYDROXYBENZOICACID"     NON-POLYMER     15     10     .     
+#
+data_comp_SAL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SAL     "C1'"   C       C       0       -1.794      -1.528      0.092       
+SAL     "O1'"   O       O       0       -1.841      -2.431      0.947       
+SAL     "O2'"   O       OC      -1      -2.703      -1.293      -0.724      
+SAL     C1      C       CR6     0       -0.564      -0.666      0.044       
+SAL     C2      C       CR6     0       -0.652      0.740       -0.000      
+SAL     C3      C       CR16    0       0.511       1.512       -0.045      
+SAL     C4      C       CR16    0       1.753       0.904       -0.047      
+SAL     C5      C       CR16    0       1.858       -0.475      -0.005      
+SAL     C6      C       CR16    0       0.716       -1.249      0.040       
+SAL     O2      O       OH1     0       -1.848      1.395       -0.001      
+SAL     H3      H       H       0       0.445       2.450       -0.074      
+SAL     H4      H       H       0       2.532       1.436       -0.078      
+SAL     H5      H       H       0       2.707       -0.886      -0.006      
+SAL     H6      H       H       0       0.791       -2.187      0.069       
+SAL     HO2     H       H       0       -1.987      1.703       -0.789      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SAL       "C1'"     "O1'"     DOUBLE    n         1.244     0.020     1.244     0.020     
+SAL       "C1'"     "O2'"     SINGLE    n         1.244     0.020     1.244     0.020     
+SAL       "C1'"     C1        SINGLE    n         1.498     0.020     1.498     0.020     
+SAL       C1        C2        DOUBLE    y         1.399     0.010     1.399     0.010     
+SAL       C1        C6        SINGLE    y         1.398     0.011     1.398     0.011     
+SAL       C2        C3        SINGLE    y         1.390     0.010     1.390     0.010     
+SAL       C2        O2        SINGLE    n         1.361     0.015     1.361     0.015     
+SAL       C3        C4        DOUBLE    y         1.375     0.011     1.375     0.011     
+SAL       C4        C5        SINGLE    y         1.376     0.012     1.376     0.012     
+SAL       C5        C6        DOUBLE    y         1.373     0.011     1.373     0.011     
+SAL       C3        H3        SINGLE    n         1.082     0.013     0.941     0.018     
+SAL       C4        H4        SINGLE    n         1.082     0.013     0.943     0.018     
+SAL       C5        H5        SINGLE    n         1.082     0.013     0.943     0.018     
+SAL       C6        H6        SINGLE    n         1.082     0.013     0.941     0.017     
+SAL       O2        HO2       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SAL       "O1'"       "C1'"       "O2'"     124.103    1.50
+SAL       "O1'"       "C1'"          C1     117.949    1.50
+SAL       "O2'"       "C1'"          C1     117.949    1.50
+SAL       "C1'"          C1          C2     121.096    1.50
+SAL       "C1'"          C1          C6     120.960    1.50
+SAL          C2          C1          C6     117.944    1.50
+SAL          C1          C2          C3     119.805    1.50
+SAL          C1          C2          O2     121.901    1.50
+SAL          C3          C2          O2     118.294    1.65
+SAL          C2          C3          C4     120.176    1.50
+SAL          C2          C3          H3     119.673    1.50
+SAL          C4          C3          H3     120.150    1.50
+SAL          C3          C4          C5     120.650    1.50
+SAL          C3          C4          H4     119.491    1.50
+SAL          C5          C4          H4     119.860    1.50
+SAL          C4          C5          C6     120.149    1.50
+SAL          C4          C5          H5     119.971    1.50
+SAL          C6          C5          H5     119.880    1.50
+SAL          C1          C6          C5     121.277    1.50
+SAL          C1          C6          H6     119.082    1.50
+SAL          C5          C6          H6     119.642    1.50
+SAL          C2          O2         HO2     108.378    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SAL             sp2_sp2_1          C2          C1       "C1'"       "O1'"     180.000   10.00     2
+SAL       const_sp2_sp2_4       "C1'"          C1          C2          O2       0.000   10.00     2
+SAL              const_23       "C1'"          C1          C6          C5     180.000   10.00     2
+SAL       const_sp2_sp2_7          O2          C2          C3          C4     180.000   10.00     2
+SAL       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+SAL              const_13          C3          C4          C5          C6       0.000   10.00     2
+SAL              const_17          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SAL    plan-1          C1   0.020
+SAL    plan-1       "C1'"   0.020
+SAL    plan-1          C2   0.020
+SAL    plan-1          C3   0.020
+SAL    plan-1          C4   0.020
+SAL    plan-1          C5   0.020
+SAL    plan-1          C6   0.020
+SAL    plan-1          H3   0.020
+SAL    plan-1          H4   0.020
+SAL    plan-1          H5   0.020
+SAL    plan-1          H6   0.020
+SAL    plan-1          O2   0.020
+SAL    plan-2          C1   0.020
+SAL    plan-2       "C1'"   0.020
+SAL    plan-2       "O1'"   0.020
+SAL    plan-2       "O2'"   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SAL SMILES           ACDLabs              10.04 "O=C(O)c1ccccc1O"
+SAL SMILES_CANONICAL CACTVS               3.341 "OC(=O)c1ccccc1O"
+SAL SMILES           CACTVS               3.341 "OC(=O)c1ccccc1O"
+SAL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(c(c1)C(=O)O)O"
+SAL SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(c(c1)C(=O)O)O"
+SAL InChI            InChI                1.03  "InChI=1S/C7H6O3/c8-6-4-2-1-3-5(6)7(9)10/h1-4,8H,(H,9,10)"
+SAL InChIKey         InChI                1.03  YGSDEFSMJLZEOE-UHFFFAOYSA-N
+SAL ?                acedrg               190         "dictionary generator"                  
+SAL ?                acedrg_database      11          "data source"                           
+SAL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SAL ?                refmac5              5.8.0158    "optimization tool"                     

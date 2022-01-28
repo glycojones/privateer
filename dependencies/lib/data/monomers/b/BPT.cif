@@ -1,0 +1,273 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BPT      BPT 'BIS(TRANS-PLATINUM ETHYLENEDIAMINE D' non-polymer        38  14 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BPT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BPT           CL2    CL   CL        0.000      0.000    0.000    0.000
+ BPT           PT2    PT   PT        0.000     -0.697   -1.232   -1.394
+ BPT           N5     N    NT3       0.000      0.253   -2.744   -0.491
+ BPT           HN53   H    H         0.000      0.277   -3.619   -1.060
+ BPT           HN52   H    H         0.000      1.245   -2.505   -0.292
+ BPT           HN51   H    H         0.000     -0.237   -2.918    0.408
+ BPT           N6     N    NT3       0.000     -1.656    0.286   -2.302
+ BPT           HN63   H    H         0.000     -1.186    1.189   -2.082
+ BPT           HN62   H    H         0.000     -1.622    0.158   -3.333
+ BPT           HN61   H    H         0.000     -2.642    0.309   -1.958
+ BPT           N2     N    NT2       0.000     -1.392   -2.492   -2.780
+ BPT           HN21   H    H         0.000     -1.694   -1.950   -3.606
+ BPT           HN22   H    H         0.000     -2.200   -3.005   -2.392
+ BPT           C4     C    CH2       0.000     -0.356   -3.437   -3.169
+ BPT           HC41   H    H         0.000     -0.215   -4.206   -2.407
+ BPT           HC42   H    H         0.000      0.593   -2.930   -3.353
+ BPT           C3     C    CH2       0.000     -0.867   -4.107   -4.510
+ BPT           HC31   H    H         0.000     -0.895   -3.287   -5.231
+ BPT           HC32   H    H         0.000     -1.887   -4.426   -4.284
+ BPT           C2     C    CH2       0.000     -0.040   -5.343   -5.131
+ BPT           HC21   H    H         0.000     -0.726   -5.818   -5.835
+ BPT           HC22   H    H         0.000      0.139   -6.016   -4.289
+ BPT           C1     C    CH2       0.000      1.328   -5.028   -5.856
+ BPT           HC11   H    H         0.000      2.083   -4.684   -5.145
+ BPT           HC12   H    H         0.000      1.197   -4.277   -6.638
+ BPT           N1     N    NT2       0.000      1.760   -6.284   -6.455
+ BPT           HN11   H    H         0.000      1.179   -6.474   -7.287
+ BPT           HN12   H    H         0.000      1.632   -7.043   -5.766
+ BPT           PT1    PT   PT        0.000      3.681   -6.183   -6.990
+ BPT           CL1    CL   CL        0.000      5.598   -6.070   -7.501
+ BPT           N4     N    NT3       0.000      3.148   -6.399   -8.919
+ BPT           HN43   H    H         0.000      3.938   -6.801   -9.467
+ BPT           HN42   H    H         0.000      2.346   -7.057   -8.992
+ BPT           HN41   H    H         0.000      2.898   -5.459   -9.304
+ BPT           N3     N    NT3       0.000      4.209   -5.963   -5.073
+ BPT           HN33   H    H         0.000      3.429   -6.150   -4.404
+ BPT           HN32   H    H         0.000      4.975   -6.613   -4.812
+ BPT           HN31   H    H         0.000      4.545   -4.986   -4.960
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BPT      CL2    n/a    PT2    START
+ BPT      PT2    CL2    N2     .
+ BPT      N5     PT2    HN51   .
+ BPT      HN53   N5     .      .
+ BPT      HN52   N5     .      .
+ BPT      HN51   N5     .      .
+ BPT      N6     PT2    HN61   .
+ BPT      HN63   N6     .      .
+ BPT      HN62   N6     .      .
+ BPT      HN61   N6     .      .
+ BPT      N2     PT2    C4     .
+ BPT      HN21   N2     .      .
+ BPT      HN22   N2     .      .
+ BPT      C4     N2     C3     .
+ BPT      HC41   C4     .      .
+ BPT      HC42   C4     .      .
+ BPT      C3     C4     C2     .
+ BPT      HC31   C3     .      .
+ BPT      HC32   C3     .      .
+ BPT      C2     C3     C1     .
+ BPT      HC21   C2     .      .
+ BPT      HC22   C2     .      .
+ BPT      C1     C2     N1     .
+ BPT      HC11   C1     .      .
+ BPT      HC12   C1     .      .
+ BPT      N1     C1     PT1    .
+ BPT      HN11   N1     .      .
+ BPT      HN12   N1     .      .
+ BPT      PT1    N1     N3     .
+ BPT      CL1    PT1    .      .
+ BPT      N4     PT1    HN41   .
+ BPT      HN43   N4     .      .
+ BPT      HN42   N4     .      .
+ BPT      HN41   N4     .      .
+ BPT      N3     PT1    HN31   .
+ BPT      HN33   N3     .      .
+ BPT      HN32   N3     .      .
+ BPT      HN31   N3     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BPT       CL1       PT1       single    2.425     0.020     2.425     0.020     
+BPT       PT1       N1        single    2.035     0.020     2.035     0.020     
+BPT       N3        PT1       single    2.035     0.020     2.035     0.020     
+BPT       N4        PT1       single    2.035     0.020     2.035     0.020     
+BPT       N1        C1        single    1.472     0.020     1.472     0.020     
+BPT       HN11      N1        single    1.036     0.016     0.914     0.007     
+BPT       HN12      N1        single    1.036     0.016     0.914     0.007     
+BPT       C1        C2        single    1.524     0.020     1.524     0.020     
+BPT       HC11      C1        single    1.089     0.010     0.989     0.005     
+BPT       HC12      C1        single    1.089     0.010     0.989     0.005     
+BPT       C2        C3        single    1.524     0.020     1.524     0.020     
+BPT       HC21      C2        single    1.089     0.010     0.989     0.005     
+BPT       HC22      C2        single    1.089     0.010     0.989     0.005     
+BPT       C3        C4        single    1.524     0.020     1.524     0.020     
+BPT       HC31      C3        single    1.089     0.010     0.989     0.005     
+BPT       HC32      C3        single    1.089     0.010     0.989     0.005     
+BPT       C4        N2        single    1.472     0.020     1.472     0.020     
+BPT       HC41      C4        single    1.089     0.010     0.989     0.005     
+BPT       HC42      C4        single    1.089     0.010     0.989     0.005     
+BPT       N2        PT2       single    2.035     0.020     2.035     0.020     
+BPT       HN21      N2        single    1.036     0.016     0.914     0.007     
+BPT       HN22      N2        single    1.036     0.016     0.914     0.007     
+BPT       N5        PT2       single    2.035     0.020     2.035     0.020     
+BPT       N6        PT2       single    2.035     0.020     2.035     0.020     
+BPT       PT2       CL2       single    2.425     0.020     2.425     0.020     
+BPT       HN31      N3        single    1.036     0.016     0.914     0.007     
+BPT       HN32      N3        single    1.036     0.016     0.914     0.007     
+BPT       HN33      N3        single    1.036     0.016     0.914     0.007     
+BPT       HN41      N4        single    1.036     0.016     0.914     0.007     
+BPT       HN42      N4        single    1.036     0.016     0.914     0.007     
+BPT       HN43      N4        single    1.036     0.016     0.914     0.007     
+BPT       HN51      N5        single    1.036     0.016     0.914     0.007     
+BPT       HN52      N5        single    1.036     0.016     0.914     0.007     
+BPT       HN53      N5        single    1.036     0.016     0.914     0.007     
+BPT       HN61      N6        single    1.036     0.016     0.914     0.007     
+BPT       HN62      N6        single    1.036     0.016     0.914     0.007     
+BPT       HN63      N6        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BPT      CL2    PT2    N5       90.000    3.000
+ BPT      CL2    PT2    N6       90.000    3.000
+ BPT      CL2    PT2    N2      180.000    3.000
+ BPT      N5     PT2    N6      180.000    3.000
+ BPT      N5     PT2    N2       90.000    3.000
+ BPT      N6     PT2    N2       90.000    3.000
+ BPT      PT2    N5     HN53    109.500    3.000
+ BPT      PT2    N5     HN52    109.500    3.000
+ BPT      PT2    N5     HN51    109.500    3.000
+ BPT      HN53   N5     HN52    109.470    3.000
+ BPT      HN53   N5     HN51    109.470    3.000
+ BPT      HN52   N5     HN51    109.470    3.000
+ BPT      PT2    N6     HN63    109.500    3.000
+ BPT      PT2    N6     HN62    109.500    3.000
+ BPT      PT2    N6     HN61    109.500    3.000
+ BPT      HN63   N6     HN62    109.470    3.000
+ BPT      HN63   N6     HN61    109.470    3.000
+ BPT      HN62   N6     HN61    109.470    3.000
+ BPT      PT2    N2     HN21    109.500    3.000
+ BPT      PT2    N2     HN22    109.500    3.000
+ BPT      PT2    N2     C4      109.500    3.000
+ BPT      HN21   N2     HN22    109.500    3.000
+ BPT      HN21   N2     C4      109.500    3.000
+ BPT      HN22   N2     C4      109.500    3.000
+ BPT      N2     C4     HC41    109.500    3.000
+ BPT      N2     C4     HC42    109.500    3.000
+ BPT      N2     C4     C3      109.500    3.000
+ BPT      HC41   C4     HC42    107.900    3.000
+ BPT      HC41   C4     C3      109.470    3.000
+ BPT      HC42   C4     C3      109.470    3.000
+ BPT      C4     C3     HC31    109.470    3.000
+ BPT      C4     C3     HC32    109.470    3.000
+ BPT      C4     C3     C2      111.000    3.000
+ BPT      HC31   C3     HC32    107.900    3.000
+ BPT      HC31   C3     C2      109.470    3.000
+ BPT      HC32   C3     C2      109.470    3.000
+ BPT      C3     C2     HC21    109.470    3.000
+ BPT      C3     C2     HC22    109.470    3.000
+ BPT      C3     C2     C1      111.000    3.000
+ BPT      HC21   C2     HC22    107.900    3.000
+ BPT      HC21   C2     C1      109.470    3.000
+ BPT      HC22   C2     C1      109.470    3.000
+ BPT      C2     C1     HC11    109.470    3.000
+ BPT      C2     C1     HC12    109.470    3.000
+ BPT      C2     C1     N1      109.500    3.000
+ BPT      HC11   C1     HC12    107.900    3.000
+ BPT      HC11   C1     N1      109.500    3.000
+ BPT      HC12   C1     N1      109.500    3.000
+ BPT      C1     N1     HN11    109.500    3.000
+ BPT      C1     N1     HN12    109.500    3.000
+ BPT      C1     N1     PT1     109.500    3.000
+ BPT      HN11   N1     HN12    109.500    3.000
+ BPT      HN11   N1     PT1     109.500    3.000
+ BPT      HN12   N1     PT1     109.500    3.000
+ BPT      N1     PT1    CL1     180.000    3.000
+ BPT      N1     PT1    N4       90.000    3.000
+ BPT      N1     PT1    N3       90.000    3.000
+ BPT      CL1    PT1    N4       90.000    3.000
+ BPT      CL1    PT1    N3       90.000    3.000
+ BPT      N4     PT1    N3      180.000    3.000
+ BPT      PT1    N4     HN43    109.500    3.000
+ BPT      PT1    N4     HN42    109.500    3.000
+ BPT      PT1    N4     HN41    109.500    3.000
+ BPT      HN43   N4     HN42    109.470    3.000
+ BPT      HN43   N4     HN41    109.470    3.000
+ BPT      HN42   N4     HN41    109.470    3.000
+ BPT      PT1    N3     HN33    109.500    3.000
+ BPT      PT1    N3     HN32    109.500    3.000
+ BPT      PT1    N3     HN31    109.500    3.000
+ BPT      HN33   N3     HN32    109.470    3.000
+ BPT      HN33   N3     HN31    109.470    3.000
+ BPT      HN32   N3     HN31    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BPT      var_1    HN53   N5     PT2    CL2        0.000   20.000   1
+ BPT      var_2    HN63   N6     PT2    CL2        0.000   20.000   1
+ BPT      var_3    HN21   N2     PT2    N5         0.000   20.000   1
+ BPT      var_4    PT2    N2     C4     C3      -165.087   20.000   1
+ BPT      var_5    N2     C4     C3     C2      -172.645   20.000   3
+ BPT      var_6    C4     C3     C2     C1       -74.841   20.000   3
+ BPT      var_7    C3     C2     C1     N1      -173.014   20.000   3
+ BPT      var_8    C2     C1     N1     PT1     -165.016   20.000   1
+ BPT      var_9    C1     N1     PT1    N4         0.000   20.000   1
+ BPT      var_10   HN43   N4     PT1    N1         0.000   20.000   1
+ BPT      var_11   HN33   N3     PT1    N1         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BPT      chir_01  PT1    N1     CL1    N4        cross2
+ BPT      chir_02  PT2    CL2    N2     N5        cross2
+# ------------------------------------------------------

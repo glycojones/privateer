@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+911     911      "(1-hydroxyethane-1,1-diyl)bis(phosphonic acid)"     NON-POLYMER     15     11     .     
+#
+data_comp_911
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+911     P1      P       P       0       105.569     28.627      47.646      
+911     O2      O       O       0       104.957     27.995      46.424      
+911     O3      O       OP      -1      105.368     27.772      48.869      
+911     O5      O       OP      -1      107.022     28.953      47.430      
+911     C7      C       CT      0       104.679     30.218      47.925      
+911     P8      P       P       0       105.287     31.110      49.425      
+911     O9      O       O       0       106.756     31.373      49.229      
+911     O10     O       OP      -1      104.504     32.391      49.520      
+911     O12     O       OP      -1      105.037     30.220      50.613      
+911     O14     O       OH1     0       103.309     29.833      48.185      
+911     C16     C       CH3     0       104.694     31.107      46.672      
+911     HO14    H       H       0       102.846     30.519      48.383      
+911     H16     H       H       0       105.053     31.984      46.894      
+911     H16A    H       H       0       103.790     31.211      46.325      
+911     H16B    H       H       0       105.252     30.701      45.986      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+911       P1        O2        DOUBLE    n         1.505     0.020     1.505     0.020     
+911       P1        O5        SINGLE    n         1.505     0.020     1.505     0.020     
+911       P1        C7        SINGLE    n         1.837     0.020     1.837     0.020     
+911       P1        O3        SINGLE    n         1.505     0.020     1.505     0.020     
+911       C7        C16       SINGLE    n         1.525     0.013     1.525     0.013     
+911       C7        O14       SINGLE    n         1.443     0.012     1.443     0.012     
+911       C7        P8        SINGLE    n         1.837     0.020     1.837     0.020     
+911       P8        O9        DOUBLE    n         1.505     0.020     1.505     0.020     
+911       P8        O10       SINGLE    n         1.505     0.020     1.505     0.020     
+911       P8        O12       SINGLE    n         1.505     0.020     1.505     0.020     
+911       O14       HO14      SINGLE    n         0.970     0.012     0.849     0.020     
+911       C16       H16       SINGLE    n         1.089     0.010     0.973     0.016     
+911       C16       H16A      SINGLE    n         1.089     0.010     0.973     0.016     
+911       C16       H16B      SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+911          O2          P1          O5     112.502    1.50
+911          O2          P1          C7     110.326    3.00
+911          O2          P1          O3     112.502    1.50
+911          O5          P1          C7     110.326    3.00
+911          O5          P1          O3     112.502    1.50
+911          C7          P1          O3     110.326    3.00
+911          P1          C7         C16     111.410    2.87
+911          P1          C7         O14     108.256    2.94
+911          P1          C7          P8     114.813    3.00
+911         C16          C7         O14     107.334    1.50
+911         C16          C7          P8     111.410    2.87
+911         O14          C7          P8     108.256    2.94
+911          C7          P8          O9     110.326    3.00
+911          C7          P8         O10     110.326    3.00
+911          C7          P8         O12     110.326    3.00
+911          O9          P8         O10     112.502    1.50
+911          O9          P8         O12     112.502    1.50
+911         O10          P8         O12     112.502    1.50
+911          C7         O14        HO14     109.552    1.50
+911          C7         C16         H16     109.475    1.50
+911          C7         C16        H16A     109.475    1.50
+911          C7         C16        H16B     109.475    1.50
+911         H16         C16        H16A     109.454    1.50
+911         H16         C16        H16B     109.454    1.50
+911        H16A         C16        H16B     109.454    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+911             sp3_sp3_1         C16          C7          P1          O2     180.000   10.00     3
+911            sp3_sp3_10         H16         C16          C7          P1     180.000   10.00     3
+911            sp3_sp3_22          P1          C7          P8          O9     180.000   10.00     3
+911            sp3_sp3_19          P1          C7         O14        HO14     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+911 SMILES           ACDLabs              12.01 "O=P(O)(O)C(O)(C)P(=O)(O)O"
+911 InChI            InChI                1.03  "InChI=1S/C2H8O7P2/c1-2(3,10(4,5)6)11(7,8)9/h3H,1H3,(H2,4,5,6)(H2,7,8,9)"
+911 InChIKey         InChI                1.03  DBVJJBKOTRCVKF-UHFFFAOYSA-N
+911 SMILES_CANONICAL CACTVS               3.370 "CC(O)([P](O)(O)=O)[P](O)(O)=O"
+911 SMILES           CACTVS               3.370 "CC(O)([P](O)(O)=O)[P](O)(O)=O"
+911 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "CC(O)(P(=O)(O)O)P(=O)(O)O"
+911 SMILES           "OpenEye OEToolkits" 1.7.2 "CC(O)(P(=O)(O)O)P(=O)(O)O"
+911 ?                acedrg               202         "dictionary generator"                  
+911 ?                acedrg_database      11          "data source"                           
+911 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+911 ?                refmac5              5.8.0189    "optimization tool"                     

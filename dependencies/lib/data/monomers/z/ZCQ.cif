@@ -1,0 +1,147 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZCQ     ZCQ      3-nitrophenol     NON-POLYMER     15     10     .     
+#
+data_comp_ZCQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ZCQ     C1      C       CR6     0       8.838       -3.652      30.597      
+ZCQ     C2      C       CR16    0       9.546       -2.467      30.747      
+ZCQ     C3      C       CR6     0       10.697      -2.269      29.984      
+ZCQ     C4      C       CR16    0       11.156      -3.225      29.078      
+ZCQ     C5      C       CR16    0       10.424      -4.396      28.954      
+ZCQ     C6      C       CR16    0       9.277       -4.617      29.700      
+ZCQ     N1      N       N       1       11.437      -1.024      30.145      
+ZCQ     O1      O       OH1     0       7.710       -3.852      31.340      
+ZCQ     O2      O       OC      -1      12.583      -1.083      30.563      
+ZCQ     O3      O       O       0       10.879      0.023       29.855      
+ZCQ     H21     H       H       0       9.251       -1.810      31.354      
+ZCQ     H41     H       H       0       11.934      -3.085      28.567      
+ZCQ     H51     H       H       0       10.713      -5.057      28.349      
+ZCQ     H61     H       H       0       8.796       -5.420      29.600      
+ZCQ     H1O     H       H       0       7.808       -4.540      31.843      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZCQ       C1        C2        DOUBLE    y         1.386     0.0100    1.386     0.0100    
+ZCQ       C1        C6        SINGLE    y         1.384     0.0100    1.384     0.0100    
+ZCQ       C1        O1        SINGLE    n         1.365     0.0100    1.365     0.0100    
+ZCQ       C2        C3        SINGLE    y         1.393     0.0100    1.393     0.0100    
+ZCQ       C3        C4        DOUBLE    y         1.393     0.0100    1.393     0.0100    
+ZCQ       C3        N1        SINGLE    n         1.457     0.0200    1.457     0.0200    
+ZCQ       C4        C5        SINGLE    y         1.382     0.0100    1.382     0.0100    
+ZCQ       C5        C6        DOUBLE    y         1.380     0.0102    1.380     0.0102    
+ZCQ       N1        O2        SINGLE    n         1.221     0.0162    1.221     0.0162    
+ZCQ       N1        O3        DOUBLE    n         1.221     0.0162    1.221     0.0162    
+ZCQ       C2        H21       SINGLE    n         1.082     0.013     0.942     0.0177    
+ZCQ       C4        H41       SINGLE    n         1.082     0.013     0.941     0.0200    
+ZCQ       C5        H51       SINGLE    n         1.082     0.013     0.942     0.0141    
+ZCQ       C6        H61       SINGLE    n         1.082     0.013     0.942     0.0163    
+ZCQ       O1        H1O       SINGLE    n         0.970     0.012     0.858     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ZCQ          C2          C1          C6     119.878    1.50
+ZCQ          C2          C1          O1     119.269    2.43
+ZCQ          C6          C1          O1     120.852    2.50
+ZCQ          C1          C2          C3     119.454    1.50
+ZCQ          C1          C2         H21     120.005    1.50
+ZCQ          C3          C2         H21     120.541    1.50
+ZCQ          C2          C3          C4     122.788    1.50
+ZCQ          C2          C3          N1     118.263    1.50
+ZCQ          C4          C3          N1     118.949    1.50
+ZCQ          C3          C4          C5     117.670    1.50
+ZCQ          C3          C4         H41     121.469    1.50
+ZCQ          C5          C4         H41     120.862    1.50
+ZCQ          C4          C5          C6     120.978    1.50
+ZCQ          C4          C5         H51     119.554    1.50
+ZCQ          C6          C5         H51     119.468    1.50
+ZCQ          C1          C6          C5     119.233    1.50
+ZCQ          C1          C6         H61     120.287    1.50
+ZCQ          C5          C6         H61     120.481    1.50
+ZCQ          C3          N1          O2     118.257    1.50
+ZCQ          C3          N1          O3     118.257    1.50
+ZCQ          O2          N1          O3     123.486    1.50
+ZCQ          C1          O1         H1O     110.017    2.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ZCQ       const_sp2_sp2_3          O1          C1          C2          C3     180.000   10.00     2
+ZCQ              const_23          O1          C1          C6          C5     180.000   10.00     2
+ZCQ       const_sp2_sp2_6          C1          C2          C3          N1     180.000   10.00     2
+ZCQ              const_11          N1          C3          C4          C5     180.000   10.00     2
+ZCQ             sp2_sp2_1          C2          C3          N1          O2     180.000   10.00     2
+ZCQ              const_13          C3          C4          C5          C6       0.000   10.00     2
+ZCQ              const_17          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ZCQ    plan-1          C1   0.020
+ZCQ    plan-1          C2   0.020
+ZCQ    plan-1          C3   0.020
+ZCQ    plan-1          C4   0.020
+ZCQ    plan-1          C5   0.020
+ZCQ    plan-1          C6   0.020
+ZCQ    plan-1         H21   0.020
+ZCQ    plan-1         H41   0.020
+ZCQ    plan-1         H51   0.020
+ZCQ    plan-1         H61   0.020
+ZCQ    plan-1          N1   0.020
+ZCQ    plan-1          O1   0.020
+ZCQ    plan-2          C3   0.020
+ZCQ    plan-2          N1   0.020
+ZCQ    plan-2          O2   0.020
+ZCQ    plan-2          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ZCQ           SMILES              ACDLabs 12.01                          O=[N+]([O-])c1cccc(O)c1
+ZCQ            InChI                InChI  1.03 InChI=1S/C6H5NO3/c8-6-3-1-2-5(4-6)7(9)10/h1-4,8H
+ZCQ         InChIKey                InChI  1.03                      RTZZCYNQPHTPPL-UHFFFAOYSA-N
+ZCQ SMILES_CANONICAL               CACTVS 3.370                          Oc1cccc(c1)[N+]([O-])=O
+ZCQ           SMILES               CACTVS 3.370                          Oc1cccc(c1)[N+]([O-])=O
+ZCQ SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6                        c1cc(cc(c1)O)[N+](=O)[O-]
+ZCQ           SMILES "OpenEye OEToolkits" 1.7.6                        c1cc(cc(c1)O)[N+](=O)[O-]
+ZCQ ?                acedrg               217         "dictionary generator"                  
+ZCQ ?                acedrg_database      11          "data source"                           
+ZCQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ZCQ ?                refmac5              5.8.0253    "optimization tool"                     

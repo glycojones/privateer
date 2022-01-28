@@ -1,0 +1,171 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+QBV     QBV      "(2E)-3-(3-bromo-4-hydroxyphenyl)prop-2-enoic acid"     non-polymer     19     13     .     
+#
+data_comp_QBV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+QBV     C1      C       C       0       3.877       -0.576      -0.832      
+QBV     O1      O       O       0       4.465       -1.569      -1.258      
+QBV     C2      C       C1      0       2.389       -0.672      -0.648      
+QBV     C3      C       C1      0       1.622       0.304       -0.180      
+QBV     "C1'"   C       CR6     0       0.180       0.250       0.099       
+QBV     "C2'"   C       CR16    0       -0.618      1.373       -0.125      
+QBV     "C3'"   C       CR6     0       -1.969      1.330       0.135       
+QBV     "C4'"   C       CR6     0       -2.585      0.175       0.629       
+QBV     "C5'"   C       CR16    0       -1.791      -0.943      0.853       
+QBV     "C6'"   C       CR16    0       -0.430      -0.900      0.591       
+QBV     "O4'"   O       OH1     0       -3.929      0.148       0.883       
+QBV     BR      BR      BR      0       -3.018      2.873       -0.183      
+QBV     O2      O       OC      -1      4.442       0.483       -0.553      
+QBV     H2      H       H       0       1.979       -1.485      -0.883      
+QBV     H3      H       H       0       2.044       1.131       -0.008      
+QBV     "H2'"   H       H       0       -0.234      2.162       -0.456      
+QBV     H1      H       H       0       -2.181      -1.727      1.183       
+QBV     "H6'"   H       H       0       0.092       -1.667      0.749       
+QBV     H4      H       H       0       -4.317      -0.497      0.471       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+QBV       C1        O1        DOUBLE    n         1.230     0.0200    1.230     0.0200    
+QBV       "C3'"     BR        SINGLE    n         1.892     0.0100    1.892     0.0100    
+QBV       "C2'"     "C3'"     SINGLE    y         1.373     0.0100    1.373     0.0100    
+QBV       "C1'"     "C2'"     DOUBLE    y         1.392     0.0100    1.392     0.0100    
+QBV       C1        C2        SINGLE    n         1.492     0.0200    1.492     0.0200    
+QBV       C2        C3        DOUBLE    n         1.318     0.0200    1.318     0.0200    
+QBV       C3        "C1'"     SINGLE    n         1.469     0.0110    1.469     0.0110    
+QBV       "C3'"     "C4'"     DOUBLE    y         1.393     0.0117    1.393     0.0117    
+QBV       "C1'"     "C6'"     SINGLE    y         1.388     0.0100    1.388     0.0100    
+QBV       "C4'"     "O4'"     SINGLE    n         1.367     0.0100    1.367     0.0100    
+QBV       "C4'"     "C5'"     SINGLE    y         1.385     0.0100    1.385     0.0100    
+QBV       "C5'"     "C6'"     DOUBLE    y         1.383     0.0100    1.383     0.0100    
+QBV       C1        O2        SINGLE    n         1.230     0.0200    1.230     0.0200    
+QBV       C2        H2        SINGLE    n         1.082     0.013     0.940     0.0185    
+QBV       C3        H3        SINGLE    n         1.082     0.013     0.945     0.0200    
+QBV       "C2'"     "H2'"     SINGLE    n         1.082     0.013     0.938     0.0122    
+QBV       "C5'"     H1        SINGLE    n         1.082     0.013     0.936     0.0100    
+QBV       "C6'"     "H6'"     SINGLE    n         1.082     0.013     0.941     0.0168    
+QBV       "O4'"     H4        SINGLE    n         0.970     0.012     0.858     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+QBV          O1          C1          C2     118.013    1.50
+QBV          O1          C1          O2     123.974    1.50
+QBV          C2          C1          O2     118.013    1.50
+QBV          C1          C2          C3     123.568    1.67
+QBV          C1          C2          H2     117.792    1.50
+QBV          C3          C2          H2     118.640    1.50
+QBV          C2          C3       "C1'"     127.349    1.50
+QBV          C2          C3          H3     116.403    1.50
+QBV       "C1'"          C3          H3     116.250    1.50
+QBV       "C2'"       "C1'"          C3     120.254    2.02
+QBV       "C2'"       "C1'"       "C6'"     118.446    1.50
+QBV          C3       "C1'"       "C6'"     121.300    2.00
+QBV       "C3'"       "C2'"       "C1'"     120.422    1.50
+QBV       "C3'"       "C2'"       "H2'"     119.595    1.50
+QBV       "C1'"       "C2'"       "H2'"     119.984    1.50
+QBV          BR       "C3'"       "C2'"     119.290    1.50
+QBV          BR       "C3'"       "C4'"     119.018    1.50
+QBV       "C2'"       "C3'"       "C4'"     121.692    1.50
+QBV       "C3'"       "C4'"       "O4'"     120.738    2.33
+QBV       "C3'"       "C4'"       "C5'"     117.697    1.50
+QBV       "O4'"       "C4'"       "C5'"     121.565    2.57
+QBV       "C4'"       "C5'"       "C6'"     120.114    1.50
+QBV       "C4'"       "C5'"          H1     119.685    1.50
+QBV       "C6'"       "C5'"          H1     120.201    1.50
+QBV       "C1'"       "C6'"       "C5'"     121.629    1.50
+QBV       "C1'"       "C6'"       "H6'"     119.220    1.50
+QBV       "C5'"       "C6'"       "H6'"     119.151    1.50
+QBV       "C4'"       "O4'"          H4     111.626    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+QBV             sp2_sp2_1          O1          C1          C2          C3     180.000   10.00     2
+QBV             sp2_sp2_5          C1          C2          C3       "C1'"     180.000   10.00     2
+QBV             sp2_sp2_9       "C2'"       "C1'"          C3          C2     180.000   10.00     2
+QBV       const_sp2_sp2_3          C3       "C1'"       "C2'"       "C3'"     180.000   10.00     2
+QBV              const_23          C3       "C1'"       "C6'"       "C5'"     180.000   10.00     2
+QBV       const_sp2_sp2_6       "C1'"       "C2'"       "C3'"          BR     180.000   10.00     2
+QBV              const_12          BR       "C3'"       "C4'"       "O4'"       0.000   10.00     2
+QBV              const_15       "O4'"       "C4'"       "C5'"       "C6'"     180.000   10.00     2
+QBV              const_17       "C4'"       "C5'"       "C6'"       "C1'"       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+QBV    plan-1          BR   0.020
+QBV    plan-1       "C1'"   0.020
+QBV    plan-1       "C2'"   0.020
+QBV    plan-1          C3   0.020
+QBV    plan-1       "C3'"   0.020
+QBV    plan-1       "C4'"   0.020
+QBV    plan-1       "C5'"   0.020
+QBV    plan-1       "C6'"   0.020
+QBV    plan-1          H1   0.020
+QBV    plan-1       "H2'"   0.020
+QBV    plan-1       "H6'"   0.020
+QBV    plan-1       "O4'"   0.020
+QBV    plan-2          C1   0.020
+QBV    plan-2          C2   0.020
+QBV    plan-2          O1   0.020
+QBV    plan-2          O2   0.020
+QBV    plan-3          C1   0.020
+QBV    plan-3          C2   0.020
+QBV    plan-3          C3   0.020
+QBV    plan-3          H2   0.020
+QBV    plan-4       "C1'"   0.020
+QBV    plan-4          C2   0.020
+QBV    plan-4          C3   0.020
+QBV    plan-4          H3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+QBV           SMILES              ACDLabs 12.01                                              C([C@H]=Cc1ccc(c(c1)Br)O)(O)=O
+QBV            InChI                InChI  1.03 InChI=1S/C9H7BrO3/c10-7-5-6(1-3-8(7)11)2-4-9(12)13/h1-5,11H,(H,12,13)/b4-2+
+QBV         InChIKey                InChI  1.03                                                 HOZXBZABAJSGDX-DUXPYHPUSA-N
+QBV SMILES_CANONICAL               CACTVS 3.385                                                  OC(=O)/C=C/c1ccc(O)c(Br)c1
+QBV           SMILES               CACTVS 3.385                                                    OC(=O)C=Cc1ccc(O)c(Br)c1
+QBV SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                                  c1cc(c(cc1/C=C/C(=O)O)Br)O
+QBV           SMILES "OpenEye OEToolkits" 2.0.7                                                    c1cc(c(cc1C=CC(=O)O)Br)O
+QBV ?                acedrg               217         "dictionary generator"                  
+QBV ?                acedrg_database      11          "data source"                           
+QBV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+QBV ?                refmac5              5.8.0253    "optimization tool"                     

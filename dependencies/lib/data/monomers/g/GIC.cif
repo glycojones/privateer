@@ -1,0 +1,296 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GIC      GIC 'N-(2-aminoethyl)-N-(1H-indol-3-ylace' non-polymer        36  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GIC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GIC           OXT    O    OC       -0.500      0.000    0.000    0.000
+ GIC           C      C    C         0.000     -1.183   -0.349   -0.208
+ GIC           O      O    OC       -0.500     -1.603   -0.473   -1.380
+ GIC           CA     C    CH2       0.000     -2.101   -0.627    0.954
+ GIC           HA     H    H         0.000     -2.193    0.271    1.568
+ GIC           HAA    H    H         0.000     -1.688   -1.438    1.557
+ GIC           N      N    N         0.000     -3.422   -1.015    0.451
+ GIC           C1     C    CH2       0.000     -3.722   -2.426    0.193
+ GIC           H1     H    H         0.000     -4.787   -2.606    0.350
+ GIC           H1A    H    H         0.000     -3.143   -3.051    0.876
+ GIC           C2     C    CH2       0.000     -3.353   -2.769   -1.252
+ GIC           H2     H    H         0.000     -2.288   -2.588   -1.408
+ GIC           H16    H    H         0.000     -3.932   -2.143   -1.934
+ GIC           N1     N    NH2       0.000     -3.654   -4.185   -1.510
+ GIC           H15    H    H         0.000     -2.929   -4.809   -1.846
+ GIC           HN1    H    H         0.000     -4.588   -4.546   -1.355
+ GIC           C3     C    C         0.000     -4.360   -0.074    0.226
+ GIC           O1     O    O         0.000     -5.453   -0.396   -0.191
+ GIC           C4     C    CH2       0.000     -4.051    1.377    0.491
+ GIC           H4     H    H         0.000     -3.210    1.689   -0.131
+ GIC           H4A    H    H         0.000     -3.793    1.507    1.544
+ GIC           C5     C    CR5       0.000     -5.260    2.215    0.162
+ GIC           C6     C    CR15      0.000     -5.500    2.847   -0.999
+ GIC           H6     H    H         0.000     -4.845    2.834   -1.861
+ GIC           C12    C    CR56      0.000     -6.389    2.503    1.049
+ GIC           C7     C    CR56      0.000     -7.265    3.319    0.310
+ GIC           N2     N    NR15      0.000     -6.695    3.509   -0.929
+ GIC           HN2    H    H         0.000     -7.112    4.072   -1.698
+ GIC           C11    C    CR16      0.000     -6.712    2.140    2.357
+ GIC           H11    H    H         0.000     -6.040    1.512    2.929
+ GIC           C10    C    CR16      0.000     -7.879    2.581    2.915
+ GIC           H10    H    H         0.000     -8.129    2.300    3.930
+ GIC           C9     C    CR16      0.000     -8.747    3.386    2.190
+ GIC           H9     H    H         0.000     -9.668    3.728    2.645
+ GIC           C8     C    CR16      0.000     -8.448    3.756    0.897
+ GIC           H8     H    H         0.000     -9.131    4.384    0.339
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GIC      OXT    n/a    C      START
+ GIC      C      OXT    CA     .
+ GIC      O      C      .      .
+ GIC      CA     C      N      .
+ GIC      HA     CA     .      .
+ GIC      HAA    CA     .      .
+ GIC      N      CA     C3     .
+ GIC      C1     N      C2     .
+ GIC      H1     C1     .      .
+ GIC      H1A    C1     .      .
+ GIC      C2     C1     N1     .
+ GIC      H2     C2     .      .
+ GIC      H16    C2     .      .
+ GIC      N1     C2     HN1    .
+ GIC      H15    N1     .      .
+ GIC      HN1    N1     .      .
+ GIC      C3     N      C4     .
+ GIC      O1     C3     .      .
+ GIC      C4     C3     C5     .
+ GIC      H4     C4     .      .
+ GIC      H4A    C4     .      .
+ GIC      C5     C4     C12    .
+ GIC      C6     C5     H6     .
+ GIC      H6     C6     .      .
+ GIC      C12    C5     C11    .
+ GIC      C7     C12    N2     .
+ GIC      N2     C7     HN2    .
+ GIC      HN2    N2     .      .
+ GIC      C11    C12    C10    .
+ GIC      H11    C11    .      .
+ GIC      C10    C11    C9     .
+ GIC      H10    C10    .      .
+ GIC      C9     C10    C8     .
+ GIC      H9     C9     .      .
+ GIC      C8     C9     H8     .
+ GIC      H8     C8     .      END
+ GIC      N2     C6     .    ADD
+ GIC      C7     C8     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GIC       CA        C         single    1.510     0.020     1.510     0.020     
+GIC       C         OXT       deloc     1.250     0.020     1.250     0.020     
+GIC       C1        N         single    1.455     0.020     1.455     0.020     
+GIC       O         C         deloc     1.250     0.020     1.250     0.020     
+GIC       C2        C1        single    1.524     0.020     1.524     0.020     
+GIC       H1        C1        single    1.089     0.010     0.989     0.005     
+GIC       H1A       C1        single    1.089     0.010     0.989     0.005     
+GIC       N1        C2        single    1.450     0.020     1.450     0.020     
+GIC       HN1       N1        single    1.036     0.016     0.914     0.007     
+GIC       O1        C3        double    1.220     0.020     1.220     0.020     
+GIC       H2        C2        single    1.089     0.010     0.989     0.005     
+GIC       N2        C6        single    1.350     0.020     1.350     0.020     
+GIC       HN2       N2        single    1.016     0.010     0.899     0.007     
+GIC       C3        N         single    1.330     0.020     1.330     0.020     
+GIC       C4        C3        single    1.510     0.020     1.510     0.020     
+GIC       H4        C4        single    1.089     0.010     0.989     0.005     
+GIC       H4A       C4        single    1.089     0.010     0.989     0.005     
+GIC       C5        C4        single    1.510     0.020     1.510     0.020     
+GIC       C6        C5        double    1.387     0.020     1.387     0.020     
+GIC       H6        C6        single    1.082     0.013     0.975     0.010     
+GIC       N2        C7        single    1.340     0.020     1.340     0.020     
+GIC       C7        C12       single    1.490     0.020     1.490     0.020     
+GIC       C7        C8        double    1.390     0.020     1.390     0.020     
+GIC       H8        C8        single    1.082     0.013     0.975     0.010     
+GIC       C8        C9        single    1.390     0.020     1.390     0.020     
+GIC       C9        C10       double    1.390     0.020     1.390     0.020     
+GIC       H9        C9        single    1.082     0.013     0.975     0.010     
+GIC       N         CA        single    1.455     0.020     1.455     0.020     
+GIC       HA        CA        single    1.089     0.010     0.989     0.005     
+GIC       HAA       CA        single    1.089     0.010     0.989     0.005     
+GIC       C10       C11       single    1.390     0.020     1.390     0.020     
+GIC       H10       C10       single    1.082     0.013     0.975     0.010     
+GIC       C11       C12       double    1.390     0.020     1.390     0.020     
+GIC       H11       C11       single    1.082     0.013     0.975     0.010     
+GIC       C12       C5        single    1.490     0.020     1.490     0.020     
+GIC       H15       N1        single    1.036     0.016     0.914     0.007     
+GIC       H16       C2        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GIC      OXT    C      O       123.000    3.000
+ GIC      OXT    C      CA      118.500    3.000
+ GIC      O      C      CA      118.500    3.000
+ GIC      C      CA     HA      109.470    3.000
+ GIC      C      CA     HAA     109.470    3.000
+ GIC      C      CA     N       109.500    3.000
+ GIC      HA     CA     HAA     107.900    3.000
+ GIC      HA     CA     N       109.470    3.000
+ GIC      HAA    CA     N       109.470    3.000
+ GIC      CA     N      C1      120.000    3.000
+ GIC      CA     N      C3      127.000    3.000
+ GIC      C1     N      C3      127.000    3.000
+ GIC      N      C1     H1      109.470    3.000
+ GIC      N      C1     H1A     109.470    3.000
+ GIC      N      C1     C2      105.000    3.000
+ GIC      H1     C1     H1A     107.900    3.000
+ GIC      H1     C1     C2      109.470    3.000
+ GIC      H1A    C1     C2      109.470    3.000
+ GIC      C1     C2     H2      109.470    3.000
+ GIC      C1     C2     H16     109.470    3.000
+ GIC      C1     C2     N1      109.470    3.000
+ GIC      H2     C2     H16     107.900    3.000
+ GIC      H2     C2     N1      109.470    3.000
+ GIC      H16    C2     N1      109.470    3.000
+ GIC      C2     N1     H15     120.000    3.000
+ GIC      C2     N1     HN1     120.000    3.000
+ GIC      H15    N1     HN1     120.000    3.000
+ GIC      N      C3     O1      123.000    3.000
+ GIC      N      C3     C4      116.500    3.000
+ GIC      O1     C3     C4      120.500    3.000
+ GIC      C3     C4     H4      109.470    3.000
+ GIC      C3     C4     H4A     109.470    3.000
+ GIC      C3     C4     C5      109.500    3.000
+ GIC      H4     C4     H4A     107.900    3.000
+ GIC      H4     C4     C5      109.470    3.000
+ GIC      H4A    C4     C5      109.470    3.000
+ GIC      C4     C5     C6      126.000    3.000
+ GIC      C4     C5     C12     126.000    3.000
+ GIC      C6     C5     C12     108.000    3.000
+ GIC      C5     C6     H6      126.000    3.000
+ GIC      C5     C6     N2      108.000    3.000
+ GIC      H6     C6     N2      126.000    3.000
+ GIC      C5     C12    C7      108.000    3.000
+ GIC      C5     C12    C11     126.000    3.000
+ GIC      C7     C12    C11     120.000    3.000
+ GIC      C12    C7     N2      108.000    3.000
+ GIC      C12    C7     C8      120.000    3.000
+ GIC      N2     C7     C8      132.000    3.000
+ GIC      C7     N2     HN2     126.000    3.000
+ GIC      C7     N2     C6      108.000    3.000
+ GIC      HN2    N2     C6      126.000    3.000
+ GIC      C12    C11    H11     120.000    3.000
+ GIC      C12    C11    C10     120.000    3.000
+ GIC      H11    C11    C10     120.000    3.000
+ GIC      C11    C10    H10     120.000    3.000
+ GIC      C11    C10    C9      120.000    3.000
+ GIC      H10    C10    C9      120.000    3.000
+ GIC      C10    C9     H9      120.000    3.000
+ GIC      C10    C9     C8      120.000    3.000
+ GIC      H9     C9     C8      120.000    3.000
+ GIC      C9     C8     H8      120.000    3.000
+ GIC      C9     C8     C7      120.000    3.000
+ GIC      H8     C8     C7      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GIC      var_1    OXT    C      CA     N        180.000   20.000   3
+ GIC      var_2    C      CA     N      C3       -89.998   20.000   3
+ GIC      var_3    CA     N      C1     C2       -89.990   20.000   3
+ GIC      var_4    N      C1     C2     N1       180.000   20.000   3
+ GIC      var_5    C1     C2     N1     HN1       56.037   20.000   3
+ GIC      var_6    CA     N      C3     C4       180.000   20.000   2
+ GIC      var_7    N      C3     C4     C5       180.000   20.000   3
+ GIC      var_8    C3     C4     C5     C12        0.000   20.000   2
+ GIC      CONST_1  C4     C5     C6     N2         0.000    0.000   0
+ GIC      CONST_2  C4     C5     C12    C11      180.000    0.000   0
+ GIC      CONST_3  C5     C12    C7     N2       180.000    0.000   0
+ GIC      CONST_4  C12    C7     C8     C9       180.000    0.000   0
+ GIC      CONST_5  C12    C7     N2     C6       180.000    0.000   0
+ GIC      CONST_6  C7     N2     C6     C5         0.000    0.000   0
+ GIC      CONST_7  C5     C12    C11    C10      180.000    0.000   0
+ GIC      CONST_8  C12    C11    C10    C9         0.000    0.000   0
+ GIC      CONST_9  C11    C10    C9     C8         0.000    0.000   0
+ GIC      CONST_10 C10    C9     C8     C7         0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GIC      plan-1    C         0.020
+ GIC      plan-1    O         0.020
+ GIC      plan-1    CA        0.020
+ GIC      plan-1    OXT       0.020
+ GIC      plan-2    N         0.020
+ GIC      plan-2    C1        0.020
+ GIC      plan-2    C3        0.020
+ GIC      plan-2    CA        0.020
+ GIC      plan-3    N1        0.020
+ GIC      plan-3    C2        0.020
+ GIC      plan-3    HN1       0.020
+ GIC      plan-3    H15       0.020
+ GIC      plan-4    N2        0.020
+ GIC      plan-4    C6        0.020
+ GIC      plan-4    C7        0.020
+ GIC      plan-4    HN2       0.020
+ GIC      plan-4    C5        0.020
+ GIC      plan-4    C4        0.020
+ GIC      plan-4    C12       0.020
+ GIC      plan-4    H6        0.020
+ GIC      plan-4    C8        0.020
+ GIC      plan-4    C9        0.020
+ GIC      plan-4    C10       0.020
+ GIC      plan-4    C11       0.020
+ GIC      plan-4    H8        0.020
+ GIC      plan-4    H9        0.020
+ GIC      plan-4    H10       0.020
+ GIC      plan-4    H11       0.020
+ GIC      plan-5    C3        0.020
+ GIC      plan-5    N         0.020
+ GIC      plan-5    O1        0.020
+ GIC      plan-5    C4        0.020
+# ------------------------------------------------------

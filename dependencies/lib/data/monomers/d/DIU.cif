@@ -1,0 +1,147 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DIU     DIU      "2-HYDROXY-3,5-DIIODO-BENZOIC ACID"     NON-POLYMER     15     12     .     
+#
+data_comp_DIU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DIU     C       C       C       0       34.373      14.039      11.347      
+DIU     O1      O       O       0       33.475      14.572      12.024      
+DIU     O2      O       OC      -1      34.761      12.868      11.503      
+DIU     O3      O       OH1     0       32.928      15.456      9.260       
+DIU     C1      C       CR6     0       35.030      14.862      10.274      
+DIU     C2      C       CR6     0       34.270      15.528      9.286       
+DIU     C3      C       CR6     0       34.937      16.282      8.309       
+DIU     C4      C       CR16    0       36.318      16.384      8.298       
+DIU     C5      C       CR6     0       37.060      15.726      9.272       
+DIU     C6      C       CR16    0       36.433      14.977      10.247      
+DIU     I1      I       I       0       33.834      17.277      6.835       
+DIU     I2      I       I       0       39.150      15.879      9.256       
+DIU     H3      H       H       0       32.683      14.922      8.635       
+DIU     H4      H       H       0       36.745      16.890      7.639       
+DIU     H6      H       H       0       36.947      14.540      10.896      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DIU       C         O1        DOUBLE    n         1.244     0.020     1.244     0.020     
+DIU       C         O2        SINGLE    n         1.244     0.020     1.244     0.020     
+DIU       C         C1        SINGLE    n         1.498     0.020     1.498     0.020     
+DIU       O3        C2        SINGLE    n         1.342     0.011     1.342     0.011     
+DIU       C1        C2        DOUBLE    y         1.402     0.010     1.402     0.010     
+DIU       C1        C6        SINGLE    y         1.400     0.010     1.400     0.010     
+DIU       C2        C3        SINGLE    y         1.392     0.011     1.392     0.011     
+DIU       C3        C4        DOUBLE    y         1.378     0.010     1.378     0.010     
+DIU       C3        I1        SINGLE    n         2.091     0.010     2.091     0.010     
+DIU       C4        C5        SINGLE    y         1.384     0.010     1.384     0.010     
+DIU       C5        C6        DOUBLE    y         1.374     0.010     1.374     0.010     
+DIU       C5        I2        SINGLE    n         2.096     0.010     2.096     0.010     
+DIU       O3        H3        SINGLE    n         0.970     0.012     0.858     0.020     
+DIU       C4        H4        SINGLE    n         1.082     0.013     0.934     0.010     
+DIU       C6        H6        SINGLE    n         1.082     0.013     0.936     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DIU          O1           C          O2     124.103    1.50
+DIU          O1           C          C1     117.949    1.50
+DIU          O2           C          C1     117.949    1.50
+DIU          C2          O3          H3     109.455    3.00
+DIU           C          C1          C2     121.043    1.50
+DIU           C          C1          C6     120.314    1.50
+DIU          C2          C1          C6     118.643    1.50
+DIU          O3          C2          C1     121.541    1.50
+DIU          O3          C2          C3     119.306    1.50
+DIU          C1          C2          C3     119.153    1.50
+DIU          C2          C3          C4     121.447    1.50
+DIU          C2          C3          I1     119.126    1.50
+DIU          C4          C3          I1     119.427    1.50
+DIU          C3          C4          C5     119.479    1.50
+DIU          C3          C4          H4     120.135    1.50
+DIU          C5          C4          H4     120.385    1.50
+DIU          C4          C5          C6     120.794    1.50
+DIU          C4          C5          I2     119.423    1.50
+DIU          C6          C5          I2     119.783    1.50
+DIU          C1          C6          C5     120.483    1.50
+DIU          C1          C6          H6     119.884    1.50
+DIU          C5          C6          H6     119.633    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DIU             sp2_sp2_1          O1           C          C1          C2     180.000   10.00     2
+DIU       const_sp2_sp2_4           C          C1          C2          O3       0.000   10.00     2
+DIU              const_23           C          C1          C6          C5     180.000   10.00     2
+DIU       const_sp2_sp2_8          O3          C2          C3          I1       0.000   10.00     2
+DIU              const_11          I1          C3          C4          C5     180.000   10.00     2
+DIU              const_14          C3          C4          C5          I2     180.000   10.00     2
+DIU              const_19          I2          C5          C6          C1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DIU    plan-1           C   0.020
+DIU    plan-1          C1   0.020
+DIU    plan-1          C2   0.020
+DIU    plan-1          C3   0.020
+DIU    plan-1          C4   0.020
+DIU    plan-1          C5   0.020
+DIU    plan-1          C6   0.020
+DIU    plan-1          H4   0.020
+DIU    plan-1          H6   0.020
+DIU    plan-1          I1   0.020
+DIU    plan-1          I2   0.020
+DIU    plan-1          O3   0.020
+DIU    plan-2           C   0.020
+DIU    plan-2          C1   0.020
+DIU    plan-2          O1   0.020
+DIU    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DIU SMILES           ACDLabs              10.04 "Ic1cc(C(=O)O)c(O)c(I)c1"
+DIU SMILES_CANONICAL CACTVS               3.341 "OC(=O)c1cc(I)cc(I)c1O"
+DIU SMILES           CACTVS               3.341 "OC(=O)c1cc(I)cc(I)c1O"
+DIU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(cc(c(c1C(=O)O)O)I)I"
+DIU SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(cc(c(c1C(=O)O)O)I)I"
+DIU InChI            InChI                1.03  "InChI=1S/C7H4I2O3/c8-3-1-4(7(11)12)6(10)5(9)2-3/h1-2,10H,(H,11,12)"
+DIU InChIKey         InChI                1.03  DHZVWQPHNWDCFS-UHFFFAOYSA-N
+DIU ?                acedrg               202         "dictionary generator"                  
+DIU ?                acedrg_database      11          "data source"                           
+DIU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DIU ?                refmac5              5.8.0189    "optimization tool"                     

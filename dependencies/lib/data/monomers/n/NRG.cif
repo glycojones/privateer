@@ -1,0 +1,242 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NRG      NRG 'N-OMEGA-NITRO-L-ARGININE            ' non-polymer        27  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NRG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NRG           O3     O    O         0.000      0.000    0.000    0.000
+ NRG           N1     N    N         1.000      0.000    0.000    0.000
+ NRG           O2     O    O        -1.000      0.000    0.000    0.000
+ NRG           NH1    N    NH1       0.000      0.000    0.000    0.000
+ NRG           HNH1   H    H         0.000      0.000    0.000    0.000
+ NRG           CZ     C    C         0.000      0.000    0.000    0.000
+ NRG           NH2    N    N         0.000      0.000    0.000    0.000
+ NRG           HNH2   H    H         0.000      0.000    0.000    0.000
+ NRG           NE     N    NH1       0.000      0.000    0.000    0.000
+ NRG           HNE    H    H         0.000      0.000    0.000    0.000
+ NRG           CD     C    CH2       0.000      0.000    0.000    0.000
+ NRG           HCD1   H    H         0.000      0.000    0.000    0.000
+ NRG           HCD2   H    H         0.000      0.000    0.000    0.000
+ NRG           CG     C    CH2       0.000      0.000    0.000    0.000
+ NRG           HCG1   H    H         0.000      0.000    0.000    0.000
+ NRG           HCG2   H    H         0.000      0.000    0.000    0.000
+ NRG           CB     C    CH2       0.000      0.000    0.000    0.000
+ NRG           HCB1   H    H         0.000      0.000    0.000    0.000
+ NRG           HCB2   H    H         0.000      0.000    0.000    0.000
+ NRG           CA     C    CH1       0.000      0.000    0.000    0.000
+ NRG           HCA    H    H         0.000      0.000    0.000    0.000
+ NRG           N      N    NH2       0.000      0.000    0.000    0.000
+ NRG           HN2    H    H         0.000      0.000    0.000    0.000
+ NRG           HN1    H    H         0.000      0.000    0.000    0.000
+ NRG           C      C    C         0.000      0.000    0.000    0.000
+ NRG           OA1    O    OC       -0.500      0.000    0.000    0.000
+ NRG           OA2    O    OC       -0.500      0.000    0.000    0.000
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NRG      O3     n/a    N1     START
+ NRG      N1     O3     NH1    .
+ NRG      O2     N1     .      .
+ NRG      NH1    N1     CZ     .
+ NRG      HNH1   NH1    .      .
+ NRG      CZ     NH1    NE     .
+ NRG      NH2    CZ     HNH2   .
+ NRG      HNH2   NH2    .      .
+ NRG      NE     CZ     CD     .
+ NRG      HNE    NE     .      .
+ NRG      CD     NE     CG     .
+ NRG      HCD1   CD     .      .
+ NRG      HCD2   CD     .      .
+ NRG      CG     CD     CB     .
+ NRG      HCG1   CG     .      .
+ NRG      HCG2   CG     .      .
+ NRG      CB     CG     CA     .
+ NRG      HCB1   CB     .      .
+ NRG      HCB2   CB     .      .
+ NRG      CA     CB     C      .
+ NRG      HCA    CA     .      .
+ NRG      N      CA     HN1    .
+ NRG      HN2    N      .      .
+ NRG      HN1    N      .      .
+ NRG      C      CA     OA2    .
+ NRG      OA1    C      .      .
+ NRG      OA2    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NRG       N         CA        single    1.450     0.020     1.450     0.020     
+NRG       HN1       N         single    1.036     0.016     0.914     0.007     
+NRG       HN2       N         single    1.036     0.016     0.914     0.007     
+NRG       CA        CB        single    1.524     0.020     1.524     0.020     
+NRG       C         CA        single    1.500     0.020     1.500     0.020     
+NRG       HCA       CA        single    1.089     0.010     0.989     0.005     
+NRG       CB        CG        single    1.524     0.020     1.524     0.020     
+NRG       HCB1      CB        single    1.089     0.010     0.989     0.005     
+NRG       HCB2      CB        single    1.089     0.010     0.989     0.005     
+NRG       CG        CD        single    1.524     0.020     1.524     0.020     
+NRG       HCG1      CG        single    1.089     0.010     0.989     0.005     
+NRG       HCG2      CG        single    1.089     0.010     0.989     0.005     
+NRG       CD        NE        single    1.450     0.020     1.450     0.020     
+NRG       HCD1      CD        single    1.089     0.010     0.989     0.005     
+NRG       HCD2      CD        single    1.089     0.010     0.989     0.005     
+NRG       NE        CZ        single    1.330     0.020     1.330     0.020     
+NRG       HNE       NE        single    1.016     0.010     0.899     0.007     
+NRG       CZ        NH1       single    1.330     0.020     1.330     0.020     
+NRG       NH2       CZ        double    1.260     0.020     1.260     0.020     
+NRG       NH1       N1        single    1.320     0.020     1.320     0.020     
+NRG       HNH1      NH1       single    1.016     0.010     0.899     0.007     
+NRG       HNH2      NH2       single    1.016     0.010     0.899     0.007     
+NRG       OA1       C         deloc     1.250     0.020     1.250     0.020     
+NRG       OA2       C         deloc     1.250     0.020     1.250     0.020     
+NRG       O2        N1        single    1.400     0.020     1.400     0.020     
+NRG       N1        O3        double    1.220     0.020     1.220     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NRG      O3     N1     O2      120.000    3.000
+ NRG      O3     N1     NH1     120.000    3.000
+ NRG      O2     N1     NH1     120.000    3.000
+ NRG      N1     NH1    HNH1    120.000    3.000
+ NRG      N1     NH1    CZ      120.000    3.000
+ NRG      HNH1   NH1    CZ      120.000    3.000
+ NRG      NH1    CZ     NH2     120.000    3.000
+ NRG      NH1    CZ     NE      120.000    3.000
+ NRG      NH2    CZ     NE      120.000    3.000
+ NRG      CZ     NH2    HNH2    120.000    3.000
+ NRG      CZ     NE     HNE     120.000    3.000
+ NRG      CZ     NE     CD      121.500    3.000
+ NRG      HNE    NE     CD      118.500    3.000
+ NRG      NE     CD     HCD1    109.470    3.000
+ NRG      NE     CD     HCD2    109.470    3.000
+ NRG      NE     CD     CG      112.000    3.000
+ NRG      HCD1   CD     HCD2    107.900    3.000
+ NRG      HCD1   CD     CG      109.470    3.000
+ NRG      HCD2   CD     CG      109.470    3.000
+ NRG      CD     CG     HCG1    109.470    3.000
+ NRG      CD     CG     HCG2    109.470    3.000
+ NRG      CD     CG     CB      111.000    3.000
+ NRG      HCG1   CG     HCG2    107.900    3.000
+ NRG      HCG1   CG     CB      109.470    3.000
+ NRG      HCG2   CG     CB      109.470    3.000
+ NRG      CG     CB     HCB1    109.470    3.000
+ NRG      CG     CB     HCB2    109.470    3.000
+ NRG      CG     CB     CA      111.000    3.000
+ NRG      HCB1   CB     HCB2    107.900    3.000
+ NRG      HCB1   CB     CA      109.470    3.000
+ NRG      HCB2   CB     CA      109.470    3.000
+ NRG      CB     CA     HCA     108.340    3.000
+ NRG      CB     CA     N       109.470    3.000
+ NRG      CB     CA     C       109.470    3.000
+ NRG      HCA    CA     N       109.470    3.000
+ NRG      HCA    CA     C       108.810    3.000
+ NRG      N      CA     C       109.470    3.000
+ NRG      CA     N      HN2     120.000    3.000
+ NRG      CA     N      HN1     120.000    3.000
+ NRG      HN2    N      HN1     120.000    3.000
+ NRG      CA     C      OA1     118.500    3.000
+ NRG      CA     C      OA2     118.500    3.000
+ NRG      OA1    C      OA2     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NRG      var_1    O3     N1     NH1    CZ         0.000   20.000   1
+ NRG      CONST_1  N1     NH1    CZ     NE         0.000    0.000   0
+ NRG      CONST_2  NH1    CZ     NH2    HNH2       0.000    0.000   0
+ NRG      CONST_3  NH1    CZ     NE     CD         0.000    0.000   0
+ NRG      var_2    CZ     NE     CD     CG         0.000   20.000   3
+ NRG      var_3    NE     CD     CG     CB         0.000   20.000   3
+ NRG      var_4    CD     CG     CB     CA         0.000   20.000   3
+ NRG      var_5    CG     CB     CA     C          0.000   20.000   3
+ NRG      var_6    CB     CA     N      HN1        0.000   20.000   1
+ NRG      var_7    CB     CA     C      OA2        0.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NRG      chir_01  CA     N      CB     C         positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NRG      plan-1    N         0.020
+ NRG      plan-1    CA        0.020
+ NRG      plan-1    HN1       0.020
+ NRG      plan-1    HN2       0.020
+ NRG      plan-2    NE        0.020
+ NRG      plan-2    CD        0.020
+ NRG      plan-2    CZ        0.020
+ NRG      plan-2    HNE       0.020
+ NRG      plan-3    CZ        0.020
+ NRG      plan-3    NE        0.020
+ NRG      plan-3    NH1       0.020
+ NRG      plan-3    NH2       0.020
+ NRG      plan-3    HNH2      0.020
+ NRG      plan-3    HNE       0.020
+ NRG      plan-3    HNH1      0.020
+ NRG      plan-4    NH1       0.020
+ NRG      plan-4    CZ        0.020
+ NRG      plan-4    N1        0.020
+ NRG      plan-4    HNH1      0.020
+ NRG      plan-5    C         0.020
+ NRG      plan-5    CA        0.020
+ NRG      plan-5    OA1       0.020
+ NRG      plan-5    OA2       0.020
+ NRG      plan-6    N1        0.020
+ NRG      plan-6    NH1       0.020
+ NRG      plan-6    O2        0.020
+ NRG      plan-6    O3        0.020
+ NRG      plan-6    HNH1      0.020
+# ------------------------------------------------------

@@ -1,0 +1,181 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+QDK      QDK 'L-ribulose                          ' non-polymer        20  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_QDK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+QDK    C1     C   CH2       0      -1.975      -0.867      -0.411
+QDK    O1     O    O2   0.000      -3.274      -0.931       0.188
+QDK    C2     C     C   0.000      -1.287       0.415       0.013
+QDK    O2     O     O   0.000      -1.842       1.205       0.717
+QDK    C3     C   CH2   0.000       0.086       0.709      -0.496
+QDK    O3     O    O2   0.000       0.395       2.098      -0.276
+QDK    C4     C   CH2   0.000       1.117      -0.157       0.240
+QDK    O4     O    O2   0.000       0.800      -1.555      -0.001
+QDK    C5     C   CH2   0.000       2.542       0.135      -0.274
+QDK    O5     O    O2   0.000       3.499      -0.594       0.491
+QDK    H1     H     H   0.000      -1.418      -1.691      -0.112
+QDK   H1A     H     H   0.000      -2.075      -0.904      -1.428
+QDK   HO1     H     H   0.000      -3.700      -1.668      -0.054
+QDK    H3     H     H   0.000       0.141       0.483      -1.490
+QDK   HO3     H     H   0.000       0.385       2.319       0.603
+QDK    H4     H     H   0.000       1.059       0.049       1.255
+QDK   HO4     H     H   0.000       0.808      -1.799      -0.840
+QDK    H5     H     H   0.000       2.609      -0.165      -1.249
+QDK   H5A     H     H   0.000       2.700       1.141      -0.196
+QDK   HO5     H     H   0.000       4.349      -0.473       0.224
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+QDK       C1        O1        SING      1.408     0.013     1.408     0.013     
+QDK       C1        C2        SING      1.500     0.010     1.500     0.010     
+QDK       C2        O2        DOUB      1.213     0.020     1.213     0.020     
+QDK       C2        C3        SING      1.504     0.020     1.504     0.020     
+QDK       C3        O3        SING      1.417     0.013     1.417     0.013     
+QDK       C3        C4        SING      1.516     0.020     1.516     0.020     
+QDK       C4        O4        SING      1.430     0.010     1.430     0.010     
+QDK       C4        C5        SING      1.515     0.011     1.515     0.011     
+QDK       C5        O5        SING      1.425     0.010     1.425     0.010     
+QDK       C1        H1        SING      1.089     0.010     0.982     0.013     
+QDK       C1        H1A       SING      1.089     0.010     0.982     0.013     
+QDK       O1        HO1       SING      0.970     0.012     0.850     0.020     
+QDK       C3        H3        SING      1.089     0.010     0.985     0.020     
+QDK       O3        HO3       SING      0.970     0.012     0.853     0.020     
+QDK       C4        H4        SING      1.089     0.010     0.997     0.020     
+QDK       O4        HO4       SING      0.970     0.012     0.853     0.020     
+QDK       C5        H5        SING      1.089     0.010     0.982     0.020     
+QDK       C5        H5A       SING      1.089     0.010     0.982     0.020     
+QDK       O5        HO5       SING      0.970     0.012     0.850     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+QDK    O1    C1      C2   109.957    3.00
+QDK    O1    C1      H1   109.360    0.83
+QDK    O1    C1     H1A   109.360    0.83
+QDK    C2    C1      H1   109.449    0.53
+QDK    C2    C1     H1A   109.449    0.53
+QDK    H1    C1     H1A   107.918    0.38
+QDK    C1    O1     HO1   108.415    2.46
+QDK    C1    C2      O2   121.165    1.70
+QDK    C1    C2      C3   117.055    3.00
+QDK    O2    C2      C3   121.780    3.00
+QDK    C2    C3      O3   110.326    2.73
+QDK    C2    C3      C4   111.454    3.00
+QDK    C2    C3      H3   109.236    1.23
+QDK    O3    C3      C4   110.585    1.36
+QDK    O3    C3      H3   108.796    1.89
+QDK    C4    C3      H3   108.694    1.04
+QDK    C3    O3     HO3   109.123    3.00
+QDK    C3    C4      O4   108.810    1.46
+QDK    C3    C4      C5   110.705    3.00
+QDK    C3    C4      H4   107.969    2.02
+QDK    O4    C4      C5   108.958    2.39
+QDK    O4    C4      H4   108.673    1.58
+QDK    C5    C4      H4   108.418    1.76
+QDK    C4    O4     HO4   110.678    3.00
+QDK    C4    C5      O5   110.819    2.13
+QDK    C4    C5      H5   109.249    1.48
+QDK    C4    C5     H5A   109.249    1.48
+QDK    O5    C5      H5   109.396    1.12
+QDK    O5    C5     H5A   109.396    1.12
+QDK    H5    C5     H5A   108.380    2.24
+QDK    C5    O5     HO5   108.573    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+QDK       sp3_sp3_1      C2      C1      O1     HO1     180.000   10.00     3
+QDK       sp3_sp3_2      H1      C1      O1     HO1     -60.000   10.00     3
+QDK       sp3_sp3_3     H1A      C1      O1     HO1      60.000   10.00     3
+QDK       sp2_sp3_1      O2      C2      C1      H1       0.000   10.00     6
+QDK       sp2_sp3_2      O2      C2      C1      O1     120.000   10.00     6
+QDK       sp2_sp3_3      O2      C2      C1     H1A    -120.000   10.00     6
+QDK       sp2_sp3_4      C3      C2      C1      H1     180.000   10.00     6
+QDK       sp2_sp3_5      C3      C2      C1      O1     -60.000   10.00     6
+QDK       sp2_sp3_6      C3      C2      C1     H1A      60.000   10.00     6
+QDK       sp2_sp3_7      C1      C2      C3      H3       0.000   10.00     6
+QDK       sp2_sp3_8      C1      C2      C3      O3     120.000   10.00     6
+QDK       sp2_sp3_9      C1      C2      C3      C4    -120.000   10.00     6
+QDK      sp2_sp3_10      O2      C2      C3      H3     180.000   10.00     6
+QDK      sp2_sp3_11      O2      C2      C3      O3     -60.000   10.00     6
+QDK      sp2_sp3_12      O2      C2      C3      C4      60.000   10.00     6
+QDK       sp3_sp3_4      C2      C3      O3     HO3     180.000   10.00     3
+QDK       sp3_sp3_5      C4      C3      O3     HO3     -60.000   10.00     3
+QDK       sp3_sp3_6      H3      C3      O3     HO3      60.000   10.00     3
+QDK       sp3_sp3_7      C2      C3      C4      O4     180.000   10.00     3
+QDK       sp3_sp3_8      C2      C3      C4      C5     -60.000   10.00     3
+QDK       sp3_sp3_9      C2      C3      C4      H4      60.000   10.00     3
+QDK      sp3_sp3_10      O3      C3      C4      O4      60.000   10.00     3
+QDK      sp3_sp3_11      O3      C3      C4      C5     180.000   10.00     3
+QDK      sp3_sp3_12      O3      C3      C4      H4     -60.000   10.00     3
+QDK      sp3_sp3_13      H3      C3      C4      O4     -60.000   10.00     3
+QDK      sp3_sp3_14      H3      C3      C4      C5      60.000   10.00     3
+QDK      sp3_sp3_15      H3      C3      C4      H4     180.000   10.00     3
+QDK      sp3_sp3_16      C3      C4      O4     HO4     180.000   10.00     3
+QDK      sp3_sp3_17      C5      C4      O4     HO4     -60.000   10.00     3
+QDK      sp3_sp3_18      H4      C4      O4     HO4      60.000   10.00     3
+QDK      sp3_sp3_19      C3      C4      C5      O5     180.000   10.00     3
+QDK      sp3_sp3_20      C3      C4      C5      H5     -60.000   10.00     3
+QDK      sp3_sp3_21      C3      C4      C5     H5A      60.000   10.00     3
+QDK      sp3_sp3_22      O4      C4      C5      O5      60.000   10.00     3
+QDK      sp3_sp3_23      O4      C4      C5      H5     180.000   10.00     3
+QDK      sp3_sp3_24      O4      C4      C5     H5A     -60.000   10.00     3
+QDK      sp3_sp3_25      H4      C4      C5      O5     -60.000   10.00     3
+QDK      sp3_sp3_26      H4      C4      C5      H5      60.000   10.00     3
+QDK      sp3_sp3_27      H4      C4      C5     H5A     180.000   10.00     3
+QDK      sp3_sp3_28      C4      C5      O5     HO5     180.000   10.00     3
+QDK      sp3_sp3_29      H5      C5      O5     HO5     -60.000   10.00     3
+QDK      sp3_sp3_30     H5A      C5      O5     HO5      60.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+QDK    plan-1    C1   0.020
+QDK    plan-1    C2   0.020
+QDK    plan-1    C3   0.020
+QDK    plan-1    O2   0.020

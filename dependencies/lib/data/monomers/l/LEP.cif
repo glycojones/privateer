@@ -1,0 +1,236 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LEP      LEP 'N~2~-phosphono-L-leucinamide        ' non-polymer        28  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LEP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LEP           O3     O    O         0.000      0.000    0.000    0.000
+ LEP           P      P    P         0.000     -1.427    0.213    0.327
+ LEP           O1     O    OH1       0.000     -1.615    1.669    0.987
+ LEP           HO1    H    H         0.000     -1.151    1.893    1.806
+ LEP           O2     O    OH1       0.000     -1.912   -0.914    1.371
+ LEP           HO2    H    H         0.000     -2.826   -0.917    1.689
+ LEP           N1     N    NH1       0.000     -2.347    0.110   -1.077
+ LEP           HN1    H    H         0.000     -1.969   -0.071   -1.997
+ LEP           CA     C    CH1       0.000     -3.773    0.317   -0.790
+ LEP           HA     H    H         0.000     -3.879    0.899    0.136
+ LEP           C      C    C         0.000     -4.451   -1.019   -0.625
+ LEP           O      O    O         0.000     -3.809   -2.042   -0.735
+ LEP           N      N    NH2       0.000     -5.771   -1.076   -0.360
+ LEP           HNA    H    H         0.000     -6.311   -0.224   -0.270
+ LEP           HN     H    H         0.000     -6.232   -1.971   -0.248
+ LEP           CB     C    CH2       0.000     -4.422    1.078   -1.949
+ LEP           HB     H    H         0.000     -5.500    1.141   -1.784
+ LEP           HBA    H    H         0.000     -4.227    0.550   -2.885
+ LEP           CG     C    CH1       0.000     -3.833    2.488   -2.024
+ LEP           HG     H    H         0.000     -2.737    2.426   -2.083
+ LEP           CD2    C    CH3       0.000     -4.234    3.275   -0.775
+ LEP           HD2B   H    H         0.000     -3.829    4.253   -0.827
+ LEP           HD2A   H    H         0.000     -5.291    3.335   -0.718
+ LEP           HD2    H    H         0.000     -3.862    2.785    0.087
+ LEP           CD1    C    CH3       0.000     -4.371    3.198   -3.269
+ LEP           HD1B   H    H         0.000     -4.024    2.702   -4.138
+ LEP           HD1A   H    H         0.000     -5.431    3.183   -3.255
+ LEP           HD1    H    H         0.000     -4.034    4.202   -3.279
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LEP      O3     n/a    P      START
+ LEP      P      O3     N1     .
+ LEP      O1     P      HO1    .
+ LEP      HO1    O1     .      .
+ LEP      O2     P      HO2    .
+ LEP      HO2    O2     .      .
+ LEP      N1     P      CA     .
+ LEP      HN1    N1     .      .
+ LEP      CA     N1     CB     .
+ LEP      HA     CA     .      .
+ LEP      C      CA     N      .
+ LEP      O      C      .      .
+ LEP      N      C      HN     .
+ LEP      HNA    N      .      .
+ LEP      HN     N      .      .
+ LEP      CB     CA     CG     .
+ LEP      HB     CB     .      .
+ LEP      HBA    CB     .      .
+ LEP      CG     CB     CD1    .
+ LEP      HG     CG     .      .
+ LEP      CD2    CG     HD2    .
+ LEP      HD2B   CD2    .      .
+ LEP      HD2A   CD2    .      .
+ LEP      HD2    CD2    .      .
+ LEP      CD1    CG     HD1    .
+ LEP      HD1B   CD1    .      .
+ LEP      HD1A   CD1    .      .
+ LEP      HD1    CD1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LEP       N         C         single    1.332     0.020     1.332     0.020     
+LEP       O         C         double    1.220     0.020     1.220     0.020     
+LEP       C         CA        single    1.500     0.020     1.500     0.020     
+LEP       HN        N         single    1.016     0.010     0.899     0.007     
+LEP       HNA       N         single    1.016     0.010     0.899     0.007     
+LEP       P         O3        double    1.480     0.020     1.480     0.020     
+LEP       O2        P         single    1.610     0.020     1.610     0.020     
+LEP       O1        P         single    1.610     0.020     1.610     0.020     
+LEP       N1        P         single    1.750     0.020     1.750     0.020     
+LEP       CA        N1        single    1.450     0.020     1.450     0.020     
+LEP       HN1       N1        single    1.036     0.016     0.914     0.007     
+LEP       HO1       O1        single    0.970     0.012     0.839     0.014     
+LEP       HO2       O2        single    0.970     0.012     0.839     0.014     
+LEP       CB        CA        single    1.524     0.020     1.524     0.020     
+LEP       HA        CA        single    1.089     0.010     0.989     0.005     
+LEP       CG        CB        single    1.524     0.020     1.524     0.020     
+LEP       HB        CB        single    1.089     0.010     0.989     0.005     
+LEP       HBA       CB        single    1.089     0.010     0.989     0.005     
+LEP       CD1       CG        single    1.524     0.020     1.524     0.020     
+LEP       CD2       CG        single    1.524     0.020     1.524     0.020     
+LEP       HG        CG        single    1.089     0.010     0.989     0.005     
+LEP       HD1       CD1       single    1.089     0.010     0.989     0.005     
+LEP       HD1A      CD1       single    1.089     0.010     0.989     0.005     
+LEP       HD1B      CD1       single    1.089     0.010     0.989     0.005     
+LEP       HD2       CD2       single    1.089     0.010     0.989     0.005     
+LEP       HD2A      CD2       single    1.089     0.010     0.989     0.005     
+LEP       HD2B      CD2       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LEP      O3     P      O1      109.500    3.000
+ LEP      O3     P      O2      109.500    3.000
+ LEP      O3     P      N1      109.500    3.000
+ LEP      O1     P      O2      109.500    3.000
+ LEP      O1     P      N1      109.500    3.000
+ LEP      O2     P      N1      109.500    3.000
+ LEP      P      O1     HO1     120.000    3.000
+ LEP      P      O2     HO2     120.000    3.000
+ LEP      P      N1     HN1     120.000    3.000
+ LEP      P      N1     CA      120.000    3.000
+ LEP      HN1    N1     CA      118.500    3.000
+ LEP      N1     CA     HA      108.550    3.000
+ LEP      N1     CA     C       111.600    3.000
+ LEP      N1     CA     CB      110.000    3.000
+ LEP      HA     CA     C       108.810    3.000
+ LEP      HA     CA     CB      108.340    3.000
+ LEP      C      CA     CB      109.470    3.000
+ LEP      CA     C      O       120.500    3.000
+ LEP      CA     C      N       120.000    3.000
+ LEP      O      C      N       123.000    3.000
+ LEP      C      N      HNA     120.000    3.000
+ LEP      C      N      HN      120.000    3.000
+ LEP      HNA    N      HN      120.000    3.000
+ LEP      CA     CB     HB      109.470    3.000
+ LEP      CA     CB     HBA     109.470    3.000
+ LEP      CA     CB     CG      111.000    3.000
+ LEP      HB     CB     HBA     107.900    3.000
+ LEP      HB     CB     CG      109.470    3.000
+ LEP      HBA    CB     CG      109.470    3.000
+ LEP      CB     CG     HG      108.340    3.000
+ LEP      CB     CG     CD2     111.000    3.000
+ LEP      CB     CG     CD1     111.000    3.000
+ LEP      HG     CG     CD2     108.340    3.000
+ LEP      HG     CG     CD1     108.340    3.000
+ LEP      CD2    CG     CD1     111.000    3.000
+ LEP      CG     CD2    HD2B    109.470    3.000
+ LEP      CG     CD2    HD2A    109.470    3.000
+ LEP      CG     CD2    HD2     109.470    3.000
+ LEP      HD2B   CD2    HD2A    109.470    3.000
+ LEP      HD2B   CD2    HD2     109.470    3.000
+ LEP      HD2A   CD2    HD2     109.470    3.000
+ LEP      CG     CD1    HD1B    109.470    3.000
+ LEP      CG     CD1    HD1A    109.470    3.000
+ LEP      CG     CD1    HD1     109.470    3.000
+ LEP      HD1B   CD1    HD1A    109.470    3.000
+ LEP      HD1B   CD1    HD1     109.470    3.000
+ LEP      HD1A   CD1    HD1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LEP      var_1    O3     P      O1     HO1      -59.984   20.000   1
+ LEP      var_2    O3     P      O2     HO2     -179.992   20.000   1
+ LEP      var_3    O3     P      N1     CA      -179.998   20.000   1
+ LEP      var_4    P      N1     CA     CB       144.204   20.000   3
+ LEP      var_5    N1     CA     C      N       -179.724   20.000   3
+ LEP      CONST_1  CA     C      N      HN       180.000    0.000   0
+ LEP      var_6    N1     CA     CB     CG       -65.823   20.000   3
+ LEP      var_7    CA     CB     CG     CD1      174.068   20.000   3
+ LEP      var_8    CB     CG     CD2    HD2       60.115   20.000   3
+ LEP      var_9    CB     CG     CD1    HD1      175.029   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LEP      chir_01  CA     C      N1     CB        negativ
+ LEP      chir_02  CG     CB     CD1    CD2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LEP      plan-1    C         0.020
+ LEP      plan-1    N         0.020
+ LEP      plan-1    O         0.020
+ LEP      plan-1    CA        0.020
+ LEP      plan-1    HNA       0.020
+ LEP      plan-1    HN        0.020
+ LEP      plan-2    N         0.020
+ LEP      plan-2    C         0.020
+ LEP      plan-2    HN        0.020
+ LEP      plan-2    HNA       0.020
+ LEP      plan-3    N1        0.020
+ LEP      plan-3    P         0.020
+ LEP      plan-3    CA        0.020
+ LEP      plan-3    HN1       0.020
+# ------------------------------------------------------

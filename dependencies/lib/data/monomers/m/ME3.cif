@@ -1,0 +1,482 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ME3      ME3 'RUTHENIUM-PYRIDOCARBAZOLE-3         ' non-polymer        54  36 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ME3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ME3           O1     O    O         0.000    -23.241  -34.994    4.527
+ ME3           C19    C    CR5       0.000    -23.446  -35.816    3.649
+ ME3           N2     N    NR15      0.000    -23.879  -37.127    3.808
+ ME3           HB     H    H         0.000    -24.075  -37.568    4.729
+ ME3           C20    C    CR5       0.000    -24.019  -37.781    2.584
+ ME3           O2     O    O         0.000    -24.395  -38.914    2.456
+ ME3           C18    C    CR56      0.000    -23.308  -35.648    2.168
+ ME3           C21    C    CR56      0.000    -23.653  -36.841    1.535
+ ME3           C22    C    CR66      0.000    -23.649  -37.033    0.092
+ ME3           C3     C    CR66      0.000    -23.264  -35.920   -0.680
+ ME3           N3     N    NR6       0.000    -23.193  -35.915   -2.063
+ ME3           C2     C    CR16      0.000    -23.533  -37.048   -2.734
+ ME3           H2     H    H         0.000    -23.494  -37.062   -3.816
+ ME3           C1     C    CR16      0.000    -23.935  -38.204   -2.035
+ ME3           HA     H    H         0.000    -24.194  -39.099   -2.587
+ ME3           C23    C    CR16      0.000    -24.004  -38.211   -0.649
+ ME3           H23    H    H         0.000    -24.325  -39.104   -0.127
+ ME3           C17    C    CR56      0.000    -22.901  -34.544    1.407
+ ME3           C10    C    CR56      0.000    -22.898  -34.729   -0.003
+ ME3           C16    C    CR56      0.000    -22.479  -33.208    1.567
+ ME3           C15    C    CR16      0.000    -22.262  -32.412    2.676
+ ME3           H15    H    H         0.000    -22.428  -32.796    3.675
+ ME3           C14    C    CR6       0.000    -21.831  -31.123    2.481
+ ME3           O6     O    OH1       0.000    -21.617  -30.336    3.578
+ ME3           H6     H    H         0.000    -21.566  -30.891    4.369
+ ME3           C13    C    CR16      0.000    -21.608  -30.599    1.195
+ ME3           H13    H    H         0.000    -21.257  -29.581    1.084
+ ME3           C12    C    CR16      0.000    -21.835  -31.378    0.061
+ ME3           H12    H    H         0.000    -21.691  -30.976   -0.934
+ ME3           C11    C    CR56      0.000    -22.252  -32.687    0.255
+ ME3           N1     N    NR5       0.000    -22.537  -33.649   -0.668
+ ME3           RU1    RU   RU        0.000    -22.598  -34.007   -2.749
+ ME3           C7     C    CH1       0.000    -22.387  -32.677   -4.465
+ ME3           H7     H    H         0.000    -21.436  -32.394   -4.937
+ ME3           C8     C    CH1       0.000    -23.028  -31.965   -3.435
+ ME3           H8C1   H    H         0.000    -22.677  -31.033   -2.970
+ ME3           C9     C    CH1       0.000    -24.281  -32.592   -3.220
+ ME3           H9C1   H    H         0.000    -25.042  -32.254   -2.503
+ ME3           C5     C    CH1       0.000    -24.405  -33.720   -4.070
+ ME3           H5C1   H    H         0.000    -25.272  -34.388   -4.169
+ ME3           C4     C    C1        0.000    -20.789  -34.373   -2.766
+ ME3           H4C1   H    H         0.000    -20.807  -34.881   -1.816
+ ME3           O3     O    O         0.000    -19.694  -34.522   -2.911
+ ME3           C6     C    CT        0.000    -23.193  -33.734   -4.856
+ ME3           C24    C    C         0.000    -22.673  -34.587   -5.938
+ ME3           O5     O    O        -0.500    -21.620  -34.240   -6.518
+ ME3           O4     O    O2       -0.500    -23.258  -35.654   -6.227
+ ME3           C25    C    CH2       0.000    -22.424  -36.694   -6.841
+ ME3           H251   H    H         0.000    -21.560  -36.846   -6.191
+ ME3           H252   H    H         0.000    -22.088  -36.313   -7.808
+ ME3           C26    C    CH3       0.000    -23.157  -38.029   -7.041
+ ME3           H263   H    H         0.000    -22.568  -38.822   -6.655
+ ME3           H262   H    H         0.000    -24.088  -38.006   -6.533
+ ME3           H261   H    H         0.000    -23.328  -38.192   -8.075
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ME3      O1     n/a    C19    START
+ ME3      C19    O1     C18    .
+ ME3      N2     C19    C20    .
+ ME3      HB     N2     .      .
+ ME3      C20    N2     O2     .
+ ME3      O2     C20    .      .
+ ME3      C18    C19    C17    .
+ ME3      C21    C18    C22    .
+ ME3      C22    C21    C3     .
+ ME3      C3     C22    N3     .
+ ME3      N3     C3     C2     .
+ ME3      C2     N3     C1     .
+ ME3      H2     C2     .      .
+ ME3      C1     C2     C23    .
+ ME3      HA     C1     .      .
+ ME3      C23    C1     H23    .
+ ME3      H23    C23    .      .
+ ME3      C17    C18    C16    .
+ ME3      C10    C17    .      .
+ ME3      C16    C17    C15    .
+ ME3      C15    C16    C14    .
+ ME3      H15    C15    .      .
+ ME3      C14    C15    C13    .
+ ME3      O6     C14    H6     .
+ ME3      H6     O6     .      .
+ ME3      C13    C14    C12    .
+ ME3      H13    C13    .      .
+ ME3      C12    C13    C11    .
+ ME3      H12    C12    .      .
+ ME3      C11    C12    N1     .
+ ME3      N1     C11    RU1    .
+ ME3      RU1    N1     C6     .
+ ME3      C7     RU1    H7     .
+ ME3      H7     C7     .      .
+ ME3      C8     RU1    H8C1   .
+ ME3      H8C1   C8     .      .
+ ME3      C9     RU1    H9C1   .
+ ME3      H9C1   C9     .      .
+ ME3      C5     RU1    H5C1   .
+ ME3      H5C1   C5     .      .
+ ME3      C4     RU1    O3     .
+ ME3      H4C1   C4     .      .
+ ME3      O3     C4     .      .
+ ME3      C6     RU1    C24    .
+ ME3      C24    C6     O4     .
+ ME3      O5     C24    .      .
+ ME3      O4     C24    C25    .
+ ME3      C25    O4     C26    .
+ ME3      H251   C25    .      .
+ ME3      H252   C25    .      .
+ ME3      C26    C25    H261   .
+ ME3      H263   C26    .      .
+ ME3      H262   C26    .      .
+ ME3      H261   C26    .      END
+ ME3      C6     C7     .    ADD
+ ME3      C6     C5     .    ADD
+ ME3      C7     C8     .    ADD
+ ME3      C8     C9     .    ADD
+ ME3      C9     C5     .    ADD
+ ME3      RU1    N3     .    ADD
+ ME3      N1     C10    .    ADD
+ ME3      C10    C3     .    ADD
+ ME3      C22    C23    .    ADD
+ ME3      C21    C20    .    ADD
+ ME3      C16    C11    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ME3       O5        C24       deloc     1.220     0.020     1.220     0.020     
+ME3       O4        C24       deloc     1.454     0.020     1.454     0.020     
+ME3       C24       C6        single    1.507     0.020     1.507     0.020     
+ME3       C25       O4        single    1.426     0.020     1.426     0.020     
+ME3       C26       C25       single    1.513     0.020     1.513     0.020     
+ME3       H251      C25       single    1.089     0.010     0.989     0.005     
+ME3       H252      C25       single    1.089     0.010     0.989     0.005     
+ME3       H261      C26       single    1.089     0.010     0.989     0.005     
+ME3       H262      C26       single    1.089     0.010     0.989     0.005     
+ME3       H263      C26       single    1.089     0.010     0.989     0.005     
+ME3       C6        C7        single    1.524     0.020     1.524     0.020     
+ME3       C6        C5        single    1.524     0.020     1.524     0.020     
+ME3       C6        RU1       single    2.206     0.020     2.206     0.020     
+ME3       C7        C8        single    1.524     0.020     1.524     0.020     
+ME3       C7        RU1       single    2.181     0.020     2.181     0.020     
+ME3       H7        C7        single    1.089     0.010     0.989     0.005     
+ME3       C8        C9        single    1.524     0.020     1.524     0.020     
+ME3       C8        RU1       single    2.197     0.020     2.197     0.020     
+ME3       H8C1      C8        single    1.089     0.010     0.989     0.005     
+ME3       C9        C5        single    1.524     0.020     1.524     0.020     
+ME3       C9        RU1       single    2.249     0.020     2.249     0.020     
+ME3       H9C1      C9        single    1.089     0.010     0.989     0.005     
+ME3       C5        RU1       single    2.257     0.020     2.257     0.020     
+ME3       H5C1      C5        single    1.089     0.010     0.989     0.005     
+ME3       C4        RU1       single    1.846     0.020     1.846     0.020     
+ME3       RU1       N1        single    2.112     0.020     2.112     0.020     
+ME3       RU1       N3        single    2.113     0.020     2.113     0.020     
+ME3       O3        C4        triple    1.220     0.020     1.220     0.020     
+ME3       H4C1      C4        single    1.082     0.013     0.975     0.010     
+ME3       N1        C10       single    1.337     0.020     1.337     0.020     
+ME3       N1        C11       single    1.337     0.020     1.337     0.020     
+ME3       C10       C3        single    1.390     0.020     1.390     0.020     
+ME3       C10       C17       double    1.490     0.020     1.490     0.020     
+ME3       N3        C3        single    1.410     0.020     1.410     0.020     
+ME3       C3        C22       double    1.490     0.020     1.490     0.020     
+ME3       C2        N3        double    1.337     0.020     1.337     0.020     
+ME3       C22       C23       single    1.390     0.020     1.390     0.020     
+ME3       C22       C21       single    1.390     0.020     1.390     0.020     
+ME3       C23       C1        double    1.390     0.020     1.390     0.020     
+ME3       H23       C23       single    1.082     0.013     0.975     0.010     
+ME3       C1        C2        single    1.390     0.020     1.390     0.020     
+ME3       HA        C1        single    1.082     0.013     0.975     0.010     
+ME3       H2        C2        single    1.082     0.013     0.975     0.010     
+ME3       C21       C20       single    1.490     0.020     1.490     0.020     
+ME3       C21       C18       double    1.490     0.020     1.490     0.020     
+ME3       O2        C20       double    1.285     0.020     1.285     0.020     
+ME3       C20       N2        single    1.340     0.020     1.340     0.020     
+ME3       N2        C19       single    1.340     0.020     1.340     0.020     
+ME3       HB        N2        single    1.016     0.010     0.899     0.007     
+ME3       C19       O1        double    1.285     0.020     1.285     0.020     
+ME3       C18       C19       single    1.490     0.020     1.490     0.020     
+ME3       C17       C18       single    1.490     0.020     1.490     0.020     
+ME3       C16       C17       single    1.490     0.020     1.490     0.020     
+ME3       C16       C11       single    1.490     0.020     1.490     0.020     
+ME3       C15       C16       double    1.390     0.020     1.390     0.020     
+ME3       C11       C12       double    1.390     0.020     1.390     0.020     
+ME3       C12       C13       single    1.390     0.020     1.390     0.020     
+ME3       H12       C12       single    1.082     0.013     0.975     0.010     
+ME3       C13       C14       double    1.390     0.020     1.390     0.020     
+ME3       H13       C13       single    1.082     0.013     0.975     0.010     
+ME3       O6        C14       single    1.362     0.020     1.362     0.020     
+ME3       C14       C15       single    1.390     0.020     1.390     0.020     
+ME3       H6        O6        single    0.970     0.012     0.839     0.014     
+ME3       H15       C15       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ME3      O1     C19    N2      108.000    3.000
+ ME3      O1     C19    C18     108.000    3.000
+ ME3      N2     C19    C18     108.000    3.000
+ ME3      C19    N2     HB      126.000    3.000
+ ME3      C19    N2     C20     108.000    3.000
+ ME3      HB     N2     C20     126.000    3.000
+ ME3      N2     C20    O2      108.000    3.000
+ ME3      N2     C20    C21     108.000    3.000
+ ME3      O2     C20    C21     108.000    3.000
+ ME3      C19    C18    C21     108.000    3.000
+ ME3      C19    C18    C17     108.000    3.000
+ ME3      C21    C18    C17     120.000    3.000
+ ME3      C18    C21    C22     120.000    3.000
+ ME3      C18    C21    C20     108.000    3.000
+ ME3      C22    C21    C20     120.000    3.000
+ ME3      C21    C22    C3      120.000    3.000
+ ME3      C21    C22    C23     120.000    3.000
+ ME3      C3     C22    C23     120.000    3.000
+ ME3      C22    C3     N3      120.000    3.000
+ ME3      C22    C3     C10     120.000    3.000
+ ME3      N3     C3     C10     120.000    3.000
+ ME3      C3     N3     C2      120.000    3.000
+ ME3      C3     N3     RU1     120.000    3.000
+ ME3      C2     N3     RU1     120.000    3.000
+ ME3      N3     C2     H2      120.000    3.000
+ ME3      N3     C2     C1      120.000    3.000
+ ME3      H2     C2     C1      120.000    3.000
+ ME3      C2     C1     HA      120.000    3.000
+ ME3      C2     C1     C23     120.000    3.000
+ ME3      HA     C1     C23     120.000    3.000
+ ME3      C1     C23    H23     120.000    3.000
+ ME3      C1     C23    C22     120.000    3.000
+ ME3      H23    C23    C22     120.000    3.000
+ ME3      C18    C17    C10     120.000    3.000
+ ME3      C18    C17    C16     120.000    3.000
+ ME3      C10    C17    C16     120.000    3.000
+ ME3      C17    C10    N1      108.000    3.000
+ ME3      C17    C10    C3      120.000    3.000
+ ME3      N1     C10    C3      120.000    3.000
+ ME3      C17    C16    C15     120.000    3.000
+ ME3      C17    C16    C11     120.000    3.000
+ ME3      C15    C16    C11     120.000    3.000
+ ME3      C16    C15    H15     120.000    3.000
+ ME3      C16    C15    C14     120.000    3.000
+ ME3      H15    C15    C14     120.000    3.000
+ ME3      C15    C14    O6      120.000    3.000
+ ME3      C15    C14    C13     120.000    3.000
+ ME3      O6     C14    C13     120.000    3.000
+ ME3      C14    O6     H6      109.470    3.000
+ ME3      C14    C13    H13     120.000    3.000
+ ME3      C14    C13    C12     120.000    3.000
+ ME3      H13    C13    C12     120.000    3.000
+ ME3      C13    C12    H12     120.000    3.000
+ ME3      C13    C12    C11     120.000    3.000
+ ME3      H12    C12    C11     120.000    3.000
+ ME3      C12    C11    N1      132.000    3.000
+ ME3      C12    C11    C16     120.000    3.000
+ ME3      N1     C11    C16     108.000    3.000
+ ME3      C11    N1     RU1     108.000    3.000
+ ME3      C11    N1     C10     108.000    3.000
+ ME3      RU1    N1     C10     108.000    3.000
+ ME3      N1     RU1    C7      131.978    3.000
+ ME3      N1     RU1    C8       98.961    3.000
+ ME3      N1     RU1    C9       96.968    3.000
+ ME3      N1     RU1    C5      125.326    3.000
+ ME3      N1     RU1    C4       90.824    3.000
+ ME3      N1     RU1    C6      158.059    3.000
+ ME3      N1     RU1    N3       80.871    3.000
+ ME3      C7     RU1    C8       40.741    3.000
+ ME3      C7     RU1    C9       61.572    3.000
+ ME3      C8     RU1    C9       40.077    3.000
+ ME3      C7     RU1    C5       62.575    3.000
+ ME3      C8     RU1    C5       62.756    3.000
+ ME3      C9     RU1    C5       39.542    3.000
+ ME3      C7     RU1    C4       91.080    3.000
+ ME3      C8     RU1    C4      111.920    3.000
+ ME3      C9     RU1    C4      148.914    3.000
+ ME3      C5     RU1    C4      143.574    3.000
+ ME3      C7     RU1    C6       40.644    3.000
+ ME3      C8     RU1    C6       62.222    3.000
+ ME3      C9     RU1    C6       61.333    3.000
+ ME3      C5     RU1    C6       39.913    3.000
+ ME3      C4     RU1    C6      106.263    3.000
+ ME3      C7     RU1    N3      146.427    3.000
+ ME3      C8     RU1    N3      152.331    3.000
+ ME3      C9     RU1    N3      115.179    3.000
+ ME3      C5     RU1    N3       94.554    3.000
+ ME3      C4     RU1    N3       95.734    3.000
+ ME3      C6     RU1    N3      110.232    3.000
+ ME3      RU1    C7     H7      109.500    3.000
+ ME3      RU1    C7     C6       70.561    3.000
+ ME3      RU1    C7     C8       70.170    3.000
+ ME3      C6     C7     C8      111.000    3.000
+ ME3      H7     C7     C6      108.340    3.000
+ ME3      H7     C7     C8      108.340    3.000
+ ME3      RU1    C8     H8C1    109.500    3.000
+ ME3      RU1    C8     C7       69.088    3.000
+ ME3      RU1    C8     C9       71.799    3.000
+ ME3      C7     C8     C9      111.000    3.000
+ ME3      H8C1   C8     C7      108.340    3.000
+ ME3      H8C1   C8     C9      108.340    3.000
+ ME3      RU1    C9     H9C1    109.500    3.000
+ ME3      RU1    C9     C8       68.123    3.000
+ ME3      RU1    C9     C5       70.513    3.000
+ ME3      C8     C9     C5      111.000    3.000
+ ME3      H9C1   C9     C8      108.340    3.000
+ ME3      H9C1   C9     C5      108.340    3.000
+ ME3      RU1    C5     H5C1    109.500    3.000
+ ME3      RU1    C5     C6       68.264    3.000
+ ME3      RU1    C5     C9       69.946    3.000
+ ME3      C6     C5     C9      111.000    3.000
+ ME3      H5C1   C5     C6      108.340    3.000
+ ME3      H5C1   C5     C9      108.340    3.000
+ ME3      RU1    C4     H4C1    120.000    3.000
+ ME3      RU1    C4     O3      120.000    3.000
+ ME3      H4C1   C4     O3      123.000    3.000
+ ME3      RU1    C6     C24     109.500    3.000
+ ME3      RU1    C6     C7       68.795    3.000
+ ME3      RU1    C6     C5       71.823    3.000
+ ME3      C7     C6     C5      111.000    3.000
+ ME3      C24    C6     C7      109.470    3.000
+ ME3      C24    C6     C5      109.470    3.000
+ ME3      C6     C24    O5      120.500    3.000
+ ME3      C6     C24    O4      120.000    3.000
+ ME3      O5     C24    O4      119.000    3.000
+ ME3      C24    O4     C25     120.000    3.000
+ ME3      O4     C25    H251    109.470    3.000
+ ME3      O4     C25    H252    109.470    3.000
+ ME3      O4     C25    C26     109.470    3.000
+ ME3      H251   C25    H252    107.900    3.000
+ ME3      H251   C25    C26     109.470    3.000
+ ME3      H252   C25    C26     109.470    3.000
+ ME3      C25    C26    H263    109.470    3.000
+ ME3      C25    C26    H262    109.470    3.000
+ ME3      C25    C26    H261    109.470    3.000
+ ME3      H263   C26    H262    109.470    3.000
+ ME3      H263   C26    H261    109.470    3.000
+ ME3      H262   C26    H261    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ME3      CONST_1  O1     C19    N2     C20      180.000    0.000   0
+ ME3      CONST_2  C19    N2     C20    O2       180.000    0.000   0
+ ME3      CONST_3  O1     C19    C18    C17        0.000    0.000   0
+ ME3      CONST_4  C19    C18    C21    C22      180.000    0.000   0
+ ME3      CONST_5  C18    C21    C20    N2         0.000    0.000   0
+ ME3      CONST_6  C18    C21    C22    C3         0.115    0.000   0
+ ME3      CONST_7  C21    C22    C23    C1       180.000    0.000   0
+ ME3      CONST_8  C21    C22    C3     N3       179.635    0.000   0
+ ME3      CONST_9  C22    C3     N3     C2         0.000    0.000   0
+ ME3      CONST_10 C3     N3     C2     C1         0.000    0.000   0
+ ME3      CONST_11 N3     C2     C1     C23        0.000    0.000   0
+ ME3      CONST_12 C2     C1     C23    C22        0.000    0.000   0
+ ME3      CONST_13 C19    C18    C17    C16        0.000    0.000   0
+ ME3      CONST_14 C18    C17    C10    N1       180.000    0.000   0
+ ME3      CONST_15 C17    C10    C3     C22       -0.939    0.000   0
+ ME3      CONST_16 C18    C17    C16    C15        0.000    0.000   0
+ ME3      CONST_17 C17    C16    C11    C12      180.000    0.000   0
+ ME3      CONST_18 C17    C16    C15    C14      180.000    0.000   0
+ ME3      CONST_19 C16    C15    C14    C13        0.000    0.000   0
+ ME3      var_1    C15    C14    O6     H6        16.024   20.000   1
+ ME3      CONST_20 C15    C14    C13    C12        0.000    0.000   0
+ ME3      CONST_21 C14    C13    C12    C11        0.000    0.000   0
+ ME3      CONST_22 C13    C12    C11    N1       180.000    0.000   0
+ ME3      CONST_23 C12    C11    N1     RU1        0.000    0.000   0
+ ME3      CONST_24 C11    N1     C10    C17        0.000    0.000   0
+ ME3      var_2    C11    N1     RU1    C6       -58.350   20.000   1
+ ME3      CONST_25 N1     RU1    N3     C3         1.592    0.000   0
+ ME3      var_3    N1     RU1    C7     C6      -151.670   20.000   1
+ ME3      var_4    N1     RU1    C8     C7       155.109   20.000   1
+ ME3      var_5    N1     RU1    C9     C8        95.655   20.000   1
+ ME3      var_6    N1     RU1    C5     C6       160.338   20.000   1
+ ME3      var_7    N1     RU1    C4     O3      -142.300   20.000   1
+ ME3      var_8    N1     RU1    C6     C24     -179.725   20.000   1
+ ME3      var_9    RU1    C6     C24    O4        87.994   20.000   1
+ ME3      var_10   C6     C24    O4     C25     -154.021   20.000   1
+ ME3      var_11   C24    O4     C25    C26      174.064   20.000   1
+ ME3      var_12   O4     C25    C26    H261     109.692   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ME3      chir_01  C6     C24    C7     C5        negativ
+ ME3      chir_02  C7     C6     C8     RU1       negativ
+ ME3      chir_03  C8     C7     C9     RU1       negativ
+ ME3      chir_04  C9     C8     C5     RU1       negativ
+ ME3      chir_05  C5     C6     C9     RU1       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ME3      plan-1    C24       0.020
+ ME3      plan-1    O5        0.020
+ ME3      plan-1    O4        0.020
+ ME3      plan-1    C6        0.020
+ ME3      plan-2    C4        0.020
+ ME3      plan-2    RU1       0.020
+ ME3      plan-2    O3        0.020
+ ME3      plan-2    H4C1      0.020
+ ME3      plan-3    N1        0.020
+ ME3      plan-3    RU1       0.020
+ ME3      plan-3    C10       0.020
+ ME3      plan-3    C11       0.020
+ ME3      plan-3    C3        0.020
+ ME3      plan-3    C17       0.020
+ ME3      plan-3    N3        0.020
+ ME3      plan-3    C22       0.020
+ ME3      plan-3    C23       0.020
+ ME3      plan-3    C1        0.020
+ ME3      plan-3    C2        0.020
+ ME3      plan-3    C21       0.020
+ ME3      plan-3    H23       0.020
+ ME3      plan-3    HA        0.020
+ ME3      plan-3    H2        0.020
+ ME3      plan-3    C20       0.020
+ ME3      plan-3    C18       0.020
+ ME3      plan-3    N2        0.020
+ ME3      plan-3    C19       0.020
+ ME3      plan-3    O2        0.020
+ ME3      plan-3    HB        0.020
+ ME3      plan-3    O1        0.020
+ ME3      plan-3    C16       0.020
+ ME3      plan-3    C15       0.020
+ ME3      plan-3    C12       0.020
+ ME3      plan-3    C13       0.020
+ ME3      plan-3    C14       0.020
+ ME3      plan-3    H12       0.020
+ ME3      plan-3    H13       0.020
+ ME3      plan-3    O6        0.020
+ ME3      plan-3    H15       0.020
+# ------------------------------------------------------

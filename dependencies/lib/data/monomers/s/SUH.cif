@@ -1,0 +1,146 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SUH     SUH      "(2S)-2-methylbutanedioic acid"     NON-POLYMER     15     9     .     
+#
+data_comp_SUH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SUH     OAG     O       OC      -1      2.763       0.744       -0.507      
+SUH     CAJ     C       C       0       2.083       0.118       0.330       
+SUH     CAK     C       CH2     0       0.672       0.608       0.615       
+SUH     CAL     C       CH1     0       -0.353      0.167       -0.418      
+SUH     CAM     C       C       0       -1.652      0.976       -0.290      
+SUH     OAN     O       O       0       -2.041      1.629       -1.280      
+SUH     OAO     O       OC      -1      -2.257      0.942       0.800       
+SUH     OAP     O       O       0       2.494       -0.886      0.946       
+SUH     CAQ     C       CH3     0       -0.638      -1.336      -0.295      
+SUH     HAK     H       H       0       0.688       1.580       0.653       
+SUH     HAKA    H       H       0       0.401       0.283       1.490       
+SUH     HAL     H       H       0       0.018       0.335       -1.306      
+SUH     HAQ     H       H       0       -1.401      -1.570      -0.852      
+SUH     HAQA    H       H       0       -0.836      -1.557      0.632       
+SUH     HAQB    H       H       0       0.139       -1.842      -0.588      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SUH       OAG       CAJ       SINGLE    n         1.247     0.019     1.247     0.019     
+SUH       CAJ       CAK       SINGLE    n         1.519     0.012     1.519     0.012     
+SUH       CAJ       OAP       DOUBLE    n         1.247     0.019     1.247     0.019     
+SUH       CAK       CAL       SINGLE    n         1.518     0.010     1.518     0.010     
+SUH       CAL       CAM       SINGLE    n         1.533     0.012     1.533     0.012     
+SUH       CAL       CAQ       SINGLE    n         1.529     0.019     1.529     0.019     
+SUH       CAM       OAN       DOUBLE    n         1.247     0.019     1.247     0.019     
+SUH       CAM       OAO       SINGLE    n         1.247     0.019     1.247     0.019     
+SUH       CAK       HAK       SINGLE    n         1.089     0.010     0.972     0.013     
+SUH       CAK       HAKA      SINGLE    n         1.089     0.010     0.972     0.013     
+SUH       CAL       HAL       SINGLE    n         1.089     0.010     0.976     0.020     
+SUH       CAQ       HAQ       SINGLE    n         1.089     0.010     0.973     0.014     
+SUH       CAQ       HAQA      SINGLE    n         1.089     0.010     0.973     0.014     
+SUH       CAQ       HAQB      SINGLE    n         1.089     0.010     0.973     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SUH         OAG         CAJ         CAK     118.129    1.68
+SUH         OAG         CAJ         OAP     123.742    1.50
+SUH         CAK         CAJ         OAP     118.129    1.68
+SUH         CAJ         CAK         CAL     113.398    1.64
+SUH         CAJ         CAK         HAK     108.462    1.50
+SUH         CAJ         CAK        HAKA     108.462    1.50
+SUH         CAL         CAK         HAK     108.855    1.50
+SUH         CAL         CAK        HAKA     108.855    1.50
+SUH         HAK         CAK        HAKA     107.639    1.50
+SUH         CAK         CAL         CAM     111.066    2.42
+SUH         CAK         CAL         CAQ     110.140    2.04
+SUH         CAK         CAL         HAL     108.361    1.50
+SUH         CAM         CAL         CAQ     110.920    1.69
+SUH         CAM         CAL         HAL     107.706    1.93
+SUH         CAQ         CAL         HAL     108.386    1.50
+SUH         CAL         CAM         OAN     118.051    1.50
+SUH         CAL         CAM         OAO     118.051    1.50
+SUH         OAN         CAM         OAO     123.899    1.50
+SUH         CAL         CAQ         HAQ     109.605    1.50
+SUH         CAL         CAQ        HAQA     109.605    1.50
+SUH         CAL         CAQ        HAQB     109.605    1.50
+SUH         HAQ         CAQ        HAQA     109.411    1.50
+SUH         HAQ         CAQ        HAQB     109.411    1.50
+SUH        HAQA         CAQ        HAQB     109.411    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SUH             sp2_sp3_2         OAG         CAJ         CAK         CAL     120.000   10.00     6
+SUH             sp3_sp3_1         CAJ         CAK         CAL         CAM     180.000   10.00     3
+SUH             sp2_sp3_8         OAN         CAM         CAL         CAK     120.000   10.00     6
+SUH            sp3_sp3_10         CAK         CAL         CAQ         HAQ     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SUH    chir_1    CAL    CAM    CAK    CAQ    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SUH    plan-1         CAJ   0.020
+SUH    plan-1         CAK   0.020
+SUH    plan-1         OAG   0.020
+SUH    plan-1         OAP   0.020
+SUH    plan-2         CAL   0.020
+SUH    plan-2         CAM   0.020
+SUH    plan-2         OAN   0.020
+SUH    plan-2         OAO   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SUH SMILES           ACDLabs              12.01 "O=C(O)CC(C(=O)O)C"
+SUH InChI            InChI                1.03  "InChI=1S/C5H8O4/c1-3(5(8)9)2-4(6)7/h3H,2H2,1H3,(H,6,7)(H,8,9)/t3-/m0/s1"
+SUH InChIKey         InChI                1.03  WXUAQHNMJWJLTG-VKHMYHEASA-N
+SUH SMILES_CANONICAL CACTVS               3.385 "C[C@@H](CC(O)=O)C(O)=O"
+SUH SMILES           CACTVS               3.385 "C[CH](CC(O)=O)C(O)=O"
+SUH SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C[C@@H](CC(=O)O)C(=O)O"
+SUH SMILES           "OpenEye OEToolkits" 1.7.6 "CC(CC(=O)O)C(=O)O"
+SUH ?                acedrg               202         "dictionary generator"                  
+SUH ?                acedrg_database      11          "data source"                           
+SUH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SUH ?                refmac5              5.8.0189    "optimization tool"                     

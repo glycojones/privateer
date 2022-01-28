@@ -1,0 +1,201 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DCL      DCL '2-AMINO-4-METHYL-PENTAN-1-OL        ' non-polymer        23   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DCL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DCL           OXT    O    OH1       0.000      0.000    0.000    0.000
+ DCL           HXT    H    H         0.000      0.570   -0.076   -0.777
+ DCL           C      C    CH2       0.000     -1.368   -0.084   -0.404
+ DCL           HC1    H    H         0.000     -1.543   -1.044   -0.894
+ DCL           HC2    H    H         0.000     -1.590    0.726   -1.102
+ DCL           CA     C    CH1       0.000     -2.272    0.036    0.823
+ DCL           HA     H    H         0.000     -2.047   -0.780    1.524
+ DCL           N      N    NH2       0.000     -2.034    1.326    1.483
+ DCL           HN2    H    H         0.000     -1.289    1.935    1.163
+ DCL           HN1    H    H         0.000     -2.613    1.617    2.262
+ DCL           CB     C    CH2       0.000     -3.735   -0.053    0.390
+ DCL           HB1    H    H         0.000     -3.911   -1.013   -0.101
+ DCL           HB2    H    H         0.000     -3.958    0.757   -0.307
+ DCL           CG     C    CH1       0.000     -4.639    0.065    1.619
+ DCL           HG     H    H         0.000     -4.461    1.031    2.112
+ DCL           CD2    C    CH3       0.000     -4.327   -1.070    2.594
+ DCL           HD23   H    H         0.000     -3.313   -1.009    2.896
+ DCL           HD22   H    H         0.000     -4.953   -0.988    3.445
+ DCL           HD21   H    H         0.000     -4.497   -2.002    2.120
+ DCL           CD1    C    CH3       0.000     -6.103   -0.024    1.186
+ DCL           HD13   H    H         0.000     -6.322    0.762    0.510
+ DCL           HD12   H    H         0.000     -6.276   -0.955    0.710
+ DCL           HD11   H    H         0.000     -6.730    0.058    2.036
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DCL      OXT    n/a    C      START
+ DCL      HXT    OXT    .      .
+ DCL      C      OXT    CA     .
+ DCL      HC1    C      .      .
+ DCL      HC2    C      .      .
+ DCL      CA     C      CB     .
+ DCL      HA     CA     .      .
+ DCL      N      CA     HN1    .
+ DCL      HN2    N      .      .
+ DCL      HN1    N      .      .
+ DCL      CB     CA     CG     .
+ DCL      HB1    CB     .      .
+ DCL      HB2    CB     .      .
+ DCL      CG     CB     CD1    .
+ DCL      HG     CG     .      .
+ DCL      CD2    CG     HD21   .
+ DCL      HD23   CD2    .      .
+ DCL      HD22   CD2    .      .
+ DCL      HD21   CD2    .      .
+ DCL      CD1    CG     HD11   .
+ DCL      HD13   CD1    .      .
+ DCL      HD12   CD1    .      .
+ DCL      HD11   CD1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DCL       N         CA        single    1.450     0.020     1.450     0.020     
+DCL       HN1       N         single    1.036     0.016     0.914     0.007     
+DCL       HN2       N         single    1.036     0.016     0.914     0.007     
+DCL       CA        C         single    1.524     0.020     1.524     0.020     
+DCL       CB        CA        single    1.524     0.020     1.524     0.020     
+DCL       HA        CA        single    1.089     0.010     0.989     0.005     
+DCL       C         OXT       single    1.432     0.020     1.432     0.020     
+DCL       HC1       C         single    1.089     0.010     0.989     0.005     
+DCL       HC2       C         single    1.089     0.010     0.989     0.005     
+DCL       CG        CB        single    1.524     0.020     1.524     0.020     
+DCL       HB1       CB        single    1.089     0.010     0.989     0.005     
+DCL       HB2       CB        single    1.089     0.010     0.989     0.005     
+DCL       CD1       CG        single    1.524     0.020     1.524     0.020     
+DCL       CD2       CG        single    1.524     0.020     1.524     0.020     
+DCL       HG        CG        single    1.089     0.010     0.989     0.005     
+DCL       HD11      CD1       single    1.089     0.010     0.989     0.005     
+DCL       HD12      CD1       single    1.089     0.010     0.989     0.005     
+DCL       HD13      CD1       single    1.089     0.010     0.989     0.005     
+DCL       HD21      CD2       single    1.089     0.010     0.989     0.005     
+DCL       HD22      CD2       single    1.089     0.010     0.989     0.005     
+DCL       HD23      CD2       single    1.089     0.010     0.989     0.005     
+DCL       HXT       OXT       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DCL      HXT    OXT    C       109.470    3.000
+ DCL      OXT    C      HC1     109.470    3.000
+ DCL      OXT    C      HC2     109.470    3.000
+ DCL      OXT    C      CA      109.470    3.000
+ DCL      HC1    C      HC2     107.900    3.000
+ DCL      HC1    C      CA      109.470    3.000
+ DCL      HC2    C      CA      109.470    3.000
+ DCL      C      CA     HA      108.340    3.000
+ DCL      C      CA     N       109.470    3.000
+ DCL      C      CA     CB      109.470    3.000
+ DCL      HA     CA     N       109.470    3.000
+ DCL      HA     CA     CB      108.340    3.000
+ DCL      N      CA     CB      109.470    3.000
+ DCL      CA     N      HN2     120.000    3.000
+ DCL      CA     N      HN1     120.000    3.000
+ DCL      HN2    N      HN1     120.000    3.000
+ DCL      CA     CB     HB1     109.470    3.000
+ DCL      CA     CB     HB2     109.470    3.000
+ DCL      CA     CB     CG      111.000    3.000
+ DCL      HB1    CB     HB2     107.900    3.000
+ DCL      HB1    CB     CG      109.470    3.000
+ DCL      HB2    CB     CG      109.470    3.000
+ DCL      CB     CG     HG      108.340    3.000
+ DCL      CB     CG     CD2     111.000    3.000
+ DCL      CB     CG     CD1     111.000    3.000
+ DCL      HG     CG     CD2     108.340    3.000
+ DCL      HG     CG     CD1     108.340    3.000
+ DCL      CD2    CG     CD1     111.000    3.000
+ DCL      CG     CD2    HD23    109.470    3.000
+ DCL      CG     CD2    HD22    109.470    3.000
+ DCL      CG     CD2    HD21    109.470    3.000
+ DCL      HD23   CD2    HD22    109.470    3.000
+ DCL      HD23   CD2    HD21    109.470    3.000
+ DCL      HD22   CD2    HD21    109.470    3.000
+ DCL      CG     CD1    HD13    109.470    3.000
+ DCL      CG     CD1    HD12    109.470    3.000
+ DCL      CG     CD1    HD11    109.470    3.000
+ DCL      HD13   CD1    HD12    109.470    3.000
+ DCL      HD13   CD1    HD11    109.470    3.000
+ DCL      HD12   CD1    HD11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DCL      var_1    HXT    OXT    C      CA       179.995   20.000   1
+ DCL      var_2    OXT    C      CA     CB       179.988   20.000   3
+ DCL      var_3    C      CA     N      HN1      173.854   20.000   1
+ DCL      var_4    C      CA     CB     CG       179.957   20.000   3
+ DCL      var_5    CA     CB     CG     CD1     -179.996   20.000   3
+ DCL      var_6    CB     CG     CD2    HD21     -59.970   20.000   3
+ DCL      var_7    CB     CG     CD1    HD11    -179.993   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DCL      chir_01  CA     N      C      CB        positiv
+ DCL      chir_02  CG     CB     CD1    CD2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DCL      plan-1    N         0.020
+ DCL      plan-1    CA        0.020
+ DCL      plan-1    HN1       0.020
+ DCL      plan-1    HN2       0.020
+# ------------------------------------------------------

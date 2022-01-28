@@ -1,0 +1,139 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1LD     1LD      5-fluorocytosine     NON-POLYMER     13     9     .     
+#
+data_comp_1LD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+1LD     N1      N       NR6     0       43.348      12.541      22.964      
+1LD     C6      C       CR16    0       43.921      12.983      21.803      
+1LD     C2      C       CR6     0       41.983      12.347      23.083      
+1LD     O2      O       O       0       41.506      11.942      24.164      
+1LD     N3      N       NRD6    0       41.185      12.608      22.005      
+1LD     C4      C       CR6     0       41.715      13.044      20.846      
+1LD     N4      N       NH2     0       40.916      13.289      19.813      
+1LD     C5      C       CR6     0       43.132      13.237      20.745      
+1LD     F       F       F       0       43.637      13.678      19.566      
+1LD     H1      H       H       0       43.853      12.368      23.671      
+1LD     H2      H       H       0       44.856      13.100      21.768      
+1LD     H3      H       H       0       40.106      12.947      19.795      
+1LD     H4      H       H       0       41.198      13.793      19.149      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1LD       C5        F         SINGLE    n         1.356     0.010     1.356     0.010     
+1LD       C4        N4        SINGLE    n         1.326     0.010     1.326     0.010     
+1LD       C4        C5        SINGLE    y         1.426     0.010     1.426     0.010     
+1LD       C6        C5        DOUBLE    y         1.338     0.010     1.338     0.010     
+1LD       N3        C4        DOUBLE    y         1.339     0.010     1.339     0.010     
+1LD       N1        C6        SINGLE    y         1.361     0.010     1.361     0.010     
+1LD       C2        N3        SINGLE    y         1.359     0.010     1.359     0.010     
+1LD       N1        C2        SINGLE    y         1.376     0.010     1.376     0.010     
+1LD       C2        O2        DOUBLE    n         1.248     0.013     1.248     0.013     
+1LD       N1        H1        SINGLE    n         1.016     0.010     0.885     0.020     
+1LD       C6        H2        SINGLE    n         1.082     0.013     0.943     0.011     
+1LD       N4        H3        SINGLE    n         1.016     0.010     0.877     0.020     
+1LD       N4        H4        SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+1LD          C6          N1          C2     122.048    1.50
+1LD          C6          N1          H1     120.338    2.23
+1LD          C2          N1          H1     117.614    2.18
+1LD          C5          C6          N1     118.660    1.50
+1LD          C5          C6          H2     122.031    1.90
+1LD          N1          C6          H2     119.309    2.07
+1LD          N3          C2          N1     118.981    1.50
+1LD          N3          C2          O2     121.489    1.50
+1LD          N1          C2          O2     119.531    1.50
+1LD          C4          N3          C2     120.289    1.50
+1LD          N4          C4          C5     120.771    1.50
+1LD          N4          C4          N3     119.475    1.50
+1LD          C5          C4          N3     119.754    1.50
+1LD          C4          N4          H3     119.641    2.31
+1LD          C4          N4          H4     119.641    2.31
+1LD          H3          N4          H4     120.718    1.85
+1LD           F          C5          C4     118.017    1.50
+1LD           F          C5          C6     121.715    1.50
+1LD          C4          C5          C6     120.268    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+1LD       const_sp2_sp2_1          C5          C6          N1          C2       0.000   10.00     2
+1LD              const_19          O2          C2          N1          C6     180.000   10.00     2
+1LD       const_sp2_sp2_7           F          C5          C6          N1     180.000   10.00     2
+1LD              const_16          O2          C2          N3          C4     180.000   10.00     2
+1LD              const_14          N4          C4          N3          C2     180.000   10.00     2
+1LD             sp2_sp2_1          C5          C4          N4          H3     180.000   10.00     2
+1LD              const_12          N4          C4          C5           F       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+1LD    plan-1          C2   0.020
+1LD    plan-1          C4   0.020
+1LD    plan-1          C5   0.020
+1LD    plan-1          C6   0.020
+1LD    plan-1           F   0.020
+1LD    plan-1          H1   0.020
+1LD    plan-1          H2   0.020
+1LD    plan-1          N1   0.020
+1LD    plan-1          N3   0.020
+1LD    plan-1          N4   0.020
+1LD    plan-1          O2   0.020
+1LD    plan-2          C4   0.020
+1LD    plan-2          H3   0.020
+1LD    plan-2          H4   0.020
+1LD    plan-2          N4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+1LD SMILES           ACDLabs              12.01 "FC1=CNC(=O)N=C1N"
+1LD InChI            InChI                1.03  "InChI=1S/C4H4FN3O/c5-2-1-7-4(9)8-3(2)6/h1H,(H3,6,7,8,9)"
+1LD InChIKey         InChI                1.03  XRECTZIEBJDKEO-UHFFFAOYSA-N
+1LD SMILES_CANONICAL CACTVS               3.370 "NC1=NC(=O)NC=C1F"
+1LD SMILES           CACTVS               3.370 "NC1=NC(=O)NC=C1F"
+1LD SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C1=C(C(=NC(=O)N1)N)F"
+1LD SMILES           "OpenEye OEToolkits" 1.7.6 "C1=C(C(=NC(=O)N1)N)F"
+1LD ?                acedrg               202         "dictionary generator"                  
+1LD ?                acedrg_database      11          "data source"                           
+1LD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+1LD ?                refmac5              5.8.0189    "optimization tool"                     

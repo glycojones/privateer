@@ -1,0 +1,259 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DTR     DTR     D-TRYPTOPHAN     peptide    27     15     .
+#
+data_comp_DTR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DTR     N       N       NT3     1       -3.631      2.725       6.781
+DTR     CA      C       CH1     0       -3.493      1.572       5.849
+DTR     CB      C       CH2     0       -4.262      1.839       4.548
+DTR     CG      C       CR5     0       -3.982      0.850       3.457
+DTR     CD1     C       CR15    0       -4.838      -0.090      2.960
+DTR     NE1     N       NR5     0       -4.230      -0.814      1.970
+DTR     CE2     C       CR56    0       -2.950      -0.354      1.801
+DTR     CZ2     C       CR16    0       -1.948      -0.769      0.921
+DTR     CH2     C       CR16    0       -0.738      -0.108      0.979
+DTR     CZ3     C       CR16    0       -0.519      0.937       1.883
+DTR     CE3     C       CR16    0       -1.509      1.347       2.753
+DTR     CD2     C       CR56    0       -2.753      0.700       2.724
+DTR     C       C       C       0       -3.971      0.286       6.537
+DTR     O       O       O       0       -5.141      0.272       6.968
+DTR     OXT     O       OC      -1      -3.155      -0.653      6.616
+DTR     H       H       H       0       -3.277      2.512       7.594
+DTR     H2      H       H       0       -4.512      2.935       6.879
+DTR     H3      H       H       0       -3.186      3.444       6.441
+DTR     HA      H       H       0       -2.538      1.476       5.625
+DTR     HB2     H       H       0       -4.030      2.737       4.233
+DTR     HB3     H       H       0       -5.220      1.831       4.749
+DTR     HD1     H       H       0       -5.725      -0.227      3.254
+DTR     HE1     H       H       0       -4.602      -1.467      1.518
+DTR     HZ2     H       H       0       -2.095      -1.472      0.312
+DTR     HH2     H       H       0       -0.046      -0.367      0.398
+DTR     HZ3     H       H       0       0.321       1.368       1.897
+DTR     HE3     H       H       0       -1.352      2.054       3.360
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DTR      N      n/a    CA     START
+DTR      H      N      .      .
+DTR      H2     N      .      .
+DTR      H3     N      .      .
+DTR      CA     N      C      .
+DTR      HA     CA     .      .
+DTR      CB     CA     CG     .
+DTR      HB2    CB     .      .
+DTR      HB3    CB     .      .
+DTR      CG     CB     CD2    .
+DTR      CD2    CG     CE3    .
+DTR      CE2    CD2    NE1    .
+DTR      NE1    CE2    CD1    .
+DTR      HE1    NE1    .      .
+DTR      CD1    NE1    HD1    .
+DTR      HD1    CD1    .      .
+DTR      CE3    CD2    CZ3    .
+DTR      HE3    CE3    .      .
+DTR      CZ3    CE3    CH2    .
+DTR      HZ3    CZ3    .      .
+DTR      CH2    CZ3    CZ2    .
+DTR      HH2    CH2    .      .
+DTR      CZ2    CH2    HZ2    .
+DTR      HZ2    CZ2    .      .
+DTR      C      CA     .      END
+DTR      O      C      .      .
+DTR      OXT    C      .      .
+DTR      CG     CD1    .    ADD
+DTR      CE2    CZ2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DTR       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+DTR       CA        CB        SINGLE    n         1.534     0.012     1.534     0.012     
+DTR       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DTR       CB        CG        SINGLE    n         1.498     0.010     1.498     0.010     
+DTR       CG        CD1       DOUBLE    y         1.365     0.010     1.365     0.010     
+DTR       CG        CD2       SINGLE    y         1.439     0.010     1.439     0.010     
+DTR       CD1       NE1       SINGLE    y         1.369     0.010     1.369     0.010     
+DTR       NE1       CE2       SINGLE    y         1.370     0.010     1.370     0.010     
+DTR       CE2       CZ2       SINGLE    y         1.394     0.010     1.394     0.010     
+DTR       CE2       CD2       DOUBLE    y         1.411     0.010     1.411     0.010     
+DTR       CZ2       CH2       DOUBLE    y         1.376     0.010     1.376     0.010     
+DTR       CH2       CZ3       SINGLE    y         1.395     0.011     1.395     0.011     
+DTR       CZ3       CE3       DOUBLE    y         1.377     0.010     1.377     0.010     
+DTR       CE3       CD2       SINGLE    y         1.399     0.010     1.399     0.010     
+DTR       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DTR       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DTR       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DTR       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DTR       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DTR       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+DTR       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.020     
+DTR       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.020     
+DTR       CD1       HD1       SINGLE    n         1.082     0.013     0.945     0.020     
+DTR       NE1       HE1       SINGLE    n         1.016     0.010     0.877     0.020     
+DTR       CZ2       HZ2       SINGLE    n         1.082     0.013     0.942     0.019     
+DTR       CH2       HH2       SINGLE    n         1.082     0.013     0.941     0.018     
+DTR       CZ3       HZ3       SINGLE    n         1.082     0.013     0.944     0.018     
+DTR       CE3       HE3       SINGLE    n         1.082     0.013     0.944     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DTR          CA           N           H     109.321    1.91
+DTR          CA           N          H2     109.321    1.91
+DTR          CA           N          H3     109.321    1.91
+DTR           H           N          H2     109.028    2.41
+DTR           H           N          H3     109.028    2.41
+DTR          H2           N          H3     109.028    2.41
+DTR           N          CA          CB     110.562    1.50
+DTR           N          CA           C     109.666    1.50
+DTR           N          CA          HA     108.030    1.50
+DTR          CB          CA           C     111.644    1.50
+DTR          CB          CA          HA     108.128    1.50
+DTR           C          CA          HA     108.922    1.50
+DTR          CA          CB          CG     113.843    1.64
+DTR          CA          CB         HB2     108.266    1.50
+DTR          CA          CB         HB3     108.266    1.50
+DTR          CG          CB         HB2     109.029    1.50
+DTR          CG          CB         HB3     109.029    1.50
+DTR         HB2          CB         HB3     107.759    1.50
+DTR          CB          CG         CD1     127.068    1.62
+DTR          CB          CG         CD2     126.820    1.50
+DTR         CD1          CG         CD2     106.112    1.50
+DTR          CG         CD1         NE1     110.404    1.50
+DTR          CG         CD1         HD1     125.159    1.59
+DTR         NE1         CD1         HD1     124.437    1.50
+DTR         CD1         NE1         CE2     109.042    1.50
+DTR         CD1         NE1         HE1     125.328    1.77
+DTR         CE2         NE1         HE1     125.630    1.60
+DTR         NE1         CE2         CZ2     130.294    1.50
+DTR         NE1         CE2         CD2     107.455    1.50
+DTR         CZ2         CE2         CD2     122.250    1.50
+DTR         CE2         CZ2         CH2     117.385    1.50
+DTR         CE2         CZ2         HZ2     121.137    1.50
+DTR         CH2         CZ2         HZ2     121.477    1.50
+DTR         CZ2         CH2         CZ3     121.628    1.50
+DTR         CZ2         CH2         HH2     119.132    1.50
+DTR         CZ3         CH2         HH2     119.240    1.50
+DTR         CH2         CZ3         CE3     121.212    1.50
+DTR         CH2         CZ3         HZ3     119.316    1.50
+DTR         CE3         CZ3         HZ3     119.471    1.50
+DTR         CZ3         CE3         CD2     118.817    1.50
+DTR         CZ3         CE3         HE3     120.678    1.50
+DTR         CD2         CE3         HE3     120.505    1.50
+DTR          CG         CD2         CE2     106.987    1.50
+DTR          CG         CD2         CE3     134.307    1.50
+DTR         CE2         CD2         CE3     118.706    1.50
+DTR          CA           C           O     117.134    1.50
+DTR          CA           C         OXT     117.134    1.50
+DTR           O           C         OXT     125.731    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DTR             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+DTR              const_35          CG         CD2         CE3         CZ3     180.000   10.00     2
+DTR             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DTR            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+DTR             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+DTR              const_38         CE2         CD2          CG          CB     180.000   10.00     2
+DTR       const_sp2_sp2_2         NE1         CD1          CG          CB     180.000   10.00     2
+DTR       const_sp2_sp2_5          CG         CD1         NE1         CE2       0.000   10.00     2
+DTR              const_11         CZ2         CE2         NE1         CD1     180.000   10.00     2
+DTR              const_13          CG         CD2         CE2         NE1       0.000   10.00     2
+DTR              const_19         NE1         CE2         CZ2         CH2     180.000   10.00     2
+DTR              const_21         CZ3         CH2         CZ2         CE2       0.000   10.00     2
+DTR              const_25         CZ2         CH2         CZ3         CE3       0.000   10.00     2
+DTR              const_29         CD2         CE3         CZ3         CH2       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DTR    chir_1    CA    N    C    CB    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DTR    plan-1         CD2   0.020
+DTR    plan-1         CE2   0.020
+DTR    plan-1         CE3   0.020
+DTR    plan-1          CG   0.020
+DTR    plan-1         CH2   0.020
+DTR    plan-1         CZ2   0.020
+DTR    plan-1         CZ3   0.020
+DTR    plan-1         HE3   0.020
+DTR    plan-1         HH2   0.020
+DTR    plan-1         HZ2   0.020
+DTR    plan-1         HZ3   0.020
+DTR    plan-1         NE1   0.020
+DTR    plan-2          CB   0.020
+DTR    plan-2         CD1   0.020
+DTR    plan-2         CD2   0.020
+DTR    plan-2         CE2   0.020
+DTR    plan-2         CE3   0.020
+DTR    plan-2          CG   0.020
+DTR    plan-2         CZ2   0.020
+DTR    plan-2         HD1   0.020
+DTR    plan-2         HE1   0.020
+DTR    plan-2         NE1   0.020
+DTR    plan-3           C   0.020
+DTR    plan-3          CA   0.020
+DTR    plan-3           O   0.020
+DTR    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DTR SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc2c1ccccc1nc2"
+DTR SMILES_CANONICAL CACTVS               3.341 "N[C@H](Cc1c[nH]c2ccccc12)C(O)=O"
+DTR SMILES           CACTVS               3.341 "N[CH](Cc1c[nH]c2ccccc12)C(O)=O"
+DTR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)c(c[nH]2)C[C@H](C(=O)O)N"
+DTR SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)c(c[nH]2)CC(C(=O)O)N"
+DTR InChI            InChI                1.03  "InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2-1-3-8(7)10/h1-4,6,9,13H,5,12H2,(H,14,15)/t9-/m1/s1"
+DTR InChIKey         InChI                1.03  QIVBCDIJIAJPQS-SECBINFHSA-N
+DTR ?                acedrg               202         "dictionary generator"
+DTR ?                acedrg_database      11          "data source"
+DTR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DTR ?                refmac5              5.8.0222    "optimization tool"

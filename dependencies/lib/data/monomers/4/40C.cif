@@ -1,0 +1,300 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+40C      40C 'N-[(4-amino-2-oxopyrimidin-1(2H)-yl)' non-polymer        36  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_40C
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 40C           OXT    O    OC       -0.500      0.000    0.000    0.000
+ 40C           "C'"   C    C         0.000     -1.145   -0.336   -0.375
+ 40C           "O1'"  O    OC       -0.500     -1.628    0.150   -1.422
+ 40C           "C5'"  C    CH2       0.000     -1.942   -1.329    0.431
+ 40C           "H15'" H    H         0.000     -2.102   -0.936    1.437
+ 40C           "H25'" H    H         0.000     -1.392   -2.271    0.493
+ 40C           "N4'"  N    N         0.000     -3.236   -1.559   -0.217
+ 40C           "C3'"  C    CH2       0.000     -3.378   -2.623   -1.213
+ 40C           "H13'" H    H         0.000     -2.460   -2.697   -1.799
+ 40C           "H23'" H    H         0.000     -4.214   -2.390   -1.876
+ 40C           "C2'"  C    CH1       0.000     -3.643   -3.952   -0.505
+ 40C           "H22'" H    H         0.000     -2.766   -4.226    0.099
+ 40C           C2M    C    CH3       0.000     -3.904   -5.043   -1.546
+ 40C           H2MB   H    H         0.000     -4.749   -4.781   -2.129
+ 40C           H2MA   H    H         0.000     -3.058   -5.141   -2.177
+ 40C           H2M    H    H         0.000     -4.087   -5.964   -1.056
+ 40C           "N1'"  N    NH2       0.000     -4.816   -3.818    0.368
+ 40C           HNXT   H    H         0.000     -4.722   -3.922    1.372
+ 40C           "HN1'" H    H         0.000     -5.728   -3.621   -0.027
+ 40C           "C7'"  C    C         0.000     -4.295   -0.790    0.105
+ 40C           "O7'"  O    O         0.000     -4.201    0.031    0.993
+ 40C           "C8'"  C    CH2       0.000     -5.596   -0.951   -0.638
+ 40C           "H18'" H    H         0.000     -5.982   -1.960   -0.480
+ 40C           "H28'" H    H         0.000     -5.428   -0.790   -1.705
+ 40C           N1     N    NR6       0.000     -6.566    0.028   -0.142
+ 40C           C6     C    CR16      0.000     -7.387   -0.297    0.897
+ 40C           H6     H    H         0.000     -7.328   -1.277    1.355
+ 40C           C5     C    CR16      0.000     -8.276    0.618    1.350
+ 40C           H5     H    H         0.000     -8.932    0.384    2.179
+ 40C           C4     C    CR6       0.000     -8.336    1.880    0.725
+ 40C           N4     N    NH2       0.000     -9.234    2.827    1.161
+ 40C           HN4A   H    H         0.000     -9.858    2.624    1.934
+ 40C           HN4    H    H         0.000     -9.279    3.736    0.713
+ 40C           N3     N    NRD6      0.000     -7.520    2.150   -0.287
+ 40C           C2     C    CR6       0.000     -6.647    1.241   -0.718
+ 40C           O2     O    O         0.000     -5.908    1.514   -1.649
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 40C      OXT    n/a    "C'"   START
+ 40C      "C'"   OXT    "C5'"  .
+ 40C      "O1'"  "C'"   .      .
+ 40C      "C5'"  "C'"   "N4'"  .
+ 40C      "H15'" "C5'"  .      .
+ 40C      "H25'" "C5'"  .      .
+ 40C      "N4'"  "C5'"  "C7'"  .
+ 40C      "C3'"  "N4'"  "C2'"  .
+ 40C      "H13'" "C3'"  .      .
+ 40C      "H23'" "C3'"  .      .
+ 40C      "C2'"  "C3'"  "N1'"  .
+ 40C      "H22'" "C2'"  .      .
+ 40C      C2M    "C2'"  H2M    .
+ 40C      H2MB   C2M    .      .
+ 40C      H2MA   C2M    .      .
+ 40C      H2M    C2M    .      .
+ 40C      "N1'"  "C2'"  "HN1'" .
+ 40C      HNXT   "N1'"  .      .
+ 40C      "HN1'" "N1'"  .      .
+ 40C      "C7'"  "N4'"  "C8'"  .
+ 40C      "O7'"  "C7'"  .      .
+ 40C      "C8'"  "C7'"  N1     .
+ 40C      "H18'" "C8'"  .      .
+ 40C      "H28'" "C8'"  .      .
+ 40C      N1     "C8'"  C6     .
+ 40C      C6     N1     C5     .
+ 40C      H6     C6     .      .
+ 40C      C5     C6     C4     .
+ 40C      H5     C5     .      .
+ 40C      C4     C5     N3     .
+ 40C      N4     C4     HN4    .
+ 40C      HN4A   N4     .      .
+ 40C      HN4    N4     .      .
+ 40C      N3     C4     C2     .
+ 40C      C2     N3     O2     .
+ 40C      O2     C2     .      END
+ 40C      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+40C       "C5'"     "C'"      single    1.510     0.020     1.510     0.020     
+40C       "O1'"     "C'"      deloc     1.250     0.020     1.250     0.020     
+40C       "C'"      OXT       deloc     1.250     0.020     1.250     0.020     
+40C       N1        "C8'"     single    1.465     0.020     1.465     0.020     
+40C       N1        C2        single    1.410     0.020     1.410     0.020     
+40C       O2        C2        double    1.250     0.020     1.250     0.020     
+40C       C2        N3        single    1.350     0.020     1.350     0.020     
+40C       N3        C4        double    1.350     0.020     1.350     0.020     
+40C       C4        C5        single    1.390     0.020     1.390     0.020     
+40C       N4        C4        single    1.355     0.020     1.355     0.020     
+40C       C5        C6        double    1.390     0.020     1.390     0.020     
+40C       C6        N1        single    1.337     0.020     1.337     0.020     
+40C       H6        C6        single    1.082     0.013     0.975     0.010     
+40C       "N1'"     "C2'"     single    1.450     0.020     1.450     0.020     
+40C       HNXT      "N1'"     single    1.036     0.016     0.914     0.007     
+40C       C2M       "C2'"     single    1.524     0.020     1.524     0.020     
+40C       "H22'"    "C2'"     single    1.089     0.010     0.989     0.005     
+40C       H2MA      C2M       single    1.089     0.010     0.989     0.005     
+40C       H2M       C2M       single    1.089     0.010     0.989     0.005     
+40C       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+40C       "H23'"    "C3'"     single    1.089     0.010     0.989     0.005     
+40C       "C3'"     "N4'"     single    1.455     0.020     1.455     0.020     
+40C       "N4'"     "C5'"     single    1.455     0.020     1.455     0.020     
+40C       "H25'"    "C5'"     single    1.089     0.010     0.989     0.005     
+40C       "C7'"     "N4'"     single    1.330     0.020     1.330     0.020     
+40C       "O7'"     "C7'"     double    1.220     0.020     1.220     0.020     
+40C       "C8'"     "C7'"     single    1.510     0.020     1.510     0.020     
+40C       "H18'"    "C8'"     single    1.089     0.010     0.989     0.005     
+40C       H5        C5        single    1.082     0.013     0.975     0.010     
+40C       "HN1'"    "N1'"     single    1.036     0.016     0.914     0.007     
+40C       "H13'"    "C3'"     single    1.089     0.010     0.989     0.005     
+40C       HN4       N4        single    1.016     0.010     0.899     0.007     
+40C       HN4A      N4        single    1.016     0.010     0.899     0.007     
+40C       "H15'"    "C5'"     single    1.089     0.010     0.989     0.005     
+40C       "H28'"    "C8'"     single    1.089     0.010     0.989     0.005     
+40C       H2MB      C2M       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 40C      OXT    "C'"   "O1'"   123.000    3.000
+ 40C      OXT    "C'"   "C5'"   118.500    3.000
+ 40C      "O1'"  "C'"   "C5'"   118.500    3.000
+ 40C      "C'"   "C5'"  "H15'"  109.470    3.000
+ 40C      "C'"   "C5'"  "H25'"  109.470    3.000
+ 40C      "C'"   "C5'"  "N4'"   109.500    3.000
+ 40C      "H15'" "C5'"  "H25'"  107.900    3.000
+ 40C      "H15'" "C5'"  "N4'"   109.470    3.000
+ 40C      "H25'" "C5'"  "N4'"   109.470    3.000
+ 40C      "C5'"  "N4'"  "C3'"   120.000    3.000
+ 40C      "C5'"  "N4'"  "C7'"   127.000    3.000
+ 40C      "C3'"  "N4'"  "C7'"   127.000    3.000
+ 40C      "N4'"  "C3'"  "H13'"  109.470    3.000
+ 40C      "N4'"  "C3'"  "H23'"  109.470    3.000
+ 40C      "N4'"  "C3'"  "C2'"   105.000    3.000
+ 40C      "H13'" "C3'"  "H23'"  107.900    3.000
+ 40C      "H13'" "C3'"  "C2'"   109.470    3.000
+ 40C      "H23'" "C3'"  "C2'"   109.470    3.000
+ 40C      "C3'"  "C2'"  "H22'"  108.340    3.000
+ 40C      "C3'"  "C2'"  C2M     111.000    3.000
+ 40C      "C3'"  "C2'"  "N1'"   109.470    3.000
+ 40C      "H22'" "C2'"  C2M     108.340    3.000
+ 40C      "H22'" "C2'"  "N1'"   109.470    3.000
+ 40C      C2M    "C2'"  "N1'"   109.470    3.000
+ 40C      "C2'"  C2M    H2MB    109.470    3.000
+ 40C      "C2'"  C2M    H2MA    109.470    3.000
+ 40C      "C2'"  C2M    H2M     109.470    3.000
+ 40C      H2MB   C2M    H2MA    109.470    3.000
+ 40C      H2MB   C2M    H2M     109.470    3.000
+ 40C      H2MA   C2M    H2M     109.470    3.000
+ 40C      "C2'"  "N1'"  HNXT    120.000    3.000
+ 40C      "C2'"  "N1'"  "HN1'"  120.000    3.000
+ 40C      HNXT   "N1'"  "HN1'"  120.000    3.000
+ 40C      "N4'"  "C7'"  "O7'"   123.000    3.000
+ 40C      "N4'"  "C7'"  "C8'"   116.500    3.000
+ 40C      "O7'"  "C7'"  "C8'"   120.500    3.000
+ 40C      "C7'"  "C8'"  "H18'"  109.470    3.000
+ 40C      "C7'"  "C8'"  "H28'"  109.470    3.000
+ 40C      "C7'"  "C8'"  N1      109.500    3.000
+ 40C      "H18'" "C8'"  "H28'"  107.900    3.000
+ 40C      "H18'" "C8'"  N1      109.470    3.000
+ 40C      "H28'" "C8'"  N1      109.470    3.000
+ 40C      "C8'"  N1     C6      120.000    3.000
+ 40C      "C8'"  N1     C2      120.000    3.000
+ 40C      C6     N1     C2      120.000    3.000
+ 40C      N1     C6     H6      120.000    3.000
+ 40C      N1     C6     C5      120.000    3.000
+ 40C      H6     C6     C5      120.000    3.000
+ 40C      C6     C5     H5      120.000    3.000
+ 40C      C6     C5     C4      120.000    3.000
+ 40C      H5     C5     C4      120.000    3.000
+ 40C      C5     C4     N4      120.000    3.000
+ 40C      C5     C4     N3      120.000    3.000
+ 40C      N4     C4     N3      120.000    3.000
+ 40C      C4     N4     HN4A    120.000    3.000
+ 40C      C4     N4     HN4     120.000    3.000
+ 40C      HN4A   N4     HN4     120.000    3.000
+ 40C      C4     N3     C2      120.000    3.000
+ 40C      N3     C2     O2      120.000    3.000
+ 40C      N3     C2     N1      120.000    3.000
+ 40C      O2     C2     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 40C      var_1    OXT    "C'"   "C5'"  "N4'"   -179.700   20.000   3
+ 40C      var_2    "C'"   "C5'"  "N4'"  "C7'"    -90.038   20.000   1
+ 40C      var_3    "C5'"  "N4'"  "C3'"  "C2'"     84.171   20.000   1
+ 40C      var_4    "N4'"  "C3'"  "C2'"  "N1'"     55.425   20.000   3
+ 40C      var_5    "C3'"  "C2'"  C2M    H2M      179.963   20.000   3
+ 40C      var_6    "C3'"  "C2'"  "N1'"  "HN1'"    63.511   20.000   1
+ 40C      CONST_1  "C5'"  "N4'"  "C7'"  "C8'"    180.000    0.000   0
+ 40C      var_7    "N4'"  "C7'"  "C8'"  N1      -177.747   20.000   3
+ 40C      var_8    "C7'"  "C8'"  N1     C6       -90.251   20.000   1
+ 40C      CONST_2  "C8'"  N1     C2     N3       180.000    0.000   0
+ 40C      CONST_3  "C8'"  N1     C6     C5       180.000    0.000   0
+ 40C      CONST_4  N1     C6     C5     C4         0.000    0.000   0
+ 40C      CONST_5  C6     C5     C4     N3         0.000    0.000   0
+ 40C      CONST_6  C5     C4     N4     HN4     -179.985    0.000   0
+ 40C      CONST_7  C5     C4     N3     C2         0.000    0.000   0
+ 40C      CONST_8  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 40C      chir_01  "C2'"  "N1'"  C2M    "C3'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 40C      plan-1    "C'"      0.020
+ 40C      plan-1    "O1'"     0.020
+ 40C      plan-1    "C5'"     0.020
+ 40C      plan-1    OXT       0.020
+ 40C      plan-2    N1        0.020
+ 40C      plan-2    C2        0.020
+ 40C      plan-2    C6        0.020
+ 40C      plan-2    "C8'"     0.020
+ 40C      plan-2    N3        0.020
+ 40C      plan-2    C4        0.020
+ 40C      plan-2    C5        0.020
+ 40C      plan-2    O2        0.020
+ 40C      plan-2    N4        0.020
+ 40C      plan-2    H5        0.020
+ 40C      plan-2    H6        0.020
+ 40C      plan-2    HN4A      0.020
+ 40C      plan-2    HN4       0.020
+ 40C      plan-3    N4        0.020
+ 40C      plan-3    C4        0.020
+ 40C      plan-3    HN4       0.020
+ 40C      plan-3    HN4A      0.020
+ 40C      plan-4    "N1'"     0.020
+ 40C      plan-4    "C2'"     0.020
+ 40C      plan-4    "HN1'"    0.020
+ 40C      plan-4    HNXT      0.020
+ 40C      plan-5    "N4'"     0.020
+ 40C      plan-5    "C3'"     0.020
+ 40C      plan-5    "C5'"     0.020
+ 40C      plan-5    "C7'"     0.020
+ 40C      plan-6    "C7'"     0.020
+ 40C      plan-6    "N4'"     0.020
+ 40C      plan-6    "O7'"     0.020
+ 40C      plan-6    "C8'"     0.020
+# ------------------------------------------------------

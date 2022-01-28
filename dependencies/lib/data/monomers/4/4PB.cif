@@ -1,0 +1,153 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4PB     4PB      N-HYDROXY-4-PHOSPHONO-BUTANAMIDE     NON-POLYMER     19     11     .     
+#
+data_comp_4PB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4PB     C1      C       C       0       36.413      30.991      19.444      
+4PB     C2      C       CH2     0       36.159      30.977      20.935      
+4PB     C3      C       CH2     0       35.011      30.057      21.334      
+4PB     C4      C       CH2     0       34.797      29.988      22.846      
+4PB     N       N       NH1     0       35.608      31.762      18.741      
+4PB     O1      O       O       0       37.316      30.311      18.943      
+4PB     ON      O       OH1     0       35.820      31.982      17.384      
+4PB     P       P       P       0       33.450      28.873      23.287      
+4PB     O1P     O       O       0       33.315      28.903      24.773      
+4PB     O2P     O       OP      -1      32.216      29.377      22.617      
+4PB     O3P     O       OP      -1      33.819      27.512      22.800      
+4PB     H21     H       H       0       35.955      31.887      21.238      
+4PB     H22     H       H       0       36.973      30.684      21.397      
+4PB     H31     H       H       0       35.195      29.156      20.994      
+4PB     H32     H       H       0       34.189      30.373      20.906      
+4PB     H41     H       H       0       34.604      30.888      23.182      
+4PB     H42     H       H       0       35.627      29.687      23.272      
+4PB     HN      H       H       0       34.914      32.148      19.114      
+4PB     HON     H       H       0       35.549      31.281      16.952      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4PB       C1        C2        SINGLE    n         1.510     0.010     1.510     0.010     
+4PB       C1        N         SINGLE    n         1.313     0.010     1.313     0.010     
+4PB       C1        O1        DOUBLE    n         1.236     0.010     1.236     0.010     
+4PB       C2        C3        SINGLE    n         1.524     0.014     1.524     0.014     
+4PB       C3        C4        SINGLE    n         1.529     0.010     1.529     0.010     
+4PB       C4        P         SINGLE    n         1.803     0.020     1.803     0.020     
+4PB       N         ON        SINGLE    n         1.389     0.013     1.389     0.013     
+4PB       P         O1P       DOUBLE    n         1.492     0.020     1.492     0.020     
+4PB       P         O2P       SINGLE    n         1.492     0.020     1.492     0.020     
+4PB       P         O3P       SINGLE    n         1.492     0.020     1.492     0.020     
+4PB       C2        H21       SINGLE    n         1.089     0.010     0.981     0.019     
+4PB       C2        H22       SINGLE    n         1.089     0.010     0.981     0.019     
+4PB       C3        H31       SINGLE    n         1.089     0.010     0.980     0.018     
+4PB       C3        H32       SINGLE    n         1.089     0.010     0.980     0.018     
+4PB       C4        H41       SINGLE    n         1.089     0.010     0.980     0.014     
+4PB       C4        H42       SINGLE    n         1.089     0.010     0.980     0.014     
+4PB       N         HN        SINGLE    n         1.016     0.010     0.875     0.020     
+4PB       ON        HON       SINGLE    n         0.970     0.012     0.867     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4PB          C2          C1           N     114.903    1.50
+4PB          C2          C1          O1     121.816    1.50
+4PB           N          C1          O1     123.281    1.50
+4PB          C1          C2          C3     112.984    1.82
+4PB          C1          C2         H21     109.247    1.50
+4PB          C1          C2         H22     109.247    1.50
+4PB          C3          C2         H21     108.844    1.50
+4PB          C3          C2         H22     108.844    1.50
+4PB         H21          C2         H22     107.846    1.50
+4PB          C2          C3          C4     113.326    2.10
+4PB          C2          C3         H31     108.915    1.50
+4PB          C2          C3         H32     108.915    1.50
+4PB          C4          C3         H31     109.282    1.50
+4PB          C4          C3         H32     109.282    1.50
+4PB         H31          C3         H32     107.744    1.50
+4PB          C3          C4           P     111.410    2.87
+4PB          C3          C4         H41     108.817    1.50
+4PB          C3          C4         H42     108.817    1.50
+4PB           P          C4         H41     109.545    1.50
+4PB           P          C4         H42     109.545    1.50
+4PB         H41          C4         H42     107.240    1.91
+4PB          C1           N          ON     120.736    1.50
+4PB          C1           N          HN     120.460    1.50
+4PB          ON           N          HN     118.803    2.59
+4PB           N          ON         HON     108.051    2.18
+4PB          C4           P         O1P     108.625    3.00
+4PB          C4           P         O2P     108.625    3.00
+4PB          C4           P         O3P     108.625    3.00
+4PB         O1P           P         O2P     111.786    1.50
+4PB         O1P           P         O3P     111.786    1.50
+4PB         O2P           P         O3P     111.786    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4PB             sp2_sp3_2           N          C1          C2          C3     120.000   10.00     6
+4PB             sp2_sp2_1          C2          C1           N          ON     180.000   10.00     2
+4PB             sp3_sp3_1          C1          C2          C3          C4     180.000   10.00     3
+4PB            sp3_sp3_10          C2          C3          C4           P     180.000   10.00     3
+4PB            sp3_sp3_19          C3          C4           P         O1P     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4PB    plan-1          C1   0.020
+4PB    plan-1          C2   0.020
+4PB    plan-1           N   0.020
+4PB    plan-1          O1   0.020
+4PB    plan-2          C1   0.020
+4PB    plan-2          HN   0.020
+4PB    plan-2           N   0.020
+4PB    plan-2          ON   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4PB SMILES           ACDLabs              10.04 "[O-]P([O-])(=O)CCCC(=O)NO"
+4PB SMILES_CANONICAL CACTVS               3.341 "ONC(=O)CCC[P]([O-])([O-])=O"
+4PB SMILES           CACTVS               3.341 "ONC(=O)CCC[P]([O-])([O-])=O"
+4PB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CC(=O)NO)CP(=O)([O-])[O-]"
+4PB SMILES           "OpenEye OEToolkits" 1.5.0 "C(CC(=O)NO)CP(=O)([O-])[O-]"
+4PB InChI            InChI                1.03  "InChI=1S/C4H10NO5P/c6-4(5-7)2-1-3-11(8,9)10/h7H,1-3H2,(H,5,6)(H2,8,9,10)/p-2"
+4PB InChIKey         InChI                1.03  AKXSFRVADDCWTF-UHFFFAOYSA-L
+4PB ?                acedrg               202         "dictionary generator"                  
+4PB ?                acedrg_database      11          "data source"                           
+4PB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4PB ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,126 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FEL      FEL 'HYDRATED FE                         ' non-polymer        10   4 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FEL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FEL           O3     O    O         0.000      0.000    0.000    0.000
+ FEL           HO31   H    H         0.000      0.000    0.000    0.000
+ FEL           HO32   H    H         0.000      0.000    0.000    0.000
+ FEL           FE     FE   FE        3.000      0.000    0.000    0.000
+ FEL           O2     O    O         0.000      0.000    0.000    0.000
+ FEL           HO22   H    H         0.000      0.000    0.000    0.000
+ FEL           HO21   H    H         0.000      0.000    0.000    0.000
+ FEL           O1     O    O         0.000      0.000    0.000    0.000
+ FEL           HO12   H    H         0.000      0.000    0.000    0.000
+ FEL           HO11   H    H         0.000      0.000    0.000    0.000
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FEL      O3     n/a    FE     START
+ FEL      HO31   O3     .      .
+ FEL      HO32   O3     .      .
+ FEL      FE     O3     O1     .
+ FEL      O2     FE     HO21   .
+ FEL      HO22   O2     .      .
+ FEL      HO21   O2     .      .
+ FEL      O1     FE     HO11   .
+ FEL      HO12   O1     .      .
+ FEL      HO11   O1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FEL       O1        FE        single    2.040     0.020     2.040     0.020     
+FEL       O2        FE        single    2.040     0.020     2.040     0.020     
+FEL       FE        O3        single    2.040     0.020     2.040     0.020     
+FEL       HO11      O1        single    0.970     0.012     0.839     0.014     
+FEL       HO12      O1        single    0.970     0.012     0.839     0.014     
+FEL       HO21      O2        single    0.970     0.012     0.839     0.014     
+FEL       HO22      O2        single    0.970     0.012     0.839     0.014     
+FEL       HO31      O3        single    0.970     0.012     0.839     0.014     
+FEL       HO32      O3        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FEL      HO31   O3     HO32    120.000    3.000
+ FEL      HO31   O3     FE      120.000    3.000
+ FEL      HO32   O3     FE      120.000    3.000
+ FEL      O3     FE     O2       90.000    3.000
+ FEL      O3     FE     O1       90.000    3.000
+ FEL      O2     FE     O1       90.000    3.000
+ FEL      FE     O2     HO22    120.000    3.000
+ FEL      FE     O2     HO21    120.000    3.000
+ FEL      HO22   O2     HO21    120.000    3.000
+ FEL      FE     O1     HO12    120.000    3.000
+ FEL      FE     O1     HO11    120.000    3.000
+ FEL      HO12   O1     HO11    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FEL      var_1    HO31   O3     FE     O2         0.000   20.000   1
+ FEL      var_2    HO22   O2     FE     O3         0.000   20.000   1
+ FEL      var_3    HO12   O1     FE     O3         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ FEL      chir_01  FE     O3     .      O2        cross4
+                   O1     .      .      .      .
+# ------------------------------------------------------

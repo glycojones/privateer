@@ -1,0 +1,255 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CSJ     CSJ      "S-[(2-aminophenyl)carbonyl]-L-cysteine"   peptide    28     16     .     
+#
+data_comp_CSJ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CSJ     N       N       NT3     1       -11.701     -5.310      23.643      
+CSJ     CA      C       CH1     0       -12.469     -4.209      24.286      
+CSJ     C       C       C       0       -11.683     -2.896      24.184      
+CSJ     O       O       O       0       -12.243     -1.938      23.613      
+CSJ     OXT     O       OC      -1      -10.539     -2.880      24.679      
+CSJ     CB      C       CH2     0       -12.743     -4.563      25.739      
+CSJ     SG      S       S2      0       -13.751     -6.056      25.919      
+CSJ     CO      C       C       0       -12.762     -7.115      26.912      
+CSJ     O2      O       O       0       -12.803     -7.110      28.124      
+CSJ     C1      C       CR6     0       -11.873     -8.013      26.137      
+CSJ     C2      C       CR6     0       -10.467     -8.021      26.313      
+CSJ     C3      C       CR16    0       -9.678      -8.901      25.550      
+CSJ     N2      N       NH2     0       -9.841      -7.196      27.202      
+CSJ     C4      C       CR16    0       -10.261     -9.757      24.637      
+CSJ     C5      C       CR16    0       -11.631     -9.758      24.462      
+CSJ     C6      C       CR16    0       -12.432     -8.904      25.198      
+CSJ     H       H       H       0       -10.921     -5.445      24.094      
+CSJ     H2      H       H       0       -11.514     -5.092      22.778      
+CSJ     H3      H       H       0       -12.192     -6.077      23.658      
+CSJ     HA      H       H       0       -13.324     -4.109      23.806      
+CSJ     HB      H       H       0       -13.204     -3.810      26.166      
+CSJ     HBA     H       H       0       -11.886     -4.695      26.198      
+CSJ     HC3     H       H       0       -8.744      -8.902      25.667      
+CSJ     HN2     H       H       0       -9.357      -7.540      27.848      
+CSJ     HN2A    H       H       0       -9.927      -6.327      27.124      
+CSJ     H4      H       H       0       -9.721      -10.341     24.132      
+CSJ     H5      H       H       0       -12.024     -10.345     23.837      
+CSJ     H6      H       H       0       -13.364     -8.918      25.067      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CSJ      N      n/a    CA     START
+ CSJ      H      N      .      .
+ CSJ      H2     N      .      .
+ CSJ      H3     N      .      .
+ CSJ      CA     N      C      .
+ CSJ      HA     CA     .      .
+ CSJ      CB     CA     SG     .
+ CSJ      HB     CB     .      .
+ CSJ      HBA    CB     .      .
+ CSJ      SG     CB     CO     .
+ CSJ      CO     SG     C1     .
+ CSJ      O2     CO     .      .
+ CSJ      C1     CO     C6     .
+ CSJ      C6     C1     C5     .
+ CSJ      H6     C6     .      .
+ CSJ      C5     C6     C4     .
+ CSJ      H5     C5     .      .
+ CSJ      C4     C5     C3     .
+ CSJ      H4     C4     .      .
+ CSJ      C3     C4     C2     .
+ CSJ      HC3    C3     .      .
+ CSJ      C2     C3     N2     .
+ CSJ      N2     C2     HN2    .
+ CSJ      HN2A   N2     .      .
+ CSJ      HN2    N2     .      .
+ CSJ      C      CA     .      END
+ CSJ      O      C      .      .
+ CSJ      OXT    C      .      .
+ CSJ      C1     C2     .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CSJ       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+CSJ       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+CSJ       CA        CB        SINGLE    n         1.520     0.015     1.520     0.015     
+CSJ       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+CSJ       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+CSJ       CB        SG        SINGLE    n         1.810     0.010     1.810     0.010     
+CSJ       SG        CO        SINGLE    n         1.754     0.017     1.754     0.017     
+CSJ       CO        C1        SINGLE    n         1.475     0.019     1.475     0.019     
+CSJ       CO        O2        DOUBLE    n         1.213     0.010     1.213     0.010     
+CSJ       C1        C6        DOUBLE    y         1.400     0.014     1.400     0.014     
+CSJ       C1        C2        SINGLE    y         1.413     0.010     1.413     0.010     
+CSJ       C2        C3        DOUBLE    y         1.405     0.010     1.405     0.010     
+CSJ       C2        N2        SINGLE    n         1.363     0.015     1.363     0.015     
+CSJ       C3        C4        SINGLE    y         1.378     0.010     1.378     0.010     
+CSJ       C4        C5        DOUBLE    y         1.376     0.012     1.376     0.012     
+CSJ       C5        C6        SINGLE    y         1.378     0.010     1.378     0.010     
+CSJ       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+CSJ       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+CSJ       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+CSJ       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+CSJ       CB        HB        SINGLE    n         1.089     0.010     0.981     0.017     
+CSJ       CB        HBA       SINGLE    n         1.089     0.010     0.981     0.017     
+CSJ       C3        HC3       SINGLE    n         1.082     0.013     0.942     0.020     
+CSJ       N2        HN2       SINGLE    n         1.016     0.010     0.877     0.020     
+CSJ       N2        HN2A      SINGLE    n         1.016     0.010     0.877     0.020     
+CSJ       C4        H4        SINGLE    n         1.082     0.013     0.943     0.017     
+CSJ       C5        H5        SINGLE    n         1.082     0.013     0.943     0.018     
+CSJ       C6        H6        SINGLE    n         1.082     0.013     0.941     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CSJ          CA           N           H     109.671    1.50
+CSJ          CA           N          H2     109.671    1.50
+CSJ          CA           N          H3     109.671    1.50
+CSJ           H           N          H2     109.028    2.41
+CSJ           H           N          H3     109.028    2.41
+CSJ          H2           N          H3     109.028    2.41
+CSJ           N          CA           C     109.494    1.50
+CSJ           N          CA          CB     109.354    1.50
+CSJ           N          CA          HA     107.983    1.50
+CSJ           C          CA          CB     110.419    2.31
+CSJ           C          CA          HA     108.606    1.50
+CSJ          CB          CA          HA     109.209    1.50
+CSJ          CA           C           O     117.134    1.50
+CSJ          CA           C         OXT     117.134    1.50
+CSJ           O           C         OXT     125.732    1.50
+CSJ          CA          CB          SG     112.239    3.00
+CSJ          CA          CB          HB     108.537    1.50
+CSJ          CA          CB         HBA     108.537    1.50
+CSJ          SG          CB          HB     108.970    1.50
+CSJ          SG          CB         HBA     108.970    1.50
+CSJ          HB          CB         HBA     107.812    1.50
+CSJ          CB          SG          CO     103.568    1.50
+CSJ          SG          CO          C1     113.491    1.50
+CSJ          SG          CO          O2     123.319    2.65
+CSJ          C1          CO          O2     123.190    1.50
+CSJ          CO          C1          C6     119.682    2.71
+CSJ          CO          C1          C2     122.059    2.62
+CSJ          C6          C1          C2     118.259    1.50
+CSJ          C1          C2          C3     120.075    2.02
+CSJ          C1          C2          N2     121.575    1.50
+CSJ          C3          C2          N2     118.350    1.50
+CSJ          C2          C3          C4     121.022    1.50
+CSJ          C2          C3         HC3     119.074    1.50
+CSJ          C4          C3         HC3     119.904    1.50
+CSJ          C2          N2         HN2     119.767    1.50
+CSJ          C2          N2        HN2A     119.767    1.50
+CSJ         HN2          N2        HN2A     120.467    3.00
+CSJ          C3          C4          C5     120.292    1.50
+CSJ          C3          C4          H4     119.716    1.50
+CSJ          C5          C4          H4     119.998    1.50
+CSJ          C4          C5          C6     119.971    1.50
+CSJ          C4          C5          H5     120.060    1.50
+CSJ          C6          C5          H5     119.969    1.50
+CSJ          C1          C6          C5     120.377    1.50
+CSJ          C1          C6          H6     119.812    1.50
+CSJ          C5          C6          H6     119.811    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CSJ             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+CSJ              const_19          N2          C2          C3          C4     180.000   10.00     2
+CSJ             sp2_sp2_5          C1          C2          N2         HN2     180.000   10.00     2
+CSJ              const_13          C2          C3          C4          C5       0.000   10.00     2
+CSJ       const_sp2_sp2_9          C3          C4          C5          C6       0.000   10.00     2
+CSJ       const_sp2_sp2_5          C4          C5          C6          C1       0.000   10.00     2
+CSJ             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+CSJ            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+CSJ            sp3_sp3_19          CA          CB          SG          CO     180.000   10.00     3
+CSJ             sp2_sp2_1          C6          C1          CO          SG     180.000   10.00     2
+CSJ              const_24          CO          C1          C2          N2       0.000   10.00     2
+CSJ       const_sp2_sp2_3          CO          C1          C6          C5     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+CSJ    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CSJ    plan-1          C1   0.020
+CSJ    plan-1          C2   0.020
+CSJ    plan-1          C3   0.020
+CSJ    plan-1          C4   0.020
+CSJ    plan-1          C5   0.020
+CSJ    plan-1          C6   0.020
+CSJ    plan-1          CO   0.020
+CSJ    plan-1          H4   0.020
+CSJ    plan-1          H5   0.020
+CSJ    plan-1          H6   0.020
+CSJ    plan-1         HC3   0.020
+CSJ    plan-1          N2   0.020
+CSJ    plan-2           C   0.020
+CSJ    plan-2          CA   0.020
+CSJ    plan-2           O   0.020
+CSJ    plan-2         OXT   0.020
+CSJ    plan-3          C1   0.020
+CSJ    plan-3          CO   0.020
+CSJ    plan-3          O2   0.020
+CSJ    plan-3          SG   0.020
+CSJ    plan-4          C2   0.020
+CSJ    plan-4         HN2   0.020
+CSJ    plan-4        HN2A   0.020
+CSJ    plan-4          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CSJ SMILES           ACDLabs              10.04 "O=C(O)C(N)CSC(=O)c1ccccc1N"
+CSJ SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CSC(=O)c1ccccc1N)C(O)=O"
+CSJ SMILES           CACTVS               3.341 "N[CH](CSC(=O)c1ccccc1N)C(O)=O"
+CSJ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(c(c1)C(=O)SC[C@@H](C(=O)O)N)N"
+CSJ SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(c(c1)C(=O)SCC(C(=O)O)N)N"
+CSJ InChI            InChI                1.03  "InChI=1S/C10H12N2O3S/c11-7-4-2-1-3-6(7)10(15)16-5-8(12)9(13)14/h1-4,8H,5,11-12H2,(H,13,14)/t8-/m0/s1"
+CSJ InChIKey         InChI                1.03  BYVARANRNFXKPH-QMMMGPOBSA-N
+CSJ ?                acedrg               202         "dictionary generator"                  
+CSJ ?                acedrg_database      11          "data source"                           
+CSJ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CSJ ?                refmac5              5.8.0222    "optimization tool"                     

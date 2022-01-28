@@ -1,0 +1,309 @@
+global_
+_lib_name         mon_lib
+_lib_version      5.41
+_lib_update       11/02/13
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XCR      XCR '[(1R,4S,6S)-4-(4-amino-2-oxopyrimidi' DNA                37  21 .
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_XCR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ XCR           OP2    O    O         0.000     -4.868   -0.577   -1.264
+ XCR           P      P    P         0.000     -4.370   -0.625    0.128
+ XCR           OP1    O    OH1       0.000     -5.535   -0.147    1.132
+ XCR           HOP1   H    H         0.000     -6.333   -0.692    1.095
+ XCR           OP3    O    OH1       0.000     -3.934   -2.132    0.491
+ XCR           HOP3   H    H         0.000     -3.597   -2.238    1.391
+ XCR           "O5'"  O    O2        0.000     -3.099    0.352    0.278
+ XCR           "C5'"  C    CH2       0.000     -1.941    0.255   -0.553
+ XCR           "H5'"  H    H         0.000     -2.227    0.402   -1.594
+ XCR           "H5'A" H    H         0.000     -1.492   -0.732   -0.436
+ XCR           "C4'"  C    CH1       0.000     -0.929    1.327   -0.145
+ XCR           "H4'"  H    H         0.000     -1.406    2.307   -0.183
+ XCR           "C3'"  C    CH1       0.000      0.255    1.303   -1.115
+ XCR           "H3'"  H    H         0.000      0.622    0.281   -1.219
+ XCR           "O3'"  O    OH1       0.000     -0.157    1.803   -2.388
+ XCR           "HO3'" H    H         0.000      0.550    1.830   -3.047
+ XCR           "C2'"  C    CH2       0.000      1.367    2.194   -0.545
+ XCR           "H2'A" H    H         0.000      2.168    2.292   -1.278
+ XCR           "H2'"  H    H         0.000      0.962    3.177   -0.307
+ XCR           "C6'"  C    C1        0.000     -0.457    1.060    1.254
+ XCR           "H6'"  H    H         0.000     -1.193    0.770    1.990
+ XCR           "C7'"  C    C1        0.000      0.776    1.156    1.634
+ XCR           "H7'"  H    H         0.000      1.005    0.947    2.669
+ XCR           "C1'"  C    CH1       0.000      1.909    1.538    0.726
+ XCR           "H1'"  H    H         0.000      2.564    2.240    1.242
+ XCR           N1     N    NR6       0.000      2.669    0.338    0.368
+ XCR           C6     C    CR16      0.000      2.017   -0.764   -0.098
+ XCR           H6     H    H         0.000      0.942   -0.758   -0.204
+ XCR           C5     C    CR16      0.000      2.731   -1.869   -0.421
+ XCR           H5     H    H         0.000      2.234   -2.753   -0.792
+ XCR           C4     C    CR6       0.000      4.132   -1.847   -0.265
+ XCR           N4     N    NH2       0.000      4.881   -2.955   -0.585
+ XCR           HN4A   H    H         0.000      4.446   -3.755   -0.919
+ XCR           HN4    H    H         0.000      5.845   -2.937   -0.476
+ XCR           N3     N    NRD6      0.000      4.723   -0.751    0.192
+ XCR           C2     C    CR6       0.000      4.008    0.328    0.505
+ XCR           O2     O    O         0.000      4.575    1.324    0.924
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ XCR      OP2    n/a    P      START
+ XCR      P      OP2    "O5'"  .
+ XCR      OP1    P      HOP1   .
+ XCR      HOP1   OP1    .      .
+ XCR      OP3    P      HOP3   .
+ XCR      HOP3   OP3    .      .
+ XCR      "O5'"  P      "C5'"  .
+ XCR      "C5'"  "O5'"  "C4'"  .
+ XCR      "H5'"  "C5'"  .      .
+ XCR      "H5'A" "C5'"  .      .
+ XCR      "C4'"  "C5'"  "C6'"  .
+ XCR      "H4'"  "C4'"  .      .
+ XCR      "C3'"  "C4'"  "C2'"  .
+ XCR      "H3'"  "C3'"  .      .
+ XCR      "O3'"  "C3'"  "HO3'" .
+ XCR      "HO3'" "O3'"  .      .
+ XCR      "C2'"  "C3'"  "H2'"  .
+ XCR      "H2'A" "C2'"  .      .
+ XCR      "H2'"  "C2'"  .      .
+ XCR      "C6'"  "C4'"  "C7'"  .
+ XCR      "H6'"  "C6'"  .      .
+ XCR      "C7'"  "C6'"  "C1'"  .
+ XCR      "H7'"  "C7'"  .      .
+ XCR      "C1'"  "C7'"  N1     .
+ XCR      "H1'"  "C1'"  .      .
+ XCR      N1     "C1'"  C6     .
+ XCR      C6     N1     C5     .
+ XCR      H6     C6     .      .
+ XCR      C5     C6     C4     .
+ XCR      H5     C5     .      .
+ XCR      C4     C5     N3     .
+ XCR      N4     C4     HN4    .
+ XCR      HN4A   N4     .      .
+ XCR      HN4    N4     .      .
+ XCR      N3     C4     C2     .
+ XCR      C2     N3     O2     .
+ XCR      O2     C2     .      END
+ XCR      N1     C2     .    ADD
+ XCR      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XCR       "O5'"     P         single    1.610     0.020     1.610     0.020     
+XCR       OP1       P         single    1.610     0.020     1.610     0.020     
+XCR       P         OP2       double    1.480     0.020     1.480     0.020     
+XCR       OP3       P         single    1.610     0.020     1.610     0.020     
+XCR       N1        C2        single    1.410     0.020     1.410     0.020     
+XCR       C6        N1        single    1.337     0.020     1.337     0.020     
+XCR       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+XCR       O2        C2        double    1.250     0.020     1.250     0.020     
+XCR       C2        N3        aromatic  1.350     0.020     1.350     0.020     
+XCR       N3        C4        aromatic  1.350     0.020     1.350     0.020     
+XCR       N4        C4        single    1.355     0.020     1.355     0.020     
+XCR       C4        C5        aromatic  1.390     0.020     1.390     0.020     
+XCR       HN4       N4        single    1.016     0.010     0.899     0.007     
+XCR       HN4A      N4        single    1.016     0.010     0.899     0.007     
+XCR       C5        C6        double    1.390     0.020     1.390     0.020     
+XCR       H5        C5        single    1.082     0.013     0.975     0.010     
+XCR       H6        C6        single    1.082     0.013     0.975     0.010     
+XCR       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+XCR       "C1'"     "C7'"     single    1.510     0.020     1.510     0.020     
+XCR       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+XCR       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+XCR       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+XCR       "H2'A"    "C2'"     single    1.089     0.010     0.989     0.005     
+XCR       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+XCR       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+XCR       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+XCR       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+XCR       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+XCR       "C6'"     "C4'"     single    1.510     0.020     1.510     0.020     
+XCR       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+XCR       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+XCR       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+XCR       "H5'A"    "C5'"     single    1.089     0.010     0.989     0.005     
+XCR       "C7'"     "C6'"     double    1.330     0.020     1.330     0.020     
+XCR       "H6'"     "C6'"     single    1.082     0.013     0.975     0.010     
+XCR       "H7'"     "C7'"     single    1.082     0.013     0.975     0.010     
+XCR       HOP1      OP1       single    0.970     0.012     0.839     0.014     
+XCR       HOP3      OP3       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ XCR      OP2    P      OP1     109.500    3.000
+ XCR      OP2    P      OP3     109.500    3.000
+ XCR      OP2    P      "O5'"   109.500    3.000
+ XCR      OP1    P      OP3     109.500    3.000
+ XCR      OP1    P      "O5'"   109.500    3.000
+ XCR      OP3    P      "O5'"   109.500    3.000
+ XCR      P      OP1    HOP1    120.000    3.000
+ XCR      P      OP3    HOP3    120.000    3.000
+ XCR      P      "O5'"  "C5'"   120.500    3.000
+ XCR      "O5'"  "C5'"  "H5'"   109.470    3.000
+ XCR      "O5'"  "C5'"  "H5'A"  109.470    3.000
+ XCR      "O5'"  "C5'"  "C4'"   109.470    3.000
+ XCR      "H5'"  "C5'"  "H5'A"  107.900    3.000
+ XCR      "H5'"  "C5'"  "C4'"   109.470    3.000
+ XCR      "H5'A" "C5'"  "C4'"   109.470    3.000
+ XCR      "C5'"  "C4'"  "H4'"   108.340    3.000
+ XCR      "C5'"  "C4'"  "C3'"   111.000    3.000
+ XCR      "C5'"  "C4'"  "C6'"   109.470    3.000
+ XCR      "H4'"  "C4'"  "C3'"   108.340    3.000
+ XCR      "H4'"  "C4'"  "C6'"   108.810    3.000
+ XCR      "C3'"  "C4'"  "C6'"   109.470    3.000
+ XCR      "C4'"  "C3'"  "H3'"   108.340    3.000
+ XCR      "C4'"  "C3'"  "O3'"   109.470    3.000
+ XCR      "C4'"  "C3'"  "C2'"   111.000    3.000
+ XCR      "H3'"  "C3'"  "O3'"   109.470    3.000
+ XCR      "H3'"  "C3'"  "C2'"   108.340    3.000
+ XCR      "O3'"  "C3'"  "C2'"   109.470    3.000
+ XCR      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ XCR      "C3'"  "C2'"  "H2'A"  109.470    3.000
+ XCR      "C3'"  "C2'"  "H2'"   109.470    3.000
+ XCR      "C3'"  "C2'"  "C1'"   111.000    3.000
+ XCR      "H2'A" "C2'"  "H2'"   107.900    3.000
+ XCR      "H2'A" "C2'"  "C1'"   109.470    3.000
+ XCR      "H2'"  "C2'"  "C1'"   109.470    3.000
+ XCR      "C4'"  "C6'"  "H6'"   120.000    3.000
+ XCR      "C4'"  "C6'"  "C7'"   120.000    3.000
+ XCR      "H6'"  "C6'"  "C7'"   120.000    3.000
+ XCR      "C6'"  "C7'"  "H7'"   120.000    3.000
+ XCR      "C6'"  "C7'"  "C1'"   120.000    3.000
+ XCR      "H7'"  "C7'"  "C1'"   120.000    3.000
+ XCR      "C7'"  "C1'"  "H1'"   108.810    3.000
+ XCR      "C7'"  "C1'"  N1      109.500    3.000
+ XCR      "C7'"  "C1'"  "C2'"   109.470    3.000
+ XCR      "H1'"  "C1'"  N1      109.470    3.000
+ XCR      "H1'"  "C1'"  "C2'"   108.340    3.000
+ XCR      N1     "C1'"  "C2'"   109.470    3.000
+ XCR      "C1'"  N1     C6      120.000    3.000
+ XCR      "C1'"  N1     C2      120.000    3.000
+ XCR      C6     N1     C2      120.000    3.000
+ XCR      N1     C6     H6      120.000    3.000
+ XCR      N1     C6     C5      120.000    3.000
+ XCR      H6     C6     C5      120.000    3.000
+ XCR      C6     C5     H5      120.000    3.000
+ XCR      C6     C5     C4      120.000    3.000
+ XCR      H5     C5     C4      120.000    3.000
+ XCR      C5     C4     N4      120.000    3.000
+ XCR      C5     C4     N3      120.000    3.000
+ XCR      N4     C4     N3      120.000    3.000
+ XCR      C4     N4     HN4A    120.000    3.000
+ XCR      C4     N4     HN4     120.000    3.000
+ XCR      HN4A   N4     HN4     120.000    3.000
+ XCR      C4     N3     C2      120.000    3.000
+ XCR      N3     C2     O2      120.000    3.000
+ XCR      N3     C2     N1      120.000    3.000
+ XCR      O2     C2     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ XCR      var_1            OP2    P      OP1    HOP1              59.996           20.000   3
+ XCR      var_2            OP2    P      OP3    HOP3            -179.980           20.000   3
+ XCR      var_3            OP2    P      "O5'"  "C5'"            -54.957           20.000   3
+ XCR      var_4            P      "O5'"  "C5'"  "C4'"           -179.980           20.000   3
+ XCR      var_5            "O5'"  "C5'"  "C4'"  "C6'"            180.000           20.000   3
+ XCR      var_6            "C5'"  "C4'"  "C3'"  "C2'"            180.000           20.000   3
+ XCR      var_7            "C4'"  "C3'"  "O3'"  "HO3'"           178.980           20.000   3
+ XCR      var_8            "C4'"  "C3'"  "C2'"  "C1'"            180.000           20.000   3
+ XCR      var_9            "C5'"  "C4'"  "C6'"  "C7'"            137.367           20.000   3
+ XCR      var_10           "C4'"  "C6'"  "C7'"  "C1'"             -0.481           20.000   3
+ XCR      var_11           "C6'"  "C7'"  "C1'"  N1              -103.047           20.000   3
+ XCR      var_12           "C7'"  "C1'"  "C2'"  "C3'"            180.000           20.000   3
+ XCR      var_13           "C7'"  "C1'"  N1     C6                50.117           20.000   3
+ XCR      CONST_1          "C1'"  N1     C2     N3                 0.000            0.000   0
+ XCR      CONST_2          "C1'"  N1     C6     C5                 0.000            0.000   0
+ XCR      CONST_3          N1     C6     C5     C4                 0.000            0.000   0
+ XCR      CONST_4          C6     C5     C4     N3                 0.000            0.000   0
+ XCR      CONST_5          C5     C4     N4     HN4             -179.960            0.000   0
+ XCR      CONST_6          C5     C4     N3     C2                 0.000            0.000   0
+ XCR      CONST_7          C4     N3     C2     O2                 0.000            0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ XCR      chir_01          "C1'"  N1     "C2'"  "C7'"     negativ
+ XCR      chir_02          "C3'"  "C2'"  "O3'"  "C4'"     positiv
+ XCR      chir_03          "C4'"  "C3'"  "C5'"  "C6'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ XCR      plan-1            N1        0.020
+ XCR      plan-1            C2        0.020
+ XCR      plan-1            C6        0.020
+ XCR      plan-1            "C1'"     0.020
+ XCR      plan-1            N3        0.020
+ XCR      plan-1            C4        0.020
+ XCR      plan-1            C5        0.020
+ XCR      plan-1            O2        0.020
+ XCR      plan-1            N4        0.020
+ XCR      plan-1            H5        0.020
+ XCR      plan-1            H6        0.020
+ XCR      plan-1            HN4A      0.020
+ XCR      plan-1            HN4       0.020
+ XCR      plan-2            N4        0.020
+ XCR      plan-2            C4        0.020
+ XCR      plan-2            HN4       0.020
+ XCR      plan-2            HN4A      0.020
+ XCR      plan-3            "C6'"     0.020
+ XCR      plan-3            "C4'"     0.020
+ XCR      plan-3            "C7'"     0.020
+ XCR      plan-3            "H6'"     0.020
+ XCR      plan-3            "H7'"     0.020
+ XCR      plan-4            "C7'"     0.020
+ XCR      plan-4            "C1'"     0.020
+ XCR      plan-4            "C6'"     0.020
+ XCR      plan-4            "H7'"     0.020
+ XCR      plan-4            "H6'"     0.020
+# ------------------------------------------------------
+# ------------------------------------------------------
+# ------------------------------------------------------

@@ -1,0 +1,315 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BAP     BAP      "1,2,3-TRIHYDROXY-1,2,3,4-TETRAHYDROBENZO[A]PYRENE"     NON-POLYMER     39     23     .     
+#
+data_comp_BAP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BAP     C1      C       CR16    0       -4.605      -2.384      15.705      
+BAP     C2      C       CR16    0       -5.081      -1.102      15.940      
+BAP     C3      C       CR16    0       -4.243      -0.003      15.825      
+BAP     C3A     C       CR66    0       -2.893      -0.158      15.470      
+BAP     C4      C       CR16    0       -1.991      0.955       15.341      
+BAP     C5      C       CR16    0       -0.664      0.780       14.990      
+BAP     C5A     C       CR66    0       -0.124      -0.538      14.736      
+BAP     C6      C       CR66    0       1.282       -0.772      14.362      
+BAP     C7      C       CR66    0       1.727       -2.104      14.112      
+BAP     C8      C       CR16    0       0.852       -3.175      14.252      
+BAP     C8A     C       CR66    0       -0.521      -2.988      14.617      
+BAP     C9      C       CR16    0       -1.431      -4.106      14.747      
+BAP     C10     C       CR16    0       -2.731      -3.916      15.094      
+BAP     C1A     C       CR66    0       -3.264      -2.602      15.346      
+BAP     C3B     C       C       0       -2.390      -1.474      15.226      
+BAP     C5B     C       C       0       -1.009      -1.664      14.859      
+BAP     "C1'"   C       CH1     0       3.172       -2.404      13.727      
+BAP     "O1'"   O       OH1     0       3.234       -3.356      12.659      
+BAP     "C2'"   C       CH1     0       3.960       -1.163      13.300      
+BAP     "O2'"   O       OH1     0       5.355       -1.485      13.281      
+BAP     "C3'"   C       CH1     0       3.722       0.004       14.235      
+BAP     "O3'"   O       OH1     0       4.113       -0.331      15.573      
+BAP     "C4'"   C       CH2     0       2.252       0.391       14.221      
+BAP     H1      H       H       0       -5.189      -3.122      15.787      
+BAP     H2      H       H       0       -5.988      -0.977      16.180      
+BAP     H3      H       H       0       -4.584      0.863       15.989      
+BAP     H4      H       H       0       -2.316      1.827       15.500      
+BAP     H5      H       H       0       -0.117      1.540       14.916      
+BAP     H8      H       H       0       1.165       -4.060      14.093      
+BAP     H9      H       H       0       -1.116      -4.982      14.589      
+BAP     H10     H       H       0       -3.301      -4.664      15.171      
+BAP     "H1'"   H       H       0       3.622       -2.801      14.512      
+BAP     HO1     H       H       0       4.020       -3.669      12.608      
+BAP     "H2'"   H       H       0       3.685       -0.904      12.387      
+BAP     HO2     H       H       0       5.775       -0.865      12.898      
+BAP     "H3'"   H       H       0       4.264       0.780       13.931      
+BAP     HO3     H       H       0       4.946       -0.443      15.597      
+BAP     "H4'1"  H       H       0       2.115       1.014       14.956      
+BAP     "H4'2"  H       H       0       2.065       0.861       13.386      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BAP       C1        C2        DOUBLE    y         1.377     0.012     1.377     0.012     
+BAP       C1        C1A       SINGLE    y         1.398     0.010     1.398     0.010     
+BAP       C2        C3        SINGLE    y         1.377     0.012     1.377     0.012     
+BAP       C3        C3A       DOUBLE    y         1.398     0.010     1.398     0.010     
+BAP       C3A       C4        SINGLE    y         1.433     0.010     1.433     0.010     
+BAP       C3A       C3B       SINGLE    y         1.420     0.010     1.420     0.010     
+BAP       C4        C5        DOUBLE    y         1.354     0.020     1.354     0.020     
+BAP       C5        C5A       SINGLE    y         1.416     0.015     1.416     0.015     
+BAP       C5A       C6        DOUBLE    y         1.429     0.016     1.429     0.016     
+BAP       C5A       C5B       SINGLE    y         1.422     0.012     1.422     0.012     
+BAP       C6        C7        SINGLE    y         1.394     0.013     1.394     0.013     
+BAP       C6        "C4'"     SINGLE    n         1.511     0.010     1.511     0.010     
+BAP       C7        C8        DOUBLE    y         1.377     0.011     1.377     0.011     
+BAP       C7        "C1'"     SINGLE    n         1.515     0.010     1.515     0.010     
+BAP       C8        C8A       SINGLE    y         1.418     0.020     1.418     0.020     
+BAP       C8A       C9        DOUBLE    y         1.423     0.020     1.423     0.020     
+BAP       C8A       C5B       SINGLE    y         1.421     0.013     1.421     0.013     
+BAP       C9        C10       SINGLE    y         1.345     0.014     1.345     0.014     
+BAP       C10       C1A       DOUBLE    y         1.433     0.010     1.433     0.010     
+BAP       C1A       C3B       SINGLE    y         1.420     0.010     1.420     0.010     
+BAP       C3B       C5B       DOUBLE    y         1.425     0.013     1.425     0.013     
+BAP       "C1'"     "O1'"     SINGLE    n         1.429     0.013     1.429     0.013     
+BAP       "C1'"     "C2'"     SINGLE    n         1.528     0.010     1.528     0.010     
+BAP       "C2'"     "O2'"     SINGLE    n         1.431     0.012     1.431     0.012     
+BAP       "C2'"     "C3'"     SINGLE    n         1.515     0.010     1.515     0.010     
+BAP       "C3'"     "O3'"     SINGLE    n         1.433     0.010     1.433     0.010     
+BAP       "C3'"     "C4'"     SINGLE    n         1.518     0.010     1.518     0.010     
+BAP       C1        H1        SINGLE    n         1.082     0.013     0.945     0.016     
+BAP       C2        H2        SINGLE    n         1.082     0.013     0.946     0.018     
+BAP       C3        H3        SINGLE    n         1.082     0.013     0.945     0.016     
+BAP       C4        H4        SINGLE    n         1.082     0.013     0.944     0.016     
+BAP       C5        H5        SINGLE    n         1.082     0.013     0.944     0.018     
+BAP       C8        H8        SINGLE    n         1.082     0.013     0.953     0.020     
+BAP       C9        H9        SINGLE    n         1.082     0.013     0.944     0.016     
+BAP       C10       H10       SINGLE    n         1.082     0.013     0.944     0.016     
+BAP       "C1'"     "H1'"     SINGLE    n         1.089     0.010     0.988     0.018     
+BAP       "O1'"     HO1       SINGLE    n         0.970     0.012     0.848     0.020     
+BAP       "C2'"     "H2'"     SINGLE    n         1.089     0.010     0.988     0.016     
+BAP       "O2'"     HO2       SINGLE    n         0.970     0.012     0.841     0.020     
+BAP       "C3'"     "H3'"     SINGLE    n         1.089     0.010     0.994     0.015     
+BAP       "O3'"     HO3       SINGLE    n         0.970     0.012     0.841     0.020     
+BAP       "C4'"     "H4'1"    SINGLE    n         1.089     0.010     0.977     0.020     
+BAP       "C4'"     "H4'2"    SINGLE    n         1.089     0.010     0.977     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BAP          C2          C1         C1A     120.893    1.50
+BAP          C2          C1          H1     119.647    1.50
+BAP         C1A          C1          H1     119.460    1.50
+BAP          C1          C2          C3     120.571    1.50
+BAP          C1          C2          H2     119.712    1.50
+BAP          C3          C2          H2     119.712    1.50
+BAP          C2          C3         C3A     120.893    1.50
+BAP          C2          C3          H3     119.647    1.50
+BAP         C3A          C3          H3     119.460    1.50
+BAP          C3         C3A          C4     122.532    1.50
+BAP          C3         C3A         C3B     118.946    1.50
+BAP          C4         C3A         C3B     118.522    1.50
+BAP         C3A          C4          C5     121.155    1.50
+BAP         C3A          C4          H4     119.264    1.50
+BAP          C5          C4          H4     119.581    1.50
+BAP          C4          C5         C5A     120.558    1.50
+BAP          C4          C5          H5     119.737    1.50
+BAP         C5A          C5          H5     119.705    1.50
+BAP          C5         C5A          C6     120.386    1.50
+BAP          C5         C5A         C5B     119.498    1.50
+BAP          C6         C5A         C5B     120.116    1.50
+BAP         C5A          C6          C7     120.000    1.50
+BAP         C5A          C6       "C4'"     119.556    2.04
+BAP          C7          C6       "C4'"     120.444    2.61
+BAP          C6          C7          C8     119.769    1.50
+BAP          C6          C7       "C1'"     120.097    1.50
+BAP          C8          C7       "C1'"     120.133    1.81
+BAP          C7          C8         C8A     120.379    1.85
+BAP          C7          C8          H8     119.884    1.50
+BAP         C8A          C8          H8     119.736    1.50
+BAP          C8         C8A          C9     121.344    1.75
+BAP          C8         C8A         C5B     119.520    1.50
+BAP          C9         C8A         C5B     119.136    1.50
+BAP         C8A          C9         C10     121.025    1.50
+BAP         C8A          C9          H9     119.490    1.50
+BAP         C10          C9          H9     119.485    1.50
+BAP          C9         C10         C1A     121.531    1.50
+BAP          C9         C10         H10     119.328    1.50
+BAP         C1A         C10         H10     119.141    1.50
+BAP          C1         C1A         C10     122.693    1.50
+BAP          C1         C1A         C3B     118.946    1.50
+BAP         C10         C1A         C3B     118.361    1.50
+BAP         C3A         C3B         C1A     119.755    1.50
+BAP         C3A         C3B         C5B     120.202    1.50
+BAP         C1A         C3B         C5B     120.042    1.50
+BAP         C5A         C5B         C8A     120.216    1.50
+BAP         C5A         C5B         C3B     120.065    1.50
+BAP         C8A         C5B         C3B     119.905    1.50
+BAP          C7       "C1'"       "O1'"     110.370    1.69
+BAP          C7       "C1'"       "C2'"     111.175    1.50
+BAP          C7       "C1'"       "H1'"     108.618    1.50
+BAP       "O1'"       "C1'"       "C2'"     110.552    1.80
+BAP       "O1'"       "C1'"       "H1'"     108.313    1.50
+BAP       "C2'"       "C1'"       "H1'"     108.791    1.50
+BAP       "C1'"       "O1'"         HO1     109.299    3.00
+BAP       "C1'"       "C2'"       "O2'"     109.334    1.86
+BAP       "C1'"       "C2'"       "C3'"     110.123    3.00
+BAP       "C1'"       "C2'"       "H2'"     109.340    1.50
+BAP       "O2'"       "C2'"       "C3'"     110.081    2.02
+BAP       "O2'"       "C2'"       "H2'"     108.790    1.50
+BAP       "C3'"       "C2'"       "H2'"     109.166    1.50
+BAP       "C2'"       "O2'"         HO2     109.099    3.00
+BAP       "C2'"       "C3'"       "O3'"     110.081    2.02
+BAP       "C2'"       "C3'"       "C4'"     109.941    1.50
+BAP       "C2'"       "C3'"       "H3'"     109.166    1.50
+BAP       "O3'"       "C3'"       "C4'"     109.239    1.98
+BAP       "O3'"       "C3'"       "H3'"     108.643    1.50
+BAP       "C4'"       "C3'"       "H3'"     109.080    1.50
+BAP       "C3'"       "O3'"         HO3     109.166    1.50
+BAP          C6       "C4'"       "C3'"     112.886    1.50
+BAP          C6       "C4'"      "H4'1"     109.087    1.50
+BAP          C6       "C4'"      "H4'2"     109.087    1.50
+BAP       "C3'"       "C4'"      "H4'1"     108.581    1.50
+BAP       "C3'"       "C4'"      "H4'2"     108.581    1.50
+BAP      "H4'1"       "C4'"      "H4'2"     108.224    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BAP              const_25         C1A          C1          C2          C3       0.000   10.00     2
+BAP              const_74          C2          C1         C1A         C10     180.000   10.00     2
+BAP       const_sp2_sp2_7          C8         C8A          C9         C10     180.000   10.00     2
+BAP              const_69         C5A         C5B         C8A          C8       0.000   10.00     2
+BAP       const_sp2_sp2_9         C1A         C10          C9         C8A       0.000   10.00     2
+BAP              const_14          C9         C10         C1A          C1     180.000   10.00     2
+BAP              const_17          C1         C1A         C3B         C3A       0.000   10.00     2
+BAP              const_21         C3A         C3B         C5B         C5A       0.000   10.00     2
+BAP            sp3_sp3_28          C7       "C1'"       "O1'"         HO1     180.000   10.00     3
+BAP             sp3_sp3_5       "O1'"       "C1'"       "C2'"       "O2'"      60.000   10.00     3
+BAP            sp3_sp3_31       "C1'"       "C2'"       "O2'"         HO2     180.000   10.00     3
+BAP            sp3_sp3_14       "O2'"       "C2'"       "C3'"       "O3'"     -60.000   10.00     3
+BAP              const_29          C1          C2          C3         C3A       0.000   10.00     2
+BAP            sp3_sp3_34       "C2'"       "C3'"       "O3'"         HO3     180.000   10.00     3
+BAP            sp3_sp3_22       "O3'"       "C3'"       "C4'"          C6     -60.000   10.00     3
+BAP              const_34          C2          C3         C3A          C4     180.000   10.00     2
+BAP              const_37          C3         C3A         C3B         C1A       0.000   10.00     2
+BAP              const_43          C3         C3A          C4          C5     180.000   10.00     2
+BAP              const_45         C3A          C4          C5         C5A       0.000   10.00     2
+BAP              const_50          C4          C5         C5A          C6     180.000   10.00     2
+BAP              const_54          C5         C5A         C5B         C8A     180.000   10.00     2
+BAP              const_59          C5         C5A          C6          C7     180.000   10.00     2
+BAP            sp2_sp3_10         C5A          C6       "C4'"       "C3'"     180.000   10.00     6
+BAP       const_sp2_sp2_1         C5A          C6          C7          C8       0.000   10.00     2
+BAP             sp2_sp3_2          C6          C7       "C1'"       "O1'"     120.000   10.00     6
+BAP              const_61          C6          C7          C8         C8A       0.000   10.00     2
+BAP              const_66          C7          C8         C8A          C9     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+BAP    chir_1    "C1'"    "O1'"    "C2'"    C7    negative
+BAP    chir_2    "C2'"    "O2'"    "C1'"    "C3'"    negative
+BAP    chir_3    "C3'"    "O3'"    "C2'"    "C4'"    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BAP    plan-1          C1   0.020
+BAP    plan-1         C10   0.020
+BAP    plan-1         C1A   0.020
+BAP    plan-1          C2   0.020
+BAP    plan-1          C3   0.020
+BAP    plan-1         C3A   0.020
+BAP    plan-1         C3B   0.020
+BAP    plan-1          C4   0.020
+BAP    plan-1         C5B   0.020
+BAP    plan-1          H1   0.020
+BAP    plan-1          H2   0.020
+BAP    plan-1          H3   0.020
+BAP    plan-2          C1   0.020
+BAP    plan-2         C10   0.020
+BAP    plan-2         C1A   0.020
+BAP    plan-2         C3A   0.020
+BAP    plan-2         C3B   0.020
+BAP    plan-2         C5A   0.020
+BAP    plan-2         C5B   0.020
+BAP    plan-2          C8   0.020
+BAP    plan-2         C8A   0.020
+BAP    plan-2          C9   0.020
+BAP    plan-2         H10   0.020
+BAP    plan-2          H9   0.020
+BAP    plan-3       "C1'"   0.020
+BAP    plan-3         C3B   0.020
+BAP    plan-3       "C4'"   0.020
+BAP    plan-3          C5   0.020
+BAP    plan-3         C5A   0.020
+BAP    plan-3         C5B   0.020
+BAP    plan-3          C6   0.020
+BAP    plan-3          C7   0.020
+BAP    plan-3          C8   0.020
+BAP    plan-3         C8A   0.020
+BAP    plan-3          C9   0.020
+BAP    plan-3          H8   0.020
+BAP    plan-4         C1A   0.020
+BAP    plan-4          C3   0.020
+BAP    plan-4         C3A   0.020
+BAP    plan-4         C3B   0.020
+BAP    plan-4          C4   0.020
+BAP    plan-4          C5   0.020
+BAP    plan-4         C5A   0.020
+BAP    plan-4         C5B   0.020
+BAP    plan-4          C6   0.020
+BAP    plan-4         C8A   0.020
+BAP    plan-4          H4   0.020
+BAP    plan-4          H5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BAP SMILES           ACDLabs              10.04 "OC5c2c(c1ccc4c3c1c(c2)ccc3ccc4)CC(O)C5O"
+BAP SMILES_CANONICAL CACTVS               3.341 "O[C@@H]1Cc2c(cc3ccc4cccc5ccc2c3c45)[C@@H](O)[C@@H]1O"
+BAP SMILES           CACTVS               3.341 "O[CH]1Cc2c(cc3ccc4cccc5ccc2c3c45)[CH](O)[CH]1O"
+BAP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc2ccc3cc4c(c5c3c2c(c1)cc5)C[C@H]([C@H]([C@@H]4O)O)O"
+BAP SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc2ccc3cc4c(c5c3c2c(c1)cc5)CC(C(C4O)O)O"
+BAP InChI            InChI                1.03  "InChI=1S/C20H16O3/c21-16-9-14-13-7-6-11-3-1-2-10-4-5-12(18(13)17(10)11)8-15(14)19(22)20(16)23/h1-8,16,19-23H,9H2/t16-,19-,20-/m1/s1"
+BAP InChIKey         InChI                1.03  GFANZDFKCCJYRF-NSISKUIASA-N
+BAP ?                acedrg               202         "dictionary generator"                  
+BAP ?                acedrg_database      11          "data source"                           
+BAP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BAP ?                refmac5              5.8.0189    "optimization tool"                     

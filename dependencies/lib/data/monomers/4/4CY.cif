@@ -1,0 +1,178 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4CY     4CY     nitrilo-L-methionine     peptide     18     10     .     
+#
+data_comp_4CY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4CY     C       C       C       0       65.303      16.994      26.413      
+4CY     N       N       NT3     1       64.138      15.301      27.770      
+4CY     O       O       O       0       65.560      16.175      25.508      
+4CY     CA      C       CH1     0       65.101      16.434      27.827      
+4CY     CB      C       CH2     0       66.446      15.975      28.406      
+4CY     CCS     C       CSP     0       67.370      16.952      31.485      
+4CY     SD      S       S2      0       66.852      18.028      30.274      
+4CY     CG      C       CH2     0       67.384      17.106      28.801      
+4CY     NSC     N       N       0       67.718      16.204      32.288      
+4CY     OXT     O       OC      -1      65.197      18.228      26.270      
+4CY     H       H       H       0       64.464      14.640      27.235      
+4CY     H2      H       H       0       63.339      15.586      27.436      
+4CY     H3      H       H       0       64.003      14.965      28.606      
+4CY     H8      H       H       0       64.716      17.140      28.394      
+4CY     HB      H       H       0       66.894      15.410      27.745      
+4CY     HBA     H       H       0       66.271      15.423      29.194      
+4CY     HG      H       H       0       67.469      17.735      28.053      
+4CY     HGA     H       H       0       68.274      16.732      28.975      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 4CY      N      n/a    CA     START
+ 4CY      H      N      .      .
+ 4CY      H2     N      .      .
+ 4CY      H3     N      .      .
+ 4CY      CA     N      C      .
+ 4CY      H8     CA     .      .
+ 4CY      CB     CA     CG     .
+ 4CY      HB     CB     .      .
+ 4CY      HBA    CB     .      .
+ 4CY      CG     CB     SD     .
+ 4CY      HG     CG     .      .
+ 4CY      HGA    CG     .      .
+ 4CY      SD     CG     CCS    .
+ 4CY      CCS    SD     NSC    .
+ 4CY      NSC    CCS    .      .
+ 4CY      C      CA     .      END
+ 4CY      O      C      .      .
+ 4CY      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4CY       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+4CY       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+4CY       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+4CY       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+4CY       CB        CG        SINGLE    n         1.515     0.019     1.515     0.019     
+4CY       CCS       NSC       TRIPLE    n         1.151     0.012     1.151     0.012     
+4CY       CCS       SD        SINGLE    n         1.701     0.020     1.701     0.020     
+4CY       SD        CG        SINGLE    n         1.817     0.011     1.817     0.011     
+4CY       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+4CY       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+4CY       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+4CY       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+4CY       CA        H8        SINGLE    n         1.089     0.010     0.985     0.020     
+4CY       CB        HB        SINGLE    n         1.089     0.010     0.978     0.020     
+4CY       CB        HBA       SINGLE    n         1.089     0.010     0.978     0.020     
+4CY       CG        HG        SINGLE    n         1.089     0.010     0.981     0.017     
+4CY       CG        HGA       SINGLE    n         1.089     0.010     0.981     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4CY          CA           C           O     117.124    1.50
+4CY          CA           C         OXT     117.124    1.50
+4CY           O           C         OXT     125.752    1.50
+4CY          CA           N           H     110.062    1.93
+4CY          CA           N          H2     110.062    1.93
+4CY          CA           N          H3     110.062    1.93
+4CY           H           N          H2     109.028    2.41
+4CY           H           N          H3     109.028    2.41
+4CY          H2           N          H3     109.028    2.41
+4CY           C          CA           N     109.241    1.50
+4CY           C          CA          CB     109.344    1.50
+4CY           C          CA          H8     108.824    1.50
+4CY           N          CA          CB     110.906    1.50
+4CY           N          CA          H8     108.487    1.50
+4CY          CB          CA          H8     109.670    1.50
+4CY          CA          CB          CG     113.476    1.50
+4CY          CA          CB          HB     108.666    1.50
+4CY          CA          CB         HBA     108.666    1.50
+4CY          CG          CB          HB     108.955    1.50
+4CY          CG          CB         HBA     108.955    1.50
+4CY          HB          CB         HBA     107.698    1.50
+4CY         NSC         CCS          SD     178.076    1.50
+4CY         CCS          SD          CG      99.569    1.56
+4CY          CB          CG          SD     113.756    1.50
+4CY          CB          CG          HG     109.206    1.50
+4CY          CB          CG         HGA     109.206    1.50
+4CY          SD          CG          HG     108.775    1.50
+4CY          SD          CG         HGA     108.775    1.50
+4CY          HG          CG         HGA     107.939    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4CY             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+4CY             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+4CY            sp3_sp3_10           C          CA          CB          CG     180.000   10.00     3
+4CY            sp3_sp3_19          CA          CB          CG          SD     180.000   10.00     3
+4CY            sp3_sp3_28          CB          CG          SD         CCS     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+4CY    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4CY    plan-1           C   0.020
+4CY    plan-1          CA   0.020
+4CY    plan-1           O   0.020
+4CY    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4CY SMILES           ACDLabs              12.01 "N#CSCCC(C(=O)O)N"
+4CY SMILES_CANONICAL CACTVS               3.370 "N[C@@H](CCSC#N)C(O)=O"
+4CY SMILES           CACTVS               3.370 "N[CH](CCSC#N)C(O)=O"
+4CY SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(CSC#N)[C@@H](C(=O)O)N"
+4CY SMILES           "OpenEye OEToolkits" 1.7.0 "C(CSC#N)C(C(=O)O)N"
+4CY InChI            InChI                1.03  "InChI=1S/C5H8N2O2S/c6-3-10-2-1-4(7)5(8)9/h4H,1-2,7H2,(H,8,9)/t4-/m0/s1"
+4CY InChIKey         InChI                1.03  JTTFTTBDRWNNMW-BYPYZUCNSA-N
+4CY ?                acedrg               196         "dictionary generator"                  
+4CY ?                acedrg_database      11          "data source"                           
+4CY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4CY ?                refmac5              5.8.0222    "optimization tool"                     

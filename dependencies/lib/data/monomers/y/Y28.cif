@@ -1,0 +1,333 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+Y28      Y28 'O-benzyl-N-(carboxycarbonyl)-D-tyros' non-polymer        40  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_Y28
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ Y28           OAX    O    OC       -0.500      0.000    0.000    0.000
+ Y28           CAS    C    C         0.000     -0.112   -0.052   -1.245
+ Y28           OAY    O    OC       -0.500      0.448    0.809   -1.960
+ Y28           CAR    C    C         0.000     -0.914   -1.142   -1.878
+ Y28           OAW    O    O         0.000     -1.021   -1.193   -3.086
+ Y28           N      N    NH1       0.000     -1.517   -2.070   -1.108
+ Y28           H      H    H         0.000     -1.427   -2.028   -0.103
+ Y28           CA     C    CH1       0.000     -2.303   -3.139   -1.730
+ Y28           HA     H    H         0.000     -2.810   -2.749   -2.624
+ Y28           C      C    C         0.000     -1.389   -4.271   -2.123
+ Y28           O      O    OC       -0.500     -0.161   -4.189   -1.900
+ Y28           OXT    O    OC       -0.500     -1.858   -5.291   -2.674
+ Y28           CB     C    CH2       0.000     -3.346   -3.649   -0.734
+ Y28           HB1C   H    H         0.000     -2.849   -3.956    0.189
+ Y28           HB2C   H    H         0.000     -3.871   -4.505   -1.164
+ Y28           CG     C    CR6       0.000     -4.334   -2.551   -0.433
+ Y28           CD2    C    CR16      0.000     -5.473   -2.418   -1.205
+ Y28           HD2    H    H         0.000     -5.654   -3.102   -2.025
+ Y28           CE2    C    CR16      0.000     -6.380   -1.412   -0.931
+ Y28           HE2    H    H         0.000     -7.273   -1.307   -1.536
+ Y28           CD1    C    CR16      0.000     -4.095   -1.675    0.610
+ Y28           HD1    H    H         0.000     -3.199   -1.779    1.210
+ Y28           CE1    C    CR16      0.000     -5.001   -0.669    0.888
+ Y28           HE1    H    H         0.000     -4.815    0.016    1.706
+ Y28           CZ     C    CR6       0.000     -6.147   -0.537    0.119
+ Y28           OH     O    O2        0.000     -7.038    0.454    0.389
+ Y28           CAC    C    CH2       0.000     -6.733    1.319    1.485
+ Y28           HAC1   H    H         0.000     -5.781    1.822    1.298
+ Y28           HAC2   H    H         0.000     -6.657    0.731    2.402
+ Y28           CAB    C    CR6       0.000     -7.825    2.347    1.633
+ Y28           CAD    C    CR16      0.000     -8.914    2.086    2.443
+ Y28           HAD    H    H         0.000     -8.983    1.143    2.971
+ Y28           CAE    C    CR16      0.000     -7.737    3.551    0.960
+ Y28           HAE    H    H         0.000     -6.883    3.756    0.327
+ Y28           CAG    C    CR16      0.000     -8.739    4.493    1.095
+ Y28           HAG    H    H         0.000     -8.671    5.436    0.567
+ Y28           CAH    C    CR16      0.000     -9.828    4.232    1.905
+ Y28           HAH    H    H         0.000    -10.613    4.971    2.011
+ Y28           CAF    C    CR16      0.000     -9.917    3.028    2.580
+ Y28           HAF    H    H         0.000    -10.770    2.824    3.214
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ Y28      OAX    n/a    CAS    START
+ Y28      CAS    OAX    CAR    .
+ Y28      OAY    CAS    .      .
+ Y28      CAR    CAS    N      .
+ Y28      OAW    CAR    .      .
+ Y28      N      CAR    CA     .
+ Y28      H      N      .      .
+ Y28      CA     N      CB     .
+ Y28      HA     CA     .      .
+ Y28      C      CA     OXT    .
+ Y28      O      C      .      .
+ Y28      OXT    C      .      .
+ Y28      CB     CA     CG     .
+ Y28      HB1C   CB     .      .
+ Y28      HB2C   CB     .      .
+ Y28      CG     CB     CD1    .
+ Y28      CD2    CG     CE2    .
+ Y28      HD2    CD2    .      .
+ Y28      CE2    CD2    HE2    .
+ Y28      HE2    CE2    .      .
+ Y28      CD1    CG     CE1    .
+ Y28      HD1    CD1    .      .
+ Y28      CE1    CD1    CZ     .
+ Y28      HE1    CE1    .      .
+ Y28      CZ     CE1    OH     .
+ Y28      OH     CZ     CAC    .
+ Y28      CAC    OH     CAB    .
+ Y28      HAC1   CAC    .      .
+ Y28      HAC2   CAC    .      .
+ Y28      CAB    CAC    CAE    .
+ Y28      CAD    CAB    HAD    .
+ Y28      HAD    CAD    .      .
+ Y28      CAE    CAB    CAG    .
+ Y28      HAE    CAE    .      .
+ Y28      CAG    CAE    CAH    .
+ Y28      HAG    CAG    .      .
+ Y28      CAH    CAG    CAF    .
+ Y28      HAH    CAH    .      .
+ Y28      CAF    CAH    HAF    .
+ Y28      HAF    CAF    .      END
+ Y28      CAD    CAF    .    ADD
+ Y28      CZ     CE2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+Y28       CAD       CAF       single    1.390     0.020     1.390     0.020     
+Y28       CAD       CAB       double    1.390     0.020     1.390     0.020     
+Y28       CAF       CAH       double    1.390     0.020     1.390     0.020     
+Y28       CAH       CAG       single    1.390     0.020     1.390     0.020     
+Y28       CAG       CAE       double    1.390     0.020     1.390     0.020     
+Y28       CAE       CAB       single    1.390     0.020     1.390     0.020     
+Y28       CAB       CAC       single    1.511     0.020     1.511     0.020     
+Y28       CAC       OH        single    1.426     0.020     1.426     0.020     
+Y28       OH        CZ        single    1.370     0.020     1.370     0.020     
+Y28       CZ        CE2       single    1.390     0.020     1.390     0.020     
+Y28       CZ        CE1       double    1.390     0.020     1.390     0.020     
+Y28       CE2       CD2       double    1.390     0.020     1.390     0.020     
+Y28       CD2       CG        single    1.390     0.020     1.390     0.020     
+Y28       CE1       CD1       single    1.390     0.020     1.390     0.020     
+Y28       CD1       CG        double    1.390     0.020     1.390     0.020     
+Y28       CG        CB        single    1.511     0.020     1.511     0.020     
+Y28       CB        CA        single    1.524     0.020     1.524     0.020     
+Y28       C         CA        single    1.500     0.020     1.500     0.020     
+Y28       CA        N         single    1.450     0.020     1.450     0.020     
+Y28       OXT       C         deloc     1.250     0.020     1.250     0.020     
+Y28       O         C         deloc     1.250     0.020     1.250     0.020     
+Y28       N         CAR       single    1.330     0.020     1.330     0.020     
+Y28       OAW       CAR       double    1.220     0.020     1.220     0.020     
+Y28       CAR       CAS       single    1.460     0.020     1.460     0.020     
+Y28       OAY       CAS       deloc     1.250     0.020     1.250     0.020     
+Y28       CAS       OAX       deloc     1.250     0.020     1.250     0.020     
+Y28       HAD       CAD       single    1.082     0.013     0.975     0.010     
+Y28       HAF       CAF       single    1.082     0.013     0.975     0.010     
+Y28       HAH       CAH       single    1.082     0.013     0.975     0.010     
+Y28       HAG       CAG       single    1.082     0.013     0.975     0.010     
+Y28       HAE       CAE       single    1.082     0.013     0.975     0.010     
+Y28       HAC1      CAC       single    1.089     0.010     0.989     0.005     
+Y28       HAC2      CAC       single    1.089     0.010     0.989     0.005     
+Y28       HE2       CE2       single    1.082     0.013     0.975     0.010     
+Y28       HE1       CE1       single    1.082     0.013     0.975     0.010     
+Y28       HD2       CD2       single    1.082     0.013     0.975     0.010     
+Y28       HD1       CD1       single    1.082     0.013     0.975     0.010     
+Y28       HB1C      CB        single    1.089     0.010     0.989     0.005     
+Y28       HB2C      CB        single    1.089     0.010     0.989     0.005     
+Y28       HA        CA        single    1.089     0.010     0.989     0.005     
+Y28       H         N         single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ Y28      OAX    CAS    OAY     123.000    3.000
+ Y28      OAX    CAS    CAR     120.000    3.000
+ Y28      OAY    CAS    CAR     120.000    3.000
+ Y28      CAS    CAR    OAW     120.500    3.000
+ Y28      CAS    CAR    N       120.000    3.000
+ Y28      OAW    CAR    N       123.000    3.000
+ Y28      CAR    N      H       120.000    3.000
+ Y28      CAR    N      CA      121.500    3.000
+ Y28      H      N      CA      118.500    3.000
+ Y28      N      CA     HA      108.550    3.000
+ Y28      N      CA     C       111.600    3.000
+ Y28      N      CA     CB      110.000    3.000
+ Y28      HA     CA     C       108.810    3.000
+ Y28      HA     CA     CB      108.340    3.000
+ Y28      C      CA     CB      109.470    3.000
+ Y28      CA     C      O       118.500    3.000
+ Y28      CA     C      OXT     118.500    3.000
+ Y28      O      C      OXT     123.000    3.000
+ Y28      CA     CB     HB1C    109.470    3.000
+ Y28      CA     CB     HB2C    109.470    3.000
+ Y28      CA     CB     CG      109.470    3.000
+ Y28      HB1C   CB     HB2C    107.900    3.000
+ Y28      HB1C   CB     CG      109.470    3.000
+ Y28      HB2C   CB     CG      109.470    3.000
+ Y28      CB     CG     CD2     120.000    3.000
+ Y28      CB     CG     CD1     120.000    3.000
+ Y28      CD2    CG     CD1     120.000    3.000
+ Y28      CG     CD2    HD2     120.000    3.000
+ Y28      CG     CD2    CE2     120.000    3.000
+ Y28      HD2    CD2    CE2     120.000    3.000
+ Y28      CD2    CE2    HE2     120.000    3.000
+ Y28      CD2    CE2    CZ      120.000    3.000
+ Y28      HE2    CE2    CZ      120.000    3.000
+ Y28      CG     CD1    HD1     120.000    3.000
+ Y28      CG     CD1    CE1     120.000    3.000
+ Y28      HD1    CD1    CE1     120.000    3.000
+ Y28      CD1    CE1    HE1     120.000    3.000
+ Y28      CD1    CE1    CZ      120.000    3.000
+ Y28      HE1    CE1    CZ      120.000    3.000
+ Y28      CE1    CZ     OH      120.000    3.000
+ Y28      CE1    CZ     CE2     120.000    3.000
+ Y28      OH     CZ     CE2     120.000    3.000
+ Y28      CZ     OH     CAC     120.000    3.000
+ Y28      OH     CAC    HAC1    109.470    3.000
+ Y28      OH     CAC    HAC2    109.470    3.000
+ Y28      OH     CAC    CAB     109.470    3.000
+ Y28      HAC1   CAC    HAC2    107.900    3.000
+ Y28      HAC1   CAC    CAB     109.470    3.000
+ Y28      HAC2   CAC    CAB     109.470    3.000
+ Y28      CAC    CAB    CAD     120.000    3.000
+ Y28      CAC    CAB    CAE     120.000    3.000
+ Y28      CAD    CAB    CAE     120.000    3.000
+ Y28      CAB    CAD    HAD     120.000    3.000
+ Y28      CAB    CAD    CAF     120.000    3.000
+ Y28      HAD    CAD    CAF     120.000    3.000
+ Y28      CAB    CAE    HAE     120.000    3.000
+ Y28      CAB    CAE    CAG     120.000    3.000
+ Y28      HAE    CAE    CAG     120.000    3.000
+ Y28      CAE    CAG    HAG     120.000    3.000
+ Y28      CAE    CAG    CAH     120.000    3.000
+ Y28      HAG    CAG    CAH     120.000    3.000
+ Y28      CAG    CAH    HAH     120.000    3.000
+ Y28      CAG    CAH    CAF     120.000    3.000
+ Y28      HAH    CAH    CAF     120.000    3.000
+ Y28      CAH    CAF    HAF     120.000    3.000
+ Y28      CAH    CAF    CAD     120.000    3.000
+ Y28      HAF    CAF    CAD     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ Y28      var_1    OAX    CAS    CAR    N          0.005   20.000   1
+ Y28      CONST_1  CAS    CAR    N      CA       180.000    0.000   0
+ Y28      var_2    CAR    N      CA     CB      -154.981   20.000   3
+ Y28      var_3    N      CA     C      OXT     -179.986   20.000   3
+ Y28      var_4    N      CA     CB     CG        65.004   20.000   3
+ Y28      var_5    CA     CB     CG     CD1      -89.725   20.000   2
+ Y28      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ Y28      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ Y28      CONST_4  CB     CG     CD1    CE1      180.000    0.000   0
+ Y28      CONST_5  CG     CD1    CE1    CZ         0.000    0.000   0
+ Y28      CONST_6  CD1    CE1    CZ     OH       180.000    0.000   0
+ Y28      CONST_7  CE1    CZ     CE2    CD2        0.000    0.000   0
+ Y28      var_6    CE1    CZ     OH     CAC       -0.293   20.000   1
+ Y28      var_7    CZ     OH     CAC    CAB     -179.975   20.000   1
+ Y28      var_8    OH     CAC    CAB    CAE      -90.047   20.000   2
+ Y28      CONST_8  CAC    CAB    CAD    CAF      180.000    0.000   0
+ Y28      CONST_9  CAB    CAD    CAF    CAH        0.000    0.000   0
+ Y28      CONST_10 CAC    CAB    CAE    CAG      180.000    0.000   0
+ Y28      CONST_11 CAB    CAE    CAG    CAH        0.000    0.000   0
+ Y28      CONST_12 CAE    CAG    CAH    CAF        0.000    0.000   0
+ Y28      CONST_13 CAG    CAH    CAF    CAD        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ Y28      chir_01  CA     CB     C      N         positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ Y28      plan-1    CAD       0.020
+ Y28      plan-1    CAF       0.020
+ Y28      plan-1    CAB       0.020
+ Y28      plan-1    HAD       0.020
+ Y28      plan-1    CAH       0.020
+ Y28      plan-1    CAG       0.020
+ Y28      plan-1    CAE       0.020
+ Y28      plan-1    HAF       0.020
+ Y28      plan-1    HAH       0.020
+ Y28      plan-1    HAG       0.020
+ Y28      plan-1    HAE       0.020
+ Y28      plan-1    CAC       0.020
+ Y28      plan-2    CZ        0.020
+ Y28      plan-2    OH        0.020
+ Y28      plan-2    CE2       0.020
+ Y28      plan-2    CE1       0.020
+ Y28      plan-2    CD2       0.020
+ Y28      plan-2    CD1       0.020
+ Y28      plan-2    CG        0.020
+ Y28      plan-2    HE2       0.020
+ Y28      plan-2    HD2       0.020
+ Y28      plan-2    HE1       0.020
+ Y28      plan-2    HD1       0.020
+ Y28      plan-2    CB        0.020
+ Y28      plan-3    C         0.020
+ Y28      plan-3    CA        0.020
+ Y28      plan-3    OXT       0.020
+ Y28      plan-3    O         0.020
+ Y28      plan-4    N         0.020
+ Y28      plan-4    CA        0.020
+ Y28      plan-4    CAR       0.020
+ Y28      plan-4    H         0.020
+ Y28      plan-5    CAR       0.020
+ Y28      plan-5    N         0.020
+ Y28      plan-5    OAW       0.020
+ Y28      plan-5    CAS       0.020
+ Y28      plan-5    H         0.020
+ Y28      plan-6    CAS       0.020
+ Y28      plan-6    CAR       0.020
+ Y28      plan-6    OAY       0.020
+ Y28      plan-6    OAX       0.020
+# ------------------------------------------------------

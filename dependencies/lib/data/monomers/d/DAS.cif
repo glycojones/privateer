@@ -1,0 +1,167 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DAS     DAS     "D-ASPARTICACID"     peptide     15     9     .
+#
+data_comp_DAS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DAS     N       N       NT3     1       -1.336      -0.566      1.047
+DAS     CA      C       CH1     0       -0.319      0.247       0.325
+DAS     C       C       C       0       -0.989      0.957       -0.857
+DAS     O       O       O       0       -1.619      0.246       -1.665
+DAS     CB      C       CH2     0       0.856       -0.620      -0.136
+DAS     CG      C       C       0       2.077       0.178       -0.561
+DAS     OD1     O       O       0       2.950       0.412       0.298
+DAS     OD2     O       OC      -1      2.144       0.559       -1.746
+DAS     OXT     O       OC      -1      -0.857      2.195       -0.926
+DAS     H       H       H       0       -1.683      -1.198      0.489
+DAS     H2      H       H       0       -2.011      -0.031      1.345
+DAS     H3      H       H       0       -0.952      -0.981      1.761
+DAS     HA      H       H       0       0.026       0.931       0.947
+DAS     HB2     H       H       0       0.569       -1.171      -0.893
+DAS     HB3     H       H       0       1.118       -1.217      0.594
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DAS      N      n/a    CA     START
+DAS      H      N      .      .
+DAS      H2     N      .      .
+DAS      H3     N      .      .
+DAS      CA     N      C      .
+DAS      HA     CA     .      .
+DAS      CB     CA     CG     .
+DAS      HB2    CB     .      .
+DAS      HB3    CB     .      .
+DAS      CG     CB     OD2    .
+DAS      OD1    CG     .      .
+DAS      OD2    CG     .      .
+DAS      C      CA     .      END
+DAS      O      C      .      .
+DAS      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DAS       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+DAS       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DAS       CA        CB        SINGLE    n         1.531     0.011     1.531     0.011     
+DAS       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DAS       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DAS       CB        CG        SINGLE    n         1.519     0.012     1.519     0.012     
+DAS       CG        OD1       DOUBLE    n         1.247     0.019     1.247     0.019     
+DAS       CG        OD2       SINGLE    n         1.247     0.019     1.247     0.019     
+DAS       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DAS       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DAS       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DAS       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+DAS       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.016     
+DAS       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DAS          CA           N           H     110.062    1.93
+DAS          CA           N          H2     110.062    1.93
+DAS          CA           N          H3     110.062    1.93
+DAS           H           N          H2     109.028    2.41
+DAS           H           N          H3     109.028    2.41
+DAS          H2           N          H3     109.028    2.41
+DAS           N          CA           C     109.241    1.50
+DAS           N          CA          CB     111.338    1.50
+DAS           N          CA          HA     108.487    1.50
+DAS           C          CA          CB     111.804    2.58
+DAS           C          CA          HA     108.824    1.50
+DAS          CB          CA          HA     108.666    1.69
+DAS          CA           C           O     117.124    1.50
+DAS          CA           C         OXT     117.124    1.50
+DAS           O           C         OXT     125.752    1.50
+DAS          CA          CB          CG     113.398    1.64
+DAS          CA          CB         HB2     108.488    2.17
+DAS          CA          CB         HB3     108.488    2.17
+DAS          CG          CB         HB2     107.840    2.14
+DAS          CG          CB         HB3     107.840    2.14
+DAS         HB2          CB         HB3     107.891    1.66
+DAS          CB          CG         OD1     117.986    1.50
+DAS          CB          CG         OD2     117.986    1.50
+DAS         OD1          CG         OD2     124.027    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DAS             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+DAS             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DAS            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+DAS             sp2_sp3_8         OD1          CG          CB          CA     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DAS    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DAS    plan-1           C   0.020
+DAS    plan-1          CA   0.020
+DAS    plan-1           O   0.020
+DAS    plan-1         OXT   0.020
+DAS    plan-2          CB   0.020
+DAS    plan-2          CG   0.020
+DAS    plan-2         OD1   0.020
+DAS    plan-2         OD2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DAS SMILES           ACDLabs              10.04 "O=C(O)CC(N)C(=O)O"
+DAS SMILES_CANONICAL CACTVS               3.341 "N[C@H](CC(O)=O)C(O)=O"
+DAS SMILES           CACTVS               3.341 "N[CH](CC(O)=O)C(O)=O"
+DAS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@H](C(=O)O)N)C(=O)O"
+DAS SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)C(=O)O"
+DAS InChI            InChI                1.03  "InChI=1S/C4H7NO4/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H,6,7)(H,8,9)/t2-/m1/s1"
+DAS InChIKey         InChI                1.03  CKLJMWTZIZZHCS-UWTATZPHSA-N
+DAS ?                acedrg               196         "dictionary generator"
+DAS ?                acedrg_database      11          "data source"
+DAS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DAS ?                refmac5              5.8.0222    "optimization tool"

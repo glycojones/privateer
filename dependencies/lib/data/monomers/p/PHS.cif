@@ -1,0 +1,90 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PHS     PHS      "PHOSPHONIC ACID"     NON-POLYMER     7     4     .     
+#
+data_comp_PHS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PHS     P       P       P       0       35.066      -1.362      -1.498      
+PHS     O1P     O       O       0       35.258      -1.627      -2.955      
+PHS     O2P     O       OH1     0       34.589      -2.648      -0.750      
+PHS     O3P     O       OH1     0       36.400      -0.903      -0.828      
+PHS     HP1     H       H       0       34.190      -0.444      -1.300      
+PHS     HO2P    H       H       0       34.478      -2.518      0.072       
+PHS     HO3P    H       H       0       36.306      -0.731      -0.012      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PHS       P         O1P       DOUBLE    n         1.493     0.016     1.493     0.016     
+PHS       P         O2P       SINGLE    n         1.562     0.014     1.562     0.014     
+PHS       P         O3P       SINGLE    n         1.562     0.014     1.562     0.014     
+PHS       P         HP1       SINGLE    n         1.284     0.020     1.284     0.020     
+PHS       O2P       HO2P      SINGLE    n         0.970     0.012     0.839     0.014     
+PHS       O3P       HO3P      SINGLE    n         0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PHS         O1P           P         O2P     109.147    2.27
+PHS         O1P           P         O3P     109.147    2.27
+PHS         O1P           P         HP1     108.562    2.72
+PHS         O2P           P         O3P     105.862    1.98
+PHS         O2P           P         HP1     104.778    2.90
+PHS         O3P           P         HP1     104.778    2.90
+PHS           P         O2P        HO2P     112.472    3.00
+PHS           P         O3P        HO3P     112.472    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PHS             sp3_sp3_1        HO2P         O2P           P         O1P     180.000   10.00     3
+PHS             sp3_sp3_4        HO3P         O3P           P         O1P     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PHS SMILES           ACDLabs              10.04 "O=P(O)O"
+PHS SMILES_CANONICAL CACTVS               3.341 "O[PH](O)=O"
+PHS SMILES           CACTVS               3.341 "O[PH](O)=O"
+PHS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "OP(=O)O"
+PHS SMILES           "OpenEye OEToolkits" 1.5.0 "OP(=O)O"
+PHS InChI            InChI                1.03  "InChI=1S/H3O3P/c1-4(2)3/h4H,(H2,1,2,3)"
+PHS InChIKey         InChI                1.03  ABLZXFCXXLZCGV-UHFFFAOYSA-N
+PHS ?                acedrg               202         "dictionary generator"                  
+PHS ?                acedrg_database      11          "data source"                           
+PHS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PHS ?                refmac5              5.8.0189    "optimization tool"                     

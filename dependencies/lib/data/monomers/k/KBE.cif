@@ -1,0 +1,207 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KBE      KBE 'beta-lysine                         ' non-polymer        23  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_KBE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ KBE           OXT    O    OC       -0.500      0.000    0.000    0.000
+ KBE           C      C    C         0.000     -1.206   -0.292   -0.158
+ KBE           O      O    OC       -0.500     -1.523   -1.410   -0.621
+ KBE           CA     C    CH2       0.000     -2.277    0.699    0.216
+ KBE           HA     H    H         0.000     -2.150    1.610   -0.373
+ KBE           HAA    H    H         0.000     -2.195    0.939    1.278
+ KBE           CB     C    CH1       0.000     -3.654    0.095   -0.068
+ KBE           HB     H    H         0.000     -3.704   -0.228   -1.117
+ KBE           N      N    NH2       0.000     -3.872   -1.063    0.811
+ KBE           HNA    H    H         0.000     -4.613   -1.048    1.502
+ KBE           HN     H    H         0.000     -3.282   -1.883    0.733
+ KBE           CG     C    CH2       0.000     -4.736    1.144    0.194
+ KBE           HG     H    H         0.000     -4.523    2.039   -0.393
+ KBE           HGA    H    H         0.000     -4.745    1.400    1.256
+ KBE           CD     C    CH2       0.000     -6.100    0.582   -0.207
+ KBE           HD     H    H         0.000     -6.311   -0.314    0.380
+ KBE           HDA    H    H         0.000     -6.089    0.325   -1.269
+ KBE           CE     C    CH2       0.000     -7.182    1.631    0.054
+ KBE           HE     H    H         0.000     -6.969    2.527   -0.533
+ KBE           HEA    H    H         0.000     -7.191    1.887    1.116
+ KBE           NZ     N    NH2       0.000     -8.493    1.091   -0.332
+ KBE           HNZA   H    H         0.000     -9.071    1.582   -1.004
+ KBE           HNZ    H    H         0.000     -8.827    0.223    0.070
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ KBE      OXT    n/a    C      START
+ KBE      C      OXT    CA     .
+ KBE      O      C      .      .
+ KBE      CA     C      CB     .
+ KBE      HA     CA     .      .
+ KBE      HAA    CA     .      .
+ KBE      CB     CA     CG     .
+ KBE      HB     CB     .      .
+ KBE      N      CB     HN     .
+ KBE      HNA    N      .      .
+ KBE      HN     N      .      .
+ KBE      CG     CB     CD     .
+ KBE      HG     CG     .      .
+ KBE      HGA    CG     .      .
+ KBE      CD     CG     CE     .
+ KBE      HD     CD     .      .
+ KBE      HDA    CD     .      .
+ KBE      CE     CD     NZ     .
+ KBE      HE     CE     .      .
+ KBE      HEA    CE     .      .
+ KBE      NZ     CE     HNZ    .
+ KBE      HNZA   NZ     .      .
+ KBE      HNZ    NZ     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KBE       O         C         deloc     1.250     0.020     1.250     0.020     
+KBE       CA        C         single    1.510     0.020     1.510     0.020     
+KBE       C         OXT       deloc     1.250     0.020     1.250     0.020     
+KBE       N         CB        single    1.450     0.020     1.450     0.020     
+KBE       HN        N         single    1.036     0.016     0.914     0.007     
+KBE       HNA       N         single    1.036     0.016     0.914     0.007     
+KBE       CB        CA        single    1.524     0.020     1.524     0.020     
+KBE       HA        CA        single    1.089     0.010     0.989     0.005     
+KBE       HAA       CA        single    1.089     0.010     0.989     0.005     
+KBE       CG        CB        single    1.524     0.020     1.524     0.020     
+KBE       HB        CB        single    1.089     0.010     0.989     0.005     
+KBE       CE        CD        single    1.524     0.020     1.524     0.020     
+KBE       CD        CG        single    1.524     0.020     1.524     0.020     
+KBE       HD        CD        single    1.089     0.010     0.989     0.005     
+KBE       HDA       CD        single    1.089     0.010     0.989     0.005     
+KBE       NZ        CE        single    1.450     0.020     1.450     0.020     
+KBE       HE        CE        single    1.089     0.010     0.989     0.005     
+KBE       HEA       CE        single    1.089     0.010     0.989     0.005     
+KBE       HG        CG        single    1.089     0.010     0.989     0.005     
+KBE       HGA       CG        single    1.089     0.010     0.989     0.005     
+KBE       HNZ       NZ        single    1.036     0.016     0.914     0.007     
+KBE       HNZA      NZ        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ KBE      OXT    C      O       123.000    3.000
+ KBE      OXT    C      CA      118.500    3.000
+ KBE      O      C      CA      118.500    3.000
+ KBE      C      CA     HA      109.470    3.000
+ KBE      C      CA     HAA     109.470    3.000
+ KBE      C      CA     CB      109.470    3.000
+ KBE      HA     CA     HAA     107.900    3.000
+ KBE      HA     CA     CB      109.470    3.000
+ KBE      HAA    CA     CB      109.470    3.000
+ KBE      CA     CB     HB      108.340    3.000
+ KBE      CA     CB     N       109.470    3.000
+ KBE      CA     CB     CG      109.470    3.000
+ KBE      HB     CB     N       109.470    3.000
+ KBE      HB     CB     CG      108.340    3.000
+ KBE      N      CB     CG      109.470    3.000
+ KBE      CB     N      HNA     120.000    3.000
+ KBE      CB     N      HN      120.000    3.000
+ KBE      HNA    N      HN      120.000    3.000
+ KBE      CB     CG     HG      109.470    3.000
+ KBE      CB     CG     HGA     109.470    3.000
+ KBE      CB     CG     CD      111.000    3.000
+ KBE      HG     CG     HGA     107.900    3.000
+ KBE      HG     CG     CD      109.470    3.000
+ KBE      HGA    CG     CD      109.470    3.000
+ KBE      CG     CD     HD      109.470    3.000
+ KBE      CG     CD     HDA     109.470    3.000
+ KBE      CG     CD     CE      111.000    3.000
+ KBE      HD     CD     HDA     107.900    3.000
+ KBE      HD     CD     CE      109.470    3.000
+ KBE      HDA    CD     CE      109.470    3.000
+ KBE      CD     CE     HE      109.470    3.000
+ KBE      CD     CE     HEA     109.470    3.000
+ KBE      CD     CE     NZ      109.470    3.000
+ KBE      HE     CE     HEA     107.900    3.000
+ KBE      HE     CE     NZ      109.470    3.000
+ KBE      HEA    CE     NZ      109.470    3.000
+ KBE      CE     NZ     HNZA    120.000    3.000
+ KBE      CE     NZ     HNZ     120.000    3.000
+ KBE      HNZA   NZ     HNZ     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ KBE      var_1    OXT    C      CA     CB      -179.708   20.000   3
+ KBE      var_2    C      CA     CB     CG      -175.014   20.000   3
+ KBE      var_3    CA     CB     N      HN       -63.915   20.000   1
+ KBE      var_4    CA     CB     CG     CD       174.993   20.000   3
+ KBE      var_5    CB     CG     CD     CE       180.000   20.000   3
+ KBE      var_6    CG     CD     CE     NZ       179.969   20.000   3
+ KBE      var_7    CD     CE     NZ     HNZ       56.060   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ KBE      chir_01  CB     N      CA     CG        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ KBE      plan-1    C         0.020
+ KBE      plan-1    O         0.020
+ KBE      plan-1    CA        0.020
+ KBE      plan-1    OXT       0.020
+ KBE      plan-2    N         0.020
+ KBE      plan-2    CB        0.020
+ KBE      plan-2    HN        0.020
+ KBE      plan-2    HNA       0.020
+ KBE      plan-3    NZ        0.020
+ KBE      plan-3    CE        0.020
+ KBE      plan-3    HNZ       0.020
+ KBE      plan-3    HNZA      0.020
+# ------------------------------------------------------

@@ -1,0 +1,477 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3SP      3SP 'N-(CARBOXYMETHYL)-3-CYCLOHEXYL-D-ALA' non-polymer        64  32 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_3SP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 3SP           O32    O    OC       -0.500      0.000    0.000    0.000
+ 3SP           C23    C    C         0.000     -0.814   -0.675    0.668
+ 3SP           O31    O    OC       -0.500     -0.479   -1.793    1.118
+ 3SP           C22    C    CH2       0.000     -2.199   -0.142    0.932
+ 3SP           H221   H    H         0.000     -2.355   -0.051    2.009
+ 3SP           H222   H    H         0.000     -2.939   -0.828    0.514
+ 3SP           N21    N    NH1       0.000     -2.342    1.179    0.302
+ 3SP           HN21   H    H         0.000     -1.673    1.636   -0.300
+ 3SP           C20    C    CH1       0.000     -3.649    1.705    0.719
+ 3SP           H20    H    H         0.000     -3.745    2.749    0.391
+ 3SP           C24    C    CH2       0.000     -3.763    1.637    2.244
+ 3SP           H241   H    H         0.000     -3.545    0.621    2.579
+ 3SP           H242   H    H         0.000     -4.777    1.908    2.544
+ 3SP           C25    C    CH1       0.000     -2.765    2.609    2.874
+ 3SP           H25    H    H         0.000     -2.905    3.609    2.441
+ 3SP           C30    C    CH2       0.000     -1.339    2.128    2.596
+ 3SP           H301   H    H         0.000     -1.174    2.083    1.518
+ 3SP           H302   H    H         0.000     -1.201    1.133    3.026
+ 3SP           C29    C    CH2       0.000     -0.340    3.100    3.226
+ 3SP           H291   H    H         0.000     -0.478    4.094    2.795
+ 3SP           H292   H    H         0.000      0.677    2.757    3.027
+ 3SP           C28    C    CH2       0.000     -0.573    3.161    4.738
+ 3SP           H281   H    H         0.000      0.141    3.854    5.187
+ 3SP           H282   H    H         0.000     -0.433    2.167    5.167
+ 3SP           C27    C    CH2       0.000     -1.998    3.642    5.016
+ 3SP           H271   H    H         0.000     -2.136    4.637    4.587
+ 3SP           H272   H    H         0.000     -2.162    3.686    6.095
+ 3SP           C26    C    CH2       0.000     -2.997    2.670    4.386
+ 3SP           H262   H    H         0.000     -4.014    3.015    4.585
+ 3SP           H261   H    H         0.000     -2.859    1.677    4.817
+ 3SP           C18    C    C         0.000     -4.746    0.880    0.096
+ 3SP           O19    O    O         0.000     -4.499   -0.223   -0.343
+ 3SP           N17    N    N         0.000     -6.000    1.368    0.027
+ 3SP           C16    C    CH2       0.000     -6.463    2.631    0.625
+ 3SP           H161   H    H         0.000     -5.900    3.475    0.221
+ 3SP           H162   H    H         0.000     -6.349    2.605    1.711
+ 3SP           C15    C    CH2       0.000     -7.956    2.788    0.267
+ 3SP           H151   H    H         0.000     -8.221    3.816    0.015
+ 3SP           H152   H    H         0.000     -8.617    2.426    1.057
+ 3SP           C14    C    CH2       0.000     -8.108    1.890   -0.989
+ 3SP           H142   H    H         0.000     -7.792    2.382   -1.911
+ 3SP           H141   H    H         0.000     -9.118    1.495   -1.117
+ 3SP           C13    C    CH1       0.000     -7.136    0.729   -0.662
+ 3SP           H13    H    H         0.000     -7.622   -0.002    0.000
+ 3SP           C11    C    C         0.000     -6.672    0.061   -1.929
+ 3SP           O12    O    O         0.000     -5.732    0.515   -2.547
+ 3SP           N10    N    NH1       0.000     -7.301   -1.043   -2.378
+ 3SP           HN10   H    H         0.000     -8.084   -1.423   -1.865
+ 3SP           C9     C    CH2       0.000     -6.850   -1.693   -3.611
+ 3SP           H91    H    H         0.000     -5.811   -2.008   -3.496
+ 3SP           H92    H    H         0.000     -6.926   -0.988   -4.442
+ 3SP           C4     C    CR5       0.000     -7.714   -2.896   -3.891
+ 3SP           C3     C    CR15      0.000     -8.862   -2.960   -4.611
+ 3SP           H3     H    H         0.000     -9.271   -2.069   -5.070
+ 3SP           C2     C    CR15      0.000     -9.500   -4.170   -4.751
+ 3SP           H2     H    H         0.000    -10.413   -4.265   -5.326
+ 3SP           S5     S    S2        0.000     -7.483   -4.533   -3.370
+ 3SP           C1     C    CR5       0.000     -8.925   -5.262   -4.126
+ 3SP           C6     C    C         0.000     -9.379   -6.661   -4.099
+ 3SP           N8     N    NH2       0.000     -8.648   -7.611   -3.414
+ 3SP           HN82   H    H         0.000     -7.792   -7.358   -2.923
+ 3SP           HN81   H    H         0.000     -8.951   -8.583   -3.387
+ 3SP           N7     N    N         0.000    -10.474   -7.005   -4.723
+ 3SP           HN7    H    H         0.000    -10.994   -6.353   -5.204
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 3SP      O32    n/a    C23    START
+ 3SP      C23    O32    C22    .
+ 3SP      O31    C23    .      .
+ 3SP      C22    C23    N21    .
+ 3SP      H221   C22    .      .
+ 3SP      H222   C22    .      .
+ 3SP      N21    C22    C20    .
+ 3SP      HN21   N21    .      .
+ 3SP      C20    N21    C18    .
+ 3SP      H20    C20    .      .
+ 3SP      C24    C20    C25    .
+ 3SP      H241   C24    .      .
+ 3SP      H242   C24    .      .
+ 3SP      C25    C24    C30    .
+ 3SP      H25    C25    .      .
+ 3SP      C30    C25    C29    .
+ 3SP      H301   C30    .      .
+ 3SP      H302   C30    .      .
+ 3SP      C29    C30    C28    .
+ 3SP      H291   C29    .      .
+ 3SP      H292   C29    .      .
+ 3SP      C28    C29    C27    .
+ 3SP      H281   C28    .      .
+ 3SP      H282   C28    .      .
+ 3SP      C27    C28    C26    .
+ 3SP      H271   C27    .      .
+ 3SP      H272   C27    .      .
+ 3SP      C26    C27    H261   .
+ 3SP      H262   C26    .      .
+ 3SP      H261   C26    .      .
+ 3SP      C18    C20    N17    .
+ 3SP      O19    C18    .      .
+ 3SP      N17    C18    C13    .
+ 3SP      C16    N17    C15    .
+ 3SP      H161   C16    .      .
+ 3SP      H162   C16    .      .
+ 3SP      C15    C16    C14    .
+ 3SP      H151   C15    .      .
+ 3SP      H152   C15    .      .
+ 3SP      C14    C15    H141   .
+ 3SP      H142   C14    .      .
+ 3SP      H141   C14    .      .
+ 3SP      C13    N17    C11    .
+ 3SP      H13    C13    .      .
+ 3SP      C11    C13    N10    .
+ 3SP      O12    C11    .      .
+ 3SP      N10    C11    C9     .
+ 3SP      HN10   N10    .      .
+ 3SP      C9     N10    C4     .
+ 3SP      H91    C9     .      .
+ 3SP      H92    C9     .      .
+ 3SP      C4     C9     S5     .
+ 3SP      C3     C4     C2     .
+ 3SP      H3     C3     .      .
+ 3SP      C2     C3     H2     .
+ 3SP      H2     C2     .      .
+ 3SP      S5     C4     C1     .
+ 3SP      C1     S5     C6     .
+ 3SP      C6     C1     N7     .
+ 3SP      N8     C6     HN81   .
+ 3SP      HN82   N8     .      .
+ 3SP      HN81   N8     .      .
+ 3SP      N7     C6     HN7    .
+ 3SP      HN7    N7     .      END
+ 3SP      C1     C2     .    ADD
+ 3SP      C13    C14    .    ADD
+ 3SP      C25    C26    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3SP       C1        C2        double    1.387     0.020     1.387     0.020     
+3SP       C1        S5        single    1.745     0.020     1.745     0.020     
+3SP       C6        C1        single    1.490     0.020     1.490     0.020     
+3SP       C2        C3        single    1.380     0.020     1.380     0.020     
+3SP       H2        C2        single    1.082     0.013     0.975     0.010     
+3SP       C3        C4        double    1.387     0.020     1.387     0.020     
+3SP       H3        C3        single    1.082     0.013     0.975     0.010     
+3SP       S5        C4        single    1.745     0.020     1.745     0.020     
+3SP       C4        C9        single    1.510     0.020     1.510     0.020     
+3SP       N7        C6        double    1.260     0.020     1.260     0.020     
+3SP       N8        C6        single    1.332     0.020     1.332     0.020     
+3SP       HN7       N7        single    1.016     0.010     0.899     0.007     
+3SP       HN81      N8        single    1.016     0.010     0.899     0.007     
+3SP       HN82      N8        single    1.016     0.010     0.899     0.007     
+3SP       C9        N10       single    1.450     0.020     1.450     0.020     
+3SP       H91       C9        single    1.089     0.010     0.989     0.005     
+3SP       H92       C9        single    1.089     0.010     0.989     0.005     
+3SP       N10       C11       single    1.330     0.020     1.330     0.020     
+3SP       HN10      N10       single    1.016     0.010     0.899     0.007     
+3SP       O12       C11       double    1.220     0.020     1.220     0.020     
+3SP       C11       C13       single    1.500     0.020     1.500     0.020     
+3SP       C13       C14       single    1.524     0.020     1.524     0.020     
+3SP       C13       N17       single    1.455     0.020     1.455     0.020     
+3SP       H13       C13       single    1.089     0.010     0.989     0.005     
+3SP       C14       C15       single    1.524     0.020     1.524     0.020     
+3SP       H141      C14       single    1.089     0.010     0.989     0.005     
+3SP       H142      C14       single    1.089     0.010     0.989     0.005     
+3SP       C15       C16       single    1.524     0.020     1.524     0.020     
+3SP       H151      C15       single    1.089     0.010     0.989     0.005     
+3SP       H152      C15       single    1.089     0.010     0.989     0.005     
+3SP       C16       N17       single    1.455     0.020     1.455     0.020     
+3SP       H161      C16       single    1.089     0.010     0.989     0.005     
+3SP       H162      C16       single    1.089     0.010     0.989     0.005     
+3SP       N17       C18       single    1.330     0.020     1.330     0.020     
+3SP       O19       C18       double    1.220     0.020     1.220     0.020     
+3SP       C18       C20       single    1.500     0.020     1.500     0.020     
+3SP       C20       N21       single    1.450     0.020     1.450     0.020     
+3SP       C24       C20       single    1.524     0.020     1.524     0.020     
+3SP       H20       C20       single    1.089     0.010     0.989     0.005     
+3SP       N21       C22       single    1.450     0.020     1.450     0.020     
+3SP       HN21      N21       single    1.036     0.016     0.914     0.007     
+3SP       C22       C23       single    1.510     0.020     1.510     0.020     
+3SP       H221      C22       single    1.089     0.010     0.989     0.005     
+3SP       H222      C22       single    1.089     0.010     0.989     0.005     
+3SP       O31       C23       deloc     1.250     0.020     1.250     0.020     
+3SP       C23       O32       deloc     1.250     0.020     1.250     0.020     
+3SP       C25       C24       single    1.524     0.020     1.524     0.020     
+3SP       H241      C24       single    1.089     0.010     0.989     0.005     
+3SP       H242      C24       single    1.089     0.010     0.989     0.005     
+3SP       C25       C26       single    1.524     0.020     1.524     0.020     
+3SP       C30       C25       single    1.524     0.020     1.524     0.020     
+3SP       H25       C25       single    1.089     0.010     0.989     0.005     
+3SP       C26       C27       single    1.524     0.020     1.524     0.020     
+3SP       H261      C26       single    1.089     0.010     0.989     0.005     
+3SP       H262      C26       single    1.089     0.010     0.989     0.005     
+3SP       C27       C28       single    1.524     0.020     1.524     0.020     
+3SP       H271      C27       single    1.089     0.010     0.989     0.005     
+3SP       H272      C27       single    1.089     0.010     0.989     0.005     
+3SP       C28       C29       single    1.524     0.020     1.524     0.020     
+3SP       H281      C28       single    1.089     0.010     0.989     0.005     
+3SP       H282      C28       single    1.089     0.010     0.989     0.005     
+3SP       C29       C30       single    1.524     0.020     1.524     0.020     
+3SP       H291      C29       single    1.089     0.010     0.989     0.005     
+3SP       H292      C29       single    1.089     0.010     0.989     0.005     
+3SP       H301      C30       single    1.089     0.010     0.989     0.005     
+3SP       H302      C30       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 3SP      O32    C23    O31     123.000    3.000
+ 3SP      O32    C23    C22     118.500    3.000
+ 3SP      O31    C23    C22     118.500    3.000
+ 3SP      C23    C22    H221    109.470    3.000
+ 3SP      C23    C22    H222    109.470    3.000
+ 3SP      C23    C22    N21     111.600    3.000
+ 3SP      H221   C22    H222    107.900    3.000
+ 3SP      H221   C22    N21     109.470    3.000
+ 3SP      H222   C22    N21     109.470    3.000
+ 3SP      C22    N21    HN21    118.500    3.000
+ 3SP      C22    N21    C20     120.000    3.000
+ 3SP      HN21   N21    C20     118.500    3.000
+ 3SP      N21    C20    H20     108.550    3.000
+ 3SP      N21    C20    C24     110.000    3.000
+ 3SP      N21    C20    C18     111.600    3.000
+ 3SP      H20    C20    C24     108.340    3.000
+ 3SP      H20    C20    C18     108.810    3.000
+ 3SP      C24    C20    C18     109.470    3.000
+ 3SP      C20    C24    H241    109.470    3.000
+ 3SP      C20    C24    H242    109.470    3.000
+ 3SP      C20    C24    C25     111.000    3.000
+ 3SP      H241   C24    H242    107.900    3.000
+ 3SP      H241   C24    C25     109.470    3.000
+ 3SP      H242   C24    C25     109.470    3.000
+ 3SP      C24    C25    H25     108.340    3.000
+ 3SP      C24    C25    C30     109.470    3.000
+ 3SP      C24    C25    C26     109.470    3.000
+ 3SP      H25    C25    C30     108.340    3.000
+ 3SP      H25    C25    C26     108.340    3.000
+ 3SP      C30    C25    C26     109.470    3.000
+ 3SP      C25    C30    H301    109.470    3.000
+ 3SP      C25    C30    H302    109.470    3.000
+ 3SP      C25    C30    C29     111.000    3.000
+ 3SP      H301   C30    H302    107.900    3.000
+ 3SP      H301   C30    C29     109.470    3.000
+ 3SP      H302   C30    C29     109.470    3.000
+ 3SP      C30    C29    H291    109.470    3.000
+ 3SP      C30    C29    H292    109.470    3.000
+ 3SP      C30    C29    C28     111.000    3.000
+ 3SP      H291   C29    H292    107.900    3.000
+ 3SP      H291   C29    C28     109.470    3.000
+ 3SP      H292   C29    C28     109.470    3.000
+ 3SP      C29    C28    H281    109.470    3.000
+ 3SP      C29    C28    H282    109.470    3.000
+ 3SP      C29    C28    C27     111.000    3.000
+ 3SP      H281   C28    H282    107.900    3.000
+ 3SP      H281   C28    C27     109.470    3.000
+ 3SP      H282   C28    C27     109.470    3.000
+ 3SP      C28    C27    H271    109.470    3.000
+ 3SP      C28    C27    H272    109.470    3.000
+ 3SP      C28    C27    C26     111.000    3.000
+ 3SP      H271   C27    H272    107.900    3.000
+ 3SP      H271   C27    C26     109.470    3.000
+ 3SP      H272   C27    C26     109.470    3.000
+ 3SP      C27    C26    H262    109.470    3.000
+ 3SP      C27    C26    H261    109.470    3.000
+ 3SP      C27    C26    C25     111.000    3.000
+ 3SP      H262   C26    H261    107.900    3.000
+ 3SP      H262   C26    C25     109.470    3.000
+ 3SP      H261   C26    C25     109.470    3.000
+ 3SP      C20    C18    O19     120.500    3.000
+ 3SP      C20    C18    N17     116.500    3.000
+ 3SP      O19    C18    N17     123.000    3.000
+ 3SP      C18    N17    C16     127.000    3.000
+ 3SP      C18    N17    C13     121.000    3.000
+ 3SP      C16    N17    C13     112.000    3.000
+ 3SP      N17    C16    H161    109.470    3.000
+ 3SP      N17    C16    H162    109.470    3.000
+ 3SP      N17    C16    C15     105.000    3.000
+ 3SP      H161   C16    H162    107.900    3.000
+ 3SP      H161   C16    C15     109.470    3.000
+ 3SP      H162   C16    C15     109.470    3.000
+ 3SP      C16    C15    H151    109.470    3.000
+ 3SP      C16    C15    H152    109.470    3.000
+ 3SP      C16    C15    C14     111.000    3.000
+ 3SP      H151   C15    H152    107.900    3.000
+ 3SP      H151   C15    C14     109.470    3.000
+ 3SP      H152   C15    C14     109.470    3.000
+ 3SP      C15    C14    H142    109.470    3.000
+ 3SP      C15    C14    H141    109.470    3.000
+ 3SP      C15    C14    C13     111.000    3.000
+ 3SP      H142   C14    H141    107.900    3.000
+ 3SP      H142   C14    C13     109.470    3.000
+ 3SP      H141   C14    C13     109.470    3.000
+ 3SP      N17    C13    H13     109.470    3.000
+ 3SP      N17    C13    C11     111.600    3.000
+ 3SP      N17    C13    C14     105.000    3.000
+ 3SP      H13    C13    C11     108.810    3.000
+ 3SP      H13    C13    C14     108.340    3.000
+ 3SP      C11    C13    C14     109.470    3.000
+ 3SP      C13    C11    O12     120.500    3.000
+ 3SP      C13    C11    N10     116.500    3.000
+ 3SP      O12    C11    N10     123.000    3.000
+ 3SP      C11    N10    HN10    120.000    3.000
+ 3SP      C11    N10    C9      121.500    3.000
+ 3SP      HN10   N10    C9      118.500    3.000
+ 3SP      N10    C9     H91     109.470    3.000
+ 3SP      N10    C9     H92     109.470    3.000
+ 3SP      N10    C9     C4      109.500    3.000
+ 3SP      H91    C9     H92     107.900    3.000
+ 3SP      H91    C9     C4      109.470    3.000
+ 3SP      H92    C9     C4      109.470    3.000
+ 3SP      C9     C4     C3      126.000    3.000
+ 3SP      C9     C4     S5      108.000    3.000
+ 3SP      C3     C4     S5      108.000    3.000
+ 3SP      C4     C3     H3      126.000    3.000
+ 3SP      C4     C3     C2      108.000    3.000
+ 3SP      H3     C3     C2      126.000    3.000
+ 3SP      C3     C2     H2      126.000    3.000
+ 3SP      C3     C2     C1      108.000    3.000
+ 3SP      H2     C2     C1      126.000    3.000
+ 3SP      C4     S5     C1       98.663    3.000
+ 3SP      S5     C1     C6      108.000    3.000
+ 3SP      S5     C1     C2      108.000    3.000
+ 3SP      C6     C1     C2      126.000    3.000
+ 3SP      C1     C6     N8      120.000    3.000
+ 3SP      C1     C6     N7      120.000    3.000
+ 3SP      N8     C6     N7      120.000    3.000
+ 3SP      C6     N8     HN82    120.000    3.000
+ 3SP      C6     N8     HN81    120.000    3.000
+ 3SP      HN82   N8     HN81    120.000    3.000
+ 3SP      C6     N7     HN7     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 3SP      var_1    O32    C23    C22    N21        0.040   20.000   3
+ 3SP      var_2    C23    C22    N21    C20     -173.851   20.000   3
+ 3SP      var_3    C22    N21    C20    C18      -67.953   20.000   3
+ 3SP      var_4    N21    C20    C24    C25       66.997   20.000   3
+ 3SP      var_5    C20    C24    C25    C30      -66.968   20.000   3
+ 3SP      var_6    C24    C25    C26    C27      180.000   20.000   3
+ 3SP      var_7    C24    C25    C30    C29      180.000   20.000   3
+ 3SP      var_8    C25    C30    C29    C28       60.000   20.000   3
+ 3SP      var_9    C30    C29    C28    C27      -60.000   20.000   3
+ 3SP      var_10   C29    C28    C27    C26       60.000   20.000   3
+ 3SP      var_11   C28    C27    C26    C25      -60.000   20.000   3
+ 3SP      var_12   N21    C20    C18    N17     -161.925   20.000   3
+ 3SP      CONST_1  C20    C18    N17    C13      180.000    0.000   0
+ 3SP      var_13   C18    N17    C16    C15      180.000   20.000   1
+ 3SP      var_14   N17    C16    C15    C14      -30.000   20.000   3
+ 3SP      var_15   C16    C15    C14    C13       30.000   20.000   3
+ 3SP      var_16   C18    N17    C13    C11      -30.000   20.000   3
+ 3SP      var_17   N17    C13    C14    C15      -30.000   20.000   3
+ 3SP      var_18   N17    C13    C11    N10      149.090   20.000   3
+ 3SP      CONST_2  C13    C11    N10    C9       180.000    0.000   0
+ 3SP      var_19   C11    N10    C9     C4      -179.993   20.000   3
+ 3SP      var_20   N10    C9     C4     S5       -89.960   20.000   2
+ 3SP      CONST_3  C9     C4     C3     C2       180.000    0.000   0
+ 3SP      CONST_4  C4     C3     C2     C1         0.000    0.000   0
+ 3SP      CONST_5  C9     C4     S5     C1       180.000    0.000   0
+ 3SP      CONST_6  C4     S5     C1     C6       180.000    0.000   0
+ 3SP      CONST_7  S5     C1     C2     C3         0.000    0.000   0
+ 3SP      var_21   S5     C1     C6     N7      -179.937   20.000   1
+ 3SP      CONST_8  C1     C6     N8     HN81     180.000    0.000   0
+ 3SP      CONST_9  C1     C6     N7     HN7        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 3SP      chir_01  C13    C11    C14    N17       positiv
+ 3SP      chir_02  C20    C18    N21    C24       positiv
+ 3SP      chir_03  C25    C24    C26    C30       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 3SP      plan-1    C1        0.020
+ 3SP      plan-1    C2        0.020
+ 3SP      plan-1    S5        0.020
+ 3SP      plan-1    C6        0.020
+ 3SP      plan-1    C3        0.020
+ 3SP      plan-1    C4        0.020
+ 3SP      plan-1    H2        0.020
+ 3SP      plan-1    H3        0.020
+ 3SP      plan-1    C9        0.020
+ 3SP      plan-2    C6        0.020
+ 3SP      plan-2    C1        0.020
+ 3SP      plan-2    N7        0.020
+ 3SP      plan-2    N8        0.020
+ 3SP      plan-2    HN7       0.020
+ 3SP      plan-2    HN82      0.020
+ 3SP      plan-2    HN81      0.020
+ 3SP      plan-3    N8        0.020
+ 3SP      plan-3    C6        0.020
+ 3SP      plan-3    HN81      0.020
+ 3SP      plan-3    HN82      0.020
+ 3SP      plan-4    N10       0.020
+ 3SP      plan-4    C9        0.020
+ 3SP      plan-4    C11       0.020
+ 3SP      plan-4    HN10      0.020
+ 3SP      plan-5    C11       0.020
+ 3SP      plan-5    N10       0.020
+ 3SP      plan-5    O12       0.020
+ 3SP      plan-5    C13       0.020
+ 3SP      plan-5    HN10      0.020
+ 3SP      plan-6    N17       0.020
+ 3SP      plan-6    C13       0.020
+ 3SP      plan-6    C16       0.020
+ 3SP      plan-6    C18       0.020
+ 3SP      plan-7    C18       0.020
+ 3SP      plan-7    N17       0.020
+ 3SP      plan-7    O19       0.020
+ 3SP      plan-7    C20       0.020
+ 3SP      plan-8    N21       0.020
+ 3SP      plan-8    C20       0.020
+ 3SP      plan-8    C22       0.020
+ 3SP      plan-8    HN21      0.020
+ 3SP      plan-9    C23       0.020
+ 3SP      plan-9    C22       0.020
+ 3SP      plan-9    O31       0.020
+ 3SP      plan-9    O32       0.020
+# ------------------------------------------------------

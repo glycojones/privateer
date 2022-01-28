@@ -1,0 +1,269 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MNQ      MNQ 'M-NITROPHENYL AMINOETHYLDIPHOSPHATE ' non-polymer        34  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MNQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MNQ           O3B    O    O         0.000     43.980   53.888   18.053
+ MNQ           N3     N    N         1.000     43.057   54.543   18.751
+ MNQ           O3A    O    O        -1.000     41.841   54.354   18.477
+ MNQ           C3     C    CR6       0.000     43.414   55.383   19.853
+ MNQ           C4     C    CR16      0.000     44.731   55.770   20.280
+ MNQ           H4     H    H         0.000     45.607   55.455   19.726
+ MNQ           C5     C    CR16      0.000     44.853   56.530   21.379
+ MNQ           H5     H    H         0.000     45.833   56.679   21.816
+ MNQ           C6     C    CR16      0.000     43.684   57.164   22.001
+ MNQ           H6     H    H         0.000     43.788   57.924   22.765
+ MNQ           C2     C    CR16      0.000     42.312   55.909   20.457
+ MNQ           H2     H    H         0.000     41.333   55.671   20.060
+ MNQ           C1     C    CR6       0.000     42.402   56.727   21.547
+ MNQ           NA3    N    NH1       0.000     41.155   57.221   22.001
+ MNQ           HNA1   H    H         0.000     40.985   57.913   22.717
+ MNQ           CA2    C    CH2       0.000     40.138   56.478   21.170
+ MNQ           HA21   H    H         0.000     40.324   55.417   21.348
+ MNQ           HA22   H    H         0.000     40.369   56.717   20.130
+ MNQ           CA1    C    CH2       0.000     38.692   56.790   21.449
+ MNQ           HA11   H    H         0.000     38.593   57.775   21.909
+ MNQ           HA12   H    H         0.000     38.256   56.037   22.109
+ MNQ           OE2    O    O2        0.000     38.014   56.778   20.201
+ MNQ           PA     P    P         0.000     36.668   57.540   20.019
+ MNQ           OA1    O    OP       -0.500     36.267   57.290   18.613
+ MNQ           OA2    O    OP       -0.500     36.711   58.978   20.381
+ MNQ           OA3    O    O2        0.000     35.683   56.785   20.991
+ MNQ           PB     P    P         0.000     34.075   56.799   21.034
+ MNQ           OB1    O    OP       -0.500     33.561   55.416   20.885
+ MNQ           OB2    O    OP       -0.500     33.628   57.774   20.010
+ MNQ           OB3    O    O2        0.000     33.744   57.405   22.488
+ MNQ           BE     BE   BE       -1.000     32.582   58.344   23.079
+ MNQ           F1     F    F         0.000     31.343   57.502   23.326
+ MNQ           F2     F    F         0.000     32.265   59.375   21.971
+ MNQ           F3     F    F         0.000     33.200   59.052   24.339
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MNQ      O3B    n/a    N3     START
+ MNQ      N3     O3B    C3     .
+ MNQ      O3A    N3     .      .
+ MNQ      C3     N3     C2     .
+ MNQ      C4     C3     C5     .
+ MNQ      H4     C4     .      .
+ MNQ      C5     C4     C6     .
+ MNQ      H5     C5     .      .
+ MNQ      C6     C5     H6     .
+ MNQ      H6     C6     .      .
+ MNQ      C2     C3     C1     .
+ MNQ      H2     C2     .      .
+ MNQ      C1     C2     NA3    .
+ MNQ      NA3    C1     CA2    .
+ MNQ      HNA1   NA3    .      .
+ MNQ      CA2    NA3    CA1    .
+ MNQ      HA21   CA2    .      .
+ MNQ      HA22   CA2    .      .
+ MNQ      CA1    CA2    OE2    .
+ MNQ      HA11   CA1    .      .
+ MNQ      HA12   CA1    .      .
+ MNQ      OE2    CA1    PA     .
+ MNQ      PA     OE2    OA3    .
+ MNQ      OA1    PA     .      .
+ MNQ      OA2    PA     .      .
+ MNQ      OA3    PA     PB     .
+ MNQ      PB     OA3    OB3    .
+ MNQ      OB1    PB     .      .
+ MNQ      OB2    PB     .      .
+ MNQ      OB3    PB     BE     .
+ MNQ      BE     OB3    F3     .
+ MNQ      F1     BE     .      .
+ MNQ      F2     BE     .      .
+ MNQ      F3     BE     .      END
+ MNQ      C1     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MNQ       F1        BE        single    1.765     0.020     1.765     0.020     
+MNQ       F2        BE        single    1.765     0.020     1.765     0.020     
+MNQ       F3        BE        single    1.765     0.020     1.765     0.020     
+MNQ       BE        OB3       single    1.750     0.020     1.750     0.020     
+MNQ       OB1       PB        deloc     1.510     0.020     1.510     0.020     
+MNQ       OB2       PB        deloc     1.510     0.020     1.510     0.020     
+MNQ       OB3       PB        single    1.610     0.020     1.610     0.020     
+MNQ       PB        OA3       single    1.610     0.020     1.610     0.020     
+MNQ       OA3       PA        single    1.610     0.020     1.610     0.020     
+MNQ       OA1       PA        deloc     1.510     0.020     1.510     0.020     
+MNQ       OA2       PA        deloc     1.510     0.020     1.510     0.020     
+MNQ       PA        OE2       single    1.610     0.020     1.610     0.020     
+MNQ       OE2       CA1       single    1.426     0.020     1.426     0.020     
+MNQ       CA2       NA3       single    1.450     0.020     1.450     0.020     
+MNQ       NA3       C1        single    1.350     0.020     1.350     0.020     
+MNQ       HNA1      NA3       single    1.016     0.010     0.899     0.007     
+MNQ       CA1       CA2       single    1.524     0.020     1.524     0.020     
+MNQ       HA21      CA2       single    1.089     0.010     0.989     0.005     
+MNQ       HA22      CA2       single    1.089     0.010     0.989     0.005     
+MNQ       HA11      CA1       single    1.089     0.010     0.989     0.005     
+MNQ       HA12      CA1       single    1.089     0.010     0.989     0.005     
+MNQ       C1        C6        double    1.390     0.020     1.390     0.020     
+MNQ       C1        C2        single    1.390     0.020     1.390     0.020     
+MNQ       C6        C5        single    1.390     0.020     1.390     0.020     
+MNQ       H6        C6        single    1.082     0.013     0.975     0.010     
+MNQ       C5        C4        double    1.390     0.020     1.390     0.020     
+MNQ       H5        C5        single    1.082     0.013     0.975     0.010     
+MNQ       C4        C3        single    1.390     0.020     1.390     0.020     
+MNQ       H4        C4        single    1.082     0.013     0.975     0.010     
+MNQ       C2        C3        double    1.390     0.020     1.390     0.020     
+MNQ       C3        N3        single    1.400     0.020     1.400     0.020     
+MNQ       H2        C2        single    1.082     0.013     0.975     0.010     
+MNQ       O3A       N3        single    1.400     0.020     1.400     0.020     
+MNQ       N3        O3B       double    1.220     0.020     1.220     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MNQ      O3B    N3     O3A     120.000    3.000
+ MNQ      O3B    N3     C3      120.000    3.000
+ MNQ      O3A    N3     C3      120.000    3.000
+ MNQ      N3     C3     C4      120.000    3.000
+ MNQ      N3     C3     C2      120.000    3.000
+ MNQ      C4     C3     C2      120.000    3.000
+ MNQ      C3     C4     H4      120.000    3.000
+ MNQ      C3     C4     C5      120.000    3.000
+ MNQ      H4     C4     C5      120.000    3.000
+ MNQ      C4     C5     H5      120.000    3.000
+ MNQ      C4     C5     C6      120.000    3.000
+ MNQ      H5     C5     C6      120.000    3.000
+ MNQ      C5     C6     H6      120.000    3.000
+ MNQ      C5     C6     C1      120.000    3.000
+ MNQ      H6     C6     C1      120.000    3.000
+ MNQ      C3     C2     H2      120.000    3.000
+ MNQ      C3     C2     C1      120.000    3.000
+ MNQ      H2     C2     C1      120.000    3.000
+ MNQ      C2     C1     NA3     120.000    3.000
+ MNQ      C2     C1     C6      120.000    3.000
+ MNQ      NA3    C1     C6      120.000    3.000
+ MNQ      C1     NA3    HNA1    120.000    3.000
+ MNQ      C1     NA3    CA2     120.000    3.000
+ MNQ      HNA1   NA3    CA2     118.500    3.000
+ MNQ      NA3    CA2    HA21    109.470    3.000
+ MNQ      NA3    CA2    HA22    109.470    3.000
+ MNQ      NA3    CA2    CA1     112.000    3.000
+ MNQ      HA21   CA2    HA22    107.900    3.000
+ MNQ      HA21   CA2    CA1     109.470    3.000
+ MNQ      HA22   CA2    CA1     109.470    3.000
+ MNQ      CA2    CA1    HA11    109.470    3.000
+ MNQ      CA2    CA1    HA12    109.470    3.000
+ MNQ      CA2    CA1    OE2     109.470    3.000
+ MNQ      HA11   CA1    HA12    107.900    3.000
+ MNQ      HA11   CA1    OE2     109.470    3.000
+ MNQ      HA12   CA1    OE2     109.470    3.000
+ MNQ      CA1    OE2    PA      120.500    3.000
+ MNQ      OE2    PA     OA1     108.200    3.000
+ MNQ      OE2    PA     OA2     108.200    3.000
+ MNQ      OE2    PA     OA3     102.600    3.000
+ MNQ      OA1    PA     OA2     119.900    3.000
+ MNQ      OA1    PA     OA3     108.200    3.000
+ MNQ      OA2    PA     OA3     108.200    3.000
+ MNQ      PA     OA3    PB      120.500    3.000
+ MNQ      OA3    PB     OB1     108.200    3.000
+ MNQ      OA3    PB     OB2     108.200    3.000
+ MNQ      OA3    PB     OB3     102.600    3.000
+ MNQ      OB1    PB     OB2     119.900    3.000
+ MNQ      OB1    PB     OB3     108.200    3.000
+ MNQ      OB2    PB     OB3     108.200    3.000
+ MNQ      PB     OB3    BE      120.000    3.000
+ MNQ      OB3    BE     F1      120.000    3.000
+ MNQ      OB3    BE     F2      120.000    3.000
+ MNQ      OB3    BE     F3      120.000    3.000
+ MNQ      F1     BE     F2      120.000    3.000
+ MNQ      F1     BE     F3      120.000    3.000
+ MNQ      F2     BE     F3      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MNQ      var_1    O3B    N3     C3     C2      -177.419   20.000   1
+ MNQ      CONST_1  N3     C3     C4     C5       180.000    0.000   0
+ MNQ      CONST_2  C3     C4     C5     C6         0.000    0.000   0
+ MNQ      CONST_3  C4     C5     C6     C1         0.000    0.000   0
+ MNQ      CONST_4  N3     C3     C2     C1       180.000    0.000   0
+ MNQ      CONST_5  C3     C2     C1     NA3      180.000    0.000   0
+ MNQ      CONST_6  C2     C1     C6     C5         0.000    0.000   0
+ MNQ      var_2    C2     C1     NA3    CA2        7.237   20.000   1
+ MNQ      var_3    C1     NA3    CA2    CA1      179.239   20.000   3
+ MNQ      var_4    NA3    CA2    CA1    OE2      142.474   20.000   3
+ MNQ      var_5    CA2    CA1    OE2    PA      -157.626   20.000   1
+ MNQ      var_6    CA1    OE2    PA     OA3      -64.569   20.000   1
+ MNQ      var_7    OE2    PA     OA3    PB      -162.844   20.000   1
+ MNQ      var_8    PA     OA3    PB     OB3     -118.416   20.000   1
+ MNQ      var_9    OA3    PB     OB3    BE       145.945   20.000   1
+ MNQ      var_10   PB     OB3    BE     F3      -154.859   20.000   1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MNQ      plan-1    NA3       0.020
+ MNQ      plan-1    CA2       0.020
+ MNQ      plan-1    C1        0.020
+ MNQ      plan-1    HNA1      0.020
+ MNQ      plan-2    C1        0.020
+ MNQ      plan-2    NA3       0.020
+ MNQ      plan-2    C6        0.020
+ MNQ      plan-2    C2        0.020
+ MNQ      plan-2    C5        0.020
+ MNQ      plan-2    C4        0.020
+ MNQ      plan-2    C3        0.020
+ MNQ      plan-2    H6        0.020
+ MNQ      plan-2    H5        0.020
+ MNQ      plan-2    H4        0.020
+ MNQ      plan-2    N3        0.020
+ MNQ      plan-2    H2        0.020
+ MNQ      plan-2    HNA1      0.020
+ MNQ      plan-3    N3        0.020
+ MNQ      plan-3    C3        0.020
+ MNQ      plan-3    O3A       0.020
+ MNQ      plan-3    O3B       0.020
+# ------------------------------------------------------

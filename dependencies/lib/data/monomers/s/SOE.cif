@@ -1,0 +1,216 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SOE      SOE 'alpha-L-sorbopyranose               ' non-polymer        24  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SOE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SOE    C1     C   CH2       0      -2.414      -0.294       0.571
+SOE    O1     O    O2   0.000      -3.400       0.641       0.175
+SOE    C2     C    CT   0.000      -1.051       0.039      -0.049
+SOE    O2     O    O2   0.000      -1.138       0.087      -1.463
+SOE    C3     C   CH2   0.000       0.004      -1.028       0.353
+SOE    O3     O    O2   0.000      -0.365      -2.307      -0.172
+SOE    C4     C   CH2   0.000       1.381      -0.595      -0.153
+SOE    O4     O    O2   0.000       2.401      -1.533       0.269
+SOE    C5     C   CH2   0.000       1.719       0.801       0.357
+SOE    O5     O    O2   0.000       2.971       1.251      -0.194
+SOE    C6     C   CH2   0.000       0.608       1.764      -0.006
+SOE    O6     O    O2   0.000      -0.657       1.314       0.472
+SOE    H1     H     H   0.000      -2.342      -0.293       1.529
+SOE   H1A     H     H   0.000      -2.696      -1.194       0.287
+SOE   HO1     H     H   0.000      -4.160       0.459       0.520
+SOE    H3     H     H   0.000       0.041      -1.083       1.397
+SOE   HO3     H     H   0.000       0.247      -2.900       0.045
+SOE    H4     H     H   0.000       1.344      -0.573      -1.140
+SOE   HO4     H     H   0.000       3.191      -1.329      -0.039
+SOE    H5     H     H   0.000       1.793       0.764       1.333
+SOE   HO5     H     H   0.000       3.214       2.058       0.102
+SOE    H6     H     H   0.000       0.823       2.674       0.352
+SOE   H6A     H     H   0.000       0.557       1.838      -0.990
+SOE   HO2     H     H   0.000      -1.749       0.696      -1.744
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SOE       C1        O1        SING      1.413     0.016     1.413     0.016     
+SOE       C1        C2        SING      1.532     0.019     1.532     0.019     
+SOE       C2        O2        SING      1.406     0.015     1.406     0.015     
+SOE       C2        C3        SING      1.524     0.020     1.524     0.020     
+SOE       C2        O6        SING      1.426     0.010     1.426     0.010     
+SOE       C3        O3        SING      1.422     0.010     1.422     0.010     
+SOE       C3        C4        SING      1.524     0.010     1.524     0.010     
+SOE       C4        O4        SING      1.427     0.010     1.427     0.010     
+SOE       C4        C5        SING      1.519     0.010     1.519     0.010     
+SOE       C5        O5        SING      1.428     0.010     1.428     0.010     
+SOE       C5        C6        SING      1.516     0.010     1.516     0.010     
+SOE       C6        O6        SING      1.437     0.010     1.437     0.010     
+SOE       C1        H1        SING      1.089     0.010     0.974     0.010     
+SOE       C1        H1A       SING      1.089     0.010     0.974     0.010     
+SOE       O1        HO1       SING      0.970     0.012     0.850     0.020     
+SOE       C3        H3        SING      1.089     0.010     0.993     0.017     
+SOE       O3        HO3       SING      0.970     0.012     0.854     0.020     
+SOE       C4        H4        SING      1.089     0.010     0.989     0.016     
+SOE       O4        HO4       SING      0.970     0.012     0.854     0.020     
+SOE       C5        H5        SING      1.089     0.010     0.986     0.011     
+SOE       O5        HO5       SING      0.970     0.012     0.854     0.020     
+SOE       C6        H6        SING      1.089     0.010     0.978     0.013     
+SOE       C6        H6A       SING      1.089     0.010     0.978     0.013     
+SOE       O2        HO2       SING      0.970     0.012     0.836     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SOE    O1    C1      C2   109.584    2.83
+SOE    O1    C1      H1   109.272    0.92
+SOE    O1    C1     H1A   109.272    0.92
+SOE    C2    C1      H1   109.387    0.77
+SOE    C2    C1     H1A   109.387    0.77
+SOE    H1    C1     H1A   107.885    0.28
+SOE    C1    O1     HO1   108.200    3.00
+SOE    C1    C2      O2   109.424    3.00
+SOE    C1    C2      C3   110.884    2.54
+SOE    C1    C2      O6   107.164    2.52
+SOE    O2    C2      C3   106.898    0.87
+SOE    O2    C2      O6   110.703    1.12
+SOE    C3    C2      O6   109.041    1.05
+SOE    C2    O2     HO2   108.873    2.49
+SOE    C2    C3      O3   109.188    1.17
+SOE    C2    C3      C4   110.260    0.75
+SOE    C2    C3      H3   108.602    0.96
+SOE    O3    C3      C4   110.287    1.45
+SOE    O3    C3      H3   109.910    1.64
+SOE    C4    C3      H3   108.600    0.95
+SOE    C3    O3     HO3   106.667    2.97
+SOE    C3    C4      O4   109.889    1.42
+SOE    C3    C4      C5   110.753    1.57
+SOE    C3    C4      H4   108.527    0.83
+SOE    O4    C4      C5   110.378    1.78
+SOE    O4    C4      H4   108.787    1.25
+SOE    C5    C4      H4   108.657    0.52
+SOE    C4    O4     HO4   108.943    2.95
+SOE    C4    C5      O5   110.224    1.85
+SOE    C4    C5      C6   109.663    0.63
+SOE    C4    C5      H5   109.116    1.02
+SOE    O5    C5      C6   109.164    1.51
+SOE    O5    C5      H5   109.176    0.83
+SOE    C6    C5      H5   109.167    0.91
+SOE    C5    O5     HO5   108.255    3.00
+SOE    C5    C6      O6   111.612    0.80
+SOE    C5    C6      H6   109.209    0.61
+SOE    C5    C6     H6A   109.209    0.61
+SOE    O6    C6      H6   108.775    1.36
+SOE    O6    C6     H6A   108.775    1.36
+SOE    H6    C6     H6A   108.317    1.04
+SOE    C2    O6      C6   113.361    0.87
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SOE       sp3_sp3_1      O6      C2      C3      C4      60.000   10.00     3
+SOE       sp3_sp3_2      O6      C2      C3      O3     180.000   10.00     3
+SOE       sp3_sp3_3      O6      C2      C3      H3     -60.000   10.00     3
+SOE       sp3_sp3_4      C1      C2      C3      C4     -60.000   10.00     3
+SOE       sp3_sp3_5      C1      C2      C3      O3      60.000   10.00     3
+SOE       sp3_sp3_6      C1      C2      C3      H3     180.000   10.00     3
+SOE       sp3_sp3_7      O2      C2      C3      C4     180.000   10.00     3
+SOE       sp3_sp3_8      O2      C2      C3      O3     -60.000   10.00     3
+SOE       sp3_sp3_9      O2      C2      C3      H3      60.000   10.00     3
+SOE      sp3_sp3_10      C2      C3      C4      C5     -60.000   10.00     3
+SOE      sp3_sp3_11      C2      C3      C4      O4      60.000   10.00     3
+SOE      sp3_sp3_12      C2      C3      C4      H4     180.000   10.00     3
+SOE      sp3_sp3_13      O3      C3      C4      C5     180.000   10.00     3
+SOE      sp3_sp3_14      O3      C3      C4      O4     -60.000   10.00     3
+SOE      sp3_sp3_15      O3      C3      C4      H4      60.000   10.00     3
+SOE      sp3_sp3_16      H3      C3      C4      C5      60.000   10.00     3
+SOE      sp3_sp3_17      H3      C3      C4      O4     180.000   10.00     3
+SOE      sp3_sp3_18      H3      C3      C4      H4     -60.000   10.00     3
+SOE      sp3_sp3_19      C3      C4      C5      C6      60.000   10.00     3
+SOE      sp3_sp3_20      C3      C4      C5      O5     180.000   10.00     3
+SOE      sp3_sp3_21      C3      C4      C5      H5     -60.000   10.00     3
+SOE      sp3_sp3_22      O4      C4      C5      C6     -60.000   10.00     3
+SOE      sp3_sp3_23      O4      C4      C5      O5      60.000   10.00     3
+SOE      sp3_sp3_24      O4      C4      C5      H5     180.000   10.00     3
+SOE      sp3_sp3_25      H4      C4      C5      C6     180.000   10.00     3
+SOE      sp3_sp3_26      H4      C4      C5      O5     -60.000   10.00     3
+SOE      sp3_sp3_27      H4      C4      C5      H5      60.000   10.00     3
+SOE      sp3_sp3_28      C4      C5      C6      O6     -60.000   10.00     3
+SOE      sp3_sp3_29      C4      C5      C6      H6      60.000   10.00     3
+SOE      sp3_sp3_30      C4      C5      C6     H6A     180.000   10.00     3
+SOE      sp3_sp3_31      O5      C5      C6      O6     180.000   10.00     3
+SOE      sp3_sp3_32      O5      C5      C6      H6     -60.000   10.00     3
+SOE      sp3_sp3_33      O5      C5      C6     H6A      60.000   10.00     3
+SOE      sp3_sp3_34      H5      C5      C6      O6      60.000   10.00     3
+SOE      sp3_sp3_35      H5      C5      C6      H6     180.000   10.00     3
+SOE      sp3_sp3_36      H5      C5      C6     H6A     -60.000   10.00     3
+SOE      sp3_sp3_37      C5      C6      O6      C2      60.000   10.00     3
+SOE      sp3_sp3_38      H6      C6      O6      C2     180.000   10.00     3
+SOE      sp3_sp3_39     H6A      C6      O6      C2     -60.000   10.00     3
+SOE      sp3_sp3_40      C2      C1      O1     HO1     180.000   10.00     3
+SOE      sp3_sp3_41      H1      C1      O1     HO1     -60.000   10.00     3
+SOE      sp3_sp3_42     H1A      C1      O1     HO1      60.000   10.00     3
+SOE      sp3_sp3_43      O1      C1      C2      O2     180.000   10.00     3
+SOE      sp3_sp3_44      O1      C1      C2      C3     -60.000   10.00     3
+SOE      sp3_sp3_45      O1      C1      C2      O6      60.000   10.00     3
+SOE      sp3_sp3_46      H1      C1      C2      O2      60.000   10.00     3
+SOE      sp3_sp3_47      H1      C1      C2      C3     180.000   10.00     3
+SOE      sp3_sp3_48      H1      C1      C2      O6     -60.000   10.00     3
+SOE      sp3_sp3_49     H1A      C1      C2      O2     -60.000   10.00     3
+SOE      sp3_sp3_50     H1A      C1      C2      C3      60.000   10.00     3
+SOE      sp3_sp3_51     H1A      C1      C2      O6     180.000   10.00     3
+SOE      sp3_sp3_52      C1      C2      O2     HO2     180.000   10.00     3
+SOE      sp3_sp3_53      C3      C2      O2     HO2     -60.000   10.00     3
+SOE      sp3_sp3_54      O6      C2      O2     HO2      60.000   10.00     3
+SOE      sp3_sp3_55      C3      C2      O6      C6      60.000   10.00     3
+SOE      sp3_sp3_56      C1      C2      O6      C6     180.000   10.00     3
+SOE      sp3_sp3_57      O2      C2      O6      C6     -60.000   10.00     3
+SOE      sp3_sp3_58      C2      C3      O3     HO3     180.000   10.00     3
+SOE      sp3_sp3_59      C4      C3      O3     HO3     -60.000   10.00     3
+SOE      sp3_sp3_60      H3      C3      O3     HO3      60.000   10.00     3
+SOE      sp3_sp3_61      C3      C4      O4     HO4     180.000   10.00     3
+SOE      sp3_sp3_62      C5      C4      O4     HO4     -60.000   10.00     3
+SOE      sp3_sp3_63      H4      C4      O4     HO4      60.000   10.00     3
+SOE      sp3_sp3_64      C4      C5      O5     HO5     180.000   10.00     3
+SOE      sp3_sp3_65      C6      C5      O5     HO5     -60.000   10.00     3
+SOE      sp3_sp3_66      H5      C5      O5     HO5      60.000   10.00     3

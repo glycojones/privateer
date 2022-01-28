@@ -1,0 +1,425 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NBQ     NBQ     "2-HYDROXY-5-({1-[(2-NAPHTHYLOXY)METHYL]-3-OXOPROP-1-ENYL}AMINO)TYROSINE"     peptide     53     31     .
+#
+data_comp_NBQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NBQ     N       N       NT3     1       -2.605      4.006       1.561
+NBQ     CA      C       CH1     0       -2.789      2.531       1.615
+NBQ     CB      C       CH2     0       -2.470      1.901       0.256
+NBQ     CQ1     C       CR6     0       -2.375      0.393       0.278
+NBQ     CQ2     C       CR6     0       -3.465      -0.427      -0.058
+NBQ     OQ2     O       OH1     0       -4.657      0.129       -0.423
+NBQ     CQ3     C       CR16    0       -3.358      -1.814      -0.027
+NBQ     CQ4     C       CR6     0       -2.161      -2.416      0.340
+NBQ     OQ4     O       OH1     0       -2.037      -3.763      0.378
+NBQ     CQ5     C       CR6     0       -1.066      -1.606      0.681
+NBQ     CQ6     C       CR16    0       -1.183      -0.221      0.647
+NBQ     NQ5     N       NH1     0       0.186       -2.158      1.063
+NBQ     CAD     C       C       0       0.975       -3.125      0.545
+NBQ     CAC     C       C1      0       1.521       -4.066      1.394
+NBQ     CAB     C       C1      0       2.105       -5.243      1.076
+NBQ     OAA     O       O       0       1.999       -5.843      0.024
+NBQ     CAE     C       CH2     0       1.265       -3.116      -0.931
+NBQ     OAF     O       O2      0       0.822       -1.904      -1.542
+NBQ     CAG     C       CR6     0       1.503       -0.725      -1.412
+NBQ     CAP     C       CR16    0       0.821       0.325       -2.071
+NBQ     CAO     C       CR16    0       1.328       1.589       -2.055
+NBQ     CAN     C       CR66    0       2.533       1.888       -1.381
+NBQ     CAM     C       CR16    0       3.090       3.202       -1.345
+NBQ     CAI     C       CR66    0       3.220       0.835       -0.711
+NBQ     CAH     C       CR16    0       2.678       -0.478      -0.738
+NBQ     CAJ     C       CR16    0       4.431       1.136       -0.035
+NBQ     CAK     C       CR16    0       4.932       2.404       -0.021
+NBQ     CAL     C       CR16    0       4.255       3.447       -0.683
+NBQ     C       C       C       0       -4.221      2.213       2.063
+NBQ     OXT     O       OC      -1      -4.356      1.491       3.071
+NBQ     O       O       O       0       -5.151      2.697       1.388
+NBQ     H       H       H       0       -2.770      4.368       2.381
+NBQ     H2      H       H       0       -3.179      4.366       0.953
+NBQ     H3      H       H       0       -1.749      4.201       1.317
+NBQ     HA      H       H       0       -2.163      2.161       2.288
+NBQ     HB2     H       H       0       -1.614      2.264       -0.057
+NBQ     HB3     H       H       0       -3.158      2.176       -0.384
+NBQ     HQ2     H       H       0       -4.683      0.177       -1.279
+NBQ     HQ3     H       H       0       -4.099      -2.350      -0.256
+NBQ     HQ4     H       H       0       -2.468      -4.070      1.053
+NBQ     HQ6     H       H       0       -0.440      0.312       0.876
+NBQ     HQ5     H       H       0       0.524       -1.782      1.778
+NBQ     HAC     H       H       0       1.473       -3.846      2.310
+NBQ     HAB     H       H       0       2.659       -5.635      1.759
+NBQ     HAE1    H       H       0       0.811       -3.868      -1.355
+NBQ     HAE2    H       H       0       2.223       -3.227      -1.080
+NBQ     HAP     H       H       0       0.016       0.148       -2.526
+NBQ     HAO     H       H       0       0.866       2.277       -2.501
+NBQ     HAM     H       H       0       2.644       3.908       -1.785
+NBQ     HAH     H       H       0       3.130       -1.175      -0.296
+NBQ     HAJ     H       H       0       4.895       0.447       0.413
+NBQ     HAK     H       H       0       5.739       2.585       0.434
+NBQ     HAL     H       H       0       4.612       4.321       -0.668
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+NBQ      N      n/a    CA     START
+NBQ      H      N      .      .
+NBQ      H2     N      .      .
+NBQ      H3     N      .      .
+NBQ      CA     N      C      .
+NBQ      HA     CA     .      .
+NBQ      CB     CA     CQ1    .
+NBQ      HB2    CB     .      .
+NBQ      HB3    CB     .      .
+NBQ      CQ1    CB     CQ6    .
+NBQ      CQ6    CQ1    CQ5    .
+NBQ      HQ6    CQ6    .      .
+NBQ      CQ5    CQ6    NQ5    .
+NBQ      CQ4    CQ5    CQ3    .
+NBQ      OQ4    CQ4    HQ4    .
+NBQ      HQ4    OQ4    .      .
+NBQ      CQ3    CQ4    CQ2    .
+NBQ      HQ3    CQ3    .      .
+NBQ      CQ2    CQ3    OQ2    .
+NBQ      OQ2    CQ2    HQ2    .
+NBQ      HQ2    OQ2    .      .
+NBQ      NQ5    CQ5    CAD    .
+NBQ      HQ5    NQ5    .      .
+NBQ      CAD    NQ5    CAE    .
+NBQ      CAC    CAD    CAB    .
+NBQ      HAC    CAC    .      .
+NBQ      CAB    CAC    OAA    .
+NBQ      HAB    CAB    .      .
+NBQ      OAA    CAB    .      .
+NBQ      CAE    CAD    OAF    .
+NBQ      HAE1   CAE    .      .
+NBQ      HAE2   CAE    .      .
+NBQ      OAF    CAE    CAG    .
+NBQ      CAG    OAF    CAH    .
+NBQ      CAH    CAG    CAI    .
+NBQ      HAH    CAH    .      .
+NBQ      CAI    CAH    CAJ    .
+NBQ      CAN    CAI    CAO    .
+NBQ      CAO    CAN    CAP    .
+NBQ      HAO    CAO    .      .
+NBQ      CAP    CAO    HAP    .
+NBQ      HAP    CAP    .      .
+NBQ      CAJ    CAI    CAK    .
+NBQ      HAJ    CAJ    .      .
+NBQ      CAK    CAJ    CAL    .
+NBQ      HAK    CAK    .      .
+NBQ      CAL    CAK    CAM    .
+NBQ      HAL    CAL    .      .
+NBQ      CAM    CAL    HAM    .
+NBQ      HAM    CAM    .      .
+NBQ      C      CA     .      END
+NBQ      OXT    C      .      .
+NBQ      O      C      .      .
+NBQ      CQ1    CQ2    .    ADD
+NBQ      CAG    CAP    .    ADD
+NBQ      CAN    CAM    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NBQ       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+NBQ       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+NBQ       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+NBQ       CB        CQ1       SINGLE    n         1.509     0.010     1.509     0.010     
+NBQ       CQ1       CQ2       DOUBLE    y         1.398     0.010     1.398     0.010     
+NBQ       CQ1       CQ6       SINGLE    y         1.388     0.010     1.388     0.010     
+NBQ       CQ2       OQ2       SINGLE    n         1.364     0.013     1.364     0.013     
+NBQ       CQ2       CQ3       SINGLE    y         1.387     0.010     1.387     0.010     
+NBQ       CQ3       CQ4       DOUBLE    y         1.385     0.011     1.385     0.011     
+NBQ       CQ4       OQ4       SINGLE    n         1.353     0.010     1.353     0.010     
+NBQ       CQ4       CQ5       SINGLE    y         1.399     0.010     1.399     0.010     
+NBQ       CQ5       CQ6       DOUBLE    y         1.388     0.010     1.388     0.010     
+NBQ       CQ5       NQ5       SINGLE    n         1.417     0.011     1.417     0.011     
+NBQ       NQ5       CAD       SINGLE    n         1.343     0.012     1.343     0.012     
+NBQ       CAD       CAC       DOUBLE    n         1.365     0.017     1.365     0.017     
+NBQ       CAD       CAE       SINGLE    n         1.496     0.010     1.496     0.010     
+NBQ       CAC       CAB       SINGLE    n         1.340     0.020     1.340     0.020     
+NBQ       CAB       OAA       DOUBLE    n         1.215     0.011     1.215     0.011     
+NBQ       CAE       OAF       SINGLE    n         1.423     0.011     1.423     0.011     
+NBQ       OAF       CAG       SINGLE    n         1.363     0.010     1.363     0.010     
+NBQ       CAG       CAP       DOUBLE    y         1.410     0.011     1.410     0.011     
+NBQ       CAG       CAH       SINGLE    y         1.370     0.010     1.370     0.010     
+NBQ       CAP       CAO       SINGLE    y         1.359     0.010     1.359     0.010     
+NBQ       CAO       CAN       DOUBLE    y         1.411     0.010     1.411     0.010     
+NBQ       CAN       CAM       SINGLE    y         1.421     0.016     1.421     0.016     
+NBQ       CAN       CAI       SINGLE    y         1.418     0.011     1.418     0.011     
+NBQ       CAM       CAL       DOUBLE    y         1.358     0.012     1.358     0.012     
+NBQ       CAI       CAH       DOUBLE    y         1.417     0.010     1.417     0.010     
+NBQ       CAI       CAJ       SINGLE    y         1.415     0.011     1.415     0.011     
+NBQ       CAJ       CAK       DOUBLE    y         1.358     0.012     1.358     0.012     
+NBQ       CAK       CAL       SINGLE    y         1.402     0.013     1.402     0.013     
+NBQ       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+NBQ       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+NBQ       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+NBQ       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+NBQ       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+NBQ       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+NBQ       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+NBQ       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+NBQ       OQ2       HQ2       SINGLE    n         0.970     0.012     0.858     0.020     
+NBQ       CQ3       HQ3       SINGLE    n         1.082     0.013     0.943     0.018     
+NBQ       OQ4       HQ4       SINGLE    n         0.970     0.012     0.858     0.020     
+NBQ       CQ6       HQ6       SINGLE    n         1.082     0.013     0.942     0.014     
+NBQ       NQ5       HQ5       SINGLE    n         1.016     0.010     0.874     0.020     
+NBQ       CAC       HAC       SINGLE    n         1.082     0.013     0.943     0.020     
+NBQ       CAB       HAB       SINGLE    n         1.082     0.013     0.962     0.020     
+NBQ       CAE       HAE1      SINGLE    n         1.089     0.010     0.976     0.012     
+NBQ       CAE       HAE2      SINGLE    n         1.089     0.010     0.976     0.012     
+NBQ       CAP       HAP       SINGLE    n         1.082     0.013     0.941     0.013     
+NBQ       CAO       HAO       SINGLE    n         1.082     0.013     0.941     0.015     
+NBQ       CAM       HAM       SINGLE    n         1.082     0.013     0.944     0.019     
+NBQ       CAH       HAH       SINGLE    n         1.082     0.013     0.942     0.016     
+NBQ       CAJ       HAJ       SINGLE    n         1.082     0.013     0.944     0.019     
+NBQ       CAK       HAK       SINGLE    n         1.082     0.013     0.944     0.018     
+NBQ       CAL       HAL       SINGLE    n         1.082     0.013     0.944     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NBQ          CA           N           H     109.646    1.54
+NBQ          CA           N          H2     109.646    1.54
+NBQ          CA           N          H3     109.646    1.54
+NBQ           H           N          H2     109.028    2.41
+NBQ           H           N          H3     109.028    2.41
+NBQ          H2           N          H3     109.028    2.41
+NBQ           N          CA          CB     110.494    1.50
+NBQ           N          CA           C     109.448    1.50
+NBQ           N          CA          HA     108.601    1.50
+NBQ          CB          CA           C     111.331    2.53
+NBQ          CB          CA          HA     108.690    1.50
+NBQ           C          CA          HA     108.450    1.50
+NBQ          CA          CB         CQ1     114.187    1.55
+NBQ          CA          CB         HB2     108.434    1.50
+NBQ          CA          CB         HB3     108.434    1.50
+NBQ         CQ1          CB         HB2     108.906    1.50
+NBQ         CQ1          CB         HB3     108.906    1.50
+NBQ         HB2          CB         HB3     107.782    1.50
+NBQ          CB         CQ1         CQ2     120.872    1.68
+NBQ          CB         CQ1         CQ6     120.855    1.50
+NBQ         CQ2         CQ1         CQ6     118.273    1.50
+NBQ         CQ1         CQ2         OQ2     119.433    1.50
+NBQ         CQ1         CQ2         CQ3     120.964    1.50
+NBQ         OQ2         CQ2         CQ3     119.603    2.16
+NBQ         CQ2         OQ2         HQ2     108.378    3.00
+NBQ         CQ2         CQ3         CQ4     119.829    1.50
+NBQ         CQ2         CQ3         HQ3     120.276    1.50
+NBQ         CQ4         CQ3         HQ3     119.895    1.50
+NBQ         CQ3         CQ4         OQ4     121.905    3.00
+NBQ         CQ3         CQ4         CQ5     119.342    1.50
+NBQ         OQ4         CQ4         CQ5     118.753    1.50
+NBQ         CQ4         OQ4         HQ4     109.343    2.75
+NBQ         CQ4         CQ5         CQ6     120.815    1.59
+NBQ         CQ4         CQ5         NQ5     117.818    2.41
+NBQ         CQ6         CQ5         NQ5     121.367    3.00
+NBQ         CQ1         CQ6         CQ5     120.777    1.50
+NBQ         CQ1         CQ6         HQ6     119.586    1.50
+NBQ         CQ5         CQ6         HQ6     119.637    1.50
+NBQ         CQ5         NQ5         CAD     129.252    2.63
+NBQ         CQ5         NQ5         HQ5     115.540    2.21
+NBQ         CAD         NQ5         HQ5     115.209    2.42
+NBQ         NQ5         CAD         CAC     120.545    1.61
+NBQ         NQ5         CAD         CAE     115.841    1.98
+NBQ         CAC         CAD         CAE     123.613    3.00
+NBQ         CAD         CAC         CAB     124.934    3.00
+NBQ         CAD         CAC         HAC     116.144    1.50
+NBQ         CAB         CAC         HAC     118.922    1.61
+NBQ         CAC         CAB         OAA     125.129    1.73
+NBQ         CAC         CAB         HAB     116.757    2.05
+NBQ         OAA         CAB         HAB     118.106    1.50
+NBQ         CAD         CAE         OAF     107.980    1.50
+NBQ         CAD         CAE        HAE1     109.949    1.50
+NBQ         CAD         CAE        HAE2     109.949    1.50
+NBQ         OAF         CAE        HAE1     109.511    1.50
+NBQ         OAF         CAE        HAE2     109.511    1.50
+NBQ        HAE1         CAE        HAE2     108.122    1.50
+NBQ         CAE         OAF         CAG     117.343    1.83
+NBQ         OAF         CAG         CAP     115.287    3.00
+NBQ         OAF         CAG         CAH     124.069    2.80
+NBQ         CAP         CAG         CAH     120.644    1.50
+NBQ         CAG         CAP         CAO     120.072    1.50
+NBQ         CAG         CAP         HAP     119.843    1.50
+NBQ         CAO         CAP         HAP     120.085    1.50
+NBQ         CAP         CAO         CAN     121.415    1.50
+NBQ         CAP         CAO         HAO     119.263    1.50
+NBQ         CAN         CAO         HAO     119.322    1.50
+NBQ         CAO         CAN         CAM     122.419    1.50
+NBQ         CAO         CAN         CAI     118.806    1.50
+NBQ         CAM         CAN         CAI     118.775    1.50
+NBQ         CAN         CAM         CAL     120.911    1.50
+NBQ         CAN         CAM         HAM     119.431    1.50
+NBQ         CAL         CAM         HAM     119.659    1.50
+NBQ         CAN         CAI         CAH     119.186    1.50
+NBQ         CAN         CAI         CAJ     118.775    1.50
+NBQ         CAH         CAI         CAJ     122.039    1.50
+NBQ         CAG         CAH         CAI     119.876    1.50
+NBQ         CAG         CAH         HAH     120.229    1.50
+NBQ         CAI         CAH         HAH     119.895    1.50
+NBQ         CAI         CAJ         CAK     120.911    1.50
+NBQ         CAI         CAJ         HAJ     119.431    1.50
+NBQ         CAK         CAJ         HAJ     119.659    1.50
+NBQ         CAJ         CAK         CAL     120.314    1.50
+NBQ         CAJ         CAK         HAK     119.871    1.50
+NBQ         CAL         CAK         HAK     119.815    1.50
+NBQ         CAM         CAL         CAK     120.314    1.50
+NBQ         CAM         CAL         HAL     119.871    1.50
+NBQ         CAK         CAL         HAL     119.815    1.50
+NBQ          CA           C         OXT     117.228    2.13
+NBQ          CA           C           O     117.228    2.13
+NBQ         OXT           C           O     125.543    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NBQ             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+NBQ             sp2_sp2_7         CAC         CAD         NQ5         CQ5       0.000   10.00     2
+NBQ            sp2_sp2_10         CAB         CAC         CAD         NQ5       0.000   10.00     2
+NBQ            sp2_sp3_18         NQ5         CAD         CAE         OAF     120.000   10.00     6
+NBQ            sp2_sp2_13         OAA         CAB         CAC         CAD     180.000   10.00     2
+NBQ            sp3_sp3_19         CAD         CAE         OAF         CAG     180.000   10.00     3
+NBQ            sp2_sp2_17         CAP         CAG         OAF         CAE     180.000   10.00     2
+NBQ       const_sp2_sp2_3         OAF         CAG         CAP         CAO     180.000   10.00     2
+NBQ              const_67         OAF         CAG         CAH         CAI     180.000   10.00     2
+NBQ       const_sp2_sp2_5         CAN         CAO         CAP         CAG       0.000   10.00     2
+NBQ            sp3_sp3_13           N          CA          CB         CQ1      60.000   10.00     3
+NBQ             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+NBQ              const_11         CAM         CAN         CAO         CAP     180.000   10.00     2
+NBQ              const_22         CAL         CAM         CAN         CAO     180.000   10.00     2
+NBQ              const_13         CAH         CAI         CAN         CAO       0.000   10.00     2
+NBQ              const_25         CAK         CAL         CAM         CAN       0.000   10.00     2
+NBQ              const_17         CAG         CAH         CAI         CAN       0.000   10.00     2
+NBQ              const_37         CAN         CAI         CAJ         CAK       0.000   10.00     2
+NBQ              const_33         CAI         CAJ         CAK         CAL       0.000   10.00     2
+NBQ              const_29         CAJ         CAK         CAL         CAM       0.000   10.00     2
+NBQ             sp2_sp3_8         CQ2         CQ1          CB          CA     -90.000   10.00     6
+NBQ              const_63          CB         CQ1         CQ6         CQ5     180.000   10.00     2
+NBQ              const_44          CB         CQ1         CQ2         OQ2       0.000   10.00     2
+NBQ              const_47         OQ2         CQ2         CQ3         CQ4     180.000   10.00     2
+NBQ              const_50         CQ2         CQ3         CQ4         OQ4     180.000   10.00     2
+NBQ              const_56         OQ4         CQ4         CQ5         NQ5       0.000   10.00     2
+NBQ              const_59         NQ5         CQ5         CQ6         CQ1     180.000   10.00     2
+NBQ             sp2_sp2_1         CQ4         CQ5         NQ5         CAD     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+NBQ    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NBQ    plan-1          CB   0.020
+NBQ    plan-1         CQ1   0.020
+NBQ    plan-1         CQ2   0.020
+NBQ    plan-1         CQ3   0.020
+NBQ    plan-1         CQ4   0.020
+NBQ    plan-1         CQ5   0.020
+NBQ    plan-1         CQ6   0.020
+NBQ    plan-1         HQ3   0.020
+NBQ    plan-1         HQ6   0.020
+NBQ    plan-1         NQ5   0.020
+NBQ    plan-1         OQ2   0.020
+NBQ    plan-1         OQ4   0.020
+NBQ    plan-2         CAG   0.020
+NBQ    plan-2         CAH   0.020
+NBQ    plan-2         CAI   0.020
+NBQ    plan-2         CAJ   0.020
+NBQ    plan-2         CAM   0.020
+NBQ    plan-2         CAN   0.020
+NBQ    plan-2         CAO   0.020
+NBQ    plan-2         CAP   0.020
+NBQ    plan-2         HAH   0.020
+NBQ    plan-2         HAO   0.020
+NBQ    plan-2         HAP   0.020
+NBQ    plan-2         OAF   0.020
+NBQ    plan-3         CAH   0.020
+NBQ    plan-3         CAI   0.020
+NBQ    plan-3         CAJ   0.020
+NBQ    plan-3         CAK   0.020
+NBQ    plan-3         CAL   0.020
+NBQ    plan-3         CAM   0.020
+NBQ    plan-3         CAN   0.020
+NBQ    plan-3         CAO   0.020
+NBQ    plan-3         HAJ   0.020
+NBQ    plan-3         HAK   0.020
+NBQ    plan-3         HAL   0.020
+NBQ    plan-3         HAM   0.020
+NBQ    plan-4         CAD   0.020
+NBQ    plan-4         CQ5   0.020
+NBQ    plan-4         HQ5   0.020
+NBQ    plan-4         NQ5   0.020
+NBQ    plan-5         CAC   0.020
+NBQ    plan-5         CAD   0.020
+NBQ    plan-5         CAE   0.020
+NBQ    plan-5         NQ5   0.020
+NBQ    plan-6         CAB   0.020
+NBQ    plan-6         CAC   0.020
+NBQ    plan-6         CAD   0.020
+NBQ    plan-6         HAC   0.020
+NBQ    plan-7         CAB   0.020
+NBQ    plan-7         CAC   0.020
+NBQ    plan-7         HAB   0.020
+NBQ    plan-7         OAA   0.020
+NBQ    plan-8           C   0.020
+NBQ    plan-8          CA   0.020
+NBQ    plan-8           O   0.020
+NBQ    plan-8         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NBQ SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc3c(O)cc(O)c(N\C(=C\C=O)COc2cc1ccccc1cc2)c3"
+NBQ SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1cc(N\C(COc2ccc3ccccc3c2)=C\C=O)c(O)cc1O)C(O)=O"
+NBQ SMILES           CACTVS               3.341 "N[CH](Cc1cc(NC(COc2ccc3ccccc3c2)=CC=O)c(O)cc1O)C(O)=O"
+NBQ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc2cc(ccc2c1)OC/C(=C\C=O)/Nc3cc(c(cc3O)O)C[C@@H](C(=O)O)N"
+NBQ SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc2cc(ccc2c1)OCC(=CC=O)Nc3cc(c(cc3O)O)CC(C(=O)O)N"
+NBQ InChI            InChI                1.03  "InChI=1S/C23H22N2O6/c24-19(23(29)30)10-16-11-20(22(28)12-21(16)27)25-17(7-8-26)13-31-18-6-5-14-3-1-2-4-15(14)9-18/h1-9,11-12,19,25,27-28H,10,13,24H2,(H,29,30)/b17-7+/t19-/m0/s1"
+NBQ InChIKey         InChI                1.03  PZWMZAFFUAWVDN-CQXYXCHQSA-N
+NBQ ?                acedrg               196         "dictionary generator"
+NBQ ?                acedrg_database      11          "data source"
+NBQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NBQ ?                refmac5              5.8.0222    "optimization tool"

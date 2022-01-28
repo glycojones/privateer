@@ -1,0 +1,310 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CRU      CRU '"4-[(4Z)-1-(CARBOXYMETHYL)-4-(4-HYDR' non-polymer        38  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CRU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CRU           OXT    O    OC       -0.500      0.000    0.000    0.000
+ CRU           C      C    C         0.000     -1.192    0.333    0.180
+ CRU           O      O    OC       -0.500     -1.575    0.699    1.313
+ CRU           CA3    C    CH2       0.000     -2.166    0.294   -0.969
+ CRU           HA31   H    H         0.000     -2.232   -0.725   -1.356
+ CRU           HA32   H    H         0.000     -1.821    0.962   -1.761
+ CRU           N3     N    NR5       0.000     -3.487    0.728   -0.504
+ CRU           C1     C    CR5       0.000     -3.922    2.032   -0.402
+ CRU           CA1    C    C         0.000     -3.114    3.212   -0.748
+ CRU           N      N    N         0.000     -3.576    4.400   -0.528
+ CRU           HN1    H    H         0.000     -4.446    4.523   -0.138
+ CRU           CB1    C    CH2       0.000     -1.748    3.036   -1.361
+ CRU           HB11   H    H         0.000     -1.847    2.572   -2.345
+ CRU           HB12   H    H         0.000     -1.140    2.396   -0.718
+ CRU           CG1    C    CH2       0.000     -1.075    4.402   -1.506
+ CRU           HG11   H    H         0.000     -0.978    4.866   -0.522
+ CRU           HG12   H    H         0.000     -1.684    5.041   -2.149
+ CRU           CD3    C    C         0.000      0.291    4.227   -2.118
+ CRU           OE2    O    OC       -0.500      1.015    5.225   -2.330
+ CRU           OE1    O    OC       -0.500      0.699    3.083   -2.419
+ CRU           C2     C    CR5       0.000     -4.490   -0.081   -0.097
+ CRU           O2     O    O         0.000     -4.482   -1.297   -0.044
+ CRU           CA2    C    CR5       0.000     -5.600    0.821    0.261
+ CRU           N2     N    NRD5      0.000     -5.151    2.078    0.040
+ CRU           CB2    C    C1        0.000     -6.849    0.456    0.729
+ CRU           HB1    H    H         0.000     -7.534    1.210    1.079
+ CRU           CG2    C    CR6       0.000     -7.239   -0.953    0.750
+ CRU           CD2    C    CR16      0.000     -6.830   -1.813   -0.281
+ CRU           HD2    H    H         0.000     -6.228   -1.433   -1.098
+ CRU           CE2    C    CR16      0.000     -7.192   -3.129   -0.253
+ CRU           HE2    H    H         0.000     -6.867   -3.796   -1.042
+ CRU           CZ     C    CR6       0.000     -7.977   -3.616    0.788
+ CRU           OH     O    OH1       0.000     -8.338   -4.924    0.807
+ CRU           HH     H    H         0.000     -9.177   -5.032    0.338
+ CRU           CE1    C    CR16      0.000     -8.392   -2.768    1.810
+ CRU           HE1    H    H         0.000     -9.003   -3.152    2.617
+ CRU           CD1    C    CR16      0.000     -8.030   -1.450    1.796
+ CRU           HD1    H    H         0.000     -8.354   -0.791    2.592
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CRU      OXT    n/a    C      START
+ CRU      C      OXT    CA3    .
+ CRU      O      C      .      .
+ CRU      CA3    C      N3     .
+ CRU      HA31   CA3    .      .
+ CRU      HA32   CA3    .      .
+ CRU      N3     CA3    C2     .
+ CRU      C1     N3     CA1    .
+ CRU      CA1    C1     CB1    .
+ CRU      N      CA1    HN1    .
+ CRU      HN1    N      .      .
+ CRU      CB1    CA1    CG1    .
+ CRU      HB11   CB1    .      .
+ CRU      HB12   CB1    .      .
+ CRU      CG1    CB1    CD3    .
+ CRU      HG11   CG1    .      .
+ CRU      HG12   CG1    .      .
+ CRU      CD3    CG1    OE1    .
+ CRU      OE2    CD3    .      .
+ CRU      OE1    CD3    .      .
+ CRU      C2     N3     CA2    .
+ CRU      O2     C2     .      .
+ CRU      CA2    C2     CB2    .
+ CRU      N2     CA2    .      .
+ CRU      CB2    CA2    CG2    .
+ CRU      HB1    CB2    .      .
+ CRU      CG2    CB2    CD2    .
+ CRU      CD2    CG2    CE2    .
+ CRU      HD2    CD2    .      .
+ CRU      CE2    CD2    CZ     .
+ CRU      HE2    CE2    .      .
+ CRU      CZ     CE2    CE1    .
+ CRU      OH     CZ     HH     .
+ CRU      HH     OH     .      .
+ CRU      CE1    CZ     CD1    .
+ CRU      HE1    CE1    .      .
+ CRU      CD1    CE1    HD1    .
+ CRU      HD1    CD1    .      END
+ CRU      C1     N2     .    ADD
+ CRU      CG2    CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CRU       OE1       CD3       deloc     1.250     0.020     1.250     0.020     
+CRU       OE2       CD3       deloc     1.250     0.020     1.250     0.020     
+CRU       CD3       CG1       single    1.510     0.020     1.510     0.020     
+CRU       CG1       CB1       single    1.524     0.020     1.524     0.020     
+CRU       HG11      CG1       single    1.089     0.010     0.989     0.005     
+CRU       HG12      CG1       single    1.089     0.010     0.989     0.005     
+CRU       CB1       CA1       single    1.510     0.020     1.510     0.020     
+CRU       HB11      CB1       single    1.089     0.010     0.989     0.005     
+CRU       HB12      CB1       single    1.089     0.010     0.989     0.005     
+CRU       N         CA1       double    1.260     0.020     1.260     0.020     
+CRU       CA1       C1        single    1.490     0.020     1.490     0.020     
+CRU       HN1       N         single    1.016     0.010     0.899     0.007     
+CRU       C1        N2        double    1.350     0.020     1.350     0.020     
+CRU       C1        N3        single    1.337     0.020     1.337     0.020     
+CRU       N2        CA2       single    1.350     0.020     1.350     0.020     
+CRU       CA2       C2        single    1.490     0.020     1.490     0.020     
+CRU       CB2       CA2       double    1.483     0.020     1.483     0.020     
+CRU       O2        C2        double    1.285     0.020     1.285     0.020     
+CRU       C2        N3        single    1.337     0.020     1.337     0.020     
+CRU       N3        CA3       single    1.462     0.020     1.462     0.020     
+CRU       CA3       C         single    1.510     0.020     1.510     0.020     
+CRU       HA31      CA3       single    1.089     0.010     0.989     0.005     
+CRU       HA32      CA3       single    1.089     0.010     0.989     0.005     
+CRU       O         C         deloc     1.250     0.020     1.250     0.020     
+CRU       C         OXT       deloc     1.250     0.020     1.250     0.020     
+CRU       CG2       CB2       single    1.480     0.020     1.480     0.020     
+CRU       HB1       CB2       single    1.082     0.013     0.975     0.010     
+CRU       CG2       CD1       double    1.390     0.020     1.390     0.020     
+CRU       CD2       CG2       single    1.390     0.020     1.390     0.020     
+CRU       CD1       CE1       single    1.390     0.020     1.390     0.020     
+CRU       HD1       CD1       single    1.082     0.013     0.975     0.010     
+CRU       CE1       CZ        double    1.390     0.020     1.390     0.020     
+CRU       HE1       CE1       single    1.082     0.013     0.975     0.010     
+CRU       OH        CZ        single    1.362     0.020     1.362     0.020     
+CRU       CZ        CE2       single    1.390     0.020     1.390     0.020     
+CRU       HH        OH        single    0.970     0.012     0.839     0.014     
+CRU       CE2       CD2       double    1.390     0.020     1.390     0.020     
+CRU       HE2       CE2       single    1.082     0.013     0.975     0.010     
+CRU       HD2       CD2       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CRU      OXT    C      O       123.000    3.000
+ CRU      OXT    C      CA3     118.500    3.000
+ CRU      O      C      CA3     118.500    3.000
+ CRU      C      CA3    HA31    109.470    3.000
+ CRU      C      CA3    HA32    109.470    3.000
+ CRU      C      CA3    N3      109.500    3.000
+ CRU      HA31   CA3    HA32    107.900    3.000
+ CRU      HA31   CA3    N3      109.500    3.000
+ CRU      HA32   CA3    N3      109.500    3.000
+ CRU      CA3    N3     C1      126.000    3.000
+ CRU      CA3    N3     C2      126.000    3.000
+ CRU      C1     N3     C2      108.000    3.000
+ CRU      N3     C1     CA1     126.000    3.000
+ CRU      N3     C1     N2      108.000    3.000
+ CRU      CA1    C1     N2      126.000    3.000
+ CRU      C1     CA1    N       120.000    3.000
+ CRU      C1     CA1    CB1     116.500    3.000
+ CRU      N      CA1    CB1     116.500    3.000
+ CRU      CA1    N      HN1     120.000    3.000
+ CRU      CA1    CB1    HB11    109.470    3.000
+ CRU      CA1    CB1    HB12    109.470    3.000
+ CRU      CA1    CB1    CG1     109.470    3.000
+ CRU      HB11   CB1    HB12    107.900    3.000
+ CRU      HB11   CB1    CG1     109.470    3.000
+ CRU      HB12   CB1    CG1     109.470    3.000
+ CRU      CB1    CG1    HG11    109.470    3.000
+ CRU      CB1    CG1    HG12    109.470    3.000
+ CRU      CB1    CG1    CD3     109.470    3.000
+ CRU      HG11   CG1    HG12    107.900    3.000
+ CRU      HG11   CG1    CD3     109.470    3.000
+ CRU      HG12   CG1    CD3     109.470    3.000
+ CRU      CG1    CD3    OE2     118.500    3.000
+ CRU      CG1    CD3    OE1     118.500    3.000
+ CRU      OE2    CD3    OE1     123.000    3.000
+ CRU      N3     C2     O2      108.000    3.000
+ CRU      N3     C2     CA2     108.000    3.000
+ CRU      O2     C2     CA2     108.000    3.000
+ CRU      C2     CA2    N2      108.000    3.000
+ CRU      C2     CA2    CB2     117.000    3.000
+ CRU      N2     CA2    CB2     108.000    3.000
+ CRU      CA2    N2     C1      108.000    3.000
+ CRU      CA2    CB2    HB1     120.000    3.000
+ CRU      CA2    CB2    CG2     120.000    3.000
+ CRU      HB1    CB2    CG2     120.000    3.000
+ CRU      CB2    CG2    CD2     120.000    3.000
+ CRU      CB2    CG2    CD1     120.000    3.000
+ CRU      CD2    CG2    CD1     120.000    3.000
+ CRU      CG2    CD2    HD2     120.000    3.000
+ CRU      CG2    CD2    CE2     120.000    3.000
+ CRU      HD2    CD2    CE2     120.000    3.000
+ CRU      CD2    CE2    HE2     120.000    3.000
+ CRU      CD2    CE2    CZ      120.000    3.000
+ CRU      HE2    CE2    CZ      120.000    3.000
+ CRU      CE2    CZ     OH      120.000    3.000
+ CRU      CE2    CZ     CE1     120.000    3.000
+ CRU      OH     CZ     CE1     120.000    3.000
+ CRU      CZ     OH     HH      109.470    3.000
+ CRU      CZ     CE1    HE1     120.000    3.000
+ CRU      CZ     CE1    CD1     120.000    3.000
+ CRU      HE1    CE1    CD1     120.000    3.000
+ CRU      CE1    CD1    HD1     120.000    3.000
+ CRU      CE1    CD1    CG2     120.000    3.000
+ CRU      HD1    CD1    CG2     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CRU      var_1    OXT    C      CA3    N3      -179.978   20.000   3
+ CRU      var_2    C      CA3    N3     C2       -95.269   20.000   1
+ CRU      CONST_1  CA3    N3     C1     CA1        0.000    0.000   0
+ CRU      CONST_2  N3     C1     N2     CA2        0.000    0.000   0
+ CRU      var_3    N3     C1     CA1    CB1        5.037   20.000   1
+ CRU      CONST_3  C1     CA1    N      HN1        0.000    0.000   0
+ CRU      var_4    C1     CA1    CB1    CG1     -174.971   20.000   3
+ CRU      var_5    CA1    CB1    CG1    CD3      179.962   20.000   3
+ CRU      var_6    CB1    CG1    CD3    OE1        0.066   20.000   3
+ CRU      CONST_4  CA3    N3     C2     CA2      180.000    0.000   0
+ CRU      CONST_5  N3     C2     CA2    CB2      180.000    0.000   0
+ CRU      CONST_6  C2     CA2    N2     C1         0.000    0.000   0
+ CRU      CONST_7  C2     CA2    CB2    CG2       -7.991    0.000   0
+ CRU      var_7    CA2    CB2    CG2    CD2      -36.547   20.000   1
+ CRU      CONST_8  CB2    CG2    CD1    CE1      180.000    0.000   0
+ CRU      CONST_9  CB2    CG2    CD2    CE2      180.000    0.000   0
+ CRU      CONST_10 CG2    CD2    CE2    CZ         0.000    0.000   0
+ CRU      CONST_11 CD2    CE2    CZ     CE1        0.000    0.000   0
+ CRU      var_8    CE2    CZ     OH     HH       -90.052   20.000   1
+ CRU      CONST_12 CE2    CZ     CE1    CD1        0.000    0.000   0
+ CRU      CONST_13 CZ     CE1    CD1    CG2        0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CRU      plan-1    CD3       0.020
+ CRU      plan-1    OE1       0.020
+ CRU      plan-1    OE2       0.020
+ CRU      plan-1    CG1       0.020
+ CRU      plan-2    CA1       0.020
+ CRU      plan-2    CB1       0.020
+ CRU      plan-2    N         0.020
+ CRU      plan-2    C1        0.020
+ CRU      plan-2    HN1       0.020
+ CRU      plan-3    C1        0.020
+ CRU      plan-3    CA1       0.020
+ CRU      plan-3    N2        0.020
+ CRU      plan-3    N3        0.020
+ CRU      plan-3    CA2       0.020
+ CRU      plan-3    C2        0.020
+ CRU      plan-3    CB2       0.020
+ CRU      plan-3    O2        0.020
+ CRU      plan-3    CA3       0.020
+ CRU      plan-3    CG2       0.020
+ CRU      plan-3    HB1       0.020
+ CRU      plan-4    C         0.020
+ CRU      plan-4    CA3       0.020
+ CRU      plan-4    O         0.020
+ CRU      plan-4    OXT       0.020
+ CRU      plan-5    CG2       0.020
+ CRU      plan-5    CB2       0.020
+ CRU      plan-5    CD1       0.020
+ CRU      plan-5    CD2       0.020
+ CRU      plan-5    CE1       0.020
+ CRU      plan-5    CZ        0.020
+ CRU      plan-5    CE2       0.020
+ CRU      plan-5    HD1       0.020
+ CRU      plan-5    HE1       0.020
+ CRU      plan-5    OH        0.020
+ CRU      plan-5    HE2       0.020
+ CRU      plan-5    HD2       0.020
+ CRU      plan-5    HB1       0.020
+# ------------------------------------------------------

@@ -1,0 +1,157 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5LA     5LA     "2-chloranyl-6~{H}-thieno[2,3-b]pyrrole-5-carboxylicacid"     NON-POLYMER     15     12     .     
+#
+data_comp_5LA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+5LA     CL1     CL      CL      0       30.374      78.985      58.775      
+5LA     C02     C       CR5     0       31.187      79.297      60.254      
+5LA     C03     C       CR15    0       31.954      80.373      60.550      
+5LA     C04     C       CR55    0       32.708      80.138      61.793      
+5LA     C05     C       CR15    0       33.718      80.656      62.634      
+5LA     C06     C       CR5     0       33.862      79.768      63.704      
+5LA     C07     C       C       0       34.776      79.864      64.834      
+5LA     O08     O       OC      -1      34.678      79.021      65.707      
+5LA     O09     O       O       0       35.582      80.780      64.836      
+5LA     N10     N       NT1     0       32.965      78.730      63.529      
+5LA     C11     C       CR55    0       32.303      79.002      62.376      
+5LA     S12     S       S2      0       31.063      78.154      61.548      
+5LA     H1      H       H       0       31.987      81.154      60.023      
+5LA     H2      H       H       0       34.207      81.450      62.504      
+5LA     H4      H       H       0       32.851      78.026      64.073      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5LA       CL1       C02       SINGLE    n         1.716     0.010     1.716     0.010     
+5LA       C02       C03       DOUBLE    n         1.349     0.010     1.349     0.010     
+5LA       C02       S12       SINGLE    n         1.723     0.014     1.723     0.014     
+5LA       C03       C04       SINGLE    n         1.472     0.020     1.472     0.020     
+5LA       C11       S12       SINGLE    n         1.721     0.012     1.721     0.012     
+5LA       C04       C11       DOUBLE    y         1.384     0.020     1.384     0.020     
+5LA       C04       C05       SINGLE    y         1.407     0.020     1.407     0.020     
+5LA       N10       C11       SINGLE    y         1.373     0.017     1.373     0.017     
+5LA       C05       C06       DOUBLE    y         1.378     0.016     1.378     0.016     
+5LA       C06       N10       SINGLE    y         1.379     0.010     1.379     0.010     
+5LA       C06       C07       SINGLE    n         1.447     0.020     1.447     0.020     
+5LA       C07       O09       DOUBLE    n         1.217     0.020     1.217     0.020     
+5LA       C07       O08       SINGLE    n         1.217     0.020     1.217     0.020     
+5LA       C03       H1        SINGLE    n         1.082     0.013     0.943     0.018     
+5LA       C05       H2        SINGLE    n         1.082     0.013     0.942     0.016     
+5LA       N10       H4        SINGLE    n         1.016     0.010     0.897     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+5LA         CL1         C02         C03     127.322    1.50
+5LA         CL1         C02         S12     119.737    1.50
+5LA         C03         C02         S12     112.941    1.50
+5LA         C02         C03         C04     110.226    1.50
+5LA         C02         C03          H1     123.861    1.60
+5LA         C04         C03          H1     125.912    1.50
+5LA         C03         C04         C11     111.745    2.01
+5LA         C03         C04         C05     141.816    1.53
+5LA         C11         C04         C05     106.439    3.00
+5LA         C04         C05         C06     106.470    1.50
+5LA         C04         C05          H2     127.086    1.50
+5LA         C06         C05          H2     126.444    1.50
+5LA         C05         C06         N10     107.481    1.50
+5LA         C05         C06         C07     127.893    3.00
+5LA         N10         C06         C07     124.626    2.38
+5LA         C06         C07         O09     117.409    1.50
+5LA         C06         C07         O08     117.409    1.50
+5LA         O09         C07         O08     125.182    1.50
+5LA         C11         N10         C06     108.518    2.27
+5LA         C11         N10          H4     124.642    3.00
+5LA         C06         N10          H4     123.637    3.00
+5LA         S12         C11         C04     118.345    1.58
+5LA         S12         C11         N10     125.898    3.00
+5LA         C04         C11         N10     115.757    1.50
+5LA         C02         S12         C11      90.623    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+5LA             sp2_sp2_3         CL1         C02         C03         C04     180.000   10.00     2
+5LA             sp2_sp2_5         C02         C03         C04         C11       0.000   10.00     2
+5LA       const_sp2_sp2_1         C03         C04         C11         S12       0.000   10.00     2
+5LA              const_19         C03         C04         C05         C06     180.000   10.00     2
+5LA              const_14         C04         C05         C06         C07     180.000   10.00     2
+5LA             sp2_sp2_9         C05         C06         C07         O09     180.000   10.00     2
+5LA              const_11         C07         C06         N10         C11     180.000   10.00     2
+5LA       const_sp2_sp2_7         S12         C11         N10         C06     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+5LA    plan-1         C03   0.020
+5LA    plan-1         C04   0.020
+5LA    plan-1         C05   0.020
+5LA    plan-1         C06   0.020
+5LA    plan-1         C07   0.020
+5LA    plan-1         C11   0.020
+5LA    plan-1          H2   0.020
+5LA    plan-1          H4   0.020
+5LA    plan-1         N10   0.020
+5LA    plan-1         S12   0.020
+5LA    plan-2         C02   0.020
+5LA    plan-2         C03   0.020
+5LA    plan-2         CL1   0.020
+5LA    plan-2         S12   0.020
+5LA    plan-3         C02   0.020
+5LA    plan-3         C03   0.020
+5LA    plan-3         C04   0.020
+5LA    plan-3          H1   0.020
+5LA    plan-4         C06   0.020
+5LA    plan-4         C07   0.020
+5LA    plan-4         O08   0.020
+5LA    plan-4         O09   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+5LA InChI            InChI                1.03  "InChI=1S/C7H4ClNO2S/c8-5-2-3-1-4(7(10)11)9-6(3)12-5/h1-2,9H,(H,10,11)"
+5LA InChIKey         InChI                1.03  SOGNHUJSAKAIRG-UHFFFAOYSA-N
+5LA SMILES_CANONICAL CACTVS               3.385 "OC(=O)c1[nH]c2sc(Cl)cc2c1"
+5LA SMILES           CACTVS               3.385 "OC(=O)c1[nH]c2sc(Cl)cc2c1"
+5LA SMILES_CANONICAL "OpenEye OEToolkits" 2.0.4 "c1c2cc(sc2[nH]c1C(=O)O)Cl"
+5LA SMILES           "OpenEye OEToolkits" 2.0.4 "c1c2cc(sc2[nH]c1C(=O)O)Cl"
+5LA ?                acedrg               190         "dictionary generator"                  
+5LA ?                acedrg_database      11          "data source"                           
+5LA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+5LA ?                refmac5              5.8.0158    "optimization tool"                     

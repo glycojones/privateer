@@ -1,0 +1,345 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DDE     DDE     "{3-[4-(2-AMINO-2-CARBOXY-ETHYL)-1H-IMIDAZOL-2-YL]-1-CARBAMOYL-PROPYL}-TRIMETHYL-AMMONIUM"     peptide     45     21     .
+#
+data_comp_DDE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DDE     N       N       NT3     1       -0.565      5.096       -3.876
+DDE     CA      C       CH1     0       -0.991      3.670       -3.884
+DDE     C       C       C       0       -0.191      2.899       -4.942
+DDE     O       O       O       0       -0.257      3.311       -6.117
+DDE     CB      C       CH2     0       -2.503      3.568       -4.134
+DDE     CG      C       CR5     0       -3.051      2.189       -3.979
+DDE     ND1     N       NRD5    0       -3.229      1.370       -5.079
+DDE     CD2     C       CR15    0       -3.444      1.517       -2.868
+DDE     CE1     C       CR5     0       -3.720      0.229       -4.622
+DDE     NE2     N       NR5     0       -3.863      0.284       -3.282
+DDE     NAD     N       NH2     0       -1.774      0.320       -8.273
+DDE     CBI     C       C       0       -2.135      -0.891      -7.867
+DDE     OAG     O       O       0       -2.804      -1.656      -8.562
+DDE     CBW     C       CH1     0       -1.686      -1.309      -6.463
+DDE     NCB     N       NT      1       -0.423      -2.203      -6.524
+DDE     CAB     C       CH3     0       0.122       -2.417      -5.140
+DDE     CAC     C       CH3     0       -0.654      -3.560      -7.121
+DDE     CAA     C       CH3     0       0.663       -1.536      -7.324
+DDE     CAU     C       CH2     0       -2.890      -1.919      -5.698
+DDE     CAT     C       CH2     0       -4.066      -0.958      -5.455
+DDE     OXT     O       OC      -1      0.469       1.916       -4.551
+DDE     H       H       H       0       -0.728      5.468       -4.692
+DDE     H2      H       H       0       0.326       5.148       -3.693
+DDE     H3      H       H       0       -1.030      5.550       -3.238
+DDE     HA      H       H       0       -0.796      3.289       -2.996
+DDE     HB2     H       H       0       -2.685      3.892       -5.040
+DDE     HB3     H       H       0       -2.957      4.172       -3.511
+DDE     HD2     H       H       0       -3.437      1.824       -1.974
+DDE     HE2     H       H       0       -4.175      -0.365      -2.763
+DDE     HAD1    H       H       0       -1.248      0.834       -7.782
+DDE     HAD2    H       H       0       -2.067      0.619       -9.052
+DDE     HBW     H       H       0       -1.420      -0.495      -5.982
+DDE     HAB1    H       H       0       0.981       -2.863      -5.192
+DDE     HAB2    H       H       0       -0.488      -2.969      -4.630
+DDE     HAB3    H       H       0       0.229       -1.561      -4.700
+DDE     HAC1    H       H       0       0.178       -4.058      -7.113
+DDE     HAC2    H       H       0       -0.963      -3.470      -8.034
+DDE     HAC3    H       H       0       -1.316      -4.037      -6.600
+DDE     HAA1    H       H       0       1.512       -1.972      -7.157
+DDE     HAA2    H       H       0       0.723       -0.604      -7.065
+DDE     HAA3    H       H       0       0.460       -1.595      -8.270
+DDE     HAU3    H       H       0       -2.582      -2.242      -4.830
+DDE     HAU2    H       H       0       -3.219      -2.694      -6.198
+DDE     HAT2    H       H       0       -4.413      -0.651      -6.311
+DDE     HAT3    H       H       0       -4.779      -1.451      -5.010
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DDE      N      n/a    CA     START
+DDE      H      N      .      .
+DDE      H2     N      .      .
+DDE      H3     N      .      .
+DDE      CA     N      C      .
+DDE      HA     CA     .      .
+DDE      CB     CA     CG     .
+DDE      HB2    CB     .      .
+DDE      HB3    CB     .      .
+DDE      CG     CB     CD2    .
+DDE      CD2    CG     NE2    .
+DDE      HD2    CD2    .      .
+DDE      NE2    CD2    CE1    .
+DDE      HE2    NE2    .      .
+DDE      CE1    NE2    CAT    .
+DDE      ND1    CE1    .      .
+DDE      CAT    CE1    CAU    .
+DDE      HAT2   CAT    .      .
+DDE      HAT3   CAT    .      .
+DDE      CAU    CAT    CBW    .
+DDE      HAU3   CAU    .      .
+DDE      HAU2   CAU    .      .
+DDE      CBW    CAU    CBI    .
+DDE      HBW    CBW    .      .
+DDE      NCB    CBW    CAB    .
+DDE      CAA    NCB    HAA1   .
+DDE      HAA3   CAA    .      .
+DDE      HAA2   CAA    .      .
+DDE      HAA1   CAA    .      .
+DDE      CAC    NCB    HAC1   .
+DDE      HAC3   CAC    .      .
+DDE      HAC2   CAC    .      .
+DDE      HAC1   CAC    .      .
+DDE      CAB    NCB    HAB1   .
+DDE      HAB3   CAB    .      .
+DDE      HAB2   CAB    .      .
+DDE      HAB1   CAB    .      .
+DDE      CBI    CBW    NAD    .
+DDE      OAG    CBI    .      .
+DDE      NAD    CBI    HAD1   .
+DDE      HAD2   NAD    .      .
+DDE      HAD1   NAD    .      .
+DDE      C      CA     .      END
+DDE      O      C      .      .
+DDE      OXT    C      .      .
+DDE      CG     ND1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DDE       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+DDE       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DDE       CA        CB        SINGLE    n         1.534     0.012     1.534     0.012     
+DDE       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DDE       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DDE       CB        CG        SINGLE    n         1.492     0.010     1.492     0.010     
+DDE       CG        ND1       SINGLE    y         1.384     0.013     1.384     0.013     
+DDE       CG        CD2       DOUBLE    y         1.357     0.010     1.357     0.010     
+DDE       ND1       CE1       DOUBLE    y         1.324     0.011     1.324     0.011     
+DDE       CD2       NE2       SINGLE    y         1.366     0.017     1.366     0.017     
+DDE       CE1       NE2       SINGLE    y         1.348     0.016     1.348     0.016     
+DDE       CE1       CAT       SINGLE    n         1.490     0.010     1.490     0.010     
+DDE       NAD       CBI       SINGLE    n         1.325     0.010     1.325     0.010     
+DDE       CBI       OAG       DOUBLE    n         1.230     0.010     1.230     0.010     
+DDE       CBI       CBW       SINGLE    n         1.522     0.012     1.522     0.012     
+DDE       CBW       NCB       SINGLE    n         1.509     0.018     1.509     0.018     
+DDE       CBW       CAU       SINGLE    n         1.535     0.014     1.535     0.014     
+DDE       NCB       CAB       SINGLE    n         1.496     0.011     1.496     0.011     
+DDE       NCB       CAC       SINGLE    n         1.496     0.011     1.496     0.011     
+DDE       NCB       CAA       SINGLE    n         1.496     0.011     1.496     0.011     
+DDE       CAU       CAT       SINGLE    n         1.525     0.020     1.525     0.020     
+DDE       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DDE       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DDE       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DDE       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+DDE       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.019     
+DDE       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.019     
+DDE       CD2       HD2       SINGLE    n         1.082     0.013     0.945     0.020     
+DDE       NE2       HE2       SINGLE    n         1.016     0.010     0.887     0.020     
+DDE       NAD       HAD1      SINGLE    n         1.016     0.010     0.884     0.020     
+DDE       NAD       HAD2      SINGLE    n         1.016     0.010     0.884     0.020     
+DDE       CBW       HBW       SINGLE    n         1.089     0.010     0.985     0.020     
+DDE       CAB       HAB1      SINGLE    n         1.089     0.010     0.969     0.015     
+DDE       CAB       HAB2      SINGLE    n         1.089     0.010     0.969     0.015     
+DDE       CAB       HAB3      SINGLE    n         1.089     0.010     0.969     0.015     
+DDE       CAC       HAC1      SINGLE    n         1.089     0.010     0.969     0.015     
+DDE       CAC       HAC2      SINGLE    n         1.089     0.010     0.969     0.015     
+DDE       CAC       HAC3      SINGLE    n         1.089     0.010     0.969     0.015     
+DDE       CAA       HAA1      SINGLE    n         1.089     0.010     0.969     0.015     
+DDE       CAA       HAA2      SINGLE    n         1.089     0.010     0.969     0.015     
+DDE       CAA       HAA3      SINGLE    n         1.089     0.010     0.969     0.015     
+DDE       CAU       HAU3      SINGLE    n         1.089     0.010     0.980     0.018     
+DDE       CAU       HAU2      SINGLE    n         1.089     0.010     0.980     0.018     
+DDE       CAT       HAT2      SINGLE    n         1.089     0.010     0.974     0.012     
+DDE       CAT       HAT3      SINGLE    n         1.089     0.010     0.974     0.012     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DDE          CA           N           H     109.321    1.91
+DDE          CA           N          H2     109.321    1.91
+DDE          CA           N          H3     109.321    1.91
+DDE           H           N          H2     109.028    2.41
+DDE           H           N          H3     109.028    2.41
+DDE          H2           N          H3     109.028    2.41
+DDE           N          CA           C     109.666    1.50
+DDE           N          CA          CB     110.324    1.50
+DDE           N          CA          HA     108.030    1.50
+DDE           C          CA          CB     111.332    1.67
+DDE           C          CA          HA     108.922    1.50
+DDE          CB          CA          HA     108.492    1.50
+DDE          CA           C           O     117.134    1.50
+DDE          CA           C         OXT     117.134    1.50
+DDE           O           C         OXT     125.731    1.50
+DDE          CA          CB          CG     113.852    1.50
+DDE          CA          CB         HB2     108.290    1.50
+DDE          CA          CB         HB3     108.290    1.50
+DDE          CG          CB         HB2     109.683    1.50
+DDE          CG          CB         HB3     109.683    1.50
+DDE         HB2          CB         HB3     107.541    1.50
+DDE          CB          CG         ND1     120.879    1.50
+DDE          CB          CG         CD2     130.320    1.50
+DDE         ND1          CG         CD2     108.801    1.50
+DDE          CG         ND1         CE1     106.431    1.50
+DDE          CG         CD2         NE2     106.799    1.50
+DDE          CG         CD2         HD2     127.680    1.83
+DDE         NE2         CD2         HD2     125.521    1.72
+DDE         ND1         CE1         NE2     110.229    1.50
+DDE         ND1         CE1         CAT     125.564    1.64
+DDE         NE2         CE1         CAT     124.208    1.50
+DDE         CD2         NE2         CE1     107.741    1.50
+DDE         CD2         NE2         HE2     126.226    1.94
+DDE         CE1         NE2         HE2     126.033    2.25
+DDE         CBI         NAD        HAD1     120.017    3.00
+DDE         CBI         NAD        HAD2     120.017    3.00
+DDE        HAD1         NAD        HAD2     119.966    2.38
+DDE         NAD         CBI         OAG     123.631    1.50
+DDE         NAD         CBI         CBW     116.049    1.50
+DDE         OAG         CBI         CBW     120.321    1.50
+DDE         CBI         CBW         NCB     109.935    2.65
+DDE         CBI         CBW         CAU     111.313    1.89
+DDE         CBI         CBW         HBW     109.286    1.50
+DDE         NCB         CBW         CAU     112.810    3.00
+DDE         NCB         CBW         HBW     108.765    1.50
+DDE         CAU         CBW         HBW     109.207    1.50
+DDE         CBW         NCB         CAB     110.351    2.60
+DDE         CBW         NCB         CAC     110.351    2.60
+DDE         CBW         NCB         CAA     110.351    2.60
+DDE         CAB         NCB         CAC     108.010    1.50
+DDE         CAB         NCB         CAA     108.010    1.50
+DDE         CAC         NCB         CAA     108.010    1.50
+DDE         NCB         CAB        HAB1     109.464    1.50
+DDE         NCB         CAB        HAB2     109.464    1.50
+DDE         NCB         CAB        HAB3     109.464    1.50
+DDE        HAB1         CAB        HAB2     109.693    1.55
+DDE        HAB1         CAB        HAB3     109.693    1.55
+DDE        HAB2         CAB        HAB3     109.693    1.55
+DDE         NCB         CAC        HAC1     109.464    1.50
+DDE         NCB         CAC        HAC2     109.464    1.50
+DDE         NCB         CAC        HAC3     109.464    1.50
+DDE        HAC1         CAC        HAC2     109.693    1.55
+DDE        HAC1         CAC        HAC3     109.693    1.55
+DDE        HAC2         CAC        HAC3     109.693    1.55
+DDE         NCB         CAA        HAA1     109.464    1.50
+DDE         NCB         CAA        HAA2     109.464    1.50
+DDE         NCB         CAA        HAA3     109.464    1.50
+DDE        HAA1         CAA        HAA2     109.693    1.55
+DDE        HAA1         CAA        HAA3     109.693    1.55
+DDE        HAA2         CAA        HAA3     109.693    1.55
+DDE         CBW         CAU         CAT     113.701    1.50
+DDE         CBW         CAU        HAU3     108.567    1.50
+DDE         CBW         CAU        HAU2     108.567    1.50
+DDE         CAT         CAU        HAU3     108.882    1.50
+DDE         CAT         CAU        HAU2     108.882    1.50
+DDE        HAU3         CAU        HAU2     107.715    1.50
+DDE         CE1         CAT         CAU     113.748    1.50
+DDE         CE1         CAT        HAT2     108.894    1.50
+DDE         CE1         CAT        HAT3     108.894    1.50
+DDE         CAU         CAT        HAT2     108.831    1.50
+DDE         CAU         CAT        HAT3     108.831    1.50
+DDE        HAT2         CAT        HAT3     107.822    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DDE             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+DDE             sp2_sp2_3         OAG         CBI         NAD        HAD1       0.000   10.00     2
+DDE            sp2_sp3_19         NAD         CBI         CBW         NCB       0.000   10.00     6
+DDE            sp3_sp3_22         CBI         CBW         NCB         CAB      60.000   10.00     3
+DDE            sp3_sp3_28         CAT         CAU         CBW         CBI     180.000   10.00     3
+DDE            sp3_sp3_37        HAB1         CAB         NCB         CBW     180.000   10.00     3
+DDE            sp3_sp3_46        HAC1         CAC         NCB         CBW     180.000   10.00     3
+DDE            sp3_sp3_55        HAA1         CAA         NCB         CBW     180.000   10.00     3
+DDE            sp3_sp3_64         CE1         CAT         CAU         CBW     180.000   10.00     3
+DDE             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DDE            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+DDE             sp2_sp3_8         ND1          CG          CB          CA     -90.000   10.00     6
+DDE       const_sp2_sp2_2          CB          CG         ND1         CE1     180.000   10.00     2
+DDE              const_14         NE2         CD2          CG          CB     180.000   10.00     2
+DDE       const_sp2_sp2_4         CAT         CE1         ND1          CG     180.000   10.00     2
+DDE       const_sp2_sp2_9          CG         CD2         NE2         CE1       0.000   10.00     2
+DDE            sp2_sp3_14         ND1         CE1         CAT         CAU     -90.000   10.00     6
+DDE       const_sp2_sp2_7         CAT         CE1         NE2         CD2     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DDE    chir_1    CA    N    C    CB    both
+DDE    chir_2    CBW    NCB    CBI    CAU    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DDE    plan-1         CAT   0.020
+DDE    plan-1          CB   0.020
+DDE    plan-1         CD2   0.020
+DDE    plan-1         CE1   0.020
+DDE    plan-1          CG   0.020
+DDE    plan-1         HD2   0.020
+DDE    plan-1         HE2   0.020
+DDE    plan-1         ND1   0.020
+DDE    plan-1         NE2   0.020
+DDE    plan-2           C   0.020
+DDE    plan-2          CA   0.020
+DDE    plan-2           O   0.020
+DDE    plan-2         OXT   0.020
+DDE    plan-3         CBI   0.020
+DDE    plan-3        HAD1   0.020
+DDE    plan-3        HAD2   0.020
+DDE    plan-3         NAD   0.020
+DDE    plan-4         CBI   0.020
+DDE    plan-4         CBW   0.020
+DDE    plan-4         NAD   0.020
+DDE    plan-4         OAG   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DDE SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc1nc(nc1)CCC(C(=O)N)[N+](C)(C)C"
+DDE SMILES_CANONICAL CACTVS               3.341 "C[N+](C)(C)[C@H](CCc1[nH]cc(C[C@H](N)C(O)=O)n1)C(N)=O"
+DDE SMILES           CACTVS               3.341 "C[N+](C)(C)[CH](CCc1[nH]cc(C[CH](N)C(O)=O)n1)C(N)=O"
+DDE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[N+](C)(C)[C@H](CCc1[nH]cc(n1)C[C@@H](C(=O)O)N)C(=O)N"
+DDE SMILES           "OpenEye OEToolkits" 1.5.0 "C[N+](C)(C)C(CCc1[nH]cc(n1)CC(C(=O)O)N)C(=O)N"
+DDE InChI            InChI                1.03  "InChI=1S/C13H23N5O3/c1-18(2,3)10(12(15)19)4-5-11-16-7-8(17-11)6-9(14)13(20)21/h7,9-10H,4-6,14H2,1-3H3,(H3-,15,16,17,19,20,21)/p+1/t9-,10+/m0/s1"
+DDE InChIKey         InChI                1.03  FOOBQHKMWYGHCE-VHSXEESVSA-O
+DDE ?                acedrg               196         "dictionary generator"
+DDE ?                acedrg_database      11          "data source"
+DDE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DDE ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,120 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0D8     0D8      3-aminopropan-1-ol     NON-POLYMER     14     5     .     
+#
+data_comp_0D8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+0D8     OH      O       OH1     0       3.485       -7.850      16.947      
+0D8     N3      N       NT2     0       6.222       -7.216      17.226      
+0D8     CA3     C       CH2     0       6.172       -8.296      18.217      
+0D8     C7      C       CH2     0       5.135       -9.360      17.883      
+0D8     C8      C       CH2     0       3.717       -8.837      17.937      
+0D8     H2      H       H       0       3.532       -8.216      16.185      
+0D8     H3      H       H       0       6.943       -6.712      17.345      
+0D8     H1      H       H       0       6.264       -7.546      16.402      
+0D8     HA21    H       H       0       5.968       -7.908      19.092      
+0D8     HA3     H       H       0       7.057       -8.710      18.274      
+0D8     H89     H       H       0       5.226       -10.106     18.514      
+0D8     H99     H       H       0       5.314       -9.711      16.984      
+0D8     H14     H       H       0       3.091       -9.580      17.803      
+0D8     H24     H       H       0       3.546       -8.451      18.822      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0D8       N3        CA3       SINGLE    n         1.466     0.012     1.466     0.012     
+0D8       CA3       C7        SINGLE    n         1.523     0.013     1.523     0.013     
+0D8       C7        C8        SINGLE    n         1.513     0.010     1.513     0.010     
+0D8       OH        C8        SINGLE    n         1.417     0.020     1.417     0.020     
+0D8       OH        H2        SINGLE    n         0.970     0.012     0.846     0.020     
+0D8       N3        H3        SINGLE    n         1.036     0.016     0.888     0.020     
+0D8       N3        H1        SINGLE    n         1.036     0.016     0.888     0.020     
+0D8       CA3       HA21      SINGLE    n         1.089     0.010     0.979     0.011     
+0D8       CA3       HA3       SINGLE    n         1.089     0.010     0.979     0.011     
+0D8       C7        H89       SINGLE    n         1.089     0.010     0.981     0.012     
+0D8       C7        H99       SINGLE    n         1.089     0.010     0.981     0.012     
+0D8       C8        H14       SINGLE    n         1.089     0.010     0.981     0.017     
+0D8       C8        H24       SINGLE    n         1.089     0.010     0.981     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+0D8          C8          OH          H2     108.576    2.78
+0D8         CA3          N3          H3     110.839    3.00
+0D8         CA3          N3          H1     110.839    3.00
+0D8          H3          N3          H1     107.243    3.00
+0D8          N3         CA3          C7     113.282    2.68
+0D8          N3         CA3        HA21     108.763    1.50
+0D8          N3         CA3         HA3     108.763    1.50
+0D8          C7         CA3        HA21     109.475    1.50
+0D8          C7         CA3         HA3     109.475    1.50
+0D8        HA21         CA3         HA3     107.806    1.50
+0D8         CA3          C7          C8     113.087    1.51
+0D8         CA3          C7         H89     109.322    1.50
+0D8         CA3          C7         H99     109.322    1.50
+0D8          C8          C7         H89     109.317    1.50
+0D8          C8          C7         H99     109.317    1.50
+0D8         H89          C7         H99     107.717    1.50
+0D8          C7          C8          OH     111.826    2.06
+0D8          C7          C8         H14     109.435    1.50
+0D8          C7          C8         H24     109.435    1.50
+0D8          OH          C8         H14     109.258    1.50
+0D8          OH          C8         H24     109.258    1.50
+0D8         H14          C8         H24     108.120    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+0D8            sp3_sp3_25          C7          C8          OH          H2     180.000   10.00     3
+0D8             sp3_sp3_1          C7         CA3          N3          H3     180.000   10.00     3
+0D8             sp3_sp3_7          C8          C7         CA3          N3     180.000   10.00     3
+0D8            sp3_sp3_16         CA3          C7          C8          OH     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+0D8 SMILES           ACDLabs              12.01 OCCCN
+0D8 InChI            InChI                1.03  InChI=1S/C3H9NO/c4-2-1-3-5/h5H,1-4H2
+0D8 InChIKey         InChI                1.03  WUGQZFFCHPXWKQ-UHFFFAOYSA-N
+0D8 SMILES_CANONICAL CACTVS               3.370 NCCCO
+0D8 SMILES           CACTVS               3.370 NCCCO
+0D8 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C(CN)CO"
+0D8 SMILES           "OpenEye OEToolkits" 1.7.6 "C(CN)CO"
+0D8 ?                acedrg               202         "dictionary generator"                  
+0D8 ?                acedrg_database      11          "data source"                           
+0D8 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+0D8 ?                refmac5              5.8.0189    "optimization tool"                     

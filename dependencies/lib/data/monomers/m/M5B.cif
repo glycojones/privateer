@@ -1,0 +1,198 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+M5B     M5B      ~{N}-(1~{H}-imidazol-2-yl)thiophene-2-sulfonamide     non-polymer     21     14     .     
+#
+data_comp_M5B
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+M5B     CAC     C       CR15    0       22.786      -29.596     25.573      
+M5B     CAD     C       CR15    0       23.490      -29.589     26.728      
+M5B     CAE     C       CR15    0       23.364      -28.786     24.564      
+M5B     CAF     C       CR15    0       22.272      -23.457     24.743      
+M5B     CAG     C       CR15    0       22.717      -24.027     25.873      
+M5B     CAL     C       CR5     0       23.740      -25.041     24.240      
+M5B     CAM     C       CR5     0       24.499      -28.178     25.013      
+M5B     NAH     N       NH1     0       24.546      -25.878     23.490      
+M5B     NAI     N       NR5     0       22.920      -24.099     23.702      
+M5B     NAJ     N       NRD5    0       23.640      -25.022     25.568      
+M5B     OAA     O       O       0       26.360      -26.419     25.059      
+M5B     OAB     O       O       0       26.032      -27.773     23.013      
+M5B     SAK     S       S2      0       24.897      -28.636     26.615      
+M5B     SAN     S       S3      0       25.488      -27.052     24.120      
+M5B     H1      H       H       0       21.997      -30.093     25.470      
+M5B     H2      H       H       0       23.234      -30.055     27.502      
+M5B     H3      H       H       0       23.017      -28.677     23.697      
+M5B     H4      H       H       0       21.635      -22.748     24.647      
+M5B     H5      H       H       0       22.450      -23.792     26.752      
+M5B     H6      H       H       0       24.559      -25.780     22.623      
+M5B     H7      H       H       0       22.801      -23.909     22.850      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+M5B       OAB       SAN       DOUBLE    n         1.429     0.0100    1.429     0.0100    
+M5B       NAH       SAN       SINGLE    n         1.630     0.0117    1.630     0.0117    
+M5B       CAL       NAH       SINGLE    n         1.376     0.0200    1.376     0.0200    
+M5B       CAL       NAI       SINGLE    y         1.359     0.0116    1.359     0.0116    
+M5B       CAF       NAI       SINGLE    y         1.384     0.0100    1.384     0.0100    
+M5B       CAM       SAN       SINGLE    n         1.744     0.0125    1.744     0.0125    
+M5B       OAA       SAN       DOUBLE    n         1.429     0.0100    1.429     0.0100    
+M5B       CAL       NAJ       DOUBLE    y         1.332     0.0101    1.332     0.0101    
+M5B       CAE       CAM       DOUBLE    n         1.363     0.0168    1.363     0.0168    
+M5B       CAC       CAE       SINGLE    n         1.416     0.0108    1.416     0.0108    
+M5B       CAF       CAG       DOUBLE    y         1.342     0.0105    1.342     0.0105    
+M5B       CAM       SAK       SINGLE    n         1.713     0.0100    1.713     0.0100    
+M5B       CAC       CAD       DOUBLE    n         1.351     0.0189    1.351     0.0189    
+M5B       CAG       NAJ       SINGLE    y         1.392     0.0100    1.392     0.0100    
+M5B       CAD       SAK       SINGLE    n         1.704     0.0114    1.704     0.0114    
+M5B       CAC       H1        SINGLE    n         1.082     0.013     0.939     0.0145    
+M5B       CAD       H2        SINGLE    n         1.082     0.013     0.940     0.0170    
+M5B       CAE       H3        SINGLE    n         1.082     0.013     0.940     0.0116    
+M5B       CAF       H4        SINGLE    n         1.082     0.013     0.958     0.0100    
+M5B       CAG       H5        SINGLE    n         1.082     0.013     0.948     0.0100    
+M5B       NAH       H6        SINGLE    n         1.016     0.010     0.873     0.0200    
+M5B       NAI       H7        SINGLE    n         1.016     0.010     0.881     0.0124    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+M5B         CAE         CAC         CAD     112.986    1.50
+M5B         CAE         CAC          H1     124.610    1.62
+M5B         CAD         CAC          H1     122.404    1.50
+M5B         CAC         CAD         SAK     112.224    1.50
+M5B         CAC         CAD          H2     123.978    1.50
+M5B         SAK         CAD          H2     123.798    1.50
+M5B         CAM         CAE         CAC     110.753    1.98
+M5B         CAM         CAE          H3     124.096    1.50
+M5B         CAC         CAE          H3     125.150    1.62
+M5B         NAI         CAF         CAG     106.108    1.50
+M5B         NAI         CAF          H4     125.513    2.03
+M5B         CAG         CAF          H4     128.379    2.17
+M5B         CAF         CAG         NAJ     109.947    1.50
+M5B         CAF         CAG          H5     125.545    1.50
+M5B         NAJ         CAG          H5     124.508    1.50
+M5B         NAH         CAL         NAI     124.551    1.89
+M5B         NAH         CAL         NAJ     125.351    2.83
+M5B         NAI         CAL         NAJ     110.097    1.50
+M5B         SAN         CAM         CAE     126.315    1.50
+M5B         SAN         CAM         SAK     120.991    1.50
+M5B         CAE         CAM         SAK     112.694    1.50
+M5B         SAN         NAH         CAL     123.583    1.50
+M5B         SAN         NAH          H6     117.533    2.14
+M5B         CAL         NAH          H6     118.884    1.87
+M5B         CAL         NAI         CAF     107.480    1.50
+M5B         CAL         NAI          H7     128.031    1.84
+M5B         CAF         NAI          H7     124.490    1.50
+M5B         CAL         NAJ         CAG     106.368    1.50
+M5B         CAM         SAK         CAD      91.606    1.50
+M5B         OAB         SAN         NAH     106.746    2.43
+M5B         OAB         SAN         CAM     106.787    1.64
+M5B         OAB         SAN         OAA     120.146    1.50
+M5B         NAH         SAN         CAM     109.471    3.00
+M5B         NAH         SAN         OAA     106.746    2.43
+M5B         CAM         SAN         OAA     106.787    1.64
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+M5B            sp2_sp2_13         CAE         CAC         CAD         SAK       0.000   10.00     2
+M5B             sp2_sp2_1         CAD         CAC         CAE         CAM       0.000   10.00     2
+M5B             sp2_sp2_6         CAC         CAE         CAM         SAN     180.000   10.00     2
+M5B              const_13         NAI         CAF         CAG         NAJ       0.000   10.00     2
+M5B       const_sp2_sp2_1         CAG         CAF         NAI         CAL       0.000   10.00     2
+M5B              const_11         CAF         CAG         NAJ         CAL       0.000   10.00     2
+M5B             sp2_sp2_9         NAI         CAL         NAH         SAN     180.000   10.00     2
+M5B       const_sp2_sp2_7         NAH         CAL         NAI         CAF     180.000   10.00     2
+M5B              const_10         NAH         CAL         NAJ         CAG     180.000   10.00     2
+M5B            sp2_sp3_11         CAE         CAM         SAN         OAB     150.000   10.00     6
+M5B             sp2_sp3_6         CAL         NAH         SAN         OAB     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+M5B    chir_1    SAN    OAB    OAA    NAH    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+M5B    plan-1         CAF   0.020
+M5B    plan-1         CAG   0.020
+M5B    plan-1         CAL   0.020
+M5B    plan-1          H4   0.020
+M5B    plan-1          H5   0.020
+M5B    plan-1          H7   0.020
+M5B    plan-1         NAH   0.020
+M5B    plan-1         NAI   0.020
+M5B    plan-1         NAJ   0.020
+M5B    plan-2         CAC   0.020
+M5B    plan-2         CAD   0.020
+M5B    plan-2         CAE   0.020
+M5B    plan-2          H1   0.020
+M5B    plan-3         CAC   0.020
+M5B    plan-3         CAD   0.020
+M5B    plan-3          H2   0.020
+M5B    plan-3         SAK   0.020
+M5B    plan-4         CAC   0.020
+M5B    plan-4         CAE   0.020
+M5B    plan-4         CAM   0.020
+M5B    plan-4          H3   0.020
+M5B    plan-5         CAE   0.020
+M5B    plan-5         CAM   0.020
+M5B    plan-5         SAK   0.020
+M5B    plan-5         SAN   0.020
+M5B    plan-6         CAL   0.020
+M5B    plan-6          H6   0.020
+M5B    plan-6         NAH   0.020
+M5B    plan-6         SAN   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+M5B            InChI                InChI  1.03 InChI=1S/C7H7N3O2S2/c11-14(12,6-2-1-5-13-6)10-7-8-3-4-9-7/h1-5H,(H2,8,9,10)
+M5B         InChIKey                InChI  1.03                                                 ATSVZZXTTMVGSI-UHFFFAOYSA-N
+M5B SMILES_CANONICAL               CACTVS 3.385                                               O=[S](=O)(Nc1[nH]ccn1)c2sccc2
+M5B           SMILES               CACTVS 3.385                                               O=[S](=O)(Nc1[nH]ccn1)c2sccc2
+M5B SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                               c1cc(sc1)S(=O)(=O)Nc2[nH]ccn2
+M5B           SMILES "OpenEye OEToolkits" 2.0.7                                               c1cc(sc1)S(=O)(=O)Nc2[nH]ccn2
+M5B ?                acedrg               217         "dictionary generator"                  
+M5B ?                acedrg_database      11          "data source"                           
+M5B ?                rdkit                2017.03.2   "Chemoinformatics tool"
+M5B ?                refmac5              5.8.0253    "optimization tool"                     

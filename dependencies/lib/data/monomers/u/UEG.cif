@@ -1,0 +1,177 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UEG     UEG      "4,5-bis(hydroxymethyl)-2-methyl-pyridin-3-ol"     non-polymer     23     12     .     
+#
+data_comp_UEG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+UEG     OP4     O       OH1     0       -11.873     -7.121      -61.405     
+UEG     C5A     C       CH2     0       -13.040     -7.392      -62.169     
+UEG     C5      C       CR6     0       -14.254     -6.641      -61.672     
+UEG     C6      C       CR16    0       -15.320     -7.343      -61.102     
+UEG     N1      N       NRD6    0       -16.436     -6.751      -60.634     
+UEG     C2      C       CR6     0       -16.580     -5.422      -60.691     
+UEG     C3      C       CR6     0       -15.548     -4.611      -61.256     
+UEG     C4      C       CR6     0       -14.370     -5.226      -61.755     
+UEG     C4A     C       CH2     0       -13.251     -4.403      -62.355     
+UEG     O4A     O       OH1     0       -12.105     -4.393      -61.515     
+UEG     O3      O       OH1     0       -15.718     -3.254      -61.307     
+UEG     C2A     C       CH3     0       -17.853     -4.841      -60.150     
+UEG     HP4     H       H       0       -11.206     -7.474      -61.794     
+UEG     H5A     H       H       0       -13.210     -8.356      -62.149     
+UEG     H5B     H       H       0       -12.873     -7.143      -63.101     
+UEG     H6      H       H       0       -15.262     -8.279      -61.039     
+UEG     H4A     H       H       0       -13.538     -3.482      -62.503     
+UEG     H4B     H       H       0       -13.000     -4.771      -63.226     
+UEG     H5      H       H       0       -11.612     -3.735      -61.729     
+UEG     H3      H       H       0       -15.169     -2.897      -60.752     
+UEG     H2A     H       H       0       -17.733     -3.906      -59.922     
+UEG     H2B     H       H       0       -18.113     -5.329      -59.351     
+UEG     H2C     H       H       0       -18.555     -4.923      -60.815     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UEG       OP4       C5A       SINGLE    n         1.420     0.014     1.420     0.014     
+UEG       C5A       C5        SINGLE    n         1.507     0.010     1.507     0.010     
+UEG       C5        C6        DOUBLE    y         1.383     0.014     1.383     0.014     
+UEG       C5        C4        SINGLE    y         1.403     0.012     1.403     0.012     
+UEG       C6        N1        SINGLE    y         1.342     0.010     1.342     0.010     
+UEG       N1        C2        DOUBLE    y         1.331     0.010     1.331     0.010     
+UEG       C2        C3        SINGLE    y         1.400     0.015     1.400     0.015     
+UEG       C2        C2A       SINGLE    n         1.497     0.010     1.497     0.010     
+UEG       C3        C4        DOUBLE    y         1.399     0.012     1.399     0.012     
+UEG       C3        O3        SINGLE    n         1.364     0.013     1.364     0.013     
+UEG       C4        C4A       SINGLE    n         1.506     0.010     1.506     0.010     
+UEG       C4A       O4A       SINGLE    n         1.420     0.014     1.420     0.014     
+UEG       OP4       HP4       SINGLE    n         0.970     0.012     0.849     0.020     
+UEG       C5A       H5A       SINGLE    n         1.089     0.010     0.979     0.018     
+UEG       C5A       H5B       SINGLE    n         1.089     0.010     0.979     0.018     
+UEG       C6        H6        SINGLE    n         1.082     0.013     0.940     0.020     
+UEG       C4A       H4A       SINGLE    n         1.089     0.010     0.979     0.018     
+UEG       C4A       H4B       SINGLE    n         1.089     0.010     0.979     0.018     
+UEG       O4A       H5        SINGLE    n         0.970     0.012     0.849     0.020     
+UEG       O3        H3        SINGLE    n         0.970     0.012     0.858     0.020     
+UEG       C2A       H2A       SINGLE    n         1.089     0.010     0.971     0.014     
+UEG       C2A       H2B       SINGLE    n         1.089     0.010     0.971     0.014     
+UEG       C2A       H2C       SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+UEG         C5A         OP4         HP4     108.716    3.00
+UEG         OP4         C5A          C5     113.119    1.65
+UEG         OP4         C5A         H5A     109.107    1.50
+UEG         OP4         C5A         H5B     109.107    1.50
+UEG          C5         C5A         H5A     109.397    2.96
+UEG          C5         C5A         H5B     109.397    2.96
+UEG         H5A         C5A         H5B     107.986    1.50
+UEG         C5A          C5          C6     120.535    1.50
+UEG         C5A          C5          C4     121.580    1.51
+UEG          C6          C5          C4     117.885    1.50
+UEG          C5          C6          N1     123.320    1.50
+UEG          C5          C6          H6     118.605    1.50
+UEG          N1          C6          H6     118.075    1.50
+UEG          C6          N1          C2     119.476    1.60
+UEG          N1          C2          C3     120.416    1.50
+UEG          N1          C2         C2A     118.993    1.50
+UEG          C3          C2         C2A     120.591    1.50
+UEG          C2          C3          C4     119.866    1.50
+UEG          C2          C3          O3     119.235    1.71
+UEG          C4          C3          O3     120.899    2.61
+UEG          C5          C4          C3     119.036    1.50
+UEG          C5          C4         C4A     120.413    1.51
+UEG          C3          C4         C4A     120.550    1.50
+UEG          C4         C4A         O4A     111.937    1.71
+UEG          C4         C4A         H4A     109.800    1.50
+UEG          C4         C4A         H4B     109.800    1.50
+UEG         O4A         C4A         H4A     109.107    1.50
+UEG         O4A         C4A         H4B     109.107    1.50
+UEG         H4A         C4A         H4B     107.986    1.50
+UEG         C4A         O4A          H5     108.716    3.00
+UEG          C3          O3          H3     108.001    2.98
+UEG          C2         C2A         H2A     109.484    1.50
+UEG          C2         C2A         H2B     109.484    1.50
+UEG          C2         C2A         H2C     109.484    1.50
+UEG         H2A         C2A         H2B     109.339    1.66
+UEG         H2A         C2A         H2C     109.339    1.66
+UEG         H2B         C2A         H2C     109.339    1.66
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+UEG             sp3_sp3_1          C5         C5A         OP4         HP4     180.000   10.00     3
+UEG             sp2_sp3_2          C6          C5         C5A         OP4     -90.000   10.00     6
+UEG       const_sp2_sp2_3         C5A          C5          C6          N1     180.000   10.00     2
+UEG              const_20         C4A          C4          C5         C5A       0.000   10.00     2
+UEG       const_sp2_sp2_5          C5          C6          N1          C2       0.000   10.00     2
+UEG       const_sp2_sp2_8         C2A          C2          N1          C6     180.000   10.00     2
+UEG             sp2_sp3_7          N1          C2         C2A         H2A     150.000   10.00     6
+UEG              const_12         C2A          C2          C3          O3       0.000   10.00     2
+UEG              const_16          O3          C3          C4         C4A       0.000   10.00     2
+UEG            sp2_sp3_16          C5          C4         C4A         O4A     -90.000   10.00     6
+UEG             sp3_sp3_4          C4         C4A         O4A          H5     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+UEG    plan-1          C2   0.020
+UEG    plan-1         C2A   0.020
+UEG    plan-1          C3   0.020
+UEG    plan-1          C4   0.020
+UEG    plan-1         C4A   0.020
+UEG    plan-1          C5   0.020
+UEG    plan-1         C5A   0.020
+UEG    plan-1          C6   0.020
+UEG    plan-1          H6   0.020
+UEG    plan-1          N1   0.020
+UEG    plan-1          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+UEG SMILES           ACDLabs              12.01 "Oc1c(c(cnc1C)CO)CO"
+UEG InChI            InChI                1.03  "InChI=1S/C8H11NO3/c1-5-8(12)7(4-11)6(3-10)2-9-5/h2,10-12H,3-4H2,1H3"
+UEG InChIKey         InChI                1.03  LXNHXLLTXMVWPM-UHFFFAOYSA-N
+UEG SMILES_CANONICAL CACTVS               3.385 "Cc1ncc(CO)c(CO)c1O"
+UEG SMILES           CACTVS               3.385 "Cc1ncc(CO)c(CO)c1O"
+UEG SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "Cc1c(c(c(cn1)CO)CO)O"
+UEG SMILES           "OpenEye OEToolkits" 1.9.2 "Cc1c(c(c(cn1)CO)CO)O"
+UEG ?                acedrg               202         "dictionary generator"                  
+UEG ?                acedrg_database      11          "data source"                           
+UEG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+UEG ?                refmac5              5.8.0189    "optimization tool"                     

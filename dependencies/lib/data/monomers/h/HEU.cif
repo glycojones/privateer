@@ -1,0 +1,300 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HEU      HEU '3-(2-HYDROXYETHYL)-2'-DEOXYURIDINE-5' DNA                38  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HEU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HEU           OP3    O    OP       -0.666      0.000    0.000    0.000
+ HEU           P      P    P         0.000     -0.468   -1.270   -0.677
+ HEU           OP2    O    OP       -0.666     -1.291   -1.952    0.393
+ HEU           OP1    O    OP       -0.666      0.632   -2.114   -1.283
+ HEU           "O5'"  O    O2        0.000     -1.574   -0.731   -1.729
+ HEU           "C5'"  C    CH2       0.000     -2.639    0.067   -1.240
+ HEU           "H5'"  H    H         0.000     -2.239    0.970   -0.775
+ HEU           "H5''" H    H         0.000     -3.214   -0.497   -0.502
+ HEU           "C4'"  C    CH1       0.000     -3.543    0.450   -2.404
+ HEU           "H4'"  H    H         0.000     -2.959    0.977   -3.172
+ HEU           "C3'"  C    CH1       0.000     -4.729    1.303   -1.979
+ HEU           "H3'"  H    H         0.000     -4.481    1.925   -1.107
+ HEU           "C2'"  C    CH2       0.000     -5.784    0.276   -1.637
+ HEU           "H2'"  H    H         0.000     -6.800    0.644   -1.795
+ HEU           "H2''" H    H         0.000     -5.690   -0.105   -0.618
+ HEU           "C1'"  C    CH1       0.000     -5.488   -0.840   -2.626
+ HEU           "H1'"  H    H         0.000     -6.081   -0.679   -3.537
+ HEU           "O4'"  O    O2        0.000     -4.094   -0.763   -2.954
+ HEU           N1     N    NR6       0.000     -5.781   -2.141   -2.099
+ HEU           C6     C    CR16      0.000     -4.822   -2.812   -1.359
+ HEU           H6     H    H         0.000     -3.868   -2.324   -1.202
+ HEU           C5     C    CR16      0.000     -5.001   -4.019   -0.828
+ HEU           H5     H    H         0.000     -4.207   -4.487   -0.260
+ HEU           C4     C    CR6       0.000     -6.288   -4.719   -1.019
+ HEU           N3     N    NR6       0.000     -7.235   -4.018   -1.778
+ HEU           C7     C    CH2       0.000     -8.520   -4.670   -2.011
+ HEU           H71    H    H         0.000     -8.380   -5.753   -2.029
+ HEU           H72    H    H         0.000     -8.926   -4.340   -2.970
+ HEU           C8     C    CH2       0.000     -9.485   -4.301   -0.899
+ HEU           H81    H    H         0.000    -10.455   -4.766   -1.089
+ HEU           H82    H    H         0.000     -9.603   -3.216   -0.865
+ HEU           O9     O    OH1       0.000     -8.972   -4.763    0.345
+ HEU           H9     H    H         0.000     -9.135   -4.098    1.026
+ HEU           C2     C    CR6       0.000     -7.047   -2.727   -2.341
+ HEU           O2     O    O         0.000     -7.925   -2.154   -2.994
+ HEU           O4     O    O         0.000     -6.443   -5.830   -0.516
+ HEU           "O3'"  O    OH1       0.000     -5.171    2.101   -3.075
+ HEU           "HO3'" H    H         0.000     -5.204    3.024   -2.766
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HEU      OP3    n/a    P      START
+ HEU      P      OP3    "O5'"  .
+ HEU      OP2    P      .      .
+ HEU      OP1    P      .      .
+ HEU      "O5'"  P      "C5'"  .
+ HEU      "C5'"  "O5'"  "C4'"  .
+ HEU      "H5'"  "C5'"  .      .
+ HEU      "H5''" "C5'"  .      .
+ HEU      "C4'"  "C5'"  "C3'"  .
+ HEU      "H4'"  "C4'"  .      .
+ HEU      "C3'"  "C4'"  "O3'"  .
+ HEU      "H3'"  "C3'"  .      .
+ HEU      "C2'"  "C3'"  "C1'"  .
+ HEU      "H2'"  "C2'"  .      .
+ HEU      "H2''" "C2'"  .      .
+ HEU      "C1'"  "C2'"  N1     .
+ HEU      "H1'"  "C1'"  .      .
+ HEU      "O4'"  "C1'"  .      .
+ HEU      N1     "C1'"  C6     .
+ HEU      C6     N1     C5     .
+ HEU      H6     C6     .      .
+ HEU      C5     C6     C4     .
+ HEU      H5     C5     .      .
+ HEU      C4     C5     O4     .
+ HEU      N3     C4     C2     .
+ HEU      C7     N3     C8     .
+ HEU      H71    C7     .      .
+ HEU      H72    C7     .      .
+ HEU      C8     C7     O9     .
+ HEU      H81    C8     .      .
+ HEU      H82    C8     .      .
+ HEU      O9     C8     H9     .
+ HEU      H9     O9     .      .
+ HEU      C2     N3     O2     .
+ HEU      O2     C2     .      .
+ HEU      O4     C4     .      .
+ HEU      "O3'"  "C3'"  .      END
+ HEU      "HO3'" "O3'"  .      .
+ HEU      "C4'"  "O4'"  .    ADD
+ HEU      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HEU       OP2       P         deloc     1.510     0.020     1.510     0.020     
+HEU       OP1       P         deloc     1.510     0.020     1.510     0.020     
+HEU       "O5'"     P         single    1.610     0.020     1.610     0.020     
+HEU       P         OP3       deloc     1.510     0.020     1.510     0.020     
+HEU       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+HEU       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+HEU       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+HEU       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+HEU       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+HEU       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+HEU       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+HEU       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+HEU       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+HEU       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+HEU       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+HEU       N1        C2        single    1.410     0.020     1.410     0.020     
+HEU       C6        N1        single    1.337     0.020     1.337     0.020     
+HEU       O2        C2        double    1.250     0.020     1.250     0.020     
+HEU       C2        N3        single    1.410     0.020     1.410     0.020     
+HEU       C7        N3        single    1.465     0.020     1.465     0.020     
+HEU       N3        C4        single    1.410     0.020     1.410     0.020     
+HEU       C8        C7        single    1.524     0.020     1.524     0.020     
+HEU       H71       C7        single    1.089     0.010     0.989     0.005     
+HEU       H72       C7        single    1.089     0.010     0.989     0.005     
+HEU       O9        C8        single    1.432     0.020     1.432     0.020     
+HEU       H81       C8        single    1.089     0.010     0.989     0.005     
+HEU       H82       C8        single    1.089     0.010     0.989     0.005     
+HEU       H9        O9        single    0.970     0.012     0.839     0.014     
+HEU       O4        C4        double    1.250     0.020     1.250     0.020     
+HEU       C4        C5        single    1.390     0.020     1.390     0.020     
+HEU       C5        C6        double    1.390     0.020     1.390     0.020     
+HEU       H5        C5        single    1.082     0.013     0.975     0.010     
+HEU       H6        C6        single    1.082     0.013     0.975     0.010     
+HEU       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+HEU       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+HEU       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+HEU       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+HEU       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+HEU       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HEU      OP3    P      OP2     119.900    3.000
+ HEU      OP3    P      OP1     119.900    3.000
+ HEU      OP3    P      "O5'"   108.200    3.000
+ HEU      OP2    P      OP1     119.900    3.000
+ HEU      OP2    P      "O5'"   108.200    3.000
+ HEU      OP1    P      "O5'"   108.200    3.000
+ HEU      P      "O5'"  "C5'"   120.500    3.000
+ HEU      "O5'"  "C5'"  "H5'"   109.470    3.000
+ HEU      "O5'"  "C5'"  "H5''"  109.470    3.000
+ HEU      "O5'"  "C5'"  "C4'"   109.470    3.000
+ HEU      "H5'"  "C5'"  "H5''"  107.900    3.000
+ HEU      "H5'"  "C5'"  "C4'"   109.470    3.000
+ HEU      "H5''" "C5'"  "C4'"   109.470    3.000
+ HEU      "C5'"  "C4'"  "H4'"   108.340    3.000
+ HEU      "C5'"  "C4'"  "C3'"   111.000    3.000
+ HEU      "C5'"  "C4'"  "O4'"   109.470    3.000
+ HEU      "H4'"  "C4'"  "C3'"   108.340    3.000
+ HEU      "H4'"  "C4'"  "O4'"   109.470    3.000
+ HEU      "C3'"  "C4'"  "O4'"   109.470    3.000
+ HEU      "C4'"  "C3'"  "H3'"   108.340    3.000
+ HEU      "C4'"  "C3'"  "C2'"   111.000    3.000
+ HEU      "C4'"  "C3'"  "O3'"   109.470    3.000
+ HEU      "H3'"  "C3'"  "C2'"   108.340    3.000
+ HEU      "H3'"  "C3'"  "O3'"   109.470    3.000
+ HEU      "C2'"  "C3'"  "O3'"   109.470    3.000
+ HEU      "C3'"  "C2'"  "H2'"   109.470    3.000
+ HEU      "C3'"  "C2'"  "H2''"  109.470    3.000
+ HEU      "C3'"  "C2'"  "C1'"   111.000    3.000
+ HEU      "H2'"  "C2'"  "H2''"  107.900    3.000
+ HEU      "H2'"  "C2'"  "C1'"   109.470    3.000
+ HEU      "H2''" "C2'"  "C1'"   109.470    3.000
+ HEU      "C2'"  "C1'"  "H1'"   108.340    3.000
+ HEU      "C2'"  "C1'"  "O4'"   109.470    3.000
+ HEU      "C2'"  "C1'"  N1      109.470    3.000
+ HEU      "H1'"  "C1'"  "O4'"   109.470    3.000
+ HEU      "H1'"  "C1'"  N1      109.470    3.000
+ HEU      "O4'"  "C1'"  N1      109.470    3.000
+ HEU      "C1'"  "O4'"  "C4'"   111.800    3.000
+ HEU      "C1'"  N1     C6      120.000    3.000
+ HEU      "C1'"  N1     C2      120.000    3.000
+ HEU      C6     N1     C2      120.000    3.000
+ HEU      N1     C6     H6      120.000    3.000
+ HEU      N1     C6     C5      120.000    3.000
+ HEU      H6     C6     C5      120.000    3.000
+ HEU      C6     C5     H5      120.000    3.000
+ HEU      C6     C5     C4      120.000    3.000
+ HEU      H5     C5     C4      120.000    3.000
+ HEU      C5     C4     N3      120.000    3.000
+ HEU      C5     C4     O4      120.000    3.000
+ HEU      N3     C4     O4      120.000    3.000
+ HEU      C4     N3     C7      120.000    3.000
+ HEU      C4     N3     C2      120.000    3.000
+ HEU      C7     N3     C2      120.000    3.000
+ HEU      N3     C7     H71     109.470    3.000
+ HEU      N3     C7     H72     109.470    3.000
+ HEU      N3     C7     C8      109.470    3.000
+ HEU      H71    C7     H72     107.900    3.000
+ HEU      H71    C7     C8      109.470    3.000
+ HEU      H72    C7     C8      109.470    3.000
+ HEU      C7     C8     H81     109.470    3.000
+ HEU      C7     C8     H82     109.470    3.000
+ HEU      C7     C8     O9      109.470    3.000
+ HEU      H81    C8     H82     107.900    3.000
+ HEU      H81    C8     O9      109.470    3.000
+ HEU      H82    C8     O9      109.470    3.000
+ HEU      C8     O9     H9      109.470    3.000
+ HEU      N3     C2     O2      120.000    3.000
+ HEU      N3     C2     N1      120.000    3.000
+ HEU      O2     C2     N1      120.000    3.000
+ HEU      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HEU      var_1    OP3    P      "O5'"  "C5'"    -54.231   20.000   1
+ HEU      var_2    P      "O5'"  "C5'"  "C4'"    179.971   20.000   1
+ HEU      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.531   20.000   3
+ HEU      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ HEU      var_5    "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ HEU      var_6    "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ HEU      var_7    "C3'"  "C2'"  "C1'"  N1       150.000   20.000   3
+ HEU      var_8    "C2'"  "C1'"  "O4'"  "C4'"      0.000   20.000   1
+ HEU      var_9    "C2'"  "C1'"  N1     C6       -86.510   20.000   1
+ HEU      CONST_1  "C1'"  N1     C2     N3       180.000    0.000   0
+ HEU      CONST_2  "C1'"  N1     C6     C5       180.000    0.000   0
+ HEU      CONST_3  N1     C6     C5     C4         0.000    0.000   0
+ HEU      CONST_4  C6     C5     C4     O4       180.000    0.000   0
+ HEU      CONST_5  C5     C4     N3     C2         0.000    0.000   0
+ HEU      var_10   C4     N3     C7     C8        90.039   20.000   1
+ HEU      var_11   N3     C7     C8     O9       -61.553   20.000   3
+ HEU      var_12   C7     C8     O9     H9       139.937   20.000   1
+ HEU      CONST_6  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HEU      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ HEU      chir_02  "C1'"  "O4'"  N1     "C2'"     negativ
+ HEU      chir_03  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HEU      plan-1    N1        0.020
+ HEU      plan-1    "C1'"     0.020
+ HEU      plan-1    C2        0.020
+ HEU      plan-1    C6        0.020
+ HEU      plan-1    N3        0.020
+ HEU      plan-1    C4        0.020
+ HEU      plan-1    C5        0.020
+ HEU      plan-1    O2        0.020
+ HEU      plan-1    C7        0.020
+ HEU      plan-1    O4        0.020
+ HEU      plan-1    H5        0.020
+ HEU      plan-1    H6        0.020
+# ------------------------------------------------------

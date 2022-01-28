@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BAQ     BAQ     pyrrolidin-2-one     NON-POLYMER     13     6     .     
+#
+data_comp_BAQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BAQ     OAA     O       O       0       -15.055     -4.230      -0.078      
+BAQ     CAF     C       CR5     0       -13.944     -4.724      -0.360      
+BAQ     CAD     C       CH2     0       -12.944     -4.153      -1.308      
+BAQ     CAB     C       CH2     0       -11.768     -5.113      -1.287      
+BAQ     CAC     C       CH2     0       -12.148     -6.222      -0.317      
+BAQ     NAE     N       NR5     0       -13.479     -5.855      0.154       
+BAQ     H1      H       H       0       -13.327     -4.089      -2.210      
+BAQ     H2      H       H       0       -12.670     -3.256      -1.017      
+BAQ     H3      H       H       0       -10.950     -4.650      -0.981      
+BAQ     H4      H       H       0       -11.605     -5.480      -2.189      
+BAQ     H5      H       H       0       -11.509     -6.268      0.430       
+BAQ     H6      H       H       0       -12.163     -7.094      -0.773      
+BAQ     H7      H       H       0       -13.934     -6.332      0.724       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BAQ       CAD       CAB       SINGLE    n         1.518     0.020     1.518     0.020     
+BAQ       CAF       CAD       SINGLE    n         1.493     0.020     1.493     0.020     
+BAQ       CAB       CAC       SINGLE    n         1.520     0.020     1.520     0.020     
+BAQ       CAC       NAE       SINGLE    n         1.459     0.010     1.459     0.010     
+BAQ       OAA       CAF       DOUBLE    n         1.248     0.010     1.248     0.010     
+BAQ       CAF       NAE       SINGLE    n         1.327     0.015     1.327     0.015     
+BAQ       CAD       H1        SINGLE    n         1.089     0.010     0.982     0.010     
+BAQ       CAD       H2        SINGLE    n         1.089     0.010     0.982     0.010     
+BAQ       CAB       H3        SINGLE    n         1.089     0.010     0.988     0.020     
+BAQ       CAB       H4        SINGLE    n         1.089     0.010     0.988     0.020     
+BAQ       CAC       H5        SINGLE    n         1.089     0.010     0.984     0.011     
+BAQ       CAC       H6        SINGLE    n         1.089     0.010     0.984     0.011     
+BAQ       NAE       H7        SINGLE    n         1.016     0.010     0.871     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BAQ         CAD         CAF         OAA     126.302    1.50
+BAQ         CAD         CAF         NAE     109.285    1.50
+BAQ         OAA         CAF         NAE     124.413    1.50
+BAQ         CAB         CAD         CAF     104.557    1.79
+BAQ         CAB         CAD          H1     110.945    1.50
+BAQ         CAB         CAD          H2     110.945    1.50
+BAQ         CAF         CAD          H1     110.409    1.50
+BAQ         CAF         CAD          H2     110.409    1.50
+BAQ          H1         CAD          H2     108.838    1.50
+BAQ         CAD         CAB         CAC     105.290    1.50
+BAQ         CAD         CAB          H3     110.683    1.50
+BAQ         CAD         CAB          H4     110.683    1.50
+BAQ         CAC         CAB          H3     110.804    1.50
+BAQ         CAC         CAB          H4     110.804    1.50
+BAQ          H3         CAB          H4     108.899    1.50
+BAQ         CAB         CAC         NAE     103.517    1.50
+BAQ         CAB         CAC          H5     110.867    1.50
+BAQ         CAB         CAC          H6     110.867    1.50
+BAQ         NAE         CAC          H5     111.051    1.50
+BAQ         NAE         CAC          H6     111.051    1.50
+BAQ          H5         CAC          H6     108.731    1.50
+BAQ         CAC         NAE         CAF     113.594    1.50
+BAQ         CAC         NAE          H7     123.633    1.50
+BAQ         CAF         NAE          H7     122.773    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BAQ             sp2_sp3_4         OAA         CAF         CAD         CAB     180.000   10.00     6
+BAQ             sp2_sp2_3         OAA         CAF         NAE         CAC     180.000   10.00     2
+BAQ             sp3_sp3_1         CAC         CAB         CAD         CAF     -60.000   10.00     3
+BAQ            sp3_sp3_10         CAD         CAB         CAC         NAE      60.000   10.00     3
+BAQ             sp2_sp3_7         CAF         NAE         CAC         CAB       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BAQ    plan-1         CAD   0.020
+BAQ    plan-1         CAF   0.020
+BAQ    plan-1         NAE   0.020
+BAQ    plan-1         OAA   0.020
+BAQ    plan-2         CAC   0.020
+BAQ    plan-2         CAF   0.020
+BAQ    plan-2          H7   0.020
+BAQ    plan-2         NAE   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BAQ SMILES           ACDLabs              12.01 O=C1NCCC1
+BAQ InChI            InChI                1.03  "InChI=1S/C4H7NO/c6-4-2-1-3-5-4/h1-3H2,(H,5,6)"
+BAQ InChIKey         InChI                1.03  HNJBEVLQSNELDL-UHFFFAOYSA-N
+BAQ SMILES_CANONICAL CACTVS               3.370 O=C1CCCN1
+BAQ SMILES           CACTVS               3.370 O=C1CCCN1
+BAQ SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C1CC(=O)NC1"
+BAQ SMILES           "OpenEye OEToolkits" 1.7.6 "C1CC(=O)NC1"
+BAQ ?                acedrg               190         "dictionary generator"                  
+BAQ ?                acedrg_database      11          "data source"                           
+BAQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BAQ ?                refmac5              5.8.0158    "optimization tool"                     

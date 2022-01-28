@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3SL     3SL     "(2R)-3-SULFOLACTICACID"     NON-POLYMER     15     10     .     
+#
+data_comp_3SL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3SL     O11     O       OC      -1      25.120      45.083      210.226     
+3SL     C1      C       C       0       24.977      44.994      208.990     
+3SL     O12     O       O       0       24.716      45.941      208.220     
+3SL     C2      C       CH1     0       25.134      43.601      208.366     
+3SL     O2      O       OH1     0       26.252      42.910      208.911     
+3SL     C3      C       CH2     0       23.872      42.767      208.567     
+3SL     S       S       S3      0       23.916      41.230      207.687     
+3SL     O3S     O       O       0       23.988      41.554      206.291     
+3SL     O1S     O       O       0       24.966      40.447      208.273     
+3SL     O2S     O       OH1     0       22.541      40.595      208.011     
+3SL     H2      H       H       0       25.280      43.712      207.395     
+3SL     HO2     H       H       0       26.147      42.784      209.745     
+3SL     H31     H       H       0       23.098      43.287      208.264     
+3SL     H32     H       H       0       23.764      42.585      209.524     
+3SL     H2S     H       H       0       22.599      39.787      208.023     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3SL       O11       C1        SINGLE    n         1.247     0.019     1.247     0.019     
+3SL       C1        O12       DOUBLE    n         1.247     0.019     1.247     0.019     
+3SL       C1        C2        SINGLE    n         1.533     0.010     1.533     0.010     
+3SL       C2        O2        SINGLE    n         1.419     0.017     1.419     0.017     
+3SL       C2        C3        SINGLE    n         1.525     0.010     1.525     0.010     
+3SL       C3        S         SINGLE    n         1.771     0.013     1.771     0.013     
+3SL       S         O3S       DOUBLE    n         1.435     0.010     1.435     0.010     
+3SL       S         O1S       DOUBLE    n         1.435     0.010     1.435     0.010     
+3SL       S         O2S       SINGLE    n         1.549     0.020     1.549     0.020     
+3SL       C2        H2        SINGLE    n         1.089     0.010     0.988     0.014     
+3SL       O2        HO2       SINGLE    n         0.970     0.012     0.848     0.020     
+3SL       C3        H31       SINGLE    n         1.089     0.010     0.980     0.016     
+3SL       C3        H32       SINGLE    n         1.089     0.010     0.980     0.016     
+3SL       O2S       H2S       SINGLE    n         0.970     0.012     0.811     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3SL         O11          C1         O12     125.666    1.50
+3SL         O11          C1          C2     117.167    1.52
+3SL         O12          C1          C2     117.167    1.52
+3SL          C1          C2          O2     111.343    1.72
+3SL          C1          C2          C3     111.511    2.91
+3SL          C1          C2          H2     108.330    1.50
+3SL          O2          C2          C3     108.934    2.22
+3SL          O2          C2          H2     108.675    1.50
+3SL          C3          C2          H2     108.551    1.50
+3SL          C2          O2         HO2     108.894    3.00
+3SL          C2          C3           S     111.256    2.92
+3SL          C2          C3         H31     108.540    1.50
+3SL          C2          C3         H32     108.540    1.50
+3SL           S          C3         H31     108.904    1.50
+3SL           S          C3         H32     108.904    1.50
+3SL         H31          C3         H32     108.043    1.50
+3SL          C3           S         O3S     106.916    1.50
+3SL          C3           S         O1S     106.916    1.50
+3SL          C3           S         O2S     103.568    2.80
+3SL         O3S           S         O1S     119.289    2.60
+3SL         O3S           S         O2S     110.306    2.80
+3SL         O1S           S         O2S     110.306    2.80
+3SL           S         O2S         H2S     110.371    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3SL             sp2_sp3_1         O11          C1          C2          O2       0.000   10.00     6
+3SL             sp3_sp3_1          C1          C2          O2         HO2     180.000   10.00     3
+3SL             sp3_sp3_4          C1          C2          C3           S     180.000   10.00     3
+3SL            sp3_sp3_13          C2          C3           S         O3S     180.000   10.00     3
+3SL            sp3_sp3_22         H2S         O2S           S          C3     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+3SL    chir_1    C2    O2    C3    C1    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3SL    plan-1          C1   0.020
+3SL    plan-1          C2   0.020
+3SL    plan-1         O11   0.020
+3SL    plan-1         O12   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3SL SMILES           ACDLabs              10.04 "O=C(O)C(O)CS(=O)(=O)O"
+3SL SMILES_CANONICAL CACTVS               3.341 "O[C@@H](C[S](O)(=O)=O)C(O)=O"
+3SL SMILES           CACTVS               3.341 "O[CH](C[S](O)(=O)=O)C(O)=O"
+3SL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)O)S(=O)(=O)O"
+3SL SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)O)S(=O)(=O)O"
+3SL InChI            InChI                1.03  "InChI=1S/C3H6O6S/c4-2(3(5)6)1-10(7,8)9/h2,4H,1H2,(H,5,6)(H,7,8,9)/t2-/m0/s1"
+3SL InChIKey         InChI                1.03  CQQGIWJSICOUON-REOHCLBHSA-N
+3SL ?                acedrg               190         "dictionary generator"                  
+3SL ?                acedrg_database      11          "data source"                           
+3SL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3SL ?                refmac5              5.8.0158    "optimization tool"                     

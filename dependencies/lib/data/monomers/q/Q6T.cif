@@ -1,0 +1,163 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+Q6T     Q6T      "1,3-benzodioxole-4-carboxylic acid"     non-polymer     17     12     .     
+#
+data_comp_Q6T
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+Q6T     OAA     O       OC      -1      5.077       -23.512     -1.343      
+Q6T     C10     C       C       0       5.907       -22.586     -1.367      
+Q6T     OAB     O       O       0       5.658       -21.409     -1.049      
+Q6T     CAD     C       CR6     0       7.311       -22.913     -1.813      
+Q6T     CAK     C       CR56    0       8.024       -24.026     -1.336      
+Q6T     CAL     C       CR56    0       9.330       -24.309     -1.766      
+Q6T     OAH     O       O2      0       9.790       -25.448     -1.145      
+Q6T     CAF     C       CH2     0       8.717       -25.901     -0.319      
+Q6T     OAG     O       O2      0       7.623       -24.974     -0.434      
+Q6T     CAE     C       CR16    0       9.981       -23.515     -2.676      
+Q6T     CAJ     C       CR16    0       9.285       -22.400     -3.163      
+Q6T     CAC     C       CR16    0       7.986       -22.101     -2.748      
+Q6T     HAF1    H       H       0       9.013       -25.953     0.613       
+Q6T     HAF2    H       H       0       8.430       -26.792     -0.604      
+Q6T     HAE     H       H       0       10.861      -23.712     -2.961      
+Q6T     HAJ     H       H       0       9.710       -21.835     -3.792      
+Q6T     HAC     H       H       0       7.549       -21.335     -3.103      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+Q6T       OAA       C10       SINGLE    n         1.244     0.020     1.244     0.020     
+Q6T       C10       OAB       DOUBLE    n         1.244     0.020     1.244     0.020     
+Q6T       CAE       CAJ       SINGLE    y         1.392     0.011     1.392     0.011     
+Q6T       CAJ       CAC       DOUBLE    y         1.389     0.010     1.389     0.010     
+Q6T       CAL       CAE       DOUBLE    y         1.364     0.010     1.364     0.010     
+Q6T       CAL       OAH       SINGLE    n         1.377     0.010     1.377     0.010     
+Q6T       CAK       CAL       SINGLE    y         1.391     0.015     1.391     0.015     
+Q6T       OAH       CAF       SINGLE    n         1.428     0.010     1.428     0.010     
+Q6T       CAF       OAG       SINGLE    n         1.438     0.010     1.438     0.010     
+Q6T       CAK       OAG       SINGLE    n         1.369     0.015     1.369     0.015     
+Q6T       CAD       CAK       DOUBLE    y         1.390     0.016     1.390     0.016     
+Q6T       CAD       CAC       SINGLE    y         1.394     0.016     1.394     0.016     
+Q6T       C10       CAD       SINGLE    n         1.509     0.012     1.509     0.012     
+Q6T       CAF       HAF1      SINGLE    n         1.089     0.010     0.979     0.015     
+Q6T       CAF       HAF2      SINGLE    n         1.089     0.010     0.979     0.015     
+Q6T       CAE       HAE       SINGLE    n         1.082     0.013     0.946     0.011     
+Q6T       CAJ       HAJ       SINGLE    n         1.082     0.013     0.947     0.020     
+Q6T       CAC       HAC       SINGLE    n         1.082     0.013     0.950     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+Q6T         OAA         C10         OAB     124.467    1.50
+Q6T         OAA         C10         CAD     117.767    1.50
+Q6T         OAB         C10         CAD     117.767    1.50
+Q6T         CAK         CAD         CAC     116.036    1.50
+Q6T         CAK         CAD         C10     122.918    2.67
+Q6T         CAC         CAD         C10     121.046    1.55
+Q6T         CAL         CAK         OAG     109.513    1.50
+Q6T         CAL         CAK         CAD     122.149    1.50
+Q6T         OAG         CAK         CAD     128.338    1.50
+Q6T         CAE         CAL         OAH     128.211    1.50
+Q6T         CAE         CAL         CAK     121.876    1.50
+Q6T         OAH         CAL         CAK     109.912    1.50
+Q6T         CAL         OAH         CAF     105.409    1.50
+Q6T         OAH         CAF         OAG     108.187    1.50
+Q6T         OAH         CAF        HAF1     109.983    1.50
+Q6T         OAH         CAF        HAF2     109.983    1.50
+Q6T         OAG         CAF        HAF1     109.983    1.50
+Q6T         OAG         CAF        HAF2     109.983    1.50
+Q6T        HAF1         CAF        HAF2     108.633    1.82
+Q6T         CAF         OAG         CAK     105.781    1.50
+Q6T         CAJ         CAE         CAL     116.471    1.50
+Q6T         CAJ         CAE         HAE     121.843    1.50
+Q6T         CAL         CAE         HAE     121.686    1.50
+Q6T         CAE         CAJ         CAC     121.978    1.50
+Q6T         CAE         CAJ         HAJ     118.893    1.50
+Q6T         CAC         CAJ         HAJ     119.129    1.50
+Q6T         CAJ         CAC         CAD     121.489    1.50
+Q6T         CAJ         CAC         HAC     119.221    1.50
+Q6T         CAD         CAC         HAC     119.289    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+Q6T              const_17         CAD         CAC         CAJ         CAE       0.000   10.00     2
+Q6T             sp2_sp2_5         OAA         C10         CAD         CAK     180.000   10.00     2
+Q6T              const_22         CAJ         CAC         CAD         C10     180.000   10.00     2
+Q6T       const_sp2_sp2_3         C10         CAD         CAK         CAL     180.000   10.00     2
+Q6T       const_sp2_sp2_6         OAG         CAK         CAL         CAE     180.000   10.00     2
+Q6T             sp2_sp2_3         CAL         CAK         OAG         CAF       0.000   10.00     2
+Q6T             sp2_sp2_2         CAE         CAL         OAH         CAF     180.000   10.00     2
+Q6T              const_10         CAJ         CAE         CAL         OAH     180.000   10.00     2
+Q6T             sp3_sp3_1         OAG         CAF         OAH         CAL      60.000   10.00     3
+Q6T             sp3_sp3_4         OAH         CAF         OAG         CAK     -60.000   10.00     3
+Q6T              const_13         CAL         CAE         CAJ         CAC       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+Q6T    plan-1         C10   0.020
+Q6T    plan-1         CAC   0.020
+Q6T    plan-1         CAD   0.020
+Q6T    plan-1         CAE   0.020
+Q6T    plan-1         CAJ   0.020
+Q6T    plan-1         CAK   0.020
+Q6T    plan-1         CAL   0.020
+Q6T    plan-1         HAC   0.020
+Q6T    plan-1         HAE   0.020
+Q6T    plan-1         HAJ   0.020
+Q6T    plan-1         OAG   0.020
+Q6T    plan-1         OAH   0.020
+Q6T    plan-2         C10   0.020
+Q6T    plan-2         CAD   0.020
+Q6T    plan-2         OAA   0.020
+Q6T    plan-2         OAB   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+Q6T SMILES           ACDLabs              12.01 "O=C(O)c1cccc2OCOc12"
+Q6T InChI            InChI                1.03  "InChI=1S/C8H6O4/c9-8(10)5-2-1-3-6-7(5)12-4-11-6/h1-3H,4H2,(H,9,10)"
+Q6T InChIKey         InChI                1.03  DBUAYOWCIUQXQW-UHFFFAOYSA-N
+Q6T SMILES_CANONICAL CACTVS               3.385 "OC(=O)c1cccc2OCOc12"
+Q6T SMILES           CACTVS               3.385 "OC(=O)c1cccc2OCOc12"
+Q6T SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "c1cc(c2c(c1)OCO2)C(=O)O"
+Q6T SMILES           "OpenEye OEToolkits" 1.9.2 "c1cc(c2c(c1)OCO2)C(=O)O"
+Q6T ?                acedrg               202         "dictionary generator"                  
+Q6T ?                acedrg_database      11          "data source"                           
+Q6T ?                rdkit                2017.03.2   "Chemoinformatics tool"
+Q6T ?                refmac5              5.8.0189    "optimization tool"                     

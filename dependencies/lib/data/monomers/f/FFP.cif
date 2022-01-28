@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FFP     FFP     2,6-DIFLUOROPHENOL     NON-POLYMER     13     9     .     
+#
+data_comp_FFP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FFP     F1      F       F       0       2.833       60.551      32.604      
+FFP     C6      C       CR6     0       3.089       59.776      31.531      
+FFP     C5      C       CR16    0       2.445       60.030      30.336      
+FFP     C4      C       CR16    0       2.719       59.225      29.243      
+FFP     C3      C       CR16    0       3.621       58.178      29.334      
+FFP     C2      C       CR6     0       4.253       57.944      30.540      
+FFP     F2      F       F       0       5.134       56.929      30.645      
+FFP     C1      C       CR6     0       4.003       58.732      31.661      
+FFP     O       O       OH1     0       4.626       58.494      32.834      
+FFP     H5      H       H       0       1.830       60.742      30.273      
+FFP     H4      H       H       0       2.282       59.392      28.421      
+FFP     H3      H       H       0       3.807       57.631      28.590      
+FFP     HO      H       H       0       4.402       57.736      33.168      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FFP       F1        C6        SINGLE    n         1.348     0.010     1.348     0.010     
+FFP       C6        C5        DOUBLE    y         1.374     0.010     1.374     0.010     
+FFP       C6        C1        SINGLE    y         1.385     0.011     1.385     0.011     
+FFP       C5        C4        SINGLE    y         1.377     0.010     1.377     0.010     
+FFP       C4        C3        DOUBLE    y         1.377     0.010     1.377     0.010     
+FFP       C3        C2        SINGLE    y         1.374     0.010     1.374     0.010     
+FFP       C2        F2        SINGLE    n         1.348     0.010     1.348     0.010     
+FFP       C2        C1        DOUBLE    y         1.385     0.011     1.385     0.011     
+FFP       C1        O         SINGLE    n         1.349     0.016     1.349     0.016     
+FFP       C5        H5        SINGLE    n         1.082     0.013     0.942     0.013     
+FFP       C4        H4        SINGLE    n         1.082     0.013     0.946     0.016     
+FFP       C3        H3        SINGLE    n         1.082     0.013     0.942     0.013     
+FFP       O         HO        SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FFP          F1          C6          C5     119.530    1.50
+FFP          F1          C6          C1     118.654    1.50
+FFP          C5          C6          C1     121.816    1.50
+FFP          C6          C5          C4     118.729    1.50
+FFP          C6          C5          H5     120.182    1.50
+FFP          C4          C5          H5     121.088    1.50
+FFP          C5          C4          C3     120.768    1.50
+FFP          C5          C4          H4     119.616    1.50
+FFP          C3          C4          H4     119.616    1.50
+FFP          C4          C3          C2     118.729    1.50
+FFP          C4          C3          H3     121.088    1.50
+FFP          C2          C3          H3     120.182    1.50
+FFP          C3          C2          F2     119.530    1.50
+FFP          C3          C2          C1     121.816    1.50
+FFP          F2          C2          C1     118.654    1.50
+FFP          C6          C1          C2     118.140    1.50
+FFP          C6          C1           O     120.930    2.86
+FFP          C2          C1           O     120.930    2.86
+FFP          C1           O          HO     111.989    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FFP       const_sp2_sp2_2          C4          C5          C6          F1     180.000   10.00     2
+FFP              const_24           O          C1          C6          F1       0.000   10.00     2
+FFP       const_sp2_sp2_5          C3          C4          C5          C6       0.000   10.00     2
+FFP       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+FFP              const_15          F2          C2          C3          C4     180.000   10.00     2
+FFP              const_20           O          C1          C2          F2       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FFP    plan-1          C1   0.020
+FFP    plan-1          C2   0.020
+FFP    plan-1          C3   0.020
+FFP    plan-1          C4   0.020
+FFP    plan-1          C5   0.020
+FFP    plan-1          C6   0.020
+FFP    plan-1          F1   0.020
+FFP    plan-1          F2   0.020
+FFP    plan-1          H3   0.020
+FFP    plan-1          H4   0.020
+FFP    plan-1          H5   0.020
+FFP    plan-1           O   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FFP SMILES           ACDLabs              10.04 "Fc1cccc(F)c1O"
+FFP SMILES_CANONICAL CACTVS               3.341 "Oc1c(F)cccc1F"
+FFP SMILES           CACTVS               3.341 "Oc1c(F)cccc1F"
+FFP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)F)O)F"
+FFP SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)F)O)F"
+FFP InChI            InChI                1.03  "InChI=1S/C6H4F2O/c7-4-2-1-3-5(8)6(4)9/h1-3,9H"
+FFP InChIKey         InChI                1.03  CKKOVFGIBXCEIJ-UHFFFAOYSA-N
+FFP ?                acedrg               190         "dictionary generator"                  
+FFP ?                acedrg_database      11          "data source"                           
+FFP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FFP ?                refmac5              5.8.0158    "optimization tool"                     

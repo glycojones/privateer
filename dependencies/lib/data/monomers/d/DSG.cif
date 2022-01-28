@@ -1,0 +1,181 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DSG     DSG     D-ASPARAGINE     peptide     17     9     .
+#
+data_comp_DSG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DSG     N       N       NT3     1       0.934       0.270       0.026
+DSG     CA      C       CH1     0       1.475       1.303       -0.900
+DSG     C       C       C       0       0.478       2.466       -0.990
+DSG     O       O       O       0       0.204       3.064       0.070
+DSG     CB      C       CH2     0       2.864       1.777       -0.459
+DSG     CG      C       C       0       3.544       2.668       -1.479
+DSG     OD1     O       O       0       3.771       3.848       -1.221
+DSG     ND2     N       NH2     0       3.875       2.116       -2.637
+DSG     OXT     O       OC      -1      0.013       2.730       -2.116
+DSG     H       H       H       0       1.517       -0.427      0.088
+DSG     H2      H       H       0       0.135       -0.040      -0.284
+DSG     H3      H       H       0       0.812       0.627       0.856
+DSG     HA      H       H       0       1.565       0.898       -1.794
+DSG     HB2     H       H       0       3.427       0.993       -0.297
+DSG     HB3     H       H       0       2.777       2.266       0.384
+DSG     HD21    H       H       0       4.263       2.604       -3.264
+DSG     HD22    H       H       0       3.710       1.260       -2.785
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DSG      N      n/a    CA     START
+DSG      H      N      .      .
+DSG      H2     N      .      .
+DSG      H3     N      .      .
+DSG      CA     N      C      .
+DSG      HA     CA     .      .
+DSG      CB     CA     CG     .
+DSG      HB2    CB     .      .
+DSG      HB3    CB     .      .
+DSG      CG     CB     ND2    .
+DSG      OD1    CG     .      .
+DSG      ND2    CG     HD21   .
+DSG      HD22   ND2    .      .
+DSG      HD21   ND2    .      .
+DSG      C      CA     .      END
+DSG      O      C      .      .
+DSG      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DSG       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+DSG       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DSG       CA        CB        SINGLE    n         1.531     0.011     1.531     0.011     
+DSG       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DSG       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DSG       CB        CG        SINGLE    n         1.514     0.010     1.514     0.010     
+DSG       CG        OD1       DOUBLE    n         1.229     0.012     1.229     0.012     
+DSG       CG        ND2       SINGLE    n         1.323     0.011     1.323     0.011     
+DSG       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DSG       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DSG       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DSG       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+DSG       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.016     
+DSG       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.016     
+DSG       ND2       HD21      SINGLE    n         1.016     0.010     0.884     0.020     
+DSG       ND2       HD22      SINGLE    n         1.016     0.010     0.884     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DSG          CA           N           H     110.062    1.93
+DSG          CA           N          H2     110.062    1.93
+DSG          CA           N          H3     110.062    1.93
+DSG           H           N          H2     109.028    2.41
+DSG           H           N          H3     109.028    2.41
+DSG          H2           N          H3     109.028    2.41
+DSG           N          CA           C     109.241    1.50
+DSG           N          CA          CB     111.766    1.50
+DSG           N          CA          HA     108.487    1.50
+DSG           C          CA          CB     111.540    2.60
+DSG           C          CA          HA     108.824    1.50
+DSG          CB          CA          HA     107.983    1.50
+DSG          CA           C           O     117.124    1.50
+DSG          CA           C         OXT     117.124    1.50
+DSG           O           C         OXT     125.752    1.50
+DSG          CA          CB          CG     112.981    1.50
+DSG          CA          CB         HB2     108.904    1.50
+DSG          CA          CB         HB3     108.904    1.50
+DSG          CG          CB         HB2     109.076    1.50
+DSG          CG          CB         HB3     109.076    1.50
+DSG         HB2          CB         HB3     108.069    1.50
+DSG          CB          CG         OD1     120.613    1.50
+DSG          CB          CG         ND2     116.821    1.50
+DSG         OD1          CG         ND2     122.566    1.50
+DSG          CG         ND2        HD21     120.022    1.65
+DSG          CG         ND2        HD22     120.022    1.65
+DSG        HD21         ND2        HD22     119.956    2.38
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DSG             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+DSG             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DSG            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+DSG             sp2_sp3_8         OD1          CG          CB          CA     120.000   10.00     6
+DSG             sp2_sp2_1          CB          CG         ND2        HD21     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DSG    chir_1    CA    N    C    CB    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DSG    plan-1           C   0.020
+DSG    plan-1          CA   0.020
+DSG    plan-1           O   0.020
+DSG    plan-1         OXT   0.020
+DSG    plan-2          CB   0.020
+DSG    plan-2          CG   0.020
+DSG    plan-2         ND2   0.020
+DSG    plan-2         OD1   0.020
+DSG    plan-3          CG   0.020
+DSG    plan-3        HD21   0.020
+DSG    plan-3        HD22   0.020
+DSG    plan-3         ND2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DSG SMILES           ACDLabs              10.04 "O=C(N)CC(N)C(=O)O"
+DSG SMILES_CANONICAL CACTVS               3.341 "N[C@H](CC(N)=O)C(O)=O"
+DSG SMILES           CACTVS               3.341 "N[CH](CC(N)=O)C(O)=O"
+DSG SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@H](C(=O)O)N)C(=O)N"
+DSG SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)C(=O)N"
+DSG InChI            InChI                1.03  "InChI=1S/C4H8N2O3/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H2,6,7)(H,8,9)/t2-/m1/s1"
+DSG InChIKey         InChI                1.03  DCXYFEDJOCDNAF-UWTATZPHSA-N
+DSG ?                acedrg               196         "dictionary generator"
+DSG ?                acedrg_database      11          "data source"
+DSG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DSG ?                refmac5              5.8.0222    "optimization tool"

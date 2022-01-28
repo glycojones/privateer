@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4PA     4PA      "PROPYL ACETATE"     NON-POLYMER     17     7     .     
+#
+data_comp_4PA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4PA     CAI     C       C       0       40.532      28.480      22.426      
+4PA     OAD     O       O       0       41.091      28.139      23.438      
+4PA     CAC     C       CH3     0       41.215      29.123      21.273      
+4PA     OAH     O       O2      0       39.219      28.346      22.156      
+4PA     CAF     C       CH2     0       38.369      27.749      23.165      
+4PA     CAE     C       CH2     0       36.979      27.714      22.639      
+4PA     CAA     C       CH3     0       36.007      27.096      23.612      
+4PA     HAC1    H       H       0       42.168      29.181      21.450      
+4PA     HAC2    H       H       0       40.857      30.016      21.140      
+4PA     HAC3    H       H       0       41.067      28.594      20.472      
+4PA     HAF1    H       H       0       38.405      28.281      23.989      
+4PA     HAF2    H       H       0       38.677      26.840      23.367      
+4PA     HAE1    H       H       0       36.968      27.200      21.803      
+4PA     HAE2    H       H       0       36.692      28.629      22.434      
+4PA     HAA1    H       H       0       35.113      27.102      23.228      
+4PA     HAA2    H       H       0       36.005      27.607      24.440      
+4PA     HAA3    H       H       0       36.272      26.179      23.800      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4PA       CAI       OAD       DOUBLE    n         1.199     0.017     1.199     0.017     
+4PA       CAI       CAC       SINGLE    n         1.487     0.016     1.487     0.016     
+4PA       CAI       OAH       SINGLE    n         1.338     0.015     1.338     0.015     
+4PA       OAH       CAF       SINGLE    n         1.446     0.010     1.446     0.010     
+4PA       CAF       CAE       SINGLE    n         1.487     0.020     1.487     0.020     
+4PA       CAE       CAA       SINGLE    n         1.508     0.020     1.508     0.020     
+4PA       CAC       HAC1      SINGLE    n         1.089     0.010     0.971     0.014     
+4PA       CAC       HAC2      SINGLE    n         1.089     0.010     0.971     0.014     
+4PA       CAC       HAC3      SINGLE    n         1.089     0.010     0.971     0.014     
+4PA       CAF       HAF1      SINGLE    n         1.089     0.010     0.981     0.013     
+4PA       CAF       HAF2      SINGLE    n         1.089     0.010     0.981     0.013     
+4PA       CAE       HAE1      SINGLE    n         1.089     0.010     0.981     0.013     
+4PA       CAE       HAE2      SINGLE    n         1.089     0.010     0.981     0.013     
+4PA       CAA       HAA1      SINGLE    n         1.089     0.010     0.973     0.016     
+4PA       CAA       HAA2      SINGLE    n         1.089     0.010     0.973     0.016     
+4PA       CAA       HAA3      SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4PA         OAD         CAI         CAC     125.658    2.23
+4PA         OAD         CAI         OAH     122.258    3.00
+4PA         CAC         CAI         OAH     112.082    2.88
+4PA         CAI         CAC        HAC1     109.509    1.50
+4PA         CAI         CAC        HAC2     109.509    1.50
+4PA         CAI         CAC        HAC3     109.509    1.50
+4PA        HAC1         CAC        HAC2     109.424    1.50
+4PA        HAC1         CAC        HAC3     109.424    1.50
+4PA        HAC2         CAC        HAC3     109.424    1.50
+4PA         CAI         OAH         CAF     116.292    1.50
+4PA         OAH         CAF         CAE     107.981    1.50
+4PA         OAH         CAF        HAF1     109.718    1.50
+4PA         OAH         CAF        HAF2     109.718    1.50
+4PA         CAE         CAF        HAF1     109.978    1.50
+4PA         CAE         CAF        HAF2     109.978    1.50
+4PA        HAF1         CAF        HAF2     108.375    1.50
+4PA         CAF         CAE         CAA     112.645    3.00
+4PA         CAF         CAE        HAE1     108.975    1.50
+4PA         CAF         CAE        HAE2     108.975    1.50
+4PA         CAA         CAE        HAE1     109.194    1.50
+4PA         CAA         CAE        HAE2     109.194    1.50
+4PA        HAE1         CAE        HAE2     107.894    1.50
+4PA         CAE         CAA        HAA1     109.599    1.50
+4PA         CAE         CAA        HAA2     109.599    1.50
+4PA         CAE         CAA        HAA3     109.599    1.50
+4PA        HAA1         CAA        HAA2     109.380    1.50
+4PA        HAA1         CAA        HAA3     109.380    1.50
+4PA        HAA2         CAA        HAA3     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4PA             sp2_sp3_1         OAD         CAI         CAC        HAC1       0.000   10.00     6
+4PA             sp2_sp2_1         OAD         CAI         OAH         CAF     180.000   10.00     2
+4PA             sp3_sp3_1         CAE         CAF         OAH         CAI     180.000   10.00     3
+4PA             sp3_sp3_4         CAA         CAE         CAF         OAH     180.000   10.00     3
+4PA            sp3_sp3_13        HAA1         CAA         CAE         CAF     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4PA    plan-1         CAC   0.020
+4PA    plan-1         CAI   0.020
+4PA    plan-1         OAD   0.020
+4PA    plan-1         OAH   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4PA SMILES           ACDLabs              10.04 "O=C(OCCC)C"
+4PA SMILES_CANONICAL CACTVS               3.341 "CCCOC(C)=O"
+4PA SMILES           CACTVS               3.341 "CCCOC(C)=O"
+4PA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCCOC(=O)C"
+4PA SMILES           "OpenEye OEToolkits" 1.5.0 "CCCOC(=O)C"
+4PA InChI            InChI                1.03  "InChI=1S/C5H10O2/c1-3-4-7-5(2)6/h3-4H2,1-2H3"
+4PA InChIKey         InChI                1.03  YKYONYBAUNKHLG-UHFFFAOYSA-N
+4PA ?                acedrg               202         "dictionary generator"                  
+4PA ?                acedrg_database      11          "data source"                           
+4PA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4PA ?                refmac5              5.8.0189    "optimization tool"                     

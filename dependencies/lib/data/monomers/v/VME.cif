@@ -1,0 +1,199 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VME      VME 'METHYL L-VALINATE                   ' non-polymer        22   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VME
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ VME           O      O    O        -0.500      0.000    0.000    0.000
+ VME           C      C    C         0.000     -1.209    0.292   -0.131
+ VME           O2     O    O2       -0.500     -2.052   -0.149    0.682
+ VME           CM     C    CH3       0.000     -1.615   -1.027    1.813
+ VME           HMC3   H    H         0.000     -0.932   -0.506    2.443
+ VME           HMC2   H    H         0.000     -2.455   -1.325    2.396
+ VME           HMC1   H    H         0.000     -1.134   -1.900    1.439
+ VME           CA     C    CH1       0.000     -1.653    1.176   -1.268
+ VME           HA     H    H         0.000     -2.424    1.873   -0.911
+ VME           N      N    NH2       0.000     -0.502    1.936   -1.775
+ VME           HN2    H    H         0.000     -0.170    1.792   -2.722
+ VME           HN1    H    H         0.000     -0.032    2.609   -1.181
+ VME           CB     C    CH1       0.000     -2.228    0.311   -2.392
+ VME           HB     H    H         0.000     -1.457   -0.386   -2.749
+ VME           CG2    C    CH3       0.000     -2.678    1.208   -3.547
+ VME           HG23   H    H         0.000     -3.076    0.610   -4.325
+ VME           HG22   H    H         0.000     -3.421    1.881   -3.204
+ VME           HG21   H    H         0.000     -1.848    1.756   -3.913
+ VME           CG1    C    CH3       0.000     -3.427   -0.480   -1.864
+ VME           HG13   H    H         0.000     -3.116   -1.102   -1.064
+ VME           HG12   H    H         0.000     -4.171    0.191   -1.520
+ VME           HG11   H    H         0.000     -3.826   -1.080   -2.641
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VME      O      n/a    C      START
+ VME      C      O      CA     .
+ VME      O2     C      CM     .
+ VME      CM     O2     HMC1   .
+ VME      HMC3   CM     .      .
+ VME      HMC2   CM     .      .
+ VME      HMC1   CM     .      .
+ VME      CA     C      CB     .
+ VME      HA     CA     .      .
+ VME      N      CA     HN1    .
+ VME      HN2    N      .      .
+ VME      HN1    N      .      .
+ VME      CB     CA     CG1    .
+ VME      HB     CB     .      .
+ VME      CG2    CB     HG21   .
+ VME      HG23   CG2    .      .
+ VME      HG22   CG2    .      .
+ VME      HG21   CG2    .      .
+ VME      CG1    CB     HG11   .
+ VME      HG13   CG1    .      .
+ VME      HG12   CG1    .      .
+ VME      HG11   CG1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VME       N         CA        single    1.450     0.020     1.450     0.020     
+VME       HN1       N         single    1.036     0.016     0.914     0.007     
+VME       HN2       N         single    1.036     0.016     0.914     0.007     
+VME       CA        C         single    1.500     0.020     1.500     0.020     
+VME       CB        CA        single    1.524     0.020     1.524     0.020     
+VME       HA        CA        single    1.089     0.010     0.989     0.005     
+VME       C         O         deloc     1.220     0.020     1.220     0.020     
+VME       O2        C         deloc     1.454     0.020     1.454     0.020     
+VME       CG1       CB        single    1.524     0.020     1.524     0.020     
+VME       CG2       CB        single    1.524     0.020     1.524     0.020     
+VME       HB        CB        single    1.089     0.010     0.989     0.005     
+VME       HG11      CG1       single    1.089     0.010     0.989     0.005     
+VME       HG12      CG1       single    1.089     0.010     0.989     0.005     
+VME       HG13      CG1       single    1.089     0.010     0.989     0.005     
+VME       HG21      CG2       single    1.089     0.010     0.989     0.005     
+VME       HG22      CG2       single    1.089     0.010     0.989     0.005     
+VME       HG23      CG2       single    1.089     0.010     0.989     0.005     
+VME       CM        O2        single    1.426     0.020     1.426     0.020     
+VME       HMC1      CM        single    1.089     0.010     0.989     0.005     
+VME       HMC2      CM        single    1.089     0.010     0.989     0.005     
+VME       HMC3      CM        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VME      O      C      O2      119.000    3.000
+ VME      O      C      CA      120.500    3.000
+ VME      O2     C      CA      120.000    3.000
+ VME      C      O2     CM      120.000    3.000
+ VME      O2     CM     HMC3    109.470    3.000
+ VME      O2     CM     HMC2    109.470    3.000
+ VME      O2     CM     HMC1    109.470    3.000
+ VME      HMC3   CM     HMC2    109.470    3.000
+ VME      HMC3   CM     HMC1    109.470    3.000
+ VME      HMC2   CM     HMC1    109.470    3.000
+ VME      C      CA     HA      108.810    3.000
+ VME      C      CA     N       109.470    3.000
+ VME      C      CA     CB      109.470    3.000
+ VME      HA     CA     N       109.470    3.000
+ VME      HA     CA     CB      108.340    3.000
+ VME      N      CA     CB      109.470    3.000
+ VME      CA     N      HN2     120.000    3.000
+ VME      CA     N      HN1     120.000    3.000
+ VME      HN2    N      HN1     120.000    3.000
+ VME      CA     CB     HB      108.340    3.000
+ VME      CA     CB     CG2     111.000    3.000
+ VME      CA     CB     CG1     111.000    3.000
+ VME      HB     CB     CG2     108.340    3.000
+ VME      HB     CB     CG1     108.340    3.000
+ VME      CG2    CB     CG1     111.000    3.000
+ VME      CB     CG2    HG23    109.470    3.000
+ VME      CB     CG2    HG22    109.470    3.000
+ VME      CB     CG2    HG21    109.470    3.000
+ VME      HG23   CG2    HG22    109.470    3.000
+ VME      HG23   CG2    HG21    109.470    3.000
+ VME      HG22   CG2    HG21    109.470    3.000
+ VME      CB     CG1    HG13    109.470    3.000
+ VME      CB     CG1    HG12    109.470    3.000
+ VME      CB     CG1    HG11    109.470    3.000
+ VME      HG13   CG1    HG12    109.470    3.000
+ VME      HG13   CG1    HG11    109.470    3.000
+ VME      HG12   CG1    HG11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VME      var_1    O      C      O2     CM         0.043   20.000   1
+ VME      var_2    C      O2     CM     HMC1     -59.076   20.000   1
+ VME      var_3    O      C      CA     CB        99.970   20.000   3
+ VME      var_4    C      CA     N      HN1      -63.946   20.000   1
+ VME      var_5    C      CA     CB     CG1       59.986   20.000   3
+ VME      var_6    CA     CB     CG2    HG21      60.005   20.000   3
+ VME      var_7    CA     CB     CG1    HG11    -179.961   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ VME      chir_01  CA     N      C      CB        positiv
+ VME      chir_02  CB     CA     CG1    CG2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ VME      plan-1    N         0.020
+ VME      plan-1    CA        0.020
+ VME      plan-1    HN1       0.020
+ VME      plan-1    HN2       0.020
+ VME      plan-2    C         0.020
+ VME      plan-2    CA        0.020
+ VME      plan-2    O         0.020
+ VME      plan-2    O2        0.020
+# ------------------------------------------------------

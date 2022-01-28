@@ -1,0 +1,94 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+78T     78T      oxidanylphosphinate     NON-POLYMER     6     4     .     
+#
+data_comp_78T
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+78T     P1      P       P       0       -0.344      -0.044      -0.050      
+78T     O1      O       OP      -1      -0.684      1.400       0.137       
+78T     O2      O       O       0       -0.624      -0.947      1.108       
+78T     O3      O       OH1     0       1.164       -0.178      -0.466      
+78T     H4      H       H       0       -0.994      -0.481      -1.067      
+78T     H3      H       H       0       1.389       0.292       -1.124      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+78T       P1        O3        SINGLE    n         1.570     0.016     1.570     0.016     
+78T       P1        O2        DOUBLE    n         1.495     0.020     1.495     0.020     
+78T       P1        O1        SINGLE    n         1.495     0.020     1.495     0.020     
+78T       P1        H4        SINGLE    n         1.284     0.020     1.284     0.020     
+78T       O3        H3        SINGLE    n         0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+78T          O3          P1          O2     109.503    2.26
+78T          O3          P1          O1     109.503    2.26
+78T          O3          P1          H4     104.302    2.04
+78T          O2          P1          O1     116.370    1.50
+78T          O2          P1          H4     108.203    1.71
+78T          O1          P1          H4     108.203    1.71
+78T          P1          O3          H3     114.718    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+78T             sp3_sp3_1          H3          O3          P1          O2     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+78T    chir_1    P1    O3    O1    O2    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+78T InChI            InChI                1.03  "InChI=1S/H3O3P/c1-4(2)3/h4H,(H2,1,2,3)/p-1"
+78T InChIKey         InChI                1.03  ABLZXFCXXLZCGV-UHFFFAOYSA-M
+78T SMILES_CANONICAL CACTVS               3.385 "O[PH]([O-])=O"
+78T SMILES           CACTVS               3.385 "O[PH]([O-])=O"
+78T SMILES_CANONICAL "OpenEye OEToolkits" 2.0.5 "OP(=O)[O-]"
+78T SMILES           "OpenEye OEToolkits" 2.0.5 "OP(=O)[O-]"
+78T ?                acedrg               202         "dictionary generator"                  
+78T ?                acedrg_database      11          "data source"                           
+78T ?                rdkit                2017.03.2   "Chemoinformatics tool"
+78T ?                refmac5              5.8.0189    "optimization tool"                     

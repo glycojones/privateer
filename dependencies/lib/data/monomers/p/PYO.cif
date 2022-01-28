@@ -1,0 +1,263 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PYO      PYO '1-(BETA-D-RIBOFURANOSYL)-PYRIMIDIN-2' RNA                31  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PYO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PYO           OP3    O    OP       -0.666      0.000    0.000    0.000
+ PYO           P      P    P         0.000     -1.020   -0.714    0.859
+ PYO           OP1    O    OP       -0.666     -0.396   -1.073    2.190
+ PYO           OP2    O    OP       -0.666     -1.475   -1.975    0.157
+ PYO           "O5'"  O    O2        0.000     -2.286    0.251    1.102
+ PYO           "C5'"  C    CH2       0.000     -3.209   -0.476    1.914
+ PYO           "H5''" H    H         0.000     -2.732   -0.738    2.861
+ PYO           "H5'"  H    H         0.000     -3.510   -1.388    1.395
+ PYO           "C4'"  C    CH1       0.000     -4.442    0.389    2.184
+ PYO           "H4'"  H    H         0.000     -4.155    1.305    2.719
+ PYO           "C3'"  C    CH1       0.000     -5.492   -0.399    2.997
+ PYO           "H3'"  H    H         0.000     -5.360   -1.480    2.851
+ PYO           "C2'"  C    CH1       0.000     -6.846    0.063    2.413
+ PYO           "H2'"  H    H         0.000     -7.386   -0.787    1.974
+ PYO           "O2'"  O    OH1       0.000     -7.638    0.690    3.423
+ PYO           HO2    H    H         0.000     -7.821    0.056    4.128
+ PYO           "C1'"  C    CH1       0.000     -6.455    1.079    1.317
+ PYO           "H1'"  H    H         0.000     -6.480    2.102    1.717
+ PYO           "O4'"  O    O2        0.000     -5.108    0.718    0.944
+ PYO           N1     N    NR6       0.000     -7.355    0.959    0.168
+ PYO           C2     C    CR6       0.000     -7.434   -0.204   -0.505
+ PYO           N3     N    NRD6      0.000     -8.251   -0.337   -1.552
+ PYO           C4     C    CR16      0.000     -8.993    0.673   -1.962
+ PYO           HC4    H    H         0.000     -9.648    0.554   -2.816
+ PYO           C5     C    CR16      0.000     -8.932    1.896   -1.292
+ PYO           HC5    H    H         0.000     -9.537    2.732   -1.619
+ PYO           C6     C    CR16      0.000     -8.102    2.024   -0.222
+ PYO           HC6    H    H         0.000     -8.037    2.964    0.312
+ PYO           O2     O    O         0.000     -6.758   -1.153   -0.145
+ PYO           "O3'"  O    OH1       0.000     -5.406   -0.068    4.384
+ PYO           HO3    H    H         0.000     -6.102   -0.564    4.834
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PYO      OP3    n/a    P      START
+ PYO      P      OP3    "O5'"  .
+ PYO      OP1    P      .      .
+ PYO      OP2    P      .      .
+ PYO      "O5'"  P      "C5'"  .
+ PYO      "C5'"  "O5'"  "C4'"  .
+ PYO      "H5''" "C5'"  .      .
+ PYO      "H5'"  "C5'"  .      .
+ PYO      "C4'"  "C5'"  "C3'"  .
+ PYO      "H4'"  "C4'"  .      .
+ PYO      "C3'"  "C4'"  "O3'"  .
+ PYO      "H3'"  "C3'"  .      .
+ PYO      "C2'"  "C3'"  "C1'"  .
+ PYO      "H2'"  "C2'"  .      .
+ PYO      "O2'"  "C2'"  HO2    .
+ PYO      HO2    "O2'"  .      .
+ PYO      "C1'"  "C2'"  N1     .
+ PYO      "H1'"  "C1'"  .      .
+ PYO      "O4'"  "C1'"  .      .
+ PYO      N1     "C1'"  C2     .
+ PYO      C2     N1     O2     .
+ PYO      N3     C2     C4     .
+ PYO      C4     N3     C5     .
+ PYO      HC4    C4     .      .
+ PYO      C5     C4     C6     .
+ PYO      HC5    C5     .      .
+ PYO      C6     C5     HC6    .
+ PYO      HC6    C6     .      .
+ PYO      O2     C2     .      .
+ PYO      "O3'"  "C3'"  .      END
+ PYO      HO3    "O3'"  .      .
+ PYO      "C4'"  "O4'"  .    ADD
+ PYO      N1     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PYO       P         OP3       deloc     1.510     0.020     1.510     0.020     
+PYO       OP1       P         deloc     1.510     0.020     1.510     0.020     
+PYO       OP2       P         deloc     1.510     0.020     1.510     0.020     
+PYO       "O5'"     P         single    1.610     0.020     1.610     0.020     
+PYO       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+PYO       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+PYO       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+PYO       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+PYO       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+PYO       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+PYO       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+PYO       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+PYO       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+PYO       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+PYO       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+PYO       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+PYO       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+PYO       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+PYO       HO3       "O3'"     single    0.970     0.012     0.839     0.014     
+PYO       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+PYO       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+PYO       HO2       "O2'"     single    0.970     0.012     0.839     0.014     
+PYO       N1        C6        single    1.337     0.020     1.337     0.020     
+PYO       C2        N1        single    1.410     0.020     1.410     0.020     
+PYO       C6        C5        double    1.390     0.020     1.390     0.020     
+PYO       HC6       C6        single    1.082     0.013     0.975     0.010     
+PYO       O2        C2        double    1.250     0.020     1.250     0.020     
+PYO       N3        C2        single    1.350     0.020     1.350     0.020     
+PYO       C5        C4        single    1.390     0.020     1.390     0.020     
+PYO       HC5       C5        single    1.082     0.013     0.975     0.010     
+PYO       C4        N3        double    1.337     0.020     1.337     0.020     
+PYO       HC4       C4        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PYO      OP3    P      OP1     119.900    3.000
+ PYO      OP3    P      OP2     119.900    3.000
+ PYO      OP3    P      "O5'"   108.200    3.000
+ PYO      OP1    P      OP2     119.900    3.000
+ PYO      OP1    P      "O5'"   108.200    3.000
+ PYO      OP2    P      "O5'"   108.200    3.000
+ PYO      P      "O5'"  "C5'"   120.500    3.000
+ PYO      "O5'"  "C5'"  "H5''"  109.470    3.000
+ PYO      "O5'"  "C5'"  "H5'"   109.470    3.000
+ PYO      "O5'"  "C5'"  "C4'"   109.470    3.000
+ PYO      "H5''" "C5'"  "H5'"   107.900    3.000
+ PYO      "H5''" "C5'"  "C4'"   109.470    3.000
+ PYO      "H5'"  "C5'"  "C4'"   109.470    3.000
+ PYO      "C5'"  "C4'"  "H4'"   108.340    3.000
+ PYO      "C5'"  "C4'"  "C3'"   111.000    3.000
+ PYO      "C5'"  "C4'"  "O4'"   109.470    3.000
+ PYO      "H4'"  "C4'"  "C3'"   108.340    3.000
+ PYO      "H4'"  "C4'"  "O4'"   109.470    3.000
+ PYO      "C3'"  "C4'"  "O4'"   109.470    3.000
+ PYO      "C4'"  "C3'"  "H3'"   108.340    3.000
+ PYO      "C4'"  "C3'"  "C2'"   111.000    3.000
+ PYO      "C4'"  "C3'"  "O3'"   109.470    3.000
+ PYO      "H3'"  "C3'"  "C2'"   108.340    3.000
+ PYO      "H3'"  "C3'"  "O3'"   109.470    3.000
+ PYO      "C2'"  "C3'"  "O3'"   109.470    3.000
+ PYO      "C3'"  "C2'"  "H2'"   108.340    3.000
+ PYO      "C3'"  "C2'"  "O2'"   109.470    3.000
+ PYO      "C3'"  "C2'"  "C1'"   111.000    3.000
+ PYO      "H2'"  "C2'"  "O2'"   109.470    3.000
+ PYO      "H2'"  "C2'"  "C1'"   108.340    3.000
+ PYO      "O2'"  "C2'"  "C1'"   109.470    3.000
+ PYO      "C2'"  "O2'"  HO2     109.470    3.000
+ PYO      "C2'"  "C1'"  "H1'"   108.340    3.000
+ PYO      "C2'"  "C1'"  "O4'"   109.470    3.000
+ PYO      "C2'"  "C1'"  N1      109.470    3.000
+ PYO      "H1'"  "C1'"  "O4'"   109.470    3.000
+ PYO      "H1'"  "C1'"  N1      109.470    3.000
+ PYO      "O4'"  "C1'"  N1      109.470    3.000
+ PYO      "C1'"  "O4'"  "C4'"   111.800    3.000
+ PYO      "C1'"  N1     C2      120.000    3.000
+ PYO      "C1'"  N1     C6      120.000    3.000
+ PYO      C2     N1     C6      120.000    3.000
+ PYO      N1     C2     N3      120.000    3.000
+ PYO      N1     C2     O2      120.000    3.000
+ PYO      N3     C2     O2      120.000    3.000
+ PYO      C2     N3     C4      120.000    3.000
+ PYO      N3     C4     HC4     120.000    3.000
+ PYO      N3     C4     C5      120.000    3.000
+ PYO      HC4    C4     C5      120.000    3.000
+ PYO      C4     C5     HC5     120.000    3.000
+ PYO      C4     C5     C6      120.000    3.000
+ PYO      HC5    C5     C6      120.000    3.000
+ PYO      C5     C6     HC6     120.000    3.000
+ PYO      C5     C6     N1      120.000    3.000
+ PYO      HC6    C6     N1      120.000    3.000
+ PYO      "C3'"  "O3'"  HO3     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PYO      var_1    OP3    P      "O5'"  "C5'"    179.962   20.000   1
+ PYO      var_2    P      "O5'"  "C5'"  "C4'"   -179.990   20.000   1
+ PYO      var_3    "O5'"  "C5'"  "C4'"  "C3'"    176.933   20.000   3
+ PYO      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ PYO      var_5    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ PYO      var_6    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ PYO      var_7    "C3'"  "C2'"  "O2'"  HO2      -61.388   20.000   1
+ PYO      var_8    "C3'"  "C2'"  "C1'"  N1       150.000   20.000   3
+ PYO      var_9    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ PYO      var_10   "C2'"  "C1'"  N1     C2       -60.379   20.000   1
+ PYO      CONST_1  "C1'"  N1     C6     C5       180.000    0.000   0
+ PYO      CONST_2  "C1'"  N1     C2     O2         0.000    0.000   0
+ PYO      CONST_3  N1     C2     N3     C4         0.000    0.000   0
+ PYO      CONST_4  C2     N3     C4     C5         0.000    0.000   0
+ PYO      CONST_5  N3     C4     C5     C6         0.000    0.000   0
+ PYO      CONST_6  C4     C5     C6     N1         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PYO      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ PYO      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ PYO      chir_03  "C1'"  "O4'"  "C2'"  N1        positiv
+ PYO      chir_04  "C2'"  "C3'"  "C1'"  "O2'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PYO      plan-1    N1        0.020
+ PYO      plan-1    "C1'"     0.020
+ PYO      plan-1    C6        0.020
+ PYO      plan-1    C2        0.020
+ PYO      plan-1    C5        0.020
+ PYO      plan-1    N3        0.020
+ PYO      plan-1    C4        0.020
+ PYO      plan-1    HC6       0.020
+ PYO      plan-1    O2        0.020
+ PYO      plan-1    HC5       0.020
+ PYO      plan-1    HC4       0.020
+# ------------------------------------------------------

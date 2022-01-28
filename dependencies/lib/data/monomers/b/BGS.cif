@@ -1,0 +1,251 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BGS      BGS 'BETA-D-GLUCOPYRANOSYLSULFONYLETHANE ' pyranose           32  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BGS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BGS           C1     C    CH1       0.000      0.000    0.000    0.000
+ BGS           H1     H    H         0.000      0.152    0.122   -1.082
+ BGS           S1     S    ST        0.000      1.595    0.142    0.853
+ BGS           "O2'"  O    OS        0.000      2.511   -0.779    0.276
+ BGS           "C2'"  C    CH2       0.000      2.052    1.823    0.349
+ BGS           "H2'1" H    H         0.000      1.292    2.526    0.697
+ BGS           "H2'2" H    H         0.000      2.119    1.870   -0.740
+ BGS           CS     C    CH3       0.000      3.406    2.188    0.962
+ BGS           HS3    H    H         0.000      3.343    2.142    2.019
+ BGS           HS2    H    H         0.000      4.145    1.507    0.625
+ BGS           HS1    H    H         0.000      3.676    3.171    0.670
+ BGS           "O1'"  O    OS        0.000      1.372    0.124    2.256
+ BGS           C2     C    CH1       0.000     -0.604   -1.378    0.277
+ BGS           H2     H    H         0.000     -0.780   -1.493    1.355
+ BGS           O2     O    OH1       0.000      0.296   -2.394   -0.173
+ BGS           HO2    H    H         0.000     -0.091   -3.264   -0.004
+ BGS           C3     C    CH1       0.000     -1.934   -1.500   -0.477
+ BGS           H3     H    H         0.000     -1.747   -1.490   -1.560
+ BGS           O3     O    OH1       0.000     -2.583   -2.720   -0.113
+ BGS           HO3    H    H         0.000     -3.427   -2.788   -0.581
+ BGS           C4     C    CH1       0.000     -2.824   -0.311   -0.096
+ BGS           H4     H    H         0.000     -3.096   -0.380    0.966
+ BGS           O4     O    OH1       0.000     -4.008   -0.323   -0.895
+ BGS           HO4    H    H         0.000     -4.563    0.432   -0.658
+ BGS           O5     O    O2        0.000     -0.882    1.017    0.473
+ BGS           C5     C    CH1       0.000     -2.051    0.987   -0.344
+ BGS           H5     H    H         0.000     -1.759    1.043   -1.402
+ BGS           C6     C    CH2       0.000     -2.943    2.181    0.003
+ BGS           H61    H    H         0.000     -3.159    2.176    1.073
+ BGS           H62    H    H         0.000     -3.879    2.110   -0.556
+ BGS           O6     O    OH1       0.000     -2.271    3.394   -0.344
+ BGS           HO6    H    H         0.000     -2.835    4.148   -0.126
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BGS      C1     n/a    O5     START
+ BGS      H1     C1     .      .
+ BGS      S1     C1     "O1'"  .
+ BGS      "O2'"  S1     .      .
+ BGS      "C2'"  S1     CS     .
+ BGS      "H2'1" "C2'"  .      .
+ BGS      "H2'2" "C2'"  .      .
+ BGS      CS     "C2'"  HS1    .
+ BGS      HS3    CS     .      .
+ BGS      HS2    CS     .      .
+ BGS      HS1    CS     .      .
+ BGS      "O1'"  S1     .      .
+ BGS      C2     C1     C3     .
+ BGS      H2     C2     .      .
+ BGS      O2     C2     HO2    .
+ BGS      HO2    O2     .      .
+ BGS      C3     C2     C4     .
+ BGS      H3     C3     .      .
+ BGS      O3     C3     HO3    .
+ BGS      HO3    O3     .      .
+ BGS      C4     C3     O4     .
+ BGS      H4     C4     .      .
+ BGS      O4     C4     HO4    .
+ BGS      HO4    O4     .      .
+ BGS      O5     C1     .      END
+ BGS      C5     O5     C6     .
+ BGS      H5     C5     .      .
+ BGS      C6     C5     O6     .
+ BGS      H61    C6     .      .
+ BGS      H62    C6     .      .
+ BGS      O6     C6     HO6    .
+ BGS      HO6    O6     .      .
+ BGS      C5     C4     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BGS       "C2'"     S1        single    1.662     0.020     1.662     0.020     
+BGS       CS        "C2'"     single    1.513     0.020     1.513     0.020     
+BGS       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+BGS       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+BGS       "O2'"     S1        double    1.436     0.020     1.436     0.020     
+BGS       C6        C5        single    1.524     0.020     1.524     0.020     
+BGS       C5        C4        single    1.524     0.020     1.524     0.020     
+BGS       C5        O5        single    1.426     0.020     1.426     0.020     
+BGS       H5        C5        single    1.089     0.010     0.989     0.005     
+BGS       O6        C6        single    1.432     0.020     1.432     0.020     
+BGS       H61       C6        single    1.089     0.010     0.989     0.005     
+BGS       H62       C6        single    1.089     0.010     0.989     0.005     
+BGS       C2        C1        single    1.524     0.020     1.524     0.020     
+BGS       O2        C2        single    1.432     0.020     1.432     0.020     
+BGS       C3        C2        single    1.524     0.020     1.524     0.020     
+BGS       H2        C2        single    1.089     0.010     0.989     0.005     
+BGS       C4        C3        single    1.524     0.020     1.524     0.020     
+BGS       O4        C4        single    1.432     0.020     1.432     0.020     
+BGS       H4        C4        single    1.089     0.010     0.989     0.005     
+BGS       S1        C1        single    1.665     0.020     1.665     0.020     
+BGS       O5        C1        single    1.426     0.020     1.426     0.020     
+BGS       H1        C1        single    1.089     0.010     0.989     0.005     
+BGS       "O1'"     S1        double    1.436     0.020     1.436     0.020     
+BGS       HO2       O2        single    0.970     0.012     0.839     0.014     
+BGS       O3        C3        single    1.432     0.020     1.432     0.020     
+BGS       H3        C3        single    1.089     0.010     0.989     0.005     
+BGS       HO3       O3        single    0.970     0.012     0.839     0.014     
+BGS       HO4       O4        single    0.970     0.012     0.839     0.014     
+BGS       HO6       O6        single    0.970     0.012     0.839     0.014     
+BGS       HS1       CS        single    1.089     0.010     0.989     0.005     
+BGS       HS2       CS        single    1.089     0.010     0.989     0.005     
+BGS       HS3       CS        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BGS      H1     C1     S1      109.500    3.000
+ BGS      H1     C1     C2      108.340    3.000
+ BGS      S1     C1     C2      109.500    3.000
+ BGS      H1     C1     O5      109.470    3.000
+ BGS      S1     C1     O5      109.500    3.000
+ BGS      C2     C1     O5      109.470    3.000
+ BGS      C1     S1     "O2'"   109.500    3.000
+ BGS      C1     S1     "C2'"   109.500    3.000
+ BGS      C1     S1     "O1'"   109.500    3.000
+ BGS      "O2'"  S1     "C2'"   109.500    3.000
+ BGS      "O2'"  S1     "O1'"   109.500    3.000
+ BGS      "C2'"  S1     "O1'"   109.500    3.000
+ BGS      S1     "C2'"  "H2'1"  109.500    3.000
+ BGS      S1     "C2'"  "H2'2"  109.500    3.000
+ BGS      S1     "C2'"  CS      109.500    3.000
+ BGS      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ BGS      "H2'1" "C2'"  CS      109.470    3.000
+ BGS      "H2'2" "C2'"  CS      109.470    3.000
+ BGS      "C2'"  CS     HS3     109.470    3.000
+ BGS      "C2'"  CS     HS2     109.470    3.000
+ BGS      "C2'"  CS     HS1     109.470    3.000
+ BGS      HS3    CS     HS2     109.470    3.000
+ BGS      HS3    CS     HS1     109.470    3.000
+ BGS      HS2    CS     HS1     109.470    3.000
+ BGS      C1     C2     H2      108.340    3.000
+ BGS      C1     C2     O2      109.470    3.000
+ BGS      C1     C2     C3      111.000    3.000
+ BGS      H2     C2     O2      109.470    3.000
+ BGS      H2     C2     C3      108.340    3.000
+ BGS      O2     C2     C3      109.470    3.000
+ BGS      C2     O2     HO2     109.470    3.000
+ BGS      C2     C3     H3      108.340    3.000
+ BGS      C2     C3     O3      109.470    3.000
+ BGS      C2     C3     C4      111.000    3.000
+ BGS      H3     C3     O3      109.470    3.000
+ BGS      H3     C3     C4      108.340    3.000
+ BGS      O3     C3     C4      109.470    3.000
+ BGS      C3     O3     HO3     109.470    3.000
+ BGS      C3     C4     H4      108.340    3.000
+ BGS      C3     C4     O4      109.470    3.000
+ BGS      C3     C4     C5      111.000    3.000
+ BGS      H4     C4     O4      109.470    3.000
+ BGS      H4     C4     C5      108.340    3.000
+ BGS      O4     C4     C5      109.470    3.000
+ BGS      C4     O4     HO4     109.470    3.000
+ BGS      C1     O5     C5      111.800    3.000
+ BGS      O5     C5     H5      109.470    3.000
+ BGS      O5     C5     C6      109.470    3.000
+ BGS      O5     C5     C4      109.470    3.000
+ BGS      H5     C5     C6      108.340    3.000
+ BGS      H5     C5     C4      108.340    3.000
+ BGS      C6     C5     C4      111.000    3.000
+ BGS      C5     C6     H61     109.470    3.000
+ BGS      C5     C6     H62     109.470    3.000
+ BGS      C5     C6     O6      109.470    3.000
+ BGS      H61    C6     H62     107.900    3.000
+ BGS      H61    C6     O6      109.470    3.000
+ BGS      H62    C6     O6      109.470    3.000
+ BGS      C6     O6     HO6     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BGS      var_1    O5     C1     S1     "O1'"     54.063   20.000   1
+ BGS      var_2    C1     S1     "C2'"  CS       179.997   20.000   1
+ BGS      var_3    S1     "C2'"  CS     HS1     -179.960   20.000   3
+ BGS      var_4    O5     C1     C2     C3        60.000   20.000   3
+ BGS      var_5    C1     C2     O2     HO2     -179.545   20.000   1
+ BGS      var_6    C1     C2     C3     C4       -60.000   20.000   3
+ BGS      var_7    C2     C3     O3     HO3      179.226   20.000   1
+ BGS      var_8    C2     C3     C4     O4       180.000   20.000   3
+ BGS      var_9    C3     C4     O4     HO4     -179.547   20.000   1
+ BGS      var_10   C1     O5     C5     C6       180.000   20.000   1
+ BGS      var_11   O5     C5     C4     C3       -60.000   20.000   3
+ BGS      var_12   O5     C5     C6     O6        65.075   20.000   3
+ BGS      var_13   C5     C6     O6     HO6      179.950   20.000   1
+ BGS      var_1    C2     C1     O5     C5       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BGS      chir_01  C5     C6     C4     O5        positiv
+ BGS      chir_02  C2     C1     O2     C3        positiv
+ BGS      chir_03  C4     C5     C3     O4        positiv
+ BGS      chir_04  C1     C2     S1     O5        positiv
+ BGS      chir_05  S1     "C2'"  "O2'"  C1        positiv
+ BGS      chir_06  C3     C2     C4     O3        positiv
+# ------------------------------------------------------

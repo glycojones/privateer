@@ -1,0 +1,199 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OTH      OTH 'N,O-dimethyl-L-threonine            ' non-polymer        22  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_OTH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ OTH           OXT    O    OC       -0.500      0.000    0.000    0.000
+ OTH           C      C    C         0.000     -0.945    0.350   -0.741
+ OTH           O      O    OC       -0.500     -0.974   -0.022   -1.935
+ OTH           CA     C    CH1       0.000     -2.049    1.219   -0.196
+ OTH           HA     H    H         0.000     -1.625    1.953    0.504
+ OTH           N      N    NH1       0.000     -2.710    1.923   -1.302
+ OTH           H2     H    H         0.000     -3.560    1.613   -1.751
+ OTH           C24    C    CH3       0.000     -1.971    3.138   -1.670
+ OTH           H24B   H    H         0.000     -1.016    2.875   -2.049
+ OTH           H24A   H    H         0.000     -2.507    3.672   -2.414
+ OTH           H24    H    H         0.000     -1.849    3.756   -0.816
+ OTH           CB     C    CH1       0.000     -3.070    0.347    0.537
+ OTH           HB     H    H         0.000     -2.577   -0.173    1.371
+ OTH           CG2    C    CH3       0.000     -4.197    1.229    1.081
+ OTH           HG3    H    H         0.000     -4.905    0.626    1.589
+ OTH           HG2    H    H         0.000     -3.796    1.942    1.754
+ OTH           HG1    H    H         0.000     -4.673    1.731    0.279
+ OTH           OG1    O    O2        0.000     -3.613   -0.614   -0.370
+ OTH           C22    C    CH3       0.000     -4.010   -1.839    0.249
+ OTH           H22B   H    H         0.000     -4.753   -1.642    0.978
+ OTH           H22A   H    H         0.000     -4.399   -2.496   -0.484
+ OTH           H22    H    H         0.000     -3.171   -2.287    0.715
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ OTH      OXT    n/a    C      START
+ OTH      C      OXT    CA     .
+ OTH      O      C      .      .
+ OTH      CA     C      CB     .
+ OTH      HA     CA     .      .
+ OTH      N      CA     C24    .
+ OTH      H2     N      .      .
+ OTH      C24    N      H24    .
+ OTH      H24B   C24    .      .
+ OTH      H24A   C24    .      .
+ OTH      H24    C24    .      .
+ OTH      CB     CA     OG1    .
+ OTH      HB     CB     .      .
+ OTH      CG2    CB     HG1    .
+ OTH      HG3    CG2    .      .
+ OTH      HG2    CG2    .      .
+ OTH      HG1    CG2    .      .
+ OTH      OG1    CB     C22    .
+ OTH      C22    OG1    H22    .
+ OTH      H22B   C22    .      .
+ OTH      H22A   C22    .      .
+ OTH      H22    C22    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OTH       N         CA        single    1.450     0.020     1.450     0.020     
+OTH       C24       N         single    1.450     0.020     1.450     0.020     
+OTH       H2        N         single    1.036     0.016     0.914     0.007     
+OTH       CA        C         single    1.500     0.020     1.500     0.020     
+OTH       O         C         deloc     1.250     0.020     1.250     0.020     
+OTH       C         OXT       deloc     1.250     0.020     1.250     0.020     
+OTH       CB        CA        single    1.524     0.020     1.524     0.020     
+OTH       HA        CA        single    1.089     0.010     0.989     0.005     
+OTH       OG1       CB        single    1.426     0.020     1.426     0.020     
+OTH       C22       OG1       single    1.426     0.020     1.426     0.020     
+OTH       CG2       CB        single    1.524     0.020     1.524     0.020     
+OTH       HB        CB        single    1.089     0.010     0.989     0.005     
+OTH       H22       C22       single    1.089     0.010     0.989     0.005     
+OTH       H22A      C22       single    1.089     0.010     0.989     0.005     
+OTH       H22B      C22       single    1.089     0.010     0.989     0.005     
+OTH       HG1       CG2       single    1.089     0.010     0.989     0.005     
+OTH       HG2       CG2       single    1.089     0.010     0.989     0.005     
+OTH       HG3       CG2       single    1.089     0.010     0.989     0.005     
+OTH       H24       C24       single    1.089     0.010     0.989     0.005     
+OTH       H24A      C24       single    1.089     0.010     0.989     0.005     
+OTH       H24B      C24       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ OTH      OXT    C      O       123.000    3.000
+ OTH      OXT    C      CA      118.500    3.000
+ OTH      O      C      CA      118.500    3.000
+ OTH      C      CA     HA      108.810    3.000
+ OTH      C      CA     N       111.600    3.000
+ OTH      C      CA     CB      109.470    3.000
+ OTH      HA     CA     N       108.550    3.000
+ OTH      HA     CA     CB      108.340    3.000
+ OTH      N      CA     CB      110.000    3.000
+ OTH      CA     N      H2      118.500    3.000
+ OTH      CA     N      C24     120.000    3.000
+ OTH      H2     N      C24     118.500    3.000
+ OTH      N      C24    H24B    109.470    3.000
+ OTH      N      C24    H24A    109.470    3.000
+ OTH      N      C24    H24     109.470    3.000
+ OTH      H24B   C24    H24A    109.470    3.000
+ OTH      H24B   C24    H24     109.470    3.000
+ OTH      H24A   C24    H24     109.470    3.000
+ OTH      CA     CB     HB      108.340    3.000
+ OTH      CA     CB     CG2     111.000    3.000
+ OTH      CA     CB     OG1     109.470    3.000
+ OTH      HB     CB     CG2     108.340    3.000
+ OTH      HB     CB     OG1     109.470    3.000
+ OTH      CG2    CB     OG1     109.470    3.000
+ OTH      CB     CG2    HG3     109.470    3.000
+ OTH      CB     CG2    HG2     109.470    3.000
+ OTH      CB     CG2    HG1     109.470    3.000
+ OTH      HG3    CG2    HG2     109.470    3.000
+ OTH      HG3    CG2    HG1     109.470    3.000
+ OTH      HG2    CG2    HG1     109.470    3.000
+ OTH      CB     OG1    C22     111.800    3.000
+ OTH      OG1    C22    H22B    109.470    3.000
+ OTH      OG1    C22    H22A    109.470    3.000
+ OTH      OG1    C22    H22     109.470    3.000
+ OTH      H22B   C22    H22A    109.470    3.000
+ OTH      H22B   C22    H22     109.470    3.000
+ OTH      H22A   C22    H22     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ OTH      var_1    OXT    C      CA     CB       -82.526   20.000   3
+ OTH      var_2    C      CA     N      C24      -83.350   20.000   3
+ OTH      var_3    CA     N      C24    H24      -55.335   20.000   1
+ OTH      var_4    C      CA     CB     OG1      -59.556   20.000   3
+ OTH      var_5    CA     CB     CG2    HG1       59.994   20.000   3
+ OTH      var_6    CA     CB     OG1    C22      150.026   20.000   1
+ OTH      var_7    CB     OG1    C22    H22      -59.983   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ OTH      chir_01  CA     N      C      CB        positiv
+ OTH      chir_02  CB     CA     OG1    CG2       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ OTH      plan-1    N         0.020
+ OTH      plan-1    CA        0.020
+ OTH      plan-1    C24       0.020
+ OTH      plan-1    H2        0.020
+ OTH      plan-2    C         0.020
+ OTH      plan-2    CA        0.020
+ OTH      plan-2    O         0.020
+ OTH      plan-2    OXT       0.020
+# ------------------------------------------------------

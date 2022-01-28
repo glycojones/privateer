@@ -1,0 +1,169 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CSW     CSW     CYSTEINE-S-DIOXIDE     peptide    16     9     .
+#
+data_comp_CSW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CSW     N       N       NT3     1       -1.886      -0.767      0.104
+CSW     CA      C       CH1     0       -0.703      0.011       -0.359
+CSW     CB      C       CH2     0       0.604       -0.725      -0.050
+CSW     SG      S       S3      0       1.983       0.013       -0.978
+CSW     C       C       C       0       -0.711      1.406       0.281
+CSW     O       O       O       0       -0.547      2.382       -0.479
+CSW     OD1     O       OH1     0       2.583       1.238       -0.149
+CSW     OD2     O       O       0       3.034       -1.026      -1.046
+CSW     OXT     O       OC      -1      -0.881      1.465       1.514
+CSW     H       H       H       0       -2.613      -0.220      0.176
+CSW     H2      H       H       0       -1.712      -1.142      0.917
+CSW     H3      H       H       0       -2.073      -1.427      -0.496
+CSW     HA      H       H       0       -0.773      0.113       -1.337
+CSW     HB2     H       H       0       0.509       -1.668      -0.296
+CSW     HB3     H       H       0       0.786       -0.671      0.910
+CSW     H7      H       H       0       2.489       1.087       0.700
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+CSW      N      n/a    CA     START
+CSW      H      N      .      .
+CSW      H2     N      .      .
+CSW      H3     N      .      .
+CSW      CA     N      C      .
+CSW      HA     CA     .      .
+CSW      CB     CA     SG     .
+CSW      HB2    CB     .      .
+CSW      HB3    CB     .      .
+CSW      SG     CB     OD1    .
+CSW      OD2    SG     .      .
+CSW      OD1    SG     H7     .
+CSW      H7     OD1    .      .
+CSW      C      CA     .      END
+CSW      O      C      .      .
+CSW      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CSW       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+CSW       CA        CB        SINGLE    n         1.530     0.013     1.530     0.013     
+CSW       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+CSW       CB        SG        SINGLE    n         1.817     0.020     1.817     0.020     
+CSW       SG        OD1       SINGLE    n         1.596     0.020     1.596     0.020     
+CSW       SG        OD2       DOUBLE    n         1.480     0.015     1.480     0.015     
+CSW       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+CSW       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+CSW       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+CSW       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+CSW       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+CSW       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+CSW       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.019     
+CSW       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.019     
+CSW       OD1       H7        SINGLE    n         0.970     0.012     0.867     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CSW          CA           N           H     109.671    1.50
+CSW          CA           N          H2     109.671    1.50
+CSW          CA           N          H3     109.671    1.50
+CSW           H           N          H2     109.028    2.41
+CSW           H           N          H3     109.028    2.41
+CSW          H2           N          H3     109.028    2.41
+CSW           N          CA          CB     111.386    1.50
+CSW           N          CA           C     109.494    1.50
+CSW           N          CA          HA     107.983    1.50
+CSW          CB          CA           C     111.066    2.42
+CSW          CB          CA          HA     108.253    1.50
+CSW           C          CA          HA     108.606    1.50
+CSW          CA          CB          SG     108.220    3.00
+CSW          CA          CB         HB2     108.870    1.50
+CSW          CA          CB         HB3     108.870    1.50
+CSW          SG          CB         HB2     109.362    1.50
+CSW          SG          CB         HB3     109.362    1.50
+CSW         HB2          CB         HB3     108.193    1.50
+CSW          CB          SG         OD1     109.471    3.00
+CSW          CB          SG         OD2     106.041    1.50
+CSW         OD1          SG         OD2     107.227    3.00
+CSW          CA           C           O     117.134    1.50
+CSW          CA           C         OXT     117.134    1.50
+CSW           O           C         OXT     125.732    1.50
+CSW          SG         OD1          H7     109.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CSW             sp3_sp3_4          CB          CA           N           H      60.000   10.00     3
+CSW            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+CSW             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+CSW            sp3_sp3_19          CA          CB          SG         OD1     180.000   10.00     3
+CSW            sp3_sp3_26          H7         OD1          SG          CB     -60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+CSW    chir_1    CA    N    CB    C    both
+CSW    chir_2    SG    OD2    OD1    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CSW    plan-1           C   0.020
+CSW    plan-1          CA   0.020
+CSW    plan-1           O   0.020
+CSW    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CSW SMILES           ACDLabs              12.01 "O=C(O)C(N)CS(=O)O"
+CSW InChI            InChI                1.03  "InChI=1S/C3H7NO4S/c4-2(3(5)6)1-9(7)8/h2H,1,4H2,(H,5,6)(H,7,8)/t2-/m0/s1"
+CSW InChIKey         InChI                1.03  ADVPTQAUNPRNPO-REOHCLBHSA-N
+CSW SMILES_CANONICAL CACTVS               3.385 "N[C@@H](C[S](O)=O)C(O)=O"
+CSW SMILES           CACTVS               3.385 "N[CH](C[S](O)=O)C(O)=O"
+CSW SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C([C@@H](C(=O)O)N)S(=O)O"
+CSW SMILES           "OpenEye OEToolkits" 1.7.6 "C(C(C(=O)O)N)S(=O)O"
+CSW ?                acedrg               196         "dictionary generator"
+CSW ?                acedrg_database      11          "data source"
+CSW ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CSW ?                refmac5              5.8.0222    "optimization tool"

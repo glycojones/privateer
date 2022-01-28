@@ -1,0 +1,222 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5PG     5PG     "(2S)-(4-hydroxyphenyl)(methylamino)ethanoicacid"     M-peptide     23     13     .     
+#
+data_comp_5PG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+5PG     N       N       NT1     0       -2.246      -0.271      0.548       
+5PG     H       H       H       0       -2.958      -0.793      0.572       
+5PG     CN      C       CH3     0       -2.660      1.054       0.076       
+5PG     HN1C    H       H       0       -3.426      1.361       0.600       
+5PG     HN2C    H       H       0       -2.914      1.004       -0.866      
+5PG     HN3C    H       H       0       -1.923      1.686       0.181       
+5PG     CA      C       CH1     0       -1.236      -0.944      -0.305      
+5PG     HA      H       H       0       -1.516      -0.839      -1.256      
+5PG     CB      C       CR6     0       0.136       -0.309      -0.124      
+5PG     CC1     C       CR16    0       0.680       -0.128      1.145       
+5PG     HC1     H       H       0       0.190       -0.403      1.903       
+5PG     HC2     H       H       0       0.541       -0.002      -2.089      
+5PG     CD1     C       CR16    0       1.930       0.450       1.320       
+5PG     HD1     H       H       0       2.282       0.564       2.187       
+5PG     HD2     H       H       0       2.633       0.965       -1.812      
+5PG     CE      C       CR6     0       2.662       0.859       0.215       
+5PG     CD2     C       CR16    0       2.139       0.688       -1.058      
+5PG     CC2     C       CR16    0       0.887       0.109       -1.219      
+5PG     OH      O       OH1     0       3.892       1.428       0.380       
+5PG     HH      H       H       0       3.882       2.236       0.093       
+5PG     C       C       C       0       -1.102      -2.449      -0.002      
+5PG     O       O       O       0       -0.920      -3.209      -0.971      
+5PG     OXT     O       OC      -1      -1.184      -2.799      1.189       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 5PG      N      n/a    CA     START
+ 5PG      H      N      .      .
+ 5PG      CN     N      HN3C   .
+ 5PG      HN1C   CN     .      .
+ 5PG      HN2C   CN     .      .
+ 5PG      HN3C   CN     .      .
+ 5PG      CA     N      C      .
+ 5PG      HA     CA     .      .
+ 5PG      CB     CA     CC1    .
+ 5PG      CC1    CB     CD1    .
+ 5PG      HC1    CC1    .      .
+ 5PG      CD1    CC1    CE     .
+ 5PG      HD1    CD1    .      .
+ 5PG      CE     CD1    CD2    .
+ 5PG      OH     CE     HH     .
+ 5PG      HH     OH     .      .
+ 5PG      CD2    CE     CC2    .
+ 5PG      HD2    CD2    .      .
+ 5PG      CC2    CD2    HC2    .
+ 5PG      HC2    CC2    .      .
+ 5PG      C      CA     OXT    .
+ 5PG      O      C      .      .
+ 5PG      OXT    C      .      END
+ 5PG      CB     CC2    .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5PG       CN        N         SINGLE    n         1.463     0.015     1.463     0.015     
+5PG       N         CA        SINGLE    n         1.478     0.014     1.478     0.014     
+5PG       CA        CB        SINGLE    n         1.522     0.010     1.522     0.010     
+5PG       CB        CC1       DOUBLE    y         1.389     0.010     1.389     0.010     
+5PG       CC1       CD1       SINGLE    y         1.385     0.010     1.385     0.010     
+5PG       CD1       CE        DOUBLE    y         1.383     0.010     1.383     0.010     
+5PG       CE        CD2       SINGLE    y         1.383     0.010     1.383     0.010     
+5PG       CD2       CC2       DOUBLE    y         1.385     0.010     1.385     0.010     
+5PG       CE        OH        SINGLE    n         1.365     0.012     1.365     0.012     
+5PG       CA        C         SINGLE    n         1.539     0.016     1.539     0.016     
+5PG       C         O         DOUBLE    n         1.244     0.020     1.244     0.020     
+5PG       C         OXT       SINGLE    n         1.244     0.020     1.244     0.020     
+5PG       CB        CC2       SINGLE    y         1.389     0.010     1.389     0.010     
+5PG       CN        HN1C      SINGLE    n         1.089     0.010     0.977     0.013     
+5PG       CN        HN2C      SINGLE    n         1.089     0.010     0.977     0.013     
+5PG       CN        HN3C      SINGLE    n         1.089     0.010     0.977     0.013     
+5PG       N         H         SINGLE    n         1.036     0.016     0.882     0.020     
+5PG       CA        HA        SINGLE    n         1.089     0.010     0.997     0.020     
+5PG       CC1       HC1       SINGLE    n         1.082     0.013     0.943     0.017     
+5PG       CD1       HD1       SINGLE    n         1.082     0.013     0.943     0.017     
+5PG       CD2       HD2       SINGLE    n         1.082     0.013     0.943     0.017     
+5PG       CC2       HC2       SINGLE    n         1.082     0.013     0.943     0.017     
+5PG       OH        HH        SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+5PG           N          CN        HN1C     109.468    1.50
+5PG           N          CN        HN2C     109.468    1.50
+5PG           N          CN        HN3C     109.468    1.50
+5PG        HN1C          CN        HN2C     109.279    1.79
+5PG        HN1C          CN        HN3C     109.279    1.79
+5PG        HN2C          CN        HN3C     109.279    1.79
+5PG          CN           N          CA     112.615    2.70
+5PG          CN           N           H     108.640    1.50
+5PG          CA           N           H     106.499    3.00
+5PG           N          CA          CB     110.394    2.07
+5PG           N          CA           C     112.134    2.59
+5PG           N          CA          HA     107.854    1.50
+5PG          CB          CA           C     108.609    2.87
+5PG          CB          CA          HA     108.615    1.50
+5PG           C          CA          HA     108.384    1.50
+5PG          CA          CB         CC1     120.885    1.50
+5PG          CA          CB         CC2     120.885    1.50
+5PG         CC1          CB         CC2     118.229    1.50
+5PG          CB         CC1         CD1     121.447    1.50
+5PG          CB         CC1         HC1     119.404    1.50
+5PG         CD1         CC1         HC1     119.150    1.50
+5PG         CC1         CD1          CE     119.711    1.50
+5PG         CC1         CD1         HD1     120.226    1.50
+5PG          CE         CD1         HD1     120.064    1.50
+5PG         CD1          CE         CD2     119.456    1.50
+5PG         CD1          CE          OH     120.272    2.50
+5PG         CD2          CE          OH     120.272    2.50
+5PG          CE         CD2         CC2     119.711    1.50
+5PG          CE         CD2         HD2     120.064    1.50
+5PG         CC2         CD2         HD2     120.226    1.50
+5PG         CD2         CC2          CB     121.447    1.50
+5PG         CD2         CC2         HC2     119.150    1.50
+5PG          CB         CC2         HC2     119.404    1.50
+5PG          CE          OH          HH     110.017    2.50
+5PG          CA           C           O     117.168    1.50
+5PG          CA           C         OXT     117.168    1.50
+5PG           O           C         OXT     125.663    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+5PG             sp3_sp3_1        HN1C          CN           N          CA     180.000   10.00     3
+5PG            sp3_sp3_10           C          CA           N          CN     180.000   10.00     3
+5PG             sp2_sp3_9           O           C          CA           N       0.000   10.00     6
+5PG             sp2_sp3_1         CC1          CB          CA           N     150.000   10.00     6
+5PG       const_sp2_sp2_3          CA          CB         CC1         CD1     180.000   10.00     2
+5PG              const_23          CA          CB         CC2         CD2     180.000   10.00     2
+5PG       const_sp2_sp2_5          CB         CC1         CD1          CE       0.000   10.00     2
+5PG              const_10         CC1         CD1          CE          OH     180.000   10.00     2
+5PG              const_14         CC2         CD2          CE          OH     180.000   10.00     2
+5PG              const_17          CB         CC2         CD2          CE       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+5PG    chir_1    N    CA    CN    H    both
+5PG    chir_2    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+5PG    plan-1          CA   0.020
+5PG    plan-1          CB   0.020
+5PG    plan-1         CC1   0.020
+5PG    plan-1         CC2   0.020
+5PG    plan-1         CD1   0.020
+5PG    plan-1         CD2   0.020
+5PG    plan-1          CE   0.020
+5PG    plan-1         HC1   0.020
+5PG    plan-1         HC2   0.020
+5PG    plan-1         HD1   0.020
+5PG    plan-1         HD2   0.020
+5PG    plan-1          OH   0.020
+5PG    plan-2           C   0.020
+5PG    plan-2          CA   0.020
+5PG    plan-2           O   0.020
+5PG    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+5PG SMILES           ACDLabs              10.04 "O=C(O)C(NC)c1ccc(O)cc1"
+5PG SMILES_CANONICAL CACTVS               3.352 "CN[C@H](C(O)=O)c1ccc(O)cc1"
+5PG SMILES           CACTVS               3.352 "CN[CH](C(O)=O)c1ccc(O)cc1"
+5PG SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "CN[C@@H](c1ccc(cc1)O)C(=O)O"
+5PG SMILES           "OpenEye OEToolkits" 1.6.1 "CNC(c1ccc(cc1)O)C(=O)O"
+5PG InChI            InChI                1.03  "InChI=1S/C9H11NO3/c1-10-8(9(12)13)6-2-4-7(11)5-3-6/h2-5,8,10-11H,1H3,(H,12,13)/t8-/m0/s1"
+5PG InChIKey         InChI                1.03  IGBFTIYLYPOJFU-QMMMGPOBSA-N
+5PG ?                acedrg               196         "dictionary generator"                  
+5PG ?                acedrg_database      11          "data source"                           
+5PG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+5PG ?                refmac5              5.8.0222    "optimization tool"                     

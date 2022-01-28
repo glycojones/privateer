@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2XG     2XG      3,4-difluorobenzenethiol     NON-POLYMER     13     9     .     
+#
+data_comp_2XG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2XG     SAG     S       SH1     0       -21.782     -1.799      -7.232      
+2XG     CAH     C       CR6     0       -23.181     1.716       -9.722      
+2XG     FAI     F       F       0       -23.571     2.782       -10.451     
+2XG     CAJ     C       CR6     0       -22.066     1.832       -8.912      
+2XG     FAK     F       F       0       -21.389     2.999       -8.863      
+2XG     CAL     C       CR16    0       -21.633     0.767       -8.151      
+2XG     CAM     C       CR6     0       -22.328     -0.446      -8.196      
+2XG     CAN     C       CR16    0       -23.462     -0.555      -9.022      
+2XG     CAO     C       CR16    0       -23.885     0.531       -9.785      
+2XG     H1      H       HSH1    0       -20.802     -1.460      -6.570      
+2XG     H2      H       H       0       -20.872     0.847       -7.598      
+2XG     H3      H       H       0       -23.937     -1.369      -9.059      
+2XG     H4      H       H       0       -24.643     0.461       -10.338     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2XG       CAH       FAI       SINGLE    n         1.349     0.014     1.349     0.014     
+2XG       CAH       CAO       DOUBLE    y         1.371     0.010     1.371     0.010     
+2XG       CAN       CAO       SINGLE    y         1.385     0.010     1.385     0.010     
+2XG       CAH       CAJ       SINGLE    y         1.372     0.013     1.372     0.013     
+2XG       CAM       CAN       DOUBLE    y         1.385     0.018     1.385     0.018     
+2XG       CAJ       FAK       SINGLE    n         1.350     0.010     1.350     0.010     
+2XG       CAJ       CAL       DOUBLE    y         1.372     0.010     1.372     0.010     
+2XG       CAL       CAM       SINGLE    y         1.390     0.012     1.390     0.012     
+2XG       SAG       CAM       SINGLE    n         1.748     0.013     1.748     0.013     
+2XG       SAG       H1        SINGLE    n         1.338     0.010     1.171     0.208     
+2XG       CAL       H2        SINGLE    n         1.082     0.013     0.975     0.010     
+2XG       CAN       H3        SINGLE    n         1.082     0.013     0.975     0.010     
+2XG       CAO       H4        SINGLE    n         1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2XG         CAM         SAG          H1     109.395    3.00
+2XG         FAI         CAH         CAO     120.512    1.50
+2XG         FAI         CAH         CAJ     118.958    1.50
+2XG         CAO         CAH         CAJ     120.530    1.50
+2XG         CAH         CAJ         FAK     119.696    1.50
+2XG         CAH         CAJ         CAL     121.017    1.50
+2XG         FAK         CAJ         CAL     119.288    1.50
+2XG         CAJ         CAL         CAM     120.024    1.50
+2XG         CAJ         CAL          H2     120.565    1.50
+2XG         CAM         CAL          H2     119.411    1.50
+2XG         CAN         CAM         CAL     119.483    1.50
+2XG         CAN         CAM         SAG     120.785    2.31
+2XG         CAL         CAM         SAG     119.732    1.77
+2XG         CAO         CAN         CAM     120.230    1.50
+2XG         CAO         CAN          H3     119.992    1.50
+2XG         CAM         CAN          H3     119.779    1.50
+2XG         CAH         CAO         CAN     118.717    1.50
+2XG         CAH         CAO          H4     120.434    1.50
+2XG         CAN         CAO          H4     120.849    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2XG              const_24         FAI         CAH         CAJ         FAK       0.000   10.00     2
+2XG       const_sp2_sp2_3         FAI         CAH         CAO         CAN     180.000   10.00     2
+2XG              const_19         FAK         CAJ         CAL         CAM     180.000   10.00     2
+2XG              const_14         CAJ         CAL         CAM         SAG     180.000   10.00     2
+2XG              const_11         SAG         CAM         CAN         CAO     180.000   10.00     2
+2XG       const_sp2_sp2_5         CAM         CAN         CAO         CAH       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+2XG    plan-1         CAH   0.020
+2XG    plan-1         CAJ   0.020
+2XG    plan-1         CAL   0.020
+2XG    plan-1         CAM   0.020
+2XG    plan-1         CAN   0.020
+2XG    plan-1         CAO   0.020
+2XG    plan-1         FAI   0.020
+2XG    plan-1         FAK   0.020
+2XG    plan-1          H2   0.020
+2XG    plan-1          H3   0.020
+2XG    plan-1          H4   0.020
+2XG    plan-1         SAG   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2XG SMILES           ACDLabs              12.01 "Fc1ccc(S)cc1F"
+2XG InChI            InChI                1.03  "InChI=1S/C6H4F2S/c7-5-2-1-4(9)3-6(5)8/h1-3,9H"
+2XG InChIKey         InChI                1.03  BGVRHDQMTMPAEZ-UHFFFAOYSA-N
+2XG SMILES_CANONICAL CACTVS               3.385 "Fc1ccc(S)cc1F"
+2XG SMILES           CACTVS               3.385 "Fc1ccc(S)cc1F"
+2XG SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1cc(c(cc1S)F)F"
+2XG SMILES           "OpenEye OEToolkits" 1.7.6 "c1cc(c(cc1S)F)F"
+2XG ?                acedrg               202         "dictionary generator"                  
+2XG ?                acedrg_database      11          "data source"                           
+2XG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2XG ?                refmac5              5.8.0189    "optimization tool"                     

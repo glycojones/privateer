@@ -1,0 +1,162 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DBC     DBC      "(4S,5S)-4,5-BIS(MERCAPTOMETHYL)-1,3-DIOXOLAN-2-OL"     NON-POLYMER     20     10     .     
+#
+data_comp_DBC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DBC     O4      O       OH1     0       6.163       66.309      -4.102      
+DBC     C5      C       CH1     0       7.345       66.666      -3.405      
+DBC     O3      O       O2      0       7.627       68.057      -3.554      
+DBC     O2      O       O2      0       7.195       66.465      -2.004      
+DBC     C2      C       CH1     0       8.022       67.427      -1.325      
+DBC     C1      C       CH2     0       7.433       67.716      0.035       
+DBC     S1      S       SH1     0       7.468       66.309      1.177       
+DBC     C3      C       CH1     0       8.076       68.613      -2.301      
+DBC     C4      C       CH2     0       9.433       69.246      -2.497      
+DBC     S4      S       SH1     0       10.056      70.149      -1.056      
+DBC     HO4     H       H       0       5.961       65.506      -3.913      
+DBC     H5      H       H       0       8.106       66.139      -3.734      
+DBC     H2      H       H       0       8.932       67.054      -1.213      
+DBC     H11     H       H       0       6.514       67.992      -0.079      
+DBC     H12     H       H       0       7.922       68.446      0.436       
+DBC     HS1     H       HSH1    0       6.871       66.824      2.093       
+DBC     H3      H       H       0       7.435       69.306      -2.006      
+DBC     H41     H       H       0       9.382       69.860      -3.242      
+DBC     H42     H       H       0       10.068      68.552      -2.718      
+DBC     HS4     H       HSH1    0       8.994       70.367      -0.522      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DBC       O4        C5        SINGLE    n         1.418     0.018     1.418     0.018     
+DBC       C5        O3        SINGLE    n         1.429     0.020     1.429     0.020     
+DBC       C5        O2        SINGLE    n         1.429     0.020     1.429     0.020     
+DBC       O3        C3        SINGLE    n         1.440     0.013     1.440     0.013     
+DBC       O2        C2        SINGLE    n         1.440     0.013     1.440     0.013     
+DBC       C2        C1        SINGLE    n         1.510     0.014     1.510     0.014     
+DBC       C2        C3        SINGLE    n         1.532     0.015     1.532     0.015     
+DBC       C1        S1        SINGLE    n         1.812     0.010     1.812     0.010     
+DBC       C3        C4        SINGLE    n         1.510     0.014     1.510     0.014     
+DBC       C4        S4        SINGLE    n         1.812     0.010     1.812     0.010     
+DBC       O4        HO4       SINGLE    n         0.970     0.012     0.839     0.014     
+DBC       C5        H5        SINGLE    n         1.089     0.010     0.989     0.005     
+DBC       C2        H2        SINGLE    n         1.089     0.010     0.989     0.005     
+DBC       C1        H11       SINGLE    n         1.089     0.010     0.989     0.005     
+DBC       C1        H12       SINGLE    n         1.089     0.010     0.989     0.005     
+DBC       S1        HS1       SINGLE    n         1.338     0.010     1.171     0.208     
+DBC       C3        H3        SINGLE    n         1.089     0.010     0.989     0.005     
+DBC       C4        H41       SINGLE    n         1.089     0.010     0.989     0.005     
+DBC       C4        H42       SINGLE    n         1.089     0.010     0.989     0.005     
+DBC       S4        HS4       SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DBC          C5          O4         HO4     109.011    2.90
+DBC          O4          C5          O3     110.971    1.64
+DBC          O4          C5          O2     110.971    1.64
+DBC          O4          C5          H5     110.048    1.73
+DBC          O3          C5          O2     105.202    1.50
+DBC          O3          C5          H5     109.457    1.50
+DBC          O2          C5          H5     109.457    1.50
+DBC          C5          O3          C3     108.166    2.62
+DBC          C5          O2          C2     108.166    2.62
+DBC          O2          C2          C1     109.275    1.50
+DBC          O2          C2          C3     102.856    1.50
+DBC          O2          C2          H2     109.115    1.50
+DBC          C1          C2          C3     115.739    1.76
+DBC          C1          C2          H2     109.000    1.62
+DBC          C3          C2          H2     109.096    1.50
+DBC          C2          C1          S1     113.180    3.00
+DBC          C2          C1         H11     108.376    1.50
+DBC          C2          C1         H12     108.376    1.50
+DBC          S1          C1         H11     107.881    1.98
+DBC          S1          C1         H12     107.881    1.98
+DBC         H11          C1         H12     108.127    1.50
+DBC          C1          S1         HS1      97.911    3.00
+DBC          O3          C3          C2     102.856    1.50
+DBC          O3          C3          C4     109.275    1.50
+DBC          O3          C3          H3     109.115    1.50
+DBC          C2          C3          C4     115.739    1.76
+DBC          C2          C3          H3     109.096    1.50
+DBC          C4          C3          H3     109.000    1.62
+DBC          C3          C4          S4     113.180    3.00
+DBC          C3          C4         H41     108.376    1.50
+DBC          C3          C4         H42     108.376    1.50
+DBC          S4          C4         H41     107.881    1.98
+DBC          S4          C4         H42     107.881    1.98
+DBC         H41          C4         H42     108.127    1.50
+DBC          C4          S4         HS4      97.911    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DBC            sp3_sp3_19          O3          C5          O4         HO4     180.000   10.00     3
+DBC             sp3_sp3_2          O4          C5          O3          C3     -60.000   10.00     3
+DBC            sp3_sp3_23          O4          C5          O2          C2      60.000   10.00     3
+DBC             sp3_sp3_5          C4          C3          O3          C5     180.000   10.00     3
+DBC            sp3_sp3_17          C1          C2          O2          C5     180.000   10.00     3
+DBC            sp3_sp3_25          S1          C1          C2          O2     180.000   10.00     3
+DBC            sp3_sp3_14          C1          C2          C3          C4     -60.000   10.00     3
+DBC            sp3_sp3_34          C2          C1          S1         HS1     180.000   10.00     3
+DBC            sp3_sp3_37          O3          C3          C4          S4     180.000   10.00     3
+DBC            sp3_sp3_46          C3          C4          S4         HS4     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DBC    chir_1    C2    O2    C1    C3    both
+DBC    chir_2    C3    O3    C4    C2    positive
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DBC SMILES           ACDLabs              10.04 "SCC1OC(O)OC1CS"
+DBC SMILES_CANONICAL CACTVS               3.341 "O[C@@H]1O[C@H](CS)[C@@H](CS)O1"
+DBC SMILES           CACTVS               3.341 "O[CH]1O[CH](CS)[CH](CS)O1"
+DBC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H]1[C@H](OC(O1)O)CS)S"
+DBC SMILES           "OpenEye OEToolkits" 1.5.0 "C(C1C(OC(O1)O)CS)S"
+DBC InChI            InChI                1.03  "InChI=1S/C5H10O3S2/c6-5-7-3(1-9)4(2-10)8-5/h3-6,9-10H,1-2H2/t3-,4-/m1/s1"
+DBC InChIKey         InChI                1.03  URSOFHABYVLXDS-QWWZWVQMSA-N
+DBC ?                acedrg               202         "dictionary generator"                  
+DBC ?                acedrg_database      11          "data source"                           
+DBC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DBC ?                refmac5              5.8.0189    "optimization tool"                     

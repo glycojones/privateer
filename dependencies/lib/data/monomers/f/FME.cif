@@ -1,0 +1,202 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FME     FME     N-FORMYLMETHIONINE     M-peptide     21     11     .
+#
+data_comp_FME
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FME     N       N       NH1     0       23.469      -5.860      4.982
+FME     CN      C       C1      0       23.420      -6.604      3.875
+FME     O1      O       O       0       22.535      -6.562      3.017
+FME     CA      C       CH1     0       22.437      -4.900      5.341
+FME     CB      C       CH2     0       22.520      -4.515      6.827
+FME     CG      C       CH2     0       22.193      -5.662      7.770
+FME     SD      S       S2      0       20.413      -5.961      7.928
+FME     CE      C       CH3     0       20.416      -7.412      8.979
+FME     C       C       C       0       22.541      -3.640      4.463
+FME     O       O       O       0       23.615      -3.008      4.497
+FME     OXT     O       OC      -1      21.544      -3.339      3.777
+FME     H       H       H       0       24.156      -5.958      5.512
+FME     HCN     H       H       0       24.150      -7.222      3.757
+FME     HA      H       H       0       21.555      -5.320      5.177
+FME     HB2     H       H       0       21.899      -3.778      6.999
+FME     HB3     H       H       0       23.423      -4.193      7.021
+FME     HG2     H       H       0       22.559      -5.462      8.657
+FME     HG3     H       H       0       22.623      -6.482      7.446
+FME     HE1     H       H       0       19.520      -7.762      9.046
+FME     HE2     H       H       0       20.735      -7.171      9.858
+FME     HE3     H       H       0       20.997      -8.083      8.599
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+FME      N      n/a    CA     START
+FME      H      N      .      .
+FME      CN     N      O1     .
+FME      HCN    CN     .      .
+FME      O1     CN     .      .
+FME      CA     N      C      .
+FME      HA     CA     .      .
+FME      CB     CA     CG     .
+FME      HB2    CB     .      .
+FME      HB3    CB     .      .
+FME      CG     CB     SD     .
+FME      HG2    CG     .      .
+FME      HG3    CG     .      .
+FME      SD     CG     CE     .
+FME      CE     SD     HE1    .
+FME      HE3    CE     .      .
+FME      HE2    CE     .      .
+FME      HE1    CE     .      .
+FME      C      CA     .      END
+FME      O      C      .      .
+FME      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FME       N         CN        SINGLE    n         1.328     0.020     1.328     0.020     
+FME       N         CA        SINGLE    n         1.452     0.011     1.452     0.011     
+FME       CN        O1        DOUBLE    n         1.232     0.010     1.232     0.010     
+FME       CA        CB        SINGLE    n         1.535     0.013     1.535     0.013     
+FME       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+FME       CB        CG        SINGLE    n         1.517     0.020     1.517     0.020     
+FME       CG        SD        SINGLE    n         1.811     0.020     1.811     0.020     
+FME       SD        CE        SINGLE    n         1.792     0.010     1.792     0.010     
+FME       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+FME       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+FME       N         H         SINGLE    n         1.016     0.010     0.873     0.020     
+FME       CN        HCN       SINGLE    n         1.082     0.013     0.964     0.020     
+FME       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+FME       CB        HB2       SINGLE    n         1.089     0.010     0.978     0.020     
+FME       CB        HB3       SINGLE    n         1.089     0.010     0.978     0.020     
+FME       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.013     
+FME       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.013     
+FME       CE        HE1       SINGLE    n         1.089     0.010     0.965     0.017     
+FME       CE        HE2       SINGLE    n         1.089     0.010     0.965     0.017     
+FME       CE        HE3       SINGLE    n         1.089     0.010     0.965     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FME          CN           N          CA     122.129    2.35
+FME          CN           N           H     118.655    1.93
+FME          CA           N           H     119.216    1.92
+FME           N          CN          O1     125.163    1.50
+FME           N          CN         HCN     115.820    2.36
+FME          O1          CN         HCN     119.017    2.52
+FME           N          CA          CB     111.076    1.75
+FME           N          CA           C     110.939    1.74
+FME           N          CA          HA     108.161    1.50
+FME          CB          CA           C     110.328    1.98
+FME          CB          CA          HA     108.444    1.50
+FME           C          CA          HA     108.327    1.50
+FME          CA          CB          CG     112.986    1.50
+FME          CA          CB         HB2     108.966    1.50
+FME          CA          CB         HB3     108.966    1.50
+FME          CG          CB         HB2     108.955    1.50
+FME          CG          CB         HB3     108.955    1.50
+FME         HB2          CB         HB3     107.698    1.50
+FME          CB          CG          SD     112.576    2.44
+FME          CB          CG         HG2     109.206    1.50
+FME          CB          CG         HG3     109.206    1.50
+FME          SD          CG         HG2     108.861    1.50
+FME          SD          CG         HG3     108.861    1.50
+FME         HG2          CG         HG3     107.939    1.50
+FME          CG          SD          CE     100.595    1.50
+FME          SD          CE         HE1     109.425    1.50
+FME          SD          CE         HE2     109.425    1.50
+FME          SD          CE         HE3     109.425    1.50
+FME         HE1          CE         HE2     109.509    1.50
+FME         HE1          CE         HE3     109.509    1.50
+FME         HE2          CE         HE3     109.509    1.50
+FME          CA           C           O     117.249    1.61
+FME          CA           C         OXT     117.249    1.61
+FME           O           C         OXT     125.502    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FME             sp2_sp2_1          O1          CN           N          CA     180.000   10.00     2
+FME             sp2_sp3_1          CN           N          CA          CB       0.000   10.00     6
+FME             sp3_sp3_4           N          CA          CB          CG      60.000   10.00     3
+FME             sp2_sp3_7           O           C          CA           N       0.000   10.00     6
+FME            sp3_sp3_10          CA          CB          CG          SD     180.000   10.00     3
+FME            sp3_sp3_19          CB          CG          SD          CE     180.000   10.00     3
+FME            sp3_sp3_22         HE1          CE          SD          CG     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+FME    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FME    plan-1          CA   0.020
+FME    plan-1          CN   0.020
+FME    plan-1           H   0.020
+FME    plan-1           N   0.020
+FME    plan-2          CN   0.020
+FME    plan-2         HCN   0.020
+FME    plan-2           N   0.020
+FME    plan-2          O1   0.020
+FME    plan-3           C   0.020
+FME    plan-3          CA   0.020
+FME    plan-3           O   0.020
+FME    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FME SMILES           ACDLabs              10.04 "O=CNC(C(=O)O)CCSC"
+FME SMILES_CANONICAL CACTVS               3.341 "CSCC[C@H](NC=O)C(O)=O"
+FME SMILES           CACTVS               3.341 "CSCC[CH](NC=O)C(O)=O"
+FME SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CSCC[C@@H](C(=O)O)NC=O"
+FME SMILES           "OpenEye OEToolkits" 1.5.0 "CSCCC(C(=O)O)NC=O"
+FME InChI            InChI                1.03  "InChI=1S/C6H11NO3S/c1-11-3-2-5(6(9)10)7-4-8/h4-5H,2-3H2,1H3,(H,7,8)(H,9,10)/t5-/m0/s1"
+FME InChIKey         InChI                1.03  PYUSHNKNPOHWEZ-YFKPBYRVSA-N
+FME ?                acedrg               196         "dictionary generator"
+FME ?                acedrg_database      11          "data source"
+FME ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FME ?                refmac5              5.8.0222    "optimization tool"

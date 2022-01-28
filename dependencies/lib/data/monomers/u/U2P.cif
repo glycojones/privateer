@@ -1,0 +1,270 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+U2P      U2P '"PHOSPHORIC ACID MONO-[2-(2,4-DIOXO-' non-polymer        32  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_U2P
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ U2P           O3P    O    OP       -0.666      0.000    0.000    0.000
+ U2P           P      P    P         0.000     -1.299   -0.111   -0.768
+ U2P           O1P    O    OP       -0.666     -2.260   -1.000   -0.009
+ U2P           O2P    O    OP       -0.666     -1.029   -0.709   -2.132
+ U2P           "O2'"  O    O2        0.000     -1.947    1.353   -0.942
+ U2P           "C2'"  C    CH1       0.000     -3.219    1.169   -1.567
+ U2P           "H2'"  H    H         0.000     -3.385    0.112   -1.816
+ U2P           "C3'"  C    CH1       0.000     -3.350    2.062   -2.828
+ U2P           "H3'"  H    H         0.000     -3.201    1.465   -3.739
+ U2P           "O3'"  O    OH1       0.000     -2.411    3.139   -2.778
+ U2P           H1     H    H         0.000     -2.504    3.685   -3.570
+ U2P           "C4'"  C    CH1       0.000     -4.795    2.594   -2.763
+ U2P           "H4'"  H    H         0.000     -4.786    3.689   -2.671
+ U2P           "C5'"  C    CH2       0.000     -5.557    2.184   -4.024
+ U2P           "H5'1" H    H         0.000     -5.648    1.096   -4.056
+ U2P           "H5'2" H    H         0.000     -5.013    2.529   -4.906
+ U2P           "O5'"  O    OH1       0.000     -6.859    2.772   -4.005
+ U2P           "H5'"  H    H         0.000     -7.341    2.512   -4.802
+ U2P           "C1'"  C    CH1       0.000     -4.359    1.711   -0.666
+ U2P           "H1'"  H    H         0.000     -4.038    2.621   -0.141
+ U2P           "O4'"  O    O2        0.000     -5.415    2.011   -1.605
+ U2P           N1     N    NR6       0.000     -4.794    0.690    0.290
+ U2P           C2     C    CR6       0.000     -5.299   -0.473   -0.160
+ U2P           O2     O    O         0.000     -5.384   -0.667   -1.357
+ U2P           N3     N    NR16      0.000     -5.701   -1.430    0.698
+ U2P           HN3    H    H         0.000     -6.081   -2.327    0.332
+ U2P           C4     C    CR6       0.000     -5.613   -1.231    2.028
+ U2P           O4     O    O         0.000     -5.982   -2.095    2.804
+ U2P           C5     C    CR16      0.000     -5.089   -0.009    2.515
+ U2P           H5     H    H         0.000     -5.012    0.169    3.581
+ U2P           C6     C    CR16      0.000     -4.688    0.931    1.633
+ U2P           H6     H    H         0.000     -4.283    1.872    1.987
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ U2P      O3P    n/a    P      START
+ U2P      P      O3P    "O2'"  .
+ U2P      O1P    P      .      .
+ U2P      O2P    P      .      .
+ U2P      "O2'"  P      "C2'"  .
+ U2P      "C2'"  "O2'"  "C1'"  .
+ U2P      "H2'"  "C2'"  .      .
+ U2P      "C3'"  "C2'"  "C4'"  .
+ U2P      "H3'"  "C3'"  .      .
+ U2P      "O3'"  "C3'"  H1     .
+ U2P      H1     "O3'"  .      .
+ U2P      "C4'"  "C3'"  "C5'"  .
+ U2P      "H4'"  "C4'"  .      .
+ U2P      "C5'"  "C4'"  "O5'"  .
+ U2P      "H5'1" "C5'"  .      .
+ U2P      "H5'2" "C5'"  .      .
+ U2P      "O5'"  "C5'"  "H5'"  .
+ U2P      "H5'"  "O5'"  .      .
+ U2P      "C1'"  "C2'"  N1     .
+ U2P      "H1'"  "C1'"  .      .
+ U2P      "O4'"  "C1'"  .      .
+ U2P      N1     "C1'"  C2     .
+ U2P      C2     N1     N3     .
+ U2P      O2     C2     .      .
+ U2P      N3     C2     C4     .
+ U2P      HN3    N3     .      .
+ U2P      C4     N3     C5     .
+ U2P      O4     C4     .      .
+ U2P      C5     C4     C6     .
+ U2P      H5     C5     .      .
+ U2P      C6     C5     H6     .
+ U2P      H6     C6     .      END
+ U2P      "C4'"  "O4'"  .    ADD
+ U2P      N1     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+U2P       "O5'"     "C5'"     single    1.432     0.020     1.432     0.020     
+U2P       "H5'"     "O5'"     single    0.970     0.012     0.839     0.014     
+U2P       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+U2P       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+U2P       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+U2P       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+U2P       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+U2P       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+U2P       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+U2P       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+U2P       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+U2P       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+U2P       N1        C6        single    1.337     0.020     1.337     0.020     
+U2P       C2        N1        single    1.410     0.020     1.410     0.020     
+U2P       C6        C5        double    1.390     0.020     1.390     0.020     
+U2P       H6        C6        single    1.082     0.013     0.975     0.010     
+U2P       C5        C4        single    1.390     0.020     1.390     0.020     
+U2P       H5        C5        single    1.082     0.013     0.975     0.010     
+U2P       O4        C4        double    1.250     0.020     1.250     0.020     
+U2P       C4        N3        single    1.337     0.020     1.337     0.020     
+U2P       N3        C2        single    1.337     0.020     1.337     0.020     
+U2P       HN3       N3        single    1.016     0.010     0.899     0.007     
+U2P       O2        C2        double    1.250     0.020     1.250     0.020     
+U2P       "C2'"     "O2'"     single    1.426     0.020     1.426     0.020     
+U2P       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+U2P       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+U2P       "O2'"     P         single    1.610     0.020     1.610     0.020     
+U2P       O1P       P         deloc     1.510     0.020     1.510     0.020     
+U2P       O2P       P         deloc     1.510     0.020     1.510     0.020     
+U2P       P         O3P       deloc     1.510     0.020     1.510     0.020     
+U2P       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+U2P       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+U2P       H1        "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ U2P      O3P    P      O1P     119.900    3.000
+ U2P      O3P    P      O2P     119.900    3.000
+ U2P      O3P    P      "O2'"   108.200    3.000
+ U2P      O1P    P      O2P     119.900    3.000
+ U2P      O1P    P      "O2'"   108.200    3.000
+ U2P      O2P    P      "O2'"   108.200    3.000
+ U2P      P      "O2'"  "C2'"   120.500    3.000
+ U2P      "O2'"  "C2'"  "H2'"   109.470    3.000
+ U2P      "O2'"  "C2'"  "C3'"   109.470    3.000
+ U2P      "O2'"  "C2'"  "C1'"   109.470    3.000
+ U2P      "H2'"  "C2'"  "C3'"   108.340    3.000
+ U2P      "H2'"  "C2'"  "C1'"   108.340    3.000
+ U2P      "C3'"  "C2'"  "C1'"   111.000    3.000
+ U2P      "C2'"  "C3'"  "H3'"   108.340    3.000
+ U2P      "C2'"  "C3'"  "O3'"   109.470    3.000
+ U2P      "C2'"  "C3'"  "C4'"   111.000    3.000
+ U2P      "H3'"  "C3'"  "O3'"   109.470    3.000
+ U2P      "H3'"  "C3'"  "C4'"   108.340    3.000
+ U2P      "O3'"  "C3'"  "C4'"   109.470    3.000
+ U2P      "C3'"  "O3'"  H1      109.470    3.000
+ U2P      "C3'"  "C4'"  "H4'"   108.340    3.000
+ U2P      "C3'"  "C4'"  "C5'"   111.000    3.000
+ U2P      "C3'"  "C4'"  "O4'"   109.470    3.000
+ U2P      "H4'"  "C4'"  "C5'"   108.340    3.000
+ U2P      "H4'"  "C4'"  "O4'"   109.470    3.000
+ U2P      "C5'"  "C4'"  "O4'"   109.470    3.000
+ U2P      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ U2P      "C4'"  "C5'"  "H5'2"  109.470    3.000
+ U2P      "C4'"  "C5'"  "O5'"   109.470    3.000
+ U2P      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ U2P      "H5'1" "C5'"  "O5'"   109.470    3.000
+ U2P      "H5'2" "C5'"  "O5'"   109.470    3.000
+ U2P      "C5'"  "O5'"  "H5'"   109.470    3.000
+ U2P      "C2'"  "C1'"  "H1'"   108.340    3.000
+ U2P      "C2'"  "C1'"  "O4'"   109.470    3.000
+ U2P      "C2'"  "C1'"  N1      109.470    3.000
+ U2P      "H1'"  "C1'"  "O4'"   109.470    3.000
+ U2P      "H1'"  "C1'"  N1      109.470    3.000
+ U2P      "O4'"  "C1'"  N1      109.470    3.000
+ U2P      "C1'"  "O4'"  "C4'"   111.800    3.000
+ U2P      "C1'"  N1     C2      120.000    3.000
+ U2P      "C1'"  N1     C6      120.000    3.000
+ U2P      C2     N1     C6      120.000    3.000
+ U2P      N1     C2     O2      120.000    3.000
+ U2P      N1     C2     N3      120.000    3.000
+ U2P      O2     C2     N3      120.000    3.000
+ U2P      C2     N3     HN3     120.000    3.000
+ U2P      C2     N3     C4      120.000    3.000
+ U2P      HN3    N3     C4      120.000    3.000
+ U2P      N3     C4     O4      120.000    3.000
+ U2P      N3     C4     C5      120.000    3.000
+ U2P      O4     C4     C5      120.000    3.000
+ U2P      C4     C5     H5      120.000    3.000
+ U2P      C4     C5     C6      120.000    3.000
+ U2P      H5     C5     C6      120.000    3.000
+ U2P      C5     C6     H6      120.000    3.000
+ U2P      C5     C6     N1      120.000    3.000
+ U2P      H6     C6     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ U2P      var_1    O3P    P      "O2'"  "C2'"   -175.029   20.000   1
+ U2P      var_2    P      "O2'"  "C2'"  "C1'"    120.035   20.000   1
+ U2P      var_3    "O2'"  "C2'"  "C3'"  "C4'"   -150.000   20.000   3
+ U2P      var_4    "C2'"  "C3'"  "O3'"  H1       179.986   20.000   1
+ U2P      var_5    "C2'"  "C3'"  "C4'"  "C5'"   -120.000   20.000   3
+ U2P      var_6    "C3'"  "C4'"  "O4'"  "C1'"     30.000   20.000   1
+ U2P      var_7    "C3'"  "C4'"  "C5'"  "O5'"   -175.317   20.000   3
+ U2P      var_8    "C4'"  "C5'"  "O5'"  "H5'"   -179.974   20.000   1
+ U2P      var_9    "O2'"  "C2'"  "C1'"  N1       -90.000   20.000   3
+ U2P      var_10   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ U2P      var_11   "C2'"  "C1'"  N1     C2       -60.817   20.000   1
+ U2P      CONST_1  "C1'"  N1     C6     C5       180.000    0.000   0
+ U2P      CONST_2  "C1'"  N1     C2     N3       180.000    0.000   0
+ U2P      CONST_3  N1     C2     N3     C4         0.000    0.000   0
+ U2P      CONST_4  C2     N3     C4     C5         0.000    0.000   0
+ U2P      CONST_5  N3     C4     C5     C6         0.000    0.000   0
+ U2P      CONST_6  C4     C5     C6     N1         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ U2P      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ U2P      chir_02  "C1'"  "O4'"  N1     "C2'"     negativ
+ U2P      chir_03  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ U2P      chir_04  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ U2P      plan-1    N1        0.020
+ U2P      plan-1    "C1'"     0.020
+ U2P      plan-1    C6        0.020
+ U2P      plan-1    C2        0.020
+ U2P      plan-1    C5        0.020
+ U2P      plan-1    C4        0.020
+ U2P      plan-1    N3        0.020
+ U2P      plan-1    H6        0.020
+ U2P      plan-1    H5        0.020
+ U2P      plan-1    O4        0.020
+ U2P      plan-1    HN3       0.020
+ U2P      plan-1    O2        0.020
+# ------------------------------------------------------

@@ -1,0 +1,362 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+C66      C66 '2-AMINOETHYLLYSINE-CARBONYLMETHYLENE' non-polymer        47  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_C66
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ C66           O2     O    O         0.000      0.000    0.000    0.000
+ C66           C2     C    CR6       0.000     -0.620   -0.330    1.012
+ C66           N3     N    NRD6      0.000     -0.003   -0.294    2.250
+ C66           C4     C    CR6       0.000     -0.644   -0.641    3.336
+ C66           N4     N    NH2       0.000     -0.013   -0.598    4.556
+ C66           HN42   H    H         0.000      0.285   -1.454    5.011
+ C66           HN41   H    H         0.000      0.161    0.291    5.012
+ C66           C5     C    CR16      0.000     -2.060   -1.090    3.293
+ C66           H5     H    H         0.000     -2.595   -1.378    4.190
+ C66           C6     C    CR16      0.000     -2.636   -1.120    2.094
+ C66           H6     H    H         0.000     -3.668   -1.443    2.021
+ C66           N1     N    NR6       0.000     -1.972   -0.754    0.932
+ C66           "C8'"  C    CH2       0.000     -2.677   -0.819   -0.316
+ C66           "H8'1" H    H         0.000     -3.423   -1.614   -0.266
+ C66           "H8'2" H    H         0.000     -1.968   -1.036   -1.118
+ C66           "C7'"  C    C         0.000     -3.365    0.506   -0.592
+ C66           "O7'"  O    O         0.000     -3.253    1.453    0.192
+ C66           "N4'"  N    N         0.000     -4.127    0.583   -1.774
+ C66           "C3'"  C    CH2       0.000     -4.251   -0.553   -2.696
+ C66           "H3'1" H    H         0.000     -3.330   -1.137   -2.643
+ C66           "H3'2" H    H         0.000     -4.373   -0.158   -3.707
+ C66           "C2'"  C    CH2       0.000     -5.436   -1.440   -2.351
+ C66           "H2'1" H    H         0.000     -6.342   -0.834   -2.413
+ C66           "H2'2" H    H         0.000     -5.306   -1.795   -1.327
+ C66           "N1'"  N    NH2       0.000     -5.548   -2.565   -3.240
+ C66           "H1'2" H    H         0.000     -5.611   -2.414   -4.235
+ C66           "H1'1" H    H         0.000     -5.564   -3.501   -2.865
+ C66           "C5'"  C    CH1       0.000     -4.833    1.780   -2.154
+ C66           "H5'1" H    H         0.000     -5.327    1.617   -3.122
+ C66           "C'"   C    C         0.000     -5.885    2.015   -1.088
+ C66           OXT    O    OC       -0.500     -6.257    3.209   -1.055
+ C66           "O1'"  O    OC       -0.500     -6.375    1.131   -0.349
+ C66           CB     C    CH2       0.000     -3.908    2.994   -2.259
+ C66           HB1    H    H         0.000     -3.482    3.152   -1.266
+ C66           HB2    H    H         0.000     -4.536    3.847   -2.524
+ C66           CG     C    CH2       0.000     -2.777    2.850   -3.285
+ C66           HG1    H    H         0.000     -3.239    2.712   -4.265
+ C66           HG2    H    H         0.000     -2.208    1.955   -3.024
+ C66           CD     C    CH2       0.000     -1.839    4.061   -3.326
+ C66           HD1    H    H         0.000     -1.377    4.156   -2.341
+ C66           HD2    H    H         0.000     -2.447    4.945   -3.527
+ C66           CE     C    CH2       0.000     -0.749    3.937   -4.392
+ C66           HE1    H    H         0.000     -1.234    3.800   -5.361
+ C66           HE2    H    H         0.000     -0.145    3.057   -4.161
+ C66           NZ     N    NH2       0.000      0.106    5.117   -4.438
+ C66           HZ2    H    H         0.000      1.099    5.031   -4.265
+ C66           HZ1    H    H         0.000     -0.291    6.024   -4.642
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ C66      O2     n/a    C2     START
+ C66      C2     O2     N3     .
+ C66      N3     C2     C4     .
+ C66      C4     N3     C5     .
+ C66      N4     C4     HN41   .
+ C66      HN42   N4     .      .
+ C66      HN41   N4     .      .
+ C66      C5     C4     C6     .
+ C66      H5     C5     .      .
+ C66      C6     C5     N1     .
+ C66      H6     C6     .      .
+ C66      N1     C6     "C8'"  .
+ C66      "C8'"  N1     "C7'"  .
+ C66      "H8'1" "C8'"  .      .
+ C66      "H8'2" "C8'"  .      .
+ C66      "C7'"  "C8'"  "N4'"  .
+ C66      "O7'"  "C7'"  .      .
+ C66      "N4'"  "C7'"  "C5'"  .
+ C66      "C3'"  "N4'"  "C2'"  .
+ C66      "H3'1" "C3'"  .      .
+ C66      "H3'2" "C3'"  .      .
+ C66      "C2'"  "C3'"  "N1'"  .
+ C66      "H2'1" "C2'"  .      .
+ C66      "H2'2" "C2'"  .      .
+ C66      "N1'"  "C2'"  "H1'1" .
+ C66      "H1'2" "N1'"  .      .
+ C66      "H1'1" "N1'"  .      .
+ C66      "C5'"  "N4'"  CB     .
+ C66      "H5'1" "C5'"  .      .
+ C66      "C'"   "C5'"  "O1'"  .
+ C66      OXT    "C'"   .      .
+ C66      "O1'"  "C'"   .      .
+ C66      CB     "C5'"  CG     .
+ C66      HB1    CB     .      .
+ C66      HB2    CB     .      .
+ C66      CG     CB     CD     .
+ C66      HG1    CG     .      .
+ C66      HG2    CG     .      .
+ C66      CD     CG     CE     .
+ C66      HD1    CD     .      .
+ C66      HD2    CD     .      .
+ C66      CE     CD     NZ     .
+ C66      HE1    CE     .      .
+ C66      HE2    CE     .      .
+ C66      NZ     CE     HZ1    .
+ C66      HZ2    NZ     .      .
+ C66      HZ1    NZ     .      END
+ C66      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+C66       "C7'"     "C8'"     single    1.510     0.020     1.510     0.020     
+C66       "C8'"     N1        single    1.465     0.020     1.465     0.020     
+C66       "H8'1"    "C8'"     single    1.089     0.010     0.989     0.005     
+C66       "H8'2"    "C8'"     single    1.089     0.010     0.989     0.005     
+C66       "O7'"     "C7'"     double    1.220     0.020     1.220     0.020     
+C66       "N4'"     "C7'"     single    1.330     0.020     1.330     0.020     
+C66       "C'"      "C5'"     single    1.500     0.020     1.500     0.020     
+C66       "C5'"     "N4'"     single    1.455     0.020     1.455     0.020     
+C66       CB        "C5'"     single    1.524     0.020     1.524     0.020     
+C66       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+C66       "O1'"     "C'"      deloc     1.250     0.020     1.250     0.020     
+C66       OXT       "C'"      deloc     1.250     0.020     1.250     0.020     
+C66       "C3'"     "N4'"     single    1.455     0.020     1.455     0.020     
+C66       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+C66       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+C66       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+C66       "N1'"     "C2'"     single    1.450     0.020     1.450     0.020     
+C66       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+C66       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+C66       "H1'1"    "N1'"     single    1.036     0.016     0.914     0.007     
+C66       "H1'2"    "N1'"     single    1.036     0.016     0.914     0.007     
+C66       N1        C2        single    1.410     0.020     1.410     0.020     
+C66       N1        C6        single    1.337     0.020     1.337     0.020     
+C66       N3        C2        single    1.350     0.020     1.350     0.020     
+C66       C2        O2        double    1.250     0.020     1.250     0.020     
+C66       C4        N3        double    1.350     0.020     1.350     0.020     
+C66       C5        C4        single    1.390     0.020     1.390     0.020     
+C66       N4        C4        single    1.355     0.020     1.355     0.020     
+C66       C6        C5        double    1.390     0.020     1.390     0.020     
+C66       H5        C5        single    1.082     0.013     0.975     0.010     
+C66       H6        C6        single    1.082     0.013     0.975     0.010     
+C66       HN41      N4        single    1.016     0.010     0.899     0.007     
+C66       HN42      N4        single    1.016     0.010     0.899     0.007     
+C66       CG        CB        single    1.524     0.020     1.524     0.020     
+C66       HB1       CB        single    1.089     0.010     0.989     0.005     
+C66       HB2       CB        single    1.089     0.010     0.989     0.005     
+C66       CD        CG        single    1.524     0.020     1.524     0.020     
+C66       HG1       CG        single    1.089     0.010     0.989     0.005     
+C66       HG2       CG        single    1.089     0.010     0.989     0.005     
+C66       CE        CD        single    1.524     0.020     1.524     0.020     
+C66       HD1       CD        single    1.089     0.010     0.989     0.005     
+C66       HD2       CD        single    1.089     0.010     0.989     0.005     
+C66       NZ        CE        single    1.450     0.020     1.450     0.020     
+C66       HE1       CE        single    1.089     0.010     0.989     0.005     
+C66       HE2       CE        single    1.089     0.010     0.989     0.005     
+C66       HZ1       NZ        single    1.036     0.016     0.914     0.007     
+C66       HZ2       NZ        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ C66      O2     C2     N3      120.000    3.000
+ C66      O2     C2     N1      120.000    3.000
+ C66      N3     C2     N1      120.000    3.000
+ C66      C2     N3     C4      120.000    3.000
+ C66      N3     C4     N4      120.000    3.000
+ C66      N3     C4     C5      120.000    3.000
+ C66      N4     C4     C5      120.000    3.000
+ C66      C4     N4     HN42    120.000    3.000
+ C66      C4     N4     HN41    120.000    3.000
+ C66      HN42   N4     HN41    120.000    3.000
+ C66      C4     C5     H5      120.000    3.000
+ C66      C4     C5     C6      120.000    3.000
+ C66      H5     C5     C6      120.000    3.000
+ C66      C5     C6     H6      120.000    3.000
+ C66      C5     C6     N1      120.000    3.000
+ C66      H6     C6     N1      120.000    3.000
+ C66      C6     N1     "C8'"   120.000    3.000
+ C66      C6     N1     C2      120.000    3.000
+ C66      "C8'"  N1     C2      120.000    3.000
+ C66      N1     "C8'"  "H8'1"  109.470    3.000
+ C66      N1     "C8'"  "H8'2"  109.470    3.000
+ C66      N1     "C8'"  "C7'"   109.500    3.000
+ C66      "H8'1" "C8'"  "H8'2"  107.900    3.000
+ C66      "H8'1" "C8'"  "C7'"   109.470    3.000
+ C66      "H8'2" "C8'"  "C7'"   109.470    3.000
+ C66      "C8'"  "C7'"  "O7'"   120.500    3.000
+ C66      "C8'"  "C7'"  "N4'"   116.500    3.000
+ C66      "O7'"  "C7'"  "N4'"   123.000    3.000
+ C66      "C7'"  "N4'"  "C3'"   127.000    3.000
+ C66      "C7'"  "N4'"  "C5'"   121.000    3.000
+ C66      "C3'"  "N4'"  "C5'"   112.000    3.000
+ C66      "N4'"  "C3'"  "H3'1"  109.470    3.000
+ C66      "N4'"  "C3'"  "H3'2"  109.470    3.000
+ C66      "N4'"  "C3'"  "C2'"   105.000    3.000
+ C66      "H3'1" "C3'"  "H3'2"  107.900    3.000
+ C66      "H3'1" "C3'"  "C2'"   109.470    3.000
+ C66      "H3'2" "C3'"  "C2'"   109.470    3.000
+ C66      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ C66      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ C66      "C3'"  "C2'"  "N1'"   109.470    3.000
+ C66      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ C66      "H2'1" "C2'"  "N1'"   109.470    3.000
+ C66      "H2'2" "C2'"  "N1'"   109.470    3.000
+ C66      "C2'"  "N1'"  "H1'2"  120.000    3.000
+ C66      "C2'"  "N1'"  "H1'1"  120.000    3.000
+ C66      "H1'2" "N1'"  "H1'1"  120.000    3.000
+ C66      "N4'"  "C5'"  "H5'1"  109.470    3.000
+ C66      "N4'"  "C5'"  "C'"    111.600    3.000
+ C66      "N4'"  "C5'"  CB      105.000    3.000
+ C66      "H5'1" "C5'"  "C'"    108.810    3.000
+ C66      "H5'1" "C5'"  CB      108.340    3.000
+ C66      "C'"   "C5'"  CB      109.470    3.000
+ C66      "C5'"  "C'"   OXT     118.500    3.000
+ C66      "C5'"  "C'"   "O1'"   118.500    3.000
+ C66      OXT    "C'"   "O1'"   123.000    3.000
+ C66      "C5'"  CB     HB1     109.470    3.000
+ C66      "C5'"  CB     HB2     109.470    3.000
+ C66      "C5'"  CB     CG      111.000    3.000
+ C66      HB1    CB     HB2     107.900    3.000
+ C66      HB1    CB     CG      109.470    3.000
+ C66      HB2    CB     CG      109.470    3.000
+ C66      CB     CG     HG1     109.470    3.000
+ C66      CB     CG     HG2     109.470    3.000
+ C66      CB     CG     CD      111.000    3.000
+ C66      HG1    CG     HG2     107.900    3.000
+ C66      HG1    CG     CD      109.470    3.000
+ C66      HG2    CG     CD      109.470    3.000
+ C66      CG     CD     HD1     109.470    3.000
+ C66      CG     CD     HD2     109.470    3.000
+ C66      CG     CD     CE      111.000    3.000
+ C66      HD1    CD     HD2     107.900    3.000
+ C66      HD1    CD     CE      109.470    3.000
+ C66      HD2    CD     CE      109.470    3.000
+ C66      CD     CE     HE1     109.470    3.000
+ C66      CD     CE     HE2     109.470    3.000
+ C66      CD     CE     NZ      109.470    3.000
+ C66      HE1    CE     HE2     107.900    3.000
+ C66      HE1    CE     NZ      109.470    3.000
+ C66      HE2    CE     NZ      109.470    3.000
+ C66      CE     NZ     HZ2     120.000    3.000
+ C66      CE     NZ     HZ1     120.000    3.000
+ C66      HZ2    NZ     HZ1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ C66      CONST_1  O2     C2     N3     C4       180.000    0.000   0
+ C66      CONST_2  C2     N3     C4     C5         0.000    0.000   0
+ C66      CONST_3  N3     C4     N4     HN41      74.610    0.000   0
+ C66      CONST_4  N3     C4     C5     C6         0.000    0.000   0
+ C66      CONST_5  C4     C5     C6     N1         0.000    0.000   0
+ C66      CONST_6  C5     C6     N1     "C8'"    180.000    0.000   0
+ C66      CONST_7  C6     N1     C2     O2       180.000    0.000   0
+ C66      var_1    C6     N1     "C8'"  "C7'"     90.072   20.000   1
+ C66      var_2    N1     "C8'"  "C7'"  "N4'"   -178.530   20.000   3
+ C66      CONST_8  "C8'"  "C7'"  "N4'"  "C5'"    180.000    0.000   0
+ C66      var_3    "C7'"  "N4'"  "C3'"  "C2'"     90.038   20.000   1
+ C66      var_4    "N4'"  "C3'"  "C2'"  "N1'"   -179.073   20.000   3
+ C66      var_5    "C3'"  "C2'"  "N1'"  "H1'1"   124.099   20.000   1
+ C66      var_6    "C7'"  "N4'"  "C5'"  CB        56.743   20.000   3
+ C66      var_7    "N4'"  "C5'"  "C'"   "O1'"    -24.197   20.000   3
+ C66      var_8    "N4'"  "C5'"  CB     CG        59.901   20.000   3
+ C66      var_9    "C5'"  CB     CG     CD      -177.798   20.000   3
+ C66      var_10   CB     CG     CD     CE      -177.569   20.000   3
+ C66      var_11   CG     CD     CE     NZ       178.335   20.000   3
+ C66      var_12   CD     CE     NZ     HZ1      -60.148   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ C66      chir_01  "C5'"  "C'"   "N4'"  CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ C66      plan-1    "C7'"     0.020
+ C66      plan-1    "C8'"     0.020
+ C66      plan-1    "O7'"     0.020
+ C66      plan-1    "N4'"     0.020
+ C66      plan-2    "C'"      0.020
+ C66      plan-2    "C5'"     0.020
+ C66      plan-2    "O1'"     0.020
+ C66      plan-2    OXT       0.020
+ C66      plan-3    "N4'"     0.020
+ C66      plan-3    "C7'"     0.020
+ C66      plan-3    "C5'"     0.020
+ C66      plan-3    "C3'"     0.020
+ C66      plan-4    "N1'"     0.020
+ C66      plan-4    "C2'"     0.020
+ C66      plan-4    "H1'1"    0.020
+ C66      plan-4    "H1'2"    0.020
+ C66      plan-5    N1        0.020
+ C66      plan-5    "C8'"     0.020
+ C66      plan-5    C2        0.020
+ C66      plan-5    C6        0.020
+ C66      plan-5    N3        0.020
+ C66      plan-5    C4        0.020
+ C66      plan-5    C5        0.020
+ C66      plan-5    O2        0.020
+ C66      plan-5    N4        0.020
+ C66      plan-5    H5        0.020
+ C66      plan-5    H6        0.020
+ C66      plan-5    HN42      0.020
+ C66      plan-5    HN41      0.020
+ C66      plan-6    N4        0.020
+ C66      plan-6    C4        0.020
+ C66      plan-6    HN41      0.020
+ C66      plan-6    HN42      0.020
+ C66      plan-7    NZ        0.020
+ C66      plan-7    CE        0.020
+ C66      plan-7    HZ1       0.020
+ C66      plan-7    HZ2       0.020
+# ------------------------------------------------------

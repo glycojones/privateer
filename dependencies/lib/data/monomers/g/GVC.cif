@@ -1,0 +1,195 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GVC     GVC      "1-(3,5-DICHLOROPHENYL)-5-METHYL-1H-1,2,4-TRIAZOLE-3-CARBOXYLIC ACID"     NON-POLYMER     23     17     .     
+#
+data_comp_GVC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GVC     O5      O       O       0       38.700      22.019      -1.893      
+GVC     C1      C       C       0       38.144      21.097      -1.325      
+GVC     C35     C       CR5     0       36.891      20.570      -1.855      
+GVC     N10     N       NRD5    0       36.415      20.814      -3.073      
+GVC     N9      N       NRD5    0       36.056      19.758      -1.161      
+GVC     C34     C       CR5     0       35.042      19.494      -1.962      
+GVC     C36     C       CH3     0       33.875      18.640      -1.629      
+GVC     N8      N       NR5     0       35.232      20.130      -3.146      
+GVC     C30     C       CR6     0       34.444      20.178      -4.338      
+GVC     C31     C       CR16    0       34.131      21.410      -4.901      
+GVC     C32     C       CR6     0       33.367      21.437      -6.063      
+GVC     C33     C       CR16    0       32.908      20.278      -6.676      
+GVC     CL5     CL      CL      0       32.973      22.974      -6.767      
+GVC     C29     C       CR16    0       34.009      18.995      -4.923      
+GVC     C28     C       CR6     0       33.243      19.068      -6.082      
+GVC     CL1     CL      CL      0       32.693      17.592      -6.812      
+GVC     OXT     O       OC      -1      38.611      20.603      -0.317      
+GVC     H361    H       H       0       33.071      19.020      -2.018      
+GVC     H362    H       H       0       33.773      18.589      -0.665      
+GVC     H363    H       H       0       34.014      17.747      -1.985      
+GVC     H31     H       H       0       34.429      22.205      -4.508      
+GVC     H33     H       H       0       32.390      20.311      -7.462      
+GVC     H29     H       H       0       34.218      18.167      -4.542      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GVC       O5        C1        DOUBLE    n         1.214     0.020     1.214     0.020     
+GVC       C1        C35       SINGLE    n         1.449     0.020     1.449     0.020     
+GVC       C35       N10       DOUBLE    y         1.339     0.020     1.339     0.020     
+GVC       C35       N9        SINGLE    y         1.358     0.010     1.358     0.010     
+GVC       N9        C34       DOUBLE    y         1.316     0.012     1.316     0.012     
+GVC       C34       C36       SINGLE    n         1.483     0.010     1.483     0.010     
+GVC       N10       N8        SINGLE    y         1.367     0.012     1.367     0.012     
+GVC       C34       N8        SINGLE    y         1.346     0.015     1.346     0.015     
+GVC       N8        C30       SINGLE    n         1.426     0.011     1.426     0.011     
+GVC       C30       C31       DOUBLE    y         1.381     0.010     1.381     0.010     
+GVC       C31       C32       SINGLE    y         1.384     0.010     1.384     0.010     
+GVC       C32       C33       DOUBLE    y         1.383     0.010     1.383     0.010     
+GVC       C32       CL5       SINGLE    n         1.736     0.010     1.736     0.010     
+GVC       C30       C29       SINGLE    y         1.381     0.010     1.381     0.010     
+GVC       C33       C28       SINGLE    y         1.383     0.010     1.383     0.010     
+GVC       C29       C28       DOUBLE    y         1.384     0.010     1.384     0.010     
+GVC       C28       CL1       SINGLE    n         1.736     0.010     1.736     0.010     
+GVC       C1        OXT       SINGLE    n         1.214     0.020     1.214     0.020     
+GVC       C36       H361      SINGLE    n         1.089     0.010     0.971     0.020     
+GVC       C36       H362      SINGLE    n         1.089     0.010     0.971     0.020     
+GVC       C36       H363      SINGLE    n         1.089     0.010     0.971     0.020     
+GVC       C31       H31       SINGLE    n         1.082     0.013     0.935     0.010     
+GVC       C33       H33       SINGLE    n         1.082     0.013     0.942     0.017     
+GVC       C29       H29       SINGLE    n         1.082     0.013     0.935     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GVC          O5          C1         C35     119.115    2.69
+GVC          O5          C1         OXT     121.769    1.50
+GVC         C35          C1         OXT     119.115    2.69
+GVC          C1         C35         N10     123.870    2.83
+GVC          C1         C35          N9     123.870    2.83
+GVC         N10         C35          N9     112.260    1.50
+GVC         C35         N10          N8     105.890    1.58
+GVC         C35          N9         C34     105.927    1.65
+GVC          N9         C34         C36     126.632    1.50
+GVC          N9         C34          N8     108.308    1.50
+GVC         C36         C34          N8     125.060    1.50
+GVC         C34         C36        H361     109.621    1.50
+GVC         C34         C36        H362     109.621    1.50
+GVC         C34         C36        H363     109.621    1.50
+GVC        H361         C36        H362     109.308    2.38
+GVC        H361         C36        H363     109.308    2.38
+GVC        H362         C36        H363     109.308    2.38
+GVC         N10          N8         C34     107.614    1.62
+GVC         N10          N8         C30     120.833    1.50
+GVC         C34          N8         C30     131.553    1.50
+GVC          N8         C30         C31     119.658    1.50
+GVC          N8         C30         C29     119.658    1.50
+GVC         C31         C30         C29     120.684    1.50
+GVC         C30         C31         C32     118.288    1.50
+GVC         C30         C31         H31     120.913    1.50
+GVC         C32         C31         H31     120.798    1.50
+GVC         C31         C32         C33     122.553    1.50
+GVC         C31         C32         CL5     118.572    1.50
+GVC         C33         C32         CL5     118.874    1.50
+GVC         C32         C33         C28     117.633    1.50
+GVC         C32         C33         H33     121.183    1.50
+GVC         C28         C33         H33     121.183    1.50
+GVC         C30         C29         C28     118.288    1.50
+GVC         C30         C29         H29     120.913    1.50
+GVC         C28         C29         H29     120.798    1.50
+GVC         C33         C28         C29     122.553    1.50
+GVC         C33         C28         CL1     118.874    1.50
+GVC         C29         C28         CL1     118.572    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GVC              const_11         CL5         C32         C33         C28     180.000   10.00     2
+GVC              const_15         CL1         C28         C33         C32     180.000   10.00     2
+GVC              const_19         CL1         C28         C29         C30     180.000   10.00     2
+GVC             sp2_sp2_1          O5          C1         C35         N10     180.000   10.00     2
+GVC              const_22          C1         C35         N10          N8     180.000   10.00     2
+GVC              const_32          C1         C35          N9         C34     180.000   10.00     2
+GVC              const_23         C35         N10          N8         C34       0.000   10.00     2
+GVC              const_30         C36         C34          N9         C35     180.000   10.00     2
+GVC             sp2_sp3_1          N9         C34         C36        H361     150.000   10.00     6
+GVC              const_27         C36         C34          N8         N10     180.000   10.00     2
+GVC             sp2_sp2_6         C31         C30          N8         N10       0.000   10.00     2
+GVC              const_34         C28         C29         C30          N8     180.000   10.00     2
+GVC       const_sp2_sp2_3          N8         C30         C31         C32     180.000   10.00     2
+GVC       const_sp2_sp2_6         C30         C31         C32         CL5     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GVC    plan-1         C28   0.020
+GVC    plan-1         C29   0.020
+GVC    plan-1         C30   0.020
+GVC    plan-1         C31   0.020
+GVC    plan-1         C32   0.020
+GVC    plan-1         C33   0.020
+GVC    plan-1         CL1   0.020
+GVC    plan-1         CL5   0.020
+GVC    plan-1         H29   0.020
+GVC    plan-1         H31   0.020
+GVC    plan-1         H33   0.020
+GVC    plan-1          N8   0.020
+GVC    plan-2          C1   0.020
+GVC    plan-2         C30   0.020
+GVC    plan-2         C34   0.020
+GVC    plan-2         C35   0.020
+GVC    plan-2         C36   0.020
+GVC    plan-2         N10   0.020
+GVC    plan-2          N8   0.020
+GVC    plan-2          N9   0.020
+GVC    plan-3          C1   0.020
+GVC    plan-3         C35   0.020
+GVC    plan-3          O5   0.020
+GVC    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GVC SMILES           ACDLabs              10.04 "Clc2cc(Cl)cc(n1nc(nc1C)C(=O)O)c2"
+GVC SMILES_CANONICAL CACTVS               3.341 "Cc1nc(nn1c2cc(Cl)cc(Cl)c2)C(O)=O"
+GVC SMILES           CACTVS               3.341 "Cc1nc(nn1c2cc(Cl)cc(Cl)c2)C(O)=O"
+GVC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "Cc1nc(nn1c2cc(cc(c2)Cl)Cl)C(=O)O"
+GVC SMILES           "OpenEye OEToolkits" 1.5.0 "Cc1nc(nn1c2cc(cc(c2)Cl)Cl)C(=O)O"
+GVC InChI            InChI                1.03  "InChI=1S/C10H7Cl2N3O2/c1-5-13-9(10(16)17)14-15(5)8-3-6(11)2-7(12)4-8/h2-4H,1H3,(H,16,17)"
+GVC InChIKey         InChI                1.03  CZTNDZALWLHXBA-UHFFFAOYSA-N
+GVC ?                acedrg               202         "dictionary generator"                  
+GVC ?                acedrg_database      11          "data source"                           
+GVC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GVC ?                refmac5              5.8.0189    "optimization tool"                     

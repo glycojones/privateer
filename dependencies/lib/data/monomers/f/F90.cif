@@ -1,0 +1,176 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+F90     F90     "4-chlorobenzylcarbamimidothioate"     NON-POLYMER     21     12     .     
+#
+data_comp_F90
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+F90     C1      C       CR6     0       0.517       -0.705      -0.479      
+F90     C2      C       CH2     0       -0.579      -1.718      -0.660      
+F90     S3      S       S2      0       -1.787      -1.602      0.692       
+F90     C4      C       C       0       -2.598      -0.073      0.387       
+F90     N5      N       NH1     0       -3.695      -0.055      -0.309      
+F90     N6      N       NH2     0       -2.019      1.022       0.908       
+F90     C7      C       CR16    0       0.513       0.491       -1.197      
+F90     C8      C       CR16    0       1.537       1.443       -1.031      
+F90     C9      C       CR6     0       2.560       1.182       -0.140      
+F90     CL10    CL      CL      0       3.830       2.354       0.070       
+F90     C11     C       CR16    0       2.594       0.007       0.586       
+F90     C12     C       CR16    0       1.564       -0.937      0.412       
+F90     H2      H       H       0       -0.194      -2.615      -0.678      
+F90     H2A     H       H       0       -1.029      -1.565      -1.513      
+F90     HN5     H       H       0       -4.060      0.751       -0.430      
+F90     HN6     H       H       0       -2.382      1.813       0.786       
+F90     HN6A    H       H       0       -1.276      0.953       1.372       
+F90     H7      H       H       0       -0.187      0.666       -1.804      
+F90     H8      H       H       0       1.525       2.245       -1.519      
+F90     H11     H       H       0       3.294       -0.159      1.189       
+F90     H12     H       H       0       1.584       -1.739      0.906       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+F90       C1        C7        DOUBLE    y         1.388     0.010     1.388     0.010     
+F90       C1        C2        SINGLE    n         1.503     0.010     1.503     0.010     
+F90       C1        C12       SINGLE    y         1.388     0.010     1.388     0.010     
+F90       C2        S3        SINGLE    n         1.817     0.011     1.817     0.011     
+F90       S3        C4        SINGLE    n         1.755     0.014     1.755     0.014     
+F90       C4        N5        DOUBLE    n         1.291     0.020     1.291     0.020     
+F90       C4        N6        SINGLE    n         1.330     0.020     1.330     0.020     
+F90       C7        C8        SINGLE    y         1.380     0.020     1.380     0.020     
+F90       C8        C9        DOUBLE    y         1.373     0.011     1.373     0.011     
+F90       C9        CL10      SINGLE    n         1.741     0.010     1.741     0.010     
+F90       C9        C11       SINGLE    y         1.373     0.011     1.373     0.011     
+F90       C11       C12       DOUBLE    y         1.380     0.020     1.380     0.020     
+F90       C2        H2        SINGLE    n         1.089     0.010     0.976     0.010     
+F90       C2        H2A       SINGLE    n         1.089     0.010     0.976     0.010     
+F90       N5        HN5       SINGLE    n         1.016     0.010     0.892     0.020     
+F90       N6        HN6       SINGLE    n         1.016     0.010     0.878     0.020     
+F90       N6        HN6A      SINGLE    n         1.016     0.010     0.878     0.020     
+F90       C7        H7        SINGLE    n         1.082     0.013     0.943     0.017     
+F90       C8        H8        SINGLE    n         1.082     0.013     0.939     0.018     
+F90       C11       H11       SINGLE    n         1.082     0.013     0.939     0.018     
+F90       C12       H12       SINGLE    n         1.082     0.013     0.943     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+F90          C7          C1          C2     120.771    1.50
+F90          C7          C1         C12     118.457    1.50
+F90          C2          C1         C12     120.767    1.50
+F90          C1          C2          S3     110.627    3.00
+F90          C1          C2          H2     109.511    1.50
+F90          C1          C2         H2A     109.511    1.50
+F90          S3          C2          H2     109.530    1.50
+F90          S3          C2         H2A     109.530    1.50
+F90          H2          C2         H2A     108.075    1.50
+F90          C2          S3          C4     103.463    1.50
+F90          S3          C4          N5     122.410    3.00
+F90          S3          C4          N6     115.606    3.00
+F90          N5          C4          N6     121.984    3.00
+F90          C4          N5         HN5     112.238    3.00
+F90          C4          N6         HN6     120.029    1.50
+F90          C4          N6        HN6A     120.029    1.50
+F90         HN6          N6        HN6A     119.941    1.51
+F90          C1          C7          C8     121.114    1.50
+F90          C1          C7          H7     119.529    1.50
+F90          C8          C7          H7     119.358    1.50
+F90          C7          C8          C9     119.031    1.50
+F90          C7          C8          H8     120.512    1.50
+F90          C9          C8          H8     120.457    1.50
+F90          C8          C9        CL10     119.374    1.50
+F90          C8          C9         C11     121.252    1.50
+F90        CL10          C9         C11     119.382    1.50
+F90          C9         C11         C12     119.031    1.50
+F90          C9         C11         H11     120.457    1.50
+F90         C12         C11         H11     120.512    1.50
+F90          C1         C12         C11     121.114    1.50
+F90          C1         C12         H12     119.529    1.50
+F90         C11         C12         H12     119.358    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+F90             sp2_sp3_2          C7          C1          C2          S3     -90.000   10.00     6
+F90              const_23          C2          C1         C12         C11     180.000   10.00     2
+F90       const_sp2_sp2_3          C2          C1          C7          C8     180.000   10.00     2
+F90              const_17          C9         C11         C12          C1       0.000   10.00     2
+F90             sp3_sp3_1          C1          C2          S3          C4     180.000   10.00     3
+F90             sp2_sp2_1          S3          C4          N5         HN5     180.000   10.00     2
+F90             sp2_sp2_3          S3          C4          N6         HN6     180.000   10.00     2
+F90       const_sp2_sp2_5          C1          C7          C8          C9       0.000   10.00     2
+F90              const_10          C7          C8          C9        CL10     180.000   10.00     2
+F90              const_14         C12         C11          C9        CL10     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+F90    plan-1          C1   0.020
+F90    plan-1         C11   0.020
+F90    plan-1         C12   0.020
+F90    plan-1          C2   0.020
+F90    plan-1          C7   0.020
+F90    plan-1          C8   0.020
+F90    plan-1          C9   0.020
+F90    plan-1        CL10   0.020
+F90    plan-1         H11   0.020
+F90    plan-1         H12   0.020
+F90    plan-1          H7   0.020
+F90    plan-1          H8   0.020
+F90    plan-2          C4   0.020
+F90    plan-2          N5   0.020
+F90    plan-2          N6   0.020
+F90    plan-2          S3   0.020
+F90    plan-3          C4   0.020
+F90    plan-3         HN6   0.020
+F90    plan-3        HN6A   0.020
+F90    plan-3          N6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+F90 SMILES           ACDLabs              12.01 "Clc1ccc(cc1)CSC(=[N@H])N"
+F90 SMILES_CANONICAL CACTVS               3.370 "NC(=N)SCc1ccc(Cl)cc1"
+F90 SMILES           CACTVS               3.370 "NC(=N)SCc1ccc(Cl)cc1"
+F90 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "[H]/N=C(\N)/SCc1ccc(cc1)Cl"
+F90 SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(ccc1CSC(=N)N)Cl"
+F90 InChI            InChI                1.03  "InChI=1S/C8H9ClN2S/c9-7-3-1-6(2-4-7)5-12-8(10)11/h1-4H,5H2,(H3,10,11)"
+F90 InChIKey         InChI                1.03  YOCWIHYZDHPSHD-UHFFFAOYSA-N
+F90 ?                acedrg               190         "dictionary generator"                  
+F90 ?                acedrg_database      11          "data source"                           
+F90 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+F90 ?                refmac5              5.8.0158    "optimization tool"                     

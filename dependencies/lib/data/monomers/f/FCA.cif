@@ -1,0 +1,201 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FCA      FCA 'ALPHA-D-FUCOSE                      ' pyranose           23  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FCA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FCA           C1     C    CH1       0.000      0.000    0.000    0.000
+ FCA           H1     H    H         0.000      0.881   -0.608   -0.250
+ FCA           O1     O    OH1       0.000      0.356    1.383   -0.023
+ FCA           HO1    H    H         0.000      1.058    1.545    0.622
+ FCA           O5     O    O2        0.000     -0.462   -0.349    1.302
+ FCA           C5     C    CH1       0.000     -1.484    0.578    1.661
+ FCA           H5     H    H         0.000     -1.109    1.603    1.531
+ FCA           C6     C    CH3       0.000     -1.876    0.363    3.124
+ FCA           H63    H    H         0.000     -2.633    1.053    3.393
+ FCA           H62    H    H         0.000     -2.238   -0.625    3.252
+ FCA           H61    H    H         0.000     -1.029    0.510    3.743
+ FCA           C4     C    CH1       0.000     -2.709    0.367    0.769
+ FCA           H4     H    H         0.000     -3.501    1.070    1.062
+ FCA           C3     C    CH1       0.000     -2.314    0.620   -0.689
+ FCA           H3     H    H         0.000     -2.051    1.679   -0.822
+ FCA           O3     O    OH1       0.000     -3.405    0.285   -1.549
+ FCA           HO3    H    H         0.000     -3.147    0.433   -2.469
+ FCA           C2     C    CH1       0.000     -1.105   -0.257   -1.028
+ FCA           H2     H    H         0.000     -1.398   -1.316   -0.996
+ FCA           O2     O    OH1       0.000     -0.627    0.067   -2.334
+ FCA           HO2    H    H         0.000      0.140   -0.483   -2.542
+ FCA           O4     O    OH1       0.000     -3.184   -0.972    0.912
+ FCA           HO4    H    H         0.000     -3.420   -1.087    1.842
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FCA      C1     n/a    O5     START
+ FCA      H1     C1     .      .
+ FCA      O1     C1     HO1    .
+ FCA      HO1    O1     .      .
+ FCA      O5     C1     .      END
+ FCA      C5     O5     C4     .
+ FCA      H5     C5     .      .
+ FCA      C6     C5     H61    .
+ FCA      H63    C6     .      .
+ FCA      H62    C6     .      .
+ FCA      H61    C6     .      .
+ FCA      C4     C5     O4     .
+ FCA      H4     C4     .      .
+ FCA      C3     C4     C2     .
+ FCA      H3     C3     .      .
+ FCA      O3     C3     HO3    .
+ FCA      HO3    O3     .      .
+ FCA      C2     C3     O2     .
+ FCA      H2     C2     .      .
+ FCA      O2     C2     HO2    .
+ FCA      HO2    O2     .      .
+ FCA      O4     C4     .      .
+ FCA      HO4    O4     .      .
+ FCA      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FCA       C1        C2        single    1.524     0.020     1.524     0.020     
+FCA       O1        C1        single    1.432     0.020     1.432     0.020     
+FCA       O5        C1        single    1.426     0.020     1.426     0.020     
+FCA       H1        C1        single    1.089     0.010     0.989     0.005     
+FCA       C2        C3        single    1.524     0.020     1.524     0.020     
+FCA       O2        C2        single    1.432     0.020     1.432     0.020     
+FCA       H2        C2        single    1.089     0.010     0.989     0.005     
+FCA       C3        C4        single    1.524     0.020     1.524     0.020     
+FCA       O3        C3        single    1.432     0.020     1.432     0.020     
+FCA       H3        C3        single    1.089     0.010     0.989     0.005     
+FCA       C4        C5        single    1.524     0.020     1.524     0.020     
+FCA       O4        C4        single    1.432     0.020     1.432     0.020     
+FCA       H4        C4        single    1.089     0.010     0.989     0.005     
+FCA       C6        C5        single    1.524     0.020     1.524     0.020     
+FCA       C5        O5        single    1.426     0.020     1.426     0.020     
+FCA       H5        C5        single    1.089     0.010     0.989     0.005     
+FCA       H61       C6        single    1.089     0.010     0.989     0.005     
+FCA       H62       C6        single    1.089     0.010     0.989     0.005     
+FCA       H63       C6        single    1.089     0.010     0.989     0.005     
+FCA       HO1       O1        single    0.970     0.012     0.839     0.014     
+FCA       HO2       O2        single    0.970     0.012     0.839     0.014     
+FCA       HO3       O3        single    0.970     0.012     0.839     0.014     
+FCA       HO4       O4        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FCA      H1     C1     O1      109.470    3.000
+ FCA      H1     C1     O5      109.470    3.000
+ FCA      O1     C1     O5      109.470    3.000
+ FCA      H1     C1     C2      108.340    3.000
+ FCA      O1     C1     C2      109.470    3.000
+ FCA      O5     C1     C2      109.470    3.000
+ FCA      C1     O1     HO1     109.470    3.000
+ FCA      C1     O5     C5      111.800    3.000
+ FCA      O5     C5     H5      109.470    3.000
+ FCA      O5     C5     C6      109.470    3.000
+ FCA      O5     C5     C4      109.470    3.000
+ FCA      H5     C5     C6      108.340    3.000
+ FCA      H5     C5     C4      108.340    3.000
+ FCA      C6     C5     C4      111.000    3.000
+ FCA      C5     C6     H63     109.470    3.000
+ FCA      C5     C6     H62     109.470    3.000
+ FCA      C5     C6     H61     109.470    3.000
+ FCA      H63    C6     H62     109.470    3.000
+ FCA      H63    C6     H61     109.470    3.000
+ FCA      H62    C6     H61     109.470    3.000
+ FCA      C5     C4     H4      108.340    3.000
+ FCA      C5     C4     C3      111.000    3.000
+ FCA      C5     C4     O4      109.470    3.000
+ FCA      H4     C4     C3      108.340    3.000
+ FCA      H4     C4     O4      109.470    3.000
+ FCA      C3     C4     O4      109.470    3.000
+ FCA      C4     C3     H3      108.340    3.000
+ FCA      C4     C3     O3      109.470    3.000
+ FCA      C4     C3     C2      111.000    3.000
+ FCA      H3     C3     O3      109.470    3.000
+ FCA      H3     C3     C2      108.340    3.000
+ FCA      O3     C3     C2      109.470    3.000
+ FCA      C3     O3     HO3     109.470    3.000
+ FCA      C3     C2     H2      108.340    3.000
+ FCA      C3     C2     O2      109.470    3.000
+ FCA      C3     C2     C1      111.000    3.000
+ FCA      H2     C2     O2      109.470    3.000
+ FCA      H2     C2     C1      108.340    3.000
+ FCA      O2     C2     C1      109.470    3.000
+ FCA      C2     O2     HO2     109.470    3.000
+ FCA      C4     O4     HO4     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FCA      var_1    O5     C1     O1     HO1       60.100   20.000   1
+ FCA      var_2    C1     O5     C5     C4        60.000   20.000   1
+ FCA      var_3    O5     C5     C6     H61       59.837   20.000   3
+ FCA      var_4    O5     C5     C4     O4        60.000   20.000   3
+ FCA      var_5    C5     C4     C3     C2        60.000   20.000   3
+ FCA      var_6    C4     C3     O3     HO3     -179.178   20.000   1
+ FCA      var_7    C4     C3     C2     O2       180.000   20.000   3
+ FCA      var_8    C3     C2     C1     O5        60.000   20.000   3
+ FCA      var_9    C3     C2     O2     HO2      179.540   20.000   1
+ FCA      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FCA      chir_01  C1     C2     O1     O5        negativ
+ FCA      chir_02  C2     C1     C3     O2        negativ
+ FCA      chir_03  C3     C2     C4     O3        positiv
+ FCA      chir_04  C4     C3     C5     O4        positiv
+ FCA      chir_05  C5     C4     C6     O5        negativ
+# ------------------------------------------------------

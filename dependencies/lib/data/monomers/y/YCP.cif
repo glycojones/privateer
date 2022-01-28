@@ -1,0 +1,190 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+YCP      YCP '(2S)-piperidine-2-carboxylic acid   ' non-polymer        19   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_YCP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ YCP           OXT    O    OC       -0.500      0.000    0.000    0.000
+ YCP           C      C    C         0.000     -1.188   -0.331    0.208
+ YCP           O      O    OC       -0.500     -1.458   -1.180    1.086
+ YCP           CA     C    CH1       0.000     -2.298    0.299   -0.596
+ YCP           HA     H    H         0.000     -1.980    0.397   -1.643
+ YCP           CB     C    CH2       0.000     -2.616    1.684   -0.028
+ YCP           HB     H    H         0.000     -1.730    2.319   -0.094
+ YCP           HBA    H    H         0.000     -2.918    1.590    1.017
+ YCP           CG     C    CH2       0.000     -3.756    2.311   -0.836
+ YCP           HG     H    H         0.000     -3.440    2.443   -1.872
+ YCP           HGA    H    H         0.000     -4.016    3.281   -0.409
+ YCP           CD     C    CH2       0.000     -4.975    1.386   -0.786
+ YCP           HD     H    H         0.000     -5.778    1.808   -1.394
+ YCP           HDA    H    H         0.000     -5.317    1.287    0.246
+ YCP           CE     C    CH2       0.000     -4.588    0.010   -1.332
+ YCP           HE     H    H         0.000     -4.263    0.110   -2.370
+ YCP           HEA    H    H         0.000     -5.453   -0.655   -1.285
+ YCP           N      N    NH1       0.000     -3.494   -0.548   -0.526
+ YCP           HN     H    H         0.000     -3.558   -1.403    0.008
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ YCP      OXT    n/a    C      START
+ YCP      C      OXT    CA     .
+ YCP      O      C      .      .
+ YCP      CA     C      CB     .
+ YCP      HA     CA     .      .
+ YCP      CB     CA     CG     .
+ YCP      HB     CB     .      .
+ YCP      HBA    CB     .      .
+ YCP      CG     CB     CD     .
+ YCP      HG     CG     .      .
+ YCP      HGA    CG     .      .
+ YCP      CD     CG     CE     .
+ YCP      HD     CD     .      .
+ YCP      HDA    CD     .      .
+ YCP      CE     CD     N      .
+ YCP      HE     CE     .      .
+ YCP      HEA    CE     .      .
+ YCP      N      CE     HN     .
+ YCP      HN     N      .      END
+ YCP      N      CA     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+YCP       O         C         deloc     1.250     0.020     1.250     0.020     
+YCP       CA        C         single    1.500     0.020     1.500     0.020     
+YCP       C         OXT       deloc     1.250     0.020     1.250     0.020     
+YCP       N         CA        single    1.450     0.020     1.450     0.020     
+YCP       N         CE        single    1.450     0.020     1.450     0.020     
+YCP       CB        CA        single    1.524     0.020     1.524     0.020     
+YCP       CG        CB        single    1.524     0.020     1.524     0.020     
+YCP       CE        CD        single    1.524     0.020     1.524     0.020     
+YCP       CD        CG        single    1.524     0.020     1.524     0.020     
+YCP       HN        N         single    1.036     0.016     0.914     0.007     
+YCP       HA        CA        single    1.089     0.010     0.989     0.005     
+YCP       HB        CB        single    1.089     0.010     0.989     0.005     
+YCP       HBA       CB        single    1.089     0.010     0.989     0.005     
+YCP       HD        CD        single    1.089     0.010     0.989     0.005     
+YCP       HDA       CD        single    1.089     0.010     0.989     0.005     
+YCP       HE        CE        single    1.089     0.010     0.989     0.005     
+YCP       HEA       CE        single    1.089     0.010     0.989     0.005     
+YCP       HG        CG        single    1.089     0.010     0.989     0.005     
+YCP       HGA       CG        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ YCP      OXT    C      O       123.000    3.000
+ YCP      OXT    C      CA      118.500    3.000
+ YCP      O      C      CA      118.500    3.000
+ YCP      C      CA     HA      108.810    3.000
+ YCP      C      CA     CB      109.470    3.000
+ YCP      C      CA     N       111.600    3.000
+ YCP      HA     CA     CB      108.340    3.000
+ YCP      HA     CA     N       108.550    3.000
+ YCP      CB     CA     N       110.000    3.000
+ YCP      CA     CB     HB      109.470    3.000
+ YCP      CA     CB     HBA     109.470    3.000
+ YCP      CA     CB     CG      111.000    3.000
+ YCP      HB     CB     HBA     107.900    3.000
+ YCP      HB     CB     CG      109.470    3.000
+ YCP      HBA    CB     CG      109.470    3.000
+ YCP      CB     CG     HG      109.470    3.000
+ YCP      CB     CG     HGA     109.470    3.000
+ YCP      CB     CG     CD      111.000    3.000
+ YCP      HG     CG     HGA     107.900    3.000
+ YCP      HG     CG     CD      109.470    3.000
+ YCP      HGA    CG     CD      109.470    3.000
+ YCP      CG     CD     HD      109.470    3.000
+ YCP      CG     CD     HDA     109.470    3.000
+ YCP      CG     CD     CE      111.000    3.000
+ YCP      HD     CD     HDA     107.900    3.000
+ YCP      HD     CD     CE      109.470    3.000
+ YCP      HDA    CD     CE      109.470    3.000
+ YCP      CD     CE     HE      109.470    3.000
+ YCP      CD     CE     HEA     109.470    3.000
+ YCP      CD     CE     N       112.000    3.000
+ YCP      HE     CE     HEA     107.900    3.000
+ YCP      HE     CE     N       109.470    3.000
+ YCP      HEA    CE     N       109.470    3.000
+ YCP      CE     N      HN      118.500    3.000
+ YCP      CE     N      CA      120.000    3.000
+ YCP      HN     N      CA      118.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ YCP      var_1    OXT    C      CA     CB       -79.691   20.000   3
+ YCP      var_2    C      CA     CB     CG       180.000   20.000   3
+ YCP      var_3    CA     CB     CG     CD        60.000   20.000   3
+ YCP      var_4    CB     CG     CD     CE       -60.000   20.000   3
+ YCP      var_5    CG     CD     CE     N         60.000   20.000   3
+ YCP      var_6    CD     CE     N      CA       -60.000   20.000   3
+ YCP      var_7    CE     N      CA     C        180.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ YCP      chir_01  CA     C      N      CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ YCP      plan-1    C         0.020
+ YCP      plan-1    O         0.020
+ YCP      plan-1    CA        0.020
+ YCP      plan-1    OXT       0.020
+ YCP      plan-2    N         0.020
+ YCP      plan-2    CA        0.020
+ YCP      plan-2    CE        0.020
+ YCP      plan-2    HN        0.020
+# ------------------------------------------------------

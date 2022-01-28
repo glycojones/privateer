@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2BR     2BR      2-BROMOPHENOL     NON-POLYMER     13     8     .     
+#
+data_comp_2BR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2BR     C13     C       CR16    0       -1.700      0.117       -0.015      
+2BR     C14     C       CR16    0       -0.947      1.209       0.389       
+2BR     C15     C       CR6     0       0.439       1.120       0.409       
+2BR     C16     C       CR6     0       1.102       -0.060      0.027       
+2BR     C17     C       CR16    0       0.326       -1.146      -0.376      
+2BR     C18     C       CR16    0       -1.066      -1.054      -0.395      
+2BR     O3      O       OH1     0       2.467       -0.144      0.048       
+2BR     BR1     BR      BR      0       1.456       2.615       0.961       
+2BR     H13     H       H       0       -2.638      0.173       -0.030      
+2BR     H14     H       H       0       -1.368      2.006       0.648       
+2BR     H17     H       H       0       0.748       -1.946      -0.636      
+2BR     H18     H       H       0       -1.577      -1.797      -0.669      
+2BR     HO3     H       H       0       2.823       0.350       -0.557      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2BR       C13       C14       DOUBLE    y         1.381     0.010     1.381     0.010     
+2BR       C13       C18       SINGLE    y         1.376     0.012     1.376     0.012     
+2BR       C14       C15       SINGLE    y         1.383     0.010     1.383     0.010     
+2BR       C15       C16       DOUBLE    y         1.393     0.013     1.393     0.013     
+2BR       C15       BR1       SINGLE    n         1.890     0.010     1.890     0.010     
+2BR       C16       C17       SINGLE    y         1.385     0.011     1.385     0.011     
+2BR       C16       O3        SINGLE    n         1.367     0.010     1.367     0.010     
+2BR       C17       C18       DOUBLE    y         1.387     0.010     1.387     0.010     
+2BR       C13       H13       SINGLE    n         1.082     0.013     0.940     0.011     
+2BR       C14       H14       SINGLE    n         1.082     0.013     0.937     0.010     
+2BR       C17       H17       SINGLE    n         1.082     0.013     0.941     0.011     
+2BR       C18       H18       SINGLE    n         1.082     0.013     0.943     0.018     
+2BR       O3        HO3       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2BR         C14         C13         C18     120.055    1.50
+2BR         C14         C13         H13     119.881    1.50
+2BR         C18         C13         H13     120.064    1.50
+2BR         C13         C14         C15     119.948    1.50
+2BR         C13         C14         H14     120.250    1.50
+2BR         C15         C14         H14     119.802    1.50
+2BR         C14         C15         C16     121.626    1.50
+2BR         C14         C15         BR1     119.467    1.50
+2BR         C16         C15         BR1     118.908    1.50
+2BR         C15         C16         C17     117.631    1.50
+2BR         C15         C16          O3     120.771    2.33
+2BR         C17         C16          O3     121.598    2.57
+2BR         C16         C17         C18     120.047    1.50
+2BR         C16         C17         H17     119.702    1.50
+2BR         C18         C17         H17     120.250    1.50
+2BR         C13         C18         C17     120.693    1.50
+2BR         C13         C18         H18     119.838    1.50
+2BR         C17         C18         H18     119.469    1.50
+2BR         C16          O3         HO3     111.626    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2BR       const_sp2_sp2_1         C18         C13         C14         C15       0.000   10.00     2
+2BR              const_21         C14         C13         C18         C17       0.000   10.00     2
+2BR       const_sp2_sp2_6         C13         C14         C15         BR1     180.000   10.00     2
+2BR              const_12         BR1         C15         C16          O3       0.000   10.00     2
+2BR              const_15          O3         C16         C17         C18     180.000   10.00     2
+2BR              const_17         C16         C17         C18         C13       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+2BR    plan-1         BR1   0.020
+2BR    plan-1         C13   0.020
+2BR    plan-1         C14   0.020
+2BR    plan-1         C15   0.020
+2BR    plan-1         C16   0.020
+2BR    plan-1         C17   0.020
+2BR    plan-1         C18   0.020
+2BR    plan-1         H13   0.020
+2BR    plan-1         H14   0.020
+2BR    plan-1         H17   0.020
+2BR    plan-1         H18   0.020
+2BR    plan-1          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2BR SMILES           ACDLabs              10.04 Brc1ccccc1O
+2BR SMILES_CANONICAL CACTVS               3.341 Oc1ccccc1Br
+2BR SMILES           CACTVS               3.341 Oc1ccccc1Br
+2BR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(c(c1)O)Br"
+2BR SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(c(c1)O)Br"
+2BR InChI            InChI                1.03  "InChI=1S/C6H5BrO/c7-5-3-1-2-4-6(5)8/h1-4,8H"
+2BR InChIKey         InChI                1.03  VADKRMSMGWJZCF-UHFFFAOYSA-N
+2BR ?                acedrg               202         "dictionary generator"                  
+2BR ?                acedrg_database      11          "data source"                           
+2BR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2BR ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,45 @@
+#
+#   nucleic acid base pairs. Some of the base pairs may not be standard. But they appear in some structures
+pairs  monomer A group . monomer T group . label A:T grouplabel basepair
+bond atom N6 A atom O4 T value 2.94 sigma 0.15
+bond atom N1 A atom N3 T value 2.84 sigma 0.1
+chiral atom N1 A atom C2 A atom C6 A atom N3 T value 0.0 sigma 0.5
+chiral atom N3 T atom C2 T atom C4 T atom N1 A value 0.0 sigma 0.5
+torsion atom C2 A atom N1 A atom N3 T atom C4 T value 166.4 sigma 10.0
+
+pairs monomer DA group DNA monomer DT group DNA label DA:DT grouplabel basepair
+bond atom N6 DA atom O4 DT value 2.94 sigma 0.15
+bond atom N1 DA atom N3 DT value 2.84 sigma 0.1
+chiral atom N1 DA atom C2 DA atom C6 DA atom N3 DT value 0.0 sigma 0.5
+chiral atom N3 DT atom C2 DT atom C4 DT atom N1 DA value 0.0 sigma 0.5
+torsion atom C2 DA atom N1 DA atom N3 DT atom C4 DT value 166.4 sigma 10.0
+
+pairs monomer A group DNA/RNA monomer U group DNA/RNA label A:U grouplabel basepair
+bond atom N6 A atom O4 U value 2.94 sigma 0.15
+bond atom N1 A atom N3 U value 2.84 sigma 0.1
+chiral atom N1 A atom C2 A atom C6 A atom N3 U value 0.0 sigma 0.5
+chiral atom N3 U atom C2 U atom C4 T atom N1 A value 0.0 sigma 0.5
+torsion atom C2 A atom N1 A atom N3 U atom C4 U value 166.4 sigma 10.0
+
+pairs monomer DA group DNA/RNA monomer DU group DNA/RNA label DA:DU grouplabel basepair
+bond atom N6 DA atom O4 DU value 2.94 sigma 0.15
+bond atom N1 DA atom N3 DU value 2.84 sigma 0.1
+chiral atom N1 DA atom C2 DA atom C6 DA atom N3 DU value 0.0 sigma 0.5
+chiral atom N3 DU atom C2 DU atom C4 DT atom N1 DA value 0.0 sigma 0.5
+torsion atom C2 DA atom N1 DA atom N3 DU atom C4 DU value 170.8 sigma 10.0
+
+pairs monomer C group DNA monomer G group DNA label C:G grouplabel basepair
+bond atom N4 C atom O6 G value 2.91 sigma 0.15
+bond atom N3 C atom N1 G value 2.95 sigma 0.1
+bond atom O2 C atom N2 G value 2.86 sigma 0.15
+chiral atom N1 G atom C6 G atom C2 G atom N3 C value 0.0 sigma 0.5
+chiral atom N3 C atom C4 C atom C2 C atom N1 G value 0.0 sigma 0.5
+torsion atom C4 C atom N3 C atom N1 G atom C2 G value 170.8 sigma 10.0
+
+pairs monomer DC group DNA monomer DG group DNA label DC:DG grouplabel basepair
+bond atom N4 DC atom O6 DG value 2.91 sigma 0.1
+bond atom N3 DC atom N1 DG value 2.95 sigma 0.1
+bond atom O2 DC atom N2 DG value 2.86 sigma 0.1
+chiral atom N1 DG atom C6 DG atom C2 DG atom N3 DC value 0.0 sigma 0.5
+chiral atom N3 DC atom C4 DC atom C2 DC atom N1 DG value 0.0 sigma 0.5
+torsion atom C4 DC atom N3 DC atom N1 DG atom C2 DG value 170.8 sigma 10.0

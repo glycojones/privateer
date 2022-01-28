@@ -1,0 +1,255 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0BN     0BN     4-carbamimidoyl-L-phenylalanine     peptide     28     15     .     
+#
+data_comp_0BN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+0BN     N3      N       NH1     0       4.196       0.903       1.442       
+0BN     C10     C       C       0       3.754       0.539       0.283       
+0BN     C6      C       CR6     0       2.329       0.194       0.044       
+0BN     C5      C       CR16    0       1.722       -0.847      0.743       
+0BN     C4      C       CR16    0       0.392       -1.166      0.518       
+0BN     C3      C       CR6     0       -0.370      -0.462      -0.407      
+0BN     C8      C       CR16    0       0.239       0.576       -1.103      
+0BN     C7      C       CR16    0       1.570       0.903       -0.883      
+0BN     C9      C       CH2     0       -1.818      -0.812      -0.649      
+0BN     CA      C       CH1     0       -2.829      0.137       0.003       
+0BN     C       C       C       0       -4.252      -0.166      -0.482      
+0BN     O       O       O       0       -4.717      -1.293      -0.219      
+0BN     OXT     O       OC      -1      -4.846      0.735       -1.107      
+0BN     N       N       NT3     1       -2.775      0.030       1.487       
+0BN     N2      N       NH2     0       4.600       0.462       -0.767      
+0BN     HN31    H       H       0       3.642       0.935       2.051       
+0BN     H7      H       H       0       2.218       -1.338      1.375       
+0BN     H6      H       H       0       -0.003      -1.874      1.001       
+0BN     H9      H       H       0       -0.261      1.066       -1.734      
+0BN     H8      H       H       0       1.961       1.609       -1.367      
+0BN     H10     H       H       0       -1.985      -1.718      -0.314      
+0BN     H11     H       H       0       -1.981      -0.819      -1.615      
+0BN     HA      H       H       0       -2.602      1.067       -0.254      
+0BN     H       H       H       0       -3.465      0.496       1.858       
+0BN     H2      H       H       0       -1.990      0.376       1.794       
+0BN     H3      H       H       0       -2.835      -0.844      1.736       
+0BN     HN21    H       H       0       4.300       0.211       -1.564      
+0BN     HN22    H       H       0       5.458       0.664       -0.660      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 0BN      N      n/a    CA     START
+ 0BN      H      N      .      .
+ 0BN      H2     N      .      .
+ 0BN      H3     N      .      .
+ 0BN      CA     N      C      .
+ 0BN      HA     CA     .      .
+ 0BN      C9     CA     C3     .
+ 0BN      H10    C9     .      .
+ 0BN      H11    C9     .      .
+ 0BN      C3     C9     C8     .
+ 0BN      C4     C3     C5     .
+ 0BN      H6     C4     .      .
+ 0BN      C5     C4     H7     .
+ 0BN      H7     C5     .      .
+ 0BN      C8     C3     C7     .
+ 0BN      H9     C8     .      .
+ 0BN      C7     C8     C6     .
+ 0BN      H8     C7     .      .
+ 0BN      C6     C7     C10    .
+ 0BN      C10    C6     N3     .
+ 0BN      N2     C10    HN21   .
+ 0BN      HN22   N2     .      .
+ 0BN      HN21   N2     .      .
+ 0BN      N3     C10    HN31   .
+ 0BN      HN31   N3     .      .
+ 0BN      C      CA     .      END
+ 0BN      O      C      .      .
+ 0BN      OXT    C      .      .
+ 0BN      C6     C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0BN       N3        C10       DOUBLE    n         1.287     0.020     1.287     0.020     
+0BN       C10       C6        SINGLE    n         1.484     0.011     1.484     0.011     
+0BN       C6        C5        DOUBLE    y         1.390     0.010     1.390     0.010     
+0BN       C5        C4        SINGLE    y         1.383     0.010     1.383     0.010     
+0BN       C4        C3        DOUBLE    y         1.385     0.011     1.385     0.011     
+0BN       C3        C8        SINGLE    y         1.385     0.011     1.385     0.011     
+0BN       C8        C7        DOUBLE    y         1.384     0.010     1.384     0.010     
+0BN       C3        C9        SINGLE    n         1.508     0.010     1.508     0.010     
+0BN       C9        CA        SINGLE    n         1.531     0.010     1.531     0.010     
+0BN       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+0BN       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+0BN       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+0BN       CA        N         SINGLE    n         1.487     0.010     1.487     0.010     
+0BN       C10       N2        SINGLE    n         1.347     0.016     1.347     0.016     
+0BN       C6        C7        SINGLE    y         1.390     0.010     1.390     0.010     
+0BN       N3        HN31      SINGLE    n         1.016     0.010     0.823     0.020     
+0BN       C5        H7        SINGLE    n         1.082     0.013     0.941     0.017     
+0BN       C4        H6        SINGLE    n         1.082     0.013     0.943     0.017     
+0BN       C8        H9        SINGLE    n         1.082     0.013     0.943     0.017     
+0BN       C7        H8        SINGLE    n         1.082     0.013     0.941     0.017     
+0BN       C9        H10       SINGLE    n         1.089     0.010     0.980     0.016     
+0BN       C9        H11       SINGLE    n         1.089     0.010     0.980     0.016     
+0BN       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+0BN       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+0BN       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+0BN       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+0BN       N2        HN21      SINGLE    n         1.016     0.010     0.887     0.020     
+0BN       N2        HN22      SINGLE    n         1.016     0.010     0.887     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+0BN         C10          N3        HN31     114.748    3.00
+0BN          N3         C10          C6     121.847    3.00
+0BN          N3         C10          N2     120.652    2.66
+0BN          C6         C10          N2     117.501    1.50
+0BN         C10          C6          C5     120.533    1.50
+0BN         C10          C6          C7     120.533    1.50
+0BN          C5          C6          C7     118.934    1.50
+0BN          C6          C5          C4     120.726    1.50
+0BN          C6          C5          H7     119.763    1.50
+0BN          C4          C5          H7     119.511    1.50
+0BN          C5          C4          C3     120.933    1.50
+0BN          C5          C4          H6     119.609    1.50
+0BN          C3          C4          H6     119.459    1.50
+0BN          C4          C3          C8     117.748    1.50
+0BN          C4          C3          C9     121.126    1.50
+0BN          C8          C3          C9     121.126    1.50
+0BN          C3          C8          C7     120.933    1.50
+0BN          C3          C8          H9     119.459    1.50
+0BN          C7          C8          H9     119.609    1.50
+0BN          C8          C7          C6     120.726    1.50
+0BN          C8          C7          H8     119.511    1.50
+0BN          C6          C7          H8     119.763    1.50
+0BN          C3          C9          CA     114.745    1.55
+0BN          C3          C9         H10     108.862    1.50
+0BN          C3          C9         H11     108.862    1.50
+0BN          CA          C9         H10     108.434    1.50
+0BN          CA          C9         H11     108.434    1.50
+0BN         H10          C9         H11     107.782    1.50
+0BN          C9          CA           C     111.331    2.53
+0BN          C9          CA           N     110.494    1.50
+0BN          C9          CA          HA     108.690    1.50
+0BN           C          CA           N     109.448    1.50
+0BN           C          CA          HA     108.450    1.50
+0BN           N          CA          HA     108.601    1.50
+0BN          CA           C           O     117.228    2.13
+0BN          CA           C         OXT     117.228    2.13
+0BN           O           C         OXT     125.543    1.50
+0BN          CA           N           H     109.646    1.54
+0BN          CA           N          H2     109.646    1.54
+0BN          CA           N          H3     109.646    1.54
+0BN           H           N          H2     109.028    2.41
+0BN           H           N          H3     109.028    2.41
+0BN          H2           N          H3     109.028    2.41
+0BN         C10          N2        HN21     119.893    1.50
+0BN         C10          N2        HN22     119.893    1.50
+0BN        HN21          N2        HN22     120.214    2.70
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+0BN             sp2_sp2_2          N2         C10          N3        HN31       0.000   10.00     2
+0BN             sp2_sp2_9          N3         C10          N2        HN21       0.000   10.00     2
+0BN             sp2_sp2_5          N3         C10          C6          C5       0.000   10.00     2
+0BN       const_sp2_sp2_2          C4          C5          C6         C10     180.000   10.00     2
+0BN              const_23         C10          C6          C7          C8     180.000   10.00     2
+0BN       const_sp2_sp2_5          C3          C4          C5          C6       0.000   10.00     2
+0BN              const_11          C9          C3          C4          C5     180.000   10.00     2
+0BN              const_15          C9          C3          C8          C7     180.000   10.00     2
+0BN             sp2_sp3_2          C4          C3          C9          CA     -90.000   10.00     6
+0BN              const_17          C6          C7          C8          C3       0.000   10.00     2
+0BN             sp3_sp3_1          C3          C9          CA           C     180.000   10.00     3
+0BN             sp2_sp3_7           O           C          CA          C9       0.000   10.00     6
+0BN            sp3_sp3_10          C9          CA           N           H     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+0BN    chir_1    CA    N    C    C9    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+0BN    plan-1         C10   0.020
+0BN    plan-1          C3   0.020
+0BN    plan-1          C4   0.020
+0BN    plan-1          C5   0.020
+0BN    plan-1          C6   0.020
+0BN    plan-1          C7   0.020
+0BN    plan-1          C8   0.020
+0BN    plan-1          C9   0.020
+0BN    plan-1          H6   0.020
+0BN    plan-1          H7   0.020
+0BN    plan-1          H8   0.020
+0BN    plan-1          H9   0.020
+0BN    plan-2         C10   0.020
+0BN    plan-2          C6   0.020
+0BN    plan-2          N2   0.020
+0BN    plan-2          N3   0.020
+0BN    plan-3           C   0.020
+0BN    plan-3          CA   0.020
+0BN    plan-3           O   0.020
+0BN    plan-3         OXT   0.020
+0BN    plan-4         C10   0.020
+0BN    plan-4        HN21   0.020
+0BN    plan-4        HN22   0.020
+0BN    plan-4          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+0BN SMILES           ACDLabs              12.01 "O=C(O)C(N)Cc1ccc(cc1)C(=[N@H])N"
+0BN SMILES_CANONICAL CACTVS               3.370 "N[C@@H](Cc1ccc(cc1)C(N)=N)C(O)=O"
+0BN SMILES           CACTVS               3.370 "N[CH](Cc1ccc(cc1)C(N)=N)C(O)=O"
+0BN SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "[H]/N=C(\c1ccc(cc1)C[C@@H](C(=O)O)N)/N"
+0BN SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(ccc1CC(C(=O)O)N)C(=N)N"
+0BN InChI            InChI                1.03  "InChI=1S/C10H13N3O2/c11-8(10(14)15)5-6-1-3-7(4-2-6)9(12)13/h1-4,8H,5,11H2,(H3,12,13)(H,14,15)/t8-/m0/s1"
+0BN InChIKey         InChI                1.03  XPRCPVGCTGELMN-QMMMGPOBSA-N
+0BN ?                acedrg               196         "dictionary generator"                  
+0BN ?                acedrg_database      11          "data source"                           
+0BN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+0BN ?                refmac5              5.8.0222    "optimization tool"                     

@@ -1,0 +1,269 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5BU      5BU '5-BROMO-URIDINE-5'-MONOPHOSPHATE    ' RNA                32  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_5BU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 5BU           OP3    O    OP       -0.666      0.000    0.000    0.000
+ 5BU           P      P    P         0.000     -0.530    1.416    0.049
+ 5BU           OP1    O    OP       -0.666      0.531    2.491    0.149
+ 5BU           OP2    O    OP       -0.666     -1.420    1.497   -1.172
+ 5BU           "O5'"  O    O2        0.000     -1.575    1.370    1.285
+ 5BU           "C5'"  C    CH2       0.000     -2.598    0.391    1.268
+ 5BU           "H5'"  H    H         0.000     -2.156   -0.607    1.248
+ 5BU           "H5''" H    H         0.000     -3.226    0.527    0.385
+ 5BU           "C4'"  C    CH1       0.000     -3.444    0.549    2.524
+ 5BU           "H4'"  H    H         0.000     -2.807    0.459    3.415
+ 5BU           "C3'"  C    CH1       0.000     -4.591   -0.451    2.607
+ 5BU           "H3'"  H    H         0.000     -4.330   -1.416    2.151
+ 5BU           "C2'"  C    CH1       0.000     -5.687    0.260    1.843
+ 5BU           "H2'"  H    H         0.000     -5.523    0.146    0.762
+ 5BU           "O2'"  O    OH1       0.000     -6.974   -0.213    2.186
+ 5BU           "HO2'" H    H         0.000     -7.640    0.379    1.813
+ 5BU           "C1'"  C    CH1       0.000     -5.468    1.707    2.248
+ 5BU           "H1'"  H    H         0.000     -6.026    1.920    3.171
+ 5BU           "O4'"  O    O2        0.000     -4.059    1.855    2.492
+ 5BU           N1     N    NR6       0.000     -5.864    2.630    1.223
+ 5BU           C6     C    CR16      0.000     -4.949    2.949    0.226
+ 5BU           H6     H    H         0.000     -3.972    2.483    0.269
+ 5BU           C5     C    CR6       0.000     -5.195    3.792   -0.783
+ 5BU           C4     C    CR6       0.000     -6.528    4.444   -0.861
+ 5BU           O4     O    O         0.000     -6.822    5.229   -1.759
+ 5BU           N3     N    NR16      0.000     -7.402    4.092    0.158
+ 5BU           H3     H    H         0.000     -8.344    4.530    0.133
+ 5BU           C2     C    CR6       0.000     -7.152    3.210    1.216
+ 5BU           O2     O    O         0.000     -8.014    2.974    2.066
+ 5BU           BR     BR   BR        0.000     -3.930    4.183   -2.093
+ 5BU           "O3'"  O    OH1       0.000     -4.954   -0.589    3.981
+ 5BU           "HO3'" H    H         0.000     -4.548    0.157    4.448
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 5BU      OP3    n/a    P      START
+ 5BU      P      OP3    "O5'"  .
+ 5BU      OP1    P      .      .
+ 5BU      OP2    P      .      .
+ 5BU      "O5'"  P      "C5'"  .
+ 5BU      "C5'"  "O5'"  "C4'"  .
+ 5BU      "H5'"  "C5'"  .      .
+ 5BU      "H5''" "C5'"  .      .
+ 5BU      "C4'"  "C5'"  "C3'"  .
+ 5BU      "H4'"  "C4'"  .      .
+ 5BU      "C3'"  "C4'"  "O3'"  .
+ 5BU      "H3'"  "C3'"  .      .
+ 5BU      "C2'"  "C3'"  "C1'"  .
+ 5BU      "H2'"  "C2'"  .      .
+ 5BU      "O2'"  "C2'"  "HO2'" .
+ 5BU      "HO2'" "O2'"  .      .
+ 5BU      "C1'"  "C2'"  N1     .
+ 5BU      "H1'"  "C1'"  .      .
+ 5BU      "O4'"  "C1'"  .      .
+ 5BU      N1     "C1'"  C6     .
+ 5BU      C6     N1     C5     .
+ 5BU      H6     C6     .      .
+ 5BU      C5     C6     BR     .
+ 5BU      C4     C5     N3     .
+ 5BU      O4     C4     .      .
+ 5BU      N3     C4     C2     .
+ 5BU      H3     N3     .      .
+ 5BU      C2     N3     O2     .
+ 5BU      O2     C2     .      .
+ 5BU      BR     C5     .      .
+ 5BU      "O3'"  "C3'"  .      END
+ 5BU      "HO3'" "O3'"  .      .
+ 5BU      "C4'"  "O4'"  .    ADD
+ 5BU      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5BU       OP1       P         deloc     1.510     0.020     1.510     0.020     
+5BU       OP2       P         deloc     1.510     0.020     1.510     0.020     
+5BU       P         OP3       deloc     1.510     0.020     1.510     0.020     
+5BU       "O5'"     P         single    1.610     0.020     1.610     0.020     
+5BU       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+5BU       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+5BU       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+5BU       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+5BU       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+5BU       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+5BU       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+5BU       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+5BU       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+5BU       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+5BU       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+5BU       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+5BU       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+5BU       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+5BU       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+5BU       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+5BU       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+5BU       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+5BU       N1        C2        single    1.410     0.020     1.410     0.020     
+5BU       C6        N1        single    1.337     0.020     1.337     0.020     
+5BU       O2        C2        double    1.250     0.020     1.250     0.020     
+5BU       C2        N3        single    1.337     0.020     1.337     0.020     
+5BU       N3        C4        single    1.337     0.020     1.337     0.020     
+5BU       H3        N3        single    1.016     0.010     0.899     0.007     
+5BU       O4        C4        double    1.250     0.020     1.250     0.020     
+5BU       C4        C5        single    1.487     0.020     1.487     0.020     
+5BU       C5        C6        double    1.390     0.020     1.390     0.020     
+5BU       BR        C5        single    1.890     0.020     1.890     0.020     
+5BU       H6        C6        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 5BU      OP3    P      OP1     119.900    3.000
+ 5BU      OP3    P      OP2     119.900    3.000
+ 5BU      OP3    P      "O5'"   108.200    3.000
+ 5BU      OP1    P      OP2     119.900    3.000
+ 5BU      OP1    P      "O5'"   108.200    3.000
+ 5BU      OP2    P      "O5'"   108.200    3.000
+ 5BU      P      "O5'"  "C5'"   120.500    3.000
+ 5BU      "O5'"  "C5'"  "H5'"   109.470    3.000
+ 5BU      "O5'"  "C5'"  "H5''"  109.470    3.000
+ 5BU      "O5'"  "C5'"  "C4'"   109.470    3.000
+ 5BU      "H5'"  "C5'"  "H5''"  107.900    3.000
+ 5BU      "H5'"  "C5'"  "C4'"   109.470    3.000
+ 5BU      "H5''" "C5'"  "C4'"   109.470    3.000
+ 5BU      "C5'"  "C4'"  "H4'"   108.340    3.000
+ 5BU      "C5'"  "C4'"  "C3'"   111.000    3.000
+ 5BU      "C5'"  "C4'"  "O4'"   109.470    3.000
+ 5BU      "H4'"  "C4'"  "C3'"   108.340    3.000
+ 5BU      "H4'"  "C4'"  "O4'"   109.470    3.000
+ 5BU      "C3'"  "C4'"  "O4'"   109.470    3.000
+ 5BU      "C4'"  "C3'"  "H3'"   108.340    3.000
+ 5BU      "C4'"  "C3'"  "C2'"   111.000    3.000
+ 5BU      "C4'"  "C3'"  "O3'"   109.470    3.000
+ 5BU      "H3'"  "C3'"  "C2'"   108.340    3.000
+ 5BU      "H3'"  "C3'"  "O3'"   109.470    3.000
+ 5BU      "C2'"  "C3'"  "O3'"   109.470    3.000
+ 5BU      "C3'"  "C2'"  "H2'"   108.340    3.000
+ 5BU      "C3'"  "C2'"  "O2'"   109.470    3.000
+ 5BU      "C3'"  "C2'"  "C1'"   111.000    3.000
+ 5BU      "H2'"  "C2'"  "O2'"   109.470    3.000
+ 5BU      "H2'"  "C2'"  "C1'"   108.340    3.000
+ 5BU      "O2'"  "C2'"  "C1'"   109.470    3.000
+ 5BU      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ 5BU      "C2'"  "C1'"  "H1'"   108.340    3.000
+ 5BU      "C2'"  "C1'"  "O4'"   109.470    3.000
+ 5BU      "C2'"  "C1'"  N1      109.470    3.000
+ 5BU      "H1'"  "C1'"  "O4'"   109.470    3.000
+ 5BU      "H1'"  "C1'"  N1      109.470    3.000
+ 5BU      "O4'"  "C1'"  N1      109.470    3.000
+ 5BU      "C1'"  "O4'"  "C4'"   111.800    3.000
+ 5BU      "C1'"  N1     C6      120.000    3.000
+ 5BU      "C1'"  N1     C2      120.000    3.000
+ 5BU      C6     N1     C2      120.000    3.000
+ 5BU      N1     C6     H6      120.000    3.000
+ 5BU      N1     C6     C5      120.000    3.000
+ 5BU      H6     C6     C5      120.000    3.000
+ 5BU      C6     C5     C4      120.000    3.000
+ 5BU      C6     C5     BR      120.000    3.000
+ 5BU      C4     C5     BR      120.000    3.000
+ 5BU      C5     C4     O4      120.000    3.000
+ 5BU      C5     C4     N3      120.000    3.000
+ 5BU      O4     C4     N3      120.000    3.000
+ 5BU      C4     N3     H3      120.000    3.000
+ 5BU      C4     N3     C2      120.000    3.000
+ 5BU      H3     N3     C2      120.000    3.000
+ 5BU      N3     C2     O2      120.000    3.000
+ 5BU      N3     C2     N1      120.000    3.000
+ 5BU      O2     C2     N1      120.000    3.000
+ 5BU      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 5BU      var_1    OP3    P      "O5'"  "C5'"    -54.172   20.000   1
+ 5BU      var_2    P      "O5'"  "C5'"  "C4'"   -179.986   20.000   1
+ 5BU      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.497   20.000   3
+ 5BU      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ 5BU      var_5    "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ 5BU      var_6    "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ 5BU      var_7    "C3'"  "C2'"  "O2'"  "HO2'"   168.831   20.000   1
+ 5BU      var_8    "C3'"  "C2'"  "C1'"  N1       150.000   20.000   3
+ 5BU      var_9    "C2'"  "C1'"  "O4'"  "C4'"      0.000   20.000   1
+ 5BU      var_10   "C2'"  "C1'"  N1     C6       -85.657   20.000   1
+ 5BU      CONST_1  "C1'"  N1     C2     N3       180.000    0.000   0
+ 5BU      CONST_2  "C1'"  N1     C6     C5       180.000    0.000   0
+ 5BU      CONST_3  N1     C6     C5     BR       180.000    0.000   0
+ 5BU      CONST_4  C6     C5     C4     N3         0.000    0.000   0
+ 5BU      CONST_5  C5     C4     N3     C2         0.000    0.000   0
+ 5BU      CONST_6  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 5BU      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ 5BU      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ 5BU      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ 5BU      chir_04  "C1'"  "O4'"  "C2'"  N1        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 5BU      plan-1    N1        0.020
+ 5BU      plan-1    "C1'"     0.020
+ 5BU      plan-1    C2        0.020
+ 5BU      plan-1    C6        0.020
+ 5BU      plan-1    N3        0.020
+ 5BU      plan-1    C4        0.020
+ 5BU      plan-1    C5        0.020
+ 5BU      plan-1    O2        0.020
+ 5BU      plan-1    H3        0.020
+ 5BU      plan-1    O4        0.020
+ 5BU      plan-1    BR        0.020
+ 5BU      plan-1    H6        0.020
+# ------------------------------------------------------

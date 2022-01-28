@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FYU     FYU      2,4-dioxo-1,2,3,4-tetrahydropyrimidine-5-carbaldehyde     NON-POLYMER     14     10     .     
+#
+data_comp_FYU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FYU     N1      N       NR6     0       65.172      14.307      31.221      
+FYU     N3      N       NR6     0       63.115      14.120      30.148      
+FYU     C4      C       CR6     0       63.279      15.308      29.437      
+FYU     C5      C       CR6     0       64.511      16.016      29.675      
+FYU     C6      C       CR16    0       65.428      15.474      30.579      
+FYU     O4      O       O       0       62.390      15.676      28.669      
+FYU     C2      C       CR6     0       64.011      13.579      31.038      
+FYU     O2      O       O       0       63.794      12.526      31.625      
+FYU     CM5     C       C1      0       64.800      17.276      28.990      
+FYU     O3      O       O       0       65.899      17.632      28.627      
+FYU     H5      H       H       0       65.782      13.967      31.808      
+FYU     H1      H       H       0       62.359      13.661      30.018      
+FYU     H3      H       H       0       66.266      15.923      30.763      
+FYU     H4      H       H       0       64.068      17.855      28.818      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FYU       CM5       O3        DOUBLE    n         1.210     0.015     1.210     0.015     
+FYU       C5        CM5       SINGLE    n         1.462     0.010     1.462     0.010     
+FYU       C4        O4        DOUBLE    n         1.230     0.010     1.230     0.010     
+FYU       C4        C5        SINGLE    y         1.432     0.013     1.432     0.013     
+FYU       C5        C6        DOUBLE    y         1.375     0.020     1.375     0.020     
+FYU       N3        C4        SINGLE    y         1.388     0.010     1.388     0.010     
+FYU       N1        C6        SINGLE    y         1.348     0.010     1.348     0.010     
+FYU       N3        C2        SINGLE    y         1.367     0.010     1.367     0.010     
+FYU       N1        C2        SINGLE    y         1.375     0.010     1.375     0.010     
+FYU       C2        O2        DOUBLE    n         1.225     0.010     1.225     0.010     
+FYU       N1        H5        SINGLE    n         1.016     0.010     0.912     0.020     
+FYU       N3        H1        SINGLE    n         1.016     0.010     0.892     0.020     
+FYU       C6        H3        SINGLE    n         1.082     0.013     0.969     0.020     
+FYU       CM5       H4        SINGLE    n         1.082     0.013     0.949     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FYU          C6          N1          C2     122.227    1.50
+FYU          C6          N1          H5     120.635    2.60
+FYU          C2          N1          H5     117.139    2.18
+FYU          C4          N3          C2     126.480    1.50
+FYU          C4          N3          H1     117.374    1.81
+FYU          C2          N3          H1     116.145    2.30
+FYU          O4          C4          C5     124.575    1.50
+FYU          O4          C4          N3     118.965    1.50
+FYU          C5          C4          N3     116.460    1.50
+FYU         CM5          C5          C4     120.406    1.63
+FYU         CM5          C5          C6     120.322    1.55
+FYU          C4          C5          C6     119.272    1.64
+FYU          C5          C6          N1     120.689    1.50
+FYU          C5          C6          H3     120.918    2.33
+FYU          N1          C6          H3     118.392    2.09
+FYU          N3          C2          N1     114.872    1.50
+FYU          N3          C2          O2     122.332    1.50
+FYU          N1          C2          O2     122.796    1.50
+FYU          O3         CM5          C5     124.813    1.50
+FYU          O3         CM5          H4     117.869    1.69
+FYU          C5         CM5          H4     117.309    1.75
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FYU       const_sp2_sp2_1          C5          C6          N1          C2       0.000   10.00     2
+FYU              const_23          O2          C2          N1          C6     180.000   10.00     2
+FYU              const_15          O4          C4          N3          C2     180.000   10.00     2
+FYU              const_19          O2          C2          N3          C4     180.000   10.00     2
+FYU              const_12          O4          C4          C5         CM5       0.000   10.00     2
+FYU       const_sp2_sp2_7         CM5          C5          C6          N1     180.000   10.00     2
+FYU             sp2_sp2_1          C4          C5         CM5          O3     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FYU    plan-1          C2   0.020
+FYU    plan-1          C4   0.020
+FYU    plan-1          C5   0.020
+FYU    plan-1          C6   0.020
+FYU    plan-1         CM5   0.020
+FYU    plan-1          H1   0.020
+FYU    plan-1          H3   0.020
+FYU    plan-1          H5   0.020
+FYU    plan-1          N1   0.020
+FYU    plan-1          N3   0.020
+FYU    plan-1          O2   0.020
+FYU    plan-1          O4   0.020
+FYU    plan-2          C5   0.020
+FYU    plan-2         CM5   0.020
+FYU    plan-2          H4   0.020
+FYU    plan-2          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FYU SMILES           ACDLabs              12.01 "N1C(NC(C(=C1)C=O)=O)=O"
+FYU InChI            InChI                1.03  "InChI=1S/C5H4N2O3/c8-2-3-1-6-5(10)7-4(3)9/h1-2H,(H2,6,7,9,10)"
+FYU InChIKey         InChI                1.03  OHAMXGZMZZWRCA-UHFFFAOYSA-N
+FYU SMILES_CANONICAL CACTVS               3.385 "O=CC1=CNC(=O)NC1=O"
+FYU SMILES           CACTVS               3.385 "O=CC1=CNC(=O)NC1=O"
+FYU SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "C1=C(C(=O)NC(=O)N1)C=O"
+FYU SMILES           "OpenEye OEToolkits" 1.9.2 "C1=C(C(=O)NC(=O)N1)C=O"
+FYU ?                acedrg               202         "dictionary generator"                  
+FYU ?                acedrg_database      11          "data source"                           
+FYU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FYU ?                refmac5              5.8.0189    "optimization tool"                     

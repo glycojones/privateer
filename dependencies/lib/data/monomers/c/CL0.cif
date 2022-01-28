@@ -1,0 +1,942 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CL0      CL0 'CHLOROPHYLL A  isomer                     ' non-polymer       137  65 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CL0
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CL0           O1D    O    O        -0.500     28.235   70.652   18.184
+ CL0           CGD    C    C         0.000     28.304   71.373   17.164
+ CL0           O2D    O    O2       -0.500     27.597   71.146   16.157
+ CL0           CED    C    CH3       0.000     26.507   70.120   15.984
+ CL0           HED3   H    H         0.000     26.893   69.137   16.130
+ CL0           HED2   H    H         0.000     25.725   70.284   16.690
+ CL0           HED1   H    H         0.000     26.093   70.177   15.004
+ CL0           CBD    C    CH1       0.000     29.296   72.550   17.091
+ CL0           HBD    H    H         0.000     29.820   72.548   16.125
+ CL0           CAD    C    CR5       0.000     28.536   73.884   17.288
+ CL0           OBD    O    O         0.000     27.541   74.168   16.623
+ CL0           C3D    C    CR55      0.000     29.263   74.658   18.268
+ CL0           C2D    C    CR5       0.000     29.429   75.892   18.838
+ CL0           CMD    C    CH3       0.000     28.633   77.184   18.566
+ CL0           HMD3   H    H         0.000     28.172   77.520   19.462
+ CL0           HMD2   H    H         0.000     29.285   77.941   18.206
+ CL0           HMD1   H    H         0.000     27.882   76.999   17.838
+ CL0           C1D    C    CR5       0.000     30.543   75.734   19.772
+ CL0           CHD    C    C1        0.000     31.077   76.711   20.624
+ CL0           HHD    H    H         0.000     30.682   77.709   20.534
+ CL0           C4D    C    CR55      0.000     30.259   73.785   18.824
+ CL0           ND     N    NT        0.000     30.991   74.430   19.778
+ CL0           MG     MG   MG        0.000     32.169   73.436   21.100
+ CL0           NC     N    NR5       1.000     32.707   75.299   21.862
+ CL0           C4C    C    CR5       0.000     32.085   76.504   21.588
+ CL0           C3C    C    CR5       0.000     32.651   77.512   22.444
+ CL0           CAC    C    CH2       0.000     32.318   79.048   22.410
+ CL0           HAC1   H    H         0.000     31.844   79.296   21.458
+ CL0           HAC2   H    H         0.000     33.241   79.622   22.516
+ CL0           CBC    C    CH3       0.000     31.374   79.387   23.551
+ CL0           HBC3   H    H         0.000     30.479   78.829   23.448
+ CL0           HBC2   H    H         0.000     31.834   79.147   24.475
+ CL0           HBC1   H    H         0.000     31.148   80.422   23.528
+ CL0           C2C    C    CR5       0.000     33.573   76.903   23.240
+ CL0           CMC    C    CH3       0.000     34.428   77.567   24.361
+ CL0           HMC3   H    H         0.000     34.249   77.084   25.291
+ CL0           HMC2   H    H         0.000     35.462   77.489   24.126
+ CL0           HMC1   H    H         0.000     34.174   78.595   24.454
+ CL0           C1C    C    CR5       0.000     33.651   75.526   22.843
+ CL0           CHC    C    C1        0.000     34.551   74.571   23.367
+ CL0           HHC    H    H         0.000     35.227   74.903   24.137
+ CL0           NB     N    NR5       0.000     33.880   72.640   21.984
+ CL0           C4B    C    CR5       0.000     34.640   73.223   22.970
+ CL0           C3B    C    CR5       0.000     35.546   72.203   23.514
+ CL0           CAB    C    C1        0.000     36.535   72.169   24.565
+ CL0           HAB    H    H         0.000     37.127   71.281   24.711
+ CL0           CBB    C    C2        0.000     36.727   73.246   25.372
+ CL0           HBB2   H    H         0.000     37.470   73.221   26.162
+ CL0           HBB1   H    H         0.000     36.140   74.149   25.240
+ CL0           C2B    C    CR5       0.000     35.354   71.069   22.782
+ CL0           CMB    C    CH3       0.000     36.011   69.724   22.917
+ CL0           HMB3   H    H         0.000     35.277   68.994   23.136
+ CL0           HMB2   H    H         0.000     36.496   69.476   22.009
+ CL0           HMB1   H    H         0.000     36.722   69.756   23.701
+ CL0           C1B    C    CR5       0.000     34.338   71.345   21.801
+ CL0           CHB    C    C1        0.000     33.881   70.407   20.869
+ CL0           HHB    H    H         0.000     34.380   69.453   20.879
+ CL0           CHA    C    CR5       0.000     30.311   72.514   18.250
+ CL0           C1A    C    C         0.000     31.186   71.518   18.677
+ CL0           NA     N    N         1.000     32.069   71.687   19.759
+ CL0           C4A    C    C         0.000     32.858   70.551   19.925
+ CL0           C3A    C    CH1       0.000     32.428   69.486   18.951
+ CL0           H3A    H    H         0.000     33.288   69.104   18.384
+ CL0           CMA    C    CH3       0.000     31.740   68.352   19.731
+ CL0           HMA3   H    H         0.000     30.951   68.750   20.316
+ CL0           HMA2   H    H         0.000     31.348   67.639   19.052
+ CL0           HMA1   H    H         0.000     32.444   67.879   20.367
+ CL0           C2A    C    CH1       0.000     31.431   70.184   18.024
+ CL0           H2A    H    H         0.000     30.493   69.612   18.001
+ CL0           CAA    C    CH2       0.000     32.015   70.264   16.604
+ CL0           HAA1   H    H         0.000     33.013   70.699   16.691
+ CL0           HAA2   H    H         0.000     31.374   70.937   16.030
+ CL0           CBA    C    CH2       0.000     32.107   68.901   15.885
+ CL0           HBA1   H    H         0.000     32.822   68.276   16.424
+ CL0           HBA2   H    H         0.000     32.469   69.072   14.869
+ CL0           CGA    C    C         0.000     30.752   68.199   15.833
+ CL0           O1A    O    O        -0.500     29.772   68.788   15.326
+ CL0           O2A    O    O2       -0.500     30.563   67.073   16.343
+ CL0           C1     C    CH2       0.000     29.150   66.541   16.532
+ CL0           H11    H    H         0.000     29.164   65.456   16.656
+ CL0           H12    H    H         0.000     28.527   66.800   15.673
+ CL0           C2     C    C1        0.000     28.601   67.168   17.745
+ CL0           H2     H    H         0.000     28.257   68.182   17.630
+ CL0           C3     C    C         0.000     28.467   66.631   19.011
+ CL0           C4     C    CH3       0.000     28.876   65.188   19.371
+ CL0           H43    H    H         0.000     28.324   64.497   18.783
+ CL0           H42    H    H         0.000     29.913   65.048   19.186
+ CL0           H41    H    H         0.000     28.680   65.001   20.398
+ CL0           C5     C    CH2       0.000     27.810   67.400   20.169
+ CL0           H51    H    H         0.000     28.196   68.422   20.175
+ CL0           H52    H    H         0.000     28.071   66.908   21.109
+ CL0           C6     C    CH2       0.000     26.271   67.429   20.010
+ CL0           H61    H    H         0.000     26.015   67.269   18.961
+ CL0           H62    H    H         0.000     25.895   68.402   20.331
+ CL0           C7     C    CH2       0.000     25.650   66.348   20.849
+ CL0           H71    H    H         0.000     25.939   66.556   21.881
+ CL0           H72    H    H         0.000     26.105   65.409   20.527
+ CL0           C8     C    CH1       0.000     24.112   66.235   20.756
+ CL0           H8     H    H         0.000     23.769   65.520   21.517
+ CL0           C9     C    CH3       0.000     23.420   67.574   21.004
+ CL0           H93    H    H         0.000     23.665   67.925   21.973
+ CL0           H92    H    H         0.000     23.743   68.278   20.282
+ CL0           H91    H    H         0.000     22.371   67.449   20.930
+ CL0           C10    C    CH2       0.000     23.724   65.703   19.389
+ CL0           H101   H    H         0.000     24.021   66.474   18.674
+ CL0           H102   H    H         0.000     22.635   65.619   19.400
+ CL0           C11    C    CH2       0.000     24.332   64.373   18.983
+ CL0           H111   H    H         0.000     24.084   63.586   19.699
+ CL0           H112   H    H         0.000     25.417   64.444   18.884
+ CL0           C12    C    CH2       0.000     23.717   64.042   17.629
+ CL0           H121   H    H         0.000     23.580   65.000   17.124
+ CL0           H122   H    H         0.000     22.741   63.603   17.846
+ CL0           C13    C    CH1       0.000     24.516   63.094   16.723
+ CL0           H13    H    H         0.000     23.903   62.913   15.829
+ CL0           C14    C    CH3       0.000     24.753   61.731   17.384
+ CL0           H143   H    H         0.000     25.297   61.863   18.284
+ CL0           H142   H    H         0.000     23.821   61.274   17.600
+ CL0           H141   H    H         0.000     25.306   61.109   16.727
+ CL0           C15    C    CH2       0.000     25.824   63.759   16.243
+ CL0           H151   H    H         0.000     26.165   63.172   15.388
+ CL0           H152   H    H         0.000     26.537   63.652   17.064
+ CL0           C16    C    CH2       0.000     25.720   65.226   15.846
+ CL0           H161   H    H         0.000     26.738   65.611   15.760
+ CL0           H162   H    H         0.000     25.204   65.745   16.657
+ CL0           C17    C    CH2       0.000     24.979   65.456   14.544
+ CL0           H171   H    H         0.000     23.972   65.052   14.669
+ CL0           H172   H    H         0.000     25.503   64.891   13.770
+ CL0           C18    C    CH1       0.000     24.892   66.933   14.132
+ CL0           H18    H    H         0.000     25.917   67.324   14.059
+ CL0           C20    C    CH3       0.000     24.157   67.752   15.163
+ CL0           H203   H    H         0.000     23.175   67.374   15.274
+ CL0           H202   H    H         0.000     24.668   67.691   16.087
+ CL0           H201   H    H         0.000     24.117   68.760   14.844
+ CL0           C19    C    CH3       0.000     24.229   67.109   12.780
+ CL0           H193   H    H         0.000     24.789   66.593   12.045
+ CL0           H192   H    H         0.000     23.246   66.717   12.817
+ CL0           H191   H    H         0.000     24.191   68.139   12.539
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CL0      O1D    n/a    CGD    START
+ CL0      CGD    O1D    CBD    .
+ CL0      O2D    CGD    CED    .
+ CL0      CED    O2D    HED1   .
+ CL0      HED3   CED    .      .
+ CL0      HED2   CED    .      .
+ CL0      HED1   CED    .      .
+ CL0      CBD    CGD    CHA    .
+ CL0      HBD    CBD    .      .
+ CL0      CAD    CBD    C3D    .
+ CL0      OBD    CAD    .      .
+ CL0      C3D    CAD    C4D    .
+ CL0      C2D    C3D    C1D    .
+ CL0      CMD    C2D    HMD1   .
+ CL0      HMD3   CMD    .      .
+ CL0      HMD2   CMD    .      .
+ CL0      HMD1   CMD    .      .
+ CL0      C1D    C2D    CHD    .
+ CL0      CHD    C1D    HHD    .
+ CL0      HHD    CHD    .      .
+ CL0      C4D    C3D    ND     .
+ CL0      ND     C4D    MG     .
+ CL0      MG     ND     NB     .
+ CL0      NC     MG     C4C    .
+ CL0      C4C    NC     C3C    .
+ CL0      C3C    C4C    C2C    .
+ CL0      CAC    C3C    CBC    .
+ CL0      HAC1   CAC    .      .
+ CL0      HAC2   CAC    .      .
+ CL0      CBC    CAC    HBC1   .
+ CL0      HBC3   CBC    .      .
+ CL0      HBC2   CBC    .      .
+ CL0      HBC1   CBC    .      .
+ CL0      C2C    C3C    C1C    .
+ CL0      CMC    C2C    HMC1   .
+ CL0      HMC3   CMC    .      .
+ CL0      HMC2   CMC    .      .
+ CL0      HMC1   CMC    .      .
+ CL0      C1C    C2C    CHC    .
+ CL0      CHC    C1C    HHC    .
+ CL0      HHC    CHC    .      .
+ CL0      NB     MG     C4B    .
+ CL0      C4B    NB     C3B    .
+ CL0      C3B    C4B    C2B    .
+ CL0      CAB    C3B    CBB    .
+ CL0      HAB    CAB    .      .
+ CL0      CBB    CAB    HBB1   .
+ CL0      HBB2   CBB    .      .
+ CL0      HBB1   CBB    .      .
+ CL0      C2B    C3B    C1B    .
+ CL0      CMB    C2B    HMB1   .
+ CL0      HMB3   CMB    .      .
+ CL0      HMB2   CMB    .      .
+ CL0      HMB1   CMB    .      .
+ CL0      C1B    C2B    CHB    .
+ CL0      CHB    C1B    HHB    .
+ CL0      HHB    CHB    .      .
+ CL0      CHA    CBD    C1A    .
+ CL0      C1A    CHA    NA     .
+ CL0      NA     C1A    C4A    .
+ CL0      C4A    NA     C3A    .
+ CL0      C3A    C4A    C2A    .
+ CL0      H3A    C3A    .      .
+ CL0      CMA    C3A    HMA1   .
+ CL0      HMA3   CMA    .      .
+ CL0      HMA2   CMA    .      .
+ CL0      HMA1   CMA    .      .
+ CL0      C2A    C3A    CAA    .
+ CL0      H2A    C2A    .      .
+ CL0      CAA    C2A    CBA    .
+ CL0      HAA1   CAA    .      .
+ CL0      HAA2   CAA    .      .
+ CL0      CBA    CAA    CGA    .
+ CL0      HBA1   CBA    .      .
+ CL0      HBA2   CBA    .      .
+ CL0      CGA    CBA    O2A    .
+ CL0      O1A    CGA    .      .
+ CL0      O2A    CGA    C1     .
+ CL0      C1     O2A    C2     .
+ CL0      H11    C1     .      .
+ CL0      H12    C1     .      .
+ CL0      C2     C1     C3     .
+ CL0      H2     C2     .      .
+ CL0      C3     C2     C5     .
+ CL0      C4     C3     H41    .
+ CL0      H43    C4     .      .
+ CL0      H42    C4     .      .
+ CL0      H41    C4     .      .
+ CL0      C5     C3     C6     .
+ CL0      H51    C5     .      .
+ CL0      H52    C5     .      .
+ CL0      C6     C5     C7     .
+ CL0      H61    C6     .      .
+ CL0      H62    C6     .      .
+ CL0      C7     C6     C8     .
+ CL0      H71    C7     .      .
+ CL0      H72    C7     .      .
+ CL0      C8     C7     C10    .
+ CL0      H8     C8     .      .
+ CL0      C9     C8     H91    .
+ CL0      H93    C9     .      .
+ CL0      H92    C9     .      .
+ CL0      H91    C9     .      .
+ CL0      C10    C8     C11    .
+ CL0      H101   C10    .      .
+ CL0      H102   C10    .      .
+ CL0      C11    C10    C12    .
+ CL0      H111   C11    .      .
+ CL0      H112   C11    .      .
+ CL0      C12    C11    C13    .
+ CL0      H121   C12    .      .
+ CL0      H122   C12    .      .
+ CL0      C13    C12    C15    .
+ CL0      H13    C13    .      .
+ CL0      C14    C13    H141   .
+ CL0      H143   C14    .      .
+ CL0      H142   C14    .      .
+ CL0      H141   C14    .      .
+ CL0      C15    C13    C16    .
+ CL0      H151   C15    .      .
+ CL0      H152   C15    .      .
+ CL0      C16    C15    C17    .
+ CL0      H161   C16    .      .
+ CL0      H162   C16    .      .
+ CL0      C17    C16    C18    .
+ CL0      H171   C17    .      .
+ CL0      H172   C17    .      .
+ CL0      C18    C17    C19    .
+ CL0      H18    C18    .      .
+ CL0      C20    C18    H201   .
+ CL0      H203   C20    .      .
+ CL0      H202   C20    .      .
+ CL0      H201   C20    .      .
+ CL0      C19    C18    H191   .
+ CL0      H193   C19    .      .
+ CL0      H192   C19    .      .
+ CL0      H191   C19    .      END
+ CL0      MG     NA     .    ADD
+ CL0      CHA    C4D    .    ADD
+ CL0      CHB    C4A    .    ADD
+ CL0      CHC    C4B    .    ADD
+ CL0      CHD    C4C    .    ADD
+ CL0      C1A    C2A    .    ADD
+ CL0      NB     C1B    .    ADD
+ CL0      NC     C1C    .    ADD
+ CL0      ND     C1D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CL0       MG        NA        single    1.955     0.020     1.955     0.020     
+CL0       NB        MG        single    2.035     0.020     2.035     0.020     
+CL0       NC        MG        single    2.035     0.020     2.035     0.020     
+CL0       MG        ND        single    2.045     0.020     2.045     0.020     
+CL0       C1A       CHA       single    1.490     0.020     1.490     0.020     
+CL0       CHA       C4D       double    1.490     0.020     1.490     0.020     
+CL0       CHA       CBD       single    1.480     0.020     1.480     0.020     
+CL0       CHB       C4A       double    1.340     0.020     1.340     0.020     
+CL0       CHB       C1B       single    1.483     0.020     1.483     0.020     
+CL0       HHB       CHB       single    1.082     0.013     0.975     0.010     
+CL0       CHC       C4B       single    1.483     0.020     1.483     0.020     
+CL0       CHC       C1C       double    1.483     0.020     1.483     0.020     
+CL0       HHC       CHC       single    1.082     0.013     0.975     0.010     
+CL0       CHD       C4C       single    1.483     0.020     1.483     0.020     
+CL0       CHD       C1D       double    1.483     0.020     1.483     0.020     
+CL0       HHD       CHD       single    1.082     0.013     0.975     0.010     
+CL0       NA        C1A       double    1.260     0.020     1.260     0.020     
+CL0       C4A       NA        single    1.330     0.020     1.330     0.020     
+CL0       C1A       C2A       single    1.500     0.020     1.500     0.020     
+CL0       C2A       C3A       single    1.524     0.020     1.524     0.020     
+CL0       CAA       C2A       single    1.524     0.020     1.524     0.020     
+CL0       H2A       C2A       single    1.089     0.010     0.989     0.005     
+CL0       C3A       C4A       single    1.500     0.020     1.500     0.020     
+CL0       CMA       C3A       single    1.524     0.020     1.524     0.020     
+CL0       H3A       C3A       single    1.089     0.010     0.989     0.005     
+CL0       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+CL0       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+CL0       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+CL0       CBA       CAA       single    1.524     0.020     1.524     0.020     
+CL0       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+CL0       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+CL0       CGA       CBA       single    1.510     0.020     1.510     0.020     
+CL0       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+CL0       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+CL0       O1A       CGA       deloc     1.220     0.020     1.220     0.020     
+CL0       O2A       CGA       deloc     1.454     0.020     1.454     0.020     
+CL0       C1        O2A       single    1.426     0.020     1.426     0.020     
+CL0       NB        C1B       single    1.337     0.020     1.337     0.020     
+CL0       C4B       NB        single    1.337     0.020     1.337     0.020     
+CL0       C1B       C2B       double    1.490     0.020     1.490     0.020     
+CL0       C2B       C3B       single    1.490     0.020     1.490     0.020     
+CL0       CMB       C2B       single    1.506     0.020     1.506     0.020     
+CL0       C3B       C4B       double    1.490     0.020     1.490     0.020     
+CL0       CAB       C3B       single    1.483     0.020     1.483     0.020     
+CL0       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+CL0       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+CL0       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+CL0       CBB       CAB       double    1.320     0.020     1.320     0.020     
+CL0       HAB       CAB       single    1.082     0.013     0.975     0.010     
+CL0       HBB1      CBB       single    1.082     0.013     0.975     0.010     
+CL0       HBB2      CBB       single    1.082     0.013     0.975     0.010     
+CL0       NC        C1C       single    1.337     0.020     1.337     0.020     
+CL0       C4C       NC        double    1.337     0.020     1.337     0.020     
+CL0       C1C       C2C       single    1.490     0.020     1.490     0.020     
+CL0       C2C       C3C       double    1.490     0.020     1.490     0.020     
+CL0       CMC       C2C       single    1.506     0.020     1.506     0.020     
+CL0       C3C       C4C       single    1.490     0.020     1.490     0.020     
+CL0       CAC       C3C       single    1.510     0.020     1.510     0.020     
+CL0       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+CL0       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+CL0       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+CL0       CBC       CAC       single    1.513     0.020     1.513     0.020     
+CL0       HAC1      CAC       single    1.089     0.010     0.989     0.005     
+CL0       HAC2      CAC       single    1.089     0.010     0.989     0.005     
+CL0       HBC1      CBC       single    1.089     0.010     0.989     0.005     
+CL0       HBC2      CBC       single    1.089     0.010     0.989     0.005     
+CL0       HBC3      CBC       single    1.089     0.010     0.989     0.005     
+CL0       ND        C1D       single    1.455     0.020     1.455     0.020     
+CL0       ND        C4D       single    1.405     0.020     1.405     0.020     
+CL0       C1D       C2D       single    1.490     0.020     1.490     0.020     
+CL0       C2D       C3D       double    1.490     0.020     1.490     0.020     
+CL0       CMD       C2D       single    1.506     0.020     1.506     0.020     
+CL0       C4D       C3D       single    1.390     0.020     1.390     0.020     
+CL0       C3D       CAD       single    1.490     0.020     1.490     0.020     
+CL0       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+CL0       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+CL0       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+CL0       OBD       CAD       double    1.285     0.020     1.285     0.020     
+CL0       CAD       CBD       single    1.480     0.020     1.480     0.020     
+CL0       CBD       CGD       single    1.500     0.020     1.500     0.020     
+CL0       HBD       CBD       single    1.089     0.010     0.989     0.005     
+CL0       CGD       O1D       deloc     1.220     0.020     1.220     0.020     
+CL0       O2D       CGD       deloc     1.454     0.020     1.454     0.020     
+CL0       CED       O2D       single    1.426     0.020     1.426     0.020     
+CL0       HED1      CED       single    1.089     0.010     0.989     0.005     
+CL0       HED2      CED       single    1.089     0.010     0.989     0.005     
+CL0       HED3      CED       single    1.089     0.010     0.989     0.005     
+CL0       C2        C1        single    1.510     0.020     1.510     0.020     
+CL0       H11       C1        single    1.089     0.010     0.989     0.005     
+CL0       H12       C1        single    1.089     0.010     0.989     0.005     
+CL0       C3        C2        double    1.340     0.020     1.340     0.020     
+CL0       H2        C2        single    1.082     0.013     0.975     0.010     
+CL0       C4        C3        single    1.500     0.020     1.500     0.020     
+CL0       C5        C3        single    1.510     0.020     1.510     0.020     
+CL0       H41       C4        single    1.089     0.010     0.989     0.005     
+CL0       H42       C4        single    1.089     0.010     0.989     0.005     
+CL0       H43       C4        single    1.089     0.010     0.989     0.005     
+CL0       C6        C5        single    1.524     0.020     1.524     0.020     
+CL0       H51       C5        single    1.089     0.010     0.989     0.005     
+CL0       H52       C5        single    1.089     0.010     0.989     0.005     
+CL0       C7        C6        single    1.524     0.020     1.524     0.020     
+CL0       H61       C6        single    1.089     0.010     0.989     0.005     
+CL0       H62       C6        single    1.089     0.010     0.989     0.005     
+CL0       C8        C7        single    1.524     0.020     1.524     0.020     
+CL0       H71       C7        single    1.089     0.010     0.989     0.005     
+CL0       H72       C7        single    1.089     0.010     0.989     0.005     
+CL0       C9        C8        single    1.524     0.020     1.524     0.020     
+CL0       C10       C8        single    1.524     0.020     1.524     0.020     
+CL0       H8        C8        single    1.089     0.010     0.989     0.005     
+CL0       H91       C9        single    1.089     0.010     0.989     0.005     
+CL0       H92       C9        single    1.089     0.010     0.989     0.005     
+CL0       H93       C9        single    1.089     0.010     0.989     0.005     
+CL0       C11       C10       single    1.524     0.020     1.524     0.020     
+CL0       H101      C10       single    1.089     0.010     0.989     0.005     
+CL0       H102      C10       single    1.089     0.010     0.989     0.005     
+CL0       C12       C11       single    1.524     0.020     1.524     0.020     
+CL0       H111      C11       single    1.089     0.010     0.989     0.005     
+CL0       H112      C11       single    1.089     0.010     0.989     0.005     
+CL0       C13       C12       single    1.524     0.020     1.524     0.020     
+CL0       H121      C12       single    1.089     0.010     0.989     0.005     
+CL0       H122      C12       single    1.089     0.010     0.989     0.005     
+CL0       C14       C13       single    1.524     0.020     1.524     0.020     
+CL0       C15       C13       single    1.524     0.020     1.524     0.020     
+CL0       H13       C13       single    1.089     0.010     0.989     0.005     
+CL0       H141      C14       single    1.089     0.010     0.989     0.005     
+CL0       H142      C14       single    1.089     0.010     0.989     0.005     
+CL0       H143      C14       single    1.089     0.010     0.989     0.005     
+CL0       C16       C15       single    1.524     0.020     1.524     0.020     
+CL0       H151      C15       single    1.089     0.010     0.989     0.005     
+CL0       H152      C15       single    1.089     0.010     0.989     0.005     
+CL0       C17       C16       single    1.524     0.020     1.524     0.020     
+CL0       H161      C16       single    1.089     0.010     0.989     0.005     
+CL0       H162      C16       single    1.089     0.010     0.989     0.005     
+CL0       C18       C17       single    1.524     0.020     1.524     0.020     
+CL0       H171      C17       single    1.089     0.010     0.989     0.005     
+CL0       H172      C17       single    1.089     0.010     0.989     0.005     
+CL0       C19       C18       single    1.524     0.020     1.524     0.020     
+CL0       C20       C18       single    1.524     0.020     1.524     0.020     
+CL0       H18       C18       single    1.089     0.010     0.989     0.005     
+CL0       H191      C19       single    1.089     0.010     0.989     0.005     
+CL0       H192      C19       single    1.089     0.010     0.989     0.005     
+CL0       H193      C19       single    1.089     0.010     0.989     0.005     
+CL0       H201      C20       single    1.089     0.010     0.989     0.005     
+CL0       H202      C20       single    1.089     0.010     0.989     0.005     
+CL0       H203      C20       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CL0      O1D    CGD    O2D     119.000    3.000
+ CL0      O1D    CGD    CBD     120.500    3.000
+ CL0      O2D    CGD    CBD     120.000    3.000
+ CL0      CGD    O2D    CED     120.000    3.000
+ CL0      O2D    CED    HED3    109.470    3.000
+ CL0      O2D    CED    HED2    109.470    3.000
+ CL0      O2D    CED    HED1    109.470    3.000
+ CL0      HED3   CED    HED2    109.470    3.000
+ CL0      HED3   CED    HED1    109.470    3.000
+ CL0      HED2   CED    HED1    109.470    3.000
+ CL0      CGD    CBD    HBD     108.810    3.000
+ CL0      CGD    CBD    CAD     109.500    3.000
+ CL0      CGD    CBD    CHA     109.500    3.000
+ CL0      HBD    CBD    CAD     109.470    3.000
+ CL0      HBD    CBD    CHA     109.470    3.000
+ CL0      CAD    CBD    CHA     109.500    3.000
+ CL0      CBD    CAD    OBD     108.000    3.000
+ CL0      CBD    CAD    C3D     108.000    3.000
+ CL0      OBD    CAD    C3D     108.000    3.000
+ CL0      CAD    C3D    C2D     108.000    3.000
+ CL0      CAD    C3D    C4D     108.000    3.000
+ CL0      C2D    C3D    C4D     108.000    3.000
+ CL0      C3D    C2D    CMD     108.000    3.000
+ CL0      C3D    C2D    C1D     108.000    3.000
+ CL0      CMD    C2D    C1D     126.000    3.000
+ CL0      C2D    CMD    HMD3    109.470    3.000
+ CL0      C2D    CMD    HMD2    109.470    3.000
+ CL0      C2D    CMD    HMD1    109.470    3.000
+ CL0      HMD3   CMD    HMD2    109.470    3.000
+ CL0      HMD3   CMD    HMD1    109.470    3.000
+ CL0      HMD2   CMD    HMD1    109.470    3.000
+ CL0      C2D    C1D    CHD     117.000    3.000
+ CL0      C2D    C1D    ND      108.000    3.000
+ CL0      CHD    C1D    ND      108.000    3.000
+ CL0      C1D    CHD    HHD     120.000    3.000
+ CL0      C1D    CHD    C4C     120.000    3.000
+ CL0      HHD    CHD    C4C     120.000    3.000
+ CL0      C3D    C4D    ND      108.000    3.000
+ CL0      C3D    C4D    CHA     108.000    3.000
+ CL0      ND     C4D    CHA     108.000    3.000
+ CL0      C4D    ND     MG      109.500    3.000
+ CL0      C4D    ND     C1D     109.500    3.000
+ CL0      MG     ND     C1D     109.500    3.000
+ CL0      ND     MG     NC       90.000    3.000
+ CL0      ND     MG     NB       90.000    3.000
+ CL0      ND     MG     NA       90.000    3.000
+ CL0      NC     MG     NB       90.000    3.000
+ CL0      NC     MG     NA       90.000    3.000
+ CL0      NB     MG     NA       90.000    3.000
+ CL0      MG     NC     C4C     126.000    3.000
+ CL0      MG     NC     C1C     126.000    3.000
+ CL0      C4C    NC     C1C     108.000    3.000
+ CL0      NC     C4C    C3C     108.000    3.000
+ CL0      NC     C4C    CHD     108.000    3.000
+ CL0      C3C    C4C    CHD     117.000    3.000
+ CL0      C4C    C3C    CAC     126.000    3.000
+ CL0      C4C    C3C    C2C     108.000    3.000
+ CL0      CAC    C3C    C2C     126.000    3.000
+ CL0      C3C    CAC    HAC1    109.470    3.000
+ CL0      C3C    CAC    HAC2    109.470    3.000
+ CL0      C3C    CAC    CBC     109.470    3.000
+ CL0      HAC1   CAC    HAC2    107.900    3.000
+ CL0      HAC1   CAC    CBC     109.470    3.000
+ CL0      HAC2   CAC    CBC     109.470    3.000
+ CL0      CAC    CBC    HBC3    109.470    3.000
+ CL0      CAC    CBC    HBC2    109.470    3.000
+ CL0      CAC    CBC    HBC1    109.470    3.000
+ CL0      HBC3   CBC    HBC2    109.470    3.000
+ CL0      HBC3   CBC    HBC1    109.470    3.000
+ CL0      HBC2   CBC    HBC1    109.470    3.000
+ CL0      C3C    C2C    CMC     126.000    3.000
+ CL0      C3C    C2C    C1C     108.000    3.000
+ CL0      CMC    C2C    C1C     126.000    3.000
+ CL0      C2C    CMC    HMC3    109.470    3.000
+ CL0      C2C    CMC    HMC2    109.470    3.000
+ CL0      C2C    CMC    HMC1    109.470    3.000
+ CL0      HMC3   CMC    HMC2    109.470    3.000
+ CL0      HMC3   CMC    HMC1    109.470    3.000
+ CL0      HMC2   CMC    HMC1    109.470    3.000
+ CL0      C2C    C1C    CHC     117.000    3.000
+ CL0      C2C    C1C    NC      108.000    3.000
+ CL0      CHC    C1C    NC      108.000    3.000
+ CL0      C1C    CHC    HHC     120.000    3.000
+ CL0      C1C    CHC    C4B     120.000    3.000
+ CL0      HHC    CHC    C4B     120.000    3.000
+ CL0      MG     NB     C4B     126.000    3.000
+ CL0      MG     NB     C1B     126.000    3.000
+ CL0      C4B    NB     C1B     108.000    3.000
+ CL0      NB     C4B    C3B     108.000    3.000
+ CL0      NB     C4B    CHC     108.000    3.000
+ CL0      C3B    C4B    CHC     117.000    3.000
+ CL0      C4B    C3B    CAB     117.000    3.000
+ CL0      C4B    C3B    C2B     108.000    3.000
+ CL0      CAB    C3B    C2B     117.000    3.000
+ CL0      C3B    CAB    HAB     120.000    3.000
+ CL0      C3B    CAB    CBB     120.000    3.000
+ CL0      HAB    CAB    CBB     120.000    3.000
+ CL0      CAB    CBB    HBB2    120.000    3.000
+ CL0      CAB    CBB    HBB1    120.000    3.000
+ CL0      HBB2   CBB    HBB1    120.000    3.000
+ CL0      C3B    C2B    CMB     126.000    3.000
+ CL0      C3B    C2B    C1B     108.000    3.000
+ CL0      CMB    C2B    C1B     126.000    3.000
+ CL0      C2B    CMB    HMB3    109.470    3.000
+ CL0      C2B    CMB    HMB2    109.470    3.000
+ CL0      C2B    CMB    HMB1    109.470    3.000
+ CL0      HMB3   CMB    HMB2    109.470    3.000
+ CL0      HMB3   CMB    HMB1    109.470    3.000
+ CL0      HMB2   CMB    HMB1    109.470    3.000
+ CL0      C2B    C1B    CHB     117.000    3.000
+ CL0      C2B    C1B    NB      108.000    3.000
+ CL0      CHB    C1B    NB      108.000    3.000
+ CL0      C1B    CHB    HHB     120.000    3.000
+ CL0      C1B    CHB    C4A     120.000    3.000
+ CL0      HHB    CHB    C4A     120.000    3.000
+ CL0      CBD    CHA    C1A     108.000    3.000
+ CL0      CBD    CHA    C4D     108.000    3.000
+ CL0      C1A    CHA    C4D     108.000    3.000
+ CL0      CHA    C1A    NA      120.000    3.000
+ CL0      CHA    C1A    C2A     120.000    3.000
+ CL0      NA     C1A    C2A     116.500    3.000
+ CL0      C1A    NA     C4A     120.000    3.000
+ CL0      C1A    NA     MG      120.000    3.000
+ CL0      C4A    NA     MG      120.000    3.000
+ CL0      NA     C4A    C3A     116.500    3.000
+ CL0      NA     C4A    CHB     116.500    3.000
+ CL0      C3A    C4A    CHB     120.000    3.000
+ CL0      C4A    C3A    H3A     108.810    3.000
+ CL0      C4A    C3A    CMA     109.470    3.000
+ CL0      C4A    C3A    C2A     109.470    3.000
+ CL0      H3A    C3A    CMA     108.340    3.000
+ CL0      H3A    C3A    C2A     108.340    3.000
+ CL0      CMA    C3A    C2A     111.000    3.000
+ CL0      C3A    CMA    HMA3    109.470    3.000
+ CL0      C3A    CMA    HMA2    109.470    3.000
+ CL0      C3A    CMA    HMA1    109.470    3.000
+ CL0      HMA3   CMA    HMA2    109.470    3.000
+ CL0      HMA3   CMA    HMA1    109.470    3.000
+ CL0      HMA2   CMA    HMA1    109.470    3.000
+ CL0      C3A    C2A    H2A     108.340    3.000
+ CL0      C3A    C2A    CAA     111.000    3.000
+ CL0      C3A    C2A    C1A     109.470    3.000
+ CL0      H2A    C2A    CAA     108.340    3.000
+ CL0      H2A    C2A    C1A     108.810    3.000
+ CL0      CAA    C2A    C1A     109.470    3.000
+ CL0      C2A    CAA    HAA1    109.470    3.000
+ CL0      C2A    CAA    HAA2    109.470    3.000
+ CL0      C2A    CAA    CBA     111.000    3.000
+ CL0      HAA1   CAA    HAA2    107.900    3.000
+ CL0      HAA1   CAA    CBA     109.470    3.000
+ CL0      HAA2   CAA    CBA     109.470    3.000
+ CL0      CAA    CBA    HBA1    109.470    3.000
+ CL0      CAA    CBA    HBA2    109.470    3.000
+ CL0      CAA    CBA    CGA     109.470    3.000
+ CL0      HBA1   CBA    HBA2    107.900    3.000
+ CL0      HBA1   CBA    CGA     109.470    3.000
+ CL0      HBA2   CBA    CGA     109.470    3.000
+ CL0      CBA    CGA    O1A     120.500    3.000
+ CL0      CBA    CGA    O2A     120.000    3.000
+ CL0      O1A    CGA    O2A     119.000    3.000
+ CL0      CGA    O2A    C1      120.000    3.000
+ CL0      O2A    C1     H11     109.470    3.000
+ CL0      O2A    C1     H12     109.470    3.000
+ CL0      O2A    C1     C2      109.500    3.000
+ CL0      H11    C1     H12     107.900    3.000
+ CL0      H11    C1     C2      109.470    3.000
+ CL0      H12    C1     C2      109.470    3.000
+ CL0      C1     C2     H2      120.000    3.000
+ CL0      C1     C2     C3      120.500    3.000
+ CL0      H2     C2     C3      120.000    3.000
+ CL0      C2     C3     C4      120.000    3.000
+ CL0      C2     C3     C5      120.000    3.000
+ CL0      C4     C3     C5      120.000    3.000
+ CL0      C3     C4     H43     109.470    3.000
+ CL0      C3     C4     H42     109.470    3.000
+ CL0      C3     C4     H41     109.470    3.000
+ CL0      H43    C4     H42     109.470    3.000
+ CL0      H43    C4     H41     109.470    3.000
+ CL0      H42    C4     H41     109.470    3.000
+ CL0      C3     C5     H51     109.470    3.000
+ CL0      C3     C5     H52     109.470    3.000
+ CL0      C3     C5     C6      109.470    3.000
+ CL0      H51    C5     H52     107.900    3.000
+ CL0      H51    C5     C6      109.470    3.000
+ CL0      H52    C5     C6      109.470    3.000
+ CL0      C5     C6     H61     109.470    3.000
+ CL0      C5     C6     H62     109.470    3.000
+ CL0      C5     C6     C7      111.000    3.000
+ CL0      H61    C6     H62     107.900    3.000
+ CL0      H61    C6     C7      109.470    3.000
+ CL0      H62    C6     C7      109.470    3.000
+ CL0      C6     C7     H71     109.470    3.000
+ CL0      C6     C7     H72     109.470    3.000
+ CL0      C6     C7     C8      111.000    3.000
+ CL0      H71    C7     H72     107.900    3.000
+ CL0      H71    C7     C8      109.470    3.000
+ CL0      H72    C7     C8      109.470    3.000
+ CL0      C7     C8     H8      108.340    3.000
+ CL0      C7     C8     C9      111.000    3.000
+ CL0      C7     C8     C10     109.470    3.000
+ CL0      H8     C8     C9      108.340    3.000
+ CL0      H8     C8     C10     108.340    3.000
+ CL0      C9     C8     C10     111.000    3.000
+ CL0      C8     C9     H93     109.470    3.000
+ CL0      C8     C9     H92     109.470    3.000
+ CL0      C8     C9     H91     109.470    3.000
+ CL0      H93    C9     H92     109.470    3.000
+ CL0      H93    C9     H91     109.470    3.000
+ CL0      H92    C9     H91     109.470    3.000
+ CL0      C8     C10    H101    109.470    3.000
+ CL0      C8     C10    H102    109.470    3.000
+ CL0      C8     C10    C11     111.000    3.000
+ CL0      H101   C10    H102    107.900    3.000
+ CL0      H101   C10    C11     109.470    3.000
+ CL0      H102   C10    C11     109.470    3.000
+ CL0      C10    C11    H111    109.470    3.000
+ CL0      C10    C11    H112    109.470    3.000
+ CL0      C10    C11    C12     111.000    3.000
+ CL0      H111   C11    H112    107.900    3.000
+ CL0      H111   C11    C12     109.470    3.000
+ CL0      H112   C11    C12     109.470    3.000
+ CL0      C11    C12    H121    109.470    3.000
+ CL0      C11    C12    H122    109.470    3.000
+ CL0      C11    C12    C13     111.000    3.000
+ CL0      H121   C12    H122    107.900    3.000
+ CL0      H121   C12    C13     109.470    3.000
+ CL0      H122   C12    C13     109.470    3.000
+ CL0      C12    C13    H13     108.340    3.000
+ CL0      C12    C13    C14     111.000    3.000
+ CL0      C12    C13    C15     109.470    3.000
+ CL0      H13    C13    C14     108.340    3.000
+ CL0      H13    C13    C15     108.340    3.000
+ CL0      C14    C13    C15     111.000    3.000
+ CL0      C13    C14    H143    109.470    3.000
+ CL0      C13    C14    H142    109.470    3.000
+ CL0      C13    C14    H141    109.470    3.000
+ CL0      H143   C14    H142    109.470    3.000
+ CL0      H143   C14    H141    109.470    3.000
+ CL0      H142   C14    H141    109.470    3.000
+ CL0      C13    C15    H151    109.470    3.000
+ CL0      C13    C15    H152    109.470    3.000
+ CL0      C13    C15    C16     111.000    3.000
+ CL0      H151   C15    H152    107.900    3.000
+ CL0      H151   C15    C16     109.470    3.000
+ CL0      H152   C15    C16     109.470    3.000
+ CL0      C15    C16    H161    109.470    3.000
+ CL0      C15    C16    H162    109.470    3.000
+ CL0      C15    C16    C17     111.000    3.000
+ CL0      H161   C16    H162    107.900    3.000
+ CL0      H161   C16    C17     109.470    3.000
+ CL0      H162   C16    C17     109.470    3.000
+ CL0      C16    C17    H171    109.470    3.000
+ CL0      C16    C17    H172    109.470    3.000
+ CL0      C16    C17    C18     111.000    3.000
+ CL0      H171   C17    H172    107.900    3.000
+ CL0      H171   C17    C18     109.470    3.000
+ CL0      H172   C17    C18     109.470    3.000
+ CL0      C17    C18    H18     108.340    3.000
+ CL0      C17    C18    C20     111.000    3.000
+ CL0      C17    C18    C19     111.000    3.000
+ CL0      H18    C18    C20     108.340    3.000
+ CL0      H18    C18    C19     108.340    3.000
+ CL0      C20    C18    C19     111.000    3.000
+ CL0      C18    C20    H203    109.470    3.000
+ CL0      C18    C20    H202    109.470    3.000
+ CL0      C18    C20    H201    109.470    3.000
+ CL0      H203   C20    H202    109.470    3.000
+ CL0      H203   C20    H201    109.470    3.000
+ CL0      H202   C20    H201    109.470    3.000
+ CL0      C18    C19    H193    109.470    3.000
+ CL0      C18    C19    H192    109.470    3.000
+ CL0      C18    C19    H191    109.470    3.000
+ CL0      H193   C19    H192    109.470    3.000
+ CL0      H193   C19    H191    109.470    3.000
+ CL0      H192   C19    H191    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CL0      var_1    O1D    CGD    O2D    CED        5.404   20.000   1
+ CL0      var_2    CGD    O2D    CED    HED1    -179.970   20.000   1
+ CL0      var_3    O1D    CGD    CBD    CHA       11.365   20.000   3
+ CL0      CONST_1  CGD    CBD    CAD    C3D        0.000    0.000   0
+ CL0      CONST_2  CBD    CAD    C3D    C4D       -9.633    0.000   0
+ CL0      CONST_3  CAD    C3D    C2D    C1D     -176.431    0.000   0
+ CL0      var_4    C3D    C2D    CMD    HMD1       0.346   20.000   1
+ CL0      CONST_4  C3D    C2D    C1D    CHD      180.000    0.000   0
+ CL0      var_5    C2D    C1D    CHD    C4C      174.837   20.000   1
+ CL0      var_6    C1D    CHD    C4C    NC        -0.611   20.000   1
+ CL0      CONST_5  CAD    C3D    C4D    ND      -179.304    0.000   0
+ CL0      CONST_6  C3D    C4D    ND     MG         0.000    0.000   0
+ CL0      CONST_7  C4D    ND     C1D    C2D        3.744    0.000   0
+ CL0      var_7    C4D    ND     MG     NB       100.727   20.000   1
+ CL0      var_8    ND     MG     NA     C1A      -12.812   20.000   1
+ CL0      var_9    ND     MG     NC     C4C       12.615   20.000   1
+ CL0      CONST_8  MG     NC     C1C    C2C     -170.675    0.000   0
+ CL0      CONST_9  MG     NC     C4C    C3C      172.599    0.000   0
+ CL0      CONST_10 NC     C4C    C3C    C2C        0.000    0.000   0
+ CL0      var_10   C4C    C3C    CAC    CBC      102.317   20.000   2
+ CL0      var_11   C3C    CAC    CBC    HBC1    -179.932   20.000   3
+ CL0      CONST_11 C4C    C3C    C2C    C1C        0.000    0.000   0
+ CL0      var_12   C3C    C2C    CMC    HMC1       1.690   20.000   1
+ CL0      CONST_12 C3C    C2C    C1C    CHC      180.000    0.000   0
+ CL0      var_13   C2C    C1C    CHC    C4B     -179.283   20.000   1
+ CL0      var_14   C1C    CHC    C4B    NB         1.634   20.000   1
+ CL0      var_15   ND     MG     NB     C4B       94.164   20.000   1
+ CL0      CONST_13 MG     NB     C1B    C2B     -167.410    0.000   0
+ CL0      CONST_14 MG     NB     C4B    C3B      166.865    0.000   0
+ CL0      CONST_15 NB     C4B    C3B    C2B        0.000    0.000   0
+ CL0      var_16   C4B    C3B    CAB    CBB        4.619   20.000   1
+ CL0      CONST_16 C3B    CAB    CBB    HBB1       0.001    0.000   0
+ CL0      CONST_17 C4B    C3B    C2B    C1B        0.000    0.000   0
+ CL0      var_17   C3B    C2B    CMB    HMB1      -1.369   20.000   1
+ CL0      CONST_18 C3B    C2B    C1B    CHB      180.000    0.000   0
+ CL0      var_18   C2B    C1B    CHB    C4A      176.446   20.000   1
+ CL0      var_19   C1B    CHB    C4A    NA        -1.355   20.000   1
+ CL0      var_20   CGD    CBD    CHA    C1A       54.851   20.000   1
+ CL0      CONST_19 CBD    CHA    C4D    C3D        4.461    0.000   0
+ CL0      var_21   CBD    CHA    C1A    NA       178.670   20.000   1
+ CL0      var_22   CHA    C1A    C2A    C3A     -177.426   20.000   3
+ CL0      CONST_20 CHA    C1A    NA     C4A      180.000    0.000   0
+ CL0      CONST_21 C1A    NA     C4A    C3A        0.000    0.000   0
+ CL0      var_23   NA     C4A    C3A    C2A        8.644   20.000   3
+ CL0      var_24   C4A    C3A    CMA    HMA1     -65.476   20.000   3
+ CL0      var_25   C4A    C3A    C2A    CAA      113.720   20.000   3
+ CL0      var_26   C3A    C2A    CAA    CBA       69.873   20.000   3
+ CL0      var_27   C2A    CAA    CBA    CGA       55.606   20.000   3
+ CL0      var_28   CAA    CBA    CGA    O2A     -120.523   20.000   3
+ CL0      var_29   CBA    CGA    O2A    C1       166.927   20.000   1
+ CL0      var_30   CGA    O2A    C1     C2       -80.006   20.000   1
+ CL0      var_31   O2A    C1     C2     C3      -101.781   20.000   1
+ CL0      CONST_22 C1     C2     C3     C5      -177.177    0.000   0
+ CL0      var_32   C2     C3     C4     H41     -179.929   20.000   1
+ CL0      var_33   C2     C3     C5     C6        75.542   20.000   3
+ CL0      var_34   C3     C5     C6     C7        97.580   20.000   3
+ CL0      var_35   C5     C6     C7     C8      -178.374   20.000   3
+ CL0      var_36   C6     C7     C8     C10       70.135   20.000   3
+ CL0      var_37   C7     C8     C9     H91      179.957   20.000   3
+ CL0      var_38   C7     C8     C10    C11       56.328   20.000   3
+ CL0      var_39   C8     C10    C11    C12      176.669   20.000   3
+ CL0      var_40   C10    C11    C12    C13      156.131   20.000   3
+ CL0      var_41   C11    C12    C13    C15      -67.452   20.000   3
+ CL0      var_42   C12    C13    C14    H141     179.977   20.000   3
+ CL0      var_43   C12    C13    C15    C16      -41.015   20.000   3
+ CL0      var_44   C13    C15    C16    C17      -71.688   20.000   3
+ CL0      var_45   C15    C16    C17    C18     -179.126   20.000   3
+ CL0      var_46   C16    C17    C18    C19      176.038   20.000   3
+ CL0      var_47   C17    C18    C20    H201    -179.934   20.000   3
+ CL0      var_48   C17    C18    C19    H191     179.982   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CL0      chir_01  C2A    C1A    C3A    CAA       positiv
+ CL0      chir_02  C3A    C2A    C4A    CMA       negativ
+ CL0      chir_04  CBD    CHA    CAD    CGD       positiv
+ CL0      chir_05  C8     C7     C9     C10       both
+ CL0      chir_06  C13    C12    C14    C15       positiv
+ CL0      chir_07  C18    C17    C19    C20       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CL0      plan-1    CHA       0.020
+ CL0      plan-1    C1A       0.020
+ CL0      plan-1    C4D       0.020
+ CL0      plan-1    CBD       0.020
+ CL0      plan-1    CAD       0.020
+ CL0      plan-1    ND        0.020
+ CL0      plan-1    C3D       0.020
+ CL0      plan-1    OBD       0.020
+ CL0      plan-1    C1D       0.020
+ CL0      plan-1    C2D       0.020
+ CL0      plan-1    CHD       0.020
+ CL0      plan-1    CMD       0.020
+ CL0      plan-1    HHD       0.020
+ CL0      plan-2    CHB       0.020
+ CL0      plan-2    C4A       0.020
+ CL0      plan-2    C1B       0.020
+ CL0      plan-2    HHB       0.020
+ CL0      plan-3    CHC       0.020
+ CL0      plan-3    C4B       0.020
+ CL0      plan-3    C1C       0.020
+ CL0      plan-3    HHC       0.020
+ CL0      plan-4    CHD       0.020
+ CL0      plan-4    C4C       0.020
+ CL0      plan-4    C1D       0.020
+ CL0      plan-4    HHD       0.020
+ CL0      plan-5    NA        0.020
+ CL0      plan-5    MG        0.020
+ CL0      plan-5    C1A       0.020
+ CL0      plan-5    C4A       0.020
+ CL0      plan-6    C1A       0.020
+ CL0      plan-6    CHA       0.020
+ CL0      plan-6    NA        0.020
+ CL0      plan-6    C2A       0.020
+ CL0      plan-7    C4A       0.020
+ CL0      plan-7    CHB       0.020
+ CL0      plan-7    NA        0.020
+ CL0      plan-7    C3A       0.020
+ CL0      plan-7    HHB       0.020
+ CL0      plan-8    CGA       0.020
+ CL0      plan-8    CBA       0.020
+ CL0      plan-8    O1A       0.020
+ CL0      plan-8    O2A       0.020
+ CL0      plan-9    NB        0.020
+ CL0      plan-9    MG        0.020
+ CL0      plan-9    C1B       0.020
+ CL0      plan-9    C4B       0.020
+ CL0      plan-9    C2B       0.020
+ CL0      plan-9    C3B       0.020
+ CL0      plan-9    CHB       0.020
+ CL0      plan-9    CMB       0.020
+ CL0      plan-9    CAB       0.020
+ CL0      plan-9    CHC       0.020
+ CL0      plan-9    HHB       0.020
+ CL0      plan-9    HAB       0.020
+ CL0      plan-9    HHC       0.020
+ CL0      plan-10   CAB       0.020
+ CL0      plan-10   C3B       0.020
+ CL0      plan-10   CBB       0.020
+ CL0      plan-10   HAB       0.020
+ CL0      plan-10   HBB1      0.020
+ CL0      plan-10   HBB2      0.020
+ CL0      plan-11   NC        0.020
+ CL0      plan-11   MG        0.020
+ CL0      plan-11   C1C       0.020
+ CL0      plan-11   C4C       0.020
+ CL0      plan-11   C2C       0.020
+ CL0      plan-11   C3C       0.020
+ CL0      plan-11   CHC       0.020
+ CL0      plan-11   CMC       0.020
+ CL0      plan-11   CAC       0.020
+ CL0      plan-11   CHD       0.020
+ CL0      plan-11   HHC       0.020
+ CL0      plan-11   HHD       0.020
+ CL0      plan-12   CGD       0.020
+ CL0      plan-12   CBD       0.020
+ CL0      plan-12   O1D       0.020
+ CL0      plan-12   O2D       0.020
+ CL0      plan-13   C2        0.020
+ CL0      plan-13   C1        0.020
+ CL0      plan-13   C3        0.020
+ CL0      plan-13   H2        0.020
+ CL0      plan-13   C4        0.020
+ CL0      plan-13   C5        0.020
+# ------------------------------------------------------

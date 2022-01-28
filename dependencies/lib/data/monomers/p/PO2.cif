@@ -1,0 +1,62 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PO2     PO2      HYPOPHOSPHITE     NON-POLYMER     3     3     .     
+#
+data_comp_PO2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PO2     P       P       P1      0       23.237      19.918      22.064      
+PO2     O1      O       OP      -1      22.678      18.754      23.161      
+PO2     O2      O       O       0       22.679      18.750      23.157      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PO2       P         O1        SINGLE    n         1.694     0.020     1.694     0.020     
+PO2       P         O2        DOUBLE    n         1.694     0.020     1.694     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PO2          O1           P          O2      120.000   3.00
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PO2 SMILES_CANONICAL CACTVS               3.341 "[O-]P=O"
+PO2 SMILES           CACTVS               3.341 "[O-]P=O"
+PO2 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[O-]P=O"
+PO2 SMILES           "OpenEye OEToolkits" 1.5.0 "[O-]P=O"
+PO2 InChI            InChI                1.03  "InChI=1S/HO2P/c1-3-2/h(H,1,2)/p-1"
+PO2 InChIKey         InChI                1.03  GQZXNSPRSGFJLY-UHFFFAOYSA-M
+PO2 ?                acedrg               204         "dictionary generator"                  
+PO2 ?                acedrg_database      11          "data source"                           
+PO2 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PO2 ?                refmac5              5.8.0234    "optimization tool"                     

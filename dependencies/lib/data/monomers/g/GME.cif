@@ -1,0 +1,204 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GME     GME     "5-O-methyl-glutamicacid"     peptide     22     11     .
+#
+data_comp_GME
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GME     C       C       C       0       -2.272      0.341       -1.299
+GME     N       N       NT3     1       -2.425      0.012       1.134
+GME     O       O       O       0       -2.185      -0.477      -2.237
+GME     CA      C       CH1     0       -1.484      0.029       -0.020
+GME     CB      C       CH2     0       -0.370      1.053       0.229
+GME     CD      C       C       0       1.597       -0.245      -0.722
+GME     CG      C       CH2     0       0.771       1.011       -0.778
+GME     CX      C       CH3     0       3.174       -1.456      0.600
+GME     OE1     O       O       0       1.546       -1.129      -1.541
+GME     OE2     O       O2      0       2.398       -0.256      0.346
+GME     OXT     O       OC      -1      -2.943      1.392       -1.311
+GME     H       H       H       0       -3.073      -0.615      1.000
+GME     H2      H       H       0       -2.817      0.829       1.230
+GME     H3      H       H       0       -1.975      -0.191      1.900
+GME     HA      H       H       0       -1.086      -0.867      -0.104
+GME     H2B     H       H       0       -0.004      0.900       1.125
+GME     H1B     H       H       0       -0.767      1.949       0.219
+GME     H1G     H       H       0       1.360       1.779       -0.615
+GME     H2G     H       H       0       0.407       1.110       -1.682
+GME     H1X     H       H       0       3.781       -1.612      -0.140
+GME     H2X     H       H       0       2.576       -2.215      0.696
+GME     H3X     H       H       0       3.683       -1.341      1.417
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+GME      N      n/a    CA     START
+GME      H      N      .      .
+GME      H2     N      .      .
+GME      H3     N      .      .
+GME      CA     N      C      .
+GME      HA     CA     .      .
+GME      CB     CA     CG     .
+GME      H2B    CB     .      .
+GME      H1B    CB     .      .
+GME      CG     CB     CD     .
+GME      H1G    CG     .      .
+GME      H2G    CG     .      .
+GME      CD     CG     OE1    .
+GME      OE2    CD     CX     .
+GME      CX     OE2    H1X    .
+GME      H3X    CX     .      .
+GME      H2X    CX     .      .
+GME      H1X    CX     .      .
+GME      OE1    CD     .      .
+GME      C      CA     OXT    .
+GME      O      C      .      .
+GME      OXT    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GME       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+GME       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+GME       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+GME       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+GME       CA        CB        SINGLE    n         1.530     0.011     1.530     0.011     
+GME       CB        CG        SINGLE    n         1.518     0.015     1.518     0.015     
+GME       CD        OE2       SINGLE    n         1.328     0.014     1.328     0.014     
+GME       CD        CG        SINGLE    n         1.503     0.018     1.503     0.018     
+GME       CX        OE2       SINGLE    n         1.447     0.013     1.447     0.013     
+GME       CD        OE1       DOUBLE    n         1.203     0.015     1.203     0.015     
+GME       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+GME       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+GME       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+GME       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+GME       CB        H2B       SINGLE    n         1.089     0.010     0.980     0.018     
+GME       CB        H1B       SINGLE    n         1.089     0.010     0.980     0.018     
+GME       CG        H1G       SINGLE    n         1.089     0.010     0.981     0.019     
+GME       CG        H2G       SINGLE    n         1.089     0.010     0.981     0.019     
+GME       CX        H1X       SINGLE    n         1.089     0.010     0.970     0.018     
+GME       CX        H2X       SINGLE    n         1.089     0.010     0.970     0.018     
+GME       CX        H3X       SINGLE    n         1.089     0.010     0.970     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GME           O           C         OXT     125.752    1.50
+GME           O           C          CA     117.124    1.50
+GME         OXT           C          CA     117.124    1.50
+GME          CA           N           H     110.062    1.93
+GME          CA           N          H2     110.062    1.93
+GME          CA           N          H3     110.062    1.93
+GME           H           N          H2     109.028    2.41
+GME           H           N          H3     109.028    2.41
+GME          H2           N          H3     109.028    2.41
+GME           N          CA           C     109.241    1.50
+GME           N          CA          CB     110.374    1.62
+GME           N          CA          HA     108.487    1.50
+GME           C          CA          CB     111.037    2.40
+GME           C          CA          HA     108.824    1.50
+GME          CB          CA          HA     108.967    1.50
+GME          CA          CB          CG     113.445    1.50
+GME          CA          CB         H2B     108.549    1.50
+GME          CA          CB         H1B     108.549    1.50
+GME          CG          CB         H2B     108.890    1.50
+GME          CG          CB         H1B     108.890    1.50
+GME         H2B          CB         H1B     107.844    1.50
+GME         OE2          CD          CG     111.739    2.14
+GME         OE2          CD         OE1     123.086    1.50
+GME          CG          CD         OE1     125.176    2.71
+GME          CB          CG          CD     113.694    1.50
+GME          CB          CG         H1G     108.906    1.50
+GME          CB          CG         H2G     108.906    1.50
+GME          CD          CG         H1G     108.883    1.50
+GME          CD          CG         H2G     108.883    1.50
+GME         H1G          CG         H2G     107.521    1.50
+GME         OE2          CX         H1X     109.367    1.50
+GME         OE2          CX         H2X     109.367    1.50
+GME         OE2          CX         H3X     109.367    1.50
+GME         H1X          CX         H2X     109.532    1.53
+GME         H1X          CX         H3X     109.532    1.53
+GME         H2X          CX         H3X     109.532    1.53
+GME          CD         OE2          CX     116.218    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GME             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+GME             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+GME            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+GME            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+GME             sp2_sp3_8         OE2          CD          CG          CB     120.000   10.00     6
+GME             sp2_sp2_1          CG          CD         OE2          CX     180.000   10.00     2
+GME            sp3_sp3_29         H1X          CX         OE2          CD     -60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+GME    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GME    plan-1           C   0.020
+GME    plan-1          CA   0.020
+GME    plan-1           O   0.020
+GME    plan-1         OXT   0.020
+GME    plan-2          CD   0.020
+GME    plan-2          CG   0.020
+GME    plan-2         OE1   0.020
+GME    plan-2         OE2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GME SMILES           ACDLabs              11.02 "O=C(OC)CCC(C(=O)O)N"
+GME SMILES_CANONICAL CACTVS               3.352 "COC(=O)CC[C@H](N)C(O)=O"
+GME SMILES           CACTVS               3.352 "COC(=O)CC[CH](N)C(O)=O"
+GME SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "COC(=O)CC[C@@H](C(=O)O)N"
+GME SMILES           "OpenEye OEToolkits" 1.7.0 "COC(=O)CCC(C(=O)O)N"
+GME InChI            InChI                1.03  "InChI=1S/C6H11NO4/c1-11-5(8)3-2-4(7)6(9)10/h4H,2-3,7H2,1H3,(H,9,10)/t4-/m0/s1"
+GME InChIKey         InChI                1.03  ZGEYCCHDTIDZAE-BYPYZUCNSA-N
+GME ?                acedrg               196         "dictionary generator"
+GME ?                acedrg_database      11          "data source"
+GME ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GME ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,335 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B70      B70 'tripotassium (1R)-4-biphenyl-4-yl-1-' non-polymer        43  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_B70
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ B70           KOAE   K    K         0.000      0.000    0.000    0.000
+ B70           OAE    O    O2        0.000     -0.976   -0.442   -2.102
+ B70           SAX    S    ST        0.000     -2.495   -0.529   -2.075
+ B70           OAF    O    OS        0.000     -2.841   -1.033   -3.357
+ B70           OAD    O    OS        0.000     -2.781   -1.269   -0.896
+ B70           CAV    C    CH1       0.000     -3.044    1.190   -1.897
+ B70           HAV    H    H         0.000     -2.723    1.578   -0.920
+ B70           PAW    P    P         0.000     -2.310    2.202   -3.223
+ B70           OAA    O    O         0.000     -2.833    1.754   -4.533
+ B70           OAC    O    O2        0.000     -0.708    2.038   -3.201
+ B70           KOAC   K    K         0.000      0.409    3.287   -4.862
+ B70           OAB    O    O2        0.000     -2.693    3.749   -2.992
+ B70           KOAB   K    K         0.000     -1.931    4.631   -0.941
+ B70           CAR    C    CH2       0.000     -4.570    1.251   -1.994
+ B70           HAR    H    H         0.000     -4.893    0.785   -2.927
+ B70           HARA   H    H         0.000     -4.893    2.294   -1.977
+ B70           CAP    C    CH2       0.000     -5.186    0.505   -0.809
+ B70           HAP    H    H         0.000     -4.861    0.971    0.124
+ B70           HAPA   H    H         0.000     -4.860   -0.537   -0.826
+ B70           CAQ    C    CH2       0.000     -6.712    0.565   -0.906
+ B70           HAQ    H    H         0.000     -7.036    0.099   -1.839
+ B70           HAQA   H    H         0.000     -7.037    1.608   -0.890
+ B70           CAS    C    CR6       0.000     -7.319   -0.169    0.261
+ B70           CAM    C    CR16      0.000     -7.597    0.510    1.434
+ B70           HAM    H    H         0.000     -7.377    1.567    1.511
+ B70           CAO    C    CR16      0.000     -8.154   -0.158    2.505
+ B70           HAO    H    H         0.000     -8.371    0.374    3.423
+ B70           CAL    C    CR16      0.000     -7.592   -1.521    0.158
+ B70           HAL    H    H         0.000     -7.368   -2.048   -0.761
+ B70           CAN    C    CR16      0.000     -8.149   -2.199    1.223
+ B70           HAN    H    H         0.000     -8.362   -3.258    1.141
+ B70           CAU    C    CR6       0.000     -8.436   -1.519    2.405
+ B70           CAT    C    CR6       0.000     -9.035   -2.243    3.553
+ B70           CAJ    C    CR16      0.000     -9.316   -3.604    3.453
+ B70           HAJ    H    H         0.000     -9.099   -4.136    2.535
+ B70           CAK    C    CR16      0.000     -9.317   -1.563    4.737
+ B70           HAK    H    H         0.000     -9.100   -0.505    4.821
+ B70           CAI    C    CR16      0.000     -9.874   -2.241    5.803
+ B70           HAI    H    H         0.000    -10.095   -1.715    6.723
+ B70           CAG    C    CR16      0.000    -10.151   -3.593    5.697
+ B70           HAG    H    H         0.000    -10.588   -4.121    6.535
+ B70           CAH    C    CR16      0.000     -9.872   -4.271    4.525
+ B70           HAH    H    H         0.000    -10.091   -5.329    4.448
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B70      KOAE   n/a    OAE    START
+ B70      OAE    KOAE   SAX    .
+ B70      SAX    OAE    CAV    .
+ B70      OAF    SAX    .      .
+ B70      OAD    SAX    .      .
+ B70      CAV    SAX    CAR    .
+ B70      HAV    CAV    .      .
+ B70      PAW    CAV    OAB    .
+ B70      OAA    PAW    .      .
+ B70      OAC    PAW    KOAC   .
+ B70      KOAC   OAC    .      .
+ B70      OAB    PAW    KOAB   .
+ B70      KOAB   OAB    .      .
+ B70      CAR    CAV    CAP    .
+ B70      HAR    CAR    .      .
+ B70      HARA   CAR    .      .
+ B70      CAP    CAR    CAQ    .
+ B70      HAP    CAP    .      .
+ B70      HAPA   CAP    .      .
+ B70      CAQ    CAP    CAS    .
+ B70      HAQ    CAQ    .      .
+ B70      HAQA   CAQ    .      .
+ B70      CAS    CAQ    CAL    .
+ B70      CAM    CAS    CAO    .
+ B70      HAM    CAM    .      .
+ B70      CAO    CAM    HAO    .
+ B70      HAO    CAO    .      .
+ B70      CAL    CAS    CAN    .
+ B70      HAL    CAL    .      .
+ B70      CAN    CAL    CAU    .
+ B70      HAN    CAN    .      .
+ B70      CAU    CAN    CAT    .
+ B70      CAT    CAU    CAK    .
+ B70      CAJ    CAT    HAJ    .
+ B70      HAJ    CAJ    .      .
+ B70      CAK    CAT    CAI    .
+ B70      HAK    CAK    .      .
+ B70      CAI    CAK    CAG    .
+ B70      HAI    CAI    .      .
+ B70      CAG    CAI    CAH    .
+ B70      HAG    CAG    .      .
+ B70      CAH    CAG    HAH    .
+ B70      HAH    CAH    .      END
+ B70      CAJ    CAH    .    ADD
+ B70      CAU    CAO    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B70       CAJ       CAH       double    1.390     0.020     1.390     0.020     
+B70       CAJ       CAT       single    1.390     0.020     1.390     0.020     
+B70       CAH       CAG       single    1.390     0.020     1.390     0.020     
+B70       CAG       CAI       double    1.390     0.020     1.390     0.020     
+B70       CAI       CAK       single    1.390     0.020     1.390     0.020     
+B70       CAK       CAT       double    1.390     0.020     1.390     0.020     
+B70       CAT       CAU       single    1.487     0.020     1.487     0.020     
+B70       CAU       CAO       double    1.390     0.020     1.390     0.020     
+B70       CAU       CAN       single    1.390     0.020     1.390     0.020     
+B70       CAO       CAM       single    1.390     0.020     1.390     0.020     
+B70       CAM       CAS       double    1.390     0.020     1.390     0.020     
+B70       CAN       CAL       double    1.390     0.020     1.390     0.020     
+B70       CAL       CAS       single    1.390     0.020     1.390     0.020     
+B70       CAS       CAQ       single    1.511     0.020     1.511     0.020     
+B70       CAQ       CAP       single    1.524     0.020     1.524     0.020     
+B70       CAP       CAR       single    1.524     0.020     1.524     0.020     
+B70       CAR       CAV       single    1.524     0.020     1.524     0.020     
+B70       CAV       SAX       single    1.665     0.020     1.665     0.020     
+B70       OAF       SAX       double    1.436     0.020     1.436     0.020     
+B70       SAX       OAE       single    1.535     0.020     1.535     0.020     
+B70       OAD       SAX       double    1.436     0.020     1.436     0.020     
+B70       PAW       CAV       single    1.815     0.020     1.815     0.020     
+B70       OAA       PAW       double    1.480     0.020     1.480     0.020     
+B70       OAB       PAW       single    1.610     0.020     1.610     0.020     
+B70       OAC       PAW       single    1.610     0.020     1.610     0.020     
+B70       HAJ       CAJ       single    1.082     0.013     0.975     0.010     
+B70       HAH       CAH       single    1.082     0.013     0.975     0.010     
+B70       HAG       CAG       single    1.082     0.013     0.975     0.010     
+B70       HAI       CAI       single    1.082     0.013     0.975     0.010     
+B70       HAK       CAK       single    1.082     0.013     0.975     0.010     
+B70       HAO       CAO       single    1.082     0.013     0.975     0.010     
+B70       HAM       CAM       single    1.082     0.013     0.975     0.010     
+B70       HAN       CAN       single    1.082     0.013     0.975     0.010     
+B70       HAL       CAL       single    1.082     0.013     0.975     0.010     
+B70       HAQ       CAQ       single    1.089     0.010     0.989     0.005     
+B70       HAQA      CAQ       single    1.089     0.010     0.989     0.005     
+B70       HAP       CAP       single    1.089     0.010     0.989     0.005     
+B70       HAPA      CAP       single    1.089     0.010     0.989     0.005     
+B70       HAR       CAR       single    1.089     0.010     0.989     0.005     
+B70       HARA      CAR       single    1.089     0.010     0.989     0.005     
+B70       HAV       CAV       single    1.089     0.010     0.989     0.005     
+B70       KOAB      OAB       single    2.700     0.020     2.700     0.020     
+B70       KOAC      OAC       single    2.700     0.020     2.700     0.020     
+B70       OAE       KOAE      single    2.700     0.020     2.700     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ B70      KOAE   OAE    SAX     120.000    3.000
+ B70      OAE    SAX    OAF     109.500    3.000
+ B70      OAE    SAX    OAD     109.500    3.000
+ B70      OAE    SAX    CAV     109.500    3.000
+ B70      OAF    SAX    OAD     109.500    3.000
+ B70      OAF    SAX    CAV     109.500    3.000
+ B70      OAD    SAX    CAV     109.500    3.000
+ B70      SAX    CAV    HAV     109.500    3.000
+ B70      SAX    CAV    PAW     109.500    3.000
+ B70      SAX    CAV    CAR     109.500    3.000
+ B70      HAV    CAV    PAW     109.500    3.000
+ B70      HAV    CAV    CAR     108.340    3.000
+ B70      PAW    CAV    CAR     109.500    3.000
+ B70      CAV    PAW    OAA     109.500    3.000
+ B70      CAV    PAW    OAC     109.500    3.000
+ B70      CAV    PAW    OAB     109.500    3.000
+ B70      OAA    PAW    OAC     109.500    3.000
+ B70      OAA    PAW    OAB     109.500    3.000
+ B70      OAC    PAW    OAB     102.600    3.000
+ B70      PAW    OAC    KOAC    120.000    3.000
+ B70      PAW    OAB    KOAB    120.000    3.000
+ B70      CAV    CAR    HAR     109.470    3.000
+ B70      CAV    CAR    HARA    109.470    3.000
+ B70      CAV    CAR    CAP     111.000    3.000
+ B70      HAR    CAR    HARA    107.900    3.000
+ B70      HAR    CAR    CAP     109.470    3.000
+ B70      HARA   CAR    CAP     109.470    3.000
+ B70      CAR    CAP    HAP     109.470    3.000
+ B70      CAR    CAP    HAPA    109.470    3.000
+ B70      CAR    CAP    CAQ     111.000    3.000
+ B70      HAP    CAP    HAPA    107.900    3.000
+ B70      HAP    CAP    CAQ     109.470    3.000
+ B70      HAPA   CAP    CAQ     109.470    3.000
+ B70      CAP    CAQ    HAQ     109.470    3.000
+ B70      CAP    CAQ    HAQA    109.470    3.000
+ B70      CAP    CAQ    CAS     109.470    3.000
+ B70      HAQ    CAQ    HAQA    107.900    3.000
+ B70      HAQ    CAQ    CAS     109.470    3.000
+ B70      HAQA   CAQ    CAS     109.470    3.000
+ B70      CAQ    CAS    CAM     120.000    3.000
+ B70      CAQ    CAS    CAL     120.000    3.000
+ B70      CAM    CAS    CAL     120.000    3.000
+ B70      CAS    CAM    HAM     120.000    3.000
+ B70      CAS    CAM    CAO     120.000    3.000
+ B70      HAM    CAM    CAO     120.000    3.000
+ B70      CAM    CAO    HAO     120.000    3.000
+ B70      CAM    CAO    CAU     120.000    3.000
+ B70      HAO    CAO    CAU     120.000    3.000
+ B70      CAS    CAL    HAL     120.000    3.000
+ B70      CAS    CAL    CAN     120.000    3.000
+ B70      HAL    CAL    CAN     120.000    3.000
+ B70      CAL    CAN    HAN     120.000    3.000
+ B70      CAL    CAN    CAU     120.000    3.000
+ B70      HAN    CAN    CAU     120.000    3.000
+ B70      CAN    CAU    CAT     120.000    3.000
+ B70      CAN    CAU    CAO     120.000    3.000
+ B70      CAT    CAU    CAO     120.000    3.000
+ B70      CAU    CAT    CAJ     120.000    3.000
+ B70      CAU    CAT    CAK     120.000    3.000
+ B70      CAJ    CAT    CAK     120.000    3.000
+ B70      CAT    CAJ    HAJ     120.000    3.000
+ B70      CAT    CAJ    CAH     120.000    3.000
+ B70      HAJ    CAJ    CAH     120.000    3.000
+ B70      CAT    CAK    HAK     120.000    3.000
+ B70      CAT    CAK    CAI     120.000    3.000
+ B70      HAK    CAK    CAI     120.000    3.000
+ B70      CAK    CAI    HAI     120.000    3.000
+ B70      CAK    CAI    CAG     120.000    3.000
+ B70      HAI    CAI    CAG     120.000    3.000
+ B70      CAI    CAG    HAG     120.000    3.000
+ B70      CAI    CAG    CAH     120.000    3.000
+ B70      HAG    CAG    CAH     120.000    3.000
+ B70      CAG    CAH    HAH     120.000    3.000
+ B70      CAG    CAH    CAJ     120.000    3.000
+ B70      HAH    CAH    CAJ     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ B70      var_1    KOAE   OAE    SAX    CAV       74.179   20.000   1
+ B70      var_2    OAE    SAX    CAV    CAR      174.510   20.000   1
+ B70      var_3    SAX    CAV    PAW    OAB     -175.127   20.000   1
+ B70      var_4    CAV    PAW    OAC    KOAC     179.973   20.000   1
+ B70      var_5    CAV    PAW    OAB    KOAB      60.037   20.000   1
+ B70      var_6    SAX    CAV    CAR    CAP       64.990   20.000   3
+ B70      var_7    CAV    CAR    CAP    CAQ     -179.973   20.000   3
+ B70      var_8    CAR    CAP    CAQ    CAS     -179.989   20.000   3
+ B70      var_9    CAP    CAQ    CAS    CAL      -89.795   20.000   2
+ B70      CONST_1  CAQ    CAS    CAM    CAO      180.000    0.000   0
+ B70      CONST_2  CAS    CAM    CAO    CAU        0.000    0.000   0
+ B70      CONST_3  CAQ    CAS    CAL    CAN      180.000    0.000   0
+ B70      CONST_4  CAS    CAL    CAN    CAU        0.000    0.000   0
+ B70      CONST_5  CAL    CAN    CAU    CAT      180.000    0.000   0
+ B70      CONST_6  CAN    CAU    CAO    CAM        0.000    0.000   0
+ B70      CONST_7  CAN    CAU    CAT    CAK      180.000    0.000   0
+ B70      CONST_8  CAU    CAT    CAJ    CAH      180.000    0.000   0
+ B70      CONST_9  CAT    CAJ    CAH    CAG        0.000    0.000   0
+ B70      CONST_10 CAU    CAT    CAK    CAI      180.000    0.000   0
+ B70      CONST_11 CAT    CAK    CAI    CAG        0.000    0.000   0
+ B70      CONST_12 CAK    CAI    CAG    CAH        0.000    0.000   0
+ B70      CONST_13 CAI    CAG    CAH    CAJ        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ B70      chir_01  CAV    CAR    PAW    SAX       positiv
+ B70      chir_02  SAX    CAV    OAF    OAE       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ B70      plan-1    CAJ       0.020
+ B70      plan-1    CAH       0.020
+ B70      plan-1    CAT       0.020
+ B70      plan-1    HAJ       0.020
+ B70      plan-1    CAG       0.020
+ B70      plan-1    CAI       0.020
+ B70      plan-1    CAK       0.020
+ B70      plan-1    HAH       0.020
+ B70      plan-1    HAG       0.020
+ B70      plan-1    HAI       0.020
+ B70      plan-1    HAK       0.020
+ B70      plan-1    CAU       0.020
+ B70      plan-2    CAU       0.020
+ B70      plan-2    CAT       0.020
+ B70      plan-2    CAO       0.020
+ B70      plan-2    CAN       0.020
+ B70      plan-2    CAM       0.020
+ B70      plan-2    CAL       0.020
+ B70      plan-2    CAS       0.020
+ B70      plan-2    HAO       0.020
+ B70      plan-2    HAM       0.020
+ B70      plan-2    HAN       0.020
+ B70      plan-2    HAL       0.020
+ B70      plan-2    CAQ       0.020
+# ------------------------------------------------------

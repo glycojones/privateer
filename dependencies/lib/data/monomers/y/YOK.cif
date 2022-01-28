@@ -1,0 +1,415 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+YOK      YOK '"[[2,2'-[4-CARBOXYETHYL-1,2-PHENYLEN' non-polymer        47  30 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_YOK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ YOK           O2A    O    OC       -0.500      0.000    0.000    0.000
+ YOK           CGA    C    C         0.000     -0.580   -0.139   -1.100
+ YOK           O1A    O    OC       -0.500      0.069   -0.042   -2.165
+ YOK           CBA    C    CH2       0.000     -2.060   -0.422   -1.141
+ YOK           HBA1   H    H         0.000     -2.233   -1.376   -1.644
+ YOK           HBA2   H    H         0.000     -2.567    0.374   -1.690
+ YOK           CAA    C    CH2       0.000     -2.606   -0.490    0.286
+ YOK           HAA1   H    H         0.000     -2.432    0.464    0.787
+ YOK           HAA2   H    H         0.000     -2.097   -1.286    0.833
+ YOK           CC5    C    CR6       0.000     -4.086   -0.774    0.244
+ YOK           CC6    C    CR16      0.000     -4.981    0.268    0.196
+ YOK           HC6    H    H         0.000     -4.620    1.288    0.189
+ YOK           CC1    C    CR6       0.000     -6.372    0.015    0.156
+ YOK           CC2    C    CR6       0.000     -6.823   -1.291    0.167
+ YOK           CC3    C    CR16      0.000     -5.887   -2.348    0.217
+ YOK           HC3    H    H         0.000     -6.234   -3.374    0.226
+ YOK           CC4    C    CR16      0.000     -4.539   -2.083    0.256
+ YOK           HC4    H    H         0.000     -3.829   -2.900    0.295
+ YOK           NA     N    N         1.000     -7.342    0.984    0.108
+ YOK           CA     C    C1        0.000     -7.126    2.264    0.092
+ YOK           HA     H    H         0.000     -6.100    2.590    0.117
+ YOK           CA1    C    CR6       0.000     -8.152    3.300    0.042
+ YOK           CA6    C    CR16      0.000     -7.753    4.646    0.039
+ YOK           HA6    H    H         0.000     -6.700    4.897    0.073
+ YOK           CA5    C    CR16      0.000     -8.696    5.646   -0.008
+ YOK           HA5    H    H         0.000     -8.385    6.684   -0.011
+ YOK           CA4    C    CR16      0.000    -10.043    5.326   -0.051
+ YOK           HA4    H    H         0.000    -10.783    6.116   -0.088
+ YOK           CA3    C    CR16      0.000    -10.447    4.008   -0.047
+ YOK           HA3    H    H         0.000    -11.504    3.772   -0.081
+ YOK           CA2    C    CR6       0.000     -9.509    2.974    0.000
+ YOK           OA     O    O2        0.000     -9.959    1.723    0.001
+ YOK           FE     FE   FE        0.000     -9.037    0.203    0.067
+ YOK           OB     O    O2        0.000    -10.699   -0.427    0.016
+ YOK           CB2    C    CR6       0.000    -11.865    0.198   -0.121
+ YOK           CB3    C    CR16      0.000    -13.026   -0.579   -0.143
+ YOK           HB3    H    H         0.000    -12.952   -1.656   -0.050
+ YOK           CB4    C    CR16      0.000    -14.265    0.009   -0.282
+ YOK           HB4    H    H         0.000    -15.155   -0.608   -0.298
+ YOK           CB5    C    CR16      0.000    -14.378    1.384   -0.402
+ YOK           HB5    H    H         0.000    -15.355    1.840   -0.509
+ YOK           CB6    C    CR16      0.000    -13.250    2.171   -0.384
+ YOK           HB6    H    H         0.000    -13.340    3.246   -0.478
+ YOK           CB1    C    CR6       0.000    -11.983    1.584   -0.244
+ YOK           CB     C    C1        0.000    -10.807    2.446   -0.232
+ YOK           HB     H    H         0.000    -10.973    3.506   -0.325
+ YOK           NB     N    N         1.000     -9.577    2.047   -0.119
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ YOK      O2A    n/a    CGA    START
+ YOK      CGA    O2A    CBA    .
+ YOK      O1A    CGA    .      .
+ YOK      CBA    CGA    CAA    .
+ YOK      HBA1   CBA    .      .
+ YOK      HBA2   CBA    .      .
+ YOK      CAA    CBA    CC5    .
+ YOK      HAA1   CAA    .      .
+ YOK      HAA2   CAA    .      .
+ YOK      CC5    CAA    CC6    .
+ YOK      CC6    CC5    CC1    .
+ YOK      HC6    CC6    .      .
+ YOK      CC1    CC6    NA     .
+ YOK      CC2    CC1    CC3    .
+ YOK      CC3    CC2    CC4    .
+ YOK      HC3    CC3    .      .
+ YOK      CC4    CC3    HC4    .
+ YOK      HC4    CC4    .      .
+ YOK      NA     CC1    FE     .
+ YOK      CA     NA     CA1    .
+ YOK      HA     CA     .      .
+ YOK      CA1    CA     CA2    .
+ YOK      CA6    CA1    CA5    .
+ YOK      HA6    CA6    .      .
+ YOK      CA5    CA6    CA4    .
+ YOK      HA5    CA5    .      .
+ YOK      CA4    CA5    CA3    .
+ YOK      HA4    CA4    .      .
+ YOK      CA3    CA4    HA3    .
+ YOK      HA3    CA3    .      .
+ YOK      CA2    CA1    OA     .
+ YOK      OA     CA2    .      .
+ YOK      FE     NA     OB     .
+ YOK      OB     FE     CB2    .
+ YOK      CB2    OB     CB3    .
+ YOK      CB3    CB2    CB4    .
+ YOK      HB3    CB3    .      .
+ YOK      CB4    CB3    CB5    .
+ YOK      HB4    CB4    .      .
+ YOK      CB5    CB4    CB6    .
+ YOK      HB5    CB5    .      .
+ YOK      CB6    CB5    CB1    .
+ YOK      HB6    CB6    .      .
+ YOK      CB1    CB6    CB     .
+ YOK      CB     CB1    NB     .
+ YOK      HB     CB     .      .
+ YOK      NB     CB     .      END
+ YOK      CC5    CC4    .    ADD
+ YOK      CC2    NB     .    ADD
+ YOK      NB     FE     .    ADD
+ YOK      FE     OA     .    ADD
+ YOK      CB2    CB1    .    ADD
+ YOK      CA2    CA3    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+YOK       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+YOK       CGA       O2A       deloc     1.250     0.020     1.250     0.020     
+YOK       CBA       CGA       single    1.510     0.020     1.510     0.020     
+YOK       CAA       CBA       single    1.524     0.020     1.524     0.020     
+YOK       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+YOK       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+YOK       CC5       CAA       single    1.511     0.020     1.511     0.020     
+YOK       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+YOK       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+YOK       CC5       CC4       double    1.390     0.020     1.390     0.020     
+YOK       CC6       CC5       single    1.390     0.020     1.390     0.020     
+YOK       CC4       CC3       single    1.390     0.020     1.390     0.020     
+YOK       HC4       CC4       single    1.082     0.013     0.975     0.010     
+YOK       CC3       CC2       double    1.390     0.020     1.390     0.020     
+YOK       HC3       CC3       single    1.082     0.013     0.975     0.010     
+YOK       CC2       NB        single    1.400     0.020     1.400     0.020     
+YOK       CC2       CC1       single    1.487     0.020     1.487     0.020     
+YOK       NB        FE        single    1.855     0.020     1.855     0.020     
+YOK       NB        CB        double    1.260     0.020     1.260     0.020     
+YOK       OB        FE        single    1.870     0.020     1.870     0.020     
+YOK       FE        OA        single    1.870     0.020     1.870     0.020     
+YOK       FE        NA        single    1.855     0.020     1.855     0.020     
+YOK       CB2       OB        single    1.370     0.020     1.370     0.020     
+YOK       CB2       CB1       single    1.487     0.020     1.487     0.020     
+YOK       CB3       CB2       double    1.390     0.020     1.390     0.020     
+YOK       CB1       CB6       double    1.390     0.020     1.390     0.020     
+YOK       CB        CB1       single    1.480     0.020     1.480     0.020     
+YOK       CB6       CB5       single    1.390     0.020     1.390     0.020     
+YOK       HB6       CB6       single    1.082     0.013     0.975     0.010     
+YOK       CB5       CB4       double    1.390     0.020     1.390     0.020     
+YOK       HB5       CB5       single    1.082     0.013     0.975     0.010     
+YOK       CB4       CB3       single    1.390     0.020     1.390     0.020     
+YOK       HB4       CB4       single    1.082     0.013     0.975     0.010     
+YOK       HB3       CB3       single    1.082     0.013     0.975     0.010     
+YOK       HB        CB        single    1.082     0.013     0.975     0.010     
+YOK       OA        CA2       single    1.370     0.020     1.370     0.020     
+YOK       CA2       CA3       double    1.390     0.020     1.390     0.020     
+YOK       CA2       CA1       single    1.487     0.020     1.487     0.020     
+YOK       CA3       CA4       single    1.390     0.020     1.390     0.020     
+YOK       HA3       CA3       single    1.082     0.013     0.975     0.010     
+YOK       CA4       CA5       double    1.390     0.020     1.390     0.020     
+YOK       HA4       CA4       single    1.082     0.013     0.975     0.010     
+YOK       CA5       CA6       single    1.390     0.020     1.390     0.020     
+YOK       HA5       CA5       single    1.082     0.013     0.975     0.010     
+YOK       CA6       CA1       double    1.390     0.020     1.390     0.020     
+YOK       HA6       CA6       single    1.082     0.013     0.975     0.010     
+YOK       CA1       CA        single    1.480     0.020     1.480     0.020     
+YOK       CA        NA        double    1.260     0.020     1.260     0.020     
+YOK       HA        CA        single    1.082     0.013     0.975     0.010     
+YOK       NA        CC1       single    1.400     0.020     1.400     0.020     
+YOK       CC1       CC6       double    1.390     0.020     1.390     0.020     
+YOK       HC6       CC6       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ YOK      O2A    CGA    O1A     123.000    3.000
+ YOK      O2A    CGA    CBA     118.500    3.000
+ YOK      O1A    CGA    CBA     118.500    3.000
+ YOK      CGA    CBA    HBA1    109.470    3.000
+ YOK      CGA    CBA    HBA2    109.470    3.000
+ YOK      CGA    CBA    CAA     109.470    3.000
+ YOK      HBA1   CBA    HBA2    107.900    3.000
+ YOK      HBA1   CBA    CAA     109.470    3.000
+ YOK      HBA2   CBA    CAA     109.470    3.000
+ YOK      CBA    CAA    HAA1    109.470    3.000
+ YOK      CBA    CAA    HAA2    109.470    3.000
+ YOK      CBA    CAA    CC5     109.470    3.000
+ YOK      HAA1   CAA    HAA2    107.900    3.000
+ YOK      HAA1   CAA    CC5     109.470    3.000
+ YOK      HAA2   CAA    CC5     109.470    3.000
+ YOK      CAA    CC5    CC6     120.000    3.000
+ YOK      CAA    CC5    CC4     120.000    3.000
+ YOK      CC6    CC5    CC4     120.000    3.000
+ YOK      CC5    CC6    HC6     120.000    3.000
+ YOK      CC5    CC6    CC1     120.000    3.000
+ YOK      HC6    CC6    CC1     120.000    3.000
+ YOK      CC6    CC1    CC2     120.000    3.000
+ YOK      CC6    CC1    NA      120.000    3.000
+ YOK      CC2    CC1    NA      120.000    3.000
+ YOK      CC1    CC2    CC3     120.000    3.000
+ YOK      CC1    CC2    NB      120.000    3.000
+ YOK      CC3    CC2    NB      120.000    3.000
+ YOK      CC2    CC3    HC3     120.000    3.000
+ YOK      CC2    CC3    CC4     120.000    3.000
+ YOK      HC3    CC3    CC4     120.000    3.000
+ YOK      CC3    CC4    HC4     120.000    3.000
+ YOK      CC3    CC4    CC5     120.000    3.000
+ YOK      HC4    CC4    CC5     120.000    3.000
+ YOK      CC1    NA     CA      120.000    3.000
+ YOK      CC1    NA     FE      120.000    3.000
+ YOK      CA     NA     FE      120.000    3.000
+ YOK      NA     CA     HA      120.000    3.000
+ YOK      NA     CA     CA1     120.000    3.000
+ YOK      HA     CA     CA1     120.000    3.000
+ YOK      CA     CA1    CA6     120.000    3.000
+ YOK      CA     CA1    CA2     120.000    3.000
+ YOK      CA6    CA1    CA2     120.000    3.000
+ YOK      CA1    CA6    HA6     120.000    3.000
+ YOK      CA1    CA6    CA5     120.000    3.000
+ YOK      HA6    CA6    CA5     120.000    3.000
+ YOK      CA6    CA5    HA5     120.000    3.000
+ YOK      CA6    CA5    CA4     120.000    3.000
+ YOK      HA5    CA5    CA4     120.000    3.000
+ YOK      CA5    CA4    HA4     120.000    3.000
+ YOK      CA5    CA4    CA3     120.000    3.000
+ YOK      HA4    CA4    CA3     120.000    3.000
+ YOK      CA4    CA3    HA3     120.000    3.000
+ YOK      CA4    CA3    CA2     120.000    3.000
+ YOK      HA3    CA3    CA2     120.000    3.000
+ YOK      CA1    CA2    OA      120.000    3.000
+ YOK      CA1    CA2    CA3     120.000    3.000
+ YOK      OA     CA2    CA3     120.000    3.000
+ YOK      CA2    OA     FE      120.000    3.000
+ YOK      NA     FE     OB      180.000    3.000
+ YOK      NA     FE     NB       90.000    3.000
+ YOK      NA     FE     OA       90.000    3.000
+ YOK      NB     FE     OA      180.000    3.000
+ YOK      OB     FE     NB       90.000    3.000
+ YOK      OB     FE     OA       90.000    3.000
+ YOK      FE     OB     CB2     120.000    3.000
+ YOK      OB     CB2    CB3     120.000    3.000
+ YOK      OB     CB2    CB1     120.000    3.000
+ YOK      CB3    CB2    CB1     120.000    3.000
+ YOK      CB2    CB3    HB3     120.000    3.000
+ YOK      CB2    CB3    CB4     120.000    3.000
+ YOK      HB3    CB3    CB4     120.000    3.000
+ YOK      CB3    CB4    HB4     120.000    3.000
+ YOK      CB3    CB4    CB5     120.000    3.000
+ YOK      HB4    CB4    CB5     120.000    3.000
+ YOK      CB4    CB5    HB5     120.000    3.000
+ YOK      CB4    CB5    CB6     120.000    3.000
+ YOK      HB5    CB5    CB6     120.000    3.000
+ YOK      CB5    CB6    HB6     120.000    3.000
+ YOK      CB5    CB6    CB1     120.000    3.000
+ YOK      HB6    CB6    CB1     120.000    3.000
+ YOK      CB6    CB1    CB      120.000    3.000
+ YOK      CB6    CB1    CB2     120.000    3.000
+ YOK      CB     CB1    CB2     120.000    3.000
+ YOK      CB1    CB     HB      120.000    3.000
+ YOK      CB1    CB     NB      120.000    3.000
+ YOK      HB     CB     NB      120.000    3.000
+ YOK      CB     NB     CC2     120.000    3.000
+ YOK      CB     NB     FE      120.000    3.000
+ YOK      CC2    NB     FE      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ YOK      var_1    O2A    CGA    CBA    CAA       -0.008   20.000   3
+ YOK      var_2    CGA    CBA    CAA    CC5     -179.960   20.000   3
+ YOK      var_3    CBA    CAA    CC5    CC6      -90.086   20.000   2
+ YOK      CONST_1  CAA    CC5    CC4    CC3      180.000    0.000   0
+ YOK      CONST_2  CAA    CC5    CC6    CC1      180.000    0.000   0
+ YOK      CONST_3  CC5    CC6    CC1    NA       180.000    0.000   0
+ YOK      CONST_4  CC6    CC1    CC2    CC3        0.000    0.000   0
+ YOK      var_4    CC1    CC2    NB     CB       180.000   20.000   1
+ YOK      CONST_5  CC1    CC2    CC3    CC4        0.000    0.000   0
+ YOK      CONST_6  CC2    CC3    CC4    CC5        0.000    0.000   0
+ YOK      var_5    CC6    CC1    NA     FE       180.000   20.000   1
+ YOK      var_6    CC1    NA     CA     CA1      180.000   20.000   1
+ YOK      var_7    NA     CA     CA1    CA2        0.000   20.000   1
+ YOK      CONST_7  CA     CA1    CA6    CA5      180.000    0.000   0
+ YOK      CONST_8  CA1    CA6    CA5    CA4        0.000    0.000   0
+ YOK      CONST_9  CA6    CA5    CA4    CA3        0.000    0.000   0
+ YOK      CONST_10 CA5    CA4    CA3    CA2        0.000    0.000   0
+ YOK      CONST_11 CA     CA1    CA2    OA         0.000    0.000   0
+ YOK      CONST_12 CA1    CA2    CA3    CA4        0.000    0.000   0
+ YOK      var_8    CA1    CA2    OA     FE         0.000   20.000   1
+ YOK      var_9    CC1    NA     FE     NB         0.000   20.000   1
+ YOK      var_10   CA2    OA     FE     NA         0.000   20.000   1
+ YOK      var_11   CB2    OB     FE     NB         0.000   20.000   1
+ YOK      var_12   FE     OB     CB2    CB3      180.000   20.000   1
+ YOK      CONST_13 OB     CB2    CB1    CB6      180.000    0.000   0
+ YOK      CONST_14 OB     CB2    CB3    CB4      180.000    0.000   0
+ YOK      CONST_15 CB2    CB3    CB4    CB5        0.000    0.000   0
+ YOK      CONST_16 CB3    CB4    CB5    CB6        0.000    0.000   0
+ YOK      CONST_17 CB4    CB5    CB6    CB1        0.000    0.000   0
+ YOK      CONST_18 CB5    CB6    CB1    CB       180.000    0.000   0
+ YOK      var_13   CB6    CB1    CB     NB       180.000   20.000   1
+ YOK      var_14   CB1    CB     NB     CC2      180.000   20.000   1
+ YOK      var_15   CC2    NB     FE     NA         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ YOK      chir_01  FE     NA     OB     NB        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ YOK      plan-1    CGA       0.020
+ YOK      plan-1    O1A       0.020
+ YOK      plan-1    O2A       0.020
+ YOK      plan-1    CBA       0.020
+ YOK      plan-2    CC5       0.020
+ YOK      plan-2    CAA       0.020
+ YOK      plan-2    CC4       0.020
+ YOK      plan-2    CC6       0.020
+ YOK      plan-2    CC3       0.020
+ YOK      plan-2    CC2       0.020
+ YOK      plan-2    CC1       0.020
+ YOK      plan-2    HC4       0.020
+ YOK      plan-2    HC3       0.020
+ YOK      plan-2    NB        0.020
+ YOK      plan-2    NA        0.020
+ YOK      plan-2    HC6       0.020
+ YOK      plan-3    NB        0.020
+ YOK      plan-3    CC2       0.020
+ YOK      plan-3    FE        0.020
+ YOK      plan-3    CB        0.020
+ YOK      plan-3    HB        0.020
+ YOK      plan-4    CB2       0.020
+ YOK      plan-4    OB        0.020
+ YOK      plan-4    CB1       0.020
+ YOK      plan-4    CB3       0.020
+ YOK      plan-4    CB6       0.020
+ YOK      plan-4    CB5       0.020
+ YOK      plan-4    CB4       0.020
+ YOK      plan-4    CB        0.020
+ YOK      plan-4    HB6       0.020
+ YOK      plan-4    HB5       0.020
+ YOK      plan-4    HB4       0.020
+ YOK      plan-4    HB3       0.020
+ YOK      plan-4    HB        0.020
+ YOK      plan-5    CB        0.020
+ YOK      plan-5    NB        0.020
+ YOK      plan-5    CB1       0.020
+ YOK      plan-5    HB        0.020
+ YOK      plan-6    CA2       0.020
+ YOK      plan-6    OA        0.020
+ YOK      plan-6    CA3       0.020
+ YOK      plan-6    CA1       0.020
+ YOK      plan-6    CA4       0.020
+ YOK      plan-6    CA5       0.020
+ YOK      plan-6    CA6       0.020
+ YOK      plan-6    HA3       0.020
+ YOK      plan-6    HA4       0.020
+ YOK      plan-6    HA5       0.020
+ YOK      plan-6    HA6       0.020
+ YOK      plan-6    CA        0.020
+ YOK      plan-6    HA        0.020
+ YOK      plan-7    CA        0.020
+ YOK      plan-7    CA1       0.020
+ YOK      plan-7    NA        0.020
+ YOK      plan-7    HA        0.020
+ YOK      plan-8    NA        0.020
+ YOK      plan-8    FE        0.020
+ YOK      plan-8    CA        0.020
+ YOK      plan-8    CC1       0.020
+ YOK      plan-8    HA        0.020
+# ------------------------------------------------------

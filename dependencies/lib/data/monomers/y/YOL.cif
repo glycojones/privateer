@@ -1,0 +1,383 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+YOL      YOL '"[[2,2'-[4-CARBOXY-1,2-PHENYLENEBIS(' non-polymer        41  28 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_YOL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ YOL           O1A    O    OC       -0.500      0.000    0.000    0.000
+ YOL           CAA    C    C         0.000     -0.548    1.124    0.011
+ YOL           O2A    O    OC       -0.500      0.151    2.162    0.016
+ YOL           CC5    C    CR6       0.000     -2.020    1.228    0.019
+ YOL           CC4    C    CR16      0.000     -2.635    2.486    0.031
+ YOL           HC4    H    H         0.000     -2.029    3.383    0.037
+ YOL           CC3    C    CR16      0.000     -3.991    2.583    0.034
+ YOL           HC3    H    H         0.000     -4.457    3.560    0.043
+ YOL           CC2    C    CR6       0.000     -4.800    1.420    0.025
+ YOL           NB     N    N         1.000     -6.169    1.431    0.017
+ YOL           CB     C    C1        0.000     -6.912    2.497    0.005
+ YOL           HB     H    H         0.000     -6.406    3.448    0.007
+ YOL           CB1    C    CR6       0.000     -8.368    2.519   -0.010
+ YOL           CB6    C    CR16      0.000     -9.027    3.759   -0.024
+ YOL           HB6    H    H         0.000     -8.451    4.676   -0.021
+ YOL           CB5    C    CR16      0.000    -10.401    3.812   -0.042
+ YOL           HB5    H    H         0.000    -10.906    4.770   -0.054
+ YOL           CB4    C    CR16      0.000    -11.139    2.639   -0.045
+ YOL           HB4    H    H         0.000    -12.221    2.684   -0.059
+ YOL           CB3    C    CR16      0.000    -10.504    1.416   -0.030
+ YOL           HB3    H    H         0.000    -11.093    0.507   -0.032
+ YOL           CB2    C    CR6       0.000     -9.110    1.335   -0.012
+ YOL           OB     O    O2        0.000     -8.555    0.126    0.002
+ YOL           FE     FE   FE        0.000     -6.833   -0.314    0.020
+ YOL           NA     N    N         1.000     -5.060   -0.901    0.018
+ YOL           CC1    C    CR6       0.000     -4.204    0.171    0.019
+ YOL           CC6    C    CR16      0.000     -2.798    0.076    0.014
+ YOL           HC6    H    H         0.000     -2.322   -0.897    0.007
+ YOL           OA     O    O2        0.000     -7.581   -1.927    0.006
+ YOL           CA2    C    CR6       0.000     -8.851   -2.300   -0.129
+ YOL           CA1    C    CR6       0.000     -9.900   -1.393   -0.297
+ YOL           CA     C    C1        0.000     -9.661    0.044   -0.334
+ YOL           HA     H    H         0.000    -10.268    0.931   -0.409
+ YOL           CA3    C    CR16      0.000     -9.140   -3.666   -0.099
+ YOL           HA3    H    H         0.000     -8.337   -4.380    0.031
+ YOL           CA4    C    CR16      0.000    -10.436   -4.114   -0.234
+ YOL           HA4    H    H         0.000    -10.644   -5.177   -0.210
+ YOL           CA5    C    CR16      0.000    -11.476   -3.214   -0.401
+ YOL           HA5    H    H         0.000    -12.493   -3.573   -0.507
+ YOL           CA6    C    CR16      0.000    -11.216   -1.863   -0.433
+ YOL           HA6    H    H         0.000    -12.029   -1.160   -0.564
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ YOL      O1A    n/a    CAA    START
+ YOL      CAA    O1A    CC5    .
+ YOL      O2A    CAA    .      .
+ YOL      CC5    CAA    CC4    .
+ YOL      CC4    CC5    CC3    .
+ YOL      HC4    CC4    .      .
+ YOL      CC3    CC4    CC2    .
+ YOL      HC3    CC3    .      .
+ YOL      CC2    CC3    NB     .
+ YOL      NB     CC2    FE     .
+ YOL      CB     NB     CB1    .
+ YOL      HB     CB     .      .
+ YOL      CB1    CB     CB2    .
+ YOL      CB6    CB1    CB5    .
+ YOL      HB6    CB6    .      .
+ YOL      CB5    CB6    CB4    .
+ YOL      HB5    CB5    .      .
+ YOL      CB4    CB5    CB3    .
+ YOL      HB4    CB4    .      .
+ YOL      CB3    CB4    HB3    .
+ YOL      HB3    CB3    .      .
+ YOL      CB2    CB1    OB     .
+ YOL      OB     CB2    .      .
+ YOL      FE     NB     OA     .
+ YOL      NA     FE     CC1    .
+ YOL      CC1    NA     CC6    .
+ YOL      CC6    CC1    HC6    .
+ YOL      HC6    CC6    .      .
+ YOL      OA     FE     CA2    .
+ YOL      CA2    OA     CA3    .
+ YOL      CA1    CA2    CA     .
+ YOL      CA     CA1    HA     .
+ YOL      HA     CA     .      .
+ YOL      CA3    CA2    CA4    .
+ YOL      HA3    CA3    .      .
+ YOL      CA4    CA3    CA5    .
+ YOL      HA4    CA4    .      .
+ YOL      CA5    CA4    CA6    .
+ YOL      HA5    CA5    .      .
+ YOL      CA6    CA5    HA6    .
+ YOL      HA6    CA6    .      END
+ YOL      CC5    CC6    .    ADD
+ YOL      CC1    CC2    .    ADD
+ YOL      NA     CA     .    ADD
+ YOL      CA1    CA6    .    ADD
+ YOL      FE     OB     .    ADD
+ YOL      CB2    CB3    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+YOL       O2A       CAA       deloc     1.250     0.020     1.250     0.020     
+YOL       CAA       O1A       deloc     1.250     0.020     1.250     0.020     
+YOL       CC5       CAA       single    1.500     0.020     1.500     0.020     
+YOL       CC5       CC6       single    1.390     0.020     1.390     0.020     
+YOL       CC4       CC5       double    1.390     0.020     1.390     0.020     
+YOL       CC6       CC1       double    1.390     0.020     1.390     0.020     
+YOL       HC6       CC6       single    1.082     0.013     0.975     0.010     
+YOL       CC1       CC2       single    1.487     0.020     1.487     0.020     
+YOL       CC1       NA        single    1.400     0.020     1.400     0.020     
+YOL       CC2       CC3       double    1.390     0.020     1.390     0.020     
+YOL       NB        CC2       single    1.400     0.020     1.400     0.020     
+YOL       CC3       CC4       single    1.390     0.020     1.390     0.020     
+YOL       HC3       CC3       single    1.082     0.013     0.975     0.010     
+YOL       HC4       CC4       single    1.082     0.013     0.975     0.010     
+YOL       NA        CA        double    1.260     0.020     1.260     0.020     
+YOL       NA        FE        single    1.855     0.020     1.855     0.020     
+YOL       CA        CA1       single    1.480     0.020     1.480     0.020     
+YOL       HA        CA        single    1.082     0.013     0.975     0.010     
+YOL       CA1       CA6       double    1.390     0.020     1.390     0.020     
+YOL       CA1       CA2       single    1.487     0.020     1.487     0.020     
+YOL       CA6       CA5       single    1.390     0.020     1.390     0.020     
+YOL       HA6       CA6       single    1.082     0.013     0.975     0.010     
+YOL       CA5       CA4       double    1.390     0.020     1.390     0.020     
+YOL       HA5       CA5       single    1.082     0.013     0.975     0.010     
+YOL       CA4       CA3       single    1.390     0.020     1.390     0.020     
+YOL       HA4       CA4       single    1.082     0.013     0.975     0.010     
+YOL       CA3       CA2       double    1.390     0.020     1.390     0.020     
+YOL       HA3       CA3       single    1.082     0.013     0.975     0.010     
+YOL       CA2       OA        single    1.370     0.020     1.370     0.020     
+YOL       OA        FE        single    1.870     0.020     1.870     0.020     
+YOL       FE        OB        single    1.870     0.020     1.870     0.020     
+YOL       FE        NB        single    1.855     0.020     1.855     0.020     
+YOL       OB        CB2       single    1.370     0.020     1.370     0.020     
+YOL       CB2       CB3       double    1.390     0.020     1.390     0.020     
+YOL       CB2       CB1       single    1.487     0.020     1.487     0.020     
+YOL       CB3       CB4       single    1.390     0.020     1.390     0.020     
+YOL       HB3       CB3       single    1.082     0.013     0.975     0.010     
+YOL       CB4       CB5       double    1.390     0.020     1.390     0.020     
+YOL       HB4       CB4       single    1.082     0.013     0.975     0.010     
+YOL       CB5       CB6       single    1.390     0.020     1.390     0.020     
+YOL       HB5       CB5       single    1.082     0.013     0.975     0.010     
+YOL       CB6       CB1       double    1.390     0.020     1.390     0.020     
+YOL       HB6       CB6       single    1.082     0.013     0.975     0.010     
+YOL       CB1       CB        single    1.480     0.020     1.480     0.020     
+YOL       CB        NB        double    1.260     0.020     1.260     0.020     
+YOL       HB        CB        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ YOL      O1A    CAA    O2A     123.000    3.000
+ YOL      O1A    CAA    CC5     120.000    3.000
+ YOL      O2A    CAA    CC5     120.000    3.000
+ YOL      CAA    CC5    CC4     120.000    3.000
+ YOL      CAA    CC5    CC6     120.000    3.000
+ YOL      CC4    CC5    CC6     120.000    3.000
+ YOL      CC5    CC4    HC4     120.000    3.000
+ YOL      CC5    CC4    CC3     120.000    3.000
+ YOL      HC4    CC4    CC3     120.000    3.000
+ YOL      CC4    CC3    HC3     120.000    3.000
+ YOL      CC4    CC3    CC2     120.000    3.000
+ YOL      HC3    CC3    CC2     120.000    3.000
+ YOL      CC3    CC2    NB      120.000    3.000
+ YOL      CC3    CC2    CC1     120.000    3.000
+ YOL      NB     CC2    CC1     120.000    3.000
+ YOL      CC2    NB     CB      120.000    3.000
+ YOL      CC2    NB     FE      120.000    3.000
+ YOL      CB     NB     FE      120.000    3.000
+ YOL      NB     CB     HB      120.000    3.000
+ YOL      NB     CB     CB1     120.000    3.000
+ YOL      HB     CB     CB1     120.000    3.000
+ YOL      CB     CB1    CB6     120.000    3.000
+ YOL      CB     CB1    CB2     120.000    3.000
+ YOL      CB6    CB1    CB2     120.000    3.000
+ YOL      CB1    CB6    HB6     120.000    3.000
+ YOL      CB1    CB6    CB5     120.000    3.000
+ YOL      HB6    CB6    CB5     120.000    3.000
+ YOL      CB6    CB5    HB5     120.000    3.000
+ YOL      CB6    CB5    CB4     120.000    3.000
+ YOL      HB5    CB5    CB4     120.000    3.000
+ YOL      CB5    CB4    HB4     120.000    3.000
+ YOL      CB5    CB4    CB3     120.000    3.000
+ YOL      HB4    CB4    CB3     120.000    3.000
+ YOL      CB4    CB3    HB3     120.000    3.000
+ YOL      CB4    CB3    CB2     120.000    3.000
+ YOL      HB3    CB3    CB2     120.000    3.000
+ YOL      CB1    CB2    OB      120.000    3.000
+ YOL      CB1    CB2    CB3     120.000    3.000
+ YOL      OB     CB2    CB3     120.000    3.000
+ YOL      CB2    OB     FE      120.000    3.000
+ YOL      NB     FE     NA       90.000    3.000
+ YOL      NB     FE     OA      180.000    3.000
+ YOL      NB     FE     OB       90.000    3.000
+ YOL      NA     FE     OA       90.000    3.000
+ YOL      NA     FE     OB      180.000    3.000
+ YOL      OA     FE     OB       90.000    3.000
+ YOL      FE     NA     CC1     120.000    3.000
+ YOL      FE     NA     CA      120.000    3.000
+ YOL      CC1    NA     CA      120.000    3.000
+ YOL      NA     CC1    CC6     120.000    3.000
+ YOL      NA     CC1    CC2     120.000    3.000
+ YOL      CC6    CC1    CC2     120.000    3.000
+ YOL      CC1    CC6    HC6     120.000    3.000
+ YOL      CC1    CC6    CC5     120.000    3.000
+ YOL      HC6    CC6    CC5     120.000    3.000
+ YOL      FE     OA     CA2     120.000    3.000
+ YOL      OA     CA2    CA1     120.000    3.000
+ YOL      OA     CA2    CA3     120.000    3.000
+ YOL      CA1    CA2    CA3     120.000    3.000
+ YOL      CA2    CA1    CA      120.000    3.000
+ YOL      CA2    CA1    CA6     120.000    3.000
+ YOL      CA     CA1    CA6     120.000    3.000
+ YOL      CA1    CA     HA      120.000    3.000
+ YOL      CA1    CA     NA      120.000    3.000
+ YOL      HA     CA     NA      120.000    3.000
+ YOL      CA2    CA3    HA3     120.000    3.000
+ YOL      CA2    CA3    CA4     120.000    3.000
+ YOL      HA3    CA3    CA4     120.000    3.000
+ YOL      CA3    CA4    HA4     120.000    3.000
+ YOL      CA3    CA4    CA5     120.000    3.000
+ YOL      HA4    CA4    CA5     120.000    3.000
+ YOL      CA4    CA5    HA5     120.000    3.000
+ YOL      CA4    CA5    CA6     120.000    3.000
+ YOL      HA5    CA5    CA6     120.000    3.000
+ YOL      CA5    CA6    HA6     120.000    3.000
+ YOL      CA5    CA6    CA1     120.000    3.000
+ YOL      HA6    CA6    CA1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ YOL      var_1    O1A    CAA    CC5    CC4     -180.000   20.000   1
+ YOL      CONST_1  CAA    CC5    CC6    CC1      180.000    0.000   0
+ YOL      CONST_2  CAA    CC5    CC4    CC3      180.000    0.000   0
+ YOL      CONST_3  CC5    CC4    CC3    CC2        0.000    0.000   0
+ YOL      CONST_4  CC4    CC3    CC2    NB       180.000    0.000   0
+ YOL      var_2    CC3    CC2    NB     FE       180.000   20.000   1
+ YOL      var_3    CC2    NB     CB     CB1      180.000   20.000   1
+ YOL      var_4    NB     CB     CB1    CB2        0.000   20.000   1
+ YOL      CONST_5  CB     CB1    CB6    CB5      180.000    0.000   0
+ YOL      CONST_6  CB1    CB6    CB5    CB4        0.000    0.000   0
+ YOL      CONST_7  CB6    CB5    CB4    CB3        0.000    0.000   0
+ YOL      CONST_8  CB5    CB4    CB3    CB2        0.000    0.000   0
+ YOL      CONST_9  CB     CB1    CB2    OB         0.000    0.000   0
+ YOL      CONST_10 CB1    CB2    CB3    CB4        0.000    0.000   0
+ YOL      var_5    CB1    CB2    OB     FE         0.000   20.000   1
+ YOL      var_6    CC2    NB     FE     NA         0.000   20.000   1
+ YOL      var_7    CB2    OB     FE     NB         0.000   20.000   1
+ YOL      var_8    CC1    NA     FE     NB         0.000   20.000   1
+ YOL      var_9    FE     NA     CA     CA1        0.000   20.000   1
+ YOL      var_10   FE     NA     CC1    CC6      180.000   20.000   1
+ YOL      CONST_11 NA     CC1    CC2    CC3      180.000    0.000   0
+ YOL      CONST_12 NA     CC1    CC6    CC5      180.000    0.000   0
+ YOL      var_11   CA2    OA     FE     NA         0.000   20.000   1
+ YOL      var_12   FE     OA     CA2    CA3      180.000   20.000   1
+ YOL      CONST_13 OA     CA2    CA1    CA         0.000    0.000   0
+ YOL      CONST_14 CA2    CA1    CA6    CA5        0.000    0.000   0
+ YOL      var_13   CA2    CA1    CA     NA         0.000   20.000   1
+ YOL      CONST_15 OA     CA2    CA3    CA4      180.000    0.000   0
+ YOL      CONST_16 CA2    CA3    CA4    CA5        0.000    0.000   0
+ YOL      CONST_17 CA3    CA4    CA5    CA6        0.000    0.000   0
+ YOL      CONST_18 CA4    CA5    CA6    CA1        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ YOL      chir_01  FE     NB     OA     NA        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ YOL      plan-1    CAA       0.020
+ YOL      plan-1    O2A       0.020
+ YOL      plan-1    O1A       0.020
+ YOL      plan-1    CC5       0.020
+ YOL      plan-2    CC5       0.020
+ YOL      plan-2    CAA       0.020
+ YOL      plan-2    CC6       0.020
+ YOL      plan-2    CC4       0.020
+ YOL      plan-2    CC1       0.020
+ YOL      plan-2    CC2       0.020
+ YOL      plan-2    CC3       0.020
+ YOL      plan-2    HC6       0.020
+ YOL      plan-2    NA        0.020
+ YOL      plan-2    NB        0.020
+ YOL      plan-2    HC3       0.020
+ YOL      plan-2    HC4       0.020
+ YOL      plan-3    NA        0.020
+ YOL      plan-3    CC1       0.020
+ YOL      plan-3    CA        0.020
+ YOL      plan-3    FE        0.020
+ YOL      plan-3    HA        0.020
+ YOL      plan-4    CA        0.020
+ YOL      plan-4    NA        0.020
+ YOL      plan-4    CA1       0.020
+ YOL      plan-4    HA        0.020
+ YOL      plan-5    CA1       0.020
+ YOL      plan-5    CA        0.020
+ YOL      plan-5    CA6       0.020
+ YOL      plan-5    CA2       0.020
+ YOL      plan-5    CA5       0.020
+ YOL      plan-5    CA4       0.020
+ YOL      plan-5    CA3       0.020
+ YOL      plan-5    HA6       0.020
+ YOL      plan-5    HA5       0.020
+ YOL      plan-5    HA4       0.020
+ YOL      plan-5    HA3       0.020
+ YOL      plan-5    OA        0.020
+ YOL      plan-5    HA        0.020
+ YOL      plan-6    CB2       0.020
+ YOL      plan-6    OB        0.020
+ YOL      plan-6    CB3       0.020
+ YOL      plan-6    CB1       0.020
+ YOL      plan-6    CB4       0.020
+ YOL      plan-6    CB5       0.020
+ YOL      plan-6    CB6       0.020
+ YOL      plan-6    HB3       0.020
+ YOL      plan-6    HB4       0.020
+ YOL      plan-6    HB5       0.020
+ YOL      plan-6    HB6       0.020
+ YOL      plan-6    CB        0.020
+ YOL      plan-6    HB        0.020
+ YOL      plan-7    CB        0.020
+ YOL      plan-7    CB1       0.020
+ YOL      plan-7    NB        0.020
+ YOL      plan-7    HB        0.020
+ YOL      plan-8    NB        0.020
+ YOL      plan-8    CC2       0.020
+ YOL      plan-8    FE        0.020
+ YOL      plan-8    CB        0.020
+ YOL      plan-8    HB        0.020
+# ------------------------------------------------------

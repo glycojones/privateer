@@ -1,0 +1,191 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AS3     AS3     4-METHYL-6-PROPYLPYRIDIN-2-AMINE     NON-POLYMER     25     11     .     
+#
+data_comp_AS3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AS3     N8      N       NH2     0       -1.953      -2.431      -1.719      
+AS3     C1      C       CR6     0       -1.543      -1.302      -1.122      
+AS3     N6      N       NRD6    0       -0.207      -1.055      -1.096      
+AS3     C5      C       CR6     0       0.244       0.077       -0.502      
+AS3     C9      C       CH2     0       1.729       0.290       -0.509      
+AS3     C10     C       CH2     0       2.442       -0.245      0.709       
+AS3     C11     C       CH3     0       3.937       0.009       0.675       
+AS3     C4      C       CR16    0       -0.636      0.993       0.087       
+AS3     C3      C       CR6     0       -2.010      0.754       0.070       
+AS3     C7      C       CH3     0       -2.969      1.736       0.702       
+AS3     C2      C       CR16    0       -2.475      -0.406      -0.540      
+AS3     HN81    H       H       0       -1.436      -2.832      -2.307      
+AS3     HN82    H       H       0       -2.740      -2.767      -1.523      
+AS3     H91     H       H       0       1.913       1.252       -0.572      
+AS3     H92     H       H       0       2.116       -0.136      -1.304      
+AS3     H101    H       H       0       2.286       -1.211      0.775       
+AS3     H102    H       H       0       2.067       0.174       1.512       
+AS3     H111    H       H       0       4.345       -0.335      1.488       
+AS3     H112    H       H       0       4.104       0.966       0.610       
+AS3     H113    H       H       0       4.327       -0.439      -0.096      
+AS3     H4      H       H       0       -0.305      1.775       0.497       
+AS3     H71     H       H       0       -3.871      1.375       0.683       
+AS3     H72     H       H       0       -2.948      2.573       0.210       
+AS3     H73     H       H       0       -2.708      1.898       1.623       
+AS3     H2      H       H       0       -3.399      -0.591      -0.565      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AS3       N8        C1        SINGLE    n         1.335     0.017     1.335     0.017     
+AS3       C1        N6        DOUBLE    y         1.343     0.014     1.343     0.014     
+AS3       C1        C2        SINGLE    y         1.398     0.017     1.398     0.017     
+AS3       N6        C5        SINGLE    y         1.347     0.010     1.347     0.010     
+AS3       C5        C9        SINGLE    n         1.499     0.012     1.499     0.012     
+AS3       C5        C4        DOUBLE    y         1.378     0.018     1.378     0.018     
+AS3       C9        C10       SINGLE    n         1.509     0.020     1.509     0.020     
+AS3       C10       C11       SINGLE    n         1.517     0.020     1.517     0.020     
+AS3       C4        C3        SINGLE    y         1.388     0.010     1.388     0.010     
+AS3       C3        C7        SINGLE    n         1.509     0.014     1.509     0.014     
+AS3       C3        C2        DOUBLE    y         1.383     0.010     1.383     0.010     
+AS3       N8        HN81      SINGLE    n         1.016     0.010     0.877     0.020     
+AS3       N8        HN82      SINGLE    n         1.016     0.010     0.877     0.020     
+AS3       C9        H91       SINGLE    n         1.089     0.010     0.981     0.015     
+AS3       C9        H92       SINGLE    n         1.089     0.010     0.981     0.015     
+AS3       C10       H101      SINGLE    n         1.089     0.010     0.981     0.020     
+AS3       C10       H102      SINGLE    n         1.089     0.010     0.981     0.020     
+AS3       C11       H111      SINGLE    n         1.089     0.010     0.973     0.016     
+AS3       C11       H112      SINGLE    n         1.089     0.010     0.973     0.016     
+AS3       C11       H113      SINGLE    n         1.089     0.010     0.973     0.016     
+AS3       C4        H4        SINGLE    n         1.082     0.013     0.943     0.017     
+AS3       C7        H71       SINGLE    n         1.089     0.010     0.971     0.013     
+AS3       C7        H72       SINGLE    n         1.089     0.010     0.971     0.013     
+AS3       C7        H73       SINGLE    n         1.089     0.010     0.971     0.013     
+AS3       C2        H2        SINGLE    n         1.082     0.013     0.943     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AS3          C1          N8        HN81     119.818    1.59
+AS3          C1          N8        HN82     119.818    1.59
+AS3        HN81          N8        HN82     120.363    1.85
+AS3          N8          C1          N6     117.161    1.55
+AS3          N8          C1          C2     120.961    1.50
+AS3          N6          C1          C2     121.879    1.50
+AS3          C1          N6          C5     118.635    1.50
+AS3          N6          C5          C9     116.278    1.50
+AS3          N6          C5          C4     121.464    1.50
+AS3          C9          C5          C4     122.258    1.50
+AS3          C5          C9         C10     114.198    2.33
+AS3          C5          C9         H91     108.941    1.50
+AS3          C5          C9         H92     108.941    1.50
+AS3         C10          C9         H91     108.125    1.50
+AS3         C10          C9         H92     108.125    1.50
+AS3         H91          C9         H92     107.399    1.87
+AS3          C9         C10         C11     112.977    1.82
+AS3          C9         C10        H101     109.304    1.50
+AS3          C9         C10        H102     109.304    1.50
+AS3         C11         C10        H101     108.952    1.50
+AS3         C11         C10        H102     108.952    1.50
+AS3        H101         C10        H102     107.816    1.50
+AS3         C10         C11        H111     109.589    1.50
+AS3         C10         C11        H112     109.589    1.50
+AS3         C10         C11        H113     109.589    1.50
+AS3        H111         C11        H112     109.380    1.50
+AS3        H111         C11        H113     109.380    1.50
+AS3        H112         C11        H113     109.380    1.50
+AS3          C5          C4          C3     120.185    1.50
+AS3          C5          C4          H4     120.325    1.50
+AS3          C3          C4          H4     119.490    1.50
+AS3          C4          C3          C7     120.917    1.50
+AS3          C4          C3          C2     118.497    1.50
+AS3          C7          C3          C2     120.586    1.50
+AS3          C3          C7         H71     109.567    1.50
+AS3          C3          C7         H72     109.567    1.50
+AS3          C3          C7         H73     109.567    1.50
+AS3         H71          C7         H72     109.348    1.50
+AS3         H71          C7         H73     109.348    1.50
+AS3         H72          C7         H73     109.348    1.50
+AS3          C1          C2          C3     119.340    1.50
+AS3          C1          C2          H2     120.642    1.50
+AS3          C3          C2          H2     120.018    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AS3             sp2_sp2_3          N6          C1          N8        HN81       0.000   10.00     2
+AS3              const_19          N8          C1          C2          C3     180.000   10.00     2
+AS3       const_sp2_sp2_2          N8          C1          N6          C5     180.000   10.00     2
+AS3       const_sp2_sp2_4          C9          C5          N6          C1     180.000   10.00     2
+AS3             sp2_sp3_2          N6          C5          C9         C10     -90.000   10.00     6
+AS3       const_sp2_sp2_6          C3          C4          C5          C9     180.000   10.00     2
+AS3             sp3_sp3_1         C11         C10          C9          C5     180.000   10.00     3
+AS3            sp3_sp3_10          C9         C10         C11        H111     180.000   10.00     3
+AS3              const_11          C7          C3          C4          C5     180.000   10.00     2
+AS3              const_14          C1          C2          C3          C7     180.000   10.00     2
+AS3             sp2_sp3_7          C4          C3          C7         H71     150.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AS3    plan-1          C1   0.020
+AS3    plan-1          C2   0.020
+AS3    plan-1          C3   0.020
+AS3    plan-1          C4   0.020
+AS3    plan-1          C5   0.020
+AS3    plan-1          C7   0.020
+AS3    plan-1          C9   0.020
+AS3    plan-1          H2   0.020
+AS3    plan-1          H4   0.020
+AS3    plan-1          N6   0.020
+AS3    plan-1          N8   0.020
+AS3    plan-2          C1   0.020
+AS3    plan-2        HN81   0.020
+AS3    plan-2        HN82   0.020
+AS3    plan-2          N8   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AS3 SMILES           ACDLabs              10.04 "n1c(cc(cc1N)C)CCC"
+AS3 SMILES_CANONICAL CACTVS               3.341 "CCCc1cc(C)cc(N)n1"
+AS3 SMILES           CACTVS               3.341 "CCCc1cc(C)cc(N)n1"
+AS3 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCCc1cc(cc(n1)N)C"
+AS3 SMILES           "OpenEye OEToolkits" 1.5.0 "CCCc1cc(cc(n1)N)C"
+AS3 InChI            InChI                1.03  "InChI=1S/C9H14N2/c1-3-4-8-5-7(2)6-9(10)11-8/h5-6H,3-4H2,1-2H3,(H2,10,11)"
+AS3 InChIKey         InChI                1.03  QGCCHDIBMYPTPX-UHFFFAOYSA-N
+AS3 ?                acedrg               190         "dictionary generator"                  
+AS3 ?                acedrg_database      11          "data source"                           
+AS3 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AS3 ?                refmac5              5.8.0158    "optimization tool"                     

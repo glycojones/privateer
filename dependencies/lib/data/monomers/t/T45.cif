@@ -1,0 +1,141 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+T45     T45      "METHYL 2H-1,2,3-TRIAZOLE-4-CARBOXYLATE"     NON-POLYMER     14     9     .     
+#
+data_comp_T45
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+T45     O1      O       O       0       46.042      9.247       -7.913      
+T45     C3      C       C       0       45.087      9.827       -8.385      
+T45     O       O       O2      0       45.166      10.856      -9.249      
+T45     C4      C       CH3     0       46.478      11.301      -9.670      
+T45     C2      C       CR5     0       43.683      9.457       -8.052      
+T45     N3      N       NRD5    0       42.617      10.091      -8.565      
+T45     N2      N       NR5     0       41.538      9.513       -8.062      
+T45     N1      N       NRD5    0       41.882      8.529       -7.243      
+T45     C1      C       CR15    0       43.203      8.477       -7.222      
+T45     H4C1    H       H       0       46.943      10.569      -10.106     
+T45     H4C2    H       H       0       46.984      11.594      -8.896      
+T45     H4C3    H       H       0       46.382      12.039      -10.292     
+T45     H2      H       H       0       40.692      9.753       -8.249      
+T45     H1      H       H       0       43.717      7.863       -6.715      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+T45       O1        C3        DOUBLE    n         1.208     0.015     1.208     0.015     
+T45       C3        O         SINGLE    n         1.336     0.012     1.336     0.012     
+T45       C3        C2        SINGLE    n         1.481     0.016     1.481     0.016     
+T45       O         C4        SINGLE    n         1.445     0.010     1.445     0.010     
+T45       C2        N3        DOUBLE    y         1.341     0.010     1.341     0.010     
+T45       C2        C1        SINGLE    y         1.379     0.020     1.379     0.020     
+T45       N3        N2        SINGLE    y         1.322     0.010     1.322     0.010     
+T45       N2        N1        SINGLE    y         1.324     0.010     1.324     0.010     
+T45       N1        C1        DOUBLE    y         1.323     0.010     1.323     0.010     
+T45       C4        H4C1      SINGLE    n         1.089     0.010     0.970     0.018     
+T45       C4        H4C2      SINGLE    n         1.089     0.010     0.970     0.018     
+T45       C4        H4C3      SINGLE    n         1.089     0.010     0.970     0.018     
+T45       N2        H2        SINGLE    n         1.016     0.010     0.899     0.020     
+T45       C1        H1        SINGLE    n         1.082     0.013     0.948     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+T45          O1          C3           O     123.910    1.50
+T45          O1          C3          C2     123.654    1.50
+T45           O          C3          C2     112.436    1.50
+T45          C3           O          C4     115.879    1.50
+T45           O          C4        H4C1     109.345    1.50
+T45           O          C4        H4C2     109.345    1.50
+T45           O          C4        H4C3     109.345    1.50
+T45        H4C1          C4        H4C2     109.532    1.53
+T45        H4C1          C4        H4C3     109.532    1.53
+T45        H4C2          C4        H4C3     109.532    1.53
+T45          C3          C2          N3     120.847    2.02
+T45          C3          C2          C1     131.188    2.74
+T45          N3          C2          C1     107.965    1.50
+T45          C2          N3          N2     106.864    1.58
+T45          N3          N2          N1     109.641    1.56
+T45          N3          N2          H2     125.180    1.95
+T45          N1          N2          H2     125.180    1.95
+T45          N2          N1          C1     106.864    1.58
+T45          C2          C1          N1     108.667    1.50
+T45          C2          C1          H1     126.570    1.50
+T45          N1          C1          H1     124.763    2.33
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+T45             sp2_sp2_1          O1          C3           O          C4     180.000   10.00     2
+T45             sp2_sp2_6          N3          C2          C3          O1     180.000   10.00     2
+T45             sp3_sp3_2        H4C1          C4           O          C3     -60.000   10.00     3
+T45       const_sp2_sp2_2          C3          C2          N3          N2     180.000   10.00     2
+T45              const_10          N1          C1          C2          C3     180.000   10.00     2
+T45       const_sp2_sp2_3          N1          N2          N3          C2       0.000   10.00     2
+T45       const_sp2_sp2_5          C1          N1          N2          N3       0.000   10.00     2
+T45       const_sp2_sp2_7          C2          C1          N1          N2       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+T45    plan-1          C1   0.020
+T45    plan-1          C2   0.020
+T45    plan-1          C3   0.020
+T45    plan-1          H1   0.020
+T45    plan-1          H2   0.020
+T45    plan-1          N1   0.020
+T45    plan-1          N2   0.020
+T45    plan-1          N3   0.020
+T45    plan-2          C2   0.020
+T45    plan-2          C3   0.020
+T45    plan-2           O   0.020
+T45    plan-2          O1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+T45 SMILES           ACDLabs              10.04 "O=C(OC)c1nnnc1"
+T45 SMILES_CANONICAL CACTVS               3.341 "COC(=O)c1cn[nH]n1"
+T45 SMILES           CACTVS               3.341 "COC(=O)c1cn[nH]n1"
+T45 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "COC(=O)c1cn[nH]n1"
+T45 SMILES           "OpenEye OEToolkits" 1.5.0 "COC(=O)c1cn[nH]n1"
+T45 InChI            InChI                1.03  "InChI=1S/C4H5N3O2/c1-9-4(8)3-2-5-7-6-3/h2H,1H3,(H,5,6,7)"
+T45 InChIKey         InChI                1.03  FZXQUCUWEZQIHL-UHFFFAOYSA-N
+T45 ?                acedrg               202         "dictionary generator"                  
+T45 ?                acedrg_database      11          "data source"                           
+T45 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+T45 ?                refmac5              5.8.0189    "optimization tool"                     

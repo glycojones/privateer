@@ -1,0 +1,363 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LET     LET     "(Z)-N^6-{3-CARBOXY-1-[(4-CARBOXY-2-OXOBUTOXY)METHYL]PROPYLIDENE}-L-LYSINE"     peptide   50     26     .
+#
+data_comp_LET
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LET     O7      O       O       0       1.616       3.657       2.750
+LET     O4      O       OC      -1      1.624       5.157       -2.043
+LET     C11     C       C       0       2.550       5.080       -1.212
+LET     O3      O       O       0       3.745       5.302       -1.489
+LET     C10     C       CH2     0       2.203       4.693       0.216
+LET     C9      C       CH2     0       2.201       3.198       0.484
+LET     C8      C       C       0       1.854       2.830       1.903
+LET     C7      C       CH2     0       1.814       1.370       2.234
+LET     O6      O       O2      0       0.522       0.988       2.681
+LET     C5      C       CH2     0       0.444       -0.378      3.060
+LET     C4      C       C       0       -0.958      -0.741      3.478
+LET     C3      C       CH2     0       -1.477      0.018       4.673
+LET     C2      C       CH2     0       -2.310      1.247       4.346
+LET     C1      C       C       0       -2.898      1.975       5.546
+LET     O1      O       OC      -1      -3.737      2.873       5.329
+LET     O2      O       O       0       -2.521      1.652       6.692
+LET     NZ      N       N       0       -1.608      -1.643      2.818
+LET     CE      C       CH2     0       -3.005      -2.023      3.086
+LET     CD      C       CH2     0       -3.513      -2.984      2.033
+LET     CG      C       CH2     0       -3.751      -2.317      0.685
+LET     CB      C       CH2     0       -4.310      -3.265      -0.370
+LET     CA      C       CH1     0       -4.571      -2.659      -1.756
+LET     N       N       NT3     1       -3.349      -1.990      -2.286
+LET     C       C       C       0       -5.736      -1.660      -1.725
+LET     O       O       O       0       -5.474      -0.484      -1.398
+LET     OXT     O       OC      -1      -6.864      -2.096      -2.028
+LET     H101    H       H       0       1.318       5.056       0.426
+LET     H102    H       H       0       2.846       5.124       0.815
+LET     H9C1    H       H       0       3.088       2.838       0.277
+LET     H9C2    H       H       0       1.557       2.769       -0.115
+LET     H7C1    H       H       0       2.473       1.178       2.945
+LET     H7C2    H       H       0       2.048       0.842       1.432
+LET     H5C1    H       H       0       1.061       -0.547      3.814
+LET     H5C2    H       H       0       0.719       -0.950      2.301
+LET     H3C1    H       H       0       -0.711      0.295       5.216
+LET     H3C2    H       H       0       -2.011      -0.591      5.222
+LET     H2C1    H       H       0       -3.050      0.990       3.759
+LET     H2C2    H       H       0       -1.760      1.886       3.848
+LET     HEC1    H       H       0       -3.570      -1.220      3.092
+LET     HEC2    H       H       0       -3.066      -2.446      3.970
+LET     HDC1    H       H       0       -4.352      -3.383      2.346
+LET     HDC2    H       H       0       -2.859      -3.706      1.921
+LET     HGC1    H       H       0       -2.903      -1.945      0.362
+LET     HGC2    H       H       0       -4.377      -1.572      0.809
+LET     HBC1    H       H       0       -5.154      -3.634      -0.035
+LET     HBC2    H       H       0       -3.683      -4.010      -0.476
+LET     HA      H       H       0       -4.808      -3.389      -2.374
+LET     H       H       H       0       -3.220      -1.186      -1.875
+LET     H2      H       H       0       -3.438      -1.849      -3.182
+LET     H3      H       H       0       -2.618      -2.515      -2.144
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+LET      N      n/a    CA     START
+LET      H      N      .      .
+LET      H2     N      .      .
+LET      H3     N      .      .
+LET      CA     N      C      .
+LET      HA     CA     .      .
+LET      CB     CA     CG     .
+LET      HBC1   CB     .      .
+LET      HBC2   CB     .      .
+LET      CG     CB     CD     .
+LET      HGC1   CG     .      .
+LET      HGC2   CG     .      .
+LET      CD     CG     CE     .
+LET      HDC1   CD     .      .
+LET      HDC2   CD     .      .
+LET      CE     CD     NZ     .
+LET      HEC1   CE     .      .
+LET      HEC2   CE     .      .
+LET      NZ     CE     C4     .
+LET      C4     NZ     C5     .
+LET      C3     C4     C2     .
+LET      H3C1   C3     .      .
+LET      H3C2   C3     .      .
+LET      C2     C3     C1     .
+LET      H2C1   C2     .      .
+LET      H2C2   C2     .      .
+LET      C1     C2     O1     .
+LET      O2     C1     .      .
+LET      O1     C1     .      .
+LET      C5     C4     O6     .
+LET      H5C1   C5     .      .
+LET      H5C2   C5     .      .
+LET      O6     C5     C7     .
+LET      C7     O6     C8     .
+LET      H7C1   C7     .      .
+LET      H7C2   C7     .      .
+LET      C8     C7     C9     .
+LET      O7     C8     .      .
+LET      C9     C8     C10    .
+LET      H9C1   C9     .      .
+LET      H9C2   C9     .      .
+LET      C10    C9     C11    .
+LET      H101   C10    .      .
+LET      H102   C10    .      .
+LET      C11    C10    O3     .
+LET      O4     C11    .      .
+LET      O3     C11    .      .
+LET      C      CA     .      END
+LET      O      C      .      .
+LET      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LET       O7        C8        DOUBLE    n         1.207     0.010     1.207     0.010     
+LET       O4        C11       SINGLE    n         1.247     0.019     1.247     0.019     
+LET       C11       O3        DOUBLE    n         1.247     0.019     1.247     0.019     
+LET       C11       C10       SINGLE    n         1.519     0.012     1.519     0.012     
+LET       C10       C9        SINGLE    n         1.516     0.020     1.516     0.020     
+LET       C9        C8        SINGLE    n         1.504     0.011     1.504     0.011     
+LET       C8        C7        SINGLE    n         1.497     0.012     1.497     0.012     
+LET       C7        O6        SINGLE    n         1.417     0.018     1.417     0.018     
+LET       O6        C5        SINGLE    n         1.417     0.018     1.417     0.018     
+LET       C5        C4        SINGLE    n         1.504     0.018     1.504     0.018     
+LET       C4        C3        SINGLE    n         1.505     0.010     1.505     0.010     
+LET       C4        NZ        DOUBLE    n         1.281     0.020     1.281     0.020     
+LET       C3        C2        SINGLE    n         1.516     0.020     1.516     0.020     
+LET       C2        C1        SINGLE    n         1.519     0.012     1.519     0.012     
+LET       C1        O1        SINGLE    n         1.247     0.019     1.247     0.019     
+LET       C1        O2        DOUBLE    n         1.247     0.019     1.247     0.019     
+LET       NZ        CE        SINGLE    n         1.469     0.017     1.469     0.017     
+LET       CE        CD        SINGLE    n         1.513     0.020     1.513     0.020     
+LET       CD        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+LET       CG        CB        SINGLE    n         1.523     0.012     1.523     0.012     
+LET       CB        CA        SINGLE    n         1.532     0.010     1.532     0.010     
+LET       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+LET       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+LET       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+LET       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+LET       C10       H101      SINGLE    n         1.089     0.010     0.979     0.016     
+LET       C10       H102      SINGLE    n         1.089     0.010     0.979     0.016     
+LET       C9        H9C1      SINGLE    n         1.089     0.010     0.979     0.016     
+LET       C9        H9C2      SINGLE    n         1.089     0.010     0.979     0.016     
+LET       C7        H7C1      SINGLE    n         1.089     0.010     0.988     0.020     
+LET       C7        H7C2      SINGLE    n         1.089     0.010     0.988     0.020     
+LET       C5        H5C1      SINGLE    n         1.089     0.010     0.988     0.020     
+LET       C5        H5C2      SINGLE    n         1.089     0.010     0.988     0.020     
+LET       C3        H3C1      SINGLE    n         1.089     0.010     0.979     0.016     
+LET       C3        H3C2      SINGLE    n         1.089     0.010     0.979     0.016     
+LET       C2        H2C1      SINGLE    n         1.089     0.010     0.979     0.016     
+LET       C2        H2C2      SINGLE    n         1.089     0.010     0.979     0.016     
+LET       CE        HEC1      SINGLE    n         1.089     0.010     0.982     0.011     
+LET       CE        HEC2      SINGLE    n         1.089     0.010     0.982     0.011     
+LET       CD        HDC1      SINGLE    n         1.089     0.010     0.980     0.016     
+LET       CD        HDC2      SINGLE    n         1.089     0.010     0.980     0.016     
+LET       CG        HGC1      SINGLE    n         1.089     0.010     0.981     0.016     
+LET       CG        HGC2      SINGLE    n         1.089     0.010     0.981     0.016     
+LET       CB        HBC1      SINGLE    n         1.089     0.010     0.980     0.016     
+LET       CB        HBC2      SINGLE    n         1.089     0.010     0.980     0.016     
+LET       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+LET       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+LET       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+LET       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LET          O4         C11          O3     123.571    1.50
+LET          O4         C11         C10     118.214    1.64
+LET          O3         C11         C10     118.214    1.64
+LET         C11         C10          C9     114.808    1.90
+LET         C11         C10        H101     108.404    1.50
+LET         C11         C10        H102     108.404    1.50
+LET          C9         C10        H101     109.115    1.50
+LET          C9         C10        H102     109.115    1.50
+LET        H101         C10        H102     107.521    1.50
+LET         C10          C9          C8     113.123    1.50
+LET         C10          C9        H9C1     108.787    1.50
+LET         C10          C9        H9C2     108.787    1.50
+LET          C8          C9        H9C1     108.499    1.50
+LET          C8          C9        H9C2     108.499    1.50
+LET        H9C1          C9        H9C2     107.764    1.50
+LET          O7          C8          C9     122.200    1.50
+LET          O7          C8          C7     120.953    1.86
+LET          C9          C8          C7     116.847    2.63
+LET          C8          C7          O6     110.444    1.55
+LET          C8          C7        H7C1     108.908    1.50
+LET          C8          C7        H7C2     108.908    1.50
+LET          O6          C7        H7C1     108.587    1.50
+LET          O6          C7        H7C2     108.587    1.50
+LET        H7C1          C7        H7C2     108.341    1.50
+LET          C7          O6          C5     112.258    2.15
+LET          O6          C5          C4     110.427    2.31
+LET          O6          C5        H5C1     109.284    1.50
+LET          O6          C5        H5C2     109.284    1.50
+LET          C4          C5        H5C1     108.939    1.50
+LET          C4          C5        H5C2     108.939    1.50
+LET        H5C1          C5        H5C2     107.985    1.50
+LET          C5          C4          C3     116.071    2.45
+LET          C5          C4          NZ     121.964    3.00
+LET          C3          C4          NZ     121.964    3.00
+LET          C4          C3          C2     115.330    1.50
+LET          C4          C3        H3C1     108.498    1.50
+LET          C4          C3        H3C2     108.498    1.50
+LET          C2          C3        H3C1     109.041    1.50
+LET          C2          C3        H3C2     109.041    1.50
+LET        H3C1          C3        H3C2     107.424    1.50
+LET          C3          C2          C1     114.808    1.90
+LET          C3          C2        H2C1     110.067    1.85
+LET          C3          C2        H2C2     110.067    1.85
+LET          C1          C2        H2C1     108.404    1.50
+LET          C1          C2        H2C2     108.404    1.50
+LET        H2C1          C2        H2C2     107.521    1.50
+LET          C2          C1          O1     118.214    1.64
+LET          C2          C1          O2     118.214    1.64
+LET          O1          C1          O2     123.571    1.50
+LET          C4          NZ          CE     119.132    2.76
+LET          NZ          CE          CD     111.086    2.02
+LET          NZ          CE        HEC1     109.578    1.50
+LET          NZ          CE        HEC2     109.578    1.50
+LET          CD          CE        HEC1     109.449    1.50
+LET          CD          CE        HEC2     109.449    1.50
+LET        HEC1          CE        HEC2     108.106    1.50
+LET          CE          CD          CG     112.984    1.50
+LET          CE          CD        HDC1     108.887    1.50
+LET          CE          CD        HDC2     108.887    1.50
+LET          CG          CD        HDC1     109.041    1.50
+LET          CG          CD        HDC2     109.041    1.50
+LET        HDC1          CD        HDC2     107.927    1.57
+LET          CD          CG          CB     113.328    2.00
+LET          CD          CG        HGC1     108.806    1.50
+LET          CD          CG        HGC2     108.806    1.50
+LET          CB          CG        HGC1     108.601    1.50
+LET          CB          CG        HGC2     108.601    1.50
+LET        HGC1          CG        HGC2     107.646    1.50
+LET          CG          CB          CA     115.311    1.56
+LET          CG          CB        HBC1     108.650    1.50
+LET          CG          CB        HBC2     108.650    1.50
+LET          CA          CB        HBC1     108.549    1.50
+LET          CA          CB        HBC2     108.549    1.50
+LET        HBC1          CB        HBC2     107.844    1.50
+LET          CB          CA           N     110.374    1.62
+LET          CB          CA           C     111.037    2.40
+LET          CB          CA          HA     108.967    1.50
+LET           N          CA           C     109.241    1.50
+LET           N          CA          HA     108.487    1.50
+LET           C          CA          HA     108.824    1.50
+LET          CA           N           H     110.062    1.93
+LET          CA           N          H2     110.062    1.93
+LET          CA           N          H3     110.062    1.93
+LET           H           N          H2     109.028    2.41
+LET           H           N          H3     109.028    2.41
+LET          H2           N          H3     109.028    2.41
+LET          CA           C           O     117.124    1.50
+LET          CA           C         OXT     117.124    1.50
+LET           O           C         OXT     125.752    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LET            sp2_sp3_26          C5          C4          C3          C2     120.000   10.00     6
+LET             sp2_sp2_1          C5          C4          NZ          CE     180.000   10.00     2
+LET            sp3_sp3_16          C1          C2          C3          C4     180.000   10.00     3
+LET            sp2_sp3_32          O1          C1          C2          C3     120.000   10.00     6
+LET            sp2_sp3_38          C4          NZ          CE          CD     120.000   10.00     6
+LET            sp3_sp3_25          CG          CD          CE          NZ     180.000   10.00     3
+LET            sp3_sp3_34          CE          CD          CG          CB     180.000   10.00     3
+LET            sp3_sp3_43          CA          CB          CG          CD     180.000   10.00     3
+LET            sp3_sp3_55           N          CA          CB          CG      60.000   10.00     3
+LET            sp3_sp3_61          CB          CA           N           H     180.000   10.00     3
+LET            sp2_sp3_41           O           C          CA          CB     120.000   10.00     6
+LET             sp2_sp3_2          O4         C11         C10          C9     120.000   10.00     6
+LET             sp3_sp3_1         C11         C10          C9          C8     180.000   10.00     3
+LET             sp2_sp3_8          O7          C8          C9         C10     120.000   10.00     6
+LET            sp2_sp3_14          O7          C8          C7          O6     120.000   10.00     6
+LET            sp3_sp3_10          C8          C7          O6          C5     180.000   10.00     3
+LET            sp3_sp3_13          C4          C5          O6          C7     180.000   10.00     3
+LET            sp2_sp3_20          C3          C4          C5          O6     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+LET    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LET    plan-1         C10   0.020
+LET    plan-1         C11   0.020
+LET    plan-1          O3   0.020
+LET    plan-1          O4   0.020
+LET    plan-2          C7   0.020
+LET    plan-2          C8   0.020
+LET    plan-2          C9   0.020
+LET    plan-2          O7   0.020
+LET    plan-3          C3   0.020
+LET    plan-3          C4   0.020
+LET    plan-3          C5   0.020
+LET    plan-3          NZ   0.020
+LET    plan-4          C1   0.020
+LET    plan-4          C2   0.020
+LET    plan-4          O1   0.020
+LET    plan-4          O2   0.020
+LET    plan-5           C   0.020
+LET    plan-5          CA   0.020
+LET    plan-5           O   0.020
+LET    plan-5         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LET SMILES           ACDLabs              10.04 "O=C(COC/C(=N/CCCCC(C(=O)O)N)CCC(=O)O)CCC(=O)O"
+LET SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCCCN=C(CCC(O)=O)COCC(=O)CCC(O)=O)C(O)=O"
+LET SMILES           CACTVS               3.341 "N[CH](CCCCN=C(CCC(O)=O)COCC(=O)CCC(O)=O)C(O)=O"
+LET SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CC/N=C(\CCC(=O)O)/COCC(=O)CCC(=O)O)C[C@@H](C(=O)O)N"
+LET SMILES           "OpenEye OEToolkits" 1.5.0 "C(CCN=C(CCC(=O)O)COCC(=O)CCC(=O)O)CC(C(=O)O)N"
+LET InChI            InChI                1.03  "InChI=1S/C16H26N2O8/c17-13(16(24)25)3-1-2-8-18-11(4-6-14(20)21)9-26-10-12(19)5-7-15(22)23/h13H,1-10,17H2,(H,20,21)(H,22,23)(H,24,25)/b18-11+/t13-/m0/s1"
+LET InChIKey         InChI                1.03  CAXNMAPFZIWDHX-FHXOWUIVSA-N
+LET ?                acedrg               202         "dictionary generator"
+LET ?                acedrg_database      11          "data source"
+LET ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LET ?                refmac5              5.8.0222    "optimization tool"

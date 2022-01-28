@@ -1,0 +1,166 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BSE      BSE 'BETA-3-SERINE                       ' non-polymer        16   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BSE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BSE           OXT    O    OC       -0.500      0.000    0.000    0.000
+ BSE           C      C    C         0.000     -1.244    0.086   -0.095
+ BSE           O      O    OC       -0.500     -1.908    0.971    0.488
+ BSE           CA     C    CH1       0.000     -1.826   -0.990   -1.003
+ BSE           HA     H    H         0.000     -1.051   -1.274   -1.729
+ BSE           CB     C    CH2       0.000     -3.026   -0.439   -1.788
+ BSE           HB2    H    H         0.000     -3.791   -0.118   -1.077
+ BSE           HB3    H    H         0.000     -3.428   -1.236   -2.417
+ BSE           OG     O    OH1       0.000     -2.641    0.661   -2.602
+ BSE           HG     H    H         0.000     -2.810    0.447   -3.529
+ BSE           CC     C    CH2       0.000     -2.154   -2.229   -0.158
+ BSE           HC1    H    H         0.000     -2.882   -1.941    0.603
+ BSE           HC2    H    H         0.000     -1.235   -2.565    0.328
+ BSE           N      N    NH2       0.000     -2.699   -3.311   -0.970
+ BSE           H2     H    H         0.000     -3.251   -3.101   -1.791
+ BSE           H      H    H         0.000     -2.527   -4.274   -0.715
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BSE      OXT    n/a    C      START
+ BSE      C      OXT    CA     .
+ BSE      O      C      .      .
+ BSE      CA     C      CC     .
+ BSE      HA     CA     .      .
+ BSE      CB     CA     OG     .
+ BSE      HB2    CB     .      .
+ BSE      HB3    CB     .      .
+ BSE      OG     CB     HG     .
+ BSE      HG     OG     .      .
+ BSE      CC     CA     N      .
+ BSE      HC1    CC     .      .
+ BSE      HC2    CC     .      .
+ BSE      N      CC     H      .
+ BSE      H2     N      .      .
+ BSE      H      N      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BSE       N         CC        single    1.450     0.020     1.450     0.020     
+BSE       H         N         single    1.036     0.016     0.914     0.007     
+BSE       H2        N         single    1.036     0.016     0.914     0.007     
+BSE       CC        CA        single    1.524     0.020     1.524     0.020     
+BSE       HC1       CC        single    1.089     0.010     0.989     0.005     
+BSE       HC2       CC        single    1.089     0.010     0.989     0.005     
+BSE       CA        C         single    1.500     0.020     1.500     0.020     
+BSE       CB        CA        single    1.524     0.020     1.524     0.020     
+BSE       HA        CA        single    1.089     0.010     0.989     0.005     
+BSE       O         C         deloc     1.250     0.020     1.250     0.020     
+BSE       C         OXT       deloc     1.250     0.020     1.250     0.020     
+BSE       OG        CB        single    1.432     0.020     1.432     0.020     
+BSE       HB2       CB        single    1.089     0.010     0.989     0.005     
+BSE       HB3       CB        single    1.089     0.010     0.989     0.005     
+BSE       HG        OG        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BSE      OXT    C      O       123.000    3.000
+ BSE      OXT    C      CA      118.500    3.000
+ BSE      O      C      CA      118.500    3.000
+ BSE      C      CA     HA      108.810    3.000
+ BSE      C      CA     CB      109.470    3.000
+ BSE      C      CA     CC      109.470    3.000
+ BSE      HA     CA     CB      108.340    3.000
+ BSE      HA     CA     CC      108.340    3.000
+ BSE      CB     CA     CC      109.470    3.000
+ BSE      CA     CB     HB2     109.470    3.000
+ BSE      CA     CB     HB3     109.470    3.000
+ BSE      CA     CB     OG      109.470    3.000
+ BSE      HB2    CB     HB3     107.900    3.000
+ BSE      HB2    CB     OG      109.470    3.000
+ BSE      HB3    CB     OG      109.470    3.000
+ BSE      CB     OG     HG      109.470    3.000
+ BSE      CA     CC     HC1     109.470    3.000
+ BSE      CA     CC     HC2     109.470    3.000
+ BSE      CA     CC     N       109.470    3.000
+ BSE      HC1    CC     HC2     107.900    3.000
+ BSE      HC1    CC     N       109.470    3.000
+ BSE      HC2    CC     N       109.470    3.000
+ BSE      CC     N      H2      120.000    3.000
+ BSE      CC     N      H       120.000    3.000
+ BSE      H2     N      H       120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BSE      var_1    OXT    C      CA     CC        89.546   20.000   3
+ BSE      var_2    C      CA     CB     OG        60.263   20.000   3
+ BSE      var_3    CA     CB     OG     HG       119.096   20.000   1
+ BSE      var_4    C      CA     CC     N       -179.169   20.000   3
+ BSE      var_5    CA     CC     N      H        148.505   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BSE      chir_01  CA     CC     C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BSE      plan-1    N         0.020
+ BSE      plan-1    CC        0.020
+ BSE      plan-1    H         0.020
+ BSE      plan-1    H2        0.020
+ BSE      plan-2    C         0.020
+ BSE      plan-2    CA        0.020
+ BSE      plan-2    O         0.020
+ BSE      plan-2    OXT       0.020
+# ------------------------------------------------------

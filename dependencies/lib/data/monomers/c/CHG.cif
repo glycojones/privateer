@@ -1,0 +1,231 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CHG     CHG      CYCLOHEXYL-GLYCINE  peptide    26     11     .     
+#
+data_comp_CHG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CHG     N       N       NT3     1       15.894      -15.207     21.396      
+CHG     CA      C       CH1     0       15.298      -16.318     22.189      
+CHG     C       C       C       0       16.354      -16.863     23.160      
+CHG     O       O       O       0       17.518      -16.993     22.729      
+CHG     C1      C       CH1     0       14.657      -17.440     21.333      
+CHG     C2      C       CH2     0       13.322      -17.011     20.721      
+CHG     C3      C       CH2     0       12.671      -18.136     19.917      
+CHG     C4      C       CH2     0       13.607      -18.671     18.847      
+CHG     C5      C       CH2     0       14.938      -19.103     19.441      
+CHG     C6      C       CH2     0       15.587      -17.973     20.241      
+CHG     OXT     O       OC      -1      15.976      -17.139     24.315      
+CHG     H       H       H       0       16.671      -15.475     21.002      
+CHG     H2      H       H       0       16.074      -14.499     21.941      
+CHG     H3      H       H       0       15.315      -14.934     20.749      
+CHG     HA      H       H       0       14.570      -15.932     22.731      
+CHG     HC1     H       H       0       14.465      -18.197     21.951      
+CHG     HC2     H       H       0       12.716      -16.732     21.436      
+CHG     H2A     H       H       0       13.468      -16.242     20.135      
+CHG     HC3     H       H       0       11.851      -17.801     19.493      
+CHG     H3A     H       H       0       12.421      -18.866     20.525      
+CHG     H4      H       H       0       13.763      -17.975     18.174      
+CHG     H4A     H       H       0       13.187      -19.437     18.401      
+CHG     H5      H       H       0       15.542      -19.378     18.718      
+CHG     H5A     H       H       0       14.795      -19.877     20.029      
+CHG     H6      H       H       0       16.411      -18.303     20.650      
+CHG     H6A     H       H       0       15.822      -17.245     19.633      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CHG      N      n/a    CA     START
+ CHG      H      N      .      .
+ CHG      H2     N      .      .
+ CHG      H3     N      .      .
+ CHG      CA     N      C      .
+ CHG      HA     CA     .      .
+ CHG      C1     CA     C6     .
+ CHG      HC1    C1     .      .
+ CHG      C6     C1     C5     .
+ CHG      H6     C6     .      .
+ CHG      H6A    C6     .      .
+ CHG      C5     C6     C4     .
+ CHG      H5     C5     .      .
+ CHG      H5A    C5     .      .
+ CHG      C4     C5     C3     .
+ CHG      H4     C4     .      .
+ CHG      H4A    C4     .      .
+ CHG      C3     C4     C2     .
+ CHG      HC3    C3     .      .
+ CHG      H3A    C3     .      .
+ CHG      C2     C3     HC2    .
+ CHG      H2A    C2     .      .
+ CHG      HC2    C2     .      .
+ CHG      C      CA     .      END
+ CHG      O      C      .      .
+ CHG      OXT    C      .      .
+ CHG      C1     C2     .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CHG       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+CHG       CA        C1        SINGLE    n         1.547     0.010     1.547     0.010     
+CHG       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+CHG       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+CHG       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+CHG       C1        C6        SINGLE    n         1.527     0.012     1.527     0.012     
+CHG       C1        C2        SINGLE    n         1.527     0.012     1.527     0.012     
+CHG       C2        C3        SINGLE    n         1.527     0.010     1.527     0.010     
+CHG       C3        C4        SINGLE    n         1.517     0.011     1.517     0.011     
+CHG       C4        C5        SINGLE    n         1.516     0.014     1.516     0.014     
+CHG       C5        C6        SINGLE    n         1.527     0.010     1.527     0.010     
+CHG       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+CHG       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+CHG       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+CHG       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+CHG       C1        HC1       SINGLE    n         1.089     0.010     0.996     0.015     
+CHG       C2        HC2       SINGLE    n         1.089     0.010     0.978     0.014     
+CHG       C2        H2A       SINGLE    n         1.089     0.010     0.978     0.014     
+CHG       C3        HC3       SINGLE    n         1.089     0.010     0.982     0.014     
+CHG       C3        H3A       SINGLE    n         1.089     0.010     0.982     0.014     
+CHG       C4        H4        SINGLE    n         1.089     0.010     0.981     0.014     
+CHG       C4        H4A       SINGLE    n         1.089     0.010     0.981     0.014     
+CHG       C5        H5        SINGLE    n         1.089     0.010     0.982     0.014     
+CHG       C5        H5A       SINGLE    n         1.089     0.010     0.982     0.014     
+CHG       C6        H6        SINGLE    n         1.089     0.010     0.978     0.014     
+CHG       C6        H6A       SINGLE    n         1.089     0.010     0.978     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CHG          CA           N           H     109.856    1.85
+CHG          CA           N          H2     109.856    1.85
+CHG          CA           N          H3     109.856    1.85
+CHG           H           N          H2     108.504    2.72
+CHG           H           N          H3     108.504    2.72
+CHG          H2           N          H3     108.504    2.72
+CHG           N          CA          C1     113.823    1.83
+CHG           N          CA           C     109.415    1.50
+CHG           N          CA          HA     108.441    1.50
+CHG          C1          CA           C     113.355    2.65
+CHG          C1          CA          HA     107.599    1.50
+CHG           C          CA          HA     108.585    1.50
+CHG          CA           C           O     117.220    1.50
+CHG          CA           C         OXT     117.220    1.50
+CHG           O           C         OXT     125.559    1.75
+CHG          CA          C1          C6     112.297    1.50
+CHG          CA          C1          C2     112.297    1.50
+CHG          CA          C1         HC1     107.050    1.50
+CHG          C6          C1          C2     110.252    1.50
+CHG          C6          C1         HC1     107.636    1.50
+CHG          C2          C1         HC1     107.636    1.50
+CHG          C1          C2          C3     111.983    1.50
+CHG          C1          C2         HC2     109.137    1.50
+CHG          C1          C2         H2A     109.137    1.50
+CHG          C3          C2         HC2     109.267    1.50
+CHG          C3          C2         H2A     109.267    1.50
+CHG         HC2          C2         H2A     107.919    1.50
+CHG          C2          C3          C4     111.360    1.50
+CHG          C2          C3         HC3     109.388    1.50
+CHG          C2          C3         H3A     109.388    1.50
+CHG          C4          C3         HC3     109.386    1.50
+CHG          C4          C3         H3A     109.386    1.50
+CHG         HC3          C3         H3A     108.036    1.50
+CHG          C3          C4          C5     111.038    1.50
+CHG          C3          C4          H4     109.386    1.50
+CHG          C3          C4         H4A     109.386    1.50
+CHG          C5          C4          H4     109.386    1.50
+CHG          C5          C4         H4A     109.386    1.50
+CHG          H4          C4         H4A     108.036    1.50
+CHG          C4          C5          C6     111.360    1.50
+CHG          C4          C5          H5     109.386    1.50
+CHG          C4          C5         H5A     109.386    1.50
+CHG          C6          C5          H5     109.388    1.50
+CHG          C6          C5         H5A     109.388    1.50
+CHG          H5          C5         H5A     108.036    1.50
+CHG          C1          C6          C5     111.983    1.50
+CHG          C1          C6          H6     109.137    1.50
+CHG          C1          C6         H6A     109.137    1.50
+CHG          C5          C6          H6     109.267    1.50
+CHG          C5          C6         H6A     109.267    1.50
+CHG          H6          C6         H6A     107.919    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CHG            sp3_sp3_49           C          CA           N           H      60.000   10.00     3
+CHG             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+CHG            sp3_sp3_55          C6          C1          CA           N     180.000   10.00     3
+CHG            sp3_sp3_67          CA          C1          C2          C3      60.000   10.00     3
+CHG             sp3_sp3_4          CA          C1          C6          C5     -60.000   10.00     3
+CHG            sp3_sp3_37          C1          C2          C3          C4      60.000   10.00     3
+CHG            sp3_sp3_28          C2          C3          C4          C5     -60.000   10.00     3
+CHG            sp3_sp3_19          C3          C4          C5          C6      60.000   10.00     3
+CHG            sp3_sp3_10          C4          C5          C6          C1     -60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+CHG    chir_1    CA    N    C    C1    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CHG    plan-1           C   0.020
+CHG    plan-1          CA   0.020
+CHG    plan-1           O   0.020
+CHG    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CHG SMILES           ACDLabs              10.04 "O=C(O)C(N)C1CCCCC1"
+CHG SMILES_CANONICAL CACTVS               3.341 "N[C@@H](C1CCCCC1)C(O)=O"
+CHG SMILES           CACTVS               3.341 "N[CH](C1CCCCC1)C(O)=O"
+CHG SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1CCC(CC1)[C@@H](C(=O)O)N"
+CHG SMILES           "OpenEye OEToolkits" 1.5.0 "C1CCC(CC1)C(C(=O)O)N"
+CHG InChI            InChI                1.03  "InChI=1S/C8H15NO2/c9-7(8(10)11)6-4-2-1-3-5-6/h6-7H,1-5,9H2,(H,10,11)/t7-/m0/s1"
+CHG InChIKey         InChI                1.03  WAMWSIDTKSNDCU-ZETCQYMHSA-N
+CHG ?                acedrg               202         "dictionary generator"                  
+CHG ?                acedrg_database      11          "data source"                           
+CHG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CHG ?                refmac5              5.8.0222    "optimization tool"                     

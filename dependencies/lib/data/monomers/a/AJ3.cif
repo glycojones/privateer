@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AJ3     AJ3      "3-(PROP-2-ENE-1-SULFINYL)-PROPENE-1-THIOL"     NON-POLYMER     19     9     .     
+#
+data_comp_AJ3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AJ3     S5      S       SH1     0       26.305      61.304      18.628      
+AJ3     C6B     C       C1      0       25.216      62.688      18.694      
+AJ3     C7      C       C1      0       24.294      62.862      19.697      
+AJ3     C8B     C       CH2     0       23.351      64.028      19.768      
+AJ3     S9      S       S3      0       22.272      63.890      21.210      
+AJ3     C10     C       CH2     0       21.322      65.408      20.974      
+AJ3     C11     C       C1      0       20.352      65.581      22.101      
+AJ3     C12     C       C2      0       20.658      65.820      23.313      
+AJ3     O13     O       O       0       21.334      62.747      20.941      
+AJ3     HS5     H       HSH1    0       26.108      60.839      19.753      
+AJ3     H6B     H       H       0       25.267      63.336      18.014      
+AJ3     H7      H       H       0       24.252      62.210      20.384      
+AJ3     H8B1    H       H       0       22.802      64.050      18.945      
+AJ3     H8B2    H       H       0       23.874      64.865      19.826      
+AJ3     H101    H       H       0       20.825      65.359      20.121      
+AJ3     H102    H       H       0       21.935      66.183      20.950      
+AJ3     H11     H       H       0       19.433      65.507      21.890      
+AJ3     H121    H       H       0       19.977      65.916      23.967      
+AJ3     H122    H       H       0       21.569      65.902      23.568      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AJ3       S5        C6B       SINGLE    n         1.761     0.020     1.761     0.020     
+AJ3       C6B       C7        DOUBLE    n         1.373     0.020     1.373     0.020     
+AJ3       C7        C8B       SINGLE    n         1.497     0.019     1.497     0.019     
+AJ3       C8B       S9        SINGLE    n         1.806     0.013     1.806     0.013     
+AJ3       S9        C10       SINGLE    n         1.806     0.013     1.806     0.013     
+AJ3       S9        O13       DOUBLE    n         1.502     0.020     1.502     0.020     
+AJ3       C10       C11       SINGLE    n         1.497     0.019     1.497     0.019     
+AJ3       C11       C12       DOUBLE    n         1.273     0.020     1.273     0.020     
+AJ3       S5        HS5       SINGLE    n         1.338     0.010     1.171     0.208     
+AJ3       C6B       H6B       SINGLE    n         1.082     0.013     0.975     0.010     
+AJ3       C7        H7        SINGLE    n         1.082     0.013     0.975     0.010     
+AJ3       C8B       H8B1      SINGLE    n         1.089     0.010     0.989     0.005     
+AJ3       C8B       H8B2      SINGLE    n         1.089     0.010     0.989     0.005     
+AJ3       C10       H101      SINGLE    n         1.089     0.010     0.989     0.005     
+AJ3       C10       H102      SINGLE    n         1.089     0.010     0.989     0.005     
+AJ3       C11       H11       SINGLE    n         1.082     0.013     0.975     0.010     
+AJ3       C12       H121      SINGLE    n         1.082     0.013     0.975     0.010     
+AJ3       C12       H122      SINGLE    n         1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AJ3         C6B          S5         HS5      99.111    3.00
+AJ3          S5         C6B          C7     122.564    3.00
+AJ3          S5         C6B         H6B     118.761    1.83
+AJ3          C7         C6B         H6B     118.675    2.55
+AJ3         C6B          C7         C8B     124.040    3.00
+AJ3         C6B          C7          H7     118.212    2.21
+AJ3         C8B          C7          H7     117.748    1.75
+AJ3          C7         C8B          S9     109.546    1.90
+AJ3          C7         C8B        H8B1     109.038    1.50
+AJ3          C7         C8B        H8B2     109.038    1.50
+AJ3          S9         C8B        H8B1     109.318    1.91
+AJ3          S9         C8B        H8B2     109.318    1.91
+AJ3        H8B1         C8B        H8B2     108.471    3.00
+AJ3         C8B          S9         C10      98.345    1.79
+AJ3         C8B          S9         O13     106.714    1.50
+AJ3         C10          S9         O13     106.714    1.50
+AJ3          S9         C10         C11     109.546    1.90
+AJ3          S9         C10        H101     109.318    1.91
+AJ3          S9         C10        H102     109.318    1.91
+AJ3         C11         C10        H101     109.038    1.50
+AJ3         C11         C10        H102     109.038    1.50
+AJ3        H101         C10        H102     108.471    3.00
+AJ3         C10         C11         C12     125.613    3.00
+AJ3         C10         C11         H11     116.924    1.75
+AJ3         C12         C11         H11     117.445    1.68
+AJ3         C11         C12        H121     120.162    1.50
+AJ3         C11         C12        H122     120.162    1.50
+AJ3        H121         C12        H122     119.676    2.15
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AJ3             sp2_sp2_1          S5         C6B          C7         C8B     180.000   10.00     2
+AJ3             sp2_sp3_4         C6B          C7         C8B          S9     120.000   10.00     6
+AJ3             sp3_sp3_1          C7         C8B          S9         C10     180.000   10.00     3
+AJ3             sp3_sp3_7         C11         C10          S9         C8B     180.000   10.00     3
+AJ3            sp2_sp3_10         C12         C11         C10          S9     120.000   10.00     6
+AJ3             sp2_sp2_5         C10         C11         C12        H121     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+AJ3    chir_1    S9    O13    C8B    C10    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AJ3    plan-1         C6B   0.020
+AJ3    plan-1          C7   0.020
+AJ3    plan-1         H6B   0.020
+AJ3    plan-1          S5   0.020
+AJ3    plan-2         C6B   0.020
+AJ3    plan-2          C7   0.020
+AJ3    plan-2         C8B   0.020
+AJ3    plan-2          H7   0.020
+AJ3    plan-3         C10   0.020
+AJ3    plan-3         C11   0.020
+AJ3    plan-3         C12   0.020
+AJ3    plan-3         H11   0.020
+AJ3    plan-4         C11   0.020
+AJ3    plan-4         C12   0.020
+AJ3    plan-4        H121   0.020
+AJ3    plan-4        H122   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AJ3 SMILES           ACDLabs              10.04 "O=S(C\C=C)C\C=C\S"
+AJ3 InChI            InChI                1.03  "InChI=1S/C6H10OS2/c1-2-5-9(7)6-3-4-8/h2-4,8H,1,5-6H2/b4-3+/t9-/m1/s1"
+AJ3 InChIKey         InChI                1.03  HSVQDVSVQIMRSS-CDAZIORVSA-N
+AJ3 SMILES_CANONICAL CACTVS               3.385 "S\C=C\C[S@](=O)CC=C"
+AJ3 SMILES           CACTVS               3.385 "SC=CC[S](=O)CC=C"
+AJ3 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.5 "C=CC[S@@](=O)C/C=C/S"
+AJ3 SMILES           "OpenEye OEToolkits" 1.7.5 "C=CCS(=O)CC=CS"
+AJ3 ?                acedrg               202         "dictionary generator"                  
+AJ3 ?                acedrg_database      11          "data source"                           
+AJ3 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AJ3 ?                refmac5              5.8.0189    "optimization tool"                     

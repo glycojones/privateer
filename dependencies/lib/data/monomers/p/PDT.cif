@@ -1,0 +1,116 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PDT     PDT      1,3-PROPANEDITHIOL     NON-POLYMER     13     5     .     
+#
+data_comp_PDT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PDT     C2      C       CH2     0       -0.179      -0.739      0.129       
+PDT     C1      C       CH2     0       1.179       -0.075      -0.008      
+PDT     S1      S       SH1     0       2.569       -1.130      0.472       
+PDT     C3      C       CH2     0       -1.333      0.142       -0.315      
+PDT     S2      S       SH1     0       -1.692      1.512       0.812       
+PDT     H21     H       H       0       -0.315      -0.991      1.067       
+PDT     H22     H       H       0       -0.185      -1.562      -0.406      
+PDT     H11     H       H       0       1.217       0.707       0.576       
+PDT     H12     H       H       0       1.330       0.165       -0.943      
+PDT     HS1     H       HSH1    0       3.462       -0.376      0.187       
+PDT     H31     H       H       0       -2.149      -0.393      -0.362      
+PDT     H32     H       H       0       -1.117      0.548       -1.177      
+PDT     HS2     H       HSH1    0       -0.856      1.274       1.643       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PDT       C2        C1        SINGLE    n         1.518     0.012     1.518     0.012     
+PDT       C2        C3        SINGLE    n         1.518     0.012     1.518     0.012     
+PDT       C1        S1        SINGLE    n         1.810     0.010     1.810     0.010     
+PDT       C3        S2        SINGLE    n         1.810     0.010     1.810     0.010     
+PDT       C2        H21       SINGLE    n         1.089     0.010     0.989     0.005     
+PDT       C2        H22       SINGLE    n         1.089     0.010     0.989     0.005     
+PDT       C1        H11       SINGLE    n         1.089     0.010     0.989     0.005     
+PDT       C1        H12       SINGLE    n         1.089     0.010     0.989     0.005     
+PDT       S1        HS1       SINGLE    n         1.338     0.010     1.171     0.208     
+PDT       C3        H31       SINGLE    n         1.089     0.010     0.989     0.005     
+PDT       C3        H32       SINGLE    n         1.089     0.010     0.989     0.005     
+PDT       S2        HS2       SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PDT          C1          C2          C3     113.604    2.34
+PDT          C1          C2         H21     108.867    1.50
+PDT          C1          C2         H22     108.867    1.50
+PDT          C3          C2         H21     108.867    1.50
+PDT          C3          C2         H22     108.867    1.50
+PDT         H21          C2         H22     107.683    1.50
+PDT          C2          C1          S1     113.854    1.50
+PDT          C2          C1         H11     109.079    1.50
+PDT          C2          C1         H12     109.079    1.50
+PDT          S1          C1         H11     105.353    2.82
+PDT          S1          C1         H12     105.353    2.82
+PDT         H11          C1         H12     111.425    1.71
+PDT          C1          S1         HS1      98.146    3.00
+PDT          C2          C3          S2     113.854    1.50
+PDT          C2          C3         H31     109.079    1.50
+PDT          C2          C3         H32     109.079    1.50
+PDT          S2          C3         H31     105.353    2.82
+PDT          S2          C3         H32     105.353    2.82
+PDT         H31          C3         H32     111.425    1.71
+PDT          C3          S2         HS2      98.146    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PDT             sp3_sp3_1          S1          C1          C2          C3     180.000   10.00     3
+PDT            sp3_sp3_10          C1          C2          C3          S2     180.000   10.00     3
+PDT            sp3_sp3_19          C2          C1          S1         HS1     180.000   10.00     3
+PDT            sp3_sp3_22          C2          C3          S2         HS2     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PDT SMILES           ACDLabs              10.04 SCCCS
+PDT SMILES_CANONICAL CACTVS               3.341 SCCCS
+PDT SMILES           CACTVS               3.341 SCCCS
+PDT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CS)CS"
+PDT SMILES           "OpenEye OEToolkits" 1.5.0 "C(CS)CS"
+PDT InChI            InChI                1.03  InChI=1S/C3H8S2/c4-2-1-3-5/h4-5H,1-3H2
+PDT InChIKey         InChI                1.03  ZJLMKPKYJBQJNH-UHFFFAOYSA-N
+PDT ?                acedrg               202         "dictionary generator"                  
+PDT ?                acedrg_database      11          "data source"                           
+PDT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PDT ?                refmac5              5.8.0189    "optimization tool"                     

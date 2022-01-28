@@ -1,0 +1,681 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NTE      NTE 'Nitriheme                           ' non-polymer        77  46 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NTE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NTE     N     N     N       0      12.066       1.343      13.776
+NTE    FE    FE    FE   0.000      13.557       2.297      14.866
+NTE    O1     O     O   0.500       8.476       8.864      11.664
+NTE    O2     O     O   0.500       7.940       6.823      11.793
+NTE    NA     N     N   0.000      14.954       3.223      16.097
+NTE    NB     N     N   0.000      12.704       4.151      14.458
+NTE    NC     N     N   1.000       8.701       7.738      12.078
+NTE    ND     N     N   0.000      14.336       0.437      15.387
+NTE   C1A     C  CR56   0.000      15.950       2.629      16.754
+NTE   O1A     O    O2   0.000      20.409       2.945      19.386
+NTE   C1B     C  CR56   0.000      13.067       5.335      14.955
+NTE   C1C     C  CR56   0.000      11.099       1.947      13.079
+NTE   C1D     C  CR56   0.000      13.831      -0.750      15.047
+NTE   O1D     O     O   0.000      17.381      -2.419      20.458
+NTE   C2A     C   CR5   0.000      16.717       3.616      17.540
+NTE   O2A     O     O   0.000      21.370       3.811      17.576
+NTE   C2B     C   CR5   0.000      12.196       6.436      14.463
+NTE   C2C     C   CR5   0.000      10.196       0.955      12.454
+NTE   C2D     C   CR5   0.000      14.637      -1.852      15.629
+NTE   O2D     O    O2   0.000      17.438      -4.088      19.058
+NTE   C3A     C   CR5   0.000      16.109       4.840      17.284
+NTE   C3B     C   CR5   0.000      11.303       5.793      13.632
+NTE   C3C     C   CR5   0.000      10.697      -0.266      12.845
+NTE   C3D     C   CR5   0.000      15.658      -1.233      16.316
+NTE   C4A     C  CR56   0.000      14.996       4.525      16.364
+NTE   C4B     C  CR56   0.000      11.653       4.354      13.664
+NTE   C4C     C  CR56   0.000      11.876       0.028      13.678
+NTE   C4D     C  CR56   0.000      15.419       0.225      16.140
+NTE   CAA     C   CH2   0.000      17.922       3.328      18.405
+NTE   CAB     C    C2   0.000      10.147       6.246      12.808
+NTE   CAC     C    C2   0.000      10.266      -1.662      12.571
+NTE   CAD     C   CH2   0.000      16.763      -1.895      17.110
+NTE   CBA     C   CH2   0.000      19.059       4.209      17.898
+NTE   CBB     C    C2   0.000       9.706       7.496      12.812
+NTE   CBC     C    C2   0.000       8.979      -1.983      12.655
+NTE   CBD     C   CH2   0.000      16.119      -2.177      18.470
+NTE   CGA     C     C   0.000      20.378       3.611      18.319
+NTE   CGD     C     C   0.000      17.047      -2.948      19.385
+NTE   CHA     C  CR16   0.000      16.318       1.204      16.772
+NTE   CHB     C  CR16   0.000      14.151       5.621      15.896
+NTE   CHC     C  CR16   0.000      10.865       3.391      12.893
+NTE   CHD     C  CR16   0.000      12.643      -1.082      14.262
+NTE   CMA     C   CH3   0.000      16.423       6.222      17.796
+NTE   CMB     C   CH3   0.000      12.307       7.912      14.771
+NTE   CMC     C   CH3   0.000       8.997       1.204      11.575
+NTE   CMD     C   CH3   0.000      14.392      -3.322      15.465
+NTE    H1     H     H   0.000      21.291       2.624      19.534
+NTE    H2     H     H   0.000      17.997      -4.440      19.741
+NTE   HAA     H     H   0.000      17.699       3.568      19.455
+NTE  HAAA     H     H   0.000      18.201       2.267      18.322
+NTE   HAB     H     H   0.000       9.646       5.524      12.180
+NTE   HAC     H     H   0.000      10.996      -2.412      12.305
+NTE   HAD     H     H   0.000      17.086      -2.830      16.628
+NTE  HADA     H     H   0.000      17.626      -1.221      17.217
+NTE   HBA     H     H   0.000      19.016       4.269      16.800
+NTE  HBAA     H     H   0.000      18.960       5.218      18.324
+NTE   HBB     H     H   0.000      10.176       8.265      13.407
+NTE   HBC     H     H   0.000       8.661      -2.996      12.457
+NTE  HBCA     H     H   0.000       8.251      -1.231      12.921
+NTE   HBD     H     H   0.000      15.863      -1.220      18.948
+NTE  HBDA     H     H   0.000      15.203      -2.766      18.314
+NTE   HHA     H     H   0.000      17.235       0.881      17.242
+NTE   HHB     H     H   0.000      14.324       6.630      16.240
+NTE   HHC     H     H   0.000      10.118       3.735      12.193
+NTE   HHD     H     H   0.000      12.339      -2.108      14.116
+NTE   HMA     H     H   0.000      17.132       6.714      17.114
+NTE  HMAA     H     H   0.000      15.496       6.812      17.849
+NTE  HMAB     H     H   0.000      16.869       6.149      18.799
+NTE   HMB     H     H   0.000      11.507       8.457      14.249
+NTE  HMBA     H     H   0.000      12.209       8.068      15.855
+NTE  HMBB     H     H   0.000      13.285       8.284      14.433
+NTE   HMC     H     H   0.000       8.551       0.242      11.281
+NTE  HMCA     H     H   0.000       8.255       1.799      12.128
+NTE  HMCB     H     H   0.000       9.310       1.753      10.675
+NTE   HMD     H     H   0.000      15.159      -3.886      16.016
+NTE  HMDA     H     H   0.000      13.397      -3.574      15.861
+NTE  HMDB     H     H   0.000      14.439      -3.585      14.398
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NTE       N         FE        SING      2.039     0.020     2.039     0.020     
+NTE       N         C1C       SING      1.382     0.010     1.382     0.010     
+NTE       N         C4C       SING      1.382     0.010     1.382     0.010     
+NTE       FE        NA        SING      2.039     0.020     2.039     0.020     
+NTE       FE        NB        SING      2.039     0.020     2.039     0.020     
+NTE       FE        ND        SING      2.039     0.020     2.039     0.020     
+NTE       O1        NC        SING      1.240     0.020     1.240     0.020     
+NTE       O2        NC        DOUB      1.240     0.020     1.240     0.020     
+NTE       NA        C1A       SING      1.382     0.010     1.382     0.010     
+NTE       NA        C4A       SING      1.382     0.010     1.382     0.010     
+NTE       NB        C1B       SING      1.382     0.010     1.382     0.010     
+NTE       NB        C4B       DOUB      1.382     0.010     1.382     0.010     
+NTE       NC        CBB       SING      1.438     0.010     1.438     0.010     
+NTE       ND        C1D       DOUB      1.382     0.010     1.382     0.010     
+NTE       ND        C4D       SING      1.382     0.010     1.382     0.010     
+NTE       C1A       C2A       DOUB      1.446     0.016     1.446     0.016     
+NTE       C1A       CHA       SING      1.382     0.019     1.382     0.019     
+NTE       O1A       CGA       SING      1.311     0.019     1.311     0.019     
+NTE       C1B       C2B       SING      1.418     0.020     1.418     0.020     
+NTE       C1B       CHB       DOUB      1.382     0.019     1.382     0.019     
+NTE       C1C       C2C       SING      1.418     0.020     1.418     0.020     
+NTE       C1C       CHC       DOUB      1.382     0.019     1.382     0.019     
+NTE       C1D       C2D       SING      1.418     0.020     1.418     0.020     
+NTE       C1D       CHD       SING      1.382     0.019     1.382     0.019     
+NTE       O1D       CGD       DOUB      1.211     0.019     1.211     0.019     
+NTE       C2A       C3A       SING      1.362     0.020     1.362     0.020     
+NTE       C2A       CAA       SING      1.505     0.013     1.505     0.013     
+NTE       O2A       CGA       DOUB      1.211     0.019     1.211     0.019     
+NTE       C2B       C3B       DOUB      1.446     0.018     1.446     0.018     
+NTE       C2B       CMB       SING      1.501     0.014     1.501     0.014     
+NTE       C2C       C3C       DOUB      1.446     0.018     1.446     0.018     
+NTE       C2C       CMC       SING      1.501     0.014     1.501     0.014     
+NTE       C2D       C3D       DOUB      1.362     0.020     1.362     0.020     
+NTE       C2D       CMD       SING      1.501     0.014     1.501     0.014     
+NTE       O2D       CGD       SING      1.311     0.019     1.311     0.019     
+NTE       C3A       C4A       DOUB      1.418     0.020     1.418     0.020     
+NTE       C3A       CMA       SING      1.501     0.014     1.501     0.014     
+NTE       C3B       C4B       SING      1.452     0.016     1.452     0.016     
+NTE       C3B       CAB       SING      1.427     0.020     1.427     0.020     
+NTE       C3C       C4C       SING      1.452     0.016     1.452     0.016     
+NTE       C3C       CAC       SING      1.427     0.020     1.427     0.020     
+NTE       C3D       C4D       SING      1.446     0.016     1.446     0.016     
+NTE       C3D       CAD       SING      1.505     0.013     1.505     0.013     
+NTE       C4A       CHB       SING      1.382     0.019     1.382     0.019     
+NTE       C4B       CHC       SING      1.382     0.019     1.382     0.019     
+NTE       C4C       CHD       DOUB      1.382     0.019     1.382     0.019     
+NTE       C4D       CHA       DOUB      1.382     0.019     1.382     0.019     
+NTE       CAA       CBA       SING      1.523     0.011     1.523     0.011     
+NTE       CAB       CBB       DOUB      1.346     0.020     1.346     0.020     
+NTE       CAC       CBC       DOUB      1.278     0.020     1.278     0.020     
+NTE       CAD       CBD       SING      1.523     0.011     1.523     0.011     
+NTE       CBA       CGA       SING      1.500     0.012     1.500     0.012     
+NTE       CBD       CGD       SING      1.500     0.012     1.500     0.012     
+NTE       O1A       H1        SING      0.970     0.012     0.888     0.020     
+NTE       O2D       H2        SING      0.970     0.012     0.888     0.020     
+NTE       CAA       HAA       SING      1.089     0.010     0.982     0.017     
+NTE       CAA       HAAA      SING      1.089     0.010     0.982     0.017     
+NTE       CAB       HAB       SING      1.082     0.013     0.943     0.020     
+NTE       CAC       HAC       SING      1.082     0.013     0.943     0.020     
+NTE       CAD       HAD       SING      1.089     0.010     0.982     0.017     
+NTE       CAD       HADA      SING      1.089     0.010     0.982     0.017     
+NTE       CBA       HBA       SING      1.089     0.010     0.978     0.020     
+NTE       CBA       HBAA      SING      1.089     0.010     0.978     0.020     
+NTE       CBB       HBB       SING      1.082     0.013     0.949     0.020     
+NTE       CBC       HBC       SING      1.082     0.013     0.949     0.020     
+NTE       CBC       HBCA      SING      1.082     0.013     0.949     0.020     
+NTE       CBD       HBD       SING      1.089     0.010     0.978     0.020     
+NTE       CBD       HBDA      SING      1.089     0.010     0.978     0.020     
+NTE       CHA       HHA       SING      1.082     0.013     0.948     0.020     
+NTE       CHB       HHB       SING      1.082     0.013     0.948     0.020     
+NTE       CHC       HHC       SING      1.082     0.013     0.948     0.020     
+NTE       CHD       HHD       SING      1.082     0.013     0.948     0.020     
+NTE       CMA       HMA       SING      1.089     0.010     0.969     0.019     
+NTE       CMA       HMAA      SING      1.089     0.010     0.969     0.019     
+NTE       CMA       HMAB      SING      1.089     0.010     0.969     0.019     
+NTE       CMB       HMB       SING      1.089     0.010     0.969     0.019     
+NTE       CMB       HMBA      SING      1.089     0.010     0.969     0.019     
+NTE       CMB       HMBB      SING      1.089     0.010     0.969     0.019     
+NTE       CMC       HMC       SING      1.089     0.010     0.969     0.019     
+NTE       CMC       HMCA      SING      1.089     0.010     0.969     0.019     
+NTE       CMC       HMCB      SING      1.089     0.010     0.969     0.019     
+NTE       CMD       HMD       SING      1.089     0.010     0.969     0.019     
+NTE       CMD       HMDA      SING      1.089     0.010     0.969     0.019     
+NTE       CMD       HMDB      SING      1.089     0.010     0.969     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NTE    FE     N     C1C   118.172    3.00
+NTE    FE     N     C4C   118.172    3.00
+NTE   C1C     N     C4C   105.639    3.04
+NTE     N    FE    NA     109.471      3.00
+NTE     N    FE    NB     109.471      3.00
+NTE     N    FE    ND     109.471      3.00
+NTE    NA    FE    NB     109.471      3.00
+NTE    NA    FE    ND     109.471      3.00
+NTE    NB    FE    ND     109.471      3.00
+NTE    FE    NA     C1A   118.172    3.00
+NTE    FE    NA     C4A   118.172    3.00
+NTE   C1A    NA     C4A   106.556    0.24
+NTE    FE    NB     C1B   118.172    3.00
+NTE    FE    NB     C4B   118.172    3.00
+NTE   C1B    NB     C4B   105.639    0.24
+NTE    O1    NC      O2   122.186    1.84
+NTE    O1    NC     CBB   118.907    1.77
+NTE    O2    NC     CBB   118.907    1.77
+NTE    FE    ND     C1D   118.172    3.00
+NTE    FE    ND     C4D   118.172    3.00
+NTE   C1D    ND     C4D   106.556    0.24
+NTE    NA   C1A     C2A   109.854    0.74
+NTE    NA   C1A     CHA   120.386    0.83
+NTE   C2A   C1A     CHA   129.760    1.03
+NTE   CGA   O1A      H1   110.447    3.00
+NTE    NB   C1B     C2B   108.936    0.74
+NTE    NB   C1B     CHB   120.386    0.83
+NTE   C2B   C1B     CHB   130.678    2.29
+NTE     N   C1C     C2C   108.936    0.74
+NTE     N   C1C     CHC   120.386    0.83
+NTE   C2C   C1C     CHC   130.678    2.29
+NTE    ND   C1D     C2D   109.854    0.74
+NTE    ND   C1D     CHD   120.386    0.83
+NTE   C2D   C1D     CHD   129.760    2.29
+NTE   C1A   C2A     C3A   105.664    2.79
+NTE   C1A   C2A     CAA   125.558    0.97
+NTE   C3A   C2A     CAA   128.778    0.89
+NTE   C1B   C2B     C3B   107.024    0.36
+NTE   C1B   C2B     CMB   125.552    1.61
+NTE   C3B   C2B     CMB   127.424    1.91
+NTE   C1C   C2C     C3C   107.024    0.36
+NTE   C1C   C2C     CMC   125.552    1.61
+NTE   C3C   C2C     CMC   127.424    1.91
+NTE   C1D   C2D     C3D   108.072    1.88
+NTE   C1D   C2D     CMD   125.896    1.61
+NTE   C3D   C2D     CMD   126.032    2.46
+NTE   CGD   O2D      H2   110.447    3.00
+NTE   C2A   C3A     C4A   108.072    1.88
+NTE   C2A   C3A     CMA   126.032    2.46
+NTE   C4A   C3A     CMA   125.896    1.61
+NTE   C2B   C3B     C4B   107.284    0.51
+NTE   C2B   C3B     CAB   125.632    3.00
+NTE   C4B   C3B     CAB   127.084    3.00
+NTE   C2C   C3C     C4C   107.284    0.51
+NTE   C2C   C3C     CAC   125.632    3.00
+NTE   C4C   C3C     CAC   127.084    3.00
+NTE   C2D   C3D     C4D   105.664    2.79
+NTE   C2D   C3D     CAD   128.778    0.89
+NTE   C4D   C3D     CAD   125.558    0.97
+NTE    NA   C4A     C3A   109.854    0.74
+NTE    NA   C4A     CHB   120.386    0.83
+NTE   C3A   C4A     CHB   129.760    2.29
+NTE    NB   C4B     C3B   111.117    3.00
+NTE    NB   C4B     CHC   120.386    0.83
+NTE   C3B   C4B     CHC   128.497    3.00
+NTE     N   C4C     C3C   111.117    3.00
+NTE     N   C4C     CHD   120.386    0.83
+NTE   C3C   C4C     CHD   128.497    3.00
+NTE    ND   C4D     C3D   109.854    0.74
+NTE    ND   C4D     CHA   120.386    0.83
+NTE   C3D   C4D     CHA   129.760    1.03
+NTE   C2A   CAA     CBA   113.577    0.19
+NTE   C2A   CAA     HAA   108.929    0.59
+NTE   C2A   CAA    HAAA   108.929    0.59
+NTE   CBA   CAA     HAA   109.002    1.44
+NTE   CBA   CAA    HAAA   109.002    1.44
+NTE   HAA   CAA    HAAA   107.813    0.92
+NTE   C3B   CAB     CBB   126.997    0.89
+NTE   C3B   CAB     HAB   115.318    0.94
+NTE   CBB   CAB     HAB   117.684    1.68
+NTE   C3C   CAC     CBC   127.851    3.00
+NTE   C3C   CAC     HAC   116.248    0.94
+NTE   CBC   CAC     HAC   115.901    1.67
+NTE   C3D   CAD     CBD   113.577    0.19
+NTE   C3D   CAD     HAD   108.929    0.59
+NTE   C3D   CAD    HADA   108.929    0.59
+NTE   CBD   CAD     HAD   109.002    1.44
+NTE   CBD   CAD    HADA   109.002    1.44
+NTE   HAD   CAD    HADA   107.813    0.92
+NTE   CAA   CBA     CGA   113.874    1.88
+NTE   CAA   CBA     HBA   108.801    1.64
+NTE   CAA   CBA    HBAA   108.801    1.64
+NTE   CGA   CBA     HBA   108.528    0.87
+NTE   CGA   CBA    HBAA   108.528    0.87
+NTE   HBA   CBA    HBAA   107.724    1.61
+NTE    NC   CBB     CAB   121.603    0.71
+NTE    NC   CBB     HBB   119.232    3.00
+NTE   CAB   CBB     HBB   119.166    1.71
+NTE   CAC   CBC     HBC   120.057    3.00
+NTE   CAC   CBC    HBCA   120.057    3.00
+NTE   HBC   CBC    HBCA   119.886    2.37
+NTE   CAD   CBD     CGD   113.874    1.88
+NTE   CAD   CBD     HBD   108.801    1.64
+NTE   CAD   CBD    HBDA   108.801    1.64
+NTE   CGD   CBD     HBD   108.528    0.87
+NTE   CGD   CBD    HBDA   108.528    0.87
+NTE   HBD   CBD    HBDA   107.724    1.61
+NTE   O1A   CGA     O2A   122.931    1.34
+NTE   O1A   CGA     CBA   113.315    1.57
+NTE   O2A   CGA     CBA   123.754    1.42
+NTE   O1D   CGD     O2D   122.931    1.34
+NTE   O1D   CGD     CBD   123.754    1.42
+NTE   O2D   CGD     CBD   113.315    1.57
+NTE   C1A   CHA     C4D   124.711    1.50
+NTE   C1A   CHA     HHA   117.644    0.74
+NTE   C4D   CHA     HHA   117.644    0.74
+NTE   C1B   CHB     C4A   124.711    1.50
+NTE   C1B   CHB     HHB   117.644    0.74
+NTE   C4A   CHB     HHB   117.644    0.74
+NTE   C1C   CHC     C4B   124.711    1.50
+NTE   C1C   CHC     HHC   117.644    0.74
+NTE   C4B   CHC     HHC   117.644    0.74
+NTE   C1D   CHD     C4C   124.711    1.50
+NTE   C1D   CHD     HHD   117.644    0.74
+NTE   C4C   CHD     HHD   117.644    0.74
+NTE   C3A   CMA     HMA   109.504    0.31
+NTE   C3A   CMA    HMAA   109.504    0.31
+NTE   C3A   CMA    HMAB   109.504    0.31
+NTE   HMA   CMA    HMAA   109.268    1.46
+NTE   HMA   CMA    HMAB   109.268    1.46
+NTE  HMAA   CMA    HMAB   109.268    1.46
+NTE   C2B   CMB     HMB   109.504    0.31
+NTE   C2B   CMB    HMBA   109.504    0.31
+NTE   C2B   CMB    HMBB   109.504    0.31
+NTE   HMB   CMB    HMBA   109.268    1.46
+NTE   HMB   CMB    HMBB   109.268    1.46
+NTE  HMBA   CMB    HMBB   109.268    1.46
+NTE   C2C   CMC     HMC   109.504    0.31
+NTE   C2C   CMC    HMCA   109.504    0.31
+NTE   C2C   CMC    HMCB   109.504    0.31
+NTE   HMC   CMC    HMCA   109.268    1.46
+NTE   HMC   CMC    HMCB   109.268    1.46
+NTE  HMCA   CMC    HMCB   109.268    1.46
+NTE   C2D   CMD     HMD   109.504    0.31
+NTE   C2D   CMD    HMDA   109.504    0.31
+NTE   C2D   CMD    HMDB   109.504    0.31
+NTE   HMD   CMD    HMDA   109.268    1.46
+NTE   HMD   CMD    HMDB   109.268    1.46
+NTE  HMDA   CMD    HMDB   109.268    1.46
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NTE     P_sp2_sp2_1     C2A     C1A      NA     C4A       0.000   10.00     2
+NTE       sp2_sp2_1     C2A     C1A      NA      FE     180.000   10.00     2
+NTE     P_sp2_sp2_2     CHA     C1A      NA     C4A     180.000   10.00     2
+NTE       sp2_sp2_2     CHA     C1A      NA      FE       0.000   10.00     2
+NTE     P_sp2_sp2_3      NA     C1A     C2A     C3A       0.000   10.00     2
+NTE     P_sp2_sp2_4      NA     C1A     C2A     CAA     180.000   10.00     2
+NTE     P_sp2_sp2_5     CHA     C1A     C2A     C3A     180.000   10.00     2
+NTE     P_sp2_sp2_6     CHA     C1A     C2A     CAA       0.000   10.00     2
+NTE     P_sp2_sp2_7     C1A     C2A     C3A     C4A       0.000   10.00     2
+NTE     P_sp2_sp2_8     C1A     C2A     C3A     CMA     180.000   10.00     2
+NTE     P_sp2_sp2_9     CAA     C2A     C3A     C4A     180.000   10.00     2
+NTE    P_sp2_sp2_10     CAA     C2A     C3A     CMA       0.000   10.00     2
+NTE    P_sp2_sp2_11     C2A     C3A     C4A      NA       0.000   10.00     2
+NTE    P_sp2_sp2_12     C2A     C3A     C4A     CHB     180.000   10.00     2
+NTE    P_sp2_sp2_13     CMA     C3A     C4A      NA     180.000   10.00     2
+NTE    P_sp2_sp2_14     CMA     C3A     C4A     CHB       0.000   10.00     2
+NTE     other_tor_1       N      FE      NA     C1A      90.000   10.00     1
+NTE     other_tor_2       N      FE      NA     C4A     -90.000   10.00     1
+NTE    P_sp2_sp2_15     C2A     C1A      NA     C4A       0.000   10.00     2
+NTE       sp2_sp2_3     C2A     C1A      NA      FE     180.000   10.00     2
+NTE    P_sp2_sp2_16     CHA     C1A      NA     C4A     180.000   10.00     2
+NTE       sp2_sp2_4     CHA     C1A      NA      FE       0.000   10.00     2
+NTE       sp2_sp2_5      NA     C1A     CHA     C4D       0.000   10.00     2
+NTE       sp2_sp2_6      NA     C1A     CHA     HHA     180.000   10.00     2
+NTE       sp2_sp2_7     C2A     C1A     CHA     C4D     180.000   10.00     2
+NTE       sp2_sp2_8     C2A     C1A     CHA     HHA       0.000   10.00     2
+NTE       sp2_sp2_9      ND     C4D     CHA     C1A       0.000   10.00     2
+NTE      sp2_sp2_10      ND     C4D     CHA     HHA     180.000   10.00     2
+NTE      sp2_sp2_11     C3D     C4D     CHA     C1A     180.000   10.00     2
+NTE      sp2_sp2_12     C3D     C4D     CHA     HHA       0.000   10.00     2
+NTE    P_sp2_sp2_17     C3D     C4D      ND     C1D       0.000   10.00     2
+NTE      sp2_sp2_13     C3D     C4D      ND      FE     180.000   10.00     2
+NTE    P_sp2_sp2_18     CHA     C4D      ND     C1D     180.000   10.00     2
+NTE      sp2_sp2_14     CHA     C4D      ND      FE       0.000   10.00     2
+NTE    P_sp2_sp2_19     C2B     C1B      NB     C4B       0.000   10.00     2
+NTE      sp2_sp2_15     C2B     C1B      NB      FE     180.000   10.00     2
+NTE    P_sp2_sp2_20     CHB     C1B      NB     C4B     180.000   10.00     2
+NTE      sp2_sp2_16     CHB     C1B      NB      FE       0.000   10.00     2
+NTE    P_sp2_sp2_21      NB     C1B     C2B     C3B       0.000   10.00     2
+NTE    P_sp2_sp2_22      NB     C1B     C2B     CMB     180.000   10.00     2
+NTE    P_sp2_sp2_23     CHB     C1B     C2B     C3B     180.000   10.00     2
+NTE    P_sp2_sp2_24     CHB     C1B     C2B     CMB       0.000   10.00     2
+NTE    P_sp2_sp2_25     C1B     C2B     C3B     C4B       0.000   10.00     2
+NTE    P_sp2_sp2_26     C1B     C2B     C3B     CAB     180.000   10.00     2
+NTE    P_sp2_sp2_27     CMB     C2B     C3B     C4B     180.000   10.00     2
+NTE    P_sp2_sp2_28     CMB     C2B     C3B     CAB       0.000   10.00     2
+NTE    P_sp2_sp2_29     C2B     C3B     C4B      NB       0.000   10.00     2
+NTE    P_sp2_sp2_30     C2B     C3B     C4B     CHC     180.000   10.00     2
+NTE    P_sp2_sp2_31     CAB     C3B     C4B      NB     180.000   10.00     2
+NTE    P_sp2_sp2_32     CAB     C3B     C4B     CHC       0.000   10.00     2
+NTE     other_tor_3       N      FE      NA     C1A      90.000   10.00     1
+NTE     other_tor_4       N      FE      NA     C4A     -90.000   10.00     1
+NTE    P_sp2_sp2_33     C3A     C4A      NA     C1A       0.000   10.00     2
+NTE      sp2_sp2_17     C3A     C4A      NA      FE     180.000   10.00     2
+NTE    P_sp2_sp2_34     CHB     C4A      NA     C1A     180.000   10.00     2
+NTE      sp2_sp2_18     CHB     C4A      NA      FE       0.000   10.00     2
+NTE      sp2_sp2_19      NA     C4A     CHB     C1B       0.000   10.00     2
+NTE      sp2_sp2_20      NA     C4A     CHB     HHB     180.000   10.00     2
+NTE      sp2_sp2_21     C3A     C4A     CHB     C1B     180.000   10.00     2
+NTE      sp2_sp2_22     C3A     C4A     CHB     HHB       0.000   10.00     2
+NTE      sp2_sp2_23      NB     C1B     CHB     C4A       0.000   10.00     2
+NTE      sp2_sp2_24      NB     C1B     CHB     HHB     180.000   10.00     2
+NTE      sp2_sp2_25     C2B     C1B     CHB     C4A     180.000   10.00     2
+NTE      sp2_sp2_26     C2B     C1B     CHB     HHB       0.000   10.00     2
+NTE    P_sp2_sp2_35     C2B     C1B      NB     C4B       0.000   10.00     2
+NTE      sp2_sp2_27     C2B     C1B      NB      FE     180.000   10.00     2
+NTE    P_sp2_sp2_36     CHB     C1B      NB     C4B     180.000   10.00     2
+NTE      sp2_sp2_28     CHB     C1B      NB      FE       0.000   10.00     2
+NTE    P_sp2_sp2_37     C2C     C1C       N     C4C       0.000   10.00     2
+NTE      sp2_sp2_29     C2C     C1C       N      FE     180.000   10.00     2
+NTE    P_sp2_sp2_38     CHC     C1C       N     C4C     180.000   10.00     2
+NTE      sp2_sp2_30     CHC     C1C       N      FE       0.000   10.00     2
+NTE    P_sp2_sp2_39       N     C1C     C2C     C3C       0.000   10.00     2
+NTE    P_sp2_sp2_40       N     C1C     C2C     CMC     180.000   10.00     2
+NTE    P_sp2_sp2_41     CHC     C1C     C2C     C3C     180.000   10.00     2
+NTE    P_sp2_sp2_42     CHC     C1C     C2C     CMC       0.000   10.00     2
+NTE    P_sp2_sp2_43     C1C     C2C     C3C     C4C       0.000   10.00     2
+NTE    P_sp2_sp2_44     C1C     C2C     C3C     CAC     180.000   10.00     2
+NTE    P_sp2_sp2_45     CMC     C2C     C3C     C4C     180.000   10.00     2
+NTE    P_sp2_sp2_46     CMC     C2C     C3C     CAC       0.000   10.00     2
+NTE    P_sp2_sp2_47     C2C     C3C     C4C       N       0.000   10.00     2
+NTE    P_sp2_sp2_48     C2C     C3C     C4C     CHD     180.000   10.00     2
+NTE    P_sp2_sp2_49     CAC     C3C     C4C       N     180.000   10.00     2
+NTE    P_sp2_sp2_50     CAC     C3C     C4C     CHD       0.000   10.00     2
+NTE     other_tor_5      NA      FE       N     C1C      90.000   10.00     1
+NTE     other_tor_6      NA      FE       N     C4C     -90.000   10.00     1
+NTE     other_tor_7       N      FE      NB     C4B       0.000   10.00     1
+NTE     other_tor_8       N      FE      NB     C1B     180.000   10.00     1
+NTE    P_sp2_sp2_51     C3B     C4B      NB     C1B       0.000   10.00     2
+NTE      sp2_sp2_31     C3B     C4B      NB      FE     180.000   10.00     2
+NTE    P_sp2_sp2_52     CHC     C4B      NB     C1B     180.000   10.00     2
+NTE      sp2_sp2_32     CHC     C4B      NB      FE       0.000   10.00     2
+NTE      sp2_sp2_33      NB     C4B     CHC     C1C       0.000   10.00     2
+NTE      sp2_sp2_34      NB     C4B     CHC     HHC     180.000   10.00     2
+NTE      sp2_sp2_35     C3B     C4B     CHC     C1C     180.000   10.00     2
+NTE      sp2_sp2_36     C3B     C4B     CHC     HHC       0.000   10.00     2
+NTE      sp2_sp2_37       N     C1C     CHC     C4B       0.000   10.00     2
+NTE      sp2_sp2_38       N     C1C     CHC     HHC     180.000   10.00     2
+NTE      sp2_sp2_39     C2C     C1C     CHC     C4B     180.000   10.00     2
+NTE      sp2_sp2_40     C2C     C1C     CHC     HHC       0.000   10.00     2
+NTE    P_sp2_sp2_53     C2D     C1D      ND     C4D       0.000   10.00     2
+NTE      sp2_sp2_41     C2D     C1D      ND      FE     180.000   10.00     2
+NTE    P_sp2_sp2_54     CHD     C1D      ND     C4D     180.000   10.00     2
+NTE      sp2_sp2_42     CHD     C1D      ND      FE       0.000   10.00     2
+NTE    P_sp2_sp2_55      ND     C1D     C2D     C3D       0.000   10.00     2
+NTE    P_sp2_sp2_56      ND     C1D     C2D     CMD     180.000   10.00     2
+NTE    P_sp2_sp2_57     CHD     C1D     C2D     C3D     180.000   10.00     2
+NTE    P_sp2_sp2_58     CHD     C1D     C2D     CMD       0.000   10.00     2
+NTE    P_sp2_sp2_59     C1D     C2D     C3D     C4D       0.000   10.00     2
+NTE    P_sp2_sp2_60     C1D     C2D     C3D     CAD     180.000   10.00     2
+NTE    P_sp2_sp2_61     CMD     C2D     C3D     C4D     180.000   10.00     2
+NTE    P_sp2_sp2_62     CMD     C2D     C3D     CAD       0.000   10.00     2
+NTE    P_sp2_sp2_63     C2D     C3D     C4D      ND       0.000   10.00     2
+NTE    P_sp2_sp2_64     C2D     C3D     C4D     CHA     180.000   10.00     2
+NTE    P_sp2_sp2_65     CAD     C3D     C4D      ND     180.000   10.00     2
+NTE    P_sp2_sp2_66     CAD     C3D     C4D     CHA       0.000   10.00     2
+NTE     other_tor_9      NA      FE       N     C1C      90.000   10.00     1
+NTE    other_tor_10      NA      FE       N     C4C     -90.000   10.00     1
+NTE    other_tor_11       N      FE      ND     C1D       0.000   10.00     1
+NTE    other_tor_12       N      FE      ND     C4D     180.000   10.00     1
+NTE    P_sp2_sp2_67     C2D     C1D      ND     C4D       0.000   10.00     2
+NTE      sp2_sp2_43     C2D     C1D      ND      FE     180.000   10.00     2
+NTE    P_sp2_sp2_68     CHD     C1D      ND     C4D     180.000   10.00     2
+NTE      sp2_sp2_44     CHD     C1D      ND      FE       0.000   10.00     2
+NTE      sp2_sp2_45      ND     C1D     CHD     C4C       0.000   10.00     2
+NTE      sp2_sp2_46      ND     C1D     CHD     HHD     180.000   10.00     2
+NTE      sp2_sp2_47     C2D     C1D     CHD     C4C     180.000   10.00     2
+NTE      sp2_sp2_48     C2D     C1D     CHD     HHD       0.000   10.00     2
+NTE      sp2_sp2_49       N     C4C     CHD     C1D       0.000   10.00     2
+NTE      sp2_sp2_50       N     C4C     CHD     HHD     180.000   10.00     2
+NTE      sp2_sp2_51     C3C     C4C     CHD     C1D     180.000   10.00     2
+NTE      sp2_sp2_52     C3C     C4C     CHD     HHD       0.000   10.00     2
+NTE    P_sp2_sp2_69     C3C     C4C       N     C1C       0.000   10.00     2
+NTE      sp2_sp2_53     C3C     C4C       N      FE     180.000   10.00     2
+NTE    P_sp2_sp2_70     CHD     C4C       N     C1C     180.000   10.00     2
+NTE      sp2_sp2_54     CHD     C4C       N      FE       0.000   10.00     2
+NTE      sp2_sp2_55     CAB     CBB      NC      O1     180.000   10.00     2
+NTE      sp2_sp2_56     CAB     CBB      NC      O2       0.000   10.00     2
+NTE      sp2_sp2_57     HBB     CBB      NC      O1       0.000   10.00     2
+NTE      sp2_sp2_58     HBB     CBB      NC      O2     180.000   10.00     2
+NTE      sp2_sp2_59     O2A     CGA     O1A      H1     180.000   10.00     2
+NTE      sp2_sp2_60     CBA     CGA     O1A      H1       0.000   10.00     2
+NTE       sp2_sp3_1     C1A     C2A     CAA     HAA     150.000   10.00     6
+NTE       sp2_sp3_2     C1A     C2A     CAA     CBA     -90.000   10.00     6
+NTE       sp2_sp3_3     C1A     C2A     CAA    HAAA      30.000   10.00     6
+NTE       sp2_sp3_4     C3A     C2A     CAA     HAA     -30.000   10.00     6
+NTE       sp2_sp3_5     C3A     C2A     CAA     CBA      90.000   10.00     6
+NTE       sp2_sp3_6     C3A     C2A     CAA    HAAA    -150.000   10.00     6
+NTE       sp2_sp3_7     C1B     C2B     CMB     HMB     150.000   10.00     6
+NTE       sp2_sp3_8     C1B     C2B     CMB    HMBA     -90.000   10.00     6
+NTE       sp2_sp3_9     C1B     C2B     CMB    HMBB      30.000   10.00     6
+NTE      sp2_sp3_10     C3B     C2B     CMB     HMB     -30.000   10.00     6
+NTE      sp2_sp3_11     C3B     C2B     CMB    HMBA      90.000   10.00     6
+NTE      sp2_sp3_12     C3B     C2B     CMB    HMBB    -150.000   10.00     6
+NTE      sp2_sp3_13     C1C     C2C     CMC     HMC     150.000   10.00     6
+NTE      sp2_sp3_14     C1C     C2C     CMC    HMCA     -90.000   10.00     6
+NTE      sp2_sp3_15     C1C     C2C     CMC    HMCB      30.000   10.00     6
+NTE      sp2_sp3_16     C3C     C2C     CMC     HMC     -30.000   10.00     6
+NTE      sp2_sp3_17     C3C     C2C     CMC    HMCA      90.000   10.00     6
+NTE      sp2_sp3_18     C3C     C2C     CMC    HMCB    -150.000   10.00     6
+NTE      sp2_sp3_19     C1D     C2D     CMD     HMD     150.000   10.00     6
+NTE      sp2_sp3_20     C1D     C2D     CMD    HMDA     -90.000   10.00     6
+NTE      sp2_sp3_21     C1D     C2D     CMD    HMDB      30.000   10.00     6
+NTE      sp2_sp3_22     C3D     C2D     CMD     HMD     -30.000   10.00     6
+NTE      sp2_sp3_23     C3D     C2D     CMD    HMDA      90.000   10.00     6
+NTE      sp2_sp3_24     C3D     C2D     CMD    HMDB    -150.000   10.00     6
+NTE      sp2_sp2_61     O1D     CGD     O2D      H2     180.000   10.00     2
+NTE      sp2_sp2_62     CBD     CGD     O2D      H2       0.000   10.00     2
+NTE      sp2_sp3_25     C2A     C3A     CMA     HMA     150.000   10.00     6
+NTE      sp2_sp3_26     C2A     C3A     CMA    HMAA     -90.000   10.00     6
+NTE      sp2_sp3_27     C2A     C3A     CMA    HMAB      30.000   10.00     6
+NTE      sp2_sp3_28     C4A     C3A     CMA     HMA     -30.000   10.00     6
+NTE      sp2_sp3_29     C4A     C3A     CMA    HMAA      90.000   10.00     6
+NTE      sp2_sp3_30     C4A     C3A     CMA    HMAB    -150.000   10.00     6
+NTE      sp2_sp2_63     C2B     C3B     CAB     CBB     180.000   10.00     2
+NTE      sp2_sp2_64     C2B     C3B     CAB     HAB       0.000   10.00     2
+NTE      sp2_sp2_65     C4B     C3B     CAB     CBB       0.000   10.00     2
+NTE      sp2_sp2_66     C4B     C3B     CAB     HAB     180.000   10.00     2
+NTE      sp2_sp2_67     C2C     C3C     CAC     CBC     180.000   10.00     2
+NTE      sp2_sp2_68     C2C     C3C     CAC     HAC       0.000   10.00     2
+NTE      sp2_sp2_69     C4C     C3C     CAC     CBC       0.000   10.00     2
+NTE      sp2_sp2_70     C4C     C3C     CAC     HAC     180.000   10.00     2
+NTE      sp2_sp3_31     C2D     C3D     CAD     HAD     150.000   10.00     6
+NTE      sp2_sp3_32     C2D     C3D     CAD     CBD     -90.000   10.00     6
+NTE      sp2_sp3_33     C2D     C3D     CAD    HADA      30.000   10.00     6
+NTE      sp2_sp3_34     C4D     C3D     CAD     HAD     -30.000   10.00     6
+NTE      sp2_sp3_35     C4D     C3D     CAD     CBD      90.000   10.00     6
+NTE      sp2_sp3_36     C4D     C3D     CAD    HADA    -150.000   10.00     6
+NTE       sp3_sp3_1     C2A     CAA     CBA     CGA     180.000   10.00     3
+NTE       sp3_sp3_2     C2A     CAA     CBA     HBA     -60.000   10.00     3
+NTE       sp3_sp3_3     C2A     CAA     CBA    HBAA      60.000   10.00     3
+NTE       sp3_sp3_4     HAA     CAA     CBA     CGA      60.000   10.00     3
+NTE       sp3_sp3_5     HAA     CAA     CBA     HBA     180.000   10.00     3
+NTE       sp3_sp3_6     HAA     CAA     CBA    HBAA     -60.000   10.00     3
+NTE       sp3_sp3_7    HAAA     CAA     CBA     CGA     -60.000   10.00     3
+NTE       sp3_sp3_8    HAAA     CAA     CBA     HBA      60.000   10.00     3
+NTE       sp3_sp3_9    HAAA     CAA     CBA    HBAA     180.000   10.00     3
+NTE      sp2_sp2_71     C3B     CAB     CBB      NC     180.000   10.00     2
+NTE      sp2_sp2_72     C3B     CAB     CBB     HBB       0.000   10.00     2
+NTE      sp2_sp2_73     HAB     CAB     CBB      NC       0.000   10.00     2
+NTE      sp2_sp2_74     HAB     CAB     CBB     HBB     180.000   10.00     2
+NTE      sp2_sp2_75     C3C     CAC     CBC     HBC     180.000   10.00     2
+NTE      sp2_sp2_76     C3C     CAC     CBC    HBCA       0.000   10.00     2
+NTE      sp2_sp2_77     HAC     CAC     CBC     HBC       0.000   10.00     2
+NTE      sp2_sp2_78     HAC     CAC     CBC    HBCA     180.000   10.00     2
+NTE      sp3_sp3_10     C3D     CAD     CBD     CGD     180.000   10.00     3
+NTE      sp3_sp3_11     C3D     CAD     CBD     HBD     -60.000   10.00     3
+NTE      sp3_sp3_12     C3D     CAD     CBD    HBDA      60.000   10.00     3
+NTE      sp3_sp3_13     HAD     CAD     CBD     CGD      60.000   10.00     3
+NTE      sp3_sp3_14     HAD     CAD     CBD     HBD     180.000   10.00     3
+NTE      sp3_sp3_15     HAD     CAD     CBD    HBDA     -60.000   10.00     3
+NTE      sp3_sp3_16    HADA     CAD     CBD     CGD     -60.000   10.00     3
+NTE      sp3_sp3_17    HADA     CAD     CBD     HBD      60.000   10.00     3
+NTE      sp3_sp3_18    HADA     CAD     CBD    HBDA     180.000   10.00     3
+NTE      sp2_sp3_37     O1A     CGA     CBA     HBA       0.000   10.00     6
+NTE      sp2_sp3_38     O1A     CGA     CBA     CAA     120.000   10.00     6
+NTE      sp2_sp3_39     O1A     CGA     CBA    HBAA    -120.000   10.00     6
+NTE      sp2_sp3_40     O2A     CGA     CBA     HBA     180.000   10.00     6
+NTE      sp2_sp3_41     O2A     CGA     CBA     CAA     -60.000   10.00     6
+NTE      sp2_sp3_42     O2A     CGA     CBA    HBAA      60.000   10.00     6
+NTE      sp2_sp3_43     O1D     CGD     CBD     HBD       0.000   10.00     6
+NTE      sp2_sp3_44     O1D     CGD     CBD     CAD     120.000   10.00     6
+NTE      sp2_sp3_45     O1D     CGD     CBD    HBDA    -120.000   10.00     6
+NTE      sp2_sp3_46     O2D     CGD     CBD     HBD     180.000   10.00     6
+NTE      sp2_sp3_47     O2D     CGD     CBD     CAD     -60.000   10.00     6
+NTE      sp2_sp3_48     O2D     CGD     CBD    HBDA      60.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NTE    plan-1   CBB   0.020
+NTE    plan-1    NC   0.020
+NTE    plan-1    O1   0.020
+NTE    plan-1    O2   0.020
+NTE    plan-2   C1A   0.020
+NTE    plan-2   C2A   0.020
+NTE    plan-2   C3A   0.020
+NTE    plan-2   C4A   0.020
+NTE    plan-2   CAA   0.020
+NTE    plan-2   CHA   0.020
+NTE    plan-2   CHB   0.020
+NTE    plan-2   CMA   0.020
+NTE    plan-2    NA   0.020
+NTE    plan-3   C1B   0.020
+NTE    plan-3   C2B   0.020
+NTE    plan-3   C3B   0.020
+NTE    plan-3   C4B   0.020
+NTE    plan-3   CAB   0.020
+NTE    plan-3   CHB   0.020
+NTE    plan-3   CHC   0.020
+NTE    plan-3   CMB   0.020
+NTE    plan-3    NB   0.020
+NTE    plan-4   C1C   0.020
+NTE    plan-4   C2C   0.020
+NTE    plan-4   C3C   0.020
+NTE    plan-4   C4C   0.020
+NTE    plan-4   CAC   0.020
+NTE    plan-4   CHC   0.020
+NTE    plan-4   CHD   0.020
+NTE    plan-4   CMC   0.020
+NTE    plan-4     N   0.020
+NTE    plan-5   C1D   0.020
+NTE    plan-5   C2D   0.020
+NTE    plan-5   C3D   0.020
+NTE    plan-5   C4D   0.020
+NTE    plan-5   CAD   0.020
+NTE    plan-5   CHA   0.020
+NTE    plan-5   CHD   0.020
+NTE    plan-5   CMD   0.020
+NTE    plan-5    ND   0.020
+NTE    plan-6   C3B   0.020
+NTE    plan-6   CAB   0.020
+NTE    plan-6   CBB   0.020
+NTE    plan-6   HAB   0.020
+NTE    plan-7   C3C   0.020
+NTE    plan-7   CAC   0.020
+NTE    plan-7   CBC   0.020
+NTE    plan-7   HAC   0.020
+NTE    plan-8   CAB   0.020
+NTE    plan-8   CBB   0.020
+NTE    plan-8   HBB   0.020
+NTE    plan-8    NC   0.020
+NTE    plan-9   CAC   0.020
+NTE    plan-9   CBC   0.020
+NTE    plan-9   HBC   0.020
+NTE    plan-9  HBCA   0.020
+NTE   plan-10   CBA   0.020
+NTE   plan-10   CGA   0.020
+NTE   plan-10   O1A   0.020
+NTE   plan-10   O2A   0.020
+NTE   plan-11   CBD   0.020
+NTE   plan-11   CGD   0.020
+NTE   plan-11   O1D   0.020
+NTE   plan-11   O2D   0.020
+NTE   plan-12   C1A   0.020
+NTE   plan-12   C4D   0.020
+NTE   plan-12   CHA   0.020
+NTE   plan-12   HHA   0.020
+NTE   plan-13   C1B   0.020
+NTE   plan-13   C4A   0.020
+NTE   plan-13   CHB   0.020
+NTE   plan-13   HHB   0.020
+NTE   plan-14   C1C   0.020
+NTE   plan-14   C4B   0.020
+NTE   plan-14   CHC   0.020
+NTE   plan-14   HHC   0.020
+NTE   plan-15   C1D   0.020
+NTE   plan-15   C4C   0.020
+NTE   plan-15   CHD   0.020
+NTE   plan-15   HHD   0.020

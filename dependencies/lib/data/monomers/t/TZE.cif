@@ -1,0 +1,157 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TZE     TZE     "2-(4-METHYL-THIAZOL-5-YL)-ETHANOL"     NON-POLYMER     18     9     .     
+#
+data_comp_TZE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TZE     C1      C       CR15    0       10.023      39.100      69.677      
+TZE     N1      N       NRD5    0       9.794       38.172      70.550      
+TZE     C2      C       CR5     0       9.671       38.729      71.814      
+TZE     C3      C       CR5     0       9.725       40.089      71.860      
+TZE     S1      S       S2      0       9.958       40.703      70.264      
+TZE     CM      C       CH3     0       9.495       37.803      72.979      
+TZE     "C1'"   C       CH2     0       9.615       41.022      73.037      
+TZE     "C2'"   C       CH2     0       10.955      41.216      73.715      
+TZE     OXT     O       OH1     0       11.918      41.854      72.917      
+TZE     H1      H       H       0       10.215      38.902      68.766      
+TZE     H1M     H       H       0       9.422       38.313      73.801      
+TZE     H2M     H       H       0       10.260      37.208      73.038      
+TZE     H3M     H       H       0       8.689       37.277      72.855      
+TZE     "H11'"  H       H       0       8.972       40.658      73.674      
+TZE     "H12'"  H       H       0       9.271       41.881      72.731      
+TZE     "H21'"  H       H       0       11.292      40.338      73.987      
+TZE     "H22'"  H       H       0       10.814      41.741      74.530      
+TZE     HXT     H       H       0       11.635      42.628      72.725      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TZE       C1        N1        DOUBLE    n         1.294     0.010     1.294     0.010     
+TZE       C1        S1        SINGLE    n         1.709     0.010     1.709     0.010     
+TZE       N1        C2        SINGLE    n         1.385     0.010     1.385     0.010     
+TZE       C2        C3        DOUBLE    n         1.358     0.014     1.358     0.014     
+TZE       C2        CM        SINGLE    n         1.497     0.010     1.497     0.010     
+TZE       C3        S1        SINGLE    n         1.728     0.015     1.728     0.015     
+TZE       C3        "C1'"     SINGLE    n         1.505     0.011     1.505     0.011     
+TZE       "C1'"     "C2'"     SINGLE    n         1.514     0.013     1.514     0.013     
+TZE       "C2'"     OXT       SINGLE    n         1.404     0.020     1.404     0.020     
+TZE       C1        H1        SINGLE    n         1.082     0.013     0.952     0.020     
+TZE       CM        H1M       SINGLE    n         1.089     0.010     0.971     0.012     
+TZE       CM        H2M       SINGLE    n         1.089     0.010     0.971     0.012     
+TZE       CM        H3M       SINGLE    n         1.089     0.010     0.971     0.012     
+TZE       "C1'"     "H11'"    SINGLE    n         1.089     0.010     0.975     0.016     
+TZE       "C1'"     "H12'"    SINGLE    n         1.089     0.010     0.975     0.016     
+TZE       "C2'"     "H21'"    SINGLE    n         1.089     0.010     0.980     0.012     
+TZE       "C2'"     "H22'"    SINGLE    n         1.089     0.010     0.980     0.012     
+TZE       OXT       HXT       SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TZE          N1          C1          S1     115.833    1.50
+TZE          N1          C1          H1     122.107    1.50
+TZE          S1          C1          H1     122.060    1.50
+TZE          C1          N1          C2     109.041    2.29
+TZE          N1          C2          C3     115.589    1.50
+TZE          N1          C2          CM     118.647    1.50
+TZE          C3          C2          CM     125.764    1.50
+TZE          C2          C3          S1     110.064    1.50
+TZE          C2          C3       "C1'"     128.504    2.76
+TZE          S1          C3       "C1'"     121.432    1.50
+TZE          C1          S1          C3      92.793    3.00
+TZE          C2          CM         H1M     109.645    1.50
+TZE          C2          CM         H2M     109.645    1.50
+TZE          C2          CM         H3M     109.645    1.50
+TZE         H1M          CM         H2M     109.427    1.50
+TZE         H1M          CM         H3M     109.427    1.50
+TZE         H2M          CM         H3M     109.427    1.50
+TZE          C3       "C1'"       "C2'"     111.293    1.67
+TZE          C3       "C1'"      "H11'"     108.991    1.50
+TZE          C3       "C1'"      "H12'"     108.991    1.50
+TZE       "C2'"       "C1'"      "H11'"     109.802    1.50
+TZE       "C2'"       "C1'"      "H12'"     109.802    1.50
+TZE      "H11'"       "C1'"      "H12'"     107.544    1.50
+TZE       "C1'"       "C2'"         OXT     114.391    3.00
+TZE       "C1'"       "C2'"      "H21'"     108.352    2.00
+TZE       "C1'"       "C2'"      "H22'"     108.352    2.00
+TZE         OXT       "C2'"      "H21'"     109.254    1.87
+TZE         OXT       "C2'"      "H22'"     109.254    1.87
+TZE      "H21'"       "C2'"      "H22'"     107.387    1.50
+TZE       "C2'"         OXT         HXT     108.307    2.62
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TZE             sp2_sp2_1          S1          C1          N1          C2       0.000   10.00     2
+TZE             sp2_sp2_4          CM          C2          N1          C1     180.000   10.00     2
+TZE             sp2_sp2_8          CM          C2          C3       "C1'"       0.000   10.00     2
+TZE             sp2_sp3_5          N1          C2          CM         H1M     150.000   10.00     6
+TZE            sp2_sp3_12          C2          C3       "C1'"       "C2'"     -90.000   10.00     6
+TZE             sp3_sp3_1          C3       "C1'"       "C2'"         OXT     180.000   10.00     3
+TZE            sp3_sp3_10       "C1'"       "C2'"         OXT         HXT     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TZE    plan-1          C1   0.020
+TZE    plan-1          H1   0.020
+TZE    plan-1          N1   0.020
+TZE    plan-1          S1   0.020
+TZE    plan-2          C2   0.020
+TZE    plan-2          C3   0.020
+TZE    plan-2          CM   0.020
+TZE    plan-2          N1   0.020
+TZE    plan-3       "C1'"   0.020
+TZE    plan-3          C2   0.020
+TZE    plan-3          C3   0.020
+TZE    plan-3          S1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TZE SMILES           ACDLabs              10.04 OCCc1scnc1C
+TZE SMILES_CANONICAL CACTVS               3.341 Cc1ncsc1CCO
+TZE SMILES           CACTVS               3.341 Cc1ncsc1CCO
+TZE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "Cc1c(scn1)CCO"
+TZE SMILES           "OpenEye OEToolkits" 1.5.0 "Cc1c(scn1)CCO"
+TZE InChI            InChI                1.03  "InChI=1S/C6H9NOS/c1-5-6(2-3-8)9-4-7-5/h4,8H,2-3H2,1H3"
+TZE InChIKey         InChI                1.03  BKAWJIRCKVUVED-UHFFFAOYSA-N
+TZE ?                acedrg               190         "dictionary generator"                  
+TZE ?                acedrg_database      11          "data source"                           
+TZE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TZE ?                refmac5              5.8.0158    "optimization tool"                     

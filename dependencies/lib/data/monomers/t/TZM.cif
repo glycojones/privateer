@@ -1,0 +1,195 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TZM     TZM     "3-(1H-1,2,4-triazol-1-ylmethyl)aniline"     NON-POLYMER     23     13     .     
+#
+data_comp_TZM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TZM     CAG     C       CR16    0       -1.152      -0.654      -0.478      
+TZM     CAK     C       CR6     0       -2.385      -0.210      0.028       
+TZM     NAA     N       NH2     0       -3.384      -1.111      0.328       
+TZM     CAC     C       CR16    0       -2.577      1.160       0.221       
+TZM     CAB     C       CR16    0       -1.562      2.063       -0.085      
+TZM     CAD     C       CR16    0       -0.348      1.607       -0.585      
+TZM     CAL     C       CR6     0       -0.132      0.247       -0.786      
+TZM     CAH     C       CH2     0       1.187       -0.245      -1.329      
+TZM     NAM     N       NR5     0       2.178       -0.436      -0.269      
+TZM     NAJ     N       NRD5    0       3.282       0.354       -0.189      
+TZM     CAE     C       CR15    0       3.894       -0.130      0.868       
+TZM     NAI     N       NRD5    0       3.267       -1.159      1.463       
+TZM     CAF     C       CR15    0       2.195       -1.318      0.717       
+TZM     H1      H       H       0       -1.010      -1.576      -0.612      
+TZM     H2      H       H       0       -3.348      -1.927      0.008       
+TZM     H3      H       H       0       -4.055      -0.867      0.838       
+TZM     H4      H       H       0       -3.400      1.471       0.560       
+TZM     H5      H       H       0       -1.701      2.986       0.049       
+TZM     H6      H       H       0       0.335       2.225       -0.790      
+TZM     H7      H       H       0       1.528       0.400       -1.980      
+TZM     H8      H       H       0       1.047       -1.095      -1.791      
+TZM     H9      H       H       0       4.706       0.218       1.182       
+TZM     H10     H       H       0       1.532       -1.964      0.859       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TZM       NAI       CAF       DOUBLE    y         1.317     0.010     1.317     0.010     
+TZM       CAE       NAI       SINGLE    y         1.346     0.012     1.346     0.012     
+TZM       NAM       CAF       SINGLE    y         1.322     0.010     1.322     0.010     
+TZM       NAJ       CAE       DOUBLE    y         1.314     0.010     1.314     0.010     
+TZM       CAH       NAM       SINGLE    n         1.462     0.010     1.462     0.010     
+TZM       NAM       NAJ       SINGLE    y         1.358     0.010     1.358     0.010     
+TZM       CAL       CAH       SINGLE    n         1.509     0.010     1.509     0.010     
+TZM       CAD       CAL       SINGLE    y         1.384     0.010     1.384     0.010     
+TZM       CAG       CAL       DOUBLE    y         1.386     0.011     1.386     0.011     
+TZM       CAB       CAD       DOUBLE    y         1.380     0.013     1.380     0.013     
+TZM       CAG       CAK       SINGLE    y         1.397     0.010     1.397     0.010     
+TZM       CAC       CAB       SINGLE    y         1.381     0.014     1.381     0.014     
+TZM       CAK       CAC       DOUBLE    y         1.390     0.010     1.390     0.010     
+TZM       CAK       NAA       SINGLE    n         1.376     0.019     1.376     0.019     
+TZM       CAG       H1        SINGLE    n         1.082     0.013     0.942     0.014     
+TZM       NAA       H2        SINGLE    n         1.016     0.010     0.877     0.020     
+TZM       NAA       H3        SINGLE    n         1.016     0.010     0.877     0.020     
+TZM       CAC       H4        SINGLE    n         1.082     0.013     0.943     0.018     
+TZM       CAB       H5        SINGLE    n         1.082     0.013     0.943     0.018     
+TZM       CAD       H6        SINGLE    n         1.082     0.013     0.944     0.017     
+TZM       CAH       H7        SINGLE    n         1.089     0.010     0.978     0.012     
+TZM       CAH       H8        SINGLE    n         1.089     0.010     0.978     0.012     
+TZM       CAE       H9        SINGLE    n         1.082     0.013     0.938     0.020     
+TZM       CAF       H10       SINGLE    n         1.082     0.013     0.937     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TZM         CAL         CAG         CAK     120.638    1.50
+TZM         CAL         CAG          H1     119.609    1.50
+TZM         CAK         CAG          H1     119.753    1.50
+TZM         CAG         CAK         CAC     118.654    1.50
+TZM         CAG         CAK         NAA     120.565    1.50
+TZM         CAC         CAK         NAA     120.780    1.50
+TZM         CAK         NAA          H2     119.811    2.73
+TZM         CAK         NAA          H3     119.811    2.73
+TZM          H2         NAA          H3     120.379    3.00
+TZM         CAB         CAC         CAK     120.734    1.50
+TZM         CAB         CAC          H4     119.887    1.50
+TZM         CAK         CAC          H4     119.379    1.50
+TZM         CAD         CAB         CAC     120.551    1.50
+TZM         CAD         CAB          H5     119.820    1.50
+TZM         CAC         CAB          H5     119.629    1.50
+TZM         CAL         CAD         CAB     120.687    1.50
+TZM         CAL         CAD          H6     119.653    1.50
+TZM         CAB         CAD          H6     119.660    1.50
+TZM         CAH         CAL         CAD     120.623    1.50
+TZM         CAH         CAL         CAG     120.641    1.50
+TZM         CAD         CAL         CAG     118.736    1.50
+TZM         NAM         CAH         CAL     111.907    1.50
+TZM         NAM         CAH          H7     109.031    1.50
+TZM         NAM         CAH          H8     109.031    1.50
+TZM         CAL         CAH          H7     109.138    1.50
+TZM         CAL         CAH          H8     109.138    1.50
+TZM          H7         CAH          H8     107.929    1.50
+TZM         CAF         NAM         CAH     129.811    1.50
+TZM         CAF         NAM         NAJ     109.053    1.50
+TZM         CAH         NAM         NAJ     121.135    1.50
+TZM         CAE         NAJ         NAM     101.718    1.50
+TZM         NAI         CAE         NAJ     115.180    1.50
+TZM         NAI         CAE          H9     122.547    1.50
+TZM         NAJ         CAE          H9     122.273    1.50
+TZM         CAF         NAI         CAE     103.411    1.50
+TZM         NAI         CAF         NAM     110.637    1.50
+TZM         NAI         CAF         H10     125.005    1.50
+TZM         NAM         CAF         H10     124.358    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TZM              const_34         CAL         CAG         CAK         NAA     180.000   10.00     2
+TZM       const_sp2_sp2_2         CAK         CAG         CAL         CAH     180.000   10.00     2
+TZM              const_27         NAJ         CAE         NAI         CAF       0.000   10.00     2
+TZM              const_25         NAM         CAF         NAI         CAE       0.000   10.00     2
+TZM             sp2_sp2_1         CAG         CAK         NAA          H2     180.000   10.00     2
+TZM              const_18         CAB         CAC         CAK         NAA     180.000   10.00     2
+TZM              const_13         CAD         CAB         CAC         CAK       0.000   10.00     2
+TZM       const_sp2_sp2_9         CAC         CAB         CAD         CAL       0.000   10.00     2
+TZM       const_sp2_sp2_6         CAB         CAD         CAL         CAH     180.000   10.00     2
+TZM             sp2_sp3_8         CAD         CAL         CAH         NAM     -90.000   10.00     6
+TZM             sp2_sp3_2         CAF         NAM         CAH         CAL     -90.000   10.00     6
+TZM              const_22         NAI         CAF         NAM         CAH     180.000   10.00     2
+TZM              const_32         CAE         NAJ         NAM         CAH     180.000   10.00     2
+TZM              const_29         NAI         CAE         NAJ         NAM       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TZM    plan-1         CAB   0.020
+TZM    plan-1         CAC   0.020
+TZM    plan-1         CAD   0.020
+TZM    plan-1         CAG   0.020
+TZM    plan-1         CAH   0.020
+TZM    plan-1         CAK   0.020
+TZM    plan-1         CAL   0.020
+TZM    plan-1          H1   0.020
+TZM    plan-1          H4   0.020
+TZM    plan-1          H5   0.020
+TZM    plan-1          H6   0.020
+TZM    plan-1         NAA   0.020
+TZM    plan-2         CAE   0.020
+TZM    plan-2         CAF   0.020
+TZM    plan-2         CAH   0.020
+TZM    plan-2         H10   0.020
+TZM    plan-2          H9   0.020
+TZM    plan-2         NAI   0.020
+TZM    plan-2         NAJ   0.020
+TZM    plan-2         NAM   0.020
+TZM    plan-3         CAK   0.020
+TZM    plan-3          H2   0.020
+TZM    plan-3          H3   0.020
+TZM    plan-3         NAA   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TZM SMILES           ACDLabs              12.01 "n1cn(nc1)Cc2cc(N)ccc2"
+TZM InChI            InChI                1.03  "InChI=1S/C9H10N4/c10-9-3-1-2-8(4-9)5-13-7-11-6-12-13/h1-4,6-7H,5,10H2"
+TZM InChIKey         InChI                1.03  LFINNEVQJQXPHN-UHFFFAOYSA-N
+TZM SMILES_CANONICAL CACTVS               3.370 "Nc1cccc(Cn2cncn2)c1"
+TZM SMILES           CACTVS               3.370 "Nc1cccc(Cn2cncn2)c1"
+TZM SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1cc(cc(c1)N)Cn2cncn2"
+TZM SMILES           "OpenEye OEToolkits" 1.7.6 "c1cc(cc(c1)N)Cn2cncn2"
+TZM ?                acedrg               190         "dictionary generator"                  
+TZM ?                acedrg_database      11          "data source"                           
+TZM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TZM ?                refmac5              5.8.0158    "optimization tool"                     

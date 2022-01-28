@@ -1,0 +1,217 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SEN     SEN     "O-[N,N-dimethylphosphoramidate]-L-serine"     peptide    25     13     .
+#
+data_comp_SEN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SEN     N       N       NT3     1       31.961      17.305      22.714
+SEN     CA      C       CH1     0       33.159      16.502      22.345
+SEN     C       C       C       0       32.940      15.028      22.716
+SEN     O       O       O       0       32.758      14.225      21.778
+SEN     CB      C       CH2     0       34.395      17.089      23.005
+SEN     OG      O       O2      0       35.558      16.348      22.563
+SEN     P       P       P       0       37.024      16.746      23.072
+SEN     O2      O       OP      -1      36.992      16.574      24.565
+SEN     O3      O       O       0       37.281      18.120      22.519
+SEN     N1      N       NT      0       37.973      15.607      22.346
+SEN     C1      C       CH3     0       38.276      15.693      20.913
+SEN     C2      C       CH3     0       37.981      14.224      22.834
+SEN     OXT     O       OC      -1      32.955      14.735      23.928
+SEN     H       H       H       0       31.203      16.874      22.448
+SEN     H2      H       H       0       31.999      18.118      22.303
+SEN     H3      H       H       0       31.937      17.427      23.617
+SEN     HA      H       H       0       33.275      16.562      21.358
+SEN     HB      H       H       0       34.317      17.035      23.982
+SEN     HBA     H       H       0       34.491      18.035      22.758
+SEN     HC1     H       H       0       39.090      15.200      20.718
+SEN     H1A     H       H       0       38.398      16.621      20.656
+SEN     H1B     H       H       0       37.543      15.314      20.400
+SEN     HC2     H       H       0       38.810      13.788      22.575
+SEN     H2A     H       H       0       37.233      13.738      22.451
+SEN     H2B     H       H       0       37.906      14.214      23.801
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+SEN      N      n/a    CA     START
+SEN      H      N      .      .
+SEN      H2     N      .      .
+SEN      H3     N      .      .
+SEN      CA     N      C      .
+SEN      HA     CA     .      .
+SEN      CB     CA     OG     .
+SEN      HB     CB     .      .
+SEN      HBA    CB     .      .
+SEN      OG     CB     P      .
+SEN      P      OG     O3     .
+SEN      O2     P      .      .
+SEN      N1     P      C1     .
+SEN      C2     N1     HC2    .
+SEN      H2B    C2     .      .
+SEN      H2A    C2     .      .
+SEN      HC2    C2     .      .
+SEN      C1     N1     HC1    .
+SEN      H1B    C1     .      .
+SEN      H1A    C1     .      .
+SEN      HC1    C1     .      .
+SEN      O3     P      .      .
+SEN      C      CA     OXT    .
+SEN      O      C      .      .
+SEN      OXT    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SEN       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+SEN       CA        CB        SINGLE    n         1.515     0.017     1.515     0.017     
+SEN       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+SEN       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+SEN       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SEN       CB        OG        SINGLE    n         1.447     0.017     1.447     0.017     
+SEN       OG        P         SINGLE    n         1.603     0.016     1.603     0.016     
+SEN       P         N1        SINGLE    n         1.645     0.018     1.645     0.018     
+SEN       P         O3        DOUBLE    n         1.504     0.013     1.504     0.013     
+SEN       P         O2        SINGLE    n         1.504     0.013     1.504     0.013     
+SEN       N1        C1        SINGLE    n         1.466     0.010     1.466     0.010     
+SEN       N1        C2        SINGLE    n         1.466     0.010     1.466     0.010     
+SEN       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+SEN       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+SEN       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+SEN       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+SEN       CB        HB        SINGLE    n         1.089     0.010     0.982     0.018     
+SEN       CB        HBA       SINGLE    n         1.089     0.010     0.982     0.018     
+SEN       C1        HC1       SINGLE    n         1.089     0.010     0.971     0.018     
+SEN       C1        H1A       SINGLE    n         1.089     0.010     0.971     0.018     
+SEN       C1        H1B       SINGLE    n         1.089     0.010     0.971     0.018     
+SEN       C2        HC2       SINGLE    n         1.089     0.010     0.971     0.018     
+SEN       C2        H2A       SINGLE    n         1.089     0.010     0.971     0.018     
+SEN       C2        H2B       SINGLE    n         1.089     0.010     0.971     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SEN          CA           N           H     109.619    1.50
+SEN          CA           N          H2     109.619    1.50
+SEN          CA           N          H3     109.619    1.50
+SEN           H           N          H2     109.028    2.41
+SEN           H           N          H3     109.028    2.41
+SEN          H2           N          H3     109.028    2.41
+SEN           N          CA          CB     109.782    1.50
+SEN           N          CA           C     109.829    1.50
+SEN           N          CA          HA     108.049    1.50
+SEN          CB          CA           C     111.899    1.50
+SEN          CB          CA          HA     108.381    1.50
+SEN           C          CA          HA     108.255    1.50
+SEN          CA           C           O     117.181    1.50
+SEN          CA           C         OXT     117.181    1.50
+SEN           O           C         OXT     125.637    1.50
+SEN          CA          CB          OG     108.381    1.50
+SEN          CA          CB          HB     110.023    1.50
+SEN          CA          CB         HBA     110.023    1.50
+SEN          OG          CB          HB     109.739    1.50
+SEN          OG          CB         HBA     109.739    1.50
+SEN          HB          CB         HBA     108.157    1.50
+SEN          CB          OG           P     120.761    1.50
+SEN          OG           P          N1     104.521    3.00
+SEN          OG           P          O3     107.010    3.00
+SEN          OG           P          O2     107.010    3.00
+SEN          N1           P          O3     113.406    3.00
+SEN          N1           P          O2     113.406    3.00
+SEN          O3           P          O2     118.893    1.50
+SEN           P          N1          C1     120.863    2.69
+SEN           P          N1          C2     120.863    2.69
+SEN          C1          N1          C2     112.457    1.50
+SEN          N1          C1         HC1     109.853    1.50
+SEN          N1          C1         H1A     109.853    1.50
+SEN          N1          C1         H1B     109.853    1.50
+SEN         HC1          C1         H1A     109.332    1.50
+SEN         HC1          C1         H1B     109.332    1.50
+SEN         H1A          C1         H1B     109.332    1.50
+SEN          N1          C2         HC2     109.853    1.50
+SEN          N1          C2         H2A     109.853    1.50
+SEN          N1          C2         H2B     109.853    1.50
+SEN         HC2          C2         H2A     109.332    1.50
+SEN         HC2          C2         H2B     109.332    1.50
+SEN         H2A          C2         H2B     109.332    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SEN             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+SEN             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+SEN            sp3_sp3_10           N          CA          CB          OG     180.000   10.00     3
+SEN            sp3_sp3_19          CA          CB          OG           P     180.000   10.00     3
+SEN            sp3_sp3_24          CB          OG           P          N1      60.000   10.00     3
+SEN            sp3_sp3_25          C1          N1           P          OG     180.000   10.00     3
+SEN            sp3_sp3_31         HC1          C1          N1           P     180.000   10.00     3
+SEN            sp3_sp3_37         HC2          C2          N1           P     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SEN    chir_1    CA    N    C    CB    positive
+SEN    chir_2    P    OG    O2    O3    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SEN    plan-1           C   0.020
+SEN    plan-1          CA   0.020
+SEN    plan-1           O   0.020
+SEN    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SEN SMILES           ACDLabs              10.04 "O=P(O)(OCC(N)C(=O)O)N(C)C"
+SEN SMILES_CANONICAL CACTVS               3.341 "CN(C)[P@@](O)(=O)OC[C@H](N)C(O)=O"
+SEN SMILES           CACTVS               3.341 "CN(C)[P](O)(=O)OC[CH](N)C(O)=O"
+SEN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CN(C)[P@](=O)(O)OC[C@@H](C(=O)O)N"
+SEN SMILES           "OpenEye OEToolkits" 1.5.0 "CN(C)P(=O)(O)OCC(C(=O)O)N"
+SEN InChI            InChI                1.03  "InChI=1S/C5H13N2O5P/c1-7(2)13(10,11)12-3-4(6)5(8)9/h4H,3,6H2,1-2H3,(H,8,9)(H,10,11)/t4-/m0/s1"
+SEN InChIKey         InChI                1.03  HTPIRKVMFNYAHI-BYPYZUCNSA-N
+SEN ?                acedrg               202         "dictionary generator"
+SEN ?                acedrg_database      11          "data source"
+SEN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SEN ?                refmac5              5.8.0222    "optimization tool"

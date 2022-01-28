@@ -1,0 +1,308 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PYH      PYH 'N~6~-{[(2R,3R)-3-METHYL-3,4-DIHYDRO-' non-polymer        38  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PYH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PYH           O      O    OC       -0.500      0.000    0.000    0.000
+ PYH           C      C    C         0.000     -0.626    1.083    0.000
+ PYH           OXT    O    OC       -0.500     -0.231    2.096    0.619
+ PYH           CA     C    CH1       0.000     -1.959    1.322   -0.684
+ PYH           HA     H    H         0.000     -2.050    2.388   -0.936
+ PYH           N      N    NH2       0.000     -1.941    0.548   -1.897
+ PYH           HN2    H    H         0.000     -2.508   -0.282   -1.970
+ PYH           H      H    H         0.000     -1.362    0.840   -2.669
+ PYH           CB     C    CH2       0.000     -3.107    0.925    0.246
+ PYH           HB1    H    H         0.000     -2.987    1.507    1.162
+ PYH           HB2    H    H         0.000     -2.979   -0.136    0.471
+ PYH           CG     C    CH2       0.000     -4.509    1.161   -0.331
+ PYH           HG1    H    H         0.000     -4.600    0.551   -1.232
+ PYH           HG2    H    H         0.000     -4.580    2.217   -0.599
+ PYH           CD     C    CH2       0.000     -5.633    0.804    0.646
+ PYH           HD1    H    H         0.000     -5.527    1.447    1.522
+ PYH           HD2    H    H         0.000     -5.496   -0.238    0.942
+ PYH           CE     C    CH2       0.000     -7.029    0.985    0.043
+ PYH           HE1    H    H         0.000     -7.159    2.041   -0.204
+ PYH           HE2    H    H         0.000     -7.765    0.696    0.795
+ PYH           NZ     N    NH1       0.000     -7.213    0.178   -1.156
+ PYH           HZ     H    H         0.000     -6.972    0.578   -2.052
+ PYH           CAO    C    C         0.000     -7.701   -1.108   -1.118
+ PYH           OAD    O    O         0.000     -8.038   -1.737   -0.122
+ PYH           CAR    C    CH1       0.000     -7.810   -1.748   -2.466
+ PYH           HAR    H    H         0.000     -8.471   -1.157   -3.116
+ PYH           CAP    C    CH1       0.000     -6.447   -1.939   -3.134
+ PYH           HAP    H    H         0.000     -5.727   -1.205   -2.745
+ PYH           CAA    C    CH3       0.000     -6.552   -1.824   -4.655
+ PYH           HAA3   H    H         0.000     -6.696   -0.810   -4.924
+ PYH           HAA2   H    H         0.000     -5.660   -2.184   -5.099
+ PYH           HAA1   H    H         0.000     -7.373   -2.399   -4.997
+ PYH           NAL    N    N         0.000     -8.374   -3.094   -2.251
+ PYH           CAF    C    C1        0.000     -7.388   -3.918   -2.398
+ PYH           HAF    H    H         0.000     -7.529   -4.981   -2.300
+ PYH           CAJ    C    CH2       0.000     -6.048   -3.342   -2.709
+ PYH           HAJ2   H    H         0.000     -5.535   -3.841   -3.534
+ PYH           HAJ1   H    H         0.000     -5.381   -3.288   -1.847
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PYH      O      n/a    C      START
+ PYH      C      O      CA     .
+ PYH      OXT    C      .      .
+ PYH      CA     C      CB     .
+ PYH      HA     CA     .      .
+ PYH      N      CA     H      .
+ PYH      HN2    N      .      .
+ PYH      H      N      .      .
+ PYH      CB     CA     CG     .
+ PYH      HB1    CB     .      .
+ PYH      HB2    CB     .      .
+ PYH      CG     CB     CD     .
+ PYH      HG1    CG     .      .
+ PYH      HG2    CG     .      .
+ PYH      CD     CG     CE     .
+ PYH      HD1    CD     .      .
+ PYH      HD2    CD     .      .
+ PYH      CE     CD     NZ     .
+ PYH      HE1    CE     .      .
+ PYH      HE2    CE     .      .
+ PYH      NZ     CE     CAO    .
+ PYH      HZ     NZ     .      .
+ PYH      CAO    NZ     CAR    .
+ PYH      OAD    CAO    .      .
+ PYH      CAR    CAO    NAL    .
+ PYH      HAR    CAR    .      .
+ PYH      CAP    CAR    CAA    .
+ PYH      HAP    CAP    .      .
+ PYH      CAA    CAP    HAA1   .
+ PYH      HAA3   CAA    .      .
+ PYH      HAA2   CAA    .      .
+ PYH      HAA1   CAA    .      .
+ PYH      NAL    CAR    CAF    .
+ PYH      CAF    NAL    CAJ    .
+ PYH      HAF    CAF    .      .
+ PYH      CAJ    CAF    HAJ1   .
+ PYH      HAJ2   CAJ    .      .
+ PYH      HAJ1   CAJ    .      END
+ PYH      CAP    CAJ    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PYH       CAA       CAP       single    1.524     0.020     1.524     0.020     
+PYH       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+PYH       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+PYH       HAA3      CAA       single    1.089     0.010     0.989     0.005     
+PYH       CAP       CAJ       single    1.524     0.020     1.524     0.020     
+PYH       CAP       CAR       single    1.524     0.020     1.524     0.020     
+PYH       HAP       CAP       single    1.089     0.010     0.989     0.005     
+PYH       CAJ       CAF       single    1.510     0.020     1.510     0.020     
+PYH       HAJ1      CAJ       single    1.089     0.010     0.989     0.005     
+PYH       HAJ2      CAJ       single    1.089     0.010     0.989     0.005     
+PYH       CAF       NAL       double    1.260     0.020     1.260     0.020     
+PYH       HAF       CAF       single    1.082     0.013     0.975     0.010     
+PYH       NAL       CAR       single    1.455     0.020     1.455     0.020     
+PYH       CAR       CAO       single    1.500     0.020     1.500     0.020     
+PYH       HAR       CAR       single    1.089     0.010     0.989     0.005     
+PYH       CAO       NZ        single    1.330     0.020     1.330     0.020     
+PYH       OAD       CAO       double    1.220     0.020     1.220     0.020     
+PYH       NZ        CE        single    1.450     0.020     1.450     0.020     
+PYH       HZ        NZ        single    1.016     0.010     0.899     0.007     
+PYH       CE        CD        single    1.524     0.020     1.524     0.020     
+PYH       HE1       CE        single    1.089     0.010     0.989     0.005     
+PYH       HE2       CE        single    1.089     0.010     0.989     0.005     
+PYH       CD        CG        single    1.524     0.020     1.524     0.020     
+PYH       HD1       CD        single    1.089     0.010     0.989     0.005     
+PYH       HD2       CD        single    1.089     0.010     0.989     0.005     
+PYH       CG        CB        single    1.524     0.020     1.524     0.020     
+PYH       HG1       CG        single    1.089     0.010     0.989     0.005     
+PYH       HG2       CG        single    1.089     0.010     0.989     0.005     
+PYH       CB        CA        single    1.524     0.020     1.524     0.020     
+PYH       HB1       CB        single    1.089     0.010     0.989     0.005     
+PYH       HB2       CB        single    1.089     0.010     0.989     0.005     
+PYH       CA        C         single    1.500     0.020     1.500     0.020     
+PYH       HA        CA        single    1.089     0.010     0.989     0.005     
+PYH       N         CA        single    1.450     0.020     1.450     0.020     
+PYH       OXT       C         deloc     1.250     0.020     1.250     0.020     
+PYH       C         O         deloc     1.250     0.020     1.250     0.020     
+PYH       H         N         single    1.036     0.016     0.914     0.007     
+PYH       HN2       N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PYH      O      C      OXT     123.000    3.000
+ PYH      O      C      CA      118.500    3.000
+ PYH      OXT    C      CA      118.500    3.000
+ PYH      C      CA     HA      108.810    3.000
+ PYH      C      CA     N       109.470    3.000
+ PYH      C      CA     CB      109.470    3.000
+ PYH      HA     CA     N       109.470    3.000
+ PYH      HA     CA     CB      108.340    3.000
+ PYH      N      CA     CB      109.470    3.000
+ PYH      CA     N      HN2     120.000    3.000
+ PYH      CA     N      H       120.000    3.000
+ PYH      HN2    N      H       120.000    3.000
+ PYH      CA     CB     HB1     109.470    3.000
+ PYH      CA     CB     HB2     109.470    3.000
+ PYH      CA     CB     CG      111.000    3.000
+ PYH      HB1    CB     HB2     107.900    3.000
+ PYH      HB1    CB     CG      109.470    3.000
+ PYH      HB2    CB     CG      109.470    3.000
+ PYH      CB     CG     HG1     109.470    3.000
+ PYH      CB     CG     HG2     109.470    3.000
+ PYH      CB     CG     CD      111.000    3.000
+ PYH      HG1    CG     HG2     107.900    3.000
+ PYH      HG1    CG     CD      109.470    3.000
+ PYH      HG2    CG     CD      109.470    3.000
+ PYH      CG     CD     HD1     109.470    3.000
+ PYH      CG     CD     HD2     109.470    3.000
+ PYH      CG     CD     CE      111.000    3.000
+ PYH      HD1    CD     HD2     107.900    3.000
+ PYH      HD1    CD     CE      109.470    3.000
+ PYH      HD2    CD     CE      109.470    3.000
+ PYH      CD     CE     HE1     109.470    3.000
+ PYH      CD     CE     HE2     109.470    3.000
+ PYH      CD     CE     NZ      112.000    3.000
+ PYH      HE1    CE     HE2     107.900    3.000
+ PYH      HE1    CE     NZ      109.470    3.000
+ PYH      HE2    CE     NZ      109.470    3.000
+ PYH      CE     NZ     HZ      118.500    3.000
+ PYH      CE     NZ     CAO     121.500    3.000
+ PYH      HZ     NZ     CAO     120.000    3.000
+ PYH      NZ     CAO    OAD     123.000    3.000
+ PYH      NZ     CAO    CAR     116.500    3.000
+ PYH      OAD    CAO    CAR     120.500    3.000
+ PYH      CAO    CAR    HAR     108.810    3.000
+ PYH      CAO    CAR    CAP     109.470    3.000
+ PYH      CAO    CAR    NAL     111.600    3.000
+ PYH      HAR    CAR    CAP     108.340    3.000
+ PYH      HAR    CAR    NAL     109.470    3.000
+ PYH      CAP    CAR    NAL     105.000    3.000
+ PYH      CAR    CAP    HAP     108.340    3.000
+ PYH      CAR    CAP    CAA     111.000    3.000
+ PYH      CAR    CAP    CAJ     111.000    3.000
+ PYH      HAP    CAP    CAA     108.340    3.000
+ PYH      HAP    CAP    CAJ     108.340    3.000
+ PYH      CAA    CAP    CAJ     111.000    3.000
+ PYH      CAP    CAA    HAA3    109.470    3.000
+ PYH      CAP    CAA    HAA2    109.470    3.000
+ PYH      CAP    CAA    HAA1    109.470    3.000
+ PYH      HAA3   CAA    HAA2    109.470    3.000
+ PYH      HAA3   CAA    HAA1    109.470    3.000
+ PYH      HAA2   CAA    HAA1    109.470    3.000
+ PYH      CAR    NAL    CAF     120.000    3.000
+ PYH      NAL    CAF    HAF     120.000    3.000
+ PYH      NAL    CAF    CAJ     120.000    3.000
+ PYH      HAF    CAF    CAJ     120.000    3.000
+ PYH      CAF    CAJ    HAJ2    109.470    3.000
+ PYH      CAF    CAJ    HAJ1    109.470    3.000
+ PYH      CAF    CAJ    CAP     109.470    3.000
+ PYH      HAJ2   CAJ    HAJ1    107.900    3.000
+ PYH      HAJ2   CAJ    CAP     109.470    3.000
+ PYH      HAJ1   CAJ    CAP     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PYH      var_1    O      C      CA     CB        86.459   20.000   3
+ PYH      var_2    C      CA     N      H        -72.138   20.000   1
+ PYH      var_3    C      CA     CB     CG       178.450   20.000   3
+ PYH      var_4    CA     CB     CG     CD      -177.768   20.000   3
+ PYH      var_5    CB     CG     CD     CE      -177.547   20.000   3
+ PYH      var_6    CG     CD     CE     NZ        58.315   20.000   3
+ PYH      var_7    CD     CE     NZ     CAO       90.025   20.000   3
+ PYH      CONST_1  CE     NZ     CAO    CAR      180.000    0.000   0
+ PYH      var_8    NZ     CAO    CAR    NAL     -178.673   20.000   3
+ PYH      var_9    CAO    CAR    CAP    CAA     -150.000   20.000   3
+ PYH      var_10   CAR    CAP    CAJ    CAF       30.000   20.000   3
+ PYH      var_11   CAR    CAP    CAA    HAA1     -46.615   20.000   3
+ PYH      var_12   CAO    CAR    NAL    CAF     -120.000   20.000   3
+ PYH      var_13   CAR    NAL    CAF    CAJ        0.000   20.000   1
+ PYH      var_14   NAL    CAF    CAJ    CAP      -30.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PYH      chir_01  CAP    CAA    CAJ    CAR       positiv
+ PYH      chir_02  CAR    CAP    NAL    CAO       negativ
+ PYH      chir_03  CA     CB     C      N         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PYH      plan-1    CAF       0.020
+ PYH      plan-1    CAJ       0.020
+ PYH      plan-1    NAL       0.020
+ PYH      plan-1    HAF       0.020
+ PYH      plan-2    NAL       0.020
+ PYH      plan-2    CAF       0.020
+ PYH      plan-2    CAR       0.020
+ PYH      plan-2    HAF       0.020
+ PYH      plan-3    CAO       0.020
+ PYH      plan-3    CAR       0.020
+ PYH      plan-3    OAD       0.020
+ PYH      plan-3    NZ        0.020
+ PYH      plan-3    HZ        0.020
+ PYH      plan-4    NZ        0.020
+ PYH      plan-4    CAO       0.020
+ PYH      plan-4    CE        0.020
+ PYH      plan-4    HZ        0.020
+ PYH      plan-5    C         0.020
+ PYH      plan-5    CA        0.020
+ PYH      plan-5    OXT       0.020
+ PYH      plan-5    O         0.020
+ PYH      plan-6    N         0.020
+ PYH      plan-6    CA        0.020
+ PYH      plan-6    H         0.020
+ PYH      plan-6    HN2       0.020
+# ------------------------------------------------------

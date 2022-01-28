@@ -1,0 +1,364 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OWL      OWL 'N-1H-imidazol-2-yl-N'-[4-(1H-imidazo' non-polymer        42  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_OWL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ OWL           HN4    H    H         0.000      0.035   -0.037    0.048
+ OWL           N4     N    NR15      0.000     -0.472    0.504   -0.680
+ OWL           C17    C    CR15      0.000      0.081    1.103   -1.789
+ OWL           H17    H    H         0.000      1.127    1.100   -2.068
+ OWL           C18    C    CR15      0.000     -0.923    1.693   -2.459
+ OWL           H18    H    H         0.000     -0.828    2.254   -3.380
+ OWL           N5     N    NRD5      0.000     -2.067    1.468   -1.790
+ OWL           C14    C    CR5       0.000     -1.810    0.755   -0.719
+ OWL           N6     N    NH1       0.000     -2.742    0.325    0.211
+ OWL           HN6    H    H         0.000     -2.462   -0.295    0.957
+ OWL           C1     C    CR6       0.000     -4.073    0.752    0.118
+ OWL           C4     C    CR16      0.000     -4.371    1.971   -0.477
+ OWL           H4     H    H         0.000     -3.574    2.590   -0.872
+ OWL           C5     C    CR16      0.000     -5.681    2.395   -0.564
+ OWL           H5     H    H         0.000     -5.914    3.345   -1.029
+ OWL           C2     C    CR6       0.000     -6.703    1.602   -0.055
+ OWL           C6     C    CR16      0.000     -6.404    0.382    0.539
+ OWL           H6     H    H         0.000     -7.200   -0.237    0.934
+ OWL           C3     C    CR16      0.000     -5.094   -0.041    0.626
+ OWL           H3     H    H         0.000     -4.861   -0.991    1.091
+ OWL           N1     N    NH1       0.000     -8.031    2.030   -0.144
+ OWL           HN1    H    H         0.000     -8.244    3.018   -0.144
+ OWL           C9     C    CR6       0.000     -9.066    1.091   -0.232
+ OWL           C12    C    CR16      0.000     -8.836   -0.140   -0.832
+ OWL           H12    H    H         0.000     -7.855   -0.377   -1.223
+ OWL           C8     C    CR16      0.000     -9.859   -1.062   -0.928
+ OWL           H8     H    H         0.000     -9.684   -2.018   -1.407
+ OWL           C11    C    CR6       0.000    -11.114   -0.764   -0.412
+ OWL           C10    C    CR16      0.000    -11.342    0.466    0.192
+ OWL           H10    H    H         0.000    -12.320    0.699    0.594
+ OWL           C7     C    CR16      0.000    -10.322    1.392    0.280
+ OWL           H7     H    H         0.000    -10.500    2.352    0.748
+ OWL           N7     N    NH1       0.000    -12.152   -1.698   -0.511
+ OWL           HN7    H    H         0.000    -12.156   -2.371   -1.265
+ OWL           C13    C    CR5       0.000    -13.174   -1.701    0.424
+ OWL           N3     N    NRD5      0.000    -13.231   -0.951    1.500
+ OWL           C16    C    CR15      0.000    -14.362   -1.225    2.173
+ OWL           H16    H    H         0.000    -14.677   -0.761    3.099
+ OWL           C15    C    CR15      0.000    -15.034   -2.174    1.500
+ OWL           H15    H    H         0.000    -15.983   -2.612    1.780
+ OWL           N2     N    NR15      0.000    -14.287   -2.483    0.386
+ OWL           HN2    H    H         0.000    -14.527   -3.181   -0.346
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ OWL      HN4    n/a    N4     START
+ OWL      N4     HN4    C17    .
+ OWL      C17    N4     C18    .
+ OWL      H17    C17    .      .
+ OWL      C18    C17    N5     .
+ OWL      H18    C18    .      .
+ OWL      N5     C18    C14    .
+ OWL      C14    N5     N6     .
+ OWL      N6     C14    C1     .
+ OWL      HN6    N6     .      .
+ OWL      C1     N6     C4     .
+ OWL      C4     C1     C5     .
+ OWL      H4     C4     .      .
+ OWL      C5     C4     C2     .
+ OWL      H5     C5     .      .
+ OWL      C2     C5     N1     .
+ OWL      C6     C2     C3     .
+ OWL      H6     C6     .      .
+ OWL      C3     C6     H3     .
+ OWL      H3     C3     .      .
+ OWL      N1     C2     C9     .
+ OWL      HN1    N1     .      .
+ OWL      C9     N1     C12    .
+ OWL      C12    C9     C8     .
+ OWL      H12    C12    .      .
+ OWL      C8     C12    C11    .
+ OWL      H8     C8     .      .
+ OWL      C11    C8     N7     .
+ OWL      C10    C11    C7     .
+ OWL      H10    C10    .      .
+ OWL      C7     C10    H7     .
+ OWL      H7     C7     .      .
+ OWL      N7     C11    C13    .
+ OWL      HN7    N7     .      .
+ OWL      C13    N7     N3     .
+ OWL      N3     C13    C16    .
+ OWL      C16    N3     C15    .
+ OWL      H16    C16    .      .
+ OWL      C15    C16    N2     .
+ OWL      H15    C15    .      .
+ OWL      N2     C15    HN2    .
+ OWL      HN2    N2     .      END
+ OWL      C1     C3     .    ADD
+ OWL      C7     C9     .    ADD
+ OWL      C13    N2     .    ADD
+ OWL      C14    N4     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OWL       C1        N6        single    1.350     0.020     1.350     0.020     
+OWL       C4        C1        double    1.390     0.020     1.390     0.020     
+OWL       C1        C3        single    1.390     0.020     1.390     0.020     
+OWL       C2        C5        double    1.390     0.020     1.390     0.020     
+OWL       C6        C2        single    1.390     0.020     1.390     0.020     
+OWL       N1        C2        single    1.350     0.020     1.350     0.020     
+OWL       C3        C6        double    1.390     0.020     1.390     0.020     
+OWL       H3        C3        single    1.082     0.013     0.975     0.010     
+OWL       C5        C4        single    1.390     0.020     1.390     0.020     
+OWL       H4        C4        single    1.082     0.013     0.975     0.010     
+OWL       H5        C5        single    1.082     0.013     0.975     0.010     
+OWL       H6        C6        single    1.082     0.013     0.975     0.010     
+OWL       C7        C9        double    1.390     0.020     1.390     0.020     
+OWL       C7        C10       single    1.390     0.020     1.390     0.020     
+OWL       H7        C7        single    1.082     0.013     0.975     0.010     
+OWL       C8        C12       double    1.390     0.020     1.390     0.020     
+OWL       C11       C8        single    1.390     0.020     1.390     0.020     
+OWL       H8        C8        single    1.082     0.013     0.975     0.010     
+OWL       C9        N1        single    1.350     0.020     1.350     0.020     
+OWL       C12       C9        single    1.390     0.020     1.390     0.020     
+OWL       C10       C11       double    1.390     0.020     1.390     0.020     
+OWL       H10       C10       single    1.082     0.013     0.975     0.010     
+OWL       N7        C11       single    1.350     0.020     1.350     0.020     
+OWL       H12       C12       single    1.082     0.013     0.975     0.010     
+OWL       HN1       N1        single    1.016     0.010     0.899     0.007     
+OWL       C13       N7        single    1.350     0.020     1.350     0.020     
+OWL       C13       N2        single    1.340     0.020     1.340     0.020     
+OWL       N3        C13       double    1.350     0.020     1.350     0.020     
+OWL       N2        C15       single    1.350     0.020     1.350     0.020     
+OWL       C16       N3        single    1.350     0.020     1.350     0.020     
+OWL       C14       N5        double    1.350     0.020     1.350     0.020     
+OWL       N6        C14       single    1.350     0.020     1.350     0.020     
+OWL       C14       N4        single    1.340     0.020     1.340     0.020     
+OWL       C17       N4        single    1.350     0.020     1.350     0.020     
+OWL       N5        C18       single    1.350     0.020     1.350     0.020     
+OWL       HN6       N6        single    1.016     0.010     0.899     0.007     
+OWL       HN7       N7        single    1.016     0.010     0.899     0.007     
+OWL       C15       C16       double    1.380     0.020     1.380     0.020     
+OWL       H15       C15       single    1.082     0.013     0.975     0.010     
+OWL       H16       C16       single    1.082     0.013     0.975     0.010     
+OWL       C18       C17       double    1.380     0.020     1.380     0.020     
+OWL       H17       C17       single    1.082     0.013     0.975     0.010     
+OWL       H18       C18       single    1.082     0.013     0.975     0.010     
+OWL       HN2       N2        single    1.016     0.010     0.899     0.007     
+OWL       N4        HN4       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ OWL      HN4    N4     C17     126.000    3.000
+ OWL      HN4    N4     C14     126.000    3.000
+ OWL      C17    N4     C14     108.000    3.000
+ OWL      N4     C17    H17     126.000    3.000
+ OWL      N4     C17    C18     108.000    3.000
+ OWL      H17    C17    C18     126.000    3.000
+ OWL      C17    C18    H18     126.000    3.000
+ OWL      C17    C18    N5      108.000    3.000
+ OWL      H18    C18    N5      126.000    3.000
+ OWL      C18    N5     C14     108.000    3.000
+ OWL      N5     C14    N6      108.000    3.000
+ OWL      N5     C14    N4      108.000    3.000
+ OWL      N6     C14    N4      108.000    3.000
+ OWL      C14    N6     HN6     120.000    3.000
+ OWL      C14    N6     C1      120.000    3.000
+ OWL      HN6    N6     C1      120.000    3.000
+ OWL      N6     C1     C4      120.000    3.000
+ OWL      N6     C1     C3      120.000    3.000
+ OWL      C4     C1     C3      120.000    3.000
+ OWL      C1     C4     H4      120.000    3.000
+ OWL      C1     C4     C5      120.000    3.000
+ OWL      H4     C4     C5      120.000    3.000
+ OWL      C4     C5     H5      120.000    3.000
+ OWL      C4     C5     C2      120.000    3.000
+ OWL      H5     C5     C2      120.000    3.000
+ OWL      C5     C2     C6      120.000    3.000
+ OWL      C5     C2     N1      120.000    3.000
+ OWL      C6     C2     N1      120.000    3.000
+ OWL      C2     C6     H6      120.000    3.000
+ OWL      C2     C6     C3      120.000    3.000
+ OWL      H6     C6     C3      120.000    3.000
+ OWL      C6     C3     H3      120.000    3.000
+ OWL      C6     C3     C1      120.000    3.000
+ OWL      H3     C3     C1      120.000    3.000
+ OWL      C2     N1     HN1     120.000    3.000
+ OWL      C2     N1     C9      120.000    3.000
+ OWL      HN1    N1     C9      120.000    3.000
+ OWL      N1     C9     C12     120.000    3.000
+ OWL      N1     C9     C7      120.000    3.000
+ OWL      C12    C9     C7      120.000    3.000
+ OWL      C9     C12    H12     120.000    3.000
+ OWL      C9     C12    C8      120.000    3.000
+ OWL      H12    C12    C8      120.000    3.000
+ OWL      C12    C8     H8      120.000    3.000
+ OWL      C12    C8     C11     120.000    3.000
+ OWL      H8     C8     C11     120.000    3.000
+ OWL      C8     C11    C10     120.000    3.000
+ OWL      C8     C11    N7      120.000    3.000
+ OWL      C10    C11    N7      120.000    3.000
+ OWL      C11    C10    H10     120.000    3.000
+ OWL      C11    C10    C7      120.000    3.000
+ OWL      H10    C10    C7      120.000    3.000
+ OWL      C10    C7     H7      120.000    3.000
+ OWL      C10    C7     C9      120.000    3.000
+ OWL      H7     C7     C9      120.000    3.000
+ OWL      C11    N7     HN7     120.000    3.000
+ OWL      C11    N7     C13     120.000    3.000
+ OWL      HN7    N7     C13     120.000    3.000
+ OWL      N7     C13    N3      108.000    3.000
+ OWL      N7     C13    N2      108.000    3.000
+ OWL      N3     C13    N2      108.000    3.000
+ OWL      C13    N3     C16     108.000    3.000
+ OWL      N3     C16    H16     126.000    3.000
+ OWL      N3     C16    C15     108.000    3.000
+ OWL      H16    C16    C15     126.000    3.000
+ OWL      C16    C15    H15     126.000    3.000
+ OWL      C16    C15    N2      108.000    3.000
+ OWL      H15    C15    N2      126.000    3.000
+ OWL      C15    N2     HN2     126.000    3.000
+ OWL      C15    N2     C13     108.000    3.000
+ OWL      HN2    N2     C13     126.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ OWL      CONST_1  HN4    N4     C17    C18      180.000    0.000   0
+ OWL      CONST_2  N4     C17    C18    N5         0.000    0.000   0
+ OWL      CONST_3  C17    C18    N5     C14        0.000    0.000   0
+ OWL      CONST_4  C18    N5     C14    N6       180.000    0.000   0
+ OWL      CONST_5  N5     C14    N4     HN4      180.000    0.000   0
+ OWL      var_1    N5     C14    N6     C1        -5.946   20.000   1
+ OWL      var_2    C14    N6     C1     C4       -27.499   20.000   1
+ OWL      CONST_6  N6     C1     C3     C6       180.000    0.000   0
+ OWL      CONST_7  N6     C1     C4     C5       180.000    0.000   0
+ OWL      CONST_8  C1     C4     C5     C2         0.000    0.000   0
+ OWL      CONST_9  C4     C5     C2     N1       180.000    0.000   0
+ OWL      CONST_10 C5     C2     C6     C3         0.000    0.000   0
+ OWL      CONST_11 C2     C6     C3     C1         0.000    0.000   0
+ OWL      var_3    C5     C2     N1     C9       150.517   20.000   1
+ OWL      var_4    C2     N1     C9     C12      -29.672   20.000   1
+ OWL      CONST_12 N1     C9     C12    C8       180.000    0.000   0
+ OWL      CONST_13 C9     C12    C8     C11        0.000    0.000   0
+ OWL      CONST_14 C12    C8     C11    N7       180.000    0.000   0
+ OWL      CONST_15 C8     C11    C10    C7         0.000    0.000   0
+ OWL      CONST_16 C11    C10    C7     C9         0.000    0.000   0
+ OWL      CONST_17 C10    C7     C9     N1       180.000    0.000   0
+ OWL      var_5    C8     C11    N7     C13      152.746   20.000   1
+ OWL      var_6    C11    N7     C13    N3        -5.465   20.000   1
+ OWL      CONST_18 N7     C13    N2     C15      180.000    0.000   0
+ OWL      CONST_19 N7     C13    N3     C16      180.000    0.000   0
+ OWL      CONST_20 C13    N3     C16    C15        0.000    0.000   0
+ OWL      CONST_21 N3     C16    C15    N2         0.000    0.000   0
+ OWL      CONST_22 C16    C15    N2     C13        0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ OWL      plan-1    C1        0.020
+ OWL      plan-1    C3        0.020
+ OWL      plan-1    C4        0.020
+ OWL      plan-1    N6        0.020
+ OWL      plan-1    C2        0.020
+ OWL      plan-1    C5        0.020
+ OWL      plan-1    C6        0.020
+ OWL      plan-1    N1        0.020
+ OWL      plan-1    H3        0.020
+ OWL      plan-1    H4        0.020
+ OWL      plan-1    H5        0.020
+ OWL      plan-1    H6        0.020
+ OWL      plan-1    HN6       0.020
+ OWL      plan-1    HN1       0.020
+ OWL      plan-2    C7        0.020
+ OWL      plan-2    C9        0.020
+ OWL      plan-2    C10       0.020
+ OWL      plan-2    H7        0.020
+ OWL      plan-2    C8        0.020
+ OWL      plan-2    C11       0.020
+ OWL      plan-2    C12       0.020
+ OWL      plan-2    H8        0.020
+ OWL      plan-2    N1        0.020
+ OWL      plan-2    H10       0.020
+ OWL      plan-2    N7        0.020
+ OWL      plan-2    H12       0.020
+ OWL      plan-2    HN1       0.020
+ OWL      plan-2    HN7       0.020
+ OWL      plan-3    N1        0.020
+ OWL      plan-3    C2        0.020
+ OWL      plan-3    C9        0.020
+ OWL      plan-3    HN1       0.020
+ OWL      plan-4    C13       0.020
+ OWL      plan-4    N2        0.020
+ OWL      plan-4    N3        0.020
+ OWL      plan-4    N7        0.020
+ OWL      plan-4    C15       0.020
+ OWL      plan-4    C16       0.020
+ OWL      plan-4    HN2       0.020
+ OWL      plan-4    H15       0.020
+ OWL      plan-4    H16       0.020
+ OWL      plan-4    HN7       0.020
+ OWL      plan-5    C14       0.020
+ OWL      plan-5    N4        0.020
+ OWL      plan-5    N5        0.020
+ OWL      plan-5    N6        0.020
+ OWL      plan-5    C17       0.020
+ OWL      plan-5    C18       0.020
+ OWL      plan-5    HN4       0.020
+ OWL      plan-5    H17       0.020
+ OWL      plan-5    H18       0.020
+ OWL      plan-5    HN6       0.020
+ OWL      plan-6    N6        0.020
+ OWL      plan-6    C1        0.020
+ OWL      plan-6    C14       0.020
+ OWL      plan-6    HN6       0.020
+ OWL      plan-7    N7        0.020
+ OWL      plan-7    C11       0.020
+ OWL      plan-7    C13       0.020
+ OWL      plan-7    HN7       0.020
+# ------------------------------------------------------

@@ -1,0 +1,149 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IQ0     IQ0      "cyclopentanecarboxylic acid"     NON-POLYMER     17     8     .     
+#
+data_comp_IQ0
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+IQ0     C19     C       C       0       29.189      4.058       23.461      
+IQ0     O5      O       O       0       29.983      3.589       24.257      
+IQ0     C18     C       CH1     0       27.702      3.989       23.801      
+IQ0     C20     C       CH2     0       27.313      4.704       25.104      
+IQ0     C21     C       CH2     0       25.993      4.059       25.519      
+IQ0     C22     C       CH2     0       25.897      2.747       24.837      
+IQ0     C17     C       CH2     0       27.160      2.565       23.998      
+IQ0     OXT     O       OC      -1      29.515      4.579       22.409      
+IQ0     H18     H       H       0       27.195      4.407       23.062      
+IQ0     H201    H       H       0       27.983      4.578       25.803      
+IQ0     H202    H       H       0       27.191      5.664       24.969      
+IQ0     H211    H       H       0       25.232      4.637       25.258      
+IQ0     H212    H       H       0       25.965      3.938       26.502      
+IQ0     H221    H       H       0       25.093      2.720       24.259      
+IQ0     H222    H       H       0       25.821      2.019       25.505      
+IQ0     H171    H       H       0       27.797      1.994       24.470      
+IQ0     H172    H       H       0       26.939      2.138       23.148      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IQ0       C19       O5        DOUBLE    n         1.218     0.020     1.218     0.020     
+IQ0       C19       C18       SINGLE    n         1.526     0.012     1.526     0.012     
+IQ0       C19       OXT       SINGLE    n         1.218     0.020     1.218     0.020     
+IQ0       C18       C20       SINGLE    n         1.538     0.012     1.538     0.012     
+IQ0       C18       C17       SINGLE    n         1.538     0.012     1.538     0.012     
+IQ0       C20       C21       SINGLE    n         1.526     0.012     1.526     0.012     
+IQ0       C21       C22       SINGLE    n         1.476     0.020     1.476     0.020     
+IQ0       C22       C17       SINGLE    n         1.526     0.012     1.526     0.012     
+IQ0       C18       H18       SINGLE    n         1.089     0.010     0.989     0.016     
+IQ0       C20       H201      SINGLE    n         1.089     0.010     0.977     0.017     
+IQ0       C20       H202      SINGLE    n         1.089     0.010     0.977     0.017     
+IQ0       C21       H211      SINGLE    n         1.089     0.010     0.991     0.010     
+IQ0       C21       H212      SINGLE    n         1.089     0.010     0.991     0.010     
+IQ0       C22       H221      SINGLE    n         1.089     0.010     0.991     0.010     
+IQ0       C22       H222      SINGLE    n         1.089     0.010     0.991     0.010     
+IQ0       C17       H171      SINGLE    n         1.089     0.010     0.977     0.017     
+IQ0       C17       H172      SINGLE    n         1.089     0.010     0.977     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+IQ0          O5         C19         C18     118.134    1.50
+IQ0          O5         C19         OXT     123.730    1.50
+IQ0         C18         C19         OXT     118.131    1.50
+IQ0         C19         C18         C20     115.385    2.25
+IQ0         C19         C18         C17     115.385    2.25
+IQ0         C19         C18         H18     108.881    1.63
+IQ0         C20         C18         C17     104.385    1.50
+IQ0         C20         C18         H18     108.610    1.91
+IQ0         C17         C18         H18     108.610    1.91
+IQ0         C18         C20         C21     105.254    1.50
+IQ0         C18         C20        H201     113.060    2.06
+IQ0         C18         C20        H202     113.060    2.06
+IQ0         C21         C20        H201     110.744    1.50
+IQ0         C21         C20        H202     110.744    1.50
+IQ0        H201         C20        H202     108.821    1.50
+IQ0         C20         C21         C22     106.544    3.00
+IQ0         C20         C21        H211     110.704    1.50
+IQ0         C20         C21        H212     110.704    1.50
+IQ0         C22         C21        H211     110.679    1.50
+IQ0         C22         C21        H212     110.679    1.50
+IQ0        H211         C21        H212     108.634    1.62
+IQ0         C21         C22         C17     106.544    3.00
+IQ0         C21         C22        H221     110.679    1.50
+IQ0         C21         C22        H222     110.679    1.50
+IQ0         C17         C22        H221     110.704    1.50
+IQ0         C17         C22        H222     110.704    1.50
+IQ0        H221         C22        H222     108.634    1.62
+IQ0         C18         C17         C22     105.254    1.50
+IQ0         C18         C17        H171     113.060    2.06
+IQ0         C18         C17        H172     113.060    2.06
+IQ0         C22         C17        H171     110.744    1.50
+IQ0         C22         C17        H172     110.744    1.50
+IQ0        H171         C17        H172     108.821    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+IQ0             sp2_sp3_2          O5         C19         C18         C20     120.000   10.00     6
+IQ0             sp3_sp3_4         C19         C18         C20         C21     -60.000   10.00     3
+IQ0            sp3_sp3_38         C22         C17         C18         C19     -60.000   10.00     3
+IQ0            sp3_sp3_10         C18         C20         C21         C22     -60.000   10.00     3
+IQ0            sp3_sp3_19         C20         C21         C22         C17      60.000   10.00     3
+IQ0            sp3_sp3_28         C18         C17         C22         C21     -60.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+IQ0    plan-1         C18   0.020
+IQ0    plan-1         C19   0.020
+IQ0    plan-1          O5   0.020
+IQ0    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+IQ0 SMILES           ACDLabs              12.01 "O=C(O)C1CCCC1"
+IQ0 SMILES_CANONICAL CACTVS               3.370 "OC(=O)C1CCCC1"
+IQ0 SMILES           CACTVS               3.370 "OC(=O)C1CCCC1"
+IQ0 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C1CCC(C1)C(=O)O"
+IQ0 SMILES           "OpenEye OEToolkits" 1.7.0 "C1CCC(C1)C(=O)O"
+IQ0 InChI            InChI                1.03  "InChI=1S/C6H10O2/c7-6(8)5-3-1-2-4-5/h5H,1-4H2,(H,7,8)"
+IQ0 InChIKey         InChI                1.03  JBDSSBMEKXHSJF-UHFFFAOYSA-N
+IQ0 ?                acedrg               202         "dictionary generator"                  
+IQ0 ?                acedrg_database      11          "data source"                           
+IQ0 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+IQ0 ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,166 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KNN     KNN      "1-(2-methylphenyl)methanamine"     non-polymer     20     9     .     
+#
+data_comp_KNN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KNN     N1      N       NT2     0       18.607      -5.582      15.015      
+KNN     C1      C       CH2     0       17.394      -6.193      15.585      
+KNN     C2      C       CR6     0       16.132      -6.023      14.764      
+KNN     C3      C       CR6     0       15.476      -4.757      14.664      
+KNN     C4      C       CR16    0       14.320      -4.665      13.892      
+KNN     C5      C       CR16    0       13.797      -5.765      13.228      
+KNN     C6      C       CR16    0       14.429      -6.993      13.324      
+KNN     C7      C       CR16    0       15.583      -7.119      14.083      
+KNN     C8      C       CH3     0       15.994      -3.505      15.364      
+KNN     H1      H       H       0       18.631      -4.681      15.357      
+KNN     H11     H       H       0       18.505      -5.536      14.055      
+KNN     H2      H       H       0       17.253      -5.813      16.482      
+KNN     H3      H       H       0       17.584      -7.154      15.696      
+KNN     H4      H       H       0       13.881      -3.835      13.819      
+KNN     H5      H       H       0       13.012      -5.676      12.712      
+KNN     H6      H       H       0       14.076      -7.744      12.874      
+KNN     H7      H       H       0       16.007      -7.958      14.143      
+KNN     H8      H       H       0       15.335      -2.794      15.309      
+KNN     H9      H       H       0       16.815      -3.211      14.936      
+KNN     H10     H       H       0       16.171      -3.701      16.298      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KNN       N1        C1        SINGLE    n         1.467     0.015     1.467     0.015     
+KNN       C1        C2        SINGLE    n         1.509     0.011     1.509     0.011     
+KNN       C2        C3        DOUBLE    y         1.395     0.017     1.395     0.017     
+KNN       C2        C7        SINGLE    y         1.392     0.011     1.392     0.011     
+KNN       C3        C4        SINGLE    y         1.385     0.010     1.385     0.010     
+KNN       C3        C8        SINGLE    n         1.510     0.020     1.510     0.020     
+KNN       C4        C5        DOUBLE    y         1.381     0.010     1.381     0.010     
+KNN       C5        C6        SINGLE    y         1.375     0.013     1.375     0.013     
+KNN       C6        C7        DOUBLE    y         1.381     0.010     1.381     0.010     
+KNN       N1        H1        SINGLE    n         1.036     0.016     0.965     0.020     
+KNN       N1        H11       SINGLE    n         1.036     0.016     0.965     0.020     
+KNN       C1        H2        SINGLE    n         1.089     0.010     0.985     0.020     
+KNN       C1        H3        SINGLE    n         1.089     0.010     0.985     0.020     
+KNN       C4        H4        SINGLE    n         1.082     0.013     0.942     0.017     
+KNN       C5        H5        SINGLE    n         1.082     0.013     0.944     0.018     
+KNN       C6        H6        SINGLE    n         1.082     0.013     0.944     0.018     
+KNN       C7        H7        SINGLE    n         1.082     0.013     0.942     0.017     
+KNN       C8        H8        SINGLE    n         1.089     0.010     0.971     0.013     
+KNN       C8        H9        SINGLE    n         1.089     0.010     0.971     0.013     
+KNN       C8        H10       SINGLE    n         1.089     0.010     0.971     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KNN          C1          N1          H1     104.789    3.00
+KNN          C1          N1         H11     104.789    3.00
+KNN          H1          N1         H11     107.163    3.00
+KNN          N1          C1          C2     112.424    2.20
+KNN          N1          C1          H2     107.542    2.93
+KNN          N1          C1          H3     107.542    2.93
+KNN          C2          C1          H2     109.005    1.50
+KNN          C2          C1          H3     109.005    1.50
+KNN          H2          C1          H3     107.838    1.50
+KNN          C1          C2          C3     120.348    1.50
+KNN          C1          C2          C7     120.823    1.50
+KNN          C3          C2          C7     118.829    1.50
+KNN          C2          C3          C4     118.829    1.50
+KNN          C2          C3          C8     122.051    1.50
+KNN          C4          C3          C8     119.121    1.50
+KNN          C3          C4          C5     121.347    1.50
+KNN          C3          C4          H4     119.092    1.50
+KNN          C5          C4          H4     119.561    1.50
+KNN          C4          C5          C6     119.915    1.50
+KNN          C4          C5          H5     119.997    1.50
+KNN          C6          C5          H5     120.088    1.50
+KNN          C5          C6          C7     119.915    1.50
+KNN          C5          C6          H6     120.088    1.50
+KNN          C7          C6          H6     119.997    1.50
+KNN          C2          C7          C6     121.165    1.50
+KNN          C2          C7          H7     119.198    1.50
+KNN          C6          C7          H7     119.637    1.50
+KNN          C3          C8          H8     109.545    1.50
+KNN          C3          C8          H9     109.545    1.50
+KNN          C3          C8         H10     109.545    1.50
+KNN          H8          C8          H9     109.348    1.50
+KNN          H8          C8         H10     109.348    1.50
+KNN          H9          C8         H10     109.348    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KNN             sp3_sp3_1          C2          C1          N1          H1     180.000   10.00     3
+KNN             sp2_sp3_2          C3          C2          C1          N1     -90.000   10.00     6
+KNN       const_sp2_sp2_4          C1          C2          C3          C8       0.000   10.00     2
+KNN              const_23          C1          C2          C7          C6     180.000   10.00     2
+KNN       const_sp2_sp2_7          C8          C3          C4          C5     180.000   10.00     2
+KNN             sp2_sp3_7          C2          C3          C8          H8     150.000   10.00     6
+KNN       const_sp2_sp2_9          C3          C4          C5          C6       0.000   10.00     2
+KNN              const_13          C4          C5          C6          C7       0.000   10.00     2
+KNN              const_17          C5          C6          C7          C2       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KNN    plan-1          C1   0.020
+KNN    plan-1          C2   0.020
+KNN    plan-1          C3   0.020
+KNN    plan-1          C4   0.020
+KNN    plan-1          C5   0.020
+KNN    plan-1          C6   0.020
+KNN    plan-1          C7   0.020
+KNN    plan-1          C8   0.020
+KNN    plan-1          H4   0.020
+KNN    plan-1          H5   0.020
+KNN    plan-1          H6   0.020
+KNN    plan-1          H7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KNN SMILES           ACDLabs              12.01 NCc1ccccc1C
+KNN SMILES_CANONICAL CACTVS               3.370 Cc1ccccc1CN
+KNN SMILES           CACTVS               3.370 Cc1ccccc1CN
+KNN SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 Cc1ccccc1CN
+KNN SMILES           "OpenEye OEToolkits" 1.7.0 Cc1ccccc1CN
+KNN InChI            InChI                1.03  "InChI=1S/C8H11N/c1-7-4-2-3-5-8(7)6-9/h2-5H,6,9H2,1H3"
+KNN InChIKey         InChI                1.03  CJAAPVQEZPAQNI-UHFFFAOYSA-N
+KNN ?                acedrg               202         "dictionary generator"                  
+KNN ?                acedrg_database      11          "data source"                           
+KNN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KNN ?                refmac5              5.8.0189    "optimization tool"                     

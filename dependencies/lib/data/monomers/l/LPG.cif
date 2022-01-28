@@ -1,0 +1,128 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LPG     LPG      L-PROPARGYLGLYCINE     "L-PEPTIDE LINKING"     12     7     .     
+#
+data_comp_LPG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LPG     CB      C       CSP     0       -0.474      1.195       0.315       
+LPG     C       C       C       0       1.548       -0.182      0.050       
+LPG     O       O       O       0       2.374       -0.070      0.907       
+LPG     OXT     O       OC      -1      1.771       -0.307      -1.118      
+LPG     N       N       NT3     1       -0.707      -1.150      -0.299      
+LPG     CA      C       CH1     0       0.077       -0.157      0.484       
+LPG     CG      C       CSP     0       -0.913      2.281       0.195       
+LPG     H       H       H       0       -0.325      -1.970      -0.224      
+LPG     H2      H       H       0       -0.722      -0.904      -1.172      
+LPG     H3      H       H       0       -1.555      -1.183      0.020       
+LPG     HCA     H       H       0       0.034       -0.407      1.439       
+LPG     HCG     H       H       0       -1.247      3.162       0.065       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LPG       CB        CA        SINGLE    n         1.470     0.0142    1.470     0.0142    
+LPG       CB        CG        TRIPLE    n         1.177     0.0118    1.177     0.0118    
+LPG       C         O         DOUBLE    n         1.195     0.0200    1.195     0.0200    
+LPG       C         OXT       SINGLE    n         1.195     0.0200    1.195     0.0200    
+LPG       C         CA        SINGLE    n         1.533     0.0100    1.533     0.0100    
+LPG       N         CA        SINGLE    n         1.487     0.0147    1.487     0.0147    
+LPG       N         H         SINGLE    n         1.036     0.016     0.907     0.0200    
+LPG       N         H2        SINGLE    n         1.036     0.016     0.907     0.0200    
+LPG       N         H3        SINGLE    n         1.036     0.016     0.907     0.0200    
+LPG       CA        HCA       SINGLE    n         1.089     0.010     0.987     0.0180    
+LPG       CG        HCG       SINGLE    n         1.048     0.010     0.950     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LPG          CA          CB          CG     180.000    3.00
+LPG           O           C         OXT     125.674    1.50
+LPG           O           C          CA     117.163    1.51
+LPG         OXT           C          CA     117.163    1.51
+LPG          CA           N           H     109.014    2.44
+LPG          CA           N          H2     109.014    2.44
+LPG          CA           N          H3     109.014    2.44
+LPG           H           N          H2     109.028    2.41
+LPG           H           N          H3     109.028    2.41
+LPG          H2           N          H3     109.028    2.41
+LPG          CB          CA           C     110.671    2.26
+LPG          CB          CA           N     111.242    2.32
+LPG          CB          CA         HCA     109.370    1.50
+LPG           C          CA           N     109.935    2.65
+LPG           C          CA         HCA     108.312    1.50
+LPG           N          CA         HCA     108.765    1.50
+LPG          CB          CG         HCG     179.421    1.53
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LPG           other_tor_1          CA          CB          CG         HCG     180.000   10.00     1
+LPG             sp2_sp3_2           O           C          CA          CB     120.000   10.00     6
+LPG             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+LPG    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LPG    plan-1           C   0.020
+LPG    plan-1          CA   0.020
+LPG    plan-1           O   0.020
+LPG    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LPG SMILES           ACDLabs              10.04 "O=C(O)C(C#C)N"
+LPG SMILES_CANONICAL CACTVS               3.341 "N[C@@H](C#C)C(O)=O"
+LPG SMILES           CACTVS               3.341 "N[CH](C#C)C(O)=O"
+LPG SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C#C[C@@H](C(=O)O)N"
+LPG SMILES           "OpenEye OEToolkits" 1.5.0 "C#CC(C(=O)O)N"
+LPG InChI            InChI                1.03  "InChI=1S/C4H5NO2/c1-2-3(5)4(6)7/h1,3H,5H2,(H,6,7)/t3-/m0/s1"
+LPG InChIKey         InChI                1.03  DSUAJFIEKRKPEE-VKHMYHEASA-N
+LPG ?                acedrg               212         "dictionary generator"                  
+LPG ?                acedrg_database      11          "data source"                           
+LPG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LPG ?                refmac5              5.8.0254    "optimization tool"                     

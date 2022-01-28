@@ -1,0 +1,137 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PUT     PUT      1,4-DIAMINOBUTANE     NON-POLYMER     18     6     .     
+#
+data_comp_PUT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PUT     N2      N       NT2     0       186.665     74.189      33.465      
+PUT     C4      C       CH2     0       186.321     74.988      34.645      
+PUT     C3      C       CH2     0       185.851     74.176      35.843      
+PUT     C2      C       CH2     0       185.460     75.036      37.033      
+PUT     C1      C       CH2     0       184.996     74.224      38.233      
+PUT     N1      N       NT2     0       184.607     75.026      39.397      
+PUT     HN21    H       H       0       187.163     74.659      32.900      
+PUT     HN22    H       H       0       187.134     73.471      33.696      
+PUT     H41     H       H       0       185.613     75.619      34.401      
+PUT     H42     H       H       0       187.106     75.508      34.911      
+PUT     H31     H       H       0       186.571     73.567      36.112      
+PUT     H32     H       H       0       185.080     73.634      35.573      
+PUT     H21     H       H       0       184.738     75.643      36.766      
+PUT     H22     H       H       0       186.231     75.581      37.301      
+PUT     H11     H       H       0       185.718     73.618      38.497      
+PUT     H12     H       H       0       184.232     73.676      37.960      
+PUT     HN11    H       H       0       183.810     75.397      39.273      
+PUT     HN12    H       H       0       185.186     75.685      39.535      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PUT       N2        C4        SINGLE    n         1.466     0.012     1.466     0.012     
+PUT       C4        C3        SINGLE    n         1.521     0.010     1.521     0.010     
+PUT       C3        C2        SINGLE    n         1.519     0.015     1.519     0.015     
+PUT       C2        C1        SINGLE    n         1.521     0.010     1.521     0.010     
+PUT       C1        N1        SINGLE    n         1.466     0.012     1.466     0.012     
+PUT       N2        HN21      SINGLE    n         1.036     0.016     0.888     0.020     
+PUT       N2        HN22      SINGLE    n         1.036     0.016     0.888     0.020     
+PUT       C4        H41       SINGLE    n         1.089     0.010     0.979     0.011     
+PUT       C4        H42       SINGLE    n         1.089     0.010     0.979     0.011     
+PUT       C3        H31       SINGLE    n         1.089     0.010     0.981     0.016     
+PUT       C3        H32       SINGLE    n         1.089     0.010     0.981     0.016     
+PUT       C2        H21       SINGLE    n         1.089     0.010     0.981     0.016     
+PUT       C2        H22       SINGLE    n         1.089     0.010     0.981     0.016     
+PUT       C1        H11       SINGLE    n         1.089     0.010     0.979     0.011     
+PUT       C1        H12       SINGLE    n         1.089     0.010     0.979     0.011     
+PUT       N1        HN11      SINGLE    n         1.036     0.016     0.888     0.020     
+PUT       N1        HN12      SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PUT          C4          N2        HN21     110.839    3.00
+PUT          C4          N2        HN22     110.839    3.00
+PUT        HN21          N2        HN22     107.243    3.00
+PUT          N2          C4          C3     114.751    2.00
+PUT          N2          C4         H41     108.763    1.50
+PUT          N2          C4         H42     108.763    1.50
+PUT          C3          C4         H41     108.627    1.50
+PUT          C3          C4         H42     108.627    1.50
+PUT         H41          C4         H42     107.806    1.50
+PUT          C4          C3          C2     113.118    2.03
+PUT          C4          C3         H31     108.630    1.50
+PUT          C4          C3         H32     108.630    1.50
+PUT          C2          C3         H31     108.999    1.50
+PUT          C2          C3         H32     108.999    1.50
+PUT         H31          C3         H32     107.927    1.57
+PUT          C3          C2          C1     113.118    2.03
+PUT          C3          C2         H21     108.999    1.50
+PUT          C3          C2         H22     108.999    1.50
+PUT          C1          C2         H21     108.630    1.50
+PUT          C1          C2         H22     108.630    1.50
+PUT         H21          C2         H22     107.927    1.57
+PUT          C2          C1          N1     114.751    2.00
+PUT          C2          C1         H11     108.627    1.50
+PUT          C2          C1         H12     108.627    1.50
+PUT          N1          C1         H11     108.763    1.50
+PUT          N1          C1         H12     108.763    1.50
+PUT         H11          C1         H12     107.806    1.50
+PUT          C1          N1        HN11     110.839    3.00
+PUT          C1          N1        HN12     110.839    3.00
+PUT        HN11          N1        HN12     107.243    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PUT             sp3_sp3_1          C3          C4          N2        HN21     180.000   10.00     3
+PUT             sp3_sp3_7          C2          C3          C4          N2     180.000   10.00     3
+PUT            sp3_sp3_16          C1          C2          C3          C4     180.000   10.00     3
+PUT            sp3_sp3_25          N1          C1          C2          C3     180.000   10.00     3
+PUT            sp3_sp3_34          C2          C1          N1        HN11     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PUT SMILES           ACDLabs              10.04 NCCCCN
+PUT SMILES_CANONICAL CACTVS               3.341 NCCCCN
+PUT SMILES           CACTVS               3.341 NCCCCN
+PUT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CCN)CN"
+PUT SMILES           "OpenEye OEToolkits" 1.5.0 "C(CCN)CN"
+PUT InChI            InChI                1.03  InChI=1S/C4H12N2/c5-3-1-2-4-6/h1-6H2
+PUT InChIKey         InChI                1.03  KIDHWZJUCRJVML-UHFFFAOYSA-N
+PUT ?                acedrg               202         "dictionary generator"                  
+PUT ?                acedrg_database      11          "data source"                           
+PUT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PUT ?                refmac5              5.8.0189    "optimization tool"                     

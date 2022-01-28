@@ -1,0 +1,155 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DBX     DBX      "2,5-dihydroxybenzenesulfonic acid"     NON-POLYMER     18     12     .     
+#
+data_comp_DBX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DBX     C1      C       CR6     0       64.675      16.566      83.964      
+DBX     O1      O       O       0       65.723      14.591      82.612      
+DBX     S1      S       S3      0       65.080      14.854      83.873      
+DBX     C2      C       CR6     0       63.638      17.115      83.165      
+DBX     O2      O       OH1     0       63.792      14.124      83.929      
+DBX     C3      C       CR16    0       65.398      17.416      84.845      
+DBX     O3      O       O       0       65.889      14.478      85.004      
+DBX     C4      C       CR16    0       64.067      19.294      84.135      
+DBX     O4      O       OH1     0       62.916      16.351      82.304      
+DBX     C5      C       CR6     0       65.087      18.770      84.924      
+DBX     O5      O       OH1     0       65.785      19.579      85.774      
+DBX     C6      C       CR16    0       63.351      18.476      83.267      
+DBX     HO2     H       H       0       63.949      13.235      84.116      
+DBX     H3      H       H       0       66.094      17.066      85.384      
+DBX     H4      H       H       0       63.858      20.211      84.190      
+DBX     HO4     H       H       0       63.109      16.576      81.499      
+DBX     HO5     H       H       0       65.650      19.337      86.586      
+DBX     H6      H       H       0       62.663      18.845      82.739      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DBX       C1        C2        DOUBLE    y         1.407     0.012     1.407     0.012     
+DBX       C1        S1        SINGLE    n         1.756     0.013     1.756     0.013     
+DBX       C1        C3        SINGLE    y         1.398     0.018     1.398     0.018     
+DBX       O1        S1        DOUBLE    n         1.440     0.010     1.440     0.010     
+DBX       S1        O3        DOUBLE    n         1.440     0.010     1.440     0.010     
+DBX       S1        O2        SINGLE    n         1.482     0.020     1.482     0.020     
+DBX       C2        O4        SINGLE    n         1.358     0.011     1.358     0.011     
+DBX       C2        C6        SINGLE    y         1.387     0.010     1.387     0.010     
+DBX       C3        C5        DOUBLE    y         1.386     0.010     1.386     0.010     
+DBX       C4        C6        DOUBLE    y         1.383     0.010     1.383     0.010     
+DBX       C4        C5        SINGLE    y         1.386     0.010     1.386     0.010     
+DBX       C5        O5        SINGLE    n         1.365     0.011     1.365     0.011     
+DBX       O2        HO2       SINGLE    n         0.970     0.012     0.921     0.020     
+DBX       C3        H3        SINGLE    n         1.082     0.013     0.949     0.020     
+DBX       C4        H4        SINGLE    n         1.082     0.013     0.942     0.017     
+DBX       O4        HO4       SINGLE    n         0.970     0.012     0.858     0.020     
+DBX       O5        HO5       SINGLE    n         0.970     0.012     0.858     0.020     
+DBX       C6        H6        SINGLE    n         1.082     0.013     0.942     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DBX          C2          C1          S1     120.962    1.50
+DBX          C2          C1          C3     119.847    1.50
+DBX          S1          C1          C3     119.191    1.50
+DBX          C1          S1          O1     109.513    1.50
+DBX          C1          S1          O3     109.513    1.50
+DBX          C1          S1          O2     106.633    1.50
+DBX          O1          S1          O3     114.848    3.00
+DBX          O1          S1          O2     110.900    2.56
+DBX          O3          S1          O2     110.900    2.56
+DBX          C1          C2          O4     120.731    2.78
+DBX          C1          C2          C6     118.697    1.50
+DBX          O4          C2          C6     120.572    2.61
+DBX          S1          O2         HO2     109.599    1.50
+DBX          C1          C3          C5     120.662    1.50
+DBX          C1          C3          H3     119.784    1.50
+DBX          C5          C3          H3     119.554    1.50
+DBX          C6          C4          C5     120.445    1.50
+DBX          C6          C4          H4     119.747    1.50
+DBX          C5          C4          H4     119.808    1.50
+DBX          C2          O4         HO4     109.113    3.00
+DBX          C3          C5          C4     120.259    1.50
+DBX          C3          C5          O5     119.633    2.52
+DBX          C4          C5          O5     120.108    2.50
+DBX          C5          O5         HO5     110.017    2.50
+DBX          C2          C6          C4     120.090    1.50
+DBX          C2          C6          H6     119.804    1.50
+DBX          C4          C6          H6     120.106    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DBX             sp2_sp3_1          C2          C1          S1          O1     150.000   10.00     6
+DBX       const_sp2_sp2_4          S1          C1          C2          O4       0.000   10.00     2
+DBX              const_23          S1          C1          C3          C5     180.000   10.00     2
+DBX             sp3_sp3_2         HO2          O2          S1          O1     -60.000   10.00     3
+DBX       const_sp2_sp2_7          O4          C2          C6          C4     180.000   10.00     2
+DBX              const_18          C1          C3          C5          O5     180.000   10.00     2
+DBX       const_sp2_sp2_9          C5          C4          C6          C2       0.000   10.00     2
+DBX              const_14          C6          C4          C5          O5     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DBX    plan-1          C1   0.020
+DBX    plan-1          C2   0.020
+DBX    plan-1          C3   0.020
+DBX    plan-1          C4   0.020
+DBX    plan-1          C5   0.020
+DBX    plan-1          C6   0.020
+DBX    plan-1          H3   0.020
+DBX    plan-1          H4   0.020
+DBX    plan-1          H6   0.020
+DBX    plan-1          O4   0.020
+DBX    plan-1          O5   0.020
+DBX    plan-1          S1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DBX SMILES           ACDLabs              11.02 "O=S(=O)(O)c1cc(O)ccc1O"
+DBX SMILES_CANONICAL CACTVS               3.352 "Oc1ccc(O)c(c1)[S](O)(=O)=O"
+DBX SMILES           CACTVS               3.352 "Oc1ccc(O)c(c1)[S](O)(=O)=O"
+DBX SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc(c(cc1O)S(=O)(=O)O)O"
+DBX SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(c(cc1O)S(=O)(=O)O)O"
+DBX InChI            InChI                1.03  "InChI=1S/C6H6O5S/c7-4-1-2-5(8)6(3-4)12(9,10)11/h1-3,7-8H,(H,9,10,11)"
+DBX InChIKey         InChI                1.03  IKQCSJBQLWJEPU-UHFFFAOYSA-N
+DBX ?                acedrg               202         "dictionary generator"                  
+DBX ?                acedrg_database      11          "data source"                           
+DBX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DBX ?                refmac5              5.8.0189    "optimization tool"                     

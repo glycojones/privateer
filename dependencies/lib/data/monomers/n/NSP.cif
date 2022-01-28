@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NSP     NSP      "5-(AMINOMETHYL)-2-METHYLPYRIMIDIN-4-AMINE"     NON-POLYMER     20     10     .     
+#
+data_comp_NSP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NSP     N       N       NT2     0       40.353      -14.137     5.138       
+NSP     CA      C       CH2     0       40.489      -15.430     4.458       
+NSP     CP      C       CR6     0       41.639      -16.257     4.980       
+NSP     CQ1     C       CR16    0       42.884      -16.266     4.352       
+NSP     CQ2     C       CR6     0       41.538      -17.081     6.145       
+NSP     NR1     N       NRD6    0       43.928      -16.996     4.798       
+NSP     NQ2     N       NH2     0       40.400      -17.172     6.854       
+NSP     NR2     N       NRD6    0       42.592      -17.813     6.590       
+NSP     CS      C       CR6     0       43.745      -17.743     5.901       
+NSP     CS1     C       CH3     0       44.905      -18.550     6.392       
+NSP     HN1     H       H       0       39.570      -13.733     4.744       
+NSP     HN2     H       H       0       40.131      -14.357     6.050       
+NSP     HCA1    H       H       0       40.624      -15.258     3.497       
+NSP     HCA2    H       H       0       39.649      -15.933     4.561       
+NSP     HQ1     H       H       0       43.001      -15.741     3.582       
+NSP     HQ21    H       H       0       40.042      -16.451     7.201       
+NSP     HQ22    H       H       0       40.018      -17.953     6.969       
+NSP     HS11    H       H       0       44.644      -19.068     7.171       
+NSP     HS12    H       H       0       45.634      -17.955     6.631       
+NSP     HS13    H       H       0       45.200      -19.152     5.689       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NSP       N         CA        SINGLE    n         1.467     0.015     1.467     0.015     
+NSP       CA        CP        SINGLE    n         1.509     0.011     1.509     0.011     
+NSP       CP        CQ1       DOUBLE    y         1.383     0.014     1.383     0.014     
+NSP       CP        CQ2       SINGLE    y         1.416     0.014     1.416     0.014     
+NSP       CQ1       NR1       SINGLE    y         1.340     0.011     1.340     0.011     
+NSP       CQ2       NQ2       SINGLE    n         1.343     0.015     1.343     0.015     
+NSP       CQ2       NR2       DOUBLE    y         1.343     0.014     1.343     0.014     
+NSP       NR1       CS        DOUBLE    y         1.335     0.011     1.335     0.011     
+NSP       NR2       CS        SINGLE    y         1.333     0.011     1.333     0.011     
+NSP       CS        CS1       SINGLE    n         1.494     0.010     1.494     0.010     
+NSP       N         HN1       SINGLE    n         1.036     0.016     0.965     0.020     
+NSP       N         HN2       SINGLE    n         1.036     0.016     0.965     0.020     
+NSP       CA        HCA1      SINGLE    n         1.089     0.010     0.985     0.020     
+NSP       CA        HCA2      SINGLE    n         1.089     0.010     0.985     0.020     
+NSP       CQ1       HQ1       SINGLE    n         1.082     0.013     0.940     0.020     
+NSP       NQ2       HQ21      SINGLE    n         1.016     0.010     0.877     0.020     
+NSP       NQ2       HQ22      SINGLE    n         1.016     0.010     0.877     0.020     
+NSP       CS1       HS11      SINGLE    n         1.089     0.010     0.971     0.014     
+NSP       CS1       HS12      SINGLE    n         1.089     0.010     0.971     0.014     
+NSP       CS1       HS13      SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NSP          CA           N         HN1     104.789    3.00
+NSP          CA           N         HN2     104.789    3.00
+NSP         HN1           N         HN2     107.163    3.00
+NSP           N          CA          CP     112.424    2.20
+NSP           N          CA        HCA1     107.542    2.93
+NSP           N          CA        HCA2     107.542    2.93
+NSP          CP          CA        HCA1     109.005    1.50
+NSP          CP          CA        HCA2     109.005    1.50
+NSP        HCA1          CA        HCA2     107.838    1.50
+NSP          CA          CP         CQ1     121.851    1.50
+NSP          CA          CP         CQ2     121.884    1.50
+NSP         CQ1          CP         CQ2     116.265    1.50
+NSP          CP         CQ1         NR1     123.147    1.50
+NSP          CP         CQ1         HQ1     118.404    1.50
+NSP         NR1         CQ1         HQ1     118.449    1.50
+NSP          CP         CQ2         NQ2     121.236    1.50
+NSP          CP         CQ2         NR2     121.951    1.50
+NSP         NQ2         CQ2         NR2     116.812    1.55
+NSP         CQ1         NR1          CS     117.093    1.65
+NSP         CQ2         NQ2        HQ21     119.860    1.50
+NSP         CQ2         NQ2        HQ22     119.860    1.50
+NSP        HQ21         NQ2        HQ22     120.280    1.85
+NSP         CQ2         NR2          CS     117.145    1.69
+NSP         NR1          CS         NR2     124.399    1.50
+NSP         NR1          CS         CS1     117.906    1.50
+NSP         NR2          CS         CS1     117.695    1.52
+NSP          CS         CS1        HS11     109.546    1.50
+NSP          CS         CS1        HS12     109.546    1.50
+NSP          CS         CS1        HS13     109.546    1.50
+NSP        HS11         CS1        HS12     109.397    1.50
+NSP        HS11         CS1        HS13     109.397    1.50
+NSP        HS12         CS1        HS13     109.397    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NSP             sp3_sp3_1          CP          CA           N         HN1     180.000   10.00     3
+NSP             sp2_sp3_2         CQ1          CP          CA           N     -90.000   10.00     6
+NSP       const_sp2_sp2_3          CA          CP         CQ1         NR1     180.000   10.00     2
+NSP              const_16          CA          CP         CQ2         NQ2       0.000   10.00     2
+NSP       const_sp2_sp2_5          CP         CQ1         NR1          CS       0.000   10.00     2
+NSP             sp2_sp2_1          CP         CQ2         NQ2        HQ21     180.000   10.00     2
+NSP              const_12         NQ2         CQ2         NR2          CS     180.000   10.00     2
+NSP       const_sp2_sp2_8         CS1          CS         NR1         CQ1     180.000   10.00     2
+NSP              const_10         CS1          CS         NR2         CQ2     180.000   10.00     2
+NSP             sp2_sp3_7         NR1          CS         CS1        HS11     150.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NSP    plan-1          CA   0.020
+NSP    plan-1          CP   0.020
+NSP    plan-1         CQ1   0.020
+NSP    plan-1         CQ2   0.020
+NSP    plan-1          CS   0.020
+NSP    plan-1         CS1   0.020
+NSP    plan-1         HQ1   0.020
+NSP    plan-1         NQ2   0.020
+NSP    plan-1         NR1   0.020
+NSP    plan-1         NR2   0.020
+NSP    plan-2         CQ2   0.020
+NSP    plan-2        HQ21   0.020
+NSP    plan-2        HQ22   0.020
+NSP    plan-2         NQ2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NSP SMILES           ACDLabs              10.04 "n1c(N)c(cnc1C)CN"
+NSP SMILES_CANONICAL CACTVS               3.341 "Cc1ncc(CN)c(N)n1"
+NSP SMILES           CACTVS               3.341 "Cc1ncc(CN)c(N)n1"
+NSP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "Cc1ncc(c(n1)N)CN"
+NSP SMILES           "OpenEye OEToolkits" 1.5.0 "Cc1ncc(c(n1)N)CN"
+NSP InChI            InChI                1.03  "InChI=1S/C6H10N4/c1-4-9-3-5(2-7)6(8)10-4/h3H,2,7H2,1H3,(H2,8,9,10)"
+NSP InChIKey         InChI                1.03  OZOHTVFCSKFMLL-UHFFFAOYSA-N
+NSP ?                acedrg               202         "dictionary generator"                  
+NSP ?                acedrg_database      11          "data source"                           
+NSP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NSP ?                refmac5              5.8.0189    "optimization tool"                     

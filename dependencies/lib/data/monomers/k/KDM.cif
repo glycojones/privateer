@@ -1,0 +1,291 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KDM      KDM '(2R,4S,5R,6R)-2,4,5-TRIHYDROXY-6-[(1' non-polymer        34  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_KDM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KDM    C1     C    CT       0       1.525       1.087      -0.688
+KDM   C10     C     C   0.000       1.706       1.800       0.674
+KDM    C2     C   CH2   0.000       2.533      -0.018      -0.891
+KDM    C3     C   CH2   0.000       2.313      -1.084       0.155
+KDM    C4     C   CH2   0.000       0.893      -1.617       0.104
+KDM    C5     C   CH2   0.000      -0.085      -0.468       0.231
+KDM    C6     C   CH2   0.000      -1.542      -0.947       0.035
+KDM    C7     C   CH2   0.000      -2.522       0.202       0.095
+KDM    C9     C   CH2   0.000      -3.954      -0.251      -0.075
+KDM    O4     O    O2   0.000       0.641      -2.586       1.120
+KDM    O8     O     O   0.000       1.841       3.018       0.781
+KDM    O9     O    O2   0.000       1.717       0.981       1.738
+KDM    O3     O    O2   0.000       3.217      -2.162      -0.049
+KDM    O5     O    O2   0.000       0.170       0.521      -0.792
+KDM    O6     O    O2   0.000      -1.668      -1.615      -1.237
+KDM    O7     O    O2   0.000      -2.354       0.889       1.329
+KDM   O10     O    O2   0.000      -4.857       0.841      -0.185
+KDM    O1     O    O2   0.000       1.646       2.002      -1.711
+KDM  H21C     H     H   0.000       2.422      -0.408      -1.767
+KDM  H22C     H     H   0.000       3.462       0.339      -0.830
+KDM    H1     H     H   0.000       1.036       2.644      -1.661
+KDM    H9     H     H   0.000       1.833       1.448       2.506
+KDM    H3     H     H   0.000       2.457      -0.713       1.046
+KDM    H4     H     H   0.000       0.743      -2.068      -0.799
+KDM    HA     H     H   0.000       4.051      -1.897      -0.031
+KDM    H5     H     H   0.000       0.005      -0.029       1.145
+KDM    HB     H     H   0.000       1.200      -3.240       1.063
+KDM    H6     H     H   0.000      -1.794      -1.602       0.750
+KDM    H7     H     H   0.000      -2.284       0.866      -0.704
+KDM    HC     H     H   0.000      -1.472      -1.069      -1.849
+KDM  H91C     H     H   0.000      -4.004      -0.818      -0.902
+KDM  H92C     H     H   0.000      -4.220      -0.844       0.704
+KDM    HD     H     H   0.000      -2.569       0.406       1.989
+KDM   H10     H     H   0.000      -5.706       0.622      -0.244
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KDM       C1        C10       SING      1.540     0.012     1.540     0.012     
+KDM       C1        C2        SING      1.512     0.010     1.512     0.010     
+KDM       C1        O5        SING      1.432     0.020     1.432     0.020     
+KDM       C1        O1        SING      1.384     0.010     1.384     0.010     
+KDM       C10       O9        SING      1.310     0.020     1.310     0.020     
+KDM       C10       O8        DOUB      1.204     0.017     1.204     0.017     
+KDM       C2        C3        SING      1.516     0.012     1.516     0.012     
+KDM       C3        C4        SING      1.520     0.010     1.520     0.010     
+KDM       C3        O3        SING      1.431     0.010     1.431     0.010     
+KDM       C4        C5        SING      1.526     0.015     1.526     0.015     
+KDM       C4        O4        SING      1.427     0.010     1.427     0.010     
+KDM       C5        C6        SING      1.532     0.019     1.532     0.019     
+KDM       C5        O5        SING      1.438     0.017     1.438     0.017     
+KDM       C6        C7        SING      1.529     0.016     1.529     0.016     
+KDM       C6        O6        SING      1.431     0.010     1.431     0.010     
+KDM       C7        C9        SING      1.515     0.011     1.515     0.011     
+KDM       C7        O7        SING      1.430     0.010     1.430     0.010     
+KDM       C9        O10       SING      1.425     0.010     1.425     0.010     
+KDM       C2        H21C      SING      1.089     0.010     0.989     0.005     
+KDM       C2        H22C      SING      1.089     0.010     0.989     0.005     
+KDM       O1        H1        SING      0.970     0.012     0.839     0.014     
+KDM       O9        H9        SING      0.970     0.012     0.839     0.014     
+KDM       C3        H3        SING      1.089     0.010     0.989     0.005     
+KDM       C4        H4        SING      1.089     0.010     0.989     0.005     
+KDM       O3        HA        SING      0.970     0.012     0.839     0.014     
+KDM       C5        H5        SING      1.089     0.010     0.989     0.005     
+KDM       O4        HB        SING      0.970     0.012     0.839     0.014     
+KDM       C6        H6        SING      1.089     0.010     0.989     0.005     
+KDM       C7        H7        SING      1.089     0.010     0.989     0.005     
+KDM       O6        HC        SING      0.970     0.012     0.839     0.014     
+KDM       C9        H91C      SING      1.089     0.010     0.989     0.005     
+KDM       C9        H92C      SING      1.089     0.010     0.989     0.005     
+KDM       O7        HD        SING      0.970     0.012     0.839     0.014     
+KDM       O10       H10       SING      0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KDM   C10    C1      C2   114.375    1.17
+KDM   C10    C1      O5   107.702    2.91
+KDM   C10    C1      O1   110.010    1.58
+KDM    C2    C1      O5   110.399    2.53
+KDM    C2    C1      O1   110.013    1.93
+KDM    O5    C1      O1   109.964    2.39
+KDM    C1   C10      O9   112.880    2.56
+KDM    C1   C10      O8   124.117    1.69
+KDM    O9   C10      O8   123.002    1.26
+KDM    C1    C2      C3   111.085    2.33
+KDM    C1    C2    H21C   109.191    0.36
+KDM    C1    C2    H22C   109.191    0.36
+KDM    C3    C2    H21C   109.317    0.89
+KDM    C3    C2    H22C   109.317    0.89
+KDM  H21C    C2    H22C   108.168    1.12
+KDM    C2    C3      C4   110.391    1.56
+KDM    C2    C3      O3   109.558    2.02
+KDM    C2    C3      H3   109.197    1.24
+KDM    C4    C3      O3   109.593    1.52
+KDM    C4    C3      H3   108.810    0.69
+KDM    O3    C3      H3   108.831    0.94
+KDM    C3    C4      C5   110.289    1.64
+KDM    C3    C4      O4   109.687    1.71
+KDM    C3    C4      H4   108.837    0.70
+KDM    C5    C4      O4   109.186    1.99
+KDM    C5    C4      H4   109.537    1.06
+KDM    O4    C4      H4   108.787    1.25
+KDM    C4    C5      C6   110.884    2.54
+KDM    C4    C5      O5   109.558    1.59
+KDM    C4    C5      H5   108.924    1.47
+KDM    C6    C5      O5   107.164    2.52
+KDM    C6    C5      H5   107.618    1.99
+KDM    O5    C5      H5   108.933    1.41
+KDM    C5    C6      C7   112.921    2.66
+KDM    C5    C6      O6   109.584    2.83
+KDM    C5    C6      H6   109.407    1.00
+KDM    C7    C6      O6   107.955    3.00
+KDM    C7    C6      H6   107.563    3.00
+KDM    O6    C6      H6   108.002    1.53
+KDM    C6    C7      C9   114.316    1.93
+KDM    C6    C7      O7   109.369    0.57
+KDM    C6    C7      H7   108.684    0.50
+KDM    C9    C7      O7   108.958    2.39
+KDM    C9    C7      H7   108.418    1.76
+KDM    O7    C7      H7   108.673    1.58
+KDM    C7    C9     O10   110.819    2.13
+KDM    C7    C9    H91C   109.249    1.48
+KDM    C7    C9    H92C   109.249    1.48
+KDM   O10    C9    H91C   109.396    1.12
+KDM   O10    C9    H92C   109.396    1.12
+KDM  H91C    C9    H92C   108.380    2.24
+KDM    C4    O4      HB   108.943    2.95
+KDM   C10    O9      H9   109.715    2.82
+KDM    C3    O3      HA   109.428    3.00
+KDM    C1    O5      C5   111.771    2.56
+KDM    C6    O6      HC   108.082    3.00
+KDM    C7    O7      HD   110.678    3.00
+KDM    C9   O10     H10   108.573    3.00
+KDM    C1    O1      H1   108.675    1.30
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KDM       sp3_sp3_1      O5      C1      C2      C3      60.000   10.00     3
+KDM       sp3_sp3_2      O5      C1      C2    H21C     180.000   10.00     3
+KDM       sp3_sp3_3      O5      C1      C2    H22C     -60.000   10.00     3
+KDM       sp3_sp3_4     C10      C1      C2      C3     -60.000   10.00     3
+KDM       sp3_sp3_5     C10      C1      C2    H21C      60.000   10.00     3
+KDM       sp3_sp3_6     C10      C1      C2    H22C     180.000   10.00     3
+KDM       sp3_sp3_7      O1      C1      C2      C3     180.000   10.00     3
+KDM       sp3_sp3_8      O1      C1      C2    H21C     -60.000   10.00     3
+KDM       sp3_sp3_9      O1      C1      C2    H22C      60.000   10.00     3
+KDM      sp3_sp3_10      C1      C2      C3      C4     -60.000   10.00     3
+KDM      sp3_sp3_11      C1      C2      C3      O3      60.000   10.00     3
+KDM      sp3_sp3_12      C1      C2      C3      H3     180.000   10.00     3
+KDM      sp3_sp3_13    H21C      C2      C3      C4     180.000   10.00     3
+KDM      sp3_sp3_14    H21C      C2      C3      O3     -60.000   10.00     3
+KDM      sp3_sp3_15    H21C      C2      C3      H3      60.000   10.00     3
+KDM      sp3_sp3_16    H22C      C2      C3      C4      60.000   10.00     3
+KDM      sp3_sp3_17    H22C      C2      C3      O3     180.000   10.00     3
+KDM      sp3_sp3_18    H22C      C2      C3      H3     -60.000   10.00     3
+KDM      sp3_sp3_19      C2      C3      C4      C5      60.000   10.00     3
+KDM      sp3_sp3_20      C2      C3      C4      O4     180.000   10.00     3
+KDM      sp3_sp3_21      C2      C3      C4      H4     -60.000   10.00     3
+KDM      sp3_sp3_22      O3      C3      C4      C5     -60.000   10.00     3
+KDM      sp3_sp3_23      O3      C3      C4      O4      60.000   10.00     3
+KDM      sp3_sp3_24      O3      C3      C4      H4     180.000   10.00     3
+KDM      sp3_sp3_25      H3      C3      C4      C5     180.000   10.00     3
+KDM      sp3_sp3_26      H3      C3      C4      O4     -60.000   10.00     3
+KDM      sp3_sp3_27      H3      C3      C4      H4      60.000   10.00     3
+KDM      sp3_sp3_28      C3      C4      C5      O5     -60.000   10.00     3
+KDM      sp3_sp3_29      C3      C4      C5      C6      60.000   10.00     3
+KDM      sp3_sp3_30      C3      C4      C5      H5     180.000   10.00     3
+KDM      sp3_sp3_31      O4      C4      C5      O5     180.000   10.00     3
+KDM      sp3_sp3_32      O4      C4      C5      C6     -60.000   10.00     3
+KDM      sp3_sp3_33      O4      C4      C5      H5      60.000   10.00     3
+KDM      sp3_sp3_34      H4      C4      C5      O5      60.000   10.00     3
+KDM      sp3_sp3_35      H4      C4      C5      C6     180.000   10.00     3
+KDM      sp3_sp3_36      H4      C4      C5      H5     -60.000   10.00     3
+KDM      sp3_sp3_37      C4      C5      O5      C1      60.000   10.00     3
+KDM      sp3_sp3_38      C6      C5      O5      C1     180.000   10.00     3
+KDM      sp3_sp3_39      H5      C5      O5      C1     -60.000   10.00     3
+KDM       sp2_sp3_1      O9     C10      C1      C2       0.000   10.00     6
+KDM       sp2_sp3_2      O9     C10      C1      O5     120.000   10.00     6
+KDM       sp2_sp3_3      O9     C10      C1      O1    -120.000   10.00     6
+KDM       sp2_sp3_4      O8     C10      C1      C2     180.000   10.00     6
+KDM       sp2_sp3_5      O8     C10      C1      O5     -60.000   10.00     6
+KDM       sp2_sp3_6      O8     C10      C1      O1      60.000   10.00     6
+KDM      sp3_sp3_40      C2      C1      O5      C5      60.000   10.00     3
+KDM      sp3_sp3_41     C10      C1      O5      C5     180.000   10.00     3
+KDM      sp3_sp3_42      O1      C1      O5      C5     -60.000   10.00     3
+KDM      sp3_sp3_43     C10      C1      O1      H1     180.000   10.00     3
+KDM      sp3_sp3_44      C2      C1      O1      H1     -60.000   10.00     3
+KDM      sp3_sp3_45      O5      C1      O1      H1      60.000   10.00     3
+KDM       sp2_sp2_1      C1     C10      O9      H9     180.000   10.00     2
+KDM       sp2_sp2_2      O8     C10      O9      H9       0.000   10.00     2
+KDM      sp3_sp3_46      C2      C3      O3      HA     180.000   10.00     3
+KDM      sp3_sp3_47      C4      C3      O3      HA     -60.000   10.00     3
+KDM      sp3_sp3_48      H3      C3      O3      HA      60.000   10.00     3
+KDM      sp3_sp3_49      C3      C4      O4      HB     180.000   10.00     3
+KDM      sp3_sp3_50      C5      C4      O4      HB     -60.000   10.00     3
+KDM      sp3_sp3_51      H4      C4      O4      HB      60.000   10.00     3
+KDM      sp3_sp3_52      C4      C5      C6      C7     180.000   10.00     3
+KDM      sp3_sp3_53      C4      C5      C6      O6     -60.000   10.00     3
+KDM      sp3_sp3_54      C4      C5      C6      H6      60.000   10.00     3
+KDM      sp3_sp3_55      O5      C5      C6      C7      60.000   10.00     3
+KDM      sp3_sp3_56      O5      C5      C6      O6     180.000   10.00     3
+KDM      sp3_sp3_57      O5      C5      C6      H6     -60.000   10.00     3
+KDM      sp3_sp3_58      H5      C5      C6      C7     -60.000   10.00     3
+KDM      sp3_sp3_59      H5      C5      C6      O6      60.000   10.00     3
+KDM      sp3_sp3_60      H5      C5      C6      H6     180.000   10.00     3
+KDM      sp3_sp3_61      C5      C6      C7      C9     180.000   10.00     3
+KDM      sp3_sp3_62      C5      C6      C7      O7     -60.000   10.00     3
+KDM      sp3_sp3_63      C5      C6      C7      H7      60.000   10.00     3
+KDM      sp3_sp3_64      O6      C6      C7      C9      60.000   10.00     3
+KDM      sp3_sp3_65      O6      C6      C7      O7     180.000   10.00     3
+KDM      sp3_sp3_66      O6      C6      C7      H7     -60.000   10.00     3
+KDM      sp3_sp3_67      H6      C6      C7      C9     -60.000   10.00     3
+KDM      sp3_sp3_68      H6      C6      C7      O7      60.000   10.00     3
+KDM      sp3_sp3_69      H6      C6      C7      H7     180.000   10.00     3
+KDM      sp3_sp3_70      C5      C6      O6      HC     180.000   10.00     3
+KDM      sp3_sp3_71      C7      C6      O6      HC     -60.000   10.00     3
+KDM      sp3_sp3_72      H6      C6      O6      HC      60.000   10.00     3
+KDM      sp3_sp3_73      C6      C7      C9     O10     180.000   10.00     3
+KDM      sp3_sp3_74      C6      C7      C9    H91C     -60.000   10.00     3
+KDM      sp3_sp3_75      C6      C7      C9    H92C      60.000   10.00     3
+KDM      sp3_sp3_76      O7      C7      C9     O10      60.000   10.00     3
+KDM      sp3_sp3_77      O7      C7      C9    H91C     180.000   10.00     3
+KDM      sp3_sp3_78      O7      C7      C9    H92C     -60.000   10.00     3
+KDM      sp3_sp3_79      H7      C7      C9     O10     -60.000   10.00     3
+KDM      sp3_sp3_80      H7      C7      C9    H91C      60.000   10.00     3
+KDM      sp3_sp3_81      H7      C7      C9    H92C     180.000   10.00     3
+KDM      sp3_sp3_82      C6      C7      O7      HD     180.000   10.00     3
+KDM      sp3_sp3_83      C9      C7      O7      HD     -60.000   10.00     3
+KDM      sp3_sp3_84      H7      C7      O7      HD      60.000   10.00     3
+KDM      sp3_sp3_85      C7      C9     O10     H10     180.000   10.00     3
+KDM      sp3_sp3_86    H91C      C9     O10     H10     -60.000   10.00     3
+KDM      sp3_sp3_87    H92C      C9     O10     H10      60.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KDM    plan-1    C1   0.020
+KDM    plan-1   C10   0.020
+KDM    plan-1    O8   0.020
+KDM    plan-1    O9   0.020

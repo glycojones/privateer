@@ -1,0 +1,124 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DXX     DXX      "METHYLMALONIC ACID"     NON-POLYMER     12     8     .     
+#
+data_comp_DXX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DXX     C1      C       C       0       1.570       -7.124      2.318       
+DXX     O1      O       OC      -1      2.167       -7.205      3.408       
+DXX     OXT     O       O       0       0.499       -7.707      2.063       
+DXX     CA      C       CH1     0       2.192       -6.244      1.214       
+DXX     CB      C       CH3     0       3.486       -6.847      0.695       
+DXX     C       C       C       0       2.395       -4.788      1.679       
+DXX     O       O       O       0       3.272       -4.559      2.534       
+DXX     O2      O       OC      -1      1.670       -3.915      1.169       
+DXX     HA      H       H       0       1.580       -6.229      0.466       
+DXX     HB1     H       H       0       4.146       -6.152      0.525       
+DXX     HB2     H       H       0       3.311       -7.317      -0.138      
+DXX     HB3     H       H       0       3.857       -7.478      1.337       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DXX       C1        O1        SINGLE    n         1.244     0.020     1.244     0.020     
+DXX       C1        OXT       DOUBLE    n         1.244     0.020     1.244     0.020     
+DXX       C1        CA        SINGLE    n         1.539     0.010     1.539     0.010     
+DXX       CA        CB        SINGLE    n         1.510     0.012     1.510     0.012     
+DXX       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+DXX       C         O         DOUBLE    n         1.244     0.020     1.244     0.020     
+DXX       C         O2        SINGLE    n         1.244     0.020     1.244     0.020     
+DXX       CA        HA        SINGLE    n         1.089     0.010     0.965     0.020     
+DXX       CB        HB1       SINGLE    n         1.089     0.010     0.972     0.016     
+DXX       CB        HB2       SINGLE    n         1.089     0.010     0.972     0.016     
+DXX       CB        HB3       SINGLE    n         1.089     0.010     0.972     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DXX          O1          C1         OXT     124.400    1.50
+DXX          O1          C1          CA     117.800    1.60
+DXX         OXT          C1          CA     117.800    1.60
+DXX          C1          CA          CB     109.294    1.70
+DXX          C1          CA           C     111.575    3.00
+DXX          C1          CA          HA     108.186    1.50
+DXX          CB          CA           C     109.294    1.70
+DXX          CB          CA          HA     107.117    1.72
+DXX           C          CA          HA     108.186    1.50
+DXX          CA          CB         HB1     110.276    1.64
+DXX          CA          CB         HB2     110.276    1.64
+DXX          CA          CB         HB3     110.276    1.64
+DXX         HB1          CB         HB2     109.411    1.50
+DXX         HB1          CB         HB3     109.411    1.50
+DXX         HB2          CB         HB3     109.411    1.50
+DXX          CA           C           O     117.800    1.60
+DXX          CA           C          O2     117.800    1.60
+DXX           O           C          O2     124.400    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DXX             sp2_sp3_2          O1          C1          CA          CB     120.000   10.00     6
+DXX             sp3_sp3_1          C1          CA          CB         HB1     180.000   10.00     3
+DXX             sp2_sp3_8           O           C          CA          C1     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DXX    plan-1          C1   0.020
+DXX    plan-1          CA   0.020
+DXX    plan-1          O1   0.020
+DXX    plan-1         OXT   0.020
+DXX    plan-2           C   0.020
+DXX    plan-2          CA   0.020
+DXX    plan-2           O   0.020
+DXX    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DXX SMILES           ACDLabs              10.04 "O=C(O)C(C(=O)O)C"
+DXX SMILES_CANONICAL CACTVS               3.341 "CC(C(O)=O)C(O)=O"
+DXX SMILES           CACTVS               3.341 "CC(C(O)=O)C(O)=O"
+DXX SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C(=O)O)C(=O)O"
+DXX SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C(=O)O)C(=O)O"
+DXX InChI            InChI                1.03  "InChI=1S/C4H6O4/c1-2(3(5)6)4(7)8/h2H,1H3,(H,5,6)(H,7,8)"
+DXX InChIKey         InChI                1.03  ZIYVHBGGAOATLY-UHFFFAOYSA-N
+DXX ?                acedrg               202         "dictionary generator"                  
+DXX ?                acedrg_database      11          "data source"                           
+DXX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DXX ?                refmac5              5.8.0189    "optimization tool"                     

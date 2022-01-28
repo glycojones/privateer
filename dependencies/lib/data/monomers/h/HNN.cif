@@ -1,0 +1,672 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HNN      HNN 'PORPHYCENE CONTAINING MN            ' non-polymer        79  43 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HNN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HNN   O2B     O     O       0      12.280       7.564      17.118
+HNN   CGB     C     C   0.000      11.437       8.340      16.581
+HNN   O1B     O    O2   0.000      10.457       8.803      17.206
+HNN   CBB     C   CH2   0.000      11.595       8.785      15.129
+HNN   CAB     C   CH2   0.000      11.041       7.802      14.091
+HNN   C2B     C   CR5   0.000      11.233       6.360      14.506
+HNN   C3B     C   CR5   0.000      12.476       5.688      14.642
+HNN   CMB     C   CH3   0.000      13.877       6.176      14.435
+HNN   C1B     C  CR55   0.000      10.287       5.389      14.854
+HNN   C4C     C  CR55   0.000       8.877       5.353      14.931
+HNN   C3C     C   CR5   0.000       7.880       6.306      14.695
+HNN   CAC     C   CH2   0.000       8.015       7.738      14.229
+HNN   CBD     C   CH2   0.000       7.924       7.689      12.698
+HNN   CGD     C     C   0.000       8.583       8.876      12.020
+HNN   O2C     O    O2   0.000       8.450      10.028      12.514
+HNN   O1C     O     O   0.000       9.237       8.639      10.970
+HNN   C2C     C   CR5   0.000       6.668       5.618      14.958
+HNN   CMC     C   CH3   0.000       5.272       6.179      14.854
+HNN    NC     N     N   1.000       8.328       4.214      15.321
+HNN   C1C     C   CR5   0.000       6.998       4.313      15.342
+HNN   CB2     C    C2   0.000       6.000       3.279      15.695
+HNN   CB1     C    C2   0.000       6.094       2.009      16.067
+HNN   C4D     C   CR5   0.000       7.203       1.033      16.307
+HNN    MN    MN    MN   0.000       9.697       2.750      15.640
+HNN    NA     N     N   1.000      11.090       1.281      16.047
+HNN    NB     N     N   0.000      10.914       4.285      15.174
+HNN   C4B     C   CR5   0.000      12.223       4.405      15.043
+HNN   CD1     C    C2   0.000      13.324       3.452      15.290
+HNN   CD2     C    C2   0.000      13.408       2.188      15.652
+HNN   C1A     C   CR5   0.000      12.418       1.168      16.023
+HNN    ND     N     N   0.000       8.497       1.201      16.194
+HNN   C1D     C  CR55   0.000       9.153       0.079      16.488
+HNN   C2D     C   CR5   0.000       8.260      -0.932      16.834
+HNN   C7D     C   CH3   0.000       8.498      -2.356      17.255
+HNN   C3D     C   CR5   0.000       7.016      -0.296      16.712
+HNN   C5D     C   CH2   0.000       5.665      -0.910      16.947
+HNN   C6D     C   CH3   0.000       5.087      -1.139      15.559
+HNN   C4A     C  CR55   0.000      10.570       0.122      16.414
+HNN   C3A     C   CR5   0.000      11.585      -0.818      16.659
+HNN   C7A     C   CH3   0.000      11.506      -2.261      17.092
+HNN   C2A     C   CR5   0.000      12.779      -0.127      16.387
+HNN   C5A     C   CH2   0.000      14.192      -0.669      16.469
+HNN   C6A     C   CH3   0.000      14.742      -0.407      17.848
+HNN    H1     H     H   0.000      10.469       8.480      18.099
+HNN    H2     H     H   0.000      12.668       8.925      14.929
+HNN    H3     H     H   0.000      11.070       9.744      15.006
+HNN    H4     H     H   0.000      11.560       7.967      13.135
+HNN    H5     H     H   0.000       9.965       7.993      13.962
+HNN    H6     H     H   0.000      14.264       6.592      15.377
+HNN    H7     H     H   0.000      14.514       5.338      14.115
+HNN    H8     H     H   0.000      13.882       6.957      13.660
+HNN    H9     H     H   0.000       8.984       8.153      14.542
+HNN   H10     H     H   0.000       7.202       8.353      14.642
+HNN   H11     H     H   0.000       6.862       7.668      12.412
+HNN   H12     H     H   0.000       8.416       6.769      12.348
+HNN   H13     H     H   0.000       8.912      10.659      11.975
+HNN   H14     H     H   0.000       4.543       5.400      15.122
+HNN   H15     H     H   0.000       5.167       7.031      15.541
+HNN   H16     H     H   0.000       5.088       6.515      13.823
+HNN   H17     H     H   0.000       4.981       3.632      15.638
+HNN   H18     H     H   0.000       5.124       1.567      16.241
+HNN   H19     H     H   0.000      14.295       3.899      15.137
+HNN   H20     H     H   0.000      14.424       1.823      15.683
+HNN   H21     H     H   0.000       8.607      -2.402      18.349
+HNN   H22     H     H   0.000       7.645      -2.977      16.945
+HNN   H23     H     H   0.000       9.416      -2.730      16.779
+HNN   H24     H     H   0.000       5.025      -0.226      17.524
+HNN   H25     H     H   0.000       5.763      -1.863      17.487
+HNN   H26     H     H   0.000       4.088      -1.591      15.647
+HNN   H27     H     H   0.000       5.009      -0.177      15.031
+HNN   H28     H     H   0.000       5.746      -1.814      14.994
+HNN   H29     H     H   0.000      10.453      -2.544      17.235
+HNN   H30     H     H   0.000      11.956      -2.901      16.319
+HNN   H31     H     H   0.000      12.052      -2.390      18.038
+HNN   H32     H     H   0.000      14.183      -1.752      16.276
+HNN   H33     H     H   0.000      14.823      -0.168      15.720
+HNN   H34     H     H   0.000      15.768      -0.798      17.915
+HNN   H35     H     H   0.000      14.749       0.676      18.040
+HNN   H36     H     H   0.000      14.110      -0.908      18.596
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HNN       O1C       CGD       DOUB      1.211     0.019     1.211     0.019     
+HNN       CGD       O2C       SING      1.311     0.019     1.311     0.019     
+HNN       CGD       CBD       SING      1.500     0.012     1.500     0.012     
+HNN       CBD       CAC       SING      1.523     0.011     1.523     0.011     
+HNN       CAB       C2B       SING      1.504     0.011     1.504     0.011     
+HNN       CAB       CBB       SING      1.523     0.011     1.523     0.011     
+HNN       CAC       C3C       SING      1.504     0.011     1.504     0.011     
+HNN       CMB       C3B       SING      1.502     0.013     1.502     0.013     
+HNN       C2B       C3B       DOUB      1.435     0.020     1.435     0.020     
+HNN       C2B       C1B       SING      1.432     0.020     1.432     0.020     
+HNN       C3B       C4B       SING      1.410     0.020     1.410     0.020     
+HNN       C3C       C4C       SING      1.432     0.020     1.432     0.020     
+HNN       C3C       C2C       DOUB      1.435     0.020     1.435     0.020     
+HNN       CMC       C2C       SING      1.502     0.013     1.502     0.013     
+HNN       C1B       C4C       DOUB      1.430     0.020     1.430     0.020     
+HNN       C1B       NB        SING      1.369     0.020     1.369     0.020     
+HNN       C4C       NC        SING      1.369     0.020     1.369     0.020     
+HNN       C2C       C1C       SING      1.410     0.020     1.410     0.020     
+HNN       C4B       NB        SING      1.369     0.020     1.369     0.020     
+HNN       C4B       CD1       SINGLE    1.483     0.020     1.483     0.020     
+HNN       CBB       CGB       SING      1.500     0.012     1.500     0.012     
+HNN       NB        MN        SING      2.199     0.020     2.199     0.020     
+HNN       CD1       CD2       SING      1.360     0.020     1.360     0.020     
+HNN       NC        C1C       DOUB      1.369     0.020     1.369     0.020     
+HNN       NC        MN        SING      2.199     0.020     2.199     0.020     
+HNN       C1C       CB2       SINGLE    1.483     0.020     1.483     0.020     
+HNN       C6D       C5D       SING      1.517     0.020     1.517     0.020     
+HNN       MN        NA        SING      2.199     0.020     2.199     0.020     
+HNN       MN        ND        SING      2.199     0.020     2.199     0.020     
+HNN       CD2       C1A       SINGLE    1.483     0.020     1.483     0.020     
+HNN       CB2       CB1       DOUB      1.360     0.020     1.360     0.020     
+HNN       C1A       NA        SING      1.369     0.020     1.369     0.020     
+HNN       C1A       C2A       SING      1.410     0.020     1.410     0.020     
+HNN       NA        C4A       DOUB      1.369     0.020     1.369     0.020     
+HNN       CB1       C4D       SINGLE    1.483     0.020     1.483     0.020     
+HNN       ND        C4D       SING      1.369     0.020     1.369     0.020     
+HNN       ND        C1D       SING      1.369     0.020     1.369     0.020     
+HNN       C4D       C3D       DOUB      1.410     0.020     1.410     0.020     
+HNN       C2A       C5A       SING      1.504     0.012     1.504     0.012     
+HNN       C2A       C3A       DOUB      1.435     0.020     1.435     0.020     
+HNN       C4A       C1D       SING      1.430     0.020     1.430     0.020     
+HNN       C4A       C3A       SING      1.432     0.020     1.432     0.020     
+HNN       C5A       C6A       SING      1.517     0.020     1.517     0.020     
+HNN       C1D       C2D       DOUB      1.432     0.020     1.432     0.020     
+HNN       CGB       O2B       DOUB      1.211     0.019     1.211     0.019     
+HNN       CGB       O1B       SING      1.311     0.019     1.311     0.019     
+HNN       C3A       C7A       SING      1.497     0.010     1.497     0.010     
+HNN       C3D       C2D       SING      1.435     0.020     1.435     0.020     
+HNN       C3D       C5D       SING      1.504     0.012     1.504     0.012     
+HNN       C2D       C7D       SING      1.497     0.010     1.497     0.010     
+HNN       O1B       H1        SING      0.970     0.012     0.888     0.020     
+HNN       CBB       H2        SING      1.089     0.010     0.978     0.020     
+HNN       CBB       H3        SING      1.089     0.010     0.978     0.020     
+HNN       CAB       H4        SING      1.089     0.010     0.982     0.017     
+HNN       CAB       H5        SING      1.089     0.010     0.982     0.017     
+HNN       CMB       H6        SING      1.089     0.010     0.969     0.019     
+HNN       CMB       H7        SING      1.089     0.010     0.969     0.019     
+HNN       CMB       H8        SING      1.089     0.010     0.969     0.019     
+HNN       CAC       H9        SING      1.089     0.010     0.982     0.017     
+HNN       CAC       H10       SING      1.089     0.010     0.982     0.017     
+HNN       CBD       H11       SING      1.089     0.010     0.978     0.020     
+HNN       CBD       H12       SING      1.089     0.010     0.978     0.020     
+HNN       O2C       H13       SING      0.970     0.012     0.888     0.020     
+HNN       CMC       H14       SING      1.089     0.010     0.969     0.019     
+HNN       CMC       H15       SING      1.089     0.010     0.969     0.019     
+HNN       CMC       H16       SING      1.089     0.010     0.969     0.019     
+HNN       CB2       H17       SING      1.082     0.013     0.948     0.020     
+HNN       CB1       H18       SING      1.082     0.013     0.948     0.020     
+HNN       CD1       H19       SING      1.082     0.013     0.948     0.020     
+HNN       CD2       H20       SING      1.082     0.013     0.948     0.020     
+HNN       C7D       H21       SING      1.089     0.010     0.969     0.019     
+HNN       C7D       H22       SING      1.089     0.010     0.969     0.019     
+HNN       C7D       H23       SING      1.089     0.010     0.969     0.019     
+HNN       C5D       H24       SING      1.089     0.010     0.984     0.018     
+HNN       C5D       H25       SING      1.089     0.010     0.984     0.018     
+HNN       C6D       H26       SING      1.089     0.010     0.972     0.020     
+HNN       C6D       H27       SING      1.089     0.010     0.972     0.020     
+HNN       C6D       H28       SING      1.089     0.010     0.972     0.020     
+HNN       C7A       H29       SING      1.089     0.010     0.969     0.019     
+HNN       C7A       H30       SING      1.089     0.010     0.969     0.019     
+HNN       C7A       H31       SING      1.089     0.010     0.969     0.019     
+HNN       C5A       H32       SING      1.089     0.010     0.984     0.018     
+HNN       C5A       H33       SING      1.089     0.010     0.984     0.018     
+HNN       C6A       H34       SING      1.089     0.010     0.972     0.020     
+HNN       C6A       H35       SING      1.089     0.010     0.972     0.020     
+HNN       C6A       H36       SING      1.089     0.010     0.972     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HNN   CBB   CGB     O2B   123.754    1.42
+HNN   CBB   CGB     O1B   113.315    1.57
+HNN   O2B   CGB     O1B   122.931    1.34
+HNN   CGB   O1B      H1   110.447    3.00
+HNN   CAB   CBB     CGB   113.874    1.88
+HNN   CAB   CBB      H2   108.801    1.64
+HNN   CAB   CBB      H3   108.801    1.64
+HNN   CGB   CBB      H2   108.528    0.87
+HNN   CGB   CBB      H3   108.528    0.87
+HNN    H2   CBB      H3   107.724    1.61
+HNN   C2B   CAB     CBB   113.236    0.46
+HNN   C2B   CAB      H4   109.020    0.63
+HNN   C2B   CAB      H5   109.020    0.63
+HNN   CBB   CAB      H4   109.002    1.44
+HNN   CBB   CAB      H5   109.002    1.44
+HNN    H4   CAB      H5   107.813    0.92
+HNN   CAB   C2B     C3B   123.870    0.48
+HNN   CAB   C2B     C1B   129.349    0.66
+HNN   C3B   C2B     C1B   106.781    0.42
+HNN   CMB   C3B     C2B   124.574    2.41
+HNN   CMB   C3B     C4B   128.351    1.25
+HNN   C2B   C3B     C4B   107.075    0.30
+HNN   C3B   CMB      H6   109.549    0.64
+HNN   C3B   CMB      H7   109.549    0.64
+HNN   C3B   CMB      H8   109.549    0.64
+HNN    H6   CMB      H7   109.268    1.46
+HNN    H6   CMB      H8   109.268    1.46
+HNN    H7   CMB      H8   109.268    1.46
+HNN   C2B   C1B     C4C   141.211    3.00
+HNN   C2B   C1B      NB   108.737    2.41
+HNN   C4C   C1B      NB   110.052    3.00
+HNN   C3C   C4C     C1B   141.211    3.00
+HNN   C3C   C4C      NC   108.737    2.41
+HNN   C1B   C4C      NC   110.052    3.00
+HNN   CAC   C3C     C4C   129.349    0.66
+HNN   CAC   C3C     C2C   123.870    0.48
+HNN   C4C   C3C     C2C   106.781    0.42
+HNN   CBD   CAC     C3C   113.236    0.46
+HNN   CBD   CAC      H9   109.002    1.44
+HNN   CBD   CAC     H10   109.002    1.44
+HNN   C3C   CAC      H9   109.020    0.63
+HNN   C3C   CAC     H10   109.020    0.63
+HNN    H9   CAC     H10   107.813    0.92
+HNN   CGD   CBD     CAC   113.874    1.88
+HNN   CGD   CBD     H11   108.528    0.87
+HNN   CGD   CBD     H12   108.528    0.87
+HNN   CAC   CBD     H11   108.801    1.64
+HNN   CAC   CBD     H12   108.801    1.64
+HNN   H11   CBD     H12   107.724    1.61
+HNN   O1C   CGD     O2C   122.931    1.34
+HNN   O1C   CGD     CBD   123.754    1.42
+HNN   O2C   CGD     CBD   113.315    1.57
+HNN   CGD   O2C     H13   110.447    3.00
+HNN   C3C   C2C     CMC   124.574    2.41
+HNN   C3C   C2C     C1C   107.075    0.30
+HNN   CMC   C2C     C1C   128.351    1.25
+HNN   C2C   CMC     H14   109.549    0.64
+HNN   C2C   CMC     H15   109.549    0.64
+HNN   C2C   CMC     H16   109.549    0.64
+HNN   H14   CMC     H15   109.268    1.46
+HNN   H14   CMC     H16   109.268    1.46
+HNN   H15   CMC     H16   109.268    1.46
+HNN   C4C    NC     C1C   108.670    3.00
+HNN   C4C    NC      MN   106.632    3.00
+HNN   C1C    NC      MN   144.698    3.00
+HNN   C2C   C1C      NC   108.737    2.41
+HNN   C2C   C1C     CB2   127.040    3.00
+HNN    NC   C1C     CB2   124.223    3.00
+HNN   C1C   CB2     CB1   129.038    1.98
+HNN   C1C   CB2     H17   115.881    0.84
+HNN   CB1   CB2     H17   115.080    1.46
+HNN   CB2   CB1     C4D   129.038    1.98
+HNN   CB2   CB1     H18   115.080    1.46
+HNN   C4D   CB1     H18   115.881    0.84
+HNN   CB1   C4D      ND   124.223    3.00
+HNN   CB1   C4D     C3D   127.040    3.00
+HNN    ND   C4D     C3D   108.737    2.41
+HNN    NB    MN      NC    90.000    3.00
+HNN    NB    MN      NA    90.000    3.00
+HNN    NB    MN      ND   180.000    3.00
+HNN    NC    MN      NA   180.000    3.00
+HNN    NC    MN      ND    90.000    3.00
+HNN    NA    MN      ND    90.000    3.00
+HNN    MN    NA     C1A   144.698    3.00
+HNN    MN    NA     C4A   106.632    3.00
+HNN   C1A    NA     C4A   108.670    3.00
+HNN   C1B    NB     C4B   108.670    3.00
+HNN   C1B    NB      MN   106.632    3.00
+HNN   C4B    NB      MN   144.698    3.00
+HNN   C3B   C4B      NB   108.737    2.41
+HNN   C3B   C4B     CD1   127.040    3.00
+HNN    NB   C4B     CD1   124.223    3.00
+HNN   C4B   CD1     CD2   129.038    1.98
+HNN   C4B   CD1     H19   115.881    0.84
+HNN   CD2   CD1     H19   115.080    1.46
+HNN   CD1   CD2     C1A   129.038    1.98
+HNN   CD1   CD2     H20   115.080    1.46
+HNN   C1A   CD2     H20   115.881    0.84
+HNN   CD2   C1A      NA   124.223    3.00
+HNN   CD2   C1A     C2A   127.040    3.00
+HNN    NA   C1A     C2A   108.737    2.41
+HNN    MN    ND     C4D   144.698    3.00
+HNN    MN    ND     C1D   106.632    3.00
+HNN   C4D    ND     C1D   108.670    3.00
+HNN    ND   C1D     C4A   110.052    3.00
+HNN    ND   C1D     C2D   108.737    2.41
+HNN   C4A   C1D     C2D   141.211    3.00
+HNN   C1D   C2D     C3D   106.781    0.42
+HNN   C1D   C2D     C7D   128.849    0.38
+HNN   C3D   C2D     C7D   124.370    2.19
+HNN   C2D   C7D     H21   109.478    3.00
+HNN   C2D   C7D     H22   109.478    3.00
+HNN   C2D   C7D     H23   109.478    3.00
+HNN   H21   C7D     H22   109.268    1.46
+HNN   H21   C7D     H23   109.268    1.46
+HNN   H22   C7D     H23   109.268    1.46
+HNN   C4D   C3D     C2D   107.075    0.30
+HNN   C4D   C3D     C5D   126.490    1.44
+HNN   C2D   C3D     C5D   126.435    1.78
+HNN   C6D   C5D     C3D   112.833    1.38
+HNN   C6D   C5D     H24   108.933    1.31
+HNN   C6D   C5D     H25   108.933    1.31
+HNN   C3D   C5D     H24   109.088    0.86
+HNN   C3D   C5D     H25   109.088    0.86
+HNN   H24   C5D     H25   107.576    1.91
+HNN   C5D   C6D     H26   109.564    1.54
+HNN   C5D   C6D     H27   109.564    1.54
+HNN   C5D   C6D     H28   109.564    1.54
+HNN   H26   C6D     H27   109.338    1.56
+HNN   H26   C6D     H28   109.338    1.56
+HNN   H27   C6D     H28   109.338    1.56
+HNN    NA   C4A     C1D   110.052    3.00
+HNN    NA   C4A     C3A   108.737    2.41
+HNN   C1D   C4A     C3A   141.211    3.00
+HNN   C2A   C3A     C4A   106.781    0.42
+HNN   C2A   C3A     C7A   124.370    2.19
+HNN   C4A   C3A     C7A   128.849    0.38
+HNN   C3A   C7A     H29   109.478    3.00
+HNN   C3A   C7A     H30   109.478    3.00
+HNN   C3A   C7A     H31   109.478    3.00
+HNN   H29   C7A     H30   109.268    1.46
+HNN   H29   C7A     H31   109.268    1.46
+HNN   H30   C7A     H31   109.268    1.46
+HNN   C1A   C2A     C5A   126.490    1.44
+HNN   C1A   C2A     C3A   107.075    0.30
+HNN   C5A   C2A     C3A   126.435    1.78
+HNN   C2A   C5A     C6A   112.833    1.38
+HNN   C2A   C5A     H32   109.088    0.86
+HNN   C2A   C5A     H33   109.088    0.86
+HNN   C6A   C5A     H32   108.933    1.31
+HNN   C6A   C5A     H33   108.933    1.31
+HNN   H32   C5A     H33   107.576    1.91
+HNN   C5A   C6A     H34   109.564    1.54
+HNN   C5A   C6A     H35   109.564    1.54
+HNN   C5A   C6A     H36   109.564    1.54
+HNN   H34   C6A     H35   109.338    1.56
+HNN   H34   C6A     H36   109.338    1.56
+HNN   H35   C6A     H36   109.338    1.56
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HNN     P_sp2_sp2_1     C2A     C1A      NA     C4A       0.000   10.00     2
+HNN       sp2_sp2_1     C2A     C1A      NA      MN     180.000   10.00     2
+HNN     P_sp2_sp2_2     CD2     C1A      NA     C4A     180.000   10.00     2
+HNN       sp2_sp2_2     CD2     C1A      NA      MN       0.000   10.00     2
+HNN     P_sp2_sp2_3      NA     C1A     C2A     C3A       0.000   10.00     2
+HNN     P_sp2_sp2_4      NA     C1A     C2A     C5A     180.000   10.00     2
+HNN     P_sp2_sp2_5     CD2     C1A     C2A     C3A     180.000   10.00     2
+HNN     P_sp2_sp2_6     CD2     C1A     C2A     C5A       0.000   10.00     2
+HNN     P_sp2_sp2_7     C1A     C2A     C3A     C4A       0.000   10.00     2
+HNN     P_sp2_sp2_8     C1A     C2A     C3A     C7A     180.000   10.00     2
+HNN     P_sp2_sp2_9     C5A     C2A     C3A     C4A     180.000   10.00     2
+HNN    P_sp2_sp2_10     C5A     C2A     C3A     C7A       0.000   10.00     2
+HNN    P_sp2_sp2_11     C2A     C3A     C4A      NA       0.000   10.00     2
+HNN    P_sp2_sp2_12     C2A     C3A     C4A     C1D     180.000   10.00     2
+HNN    P_sp2_sp2_13     C7A     C3A     C4A      NA     180.000   10.00     2
+HNN    P_sp2_sp2_14     C7A     C3A     C4A     C1D       0.000   10.00     2
+HNN    P_sp2_sp2_15     C1B     C2B     C3B     C4B       0.000   10.00     2
+HNN    P_sp2_sp2_16     C1B     C2B     C3B     CMB     180.000   10.00     2
+HNN    P_sp2_sp2_17     CAB     C2B     C3B     C4B     180.000   10.00     2
+HNN    P_sp2_sp2_18     CAB     C2B     C3B     CMB       0.000   10.00     2
+HNN    P_sp2_sp2_19     C2B     C3B     C4B      NB       0.000   10.00     2
+HNN    P_sp2_sp2_20     C2B     C3B     C4B     CD1     180.000   10.00     2
+HNN    P_sp2_sp2_21     CMB     C3B     C4B      NB     180.000   10.00     2
+HNN    P_sp2_sp2_22     CMB     C3B     C4B     CD1       0.000   10.00     2
+HNN    P_sp2_sp2_23     C3B     C4B      NB     C1B       0.000   10.00     2
+HNN       sp2_sp2_3     C3B     C4B      NB      MN     180.000   10.00     2
+HNN    P_sp2_sp2_24     CD1     C4B      NB     C1B     180.000   10.00     2
+HNN       sp2_sp2_4     CD1     C4B      NB      MN       0.000   10.00     2
+HNN    P_sp2_sp2_25     C2B     C1B      NB     C4B       0.000   10.00     2
+HNN       sp2_sp2_5     C2B     C1B      NB      MN     180.000   10.00     2
+HNN    P_sp2_sp2_26     C4C     C1B      NB     C4B     180.000   10.00     2
+HNN       sp2_sp2_6     C4C     C1B      NB      MN       0.000   10.00     2
+HNN       sp2_sp2_7      NB     C1B     C4C      NC       0.000   10.00     2
+HNN       sp2_sp2_8      NB     C1B     C4C     C3C     180.000   10.00     2
+HNN       sp2_sp2_9     C2B     C1B     C4C      NC     180.000   10.00     2
+HNN      sp2_sp2_10     C2B     C1B     C4C     C3C       0.000   10.00     2
+HNN    P_sp2_sp2_27     C3C     C4C      NC     C1C       0.000   10.00     2
+HNN      sp2_sp2_11     C3C     C4C      NC      MN     180.000   10.00     2
+HNN    P_sp2_sp2_28     C1B     C4C      NC     C1C     180.000   10.00     2
+HNN      sp2_sp2_12     C1B     C4C      NC      MN       0.000   10.00     2
+HNN     other_tor_1      NB      MN      NC     C4C       0.000   10.00     1
+HNN     other_tor_2      NB      MN      NC     C1C     180.000   10.00     1
+HNN     other_tor_3      NC      MN      NB     C1B       0.000   10.00     1
+HNN     other_tor_4      NC      MN      NB     C4B     180.000   10.00     1
+HNN    P_sp2_sp2_29     C2C     C3C     C4C      NC       0.000   10.00     2
+HNN    P_sp2_sp2_30     C2C     C3C     C4C     C1B     180.000   10.00     2
+HNN    P_sp2_sp2_31     CAC     C3C     C4C      NC     180.000   10.00     2
+HNN    P_sp2_sp2_32     CAC     C3C     C4C     C1B       0.000   10.00     2
+HNN    P_sp2_sp2_33     C1C     C2C     C3C     C4C       0.000   10.00     2
+HNN    P_sp2_sp2_34     C1C     C2C     C3C     CAC     180.000   10.00     2
+HNN    P_sp2_sp2_35     CMC     C2C     C3C     C4C     180.000   10.00     2
+HNN    P_sp2_sp2_36     CMC     C2C     C3C     CAC       0.000   10.00     2
+HNN    P_sp2_sp2_37      NC     C1C     C2C     C3C       0.000   10.00     2
+HNN    P_sp2_sp2_38      NC     C1C     C2C     CMC     180.000   10.00     2
+HNN    P_sp2_sp2_39     CB2     C1C     C2C     C3C     180.000   10.00     2
+HNN    P_sp2_sp2_40     CB2     C1C     C2C     CMC       0.000   10.00     2
+HNN    P_sp2_sp2_41     C2C     C1C      NC     C4C       0.000   10.00     2
+HNN      sp2_sp2_13     C2C     C1C      NC      MN     180.000   10.00     2
+HNN    P_sp2_sp2_42     CB2     C1C      NC     C4C     180.000   10.00     2
+HNN      sp2_sp2_14     CB2     C1C      NC      MN       0.000   10.00     2
+HNN    P_sp2_sp2_43     C3D     C4D      ND     C1D       0.000   10.00     2
+HNN      sp2_sp2_15     C3D     C4D      ND      MN     180.000   10.00     2
+HNN    P_sp2_sp2_44     CB1     C4D      ND     C1D     180.000   10.00     2
+HNN      sp2_sp2_16     CB1     C4D      ND      MN       0.000   10.00     2
+HNN      sp2_sp2_17     C4A     C1D      ND      MN       0.000   10.00     2
+HNN    P_sp2_sp2_45     C4A     C1D      ND     C4D     180.000   10.00     2
+HNN      sp2_sp2_18     C2D     C1D      ND      MN     180.000   10.00     2
+HNN    P_sp2_sp2_46     C2D     C1D      ND     C4D       0.000   10.00     2
+HNN    P_sp2_sp2_47      ND     C1D     C2D     C3D       0.000   10.00     2
+HNN    P_sp2_sp2_48      ND     C1D     C2D     C7D     180.000   10.00     2
+HNN    P_sp2_sp2_49     C4A     C1D     C2D     C3D     180.000   10.00     2
+HNN    P_sp2_sp2_50     C4A     C1D     C2D     C7D       0.000   10.00     2
+HNN    P_sp2_sp2_51     C1D     C2D     C3D     C4D       0.000   10.00     2
+HNN    P_sp2_sp2_52     C1D     C2D     C3D     C5D     180.000   10.00     2
+HNN    P_sp2_sp2_53     C7D     C2D     C3D     C4D     180.000   10.00     2
+HNN    P_sp2_sp2_54     C7D     C2D     C3D     C5D       0.000   10.00     2
+HNN     other_tor_5      NB      MN      NA     C1A      90.000   10.00     1
+HNN     other_tor_6      NB      MN      NA     C4A     -90.000   10.00     1
+HNN      sp2_sp2_19     C1D     C4A      NA      MN       0.000   10.00     2
+HNN    P_sp2_sp2_55     C1D     C4A      NA     C1A     180.000   10.00     2
+HNN      sp2_sp2_20     C3A     C4A      NA      MN     180.000   10.00     2
+HNN    P_sp2_sp2_56     C3A     C4A      NA     C1A       0.000   10.00     2
+HNN      sp2_sp2_21      ND     C1D     C4A      NA       0.000   10.00     2
+HNN      sp2_sp2_22      ND     C1D     C4A     C3A     180.000   10.00     2
+HNN      sp2_sp2_23     C2D     C1D     C4A      NA     180.000   10.00     2
+HNN      sp2_sp2_24     C2D     C1D     C4A     C3A       0.000   10.00     2
+HNN      sp2_sp2_25     C4A     C1D      ND      MN       0.000   10.00     2
+HNN    P_sp2_sp2_57     C4A     C1D      ND     C4D     180.000   10.00     2
+HNN      sp2_sp2_26     C2D     C1D      ND      MN     180.000   10.00     2
+HNN    P_sp2_sp2_58     C2D     C1D      ND     C4D       0.000   10.00     2
+HNN      sp2_sp2_27     O1C     CGD     O2C     H13     180.000   10.00     2
+HNN      sp2_sp2_28     CBD     CGD     O2C     H13       0.000   10.00     2
+HNN       sp2_sp3_1     O1C     CGD     CBD     H11       0.000   10.00     6
+HNN       sp2_sp3_2     O1C     CGD     CBD     CAC     120.000   10.00     6
+HNN       sp2_sp3_3     O1C     CGD     CBD     H12    -120.000   10.00     6
+HNN       sp2_sp3_4     O2C     CGD     CBD     H11     180.000   10.00     6
+HNN       sp2_sp3_5     O2C     CGD     CBD     CAC     -60.000   10.00     6
+HNN       sp2_sp3_6     O2C     CGD     CBD     H12      60.000   10.00     6
+HNN       sp3_sp3_1     C3C     CAC     CBD     CGD     180.000   10.00     3
+HNN       sp3_sp3_2     C3C     CAC     CBD     H11     -60.000   10.00     3
+HNN       sp3_sp3_3     C3C     CAC     CBD     H12      60.000   10.00     3
+HNN       sp3_sp3_4      H9     CAC     CBD     CGD      60.000   10.00     3
+HNN       sp3_sp3_5      H9     CAC     CBD     H11     180.000   10.00     3
+HNN       sp3_sp3_6      H9     CAC     CBD     H12     -60.000   10.00     3
+HNN       sp3_sp3_7     H10     CAC     CBD     CGD     -60.000   10.00     3
+HNN       sp3_sp3_8     H10     CAC     CBD     H11      60.000   10.00     3
+HNN       sp3_sp3_9     H10     CAC     CBD     H12     180.000   10.00     3
+HNN       sp2_sp3_7     C3B     C2B     CAB      H4     150.000   10.00     6
+HNN       sp2_sp3_8     C3B     C2B     CAB     CBB     -90.000   10.00     6
+HNN       sp2_sp3_9     C3B     C2B     CAB      H5      30.000   10.00     6
+HNN      sp2_sp3_10     C1B     C2B     CAB      H4     -30.000   10.00     6
+HNN      sp2_sp3_11     C1B     C2B     CAB     CBB      90.000   10.00     6
+HNN      sp2_sp3_12     C1B     C2B     CAB      H5    -150.000   10.00     6
+HNN      sp3_sp3_10     C2B     CAB     CBB     CGB     180.000   10.00     3
+HNN      sp3_sp3_11     C2B     CAB     CBB      H2     -60.000   10.00     3
+HNN      sp3_sp3_12     C2B     CAB     CBB      H3      60.000   10.00     3
+HNN      sp3_sp3_13      H4     CAB     CBB     CGB      60.000   10.00     3
+HNN      sp3_sp3_14      H4     CAB     CBB      H2     180.000   10.00     3
+HNN      sp3_sp3_15      H4     CAB     CBB      H3     -60.000   10.00     3
+HNN      sp3_sp3_16      H5     CAB     CBB     CGB     -60.000   10.00     3
+HNN      sp3_sp3_17      H5     CAB     CBB      H2      60.000   10.00     3
+HNN      sp3_sp3_18      H5     CAB     CBB      H3     180.000   10.00     3
+HNN      sp2_sp3_13     C4C     C3C     CAC      H9     150.000   10.00     6
+HNN      sp2_sp3_14     C4C     C3C     CAC     CBD     -90.000   10.00     6
+HNN      sp2_sp3_15     C4C     C3C     CAC     H10      30.000   10.00     6
+HNN      sp2_sp3_16     C2C     C3C     CAC      H9     -30.000   10.00     6
+HNN      sp2_sp3_17     C2C     C3C     CAC     CBD      90.000   10.00     6
+HNN      sp2_sp3_18     C2C     C3C     CAC     H10    -150.000   10.00     6
+HNN      sp2_sp3_19     C2B     C3B     CMB      H6     150.000   10.00     6
+HNN      sp2_sp3_20     C2B     C3B     CMB      H7     -90.000   10.00     6
+HNN      sp2_sp3_21     C2B     C3B     CMB      H8      30.000   10.00     6
+HNN      sp2_sp3_22     C4B     C3B     CMB      H6     -30.000   10.00     6
+HNN      sp2_sp3_23     C4B     C3B     CMB      H7      90.000   10.00     6
+HNN      sp2_sp3_24     C4B     C3B     CMB      H8    -150.000   10.00     6
+HNN    P_sp2_sp2_59      NB     C1B     C2B     C3B       0.000   10.00     2
+HNN    P_sp2_sp2_60      NB     C1B     C2B     CAB     180.000   10.00     2
+HNN    P_sp2_sp2_61     C4C     C1B     C2B     C3B     180.000   10.00     2
+HNN    P_sp2_sp2_62     C4C     C1B     C2B     CAB       0.000   10.00     2
+HNN      sp2_sp3_25     C3C     C2C     CMC     H14     150.000   10.00     6
+HNN      sp2_sp3_26     C3C     C2C     CMC     H15     -90.000   10.00     6
+HNN      sp2_sp3_27     C3C     C2C     CMC     H16      30.000   10.00     6
+HNN      sp2_sp3_28     C1C     C2C     CMC     H14     -30.000   10.00     6
+HNN      sp2_sp3_29     C1C     C2C     CMC     H15      90.000   10.00     6
+HNN      sp2_sp3_30     C1C     C2C     CMC     H16    -150.000   10.00     6
+HNN      sp2_sp2_29     C3B     C4B     CD1     CD2     180.000   10.00     2
+HNN      sp2_sp2_30     C3B     C4B     CD1     H19       0.000   10.00     2
+HNN      sp2_sp2_31      NB     C4B     CD1     CD2       0.000   10.00     2
+HNN      sp2_sp2_32      NB     C4B     CD1     H19     180.000   10.00     2
+HNN      sp2_sp3_31     O2B     CGB     CBB      H2       0.000   10.00     6
+HNN      sp2_sp3_32     O2B     CGB     CBB     CAB     120.000   10.00     6
+HNN      sp2_sp3_33     O2B     CGB     CBB      H3    -120.000   10.00     6
+HNN      sp2_sp3_34     O1B     CGB     CBB      H2     180.000   10.00     6
+HNN      sp2_sp3_35     O1B     CGB     CBB     CAB     -60.000   10.00     6
+HNN      sp2_sp3_36     O1B     CGB     CBB      H3      60.000   10.00     6
+HNN      sp2_sp2_33     C4B     CD1     CD2     C1A     180.000   10.00     2
+HNN      sp2_sp2_34     C4B     CD1     CD2     H20       0.000   10.00     2
+HNN      sp2_sp2_35     H19     CD1     CD2     C1A       0.000   10.00     2
+HNN      sp2_sp2_36     H19     CD1     CD2     H20     180.000   10.00     2
+HNN      sp2_sp2_37     C2C     C1C     CB2     CB1     180.000   10.00     2
+HNN      sp2_sp2_38     C2C     C1C     CB2     H17       0.000   10.00     2
+HNN      sp2_sp2_39      NC     C1C     CB2     CB1       0.000   10.00     2
+HNN      sp2_sp2_40      NC     C1C     CB2     H17     180.000   10.00     2
+HNN      sp3_sp3_19     C3D     C5D     C6D     H26     180.000   10.00     3
+HNN      sp3_sp3_20     C3D     C5D     C6D     H27     -60.000   10.00     3
+HNN      sp3_sp3_21     C3D     C5D     C6D     H28      60.000   10.00     3
+HNN      sp3_sp3_22     H24     C5D     C6D     H26      60.000   10.00     3
+HNN      sp3_sp3_23     H24     C5D     C6D     H27     180.000   10.00     3
+HNN      sp3_sp3_24     H24     C5D     C6D     H28     -60.000   10.00     3
+HNN      sp3_sp3_25     H25     C5D     C6D     H26     -60.000   10.00     3
+HNN      sp3_sp3_26     H25     C5D     C6D     H27      60.000   10.00     3
+HNN      sp3_sp3_27     H25     C5D     C6D     H28     180.000   10.00     3
+HNN     other_tor_7      NB      MN      ND     C4D      90.000   10.00     1
+HNN     other_tor_8      NB      MN      ND     C1D     -90.000   10.00     1
+HNN      sp2_sp2_41      NA     C1A     CD2     CD1     180.000   10.00     2
+HNN      sp2_sp2_42      NA     C1A     CD2     H20       0.000   10.00     2
+HNN      sp2_sp2_43     C2A     C1A     CD2     CD1       0.000   10.00     2
+HNN      sp2_sp2_44     C2A     C1A     CD2     H20     180.000   10.00     2
+HNN      sp2_sp2_45     C4D     CB1     CB2     C1C     180.000   10.00     2
+HNN      sp2_sp2_46     C4D     CB1     CB2     H17       0.000   10.00     2
+HNN      sp2_sp2_47     H18     CB1     CB2     C1C       0.000   10.00     2
+HNN      sp2_sp2_48     H18     CB1     CB2     H17     180.000   10.00     2
+HNN      sp2_sp2_49      ND     C4D     CB1     CB2     180.000   10.00     2
+HNN      sp2_sp2_50      ND     C4D     CB1     H18       0.000   10.00     2
+HNN      sp2_sp2_51     C3D     C4D     CB1     CB2       0.000   10.00     2
+HNN      sp2_sp2_52     C3D     C4D     CB1     H18     180.000   10.00     2
+HNN    P_sp2_sp2_63     C2D     C3D     C4D      ND       0.000   10.00     2
+HNN    P_sp2_sp2_64     C2D     C3D     C4D     CB1     180.000   10.00     2
+HNN    P_sp2_sp2_65     C5D     C3D     C4D      ND     180.000   10.00     2
+HNN    P_sp2_sp2_66     C5D     C3D     C4D     CB1       0.000   10.00     2
+HNN      sp2_sp3_37     C1A     C2A     C5A     H32     150.000   10.00     6
+HNN      sp2_sp3_38     C1A     C2A     C5A     C6A     -90.000   10.00     6
+HNN      sp2_sp3_39     C1A     C2A     C5A     H33      30.000   10.00     6
+HNN      sp2_sp3_40     C3A     C2A     C5A     H32     -30.000   10.00     6
+HNN      sp2_sp3_41     C3A     C2A     C5A     C6A      90.000   10.00     6
+HNN      sp2_sp3_42     C3A     C2A     C5A     H33    -150.000   10.00     6
+HNN      sp3_sp3_28     C2A     C5A     C6A     H34     180.000   10.00     3
+HNN      sp3_sp3_29     C2A     C5A     C6A     H35     -60.000   10.00     3
+HNN      sp3_sp3_30     C2A     C5A     C6A     H36      60.000   10.00     3
+HNN      sp3_sp3_31     H32     C5A     C6A     H34      60.000   10.00     3
+HNN      sp3_sp3_32     H32     C5A     C6A     H35     180.000   10.00     3
+HNN      sp3_sp3_33     H32     C5A     C6A     H36     -60.000   10.00     3
+HNN      sp3_sp3_34     H33     C5A     C6A     H34     -60.000   10.00     3
+HNN      sp3_sp3_35     H33     C5A     C6A     H35      60.000   10.00     3
+HNN      sp3_sp3_36     H33     C5A     C6A     H36     180.000   10.00     3
+HNN      sp2_sp2_53     CBB     CGB     O1B      H1     180.000   10.00     2
+HNN      sp2_sp2_54     O2B     CGB     O1B      H1       0.000   10.00     2
+HNN      sp2_sp3_43     C2A     C3A     C7A     H29     150.000   10.00     6
+HNN      sp2_sp3_44     C2A     C3A     C7A     H30     -90.000   10.00     6
+HNN      sp2_sp3_45     C2A     C3A     C7A     H31      30.000   10.00     6
+HNN      sp2_sp3_46     C4A     C3A     C7A     H29     -30.000   10.00     6
+HNN      sp2_sp3_47     C4A     C3A     C7A     H30      90.000   10.00     6
+HNN      sp2_sp3_48     C4A     C3A     C7A     H31    -150.000   10.00     6
+HNN      sp2_sp3_49     C4D     C3D     C5D     H24     150.000   10.00     6
+HNN      sp2_sp3_50     C4D     C3D     C5D     C6D     -90.000   10.00     6
+HNN      sp2_sp3_51     C4D     C3D     C5D     H25      30.000   10.00     6
+HNN      sp2_sp3_52     C2D     C3D     C5D     H24     -30.000   10.00     6
+HNN      sp2_sp3_53     C2D     C3D     C5D     C6D      90.000   10.00     6
+HNN      sp2_sp3_54     C2D     C3D     C5D     H25    -150.000   10.00     6
+HNN      sp2_sp3_55     C1D     C2D     C7D     H21     150.000   10.00     6
+HNN      sp2_sp3_56     C1D     C2D     C7D     H22     -90.000   10.00     6
+HNN      sp2_sp3_57     C1D     C2D     C7D     H23      30.000   10.00     6
+HNN      sp2_sp3_58     C3D     C2D     C7D     H21     -30.000   10.00     6
+HNN      sp2_sp3_59     C3D     C2D     C7D     H22      90.000   10.00     6
+HNN      sp2_sp3_60     C3D     C2D     C7D     H23    -150.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HNN    plan-1   CBB   0.020
+HNN    plan-1   CGB   0.020
+HNN    plan-1   O1B   0.020
+HNN    plan-1   O2B   0.020
+HNN    plan-2   CBD   0.020
+HNN    plan-2   CGD   0.020
+HNN    plan-2   O1C   0.020
+HNN    plan-2   O2C   0.020
+HNN    plan-3   C1B   0.020
+HNN    plan-3   C1C   0.020
+HNN    plan-3   C2C   0.020
+HNN    plan-3   C3C   0.020
+HNN    plan-3   C4C   0.020
+HNN    plan-3   CAC   0.020
+HNN    plan-3   CB2   0.020
+HNN    plan-3   CMC   0.020
+HNN    plan-3    NC   0.020
+HNN    plan-4   C1C   0.020
+HNN    plan-4   CB1   0.020
+HNN    plan-4   CB2   0.020
+HNN    plan-4   H17   0.020
+HNN    plan-5   C4D   0.020
+HNN    plan-5   CB1   0.020
+HNN    plan-5   CB2   0.020
+HNN    plan-5   H18   0.020
+HNN    plan-6   C1B   0.020
+HNN    plan-6   C2B   0.020
+HNN    plan-6   C3B   0.020
+HNN    plan-6   C4B   0.020
+HNN    plan-6   C4C   0.020
+HNN    plan-6   CAB   0.020
+HNN    plan-6   CD1   0.020
+HNN    plan-6   CMB   0.020
+HNN    plan-6    NB   0.020
+HNN    plan-7   C4B   0.020
+HNN    plan-7   CD1   0.020
+HNN    plan-7   CD2   0.020
+HNN    plan-7   H19   0.020
+HNN    plan-8   C1A   0.020
+HNN    plan-8   CD1   0.020
+HNN    plan-8   CD2   0.020
+HNN    plan-8   H20   0.020
+HNN    plan-9   C1D   0.020
+HNN    plan-9   C2D   0.020
+HNN    plan-9   C3D   0.020
+HNN    plan-9   C4A   0.020
+HNN    plan-9   C4D   0.020
+HNN    plan-9   C5D   0.020
+HNN    plan-9   C7D   0.020
+HNN    plan-9   CB1   0.020
+HNN    plan-9    ND   0.020
+HNN   plan-10   C1A   0.020
+HNN   plan-10   C1D   0.020
+HNN   plan-10   C2A   0.020
+HNN   plan-10   C3A   0.020
+HNN   plan-10   C4A   0.020
+HNN   plan-10   C5A   0.020
+HNN   plan-10   C7A   0.020
+HNN   plan-10   CD2   0.020
+HNN   plan-10    NA   0.020

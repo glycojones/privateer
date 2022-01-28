@@ -1,0 +1,72 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BMM     BMM      BROMOMETHANE     NON-POLYMER     5     2     .     
+#
+data_comp_BMM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BMM     C1      C       CH3     0       74.984      81.986      32.713      
+BMM     BR      BR      BR      0       75.556      80.139      32.425      
+BMM     H11     H       H       0       75.779      82.567      32.761      
+BMM     H12     H       H       0       74.480      82.041      33.558      
+BMM     H13     H       H       0       74.410      82.268      31.964      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BMM       C1        BR        SINGLE    n         1.955     0.020     1.955     0.020     
+BMM       C1        H11       SINGLE    n         1.089     0.010     0.985     0.015     
+BMM       C1        H12       SINGLE    n         1.089     0.010     0.985     0.015     
+BMM       C1        H13       SINGLE    n         1.089     0.010     0.985     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BMM          BR          C1         H11     107.933    1.72
+BMM          BR          C1         H12     107.933    1.72
+BMM          BR          C1         H13     107.933    1.72
+BMM         H11          C1         H12     108.284    1.87
+BMM         H11          C1         H13     108.284    1.87
+BMM         H12          C1         H13     108.284    1.87
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BMM SMILES           ACDLabs              10.04 BrC
+BMM SMILES_CANONICAL CACTVS               3.341 CBr
+BMM SMILES           CACTVS               3.341 CBr
+BMM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CBr
+BMM SMILES           "OpenEye OEToolkits" 1.5.0 CBr
+BMM InChI            InChI                1.03  InChI=1S/CH3Br/c1-2/h1H3
+BMM InChIKey         InChI                1.03  GZUXJHMPEANEGY-UHFFFAOYSA-N
+BMM ?                acedrg               202         "dictionary generator"                  
+BMM ?                acedrg_database      11          "data source"                           
+BMM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BMM ?                refmac5              5.8.0189    "optimization tool"                     

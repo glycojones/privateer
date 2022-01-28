@@ -1,0 +1,147 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CG3     CG3      "HYDROXY(2-HYDROXYPHENYL)OXOAMMONIUM"     non-polymer     15     10     .     
+#
+data_comp_CG3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CG3     NBG     N       N       1       -1.692      -1.564      0.167       
+CG3     OBH     O       OC      -1      -1.772      -2.485      -0.630      
+CG3     OBI     O       O       0       -2.522      -1.355      1.039       
+CG3     CBB     C       CR6     0       -0.547      -0.667      0.073       
+CG3     CAW     C       CR6     0       -0.714      0.712       -0.178      
+CG3     CAX     C       CR16    0       0.436       1.512       -0.255      
+CG3     CAY     C       CR16    0       1.699       0.955       -0.088      
+CG3     CAZ     C       CR16    0       1.848       -0.400      0.157       
+CG3     CBA     C       CR16    0       0.733       -1.222      0.240       
+CG3     OAO     O       OH1     0       -1.930      1.292       -0.345      
+CG3     HAX     H       H       0       0.347       2.435       -0.421      
+CG3     HAY     H       H       0       2.460       1.508       -0.144      
+CG3     HAZ     H       H       0       2.709       -0.767      0.268       
+CG3     HBA     H       H       0       0.834       -2.143      0.406       
+CG3     HAO     H       H       0       -2.086      1.819       0.313       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CG3       NBG       OBH       SINGLE    n         1.221     0.017     1.221     0.017     
+CG3       NBG       OBI       DOUBLE    n         1.221     0.017     1.221     0.017     
+CG3       NBG       CBB       SINGLE    n         1.457     0.020     1.457     0.020     
+CG3       CBB       CBA       DOUBLE    y         1.394     0.014     1.394     0.014     
+CG3       CBB       CAW       SINGLE    y         1.404     0.010     1.404     0.010     
+CG3       CAZ       CBA       SINGLE    y         1.382     0.010     1.382     0.010     
+CG3       CAY       CAZ       DOUBLE    y         1.377     0.011     1.377     0.011     
+CG3       CAX       CAY       SINGLE    y         1.383     0.010     1.383     0.010     
+CG3       CAW       CAX       DOUBLE    y         1.391     0.012     1.391     0.012     
+CG3       CAW       OAO       SINGLE    n         1.358     0.015     1.358     0.015     
+CG3       CAX       HAX       SINGLE    n         1.082     0.013     0.942     0.015     
+CG3       CAY       HAY       SINGLE    n         1.082     0.013     0.943     0.018     
+CG3       CAZ       HAZ       SINGLE    n         1.082     0.013     0.943     0.017     
+CG3       CBA       HBA       SINGLE    n         1.082     0.013     0.941     0.020     
+CG3       OAO       HAO       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CG3         OBH         NBG         OBI     123.383    1.50
+CG3         OBH         NBG         CBB     118.308    1.50
+CG3         OBI         NBG         CBB     118.308    1.50
+CG3         NBG         CBB         CBA     117.614    1.50
+CG3         NBG         CBB         CAW     121.191    1.50
+CG3         CBA         CBB         CAW     121.195    1.50
+CG3         CBB         CAW         CAX     117.624    1.50
+CG3         CBB         CAW         OAO     123.129    1.50
+CG3         CAX         CAW         OAO     119.246    3.00
+CG3         CAY         CAX         CAW     120.162    1.50
+CG3         CAY         CAX         HAX     120.168    1.50
+CG3         CAW         CAX         HAX     119.670    1.50
+CG3         CAZ         CAY         CAX     120.759    1.50
+CG3         CAZ         CAY         HAY     119.805    1.50
+CG3         CAX         CAY         HAY     119.436    1.50
+CG3         CBA         CAZ         CAY     120.585    1.50
+CG3         CBA         CAZ         HAZ     119.567    1.50
+CG3         CAY         CAZ         HAZ     119.849    1.50
+CG3         CBB         CBA         CAZ     119.675    1.50
+CG3         CBB         CBA         HBA     120.175    1.50
+CG3         CAZ         CBA         HBA     120.150    1.50
+CG3         CAW         OAO         HAO     109.343    2.75
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CG3             sp2_sp2_1         CBA         CBB         NBG         OBH     180.000   10.00     2
+CG3              const_24         OAO         CAW         CBB         NBG       0.000   10.00     2
+CG3       const_sp2_sp2_2         CAZ         CBA         CBB         NBG     180.000   10.00     2
+CG3              const_19         OAO         CAW         CAX         CAY     180.000   10.00     2
+CG3              const_13         CAW         CAX         CAY         CAZ       0.000   10.00     2
+CG3       const_sp2_sp2_9         CAX         CAY         CAZ         CBA       0.000   10.00     2
+CG3       const_sp2_sp2_5         CAY         CAZ         CBA         CBB       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CG3    plan-1         CAW   0.020
+CG3    plan-1         CAX   0.020
+CG3    plan-1         CAY   0.020
+CG3    plan-1         CAZ   0.020
+CG3    plan-1         CBA   0.020
+CG3    plan-1         CBB   0.020
+CG3    plan-1         HAX   0.020
+CG3    plan-1         HAY   0.020
+CG3    plan-1         HAZ   0.020
+CG3    plan-1         HBA   0.020
+CG3    plan-1         NBG   0.020
+CG3    plan-1         OAO   0.020
+CG3    plan-2         CBB   0.020
+CG3    plan-2         NBG   0.020
+CG3    plan-2         OBH   0.020
+CG3    plan-2         OBI   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CG3 SMILES           ACDLabs              10.04 "O=[N+](O)c1ccccc1O"
+CG3 SMILES_CANONICAL CACTVS               3.352 "Oc1ccccc1[N+](O)=O"
+CG3 SMILES           CACTVS               3.352 "Oc1ccccc1[N+](O)=O"
+CG3 SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "c1ccc(c(c1)[N+](=O)O)O"
+CG3 SMILES           "OpenEye OEToolkits" 1.6.1 "c1ccc(c(c1)[N+](=O)O)O"
+CG3 InChI            InChI                1.03  "InChI=1S/C6H5NO3/c8-6-4-2-1-3-5(6)7(9)10/h1-4H,(H-,8,9,10)/p+1"
+CG3 InChIKey         InChI                1.03  CQQWRROYUSGJIU-UHFFFAOYSA-O
+CG3 ?                acedrg               202         "dictionary generator"                  
+CG3 ?                acedrg_database      11          "data source"                           
+CG3 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CG3 ?                refmac5              5.8.0189    "optimization tool"                     

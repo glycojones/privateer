@@ -1,0 +1,770 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MOQ      MOQ 'MOTUPORIN                           ' non-polymer       116  55 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MOQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MOQ           O9     O    O         0.000      0.000    0.000    0.000
+ MOQ           C21    C    C         0.000     -0.442   -0.224    1.107
+ MOQ           N1     N    NH1       0.000     -0.083   -1.356    1.787
+ MOQ           HN1    H    H         0.000     -0.435   -1.571    2.709
+ MOQ           C22    C    CH1       0.000     -1.399    0.739    1.762
+ MOQ           H22    H    H         0.000     -1.713    0.337    2.736
+ MOQ           C23    C    CH3       0.000     -0.705    2.086    1.968
+ MOQ           H233   H    H         0.000     -1.376    2.764    2.429
+ MOQ           H232   H    H         0.000      0.145    1.957    2.587
+ MOQ           H231   H    H         0.000     -0.402    2.475    1.030
+ MOQ           C24    C    CH1       0.000     -2.626    0.927    0.869
+ MOQ           H24    H    H         0.000     -2.374    0.655   -0.166
+ MOQ           C25    C    CH2       0.000     -3.080    2.387    0.919
+ MOQ           H251   H    H         0.000     -2.243    3.036    0.653
+ MOQ           H252   H    H         0.000     -3.419    2.627    1.928
+ MOQ           C26    C    CH2       0.000     -4.227    2.600   -0.070
+ MOQ           H261   H    H         0.000     -5.062    1.948    0.196
+ MOQ           H262   H    H         0.000     -3.886    2.358   -1.079
+ MOQ           C27    C    CH1       0.000     -4.681    4.060   -0.020
+ MOQ           H27    H    H         0.000     -4.939    4.327    1.015
+ MOQ           C29    C    CH2       0.000     -5.908    4.244   -0.914
+ MOQ           H291   H    H         0.000     -6.684    3.535   -0.618
+ MOQ           H292   H    H         0.000     -5.629    4.063   -1.955
+ MOQ           C30    C    CH1       0.000     -6.436    5.672   -0.768
+ MOQ           H30    H    H         0.000     -5.622    6.385   -0.959
+ MOQ           C32    C    CH1       0.000     -7.565    5.905   -1.775
+ MOQ           H32    H    H         0.000     -7.993    6.905   -1.621
+ MOQ           C34    C    CH2       0.000     -8.653    4.848   -1.573
+ MOQ           H341   H    H         0.000     -8.985    4.862   -0.533
+ MOQ           H342   H    H         0.000     -8.250    3.861   -1.812
+ MOQ           C35    C    CR6       0.000     -9.819    5.148   -2.479
+ MOQ           C40    C    CR16      0.000     -9.859    4.614   -3.753
+ MOQ           H40    H    H         0.000     -9.053    3.981   -4.101
+ MOQ           C39    C    CR16      0.000    -10.929    4.889   -4.584
+ MOQ           H39    H    H         0.000    -10.961    4.470   -5.583
+ MOQ           C38    C    CR16      0.000    -11.959    5.698   -4.141
+ MOQ           H38    H    H         0.000    -12.797    5.915   -4.792
+ MOQ           C37    C    CR16      0.000    -11.918    6.232   -2.867
+ MOQ           H37    H    H         0.000    -12.723    6.869   -2.520
+ MOQ           C36    C    CR16      0.000    -10.851    5.953   -2.034
+ MOQ           H36    H    H         0.000    -10.823    6.365   -1.033
+ MOQ           O10    O    O2        0.000     -7.047    5.808   -3.102
+ MOQ           C33    C    CH3       0.000     -6.700    7.133   -3.508
+ MOQ           H333   H    H         0.000     -5.915    7.496   -2.897
+ MOQ           H332   H    H         0.000     -6.383    7.122   -4.519
+ MOQ           H331   H    H         0.000     -7.544    7.765   -3.411
+ MOQ           C31    C    CH3       0.000     -6.969    5.876    0.652
+ MOQ           H313   H    H         0.000     -6.188    5.715    1.350
+ MOQ           H312   H    H         0.000     -7.335    6.865    0.754
+ MOQ           H311   H    H         0.000     -7.754    5.189    0.838
+ MOQ           C28    C    CH3       0.000     -3.549    4.963   -0.513
+ MOQ           H283   H    H         0.000     -2.699    4.836    0.107
+ MOQ           H282   H    H         0.000     -3.298    4.705   -1.510
+ MOQ           H281   H    H         0.000     -3.861    5.975   -0.479
+ MOQ           N5     N    NH1       0.000     -3.711    0.047    1.365
+ MOQ           HN5    H    H         0.000     -3.878   -0.107    2.349
+ MOQ           C17    C    C         0.000     -4.467   -0.542    0.389
+ MOQ           O8     O    O         0.000     -4.238   -0.332   -0.783
+ MOQ           C16    C    CH1       0.000     -5.591   -1.457    0.801
+ MOQ           H16    H    H         0.000     -6.555   -0.969    0.602
+ MOQ           C18    C    CH1       0.000     -5.476   -1.773    2.293
+ MOQ           H18    H    H         0.000     -4.463   -2.141    2.512
+ MOQ           C20    C    CH3       0.000     -6.500   -2.847    2.668
+ MOQ           H203   H    H         0.000     -6.234   -3.282    3.597
+ MOQ           H202   H    H         0.000     -7.461   -2.407    2.748
+ MOQ           H201   H    H         0.000     -6.518   -3.597    1.920
+ MOQ           C19    C    CH3       0.000     -5.744   -0.505    3.106
+ MOQ           H193   H    H         0.000     -5.338   -0.615    4.078
+ MOQ           H192   H    H         0.000     -5.293    0.325    2.627
+ MOQ           H191   H    H         0.000     -6.789   -0.345    3.177
+ MOQ           N4     N    NH1       0.000     -5.499   -2.706    0.018
+ MOQ           HN4    H    H         0.000     -6.062   -2.862   -0.807
+ MOQ           C14    C    C         0.000     -4.613   -3.637    0.468
+ MOQ           O7     O    O         0.000     -3.950   -3.426    1.462
+ MOQ           C13    C    CH1       0.000     -4.468   -4.936   -0.284
+ MOQ           H13    H    H         0.000     -5.313   -5.055   -0.975
+ MOQ           C15    C    CH3       0.000     -3.159   -4.921   -1.076
+ MOQ           H153   H    H         0.000     -2.953   -5.895   -1.439
+ MOQ           H152   H    H         0.000     -3.246   -4.252   -1.893
+ MOQ           H151   H    H         0.000     -2.367   -4.606   -0.447
+ MOQ           C12    C    CH1       0.000     -4.451   -6.100    0.707
+ MOQ           H12    H    H         0.000     -5.326   -6.743    0.534
+ MOQ           C11    C    C         0.000     -4.490   -5.565    2.115
+ MOQ           O6     O    OC       -0.500     -5.579   -5.221    2.625
+ MOQ           O5     O    OC       -0.500     -3.432   -5.466    2.776
+ MOQ           N3     N    NH1       0.000     -3.215   -6.883    0.506
+ MOQ           HN3    H    H         0.000     -3.232   -7.813    0.113
+ MOQ           C8     C    C         0.000     -2.052   -6.285    0.880
+ MOQ           O4     O    O         0.000     -2.056   -5.162    1.340
+ MOQ           C7     C    CH1       0.000     -0.756   -7.035    0.715
+ MOQ           H7     H    H         0.000     -0.830   -7.713   -0.147
+ MOQ           C9     C    CH2       0.000     -0.468   -7.845    1.980
+ MOQ           H91    H    H         0.000     -0.545   -7.195    2.854
+ MOQ           H92    H    H         0.000      0.540   -8.261    1.925
+ MOQ           C10    C    CH3       0.000     -1.485   -8.983    2.099
+ MOQ           H103   H    H         0.000     -2.465   -8.582    2.153
+ MOQ           H102   H    H         0.000     -1.413   -9.616    1.251
+ MOQ           H101   H    H         0.000     -1.289   -9.547    2.975
+ MOQ           N2     N    N         0.000      0.336   -6.066    0.490
+ MOQ           C6     C    CH3       0.000      0.857   -5.786   -0.851
+ MOQ           H63    H    H         0.000      1.880   -5.518   -0.786
+ MOQ           H62    H    H         0.000      0.757   -6.650   -1.458
+ MOQ           H61    H    H         0.000      0.311   -4.988   -1.285
+ MOQ           C5     C    C         0.000      0.833   -5.446    1.596
+ MOQ           O2     O    O         0.000      0.376   -5.687    2.693
+ MOQ           C4     C    CH2       0.000      1.959   -4.457    1.436
+ MOQ           H41    H    H         0.000      2.152   -4.296    0.373
+ MOQ           H42    H    H         0.000      2.859   -4.851    1.913
+ MOQ           C3     C    CH2       0.000      1.571   -3.131    2.092
+ MOQ           H31    H    H         0.000      2.470   -2.626    2.452
+ MOQ           H32A   H    H         0.000      0.902   -3.324    2.934
+ MOQ           C1     C    CH1       0.000      0.862   -2.244    1.068
+ MOQ           H1     H    H         0.000      0.309   -2.872    0.356
+ MOQ           C2     C    C         0.000      1.878   -1.413    0.327
+ MOQ           O1     O    OC       -0.500      2.067   -0.220    0.652
+ MOQ           O3     O    OC       -0.500      2.533   -1.918   -0.612
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MOQ      O9     n/a    C21    START
+ MOQ      C21    O9     C22    .
+ MOQ      N1     C21    HN1    .
+ MOQ      HN1    N1     .      .
+ MOQ      C22    C21    C24    .
+ MOQ      H22    C22    .      .
+ MOQ      C23    C22    H231   .
+ MOQ      H233   C23    .      .
+ MOQ      H232   C23    .      .
+ MOQ      H231   C23    .      .
+ MOQ      C24    C22    N5     .
+ MOQ      H24    C24    .      .
+ MOQ      C25    C24    C26    .
+ MOQ      H251   C25    .      .
+ MOQ      H252   C25    .      .
+ MOQ      C26    C25    C27    .
+ MOQ      H261   C26    .      .
+ MOQ      H262   C26    .      .
+ MOQ      C27    C26    C28    .
+ MOQ      H27    C27    .      .
+ MOQ      C29    C27    C30    .
+ MOQ      H291   C29    .      .
+ MOQ      H292   C29    .      .
+ MOQ      C30    C29    C31    .
+ MOQ      H30    C30    .      .
+ MOQ      C32    C30    O10    .
+ MOQ      H32    C32    .      .
+ MOQ      C34    C32    C35    .
+ MOQ      H341   C34    .      .
+ MOQ      H342   C34    .      .
+ MOQ      C35    C34    C40    .
+ MOQ      C40    C35    C39    .
+ MOQ      H40    C40    .      .
+ MOQ      C39    C40    C38    .
+ MOQ      H39    C39    .      .
+ MOQ      C38    C39    C37    .
+ MOQ      H38    C38    .      .
+ MOQ      C37    C38    C36    .
+ MOQ      H37    C37    .      .
+ MOQ      C36    C37    H36    .
+ MOQ      H36    C36    .      .
+ MOQ      O10    C32    C33    .
+ MOQ      C33    O10    H331   .
+ MOQ      H333   C33    .      .
+ MOQ      H332   C33    .      .
+ MOQ      H331   C33    .      .
+ MOQ      C31    C30    H311   .
+ MOQ      H313   C31    .      .
+ MOQ      H312   C31    .      .
+ MOQ      H311   C31    .      .
+ MOQ      C28    C27    H281   .
+ MOQ      H283   C28    .      .
+ MOQ      H282   C28    .      .
+ MOQ      H281   C28    .      .
+ MOQ      N5     C24    C17    .
+ MOQ      HN5    N5     .      .
+ MOQ      C17    N5     C16    .
+ MOQ      O8     C17    .      .
+ MOQ      C16    C17    N4     .
+ MOQ      H16    C16    .      .
+ MOQ      C18    C16    C19    .
+ MOQ      H18    C18    .      .
+ MOQ      C20    C18    H201   .
+ MOQ      H203   C20    .      .
+ MOQ      H202   C20    .      .
+ MOQ      H201   C20    .      .
+ MOQ      C19    C18    H191   .
+ MOQ      H193   C19    .      .
+ MOQ      H192   C19    .      .
+ MOQ      H191   C19    .      .
+ MOQ      N4     C16    C14    .
+ MOQ      HN4    N4     .      .
+ MOQ      C14    N4     C13    .
+ MOQ      O7     C14    .      .
+ MOQ      C13    C14    C12    .
+ MOQ      H13    C13    .      .
+ MOQ      C15    C13    H151   .
+ MOQ      H153   C15    .      .
+ MOQ      H152   C15    .      .
+ MOQ      H151   C15    .      .
+ MOQ      C12    C13    N3     .
+ MOQ      H12    C12    .      .
+ MOQ      C11    C12    O5     .
+ MOQ      O6     C11    .      .
+ MOQ      O5     C11    .      .
+ MOQ      N3     C12    C8     .
+ MOQ      HN3    N3     .      .
+ MOQ      C8     N3     C7     .
+ MOQ      O4     C8     .      .
+ MOQ      C7     C8     N2     .
+ MOQ      H7     C7     .      .
+ MOQ      C9     C7     C10    .
+ MOQ      H91    C9     .      .
+ MOQ      H92    C9     .      .
+ MOQ      C10    C9     H101   .
+ MOQ      H103   C10    .      .
+ MOQ      H102   C10    .      .
+ MOQ      H101   C10    .      .
+ MOQ      N2     C7     C5     .
+ MOQ      C6     N2     H61    .
+ MOQ      H63    C6     .      .
+ MOQ      H62    C6     .      .
+ MOQ      H61    C6     .      .
+ MOQ      C5     N2     C4     .
+ MOQ      O2     C5     .      .
+ MOQ      C4     C5     C3     .
+ MOQ      H41    C4     .      .
+ MOQ      H42    C4     .      .
+ MOQ      C3     C4     C1     .
+ MOQ      H31    C3     .      .
+ MOQ      H32A   C3     .      .
+ MOQ      C1     C3     C2     .
+ MOQ      H1     C1     .      .
+ MOQ      C2     C1     O3     .
+ MOQ      O1     C2     .      .
+ MOQ      O3     C2     .      END
+ MOQ      N1     C1     .    ADD
+ MOQ      C35    C36    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MOQ       N1        C1        single    1.450     0.020     1.450     0.020     
+MOQ       N1        C21       single    1.330     0.020     1.330     0.020     
+MOQ       HN1       N1        single    1.016     0.010     0.899     0.007     
+MOQ       C2        C1        single    1.500     0.020     1.500     0.020     
+MOQ       C1        C3        single    1.524     0.020     1.524     0.020     
+MOQ       H1        C1        single    1.089     0.010     0.989     0.005     
+MOQ       O1        C2        deloc     1.250     0.020     1.250     0.020     
+MOQ       O3        C2        deloc     1.250     0.020     1.250     0.020     
+MOQ       C3        C4        single    1.524     0.020     1.524     0.020     
+MOQ       H31       C3        single    1.089     0.010     0.989     0.005     
+MOQ       H32A      C3        single    1.089     0.010     0.989     0.005     
+MOQ       C4        C5        single    1.510     0.020     1.510     0.020     
+MOQ       H41       C4        single    1.089     0.010     0.989     0.005     
+MOQ       H42       C4        single    1.089     0.010     0.989     0.005     
+MOQ       O2        C5        double    1.220     0.020     1.220     0.020     
+MOQ       C5        N2        single    1.330     0.020     1.330     0.020     
+MOQ       C6        N2        single    1.455     0.020     1.455     0.020     
+MOQ       N2        C7        single    1.455     0.020     1.455     0.020     
+MOQ       H61       C6        single    1.089     0.010     0.989     0.005     
+MOQ       H62       C6        single    1.089     0.010     0.989     0.005     
+MOQ       H63       C6        single    1.089     0.010     0.989     0.005     
+MOQ       C7        C8        single    1.500     0.020     1.500     0.020     
+MOQ       C9        C7        single    1.524     0.020     1.524     0.020     
+MOQ       H7        C7        single    1.089     0.010     0.989     0.005     
+MOQ       O4        C8        double    1.220     0.020     1.220     0.020     
+MOQ       C8        N3        single    1.330     0.020     1.330     0.020     
+MOQ       C10       C9        single    1.513     0.020     1.513     0.020     
+MOQ       H91       C9        single    1.089     0.010     0.989     0.005     
+MOQ       H92       C9        single    1.089     0.010     0.989     0.005     
+MOQ       H101      C10       single    1.089     0.010     0.989     0.005     
+MOQ       H102      C10       single    1.089     0.010     0.989     0.005     
+MOQ       H103      C10       single    1.089     0.010     0.989     0.005     
+MOQ       O5        C11       deloc     1.250     0.020     1.250     0.020     
+MOQ       O6        C11       deloc     1.250     0.020     1.250     0.020     
+MOQ       C11       C12       single    1.500     0.020     1.500     0.020     
+MOQ       N3        C12       single    1.450     0.020     1.450     0.020     
+MOQ       C12       C13       single    1.524     0.020     1.524     0.020     
+MOQ       H12       C12       single    1.089     0.010     0.989     0.005     
+MOQ       HN3       N3        single    1.016     0.010     0.899     0.007     
+MOQ       C13       C14       single    1.500     0.020     1.500     0.020     
+MOQ       C15       C13       single    1.524     0.020     1.524     0.020     
+MOQ       H13       C13       single    1.089     0.010     0.989     0.005     
+MOQ       O7        C14       double    1.220     0.020     1.220     0.020     
+MOQ       C14       N4        single    1.330     0.020     1.330     0.020     
+MOQ       H151      C15       single    1.089     0.010     0.989     0.005     
+MOQ       H152      C15       single    1.089     0.010     0.989     0.005     
+MOQ       H153      C15       single    1.089     0.010     0.989     0.005     
+MOQ       C16       C17       single    1.500     0.020     1.500     0.020     
+MOQ       C18       C16       single    1.524     0.020     1.524     0.020     
+MOQ       N4        C16       single    1.450     0.020     1.450     0.020     
+MOQ       H16       C16       single    1.089     0.010     0.989     0.005     
+MOQ       O8        C17       double    1.220     0.020     1.220     0.020     
+MOQ       C17       N5        single    1.330     0.020     1.330     0.020     
+MOQ       C19       C18       single    1.524     0.020     1.524     0.020     
+MOQ       C20       C18       single    1.524     0.020     1.524     0.020     
+MOQ       H18       C18       single    1.089     0.010     0.989     0.005     
+MOQ       H191      C19       single    1.089     0.010     0.989     0.005     
+MOQ       H192      C19       single    1.089     0.010     0.989     0.005     
+MOQ       H193      C19       single    1.089     0.010     0.989     0.005     
+MOQ       H201      C20       single    1.089     0.010     0.989     0.005     
+MOQ       H202      C20       single    1.089     0.010     0.989     0.005     
+MOQ       H203      C20       single    1.089     0.010     0.989     0.005     
+MOQ       HN4       N4        single    1.016     0.010     0.899     0.007     
+MOQ       C21       O9        double    1.220     0.020     1.220     0.020     
+MOQ       C22       C21       single    1.500     0.020     1.500     0.020     
+MOQ       C23       C22       single    1.524     0.020     1.524     0.020     
+MOQ       C24       C22       single    1.524     0.020     1.524     0.020     
+MOQ       H22       C22       single    1.089     0.010     0.989     0.005     
+MOQ       H231      C23       single    1.089     0.010     0.989     0.005     
+MOQ       H232      C23       single    1.089     0.010     0.989     0.005     
+MOQ       H233      C23       single    1.089     0.010     0.989     0.005     
+MOQ       N5        C24       single    1.450     0.020     1.450     0.020     
+MOQ       C25       C24       single    1.524     0.020     1.524     0.020     
+MOQ       H24       C24       single    1.089     0.010     0.989     0.005     
+MOQ       HN5       N5        single    1.016     0.010     0.899     0.007     
+MOQ       C26       C25       single    1.524     0.020     1.524     0.020     
+MOQ       H251      C25       single    1.089     0.010     0.989     0.005     
+MOQ       H252      C25       single    1.089     0.010     0.989     0.005     
+MOQ       C27       C26       single    1.524     0.020     1.524     0.020     
+MOQ       H261      C26       single    1.089     0.010     0.989     0.005     
+MOQ       H262      C26       single    1.089     0.010     0.989     0.005     
+MOQ       C28       C27       single    1.524     0.020     1.524     0.020     
+MOQ       C29       C27       single    1.524     0.020     1.524     0.020     
+MOQ       H27       C27       single    1.089     0.010     0.989     0.005     
+MOQ       H281      C28       single    1.089     0.010     0.989     0.005     
+MOQ       H282      C28       single    1.089     0.010     0.989     0.005     
+MOQ       H283      C28       single    1.089     0.010     0.989     0.005     
+MOQ       C30       C29       single    1.524     0.020     1.524     0.020     
+MOQ       H291      C29       single    1.089     0.010     0.989     0.005     
+MOQ       H292      C29       single    1.089     0.010     0.989     0.005     
+MOQ       C31       C30       single    1.524     0.020     1.524     0.020     
+MOQ       C32       C30       single    1.524     0.020     1.524     0.020     
+MOQ       H30       C30       single    1.089     0.010     0.989     0.005     
+MOQ       H311      C31       single    1.089     0.010     0.989     0.005     
+MOQ       H312      C31       single    1.089     0.010     0.989     0.005     
+MOQ       H313      C31       single    1.089     0.010     0.989     0.005     
+MOQ       O10       C32       single    1.426     0.020     1.426     0.020     
+MOQ       C34       C32       single    1.524     0.020     1.524     0.020     
+MOQ       H32       C32       single    1.089     0.010     0.989     0.005     
+MOQ       C33       O10       single    1.426     0.020     1.426     0.020     
+MOQ       H331      C33       single    1.089     0.010     0.989     0.005     
+MOQ       H332      C33       single    1.089     0.010     0.989     0.005     
+MOQ       H333      C33       single    1.089     0.010     0.989     0.005     
+MOQ       C35       C34       single    1.511     0.020     1.511     0.020     
+MOQ       H341      C34       single    1.089     0.010     0.989     0.005     
+MOQ       H342      C34       single    1.089     0.010     0.989     0.005     
+MOQ       C35       C36       single    1.390     0.020     1.390     0.020     
+MOQ       C40       C35       double    1.390     0.020     1.390     0.020     
+MOQ       C36       C37       double    1.390     0.020     1.390     0.020     
+MOQ       H36       C36       single    1.082     0.013     0.975     0.010     
+MOQ       C37       C38       single    1.390     0.020     1.390     0.020     
+MOQ       H37       C37       single    1.082     0.013     0.975     0.010     
+MOQ       C38       C39       double    1.390     0.020     1.390     0.020     
+MOQ       H38       C38       single    1.082     0.013     0.975     0.010     
+MOQ       C39       C40       single    1.390     0.020     1.390     0.020     
+MOQ       H39       C39       single    1.082     0.013     0.975     0.010     
+MOQ       H40       C40       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MOQ      O9     C21    N1      123.000    3.000
+ MOQ      O9     C21    C22     120.500    3.000
+ MOQ      N1     C21    C22     116.500    3.000
+ MOQ      C21    N1     HN1     120.000    3.000
+ MOQ      C21    N1     C1      121.500    3.000
+ MOQ      HN1    N1     C1      118.500    3.000
+ MOQ      C21    C22    H22     108.810    3.000
+ MOQ      C21    C22    C23     109.470    3.000
+ MOQ      C21    C22    C24     109.470    3.000
+ MOQ      H22    C22    C23     108.340    3.000
+ MOQ      H22    C22    C24     108.340    3.000
+ MOQ      C23    C22    C24     111.000    3.000
+ MOQ      C22    C23    H233    109.470    3.000
+ MOQ      C22    C23    H232    109.470    3.000
+ MOQ      C22    C23    H231    109.470    3.000
+ MOQ      H233   C23    H232    109.470    3.000
+ MOQ      H233   C23    H231    109.470    3.000
+ MOQ      H232   C23    H231    109.470    3.000
+ MOQ      C22    C24    H24     108.340    3.000
+ MOQ      C22    C24    C25     111.000    3.000
+ MOQ      C22    C24    N5      110.000    3.000
+ MOQ      H24    C24    C25     108.340    3.000
+ MOQ      H24    C24    N5      108.550    3.000
+ MOQ      C25    C24    N5      110.000    3.000
+ MOQ      C24    C25    H251    109.470    3.000
+ MOQ      C24    C25    H252    109.470    3.000
+ MOQ      C24    C25    C26     111.000    3.000
+ MOQ      H251   C25    H252    107.900    3.000
+ MOQ      H251   C25    C26     109.470    3.000
+ MOQ      H252   C25    C26     109.470    3.000
+ MOQ      C25    C26    H261    109.470    3.000
+ MOQ      C25    C26    H262    109.470    3.000
+ MOQ      C25    C26    C27     111.000    3.000
+ MOQ      H261   C26    H262    107.900    3.000
+ MOQ      H261   C26    C27     109.470    3.000
+ MOQ      H262   C26    C27     109.470    3.000
+ MOQ      C26    C27    H27     108.340    3.000
+ MOQ      C26    C27    C29     109.470    3.000
+ MOQ      C26    C27    C28     111.000    3.000
+ MOQ      H27    C27    C29     108.340    3.000
+ MOQ      H27    C27    C28     108.340    3.000
+ MOQ      C29    C27    C28     111.000    3.000
+ MOQ      C27    C29    H291    109.470    3.000
+ MOQ      C27    C29    H292    109.470    3.000
+ MOQ      C27    C29    C30     111.000    3.000
+ MOQ      H291   C29    H292    107.900    3.000
+ MOQ      H291   C29    C30     109.470    3.000
+ MOQ      H292   C29    C30     109.470    3.000
+ MOQ      C29    C30    H30     108.340    3.000
+ MOQ      C29    C30    C32     111.000    3.000
+ MOQ      C29    C30    C31     111.000    3.000
+ MOQ      H30    C30    C32     108.340    3.000
+ MOQ      H30    C30    C31     108.340    3.000
+ MOQ      C32    C30    C31     111.000    3.000
+ MOQ      C30    C32    H32     108.340    3.000
+ MOQ      C30    C32    C34     111.000    3.000
+ MOQ      C30    C32    O10     109.470    3.000
+ MOQ      H32    C32    C34     108.340    3.000
+ MOQ      H32    C32    O10     109.470    3.000
+ MOQ      C34    C32    O10     109.470    3.000
+ MOQ      C32    C34    H341    109.470    3.000
+ MOQ      C32    C34    H342    109.470    3.000
+ MOQ      C32    C34    C35     109.470    3.000
+ MOQ      H341   C34    H342    107.900    3.000
+ MOQ      H341   C34    C35     109.470    3.000
+ MOQ      H342   C34    C35     109.470    3.000
+ MOQ      C34    C35    C40     120.000    3.000
+ MOQ      C34    C35    C36     120.000    3.000
+ MOQ      C40    C35    C36     120.000    3.000
+ MOQ      C35    C40    H40     120.000    3.000
+ MOQ      C35    C40    C39     120.000    3.000
+ MOQ      H40    C40    C39     120.000    3.000
+ MOQ      C40    C39    H39     120.000    3.000
+ MOQ      C40    C39    C38     120.000    3.000
+ MOQ      H39    C39    C38     120.000    3.000
+ MOQ      C39    C38    H38     120.000    3.000
+ MOQ      C39    C38    C37     120.000    3.000
+ MOQ      H38    C38    C37     120.000    3.000
+ MOQ      C38    C37    H37     120.000    3.000
+ MOQ      C38    C37    C36     120.000    3.000
+ MOQ      H37    C37    C36     120.000    3.000
+ MOQ      C37    C36    H36     120.000    3.000
+ MOQ      C37    C36    C35     120.000    3.000
+ MOQ      H36    C36    C35     120.000    3.000
+ MOQ      C32    O10    C33     111.800    3.000
+ MOQ      O10    C33    H333    109.470    3.000
+ MOQ      O10    C33    H332    109.470    3.000
+ MOQ      O10    C33    H331    109.470    3.000
+ MOQ      H333   C33    H332    109.470    3.000
+ MOQ      H333   C33    H331    109.470    3.000
+ MOQ      H332   C33    H331    109.470    3.000
+ MOQ      C30    C31    H313    109.470    3.000
+ MOQ      C30    C31    H312    109.470    3.000
+ MOQ      C30    C31    H311    109.470    3.000
+ MOQ      H313   C31    H312    109.470    3.000
+ MOQ      H313   C31    H311    109.470    3.000
+ MOQ      H312   C31    H311    109.470    3.000
+ MOQ      C27    C28    H283    109.470    3.000
+ MOQ      C27    C28    H282    109.470    3.000
+ MOQ      C27    C28    H281    109.470    3.000
+ MOQ      H283   C28    H282    109.470    3.000
+ MOQ      H283   C28    H281    109.470    3.000
+ MOQ      H282   C28    H281    109.470    3.000
+ MOQ      C24    N5     HN5     118.500    3.000
+ MOQ      C24    N5     C17     121.500    3.000
+ MOQ      HN5    N5     C17     120.000    3.000
+ MOQ      N5     C17    O8      123.000    3.000
+ MOQ      N5     C17    C16     116.500    3.000
+ MOQ      O8     C17    C16     120.500    3.000
+ MOQ      C17    C16    H16     108.810    3.000
+ MOQ      C17    C16    C18     109.470    3.000
+ MOQ      C17    C16    N4      111.600    3.000
+ MOQ      H16    C16    C18     108.340    3.000
+ MOQ      H16    C16    N4      108.550    3.000
+ MOQ      C18    C16    N4      110.000    3.000
+ MOQ      C16    C18    H18     108.340    3.000
+ MOQ      C16    C18    C20     111.000    3.000
+ MOQ      C16    C18    C19     111.000    3.000
+ MOQ      H18    C18    C20     108.340    3.000
+ MOQ      H18    C18    C19     108.340    3.000
+ MOQ      C20    C18    C19     111.000    3.000
+ MOQ      C18    C20    H203    109.470    3.000
+ MOQ      C18    C20    H202    109.470    3.000
+ MOQ      C18    C20    H201    109.470    3.000
+ MOQ      H203   C20    H202    109.470    3.000
+ MOQ      H203   C20    H201    109.470    3.000
+ MOQ      H202   C20    H201    109.470    3.000
+ MOQ      C18    C19    H193    109.470    3.000
+ MOQ      C18    C19    H192    109.470    3.000
+ MOQ      C18    C19    H191    109.470    3.000
+ MOQ      H193   C19    H192    109.470    3.000
+ MOQ      H193   C19    H191    109.470    3.000
+ MOQ      H192   C19    H191    109.470    3.000
+ MOQ      C16    N4     HN4     118.500    3.000
+ MOQ      C16    N4     C14     121.500    3.000
+ MOQ      HN4    N4     C14     120.000    3.000
+ MOQ      N4     C14    O7      123.000    3.000
+ MOQ      N4     C14    C13     116.500    3.000
+ MOQ      O7     C14    C13     120.500    3.000
+ MOQ      C14    C13    H13     108.810    3.000
+ MOQ      C14    C13    C15     109.470    3.000
+ MOQ      C14    C13    C12     109.470    3.000
+ MOQ      H13    C13    C15     108.340    3.000
+ MOQ      H13    C13    C12     108.340    3.000
+ MOQ      C15    C13    C12     111.000    3.000
+ MOQ      C13    C15    H153    109.470    3.000
+ MOQ      C13    C15    H152    109.470    3.000
+ MOQ      C13    C15    H151    109.470    3.000
+ MOQ      H153   C15    H152    109.470    3.000
+ MOQ      H153   C15    H151    109.470    3.000
+ MOQ      H152   C15    H151    109.470    3.000
+ MOQ      C13    C12    H12     108.340    3.000
+ MOQ      C13    C12    C11     109.470    3.000
+ MOQ      C13    C12    N3      110.000    3.000
+ MOQ      H12    C12    C11     108.810    3.000
+ MOQ      H12    C12    N3      108.550    3.000
+ MOQ      C11    C12    N3      111.600    3.000
+ MOQ      C12    C11    O6      118.500    3.000
+ MOQ      C12    C11    O5      118.500    3.000
+ MOQ      O6     C11    O5      123.000    3.000
+ MOQ      C12    N3     HN3     118.500    3.000
+ MOQ      C12    N3     C8      121.500    3.000
+ MOQ      HN3    N3     C8      120.000    3.000
+ MOQ      N3     C8     O4      123.000    3.000
+ MOQ      N3     C8     C7      116.500    3.000
+ MOQ      O4     C8     C7      120.500    3.000
+ MOQ      C8     C7     H7      108.810    3.000
+ MOQ      C8     C7     C9      109.470    3.000
+ MOQ      C8     C7     N2      111.600    3.000
+ MOQ      H7     C7     C9      108.340    3.000
+ MOQ      H7     C7     N2      109.470    3.000
+ MOQ      C9     C7     N2      105.000    3.000
+ MOQ      C7     C9     H91     109.470    3.000
+ MOQ      C7     C9     H92     109.470    3.000
+ MOQ      C7     C9     C10     111.000    3.000
+ MOQ      H91    C9     H92     107.900    3.000
+ MOQ      H91    C9     C10     109.470    3.000
+ MOQ      H92    C9     C10     109.470    3.000
+ MOQ      C9     C10    H103    109.470    3.000
+ MOQ      C9     C10    H102    109.470    3.000
+ MOQ      C9     C10    H101    109.470    3.000
+ MOQ      H103   C10    H102    109.470    3.000
+ MOQ      H103   C10    H101    109.470    3.000
+ MOQ      H102   C10    H101    109.470    3.000
+ MOQ      C7     N2     C6      120.000    3.000
+ MOQ      C7     N2     C5      121.000    3.000
+ MOQ      C6     N2     C5      127.000    3.000
+ MOQ      N2     C6     H63     109.470    3.000
+ MOQ      N2     C6     H62     109.470    3.000
+ MOQ      N2     C6     H61     109.470    3.000
+ MOQ      H63    C6     H62     109.470    3.000
+ MOQ      H63    C6     H61     109.470    3.000
+ MOQ      H62    C6     H61     109.470    3.000
+ MOQ      N2     C5     O2      123.000    3.000
+ MOQ      N2     C5     C4      116.500    3.000
+ MOQ      O2     C5     C4      120.500    3.000
+ MOQ      C5     C4     H41     109.470    3.000
+ MOQ      C5     C4     H42     109.470    3.000
+ MOQ      C5     C4     C3      109.470    3.000
+ MOQ      H41    C4     H42     107.900    3.000
+ MOQ      H41    C4     C3      109.470    3.000
+ MOQ      H42    C4     C3      109.470    3.000
+ MOQ      C4     C3     H31     109.470    3.000
+ MOQ      C4     C3     H32A    109.470    3.000
+ MOQ      C4     C3     C1      111.000    3.000
+ MOQ      H31    C3     H32A    107.900    3.000
+ MOQ      H31    C3     C1      109.470    3.000
+ MOQ      H32A   C3     C1      109.470    3.000
+ MOQ      C3     C1     H1      108.340    3.000
+ MOQ      C3     C1     C2      109.470    3.000
+ MOQ      C3     C1     N1      110.000    3.000
+ MOQ      H1     C1     C2      108.810    3.000
+ MOQ      H1     C1     N1      108.550    3.000
+ MOQ      C2     C1     N1      111.600    3.000
+ MOQ      C1     C2     O1      118.500    3.000
+ MOQ      C1     C2     O3      118.500    3.000
+ MOQ      O1     C2     O3      123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MOQ      CONST_1  O9     C21    N1     C1         0.000    0.000   0
+ MOQ      var_1    C21    N1     C1     C3       158.554   20.000   3
+ MOQ      var_2    O9     C21    C22    C24       57.672   20.000   3
+ MOQ      var_3    C21    C22    C23    H231      60.051   20.000   3
+ MOQ      var_4    C21    C22    C24    N5        97.965   20.000   3
+ MOQ      var_5    C22    C24    C25    C26      174.964   20.000   3
+ MOQ      var_6    C24    C25    C26    C27      179.970   20.000   3
+ MOQ      var_7    C25    C26    C27    C28       64.997   20.000   3
+ MOQ      var_8    C26    C27    C29    C30      175.021   20.000   3
+ MOQ      var_9    C27    C29    C30    C31      -66.197   20.000   3
+ MOQ      var_10   C29    C30    C32    O10      -64.039   20.000   3
+ MOQ      var_11   C30    C32    C34    C35      174.993   20.000   3
+ MOQ      var_12   C32    C34    C35    C40       89.950   20.000   2
+ MOQ      CONST_2  C34    C35    C36    C37      180.000    0.000   0
+ MOQ      CONST_3  C34    C35    C40    C39      180.000    0.000   0
+ MOQ      CONST_4  C35    C40    C39    C38        0.000    0.000   0
+ MOQ      CONST_5  C40    C39    C38    C37        0.000    0.000   0
+ MOQ      CONST_6  C39    C38    C37    C36        0.000    0.000   0
+ MOQ      CONST_7  C38    C37    C36    C35        0.000    0.000   0
+ MOQ      var_13   C30    C32    O10    C33      -93.305   20.000   1
+ MOQ      var_14   C32    O10    C33    H331     -55.470   20.000   1
+ MOQ      var_15   C29    C30    C31    H311     -60.004   20.000   3
+ MOQ      var_16   C26    C27    C28    H281     179.969   20.000   3
+ MOQ      var_17   C22    C24    N5     C17     -141.572   20.000   3
+ MOQ      CONST_8  C24    N5     C17    C16      180.000    0.000   0
+ MOQ      var_18   N5     C17    C16    N4      -131.712   20.000   3
+ MOQ      var_19   C17    C16    C18    C19       67.532   20.000   3
+ MOQ      var_20   C16    C18    C20    H201      42.492   20.000   3
+ MOQ      var_21   C16    C18    C19    H191      80.170   20.000   3
+ MOQ      var_22   C17    C16    N4     C14       81.708   20.000   3
+ MOQ      CONST_9  C16    N4     C14    C13      180.000    0.000   0
+ MOQ      var_23   N4     C14    C13    C12     -134.734   20.000   3
+ MOQ      var_24   C14    C13    C15    H151      48.228   20.000   3
+ MOQ      var_25   C14    C13    C12    N3      -123.826   20.000   3
+ MOQ      var_26   C13    C12    C11    O5       -98.699   20.000   3
+ MOQ      var_27   C13    C12    N3     C8        69.793   20.000   3
+ MOQ      CONST_10 C12    N3     C8     C7       180.000    0.000   0
+ MOQ      var_28   N3     C8     C7     N2       150.683   20.000   3
+ MOQ      var_29   C8     C7     C9     C10       68.791   20.000   3
+ MOQ      var_30   C7     C9     C10    H101     179.990   20.000   3
+ MOQ      var_31   C8     C7     N2     C5        80.056   20.000   3
+ MOQ      var_32   C7     N2     C6     H61       89.963   20.000   1
+ MOQ      CONST_11 C7     N2     C5     C4       180.000    0.000   0
+ MOQ      var_33   N2     C5     C4     C3       126.354   20.000   3
+ MOQ      var_34   C5     C4     C3     C1       -89.636   20.000   3
+ MOQ      var_35   C4     C3     C1     C2       -88.932   20.000   3
+ MOQ      var_36   C3     C1     C2     O3        79.991   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MOQ      chir_01  C1     N1     C2     C3        negativ
+ MOQ      chir_02  C7     N2     C8     C9        positiv
+ MOQ      chir_03  C12    C11    N3     C13       positiv
+ MOQ      chir_04  C13    C12    C14    C15       negativ
+ MOQ      chir_05  C16    C17    C18    N4        positiv
+ MOQ      chir_06  C18    C16    C19    C20       negativ
+ MOQ      chir_07  C22    C21    C23    C24       negativ
+ MOQ      chir_08  C24    C22    N5     C25       negativ
+ MOQ      chir_09  C27    C26    C28    C29       negativ
+ MOQ      chir_10  C30    C29    C31    C32       positiv
+ MOQ      chir_11  C32    C30    O10    C34       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MOQ      plan-1    N1        0.020
+ MOQ      plan-1    C1        0.020
+ MOQ      plan-1    C21       0.020
+ MOQ      plan-1    HN1       0.020
+ MOQ      plan-2    C2        0.020
+ MOQ      plan-2    C1        0.020
+ MOQ      plan-2    O1        0.020
+ MOQ      plan-2    O3        0.020
+ MOQ      plan-3    C5        0.020
+ MOQ      plan-3    C4        0.020
+ MOQ      plan-3    O2        0.020
+ MOQ      plan-3    N2        0.020
+ MOQ      plan-4    N2        0.020
+ MOQ      plan-4    C5        0.020
+ MOQ      plan-4    C6        0.020
+ MOQ      plan-4    C7        0.020
+ MOQ      plan-5    C8        0.020
+ MOQ      plan-5    C7        0.020
+ MOQ      plan-5    O4        0.020
+ MOQ      plan-5    N3        0.020
+ MOQ      plan-5    HN3       0.020
+ MOQ      plan-6    C11       0.020
+ MOQ      plan-6    O5        0.020
+ MOQ      plan-6    O6        0.020
+ MOQ      plan-6    C12       0.020
+ MOQ      plan-7    N3        0.020
+ MOQ      plan-7    C8        0.020
+ MOQ      plan-7    C12       0.020
+ MOQ      plan-7    HN3       0.020
+ MOQ      plan-8    C14       0.020
+ MOQ      plan-8    C13       0.020
+ MOQ      plan-8    O7        0.020
+ MOQ      plan-8    N4        0.020
+ MOQ      plan-8    HN4       0.020
+ MOQ      plan-9    C17       0.020
+ MOQ      plan-9    C16       0.020
+ MOQ      plan-9    O8        0.020
+ MOQ      plan-9    N5        0.020
+ MOQ      plan-9    HN5       0.020
+ MOQ      plan-10   N4        0.020
+ MOQ      plan-10   C14       0.020
+ MOQ      plan-10   C16       0.020
+ MOQ      plan-10   HN4       0.020
+ MOQ      plan-11   C21       0.020
+ MOQ      plan-11   N1        0.020
+ MOQ      plan-11   O9        0.020
+ MOQ      plan-11   C22       0.020
+ MOQ      plan-11   HN1       0.020
+ MOQ      plan-12   N5        0.020
+ MOQ      plan-12   C17       0.020
+ MOQ      plan-12   C24       0.020
+ MOQ      plan-12   HN5       0.020
+ MOQ      plan-13   C35       0.020
+ MOQ      plan-13   C34       0.020
+ MOQ      plan-13   C36       0.020
+ MOQ      plan-13   C40       0.020
+ MOQ      plan-13   C37       0.020
+ MOQ      plan-13   C38       0.020
+ MOQ      plan-13   C39       0.020
+ MOQ      plan-13   H36       0.020
+ MOQ      plan-13   H37       0.020
+ MOQ      plan-13   H38       0.020
+ MOQ      plan-13   H39       0.020
+ MOQ      plan-13   H40       0.020
+# ------------------------------------------------------

@@ -1,0 +1,211 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MDA      MDA '2,6-DIDEOXY-3 C-METHYL-D-RIBOPYRANOS' pyranose           25  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MDA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MDA           C1     C    CH1       0.000      0.000    0.000    0.000
+ MDA           H1     H    H         0.000      0.005   -1.099   -0.022
+ MDA           O1     O    OH1       0.000      1.087    0.463    0.804
+ MDA           HO1    H    H         0.000      1.921    0.150    0.429
+ MDA           O5     O    O2        0.000      0.143    0.501   -1.326
+ MDA           C5     C    CH1       0.000     -0.852   -0.124   -2.134
+ MDA           H5     H    H         0.000     -0.791   -1.215   -2.011
+ MDA           C6     C    CH3       0.000     -0.615    0.236   -3.602
+ MDA           H63    H    H         0.000     -1.351   -0.230   -4.204
+ MDA           H62    H    H         0.000     -0.674    1.286   -3.723
+ MDA           H61    H    H         0.000      0.345   -0.100   -3.898
+ MDA           C4     C    CH1       0.000     -2.240    0.358   -1.709
+ MDA           H4     H    H         0.000     -2.296    1.451   -1.807
+ MDA           C3     C    CT        0.000     -2.480   -0.039   -0.249
+ MDA           O3     O    OH1       0.000     -2.545   -1.461   -0.138
+ MDA           HO3    H    H         0.000     -2.685   -1.705    0.787
+ MDA           "C3'"  C    CH3       0.000     -3.795    0.575    0.240
+ MDA           "H3'3" H    H         0.000     -3.748    1.629    0.152
+ MDA           "H3'2" H    H         0.000     -4.597    0.208   -0.347
+ MDA           "H3'1" H    H         0.000     -3.952    0.313    1.255
+ MDA           C2     C    CH2       0.000     -1.320    0.491    0.600
+ MDA           H22    H    H         0.000     -1.416    0.122    1.623
+ MDA           H21    H    H         0.000     -1.336    1.582    0.604
+ MDA           O4     O    OH1       0.000     -3.232   -0.249   -2.539
+ MDA           HO4    H    H         0.000     -3.043    0.025   -3.447
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MDA      C1     n/a    O5     START
+ MDA      H1     C1     .      .
+ MDA      O1     C1     HO1    .
+ MDA      HO1    O1     .      .
+ MDA      O5     C1     .      END
+ MDA      C5     O5     C4     .
+ MDA      H5     C5     .      .
+ MDA      C6     C5     H61    .
+ MDA      H63    C6     .      .
+ MDA      H62    C6     .      .
+ MDA      H61    C6     .      .
+ MDA      C4     C5     O4     .
+ MDA      H4     C4     .      .
+ MDA      C3     C4     C2     .
+ MDA      O3     C3     HO3    .
+ MDA      HO3    O3     .      .
+ MDA      "C3'"  C3     "H3'1" .
+ MDA      "H3'3" "C3'"  .      .
+ MDA      "H3'2" "C3'"  .      .
+ MDA      "H3'1" "C3'"  .      .
+ MDA      C2     C3     H21    .
+ MDA      H22    C2     .      .
+ MDA      H21    C2     .      .
+ MDA      O4     C4     .      .
+ MDA      HO4    O4     .      .
+ MDA      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MDA       C1        C2        single    1.524     0.020     1.524     0.020     
+MDA       O1        C1        single    1.432     0.020     1.432     0.020     
+MDA       O5        C1        single    1.426     0.020     1.426     0.020     
+MDA       H1        C1        single    1.089     0.010     0.989     0.005     
+MDA       C2        C3        single    1.524     0.020     1.524     0.020     
+MDA       H21       C2        single    1.089     0.010     0.989     0.005     
+MDA       H22       C2        single    1.089     0.010     0.989     0.005     
+MDA       C3        C4        single    1.524     0.020     1.524     0.020     
+MDA       "C3'"     C3        single    1.524     0.020     1.524     0.020     
+MDA       O3        C3        single    1.432     0.020     1.432     0.020     
+MDA       C4        C5        single    1.524     0.020     1.524     0.020     
+MDA       O4        C4        single    1.432     0.020     1.432     0.020     
+MDA       H4        C4        single    1.089     0.010     0.989     0.005     
+MDA       C6        C5        single    1.524     0.020     1.524     0.020     
+MDA       C5        O5        single    1.426     0.020     1.426     0.020     
+MDA       H5        C5        single    1.089     0.010     0.989     0.005     
+MDA       H61       C6        single    1.089     0.010     0.989     0.005     
+MDA       H62       C6        single    1.089     0.010     0.989     0.005     
+MDA       H63       C6        single    1.089     0.010     0.989     0.005     
+MDA       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+MDA       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+MDA       "H3'3"    "C3'"     single    1.089     0.010     0.989     0.005     
+MDA       HO1       O1        single    0.970     0.012     0.839     0.014     
+MDA       HO3       O3        single    0.970     0.012     0.839     0.014     
+MDA       HO4       O4        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MDA      H1     C1     O1      109.470    3.000
+ MDA      H1     C1     O5      109.470    3.000
+ MDA      O1     C1     O5      109.470    3.000
+ MDA      H1     C1     C2      108.340    3.000
+ MDA      O1     C1     C2      109.470    3.000
+ MDA      O5     C1     C2      109.470    3.000
+ MDA      C1     O1     HO1     109.470    3.000
+ MDA      C1     O5     C5      111.800    3.000
+ MDA      O5     C5     H5      109.470    3.000
+ MDA      O5     C5     C6      109.470    3.000
+ MDA      O5     C5     C4      109.470    3.000
+ MDA      H5     C5     C6      108.340    3.000
+ MDA      H5     C5     C4      108.340    3.000
+ MDA      C6     C5     C4      111.000    3.000
+ MDA      C5     C6     H63     109.470    3.000
+ MDA      C5     C6     H62     109.470    3.000
+ MDA      C5     C6     H61     109.470    3.000
+ MDA      H63    C6     H62     109.470    3.000
+ MDA      H63    C6     H61     109.470    3.000
+ MDA      H62    C6     H61     109.470    3.000
+ MDA      C5     C4     H4      108.340    3.000
+ MDA      C5     C4     C3      111.000    3.000
+ MDA      C5     C4     O4      109.470    3.000
+ MDA      H4     C4     C3      108.340    3.000
+ MDA      H4     C4     O4      109.470    3.000
+ MDA      C3     C4     O4      109.470    3.000
+ MDA      C4     C3     O3      109.470    3.000
+ MDA      C4     C3     "C3'"   111.000    3.000
+ MDA      C4     C3     C2      111.000    3.000
+ MDA      O3     C3     "C3'"   109.470    3.000
+ MDA      O3     C3     C2      109.470    3.000
+ MDA      "C3'"  C3     C2      111.000    3.000
+ MDA      C3     O3     HO3     109.470    3.000
+ MDA      C3     "C3'"  "H3'3"  109.470    3.000
+ MDA      C3     "C3'"  "H3'2"  109.470    3.000
+ MDA      C3     "C3'"  "H3'1"  109.470    3.000
+ MDA      "H3'3" "C3'"  "H3'2"  109.470    3.000
+ MDA      "H3'3" "C3'"  "H3'1"  109.470    3.000
+ MDA      "H3'2" "C3'"  "H3'1"  109.470    3.000
+ MDA      C3     C2     H22     109.470    3.000
+ MDA      C3     C2     H21     109.470    3.000
+ MDA      C3     C2     C1      111.000    3.000
+ MDA      H22    C2     H21     107.900    3.000
+ MDA      H22    C2     C1      109.470    3.000
+ MDA      H21    C2     C1      109.470    3.000
+ MDA      C4     O4     HO4     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MDA      var_1    O5     C1     O1     HO1      -59.977   20.000   1
+ MDA      var_2    C1     O5     C5     C4        60.000   20.000   1
+ MDA      var_3    O5     C5     C6     H61       59.802   20.000   3
+ MDA      var_4    O5     C5     C4     O4       180.000   20.000   3
+ MDA      var_5    C5     C4     C3     C2        60.000   20.000   1
+ MDA      var_6    C4     C3     O3     HO3      179.274   20.000   1
+ MDA      var_7    C4     C3     "C3'"  "H3'1"  -179.103   20.000   1
+ MDA      var_8    C4     C3     C2     C1       -60.000   20.000   1
+ MDA      var_9    C3     C2     C1     O5        60.000   20.000   3
+ MDA      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MDA      chir_01  C1     C2     O1     O5        positiv
+ MDA      chir_02  C3     C2     C4     "C3'"     positiv
+ MDA      chir_03  C4     C3     C5     O4        negativ
+ MDA      chir_04  C5     C4     C6     O5        negativ
+# ------------------------------------------------------

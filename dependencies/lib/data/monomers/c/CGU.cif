@@ -1,0 +1,198 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CGU     CGU      "GAMMA-CARBOXY-GLUTAMIC ACID" peptide   20     13     .     
+#
+data_comp_CGU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CGU     N       N       NT3     1       -1.526      -0.606      -1.144      
+CGU     CA      C       CH1     0       -1.148      -0.368      0.279       
+CGU     C       C       C       0       -2.357      0.192       1.040       
+CGU     O       O       O       0       -2.882      1.229       0.588       
+CGU     OXT     O       OC      -1      -2.727      -0.429      2.056       
+CGU     CB      C       CH2     0       0.033       0.606       0.351       
+CGU     CG      C       CH1     0       1.325       0.141       -0.323      
+CGU     CD1     C       C       0       1.913       -1.096      0.382       
+CGU     CD2     C       C       0       2.351       1.289       -0.360      
+CGU     OE11    O       O       0       2.204       -0.998      1.588       
+CGU     OE12    O       OC      -1      2.067       -2.129      -0.295      
+CGU     OE21    O       O       0       2.849       1.588       -1.461      
+CGU     OE22    O       OC      -1      2.628       1.858       0.712       
+CGU     H       H       H       0       -1.532      0.180       -1.606      
+CGU     H2      H       H       0       -2.355      -0.982      -1.194      
+CGU     H3      H       H       0       -0.932      -1.175      -1.534      
+CGU     HA      H       H       0       -0.896      -1.230      0.683       
+CGU     HB2     H       H       0       0.219       0.787       1.298       
+CGU     HB3     H       H       0       -0.247      1.454       -0.058      
+CGU     HG      H       H       0       1.117       -0.109      -1.252      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CGU      N      n/a    CA     START
+ CGU      H      N      .      .
+ CGU      H2     N      .      .
+ CGU      H3     N      .      .
+ CGU      CA     N      C      .
+ CGU      HA     CA     .      .
+ CGU      CB     CA     CG     .
+ CGU      HB2    CB     .      .
+ CGU      HB3    CB     .      .
+ CGU      CG     CB     CD2    .
+ CGU      HG     CG     .      .
+ CGU      CD1    CG     OE11   .
+ CGU      OE12   CD1    .      .
+ CGU      OE11   CD1    .      .
+ CGU      CD2    CG     OE22   .
+ CGU      OE21   CD2    .      .
+ CGU      OE22   CD2    .      .
+ CGU      C      CA     .      END
+ CGU      O      C      .      .
+ CGU      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CGU       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+CGU       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+CGU       CA        CB        SINGLE    n         1.528     0.013     1.528     0.013     
+CGU       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+CGU       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+CGU       CB        CG        SINGLE    n         1.527     0.011     1.527     0.011     
+CGU       CG        CD1       SINGLE    n         1.539     0.010     1.539     0.010     
+CGU       CG        CD2       SINGLE    n         1.539     0.010     1.539     0.010     
+CGU       CD1       OE11      DOUBLE    n         1.244     0.020     1.244     0.020     
+CGU       CD1       OE12      SINGLE    n         1.244     0.020     1.244     0.020     
+CGU       CD2       OE21      DOUBLE    n         1.244     0.020     1.244     0.020     
+CGU       CD2       OE22      SINGLE    n         1.244     0.020     1.244     0.020     
+CGU       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+CGU       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+CGU       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+CGU       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+CGU       CB        HB2       SINGLE    n         1.089     0.010     0.982     0.015     
+CGU       CB        HB3       SINGLE    n         1.089     0.010     0.982     0.015     
+CGU       CG        HG        SINGLE    n         1.089     0.010     0.985     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CGU          CA           N           H     110.062    1.93
+CGU          CA           N          H2     110.062    1.93
+CGU          CA           N          H3     110.062    1.93
+CGU           H           N          H2     109.028    2.41
+CGU           H           N          H3     109.028    2.41
+CGU          H2           N          H3     109.028    2.41
+CGU           N          CA           C     109.241    1.50
+CGU           N          CA          CB     108.955    1.50
+CGU           N          CA          HA     108.487    1.50
+CGU           C          CA          CB     111.075    1.50
+CGU           C          CA          HA     108.824    1.50
+CGU          CB          CA          HA     109.549    1.50
+CGU          CA           C           O     117.124    1.50
+CGU          CA           C         OXT     117.124    1.50
+CGU           O           C         OXT     125.752    1.50
+CGU          CA          CB          CG     111.094    2.85
+CGU          CA          CB         HB2     108.332    1.50
+CGU          CA          CB         HB3     108.332    1.50
+CGU          CG          CB         HB2     108.882    1.50
+CGU          CG          CB         HB3     108.882    1.50
+CGU         HB2          CB         HB3     107.542    1.50
+CGU          CB          CG         CD1     110.294    1.95
+CGU          CB          CG         CD2     110.294    1.95
+CGU          CB          CG          HG     108.234    1.50
+CGU         CD1          CG         CD2     111.575    3.00
+CGU         CD1          CG          HG     108.186    1.50
+CGU         CD2          CG          HG     108.186    1.50
+CGU          CG         CD1        OE11     117.800    1.60
+CGU          CG         CD1        OE12     117.800    1.60
+CGU        OE11         CD1        OE12     124.400    1.50
+CGU          CG         CD2        OE21     117.800    1.60
+CGU          CG         CD2        OE22     117.800    1.60
+CGU        OE21         CD2        OE22     124.400    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CGU             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+CGU             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+CGU            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+CGU            sp3_sp3_19          CA          CB          CG         CD1     180.000   10.00     3
+CGU             sp2_sp3_8        OE11         CD1          CG          CB     120.000   10.00     6
+CGU            sp2_sp3_14        OE21         CD2          CG          CB     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+CGU    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CGU    plan-1           C   0.020
+CGU    plan-1          CA   0.020
+CGU    plan-1           O   0.020
+CGU    plan-1         OXT   0.020
+CGU    plan-2         CD1   0.020
+CGU    plan-2          CG   0.020
+CGU    plan-2        OE11   0.020
+CGU    plan-2        OE12   0.020
+CGU    plan-3         CD2   0.020
+CGU    plan-3          CG   0.020
+CGU    plan-3        OE21   0.020
+CGU    plan-3        OE22   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CGU SMILES           ACDLabs              10.04 "O=C(O)C(C(=O)O)CC(N)C(=O)O"
+CGU SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CC(C(O)=O)C(O)=O)C(O)=O"
+CGU SMILES           CACTVS               3.341 "N[CH](CC(C(O)=O)C(O)=O)C(O)=O"
+CGU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)C(=O)O)[C@@H](C(=O)O)N"
+CGU SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)C(=O)O)C(C(=O)O)N"
+CGU InChI            InChI                1.03  "InChI=1S/C6H9NO6/c7-3(6(12)13)1-2(4(8)9)5(10)11/h2-3H,1,7H2,(H,8,9)(H,10,11)(H,12,13)/t3-/m0/s1"
+CGU InChIKey         InChI                1.03  UHBYWPGGCSDKFX-VKHMYHEASA-N
+CGU ?                acedrg               202         "dictionary generator"                  
+CGU ?                acedrg_database      11          "data source"                           
+CGU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CGU ?                refmac5              5.8.0222    "optimization tool"                     

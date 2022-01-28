@@ -1,0 +1,252 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UM1      UM1 '(2R)-2-[[(2R)-2-(2-aminoethanoylamin' non-polymer        29  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_UM1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ UM1           ODB    O    OC       -0.500      0.000    0.000    0.000
+ UM1           CDB    C    C         0.000     -1.171    0.418    0.139
+ UM1           ODC    O    OC       -0.500     -1.381    1.637    0.329
+ UM1           CCZ    C    CH1       0.000     -2.327   -0.545    0.078
+ UM1           HCZ    H    H         0.000     -2.338   -1.043   -0.902
+ UM1           CDA    C    CH3       0.000     -2.176   -1.594    1.181
+ UM1           HDAB   H    H         0.000     -1.269   -2.124    1.044
+ UM1           HDAA   H    H         0.000     -2.165   -1.116    2.126
+ UM1           HDA    H    H         0.000     -2.989   -2.272    1.139
+ UM1           NCY    N    NH1       0.000     -3.583    0.186    0.267
+ UM1           HNCY   H    H         0.000     -3.586    1.063    0.769
+ UM1           CCW    C    C         0.000     -4.734   -0.312   -0.227
+ UM1           OCX    O    O         0.000     -4.731   -1.365   -0.828
+ UM1           CCU    C    CH1       0.000     -6.025    0.440   -0.032
+ UM1           HCU    H    H         0.000     -6.224    0.553    1.043
+ UM1           CCV    C    CH3       0.000     -5.912    1.823   -0.678
+ UM1           HCVB   H    H         0.000     -6.820    2.352   -0.542
+ UM1           HCVA   H    H         0.000     -5.120    2.362   -0.227
+ UM1           HCV    H    H         0.000     -5.720    1.715   -1.715
+ UM1           NCT    N    NH1       0.000     -7.122   -0.303   -0.657
+ UM1           HNCT   H    H         0.000     -6.932   -0.940   -1.417
+ UM1           CCR    C    C         0.000     -8.385   -0.137   -0.216
+ UM1           OCS    O    O         0.000     -8.613    0.628    0.697
+ UM1           CCG    C    CH2       0.000     -9.514   -0.902   -0.859
+ UM1           HCG    H    H         0.000     -9.334   -1.974   -0.751
+ UM1           HCGA   H    H         0.000     -9.568   -0.648   -1.919
+ UM1           NCF    N    NH2       0.000    -10.781   -0.547   -0.203
+ UM1           HNCA   H    H         0.000    -11.366   -1.268    0.202
+ UM1           HNCF   H    H         0.000    -11.077    0.420   -0.153
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ UM1      ODB    n/a    CDB    START
+ UM1      CDB    ODB    CCZ    .
+ UM1      ODC    CDB    .      .
+ UM1      CCZ    CDB    NCY    .
+ UM1      HCZ    CCZ    .      .
+ UM1      CDA    CCZ    HDA    .
+ UM1      HDAB   CDA    .      .
+ UM1      HDAA   CDA    .      .
+ UM1      HDA    CDA    .      .
+ UM1      NCY    CCZ    CCW    .
+ UM1      HNCY   NCY    .      .
+ UM1      CCW    NCY    CCU    .
+ UM1      OCX    CCW    .      .
+ UM1      CCU    CCW    NCT    .
+ UM1      HCU    CCU    .      .
+ UM1      CCV    CCU    HCV    .
+ UM1      HCVB   CCV    .      .
+ UM1      HCVA   CCV    .      .
+ UM1      HCV    CCV    .      .
+ UM1      NCT    CCU    CCR    .
+ UM1      HNCT   NCT    .      .
+ UM1      CCR    NCT    CCG    .
+ UM1      OCS    CCR    .      .
+ UM1      CCG    CCR    NCF    .
+ UM1      HCG    CCG    .      .
+ UM1      HCGA   CCG    .      .
+ UM1      NCF    CCG    HNCF   .
+ UM1      HNCA   NCF    .      .
+ UM1      HNCF   NCF    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UM1       NCF       CCG       single    1.450     0.020     1.450     0.020     
+UM1       CCG       CCR       single    1.510     0.020     1.510     0.020     
+UM1       OCS       CCR       double    1.220     0.020     1.220     0.020     
+UM1       CCR       NCT       single    1.330     0.020     1.330     0.020     
+UM1       NCT       CCU       single    1.450     0.020     1.450     0.020     
+UM1       CCV       CCU       single    1.524     0.020     1.524     0.020     
+UM1       CCU       CCW       single    1.500     0.020     1.500     0.020     
+UM1       OCX       CCW       double    1.220     0.020     1.220     0.020     
+UM1       CCW       NCY       single    1.330     0.020     1.330     0.020     
+UM1       NCY       CCZ       single    1.450     0.020     1.450     0.020     
+UM1       CDA       CCZ       single    1.524     0.020     1.524     0.020     
+UM1       CCZ       CDB       single    1.500     0.020     1.500     0.020     
+UM1       ODC       CDB       deloc     1.250     0.020     1.250     0.020     
+UM1       CDB       ODB       deloc     1.250     0.020     1.250     0.020     
+UM1       HNCF      NCF       single    1.036     0.016     0.914     0.007     
+UM1       HNCA      NCF       single    1.036     0.016     0.914     0.007     
+UM1       HCG       CCG       single    1.089     0.010     0.989     0.005     
+UM1       HCGA      CCG       single    1.089     0.010     0.989     0.005     
+UM1       HNCT      NCT       single    1.016     0.010     0.899     0.007     
+UM1       HCU       CCU       single    1.089     0.010     0.989     0.005     
+UM1       HCV       CCV       single    1.089     0.010     0.989     0.005     
+UM1       HCVA      CCV       single    1.089     0.010     0.989     0.005     
+UM1       HCVB      CCV       single    1.089     0.010     0.989     0.005     
+UM1       HNCY      NCY       single    1.016     0.010     0.899     0.007     
+UM1       HCZ       CCZ       single    1.089     0.010     0.989     0.005     
+UM1       HDA       CDA       single    1.089     0.010     0.989     0.005     
+UM1       HDAA      CDA       single    1.089     0.010     0.989     0.005     
+UM1       HDAB      CDA       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ UM1      ODB    CDB    ODC     123.000    3.000
+ UM1      ODB    CDB    CCZ     118.500    3.000
+ UM1      ODC    CDB    CCZ     118.500    3.000
+ UM1      CDB    CCZ    HCZ     108.810    3.000
+ UM1      CDB    CCZ    CDA     109.470    3.000
+ UM1      CDB    CCZ    NCY     111.600    3.000
+ UM1      HCZ    CCZ    CDA     108.340    3.000
+ UM1      HCZ    CCZ    NCY     108.550    3.000
+ UM1      CDA    CCZ    NCY     110.000    3.000
+ UM1      CCZ    CDA    HDAB    109.470    3.000
+ UM1      CCZ    CDA    HDAA    109.470    3.000
+ UM1      CCZ    CDA    HDA     109.470    3.000
+ UM1      HDAB   CDA    HDAA    109.470    3.000
+ UM1      HDAB   CDA    HDA     109.470    3.000
+ UM1      HDAA   CDA    HDA     109.470    3.000
+ UM1      CCZ    NCY    HNCY    118.500    3.000
+ UM1      CCZ    NCY    CCW     121.500    3.000
+ UM1      HNCY   NCY    CCW     120.000    3.000
+ UM1      NCY    CCW    OCX     123.000    3.000
+ UM1      NCY    CCW    CCU     116.500    3.000
+ UM1      OCX    CCW    CCU     120.500    3.000
+ UM1      CCW    CCU    HCU     108.810    3.000
+ UM1      CCW    CCU    CCV     109.470    3.000
+ UM1      CCW    CCU    NCT     111.600    3.000
+ UM1      HCU    CCU    CCV     108.340    3.000
+ UM1      HCU    CCU    NCT     108.550    3.000
+ UM1      CCV    CCU    NCT     110.000    3.000
+ UM1      CCU    CCV    HCVB    109.470    3.000
+ UM1      CCU    CCV    HCVA    109.470    3.000
+ UM1      CCU    CCV    HCV     109.470    3.000
+ UM1      HCVB   CCV    HCVA    109.470    3.000
+ UM1      HCVB   CCV    HCV     109.470    3.000
+ UM1      HCVA   CCV    HCV     109.470    3.000
+ UM1      CCU    NCT    HNCT    118.500    3.000
+ UM1      CCU    NCT    CCR     121.500    3.000
+ UM1      HNCT   NCT    CCR     120.000    3.000
+ UM1      NCT    CCR    OCS     123.000    3.000
+ UM1      NCT    CCR    CCG     116.500    3.000
+ UM1      OCS    CCR    CCG     120.500    3.000
+ UM1      CCR    CCG    HCG     109.470    3.000
+ UM1      CCR    CCG    HCGA    109.470    3.000
+ UM1      CCR    CCG    NCF     111.600    3.000
+ UM1      HCG    CCG    HCGA    107.900    3.000
+ UM1      HCG    CCG    NCF     109.470    3.000
+ UM1      HCGA   CCG    NCF     109.470    3.000
+ UM1      CCG    NCF    HNCA    120.000    3.000
+ UM1      CCG    NCF    HNCF    120.000    3.000
+ UM1      HNCA   NCF    HNCF    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ UM1      var_1    ODB    CDB    CCZ    NCY      179.989   20.000   3
+ UM1      var_2    CDB    CCZ    CDA    HDA      179.981   20.000   3
+ UM1      var_3    CDB    CCZ    NCY    CCW      154.975   20.000   3
+ UM1      CONST_1  CCZ    NCY    CCW    CCU      180.000    0.000   0
+ UM1      var_4    NCY    CCW    CCU    NCT     -179.988   20.000   3
+ UM1      var_5    CCW    CCU    CCV    HCV       59.948   20.000   3
+ UM1      var_6    CCW    CCU    NCT    CCR      155.026   20.000   3
+ UM1      CONST_2  CCU    NCT    CCR    CCG      180.000    0.000   0
+ UM1      var_7    NCT    CCR    CCG    NCF      179.973   20.000   3
+ UM1      var_8    CCR    CCG    NCF    HNCF      56.026   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ UM1      chir_01  CCU    NCT    CCV    CCW       positiv
+ UM1      chir_02  CCZ    NCY    CDA    CDB       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ UM1      plan-1    NCF       0.020
+ UM1      plan-1    CCG       0.020
+ UM1      plan-1    HNCF      0.020
+ UM1      plan-1    HNCA      0.020
+ UM1      plan-2    CCR       0.020
+ UM1      plan-2    CCG       0.020
+ UM1      plan-2    OCS       0.020
+ UM1      plan-2    NCT       0.020
+ UM1      plan-2    HNCT      0.020
+ UM1      plan-3    NCT       0.020
+ UM1      plan-3    CCR       0.020
+ UM1      plan-3    CCU       0.020
+ UM1      plan-3    HNCT      0.020
+ UM1      plan-4    CCW       0.020
+ UM1      plan-4    CCU       0.020
+ UM1      plan-4    OCX       0.020
+ UM1      plan-4    NCY       0.020
+ UM1      plan-4    HNCY      0.020
+ UM1      plan-5    NCY       0.020
+ UM1      plan-5    CCW       0.020
+ UM1      plan-5    CCZ       0.020
+ UM1      plan-5    HNCY      0.020
+ UM1      plan-6    CDB       0.020
+ UM1      plan-6    CCZ       0.020
+ UM1      plan-6    ODC       0.020
+ UM1      plan-6    ODB       0.020
+# ------------------------------------------------------

@@ -1,0 +1,150 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PBC     PBC      "PHENYL BORONIC ACID"     NON-POLYMER     16     9     .     
+#
+data_comp_PBC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PBC     B       B       B       0       7.673       67.291      -3.870      
+PBC     O1      O       OH1     0       6.337       67.066      -3.982      
+PBC     O2      O       OH1     0       8.513       66.726      -4.778      
+PBC     CG1     C       CR16    0       7.957       69.316      -0.573      
+PBC     CD1     C       CR16    0       9.252       69.802      -0.637      
+PBC     CG2     C       CR16    0       10.046      69.490      -1.728      
+PBC     CB2     C       CR16    0       9.542       68.693      -2.753      
+PBC     CA      C       CR6     0       8.238       68.189      -2.715      
+PBC     CB1     C       CR16    0       7.458       68.519      -1.601      
+PBC     HO1     H       H       0       6.153       66.263      -4.071      
+PBC     HO2     H       H       0       8.908       67.287      -5.243      
+PBC     HG1     H       H       0       7.409       69.526      0.171       
+PBC     HD1     H       H       0       9.592       70.342      0.059       
+PBC     HG2     H       H       0       10.933      69.820      -1.778      
+PBC     HB2     H       H       0       10.100      68.491      -3.491      
+PBC     HB1     H       H       0       6.570       68.196      -1.539      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PBC       B         O1        SINGLE    n         1.360     0.011     1.360     0.011     
+PBC       B         O2        SINGLE    n         1.360     0.011     1.360     0.011     
+PBC       B         CA        SINGLE    n         1.567     0.011     1.567     0.011     
+PBC       CG1       CD1       DOUBLE    y         1.379     0.010     1.379     0.010     
+PBC       CG1       CB1       SINGLE    y         1.387     0.010     1.387     0.010     
+PBC       CD1       CG2       SINGLE    y         1.379     0.010     1.379     0.010     
+PBC       CG2       CB2       DOUBLE    y         1.387     0.010     1.387     0.010     
+PBC       CB2       CA        SINGLE    y         1.391     0.010     1.391     0.010     
+PBC       CA        CB1       DOUBLE    y         1.391     0.010     1.391     0.010     
+PBC       O1        HO1       SINGLE    n         0.970     0.012     0.829     0.020     
+PBC       O2        HO2       SINGLE    n         0.970     0.012     0.829     0.020     
+PBC       CG1       HG1       SINGLE    n         1.082     0.013     0.948     0.017     
+PBC       CD1       HD1       SINGLE    n         1.082     0.013     0.944     0.016     
+PBC       CG2       HG2       SINGLE    n         1.082     0.013     0.948     0.017     
+PBC       CB2       HB2       SINGLE    n         1.082     0.013     0.947     0.014     
+PBC       CB1       HB1       SINGLE    n         1.082     0.013     0.947     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PBC          O1           B          O2     119.315    2.69
+PBC          O1           B          CA     120.343    2.68
+PBC          O2           B          CA     120.343    2.68
+PBC           B          O1         HO1     112.760    3.00
+PBC           B          O2         HO2     112.760    3.00
+PBC         CD1         CG1         CB1     120.327    1.50
+PBC         CD1         CG1         HG1     119.898    1.50
+PBC         CB1         CG1         HG1     119.775    1.50
+PBC         CG1         CD1         CG2     119.942    1.50
+PBC         CG1         CD1         HD1     120.029    1.50
+PBC         CG2         CD1         HD1     120.029    1.50
+PBC         CD1         CG2         CB2     120.327    1.50
+PBC         CD1         CG2         HG2     119.898    1.50
+PBC         CB2         CG2         HG2     119.775    1.50
+PBC         CG2         CB2          CA     121.314    1.50
+PBC         CG2         CB2         HB2     119.039    1.50
+PBC          CA         CB2         HB2     119.647    1.50
+PBC           B          CA         CB2     121.612    1.50
+PBC           B          CA         CB1     121.612    1.50
+PBC         CB2          CA         CB1     116.775    1.50
+PBC         CG1         CB1          CA     121.314    1.50
+PBC         CG1         CB1         HB1     119.039    1.50
+PBC          CA         CB1         HB1     119.647    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PBC             sp2_sp2_1          O1           B          CA         CB2     180.000   10.00     2
+PBC       const_sp2_sp2_1         CG2         CD1         CG1         CB1       0.000   10.00     2
+PBC              const_21          CA         CB1         CG1         CD1       0.000   10.00     2
+PBC       const_sp2_sp2_5         CG1         CD1         CG2         CB2       0.000   10.00     2
+PBC       const_sp2_sp2_9          CA         CB2         CG2         CD1       0.000   10.00     2
+PBC              const_15           B          CA         CB2         CG2     180.000   10.00     2
+PBC              const_19           B          CA         CB1         CG1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PBC    plan-1           B   0.020
+PBC    plan-1          CA   0.020
+PBC    plan-1         CB1   0.020
+PBC    plan-1         CB2   0.020
+PBC    plan-1         CD1   0.020
+PBC    plan-1         CG1   0.020
+PBC    plan-1         CG2   0.020
+PBC    plan-1         HB1   0.020
+PBC    plan-1         HB2   0.020
+PBC    plan-1         HD1   0.020
+PBC    plan-1         HG1   0.020
+PBC    plan-1         HG2   0.020
+PBC    plan-2           B   0.020
+PBC    plan-2          CA   0.020
+PBC    plan-2          O1   0.020
+PBC    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PBC SMILES           ACDLabs              10.04 "OB(O)c1ccccc1"
+PBC SMILES_CANONICAL CACTVS               3.341 "OB(O)c1ccccc1"
+PBC SMILES           CACTVS               3.341 "OB(O)c1ccccc1"
+PBC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "B(c1ccccc1)(O)O"
+PBC SMILES           "OpenEye OEToolkits" 1.5.0 "B(c1ccccc1)(O)O"
+PBC InChI            InChI                1.03  "InChI=1S/C6H7BO2/c8-7(9)6-4-2-1-3-5-6/h1-5,8-9H"
+PBC InChIKey         InChI                1.03  HXITXNWTGFUOAU-UHFFFAOYSA-N
+PBC ?                acedrg               202         "dictionary generator"                  
+PBC ?                acedrg_database      11          "data source"                           
+PBC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PBC ?                refmac5              5.8.0189    "optimization tool"                     

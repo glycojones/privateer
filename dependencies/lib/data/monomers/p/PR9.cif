@@ -1,0 +1,190 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PR9      PR9 'D-PROLINAMIDE                       ' non-polymer        18   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PR9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PR9           O      O    O         0.000      0.000    0.000    0.000
+ PR9           C      C    C         0.000     -0.678    0.743    0.677
+ PR9           NXT    N    NH2       0.000     -0.120    1.826    1.253
+ PR9           HXT2   H    H         0.000     -0.683    2.450    1.819
+ PR9           HXT1   H    H         0.000      0.864    2.024    1.122
+ PR9           CA     C    CH1       0.000     -2.142    0.451    0.880
+ PR9           HA     H    H         0.000     -2.423    0.648    1.924
+ PR9           CB     C    CH2       0.000     -2.988    1.325   -0.065
+ PR9           HB1C   H    H         0.000     -2.360    1.947   -0.706
+ PR9           HB2C   H    H         0.000     -3.681    1.961    0.490
+ PR9           CG     C    CH2       0.000     -3.785    0.326   -0.934
+ PR9           HG1C   H    H         0.000     -3.302    0.126   -1.892
+ PR9           HG2C   H    H         0.000     -4.814    0.648   -1.106
+ PR9           CD     C    CH2       0.000     -3.782   -0.962   -0.073
+ PR9           HD1C   H    H         0.000     -3.911   -1.865   -0.673
+ PR9           HD2C   H    H         0.000     -4.538   -0.939    0.715
+ PR9           N      N    NH1       0.000     -2.427   -0.960    0.537
+ PR9           H      H    H         0.000     -1.825   -1.757    0.688
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PR9      O      n/a    C      START
+ PR9      C      O      CA     .
+ PR9      NXT    C      HXT1   .
+ PR9      HXT2   NXT    .      .
+ PR9      HXT1   NXT    .      .
+ PR9      CA     C      CB     .
+ PR9      HA     CA     .      .
+ PR9      CB     CA     CG     .
+ PR9      HB1C   CB     .      .
+ PR9      HB2C   CB     .      .
+ PR9      CG     CB     CD     .
+ PR9      HG1C   CG     .      .
+ PR9      HG2C   CG     .      .
+ PR9      CD     CG     N      .
+ PR9      HD1C   CD     .      .
+ PR9      HD2C   CD     .      .
+ PR9      N      CD     H      .
+ PR9      H      N      .      END
+ PR9      CA     N      .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PR9       CA        N         single    1.450     0.020     1.450     0.020     
+PR9       N         CD        single    1.450     0.020     1.450     0.020     
+PR9       CB        CA        single    1.524     0.020     1.524     0.020     
+PR9       CA        C         single    1.500     0.020     1.500     0.020     
+PR9       CG        CB        single    1.524     0.020     1.524     0.020     
+PR9       CD        CG        single    1.524     0.020     1.524     0.020     
+PR9       C         O         double    1.220     0.020     1.220     0.020     
+PR9       NXT       C         single    1.332     0.020     1.332     0.020     
+PR9       H         N         single    1.036     0.016     0.914     0.007     
+PR9       HA        CA        single    1.089     0.010     0.989     0.005     
+PR9       HD1C      CD        single    1.089     0.010     0.989     0.005     
+PR9       HD2C      CD        single    1.089     0.010     0.989     0.005     
+PR9       HB1C      CB        single    1.089     0.010     0.989     0.005     
+PR9       HB2C      CB        single    1.089     0.010     0.989     0.005     
+PR9       HG1C      CG        single    1.089     0.010     0.989     0.005     
+PR9       HG2C      CG        single    1.089     0.010     0.989     0.005     
+PR9       HXT1      NXT       single    1.016     0.010     0.899     0.007     
+PR9       HXT2      NXT       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PR9      O      C      NXT     123.000    3.000
+ PR9      O      C      CA      120.500    3.000
+ PR9      NXT    C      CA      120.000    3.000
+ PR9      C      NXT    HXT2    120.000    3.000
+ PR9      C      NXT    HXT1    120.000    3.000
+ PR9      HXT2   NXT    HXT1    120.000    3.000
+ PR9      C      CA     HA      108.810    3.000
+ PR9      C      CA     CB      109.470    3.000
+ PR9      C      CA     N       111.600    3.000
+ PR9      HA     CA     CB      108.340    3.000
+ PR9      HA     CA     N       108.550    3.000
+ PR9      CB     CA     N       110.000    3.000
+ PR9      CA     CB     HB1C    109.470    3.000
+ PR9      CA     CB     HB2C    109.470    3.000
+ PR9      CA     CB     CG      111.000    3.000
+ PR9      HB1C   CB     HB2C    107.900    3.000
+ PR9      HB1C   CB     CG      109.470    3.000
+ PR9      HB2C   CB     CG      109.470    3.000
+ PR9      CB     CG     HG1C    109.470    3.000
+ PR9      CB     CG     HG2C    109.470    3.000
+ PR9      CB     CG     CD      111.000    3.000
+ PR9      HG1C   CG     HG2C    107.900    3.000
+ PR9      HG1C   CG     CD      109.470    3.000
+ PR9      HG2C   CG     CD      109.470    3.000
+ PR9      CG     CD     HD1C    109.470    3.000
+ PR9      CG     CD     HD2C    109.470    3.000
+ PR9      CG     CD     N       112.000    3.000
+ PR9      HD1C   CD     HD2C    107.900    3.000
+ PR9      HD1C   CD     N       109.470    3.000
+ PR9      HD2C   CD     N       109.470    3.000
+ PR9      CD     N      H       118.500    3.000
+ PR9      CD     N      CA      120.000    3.000
+ PR9      H      N      CA      118.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PR9      CONST_1  O      C      NXT    HXT1       0.000    0.000   0
+ PR9      var_1    O      C      CA     CB      -100.009   20.000   3
+ PR9      var_2    C      CA     N      CD      -150.000   20.000   3
+ PR9      var_3    C      CA     CB     CG       120.000   20.000   3
+ PR9      var_4    CA     CB     CG     CD        30.000   20.000   3
+ PR9      var_5    CB     CG     CD     N        -30.000   20.000   3
+ PR9      var_6    CG     CD     N      CA        30.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PR9      chir_01  CA     C      N      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PR9      plan-1    C         0.020
+ PR9      plan-1    O         0.020
+ PR9      plan-1    CA        0.020
+ PR9      plan-1    NXT       0.020
+ PR9      plan-1    HXT2      0.020
+ PR9      plan-1    HXT1      0.020
+ PR9      plan-2    NXT       0.020
+ PR9      plan-2    C         0.020
+ PR9      plan-2    HXT1      0.020
+ PR9      plan-2    HXT2      0.020
+ PR9      plan-3    N         0.020
+ PR9      plan-3    CA        0.020
+ PR9      plan-3    CD        0.020
+ PR9      plan-3    H         0.020
+# ------------------------------------------------------

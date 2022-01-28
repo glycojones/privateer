@@ -1,0 +1,278 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NDN      NDN '.                                   ' non-polymer        33  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NDN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NDN           O52    O    O        -1.000      0.000    0.000    0.000
+ NDN           N5     N    N         1.000     -0.996    0.500    0.491
+ NDN           O51    O    O         0.000     -0.921    1.085    1.556
+ NDN           C5     C    CR6       0.000     -2.298    0.396   -0.207
+ NDN           C4     C    CR6       0.000     -2.395   -0.283   -1.445
+ NDN           O4     O    O         0.000     -1.408   -0.787   -1.949
+ NDN           N3     N    NR16      0.000     -3.591   -0.365   -2.062
+ NDN           HN3    H    H         0.000     -3.671   -0.861   -2.973
+ NDN           C2     C    CR6       0.000     -4.682    0.193   -1.505
+ NDN           O2     O    O         0.000     -5.754    0.110   -2.073
+ NDN           C6     C    CR16      0.000     -3.406    0.952    0.327
+ NDN           H6     H    H         0.000     -3.349    1.483    1.270
+ NDN           N1     N    NR6       0.000     -4.603    0.840   -0.329
+ NDN           CR1    C    CH1       0.000     -5.807    1.439    0.253
+ NDN           HR1    H    H         0.000     -5.597    1.813    1.265
+ NDN           CR2    C    CH2       0.000     -6.327    2.583   -0.646
+ NDN           HR2    H    H         0.000     -6.013    2.464   -1.685
+ NDN           HR2A   H    H         0.000     -6.015    3.565   -0.283
+ NDN           CR3    C    CH1       0.000     -7.865    2.462   -0.553
+ NDN           HR3    H    H         0.000     -8.297    2.262   -1.544
+ NDN           OR3    O    OH1       0.000     -8.428    3.651    0.007
+ NDN           HOR3   H    H         0.000     -8.276    4.392   -0.595
+ NDN           OR1    O    O2        0.000     -6.883    0.476    0.286
+ NDN           CR4    C    CH1       0.000     -8.092    1.260    0.390
+ NDN           HR4    H    H         0.000     -8.235    1.606    1.424
+ NDN           CR5    C    CH2       0.000     -9.300    0.442   -0.071
+ NDN           HR5A   H    H         0.000     -9.088   -0.001   -1.047
+ NDN           HR5    H    H         0.000    -10.172    1.094   -0.150
+ NDN           OR5    O    O2        0.000     -9.562   -0.594    0.876
+ NDN           P      P    P         0.000    -10.766   -1.651    0.709
+ NDN           OP3    O    OP       -0.666    -10.517   -2.511   -0.510
+ NDN           OP1    O    OP       -0.666    -12.072   -0.905    0.543
+ NDN           OP2    O    OP       -0.666    -10.841   -2.530    1.939
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NDN      O52    n/a    N5     START
+ NDN      N5     O52    C5     .
+ NDN      O51    N5     .      .
+ NDN      C5     N5     C6     .
+ NDN      C4     C5     N3     .
+ NDN      O4     C4     .      .
+ NDN      N3     C4     C2     .
+ NDN      HN3    N3     .      .
+ NDN      C2     N3     O2     .
+ NDN      O2     C2     .      .
+ NDN      C6     C5     N1     .
+ NDN      H6     C6     .      .
+ NDN      N1     C6     CR1    .
+ NDN      CR1    N1     OR1    .
+ NDN      HR1    CR1    .      .
+ NDN      CR2    CR1    CR3    .
+ NDN      HR2    CR2    .      .
+ NDN      HR2A   CR2    .      .
+ NDN      CR3    CR2    OR3    .
+ NDN      HR3    CR3    .      .
+ NDN      OR3    CR3    HOR3   .
+ NDN      HOR3   OR3    .      .
+ NDN      OR1    CR1    CR4    .
+ NDN      CR4    OR1    CR5    .
+ NDN      HR4    CR4    .      .
+ NDN      CR5    CR4    OR5    .
+ NDN      HR5A   CR5    .      .
+ NDN      HR5    CR5    .      .
+ NDN      OR5    CR5    P      .
+ NDN      P      OR5    OP2    .
+ NDN      OP3    P      .      .
+ NDN      OP1    P      .      .
+ NDN      OP2    P      .      END
+ NDN      CR4    CR3    .    ADD
+ NDN      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NDN       OP1       P         deloc     1.510     0.020     1.510     0.020     
+NDN       OP2       P         deloc     1.510     0.020     1.510     0.020     
+NDN       OP3       P         deloc     1.510     0.020     1.510     0.020     
+NDN       P         OR5       single    1.610     0.020     1.610     0.020     
+NDN       OR5       CR5       single    1.426     0.020     1.426     0.020     
+NDN       CR5       CR4       single    1.524     0.020     1.524     0.020     
+NDN       HR5       CR5       single    1.089     0.010     0.989     0.005     
+NDN       HR5A      CR5       single    1.089     0.010     0.989     0.005     
+NDN       CR4       CR3       single    1.524     0.020     1.524     0.020     
+NDN       HR4       CR4       single    1.089     0.010     0.989     0.005     
+NDN       CR3       CR2       single    1.524     0.020     1.524     0.020     
+NDN       OR3       CR3       single    1.432     0.020     1.432     0.020     
+NDN       HR3       CR3       single    1.089     0.010     0.989     0.005     
+NDN       HOR3      OR3       single    0.970     0.012     0.839     0.014     
+NDN       HR2       CR2       single    1.089     0.010     0.989     0.005     
+NDN       HR2A      CR2       single    1.089     0.010     0.989     0.005     
+NDN       CR2       CR1       single    1.524     0.020     1.524     0.020     
+NDN       HR1       CR1       single    1.089     0.010     0.989     0.005     
+NDN       CR4       OR1       single    1.426     0.020     1.426     0.020     
+NDN       OR1       CR1       single    1.426     0.020     1.426     0.020     
+NDN       CR1       N1        single    1.465     0.020     1.465     0.020     
+NDN       N1        C2        single    1.410     0.020     1.410     0.020     
+NDN       O2        C2        double    1.250     0.020     1.250     0.020     
+NDN       C2        N3        single    1.337     0.020     1.337     0.020     
+NDN       HN3       N3        single    1.016     0.010     0.899     0.007     
+NDN       N3        C4        single    1.337     0.020     1.337     0.020     
+NDN       O4        C4        double    1.250     0.020     1.250     0.020     
+NDN       C4        C5        single    1.487     0.020     1.487     0.020     
+NDN       C6        C5        double    1.390     0.020     1.390     0.020     
+NDN       N1        C6        single    1.337     0.020     1.337     0.020     
+NDN       H6        C6        single    1.082     0.013     0.975     0.010     
+NDN       C5        N5        single    1.400     0.020     1.400     0.020     
+NDN       O51       N5        double    1.220     0.020     1.220     0.020     
+NDN       N5        O52       single    1.400     0.020     1.400     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NDN      O52    N5     O51     120.000    3.000
+ NDN      O52    N5     C5      120.000    3.000
+ NDN      O51    N5     C5      120.000    3.000
+ NDN      N5     C5     C4      120.000    3.000
+ NDN      N5     C5     C6      120.000    3.000
+ NDN      C4     C5     C6      120.000    3.000
+ NDN      C5     C4     O4      120.000    3.000
+ NDN      C5     C4     N3      120.000    3.000
+ NDN      O4     C4     N3      120.000    3.000
+ NDN      C4     N3     HN3     120.000    3.000
+ NDN      C4     N3     C2      120.000    3.000
+ NDN      HN3    N3     C2      120.000    3.000
+ NDN      N3     C2     O2      120.000    3.000
+ NDN      N3     C2     N1      120.000    3.000
+ NDN      O2     C2     N1      120.000    3.000
+ NDN      C5     C6     H6      120.000    3.000
+ NDN      C5     C6     N1      120.000    3.000
+ NDN      H6     C6     N1      120.000    3.000
+ NDN      C6     N1     CR1     120.000    3.000
+ NDN      C6     N1     C2      120.000    3.000
+ NDN      CR1    N1     C2      120.000    3.000
+ NDN      N1     CR1    HR1     109.470    3.000
+ NDN      N1     CR1    CR2     109.470    3.000
+ NDN      N1     CR1    OR1     109.470    3.000
+ NDN      HR1    CR1    CR2     108.340    3.000
+ NDN      HR1    CR1    OR1     109.470    3.000
+ NDN      CR2    CR1    OR1     109.470    3.000
+ NDN      CR1    CR2    HR2     109.470    3.000
+ NDN      CR1    CR2    HR2A    109.470    3.000
+ NDN      CR1    CR2    CR3     111.000    3.000
+ NDN      HR2    CR2    HR2A    107.900    3.000
+ NDN      HR2    CR2    CR3     109.470    3.000
+ NDN      HR2A   CR2    CR3     109.470    3.000
+ NDN      CR2    CR3    HR3     108.340    3.000
+ NDN      CR2    CR3    OR3     109.470    3.000
+ NDN      CR2    CR3    CR4     111.000    3.000
+ NDN      HR3    CR3    OR3     109.470    3.000
+ NDN      HR3    CR3    CR4     108.340    3.000
+ NDN      OR3    CR3    CR4     109.470    3.000
+ NDN      CR3    OR3    HOR3    109.470    3.000
+ NDN      CR1    OR1    CR4     111.800    3.000
+ NDN      OR1    CR4    HR4     109.470    3.000
+ NDN      OR1    CR4    CR5     109.470    3.000
+ NDN      OR1    CR4    CR3     109.470    3.000
+ NDN      HR4    CR4    CR5     108.340    3.000
+ NDN      HR4    CR4    CR3     108.340    3.000
+ NDN      CR5    CR4    CR3     111.000    3.000
+ NDN      CR4    CR5    HR5A    109.470    3.000
+ NDN      CR4    CR5    HR5     109.470    3.000
+ NDN      CR4    CR5    OR5     109.470    3.000
+ NDN      HR5A   CR5    HR5     107.900    3.000
+ NDN      HR5A   CR5    OR5     109.470    3.000
+ NDN      HR5    CR5    OR5     109.470    3.000
+ NDN      CR5    OR5    P       120.500    3.000
+ NDN      OR5    P      OP3     108.200    3.000
+ NDN      OR5    P      OP1     108.200    3.000
+ NDN      OR5    P      OP2     108.200    3.000
+ NDN      OP3    P      OP1     119.900    3.000
+ NDN      OP3    P      OP2     119.900    3.000
+ NDN      OP1    P      OP2     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NDN      var_1    O52    N5     C5     C6      -179.738   20.000   1
+ NDN      CONST_1  N5     C5     C4     N3       180.000    0.000   0
+ NDN      CONST_2  C5     C4     N3     C2         0.000    0.000   0
+ NDN      CONST_3  C4     N3     C2     O2       180.000    0.000   0
+ NDN      CONST_4  N5     C5     C6     N1       180.000    0.000   0
+ NDN      CONST_5  C5     C6     N1     CR1      180.000    0.000   0
+ NDN      CONST_6  C6     N1     C2     N3         0.000    0.000   0
+ NDN      var_2    C6     N1     CR1    OR1     -129.853   20.000   1
+ NDN      var_3    N1     CR1    CR2    CR3      150.000   20.000   3
+ NDN      var_4    CR1    CR2    CR3    OR3      120.000   20.000   3
+ NDN      var_5    CR2    CR3    OR3    HOR3      65.299   20.000   1
+ NDN      var_6    N1     CR1    OR1    CR4     -150.000   20.000   1
+ NDN      var_7    CR1    OR1    CR4    CR5      150.000   20.000   1
+ NDN      var_8    OR1    CR4    CR3    CR2      -30.000   20.000   3
+ NDN      var_9    OR1    CR4    CR5    OR5       69.612   20.000   3
+ NDN      var_10   CR4    CR5    OR5    P       -179.973   20.000   1
+ NDN      var_11   CR5    OR5    P      OP2     -175.003   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NDN      chir_01  CR4    CR5    CR3    OR1       positiv
+ NDN      chir_02  CR3    CR4    OR3    CR2       negativ
+ NDN      chir_03  CR1    CR2    OR1    N1        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NDN      plan-1    N1        0.020
+ NDN      plan-1    CR1       0.020
+ NDN      plan-1    C2        0.020
+ NDN      plan-1    C6        0.020
+ NDN      plan-1    N3        0.020
+ NDN      plan-1    C4        0.020
+ NDN      plan-1    C5        0.020
+ NDN      plan-1    O2        0.020
+ NDN      plan-1    HN3       0.020
+ NDN      plan-1    O4        0.020
+ NDN      plan-1    N5        0.020
+ NDN      plan-1    H6        0.020
+ NDN      plan-2    N5        0.020
+ NDN      plan-2    C5        0.020
+ NDN      plan-2    O51       0.020
+ NDN      plan-2    O52       0.020
+# ------------------------------------------------------

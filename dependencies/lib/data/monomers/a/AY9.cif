@@ -1,0 +1,167 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AY9     AY9     "AscopyroneM"     non-polymer     18     10     .     
+#
+data_comp_AY9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AY9     C1      C       CH2     0       7.862       -25.482     17.619      
+AY9     C2      C       CR6     0       7.109       -24.444     18.394      
+AY9     C3      C       CR6     0       7.696       -23.088     18.450      
+AY9     C4      C       CR16    0       8.958       -22.813     17.843      
+AY9     C5      C       CH1     0       9.647       -23.904     17.081      
+AY9     C6      C       CH2     0       11.145      -23.771     17.191      
+AY9     O2      O       O       0       6.044       -24.703     18.957      
+AY9     O3      O       OH1     0       7.031       -22.107     19.093      
+AY9     O5      O       O2      0       9.277       -25.218     17.538      
+AY9     O6      O       OH1     0       11.787      -24.695     16.321      
+AY9     H11C    H       H       0       7.729       -26.351     18.041      
+AY9     H12C    H       H       0       7.499       -25.530     16.716      
+AY9     H4      H       H       0       9.358       -21.958     17.917      
+AY9     H5      H       H       0       9.398       -23.824     16.134      
+AY9     H61C    H       H       0       11.431      -23.943     18.112      
+AY9     H62C    H       H       0       11.420      -22.861     16.953      
+AY9     H3      H       H       0       6.950       -22.305     19.933      
+AY9     H6      H       H       0       12.627      -24.583     16.360      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AY9       C1        C2        SINGLE    n         1.481     0.020     1.481     0.020     
+AY9       C1        O5        SINGLE    n         1.424     0.015     1.424     0.015     
+AY9       C2        C3        SINGLE    n         1.475     0.014     1.475     0.014     
+AY9       C2        O2        DOUBLE    n         1.230     0.020     1.230     0.020     
+AY9       C3        C4        DOUBLE    n         1.424     0.020     1.424     0.020     
+AY9       C3        O3        SINGLE    n         1.347     0.012     1.347     0.012     
+AY9       C4        C5        SINGLE    n         1.493     0.010     1.493     0.010     
+AY9       C5        C6        SINGLE    n         1.508     0.010     1.508     0.010     
+AY9       C5        O5        SINGLE    n         1.432     0.010     1.432     0.010     
+AY9       C6        O6        SINGLE    n         1.422     0.014     1.422     0.014     
+AY9       C1        H11C      SINGLE    n         1.089     0.010     0.975     0.013     
+AY9       C1        H12C      SINGLE    n         1.089     0.010     0.975     0.013     
+AY9       C4        H4        SINGLE    n         1.082     0.013     0.947     0.020     
+AY9       C5        H5        SINGLE    n         1.089     0.010     0.983     0.014     
+AY9       C6        H61C      SINGLE    n         1.089     0.010     0.980     0.016     
+AY9       C6        H62C      SINGLE    n         1.089     0.010     0.980     0.016     
+AY9       O3        H3        SINGLE    n         0.970     0.012     0.867     0.020     
+AY9       O6        H6        SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AY9          C2          C1          O5     112.738    1.50
+AY9          C2          C1        H11C     109.260    1.50
+AY9          C2          C1        H12C     109.260    1.50
+AY9          O5          C1        H11C     109.058    1.50
+AY9          O5          C1        H12C     109.058    1.50
+AY9        H11C          C1        H12C     108.004    1.50
+AY9          C1          C2          C3     119.860    3.00
+AY9          C1          C2          O2     120.372    1.74
+AY9          C3          C2          O2     119.768    1.50
+AY9          C2          C3          C4     123.048    1.50
+AY9          C2          C3          O3     118.372    1.57
+AY9          C4          C3          O3     118.579    3.00
+AY9          C3          C4          C5     121.461    3.00
+AY9          C3          C4          H4     119.971    1.59
+AY9          C5          C4          H4     118.569    2.15
+AY9          C4          C5          C6     110.115    2.66
+AY9          C4          C5          O5     111.639    1.50
+AY9          C4          C5          H5     108.049    1.50
+AY9          C6          C5          O5     107.499    2.66
+AY9          C6          C5          H5     108.024    1.50
+AY9          O5          C5          H5     107.510    2.46
+AY9          C5          C6          O6     110.483    2.43
+AY9          C5          C6        H61C     110.086    1.50
+AY9          C5          C6        H62C     110.086    1.50
+AY9          O6          C6        H61C     109.265    1.50
+AY9          O6          C6        H62C     109.265    1.50
+AY9        H61C          C6        H62C     108.155    1.50
+AY9          C3          O3          H3     109.982    2.34
+AY9          C1          O5          C5     111.559    2.21
+AY9          C6          O6          H6     109.472    2.41
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AY9             sp2_sp3_4          O2          C2          C1          O5     180.000   10.00     6
+AY9             sp3_sp3_4          C2          C1          O5          C5     180.000   10.00     3
+AY9             sp2_sp2_4          O2          C2          C3          O3       0.000   10.00     2
+AY9             sp2_sp2_7          O3          C3          C4          C5     180.000   10.00     2
+AY9             sp2_sp3_9          C3          C4          C5          C6    -120.000   10.00     6
+AY9            sp3_sp3_10          C4          C5          C6          O6      60.000   10.00     3
+AY9             sp3_sp3_2          C6          C5          O5          C1     -60.000   10.00     3
+AY9            sp3_sp3_16          C5          C6          O6          H6     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+AY9    chir_1    C5    O5    C6    C4    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AY9    plan-1          C1   0.020
+AY9    plan-1          C2   0.020
+AY9    plan-1          C3   0.020
+AY9    plan-1          O2   0.020
+AY9    plan-2          C2   0.020
+AY9    plan-2          C3   0.020
+AY9    plan-2          C4   0.020
+AY9    plan-2          O3   0.020
+AY9    plan-3          C3   0.020
+AY9    plan-3          C4   0.020
+AY9    plan-3          C5   0.020
+AY9    plan-3          H4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AY9 SMILES           ACDLabs              12.01 "O=C1C(O)=CC(OC1)CO"
+AY9 InChI            InChI                1.03  "InChI=1S/C6H8O4/c7-2-4-1-5(8)6(9)3-10-4/h1,4,7-8H,2-3H2/t4-/m0/s1"
+AY9 InChIKey         InChI                1.03  XUKJGZOHRVCEJL-BYPYZUCNSA-N
+AY9 SMILES_CANONICAL CACTVS               3.370 "OC[C@H]1OCC(=O)C(=C1)O"
+AY9 SMILES           CACTVS               3.370 "OC[CH]1OCC(=O)C(=C1)O"
+AY9 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C1C(=O)C(=C[C@H](O1)CO)O"
+AY9 SMILES           "OpenEye OEToolkits" 1.7.6 "C1C(=O)C(=CC(O1)CO)O"
+AY9 ?                acedrg               190         "dictionary generator"                  
+AY9 ?                acedrg_database      11          "data source"                           
+AY9 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AY9 ?                refmac5              5.8.0158    "optimization tool"                     

@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BUA     BUA      "BUTANOIC ACID"     NON-POLYMER     13     6     .     
+#
+data_comp_BUA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BUA     C1      C       CH3     0       19.884      12.357      11.856      
+BUA     C2      C       CH2     0       19.893      13.675      12.604      
+BUA     C3      C       CH2     0       20.758      13.651      13.826      
+BUA     C4      C       C       0       20.189      12.861      14.993      
+BUA     O1      O       O       0       20.808      11.849      15.383      
+BUA     O2      O       OC      -1      19.127      13.259      15.510      
+BUA     H11     H       H       0       19.406      12.463      11.015      
+BUA     H12     H       H       0       19.442      11.679      12.396      
+BUA     H13     H       H       0       20.799      12.079      11.675      
+BUA     H21     H       H       0       18.976      13.898      12.867      
+BUA     H22     H       H       0       20.213      14.380      12.003      
+BUA     H31     H       H       0       20.907      14.575      14.120      
+BUA     H32     H       H       0       21.630      13.272      13.584      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BUA       C1        C2        SINGLE    n         1.515     0.020     1.515     0.020     
+BUA       C2        C3        SINGLE    n         1.497     0.020     1.497     0.020     
+BUA       C3        C4        SINGLE    n         1.519     0.012     1.519     0.012     
+BUA       C4        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+BUA       C4        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+BUA       C1        H11       SINGLE    n         1.089     0.010     0.973     0.016     
+BUA       C1        H12       SINGLE    n         1.089     0.010     0.973     0.016     
+BUA       C1        H13       SINGLE    n         1.089     0.010     0.973     0.016     
+BUA       C2        H21       SINGLE    n         1.089     0.010     0.980     0.016     
+BUA       C2        H22       SINGLE    n         1.089     0.010     0.980     0.016     
+BUA       C3        H31       SINGLE    n         1.089     0.010     0.981     0.019     
+BUA       C3        H32       SINGLE    n         1.089     0.010     0.981     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BUA          C2          C1         H11     109.554    1.50
+BUA          C2          C1         H12     109.554    1.50
+BUA          C2          C1         H13     109.554    1.50
+BUA         H11          C1         H12     109.380    1.50
+BUA         H11          C1         H13     109.380    1.50
+BUA         H12          C1         H13     109.380    1.50
+BUA          C1          C2          C3     112.922    2.23
+BUA          C1          C2         H21     108.918    1.50
+BUA          C1          C2         H22     108.918    1.50
+BUA          C3          C2         H21     108.858    1.50
+BUA          C3          C2         H22     108.858    1.50
+BUA         H21          C2         H22     107.763    1.50
+BUA          C2          C3          C4     114.629    2.24
+BUA          C2          C3         H31     108.478    1.50
+BUA          C2          C3         H32     108.478    1.50
+BUA          C4          C3         H31     108.404    1.50
+BUA          C4          C3         H32     108.404    1.50
+BUA         H31          C3         H32     107.521    1.50
+BUA          C3          C4          O1     118.214    1.64
+BUA          C3          C4          O2     118.214    1.64
+BUA          O1          C4          O2     123.571    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BUA             sp3_sp3_1         H11          C1          C2          C3     180.000   10.00     3
+BUA            sp3_sp3_10          C1          C2          C3          C4     180.000   10.00     3
+BUA             sp2_sp3_2          O1          C4          C3          C2     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BUA    plan-1          C3   0.020
+BUA    plan-1          C4   0.020
+BUA    plan-1          O1   0.020
+BUA    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BUA SMILES           ACDLabs              10.04 "O=C(O)CCC"
+BUA SMILES_CANONICAL CACTVS               3.341 "CCCC(O)=O"
+BUA SMILES           CACTVS               3.341 "CCCC(O)=O"
+BUA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCCC(=O)O"
+BUA SMILES           "OpenEye OEToolkits" 1.5.0 "CCCC(=O)O"
+BUA InChI            InChI                1.03  "InChI=1S/C4H8O2/c1-2-3-4(5)6/h2-3H2,1H3,(H,5,6)"
+BUA InChIKey         InChI                1.03  FERIUCNNQQJTOY-UHFFFAOYSA-N
+BUA ?                acedrg               202         "dictionary generator"                  
+BUA ?                acedrg_database      11          "data source"                           
+BUA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BUA ?                refmac5              5.8.0189    "optimization tool"                     

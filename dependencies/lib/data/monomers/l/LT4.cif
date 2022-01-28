@@ -1,0 +1,215 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LT4      LT4 '4-[(1R)-2-amino-1-hydroxyethyl]benze' non-polymer        23  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LT4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LT4           OAD    O    OH1       0.000      0.000    0.000    0.000
+ LT4           HOAD   H    H         0.000     -0.077    0.823    0.502
+ LT4           CAL    C    CH1       0.000     -1.001   -0.921    0.439
+ LT4           HAL    H    H         0.000     -0.913   -1.856   -0.130
+ LT4           CAH    C    CH2       0.000     -0.810   -1.211    1.929
+ LT4           HAH    H    H         0.000     -1.576   -1.913    2.264
+ LT4           HAHA   H    H         0.000     -0.899   -0.281    2.495
+ LT4           NAA    N    NH2       0.000      0.521   -1.794    2.147
+ LT4           HNAB   H    H         0.000      0.617   -2.691    2.608
+ LT4           HNAA   H    H         0.000      1.352   -1.303    1.838
+ LT4           CAK    C    CR6       0.000     -2.366   -0.323    0.215
+ LT4           CAG    C    CR16      0.000     -3.425   -1.137   -0.145
+ LT4           HAG    H    H         0.000     -3.272   -2.202   -0.265
+ LT4           CAF    C    CR16      0.000     -2.557    1.037    0.369
+ LT4           HAF    H    H         0.000     -1.726    1.671    0.655
+ LT4           CAE    C    CR16      0.000     -3.806    1.591    0.159
+ LT4           HAE    H    H         0.000     -3.952    2.658    0.277
+ LT4           CAI    C    CR6       0.000     -4.872    0.782   -0.201
+ LT4           OAB    O    OH1       0.000     -6.101    1.326   -0.408
+ LT4           HOAB   H    H         0.000     -6.595    1.329    0.424
+ LT4           CAJ    C    CR6       0.000     -4.681   -0.588   -0.351
+ LT4           OAC    O    OH1       0.000     -5.723   -1.387   -0.705
+ LT4           HOAC   H    H         0.000     -5.766   -1.452   -1.668
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LT4      OAD    n/a    CAL    START
+ LT4      HOAD   OAD    .      .
+ LT4      CAL    OAD    CAK    .
+ LT4      HAL    CAL    .      .
+ LT4      CAH    CAL    NAA    .
+ LT4      HAH    CAH    .      .
+ LT4      HAHA   CAH    .      .
+ LT4      NAA    CAH    HNAA   .
+ LT4      HNAB   NAA    .      .
+ LT4      HNAA   NAA    .      .
+ LT4      CAK    CAL    CAF    .
+ LT4      CAG    CAK    HAG    .
+ LT4      HAG    CAG    .      .
+ LT4      CAF    CAK    CAE    .
+ LT4      HAF    CAF    .      .
+ LT4      CAE    CAF    CAI    .
+ LT4      HAE    CAE    .      .
+ LT4      CAI    CAE    CAJ    .
+ LT4      OAB    CAI    HOAB   .
+ LT4      HOAB   OAB    .      .
+ LT4      CAJ    CAI    OAC    .
+ LT4      OAC    CAJ    HOAC   .
+ LT4      HOAC   OAC    .      END
+ LT4      CAJ    CAG    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LT4       OAC       CAJ       single    1.362     0.020     1.362     0.020     
+LT4       HOAC      OAC       single    0.970     0.012     0.839     0.014     
+LT4       CAJ       CAG       double    1.390     0.020     1.390     0.020     
+LT4       CAJ       CAI       single    1.487     0.020     1.487     0.020     
+LT4       CAG       CAK       single    1.390     0.020     1.390     0.020     
+LT4       HAG       CAG       single    1.082     0.013     0.975     0.010     
+LT4       CAI       CAE       double    1.390     0.020     1.390     0.020     
+LT4       OAB       CAI       single    1.362     0.020     1.362     0.020     
+LT4       HOAB      OAB       single    0.970     0.012     0.839     0.014     
+LT4       CAE       CAF       single    1.390     0.020     1.390     0.020     
+LT4       HAE       CAE       single    1.082     0.013     0.975     0.010     
+LT4       CAF       CAK       double    1.390     0.020     1.390     0.020     
+LT4       HAF       CAF       single    1.082     0.013     0.975     0.010     
+LT4       CAK       CAL       single    1.480     0.020     1.480     0.020     
+LT4       CAH       CAL       single    1.524     0.020     1.524     0.020     
+LT4       CAL       OAD       single    1.432     0.020     1.432     0.020     
+LT4       HAL       CAL       single    1.089     0.010     0.989     0.005     
+LT4       HOAD      OAD       single    0.970     0.012     0.839     0.014     
+LT4       NAA       CAH       single    1.450     0.020     1.450     0.020     
+LT4       HAH       CAH       single    1.089     0.010     0.989     0.005     
+LT4       HAHA      CAH       single    1.089     0.010     0.989     0.005     
+LT4       HNAA      NAA       single    1.036     0.016     0.914     0.007     
+LT4       HNAB      NAA       single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LT4      HOAD   OAD    CAL     109.470    3.000
+ LT4      OAD    CAL    HAL     109.470    3.000
+ LT4      OAD    CAL    CAH     109.470    3.000
+ LT4      OAD    CAL    CAK     109.470    3.000
+ LT4      HAL    CAL    CAH     108.340    3.000
+ LT4      HAL    CAL    CAK     109.470    3.000
+ LT4      CAH    CAL    CAK     109.470    3.000
+ LT4      CAL    CAH    HAH     109.470    3.000
+ LT4      CAL    CAH    HAHA    109.470    3.000
+ LT4      CAL    CAH    NAA     109.470    3.000
+ LT4      HAH    CAH    HAHA    107.900    3.000
+ LT4      HAH    CAH    NAA     109.470    3.000
+ LT4      HAHA   CAH    NAA     109.470    3.000
+ LT4      CAH    NAA    HNAB    120.000    3.000
+ LT4      CAH    NAA    HNAA    120.000    3.000
+ LT4      HNAB   NAA    HNAA    120.000    3.000
+ LT4      CAL    CAK    CAG     120.000    3.000
+ LT4      CAL    CAK    CAF     120.000    3.000
+ LT4      CAG    CAK    CAF     120.000    3.000
+ LT4      CAK    CAG    HAG     120.000    3.000
+ LT4      CAK    CAG    CAJ     120.000    3.000
+ LT4      HAG    CAG    CAJ     120.000    3.000
+ LT4      CAK    CAF    HAF     120.000    3.000
+ LT4      CAK    CAF    CAE     120.000    3.000
+ LT4      HAF    CAF    CAE     120.000    3.000
+ LT4      CAF    CAE    HAE     120.000    3.000
+ LT4      CAF    CAE    CAI     120.000    3.000
+ LT4      HAE    CAE    CAI     120.000    3.000
+ LT4      CAE    CAI    OAB     120.000    3.000
+ LT4      CAE    CAI    CAJ     120.000    3.000
+ LT4      OAB    CAI    CAJ     120.000    3.000
+ LT4      CAI    OAB    HOAB    109.470    3.000
+ LT4      CAI    CAJ    OAC     120.000    3.000
+ LT4      CAI    CAJ    CAG     120.000    3.000
+ LT4      OAC    CAJ    CAG     120.000    3.000
+ LT4      CAJ    OAC    HOAC    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LT4      var_1    HOAD   OAD    CAL    CAK       60.044   20.000   1
+ LT4      var_2    OAD    CAL    CAH    NAA      -60.003   20.000   3
+ LT4      var_3    CAL    CAH    NAA    HNAA      56.041   20.000   1
+ LT4      var_4    OAD    CAL    CAK    CAF      -34.998   20.000   1
+ LT4      CONST_1  CAL    CAK    CAG    CAJ      180.000    0.000   0
+ LT4      CONST_2  CAL    CAK    CAF    CAE      180.000    0.000   0
+ LT4      CONST_3  CAK    CAF    CAE    CAI        0.000    0.000   0
+ LT4      CONST_4  CAF    CAE    CAI    CAJ        0.000    0.000   0
+ LT4      var_5    CAE    CAI    OAB    HOAB     -89.995   20.000   1
+ LT4      CONST_5  CAE    CAI    CAJ    OAC      180.000    0.000   0
+ LT4      CONST_6  CAI    CAJ    CAG    CAK        0.000    0.000   0
+ LT4      var_6    CAI    CAJ    OAC    HOAC      90.048   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LT4      chir_01  CAL    CAK    OAD    CAH       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LT4      plan-1    CAJ       0.020
+ LT4      plan-1    OAC       0.020
+ LT4      plan-1    CAG       0.020
+ LT4      plan-1    CAI       0.020
+ LT4      plan-1    CAE       0.020
+ LT4      plan-1    CAF       0.020
+ LT4      plan-1    CAK       0.020
+ LT4      plan-1    HAG       0.020
+ LT4      plan-1    OAB       0.020
+ LT4      plan-1    HAE       0.020
+ LT4      plan-1    HAF       0.020
+ LT4      plan-1    CAL       0.020
+ LT4      plan-2    NAA       0.020
+ LT4      plan-2    CAH       0.020
+ LT4      plan-2    HNAA      0.020
+ LT4      plan-2    HNAB      0.020
+# ------------------------------------------------------

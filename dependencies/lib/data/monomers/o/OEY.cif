@@ -1,0 +1,199 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OEY      OEY 'CA-MN4-O6 CLUSTER                   ' non-polymer        11  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_OEY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ OEY           O4     O    O2        0.000     -0.003    0.003    0.005
+ OEY           MN4    MN   MN        0.000     -1.622   -1.211   -0.240
+ OEY           O5     O    O         0.000     -0.368   -2.050   -1.990
+ OEY           O6     O    O         0.000     -0.448   -3.031   -2.933
+ OEY           CA1    CA   CA        0.000      1.456   -3.468   -0.802
+ OEY           MN1    MN   MN        0.000      1.175   -2.343   -4.191
+ OEY           MN3    MN   MN        0.000      0.500   -0.232   -1.842
+ OEY           O2     O    O         0.000      2.056   -0.909   -1.108
+ OEY           O3     O    O         0.000      1.426   -0.470   -3.705
+ OEY           MN2    MN   MN        0.000      3.000   -1.070   -2.764
+ OEY           O1     O    O         0.000      2.548   -2.864   -3.060
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ OEY      O4     n/a    MN4    START
+ OEY      MN4    O4     O5     .
+ OEY      O5     MN4    O6     .
+ OEY      O6     O5     MN3    .
+ OEY      CA1    O6     .      .
+ OEY      MN1    O6     .      .
+ OEY      MN3    O6     O3     .
+ OEY      O2     MN3    .      .
+ OEY      O3     MN3    MN2    .
+ OEY      MN2    O3     O1     .
+ OEY      O1     MN2    .      END
+ OEY      O1     CA1    .    ADD
+ OEY      O1     MN1    .    ADD
+ OEY      CA1    O2     .    ADD
+ OEY      MN1    O3     .    ADD
+ OEY      O2     MN2    .    ADD
+ OEY      MN3    O4     .    ADD
+ OEY      MN3    O5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OEY       O1        MN1       single    1.844     0.020     1.844     0.020     
+OEY       O1        MN2       single    1.812     0.020     1.812     0.020     
+OEY       MN1       O3        single    1.947     0.020     1.947     0.020     
+OEY       MN1       O6        single    2.165     0.020     2.165     0.020     
+OEY       O2        MN2       single    1.857     0.020     1.857     0.020     
+OEY       O2        MN3       single    1.848     0.020     1.848     0.020     
+OEY       MN2       O3        single    1.923     0.020     1.923     0.020     
+OEY       O3        MN3       single    2.097     0.020     2.097     0.020     
+OEY       MN3       O4        single    1.925     0.020     1.925     0.020     
+OEY       MN3       O5        single    2.016     0.020     2.016     0.020     
+OEY       MN4       O4        single    2.035     0.020     2.035     0.020     
+OEY       O5        MN4       single    2.311     0.020     2.311     0.020     
+OEY       O6        O5        single    1.377     0.020     1.377     0.020     
+OEY       O1        CA1       single    2.581     0.020     2.581     0.020     
+OEY       CA1       O6        single    2.888     0.020     2.888     0.020     
+OEY       MN3       O6        single    3.161     0.020     3.161     0.020     
+OEY       CA1       O2        single    2.640     0.020     2.640     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ OEY      MN4    O4     MN3      91.576    3.000
+ OEY      O4     MN4    O5       90.000    3.000
+ OEY      MN4    O5     O6      138.678    3.000
+ OEY      MN4    O5     MN3      81.697    3.000
+ OEY      O6     O5     MN3     136.551    3.000
+ OEY      O5     O6     CA1      63.694    3.000
+ OEY      O5     O6     MN1      96.684    3.000
+ OEY      O5     O6     MN3      26.012    3.000
+ OEY      CA1    O6     MN1      88.753    3.000
+ OEY      CA1    O6     MN3      70.880    3.000
+ OEY      MN1    O6     MN3      71.581    3.000
+ OEY      O6     CA1    O1       72.000    3.000
+ OEY      O6     CA1    O2       72.000    3.000
+ OEY      O1     CA1    O2      144.000    3.000
+ OEY      O6     MN1    O1       90.000    3.000
+ OEY      O6     MN1    O3       90.000    3.000
+ OEY      O1     MN1    O3       90.000    3.000
+ OEY      O6     MN3    O2       93.434    3.000
+ OEY      O6     MN3    O3       74.101    3.000
+ OEY      O6     MN3    O4      111.170    3.000
+ OEY      O6     MN3    O5       17.436    3.000
+ OEY      O2     MN3    O3       85.283    3.000
+ OEY      O4     MN3    O5       93.811    3.000
+ OEY      O2     MN3    O4       85.084    3.000
+ OEY      O3     MN3    O4      169.285    3.000
+ OEY      O2     MN3    O5       93.779    3.000
+ OEY      O3     MN3    O5       91.493    3.000
+ OEY      MN3    O2     CA1     101.631    3.000
+ OEY      MN3    O2     MN2      97.095    3.000
+ OEY      CA1    O2     MN2      98.641    3.000
+ OEY      MN3    O3     MN2      87.270    3.000
+ OEY      MN3    O3     MN1     105.385    3.000
+ OEY      MN2    O3     MN1      85.650    3.000
+ OEY      O3     MN2    O1       90.000    3.000
+ OEY      O3     MN2    O2       90.000    3.000
+ OEY      O1     MN2    O2       90.000    3.000
+ OEY      MN2    O1     CA1     102.056    3.000
+ OEY      MN2    O1     MN1      92.026    3.000
+ OEY      CA1    O1     MN1     106.466    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ OEY      var_1            O6     O5     MN4    O4                 0.000           20.000   3
+ OEY      var_2            MN4    O5     O6     MN3              151.970           20.000   3
+ OEY      var_3            MN1    O6     CA1    O1                 0.000           20.000   3
+ OEY      var_4            MN2    O2     CA1    O1                 0.000           20.000   3
+ OEY      var_5            CA1    O6     MN1    O1                 0.000           20.000   3
+ OEY      var_6            MN3    O3     MN1    O6                 0.000           20.000   3
+ OEY      var_7            O5     O6     MN3    O3               175.779           20.000   3
+ OEY      var_8            O6     MN3    O4     MN4              -28.358           20.000   3
+ OEY      var_9            O6     MN3    O5     MN4             -161.725           20.000   3
+ OEY      var_10           O6     MN3    O2     CA1              -24.054           20.000   3
+ OEY      var_11           MN3    O2     MN2    O3                 0.000           20.000   3
+ OEY      var_12           O6     MN3    O3     MN2              -97.434           20.000   3
+ OEY      var_13           MN3    O3     MN2    O2                 0.000           20.000   3
+ OEY      var_14           CA1    O1     MN2    O2                 0.000           20.000   3
+ OEY      var_15           MN1    O1     CA1    O6                 0.000           20.000   3
+ OEY      var_16           CA1    O1     MN1    O6                 0.000           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ OEY      chir_01          O1     CA1    MN1    MN2       negativ
+                   .      .      .      .      .
+ OEY      chir_02          O2     CA1    MN2    MN3       negativ
+                   .      .      .      .      .
+ OEY      chir_03          O3     MN1    MN2    MN3       positiv
+                   .      .      .      .      .
+ OEY      chir_04          O5     MN3    MN4    O6        negativ
+                   .      .      .      .      .
+ OEY      chir_05          O6     CA1    MN1    MN3       positiv
+                   .      .      .      .      .
+ OEY      chir_06          CA1    .      .      O1        cross5
+                   O6     O2     .      .      .
+ OEY      chir_07          MN1    O6     .      O1        cross4
+                   O3     .      .      .      .
+ OEY      chir_08          MN2    O3     .      O1        cross4
+                   O2     .      .      .      .
+ OEY      chir_09          MN4    O4     .      O5        cross1
+                   .      .      .      .      .
+# ------------------------------------------------------

@@ -1,0 +1,392 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DNS     DNS     "N~6~-{[5-(DIMETHYLAMINO)-1-NAPHTHYL]SULFONYL}-L-LYSINE"     peptide     51     26     .
+#
+data_comp_DNS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DNS     C1      C       CH3     0       67.033      20.195      -38.586
+DNS     N1      N       N       0       67.746      19.445      -39.621
+DNS     C2      C       CH3     0       67.550      19.854      -41.013
+DNS     C3      C       CR6     0       68.621      18.356      -39.283
+DNS     C4      C       CR16    0       69.879      18.588      -38.784
+DNS     C5      C       CR16    0       70.740      17.529      -38.455
+DNS     C6      C       CR16    0       70.351      16.234      -38.625
+DNS     C7      C       CR66    0       69.060      15.911      -39.140
+DNS     C8      C       CR6     0       68.573      14.568      -39.347
+DNS     S       S       S3      0       69.552      13.125      -38.985
+DNS     OA      O       O       0       70.077      13.251      -37.660
+DNS     OB      O       O       0       68.808      11.944      -39.305
+DNS     NZ      N       NT1     0       70.804      13.166      -40.002
+DNS     CE      C       CH2     0       70.549      13.205      -41.452
+DNS     CD      C       CH2     0       71.820      12.940      -42.243
+DNS     CG      C       CH2     0       72.764      14.122      -42.304
+DNS     CB      C       CH2     0       73.893      13.938      -43.310
+DNS     CA      C       CH1     0       74.857      15.123      -43.443
+DNS     C       C       C       0       75.753      15.251      -42.205
+DNS     OXT     O       OC      -1      76.610      14.362      -42.030
+DNS     O       O       O       0       75.562      16.234      -41.461
+DNS     N       N       NT3     1       75.708      14.957      -44.654
+DNS     C9      C       CR16    0       67.316      14.343      -39.853
+DNS     C10     C       CR16    0       66.471      15.420      -40.173
+DNS     C11     C       CR16    0       66.885      16.703      -39.991
+DNS     C12     C       CR66    0       68.179      16.995      -39.475
+DNS     H11A    H       H       0       67.319      19.895      -37.707
+DNS     H12     H       H       0       66.077      20.049      -38.681
+DNS     H13     H       H       0       67.225      21.142      -38.682
+DNS     H21     H       H       0       68.049      19.265      -41.603
+DNS     H22     H       H       0       67.862      20.766      -41.130
+DNS     H23     H       H       0       66.605      19.806      -41.235
+DNS     H4      H       H       0       70.169      19.480      -38.659
+DNS     H5      H       H       0       71.602      17.719      -38.113
+DNS     H6      H       H       0       70.946      15.552      -38.400
+DNS     HZ      H       H       0       71.422      12.617      -39.757
+DNS     HE3     H       H       0       70.192      14.084      -41.697
+DNS     HE2     H       H       0       69.876      12.532      -41.684
+DNS     HD3     H       H       0       71.570      12.689      -43.158
+DNS     HD2     H       H       0       72.290      12.177      -41.843
+DNS     HG3     H       H       0       73.151      14.266      -41.414
+DNS     HG2     H       H       0       72.255      14.926      -42.543
+DNS     HB3     H       H       0       73.498      13.763      -44.189
+DNS     HB2     H       H       0       74.411      13.146      -43.054
+DNS     HA      H       H       0       74.332      15.951      -43.543
+DNS     H       H       H       0       76.348      15.605      -44.682
+DNS     H2      H       H       0       75.195      15.018      -45.404
+DNS     H3      H       H       0       76.113      14.141      -44.640
+DNS     H9      H       H       0       67.011      13.469      -39.984
+DNS     H10     H       H       0       65.616      15.252      -40.513
+DNS     H11     H       H       0       66.300      17.407      -40.213
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DNS      N      n/a    CA     START
+DNS      H      N      .      .
+DNS      H2     N      .      .
+DNS      H3     N      .      .
+DNS      CA     N      C      .
+DNS      HA     CA     .      .
+DNS      CB     CA     CG     .
+DNS      HB3    CB     .      .
+DNS      HB2    CB     .      .
+DNS      CG     CB     CD     .
+DNS      HG3    CG     .      .
+DNS      HG2    CG     .      .
+DNS      CD     CG     CE     .
+DNS      HD3    CD     .      .
+DNS      HD2    CD     .      .
+DNS      CE     CD     NZ     .
+DNS      HE3    CE     .      .
+DNS      HE2    CE     .      .
+DNS      NZ     CE     S      .
+DNS      HZ     NZ     .      .
+DNS      S      NZ     C8     .
+DNS      OA     S      .      .
+DNS      OB     S      .      .
+DNS      C8     S      C9     .
+DNS      C9     C8     C10    .
+DNS      H9     C9     .      .
+DNS      C10    C9     C11    .
+DNS      H10    C10    .      .
+DNS      C11    C10    C12    .
+DNS      H11    C11    .      .
+DNS      C12    C11    C7     .
+DNS      C3     C12    N1     .
+DNS      N1     C3     C1     .
+DNS      C2     N1     H21    .
+DNS      H23    C2     .      .
+DNS      H22    C2     .      .
+DNS      H21    C2     .      .
+DNS      C1     N1     H11A   .
+DNS      H13    C1     .      .
+DNS      H12    C1     .      .
+DNS      H11A   C1     .      .
+DNS      C7     C12    C6     .
+DNS      C6     C7     C5     .
+DNS      H6     C6     .      .
+DNS      C5     C6     C4     .
+DNS      H5     C5     .      .
+DNS      C4     C5     H4     .
+DNS      H4     C4     .      .
+DNS      C      CA     .      END
+DNS      OXT    C      .      .
+DNS      O      C      .      .
+DNS      C3     C4     .    ADD
+DNS      C7     C8     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DNS       C1        N1        SINGLE    n         1.462     0.014     1.462     0.014     
+DNS       N1        C2        SINGLE    n         1.462     0.014     1.462     0.014     
+DNS       N1        C3        SINGLE    n         1.427     0.020     1.427     0.020     
+DNS       C3        C4        DOUBLE    y         1.371     0.010     1.371     0.010     
+DNS       C3        C12       SINGLE    y         1.435     0.010     1.435     0.010     
+DNS       C4        C5        SINGLE    y         1.403     0.010     1.403     0.010     
+DNS       C5        C6        DOUBLE    y         1.361     0.010     1.361     0.010     
+DNS       C6        C7        SINGLE    y         1.420     0.010     1.420     0.010     
+DNS       C7        C8        SINGLE    y         1.434     0.010     1.434     0.010     
+DNS       C7        C12       DOUBLE    y         1.426     0.010     1.426     0.010     
+DNS       C8        S         SINGLE    n         1.774     0.010     1.774     0.010     
+DNS       C8        C9        DOUBLE    y         1.369     0.010     1.369     0.010     
+DNS       S         OA        DOUBLE    n         1.431     0.010     1.431     0.010     
+DNS       S         OB        DOUBLE    n         1.431     0.010     1.431     0.010     
+DNS       S         NZ        SINGLE    n         1.613     0.012     1.613     0.012     
+DNS       NZ        CE        SINGLE    n         1.470     0.010     1.470     0.010     
+DNS       CE        CD        SINGLE    n         1.520     0.010     1.520     0.010     
+DNS       CD        CG        SINGLE    n         1.514     0.020     1.514     0.020     
+DNS       CG        CB        SINGLE    n         1.523     0.012     1.523     0.012     
+DNS       CB        CA        SINGLE    n         1.532     0.010     1.532     0.010     
+DNS       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DNS       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+DNS       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DNS       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DNS       C9        C10       SINGLE    y         1.405     0.010     1.405     0.010     
+DNS       C10       C11       DOUBLE    y         1.360     0.010     1.360     0.010     
+DNS       C11       C12       SINGLE    y         1.416     0.010     1.416     0.010     
+DNS       C1        H11A      SINGLE    n         1.089     0.010     0.971     0.018     
+DNS       C1        H12       SINGLE    n         1.089     0.010     0.971     0.018     
+DNS       C1        H13       SINGLE    n         1.089     0.010     0.971     0.018     
+DNS       C2        H21       SINGLE    n         1.089     0.010     0.971     0.018     
+DNS       C2        H22       SINGLE    n         1.089     0.010     0.971     0.018     
+DNS       C2        H23       SINGLE    n         1.089     0.010     0.971     0.018     
+DNS       C4        H4        SINGLE    n         1.082     0.013     0.946     0.020     
+DNS       C5        H5        SINGLE    n         1.082     0.013     0.947     0.020     
+DNS       C6        H6        SINGLE    n         1.082     0.013     0.935     0.012     
+DNS       NZ        HZ        SINGLE    n         1.036     0.016     0.862     0.020     
+DNS       CE        HE3       SINGLE    n         1.089     0.010     0.980     0.015     
+DNS       CE        HE2       SINGLE    n         1.089     0.010     0.980     0.015     
+DNS       CD        HD3       SINGLE    n         1.089     0.010     0.981     0.016     
+DNS       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.016     
+DNS       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.016     
+DNS       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+DNS       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+DNS       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+DNS       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+DNS       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DNS       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DNS       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DNS       C9        H9        SINGLE    n         1.082     0.013     0.935     0.010     
+DNS       C10       H10       SINGLE    n         1.082     0.013     0.935     0.013     
+DNS       C11       H11       SINGLE    n         1.082     0.013     0.943     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DNS          N1          C1        H11A     109.435    1.50
+DNS          N1          C1         H12     109.435    1.50
+DNS          N1          C1         H13     109.435    1.50
+DNS        H11A          C1         H12     109.352    1.56
+DNS        H11A          C1         H13     109.352    1.56
+DNS         H12          C1         H13     109.352    1.56
+DNS          C1          N1          C2     117.924    1.50
+DNS          C1          N1          C3     121.038    1.50
+DNS          C2          N1          C3     121.038    1.50
+DNS          N1          C2         H21     109.435    1.50
+DNS          N1          C2         H22     109.435    1.50
+DNS          N1          C2         H23     109.435    1.50
+DNS         H21          C2         H22     109.352    1.56
+DNS         H21          C2         H23     109.352    1.56
+DNS         H22          C2         H23     109.352    1.56
+DNS          N1          C3          C4     122.346    1.50
+DNS          N1          C3         C12     118.554    1.50
+DNS          C4          C3         C12     119.100    1.50
+DNS          C3          C4          C5     120.944    1.50
+DNS          C3          C4          H4     119.406    1.50
+DNS          C5          C4          H4     119.650    1.50
+DNS          C4          C5          C6     120.621    1.50
+DNS          C4          C5          H5     119.555    1.50
+DNS          C6          C5          H5     119.824    1.50
+DNS          C5          C6          C7     120.916    1.50
+DNS          C5          C6          H6     119.576    1.50
+DNS          C7          C6          H6     119.508    1.50
+DNS          C6          C7          C8     124.012    1.50
+DNS          C6          C7         C12     118.718    1.50
+DNS          C8          C7         C12     117.270    1.50
+DNS          C7          C8           S     121.777    1.50
+DNS          C7          C8          C9     121.593    1.50
+DNS           S          C8          C9     116.629    1.50
+DNS          C8           S          OA     107.957    1.74
+DNS          C8           S          OB     107.957    1.74
+DNS          C8           S          NZ     106.584    1.50
+DNS          OA           S          OB     118.871    1.50
+DNS          OA           S          NZ     106.989    1.50
+DNS          OB           S          NZ     106.989    1.50
+DNS           S          NZ          CE     119.594    1.75
+DNS           S          NZ          HZ     111.936    3.00
+DNS          CE          NZ          HZ     113.514    3.00
+DNS          NZ          CE          CD     110.147    1.50
+DNS          NZ          CE         HE3     109.574    1.50
+DNS          NZ          CE         HE2     109.574    1.50
+DNS          CD          CE         HE3     109.511    1.50
+DNS          CD          CE         HE2     109.511    1.50
+DNS         HE3          CE         HE2     108.069    1.50
+DNS          CE          CD          CG     113.686    2.75
+DNS          CE          CD         HD3     108.745    1.50
+DNS          CE          CD         HD2     108.745    1.50
+DNS          CG          CD         HD3     109.041    1.50
+DNS          CG          CD         HD2     109.041    1.50
+DNS         HD3          CD         HD2     107.927    1.57
+DNS          CD          CG          CB     113.328    2.00
+DNS          CD          CG         HG3     108.806    1.50
+DNS          CD          CG         HG2     108.806    1.50
+DNS          CB          CG         HG3     108.601    1.50
+DNS          CB          CG         HG2     108.601    1.50
+DNS         HG3          CG         HG2     107.646    1.50
+DNS          CG          CB          CA     115.311    1.56
+DNS          CG          CB         HB3     108.650    1.50
+DNS          CG          CB         HB2     108.650    1.50
+DNS          CA          CB         HB3     108.549    1.50
+DNS          CA          CB         HB2     108.549    1.50
+DNS         HB3          CB         HB2     107.844    1.50
+DNS          CB          CA           C     111.037    2.40
+DNS          CB          CA           N     110.374    1.62
+DNS          CB          CA          HA     108.967    1.50
+DNS           C          CA           N     109.241    1.50
+DNS           C          CA          HA     108.824    1.50
+DNS           N          CA          HA     108.487    1.50
+DNS          CA           C         OXT     117.124    1.50
+DNS          CA           C           O     117.124    1.50
+DNS         OXT           C           O     125.752    1.50
+DNS          CA           N           H     110.062    1.93
+DNS          CA           N          H2     110.062    1.93
+DNS          CA           N          H3     110.062    1.93
+DNS           H           N          H2     109.028    2.41
+DNS           H           N          H3     109.028    2.41
+DNS          H2           N          H3     109.028    2.41
+DNS          C8          C9         C10     120.493    1.50
+DNS          C8          C9          H9     119.746    1.50
+DNS         C10          C9          H9     119.762    1.50
+DNS          C9         C10         C11     120.466    1.50
+DNS          C9         C10         H10     119.722    1.50
+DNS         C11         C10         H10     119.812    1.50
+DNS         C10         C11         C12     120.931    1.50
+DNS         C10         C11         H11     119.562    1.50
+DNS         C12         C11         H11     119.508    1.50
+DNS          C3         C12          C7     119.701    1.50
+DNS          C3         C12         C11     121.052    1.55
+DNS          C7         C12         C11     119.247    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DNS             sp2_sp3_1          C2          N1          C1        H11A       0.000   10.00     6
+DNS             sp3_sp3_7          CD          CE          NZ           S     180.000   10.00     3
+DNS            sp3_sp3_13          CG          CD          CE          NZ     180.000   10.00     3
+DNS            sp3_sp3_22          CE          CD          CG          CB     180.000   10.00     3
+DNS            sp3_sp3_31          CA          CB          CG          CD     180.000   10.00     3
+DNS            sp3_sp3_40           C          CA          CB          CG     180.000   10.00     3
+DNS            sp2_sp3_20         OXT           C          CA          CB     120.000   10.00     6
+DNS            sp3_sp3_49          CB          CA           N           H     180.000   10.00     3
+DNS             sp2_sp3_7          C1          N1          C2         H21       0.000   10.00     6
+DNS             sp2_sp2_1          C4          C3          N1          C1     180.000   10.00     2
+DNS       const_sp2_sp2_9         C11         C10          C9          C8       0.000   10.00     2
+DNS              const_13          C9         C10         C11         C12       0.000   10.00     2
+DNS              const_18         C10         C11         C12          C3     180.000   10.00     2
+DNS              const_42          C7         C12          C3          N1     180.000   10.00     2
+DNS              const_23          N1          C3          C4          C5     180.000   10.00     2
+DNS              const_25          C3          C4          C5          C6       0.000   10.00     2
+DNS              const_29          C4          C5          C6          C7       0.000   10.00     2
+DNS              const_34          C5          C6          C7          C8     180.000   10.00     2
+DNS              const_37          C3         C12          C7          C6       0.000   10.00     2
+DNS       const_sp2_sp2_4          C6          C7          C8           S       0.000   10.00     2
+DNS       const_sp2_sp2_7           S          C8          C9         C10     180.000   10.00     2
+DNS            sp2_sp3_13          C7          C8           S          OA     150.000   10.00     6
+DNS             sp3_sp3_5          CE          NZ           S          OA     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DNS    chir_1    NZ    S    CE    HZ    both
+DNS    chir_2    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DNS    plan-1         C10   0.020
+DNS    plan-1         C11   0.020
+DNS    plan-1         C12   0.020
+DNS    plan-1          C3   0.020
+DNS    plan-1          C6   0.020
+DNS    plan-1          C7   0.020
+DNS    plan-1          C8   0.020
+DNS    plan-1          C9   0.020
+DNS    plan-1         H10   0.020
+DNS    plan-1         H11   0.020
+DNS    plan-1          H9   0.020
+DNS    plan-1           S   0.020
+DNS    plan-2         C11   0.020
+DNS    plan-2         C12   0.020
+DNS    plan-2          C3   0.020
+DNS    plan-2          C4   0.020
+DNS    plan-2          C5   0.020
+DNS    plan-2          C6   0.020
+DNS    plan-2          C7   0.020
+DNS    plan-2          C8   0.020
+DNS    plan-2          H4   0.020
+DNS    plan-2          H5   0.020
+DNS    plan-2          H6   0.020
+DNS    plan-2          N1   0.020
+DNS    plan-3          C1   0.020
+DNS    plan-3          C2   0.020
+DNS    plan-3          C3   0.020
+DNS    plan-3          N1   0.020
+DNS    plan-4           C   0.020
+DNS    plan-4          CA   0.020
+DNS    plan-4           O   0.020
+DNS    plan-4         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DNS SMILES           ACDLabs              10.04 "O=C(O)C(N)CCCCNS(=O)(=O)c1cccc2c1cccc2N(C)C"
+DNS SMILES_CANONICAL CACTVS               3.341 "CN(C)c1cccc2c1cccc2[S](=O)(=O)NCCCC[C@H](N)C(O)=O"
+DNS SMILES           CACTVS               3.341 "CN(C)c1cccc2c1cccc2[S](=O)(=O)NCCCC[CH](N)C(O)=O"
+DNS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CN(C)c1cccc2c1cccc2S(=O)(=O)NCCCC[C@@H](C(=O)O)N"
+DNS SMILES           "OpenEye OEToolkits" 1.5.0 "CN(C)c1cccc2c1cccc2S(=O)(=O)NCCCCC(C(=O)O)N"
+DNS InChI            InChI                1.03  "InChI=1S/C18H25N3O4S/c1-21(2)16-10-5-8-14-13(16)7-6-11-17(14)26(24,25)20-12-4-3-9-15(19)18(22)23/h5-8,10-11,15,20H,3-4,9,12,19H2,1-2H3,(H,22,23)/t15-/m0/s1"
+DNS InChIKey         InChI                1.03  VQPRNSWQIAHPMS-HNNXBMFYSA-N
+DNS ?                acedrg               196         "dictionary generator"
+DNS ?                acedrg_database      11          "data source"
+DNS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DNS ?                refmac5              5.8.0222    "optimization tool"

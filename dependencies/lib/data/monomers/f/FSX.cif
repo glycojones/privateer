@@ -1,0 +1,179 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FSX      FSX '"BIS-(MU-2-OXO),[(MU-3--SULFIDO)-BIS' non-polymer        12  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FSX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FSX           O1     O    OH1       0.000     40.899   45.505    9.649
+ FSX           HO1    H    H         0.000     40.240   45.617   10.374
+ FSX           FE2    FE   FE        0.000     40.310   45.104    7.647
+ FSX           O12    O    O2        0.000     38.454   45.026    7.606
+ FSX           FE1    FE   FE        0.000     37.597   44.042    8.894
+ FSX           S3     S    ST        0.000     38.014   41.788    8.844
+ FSX           HS3    H    H         0.000     37.274   40.826    8.624
+ FSX           FE4    FE   FE        0.000     40.275   42.102    8.457
+ FSX           O24    O    O2        0.000     40.604   43.365    7.157
+ FSX           S4     S    S2        0.000     41.108   42.616   10.439
+ FSX           FE3    FE   FE        0.000     38.895   42.599   10.778
+ FSX           S2     S    S2        0.000     38.148   44.671   10.943
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FSX      O1     n/a    FE2    START
+ FSX      HO1    O1     .      .
+ FSX      FE2    O1     O12    .
+ FSX      O12    FE2    FE1    .
+ FSX      FE1    O12    S3     .
+ FSX      S3     FE1    FE4    .
+ FSX      HS3    S3     .      .
+ FSX      FE4    S3     S4     .
+ FSX      O24    FE4    .      .
+ FSX      S4     FE4    FE3    .
+ FSX      FE3    S4     S2     .
+ FSX      S2     FE3    .      END
+ FSX      FE1    FE3    .    ADD
+ FSX      FE1    S2     .    ADD
+ FSX      FE2    O24    .    ADD
+ FSX      FE3    FE4    .    ADD
+ FSX      FE3    S3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FSX       FE1       FE3       single    2.470     0.020     2.470     0.020     
+FSX       FE1       S2        single    2.235     0.020     2.235     0.020     
+FSX       S3        FE1       single    2.135     0.020     2.135     0.020     
+FSX       FE1       O12       single    1.870     0.020     1.870     0.020     
+FSX       FE2       O1        single    1.970     0.020     1.970     0.020     
+FSX       FE2       O24       single    1.870     0.020     1.870     0.020     
+FSX       O12       FE2       single    1.870     0.020     1.870     0.020     
+FSX       FE3       FE4       single    2.470     0.020     2.470     0.020     
+FSX       S2        FE3       single    2.235     0.020     2.235     0.020     
+FSX       FE3       S3        single    2.135     0.020     2.135     0.020     
+FSX       FE3       S4        single    2.235     0.020     2.235     0.020     
+FSX       FE4       S3        single    2.135     0.020     2.135     0.020     
+FSX       S4        FE4       single    2.235     0.020     2.235     0.020     
+FSX       O24       FE4       single    1.870     0.020     1.870     0.020     
+FSX       HO1       O1        single    0.970     0.012     0.839     0.014     
+FSX       HS3       S3        single    1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FSX      HO1    O1     FE2     120.000    3.000
+ FSX      O1     FE2    O12      90.000    3.000
+ FSX      O1     FE2    O24     120.000    3.000
+ FSX      O12    FE2    O24      90.000    3.000
+ FSX      FE2    O12    FE1     120.000    3.000
+ FSX      O12    FE1    S3       90.000    3.000
+ FSX      O12    FE1    FE3      90.000    3.000
+ FSX      O12    FE1    S2       90.000    3.000
+ FSX      FE3    FE1    S2       56.456    3.000
+ FSX      S3     FE1    FE3      54.658    3.000
+ FSX      S3     FE1    S2       90.000    3.000
+ FSX      FE1    S3     HS3     109.500    3.000
+ FSX      FE1    S3     FE4     109.500    3.000
+ FSX      FE1    S3     FE3      70.684    3.000
+ FSX      HS3    S3     FE4     109.500    3.000
+ FSX      HS3    S3     FE3     109.500    3.000
+ FSX      FE4    S3     FE3      70.684    3.000
+ FSX      S3     FE4    O24      90.000    3.000
+ FSX      S3     FE4    S4       90.000    3.000
+ FSX      S3     FE4    FE3      54.658    3.000
+ FSX      O24    FE4    S4       90.000    3.000
+ FSX      O24    FE4    FE3      90.000    3.000
+ FSX      S4     FE4    FE3      56.456    3.000
+ FSX      FE4    O24    FE2     120.000    3.000
+ FSX      FE4    S4     FE3      67.087    3.000
+ FSX      S4     FE3    S2       90.000    3.000
+ FSX      S4     FE3    FE1      90.000    3.000
+ FSX      S4     FE3    FE4      56.456    3.000
+ FSX      S4     FE3    S3       90.000    3.000
+ FSX      FE1    FE3    FE4      90.000    3.000
+ FSX      FE1    FE3    S3       54.658    3.000
+ FSX      FE4    FE3    S3       54.658    3.000
+ FSX      S2     FE3    FE1      56.456    3.000
+ FSX      S2     FE3    FE4      90.000    3.000
+ FSX      S2     FE3    S3       90.000    3.000
+ FSX      FE3    S2     FE1      67.087    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FSX      var_1    HO1    O1     FE2    O12        0.000   20.000   1
+ FSX      var_2    FE4    O24    FE2    O12        0.000   20.000   1
+ FSX      var_3    FE1    O12    FE2    O24        0.000   20.000   1
+ FSX      var_4    FE2    O12    FE1    S3       -64.527   20.000   1
+ FSX      var_5    O12    FE1    FE3    S4        -5.228   20.000   1
+ FSX      var_6    O12    FE1    S2     FE3     -115.765   20.000   1
+ FSX      var_7    O12    FE1    S3     FE4       42.376   20.000   1
+ FSX      var_8    FE1    S3     FE4    S4        78.576   20.000   1
+ FSX      var_9    S3     FE4    O24    FE2       73.230   20.000   1
+ FSX      var_10   S3     FE4    S4     FE3       -7.629   20.000   1
+ FSX      var_11   FE4    S4     FE3    S2      -105.122   20.000   1
+ FSX      var_12   S4     FE3    FE4    S3       170.686   20.000   1
+ FSX      var_13   S4     FE3    S3     FE1     -105.874   20.000   1
+ FSX      var_14   S4     FE3    S2     FE1      102.250   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ FSX      chir_01  S3     FE1    FE3    FE4       positiv
+                   .      .      .      .      .
+ FSX      chir_02  FE2    O12    .      O1        cross3
+                   O24    .      .      .      .
+# ------------------------------------------------------

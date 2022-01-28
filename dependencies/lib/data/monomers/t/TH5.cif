@@ -1,0 +1,197 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TH5      TH5 'O-acetyl-L-threonine                ' non-polymer        21  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TH5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TH5           OXT    O    OC       -0.500      0.000    0.000    0.000
+ TH5           C      C    C         0.000     -1.042    0.217   -0.658
+ TH5           O      O    OC       -0.500     -1.059    1.123   -1.521
+ TH5           CA     C    CH1       0.000     -2.274   -0.614   -0.413
+ TH5           HA     H    H         0.000     -2.761   -0.840   -1.373
+ TH5           N      N    NH2       0.000     -1.895   -1.868    0.251
+ TH5           HN2    H    H         0.000     -2.094   -2.760   -0.187
+ TH5           HN1    H    H         0.000     -1.433   -1.850    1.153
+ TH5           CB     C    CH1       0.000     -3.244    0.163    0.480
+ TH5           HB     H    H         0.000     -3.610    1.037   -0.078
+ TH5           CG2    C    CH3       0.000     -4.438   -0.727    0.831
+ TH5           HG23   H    H         0.000     -5.111   -0.190    1.448
+ TH5           HG22   H    H         0.000     -4.934   -1.020   -0.058
+ TH5           HG21   H    H         0.000     -4.099   -1.588    1.346
+ TH5           OG1    O    O2       -0.500     -2.592    0.641    1.738
+ TH5           CAH    C    C         0.000     -2.978    1.700    2.282
+ TH5           OAD    O    O        -0.500     -3.910    2.360    1.772
+ TH5           CAA    C    CH3       0.000     -2.319    2.179    3.550
+ TH5           HAA3   H    H         0.000     -2.434    1.448    4.308
+ TH5           HAA2   H    H         0.000     -1.288    2.344    3.373
+ TH5           HAA1   H    H         0.000     -2.772    3.085    3.864
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TH5      OXT    n/a    C      START
+ TH5      C      OXT    CA     .
+ TH5      O      C      .      .
+ TH5      CA     C      CB     .
+ TH5      HA     CA     .      .
+ TH5      N      CA     HN1    .
+ TH5      HN2    N      .      .
+ TH5      HN1    N      .      .
+ TH5      CB     CA     OG1    .
+ TH5      HB     CB     .      .
+ TH5      CG2    CB     HG21   .
+ TH5      HG23   CG2    .      .
+ TH5      HG22   CG2    .      .
+ TH5      HG21   CG2    .      .
+ TH5      OG1    CB     CAH    .
+ TH5      CAH    OG1    CAA    .
+ TH5      OAD    CAH    .      .
+ TH5      CAA    CAH    HAA1   .
+ TH5      HAA3   CAA    .      .
+ TH5      HAA2   CAA    .      .
+ TH5      HAA1   CAA    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TH5       CAA       CAH       single    1.500     0.020     1.500     0.020     
+TH5       OAD       CAH       deloc     1.220     0.020     1.220     0.020     
+TH5       CAH       OG1       deloc     1.454     0.020     1.454     0.020     
+TH5       OG1       CB        single    1.426     0.020     1.426     0.020     
+TH5       CG2       CB        single    1.524     0.020     1.524     0.020     
+TH5       CB        CA        single    1.524     0.020     1.524     0.020     
+TH5       CA        C         single    1.500     0.020     1.500     0.020     
+TH5       N         CA        single    1.450     0.020     1.450     0.020     
+TH5       O         C         deloc     1.250     0.020     1.250     0.020     
+TH5       C         OXT       deloc     1.250     0.020     1.250     0.020     
+TH5       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+TH5       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+TH5       HAA3      CAA       single    1.089     0.010     0.989     0.005     
+TH5       HB        CB        single    1.089     0.010     0.989     0.005     
+TH5       HG21      CG2       single    1.089     0.010     0.989     0.005     
+TH5       HG22      CG2       single    1.089     0.010     0.989     0.005     
+TH5       HG23      CG2       single    1.089     0.010     0.989     0.005     
+TH5       HA        CA        single    1.089     0.010     0.989     0.005     
+TH5       HN1       N         single    1.036     0.016     0.914     0.007     
+TH5       HN2       N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TH5      OXT    C      O       123.000    3.000
+ TH5      OXT    C      CA      118.500    3.000
+ TH5      O      C      CA      118.500    3.000
+ TH5      C      CA     HA      108.810    3.000
+ TH5      C      CA     N       109.470    3.000
+ TH5      C      CA     CB      109.470    3.000
+ TH5      HA     CA     N       109.470    3.000
+ TH5      HA     CA     CB      108.340    3.000
+ TH5      N      CA     CB      109.470    3.000
+ TH5      CA     N      HN2     120.000    3.000
+ TH5      CA     N      HN1     120.000    3.000
+ TH5      HN2    N      HN1     120.000    3.000
+ TH5      CA     CB     HB      108.340    3.000
+ TH5      CA     CB     CG2     111.000    3.000
+ TH5      CA     CB     OG1     109.470    3.000
+ TH5      HB     CB     CG2     108.340    3.000
+ TH5      HB     CB     OG1     109.470    3.000
+ TH5      CG2    CB     OG1     109.470    3.000
+ TH5      CB     CG2    HG23    109.470    3.000
+ TH5      CB     CG2    HG22    109.470    3.000
+ TH5      CB     CG2    HG21    109.470    3.000
+ TH5      HG23   CG2    HG22    109.470    3.000
+ TH5      HG23   CG2    HG21    109.470    3.000
+ TH5      HG22   CG2    HG21    109.470    3.000
+ TH5      CB     OG1    CAH     111.800    3.000
+ TH5      OG1    CAH    OAD     119.000    3.000
+ TH5      OG1    CAH    CAA     120.000    3.000
+ TH5      OAD    CAH    CAA     123.000    3.000
+ TH5      CAH    CAA    HAA3    109.470    3.000
+ TH5      CAH    CAA    HAA2    109.470    3.000
+ TH5      CAH    CAA    HAA1    109.470    3.000
+ TH5      HAA3   CAA    HAA2    109.470    3.000
+ TH5      HAA3   CAA    HAA1    109.470    3.000
+ TH5      HAA2   CAA    HAA1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TH5      var_1    OXT    C      CA     CB        99.993   20.000   3
+ TH5      var_2    C      CA     N      HN1       59.988   20.000   1
+ TH5      var_3    C      CA     CB     OG1      -53.317   20.000   3
+ TH5      var_4    CA     CB     CG2    HG21      60.070   20.000   3
+ TH5      var_5    CA     CB     OG1    CAH      149.383   20.000   1
+ TH5      var_6    CB     OG1    CAH    CAA     -179.993   20.000   1
+ TH5      var_7    OG1    CAH    CAA    HAA1     180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TH5      chir_01  CB     OG1    CG2    CA        positiv
+ TH5      chir_02  CA     CB     C      N         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TH5      plan-1    CAH       0.020
+ TH5      plan-1    CAA       0.020
+ TH5      plan-1    OAD       0.020
+ TH5      plan-1    OG1       0.020
+ TH5      plan-2    C         0.020
+ TH5      plan-2    CA        0.020
+ TH5      plan-2    O         0.020
+ TH5      plan-2    OXT       0.020
+ TH5      plan-3    N         0.020
+ TH5      plan-3    CA        0.020
+ TH5      plan-3    HN1       0.020
+ TH5      plan-3    HN2       0.020
+# ------------------------------------------------------

@@ -1,0 +1,112 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ACN     ACN      ACETONE     NON-POLYMER     10     4     .     
+#
+data_comp_ACN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ACN     C       C       C       0       -0.016      0.467       -0.400      
+ACN     O       O       O       0       -0.047      1.387       -1.186      
+ACN     C1      C       CH3     0       -1.255      -0.232      0.026       
+ACN     C2      C       CH3     0       1.263       -0.013      0.182       
+ACN     H11     H       H       0       -2.023      0.167       -0.415      
+ACN     H12     H       H       0       -1.357      -0.151      0.988       
+ACN     H13     H       H       0       -1.196      -1.171      -0.215      
+ACN     H21     H       H       0       1.999       0.517       -0.164      
+ACN     H22     H       H       0       1.396       -0.945      -0.055      
+ACN     H23     H       H       0       1.230       0.072       1.149       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ACN       C         O         DOUBLE    n         1.208     0.020     1.208     0.020     
+ACN       C         C1        SINGLE    n         1.483     0.020     1.483     0.020     
+ACN       C         C2        SINGLE    n         1.483     0.020     1.483     0.020     
+ACN       C1        H11       SINGLE    n         1.089     0.010     0.971     0.015     
+ACN       C1        H12       SINGLE    n         1.089     0.010     0.971     0.015     
+ACN       C1        H13       SINGLE    n         1.089     0.010     0.971     0.015     
+ACN       C2        H21       SINGLE    n         1.089     0.010     0.971     0.015     
+ACN       C2        H22       SINGLE    n         1.089     0.010     0.971     0.015     
+ACN       C2        H23       SINGLE    n         1.089     0.010     0.971     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ACN           O           C          C1     121.402    1.91
+ACN           O           C          C2     121.395    1.91
+ACN          C1           C          C2     117.189    2.29
+ACN           C          C1         H11     109.496    1.50
+ACN           C          C1         H12     109.496    1.50
+ACN           C          C1         H13     109.496    1.50
+ACN         H11          C1         H12     109.400    1.50
+ACN         H11          C1         H13     109.400    1.50
+ACN         H12          C1         H13     109.400    1.50
+ACN           C          C2         H21     109.496    1.50
+ACN           C          C2         H22     109.496    1.50
+ACN           C          C2         H23     109.496    1.50
+ACN         H21          C2         H22     109.400    1.50
+ACN         H21          C2         H23     109.400    1.50
+ACN         H22          C2         H23     109.400    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ACN             sp2_sp3_1           O           C          C1         H11       0.000   10.00     6
+ACN             sp2_sp3_7           O           C          C2         H21       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ACN    plan-1           C   0.020
+ACN    plan-1          C1   0.020
+ACN    plan-1          C2   0.020
+ACN    plan-1           O   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ACN SMILES           ACDLabs              11.02 "O=C(C)C"
+ACN SMILES_CANONICAL CACTVS               3.352 "CC(C)=O"
+ACN SMILES           CACTVS               3.352 "CC(C)=O"
+ACN SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "CC(=O)C"
+ACN SMILES           "OpenEye OEToolkits" 1.7.0 "CC(=O)C"
+ACN InChI            InChI                1.03  "InChI=1S/C3H6O/c1-3(2)4/h1-2H3"
+ACN InChIKey         InChI                1.03  CSCPPACGZOOCGX-UHFFFAOYSA-N
+ACN ?                acedrg               202         "dictionary generator"                  
+ACN ?                acedrg_database      11          "data source"                           
+ACN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ACN ?                refmac5              5.8.0189    "optimization tool"                     

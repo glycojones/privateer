@@ -1,0 +1,175 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DTH     DTH     D-THREONINE     peptide   17     8     .
+#
+data_comp_DTH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DTH     N       N       NT3     1       35.289      40.857      61.029
+DTH     CA      C       CH1     0       35.010      41.229      59.611
+DTH     CB      C       CH1     0       35.103      40.010      58.682
+DTH     CG2     C       CH3     0       34.585      40.285      57.286
+DTH     OG1     O       OH1     0       34.363      38.935      59.263
+DTH     C       C       C       0       35.973      42.336      59.161
+DTH     O       O       O       0       37.192      42.117      59.298
+DTH     OXT     O       OC      -1      35.463      43.373      58.691
+DTH     H       H       H       0       35.752      41.522      61.449
+DTH     H2      H       H       0       35.780      40.089      61.063
+DTH     H3      H       H       0       34.504      40.725      61.473
+DTH     HA      H       H       0       34.091      41.582      59.569
+DTH     HB      H       H       0       36.052      39.744      58.619
+DTH     HG21    H       H       0       34.400      39.442      56.836
+DTH     HG22    H       H       0       35.254      40.781      56.781
+DTH     HG23    H       H       0       33.766      40.810      57.339
+DTH     HG1     H       H       0       33.543      39.146      59.331
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DTH      N      n/a    CA     START
+DTH      H      N      .      .
+DTH      H2     N      .      .
+DTH      H3     N      .      .
+DTH      CA     N      C      .
+DTH      HA     CA     .      .
+DTH      CB     CA     CG2    .
+DTH      HB     CB     .      .
+DTH      OG1    CB     HG1    .
+DTH      HG1    OG1    .      .
+DTH      CG2    CB     HG21   .
+DTH      HG23   CG2    .      .
+DTH      HG22   CG2    .      .
+DTH      HG21   CG2    .      .
+DTH      C      CA     .      END
+DTH      O      C      .      .
+DTH      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DTH       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+DTH       CA        CB        SINGLE    n         1.534     0.010     1.534     0.010     
+DTH       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DTH       CB        CG2       SINGLE    n         1.513     0.010     1.513     0.010     
+DTH       CB        OG1       SINGLE    n         1.428     0.010     1.428     0.010     
+DTH       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DTH       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DTH       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DTH       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DTH       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DTH       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+DTH       CB        HB        SINGLE    n         1.089     0.010     0.987     0.020     
+DTH       CG2       HG21      SINGLE    n         1.089     0.010     0.974     0.015     
+DTH       CG2       HG22      SINGLE    n         1.089     0.010     0.974     0.015     
+DTH       CG2       HG23      SINGLE    n         1.089     0.010     0.974     0.015     
+DTH       OG1       HG1       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DTH          CA           N           H     109.889    1.50
+DTH          CA           N          H2     109.889    1.50
+DTH          CA           N          H3     109.889    1.50
+DTH           H           N          H2     109.028    2.41
+DTH           H           N          H3     109.028    2.41
+DTH          H2           N          H3     109.028    2.41
+DTH           N          CA          CB     111.125    1.50
+DTH           N          CA           C     109.414    1.50
+DTH           N          CA          HA     108.031    1.50
+DTH          CB          CA           C     111.511    2.91
+DTH          CB          CA          HA     108.620    1.50
+DTH           C          CA          HA     108.600    1.50
+DTH          CA          CB         CG2     112.909    1.50
+DTH          CA          CB         OG1     108.093    2.62
+DTH          CA          CB          HB     108.271    1.50
+DTH         CG2          CB         OG1     109.779    2.11
+DTH         CG2          CB          HB     108.799    1.50
+DTH         OG1          CB          HB     108.878    1.50
+DTH          CB         CG2        HG21     109.564    1.50
+DTH          CB         CG2        HG22     109.564    1.50
+DTH          CB         CG2        HG23     109.564    1.50
+DTH        HG21         CG2        HG22     109.425    1.50
+DTH        HG21         CG2        HG23     109.425    1.50
+DTH        HG22         CG2        HG23     109.425    1.50
+DTH          CB         OG1         HG1     109.608    2.55
+DTH          CA           C           O     117.003    1.50
+DTH          CA           C         OXT     117.003    1.50
+DTH           O           C         OXT     125.994    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DTH             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+DTH            sp3_sp3_11           N          CA          CB         CG2     -60.000   10.00     3
+DTH             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DTH            sp3_sp3_19          CA          CB         CG2        HG21     180.000   10.00     3
+DTH            sp3_sp3_29          CA          CB         OG1         HG1      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DTH    chir_1    CA    N    C    CB    negative
+DTH    chir_2    CB    OG1    CA    CG2    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DTH    plan-1           C   0.020
+DTH    plan-1          CA   0.020
+DTH    plan-1           O   0.020
+DTH    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DTH SMILES           ACDLabs              10.04 "O=C(O)C(N)C(O)C"
+DTH SMILES_CANONICAL CACTVS               3.341 "C[C@H](O)[C@@H](N)C(O)=O"
+DTH SMILES           CACTVS               3.341 "C[CH](O)[CH](N)C(O)=O"
+DTH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@@H]([C@H](C(=O)O)N)O"
+DTH SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C(C(=O)O)N)O"
+DTH InChI            InChI                1.03  "InChI=1S/C4H9NO3/c1-2(6)3(5)4(7)8/h2-3,6H,5H2,1H3,(H,7,8)/t2-,3+/m0/s1"
+DTH InChIKey         InChI                1.03  AYFVYJQAPQTCCC-STHAYSLISA-N
+DTH ?                acedrg               202         "dictionary generator"
+DTH ?                acedrg_database      11          "data source"
+DTH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DTH ?                refmac5              5.8.0222    "optimization tool"

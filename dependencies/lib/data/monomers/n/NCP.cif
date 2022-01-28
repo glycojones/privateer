@@ -1,0 +1,129 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NCP      NCP 'CIS-DIAMINODICHLOROPLATINUM         ' non-polymer         9   5 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NCP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NCP           CL2    CL   CL        0.000      0.000    0.000    0.000
+ NCP           PT     PT   PT        0.000     -2.295   -0.551    0.011
+ NCP           CL1    CL   CL        0.000     -3.580    1.430    0.022
+ NCP           N2     N    NH2       0.000     -2.752   -1.668   -1.695
+ NCP           HN22   H    H         0.000     -2.045   -1.846   -2.407
+ NCP           HN21   H    H         0.000     -3.686   -2.049   -1.835
+ NCP           N1     N    NH2       0.000     -2.734   -1.675    1.717
+ NCP           HN12   H    H         0.000     -3.368   -1.317    2.429
+ NCP           HN11   H    H         0.000     -2.319   -2.595    1.857
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NCP      CL2    n/a    PT     START
+ NCP      PT     CL2    N1     .
+ NCP      CL1    PT     .      .
+ NCP      N2     PT     HN21   .
+ NCP      HN22   N2     .      .
+ NCP      HN21   N2     .      .
+ NCP      N1     PT     HN11   .
+ NCP      HN12   N1     .      .
+ NCP      HN11   N1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NCP       CL1       PT        single    2.425     0.020     2.425     0.020     
+NCP       PT        CL2       single    2.425     0.020     2.425     0.020     
+NCP       N1        PT        single    2.025     0.020     2.025     0.020     
+NCP       N2        PT        single    2.025     0.020     2.025     0.020     
+NCP       HN11      N1        single    1.036     0.016     0.914     0.007     
+NCP       HN12      N1        single    1.036     0.016     0.914     0.007     
+NCP       HN21      N2        single    1.036     0.016     0.914     0.007     
+NCP       HN22      N2        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NCP      CL2    PT     CL1      90.000    3.000
+ NCP      CL2    PT     N2       90.000    3.000
+ NCP      CL2    PT     N1       90.000    3.000
+ NCP      CL1    PT     N2       90.000    3.000
+ NCP      CL1    PT     N1       90.000    3.000
+ NCP      N2     PT     N1       90.000    3.000
+ NCP      PT     N2     HN22    120.000    3.000
+ NCP      PT     N2     HN21    120.000    3.000
+ NCP      HN22   N2     HN21    120.000    3.000
+ NCP      PT     N1     HN12    120.000    3.000
+ NCP      PT     N1     HN11    120.000    3.000
+ NCP      HN12   N1     HN11    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NCP      var_1    CL2    PT     N2     HN21     176.075   20.000   1
+ NCP      var_2    CL2    PT     N1     HN11     -63.926   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NCP      chir_01  PT     CL2    CL1    N2        both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NCP      plan-1    N1        0.020
+ NCP      plan-1    PT        0.020
+ NCP      plan-1    HN11      0.020
+ NCP      plan-1    HN12      0.020
+ NCP      plan-2    N2        0.020
+ NCP      plan-2    PT        0.020
+ NCP      plan-2    HN21      0.020
+ NCP      plan-2    HN22      0.020
+# ------------------------------------------------------

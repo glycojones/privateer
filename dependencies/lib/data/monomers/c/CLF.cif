@@ -1,0 +1,223 @@
+global_
+_lib_name         P_cluster_closed
+_lib_version      3.0_aom
+_lib_update       19_06_30
+# ------------------------------------------------
+#
+# Credit to: Ailiena Maggiolo, Caltech
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CLF      CLF 'FE(8)-S(7) CLUSTER                  ' non-polymer        21  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CLF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CLF           S4B    S    ST        0.000      0.796    0.739   -0.585
+ CLF           FE5    FE   FE        0.000      2.640    1.926   -0.067
+ CLF           FE7    FE   FE        0.000      0.696    2.671   -1.962
+ CLF           S2B    S    ST        0.000      2.196    4.078   -0.804
+ CLF           FE8    FE   FE        0.000      2.392    0.533   -2.127
+ CLF           S3B    S    ST        0.000      1.938    2.111   -3.858
+ CLF           FE6    FE   FE        0.000      3.513    2.873   -2.278
+ CLF           S1     S    S         0.000      4.612    0.959   -1.096
+ CLF           FE4    FE   FE        0.000      4.592    0.149    1.154
+ CLF           S4A    S    ST        0.000      3.249   -1.676    1.341
+ CLF           FE2    FE   FE        0.000      4.048   -1.445   -0.775
+ CLF           S3A    S    ST        0.000      6.684   -0.375    1.748
+ CLF           FE1    FE   FE        0.000      6.365   -0.570   -0.491
+ CLF           FE3    FE   FE        0.000      5.428   -2.370    1.422
+ CLF           S2A    S    ST        0.000      5.896   -2.815   -0.809
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CLF       FE1       S1        metal     2.389     0.020     2.389     0.020     
+CLF       FE1       S2A       metal     2.308     0.020     2.308     0.020     
+CLF       FE1       S3A       metal     2.311     0.020     2.311     0.020     
+CLF       FE2       S1        metal     2.480     0.020     2.480     0.020     
+CLF       FE2       S2A       metal     2.296     0.020     2.296     0.020     
+CLF       FE2       S4A       metal     2.277     0.020     2.277     0.020     
+CLF       S2A       FE3       metal     2.291     0.020     2.291     0.020     
+CLF       FE3       S4A       metal     2.265     0.020     2.265     0.020     
+CLF       FE3       S3A       metal     2.313     0.020     2.313     0.020     
+CLF       FE4       S1        metal     2.366     0.020     2.366     0.020     
+CLF       S4A       FE4       metal     2.287     0.020     2.287     0.020     
+CLF       S3A       FE4       metal     2.296     0.020     2.296     0.020     
+CLF       S1        FE5       metal     2.570     0.020     2.570     0.020     
+CLF       S1        FE6       metal     2.560     0.020     2.560     0.020     
+CLF       S1        FE8       metal     2.346     0.020     2.346     0.020     
+CLF       FE5       S2B       metal     2.450     0.020     2.450     0.020     
+CLF       FE5       S4B       metal     2.219     0.020     2.219     0.020     
+CLF       FE6       S2B       metal     2.580     0.020     2.580     0.020     
+CLF       FE6       S3B       metal     2.313     0.020     2.313     0.020     
+CLF       S2B       FE7       metal     2.309     0.020     2.309     0.020     
+CLF       FE7       S3B       metal     2.320     0.020     2.320     0.020     
+CLF       FE7       S4B       metal     2.289     0.020     2.289     0.020     
+CLF       S3B       FE8       metal     2.283     0.020     2.283     0.020     
+CLF       FE8       S4B       metal     2.324     0.020     2.324     0.020     
+ loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CLF      FE5    S4B    FE7      76.331    3.000
+ CLF      FE5    S4B    FE8      64.412    3.000
+ CLF      FE7    S4B    FE8      73.283    3.000
+ CLF      S4B    FE5    S1      108.890    3.000
+ CLF      S4B    FE5    S2B     100.630    3.000
+ CLF      S1     FE5    S2B     120.600    3.000
+ CLF      S4B    FE7    S2B     102.840    3.000
+ CLF      S4B    FE7    S3B     103.220    3.000
+ CLF      S2B    FE7    S3B     105.900    3.000
+ CLF      FE7    S2B    FE5      71.620    3.000
+ CLF      FE7    S2B    FE6      70.990    3.000
+ CLF      FE5    S2B    FE6      59.570    3.000
+ CLF      S4B    FE8    S3B     103.270    3.000
+ CLF      S4B    FE8    S1      113.250    3.000
+ CLF      S3B    FE8    S1      122.530    3.000
+ CLF      FE8    S3B    FE6      60.010    3.000
+ CLF      FE8    S3B    FE7      73.460    3.000
+ CLF      FE6    S3B    FE7      75.810    3.000
+ CLF      S3B    FE6    S1      112.790    3.000
+ CLF      S3B    FE6    S2B      97.990    3.000
+ CLF      S1     FE6    S2B     116.090    3.000
+ CLF      FE8    S1     FE4     108.400    3.000
+ CLF      FE8    S1     FE1     134.560    3.000
+ CLF      FE8    S1     FE2      75.140    3.000
+ CLF      FE8    S1     FE5      58.870    3.000
+ CLF      FE8    S1     FE6      55.700    3.000
+ CLF      FE1    S1     FE2      62.200    3.000
+ CLF      FE1    S1     FE5     139.850    3.000
+ CLF      FE2    S1     FE5      99.410    3.000
+ CLF      FE1    S1     FE6     160.310    3.000
+ CLF      FE2    S1     FE6     130.810    3.000
+ CLF      FE5    S1     FE6      58.350    3.000
+ CLF      FE4    S1     FE1      67.040    3.000
+ CLF      FE4    S1     FE2      63.870    3.000
+ CLF      FE4    S1     FE5      72.810    3.000
+ CLF      FE4    S1     FE6     129.970    3.000
+ CLF      S1     FE4    S4A     112.160    3.000
+ CLF      S1     FE4    S3A     106.950    3.000
+ CLF      S4A    FE4    S3A     105.380    3.000
+ CLF      FE4    S4A    FE2      68.460    3.000
+ CLF      FE4    S4A    FE3      73.280    3.000
+ CLF      FE2    S4A    FE3      74.390    3.000
+ CLF      S4A    FE2    S1      108.320    3.000
+ CLF      S4A    FE2    S2A     102.140    3.000
+ CLF      S1     FE2    S2A     112.270    3.000
+ CLF      FE4    S3A    FE1      69.510    3.000
+ CLF      FE4    S3A    FE3      72.230    3.000
+ CLF      FE1    S3A    FE3      74.410    3.000
+ CLF      S3A    FE1    S1      105.700    3.000
+ CLF      S3A    FE1    S2A     101.850    3.000
+ CLF      S1     FE1    S2A     115.390    3.000
+ CLF      S3A    FE3    S2A     102.300    3.000
+ CLF      S3A    FE3    S4A     105.530    3.000
+ CLF      S2A    FE3    S4A     102.680    3.000
+ CLF      FE3    S2A    FE1      74.890    3.000
+ CLF      FE3    S2A    FE2      73.540    3.000
+ CLF      FE1    S2A    FE2      66.330    3.000
+ loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CLF      var_1    HS4B   S4B    FE5    S1       175.000   20.000   1
+ CLF      var_2    S4B    FE5    S2B    FE7      -19.444   20.000   1
+ CLF      var_3    FE5    S4B    FE7    S2B        0.000   20.000   1
+ CLF      var_4    FE8    S3B    FE7    S4B        0.000   20.000   1
+ CLF      var_5    FE5    S2B    FE7    S4B        0.000   20.000   1
+ CLF      var_6    HS4B   S4B    FE8    S1       175.000   20.000   1
+ CLF      var_7    S4B    FE8    S3B    FE6       97.014   20.000   1
+ CLF      var_8    FE8    S3B    FE6    S1        22.933   20.000   1
+ CLF      var_9    S3B    FE6    S2B    FE7       19.261   20.000   1
+ CLF      var_10   S4B    FE8    S1     FE4       34.332   20.000   1
+ CLF      var_11   FE8    S1     FE5    S4B       24.527   20.000   1
+ CLF      var_12   FE8    S1     FE6    S3B      -22.680   20.000   1
+ CLF      var_13   FE8    S1     FE4    S3A      153.477   20.000   1
+ CLF      var_14   S1     FE4    S4A    FE2       25.801   20.000   1
+ CLF      var_15   FE4    S4A    FE2    S1       -24.164   20.000   1
+ CLF      var_16   S4A    FE2    S1     FE8      -99.443   20.000   1
+ CLF      var_17   S4A    FE2    S2A    FE3      -19.425   20.000   1
+ CLF      var_18   S1     FE4    S3A    FE3     -107.385   20.000   1
+ CLF      var_19   FE4    S3A    FE1    S1         0.000   20.000   1
+ CLF      var_20   FE4    S1     FE1    S3A        0.000   20.000   1
+ CLF      var_21   FE3    S2A    FE1    S3A        0.000   20.000   1
+ CLF      var_22   FE1    S3A    FE3    S2A        0.000   20.000   1
+ CLF      var_23   FE4    S4A    FE3    S3A        0.000   20.000   1
+ CLF      var_24   FE1    S2A    FE3    S3A        0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ CLF      chir_01  S1     FE1    FE2    FE4       negativ
+                   .      .      .      .      .
+ CLF      chir_02  S2A    FE1    FE2    FE3       positiv
+                   .      .      .      .      .
+ CLF      chir_03  S4A    FE2    FE3    FE4       negativ
+                   .      .      .      .      .
+ CLF      chir_04  S3A    FE1    FE3    FE4       positiv
+                   .      .      .      .      .
+ CLF      chir_05  S2B    FE5    FE6    FE7       negativ
+                   .      .      .      .      .
+ CLF      chir_06  S3B    FE6    FE7    FE8       positiv
+                   .      .      .      .      .
+ CLF      chir_07  S4B    FE5    FE7    FE8       negativ
+                   .      .      .      .      .
+ CLF      chir_08  FE1    S3A    .      S1        cross3
+                   S2A    .      .      .      .
+ CLF      chir_09  FE2    S4A    S1     S2A       both
+                   .      .      .      .      .
+ CLF      chir_10  FE3    S3A    .      S2A       cross4
+                   S4A    .      .      .      .
+ CLF      chir_11  FE4    S1     S4A    S3A       both
+                   .      .      .      .      .
+ CLF      chir_12  FE5    S4B    S1     S2B       both
+                   .      .      .      .      .
+ CLF      chir_13  FE7    S4B    .      S2B       cross4
+                   S3B    .      .      .      .
+ CLF      chir_14  FE8    S4B    S3B    S1        both
+                   .      .      .      .      .
+# ------------------------------------------------------

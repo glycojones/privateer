@@ -1,0 +1,234 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RGL      RGL 'ARGINAL                             ' non-polymer        26  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RGL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RGL           O      O    O         0.000      0.000    0.000    0.000
+ RGL           C      C    C1        0.000     -0.926    0.267   -0.728
+ RGL           HX     H    H         0.000     -0.854    1.097   -1.410
+ RGL           CA     C    CH1       0.000     -2.184   -0.563   -0.682
+ RGL           HA     H    H         0.000     -2.362   -1.014   -1.669
+ RGL           N      N    NH2       0.000     -2.033   -1.625    0.322
+ RGL           HN2    H    H         0.000     -2.099   -2.599    0.050
+ RGL           HN1    H    H         0.000     -1.861   -1.391    1.293
+ RGL           CB     C    CH2       0.000     -3.369    0.328   -0.307
+ RGL           HB1    H    H         0.000     -3.426    1.168   -1.002
+ RGL           HB2    H    H         0.000     -3.234    0.705    0.708
+ RGL           CG     C    CH2       0.000     -4.663   -0.486   -0.382
+ RGL           HG1    H    H         0.000     -4.604   -1.327    0.312
+ RGL           HG2    H    H         0.000     -4.797   -0.863   -1.398
+ RGL           CD     C    CH2       0.000     -5.849    0.405   -0.007
+ RGL           HD1    H    H         0.000     -5.905    1.245   -0.702
+ RGL           HD2    H    H         0.000     -5.713    0.782    1.008
+ RGL           NE     N    NH1       0.000     -7.087   -0.374   -0.079
+ RGL           HE     H    H         0.000     -7.056   -1.348   -0.345
+ RGL           CZ     C    C         0.000     -8.285    0.216    0.215
+ RGL           NH2    N    NH2       1.000     -9.410   -0.492    0.151
+ RGL           HH22   H    H         0.000     -9.380   -1.466   -0.115
+ RGL           HH21   H    H         0.000    -10.294   -0.055    0.368
+ RGL           NH1    N    NH2       0.000     -8.326    1.500    0.568
+ RGL           HH12   H    H         0.000     -9.211    1.936    0.786
+ RGL           HH11   H    H         0.000     -7.472    2.038    0.619
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RGL      O      n/a    C      START
+ RGL      C      O      CA     .
+ RGL      HX     C      .      .
+ RGL      CA     C      CB     .
+ RGL      HA     CA     .      .
+ RGL      N      CA     HN1    .
+ RGL      HN2    N      .      .
+ RGL      HN1    N      .      .
+ RGL      CB     CA     CG     .
+ RGL      HB1    CB     .      .
+ RGL      HB2    CB     .      .
+ RGL      CG     CB     CD     .
+ RGL      HG1    CG     .      .
+ RGL      HG2    CG     .      .
+ RGL      CD     CG     NE     .
+ RGL      HD1    CD     .      .
+ RGL      HD2    CD     .      .
+ RGL      NE     CD     CZ     .
+ RGL      HE     NE     .      .
+ RGL      CZ     NE     NH1    .
+ RGL      NH2    CZ     HH21   .
+ RGL      HH22   NH2    .      .
+ RGL      HH21   NH2    .      .
+ RGL      NH1    CZ     HH11   .
+ RGL      HH12   NH1    .      .
+ RGL      HH11   NH1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RGL       N         CA        single    1.450     0.020     1.450     0.020     
+RGL       CA        C         single    1.510     0.020     1.510     0.020     
+RGL       CB        CA        single    1.524     0.020     1.524     0.020     
+RGL       C         O         double    1.220     0.020     1.220     0.020     
+RGL       HX        C         single    1.082     0.013     0.975     0.010     
+RGL       CG        CB        single    1.524     0.020     1.524     0.020     
+RGL       CD        CG        single    1.524     0.020     1.524     0.020     
+RGL       NE        CD        single    1.450     0.020     1.450     0.020     
+RGL       CZ        NE        single    1.330     0.020     1.330     0.020     
+RGL       NH1       CZ        single    1.332     0.020     1.332     0.020     
+RGL       NH2       CZ        double    1.332     0.020     1.332     0.020     
+RGL       HN1       N         single    1.036     0.016     0.914     0.007     
+RGL       HN2       N         single    1.036     0.016     0.914     0.007     
+RGL       HA        CA        single    1.089     0.010     0.989     0.005     
+RGL       HB1       CB        single    1.089     0.010     0.989     0.005     
+RGL       HB2       CB        single    1.089     0.010     0.989     0.005     
+RGL       HG1       CG        single    1.089     0.010     0.989     0.005     
+RGL       HG2       CG        single    1.089     0.010     0.989     0.005     
+RGL       HD1       CD        single    1.089     0.010     0.989     0.005     
+RGL       HD2       CD        single    1.089     0.010     0.989     0.005     
+RGL       HE        NE        single    1.016     0.010     0.899     0.007     
+RGL       HH11      NH1       single    1.016     0.010     0.899     0.007     
+RGL       HH12      NH1       single    1.016     0.010     0.899     0.007     
+RGL       HH21      NH2       single    1.016     0.010     0.899     0.007     
+RGL       HH22      NH2       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RGL      O      C      HX      123.000    3.000
+ RGL      O      C      CA      120.500    3.000
+ RGL      HX     C      CA      120.000    3.000
+ RGL      C      CA     HA      108.810    3.000
+ RGL      C      CA     N       109.470    3.000
+ RGL      C      CA     CB      109.470    3.000
+ RGL      HA     CA     N       109.470    3.000
+ RGL      HA     CA     CB      108.340    3.000
+ RGL      N      CA     CB      109.470    3.000
+ RGL      CA     N      HN2     120.000    3.000
+ RGL      CA     N      HN1     120.000    3.000
+ RGL      HN2    N      HN1     120.000    3.000
+ RGL      CA     CB     HB1     109.470    3.000
+ RGL      CA     CB     HB2     109.470    3.000
+ RGL      CA     CB     CG      111.000    3.000
+ RGL      HB1    CB     HB2     107.900    3.000
+ RGL      HB1    CB     CG      109.470    3.000
+ RGL      HB2    CB     CG      109.470    3.000
+ RGL      CB     CG     HG1     109.470    3.000
+ RGL      CB     CG     HG2     109.470    3.000
+ RGL      CB     CG     CD      111.000    3.000
+ RGL      HG1    CG     HG2     107.900    3.000
+ RGL      HG1    CG     CD      109.470    3.000
+ RGL      HG2    CG     CD      109.470    3.000
+ RGL      CG     CD     HD1     109.470    3.000
+ RGL      CG     CD     HD2     109.470    3.000
+ RGL      CG     CD     NE      112.000    3.000
+ RGL      HD1    CD     HD2     107.900    3.000
+ RGL      HD1    CD     NE      109.470    3.000
+ RGL      HD2    CD     NE      109.470    3.000
+ RGL      CD     NE     HE      118.500    3.000
+ RGL      CD     NE     CZ      121.500    3.000
+ RGL      HE     NE     CZ      120.000    3.000
+ RGL      NE     CZ     NH2     120.000    3.000
+ RGL      NE     CZ     NH1     120.000    3.000
+ RGL      NH2    CZ     NH1     120.000    3.000
+ RGL      CZ     NH2    HH22    120.000    3.000
+ RGL      CZ     NH2    HH21    120.000    3.000
+ RGL      HH22   NH2    HH21    120.000    3.000
+ RGL      CZ     NH1    HH12    120.000    3.000
+ RGL      CZ     NH1    HH11    120.000    3.000
+ RGL      HH12   NH1    HH11    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RGL      var_1    O      C      CA     CB       120.020   20.000   1
+ RGL      var_2    C      CA     N      HN1       59.978   20.000   1
+ RGL      var_3    C      CA     CB     CG       174.997   20.000   3
+ RGL      var_4    CA     CB     CG     CD       180.000   20.000   3
+ RGL      var_5    CB     CG     CD     NE      -179.987   20.000   3
+ RGL      var_6    CG     CD     NE     CZ      -179.962   20.000   3
+ RGL      CONST_1  CD     NE     CZ     NH1        0.000    0.000   0
+ RGL      CONST_2  NE     CZ     NH2    HH21     180.000    0.000   0
+ RGL      CONST_3  NE     CZ     NH1    HH11       0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RGL      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RGL      plan-1    N         0.020
+ RGL      plan-1    CA        0.020
+ RGL      plan-1    HN1       0.020
+ RGL      plan-1    HN2       0.020
+ RGL      plan-2    C         0.020
+ RGL      plan-2    CA        0.020
+ RGL      plan-2    O         0.020
+ RGL      plan-2    HX        0.020
+ RGL      plan-3    NE        0.020
+ RGL      plan-3    CD        0.020
+ RGL      plan-3    CZ        0.020
+ RGL      plan-3    HE        0.020
+ RGL      plan-4    CZ        0.020
+ RGL      plan-4    NE        0.020
+ RGL      plan-4    NH1       0.020
+ RGL      plan-4    NH2       0.020
+ RGL      plan-4    HH21      0.020
+ RGL      plan-4    HH22      0.020
+ RGL      plan-4    HE        0.020
+ RGL      plan-4    HH12      0.020
+ RGL      plan-4    HH11      0.020
+ RGL      plan-5    NH1       0.020
+ RGL      plan-5    CZ        0.020
+ RGL      plan-5    HH11      0.020
+ RGL      plan-5    HH12      0.020
+# ------------------------------------------------------

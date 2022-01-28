@@ -1,0 +1,143 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1DV     1DV     "5-methyl-3-(trifluoromethyl)-1H-pyrazole"     NON-POLYMER     15     10     .     
+#
+data_comp_1DV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+1DV     FAB     F       F       0       3.339       6.839       1.522       
+1DV     CAJ     C       CT      0       2.767       7.909       0.983       
+1DV     FAC     F       F       0       1.822       8.296       1.832       
+1DV     FAD     F       F       0       2.137       7.486       -0.108      
+1DV     CAI     C       CR5     0       3.743       8.988       0.691       
+1DV     CAE     C       CR15    0       4.081       9.580       -0.533      
+1DV     CAH     C       CR5     0       5.027       10.518      -0.267      
+1DV     CAA     C       CH3     0       5.769       11.465      -1.143      
+1DV     NAG     N       NR5     0       5.235       10.479      1.057       
+1DV     NAF     N       NRD5    0       4.457       9.545       1.671       
+1DV     H1      H       H       0       3.722       9.369       -1.380      
+1DV     H2      H       H       0       6.416       11.955      -0.615      
+1DV     H3      H       H       0       5.147       12.088      -1.547      
+1DV     H4      H       H       0       6.228       10.972      -1.838      
+1DV     H5      H       H       0       5.808       10.986      1.528       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1DV       CAH       CAA       SINGLE    n         1.488     0.010     1.488     0.010     
+1DV       CAE       CAH       DOUBLE    y         1.357     0.010     1.357     0.010     
+1DV       CAI       CAE       SINGLE    y         1.401     0.012     1.401     0.012     
+1DV       CAH       NAG       SINGLE    y         1.340     0.010     1.340     0.010     
+1DV       CAJ       FAD       SINGLE    n         1.328     0.017     1.328     0.017     
+1DV       CAJ       CAI       SINGLE    n         1.484     0.010     1.484     0.010     
+1DV       CAI       NAF       DOUBLE    y         1.335     0.010     1.335     0.010     
+1DV       FAB       CAJ       SINGLE    n         1.328     0.017     1.328     0.017     
+1DV       CAJ       FAC       SINGLE    n         1.328     0.017     1.328     0.017     
+1DV       NAG       NAF       SINGLE    y         1.363     0.015     1.363     0.015     
+1DV       CAE       H1        SINGLE    n         1.082     0.013     0.944     0.012     
+1DV       CAA       H2        SINGLE    n         1.089     0.010     0.968     0.014     
+1DV       CAA       H3        SINGLE    n         1.089     0.010     0.968     0.014     
+1DV       CAA       H4        SINGLE    n         1.089     0.010     0.968     0.014     
+1DV       NAG       H5        SINGLE    n         1.016     0.010     0.899     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+1DV         FAD         CAJ         CAI     112.538    1.50
+1DV         FAD         CAJ         FAB     106.380    1.50
+1DV         FAD         CAJ         FAC     106.380    1.50
+1DV         CAI         CAJ         FAB     112.538    1.50
+1DV         CAI         CAJ         FAC     112.538    1.50
+1DV         FAB         CAJ         FAC     106.380    1.50
+1DV         CAE         CAI         CAJ     129.508    1.50
+1DV         CAE         CAI         NAF     109.868    1.50
+1DV         CAJ         CAI         NAF     120.624    1.50
+1DV         CAH         CAE         CAI     106.572    1.50
+1DV         CAH         CAE          H1     126.651    1.50
+1DV         CAI         CAE          H1     126.777    1.50
+1DV         CAA         CAH         CAE     132.414    1.50
+1DV         CAA         CAH         NAG     121.708    1.50
+1DV         CAE         CAH         NAG     105.878    1.50
+1DV         CAH         CAA          H2     109.475    1.50
+1DV         CAH         CAA          H3     109.475    1.50
+1DV         CAH         CAA          H4     109.475    1.50
+1DV          H2         CAA          H3     109.354    1.50
+1DV          H2         CAA          H4     109.354    1.50
+1DV          H3         CAA          H4     109.354    1.50
+1DV         CAH         NAG         NAF     112.066    1.58
+1DV         CAH         NAG          H5     126.886    3.00
+1DV         NAF         NAG          H5     121.048    3.00
+1DV         CAI         NAF         NAG     105.615    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+1DV             sp2_sp3_7         CAE         CAI         CAJ         FAD     150.000   10.00     6
+1DV       const_sp2_sp2_2         CAH         CAE         CAI         CAJ     180.000   10.00     2
+1DV              const_16         CAJ         CAI         NAF         NAG     180.000   10.00     2
+1DV       const_sp2_sp2_6         CAI         CAE         CAH         CAA     180.000   10.00     2
+1DV             sp2_sp3_1         CAE         CAH         CAA          H2     150.000   10.00     6
+1DV              const_11         CAA         CAH         NAG         NAF     180.000   10.00     2
+1DV              const_13         CAI         NAF         NAG         CAH       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+1DV    plan-1         CAA   0.020
+1DV    plan-1         CAE   0.020
+1DV    plan-1         CAH   0.020
+1DV    plan-1         CAI   0.020
+1DV    plan-1         CAJ   0.020
+1DV    plan-1          H1   0.020
+1DV    plan-1          H5   0.020
+1DV    plan-1         NAF   0.020
+1DV    plan-1         NAG   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+1DV SMILES           ACDLabs              12.01 "FC(F)(F)c1nnc(c1)C"
+1DV InChI            InChI                1.03  "InChI=1S/C5H5F3N2/c1-3-2-4(10-9-3)5(6,7)8/h2H,1H3,(H,9,10)"
+1DV InChIKey         InChI                1.03  DLCHCAYDSKIFIN-UHFFFAOYSA-N
+1DV SMILES_CANONICAL CACTVS               3.370 "Cc1[nH]nc(c1)C(F)(F)F"
+1DV SMILES           CACTVS               3.370 "Cc1[nH]nc(c1)C(F)(F)F"
+1DV SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "Cc1cc(n[nH]1)C(F)(F)F"
+1DV SMILES           "OpenEye OEToolkits" 1.7.6 "Cc1cc(n[nH]1)C(F)(F)F"
+1DV ?                acedrg               190         "dictionary generator"                  
+1DV ?                acedrg_database      11          "data source"                           
+1DV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+1DV ?                refmac5              5.8.0158    "optimization tool"                     

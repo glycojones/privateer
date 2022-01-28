@@ -1,0 +1,501 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FYI      FYI '"N-{(2S)-4-(methylamino)-4-oxo-2-[4-' non-polymer        69  37 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FYI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FYI           O11    O    O         0.000      0.000    0.000    0.000
+ FYI           C22    C    C         0.000      1.038   -0.621    0.085
+ FYI           N4     N    NH2       0.000      2.057   -0.133    0.819
+ FYI           H36    H    H         0.000      1.961    0.753    1.301
+ FYI           H35    H    H         0.000      2.926   -0.648    0.893
+ FYI           C21    C    CH2       0.000      1.189   -1.939   -0.630
+ FYI           H33    H    H         0.000      1.392   -2.726    0.099
+ FYI           H34    H    H         0.000      2.018   -1.875   -1.337
+ FYI           C19    C    CH1       0.000     -0.103   -2.261   -1.383
+ FYI           H32    H    H         0.000     -0.355   -1.425   -2.052
+ FYI           C20    C    C         0.000      0.088   -3.515   -2.197
+ FYI           N5     N    NH2       0.000      1.040   -3.562   -3.149
+ FYI           H39    H    H         0.000      1.172   -4.403   -3.698
+ FYI           H38    H    H         0.000      1.630   -2.757   -3.322
+ FYI           O10    O    O         0.000     -0.615   -4.482   -1.995
+ FYI           N3     N    NH1       0.000     -1.192   -2.462   -0.424
+ FYI           H30    H    H         0.000     -0.985   -2.754    0.520
+ FYI           C14    C    C         0.000     -2.469   -2.258   -0.801
+ FYI           O8     O    O         0.000     -2.731   -2.039   -1.965
+ FYI           C13    C    CH1       0.000     -3.574   -2.302    0.223
+ FYI           H19    H    H         0.000     -3.244   -1.793    1.140
+ FYI           C15    C    CH1       0.000     -3.916   -3.759    0.543
+ FYI           H20    H    H         0.000     -4.782   -3.792    1.218
+ FYI           C17    C    CH3       0.000     -4.249   -4.501   -0.753
+ FYI           H25    H    H         0.000     -4.577   -5.482   -0.526
+ FYI           H24    H    H         0.000     -5.017   -3.984   -1.270
+ FYI           H23    H    H         0.000     -3.386   -4.551   -1.365
+ FYI           C16    C    CH2       0.000     -2.717   -4.428    1.219
+ FYI           H21    H    H         0.000     -1.831   -4.306    0.592
+ FYI           H22    H    H         0.000     -2.922   -5.492    1.353
+ FYI           C18    C    CH3       0.000     -2.473   -3.779    2.582
+ FYI           H28    H    H         0.000     -2.345   -2.733    2.462
+ FYI           H27    H    H         0.000     -3.302   -3.959    3.218
+ FYI           H26    H    H         0.000     -1.599   -4.189    3.022
+ FYI           N2     N    NH1       0.000     -4.760   -1.627   -0.309
+ FYI           H17    H    H         0.000     -4.927   -1.609   -1.305
+ FYI           C9     C    C         0.000     -5.630   -1.031    0.532
+ FYI           O5     O    O         0.000     -5.385   -0.975    1.718
+ FYI           C8     C    CH1       0.000     -6.907   -0.436   -0.003
+ FYI           H9     H    H         0.000     -7.458   -1.200   -0.570
+ FYI           C10    C    CH2       0.000     -6.575    0.741   -0.922
+ FYI           H11    H    H         0.000     -7.500    1.226   -1.240
+ FYI           H12    H    H         0.000     -6.036    0.377   -1.799
+ FYI           C11    C    C         0.000     -5.716    1.732   -0.179
+ FYI           O7     O    O         0.000     -5.467    1.558    0.995
+ FYI           N1     N    NH1       0.000     -5.223    2.810   -0.820
+ FYI           H13    H    H         0.000     -5.428    2.955   -1.798
+ FYI           C12    C    CH3       0.000     -4.387    3.773   -0.096
+ FYI           H16    H    H         0.000     -3.525    3.285    0.280
+ FYI           H15    H    H         0.000     -4.091    4.552   -0.753
+ FYI           H14    H    H         0.000     -4.937    4.186    0.711
+ FYI           C7     C    CH2       0.000     -7.769    0.054    1.162
+ FYI           H7     H    H         0.000     -7.259    0.873    1.672
+ FYI           H8     H    H         0.000     -7.931   -0.767    1.864
+ FYI           C6     C    CR6       0.000     -9.096    0.536    0.637
+ FYI           C1     C    CR16      0.000    -10.156   -0.345    0.525
+ FYI           H1     H    H         0.000    -10.031   -1.381    0.815
+ FYI           C5     C    CR16      0.000     -9.253    1.859    0.267
+ FYI           H4     H    H         0.000     -8.421    2.548    0.355
+ FYI           C4     C    CR16      0.000    -10.469    2.305   -0.213
+ FYI           H3     H    H         0.000    -10.591    3.341   -0.501
+ FYI           C3     C    CR6       0.000    -11.533    1.423   -0.326
+ FYI           C2     C    CR16      0.000    -11.373    0.096    0.045
+ FYI           H2     H    H         0.000    -12.203   -0.595   -0.043
+ FYI           O1     O    O2        0.000    -12.730    1.858   -0.800
+ FYI           P1     P    P         0.000    -13.728    2.400    0.341
+ FYI           O2     O    OP       -0.666    -15.066    2.741   -0.278
+ FYI           O3     O    OP       -0.666    -13.918    1.331    1.395
+ FYI           O4     O    OP       -0.666    -13.138    3.638    0.980
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FYI      O11    n/a    C22    START
+ FYI      C22    O11    C21    .
+ FYI      N4     C22    H35    .
+ FYI      H36    N4     .      .
+ FYI      H35    N4     .      .
+ FYI      C21    C22    C19    .
+ FYI      H33    C21    .      .
+ FYI      H34    C21    .      .
+ FYI      C19    C21    N3     .
+ FYI      H32    C19    .      .
+ FYI      C20    C19    O10    .
+ FYI      N5     C20    H38    .
+ FYI      H39    N5     .      .
+ FYI      H38    N5     .      .
+ FYI      O10    C20    .      .
+ FYI      N3     C19    C14    .
+ FYI      H30    N3     .      .
+ FYI      C14    N3     C13    .
+ FYI      O8     C14    .      .
+ FYI      C13    C14    N2     .
+ FYI      H19    C13    .      .
+ FYI      C15    C13    C16    .
+ FYI      H20    C15    .      .
+ FYI      C17    C15    H23    .
+ FYI      H25    C17    .      .
+ FYI      H24    C17    .      .
+ FYI      H23    C17    .      .
+ FYI      C16    C15    C18    .
+ FYI      H21    C16    .      .
+ FYI      H22    C16    .      .
+ FYI      C18    C16    H26    .
+ FYI      H28    C18    .      .
+ FYI      H27    C18    .      .
+ FYI      H26    C18    .      .
+ FYI      N2     C13    C9     .
+ FYI      H17    N2     .      .
+ FYI      C9     N2     C8     .
+ FYI      O5     C9     .      .
+ FYI      C8     C9     C7     .
+ FYI      H9     C8     .      .
+ FYI      C10    C8     C11    .
+ FYI      H11    C10    .      .
+ FYI      H12    C10    .      .
+ FYI      C11    C10    N1     .
+ FYI      O7     C11    .      .
+ FYI      N1     C11    C12    .
+ FYI      H13    N1     .      .
+ FYI      C12    N1     H14    .
+ FYI      H16    C12    .      .
+ FYI      H15    C12    .      .
+ FYI      H14    C12    .      .
+ FYI      C7     C8     C6     .
+ FYI      H7     C7     .      .
+ FYI      H8     C7     .      .
+ FYI      C6     C7     C5     .
+ FYI      C1     C6     H1     .
+ FYI      H1     C1     .      .
+ FYI      C5     C6     C4     .
+ FYI      H4     C5     .      .
+ FYI      C4     C5     C3     .
+ FYI      H3     C4     .      .
+ FYI      C3     C4     O1     .
+ FYI      C2     C3     H2     .
+ FYI      H2     C2     .      .
+ FYI      O1     C3     P1     .
+ FYI      P1     O1     O4     .
+ FYI      O2     P1     .      .
+ FYI      O3     P1     .      .
+ FYI      O4     P1     .      END
+ FYI      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FYI       C1        C2        single    1.390     0.020     1.390     0.020     
+FYI       C1        C6        double    1.390     0.020     1.390     0.020     
+FYI       H1        C1        single    1.082     0.013     0.975     0.010     
+FYI       C2        C3        double    1.390     0.020     1.390     0.020     
+FYI       H2        C2        single    1.082     0.013     0.975     0.010     
+FYI       C3        C4        single    1.390     0.020     1.390     0.020     
+FYI       O1        C3        single    1.370     0.020     1.370     0.020     
+FYI       C4        C5        double    1.390     0.020     1.390     0.020     
+FYI       H3        C4        single    1.082     0.013     0.975     0.010     
+FYI       C5        C6        single    1.390     0.020     1.390     0.020     
+FYI       H4        C5        single    1.082     0.013     0.975     0.010     
+FYI       C6        C7        single    1.511     0.020     1.511     0.020     
+FYI       P1        O1        single    1.610     0.020     1.610     0.020     
+FYI       O2        P1        deloc     1.510     0.020     1.510     0.020     
+FYI       O3        P1        deloc     1.510     0.020     1.510     0.020     
+FYI       O4        P1        deloc     1.510     0.020     1.510     0.020     
+FYI       C7        C8        single    1.524     0.020     1.524     0.020     
+FYI       H7        C7        single    1.089     0.010     0.989     0.005     
+FYI       H8        C7        single    1.089     0.010     0.989     0.005     
+FYI       C8        C9        single    1.500     0.020     1.500     0.020     
+FYI       C10       C8        single    1.524     0.020     1.524     0.020     
+FYI       H9        C8        single    1.089     0.010     0.989     0.005     
+FYI       O5        C9        double    1.220     0.020     1.220     0.020     
+FYI       C9        N2        single    1.330     0.020     1.330     0.020     
+FYI       C11       C10       single    1.510     0.020     1.510     0.020     
+FYI       H11       C10       single    1.089     0.010     0.989     0.005     
+FYI       H12       C10       single    1.089     0.010     0.989     0.005     
+FYI       N1        C11       single    1.330     0.020     1.330     0.020     
+FYI       O7        C11       double    1.220     0.020     1.220     0.020     
+FYI       C12       N1        single    1.450     0.020     1.450     0.020     
+FYI       H13       N1        single    1.016     0.010     0.899     0.007     
+FYI       H14       C12       single    1.089     0.010     0.989     0.005     
+FYI       H15       C12       single    1.089     0.010     0.989     0.005     
+FYI       H16       C12       single    1.089     0.010     0.989     0.005     
+FYI       N2        C13       single    1.450     0.020     1.450     0.020     
+FYI       H17       N2        single    1.016     0.010     0.899     0.007     
+FYI       C13       C14       single    1.500     0.020     1.500     0.020     
+FYI       C15       C13       single    1.524     0.020     1.524     0.020     
+FYI       H19       C13       single    1.089     0.010     0.989     0.005     
+FYI       O8        C14       double    1.220     0.020     1.220     0.020     
+FYI       C14       N3        single    1.330     0.020     1.330     0.020     
+FYI       C16       C15       single    1.524     0.020     1.524     0.020     
+FYI       C17       C15       single    1.524     0.020     1.524     0.020     
+FYI       H20       C15       single    1.089     0.010     0.989     0.005     
+FYI       C18       C16       single    1.513     0.020     1.513     0.020     
+FYI       H21       C16       single    1.089     0.010     0.989     0.005     
+FYI       H22       C16       single    1.089     0.010     0.989     0.005     
+FYI       H23       C17       single    1.089     0.010     0.989     0.005     
+FYI       H24       C17       single    1.089     0.010     0.989     0.005     
+FYI       H25       C17       single    1.089     0.010     0.989     0.005     
+FYI       H26       C18       single    1.089     0.010     0.989     0.005     
+FYI       H27       C18       single    1.089     0.010     0.989     0.005     
+FYI       H28       C18       single    1.089     0.010     0.989     0.005     
+FYI       N3        C19       single    1.450     0.020     1.450     0.020     
+FYI       H30       N3        single    1.016     0.010     0.899     0.007     
+FYI       C20       C19       single    1.500     0.020     1.500     0.020     
+FYI       C19       C21       single    1.524     0.020     1.524     0.020     
+FYI       H32       C19       single    1.089     0.010     0.989     0.005     
+FYI       O10       C20       double    1.220     0.020     1.220     0.020     
+FYI       N5        C20       single    1.332     0.020     1.332     0.020     
+FYI       C21       C22       single    1.510     0.020     1.510     0.020     
+FYI       H33       C21       single    1.089     0.010     0.989     0.005     
+FYI       H34       C21       single    1.089     0.010     0.989     0.005     
+FYI       C22       O11       double    1.220     0.020     1.220     0.020     
+FYI       N4        C22       single    1.332     0.020     1.332     0.020     
+FYI       H35       N4        single    1.016     0.010     0.899     0.007     
+FYI       H36       N4        single    1.016     0.010     0.899     0.007     
+FYI       H38       N5        single    1.016     0.010     0.899     0.007     
+FYI       H39       N5        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FYI      O11    C22    N4      123.000    3.000
+ FYI      O11    C22    C21     120.500    3.000
+ FYI      N4     C22    C21     116.500    3.000
+ FYI      C22    N4     H36     120.000    3.000
+ FYI      C22    N4     H35     120.000    3.000
+ FYI      H36    N4     H35     120.000    3.000
+ FYI      C22    C21    H33     109.470    3.000
+ FYI      C22    C21    H34     109.470    3.000
+ FYI      C22    C21    C19     109.470    3.000
+ FYI      H33    C21    H34     107.900    3.000
+ FYI      H33    C21    C19     109.470    3.000
+ FYI      H34    C21    C19     109.470    3.000
+ FYI      C21    C19    H32     108.340    3.000
+ FYI      C21    C19    C20     109.470    3.000
+ FYI      C21    C19    N3      110.000    3.000
+ FYI      H32    C19    C20     108.810    3.000
+ FYI      H32    C19    N3      108.550    3.000
+ FYI      C20    C19    N3      111.600    3.000
+ FYI      C19    C20    N5      120.000    3.000
+ FYI      C19    C20    O10     120.500    3.000
+ FYI      N5     C20    O10     123.000    3.000
+ FYI      C20    N5     H39     120.000    3.000
+ FYI      C20    N5     H38     120.000    3.000
+ FYI      H39    N5     H38     120.000    3.000
+ FYI      C19    N3     H30     118.500    3.000
+ FYI      C19    N3     C14     121.500    3.000
+ FYI      H30    N3     C14     120.000    3.000
+ FYI      N3     C14    O8      123.000    3.000
+ FYI      N3     C14    C13     116.500    3.000
+ FYI      O8     C14    C13     120.500    3.000
+ FYI      C14    C13    H19     108.810    3.000
+ FYI      C14    C13    C15     109.470    3.000
+ FYI      C14    C13    N2      111.600    3.000
+ FYI      H19    C13    C15     108.340    3.000
+ FYI      H19    C13    N2      108.550    3.000
+ FYI      C15    C13    N2      110.000    3.000
+ FYI      C13    C15    H20     108.340    3.000
+ FYI      C13    C15    C17     111.000    3.000
+ FYI      C13    C15    C16     111.000    3.000
+ FYI      H20    C15    C17     108.340    3.000
+ FYI      H20    C15    C16     108.340    3.000
+ FYI      C17    C15    C16     111.000    3.000
+ FYI      C15    C17    H25     109.470    3.000
+ FYI      C15    C17    H24     109.470    3.000
+ FYI      C15    C17    H23     109.470    3.000
+ FYI      H25    C17    H24     109.470    3.000
+ FYI      H25    C17    H23     109.470    3.000
+ FYI      H24    C17    H23     109.470    3.000
+ FYI      C15    C16    H21     109.470    3.000
+ FYI      C15    C16    H22     109.470    3.000
+ FYI      C15    C16    C18     111.000    3.000
+ FYI      H21    C16    H22     107.900    3.000
+ FYI      H21    C16    C18     109.470    3.000
+ FYI      H22    C16    C18     109.470    3.000
+ FYI      C16    C18    H28     109.470    3.000
+ FYI      C16    C18    H27     109.470    3.000
+ FYI      C16    C18    H26     109.470    3.000
+ FYI      H28    C18    H27     109.470    3.000
+ FYI      H28    C18    H26     109.470    3.000
+ FYI      H27    C18    H26     109.470    3.000
+ FYI      C13    N2     H17     118.500    3.000
+ FYI      C13    N2     C9      121.500    3.000
+ FYI      H17    N2     C9      120.000    3.000
+ FYI      N2     C9     O5      123.000    3.000
+ FYI      N2     C9     C8      116.500    3.000
+ FYI      O5     C9     C8      120.500    3.000
+ FYI      C9     C8     H9      108.810    3.000
+ FYI      C9     C8     C10     109.470    3.000
+ FYI      C9     C8     C7      109.470    3.000
+ FYI      H9     C8     C10     108.340    3.000
+ FYI      H9     C8     C7      108.340    3.000
+ FYI      C10    C8     C7      109.470    3.000
+ FYI      C8     C10    H11     109.470    3.000
+ FYI      C8     C10    H12     109.470    3.000
+ FYI      C8     C10    C11     109.470    3.000
+ FYI      H11    C10    H12     107.900    3.000
+ FYI      H11    C10    C11     109.470    3.000
+ FYI      H12    C10    C11     109.470    3.000
+ FYI      C10    C11    O7      120.500    3.000
+ FYI      C10    C11    N1      116.500    3.000
+ FYI      O7     C11    N1      123.000    3.000
+ FYI      C11    N1     H13     120.000    3.000
+ FYI      C11    N1     C12     121.500    3.000
+ FYI      H13    N1     C12     118.500    3.000
+ FYI      N1     C12    H16     109.470    3.000
+ FYI      N1     C12    H15     109.470    3.000
+ FYI      N1     C12    H14     109.470    3.000
+ FYI      H16    C12    H15     109.470    3.000
+ FYI      H16    C12    H14     109.470    3.000
+ FYI      H15    C12    H14     109.470    3.000
+ FYI      C8     C7     H7      109.470    3.000
+ FYI      C8     C7     H8      109.470    3.000
+ FYI      C8     C7     C6      109.470    3.000
+ FYI      H7     C7     H8      107.900    3.000
+ FYI      H7     C7     C6      109.470    3.000
+ FYI      H8     C7     C6      109.470    3.000
+ FYI      C7     C6     C1      120.000    3.000
+ FYI      C7     C6     C5      120.000    3.000
+ FYI      C1     C6     C5      120.000    3.000
+ FYI      C6     C1     H1      120.000    3.000
+ FYI      C6     C1     C2      120.000    3.000
+ FYI      H1     C1     C2      120.000    3.000
+ FYI      C6     C5     H4      120.000    3.000
+ FYI      C6     C5     C4      120.000    3.000
+ FYI      H4     C5     C4      120.000    3.000
+ FYI      C5     C4     H3      120.000    3.000
+ FYI      C5     C4     C3      120.000    3.000
+ FYI      H3     C4     C3      120.000    3.000
+ FYI      C4     C3     C2      120.000    3.000
+ FYI      C4     C3     O1      120.000    3.000
+ FYI      C2     C3     O1      120.000    3.000
+ FYI      C3     C2     H2      120.000    3.000
+ FYI      C3     C2     C1      120.000    3.000
+ FYI      H2     C2     C1      120.000    3.000
+ FYI      C3     O1     P1      120.000    3.000
+ FYI      O1     P1     O2      108.200    3.000
+ FYI      O1     P1     O3      108.200    3.000
+ FYI      O1     P1     O4      108.200    3.000
+ FYI      O2     P1     O3      119.900    3.000
+ FYI      O2     P1     O4      119.900    3.000
+ FYI      O3     P1     O4      119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FYI      CONST_1  O11    C22    N4     H35      180.000    0.000   0
+ FYI      var_1    O11    C22    C21    C19       -0.030   20.000   3
+ FYI      var_2    C22    C21    C19    N3       -64.967   20.000   3
+ FYI      var_3    C21    C19    C20    O10      119.997   20.000   3
+ FYI      CONST_2  C19    C20    N5     H38        0.000    0.000   0
+ FYI      var_4    C21    C19    N3     C14      154.960   20.000   3
+ FYI      CONST_3  C19    N3     C14    C13      180.000    0.000   0
+ FYI      var_5    N3     C14    C13    N2       161.139   20.000   3
+ FYI      var_6    C14    C13    C15    C16       65.187   20.000   3
+ FYI      var_7    C13    C15    C17    H23       65.469   20.000   3
+ FYI      var_8    C13    C15    C16    C18       65.793   20.000   3
+ FYI      var_9    C15    C16    C18    H26     -175.763   20.000   3
+ FYI      var_10   C14    C13    N2     C9      -151.378   20.000   3
+ FYI      CONST_4  C13    N2     C9     C8       180.000    0.000   0
+ FYI      var_11   N2     C9     C8     C7       174.648   20.000   3
+ FYI      var_12   C9     C8     C10    C11      -55.053   20.000   3
+ FYI      var_13   C8     C10    C11    N1       175.481   20.000   3
+ FYI      CONST_5  C10    C11    N1     C12      180.000    0.000   0
+ FYI      var_14   C11    N1     C12    H14      -59.966   20.000   1
+ FYI      var_15   C9     C8     C7     C6      -175.014   20.000   3
+ FYI      var_16   C8     C7     C6     C5       -90.022   20.000   2
+ FYI      CONST_6  C7     C6     C1     C2       180.000    0.000   0
+ FYI      CONST_7  C6     C1     C2     C3         0.000    0.000   0
+ FYI      CONST_8  C7     C6     C5     C4       180.000    0.000   0
+ FYI      CONST_9  C6     C5     C4     C3         0.000    0.000   0
+ FYI      CONST_10 C5     C4     C3     O1       180.000    0.000   0
+ FYI      CONST_11 C4     C3     C2     C1         0.000    0.000   0
+ FYI      var_17   C4     C3     O1     P1       -90.013   20.000   1
+ FYI      var_18   C3     O1     P1     O4        65.005   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FYI      chir_01  C8     C7     C9     C10       positiv
+ FYI      chir_02  C13    N2     C14    C15       positiv
+ FYI      chir_03  C15    C13    C16    C17       positiv
+ FYI      chir_04  C19    N3     C20    C21       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FYI      plan-1    C1        0.020
+ FYI      plan-1    C2        0.020
+ FYI      plan-1    C6        0.020
+ FYI      plan-1    H1        0.020
+ FYI      plan-1    C3        0.020
+ FYI      plan-1    C4        0.020
+ FYI      plan-1    C5        0.020
+ FYI      plan-1    H2        0.020
+ FYI      plan-1    O1        0.020
+ FYI      plan-1    H3        0.020
+ FYI      plan-1    H4        0.020
+ FYI      plan-1    C7        0.020
+ FYI      plan-2    C9        0.020
+ FYI      plan-2    C8        0.020
+ FYI      plan-2    O5        0.020
+ FYI      plan-2    N2        0.020
+ FYI      plan-2    H17       0.020
+ FYI      plan-3    C11       0.020
+ FYI      plan-3    C10       0.020
+ FYI      plan-3    N1        0.020
+ FYI      plan-3    O7        0.020
+ FYI      plan-3    H13       0.020
+ FYI      plan-4    N1        0.020
+ FYI      plan-4    C11       0.020
+ FYI      plan-4    C12       0.020
+ FYI      plan-4    H13       0.020
+ FYI      plan-5    N2        0.020
+ FYI      plan-5    C9        0.020
+ FYI      plan-5    C13       0.020
+ FYI      plan-5    H17       0.020
+ FYI      plan-6    C14       0.020
+ FYI      plan-6    C13       0.020
+ FYI      plan-6    O8        0.020
+ FYI      plan-6    N3        0.020
+ FYI      plan-6    H30       0.020
+ FYI      plan-7    N3        0.020
+ FYI      plan-7    C14       0.020
+ FYI      plan-7    C19       0.020
+ FYI      plan-7    H30       0.020
+ FYI      plan-8    C20       0.020
+ FYI      plan-8    C19       0.020
+ FYI      plan-8    O10       0.020
+ FYI      plan-8    N5        0.020
+ FYI      plan-8    H39       0.020
+ FYI      plan-8    H38       0.020
+ FYI      plan-9    C22       0.020
+ FYI      plan-9    C21       0.020
+ FYI      plan-9    O11       0.020
+ FYI      plan-9    N4        0.020
+ FYI      plan-9    H36       0.020
+ FYI      plan-9    H35       0.020
+ FYI      plan-10   N4        0.020
+ FYI      plan-10   C22       0.020
+ FYI      plan-10   H35       0.020
+ FYI      plan-10   H36       0.020
+ FYI      plan-11   N5        0.020
+ FYI      plan-11   C20       0.020
+ FYI      plan-11   H38       0.020
+ FYI      plan-11   H39       0.020
+# ------------------------------------------------------

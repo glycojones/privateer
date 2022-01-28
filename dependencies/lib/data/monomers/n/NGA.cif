@@ -1,0 +1,252 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NGA      NGA 'N-ACETYL-D-GALACTOSAMINE            ' pyranose           30  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NGA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NGA           C1     C    CH1       0.000      0.000    0.000    0.000
+ NGA           H1     H    H         0.000      0.354   -0.188   -1.023
+ NGA           O1     O    OH1       0.000      1.085    0.473    0.800
+ NGA           HO1    H    H         0.000      1.430    1.293    0.422
+ NGA           O5     O    O2        0.000     -1.036    0.985   -0.027
+ NGA           C5     C    CH1       0.000     -2.165    0.622   -0.824
+ NGA           H5     H    H         0.000     -1.841    0.442   -1.859
+ NGA           C6     C    CH2       0.000     -3.192    1.756   -0.801
+ NGA           H61    H    H         0.000     -3.447    1.993    0.234
+ NGA           H62    H    H         0.000     -4.092    1.442   -1.334
+ NGA           O6     O    OH1       0.000     -2.639    2.912   -1.435
+ NGA           HO6    H    H         0.000     -3.288    3.628   -1.419
+ NGA           C4     C    CH1       0.000     -2.800   -0.653   -0.260
+ NGA           H4     H    H         0.000     -3.641   -0.958   -0.898
+ NGA           O4     O    OH1       0.000     -3.270   -0.404    1.066
+ NGA           HO4    H    H         0.000     -3.933    0.299    1.046
+ NGA           C3     C    CH1       0.000     -1.748   -1.766   -0.230
+ NGA           H3     H    H         0.000     -1.423   -1.992   -1.255
+ NGA           O3     O    OH1       0.000     -2.310   -2.938    0.363
+ NGA           HO3    H    H         0.000     -3.068   -3.232   -0.160
+ NGA           C2     C    CH1       0.000     -0.547   -1.298    0.598
+ NGA           H2     H    H         0.000     -0.862   -1.121    1.635
+ NGA           N2     N    NH1       0.000      0.496   -2.327    0.572
+ NGA           HN2    H    H         0.000      0.539   -2.983   -0.194
+ NGA           C7     C    C         0.000      1.397   -2.398    1.572
+ NGA           C8     C    CH3       0.000      2.469   -3.456    1.545
+ NGA           H83    H    H         0.000      3.082   -3.362    2.404
+ NGA           H82    H    H         0.000      2.021   -4.416    1.536
+ NGA           H81    H    H         0.000      3.063   -3.338    0.675
+ NGA           O7     O    O         0.000      1.344   -1.611    2.494
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NGA      C1     n/a    O5     START
+ NGA      H1     C1     .      .
+ NGA      O1     C1     HO1    .
+ NGA      HO1    O1     .      .
+ NGA      O5     C1     .      END
+ NGA      C5     O5     C4     .
+ NGA      H5     C5     .      .
+ NGA      C6     C5     O6     .
+ NGA      H61    C6     .      .
+ NGA      H62    C6     .      .
+ NGA      O6     C6     HO6    .
+ NGA      HO6    O6     .      .
+ NGA      C4     C5     C3     .
+ NGA      H4     C4     .      .
+ NGA      O4     C4     HO4    .
+ NGA      HO4    O4     .      .
+ NGA      C3     C4     C2     .
+ NGA      H3     C3     .      .
+ NGA      O3     C3     HO3    .
+ NGA      HO3    O3     .      .
+ NGA      C2     C3     N2     .
+ NGA      H2     C2     .      .
+ NGA      N2     C2     C7     .
+ NGA      HN2    N2     .      .
+ NGA      C7     N2     O7     .
+ NGA      C8     C7     H81    .
+ NGA      H83    C8     .      .
+ NGA      H82    C8     .      .
+ NGA      H81    C8     .      .
+ NGA      O7     C7     .      .
+ NGA      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NGA       C1        C2        single    1.524     0.020     1.524     0.020     
+NGA       O1        C1        single    1.432     0.020     1.432     0.020     
+NGA       O5        C1        single    1.426     0.020     1.426     0.020     
+NGA       H1        C1        single    1.089     0.010     0.989     0.005     
+NGA       C2        C3        single    1.524     0.020     1.524     0.020     
+NGA       N2        C2        single    1.450     0.020     1.450     0.020     
+NGA       H2        C2        single    1.089     0.010     0.989     0.005     
+NGA       C3        C4        single    1.524     0.020     1.524     0.020     
+NGA       O3        C3        single    1.432     0.020     1.432     0.020     
+NGA       H3        C3        single    1.089     0.010     0.989     0.005     
+NGA       C4        C5        single    1.524     0.020     1.524     0.020     
+NGA       O4        C4        single    1.432     0.020     1.432     0.020     
+NGA       H4        C4        single    1.089     0.010     0.989     0.005     
+NGA       C6        C5        single    1.524     0.020     1.524     0.020     
+NGA       C5        O5        single    1.426     0.020     1.426     0.020     
+NGA       H5        C5        single    1.089     0.010     0.989     0.005     
+NGA       O6        C6        single    1.432     0.020     1.432     0.020     
+NGA       H61       C6        single    1.089     0.010     0.989     0.005     
+NGA       H62       C6        single    1.089     0.010     0.989     0.005     
+NGA       C8        C7        single    1.500     0.020     1.500     0.020     
+NGA       C7        N2        single    1.330     0.020     1.330     0.020     
+NGA       O7        C7        double    1.220     0.020     1.220     0.020     
+NGA       H81       C8        single    1.089     0.010     0.989     0.005     
+NGA       H82       C8        single    1.089     0.010     0.989     0.005     
+NGA       H83       C8        single    1.089     0.010     0.989     0.005     
+NGA       HN2       N2        single    1.016     0.010     0.899     0.007     
+NGA       HO1       O1        single    0.970     0.012     0.839     0.014     
+NGA       HO3       O3        single    0.970     0.012     0.839     0.014     
+NGA       HO4       O4        single    0.970     0.012     0.839     0.014     
+NGA       HO6       O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NGA      H1     C1     O1      109.470    3.000
+ NGA      H1     C1     O5      109.470    3.000
+ NGA      O1     C1     O5      109.470    3.000
+ NGA      H1     C1     C2      108.340    3.000
+ NGA      O1     C1     C2      109.470    3.000
+ NGA      O5     C1     C2      109.470    3.000
+ NGA      C1     O1     HO1     109.470    3.000
+ NGA      C1     O5     C5      111.800    3.000
+ NGA      O5     C5     H5      109.470    3.000
+ NGA      O5     C5     C6      109.470    3.000
+ NGA      O5     C5     C4      109.470    3.000
+ NGA      H5     C5     C6      108.340    3.000
+ NGA      H5     C5     C4      108.340    3.000
+ NGA      C6     C5     C4      111.000    3.000
+ NGA      C5     C6     H61     109.470    3.000
+ NGA      C5     C6     H62     109.470    3.000
+ NGA      C5     C6     O6      109.470    3.000
+ NGA      H61    C6     H62     107.900    3.000
+ NGA      H61    C6     O6      109.470    3.000
+ NGA      H62    C6     O6      109.470    3.000
+ NGA      C6     O6     HO6     109.470    3.000
+ NGA      C5     C4     H4      108.340    3.000
+ NGA      C5     C4     O4      109.470    3.000
+ NGA      C5     C4     C3      111.000    3.000
+ NGA      H4     C4     O4      109.470    3.000
+ NGA      H4     C4     C3      108.340    3.000
+ NGA      O4     C4     C3      109.470    3.000
+ NGA      C4     O4     HO4     109.470    3.000
+ NGA      C4     C3     H3      108.340    3.000
+ NGA      C4     C3     O3      109.470    3.000
+ NGA      C4     C3     C2      111.000    3.000
+ NGA      H3     C3     O3      109.470    3.000
+ NGA      H3     C3     C2      108.340    3.000
+ NGA      O3     C3     C2      109.470    3.000
+ NGA      C3     O3     HO3     109.470    3.000
+ NGA      C3     C2     H2      108.340    3.000
+ NGA      C3     C2     N2      110.000    3.000
+ NGA      C3     C2     C1      111.000    3.000
+ NGA      H2     C2     N2      108.550    3.000
+ NGA      H2     C2     C1      108.340    3.000
+ NGA      N2     C2     C1      110.000    3.000
+ NGA      C2     N2     HN2     118.500    3.000
+ NGA      C2     N2     C7      121.500    3.000
+ NGA      HN2    N2     C7      120.000    3.000
+ NGA      N2     C7     C8      116.500    3.000
+ NGA      N2     C7     O7      123.000    3.000
+ NGA      C8     C7     O7      123.000    3.000
+ NGA      C7     C8     H83     109.470    3.000
+ NGA      C7     C8     H82     109.470    3.000
+ NGA      C7     C8     H81     109.470    3.000
+ NGA      H83    C8     H82     109.470    3.000
+ NGA      H83    C8     H81     109.470    3.000
+ NGA      H82    C8     H81     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NGA      var_1    O5     C1     O1     HO1      -60.084   20.000   1
+ NGA      var_2    C1     O5     C5     C4        60.000   20.000   1
+ NGA      var_3    O5     C5     C6     O6        65.072   20.000   3
+ NGA      var_4    C5     C6     O6     HO6     -179.973   20.000   1
+ NGA      var_5    O5     C5     C4     C3       -60.000   20.000   3
+ NGA      var_6    C5     C4     O4     HO4       60.270   20.000   1
+ NGA      var_7    C5     C4     C3     C2        60.000   20.000   3
+ NGA      var_8    C4     C3     O3     HO3       60.399   20.000   1
+ NGA      var_9    C4     C3     C2     N2       180.000   20.000   3
+ NGA      var_10   C3     C2     C1     O5        60.000   20.000   3
+ NGA      var_11   C3     C2     N2     C7      -155.341   20.000   3
+ NGA      CONST_1  C2     N2     C7     O7         0.000    0.000   0
+ NGA      var_12   N2     C7     C8     H81       60.037   20.000   1
+ NGA      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NGA      chir_01  C1     C2     O1     O5        positiv
+ NGA      chir_02  C2     C1     C3     N2        negativ
+ NGA      chir_03  C3     C2     C4     O3        positiv
+ NGA      chir_04  C4     C3     C5     O4        positiv
+ NGA      chir_05  C5     C4     C6     O5        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NGA      plan-1    C7        0.020
+ NGA      plan-1    C8        0.020
+ NGA      plan-1    N2        0.020
+ NGA      plan-1    O7        0.020
+ NGA      plan-1    HN2       0.020
+ NGA      plan-2    N2        0.020
+ NGA      plan-2    C2        0.020
+ NGA      plan-2    C7        0.020
+ NGA      plan-2    HN2       0.020
+# ------------------------------------------------------

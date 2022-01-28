@@ -1,0 +1,204 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TTL     TTL      "TRANS-(1S,2S)-2-AMINO-1,2,3,4-TETRAHYDRONAPHTHALEN-1-OL"     NON-POLYMER     25     12     .     
+#
+data_comp_TTL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TTL     OAB     O       OH1     0       29.865      46.132      17.698      
+TTL     CAL     C       CH1     0       28.851      45.255      18.198      
+TTL     CAJ     C       CR66    0       28.271      44.431      17.057      
+TTL     CAF     C       CR16    0       27.874      45.070      15.869      
+TTL     CAD     C       CR16    0       27.334      44.342      14.817      
+TTL     CAC     C       CR16    0       27.172      42.970      14.933      
+TTL     CAE     C       CR16    0       27.549      42.326      16.100      
+TTL     CAI     C       CR66    0       28.095      43.040      17.179      
+TTL     CAG     C       CH2     0       28.499      42.302      18.436      
+TTL     CAH     C       CH2     0       28.583      43.204      19.655      
+TTL     CAK     C       CH1     0       29.449      44.437      19.365      
+TTL     NAA     N       NT2     0       29.612      45.249      20.580      
+TTL     HAB     H       H       0       29.927      46.807      18.208      
+TTL     HAL     H       H       0       28.126      45.819      18.563      
+TTL     HAF     H       H       0       27.982      46.005      15.782      
+TTL     HAD     H       H       0       27.078      44.782      14.022      
+TTL     HAC     H       H       0       26.804      42.475      14.218      
+TTL     HAE     H       H       0       27.437      41.390      16.175      
+TTL     HAG1    H       H       0       29.368      41.880      18.289      
+TTL     HAG2    H       H       0       27.849      41.592      18.608      
+TTL     HAH1    H       H       0       28.969      42.705      20.406      
+TTL     HAH2    H       H       0       27.681      43.493      19.912      
+TTL     HAK     H       H       0       30.338      44.119      19.089      
+TTL     HAA1    H       H       0       28.826      45.573      20.840      
+TTL     HAA2    H       H       0       30.164      45.928      20.423      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TTL       OAB       CAL       SINGLE    n         1.429     0.013     1.429     0.013     
+TTL       CAL       CAJ       SINGLE    n         1.515     0.010     1.515     0.010     
+TTL       CAL       CAK       SINGLE    n         1.535     0.014     1.535     0.014     
+TTL       CAJ       CAF       SINGLE    y         1.397     0.010     1.397     0.010     
+TTL       CAJ       CAI       DOUBLE    y         1.395     0.010     1.395     0.010     
+TTL       CAF       CAD       DOUBLE    y         1.382     0.010     1.382     0.010     
+TTL       CAD       CAC       SINGLE    y         1.380     0.011     1.380     0.011     
+TTL       CAC       CAE       DOUBLE    y         1.379     0.010     1.379     0.010     
+TTL       CAE       CAI       SINGLE    y         1.397     0.010     1.397     0.010     
+TTL       CAI       CAG       SINGLE    n         1.509     0.010     1.509     0.010     
+TTL       CAG       CAH       SINGLE    n         1.515     0.014     1.515     0.014     
+TTL       CAH       CAK       SINGLE    n         1.532     0.011     1.532     0.011     
+TTL       CAK       NAA       SINGLE    n         1.470     0.012     1.470     0.012     
+TTL       OAB       HAB       SINGLE    n         0.970     0.012     0.848     0.020     
+TTL       CAL       HAL       SINGLE    n         1.089     0.010     0.988     0.018     
+TTL       CAF       HAF       SINGLE    n         1.082     0.013     0.945     0.012     
+TTL       CAD       HAD       SINGLE    n         1.082     0.013     0.944     0.018     
+TTL       CAC       HAC       SINGLE    n         1.082     0.013     0.944     0.018     
+TTL       CAE       HAE       SINGLE    n         1.082     0.013     0.946     0.018     
+TTL       CAG       HAG1      SINGLE    n         1.089     0.010     0.978     0.020     
+TTL       CAG       HAG2      SINGLE    n         1.089     0.010     0.978     0.020     
+TTL       CAH       HAH1      SINGLE    n         1.089     0.010     0.981     0.017     
+TTL       CAH       HAH2      SINGLE    n         1.089     0.010     0.981     0.017     
+TTL       CAK       HAK       SINGLE    n         1.089     0.010     0.984     0.016     
+TTL       NAA       HAA1      SINGLE    n         1.036     0.016     0.889     0.020     
+TTL       NAA       HAA2      SINGLE    n         1.036     0.016     0.889     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TTL         CAL         OAB         HAB     109.049    2.00
+TTL         OAB         CAL         CAJ     110.370    1.69
+TTL         OAB         CAL         CAK     109.623    1.50
+TTL         OAB         CAL         HAL     108.332    1.88
+TTL         CAJ         CAL         CAK     111.494    2.27
+TTL         CAJ         CAL         HAL     108.618    1.50
+TTL         CAK         CAL         HAL     108.550    1.50
+TTL         CAL         CAJ         CAF     120.197    1.57
+TTL         CAL         CAJ         CAI     120.318    1.50
+TTL         CAF         CAJ         CAI     119.484    1.50
+TTL         CAJ         CAF         CAD     120.406    1.50
+TTL         CAJ         CAF         HAF     119.765    1.50
+TTL         CAD         CAF         HAF     119.832    1.50
+TTL         CAF         CAD         CAC     120.111    1.50
+TTL         CAF         CAD         HAD     119.907    1.50
+TTL         CAC         CAD         HAD     119.981    1.50
+TTL         CAD         CAC         CAE     120.111    1.50
+TTL         CAD         CAC         HAC     119.981    1.50
+TTL         CAE         CAC         HAC     119.907    1.50
+TTL         CAC         CAE         CAI     121.037    1.50
+TTL         CAC         CAE         HAE     119.693    1.50
+TTL         CAI         CAE         HAE     119.271    1.50
+TTL         CAJ         CAI         CAE     118.849    1.50
+TTL         CAJ         CAI         CAG     120.682    1.50
+TTL         CAE         CAI         CAG     120.469    1.50
+TTL         CAI         CAG         CAH     112.163    1.82
+TTL         CAI         CAG        HAG1     109.040    1.50
+TTL         CAI         CAG        HAG2     109.040    1.50
+TTL         CAH         CAG        HAG1     109.341    1.50
+TTL         CAH         CAG        HAG2     109.341    1.50
+TTL        HAG1         CAG        HAG2     107.825    1.50
+TTL         CAG         CAH         CAK     111.123    1.86
+TTL         CAG         CAH        HAH1     109.451    1.50
+TTL         CAG         CAH        HAH2     109.451    1.50
+TTL         CAK         CAH        HAH1     109.341    1.50
+TTL         CAK         CAH        HAH2     109.341    1.50
+TTL        HAH1         CAH        HAH2     108.019    1.50
+TTL         CAL         CAK         CAH     109.360    1.50
+TTL         CAL         CAK         NAA     111.865    2.42
+TTL         CAL         CAK         HAK     108.026    1.50
+TTL         CAH         CAK         NAA     110.671    1.99
+TTL         CAH         CAK         HAK     107.655    1.50
+TTL         NAA         CAK         HAK     108.113    1.50
+TTL         CAK         NAA        HAA1     109.984    3.00
+TTL         CAK         NAA        HAA2     109.984    3.00
+TTL        HAA1         NAA        HAA2     108.673    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TTL            sp3_sp3_19         CAJ         CAL         OAB         HAB     180.000   10.00     3
+TTL            sp3_sp3_33         CAL         CAK         NAA        HAA1      60.000   10.00     3
+TTL            sp3_sp3_30         NAA         CAK         CAL         OAB     180.000   10.00     3
+TTL             sp2_sp3_5         CAF         CAJ         CAL         OAB     -60.000   10.00     6
+TTL       const_sp2_sp2_2         CAD         CAF         CAJ         CAL     180.000   10.00     2
+TTL              const_22         CAE         CAI         CAJ         CAL     180.000   10.00     2
+TTL       const_sp2_sp2_5         CAC         CAD         CAF         CAJ       0.000   10.00     2
+TTL       const_sp2_sp2_9         CAE         CAC         CAD         CAF       0.000   10.00     2
+TTL              const_13         CAD         CAC         CAE         CAI       0.000   10.00     2
+TTL              const_17         CAC         CAE         CAI         CAJ       0.000   10.00     2
+TTL             sp2_sp3_7         CAJ         CAI         CAG         CAH       0.000   10.00     6
+TTL             sp3_sp3_1         CAI         CAG         CAH         CAK     -60.000   10.00     3
+TTL            sp3_sp3_11         CAG         CAH         CAK         NAA     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+TTL    chir_1    CAL    OAB    CAK    CAJ    both
+TTL    chir_2    CAK    NAA    CAL    CAH    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TTL    plan-1         CAC   0.020
+TTL    plan-1         CAD   0.020
+TTL    plan-1         CAE   0.020
+TTL    plan-1         CAF   0.020
+TTL    plan-1         CAG   0.020
+TTL    plan-1         CAI   0.020
+TTL    plan-1         CAJ   0.020
+TTL    plan-1         CAL   0.020
+TTL    plan-1         HAC   0.020
+TTL    plan-1         HAD   0.020
+TTL    plan-1         HAE   0.020
+TTL    plan-1         HAF   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TTL SMILES           ACDLabs              10.04 OC2c1ccccc1CCC2N
+TTL SMILES_CANONICAL CACTVS               3.341 "N[C@H]1CCc2ccccc2[C@@H]1O"
+TTL SMILES           CACTVS               3.341 "N[CH]1CCc2ccccc2[CH]1O"
+TTL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)CC[C@@H]([C@H]2O)N"
+TTL SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)CCC(C2O)N"
+TTL InChI            InChI                1.03  "InChI=1S/C10H13NO/c11-9-6-5-7-3-1-2-4-8(7)10(9)12/h1-4,9-10,12H,5-6,11H2/t9-,10-/m0/s1"
+TTL InChIKey         InChI                1.03  IIMSEFZOOYSTDO-UWVGGRQHSA-N
+TTL ?                acedrg               202         "dictionary generator"                  
+TTL ?                acedrg_database      11          "data source"                           
+TTL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TTL ?                refmac5              5.8.0189    "optimization tool"                     

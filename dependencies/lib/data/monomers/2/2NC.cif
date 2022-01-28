@@ -1,0 +1,805 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2NC      2NC 'N-{(2S)-2-[(N-acetyl-L-threonyl-L-is' non-polymer       122  54 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_2NC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 2NC           O5     O    O         0.000      0.000    0.000    0.000
+ 2NC           C6     C    C         0.000      0.025    1.082   -0.546
+ 2NC           N6     N    NH2       0.000      1.136    1.486   -1.193
+ 2NC           HN2    H    H         0.000      1.953    0.889   -1.225
+ 2NC           HN1    H    H         0.000      1.161    2.389   -1.650
+ 2NC           CA5    C    CH1       0.000     -1.189    1.977   -0.503
+ 2NC           HA5    H    H         0.000     -1.534    2.175   -1.527
+ 2NC           CB5    C    CH2       0.000     -0.825    3.297    0.178
+ 2NC           HB23   H    H         0.000      0.030    3.746   -0.333
+ 2NC           HB33   H    H         0.000     -0.565    3.108    1.222
+ 2NC           CG5    C    CH2       0.000     -2.019    4.251    0.112
+ 2NC           HG29   H    H         0.000     -2.872    3.800    0.623
+ 2NC           HG33   H    H         0.000     -2.278    4.437   -0.933
+ 2NC           CD4    C    CH2       0.000     -1.655    5.573    0.792
+ 2NC           HD22   H    H         0.000     -0.801    6.021    0.280
+ 2NC           HD32   H    H         0.000     -1.395    5.384    1.835
+ 2NC           NE     N    NH1       0.000     -2.798    6.486    0.728
+ 2NC           HE     H    H         0.000     -3.655    6.193    0.280
+ 2NC           CZ     C    C         0.000     -2.706    7.736    1.276
+ 2NC           NH2    N    NH2       1.000     -3.746    8.567    1.217
+ 2NC           HH22   H    H         0.000     -4.602    8.274    0.768
+ 2NC           HH21   H    H         0.000     -3.679    9.490    1.622
+ 2NC           NH1    N    NH2       0.000     -1.577    8.123    1.867
+ 2NC           HH12   H    H         0.000     -1.509    9.046    2.271
+ 2NC           HH11   H    H         0.000     -0.787    7.494    1.910
+ 2NC           N5     N    NH1       0.000     -2.255    1.315    0.253
+ 2NC           H8     H    H         0.000     -2.374    1.512    1.236
+ 2NC           C5     C    C         0.000     -3.079    0.445   -0.364
+ 2NC           O4     O    O         0.000     -2.936    0.209   -1.545
+ 2NC           CA4    C    CH1       0.000     -4.176   -0.235    0.414
+ 2NC           HA4    H    H         0.000     -4.854    0.523    0.830
+ 2NC           CB4    C    CH2       0.000     -3.563   -1.052    1.553
+ 2NC           HB22   H    H         0.000     -2.930   -0.405    2.164
+ 2NC           HB32   H    H         0.000     -2.960   -1.860    1.136
+ 2NC           CG4    C    CH2       0.000     -4.680   -1.640    2.418
+ 2NC           HG28   H    H         0.000     -5.312   -2.286    1.805
+ 2NC           HG32   H    H         0.000     -5.283   -0.829    2.832
+ 2NC           CD3    C    C         0.000     -4.076   -2.443    3.541
+ 2NC           NE2    N    NH2       0.000     -4.875   -3.059    4.434
+ 2NC           HE23   H    H         0.000     -4.475   -3.600    5.190
+ 2NC           HE22   H    H         0.000     -5.883   -2.984    4.354
+ 2NC           OE1    O    O         0.000     -2.871   -2.535    3.640
+ 2NC           N4     N    NH1       0.000     -4.925   -1.126   -0.476
+ 2NC           H7     H    H         0.000     -4.484   -1.501   -1.303
+ 2NC           C4     C    C         0.000     -6.203   -1.445   -0.190
+ 2NC           O3     O    O         0.000     -6.733   -0.995    0.804
+ 2NC           CA3    C    CH1       0.000     -6.974   -2.361   -1.106
+ 2NC           HA3    H    H         0.000     -6.464   -3.333   -1.165
+ 2NC           CB3    C    CH2       0.000     -7.052   -1.739   -2.502
+ 2NC           HB21   H    H         0.000     -7.670   -2.368   -3.145
+ 2NC           HB31   H    H         0.000     -6.047   -1.666   -2.923
+ 2NC           CG3    C    CH2       0.000     -7.669   -0.343   -2.405
+ 2NC           HG27   H    H         0.000     -7.092    0.262   -1.702
+ 2NC           HG31   H    H         0.000     -8.699   -0.424   -2.052
+ 2NC           CD2    C    CH2       0.000     -7.652    0.320   -3.784
+ 2NC           HD21   H    H         0.000     -8.228   -0.286   -4.485
+ 2NC           HD31   H    H         0.000     -6.621    0.400   -4.135
+ 2NC           CE1    C    CH3       0.000     -8.269    1.716   -3.687
+ 2NC           HE31   H    H         0.000     -7.711    2.307   -3.006
+ 2NC           HE21   H    H         0.000     -8.258    2.178   -4.641
+ 2NC           HE11   H    H         0.000     -9.270    1.641   -3.345
+ 2NC           N3     N    NH1       0.000     -8.332   -2.551   -0.578
+ 2NC           H6     H    H         0.000     -8.814   -1.889    0.012
+ 2NC           C3     C    CH2       0.000     -8.895   -3.833   -1.022
+ 2NC           HC31   H    H         0.000     -8.314   -4.653   -0.595
+ 2NC           HC32   H    H         0.000     -8.854   -3.890   -2.112
+ 2NC           CA2    C    CH1       0.000    -10.349   -3.940   -0.558
+ 2NC           HA2    H    H         0.000    -10.381   -3.973    0.540
+ 2NC           CB2    C    CH2       0.000    -10.972   -5.217   -1.125
+ 2NC           HB2    H    H         0.000    -10.359   -6.076   -0.844
+ 2NC           HB3    H    H         0.000    -11.019   -5.146   -2.214
+ 2NC           CG     C    CH2       0.000    -12.384   -5.389   -0.561
+ 2NC           HG2    H    H         0.000    -12.995   -4.529   -0.842
+ 2NC           HG3    H    H         0.000    -12.335   -5.459    0.527
+ 2NC           CD     C    CH2       0.000    -13.007   -6.666   -1.129
+ 2NC           HD2    H    H         0.000    -12.395   -7.525   -0.847
+ 2NC           HD3    H    H         0.000    -13.054   -6.595   -2.217
+ 2NC           CE     C    CH3       0.000    -14.420   -6.837   -0.565
+ 2NC           HE3    H    H         0.000    -15.017   -6.004   -0.836
+ 2NC           HE2    H    H         0.000    -14.856   -7.721   -0.957
+ 2NC           HE1    H    H         0.000    -14.377   -6.907    0.492
+ 2NC           N2     N    NH1       0.000    -11.100   -2.777   -1.034
+ 2NC           H5     H    H         0.000    -10.790   -2.277   -1.855
+ 2NC           C2     C    C         0.000    -12.206   -2.373   -0.378
+ 2NC           O2     O    O         0.000    -12.524   -2.912    0.662
+ 2NC           CA1    C    CH1       0.000    -13.047   -1.255   -0.935
+ 2NC           HA1    H    H         0.000    -13.381   -1.517   -1.949
+ 2NC           CB1    C    CH1       0.000    -12.217    0.029   -0.988
+ 2NC           HB1    H    H         0.000    -11.294   -0.154   -1.556
+ 2NC           CG21   C    CH3       0.000    -13.027    1.133   -1.672
+ 2NC           HG26   H    H         0.000    -12.418    1.989   -1.805
+ 2NC           HG25   H    H         0.000    -13.365    0.791   -2.617
+ 2NC           HG24   H    H         0.000    -13.862    1.385   -1.071
+ 2NC           CG1    C    CH2       0.000    -11.861    0.466    0.435
+ 2NC           HG12   H    H         0.000    -12.770    0.511    1.039
+ 2NC           HG13   H    H         0.000    -11.395    1.453    0.407
+ 2NC           CD1    C    CH3       0.000    -10.889   -0.542    1.050
+ 2NC           HD13   H    H         0.000    -10.127   -0.775    0.350
+ 2NC           HD12   H    H         0.000    -10.449   -0.127    1.921
+ 2NC           HD11   H    H         0.000    -11.410   -1.428    1.309
+ 2NC           N1     N    NH1       0.000    -14.215   -1.047   -0.074
+ 2NC           H4     H    H         0.000    -14.130   -1.151    0.927
+ 2NC           C1     C    C         0.000    -15.402   -0.716   -0.619
+ 2NC           O1     O    O         0.000    -15.486   -0.508   -1.811
+ 2NC           CA     C    CH1       0.000    -16.627   -0.606    0.253
+ 2NC           HA     H    H         0.000    -16.462    0.165    1.019
+ 2NC           CB     C    CH1       0.000    -16.892   -1.951    0.932
+ 2NC           HB     H    H         0.000    -16.066   -2.184    1.619
+ 2NC           CG2    C    CH3       0.000    -18.203   -1.876    1.719
+ 2NC           HG23   H    H         0.000    -18.388   -2.807    2.189
+ 2NC           HG22   H    H         0.000    -18.131   -1.117    2.455
+ 2NC           HG21   H    H         0.000    -19.000   -1.650    1.058
+ 2NC           OG1    O    OH1       0.000    -16.990   -2.974   -0.061
+ 2NC           HG1    H    H         0.000    -17.158   -3.823    0.368
+ 2NC           N      N    NH1       0.000    -17.781   -0.238   -0.570
+ 2NC           H      H    H         0.000    -17.791   -0.460   -1.555
+ 2NC           C      C    C         0.000    -18.831    0.398   -0.012
+ 2NC           O      O    O         0.000    -18.820    0.664    1.171
+ 2NC           CH3    C    CH3       0.000    -20.016    0.782   -0.860
+ 2NC           H3     H    H         0.000    -19.702    1.432   -1.635
+ 2NC           H2     H    H         0.000    -20.445   -0.089   -1.284
+ 2NC           H1     H    H         0.000    -20.738    1.273   -0.260
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 2NC      O5     n/a    C6     START
+ 2NC      C6     O5     CA5    .
+ 2NC      N6     C6     HN1    .
+ 2NC      HN2    N6     .      .
+ 2NC      HN1    N6     .      .
+ 2NC      CA5    C6     N5     .
+ 2NC      HA5    CA5    .      .
+ 2NC      CB5    CA5    CG5    .
+ 2NC      HB23   CB5    .      .
+ 2NC      HB33   CB5    .      .
+ 2NC      CG5    CB5    CD4    .
+ 2NC      HG29   CG5    .      .
+ 2NC      HG33   CG5    .      .
+ 2NC      CD4    CG5    NE     .
+ 2NC      HD22   CD4    .      .
+ 2NC      HD32   CD4    .      .
+ 2NC      NE     CD4    CZ     .
+ 2NC      HE     NE     .      .
+ 2NC      CZ     NE     NH1    .
+ 2NC      NH2    CZ     HH21   .
+ 2NC      HH22   NH2    .      .
+ 2NC      HH21   NH2    .      .
+ 2NC      NH1    CZ     HH11   .
+ 2NC      HH12   NH1    .      .
+ 2NC      HH11   NH1    .      .
+ 2NC      N5     CA5    C5     .
+ 2NC      H8     N5     .      .
+ 2NC      C5     N5     CA4    .
+ 2NC      O4     C5     .      .
+ 2NC      CA4    C5     N4     .
+ 2NC      HA4    CA4    .      .
+ 2NC      CB4    CA4    CG4    .
+ 2NC      HB22   CB4    .      .
+ 2NC      HB32   CB4    .      .
+ 2NC      CG4    CB4    CD3    .
+ 2NC      HG28   CG4    .      .
+ 2NC      HG32   CG4    .      .
+ 2NC      CD3    CG4    OE1    .
+ 2NC      NE2    CD3    HE22   .
+ 2NC      HE23   NE2    .      .
+ 2NC      HE22   NE2    .      .
+ 2NC      OE1    CD3    .      .
+ 2NC      N4     CA4    C4     .
+ 2NC      H7     N4     .      .
+ 2NC      C4     N4     CA3    .
+ 2NC      O3     C4     .      .
+ 2NC      CA3    C4     N3     .
+ 2NC      HA3    CA3    .      .
+ 2NC      CB3    CA3    CG3    .
+ 2NC      HB21   CB3    .      .
+ 2NC      HB31   CB3    .      .
+ 2NC      CG3    CB3    CD2    .
+ 2NC      HG27   CG3    .      .
+ 2NC      HG31   CG3    .      .
+ 2NC      CD2    CG3    CE1    .
+ 2NC      HD21   CD2    .      .
+ 2NC      HD31   CD2    .      .
+ 2NC      CE1    CD2    HE11   .
+ 2NC      HE31   CE1    .      .
+ 2NC      HE21   CE1    .      .
+ 2NC      HE11   CE1    .      .
+ 2NC      N3     CA3    C3     .
+ 2NC      H6     N3     .      .
+ 2NC      C3     N3     CA2    .
+ 2NC      HC31   C3     .      .
+ 2NC      HC32   C3     .      .
+ 2NC      CA2    C3     N2     .
+ 2NC      HA2    CA2    .      .
+ 2NC      CB2    CA2    CG     .
+ 2NC      HB2    CB2    .      .
+ 2NC      HB3    CB2    .      .
+ 2NC      CG     CB2    CD     .
+ 2NC      HG2    CG     .      .
+ 2NC      HG3    CG     .      .
+ 2NC      CD     CG     CE     .
+ 2NC      HD2    CD     .      .
+ 2NC      HD3    CD     .      .
+ 2NC      CE     CD     HE1    .
+ 2NC      HE3    CE     .      .
+ 2NC      HE2    CE     .      .
+ 2NC      HE1    CE     .      .
+ 2NC      N2     CA2    C2     .
+ 2NC      H5     N2     .      .
+ 2NC      C2     N2     CA1    .
+ 2NC      O2     C2     .      .
+ 2NC      CA1    C2     N1     .
+ 2NC      HA1    CA1    .      .
+ 2NC      CB1    CA1    CG1    .
+ 2NC      HB1    CB1    .      .
+ 2NC      CG21   CB1    HG24   .
+ 2NC      HG26   CG21   .      .
+ 2NC      HG25   CG21   .      .
+ 2NC      HG24   CG21   .      .
+ 2NC      CG1    CB1    CD1    .
+ 2NC      HG12   CG1    .      .
+ 2NC      HG13   CG1    .      .
+ 2NC      CD1    CG1    HD11   .
+ 2NC      HD13   CD1    .      .
+ 2NC      HD12   CD1    .      .
+ 2NC      HD11   CD1    .      .
+ 2NC      N1     CA1    C1     .
+ 2NC      H4     N1     .      .
+ 2NC      C1     N1     CA     .
+ 2NC      O1     C1     .      .
+ 2NC      CA     C1     N      .
+ 2NC      HA     CA     .      .
+ 2NC      CB     CA     OG1    .
+ 2NC      HB     CB     .      .
+ 2NC      CG2    CB     HG21   .
+ 2NC      HG23   CG2    .      .
+ 2NC      HG22   CG2    .      .
+ 2NC      HG21   CG2    .      .
+ 2NC      OG1    CB     HG1    .
+ 2NC      HG1    OG1    .      .
+ 2NC      N      CA     C      .
+ 2NC      H      N      .      .
+ 2NC      C      N      CH3    .
+ 2NC      O      C      .      .
+ 2NC      CH3    C      H1     .
+ 2NC      H3     CH3    .      .
+ 2NC      H2     CH3    .      .
+ 2NC      H1     CH3    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2NC       O         C         double    1.220     0.020     1.220     0.020     
+2NC       CH3       C         single    1.500     0.020     1.500     0.020     
+2NC       H1        CH3       single    1.089     0.010     0.989     0.005     
+2NC       H2        CH3       single    1.089     0.010     0.989     0.005     
+2NC       H3        CH3       single    1.089     0.010     0.989     0.005     
+2NC       N         CA        single    1.450     0.020     1.450     0.020     
+2NC       H         N         single    1.016     0.010     0.899     0.007     
+2NC       CA        C1        single    1.500     0.020     1.500     0.020     
+2NC       CB        CA        single    1.524     0.020     1.524     0.020     
+2NC       HA        CA        single    1.089     0.010     0.989     0.005     
+2NC       O1        C1        double    1.220     0.020     1.220     0.020     
+2NC       OG1       CB        single    1.432     0.020     1.432     0.020     
+2NC       CG2       CB        single    1.524     0.020     1.524     0.020     
+2NC       HB        CB        single    1.089     0.010     0.989     0.005     
+2NC       HG1       OG1       single    0.970     0.012     0.839     0.014     
+2NC       HG21      CG2       single    1.089     0.010     0.989     0.005     
+2NC       HG22      CG2       single    1.089     0.010     0.989     0.005     
+2NC       HG23      CG2       single    1.089     0.010     0.989     0.005     
+2NC       N1        CA1       single    1.450     0.020     1.450     0.020     
+2NC       H4        N1        single    1.016     0.010     0.899     0.007     
+2NC       CA1       C2        single    1.500     0.020     1.500     0.020     
+2NC       CB1       CA1       single    1.524     0.020     1.524     0.020     
+2NC       HA1       CA1       single    1.089     0.010     0.989     0.005     
+2NC       O2        C2        double    1.220     0.020     1.220     0.020     
+2NC       CG1       CB1       single    1.524     0.020     1.524     0.020     
+2NC       CG21      CB1       single    1.524     0.020     1.524     0.020     
+2NC       HB1       CB1       single    1.089     0.010     0.989     0.005     
+2NC       CD1       CG1       single    1.513     0.020     1.513     0.020     
+2NC       HG12      CG1       single    1.089     0.010     0.989     0.005     
+2NC       HG13      CG1       single    1.089     0.010     0.989     0.005     
+2NC       HG24      CG21      single    1.089     0.010     0.989     0.005     
+2NC       HG25      CG21      single    1.089     0.010     0.989     0.005     
+2NC       HG26      CG21      single    1.089     0.010     0.989     0.005     
+2NC       HD11      CD1       single    1.089     0.010     0.989     0.005     
+2NC       HD12      CD1       single    1.089     0.010     0.989     0.005     
+2NC       HD13      CD1       single    1.089     0.010     0.989     0.005     
+2NC       N2        CA2       single    1.450     0.020     1.450     0.020     
+2NC       H5        N2        single    1.016     0.010     0.899     0.007     
+2NC       CA2       C3        single    1.524     0.020     1.524     0.020     
+2NC       CB2       CA2       single    1.524     0.020     1.524     0.020     
+2NC       HA2       CA2       single    1.089     0.010     0.989     0.005     
+2NC       CG        CB2       single    1.524     0.020     1.524     0.020     
+2NC       HB2       CB2       single    1.089     0.010     0.989     0.005     
+2NC       HB3       CB2       single    1.089     0.010     0.989     0.005     
+2NC       CD        CG        single    1.524     0.020     1.524     0.020     
+2NC       HG2       CG        single    1.089     0.010     0.989     0.005     
+2NC       HG3       CG        single    1.089     0.010     0.989     0.005     
+2NC       CE        CD        single    1.513     0.020     1.513     0.020     
+2NC       HD2       CD        single    1.089     0.010     0.989     0.005     
+2NC       HD3       CD        single    1.089     0.010     0.989     0.005     
+2NC       HE1       CE        single    1.089     0.010     0.989     0.005     
+2NC       HE2       CE        single    1.089     0.010     0.989     0.005     
+2NC       HE3       CE        single    1.089     0.010     0.989     0.005     
+2NC       N3        CA3       single    1.450     0.020     1.450     0.020     
+2NC       H6        N3        single    1.036     0.016     0.914     0.007     
+2NC       CA3       C4        single    1.500     0.020     1.500     0.020     
+2NC       CB3       CA3       single    1.524     0.020     1.524     0.020     
+2NC       HA3       CA3       single    1.089     0.010     0.989     0.005     
+2NC       O3        C4        double    1.220     0.020     1.220     0.020     
+2NC       CG3       CB3       single    1.524     0.020     1.524     0.020     
+2NC       HB21      CB3       single    1.089     0.010     0.989     0.005     
+2NC       HB31      CB3       single    1.089     0.010     0.989     0.005     
+2NC       CD2       CG3       single    1.524     0.020     1.524     0.020     
+2NC       HG27      CG3       single    1.089     0.010     0.989     0.005     
+2NC       HG31      CG3       single    1.089     0.010     0.989     0.005     
+2NC       CE1       CD2       single    1.513     0.020     1.513     0.020     
+2NC       HD21      CD2       single    1.089     0.010     0.989     0.005     
+2NC       HD31      CD2       single    1.089     0.010     0.989     0.005     
+2NC       HE11      CE1       single    1.089     0.010     0.989     0.005     
+2NC       HE21      CE1       single    1.089     0.010     0.989     0.005     
+2NC       HE31      CE1       single    1.089     0.010     0.989     0.005     
+2NC       N4        CA4       single    1.450     0.020     1.450     0.020     
+2NC       H7        N4        single    1.016     0.010     0.899     0.007     
+2NC       CA4       C5        single    1.500     0.020     1.500     0.020     
+2NC       CB4       CA4       single    1.524     0.020     1.524     0.020     
+2NC       HA4       CA4       single    1.089     0.010     0.989     0.005     
+2NC       O4        C5        double    1.220     0.020     1.220     0.020     
+2NC       CG4       CB4       single    1.524     0.020     1.524     0.020     
+2NC       HB22      CB4       single    1.089     0.010     0.989     0.005     
+2NC       HB32      CB4       single    1.089     0.010     0.989     0.005     
+2NC       CD3       CG4       single    1.510     0.020     1.510     0.020     
+2NC       HG28      CG4       single    1.089     0.010     0.989     0.005     
+2NC       HG32      CG4       single    1.089     0.010     0.989     0.005     
+2NC       OE1       CD3       double    1.220     0.020     1.220     0.020     
+2NC       NE2       CD3       single    1.332     0.020     1.332     0.020     
+2NC       HE22      NE2       single    1.016     0.010     0.899     0.007     
+2NC       HE23      NE2       single    1.016     0.010     0.899     0.007     
+2NC       N5        CA5       single    1.450     0.020     1.450     0.020     
+2NC       H8        N5        single    1.016     0.010     0.899     0.007     
+2NC       CA5       C6        single    1.500     0.020     1.500     0.020     
+2NC       CB5       CA5       single    1.524     0.020     1.524     0.020     
+2NC       HA5       CA5       single    1.089     0.010     0.989     0.005     
+2NC       C6        O5        double    1.220     0.020     1.220     0.020     
+2NC       CG5       CB5       single    1.524     0.020     1.524     0.020     
+2NC       HB23      CB5       single    1.089     0.010     0.989     0.005     
+2NC       HB33      CB5       single    1.089     0.010     0.989     0.005     
+2NC       CD4       CG5       single    1.524     0.020     1.524     0.020     
+2NC       HG29      CG5       single    1.089     0.010     0.989     0.005     
+2NC       HG33      CG5       single    1.089     0.010     0.989     0.005     
+2NC       NE        CD4       single    1.450     0.020     1.450     0.020     
+2NC       HD22      CD4       single    1.089     0.010     0.989     0.005     
+2NC       HD32      CD4       single    1.089     0.010     0.989     0.005     
+2NC       CZ        NE        single    1.330     0.020     1.330     0.020     
+2NC       HE        NE        single    1.016     0.010     0.899     0.007     
+2NC       NH1       CZ        single    1.332     0.020     1.332     0.020     
+2NC       NH2       CZ        double    1.332     0.020     1.332     0.020     
+2NC       HH11      NH1       single    1.016     0.010     0.899     0.007     
+2NC       HH12      NH1       single    1.016     0.010     0.899     0.007     
+2NC       HH21      NH2       single    1.016     0.010     0.899     0.007     
+2NC       HH22      NH2       single    1.016     0.010     0.899     0.007     
+2NC       HN1       N6        single    1.016     0.010     0.899     0.007     
+2NC       HN2       N6        single    1.016     0.010     0.899     0.007     
+2NC       C         N         single    1.330     0.020     1.330     0.020     
+2NC       C1        N1        single    1.330     0.020     1.330     0.020     
+2NC       C2        N2        single    1.330     0.020     1.330     0.020     
+2NC       C3        N3        single    1.450     0.020     1.450     0.020     
+2NC       C4        N4        single    1.330     0.020     1.330     0.020     
+2NC       C5        N5        single    1.330     0.020     1.330     0.020     
+2NC       HC31      C3        single    1.089     0.010     0.989     0.005     
+2NC       HC32      C3        single    1.089     0.010     0.989     0.005     
+2NC       N6        C6        single    1.332     0.020     1.332     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 2NC      O5     C6     N6      123.000    3.000
+ 2NC      O5     C6     CA5     120.500    3.000
+ 2NC      N6     C6     CA5     120.000    3.000
+ 2NC      C6     N6     HN2     120.000    3.000
+ 2NC      C6     N6     HN1     120.000    3.000
+ 2NC      HN2    N6     HN1     120.000    3.000
+ 2NC      C6     CA5    HA5     108.810    3.000
+ 2NC      C6     CA5    CB5     109.470    3.000
+ 2NC      C6     CA5    N5      111.600    3.000
+ 2NC      HA5    CA5    CB5     108.340    3.000
+ 2NC      HA5    CA5    N5      108.550    3.000
+ 2NC      CB5    CA5    N5      110.000    3.000
+ 2NC      CA5    CB5    HB23    109.470    3.000
+ 2NC      CA5    CB5    HB33    109.470    3.000
+ 2NC      CA5    CB5    CG5     111.000    3.000
+ 2NC      HB23   CB5    HB33    107.900    3.000
+ 2NC      HB23   CB5    CG5     109.470    3.000
+ 2NC      HB33   CB5    CG5     109.470    3.000
+ 2NC      CB5    CG5    HG29    109.470    3.000
+ 2NC      CB5    CG5    HG33    109.470    3.000
+ 2NC      CB5    CG5    CD4     111.000    3.000
+ 2NC      HG29   CG5    HG33    107.900    3.000
+ 2NC      HG29   CG5    CD4     109.470    3.000
+ 2NC      HG33   CG5    CD4     109.470    3.000
+ 2NC      CG5    CD4    HD22    109.470    3.000
+ 2NC      CG5    CD4    HD32    109.470    3.000
+ 2NC      CG5    CD4    NE      112.000    3.000
+ 2NC      HD22   CD4    HD32    107.900    3.000
+ 2NC      HD22   CD4    NE      109.470    3.000
+ 2NC      HD32   CD4    NE      109.470    3.000
+ 2NC      CD4    NE     HE      118.500    3.000
+ 2NC      CD4    NE     CZ      121.500    3.000
+ 2NC      HE     NE     CZ      120.000    3.000
+ 2NC      NE     CZ     NH2     120.000    3.000
+ 2NC      NE     CZ     NH1     120.000    3.000
+ 2NC      NH2    CZ     NH1     120.000    3.000
+ 2NC      CZ     NH2    HH22    120.000    3.000
+ 2NC      CZ     NH2    HH21    120.000    3.000
+ 2NC      HH22   NH2    HH21    120.000    3.000
+ 2NC      CZ     NH1    HH12    120.000    3.000
+ 2NC      CZ     NH1    HH11    120.000    3.000
+ 2NC      HH12   NH1    HH11    120.000    3.000
+ 2NC      CA5    N5     H8      118.500    3.000
+ 2NC      CA5    N5     C5      121.500    3.000
+ 2NC      H8     N5     C5      120.000    3.000
+ 2NC      N5     C5     O4      123.000    3.000
+ 2NC      N5     C5     CA4     116.500    3.000
+ 2NC      O4     C5     CA4     120.500    3.000
+ 2NC      C5     CA4    HA4     108.810    3.000
+ 2NC      C5     CA4    CB4     109.470    3.000
+ 2NC      C5     CA4    N4      111.600    3.000
+ 2NC      HA4    CA4    CB4     108.340    3.000
+ 2NC      HA4    CA4    N4      108.550    3.000
+ 2NC      CB4    CA4    N4      110.000    3.000
+ 2NC      CA4    CB4    HB22    109.470    3.000
+ 2NC      CA4    CB4    HB32    109.470    3.000
+ 2NC      CA4    CB4    CG4     111.000    3.000
+ 2NC      HB22   CB4    HB32    107.900    3.000
+ 2NC      HB22   CB4    CG4     109.470    3.000
+ 2NC      HB32   CB4    CG4     109.470    3.000
+ 2NC      CB4    CG4    HG28    109.470    3.000
+ 2NC      CB4    CG4    HG32    109.470    3.000
+ 2NC      CB4    CG4    CD3     109.470    3.000
+ 2NC      HG28   CG4    HG32    107.900    3.000
+ 2NC      HG28   CG4    CD3     109.470    3.000
+ 2NC      HG32   CG4    CD3     109.470    3.000
+ 2NC      CG4    CD3    NE2     116.500    3.000
+ 2NC      CG4    CD3    OE1     120.500    3.000
+ 2NC      NE2    CD3    OE1     123.000    3.000
+ 2NC      CD3    NE2    HE23    120.000    3.000
+ 2NC      CD3    NE2    HE22    120.000    3.000
+ 2NC      HE23   NE2    HE22    120.000    3.000
+ 2NC      CA4    N4     H7      118.500    3.000
+ 2NC      CA4    N4     C4      121.500    3.000
+ 2NC      H7     N4     C4      120.000    3.000
+ 2NC      N4     C4     O3      123.000    3.000
+ 2NC      N4     C4     CA3     116.500    3.000
+ 2NC      O3     C4     CA3     120.500    3.000
+ 2NC      C4     CA3    HA3     108.810    3.000
+ 2NC      C4     CA3    CB3     109.470    3.000
+ 2NC      C4     CA3    N3      111.600    3.000
+ 2NC      HA3    CA3    CB3     108.340    3.000
+ 2NC      HA3    CA3    N3      108.550    3.000
+ 2NC      CB3    CA3    N3      110.000    3.000
+ 2NC      CA3    CB3    HB21    109.470    3.000
+ 2NC      CA3    CB3    HB31    109.470    3.000
+ 2NC      CA3    CB3    CG3     111.000    3.000
+ 2NC      HB21   CB3    HB31    107.900    3.000
+ 2NC      HB21   CB3    CG3     109.470    3.000
+ 2NC      HB31   CB3    CG3     109.470    3.000
+ 2NC      CB3    CG3    HG27    109.470    3.000
+ 2NC      CB3    CG3    HG31    109.470    3.000
+ 2NC      CB3    CG3    CD2     111.000    3.000
+ 2NC      HG27   CG3    HG31    107.900    3.000
+ 2NC      HG27   CG3    CD2     109.470    3.000
+ 2NC      HG31   CG3    CD2     109.470    3.000
+ 2NC      CG3    CD2    HD21    109.470    3.000
+ 2NC      CG3    CD2    HD31    109.470    3.000
+ 2NC      CG3    CD2    CE1     111.000    3.000
+ 2NC      HD21   CD2    HD31    107.900    3.000
+ 2NC      HD21   CD2    CE1     109.470    3.000
+ 2NC      HD31   CD2    CE1     109.470    3.000
+ 2NC      CD2    CE1    HE31    109.470    3.000
+ 2NC      CD2    CE1    HE21    109.470    3.000
+ 2NC      CD2    CE1    HE11    109.470    3.000
+ 2NC      HE31   CE1    HE21    109.470    3.000
+ 2NC      HE31   CE1    HE11    109.470    3.000
+ 2NC      HE21   CE1    HE11    109.470    3.000
+ 2NC      CA3    N3     H6      118.500    3.000
+ 2NC      CA3    N3     C3      120.000    3.000
+ 2NC      H6     N3     C3      118.500    3.000
+ 2NC      N3     C3     HC31    109.470    3.000
+ 2NC      N3     C3     HC32    109.470    3.000
+ 2NC      N3     C3     CA2     110.000    3.000
+ 2NC      HC31   C3     HC32    107.900    3.000
+ 2NC      HC31   C3     CA2     109.470    3.000
+ 2NC      HC32   C3     CA2     109.470    3.000
+ 2NC      C3     CA2    HA2     108.340    3.000
+ 2NC      C3     CA2    CB2     109.470    3.000
+ 2NC      C3     CA2    N2      110.000    3.000
+ 2NC      HA2    CA2    CB2     108.340    3.000
+ 2NC      HA2    CA2    N2      108.550    3.000
+ 2NC      CB2    CA2    N2      110.000    3.000
+ 2NC      CA2    CB2    HB2     109.470    3.000
+ 2NC      CA2    CB2    HB3     109.470    3.000
+ 2NC      CA2    CB2    CG      111.000    3.000
+ 2NC      HB2    CB2    HB3     107.900    3.000
+ 2NC      HB2    CB2    CG      109.470    3.000
+ 2NC      HB3    CB2    CG      109.470    3.000
+ 2NC      CB2    CG     HG2     109.470    3.000
+ 2NC      CB2    CG     HG3     109.470    3.000
+ 2NC      CB2    CG     CD      111.000    3.000
+ 2NC      HG2    CG     HG3     107.900    3.000
+ 2NC      HG2    CG     CD      109.470    3.000
+ 2NC      HG3    CG     CD      109.470    3.000
+ 2NC      CG     CD     HD2     109.470    3.000
+ 2NC      CG     CD     HD3     109.470    3.000
+ 2NC      CG     CD     CE      111.000    3.000
+ 2NC      HD2    CD     HD3     107.900    3.000
+ 2NC      HD2    CD     CE      109.470    3.000
+ 2NC      HD3    CD     CE      109.470    3.000
+ 2NC      CD     CE     HE3     109.470    3.000
+ 2NC      CD     CE     HE2     109.470    3.000
+ 2NC      CD     CE     HE1     109.470    3.000
+ 2NC      HE3    CE     HE2     109.470    3.000
+ 2NC      HE3    CE     HE1     109.470    3.000
+ 2NC      HE2    CE     HE1     109.470    3.000
+ 2NC      CA2    N2     H5      118.500    3.000
+ 2NC      CA2    N2     C2      121.500    3.000
+ 2NC      H5     N2     C2      120.000    3.000
+ 2NC      N2     C2     O2      123.000    3.000
+ 2NC      N2     C2     CA1     116.500    3.000
+ 2NC      O2     C2     CA1     120.500    3.000
+ 2NC      C2     CA1    HA1     108.810    3.000
+ 2NC      C2     CA1    CB1     109.470    3.000
+ 2NC      C2     CA1    N1      111.600    3.000
+ 2NC      HA1    CA1    CB1     108.340    3.000
+ 2NC      HA1    CA1    N1      108.550    3.000
+ 2NC      CB1    CA1    N1      110.000    3.000
+ 2NC      CA1    CB1    HB1     108.340    3.000
+ 2NC      CA1    CB1    CG21    111.000    3.000
+ 2NC      CA1    CB1    CG1     111.000    3.000
+ 2NC      HB1    CB1    CG21    108.340    3.000
+ 2NC      HB1    CB1    CG1     108.340    3.000
+ 2NC      CG21   CB1    CG1     111.000    3.000
+ 2NC      CB1    CG21   HG26    109.470    3.000
+ 2NC      CB1    CG21   HG25    109.470    3.000
+ 2NC      CB1    CG21   HG24    109.470    3.000
+ 2NC      HG26   CG21   HG25    109.470    3.000
+ 2NC      HG26   CG21   HG24    109.470    3.000
+ 2NC      HG25   CG21   HG24    109.470    3.000
+ 2NC      CB1    CG1    HG12    109.470    3.000
+ 2NC      CB1    CG1    HG13    109.470    3.000
+ 2NC      CB1    CG1    CD1     111.000    3.000
+ 2NC      HG12   CG1    HG13    107.900    3.000
+ 2NC      HG12   CG1    CD1     109.470    3.000
+ 2NC      HG13   CG1    CD1     109.470    3.000
+ 2NC      CG1    CD1    HD13    109.470    3.000
+ 2NC      CG1    CD1    HD12    109.470    3.000
+ 2NC      CG1    CD1    HD11    109.470    3.000
+ 2NC      HD13   CD1    HD12    109.470    3.000
+ 2NC      HD13   CD1    HD11    109.470    3.000
+ 2NC      HD12   CD1    HD11    109.470    3.000
+ 2NC      CA1    N1     H4      118.500    3.000
+ 2NC      CA1    N1     C1      121.500    3.000
+ 2NC      H4     N1     C1      120.000    3.000
+ 2NC      N1     C1     O1      123.000    3.000
+ 2NC      N1     C1     CA      116.500    3.000
+ 2NC      O1     C1     CA      120.500    3.000
+ 2NC      C1     CA     HA      108.810    3.000
+ 2NC      C1     CA     CB      109.470    3.000
+ 2NC      C1     CA     N       111.600    3.000
+ 2NC      HA     CA     CB      108.340    3.000
+ 2NC      HA     CA     N       108.550    3.000
+ 2NC      CB     CA     N       110.000    3.000
+ 2NC      CA     CB     HB      108.340    3.000
+ 2NC      CA     CB     CG2     111.000    3.000
+ 2NC      CA     CB     OG1     109.470    3.000
+ 2NC      HB     CB     CG2     108.340    3.000
+ 2NC      HB     CB     OG1     109.470    3.000
+ 2NC      CG2    CB     OG1     109.470    3.000
+ 2NC      CB     CG2    HG23    109.470    3.000
+ 2NC      CB     CG2    HG22    109.470    3.000
+ 2NC      CB     CG2    HG21    109.470    3.000
+ 2NC      HG23   CG2    HG22    109.470    3.000
+ 2NC      HG23   CG2    HG21    109.470    3.000
+ 2NC      HG22   CG2    HG21    109.470    3.000
+ 2NC      CB     OG1    HG1     109.470    3.000
+ 2NC      CA     N      H       118.500    3.000
+ 2NC      CA     N      C       121.500    3.000
+ 2NC      H      N      C       120.000    3.000
+ 2NC      N      C      O       123.000    3.000
+ 2NC      N      C      CH3     116.500    3.000
+ 2NC      O      C      CH3     123.000    3.000
+ 2NC      C      CH3    H3      109.470    3.000
+ 2NC      C      CH3    H2      109.470    3.000
+ 2NC      C      CH3    H1      109.470    3.000
+ 2NC      H3     CH3    H2      109.470    3.000
+ 2NC      H3     CH3    H1      109.470    3.000
+ 2NC      H2     CH3    H1      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 2NC      CONST_1  O5     C6     N6     HN1      180.000    0.000   0
+ 2NC      var_1    O5     C6     CA5    N5         0.010   20.000   3
+ 2NC      var_2    C6     CA5    CB5    CG5      175.032   20.000   3
+ 2NC      var_3    CA5    CB5    CG5    CD4     -179.955   20.000   3
+ 2NC      var_4    CB5    CG5    CD4    NE      -179.998   20.000   3
+ 2NC      var_5    CG5    CD4    NE     CZ       179.949   20.000   3
+ 2NC      CONST_2  CD4    NE     CZ     NH1        0.000    0.000   0
+ 2NC      CONST_3  NE     CZ     NH2    HH21     180.000    0.000   0
+ 2NC      CONST_4  NE     CZ     NH1    HH11       0.000    0.000   0
+ 2NC      var_6    C6     CA5    N5     C5       -85.004   20.000   3
+ 2NC      CONST_5  CA5    N5     C5     CA4      180.000    0.000   0
+ 2NC      var_7    N5     C5     CA4    N4      -179.990   20.000   3
+ 2NC      var_8    C5     CA4    CB4    CG4      174.985   20.000   3
+ 2NC      var_9    CA4    CB4    CG4    CD3     -179.954   20.000   3
+ 2NC      var_10   CB4    CG4    CD3    OE1        0.073   20.000   3
+ 2NC      CONST_6  CG4    CD3    NE2    HE22       0.000    0.000   0
+ 2NC      var_11   C5     CA4    N4     C4      -154.987   20.000   3
+ 2NC      CONST_7  CA4    N4     C4     CA3      180.000    0.000   0
+ 2NC      var_12   N4     C4     CA3    N3       179.981   20.000   3
+ 2NC      var_13   C4     CA3    CB3    CG3      -55.922   20.000   3
+ 2NC      var_14   CA3    CB3    CG3    CD2      175.822   20.000   3
+ 2NC      var_15   CB3    CG3    CD2    CE1      180.000   20.000   3
+ 2NC      var_16   CG3    CD2    CE1    HE11     -60.007   20.000   3
+ 2NC      var_17   C4     CA3    N3     C3      -153.942   20.000   3
+ 2NC      var_18   CA3    N3     C3     CA2     -175.025   20.000   3
+ 2NC      var_19   N3     C3     CA2    N2        55.064   20.000   3
+ 2NC      var_20   C3     CA2    CB2    CG       174.997   20.000   3
+ 2NC      var_21   CA2    CB2    CG     CD       180.000   20.000   3
+ 2NC      var_22   CB2    CG     CD     CE      -179.967   20.000   3
+ 2NC      var_23   CG     CD     CE     HE1      -60.046   20.000   3
+ 2NC      var_24   C3     CA2    N2     C2      -154.985   20.000   3
+ 2NC      CONST_8  CA2    N2     C2     CA1      180.000    0.000   0
+ 2NC      var_25   N2     C2     CA1    N1       177.531   20.000   3
+ 2NC      var_26   C2     CA1    CB1    CG1      -65.172   20.000   3
+ 2NC      var_27   CA1    CB1    CG21   HG24      66.176   20.000   3
+ 2NC      var_28   CA1    CB1    CG1    CD1       67.993   20.000   3
+ 2NC      var_29   CB1    CG1    CD1    HD11     -74.479   20.000   3
+ 2NC      var_30   C2     CA1    N1     C1      -143.581   20.000   3
+ 2NC      CONST_9  CA1    N1     C1     CA       180.000    0.000   0
+ 2NC      var_31   N1     C1     CA     N       -179.987   20.000   3
+ 2NC      var_32   C1     CA     CB     OG1      -55.031   20.000   3
+ 2NC      var_33   CA     CB     CG2    HG21      59.963   20.000   3
+ 2NC      var_34   CA     CB     OG1    HG1     -179.968   20.000   1
+ 2NC      var_35   C1     CA     N      C       -154.943   20.000   3
+ 2NC      CONST_10 CA     N      C      CH3      180.000    0.000   0
+ 2NC      var_36   N      C      CH3    H1      -179.749   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 2NC      chir_01  CA     N      C1     CB        positiv
+ 2NC      chir_02  CB     CA     OG1    CG2       positiv
+ 2NC      chir_03  CA1    N1     C2     CB1       positiv
+ 2NC      chir_04  CB1    CA1    CG1    CG21      positiv
+ 2NC      chir_05  CA2    N2     C3     CB2       positiv
+ 2NC      chir_06  CA3    N3     C4     CB3       positiv
+ 2NC      chir_07  CA4    N4     C5     CB4       positiv
+ 2NC      chir_08  CA5    N5     C6     CB5       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 2NC      plan-1    C         0.020
+ 2NC      plan-1    O         0.020
+ 2NC      plan-1    CH3       0.020
+ 2NC      plan-1    N         0.020
+ 2NC      plan-1    H         0.020
+ 2NC      plan-2    N         0.020
+ 2NC      plan-2    C         0.020
+ 2NC      plan-2    CA        0.020
+ 2NC      plan-2    H         0.020
+ 2NC      plan-3    C1        0.020
+ 2NC      plan-3    CA        0.020
+ 2NC      plan-3    O1        0.020
+ 2NC      plan-3    N1        0.020
+ 2NC      plan-3    H4        0.020
+ 2NC      plan-4    N1        0.020
+ 2NC      plan-4    C1        0.020
+ 2NC      plan-4    CA1       0.020
+ 2NC      plan-4    H4        0.020
+ 2NC      plan-5    C2        0.020
+ 2NC      plan-5    CA1       0.020
+ 2NC      plan-5    O2        0.020
+ 2NC      plan-5    N2        0.020
+ 2NC      plan-5    H5        0.020
+ 2NC      plan-6    N2        0.020
+ 2NC      plan-6    C2        0.020
+ 2NC      plan-6    CA2       0.020
+ 2NC      plan-6    H5        0.020
+ 2NC      plan-7    N3        0.020
+ 2NC      plan-7    C3        0.020
+ 2NC      plan-7    CA3       0.020
+ 2NC      plan-7    H6        0.020
+ 2NC      plan-8    C4        0.020
+ 2NC      plan-8    CA3       0.020
+ 2NC      plan-8    O3        0.020
+ 2NC      plan-8    N4        0.020
+ 2NC      plan-8    H7        0.020
+ 2NC      plan-9    N4        0.020
+ 2NC      plan-9    C4        0.020
+ 2NC      plan-9    CA4       0.020
+ 2NC      plan-9    H7        0.020
+ 2NC      plan-10   C5        0.020
+ 2NC      plan-10   CA4       0.020
+ 2NC      plan-10   O4        0.020
+ 2NC      plan-10   N5        0.020
+ 2NC      plan-10   H8        0.020
+ 2NC      plan-11   CD3       0.020
+ 2NC      plan-11   CG4       0.020
+ 2NC      plan-11   OE1       0.020
+ 2NC      plan-11   NE2       0.020
+ 2NC      plan-11   HE23      0.020
+ 2NC      plan-11   HE22      0.020
+ 2NC      plan-12   NE2       0.020
+ 2NC      plan-12   CD3       0.020
+ 2NC      plan-12   HE22      0.020
+ 2NC      plan-12   HE23      0.020
+ 2NC      plan-13   N5        0.020
+ 2NC      plan-13   C5        0.020
+ 2NC      plan-13   CA5       0.020
+ 2NC      plan-13   H8        0.020
+ 2NC      plan-14   C6        0.020
+ 2NC      plan-14   CA5       0.020
+ 2NC      plan-14   O5        0.020
+ 2NC      plan-14   N6        0.020
+ 2NC      plan-14   HN2       0.020
+ 2NC      plan-14   HN1       0.020
+ 2NC      plan-15   NE        0.020
+ 2NC      plan-15   CD4       0.020
+ 2NC      plan-15   CZ        0.020
+ 2NC      plan-15   HE        0.020
+ 2NC      plan-16   CZ        0.020
+ 2NC      plan-16   NE        0.020
+ 2NC      plan-16   NH1       0.020
+ 2NC      plan-16   NH2       0.020
+ 2NC      plan-16   HH21      0.020
+ 2NC      plan-16   HH22      0.020
+ 2NC      plan-16   HE        0.020
+ 2NC      plan-16   HH12      0.020
+ 2NC      plan-16   HH11      0.020
+ 2NC      plan-17   NH1       0.020
+ 2NC      plan-17   CZ        0.020
+ 2NC      plan-17   HH11      0.020
+ 2NC      plan-17   HH12      0.020
+ 2NC      plan-18   N6        0.020
+ 2NC      plan-18   C6        0.020
+ 2NC      plan-18   HN1       0.020
+ 2NC      plan-18   HN2       0.020
+# ------------------------------------------------------

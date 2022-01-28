@@ -1,0 +1,137 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PDV      PDV 'Divanadate ion                      ' non-polymer        10   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PDV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PDV           O2     O    O        -1.000      0.000    0.000    0.000
+ PDV           V1     V    V         0.000     -1.326    1.264   -0.130
+ PDV           O3     O    O2        0.000     -2.647    0.831   -1.338
+ PDV           O1     O    O        -1.000     -0.683    2.973   -0.316
+ PDV           O4     O    O2        0.000     -2.636    1.098    1.154
+ PDV           V2     V    V         0.000     -3.543   -0.037    0.019
+ PDV           O7     O    O        -1.000     -2.779   -1.500    0.833
+ PDV           O5     O    O        -1.000     -4.393   -1.123   -1.197
+ PDV           O6     O    OH1       0.000     -5.157    0.609    0.616
+ PDV           HO6    H    H         0.000     -5.128    1.278    1.273
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PDV      O2     n/a    V1     START
+ PDV      V1     O2     O4     .
+ PDV      O3     V1     .      .
+ PDV      O1     V1     .      .
+ PDV      O4     V1     V2     .
+ PDV      V2     O4     O6     .
+ PDV      O7     V2     .      .
+ PDV      O5     V2     .      .
+ PDV      O6     V2     HO6    .
+ PDV      HO6    O6     .      END
+ PDV      V2     O3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PDV       O7        V2        single    1.910     0.020     1.910     0.020     
+PDV       O5        V2        single    1.910     0.020     1.910     0.020     
+PDV       O6        V2        single    2.105     0.020     2.105     0.020     
+PDV       V2        O3        single    2.004     0.020     2.004     0.020     
+PDV       V2        O4        single    2.004     0.020     2.004     0.020     
+PDV       O3        V1        single    2.004     0.020     2.004     0.020     
+PDV       O4        V1        single    2.004     0.020     2.004     0.020     
+PDV       O1        V1        single    1.910     0.020     1.910     0.020     
+PDV       V1        O2        single    1.910     0.020     1.910     0.020     
+PDV       HO6       O6        single    0.970     0.012     0.967     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PDV      O2     V1     O3      113.748    3.000
+ PDV      O2     V1     O1      113.265    3.000
+ PDV      O2     V1     O4      113.736    3.000
+ PDV      O3     V1     O1      113.790    3.000
+ PDV      O3     V1     O4       85.773    3.000
+ PDV      O1     V1     O4      113.787    3.000
+ PDV      V1     O3     V2      120.000    3.000
+ PDV      V1     O4     V2      120.000    3.000
+ PDV      O4     V2     O7       90.000    3.000
+ PDV      O4     V2     O5      180.000    3.000
+ PDV      O4     V2     O6       90.000    3.000
+ PDV      O4     V2     O3       90.000    3.000
+ PDV      O7     V2     O5       90.000    3.000
+ PDV      O7     V2     O6      120.000    3.000
+ PDV      O5     V2     O6       90.000    3.000
+ PDV      O7     V2     O3      120.000    3.000
+ PDV      O5     V2     O3       90.000    3.000
+ PDV      O6     V2     O3      120.000    3.000
+ PDV      V2     O6     HO6     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PDV      var_1    O2     V1     O3     V2        89.015   20.000   1
+ PDV      var_2    O2     V1     O4     V2       -89.037   20.000   1
+ PDV      var_3    V1     O4     V2     O3         0.000   20.000   1
+ PDV      var_4    V1     O3     V2     O4         0.000   20.000   1
+ PDV      var_5    HO6    O6     V2     O4         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ PDV      chir_01  V2     O4     O5     O7        cross3
+                   O3     O6     .      .      .
+# ------------------------------------------------------

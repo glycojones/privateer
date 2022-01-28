@@ -1,0 +1,368 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TTA      TTA 'TETRAPHENYL-ARSONIUM                ' non-polymer        45  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TTA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TTA           H24    H    H         0.000      9.112   45.279  -10.904
+ TTA           C24    C    CR16      0.000      8.788   45.061   -9.894
+ TTA           C23    C    CR16      0.000      9.707   44.461   -8.898
+ TTA           H23    H    H         0.000     10.735   44.211   -9.129
+ TTA           C22    C    CR16      0.000      9.126   44.236   -7.595
+ TTA           H22    H    H         0.000      9.759   43.792   -6.836
+ TTA           C21    C    CR16      0.000      7.862   44.534   -7.250
+ TTA           H21    H    H         0.000      7.527   44.329   -6.241
+ TTA           C20    C    CR16      0.000      6.952   45.114   -8.183
+ TTA           H20    H    H         0.000      5.931   45.367   -7.923
+ TTA           C19    C    CR6       0.000      7.486   45.333   -9.472
+ TTA           AS     AS   AS        1.000      6.327   46.127  -10.786
+ TTA           C13    C    CR6       0.000      7.430   47.192  -11.894
+ TTA           C18    C    CR16      0.000      7.524   46.843  -13.323
+ TTA           H18    H    H         0.000      6.892   46.058  -13.719
+ TTA           C17    C    CR16      0.000      8.424   47.512  -14.191
+ TTA           H17    H    H         0.000      8.441   47.298  -15.252
+ TTA           C16    C    CR16      0.000      9.301   48.470  -13.624
+ TTA           H16    H    H         0.000      9.978   48.995  -14.286
+ TTA           C15    C    CR16      0.000      9.346   48.790  -12.212
+ TTA           H15    H    H         0.000     10.054   49.519  -11.837
+ TTA           C14    C    CR16      0.000      8.413   48.108  -11.288
+ TTA           H14    H    H         0.000      8.451   48.274  -10.218
+ TTA           C7     C    CR6       0.000      4.902   46.872   -9.816
+ TTA           C12    C    CR16      0.000      3.660   46.911  -10.554
+ TTA           H12    H    H         0.000      3.603   46.552  -11.574
+ TTA           C11    C    CR16      0.000      2.543   47.424   -9.910
+ TTA           H11    H    H         0.000      1.601   47.478  -10.441
+ TTA           C10    C    CR16      0.000      2.615   47.891   -8.534
+ TTA           H10    H    H         0.000      1.728   48.288   -8.055
+ TTA           C9     C    CR16      0.000      3.851   47.831   -7.804
+ TTA           HC9    H    H         0.000      3.910   48.180   -6.780
+ TTA           C8     C    CR16      0.000      4.970   47.313   -8.448
+ TTA           HC8    H    H         0.000      5.908   47.240   -7.911
+ TTA           C1     C    CR6       0.000      5.569   44.869  -12.019
+ TTA           C6     C    CR16      0.000      4.774   45.528  -13.017
+ TTA           HC6    H    H         0.000      4.658   46.604  -13.047
+ TTA           C5     C    CR16      0.000      4.139   44.655  -13.980
+ TTA           HC5    H    H         0.000      3.539   45.069  -14.781
+ TTA           C4     C    CR16      0.000      4.308   43.263  -13.866
+ TTA           HC4    H    H         0.000      3.816   42.621  -14.586
+ TTA           C3     C    CR16      0.000      5.066   42.685  -12.886
+ TTA           HC3    H    H         0.000      5.176   41.608  -12.853
+ TTA           C2     C    CR16      0.000      5.701   43.481  -11.925
+ TTA           HC2    H    H         0.000      6.281   43.032  -11.128
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TTA      H24    n/a    C24    START
+ TTA      C24    H24    C19    .
+ TTA      C23    C24    C22    .
+ TTA      H23    C23    .      .
+ TTA      C22    C23    C21    .
+ TTA      H22    C22    .      .
+ TTA      C21    C22    C20    .
+ TTA      H21    C21    .      .
+ TTA      C20    C21    H20    .
+ TTA      H20    C20    .      .
+ TTA      C19    C24    AS     .
+ TTA      AS     C19    C1     .
+ TTA      C13    AS     C18    .
+ TTA      C18    C13    C17    .
+ TTA      H18    C18    .      .
+ TTA      C17    C18    C16    .
+ TTA      H17    C17    .      .
+ TTA      C16    C17    C15    .
+ TTA      H16    C16    .      .
+ TTA      C15    C16    C14    .
+ TTA      H15    C15    .      .
+ TTA      C14    C15    H14    .
+ TTA      H14    C14    .      .
+ TTA      C7     AS     C12    .
+ TTA      C12    C7     C11    .
+ TTA      H12    C12    .      .
+ TTA      C11    C12    C10    .
+ TTA      H11    C11    .      .
+ TTA      C10    C11    C9     .
+ TTA      H10    C10    .      .
+ TTA      C9     C10    C8     .
+ TTA      HC9    C9     .      .
+ TTA      C8     C9     HC8    .
+ TTA      HC8    C8     .      .
+ TTA      C1     AS     C6     .
+ TTA      C6     C1     C5     .
+ TTA      HC6    C6     .      .
+ TTA      C5     C6     C4     .
+ TTA      HC5    C5     .      .
+ TTA      C4     C5     C3     .
+ TTA      HC4    C4     .      .
+ TTA      C3     C4     C2     .
+ TTA      HC3    C3     .      .
+ TTA      C2     C3     HC2    .
+ TTA      HC2    C2     .      END
+ TTA      C1     C2     .    ADD
+ TTA      C7     C8     .    ADD
+ TTA      C13    C14    .    ADD
+ TTA      C19    C20    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TTA       C1        AS        single    1.895     0.020     1.895     0.020     
+TTA       C7        AS        single    1.895     0.020     1.895     0.020     
+TTA       C13       AS        single    1.895     0.020     1.895     0.020     
+TTA       AS        C19       single    1.895     0.020     1.895     0.020     
+TTA       C1        C2        double    1.390     0.020     1.390     0.020     
+TTA       C6        C1        single    1.390     0.020     1.390     0.020     
+TTA       C2        C3        single    1.390     0.020     1.390     0.020     
+TTA       HC2       C2        single    1.082     0.013     0.975     0.010     
+TTA       C3        C4        double    1.390     0.020     1.390     0.020     
+TTA       HC3       C3        single    1.082     0.013     0.975     0.010     
+TTA       C4        C5        single    1.390     0.020     1.390     0.020     
+TTA       HC4       C4        single    1.082     0.013     0.975     0.010     
+TTA       C5        C6        double    1.390     0.020     1.390     0.020     
+TTA       HC5       C5        single    1.082     0.013     0.975     0.010     
+TTA       HC6       C6        single    1.082     0.013     0.975     0.010     
+TTA       C7        C8        double    1.390     0.020     1.390     0.020     
+TTA       C12       C7        single    1.390     0.020     1.390     0.020     
+TTA       C8        C9        single    1.390     0.020     1.390     0.020     
+TTA       HC8       C8        single    1.082     0.013     0.975     0.010     
+TTA       C9        C10       double    1.390     0.020     1.390     0.020     
+TTA       HC9       C9        single    1.082     0.013     0.975     0.010     
+TTA       C10       C11       single    1.390     0.020     1.390     0.020     
+TTA       H10       C10       single    1.082     0.013     0.975     0.010     
+TTA       C11       C12       double    1.390     0.020     1.390     0.020     
+TTA       H11       C11       single    1.082     0.013     0.975     0.010     
+TTA       H12       C12       single    1.082     0.013     0.975     0.010     
+TTA       C13       C14       double    1.390     0.020     1.390     0.020     
+TTA       C18       C13       single    1.390     0.020     1.390     0.020     
+TTA       C14       C15       single    1.390     0.020     1.390     0.020     
+TTA       H14       C14       single    1.082     0.013     0.975     0.010     
+TTA       C15       C16       double    1.390     0.020     1.390     0.020     
+TTA       H15       C15       single    1.082     0.013     0.975     0.010     
+TTA       C16       C17       single    1.390     0.020     1.390     0.020     
+TTA       H16       C16       single    1.082     0.013     0.975     0.010     
+TTA       C17       C18       double    1.390     0.020     1.390     0.020     
+TTA       H17       C17       single    1.082     0.013     0.975     0.010     
+TTA       H18       C18       single    1.082     0.013     0.975     0.010     
+TTA       C19       C20       double    1.390     0.020     1.390     0.020     
+TTA       C19       C24       single    1.390     0.020     1.390     0.020     
+TTA       C20       C21       single    1.390     0.020     1.390     0.020     
+TTA       H20       C20       single    1.082     0.013     0.975     0.010     
+TTA       C21       C22       double    1.390     0.020     1.390     0.020     
+TTA       H21       C21       single    1.082     0.013     0.975     0.010     
+TTA       C22       C23       single    1.390     0.020     1.390     0.020     
+TTA       H22       C22       single    1.082     0.013     0.975     0.010     
+TTA       C23       C24       double    1.390     0.020     1.390     0.020     
+TTA       H23       C23       single    1.082     0.013     0.975     0.010     
+TTA       C24       H24       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TTA      H24    C24    C23     120.000    3.000
+ TTA      H24    C24    C19     120.000    3.000
+ TTA      C23    C24    C19     120.000    3.000
+ TTA      C24    C23    H23     120.000    3.000
+ TTA      C24    C23    C22     120.000    3.000
+ TTA      H23    C23    C22     120.000    3.000
+ TTA      C23    C22    H22     120.000    3.000
+ TTA      C23    C22    C21     120.000    3.000
+ TTA      H22    C22    C21     120.000    3.000
+ TTA      C22    C21    H21     120.000    3.000
+ TTA      C22    C21    C20     120.000    3.000
+ TTA      H21    C21    C20     120.000    3.000
+ TTA      C21    C20    H20     120.000    3.000
+ TTA      C21    C20    C19     120.000    3.000
+ TTA      H20    C20    C19     120.000    3.000
+ TTA      C24    C19    AS      120.000    3.000
+ TTA      C24    C19    C20     120.000    3.000
+ TTA      AS     C19    C20     120.000    3.000
+ TTA      C19    AS     C13     109.470    3.000
+ TTA      C19    AS     C7      109.470    3.000
+ TTA      C19    AS     C1      109.470    3.000
+ TTA      C13    AS     C7      109.470    3.000
+ TTA      C13    AS     C1      109.470    3.000
+ TTA      C7     AS     C1      109.470    3.000
+ TTA      AS     C13    C18     120.000    3.000
+ TTA      AS     C13    C14     120.000    3.000
+ TTA      C18    C13    C14     120.000    3.000
+ TTA      C13    C18    H18     120.000    3.000
+ TTA      C13    C18    C17     120.000    3.000
+ TTA      H18    C18    C17     120.000    3.000
+ TTA      C18    C17    H17     120.000    3.000
+ TTA      C18    C17    C16     120.000    3.000
+ TTA      H17    C17    C16     120.000    3.000
+ TTA      C17    C16    H16     120.000    3.000
+ TTA      C17    C16    C15     120.000    3.000
+ TTA      H16    C16    C15     120.000    3.000
+ TTA      C16    C15    H15     120.000    3.000
+ TTA      C16    C15    C14     120.000    3.000
+ TTA      H15    C15    C14     120.000    3.000
+ TTA      C15    C14    H14     120.000    3.000
+ TTA      C15    C14    C13     120.000    3.000
+ TTA      H14    C14    C13     120.000    3.000
+ TTA      AS     C7     C12     120.000    3.000
+ TTA      AS     C7     C8      120.000    3.000
+ TTA      C12    C7     C8      120.000    3.000
+ TTA      C7     C12    H12     120.000    3.000
+ TTA      C7     C12    C11     120.000    3.000
+ TTA      H12    C12    C11     120.000    3.000
+ TTA      C12    C11    H11     120.000    3.000
+ TTA      C12    C11    C10     120.000    3.000
+ TTA      H11    C11    C10     120.000    3.000
+ TTA      C11    C10    H10     120.000    3.000
+ TTA      C11    C10    C9      120.000    3.000
+ TTA      H10    C10    C9      120.000    3.000
+ TTA      C10    C9     HC9     120.000    3.000
+ TTA      C10    C9     C8      120.000    3.000
+ TTA      HC9    C9     C8      120.000    3.000
+ TTA      C9     C8     HC8     120.000    3.000
+ TTA      C9     C8     C7      120.000    3.000
+ TTA      HC8    C8     C7      120.000    3.000
+ TTA      AS     C1     C6      120.000    3.000
+ TTA      AS     C1     C2      120.000    3.000
+ TTA      C6     C1     C2      120.000    3.000
+ TTA      C1     C6     HC6     120.000    3.000
+ TTA      C1     C6     C5      120.000    3.000
+ TTA      HC6    C6     C5      120.000    3.000
+ TTA      C6     C5     HC5     120.000    3.000
+ TTA      C6     C5     C4      120.000    3.000
+ TTA      HC5    C5     C4      120.000    3.000
+ TTA      C5     C4     HC4     120.000    3.000
+ TTA      C5     C4     C3      120.000    3.000
+ TTA      HC4    C4     C3      120.000    3.000
+ TTA      C4     C3     HC3     120.000    3.000
+ TTA      C4     C3     C2      120.000    3.000
+ TTA      HC3    C3     C2      120.000    3.000
+ TTA      C3     C2     HC2     120.000    3.000
+ TTA      C3     C2     C1      120.000    3.000
+ TTA      HC2    C2     C1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TTA      CONST_1  H24    C24    C23    C22      180.000    0.000   0
+ TTA      CONST_2  C24    C23    C22    C21        0.000    0.000   0
+ TTA      CONST_3  C23    C22    C21    C20        0.000    0.000   0
+ TTA      CONST_4  C22    C21    C20    C19        0.000    0.000   0
+ TTA      CONST_5  H24    C24    C19    AS         0.000    0.000   0
+ TTA      CONST_6  C24    C19    C20    C21        0.000    0.000   0
+ TTA      var_1    C24    C19    AS     C1        80.846   20.000   1
+ TTA      var_2    C19    AS     C13    C18      117.708   20.000   1
+ TTA      CONST_7  AS     C13    C14    C15      180.000    0.000   0
+ TTA      CONST_8  AS     C13    C18    C17      180.000    0.000   0
+ TTA      CONST_9  C13    C18    C17    C16        0.000    0.000   0
+ TTA      CONST_10 C18    C17    C16    C15        0.000    0.000   0
+ TTA      CONST_11 C17    C16    C15    C14        0.000    0.000   0
+ TTA      CONST_12 C16    C15    C14    C13        0.000    0.000   0
+ TTA      var_3    C19    AS     C7     C12     -150.752   20.000   1
+ TTA      CONST_13 AS     C7     C8     C9       180.000    0.000   0
+ TTA      CONST_14 AS     C7     C12    C11      180.000    0.000   0
+ TTA      CONST_15 C7     C12    C11    C10        0.000    0.000   0
+ TTA      CONST_16 C12    C11    C10    C9         0.000    0.000   0
+ TTA      CONST_17 C11    C10    C9     C8         0.000    0.000   0
+ TTA      CONST_18 C10    C9     C8     C7         0.000    0.000   0
+ TTA      var_4    C19    AS     C1     C6      -176.837   20.000   1
+ TTA      CONST_19 AS     C1     C2     C3       180.000    0.000   0
+ TTA      CONST_20 AS     C1     C6     C5       180.000    0.000   0
+ TTA      CONST_21 C1     C6     C5     C4         0.000    0.000   0
+ TTA      CONST_22 C6     C5     C4     C3         0.000    0.000   0
+ TTA      CONST_23 C5     C4     C3     C2         0.000    0.000   0
+ TTA      CONST_24 C4     C3     C2     C1         0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TTA      plan-1    C1        0.020
+ TTA      plan-1    AS        0.020
+ TTA      plan-1    C2        0.020
+ TTA      plan-1    C6        0.020
+ TTA      plan-1    C3        0.020
+ TTA      plan-1    C4        0.020
+ TTA      plan-1    C5        0.020
+ TTA      plan-1    HC2       0.020
+ TTA      plan-1    HC3       0.020
+ TTA      plan-1    HC4       0.020
+ TTA      plan-1    HC5       0.020
+ TTA      plan-1    HC6       0.020
+ TTA      plan-2    C7        0.020
+ TTA      plan-2    AS        0.020
+ TTA      plan-2    C8        0.020
+ TTA      plan-2    C12       0.020
+ TTA      plan-2    C9        0.020
+ TTA      plan-2    C10       0.020
+ TTA      plan-2    C11       0.020
+ TTA      plan-2    HC8       0.020
+ TTA      plan-2    HC9       0.020
+ TTA      plan-2    H10       0.020
+ TTA      plan-2    H11       0.020
+ TTA      plan-2    H12       0.020
+ TTA      plan-3    C13       0.020
+ TTA      plan-3    AS        0.020
+ TTA      plan-3    C14       0.020
+ TTA      plan-3    C18       0.020
+ TTA      plan-3    C15       0.020
+ TTA      plan-3    C16       0.020
+ TTA      plan-3    C17       0.020
+ TTA      plan-3    H14       0.020
+ TTA      plan-3    H15       0.020
+ TTA      plan-3    H16       0.020
+ TTA      plan-3    H17       0.020
+ TTA      plan-3    H18       0.020
+ TTA      plan-4    C19       0.020
+ TTA      plan-4    AS        0.020
+ TTA      plan-4    C20       0.020
+ TTA      plan-4    C24       0.020
+ TTA      plan-4    C21       0.020
+ TTA      plan-4    C22       0.020
+ TTA      plan-4    C23       0.020
+ TTA      plan-4    H20       0.020
+ TTA      plan-4    H21       0.020
+ TTA      plan-4    H22       0.020
+ TTA      plan-4    H23       0.020
+ TTA      plan-4    H24       0.020
+# ------------------------------------------------------

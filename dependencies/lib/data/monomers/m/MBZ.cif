@@ -1,0 +1,304 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MBZ      MBZ '1-[2-DEOXYRIBOFURANOSYL]-4-METHYL-BE' DNA                37  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MBZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MBZ           OP3    O    OP       -0.666      0.000    0.000    0.000
+ MBZ           P      P    P         0.000     -0.815   -0.429    1.200
+ MBZ           OP1    O    OP       -0.666     -1.002    0.749    2.131
+ MBZ           OP2    O    OP       -0.666     -0.090   -1.539    1.930
+ MBZ           "O5'"  O    O2        0.000     -2.254   -0.959    0.710
+ MBZ           "C5'"  C    CH2       0.000     -2.886    0.127    0.033
+ MBZ           "H5'"  H    H         0.000     -2.273    0.430   -0.819
+ MBZ           "H5''" H    H         0.000     -2.995    0.969    0.719
+ MBZ           "C4'"  C    CH1       0.000     -4.266   -0.312   -0.461
+ MBZ           "H4'"  H    H         0.000     -4.179   -1.192   -1.114
+ MBZ           "O4'"  O    O2        0.000     -5.144   -0.591    0.652
+ MBZ           "C1'"  C    CH1       0.000     -6.489   -0.492    0.156
+ MBZ           "H1'"  H    H         0.000     -6.844   -1.482   -0.161
+ MBZ           N1     N    NR5       0.000     -7.366    0.042    1.202
+ MBZ           C8     C    CR15      0.000     -7.001    0.873    2.213
+ MBZ           H8     H    H         0.000     -5.999    1.251    2.375
+ MBZ           N7     N    NRD5      0.000     -8.031    1.148    2.959
+ MBZ           C9     C    CR56      0.000     -8.716   -0.208    1.342
+ MBZ           C7     C    CR56      0.000     -9.129    0.516    2.474
+ MBZ           C10    C    CR16      0.000     -9.639   -0.964    0.633
+ MBZ           H10    H    H         0.000     -9.328   -1.520   -0.243
+ MBZ           C11    C    CR16      0.000    -10.953   -1.004    1.048
+ MBZ           H11    H    H         0.000    -11.674   -1.594    0.496
+ MBZ           C12    C    CR16      0.000    -11.359   -0.293    2.168
+ MBZ           H12    H    H         0.000    -12.395   -0.332    2.482
+ MBZ           C6     C    CR6       0.000    -10.465    0.456    2.879
+ MBZ           C5M    C    CH3       0.000    -10.919    1.222    4.094
+ MBZ           H73    H    H         0.000    -10.323    2.090    4.208
+ MBZ           H72    H    H         0.000    -11.933    1.503    3.975
+ MBZ           H71    H    H         0.000    -10.821    0.611    4.954
+ MBZ           "C3'"  C    CH1       0.000     -4.975    0.848   -1.203
+ MBZ           "H3'"  H    H         0.000     -4.765    1.811   -0.717
+ MBZ           "C2'"  C    CH2       0.000     -6.467    0.467   -1.048
+ MBZ           "H2''" H    H         0.000     -6.852   -0.047   -1.932
+ MBZ           "H2'"  H    H         0.000     -7.091    1.337   -0.834
+ MBZ           "O3'"  O    OH1       0.000     -4.598    0.881   -2.582
+ MBZ           "HO'3" H    H         0.000     -5.141    1.561   -3.003
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MBZ      OP3    n/a    P      START
+ MBZ      P      OP3    "O5'"  .
+ MBZ      OP1    P      .      .
+ MBZ      OP2    P      .      .
+ MBZ      "O5'"  P      "C5'"  .
+ MBZ      "C5'"  "O5'"  "C4'"  .
+ MBZ      "H5'"  "C5'"  .      .
+ MBZ      "H5''" "C5'"  .      .
+ MBZ      "C4'"  "C5'"  "C3'"  .
+ MBZ      "H4'"  "C4'"  .      .
+ MBZ      "O4'"  "C4'"  "C1'"  .
+ MBZ      "C1'"  "O4'"  N1     .
+ MBZ      "H1'"  "C1'"  .      .
+ MBZ      N1     "C1'"  C9     .
+ MBZ      C8     N1     N7     .
+ MBZ      H8     C8     .      .
+ MBZ      N7     C8     .      .
+ MBZ      C9     N1     C10    .
+ MBZ      C7     C9     .      .
+ MBZ      C10    C9     C11    .
+ MBZ      H10    C10    .      .
+ MBZ      C11    C10    C12    .
+ MBZ      H11    C11    .      .
+ MBZ      C12    C11    C6     .
+ MBZ      H12    C12    .      .
+ MBZ      C6     C12    C5M    .
+ MBZ      C5M    C6     H71    .
+ MBZ      H73    C5M    .      .
+ MBZ      H72    C5M    .      .
+ MBZ      H71    C5M    .      .
+ MBZ      "C3'"  "C4'"  "O3'"  .
+ MBZ      "H3'"  "C3'"  .      .
+ MBZ      "C2'"  "C3'"  "H2'"  .
+ MBZ      "H2''" "C2'"  .      .
+ MBZ      "H2'"  "C2'"  .      .
+ MBZ      "O3'"  "C3'"  .      END
+ MBZ      "HO'3" "O3'"  .      .
+ MBZ      "C1'"  "C2'"  .    ADD
+ MBZ      C6     C7     .    ADD
+ MBZ      C7     N7     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MBZ       OP1       P         deloc     1.510     0.020     1.510     0.020     
+MBZ       OP2       P         deloc     1.510     0.020     1.510     0.020     
+MBZ       P         OP3       deloc     1.510     0.020     1.510     0.020     
+MBZ       "O5'"     P         single    1.610     0.020     1.610     0.020     
+MBZ       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+MBZ       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+MBZ       "HO'3"    "O3'"     single    0.970     0.012     0.839     0.014     
+MBZ       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+MBZ       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+MBZ       N1        "C1'"     single    1.485     0.020     1.485     0.020     
+MBZ       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+MBZ       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+MBZ       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+MBZ       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+MBZ       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+MBZ       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+MBZ       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+MBZ       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+MBZ       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+MBZ       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+MBZ       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+MBZ       C5M       C6        single    1.506     0.020     1.506     0.020     
+MBZ       H71       C5M       single    1.089     0.010     0.989     0.005     
+MBZ       H72       C5M       single    1.089     0.010     0.989     0.005     
+MBZ       H73       C5M       single    1.089     0.010     0.989     0.005     
+MBZ       C6        C7        single    1.490     0.020     1.490     0.020     
+MBZ       C6        C12       double    1.390     0.020     1.390     0.020     
+MBZ       C7        N7        single    1.350     0.020     1.350     0.020     
+MBZ       C7        C9        double    1.490     0.020     1.490     0.020     
+MBZ       N7        C8        double    1.350     0.020     1.350     0.020     
+MBZ       C8        N1        single    1.337     0.020     1.337     0.020     
+MBZ       H8        C8        single    1.082     0.013     0.975     0.010     
+MBZ       C9        N1        single    1.337     0.020     1.337     0.020     
+MBZ       C10       C9        single    1.390     0.020     1.390     0.020     
+MBZ       C11       C10       double    1.390     0.020     1.390     0.020     
+MBZ       H10       C10       single    1.082     0.013     0.975     0.010     
+MBZ       C12       C11       single    1.390     0.020     1.390     0.020     
+MBZ       H11       C11       single    1.082     0.013     0.975     0.010     
+MBZ       H12       C12       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MBZ      OP3    P      OP1     119.900    3.000
+ MBZ      OP3    P      OP2     119.900    3.000
+ MBZ      OP3    P      "O5'"   108.200    3.000
+ MBZ      OP1    P      OP2     119.900    3.000
+ MBZ      OP1    P      "O5'"   108.200    3.000
+ MBZ      OP2    P      "O5'"   108.200    3.000
+ MBZ      P      "O5'"  "C5'"   120.500    3.000
+ MBZ      "O5'"  "C5'"  "H5'"   109.470    3.000
+ MBZ      "O5'"  "C5'"  "H5''"  109.470    3.000
+ MBZ      "O5'"  "C5'"  "C4'"   109.470    3.000
+ MBZ      "H5'"  "C5'"  "H5''"  107.900    3.000
+ MBZ      "H5'"  "C5'"  "C4'"   109.470    3.000
+ MBZ      "H5''" "C5'"  "C4'"   109.470    3.000
+ MBZ      "C5'"  "C4'"  "H4'"   108.340    3.000
+ MBZ      "C5'"  "C4'"  "O4'"   109.470    3.000
+ MBZ      "C5'"  "C4'"  "C3'"   111.000    3.000
+ MBZ      "H4'"  "C4'"  "O4'"   109.470    3.000
+ MBZ      "H4'"  "C4'"  "C3'"   108.340    3.000
+ MBZ      "O4'"  "C4'"  "C3'"   109.470    3.000
+ MBZ      "C4'"  "O4'"  "C1'"   111.800    3.000
+ MBZ      "O4'"  "C1'"  "H1'"   109.470    3.000
+ MBZ      "O4'"  "C1'"  N1      109.470    3.000
+ MBZ      "O4'"  "C1'"  "C2'"   109.470    3.000
+ MBZ      "H1'"  "C1'"  N1      109.470    3.000
+ MBZ      "H1'"  "C1'"  "C2'"   108.340    3.000
+ MBZ      N1     "C1'"  "C2'"   109.470    3.000
+ MBZ      "C1'"  N1     C8      126.000    3.000
+ MBZ      "C1'"  N1     C9      126.000    3.000
+ MBZ      C8     N1     C9      108.000    3.000
+ MBZ      N1     C8     H8      126.000    3.000
+ MBZ      N1     C8     N7      108.000    3.000
+ MBZ      H8     C8     N7      126.000    3.000
+ MBZ      C8     N7     C7      108.000    3.000
+ MBZ      N1     C9     C7      108.000    3.000
+ MBZ      N1     C9     C10     132.000    3.000
+ MBZ      C7     C9     C10     120.000    3.000
+ MBZ      C9     C7     C6      120.000    3.000
+ MBZ      C9     C7     N7      108.000    3.000
+ MBZ      C6     C7     N7      132.000    3.000
+ MBZ      C9     C10    H10     120.000    3.000
+ MBZ      C9     C10    C11     120.000    3.000
+ MBZ      H10    C10    C11     120.000    3.000
+ MBZ      C10    C11    H11     120.000    3.000
+ MBZ      C10    C11    C12     120.000    3.000
+ MBZ      H11    C11    C12     120.000    3.000
+ MBZ      C11    C12    H12     120.000    3.000
+ MBZ      C11    C12    C6      120.000    3.000
+ MBZ      H12    C12    C6      120.000    3.000
+ MBZ      C12    C6     C5M     120.000    3.000
+ MBZ      C12    C6     C7      120.000    3.000
+ MBZ      C5M    C6     C7      120.000    3.000
+ MBZ      C6     C5M    H73     109.470    3.000
+ MBZ      C6     C5M    H72     109.470    3.000
+ MBZ      C6     C5M    H71     109.470    3.000
+ MBZ      H73    C5M    H72     109.470    3.000
+ MBZ      H73    C5M    H71     109.470    3.000
+ MBZ      H72    C5M    H71     109.470    3.000
+ MBZ      "C4'"  "C3'"  "H3'"   108.340    3.000
+ MBZ      "C4'"  "C3'"  "C2'"   111.000    3.000
+ MBZ      "C4'"  "C3'"  "O3'"   109.470    3.000
+ MBZ      "H3'"  "C3'"  "C2'"   108.340    3.000
+ MBZ      "H3'"  "C3'"  "O3'"   109.470    3.000
+ MBZ      "C2'"  "C3'"  "O3'"   109.470    3.000
+ MBZ      "C3'"  "C2'"  "H2''"  109.470    3.000
+ MBZ      "C3'"  "C2'"  "H2'"   109.470    3.000
+ MBZ      "C3'"  "C2'"  "C1'"   111.000    3.000
+ MBZ      "H2''" "C2'"  "H2'"   107.900    3.000
+ MBZ      "H2''" "C2'"  "C1'"   109.470    3.000
+ MBZ      "H2'"  "C2'"  "C1'"   109.470    3.000
+ MBZ      "C3'"  "O3'"  "HO'3"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MBZ      var_1    OP3    P      "O5'"  "C5'"    -60.039   20.000   1
+ MBZ      var_2    P      "O5'"  "C5'"  "C4'"   -179.998   20.000   1
+ MBZ      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -179.951   20.000   3
+ MBZ      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ MBZ      var_5    "C4'"  "O4'"  "C1'"  N1      -150.000   20.000   1
+ MBZ      var_6    "O4'"  "C1'"  "C2'"  "C3'"      0.000   20.000   3
+ MBZ      var_7    "O4'"  "C1'"  N1     C9      -151.667   20.000   1
+ MBZ      CONST_1  "C1'"  N1     C8     N7       180.000    0.000   0
+ MBZ      CONST_2  N1     C8     N7     C7         0.000    0.000   0
+ MBZ      CONST_3  "C1'"  N1     C9     C10        0.000    0.000   0
+ MBZ      CONST_4  N1     C9     C7     C6       180.000    0.000   0
+ MBZ      CONST_5  C9     C7     N7     C8         0.000    0.000   0
+ MBZ      CONST_6  N1     C9     C10    C11      180.000    0.000   0
+ MBZ      CONST_7  C9     C10    C11    C12        0.000    0.000   0
+ MBZ      CONST_8  C10    C11    C12    C6         0.000    0.000   0
+ MBZ      CONST_9  C11    C12    C6     C5M      180.000    0.000   0
+ MBZ      CONST_10 C12    C6     C7     C9         0.000    0.000   0
+ MBZ      var_8    C12    C6     C5M    H71       90.014   20.000   1
+ MBZ      var_9    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ MBZ      var_10   "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MBZ      chir_01  "C1'"  "C2'"  "O4'"  N1        negativ
+ MBZ      chir_02  "C3'"  "O3'"  "C2'"  "C4'"     negativ
+ MBZ      chir_03  "C4'"  "C3'"  "C5'"  "O4'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MBZ      plan-1    C6        0.020
+ MBZ      plan-1    C5M       0.020
+ MBZ      plan-1    C7        0.020
+ MBZ      plan-1    C12       0.020
+ MBZ      plan-1    C10       0.020
+ MBZ      plan-1    C11       0.020
+ MBZ      plan-1    N7        0.020
+ MBZ      plan-1    C9        0.020
+ MBZ      plan-1    C8        0.020
+ MBZ      plan-1    N1        0.020
+ MBZ      plan-1    H8        0.020
+ MBZ      plan-1    "C1'"     0.020
+ MBZ      plan-1    H10       0.020
+ MBZ      plan-1    H11       0.020
+ MBZ      plan-1    H12       0.020
+# ------------------------------------------------------

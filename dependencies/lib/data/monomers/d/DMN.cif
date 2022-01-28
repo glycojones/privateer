@@ -1,0 +1,103 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DMN     DMN      DIMETHYLAMINE     NON-POLYMER     10     3     .     
+#
+data_comp_DMN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DMN     N1      N       NT1     0       -10.917     19.115      27.936      
+DMN     C2      C       CH3     0       -11.240     18.028      28.875      
+DMN     C3      C       CH3     0       -10.169     18.715      26.731      
+DMN     HN1     H       H       0       -10.431     19.730      28.377      
+DMN     H21     H       H       0       -11.628     18.404      29.689      
+DMN     H22     H       H       0       -10.426     17.538      29.101      
+DMN     H23     H       H       0       -11.882     17.419      28.461      
+DMN     H31     H       H       0       -10.565     19.143      25.947      
+DMN     H32     H       H       0       -10.202     17.745      26.619      
+DMN     H33     H       H       0       -9.238      18.998      26.816      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DMN       N1        C2        SINGLE    n         1.470     0.013     1.470     0.013     
+DMN       N1        C3        SINGLE    n         1.470     0.013     1.470     0.013     
+DMN       N1        HN1       SINGLE    n         1.036     0.016     0.899     0.020     
+DMN       C2        H21       SINGLE    n         1.089     0.010     0.977     0.013     
+DMN       C2        H22       SINGLE    n         1.089     0.010     0.977     0.013     
+DMN       C2        H23       SINGLE    n         1.089     0.010     0.977     0.013     
+DMN       C3        H31       SINGLE    n         1.089     0.010     0.977     0.013     
+DMN       C3        H32       SINGLE    n         1.089     0.010     0.977     0.013     
+DMN       C3        H33       SINGLE    n         1.089     0.010     0.977     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DMN          C2          N1          C3     112.615    2.70
+DMN          C2          N1         HN1     108.144    3.00
+DMN          C3          N1         HN1     108.144    3.00
+DMN          N1          C2         H21     109.463    1.50
+DMN          N1          C2         H22     109.463    1.50
+DMN          N1          C2         H23     109.463    1.50
+DMN         H21          C2         H22     109.279    1.79
+DMN         H21          C2         H23     109.279    1.79
+DMN         H22          C2         H23     109.279    1.79
+DMN          N1          C3         H31     109.463    1.50
+DMN          N1          C3         H32     109.463    1.50
+DMN          N1          C3         H33     109.463    1.50
+DMN         H31          C3         H32     109.279    1.79
+DMN         H31          C3         H33     109.279    1.79
+DMN         H32          C3         H33     109.279    1.79
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DMN             sp3_sp3_1         H21          C2          N1          C3     180.000   10.00     3
+DMN             sp3_sp3_7         H31          C3          N1          C2     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DMN SMILES           ACDLabs              10.04 "N(C)C"
+DMN SMILES_CANONICAL CACTVS               3.341 CNC
+DMN SMILES           CACTVS               3.341 CNC
+DMN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CNC
+DMN SMILES           "OpenEye OEToolkits" 1.5.0 CNC
+DMN InChI            InChI                1.03  InChI=1S/C2H7N/c1-3-2/h3H,1-2H3
+DMN InChIKey         InChI                1.03  ROSDSFDQCJNGOL-UHFFFAOYSA-N
+DMN ?                acedrg               202         "dictionary generator"                  
+DMN ?                acedrg_database      11          "data source"                           
+DMN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DMN ?                refmac5              5.8.0189    "optimization tool"                     

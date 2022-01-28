@@ -1,0 +1,134 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+6X8     6X8      2-iodanylphenol     NON-POLYMER     13     8     .     
+#
+data_comp_6X8
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+6X8     CG      C       CR16    0       -29.885     -29.499     1.642       
+6X8     CD      C       CR16    0       -28.811     -27.351     3.067       
+6X8     CE      C       CR6     0       -28.235     -28.621     3.165       
+6X8     CH      C       CR16    0       -30.458     -28.227     1.546       
+6X8     CC      C       CR16    0       -29.926     -27.160     2.253       
+6X8     CF      C       CR6     0       -28.770     -29.703     2.452       
+6X8     OF      O       OH1     0       -28.209     -30.943     2.547       
+6X8     IE      I       I       0       -26.559     -28.904     4.389       
+6X8     H1      H       H       0       -30.253     -30.220     1.157       
+6X8     H2      H       H       0       -28.446     -26.628     3.549       
+6X8     H3      H       H       0       -31.212     -28.097     0.996       
+6X8     H4      H       H       0       -30.317     -26.305     2.184       
+6X8     H5      H       H       0       -27.461     -30.949     2.127       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+6X8       CG        CH        DOUBLE    y         1.390     0.010     1.390     0.010     
+6X8       CH        CC        SINGLE    y         1.376     0.012     1.376     0.012     
+6X8       CG        CF        SINGLE    y         1.385     0.011     1.385     0.011     
+6X8       CF        OF        SINGLE    n         1.364     0.013     1.364     0.013     
+6X8       CD        CC        DOUBLE    y         1.386     0.010     1.386     0.010     
+6X8       CE        CF        DOUBLE    y         1.395     0.010     1.395     0.010     
+6X8       CD        CE        SINGLE    y         1.392     0.010     1.392     0.010     
+6X8       CE        IE        SINGLE    n         2.094     0.010     2.094     0.010     
+6X8       CG        H1        SINGLE    n         1.082     0.013     0.944     0.010     
+6X8       CD        H2        SINGLE    n         1.082     0.013     0.943     0.010     
+6X8       CH        H3        SINGLE    n         1.082     0.013     0.943     0.018     
+6X8       CC        H4        SINGLE    n         1.082     0.013     0.943     0.015     
+6X8       OF        H5        SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+6X8          CH          CG          CF     119.746    1.50
+6X8          CH          CG          H1     120.212    1.50
+6X8          CF          CG          H1     120.042    1.50
+6X8          CC          CD          CE     119.702    1.50
+6X8          CC          CD          H2     120.293    1.50
+6X8          CE          CD          H2     120.006    1.50
+6X8          CF          CE          CD     120.951    1.50
+6X8          CF          CE          IE     119.383    1.50
+6X8          CD          CE          IE     119.666    1.50
+6X8          CG          CH          CC     120.382    1.50
+6X8          CG          CH          H3     119.629    1.50
+6X8          CC          CH          H3     119.998    1.50
+6X8          CH          CC          CD     119.860    1.50
+6X8          CH          CC          H4     120.183    1.50
+6X8          CD          CC          H4     119.956    1.50
+6X8          CG          CF          OF     120.431    2.52
+6X8          CG          CF          CE     119.349    1.50
+6X8          OF          CF          CE     120.221    1.50
+6X8          CF          OF          H5     109.337    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+6X8       const_sp2_sp2_1          CF          CG          CH          CC       0.000   10.00     2
+6X8              const_23          OF          CF          CG          CH     180.000   10.00     2
+6X8              const_14          CC          CD          CE          IE     180.000   10.00     2
+6X8       const_sp2_sp2_9          CH          CC          CD          CE       0.000   10.00     2
+6X8              const_20          IE          CE          CF          OF       0.000   10.00     2
+6X8       const_sp2_sp2_5          CD          CC          CH          CG       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+6X8    plan-1          CC   0.020
+6X8    plan-1          CD   0.020
+6X8    plan-1          CE   0.020
+6X8    plan-1          CF   0.020
+6X8    plan-1          CG   0.020
+6X8    plan-1          CH   0.020
+6X8    plan-1          H1   0.020
+6X8    plan-1          H2   0.020
+6X8    plan-1          H3   0.020
+6X8    plan-1          H4   0.020
+6X8    plan-1          IE   0.020
+6X8    plan-1          OF   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+6X8 InChI            InChI                1.03  "InChI=1S/C6H5IO/c7-5-3-1-2-4-6(5)8/h1-4,8H"
+6X8 InChIKey         InChI                1.03  KQDJTBPASNJQFQ-UHFFFAOYSA-N
+6X8 SMILES_CANONICAL CACTVS               3.385 Oc1ccccc1I
+6X8 SMILES           CACTVS               3.385 Oc1ccccc1I
+6X8 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "c1ccc(c(c1)O)I"
+6X8 SMILES           "OpenEye OEToolkits" 2.0.6 "c1ccc(c(c1)O)I"
+6X8 ?                acedrg               202         "dictionary generator"                  
+6X8 ?                acedrg_database      11          "data source"                           
+6X8 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+6X8 ?                refmac5              5.8.0189    "optimization tool"                     

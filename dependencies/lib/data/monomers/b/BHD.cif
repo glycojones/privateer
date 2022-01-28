@@ -1,0 +1,174 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BHD     BHD     "(3S)-3-hydroxy-L-asparticacid"  peptide  16     10     .     
+#
+data_comp_BHD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BHD     N       N       NT3     1       41.986      33.920      18.144      
+BHD     CA      C       CH1     0       42.340      33.646      19.565      
+BHD     CB      C       CH1     0       41.571      32.438      20.136      
+BHD     OB      O       OH1     0       40.202      32.537      19.793      
+BHD     CG      C       C       0       41.744      32.315      21.655      
+BHD     OD1     O       O       0       42.380      31.329      22.081      
+BHD     OD2     O       OC      -1      41.235      33.210      22.360      
+BHD     C       C       C       0       43.858      33.457      19.693      
+BHD     O       O       O       0       44.377      32.554      19.007      
+BHD     OXT     O       OC      -1      44.459      34.222      20.472      
+BHD     H       H       H       0       42.652      34.392      17.736      
+BHD     H2      H       H       0       41.217      34.408      18.106      
+BHD     H3      H       H       0       41.861      33.136      17.697      
+BHD     HA      H       H       0       42.080      34.435      20.096      
+BHD     HB      H       H       0       41.937      31.620      19.718      
+BHD     HOB     H       H       0       39.838      31.778      19.894      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BHD      N      n/a    CA     START
+ BHD      H      N      .      .
+ BHD      H2     N      .      .
+ BHD      H3     N      .      .
+ BHD      CA     N      C      .
+ BHD      HA     CA     .      .
+ BHD      CB     CA     CG     .
+ BHD      HB     CB     .      .
+ BHD      OB     CB     HOB    .
+ BHD      HOB    OB     .      .
+ BHD      CG     CB     OD2    .
+ BHD      OD1    CG     .      .
+ BHD      OD2    CG     .      .
+ BHD      C      CA     .      END
+ BHD      O      C      .      .
+ BHD      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BHD       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+BHD       CA        CB        SINGLE    n         1.539     0.011     1.539     0.011     
+BHD       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+BHD       CB        OB        SINGLE    n         1.415     0.012     1.415     0.012     
+BHD       CB        CG        SINGLE    n         1.533     0.010     1.533     0.010     
+BHD       CG        OD1       DOUBLE    n         1.247     0.019     1.247     0.019     
+BHD       CG        OD2       SINGLE    n         1.247     0.019     1.247     0.019     
+BHD       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+BHD       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+BHD       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+BHD       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+BHD       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+BHD       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+BHD       CB        HB        SINGLE    n         1.089     0.010     0.989     0.018     
+BHD       OB        HOB       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BHD          CA           N           H     109.889    1.50
+BHD          CA           N          H2     109.889    1.50
+BHD          CA           N          H3     109.889    1.50
+BHD           H           N          H2     109.028    2.41
+BHD           H           N          H3     109.028    2.41
+BHD          H2           N          H3     109.028    2.41
+BHD           N          CA          CB     112.810    3.00
+BHD           N          CA           C     109.414    1.50
+BHD           N          CA          HA     108.031    1.50
+BHD          CB          CA           C     111.511    2.91
+BHD          CB          CA          HA     107.549    1.55
+BHD           C          CA          HA     108.600    1.50
+BHD          CA          CB          OB     110.423    2.15
+BHD          CA          CB          CG     111.511    2.91
+BHD          CA          CB          HB     108.277    1.50
+BHD          OB          CB          CG     111.343    1.72
+BHD          OB          CB          HB     108.675    1.50
+BHD          CG          CB          HB     108.330    1.50
+BHD          CB          OB         HOB     108.894    3.00
+BHD          CB          CG         OD1     117.167    1.52
+BHD          CB          CG         OD2     117.167    1.52
+BHD         OD1          CG         OD2     125.666    1.50
+BHD          CA           C           O     117.003    1.50
+BHD          CA           C         OXT     117.003    1.50
+BHD           O           C         OXT     125.994    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BHD             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+BHD            sp3_sp3_10           N          CA          CB          OB     180.000   10.00     3
+BHD             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+BHD            sp3_sp3_19          CA          CB          OB         HOB     180.000   10.00     3
+BHD             sp2_sp3_7         OD1          CG          CB          CA       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+BHD    chir_1    CA    N    C    CB    positive
+BHD    chir_2    CB    OB    CG    CA    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BHD    plan-1          CB   0.020
+BHD    plan-1          CG   0.020
+BHD    plan-1         OD1   0.020
+BHD    plan-1         OD2   0.020
+BHD    plan-2           C   0.020
+BHD    plan-2          CA   0.020
+BHD    plan-2           O   0.020
+BHD    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BHD SMILES           ACDLabs              12.01 "O=C(O)C(O)C(C(=O)O)N"
+BHD InChI            InChI                1.03  "InChI=1S/C4H7NO5/c5-1(3(7)8)2(6)4(9)10/h1-2,6H,5H2,(H,7,8)(H,9,10)/t1-,2-/m0/s1"
+BHD InChIKey         InChI                1.03  YYLQUHNPNCGKJQ-LWMBPPNESA-N
+BHD SMILES_CANONICAL CACTVS               3.370 "N[C@@H]([C@H](O)C(O)=O)C(O)=O"
+BHD SMILES           CACTVS               3.370 "N[CH]([CH](O)C(O)=O)C(O)=O"
+BHD SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "[C@H]([C@@H](C(=O)O)O)(C(=O)O)N"
+BHD SMILES           "OpenEye OEToolkits" 1.7.6 "C(C(C(=O)O)O)(C(=O)O)N"
+BHD ?                acedrg               196         "dictionary generator"                  
+BHD ?                acedrg_database      11          "data source"                           
+BHD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BHD ?                refmac5              5.8.0222    "optimization tool"                     

@@ -1,0 +1,98 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BO4     BO4      "BORATE ION"     NON-POLYMER     9     5     .     
+#
+data_comp_BO4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BO4     B       B       B       -1      52.357      49.488      10.252      
+BO4     O1      O       OH1     0       52.943      48.143      10.406      
+BO4     O2      O       OH1     0       51.140      49.583      11.079      
+BO4     O3      O       OH1     0       53.332      50.501      10.713      
+BO4     O4      O       OH1     0       51.996      49.702      8.835       
+BO4     HO1     H       H       0       53.490      47.979      9.780       
+BO4     HO2     H       H       0       50.499      49.158      10.721      
+BO4     HO3     H       H       0       53.665      50.941      10.068      
+BO4     HO4     H       H       0       51.615      49.016      8.515       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BO4       B         O1        SINGLE    n         1.475     0.020     1.475     0.020     
+BO4       B         O2        SINGLE    n         1.475     0.020     1.475     0.020     
+BO4       B         O3        SINGLE    n         1.475     0.020     1.475     0.020     
+BO4       B         O4        SINGLE    n         1.475     0.020     1.475     0.020     
+BO4       O1        HO1       SINGLE    n         0.970     0.012     0.848     0.020     
+BO4       O2        HO2       SINGLE    n         0.970     0.012     0.848     0.020     
+BO4       O3        HO3       SINGLE    n         0.970     0.012     0.848     0.020     
+BO4       O4        HO4       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BO4          O1           B          O2     110.049    3.00
+BO4          O1           B          O3     110.049    3.00
+BO4          O1           B          O4     110.049    3.00
+BO4          O2           B          O3     110.049    3.00
+BO4          O2           B          O4     110.049    3.00
+BO4          O3           B          O4     110.049    3.00
+BO4           B          O1         HO1     110.747    3.00
+BO4           B          O2         HO2     110.747    3.00
+BO4           B          O3         HO3     110.747    3.00
+BO4           B          O4         HO4     110.747    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BO4             sp3_sp3_1          O2           B          O1         HO1     180.000   10.00     3
+BO4             sp3_sp3_4          O1           B          O2         HO2     180.000   10.00     3
+BO4             sp3_sp3_7          O1           B          O3         HO3     180.000   10.00     3
+BO4            sp3_sp3_10          O1           B          O4         HO4     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BO4 SMILES           ACDLabs              10.04 "O[B-](O)(O)O"
+BO4 SMILES_CANONICAL CACTVS               3.341 "O[B-](O)(O)O"
+BO4 SMILES           CACTVS               3.341 "O[B-](O)(O)O"
+BO4 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[B-](O)(O)(O)O"
+BO4 SMILES           "OpenEye OEToolkits" 1.5.0 "[B-](O)(O)(O)O"
+BO4 InChI            InChI                1.03  "InChI=1S/BH4O4/c2-1(3,4)5/h2-5H/q-1"
+BO4 InChIKey         InChI                1.03  KCFLOKKYWBPKFN-UHFFFAOYSA-N
+BO4 ?                acedrg               202         "dictionary generator"                  
+BO4 ?                acedrg_database      11          "data source"                           
+BO4 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BO4 ?                refmac5              5.8.0189    "optimization tool"                     

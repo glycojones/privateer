@@ -1,0 +1,236 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HOX     HOX     4-amino-L-phenylalanine     peptide    25     13     .
+#
+data_comp_HOX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HOX     O       O       O       0       2.892       55.886      83.517
+HOX     C       C       C       0       1.723       56.211      83.233
+HOX     N       N       NT3     1       1.690       55.087      81.039
+HOX     OXT     O       OC      -1      1.137       57.235      83.637
+HOX     CA      C       CH1     0       0.937       55.273      82.309
+HOX     CB      C       CH2     0       0.671       53.918      82.971
+HOX     CG      C       CR6     0       -0.216      53.971      84.191
+HOX     CZ      C       CR6     0       -1.877      54.075      86.467
+HOX     NZ      N       NH2     0       -2.688      54.126      87.579
+HOX     CD1     C       CR16    0       -1.570      54.260      84.079
+HOX     CD2     C       CR16    0       0.292       53.737      85.463
+HOX     CE1     C       CR16    0       -2.393      54.312      85.194
+HOX     CE2     C       CR16    0       -0.519      53.786      86.586
+HOX     H       H       H       0       1.225       54.534      80.484
+HOX     H2      H       H       0       2.505       54.719      81.214
+HOX     H3      H       H       0       1.806       55.893      80.629
+HOX     HA      H       H       0       0.067       55.698      82.099
+HOX     HB      H       H       0       1.532       53.523      83.222
+HOX     HBA     H       H       0       0.256       53.328      82.308
+HOX     HNZ     H       H       0       -2.343      54.017      88.378
+HOX     HNZA    H       H       0       -3.550      54.266      87.486
+HOX     HD1     H       H       0       -1.939      54.423      83.227
+HOX     HD2     H       H       0       1.208       53.539      85.566
+HOX     HE1     H       H       0       -3.309      54.509      85.095
+HOX     HE2     H       H       0       -0.154      53.623      87.439
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+HOX      N      n/a    CA     START
+HOX      H      N      .      .
+HOX      H2     N      .      .
+HOX      H3     N      .      .
+HOX      CA     N      C      .
+HOX      HA     CA     .      .
+HOX      CB     CA     CG     .
+HOX      HB     CB     .      .
+HOX      HBA    CB     .      .
+HOX      CG     CB     CD2    .
+HOX      CD2    CG     CE2    .
+HOX      HD2    CD2    .      .
+HOX      CE2    CD2    CZ     .
+HOX      HE2    CE2    .      .
+HOX      CZ     CE2    CE1    .
+HOX      NZ     CZ     HNZ    .
+HOX      HNZA   NZ     .      .
+HOX      HNZ    NZ     .      .
+HOX      CE1    CZ     CD1    .
+HOX      HE1    CE1    .      .
+HOX      CD1    CE1    HD1    .
+HOX      HD1    CD1    .      .
+HOX      C      CA     .      END
+HOX      O      C      .      .
+HOX      OXT    C      .      .
+HOX      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HOX       O         C         DOUBLE    n         1.247     0.019     1.247     0.019     
+HOX       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+HOX       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+HOX       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+HOX       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+HOX       CB        CG        SINGLE    n         1.508     0.010     1.508     0.010     
+HOX       CG        CD1       DOUBLE    y         1.385     0.011     1.385     0.011     
+HOX       CG        CD2       SINGLE    y         1.385     0.011     1.385     0.011     
+HOX       CZ        CE1       DOUBLE    y         1.390     0.010     1.390     0.010     
+HOX       CZ        CE2       SINGLE    y         1.390     0.010     1.390     0.010     
+HOX       CZ        NZ        SINGLE    n         1.375     0.018     1.375     0.018     
+HOX       CD1       CE1       SINGLE    y         1.383     0.010     1.383     0.010     
+HOX       CD2       CE2       DOUBLE    y         1.383     0.010     1.383     0.010     
+HOX       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+HOX       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+HOX       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+HOX       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+HOX       CB        HB        SINGLE    n         1.089     0.010     0.980     0.016     
+HOX       CB        HBA       SINGLE    n         1.089     0.010     0.980     0.016     
+HOX       NZ        HNZ       SINGLE    n         1.016     0.010     0.877     0.020     
+HOX       NZ        HNZA      SINGLE    n         1.016     0.010     0.877     0.020     
+HOX       CD1       HD1       SINGLE    n         1.082     0.013     0.943     0.017     
+HOX       CD2       HD2       SINGLE    n         1.082     0.013     0.943     0.017     
+HOX       CE1       HE1       SINGLE    n         1.082     0.013     0.942     0.018     
+HOX       CE2       HE2       SINGLE    n         1.082     0.013     0.942     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HOX           O           C          CA     117.229    2.13
+HOX           O           C         OXT     125.543    1.50
+HOX          CA           C         OXT     117.229    2.13
+HOX          CA           N           H     109.646    1.54
+HOX          CA           N          H2     109.646    1.54
+HOX          CA           N          H3     109.646    1.54
+HOX           H           N          H2     109.028    2.41
+HOX           H           N          H3     109.028    2.41
+HOX          H2           N          H3     109.028    2.41
+HOX           C          CA           N     109.448    1.50
+HOX           C          CA          CB     111.331    2.53
+HOX           C          CA          HA     108.450    1.50
+HOX           N          CA          CB     110.494    1.50
+HOX           N          CA          HA     108.601    1.50
+HOX          CB          CA          HA     108.690    1.50
+HOX          CA          CB          CG     114.745    1.55
+HOX          CA          CB          HB     108.434    1.50
+HOX          CA          CB         HBA     108.434    1.50
+HOX          CG          CB          HB     108.862    1.50
+HOX          CG          CB         HBA     108.862    1.50
+HOX          HB          CB         HBA     107.782    1.50
+HOX          CB          CG         CD1     121.088    1.50
+HOX          CB          CG         CD2     121.088    1.50
+HOX         CD1          CG         CD2     117.825    1.50
+HOX         CE1          CZ         CE2     118.346    1.50
+HOX         CE1          CZ          NZ     120.832    1.50
+HOX         CE2          CZ          NZ     120.832    1.50
+HOX          CZ          NZ         HNZ     119.811    2.73
+HOX          CZ          NZ        HNZA     119.811    2.73
+HOX         HNZ          NZ        HNZA     120.379    3.00
+HOX          CG         CD1         CE1     121.421    1.50
+HOX          CG         CD1         HD1     119.333    1.50
+HOX         CE1         CD1         HD1     119.246    1.50
+HOX          CG         CD2         CE2     121.421    1.50
+HOX          CG         CD2         HD2     119.333    1.50
+HOX         CE2         CD2         HD2     119.246    1.50
+HOX          CZ         CE1         CD1     120.489    1.50
+HOX          CZ         CE1         HE1     119.468    1.50
+HOX         CD1         CE1         HE1     120.043    1.50
+HOX          CZ         CE2         CD2     120.489    1.50
+HOX          CZ         CE2         HE2     119.468    1.50
+HOX         CD2         CE2         HE2     120.043    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HOX              const_17          CG         CD2         CE2          CZ       0.000   10.00     2
+HOX             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+HOX             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+HOX            sp3_sp3_10           C          CA          CB          CG     180.000   10.00     3
+HOX             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+HOX              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+HOX       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+HOX              const_10         CD1         CE1          CZ          NZ     180.000   10.00     2
+HOX              const_14         CD2         CE2          CZ          NZ     180.000   10.00     2
+HOX             sp2_sp2_1         CE1          CZ          NZ         HNZ     180.000   10.00     2
+HOX       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+HOX    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HOX    plan-1          CB   0.020
+HOX    plan-1         CD1   0.020
+HOX    plan-1         CD2   0.020
+HOX    plan-1         CE1   0.020
+HOX    plan-1         CE2   0.020
+HOX    plan-1          CG   0.020
+HOX    plan-1          CZ   0.020
+HOX    plan-1         HD1   0.020
+HOX    plan-1         HD2   0.020
+HOX    plan-1         HE1   0.020
+HOX    plan-1         HE2   0.020
+HOX    plan-1          NZ   0.020
+HOX    plan-2           C   0.020
+HOX    plan-2          CA   0.020
+HOX    plan-2           O   0.020
+HOX    plan-2         OXT   0.020
+HOX    plan-3          CZ   0.020
+HOX    plan-3         HNZ   0.020
+HOX    plan-3        HNZA   0.020
+HOX    plan-3          NZ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HOX SMILES           ACDLabs              11.02 "O=C(O)C(N)Cc1ccc(N)cc1"
+HOX SMILES_CANONICAL CACTVS               3.352 "N[C@@H](Cc1ccc(N)cc1)C(O)=O"
+HOX SMILES           CACTVS               3.352 "N[CH](Cc1ccc(N)cc1)C(O)=O"
+HOX SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc(ccc1C[C@@H](C(=O)O)N)N"
+HOX SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(ccc1CC(C(=O)O)N)N"
+HOX InChI            InChI                1.03  "InChI=1S/C9H12N2O2/c10-7-3-1-6(2-4-7)5-8(11)9(12)13/h1-4,8H,5,10-11H2,(H,12,13)/t8-/m0/s1"
+HOX InChIKey         InChI                1.03  CMUHFUGDYMFHEI-QMMMGPOBSA-N
+HOX ?                acedrg               202         "dictionary generator"
+HOX ?                acedrg_database      11          "data source"
+HOX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HOX ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,86 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MF4      MF4 'TETRAFLUOROMAGNESATE(2-)            ' non-polymer         5   5 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MF4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MF4           F4     F    F         0.000      0.000    0.000    0.000
+ MF4           MG     MG   MG       -2.000     -1.748    0.000   -0.387
+ MF4           F1     F    F         0.000     -2.147   -1.462   -1.339
+ MF4           F2     F    F         0.000     -2.147    1.462   -1.339
+ MF4           F3     F    F         0.000     -2.696    0.000    1.131
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MF4      F4     n/a    MG     START
+ MF4      MG     F4     F3     .
+ MF4      F1     MG     .      .
+ MF4      F2     MG     .      .
+ MF4      F3     MG     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MF4       F1        MG        single    1.985     0.020     1.985     0.020     
+MF4       F2        MG        single    1.985     0.020     1.985     0.020     
+MF4       F3        MG        single    1.985     0.020     1.985     0.020     
+MF4       MG        F4        single    1.985     0.020     1.985     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MF4      F4     MG     F1       90.000    3.000
+ MF4      F4     MG     F2       90.000    3.000
+ MF4      F4     MG     F3       90.000    3.000
+ MF4      F1     MG     F2       90.000    3.000
+ MF4      F1     MG     F3       90.000    3.000
+ MF4      F2     MG     F3       90.000    3.000
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MF4      chir_01  MG     F4     F1     F2        both
+# ------------------------------------------------------

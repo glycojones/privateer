@@ -1,0 +1,942 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AGH      AGH 'N-{(1S,2R,3S)-1-[(ALPHA-D-GALACTOPYR' non-polymer       159  60 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AGH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AGH           OAA    O    O         0.000      0.000    0.000    0.000
+ AGH           CAA    C    C         0.000     -0.670   -0.189   -0.993
+ AGH           N2     N    NH1       0.000     -0.171    0.108   -2.208
+ AGH           HN2    H    H         0.000     -0.729   -0.048   -3.035
+ AGH           C2     C    CH1       0.000      1.182    0.657   -2.331
+ AGH           H2     H    H         0.000      1.389    1.314   -1.474
+ AGH           C3     C    CH1       0.000      1.290    1.463   -3.628
+ AGH           H5     H    H         0.000      0.987    0.833   -4.476
+ AGH           O3     O    OH1       0.000      2.640    1.891   -3.811
+ AGH           HO3    H    H         0.000      2.932    2.379   -3.029
+ AGH           C4     C    CH1       0.000      0.374    2.685   -3.548
+ AGH           H6     H    H         0.000      0.676    3.315   -2.699
+ AGH           O4     O    OH1       0.000     -0.977    2.255   -3.364
+ AGH           HO4    H    H         0.000     -1.243    1.702   -4.111
+ AGH           C5     C    CH2       0.000      0.482    3.490   -4.845
+ AGH           H51    H    H         0.000      0.098    2.893   -5.675
+ AGH           H52    H    H         0.000      1.528    3.740   -5.031
+ AGH           C6     C    CH2       0.000     -0.337    4.775   -4.717
+ AGH           H61    H    H         0.000      0.047    5.369   -3.885
+ AGH           H62    H    H         0.000     -1.383    4.523   -4.530
+ AGH           C7     C    CH2       0.000     -0.229    5.580   -6.013
+ AGH           H71    H    H         0.000     -0.612    4.984   -6.844
+ AGH           H72    H    H         0.000      0.818    5.831   -6.199
+ AGH           C8     C    CH2       0.000     -1.048    6.866   -5.886
+ AGH           H81    H    H         0.000     -0.664    7.460   -5.054
+ AGH           H82    H    H         0.000     -2.094    6.613   -5.699
+ AGH           C9     C    CH2       0.000     -0.940    7.671   -7.182
+ AGH           H91    H    H         0.000     -1.323    7.075   -8.013
+ AGH           H92    H    H         0.000      0.107    7.921   -7.368
+ AGH           C10    C    CH2       0.000     -1.759    8.957   -7.054
+ AGH           H101   H    H         0.000     -1.375    9.552   -6.223
+ AGH           H102   H    H         0.000     -2.805    8.705   -6.867
+ AGH           C11    C    CH2       0.000     -1.650    9.761   -8.351
+ AGH           H111   H    H         0.000     -2.034    9.165   -9.182
+ AGH           H112   H    H         0.000     -0.604   10.012   -8.538
+ AGH           C12    C    CH2       0.000     -2.470   11.047   -8.223
+ AGH           H121   H    H         0.000     -2.085   11.642   -7.392
+ AGH           H122   H    H         0.000     -3.516   10.795   -8.036
+ AGH           C13    C    CH2       0.000     -2.361   11.851   -9.521
+ AGH           H131   H    H         0.000     -2.745   11.255  -10.351
+ AGH           H132   H    H         0.000     -1.315   12.102   -9.707
+ AGH           C14    C    CH2       0.000     -3.180   13.138   -9.392
+ AGH           H141   H    H         0.000     -2.797   13.732   -8.561
+ AGH           H142   H    H         0.000     -4.226   12.886   -9.206
+ AGH           C15    C    CH2       0.000     -3.072   13.942  -10.689
+ AGH           H151   H    H         0.000     -3.454   13.346  -11.520
+ AGH           H152   H    H         0.000     -2.025   14.193  -10.874
+ AGH           C16    C    CH2       0.000     -3.891   15.228  -10.562
+ AGH           H161   H    H         0.000     -3.508   15.822   -9.729
+ AGH           H162   H    H         0.000     -4.937   14.975  -10.375
+ AGH           C17    C    CH2       0.000     -3.783   16.033  -11.858
+ AGH           H171   H    H         0.000     -4.166   15.437  -12.689
+ AGH           H172   H    H         0.000     -2.736   16.284  -12.044
+ AGH           C18    C    CH3       0.000     -4.602   17.319  -11.730
+ AGH           H183   H    H         0.000     -4.231   17.899  -10.924
+ AGH           H182   H    H         0.000     -4.529   17.879  -12.627
+ AGH           H181   H    H         0.000     -5.618   17.078  -11.549
+ AGH           C1     C    CH2       0.000      2.198   -0.487   -2.354
+ AGH           H11    H    H         0.000      2.067   -1.107   -1.465
+ AGH           H12    H    H         0.000      3.209   -0.075   -2.364
+ AGH           O1A    O    O2        0.000      1.994   -1.280   -3.525
+ AGH           C1A    C    CH1       0.000      2.967   -2.326   -3.489
+ AGH           H1A    H    H         0.000      3.961   -1.894   -3.306
+ AGH           C2A    C    CH1       0.000      2.972   -3.062   -4.831
+ AGH           H2A    H    H         0.000      3.703   -3.882   -4.798
+ AGH           O2A    O    OH1       0.000      3.322   -2.150   -5.874
+ AGH           H4     H    H         0.000      4.204   -1.792   -5.706
+ AGH           C3A    C    CH1       0.000      1.576   -3.631   -5.096
+ AGH           H3A    H    H         0.000      0.861   -2.807   -5.234
+ AGH           O3A    O    OH1       0.000      1.600   -4.446   -6.270
+ AGH           H3     H    H         0.000      1.865   -3.909   -7.029
+ AGH           C4A    C    CH1       0.000      1.156   -4.479   -3.889
+ AGH           H4A    H    H         0.000      0.113   -4.801   -4.011
+ AGH           O4A    O    OH1       0.000      2.002   -5.626   -3.792
+ AGH           H1     H    H         0.000      1.918   -6.157   -4.596
+ AGH           C5M    C    CH1       0.000      1.287   -3.637   -2.619
+ AGH           H5M    H    H         0.000      0.652   -2.744   -2.705
+ AGH           C6A    C    CH2       0.000      0.839   -4.466   -1.413
+ AGH           H6A1   H    H         0.000      1.524   -5.304   -1.273
+ AGH           H6A2   H    H         0.000     -0.170   -4.847   -1.589
+ AGH           O5A    O    OH1       0.000      0.843   -3.645   -0.243
+ AGH           H5A    H    H         0.000      0.559   -4.168    0.519
+ AGH           O6A    O    O2        0.000      2.645   -3.238   -2.440
+ AGH           CAB    C    CH2       0.000     -2.061   -0.754   -0.867
+ AGH           HAB1   H    H         0.000     -2.121   -1.697   -1.415
+ AGH           HAB2   H    H         0.000     -2.780   -0.046   -1.283
+ AGH           CAC    C    CH2       0.000     -2.381   -1.000    0.609
+ AGH           HAC1   H    H         0.000     -2.319   -0.056    1.156
+ AGH           HAC2   H    H         0.000     -1.660   -1.707    1.024
+ AGH           CAD    C    CH2       0.000     -3.794   -1.574    0.736
+ AGH           HAD1   H    H         0.000     -3.854   -2.516    0.189
+ AGH           HAD2   H    H         0.000     -4.513   -0.866    0.320
+ AGH           CAE    C    CH2       0.000     -4.113   -1.819    2.213
+ AGH           HAE1   H    H         0.000     -4.051   -0.875    2.759
+ AGH           HAE2   H    H         0.000     -3.392   -2.526    2.628
+ AGH           CAF    C    CH2       0.000     -5.526   -2.393    2.340
+ AGH           HAF1   H    H         0.000     -5.586   -3.335    1.792
+ AGH           HAF2   H    H         0.000     -6.245   -1.685    1.923
+ AGH           CAG    C    CH2       0.000     -5.845   -2.638    3.816
+ AGH           HAG1   H    H         0.000     -5.783   -1.694    4.363
+ AGH           HAG2   H    H         0.000     -5.124   -3.345    4.232
+ AGH           CAH    C    CH2       0.000     -7.258   -3.212    3.944
+ AGH           HAH1   H    H         0.000     -7.318   -4.154    3.396
+ AGH           HAH2   H    H         0.000     -7.977   -2.504    3.527
+ AGH           CAI    C    CH2       0.000     -7.577   -3.457    5.420
+ AGH           HAI1   H    H         0.000     -7.515   -2.513    5.967
+ AGH           HAI2   H    H         0.000     -6.856   -4.164    5.835
+ AGH           CAJ    C    CH2       0.000     -8.989   -4.031    5.547
+ AGH           HAJ1   H    H         0.000     -9.049   -4.973    4.999
+ AGH           HAJ2   H    H         0.000     -9.708   -3.322    5.131
+ AGH           CAK    C    CH2       0.000     -9.309   -4.276    7.023
+ AGH           HAK1   H    H         0.000     -9.248   -3.333    7.569
+ AGH           HAK2   H    H         0.000     -8.588   -4.983    7.438
+ AGH           CAL    C    CH2       0.000    -10.721   -4.851    7.151
+ AGH           HAL1   H    H         0.000    -10.780   -5.793    6.603
+ AGH           HAL2   H    H         0.000    -11.440   -4.143    6.734
+ AGH           CAM    C    CH2       0.000    -11.041   -5.096    8.627
+ AGH           HAM1   H    H         0.000    -10.979   -4.153    9.173
+ AGH           HAM2   H    H         0.000    -10.320   -5.804    9.042
+ AGH           CAN    C    CH2       0.000    -12.453   -5.670    8.754
+ AGH           HAN1   H    H         0.000    -12.513   -6.613    8.206
+ AGH           HAN2   H    H         0.000    -13.172   -4.962    8.337
+ AGH           CAO    C    CH2       0.000    -12.772   -5.915   10.230
+ AGH           HAO1   H    H         0.000    -12.711   -4.972   10.777
+ AGH           HAO2   H    H         0.000    -12.052   -6.623   10.646
+ AGH           CAP    C    CH2       0.000    -14.185   -6.489   10.358
+ AGH           HAP1   H    H         0.000    -14.245   -7.432    9.810
+ AGH           HAP2   H    H         0.000    -14.904   -5.781    9.941
+ AGH           CAQ    C    CH2       0.000    -14.504   -6.734   11.834
+ AGH           HAQ1   H    H         0.000    -14.443   -5.791   12.381
+ AGH           HAQ2   H    H         0.000    -13.784   -7.442   12.249
+ AGH           CAR    C    CH2       0.000    -15.917   -7.308   11.961
+ AGH           HAR1   H    H         0.000    -15.977   -8.251   11.413
+ AGH           HAR2   H    H         0.000    -16.636   -6.600   11.545
+ AGH           CAS    C    CH2       0.000    -16.236   -7.553   13.438
+ AGH           HAS1   H    H         0.000    -16.175   -6.610   13.984
+ AGH           HAS2   H    H         0.000    -15.516   -8.261   13.853
+ AGH           CAT    C    CH2       0.000    -17.649   -8.127   13.565
+ AGH           HAT1   H    H         0.000    -17.709   -9.070   13.017
+ AGH           HAT2   H    H         0.000    -18.368   -7.419   13.148
+ AGH           CAU    C    CH2       0.000    -17.969   -8.373   15.041
+ AGH           HAU1   H    H         0.000    -17.908   -7.429   15.587
+ AGH           HAU2   H    H         0.000    -17.248   -9.080   15.456
+ AGH           CAV    C    CH2       0.000    -19.380   -8.947   15.169
+ AGH           HAV1   H    H         0.000    -19.440   -9.890   14.621
+ AGH           HAV2   H    H         0.000    -20.100   -8.239   14.751
+ AGH           CAW    C    CH2       0.000    -19.701   -9.192   16.644
+ AGH           HAW1   H    H         0.000    -19.640   -8.248   17.190
+ AGH           HAW2   H    H         0.000    -18.980   -9.898   17.060
+ AGH           CAX    C    CH2       0.000    -21.113   -9.766   16.772
+ AGH           HAX1   H    H         0.000    -21.172  -10.709   16.224
+ AGH           HAX2   H    H         0.000    -21.833   -9.059   16.355
+ AGH           CAY    C    CH2       0.000    -21.432  -10.011   18.248
+ AGH           HAY1   H    H         0.000    -21.371   -9.068   18.795
+ AGH           HAY2   H    H         0.000    -20.712  -10.719   18.663
+ AGH           CAZ    C    CH3       0.000    -22.845  -10.585   18.375
+ AGH           HAZ3   H    H         0.000    -22.907  -11.502   17.845
+ AGH           HAZ2   H    H         0.000    -23.070  -10.756   19.397
+ AGH           HAZ1   H    H         0.000    -23.547   -9.900   17.973
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AGH      OAA    n/a    CAA    START
+ AGH      CAA    OAA    CAB    .
+ AGH      N2     CAA    C2     .
+ AGH      HN2    N2     .      .
+ AGH      C2     N2     C1     .
+ AGH      H2     C2     .      .
+ AGH      C3     C2     C4     .
+ AGH      H5     C3     .      .
+ AGH      O3     C3     HO3    .
+ AGH      HO3    O3     .      .
+ AGH      C4     C3     C5     .
+ AGH      H6     C4     .      .
+ AGH      O4     C4     HO4    .
+ AGH      HO4    O4     .      .
+ AGH      C5     C4     C6     .
+ AGH      H51    C5     .      .
+ AGH      H52    C5     .      .
+ AGH      C6     C5     C7     .
+ AGH      H61    C6     .      .
+ AGH      H62    C6     .      .
+ AGH      C7     C6     C8     .
+ AGH      H71    C7     .      .
+ AGH      H72    C7     .      .
+ AGH      C8     C7     C9     .
+ AGH      H81    C8     .      .
+ AGH      H82    C8     .      .
+ AGH      C9     C8     C10    .
+ AGH      H91    C9     .      .
+ AGH      H92    C9     .      .
+ AGH      C10    C9     C11    .
+ AGH      H101   C10    .      .
+ AGH      H102   C10    .      .
+ AGH      C11    C10    C12    .
+ AGH      H111   C11    .      .
+ AGH      H112   C11    .      .
+ AGH      C12    C11    C13    .
+ AGH      H121   C12    .      .
+ AGH      H122   C12    .      .
+ AGH      C13    C12    C14    .
+ AGH      H131   C13    .      .
+ AGH      H132   C13    .      .
+ AGH      C14    C13    C15    .
+ AGH      H141   C14    .      .
+ AGH      H142   C14    .      .
+ AGH      C15    C14    C16    .
+ AGH      H151   C15    .      .
+ AGH      H152   C15    .      .
+ AGH      C16    C15    C17    .
+ AGH      H161   C16    .      .
+ AGH      H162   C16    .      .
+ AGH      C17    C16    C18    .
+ AGH      H171   C17    .      .
+ AGH      H172   C17    .      .
+ AGH      C18    C17    H181   .
+ AGH      H183   C18    .      .
+ AGH      H182   C18    .      .
+ AGH      H181   C18    .      .
+ AGH      C1     C2     O1A    .
+ AGH      H11    C1     .      .
+ AGH      H12    C1     .      .
+ AGH      O1A    C1     C1A    .
+ AGH      C1A    O1A    C2A    .
+ AGH      H1A    C1A    .      .
+ AGH      C2A    C1A    C3A    .
+ AGH      H2A    C2A    .      .
+ AGH      O2A    C2A    H4     .
+ AGH      H4     O2A    .      .
+ AGH      C3A    C2A    C4A    .
+ AGH      H3A    C3A    .      .
+ AGH      O3A    C3A    H3     .
+ AGH      H3     O3A    .      .
+ AGH      C4A    C3A    C5M    .
+ AGH      H4A    C4A    .      .
+ AGH      O4A    C4A    H1     .
+ AGH      H1     O4A    .      .
+ AGH      C5M    C4A    O6A    .
+ AGH      H5M    C5M    .      .
+ AGH      C6A    C5M    O5A    .
+ AGH      H6A1   C6A    .      .
+ AGH      H6A2   C6A    .      .
+ AGH      O5A    C6A    H5A    .
+ AGH      H5A    O5A    .      .
+ AGH      O6A    C5M    .      .
+ AGH      CAB    CAA    CAC    .
+ AGH      HAB1   CAB    .      .
+ AGH      HAB2   CAB    .      .
+ AGH      CAC    CAB    CAD    .
+ AGH      HAC1   CAC    .      .
+ AGH      HAC2   CAC    .      .
+ AGH      CAD    CAC    CAE    .
+ AGH      HAD1   CAD    .      .
+ AGH      HAD2   CAD    .      .
+ AGH      CAE    CAD    CAF    .
+ AGH      HAE1   CAE    .      .
+ AGH      HAE2   CAE    .      .
+ AGH      CAF    CAE    CAG    .
+ AGH      HAF1   CAF    .      .
+ AGH      HAF2   CAF    .      .
+ AGH      CAG    CAF    CAH    .
+ AGH      HAG1   CAG    .      .
+ AGH      HAG2   CAG    .      .
+ AGH      CAH    CAG    CAI    .
+ AGH      HAH1   CAH    .      .
+ AGH      HAH2   CAH    .      .
+ AGH      CAI    CAH    CAJ    .
+ AGH      HAI1   CAI    .      .
+ AGH      HAI2   CAI    .      .
+ AGH      CAJ    CAI    CAK    .
+ AGH      HAJ1   CAJ    .      .
+ AGH      HAJ2   CAJ    .      .
+ AGH      CAK    CAJ    CAL    .
+ AGH      HAK1   CAK    .      .
+ AGH      HAK2   CAK    .      .
+ AGH      CAL    CAK    CAM    .
+ AGH      HAL1   CAL    .      .
+ AGH      HAL2   CAL    .      .
+ AGH      CAM    CAL    CAN    .
+ AGH      HAM1   CAM    .      .
+ AGH      HAM2   CAM    .      .
+ AGH      CAN    CAM    CAO    .
+ AGH      HAN1   CAN    .      .
+ AGH      HAN2   CAN    .      .
+ AGH      CAO    CAN    CAP    .
+ AGH      HAO1   CAO    .      .
+ AGH      HAO2   CAO    .      .
+ AGH      CAP    CAO    CAQ    .
+ AGH      HAP1   CAP    .      .
+ AGH      HAP2   CAP    .      .
+ AGH      CAQ    CAP    CAR    .
+ AGH      HAQ1   CAQ    .      .
+ AGH      HAQ2   CAQ    .      .
+ AGH      CAR    CAQ    CAS    .
+ AGH      HAR1   CAR    .      .
+ AGH      HAR2   CAR    .      .
+ AGH      CAS    CAR    CAT    .
+ AGH      HAS1   CAS    .      .
+ AGH      HAS2   CAS    .      .
+ AGH      CAT    CAS    CAU    .
+ AGH      HAT1   CAT    .      .
+ AGH      HAT2   CAT    .      .
+ AGH      CAU    CAT    CAV    .
+ AGH      HAU1   CAU    .      .
+ AGH      HAU2   CAU    .      .
+ AGH      CAV    CAU    CAW    .
+ AGH      HAV1   CAV    .      .
+ AGH      HAV2   CAV    .      .
+ AGH      CAW    CAV    CAX    .
+ AGH      HAW1   CAW    .      .
+ AGH      HAW2   CAW    .      .
+ AGH      CAX    CAW    CAY    .
+ AGH      HAX1   CAX    .      .
+ AGH      HAX2   CAX    .      .
+ AGH      CAY    CAX    CAZ    .
+ AGH      HAY1   CAY    .      .
+ AGH      HAY2   CAY    .      .
+ AGH      CAZ    CAY    HAZ1   .
+ AGH      HAZ3   CAZ    .      .
+ AGH      HAZ2   CAZ    .      .
+ AGH      HAZ1   CAZ    .      END
+ AGH      C1A    O6A    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AGH       C1        C2        single    1.524     0.020     1.524     0.020     
+AGH       O1A       C1        single    1.426     0.020     1.426     0.020     
+AGH       H11       C1        single    1.089     0.010     0.989     0.005     
+AGH       H12       C1        single    1.089     0.010     0.989     0.005     
+AGH       C3        C2        single    1.524     0.020     1.524     0.020     
+AGH       C2        N2        single    1.450     0.020     1.450     0.020     
+AGH       H2        C2        single    1.089     0.010     0.989     0.005     
+AGH       C4        C3        single    1.524     0.020     1.524     0.020     
+AGH       O3        C3        single    1.432     0.020     1.432     0.020     
+AGH       H5        C3        single    1.089     0.010     0.989     0.005     
+AGH       C5        C4        single    1.524     0.020     1.524     0.020     
+AGH       O4        C4        single    1.432     0.020     1.432     0.020     
+AGH       H6        C4        single    1.089     0.010     0.989     0.005     
+AGH       C6        C5        single    1.524     0.020     1.524     0.020     
+AGH       H51       C5        single    1.089     0.010     0.989     0.005     
+AGH       H52       C5        single    1.089     0.010     0.989     0.005     
+AGH       C7        C6        single    1.524     0.020     1.524     0.020     
+AGH       H61       C6        single    1.089     0.010     0.989     0.005     
+AGH       H62       C6        single    1.089     0.010     0.989     0.005     
+AGH       HO3       O3        single    0.970     0.012     0.839     0.014     
+AGH       C18       C17       single    1.513     0.020     1.513     0.020     
+AGH       H181      C18       single    1.089     0.010     0.989     0.005     
+AGH       H182      C18       single    1.089     0.010     0.989     0.005     
+AGH       H183      C18       single    1.089     0.010     0.989     0.005     
+AGH       C17       C16       single    1.524     0.020     1.524     0.020     
+AGH       H171      C17       single    1.089     0.010     0.989     0.005     
+AGH       H172      C17       single    1.089     0.010     0.989     0.005     
+AGH       C16       C15       single    1.524     0.020     1.524     0.020     
+AGH       H161      C16       single    1.089     0.010     0.989     0.005     
+AGH       H162      C16       single    1.089     0.010     0.989     0.005     
+AGH       C15       C14       single    1.524     0.020     1.524     0.020     
+AGH       H151      C15       single    1.089     0.010     0.989     0.005     
+AGH       H152      C15       single    1.089     0.010     0.989     0.005     
+AGH       C14       C13       single    1.524     0.020     1.524     0.020     
+AGH       H141      C14       single    1.089     0.010     0.989     0.005     
+AGH       H142      C14       single    1.089     0.010     0.989     0.005     
+AGH       C13       C12       single    1.524     0.020     1.524     0.020     
+AGH       H131      C13       single    1.089     0.010     0.989     0.005     
+AGH       H132      C13       single    1.089     0.010     0.989     0.005     
+AGH       C12       C11       single    1.524     0.020     1.524     0.020     
+AGH       H121      C12       single    1.089     0.010     0.989     0.005     
+AGH       H122      C12       single    1.089     0.010     0.989     0.005     
+AGH       C11       C10       single    1.524     0.020     1.524     0.020     
+AGH       H111      C11       single    1.089     0.010     0.989     0.005     
+AGH       H112      C11       single    1.089     0.010     0.989     0.005     
+AGH       C10       C9        single    1.524     0.020     1.524     0.020     
+AGH       H101      C10       single    1.089     0.010     0.989     0.005     
+AGH       H102      C10       single    1.089     0.010     0.989     0.005     
+AGH       C9        C8        single    1.524     0.020     1.524     0.020     
+AGH       H91       C9        single    1.089     0.010     0.989     0.005     
+AGH       H92       C9        single    1.089     0.010     0.989     0.005     
+AGH       C8        C7        single    1.524     0.020     1.524     0.020     
+AGH       H81       C8        single    1.089     0.010     0.989     0.005     
+AGH       H82       C8        single    1.089     0.010     0.989     0.005     
+AGH       H71       C7        single    1.089     0.010     0.989     0.005     
+AGH       H72       C7        single    1.089     0.010     0.989     0.005     
+AGH       HO4       O4        single    0.970     0.012     0.839     0.014     
+AGH       C1A       O1A       single    1.426     0.020     1.426     0.020     
+AGH       C1A       O6A       single    1.426     0.020     1.426     0.020     
+AGH       C2A       C1A       single    1.524     0.020     1.524     0.020     
+AGH       H1A       C1A       single    1.089     0.010     0.989     0.005     
+AGH       O6A       C5M       single    1.426     0.020     1.426     0.020     
+AGH       C6A       C5M       single    1.524     0.020     1.524     0.020     
+AGH       C5M       C4A       single    1.524     0.020     1.524     0.020     
+AGH       H5M       C5M       single    1.089     0.010     0.989     0.005     
+AGH       O5A       C6A       single    1.432     0.020     1.432     0.020     
+AGH       H6A1      C6A       single    1.089     0.010     0.989     0.005     
+AGH       H6A2      C6A       single    1.089     0.010     0.989     0.005     
+AGH       H5A       O5A       single    0.970     0.012     0.839     0.014     
+AGH       O4A       C4A       single    1.432     0.020     1.432     0.020     
+AGH       C4A       C3A       single    1.524     0.020     1.524     0.020     
+AGH       H4A       C4A       single    1.089     0.010     0.989     0.005     
+AGH       H1        O4A       single    0.970     0.012     0.839     0.014     
+AGH       O3A       C3A       single    1.432     0.020     1.432     0.020     
+AGH       C3A       C2A       single    1.524     0.020     1.524     0.020     
+AGH       H3A       C3A       single    1.089     0.010     0.989     0.005     
+AGH       H3        O3A       single    0.970     0.012     0.839     0.014     
+AGH       O2A       C2A       single    1.432     0.020     1.432     0.020     
+AGH       H2A       C2A       single    1.089     0.010     0.989     0.005     
+AGH       H4        O2A       single    0.970     0.012     0.839     0.014     
+AGH       N2        CAA       single    1.330     0.020     1.330     0.020     
+AGH       HN2       N2        single    1.016     0.010     0.899     0.007     
+AGH       CAA       OAA       double    1.220     0.020     1.220     0.020     
+AGH       CAB       CAA       single    1.510     0.020     1.510     0.020     
+AGH       CAC       CAB       single    1.524     0.020     1.524     0.020     
+AGH       HAB1      CAB       single    1.089     0.010     0.989     0.005     
+AGH       HAB2      CAB       single    1.089     0.010     0.989     0.005     
+AGH       CAD       CAC       single    1.524     0.020     1.524     0.020     
+AGH       HAC1      CAC       single    1.089     0.010     0.989     0.005     
+AGH       HAC2      CAC       single    1.089     0.010     0.989     0.005     
+AGH       CAE       CAD       single    1.524     0.020     1.524     0.020     
+AGH       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+AGH       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+AGH       CAF       CAE       single    1.524     0.020     1.524     0.020     
+AGH       HAE1      CAE       single    1.089     0.010     0.989     0.005     
+AGH       HAE2      CAE       single    1.089     0.010     0.989     0.005     
+AGH       CAG       CAF       single    1.524     0.020     1.524     0.020     
+AGH       HAF1      CAF       single    1.089     0.010     0.989     0.005     
+AGH       HAF2      CAF       single    1.089     0.010     0.989     0.005     
+AGH       CAH       CAG       single    1.524     0.020     1.524     0.020     
+AGH       HAG1      CAG       single    1.089     0.010     0.989     0.005     
+AGH       HAG2      CAG       single    1.089     0.010     0.989     0.005     
+AGH       CAI       CAH       single    1.524     0.020     1.524     0.020     
+AGH       HAH1      CAH       single    1.089     0.010     0.989     0.005     
+AGH       HAH2      CAH       single    1.089     0.010     0.989     0.005     
+AGH       CAJ       CAI       single    1.524     0.020     1.524     0.020     
+AGH       HAI1      CAI       single    1.089     0.010     0.989     0.005     
+AGH       HAI2      CAI       single    1.089     0.010     0.989     0.005     
+AGH       CAK       CAJ       single    1.524     0.020     1.524     0.020     
+AGH       HAJ1      CAJ       single    1.089     0.010     0.989     0.005     
+AGH       HAJ2      CAJ       single    1.089     0.010     0.989     0.005     
+AGH       CAL       CAK       single    1.524     0.020     1.524     0.020     
+AGH       HAK1      CAK       single    1.089     0.010     0.989     0.005     
+AGH       HAK2      CAK       single    1.089     0.010     0.989     0.005     
+AGH       CAM       CAL       single    1.524     0.020     1.524     0.020     
+AGH       HAL1      CAL       single    1.089     0.010     0.989     0.005     
+AGH       HAL2      CAL       single    1.089     0.010     0.989     0.005     
+AGH       CAN       CAM       single    1.524     0.020     1.524     0.020     
+AGH       HAM1      CAM       single    1.089     0.010     0.989     0.005     
+AGH       HAM2      CAM       single    1.089     0.010     0.989     0.005     
+AGH       CAO       CAN       single    1.524     0.020     1.524     0.020     
+AGH       HAN1      CAN       single    1.089     0.010     0.989     0.005     
+AGH       HAN2      CAN       single    1.089     0.010     0.989     0.005     
+AGH       CAP       CAO       single    1.524     0.020     1.524     0.020     
+AGH       HAO1      CAO       single    1.089     0.010     0.989     0.005     
+AGH       HAO2      CAO       single    1.089     0.010     0.989     0.005     
+AGH       CAQ       CAP       single    1.524     0.020     1.524     0.020     
+AGH       HAP1      CAP       single    1.089     0.010     0.989     0.005     
+AGH       HAP2      CAP       single    1.089     0.010     0.989     0.005     
+AGH       CAR       CAQ       single    1.524     0.020     1.524     0.020     
+AGH       HAQ1      CAQ       single    1.089     0.010     0.989     0.005     
+AGH       HAQ2      CAQ       single    1.089     0.010     0.989     0.005     
+AGH       CAS       CAR       single    1.524     0.020     1.524     0.020     
+AGH       HAR1      CAR       single    1.089     0.010     0.989     0.005     
+AGH       HAR2      CAR       single    1.089     0.010     0.989     0.005     
+AGH       CAT       CAS       single    1.524     0.020     1.524     0.020     
+AGH       HAS1      CAS       single    1.089     0.010     0.989     0.005     
+AGH       HAS2      CAS       single    1.089     0.010     0.989     0.005     
+AGH       CAU       CAT       single    1.524     0.020     1.524     0.020     
+AGH       HAT1      CAT       single    1.089     0.010     0.989     0.005     
+AGH       HAT2      CAT       single    1.089     0.010     0.989     0.005     
+AGH       CAV       CAU       single    1.524     0.020     1.524     0.020     
+AGH       HAU1      CAU       single    1.089     0.010     0.989     0.005     
+AGH       HAU2      CAU       single    1.089     0.010     0.989     0.005     
+AGH       CAW       CAV       single    1.524     0.020     1.524     0.020     
+AGH       HAV1      CAV       single    1.089     0.010     0.989     0.005     
+AGH       HAV2      CAV       single    1.089     0.010     0.989     0.005     
+AGH       CAX       CAW       single    1.524     0.020     1.524     0.020     
+AGH       HAW1      CAW       single    1.089     0.010     0.989     0.005     
+AGH       HAW2      CAW       single    1.089     0.010     0.989     0.005     
+AGH       CAY       CAX       single    1.524     0.020     1.524     0.020     
+AGH       HAX1      CAX       single    1.089     0.010     0.989     0.005     
+AGH       HAX2      CAX       single    1.089     0.010     0.989     0.005     
+AGH       CAZ       CAY       single    1.513     0.020     1.513     0.020     
+AGH       HAY1      CAY       single    1.089     0.010     0.989     0.005     
+AGH       HAY2      CAY       single    1.089     0.010     0.989     0.005     
+AGH       HAZ1      CAZ       single    1.089     0.010     0.989     0.005     
+AGH       HAZ2      CAZ       single    1.089     0.010     0.989     0.005     
+AGH       HAZ3      CAZ       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AGH      OAA    CAA    N2      123.000    3.000
+ AGH      OAA    CAA    CAB     120.500    3.000
+ AGH      N2     CAA    CAB     116.500    3.000
+ AGH      CAA    N2     HN2     120.000    3.000
+ AGH      CAA    N2     C2      121.500    3.000
+ AGH      HN2    N2     C2      118.500    3.000
+ AGH      N2     C2     H2      108.550    3.000
+ AGH      N2     C2     C3      110.000    3.000
+ AGH      N2     C2     C1      110.000    3.000
+ AGH      H2     C2     C3      108.340    3.000
+ AGH      H2     C2     C1      108.340    3.000
+ AGH      C3     C2     C1      111.000    3.000
+ AGH      C2     C3     H5      108.340    3.000
+ AGH      C2     C3     O3      109.470    3.000
+ AGH      C2     C3     C4      111.000    3.000
+ AGH      H5     C3     O3      109.470    3.000
+ AGH      H5     C3     C4      108.340    3.000
+ AGH      O3     C3     C4      109.470    3.000
+ AGH      C3     O3     HO3     109.470    3.000
+ AGH      C3     C4     H6      108.340    3.000
+ AGH      C3     C4     O4      109.470    3.000
+ AGH      C3     C4     C5      111.000    3.000
+ AGH      H6     C4     O4      109.470    3.000
+ AGH      H6     C4     C5      108.340    3.000
+ AGH      O4     C4     C5      109.470    3.000
+ AGH      C4     O4     HO4     109.470    3.000
+ AGH      C4     C5     H51     109.470    3.000
+ AGH      C4     C5     H52     109.470    3.000
+ AGH      C4     C5     C6      111.000    3.000
+ AGH      H51    C5     H52     107.900    3.000
+ AGH      H51    C5     C6      109.470    3.000
+ AGH      H52    C5     C6      109.470    3.000
+ AGH      C5     C6     H61     109.470    3.000
+ AGH      C5     C6     H62     109.470    3.000
+ AGH      C5     C6     C7      111.000    3.000
+ AGH      H61    C6     H62     107.900    3.000
+ AGH      H61    C6     C7      109.470    3.000
+ AGH      H62    C6     C7      109.470    3.000
+ AGH      C6     C7     H71     109.470    3.000
+ AGH      C6     C7     H72     109.470    3.000
+ AGH      C6     C7     C8      111.000    3.000
+ AGH      H71    C7     H72     107.900    3.000
+ AGH      H71    C7     C8      109.470    3.000
+ AGH      H72    C7     C8      109.470    3.000
+ AGH      C7     C8     H81     109.470    3.000
+ AGH      C7     C8     H82     109.470    3.000
+ AGH      C7     C8     C9      111.000    3.000
+ AGH      H81    C8     H82     107.900    3.000
+ AGH      H81    C8     C9      109.470    3.000
+ AGH      H82    C8     C9      109.470    3.000
+ AGH      C8     C9     H91     109.470    3.000
+ AGH      C8     C9     H92     109.470    3.000
+ AGH      C8     C9     C10     111.000    3.000
+ AGH      H91    C9     H92     107.900    3.000
+ AGH      H91    C9     C10     109.470    3.000
+ AGH      H92    C9     C10     109.470    3.000
+ AGH      C9     C10    H101    109.470    3.000
+ AGH      C9     C10    H102    109.470    3.000
+ AGH      C9     C10    C11     111.000    3.000
+ AGH      H101   C10    H102    107.900    3.000
+ AGH      H101   C10    C11     109.470    3.000
+ AGH      H102   C10    C11     109.470    3.000
+ AGH      C10    C11    H111    109.470    3.000
+ AGH      C10    C11    H112    109.470    3.000
+ AGH      C10    C11    C12     111.000    3.000
+ AGH      H111   C11    H112    107.900    3.000
+ AGH      H111   C11    C12     109.470    3.000
+ AGH      H112   C11    C12     109.470    3.000
+ AGH      C11    C12    H121    109.470    3.000
+ AGH      C11    C12    H122    109.470    3.000
+ AGH      C11    C12    C13     111.000    3.000
+ AGH      H121   C12    H122    107.900    3.000
+ AGH      H121   C12    C13     109.470    3.000
+ AGH      H122   C12    C13     109.470    3.000
+ AGH      C12    C13    H131    109.470    3.000
+ AGH      C12    C13    H132    109.470    3.000
+ AGH      C12    C13    C14     111.000    3.000
+ AGH      H131   C13    H132    107.900    3.000
+ AGH      H131   C13    C14     109.470    3.000
+ AGH      H132   C13    C14     109.470    3.000
+ AGH      C13    C14    H141    109.470    3.000
+ AGH      C13    C14    H142    109.470    3.000
+ AGH      C13    C14    C15     111.000    3.000
+ AGH      H141   C14    H142    107.900    3.000
+ AGH      H141   C14    C15     109.470    3.000
+ AGH      H142   C14    C15     109.470    3.000
+ AGH      C14    C15    H151    109.470    3.000
+ AGH      C14    C15    H152    109.470    3.000
+ AGH      C14    C15    C16     111.000    3.000
+ AGH      H151   C15    H152    107.900    3.000
+ AGH      H151   C15    C16     109.470    3.000
+ AGH      H152   C15    C16     109.470    3.000
+ AGH      C15    C16    H161    109.470    3.000
+ AGH      C15    C16    H162    109.470    3.000
+ AGH      C15    C16    C17     111.000    3.000
+ AGH      H161   C16    H162    107.900    3.000
+ AGH      H161   C16    C17     109.470    3.000
+ AGH      H162   C16    C17     109.470    3.000
+ AGH      C16    C17    H171    109.470    3.000
+ AGH      C16    C17    H172    109.470    3.000
+ AGH      C16    C17    C18     111.000    3.000
+ AGH      H171   C17    H172    107.900    3.000
+ AGH      H171   C17    C18     109.470    3.000
+ AGH      H172   C17    C18     109.470    3.000
+ AGH      C17    C18    H183    109.470    3.000
+ AGH      C17    C18    H182    109.470    3.000
+ AGH      C17    C18    H181    109.470    3.000
+ AGH      H183   C18    H182    109.470    3.000
+ AGH      H183   C18    H181    109.470    3.000
+ AGH      H182   C18    H181    109.470    3.000
+ AGH      C2     C1     H11     109.470    3.000
+ AGH      C2     C1     H12     109.470    3.000
+ AGH      C2     C1     O1A     109.470    3.000
+ AGH      H11    C1     H12     107.900    3.000
+ AGH      H11    C1     O1A     109.470    3.000
+ AGH      H12    C1     O1A     109.470    3.000
+ AGH      C1     O1A    C1A     111.800    3.000
+ AGH      O1A    C1A    H1A     109.470    3.000
+ AGH      O1A    C1A    C2A     109.470    3.000
+ AGH      O1A    C1A    O6A     109.470    3.000
+ AGH      H1A    C1A    C2A     108.340    3.000
+ AGH      H1A    C1A    O6A     109.470    3.000
+ AGH      C2A    C1A    O6A     109.470    3.000
+ AGH      C1A    C2A    H2A     108.340    3.000
+ AGH      C1A    C2A    O2A     109.470    3.000
+ AGH      C1A    C2A    C3A     111.000    3.000
+ AGH      H2A    C2A    O2A     109.470    3.000
+ AGH      H2A    C2A    C3A     108.340    3.000
+ AGH      O2A    C2A    C3A     109.470    3.000
+ AGH      C2A    O2A    H4      109.470    3.000
+ AGH      C2A    C3A    H3A     108.340    3.000
+ AGH      C2A    C3A    O3A     109.470    3.000
+ AGH      C2A    C3A    C4A     111.000    3.000
+ AGH      H3A    C3A    O3A     109.470    3.000
+ AGH      H3A    C3A    C4A     108.340    3.000
+ AGH      O3A    C3A    C4A     109.470    3.000
+ AGH      C3A    O3A    H3      109.470    3.000
+ AGH      C3A    C4A    H4A     108.340    3.000
+ AGH      C3A    C4A    O4A     109.470    3.000
+ AGH      C3A    C4A    C5M     111.000    3.000
+ AGH      H4A    C4A    O4A     109.470    3.000
+ AGH      H4A    C4A    C5M     108.340    3.000
+ AGH      O4A    C4A    C5M     109.470    3.000
+ AGH      C4A    O4A    H1      109.470    3.000
+ AGH      C4A    C5M    H5M     108.340    3.000
+ AGH      C4A    C5M    C6A     111.000    3.000
+ AGH      C4A    C5M    O6A     109.470    3.000
+ AGH      H5M    C5M    C6A     108.340    3.000
+ AGH      H5M    C5M    O6A     109.470    3.000
+ AGH      C6A    C5M    O6A     109.470    3.000
+ AGH      C5M    C6A    H6A1    109.470    3.000
+ AGH      C5M    C6A    H6A2    109.470    3.000
+ AGH      C5M    C6A    O5A     109.470    3.000
+ AGH      H6A1   C6A    H6A2    107.900    3.000
+ AGH      H6A1   C6A    O5A     109.470    3.000
+ AGH      H6A2   C6A    O5A     109.470    3.000
+ AGH      C6A    O5A    H5A     109.470    3.000
+ AGH      C5M    O6A    C1A     111.800    3.000
+ AGH      CAA    CAB    HAB1    109.470    3.000
+ AGH      CAA    CAB    HAB2    109.470    3.000
+ AGH      CAA    CAB    CAC     109.470    3.000
+ AGH      HAB1   CAB    HAB2    107.900    3.000
+ AGH      HAB1   CAB    CAC     109.470    3.000
+ AGH      HAB2   CAB    CAC     109.470    3.000
+ AGH      CAB    CAC    HAC1    109.470    3.000
+ AGH      CAB    CAC    HAC2    109.470    3.000
+ AGH      CAB    CAC    CAD     111.000    3.000
+ AGH      HAC1   CAC    HAC2    107.900    3.000
+ AGH      HAC1   CAC    CAD     109.470    3.000
+ AGH      HAC2   CAC    CAD     109.470    3.000
+ AGH      CAC    CAD    HAD1    109.470    3.000
+ AGH      CAC    CAD    HAD2    109.470    3.000
+ AGH      CAC    CAD    CAE     111.000    3.000
+ AGH      HAD1   CAD    HAD2    107.900    3.000
+ AGH      HAD1   CAD    CAE     109.470    3.000
+ AGH      HAD2   CAD    CAE     109.470    3.000
+ AGH      CAD    CAE    HAE1    109.470    3.000
+ AGH      CAD    CAE    HAE2    109.470    3.000
+ AGH      CAD    CAE    CAF     111.000    3.000
+ AGH      HAE1   CAE    HAE2    107.900    3.000
+ AGH      HAE1   CAE    CAF     109.470    3.000
+ AGH      HAE2   CAE    CAF     109.470    3.000
+ AGH      CAE    CAF    HAF1    109.470    3.000
+ AGH      CAE    CAF    HAF2    109.470    3.000
+ AGH      CAE    CAF    CAG     111.000    3.000
+ AGH      HAF1   CAF    HAF2    107.900    3.000
+ AGH      HAF1   CAF    CAG     109.470    3.000
+ AGH      HAF2   CAF    CAG     109.470    3.000
+ AGH      CAF    CAG    HAG1    109.470    3.000
+ AGH      CAF    CAG    HAG2    109.470    3.000
+ AGH      CAF    CAG    CAH     111.000    3.000
+ AGH      HAG1   CAG    HAG2    107.900    3.000
+ AGH      HAG1   CAG    CAH     109.470    3.000
+ AGH      HAG2   CAG    CAH     109.470    3.000
+ AGH      CAG    CAH    HAH1    109.470    3.000
+ AGH      CAG    CAH    HAH2    109.470    3.000
+ AGH      CAG    CAH    CAI     111.000    3.000
+ AGH      HAH1   CAH    HAH2    107.900    3.000
+ AGH      HAH1   CAH    CAI     109.470    3.000
+ AGH      HAH2   CAH    CAI     109.470    3.000
+ AGH      CAH    CAI    HAI1    109.470    3.000
+ AGH      CAH    CAI    HAI2    109.470    3.000
+ AGH      CAH    CAI    CAJ     111.000    3.000
+ AGH      HAI1   CAI    HAI2    107.900    3.000
+ AGH      HAI1   CAI    CAJ     109.470    3.000
+ AGH      HAI2   CAI    CAJ     109.470    3.000
+ AGH      CAI    CAJ    HAJ1    109.470    3.000
+ AGH      CAI    CAJ    HAJ2    109.470    3.000
+ AGH      CAI    CAJ    CAK     111.000    3.000
+ AGH      HAJ1   CAJ    HAJ2    107.900    3.000
+ AGH      HAJ1   CAJ    CAK     109.470    3.000
+ AGH      HAJ2   CAJ    CAK     109.470    3.000
+ AGH      CAJ    CAK    HAK1    109.470    3.000
+ AGH      CAJ    CAK    HAK2    109.470    3.000
+ AGH      CAJ    CAK    CAL     111.000    3.000
+ AGH      HAK1   CAK    HAK2    107.900    3.000
+ AGH      HAK1   CAK    CAL     109.470    3.000
+ AGH      HAK2   CAK    CAL     109.470    3.000
+ AGH      CAK    CAL    HAL1    109.470    3.000
+ AGH      CAK    CAL    HAL2    109.470    3.000
+ AGH      CAK    CAL    CAM     111.000    3.000
+ AGH      HAL1   CAL    HAL2    107.900    3.000
+ AGH      HAL1   CAL    CAM     109.470    3.000
+ AGH      HAL2   CAL    CAM     109.470    3.000
+ AGH      CAL    CAM    HAM1    109.470    3.000
+ AGH      CAL    CAM    HAM2    109.470    3.000
+ AGH      CAL    CAM    CAN     111.000    3.000
+ AGH      HAM1   CAM    HAM2    107.900    3.000
+ AGH      HAM1   CAM    CAN     109.470    3.000
+ AGH      HAM2   CAM    CAN     109.470    3.000
+ AGH      CAM    CAN    HAN1    109.470    3.000
+ AGH      CAM    CAN    HAN2    109.470    3.000
+ AGH      CAM    CAN    CAO     111.000    3.000
+ AGH      HAN1   CAN    HAN2    107.900    3.000
+ AGH      HAN1   CAN    CAO     109.470    3.000
+ AGH      HAN2   CAN    CAO     109.470    3.000
+ AGH      CAN    CAO    HAO1    109.470    3.000
+ AGH      CAN    CAO    HAO2    109.470    3.000
+ AGH      CAN    CAO    CAP     111.000    3.000
+ AGH      HAO1   CAO    HAO2    107.900    3.000
+ AGH      HAO1   CAO    CAP     109.470    3.000
+ AGH      HAO2   CAO    CAP     109.470    3.000
+ AGH      CAO    CAP    HAP1    109.470    3.000
+ AGH      CAO    CAP    HAP2    109.470    3.000
+ AGH      CAO    CAP    CAQ     111.000    3.000
+ AGH      HAP1   CAP    HAP2    107.900    3.000
+ AGH      HAP1   CAP    CAQ     109.470    3.000
+ AGH      HAP2   CAP    CAQ     109.470    3.000
+ AGH      CAP    CAQ    HAQ1    109.470    3.000
+ AGH      CAP    CAQ    HAQ2    109.470    3.000
+ AGH      CAP    CAQ    CAR     111.000    3.000
+ AGH      HAQ1   CAQ    HAQ2    107.900    3.000
+ AGH      HAQ1   CAQ    CAR     109.470    3.000
+ AGH      HAQ2   CAQ    CAR     109.470    3.000
+ AGH      CAQ    CAR    HAR1    109.470    3.000
+ AGH      CAQ    CAR    HAR2    109.470    3.000
+ AGH      CAQ    CAR    CAS     111.000    3.000
+ AGH      HAR1   CAR    HAR2    107.900    3.000
+ AGH      HAR1   CAR    CAS     109.470    3.000
+ AGH      HAR2   CAR    CAS     109.470    3.000
+ AGH      CAR    CAS    HAS1    109.470    3.000
+ AGH      CAR    CAS    HAS2    109.470    3.000
+ AGH      CAR    CAS    CAT     111.000    3.000
+ AGH      HAS1   CAS    HAS2    107.900    3.000
+ AGH      HAS1   CAS    CAT     109.470    3.000
+ AGH      HAS2   CAS    CAT     109.470    3.000
+ AGH      CAS    CAT    HAT1    109.470    3.000
+ AGH      CAS    CAT    HAT2    109.470    3.000
+ AGH      CAS    CAT    CAU     111.000    3.000
+ AGH      HAT1   CAT    HAT2    107.900    3.000
+ AGH      HAT1   CAT    CAU     109.470    3.000
+ AGH      HAT2   CAT    CAU     109.470    3.000
+ AGH      CAT    CAU    HAU1    109.470    3.000
+ AGH      CAT    CAU    HAU2    109.470    3.000
+ AGH      CAT    CAU    CAV     111.000    3.000
+ AGH      HAU1   CAU    HAU2    107.900    3.000
+ AGH      HAU1   CAU    CAV     109.470    3.000
+ AGH      HAU2   CAU    CAV     109.470    3.000
+ AGH      CAU    CAV    HAV1    109.470    3.000
+ AGH      CAU    CAV    HAV2    109.470    3.000
+ AGH      CAU    CAV    CAW     111.000    3.000
+ AGH      HAV1   CAV    HAV2    107.900    3.000
+ AGH      HAV1   CAV    CAW     109.470    3.000
+ AGH      HAV2   CAV    CAW     109.470    3.000
+ AGH      CAV    CAW    HAW1    109.470    3.000
+ AGH      CAV    CAW    HAW2    109.470    3.000
+ AGH      CAV    CAW    CAX     111.000    3.000
+ AGH      HAW1   CAW    HAW2    107.900    3.000
+ AGH      HAW1   CAW    CAX     109.470    3.000
+ AGH      HAW2   CAW    CAX     109.470    3.000
+ AGH      CAW    CAX    HAX1    109.470    3.000
+ AGH      CAW    CAX    HAX2    109.470    3.000
+ AGH      CAW    CAX    CAY     111.000    3.000
+ AGH      HAX1   CAX    HAX2    107.900    3.000
+ AGH      HAX1   CAX    CAY     109.470    3.000
+ AGH      HAX2   CAX    CAY     109.470    3.000
+ AGH      CAX    CAY    HAY1    109.470    3.000
+ AGH      CAX    CAY    HAY2    109.470    3.000
+ AGH      CAX    CAY    CAZ     111.000    3.000
+ AGH      HAY1   CAY    HAY2    107.900    3.000
+ AGH      HAY1   CAY    CAZ     109.470    3.000
+ AGH      HAY2   CAY    CAZ     109.470    3.000
+ AGH      CAY    CAZ    HAZ3    109.470    3.000
+ AGH      CAY    CAZ    HAZ2    109.470    3.000
+ AGH      CAY    CAZ    HAZ1    109.470    3.000
+ AGH      HAZ3   CAZ    HAZ2    109.470    3.000
+ AGH      HAZ3   CAZ    HAZ1    109.470    3.000
+ AGH      HAZ2   CAZ    HAZ1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AGH      CONST_1  OAA    CAA    N2     C2         0.000    0.000   0
+ AGH      var_1    CAA    N2     C2     C1        84.929   20.000   3
+ AGH      var_2    N2     C2     C3     C4        65.442   20.000   3
+ AGH      var_3    C2     C3     O3     HO3      -55.033   20.000   1
+ AGH      var_4    C2     C3     C4     C5      -179.964   20.000   3
+ AGH      var_5    C3     C4     O4     HO4      -60.072   20.000   1
+ AGH      var_6    C3     C4     C5     C6      -174.991   20.000   3
+ AGH      var_7    C4     C5     C6     C7       179.965   20.000   3
+ AGH      var_8    C5     C6     C7     C8       179.965   20.000   3
+ AGH      var_9    C6     C7     C8     C9       180.000   20.000   3
+ AGH      var_10   C7     C8     C9     C10     -179.971   20.000   3
+ AGH      var_11   C8     C9     C10    C11     -179.971   20.000   3
+ AGH      var_12   C9     C10    C11    C12     -180.000   20.000   3
+ AGH      var_13   C10    C11    C12    C13      180.000   20.000   3
+ AGH      var_14   C11    C12    C13    C14      180.000   20.000   3
+ AGH      var_15   C12    C13    C14    C15      179.965   20.000   3
+ AGH      var_16   C13    C14    C15    C16      179.965   20.000   3
+ AGH      var_17   C14    C15    C16    C17     -179.993   20.000   3
+ AGH      var_18   C15    C16    C17    C18     -179.958   20.000   3
+ AGH      var_19   C16    C17    C18    H181     -59.997   20.000   3
+ AGH      var_20   N2     C2     C1     O1A       64.517   20.000   3
+ AGH      var_21   C2     C1     O1A    C1A      179.983   20.000   1
+ AGH      var_22   C1     O1A    C1A    C2A     -169.897   20.000   1
+ AGH      var_23   O1A    C1A    O6A    C5M       60.000   20.000   1
+ AGH      var_24   O1A    C1A    C2A    C3A      -60.000   20.000   3
+ AGH      var_25   C1A    C2A    O2A    H4        60.398   20.000   1
+ AGH      var_26   C1A    C2A    C3A    C4A      -60.000   20.000   3
+ AGH      var_27   C2A    C3A    O3A    H3       -60.754   20.000   1
+ AGH      var_28   C2A    C3A    C4A    C5M       60.000   20.000   3
+ AGH      var_29   C3A    C4A    O4A    H1       -60.396   20.000   1
+ AGH      var_30   C3A    C4A    C5M    O6A      -60.000   20.000   3
+ AGH      var_31   C4A    C5M    C6A    O5A     -174.713   20.000   3
+ AGH      var_32   C5M    C6A    O5A    H5A      179.993   20.000   1
+ AGH      var_33   C4A    C5M    O6A    C1A       60.000   20.000   1
+ AGH      var_34   OAA    CAA    CAB    CAC       -0.002   20.000   3
+ AGH      var_35   CAA    CAB    CAC    CAD      179.989   20.000   3
+ AGH      var_36   CAB    CAC    CAD    CAE     -179.989   20.000   3
+ AGH      var_37   CAC    CAD    CAE    CAF      180.000   20.000   3
+ AGH      var_38   CAD    CAE    CAF    CAG      180.000   20.000   3
+ AGH      var_39   CAE    CAF    CAG    CAH      180.000   20.000   3
+ AGH      var_40   CAF    CAG    CAH    CAI      180.000   20.000   3
+ AGH      var_41   CAG    CAH    CAI    CAJ      180.000   20.000   3
+ AGH      var_42   CAH    CAI    CAJ    CAK      179.989   20.000   3
+ AGH      var_43   CAI    CAJ    CAK    CAL     -179.974   20.000   3
+ AGH      var_44   CAJ    CAK    CAL    CAM      180.000   20.000   3
+ AGH      var_45   CAK    CAL    CAM    CAN      179.974   20.000   3
+ AGH      var_46   CAL    CAM    CAN    CAO     -179.989   20.000   3
+ AGH      var_47   CAM    CAN    CAO    CAP      180.000   20.000   3
+ AGH      var_48   CAN    CAO    CAP    CAQ      180.000   20.000   3
+ AGH      var_49   CAO    CAP    CAQ    CAR      180.000   20.000   3
+ AGH      var_50   CAP    CAQ    CAR    CAS      180.000   20.000   3
+ AGH      var_51   CAQ    CAR    CAS    CAT      180.000   20.000   3
+ AGH      var_52   CAR    CAS    CAT    CAU      179.989   20.000   3
+ AGH      var_53   CAS    CAT    CAU    CAV     -179.974   20.000   3
+ AGH      var_54   CAT    CAU    CAV    CAW     -179.963   20.000   3
+ AGH      var_55   CAU    CAV    CAW    CAX     -179.989   20.000   3
+ AGH      var_56   CAV    CAW    CAX    CAY      179.974   20.000   3
+ AGH      var_57   CAW    CAX    CAY    CAZ      179.963   20.000   3
+ AGH      var_58   CAX    CAY    CAZ    HAZ1     -59.993   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AGH      chir_01  C2     C1     C3     N2        negativ
+ AGH      chir_02  C3     C2     C4     O3        negativ
+ AGH      chir_03  C4     C3     C5     O4        negativ
+ AGH      chir_04  C1A    O1A    O6A    C2A       negativ
+ AGH      chir_05  C5M    O6A    C6A    C4A       positiv
+ AGH      chir_06  C4A    C5M    O4A    C3A       positiv
+ AGH      chir_07  C3A    C4A    O3A    C2A       positiv
+ AGH      chir_08  C2A    C1A    C3A    O2A       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AGH      plan-1    N2        0.020
+ AGH      plan-1    C2        0.020
+ AGH      plan-1    CAA       0.020
+ AGH      plan-1    HN2       0.020
+ AGH      plan-2    CAA       0.020
+ AGH      plan-2    N2        0.020
+ AGH      plan-2    OAA       0.020
+ AGH      plan-2    CAB       0.020
+ AGH      plan-2    HN2       0.020
+# ------------------------------------------------------

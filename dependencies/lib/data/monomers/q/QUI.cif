@@ -1,0 +1,176 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+QUI     QUI      2-CARBOXYQUINOXALINE     NON-POLYMER     18     13     .     
+#
+data_comp_QUI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+QUI     N1      N       NRD6    0       -4.797      -0.059      1.950       
+QUI     C2      C       CR6     0       -5.279      1.136       1.621       
+QUI     C3      C       CR16    0       -5.221      2.242       2.567       
+QUI     N4      N       NRD6    0       -4.698      2.115       3.763       
+QUI     C5      C       CR16    0       -3.619      0.687       5.389       
+QUI     C6      C       CR16    0       -3.118      -0.537      5.739       
+QUI     C7      C       CR16    0       -3.167      -1.625      4.831       
+QUI     C8      C       CR16    0       -3.717      -1.472      3.588       
+QUI     C9      C       CR66    0       -4.244      -0.215      3.199       
+QUI     C10     C       CR66    0       -4.194      0.878       4.111       
+QUI     C       C       C       0       -5.879      1.288       0.257       
+QUI     O1      O       O       0       -6.970      1.879       0.182       
+QUI     O2      O       OC      -1      -5.243      0.818       -0.706      
+QUI     H3      H       H       0       -5.569      3.076       2.310       
+QUI     H5      H       H       0       -3.582      1.407       6.001       
+QUI     H6      H       H       0       -2.735      -0.657      6.594       
+QUI     H7      H       H       0       -2.817      -2.465      5.085       
+QUI     H8      H       H       0       -3.746      -2.202      2.987       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+QUI       N1        C2        DOUBLE    y         1.321     0.012     1.321     0.012     
+QUI       N1        C9        SINGLE    y         1.368     0.010     1.368     0.010     
+QUI       C2        C3        SINGLE    y         1.432     0.020     1.432     0.020     
+QUI       C2        C         SINGLE    n         1.495     0.020     1.495     0.020     
+QUI       C3        N4        DOUBLE    y         1.303     0.010     1.303     0.010     
+QUI       N4        C10       SINGLE    y         1.372     0.010     1.372     0.010     
+QUI       C5        C6        SINGLE    y         1.361     0.010     1.361     0.010     
+QUI       C5        C10       DOUBLE    y         1.408     0.010     1.408     0.010     
+QUI       C6        C7        DOUBLE    y         1.409     0.012     1.409     0.012     
+QUI       C7        C8        SINGLE    y         1.361     0.010     1.361     0.010     
+QUI       C8        C9        DOUBLE    y         1.411     0.010     1.411     0.010     
+QUI       C9        C10       SINGLE    y         1.412     0.010     1.412     0.010     
+QUI       C         O1        DOUBLE    n         1.244     0.020     1.244     0.020     
+QUI       C         O2        SINGLE    n         1.244     0.020     1.244     0.020     
+QUI       C3        H3        SINGLE    n         1.082     0.013     0.939     0.012     
+QUI       C5        H5        SINGLE    n         1.082     0.013     0.946     0.020     
+QUI       C6        H6        SINGLE    n         1.082     0.013     0.944     0.020     
+QUI       C7        H7        SINGLE    n         1.082     0.013     0.944     0.020     
+QUI       C8        H8        SINGLE    n         1.082     0.013     0.946     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+QUI          C2          N1          C9     118.263    1.50
+QUI          N1          C2          C3     121.360    1.50
+QUI          N1          C2           C     116.907    1.72
+QUI          C3          C2           C     121.733    2.28
+QUI          C2          C3          N4     122.374    1.50
+QUI          C2          C3          H3     118.788    1.50
+QUI          N4          C3          H3     118.838    1.50
+QUI          C3          N4         C10     116.098    1.50
+QUI          C6          C5         C10     119.931    1.50
+QUI          C6          C5          H5     120.173    1.50
+QUI         C10          C5          H5     119.887    1.50
+QUI          C5          C6          C7     120.703    1.50
+QUI          C5          C6          H6     119.575    1.50
+QUI          C7          C6          H6     119.722    1.50
+QUI          C6          C7          C8     120.703    1.50
+QUI          C6          C7          H7     119.722    1.50
+QUI          C8          C7          H7     119.575    1.50
+QUI          C7          C8          C9     119.931    1.50
+QUI          C7          C8          H8     120.173    1.50
+QUI          C9          C8          H8     119.887    1.50
+QUI          N1          C9          C8     119.601    1.50
+QUI          N1          C9         C10     121.023    1.50
+QUI          C8          C9         C10     119.376    1.50
+QUI          N4         C10          C5     119.741    1.50
+QUI          N4         C10          C9     120.883    1.50
+QUI          C5         C10          C9     119.376    1.50
+QUI          C2           C          O1     117.189    1.92
+QUI          C2           C          O2     117.189    1.92
+QUI          O1           C          O2     125.622    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+QUI       const_sp2_sp2_2           C          C2          N1          C9     180.000   10.00     2
+QUI              const_32          C8          C9          N1          C2     180.000   10.00     2
+QUI             sp2_sp2_2          O1           C          C2          N1       0.000   10.00     2
+QUI       const_sp2_sp2_5           C          C2          C3          N4     180.000   10.00     2
+QUI       const_sp2_sp2_7          C2          C3          N4         C10       0.000   10.00     2
+QUI              const_10          C5         C10          N4          C3     180.000   10.00     2
+QUI              const_15         C10          C5          C6          C7       0.000   10.00     2
+QUI              const_35          N4         C10          C5          C6     180.000   10.00     2
+QUI              const_19          C5          C6          C7          C8       0.000   10.00     2
+QUI              const_23          C6          C7          C8          C9       0.000   10.00     2
+QUI              const_28          C7          C8          C9          N1     180.000   10.00     2
+QUI              const_11          N4         C10          C9          N1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+QUI    plan-1           C   0.020
+QUI    plan-1         C10   0.020
+QUI    plan-1          C2   0.020
+QUI    plan-1          C3   0.020
+QUI    plan-1          C5   0.020
+QUI    plan-1          C8   0.020
+QUI    plan-1          C9   0.020
+QUI    plan-1          H3   0.020
+QUI    plan-1          N1   0.020
+QUI    plan-1          N4   0.020
+QUI    plan-2         C10   0.020
+QUI    plan-2          C5   0.020
+QUI    plan-2          C6   0.020
+QUI    plan-2          C7   0.020
+QUI    plan-2          C8   0.020
+QUI    plan-2          C9   0.020
+QUI    plan-2          H5   0.020
+QUI    plan-2          H6   0.020
+QUI    plan-2          H7   0.020
+QUI    plan-2          H8   0.020
+QUI    plan-2          N1   0.020
+QUI    plan-2          N4   0.020
+QUI    plan-3           C   0.020
+QUI    plan-3          C2   0.020
+QUI    plan-3          O1   0.020
+QUI    plan-3          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+QUI SMILES           ACDLabs              10.04 "O=C(O)c1nc2ccccc2nc1"
+QUI SMILES_CANONICAL CACTVS               3.341 "OC(=O)c1cnc2ccccc2n1"
+QUI SMILES           CACTVS               3.341 "OC(=O)c1cnc2ccccc2n1"
+QUI SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)ncc(n2)C(=O)O"
+QUI SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)ncc(n2)C(=O)O"
+QUI InChI            InChI                1.03  "InChI=1S/C9H6N2O2/c12-9(13)8-5-10-6-3-1-2-4-7(6)11-8/h1-5H,(H,12,13)"
+QUI InChIKey         InChI                1.03  UPUZGXILYFKSGE-UHFFFAOYSA-N
+QUI ?                acedrg               202         "dictionary generator"                  
+QUI ?                acedrg_database      11          "data source"                           
+QUI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+QUI ?                refmac5              5.8.0189    "optimization tool"                     

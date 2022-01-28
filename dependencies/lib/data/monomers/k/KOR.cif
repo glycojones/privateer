@@ -1,0 +1,259 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KOR     KOR     L-HOMOCYSTEINE-S-N-S-L-CYSTEINE     peptide     32     17     .
+#
+data_comp_KOR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KOR     OAO     O       OC      -1      1.045       -4.406      -3.465
+KOR     CAN     C       C       0       1.396       -3.467      -2.723
+KOR     OAQ     O       O       0       1.563       -2.282      -3.079
+KOR     CAJ     C       CH1     0       1.645       -3.802      -1.245
+KOR     NAK     N       NT3     1       2.767       -2.974      -0.719
+KOR     CAI     C       CH2     0       0.357       -3.588      -0.438
+KOR     C       C       C       0       -5.447      1.814       2.874
+KOR     O       O       O       0       -4.861      2.378       3.819
+KOR     OXT     O       OC      -1      -6.353      0.964       2.981
+KOR     N       N       NT3     1       -5.125      3.675       1.278
+KOR     OAA     O       O       0       -4.189      -0.420      -0.314
+KOR     CAH     C       CH2     0       -0.069      -2.134      -0.258
+KOR     SAG     S       S2      0       -1.586      -1.970      0.716
+KOR     NAF     N       NT1     0       -1.920      -0.341      0.948
+KOR     SAE     S       S3      0       -3.563      -0.107      1.000
+KOR     CB      C       CH2     0       -3.595      1.713       1.155
+KOR     CA      C       CH1     0       -5.015      2.200       1.453
+KOR     HAJ     H       H       0       1.911       -4.749      -1.183
+KOR     HAK1    H       H       0       2.778       -3.006      0.192
+KOR     HAK2    H       H       0       2.678       -2.106      -0.983
+KOR     HAK3      H       H       0       3.561       -3.295      -1.032
+KOR     HAI3    H       H       0       0.478       -3.987      0.446
+KOR     HAI2    H       H       0       -0.369      -4.072      -0.880
+KOR     H       H       H       0       -4.462      4.090       1.744
+KOR     H2      H       H       0       -5.934      3.966       1.581
+KOR     H3      H       H       0       -5.046      3.885       0.395
+KOR     HAH3    H       H       0       -0.215      -1.725      -1.137
+KOR     HAH2    H       H       0       0.648       -1.638      0.191
+KOR     HAF     H       H       0       -1.485      -0.029      1.659
+KOR     HB3     H       H       0       -3.284      2.123       0.322
+KOR     HB2     H       H       0       -3.000      1.995       1.880
+KOR     HA      H       H       0       -5.629      1.772       0.811
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+KOR      N      n/a    CA     START
+KOR      H      N      .      .
+KOR      H2     N      .      .
+KOR      H3     N      .      .
+KOR      CA     N      C      .
+KOR      HA     CA     .      .
+KOR      CB     CA     SAE    .
+KOR      HB3    CB     .      .
+KOR      HB2    CB     .      .
+KOR      SAE    CB     NAF    .
+KOR      OAA    SAE    .      .
+KOR      NAF    SAE    SAG    .
+KOR      HAF    NAF    .      .
+KOR      SAG    NAF    CAH    .
+KOR      CAH    SAG    CAI    .
+KOR      HAH3   CAH    .      .
+KOR      HAH2   CAH    .      .
+KOR      CAI    CAH    CAJ    .
+KOR      HAI3   CAI    .      .
+KOR      HAI2   CAI    .      .
+KOR      CAJ    CAI    CAN    .
+KOR      HAJ    CAJ    .      .
+KOR      NAK    CAJ    HAK1   .
+KOR      HAK3   NAK    .      .
+KOR      HAK2   NAK    .      .
+KOR      HAK1   NAK    .      .
+KOR      CAN    CAJ    OAQ    .
+KOR      OAO    CAN    .      .
+KOR      OAQ    CAN    .      .
+KOR      C      CA     .      END
+KOR      O      C      .      .
+KOR      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KOR       OAO       CAN       SINGLE    n         1.247     0.019     1.247     0.019     
+KOR       CAN       OAQ       DOUBLE    n         1.247     0.019     1.247     0.019     
+KOR       CAN       CAJ       SINGLE    n         1.533     0.011     1.533     0.011     
+KOR       CAJ       NAK       SINGLE    n         1.488     0.011     1.488     0.011     
+KOR       CAJ       CAI       SINGLE    n         1.532     0.010     1.532     0.010     
+KOR       CAI       CAH       SINGLE    n         1.519     0.020     1.519     0.020     
+KOR       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+KOR       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+KOR       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+KOR       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+KOR       OAA       SAE       DOUBLE    n         1.489     0.012     1.489     0.012     
+KOR       CAH       SAG       SINGLE    n         1.810     0.011     1.810     0.011     
+KOR       SAG       NAF       SINGLE    n         1.679     0.020     1.679     0.020     
+KOR       NAF       SAE       SINGLE    n         1.660     0.018     1.660     0.018     
+KOR       SAE       CB        SINGLE    n         1.826     0.020     1.826     0.020     
+KOR       CB        CA        SINGLE    n         1.530     0.013     1.530     0.013     
+KOR       CAJ       HAJ       SINGLE    n         1.089     0.010     0.985     0.020     
+KOR       NAK       HAK1      SINGLE    n         1.036     0.016     0.911     0.020     
+KOR       NAK       HAK2      SINGLE    n         1.036     0.016     0.911     0.020     
+KOR       NAK       HAK3      SINGLE    n         1.036     0.016     0.911     0.020     
+KOR       CAI       HAI3      SINGLE    n         1.089     0.010     0.978     0.020     
+KOR       CAI       HAI2      SINGLE    n         1.089     0.010     0.978     0.020     
+KOR       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+KOR       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+KOR       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+KOR       CAH       HAH3      SINGLE    n         1.089     0.010     0.981     0.013     
+KOR       CAH       HAH2      SINGLE    n         1.089     0.010     0.981     0.013     
+KOR       NAF       HAF       SINGLE    n         1.036     0.016     0.890     0.020     
+KOR       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.019     
+KOR       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.019     
+KOR       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KOR         OAO         CAN         OAQ     125.752    1.50
+KOR         OAO         CAN         CAJ     117.124    1.50
+KOR         OAQ         CAN         CAJ     117.124    1.50
+KOR         CAN         CAJ         NAK     109.241    1.50
+KOR         CAN         CAJ         CAI     109.344    1.50
+KOR         CAN         CAJ         HAJ     108.824    1.50
+KOR         NAK         CAJ         CAI     110.906    1.50
+KOR         NAK         CAJ         HAJ     108.487    1.50
+KOR         CAI         CAJ         HAJ     109.670    1.50
+KOR         CAJ         NAK        HAK1     110.062    1.93
+KOR         CAJ         NAK        HAK2     110.062    1.93
+KOR         CAJ         NAK          HAK3     110.062    1.93
+KOR        HAK1         NAK        HAK2     109.028    2.41
+KOR        HAK1         NAK          HAK3     109.028    2.41
+KOR        HAK2         NAK          HAK3     109.028    2.41
+KOR         CAJ         CAI         CAH     114.033    1.57
+KOR         CAJ         CAI        HAI3     108.666    1.50
+KOR         CAJ         CAI        HAI2     108.666    1.50
+KOR         CAH         CAI        HAI3     108.867    1.50
+KOR         CAH         CAI        HAI2     108.867    1.50
+KOR        HAI3         CAI        HAI2     107.698    1.50
+KOR           O           C         OXT     125.732    1.50
+KOR           O           C          CA     117.134    1.50
+KOR         OXT           C          CA     117.134    1.50
+KOR          CA           N           H     109.671    1.50
+KOR          CA           N          H2     109.671    1.50
+KOR          CA           N          H3     109.671    1.50
+KOR           H           N          H2     109.028    2.41
+KOR           H           N          H3     109.028    2.41
+KOR          H2           N          H3     109.028    2.41
+KOR         CAI         CAH         SAG     112.946    3.00
+KOR         CAI         CAH        HAH3     109.079    1.50
+KOR         CAI         CAH        HAH2     109.079    1.50
+KOR         SAG         CAH        HAH3     108.815    1.50
+KOR         SAG         CAH        HAH2     108.815    1.50
+KOR        HAH3         CAH        HAH2     107.922    1.50
+KOR         CAH         SAG         NAF     109.471    3.00
+KOR         SAG         NAF         SAE     109.471    3.00
+KOR         SAG         NAF         HAF     110.707    3.00
+KOR         SAE         NAF         HAF     114.203    3.00
+KOR         OAA         SAE         NAF     110.992    1.68
+KOR         OAA         SAE          CB     106.041    1.50
+KOR         NAF         SAE          CB      99.487    2.27
+KOR         SAE          CB          CA     108.220    3.00
+KOR         SAE          CB         HB3     109.626    1.50
+KOR         SAE          CB         HB2     109.626    1.50
+KOR          CA          CB         HB3     108.870    1.50
+KOR          CA          CB         HB2     108.870    1.50
+KOR         HB3          CB         HB2     108.193    1.50
+KOR           C          CA           N     109.494    1.50
+KOR           C          CA          CB     111.066    2.42
+KOR           C          CA          HA     108.606    1.50
+KOR           N          CA          CB     111.386    1.50
+KOR           N          CA          HA     107.983    1.50
+KOR          CB          CA          HA     108.253    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KOR            sp3_sp3_37         CAI         CAH         SAG         NAF     180.000   10.00     3
+KOR            sp3_sp3_40         SAE         NAF         SAG         CAH     180.000   10.00     3
+KOR            sp3_sp3_44         SAG         NAF         SAE         OAA      60.000   10.00     3
+KOR            sp3_sp3_46          CA          CB         SAE         OAA     180.000   10.00     3
+KOR            sp3_sp3_55           C          CA          CB         SAE      60.000   10.00     3
+KOR             sp2_sp3_1         OAO         CAN         CAJ         NAK       0.000   10.00     6
+KOR             sp3_sp3_1         CAN         CAJ         NAK        HAK1     180.000   10.00     3
+KOR            sp3_sp3_10         CAH         CAI         CAJ         CAN     180.000   10.00     3
+KOR            sp3_sp3_19         SAG         CAH         CAI         CAJ     180.000   10.00     3
+KOR             sp2_sp3_8           O           C          CA           N     120.000   10.00     6
+KOR            sp3_sp3_28           C          CA           N           H     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+KOR    chir_1    CAJ    NAK    CAN    CAI    positive
+KOR    chir_2    NAF    SAE    SAG    HAF    both
+KOR    chir_3    SAE    OAA    NAF    CB    negative
+KOR    chir_4    CA    N    CB    C    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KOR    plan-1         CAJ   0.020
+KOR    plan-1         CAN   0.020
+KOR    plan-1         OAO   0.020
+KOR    plan-1         OAQ   0.020
+KOR    plan-2           C   0.020
+KOR    plan-2          CA   0.020
+KOR    plan-2           O   0.020
+KOR    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KOR SMILES           ACDLabs              10.04 "O=S(NSCCC(N)C(=O)O)CC(C(=O)O)N"
+KOR SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCSN[S@](=O)C[C@H](N)C(O)=O)C(O)=O"
+KOR SMILES           CACTVS               3.341 "N[CH](CCSN[S](=O)C[CH](N)C(O)=O)C(O)=O"
+KOR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CSN[S@](=O)C[C@@H](C(=O)O)N)[C@@H](C(=O)O)N"
+KOR SMILES           "OpenEye OEToolkits" 1.5.0 "C(CSNS(=O)CC(C(=O)O)N)C(C(=O)O)N"
+KOR InChI            InChI                1.03  "InChI=1S/C7H15N3O5S2/c8-4(6(11)12)1-2-16-10-17(15)3-5(9)7(13)14/h4-5,10H,1-3,8-9H2,(H,11,12)(H,13,14)/t4-,5-,17+/m0/s1"
+KOR InChIKey         InChI                1.03  XTMCQXZWONKOFP-QJBRIOCBSA-N
+KOR ?                acedrg               202         "dictionary generator"
+KOR ?                acedrg_database      11          "data source"
+KOR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KOR ?                refmac5              5.8.0222    "optimization tool"

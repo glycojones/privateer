@@ -1,0 +1,110 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MAK     MAK      "ALPHA-KETOMALONIC ACID"     NON-POLYMER     8     8     .     
+#
+data_comp_MAK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MAK     C1      C       C       0       24.498      43.607      27.329      
+MAK     O1      O       O       0       24.492      42.396      27.210      
+MAK     O2      O       OC      -1      25.513      44.281      27.292      
+MAK     C2      C       C       0       23.219      44.286      27.553      
+MAK     O3      O       O       0       23.136      45.470      27.175      
+MAK     C3      C       C       0       22.046      43.728      28.232      
+MAK     O4      O       O       0       22.220      42.858      29.066      
+MAK     O5      O       OC      -1      20.945      44.147      27.918      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MAK       C1        O1        DOUBLE    n         1.214     0.020     1.214     0.020     
+MAK       C1        O2        SINGLE    n         1.214     0.020     1.214     0.020     
+MAK       C1        C2        SINGLE    n         1.444     0.020     1.444     0.020     
+MAK       C2        O3        DOUBLE    n         1.235     0.020     1.235     0.020     
+MAK       C2        C3        SINGLE    n         1.444     0.020     1.444     0.020     
+MAK       C3        O4        DOUBLE    n         1.214     0.020     1.214     0.020     
+MAK       C3        O5        SINGLE    n         1.214     0.020     1.214     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MAK          O1          C1          O2     124.510    1.63
+MAK          O1          C1          C2     117.745    2.67
+MAK          O2          C1          C2     117.745    2.67
+MAK          C1          C2          O3     117.924    3.00
+MAK          C1          C2          C3     124.151    3.00
+MAK          O3          C2          C3     117.924    3.00
+MAK          C2          C3          O4     117.745    2.67
+MAK          C2          C3          O5     117.745    2.67
+MAK          O4          C3          O5     124.510    1.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MAK             sp2_sp2_2          O1          C1          C2          O3       0.000   10.00     2
+MAK             sp2_sp2_5          C1          C2          C3          O4     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MAK    plan-1          C1   0.020
+MAK    plan-1          C2   0.020
+MAK    plan-1          O1   0.020
+MAK    plan-1          O2   0.020
+MAK    plan-2          C1   0.020
+MAK    plan-2          C2   0.020
+MAK    plan-2          C3   0.020
+MAK    plan-2          O3   0.020
+MAK    plan-3          C2   0.020
+MAK    plan-3          C3   0.020
+MAK    plan-3          O4   0.020
+MAK    plan-3          O5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MAK SMILES           ACDLabs              10.04 "O=C(O)C(=O)C(=O)O"
+MAK SMILES_CANONICAL CACTVS               3.341 "OC(=O)C(=O)C(O)=O"
+MAK SMILES           CACTVS               3.341 "OC(=O)C(=O)C(O)=O"
+MAK SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=O)(C(=O)O)C(=O)O"
+MAK SMILES           "OpenEye OEToolkits" 1.5.0 "C(=O)(C(=O)O)C(=O)O"
+MAK InChI            InChI                1.03  "InChI=1S/C3H2O5/c4-1(2(5)6)3(7)8/h(H,5,6)(H,7,8)"
+MAK InChIKey         InChI                1.03  XEEVLJKYYUVTRC-UHFFFAOYSA-N
+MAK ?                acedrg               202         "dictionary generator"                  
+MAK ?                acedrg_database      11          "data source"                           
+MAK ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MAK ?                refmac5              5.8.0189    "optimization tool"                     

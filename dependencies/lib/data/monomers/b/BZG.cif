@@ -1,0 +1,383 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BZG      BZG '"6-(BENZYLOXY)-9-(2-DEOXY-5-O-PHOSPH' non-polymer        48  30 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BZG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BZG           OXT    O    OP       -0.666      0.000    0.000    0.000
+ BZG           P      P    P         0.000     -1.209    0.353    0.838
+ BZG           O1P    O    OP       -0.666     -1.735    1.609    0.178
+ BZG           O2P    O    OP       -0.666     -0.945    0.466    2.324
+ BZG           "O5'"  O    O2        0.000     -2.285   -0.781    0.418
+ BZG           "C5'"  C    CH2       0.000     -2.587   -0.950   -0.955
+ BZG           "H5'1" H    H         0.000     -1.682   -1.217   -1.504
+ BZG           "H5'2" H    H         0.000     -2.998   -0.023   -1.361
+ BZG           "C4'"  C    CH1       0.000     -3.615   -2.065   -1.094
+ BZG           "H4'"  H    H         0.000     -3.220   -2.990   -0.652
+ BZG           "OS'"  O    O2        0.000     -4.811   -1.661   -0.395
+ BZG           "C3'"  C    CH1       0.000     -4.017   -2.317   -2.544
+ BZG           "H3'"  H    H         0.000     -3.213   -2.046   -3.243
+ BZG           "O3'"  O    OH1       0.000     -4.417   -3.676   -2.698
+ BZG           HA     H    H         0.000     -5.019   -3.917   -1.982
+ BZG           "CP'"  C    CH2       0.000     -5.234   -1.438   -2.722
+ BZG           "HP'1" H    H         0.000     -5.929   -1.813   -3.476
+ BZG           "HP'2" H    H         0.000     -4.986   -0.398   -2.942
+ BZG           "CT'"  C    CH1       0.000     -5.880   -1.527   -1.347
+ BZG           "HT'"  H    H         0.000     -6.498   -2.434   -1.308
+ BZG           NE     N    NR5       0.000     -6.715   -0.382   -1.000
+ BZG           CF     C    CR56      0.000     -8.064   -0.262   -1.186
+ BZG           NG     N    NRD6      0.000     -8.898   -1.166   -1.723
+ BZG           CH     C    CR6       0.000    -10.163   -0.690   -1.741
+ BZG           NI     N    NH2       0.000    -11.135   -1.559   -2.286
+ BZG           HIN2   H    H         0.000    -12.049   -1.210   -2.578
+ BZG           HIN1   H    H         0.000    -10.946   -2.556   -2.399
+ BZG           NJ     N    NRD6      0.000    -10.626    0.508   -1.307
+ BZG           CO     C    CR15      0.000     -6.287    0.786   -0.422
+ BZG           HO     H    H         0.000     -5.257    0.985   -0.154
+ BZG           NN     N    NRD5      0.000     -7.273    1.637   -0.229
+ BZG           CM     C    CR56      0.000     -8.390    0.996   -0.702
+ BZG           CK     C    CR6       0.000     -9.727    1.371   -0.776
+ BZG           OL     O    O2        0.000    -10.176    2.589   -0.333
+ BZG           CW     C    CH2       0.000    -11.568    2.845   -0.467
+ BZG           HWC1   H    H         0.000    -12.133    2.114    0.114
+ BZG           HWC2   H    H         0.000    -11.854    2.772   -1.518
+ BZG           CE     C    CR6       0.000    -11.863    4.226    0.039
+ BZG           CZ1    C    CR16      0.000    -12.187    4.414    1.378
+ BZG           HZ1    H    H         0.000    -12.227    3.568    2.052
+ BZG           CZ2    C    CR16      0.000    -11.809    5.306   -0.836
+ BZG           HZ2    H    H         0.000    -11.556    5.151   -1.878
+ BZG           CT2    C    CR16      0.000    -12.083    6.591   -0.365
+ BZG           HT2    H    H         0.000    -12.043    7.435   -1.042
+ BZG           CI     C    CR16      0.000    -12.410    6.787    0.977
+ BZG           HI     H    H         0.000    -12.623    7.784    1.342
+ BZG           CT1    C    CR16      0.000    -12.461    5.699    1.848
+ BZG           HT1    H    H         0.000    -12.714    5.851    2.890
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BZG      OXT    n/a    P      START
+ BZG      P      OXT    "O5'"  .
+ BZG      O1P    P      .      .
+ BZG      O2P    P      .      .
+ BZG      "O5'"  P      "C5'"  .
+ BZG      "C5'"  "O5'"  "C4'"  .
+ BZG      "H5'1" "C5'"  .      .
+ BZG      "H5'2" "C5'"  .      .
+ BZG      "C4'"  "C5'"  "C3'"  .
+ BZG      "H4'"  "C4'"  .      .
+ BZG      "OS'"  "C4'"  .      .
+ BZG      "C3'"  "C4'"  "CP'"  .
+ BZG      "H3'"  "C3'"  .      .
+ BZG      "O3'"  "C3'"  HA     .
+ BZG      HA     "O3'"  .      .
+ BZG      "CP'"  "C3'"  "CT'"  .
+ BZG      "HP'1" "CP'"  .      .
+ BZG      "HP'2" "CP'"  .      .
+ BZG      "CT'"  "CP'"  NE     .
+ BZG      "HT'"  "CT'"  .      .
+ BZG      NE     "CT'"  CO     .
+ BZG      CF     NE     NG     .
+ BZG      NG     CF     CH     .
+ BZG      CH     NG     NJ     .
+ BZG      NI     CH     HIN1   .
+ BZG      HIN2   NI     .      .
+ BZG      HIN1   NI     .      .
+ BZG      NJ     CH     .      .
+ BZG      CO     NE     NN     .
+ BZG      HO     CO     .      .
+ BZG      NN     CO     CM     .
+ BZG      CM     NN     CK     .
+ BZG      CK     CM     OL     .
+ BZG      OL     CK     CW     .
+ BZG      CW     OL     CE     .
+ BZG      HWC1   CW     .      .
+ BZG      HWC2   CW     .      .
+ BZG      CE     CW     CZ2    .
+ BZG      CZ1    CE     HZ1    .
+ BZG      HZ1    CZ1    .      .
+ BZG      CZ2    CE     CT2    .
+ BZG      HZ2    CZ2    .      .
+ BZG      CT2    CZ2    CI     .
+ BZG      HT2    CT2    .      .
+ BZG      CI     CT2    CT1    .
+ BZG      HI     CI     .      .
+ BZG      CT1    CI     HT1    .
+ BZG      HT1    CT1    .      END
+ BZG      CZ1    CT1    .    ADD
+ BZG      CK     NJ     .    ADD
+ BZG      CF     CM     .    ADD
+ BZG      "CT'"  "OS'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BZG       O1P       P         deloc     1.510     0.020     1.510     0.020     
+BZG       O2P       P         deloc     1.510     0.020     1.510     0.020     
+BZG       "O5'"     P         single    1.610     0.020     1.610     0.020     
+BZG       P         OXT       deloc     1.510     0.020     1.510     0.020     
+BZG       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+BZG       CZ1       CT1       single    1.390     0.020     1.390     0.020     
+BZG       CZ1       CE        double    1.390     0.020     1.390     0.020     
+BZG       HZ1       CZ1       single    1.082     0.013     0.975     0.010     
+BZG       CT1       CI        double    1.390     0.020     1.390     0.020     
+BZG       HT1       CT1       single    1.082     0.013     0.975     0.010     
+BZG       CI        CT2       single    1.390     0.020     1.390     0.020     
+BZG       HI        CI        single    1.082     0.013     0.975     0.010     
+BZG       CT2       CZ2       double    1.390     0.020     1.390     0.020     
+BZG       HT2       CT2       single    1.082     0.013     0.975     0.010     
+BZG       CZ2       CE        single    1.390     0.020     1.390     0.020     
+BZG       HZ2       CZ2       single    1.082     0.013     0.975     0.010     
+BZG       CE        CW        single    1.511     0.020     1.511     0.020     
+BZG       CW        OL        single    1.426     0.020     1.426     0.020     
+BZG       HWC1      CW        single    1.089     0.010     0.989     0.005     
+BZG       HWC2      CW        single    1.089     0.010     0.989     0.005     
+BZG       OL        CK        single    1.370     0.020     1.370     0.020     
+BZG       CK        NJ        single    1.350     0.020     1.350     0.020     
+BZG       CK        CM        double    1.490     0.020     1.490     0.020     
+BZG       NJ        CH        double    1.350     0.020     1.350     0.020     
+BZG       NI        CH        single    1.355     0.020     1.355     0.020     
+BZG       CH        NG        single    1.350     0.020     1.350     0.020     
+BZG       HIN1      NI        single    1.016     0.010     0.899     0.007     
+BZG       HIN2      NI        single    1.016     0.010     0.899     0.007     
+BZG       NG        CF        double    1.355     0.020     1.355     0.020     
+BZG       CF        CM        single    1.490     0.020     1.490     0.020     
+BZG       CF        NE        single    1.337     0.020     1.337     0.020     
+BZG       CM        NN        single    1.350     0.020     1.350     0.020     
+BZG       NN        CO        double    1.350     0.020     1.350     0.020     
+BZG       CO        NE        single    1.337     0.020     1.337     0.020     
+BZG       HO        CO        single    1.082     0.013     0.975     0.010     
+BZG       NE        "CT'"     single    1.485     0.020     1.485     0.020     
+BZG       "CT'"     "OS'"     single    1.426     0.020     1.426     0.020     
+BZG       "CT'"     "CP'"     single    1.524     0.020     1.524     0.020     
+BZG       "HT'"     "CT'"     single    1.089     0.010     0.989     0.005     
+BZG       "OS'"     "C4'"     single    1.426     0.020     1.426     0.020     
+BZG       "CP'"     "C3'"     single    1.524     0.020     1.524     0.020     
+BZG       "HP'1"    "CP'"     single    1.089     0.010     0.989     0.005     
+BZG       "HP'2"    "CP'"     single    1.089     0.010     0.989     0.005     
+BZG       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+BZG       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+BZG       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+BZG       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+BZG       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+BZG       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+BZG       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+BZG       HA        "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BZG      OXT    P      O1P     119.900    3.000
+ BZG      OXT    P      O2P     119.900    3.000
+ BZG      OXT    P      "O5'"   108.200    3.000
+ BZG      O1P    P      O2P     119.900    3.000
+ BZG      O1P    P      "O5'"   108.200    3.000
+ BZG      O2P    P      "O5'"   108.200    3.000
+ BZG      P      "O5'"  "C5'"   120.500    3.000
+ BZG      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ BZG      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ BZG      "O5'"  "C5'"  "C4'"   109.470    3.000
+ BZG      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ BZG      "H5'1" "C5'"  "C4'"   109.470    3.000
+ BZG      "H5'2" "C5'"  "C4'"   109.470    3.000
+ BZG      "C5'"  "C4'"  "H4'"   108.340    3.000
+ BZG      "C5'"  "C4'"  "OS'"   109.470    3.000
+ BZG      "C5'"  "C4'"  "C3'"   111.000    3.000
+ BZG      "H4'"  "C4'"  "OS'"   109.470    3.000
+ BZG      "H4'"  "C4'"  "C3'"   108.340    3.000
+ BZG      "OS'"  "C4'"  "C3'"   109.470    3.000
+ BZG      "C4'"  "OS'"  "CT'"   111.800    3.000
+ BZG      "C4'"  "C3'"  "H3'"   108.340    3.000
+ BZG      "C4'"  "C3'"  "O3'"   109.470    3.000
+ BZG      "C4'"  "C3'"  "CP'"   111.000    3.000
+ BZG      "H3'"  "C3'"  "O3'"   109.470    3.000
+ BZG      "H3'"  "C3'"  "CP'"   108.340    3.000
+ BZG      "O3'"  "C3'"  "CP'"   109.470    3.000
+ BZG      "C3'"  "O3'"  HA      109.470    3.000
+ BZG      "C3'"  "CP'"  "HP'1"  109.470    3.000
+ BZG      "C3'"  "CP'"  "HP'2"  109.470    3.000
+ BZG      "C3'"  "CP'"  "CT'"   111.000    3.000
+ BZG      "HP'1" "CP'"  "HP'2"  107.900    3.000
+ BZG      "HP'1" "CP'"  "CT'"   109.470    3.000
+ BZG      "HP'2" "CP'"  "CT'"   109.470    3.000
+ BZG      "CP'"  "CT'"  "HT'"   108.340    3.000
+ BZG      "CP'"  "CT'"  NE      109.470    3.000
+ BZG      "CP'"  "CT'"  "OS'"   109.470    3.000
+ BZG      "HT'"  "CT'"  NE      109.470    3.000
+ BZG      "HT'"  "CT'"  "OS'"   109.470    3.000
+ BZG      NE     "CT'"  "OS'"   109.470    3.000
+ BZG      "CT'"  NE     CF      126.000    3.000
+ BZG      "CT'"  NE     CO      126.000    3.000
+ BZG      CF     NE     CO      108.000    3.000
+ BZG      NE     CF     NG      132.000    3.000
+ BZG      NE     CF     CM      108.000    3.000
+ BZG      NG     CF     CM      120.000    3.000
+ BZG      CF     NG     CH      120.000    3.000
+ BZG      NG     CH     NI      120.000    3.000
+ BZG      NG     CH     NJ      120.000    3.000
+ BZG      NI     CH     NJ      120.000    3.000
+ BZG      CH     NI     HIN2    120.000    3.000
+ BZG      CH     NI     HIN1    120.000    3.000
+ BZG      HIN2   NI     HIN1    120.000    3.000
+ BZG      CH     NJ     CK      120.000    3.000
+ BZG      NE     CO     HO      126.000    3.000
+ BZG      NE     CO     NN      108.000    3.000
+ BZG      HO     CO     NN      126.000    3.000
+ BZG      CO     NN     CM      108.000    3.000
+ BZG      NN     CM     CK      132.000    3.000
+ BZG      NN     CM     CF      108.000    3.000
+ BZG      CK     CM     CF      120.000    3.000
+ BZG      CM     CK     OL      120.000    3.000
+ BZG      CM     CK     NJ      120.000    3.000
+ BZG      OL     CK     NJ      120.000    3.000
+ BZG      CK     OL     CW      120.000    3.000
+ BZG      OL     CW     HWC1    109.470    3.000
+ BZG      OL     CW     HWC2    109.470    3.000
+ BZG      OL     CW     CE      109.470    3.000
+ BZG      HWC1   CW     HWC2    107.900    3.000
+ BZG      HWC1   CW     CE      109.470    3.000
+ BZG      HWC2   CW     CE      109.470    3.000
+ BZG      CW     CE     CZ1     120.000    3.000
+ BZG      CW     CE     CZ2     120.000    3.000
+ BZG      CZ1    CE     CZ2     120.000    3.000
+ BZG      CE     CZ1    HZ1     120.000    3.000
+ BZG      CE     CZ1    CT1     120.000    3.000
+ BZG      HZ1    CZ1    CT1     120.000    3.000
+ BZG      CE     CZ2    HZ2     120.000    3.000
+ BZG      CE     CZ2    CT2     120.000    3.000
+ BZG      HZ2    CZ2    CT2     120.000    3.000
+ BZG      CZ2    CT2    HT2     120.000    3.000
+ BZG      CZ2    CT2    CI      120.000    3.000
+ BZG      HT2    CT2    CI      120.000    3.000
+ BZG      CT2    CI     HI      120.000    3.000
+ BZG      CT2    CI     CT1     120.000    3.000
+ BZG      HI     CI     CT1     120.000    3.000
+ BZG      CI     CT1    HT1     120.000    3.000
+ BZG      CI     CT1    CZ1     120.000    3.000
+ BZG      HT1    CT1    CZ1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BZG      var_1    OXT    P      "O5'"  "C5'"    -54.187   20.000   1
+ BZG      var_2    P      "O5'"  "C5'"  "C4'"    179.980   20.000   1
+ BZG      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.511   20.000   3
+ BZG      var_4    "C5'"  "C4'"  "OS'"  "CT'"    120.000   20.000   1
+ BZG      var_5    "C5'"  "C4'"  "C3'"  "CP'"    -90.000   20.000   3
+ BZG      var_6    "C4'"  "C3'"  "O3'"  HA        46.637   20.000   1
+ BZG      var_7    "C4'"  "C3'"  "CP'"  "CT'"    -30.000   20.000   3
+ BZG      var_8    "C3'"  "CP'"  "CT'"  NE       150.000   20.000   3
+ BZG      var_9    "CP'"  "CT'"  "OS'"  "C4'"    -30.000   20.000   1
+ BZG      var_10   "CP'"  "CT'"  NE     CO       -86.596   20.000   1
+ BZG      CONST_1  "CT'"  NE     CF     NG         0.000    0.000   0
+ BZG      CONST_2  NE     CF     CM     NN         0.000    0.000   0
+ BZG      CONST_3  NE     CF     NG     CH       180.000    0.000   0
+ BZG      CONST_4  CF     NG     CH     NJ         0.000    0.000   0
+ BZG      CONST_5  NG     CH     NI     HIN1      16.967    0.000   0
+ BZG      CONST_6  NG     CH     NJ     CK         0.000    0.000   0
+ BZG      CONST_7  "CT'"  NE     CO     NN       180.000    0.000   0
+ BZG      CONST_8  NE     CO     NN     CM         0.000    0.000   0
+ BZG      CONST_9  CO     NN     CM     CK       180.000    0.000   0
+ BZG      CONST_10 NN     CM     CK     OL         0.000    0.000   0
+ BZG      CONST_11 CM     CK     NJ     CH         0.000    0.000   0
+ BZG      var_11   CM     CK     OL     CW      -179.970   20.000   1
+ BZG      var_12   CK     OL     CW     CE      -178.726   20.000   1
+ BZG      var_13   OL     CW     CE     CZ2       89.979   20.000   2
+ BZG      CONST_12 CW     CE     CZ1    CT1      180.000    0.000   0
+ BZG      CONST_13 CE     CZ1    CT1    CI         0.000    0.000   0
+ BZG      CONST_14 CW     CE     CZ2    CT2      180.000    0.000   0
+ BZG      CONST_15 CE     CZ2    CT2    CI         0.000    0.000   0
+ BZG      CONST_16 CZ2    CT2    CI     CT1        0.000    0.000   0
+ BZG      CONST_17 CT2    CI     CT1    CZ1        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BZG      chir_01  "CT'"  NE     "OS'"  "CP'"     positiv
+ BZG      chir_02  "C4'"  "OS'"  "C5'"  "C3'"     positiv
+ BZG      chir_03  "C3'"  "CP'"  "C4'"  "O3'"     negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BZG      plan-1    CZ1       0.020
+ BZG      plan-1    CT1       0.020
+ BZG      plan-1    CE        0.020
+ BZG      plan-1    HZ1       0.020
+ BZG      plan-1    CI        0.020
+ BZG      plan-1    CT2       0.020
+ BZG      plan-1    CZ2       0.020
+ BZG      plan-1    HT1       0.020
+ BZG      plan-1    HI        0.020
+ BZG      plan-1    HT2       0.020
+ BZG      plan-1    HZ2       0.020
+ BZG      plan-1    CW        0.020
+ BZG      plan-2    CK        0.020
+ BZG      plan-2    OL        0.020
+ BZG      plan-2    NJ        0.020
+ BZG      plan-2    CM        0.020
+ BZG      plan-2    CH        0.020
+ BZG      plan-2    NG        0.020
+ BZG      plan-2    NI        0.020
+ BZG      plan-2    CF        0.020
+ BZG      plan-2    NE        0.020
+ BZG      plan-2    NN        0.020
+ BZG      plan-2    CO        0.020
+ BZG      plan-2    HO        0.020
+ BZG      plan-2    "CT'"     0.020
+ BZG      plan-2    HIN2      0.020
+ BZG      plan-2    HIN1      0.020
+ BZG      plan-3    NI        0.020
+ BZG      plan-3    CH        0.020
+ BZG      plan-3    HIN1      0.020
+ BZG      plan-3    HIN2      0.020
+# ------------------------------------------------------

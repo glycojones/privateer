@@ -1,0 +1,302 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BHG      BHG '2-HEXYLOXY-6-HYDROXYMETHYL-TETRAHYDR' pyranose           42  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BHG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BHG           C1     C    CH1       0.000      0.000    0.000    0.000
+ BHG           H1     H    H         0.000      0.437   -0.925    0.400
+ BHG           O1     O    O2        0.000      0.485    0.219   -1.326
+ BHG           "C1'"  C    CH2       0.000      0.187   -0.960   -2.075
+ BHG           "H1'1" H    H         0.000     -0.892   -1.126   -2.078
+ BHG           "H1'2" H    H         0.000      0.685   -1.817   -1.615
+ BHG           "C2'"  C    CH2       0.000      0.683   -0.791   -3.513
+ BHG           "H2'1" H    H         0.000      1.762   -0.624   -3.508
+ BHG           "H2'2" H    H         0.000      0.185    0.066   -3.970
+ BHG           "C3'"  C    CH2       0.000      0.365   -2.054   -4.314
+ BHG           "H3'1" H    H         0.000     -0.715   -2.221   -4.317
+ BHG           "H3'2" H    H         0.000      0.862   -2.911   -3.854
+ BHG           "C4'"  C    CH2       0.000      0.860   -1.885   -5.751
+ BHG           "H4'1" H    H         0.000      1.939   -1.718   -5.746
+ BHG           "H4'2" H    H         0.000      0.363   -1.028   -6.209
+ BHG           "C5'"  C    CH2       0.000      0.542   -3.149   -6.553
+ BHG           "H5'1" H    H         0.000     -0.537   -3.315   -6.555
+ BHG           "H5'2" H    H         0.000      1.040   -4.005   -6.094
+ BHG           "C6'"  C    CH3       0.000      1.037   -2.979   -7.991
+ BHG           "H6'3" H    H         0.000      0.818   -3.853   -8.550
+ BHG           "H6'2" H    H         0.000      0.555   -2.147   -8.438
+ BHG           "H6'1" H    H         0.000      2.085   -2.817   -7.991
+ BHG           O5     O    O2        0.000     -1.420   -0.120   -0.028
+ BHG           C5     C    CH1       0.000     -1.846   -0.516    1.276
+ BHG           H5     H    H         0.000     -1.284   -1.407    1.589
+ BHG           C4     C    CH1       0.000     -1.594    0.620    2.269
+ BHG           H4     H    H         0.000     -1.941    0.319    3.267
+ BHG           O4     O    OH1       0.000     -2.302    1.789    1.849
+ BHG           HO4    H    H         0.000     -2.142    2.505    2.478
+ BHG           C3     C    CH1       0.000     -0.091    0.918    2.318
+ BHG           H3     H    H         0.000      0.443    0.055    2.741
+ BHG           O3     O    OH1       0.000      0.143    2.072    3.128
+ BHG           HO3    H    H         0.000      1.091    2.258    3.157
+ BHG           C2     C    CH1       0.000      0.402    1.179    0.890
+ BHG           H2     H    H         0.000     -0.054    2.103    0.506
+ BHG           O2     O    OH1       0.000      1.824    1.314    0.892
+ BHG           HO2    H    H         0.000      2.133    1.478   -0.009
+ BHG           C6     C    CH2       0.000     -3.341   -0.841    1.245
+ BHG           H61    H    H         0.000     -3.891    0.014    0.848
+ BHG           H62    H    H         0.000     -3.687   -1.056    2.258
+ BHG           O6     O    OH1       0.000     -3.563   -1.981    0.412
+ BHG           HO6    H    H         0.000     -4.514   -2.152    0.420
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BHG      C1     n/a    O5     START
+ BHG      H1     C1     .      .
+ BHG      O1     C1     "C1'"  .
+ BHG      "C1'"  O1     "C2'"  .
+ BHG      "H1'1" "C1'"  .      .
+ BHG      "H1'2" "C1'"  .      .
+ BHG      "C2'"  "C1'"  "C3'"  .
+ BHG      "H2'1" "C2'"  .      .
+ BHG      "H2'2" "C2'"  .      .
+ BHG      "C3'"  "C2'"  "C4'"  .
+ BHG      "H3'1" "C3'"  .      .
+ BHG      "H3'2" "C3'"  .      .
+ BHG      "C4'"  "C3'"  "C5'"  .
+ BHG      "H4'1" "C4'"  .      .
+ BHG      "H4'2" "C4'"  .      .
+ BHG      "C5'"  "C4'"  "C6'"  .
+ BHG      "H5'1" "C5'"  .      .
+ BHG      "H5'2" "C5'"  .      .
+ BHG      "C6'"  "C5'"  "H6'1" .
+ BHG      "H6'3" "C6'"  .      .
+ BHG      "H6'2" "C6'"  .      .
+ BHG      "H6'1" "C6'"  .      .
+ BHG      O5     C1     .      END
+ BHG      C5     O5     C6     .
+ BHG      H5     C5     .      .
+ BHG      C4     C5     C3     .
+ BHG      H4     C4     .      .
+ BHG      O4     C4     HO4    .
+ BHG      HO4    O4     .      .
+ BHG      C3     C4     C2     .
+ BHG      H3     C3     .      .
+ BHG      O3     C3     HO3    .
+ BHG      HO3    O3     .      .
+ BHG      C2     C3     O2     .
+ BHG      H2     C2     .      .
+ BHG      O2     C2     HO2    .
+ BHG      HO2    O2     .      .
+ BHG      C6     C5     O6     .
+ BHG      H61    C6     .      .
+ BHG      H62    C6     .      .
+ BHG      O6     C6     .      .
+ BHG      HO6    O6     .      .
+ BHG      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BHG       O1        C1        single    1.426     0.020     1.426     0.020     
+BHG       C1        C2        single    1.524     0.020     1.524     0.020     
+BHG       O5        C1        single    1.426     0.020     1.426     0.020     
+BHG       H1        C1        single    1.089     0.010     0.989     0.005     
+BHG       "C1'"     O1        single    1.426     0.020     1.426     0.020     
+BHG       O2        C2        single    1.432     0.020     1.432     0.020     
+BHG       C2        C3        single    1.524     0.020     1.524     0.020     
+BHG       H2        C2        single    1.089     0.010     0.989     0.005     
+BHG       HO2       O2        single    0.970     0.012     0.839     0.014     
+BHG       O3        C3        single    1.432     0.020     1.432     0.020     
+BHG       C3        C4        single    1.524     0.020     1.524     0.020     
+BHG       H3        C3        single    1.089     0.010     0.989     0.005     
+BHG       HO3       O3        single    0.970     0.012     0.839     0.014     
+BHG       O4        C4        single    1.432     0.020     1.432     0.020     
+BHG       C4        C5        single    1.524     0.020     1.524     0.020     
+BHG       H4        C4        single    1.089     0.010     0.989     0.005     
+BHG       HO4       O4        single    0.970     0.012     0.839     0.014     
+BHG       C5        O5        single    1.426     0.020     1.426     0.020     
+BHG       C6        C5        single    1.524     0.020     1.524     0.020     
+BHG       H5        C5        single    1.089     0.010     0.989     0.005     
+BHG       O6        C6        single    1.432     0.020     1.432     0.020     
+BHG       H61       C6        single    1.089     0.010     0.989     0.005     
+BHG       H62       C6        single    1.089     0.010     0.989     0.005     
+BHG       HO6       O6        single    0.970     0.012     0.839     0.014     
+BHG       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+BHG       "H1'1"    "C1'"     single    1.089     0.010     0.989     0.005     
+BHG       "H1'2"    "C1'"     single    1.089     0.010     0.989     0.005     
+BHG       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+BHG       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+BHG       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+BHG       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+BHG       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+BHG       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+BHG       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+BHG       "H4'1"    "C4'"     single    1.089     0.010     0.989     0.005     
+BHG       "H4'2"    "C4'"     single    1.089     0.010     0.989     0.005     
+BHG       "C6'"     "C5'"     single    1.513     0.020     1.513     0.020     
+BHG       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+BHG       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+BHG       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+BHG       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+BHG       "H6'3"    "C6'"     single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BHG      H1     C1     O1      109.470    3.000
+ BHG      H1     C1     O5      109.470    3.000
+ BHG      O1     C1     O5      109.470    3.000
+ BHG      H1     C1     C2      108.340    3.000
+ BHG      O1     C1     C2      109.470    3.000
+ BHG      O5     C1     C2      109.470    3.000
+ BHG      C1     O1     "C1'"   111.800    3.000
+ BHG      O1     "C1'"  "H1'1"  109.470    3.000
+ BHG      O1     "C1'"  "H1'2"  109.470    3.000
+ BHG      O1     "C1'"  "C2'"   109.470    3.000
+ BHG      "H1'1" "C1'"  "H1'2"  107.900    3.000
+ BHG      "H1'1" "C1'"  "C2'"   109.470    3.000
+ BHG      "H1'2" "C1'"  "C2'"   109.470    3.000
+ BHG      "C1'"  "C2'"  "H2'1"  109.470    3.000
+ BHG      "C1'"  "C2'"  "H2'2"  109.470    3.000
+ BHG      "C1'"  "C2'"  "C3'"   111.000    3.000
+ BHG      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ BHG      "H2'1" "C2'"  "C3'"   109.470    3.000
+ BHG      "H2'2" "C2'"  "C3'"   109.470    3.000
+ BHG      "C2'"  "C3'"  "H3'1"  109.470    3.000
+ BHG      "C2'"  "C3'"  "H3'2"  109.470    3.000
+ BHG      "C2'"  "C3'"  "C4'"   111.000    3.000
+ BHG      "H3'1" "C3'"  "H3'2"  107.900    3.000
+ BHG      "H3'1" "C3'"  "C4'"   109.470    3.000
+ BHG      "H3'2" "C3'"  "C4'"   109.470    3.000
+ BHG      "C3'"  "C4'"  "H4'1"  109.470    3.000
+ BHG      "C3'"  "C4'"  "H4'2"  109.470    3.000
+ BHG      "C3'"  "C4'"  "C5'"   111.000    3.000
+ BHG      "H4'1" "C4'"  "H4'2"  107.900    3.000
+ BHG      "H4'1" "C4'"  "C5'"   109.470    3.000
+ BHG      "H4'2" "C4'"  "C5'"   109.470    3.000
+ BHG      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ BHG      "C4'"  "C5'"  "H5'2"  109.470    3.000
+ BHG      "C4'"  "C5'"  "C6'"   111.000    3.000
+ BHG      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ BHG      "H5'1" "C5'"  "C6'"   109.470    3.000
+ BHG      "H5'2" "C5'"  "C6'"   109.470    3.000
+ BHG      "C5'"  "C6'"  "H6'3"  109.470    3.000
+ BHG      "C5'"  "C6'"  "H6'2"  109.470    3.000
+ BHG      "C5'"  "C6'"  "H6'1"  109.470    3.000
+ BHG      "H6'3" "C6'"  "H6'2"  109.470    3.000
+ BHG      "H6'3" "C6'"  "H6'1"  109.470    3.000
+ BHG      "H6'2" "C6'"  "H6'1"  109.470    3.000
+ BHG      C1     O5     C5      111.800    3.000
+ BHG      O5     C5     H5      109.470    3.000
+ BHG      O5     C5     C4      109.470    3.000
+ BHG      O5     C5     C6      109.470    3.000
+ BHG      H5     C5     C4      108.340    3.000
+ BHG      H5     C5     C6      108.340    3.000
+ BHG      C4     C5     C6      111.000    3.000
+ BHG      C5     C4     H4      108.340    3.000
+ BHG      C5     C4     O4      109.470    3.000
+ BHG      C5     C4     C3      111.000    3.000
+ BHG      H4     C4     O4      109.470    3.000
+ BHG      H4     C4     C3      108.340    3.000
+ BHG      O4     C4     C3      109.470    3.000
+ BHG      C4     O4     HO4     109.470    3.000
+ BHG      C4     C3     H3      108.340    3.000
+ BHG      C4     C3     O3      109.470    3.000
+ BHG      C4     C3     C2      111.000    3.000
+ BHG      H3     C3     O3      109.470    3.000
+ BHG      H3     C3     C2      108.340    3.000
+ BHG      O3     C3     C2      109.470    3.000
+ BHG      C3     O3     HO3     109.470    3.000
+ BHG      C3     C2     H2      108.340    3.000
+ BHG      C3     C2     O2      109.470    3.000
+ BHG      C3     C2     C1      111.000    3.000
+ BHG      H2     C2     O2      109.470    3.000
+ BHG      H2     C2     C1      108.340    3.000
+ BHG      O2     C2     C1      109.470    3.000
+ BHG      C2     O2     HO2     109.470    3.000
+ BHG      C5     C6     H61     109.470    3.000
+ BHG      C5     C6     H62     109.470    3.000
+ BHG      C5     C6     O6      109.470    3.000
+ BHG      H61    C6     H62     107.900    3.000
+ BHG      H61    C6     O6      109.470    3.000
+ BHG      H62    C6     O6      109.470    3.000
+ BHG      C6     O6     HO6     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BHG      var_1    O5     C1     O1     "C1'"    -64.861   20.000   1
+ BHG      var_2    C1     O1     "C1'"  "C2'"    180.000   20.000   1
+ BHG      var_3    O1     "C1'"  "C2'"  "C3'"    179.970   20.000   3
+ BHG      var_4    "C1'"  "C2'"  "C3'"  "C4'"    180.000   20.000   3
+ BHG      var_5    "C2'"  "C3'"  "C4'"  "C5'"    180.000   20.000   3
+ BHG      var_6    "C3'"  "C4'"  "C5'"  "C6'"    179.968   20.000   3
+ BHG      var_7    "C4'"  "C5'"  "C6'"  "H6'1"    60.036   20.000   3
+ BHG      var_8    C1     O5     C5     C6       180.000   20.000   1
+ BHG      var_9    O5     C5     C4     C3       -60.000   20.000   3
+ BHG      var_10   C5     C4     O4     HO4      179.952   20.000   1
+ BHG      var_11   C5     C4     C3     C2        60.000   20.000   3
+ BHG      var_12   C4     C3     O3     HO3     -179.946   20.000   1
+ BHG      var_13   C4     C3     C2     O2       180.000   20.000   3
+ BHG      var_14   C3     C2     C1     O5        60.000   20.000   3
+ BHG      var_15   C3     C2     O2     HO2      179.985   20.000   1
+ BHG      var_16   O5     C5     C6     O6        65.049   20.000   3
+ BHG      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BHG      chir_01  C1     O1     C2     O5        negativ
+ BHG      chir_02  C2     C1     O2     C3        positiv
+ BHG      chir_03  C3     C2     O3     C4        negativ
+ BHG      chir_04  C4     C3     O4     C5        negativ
+ BHG      chir_05  C5     C4     O5     C6        positiv
+# ------------------------------------------------------

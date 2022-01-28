@@ -1,0 +1,256 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GU5      GU5 '2,3-DI-O-METHYL-6-O-SULFONATO-ALPHA-' pyranose           33  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GU5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GU5           C1     C    CH1       0.000      0.000    0.000    0.000
+ GU5           H1     H    H         0.000     -0.230    0.016   -1.075
+ GU5           O1     O    OH1       0.000      1.413   -0.101    0.175
+ GU5           HO1    H    H         0.000      1.618   -0.906    0.669
+ GU5           O5     O    O2        0.000     -0.656   -1.114    0.602
+ GU5           C5     C    CH1       0.000     -2.083   -1.120    0.465
+ GU5           H5     H    H         0.000     -2.455   -1.942    1.092
+ GU5           C6     C    CH2       0.000     -2.498   -1.442   -0.969
+ GU5           H61    H    H         0.000     -2.016   -2.365   -1.297
+ GU5           H62    H    H         0.000     -2.209   -0.625   -1.632
+ GU5           O6     O    O2        0.000     -3.904   -1.605   -1.004
+ GU5           S6     S    ST        0.000     -4.651   -1.961   -2.424
+ GU5           O32    O    OS        0.000     -4.051   -3.235   -2.819
+ GU5           O33    O    OS        0.000     -4.312   -0.843   -3.303
+ GU5           O31    O    OS       -1.000     -6.069   -2.052   -2.078
+ GU5           C4     C    CH1       0.000     -2.711    0.172    1.016
+ GU5           H4     H    H         0.000     -3.766    0.218    0.709
+ GU5           O4     O    OH1       0.000     -2.641    0.132    2.445
+ GU5           HO4    H    H         0.000     -3.418   -0.327    2.793
+ GU5           C3     C    CH1       0.000     -1.996    1.447    0.553
+ GU5           H3     H    H         0.000     -2.311    2.283    1.193
+ GU5           O3     O    O2        0.000     -2.350    1.743   -0.795
+ GU5           C8     C    CH3       0.000     -3.747    1.943   -0.926
+ GU5           H83    H    H         0.000     -3.944    2.456   -1.831
+ GU5           H82    H    H         0.000     -4.236    1.005   -0.936
+ GU5           H81    H    H         0.000     -4.097    2.518   -0.109
+ GU5           C2     C    CH1       0.000     -0.473    1.309    0.635
+ GU5           H2     H    H         0.000     -0.012    2.150    0.099
+ GU5           O2     O    O2        0.000     -0.065    1.354    2.002
+ GU5           C7     C    CH3       0.000     -0.439    2.579    2.617
+ GU5           H73    H    H         0.000      0.377    2.953    3.179
+ GU5           H72    H    H         0.000     -0.706    3.280    1.871
+ GU5           H71    H    H         0.000     -1.264    2.412    3.259
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GU5      C1     n/a    O5     START
+ GU5      H1     C1     .      .
+ GU5      O1     C1     HO1    .
+ GU5      HO1    O1     .      .
+ GU5      O5     C1     .      END
+ GU5      C5     O5     C4     .
+ GU5      H5     C5     .      .
+ GU5      C6     C5     O6     .
+ GU5      H61    C6     .      .
+ GU5      H62    C6     .      .
+ GU5      O6     C6     S6     .
+ GU5      S6     O6     O31    .
+ GU5      O32    S6     .      .
+ GU5      O33    S6     .      .
+ GU5      O31    S6     .      .
+ GU5      C4     C5     C3     .
+ GU5      H4     C4     .      .
+ GU5      O4     C4     HO4    .
+ GU5      HO4    O4     .      .
+ GU5      C3     C4     C2     .
+ GU5      H3     C3     .      .
+ GU5      O3     C3     C8     .
+ GU5      C8     O3     H81    .
+ GU5      H83    C8     .      .
+ GU5      H82    C8     .      .
+ GU5      H81    C8     .      .
+ GU5      C2     C3     O2     .
+ GU5      H2     C2     .      .
+ GU5      O2     C2     C7     .
+ GU5      C7     O2     H71    .
+ GU5      H73    C7     .      .
+ GU5      H72    C7     .      .
+ GU5      H71    C7     .      .
+ GU5      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GU5       O1        C1        single    1.432     0.020     1.432     0.020     
+GU5       HO1       O1        single    0.970     0.012     0.839     0.014     
+GU5       C1        C2        single    1.524     0.020     1.524     0.020     
+GU5       O5        C1        single    1.426     0.020     1.426     0.020     
+GU5       H1        C1        single    1.089     0.010     0.989     0.005     
+GU5       O2        C2        single    1.426     0.020     1.426     0.020     
+GU5       C2        C3        single    1.524     0.020     1.524     0.020     
+GU5       H2        C2        single    1.089     0.010     0.989     0.005     
+GU5       C7        O2        single    1.426     0.020     1.426     0.020     
+GU5       H71       C7        single    1.089     0.010     0.989     0.005     
+GU5       H72       C7        single    1.089     0.010     0.989     0.005     
+GU5       H73       C7        single    1.089     0.010     0.989     0.005     
+GU5       O3        C3        single    1.426     0.020     1.426     0.020     
+GU5       C3        C4        single    1.524     0.020     1.524     0.020     
+GU5       H3        C3        single    1.089     0.010     0.989     0.005     
+GU5       C8        O3        single    1.426     0.020     1.426     0.020     
+GU5       H81       C8        single    1.089     0.010     0.989     0.005     
+GU5       H82       C8        single    1.089     0.010     0.989     0.005     
+GU5       H83       C8        single    1.089     0.010     0.989     0.005     
+GU5       C5        O5        single    1.426     0.020     1.426     0.020     
+GU5       C6        C5        single    1.524     0.020     1.524     0.020     
+GU5       C4        C5        single    1.524     0.020     1.524     0.020     
+GU5       H5        C5        single    1.089     0.010     0.989     0.005     
+GU5       O6        C6        single    1.426     0.020     1.426     0.020     
+GU5       H61       C6        single    1.089     0.010     0.989     0.005     
+GU5       H62       C6        single    1.089     0.010     0.989     0.005     
+GU5       S6        O6        single    1.535     0.020     1.535     0.020     
+GU5       O32       S6        deloc     1.480     0.020     1.480     0.020     
+GU5       O33       S6        deloc     1.480     0.020     1.480     0.020     
+GU5       O31       S6        deloc     1.480     0.020     1.480     0.020     
+GU5       O4        C4        single    1.432     0.020     1.432     0.020     
+GU5       H4        C4        single    1.089     0.010     0.989     0.005     
+GU5       HO4       O4        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GU5      H1     C1     O1      109.470    3.000
+ GU5      H1     C1     O5      109.470    3.000
+ GU5      O1     C1     O5      109.470    3.000
+ GU5      H1     C1     C2      108.340    3.000
+ GU5      O1     C1     C2      109.470    3.000
+ GU5      O5     C1     C2      109.470    3.000
+ GU5      C1     O1     HO1     109.470    3.000
+ GU5      C1     O5     C5      111.800    3.000
+ GU5      O5     C5     H5      109.470    3.000
+ GU5      O5     C5     C6      109.470    3.000
+ GU5      O5     C5     C4      109.470    3.000
+ GU5      H5     C5     C6      108.340    3.000
+ GU5      H5     C5     C4      108.340    3.000
+ GU5      C6     C5     C4      111.000    3.000
+ GU5      C5     C6     H61     109.470    3.000
+ GU5      C5     C6     H62     109.470    3.000
+ GU5      C5     C6     O6      109.470    3.000
+ GU5      H61    C6     H62     107.900    3.000
+ GU5      H61    C6     O6      109.470    3.000
+ GU5      H62    C6     O6      109.470    3.000
+ GU5      C6     O6     S6      120.000    3.000
+ GU5      O6     S6     O32     109.500    3.000
+ GU5      O6     S6     O33     109.500    3.000
+ GU5      O6     S6     O31     109.500    3.000
+ GU5      O32    S6     O33     109.500    3.000
+ GU5      O32    S6     O31     109.500    3.000
+ GU5      O33    S6     O31     109.500    3.000
+ GU5      C5     C4     H4      108.340    3.000
+ GU5      C5     C4     O4      109.470    3.000
+ GU5      C5     C4     C3      111.000    3.000
+ GU5      H4     C4     O4      109.470    3.000
+ GU5      H4     C4     C3      108.340    3.000
+ GU5      O4     C4     C3      109.470    3.000
+ GU5      C4     O4     HO4     109.470    3.000
+ GU5      C4     C3     H3      108.340    3.000
+ GU5      C4     C3     O3      109.470    3.000
+ GU5      C4     C3     C2      111.000    3.000
+ GU5      H3     C3     O3      109.470    3.000
+ GU5      H3     C3     C2      108.340    3.000
+ GU5      O3     C3     C2      109.470    3.000
+ GU5      C3     O3     C8      111.800    3.000
+ GU5      O3     C8     H83     109.470    3.000
+ GU5      O3     C8     H82     109.470    3.000
+ GU5      O3     C8     H81     109.470    3.000
+ GU5      H83    C8     H82     109.470    3.000
+ GU5      H83    C8     H81     109.470    3.000
+ GU5      H82    C8     H81     109.470    3.000
+ GU5      C3     C2     H2      108.340    3.000
+ GU5      C3     C2     O2      109.470    3.000
+ GU5      C3     C2     C1      111.000    3.000
+ GU5      H2     C2     O2      109.470    3.000
+ GU5      H2     C2     C1      108.340    3.000
+ GU5      O2     C2     C1      109.470    3.000
+ GU5      C2     O2     C7      111.800    3.000
+ GU5      O2     C7     H73     109.470    3.000
+ GU5      O2     C7     H72     109.470    3.000
+ GU5      O2     C7     H71     109.470    3.000
+ GU5      H73    C7     H72     109.470    3.000
+ GU5      H73    C7     H71     109.470    3.000
+ GU5      H72    C7     H71     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GU5      var_1    O5     C1     O1     HO1       -0.271   20.000   1
+ GU5      var_2    C1     O5     C5     C4       -60.000   20.000   1
+ GU5      var_3    O5     C5     C6     O6       172.490   20.000   3
+ GU5      var_4    C5     C6     O6     S6      -179.994   20.000   1
+ GU5      var_5    C6     O6     S6     O31     -179.980   20.000   1
+ GU5      var_6    O5     C5     C4     C3        60.000   20.000   3
+ GU5      var_7    C5     C4     O4     HO4      -87.105   20.000   1
+ GU5      var_8    C5     C4     C3     C2       -30.000   20.000   3
+ GU5      var_9    C4     C3     O3     C8        59.984   20.000   1
+ GU5      var_10   C3     O3     C8     H81       41.841   20.000   1
+ GU5      var_11   C4     C3     C2     O2       -60.000   20.000   3
+ GU5      var_12   C3     C2     C1     O5       -60.000   20.000   3
+ GU5      var_13   C3     C2     O2     C7       -60.033   20.000   1
+ GU5      var_14   C2     O2     C7     H71      105.229   20.000   1
+ GU5      var_1    C5     O5     C1     C2        60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GU5      chir_01  C1     O1     C2     O5        positiv
+ GU5      chir_02  C2     C1     O2     C3        positiv
+ GU5      chir_03  C3     C2     O3     C4        negativ
+ GU5      chir_04  C5     O5     C6     C4        positiv
+ GU5      chir_05  S6     O6     O32    O33       positiv
+ GU5      chir_06  C4     C3     C5     O4        negativ
+# ------------------------------------------------------

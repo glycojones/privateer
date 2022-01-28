@@ -1,0 +1,208 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LWY      LWY '1-[(R)-hydroxy(methyl)phosphoryl]-L-' non-polymer        23  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LWY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LWY           O      O    OC       -0.500      0.000    0.000    0.000
+ LWY           C      C    C         0.000     -0.997   -0.227   -0.721
+ LWY           OXT    O    OC       -0.500     -0.839   -0.599   -1.905
+ LWY           CA     C    CH1       0.000     -2.386   -0.060   -0.162
+ LWY           HA     H    H         0.000     -2.956   -0.995   -0.252
+ LWY           CB     C    CH2       0.000     -3.124    1.103   -0.871
+ LWY           HB     H    H         0.000     -3.626    0.785   -1.787
+ LWY           HBA    H    H         0.000     -2.466    1.946   -1.092
+ LWY           CG     C    CH2       0.000     -4.179    1.531    0.174
+ LWY           HG     H    H         0.000     -5.149    1.069   -0.022
+ LWY           HGA    H    H         0.000     -4.295    2.617    0.207
+ LWY           CD     C    CH2       0.000     -3.633    1.030    1.525
+ LWY           HD     H    H         0.000     -4.315    0.303    1.969
+ LWY           HDA    H    H         0.000     -3.492    1.864    2.215
+ LWY           N      N    NT        0.000     -2.330    0.386    1.254
+ LWY           P      P    P         0.000     -2.076   -0.918    2.287
+ LWY           O1     O    O         0.000     -0.764   -1.535    1.990
+ LWY           O2     O    OH1       0.000     -3.243   -2.008    2.074
+ LWY           HO2    H    H         0.000     -3.244   -2.822    2.594
+ LWY           C1     C    CH3       0.000     -2.097   -0.337    4.016
+ LWY           H1B    H    H         0.000     -1.937   -1.157    4.668
+ LWY           H1A    H    H         0.000     -1.330    0.380    4.159
+ LWY           H1     H    H         0.000     -3.035    0.105    4.231
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LWY      O      n/a    C      START
+ LWY      C      O      CA     .
+ LWY      OXT    C      .      .
+ LWY      CA     C      CB     .
+ LWY      HA     CA     .      .
+ LWY      CB     CA     CG     .
+ LWY      HB     CB     .      .
+ LWY      HBA    CB     .      .
+ LWY      CG     CB     CD     .
+ LWY      HG     CG     .      .
+ LWY      HGA    CG     .      .
+ LWY      CD     CG     N      .
+ LWY      HD     CD     .      .
+ LWY      HDA    CD     .      .
+ LWY      N      CD     P      .
+ LWY      P      N      C1     .
+ LWY      O1     P      .      .
+ LWY      O2     P      HO2    .
+ LWY      HO2    O2     .      .
+ LWY      C1     P      H1     .
+ LWY      H1B    C1     .      .
+ LWY      H1A    C1     .      .
+ LWY      H1     C1     .      END
+ LWY      N      CA     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LWY       C         O         deloc     1.250     0.020     1.250     0.020     
+LWY       CA        C         single    1.500     0.020     1.500     0.020     
+LWY       OXT       C         deloc     1.250     0.020     1.250     0.020     
+LWY       P         N         single    1.760     0.020     1.760     0.020     
+LWY       N         CA        single    1.469     0.020     1.469     0.020     
+LWY       N         CD        single    1.469     0.020     1.469     0.020     
+LWY       O1        P         double    1.480     0.020     1.480     0.020     
+LWY       O2        P         single    1.610     0.020     1.610     0.020     
+LWY       C1        P         single    1.812     0.020     1.812     0.020     
+LWY       H1        C1        single    1.089     0.010     0.989     0.005     
+LWY       H1A       C1        single    1.089     0.010     0.989     0.005     
+LWY       H1B       C1        single    1.089     0.010     0.989     0.005     
+LWY       HO2       O2        single    0.970     0.012     0.839     0.014     
+LWY       CB        CA        single    1.524     0.020     1.524     0.020     
+LWY       HA        CA        single    1.089     0.010     0.989     0.005     
+LWY       CG        CB        single    1.524     0.020     1.524     0.020     
+LWY       HB        CB        single    1.089     0.010     0.989     0.005     
+LWY       HBA       CB        single    1.089     0.010     0.989     0.005     
+LWY       CD        CG        single    1.524     0.020     1.524     0.020     
+LWY       HD        CD        single    1.089     0.010     0.989     0.005     
+LWY       HDA       CD        single    1.089     0.010     0.989     0.005     
+LWY       HG        CG        single    1.089     0.010     0.989     0.005     
+LWY       HGA       CG        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LWY      O      C      OXT     123.000    3.000
+ LWY      O      C      CA      118.500    3.000
+ LWY      OXT    C      CA      118.500    3.000
+ LWY      C      CA     HA      108.810    3.000
+ LWY      C      CA     CB      109.470    3.000
+ LWY      C      CA     N       109.500    3.000
+ LWY      HA     CA     CB      108.340    3.000
+ LWY      HA     CA     N       109.500    3.000
+ LWY      CB     CA     N       109.500    3.000
+ LWY      CA     CB     HB      109.470    3.000
+ LWY      CA     CB     HBA     109.470    3.000
+ LWY      CA     CB     CG      111.000    3.000
+ LWY      HB     CB     HBA     107.900    3.000
+ LWY      HB     CB     CG      109.470    3.000
+ LWY      HBA    CB     CG      109.470    3.000
+ LWY      CB     CG     HG      109.470    3.000
+ LWY      CB     CG     HGA     109.470    3.000
+ LWY      CB     CG     CD      111.000    3.000
+ LWY      HG     CG     HGA     107.900    3.000
+ LWY      HG     CG     CD      109.470    3.000
+ LWY      HGA    CG     CD      109.470    3.000
+ LWY      CG     CD     HD      109.470    3.000
+ LWY      CG     CD     HDA     109.470    3.000
+ LWY      CG     CD     N       109.470    3.000
+ LWY      HD     CD     HDA     107.900    3.000
+ LWY      HD     CD     N       109.470    3.000
+ LWY      HDA    CD     N       109.470    3.000
+ LWY      CD     N      P       109.500    3.000
+ LWY      CD     N      CA      109.470    3.000
+ LWY      P      N      CA      109.500    3.000
+ LWY      N      P      O1      109.500    3.000
+ LWY      N      P      O2      109.500    3.000
+ LWY      N      P      C1      109.500    3.000
+ LWY      O1     P      O2      109.500    3.000
+ LWY      O1     P      C1      109.500    3.000
+ LWY      O2     P      C1      109.500    3.000
+ LWY      P      O2     HO2     120.000    3.000
+ LWY      P      C1     H1B     109.500    3.000
+ LWY      P      C1     H1A     109.500    3.000
+ LWY      P      C1     H1      109.500    3.000
+ LWY      H1B    C1     H1A     109.470    3.000
+ LWY      H1B    C1     H1      109.470    3.000
+ LWY      H1A    C1     H1      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LWY      var_1    O      C      CA     CB       114.120   20.000   3
+ LWY      var_2    C      CA     CB     CG      -150.000   20.000   3
+ LWY      var_3    CA     CB     CG     CD        30.000   20.000   3
+ LWY      var_4    CB     CG     CD     N          0.000   20.000   3
+ LWY      var_5    CG     CD     N      P       -150.000   20.000   1
+ LWY      var_6    CD     N      CA     C        150.000   20.000   1
+ LWY      var_7    CD     N      P      C1       -59.896   20.000   1
+ LWY      var_8    N      P      O2     HO2     -179.997   20.000   1
+ LWY      var_9    N      P      C1     H1        60.016   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LWY      chir_01  N      P      CA     CD        negativ
+ LWY      chir_02  CA     C      N      CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LWY      plan-1    C         0.020
+ LWY      plan-1    OXT       0.020
+ LWY      plan-1    CA        0.020
+ LWY      plan-1    O         0.020
+# ------------------------------------------------------

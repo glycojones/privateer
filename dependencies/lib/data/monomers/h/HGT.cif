@@ -1,0 +1,298 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HGT      HGT '(2-((2R,3S,4R,5S,6S)-3-AMINO-4,5-DIH' non-polymer        39  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HGT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HGT           O34    O    OH1       0.000     -6.590    2.158   22.981
+ HGT           H34    H    H         0.000     -6.477    3.084   23.190
+ HGT           SNN    SN   SN        0.000     -7.083    0.882   24.457
+ HGT           O36    O    OH1       0.000     -6.270    1.265   26.289
+ HGT           H36    H    H         0.000     -5.318    1.353   26.369
+ HGT           O35    O    OH1       0.000     -6.529   -1.054   24.159
+ HGT           H35    H    H         0.000     -6.402   -1.370   23.263
+ HGT           O3     O    O2        0.000     -9.138    0.728   24.563
+ HGT           C21    C    CH2       0.000     -9.470   -0.049   25.704
+ HGT           H211   H    H         0.000     -9.171    0.429   26.639
+ HGT           H212   H    H         0.000     -9.052   -1.057   25.662
+ HGT           C22    C    CH2       0.000    -10.981   -0.124   25.634
+ HGT           H221   H    H         0.000    -11.260   -1.057   25.140
+ HGT           H222   H    H         0.000    -11.343    0.721   25.045
+ HGT           N1     N    NH1       0.000    -11.571   -0.081   26.956
+ HGT           HN1    H    H         0.000    -11.005    0.072   27.778
+ HGT           C24    C    CH1       0.000    -13.024   -0.269   27.055
+ HGT           H24    H    H         0.000    -13.244   -0.715   28.035
+ HGT           C25    C    CH1       0.000    -13.811    1.049   26.944
+ HGT           H25    H    H         0.000    -13.590    1.667   27.825
+ HGT           N2     N    NH2       0.000    -13.438    1.749   25.803
+ HGT           HN22   H    H         0.000    -14.038    2.472   25.461
+ HGT           HN21   H    H         0.000    -12.578    1.514   25.350
+ HGT           C23    C    CH1       0.000    -15.332    0.820   26.869
+ HGT           H23    H    H         0.000    -15.684    0.554   27.875
+ HGT           O4     O    OH1       0.000    -15.994    2.040   26.475
+ HGT           HO4    H    H         0.000    -16.143    2.595   27.254
+ HGT           O1     O    O2        0.000    -13.465   -1.185   26.040
+ HGT           C2     C    CH1       0.000    -14.861   -1.548   26.083
+ HGT           H2     H    H         0.000    -15.058   -2.214   25.231
+ HGT           C26    C    CH2       0.000    -15.239   -2.306   27.360
+ HGT           H261   H    H         0.000    -16.326   -2.358   27.453
+ HGT           H262   H    H         0.000    -14.824   -1.796   28.232
+ HGT           O5     O    OH1       0.000    -14.704   -3.625   27.280
+ HGT           HO5    H    H         0.000    -14.584   -3.867   26.352
+ HGT           C10    C    CH1       0.000    -15.726   -0.319   25.912
+ HGT           H10    H    H         0.000    -15.621    0.041   24.879
+ HGT           O2     O    OH1       0.000    -17.092   -0.732   26.117
+ HGT           HO2    H    H         0.000    -17.264   -0.825   27.065
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HGT      O34    n/a    SNN    START
+ HGT      H34    O34    .      .
+ HGT      SNN    O34    O3     .
+ HGT      O36    SNN    H36    .
+ HGT      H36    O36    .      .
+ HGT      O35    SNN    H35    .
+ HGT      H35    O35    .      .
+ HGT      O3     SNN    C21    .
+ HGT      C21    O3     C22    .
+ HGT      H211   C21    .      .
+ HGT      H212   C21    .      .
+ HGT      C22    C21    N1     .
+ HGT      H221   C22    .      .
+ HGT      H222   C22    .      .
+ HGT      N1     C22    C24    .
+ HGT      HN1    N1     .      .
+ HGT      C24    N1     O1     .
+ HGT      H24    C24    .      .
+ HGT      C25    C24    C23    .
+ HGT      H25    C25    .      .
+ HGT      N2     C25    HN21   .
+ HGT      HN22   N2     .      .
+ HGT      HN21   N2     .      .
+ HGT      C23    C25    O4     .
+ HGT      H23    C23    .      .
+ HGT      O4     C23    HO4    .
+ HGT      HO4    O4     .      .
+ HGT      O1     C24    C2     .
+ HGT      C2     O1     C10    .
+ HGT      H2     C2     .      .
+ HGT      C26    C2     O5     .
+ HGT      H261   C26    .      .
+ HGT      H262   C26    .      .
+ HGT      O5     C26    HO5    .
+ HGT      HO5    O5     .      .
+ HGT      C10    C2     O2     .
+ HGT      H10    C10    .      .
+ HGT      O2     C10    HO2    .
+ HGT      HO2    O2     .      END
+ HGT      C10    C23    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HGT       O2        C10       single    1.432     0.020     1.432     0.020     
+HGT       HO2       O2        single    0.970     0.012     0.839     0.014     
+HGT       C10       C23       single    1.524     0.020     1.524     0.020     
+HGT       C10       C2        single    1.524     0.020     1.524     0.020     
+HGT       H10       C10       single    1.089     0.010     0.989     0.005     
+HGT       O4        C23       single    1.432     0.020     1.432     0.020     
+HGT       C23       C25       single    1.524     0.020     1.524     0.020     
+HGT       H23       C23       single    1.089     0.010     0.989     0.005     
+HGT       HO4       O4        single    0.970     0.012     0.839     0.014     
+HGT       N2        C25       single    1.450     0.020     1.450     0.020     
+HGT       C25       C24       single    1.524     0.020     1.524     0.020     
+HGT       H25       C25       single    1.089     0.010     0.989     0.005     
+HGT       HN21      N2        single    1.036     0.016     0.914     0.007     
+HGT       HN22      N2        single    1.036     0.016     0.914     0.007     
+HGT       C26       C2        single    1.524     0.020     1.524     0.020     
+HGT       C2        O1        single    1.426     0.020     1.426     0.020     
+HGT       H2        C2        single    1.089     0.010     0.989     0.005     
+HGT       O5        C26       single    1.432     0.020     1.432     0.020     
+HGT       H261      C26       single    1.089     0.010     0.989     0.005     
+HGT       H262      C26       single    1.089     0.010     0.989     0.005     
+HGT       HO5       O5        single    0.970     0.012     0.839     0.014     
+HGT       O1        C24       single    1.426     0.020     1.426     0.020     
+HGT       C24       N1        single    1.450     0.020     1.450     0.020     
+HGT       H24       C24       single    1.089     0.010     0.989     0.005     
+HGT       N1        C22       single    1.450     0.020     1.450     0.020     
+HGT       HN1       N1        single    1.036     0.016     0.914     0.007     
+HGT       C22       C21       single    1.524     0.020     1.524     0.020     
+HGT       H221      C22       single    1.089     0.010     0.989     0.005     
+HGT       H222      C22       single    1.089     0.010     0.989     0.005     
+HGT       C21       O3        single    1.426     0.020     1.426     0.020     
+HGT       H211      C21       single    1.089     0.010     0.989     0.005     
+HGT       H212      C21       single    1.089     0.010     0.989     0.005     
+HGT       O3        SNN       single    2.010     0.020     2.010     0.020     
+HGT       O36       SNN       single    2.109     0.020     2.109     0.020     
+HGT       O35       SNN       single    2.109     0.020     2.109     0.020     
+HGT       SNN       O34       single    2.109     0.020     2.109     0.020     
+HGT       H36       O36       single    0.970     0.012     0.839     0.014     
+HGT       H35       O35       single    0.970     0.012     0.839     0.014     
+HGT       H34       O34       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HGT      H34    O34    SNN     120.000    3.000
+ HGT      O34    SNN    O36     116.223    3.000
+ HGT      O34    SNN    O35     115.403    3.000
+ HGT      O34    SNN    O3      109.206    3.000
+ HGT      O36    SNN    O35     101.625    3.000
+ HGT      O36    SNN    O3      111.387    3.000
+ HGT      O35    SNN    O3      101.980    3.000
+ HGT      SNN    O36    H36     120.000    3.000
+ HGT      SNN    O35    H35     120.000    3.000
+ HGT      SNN    O3     C21     120.000    3.000
+ HGT      O3     C21    H211    109.470    3.000
+ HGT      O3     C21    H212    109.470    3.000
+ HGT      O3     C21    C22     109.470    3.000
+ HGT      H211   C21    H212    107.900    3.000
+ HGT      H211   C21    C22     109.470    3.000
+ HGT      H212   C21    C22     109.470    3.000
+ HGT      C21    C22    H221    109.470    3.000
+ HGT      C21    C22    H222    109.470    3.000
+ HGT      C21    C22    N1      112.000    3.000
+ HGT      H221   C22    H222    107.900    3.000
+ HGT      H221   C22    N1      109.470    3.000
+ HGT      H222   C22    N1      109.470    3.000
+ HGT      C22    N1     HN1     118.500    3.000
+ HGT      C22    N1     C24     120.000    3.000
+ HGT      HN1    N1     C24     118.500    3.000
+ HGT      N1     C24    H24     108.550    3.000
+ HGT      N1     C24    C25     110.000    3.000
+ HGT      N1     C24    O1      109.500    3.000
+ HGT      H24    C24    C25     108.340    3.000
+ HGT      H24    C24    O1      109.470    3.000
+ HGT      C25    C24    O1      109.470    3.000
+ HGT      C24    C25    H25     108.340    3.000
+ HGT      C24    C25    N2      109.470    3.000
+ HGT      C24    C25    C23     111.000    3.000
+ HGT      H25    C25    N2      109.470    3.000
+ HGT      H25    C25    C23     108.340    3.000
+ HGT      N2     C25    C23     109.470    3.000
+ HGT      C25    N2     HN22    120.000    3.000
+ HGT      C25    N2     HN21    120.000    3.000
+ HGT      HN22   N2     HN21    120.000    3.000
+ HGT      C25    C23    H23     108.340    3.000
+ HGT      C25    C23    O4      109.470    3.000
+ HGT      C25    C23    C10     111.000    3.000
+ HGT      H23    C23    O4      109.470    3.000
+ HGT      H23    C23    C10     108.340    3.000
+ HGT      O4     C23    C10     109.470    3.000
+ HGT      C23    O4     HO4     109.470    3.000
+ HGT      C24    O1     C2      111.800    3.000
+ HGT      O1     C2     H2      109.470    3.000
+ HGT      O1     C2     C26     109.470    3.000
+ HGT      O1     C2     C10     109.470    3.000
+ HGT      H2     C2     C26     108.340    3.000
+ HGT      H2     C2     C10     108.340    3.000
+ HGT      C26    C2     C10     111.000    3.000
+ HGT      C2     C26    H261    109.470    3.000
+ HGT      C2     C26    H262    109.470    3.000
+ HGT      C2     C26    O5      109.470    3.000
+ HGT      H261   C26    H262    107.900    3.000
+ HGT      H261   C26    O5      109.470    3.000
+ HGT      H262   C26    O5      109.470    3.000
+ HGT      C26    O5     HO5     109.470    3.000
+ HGT      C2     C10    H10     108.340    3.000
+ HGT      C2     C10    O2      109.470    3.000
+ HGT      C2     C10    C23     111.000    3.000
+ HGT      H10    C10    O2      109.470    3.000
+ HGT      H10    C10    C23     108.340    3.000
+ HGT      O2     C10    C23     109.470    3.000
+ HGT      C10    O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HGT      var_1    H34    O34    SNN    O3        91.401   20.000   1
+ HGT      var_2    O34    SNN    O36    H36      -54.427   20.000   1
+ HGT      var_3    O34    SNN    O35    H35      -24.606   20.000   1
+ HGT      var_4    O34    SNN    O3     C21     -173.266   20.000   1
+ HGT      var_5    SNN    O3     C21    C22     -178.041   20.000   1
+ HGT      var_6    O3     C21    C22    N1      -143.646   20.000   3
+ HGT      var_7    C21    C22    N1     C24     -174.519   20.000   3
+ HGT      var_8    C22    N1     C24    O1        33.766   20.000   3
+ HGT      var_9    N1     C24    C25    C23      172.700   20.000   3
+ HGT      var_10   C24    C25    N2     HN21     -17.720   20.000   1
+ HGT      var_11   C24    C25    C23    O4      -167.475   20.000   3
+ HGT      var_12   C25    C23    O4     HO4      -84.367   20.000   1
+ HGT      var_13   N1     C24    O1     C2       175.286   20.000   1
+ HGT      var_14   C24    O1     C2     C10       60.688   20.000   1
+ HGT      var_15   O1     C2     C26    O5       -73.001   20.000   3
+ HGT      var_16   C2     C26    O5     HO5      -24.622   20.000   1
+ HGT      var_17   O1     C2     C10    O2      -173.600   20.000   3
+ HGT      var_18   C2     C10    C23    C25       44.941   20.000   3
+ HGT      var_19   C2     C10    O2     HO2       78.129   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HGT      chir_01  C10    O2     C23    C2        negativ
+ HGT      chir_02  C23    C10    O4     C25       positiv
+ HGT      chir_03  C25    C23    N2     C24       positiv
+ HGT      chir_04  C2     C10    C26    O1        positiv
+ HGT      chir_05  C24    C25    O1     N1        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HGT      plan-1    N2        0.020
+ HGT      plan-1    C25       0.020
+ HGT      plan-1    HN21      0.020
+ HGT      plan-1    HN22      0.020
+ HGT      plan-2    N1        0.020
+ HGT      plan-2    C24       0.020
+ HGT      plan-2    C22       0.020
+ HGT      plan-2    HN1       0.020
+# ------------------------------------------------------

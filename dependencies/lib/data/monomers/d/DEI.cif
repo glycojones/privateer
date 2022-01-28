@@ -1,0 +1,129 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DEI     DEI      "(2Z)-2-hydroxy-3-(methylsulfanyl)prop-2-enoic acid"     NON-POLYMER     13     8     .     
+#
+data_comp_DEI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DEI     CAA     C       CH3     0       -13.577     33.762      19.838      
+DEI     SAF     S       S2      0       -14.694     33.335      18.502      
+DEI     CAE     C       C1      0       -16.100     32.802      19.364      
+DEI     CAH     C       C       0       -16.275     31.414      19.893      
+DEI     CAG     C       C       0       -17.381     30.950      20.662      
+DEI     OAB     O       OC      -1      -18.208     31.787      21.029      
+DEI     OAC     O       O       0       -17.474     29.746      20.922      
+DEI     OAD     O       OH1     0       -15.291     30.550      19.609      
+DEI     HAA     H       H       0       -12.754     34.116      19.468      
+DEI     HAAA    H       H       0       -13.384     32.969      20.361      
+DEI     HAAB    H       H       0       -13.993     34.431      20.403      
+DEI     HAE     H       H       0       -16.780     33.427      19.496      
+DEI     HOAD    H       H       0       -15.580     30.025      18.952      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DEI       CAA       SAF       SINGLE    n         1.793     0.010     1.793     0.010     
+DEI       SAF       CAE       SINGLE    n         1.732     0.010     1.732     0.010     
+DEI       CAE       CAH       DOUBLE    n         1.482     0.020     1.482     0.020     
+DEI       CAH       CAG       SINGLE    n         1.403     0.020     1.403     0.020     
+DEI       CAH       OAD       SINGLE    n         1.330     0.020     1.330     0.020     
+DEI       CAG       OAB       SINGLE    n         1.230     0.020     1.230     0.020     
+DEI       CAG       OAC       DOUBLE    n         1.230     0.020     1.230     0.020     
+DEI       CAA       HAA       SINGLE    n         1.089     0.010     0.969     0.016     
+DEI       CAA       HAAA      SINGLE    n         1.089     0.010     0.969     0.016     
+DEI       CAA       HAAB      SINGLE    n         1.089     0.010     0.969     0.016     
+DEI       CAE       HAE       SINGLE    n         1.082     0.013     0.933     0.010     
+DEI       OAD       HOAD      SINGLE    n         0.970     0.012     0.889     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DEI         SAF         CAA         HAA     109.201    1.50
+DEI         SAF         CAA        HAAA     109.201    1.50
+DEI         SAF         CAA        HAAB     109.201    1.50
+DEI         HAA         CAA        HAAA     109.509    1.50
+DEI         HAA         CAA        HAAB     109.509    1.50
+DEI        HAAA         CAA        HAAB     109.509    1.50
+DEI         CAA         SAF         CAE     102.025    1.50
+DEI         SAF         CAE         CAH     122.307    3.00
+DEI         SAF         CAE         HAE     117.744    1.50
+DEI         CAH         CAE         HAE     119.949    3.00
+DEI         CAE         CAH         CAG     125.595    3.00
+DEI         CAE         CAH         OAD     117.202    3.00
+DEI         CAG         CAH         OAD     117.202    3.00
+DEI         CAH         CAG         OAB     117.738    3.00
+DEI         CAH         CAG         OAC     117.738    3.00
+DEI         OAB         CAG         OAC     124.523    1.63
+DEI         CAH         OAD        HOAD     107.379    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DEI             sp3_sp3_1         HAA         CAA         SAF         CAE     180.000   10.00     3
+DEI             sp2_sp2_1         SAF         CAE         CAH         CAG     180.000   10.00     2
+DEI             sp2_sp2_5         OAB         CAG         CAH         CAE     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DEI    plan-1         CAE   0.020
+DEI    plan-1         CAH   0.020
+DEI    plan-1         HAE   0.020
+DEI    plan-1         SAF   0.020
+DEI    plan-2         CAE   0.020
+DEI    plan-2         CAG   0.020
+DEI    plan-2         CAH   0.020
+DEI    plan-2         OAD   0.020
+DEI    plan-3         CAG   0.020
+DEI    plan-3         CAH   0.020
+DEI    plan-3         OAB   0.020
+DEI    plan-3         OAC   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DEI SMILES           ACDLabs              10.04 "O=C(O)C(\O)=C\SC"
+DEI SMILES_CANONICAL CACTVS               3.341 "CS\C=C(O)\C(O)=O"
+DEI SMILES           CACTVS               3.341 "CSC=C(O)C(O)=O"
+DEI SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CS\C=C(\C(=O)O)/O"
+DEI SMILES           "OpenEye OEToolkits" 1.5.0 "CSC=C(C(=O)O)O"
+DEI InChI            InChI                1.03  "InChI=1S/C4H6O3S/c1-8-2-3(5)4(6)7/h2,5H,1H3,(H,6,7)/b3-2-"
+DEI InChIKey         InChI                1.03  VOKJWIQPUMADMU-IHWYPQMZSA-N
+DEI ?                acedrg               202         "dictionary generator"                  
+DEI ?                acedrg_database      11          "data source"                           
+DEI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DEI ?                refmac5              5.8.0189    "optimization tool"                     

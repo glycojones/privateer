@@ -1,0 +1,305 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FMU      FMU '5-FLUORO-5-METHYLURIDINE-5'-MONOPHOS' non-polymer        37  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FMU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FMU           F      F    F         0.000      0.000    0.000    0.000
+ FMU           C5     C    CT        0.000     -1.055    0.345   -0.799
+ FMU           C5M    C    CH3       0.000     -0.788   -0.255   -2.175
+ FMU           H5M3   H    H         0.000     -1.475    0.146   -2.874
+ FMU           H5M2   H    H         0.000      0.199   -0.020   -2.477
+ FMU           H5M1   H    H         0.000     -0.904   -1.306   -2.130
+ FMU           C4     C    C         0.000     -1.159    1.857   -0.867
+ FMU           O4     O    O         0.000     -0.629    2.528   -1.751
+ FMU           N3     N    NH1       0.000     -1.835    2.425    0.210
+ FMU           H3     H    H         0.000     -1.861    3.434    0.233
+ FMU           C6     C    CH2       0.000     -2.317   -0.242   -0.185
+ FMU           H6C1   H    H         0.000     -2.165   -1.314   -0.037
+ FMU           H6C2   H    H         0.000     -3.146   -0.086   -0.878
+ FMU           N1     N    N         0.000     -2.624    0.388    1.094
+ FMU           C2     C    C         0.000     -2.482    1.769    1.263
+ FMU           O2     O    O         0.000     -2.878    2.392    2.251
+ FMU           "C1'"  C    CH1       0.000     -3.303   -0.406    2.076
+ FMU           "H1'"  H    H         0.000     -3.209    0.068    3.063
+ FMU           "O4'"  O    O2        0.000     -2.707   -1.714    2.112
+ FMU           "C4'"  C    CH1       0.000     -3.752   -2.711    2.092
+ FMU           "H4'"  H    H         0.000     -3.575   -3.451    2.885
+ FMU           "C3'"  C    CH1       0.000     -5.050   -1.962    2.366
+ FMU           "H3'"  H    H         0.000     -5.916   -2.456    1.904
+ FMU           "O3'"  O    OH1       0.000     -5.196   -1.839    3.780
+ FMU           HB     H    H         0.000     -4.322   -1.783    4.190
+ FMU           "C2'"  C    CH1       0.000     -4.771   -0.609    1.746
+ FMU           "H2'"  H    H         0.000     -4.905   -0.663    0.657
+ FMU           "O2'"  O    OH1       0.000     -5.595    0.406    2.283
+ FMU           HA     H    H         0.000     -5.628    1.148    1.666
+ FMU           "C5'"  C    CH2       0.000     -3.728   -3.397    0.732
+ FMU           "H5'1" H    H         0.000     -3.854   -2.655   -0.060
+ FMU           "H5'2" H    H         0.000     -4.535   -4.131    0.673
+ FMU           "O5'"  O    O2        0.000     -2.481   -4.050    0.576
+ FMU           P      P    P         0.000     -2.201   -4.860   -0.798
+ FMU           O1P    O    OP       -0.666     -3.382   -5.802   -0.883
+ FMU           O2P    O    OP       -0.666     -0.845   -5.528   -0.880
+ FMU           O3P    O    OP       -0.666     -2.488   -3.844   -1.881
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FMU      F      n/a    C5     START
+ FMU      C5     F      C6     .
+ FMU      C5M    C5     H5M1   .
+ FMU      H5M3   C5M    .      .
+ FMU      H5M2   C5M    .      .
+ FMU      H5M1   C5M    .      .
+ FMU      C4     C5     N3     .
+ FMU      O4     C4     .      .
+ FMU      N3     C4     H3     .
+ FMU      H3     N3     .      .
+ FMU      C6     C5     N1     .
+ FMU      H6C1   C6     .      .
+ FMU      H6C2   C6     .      .
+ FMU      N1     C6     "C1'"  .
+ FMU      C2     N1     O2     .
+ FMU      O2     C2     .      .
+ FMU      "C1'"  N1     "O4'"  .
+ FMU      "H1'"  "C1'"  .      .
+ FMU      "O4'"  "C1'"  "C4'"  .
+ FMU      "C4'"  "O4'"  "C5'"  .
+ FMU      "H4'"  "C4'"  .      .
+ FMU      "C3'"  "C4'"  "C2'"  .
+ FMU      "H3'"  "C3'"  .      .
+ FMU      "O3'"  "C3'"  HB     .
+ FMU      HB     "O3'"  .      .
+ FMU      "C2'"  "C3'"  "O2'"  .
+ FMU      "H2'"  "C2'"  .      .
+ FMU      "O2'"  "C2'"  HA     .
+ FMU      HA     "O2'"  .      .
+ FMU      "C5'"  "C4'"  "O5'"  .
+ FMU      "H5'1" "C5'"  .      .
+ FMU      "H5'2" "C5'"  .      .
+ FMU      "O5'"  "C5'"  P      .
+ FMU      P      "O5'"  O3P    .
+ FMU      O1P    P      .      .
+ FMU      O2P    P      .      .
+ FMU      O3P    P      .      END
+ FMU      N3     C2     .    ADD
+ FMU      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FMU       C2        N1        single    1.330     0.020     1.330     0.020     
+FMU       N1        C6        single    1.455     0.020     1.455     0.020     
+FMU       "C1'"     N1        single    1.455     0.020     1.455     0.020     
+FMU       N3        C2        single    1.330     0.020     1.330     0.020     
+FMU       N3        C4        single    1.330     0.020     1.330     0.020     
+FMU       H3        N3        single    1.016     0.010     0.899     0.007     
+FMU       O2        C2        double    1.220     0.020     1.220     0.020     
+FMU       C5M       C5        single    1.524     0.020     1.524     0.020     
+FMU       C6        C5        single    1.524     0.020     1.524     0.020     
+FMU       C4        C5        single    1.507     0.020     1.507     0.020     
+FMU       C5        F         single    1.320     0.020     1.320     0.020     
+FMU       H5M1      C5M       single    1.089     0.010     0.989     0.005     
+FMU       H5M2      C5M       single    1.089     0.010     0.989     0.005     
+FMU       H5M3      C5M       single    1.089     0.010     0.989     0.005     
+FMU       H6C1      C6        single    1.089     0.010     0.989     0.005     
+FMU       H6C2      C6        single    1.089     0.010     0.989     0.005     
+FMU       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+FMU       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+FMU       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+FMU       O4        C4        double    1.220     0.020     1.220     0.020     
+FMU       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+FMU       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+FMU       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+FMU       HA        "O2'"     single    0.970     0.012     0.839     0.014     
+FMU       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+FMU       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+FMU       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+FMU       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+FMU       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+FMU       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+FMU       HB        "O3'"     single    0.970     0.012     0.839     0.014     
+FMU       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+FMU       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+FMU       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+FMU       P         "O5'"     single    1.610     0.020     1.610     0.020     
+FMU       O1P       P         deloc     1.510     0.020     1.510     0.020     
+FMU       O2P       P         deloc     1.510     0.020     1.510     0.020     
+FMU       O3P       P         deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FMU      F      C5     C5M     109.470    3.000
+ FMU      F      C5     C4      109.470    3.000
+ FMU      F      C5     C6      109.470    3.000
+ FMU      C5M    C5     C4      109.470    3.000
+ FMU      C5M    C5     C6      111.000    3.000
+ FMU      C4     C5     C6      109.470    3.000
+ FMU      C5     C5M    H5M3    109.470    3.000
+ FMU      C5     C5M    H5M2    109.470    3.000
+ FMU      C5     C5M    H5M1    109.470    3.000
+ FMU      H5M3   C5M    H5M2    109.470    3.000
+ FMU      H5M3   C5M    H5M1    109.470    3.000
+ FMU      H5M2   C5M    H5M1    109.470    3.000
+ FMU      C5     C4     O4      120.500    3.000
+ FMU      C5     C4     N3      116.500    3.000
+ FMU      O4     C4     N3      123.000    3.000
+ FMU      C4     N3     H3      120.000    3.000
+ FMU      C4     N3     C2      120.000    3.000
+ FMU      H3     N3     C2      120.000    3.000
+ FMU      C5     C6     H6C1    109.470    3.000
+ FMU      C5     C6     H6C2    109.470    3.000
+ FMU      C5     C6     N1      109.500    3.000
+ FMU      H6C1   C6     H6C2    107.900    3.000
+ FMU      H6C1   C6     N1      109.470    3.000
+ FMU      H6C2   C6     N1      109.470    3.000
+ FMU      C6     N1     C2      127.000    3.000
+ FMU      C6     N1     "C1'"   112.000    3.000
+ FMU      C2     N1     "C1'"   121.000    3.000
+ FMU      N1     C2     O2      123.000    3.000
+ FMU      N1     C2     N3      120.000    3.000
+ FMU      O2     C2     N3      123.000    3.000
+ FMU      N1     "C1'"  "H1'"   109.470    3.000
+ FMU      N1     "C1'"  "O4'"   109.500    3.000
+ FMU      N1     "C1'"  "C2'"   105.000    3.000
+ FMU      "H1'"  "C1'"  "O4'"   109.470    3.000
+ FMU      "H1'"  "C1'"  "C2'"   108.340    3.000
+ FMU      "O4'"  "C1'"  "C2'"   109.470    3.000
+ FMU      "C1'"  "O4'"  "C4'"   111.800    3.000
+ FMU      "O4'"  "C4'"  "H4'"   109.470    3.000
+ FMU      "O4'"  "C4'"  "C3'"   109.470    3.000
+ FMU      "O4'"  "C4'"  "C5'"   109.470    3.000
+ FMU      "H4'"  "C4'"  "C3'"   108.340    3.000
+ FMU      "H4'"  "C4'"  "C5'"   108.340    3.000
+ FMU      "C3'"  "C4'"  "C5'"   111.000    3.000
+ FMU      "C4'"  "C3'"  "H3'"   108.340    3.000
+ FMU      "C4'"  "C3'"  "O3'"   109.470    3.000
+ FMU      "C4'"  "C3'"  "C2'"   111.000    3.000
+ FMU      "H3'"  "C3'"  "O3'"   109.470    3.000
+ FMU      "H3'"  "C3'"  "C2'"   108.340    3.000
+ FMU      "O3'"  "C3'"  "C2'"   109.470    3.000
+ FMU      "C3'"  "O3'"  HB      109.470    3.000
+ FMU      "C3'"  "C2'"  "H2'"   108.340    3.000
+ FMU      "C3'"  "C2'"  "O2'"   109.470    3.000
+ FMU      "C3'"  "C2'"  "C1'"   111.000    3.000
+ FMU      "H2'"  "C2'"  "O2'"   109.470    3.000
+ FMU      "H2'"  "C2'"  "C1'"   108.340    3.000
+ FMU      "O2'"  "C2'"  "C1'"   109.470    3.000
+ FMU      "C2'"  "O2'"  HA      109.470    3.000
+ FMU      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ FMU      "C4'"  "C5'"  "H5'2"  109.470    3.000
+ FMU      "C4'"  "C5'"  "O5'"   109.470    3.000
+ FMU      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ FMU      "H5'1" "C5'"  "O5'"   109.470    3.000
+ FMU      "H5'2" "C5'"  "O5'"   109.470    3.000
+ FMU      "C5'"  "O5'"  P       120.500    3.000
+ FMU      "O5'"  P      O1P     108.200    3.000
+ FMU      "O5'"  P      O2P     108.200    3.000
+ FMU      "O5'"  P      O3P     108.200    3.000
+ FMU      O1P    P      O2P     119.900    3.000
+ FMU      O1P    P      O3P     119.900    3.000
+ FMU      O2P    P      O3P     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FMU      var_1    F      C5     C5M    H5M1      71.307   20.000   1
+ FMU      var_2    F      C5     C4     N3       -90.000   20.000   1
+ FMU      CONST_1  C5     C4     N3     C2         0.000    0.000   0
+ FMU      CONST_2  C4     N3     C2     N1         0.000    0.000   0
+ FMU      var_3    F      C5     C6     N1        60.000   20.000   1
+ FMU      var_4    C5     C6     N1     "C1'"   -150.000   20.000   1
+ FMU      CONST_3  C6     N1     C2     O2       180.000    0.000   0
+ FMU      var_5    C6     N1     "C1'"  "O4'"     43.511   20.000   3
+ FMU      var_6    N1     "C1'"  "C2'"  "C3'"    150.000   20.000   3
+ FMU      var_7    N1     "C1'"  "O4'"  "C4'"   -120.000   20.000   1
+ FMU      var_8    "C1'"  "O4'"  "C4'"  "C5'"    120.000   20.000   1
+ FMU      var_9    "O4'"  "C4'"  "C3'"  "C2'"     30.000   20.000   3
+ FMU      var_10   "C4'"  "C3'"  "O3'"  HB        31.184   20.000   1
+ FMU      var_11   "C4'"  "C3'"  "C2'"  "O2'"   -150.000   20.000   3
+ FMU      var_12   "C3'"  "C2'"  "O2'"  HA      -159.278   20.000   1
+ FMU      var_13   "O4'"  "C4'"  "C5'"  "O5'"     62.403   20.000   3
+ FMU      var_14   "C4'"  "C5'"  "O5'"  P       -179.986   20.000   1
+ FMU      var_15   "C5'"  "O5'"  P      O3P       53.194   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FMU      chir_01  C5     C5M    C6     C4        positiv
+ FMU      chir_02  "C1'"  N1     "C2'"  "O4'"     negativ
+ FMU      chir_03  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ FMU      chir_04  "C3'"  "C2'"  "C4'"  "O3'"     negativ
+ FMU      chir_05  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FMU      plan-1    N1        0.020
+ FMU      plan-1    C2        0.020
+ FMU      plan-1    C6        0.020
+ FMU      plan-1    "C1'"     0.020
+ FMU      plan-2    N3        0.020
+ FMU      plan-2    C2        0.020
+ FMU      plan-2    C4        0.020
+ FMU      plan-2    H3        0.020
+ FMU      plan-3    C2        0.020
+ FMU      plan-3    N1        0.020
+ FMU      plan-3    N3        0.020
+ FMU      plan-3    O2        0.020
+ FMU      plan-3    H3        0.020
+ FMU      plan-4    C4        0.020
+ FMU      plan-4    N3        0.020
+ FMU      plan-4    C5        0.020
+ FMU      plan-4    O4        0.020
+ FMU      plan-4    H3        0.020
+# ------------------------------------------------------

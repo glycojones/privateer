@@ -1,0 +1,222 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SIC      SIC '(2R)-2-[(3S)-3-amino-2,5-dioxopyrrol' non-polymer        23  14 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SIC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SIC           OXT    O    OC       -0.500      0.000    0.000    0.000
+ SIC           C      C    C         0.000     -1.077    0.619    0.148
+ SIC           O      O    OC       -0.500     -1.103    1.864    0.032
+ SIC           CA     C    CH1       0.000     -2.342   -0.136    0.466
+ SIC           HA     H    H         0.000     -2.217   -0.679    1.412
+ SIC           CB     C    CH2       0.000     -2.639   -1.131   -0.659
+ SIC           HB     H    H         0.000     -1.808   -1.833   -0.751
+ SIC           HBA    H    H         0.000     -2.762   -0.590   -1.600
+ SIC           SG     S    SH1       0.000     -4.161   -2.039   -0.277
+ SIC           HSG    H    H         0.000     -4.158   -2.786   -1.377
+ SIC           N1     N    N         0.000     -3.456    0.808    0.588
+ SIC           C2     C    C         0.000     -4.174    0.941    1.710
+ SIC           O2     O    O         0.000     -4.000    0.316    2.734
+ SIC           C5     C    C         0.000     -3.842    1.613   -0.417
+ SIC           O5     O    O         0.000     -3.334    1.657   -1.517
+ SIC           C4     C    CH2       0.000     -5.013    2.454    0.042
+ SIC           H4     H    H         0.000     -5.915    2.265   -0.544
+ SIC           H4A    H    H         0.000     -4.788    3.522    0.026
+ SIC           C3     C    CH1       0.000     -5.238    1.996    1.498
+ SIC           H3     H    H         0.000     -6.241    1.561    1.614
+ SIC           N      N    NH2       0.000     -5.050    3.116    2.428
+ SIC           HNA    H    H         0.000     -4.838    4.042    2.076
+ SIC           HN     H    H         0.000     -5.132    2.970    3.427
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SIC      OXT    n/a    C      START
+ SIC      C      OXT    CA     .
+ SIC      O      C      .      .
+ SIC      CA     C      N1     .
+ SIC      HA     CA     .      .
+ SIC      CB     CA     SG     .
+ SIC      HB     CB     .      .
+ SIC      HBA    CB     .      .
+ SIC      SG     CB     HSG    .
+ SIC      HSG    SG     .      .
+ SIC      N1     CA     C5     .
+ SIC      C2     N1     O2     .
+ SIC      O2     C2     .      .
+ SIC      C5     N1     C4     .
+ SIC      O5     C5     .      .
+ SIC      C4     C5     C3     .
+ SIC      H4     C4     .      .
+ SIC      H4A    C4     .      .
+ SIC      C3     C4     N      .
+ SIC      H3     C3     .      .
+ SIC      N      C3     HN     .
+ SIC      HNA    N      .      .
+ SIC      HN     N      .      END
+ SIC      C3     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SIC       HN        N         single    1.036     0.016     0.914     0.007     
+SIC       HNA       N         single    1.036     0.016     0.914     0.007     
+SIC       N         C3        single    1.450     0.020     1.450     0.020     
+SIC       H3        C3        single    1.089     0.010     0.989     0.005     
+SIC       C3        C2        single    1.500     0.020     1.500     0.020     
+SIC       O2        C2        double    1.220     0.020     1.220     0.020     
+SIC       C3        C4        single    1.524     0.020     1.524     0.020     
+SIC       H4        C4        single    1.089     0.010     0.989     0.005     
+SIC       H4A       C4        single    1.089     0.010     0.989     0.005     
+SIC       C4        C5        single    1.510     0.020     1.510     0.020     
+SIC       C5        N1        single    1.330     0.020     1.330     0.020     
+SIC       O5        C5        double    1.220     0.020     1.220     0.020     
+SIC       C2        N1        single    1.330     0.020     1.330     0.020     
+SIC       N1        CA        single    1.455     0.020     1.455     0.020     
+SIC       CA        C         single    1.500     0.020     1.500     0.020     
+SIC       HA        CA        single    1.089     0.010     0.989     0.005     
+SIC       CB        CA        single    1.524     0.020     1.524     0.020     
+SIC       HB        CB        single    1.089     0.010     0.989     0.005     
+SIC       HBA       CB        single    1.089     0.010     0.989     0.005     
+SIC       SG        CB        single    1.810     0.020     1.810     0.020     
+SIC       HSG       SG        single    1.338     0.010     1.171     0.208     
+SIC       O         C         deloc     1.250     0.020     1.250     0.020     
+SIC       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SIC      OXT    C      O       123.000    3.000
+ SIC      OXT    C      CA      118.500    3.000
+ SIC      O      C      CA      118.500    3.000
+ SIC      C      CA     HA      108.810    3.000
+ SIC      C      CA     CB      109.470    3.000
+ SIC      C      CA     N1      111.600    3.000
+ SIC      HA     CA     CB      108.340    3.000
+ SIC      HA     CA     N1      109.470    3.000
+ SIC      CB     CA     N1      105.000    3.000
+ SIC      CA     CB     HB      109.470    3.000
+ SIC      CA     CB     HBA     109.470    3.000
+ SIC      CA     CB     SG      112.500    3.000
+ SIC      HB     CB     HBA     107.900    3.000
+ SIC      HB     CB     SG      109.470    3.000
+ SIC      HBA    CB     SG      109.470    3.000
+ SIC      CB     SG     HSG      96.000    3.000
+ SIC      CA     N1     C2      121.000    3.000
+ SIC      CA     N1     C5      121.000    3.000
+ SIC      C2     N1     C5      120.000    3.000
+ SIC      N1     C2     O2      123.000    3.000
+ SIC      N1     C2     C3      116.500    3.000
+ SIC      O2     C2     C3      120.500    3.000
+ SIC      N1     C5     O5      123.000    3.000
+ SIC      N1     C5     C4      116.500    3.000
+ SIC      O5     C5     C4      120.500    3.000
+ SIC      C5     C4     H4      109.470    3.000
+ SIC      C5     C4     H4A     109.470    3.000
+ SIC      C5     C4     C3      109.470    3.000
+ SIC      H4     C4     H4A     107.900    3.000
+ SIC      H4     C4     C3      109.470    3.000
+ SIC      H4A    C4     C3      109.470    3.000
+ SIC      C4     C3     H3      108.340    3.000
+ SIC      C4     C3     N       109.470    3.000
+ SIC      C4     C3     C2      109.470    3.000
+ SIC      H3     C3     N       109.470    3.000
+ SIC      H3     C3     C2      108.810    3.000
+ SIC      N      C3     C2      109.470    3.000
+ SIC      C3     N      HNA     120.000    3.000
+ SIC      C3     N      HN      120.000    3.000
+ SIC      HNA    N      HN      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SIC      var_1    OXT    C      CA     N1      -179.957   20.000   3
+ SIC      var_2    C      CA     CB     SG      -179.995   20.000   3
+ SIC      var_3    CA     CB     SG     HSG      179.993   20.000   1
+ SIC      var_4    C      CA     N1     C5        59.979   20.000   3
+ SIC      CONST_1  CA     N1     C2     O2         0.000    0.000   0
+ SIC      CONST_2  CA     N1     C5     C4       180.000    0.000   0
+ SIC      var_5    N1     C5     C4     C3         0.000   20.000   3
+ SIC      var_6    C5     C4     C3     N        120.000   20.000   3
+ SIC      var_7    C4     C3     C2     N1         0.000   20.000   3
+ SIC      var_8    C4     C3     N      HN      -177.865   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SIC      chir_01  C3     N      C2     C4        positiv
+ SIC      chir_02  CA     N1     CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SIC      plan-1    N         0.020
+ SIC      plan-1    C3        0.020
+ SIC      plan-1    HN        0.020
+ SIC      plan-1    HNA       0.020
+ SIC      plan-2    C2        0.020
+ SIC      plan-2    C3        0.020
+ SIC      plan-2    O2        0.020
+ SIC      plan-2    N1        0.020
+ SIC      plan-3    C5        0.020
+ SIC      plan-3    C4        0.020
+ SIC      plan-3    O5        0.020
+ SIC      plan-3    N1        0.020
+ SIC      plan-4    N1        0.020
+ SIC      plan-4    C2        0.020
+ SIC      plan-4    C5        0.020
+ SIC      plan-4    CA        0.020
+ SIC      plan-5    C         0.020
+ SIC      plan-5    CA        0.020
+ SIC      plan-5    O         0.020
+ SIC      plan-5    OXT       0.020
+# ------------------------------------------------------

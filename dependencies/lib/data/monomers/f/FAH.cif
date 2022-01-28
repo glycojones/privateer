@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FAH     FAH      "fluoroacetic acid"     NON-POLYMER     7     5     .     
+#
+data_comp_FAH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FAH     C       C       C       0       11.301      -9.667      17.413      
+FAH     F       F       F       0       12.237      -9.215      19.552      
+FAH     O       O       O       0       11.650      -8.821      16.566      
+FAH     CH3     C       CH2     0       12.319      -10.021     18.499      
+FAH     OXT     O       OC      -1      10.200      -10.251     17.458      
+FAH     HH3     H       H       0       13.217      -9.953      18.136      
+FAH     HH3A    H       H       0       12.165      -10.931     18.803      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FAH       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+FAH       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+FAH       C         CH3       SINGLE    n         1.530     0.020     1.530     0.020     
+FAH       F         CH3       SINGLE    n         1.328     0.017     1.328     0.017     
+FAH       CH3       HH3       SINGLE    n         1.089     0.010     0.971     0.015     
+FAH       CH3       HH3A      SINGLE    n         1.089     0.010     0.971     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FAH           O           C         OXT     126.099    1.75
+FAH           O           C         CH3     116.950    2.11
+FAH         OXT           C         CH3     116.950    2.11
+FAH           C         CH3           F     112.564    1.65
+FAH           C         CH3         HH3     109.629    1.50
+FAH           C         CH3        HH3A     109.629    1.50
+FAH           F         CH3         HH3     108.415    2.17
+FAH           F         CH3        HH3A     108.415    2.17
+FAH         HH3         CH3        HH3A     109.375    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FAH             sp2_sp3_2           O           C         CH3           F     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FAH    plan-1           C   0.020
+FAH    plan-1         CH3   0.020
+FAH    plan-1           O   0.020
+FAH    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FAH SMILES           ACDLabs              12.01 "FCC(=O)O"
+FAH SMILES_CANONICAL CACTVS               3.370 "OC(=O)CF"
+FAH SMILES           CACTVS               3.370 "OC(=O)CF"
+FAH SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(C(=O)O)F"
+FAH SMILES           "OpenEye OEToolkits" 1.7.0 "C(C(=O)O)F"
+FAH InChI            InChI                1.03  "InChI=1S/C2H3FO2/c3-1-2(4)5/h1H2,(H,4,5)"
+FAH InChIKey         InChI                1.03  QEWYKACRFQMRMB-UHFFFAOYSA-N
+FAH ?                acedrg               202         "dictionary generator"                  
+FAH ?                acedrg_database      11          "data source"                           
+FAH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FAH ?                refmac5              5.8.0189    "optimization tool"                     

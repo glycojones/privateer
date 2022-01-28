@@ -1,0 +1,111 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ACM     ACM      ACETAMIDE     NON-POLYMER     9     4     .     
+#
+data_comp_ACM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ACM     C1      C       C       0       49.984      33.236      38.465      
+ACM     O       O       O       0       50.686      34.118      37.930      
+ACM     N       N       NH2     0       48.891      32.773      37.881      
+ACM     C2      C       CH3     0       50.365      32.673      39.800      
+ACM     HN1     H       H       0       48.643      33.090      37.092      
+ACM     HN2     H       H       0       48.407      32.146      38.275      
+ACM     H21     H       H       0       51.172      33.108      40.120      
+ACM     H22     H       H       0       50.526      31.719      39.717      
+ACM     H23     H       H       0       49.646      32.823      40.434      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ACM       C1        O         DOUBLE    n         1.247     0.010     1.247     0.010     
+ACM       C1        N         SINGLE    n         1.321     0.010     1.321     0.010     
+ACM       C1        C2        SINGLE    n         1.497     0.011     1.497     0.011     
+ACM       N         HN1       SINGLE    n         1.016     0.010     0.884     0.020     
+ACM       N         HN2       SINGLE    n         1.016     0.010     0.884     0.020     
+ACM       C2        H21       SINGLE    n         1.089     0.010     0.971     0.014     
+ACM       C2        H22       SINGLE    n         1.089     0.010     0.971     0.014     
+ACM       C2        H23       SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ACM           O          C1           N     121.597    1.50
+ACM           O          C1          C2     120.515    1.50
+ACM           N          C1          C2     117.889    1.50
+ACM          C1           N         HN1     119.908    1.70
+ACM          C1           N         HN2     119.908    1.70
+ACM         HN1           N         HN2     120.184    2.38
+ACM          C1          C2         H21     109.667    1.50
+ACM          C1          C2         H22     109.667    1.50
+ACM          C1          C2         H23     109.667    1.50
+ACM         H21          C2         H22     109.365    1.50
+ACM         H21          C2         H23     109.365    1.50
+ACM         H22          C2         H23     109.365    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ACM             sp2_sp2_3           O          C1           N         HN1       0.000   10.00     2
+ACM             sp2_sp3_1           O          C1          C2         H21       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ACM    plan-1          C1   0.020
+ACM    plan-1          C2   0.020
+ACM    plan-1           N   0.020
+ACM    plan-1           O   0.020
+ACM    plan-2          C1   0.020
+ACM    plan-2         HN1   0.020
+ACM    plan-2         HN2   0.020
+ACM    plan-2           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ACM SMILES           ACDLabs              10.04 "O=C(N)C"
+ACM SMILES_CANONICAL CACTVS               3.341 "CC(N)=O"
+ACM SMILES           CACTVS               3.341 "CC(N)=O"
+ACM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)N"
+ACM SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)N"
+ACM InChI            InChI                1.03  "InChI=1S/C2H5NO/c1-2(3)4/h1H3,(H2,3,4)"
+ACM InChIKey         InChI                1.03  DLFVBJFMPXGRIB-UHFFFAOYSA-N
+ACM ?                acedrg               202         "dictionary generator"                  
+ACM ?                acedrg_database      11          "data source"                           
+ACM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ACM ?                refmac5              5.8.0189    "optimization tool"                     

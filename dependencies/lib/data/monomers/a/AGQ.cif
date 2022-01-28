@@ -1,0 +1,291 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AGQ     AGQ     "3-[(3E)-3-(carbamimidoylhydrazono)-4-hydroxy-6-oxocyclohexa-1,4-dien-1-yl]-L-alanine"  peptide  32     19     .     
+#
+data_comp_AGQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AGQ     OXT     O       OC      -1      -22.805     -6.129      26.094      
+AGQ     C       C       C       0       -21.933     -6.306      25.221      
+AGQ     N       N       NT3     1       -22.060     -6.912      22.828      
+AGQ     O       O       O       0       -20.886     -5.640      25.092      
+AGQ     N5      N       N       0       -20.555     -11.347     20.503      
+AGQ     N6      N       NH1     0       -19.176     -11.358     20.411      
+AGQ     C7      C       C       0       -18.587     -11.605     19.214      
+AGQ     N8      N       NH1     0       -19.232     -12.241     18.271      
+AGQ     N9      N       NH2     0       -17.342     -11.142     19.037      
+AGQ     CA      C       CH1     0       -22.168     -7.441      24.216      
+AGQ     CB      C       CH2     0       -21.176     -8.588      24.443      
+AGQ     CG      C       CR6     0       -21.502     -9.813      23.628      
+AGQ     OH      O       OH1     0       -22.286     -13.298     21.462      
+AGQ     CZ      C       CR6     0       -22.083     -12.172     22.142      
+AGQ     OZ      O       O       0       -23.204     -10.569     25.099      
+AGQ     CD1     C       CR6     0       -22.551     -10.778     24.069      
+AGQ     CD2     C       CR16    0       -20.852     -10.067     22.467      
+AGQ     CE1     C       CR16    0       -22.784     -11.954     23.270      
+AGQ     CE2     C       CR6     0       -21.138     -11.191     21.679      
+AGQ     H       H       H       0       -21.185     -6.770      22.615      
+AGQ     H2      H       H       0       -22.513     -6.124      22.755      
+AGQ     H3      H       H       0       -22.417     -7.507      22.238      
+AGQ     H6      H       H       0       -18.661     -11.226     21.106      
+AGQ     H8      H       H       0       -18.703     -12.348     17.511      
+AGQ     H91     H       H       0       -16.890     -11.343     18.308      
+AGQ     H92     H       H       0       -16.972     -10.624     19.648      
+AGQ     HA      H       H       0       -23.080     -7.792      24.346      
+AGQ     HB2     H       H       0       -21.179     -8.826      25.391      
+AGQ     HB3     H       H       0       -20.277     -8.279      24.216      
+AGQ     HH      H       H       0       -23.034     -13.260     21.025      
+AGQ     HD2     H       H       0       -20.187     -9.468      22.182      
+AGQ     HE1     H       H       0       -23.439     -12.575     23.545      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AGQ      N      n/a    CA     START
+ AGQ      H      N      .      .
+ AGQ      H2     N      .      .
+ AGQ      H3     N      .      .
+ AGQ      CA     N      C      .
+ AGQ      HA     CA     .      .
+ AGQ      CB     CA     CG     .
+ AGQ      HB2    CB     .      .
+ AGQ      HB3    CB     .      .
+ AGQ      CG     CB     CD2    .
+ AGQ      CD2    CG     CE2    .
+ AGQ      HD2    CD2    .      .
+ AGQ      CE2    CD2    CZ     .
+ AGQ      N5     CE2    N6     .
+ AGQ      N6     N5     C7     .
+ AGQ      H6     N6     .      .
+ AGQ      C7     N6     N8     .
+ AGQ      N9     C7     H91    .
+ AGQ      H92    N9     .      .
+ AGQ      H91    N9     .      .
+ AGQ      N8     C7     H8     .
+ AGQ      H8     N8     .      .
+ AGQ      CZ     CE2    CE1    .
+ AGQ      OH     CZ     HH     .
+ AGQ      HH     OH     .      .
+ AGQ      CE1    CZ     CD1    .
+ AGQ      HE1    CE1    .      .
+ AGQ      CD1    CE1    OZ     .
+ AGQ      OZ     CD1    .      .
+ AGQ      C      CA     OXT    .
+ AGQ      O      C      .      .
+ AGQ      OXT    C      .      END
+ AGQ      CG     CD1    .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AGQ       OXT       C         SINGLE    n         1.247     0.019     1.247     0.019     
+AGQ       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+AGQ       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+AGQ       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+AGQ       N5        N6        SINGLE    n         1.370     0.020     1.370     0.020     
+AGQ       N5        CE2       DOUBLE    n         1.318     0.012     1.318     0.012     
+AGQ       N6        C7        SINGLE    n         1.343     0.020     1.343     0.020     
+AGQ       C7        N8        DOUBLE    n         1.301     0.013     1.301     0.013     
+AGQ       C7        N9        SINGLE    n         1.330     0.016     1.330     0.016     
+AGQ       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+AGQ       CB        CG        SINGLE    n         1.506     0.010     1.506     0.010     
+AGQ       CG        CD1       SINGLE    n         1.476     0.020     1.476     0.020     
+AGQ       CG        CD2       DOUBLE    n         1.346     0.014     1.346     0.014     
+AGQ       OH        CZ        SINGLE    n         1.328     0.020     1.328     0.020     
+AGQ       CZ        CE1       DOUBLE    n         1.343     0.010     1.343     0.010     
+AGQ       CZ        CE2       SINGLE    n         1.421     0.020     1.421     0.020     
+AGQ       OZ        CD1       DOUBLE    n         1.236     0.019     1.236     0.019     
+AGQ       CD1       CE1       SINGLE    n         1.429     0.020     1.429     0.020     
+AGQ       CD2       CE2       SINGLE    n         1.385     0.020     1.385     0.020     
+AGQ       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+AGQ       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+AGQ       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+AGQ       N6        H6        SINGLE    n         1.016     0.010     0.873     0.020     
+AGQ       N8        H8        SINGLE    n         1.016     0.010     0.932     0.020     
+AGQ       N9        H91       SINGLE    n         1.016     0.010     0.881     0.020     
+AGQ       N9        H92       SINGLE    n         1.016     0.010     0.881     0.020     
+AGQ       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+AGQ       CB        HB2       SINGLE    n         1.089     0.010     0.977     0.014     
+AGQ       CB        HB3       SINGLE    n         1.089     0.010     0.977     0.014     
+AGQ       OH        HH        SINGLE    n         0.970     0.012     0.867     0.020     
+AGQ       CD2       HD2       SINGLE    n         1.082     0.013     0.939     0.015     
+AGQ       CE1       HE1       SINGLE    n         1.082     0.013     0.943     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AGQ         OXT           C           O     125.721    1.50
+AGQ         OXT           C          CA     117.139    1.50
+AGQ           O           C          CA     117.139    1.50
+AGQ          CA           N           H     109.853    1.85
+AGQ          CA           N          H2     109.853    1.85
+AGQ          CA           N          H3     109.853    1.85
+AGQ           H           N          H2     109.028    2.41
+AGQ           H           N          H3     109.028    2.41
+AGQ          H2           N          H3     109.028    2.41
+AGQ          N6          N5         CE2     118.160    1.94
+AGQ          N5          N6          C7     119.258    1.56
+AGQ          N5          N6          H6     122.165    2.44
+AGQ          C7          N6          H6     118.577    2.63
+AGQ          N6          C7          N8     121.480    3.00
+AGQ          N6          C7          N9     117.684    3.00
+AGQ          N8          C7          N9     120.836    2.38
+AGQ          C7          N8          H8     110.271    1.50
+AGQ          C7          N9         H91     119.894    2.29
+AGQ          C7          N9         H92     119.894    2.29
+AGQ         H91          N9         H92     120.211    2.09
+AGQ           C          CA           N     109.414    1.50
+AGQ           C          CA          CB     111.500    2.27
+AGQ           C          CA          HA     108.600    1.50
+AGQ           N          CA          CB     110.327    1.50
+AGQ           N          CA          HA     108.444    1.50
+AGQ          CB          CA          HA     108.202    1.50
+AGQ          CA          CB          CG     111.448    2.41
+AGQ          CA          CB         HB2     108.744    1.50
+AGQ          CA          CB         HB3     108.744    1.50
+AGQ          CG          CB         HB2     108.898    1.50
+AGQ          CG          CB         HB3     108.898    1.50
+AGQ         HB2          CB         HB3     107.742    1.50
+AGQ          CB          CG         CD1     121.012    1.58
+AGQ          CB          CG         CD2     120.950    1.50
+AGQ         CD1          CG         CD2     118.039    1.50
+AGQ          CZ          OH          HH     110.574    3.00
+AGQ          OH          CZ         CE1     119.988    2.84
+AGQ          OH          CZ         CE2     119.672    2.68
+AGQ         CE1          CZ         CE2     120.340    1.64
+AGQ          CG         CD1          OZ     120.252    1.54
+AGQ          CG         CD1         CE1     118.603    1.50
+AGQ          OZ         CD1         CE1     121.146    1.50
+AGQ          CG         CD2         CE2     121.895    1.50
+AGQ          CG         CD2         HD2     118.813    1.50
+AGQ         CE2         CD2         HD2     119.292    1.50
+AGQ          CZ         CE1         CD1     120.784    1.50
+AGQ          CZ         CE1         HE1     119.987    1.50
+AGQ         CD1         CE1         HE1     119.229    1.50
+AGQ          N5         CE2          CZ     119.080    3.00
+AGQ          N5         CE2         CD2     120.580    3.00
+AGQ          CZ         CE2         CD2     120.340    1.64
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AGQ             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+AGQ             sp2_sp2_4          OZ         CD1          CG          CB       0.000   10.00     2
+AGQ            sp2_sp2_36         CE2         CD2          CG          CB     180.000   10.00     2
+AGQ            sp2_sp2_10         CD1         CE1          CZ          OH     180.000   10.00     2
+AGQ            sp2_sp2_16          N5         CE2          CZ          OH       0.000   10.00     2
+AGQ             sp2_sp2_7          OZ         CD1         CE1          CZ     180.000   10.00     2
+AGQ            sp2_sp2_18          CG         CD2         CE2          N5     180.000   10.00     2
+AGQ             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+AGQ             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+AGQ            sp2_sp2_23          CZ         CE2          N5          N6     180.000   10.00     2
+AGQ            sp2_sp2_21         CE2          N5          N6          C7     180.000   10.00     2
+AGQ            sp2_sp2_27          N8          C7          N6          N5       0.000   10.00     2
+AGQ            sp2_sp2_29          N6          C7          N8          H8     180.000   10.00     2
+AGQ            sp2_sp2_31          N6          C7          N9         H91     180.000   10.00     2
+AGQ            sp3_sp3_10           C          CA          CB          CG     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+AGQ    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AGQ    plan-1           C   0.020
+AGQ    plan-1          CA   0.020
+AGQ    plan-1           O   0.020
+AGQ    plan-1         OXT   0.020
+AGQ    plan-2          C7   0.020
+AGQ    plan-2          H6   0.020
+AGQ    plan-2          N5   0.020
+AGQ    plan-2          N6   0.020
+AGQ    plan-3          C7   0.020
+AGQ    plan-3          N6   0.020
+AGQ    plan-3          N8   0.020
+AGQ    plan-3          N9   0.020
+AGQ    plan-4          C7   0.020
+AGQ    plan-4         H91   0.020
+AGQ    plan-4         H92   0.020
+AGQ    plan-4          N9   0.020
+AGQ    plan-5          CB   0.020
+AGQ    plan-5         CD1   0.020
+AGQ    plan-5         CD2   0.020
+AGQ    plan-5          CG   0.020
+AGQ    plan-6         CE1   0.020
+AGQ    plan-6         CE2   0.020
+AGQ    plan-6          CZ   0.020
+AGQ    plan-6          OH   0.020
+AGQ    plan-7         CD1   0.020
+AGQ    plan-7         CE1   0.020
+AGQ    plan-7          CG   0.020
+AGQ    plan-7          OZ   0.020
+AGQ    plan-8         CD2   0.020
+AGQ    plan-8         CE2   0.020
+AGQ    plan-8          CG   0.020
+AGQ    plan-8         HD2   0.020
+AGQ    plan-9         CD1   0.020
+AGQ    plan-9         CE1   0.020
+AGQ    plan-9          CZ   0.020
+AGQ    plan-9         HE1   0.020
+AGQ   plan-10         CD2   0.020
+AGQ   plan-10         CE2   0.020
+AGQ   plan-10          CZ   0.020
+AGQ   plan-10          N5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AGQ SMILES           ACDLabs              12.01 "O=C1C=C(O)/C(=N/NC(=[N@H])N)C=C1CC(C(=O)O)N"
+AGQ SMILES_CANONICAL CACTVS               3.370 "N[C@@H](CC1=CC(=N/NC(N)=N)\C(=CC1=O)O)C(O)=O"
+AGQ SMILES           CACTVS               3.370 "N[CH](CC1=CC(=NNC(N)=N)C(=CC1=O)O)C(O)=O"
+AGQ SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "[H]/N=C(\N)/N/N=C/1\C=C(C(=O)C=C1O)C[C@@H](C(=O)O)N"
+AGQ SMILES           "OpenEye OEToolkits" 1.7.0 "C1=C(C(=O)C=C(C1=NNC(=N)N)O)CC(C(=O)O)N"
+AGQ InChI            InChI                1.03  "InChI=1S/C10H13N5O4/c11-5(9(18)19)1-4-2-6(14-15-10(12)13)8(17)3-7(4)16/h2-3,5,17H,1,11H2,(H,18,19)(H4,12,13,15)/b14-6+/t5-/m0/s1"
+AGQ InChIKey         InChI                1.03  DVEXRLWHFKQALH-YREIPCOHSA-N
+AGQ ?                acedrg               196         "dictionary generator"                  
+AGQ ?                acedrg_database      11          "data source"                           
+AGQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AGQ ?                refmac5              5.8.0222    "optimization tool"                     

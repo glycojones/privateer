@@ -1,0 +1,108 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MDN     MDN      "METHYLENEDIPHOSPHONIC ACID"     NON-POLYMER     11     9     .     
+#
+data_comp_MDN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MDN     O3      O       OP      -1      -20.822     33.774      63.753      
+MDN     P1      P       P       0       -20.405     34.589      64.948      
+MDN     O1      O       O       0       -21.000     34.056      66.223      
+MDN     O2      O       OP      -1      -20.699     36.052      64.758      
+MDN     C4      C       CH2     0       -18.612     34.413      65.077      
+MDN     P5      P       P       0       -17.869     35.318      66.452      
+MDN     O6      O       O       0       -18.172     36.777      66.243      
+MDN     O7      O       OP      -1      -18.484     34.791      67.720      
+MDN     O8      O       OP      -1      -16.391     35.039      66.388      
+MDN     H41     H       H       0       -18.203     34.714      64.242      
+MDN     H42     H       H       0       -18.393     33.464      65.168      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MDN       O3        P1        SINGLE    n         1.505     0.020     1.505     0.020     
+MDN       P1        O1        DOUBLE    n         1.505     0.020     1.505     0.020     
+MDN       P1        O2        SINGLE    n         1.505     0.020     1.505     0.020     
+MDN       P1        C4        SINGLE    n         1.803     0.020     1.803     0.020     
+MDN       C4        P5        SINGLE    n         1.803     0.020     1.803     0.020     
+MDN       P5        O6        DOUBLE    n         1.505     0.020     1.505     0.020     
+MDN       P5        O7        SINGLE    n         1.505     0.020     1.505     0.020     
+MDN       P5        O8        SINGLE    n         1.505     0.020     1.505     0.020     
+MDN       C4        H41       SINGLE    n         1.089     0.010     0.978     0.020     
+MDN       C4        H42       SINGLE    n         1.089     0.010     0.978     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MDN          O3          P1          O1     112.502    1.50
+MDN          O3          P1          O2     112.502    1.50
+MDN          O3          P1          C4     108.625    3.00
+MDN          O1          P1          O2     112.502    1.50
+MDN          O1          P1          C4     108.625    3.00
+MDN          O2          P1          C4     108.625    3.00
+MDN          P1          C4          P5     114.813    3.00
+MDN          P1          C4         H41     109.545    1.50
+MDN          P1          C4         H42     109.545    1.50
+MDN          P5          C4         H41     109.545    1.50
+MDN          P5          C4         H42     109.545    1.50
+MDN         H41          C4         H42     107.067    1.50
+MDN          C4          P5          O6     108.625    3.00
+MDN          C4          P5          O7     108.625    3.00
+MDN          C4          P5          O8     108.625    3.00
+MDN          O6          P5          O7     112.502    1.50
+MDN          O6          P5          O8     112.502    1.50
+MDN          O7          P5          O8     112.502    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MDN             sp3_sp3_1          P5          C4          P1          O3     180.000   10.00     3
+MDN            sp3_sp3_10          P1          C4          P5          O6     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MDN SMILES           ACDLabs              10.04 "O=P(O)(O)CP(=O)(O)O"
+MDN SMILES_CANONICAL CACTVS               3.341 "O[P](O)(=O)C[P](O)(O)=O"
+MDN SMILES           CACTVS               3.341 "O[P](O)(=O)C[P](O)(O)=O"
+MDN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(P(=O)(O)O)P(=O)(O)O"
+MDN SMILES           "OpenEye OEToolkits" 1.5.0 "C(P(=O)(O)O)P(=O)(O)O"
+MDN InChI            InChI                1.03  "InChI=1S/CH6O6P2/c2-8(3,4)1-9(5,6)7/h1H2,(H2,2,3,4)(H2,5,6,7)"
+MDN InChIKey         InChI                1.03  MBKDYNNUVRNNRF-UHFFFAOYSA-N
+MDN ?                acedrg               202         "dictionary generator"                  
+MDN ?                acedrg_database      11          "data source"                           
+MDN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MDN ?                refmac5              5.8.0189    "optimization tool"                     

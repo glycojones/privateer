@@ -1,0 +1,700 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NUF      NUF 'N,N-Bis[4-[[1-(2-ethyl)piperidine]o ' non-polymer        83  45 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NUF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NUF    C1     C  CR66       0      19.852      24.562       4.732
+NUF    F1     F     F   0.000      27.795      27.686       4.876
+NUF    N1     N     N   0.000      22.704      25.653       5.090
+NUF    O1     O    O2   0.000      19.765      25.892       5.017
+NUF   NI1    NI    NI   0.000      21.354      27.094       5.209
+NUF    C2     C  CR16   0.000      18.670      23.847       4.587
+NUF    F2     F     F   0.000      27.408      25.003       4.667
+NUF    N2     N     N   0.000      22.972      28.269       5.301
+NUF    O2     O    O2   0.000      20.035      28.589       5.242
+NUF    C3     C   CR6   0.000      18.707      22.481       4.344
+NUF    N3     N    NT   0.000      16.515      19.205       1.868
+NUF    O3     O    O2   0.000      17.554      21.784       4.172
+NUF    C4     C  CR16   0.000      19.913      21.798       4.247
+NUF    N4     N    NT   0.000      17.008      36.224       6.138
+NUF    O4     O    O2   0.000      18.427      33.012       5.064
+NUF    C5     C  CR16   0.000      21.120      22.453       4.403
+NUF    C6     C  CR66   0.000      21.150      23.821       4.645
+NUF    C7     C  CR16   0.000      22.483      24.454       4.792
+NUF    C8     C  CR56   0.000      24.009      26.136       5.103
+NUF    C9     C  CR16   0.000      25.084      25.298       4.889
+NUF   C10     C   CR6   0.000      26.356      25.829       4.827
+NUF   C11     C   CR6   0.000      26.543      27.196       4.934
+NUF   C12     C  CR16   0.000      25.442      28.059       5.093
+NUF   C13     C  CR56   0.000      24.172      27.511       5.205
+NUF   C14     C  CR16   0.000      22.968      29.536       5.175
+NUF   C15     C  CR66   0.000      21.753      30.422       5.154
+NUF   C16     C  CR16   0.000      21.931      31.814       5.102
+NUF   C17     C  CR16   0.000      20.834      32.684       5.079
+NUF   C18     C   CR6   0.000      19.529      32.177       5.105
+NUF   C19     C  CR16   0.000      19.312      30.812       5.145
+NUF   C20     C  CR66   0.000      20.359      29.911       5.175
+NUF   C21     C   CH2   0.000      17.645      20.493       3.578
+NUF   C22     C   CH2   0.000      17.109      20.521       2.151
+NUF   C23     C   CH2   0.000      16.840      18.779       0.498
+NUF   C24     C   CH2   0.000      16.335      17.352       0.290
+NUF   C25     C   CH2   0.000      14.838      17.307       0.513
+NUF   C26     C   CH2   0.000      14.473      17.877       1.863
+NUF   C27     C   CH2   0.000      15.052      19.264       2.039
+NUF   C28     C   CH2   0.000      18.434      34.300       5.675
+NUF   C29     C   CH2   0.000      16.992      34.806       5.755
+NUF   C30     C   CH2   0.000      17.997      36.960       5.333
+NUF   C31     C   CH2   0.000      18.154      38.370       5.899
+NUF   C32     C   CH2   0.000      16.816      39.102       5.926
+NUF   C33     C   CH2   0.000      15.696      38.240       6.523
+NUF   C34     C   CH2   0.000      15.684      36.824       5.941
+NUF    H2     H     H   0.000      17.720      24.355       4.664
+NUF    H4     H     H   0.000      19.907      20.737       4.046
+NUF    H5     H     H   0.000      22.045      21.899       4.336
+NUF    H7     H     H   0.000      23.345      23.824       4.627
+NUF    H9     H     H   0.000      24.931      24.235       4.771
+NUF   H12     H     H   0.000      25.583      29.129       5.127
+NUF   H14     H     H   0.000      23.928      30.020       5.074
+NUF   H16     H     H   0.000      22.931      32.221       5.079
+NUF   H17     H     H   0.000      20.995      33.751       5.041
+NUF   H19     H     H   0.000      18.298      30.441       5.153
+NUF   H21     H     H   0.000      18.699      20.178       3.561
+NUF  H21A     H     H   0.000      17.052      19.781       4.171
+NUF   H22     H     H   0.000      17.928      20.725       1.445
+NUF  H22A     H     H   0.000      16.347      21.308       2.050
+NUF   H23     H     H   0.000      16.354      19.452      -0.224
+NUF  H23A     H     H   0.000      17.929      18.811       0.349
+NUF   H24     H     H   0.000      16.562      17.029      -0.737
+NUF  H24A     H     H   0.000      16.832      16.680       1.005
+NUF   H25     H     H   0.000      14.342      17.899      -0.270
+NUF  H25A     H     H   0.000      14.501      16.261       0.464
+NUF   H26     H     H   0.000      13.377      17.934       1.943
+NUF  H26A     H     H   0.000      14.873      17.220       2.649
+NUF   H27     H     H   0.000      14.814      19.637       3.046
+NUF  H27A     H     H   0.000      14.621      19.941       1.287
+NUF   H28     H     H   0.000      18.861      34.231       6.686
+NUF  H28A     H     H   0.000      19.040      34.994       5.074
+NUF   H29     H     H   0.000      16.437      34.225       6.506
+NUF  H29A     H     H   0.000      16.504      34.692       4.776
+NUF   H30     H     H   0.000      18.965      36.438       5.370
+NUF  H30A     H     H   0.000      17.654      37.018       4.290
+NUF   H31     H     H   0.000      18.544      38.301       6.925
+NUF  H31A     H     H   0.000      18.856      38.933       5.266
+NUF   H32     H     H   0.000      16.925      40.009       6.539
+NUF  H32A     H     H   0.000      16.541      39.368       4.895
+NUF   H33     H     H   0.000      15.849      38.171       7.610
+NUF  H33A     H     H   0.000      14.730      38.718       6.302
+NUF   H34     H     H   0.000      15.451      36.866       4.867
+NUF  H34A     H     H   0.000      14.922      36.218       6.453
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NUF       C1        O1        SING      1.373     0.020     1.373     0.020     
+NUF       C1        C2        DOUB      1.388     0.013     1.388     0.013     
+NUF       C1        C6        SING      1.399     0.015     1.399     0.015     
+NUF       F1        C11       SING      1.350     0.012     1.350     0.012     
+NUF       N1        NI1       SING      1.904     0.020     1.904     0.020     
+NUF       N1        C7        DOUB      1.304     0.010     1.304     0.010     
+NUF       N1        C8        SING      1.422     0.010     1.422     0.010     
+NUF       O1        NI1       SING      1.853     0.020     1.853     0.020     
+NUF       NI1       N2        SING      1.904     0.020     1.904     0.020     
+NUF       NI1       O2        SING      1.853     0.020     1.853     0.020     
+NUF       C2        C3        SING      1.382     0.016     1.382     0.016     
+NUF       C2        H2        SING      1.082     0.013     0.940     0.020     
+NUF       F2        C10       SING      1.350     0.012     1.350     0.012     
+NUF       N2        C13       SING      1.422     0.010     1.422     0.010     
+NUF       N2        C14       DOUB      1.304     0.010     1.304     0.010     
+NUF       O2        C20       SING      1.373     0.020     1.373     0.020     
+NUF       C3        O3        SING      1.370     0.016     1.370     0.016     
+NUF       C3        C4        DOUB      1.384     0.015     1.384     0.015     
+NUF       N3        C22       SING      1.470     0.010     1.470     0.010     
+NUF       N3        C23       SING      1.459     0.020     1.459     0.020     
+NUF       N3        C27       SING      1.459     0.020     1.459     0.020     
+NUF       O3        C21       SING      1.431     0.014     1.431     0.014     
+NUF       C4        C5        SING      1.363     0.018     1.363     0.018     
+NUF       C4        H4        SING      1.082     0.013     0.949     0.020     
+NUF       N4        C29       SING      1.470     0.010     1.470     0.010     
+NUF       N4        C30       SING      1.459     0.020     1.459     0.020     
+NUF       N4        C34       SING      1.459     0.020     1.459     0.020     
+NUF       O4        C18       SING      1.370     0.016     1.370     0.016     
+NUF       O4        C28       SING      1.431     0.014     1.431     0.014     
+NUF       C5        C6        DOUB      1.409     0.014     1.409     0.014     
+NUF       C5        H5        SING      1.082     0.013     0.950     0.020     
+NUF       C6        C7        SING      1.430     0.018     1.430     0.018     
+NUF       C7        H7        SING      1.082     0.013     0.939     0.018     
+NUF       C8        C9        DOUB      1.387     0.017     1.387     0.017     
+NUF       C8        C13       SING      1.463     0.020     1.463     0.020     
+NUF       C9        C10       SING      1.375     0.011     1.375     0.011     
+NUF       C9        H9        SING      1.082     0.013     0.945     0.020     
+NUF       C10       C11       DOUB      1.370     0.017     1.370     0.017     
+NUF       C11       C12       SING      1.375     0.011     1.375     0.011     
+NUF       C12       C13       DOUB      1.387     0.017     1.387     0.017     
+NUF       C12       H12       SING      1.082     0.013     0.945     0.020     
+NUF       C14       C15       SING      1.430     0.018     1.430     0.018     
+NUF       C14       H14       SING      1.082     0.013     0.939     0.018     
+NUF       C15       C16       DOUB      1.409     0.014     1.409     0.014     
+NUF       C15       C20       SING      1.403     0.017     1.403     0.017     
+NUF       C16       C17       SING      1.363     0.018     1.363     0.018     
+NUF       C16       H16       SING      1.082     0.013     0.950     0.020     
+NUF       C17       C18       DOUB      1.384     0.015     1.384     0.015     
+NUF       C17       H17       SING      1.082     0.013     0.949     0.020     
+NUF       C18       C19       SING      1.382     0.016     1.382     0.016     
+NUF       C19       C20       DOUB      1.388     0.013     1.388     0.013     
+NUF       C19       H19       SING      1.082     0.013     0.940     0.020     
+NUF       C21       C22       SING      1.502     0.018     1.502     0.018     
+NUF       C21       H21       SING      1.089     0.010     0.982     0.019     
+NUF       C21       H21A      SING      1.089     0.010     0.982     0.019     
+NUF       C22       H22       SING      1.089     0.010     0.987     0.020     
+NUF       C22       H22A      SING      1.089     0.010     0.987     0.020     
+NUF       C23       C24       SING      1.510     0.020     1.510     0.020     
+NUF       C23       H23       SING      1.089     0.010     0.981     0.016     
+NUF       C23       H23A      SING      1.089     0.010     0.981     0.016     
+NUF       C24       C25       SING      1.516     0.018     1.516     0.018     
+NUF       C24       H24       SING      1.089     0.010     0.978     0.017     
+NUF       C24       H24A      SING      1.089     0.010     0.978     0.017     
+NUF       C25       C26       SING      1.516     0.018     1.516     0.018     
+NUF       C25       H25       SING      1.089     0.010     0.979     0.020     
+NUF       C25       H25A      SING      1.089     0.010     0.979     0.020     
+NUF       C26       C27       SING      1.510     0.020     1.510     0.020     
+NUF       C26       H26       SING      1.089     0.010     0.978     0.017     
+NUF       C26       H26A      SING      1.089     0.010     0.978     0.017     
+NUF       C27       H27       SING      1.089     0.010     0.981     0.016     
+NUF       C27       H27A      SING      1.089     0.010     0.981     0.016     
+NUF       C28       C29       SING      1.502     0.018     1.502     0.018     
+NUF       C28       H28       SING      1.089     0.010     0.982     0.019     
+NUF       C28       H28A      SING      1.089     0.010     0.982     0.019     
+NUF       C29       H29       SING      1.089     0.010     0.987     0.020     
+NUF       C29       H29A      SING      1.089     0.010     0.987     0.020     
+NUF       C30       C31       SING      1.510     0.020     1.510     0.020     
+NUF       C30       H30       SING      1.089     0.010     0.981     0.016     
+NUF       C30       H30A      SING      1.089     0.010     0.981     0.016     
+NUF       C31       C32       SING      1.516     0.018     1.516     0.018     
+NUF       C31       H31       SING      1.089     0.010     0.978     0.017     
+NUF       C31       H31A      SING      1.089     0.010     0.978     0.017     
+NUF       C32       C33       SING      1.516     0.018     1.516     0.018     
+NUF       C32       H32       SING      1.089     0.010     0.979     0.020     
+NUF       C32       H32A      SING      1.089     0.010     0.979     0.020     
+NUF       C33       C34       SING      1.510     0.020     1.510     0.020     
+NUF       C33       H33       SING      1.089     0.010     0.978     0.017     
+NUF       C33       H33A      SING      1.089     0.010     0.978     0.017     
+NUF       C34       H34       SING      1.089     0.010     0.981     0.016     
+NUF       C34       H34A      SING      1.089     0.010     0.981     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NUF    O1    C1      C2   119.233    1.09
+NUF    O1    C1      C6   119.932    1.66
+NUF    C2    C1      C6   120.835    1.85
+NUF   NI1    N1      C7   118.527    3.00
+NUF   NI1    N1      C8   105.729    3.00
+NUF    C7    N1      C8   135.744    0.77
+NUF    C1    O1     NI1   118.527    3.00
+NUF    N1   NI1    O1      90.000    3.00
+NUF    N1   NI1    O1     180.000    3.00
+NUF    N1   NI1    N2      90.000    3.00
+NUF    N1   NI1    N2     180.000    3.00
+NUF    N1   NI1    O2      90.000    3.00
+NUF    N1   NI1    O2     180.000    3.00
+NUF    O1   NI1    N2      90.000    3.00
+NUF    O1   NI1    N2     180.000    3.00
+NUF    O1   NI1    O2      90.000    3.00
+NUF    O1   NI1    O2     180.000    3.00
+NUF    N2   NI1    O2      90.000    3.00
+NUF    N2   NI1    O2     180.000    3.00
+NUF    C1    C2      C3   118.614    1.17
+NUF    C1    C2      H2   120.564    1.21
+NUF    C3    C2      H2   120.822    1.03
+NUF   NI1    N2     C13   105.729    3.00
+NUF   NI1    N2     C14   118.527    3.00
+NUF   C13    N2     C14   135.744    0.77
+NUF   NI1    O2     C20   118.527    3.00
+NUF    C2    C3      O3   120.771    3.00
+NUF    C2    C3      C4   120.300    0.90
+NUF    O3    C3      C4   118.929    3.00
+NUF   C22    N3     C23   111.500    1.37
+NUF   C22    N3     C27   111.500    1.37
+NUF   C23    N3     C27   109.901    1.21
+NUF    C3    O3     C21   118.105    1.06
+NUF    C3    C4      C5   119.413    0.85
+NUF    C3    C4      H4   120.291    0.74
+NUF    C5    C4      H4   120.296    0.96
+NUF   C29    N4     C30   111.500    1.37
+NUF   C29    N4     C34   111.500    1.37
+NUF   C30    N4     C34   109.901    1.21
+NUF   C18    O4     C28   118.105    1.06
+NUF    C4    C5      C6   122.123    0.84
+NUF    C4    C5      H5   118.947    0.95
+NUF    C6    C5      H5   118.930    0.87
+NUF    C1    C6      C5   118.716    1.53
+NUF    C1    C6      C7   120.508    1.47
+NUF    C5    C6      C7   120.777    1.48
+NUF    N1    C7      C6   123.979    0.57
+NUF    N1    C7      H7   118.240    0.98
+NUF    C6    C7      H7   117.781    0.88
+NUF    N1    C8      C9   126.305    1.10
+NUF    N1    C8     C13   111.407    0.60
+NUF    C9    C8     C13   122.288    1.70
+NUF    C8    C9     C10   118.043    0.36
+NUF    C8    C9      H9   120.695    0.98
+NUF   C10    C9      H9   121.262    0.98
+NUF    F2   C10      C9   120.045    1.01
+NUF    F2   C10     C11   120.286    1.45
+NUF    C9   C10     C11   119.669    0.35
+NUF    F1   C11     C10   120.286    1.45
+NUF    F1   C11     C12   120.045    1.01
+NUF   C10   C11     C12   119.669    0.35
+NUF   C11   C12     C13   118.043    0.36
+NUF   C11   C12     H12   121.262    0.98
+NUF   C13   C12     H12   120.695    0.98
+NUF    N2   C13      C8   111.407    0.60
+NUF    N2   C13     C12   126.305    1.10
+NUF    C8   C13     C12   122.288    1.70
+NUF    N2   C14     C15   123.979    0.57
+NUF    N2   C14     H14   118.240    0.98
+NUF   C15   C14     H14   117.781    0.88
+NUF   C14   C15     C16   120.777    1.48
+NUF   C14   C15     C20   120.508    1.47
+NUF   C16   C15     C20   118.716    1.53
+NUF   C15   C16     C17   122.123    0.84
+NUF   C15   C16     H16   118.930    0.87
+NUF   C17   C16     H16   118.947    0.95
+NUF   C16   C17     C18   119.413    0.85
+NUF   C16   C17     H17   120.296    0.96
+NUF   C18   C17     H17   120.291    0.74
+NUF    O4   C18     C17   118.929    3.00
+NUF    O4   C18     C19   120.771    3.00
+NUF   C17   C18     C19   120.300    0.90
+NUF   C18   C19     C20   118.614    1.17
+NUF   C18   C19     H19   120.822    1.03
+NUF   C20   C19     H19   120.564    1.21
+NUF    O2   C20     C15   119.932    1.66
+NUF    O2   C20     C19   119.233    1.09
+NUF   C15   C20     C19   120.835    1.85
+NUF    O3   C21     C22   107.790    2.57
+NUF    O3   C21     H21   110.191    0.72
+NUF    O3   C21    H21A   110.191    0.72
+NUF   C22   C21     H21   110.322    1.11
+NUF   C22   C21    H21A   110.322    1.11
+NUF   H21   C21    H21A   108.232    1.52
+NUF    N3   C22     C21   113.184    1.26
+NUF    N3   C22     H22   108.849    0.69
+NUF    N3   C22    H22A   108.849    0.69
+NUF   C21   C22     H22   108.824    1.08
+NUF   C21   C22    H22A   108.824    1.08
+NUF   H22   C22    H22A   107.978    1.20
+NUF    N3   C23     C24   111.320    0.90
+NUF    N3   C23     H23   109.282    0.65
+NUF    N3   C23    H23A   109.282    0.65
+NUF   C24   C23     H23   109.529    1.17
+NUF   C24   C23    H23A   109.529    1.17
+NUF   H23   C23    H23A   108.165    0.88
+NUF   C23   C24     C25   111.138    1.53
+NUF   C23   C24     H24   109.360    1.02
+NUF   C23   C24    H24A   109.360    1.02
+NUF   C25   C24     H24   109.448    0.84
+NUF   C25   C24    H24A   109.448    0.84
+NUF   H24   C24    H24A   108.052    1.04
+NUF   C24   C25     C26   110.139    1.41
+NUF   C24   C25     H25   109.621    0.80
+NUF   C24   C25    H25A   109.621    0.80
+NUF   C26   C25     H25   109.621    0.80
+NUF   C26   C25    H25A   109.621    0.80
+NUF   H25   C25    H25A   108.016    1.14
+NUF   C25   C26     C27   111.138    1.53
+NUF   C25   C26     H26   109.448    0.84
+NUF   C25   C26    H26A   109.448    0.84
+NUF   C27   C26     H26   109.360    1.02
+NUF   C27   C26    H26A   109.360    1.02
+NUF   H26   C26    H26A   108.052    1.04
+NUF    N3   C27     C26   111.320    0.90
+NUF    N3   C27     H27   109.282    0.65
+NUF    N3   C27    H27A   109.282    0.65
+NUF   C26   C27     H27   109.529    1.17
+NUF   C26   C27    H27A   109.529    1.17
+NUF   H27   C27    H27A   108.165    0.88
+NUF    O4   C28     C29   107.790    2.57
+NUF    O4   C28     H28   110.191    0.72
+NUF    O4   C28    H28A   110.191    0.72
+NUF   C29   C28     H28   110.322    1.11
+NUF   C29   C28    H28A   110.322    1.11
+NUF   H28   C28    H28A   108.232    1.52
+NUF    N4   C29     C28   113.184    1.26
+NUF    N4   C29     H29   108.849    0.69
+NUF    N4   C29    H29A   108.849    0.69
+NUF   C28   C29     H29   108.824    1.08
+NUF   C28   C29    H29A   108.824    1.08
+NUF   H29   C29    H29A   107.978    1.20
+NUF    N4   C30     C31   111.320    0.90
+NUF    N4   C30     H30   109.282    0.65
+NUF    N4   C30    H30A   109.282    0.65
+NUF   C31   C30     H30   109.529    1.17
+NUF   C31   C30    H30A   109.529    1.17
+NUF   H30   C30    H30A   108.165    0.88
+NUF   C30   C31     C32   111.138    1.53
+NUF   C30   C31     H31   109.360    1.02
+NUF   C30   C31    H31A   109.360    1.02
+NUF   C32   C31     H31   109.448    0.84
+NUF   C32   C31    H31A   109.448    0.84
+NUF   H31   C31    H31A   108.052    1.04
+NUF   C31   C32     C33   110.139    1.41
+NUF   C31   C32     H32   109.621    0.80
+NUF   C31   C32    H32A   109.621    0.80
+NUF   C33   C32     H32   109.621    0.80
+NUF   C33   C32    H32A   109.621    0.80
+NUF   H32   C32    H32A   108.016    1.14
+NUF   C32   C33     C34   111.138    1.53
+NUF   C32   C33     H33   109.448    0.84
+NUF   C32   C33    H33A   109.448    0.84
+NUF   C34   C33     H33   109.360    1.02
+NUF   C34   C33    H33A   109.360    1.02
+NUF   H33   C33    H33A   108.052    1.04
+NUF    N4   C34     C33   111.320    0.90
+NUF    N4   C34     H34   109.282    0.65
+NUF    N4   C34    H34A   109.282    0.65
+NUF   C33   C34     H34   109.529    1.17
+NUF   C33   C34    H34A   109.529    1.17
+NUF   H34   C34    H34A   108.165    0.88
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NUF     P_sp2_sp2_1     C13      C8      C9     C10       0.000   10.00     2
+NUF     P_sp2_sp2_2     C13      C8      C9      H9     180.000   10.00     2
+NUF     P_sp2_sp2_3      N1      C8      C9     C10     180.000   10.00     2
+NUF     P_sp2_sp2_4      N1      C8      C9      H9       0.000   10.00     2
+NUF     P_sp2_sp2_5     C11     C10      C9      C8       0.000   10.00     2
+NUF     P_sp2_sp2_6     C11     C10      C9      H9     180.000   10.00     2
+NUF     P_sp2_sp2_7      F2     C10      C9      C8     180.000   10.00     2
+NUF     P_sp2_sp2_8      F2     C10      C9      H9       0.000   10.00     2
+NUF     P_sp2_sp2_9      C9     C10     C11     C12       0.000   10.00     2
+NUF    P_sp2_sp2_10      C9     C10     C11      F1     180.000   10.00     2
+NUF    P_sp2_sp2_11      F2     C10     C11     C12     180.000   10.00     2
+NUF    P_sp2_sp2_12      F2     C10     C11      F1       0.000   10.00     2
+NUF    P_sp2_sp2_13     C10     C11     C12     C13       0.000   10.00     2
+NUF    P_sp2_sp2_14     C10     C11     C12     H12     180.000   10.00     2
+NUF    P_sp2_sp2_15      F1     C11     C12     C13     180.000   10.00     2
+NUF    P_sp2_sp2_16      F1     C11     C12     H12       0.000   10.00     2
+NUF    P_sp2_sp2_17     C11     C12     C13      C8       0.000   10.00     2
+NUF    P_sp2_sp2_18     C11     C12     C13      N2     180.000   10.00     2
+NUF    P_sp2_sp2_19     H12     C12     C13      C8     180.000   10.00     2
+NUF    P_sp2_sp2_20     H12     C12     C13      N2       0.000   10.00     2
+NUF     other_tor_1      O1     NI1      N1      C7       0.000   10.00     1
+NUF     other_tor_2      O1     NI1      N1      C8     180.000   10.00     1
+NUF     other_tor_3      N1     NI1      N2     C13       0.000   10.00     1
+NUF     other_tor_4      N1     NI1      N2     C14     180.000   10.00     1
+NUF       sp2_sp2_1      C8     C13      N2     NI1       0.000   10.00     2
+NUF       sp2_sp2_2      C8     C13      N2     C14     180.000   10.00     2
+NUF       sp2_sp2_3     C12     C13      N2     NI1     180.000   10.00     2
+NUF       sp2_sp2_4     C12     C13      N2     C14       0.000   10.00     2
+NUF    P_sp2_sp2_21      N2     C13      C8      N1       0.000   10.00     2
+NUF    P_sp2_sp2_22      N2     C13      C8      C9     180.000   10.00     2
+NUF    P_sp2_sp2_23     C12     C13      C8      N1     180.000   10.00     2
+NUF    P_sp2_sp2_24     C12     C13      C8      C9       0.000   10.00     2
+NUF     other_tor_5      N1     NI1      N2     C13       0.000   10.00     1
+NUF     other_tor_6      N1     NI1      N2     C14     180.000   10.00     1
+NUF       sp2_sp2_5     C15     C14      N2     NI1       0.000   10.00     2
+NUF       sp2_sp2_6     C15     C14      N2     C13     180.000   10.00     2
+NUF       sp2_sp2_7     H14     C14      N2     NI1     180.000   10.00     2
+NUF       sp2_sp2_8     H14     C14      N2     C13       0.000   10.00     2
+NUF       sp2_sp2_9      N2     C14     C15     C20       0.000   10.00     2
+NUF      sp2_sp2_10      N2     C14     C15     C16     180.000   10.00     2
+NUF      sp2_sp2_11     H14     C14     C15     C20     180.000   10.00     2
+NUF      sp2_sp2_12     H14     C14     C15     C16       0.000   10.00     2
+NUF    P_sp2_sp2_25     C14     C15     C20      O2       0.000   10.00     2
+NUF    P_sp2_sp2_26     C14     C15     C20     C19     180.000   10.00     2
+NUF    P_sp2_sp2_27     C16     C15     C20      O2     180.000   10.00     2
+NUF    P_sp2_sp2_28     C16     C15     C20     C19       0.000   10.00     2
+NUF      sp2_sp2_13     C15     C20      O2     NI1       0.000   10.00     2
+NUF      sp2_sp2_14     C19     C20      O2     NI1     180.000   10.00     2
+NUF    P_sp2_sp2_29     C20     C15     C16     C17       0.000   10.00     2
+NUF    P_sp2_sp2_30     C20     C15     C16     H16     180.000   10.00     2
+NUF    P_sp2_sp2_31     C14     C15     C16     C17     180.000   10.00     2
+NUF    P_sp2_sp2_32     C14     C15     C16     H16       0.000   10.00     2
+NUF    P_sp2_sp2_33     C15     C16     C17     C18       0.000   10.00     2
+NUF    P_sp2_sp2_34     C15     C16     C17     H17     180.000   10.00     2
+NUF    P_sp2_sp2_35     H16     C16     C17     C18     180.000   10.00     2
+NUF    P_sp2_sp2_36     H16     C16     C17     H17       0.000   10.00     2
+NUF    P_sp2_sp2_37     C16     C17     C18     C19       0.000   10.00     2
+NUF    P_sp2_sp2_38     C16     C17     C18      O4     180.000   10.00     2
+NUF    P_sp2_sp2_39     H17     C17     C18     C19     180.000   10.00     2
+NUF    P_sp2_sp2_40     H17     C17     C18      O4       0.000   10.00     2
+NUF    P_sp2_sp2_41     C17     C18     C19     C20       0.000   10.00     2
+NUF    P_sp2_sp2_42     C17     C18     C19     H19     180.000   10.00     2
+NUF    P_sp2_sp2_43      O4     C18     C19     C20     180.000   10.00     2
+NUF    P_sp2_sp2_44      O4     C18     C19     H19       0.000   10.00     2
+NUF    P_sp2_sp2_45     C18     C19     C20     C15       0.000   10.00     2
+NUF    P_sp2_sp2_46     C18     C19     C20      O2     180.000   10.00     2
+NUF    P_sp2_sp2_47     H19     C19     C20     C15     180.000   10.00     2
+NUF    P_sp2_sp2_48     H19     C19     C20      O2       0.000   10.00     2
+NUF    P_sp2_sp2_49      C6      C1      C2      C3       0.000   10.00     2
+NUF    P_sp2_sp2_50      C6      C1      C2      H2     180.000   10.00     2
+NUF    P_sp2_sp2_51      O1      C1      C2      C3     180.000   10.00     2
+NUF    P_sp2_sp2_52      O1      C1      C2      H2       0.000   10.00     2
+NUF    P_sp2_sp2_53      C1      C2      C3      C4       0.000   10.00     2
+NUF    P_sp2_sp2_54      C1      C2      C3      O3     180.000   10.00     2
+NUF    P_sp2_sp2_55      H2      C2      C3      C4     180.000   10.00     2
+NUF    P_sp2_sp2_56      H2      C2      C3      O3       0.000   10.00     2
+NUF    P_sp2_sp2_57      C2      C3      C4      C5       0.000   10.00     2
+NUF    P_sp2_sp2_58      C2      C3      C4      H4     180.000   10.00     2
+NUF    P_sp2_sp2_59      O3      C3      C4      C5     180.000   10.00     2
+NUF    P_sp2_sp2_60      O3      C3      C4      H4       0.000   10.00     2
+NUF    P_sp2_sp2_61      C3      C4      C5      C6       0.000   10.00     2
+NUF    P_sp2_sp2_62      C3      C4      C5      H5     180.000   10.00     2
+NUF    P_sp2_sp2_63      H4      C4      C5      C6     180.000   10.00     2
+NUF    P_sp2_sp2_64      H4      C4      C5      H5       0.000   10.00     2
+NUF    P_sp2_sp2_65      C4      C5      C6      C1       0.000   10.00     2
+NUF    P_sp2_sp2_66      C4      C5      C6      C7     180.000   10.00     2
+NUF    P_sp2_sp2_67      H5      C5      C6      C1     180.000   10.00     2
+NUF    P_sp2_sp2_68      H5      C5      C6      C7       0.000   10.00     2
+NUF      sp2_sp2_15      C6      C1      O1     NI1       0.000   10.00     2
+NUF      sp2_sp2_16      C2      C1      O1     NI1     180.000   10.00     2
+NUF     other_tor_7      N1     NI1      O1      C1       0.000   10.00     1
+NUF     other_tor_8      O1     NI1      N1      C7       0.000   10.00     1
+NUF     other_tor_9      O1     NI1      N1      C8     180.000   10.00     1
+NUF      sp2_sp2_17      C6      C7      N1     NI1       0.000   10.00     2
+NUF      sp2_sp2_18      C6      C7      N1      C8     180.000   10.00     2
+NUF      sp2_sp2_19      H7      C7      N1     NI1     180.000   10.00     2
+NUF      sp2_sp2_20      H7      C7      N1      C8       0.000   10.00     2
+NUF      sp2_sp2_21      C1      C6      C7      N1       0.000   10.00     2
+NUF      sp2_sp2_22      C1      C6      C7      H7     180.000   10.00     2
+NUF      sp2_sp2_23      C5      C6      C7      N1     180.000   10.00     2
+NUF      sp2_sp2_24      C5      C6      C7      H7       0.000   10.00     2
+NUF       sp3_sp3_1     C24     C23      N3     C27      60.000   10.00     3
+NUF       sp3_sp3_2     C24     C23      N3     C22     180.000   10.00     3
+NUF       sp3_sp3_3     H23     C23      N3     C27     -60.000   10.00     3
+NUF       sp3_sp3_4     H23     C23      N3     C22      60.000   10.00     3
+NUF       sp3_sp3_5    H23A     C23      N3     C27     180.000   10.00     3
+NUF       sp3_sp3_6    H23A     C23      N3     C22     -60.000   10.00     3
+NUF       sp3_sp3_7      N3     C23     C24     C25     -60.000   10.00     3
+NUF       sp3_sp3_8      N3     C23     C24     H24      60.000   10.00     3
+NUF       sp3_sp3_9      N3     C23     C24    H24A     180.000   10.00     3
+NUF      sp3_sp3_10     H23     C23     C24     C25     180.000   10.00     3
+NUF      sp3_sp3_11     H23     C23     C24     H24     -60.000   10.00     3
+NUF      sp3_sp3_12     H23     C23     C24    H24A      60.000   10.00     3
+NUF      sp3_sp3_13    H23A     C23     C24     C25      60.000   10.00     3
+NUF      sp3_sp3_14    H23A     C23     C24     H24     180.000   10.00     3
+NUF      sp3_sp3_15    H23A     C23     C24    H24A     -60.000   10.00     3
+NUF      sp3_sp3_16     C23     C24     C25     C26      60.000   10.00     3
+NUF      sp3_sp3_17     C23     C24     C25     H25     180.000   10.00     3
+NUF      sp3_sp3_18     C23     C24     C25    H25A     -60.000   10.00     3
+NUF      sp3_sp3_19     H24     C24     C25     C26     -60.000   10.00     3
+NUF      sp3_sp3_20     H24     C24     C25     H25      60.000   10.00     3
+NUF      sp3_sp3_21     H24     C24     C25    H25A     180.000   10.00     3
+NUF      sp3_sp3_22    H24A     C24     C25     C26     180.000   10.00     3
+NUF      sp3_sp3_23    H24A     C24     C25     H25     -60.000   10.00     3
+NUF      sp3_sp3_24    H24A     C24     C25    H25A      60.000   10.00     3
+NUF      sp3_sp3_25     C24     C25     C26     C27     -60.000   10.00     3
+NUF      sp3_sp3_26     C24     C25     C26     H26      60.000   10.00     3
+NUF      sp3_sp3_27     C24     C25     C26    H26A     180.000   10.00     3
+NUF      sp3_sp3_28     H25     C25     C26     C27     180.000   10.00     3
+NUF      sp3_sp3_29     H25     C25     C26     H26     -60.000   10.00     3
+NUF      sp3_sp3_30     H25     C25     C26    H26A      60.000   10.00     3
+NUF      sp3_sp3_31    H25A     C25     C26     C27      60.000   10.00     3
+NUF      sp3_sp3_32    H25A     C25     C26     H26     180.000   10.00     3
+NUF      sp3_sp3_33    H25A     C25     C26    H26A     -60.000   10.00     3
+NUF      sp3_sp3_34     C25     C26     C27      N3      60.000   10.00     3
+NUF      sp3_sp3_35     C25     C26     C27     H27     180.000   10.00     3
+NUF      sp3_sp3_36     C25     C26     C27    H27A     -60.000   10.00     3
+NUF      sp3_sp3_37     H26     C26     C27      N3     -60.000   10.00     3
+NUF      sp3_sp3_38     H26     C26     C27     H27      60.000   10.00     3
+NUF      sp3_sp3_39     H26     C26     C27    H27A     180.000   10.00     3
+NUF      sp3_sp3_40    H26A     C26     C27      N3     180.000   10.00     3
+NUF      sp3_sp3_41    H26A     C26     C27     H27     -60.000   10.00     3
+NUF      sp3_sp3_42    H26A     C26     C27    H27A      60.000   10.00     3
+NUF      sp3_sp3_43     C31     C30      N4     C34      60.000   10.00     3
+NUF      sp3_sp3_44     C31     C30      N4     C29     180.000   10.00     3
+NUF      sp3_sp3_45     H30     C30      N4     C34     -60.000   10.00     3
+NUF      sp3_sp3_46     H30     C30      N4     C29      60.000   10.00     3
+NUF      sp3_sp3_47    H30A     C30      N4     C34     180.000   10.00     3
+NUF      sp3_sp3_48    H30A     C30      N4     C29     -60.000   10.00     3
+NUF      sp3_sp3_49      N4     C30     C31     C32     -60.000   10.00     3
+NUF      sp3_sp3_50      N4     C30     C31     H31      60.000   10.00     3
+NUF      sp3_sp3_51      N4     C30     C31    H31A     180.000   10.00     3
+NUF      sp3_sp3_52     H30     C30     C31     C32     180.000   10.00     3
+NUF      sp3_sp3_53     H30     C30     C31     H31     -60.000   10.00     3
+NUF      sp3_sp3_54     H30     C30     C31    H31A      60.000   10.00     3
+NUF      sp3_sp3_55    H30A     C30     C31     C32      60.000   10.00     3
+NUF      sp3_sp3_56    H30A     C30     C31     H31     180.000   10.00     3
+NUF      sp3_sp3_57    H30A     C30     C31    H31A     -60.000   10.00     3
+NUF      sp3_sp3_58     C30     C31     C32     C33      60.000   10.00     3
+NUF      sp3_sp3_59     C30     C31     C32     H32     180.000   10.00     3
+NUF      sp3_sp3_60     C30     C31     C32    H32A     -60.000   10.00     3
+NUF      sp3_sp3_61     H31     C31     C32     C33     -60.000   10.00     3
+NUF      sp3_sp3_62     H31     C31     C32     H32      60.000   10.00     3
+NUF      sp3_sp3_63     H31     C31     C32    H32A     180.000   10.00     3
+NUF      sp3_sp3_64    H31A     C31     C32     C33     180.000   10.00     3
+NUF      sp3_sp3_65    H31A     C31     C32     H32     -60.000   10.00     3
+NUF      sp3_sp3_66    H31A     C31     C32    H32A      60.000   10.00     3
+NUF      sp3_sp3_67     C31     C32     C33     C34     -60.000   10.00     3
+NUF      sp3_sp3_68     C31     C32     C33     H33      60.000   10.00     3
+NUF      sp3_sp3_69     C31     C32     C33    H33A     180.000   10.00     3
+NUF      sp3_sp3_70     H32     C32     C33     C34     180.000   10.00     3
+NUF      sp3_sp3_71     H32     C32     C33     H33     -60.000   10.00     3
+NUF      sp3_sp3_72     H32     C32     C33    H33A      60.000   10.00     3
+NUF      sp3_sp3_73    H32A     C32     C33     C34      60.000   10.00     3
+NUF      sp3_sp3_74    H32A     C32     C33     H33     180.000   10.00     3
+NUF      sp3_sp3_75    H32A     C32     C33    H33A     -60.000   10.00     3
+NUF      sp3_sp3_76     C32     C33     C34      N4      60.000   10.00     3
+NUF      sp3_sp3_77     C32     C33     C34     H34     180.000   10.00     3
+NUF      sp3_sp3_78     C32     C33     C34    H34A     -60.000   10.00     3
+NUF      sp3_sp3_79     H33     C33     C34      N4     -60.000   10.00     3
+NUF      sp3_sp3_80     H33     C33     C34     H34      60.000   10.00     3
+NUF      sp3_sp3_81     H33     C33     C34    H34A     180.000   10.00     3
+NUF      sp3_sp3_82    H33A     C33     C34      N4     180.000   10.00     3
+NUF      sp3_sp3_83    H33A     C33     C34     H34     -60.000   10.00     3
+NUF      sp3_sp3_84    H33A     C33     C34    H34A      60.000   10.00     3
+NUF    P_sp2_sp2_69      O1      C1      C6      C7       0.000   10.00     2
+NUF    P_sp2_sp2_70      O1      C1      C6      C5     180.000   10.00     2
+NUF    P_sp2_sp2_71      C2      C1      C6      C7     180.000   10.00     2
+NUF    P_sp2_sp2_72      C2      C1      C6      C5       0.000   10.00     2
+NUF      sp2_sp2_25     C13      C8      N1     NI1       0.000   10.00     2
+NUF      sp2_sp2_26     C13      C8      N1      C7     180.000   10.00     2
+NUF      sp2_sp2_27      C9      C8      N1     NI1     180.000   10.00     2
+NUF      sp2_sp2_28      C9      C8      N1      C7       0.000   10.00     2
+NUF    other_tor_10      N1     NI1      O2     C20      90.000   10.00     1
+NUF      sp2_sp2_29      C2      C3      O3     C21     180.000   10.00     2
+NUF      sp2_sp2_30      C4      C3      O3     C21       0.000   10.00     2
+NUF      sp3_sp3_85     C21     C22      N3     C23     180.000   10.00     3
+NUF      sp3_sp3_86     C21     C22      N3     C27     -60.000   10.00     3
+NUF      sp3_sp3_87     H22     C22      N3     C23      60.000   10.00     3
+NUF      sp3_sp3_88     H22     C22      N3     C27     180.000   10.00     3
+NUF      sp3_sp3_89    H22A     C22      N3     C23     -60.000   10.00     3
+NUF      sp3_sp3_90    H22A     C22      N3     C27      60.000   10.00     3
+NUF      sp3_sp3_91     C26     C27      N3     C23     180.000   10.00     3
+NUF      sp3_sp3_92     C26     C27      N3     C22     -60.000   10.00     3
+NUF      sp3_sp3_93     H27     C27      N3     C23      60.000   10.00     3
+NUF      sp3_sp3_94     H27     C27      N3     C22     180.000   10.00     3
+NUF      sp3_sp3_95    H27A     C27      N3     C23     -60.000   10.00     3
+NUF      sp3_sp3_96    H27A     C27      N3     C22      60.000   10.00     3
+NUF      sp3_sp3_97     C22     C21      O3      C3     180.000   10.00     3
+NUF      sp3_sp3_98     H21     C21      O3      C3     -60.000   10.00     3
+NUF      sp3_sp3_99    H21A     C21      O3      C3      60.000   10.00     3
+NUF     sp3_sp3_100     C28     C29      N4     C30     180.000   10.00     3
+NUF     sp3_sp3_101     C28     C29      N4     C34     -60.000   10.00     3
+NUF     sp3_sp3_102     H29     C29      N4     C30      60.000   10.00     3
+NUF     sp3_sp3_103     H29     C29      N4     C34     180.000   10.00     3
+NUF     sp3_sp3_104    H29A     C29      N4     C30     -60.000   10.00     3
+NUF     sp3_sp3_105    H29A     C29      N4     C34      60.000   10.00     3
+NUF     sp3_sp3_106     C33     C34      N4     C30     180.000   10.00     3
+NUF     sp3_sp3_107     C33     C34      N4     C29     -60.000   10.00     3
+NUF     sp3_sp3_108     H34     C34      N4     C30      60.000   10.00     3
+NUF     sp3_sp3_109     H34     C34      N4     C29     180.000   10.00     3
+NUF     sp3_sp3_110    H34A     C34      N4     C30     -60.000   10.00     3
+NUF     sp3_sp3_111    H34A     C34      N4     C29      60.000   10.00     3
+NUF      sp2_sp2_31     C17     C18      O4     C28     180.000   10.00     2
+NUF      sp2_sp2_32     C19     C18      O4     C28       0.000   10.00     2
+NUF     sp3_sp3_112     C29     C28      O4     C18     180.000   10.00     3
+NUF     sp3_sp3_113     H28     C28      O4     C18     -60.000   10.00     3
+NUF     sp3_sp3_114    H28A     C28      O4     C18      60.000   10.00     3
+NUF     sp3_sp3_115      O3     C21     C22      N3     180.000   10.00     3
+NUF     sp3_sp3_116      O3     C21     C22     H22     -60.000   10.00     3
+NUF     sp3_sp3_117      O3     C21     C22    H22A      60.000   10.00     3
+NUF     sp3_sp3_118     H21     C21     C22      N3      60.000   10.00     3
+NUF     sp3_sp3_119     H21     C21     C22     H22     180.000   10.00     3
+NUF     sp3_sp3_120     H21     C21     C22    H22A     -60.000   10.00     3
+NUF     sp3_sp3_121    H21A     C21     C22      N3     -60.000   10.00     3
+NUF     sp3_sp3_122    H21A     C21     C22     H22      60.000   10.00     3
+NUF     sp3_sp3_123    H21A     C21     C22    H22A     180.000   10.00     3
+NUF     sp3_sp3_124      O4     C28     C29      N4     180.000   10.00     3
+NUF     sp3_sp3_125      O4     C28     C29     H29     -60.000   10.00     3
+NUF     sp3_sp3_126      O4     C28     C29    H29A      60.000   10.00     3
+NUF     sp3_sp3_127     H28     C28     C29      N4      60.000   10.00     3
+NUF     sp3_sp3_128     H28     C28     C29     H29     180.000   10.00     3
+NUF     sp3_sp3_129     H28     C28     C29    H29A     -60.000   10.00     3
+NUF     sp3_sp3_130    H28A     C28     C29      N4     -60.000   10.00     3
+NUF     sp3_sp3_131    H28A     C28     C29     H29      60.000   10.00     3
+NUF     sp3_sp3_132    H28A     C28     C29    H29A     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NUF    plan-1    C1   0.020
+NUF    plan-1    C2   0.020
+NUF    plan-1    C3   0.020
+NUF    plan-1    C4   0.020
+NUF    plan-1    C5   0.020
+NUF    plan-1    C6   0.020
+NUF    plan-1    C7   0.020
+NUF    plan-1    H2   0.020
+NUF    plan-1    H4   0.020
+NUF    plan-1    H5   0.020
+NUF    plan-1    O1   0.020
+NUF    plan-1    O3   0.020
+NUF    plan-2    C6   0.020
+NUF    plan-2    C7   0.020
+NUF    plan-2    H7   0.020
+NUF    plan-2    N1   0.020
+NUF    plan-3   C10   0.020
+NUF    plan-3   C11   0.020
+NUF    plan-3   C12   0.020
+NUF    plan-3   C13   0.020
+NUF    plan-3    C8   0.020
+NUF    plan-3    C9   0.020
+NUF    plan-3    F1   0.020
+NUF    plan-3    F2   0.020
+NUF    plan-3   H12   0.020
+NUF    plan-3    H9   0.020
+NUF    plan-3    N1   0.020
+NUF    plan-3    N2   0.020
+NUF    plan-4   C14   0.020
+NUF    plan-4   C15   0.020
+NUF    plan-4   H14   0.020
+NUF    plan-4    N2   0.020
+NUF    plan-5   C14   0.020
+NUF    plan-5   C15   0.020
+NUF    plan-5   C16   0.020
+NUF    plan-5   C17   0.020
+NUF    plan-5   C18   0.020
+NUF    plan-5   C19   0.020
+NUF    plan-5   C20   0.020
+NUF    plan-5   H16   0.020
+NUF    plan-5   H17   0.020
+NUF    plan-5   H19   0.020
+NUF    plan-5    O2   0.020
+NUF    plan-5    O4   0.020

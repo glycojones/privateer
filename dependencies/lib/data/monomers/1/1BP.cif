@@ -1,0 +1,121 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1BP     1BP      1-BROMOPROPANE-2-OL     NON-POLYMER     12     5     .     
+#
+data_comp_1BP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+1BP     BR      BR      BR      0       21.047      36.422      2.001       
+1BP     C1      C       CH2     0       20.172      35.744      3.591       
+1BP     C2      C       CH1     0       19.061      36.667      4.016       
+1BP     C3      C       CH3     0       17.890      36.683      3.059       
+1BP     O2      O       OH1     0       18.632      36.294      5.330       
+1BP     H11     H       H       0       20.830      35.664      4.321       
+1BP     H12     H       H       0       19.805      34.847      3.409       
+1BP     H21     H       H       0       19.426      37.587      4.082       
+1BP     H31     H       H       0       17.071      36.443      3.530       
+1BP     H32     H       H       0       18.040      36.049      2.334       
+1BP     H33     H       H       0       17.793      37.578      2.686       
+1BP     HO21    H       H       0       18.312      35.507      5.329       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1BP       BR        C1        SINGLE    n         1.938     0.015     1.938     0.015     
+1BP       C1        C2        SINGLE    n         1.501     0.016     1.501     0.016     
+1BP       C2        C3        SINGLE    n         1.501     0.016     1.501     0.016     
+1BP       C2        O2        SINGLE    n         1.424     0.020     1.424     0.020     
+1BP       C1        H11       SINGLE    n         1.089     0.010     0.986     0.010     
+1BP       C1        H12       SINGLE    n         1.089     0.010     0.986     0.010     
+1BP       C2        H21       SINGLE    n         1.089     0.010     0.992     0.019     
+1BP       C3        H31       SINGLE    n         1.089     0.010     0.974     0.015     
+1BP       C3        H32       SINGLE    n         1.089     0.010     0.974     0.015     
+1BP       C3        H33       SINGLE    n         1.089     0.010     0.974     0.015     
+1BP       O2        HO21      SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+1BP          BR          C1          C2     109.720    2.68
+1BP          BR          C1         H11     109.344    1.50
+1BP          BR          C1         H12     109.344    1.50
+1BP          C2          C1         H11     109.295    1.50
+1BP          C2          C1         H12     109.295    1.50
+1BP         H11          C1         H12     107.991    1.50
+1BP          C1          C2          C3     113.120    1.50
+1BP          C1          C2          O2     109.542    2.20
+1BP          C1          C2         H21     109.278    1.50
+1BP          C3          C2          O2     109.686    2.24
+1BP          C3          C2         H21     109.344    1.50
+1BP          O2          C2         H21     108.183    1.96
+1BP          C2          C3         H31     109.508    1.50
+1BP          C2          C3         H32     109.508    1.50
+1BP          C2          C3         H33     109.508    1.50
+1BP         H31          C3         H32     109.425    1.50
+1BP         H31          C3         H33     109.425    1.50
+1BP         H32          C3         H33     109.425    1.50
+1BP          C2          O2        HO21     109.265    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+1BP             sp3_sp3_1          BR          C1          C2          C3     180.000   10.00     3
+1BP            sp3_sp3_10          C1          C2          C3         H31     180.000   10.00     3
+1BP            sp3_sp3_19          C1          C2          O2        HO21     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+1BP    chir_1    C2    O2    C1    C3    negative
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+1BP SMILES           ACDLabs              10.04 "BrCC(O)C"
+1BP SMILES_CANONICAL CACTVS               3.341 "C[C@@H](O)CBr"
+1BP SMILES           CACTVS               3.341 "C[CH](O)CBr"
+1BP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@H](CBr)O"
+1BP SMILES           "OpenEye OEToolkits" 1.5.0 "CC(CBr)O"
+1BP InChI            InChI                1.03  "InChI=1S/C3H7BrO/c1-3(5)2-4/h3,5H,2H2,1H3/t3-/m1/s1"
+1BP InChIKey         InChI                1.03  WEGOLYBUWCMMMY-GSVOUGTGSA-N
+1BP ?                acedrg               202         "dictionary generator"                  
+1BP ?                acedrg_database      11          "data source"                           
+1BP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+1BP ?                refmac5              5.8.0189    "optimization tool"                     

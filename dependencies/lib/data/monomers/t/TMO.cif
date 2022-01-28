@@ -1,0 +1,121 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TMO     TMO     "trimethylamineoxide"     NON-POLYMER     14     5     .     
+#
+data_comp_TMO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TMO     CAA     C       CH3     0       -81.487     -3.169      6.307       
+TMO     NAC     N       NT      1       -80.453     -3.280      5.224       
+TMO     CAD     C       CH3     0       -79.306     -4.117      5.703       
+TMO     CAB     C       CH3     0       -81.046     -3.844      3.944       
+TMO     OAE     O       OC      -1      -79.961     -1.985      4.959       
+TMO     HAA     H       H       0       -81.155     -2.588      7.008       
+TMO     HAAA    H       H       0       -81.670     -4.047      6.675       
+TMO     HAAB    H       H       0       -82.304     -2.795      5.941       
+TMO     HAD     H       H       0       -78.938     -3.726      6.509       
+TMO     HADA    H       H       0       -78.621     -4.150      5.018       
+TMO     HADB    H       H       0       -79.620     -5.015      5.892       
+TMO     HAB     H       H       0       -81.144     -3.132      3.293       
+TMO     HABA    H       H       0       -81.917     -4.233      4.122       
+TMO     HABB    H       H       0       -80.464     -4.529      3.580       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TMO       CAA       NAC       SINGLE    n         1.488     0.019     1.488     0.019     
+TMO       NAC       CAD       SINGLE    n         1.488     0.019     1.488     0.019     
+TMO       NAC       CAB       SINGLE    n         1.488     0.019     1.488     0.019     
+TMO       NAC       OAE       SINGLE    n         1.408     0.020     1.408     0.020     
+TMO       CAA       HAA       SINGLE    n         1.089     0.010     0.969     0.015     
+TMO       CAA       HAAA      SINGLE    n         1.089     0.010     0.969     0.015     
+TMO       CAA       HAAB      SINGLE    n         1.089     0.010     0.969     0.015     
+TMO       CAD       HAD       SINGLE    n         1.089     0.010     0.969     0.015     
+TMO       CAD       HADA      SINGLE    n         1.089     0.010     0.969     0.015     
+TMO       CAD       HADB      SINGLE    n         1.089     0.010     0.969     0.015     
+TMO       CAB       HAB       SINGLE    n         1.089     0.010     0.969     0.015     
+TMO       CAB       HABA      SINGLE    n         1.089     0.010     0.969     0.015     
+TMO       CAB       HABB      SINGLE    n         1.089     0.010     0.969     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TMO         NAC         CAA         HAA     109.312    1.50
+TMO         NAC         CAA        HAAA     109.312    1.50
+TMO         NAC         CAA        HAAB     109.312    1.50
+TMO         HAA         CAA        HAAA     109.462    1.50
+TMO         HAA         CAA        HAAB     109.462    1.50
+TMO        HAAA         CAA        HAAB     109.462    1.50
+TMO         CAA         NAC         CAD     110.773    1.50
+TMO         CAA         NAC         CAB     110.773    1.50
+TMO         CAA         NAC         OAE     109.251    1.50
+TMO         CAD         NAC         CAB     110.773    1.50
+TMO         CAD         NAC         OAE     109.251    1.50
+TMO         CAB         NAC         OAE     109.251    1.50
+TMO         NAC         CAD         HAD     109.312    1.50
+TMO         NAC         CAD        HADA     109.312    1.50
+TMO         NAC         CAD        HADB     109.312    1.50
+TMO         HAD         CAD        HADA     109.462    1.50
+TMO         HAD         CAD        HADB     109.462    1.50
+TMO        HADA         CAD        HADB     109.462    1.50
+TMO         NAC         CAB         HAB     109.312    1.50
+TMO         NAC         CAB        HABA     109.312    1.50
+TMO         NAC         CAB        HABB     109.312    1.50
+TMO         HAB         CAB        HABA     109.462    1.50
+TMO         HAB         CAB        HABB     109.462    1.50
+TMO        HABA         CAB        HABB     109.462    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TMO             sp3_sp3_1         HAA         CAA         NAC         CAD     180.000   10.00     3
+TMO            sp3_sp3_10         HAD         CAD         NAC         CAA     180.000   10.00     3
+TMO            sp3_sp3_19         HAB         CAB         NAC         CAA     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TMO SMILES           ACDLabs              12.01 "[O-][N+](C)(C)C"
+TMO SMILES_CANONICAL CACTVS               3.370 "C[N+](C)(C)[O-]"
+TMO SMILES           CACTVS               3.370 "C[N+](C)(C)[O-]"
+TMO SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C[N+](C)(C)[O-]"
+TMO SMILES           "OpenEye OEToolkits" 1.7.0 "C[N+](C)(C)[O-]"
+TMO InChI            InChI                1.03  "InChI=1S/C3H9NO/c1-4(2,3)5/h1-3H3"
+TMO InChIKey         InChI                1.03  UYPYRKYUKCHHIB-UHFFFAOYSA-N
+TMO ?                acedrg               190         "dictionary generator"                  
+TMO ?                acedrg_database      11          "data source"                           
+TMO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TMO ?                refmac5              5.8.0158    "optimization tool"                     

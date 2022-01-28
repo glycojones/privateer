@@ -1,0 +1,220 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SOL      SOL 'L-sorbose                           ' non-polymer        24  12 .  
+#
+data_comp_SOL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SOL     O6      O       OH1     0       3.660       1.278       0.676       
+SOL     C6      C       CH2     0.000   2.469       1.243       -0.105      
+SOL     C5      C       CH1     0.000   1.571       0.090       0.308       
+SOL     O5      O       OH1     0.000   2.190       -1.164      -0.000      
+SOL     C4      C       CH1     0.000   0.187       0.172       -0.344      
+SOL     O4      O       OH1     0.000   0.310       0.104       -1.768      
+SOL     C3      C       CH1     0.000   -0.785      -0.908      0.149       
+SOL     O3      O       OH1     0.000   -0.326      -2.191      -0.226      
+SOL     C2      C       C       0.000   -2.196      -0.631      -0.368      
+SOL     O2      O       O       0.000   -2.431      -0.653      -1.555      
+SOL     C1      C       CH2     0.000   -3.272      -0.335      0.635       
+SOL     O1      O       OH1     0.000   -2.978      0.789       1.431       
+SOL     H12     H       H       0.000   4.141       0.615       0.460       
+SOL     H10     H       H       0.000   1.978       2.094       0.011       
+SOL     H11     H       H       0.000   2.707       1.151       -1.061      
+SOL     H8      H       H       0.000   1.453       0.142       1.303       
+SOL     H9      H       H       0.000   2.580       -1.191      -0.754      
+SOL     H6      H       H       0.000   -0.203      1.060       -0.115      
+SOL     H7      H       H       0.000   0.672       -0.622      -2.003      
+SOL     H4      H       H       0.000   -0.808      -0.870      1.132       
+SOL     H5      H       H       0.000   -0.520      -2.389      -1.030      
+SOL     H1      H       H       0.000   -3.392      -1.113      1.212       
+SOL     H2      H       H       0.000   -4.114      -0.183      0.165       
+SOL     H3      H       H       0.000   -3.042      1.496       0.967       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SOL       O6        C6        single    n         1.425     0.010     1.425     0.010     
+SOL       C6        C5        single    n         1.516     0.012     1.516     0.012     
+SOL       C5        O5        single    n         1.429     0.010     1.429     0.010     
+SOL       C5        C4        single    n         1.530     0.010     1.530     0.010     
+SOL       C4        O4        single    n         1.428     0.010     1.428     0.010     
+SOL       C4        C3        single    n         1.529     0.013     1.529     0.013     
+SOL       C3        O3        single    n         1.410     0.010     1.410     0.010     
+SOL       C3        C2        single    n         1.524     0.011     1.524     0.011     
+SOL       C2        O2        double    n         1.210     0.020     1.210     0.020     
+SOL       C2        C1        single    n         1.499     0.012     1.499     0.012     
+SOL       C1        O1        single    n         1.409     0.010     1.409     0.010     
+SOL       O6        H12       single    n         0.970     0.012     0.839     0.014     
+SOL       C6        H10       single    n         1.089     0.010     0.989     0.005     
+SOL       C6        H11       single    n         1.089     0.010     0.989     0.005     
+SOL       C5        H8        single    n         1.089     0.010     0.989     0.005     
+SOL       O5        H9        single    n         0.970     0.012     0.839     0.014     
+SOL       C4        H6        single    n         1.089     0.010     0.989     0.005     
+SOL       O4        H7        single    n         0.970     0.012     0.839     0.014     
+SOL       C3        H4        single    n         1.089     0.010     0.989     0.005     
+SOL       O3        H5        single    n         0.970     0.012     0.839     0.014     
+SOL       C1        H1        single    n         1.089     0.010     0.989     0.005     
+SOL       C1        H2        single    n         1.089     0.010     0.989     0.005     
+SOL       O1        H3        single    n         0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SOL          C6          O6         H12     108.343    3.00
+SOL          O6          C6          C5     111.364    1.50
+SOL          O6          C6         H10     109.281    1.50
+SOL          O6          C6         H11     109.281    1.50
+SOL          C5          C6         H10     109.234    1.50
+SOL          C5          C6         H11     109.234    1.50
+SOL         H10          C6         H11     108.309    1.50
+SOL          C6          C5          O5     109.623    1.60
+SOL          C6          C5          C4     112.159    1.50
+SOL          C6          C5          H8     107.986    1.50
+SOL          O5          C5          C4     109.549    1.85
+SOL          O5          C5          H8     108.591    1.50
+SOL          C4          C5          H8     108.777    1.50
+SOL          C5          O5          H9     111.202    3.00
+SOL          C5          C4          O4     109.164    1.97
+SOL          C5          C4          C3     113.626    1.61
+SOL          C5          C4          H6     108.336    1.50
+SOL          O4          C4          C3     109.080    1.54
+SOL          O4          C4          H6     108.238    1.50
+SOL          C3          C4          H6     108.269    1.67
+SOL          C4          O4          H7     108.581    3.00
+SOL          C4          C3          O3     109.497    2.31
+SOL          C4          C3          C2     110.123    1.50
+SOL          C4          C3          H4     108.645    1.50
+SOL          O3          C3          C2     111.032    1.80
+SOL          O3          C3          H4     108.642    1.50
+SOL          C2          C3          H4     108.445    1.51
+SOL          C3          O3          H5     108.947    3.00
+SOL          C3          C2          O2     120.788    1.81
+SOL          C3          C2          C1     117.787    2.55
+SOL          O2          C2          C1     121.425    1.86
+SOL          C2          C1          O1     112.807    1.96
+SOL          C2          C1          H1     109.084    1.50
+SOL          C2          C1          H2     109.084    1.50
+SOL          O1          C1          H1     109.225    1.50
+SOL          O1          C1          H2     109.225    1.50
+SOL          H1          C1          H2     107.716    1.50
+SOL          C1          O1          H3     109.906    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SOL             sp3_sp3_1          C5          C6          O6         H12     180.000   10.00     3
+SOL             sp3_sp3_2         H10          C6          O6         H12      60.000   10.00     3
+SOL             sp3_sp3_3         H11          C6          O6         H12     -60.000   10.00     3
+SOL             sp3_sp3_4          O5          C5          C6          O6     180.000   10.00     3
+SOL             sp3_sp3_5          O5          C5          C6         H10     -60.000   10.00     3
+SOL             sp3_sp3_6          O5          C5          C6         H11      60.000   10.00     3
+SOL             sp3_sp3_7          C4          C5          C6          O6      60.000   10.00     3
+SOL             sp3_sp3_8          C4          C5          C6         H10     180.000   10.00     3
+SOL             sp3_sp3_9          C4          C5          C6         H11     -60.000   10.00     3
+SOL            sp3_sp3_10          H8          C5          C6          O6     -60.000   10.00     3
+SOL            sp3_sp3_11          H8          C5          C6         H10      60.000   10.00     3
+SOL            sp3_sp3_12          H8          C5          C6         H11     180.000   10.00     3
+SOL            sp3_sp3_13          C6          C5          O5          H9     180.000   10.00     3
+SOL            sp3_sp3_14          C4          C5          O5          H9      60.000   10.00     3
+SOL            sp3_sp3_15          H8          C5          O5          H9     -60.000   10.00     3
+SOL            sp3_sp3_16          O4          C4          C5          C6     180.000   10.00     3
+SOL            sp3_sp3_17          O4          C4          C5          O5     -60.000   10.00     3
+SOL            sp3_sp3_18          O4          C4          C5          H8      60.000   10.00     3
+SOL            sp3_sp3_19          C3          C4          C5          C6      60.000   10.00     3
+SOL            sp3_sp3_20          C3          C4          C5          O5     180.000   10.00     3
+SOL            sp3_sp3_21          C3          C4          C5          H8     -60.000   10.00     3
+SOL            sp3_sp3_22          H6          C4          C5          C6     -60.000   10.00     3
+SOL            sp3_sp3_23          H6          C4          C5          O5      60.000   10.00     3
+SOL            sp3_sp3_24          H6          C4          C5          H8     180.000   10.00     3
+SOL            sp3_sp3_25          C5          C4          O4          H7     180.000   10.00     3
+SOL            sp3_sp3_26          C3          C4          O4          H7      60.000   10.00     3
+SOL            sp3_sp3_27          H6          C4          O4          H7     -60.000   10.00     3
+SOL            sp3_sp3_28          O3          C3          C4          C5     180.000   10.00     3
+SOL            sp3_sp3_29          O3          C3          C4          O4     -60.000   10.00     3
+SOL            sp3_sp3_30          O3          C3          C4          H6      60.000   10.00     3
+SOL            sp3_sp3_31          C2          C3          C4          C5      60.000   10.00     3
+SOL            sp3_sp3_32          C2          C3          C4          O4     180.000   10.00     3
+SOL            sp3_sp3_33          C2          C3          C4          H6     -60.000   10.00     3
+SOL            sp3_sp3_34          H4          C3          C4          C5     -60.000   10.00     3
+SOL            sp3_sp3_35          H4          C3          C4          O4      60.000   10.00     3
+SOL            sp3_sp3_36          H4          C3          C4          H6     180.000   10.00     3
+SOL            sp3_sp3_37          C4          C3          O3          H5     180.000   10.00     3
+SOL            sp3_sp3_38          C2          C3          O3          H5      60.000   10.00     3
+SOL            sp3_sp3_39          H4          C3          O3          H5     -60.000   10.00     3
+SOL             sp2_sp3_1          O2          C2          C3          C4       0.000   10.00     6
+SOL             sp2_sp3_2          O2          C2          C3          O3     120.000   10.00     6
+SOL             sp2_sp3_3          O2          C2          C3          H4    -120.000   10.00     6
+SOL             sp2_sp3_4          C1          C2          C3          C4     180.000   10.00     6
+SOL             sp2_sp3_5          C1          C2          C3          O3     -60.000   10.00     6
+SOL             sp2_sp3_6          C1          C2          C3          H4      60.000   10.00     6
+SOL             sp2_sp3_7          C3          C2          C1          H1       0.000   10.00     6
+SOL             sp2_sp3_8          C3          C2          C1          O1     120.000   10.00     6
+SOL             sp2_sp3_9          C3          C2          C1          H2    -120.000   10.00     6
+SOL            sp2_sp3_10          O2          C2          C1          H1     180.000   10.00     6
+SOL            sp2_sp3_11          O2          C2          C1          O1     -60.000   10.00     6
+SOL            sp2_sp3_12          O2          C2          C1          H2      60.000   10.00     6
+SOL            sp3_sp3_40          C2          C1          O1          H3     180.000   10.00     3
+SOL            sp3_sp3_41          H1          C1          O1          H3      60.000   10.00     3
+SOL            sp3_sp3_42          H2          C1          O1          H3     -60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SOL    chir_1    C5    O5    C4    C6    positive
+SOL    chir_2    C4    O4    C3    C5    negative
+SOL    chir_3    C3    O3    C2    C4    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SOL    plan-1          C1   0.020
+SOL    plan-1          C2   0.020
+SOL    plan-1          C3   0.020
+SOL    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SOL SMILES           ACDLabs              12.01 "O=C(C(O)C(O)C(O)CO)CO"                                                            
+SOL SMILES_CANONICAL CACTVS               3.370 "OC[C@H](O)[C@@H](O)[C@H](O)C(=O)CO"                                               
+SOL SMILES           CACTVS               3.370 "OC[CH](O)[CH](O)[CH](O)C(=O)CO"                                                   
+SOL InChI            InChI                1.03  "InChI=1S/C6H12O6/c7-1-3(9)5(11)6(12)4(10)2-8/h3,5-9,11-12H,1-2H2/t3-,5+,6+/m0/s1" 
+SOL InChIKey         InChI                1.03  BJHIKXHVCXFQLS-OTWZMJIISA-N                                                        

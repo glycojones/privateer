@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3HR     3HR      "(3R)-3-hydroxybutanoic acid"     NON-POLYMER     14     7     .     
+#
+data_comp_3HR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3HR     C1      C       C       0       2.045       0.283       -0.458      
+3HR     O1      O       O       0       2.828       -0.632      -0.133      
+3HR     C2      C       CH2     0       0.591       -0.072      -0.714      
+3HR     O2      O       OH1     0       -0.362      1.289       1.034       
+3HR     C3      C       CH1     0       -0.256      -0.058      0.550       
+3HR     O3      O       OC      -1      2.393       1.473       -0.583      
+3HR     C4      C       CH3     0       -1.636      -0.639      0.343       
+3HR     H2      H       H       0       0.545       -0.967      -1.115      
+3HR     H2A     H       H       0       0.213       0.566       -1.356      
+3HR     HO2     H       H       0       -0.763      1.777       0.466       
+3HR     H3      H       H       0       0.205       -0.585      1.247       
+3HR     H4      H       H       0       -2.131      -0.616      1.182       
+3HR     H4A     H       H       0       -1.561      -1.562      0.040       
+3HR     H4B     H       H       0       -2.114      -0.118      -0.326      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3HR       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+3HR       C1        C2        SINGLE    n         1.519     0.012     1.519     0.012     
+3HR       C1        O3        SINGLE    n         1.247     0.019     1.247     0.019     
+3HR       C2        C3        SINGLE    n         1.520     0.016     1.520     0.016     
+3HR       O2        C3        SINGLE    n         1.430     0.020     1.430     0.020     
+3HR       C3        C4        SINGLE    n         1.510     0.020     1.510     0.020     
+3HR       C2        H2        SINGLE    n         1.089     0.010     0.981     0.019     
+3HR       C2        H2A       SINGLE    n         1.089     0.010     0.981     0.019     
+3HR       O2        HO2       SINGLE    n         0.970     0.012     0.848     0.020     
+3HR       C3        H3        SINGLE    n         1.089     0.010     0.988     0.020     
+3HR       C4        H4        SINGLE    n         1.089     0.010     0.974     0.015     
+3HR       C4        H4A       SINGLE    n         1.089     0.010     0.974     0.015     
+3HR       C4        H4B       SINGLE    n         1.089     0.010     0.974     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3HR          O1          C1          C2     118.254    1.50
+3HR          O1          C1          O3     123.492    1.50
+3HR          C2          C1          O3     118.254    1.50
+3HR          C1          C2          C3     111.511    2.91
+3HR          C1          C2          H2     108.816    1.50
+3HR          C1          C2         H2A     108.816    1.50
+3HR          C3          C2          H2     108.544    1.56
+3HR          C3          C2         H2A     108.544    1.56
+3HR          H2          C2         H2A     107.737    1.50
+3HR          C3          O2         HO2     109.880    2.07
+3HR          C2          C3          O2     108.747    2.04
+3HR          C2          C3          C4     112.969    1.50
+3HR          C2          C3          H3     108.825    1.50
+3HR          O2          C3          C4     109.534    2.02
+3HR          O2          C3          H3     107.545    2.92
+3HR          C4          C3          H3     108.620    2.54
+3HR          C3          C4          H4     109.852    1.50
+3HR          C3          C4         H4A     109.852    1.50
+3HR          C3          C4         H4B     109.852    1.50
+3HR          H4          C4         H4A     109.425    1.50
+3HR          H4          C4         H4B     109.425    1.50
+3HR         H4A          C4         H4B     109.425    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3HR             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+3HR             sp3_sp3_1          C1          C2          C3          O2     180.000   10.00     3
+3HR            sp3_sp3_11          C2          C3          O2         HO2      60.000   10.00     3
+3HR            sp3_sp3_13          C2          C3          C4          H4     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+3HR    chir_1    C3    O2    C2    C4    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3HR    plan-1          C1   0.020
+3HR    plan-1          C2   0.020
+3HR    plan-1          O1   0.020
+3HR    plan-1          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3HR SMILES           ACDLabs              12.01 "O=C(O)CC(O)C"
+3HR InChI            InChI                1.03  "InChI=1S/C4H8O3/c1-3(5)2-4(6)7/h3,5H,2H2,1H3,(H,6,7)/t3-/m1/s1"
+3HR InChIKey         InChI                1.03  WHBMMWSBFZVSSR-GSVOUGTGSA-N
+3HR SMILES_CANONICAL CACTVS               3.370 "C[C@@H](O)CC(O)=O"
+3HR SMILES           CACTVS               3.370 "C[CH](O)CC(O)=O"
+3HR SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C[C@H](CC(=O)O)O"
+3HR SMILES           "OpenEye OEToolkits" 1.7.6 "CC(CC(=O)O)O"
+3HR ?                acedrg               202         "dictionary generator"                  
+3HR ?                acedrg_database      11          "data source"                           
+3HR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3HR ?                refmac5              5.8.0189    "optimization tool"                     

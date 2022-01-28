@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HTS     HTS      2-MERCAPTOPHENOL     NON-POLYMER     14     8     .     
+#
+data_comp_HTS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HTS     C6      C       CR16    0       -6.821      3.193       16.685      
+HTS     C1      C       CR6     0       -6.631      1.836       16.948      
+HTS     C2      C       CR6     0       -5.789      1.091       16.094      
+HTS     C3      C       CR16    0       -5.158      1.702       15.005      
+HTS     C4      C       CR16    0       -5.365      3.059       14.765      
+HTS     C5      C       CR16    0       -6.190      3.792       15.602      
+HTS     O1      O       OH1     0       -7.254      1.263       18.011      
+HTS     S1      S       SH1     0       -5.545      -0.598      16.411      
+HTS     H6      H       H       0       -7.381      3.702       17.248      
+HTS     H3      H       H       0       -4.600      1.198       14.442      
+HTS     H4      H       H       0       -4.943      3.476       14.033      
+HTS     H5      H       H       0       -6.328      4.710       15.436      
+HTS     HO1     H       H       0       -7.825      0.690       17.726      
+HTS     HS1     H       HSH1    0       -4.797      -1.072      15.556      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HTS       C6        C1        DOUBLE    y         1.387     0.010     1.387     0.010     
+HTS       C6        C5        SINGLE    y         1.378     0.011     1.378     0.011     
+HTS       C1        C2        SINGLE    y         1.400     0.013     1.400     0.013     
+HTS       C1        O1        SINGLE    n         1.358     0.011     1.358     0.011     
+HTS       C2        C3        DOUBLE    y         1.390     0.015     1.390     0.015     
+HTS       C2        S1        SINGLE    n         1.735     0.010     1.735     0.010     
+HTS       C3        C4        SINGLE    y         1.387     0.010     1.387     0.010     
+HTS       C4        C5        DOUBLE    y         1.375     0.011     1.375     0.011     
+HTS       C6        H6        SINGLE    n         1.082     0.013     0.975     0.010     
+HTS       C3        H3        SINGLE    n         1.082     0.013     0.975     0.010     
+HTS       C4        H4        SINGLE    n         1.082     0.013     0.975     0.010     
+HTS       C5        H5        SINGLE    n         1.082     0.013     0.975     0.010     
+HTS       O1        HO1       SINGLE    n         0.970     0.012     0.839     0.014     
+HTS       S1        HS1       SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HTS          C1          C6          C5     119.436    1.50
+HTS          C1          C6          H6     120.003    1.50
+HTS          C5          C6          H6     120.561    1.50
+HTS          C6          C1          C2     119.191    1.74
+HTS          C6          C1          O1     120.411    2.61
+HTS          C2          C1          O1     120.399    2.25
+HTS          C1          C2          C3     121.802    1.50
+HTS          C1          C2          S1     118.154    1.50
+HTS          C3          C2          S1     120.044    1.77
+HTS          C2          C3          C4     119.905    1.50
+HTS          C2          C3          H3     119.818    1.50
+HTS          C4          C3          H3     120.277    1.50
+HTS          C3          C4          C5     119.650    1.50
+HTS          C3          C4          H4     120.074    1.50
+HTS          C5          C4          H4     120.276    1.50
+HTS          C6          C5          C4     120.015    1.50
+HTS          C6          C5          H5     119.808    1.50
+HTS          C4          C5          H5     120.177    1.50
+HTS          C1          O1         HO1     109.113    3.00
+HTS          C2          S1         HS1     109.479    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HTS       const_sp2_sp2_3          O1          C1          C6          C5     180.000   10.00     2
+HTS              const_21          C4          C5          C6          C1       0.000   10.00     2
+HTS       const_sp2_sp2_8          O1          C1          C2          S1       0.000   10.00     2
+HTS              const_11          S1          C2          C3          C4     180.000   10.00     2
+HTS              const_13          C2          C3          C4          C5       0.000   10.00     2
+HTS              const_17          C3          C4          C5          C6       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HTS    plan-1          C1   0.020
+HTS    plan-1          C2   0.020
+HTS    plan-1          C3   0.020
+HTS    plan-1          C4   0.020
+HTS    plan-1          C5   0.020
+HTS    plan-1          C6   0.020
+HTS    plan-1          H3   0.020
+HTS    plan-1          H4   0.020
+HTS    plan-1          H5   0.020
+HTS    plan-1          H6   0.020
+HTS    plan-1          O1   0.020
+HTS    plan-1          S1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HTS SMILES           ACDLabs              12.01 Oc1ccccc1S
+HTS InChI            InChI                1.03  "InChI=1S/C6H6OS/c7-5-3-1-2-4-6(5)8/h1-4,7-8H"
+HTS InChIKey         InChI                1.03  VMKYTRPNOVFCGZ-UHFFFAOYSA-N
+HTS SMILES_CANONICAL CACTVS               3.370 Oc1ccccc1S
+HTS SMILES           CACTVS               3.370 Oc1ccccc1S
+HTS SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1ccc(c(c1)O)S"
+HTS SMILES           "OpenEye OEToolkits" 1.7.6 "c1ccc(c(c1)O)S"
+HTS ?                acedrg               202         "dictionary generator"                  
+HTS ?                acedrg_database      11          "data source"                           
+HTS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HTS ?                refmac5              5.8.0189    "optimization tool"                     

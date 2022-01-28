@@ -1,0 +1,175 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ASK      ASK 'DEHYDROXYMETHYLASPARTIC ACID        ' non-polymer        17   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ASK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ASK           O      O    O         0.000      0.000    0.000    0.000
+ ASK           C      C    C         0.000     -0.904   -0.551    0.582
+ ASK           CM     C    CH3       0.000     -0.668   -1.879    1.255
+ ASK           HM3    H    H         0.000     -0.356   -2.592    0.535
+ ASK           HM2    H    H         0.000      0.085   -1.774    1.993
+ ASK           HM1    H    H         0.000     -1.565   -2.210    1.711
+ ASK           CA     C    CH1       0.000     -2.267    0.088    0.635
+ ASK           HA     H    H         0.000     -2.662    0.024    1.658
+ ASK           N      N    NH2       0.000     -2.162    1.498    0.237
+ ASK           H2     H    H         0.000     -2.438    2.232    0.879
+ ASK           H      H    H         0.000     -1.814    1.746   -0.682
+ ASK           CB     C    CH2       0.000     -3.211   -0.642   -0.323
+ ASK           HB2    H    H         0.000     -3.218   -1.708   -0.084
+ ASK           HB3    H    H         0.000     -2.865   -0.504   -1.350
+ ASK           CG     C    C         0.000     -4.603   -0.084   -0.180
+ ASK           OD1    O    OC       -0.500     -4.825    0.840    0.634
+ ASK           OD2    O    OC       -0.500     -5.535   -0.543   -0.876
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ASK      O      n/a    C      START
+ ASK      C      O      CA     .
+ ASK      CM     C      HM1    .
+ ASK      HM3    CM     .      .
+ ASK      HM2    CM     .      .
+ ASK      HM1    CM     .      .
+ ASK      CA     C      CB     .
+ ASK      HA     CA     .      .
+ ASK      N      CA     H      .
+ ASK      H2     N      .      .
+ ASK      H      N      .      .
+ ASK      CB     CA     CG     .
+ ASK      HB2    CB     .      .
+ ASK      HB3    CB     .      .
+ ASK      CG     CB     OD2    .
+ ASK      OD1    CG     .      .
+ ASK      OD2    CG     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ASK       N         CA        single    1.450     0.020     1.450     0.020     
+ASK       H         N         single    1.036     0.016     0.914     0.007     
+ASK       H2        N         single    1.036     0.016     0.914     0.007     
+ASK       CB        CA        single    1.524     0.020     1.524     0.020     
+ASK       CA        C         single    1.500     0.020     1.500     0.020     
+ASK       HA        CA        single    1.089     0.010     0.989     0.005     
+ASK       CG        CB        single    1.510     0.020     1.510     0.020     
+ASK       HB2       CB        single    1.089     0.010     0.989     0.005     
+ASK       HB3       CB        single    1.089     0.010     0.989     0.005     
+ASK       OD1       CG        deloc     1.250     0.020     1.250     0.020     
+ASK       OD2       CG        deloc     1.250     0.020     1.250     0.020     
+ASK       C         O         double    1.220     0.020     1.220     0.020     
+ASK       CM        C         single    1.500     0.020     1.500     0.020     
+ASK       HM1       CM        single    1.089     0.010     0.989     0.005     
+ASK       HM2       CM        single    1.089     0.010     0.989     0.005     
+ASK       HM3       CM        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ASK      O      C      CM      123.000    3.000
+ ASK      O      C      CA      120.500    3.000
+ ASK      CM     C      CA      120.000    3.000
+ ASK      C      CM     HM3     109.470    3.000
+ ASK      C      CM     HM2     109.470    3.000
+ ASK      C      CM     HM1     109.470    3.000
+ ASK      HM3    CM     HM2     109.470    3.000
+ ASK      HM3    CM     HM1     109.470    3.000
+ ASK      HM2    CM     HM1     109.470    3.000
+ ASK      C      CA     HA      108.810    3.000
+ ASK      C      CA     N       109.470    3.000
+ ASK      C      CA     CB      109.470    3.000
+ ASK      HA     CA     N       109.470    3.000
+ ASK      HA     CA     CB      108.340    3.000
+ ASK      N      CA     CB      109.470    3.000
+ ASK      CA     N      H2      120.000    3.000
+ ASK      CA     N      H       120.000    3.000
+ ASK      H2     N      H       120.000    3.000
+ ASK      CA     CB     HB2     109.470    3.000
+ ASK      CA     CB     HB3     109.470    3.000
+ ASK      CA     CB     CG      109.470    3.000
+ ASK      HB2    CB     HB3     107.900    3.000
+ ASK      HB2    CB     CG      109.470    3.000
+ ASK      HB3    CB     CG      109.470    3.000
+ ASK      CB     CG     OD1     118.500    3.000
+ ASK      CB     CG     OD2     118.500    3.000
+ ASK      OD1    CG     OD2     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ASK      var_1    O      C      CM     HM1      179.953   20.000   1
+ ASK      var_2    O      C      CA     CB       105.006   20.000   3
+ ASK      var_3    C      CA     N      H         59.959   20.000   1
+ ASK      var_4    C      CA     CB     CG       174.975   20.000   3
+ ASK      var_5    CA     CB     CG     OD2     -179.988   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ASK      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ASK      plan-1    N         0.020
+ ASK      plan-1    CA        0.020
+ ASK      plan-1    H         0.020
+ ASK      plan-1    H2        0.020
+ ASK      plan-2    CG        0.020
+ ASK      plan-2    CB        0.020
+ ASK      plan-2    OD1       0.020
+ ASK      plan-2    OD2       0.020
+ ASK      plan-3    C         0.020
+ ASK      plan-3    CA        0.020
+ ASK      plan-3    O         0.020
+ ASK      plan-3    CM        0.020
+# ------------------------------------------------------

@@ -1,0 +1,150 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4SV     4SV      "3-AMINOPYRIDINE-4-CARBOXYLIC ACID"     non-polymer     15     10     .     
+#
+data_comp_4SV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4SV     O2      O       O       0       11.709      1.187       19.333      
+4SV     C6      C       C       0       11.483      1.673       18.211      
+4SV     O1      O       OC      -1      12.182      1.472       17.202      
+4SV     C5      C       CR6     0       10.284      2.565       18.064      
+4SV     C1      C       CR6     0       10.361      3.893       17.554      
+4SV     N1      N       NH2     0       11.540      4.457       17.158      
+4SV     C4      C       CR16    0       9.023       2.082       18.441      
+4SV     C3      C       CR16    0       7.921       2.913       18.301      
+4SV     N2      N       NRD6    0       7.994       4.168       17.819      
+4SV     C2      C       CR16    0       9.185       4.645       17.455      
+4SV     H11N    H       H       0       11.616      4.785       16.349      
+4SV     H12N    H       H       0       12.217      4.488       17.715      
+4SV     H4      H       H       0       8.932       1.210       18.782      
+4SV     H3      H       H       0       7.073       2.583       18.557      
+4SV     H2      H       H       0       9.234       5.518       17.120      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4SV       O2        C6        DOUBLE    n         1.244     0.020     1.244     0.020     
+4SV       C6        O1        SINGLE    n         1.244     0.020     1.244     0.020     
+4SV       C6        C5        SINGLE    n         1.498     0.020     1.498     0.020     
+4SV       C5        C1        DOUBLE    y         1.414     0.012     1.414     0.012     
+4SV       C5        C4        SINGLE    y         1.393     0.012     1.393     0.012     
+4SV       C1        N1        SINGLE    n         1.363     0.019     1.363     0.019     
+4SV       C1        C2        SINGLE    y         1.390     0.012     1.390     0.012     
+4SV       C4        C3        DOUBLE    y         1.381     0.010     1.381     0.010     
+4SV       C3        N2        SINGLE    y         1.324     0.017     1.324     0.017     
+4SV       N2        C2        DOUBLE    y         1.321     0.012     1.321     0.012     
+4SV       N1        H11N      SINGLE    n         1.016     0.010     0.877     0.020     
+4SV       N1        H12N      SINGLE    n         1.016     0.010     0.877     0.020     
+4SV       C4        H4        SINGLE    n         1.082     0.013     0.941     0.010     
+4SV       C3        H3        SINGLE    n         1.082     0.013     0.945     0.020     
+4SV       C2        H2        SINGLE    n         1.082     0.013     0.936     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4SV          O2          C6          O1     124.521    1.50
+4SV          O2          C6          C5     117.739    1.50
+4SV          O1          C6          C5     117.739    1.50
+4SV          C6          C5          C1     122.446    1.50
+4SV          C6          C5          C4     119.300    1.50
+4SV          C1          C5          C4     118.254    1.50
+4SV          C5          C1          N1     121.722    1.50
+4SV          C5          C1          C2     119.351    1.74
+4SV          N1          C1          C2     118.927    1.86
+4SV          C1          N1        H11N     119.789    2.29
+4SV          C1          N1        H12N     119.789    2.29
+4SV        H11N          N1        H12N     120.421    3.00
+4SV          C5          C4          C3     119.060    1.50
+4SV          C5          C4          H4     120.126    1.50
+4SV          C3          C4          H4     120.813    1.50
+4SV          C4          C3          N2     123.481    1.50
+4SV          C4          C3          H3     118.444    1.50
+4SV          N2          C3          H3     118.075    1.50
+4SV          C3          N2          C2     117.605    1.50
+4SV          C1          C2          N2     122.249    1.50
+4SV          C1          C2          H2     119.010    1.50
+4SV          N2          C2          H2     118.741    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4SV             sp2_sp2_1          C1          C5          C6          O2     180.000   10.00     2
+4SV       const_sp2_sp2_4          N1          C1          C5          C6       0.000   10.00     2
+4SV              const_18          C3          C4          C5          C6     180.000   10.00     2
+4SV             sp2_sp2_5          C5          C1          N1        H11N     180.000   10.00     2
+4SV       const_sp2_sp2_7          N1          C1          C2          N2     180.000   10.00     2
+4SV              const_13          N2          C3          C4          C5       0.000   10.00     2
+4SV              const_11          C4          C3          N2          C2       0.000   10.00     2
+4SV       const_sp2_sp2_9          C1          C2          N2          C3       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4SV    plan-1          C1   0.020
+4SV    plan-1          C2   0.020
+4SV    plan-1          C3   0.020
+4SV    plan-1          C4   0.020
+4SV    plan-1          C5   0.020
+4SV    plan-1          C6   0.020
+4SV    plan-1          H2   0.020
+4SV    plan-1          H3   0.020
+4SV    plan-1          H4   0.020
+4SV    plan-1          N1   0.020
+4SV    plan-1          N2   0.020
+4SV    plan-2          C5   0.020
+4SV    plan-2          C6   0.020
+4SV    plan-2          O1   0.020
+4SV    plan-2          O2   0.020
+4SV    plan-3          C1   0.020
+4SV    plan-3        H11N   0.020
+4SV    plan-3        H12N   0.020
+4SV    plan-3          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4SV InChI            InChI                1.03  "InChI=1S/C6H6N2O2/c7-5-3-8-2-1-4(5)6(9)10/h1-3H,7H2,(H,9,10)"
+4SV InChIKey         InChI                1.03  FYEQKMAVRYRMBL-UHFFFAOYSA-N
+4SV SMILES_CANONICAL CACTVS               3.385 "Nc1cnccc1C(O)=O"
+4SV SMILES           CACTVS               3.385 "Nc1cnccc1C(O)=O"
+4SV SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1cncc(c1C(=O)O)N"
+4SV SMILES           "OpenEye OEToolkits" 1.7.6 "c1cncc(c1C(=O)O)N"
+4SV ?                acedrg               202         "dictionary generator"                  
+4SV ?                acedrg_database      11          "data source"                           
+4SV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4SV ?                refmac5              5.8.0189    "optimization tool"                     

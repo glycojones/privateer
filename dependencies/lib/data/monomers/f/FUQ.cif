@@ -1,0 +1,371 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FUQ      FUQ 'Mo5 Cluster                         ' non-polymer        50  30 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FUQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FUQ           O54    O    OH1       0.000      0.224    0.051    0.281
+ FUQ           H20    H    H         0.000      1.031   -0.446    0.466
+ FUQ           MO5    MO   MO        0.000      0.547    1.901   -0.367
+ FUQ           O51    O    OH1       0.000      2.516    1.635   -0.249
+ FUQ           H17    H    H         0.000      2.775    0.759    0.063
+ FUQ           O52    O    OH1       0.000      0.528    2.617    1.492
+ FUQ           H18    H    H         0.000      0.380    1.943    2.168
+ FUQ           O53    O    OH1       0.000      0.841    3.761   -1.050
+ FUQ           H19    H    H         0.000      1.773    4.007   -1.131
+ FUQ           O45    O    O2        0.000      0.748    1.176   -2.199
+ FUQ           MO4    MO   MO        0.000      1.740   -0.503   -2.804
+ FUQ           O43    O    OH1       0.000      1.066   -0.088   -4.665
+ FUQ           H15    H    H         0.000      0.520    0.711   -4.721
+ FUQ           O44    O    OH1       0.000      2.449   -0.926   -1.015
+ FUQ           H16    H    H         0.000      2.185   -0.296   -0.332
+ FUQ           O41    O    OH1       0.000      2.594   -2.153   -3.549
+ FUQ           H13    H    H         0.000      3.082   -2.673   -2.896
+ FUQ           O42    O    OH1       0.000      3.414    0.514   -3.240
+ FUQ           H14    H    H         0.000      3.351    1.465   -3.074
+ FUQ           O15    O    O2        0.000      0.017   -1.427   -2.395
+ FUQ           O55    O    O2        0.000     -1.402    2.203   -0.386
+ FUQ           MO3    MO   MO        0.000     -2.594    1.691    1.166
+ FUQ           O31    O    OH1       0.000     -2.297    3.446    2.081
+ FUQ           H9     H    H         0.000     -1.713    4.046    1.599
+ FUQ           O32    O    OH1       0.000     -3.890    1.181    2.609
+ FUQ           H10    H    H         0.000     -4.009    1.858    3.291
+ FUQ           O33    O    OH1       0.000     -4.130    2.501    0.143
+ FUQ           H11    H    H         0.000     -3.881    2.868   -0.717
+ FUQ           O34    O    OH1       0.000     -1.122    0.893    2.215
+ FUQ           H12    H    H         0.000     -0.262    0.935    1.775
+ FUQ           O35    O    O2        0.000     -2.864   -0.041    0.292
+ FUQ           MO2    MO   MO        0.000     -2.913   -1.906    0.957
+ FUQ           O21    O    OH1       0.000     -3.685   -1.301    2.697
+ FUQ           H5     H    H         0.000     -3.820   -0.345    2.754
+ FUQ           O22    O    OH1       0.000     -3.091   -3.815    1.545
+ FUQ           H6     H    H         0.000     -3.467   -3.920    2.429
+ FUQ           O23    O    OH1       0.000     -1.102   -1.820    1.711
+ FUQ           H7     H    H         0.000     -0.669   -0.967    1.585
+ FUQ           O24    O    OH1       0.000     -4.798   -2.016    0.227
+ FUQ           H8     H    H         0.000     -5.106   -1.202   -0.198
+ FUQ           O25    O    O2        0.000     -2.190   -2.478   -0.816
+ FUQ           MO1    MO   MO        0.000     -0.489   -3.165   -1.599
+ FUQ           O14    O    OH1       0.000     -1.470   -3.617   -3.316
+ FUQ           H4     H    H         0.000     -2.414   -3.401   -3.303
+ FUQ           O12    O    OH1       0.000      1.168   -3.891   -2.426
+ FUQ           H2     H    H         0.000      1.043   -4.221   -3.327
+ FUQ           O13    O    OH1       0.000      0.477   -2.732    0.052
+ FUQ           H3     H    H         0.000     -0.079   -2.340    0.735
+ FUQ           O11    O    OH1       0.000     -0.967   -4.980   -0.902
+ FUQ           H1     H    H         0.000     -1.808   -5.008   -0.427
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FUQ      O54    n/a    MO5    START
+ FUQ      H20    O54    .      .
+ FUQ      MO5    O54    O55    .
+ FUQ      O51    MO5    H17    .
+ FUQ      H17    O51    .      .
+ FUQ      O52    MO5    H18    .
+ FUQ      H18    O52    .      .
+ FUQ      O53    MO5    H19    .
+ FUQ      H19    O53    .      .
+ FUQ      O45    MO5    MO4    .
+ FUQ      MO4    O45    O15    .
+ FUQ      O43    MO4    H15    .
+ FUQ      H15    O43    .      .
+ FUQ      O44    MO4    H16    .
+ FUQ      H16    O44    .      .
+ FUQ      O41    MO4    H13    .
+ FUQ      H13    O41    .      .
+ FUQ      O42    MO4    H14    .
+ FUQ      H14    O42    .      .
+ FUQ      O15    MO4    .      .
+ FUQ      O55    MO5    MO3    .
+ FUQ      MO3    O55    O35    .
+ FUQ      O31    MO3    H9     .
+ FUQ      H9     O31    .      .
+ FUQ      O32    MO3    H10    .
+ FUQ      H10    O32    .      .
+ FUQ      O33    MO3    H11    .
+ FUQ      H11    O33    .      .
+ FUQ      O34    MO3    H12    .
+ FUQ      H12    O34    .      .
+ FUQ      O35    MO3    MO2    .
+ FUQ      MO2    O35    O25    .
+ FUQ      O21    MO2    H5     .
+ FUQ      H5     O21    .      .
+ FUQ      O22    MO2    H6     .
+ FUQ      H6     O22    .      .
+ FUQ      O23    MO2    H7     .
+ FUQ      H7     O23    .      .
+ FUQ      O24    MO2    H8     .
+ FUQ      H8     O24    .      .
+ FUQ      O25    MO2    MO1    .
+ FUQ      MO1    O25    O11    .
+ FUQ      O14    MO1    H4     .
+ FUQ      H4     O14    .      .
+ FUQ      O12    MO1    H2     .
+ FUQ      H2     O12    .      .
+ FUQ      O13    MO1    H3     .
+ FUQ      H3     O13    .      .
+ FUQ      O11    MO1    H1     .
+ FUQ      H1     O11    .      END
+ FUQ      O15    MO1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FUQ       MO5       O54       single    1.996     0.020     1.996     0.020     
+FUQ       O44       MO4       single    1.990     0.020     1.990     0.020     
+FUQ       O51       MO5       single    2.002     0.020     2.002     0.020     
+FUQ       O52       MO5       single    2.004     0.020     2.004     0.020     
+FUQ       O45       MO5       single    1.991     0.020     1.991     0.020     
+FUQ       O55       MO5       single    1.991     0.020     1.991     0.020     
+FUQ       O53       MO5       single    2.001     0.020     2.001     0.020     
+FUQ       O42       MO4       single    2.008     0.020     2.008     0.020     
+FUQ       O34       MO3       single    1.989     0.020     1.989     0.020     
+FUQ       O13       MO1       single    1.989     0.020     1.989     0.020     
+FUQ       MO4       O45       single    1.997     0.020     1.997     0.020     
+FUQ       O31       MO3       single    2.005     0.020     2.005     0.020     
+FUQ       O41       MO4       single    2.002     0.020     2.002     0.020     
+FUQ       O15       MO4       single    1.983     0.020     1.983     0.020     
+FUQ       O43       MO4       single    2.006     0.020     2.006     0.020     
+FUQ       MO3       O55       single    1.996     0.020     1.996     0.020     
+FUQ       O15       MO1       single    1.984     0.020     1.984     0.020     
+FUQ       O32       MO3       single    2.000     0.020     2.000     0.020     
+FUQ       O35       MO3       single    1.983     0.020     1.983     0.020     
+FUQ       O33       MO3       single    2.008     0.020     2.008     0.020     
+FUQ       MO1       O25       single    1.982     0.020     1.982     0.020     
+FUQ       O12       MO1       single    2.001     0.020     2.001     0.020     
+FUQ       O11       MO1       single    2.009     0.020     2.009     0.020     
+FUQ       O14       MO1       single    2.007     0.020     2.007     0.020     
+FUQ       MO2       O35       single    1.984     0.020     1.984     0.020     
+FUQ       O25       MO2       single    1.982     0.020     1.982     0.020     
+FUQ       O23       MO2       single    1.989     0.020     1.989     0.020     
+FUQ       O21       MO2       single    2.004     0.020     2.004     0.020     
+FUQ       O24       MO2       single    2.007     0.020     2.007     0.020     
+FUQ       O22       MO2       single    2.008     0.020     2.008     0.020     
+FUQ       H1        O11       single    0.970     0.012     0.967     0.020     
+FUQ       H2        O12       single    0.970     0.012     0.968     0.020     
+FUQ       H3        O13       single    0.970     0.012     0.967     0.020     
+FUQ       H4        O14       single    0.970     0.012     0.967     0.020     
+FUQ       H5        O21       single    0.970     0.012     0.967     0.020     
+FUQ       H6        O22       single    0.970     0.012     0.967     0.020     
+FUQ       H7        O23       single    0.970     0.012     0.967     0.020     
+FUQ       H8        O24       single    0.970     0.012     0.967     0.020     
+FUQ       H9        O31       single    0.970     0.012     0.967     0.020     
+FUQ       H10       O32       single    0.970     0.012     0.967     0.020     
+FUQ       H11       O33       single    0.970     0.012     0.967     0.020     
+FUQ       H12       O34       single    0.970     0.012     0.968     0.020     
+FUQ       H13       O41       single    0.970     0.012     0.967     0.020     
+FUQ       H14       O42       single    0.970     0.012     0.967     0.020     
+FUQ       H15       O43       single    0.970     0.012     0.968     0.020     
+FUQ       H16       O44       single    0.970     0.012     0.967     0.020     
+FUQ       H17       O51       single    0.970     0.012     0.967     0.020     
+FUQ       H18       O52       single    0.970     0.012     0.967     0.020     
+FUQ       H19       O53       single    0.970     0.012     0.967     0.020     
+FUQ       H20       O54       single    0.970     0.012     0.966     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FUQ      H20    O54    MO5     114.036    3.000
+ FUQ      O54    MO5    O51      90.000    3.000
+ FUQ      O54    MO5    O52      90.000    3.000
+ FUQ      O54    MO5    O53     180.000    3.000
+ FUQ      O54    MO5    O45      90.000    3.000
+ FUQ      O54    MO5    O55      90.000    3.000
+ FUQ      O51    MO5    O52      90.000    3.000
+ FUQ      O51    MO5    O53      90.000    3.000
+ FUQ      O52    MO5    O53      90.000    3.000
+ FUQ      O51    MO5    O45      90.000    3.000
+ FUQ      O52    MO5    O45     180.000    3.000
+ FUQ      O53    MO5    O45      90.000    3.000
+ FUQ      O51    MO5    O55     180.000    3.000
+ FUQ      O52    MO5    O55      90.000    3.000
+ FUQ      O53    MO5    O55      90.000    3.000
+ FUQ      O45    MO5    O55      90.000    3.000
+ FUQ      MO5    O51    H17     114.049    3.000
+ FUQ      MO5    O52    H18     113.950    3.000
+ FUQ      MO5    O53    H19     113.954    3.000
+ FUQ      MO5    O45    MO4     117.139    3.000
+ FUQ      O45    MO4    O44      90.000    3.000
+ FUQ      O45    MO4    O41     180.000    3.000
+ FUQ      O45    MO4    O42      90.000    3.000
+ FUQ      O45    MO4    O43      90.000    3.000
+ FUQ      O45    MO4    O15      90.000    3.000
+ FUQ      O44    MO4    O41      90.000    3.000
+ FUQ      O44    MO4    O42      90.000    3.000
+ FUQ      O41    MO4    O42      90.000    3.000
+ FUQ      O44    MO4    O43     180.000    3.000
+ FUQ      O41    MO4    O43      90.000    3.000
+ FUQ      O42    MO4    O43      90.000    3.000
+ FUQ      O44    MO4    O15      90.000    3.000
+ FUQ      O41    MO4    O15      90.000    3.000
+ FUQ      O42    MO4    O15     180.000    3.000
+ FUQ      O43    MO4    O15      90.000    3.000
+ FUQ      MO4    O44    H16     114.006    3.000
+ FUQ      MO4    O41    H13     114.002    3.000
+ FUQ      MO4    O42    H14     114.049    3.000
+ FUQ      MO4    O43    H15     114.020    3.000
+ FUQ      MO4    O15    MO1     119.866    3.000
+ FUQ      MO5    O55    MO3     116.855    3.000
+ FUQ      O55    MO3    O31      90.000    3.000
+ FUQ      O55    MO3    O32     180.000    3.000
+ FUQ      O55    MO3    O33      90.000    3.000
+ FUQ      O55    MO3    O34      90.000    3.000
+ FUQ      O55    MO3    O35      90.000    3.000
+ FUQ      O31    MO3    O32      90.000    3.000
+ FUQ      O31    MO3    O33      90.000    3.000
+ FUQ      O32    MO3    O33      90.000    3.000
+ FUQ      O31    MO3    O34      90.000    3.000
+ FUQ      O32    MO3    O34      90.000    3.000
+ FUQ      O33    MO3    O34     180.000    3.000
+ FUQ      O31    MO3    O35     180.000    3.000
+ FUQ      O32    MO3    O35      90.000    3.000
+ FUQ      O33    MO3    O35      90.000    3.000
+ FUQ      O34    MO3    O35      90.000    3.000
+ FUQ      MO3    O31    H9      114.037    3.000
+ FUQ      MO3    O32    H10     114.025    3.000
+ FUQ      MO3    O33    H11     113.986    3.000
+ FUQ      MO3    O34    H12     113.958    3.000
+ FUQ      MO3    O35    MO2     119.555    3.000
+ FUQ      O35    MO2    O21      90.000    3.000
+ FUQ      O35    MO2    O22     180.000    3.000
+ FUQ      O35    MO2    O23      90.000    3.000
+ FUQ      O35    MO2    O24      90.000    3.000
+ FUQ      O35    MO2    O25      90.000    3.000
+ FUQ      O21    MO2    O22      90.000    3.000
+ FUQ      O21    MO2    O23      90.000    3.000
+ FUQ      O22    MO2    O23      90.000    3.000
+ FUQ      O21    MO2    O24      90.000    3.000
+ FUQ      O22    MO2    O24      90.000    3.000
+ FUQ      O23    MO2    O24     180.000    3.000
+ FUQ      O21    MO2    O25     180.000    3.000
+ FUQ      O22    MO2    O25      90.000    3.000
+ FUQ      O23    MO2    O25      90.000    3.000
+ FUQ      O24    MO2    O25      90.000    3.000
+ FUQ      MO2    O21    H5      113.992    3.000
+ FUQ      MO2    O22    H6      113.982    3.000
+ FUQ      MO2    O23    H7      113.960    3.000
+ FUQ      MO2    O24    H8      113.957    3.000
+ FUQ      MO2    O25    MO1     121.465    3.000
+ FUQ      O25    MO1    O14      90.000    3.000
+ FUQ      O25    MO1    O12     180.000    3.000
+ FUQ      O25    MO1    O13      90.000    3.000
+ FUQ      O25    MO1    O11      90.000    3.000
+ FUQ      O25    MO1    O15      90.000    3.000
+ FUQ      O14    MO1    O12      90.000    3.000
+ FUQ      O14    MO1    O13     180.000    3.000
+ FUQ      O12    MO1    O13      90.000    3.000
+ FUQ      O14    MO1    O11      90.000    3.000
+ FUQ      O12    MO1    O11      90.000    3.000
+ FUQ      O13    MO1    O11      90.000    3.000
+ FUQ      O14    MO1    O15      90.000    3.000
+ FUQ      O12    MO1    O15      90.000    3.000
+ FUQ      O13    MO1    O15      90.000    3.000
+ FUQ      O11    MO1    O15     180.000    3.000
+ FUQ      MO1    O14    H4      113.997    3.000
+ FUQ      MO1    O12    H2      113.978    3.000
+ FUQ      MO1    O13    H3      113.971    3.000
+ FUQ      MO1    O11    H1      113.990    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FUQ      var_1            H20    O54    MO5    O51                0.000           20.000   3
+ FUQ      var_2            H17    O51    MO5    O54                0.000           20.000   3
+ FUQ      var_3            H18    O52    MO5    O54                0.000           20.000   3
+ FUQ      var_4            H19    O53    MO5    O51                0.000           20.000   3
+ FUQ      var_5            MO4    O45    MO5    O54                0.000           20.000   3
+ FUQ      var_6            MO5    O45    MO4    O44                0.000           20.000   3
+ FUQ      var_7            H16    O44    MO4    O45                0.000           20.000   3
+ FUQ      var_8            H13    O41    MO4    O44                0.000           20.000   3
+ FUQ      var_9            H14    O42    MO4    O45                0.000           20.000   3
+ FUQ      var_10           H15    O43    MO4    O45                0.000           20.000   3
+ FUQ      var_11           MO1    O15    MO4    O45                0.000           20.000   3
+ FUQ      var_12           MO4    O15    MO1    O25                0.000           20.000   3
+ FUQ      var_13           MO3    O55    MO5    O54                0.000           20.000   3
+ FUQ      var_14           MO5    O55    MO3    O31                0.000           20.000   3
+ FUQ      var_15           H9     O31    MO3    O55                0.000           20.000   3
+ FUQ      var_16           H10    O32    MO3    O31                0.000           20.000   3
+ FUQ      var_17           H11    O33    MO3    O55                0.000           20.000   3
+ FUQ      var_18           H12    O34    MO3    O55                0.000           20.000   3
+ FUQ      var_19           MO2    O35    MO3    O55                0.000           20.000   3
+ FUQ      var_20           MO3    O35    MO2    O21                0.000           20.000   3
+ FUQ      var_21           H5     O21    MO2    O35                0.000           20.000   3
+ FUQ      var_22           H6     O22    MO2    O21                0.000           20.000   3
+ FUQ      var_23           H7     O23    MO2    O35                0.000           20.000   3
+ FUQ      var_24           H8     O24    MO2    O35                0.000           20.000   3
+ FUQ      var_25           MO1    O25    MO2    O35                0.000           20.000   3
+ FUQ      var_26           MO2    O25    MO1    O14                0.000           20.000   3
+ FUQ      var_27           H4     O14    MO1    O25                0.000           20.000   3
+ FUQ      var_28           H2     O12    MO1    O14                0.000           20.000   3
+ FUQ      var_29           H3     O13    MO1    O25                0.000           20.000   3
+ FUQ      var_30           H1     O11    MO1    O25                0.000           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ FUQ      chir_01          MO1    O25    O12    O14       cross4
+                   O11    O13    O15    .      .
+ FUQ      chir_02          MO2    O35    O22    O21       cross4
+                   O23    O25    O24    .      .
+ FUQ      chir_03          MO3    O55    O32    O31       cross4
+                   O34    O35    O33    .      .
+ FUQ      chir_04          MO4    O45    O41    O44       cross4
+                   O42    O43    O15    .      .
+ FUQ      chir_05          MO5    O54    O53    O51       cross4
+                   O52    O55    O45    .      .
+# ------------------------------------------------------

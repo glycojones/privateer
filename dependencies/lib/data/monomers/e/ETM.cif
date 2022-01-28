@@ -1,0 +1,151 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ETM     ETM      "2-(TRIMETHYLAMMONIUM)ETHYL THIOL"     NON-POLYMER     21     7     .     
+#
+data_comp_ETM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ETM     SD      S       SH1     0       17.868      -20.383     33.758      
+ETM     C1      C       CH2     0       16.512      -20.925     34.830      
+ETM     C2      C       CH2     0       15.210      -21.171     34.083      
+ETM     N1      N       NT      1       14.746      -22.610     33.899      
+ETM     C3      C       CH3     0       15.798      -23.442     33.229      
+ETM     C4      C       CH3     0       13.524      -22.596     33.031      
+ETM     C5      C       CH3     0       14.379      -23.228     35.214      
+ETM     HSD     H       HSH1    0       18.732      -20.391     34.596      
+ETM     H11     H       H       0       16.361      -20.237     35.501      
+ETM     H12     H       H       0       16.792      -21.733     35.289      
+ETM     H21     H       H       0       15.287      -20.772     33.195      
+ETM     H22     H       H       0       14.495      -20.695     34.545      
+ETM     H31     H       H       0       16.534      -23.591     33.841      
+ETM     H32     H       H       0       16.117      -22.974     32.442      
+ETM     H33     H       H       0       15.418      -24.295     32.969      
+ETM     H41     H       H       0       13.183      -23.499     32.938      
+ETM     H42     H       H       0       13.757      -22.246     32.158      
+ETM     H43     H       H       0       12.850      -22.033     33.441      
+ETM     H51     H       H       0       14.006      -24.109     35.061      
+ETM     H52     H       H       0       13.722      -22.668     35.655      
+ETM     H53     H       H       0       15.168      -23.304     35.769      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ETM       SD        C1        SINGLE    n         1.811     0.010     1.811     0.010     
+ETM       C1        C2        SINGLE    n         1.516     0.011     1.516     0.011     
+ETM       C2        N1        SINGLE    n         1.515     0.010     1.515     0.010     
+ETM       N1        C3        SINGLE    n         1.488     0.017     1.488     0.017     
+ETM       N1        C4        SINGLE    n         1.488     0.017     1.488     0.017     
+ETM       N1        C5        SINGLE    n         1.488     0.017     1.488     0.017     
+ETM       SD        HSD       SINGLE    n         1.338     0.010     1.171     0.208     
+ETM       C1        H11       SINGLE    n         1.089     0.010     0.989     0.005     
+ETM       C1        H12       SINGLE    n         1.089     0.010     0.989     0.005     
+ETM       C2        H21       SINGLE    n         1.089     0.010     0.989     0.005     
+ETM       C2        H22       SINGLE    n         1.089     0.010     0.989     0.005     
+ETM       C3        H31       SINGLE    n         1.089     0.010     0.989     0.005     
+ETM       C3        H32       SINGLE    n         1.089     0.010     0.989     0.005     
+ETM       C3        H33       SINGLE    n         1.089     0.010     0.989     0.005     
+ETM       C4        H41       SINGLE    n         1.089     0.010     0.989     0.005     
+ETM       C4        H42       SINGLE    n         1.089     0.010     0.989     0.005     
+ETM       C4        H43       SINGLE    n         1.089     0.010     0.989     0.005     
+ETM       C5        H51       SINGLE    n         1.089     0.010     0.989     0.005     
+ETM       C5        H52       SINGLE    n         1.089     0.010     0.989     0.005     
+ETM       C5        H53       SINGLE    n         1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ETM          C1          SD         HSD      97.089    1.52
+ETM          SD          C1          C2     113.403    1.50
+ETM          SD          C1         H11     108.594    1.76
+ETM          SD          C1         H12     108.594    1.76
+ETM          C2          C1         H11     108.906    1.50
+ETM          C2          C1         H12     108.906    1.50
+ETM         H11          C1         H12     108.165    1.50
+ETM          C1          C2          N1     115.936    1.50
+ETM          C1          C2         H21     109.603    1.50
+ETM          C1          C2         H22     109.603    1.50
+ETM          N1          C2         H21     108.242    1.50
+ETM          N1          C2         H22     108.242    1.50
+ETM         H21          C2         H22     107.788    1.50
+ETM          C2          N1          C3     109.603    1.93
+ETM          C2          N1          C4     109.603    1.93
+ETM          C2          N1          C5     109.603    1.93
+ETM          C3          N1          C4     109.041    1.50
+ETM          C3          N1          C5     109.041    1.50
+ETM          C4          N1          C5     109.041    1.50
+ETM          N1          C3         H31     108.994    1.50
+ETM          N1          C3         H32     108.994    1.50
+ETM          N1          C3         H33     108.994    1.50
+ETM         H31          C3         H32     109.693    1.55
+ETM         H31          C3         H33     109.693    1.55
+ETM         H32          C3         H33     109.693    1.55
+ETM          N1          C4         H41     108.994    1.50
+ETM          N1          C4         H42     108.994    1.50
+ETM          N1          C4         H43     108.994    1.50
+ETM         H41          C4         H42     109.693    1.55
+ETM         H41          C4         H43     109.693    1.55
+ETM         H42          C4         H43     109.693    1.55
+ETM          N1          C5         H51     108.994    1.50
+ETM          N1          C5         H52     108.994    1.50
+ETM          N1          C5         H53     108.994    1.50
+ETM         H51          C5         H52     109.693    1.55
+ETM         H51          C5         H53     109.693    1.55
+ETM         H52          C5         H53     109.693    1.55
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ETM             sp3_sp3_1          C2          C1          SD         HSD     180.000   10.00     3
+ETM             sp3_sp3_4          SD          C1          C2          N1     180.000   10.00     3
+ETM            sp3_sp3_13          C1          C2          N1          C3     180.000   10.00     3
+ETM            sp3_sp3_22         H31          C3          N1          C2     180.000   10.00     3
+ETM            sp3_sp3_31         H41          C4          N1          C2     180.000   10.00     3
+ETM            sp3_sp3_40         H51          C5          N1          C2     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ETM SMILES           ACDLabs              10.04 "SCC[N+](C)(C)C"
+ETM SMILES_CANONICAL CACTVS               3.341 "C[N+](C)(C)CCS"
+ETM SMILES           CACTVS               3.341 "C[N+](C)(C)CCS"
+ETM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[N+](C)(C)CCS"
+ETM SMILES           "OpenEye OEToolkits" 1.5.0 "C[N+](C)(C)CCS"
+ETM InChI            InChI                1.03  "InChI=1S/C5H13NS/c1-6(2,3)4-5-7/h4-5H2,1-3H3/p+1"
+ETM InChIKey         InChI                1.03  VFUGTBZQGUVGEX-UHFFFAOYSA-O
+ETM ?                acedrg               202         "dictionary generator"                  
+ETM ?                acedrg_database      11          "data source"                           
+ETM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ETM ?                refmac5              5.8.0189    "optimization tool"                     

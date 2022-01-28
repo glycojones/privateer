@@ -1,0 +1,310 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2MA      2MA '2-METHYLADENOSINE-5'-MONOPHOSPHATE  ' RNA                38  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_2MA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 2MA           OP3    O    OP       -0.666      0.000    0.000    0.000
+ 2MA           P      P    P         0.000     -1.170   -0.168    0.944
+ 2MA           OP1    O    OP       -0.666     -1.502    1.165    1.578
+ 2MA           OP2    O    OP       -0.666     -0.808   -1.165    2.023
+ 2MA           "O5'"  O    O2        0.000     -2.448   -0.705    0.125
+ 2MA           "C5'"  C    CH2       0.000     -2.740    0.273   -0.873
+ 2MA           "H5'"  H    H         0.000     -1.876    0.388   -1.532
+ 2MA           "H5''" H    H         0.000     -2.959    1.228   -0.392
+ 2MA           "C4'"  C    CH1       0.000     -3.952   -0.178   -1.692
+ 2MA           "H4'"  H    H         0.000     -3.740   -1.133   -2.194
+ 2MA           "C3'"  C    CH1       0.000     -4.335    0.899   -2.730
+ 2MA           "H3'"  H    H         0.000     -3.983    1.889   -2.405
+ 2MA           "C2'"  C    CH1       0.000     -5.880    0.858   -2.761
+ 2MA           "H2'"  H    H         0.000     -6.297    1.827   -2.453
+ 2MA           "O2'"  O    OH1       0.000     -6.344    0.507   -4.067
+ 2MA           "HO2'" H    H         0.000     -6.053    1.175   -4.702
+ 2MA           "C1'"  C    CH1       0.000     -6.245   -0.238   -1.737
+ 2MA           "H1'"  H    H         0.000     -6.388   -1.203   -2.244
+ 2MA           "O4'"  O    O2        0.000     -5.113   -0.303   -0.844
+ 2MA           N9     N    NR5       0.000     -7.455    0.134   -1.001
+ 2MA           C4     C    CR56      0.000     -8.728   -0.186   -1.336
+ 2MA           C5     C    CR56      0.000     -9.543    0.372   -0.333
+ 2MA           N7     N    NRD5      0.000     -8.750    1.003    0.534
+ 2MA           C8     C    CR15      0.000     -7.506    0.869    0.150
+ 2MA           H8     H    H         0.000     -6.647    1.278    0.667
+ 2MA           N3     N    NRD6      0.000     -9.270   -0.884   -2.349
+ 2MA           C2     C    CR6       0.000    -10.573   -0.910   -2.486
+ 2MA           CM2    C    CH3       0.000    -11.158   -1.767   -3.578
+ 2MA           HM23   H    H         0.000    -11.799   -2.494   -3.151
+ 2MA           HM22   H    H         0.000    -11.710   -1.159   -4.246
+ 2MA           HM21   H    H         0.000    -10.377   -2.251   -4.104
+ 2MA           N1     N    NR16      0.000    -11.424   -0.199   -1.696
+ 2MA           HN1    H    H         0.000    -12.371    0.062   -2.038
+ 2MA           C6     C    CR6       0.000    -11.002    0.174   -0.415
+ 2MA           N6     N    N         0.000    -11.816    0.336    0.602
+ 2MA           HN6    H    H         0.000    -12.743    0.191    0.479
+ 2MA           "O3'"  O    OH1       0.000     -3.797    0.573   -4.013
+ 2MA           "HO3'" H    H         0.000     -4.068    1.279   -4.616
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 2MA      OP3    n/a    P      START
+ 2MA      P      OP3    "O5'"  .
+ 2MA      OP1    P      .      .
+ 2MA      OP2    P      .      .
+ 2MA      "O5'"  P      "C5'"  .
+ 2MA      "C5'"  "O5'"  "C4'"  .
+ 2MA      "H5'"  "C5'"  .      .
+ 2MA      "H5''" "C5'"  .      .
+ 2MA      "C4'"  "C5'"  "C3'"  .
+ 2MA      "H4'"  "C4'"  .      .
+ 2MA      "C3'"  "C4'"  "O3'"  .
+ 2MA      "H3'"  "C3'"  .      .
+ 2MA      "C2'"  "C3'"  "C1'"  .
+ 2MA      "H2'"  "C2'"  .      .
+ 2MA      "O2'"  "C2'"  "HO2'" .
+ 2MA      "HO2'" "O2'"  .      .
+ 2MA      "C1'"  "C2'"  N9     .
+ 2MA      "H1'"  "C1'"  .      .
+ 2MA      "O4'"  "C1'"  .      .
+ 2MA      N9     "C1'"  C4     .
+ 2MA      C4     N9     N3     .
+ 2MA      C5     C4     N7     .
+ 2MA      N7     C5     C8     .
+ 2MA      C8     N7     H8     .
+ 2MA      H8     C8     .      .
+ 2MA      N3     C4     C2     .
+ 2MA      C2     N3     N1     .
+ 2MA      CM2    C2     HM21   .
+ 2MA      HM23   CM2    .      .
+ 2MA      HM22   CM2    .      .
+ 2MA      HM21   CM2    .      .
+ 2MA      N1     C2     C6     .
+ 2MA      HN1    N1     .      .
+ 2MA      C6     N1     N6     .
+ 2MA      N6     C6     HN6    .
+ 2MA      HN6    N6     .      .
+ 2MA      "O3'"  "C3'"  .      END
+ 2MA      "HO3'" "O3'"  .      .
+ 2MA      "C4'"  "O4'"  .    ADD
+ 2MA      N9     C8     .    ADD
+ 2MA      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2MA       OP1       P         deloc     1.510     0.020     1.510     0.020     
+2MA       OP2       P         deloc     1.510     0.020     1.510     0.020     
+2MA       P         OP3       deloc     1.510     0.020     1.510     0.020     
+2MA       "O5'"     P         single    1.610     0.020     1.610     0.020     
+2MA       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+2MA       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+2MA       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+2MA       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+2MA       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+2MA       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+2MA       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+2MA       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+2MA       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+2MA       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+2MA       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+2MA       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+2MA       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+2MA       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+2MA       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+2MA       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+2MA       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+2MA       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+2MA       N9        C8        single    1.337     0.020     1.337     0.020     
+2MA       C4        N9        single    1.337     0.020     1.337     0.020     
+2MA       C8        N7        double    1.350     0.020     1.350     0.020     
+2MA       H8        C8        single    1.082     0.013     0.975     0.010     
+2MA       N7        C5        single    1.350     0.020     1.350     0.020     
+2MA       C5        C6        single    1.490     0.020     1.490     0.020     
+2MA       C5        C4        double    1.490     0.020     1.490     0.020     
+2MA       N6        C6        double    1.355     0.020     1.355     0.020     
+2MA       C6        N1        single    1.337     0.020     1.337     0.020     
+2MA       HN6       N6        single    1.016     0.010     0.899     0.007     
+2MA       N1        C2        single    1.337     0.020     1.337     0.020     
+2MA       HN1       N1        single    1.016     0.010     0.899     0.007     
+2MA       CM2       C2        single    1.506     0.020     1.506     0.020     
+2MA       C2        N3        double    1.350     0.020     1.350     0.020     
+2MA       HM21      CM2       single    1.089     0.010     0.989     0.005     
+2MA       HM22      CM2       single    1.089     0.010     0.989     0.005     
+2MA       HM23      CM2       single    1.089     0.010     0.989     0.005     
+2MA       N3        C4        single    1.355     0.020     1.355     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 2MA      OP3    P      OP1     119.900    3.000
+ 2MA      OP3    P      OP2     119.900    3.000
+ 2MA      OP3    P      "O5'"   108.200    3.000
+ 2MA      OP1    P      OP2     119.900    3.000
+ 2MA      OP1    P      "O5'"   108.200    3.000
+ 2MA      OP2    P      "O5'"   108.200    3.000
+ 2MA      P      "O5'"  "C5'"   120.500    3.000
+ 2MA      "O5'"  "C5'"  "H5'"   109.470    3.000
+ 2MA      "O5'"  "C5'"  "H5''"  109.470    3.000
+ 2MA      "O5'"  "C5'"  "C4'"   109.470    3.000
+ 2MA      "H5'"  "C5'"  "H5''"  107.900    3.000
+ 2MA      "H5'"  "C5'"  "C4'"   109.470    3.000
+ 2MA      "H5''" "C5'"  "C4'"   109.470    3.000
+ 2MA      "C5'"  "C4'"  "H4'"   108.340    3.000
+ 2MA      "C5'"  "C4'"  "C3'"   111.000    3.000
+ 2MA      "C5'"  "C4'"  "O4'"   109.470    3.000
+ 2MA      "H4'"  "C4'"  "C3'"   108.340    3.000
+ 2MA      "H4'"  "C4'"  "O4'"   109.470    3.000
+ 2MA      "C3'"  "C4'"  "O4'"   109.470    3.000
+ 2MA      "C4'"  "C3'"  "H3'"   108.340    3.000
+ 2MA      "C4'"  "C3'"  "C2'"   111.000    3.000
+ 2MA      "C4'"  "C3'"  "O3'"   109.470    3.000
+ 2MA      "H3'"  "C3'"  "C2'"   108.340    3.000
+ 2MA      "H3'"  "C3'"  "O3'"   109.470    3.000
+ 2MA      "C2'"  "C3'"  "O3'"   109.470    3.000
+ 2MA      "C3'"  "C2'"  "H2'"   108.340    3.000
+ 2MA      "C3'"  "C2'"  "O2'"   109.470    3.000
+ 2MA      "C3'"  "C2'"  "C1'"   111.000    3.000
+ 2MA      "H2'"  "C2'"  "O2'"   109.470    3.000
+ 2MA      "H2'"  "C2'"  "C1'"   108.340    3.000
+ 2MA      "O2'"  "C2'"  "C1'"   109.470    3.000
+ 2MA      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ 2MA      "C2'"  "C1'"  "H1'"   108.340    3.000
+ 2MA      "C2'"  "C1'"  "O4'"   109.470    3.000
+ 2MA      "C2'"  "C1'"  N9      109.470    3.000
+ 2MA      "H1'"  "C1'"  "O4'"   109.470    3.000
+ 2MA      "H1'"  "C1'"  N9      109.470    3.000
+ 2MA      "O4'"  "C1'"  N9      109.470    3.000
+ 2MA      "C1'"  "O4'"  "C4'"   111.800    3.000
+ 2MA      "C1'"  N9     C4      126.000    3.000
+ 2MA      "C1'"  N9     C8      126.000    3.000
+ 2MA      C4     N9     C8      108.000    3.000
+ 2MA      N9     C4     C5      108.000    3.000
+ 2MA      N9     C4     N3      132.000    3.000
+ 2MA      C5     C4     N3      120.000    3.000
+ 2MA      C4     C5     N7      108.000    3.000
+ 2MA      C4     C5     C6      120.000    3.000
+ 2MA      N7     C5     C6      132.000    3.000
+ 2MA      C5     N7     C8      108.000    3.000
+ 2MA      N7     C8     H8      126.000    3.000
+ 2MA      N7     C8     N9      108.000    3.000
+ 2MA      H8     C8     N9      126.000    3.000
+ 2MA      C4     N3     C2      120.000    3.000
+ 2MA      N3     C2     CM2     120.000    3.000
+ 2MA      N3     C2     N1      120.000    3.000
+ 2MA      CM2    C2     N1      120.000    3.000
+ 2MA      C2     CM2    HM23    109.470    3.000
+ 2MA      C2     CM2    HM22    109.470    3.000
+ 2MA      C2     CM2    HM21    109.470    3.000
+ 2MA      HM23   CM2    HM22    109.470    3.000
+ 2MA      HM23   CM2    HM21    109.470    3.000
+ 2MA      HM22   CM2    HM21    109.470    3.000
+ 2MA      C2     N1     HN1     120.000    3.000
+ 2MA      C2     N1     C6      120.000    3.000
+ 2MA      HN1    N1     C6      120.000    3.000
+ 2MA      N1     C6     N6      120.000    3.000
+ 2MA      N1     C6     C5      120.000    3.000
+ 2MA      N6     C6     C5      120.000    3.000
+ 2MA      C6     N6     HN6     120.000    3.000
+ 2MA      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 2MA      var_1    OP3    P      "O5'"  "C5'"    -60.005   20.000   1
+ 2MA      var_2    P      "O5'"  "C5'"  "C4'"   -179.977   20.000   1
+ 2MA      var_3    "O5'"  "C5'"  "C4'"  "C3'"    176.936   20.000   3
+ 2MA      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ 2MA      var_5    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ 2MA      var_6    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ 2MA      var_7    "C3'"  "C2'"  "O2'"  "HO2'"   -61.426   20.000   1
+ 2MA      var_8    "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ 2MA      var_9    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ 2MA      var_10   "C2'"  "C1'"  N9     C4        91.519   20.000   1
+ 2MA      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ 2MA      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ 2MA      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ 2MA      CONST_4  C4     C5     C6     N1       -30.000    0.000   0
+ 2MA      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ 2MA      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ 2MA      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ 2MA      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ 2MA      var_11   N3     C2     CM2    HM21       0.018   20.000   1
+ 2MA      CONST_9  N3     C2     N1     C6       -30.000    0.000   0
+ 2MA      CONST_10 C2     N1     C6     N6      -150.000    0.000   0
+ 2MA      CONST_11 N1     C6     N6     HN6        0.384    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 2MA      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ 2MA      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ 2MA      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ 2MA      chir_04  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 2MA      plan-1    N9        0.020
+ 2MA      plan-1    "C1'"     0.020
+ 2MA      plan-1    C8        0.020
+ 2MA      plan-1    C4        0.020
+ 2MA      plan-1    N7        0.020
+ 2MA      plan-1    H8        0.020
+ 2MA      plan-1    C5        0.020
+ 2MA      plan-1    C6        0.020
+ 2MA      plan-1    N1        0.020
+ 2MA      plan-1    C2        0.020
+ 2MA      plan-1    N3        0.020
+ 2MA      plan-1    N6        0.020
+ 2MA      plan-1    HN6       0.020
+ 2MA      plan-1    HN1       0.020
+ 2MA      plan-1    CM2       0.020
+# ------------------------------------------------------

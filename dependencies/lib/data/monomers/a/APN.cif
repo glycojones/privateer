@@ -1,0 +1,296 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+APN      APN '2-AMINOETHYLGLYCINE-CARBONYLMETHYLEN' non-polymer        36  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_APN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ APN           OXT    O    OC       -0.500      0.000    0.000    0.000
+ APN           "C'"   C    C         0.000     -1.177   -0.179    0.383
+ APN           "O1'"  O    OC       -0.500     -1.633    0.494    1.335
+ APN           "C5'"  C    CH2       0.000     -2.045   -1.203   -0.300
+ APN           "H5'1" H    H         0.000     -1.585   -2.188   -0.209
+ APN           "H5'2" H    H         0.000     -2.147   -0.946   -1.357
+ APN           "N4'"  N    N         0.000     -3.369   -1.219    0.329
+ APN           "C3'"  C    CH2       0.000     -3.630   -2.112    1.461
+ APN           "H3'1" H    H         0.000     -4.382   -1.662    2.113
+ APN           "H3'2" H    H         0.000     -2.707   -2.265    2.023
+ APN           "C2'"  C    CH2       0.000     -4.142   -3.457    0.942
+ APN           "H2'1" H    H         0.000     -3.390   -3.905    0.290
+ APN           "H2'2" H    H         0.000     -5.065   -3.301    0.378
+ APN           "N1'"  N    NT3       1.000     -4.405   -4.352    2.077
+ APN           "H1'3" H    H         0.000     -4.751   -5.257    1.723
+ APN           "H1'2" H    H         0.000     -3.531   -4.497    2.606
+ APN           "H1'1" H    H         0.000     -5.116   -3.924    2.690
+ APN           "C7'"  C    C         0.000     -4.345   -0.413   -0.133
+ APN           "O7'"  O    O         0.000     -5.440   -0.427    0.388
+ APN           "C8'"  C    CH2       0.000     -4.076    0.505   -1.298
+ APN           "H8'1" H    H         0.000     -3.787   -0.087   -2.168
+ APN           "H8'2" H    H         0.000     -3.266    1.190   -1.040
+ APN           N9     N    NR5       0.000     -5.286    1.270   -1.605
+ APN           C4     C    CR56      0.000     -5.685    2.437   -1.004
+ APN           C5     C    CR56      0.000     -6.892    2.800   -1.623
+ APN           N7     N    NRD5      0.000     -7.168    1.850   -2.548
+ APN           C8     C    CR15      0.000     -6.227    0.951   -2.540
+ APN           H8     H    H         0.000     -6.196    0.078   -3.180
+ APN           N3     N    NRD6      0.000     -5.186    3.220   -0.052
+ APN           C2     C    CR16      0.000     -5.818    4.314    0.316
+ APN           H2     H    H         0.000     -5.387    4.926    1.099
+ APN           N1     N    NRD6      0.000     -6.958    4.694   -0.233
+ APN           C6     C    CR6       0.000     -7.529    3.979   -1.196
+ APN           N6     N    NH2       0.000     -8.723    4.384   -1.766
+ APN           HN62   H    H         0.000     -9.180    5.235   -1.454
+ APN           HN61   H    H         0.000     -9.156    3.834   -2.502
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ APN      OXT    n/a    "C'"   START
+ APN      "C'"   OXT    "C5'"  .
+ APN      "O1'"  "C'"   .      .
+ APN      "C5'"  "C'"   "N4'"  .
+ APN      "H5'1" "C5'"  .      .
+ APN      "H5'2" "C5'"  .      .
+ APN      "N4'"  "C5'"  "C7'"  .
+ APN      "C3'"  "N4'"  "C2'"  .
+ APN      "H3'1" "C3'"  .      .
+ APN      "H3'2" "C3'"  .      .
+ APN      "C2'"  "C3'"  "N1'"  .
+ APN      "H2'1" "C2'"  .      .
+ APN      "H2'2" "C2'"  .      .
+ APN      "N1'"  "C2'"  "H1'1" .
+ APN      "H1'3" "N1'"  .      .
+ APN      "H1'2" "N1'"  .      .
+ APN      "H1'1" "N1'"  .      .
+ APN      "C7'"  "N4'"  "C8'"  .
+ APN      "O7'"  "C7'"  .      .
+ APN      "C8'"  "C7'"  N9     .
+ APN      "H8'1" "C8'"  .      .
+ APN      "H8'2" "C8'"  .      .
+ APN      N9     "C8'"  C4     .
+ APN      C4     N9     N3     .
+ APN      C5     C4     N7     .
+ APN      N7     C5     C8     .
+ APN      C8     N7     H8     .
+ APN      H8     C8     .      .
+ APN      N3     C4     C2     .
+ APN      C2     N3     N1     .
+ APN      H2     C2     .      .
+ APN      N1     C2     C6     .
+ APN      C6     N1     N6     .
+ APN      N6     C6     HN61   .
+ APN      HN62   N6     .      .
+ APN      HN61   N6     .      END
+ APN      N9     C8     .    ADD
+ APN      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+APN       "C8'"     "C7'"     single    1.510     0.020     1.510     0.020     
+APN       N9        "C8'"     single    1.462     0.020     1.462     0.020     
+APN       "H8'1"    "C8'"     single    1.089     0.010     0.989     0.005     
+APN       "H8'2"    "C8'"     single    1.089     0.010     0.989     0.005     
+APN       "O7'"     "C7'"     double    1.220     0.020     1.220     0.020     
+APN       "C7'"     "N4'"     single    1.330     0.020     1.330     0.020     
+APN       "C5'"     "C'"      single    1.510     0.020     1.510     0.020     
+APN       "N4'"     "C5'"     single    1.455     0.020     1.455     0.020     
+APN       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+APN       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+APN       "O1'"     "C'"      deloc     1.250     0.020     1.250     0.020     
+APN       "C'"      OXT       deloc     1.250     0.020     1.250     0.020     
+APN       "C3'"     "N4'"     single    1.455     0.020     1.455     0.020     
+APN       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+APN       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+APN       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+APN       "N1'"     "C2'"     single    1.488     0.020     1.488     0.020     
+APN       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+APN       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+APN       "H1'1"    "N1'"     single    1.036     0.016     0.914     0.007     
+APN       "H1'2"    "N1'"     single    1.036     0.016     0.914     0.007     
+APN       "H1'3"    "N1'"     single    1.036     0.016     0.914     0.007     
+APN       N9        C8        single    1.337     0.020     1.337     0.020     
+APN       C4        N9        single    1.337     0.020     1.337     0.020     
+APN       C8        N7        double    1.350     0.020     1.350     0.020     
+APN       H8        C8        single    1.082     0.013     0.975     0.010     
+APN       N7        C5        single    1.350     0.020     1.350     0.020     
+APN       C5        C6        single    1.490     0.020     1.490     0.020     
+APN       C5        C4        double    1.490     0.020     1.490     0.020     
+APN       N6        C6        single    1.355     0.020     1.355     0.020     
+APN       C6        N1        double    1.350     0.020     1.350     0.020     
+APN       HN61      N6        single    1.016     0.010     0.899     0.007     
+APN       HN62      N6        single    1.016     0.010     0.899     0.007     
+APN       N1        C2        single    1.337     0.020     1.337     0.020     
+APN       C2        N3        double    1.337     0.020     1.337     0.020     
+APN       H2        C2        single    1.082     0.013     0.975     0.010     
+APN       N3        C4        single    1.355     0.020     1.355     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ APN      OXT    "C'"   "O1'"   123.000    3.000
+ APN      OXT    "C'"   "C5'"   118.500    3.000
+ APN      "O1'"  "C'"   "C5'"   118.500    3.000
+ APN      "C'"   "C5'"  "H5'1"  109.470    3.000
+ APN      "C'"   "C5'"  "H5'2"  109.470    3.000
+ APN      "C'"   "C5'"  "N4'"   109.500    3.000
+ APN      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ APN      "H5'1" "C5'"  "N4'"   109.470    3.000
+ APN      "H5'2" "C5'"  "N4'"   109.470    3.000
+ APN      "C5'"  "N4'"  "C3'"   120.000    3.000
+ APN      "C5'"  "N4'"  "C7'"   127.000    3.000
+ APN      "C3'"  "N4'"  "C7'"   127.000    3.000
+ APN      "N4'"  "C3'"  "H3'1"  109.470    3.000
+ APN      "N4'"  "C3'"  "H3'2"  109.470    3.000
+ APN      "N4'"  "C3'"  "C2'"   105.000    3.000
+ APN      "H3'1" "C3'"  "H3'2"  107.900    3.000
+ APN      "H3'1" "C3'"  "C2'"   109.470    3.000
+ APN      "H3'2" "C3'"  "C2'"   109.470    3.000
+ APN      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ APN      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ APN      "C3'"  "C2'"  "N1'"   110.000    3.000
+ APN      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ APN      "H2'1" "C2'"  "N1'"   109.470    3.000
+ APN      "H2'2" "C2'"  "N1'"   109.470    3.000
+ APN      "C2'"  "N1'"  "H1'3"  109.470    3.000
+ APN      "C2'"  "N1'"  "H1'2"  109.470    3.000
+ APN      "C2'"  "N1'"  "H1'1"  109.470    3.000
+ APN      "H1'3" "N1'"  "H1'2"  109.470    3.000
+ APN      "H1'3" "N1'"  "H1'1"  109.470    3.000
+ APN      "H1'2" "N1'"  "H1'1"  109.470    3.000
+ APN      "N4'"  "C7'"  "O7'"   123.000    3.000
+ APN      "N4'"  "C7'"  "C8'"   116.500    3.000
+ APN      "O7'"  "C7'"  "C8'"   120.500    3.000
+ APN      "C7'"  "C8'"  "H8'1"  109.470    3.000
+ APN      "C7'"  "C8'"  "H8'2"  109.470    3.000
+ APN      "C7'"  "C8'"  N9      109.500    3.000
+ APN      "H8'1" "C8'"  "H8'2"  107.900    3.000
+ APN      "H8'1" "C8'"  N9      109.500    3.000
+ APN      "H8'2" "C8'"  N9      109.500    3.000
+ APN      "C8'"  N9     C4      126.000    3.000
+ APN      "C8'"  N9     C8      126.000    3.000
+ APN      C4     N9     C8      108.000    3.000
+ APN      N9     C4     C5      108.000    3.000
+ APN      N9     C4     N3      132.000    3.000
+ APN      C5     C4     N3      120.000    3.000
+ APN      C4     C5     N7      108.000    3.000
+ APN      C4     C5     C6      120.000    3.000
+ APN      N7     C5     C6      132.000    3.000
+ APN      C5     N7     C8      108.000    3.000
+ APN      N7     C8     H8      126.000    3.000
+ APN      N7     C8     N9      108.000    3.000
+ APN      H8     C8     N9      126.000    3.000
+ APN      C4     N3     C2      120.000    3.000
+ APN      N3     C2     H2      120.000    3.000
+ APN      N3     C2     N1      120.000    3.000
+ APN      H2     C2     N1      120.000    3.000
+ APN      C2     N1     C6      120.000    3.000
+ APN      N1     C6     N6      120.000    3.000
+ APN      N1     C6     C5      120.000    3.000
+ APN      N6     C6     C5      120.000    3.000
+ APN      C6     N6     HN62    120.000    3.000
+ APN      C6     N6     HN61    120.000    3.000
+ APN      HN62   N6     HN61    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ APN      var_1    OXT    "C'"   "C5'"  "N4'"   -179.982   20.000   3
+ APN      var_2    "C'"   "C5'"  "N4'"  "C7'"     90.005   20.000   1
+ APN      var_3    "C5'"  "N4'"  "C3'"  "C2'"    -90.003   20.000   1
+ APN      var_4    "N4'"  "C3'"  "C2'"  "N1'"   -179.966   20.000   3
+ APN      var_5    "C3'"  "C2'"  "N1'"  "H1'1"    59.950   20.000   1
+ APN      CONST_1  "C5'"  "N4'"  "C7'"  "C8'"      0.000    0.000   0
+ APN      var_6    "N4'"  "C7'"  "C8'"  N9      -179.975   20.000   3
+ APN      var_7    "C7'"  "C8'"  N9     C4        84.720   20.000   1
+ APN      CONST_2  "C8'"  N9     C8     N7       180.000    0.000   0
+ APN      CONST_3  "C8'"  N9     C4     N3         0.000    0.000   0
+ APN      CONST_4  N9     C4     C5     N7         0.000    0.000   0
+ APN      CONST_5  C4     C5     C6     N1         0.000    0.000   0
+ APN      CONST_6  C4     C5     N7     C8         0.000    0.000   0
+ APN      CONST_7  C5     N7     C8     N9         0.000    0.000   0
+ APN      CONST_8  N9     C4     N3     C2       180.000    0.000   0
+ APN      CONST_9  C4     N3     C2     N1         0.000    0.000   0
+ APN      CONST_10 N3     C2     N1     C6         0.000    0.000   0
+ APN      CONST_11 C2     N1     C6     N6       180.000    0.000   0
+ APN      CONST_12 N1     C6     N6     HN61    -179.970    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ APN      plan-1    "C7'"     0.020
+ APN      plan-1    "C8'"     0.020
+ APN      plan-1    "O7'"     0.020
+ APN      plan-1    "N4'"     0.020
+ APN      plan-2    "C'"      0.020
+ APN      plan-2    "C5'"     0.020
+ APN      plan-2    "O1'"     0.020
+ APN      plan-2    OXT       0.020
+ APN      plan-3    "N4'"     0.020
+ APN      plan-3    "C7'"     0.020
+ APN      plan-3    "C5'"     0.020
+ APN      plan-3    "C3'"     0.020
+ APN      plan-4    N9        0.020
+ APN      plan-4    "C8'"     0.020
+ APN      plan-4    C8        0.020
+ APN      plan-4    C4        0.020
+ APN      plan-4    N7        0.020
+ APN      plan-4    H8        0.020
+ APN      plan-4    C5        0.020
+ APN      plan-4    C6        0.020
+ APN      plan-4    N1        0.020
+ APN      plan-4    C2        0.020
+ APN      plan-4    N3        0.020
+ APN      plan-4    N6        0.020
+ APN      plan-4    H2        0.020
+ APN      plan-4    HN62      0.020
+ APN      plan-4    HN61      0.020
+ APN      plan-5    N6        0.020
+ APN      plan-5    C6        0.020
+ APN      plan-5    HN61      0.020
+ APN      plan-5    HN62      0.020
+# ------------------------------------------------------

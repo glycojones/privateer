@@ -1,0 +1,271 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AGT     AGT      "S-{(S)-AMINO[(4-AMINOBUTYL)AMINO]METHYL}-L-CYSTEINE"  peptide    35     15     .     
+#
+data_comp_AGT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AGT     O       O       O       0       26.346      -3.101      67.449      
+AGT     C       C       C       0       25.550      -2.172      67.698      
+AGT     CA      C       CH1     0       24.963      -1.412      66.502      
+AGT     N       N       NT3     1       23.480      -1.365      66.616      
+AGT     CB      C       CH2     0       25.508      0.002       66.426      
+AGT     SG      S       S2      0       25.131      0.875       64.881      
+AGT     CZ      C       CH1     0       26.612      1.921       64.617      
+AGT     NH2     N       NT2     0       26.634      2.959       65.653      
+AGT     NE      N       NT1     0       27.836      1.106       64.597      
+AGT     CD      C       CH2     0       28.114      0.424       63.331      
+AGT     CG      C       CH2     0       29.152      -0.675      63.504      
+AGT     CK      C       CH2     0       28.705      -1.762      64.468      
+AGT     CJ      C       CH2     0       29.684      -2.922      64.559      
+AGT     NB      N       NT2     0       29.284      -3.985      65.487      
+AGT     OXT     O       OC      -1      25.190      -1.808      68.835      
+AGT     HA      H       H       0       25.191      -1.895      65.674      
+AGT     H       H       H       0       23.131      -0.912      65.907      
+AGT     H2      H       H       0       23.243      -0.940      67.387      
+AGT     H3      H       H       0       23.144      -2.212      66.625      
+AGT     HB      H       H       0       26.471      -0.032      66.539      
+AGT     HB2     H       H       0       25.142      0.512       67.166      
+AGT     HZ      H       H       0       26.501      2.357       63.733      
+AGT     HH21    H       H       0       27.285      3.547       65.518      
+AGT     HH22    H       H       0       26.756      2.616       66.463      
+AGT     HE      H       H       0       28.561      1.591       64.817      
+AGT     HDC1    H       H       0       28.440      1.076       62.676      
+AGT     HDC2    H       H       0       27.288      0.033       62.979      
+AGT     HGC1    H       H       0       29.985      -0.277      63.835      
+AGT     HGC2    H       H       0       29.336      -1.079      62.630      
+AGT     HKC1    H       H       0       27.833      -2.107      64.180      
+AGT     HKC2    H       H       0       28.596      -1.374      65.362      
+AGT     HJC1    H       H       0       30.554      -2.573      64.839      
+AGT     HJC2    H       H       0       29.791      -3.310      63.666      
+AGT     HBN1    H       H       0       29.980      -4.492      65.704      
+AGT     HBN2    H       H       0       28.963      -3.642      66.241      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AGT      N      n/a    CA     START
+ AGT      H      N      .      .
+ AGT      H2     N      .      .
+ AGT      H3     N      .      .
+ AGT      CA     N      C      .
+ AGT      HA     CA     .      .
+ AGT      CB     CA     SG     .
+ AGT      HB     CB     .      .
+ AGT      HB2    CB     .      .
+ AGT      SG     CB     CZ     .
+ AGT      CZ     SG     NE     .
+ AGT      HZ     CZ     .      .
+ AGT      NH2    CZ     HH21   .
+ AGT      HH22   NH2    .      .
+ AGT      HH21   NH2    .      .
+ AGT      NE     CZ     CD     .
+ AGT      HE     NE     .      .
+ AGT      CD     NE     CG     .
+ AGT      HDC1   CD     .      .
+ AGT      HDC2   CD     .      .
+ AGT      CG     CD     CK     .
+ AGT      HGC1   CG     .      .
+ AGT      HGC2   CG     .      .
+ AGT      CK     CG     CJ     .
+ AGT      HKC1   CK     .      .
+ AGT      HKC2   CK     .      .
+ AGT      CJ     CK     NB     .
+ AGT      HJC1   CJ     .      .
+ AGT      HJC2   CJ     .      .
+ AGT      NB     CJ     HBN1   .
+ AGT      HBN2   NB     .      .
+ AGT      HBN1   NB     .      .
+ AGT      C      CA     .      END
+ AGT      O      C      .      .
+ AGT      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AGT       O         C         DOUBLE    n         1.247     0.019     1.247     0.019     
+AGT       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+AGT       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+AGT       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+AGT       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+AGT       CB        SG        SINGLE    n         1.813     0.011     1.813     0.011     
+AGT       SG        CZ        SINGLE    n         1.829     0.016     1.829     0.016     
+AGT       CZ        NH2       SINGLE    n         1.467     0.020     1.467     0.020     
+AGT       CZ        NE        SINGLE    n         1.469     0.014     1.469     0.014     
+AGT       NE        CD        SINGLE    n         1.463     0.011     1.463     0.011     
+AGT       CD        CG        SINGLE    n         1.521     0.010     1.521     0.010     
+AGT       CG        CK        SINGLE    n         1.519     0.015     1.519     0.015     
+AGT       CK        CJ        SINGLE    n         1.521     0.010     1.521     0.010     
+AGT       CJ        NB        SINGLE    n         1.466     0.012     1.466     0.012     
+AGT       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+AGT       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+AGT       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+AGT       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+AGT       CB        HB        SINGLE    n         1.089     0.010     0.970     0.010     
+AGT       CB        HB2       SINGLE    n         1.089     0.010     0.970     0.010     
+AGT       CZ        HZ        SINGLE    n         1.089     0.010     0.992     0.020     
+AGT       NH2       HH21      SINGLE    n         1.036     0.016     0.888     0.020     
+AGT       NH2       HH22      SINGLE    n         1.036     0.016     0.888     0.020     
+AGT       NE        HE        SINGLE    n         1.036     0.016     0.899     0.020     
+AGT       CD        HDC1      SINGLE    n         1.089     0.010     0.980     0.015     
+AGT       CD        HDC2      SINGLE    n         1.089     0.010     0.980     0.015     
+AGT       CG        HGC1      SINGLE    n         1.089     0.010     0.981     0.016     
+AGT       CG        HGC2      SINGLE    n         1.089     0.010     0.981     0.016     
+AGT       CK        HKC1      SINGLE    n         1.089     0.010     0.981     0.016     
+AGT       CK        HKC2      SINGLE    n         1.089     0.010     0.981     0.016     
+AGT       CJ        HJC1      SINGLE    n         1.089     0.010     0.979     0.011     
+AGT       CJ        HJC2      SINGLE    n         1.089     0.010     0.979     0.011     
+AGT       NB        HBN1      SINGLE    n         1.036     0.016     0.888     0.020     
+AGT       NB        HBN2      SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AGT           O           C          CA     117.134    1.50
+AGT           O           C         OXT     125.732    1.50
+AGT          CA           C         OXT     117.134    1.50
+AGT           C          CA           N     109.494    1.50
+AGT           C          CA          CB     110.419    2.31
+AGT           C          CA          HA     108.606    1.50
+AGT           N          CA          CB     109.354    1.50
+AGT           N          CA          HA     107.983    1.50
+AGT          CB          CA          HA     109.209    1.50
+AGT          CA           N           H     109.671    1.50
+AGT          CA           N          H2     109.671    1.50
+AGT          CA           N          H3     109.671    1.50
+AGT           H           N          H2     109.028    2.41
+AGT           H           N          H3     109.028    2.41
+AGT          H2           N          H3     109.028    2.41
+AGT          CA          CB          SG     114.974    1.55
+AGT          CA          CB          HB     108.537    1.50
+AGT          CA          CB         HB2     108.537    1.50
+AGT          SG          CB          HB     108.654    1.50
+AGT          SG          CB         HB2     108.654    1.50
+AGT          HB          CB         HB2     107.812    1.50
+AGT          CB          SG          CZ     101.840    1.86
+AGT          SG          CZ         NH2     109.471    3.00
+AGT          SG          CZ          NE     109.471    3.00
+AGT          SG          CZ          HZ     107.145    1.50
+AGT         NH2          CZ          NE     114.119    2.88
+AGT         NH2          CZ          HZ     109.140    1.50
+AGT          NE          CZ          HZ     109.140    1.50
+AGT          CZ         NH2        HH21     111.861    3.00
+AGT          CZ         NH2        HH22     111.861    3.00
+AGT        HH21         NH2        HH22     107.163    3.00
+AGT          CZ          NE          CD     112.615    2.70
+AGT          CZ          NE          HE     111.861    3.00
+AGT          CD          NE          HE     108.280    3.00
+AGT          NE          CD          CG     111.754    2.01
+AGT          NE          CD        HDC1     109.402    1.50
+AGT          NE          CD        HDC2     109.402    1.50
+AGT          CG          CD        HDC1     109.197    1.51
+AGT          CG          CD        HDC2     109.197    1.51
+AGT        HDC1          CD        HDC2     107.877    1.50
+AGT          CD          CG          CK     112.652    1.50
+AGT          CD          CG        HGC1     108.956    1.50
+AGT          CD          CG        HGC2     108.956    1.50
+AGT          CK          CG        HGC1     108.999    1.50
+AGT          CK          CG        HGC2     108.999    1.50
+AGT        HGC1          CG        HGC2     107.927    1.57
+AGT          CG          CK          CJ     113.118    2.03
+AGT          CG          CK        HKC1     108.999    1.50
+AGT          CG          CK        HKC2     108.999    1.50
+AGT          CJ          CK        HKC1     108.630    1.50
+AGT          CJ          CK        HKC2     108.630    1.50
+AGT        HKC1          CK        HKC2     107.927    1.57
+AGT          CK          CJ          NB     114.751    2.00
+AGT          CK          CJ        HJC1     108.627    1.50
+AGT          CK          CJ        HJC2     108.627    1.50
+AGT          NB          CJ        HJC1     108.763    1.50
+AGT          NB          CJ        HJC2     108.763    1.50
+AGT        HJC1          CJ        HJC2     107.806    1.50
+AGT          CJ          NB        HBN1     110.839    3.00
+AGT          CJ          NB        HBN2     110.839    3.00
+AGT        HBN1          NB        HBN2     107.243    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AGT            sp3_sp3_52          CD          CG          CK          CJ     180.000   10.00     3
+AGT            sp3_sp3_61          NB          CJ          CK          CG     180.000   10.00     3
+AGT            sp3_sp3_70          CK          CJ          NB        HBN1     180.000   10.00     3
+AGT             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+AGT             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+AGT            sp3_sp3_13           C          CA          CB          SG      60.000   10.00     3
+AGT            sp3_sp3_19          CA          CB          SG          CZ     180.000   10.00     3
+AGT            sp3_sp3_22         NH2          CZ          SG          CB     180.000   10.00     3
+AGT            sp3_sp3_25          SG          CZ         NH2        HH21     180.000   10.00     3
+AGT            sp3_sp3_32          SG          CZ          NE          CD     -60.000   10.00     3
+AGT            sp3_sp3_37          CG          CD          NE          CZ     180.000   10.00     3
+AGT            sp3_sp3_43          NE          CD          CG          CK     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+AGT    chir_1    CA    N    CB    C    both
+AGT    chir_2    CZ    SG    NE    NH2    positive
+AGT    chir_3    NE    CZ    CD    HE    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AGT    plan-1           C   0.020
+AGT    plan-1          CA   0.020
+AGT    plan-1           O   0.020
+AGT    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AGT SMILES           ACDLabs              12.01 "O=C(O)C(N)CSC(NCCCCN)N"
+AGT InChI            InChI                1.03  "InChI=1S/C8H20N4O2S/c9-3-1-2-4-12-8(11)15-5-6(10)7(13)14/h6,8,12H,1-5,9-11H2,(H,13,14)/t6-,8-/m0/s1"
+AGT InChIKey         InChI                1.03  GZLBOQUKGXMSFX-XPUUQOCRSA-N
+AGT SMILES_CANONICAL CACTVS               3.370 "NCCCCN[C@H](N)SC[C@H](N)C(O)=O"
+AGT SMILES           CACTVS               3.370 "NCCCCN[CH](N)SC[CH](N)C(O)=O"
+AGT SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "C(CCN[C@H](N)SC[C@@H](C(=O)O)N)CN"
+AGT SMILES           "OpenEye OEToolkits" 1.7.2 "C(CCNC(N)SCC(C(=O)O)N)CN"
+AGT ?                acedrg               202         "dictionary generator"                  
+AGT ?                acedrg_database      11          "data source"                           
+AGT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AGT ?                refmac5              5.8.0222    "optimization tool"                     

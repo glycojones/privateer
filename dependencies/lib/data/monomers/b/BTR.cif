@@ -1,0 +1,260 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BTR     BTR     6-BROMO-TRYPTOPHAN   peptide    27     16     .     
+#
+data_comp_BTR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BTR     N       N       NT3     1       2.445       -0.184      1.532       
+BTR     CA      C       CH1     0       2.111       0.736       0.409       
+BTR     C       C       C       0       3.338       1.584       0.050       
+BTR     O       O       O       0       4.365       0.975       -0.309      
+BTR     OXT     O       OC      -1      3.221       2.822       0.142       
+BTR     CB      C       CH2     0       1.599       -0.049      -0.808      
+BTR     CG      C       CR5     0       0.279       -0.724      -0.594      
+BTR     CD1     C       CR15    0       0.049       -2.067      -0.501      
+BTR     NE1     N       NR5     0       -1.283      -2.311      -0.303      
+BTR     CE2     C       CR56    0       -1.957      -1.115      -0.263      
+BTR     CD2     C       CR56    0       -1.002      -0.086      -0.443      
+BTR     CE3     C       CR16    0       -1.435      1.251       -0.443      
+BTR     CZ3     C       CR16    0       -2.781      1.527       -0.267      
+BTR     CH2     C       CR6     0       -3.696      0.485       -0.092      
+BTR     BR2     BR      BR      0       -5.525      0.919       0.144       
+BTR     CZ2     C       CR16    0       -3.315      -0.839      -0.086      
+BTR     H       H       H       0       2.966       -0.866      1.227       
+BTR     H2      H       H       0       1.679       -0.524      1.889       
+BTR     H3      H       H       0       2.895       0.271       2.182       
+BTR     HA      H       H       0       1.389       1.335       0.711       
+BTR     HB2     H       H       0       2.268       -0.723      -1.043      
+BTR     HB3     H       H       0       1.521       0.570       -1.562      
+BTR     HD1     H       H       0       0.712       -2.737      -0.563      
+BTR     HE1     H       H       0       -1.646      -3.105      -0.217      
+BTR     HE3     H       H       0       -0.817      1.952       -0.561      
+BTR     HZ3     H       H       0       -3.082      2.425       -0.265      
+BTR     HZ2     H       H       0       -3.943      -1.530      0.033       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BTR      N      n/a    CA     START
+ BTR      H      N      .      .
+ BTR      H2     N      .      .
+ BTR      H3     N      .      .
+ BTR      CA     N      C      .
+ BTR      HA     CA     .      .
+ BTR      CB     CA     CG     .
+ BTR      HB2    CB     .      .
+ BTR      HB3    CB     .      .
+ BTR      CG     CB     CD2    .
+ BTR      CD2    CG     CE3    .
+ BTR      CE3    CD2    CZ3    .
+ BTR      HE3    CE3    .      .
+ BTR      CZ3    CE3    CH2    .
+ BTR      HZ3    CZ3    .      .
+ BTR      CH2    CZ3    BR2    .
+ BTR      CZ2    CH2    CE2    .
+ BTR      HZ2    CZ2    .      .
+ BTR      CE2    CZ2    NE1    .
+ BTR      NE1    CE2    CD1    .
+ BTR      HE1    NE1    .      .
+ BTR      CD1    NE1    HD1    .
+ BTR      HD1    CD1    .      .
+ BTR      BR2    CH2    .      .
+ BTR      C      CA     .      END
+ BTR      O      C      .      .
+ BTR      OXT    C      .      .
+ BTR      CG     CD1    .    ADD
+ BTR      CE2    CD2    .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BTR       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+BTR       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+BTR       CA        CB        SINGLE    n         1.534     0.012     1.534     0.012     
+BTR       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+BTR       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+BTR       CB        CG        SINGLE    n         1.498     0.010     1.498     0.010     
+BTR       CG        CD1       DOUBLE    y         1.365     0.010     1.365     0.010     
+BTR       CG        CD2       SINGLE    y         1.439     0.010     1.439     0.010     
+BTR       CD1       NE1       SINGLE    y         1.369     0.010     1.369     0.010     
+BTR       NE1       CE2       SINGLE    y         1.373     0.010     1.373     0.010     
+BTR       CE2       CD2       DOUBLE    y         1.411     0.010     1.411     0.010     
+BTR       CE2       CZ2       SINGLE    y         1.394     0.010     1.394     0.010     
+BTR       CD2       CE3       SINGLE    y         1.401     0.010     1.401     0.010     
+BTR       CE3       CZ3       DOUBLE    y         1.382     0.010     1.382     0.010     
+BTR       CZ3       CH2       SINGLE    y         1.395     0.010     1.395     0.010     
+BTR       CH2       BR2       SINGLE    n         1.895     0.020     1.895     0.020     
+BTR       CH2       CZ2       DOUBLE    y         1.374     0.012     1.374     0.012     
+BTR       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+BTR       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+BTR       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+BTR       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+BTR       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.020     
+BTR       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.020     
+BTR       CD1       HD1       SINGLE    n         1.082     0.013     0.945     0.020     
+BTR       NE1       HE1       SINGLE    n         1.016     0.010     0.877     0.020     
+BTR       CE3       HE3       SINGLE    n         1.082     0.013     0.942     0.018     
+BTR       CZ3       HZ3       SINGLE    n         1.082     0.013     0.947     0.010     
+BTR       CZ2       HZ2       SINGLE    n         1.082     0.013     0.941     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BTR          CA           N           H     109.321    1.91
+BTR          CA           N          H2     109.321    1.91
+BTR          CA           N          H3     109.321    1.91
+BTR           H           N          H2     109.028    2.41
+BTR           H           N          H3     109.028    2.41
+BTR          H2           N          H3     109.028    2.41
+BTR           N          CA           C     109.666    1.50
+BTR           N          CA          CB     110.562    1.50
+BTR           N          CA          HA     108.030    1.50
+BTR           C          CA          CB     111.644    1.50
+BTR           C          CA          HA     108.922    1.50
+BTR          CB          CA          HA     108.128    1.50
+BTR          CA           C           O     117.134    1.50
+BTR          CA           C         OXT     117.134    1.50
+BTR           O           C         OXT     125.731    1.50
+BTR          CA          CB          CG     113.843    1.64
+BTR          CA          CB         HB2     108.266    1.50
+BTR          CA          CB         HB3     108.266    1.50
+BTR          CG          CB         HB2     109.029    1.50
+BTR          CG          CB         HB3     109.029    1.50
+BTR         HB2          CB         HB3     107.759    1.50
+BTR          CB          CG         CD1     127.068    1.62
+BTR          CB          CG         CD2     126.820    1.50
+BTR         CD1          CG         CD2     106.112    1.50
+BTR          CG         CD1         NE1     110.404    1.50
+BTR          CG         CD1         HD1     125.159    1.59
+BTR         NE1         CD1         HD1     124.437    1.50
+BTR         CD1         NE1         CE2     109.042    1.50
+BTR         CD1         NE1         HE1     125.328    1.77
+BTR         CE2         NE1         HE1     125.630    1.60
+BTR         NE1         CE2         CD2     107.455    1.50
+BTR         NE1         CE2         CZ2     130.806    1.50
+BTR         CD2         CE2         CZ2     121.739    1.50
+BTR          CG         CD2         CE2     106.987    1.50
+BTR          CG         CD2         CE3     134.211    1.50
+BTR         CE2         CD2         CE3     118.803    1.50
+BTR         CD2         CE3         CZ3     119.076    1.50
+BTR         CD2         CE3         HE3     120.536    1.50
+BTR         CZ3         CE3         HE3     120.395    1.50
+BTR         CE3         CZ3         CH2     120.393    1.50
+BTR         CE3         CZ3         HZ3     119.804    1.50
+BTR         CH2         CZ3         HZ3     119.804    1.50
+BTR         CZ3         CH2         BR2     118.306    1.50
+BTR         CZ3         CH2         CZ2     122.808    1.50
+BTR         BR2         CH2         CZ2     118.887    1.50
+BTR         CE2         CZ2         CH2     117.176    1.50
+BTR         CE2         CZ2         HZ2     121.327    1.50
+BTR         CH2         CZ2         HZ2     121.497    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BTR             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+BTR              const_19          CG         CD2         CE3         CZ3     180.000   10.00     2
+BTR              const_21         CD2         CE3         CZ3         CH2       0.000   10.00     2
+BTR              const_27         BR2         CH2         CZ3         CE3     180.000   10.00     2
+BTR              const_31         BR2         CH2         CZ2         CE2     180.000   10.00     2
+BTR             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+BTR            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+BTR             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+BTR              const_34         CE2         CD2          CG          CB     180.000   10.00     2
+BTR       const_sp2_sp2_2         NE1         CD1          CG          CB     180.000   10.00     2
+BTR       const_sp2_sp2_5          CG         CD1         NE1         CE2       0.000   10.00     2
+BTR       const_sp2_sp2_9         CD2         CE2         NE1         CD1       0.000   10.00     2
+BTR              const_13          CG         CD2         CE2         NE1       0.000   10.00     2
+BTR              const_39         NE1         CE2         CZ2         CH2     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+BTR    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BTR    plan-1         BR2   0.020
+BTR    plan-1         CD2   0.020
+BTR    plan-1         CE2   0.020
+BTR    plan-1         CE3   0.020
+BTR    plan-1          CG   0.020
+BTR    plan-1         CH2   0.020
+BTR    plan-1         CZ2   0.020
+BTR    plan-1         CZ3   0.020
+BTR    plan-1         HE3   0.020
+BTR    plan-1         HZ2   0.020
+BTR    plan-1         HZ3   0.020
+BTR    plan-1         NE1   0.020
+BTR    plan-2          CB   0.020
+BTR    plan-2         CD1   0.020
+BTR    plan-2         CD2   0.020
+BTR    plan-2         CE2   0.020
+BTR    plan-2         CE3   0.020
+BTR    plan-2          CG   0.020
+BTR    plan-2         CZ2   0.020
+BTR    plan-2         HD1   0.020
+BTR    plan-2         HE1   0.020
+BTR    plan-2         NE1   0.020
+BTR    plan-3           C   0.020
+BTR    plan-3          CA   0.020
+BTR    plan-3           O   0.020
+BTR    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BTR SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc2c1ccc(Br)cc1nc2"
+BTR SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1c[nH]c2cc(Br)ccc12)C(O)=O"
+BTR SMILES           CACTVS               3.341 "N[CH](Cc1c[nH]c2cc(Br)ccc12)C(O)=O"
+BTR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc2c(cc1Br)[nH]cc2C[C@@H](C(=O)O)N"
+BTR SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc2c(cc1Br)[nH]cc2CC(C(=O)O)N"
+BTR InChI            InChI                1.03  "InChI=1S/C11H11BrN2O2/c12-7-1-2-8-6(3-9(13)11(15)16)5-14-10(8)4-7/h1-2,4-5,9,14H,3,13H2,(H,15,16)/t9-/m0/s1"
+BTR InChIKey         InChI                1.03  OAORYCZPERQARS-VIFPVBQESA-N
+BTR ?                acedrg               196         "dictionary generator"                  
+BTR ?                acedrg_database      11          "data source"                           
+BTR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BTR ?                refmac5              5.8.0222    "optimization tool"                     

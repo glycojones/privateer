@@ -1,0 +1,166 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XCC      XCC 'FE(4)-NI(1)-S(4) CLUSTER            ' non-polymer        12   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_XCC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ XCC           NI     NI   NI        0.000      0.000    0.000    0.000
+ XCC           S1     S    ST        0.000     -2.227    1.100    0.070
+ XCC           HS1    H    H         0.000     -2.171    1.291   -1.147
+ XCC           FE4    FE   FE        0.000     -3.200   -0.847   -0.280
+ XCC           S2     S    ST        0.000     -4.729    0.326   -1.323
+ XCC           HS2    H    H         0.000     -4.887    0.434   -2.542
+ XCC           S3     S    ST        0.000     -4.838   -2.269    0.111
+ XCC           HS3    H    H         0.000     -5.023   -2.389   -1.102
+ XCC           FE2    FE   FE        0.000     -3.411   -3.929    0.058
+ XCC           FE1    FE   FE        0.000     -6.146   -0.493    0.136
+ XCC           S4     S    S2        0.000     -6.382    1.631    0.689
+ XCC           FE3    FE   FE        0.000     -4.272    1.925    0.106
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ XCC      NI     n/a    S1     START
+ XCC      S1     NI     FE4    .
+ XCC      HS1    S1     .      .
+ XCC      FE4    S1     S3     .
+ XCC      S2     FE4    HS2    .
+ XCC      HS2    S2     .      .
+ XCC      S3     FE4    FE1    .
+ XCC      HS3    S3     .      .
+ XCC      FE2    S3     .      .
+ XCC      FE1    S3     S4     .
+ XCC      S4     FE1    FE3    .
+ XCC      FE3    S4     .      END
+ XCC      FE1    S2     .    ADD
+ XCC      FE3    S1     .    ADD
+ XCC      FE3    S2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XCC       FE1       S2        single    2.135     0.020     2.135     0.020     
+XCC       S4        FE1       single    2.235     0.020     2.235     0.020     
+XCC       FE1       S3        single    2.135     0.020     2.135     0.020     
+XCC       FE2       S3        single    2.135     0.020     2.135     0.020     
+XCC       FE3       S1        single    2.135     0.020     2.135     0.020     
+XCC       FE3       S2        single    2.135     0.020     2.135     0.020     
+XCC       FE3       S4        single    2.235     0.020     2.235     0.020     
+XCC       FE4       S1        single    2.135     0.020     2.135     0.020     
+XCC       S2        FE4       single    2.135     0.020     2.135     0.020     
+XCC       S3        FE4       single    2.135     0.020     2.135     0.020     
+XCC       S1        NI        single    2.300     0.020     2.300     0.020     
+XCC       HS1       S1        single    1.338     0.010     1.171     0.208     
+XCC       HS2       S2        single    1.338     0.010     1.171     0.208     
+XCC       HS3       S3        single    1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ XCC      NI     S1     HS1     109.500    3.000
+ XCC      NI     S1     FE4     109.500    3.000
+ XCC      NI     S1     FE3     109.500    3.000
+ XCC      HS1    S1     FE4     109.500    3.000
+ XCC      HS1    S1     FE3     109.500    3.000
+ XCC      FE4    S1     FE3     109.500    3.000
+ XCC      S1     FE4    S2       90.000    3.000
+ XCC      S1     FE4    S3      144.000    3.000
+ XCC      S2     FE4    S3       90.000    3.000
+ XCC      FE4    S2     HS2     109.500    3.000
+ XCC      FE4    S2     FE1     109.500    3.000
+ XCC      FE4    S2     FE3     109.500    3.000
+ XCC      FE1    S2     FE3     109.500    3.000
+ XCC      HS2    S2     FE1     109.500    3.000
+ XCC      HS2    S2     FE3     109.500    3.000
+ XCC      FE4    S3     HS3     109.500    3.000
+ XCC      FE4    S3     FE2     109.500    3.000
+ XCC      FE4    S3     FE1     109.500    3.000
+ XCC      HS3    S3     FE2     109.500    3.000
+ XCC      HS3    S3     FE1     109.500    3.000
+ XCC      FE2    S3     FE1     109.500    3.000
+ XCC      S3     FE1    S4      144.000    3.000
+ XCC      S3     FE1    S2       90.000    3.000
+ XCC      S4     FE1    S2       90.000    3.000
+ XCC      FE1    S4     FE3      87.693    3.000
+ XCC      S4     FE3    S1      144.000    3.000
+ XCC      S4     FE3    S2       90.000    3.000
+ XCC      S1     FE3    S2       90.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ XCC      var_1    FE3    S1     FE4    S2         0.000   20.000   1
+ XCC      var_2    FE1    S2     FE4    S1         0.000   20.000   1
+ XCC      var_3    HS3    S3     FE4    S2         0.000   20.000   1
+ XCC      var_4    FE4    S3     FE1    S2         0.000   20.000   1
+ XCC      var_5    FE4    S2     FE1    S4         0.000   20.000   1
+ XCC      var_6    FE3    S4     FE1    S2         0.000   20.000   1
+ XCC      var_7    FE1    S4     FE3    S2         0.000   20.000   1
+ XCC      var_8    FE4    S1     FE3    S2         0.000   20.000   1
+ XCC      var_9    FE4    S2     FE3    S4         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ XCC      chir_01  S2     FE1    FE3    FE4       negativ
+                   .      .      .      .      .
+ XCC      chir_02  FE1    S2     .      S3        cross5
+                   .      .      S4     .      .
+ XCC      chir_03  FE3    S2     .      S4        cross5
+                   .      .      S1     .      .
+ XCC      chir_04  FE4    S2     .      S1        cross5
+                   .      .      S3     .      .
+# ------------------------------------------------------

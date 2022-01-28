@@ -1,0 +1,144 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NFC      NFC 'NI-FE ACTIVE CENTER A-FORM          ' non-polymer        12  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NFC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NFC           O5     O    O         0.000      0.000    0.000    0.000
+ NFC           O4     O    O         0.000     -0.925   -0.307   -0.239
+ NFC           NI     NI   NI        0.000     -1.322   -0.930   -2.101
+ NFC           FE     FE   FE        0.000     -2.364   -0.289    1.133
+ NFC           C3     C    C1        0.000     -3.768   -0.272    2.472
+ NFC           H3     H    H         0.000     -4.254   -1.191    2.754
+ NFC           O3     O    O         0.000     -4.096    0.768    2.990
+ NFC           C2     C    CSP       0.000     -3.579    0.508   -0.152
+ NFC           N2     N    NS        0.000     -4.291    0.974   -0.902
+ NFC           C1     C    C1        0.000     -1.149   -1.086    2.418
+ NFC           H1     H    H         0.000     -0.524   -1.914    2.127
+ NFC           O1     O    O         0.000     -1.092   -0.654    3.544
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NFC      O5     n/a    O4     START
+ NFC      O4     O5     FE     .
+ NFC      NI     O4     .      .
+ NFC      FE     O4     C1     .
+ NFC      C3     FE     O3     .
+ NFC      H3     C3     .      .
+ NFC      O3     C3     .      .
+ NFC      C2     FE     N2     .
+ NFC      N2     C2     .      .
+ NFC      C1     FE     O1     .
+ NFC      H1     C1     .      .
+ NFC      O1     C1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NFC       NI        O4        single    1.940     0.020     1.940     0.020     
+NFC       C3        FE        single    1.900     0.020     1.900     0.020     
+NFC       C2        FE        single    1.825     0.020     1.825     0.020     
+NFC       C1        FE        single    1.900     0.020     1.900     0.020     
+NFC       FE        O4        single    2.040     0.020     2.040     0.020     
+NFC       O3        C3        double    1.220     0.020     1.220     0.020     
+NFC       H3        C3        single    1.082     0.013     0.975     0.010     
+NFC       N2        C2        triple    1.158     0.020     1.158     0.020     
+NFC       O1        C1        double    1.220     0.020     1.220     0.020     
+NFC       H1        C1        single    1.082     0.013     0.975     0.010     
+NFC       O4        O5        double    1.080     0.020     1.080     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NFC      O5     O4     NI      120.000    3.000
+ NFC      O5     O4     FE      120.000    3.000
+ NFC      NI     O4     FE      120.000    3.000
+ NFC      O4     FE     C3      180.000    3.000
+ NFC      O4     FE     C2       90.000    3.000
+ NFC      O4     FE     C1       90.000    3.000
+ NFC      C3     FE     C2       90.000    3.000
+ NFC      C3     FE     C1       90.000    3.000
+ NFC      C2     FE     C1      180.000    3.000
+ NFC      FE     C3     H3      120.000    3.000
+ NFC      FE     C3     O3      120.000    3.000
+ NFC      H3     C3     O3      123.000    3.000
+ NFC      FE     C2     N2      180.000    3.000
+ NFC      FE     C1     H1      120.000    3.000
+ NFC      FE     C1     O1      120.000    3.000
+ NFC      H1     C1     O1      123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NFC      var_1    O5     O4     FE     C2         0.000   20.000   1
+ NFC      var_2    H3     C3     FE     C2         0.000   20.000   1
+ NFC      var_3    N2     C2     FE     O4       180.000   20.000   1
+ NFC      var_4    H1     C1     FE     O4         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NFC      chir_01  FE     O4     C3     C2        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NFC      plan-1    C3        0.020
+ NFC      plan-1    FE        0.020
+ NFC      plan-1    O3        0.020
+ NFC      plan-1    H3        0.020
+ NFC      plan-2    C1        0.020
+ NFC      plan-2    FE        0.020
+ NFC      plan-2    O1        0.020
+ NFC      plan-2    H1        0.020
+# ------------------------------------------------------

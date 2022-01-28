@@ -1,0 +1,150 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+WOC     WOC      "2,2-dimethylbutanedioic acid"     NON-POLYMER     18     10     .     
+#
+data_comp_WOC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+WOC     OAG     O       OC      -1      -31.076     -24.854     -3.654      
+WOC     CAJ     C       C       0       -30.718     -24.471     -4.785      
+WOC     CAK     C       CH2     0       -31.264     -25.207     -6.000      
+WOC     CAL     C       CT      0       -30.427     -26.394     -6.530      
+WOC     OAM     O       O       0       -29.937     -23.518     -4.976      
+WOC     CAN     C       C       0       -31.163     -26.941     -7.785      
+WOC     OAO     O       OC      -1      -31.794     -28.020     -7.689      
+WOC     OAP     O       O       0       -31.117     -26.252     -8.828      
+WOC     CAQ     C       CH3     0       -29.023     -25.918     -6.936      
+WOC     CAR     C       CH3     0       -30.293     -27.482     -5.452      
+WOC     HAK     H       H       0       -31.369     -24.556     -6.724      
+WOC     HAKA    H       H       0       -32.158     -25.538     -5.776      
+WOC     HAQ     H       H       0       -28.590     -26.601     -7.479      
+WOC     HAQA    H       H       0       -28.486     -25.753     -6.142      
+WOC     HAQB    H       H       0       -29.095     -25.095     -7.451      
+WOC     HAR     H       H       0       -29.900     -28.282     -5.842      
+WOC     HARA    H       H       0       -31.172     -27.696     -5.093      
+WOC     HARB    H       H       0       -29.722     -27.167     -4.731      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+WOC       OAG       CAJ       SINGLE    n         1.247     0.019     1.247     0.019     
+WOC       CAJ       CAK       SINGLE    n         1.519     0.012     1.519     0.012     
+WOC       CAJ       OAM       DOUBLE    n         1.247     0.019     1.247     0.019     
+WOC       CAK       CAL       SINGLE    n         1.542     0.010     1.542     0.010     
+WOC       CAL       CAN       SINGLE    n         1.545     0.010     1.545     0.010     
+WOC       CAL       CAQ       SINGLE    n         1.533     0.010     1.533     0.010     
+WOC       CAL       CAR       SINGLE    n         1.533     0.010     1.533     0.010     
+WOC       CAN       OAP       DOUBLE    n         1.247     0.019     1.247     0.019     
+WOC       CAN       OAO       SINGLE    n         1.247     0.019     1.247     0.019     
+WOC       CAK       HAK       SINGLE    n         1.089     0.010     0.979     0.016     
+WOC       CAK       HAKA      SINGLE    n         1.089     0.010     0.979     0.016     
+WOC       CAQ       HAQ       SINGLE    n         1.089     0.010     0.973     0.014     
+WOC       CAQ       HAQA      SINGLE    n         1.089     0.010     0.973     0.014     
+WOC       CAQ       HAQB      SINGLE    n         1.089     0.010     0.973     0.014     
+WOC       CAR       HAR       SINGLE    n         1.089     0.010     0.973     0.014     
+WOC       CAR       HARA      SINGLE    n         1.089     0.010     0.973     0.014     
+WOC       CAR       HARB      SINGLE    n         1.089     0.010     0.973     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+WOC         OAG         CAJ         CAK     118.187    1.67
+WOC         OAG         CAJ         OAM     123.625    1.50
+WOC         CAK         CAJ         OAM     118.187    1.67
+WOC         CAJ         CAK         CAL     111.511    2.91
+WOC         CAJ         CAK         HAK     108.416    1.50
+WOC         CAJ         CAK        HAKA     108.416    1.50
+WOC         CAL         CAK         HAK     108.609    1.50
+WOC         CAL         CAK        HAKA     108.609    1.50
+WOC         HAK         CAK        HAKA     107.493    1.50
+WOC         CAK         CAL         CAN     111.511    2.91
+WOC         CAK         CAL         CAQ     109.772    2.37
+WOC         CAK         CAL         CAR     109.772    2.37
+WOC         CAN         CAL         CAQ     108.923    1.98
+WOC         CAN         CAL         CAR     108.923    1.98
+WOC         CAQ         CAL         CAR     109.460    1.50
+WOC         CAL         CAN         OAP     117.496    1.50
+WOC         CAL         CAN         OAO     117.496    1.50
+WOC         OAP         CAN         OAO     125.008    1.50
+WOC         CAL         CAQ         HAQ     109.462    1.50
+WOC         CAL         CAQ        HAQA     109.462    1.50
+WOC         CAL         CAQ        HAQB     109.462    1.50
+WOC         HAQ         CAQ        HAQA     109.377    1.50
+WOC         HAQ         CAQ        HAQB     109.377    1.50
+WOC        HAQA         CAQ        HAQB     109.377    1.50
+WOC         CAL         CAR         HAR     109.462    1.50
+WOC         CAL         CAR        HARA     109.462    1.50
+WOC         CAL         CAR        HARB     109.462    1.50
+WOC         HAR         CAR        HARA     109.377    1.50
+WOC         HAR         CAR        HARB     109.377    1.50
+WOC        HARA         CAR        HARB     109.377    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+WOC             sp2_sp3_2         OAG         CAJ         CAK         CAL     120.000   10.00     6
+WOC             sp3_sp3_1         CAJ         CAK         CAL         CAN     180.000   10.00     3
+WOC             sp2_sp3_7         OAP         CAN         CAL         CAK       0.000   10.00     6
+WOC            sp3_sp3_10         CAK         CAL         CAQ         HAQ     180.000   10.00     3
+WOC            sp3_sp3_19         CAK         CAL         CAR         HAR     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+WOC    plan-1         CAJ   0.020
+WOC    plan-1         CAK   0.020
+WOC    plan-1         OAG   0.020
+WOC    plan-1         OAM   0.020
+WOC    plan-2         CAL   0.020
+WOC    plan-2         CAN   0.020
+WOC    plan-2         OAO   0.020
+WOC    plan-2         OAP   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+WOC SMILES           ACDLabs              12.01 "O=C(O)C(C)(C)CC(=O)O"
+WOC InChI            InChI                1.03  "InChI=1S/C6H10O4/c1-6(2,5(9)10)3-4(7)8/h3H2,1-2H3,(H,7,8)(H,9,10)"
+WOC InChIKey         InChI                1.03  GOHPTLYPQCTZSE-UHFFFAOYSA-N
+WOC SMILES_CANONICAL CACTVS               3.385 "CC(C)(CC(O)=O)C(O)=O"
+WOC SMILES           CACTVS               3.385 "CC(C)(CC(O)=O)C(O)=O"
+WOC SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "CC(C)(CC(=O)O)C(=O)O"
+WOC SMILES           "OpenEye OEToolkits" 1.7.6 "CC(C)(CC(=O)O)C(=O)O"
+WOC ?                acedrg               202         "dictionary generator"                  
+WOC ?                acedrg_database      11          "data source"                           
+WOC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+WOC ?                refmac5              5.8.0189    "optimization tool"                     

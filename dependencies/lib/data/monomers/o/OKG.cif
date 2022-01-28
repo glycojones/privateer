@@ -1,0 +1,128 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OKG     OKG      "4-peroxy-4-oxobutanoic acid"     NON-POLYMER     13     9     .     
+#
+data_comp_OKG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OKG     O4      O       OC      -1      -0.599      -0.519      2.328       
+OKG     C5      C       C       0       -1.247      -0.366      1.274       
+OKG     O3      O       O       0       -2.325      0.258       1.210       
+OKG     C4      C       CH2     0       -0.693      -0.974      -0.004      
+OKG     C3      C       CH2     0       -0.137      0.033       -0.995      
+OKG     C2      C       C       0       1.236       0.534       -0.647      
+OKG     O5      O       O       0       2.255       0.090       -1.107      
+OKG     O2      O       OC      -1      2.446       1.975       0.942       
+OKG     O1      O       O2      0       1.188       1.531       0.237       
+OKG     H2      H       H       0       -1.409      -1.484      -0.434      
+OKG     H3      H       H       0       0.011       -1.610      0.240       
+OKG     H4      H       H       0       -0.745      0.799       -1.052      
+OKG     H5      H       H       0       -0.101      -0.377      -1.883      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OKG       O2        O1        SINGLE    n         1.509     0.020     1.509     0.020     
+OKG       C2        O1        SINGLE    n         1.332     0.016     1.332     0.016     
+OKG       C2        O5        DOUBLE    n         1.203     0.015     1.203     0.015     
+OKG       C3        C2        SINGLE    n         1.501     0.010     1.501     0.010     
+OKG       C4        C3        SINGLE    n         1.516     0.020     1.516     0.020     
+OKG       C5        C4        SINGLE    n         1.519     0.012     1.519     0.012     
+OKG       C5        O3        DOUBLE    n         1.247     0.019     1.247     0.019     
+OKG       O4        C5        SINGLE    n         1.247     0.019     1.247     0.019     
+OKG       C4        H2        SINGLE    n         1.089     0.010     0.979     0.016     
+OKG       C4        H3        SINGLE    n         1.089     0.010     0.979     0.016     
+OKG       C3        H4        SINGLE    n         1.089     0.010     0.979     0.016     
+OKG       C3        H5        SINGLE    n         1.089     0.010     0.979     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OKG          C4          C5          O3     118.214    1.64
+OKG          C4          C5          O4     118.214    1.64
+OKG          O3          C5          O4     123.571    1.50
+OKG          C3          C4          C5     114.787    1.92
+OKG          C3          C4          H2     109.308    1.50
+OKG          C3          C4          H3     109.308    1.50
+OKG          C5          C4          H2     108.404    1.50
+OKG          C5          C4          H3     108.404    1.50
+OKG          H2          C4          H3     107.521    1.50
+OKG          C2          C3          C4     113.478    2.03
+OKG          C2          C3          H4     108.648    1.50
+OKG          C2          C3          H5     108.648    1.50
+OKG          C4          C3          H4     109.308    1.50
+OKG          C4          C3          H5     109.308    1.50
+OKG          H4          C3          H5     107.521    1.50
+OKG          O1          C2          O5     124.210    1.64
+OKG          O1          C2          C3     111.408    1.62
+OKG          O5          C2          C3     124.382    1.60
+OKG          O2          O1          C2     120.000    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OKG             sp2_sp3_8          O3          C5          C4          C3     120.000   10.00     6
+OKG             sp3_sp3_1          C2          C3          C4          C5     180.000   10.00     3
+OKG             sp2_sp3_2          O1          C2          C3          C4     120.000   10.00     6
+OKG             sp2_sp2_1          O5          C2          O1          O2     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OKG    plan-1          C4   0.020
+OKG    plan-1          C5   0.020
+OKG    plan-1          O3   0.020
+OKG    plan-1          O4   0.020
+OKG    plan-2          C2   0.020
+OKG    plan-2          C3   0.020
+OKG    plan-2          O1   0.020
+OKG    plan-2          O5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OKG SMILES           ACDLabs              12.01 "OC(=O)CCC(=O)O[O-]"
+OKG InChI            InChI                1.03  "InChI=1S/C4H6O5/c5-3(6)1-2-4(7)9-8/h8H,1-2H2,(H,5,6)/p-1"
+OKG InChIKey         InChI                1.03  WBOQHFMXKCEWSQ-UHFFFAOYSA-M
+OKG SMILES_CANONICAL CACTVS               3.385 "OC(=O)CCC(=O)O[O-]"
+OKG SMILES           CACTVS               3.385 "OC(=O)CCC(=O)O[O-]"
+OKG SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "C(CC(=O)O[O-])C(=O)O"
+OKG SMILES           "OpenEye OEToolkits" 2.0.6 "C(CC(=O)O[O-])C(=O)O"
+OKG ?                acedrg               202         "dictionary generator"                  
+OKG ?                acedrg_database      11          "data source"                           
+OKG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OKG ?                refmac5              5.8.0189    "optimization tool"                     

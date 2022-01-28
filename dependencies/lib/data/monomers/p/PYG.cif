@@ -1,0 +1,141 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PYG     PYG      BENZENE-1,2,3-TRIOL     NON-POLYMER     15     9     .     
+#
+data_comp_PYG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PYG     C1      C       CR6     0       22.398      -80.654     -37.653     
+PYG     C2      C       CR6     0       22.731      -80.916     -38.989     
+PYG     C3      C       CR6     0       22.147      -82.009     -39.644     
+PYG     C4      C       CR16    0       21.244      -82.827     -38.971     
+PYG     C5      C       CR16    0       20.924      -82.554     -37.646     
+PYG     C6      C       CR16    0       21.494      -81.474     -36.983     
+PYG     O1      O       OH1     0       22.970      -79.585     -37.017     
+PYG     O2      O       OH1     0       23.618      -80.111     -39.648     
+PYG     O3      O       OH1     0       22.475      -82.261     -40.948     
+PYG     H4      H       H       0       20.853      -83.561     -39.414     
+PYG     H5      H       H       0       20.311      -83.110     -37.191     
+PYG     H6      H       H       0       21.273      -81.295     -36.085     
+PYG     HO1     H       H       0       23.423      -79.855     -36.340     
+PYG     HO2     H       H       0       24.339      -80.547     -39.814     
+PYG     HO3     H       H       0       22.836      -83.037     -41.016     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PYG       C1        C2        DOUBLE    y         1.392     0.010     1.392     0.010     
+PYG       C1        C6        SINGLE    y         1.385     0.010     1.385     0.010     
+PYG       C1        O1        SINGLE    n         1.368     0.010     1.368     0.010     
+PYG       C2        C3        SINGLE    y         1.392     0.010     1.392     0.010     
+PYG       C2        O2        SINGLE    n         1.365     0.010     1.365     0.010     
+PYG       C3        C4        DOUBLE    y         1.385     0.010     1.385     0.010     
+PYG       C3        O3        SINGLE    n         1.368     0.010     1.368     0.010     
+PYG       C4        C5        SINGLE    y         1.384     0.010     1.384     0.010     
+PYG       C5        C6        DOUBLE    y         1.384     0.010     1.384     0.010     
+PYG       C4        H4        SINGLE    n         1.082     0.013     0.942     0.017     
+PYG       C5        H5        SINGLE    n         1.082     0.013     0.945     0.013     
+PYG       C6        H6        SINGLE    n         1.082     0.013     0.942     0.017     
+PYG       O1        HO1       SINGLE    n         0.970     0.012     0.858     0.020     
+PYG       O2        HO2       SINGLE    n         0.970     0.012     0.858     0.020     
+PYG       O3        HO3       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PYG          C2          C1          C6     120.021    1.50
+PYG          C2          C1          O1     118.335    2.59
+PYG          C6          C1          O1     121.644    2.46
+PYG          C1          C2          C3     119.269    1.50
+PYG          C1          C2          O2     120.365    2.51
+PYG          C3          C2          O2     120.365    2.51
+PYG          C2          C3          C4     120.021    1.50
+PYG          C2          C3          O3     118.335    2.59
+PYG          C4          C3          O3     121.644    2.46
+PYG          C3          C4          C5     119.727    1.50
+PYG          C3          C4          H4     119.943    1.50
+PYG          C5          C4          H4     120.330    1.50
+PYG          C4          C5          C6     121.234    1.50
+PYG          C4          C5          H5     119.383    1.50
+PYG          C6          C5          H5     119.383    1.50
+PYG          C1          C6          C5     119.727    1.50
+PYG          C1          C6          H6     119.943    1.50
+PYG          C5          C6          H6     120.330    1.50
+PYG          C1          O1         HO1     110.003    2.63
+PYG          C2          O2         HO2     109.864    3.00
+PYG          C3          O3         HO3     110.003    2.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PYG       const_sp2_sp2_4          O1          C1          C2          O2       0.000   10.00     2
+PYG              const_23          O1          C1          C6          C5     180.000   10.00     2
+PYG       const_sp2_sp2_8          O2          C2          C3          O3       0.000   10.00     2
+PYG              const_11          O3          C3          C4          C5     180.000   10.00     2
+PYG              const_13          C3          C4          C5          C6       0.000   10.00     2
+PYG              const_17          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PYG    plan-1          C1   0.020
+PYG    plan-1          C2   0.020
+PYG    plan-1          C3   0.020
+PYG    plan-1          C4   0.020
+PYG    plan-1          C5   0.020
+PYG    plan-1          C6   0.020
+PYG    plan-1          H4   0.020
+PYG    plan-1          H5   0.020
+PYG    plan-1          H6   0.020
+PYG    plan-1          O1   0.020
+PYG    plan-1          O2   0.020
+PYG    plan-1          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PYG SMILES           ACDLabs              10.04 "Oc1cccc(O)c1O"
+PYG SMILES_CANONICAL CACTVS               3.341 "Oc1cccc(O)c1O"
+PYG SMILES           CACTVS               3.341 "Oc1cccc(O)c1O"
+PYG SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)O)O)O"
+PYG SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(c(c1)O)O)O"
+PYG InChI            InChI                1.03  "InChI=1S/C6H6O3/c7-4-2-1-3-5(8)6(4)9/h1-3,7-9H"
+PYG InChIKey         InChI                1.03  WQGWDDDVZFFDIG-UHFFFAOYSA-N
+PYG ?                acedrg               202         "dictionary generator"                  
+PYG ?                acedrg_database      11          "data source"                           
+PYG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PYG ?                refmac5              5.8.0189    "optimization tool"                     

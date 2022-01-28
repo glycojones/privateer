@@ -1,0 +1,171 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KJU     KJU      "6-chloro-2H-1,4-benzoxazin-3(4H)-one"     NON-POLYMER     18     12     .     
+#
+data_comp_KJU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KJU     C1      C       CR16    0       17.682      -10.085     -13.260     
+KJU     C2      C       CR16    0       16.381      -10.161     -12.730     
+KJU     C3      C       CR66    0       16.195      -10.133     -11.349     
+KJU     C4      C       CR66    0       17.289      -10.029     -10.482     
+KJU     C5      C       CR16    0       18.584      -9.954      -11.019     
+KJU     C6      C       CR6     0       18.759      -9.983      -12.388     
+KJU     CL7     CL      CL      0       20.369      -9.889      -13.035     
+KJU     N8      N       NR6     0       17.056      -10.004     -9.090      
+KJU     C9      C       CR6     0       15.823      -10.074     -8.523      
+KJU     O10     O       O       0       15.666      -10.045     -7.308      
+KJU     C11     C       CH2     0       14.642      -10.190     -9.449      
+KJU     O12     O       O2      0       14.912      -10.209     -10.871     
+KJU     H1      H       H       0       17.819      -10.103     -14.184     
+KJU     H2      H       H       0       15.635      -10.231     -13.305     
+KJU     H5      H       H       0       19.321      -9.885      -10.446     
+KJU     HN8     H       H       0       17.750      -9.939      -8.551      
+KJU     H11     H       H       0       14.043      -9.445      -9.265      
+KJU     H11A    H       H       0       14.162      -11.005     -9.222      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KJU       C1        C2        DOUBLE    y         1.380     0.019     1.380     0.019     
+KJU       C1        C6        SINGLE    y         1.382     0.010     1.382     0.010     
+KJU       C2        C3        SINGLE    y         1.387     0.010     1.387     0.010     
+KJU       C3        C4        DOUBLE    y         1.391     0.010     1.391     0.010     
+KJU       C3        O12       SINGLE    n         1.365     0.011     1.365     0.011     
+KJU       C4        C5        SINGLE    y         1.393     0.012     1.393     0.012     
+KJU       C4        N8        SINGLE    n         1.409     0.010     1.409     0.010     
+KJU       C5        C6        DOUBLE    y         1.374     0.010     1.374     0.010     
+KJU       C6        CL7       SINGLE    n         1.738     0.010     1.738     0.010     
+KJU       N8        C9        SINGLE    n         1.347     0.015     1.347     0.015     
+KJU       C9        O10       DOUBLE    n         1.225     0.010     1.225     0.010     
+KJU       C9        C11       SINGLE    n         1.500     0.010     1.500     0.010     
+KJU       C11       O12       SINGLE    n         1.417     0.020     1.417     0.020     
+KJU       C1        H1        SINGLE    n         1.082     0.013     0.935     0.011     
+KJU       C2        H2        SINGLE    n         1.082     0.013     0.944     0.020     
+KJU       C5        H5        SINGLE    n         1.082     0.013     0.936     0.015     
+KJU       N8        HN8       SINGLE    n         1.016     0.010     0.880     0.020     
+KJU       C11       H11       SINGLE    n         1.089     0.010     0.973     0.010     
+KJU       C11       H11A      SINGLE    n         1.089     0.010     0.973     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KJU          C2          C1          C6     119.061    1.50
+KJU          C2          C1          H1     120.400    1.50
+KJU          C6          C1          H1     120.539    1.50
+KJU          C1          C2          C3     119.637    1.50
+KJU          C1          C2          H2     120.417    1.65
+KJU          C3          C2          H2     119.941    1.50
+KJU          C2          C3          C4     120.791    1.50
+KJU          C2          C3         O12     117.379    1.65
+KJU          C4          C3         O12     121.830    1.74
+KJU          C3          C4          C5     118.671    1.50
+KJU          C3          C4          N8     120.230    1.86
+KJU          C5          C4          N8     121.098    1.50
+KJU          C4          C5          C6     119.725    1.50
+KJU          C4          C5          H5     119.722    1.50
+KJU          C6          C5          H5     120.553    1.50
+KJU          C1          C6          C5     122.120    1.50
+KJU          C1          C6         CL7     119.039    1.50
+KJU          C5          C6         CL7     118.841    1.50
+KJU          C4          N8          C9     124.368    1.50
+KJU          C4          N8         HN8     118.365    2.27
+KJU          C9          N8         HN8     117.268    1.63
+KJU          N8          C9         O10     121.728    1.50
+KJU          N8          C9         C11     117.425    1.63
+KJU         O10          C9         C11     120.848    1.79
+KJU          C9         C11         O12     114.760    3.00
+KJU          C9         C11         H11     108.467    1.50
+KJU          C9         C11        H11A     108.467    1.50
+KJU         O12         C11         H11     108.647    1.50
+KJU         O12         C11        H11A     108.647    1.50
+KJU         H11         C11        H11A     107.558    1.50
+KJU          C3         O12         C11     114.751    2.95
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KJU       const_sp2_sp2_5          C6          C1          C2          C3       0.000   10.00     2
+KJU              const_22          C2          C1          C6         CL7     180.000   10.00     2
+KJU             sp3_sp3_1          C9         C11         O12          C3      60.000   10.00     3
+KJU       const_sp2_sp2_9          C1          C2          C3          C4       0.000   10.00     2
+KJU            sp2_sp2_10          C2          C3         O12         C11     180.000   10.00     2
+KJU       const_sp2_sp2_1          C2          C3          C4          C5       0.000   10.00     2
+KJU              const_13          C3          C4          C5          C6       0.000   10.00     2
+KJU             sp2_sp2_1          C3          C4          N8          C9       0.000   10.00     2
+KJU              const_18          C4          C5          C6         CL7     180.000   10.00     2
+KJU             sp2_sp2_7         O10          C9          N8          C4     180.000   10.00     2
+KJU             sp2_sp3_4         O10          C9         C11         O12     180.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KJU    plan-1          C1   0.020
+KJU    plan-1          C2   0.020
+KJU    plan-1          C3   0.020
+KJU    plan-1          C4   0.020
+KJU    plan-1          C5   0.020
+KJU    plan-1          C6   0.020
+KJU    plan-1         CL7   0.020
+KJU    plan-1          H1   0.020
+KJU    plan-1          H2   0.020
+KJU    plan-1          H5   0.020
+KJU    plan-1          N8   0.020
+KJU    plan-1         O12   0.020
+KJU    plan-2          C4   0.020
+KJU    plan-2          C9   0.020
+KJU    plan-2         HN8   0.020
+KJU    plan-2          N8   0.020
+KJU    plan-3         C11   0.020
+KJU    plan-3          C9   0.020
+KJU    plan-3          N8   0.020
+KJU    plan-3         O10   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KJU SMILES           ACDLabs              12.01 "Clc2ccc1OCC(=O)Nc1c2"
+KJU InChI            InChI                1.03  "InChI=1S/C8H6ClNO2/c9-5-1-2-7-6(3-5)10-8(11)4-12-7/h1-3H,4H2,(H,10,11)"
+KJU InChIKey         InChI                1.03  OBPIPKQQNRACHV-UHFFFAOYSA-N
+KJU SMILES_CANONICAL CACTVS               3.385 "Clc1ccc2OCC(=O)Nc2c1"
+KJU SMILES           CACTVS               3.385 "Clc1ccc2OCC(=O)Nc2c1"
+KJU SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1cc2c(cc1Cl)NC(=O)CO2"
+KJU SMILES           "OpenEye OEToolkits" 1.7.6 "c1cc2c(cc1Cl)NC(=O)CO2"
+KJU ?                acedrg               202         "dictionary generator"                  
+KJU ?                acedrg_database      11          "data source"                           
+KJU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KJU ?                refmac5              5.8.0189    "optimization tool"                     

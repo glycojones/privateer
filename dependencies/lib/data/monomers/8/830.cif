@@ -1,0 +1,338 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+830      830 'dipotassium (2-oxo-2-{[3-(3-phenoxyp' non-polymer        44  26 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_830
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 830           KOAD   K    K         0.000      0.000    0.000    0.000
+ 830           OAD    O    O2        0.000     -1.992   -1.263    0.005
+ 830           PAX    P    P         0.000     -2.817   -1.192   -1.377
+ 830           OAB    O    O         0.000     -4.041   -2.016   -1.265
+ 830           OAC    O    O2        0.000     -1.901   -1.753   -2.577
+ 830           KOAC   K    K         0.000     -1.210   -3.992   -2.293
+ 830           CAQ    C    CH2       0.000     -3.278    0.537   -1.721
+ 830           HAQ    H    H         0.000     -3.757    0.597   -2.701
+ 830           HAQA   H    H         0.000     -2.381    1.160   -1.718
+ 830           CAT    C    C         0.000     -4.234    1.023   -0.662
+ 830           OAA    O    O         0.000     -3.811    1.382    0.417
+ 830           NAR    N    NH1       0.000     -5.557    1.059   -0.913
+ 830           HNAR   H    H         0.000     -5.909    0.760   -1.812
+ 830           CAO    C    CH2       0.000     -6.486    1.530    0.117
+ 830           HAO    H    H         0.000     -6.239    2.559    0.385
+ 830           HAOA   H    H         0.000     -6.400    0.894    1.001
+ 830           CAN    C    CH2       0.000     -7.917    1.469   -0.420
+ 830           HAN    H    H         0.000     -8.161    0.439   -0.688
+ 830           HANA   H    H         0.000     -8.000    2.104   -1.305
+ 830           CAP    C    CH2       0.000     -8.887    1.962    0.655
+ 830           HAP    H    H         0.000     -8.640    2.992    0.922
+ 830           HAPA   H    H         0.000     -8.801    1.328    1.539
+ 830           CAU    C    CR6       0.000    -10.297    1.903    0.126
+ 830           CAM    C    CR16      0.000    -11.050    0.758    0.297
+ 830           HAM    H    H         0.000    -10.629   -0.096    0.812
+ 830           CAI    C    CR16      0.000    -10.834    2.994   -0.532
+ 830           HAI    H    H         0.000    -10.242    3.891   -0.662
+ 830           CAH    C    CR16      0.000    -12.125    2.941   -1.024
+ 830           HAH    H    H         0.000    -12.543    3.796   -1.542
+ 830           CAL    C    CR16      0.000    -12.883    1.799   -0.855
+ 830           HAL    H    H         0.000    -13.894    1.758   -1.240
+ 830           CAW    C    CR6       0.000    -12.349    0.704   -0.191
+ 830           OAS    O    O2        0.000    -13.092   -0.420   -0.023
+ 830           CAV    C    CR6       0.000    -13.851   -0.522    1.100
+ 830           CAJ    C    CR16      0.000    -13.860    0.509    2.028
+ 830           HAJ    H    H         0.000    -13.262    1.396    1.860
+ 830           CAK    C    CR16      0.000    -14.617   -1.658    1.320
+ 830           HAK    H    H         0.000    -14.611   -2.465    0.598
+ 830           CAG    C    CR16      0.000    -15.388   -1.758    2.462
+ 830           HAG    H    H         0.000    -15.987   -2.644    2.634
+ 830           CAE    C    CR16      0.000    -15.396   -0.729    3.386
+ 830           HAE    H    H         0.000    -16.001   -0.811    4.281
+ 830           CAF    C    CR16      0.000    -14.633    0.403    3.168
+ 830           HAF    H    H         0.000    -14.641    1.208    3.893
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 830      KOAD   n/a    OAD    START
+ 830      OAD    KOAD   PAX    .
+ 830      PAX    OAD    CAQ    .
+ 830      OAB    PAX    .      .
+ 830      OAC    PAX    KOAC   .
+ 830      KOAC   OAC    .      .
+ 830      CAQ    PAX    CAT    .
+ 830      HAQ    CAQ    .      .
+ 830      HAQA   CAQ    .      .
+ 830      CAT    CAQ    NAR    .
+ 830      OAA    CAT    .      .
+ 830      NAR    CAT    CAO    .
+ 830      HNAR   NAR    .      .
+ 830      CAO    NAR    CAN    .
+ 830      HAO    CAO    .      .
+ 830      HAOA   CAO    .      .
+ 830      CAN    CAO    CAP    .
+ 830      HAN    CAN    .      .
+ 830      HANA   CAN    .      .
+ 830      CAP    CAN    CAU    .
+ 830      HAP    CAP    .      .
+ 830      HAPA   CAP    .      .
+ 830      CAU    CAP    CAI    .
+ 830      CAM    CAU    HAM    .
+ 830      HAM    CAM    .      .
+ 830      CAI    CAU    CAH    .
+ 830      HAI    CAI    .      .
+ 830      CAH    CAI    CAL    .
+ 830      HAH    CAH    .      .
+ 830      CAL    CAH    CAW    .
+ 830      HAL    CAL    .      .
+ 830      CAW    CAL    OAS    .
+ 830      OAS    CAW    CAV    .
+ 830      CAV    OAS    CAK    .
+ 830      CAJ    CAV    HAJ    .
+ 830      HAJ    CAJ    .      .
+ 830      CAK    CAV    CAG    .
+ 830      HAK    CAK    .      .
+ 830      CAG    CAK    CAE    .
+ 830      HAG    CAG    .      .
+ 830      CAE    CAG    CAF    .
+ 830      HAE    CAE    .      .
+ 830      CAF    CAE    HAF    .
+ 830      HAF    CAF    .      END
+ 830      CAJ    CAF    .    ADD
+ 830      CAW    CAM    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+830       CAJ       CAF       double    1.390     0.020     1.390     0.020     
+830       CAJ       CAV       single    1.390     0.020     1.390     0.020     
+830       CAF       CAE       single    1.390     0.020     1.390     0.020     
+830       CAE       CAG       double    1.390     0.020     1.390     0.020     
+830       CAG       CAK       single    1.390     0.020     1.390     0.020     
+830       CAK       CAV       double    1.390     0.020     1.390     0.020     
+830       CAV       OAS       single    1.370     0.020     1.370     0.020     
+830       OAS       CAW       single    1.370     0.020     1.370     0.020     
+830       CAW       CAM       double    1.390     0.020     1.390     0.020     
+830       CAW       CAL       single    1.390     0.020     1.390     0.020     
+830       CAM       CAU       single    1.390     0.020     1.390     0.020     
+830       CAL       CAH       double    1.390     0.020     1.390     0.020     
+830       CAH       CAI       single    1.390     0.020     1.390     0.020     
+830       CAI       CAU       double    1.390     0.020     1.390     0.020     
+830       CAU       CAP       single    1.511     0.020     1.511     0.020     
+830       CAP       CAN       single    1.524     0.020     1.524     0.020     
+830       CAN       CAO       single    1.524     0.020     1.524     0.020     
+830       CAO       NAR       single    1.450     0.020     1.450     0.020     
+830       NAR       CAT       single    1.330     0.020     1.330     0.020     
+830       OAA       CAT       double    1.220     0.020     1.220     0.020     
+830       CAT       CAQ       single    1.510     0.020     1.510     0.020     
+830       CAQ       PAX       single    1.812     0.020     1.812     0.020     
+830       OAC       PAX       single    1.610     0.020     1.610     0.020     
+830       PAX       OAD       single    1.610     0.020     1.610     0.020     
+830       OAB       PAX       double    1.480     0.020     1.480     0.020     
+830       HAJ       CAJ       single    1.082     0.013     0.975     0.010     
+830       HAF       CAF       single    1.082     0.013     0.975     0.010     
+830       HAE       CAE       single    1.082     0.013     0.975     0.010     
+830       HAG       CAG       single    1.082     0.013     0.975     0.010     
+830       HAK       CAK       single    1.082     0.013     0.975     0.010     
+830       HAM       CAM       single    1.082     0.013     0.975     0.010     
+830       HAL       CAL       single    1.082     0.013     0.975     0.010     
+830       HAH       CAH       single    1.082     0.013     0.975     0.010     
+830       HAI       CAI       single    1.082     0.013     0.975     0.010     
+830       HAP       CAP       single    1.089     0.010     0.989     0.005     
+830       HAPA      CAP       single    1.089     0.010     0.989     0.005     
+830       HAN       CAN       single    1.089     0.010     0.989     0.005     
+830       HANA      CAN       single    1.089     0.010     0.989     0.005     
+830       HAO       CAO       single    1.089     0.010     0.989     0.005     
+830       HAOA      CAO       single    1.089     0.010     0.989     0.005     
+830       HNAR      NAR       single    1.016     0.010     0.899     0.007     
+830       HAQ       CAQ       single    1.089     0.010     0.989     0.005     
+830       HAQA      CAQ       single    1.089     0.010     0.989     0.005     
+830       KOAC      OAC       single    2.700     0.020     2.700     0.020     
+830       OAD       KOAD      single    2.700     0.020     2.700     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 830      KOAD   OAD    PAX     120.000    3.000
+ 830      OAD    PAX    OAB     109.500    3.000
+ 830      OAD    PAX    OAC     102.600    3.000
+ 830      OAD    PAX    CAQ     109.500    3.000
+ 830      OAB    PAX    OAC     109.500    3.000
+ 830      OAB    PAX    CAQ     109.500    3.000
+ 830      OAC    PAX    CAQ     109.500    3.000
+ 830      PAX    OAC    KOAC    120.000    3.000
+ 830      PAX    CAQ    HAQ     109.500    3.000
+ 830      PAX    CAQ    HAQA    109.500    3.000
+ 830      PAX    CAQ    CAT     109.500    3.000
+ 830      HAQ    CAQ    HAQA    107.900    3.000
+ 830      HAQ    CAQ    CAT     109.470    3.000
+ 830      HAQA   CAQ    CAT     109.470    3.000
+ 830      CAQ    CAT    OAA     120.500    3.000
+ 830      CAQ    CAT    NAR     116.500    3.000
+ 830      OAA    CAT    NAR     123.000    3.000
+ 830      CAT    NAR    HNAR    120.000    3.000
+ 830      CAT    NAR    CAO     121.500    3.000
+ 830      HNAR   NAR    CAO     118.500    3.000
+ 830      NAR    CAO    HAO     109.470    3.000
+ 830      NAR    CAO    HAOA    109.470    3.000
+ 830      NAR    CAO    CAN     112.000    3.000
+ 830      HAO    CAO    HAOA    107.900    3.000
+ 830      HAO    CAO    CAN     109.470    3.000
+ 830      HAOA   CAO    CAN     109.470    3.000
+ 830      CAO    CAN    HAN     109.470    3.000
+ 830      CAO    CAN    HANA    109.470    3.000
+ 830      CAO    CAN    CAP     111.000    3.000
+ 830      HAN    CAN    HANA    107.900    3.000
+ 830      HAN    CAN    CAP     109.470    3.000
+ 830      HANA   CAN    CAP     109.470    3.000
+ 830      CAN    CAP    HAP     109.470    3.000
+ 830      CAN    CAP    HAPA    109.470    3.000
+ 830      CAN    CAP    CAU     109.470    3.000
+ 830      HAP    CAP    HAPA    107.900    3.000
+ 830      HAP    CAP    CAU     109.470    3.000
+ 830      HAPA   CAP    CAU     109.470    3.000
+ 830      CAP    CAU    CAM     120.000    3.000
+ 830      CAP    CAU    CAI     120.000    3.000
+ 830      CAM    CAU    CAI     120.000    3.000
+ 830      CAU    CAM    HAM     120.000    3.000
+ 830      CAU    CAM    CAW     120.000    3.000
+ 830      HAM    CAM    CAW     120.000    3.000
+ 830      CAU    CAI    HAI     120.000    3.000
+ 830      CAU    CAI    CAH     120.000    3.000
+ 830      HAI    CAI    CAH     120.000    3.000
+ 830      CAI    CAH    HAH     120.000    3.000
+ 830      CAI    CAH    CAL     120.000    3.000
+ 830      HAH    CAH    CAL     120.000    3.000
+ 830      CAH    CAL    HAL     120.000    3.000
+ 830      CAH    CAL    CAW     120.000    3.000
+ 830      HAL    CAL    CAW     120.000    3.000
+ 830      CAL    CAW    OAS     120.000    3.000
+ 830      CAL    CAW    CAM     120.000    3.000
+ 830      OAS    CAW    CAM     120.000    3.000
+ 830      CAW    OAS    CAV     120.000    3.000
+ 830      OAS    CAV    CAJ     120.000    3.000
+ 830      OAS    CAV    CAK     120.000    3.000
+ 830      CAJ    CAV    CAK     120.000    3.000
+ 830      CAV    CAJ    HAJ     120.000    3.000
+ 830      CAV    CAJ    CAF     120.000    3.000
+ 830      HAJ    CAJ    CAF     120.000    3.000
+ 830      CAV    CAK    HAK     120.000    3.000
+ 830      CAV    CAK    CAG     120.000    3.000
+ 830      HAK    CAK    CAG     120.000    3.000
+ 830      CAK    CAG    HAG     120.000    3.000
+ 830      CAK    CAG    CAE     120.000    3.000
+ 830      HAG    CAG    CAE     120.000    3.000
+ 830      CAG    CAE    HAE     120.000    3.000
+ 830      CAG    CAE    CAF     120.000    3.000
+ 830      HAE    CAE    CAF     120.000    3.000
+ 830      CAE    CAF    HAF     120.000    3.000
+ 830      CAE    CAF    CAJ     120.000    3.000
+ 830      HAF    CAF    CAJ     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 830      var_1    KOAD   OAD    PAX    CAQ      -60.011   20.000   1
+ 830      var_2    OAD    PAX    OAC    KOAC      60.034   20.000   1
+ 830      var_3    OAD    PAX    CAQ    CAT      -65.010   20.000   1
+ 830      var_4    PAX    CAQ    CAT    NAR     -100.006   20.000   3
+ 830      CONST_1  CAQ    CAT    NAR    CAO      180.000    0.000   0
+ 830      var_5    CAT    NAR    CAO    CAN     -179.979   20.000   3
+ 830      var_6    NAR    CAO    CAN    CAP     -179.958   20.000   3
+ 830      var_7    CAO    CAN    CAP    CAU      179.995   20.000   3
+ 830      var_8    CAN    CAP    CAU    CAI      -89.963   20.000   2
+ 830      CONST_2  CAP    CAU    CAM    CAW      180.000    0.000   0
+ 830      CONST_3  CAP    CAU    CAI    CAH      180.000    0.000   0
+ 830      CONST_4  CAU    CAI    CAH    CAL        0.000    0.000   0
+ 830      CONST_5  CAI    CAH    CAL    CAW        0.000    0.000   0
+ 830      CONST_6  CAH    CAL    CAW    OAS      180.000    0.000   0
+ 830      CONST_7  CAL    CAW    CAM    CAU        0.000    0.000   0
+ 830      var_9    CAL    CAW    OAS    CAV      -90.282   20.000   1
+ 830      var_10   CAW    OAS    CAV    CAK     -179.426   20.000   1
+ 830      CONST_8  OAS    CAV    CAJ    CAF      180.000    0.000   0
+ 830      CONST_9  CAV    CAJ    CAF    CAE        0.000    0.000   0
+ 830      CONST_10 OAS    CAV    CAK    CAG      180.000    0.000   0
+ 830      CONST_11 CAV    CAK    CAG    CAE        0.000    0.000   0
+ 830      CONST_12 CAK    CAG    CAE    CAF        0.000    0.000   0
+ 830      CONST_13 CAG    CAE    CAF    CAJ        0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 830      plan-1    CAJ       0.020
+ 830      plan-1    CAF       0.020
+ 830      plan-1    CAV       0.020
+ 830      plan-1    HAJ       0.020
+ 830      plan-1    CAE       0.020
+ 830      plan-1    CAG       0.020
+ 830      plan-1    CAK       0.020
+ 830      plan-1    HAF       0.020
+ 830      plan-1    HAE       0.020
+ 830      plan-1    HAG       0.020
+ 830      plan-1    HAK       0.020
+ 830      plan-1    OAS       0.020
+ 830      plan-2    CAW       0.020
+ 830      plan-2    OAS       0.020
+ 830      plan-2    CAM       0.020
+ 830      plan-2    CAL       0.020
+ 830      plan-2    CAH       0.020
+ 830      plan-2    CAI       0.020
+ 830      plan-2    CAU       0.020
+ 830      plan-2    HAM       0.020
+ 830      plan-2    HAL       0.020
+ 830      plan-2    HAH       0.020
+ 830      plan-2    HAI       0.020
+ 830      plan-2    CAP       0.020
+ 830      plan-3    NAR       0.020
+ 830      plan-3    CAO       0.020
+ 830      plan-3    CAT       0.020
+ 830      plan-3    HNAR      0.020
+ 830      plan-4    CAT       0.020
+ 830      plan-4    NAR       0.020
+ 830      plan-4    OAA       0.020
+ 830      plan-4    CAQ       0.020
+ 830      plan-4    HNAR      0.020
+# ------------------------------------------------------

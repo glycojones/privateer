@@ -1,0 +1,245 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MMO      MMO 'N~5~-(DIAMINOMETHYLENE)-N~2~-METHYLO' non-polymer        28  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MMO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MMO           OXT    O    OC       -0.500      0.000    0.000    0.000
+ MMO           C      C    C         0.000      0.377   -0.534   -1.067
+ MMO           O      O    OC       -0.500      0.313    0.044   -2.174
+ MMO           CA     C    CH1       0.000      0.879   -1.950   -0.849
+ MMO           HA     H    H         0.000      0.076   -2.563   -0.417
+ MMO           N      N    NH1       0.000      1.225   -2.461   -2.173
+ MMO           H      H    H         0.000      1.125   -1.941   -3.033
+ MMO           CN     C    CH3       0.000      1.734   -3.822   -2.084
+ MMO           HC3    H    H         0.000      1.786   -4.244   -3.055
+ MMO           HC2    H    H         0.000      2.701   -3.811   -1.653
+ MMO           HC1    H    H         0.000      1.086   -4.404   -1.482
+ MMO           CB     C    CH2       0.000      2.112   -1.998    0.067
+ MMO           HCB1   H    H         0.000      2.397   -3.044    0.196
+ MMO           HCB2   H    H         0.000      1.831   -1.576    1.034
+ MMO           CG     C    CH2       0.000      3.296   -1.210   -0.513
+ MMO           HCG1   H    H         0.000      2.982   -0.171   -0.633
+ MMO           HCG2   H    H         0.000      3.534   -1.633   -1.491
+ MMO           CD     C    CH2       0.000      4.529   -1.270    0.383
+ MMO           HCD1   H    H         0.000      5.344   -0.721   -0.092
+ MMO           HCD2   H    H         0.000      4.824   -2.313    0.517
+ MMO           NE     N    N         0.000      4.229   -0.674    1.686
+ MMO           CZ     C    C         0.000      5.203   -0.616    2.539
+ MMO           NH1    N    NH2       0.000      6.500   -1.049    2.373
+ MMO           HH12   H    H         0.000      6.800   -1.476    1.498
+ MMO           HH11   H    H         0.000      7.183   -0.949    3.122
+ MMO           NH2    N    NH2       0.000      5.003   -0.069    3.785
+ MMO           HH22   H    H         0.000      5.763   -0.020    4.461
+ MMO           HH21   H    H         0.000      4.091    0.296    4.054
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MMO      OXT    n/a    C      START
+ MMO      C      OXT    CA     .
+ MMO      O      C      .      .
+ MMO      CA     C      CB     .
+ MMO      HA     CA     .      .
+ MMO      N      CA     CN     .
+ MMO      H      N      .      .
+ MMO      CN     N      HC1    .
+ MMO      HC3    CN     .      .
+ MMO      HC2    CN     .      .
+ MMO      HC1    CN     .      .
+ MMO      CB     CA     CG     .
+ MMO      HCB1   CB     .      .
+ MMO      HCB2   CB     .      .
+ MMO      CG     CB     CD     .
+ MMO      HCG1   CG     .      .
+ MMO      HCG2   CG     .      .
+ MMO      CD     CG     NE     .
+ MMO      HCD1   CD     .      .
+ MMO      HCD2   CD     .      .
+ MMO      NE     CD     CZ     .
+ MMO      CZ     NE     NH2    .
+ MMO      NH1    CZ     HH11   .
+ MMO      HH12   NH1    .      .
+ MMO      HH11   NH1    .      .
+ MMO      NH2    CZ     HH21   .
+ MMO      HH22   NH2    .      .
+ MMO      HH21   NH2    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MMO       N         CA        single    1.450     0.020     1.450     0.020     
+MMO       CN        N         single    1.450     0.020     1.450     0.020     
+MMO       H         N         single    1.036     0.016     0.914     0.007     
+MMO       CA        C         single    1.500     0.020     1.500     0.020     
+MMO       CB        CA        single    1.524     0.020     1.524     0.020     
+MMO       HA        CA        single    1.089     0.010     0.989     0.005     
+MMO       O         C         deloc     1.250     0.020     1.250     0.020     
+MMO       C         OXT       deloc     1.250     0.020     1.250     0.020     
+MMO       CG        CB        single    1.524     0.020     1.524     0.020     
+MMO       HCB1      CB        single    1.089     0.010     0.989     0.005     
+MMO       HCB2      CB        single    1.089     0.010     0.989     0.005     
+MMO       CD        CG        single    1.524     0.020     1.524     0.020     
+MMO       HCG1      CG        single    1.089     0.010     0.989     0.005     
+MMO       HCG2      CG        single    1.089     0.010     0.989     0.005     
+MMO       NE        CD        single    1.455     0.020     1.455     0.020     
+MMO       HCD1      CD        single    1.089     0.010     0.989     0.005     
+MMO       HCD2      CD        single    1.089     0.010     0.989     0.005     
+MMO       CZ        NE        double    1.260     0.020     1.260     0.020     
+MMO       NH2       CZ        single    1.332     0.020     1.332     0.020     
+MMO       NH1       CZ        single    1.332     0.020     1.332     0.020     
+MMO       HH21      NH2       single    1.016     0.010     0.899     0.007     
+MMO       HH22      NH2       single    1.016     0.010     0.899     0.007     
+MMO       HH11      NH1       single    1.016     0.010     0.899     0.007     
+MMO       HH12      NH1       single    1.016     0.010     0.899     0.007     
+MMO       HC1       CN        single    1.089     0.010     0.989     0.005     
+MMO       HC2       CN        single    1.089     0.010     0.989     0.005     
+MMO       HC3       CN        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MMO      OXT    C      O       123.000    3.000
+ MMO      OXT    C      CA      118.500    3.000
+ MMO      O      C      CA      118.500    3.000
+ MMO      C      CA     HA      108.810    3.000
+ MMO      C      CA     N       111.600    3.000
+ MMO      C      CA     CB      109.470    3.000
+ MMO      HA     CA     N       108.550    3.000
+ MMO      HA     CA     CB      108.340    3.000
+ MMO      N      CA     CB      110.000    3.000
+ MMO      CA     N      H       118.500    3.000
+ MMO      CA     N      CN      120.000    3.000
+ MMO      H      N      CN      118.500    3.000
+ MMO      N      CN     HC3     109.470    3.000
+ MMO      N      CN     HC2     109.470    3.000
+ MMO      N      CN     HC1     109.470    3.000
+ MMO      HC3    CN     HC2     109.470    3.000
+ MMO      HC3    CN     HC1     109.470    3.000
+ MMO      HC2    CN     HC1     109.470    3.000
+ MMO      CA     CB     HCB1    109.470    3.000
+ MMO      CA     CB     HCB2    109.470    3.000
+ MMO      CA     CB     CG      111.000    3.000
+ MMO      HCB1   CB     HCB2    107.900    3.000
+ MMO      HCB1   CB     CG      109.470    3.000
+ MMO      HCB2   CB     CG      109.470    3.000
+ MMO      CB     CG     HCG1    109.470    3.000
+ MMO      CB     CG     HCG2    109.470    3.000
+ MMO      CB     CG     CD      111.000    3.000
+ MMO      HCG1   CG     HCG2    107.900    3.000
+ MMO      HCG1   CG     CD      109.470    3.000
+ MMO      HCG2   CG     CD      109.470    3.000
+ MMO      CG     CD     HCD1    109.470    3.000
+ MMO      CG     CD     HCD2    109.470    3.000
+ MMO      CG     CD     NE      105.000    3.000
+ MMO      HCD1   CD     HCD2    107.900    3.000
+ MMO      HCD1   CD     NE      109.470    3.000
+ MMO      HCD2   CD     NE      109.470    3.000
+ MMO      CD     NE     CZ      127.000    3.000
+ MMO      NE     CZ     NH1     120.000    3.000
+ MMO      NE     CZ     NH2     120.000    3.000
+ MMO      NH1    CZ     NH2     120.000    3.000
+ MMO      CZ     NH1    HH12    120.000    3.000
+ MMO      CZ     NH1    HH11    120.000    3.000
+ MMO      HH12   NH1    HH11    120.000    3.000
+ MMO      CZ     NH2    HH22    120.000    3.000
+ MMO      CZ     NH2    HH21    120.000    3.000
+ MMO      HH22   NH2    HH21    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MMO      var_1    OXT    C      CA     CB       -62.453   20.000   3
+ MMO      var_2    C      CA     N      CN       179.556   20.000   3
+ MMO      var_3    CA     N      CN     HC1       48.207   20.000   1
+ MMO      var_4    C      CA     CB     CG       -60.605   20.000   3
+ MMO      var_5    CA     CB     CG     CD      -179.181   20.000   3
+ MMO      var_6    CB     CG     CD     NE       -61.466   20.000   3
+ MMO      var_7    CG     CD     NE     CZ      -177.790   20.000   1
+ MMO      CONST_1  CD     NE     CZ     NH2      180.000    0.000   0
+ MMO      CONST_2  NE     CZ     NH1    HH11     180.000    0.000   0
+ MMO      CONST_3  NE     CZ     NH2    HH21       0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MMO      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MMO      plan-1    N         0.020
+ MMO      plan-1    CA        0.020
+ MMO      plan-1    CN        0.020
+ MMO      plan-1    H         0.020
+ MMO      plan-2    C         0.020
+ MMO      plan-2    CA        0.020
+ MMO      plan-2    O         0.020
+ MMO      plan-2    OXT       0.020
+ MMO      plan-3    NE        0.020
+ MMO      plan-3    CD        0.020
+ MMO      plan-3    CZ        0.020
+ MMO      plan-3    NH2       0.020
+ MMO      plan-3    NH1       0.020
+ MMO      plan-3    HH22      0.020
+ MMO      plan-3    HH21      0.020
+ MMO      plan-3    HH12      0.020
+ MMO      plan-3    HH11      0.020
+ MMO      plan-4    NH2       0.020
+ MMO      plan-4    CZ        0.020
+ MMO      plan-4    HH21      0.020
+ MMO      plan-4    HH22      0.020
+ MMO      plan-5    NH1       0.020
+ MMO      plan-5    CZ        0.020
+ MMO      plan-5    HH11      0.020
+ MMO      plan-5    HH12      0.020
+# ------------------------------------------------------

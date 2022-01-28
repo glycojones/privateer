@@ -1,0 +1,134 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VGL     VGL      "PYRAZINE-2-CARBOXYLIC ACID"     non-polymer     12     9     .     
+#
+data_comp_VGL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+VGL     C1      C       CR6     0       -8.679      5.788       -15.745     
+VGL     C3      C       CR16    0       -10.756     5.501       -16.659     
+VGL     C4      C       CR16    0       -11.278     5.233       -15.399     
+VGL     C2      C       C       0       -7.206      6.100       -15.922     
+VGL     C6      C       CR16    0       -9.208      5.519       -14.483     
+VGL     O1      O       O       0       -6.725      6.983       -15.190     
+VGL     O2      O       OC      -1      -6.593      5.449       -16.786     
+VGL     N2      N       NRD6    0       -9.458      5.779       -16.839     
+VGL     N5      N       NRD6    0       -10.509     5.240       -14.304     
+VGL     H3      H       H       0       -11.327     5.487       -17.405     
+VGL     H4      H       H       0       -12.194     5.042       -15.311     
+VGL     H6      H       H       0       -8.634      5.532       -13.726     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VGL       C1        C2        SINGLE    n         1.516     0.012     1.516     0.012     
+VGL       C1        C6        DOUBLE    y         1.385     0.012     1.385     0.012     
+VGL       C1        N2        SINGLE    y         1.331     0.013     1.331     0.013     
+VGL       C3        C4        SINGLE    y         1.381     0.011     1.381     0.011     
+VGL       C3        N2        DOUBLE    y         1.332     0.010     1.332     0.010     
+VGL       C4        N5        DOUBLE    y         1.331     0.010     1.331     0.010     
+VGL       C2        O1        DOUBLE    n         1.244     0.020     1.244     0.020     
+VGL       C2        O2        SINGLE    n         1.244     0.020     1.244     0.020     
+VGL       C6        N5        SINGLE    y         1.335     0.010     1.335     0.010     
+VGL       C3        H3        SINGLE    n         1.082     0.013     0.940     0.018     
+VGL       C4        H4        SINGLE    n         1.082     0.013     0.939     0.018     
+VGL       C6        H6        SINGLE    n         1.082     0.013     0.950     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+VGL          C2          C1          C6     120.684    1.50
+VGL          C2          C1          N2     117.783    1.50
+VGL          C6          C1          N2     121.533    1.50
+VGL          C4          C3          N2     121.970    1.50
+VGL          C4          C3          H3     119.163    1.50
+VGL          N2          C3          H3     118.864    1.50
+VGL          C3          C4          N5     121.972    1.50
+VGL          C3          C4          H4     119.200    1.50
+VGL          N5          C4          H4     118.828    1.50
+VGL          C1          C2          O1     116.939    1.50
+VGL          C1          C2          O2     116.939    1.50
+VGL          O1          C2          O2     126.122    1.50
+VGL          C1          C6          N5     122.225    1.50
+VGL          C1          C6          H6     119.139    1.50
+VGL          N5          C6          H6     118.637    1.50
+VGL          C1          N2          C3     116.335    1.50
+VGL          C4          N5          C6     115.967    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+VGL             sp2_sp2_1          C6          C1          C2          O1     180.000   10.00     2
+VGL       const_sp2_sp2_3          C2          C1          C6          N5     180.000   10.00     2
+VGL              const_16          C2          C1          N2          C3     180.000   10.00     2
+VGL       const_sp2_sp2_9          N2          C3          C4          N5       0.000   10.00     2
+VGL              const_13          C4          C3          N2          C1       0.000   10.00     2
+VGL       const_sp2_sp2_7          C3          C4          N5          C6       0.000   10.00     2
+VGL       const_sp2_sp2_5          C1          C6          N5          C4       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+VGL    plan-1          C1   0.020
+VGL    plan-1          C2   0.020
+VGL    plan-1          C3   0.020
+VGL    plan-1          C4   0.020
+VGL    plan-1          C6   0.020
+VGL    plan-1          H3   0.020
+VGL    plan-1          H4   0.020
+VGL    plan-1          H6   0.020
+VGL    plan-1          N2   0.020
+VGL    plan-1          N5   0.020
+VGL    plan-2          C1   0.020
+VGL    plan-2          C2   0.020
+VGL    plan-2          O1   0.020
+VGL    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+VGL SMILES           ACDLabs              10.04 "O=C(O)c1nccnc1"
+VGL SMILES_CANONICAL CACTVS               3.352 "OC(=O)c1cnccn1"
+VGL SMILES           CACTVS               3.352 "OC(=O)c1cnccn1"
+VGL SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "c1cnc(cn1)C(=O)O"
+VGL SMILES           "OpenEye OEToolkits" 1.6.1 "c1cnc(cn1)C(=O)O"
+VGL InChI            InChI                1.03  "InChI=1S/C5H4N2O2/c8-5(9)4-3-6-1-2-7-4/h1-3H,(H,8,9)"
+VGL InChIKey         InChI                1.03  NIPZZXUFJPQHNH-UHFFFAOYSA-N
+VGL ?                acedrg               202         "dictionary generator"                  
+VGL ?                acedrg_database      11          "data source"                           
+VGL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+VGL ?                refmac5              5.8.0189    "optimization tool"                     

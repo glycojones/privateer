@@ -1,0 +1,172 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+01U     01U      1,3-benzothiazole-2,6-diamine     NON-POLYMER     18     11     .     
+#
+data_comp_01U
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+01U     N25     N       NH2     0       12.857      -12.692     15.808      
+01U     C26     C       CR6     0       14.041      -12.659     15.078      
+01U     C31     C       CR16    0       14.441      -11.464     14.467      
+01U     C30     C       CR56    0       15.634      -11.461     13.740      
+01U     S34     S       S2      0       16.388      -10.150     12.878      
+01U     C33     C       CR5     0       17.694      -11.239     12.430      
+01U     N35     N       NH2     0       18.717      -10.800     11.692      
+01U     N32     N       NRD5    0       17.582      -12.472     12.866      
+01U     C29     C       CR56    0       16.420      -12.622     13.619      
+01U     C28     C       CR16    0       16.006      -13.811     14.236      
+01U     C27     C       CR16    0       14.822      -13.827     14.962      
+01U     H25     H       H       0       12.606      -13.438     16.197      
+01U     H2      H       H       0       12.367      -11.966     15.877      
+01U     H31     H       H       0       13.913      -10.682     14.547      
+01U     H351    H       H       0       18.740      -9.972      11.432      
+01U     H352    H       H       0       19.359      -11.341     11.472      
+01U     H28     H       H       0       16.532      -14.593     14.156      
+01U     H27     H       H       0       14.535      -14.618     15.380      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+01U       N25       C26       SINGLE    n         1.385     0.020     1.385     0.020     
+01U       C26       C31       DOUBLE    y         1.392     0.011     1.392     0.011     
+01U       C26       C27       SINGLE    y         1.397     0.014     1.397     0.014     
+01U       C31       C30       SINGLE    y         1.391     0.010     1.391     0.010     
+01U       C30       S34       SINGLE    n         1.741     0.010     1.741     0.010     
+01U       C30       C29       DOUBLE    y         1.401     0.010     1.401     0.010     
+01U       S34       C33       SINGLE    n         1.758     0.012     1.758     0.012     
+01U       C33       N35       SINGLE    n         1.334     0.010     1.334     0.010     
+01U       C33       N32       DOUBLE    n         1.310     0.018     1.310     0.018     
+01U       N32       C29       SINGLE    n         1.393     0.010     1.393     0.010     
+01U       C29       C28       SINGLE    y         1.394     0.010     1.394     0.010     
+01U       C28       C27       DOUBLE    y         1.376     0.013     1.376     0.013     
+01U       N25       H25       SINGLE    n         1.016     0.010     0.877     0.020     
+01U       N25       H2        SINGLE    n         1.016     0.010     0.877     0.020     
+01U       C31       H31       SINGLE    n         1.082     0.013     0.947     0.010     
+01U       N35       H351      SINGLE    n         1.016     0.010     0.868     0.020     
+01U       N35       H352      SINGLE    n         1.016     0.010     0.868     0.020     
+01U       C28       H28       SINGLE    n         1.082     0.013     0.946     0.010     
+01U       C27       H27       SINGLE    n         1.082     0.013     0.940     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+01U         C26         N25         H25     119.557    1.50
+01U         C26         N25          H2     119.557    1.50
+01U         H25         N25          H2     120.886    3.00
+01U         N25         C26         C31     119.016    1.59
+01U         N25         C26         C27     119.356    1.50
+01U         C31         C26         C27     121.628    2.03
+01U         C26         C31         C30     118.241    1.50
+01U         C26         C31         H31     120.583    1.50
+01U         C30         C31         H31     121.176    1.50
+01U         C31         C30         S34     128.819    1.50
+01U         C31         C30         C29     121.276    1.50
+01U         S34         C30         C29     109.905    1.50
+01U         C30         S34         C33      89.031    1.50
+01U         S34         C33         N35     120.452    1.50
+01U         S34         C33         N32     115.632    1.50
+01U         N35         C33         N32     123.916    1.50
+01U         C33         N35        H351     119.996    1.50
+01U         C33         N35        H352     119.996    1.50
+01U        H351         N35        H352     120.009    2.21
+01U         C33         N32         C29     110.577    1.50
+01U         C30         C29         N32     115.255    1.50
+01U         C30         C29         C28     119.639    1.50
+01U         N32         C29         C28     125.106    1.50
+01U         C29         C28         C27     118.888    1.50
+01U         C29         C28         H28     120.260    1.50
+01U         C27         C28         H28     120.852    1.50
+01U         C26         C27         C28     120.328    1.50
+01U         C26         C27         H27     119.446    1.50
+01U         C28         C27         H27     120.226    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+01U             sp2_sp2_5         C31         C26         N25         H25     180.000   10.00     2
+01U              const_23         N25         C26         C27         C28     180.000   10.00     2
+01U       const_sp2_sp2_3         N25         C26         C31         C30     180.000   10.00     2
+01U       const_sp2_sp2_7         S34         C30         C31         C26     180.000   10.00     2
+01U              const_10         N32         C29         C30         C31     180.000   10.00     2
+01U             sp2_sp2_9         S34         C33         N35        H351     180.000   10.00     2
+01U             sp2_sp2_2         N35         C33         N32         C29     180.000   10.00     2
+01U             sp2_sp2_3         C30         C29         N32         C33       0.000   10.00     2
+01U              const_13         C27         C28         C29         C30       0.000   10.00     2
+01U              const_17         C26         C27         C28         C29       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+01U    plan-1         C26   0.020
+01U    plan-1         C27   0.020
+01U    plan-1         C28   0.020
+01U    plan-1         C29   0.020
+01U    plan-1         C30   0.020
+01U    plan-1         C31   0.020
+01U    plan-1         H27   0.020
+01U    plan-1         H28   0.020
+01U    plan-1         H31   0.020
+01U    plan-1         N25   0.020
+01U    plan-1         N32   0.020
+01U    plan-1         S34   0.020
+01U    plan-2         C26   0.020
+01U    plan-2          H2   0.020
+01U    plan-2         H25   0.020
+01U    plan-2         N25   0.020
+01U    plan-3         C33   0.020
+01U    plan-3         N32   0.020
+01U    plan-3         N35   0.020
+01U    plan-3         S34   0.020
+01U    plan-4         C33   0.020
+01U    plan-4        H351   0.020
+01U    plan-4        H352   0.020
+01U    plan-4         N35   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+01U SMILES           ACDLabs              12.01 "n1c2ccc(cc2sc1N)N"
+01U SMILES_CANONICAL CACTVS               3.370 "Nc1sc2cc(N)ccc2n1"
+01U SMILES           CACTVS               3.370 "Nc1sc2cc(N)ccc2n1"
+01U SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc2c(cc1N)sc(n2)N"
+01U SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc2c(cc1N)sc(n2)N"
+01U InChI            InChI                1.03  "InChI=1S/C7H7N3S/c8-4-1-2-5-6(3-4)11-7(9)10-5/h1-3H,8H2,(H2,9,10)"
+01U InChIKey         InChI                1.03  HYBCFWFWKXJYFT-UHFFFAOYSA-N
+01U ?                acedrg               202         "dictionary generator"                  
+01U ?                acedrg_database      11          "data source"                           
+01U ?                rdkit                2017.03.2   "Chemoinformatics tool"
+01U ?                refmac5              5.8.0189    "optimization tool"                     

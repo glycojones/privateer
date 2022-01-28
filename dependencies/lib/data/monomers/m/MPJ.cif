@@ -1,0 +1,189 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MPJ      MPJ '(1-AMINO-3-METHYLSULFANYL-PROPYL)-PH' non-polymer        21   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MPJ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MPJ           O1     O    O         0.000      0.000    0.000    0.000
+ MPJ           P      P    P         0.000     -0.601    1.311    0.442
+ MPJ           HP     H    H         0.000     -0.007    2.392   -0.187
+ MPJ           O2     O    OH1       0.000     -0.522    1.431    2.064
+ MPJ           HO2    H    H         0.000     -0.126    2.213    2.478
+ MPJ           CA     C    CH1       0.000     -2.391    1.291    0.207
+ MPJ           HA     H    H         0.000     -2.830    2.140    0.749
+ MPJ           N      N    NH2       0.000     -2.468    1.557   -1.222
+ MPJ           HN2    H    H         0.000     -2.911    2.401   -1.558
+ MPJ           H      H    H         0.000     -2.078    0.897   -1.882
+ MPJ           CB     C    CH2       0.000     -3.115    0.009    0.628
+ MPJ           HB1    H    H         0.000     -2.680   -0.805    0.045
+ MPJ           HB2    H    H         0.000     -4.164    0.133    0.352
+ MPJ           CG     C    CH2       0.000     -3.014   -0.318    2.118
+ MPJ           HG1    H    H         0.000     -3.437    0.509    2.692
+ MPJ           HG2    H    H         0.000     -1.962   -0.443    2.383
+ MPJ           SD     S    S2        0.000     -3.921   -1.848    2.496
+ MPJ           CE     C    CH3       0.000     -3.555   -1.938    4.264
+ MPJ           HE3    H    H         0.000     -4.072   -2.756    4.700
+ MPJ           HE2    H    H         0.000     -2.512   -2.070    4.412
+ MPJ           HE1    H    H         0.000     -3.861   -1.041    4.744
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MPJ      O1     n/a    P      START
+ MPJ      P      O1     CA     .
+ MPJ      HP     P      .      .
+ MPJ      O2     P      HO2    .
+ MPJ      HO2    O2     .      .
+ MPJ      CA     P      CB     .
+ MPJ      HA     CA     .      .
+ MPJ      N      CA     H      .
+ MPJ      HN2    N      .      .
+ MPJ      H      N      .      .
+ MPJ      CB     CA     CG     .
+ MPJ      HB1    CB     .      .
+ MPJ      HB2    CB     .      .
+ MPJ      CG     CB     SD     .
+ MPJ      HG1    CG     .      .
+ MPJ      HG2    CG     .      .
+ MPJ      SD     CG     CE     .
+ MPJ      CE     SD     HE1    .
+ MPJ      HE3    CE     .      .
+ MPJ      HE2    CE     .      .
+ MPJ      HE1    CE     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MPJ       N         CA        single    1.450     0.020     1.450     0.020     
+MPJ       H         N         single    1.036     0.016     0.914     0.007     
+MPJ       HN2       N         single    1.036     0.016     0.914     0.007     
+MPJ       CB        CA        single    1.524     0.020     1.524     0.020     
+MPJ       CA        P         single    1.815     0.020     1.815     0.020     
+MPJ       HA        CA        single    1.089     0.010     0.989     0.005     
+MPJ       CG        CB        single    1.524     0.020     1.524     0.020     
+MPJ       HB1       CB        single    1.089     0.010     0.989     0.005     
+MPJ       HB2       CB        single    1.089     0.010     0.989     0.005     
+MPJ       SD        CG        single    1.762     0.020     1.762     0.020     
+MPJ       HG1       CG        single    1.089     0.010     0.989     0.005     
+MPJ       HG2       CG        single    1.089     0.010     0.989     0.005     
+MPJ       CE        SD        single    1.762     0.020     1.762     0.020     
+MPJ       HE1       CE        single    1.089     0.010     0.989     0.005     
+MPJ       HE2       CE        single    1.089     0.010     0.989     0.005     
+MPJ       HE3       CE        single    1.089     0.010     0.989     0.005     
+MPJ       P         O1        double    1.480     0.020     1.480     0.020     
+MPJ       O2        P         single    1.610     0.020     1.610     0.020     
+MPJ       HO2       O2        single    0.970     0.012     0.839     0.014     
+MPJ       HP        P         single    1.284     0.020     1.284     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MPJ      O1     P      HP      109.500    3.000
+ MPJ      O1     P      O2      109.500    3.000
+ MPJ      O1     P      CA      109.500    3.000
+ MPJ      HP     P      O2      109.500    3.000
+ MPJ      HP     P      CA      109.500    3.000
+ MPJ      O2     P      CA      109.500    3.000
+ MPJ      P      O2     HO2     120.000    3.000
+ MPJ      P      CA     HA      109.500    3.000
+ MPJ      P      CA     N       109.500    3.000
+ MPJ      P      CA     CB      109.500    3.000
+ MPJ      HA     CA     N       109.470    3.000
+ MPJ      HA     CA     CB      108.340    3.000
+ MPJ      N      CA     CB      109.470    3.000
+ MPJ      CA     N      HN2     120.000    3.000
+ MPJ      CA     N      H       120.000    3.000
+ MPJ      HN2    N      H       120.000    3.000
+ MPJ      CA     CB     HB1     109.470    3.000
+ MPJ      CA     CB     HB2     109.470    3.000
+ MPJ      CA     CB     CG      111.000    3.000
+ MPJ      HB1    CB     HB2     107.900    3.000
+ MPJ      HB1    CB     CG      109.470    3.000
+ MPJ      HB2    CB     CG      109.470    3.000
+ MPJ      CB     CG     HG1     109.470    3.000
+ MPJ      CB     CG     HG2     109.470    3.000
+ MPJ      CB     CG     SD      109.500    3.000
+ MPJ      HG1    CG     HG2     107.900    3.000
+ MPJ      HG1    CG     SD      109.500    3.000
+ MPJ      HG2    CG     SD      109.500    3.000
+ MPJ      CG     SD     CE       98.285    3.000
+ MPJ      SD     CE     HE3     109.500    3.000
+ MPJ      SD     CE     HE2     109.500    3.000
+ MPJ      SD     CE     HE1     109.500    3.000
+ MPJ      HE3    CE     HE2     109.470    3.000
+ MPJ      HE3    CE     HE1     109.470    3.000
+ MPJ      HE2    CE     HE1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MPJ      var_1    O1     P      O2     HO2      127.404   20.000   1
+ MPJ      var_2    O1     P      CA     CB        43.292   20.000   1
+ MPJ      var_3    P      CA     N      H         63.562   20.000   1
+ MPJ      var_4    P      CA     CB     CG        62.712   20.000   3
+ MPJ      var_5    CA     CB     CG     SD       179.489   20.000   3
+ MPJ      var_6    CB     CG     SD     CE       178.569   20.000   1
+ MPJ      var_7    CG     SD     CE     HE1       55.866   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MPJ      chir_01  CA     N      CB     P         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MPJ      plan-1    N         0.020
+ MPJ      plan-1    CA        0.020
+ MPJ      plan-1    H         0.020
+ MPJ      plan-1    HN2       0.020
+# ------------------------------------------------------

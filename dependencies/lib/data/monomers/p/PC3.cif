@@ -1,0 +1,629 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PC3      PC3 'COPROPORPHYRIN I CONTAINING CO(III) ' non-polymer        81  49 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PC3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PC3           O6     O    OC       -0.500      0.000    0.000    0.000
+ PC3           C24    C    C         0.000      0.194    1.235    0.054
+ PC3           O5     O    OC       -0.500     -0.339    2.034   -0.747
+ PC3           C17    C    CH2       0.000      0.920    1.840    1.262
+ PC3           H171   H    H         0.000      1.426    2.731    0.885
+ PC3           H172   H    H         0.000      1.664    1.098    1.559
+ PC3           C16    C    CH2       0.000      0.041    2.222    2.497
+ PC3           H161   H    H         0.000      0.715    2.637    3.249
+ PC3           H162   H    H         0.000     -0.396    1.295    2.873
+ PC3           C6     C    CR5       0.000     -1.085    3.238    2.194
+ PC3           C7     C    CR5       0.000     -1.081    4.673    2.397
+ PC3           C10    C    CH3       0.000     -0.033    5.484    3.158
+ PC3           H103   H    H         0.000      0.400    4.885    3.919
+ PC3           H102   H    H         0.000      0.727    5.803    2.491
+ PC3           H101   H    H         0.000     -0.490    6.333    3.600
+ PC3           C8A    C    CR5       0.000     -2.165    5.146    1.593
+ PC3           CD     C    C1        0.000     -2.510    6.543    1.417
+ PC3           HD     H    H         0.000     -1.851    7.243    1.904
+ PC3           C2C    C    CR5       0.000     -3.609    7.138    0.684
+ PC3           N2B    N    NR5       0.000     -4.470    6.345   -0.064
+ PC3           C      C    CR5       0.000     -3.926    8.550    0.662
+ PC3           C14    C    CH2       0.000     -3.432    9.746    1.515
+ PC3           H141   H    H         0.000     -4.262   10.451    1.454
+ PC3           H142   H    H         0.000     -2.588   10.128    0.937
+ PC3           C15    C    CH2       0.000     -3.008    9.569    2.997
+ PC3           H151   H    H         0.000     -2.837   10.587    3.352
+ PC3           H152   H    H         0.000     -2.056    9.038    2.944
+ PC3           C21    C    C         0.000     -3.943    8.844    3.959
+ PC3           O2     O    OC       -0.500     -4.294    7.678    3.671
+ PC3           O1     O    OC       -0.500     -4.217    9.375    5.058
+ PC3           N8B    N    NR5       0.000     -2.877    4.138    0.966
+ PC3           CO3    CO   CO        0.000     -4.487    4.269   -0.320
+ PC3           N4B    N    NR5       0.000     -6.113    4.399   -1.582
+ PC3           C4C    C    CR5       0.000     -7.448    4.379   -1.236
+ PC3           CA     C    C1        0.000     -7.881    4.300    0.148
+ PC3           HA     H    H         0.000     -8.948    4.348    0.290
+ PC3           C2A    C    CR5       0.000     -7.114    4.168    1.368
+ PC3           C1     C    CR5       0.000     -7.686    4.044    2.673
+ PC3           C9     C    CH3       0.000     -9.162    3.920    3.060
+ PC3           H93    H    H         0.000     -9.767    4.384    2.322
+ PC3           H92    H    H         0.000     -9.429    2.896    3.135
+ PC3           H91    H    H         0.000     -9.329    4.392    3.995
+ PC3           C8C    C    CR5       0.000     -2.258    2.998    1.423
+ PC3           CC     C    C1        0.000     -2.781    1.680    1.129
+ PC3           HC     H    H         0.000     -2.295    0.869    1.646
+ PC3           C6A    C    CR5       0.000     -3.845    1.294    0.255
+ PC3           C5     C    CR5       0.000     -4.191   -0.045    0.007
+ PC3           C11    C    CH3       0.000     -3.475   -1.249    0.580
+ PC3           H113   H    H         0.000     -3.639   -2.090   -0.044
+ PC3           H112   H    H         0.000     -2.435   -1.050    0.637
+ PC3           H111   H    H         0.000     -3.847   -1.454    1.551
+ PC3           C4     C    CR5       0.000     -5.254    0.026   -0.959
+ PC3           C18    C    CH2       0.000     -5.853   -1.124   -1.749
+ PC3           H181   H    H         0.000     -6.794   -0.827   -2.216
+ PC3           H182   H    H         0.000     -6.024   -1.990   -1.106
+ PC3           C19    C    CH2       0.000     -4.826   -1.488   -2.842
+ PC3           H192   H    H         0.000     -5.317   -2.168   -3.541
+ PC3           H191   H    H         0.000     -3.997   -2.005   -2.355
+ PC3           C23    C    C         0.000     -4.298   -0.277   -3.596
+ PC3           O4     O    OC       -0.500     -4.331    0.839   -3.032
+ PC3           O23    O    OC       -0.500     -3.915   -0.406   -4.780
+ PC3           N6B    N    NR5       0.000     -4.613    2.215   -0.415
+ PC3           C6C    C    CR5       0.000     -5.464    1.421   -1.149
+ PC3           CB     C    C1        0.000     -6.464    1.988   -2.022
+ PC3           HB     H    H         0.000     -7.021    1.282   -2.616
+ PC3           C4A    C    CR5       0.000     -6.821    3.387   -2.205
+ PC3           C3     C    CR5       0.000     -7.903    3.848   -3.013
+ PC3           C8     C    CH3       0.000     -8.913    3.023   -3.812
+ PC3           H83    H    H         0.000     -8.472    2.104   -4.107
+ PC3           H82    H    H         0.000     -9.767    2.824   -3.214
+ PC3           H81    H    H         0.000     -9.211    3.561   -4.677
+ PC3           C2     C    CR5       0.000     -7.920    5.284   -2.810
+ PC3           C12    C    CH2       0.000     -9.052    6.271   -3.179
+ PC3           H121   H    H         0.000     -9.530    5.873   -4.077
+ PC3           H122   H    H         0.000     -8.569    7.221   -3.417
+ PC3           CX5    C    CH2       0.000    -10.130    6.496   -2.070
+ PC3           H221   H    H         0.000    -10.657    5.544   -1.976
+ PC3           H222   H    H         0.000    -10.811    7.250   -2.471
+ PC3           C22    C    C         0.000     -9.625    6.942   -0.692
+ PC3           O3     O    OC       -0.500     -9.523    8.160   -0.430
+ PC3           O22    O    OC       -0.500     -9.171    6.049    0.058
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PC3      O6     n/a    C24    START
+ PC3      C24    O6     C17    .
+ PC3      O5     C24    .      .
+ PC3      C17    C24    C16    .
+ PC3      H171   C17    .      .
+ PC3      H172   C17    .      .
+ PC3      C16    C17    C6     .
+ PC3      H161   C16    .      .
+ PC3      H162   C16    .      .
+ PC3      C6     C16    C7     .
+ PC3      C7     C6     C8A    .
+ PC3      C10    C7     H101   .
+ PC3      H103   C10    .      .
+ PC3      H102   C10    .      .
+ PC3      H101   C10    .      .
+ PC3      C8A    C7     N8B    .
+ PC3      CD     C8A    C2C    .
+ PC3      HD     CD     .      .
+ PC3      C2C    CD     C      .
+ PC3      N2B    C2C    .      .
+ PC3      C      C2C    C14    .
+ PC3      C14    C      C15    .
+ PC3      H141   C14    .      .
+ PC3      H142   C14    .      .
+ PC3      C15    C14    C21    .
+ PC3      H151   C15    .      .
+ PC3      H152   C15    .      .
+ PC3      C21    C15    O1     .
+ PC3      O2     C21    .      .
+ PC3      O1     C21    .      .
+ PC3      N8B    C8A    C8C    .
+ PC3      CO3    N8B    N4B    .
+ PC3      N4B    CO3    C4C    .
+ PC3      C4C    N4B    CA     .
+ PC3      CA     C4C    C2A    .
+ PC3      HA     CA     .      .
+ PC3      C2A    CA     C1     .
+ PC3      C1     C2A    C9     .
+ PC3      C9     C1     H91    .
+ PC3      H93    C9     .      .
+ PC3      H92    C9     .      .
+ PC3      H91    C9     .      .
+ PC3      C8C    N8B    CC     .
+ PC3      CC     C8C    C6A    .
+ PC3      HC     CC     .      .
+ PC3      C6A    CC     N6B    .
+ PC3      C5     C6A    C4     .
+ PC3      C11    C5     H111   .
+ PC3      H113   C11    .      .
+ PC3      H112   C11    .      .
+ PC3      H111   C11    .      .
+ PC3      C4     C5     C18    .
+ PC3      C18    C4     C19    .
+ PC3      H181   C18    .      .
+ PC3      H182   C18    .      .
+ PC3      C19    C18    C23    .
+ PC3      H192   C19    .      .
+ PC3      H191   C19    .      .
+ PC3      C23    C19    O23    .
+ PC3      O4     C23    .      .
+ PC3      O23    C23    .      .
+ PC3      N6B    C6A    C6C    .
+ PC3      C6C    N6B    CB     .
+ PC3      CB     C6C    C4A    .
+ PC3      HB     CB     .      .
+ PC3      C4A    CB     C3     .
+ PC3      C3     C4A    C2     .
+ PC3      C8     C3     H81    .
+ PC3      H83    C8     .      .
+ PC3      H82    C8     .      .
+ PC3      H81    C8     .      .
+ PC3      C2     C3     C12    .
+ PC3      C12    C2     CX5    .
+ PC3      H121   C12    .      .
+ PC3      H122   C12    .      .
+ PC3      CX5    C12    C22    .
+ PC3      H221   CX5    .      .
+ PC3      H222   CX5    .      .
+ PC3      C22    CX5    O22    .
+ PC3      O3     C22    .      .
+ PC3      O22    C22    .      END
+ PC3      CO3    N2B    .    ADD
+ PC3      CO3    N6B    .    ADD
+ PC3      C      C1     .    ADD
+ PC3      C2A    N2B    .    ADD
+ PC3      C4C    C2     .    ADD
+ PC3      C4A    N4B    .    ADD
+ PC3      C6C    C4     .    ADD
+ PC3      C8C    C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PC3       CO3       N2B       single    1.890     0.020     1.890     0.020     
+PC3       N4B       CO3       single    1.890     0.020     1.890     0.020     
+PC3       CO3       N6B       single    1.890     0.020     1.890     0.020     
+PC3       CO3       N8B       single    1.890     0.020     1.890     0.020     
+PC3       C         C1        double    1.490     0.020     1.490     0.020     
+PC3       C         C2C       single    1.490     0.020     1.490     0.020     
+PC3       C14       C         single    1.510     0.020     1.510     0.020     
+PC3       C1        C2A       single    1.490     0.020     1.490     0.020     
+PC3       C9        C1        single    1.506     0.020     1.506     0.020     
+PC3       C2A       N2B       single    1.337     0.020     1.337     0.020     
+PC3       C2A       CA        double    1.483     0.020     1.483     0.020     
+PC3       N2B       C2C       single    1.337     0.020     1.337     0.020     
+PC3       C2C       CD        double    1.483     0.020     1.483     0.020     
+PC3       CA        C4C       single    1.483     0.020     1.483     0.020     
+PC3       HA        CA        single    1.082     0.013     0.975     0.010     
+PC3       C4C       C2        double    1.490     0.020     1.490     0.020     
+PC3       C4C       N4B       single    1.337     0.020     1.337     0.020     
+PC3       C2        C3        single    1.490     0.020     1.490     0.020     
+PC3       C12       C2        single    1.510     0.020     1.510     0.020     
+PC3       C3        C4A       double    1.490     0.020     1.490     0.020     
+PC3       C8        C3        single    1.506     0.020     1.506     0.020     
+PC3       C4A       N4B       single    1.337     0.020     1.337     0.020     
+PC3       C4A       CB        single    1.483     0.020     1.483     0.020     
+PC3       CB        C6C       double    1.483     0.020     1.483     0.020     
+PC3       HB        CB        single    1.082     0.013     0.975     0.010     
+PC3       C6C       C4        single    1.490     0.020     1.490     0.020     
+PC3       C6C       N6B       single    1.337     0.020     1.337     0.020     
+PC3       C4        C5        double    1.490     0.020     1.490     0.020     
+PC3       C18       C4        single    1.510     0.020     1.510     0.020     
+PC3       C5        C6A       single    1.490     0.020     1.490     0.020     
+PC3       C11       C5        single    1.506     0.020     1.506     0.020     
+PC3       N6B       C6A       single    1.337     0.020     1.337     0.020     
+PC3       C6A       CC        double    1.483     0.020     1.483     0.020     
+PC3       CC        C8C       single    1.483     0.020     1.483     0.020     
+PC3       HC        CC        single    1.082     0.013     0.975     0.010     
+PC3       C8C       C6        double    1.490     0.020     1.490     0.020     
+PC3       C8C       N8B       single    1.337     0.020     1.337     0.020     
+PC3       C7        C6        single    1.490     0.020     1.490     0.020     
+PC3       C6        C16       single    1.510     0.020     1.510     0.020     
+PC3       C8A       C7        double    1.490     0.020     1.490     0.020     
+PC3       C10       C7        single    1.506     0.020     1.506     0.020     
+PC3       N8B       C8A       single    1.337     0.020     1.337     0.020     
+PC3       CD        C8A       single    1.483     0.020     1.483     0.020     
+PC3       HD        CD        single    1.082     0.013     0.975     0.010     
+PC3       H81       C8        single    1.089     0.010     0.989     0.005     
+PC3       H82       C8        single    1.089     0.010     0.989     0.005     
+PC3       H83       C8        single    1.089     0.010     0.989     0.005     
+PC3       H91       C9        single    1.089     0.010     0.989     0.005     
+PC3       H92       C9        single    1.089     0.010     0.989     0.005     
+PC3       H93       C9        single    1.089     0.010     0.989     0.005     
+PC3       H101      C10       single    1.089     0.010     0.989     0.005     
+PC3       H102      C10       single    1.089     0.010     0.989     0.005     
+PC3       H103      C10       single    1.089     0.010     0.989     0.005     
+PC3       H111      C11       single    1.089     0.010     0.989     0.005     
+PC3       H112      C11       single    1.089     0.010     0.989     0.005     
+PC3       H113      C11       single    1.089     0.010     0.989     0.005     
+PC3       CX5       C12       single    1.524     0.020     1.524     0.020     
+PC3       H121      C12       single    1.089     0.010     0.989     0.005     
+PC3       H122      C12       single    1.089     0.010     0.989     0.005     
+PC3       C22       CX5       single    1.510     0.020     1.510     0.020     
+PC3       H221      CX5       single    1.089     0.010     0.989     0.005     
+PC3       H222      CX5       single    1.089     0.010     0.989     0.005     
+PC3       C15       C14       single    1.524     0.020     1.524     0.020     
+PC3       H141      C14       single    1.089     0.010     0.989     0.005     
+PC3       H142      C14       single    1.089     0.010     0.989     0.005     
+PC3       C21       C15       single    1.510     0.020     1.510     0.020     
+PC3       H151      C15       single    1.089     0.010     0.989     0.005     
+PC3       H152      C15       single    1.089     0.010     0.989     0.005     
+PC3       C16       C17       single    1.524     0.020     1.524     0.020     
+PC3       H161      C16       single    1.089     0.010     0.989     0.005     
+PC3       H162      C16       single    1.089     0.010     0.989     0.005     
+PC3       C17       C24       single    1.510     0.020     1.510     0.020     
+PC3       H171      C17       single    1.089     0.010     0.989     0.005     
+PC3       H172      C17       single    1.089     0.010     0.989     0.005     
+PC3       C19       C18       single    1.524     0.020     1.524     0.020     
+PC3       H181      C18       single    1.089     0.010     0.989     0.005     
+PC3       H182      C18       single    1.089     0.010     0.989     0.005     
+PC3       C23       C19       single    1.510     0.020     1.510     0.020     
+PC3       H192      C19       single    1.089     0.010     0.989     0.005     
+PC3       H191      C19       single    1.089     0.010     0.989     0.005     
+PC3       O1        C21       deloc     1.250     0.020     1.250     0.020     
+PC3       O2        C21       deloc     1.250     0.020     1.250     0.020     
+PC3       O3        C22       deloc     1.250     0.020     1.250     0.020     
+PC3       O22       C22       deloc     1.250     0.020     1.250     0.020     
+PC3       O23       C23       deloc     1.250     0.020     1.250     0.020     
+PC3       O4        C23       deloc     1.250     0.020     1.250     0.020     
+PC3       O5        C24       deloc     1.250     0.020     1.250     0.020     
+PC3       C24       O6        deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PC3      O6     C24    O5      123.000    3.000
+ PC3      O6     C24    C17     118.500    3.000
+ PC3      O5     C24    C17     118.500    3.000
+ PC3      C24    C17    H171    109.470    3.000
+ PC3      C24    C17    H172    109.470    3.000
+ PC3      C24    C17    C16     109.470    3.000
+ PC3      H171   C17    H172    107.900    3.000
+ PC3      H171   C17    C16     109.470    3.000
+ PC3      H172   C17    C16     109.470    3.000
+ PC3      C17    C16    H161    109.470    3.000
+ PC3      C17    C16    H162    109.470    3.000
+ PC3      C17    C16    C6      109.470    3.000
+ PC3      H161   C16    H162    107.900    3.000
+ PC3      H161   C16    C6      109.470    3.000
+ PC3      H162   C16    C6      109.470    3.000
+ PC3      C16    C6     C7      126.000    3.000
+ PC3      C16    C6     C8C     126.000    3.000
+ PC3      C7     C6     C8C     108.000    3.000
+ PC3      C6     C7     C10     126.000    3.000
+ PC3      C6     C7     C8A     108.000    3.000
+ PC3      C10    C7     C8A     126.000    3.000
+ PC3      C7     C10    H103    109.470    3.000
+ PC3      C7     C10    H102    109.470    3.000
+ PC3      C7     C10    H101    109.470    3.000
+ PC3      H103   C10    H102    109.470    3.000
+ PC3      H103   C10    H101    109.470    3.000
+ PC3      H102   C10    H101    109.470    3.000
+ PC3      C7     C8A    CD      117.000    3.000
+ PC3      C7     C8A    N8B     108.000    3.000
+ PC3      CD     C8A    N8B     108.000    3.000
+ PC3      C8A    CD     HD      120.000    3.000
+ PC3      C8A    CD     C2C     120.000    3.000
+ PC3      HD     CD     C2C     120.000    3.000
+ PC3      CD     C2C    N2B     108.000    3.000
+ PC3      CD     C2C    C       117.000    3.000
+ PC3      N2B    C2C    C       108.000    3.000
+ PC3      C2C    N2B    CO3     126.000    3.000
+ PC3      C2C    N2B    C2A     108.000    3.000
+ PC3      CO3    N2B    C2A     126.000    3.000
+ PC3      C2C    C      C14     126.000    3.000
+ PC3      C2C    C      C1      108.000    3.000
+ PC3      C14    C      C1      126.000    3.000
+ PC3      C      C14    H141    109.470    3.000
+ PC3      C      C14    H142    109.470    3.000
+ PC3      C      C14    C15     109.470    3.000
+ PC3      H141   C14    H142    107.900    3.000
+ PC3      H141   C14    C15     109.470    3.000
+ PC3      H142   C14    C15     109.470    3.000
+ PC3      C14    C15    H151    109.470    3.000
+ PC3      C14    C15    H152    109.470    3.000
+ PC3      C14    C15    C21     109.470    3.000
+ PC3      H151   C15    H152    107.900    3.000
+ PC3      H151   C15    C21     109.470    3.000
+ PC3      H152   C15    C21     109.470    3.000
+ PC3      C15    C21    O2      118.500    3.000
+ PC3      C15    C21    O1      118.500    3.000
+ PC3      O2     C21    O1      123.000    3.000
+ PC3      C8A    N8B    CO3     126.000    3.000
+ PC3      C8A    N8B    C8C     108.000    3.000
+ PC3      CO3    N8B    C8C     126.000    3.000
+ PC3      N8B    CO3    N4B     180.000    3.000
+ PC3      N8B    CO3    N2B      90.000    3.000
+ PC3      N8B    CO3    N6B      90.000    3.000
+ PC3      N2B    CO3    N6B     180.000    3.000
+ PC3      N4B    CO3    N2B      90.000    3.000
+ PC3      N4B    CO3    N6B      90.000    3.000
+ PC3      CO3    N4B    C4C     126.000    3.000
+ PC3      CO3    N4B    C4A     126.000    3.000
+ PC3      C4C    N4B    C4A     108.000    3.000
+ PC3      N4B    C4C    CA      108.000    3.000
+ PC3      N4B    C4C    C2      108.000    3.000
+ PC3      CA     C4C    C2      117.000    3.000
+ PC3      C4C    CA     HA      120.000    3.000
+ PC3      C4C    CA     C2A     120.000    3.000
+ PC3      HA     CA     C2A     120.000    3.000
+ PC3      CA     C2A    C1      117.000    3.000
+ PC3      CA     C2A    N2B     108.000    3.000
+ PC3      C1     C2A    N2B     108.000    3.000
+ PC3      C2A    C1     C9      126.000    3.000
+ PC3      C2A    C1     C       108.000    3.000
+ PC3      C9     C1     C       126.000    3.000
+ PC3      C1     C9     H93     109.470    3.000
+ PC3      C1     C9     H92     109.470    3.000
+ PC3      C1     C9     H91     109.470    3.000
+ PC3      H93    C9     H92     109.470    3.000
+ PC3      H93    C9     H91     109.470    3.000
+ PC3      H92    C9     H91     109.470    3.000
+ PC3      N8B    C8C    CC      108.000    3.000
+ PC3      N8B    C8C    C6      108.000    3.000
+ PC3      CC     C8C    C6      117.000    3.000
+ PC3      C8C    CC     HC      120.000    3.000
+ PC3      C8C    CC     C6A     120.000    3.000
+ PC3      HC     CC     C6A     120.000    3.000
+ PC3      CC     C6A    C5      117.000    3.000
+ PC3      CC     C6A    N6B     108.000    3.000
+ PC3      C5     C6A    N6B     108.000    3.000
+ PC3      C6A    C5     C11     126.000    3.000
+ PC3      C6A    C5     C4      108.000    3.000
+ PC3      C11    C5     C4      126.000    3.000
+ PC3      C5     C11    H113    109.470    3.000
+ PC3      C5     C11    H112    109.470    3.000
+ PC3      C5     C11    H111    109.470    3.000
+ PC3      H113   C11    H112    109.470    3.000
+ PC3      H113   C11    H111    109.470    3.000
+ PC3      H112   C11    H111    109.470    3.000
+ PC3      C5     C4     C18     126.000    3.000
+ PC3      C5     C4     C6C     108.000    3.000
+ PC3      C18    C4     C6C     126.000    3.000
+ PC3      C4     C18    H181    109.470    3.000
+ PC3      C4     C18    H182    109.470    3.000
+ PC3      C4     C18    C19     109.470    3.000
+ PC3      H181   C18    H182    107.900    3.000
+ PC3      H181   C18    C19     109.470    3.000
+ PC3      H182   C18    C19     109.470    3.000
+ PC3      C18    C19    H192    109.470    3.000
+ PC3      C18    C19    H191    109.470    3.000
+ PC3      C18    C19    C23     109.470    3.000
+ PC3      H192   C19    H191    107.900    3.000
+ PC3      H192   C19    C23     109.470    3.000
+ PC3      H191   C19    C23     109.470    3.000
+ PC3      C19    C23    O4      118.500    3.000
+ PC3      C19    C23    O23     118.500    3.000
+ PC3      O4     C23    O23     123.000    3.000
+ PC3      C6A    N6B    C6C     108.000    3.000
+ PC3      C6A    N6B    CO3     126.000    3.000
+ PC3      C6C    N6B    CO3     126.000    3.000
+ PC3      N6B    C6C    CB      108.000    3.000
+ PC3      N6B    C6C    C4      108.000    3.000
+ PC3      CB     C6C    C4      117.000    3.000
+ PC3      C6C    CB     HB      120.000    3.000
+ PC3      C6C    CB     C4A     120.000    3.000
+ PC3      HB     CB     C4A     120.000    3.000
+ PC3      CB     C4A    C3      117.000    3.000
+ PC3      CB     C4A    N4B     108.000    3.000
+ PC3      C3     C4A    N4B     108.000    3.000
+ PC3      C4A    C3     C8      126.000    3.000
+ PC3      C4A    C3     C2      108.000    3.000
+ PC3      C8     C3     C2      126.000    3.000
+ PC3      C3     C8     H83     109.470    3.000
+ PC3      C3     C8     H82     109.470    3.000
+ PC3      C3     C8     H81     109.470    3.000
+ PC3      H83    C8     H82     109.470    3.000
+ PC3      H83    C8     H81     109.470    3.000
+ PC3      H82    C8     H81     109.470    3.000
+ PC3      C3     C2     C12     126.000    3.000
+ PC3      C3     C2     C4C     108.000    3.000
+ PC3      C12    C2     C4C     126.000    3.000
+ PC3      C2     C12    H121    109.470    3.000
+ PC3      C2     C12    H122    109.470    3.000
+ PC3      C2     C12    CX5     109.470    3.000
+ PC3      H121   C12    H122    107.900    3.000
+ PC3      H121   C12    CX5     109.470    3.000
+ PC3      H122   C12    CX5     109.470    3.000
+ PC3      C12    CX5    H221    109.470    3.000
+ PC3      C12    CX5    H222    109.470    3.000
+ PC3      C12    CX5    C22     109.470    3.000
+ PC3      H221   CX5    H222    107.900    3.000
+ PC3      H221   CX5    C22     109.470    3.000
+ PC3      H222   CX5    C22     109.470    3.000
+ PC3      CX5    C22    O3      118.500    3.000
+ PC3      CX5    C22    O22     118.500    3.000
+ PC3      O3     C22    O22     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PC3      var_1    O6     C24    C17    C16      -87.303   20.000   3
+ PC3      var_2    C24    C17    C16    C6       -58.206   20.000   3
+ PC3      var_3    C17    C16    C6     C7       -97.508   20.000   2
+ PC3      CONST_1  C16    C6     C7     C8A      150.000    0.000   0
+ PC3      var_4    C6     C7     C10    H101    -149.207   20.000   1
+ PC3      CONST_2  C6     C7     C8A    N8B        0.000    0.000   0
+ PC3      var_5    C7     C8A    CD     C2C      180.000   20.000   1
+ PC3      var_6    C8A    CD     C2C    C        180.000   20.000   1
+ PC3      CONST_3  CD     C2C    N2B    CO3        0.000    0.000   0
+ PC3      CONST_4  CD     C2C    C      C14        0.000    0.000   0
+ PC3      CONST_5  C2C    C      C1     C2A        0.000    0.000   0
+ PC3      var_7    C2C    C      C14    C15      -30.819   20.000   2
+ PC3      var_8    C      C14    C15    C21      -50.491   20.000   3
+ PC3      var_9    C14    C15    C21    O1      -130.298   20.000   3
+ PC3      CONST_6  C7     C8A    N8B    C8C        0.000    0.000   0
+ PC3      var_10   C8A    N8B    CO3    N2B        0.000   20.000   1
+ PC3      var_11   C2C    N2B    CO3    N8B        0.000   20.000   1
+ PC3      var_12   C6A    N6B    CO3    N8B        0.000   20.000   1
+ PC3      var_13   C4C    N4B    CO3    N2B        0.000   20.000   1
+ PC3      CONST_7  CO3    N4B    C4C    CA         0.000    0.000   0
+ PC3      CONST_8  N4B    C4C    C2     C3         0.000    0.000   0
+ PC3      var_14   N4B    C4C    CA     C2A        0.000   20.000   1
+ PC3      var_15   C4C    CA     C2A    C1       180.000   20.000   1
+ PC3      CONST_9  CA     C2A    N2B    C2C      180.000    0.000   0
+ PC3      CONST_10 CA     C2A    C1     C9         0.000    0.000   0
+ PC3      var_16   C2A    C1     C9     H91     -147.080   20.000   1
+ PC3      CONST_11 C8A    N8B    C8C    CC       180.000    0.000   0
+ PC3      CONST_12 N8B    C8C    C6     C16     -150.000    0.000   0
+ PC3      var_17   N8B    C8C    CC     C6A        0.000   20.000   1
+ PC3      var_18   C8C    CC     C6A    N6B        0.000   20.000   1
+ PC3      CONST_13 CC     C6A    C5     C4       180.000    0.000   0
+ PC3      var_19   C6A    C5     C11    H111      83.799   20.000   1
+ PC3      CONST_14 C6A    C5     C4     C18      180.000    0.000   0
+ PC3      var_20   C5     C4     C18    C19      -74.889   20.000   2
+ PC3      var_21   C4     C18    C19    C23      -47.561   20.000   3
+ PC3      var_22   C18    C19    C23    O23     -151.691   20.000   3
+ PC3      CONST_15 CC     C6A    N6B    C6C      180.000    0.000   0
+ PC3      CONST_16 C6A    N6B    C6C    CB       180.000    0.000   0
+ PC3      CONST_17 N6B    C6C    C4     C5         0.000    0.000   0
+ PC3      var_23   N6B    C6C    CB     C4A        0.000   20.000   1
+ PC3      var_24   C6C    CB     C4A    C3       180.000   20.000   1
+ PC3      CONST_18 CB     C4A    N4B    CO3        0.000    0.000   0
+ PC3      CONST_19 CB     C4A    C3     C2       180.000    0.000   0
+ PC3      var_25   C4A    C3     C8     H81     -148.403   20.000   1
+ PC3      CONST_20 C4A    C3     C2     C12      180.000    0.000   0
+ PC3      var_26   C3     C2     C12    CX5       89.215   20.000   2
+ PC3      var_27   C2     C12    CX5    C22       54.937   20.000   3
+ PC3      var_28   C12    CX5    C22    O22      -80.475   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PC3      chir_01  CO3    N8B    N4B    N2B       cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PC3      plan-1    C         0.020
+ PC3      plan-1    C1        0.020
+ PC3      plan-1    C2C       0.020
+ PC3      plan-1    C14       0.020
+ PC3      plan-1    C2A       0.020
+ PC3      plan-1    N2B       0.020
+ PC3      plan-1    C9        0.020
+ PC3      plan-1    CA        0.020
+ PC3      plan-1    CO3       0.020
+ PC3      plan-1    CD        0.020
+ PC3      plan-1    HA        0.020
+ PC3      plan-1    HD        0.020
+ PC3      plan-2    CA        0.020
+ PC3      plan-2    C2A       0.020
+ PC3      plan-2    C4C       0.020
+ PC3      plan-2    HA        0.020
+ PC3      plan-3    C4C       0.020
+ PC3      plan-3    CA        0.020
+ PC3      plan-3    C2        0.020
+ PC3      plan-3    N4B       0.020
+ PC3      plan-3    C3        0.020
+ PC3      plan-3    C4A       0.020
+ PC3      plan-3    C12       0.020
+ PC3      plan-3    C8        0.020
+ PC3      plan-3    CB        0.020
+ PC3      plan-3    CO3       0.020
+ PC3      plan-3    HA        0.020
+ PC3      plan-3    HB        0.020
+ PC3      plan-4    CB        0.020
+ PC3      plan-4    C4A       0.020
+ PC3      plan-4    C6C       0.020
+ PC3      plan-4    HB        0.020
+ PC3      plan-5    C6C       0.020
+ PC3      plan-5    CB        0.020
+ PC3      plan-5    C4        0.020
+ PC3      plan-5    N6B       0.020
+ PC3      plan-5    C5        0.020
+ PC3      plan-5    C6A       0.020
+ PC3      plan-5    C18       0.020
+ PC3      plan-5    C11       0.020
+ PC3      plan-5    CC        0.020
+ PC3      plan-5    CO3       0.020
+ PC3      plan-5    HB        0.020
+ PC3      plan-5    HC        0.020
+ PC3      plan-6    CC        0.020
+ PC3      plan-6    C6A       0.020
+ PC3      plan-6    C8C       0.020
+ PC3      plan-6    HC        0.020
+ PC3      plan-7    C8C       0.020
+ PC3      plan-7    CC        0.020
+ PC3      plan-7    C6        0.020
+ PC3      plan-7    N8B       0.020
+ PC3      plan-7    C7        0.020
+ PC3      plan-7    C8A       0.020
+ PC3      plan-7    C16       0.020
+ PC3      plan-7    C10       0.020
+ PC3      plan-7    CD        0.020
+ PC3      plan-7    CO3       0.020
+ PC3      plan-7    HC        0.020
+ PC3      plan-7    HD        0.020
+ PC3      plan-8    CD        0.020
+ PC3      plan-8    C2C       0.020
+ PC3      plan-8    C8A       0.020
+ PC3      plan-8    HD        0.020
+ PC3      plan-9    C21       0.020
+ PC3      plan-9    C15       0.020
+ PC3      plan-9    O1        0.020
+ PC3      plan-9    O2        0.020
+ PC3      plan-10   C22       0.020
+ PC3      plan-10   CX5       0.020
+ PC3      plan-10   O3        0.020
+ PC3      plan-10   O22       0.020
+ PC3      plan-11   C23       0.020
+ PC3      plan-11   C19       0.020
+ PC3      plan-11   O23       0.020
+ PC3      plan-11   O4        0.020
+ PC3      plan-12   C24       0.020
+ PC3      plan-12   C17       0.020
+ PC3      plan-12   O5        0.020
+ PC3      plan-12   O6        0.020
+# ------------------------------------------------------

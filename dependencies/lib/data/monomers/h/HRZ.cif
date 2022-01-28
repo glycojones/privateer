@@ -1,0 +1,131 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HRZ     HRZ      1~{H}-pyridin-2-one     NON-POLYMER     12     7     .     
+#
+data_comp_HRZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HRZ     C2      C       CR6     0       1.402       -0.138      -0.002      
+HRZ     C3      C       CR16    0       0.770       1.137       0.024       
+HRZ     C5      C       CR16    0       -1.393      0.094       -0.000      
+HRZ     C6      C       CR16    0       -0.798      -1.114      -0.024      
+HRZ     O1      O       O       0       2.650       -0.329      -0.004      
+HRZ     C4      C       CR16    0       -0.584      1.243       0.024       
+HRZ     N7      N       NR6     0       0.558       -1.219      -0.025      
+HRZ     H8      H       H       0       1.303       1.916       0.041       
+HRZ     H10     H       H       0       -2.326      0.166       0.000       
+HRZ     H11     H       H       0       -1.316      -1.908      -0.041      
+HRZ     H9      H       H       0       -0.981      2.099       0.042       
+HRZ     H12     H       H       0       0.930       -2.039      -0.041      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HRZ       C2        O1        DOUBLE    n         1.263     0.0100    1.263     0.0100    
+HRZ       C2        C3        SINGLE    y         1.413     0.0180    1.413     0.0180    
+HRZ       C2        N7        SINGLE    y         1.364     0.0146    1.364     0.0146    
+HRZ       C3        C4        DOUBLE    y         1.355     0.0100    1.355     0.0100    
+HRZ       C6        N7        SINGLE    y         1.357     0.0100    1.357     0.0100    
+HRZ       C5        C4        SINGLE    y         1.395     0.0165    1.395     0.0165    
+HRZ       C5        C6        DOUBLE    y         1.344     0.0100    1.344     0.0100    
+HRZ       C3        H8        SINGLE    n         1.082     0.013     0.944     0.0184    
+HRZ       C5        H10       SINGLE    n         1.082     0.013     0.936     0.0124    
+HRZ       C6        H11       SINGLE    n         1.082     0.013     0.948     0.0161    
+HRZ       C4        H9        SINGLE    n         1.082     0.013     0.944     0.0146    
+HRZ       N7        H12       SINGLE    n         1.016     0.010     0.900     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HRZ          O1          C2          C3     125.062    1.50
+HRZ          O1          C2          N7     119.120    1.50
+HRZ          C3          C2          N7     115.818    1.50
+HRZ          C2          C3          C4     120.866    1.50
+HRZ          C2          C3          H8     119.295    1.50
+HRZ          C4          C3          H8     119.839    1.50
+HRZ          C4          C5          C6     118.560    1.50
+HRZ          C4          C5         H10     120.811    1.50
+HRZ          C6          C5         H10     120.629    1.50
+HRZ          N7          C6          C5     120.633    1.50
+HRZ          N7          C6         H11     118.731    2.07
+HRZ          C5          C6         H11     120.636    1.93
+HRZ          C3          C4          C5     120.432    1.50
+HRZ          C3          C4          H9     119.486    1.50
+HRZ          C5          C4          H9     120.083    1.50
+HRZ          C2          N7          C6     123.692    1.50
+HRZ          C2          N7         H12     117.519    1.73
+HRZ          C6          N7         H12     118.788    1.70
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HRZ       const_sp2_sp2_3          O1          C2          C3          C4     180.000   10.00     2
+HRZ              const_23          O1          C2          N7          C6     180.000   10.00     2
+HRZ       const_sp2_sp2_5          C2          C3          C4          C5       0.000   10.00     2
+HRZ              const_13          C4          C5          C6          N7       0.000   10.00     2
+HRZ       const_sp2_sp2_9          C3          C4          C5          C6       0.000   10.00     2
+HRZ              const_17          C5          C6          N7          C2       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HRZ    plan-1          C2   0.020
+HRZ    plan-1          C3   0.020
+HRZ    plan-1          C4   0.020
+HRZ    plan-1          C5   0.020
+HRZ    plan-1          C6   0.020
+HRZ    plan-1         H10   0.020
+HRZ    plan-1         H11   0.020
+HRZ    plan-1         H12   0.020
+HRZ    plan-1          H8   0.020
+HRZ    plan-1          H9   0.020
+HRZ    plan-1          N7   0.020
+HRZ    plan-1          O1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HRZ            InChI                InChI  1.03 InChI=1S/C5H5NO/c7-5-3-1-2-4-6-5/h1-4H,(H,6,7)
+HRZ         InChIKey                InChI  1.03                    UBQKCCHYAOITMY-UHFFFAOYSA-N
+HRZ SMILES_CANONICAL               CACTVS 3.385                                   O=C1NC=CC=C1
+HRZ           SMILES               CACTVS 3.385                                   O=C1NC=CC=C1
+HRZ SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                 C1=CC(=O)NC=C1
+HRZ           SMILES "OpenEye OEToolkits" 2.0.6                                 C1=CC(=O)NC=C1
+HRZ ?                acedrg               217         "dictionary generator"                  
+HRZ ?                acedrg_database      11          "data source"                           
+HRZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HRZ ?                refmac5              5.8.0253    "optimization tool"                     

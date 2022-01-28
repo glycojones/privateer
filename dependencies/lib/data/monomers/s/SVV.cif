@@ -1,0 +1,185 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SVV      SVV 'O-[(S)-AMINO(HYDROXY)PHOSPHORYL]-L-S' non-polymer        19  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SVV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SVV           OXT    O    OC       -0.500      0.000    0.000    0.000
+ SVV           C      C    C         0.000     -0.932   -0.729    0.406
+ SVV           O      O    OC       -0.500     -0.905   -1.314    1.511
+ SVV           CA     C    CH1       0.000     -2.089   -0.763   -0.570
+ SVV           HC     H    H         0.000     -1.707   -0.592   -1.586
+ SVV           N      N    NH2       0.000     -2.671   -2.081   -0.501
+ SVV           HN2    H    H         0.000     -2.717   -2.654   -1.329
+ SVV           HN1    H    H         0.000     -3.031   -2.426    0.376
+ SVV           CB     C    CH2       0.000     -3.106    0.318   -0.232
+ SVV           HBC1   H    H         0.000     -3.506    0.143    0.769
+ SVV           HA2    H    H         0.000     -3.921    0.293   -0.958
+ SVV           OG     O    O2        0.000     -2.468    1.588   -0.275
+ SVV           P1     P    P         0.000     -3.314    2.937    0.046
+ SVV           O2     O    O         0.000     -2.517    4.176   -0.262
+ SVV           N4     N    NH2       0.000     -3.905    2.806    1.585
+ SVV           H4N2   H    H         0.000     -4.893    2.802    1.719
+ SVV           H4N1   H    H         0.000     -3.259    2.736    2.341
+ SVV           O3     O    OH1       0.000     -4.588    2.787   -0.951
+ SVV           H3     H    H         0.000     -4.478    2.912   -1.906
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SVV      OXT    n/a    C      START
+ SVV      C      OXT    CA     .
+ SVV      O      C      .      .
+ SVV      CA     C      CB     .
+ SVV      HC     CA     .      .
+ SVV      N      CA     HN1    .
+ SVV      HN2    N      .      .
+ SVV      HN1    N      .      .
+ SVV      CB     CA     OG     .
+ SVV      HBC1   CB     .      .
+ SVV      HA2    CB     .      .
+ SVV      OG     CB     P1     .
+ SVV      P1     OG     O3     .
+ SVV      O2     P1     .      .
+ SVV      N4     P1     H4N1   .
+ SVV      H4N2   N4     .      .
+ SVV      H4N1   N4     .      .
+ SVV      O3     P1     H3     .
+ SVV      H3     O3     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SVV       N         CA        single    1.450     0.020     1.450     0.020     
+SVV       CA        C         single    1.500     0.020     1.500     0.020     
+SVV       O         C         deloc     1.250     0.020     1.250     0.020     
+SVV       CB        CA        single    1.524     0.020     1.524     0.020     
+SVV       OG        CB        single    1.426     0.020     1.426     0.020     
+SVV       P1        OG        single    1.610     0.020     1.610     0.020     
+SVV       O3        P1        single    1.610     0.020     1.610     0.020     
+SVV       O2        P1        double    1.480     0.020     1.480     0.020     
+SVV       N4        P1        single    1.750     0.020     1.750     0.020     
+SVV       C         OXT       deloc     1.250     0.020     1.250     0.020     
+SVV       HBC1      CB        single    1.089     0.010     0.989     0.005     
+SVV       HA2       CB        single    1.089     0.010     0.989     0.005     
+SVV       H3        O3        single    0.970     0.012     0.839     0.014     
+SVV       H4N1      N4        single    1.036     0.016     0.914     0.007     
+SVV       H4N2      N4        single    1.036     0.016     0.914     0.007     
+SVV       HN1       N         single    1.036     0.016     0.914     0.007     
+SVV       HN2       N         single    1.036     0.016     0.914     0.007     
+SVV       HC        CA        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SVV      OXT    C      O       123.000    3.000
+ SVV      OXT    C      CA      118.500    3.000
+ SVV      O      C      CA      118.500    3.000
+ SVV      C      CA     HC      108.810    3.000
+ SVV      C      CA     N       109.470    3.000
+ SVV      C      CA     CB      109.470    3.000
+ SVV      HC     CA     N       109.470    3.000
+ SVV      HC     CA     CB      108.340    3.000
+ SVV      N      CA     CB      109.470    3.000
+ SVV      CA     N      HN2     120.000    3.000
+ SVV      CA     N      HN1     120.000    3.000
+ SVV      HN2    N      HN1     120.000    3.000
+ SVV      CA     CB     HBC1    109.470    3.000
+ SVV      CA     CB     HA2     109.470    3.000
+ SVV      CA     CB     OG      109.470    3.000
+ SVV      HBC1   CB     HA2     107.900    3.000
+ SVV      HBC1   CB     OG      109.470    3.000
+ SVV      HA2    CB     OG      109.470    3.000
+ SVV      CB     OG     P1      120.500    3.000
+ SVV      OG     P1     O2      109.500    3.000
+ SVV      OG     P1     N4      109.500    3.000
+ SVV      OG     P1     O3      109.500    3.000
+ SVV      O2     P1     N4      109.500    3.000
+ SVV      O2     P1     O3      109.500    3.000
+ SVV      N4     P1     O3      109.500    3.000
+ SVV      P1     N4     H4N2    120.000    3.000
+ SVV      P1     N4     H4N1    120.000    3.000
+ SVV      H4N2   N4     H4N1    120.000    3.000
+ SVV      P1     O3     H3      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SVV      var_1    OXT    C      CA     CB       -91.613   20.000   3
+ SVV      var_2    C      CA     N      HN1       58.832   20.000   1
+ SVV      var_3    C      CA     CB     OG        58.760   20.000   3
+ SVV      var_4    CA     CB     OG     P1      -179.986   20.000   1
+ SVV      var_5    CB     OG     P1     O3       -51.930   20.000   1
+ SVV      var_6    OG     P1     N4     H4N1      61.951   20.000   1
+ SVV      var_7    OG     P1     O3     H3       -72.620   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SVV      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SVV      plan-1    N         0.020
+ SVV      plan-1    CA        0.020
+ SVV      plan-1    HN1       0.020
+ SVV      plan-1    HN2       0.020
+ SVV      plan-2    C         0.020
+ SVV      plan-2    CA        0.020
+ SVV      plan-2    O         0.020
+ SVV      plan-2    OXT       0.020
+ SVV      plan-3    N4        0.020
+ SVV      plan-3    P1        0.020
+ SVV      plan-3    H4N1      0.020
+ SVV      plan-3    H4N2      0.020
+# ------------------------------------------------------

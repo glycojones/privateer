@@ -1,0 +1,159 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DNX     DNX      3,4-dinitrophenol     NON-POLYMER     17     13     .     
+#
+data_comp_DNX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DNX     C1      C       CR6     0       1.798       0.128       -0.364      
+DNX     C2      C       CR16    0       0.865       1.139       -0.139      
+DNX     C3      C       CR6     0       -0.480      0.814       0.121       
+DNX     N3      N       N       1       -1.415      1.908       0.350       
+DNX     C4      C       CR6     0       -0.862      -0.551      0.149       
+DNX     N4      N       N       1       -2.232      -0.973      0.410       
+DNX     C5      C       CR16    0       0.092       -1.554      -0.080      
+DNX     C6      C       CR16    0       1.410       -1.210      -0.334      
+DNX     O1      O       OH1     0       3.096       0.469       -0.613      
+DNX     O31     O       O       0       -2.361      2.034       -0.412      
+DNX     O32     O       OC      -1      -1.214      2.657       1.293       
+DNX     O41     O       O       0       -2.736      -0.681      1.483       
+DNX     O42     O       OC      -1      -2.821      -1.603      -0.454      
+DNX     H2      H       H       0       1.135       2.042       -0.160      
+DNX     H5      H       H       0       -0.165      -2.459      -0.061      
+DNX     H6      H       H       0       2.048       -1.885      -0.487      
+DNX     HO1     H       H       0       3.607       0.142       -0.008      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DNX       C1        C2        DOUBLE    y         1.386     0.010     1.386     0.010     
+DNX       C1        C6        SINGLE    y         1.386     0.010     1.386     0.010     
+DNX       C1        O1        SINGLE    n         1.365     0.010     1.365     0.010     
+DNX       C2        C3        SINGLE    y         1.380     0.020     1.380     0.020     
+DNX       C3        N3        SINGLE    n         1.457     0.020     1.457     0.020     
+DNX       C3        C4        DOUBLE    y         1.408     0.013     1.408     0.013     
+DNX       N3        O31       DOUBLE    n         1.221     0.017     1.221     0.017     
+DNX       N3        O32       SINGLE    n         1.221     0.017     1.221     0.017     
+DNX       C4        N4        SINGLE    n         1.457     0.020     1.457     0.020     
+DNX       C4        C5        SINGLE    y         1.380     0.020     1.380     0.020     
+DNX       N4        O41       DOUBLE    n         1.221     0.017     1.221     0.017     
+DNX       N4        O42       SINGLE    n         1.221     0.017     1.221     0.017     
+DNX       C5        C6        DOUBLE    y         1.379     0.010     1.379     0.010     
+DNX       C2        H2        SINGLE    n         1.082     0.013     0.942     0.018     
+DNX       C5        H5        SINGLE    n         1.082     0.013     0.941     0.020     
+DNX       C6        H6        SINGLE    n         1.082     0.013     0.942     0.015     
+DNX       O1        HO1       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DNX          C2          C1          C6     120.152    1.50
+DNX          C2          C1          O1     119.132    2.43
+DNX          C6          C1          O1     120.715    2.50
+DNX          C1          C2          C3     119.728    1.50
+DNX          C1          C2          H2     120.160    1.50
+DNX          C3          C2          H2     120.113    1.50
+DNX          C2          C3          N3     117.813    1.50
+DNX          C2          C3          C4     119.111    2.53
+DNX          N3          C3          C4     123.076    1.50
+DNX          C3          N3         O31     118.439    1.50
+DNX          C3          N3         O32     118.439    1.50
+DNX         O31          N3         O32     123.122    1.50
+DNX          C3          C4          N4     122.126    1.50
+DNX          C3          C4          C5     120.672    1.50
+DNX          N4          C4          C5     117.202    1.50
+DNX          C4          N4         O41     118.439    1.50
+DNX          C4          N4         O42     118.439    1.50
+DNX         O41          N4         O42     123.122    1.50
+DNX          C4          C5          C6     120.074    1.50
+DNX          C4          C5          H5     119.856    1.50
+DNX          C6          C5          H5     120.070    1.50
+DNX          C1          C6          C5     120.264    1.50
+DNX          C1          C6          H6     119.875    1.50
+DNX          C5          C6          H6     119.861    1.50
+DNX          C1          O1         HO1     110.017    2.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DNX       const_sp2_sp2_3          O1          C1          C2          C3     180.000   10.00     2
+DNX              const_23          O1          C1          C6          C5     180.000   10.00     2
+DNX       const_sp2_sp2_6          C1          C2          C3          N3     180.000   10.00     2
+DNX             sp2_sp2_1          C2          C3          N3         O31     180.000   10.00     2
+DNX              const_12          N3          C3          C4          N4       0.000   10.00     2
+DNX             sp2_sp2_5          C3          C4          N4         O41     180.000   10.00     2
+DNX              const_15          N4          C4          C5          C6     180.000   10.00     2
+DNX              const_17          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DNX    plan-1          C1   0.020
+DNX    plan-1          C2   0.020
+DNX    plan-1          C3   0.020
+DNX    plan-1          C4   0.020
+DNX    plan-1          C5   0.020
+DNX    plan-1          C6   0.020
+DNX    plan-1          H2   0.020
+DNX    plan-1          H5   0.020
+DNX    plan-1          H6   0.020
+DNX    plan-1          N3   0.020
+DNX    plan-1          N4   0.020
+DNX    plan-1          O1   0.020
+DNX    plan-2          C3   0.020
+DNX    plan-2          N3   0.020
+DNX    plan-2         O31   0.020
+DNX    plan-2         O32   0.020
+DNX    plan-3          C4   0.020
+DNX    plan-3          N4   0.020
+DNX    plan-3         O41   0.020
+DNX    plan-3         O42   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DNX SMILES           ACDLabs              12.01 "O=[N+]([O-])c1c(ccc(O)c1)[N+]([O-])=O"
+DNX InChI            InChI                1.03  "InChI=1S/C6H4N2O5/c9-4-1-2-5(7(10)11)6(3-4)8(12)13/h1-3,9H"
+DNX InChIKey         InChI                1.03  AKLOLDQYWQAREW-UHFFFAOYSA-N
+DNX SMILES_CANONICAL CACTVS               3.370 "Oc1ccc(c(c1)[N+]([O-])=O)[N+]([O-])=O"
+DNX SMILES           CACTVS               3.370 "Oc1ccc(c(c1)[N+]([O-])=O)[N+]([O-])=O"
+DNX SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1cc(c(cc1O)[N+](=O)[O-])[N+](=O)[O-]"
+DNX SMILES           "OpenEye OEToolkits" 1.7.6 "c1cc(c(cc1O)[N+](=O)[O-])[N+](=O)[O-]"
+DNX ?                acedrg               202         "dictionary generator"                  
+DNX ?                acedrg_database      11          "data source"                           
+DNX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DNX ?                refmac5              5.8.0189    "optimization tool"                     

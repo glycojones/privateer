@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+G3P     G3P     SN-GLYCEROL-3-PHOSPHATE     NON-POLYMER     17     10     .     
+#
+data_comp_G3P
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+G3P     O1      O       OH1     0       -2.284      0.927       1.368       
+G3P     C1      C       CH2     0       -2.173      0.122       0.198       
+G3P     C2      C       CH1     0       -0.874      -0.655      0.177       
+G3P     O2      O       OH1     0       -0.787      -1.486      1.333       
+G3P     C3      C       CH2     0       0.350       0.232       0.121       
+G3P     O1P     O       O2      0       1.540       -0.582      -0.070      
+G3P     O4P     O       OP      -1      3.993       -0.949      -0.367      
+G3P     O2P     O       O       0       3.147       0.763       1.289       
+G3P     O3P     O       OP      -1      2.909       1.180       -1.193      
+G3P     P       P       P       0       2.980       0.145       -0.086      
+G3P     HO1     H       H       0       -2.926      1.467       1.260       
+G3P     H11     H       H       0       -2.217      0.702       -0.601      
+G3P     H12     H       H       0       -2.930      -0.511      0.165       
+G3P     H2      H       H       0       -0.875      -1.233      -0.623      
+G3P     HO2     H       H       0       -0.196      -2.076      1.187       
+G3P     H31     H       H       0       0.429       0.738       0.956       
+G3P     H32     H       H       0       0.264       0.867       -0.620      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+G3P       O1        C1        SINGLE    n         1.425     0.010     1.425     0.010     
+G3P       C1        C2        SINGLE    n         1.514     0.011     1.514     0.011     
+G3P       C2        O2        SINGLE    n         1.427     0.010     1.427     0.010     
+G3P       C2        C3        SINGLE    n         1.512     0.011     1.512     0.011     
+G3P       C3        O1P       SINGLE    n         1.454     0.017     1.454     0.017     
+G3P       O1P       P         SINGLE    n         1.614     0.019     1.614     0.019     
+G3P       O4P       P         SINGLE    n         1.517     0.019     1.517     0.019     
+G3P       O2P       P         DOUBLE    n         1.517     0.019     1.517     0.019     
+G3P       O3P       P         SINGLE    n         1.517     0.019     1.517     0.019     
+G3P       O1        HO1       SINGLE    n         0.970     0.012     0.846     0.020     
+G3P       C1        H11       SINGLE    n         1.089     0.010     0.988     0.020     
+G3P       C1        H12       SINGLE    n         1.089     0.010     0.988     0.020     
+G3P       C2        H2        SINGLE    n         1.089     0.010     0.987     0.019     
+G3P       O2        HO2       SINGLE    n         0.970     0.012     0.848     0.020     
+G3P       C3        H31       SINGLE    n         1.089     0.010     0.980     0.015     
+G3P       C3        H32       SINGLE    n         1.089     0.010     0.980     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+G3P          C1          O1         HO1     108.280    3.00
+G3P          O1          C1          C2     111.586    1.51
+G3P          O1          C1         H11     109.268    1.50
+G3P          O1          C1         H12     109.268    1.50
+G3P          C2          C1         H11     109.193    1.50
+G3P          C2          C1         H12     109.193    1.50
+G3P         H11          C1         H12     108.313    1.50
+G3P          C1          C2          O2     110.247    1.72
+G3P          C1          C2          C3     113.504    1.50
+G3P          C1          C2          H2     108.441    1.50
+G3P          O2          C2          C3     109.314    1.96
+G3P          O2          C2          H2     108.721    1.50
+G3P          C3          C2          H2     108.656    1.50
+G3P          C2          O2         HO2     107.936    3.00
+G3P          C2          C3         O1P     109.438    2.56
+G3P          C2          C3         H31     109.582    1.50
+G3P          C2          C3         H32     109.582    1.50
+G3P         O1P          C3         H31     109.393    1.91
+G3P         O1P          C3         H32     109.393    1.91
+G3P         H31          C3         H32     108.319    1.50
+G3P          C3         O1P           P     118.671    1.50
+G3P         O1P           P         O4P     105.795    2.09
+G3P         O1P           P         O2P     105.795    2.09
+G3P         O1P           P         O3P     105.795    2.09
+G3P         O4P           P         O2P     112.864    1.69
+G3P         O4P           P         O3P     112.864    1.69
+G3P         O2P           P         O3P     112.864    1.69
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+G3P             sp3_sp3_1          C2          C1          O1         HO1     180.000   10.00     3
+G3P             sp3_sp3_5          O1          C1          C2          O2     -60.000   10.00     3
+G3P            sp3_sp3_13          C1          C2          O2         HO2     180.000   10.00     3
+G3P            sp3_sp3_19          C1          C2          C3         O1P      60.000   10.00     3
+G3P            sp3_sp3_25          C2          C3         O1P           P     180.000   10.00     3
+G3P            sp3_sp3_28          C3         O1P           P         O4P     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+G3P    chir_1    C2    O2    C3    C1    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+G3P SMILES           ACDLabs              12.01 "O=P(OCC(O)CO)(O)O"
+G3P InChI            InChI                1.03  "InChI=1S/C3H9O6P/c4-1-3(5)2-9-10(6,7)8/h3-5H,1-2H2,(H2,6,7,8)/t3-/m1/s1"
+G3P InChIKey         InChI                1.03  AWUCVROLDVIAJX-GSVOUGTGSA-N
+G3P SMILES_CANONICAL CACTVS               3.385 "OC[C@@H](O)CO[P](O)(O)=O"
+G3P SMILES           CACTVS               3.385 "OC[CH](O)CO[P](O)(O)=O"
+G3P SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C([C@H](COP(=O)(O)O)O)O"
+G3P SMILES           "OpenEye OEToolkits" 1.7.6 "C(C(COP(=O)(O)O)O)O"
+G3P ?                acedrg               190         "dictionary generator"                  
+G3P ?                acedrg_database      11          "data source"                           
+G3P ?                rdkit                2017.03.2   "Chemoinformatics tool"
+G3P ?                refmac5              5.8.0158    "optimization tool"                     

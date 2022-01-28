@@ -1,0 +1,210 @@
+# Created using JLigand 1.0.35
+# and
+# dictionary  5.37    ( 12/05/2012 )
+# libcheck    5.2.0   ( 12/12/2011 )
+# refmac      5.7.29  ( 09/05/2012 )
+#
+# Authors: Andrey Lebedev, Paul Young, Alexei Vagin, Garib Murshudov
+# E-mail: andrey.lebedev@stfc.ac.uk
+#
+
+global_
+_lib_name         mon_lib
+_lib_version      5.37
+_lib_update       12/05/2012
+
+data_comp_list
+
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NIY      NIY 'META-NITRO-TYROSINE                 ' .                  26  16 .
+
+data_comp_NIY
+
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NIY           N      N    NT3       1.000     -0.263   -0.304    3.277
+ NIY           CA     C    CH1       0.000      0.098   -0.494    1.844
+ NIY           HA     H    H         0.000     -0.843   -0.514    1.278
+ NIY           CB     C    CH2       0.000      1.017    0.617    1.311
+ NIY           HB2    H    H         0.000      0.600    1.606    1.102
+ NIY           HB3    H    H         0.000      1.039    1.247    2.213
+ NIY           CG     C    CR6       0.000      0.591    0.619   -0.148
+ NIY           CD2    C    CR16      0.000      1.496    0.188   -1.114
+ NIY           HD2    H    H         0.000      2.480   -0.152   -0.818
+ NIY           CE2    C    CR16      0.000      1.156    0.238   -2.463
+ NIY           HE2    H    H         0.000      1.863   -0.113   -3.204
+ NIY           CZ     C    CR6       0.000     -0.109    0.681   -2.856
+ NIY           OH     O    OH1       0.000     -0.449    0.700   -4.179
+ NIY           HH     H    H         0.000      0.263    0.332   -4.720
+ NIY           CE1    C    CR6       0.000     -1.018    1.124   -1.899
+ NIY           CD1    C    CR16      0.000     -0.672    1.075   -0.548
+ NIY           HD1    H    H         0.000     -1.376    1.427    0.197
+ NIY           NN     N    N         1.000     -2.297    1.577   -2.275
+ NIY           O1     O    O        -0.500     -2.791    1.236   -3.338
+ NIY           O2     O    O        -0.500     -2.927    2.330   -1.548
+ NIY           C      C    C         0.000      0.786   -1.812    1.632
+ NIY           O      O    OC       -0.500      0.267   -2.639    0.851
+ NIY           H1     H    H         0.000     -0.790    0.578    3.391
+ NIY           H2     H    H         0.000      0.593   -0.274    3.854
+ NIY           H3     H    H         0.000     -0.854   -1.094    3.584
+ NIY           OXT    O    OC       -0.500      1.854   -2.033    2.244
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NIY       N         CA        single    1.488     0.020     1.488     0.020     
+NIY       N         H1        single    1.036     0.016     0.914     0.007     
+NIY       N         H2        single    1.036     0.016     0.914     0.007     
+NIY       N         H3        single    1.036     0.016     0.914     0.007     
+NIY       CA        HA        single    1.089     0.010     0.989     0.005     
+NIY       CA        CB        single    1.524     0.020     1.524     0.020     
+NIY       CA        C         single    1.500     0.020     1.500     0.020     
+NIY       CB        HB2       single    1.089     0.010     0.989     0.005     
+NIY       CB        HB3       single    1.089     0.010     0.989     0.005     
+NIY       CB        CG        single    1.511     0.020     1.511     0.020     
+NIY       CG        CD2       aromatic  1.390     0.020     1.390     0.020     
+NIY       CG        CD1       aromatic  1.390     0.020     1.390     0.020     
+NIY       CD2       HD2       single    1.082     0.013     0.975     0.010     
+NIY       CD2       CE2       aromatic  1.390     0.020     1.390     0.020     
+NIY       CE2       HE2       single    1.082     0.013     0.975     0.010     
+NIY       CE2       CZ        aromatic  1.390     0.020     1.390     0.020     
+NIY       CZ        OH        single    1.362     0.020     1.362     0.020     
+NIY       CZ        CE1       aromatic  1.384     0.020     1.384     0.020     
+NIY       OH        HH        single    0.970     0.012     0.839     0.014     
+NIY       CE1       CD1       aromatic  1.390     0.020     1.390     0.020     
+NIY       CE1       NN        single    1.400     0.020     1.400     0.020     
+NIY       CD1       HD1       single    1.082     0.013     0.975     0.010     
+NIY       NN        O1        deloc     1.220     0.020     1.220     0.020     
+NIY       NN        O2        deloc     1.220     0.020     1.220     0.020     
+NIY       C         O         deloc     1.250     0.020     1.250     0.020     
+NIY       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NIY      N      CA     HA      108.550    3.000
+ NIY      N      CA     CB      110.000    3.000
+ NIY      N      CA     C       111.600    3.000
+ NIY      CA     N      H1      109.470    3.000
+ NIY      CA     N      H2      109.470    3.000
+ NIY      CA     N      H3      109.470    3.000
+ NIY      CA     CB     HB2     109.470    3.000
+ NIY      CA     CB     HB3     109.470    3.000
+ NIY      CA     CB     CG      109.470    3.000
+ NIY      CA     C      O       118.500    3.000
+ NIY      CA     C      OXT     118.500    3.000
+ NIY      HA     CA     CB      108.340    3.000
+ NIY      HA     CA     C       108.810    3.000
+ NIY      CB     CA     C       109.470    3.000
+ NIY      CB     CG     CD2     120.000    3.000
+ NIY      CB     CG     CD1     120.000    3.000
+ NIY      HB2    CB     HB3     107.900    3.000
+ NIY      HB2    CB     CG      109.470    3.000
+ NIY      HB3    CB     CG      109.470    3.000
+ NIY      CG     CD2    HD2     120.000    3.000
+ NIY      CG     CD2    CE2     120.000    3.000
+ NIY      CG     CD1    CE1     120.000    3.000
+ NIY      CG     CD1    HD1     120.000    3.000
+ NIY      CD2    CG     CD1     120.000    3.000
+ NIY      CD2    CE2    HE2     120.000    3.000
+ NIY      CD2    CE2    CZ      120.000    3.000
+ NIY      HD2    CD2    CE2     120.000    3.000
+ NIY      CE2    CZ     OH      120.000    3.000
+ NIY      CE2    CZ     CE1     120.000    3.000
+ NIY      HE2    CE2    CZ      120.000    3.000
+ NIY      CZ     OH     HH      109.470    3.000
+ NIY      CZ     CE1    CD1     120.000    3.000
+ NIY      CZ     CE1    NN      120.000    3.000
+ NIY      OH     CZ     CE1     120.000    3.000
+ NIY      CE1    CD1    HD1     120.000    3.000
+ NIY      CE1    NN     O1      120.000    3.000
+ NIY      CE1    NN     O2      120.000    3.000
+ NIY      CD1    CE1    NN      120.000    3.000
+ NIY      O1     NN     O2      120.000    3.000
+ NIY      O      C      OXT     123.000    3.000
+ NIY      H1     N      H2      109.470    3.000
+ NIY      H1     N      H3      109.470    3.000
+ NIY      H2     N      H3      109.470    3.000
+
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NIY      var_4    CA     CB     CG     CD1        0.000   20.000   2
+ NIY      var_1    CB     CA     C      OXT      180.000   20.000   3
+ NIY      CONST_1  CB     CG     CD2    CE2        0.000    0.000   0
+ NIY      CONST_2  CB     CG     CD1    CE1        0.000    0.000   0
+ NIY      var_3    CG     CB     CA     C        180.000   20.000   3
+ NIY      CONST_6  CG     CD2    CE2    CZ         0.000    0.000   0
+ NIY      CONST_3  CG     CD1    CE1    CZ         0.000    0.000   0
+ NIY      CONST_5  CD2    CE2    CZ     CE1        0.000    0.000   0
+ NIY      CONST_4  CE2    CZ     CE1    CD1        0.000    0.000   0
+ NIY      var_6    HH     OH     CZ     CE1      180.000   20.000   3
+ NIY      var_5    CD1    CE1    NN     O1       180.000   20.000   3
+ NIY      var_2    C      CA     N      H1       180.000   20.000   3
+
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NIY      chir_01  CA     N      C      CB        positiv
+
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NIY      plan-3    CA        0.020
+ NIY      plan-3    C         0.020
+ NIY      plan-3    O         0.020
+ NIY      plan-3    OXT       0.020
+ NIY      plan-2    CE1       0.020
+ NIY      plan-2    NN        0.020
+ NIY      plan-2    O1        0.020
+ NIY      plan-2    O2        0.020
+ NIY      plan-1    CB        0.020
+ NIY      plan-1    CG        0.020
+ NIY      plan-1    CD2       0.020
+ NIY      plan-1    HD2       0.020
+ NIY      plan-1    CE2       0.020
+ NIY      plan-1    HE2       0.020
+ NIY      plan-1    CZ        0.020
+ NIY      plan-1    OH        0.020
+ NIY      plan-1    CE1       0.020
+ NIY      plan-1    CD1       0.020
+ NIY      plan-1    HD1       0.020
+ NIY      plan-1    NN        0.020
+

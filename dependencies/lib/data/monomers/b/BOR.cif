@@ -1,0 +1,234 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BOR      BOR '(1R)-1-AMINO-4-{[(E)-AMINO(IMINO)MET' non-polymer        27  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BOR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BOR           NH1    N    N         0.000      0.000    0.000    0.000
+ BOR           HH1    H    H         0.000      0.953    0.121   -0.036
+ BOR           CZ     C    C         0.000     -0.771    0.916    0.515
+ BOR           NH2    N    NH2       0.000     -0.222    2.072    1.017
+ BOR           HH22   H    H         0.000      0.784    2.226    0.993
+ BOR           HH21   H    H         0.000     -0.813    2.796    1.422
+ BOR           NE     N    NH1       0.000     -2.131    0.726    0.558
+ BOR           HNE    H    H         0.000     -2.728    1.435    0.958
+ BOR           CD     C    CH2       0.000     -2.715   -0.507    0.024
+ BOR           HD1    H    H         0.000     -2.311   -1.365    0.565
+ BOR           HD2    H    H         0.000     -2.468   -0.597   -1.036
+ BOR           CG     C    CH2       0.000     -4.236   -0.466    0.193
+ BOR           HG1    H    H         0.000     -4.638    0.394   -0.348
+ BOR           HG2    H    H         0.000     -4.481   -0.374    1.253
+ BOR           CB     C    CH2       0.000     -4.846   -1.753   -0.365
+ BOR           HB1    H    H         0.000     -4.441   -2.611    0.176
+ BOR           HB2    H    H         0.000     -4.599   -1.843   -1.425
+ BOR           CA     C    CH1       0.000     -6.366   -1.712   -0.196
+ BOR           HA     H    H         0.000     -6.614   -1.622    0.871
+ BOR           N      N    NH2       0.000     -6.952   -2.948   -0.732
+ BOR           HN2    H    H         0.000     -7.488   -3.563   -0.131
+ BOR           HN1    H    H         0.000     -6.824   -3.194   -1.707
+ BOR           B      B    B         0.000     -6.945   -0.478   -0.975
+ BOR           O2     O    OH1       0.000     -7.338   -0.615   -2.332
+ BOR           HO2    H    H         0.000     -7.686    0.148   -2.777
+ BOR           O1     O    OH1       0.000     -7.077    0.775   -0.321
+ BOR           HO1    H    H         0.000     -6.806    0.837    0.587
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BOR      NH1    n/a    CZ     START
+ BOR      HH1    NH1    .      .
+ BOR      CZ     NH1    NE     .
+ BOR      NH2    CZ     HH21   .
+ BOR      HH22   NH2    .      .
+ BOR      HH21   NH2    .      .
+ BOR      NE     CZ     CD     .
+ BOR      HNE    NE     .      .
+ BOR      CD     NE     CG     .
+ BOR      HD1    CD     .      .
+ BOR      HD2    CD     .      .
+ BOR      CG     CD     CB     .
+ BOR      HG1    CG     .      .
+ BOR      HG2    CG     .      .
+ BOR      CB     CG     CA     .
+ BOR      HB1    CB     .      .
+ BOR      HB2    CB     .      .
+ BOR      CA     CB     B      .
+ BOR      HA     CA     .      .
+ BOR      N      CA     HN1    .
+ BOR      HN2    N      .      .
+ BOR      HN1    N      .      .
+ BOR      B      CA     O1     .
+ BOR      O2     B      HO2    .
+ BOR      HO2    O2     .      .
+ BOR      O1     B      HO1    .
+ BOR      HO1    O1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BOR       O1        B         single    1.535     0.020     1.535     0.020     
+BOR       HO1       O1        single    0.970     0.012     0.839     0.014     
+BOR       O2        B         single    1.535     0.020     1.535     0.020     
+BOR       B         CA        single    1.600     0.020     1.600     0.020     
+BOR       HO2       O2        single    0.970     0.012     0.839     0.014     
+BOR       N         CA        single    1.450     0.020     1.450     0.020     
+BOR       CA        CB        single    1.524     0.020     1.524     0.020     
+BOR       HA        CA        single    1.089     0.010     0.989     0.005     
+BOR       HN1       N         single    1.036     0.016     0.914     0.007     
+BOR       HN2       N         single    1.036     0.016     0.914     0.007     
+BOR       CB        CG        single    1.524     0.020     1.524     0.020     
+BOR       HB1       CB        single    1.089     0.010     0.989     0.005     
+BOR       HB2       CB        single    1.089     0.010     0.989     0.005     
+BOR       CG        CD        single    1.524     0.020     1.524     0.020     
+BOR       HG1       CG        single    1.089     0.010     0.989     0.005     
+BOR       HG2       CG        single    1.089     0.010     0.989     0.005     
+BOR       CD        NE        single    1.450     0.020     1.450     0.020     
+BOR       HD1       CD        single    1.089     0.010     0.989     0.005     
+BOR       HD2       CD        single    1.089     0.010     0.989     0.005     
+BOR       NE        CZ        single    1.330     0.020     1.330     0.020     
+BOR       HNE       NE        single    1.016     0.010     0.899     0.007     
+BOR       CZ        NH1       double    1.260     0.020     1.260     0.020     
+BOR       NH2       CZ        single    1.332     0.020     1.332     0.020     
+BOR       HH1       NH1       single    1.016     0.010     0.899     0.007     
+BOR       HH21      NH2       single    1.016     0.010     0.899     0.007     
+BOR       HH22      NH2       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BOR      HH1    NH1    CZ      120.000    3.000
+ BOR      NH1    CZ     NH2     120.000    3.000
+ BOR      NH1    CZ     NE      120.000    3.000
+ BOR      NH2    CZ     NE      120.000    3.000
+ BOR      CZ     NH2    HH22    120.000    3.000
+ BOR      CZ     NH2    HH21    120.000    3.000
+ BOR      HH22   NH2    HH21    120.000    3.000
+ BOR      CZ     NE     HNE     120.000    3.000
+ BOR      CZ     NE     CD      121.500    3.000
+ BOR      HNE    NE     CD      118.500    3.000
+ BOR      NE     CD     HD1     109.470    3.000
+ BOR      NE     CD     HD2     109.470    3.000
+ BOR      NE     CD     CG      112.000    3.000
+ BOR      HD1    CD     HD2     107.900    3.000
+ BOR      HD1    CD     CG      109.470    3.000
+ BOR      HD2    CD     CG      109.470    3.000
+ BOR      CD     CG     HG1     109.470    3.000
+ BOR      CD     CG     HG2     109.470    3.000
+ BOR      CD     CG     CB      111.000    3.000
+ BOR      HG1    CG     HG2     107.900    3.000
+ BOR      HG1    CG     CB      109.470    3.000
+ BOR      HG2    CG     CB      109.470    3.000
+ BOR      CG     CB     HB1     109.470    3.000
+ BOR      CG     CB     HB2     109.470    3.000
+ BOR      CG     CB     CA      111.000    3.000
+ BOR      HB1    CB     HB2     107.900    3.000
+ BOR      HB1    CB     CA      109.470    3.000
+ BOR      HB2    CB     CA      109.470    3.000
+ BOR      CB     CA     HA      108.340    3.000
+ BOR      CB     CA     N       109.470    3.000
+ BOR      CB     CA     B       109.470    3.000
+ BOR      HA     CA     N       109.470    3.000
+ BOR      HA     CA     B       109.470    3.000
+ BOR      N      CA     B       109.500    3.000
+ BOR      CA     N      HN2     120.000    3.000
+ BOR      CA     N      HN1     120.000    3.000
+ BOR      HN2    N      HN1     120.000    3.000
+ BOR      CA     B      O2      120.000    3.000
+ BOR      CA     B      O1      120.000    3.000
+ BOR      O2     B      O1      120.000    3.000
+ BOR      B      O2     HO2     120.000    3.000
+ BOR      B      O1     HO1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BOR      CONST_1  HH1    NH1    CZ     NE       180.000    0.000   0
+ BOR      CONST_2  NH1    CZ     NH2    HH21     180.000    0.000   0
+ BOR      CONST_3  NH1    CZ     NE     CD         0.000    0.000   0
+ BOR      var_1    CZ     NE     CD     CG      -179.948   20.000   3
+ BOR      var_2    NE     CD     CG     CB      -179.996   20.000   3
+ BOR      var_3    CD     CG     CB     CA       179.983   20.000   3
+ BOR      var_4    CG     CB     CA     B         59.991   20.000   3
+ BOR      var_5    CB     CA     N      HN1      -60.018   20.000   1
+ BOR      var_6    CB     CA     B      O1       -90.027   20.000   1
+ BOR      var_7    CA     B      O2     HO2      179.941   20.000   1
+ BOR      var_8    CA     B      O1     HO1        0.063   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BOR      chir_01  CA     B      N      CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BOR      plan-1    N         0.020
+ BOR      plan-1    CA        0.020
+ BOR      plan-1    HN1       0.020
+ BOR      plan-1    HN2       0.020
+ BOR      plan-2    NE        0.020
+ BOR      plan-2    CD        0.020
+ BOR      plan-2    CZ        0.020
+ BOR      plan-2    HNE       0.020
+ BOR      plan-3    CZ        0.020
+ BOR      plan-3    NE        0.020
+ BOR      plan-3    NH1       0.020
+ BOR      plan-3    NH2       0.020
+ BOR      plan-3    HH1       0.020
+ BOR      plan-3    HNE       0.020
+ BOR      plan-3    HH22      0.020
+ BOR      plan-3    HH21      0.020
+ BOR      plan-4    NH2       0.020
+ BOR      plan-4    CZ        0.020
+ BOR      plan-4    HH21      0.020
+ BOR      plan-4    HH22      0.020
+# ------------------------------------------------------

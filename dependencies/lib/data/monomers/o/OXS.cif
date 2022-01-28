@@ -1,0 +1,157 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OXS     OXS      "2-OXALOSUCCINIC ACID"     NON-POLYMER     16     13     .     
+#
+data_comp_OXS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OXS     C1      C       C       0       83.268      65.642      1.896       
+OXS     C2      C       CH1     0       84.742      66.076      2.014       
+OXS     C3      C       CH2     0       85.552      65.662      0.774       
+OXS     C4      C       C       0       85.773      64.163      0.660       
+OXS     C5      C       C       0       84.815      67.590      2.267       
+OXS     C6      C       C       0       85.019      68.114      3.466       
+OXS     O1      O       O       0       82.831      64.827      2.732       
+OXS     O2      O       OC      -1      82.589      66.128      0.973       
+OXS     O3      O       O       0       86.793      63.677      1.186       
+OXS     O4      O       OC      -1      84.922      63.489      0.045       
+OXS     O5      O       O       0       84.628      68.339      1.318       
+OXS     O6      O       O       0       84.502      67.585      4.454       
+OXS     O7      O       OC      -1      85.753      69.104      3.574       
+OXS     H2      H       H       0       85.127      65.612      2.784       
+OXS     H31     H       H       0       86.427      66.106      0.807       
+OXS     H32     H       H       0       85.086      65.975      -0.032      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OXS       C1        C2        SINGLE    n         1.539     0.010     1.539     0.010     
+OXS       C1        O1        DOUBLE    n         1.244     0.020     1.244     0.020     
+OXS       C1        O2        SINGLE    n         1.244     0.020     1.244     0.020     
+OXS       C2        C3        SINGLE    n         1.536     0.012     1.536     0.012     
+OXS       C2        C5        SINGLE    n         1.524     0.016     1.524     0.016     
+OXS       C3        C4        SINGLE    n         1.519     0.012     1.519     0.012     
+OXS       C4        O3        DOUBLE    n         1.247     0.019     1.247     0.019     
+OXS       C4        O4        SINGLE    n         1.247     0.019     1.247     0.019     
+OXS       C5        C6        SINGLE    n         1.299     0.020     1.299     0.020     
+OXS       C5        O5        DOUBLE    n         1.220     0.012     1.220     0.012     
+OXS       C6        O6        DOUBLE    n         1.230     0.020     1.230     0.020     
+OXS       C6        O7        SINGLE    n         1.230     0.020     1.230     0.020     
+OXS       C2        H2        SINGLE    n         1.089     0.010     0.976     0.020     
+OXS       C3        H31       SINGLE    n         1.089     0.010     0.982     0.015     
+OXS       C3        H32       SINGLE    n         1.089     0.010     0.982     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OXS          C2          C1          O1     117.800    1.60
+OXS          C2          C1          O2     117.800    1.60
+OXS          O1          C1          O2     124.400    1.50
+OXS          C1          C2          C3     111.511    2.91
+OXS          C1          C2          C5     111.575    3.00
+OXS          C1          C2          H2     108.186    1.50
+OXS          C3          C2          C5     111.511    2.91
+OXS          C3          C2          H2     108.614    1.50
+OXS          C5          C2          H2     108.834    1.50
+OXS          C2          C3          C4     111.511    2.91
+OXS          C2          C3         H31     108.129    2.04
+OXS          C2          C3         H32     108.129    2.04
+OXS          C4          C3         H31     108.462    1.50
+OXS          C4          C3         H32     108.462    1.50
+OXS         H31          C3         H32     107.639    1.50
+OXS          C3          C4          O3     118.129    1.68
+OXS          C3          C4          O4     118.129    1.68
+OXS          O3          C4          O4     123.742    1.50
+OXS          C2          C5          C6     122.371    1.50
+OXS          C2          C5          O5     118.403    1.50
+OXS          C6          C5          O5     119.225    3.00
+OXS          C5          C6          O6     118.654    3.00
+OXS          C5          C6          O7     118.654    3.00
+OXS          O6          C6          O7     122.692    1.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OXS             sp2_sp3_1          O1          C1          C2          C3       0.000   10.00     6
+OXS             sp3_sp3_4          C1          C2          C3          C4      60.000   10.00     3
+OXS             sp2_sp3_7          C6          C5          C2          C1       0.000   10.00     6
+OXS            sp2_sp3_14          O3          C4          C3          C2     120.000   10.00     6
+OXS             sp2_sp2_1          C2          C5          C6          O6     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+OXS    chir_1    C2    C1    C5    C3    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OXS    plan-1          C1   0.020
+OXS    plan-1          C2   0.020
+OXS    plan-1          O1   0.020
+OXS    plan-1          O2   0.020
+OXS    plan-2          C3   0.020
+OXS    plan-2          C4   0.020
+OXS    plan-2          O3   0.020
+OXS    plan-2          O4   0.020
+OXS    plan-3          C2   0.020
+OXS    plan-3          C5   0.020
+OXS    plan-3          C6   0.020
+OXS    plan-3          O5   0.020
+OXS    plan-4          C5   0.020
+OXS    plan-4          C6   0.020
+OXS    plan-4          O6   0.020
+OXS    plan-4          O7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OXS SMILES           ACDLabs              10.04 "O=C(O)CC(C(=O)C(=O)O)C(=O)O"
+OXS SMILES_CANONICAL CACTVS               3.341 "OC(=O)C[C@H](C(O)=O)C(=O)C(O)=O"
+OXS SMILES           CACTVS               3.341 "OC(=O)C[CH](C(O)=O)C(=O)C(O)=O"
+OXS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)C(=O)O)C(=O)O)C(=O)O"
+OXS SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)C(=O)O)C(=O)O)C(=O)O"
+OXS InChI            InChI                1.03  "InChI=1S/C6H6O7/c7-3(8)1-2(5(10)11)4(9)6(12)13/h2H,1H2,(H,7,8)(H,10,11)(H,12,13)/t2-/m0/s1"
+OXS InChIKey         InChI                1.03  UFSCUAXLTRFIDC-REOHCLBHSA-N
+OXS ?                acedrg               202         "dictionary generator"                  
+OXS ?                acedrg_database      11          "data source"                           
+OXS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OXS ?                refmac5              5.8.0189    "optimization tool"                     

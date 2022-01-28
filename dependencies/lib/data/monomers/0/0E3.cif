@@ -1,0 +1,642 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0E3      0E3 'N-acetyl-L-valyl-O-benzyl-L-threonyl' non-polymer        93  44 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_0E3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 0E3           O4     O    O         0.000      0.000    0.000    0.000
+ 0E3           C7     C    C         0.000     -0.224    1.166   -0.225
+ 0E3           CMK    C    CH3       0.000      0.796    2.003   -0.952
+ 0E3           HMK3   H    H         0.000      1.351    1.389   -1.614
+ 0E3           HMK2   H    H         0.000      0.304    2.761   -1.505
+ 0E3           HMK1   H    H         0.000      1.453    2.449   -0.251
+ 0E3           CA3    C    CH1       0.000     -1.525    1.783    0.223
+ 0E3           HA3    H    H         0.000     -1.940    2.393   -0.591
+ 0E3           CB3    C    CH2       0.000     -1.276    2.666    1.447
+ 0E3           HB11   H    H         0.000     -0.518    3.414    1.207
+ 0E3           HB21   H    H         0.000     -0.926    2.047    2.276
+ 0E3           CG3    C    CH1       0.000     -2.578    3.365    1.844
+ 0E3           HG1    H    H         0.000     -3.393    2.635    1.939
+ 0E3           CD11   C    CH2       0.000     -2.945    4.453    0.812
+ 0E3           HD14   H    H         0.000     -3.697    4.124    0.091
+ 0E3           HD15   H    H         0.000     -2.078    4.846    0.277
+ 0E3           CAE    C    CH2       0.000     -3.540    5.558    1.713
+ 0E3           HAE1   H    H         0.000     -4.626    5.468    1.789
+ 0E3           HAE2   H    H         0.000     -3.284    6.554    1.345
+ 0E3           NAH    N    NH1       0.000     -2.936    5.352    3.035
+ 0E3           HAH    H    H         0.000     -2.928    6.043    3.772
+ 0E3           CD21   C    C         0.000     -2.396    4.126    3.139
+ 0E3           OAD    O    O         0.000     -1.839    3.693    4.126
+ 0E3           N3     N    NH1       0.000     -2.474    0.721    0.570
+ 0E3           HN2    H    H         0.000     -2.604    0.456    1.536
+ 0E3           C3     C    C         0.000     -3.174    0.100   -0.399
+ 0E3           O3     O    O         0.000     -3.019    0.418   -1.559
+ 0E3           CA2    C    CH1       0.000     -4.151   -0.991   -0.042
+ 0E3           HA2    H    H         0.000     -4.924   -0.586    0.627
+ 0E3           CB2    C    CH2       0.000     -3.409   -2.127    0.666
+ 0E3           HB2    H    H         0.000     -2.867   -1.727    1.525
+ 0E3           HB3    H    H         0.000     -2.702   -2.587   -0.028
+ 0E3           CG     C    CH1       0.000     -4.418   -3.176    1.140
+ 0E3           HG     H    H         0.000     -5.024   -3.513    0.288
+ 0E3           CD2    C    CH3       0.000     -5.329   -2.563    2.204
+ 0E3           HD23   H    H         0.000     -5.848   -1.736    1.793
+ 0E3           HD22   H    H         0.000     -6.028   -3.289    2.533
+ 0E3           HD21   H    H         0.000     -4.746   -2.239    3.027
+ 0E3           CD1    C    CH3       0.000     -3.669   -4.370    1.737
+ 0E3           HD13   H    H         0.000     -4.366   -5.097    2.066
+ 0E3           HD12   H    H         0.000     -3.038   -4.796    1.000
+ 0E3           HD11   H    H         0.000     -3.083   -4.047    2.558
+ 0E3           N2     N    NH1       0.000     -4.780   -1.503   -1.261
+ 0E3           H5     H    H         0.000     -4.303   -1.421   -2.148
+ 0E3           C2     C    C         0.000     -5.994   -2.084   -1.200
+ 0E3           O2     O    O         0.000     -6.567   -2.183   -0.137
+ 0E3           CA1    C    CH1       0.000     -6.640   -2.611   -2.456
+ 0E3           HA1    H    H         0.000     -5.880   -3.096   -3.084
+ 0E3           N1     N    NH1       0.000     -7.674   -3.587   -2.101
+ 0E3           H4     H    H         0.000     -7.656   -4.512   -2.505
+ 0E3           C1     C    C         0.000     -8.649   -3.249   -1.233
+ 0E3           O1     O    O         0.000     -8.726   -2.112   -0.820
+ 0E3           CA     C    CH1       0.000     -9.644   -4.285   -0.777
+ 0E3           HA     H    H         0.000     -9.129   -5.243   -0.619
+ 0E3           CB     C    CH1       0.000    -10.727   -4.458   -1.845
+ 0E3           HB     H    H         0.000    -11.469   -5.190   -1.498
+ 0E3           CG2    C    CH3       0.000    -10.087   -4.954   -3.143
+ 0E3           HG23   H    H         0.000     -9.621   -5.890   -2.974
+ 0E3           HG22   H    H         0.000    -10.834   -5.063   -3.887
+ 0E3           HG21   H    H         0.000     -9.363   -4.254   -3.472
+ 0E3           CG1    C    CH3       0.000    -11.414   -3.114   -2.096
+ 0E3           HG13   H    H         0.000    -12.094   -3.209   -2.902
+ 0E3           HG12   H    H         0.000    -11.939   -2.816   -1.225
+ 0E3           HG11   H    H         0.000    -10.685   -2.383   -2.335
+ 0E3           N      N    NH1       0.000    -10.261   -3.851    0.478
+ 0E3           H      H    H         0.000    -10.303   -2.868    0.706
+ 0E3           C      C    C         0.000    -10.773   -4.762    1.328
+ 0E3           CH3    C    CH3       0.000    -11.402   -4.315    2.623
+ 0E3           H3     H    H         0.000    -10.686   -3.794    3.204
+ 0E3           H2     H    H         0.000    -12.221   -3.675    2.416
+ 0E3           H1     H    H         0.000    -11.744   -5.161    3.161
+ 0E3           O      O    O         0.000    -10.722   -5.942    1.054
+ 0E3           CB1    C    CH1       0.000     -7.276   -1.454   -3.228
+ 0E3           HB1    H    H         0.000     -6.488   -0.777   -3.587
+ 0E3           CG21   C    CH3       0.000     -8.058   -2.004   -4.422
+ 0E3           HG26   H    H         0.000     -8.423   -1.200   -5.007
+ 0E3           HG25   H    H         0.000     -7.422   -2.610   -5.014
+ 0E3           HG24   H    H         0.000     -8.873   -2.584   -4.074
+ 0E3           OG1    O    O2        0.000     -8.162   -0.737   -2.366
+ 0E3           C4     C    CH2       0.000     -8.282    0.652   -2.680
+ 0E3           H2A    H    H         0.000     -8.660    0.763   -3.699
+ 0E3           H3A    H    H         0.000     -7.302    1.127   -2.604
+ 0E3           C11    C    CR6       0.000     -9.236    1.306   -1.714
+ 0E3           C6     C    CR16      0.000    -10.585    1.366   -2.010
+ 0E3           H6     H    H         0.000    -10.955    0.947   -2.937
+ 0E3           C5     C    CR16      0.000    -11.460    1.961   -1.121
+ 0E3           H51    H    H         0.000    -12.518    2.002   -1.348
+ 0E3           C41    C    CR16      0.000    -10.986    2.505    0.057
+ 0E3           H41    H    H         0.000    -11.672    2.975    0.752
+ 0E3           C31    C    CR16      0.000     -9.636    2.450    0.351
+ 0E3           H31    H    H         0.000     -9.265    2.876    1.274
+ 0E3           C21    C    CR16      0.000     -8.761    1.850   -0.536
+ 0E3           H21    H    H         0.000     -7.703    1.807   -0.307
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 0E3      O4     n/a    C7     START
+ 0E3      C7     O4     CA3    .
+ 0E3      CMK    C7     HMK1   .
+ 0E3      HMK3   CMK    .      .
+ 0E3      HMK2   CMK    .      .
+ 0E3      HMK1   CMK    .      .
+ 0E3      CA3    C7     N3     .
+ 0E3      HA3    CA3    .      .
+ 0E3      CB3    CA3    CG3    .
+ 0E3      HB11   CB3    .      .
+ 0E3      HB21   CB3    .      .
+ 0E3      CG3    CB3    CD21   .
+ 0E3      HG1    CG3    .      .
+ 0E3      CD11   CG3    CAE    .
+ 0E3      HD14   CD11   .      .
+ 0E3      HD15   CD11   .      .
+ 0E3      CAE    CD11   NAH    .
+ 0E3      HAE1   CAE    .      .
+ 0E3      HAE2   CAE    .      .
+ 0E3      NAH    CAE    HAH    .
+ 0E3      HAH    NAH    .      .
+ 0E3      CD21   CG3    OAD    .
+ 0E3      OAD    CD21   .      .
+ 0E3      N3     CA3    C3     .
+ 0E3      HN2    N3     .      .
+ 0E3      C3     N3     CA2    .
+ 0E3      O3     C3     .      .
+ 0E3      CA2    C3     N2     .
+ 0E3      HA2    CA2    .      .
+ 0E3      CB2    CA2    CG     .
+ 0E3      HB2    CB2    .      .
+ 0E3      HB3    CB2    .      .
+ 0E3      CG     CB2    CD1    .
+ 0E3      HG     CG     .      .
+ 0E3      CD2    CG     HD21   .
+ 0E3      HD23   CD2    .      .
+ 0E3      HD22   CD2    .      .
+ 0E3      HD21   CD2    .      .
+ 0E3      CD1    CG     HD11   .
+ 0E3      HD13   CD1    .      .
+ 0E3      HD12   CD1    .      .
+ 0E3      HD11   CD1    .      .
+ 0E3      N2     CA2    C2     .
+ 0E3      H5     N2     .      .
+ 0E3      C2     N2     CA1    .
+ 0E3      O2     C2     .      .
+ 0E3      CA1    C2     CB1    .
+ 0E3      HA1    CA1    .      .
+ 0E3      N1     CA1    C1     .
+ 0E3      H4     N1     .      .
+ 0E3      C1     N1     CA     .
+ 0E3      O1     C1     .      .
+ 0E3      CA     C1     N      .
+ 0E3      HA     CA     .      .
+ 0E3      CB     CA     CG1    .
+ 0E3      HB     CB     .      .
+ 0E3      CG2    CB     HG21   .
+ 0E3      HG23   CG2    .      .
+ 0E3      HG22   CG2    .      .
+ 0E3      HG21   CG2    .      .
+ 0E3      CG1    CB     HG11   .
+ 0E3      HG13   CG1    .      .
+ 0E3      HG12   CG1    .      .
+ 0E3      HG11   CG1    .      .
+ 0E3      N      CA     C      .
+ 0E3      H      N      .      .
+ 0E3      C      N      O      .
+ 0E3      CH3    C      H1     .
+ 0E3      H3     CH3    .      .
+ 0E3      H2     CH3    .      .
+ 0E3      H1     CH3    .      .
+ 0E3      O      C      .      .
+ 0E3      CB1    CA1    OG1    .
+ 0E3      HB1    CB1    .      .
+ 0E3      CG21   CB1    HG24   .
+ 0E3      HG26   CG21   .      .
+ 0E3      HG25   CG21   .      .
+ 0E3      HG24   CG21   .      .
+ 0E3      OG1    CB1    C4     .
+ 0E3      C4     OG1    C11    .
+ 0E3      H2A    C4     .      .
+ 0E3      H3A    C4     .      .
+ 0E3      C11    C4     C6     .
+ 0E3      C6     C11    C5     .
+ 0E3      H6     C6     .      .
+ 0E3      C5     C6     C41    .
+ 0E3      H51    C5     .      .
+ 0E3      C41    C5     C31    .
+ 0E3      H41    C41    .      .
+ 0E3      C31    C41    C21    .
+ 0E3      H31    C31    .      .
+ 0E3      C21    C31    H21    .
+ 0E3      H21    C21    .      END
+ 0E3      C11    C21    .    ADD
+ 0E3      CD21   NAH    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0E3       O         C         double    1.220     0.020     1.220     0.020     
+0E3       CH3       C         single    1.500     0.020     1.500     0.020     
+0E3       H1        CH3       single    1.089     0.010     0.989     0.005     
+0E3       H2        CH3       single    1.089     0.010     0.989     0.005     
+0E3       H3        CH3       single    1.089     0.010     0.989     0.005     
+0E3       N         CA        single    1.450     0.020     1.450     0.020     
+0E3       H         N         single    1.016     0.010     0.899     0.007     
+0E3       CA        C1        single    1.500     0.020     1.500     0.020     
+0E3       CB        CA        single    1.524     0.020     1.524     0.020     
+0E3       HA        CA        single    1.089     0.010     0.989     0.005     
+0E3       O1        C1        double    1.220     0.020     1.220     0.020     
+0E3       CG1       CB        single    1.524     0.020     1.524     0.020     
+0E3       CG2       CB        single    1.524     0.020     1.524     0.020     
+0E3       HB        CB        single    1.089     0.010     0.989     0.005     
+0E3       HG11      CG1       single    1.089     0.010     0.989     0.005     
+0E3       HG12      CG1       single    1.089     0.010     0.989     0.005     
+0E3       HG13      CG1       single    1.089     0.010     0.989     0.005     
+0E3       HG21      CG2       single    1.089     0.010     0.989     0.005     
+0E3       HG22      CG2       single    1.089     0.010     0.989     0.005     
+0E3       HG23      CG2       single    1.089     0.010     0.989     0.005     
+0E3       N1        CA1       single    1.450     0.020     1.450     0.020     
+0E3       H4        N1        single    1.016     0.010     0.899     0.007     
+0E3       CA1       C2        single    1.500     0.020     1.500     0.020     
+0E3       CB1       CA1       single    1.524     0.020     1.524     0.020     
+0E3       HA1       CA1       single    1.089     0.010     0.989     0.005     
+0E3       O2        C2        double    1.220     0.020     1.220     0.020     
+0E3       OG1       CB1       single    1.426     0.020     1.426     0.020     
+0E3       CG21      CB1       single    1.524     0.020     1.524     0.020     
+0E3       HB1       CB1       single    1.089     0.010     0.989     0.005     
+0E3       HG24      CG21      single    1.089     0.010     0.989     0.005     
+0E3       HG25      CG21      single    1.089     0.010     0.989     0.005     
+0E3       HG26      CG21      single    1.089     0.010     0.989     0.005     
+0E3       N2        CA2       single    1.450     0.020     1.450     0.020     
+0E3       H5        N2        single    1.016     0.010     0.899     0.007     
+0E3       CA2       C3        single    1.500     0.020     1.500     0.020     
+0E3       CB2       CA2       single    1.524     0.020     1.524     0.020     
+0E3       HA2       CA2       single    1.089     0.010     0.989     0.005     
+0E3       O3        C3        double    1.220     0.020     1.220     0.020     
+0E3       CG        CB2       single    1.524     0.020     1.524     0.020     
+0E3       HB2       CB2       single    1.089     0.010     0.989     0.005     
+0E3       HB3       CB2       single    1.089     0.010     0.989     0.005     
+0E3       CD1       CG        single    1.524     0.020     1.524     0.020     
+0E3       CD2       CG        single    1.524     0.020     1.524     0.020     
+0E3       HG        CG        single    1.089     0.010     0.989     0.005     
+0E3       HD11      CD1       single    1.089     0.010     0.989     0.005     
+0E3       HD12      CD1       single    1.089     0.010     0.989     0.005     
+0E3       HD13      CD1       single    1.089     0.010     0.989     0.005     
+0E3       HD21      CD2       single    1.089     0.010     0.989     0.005     
+0E3       HD22      CD2       single    1.089     0.010     0.989     0.005     
+0E3       HD23      CD2       single    1.089     0.010     0.989     0.005     
+0E3       C11       C4        single    1.511     0.020     1.511     0.020     
+0E3       H2A       C4        single    1.089     0.010     0.989     0.005     
+0E3       H3A       C4        single    1.089     0.010     0.989     0.005     
+0E3       C11       C21       double    1.390     0.020     1.390     0.020     
+0E3       C6        C11       single    1.390     0.020     1.390     0.020     
+0E3       C21       C31       single    1.390     0.020     1.390     0.020     
+0E3       H21       C21       single    1.082     0.013     0.975     0.010     
+0E3       C31       C41       double    1.390     0.020     1.390     0.020     
+0E3       H31       C31       single    1.082     0.013     0.975     0.010     
+0E3       C41       C5        single    1.390     0.020     1.390     0.020     
+0E3       H41       C41       single    1.082     0.013     0.975     0.010     
+0E3       C5        C6        double    1.390     0.020     1.390     0.020     
+0E3       H51       C5        single    1.082     0.013     0.975     0.010     
+0E3       H6        C6        single    1.082     0.013     0.975     0.010     
+0E3       OAD       CD21      double    1.220     0.020     1.220     0.020     
+0E3       CD21      CG3       single    1.500     0.020     1.500     0.020     
+0E3       CD21      NAH       single    1.330     0.020     1.330     0.020     
+0E3       HAH       NAH       single    1.016     0.010     0.899     0.007     
+0E3       NAH       CAE       single    1.450     0.020     1.450     0.020     
+0E3       HAE1      CAE       single    1.089     0.010     0.989     0.005     
+0E3       HAE2      CAE       single    1.089     0.010     0.989     0.005     
+0E3       CAE       CD11      single    1.524     0.020     1.524     0.020     
+0E3       CD11      CG3       single    1.524     0.020     1.524     0.020     
+0E3       HD14      CD11      single    1.089     0.010     0.989     0.005     
+0E3       HD15      CD11      single    1.089     0.010     0.989     0.005     
+0E3       CG3       CB3       single    1.524     0.020     1.524     0.020     
+0E3       HG1       CG3       single    1.089     0.010     0.989     0.005     
+0E3       CB3       CA3       single    1.524     0.020     1.524     0.020     
+0E3       HB11      CB3       single    1.089     0.010     0.989     0.005     
+0E3       HB21      CB3       single    1.089     0.010     0.989     0.005     
+0E3       N3        CA3       single    1.450     0.020     1.450     0.020     
+0E3       HA3       CA3       single    1.089     0.010     0.989     0.005     
+0E3       CA3       C7        single    1.500     0.020     1.500     0.020     
+0E3       HN2       N3        single    1.016     0.010     0.899     0.007     
+0E3       C7        O4        double    1.220     0.020     1.220     0.020     
+0E3       CMK       C7        single    1.500     0.020     1.500     0.020     
+0E3       HMK1      CMK       single    1.089     0.010     0.989     0.005     
+0E3       HMK2      CMK       single    1.089     0.010     0.989     0.005     
+0E3       HMK3      CMK       single    1.089     0.010     0.989     0.005     
+0E3       C         N         single    1.330     0.020     1.330     0.020     
+0E3       C1        N1        single    1.330     0.020     1.330     0.020     
+0E3       C2        N2        single    1.330     0.020     1.330     0.020     
+0E3       C4        OG1       single    1.426     0.020     1.426     0.020     
+0E3       C3        N3        single    1.330     0.020     1.330     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 0E3      O4     C7     CMK     123.000    3.000
+ 0E3      O4     C7     CA3     120.500    3.000
+ 0E3      CMK    C7     CA3     120.000    3.000
+ 0E3      C7     CMK    HMK3    109.470    3.000
+ 0E3      C7     CMK    HMK2    109.470    3.000
+ 0E3      C7     CMK    HMK1    109.470    3.000
+ 0E3      HMK3   CMK    HMK2    109.470    3.000
+ 0E3      HMK3   CMK    HMK1    109.470    3.000
+ 0E3      HMK2   CMK    HMK1    109.470    3.000
+ 0E3      C7     CA3    HA3     108.810    3.000
+ 0E3      C7     CA3    CB3     109.470    3.000
+ 0E3      C7     CA3    N3      111.600    3.000
+ 0E3      HA3    CA3    CB3     108.340    3.000
+ 0E3      HA3    CA3    N3      108.550    3.000
+ 0E3      CB3    CA3    N3      110.000    3.000
+ 0E3      CA3    CB3    HB11    109.470    3.000
+ 0E3      CA3    CB3    HB21    109.470    3.000
+ 0E3      CA3    CB3    CG3     111.000    3.000
+ 0E3      HB11   CB3    HB21    107.900    3.000
+ 0E3      HB11   CB3    CG3     109.470    3.000
+ 0E3      HB21   CB3    CG3     109.470    3.000
+ 0E3      CB3    CG3    HG1     108.340    3.000
+ 0E3      CB3    CG3    CD11    109.470    3.000
+ 0E3      CB3    CG3    CD21    109.470    3.000
+ 0E3      HG1    CG3    CD11    108.340    3.000
+ 0E3      HG1    CG3    CD21    108.810    3.000
+ 0E3      CD11   CG3    CD21    109.470    3.000
+ 0E3      CG3    CD11   HD14    109.470    3.000
+ 0E3      CG3    CD11   HD15    109.470    3.000
+ 0E3      CG3    CD11   CAE     111.000    3.000
+ 0E3      HD14   CD11   HD15    107.900    3.000
+ 0E3      HD14   CD11   CAE     109.470    3.000
+ 0E3      HD15   CD11   CAE     109.470    3.000
+ 0E3      CD11   CAE    HAE1    109.470    3.000
+ 0E3      CD11   CAE    HAE2    109.470    3.000
+ 0E3      CD11   CAE    NAH     112.000    3.000
+ 0E3      HAE1   CAE    HAE2    107.900    3.000
+ 0E3      HAE1   CAE    NAH     109.470    3.000
+ 0E3      HAE2   CAE    NAH     109.470    3.000
+ 0E3      CAE    NAH    HAH     118.500    3.000
+ 0E3      CAE    NAH    CD21    121.500    3.000
+ 0E3      HAH    NAH    CD21    120.000    3.000
+ 0E3      CG3    CD21   OAD     120.500    3.000
+ 0E3      CG3    CD21   NAH     116.500    3.000
+ 0E3      OAD    CD21   NAH     123.000    3.000
+ 0E3      CA3    N3     HN2     118.500    3.000
+ 0E3      CA3    N3     C3      121.500    3.000
+ 0E3      HN2    N3     C3      120.000    3.000
+ 0E3      N3     C3     O3      123.000    3.000
+ 0E3      N3     C3     CA2     116.500    3.000
+ 0E3      O3     C3     CA2     120.500    3.000
+ 0E3      C3     CA2    HA2     108.810    3.000
+ 0E3      C3     CA2    CB2     109.470    3.000
+ 0E3      C3     CA2    N2      111.600    3.000
+ 0E3      HA2    CA2    CB2     108.340    3.000
+ 0E3      HA2    CA2    N2      108.550    3.000
+ 0E3      CB2    CA2    N2      110.000    3.000
+ 0E3      CA2    CB2    HB2     109.470    3.000
+ 0E3      CA2    CB2    HB3     109.470    3.000
+ 0E3      CA2    CB2    CG      111.000    3.000
+ 0E3      HB2    CB2    HB3     107.900    3.000
+ 0E3      HB2    CB2    CG      109.470    3.000
+ 0E3      HB3    CB2    CG      109.470    3.000
+ 0E3      CB2    CG     HG      108.340    3.000
+ 0E3      CB2    CG     CD2     111.000    3.000
+ 0E3      CB2    CG     CD1     111.000    3.000
+ 0E3      HG     CG     CD2     108.340    3.000
+ 0E3      HG     CG     CD1     108.340    3.000
+ 0E3      CD2    CG     CD1     111.000    3.000
+ 0E3      CG     CD2    HD23    109.470    3.000
+ 0E3      CG     CD2    HD22    109.470    3.000
+ 0E3      CG     CD2    HD21    109.470    3.000
+ 0E3      HD23   CD2    HD22    109.470    3.000
+ 0E3      HD23   CD2    HD21    109.470    3.000
+ 0E3      HD22   CD2    HD21    109.470    3.000
+ 0E3      CG     CD1    HD13    109.470    3.000
+ 0E3      CG     CD1    HD12    109.470    3.000
+ 0E3      CG     CD1    HD11    109.470    3.000
+ 0E3      HD13   CD1    HD12    109.470    3.000
+ 0E3      HD13   CD1    HD11    109.470    3.000
+ 0E3      HD12   CD1    HD11    109.470    3.000
+ 0E3      CA2    N2     H5      118.500    3.000
+ 0E3      CA2    N2     C2      121.500    3.000
+ 0E3      H5     N2     C2      120.000    3.000
+ 0E3      N2     C2     O2      123.000    3.000
+ 0E3      N2     C2     CA1     116.500    3.000
+ 0E3      O2     C2     CA1     120.500    3.000
+ 0E3      C2     CA1    HA1     108.810    3.000
+ 0E3      C2     CA1    N1      111.600    3.000
+ 0E3      C2     CA1    CB1     109.470    3.000
+ 0E3      HA1    CA1    N1      108.550    3.000
+ 0E3      HA1    CA1    CB1     108.340    3.000
+ 0E3      N1     CA1    CB1     110.000    3.000
+ 0E3      CA1    N1     H4      118.500    3.000
+ 0E3      CA1    N1     C1      121.500    3.000
+ 0E3      H4     N1     C1      120.000    3.000
+ 0E3      N1     C1     O1      123.000    3.000
+ 0E3      N1     C1     CA      116.500    3.000
+ 0E3      O1     C1     CA      120.500    3.000
+ 0E3      C1     CA     HA      108.810    3.000
+ 0E3      C1     CA     CB      109.470    3.000
+ 0E3      C1     CA     N       111.600    3.000
+ 0E3      HA     CA     CB      108.340    3.000
+ 0E3      HA     CA     N       108.550    3.000
+ 0E3      CB     CA     N       110.000    3.000
+ 0E3      CA     CB     HB      108.340    3.000
+ 0E3      CA     CB     CG2     111.000    3.000
+ 0E3      CA     CB     CG1     111.000    3.000
+ 0E3      HB     CB     CG2     108.340    3.000
+ 0E3      HB     CB     CG1     108.340    3.000
+ 0E3      CG2    CB     CG1     111.000    3.000
+ 0E3      CB     CG2    HG23    109.470    3.000
+ 0E3      CB     CG2    HG22    109.470    3.000
+ 0E3      CB     CG2    HG21    109.470    3.000
+ 0E3      HG23   CG2    HG22    109.470    3.000
+ 0E3      HG23   CG2    HG21    109.470    3.000
+ 0E3      HG22   CG2    HG21    109.470    3.000
+ 0E3      CB     CG1    HG13    109.470    3.000
+ 0E3      CB     CG1    HG12    109.470    3.000
+ 0E3      CB     CG1    HG11    109.470    3.000
+ 0E3      HG13   CG1    HG12    109.470    3.000
+ 0E3      HG13   CG1    HG11    109.470    3.000
+ 0E3      HG12   CG1    HG11    109.470    3.000
+ 0E3      CA     N      H       118.500    3.000
+ 0E3      CA     N      C       121.500    3.000
+ 0E3      H      N      C       120.000    3.000
+ 0E3      N      C      CH3     116.500    3.000
+ 0E3      N      C      O       123.000    3.000
+ 0E3      CH3    C      O       123.000    3.000
+ 0E3      C      CH3    H3      109.470    3.000
+ 0E3      C      CH3    H2      109.470    3.000
+ 0E3      C      CH3    H1      109.470    3.000
+ 0E3      H3     CH3    H2      109.470    3.000
+ 0E3      H3     CH3    H1      109.470    3.000
+ 0E3      H2     CH3    H1      109.470    3.000
+ 0E3      CA1    CB1    HB1     108.340    3.000
+ 0E3      CA1    CB1    CG21    111.000    3.000
+ 0E3      CA1    CB1    OG1     109.470    3.000
+ 0E3      HB1    CB1    CG21    108.340    3.000
+ 0E3      HB1    CB1    OG1     109.470    3.000
+ 0E3      CG21   CB1    OG1     109.470    3.000
+ 0E3      CB1    CG21   HG26    109.470    3.000
+ 0E3      CB1    CG21   HG25    109.470    3.000
+ 0E3      CB1    CG21   HG24    109.470    3.000
+ 0E3      HG26   CG21   HG25    109.470    3.000
+ 0E3      HG26   CG21   HG24    109.470    3.000
+ 0E3      HG25   CG21   HG24    109.470    3.000
+ 0E3      CB1    OG1    C4      111.800    3.000
+ 0E3      OG1    C4     H2A     109.470    3.000
+ 0E3      OG1    C4     H3A     109.470    3.000
+ 0E3      OG1    C4     C11     109.470    3.000
+ 0E3      H2A    C4     H3A     107.900    3.000
+ 0E3      H2A    C4     C11     109.470    3.000
+ 0E3      H3A    C4     C11     109.470    3.000
+ 0E3      C4     C11    C6      120.000    3.000
+ 0E3      C4     C11    C21     120.000    3.000
+ 0E3      C6     C11    C21     120.000    3.000
+ 0E3      C11    C6     H6      120.000    3.000
+ 0E3      C11    C6     C5      120.000    3.000
+ 0E3      H6     C6     C5      120.000    3.000
+ 0E3      C6     C5     H51     120.000    3.000
+ 0E3      C6     C5     C41     120.000    3.000
+ 0E3      H51    C5     C41     120.000    3.000
+ 0E3      C5     C41    H41     120.000    3.000
+ 0E3      C5     C41    C31     120.000    3.000
+ 0E3      H41    C41    C31     120.000    3.000
+ 0E3      C41    C31    H31     120.000    3.000
+ 0E3      C41    C31    C21     120.000    3.000
+ 0E3      H31    C31    C21     120.000    3.000
+ 0E3      C31    C21    H21     120.000    3.000
+ 0E3      C31    C21    C11     120.000    3.000
+ 0E3      H21    C21    C11     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 0E3      var_1    O4     C7     CMK    HMK1     -90.014   20.000   1
+ 0E3      var_2    O4     C7     CA3    N3       -15.067   20.000   3
+ 0E3      var_3    C7     CA3    CB3    CG3      176.214   20.000   3
+ 0E3      var_4    CA3    CB3    CG3    CD21     173.870   20.000   3
+ 0E3      var_5    CB3    CG3    CD11   CAE     -150.000   20.000   3
+ 0E3      var_6    CG3    CD11   CAE    NAH       30.000   20.000   3
+ 0E3      var_7    CD11   CAE    NAH    CD21     -30.000   20.000   3
+ 0E3      var_8    CB3    CG3    CD21   OAD      -60.000   20.000   3
+ 0E3      CONST_1  CG3    CD21   NAH    CAE        0.000    0.000   0
+ 0E3      var_9    C7     CA3    N3     C3       -81.497   20.000   3
+ 0E3      CONST_2  CA3    N3     C3     CA2      180.000    0.000   0
+ 0E3      var_10   N3     C3     CA2    N2       179.990   20.000   3
+ 0E3      var_11   C3     CA2    CB2    CG       174.956   20.000   3
+ 0E3      var_12   CA2    CB2    CG     CD1      175.005   20.000   3
+ 0E3      var_13   CB2    CG     CD2    HD21     -60.025   20.000   3
+ 0E3      var_14   CB2    CG     CD1    HD11      59.969   20.000   3
+ 0E3      var_15   C3     CA2    N2     C2      -155.001   20.000   3
+ 0E3      CONST_3  CA2    N2     C2     CA1      180.000    0.000   0
+ 0E3      var_16   N2     C2     CA1    CB1      -80.008   20.000   3
+ 0E3      var_17   C2     CA1    N1     C1        53.991   20.000   3
+ 0E3      CONST_4  CA1    N1     C1     CA       180.000    0.000   0
+ 0E3      var_18   N1     C1     CA     N        159.327   20.000   3
+ 0E3      var_19   C1     CA     CB     CG1      -58.223   20.000   3
+ 0E3      var_20   CA     CB     CG2    HG21     -59.324   20.000   3
+ 0E3      var_21   CA     CB     CG1    HG11      54.304   20.000   3
+ 0E3      var_22   C1     CA     N      C       -154.998   20.000   3
+ 0E3      CONST_5  CA     N      C      O          0.000    0.000   0
+ 0E3      var_23   N      C      CH3    H1      -179.747   20.000   1
+ 0E3      var_24   C2     CA1    CB1    OG1      -53.981   20.000   3
+ 0E3      var_25   CA1    CB1    CG21   HG24      65.206   20.000   3
+ 0E3      var_26   CA1    CB1    OG1    C4       149.999   20.000   1
+ 0E3      var_27   CB1    OG1    C4     C11      179.983   20.000   1
+ 0E3      var_28   OG1    C4     C11    C6       -90.290   20.000   2
+ 0E3      CONST_6  C4     C11    C21    C31      180.000    0.000   0
+ 0E3      CONST_7  C4     C11    C6     C5       180.000    0.000   0
+ 0E3      CONST_8  C11    C6     C5     C41        0.000    0.000   0
+ 0E3      CONST_9  C6     C5     C41    C31        0.000    0.000   0
+ 0E3      CONST_10 C5     C41    C31    C21        0.000    0.000   0
+ 0E3      CONST_11 C41    C31    C21    C11        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 0E3      chir_01  CA     N      C1     CB        positiv
+ 0E3      chir_02  CB     CA     CG1    CG2       negativ
+ 0E3      chir_03  CA1    N1     C2     CB1       positiv
+ 0E3      chir_04  CB1    CA1    OG1    CG21      positiv
+ 0E3      chir_05  CA2    N2     C3     CB2       positiv
+ 0E3      chir_06  CG     CB2    CD1    CD2       negativ
+ 0E3      chir_07  CG3    CD21   CD11   CB3       negativ
+ 0E3      chir_08  CA3    CB3    N3     C7        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 0E3      plan-1    C         0.020
+ 0E3      plan-1    O         0.020
+ 0E3      plan-1    CH3       0.020
+ 0E3      plan-1    N         0.020
+ 0E3      plan-1    H         0.020
+ 0E3      plan-2    N         0.020
+ 0E3      plan-2    C         0.020
+ 0E3      plan-2    CA        0.020
+ 0E3      plan-2    H         0.020
+ 0E3      plan-3    C1        0.020
+ 0E3      plan-3    CA        0.020
+ 0E3      plan-3    O1        0.020
+ 0E3      plan-3    N1        0.020
+ 0E3      plan-3    H4        0.020
+ 0E3      plan-4    N1        0.020
+ 0E3      plan-4    C1        0.020
+ 0E3      plan-4    CA1       0.020
+ 0E3      plan-4    H4        0.020
+ 0E3      plan-5    C2        0.020
+ 0E3      plan-5    CA1       0.020
+ 0E3      plan-5    O2        0.020
+ 0E3      plan-5    N2        0.020
+ 0E3      plan-5    H5        0.020
+ 0E3      plan-6    N2        0.020
+ 0E3      plan-6    C2        0.020
+ 0E3      plan-6    CA2       0.020
+ 0E3      plan-6    H5        0.020
+ 0E3      plan-7    C3        0.020
+ 0E3      plan-7    CA2       0.020
+ 0E3      plan-7    O3        0.020
+ 0E3      plan-7    N3        0.020
+ 0E3      plan-7    HN2       0.020
+ 0E3      plan-8    C11       0.020
+ 0E3      plan-8    C4        0.020
+ 0E3      plan-8    C21       0.020
+ 0E3      plan-8    C6        0.020
+ 0E3      plan-8    C31       0.020
+ 0E3      plan-8    C41       0.020
+ 0E3      plan-8    C5        0.020
+ 0E3      plan-8    H21       0.020
+ 0E3      plan-8    H31       0.020
+ 0E3      plan-8    H41       0.020
+ 0E3      plan-8    H51       0.020
+ 0E3      plan-8    H6        0.020
+ 0E3      plan-9    CD21      0.020
+ 0E3      plan-9    OAD       0.020
+ 0E3      plan-9    NAH       0.020
+ 0E3      plan-9    CG3       0.020
+ 0E3      plan-9    HAH       0.020
+ 0E3      plan-10   NAH       0.020
+ 0E3      plan-10   CD21      0.020
+ 0E3      plan-10   CAE       0.020
+ 0E3      plan-10   HAH       0.020
+ 0E3      plan-11   N3        0.020
+ 0E3      plan-11   C3        0.020
+ 0E3      plan-11   CA3       0.020
+ 0E3      plan-11   HN2       0.020
+ 0E3      plan-12   C7        0.020
+ 0E3      plan-12   CA3       0.020
+ 0E3      plan-12   O4        0.020
+ 0E3      plan-12   CMK       0.020
+# ------------------------------------------------------

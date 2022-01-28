@@ -1,0 +1,300 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PT2      PT2 '"[ethane-1,2-diaminato(2-)-kappa~2~N' non-polymer        33  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PT2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PT2           HN18   H    H         0.000     -2.176   -0.046   -2.579
+ PT2           N18    N    NH1       0.000     -2.295   -0.095   -1.577
+ PT2           C17    C    CH2       0.000     -3.534   -0.232   -0.694
+ PT2           H117   H    H         0.000     -3.723   -1.306   -0.637
+ PT2           H217   H    H         0.000     -4.337    0.248   -1.257
+ PT2           C16    C    CH2       0.000     -3.478    0.355    0.722
+ PT2           H116   H    H         0.000     -4.408    0.052    1.208
+ PT2           H216   H    H         0.000     -3.472    1.440    0.596
+ PT2           N15    N    NH1       0.000     -2.284   -0.068    1.588
+ PT2           HN15   H    H         0.000     -2.186   -0.281    2.570
+ PT2           PT     PT   PT        0.000     -0.937   -0.043   -0.002
+ PT2           N10    N    NR6       1.000      0.385    1.550   -0.017
+ PT2           C9     C    CR16      0.000      0.385    2.829   -0.031
+ PT2           H9     H    H         0.000     -0.561    3.357   -0.039
+ PT2           C8     C    CR16      0.000      1.573    3.561   -0.036
+ PT2           H8     H    H         0.000      1.559    4.644   -0.048
+ PT2           C14    C    CR66      0.000      1.523    0.761   -0.009
+ PT2           C13    C    CR66      0.000      2.748    1.472   -0.009
+ PT2           C7     C    CR16      0.000      2.755    2.875   -0.025
+ PT2           H7     H    H         0.000      3.695    3.413   -0.029
+ PT2           C6     C    CR16      0.000      3.977    0.771    0.007
+ PT2           H6     H    H         0.000      4.905    1.329    0.012
+ PT2           C11    C    CR66      0.000      1.566   -0.703    0.003
+ PT2           N1     N    NR6       1.000      0.475   -1.556    0.009
+ PT2           C12    C    CR66      0.000      2.829   -1.343    0.010
+ PT2           C5     C    CR16      0.000      4.016   -0.572    0.016
+ PT2           H5     H    H         0.000      4.975   -1.075    0.028
+ PT2           C4     C    CR16      0.000      2.917   -2.744    0.014
+ PT2           H4     H    H         0.000      3.886   -3.227    0.015
+ PT2           C3     C    CR16      0.000      1.776   -3.496    0.017
+ PT2           H3     H    H         0.000      1.824   -4.578    0.019
+ PT2           C2     C    CR16      0.000      0.548   -2.834    0.017
+ PT2           H2     H    H         0.000     -0.366   -3.415    0.024
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PT2      HN18   n/a    N18    START
+ PT2      N18    HN18   PT     .
+ PT2      C17    N18    C16    .
+ PT2      H117   C17    .      .
+ PT2      H217   C17    .      .
+ PT2      C16    C17    N15    .
+ PT2      H116   C16    .      .
+ PT2      H216   C16    .      .
+ PT2      N15    C16    HN15   .
+ PT2      HN15   N15    .      .
+ PT2      PT     N18    N10    .
+ PT2      N10    PT     C14    .
+ PT2      C9     N10    C8     .
+ PT2      H9     C9     .      .
+ PT2      C8     C9     H8     .
+ PT2      H8     C8     .      .
+ PT2      C14    N10    C11    .
+ PT2      C13    C14    C6     .
+ PT2      C7     C13    H7     .
+ PT2      H7     C7     .      .
+ PT2      C6     C13    H6     .
+ PT2      H6     C6     .      .
+ PT2      C11    C14    C12    .
+ PT2      N1     C11    .      .
+ PT2      C12    C11    C4     .
+ PT2      C5     C12    H5     .
+ PT2      H5     C5     .      .
+ PT2      C4     C12    C3     .
+ PT2      H4     C4     .      .
+ PT2      C3     C4     C2     .
+ PT2      H3     C3     .      .
+ PT2      C2     C3     H2     .
+ PT2      H2     C2     .      END
+ PT2      PT     N1     .    ADD
+ PT2      PT     N15    .    ADD
+ PT2      N1     C2     .    ADD
+ PT2      C5     C6     .    ADD
+ PT2      C7     C8     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PT2       C2        C3        double    1.390     0.020     1.390     0.020     
+PT2       C3        C4        single    1.390     0.020     1.390     0.020     
+PT2       N1        C2        single    1.337     0.020     1.337     0.020     
+PT2       C4        C12       double    1.390     0.020     1.390     0.020     
+PT2       N15       C16       single    1.450     0.020     1.450     0.020     
+PT2       PT        N15       single    2.025     0.020     2.025     0.020     
+PT2       N1        C11       double    1.337     0.020     1.337     0.020     
+PT2       PT        N1        single    2.025     0.020     2.025     0.020     
+PT2       C16       C17       single    1.524     0.020     1.524     0.020     
+PT2       C12       C11       single    1.490     0.020     1.490     0.020     
+PT2       C5        C12       single    1.390     0.020     1.390     0.020     
+PT2       C11       C14       single    1.490     0.020     1.490     0.020     
+PT2       PT        N18       single    2.025     0.020     2.025     0.020     
+PT2       N10       PT        single    2.025     0.020     2.025     0.020     
+PT2       C5        C6        double    1.390     0.020     1.390     0.020     
+PT2       C17       N18       single    1.450     0.020     1.450     0.020     
+PT2       C14       N10       double    1.337     0.020     1.337     0.020     
+PT2       C13       C14       single    1.490     0.020     1.490     0.020     
+PT2       C9        N10       single    1.337     0.020     1.337     0.020     
+PT2       C6        C13       single    1.390     0.020     1.390     0.020     
+PT2       C7        C13       double    1.390     0.020     1.390     0.020     
+PT2       C8        C9        double    1.390     0.020     1.390     0.020     
+PT2       C7        C8        single    1.390     0.020     1.390     0.020     
+PT2       H2        C2        single    1.082     0.013     0.975     0.010     
+PT2       H3        C3        single    1.082     0.013     0.975     0.010     
+PT2       H4        C4        single    1.082     0.013     0.975     0.010     
+PT2       H5        C5        single    1.082     0.013     0.975     0.010     
+PT2       H6        C6        single    1.082     0.013     0.975     0.010     
+PT2       H7        C7        single    1.082     0.013     0.975     0.010     
+PT2       H8        C8        single    1.082     0.013     0.975     0.010     
+PT2       H9        C9        single    1.082     0.013     0.975     0.010     
+PT2       HN15      N15       single    1.036     0.016     0.914     0.007     
+PT2       H116      C16       single    1.089     0.010     0.989     0.005     
+PT2       H216      C16       single    1.089     0.010     0.989     0.005     
+PT2       H117      C17       single    1.089     0.010     0.989     0.005     
+PT2       H217      C17       single    1.089     0.010     0.989     0.005     
+PT2       N18       HN18      single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PT2      HN18   N18    C17     118.500    3.000
+ PT2      HN18   N18    PT      120.000    3.000
+ PT2      C17    N18    PT      120.000    3.000
+ PT2      N18    C17    H117    109.470    3.000
+ PT2      N18    C17    H217    109.470    3.000
+ PT2      N18    C17    C16     112.000    3.000
+ PT2      H117   C17    H217    107.900    3.000
+ PT2      H117   C17    C16     109.470    3.000
+ PT2      H217   C17    C16     109.470    3.000
+ PT2      C17    C16    H116    109.470    3.000
+ PT2      C17    C16    H216    109.470    3.000
+ PT2      C17    C16    N15     112.000    3.000
+ PT2      H116   C16    H216    107.900    3.000
+ PT2      H116   C16    N15     109.470    3.000
+ PT2      H216   C16    N15     109.470    3.000
+ PT2      C16    N15    HN15    118.500    3.000
+ PT2      C16    N15    PT      120.000    3.000
+ PT2      HN15   N15    PT      120.000    3.000
+ PT2      N18    PT     N10      90.000    3.000
+ PT2      N18    PT     N1       90.000    3.000
+ PT2      N18    PT     N15      90.000    3.000
+ PT2      N1     PT     N15      90.000    3.000
+ PT2      N10    PT     N1       90.000    3.000
+ PT2      N10    PT     N15      90.000    3.000
+ PT2      PT     N10    C9      120.000    3.000
+ PT2      PT     N10    C14     120.000    3.000
+ PT2      C9     N10    C14     120.000    3.000
+ PT2      N10    C9     H9      120.000    3.000
+ PT2      N10    C9     C8      120.000    3.000
+ PT2      H9     C9     C8      120.000    3.000
+ PT2      C9     C8     H8      120.000    3.000
+ PT2      C9     C8     C7      120.000    3.000
+ PT2      H8     C8     C7      120.000    3.000
+ PT2      N10    C14    C13     120.000    3.000
+ PT2      N10    C14    C11     120.000    3.000
+ PT2      C13    C14    C11     120.000    3.000
+ PT2      C14    C13    C7      120.000    3.000
+ PT2      C14    C13    C6      120.000    3.000
+ PT2      C7     C13    C6      120.000    3.000
+ PT2      C13    C7     H7      120.000    3.000
+ PT2      C13    C7     C8      120.000    3.000
+ PT2      H7     C7     C8      120.000    3.000
+ PT2      C13    C6     H6      120.000    3.000
+ PT2      C13    C6     C5      120.000    3.000
+ PT2      H6     C6     C5      120.000    3.000
+ PT2      C14    C11    N1      120.000    3.000
+ PT2      C14    C11    C12     120.000    3.000
+ PT2      N1     C11    C12     120.000    3.000
+ PT2      C11    N1     PT      120.000    3.000
+ PT2      C11    N1     C2      120.000    3.000
+ PT2      PT     N1     C2      120.000    3.000
+ PT2      C11    C12    C5      120.000    3.000
+ PT2      C11    C12    C4      120.000    3.000
+ PT2      C5     C12    C4      120.000    3.000
+ PT2      C12    C5     H5      120.000    3.000
+ PT2      C12    C5     C6      120.000    3.000
+ PT2      H5     C5     C6      120.000    3.000
+ PT2      C12    C4     H4      120.000    3.000
+ PT2      C12    C4     C3      120.000    3.000
+ PT2      H4     C4     C3      120.000    3.000
+ PT2      C4     C3     H3      120.000    3.000
+ PT2      C4     C3     C2      120.000    3.000
+ PT2      H3     C3     C2      120.000    3.000
+ PT2      C3     C2     H2      120.000    3.000
+ PT2      C3     C2     N1      120.000    3.000
+ PT2      H2     C2     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PT2      var_1    HN18   N18    C17    C16      -87.038   20.000   3
+ PT2      var_2    N18    C17    C16    N15      -51.850   20.000   3
+ PT2      var_3    C17    C16    N15    PT        37.754   20.000   3
+ PT2      var_4    HN18   N18    PT     N10      -12.862   20.000   1
+ PT2      var_5    N18    PT     N1     C11      122.943   20.000   1
+ PT2      var_6    N18    PT     N15    C16      -17.650   20.000   1
+ PT2      var_7    N18    PT     N10    C14     -122.978   20.000   1
+ PT2      CONST_1  PT     N10    C9     C8       180.000    0.000   0
+ PT2      CONST_2  N10    C9     C8     C7         0.000    0.000   0
+ PT2      CONST_3  PT     N10    C14    C11        0.000    0.000   0
+ PT2      CONST_4  N10    C14    C13    C6       179.616    0.000   0
+ PT2      CONST_5  C14    C13    C7     C8         0.000    0.000   0
+ PT2      CONST_6  C13    C7     C8     C9         0.000    0.000   0
+ PT2      CONST_7  C14    C13    C6     C5         0.000    0.000   0
+ PT2      CONST_8  N10    C14    C11    C12     -179.998    0.000   0
+ PT2      CONST_9  C14    C11    N1     PT         0.000    0.000   0
+ PT2      CONST_10 C11    N1     C2     C3         0.000    0.000   0
+ PT2      CONST_11 C14    C11    C12    C4      -179.643    0.000   0
+ PT2      CONST_12 C11    C12    C5     C6         0.000    0.000   0
+ PT2      CONST_13 C12    C5     C6     C13        0.000    0.000   0
+ PT2      CONST_14 C11    C12    C4     C3         0.000    0.000   0
+ PT2      CONST_15 C12    C4     C3     C2         0.000    0.000   0
+ PT2      CONST_16 C4     C3     C2     N1         0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PT2      plan-1    N1        0.020
+ PT2      plan-1    PT        0.020
+ PT2      plan-1    C2        0.020
+ PT2      plan-1    C11       0.020
+ PT2      plan-1    C3        0.020
+ PT2      plan-1    C4        0.020
+ PT2      plan-1    H2        0.020
+ PT2      plan-1    H3        0.020
+ PT2      plan-1    C12       0.020
+ PT2      plan-1    H4        0.020
+ PT2      plan-1    C5        0.020
+ PT2      plan-1    C6        0.020
+ PT2      plan-1    H5        0.020
+ PT2      plan-1    C13       0.020
+ PT2      plan-1    H6        0.020
+ PT2      plan-1    C14       0.020
+ PT2      plan-1    C7        0.020
+ PT2      plan-1    N10       0.020
+ PT2      plan-1    C8        0.020
+ PT2      plan-1    C9        0.020
+ PT2      plan-1    H7        0.020
+ PT2      plan-1    H8        0.020
+ PT2      plan-1    H9        0.020
+ PT2      plan-2    N15       0.020
+ PT2      plan-2    PT        0.020
+ PT2      plan-2    C16       0.020
+ PT2      plan-2    HN15      0.020
+ PT2      plan-3    N18       0.020
+ PT2      plan-3    PT        0.020
+ PT2      plan-3    C17       0.020
+ PT2      plan-3    HN18      0.020
+# ------------------------------------------------------

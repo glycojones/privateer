@@ -1,0 +1,243 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PEC     PEC     S,S-PENTYLTHIOCYSTEINE     peptide     30     13     .
+#
+data_comp_PEC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PEC     N       N       NT3     1       4.178       0.692       0.364
+PEC     CA      C       CH1     0       3.706       -0.613      -0.186
+PEC     CB      C       CH2     0       2.195       -0.744      -0.121
+PEC     SG      S       S2      0       1.477       -0.674      1.544
+PEC     SD      S       S2      0       0.762       1.214       1.672
+PEC     C1      C       CH2     0       -0.997      1.033       1.258
+PEC     C2      C       CH2     0       -1.258      0.696       -0.203
+PEC     C3      C       CH2     0       -2.728      0.674       -0.547
+PEC     C4      C       CH2     0       -3.463      -0.535      -0.028
+PEC     C5      C       CH3     0       -4.897      -0.618      -0.492
+PEC     C       C       C       0       4.259       -0.814      -1.603
+PEC     O       O       O       0       3.934       0.026       -2.465
+PEC     OXT     O       OC      -1      4.995       -1.804      -1.791
+PEC     H       H       H       0       4.878       1.010       -0.127
+PEC     H2      H       H       0       4.451       0.580       1.226
+PEC     H3      H       H       0       3.501       1.303       0.344
+PEC     HA      H       H       0       4.075       -1.324      0.388
+PEC     HB2     H       H       0       1.947       -1.610      -0.533
+PEC     HB3     H       H       0       1.801       -0.014      -0.663
+PEC     H11     H       H       0       -1.457      1.871       1.479
+PEC     H12     H       H       0       -1.379      0.327       1.822
+PEC     H21     H       H       0       -0.870      -0.183      -0.401
+PEC     H22     H       H       0       -0.807      1.359       -0.768
+PEC     H31     H       H       0       -2.826      0.705       -1.522
+PEC     H32     H       H       0       -3.151      1.479       -0.180
+PEC     H41     H       H       0       -3.447      -0.516      0.954
+PEC     H42     H       H       0       -2.987      -1.343      -0.319
+PEC     H51     H       H       0       -5.322      -1.400      -0.100
+PEC     H52     H       H       0       -4.922      -0.689      -1.462
+PEC     H53     H       H       0       -5.376      0.183       -0.215
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+PEC      N      n/a    CA     START
+PEC      H      N      .      .
+PEC      H2     N      .      .
+PEC      H3     N      .      .
+PEC      CA     N      C      .
+PEC      HA     CA     .      .
+PEC      CB     CA     SG     .
+PEC      HB2    CB     .      .
+PEC      HB3    CB     .      .
+PEC      SG     CB     SD     .
+PEC      SD     SG     C1     .
+PEC      C1     SD     C2     .
+PEC      H11    C1     .      .
+PEC      H12    C1     .      .
+PEC      C2     C1     C3     .
+PEC      H21    C2     .      .
+PEC      H22    C2     .      .
+PEC      C3     C2     C4     .
+PEC      H31    C3     .      .
+PEC      H32    C3     .      .
+PEC      C4     C3     C5     .
+PEC      H41    C4     .      .
+PEC      H42    C4     .      .
+PEC      C5     C4     H51    .
+PEC      H53    C5     .      .
+PEC      H52    C5     .      .
+PEC      H51    C5     .      .
+PEC      C      CA     .      END
+PEC      O      C      .      .
+PEC      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PEC       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+PEC       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+PEC       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+PEC       CB        SG        SINGLE    n         1.814     0.010     1.814     0.010     
+PEC       SG        SD        SINGLE    n         2.023     0.016     2.023     0.016     
+PEC       SD        C1        SINGLE    n         1.816     0.011     1.816     0.011     
+PEC       C1        C2        SINGLE    n         1.522     0.011     1.522     0.011     
+PEC       C2        C3        SINGLE    n         1.510     0.020     1.510     0.020     
+PEC       C3        C4        SINGLE    n         1.507     0.020     1.507     0.020     
+PEC       C4        C5        SINGLE    n         1.510     0.020     1.510     0.020     
+PEC       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+PEC       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+PEC       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+PEC       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+PEC       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+PEC       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+PEC       CB        HB2       SINGLE    n         1.089     0.010     0.991     0.010     
+PEC       CB        HB3       SINGLE    n         1.089     0.010     0.991     0.010     
+PEC       C1        H11       SINGLE    n         1.089     0.010     0.981     0.013     
+PEC       C1        H12       SINGLE    n         1.089     0.010     0.981     0.013     
+PEC       C2        H21       SINGLE    n         1.089     0.010     0.981     0.016     
+PEC       C2        H22       SINGLE    n         1.089     0.010     0.981     0.016     
+PEC       C3        H31       SINGLE    n         1.089     0.010     0.981     0.016     
+PEC       C3        H32       SINGLE    n         1.089     0.010     0.981     0.016     
+PEC       C4        H41       SINGLE    n         1.089     0.010     0.982     0.015     
+PEC       C4        H42       SINGLE    n         1.089     0.010     0.982     0.015     
+PEC       C5        H51       SINGLE    n         1.089     0.010     0.973     0.016     
+PEC       C5        H52       SINGLE    n         1.089     0.010     0.973     0.016     
+PEC       C5        H53       SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PEC          CA           N           H     109.671    1.50
+PEC          CA           N          H2     109.671    1.50
+PEC          CA           N          H3     109.671    1.50
+PEC           H           N          H2     109.028    2.41
+PEC           H           N          H3     109.028    2.41
+PEC          H2           N          H3     109.028    2.41
+PEC           N          CA          CB     111.909    1.50
+PEC           N          CA           C     109.494    1.50
+PEC           N          CA          HA     107.983    1.50
+PEC          CB          CA           C     113.463    1.50
+PEC          CB          CA          HA     107.198    1.50
+PEC           C          CA          HA     108.606    1.50
+PEC          CA          CB          SG     115.472    1.77
+PEC          CA          CB         HB2     107.935    1.50
+PEC          CA          CB         HB3     107.935    1.50
+PEC          SG          CB         HB2     108.472    1.50
+PEC          SG          CB         HB3     108.472    1.50
+PEC         HB2          CB         HB3     108.536    1.50
+PEC          CB          SG          SD     103.493    1.52
+PEC          SG          SD          C1     103.571    1.50
+PEC          SD          C1          C2     114.114    1.50
+PEC          SD          C1         H11     108.628    1.50
+PEC          SD          C1         H12     108.628    1.50
+PEC          C2          C1         H11     109.079    1.50
+PEC          C2          C1         H12     109.079    1.50
+PEC         H11          C1         H12     107.680    1.50
+PEC          C1          C2          C3     112.785    1.50
+PEC          C1          C2         H21     108.867    1.50
+PEC          C1          C2         H22     108.867    1.50
+PEC          C3          C2         H21     108.963    1.50
+PEC          C3          C2         H22     108.963    1.50
+PEC         H21          C2         H22     107.852    1.50
+PEC          C2          C3          C4     114.121    1.50
+PEC          C2          C3         H31     108.891    1.50
+PEC          C2          C3         H32     108.891    1.50
+PEC          C4          C3         H31     108.653    1.50
+PEC          C4          C3         H32     108.653    1.50
+PEC         H31          C3         H32     107.646    1.50
+PEC          C3          C4          C5     113.719    3.00
+PEC          C3          C4         H41     108.758    1.50
+PEC          C3          C4         H42     108.758    1.50
+PEC          C5          C4         H41     108.918    1.50
+PEC          C5          C4         H42     108.918    1.50
+PEC         H41          C4         H42     107.763    1.50
+PEC          C4          C5         H51     109.554    1.50
+PEC          C4          C5         H52     109.554    1.50
+PEC          C4          C5         H53     109.554    1.50
+PEC         H51          C5         H52     109.380    1.50
+PEC         H51          C5         H53     109.380    1.50
+PEC         H52          C5         H53     109.380    1.50
+PEC          CA           C           O     117.134    1.50
+PEC          CA           C         OXT     117.134    1.50
+PEC           O           C         OXT     125.732    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PEC             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+PEC             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+PEC            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+PEC            sp3_sp3_19          CA          CB          SG          SD     180.000   10.00     3
+PEC            sp3_sp3_22          C1          SD          SG          CB     180.000   10.00     3
+PEC            sp3_sp3_23          C2          C1          SD          SG     180.000   10.00     3
+PEC            sp3_sp3_26          SD          C1          C2          C3     180.000   10.00     3
+PEC            sp3_sp3_35          C1          C2          C3          C4     180.000   10.00     3
+PEC            sp3_sp3_44          C2          C3          C4          C5     180.000   10.00     3
+PEC            sp3_sp3_53          C3          C4          C5         H51     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PEC    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PEC    plan-1           C   0.020
+PEC    plan-1          CA   0.020
+PEC    plan-1           O   0.020
+PEC    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PEC SMILES           ACDLabs              10.04 "O=C(O)C(N)CSSCCCCC"
+PEC SMILES_CANONICAL CACTVS               3.341 "CCCCCSSC[C@H](N)C(O)=O"
+PEC SMILES           CACTVS               3.341 "CCCCCSSC[CH](N)C(O)=O"
+PEC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCCCCSSC[C@@H](C(=O)O)N"
+PEC SMILES           "OpenEye OEToolkits" 1.5.0 "CCCCCSSCC(C(=O)O)N"
+PEC InChI            InChI                1.03  "InChI=1S/C8H17NO2S2/c1-2-3-4-5-12-13-6-7(9)8(10)11/h7H,2-6,9H2,1H3,(H,10,11)/t7-/m0/s1"
+PEC InChIKey         InChI                1.03  QFYJSCJLKKAFDH-ZETCQYMHSA-N
+PEC ?                acedrg               196         "dictionary generator"
+PEC ?                acedrg_database      11          "data source"
+PEC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PEC ?                refmac5              5.8.0222    "optimization tool"

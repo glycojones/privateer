@@ -1,0 +1,896 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ALB      ALB 'DELTA-2-ALBOMYCIN A1                ' non-polymer       125  69 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ALB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ALB           O16    O    O         0.000      0.000    0.000    0.000
+ ALB           C37    C    C         0.000     -0.278    0.257   -1.158
+ ALB           N10    N    NH2       0.000      0.270   -0.461   -2.157
+ ALB           H1N2   H    H         0.000      0.043   -0.252   -3.122
+ ALB           H1N3   H    H         0.000      0.914   -1.216   -1.951
+ ALB           N11    N    N         0.000     -1.128    1.252   -1.437
+ ALB           C34    C    CR6       0.000     -2.373    0.976   -1.815
+ ALB           N8     N    NR6       0.000     -3.223    1.985   -2.202
+ ALB           C36    C    CH3       0.000     -2.760    3.375   -2.205
+ ALB           H361   H    H         0.000     -2.958    3.815   -1.262
+ ALB           H362   H    H         0.000     -1.718    3.399   -2.394
+ ALB           H363   H    H         0.000     -3.269    3.914   -2.961
+ ALB           C35    C    CR16      0.000     -2.843   -0.357   -1.816
+ ALB           H35    H    H         0.000     -2.194   -1.168   -1.507
+ ALB           C33    C    CR16      0.000     -4.113   -0.607   -2.206
+ ALB           H33    H    H         0.000     -4.486   -1.623   -2.216
+ ALB           N9     N    NR6       0.000     -4.925    0.423   -2.589
+ ALB           C32    C    CR6       0.000     -4.482    1.694   -2.584
+ ALB           O15    O    O         0.000     -5.226    2.590   -2.929
+ ALB           C30    C    CH1       0.000     -6.300    0.141   -3.009
+ ALB           H30    H    H         0.000     -6.801    1.055   -3.357
+ ALB           C29    C    CH1       0.000     -6.334   -0.958   -4.095
+ ALB           H29    H    H         0.000     -6.422   -0.476   -5.079
+ ALB           O17    O    OH1       0.000     -5.100   -1.677   -4.048
+ ALB           H17    H    H         0.000     -5.069   -2.309   -4.778
+ ALB           S      S    S2        0.000     -7.257   -0.663   -1.651
+ ALB           C31    C    CH1       0.000     -8.388   -1.661   -2.717
+ ALB           H31    H    H         0.000     -9.269   -1.075   -3.013
+ ALB           C28    C    CH1       0.000     -7.479   -1.947   -3.934
+ ALB           H28    H    H         0.000     -7.058   -2.957   -3.827
+ ALB           O18    O    OH1       0.000     -8.278   -1.910   -5.118
+ ALB           H18    H    H         0.000     -7.721   -2.088   -5.888
+ ALB           C27    C    CH1       0.000     -8.800   -2.958   -2.020
+ ALB           H27    H    H         0.000     -7.900   -3.502   -1.697
+ ALB           O14    O    OH1       0.000     -9.547   -3.770   -2.927
+ ALB           H14    H    H         0.000    -10.338   -3.291   -3.210
+ ALB           C25    C    CH1       0.000     -9.661   -2.629   -0.799
+ ALB           H25    H    H         0.000     -9.085   -2.005   -0.102
+ ALB           C26    C    C         0.000    -10.067   -3.908   -0.111
+ ALB           O13    O    OC       -0.500    -11.279   -4.194    0.011
+ ALB           O12    O    OC       -0.500     -9.192   -4.682    0.336
+ ALB           N7     N    NH1       0.000    -10.860   -1.904   -1.229
+ ALB           H7N1   H    H         0.000    -11.209   -2.017   -2.170
+ ALB           C24    C    C         0.000    -11.498   -1.087   -0.367
+ ALB           O11    O    O         0.000    -11.080   -0.952    0.764
+ ALB           C22    C    CH1       0.000    -12.730   -0.342   -0.809
+ ALB           H22    H    H         0.000    -13.503   -1.061   -1.114
+ ALB           C23    C    CH2       0.000    -12.381    0.566   -1.990
+ ALB           H232   H    H         0.000    -13.252    1.170   -2.254
+ ALB           H231   H    H         0.000    -12.093   -0.047   -2.847
+ ALB           O10    O    OH1       0.000    -11.296    1.422   -1.628
+ ALB           H10    H    H         0.000    -11.076    1.995   -2.375
+ ALB           N6     N    NH1       0.000    -13.233    0.472    0.301
+ ALB           H6N    H    H         0.000    -12.603    0.774    1.031
+ ALB           C21    C    C         0.000    -14.535    0.818    0.348
+ ALB           O9     O    O         0.000    -15.291    0.454   -0.529
+ ALB           C6     C    CH1       0.000    -15.049    1.652    1.486
+ ALB           H6     H    H         0.000    -14.281    2.411    1.691
+ ALB           N1     N    NH1       0.000    -16.265    2.379    1.128
+ ALB           H1     H    H         0.000    -16.347    3.347    1.404
+ ALB           C2     C    C         0.000    -17.277    1.822    0.452
+ ALB           O2     O    O         0.000    -17.380    0.613    0.437
+ ALB           C9     C    CH2       0.000    -15.193    0.826    2.755
+ ALB           H92    H    H         0.000    -15.827    1.386    3.445
+ ALB           H91    H    H         0.000    -14.198    0.709    3.189
+ ALB           C12    C    CH2       0.000    -15.803   -0.548    2.503
+ ALB           H122   H    H         0.000    -15.027   -1.215    2.123
+ ALB           H121   H    H         0.000    -16.595   -0.451    1.757
+ ALB           C15    C    CH2       0.000    -16.388   -1.127    3.801
+ ALB           H152   H    H         0.000    -15.859   -0.703    4.658
+ ALB           H151   H    H         0.000    -16.268   -2.212    3.801
+ ALB           N3     N    N         0.000    -17.803   -0.792    3.888
+ ALB           O6     O    O2        0.000    -18.821   -1.700    3.512
+ ALB           FE     FE   FE        0.000    -20.185   -0.740    2.885
+ ALB           O1     O    O2        0.000    -19.324    0.730    3.918
+ ALB           C1     C    C         0.000    -18.259    0.369    4.300
+ ALB           C19    C    CH3       0.000    -17.528    1.193    5.328
+ ALB           H191   H    H         0.000    -17.795    0.865    6.300
+ ALB           H192   H    H         0.000    -16.483    1.082    5.194
+ ALB           H193   H    H         0.000    -17.791    2.213    5.216
+ ALB           O3     O    O2        0.000    -21.013   -2.244    1.904
+ ALB           C3     C    C         0.000    -20.786   -2.131    0.742
+ ALB           C18    C    CH3       0.000    -21.261   -3.186   -0.226
+ ALB           H181   H    H         0.000    -20.964   -2.925   -1.210
+ ALB           H182   H    H         0.000    -20.836   -4.122    0.032
+ ALB           H183   H    H         0.000    -22.317   -3.256   -0.185
+ ALB           O5     O    O2        0.000    -21.418   -0.973    4.420
+ ALB           C5     C    C         0.000    -22.302   -0.162    4.342
+ ALB           C20    C    CH3       0.000    -23.391   -0.177    5.378
+ ALB           H201   H    H         0.000    -24.094    0.585    5.163
+ ALB           H202   H    H         0.000    -23.877   -1.118    5.367
+ ALB           H203   H    H         0.000    -22.971   -0.009    6.335
+ ALB           O8     O    O2        0.000    -21.434    0.391    2.286
+ ALB           N5     N    N         0.000    -22.297    0.699    3.352
+ ALB           C17    C    CH2       0.000    -23.083    1.931    3.286
+ ALB           H172   H    H         0.000    -23.753    1.979    4.146
+ ALB           H171   H    H         0.000    -23.672    1.935    2.366
+ ALB           C14    C    CH2       0.000    -22.144    3.144    3.298
+ ALB           H142   H    H         0.000    -21.367    2.985    4.049
+ ALB           H141   H    H         0.000    -22.719    4.036    3.555
+ ALB           C11    C    CH2       0.000    -21.498    3.330    1.925
+ ALB           H112   H    H         0.000    -22.219    3.800    1.253
+ ALB           H111   H    H         0.000    -21.215    2.353    1.529
+ ALB           C8     C    CH1       0.000    -20.257    4.212    2.040
+ ALB           H8     H    H         0.000    -20.547    5.175    2.483
+ ALB           N12    N    NH2       0.000    -19.247    3.579    2.901
+ ALB           H1N5   H    H         0.000    -19.427    2.676    3.324
+ ALB           H1N4   H    H         0.000    -18.362    4.042    3.078
+ ALB           O7     O    O2        0.000    -19.368   -0.423    1.324
+ ALB           N4     N    N         0.000    -20.107   -1.076    0.323
+ ALB           C16    C    CH2       0.000    -20.137   -0.655   -1.066
+ ALB           H162   H    H         0.000    -21.185   -0.483   -1.318
+ ALB           H161   H    H         0.000    -19.756   -1.494   -1.654
+ ALB           C13    C    CH2       0.000    -19.331    0.587   -1.377
+ ALB           H132   H    H         0.000    -19.573    0.879   -2.401
+ ALB           H131   H    H         0.000    -18.277    0.310   -1.318
+ ALB           C10    C    CH2       0.000    -19.605    1.756   -0.434
+ ALB           H102   H    H         0.000    -19.900    1.379    0.547
+ ALB           H101   H    H         0.000    -20.405    2.378   -0.839
+ ALB           C7     C    CH1       0.000    -18.328    2.588   -0.300
+ ALB           H7     H    H         0.000    -17.939    2.710   -1.321
+ ALB           N2     N    NH1       0.000    -18.552    3.919    0.199
+ ALB           H2     H    H         0.000    -17.749    4.532    0.164
+ ALB           C4     C    C         0.000    -19.655    4.462    0.699
+ ALB           O4     O    O         0.000    -20.243    5.257   -0.021
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ALB      O16    n/a    C37    START
+ ALB      C37    O16    N11    .
+ ALB      N10    C37    H1N3   .
+ ALB      H1N2   N10    .      .
+ ALB      H1N3   N10    .      .
+ ALB      N11    C37    C34    .
+ ALB      C34    N11    C35    .
+ ALB      N8     C34    C36    .
+ ALB      C36    N8     H363   .
+ ALB      H361   C36    .      .
+ ALB      H362   C36    .      .
+ ALB      H363   C36    .      .
+ ALB      C35    C34    C33    .
+ ALB      H35    C35    .      .
+ ALB      C33    C35    N9     .
+ ALB      H33    C33    .      .
+ ALB      N9     C33    C30    .
+ ALB      C32    N9     O15    .
+ ALB      O15    C32    .      .
+ ALB      C30    N9     S      .
+ ALB      H30    C30    .      .
+ ALB      C29    C30    O17    .
+ ALB      H29    C29    .      .
+ ALB      O17    C29    H17    .
+ ALB      H17    O17    .      .
+ ALB      S      C30    C31    .
+ ALB      C31    S      C27    .
+ ALB      H31    C31    .      .
+ ALB      C28    C31    O18    .
+ ALB      H28    C28    .      .
+ ALB      O18    C28    H18    .
+ ALB      H18    O18    .      .
+ ALB      C27    C31    C25    .
+ ALB      H27    C27    .      .
+ ALB      O14    C27    H14    .
+ ALB      H14    O14    .      .
+ ALB      C25    C27    N7     .
+ ALB      H25    C25    .      .
+ ALB      C26    C25    O12    .
+ ALB      O13    C26    .      .
+ ALB      O12    C26    .      .
+ ALB      N7     C25    C24    .
+ ALB      H7N1   N7     .      .
+ ALB      C24    N7     C22    .
+ ALB      O11    C24    .      .
+ ALB      C22    C24    N6     .
+ ALB      H22    C22    .      .
+ ALB      C23    C22    O10    .
+ ALB      H232   C23    .      .
+ ALB      H231   C23    .      .
+ ALB      O10    C23    H10    .
+ ALB      H10    O10    .      .
+ ALB      N6     C22    C21    .
+ ALB      H6N    N6     .      .
+ ALB      C21    N6     C6     .
+ ALB      O9     C21    .      .
+ ALB      C6     C21    C9     .
+ ALB      H6     C6     .      .
+ ALB      N1     C6     C2     .
+ ALB      H1     N1     .      .
+ ALB      C2     N1     O2     .
+ ALB      O2     C2     .      .
+ ALB      C9     C6     C12    .
+ ALB      H92    C9     .      .
+ ALB      H91    C9     .      .
+ ALB      C12    C9     C15    .
+ ALB      H122   C12    .      .
+ ALB      H121   C12    .      .
+ ALB      C15    C12    N3     .
+ ALB      H152   C15    .      .
+ ALB      H151   C15    .      .
+ ALB      N3     C15    O6     .
+ ALB      O6     N3     FE     .
+ ALB      FE     O6     O7     .
+ ALB      O1     FE     C1     .
+ ALB      C1     O1     C19    .
+ ALB      C19    C1     H193   .
+ ALB      H191   C19    .      .
+ ALB      H192   C19    .      .
+ ALB      H193   C19    .      .
+ ALB      O3     FE     C3     .
+ ALB      C3     O3     C18    .
+ ALB      C18    C3     H183   .
+ ALB      H181   C18    .      .
+ ALB      H182   C18    .      .
+ ALB      H183   C18    .      .
+ ALB      O5     FE     C5     .
+ ALB      C5     O5     C20    .
+ ALB      C20    C5     H203   .
+ ALB      H201   C20    .      .
+ ALB      H202   C20    .      .
+ ALB      H203   C20    .      .
+ ALB      O8     FE     N5     .
+ ALB      N5     O8     C17    .
+ ALB      C17    N5     C14    .
+ ALB      H172   C17    .      .
+ ALB      H171   C17    .      .
+ ALB      C14    C17    C11    .
+ ALB      H142   C14    .      .
+ ALB      H141   C14    .      .
+ ALB      C11    C14    C8     .
+ ALB      H112   C11    .      .
+ ALB      H111   C11    .      .
+ ALB      C8     C11    N12    .
+ ALB      H8     C8     .      .
+ ALB      N12    C8     H1N4   .
+ ALB      H1N5   N12    .      .
+ ALB      H1N4   N12    .      .
+ ALB      O7     FE     N4     .
+ ALB      N4     O7     C16    .
+ ALB      C16    N4     C13    .
+ ALB      H162   C16    .      .
+ ALB      H161   C16    .      .
+ ALB      C13    C16    C10    .
+ ALB      H132   C13    .      .
+ ALB      H131   C13    .      .
+ ALB      C10    C13    C7     .
+ ALB      H102   C10    .      .
+ ALB      H101   C10    .      .
+ ALB      C7     C10    N2     .
+ ALB      H7     C7     .      .
+ ALB      N2     C7     C4     .
+ ALB      H2     N2     .      .
+ ALB      C4     N2     O4     .
+ ALB      O4     C4     .      END
+ ALB      C1     N3     .    ADD
+ ALB      C2     C7     .    ADD
+ ALB      C3     N4     .    ADD
+ ALB      C4     C8     .    ADD
+ ALB      C5     N5     .    ADD
+ ALB      C28    C29    .    ADD
+ ALB      C32    N8     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ALB       C19       C1        single    1.500     0.020     1.500     0.020     
+ALB       C1        N3        single    1.330     0.020     1.330     0.020     
+ALB       C1        O1        double    1.454     0.020     1.454     0.020     
+ALB       C2        C7        single    1.500     0.020     1.500     0.020     
+ALB       C2        N1        single    1.330     0.020     1.330     0.020     
+ALB       O2        C2        double    1.220     0.020     1.220     0.020     
+ALB       C18       C3        single    1.500     0.020     1.500     0.020     
+ALB       C3        N4        single    1.330     0.020     1.330     0.020     
+ALB       C3        O3        double    1.454     0.020     1.454     0.020     
+ALB       C4        C8        single    1.500     0.020     1.500     0.020     
+ALB       C4        N2        single    1.330     0.020     1.330     0.020     
+ALB       O4        C4        double    1.220     0.020     1.220     0.020     
+ALB       C20       C5        single    1.500     0.020     1.500     0.020     
+ALB       C5        N5        single    1.330     0.020     1.330     0.020     
+ALB       C5        O5        double    1.454     0.020     1.454     0.020     
+ALB       C9        C6        single    1.524     0.020     1.524     0.020     
+ALB       C6        C21       single    1.500     0.020     1.500     0.020     
+ALB       N1        C6        single    1.450     0.020     1.450     0.020     
+ALB       H6        C6        single    1.089     0.010     0.989     0.005     
+ALB       C7        C10       single    1.524     0.020     1.524     0.020     
+ALB       N2        C7        single    1.450     0.020     1.450     0.020     
+ALB       H7        C7        single    1.089     0.010     0.989     0.005     
+ALB       C8        C11       single    1.524     0.020     1.524     0.020     
+ALB       N12       C8        single    1.450     0.020     1.450     0.020     
+ALB       H8        C8        single    1.089     0.010     0.989     0.005     
+ALB       C12       C9        single    1.524     0.020     1.524     0.020     
+ALB       H92       C9        single    1.089     0.010     0.989     0.005     
+ALB       H91       C9        single    1.089     0.010     0.989     0.005     
+ALB       C10       C13       single    1.524     0.020     1.524     0.020     
+ALB       H102      C10       single    1.089     0.010     0.989     0.005     
+ALB       H101      C10       single    1.089     0.010     0.989     0.005     
+ALB       C11       C14       single    1.524     0.020     1.524     0.020     
+ALB       H112      C11       single    1.089     0.010     0.989     0.005     
+ALB       H111      C11       single    1.089     0.010     0.989     0.005     
+ALB       C15       C12       single    1.524     0.020     1.524     0.020     
+ALB       H122      C12       single    1.089     0.010     0.989     0.005     
+ALB       H121      C12       single    1.089     0.010     0.989     0.005     
+ALB       C13       C16       single    1.524     0.020     1.524     0.020     
+ALB       H132      C13       single    1.089     0.010     0.989     0.005     
+ALB       H131      C13       single    1.089     0.010     0.989     0.005     
+ALB       C14       C17       single    1.524     0.020     1.524     0.020     
+ALB       H142      C14       single    1.089     0.010     0.989     0.005     
+ALB       H141      C14       single    1.089     0.010     0.989     0.005     
+ALB       N3        C15       single    1.455     0.020     1.455     0.020     
+ALB       H152      C15       single    1.089     0.010     0.989     0.005     
+ALB       H151      C15       single    1.089     0.010     0.989     0.005     
+ALB       C16       N4        single    1.455     0.020     1.455     0.020     
+ALB       H162      C16       single    1.089     0.010     0.989     0.005     
+ALB       H161      C16       single    1.089     0.010     0.989     0.005     
+ALB       C17       N5        single    1.455     0.020     1.455     0.020     
+ALB       H172      C17       single    1.089     0.010     0.989     0.005     
+ALB       H171      C17       single    1.089     0.010     0.989     0.005     
+ALB       H183      C18       single    1.089     0.010     0.989     0.005     
+ALB       H182      C18       single    1.089     0.010     0.989     0.005     
+ALB       H181      C18       single    1.089     0.010     0.989     0.005     
+ALB       H193      C19       single    1.089     0.010     0.989     0.005     
+ALB       H192      C19       single    1.089     0.010     0.989     0.005     
+ALB       H191      C19       single    1.089     0.010     0.989     0.005     
+ALB       H203      C20       single    1.089     0.010     0.989     0.005     
+ALB       H202      C20       single    1.089     0.010     0.989     0.005     
+ALB       H201      C20       single    1.089     0.010     0.989     0.005     
+ALB       C21       N6        single    1.330     0.020     1.330     0.020     
+ALB       O9        C21       double    1.220     0.020     1.220     0.020     
+ALB       C23       C22       single    1.524     0.020     1.524     0.020     
+ALB       C22       C24       single    1.500     0.020     1.500     0.020     
+ALB       N6        C22       single    1.450     0.020     1.450     0.020     
+ALB       H22       C22       single    1.089     0.010     0.989     0.005     
+ALB       O10       C23       single    1.432     0.020     1.432     0.020     
+ALB       H232      C23       single    1.089     0.010     0.989     0.005     
+ALB       H231      C23       single    1.089     0.010     0.989     0.005     
+ALB       C24       N7        single    1.330     0.020     1.330     0.020     
+ALB       O11       C24       double    1.220     0.020     1.220     0.020     
+ALB       C26       C25       single    1.500     0.020     1.500     0.020     
+ALB       C25       C27       single    1.524     0.020     1.524     0.020     
+ALB       N7        C25       single    1.450     0.020     1.450     0.020     
+ALB       H25       C25       single    1.089     0.010     0.989     0.005     
+ALB       O12       C26       deloc     1.250     0.020     1.250     0.020     
+ALB       O13       C26       deloc     1.250     0.020     1.250     0.020     
+ALB       C27       C31       single    1.524     0.020     1.524     0.020     
+ALB       O14       C27       single    1.432     0.020     1.432     0.020     
+ALB       H27       C27       single    1.089     0.010     0.989     0.005     
+ALB       C28       C29       single    1.524     0.020     1.524     0.020     
+ALB       C28       C31       single    1.524     0.020     1.524     0.020     
+ALB       O18       C28       single    1.432     0.020     1.432     0.020     
+ALB       H28       C28       single    1.089     0.010     0.989     0.005     
+ALB       C29       C30       single    1.524     0.020     1.524     0.020     
+ALB       O17       C29       single    1.432     0.020     1.432     0.020     
+ALB       H29       C29       single    1.089     0.010     0.989     0.005     
+ALB       S         C30       single    1.765     0.020     1.765     0.020     
+ALB       C30       N9        single    1.465     0.020     1.465     0.020     
+ALB       H30       C30       single    1.089     0.010     0.989     0.005     
+ALB       C31       S         single    1.765     0.020     1.765     0.020     
+ALB       H31       C31       single    1.089     0.010     0.989     0.005     
+ALB       C32       N8        single    1.410     0.020     1.410     0.020     
+ALB       C32       N9        single    1.410     0.020     1.410     0.020     
+ALB       O15       C32       double    1.250     0.020     1.250     0.020     
+ALB       C33       C35       double    1.390     0.020     1.390     0.020     
+ALB       N9        C33       single    1.337     0.020     1.337     0.020     
+ALB       H33       C33       single    1.082     0.013     0.975     0.010     
+ALB       C35       C34       single    1.390     0.020     1.390     0.020     
+ALB       N8        C34       single    1.410     0.020     1.410     0.020     
+ALB       C34       N11       double    1.355     0.020     1.355     0.020     
+ALB       H35       C35       single    1.082     0.013     0.975     0.010     
+ALB       C36       N8        single    1.465     0.020     1.465     0.020     
+ALB       H363      C36       single    1.089     0.010     0.989     0.005     
+ALB       H362      C36       single    1.089     0.010     0.989     0.005     
+ALB       H361      C36       single    1.089     0.010     0.989     0.005     
+ALB       N10       C37       single    1.332     0.020     1.332     0.020     
+ALB       N11       C37       single    1.330     0.020     1.330     0.020     
+ALB       C37       O16       double    1.220     0.020     1.220     0.020     
+ALB       O1        FE        single    1.870     0.020     1.870     0.020     
+ALB       O3        FE        single    1.870     0.020     1.870     0.020     
+ALB       O5        FE        single    1.870     0.020     1.870     0.020     
+ALB       FE        O6        single    1.870     0.020     1.870     0.020     
+ALB       O7        FE        single    1.870     0.020     1.870     0.020     
+ALB       O8        FE        single    1.870     0.020     1.870     0.020     
+ALB       H1        N1        single    1.016     0.010     0.899     0.007     
+ALB       H2        N2        single    1.016     0.010     0.899     0.007     
+ALB       O6        N3        single    1.255     0.020     1.255     0.020     
+ALB       N4        O7        single    1.255     0.020     1.255     0.020     
+ALB       N5        O8        single    1.255     0.020     1.255     0.020     
+ALB       H6N       N6        single    1.016     0.010     0.899     0.007     
+ALB       H7N1      N7        single    1.016     0.010     0.899     0.007     
+ALB       H1N3      N10       single    1.016     0.010     0.899     0.007     
+ALB       H1N2      N10       single    1.016     0.010     0.899     0.007     
+ALB       H1N4      N12       single    1.036     0.016     0.914     0.007     
+ALB       H1N5      N12       single    1.036     0.016     0.914     0.007     
+ALB       H10       O10       single    0.970     0.012     0.839     0.014     
+ALB       H14       O14       single    0.970     0.012     0.839     0.014     
+ALB       H17       O17       single    0.970     0.012     0.839     0.014     
+ALB       H18       O18       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ALB      O16    C37    N10     123.000    3.000
+ ALB      O16    C37    N11     123.000    3.000
+ ALB      N10    C37    N11     120.000    3.000
+ ALB      C37    N10    H1N2    120.000    3.000
+ ALB      C37    N10    H1N3    120.000    3.000
+ ALB      H1N2   N10    H1N3    120.000    3.000
+ ALB      C37    N11    C34     120.000    3.000
+ ALB      N11    C34    N8      120.000    3.000
+ ALB      N11    C34    C35     120.000    3.000
+ ALB      N8     C34    C35     120.000    3.000
+ ALB      C34    N8     C36     120.000    3.000
+ ALB      C34    N8     C32     120.000    3.000
+ ALB      C36    N8     C32     120.000    3.000
+ ALB      N8     C36    H361    109.470    3.000
+ ALB      N8     C36    H362    109.470    3.000
+ ALB      N8     C36    H363    109.470    3.000
+ ALB      H361   C36    H362    109.470    3.000
+ ALB      H361   C36    H363    109.470    3.000
+ ALB      H362   C36    H363    109.470    3.000
+ ALB      C34    C35    H35     120.000    3.000
+ ALB      C34    C35    C33     120.000    3.000
+ ALB      H35    C35    C33     120.000    3.000
+ ALB      C35    C33    H33     120.000    3.000
+ ALB      C35    C33    N9      120.000    3.000
+ ALB      H33    C33    N9      120.000    3.000
+ ALB      C33    N9     C32     120.000    3.000
+ ALB      C33    N9     C30     120.000    3.000
+ ALB      C32    N9     C30     120.000    3.000
+ ALB      N9     C32    O15     120.000    3.000
+ ALB      N9     C32    N8      120.000    3.000
+ ALB      O15    C32    N8      120.000    3.000
+ ALB      N9     C30    H30     109.470    3.000
+ ALB      N9     C30    C29     109.470    3.000
+ ALB      N9     C30    S       109.500    3.000
+ ALB      H30    C30    C29     108.340    3.000
+ ALB      H30    C30    S       109.500    3.000
+ ALB      C29    C30    S       109.500    3.000
+ ALB      C30    C29    H29     108.340    3.000
+ ALB      C30    C29    O17     109.470    3.000
+ ALB      C30    C29    C28     111.000    3.000
+ ALB      H29    C29    O17     109.470    3.000
+ ALB      H29    C29    C28     108.340    3.000
+ ALB      O17    C29    C28     109.470    3.000
+ ALB      C29    O17    H17     109.470    3.000
+ ALB      C30    S      C31      97.351    3.000
+ ALB      S      C31    H31     109.500    3.000
+ ALB      S      C31    C28     109.500    3.000
+ ALB      S      C31    C27     109.500    3.000
+ ALB      H31    C31    C28     108.340    3.000
+ ALB      H31    C31    C27     108.340    3.000
+ ALB      C28    C31    C27     111.000    3.000
+ ALB      C31    C28    H28     108.340    3.000
+ ALB      C31    C28    O18     109.470    3.000
+ ALB      C31    C28    C29     111.000    3.000
+ ALB      H28    C28    O18     109.470    3.000
+ ALB      H28    C28    C29     108.340    3.000
+ ALB      O18    C28    C29     109.470    3.000
+ ALB      C28    O18    H18     109.470    3.000
+ ALB      C31    C27    H27     108.340    3.000
+ ALB      C31    C27    O14     109.470    3.000
+ ALB      C31    C27    C25     111.000    3.000
+ ALB      H27    C27    O14     109.470    3.000
+ ALB      H27    C27    C25     108.340    3.000
+ ALB      O14    C27    C25     109.470    3.000
+ ALB      C27    O14    H14     109.470    3.000
+ ALB      C27    C25    H25     108.340    3.000
+ ALB      C27    C25    C26     109.470    3.000
+ ALB      C27    C25    N7      110.000    3.000
+ ALB      H25    C25    C26     108.810    3.000
+ ALB      H25    C25    N7      108.550    3.000
+ ALB      C26    C25    N7      111.600    3.000
+ ALB      C25    C26    O13     118.500    3.000
+ ALB      C25    C26    O12     118.500    3.000
+ ALB      O13    C26    O12     123.000    3.000
+ ALB      C25    N7     H7N1    118.500    3.000
+ ALB      C25    N7     C24     121.500    3.000
+ ALB      H7N1   N7     C24     120.000    3.000
+ ALB      N7     C24    O11     123.000    3.000
+ ALB      N7     C24    C22     116.500    3.000
+ ALB      O11    C24    C22     120.500    3.000
+ ALB      C24    C22    H22     108.810    3.000
+ ALB      C24    C22    C23     109.470    3.000
+ ALB      C24    C22    N6      111.600    3.000
+ ALB      H22    C22    C23     108.340    3.000
+ ALB      H22    C22    N6      108.550    3.000
+ ALB      C23    C22    N6      110.000    3.000
+ ALB      C22    C23    H232    109.470    3.000
+ ALB      C22    C23    H231    109.470    3.000
+ ALB      C22    C23    O10     109.470    3.000
+ ALB      H232   C23    H231    107.900    3.000
+ ALB      H232   C23    O10     109.470    3.000
+ ALB      H231   C23    O10     109.470    3.000
+ ALB      C23    O10    H10     109.470    3.000
+ ALB      C22    N6     H6N     118.500    3.000
+ ALB      C22    N6     C21     121.500    3.000
+ ALB      H6N    N6     C21     120.000    3.000
+ ALB      N6     C21    O9      123.000    3.000
+ ALB      N6     C21    C6      116.500    3.000
+ ALB      O9     C21    C6      120.500    3.000
+ ALB      C21    C6     H6      108.810    3.000
+ ALB      C21    C6     N1      111.600    3.000
+ ALB      C21    C6     C9      109.470    3.000
+ ALB      H6     C6     N1      108.550    3.000
+ ALB      H6     C6     C9      108.340    3.000
+ ALB      N1     C6     C9      110.000    3.000
+ ALB      C6     N1     H1      118.500    3.000
+ ALB      C6     N1     C2      121.500    3.000
+ ALB      H1     N1     C2      120.000    3.000
+ ALB      N1     C2     O2      123.000    3.000
+ ALB      N1     C2     C7      116.500    3.000
+ ALB      O2     C2     C7      120.500    3.000
+ ALB      C6     C9     H92     109.470    3.000
+ ALB      C6     C9     H91     109.470    3.000
+ ALB      C6     C9     C12     111.000    3.000
+ ALB      H92    C9     H91     107.900    3.000
+ ALB      H92    C9     C12     109.470    3.000
+ ALB      H91    C9     C12     109.470    3.000
+ ALB      C9     C12    H122    109.470    3.000
+ ALB      C9     C12    H121    109.470    3.000
+ ALB      C9     C12    C15     111.000    3.000
+ ALB      H122   C12    H121    107.900    3.000
+ ALB      H122   C12    C15     109.470    3.000
+ ALB      H121   C12    C15     109.470    3.000
+ ALB      C12    C15    H152    109.470    3.000
+ ALB      C12    C15    H151    109.470    3.000
+ ALB      C12    C15    N3      105.000    3.000
+ ALB      H152   C15    H151    107.900    3.000
+ ALB      H152   C15    N3      109.470    3.000
+ ALB      H151   C15    N3      109.470    3.000
+ ALB      C15    N3     O6      120.000    3.000
+ ALB      C15    N3     C1      127.000    3.000
+ ALB      O6     N3     C1      120.000    3.000
+ ALB      N3     O6     FE      120.000    3.000
+ ALB      O6     FE     O1       90.000    3.000
+ ALB      O6     FE     O3       90.000    3.000
+ ALB      O6     FE     O5       90.000    3.000
+ ALB      O6     FE     O8      180.000    3.000
+ ALB      O6     FE     O7       90.000    3.000
+ ALB      O1     FE     O3      180.000    3.000
+ ALB      O1     FE     O5       90.000    3.000
+ ALB      O3     FE     O5       90.000    3.000
+ ALB      O1     FE     O8       90.000    3.000
+ ALB      O3     FE     O8       90.000    3.000
+ ALB      O5     FE     O8       90.000    3.000
+ ALB      O1     FE     O7       90.000    3.000
+ ALB      O3     FE     O7       90.000    3.000
+ ALB      O5     FE     O7      180.000    3.000
+ ALB      O8     FE     O7       90.000    3.000
+ ALB      FE     O1     C1      120.000    3.000
+ ALB      O1     C1     C19     120.000    3.000
+ ALB      O1     C1     N3      120.000    3.000
+ ALB      C19    C1     N3      116.500    3.000
+ ALB      C1     C19    H191    109.470    3.000
+ ALB      C1     C19    H192    109.470    3.000
+ ALB      C1     C19    H193    109.470    3.000
+ ALB      H191   C19    H192    109.470    3.000
+ ALB      H191   C19    H193    109.470    3.000
+ ALB      H192   C19    H193    109.470    3.000
+ ALB      FE     O3     C3      120.000    3.000
+ ALB      O3     C3     C18     120.000    3.000
+ ALB      O3     C3     N4      120.000    3.000
+ ALB      C18    C3     N4      116.500    3.000
+ ALB      C3     C18    H181    109.470    3.000
+ ALB      C3     C18    H182    109.470    3.000
+ ALB      C3     C18    H183    109.470    3.000
+ ALB      H181   C18    H182    109.470    3.000
+ ALB      H181   C18    H183    109.470    3.000
+ ALB      H182   C18    H183    109.470    3.000
+ ALB      FE     O5     C5      120.000    3.000
+ ALB      O5     C5     C20     120.000    3.000
+ ALB      O5     C5     N5      120.000    3.000
+ ALB      C20    C5     N5      116.500    3.000
+ ALB      C5     C20    H201    109.470    3.000
+ ALB      C5     C20    H202    109.470    3.000
+ ALB      C5     C20    H203    109.470    3.000
+ ALB      H201   C20    H202    109.470    3.000
+ ALB      H201   C20    H203    109.470    3.000
+ ALB      H202   C20    H203    109.470    3.000
+ ALB      FE     O8     N5      120.000    3.000
+ ALB      O8     N5     C17     120.000    3.000
+ ALB      O8     N5     C5      120.000    3.000
+ ALB      C17    N5     C5      127.000    3.000
+ ALB      N5     C17    H172    109.470    3.000
+ ALB      N5     C17    H171    109.470    3.000
+ ALB      N5     C17    C14     105.000    3.000
+ ALB      H172   C17    H171    107.900    3.000
+ ALB      H172   C17    C14     109.470    3.000
+ ALB      H171   C17    C14     109.470    3.000
+ ALB      C17    C14    H142    109.470    3.000
+ ALB      C17    C14    H141    109.470    3.000
+ ALB      C17    C14    C11     111.000    3.000
+ ALB      H142   C14    H141    107.900    3.000
+ ALB      H142   C14    C11     109.470    3.000
+ ALB      H141   C14    C11     109.470    3.000
+ ALB      C14    C11    H112    109.470    3.000
+ ALB      C14    C11    H111    109.470    3.000
+ ALB      C14    C11    C8      111.000    3.000
+ ALB      H112   C11    H111    107.900    3.000
+ ALB      H112   C11    C8      109.470    3.000
+ ALB      H111   C11    C8      109.470    3.000
+ ALB      C11    C8     H8      108.340    3.000
+ ALB      C11    C8     N12     109.470    3.000
+ ALB      C11    C8     C4      109.470    3.000
+ ALB      H8     C8     N12     109.470    3.000
+ ALB      H8     C8     C4      108.810    3.000
+ ALB      N12    C8     C4      109.470    3.000
+ ALB      C8     N12    H1N5    120.000    3.000
+ ALB      C8     N12    H1N4    120.000    3.000
+ ALB      H1N5   N12    H1N4    120.000    3.000
+ ALB      FE     O7     N4      120.000    3.000
+ ALB      O7     N4     C16     120.000    3.000
+ ALB      O7     N4     C3      120.000    3.000
+ ALB      C16    N4     C3      127.000    3.000
+ ALB      N4     C16    H162    109.470    3.000
+ ALB      N4     C16    H161    109.470    3.000
+ ALB      N4     C16    C13     105.000    3.000
+ ALB      H162   C16    H161    107.900    3.000
+ ALB      H162   C16    C13     109.470    3.000
+ ALB      H161   C16    C13     109.470    3.000
+ ALB      C16    C13    H132    109.470    3.000
+ ALB      C16    C13    H131    109.470    3.000
+ ALB      C16    C13    C10     111.000    3.000
+ ALB      H132   C13    H131    107.900    3.000
+ ALB      H132   C13    C10     109.470    3.000
+ ALB      H131   C13    C10     109.470    3.000
+ ALB      C13    C10    H102    109.470    3.000
+ ALB      C13    C10    H101    109.470    3.000
+ ALB      C13    C10    C7      111.000    3.000
+ ALB      H102   C10    H101    107.900    3.000
+ ALB      H102   C10    C7      109.470    3.000
+ ALB      H101   C10    C7      109.470    3.000
+ ALB      C10    C7     H7      108.340    3.000
+ ALB      C10    C7     N2      110.000    3.000
+ ALB      C10    C7     C2      109.470    3.000
+ ALB      H7     C7     N2      108.550    3.000
+ ALB      H7     C7     C2      108.810    3.000
+ ALB      N2     C7     C2      111.600    3.000
+ ALB      C7     N2     H2      118.500    3.000
+ ALB      C7     N2     C4      121.500    3.000
+ ALB      H2     N2     C4      120.000    3.000
+ ALB      N2     C4     O4      123.000    3.000
+ ALB      N2     C4     C8      116.500    3.000
+ ALB      O4     C4     C8      120.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ALB      CONST_1  O16    C37    N10    H1N3       0.000    0.000   0
+ ALB      CONST_2  O16    C37    N11    C34      180.000    0.000   0
+ ALB      CONST_3  C37    N11    C34    C35        5.505    0.000   0
+ ALB      CONST_4  N11    C34    N8     C36        0.000    0.000   0
+ ALB      var_1    C34    N8     C36    H363     149.755   20.000   1
+ ALB      CONST_5  N11    C34    C35    C33      180.000    0.000   0
+ ALB      CONST_6  C34    C35    C33    N9         0.000    0.000   0
+ ALB      CONST_7  C35    C33    N9     C30      180.000    0.000   0
+ ALB      CONST_8  C33    N9     C32    O15      180.000    0.000   0
+ ALB      CONST_9  N9     C32    N8     C34        0.000    0.000   0
+ ALB      var_2    C33    N9     C30    S         60.215   20.000   1
+ ALB      var_3    N9     C30    C29    O17       30.000   20.000   3
+ ALB      var_4    C30    C29    O17    H17     -174.353   20.000   1
+ ALB      var_5    N9     C30    S      C31     -150.000   20.000   1
+ ALB      var_6    C30    S      C31    C27      150.000   20.000   1
+ ALB      var_7    S      C31    C28    O18     -150.000   20.000   3
+ ALB      var_8    C31    C28    C29    C30        0.000   20.000   3
+ ALB      var_9    C31    C28    O18    H18     -179.988   20.000   1
+ ALB      var_10   S      C31    C27    C25       66.433   20.000   3
+ ALB      var_11   C31    C27    O14    H14      -60.018   20.000   1
+ ALB      var_12   C31    C27    C25    N7        60.028   20.000   3
+ ALB      var_13   C27    C25    C26    O12       60.004   20.000   3
+ ALB      var_14   C27    C25    N7     C24     -155.003   20.000   3
+ ALB      CONST_10 C25    N7     C24    C22      180.000    0.000   0
+ ALB      var_15   N7     C24    C22    N6       179.980   20.000   3
+ ALB      var_16   C24    C22    C23    O10      -55.021   20.000   3
+ ALB      var_17   C22    C23    O10    H10      179.987   20.000   1
+ ALB      var_18   C24    C22    N6     C21     -155.059   20.000   3
+ ALB      CONST_11 C22    N6     C21    C6       180.000    0.000   0
+ ALB      var_19   N6     C21    C6     C9       -75.651   20.000   3
+ ALB      var_20   C21    C6     N1     C2        43.780   20.000   3
+ ALB      CONST_12 C6     N1     C2     O2         0.000    0.000   0
+ ALB      var_21   N1     C2     C7     C10     -155.759   20.000   3
+ ALB      var_22   C21    C6     C9     C12      -42.754   20.000   3
+ ALB      var_23   C6     C9     C12    C15     -159.618   20.000   3
+ ALB      var_24   C9     C12    C15    N3        93.554   20.000   3
+ ALB      var_25   C12    C15    N3     O6        98.090   20.000   1
+ ALB      var_26   C15    N3     O6     FE      -150.000   20.000   1
+ ALB      var_27   N3     O6     FE     O1         0.000   20.000   1
+ ALB      var_28   C1     O1     FE     O6         0.000   20.000   1
+ ALB      var_29   FE     O1     C1     C19      180.000   20.000   1
+ ALB      CONST_13 O1     C1     N3     C15      150.000    0.000   0
+ ALB      var_30   O1     C1     C19    H193     -29.949   20.000   1
+ ALB      var_31   C3     O3     FE     O7         0.000   20.000   1
+ ALB      var_32   FE     O3     C3     C18      180.000   20.000   1
+ ALB      CONST_14 O3     C3     N4     O7        30.000    0.000   0
+ ALB      var_33   O3     C3     C18    H183      60.457   20.000   1
+ ALB      var_34   C5     O5     FE     O8         0.000   20.000   1
+ ALB      var_35   FE     O5     C5     C20      180.000   20.000   1
+ ALB      CONST_15 O5     C5     N5     O8         0.000    0.000   0
+ ALB      var_36   O5     C5     C20    H203      60.698   20.000   1
+ ALB      var_37   N5     O8     FE     O5         0.000   20.000   1
+ ALB      var_38   FE     O8     N5     C17      150.000   20.000   1
+ ALB      var_39   O8     N5     C17    C14      -64.340   20.000   1
+ ALB      var_40   N5     C17    C14    C11       76.836   20.000   3
+ ALB      var_41   C17    C14    C11    C8      -161.568   20.000   3
+ ALB      var_42   C14    C11    C8     N12       62.112   20.000   3
+ ALB      var_43   C11    C8     N12    H1N4    -179.973   20.000   1
+ ALB      var_44   N4     O7     FE     O3         0.000   20.000   1
+ ALB      var_45   FE     O7     N4     C16      150.000   20.000   1
+ ALB      var_46   O7     N4     C16    C13       -1.658   20.000   1
+ ALB      var_47   N4     C16    C13    C10      -49.467   20.000   3
+ ALB      var_48   C16    C13    C10    C7       149.086   20.000   3
+ ALB      var_49   C13    C10    C7     N2       161.313   20.000   3
+ ALB      var_50   C10    C7     N2     C4         8.913   20.000   3
+ ALB      CONST_16 C7     N2     C4     O4       180.000    0.000   0
+ ALB      var_51   N2     C4     C8     C11     -105.163   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ ALB      chir_01  C6     C9     C21    N1        negativ
+                   .      .      .      .      .
+ ALB      chir_02  C7     C2     C10    N2        negativ
+                   .      .      .      .      .
+ ALB      chir_03  C8     C4     C11    N12       negativ
+                   .      .      .      .      .
+ ALB      chir_04  C22    C23    C24    N6        negativ
+                   .      .      .      .      .
+ ALB      chir_05  C25    C26    C27    N7        negativ
+                   .      .      .      .      .
+ ALB      chir_06  C27    C25    C31    O14       positiv
+                   .      .      .      .      .
+ ALB      chir_07  C28    C29    C31    O18       negativ
+                   .      .      .      .      .
+ ALB      chir_08  C29    C28    C30    O17       negativ
+                   .      .      .      .      .
+ ALB      chir_09  C30    C29    S      N9        negativ
+                   .      .      .      .      .
+ ALB      chir_10  C31    C27    C28    S         positiv
+                   .      .      .      .      .
+ ALB      chir_11  FE     O6     O8     O3        cross4
+                   O7     O1     O5     .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ALB      plan-1    C1        0.020
+ ALB      plan-1    C19       0.020
+ ALB      plan-1    N3        0.020
+ ALB      plan-1    O1        0.020
+ ALB      plan-2    C2        0.020
+ ALB      plan-2    C7        0.020
+ ALB      plan-2    N1        0.020
+ ALB      plan-2    O2        0.020
+ ALB      plan-2    H1        0.020
+ ALB      plan-3    C3        0.020
+ ALB      plan-3    C18       0.020
+ ALB      plan-3    N4        0.020
+ ALB      plan-3    O3        0.020
+ ALB      plan-4    C4        0.020
+ ALB      plan-4    C8        0.020
+ ALB      plan-4    N2        0.020
+ ALB      plan-4    O4        0.020
+ ALB      plan-4    H2        0.020
+ ALB      plan-5    C5        0.020
+ ALB      plan-5    C20       0.020
+ ALB      plan-5    N5        0.020
+ ALB      plan-5    O5        0.020
+ ALB      plan-6    C21       0.020
+ ALB      plan-6    C6        0.020
+ ALB      plan-6    N6        0.020
+ ALB      plan-6    O9        0.020
+ ALB      plan-6    H6N       0.020
+ ALB      plan-7    C24       0.020
+ ALB      plan-7    C22       0.020
+ ALB      plan-7    N7        0.020
+ ALB      plan-7    O11       0.020
+ ALB      plan-7    H7N1      0.020
+ ALB      plan-8    C26       0.020
+ ALB      plan-8    C25       0.020
+ ALB      plan-8    O12       0.020
+ ALB      plan-8    O13       0.020
+ ALB      plan-9    C32       0.020
+ ALB      plan-9    N8        0.020
+ ALB      plan-9    N9        0.020
+ ALB      plan-9    O15       0.020
+ ALB      plan-9    C33       0.020
+ ALB      plan-9    C34       0.020
+ ALB      plan-9    C35       0.020
+ ALB      plan-9    H33       0.020
+ ALB      plan-9    N11       0.020
+ ALB      plan-9    H35       0.020
+ ALB      plan-9    C36       0.020
+ ALB      plan-9    C30       0.020
+ ALB      plan-9    C37       0.020
+ ALB      plan-10   C37       0.020
+ ALB      plan-10   N10       0.020
+ ALB      plan-10   N11       0.020
+ ALB      plan-10   O16       0.020
+ ALB      plan-10   H1N2      0.020
+ ALB      plan-10   H1N3      0.020
+ ALB      plan-11   N1        0.020
+ ALB      plan-11   C2        0.020
+ ALB      plan-11   C6        0.020
+ ALB      plan-11   H1        0.020
+ ALB      plan-12   N2        0.020
+ ALB      plan-12   C4        0.020
+ ALB      plan-12   C7        0.020
+ ALB      plan-12   H2        0.020
+ ALB      plan-13   N3        0.020
+ ALB      plan-13   C1        0.020
+ ALB      plan-13   C15       0.020
+ ALB      plan-13   O6        0.020
+ ALB      plan-14   N4        0.020
+ ALB      plan-14   C3        0.020
+ ALB      plan-14   C16       0.020
+ ALB      plan-14   O7        0.020
+ ALB      plan-15   N5        0.020
+ ALB      plan-15   C5        0.020
+ ALB      plan-15   C17       0.020
+ ALB      plan-15   O8        0.020
+ ALB      plan-16   N6        0.020
+ ALB      plan-16   C21       0.020
+ ALB      plan-16   C22       0.020
+ ALB      plan-16   H6N       0.020
+ ALB      plan-17   N7        0.020
+ ALB      plan-17   C24       0.020
+ ALB      plan-17   C25       0.020
+ ALB      plan-17   H7N1      0.020
+ ALB      plan-18   N10       0.020
+ ALB      plan-18   C37       0.020
+ ALB      plan-18   H1N3      0.020
+ ALB      plan-18   H1N2      0.020
+ ALB      plan-19   N12       0.020
+ ALB      plan-19   C8        0.020
+ ALB      plan-19   H1N4      0.020
+ ALB      plan-19   H1N5      0.020
+# ------------------------------------------------------

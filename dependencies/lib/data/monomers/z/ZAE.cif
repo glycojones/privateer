@@ -1,0 +1,230 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ZAE      ZAE 'N-methyl-D-phenylalanine            ' non-polymer        25  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ZAE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ZAE           OXT    O    OC       -0.500      0.000    0.000    0.000
+ ZAE           C      C    C         0.000     -0.775    0.967    0.169
+ ZAE           O      O    OC       -0.500     -0.330    2.058    0.590
+ ZAE           CA     C    CH1       0.000     -2.245    0.818   -0.131
+ ZAE           HA     H    H         0.000     -2.377    0.555   -1.190
+ ZAE           N      N    NH1       0.000     -2.932    2.086    0.148
+ ZAE           H      H    H         0.000     -3.398    2.305    1.017
+ ZAE           C10    C    CH3       0.000     -2.852    2.993   -1.005
+ ZAE           H13    H    H         0.000     -3.308    2.540   -1.849
+ ZAE           H12    H    H         0.000     -3.354    3.900   -0.782
+ ZAE           H11    H    H         0.000     -1.836    3.201   -1.226
+ ZAE           CB     C    CH2       0.000     -2.834   -0.286    0.747
+ ZAE           HB2    H    H         0.000     -2.782    0.015    1.795
+ ZAE           HB3    H    H         0.000     -2.264   -1.207    0.606
+ ZAE           CG     C    CR6       0.000     -4.272   -0.520    0.361
+ ZAE           CD2    C    CR16      0.000     -5.281    0.189    0.987
+ ZAE           HD2    H    H         0.000     -5.037    0.912    1.755
+ ZAE           CE2    C    CR16      0.000     -6.599   -0.025    0.632
+ ZAE           HE2    H    H         0.000     -7.388    0.531    1.122
+ ZAE           CZ     C    CR16      0.000     -6.911   -0.949   -0.347
+ ZAE           HZ     H    H         0.000     -7.944   -1.114   -0.627
+ ZAE           CE1    C    CR16      0.000     -5.903   -1.662   -0.969
+ ZAE           HE1    H    H         0.000     -6.146   -2.389   -1.734
+ ZAE           CD1    C    CR16      0.000     -4.584   -1.448   -0.615
+ ZAE           HD1    H    H         0.000     -3.795   -2.008   -1.102
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ZAE      OXT    n/a    C      START
+ ZAE      C      OXT    CA     .
+ ZAE      O      C      .      .
+ ZAE      CA     C      CB     .
+ ZAE      HA     CA     .      .
+ ZAE      N      CA     C10    .
+ ZAE      H      N      .      .
+ ZAE      C10    N      H11    .
+ ZAE      H13    C10    .      .
+ ZAE      H12    C10    .      .
+ ZAE      H11    C10    .      .
+ ZAE      CB     CA     CG     .
+ ZAE      HB2    CB     .      .
+ ZAE      HB3    CB     .      .
+ ZAE      CG     CB     CD2    .
+ ZAE      CD2    CG     CE2    .
+ ZAE      HD2    CD2    .      .
+ ZAE      CE2    CD2    CZ     .
+ ZAE      HE2    CE2    .      .
+ ZAE      CZ     CE2    CE1    .
+ ZAE      HZ     CZ     .      .
+ ZAE      CE1    CZ     CD1    .
+ ZAE      HE1    CE1    .      .
+ ZAE      CD1    CE1    HD1    .
+ ZAE      HD1    CD1    .      END
+ ZAE      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ZAE       N         CA        single    1.450     0.020     1.450     0.020     
+ZAE       C10       N         single    1.450     0.020     1.450     0.020     
+ZAE       H         N         single    1.036     0.016     0.914     0.007     
+ZAE       CA        C         single    1.500     0.020     1.500     0.020     
+ZAE       CB        CA        single    1.524     0.020     1.524     0.020     
+ZAE       HA        CA        single    1.089     0.010     0.989     0.005     
+ZAE       O         C         deloc     1.250     0.020     1.250     0.020     
+ZAE       C         OXT       deloc     1.250     0.020     1.250     0.020     
+ZAE       CG        CB        single    1.511     0.020     1.511     0.020     
+ZAE       HB2       CB        single    1.089     0.010     0.989     0.005     
+ZAE       HB3       CB        single    1.089     0.010     0.989     0.005     
+ZAE       CG        CD1       double    1.390     0.020     1.390     0.020     
+ZAE       CD2       CG        single    1.390     0.020     1.390     0.020     
+ZAE       CD1       CE1       single    1.390     0.020     1.390     0.020     
+ZAE       HD1       CD1       single    1.082     0.013     0.975     0.010     
+ZAE       CE2       CD2       double    1.390     0.020     1.390     0.020     
+ZAE       HD2       CD2       single    1.082     0.013     0.975     0.010     
+ZAE       CE1       CZ        double    1.390     0.020     1.390     0.020     
+ZAE       HE1       CE1       single    1.082     0.013     0.975     0.010     
+ZAE       CZ        CE2       single    1.390     0.020     1.390     0.020     
+ZAE       HE2       CE2       single    1.082     0.013     0.975     0.010     
+ZAE       HZ        CZ        single    1.082     0.013     0.975     0.010     
+ZAE       H11       C10       single    1.089     0.010     0.989     0.005     
+ZAE       H12       C10       single    1.089     0.010     0.989     0.005     
+ZAE       H13       C10       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ZAE      OXT    C      O       123.000    3.000
+ ZAE      OXT    C      CA      118.500    3.000
+ ZAE      O      C      CA      118.500    3.000
+ ZAE      C      CA     HA      108.810    3.000
+ ZAE      C      CA     N       111.600    3.000
+ ZAE      C      CA     CB      109.470    3.000
+ ZAE      HA     CA     N       108.550    3.000
+ ZAE      HA     CA     CB      108.340    3.000
+ ZAE      N      CA     CB      110.000    3.000
+ ZAE      CA     N      H       118.500    3.000
+ ZAE      CA     N      C10     120.000    3.000
+ ZAE      H      N      C10     118.500    3.000
+ ZAE      N      C10    H13     109.470    3.000
+ ZAE      N      C10    H12     109.470    3.000
+ ZAE      N      C10    H11     109.470    3.000
+ ZAE      H13    C10    H12     109.470    3.000
+ ZAE      H13    C10    H11     109.470    3.000
+ ZAE      H12    C10    H11     109.470    3.000
+ ZAE      CA     CB     HB2     109.470    3.000
+ ZAE      CA     CB     HB3     109.470    3.000
+ ZAE      CA     CB     CG      109.470    3.000
+ ZAE      HB2    CB     HB3     107.900    3.000
+ ZAE      HB2    CB     CG      109.470    3.000
+ ZAE      HB3    CB     CG      109.470    3.000
+ ZAE      CB     CG     CD2     120.000    3.000
+ ZAE      CB     CG     CD1     120.000    3.000
+ ZAE      CD2    CG     CD1     120.000    3.000
+ ZAE      CG     CD2    HD2     120.000    3.000
+ ZAE      CG     CD2    CE2     120.000    3.000
+ ZAE      HD2    CD2    CE2     120.000    3.000
+ ZAE      CD2    CE2    HE2     120.000    3.000
+ ZAE      CD2    CE2    CZ      120.000    3.000
+ ZAE      HE2    CE2    CZ      120.000    3.000
+ ZAE      CE2    CZ     HZ      120.000    3.000
+ ZAE      CE2    CZ     CE1     120.000    3.000
+ ZAE      HZ     CZ     CE1     120.000    3.000
+ ZAE      CZ     CE1    HE1     120.000    3.000
+ ZAE      CZ     CE1    CD1     120.000    3.000
+ ZAE      HE1    CE1    CD1     120.000    3.000
+ ZAE      CE1    CD1    HD1     120.000    3.000
+ ZAE      CE1    CD1    CG      120.000    3.000
+ ZAE      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ZAE      var_1    OXT    C      CA     CB        59.982   20.000   3
+ ZAE      var_2    C      CA     N      C10       84.963   20.000   3
+ ZAE      var_3    CA     N      C10    H11      -59.971   20.000   1
+ ZAE      var_4    C      CA     CB     CG      -174.975   20.000   3
+ ZAE      var_5    CA     CB     CG     CD2      -90.321   20.000   2
+ ZAE      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ ZAE      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ ZAE      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ ZAE      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ ZAE      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ ZAE      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ZAE      chir_01  CA     N      C      CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ZAE      plan-1    N         0.020
+ ZAE      plan-1    CA        0.020
+ ZAE      plan-1    C10       0.020
+ ZAE      plan-1    H         0.020
+ ZAE      plan-2    C         0.020
+ ZAE      plan-2    CA        0.020
+ ZAE      plan-2    O         0.020
+ ZAE      plan-2    OXT       0.020
+ ZAE      plan-3    CG        0.020
+ ZAE      plan-3    CB        0.020
+ ZAE      plan-3    CD1       0.020
+ ZAE      plan-3    CD2       0.020
+ ZAE      plan-3    CE1       0.020
+ ZAE      plan-3    CE2       0.020
+ ZAE      plan-3    CZ        0.020
+ ZAE      plan-3    HD1       0.020
+ ZAE      plan-3    HD2       0.020
+ ZAE      plan-3    HE1       0.020
+ ZAE      plan-3    HE2       0.020
+ ZAE      plan-3    HZ        0.020
+# ------------------------------------------------------

@@ -1,0 +1,169 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5M0     5M0     "2-azanyl-5-methyl-benzoicacid"     NON-POLYMER     19     11     .     
+#
+data_comp_5M0
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+5M0     OAC     O       O       0       -18.633     -36.509     17.576      
+5M0     CAH     C       C       0       -18.454     -35.432     18.174      
+5M0     OAD     O       OC      -1      -18.297     -35.326     19.403      
+5M0     CAK     C       CR6     0       -18.426     -34.173     17.354      
+5M0     CAG     C       CR16    0       -19.248     -33.100     17.734      
+5M0     CAI     C       CR6     0       -19.278     -31.899     17.026      
+5M0     CAA     C       CH3     0       -20.172     -30.764     17.461      
+5M0     CAE     C       CR16    0       -18.458     -31.777     15.901      
+5M0     CAF     C       CR16    0       -17.629     -32.812     15.487      
+5M0     CAJ     C       CR6     0       -17.596     -34.037     16.207      
+5M0     NAB     N       NH2     0       -16.768     -35.030     15.770      
+5M0     H2      H       H       0       -19.797     -33.194     18.496      
+5M0     H3      H       H       0       -20.936     -31.119     17.944      
+5M0     H4      H       H       0       -20.483     -30.277     16.680      
+5M0     H5      H       H       0       -19.676     -30.163     18.039      
+5M0     H6      H       H       0       -18.467     -30.972     15.411      
+5M0     H7      H       H       0       -17.086     -32.708     14.730      
+5M0     H8      H       H       0       -16.167     -35.367     16.312      
+5M0     H9      H       H       0       -16.842     -35.328     14.948      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5M0       CAE       CAF       DOUBLE    y         1.383     0.010     1.383     0.010     
+5M0       CAF       CAJ       SINGLE    y         1.395     0.020     1.395     0.020     
+5M0       CAJ       NAB       SINGLE    n         1.363     0.015     1.363     0.015     
+5M0       CAI       CAE       SINGLE    y         1.392     0.010     1.392     0.010     
+5M0       CAK       CAJ       DOUBLE    y         1.413     0.010     1.413     0.010     
+5M0       CAI       CAA       SINGLE    n         1.508     0.011     1.508     0.011     
+5M0       CAG       CAI       DOUBLE    y         1.388     0.010     1.388     0.010     
+5M0       CAK       CAG       SINGLE    y         1.396     0.010     1.396     0.010     
+5M0       CAH       CAK       SINGLE    n         1.498     0.020     1.498     0.020     
+5M0       OAC       CAH       DOUBLE    n         1.244     0.020     1.244     0.020     
+5M0       CAH       OAD       SINGLE    n         1.244     0.020     1.244     0.020     
+5M0       CAG       H2        SINGLE    n         1.082     0.013     0.944     0.015     
+5M0       CAA       H3        SINGLE    n         1.089     0.010     0.971     0.013     
+5M0       CAA       H4        SINGLE    n         1.089     0.010     0.971     0.013     
+5M0       CAA       H5        SINGLE    n         1.089     0.010     0.971     0.013     
+5M0       CAE       H6        SINGLE    n         1.082     0.013     0.943     0.017     
+5M0       CAF       H7        SINGLE    n         1.082     0.013     0.938     0.017     
+5M0       NAB       H8        SINGLE    n         1.016     0.010     0.877     0.020     
+5M0       NAB       H9        SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+5M0         CAK         CAH         OAC     117.739    1.50
+5M0         CAK         CAH         OAD     117.739    1.50
+5M0         OAC         CAH         OAD     124.521    1.50
+5M0         CAJ         CAK         CAG     118.860    1.50
+5M0         CAJ         CAK         CAH     121.873    1.50
+5M0         CAG         CAK         CAH     119.267    1.50
+5M0         CAI         CAG         CAK     121.929    1.50
+5M0         CAI         CAG          H2     119.147    1.50
+5M0         CAK         CAG          H2     118.924    1.50
+5M0         CAE         CAI         CAA     120.915    1.50
+5M0         CAE         CAI         CAG     118.204    1.50
+5M0         CAA         CAI         CAG     120.881    1.50
+5M0         CAI         CAA          H3     109.567    1.50
+5M0         CAI         CAA          H4     109.567    1.50
+5M0         CAI         CAA          H5     109.567    1.50
+5M0          H3         CAA          H4     109.348    1.50
+5M0          H3         CAA          H5     109.348    1.50
+5M0          H4         CAA          H5     109.348    1.50
+5M0         CAF         CAE         CAI     122.122    1.50
+5M0         CAF         CAE          H6     118.951    1.50
+5M0         CAI         CAE          H6     118.926    1.50
+5M0         CAE         CAF         CAJ     120.468    1.50
+5M0         CAE         CAF          H7     120.215    1.50
+5M0         CAJ         CAF          H7     119.317    1.50
+5M0         CAF         CAJ         NAB     119.073    1.50
+5M0         CAF         CAJ         CAK     118.417    1.50
+5M0         NAB         CAJ         CAK     122.511    1.50
+5M0         CAJ         NAB          H8     119.767    1.50
+5M0         CAJ         NAB          H9     119.767    1.50
+5M0          H8         NAB          H9     120.467    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+5M0             sp2_sp2_5         OAC         CAH         CAK         CAJ     180.000   10.00     2
+5M0              const_22         CAI         CAG         CAK         CAH     180.000   10.00     2
+5M0       const_sp2_sp2_4         NAB         CAJ         CAK         CAH       0.000   10.00     2
+5M0              const_18         CAK         CAG         CAI         CAA     180.000   10.00     2
+5M0             sp2_sp3_1         CAE         CAI         CAA          H3     150.000   10.00     6
+5M0              const_14         CAF         CAE         CAI         CAA     180.000   10.00     2
+5M0       const_sp2_sp2_9         CAI         CAE         CAF         CAJ       0.000   10.00     2
+5M0       const_sp2_sp2_6         CAE         CAF         CAJ         NAB     180.000   10.00     2
+5M0             sp2_sp2_1         CAF         CAJ         NAB          H8     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+5M0    plan-1         CAA   0.020
+5M0    plan-1         CAE   0.020
+5M0    plan-1         CAF   0.020
+5M0    plan-1         CAG   0.020
+5M0    plan-1         CAH   0.020
+5M0    plan-1         CAI   0.020
+5M0    plan-1         CAJ   0.020
+5M0    plan-1         CAK   0.020
+5M0    plan-1          H2   0.020
+5M0    plan-1          H6   0.020
+5M0    plan-1          H7   0.020
+5M0    plan-1         NAB   0.020
+5M0    plan-2         CAH   0.020
+5M0    plan-2         CAK   0.020
+5M0    plan-2         OAC   0.020
+5M0    plan-2         OAD   0.020
+5M0    plan-3         CAJ   0.020
+5M0    plan-3          H8   0.020
+5M0    plan-3          H9   0.020
+5M0    plan-3         NAB   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+5M0 SMILES           ACDLabs              12.01 "O=C(O)c1cc(ccc1N)C"
+5M0 InChI            InChI                1.03  "InChI=1S/C8H9NO2/c1-5-2-3-7(9)6(4-5)8(10)11/h2-4H,9H2,1H3,(H,10,11)"
+5M0 InChIKey         InChI                1.03  NBUUUJWWOARGNW-UHFFFAOYSA-N
+5M0 SMILES_CANONICAL CACTVS               3.385 "Cc1ccc(N)c(c1)C(O)=O"
+5M0 SMILES           CACTVS               3.385 "Cc1ccc(N)c(c1)C(O)=O"
+5M0 SMILES_CANONICAL "OpenEye OEToolkits" 1.9.2 "Cc1ccc(c(c1)C(=O)O)N"
+5M0 SMILES           "OpenEye OEToolkits" 1.9.2 "Cc1ccc(c(c1)C(=O)O)N"
+5M0 ?                acedrg               190         "dictionary generator"                  
+5M0 ?                acedrg_database      11          "data source"                           
+5M0 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+5M0 ?                refmac5              5.8.0158    "optimization tool"                     

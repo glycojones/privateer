@@ -1,0 +1,541 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ENA      ENA 'ETHENO-NAD                          ' non-polymer        73  46 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ENA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ENA           O17    O    O         0.000      0.000    0.000    0.000
+ ENA           C17    C    C         0.000     -0.317    0.619   -0.997
+ ENA           N17    N    NH2       0.000      0.404    0.489   -2.129
+ ENA           HN1A   H    H         0.000      1.211   -0.123   -2.153
+ ENA           HN17   H    H         0.000      0.144    1.002   -2.962
+ ENA           C13    C    CR6       0.000     -1.493    1.514   -0.969
+ ENA           C12    C    CR16      0.000     -2.248    1.657    0.195
+ ENA           H12    H    H         0.000     -1.971    1.107    1.086
+ ENA           C14    C    CR16      0.000     -1.868    2.232   -2.111
+ ENA           H14    H    H         0.000     -1.305    2.145   -3.032
+ ENA           C15    C    CR16      0.000     -2.977    3.056   -2.033
+ ENA           H15    H    H         0.000     -3.296    3.627   -2.896
+ ENA           C16    C    CR16      0.000     -3.672    3.143   -0.840
+ ENA           H16    H    H         0.000     -4.541    3.787   -0.776
+ ENA           N11    N    NR6       1.000     -3.295    2.455    0.221
+ ENA           "C9'"  C    CH1       0.000     -4.068    2.576    1.460
+ ENA           "H9'"  H    H         0.000     -3.922    1.691    2.096
+ ENA           "C0'"  C    CH1       0.000     -3.677    3.867    2.223
+ ENA           "H0'"  H    H         0.000     -3.483    4.692    1.523
+ ENA           "O8'"  O    OH1       0.000     -2.547    3.638    3.066
+ ENA           "HO8'" H    H         0.000     -2.378    4.426    3.599
+ ENA           "O6'"  O    O2        0.000     -5.469    2.768    1.168
+ ENA           "C7'"  C    CH1       0.000     -6.061    3.371    2.331
+ ENA           "H7'"  H    H         0.000     -6.470    2.592    2.989
+ ENA           "C8'"  C    CH1       0.000     -4.947    4.144    3.064
+ ENA           "H8'"  H    H         0.000     -5.171    5.220    3.079
+ ENA           "O7'"  O    OH1       0.000     -4.784    3.647    4.394
+ ENA           "HO7'" H    H         0.000     -4.044    4.101    4.819
+ ENA           "C6'"  C    CH2       0.000     -7.172    4.334    1.910
+ ENA           "H6'"  H    H         0.000     -6.779    5.048    1.183
+ ENA           "H6'A" H    H         0.000     -7.538    4.873    2.787
+ ENA           O4     O    O2        0.000     -8.245    3.595    1.322
+ ENA           P2     P    P         0.000     -9.586    4.291    0.763
+ ENA           O5     O    OP       -0.500     -9.248    5.158   -0.392
+ ENA           O6     O    OP       -0.500    -10.201    5.111    1.835
+ ENA           O2     O    O2        0.000    -10.624    3.153    0.294
+ ENA           P1     P    P         0.000    -12.197    3.149   -0.052
+ ENA           O1     O    OP       -0.500    -12.517    4.316   -0.910
+ ENA           O3     O    OP       -0.500    -12.980    3.230    1.204
+ ENA           "O5'"  O    O2        0.000    -12.570    1.791   -0.832
+ ENA           "C5'"  C    CH2       0.000    -13.870    1.534   -1.369
+ ENA           "H5'"  H    H         0.000    -14.118    2.303   -2.103
+ ENA           "H5'A" H    H         0.000    -14.606    1.551   -0.562
+ ENA           "C4'"  C    CH1       0.000    -13.881    0.161   -2.042
+ ENA           "H4'"  H    H         0.000    -13.078    0.104   -2.790
+ ENA           "C3'"  C    CH1       0.000    -15.245   -0.082   -2.717
+ ENA           "H3'"  H    H         0.000    -15.924    0.761   -2.525
+ ENA           "O3'"  O    OH1       0.000    -15.080   -0.282   -4.122
+ ENA           "HO3'" H    H         0.000    -15.936   -0.492   -4.520
+ ENA           "C2'"  C    CH1       0.000    -15.779   -1.370   -2.044
+ ENA           "H2'"  H    H         0.000    -16.475   -1.127   -1.230
+ ENA           "O4'"  O    OH1       0.000    -16.397   -2.228   -3.005
+ ENA           "HO4'" H    H         0.000    -17.203   -1.811   -3.337
+ ENA           "O2'"  O    O2        0.000    -13.704   -0.870   -1.054
+ ENA           "C1'"  C    CH1       0.000    -14.479   -2.008   -1.488
+ ENA           "H1'"  H    H         0.000    -13.949   -2.558   -2.278
+ ENA           N9     N    NR5       0.000    -14.781   -2.889   -0.358
+ ENA           C4     C    CR15      0.000    -14.734   -2.552    0.962
+ ENA           H4     H    H         0.000    -14.465   -1.576    1.345
+ ENA           C8     C    CR56      0.000    -15.161   -4.207   -0.433
+ ENA           N3     N    NRD6      0.000    -15.373   -5.066   -1.425
+ ENA           C2     C    CR16      0.000    -15.741   -6.301   -1.184
+ ENA           H2     H    H         0.000    -15.903   -6.970   -2.020
+ ENA           C5     C    CR56      0.000    -15.339   -4.634    0.892
+ ENA           N7     N    NRD5      0.000    -15.062   -3.578    1.693
+ ENA           C6     C    CR56      0.000    -15.735   -5.966    1.111
+ ENA           N6     N    NR15      0.000    -15.989   -6.689    2.247
+ ENA           HN6    H    H         0.000    -15.927   -6.343    3.225
+ ENA           C9     C    CR15      0.000    -16.342   -7.957    1.850
+ ENA           H9     H    H         0.000    -16.610   -8.779    2.502
+ ENA           C10    C    CR15      0.000    -16.295   -7.992    0.513
+ ENA           H10    H    H         0.000    -16.515   -8.855   -0.103
+ ENA           N1     N    NR56      1.000    -15.925   -6.765    0.056
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ENA      O17    n/a    C17    START
+ ENA      C17    O17    C13    .
+ ENA      N17    C17    HN17   .
+ ENA      HN1A   N17    .      .
+ ENA      HN17   N17    .      .
+ ENA      C13    C17    C14    .
+ ENA      C12    C13    H12    .
+ ENA      H12    C12    .      .
+ ENA      C14    C13    C15    .
+ ENA      H14    C14    .      .
+ ENA      C15    C14    C16    .
+ ENA      H15    C15    .      .
+ ENA      C16    C15    N11    .
+ ENA      H16    C16    .      .
+ ENA      N11    C16    "C9'"  .
+ ENA      "C9'"  N11    "O6'"  .
+ ENA      "H9'"  "C9'"  .      .
+ ENA      "C0'"  "C9'"  "O8'"  .
+ ENA      "H0'"  "C0'"  .      .
+ ENA      "O8'"  "C0'"  "HO8'" .
+ ENA      "HO8'" "O8'"  .      .
+ ENA      "O6'"  "C9'"  "C7'"  .
+ ENA      "C7'"  "O6'"  "C6'"  .
+ ENA      "H7'"  "C7'"  .      .
+ ENA      "C8'"  "C7'"  "O7'"  .
+ ENA      "H8'"  "C8'"  .      .
+ ENA      "O7'"  "C8'"  "HO7'" .
+ ENA      "HO7'" "O7'"  .      .
+ ENA      "C6'"  "C7'"  O4     .
+ ENA      "H6'"  "C6'"  .      .
+ ENA      "H6'A" "C6'"  .      .
+ ENA      O4     "C6'"  P2     .
+ ENA      P2     O4     O2     .
+ ENA      O5     P2     .      .
+ ENA      O6     P2     .      .
+ ENA      O2     P2     P1     .
+ ENA      P1     O2     "O5'"  .
+ ENA      O1     P1     .      .
+ ENA      O3     P1     .      .
+ ENA      "O5'"  P1     "C5'"  .
+ ENA      "C5'"  "O5'"  "C4'"  .
+ ENA      "H5'"  "C5'"  .      .
+ ENA      "H5'A" "C5'"  .      .
+ ENA      "C4'"  "C5'"  "O2'"  .
+ ENA      "H4'"  "C4'"  .      .
+ ENA      "C3'"  "C4'"  "C2'"  .
+ ENA      "H3'"  "C3'"  .      .
+ ENA      "O3'"  "C3'"  "HO3'" .
+ ENA      "HO3'" "O3'"  .      .
+ ENA      "C2'"  "C3'"  "O4'"  .
+ ENA      "H2'"  "C2'"  .      .
+ ENA      "O4'"  "C2'"  "HO4'" .
+ ENA      "HO4'" "O4'"  .      .
+ ENA      "O2'"  "C4'"  "C1'"  .
+ ENA      "C1'"  "O2'"  N9     .
+ ENA      "H1'"  "C1'"  .      .
+ ENA      N9     "C1'"  C8     .
+ ENA      C4     N9     H4     .
+ ENA      H4     C4     .      .
+ ENA      C8     N9     C5     .
+ ENA      N3     C8     C2     .
+ ENA      C2     N3     H2     .
+ ENA      H2     C2     .      .
+ ENA      C5     C8     C6     .
+ ENA      N7     C5     .      .
+ ENA      C6     C5     N6     .
+ ENA      N6     C6     C9     .
+ ENA      HN6    N6     .      .
+ ENA      C9     N6     C10    .
+ ENA      H9     C9     .      .
+ ENA      C10    C9     N1     .
+ ENA      H10    C10    .      .
+ ENA      N1     C10    .      END
+ ENA      N1     C2     .    ADD
+ ENA      N1     C6     .    ADD
+ ENA      C4     N7     .    ADD
+ ENA      "C0'"  "C8'"  .    ADD
+ ENA      "C1'"  "C2'"  .    ADD
+ ENA      N11    C12    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ENA       N1        C2        double    1.337     0.020     1.337     0.020     
+ENA       N1        C6        single    1.337     0.020     1.337     0.020     
+ENA       N1        C10       single    1.337     0.020     1.337     0.020     
+ENA       O1        P1        deloc     1.510     0.020     1.510     0.020     
+ENA       P1        O2        single    1.610     0.020     1.610     0.020     
+ENA       O3        P1        deloc     1.510     0.020     1.510     0.020     
+ENA       "O5'"     P1        single    1.610     0.020     1.610     0.020     
+ENA       C2        N3        single    1.337     0.020     1.337     0.020     
+ENA       O2        P2        single    1.610     0.020     1.610     0.020     
+ENA       P2        O4        single    1.610     0.020     1.610     0.020     
+ENA       O5        P2        deloc     1.510     0.020     1.510     0.020     
+ENA       O6        P2        deloc     1.510     0.020     1.510     0.020     
+ENA       N3        C8        double    1.355     0.020     1.355     0.020     
+ENA       C4        N7        double    1.350     0.020     1.350     0.020     
+ENA       C4        N9        single    1.337     0.020     1.337     0.020     
+ENA       O4        "C6'"     single    1.426     0.020     1.426     0.020     
+ENA       C6        C5        double    1.490     0.020     1.490     0.020     
+ENA       N7        C5        single    1.350     0.020     1.350     0.020     
+ENA       C5        C8        single    1.490     0.020     1.490     0.020     
+ENA       N6        C6        single    1.340     0.020     1.340     0.020     
+ENA       C9        N6        single    1.350     0.020     1.350     0.020     
+ENA       C8        N9        single    1.337     0.020     1.337     0.020     
+ENA       C10       C9        double    1.380     0.020     1.380     0.020     
+ENA       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+ENA       "C0'"     "C8'"     single    1.524     0.020     1.524     0.020     
+ENA       "O8'"     "C0'"     single    1.432     0.020     1.432     0.020     
+ENA       "C0'"     "C9'"     single    1.524     0.020     1.524     0.020     
+ENA       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+ENA       "C1'"     "O2'"     single    1.426     0.020     1.426     0.020     
+ENA       N11       C12       double    1.337     0.020     1.337     0.020     
+ENA       N11       C16       single    1.337     0.020     1.337     0.020     
+ENA       "C9'"     N11       single    1.465     0.020     1.465     0.020     
+ENA       C12       C13       single    1.390     0.020     1.390     0.020     
+ENA       C14       C13       double    1.390     0.020     1.390     0.020     
+ENA       C13       C17       single    1.500     0.020     1.500     0.020     
+ENA       C15       C14       single    1.390     0.020     1.390     0.020     
+ENA       C16       C15       double    1.390     0.020     1.390     0.020     
+ENA       N17       C17       single    1.332     0.020     1.332     0.020     
+ENA       C17       O17       double    1.220     0.020     1.220     0.020     
+ENA       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+ENA       "O4'"     "C2'"     single    1.432     0.020     1.432     0.020     
+ENA       "O2'"     "C4'"     single    1.426     0.020     1.426     0.020     
+ENA       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+ENA       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+ENA       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+ENA       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+ENA       "C6'"     "C7'"     single    1.524     0.020     1.524     0.020     
+ENA       "C7'"     "O6'"     single    1.426     0.020     1.426     0.020     
+ENA       "O6'"     "C9'"     single    1.426     0.020     1.426     0.020     
+ENA       "C8'"     "C7'"     single    1.524     0.020     1.524     0.020     
+ENA       "O7'"     "C8'"     single    1.432     0.020     1.432     0.020     
+ENA       H2        C2        single    1.082     0.013     0.975     0.010     
+ENA       H4        C4        single    1.082     0.013     0.975     0.010     
+ENA       HN6       N6        single    1.016     0.010     0.899     0.007     
+ENA       H9        C9        single    1.082     0.013     0.975     0.010     
+ENA       "H0'"     "C0'"     single    1.089     0.010     0.989     0.005     
+ENA       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+ENA       H10       C10       single    1.082     0.013     0.975     0.010     
+ENA       H12       C12       single    1.082     0.013     0.975     0.010     
+ENA       H14       C14       single    1.082     0.013     0.975     0.010     
+ENA       H15       C15       single    1.082     0.013     0.975     0.010     
+ENA       H16       C16       single    1.082     0.013     0.975     0.010     
+ENA       HN17      N17       single    1.016     0.010     0.899     0.007     
+ENA       HN1A      N17       single    1.016     0.010     0.899     0.007     
+ENA       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+ENA       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+ENA       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+ENA       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+ENA       "HO4'"    "O4'"     single    0.970     0.012     0.839     0.014     
+ENA       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+ENA       "H5'A"    "C5'"     single    1.089     0.010     0.989     0.005     
+ENA       "H6'"     "C6'"     single    1.089     0.010     0.989     0.005     
+ENA       "H6'A"    "C6'"     single    1.089     0.010     0.989     0.005     
+ENA       "H7'"     "C7'"     single    1.089     0.010     0.989     0.005     
+ENA       "HO7'"    "O7'"     single    0.970     0.012     0.839     0.014     
+ENA       "H8'"     "C8'"     single    1.089     0.010     0.989     0.005     
+ENA       "HO8'"    "O8'"     single    0.970     0.012     0.839     0.014     
+ENA       "H9'"     "C9'"     single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ENA      O17    C17    N17     123.000    3.000
+ ENA      O17    C17    C13     120.500    3.000
+ ENA      N17    C17    C13     120.000    3.000
+ ENA      C17    N17    HN1A    120.000    3.000
+ ENA      C17    N17    HN17    120.000    3.000
+ ENA      HN1A   N17    HN17    120.000    3.000
+ ENA      C17    C13    C12     120.000    3.000
+ ENA      C17    C13    C14     120.000    3.000
+ ENA      C12    C13    C14     120.000    3.000
+ ENA      C13    C12    H12     120.000    3.000
+ ENA      C13    C12    N11     120.000    3.000
+ ENA      H12    C12    N11     120.000    3.000
+ ENA      C13    C14    H14     120.000    3.000
+ ENA      C13    C14    C15     120.000    3.000
+ ENA      H14    C14    C15     120.000    3.000
+ ENA      C14    C15    H15     120.000    3.000
+ ENA      C14    C15    C16     120.000    3.000
+ ENA      H15    C15    C16     120.000    3.000
+ ENA      C15    C16    H16     120.000    3.000
+ ENA      C15    C16    N11     120.000    3.000
+ ENA      H16    C16    N11     120.000    3.000
+ ENA      C16    N11    "C9'"   120.000    3.000
+ ENA      C16    N11    C12     120.000    3.000
+ ENA      "C9'"  N11    C12     120.000    3.000
+ ENA      N11    "C9'"  "H9'"   109.470    3.000
+ ENA      N11    "C9'"  "C0'"   109.470    3.000
+ ENA      N11    "C9'"  "O6'"   109.470    3.000
+ ENA      "H9'"  "C9'"  "C0'"   108.340    3.000
+ ENA      "H9'"  "C9'"  "O6'"   109.470    3.000
+ ENA      "C0'"  "C9'"  "O6'"   109.470    3.000
+ ENA      "C9'"  "C0'"  "H0'"   108.340    3.000
+ ENA      "C9'"  "C0'"  "O8'"   109.470    3.000
+ ENA      "C9'"  "C0'"  "C8'"   111.000    3.000
+ ENA      "H0'"  "C0'"  "O8'"   109.470    3.000
+ ENA      "H0'"  "C0'"  "C8'"   108.340    3.000
+ ENA      "O8'"  "C0'"  "C8'"   109.470    3.000
+ ENA      "C0'"  "O8'"  "HO8'"  109.470    3.000
+ ENA      "C9'"  "O6'"  "C7'"   111.800    3.000
+ ENA      "O6'"  "C7'"  "H7'"   109.470    3.000
+ ENA      "O6'"  "C7'"  "C8'"   109.470    3.000
+ ENA      "O6'"  "C7'"  "C6'"   109.470    3.000
+ ENA      "H7'"  "C7'"  "C8'"   108.340    3.000
+ ENA      "H7'"  "C7'"  "C6'"   108.340    3.000
+ ENA      "C8'"  "C7'"  "C6'"   111.000    3.000
+ ENA      "C7'"  "C8'"  "H8'"   108.340    3.000
+ ENA      "C7'"  "C8'"  "O7'"   109.470    3.000
+ ENA      "C7'"  "C8'"  "C0'"   111.000    3.000
+ ENA      "H8'"  "C8'"  "O7'"   109.470    3.000
+ ENA      "H8'"  "C8'"  "C0'"   108.340    3.000
+ ENA      "O7'"  "C8'"  "C0'"   109.470    3.000
+ ENA      "C8'"  "O7'"  "HO7'"  109.470    3.000
+ ENA      "C7'"  "C6'"  "H6'"   109.470    3.000
+ ENA      "C7'"  "C6'"  "H6'A"  109.470    3.000
+ ENA      "C7'"  "C6'"  O4      109.470    3.000
+ ENA      "H6'"  "C6'"  "H6'A"  107.900    3.000
+ ENA      "H6'"  "C6'"  O4      109.470    3.000
+ ENA      "H6'A" "C6'"  O4      109.470    3.000
+ ENA      "C6'"  O4     P2      120.500    3.000
+ ENA      O4     P2     O5      108.200    3.000
+ ENA      O4     P2     O6      108.200    3.000
+ ENA      O4     P2     O2      102.600    3.000
+ ENA      O5     P2     O6      119.900    3.000
+ ENA      O5     P2     O2      108.200    3.000
+ ENA      O6     P2     O2      108.200    3.000
+ ENA      P2     O2     P1      120.500    3.000
+ ENA      O2     P1     O1      108.200    3.000
+ ENA      O2     P1     O3      108.200    3.000
+ ENA      O2     P1     "O5'"   102.600    3.000
+ ENA      O1     P1     O3      119.900    3.000
+ ENA      O1     P1     "O5'"   108.200    3.000
+ ENA      O3     P1     "O5'"   108.200    3.000
+ ENA      P1     "O5'"  "C5'"   120.500    3.000
+ ENA      "O5'"  "C5'"  "H5'"   109.470    3.000
+ ENA      "O5'"  "C5'"  "H5'A"  109.470    3.000
+ ENA      "O5'"  "C5'"  "C4'"   109.470    3.000
+ ENA      "H5'"  "C5'"  "H5'A"  107.900    3.000
+ ENA      "H5'"  "C5'"  "C4'"   109.470    3.000
+ ENA      "H5'A" "C5'"  "C4'"   109.470    3.000
+ ENA      "C5'"  "C4'"  "H4'"   108.340    3.000
+ ENA      "C5'"  "C4'"  "C3'"   111.000    3.000
+ ENA      "C5'"  "C4'"  "O2'"   109.470    3.000
+ ENA      "H4'"  "C4'"  "C3'"   108.340    3.000
+ ENA      "H4'"  "C4'"  "O2'"   109.470    3.000
+ ENA      "C3'"  "C4'"  "O2'"   109.470    3.000
+ ENA      "C4'"  "C3'"  "H3'"   108.340    3.000
+ ENA      "C4'"  "C3'"  "O3'"   109.470    3.000
+ ENA      "C4'"  "C3'"  "C2'"   111.000    3.000
+ ENA      "H3'"  "C3'"  "O3'"   109.470    3.000
+ ENA      "H3'"  "C3'"  "C2'"   108.340    3.000
+ ENA      "O3'"  "C3'"  "C2'"   109.470    3.000
+ ENA      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ ENA      "C3'"  "C2'"  "H2'"   108.340    3.000
+ ENA      "C3'"  "C2'"  "O4'"   109.470    3.000
+ ENA      "C3'"  "C2'"  "C1'"   111.000    3.000
+ ENA      "H2'"  "C2'"  "O4'"   109.470    3.000
+ ENA      "H2'"  "C2'"  "C1'"   108.340    3.000
+ ENA      "O4'"  "C2'"  "C1'"   109.470    3.000
+ ENA      "C2'"  "O4'"  "HO4'"  109.470    3.000
+ ENA      "C4'"  "O2'"  "C1'"   111.800    3.000
+ ENA      "O2'"  "C1'"  "H1'"   109.470    3.000
+ ENA      "O2'"  "C1'"  N9      109.470    3.000
+ ENA      "O2'"  "C1'"  "C2'"   109.470    3.000
+ ENA      "H1'"  "C1'"  N9      109.470    3.000
+ ENA      "H1'"  "C1'"  "C2'"   108.340    3.000
+ ENA      N9     "C1'"  "C2'"   109.470    3.000
+ ENA      "C1'"  N9     C4      126.000    3.000
+ ENA      "C1'"  N9     C8      126.000    3.000
+ ENA      C4     N9     C8      108.000    3.000
+ ENA      N9     C4     H4      126.000    3.000
+ ENA      N9     C4     N7      108.000    3.000
+ ENA      H4     C4     N7      126.000    3.000
+ ENA      N9     C8     N3      132.000    3.000
+ ENA      N9     C8     C5      108.000    3.000
+ ENA      N3     C8     C5      120.000    3.000
+ ENA      C8     N3     C2      120.000    3.000
+ ENA      N3     C2     H2      120.000    3.000
+ ENA      N3     C2     N1      120.000    3.000
+ ENA      H2     C2     N1      120.000    3.000
+ ENA      C8     C5     N7      108.000    3.000
+ ENA      C8     C5     C6      120.000    3.000
+ ENA      N7     C5     C6      108.000    3.000
+ ENA      C5     N7     C4      108.000    3.000
+ ENA      C5     C6     N6      108.000    3.000
+ ENA      C5     C6     N1      120.000    3.000
+ ENA      N6     C6     N1      108.000    3.000
+ ENA      C6     N6     HN6     126.000    3.000
+ ENA      C6     N6     C9      108.000    3.000
+ ENA      HN6    N6     C9      126.000    3.000
+ ENA      N6     C9     H9      126.000    3.000
+ ENA      N6     C9     C10     108.000    3.000
+ ENA      H9     C9     C10     126.000    3.000
+ ENA      C9     C10    H10     126.000    3.000
+ ENA      C9     C10    N1      108.000    3.000
+ ENA      H10    C10    N1      108.000    3.000
+ ENA      C10    N1     C2      132.000    3.000
+ ENA      C10    N1     C6      108.000    3.000
+ ENA      C2     N1     C6      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ENA      CONST_1  O17    C17    N17    HN17     180.000    0.000   0
+ ENA      var_1    O17    C17    C13    C14      179.977   20.000   1
+ ENA      CONST_2  C17    C13    C12    N11      180.000    0.000   0
+ ENA      CONST_3  C17    C13    C14    C15      180.000    0.000   0
+ ENA      CONST_4  C13    C14    C15    C16        0.000    0.000   0
+ ENA      CONST_5  C14    C15    C16    N11        0.000    0.000   0
+ ENA      CONST_6  C15    C16    N11    "C9'"    180.000    0.000   0
+ ENA      CONST_7  C16    N11    C12    C13        0.000    0.000   0
+ ENA      var_2    C16    N11    "C9'"  "O6'"     33.825   20.000   1
+ ENA      var_3    N11    "C9'"  "C0'"  "O8'"    -90.000   20.000   3
+ ENA      var_4    "C9'"  "C0'"  "C8'"  "C7'"    -30.000   20.000   3
+ ENA      var_5    "C9'"  "C0'"  "O8'"  "HO8'"  -174.153   20.000   1
+ ENA      var_6    N11    "C9'"  "O6'"  "C7'"   -150.000   20.000   1
+ ENA      var_7    "C9'"  "O6'"  "C7'"  "C6'"    150.000   20.000   1
+ ENA      var_8    "O6'"  "C7'"  "C8'"  "O7'"   -120.000   20.000   3
+ ENA      var_9    "C7'"  "C8'"  "O7'"  "HO7'"   176.233   20.000   1
+ ENA      var_10   "O6'"  "C7'"  "C6'"  O4        66.429   20.000   3
+ ENA      var_11   "C7'"  "C6'"  O4     P2      -179.998   20.000   1
+ ENA      var_12   "C6'"  O4     P2     O2      -175.017   20.000   1
+ ENA      var_13   O4     P2     O2     P1       165.006   20.000   1
+ ENA      var_14   P2     O2     P1     "O5'"    165.009   20.000   1
+ ENA      var_15   O2     P1     "O5'"  "C5'"   -175.000   20.000   1
+ ENA      var_16   P1     "O5'"  "C5'"  "C4'"    179.974   20.000   1
+ ENA      var_17   "O5'"  "C5'"  "C4'"  "O2'"     66.451   20.000   3
+ ENA      var_18   "C5'"  "C4'"  "C3'"  "C2'"   -120.000   20.000   3
+ ENA      var_19   "C4'"  "C3'"  "O3'"  "HO3'"   176.210   20.000   1
+ ENA      var_20   "C4'"  "C3'"  "C2'"  "O4'"   -150.000   20.000   3
+ ENA      var_21   "C3'"  "C2'"  "O4'"  "HO4'"   -67.318   20.000   1
+ ENA      var_22   "C5'"  "C4'"  "O2'"  "C1'"    150.000   20.000   1
+ ENA      var_23   "C4'"  "O2'"  "C1'"  N9      -150.000   20.000   1
+ ENA      var_24   "O2'"  "C1'"  "C2'"  "C3'"     30.000   20.000   3
+ ENA      var_25   "O2'"  "C1'"  N9     C8      -160.908   20.000   1
+ ENA      CONST_8  "C1'"  N9     C4     N7       180.000    0.000   0
+ ENA      CONST_9  N9     C4     N7     C5         0.000    0.000   0
+ ENA      CONST_10 "C1'"  N9     C8     C5       180.000    0.000   0
+ ENA      CONST_11 N9     C8     N3     C2       180.000    0.000   0
+ ENA      CONST_12 C8     N3     C2     N1         0.000    0.000   0
+ ENA      CONST_13 N9     C8     C5     C6       180.000    0.000   0
+ ENA      CONST_14 C8     C5     N7     C4         0.000    0.000   0
+ ENA      CONST_15 C8     C5     C6     N6       180.000    0.000   0
+ ENA      CONST_16 C5     C6     N6     C9       180.000    0.000   0
+ ENA      CONST_17 C6     N6     C9     C10        0.000    0.000   0
+ ENA      CONST_18 N6     C9     C10    N1         0.000    0.000   0
+ ENA      CONST_19 C9     C10    N1     C2       180.000    0.000   0
+ ENA      CONST_20 C10    N1     C2     N3       180.000    0.000   0
+ ENA      CONST_21 C10    N1     C6     C5       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ENA      chir_01  "C0'"  "C8'"  "O8'"  "C9'"     negativ
+ ENA      chir_02  "C1'"  N9     "C2'"  "O2'"     negativ
+ ENA      chir_03  "C2'"  "C1'"  "C3'"  "O4'"     negativ
+ ENA      chir_04  "C3'"  "C2'"  "O3'"  "C4'"     positiv
+ ENA      chir_05  "C4'"  "O2'"  "C3'"  "C5'"     negativ
+ ENA      chir_06  "C7'"  "C6'"  "O6'"  "C8'"     negativ
+ ENA      chir_07  "C8'"  "C0'"  "C7'"  "O7'"     negativ
+ ENA      chir_08  "C9'"  "C0'"  N11    "O6'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ENA      plan-1    N1        0.020
+ ENA      plan-1    C2        0.020
+ ENA      plan-1    C6        0.020
+ ENA      plan-1    C10       0.020
+ ENA      plan-1    N6        0.020
+ ENA      plan-1    C9        0.020
+ ENA      plan-1    N3        0.020
+ ENA      plan-1    H2        0.020
+ ENA      plan-1    C8        0.020
+ ENA      plan-1    C5        0.020
+ ENA      plan-1    HN6       0.020
+ ENA      plan-1    N9        0.020
+ ENA      plan-1    H9        0.020
+ ENA      plan-1    C4        0.020
+ ENA      plan-1    "C1'"     0.020
+ ENA      plan-1    H10       0.020
+ ENA      plan-1    N7        0.020
+ ENA      plan-1    H4        0.020
+ ENA      plan-2    N11       0.020
+ ENA      plan-2    C12       0.020
+ ENA      plan-2    C16       0.020
+ ENA      plan-2    "C9'"     0.020
+ ENA      plan-2    C13       0.020
+ ENA      plan-2    C14       0.020
+ ENA      plan-2    C15       0.020
+ ENA      plan-2    H12       0.020
+ ENA      plan-2    C17       0.020
+ ENA      plan-2    H14       0.020
+ ENA      plan-2    H15       0.020
+ ENA      plan-2    H16       0.020
+ ENA      plan-3    C17       0.020
+ ENA      plan-3    C13       0.020
+ ENA      plan-3    N17       0.020
+ ENA      plan-3    O17       0.020
+ ENA      plan-3    HN1A      0.020
+ ENA      plan-3    HN17      0.020
+ ENA      plan-4    N17       0.020
+ ENA      plan-4    C17       0.020
+ ENA      plan-4    HN17      0.020
+ ENA      plan-4    HN1A      0.020
+# ------------------------------------------------------

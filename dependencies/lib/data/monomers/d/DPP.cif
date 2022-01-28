@@ -1,0 +1,163 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DPP     DPP     "DIAMINOPROPANOICACID"     peptide     15     7     .
+#
+data_comp_DPP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DPP     N       N       NT3     1       1.634       -0.538      -0.180
+DPP     CA      C       CH1     0       0.273       -0.180      0.305
+DPP     C       C       C       0       0.282       1.261       0.830
+DPP     O       O       O       0       0.676       2.149       0.049
+DPP     CB      C       CH2     0       -0.774      -0.356      -0.798
+DPP     NG      N       NT2     0       -2.151      -0.175      -0.326
+DPP     OXT     O       OC      -1      -0.106      1.442       2.001
+DPP     H       H       H       0       2.234       -0.472      0.502
+DPP     H2      H       H       0       1.882       0.024       -0.852
+DPP     H3      H       H       0       1.635       -1.394      -0.493
+DPP     HA      H       H       0       0.041       -0.782      1.049
+DPP     HB2     H       H       0       -0.685      -1.257      -1.180
+DPP     HB3     H       H       0       -0.595      0.293       -1.513
+DPP     HG1     H       H       0       -2.358      0.689       -0.301
+DPP     HG2     H       H       0       -2.252      -0.498      0.496
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DPP      N      n/a    CA     START
+DPP      H      N      .      .
+DPP      H2     N      .      .
+DPP      H3     N      .      .
+DPP      CA     N      C      .
+DPP      HA     CA     .      .
+DPP      CB     CA     NG     .
+DPP      HB2    CB     .      .
+DPP      HB3    CB     .      .
+DPP      NG     CB     HG1    .
+DPP      HG2    NG     .      .
+DPP      HG1    NG     .      .
+DPP      C      CA     .      END
+DPP      O      C      .      .
+DPP      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DPP       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+DPP       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DPP       CA        CB        SINGLE    n         1.530     0.013     1.530     0.013     
+DPP       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DPP       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DPP       CB        NG        SINGLE    n         1.464     0.020     1.464     0.020     
+DPP       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DPP       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DPP       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DPP       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+DPP       CB        HB2       SINGLE    n         1.089     0.010     0.982     0.015     
+DPP       CB        HB3       SINGLE    n         1.089     0.010     0.982     0.015     
+DPP       NG        HG1       SINGLE    n         1.036     0.016     0.888     0.020     
+DPP       NG        HG2       SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DPP          CA           N           H     109.853    1.85
+DPP          CA           N          H2     109.853    1.85
+DPP          CA           N          H3     109.853    1.85
+DPP           H           N          H2     109.028    2.41
+DPP           H           N          H3     109.028    2.41
+DPP          H2           N          H3     109.028    2.41
+DPP           N          CA           C     109.414    1.50
+DPP           N          CA          CB     111.386    1.50
+DPP           N          CA          HA     108.444    1.50
+DPP           C          CA          CB     111.066    2.42
+DPP           C          CA          HA     108.600    1.50
+DPP          CB          CA          HA     108.253    1.50
+DPP          CA           C           O     117.139    1.50
+DPP          CA           C         OXT     117.139    1.50
+DPP           O           C         OXT     125.721    1.50
+DPP          CA          CB          NG     111.883    2.59
+DPP          CA          CB         HB2     108.870    1.50
+DPP          CA          CB         HB3     108.870    1.50
+DPP          NG          CB         HB2     108.870    1.50
+DPP          NG          CB         HB3     108.870    1.50
+DPP         HB2          CB         HB3     107.873    1.50
+DPP          CB          NG         HG1     109.962    3.00
+DPP          CB          NG         HG2     109.962    3.00
+DPP         HG1          NG         HG2     107.243    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DPP             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+DPP             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DPP            sp3_sp3_13           N          CA          CB          NG      60.000   10.00     3
+DPP            sp3_sp3_19          CA          CB          NG         HG1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DPP    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DPP    plan-1           C   0.020
+DPP    plan-1          CA   0.020
+DPP    plan-1           O   0.020
+DPP    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DPP SMILES           ACDLabs              12.01 "O=C(O)C(N)CN"
+DPP InChI            InChI                1.03  "InChI=1S/C3H8N2O2/c4-1-2(5)3(6)7/h2H,1,4-5H2,(H,6,7)/t2-/m0/s1"
+DPP InChIKey         InChI                1.03  PECYZEOJVXMISF-REOHCLBHSA-N
+DPP SMILES_CANONICAL CACTVS               3.370 "NC[C@H](N)C(O)=O"
+DPP SMILES           CACTVS               3.370 "NC[CH](N)C(O)=O"
+DPP SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "C([C@@H](C(=O)O)N)N"
+DPP SMILES           "OpenEye OEToolkits" 1.7.2 "C(C(C(=O)O)N)N"
+DPP ?                acedrg               196         "dictionary generator"
+DPP ?                acedrg_database      11          "data source"
+DPP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DPP ?                refmac5              5.8.0222    "optimization tool"

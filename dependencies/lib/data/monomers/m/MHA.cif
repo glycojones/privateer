@@ -1,0 +1,169 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MHA     MHA      "(CARBAMOYLMETHYL-CARBOXYMETHYL-AMINO)-ACETIC ACID"     NON-POLYMER     21     13     .     
+#
+data_comp_MHA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MHA     N1      N       NT      0       59.524      88.719      26.609      
+MHA     C1      C       CH2     0       58.508      89.760      26.833      
+MHA     C2      C       C       0       57.086      89.203      26.922      
+MHA     O1      O       OC      -1      56.846      88.412      27.855      
+MHA     O2      O       O       0       56.267      89.577      26.057      
+MHA     C3      C       CH2     0       60.794      88.926      27.329      
+MHA     C4      C       C       0       60.768      88.546      28.812      
+MHA     O3      O       OC      -1      61.565      89.150      29.557      
+MHA     O4      O       O       0       59.966      87.660      29.177      
+MHA     C5      C       CH2     0       59.666      88.283      25.204      
+MHA     C6      C       C       0       59.963      86.800      25.061      
+MHA     O5      O       O       0       59.092      85.969      25.331      
+MHA     N2      N       NH2     0       61.177      86.457      24.646      
+MHA     HC11    H       H       0       58.550      90.405      26.106      
+MHA     HC12    H       H       0       58.703      90.236      27.657      
+MHA     HC31    H       H       0       61.040      89.863      27.258      
+MHA     HC32    H       H       0       61.497      88.412      26.899      
+MHA     HC51    H       H       0       60.375      88.797      24.786      
+MHA     HC52    H       H       0       58.843      88.472      24.722      
+MHA     HN21    H       H       0       61.349      85.614      24.440      
+MHA     HN22    H       H       0       61.824      87.057      24.593      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MHA       N1        C1        SINGLE    n         1.459     0.015     1.459     0.015     
+MHA       N1        C3        SINGLE    n         1.459     0.015     1.459     0.015     
+MHA       N1        C5        SINGLE    n         1.460     0.017     1.460     0.017     
+MHA       C1        C2        SINGLE    n         1.527     0.012     1.527     0.012     
+MHA       C2        O1        SINGLE    n         1.247     0.019     1.247     0.019     
+MHA       C2        O2        DOUBLE    n         1.247     0.019     1.247     0.019     
+MHA       C3        C4        SINGLE    n         1.527     0.012     1.527     0.012     
+MHA       C4        O3        SINGLE    n         1.247     0.019     1.247     0.019     
+MHA       C4        O4        DOUBLE    n         1.247     0.019     1.247     0.019     
+MHA       C5        C6        SINGLE    n         1.515     0.010     1.515     0.010     
+MHA       C6        O5        DOUBLE    n         1.234     0.010     1.234     0.010     
+MHA       C6        N2        SINGLE    n         1.324     0.010     1.324     0.010     
+MHA       C1        HC11      SINGLE    n         1.089     0.010     0.971     0.020     
+MHA       C1        HC12      SINGLE    n         1.089     0.010     0.971     0.020     
+MHA       C3        HC31      SINGLE    n         1.089     0.010     0.971     0.020     
+MHA       C3        HC32      SINGLE    n         1.089     0.010     0.971     0.020     
+MHA       C5        HC51      SINGLE    n         1.089     0.010     0.971     0.020     
+MHA       C5        HC52      SINGLE    n         1.089     0.010     0.971     0.020     
+MHA       N2        HN21      SINGLE    n         1.016     0.010     0.884     0.020     
+MHA       N2        HN22      SINGLE    n         1.016     0.010     0.884     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MHA          C1          N1          C3     113.464    1.79
+MHA          C1          N1          C5     113.464    1.79
+MHA          C3          N1          C5     113.464    1.79
+MHA          N1          C1          C2     112.134    2.59
+MHA          N1          C1        HC11     108.627    1.50
+MHA          N1          C1        HC12     108.627    1.50
+MHA          C2          C1        HC11     108.544    1.50
+MHA          C2          C1        HC12     108.544    1.50
+MHA        HC11          C1        HC12     107.487    1.50
+MHA          C1          C2          O1     117.146    1.78
+MHA          C1          C2          O2     117.146    1.78
+MHA          O1          C2          O2     125.708    1.50
+MHA          N1          C3          C4     112.134    2.59
+MHA          N1          C3        HC31     108.627    1.50
+MHA          N1          C3        HC32     108.627    1.50
+MHA          C4          C3        HC31     108.544    1.50
+MHA          C4          C3        HC32     108.544    1.50
+MHA        HC31          C3        HC32     107.487    1.50
+MHA          C3          C4          O3     117.146    1.78
+MHA          C3          C4          O4     117.146    1.78
+MHA          O3          C4          O4     125.708    1.50
+MHA          N1          C5          C6     112.809    2.43
+MHA          N1          C5        HC51     108.930    1.50
+MHA          N1          C5        HC52     108.930    1.50
+MHA          C6          C5        HC51     108.640    1.50
+MHA          C6          C5        HC52     108.640    1.50
+MHA        HC51          C5        HC52     107.938    1.50
+MHA          C5          C6          O5     120.707    1.67
+MHA          C5          C6          N2     116.024    1.51
+MHA          O5          C6          N2     123.269    1.50
+MHA          C6          N2        HN21     119.954    1.50
+MHA          C6          N2        HN22     119.954    1.50
+MHA        HN21          N2        HN22     120.093    2.38
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MHA             sp3_sp3_1          C2          C1          N1          C3     180.000   10.00     3
+MHA             sp3_sp3_7          C4          C3          N1          C1     180.000   10.00     3
+MHA            sp3_sp3_13          C6          C5          N1          C1     180.000   10.00     3
+MHA             sp2_sp2_1          C5          C6          N2        HN21     180.000   10.00     2
+MHA             sp2_sp3_2          O1          C2          C1          N1     120.000   10.00     6
+MHA             sp2_sp3_8          O3          C4          C3          N1     120.000   10.00     6
+MHA            sp2_sp3_14          O5          C6          C5          N1     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MHA    plan-1          C1   0.020
+MHA    plan-1          C2   0.020
+MHA    plan-1          O1   0.020
+MHA    plan-1          O2   0.020
+MHA    plan-2          C3   0.020
+MHA    plan-2          C4   0.020
+MHA    plan-2          O3   0.020
+MHA    plan-2          O4   0.020
+MHA    plan-3          C5   0.020
+MHA    plan-3          C6   0.020
+MHA    plan-3          N2   0.020
+MHA    plan-3          O5   0.020
+MHA    plan-4          C6   0.020
+MHA    plan-4        HN21   0.020
+MHA    plan-4        HN22   0.020
+MHA    plan-4          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MHA SMILES           ACDLabs              10.04 "O=C(O)CN(CC(=O)N)CC(=O)O"
+MHA SMILES_CANONICAL CACTVS               3.341 "NC(=O)CN(CC(O)=O)CC(O)=O"
+MHA SMILES           CACTVS               3.341 "NC(=O)CN(CC(O)=O)CC(O)=O"
+MHA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)N)N(CC(=O)O)CC(=O)O"
+MHA SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)N)N(CC(=O)O)CC(=O)O"
+MHA InChI            InChI                1.03  "InChI=1S/C6H10N2O5/c7-4(9)1-8(2-5(10)11)3-6(12)13/h1-3H2,(H2,7,9)(H,10,11)(H,12,13)"
+MHA InChIKey         InChI                1.03  QZTKDVCDBIDYMD-UHFFFAOYSA-N
+MHA ?                acedrg               202         "dictionary generator"                  
+MHA ?                acedrg_database      11          "data source"                           
+MHA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MHA ?                refmac5              5.8.0189    "optimization tool"                     

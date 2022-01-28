@@ -1,0 +1,338 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AFC      AFC '(3R,12R)-3-AMINO-12-METHYLTETRADECAN' non-polymer        48  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AFC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AFC           O      O    O         0.000      0.000    0.000    0.000
+ AFC           C      C    C1        0.000      0.227    0.548    1.072
+ AFC           HC1    H    H         0.000      1.232    0.487    1.454
+ AFC           CG     C    CH2       0.000     -0.788    1.305    1.905
+ AFC           HG1    H    H         0.000     -0.814    0.799    2.872
+ AFC           HG2    H    H         0.000     -1.746    1.171    1.399
+ AFC           CA     C    CH1       0.000     -0.524    2.803    2.115
+ AFC           HA     H    H         0.000      0.447    2.897    2.621
+ AFC           N      N    NH2       0.000     -1.536    3.385    2.999
+ AFC           HN1    H    H         0.000     -1.952    2.826    3.733
+ AFC           H      H    H         0.000     -1.824    4.348    2.880
+ AFC           CB     C    CH2       0.000     -0.424    3.571    0.782
+ AFC           HB2    H    H         0.000      0.444    3.184    0.245
+ AFC           HB3    H    H         0.000     -0.263    4.624    1.022
+ AFC           CD     C    CH2       0.000     -1.675    3.430   -0.094
+ AFC           HD1    H    H         0.000     -2.523    3.869    0.435
+ AFC           HD2    H    H         0.000     -1.864    2.367   -0.263
+ AFC           CE     C    CH2       0.000     -1.489    4.137   -1.441
+ AFC           HE1    H    H         0.000     -0.615    3.712   -1.939
+ AFC           HE2    H    H         0.000     -1.320    5.200   -1.255
+ AFC           CF     C    CH2       0.000     -2.721    3.964   -2.331
+ AFC           HF1    H    H         0.000     -3.577    4.364   -1.785
+ AFC           HF2    H    H         0.000     -2.861    2.892   -2.489
+ AFC           CI     C    CH2       0.000     -2.602    4.670   -3.687
+ AFC           HI1    H    H         0.000     -1.716    4.273   -4.186
+ AFC           HI2    H    H         0.000     -2.460    5.735   -3.490
+ AFC           CJ     C    CH2       0.000     -3.826    4.474   -4.583
+ AFC           HJ1    H    H         0.000     -4.681    4.923   -4.072
+ AFC           HJ2    H    H         0.000     -3.988    3.399   -4.684
+ AFC           CK     C    CH2       0.000     -3.671    5.102   -5.973
+ AFC           HK1    H    H         0.000     -2.766    4.666   -6.402
+ AFC           HK2    H    H         0.000     -3.515    6.170   -5.806
+ AFC           CL     C    CH2       0.000     -4.845    4.899   -6.937
+ AFC           HL1    H    H         0.000     -4.969    3.820   -7.043
+ AFC           HL2    H    H         0.000     -4.532    5.324   -7.892
+ AFC           CM     C    CH1       0.000     -6.184    5.532   -6.505
+ AFC           HM     H    H         0.000     -6.521    4.996   -5.607
+ AFC           CN2    C    CH3       0.000     -7.238    5.296   -7.594
+ AFC           HN23   H    H         0.000     -8.185    5.626   -7.249
+ AFC           HN22   H    H         0.000     -6.975    5.837   -8.466
+ AFC           HN21   H    H         0.000     -7.288    4.263   -7.823
+ AFC           CN1    C    CH2       0.000     -6.085    7.024   -6.133
+ AFC           HN11   H    H         0.000     -5.398    7.086   -5.286
+ AFC           HN12   H    H         0.000     -7.084    7.329   -5.813
+ AFC           CO1    C    CH3       0.000     -5.604    7.944   -7.247
+ AFC           HO13   H    H         0.000     -5.552    8.939   -6.889
+ AFC           HO12   H    H         0.000     -4.643    7.636   -7.571
+ AFC           HO11   H    H         0.000     -6.281    7.898   -8.062
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AFC      O      n/a    C      START
+ AFC      C      O      CG     .
+ AFC      HC1    C      .      .
+ AFC      CG     C      CA     .
+ AFC      HG1    CG     .      .
+ AFC      HG2    CG     .      .
+ AFC      CA     CG     CB     .
+ AFC      HA     CA     .      .
+ AFC      N      CA     H      .
+ AFC      HN1    N      .      .
+ AFC      H      N      .      .
+ AFC      CB     CA     CD     .
+ AFC      HB2    CB     .      .
+ AFC      HB3    CB     .      .
+ AFC      CD     CB     CE     .
+ AFC      HD1    CD     .      .
+ AFC      HD2    CD     .      .
+ AFC      CE     CD     CF     .
+ AFC      HE1    CE     .      .
+ AFC      HE2    CE     .      .
+ AFC      CF     CE     CI     .
+ AFC      HF1    CF     .      .
+ AFC      HF2    CF     .      .
+ AFC      CI     CF     CJ     .
+ AFC      HI1    CI     .      .
+ AFC      HI2    CI     .      .
+ AFC      CJ     CI     CK     .
+ AFC      HJ1    CJ     .      .
+ AFC      HJ2    CJ     .      .
+ AFC      CK     CJ     CL     .
+ AFC      HK1    CK     .      .
+ AFC      HK2    CK     .      .
+ AFC      CL     CK     CM     .
+ AFC      HL1    CL     .      .
+ AFC      HL2    CL     .      .
+ AFC      CM     CL     CN1    .
+ AFC      HM     CM     .      .
+ AFC      CN2    CM     HN21   .
+ AFC      HN23   CN2    .      .
+ AFC      HN22   CN2    .      .
+ AFC      HN21   CN2    .      .
+ AFC      CN1    CM     CO1    .
+ AFC      HN11   CN1    .      .
+ AFC      HN12   CN1    .      .
+ AFC      CO1    CN1    HO11   .
+ AFC      HO13   CO1    .      .
+ AFC      HO12   CO1    .      .
+ AFC      HO11   CO1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AFC       H         N         single    1.036     0.016     0.914     0.007     
+AFC       N         CA        single    1.450     0.020     1.450     0.020     
+AFC       HA        CA        single    1.089     0.010     0.989     0.005     
+AFC       CA        CG        single    1.524     0.020     1.524     0.020     
+AFC       CB        CA        single    1.524     0.020     1.524     0.020     
+AFC       HB2       CB        single    1.089     0.010     0.989     0.005     
+AFC       HB3       CB        single    1.089     0.010     0.989     0.005     
+AFC       CD        CB        single    1.524     0.020     1.524     0.020     
+AFC       CG        C         single    1.510     0.020     1.510     0.020     
+AFC       C         O         double    1.220     0.020     1.220     0.020     
+AFC       HD1       CD        single    1.089     0.010     0.989     0.005     
+AFC       HD2       CD        single    1.089     0.010     0.989     0.005     
+AFC       CE        CD        single    1.524     0.020     1.524     0.020     
+AFC       HE1       CE        single    1.089     0.010     0.989     0.005     
+AFC       HE2       CE        single    1.089     0.010     0.989     0.005     
+AFC       CF        CE        single    1.524     0.020     1.524     0.020     
+AFC       HF1       CF        single    1.089     0.010     0.989     0.005     
+AFC       HF2       CF        single    1.089     0.010     0.989     0.005     
+AFC       CI        CF        single    1.524     0.020     1.524     0.020     
+AFC       HI1       CI        single    1.089     0.010     0.989     0.005     
+AFC       HI2       CI        single    1.089     0.010     0.989     0.005     
+AFC       CJ        CI        single    1.524     0.020     1.524     0.020     
+AFC       HJ1       CJ        single    1.089     0.010     0.989     0.005     
+AFC       HJ2       CJ        single    1.089     0.010     0.989     0.005     
+AFC       CK        CJ        single    1.524     0.020     1.524     0.020     
+AFC       HK1       CK        single    1.089     0.010     0.989     0.005     
+AFC       HK2       CK        single    1.089     0.010     0.989     0.005     
+AFC       CL        CK        single    1.524     0.020     1.524     0.020     
+AFC       HL1       CL        single    1.089     0.010     0.989     0.005     
+AFC       HL2       CL        single    1.089     0.010     0.989     0.005     
+AFC       CM        CL        single    1.524     0.020     1.524     0.020     
+AFC       HM        CM        single    1.089     0.010     0.989     0.005     
+AFC       CN2       CM        single    1.524     0.020     1.524     0.020     
+AFC       CN1       CM        single    1.524     0.020     1.524     0.020     
+AFC       HN21      CN2       single    1.089     0.010     0.989     0.005     
+AFC       HN22      CN2       single    1.089     0.010     0.989     0.005     
+AFC       HN23      CN2       single    1.089     0.010     0.989     0.005     
+AFC       HN11      CN1       single    1.089     0.010     0.989     0.005     
+AFC       HN12      CN1       single    1.089     0.010     0.989     0.005     
+AFC       CO1       CN1       single    1.513     0.020     1.513     0.020     
+AFC       HO11      CO1       single    1.089     0.010     0.989     0.005     
+AFC       HO12      CO1       single    1.089     0.010     0.989     0.005     
+AFC       HO13      CO1       single    1.089     0.010     0.989     0.005     
+AFC       HG1       CG        single    1.089     0.010     0.989     0.005     
+AFC       HG2       CG        single    1.089     0.010     0.989     0.005     
+AFC       HC1       C         single    1.082     0.013     0.975     0.010     
+AFC       HN1       N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AFC      O      C      HC1     123.000    3.000
+ AFC      O      C      CG      120.500    3.000
+ AFC      HC1    C      CG      120.000    3.000
+ AFC      C      CG     HG1     109.470    3.000
+ AFC      C      CG     HG2     109.470    3.000
+ AFC      C      CG     CA      109.470    3.000
+ AFC      HG1    CG     HG2     107.900    3.000
+ AFC      HG1    CG     CA      109.470    3.000
+ AFC      HG2    CG     CA      109.470    3.000
+ AFC      CG     CA     HA      108.340    3.000
+ AFC      CG     CA     N       109.470    3.000
+ AFC      CG     CA     CB      109.470    3.000
+ AFC      HA     CA     N       109.470    3.000
+ AFC      HA     CA     CB      108.340    3.000
+ AFC      N      CA     CB      109.470    3.000
+ AFC      CA     N      HN1     120.000    3.000
+ AFC      CA     N      H       120.000    3.000
+ AFC      HN1    N      H       120.000    3.000
+ AFC      CA     CB     HB2     109.470    3.000
+ AFC      CA     CB     HB3     109.470    3.000
+ AFC      CA     CB     CD      111.000    3.000
+ AFC      HB2    CB     HB3     107.900    3.000
+ AFC      HB2    CB     CD      109.470    3.000
+ AFC      HB3    CB     CD      109.470    3.000
+ AFC      CB     CD     HD1     109.470    3.000
+ AFC      CB     CD     HD2     109.470    3.000
+ AFC      CB     CD     CE      111.000    3.000
+ AFC      HD1    CD     HD2     107.900    3.000
+ AFC      HD1    CD     CE      109.470    3.000
+ AFC      HD2    CD     CE      109.470    3.000
+ AFC      CD     CE     HE1     109.470    3.000
+ AFC      CD     CE     HE2     109.470    3.000
+ AFC      CD     CE     CF      111.000    3.000
+ AFC      HE1    CE     HE2     107.900    3.000
+ AFC      HE1    CE     CF      109.470    3.000
+ AFC      HE2    CE     CF      109.470    3.000
+ AFC      CE     CF     HF1     109.470    3.000
+ AFC      CE     CF     HF2     109.470    3.000
+ AFC      CE     CF     CI      111.000    3.000
+ AFC      HF1    CF     HF2     107.900    3.000
+ AFC      HF1    CF     CI      109.470    3.000
+ AFC      HF2    CF     CI      109.470    3.000
+ AFC      CF     CI     HI1     109.470    3.000
+ AFC      CF     CI     HI2     109.470    3.000
+ AFC      CF     CI     CJ      111.000    3.000
+ AFC      HI1    CI     HI2     107.900    3.000
+ AFC      HI1    CI     CJ      109.470    3.000
+ AFC      HI2    CI     CJ      109.470    3.000
+ AFC      CI     CJ     HJ1     109.470    3.000
+ AFC      CI     CJ     HJ2     109.470    3.000
+ AFC      CI     CJ     CK      111.000    3.000
+ AFC      HJ1    CJ     HJ2     107.900    3.000
+ AFC      HJ1    CJ     CK      109.470    3.000
+ AFC      HJ2    CJ     CK      109.470    3.000
+ AFC      CJ     CK     HK1     109.470    3.000
+ AFC      CJ     CK     HK2     109.470    3.000
+ AFC      CJ     CK     CL      111.000    3.000
+ AFC      HK1    CK     HK2     107.900    3.000
+ AFC      HK1    CK     CL      109.470    3.000
+ AFC      HK2    CK     CL      109.470    3.000
+ AFC      CK     CL     HL1     109.470    3.000
+ AFC      CK     CL     HL2     109.470    3.000
+ AFC      CK     CL     CM      111.000    3.000
+ AFC      HL1    CL     HL2     107.900    3.000
+ AFC      HL1    CL     CM      109.470    3.000
+ AFC      HL2    CL     CM      109.470    3.000
+ AFC      CL     CM     HM      108.340    3.000
+ AFC      CL     CM     CN2     111.000    3.000
+ AFC      CL     CM     CN1     109.470    3.000
+ AFC      HM     CM     CN2     108.340    3.000
+ AFC      HM     CM     CN1     108.340    3.000
+ AFC      CN2    CM     CN1     111.000    3.000
+ AFC      CM     CN2    HN23    109.470    3.000
+ AFC      CM     CN2    HN22    109.470    3.000
+ AFC      CM     CN2    HN21    109.470    3.000
+ AFC      HN23   CN2    HN22    109.470    3.000
+ AFC      HN23   CN2    HN21    109.470    3.000
+ AFC      HN22   CN2    HN21    109.470    3.000
+ AFC      CM     CN1    HN11    109.470    3.000
+ AFC      CM     CN1    HN12    109.470    3.000
+ AFC      CM     CN1    CO1     111.000    3.000
+ AFC      HN11   CN1    HN12    107.900    3.000
+ AFC      HN11   CN1    CO1     109.470    3.000
+ AFC      HN12   CN1    CO1     109.470    3.000
+ AFC      CN1    CO1    HO13    109.470    3.000
+ AFC      CN1    CO1    HO12    109.470    3.000
+ AFC      CN1    CO1    HO11    109.470    3.000
+ AFC      HO13   CO1    HO12    109.470    3.000
+ AFC      HO13   CO1    HO11    109.470    3.000
+ AFC      HO12   CO1    HO11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AFC      var_1    O      C      CG     CA      -116.814   20.000   1
+ AFC      var_2    C      CG     CA     CB        57.967   20.000   3
+ AFC      var_3    CG     CA     N      H       -148.038   20.000   1
+ AFC      var_4    CG     CA     CB     CD        57.405   20.000   3
+ AFC      var_5    CA     CB     CD     CE      -176.441   20.000   3
+ AFC      var_6    CB     CD     CE     CF       178.402   20.000   3
+ AFC      var_7    CD     CE     CF     CI       179.097   20.000   3
+ AFC      var_8    CE     CF     CI     CJ       179.019   20.000   3
+ AFC      var_9    CF     CI     CJ     CK      -176.215   20.000   3
+ AFC      var_10   CI     CJ     CK     CL       178.005   20.000   3
+ AFC      var_11   CJ     CK     CL     CM        63.271   20.000   3
+ AFC      var_12   CK     CL     CM     CN1       51.908   20.000   3
+ AFC      var_13   CL     CM     CN2    HN21      53.163   20.000   3
+ AFC      var_14   CL     CM     CN1    CO1       60.465   20.000   3
+ AFC      var_15   CM     CN1    CO1    HO11      61.114   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AFC      chir_01  CA     N      CB     CG        positiv
+ AFC      chir_02  CM     CL     CN2    CN1       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AFC      plan-1    N         0.020
+ AFC      plan-1    CA        0.020
+ AFC      plan-1    H         0.020
+ AFC      plan-1    HN1       0.020
+ AFC      plan-2    C         0.020
+ AFC      plan-2    O         0.020
+ AFC      plan-2    CG        0.020
+ AFC      plan-2    HC1       0.020
+# ------------------------------------------------------

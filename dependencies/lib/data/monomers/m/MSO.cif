@@ -1,0 +1,196 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MSO     MSO     "SELENOMETHIONINESELENOXIDE"     peptide     21     10     .
+#
+data_comp_MSO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MSO     N       N       NT3     1       -6.159      8.130       40.978
+MSO     CA      C       CH1     0       -5.241      6.968       41.136
+MSO     CB      C       CH2     0       -5.968      5.669       40.780
+MSO     C       C       C       0       -4.008      7.165       40.244
+MSO     CG      C       CH2     0       -5.230      4.408       41.214
+MSO     SE      SE      SE      0       -6.339      2.808       41.038
+MSO     OE      O       O       0       -7.650      2.921       42.065
+MSO     CE      C       CH3     0       -5.279      1.232       41.502
+MSO     O       O       O       0       -2.890      6.996       40.771
+MSO     OXT     O       OC      -1      -4.213      7.479       39.055
+MSO     H       H       H       0       -5.700      8.912       41.077
+MSO     H2      H       H       0       -6.815      8.094       41.608
+MSO     H3      H       H       0       -6.542      8.114       40.151
+MSO     HCA     H       H       0       -4.950      6.928       42.077
+MSO     HB2     H       H       0       -6.102      5.640       39.810
+MSO     HB3     H       H       0       -6.852      5.680       41.204
+MSO     HG2     H       H       0       -4.951      4.506       42.147
+MSO     HG3     H       H       0       -4.425      4.303       40.667
+MSO     HE1     H       H       0       -5.767      0.458       41.263
+MSO     HE2     H       H       0       -5.116      1.241       42.434
+MSO     HE3     H       H       0       -4.463      1.266       41.026
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+MSO      N      n/a    CA     START
+MSO      H      N      .      .
+MSO      H2     N      .      .
+MSO      H3     N      .      .
+MSO      CA     N      C      .
+MSO      HCA    CA     .      .
+MSO      CB     CA     CG     .
+MSO      HB2    CB     .      .
+MSO      HB3    CB     .      .
+MSO      CG     CB     SE     .
+MSO      HG2    CG     .      .
+MSO      HG3    CG     .      .
+MSO      SE     CG     CE     .
+MSO      OE     SE     .      .
+MSO      CE     SE     HE1    .
+MSO      HE3    CE     .      .
+MSO      HE2    CE     .      .
+MSO      HE1    CE     .      .
+MSO      C      CA     .      END
+MSO      O      C      .      .
+MSO      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MSO       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+MSO       CA        CB        SINGLE    n         1.530     0.011     1.530     0.011     
+MSO       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+MSO       CB        CG        SINGLE    n         1.523     0.015     1.523     0.015     
+MSO       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+MSO       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+MSO       CG        SE        SINGLE    n         1.955     0.020     1.955     0.020     
+MSO       SE        OE        DOUBLE    n         1.669     0.019     1.669     0.019     
+MSO       SE        CE        SINGLE    n         1.955     0.020     1.955     0.020     
+MSO       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+MSO       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+MSO       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+MSO       CA        HCA       SINGLE    n         1.089     0.010     0.985     0.020     
+MSO       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.018     
+MSO       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.018     
+MSO       CG        HG2       SINGLE    n         1.089     0.010     0.979     0.019     
+MSO       CG        HG3       SINGLE    n         1.089     0.010     0.979     0.019     
+MSO       CE        HE1       SINGLE    n         1.089     0.010     0.946     0.019     
+MSO       CE        HE2       SINGLE    n         1.089     0.010     0.946     0.019     
+MSO       CE        HE3       SINGLE    n         1.089     0.010     0.946     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MSO          CA           N           H     110.062    1.93
+MSO          CA           N          H2     110.062    1.93
+MSO          CA           N          H3     110.062    1.93
+MSO           H           N          H2     109.028    2.41
+MSO           H           N          H3     109.028    2.41
+MSO          H2           N          H3     109.028    2.41
+MSO           N          CA          CB     110.245    1.51
+MSO           N          CA           C     109.241    1.50
+MSO           N          CA         HCA     108.487    1.50
+MSO          CB          CA           C     110.728    2.07
+MSO          CB          CA         HCA     109.207    1.50
+MSO           C          CA         HCA     108.824    1.50
+MSO          CA          CB          CG     113.808    1.88
+MSO          CA          CB         HB2     108.567    1.50
+MSO          CA          CB         HB3     108.567    1.50
+MSO          CG          CB         HB2     108.869    1.50
+MSO          CG          CB         HB3     108.869    1.50
+MSO         HB2          CB         HB3     107.715    1.50
+MSO          CA           C           O     117.124    1.50
+MSO          CA           C         OXT     117.124    1.50
+MSO           O           C         OXT     125.752    1.50
+MSO          CB          CG          SE     111.557    3.00
+MSO          CB          CG         HG2     108.964    1.50
+MSO          CB          CG         HG3     108.964    1.50
+MSO          SE          CG         HG2     109.139    1.50
+MSO          SE          CG         HG3     109.139    1.50
+MSO         HG2          CG         HG3     107.808    1.50
+MSO          CG          SE          OE     109.471    3.00
+MSO          CG          SE          CE     109.471    3.00
+MSO          OE          SE          CE     109.471    3.00
+MSO          SE          CE         HE1     109.139    1.50
+MSO          SE          CE         HE2     109.139    1.50
+MSO          SE          CE         HE3     109.139    1.50
+MSO         HE1          CE         HE2     112.249    3.00
+MSO         HE1          CE         HE3     112.249    3.00
+MSO         HE2          CE         HE3     112.249    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MSO             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+MSO            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+MSO             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+MSO            sp3_sp3_19          CA          CB          CG          SE     180.000   10.00     3
+MSO            sp3_sp3_28          CB          CG          SE          OE     180.000   10.00     3
+MSO            sp3_sp3_34         HE1          CE          SE          CG     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MSO    chir_1    CA    N    C    CB    positive
+MSO    chir_2    SE    OE    CG    CE    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MSO    plan-1           C   0.020
+MSO    plan-1          CA   0.020
+MSO    plan-1           O   0.020
+MSO    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MSO SMILES           ACDLabs              10.04 "O=C(O)C(N)CC[Se](=O)C"
+MSO SMILES_CANONICAL CACTVS               3.341 "C[Se](=O)CC[C@H](N)C(O)=O"
+MSO SMILES           CACTVS               3.341 "C[Se](=O)CC[CH](N)C(O)=O"
+MSO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[Se@@](=O)CC[C@@H](C(=O)O)N"
+MSO SMILES           "OpenEye OEToolkits" 1.5.0 "C[Se](=O)CCC(C(=O)O)N"
+MSO InChI            InChI                1.03  "InChI=1S/C5H11NO3Se/c1-10(9)3-2-4(6)5(7)8/h4H,2-3,6H2,1H3,(H,7,8)/t4-,10+/m0/s1"
+MSO InChIKey         InChI                1.03  KGXZPWNBFWCDRF-ZXPFJRLXSA-N
+MSO ?                acedrg               196         "dictionary generator"
+MSO ?                acedrg_database      11          "data source"
+MSO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MSO ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,707 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HOL      HOL '"ALPHA-CHOLEST-5-EN-3-YL 3-[(2-DEOXY' DNA               107  47 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HOL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HOL           OP3    O    OP       -0.666      0.000    0.000    0.000
+ HOL           P      P    P         0.000     -1.358    0.642   -0.178
+ HOL           OP1    O    OP       -0.666     -1.539    1.964    0.536
+ HOL           OP2    O    OP       -0.666     -1.525    0.692   -1.681
+ HOL           "O5'"  O    O2        0.000     -2.376   -0.529    0.283
+ HOL           "C5'"  C    CH2       0.000     -2.272   -1.798   -0.339
+ HOL           "H5'"  H    H         0.000     -2.056   -2.562    0.411
+ HOL           "H5''" H    H         0.000     -1.472   -1.783   -1.081
+ HOL           "C4'"  C    CH1       0.000     -3.596   -2.115   -1.022
+ HOL           "H4'"  H    H         0.000     -4.413   -2.088   -0.288
+ HOL           "O4'"  O    O2        0.000     -3.812   -1.114   -2.036
+ HOL           "C1'"  C    CH1       0.000     -3.781   -1.730   -3.331
+ HOL           "H1'"  H    H         0.000     -3.167   -1.130   -4.017
+ HOL           O1     O    O2        0.000     -5.096   -1.876   -3.854
+ HOL           C2     C    CH2       0.000     -5.723   -0.615   -4.050
+ HOL           H21    H    H         0.000     -5.152   -0.025   -4.769
+ HOL           H22    H    H         0.000     -5.776   -0.077   -3.101
+ HOL           C3     C    CH2       0.000     -7.131   -0.846   -4.583
+ HOL           H31    H    H         0.000     -7.674   -1.441   -3.845
+ HOL           H32    H    H         0.000     -7.046   -1.411   -5.513
+ HOL           C4     C    CH2       0.000     -7.884    0.453   -4.843
+ HOL           H41    H    H         0.000     -8.875    0.196   -5.223
+ HOL           H42    H    H         0.000     -7.337    1.011   -5.606
+ HOL           N5     N    NH1       0.000     -8.017    1.262   -3.655
+ HOL           H5     H    H         0.000     -8.506    0.869   -2.863
+ HOL           C6     C    C         0.000     -7.516    2.542   -3.539
+ HOL           O7     O    O         0.000     -6.902    3.153   -4.408
+ HOL           O8     O    O2        0.000     -7.801    3.047   -2.298
+ HOL           C9     C    CH1       0.000     -6.869    3.986   -1.772
+ HOL           H9     H    H         0.000     -6.812    4.848   -2.453
+ HOL           C10    C    CH2       0.000     -5.490    3.339   -1.677
+ HOL           H101   H    H         0.000     -5.150    3.108   -2.689
+ HOL           H102   H    H         0.000     -5.585    2.414   -1.106
+ HOL           C11    C    C         0.000     -4.489    4.249   -1.003
+ HOL           C16    C    C1        0.000     -3.301    4.487   -1.588
+ HOL           H16    H    H         0.000     -3.112    4.026   -2.542
+ HOL           C17    C    CH2       0.000     -2.223    5.346   -1.008
+ HOL           H171   H    H         0.000     -2.190    6.266   -1.594
+ HOL           H172   H    H         0.000     -1.280    4.807   -1.124
+ HOL           C18    C    CH1       0.000     -2.440    5.688    0.474
+ HOL           H18    H    H         0.000     -2.187    4.807    1.081
+ HOL           C23    C    CH1       0.000     -1.543    6.855    0.899
+ HOL           H23    H    H         0.000     -1.847    7.723    0.298
+ HOL           C25    C    CH2       0.000     -0.032    6.717    0.738
+ HOL           H251   H    H         0.000      0.290    6.908   -0.287
+ HOL           H252   H    H         0.000      0.326    5.735    1.054
+ HOL           C26    C    CH2       0.000      0.545    7.799    1.670
+ HOL           H261   H    H         0.000      1.020    8.598    1.096
+ HOL           H262   H    H         0.000      1.270    7.372    2.365
+ HOL           C27    C    CH1       0.000     -0.655    8.374    2.461
+ HOL           H27    H    H         0.000     -1.037    9.242    1.906
+ HOL           C28    C    CH1       0.000     -0.272    8.846    3.857
+ HOL           H28    H    H         0.000      0.152    7.992    4.404
+ HOL           C30    C    CH2       0.000      0.779    9.977    3.837
+ HOL           H301   H    H         0.000      1.684    9.540    3.411
+ HOL           H302   H    H         0.000      0.960   10.239    4.882
+ HOL           C31    C    CH2       0.000      0.396   11.237    3.051
+ HOL           H311   H    H         0.000     -0.490   11.662    3.526
+ HOL           H312   H    H         0.000      0.149   10.924    2.034
+ HOL           C32    C    CH2       0.000      1.508   12.290    3.007
+ HOL           H321   H    H         0.000      2.365   11.841    2.499
+ HOL           H322   H    H         0.000      1.779   12.523    4.038
+ HOL           C33    C    CH1       0.000      1.098   13.585    2.276
+ HOL           H33    H    H         0.000      1.932   14.297    2.343
+ HOL           C35    C    CH3       0.000      0.840   13.286    0.798
+ HOL           H353   H    H         0.000      0.589   14.183    0.293
+ HOL           H352   H    H         0.000      1.711   12.869    0.363
+ HOL           H351   H    H         0.000      0.039   12.598    0.710
+ HOL           C34    C    CH3       0.000     -0.141   14.238    2.892
+ HOL           H343   H    H         0.000      0.078   14.554    3.879
+ HOL           H342   H    H         0.000     -0.426   15.076    2.309
+ HOL           H341   H    H         0.000     -0.936   13.538    2.914
+ HOL           C29    C    CH3       0.000     -1.518    9.329    4.609
+ HOL           H293   H    H         0.000     -1.660    8.738    5.477
+ HOL           H292   H    H         0.000     -1.391   10.343    4.891
+ HOL           H291   H    H         0.000     -2.367    9.242    3.982
+ HOL           C22    C    CT        0.000     -1.719    7.254    2.378
+ HOL           C24    C    CH3       0.000     -1.411    6.113    3.379
+ HOL           H243   H    H         0.000     -1.902    5.224    3.072
+ HOL           H242   H    H         0.000     -0.365    5.940    3.414
+ HOL           H241   H    H         0.000     -1.752    6.384    4.347
+ HOL           C21    C    CH2       0.000     -3.168    7.729    2.557
+ HOL           H211   H    H         0.000     -3.319    8.616    1.938
+ HOL           H212   H    H         0.000     -3.318    7.989    3.607
+ HOL           C20    C    CH2       0.000     -4.174    6.638    2.148
+ HOL           H201   H    H         0.000     -5.170    7.083    2.195
+ HOL           H202   H    H         0.000     -4.098    5.836    2.886
+ HOL           C19    C    CH1       0.000     -3.931    6.059    0.726
+ HOL           H19    H    H         0.000     -4.161    6.874    0.026
+ HOL           C12    C    CT        0.000     -4.897    4.869    0.340
+ HOL           C15    C    CH3       0.000     -4.870    3.752    1.411
+ HOL           H153   H    H         0.000     -5.122    2.822    0.965
+ HOL           H152   H    H         0.000     -3.899    3.684    1.833
+ HOL           H151   H    H         0.000     -5.569    3.972    2.177
+ HOL           C13    C    CH2       0.000     -6.344    5.435    0.221
+ HOL           H131   H    H         0.000     -6.282    6.342   -0.383
+ HOL           H132   H    H         0.000     -6.669    5.693    1.231
+ HOL           C14    C    CH2       0.000     -7.347    4.469   -0.407
+ HOL           H142   H    H         0.000     -8.304    4.985   -0.517
+ HOL           H141   H    H         0.000     -7.471    3.613    0.260
+ HOL           "C2'"  C    CH2       0.000     -3.160   -3.104   -3.143
+ HOL           "H2'"  H    H         0.000     -2.070   -3.088   -3.206
+ HOL           "H2''" H    H         0.000     -3.553   -3.845   -3.842
+ HOL           "C3'"  C    CH1       0.000     -3.581   -3.463   -1.733
+ HOL           "H3'"  H    H         0.000     -2.863   -4.151   -1.267
+ HOL           "O3'"  O    OH1       0.000     -4.894   -4.019   -1.747
+ HOL           "HO3'" H    H         0.000     -5.210   -3.956   -2.661
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HOL      OP3    n/a    P      START
+ HOL      P      OP3    "O5'"  .
+ HOL      OP1    P      .      .
+ HOL      OP2    P      .      .
+ HOL      "O5'"  P      "C5'"  .
+ HOL      "C5'"  "O5'"  "C4'"  .
+ HOL      "H5'"  "C5'"  .      .
+ HOL      "H5''" "C5'"  .      .
+ HOL      "C4'"  "C5'"  "O4'"  .
+ HOL      "H4'"  "C4'"  .      .
+ HOL      "O4'"  "C4'"  "C1'"  .
+ HOL      "C1'"  "O4'"  "C2'"  .
+ HOL      "H1'"  "C1'"  .      .
+ HOL      O1     "C1'"  C2     .
+ HOL      C2     O1     C3     .
+ HOL      H21    C2     .      .
+ HOL      H22    C2     .      .
+ HOL      C3     C2     C4     .
+ HOL      H31    C3     .      .
+ HOL      H32    C3     .      .
+ HOL      C4     C3     N5     .
+ HOL      H41    C4     .      .
+ HOL      H42    C4     .      .
+ HOL      N5     C4     C6     .
+ HOL      H5     N5     .      .
+ HOL      C6     N5     O8     .
+ HOL      O7     C6     .      .
+ HOL      O8     C6     C9     .
+ HOL      C9     O8     C10    .
+ HOL      H9     C9     .      .
+ HOL      C10    C9     C11    .
+ HOL      H101   C10    .      .
+ HOL      H102   C10    .      .
+ HOL      C11    C10    C16    .
+ HOL      C16    C11    C17    .
+ HOL      H16    C16    .      .
+ HOL      C17    C16    C18    .
+ HOL      H171   C17    .      .
+ HOL      H172   C17    .      .
+ HOL      C18    C17    C23    .
+ HOL      H18    C18    .      .
+ HOL      C23    C18    C25    .
+ HOL      H23    C23    .      .
+ HOL      C25    C23    C26    .
+ HOL      H251   C25    .      .
+ HOL      H252   C25    .      .
+ HOL      C26    C25    C27    .
+ HOL      H261   C26    .      .
+ HOL      H262   C26    .      .
+ HOL      C27    C26    C22    .
+ HOL      H27    C27    .      .
+ HOL      C28    C27    C29    .
+ HOL      H28    C28    .      .
+ HOL      C30    C28    C31    .
+ HOL      H301   C30    .      .
+ HOL      H302   C30    .      .
+ HOL      C31    C30    C32    .
+ HOL      H311   C31    .      .
+ HOL      H312   C31    .      .
+ HOL      C32    C31    C33    .
+ HOL      H321   C32    .      .
+ HOL      H322   C32    .      .
+ HOL      C33    C32    C34    .
+ HOL      H33    C33    .      .
+ HOL      C35    C33    H351   .
+ HOL      H353   C35    .      .
+ HOL      H352   C35    .      .
+ HOL      H351   C35    .      .
+ HOL      C34    C33    H341   .
+ HOL      H343   C34    .      .
+ HOL      H342   C34    .      .
+ HOL      H341   C34    .      .
+ HOL      C29    C28    H291   .
+ HOL      H293   C29    .      .
+ HOL      H292   C29    .      .
+ HOL      H291   C29    .      .
+ HOL      C22    C27    C21    .
+ HOL      C24    C22    H241   .
+ HOL      H243   C24    .      .
+ HOL      H242   C24    .      .
+ HOL      H241   C24    .      .
+ HOL      C21    C22    C20    .
+ HOL      H211   C21    .      .
+ HOL      H212   C21    .      .
+ HOL      C20    C21    C19    .
+ HOL      H201   C20    .      .
+ HOL      H202   C20    .      .
+ HOL      C19    C20    C12    .
+ HOL      H19    C19    .      .
+ HOL      C12    C19    C13    .
+ HOL      C15    C12    H151   .
+ HOL      H153   C15    .      .
+ HOL      H152   C15    .      .
+ HOL      H151   C15    .      .
+ HOL      C13    C12    C14    .
+ HOL      H131   C13    .      .
+ HOL      H132   C13    .      .
+ HOL      C14    C13    H141   .
+ HOL      H142   C14    .      .
+ HOL      H141   C14    .      .
+ HOL      "C2'"  "C1'"  "C3'"  .
+ HOL      "H2'"  "C2'"  .      .
+ HOL      "H2''" "C2'"  .      .
+ HOL      "C3'"  "C2'"  "O3'"  .
+ HOL      "H3'"  "C3'"  .      .
+ HOL      "O3'"  "C3'"  .      END
+ HOL      "HO3'" "O3'"  .      .
+ HOL      "C4'"  "C3'"  .    ADD
+ HOL      C9     C14    .    ADD
+ HOL      C12    C11    .    ADD
+ HOL      C18    C19    .    ADD
+ HOL      C22    C23    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HOL       OP1       P         deloc     1.510     0.020     1.510     0.020     
+HOL       OP2       P         deloc     1.510     0.020     1.510     0.020     
+HOL       "O5'"     P         single    1.610     0.020     1.610     0.020     
+HOL       P         OP3       deloc     1.510     0.020     1.510     0.020     
+HOL       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+HOL       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+HOL       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+HOL       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+HOL       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+HOL       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+HOL       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+HOL       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+HOL       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+HOL       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+HOL       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+HOL       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+HOL       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+HOL       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+HOL       O1        "C1'"     single    1.426     0.020     1.426     0.020     
+HOL       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+HOL       C2        O1        single    1.426     0.020     1.426     0.020     
+HOL       C3        C2        single    1.524     0.020     1.524     0.020     
+HOL       H21       C2        single    1.089     0.010     0.989     0.005     
+HOL       H22       C2        single    1.089     0.010     0.989     0.005     
+HOL       C4        C3        single    1.524     0.020     1.524     0.020     
+HOL       H31       C3        single    1.089     0.010     0.989     0.005     
+HOL       H32       C3        single    1.089     0.010     0.989     0.005     
+HOL       N5        C4        single    1.450     0.020     1.450     0.020     
+HOL       H41       C4        single    1.089     0.010     0.989     0.005     
+HOL       H42       C4        single    1.089     0.010     0.989     0.005     
+HOL       C6        N5        single    1.330     0.020     1.330     0.020     
+HOL       H5        N5        single    1.016     0.010     0.899     0.007     
+HOL       O8        C6        single    1.454     0.020     1.454     0.020     
+HOL       O7        C6        double    1.220     0.020     1.220     0.020     
+HOL       C9        O8        single    1.426     0.020     1.426     0.020     
+HOL       C9        C14       single    1.524     0.020     1.524     0.020     
+HOL       C10       C9        single    1.524     0.020     1.524     0.020     
+HOL       H9        C9        single    1.089     0.010     0.989     0.005     
+HOL       C14       C13       single    1.524     0.020     1.524     0.020     
+HOL       H141      C14       single    1.089     0.010     0.989     0.005     
+HOL       H142      C14       single    1.089     0.010     0.989     0.005     
+HOL       C13       C12       single    1.524     0.020     1.524     0.020     
+HOL       H131      C13       single    1.089     0.010     0.989     0.005     
+HOL       H132      C13       single    1.089     0.010     0.989     0.005     
+HOL       C12       C11       single    1.507     0.020     1.507     0.020     
+HOL       C12       C19       single    1.524     0.020     1.524     0.020     
+HOL       C15       C12       single    1.524     0.020     1.524     0.020     
+HOL       C11       C10       single    1.510     0.020     1.510     0.020     
+HOL       C16       C11       double    1.340     0.020     1.340     0.020     
+HOL       H101      C10       single    1.089     0.010     0.989     0.005     
+HOL       H102      C10       single    1.089     0.010     0.989     0.005     
+HOL       C17       C16       single    1.510     0.020     1.510     0.020     
+HOL       H16       C16       single    1.082     0.013     0.975     0.010     
+HOL       C18       C17       single    1.524     0.020     1.524     0.020     
+HOL       H171      C17       single    1.089     0.010     0.989     0.005     
+HOL       H172      C17       single    1.089     0.010     0.989     0.005     
+HOL       C18       C19       single    1.524     0.020     1.524     0.020     
+HOL       C23       C18       single    1.524     0.020     1.524     0.020     
+HOL       H18       C18       single    1.089     0.010     0.989     0.005     
+HOL       C19       C20       single    1.524     0.020     1.524     0.020     
+HOL       H19       C19       single    1.089     0.010     0.989     0.005     
+HOL       C20       C21       single    1.524     0.020     1.524     0.020     
+HOL       H201      C20       single    1.089     0.010     0.989     0.005     
+HOL       H202      C20       single    1.089     0.010     0.989     0.005     
+HOL       C21       C22       single    1.524     0.020     1.524     0.020     
+HOL       H211      C21       single    1.089     0.010     0.989     0.005     
+HOL       H212      C21       single    1.089     0.010     0.989     0.005     
+HOL       C22       C23       single    1.524     0.020     1.524     0.020     
+HOL       C22       C27       single    1.524     0.020     1.524     0.020     
+HOL       C24       C22       single    1.524     0.020     1.524     0.020     
+HOL       C25       C23       single    1.524     0.020     1.524     0.020     
+HOL       H23       C23       single    1.089     0.010     0.989     0.005     
+HOL       C26       C25       single    1.524     0.020     1.524     0.020     
+HOL       H251      C25       single    1.089     0.010     0.989     0.005     
+HOL       H252      C25       single    1.089     0.010     0.989     0.005     
+HOL       C27       C26       single    1.524     0.020     1.524     0.020     
+HOL       H261      C26       single    1.089     0.010     0.989     0.005     
+HOL       H262      C26       single    1.089     0.010     0.989     0.005     
+HOL       C28       C27       single    1.524     0.020     1.524     0.020     
+HOL       H27       C27       single    1.089     0.010     0.989     0.005     
+HOL       C29       C28       single    1.524     0.020     1.524     0.020     
+HOL       C30       C28       single    1.524     0.020     1.524     0.020     
+HOL       H28       C28       single    1.089     0.010     0.989     0.005     
+HOL       H291      C29       single    1.089     0.010     0.989     0.005     
+HOL       H292      C29       single    1.089     0.010     0.989     0.005     
+HOL       H293      C29       single    1.089     0.010     0.989     0.005     
+HOL       C31       C30       single    1.524     0.020     1.524     0.020     
+HOL       H301      C30       single    1.089     0.010     0.989     0.005     
+HOL       H302      C30       single    1.089     0.010     0.989     0.005     
+HOL       C32       C31       single    1.524     0.020     1.524     0.020     
+HOL       H311      C31       single    1.089     0.010     0.989     0.005     
+HOL       H312      C31       single    1.089     0.010     0.989     0.005     
+HOL       C33       C32       single    1.524     0.020     1.524     0.020     
+HOL       H321      C32       single    1.089     0.010     0.989     0.005     
+HOL       H322      C32       single    1.089     0.010     0.989     0.005     
+HOL       C34       C33       single    1.524     0.020     1.524     0.020     
+HOL       C35       C33       single    1.524     0.020     1.524     0.020     
+HOL       H33       C33       single    1.089     0.010     0.989     0.005     
+HOL       H341      C34       single    1.089     0.010     0.989     0.005     
+HOL       H342      C34       single    1.089     0.010     0.989     0.005     
+HOL       H343      C34       single    1.089     0.010     0.989     0.005     
+HOL       H351      C35       single    1.089     0.010     0.989     0.005     
+HOL       H352      C35       single    1.089     0.010     0.989     0.005     
+HOL       H353      C35       single    1.089     0.010     0.989     0.005     
+HOL       H241      C24       single    1.089     0.010     0.989     0.005     
+HOL       H242      C24       single    1.089     0.010     0.989     0.005     
+HOL       H243      C24       single    1.089     0.010     0.989     0.005     
+HOL       H151      C15       single    1.089     0.010     0.989     0.005     
+HOL       H152      C15       single    1.089     0.010     0.989     0.005     
+HOL       H153      C15       single    1.089     0.010     0.989     0.005     
+HOL       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HOL      OP3    P      OP1     119.900    3.000
+ HOL      OP3    P      OP2     119.900    3.000
+ HOL      OP3    P      "O5'"   108.200    3.000
+ HOL      OP1    P      OP2     119.900    3.000
+ HOL      OP1    P      "O5'"   108.200    3.000
+ HOL      OP2    P      "O5'"   108.200    3.000
+ HOL      P      "O5'"  "C5'"   120.500    3.000
+ HOL      "O5'"  "C5'"  "H5'"   109.470    3.000
+ HOL      "O5'"  "C5'"  "H5''"  109.470    3.000
+ HOL      "O5'"  "C5'"  "C4'"   109.470    3.000
+ HOL      "H5'"  "C5'"  "H5''"  107.900    3.000
+ HOL      "H5'"  "C5'"  "C4'"   109.470    3.000
+ HOL      "H5''" "C5'"  "C4'"   109.470    3.000
+ HOL      "C5'"  "C4'"  "H4'"   108.340    3.000
+ HOL      "C5'"  "C4'"  "O4'"   109.470    3.000
+ HOL      "C5'"  "C4'"  "C3'"   111.000    3.000
+ HOL      "H4'"  "C4'"  "O4'"   109.470    3.000
+ HOL      "H4'"  "C4'"  "C3'"   108.340    3.000
+ HOL      "O4'"  "C4'"  "C3'"   109.470    3.000
+ HOL      "C4'"  "O4'"  "C1'"   111.800    3.000
+ HOL      "O4'"  "C1'"  "H1'"   109.470    3.000
+ HOL      "O4'"  "C1'"  O1      109.470    3.000
+ HOL      "O4'"  "C1'"  "C2'"   109.470    3.000
+ HOL      "H1'"  "C1'"  O1      109.470    3.000
+ HOL      "H1'"  "C1'"  "C2'"   108.340    3.000
+ HOL      O1     "C1'"  "C2'"   109.470    3.000
+ HOL      "C1'"  O1     C2      111.800    3.000
+ HOL      O1     C2     H21     109.470    3.000
+ HOL      O1     C2     H22     109.470    3.000
+ HOL      O1     C2     C3      109.470    3.000
+ HOL      H21    C2     H22     107.900    3.000
+ HOL      H21    C2     C3      109.470    3.000
+ HOL      H22    C2     C3      109.470    3.000
+ HOL      C2     C3     H31     109.470    3.000
+ HOL      C2     C3     H32     109.470    3.000
+ HOL      C2     C3     C4      111.000    3.000
+ HOL      H31    C3     H32     107.900    3.000
+ HOL      H31    C3     C4      109.470    3.000
+ HOL      H32    C3     C4      109.470    3.000
+ HOL      C3     C4     H41     109.470    3.000
+ HOL      C3     C4     H42     109.470    3.000
+ HOL      C3     C4     N5      112.000    3.000
+ HOL      H41    C4     H42     107.900    3.000
+ HOL      H41    C4     N5      109.470    3.000
+ HOL      H42    C4     N5      109.470    3.000
+ HOL      C4     N5     H5      118.500    3.000
+ HOL      C4     N5     C6      121.500    3.000
+ HOL      H5     N5     C6      120.000    3.000
+ HOL      N5     C6     O7      123.000    3.000
+ HOL      N5     C6     O8      118.000    3.000
+ HOL      O7     C6     O8      119.000    3.000
+ HOL      C6     O8     C9      111.800    3.000
+ HOL      O8     C9     H9      109.470    3.000
+ HOL      O8     C9     C10     109.470    3.000
+ HOL      O8     C9     C14     109.470    3.000
+ HOL      H9     C9     C10     108.340    3.000
+ HOL      H9     C9     C14     108.340    3.000
+ HOL      C10    C9     C14     109.470    3.000
+ HOL      C9     C10    H101    109.470    3.000
+ HOL      C9     C10    H102    109.470    3.000
+ HOL      C9     C10    C11     109.470    3.000
+ HOL      H101   C10    H102    107.900    3.000
+ HOL      H101   C10    C11     109.470    3.000
+ HOL      H102   C10    C11     109.470    3.000
+ HOL      C10    C11    C16     120.000    3.000
+ HOL      C10    C11    C12     120.000    3.000
+ HOL      C16    C11    C12     120.000    3.000
+ HOL      C11    C16    H16     120.000    3.000
+ HOL      C11    C16    C17     120.500    3.000
+ HOL      H16    C16    C17     120.000    3.000
+ HOL      C16    C17    H171    109.470    3.000
+ HOL      C16    C17    H172    109.470    3.000
+ HOL      C16    C17    C18     109.470    3.000
+ HOL      H171   C17    H172    107.900    3.000
+ HOL      H171   C17    C18     109.470    3.000
+ HOL      H172   C17    C18     109.470    3.000
+ HOL      C17    C18    H18     108.340    3.000
+ HOL      C17    C18    C23     111.000    3.000
+ HOL      C17    C18    C19     111.000    3.000
+ HOL      H18    C18    C23     108.340    3.000
+ HOL      H18    C18    C19     108.340    3.000
+ HOL      C23    C18    C19     111.000    3.000
+ HOL      C18    C23    H23     108.340    3.000
+ HOL      C18    C23    C25     111.000    3.000
+ HOL      C18    C23    C22     111.000    3.000
+ HOL      H23    C23    C25     108.340    3.000
+ HOL      H23    C23    C22     108.340    3.000
+ HOL      C25    C23    C22     111.000    3.000
+ HOL      C23    C25    H251    109.470    3.000
+ HOL      C23    C25    H252    109.470    3.000
+ HOL      C23    C25    C26     111.000    3.000
+ HOL      H251   C25    H252    107.900    3.000
+ HOL      H251   C25    C26     109.470    3.000
+ HOL      H252   C25    C26     109.470    3.000
+ HOL      C25    C26    H261    109.470    3.000
+ HOL      C25    C26    H262    109.470    3.000
+ HOL      C25    C26    C27     111.000    3.000
+ HOL      H261   C26    H262    107.900    3.000
+ HOL      H261   C26    C27     109.470    3.000
+ HOL      H262   C26    C27     109.470    3.000
+ HOL      C26    C27    H27     108.340    3.000
+ HOL      C26    C27    C28     111.000    3.000
+ HOL      C26    C27    C22     111.000    3.000
+ HOL      H27    C27    C28     108.340    3.000
+ HOL      H27    C27    C22     108.340    3.000
+ HOL      C28    C27    C22     111.000    3.000
+ HOL      C27    C28    H28     108.340    3.000
+ HOL      C27    C28    C30     111.000    3.000
+ HOL      C27    C28    C29     111.000    3.000
+ HOL      H28    C28    C30     108.340    3.000
+ HOL      H28    C28    C29     108.340    3.000
+ HOL      C30    C28    C29     111.000    3.000
+ HOL      C28    C30    H301    109.470    3.000
+ HOL      C28    C30    H302    109.470    3.000
+ HOL      C28    C30    C31     111.000    3.000
+ HOL      H301   C30    H302    107.900    3.000
+ HOL      H301   C30    C31     109.470    3.000
+ HOL      H302   C30    C31     109.470    3.000
+ HOL      C30    C31    H311    109.470    3.000
+ HOL      C30    C31    H312    109.470    3.000
+ HOL      C30    C31    C32     111.000    3.000
+ HOL      H311   C31    H312    107.900    3.000
+ HOL      H311   C31    C32     109.470    3.000
+ HOL      H312   C31    C32     109.470    3.000
+ HOL      C31    C32    H321    109.470    3.000
+ HOL      C31    C32    H322    109.470    3.000
+ HOL      C31    C32    C33     111.000    3.000
+ HOL      H321   C32    H322    107.900    3.000
+ HOL      H321   C32    C33     109.470    3.000
+ HOL      H322   C32    C33     109.470    3.000
+ HOL      C32    C33    H33     108.340    3.000
+ HOL      C32    C33    C35     111.000    3.000
+ HOL      C32    C33    C34     111.000    3.000
+ HOL      H33    C33    C35     108.340    3.000
+ HOL      H33    C33    C34     108.340    3.000
+ HOL      C35    C33    C34     111.000    3.000
+ HOL      C33    C35    H353    109.470    3.000
+ HOL      C33    C35    H352    109.470    3.000
+ HOL      C33    C35    H351    109.470    3.000
+ HOL      H353   C35    H352    109.470    3.000
+ HOL      H353   C35    H351    109.470    3.000
+ HOL      H352   C35    H351    109.470    3.000
+ HOL      C33    C34    H343    109.470    3.000
+ HOL      C33    C34    H342    109.470    3.000
+ HOL      C33    C34    H341    109.470    3.000
+ HOL      H343   C34    H342    109.470    3.000
+ HOL      H343   C34    H341    109.470    3.000
+ HOL      H342   C34    H341    109.470    3.000
+ HOL      C28    C29    H293    109.470    3.000
+ HOL      C28    C29    H292    109.470    3.000
+ HOL      C28    C29    H291    109.470    3.000
+ HOL      H293   C29    H292    109.470    3.000
+ HOL      H293   C29    H291    109.470    3.000
+ HOL      H292   C29    H291    109.470    3.000
+ HOL      C27    C22    C24     111.000    3.000
+ HOL      C27    C22    C21     111.000    3.000
+ HOL      C27    C22    C23     111.000    3.000
+ HOL      C24    C22    C21     111.000    3.000
+ HOL      C24    C22    C23     111.000    3.000
+ HOL      C21    C22    C23     111.000    3.000
+ HOL      C22    C24    H243    109.470    3.000
+ HOL      C22    C24    H242    109.470    3.000
+ HOL      C22    C24    H241    109.470    3.000
+ HOL      H243   C24    H242    109.470    3.000
+ HOL      H243   C24    H241    109.470    3.000
+ HOL      H242   C24    H241    109.470    3.000
+ HOL      C22    C21    H211    109.470    3.000
+ HOL      C22    C21    H212    109.470    3.000
+ HOL      C22    C21    C20     111.000    3.000
+ HOL      H211   C21    H212    107.900    3.000
+ HOL      H211   C21    C20     109.470    3.000
+ HOL      H212   C21    C20     109.470    3.000
+ HOL      C21    C20    H201    109.470    3.000
+ HOL      C21    C20    H202    109.470    3.000
+ HOL      C21    C20    C19     111.000    3.000
+ HOL      H201   C20    H202    107.900    3.000
+ HOL      H201   C20    C19     109.470    3.000
+ HOL      H202   C20    C19     109.470    3.000
+ HOL      C20    C19    H19     108.340    3.000
+ HOL      C20    C19    C12     111.000    3.000
+ HOL      C20    C19    C18     111.000    3.000
+ HOL      H19    C19    C12     108.340    3.000
+ HOL      H19    C19    C18     108.340    3.000
+ HOL      C12    C19    C18     111.000    3.000
+ HOL      C19    C12    C15     111.000    3.000
+ HOL      C19    C12    C13     111.000    3.000
+ HOL      C19    C12    C11     109.470    3.000
+ HOL      C15    C12    C13     111.000    3.000
+ HOL      C15    C12    C11     109.470    3.000
+ HOL      C13    C12    C11     109.470    3.000
+ HOL      C12    C15    H153    109.470    3.000
+ HOL      C12    C15    H152    109.470    3.000
+ HOL      C12    C15    H151    109.470    3.000
+ HOL      H153   C15    H152    109.470    3.000
+ HOL      H153   C15    H151    109.470    3.000
+ HOL      H152   C15    H151    109.470    3.000
+ HOL      C12    C13    H131    109.470    3.000
+ HOL      C12    C13    H132    109.470    3.000
+ HOL      C12    C13    C14     111.000    3.000
+ HOL      H131   C13    H132    107.900    3.000
+ HOL      H131   C13    C14     109.470    3.000
+ HOL      H132   C13    C14     109.470    3.000
+ HOL      C13    C14    H142    109.470    3.000
+ HOL      C13    C14    H141    109.470    3.000
+ HOL      C13    C14    C9      111.000    3.000
+ HOL      H142   C14    H141    107.900    3.000
+ HOL      H142   C14    C9      109.470    3.000
+ HOL      H141   C14    C9      109.470    3.000
+ HOL      "C1'"  "C2'"  "H2'"   109.470    3.000
+ HOL      "C1'"  "C2'"  "H2''"  109.470    3.000
+ HOL      "C1'"  "C2'"  "C3'"   111.000    3.000
+ HOL      "H2'"  "C2'"  "H2''"  107.900    3.000
+ HOL      "H2'"  "C2'"  "C3'"   109.470    3.000
+ HOL      "H2''" "C2'"  "C3'"   109.470    3.000
+ HOL      "C2'"  "C3'"  "H3'"   108.340    3.000
+ HOL      "C2'"  "C3'"  "O3'"   109.470    3.000
+ HOL      "C2'"  "C3'"  "C4'"   111.000    3.000
+ HOL      "H3'"  "C3'"  "O3'"   109.470    3.000
+ HOL      "H3'"  "C3'"  "C4'"   108.340    3.000
+ HOL      "O3'"  "C3'"  "C4'"   109.470    3.000
+ HOL      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HOL      var_1    OP3    P      "O5'"  "C5'"    -54.198   20.000   1
+ HOL      var_2    P      "O5'"  "C5'"  "C4'"   -120.029   20.000   1
+ HOL      var_3    "O5'"  "C5'"  "C4'"  "O4'"     62.251   20.000   3
+ HOL      var_4    "C5'"  "C4'"  "C3'"  "C2'"    -90.000   20.000   3
+ HOL      var_5    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ HOL      var_6    "C4'"  "O4'"  "C1'"  "C2'"    -30.000   20.000   1
+ HOL      var_7    "O4'"  "C1'"  O1     C2        62.803   20.000   1
+ HOL      var_8    "C1'"  O1     C2     C3      -178.876   20.000   1
+ HOL      var_9    O1     C2     C3     C4      -179.260   20.000   3
+ HOL      var_10   C2     C3     C4     N5       -59.184   20.000   3
+ HOL      var_11   C3     C4     N5     C6       120.000   20.000   3
+ HOL      CONST_1  C4     N5     C6     O8       180.000    0.000   0
+ HOL      var_12   N5     C6     O8     C9       149.990   20.000   1
+ HOL      var_13   C6     O8     C9     C10      -58.953   20.000   1
+ HOL      var_14   O8     C9     C14    C13      180.000   20.000   3
+ HOL      var_15   O8     C9     C10    C11      180.000   20.000   3
+ HOL      var_16   C9     C10    C11    C16     -120.000   20.000   3
+ HOL      var_17   C10    C11    C16    C17      180.000   20.000   1
+ HOL      var_18   C11    C16    C17    C18        0.000   20.000   1
+ HOL      var_19   C16    C17    C18    C23     -150.000   20.000   3
+ HOL      var_20   C17    C18    C19    C20      180.000   20.000   3
+ HOL      var_21   C17    C18    C23    C25      -60.000   20.000   3
+ HOL      var_22   C18    C23    C25    C26     -150.000   20.000   3
+ HOL      var_23   C23    C25    C26    C27        0.000   20.000   3
+ HOL      var_24   C25    C26    C27    C22       30.000   20.000   3
+ HOL      var_25   C26    C27    C28    C29     -176.870   20.000   3
+ HOL      var_26   C27    C28    C30    C31       57.285   20.000   3
+ HOL      var_27   C28    C30    C31    C32     -176.909   20.000   3
+ HOL      var_28   C30    C31    C32    C33     -177.098   20.000   3
+ HOL      var_29   C31    C32    C33    C34       57.265   20.000   3
+ HOL      var_30   C32    C33    C35    H351      61.871   20.000   3
+ HOL      var_31   C32    C33    C34    H341     -55.485   20.000   3
+ HOL      var_32   C27    C28    C29    H291      -0.999   20.000   3
+ HOL      var_33   C26    C27    C22    C21     -150.000   20.000   1
+ HOL      var_34   C27    C22    C23    C18      180.000   20.000   1
+ HOL      var_35   C27    C22    C24    H241      81.188   20.000   1
+ HOL      var_36   C27    C22    C21    C20      180.000   20.000   1
+ HOL      var_37   C22    C21    C20    C19      -60.000   20.000   3
+ HOL      var_38   C21    C20    C19    C12      180.000   20.000   3
+ HOL      var_39   C20    C19    C12    C13       60.000   20.000   1
+ HOL      var_40   C19    C12    C11    C10      180.000   20.000   1
+ HOL      var_41   C19    C12    C15    H151      86.541   20.000   1
+ HOL      var_42   C19    C12    C13    C14      180.000   20.000   1
+ HOL      var_43   C12    C13    C14    C9       -60.000   20.000   3
+ HOL      var_44   "O4'"  "C1'"  "C2'"  "C3'"     30.000   20.000   3
+ HOL      var_45   "C1'"  "C2'"  "C3'"  "O3'"     90.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HOL      chir_01  "C4'"  "C5'"  "C3'"  "O4'"     positiv
+ HOL      chir_02  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+ HOL      chir_03  "C1'"  "C2'"  "O4'"  O1        positiv
+ HOL      chir_04  C9     O8     C14    C10       negativ
+ HOL      chir_05  C12    C13    C11    C19       negativ
+ HOL      chir_06  C18    C17    C19    C23       positiv
+ HOL      chir_07  C19    C12    C18    C20       positiv
+ HOL      chir_08  C22    C21    C23    C27       negativ
+ HOL      chir_09  C23    C18    C22    C25       negativ
+ HOL      chir_10  C27    C22    C26    C28       positiv
+ HOL      chir_11  C28    C27    C29    C30       positiv
+ HOL      chir_12  C33    C32    C34    C35       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HOL      plan-1    N5        0.020
+ HOL      plan-1    C4        0.020
+ HOL      plan-1    C6        0.020
+ HOL      plan-1    H5        0.020
+ HOL      plan-2    C6        0.020
+ HOL      plan-2    N5        0.020
+ HOL      plan-2    O8        0.020
+ HOL      plan-2    O7        0.020
+ HOL      plan-2    H5        0.020
+ HOL      plan-3    C11       0.020
+ HOL      plan-3    C12       0.020
+ HOL      plan-3    C10       0.020
+ HOL      plan-3    C16       0.020
+ HOL      plan-3    H16       0.020
+ HOL      plan-4    C16       0.020
+ HOL      plan-4    C11       0.020
+ HOL      plan-4    C17       0.020
+ HOL      plan-4    H16       0.020
+# ------------------------------------------------------

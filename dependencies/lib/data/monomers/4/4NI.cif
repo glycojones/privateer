@@ -1,0 +1,137 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4NI     4NI      "4-nitrobutanoic acid"     NON-POLYMER     15     9     .     
+#
+data_comp_4NI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4NI     C1      C       C       0       72.433      18.528      48.432      
+4NI     C2      C       CH2     0       73.492      18.874      49.464      
+4NI     C3      C       CH2     0       73.025      19.816      50.559      
+4NI     C4      C       CH2     0       74.107      20.129      51.573      
+4NI     O11     O       O       0       72.341      19.247      47.418      
+4NI     O12     O       OC      -1      71.702      17.540      48.646      
+4NI     N5      N       N       1       73.606      21.031      52.655      
+4NI     O51     O       O       0       73.317      22.173      52.357      
+4NI     O52     O       OC      -1      73.512      20.580      53.779      
+4NI     H21     H       H       0       74.255      19.281      49.001      
+4NI     H22     H       H       0       73.807      18.041      49.876      
+4NI     H31     H       H       0       72.263      19.414      51.026      
+4NI     H32     H       H       0       72.722      20.655      50.154      
+4NI     H41     H       H       0       74.861      20.558      51.119      
+4NI     H42     H       H       0       74.429      19.292      51.971      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4NI       C1        C2        SINGLE    n         1.519     0.012     1.519     0.012     
+4NI       C1        O11       DOUBLE    n         1.247     0.019     1.247     0.019     
+4NI       C1        O12       SINGLE    n         1.247     0.019     1.247     0.019     
+4NI       C2        C3        SINGLE    n         1.518     0.014     1.518     0.014     
+4NI       C3        C4        SINGLE    n         1.515     0.017     1.515     0.017     
+4NI       C4        N5        SINGLE    n         1.494     0.015     1.494     0.015     
+4NI       N5        O51       DOUBLE    n         1.215     0.012     1.215     0.012     
+4NI       N5        O52       SINGLE    n         1.215     0.012     1.215     0.012     
+4NI       C2        H21       SINGLE    n         1.089     0.010     0.981     0.019     
+4NI       C2        H22       SINGLE    n         1.089     0.010     0.981     0.019     
+4NI       C3        H31       SINGLE    n         1.089     0.010     0.980     0.018     
+4NI       C3        H32       SINGLE    n         1.089     0.010     0.980     0.018     
+4NI       C4        H41       SINGLE    n         1.089     0.010     0.980     0.019     
+4NI       C4        H42       SINGLE    n         1.089     0.010     0.980     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4NI          C2          C1         O11     118.214    1.64
+4NI          C2          C1         O12     118.214    1.64
+4NI         O11          C1         O12     123.571    1.50
+4NI          C1          C2          C3     114.629    2.24
+4NI          C1          C2         H21     108.404    1.50
+4NI          C1          C2         H22     108.404    1.50
+4NI          C3          C2         H21     108.817    1.50
+4NI          C3          C2         H22     108.817    1.50
+4NI         H21          C2         H22     107.521    1.50
+4NI          C2          C3          C4     113.078    1.50
+4NI          C2          C3         H31     109.179    1.50
+4NI          C2          C3         H32     109.179    1.50
+4NI          C4          C3         H31     108.805    1.50
+4NI          C4          C3         H32     108.805    1.50
+4NI         H31          C3         H32     107.927    1.57
+4NI          C3          C4          N5     111.308    2.28
+4NI          C3          C4         H41     109.099    1.50
+4NI          C3          C4         H42     109.099    1.50
+4NI          N5          C4         H41     109.030    1.50
+4NI          N5          C4         H42     109.030    1.50
+4NI         H41          C4         H42     107.873    1.50
+4NI          C4          N5         O51     118.072    1.50
+4NI          C4          N5         O52     118.065    1.50
+4NI         O51          N5         O52     123.848    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4NI             sp2_sp3_2         O11          C1          C2          C3     120.000   10.00     6
+4NI             sp3_sp3_1          C1          C2          C3          C4     180.000   10.00     3
+4NI            sp3_sp3_10          C2          C3          C4          N5     180.000   10.00     3
+4NI             sp2_sp3_8         O51          N5          C4          C3     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4NI    plan-1          C1   0.020
+4NI    plan-1          C2   0.020
+4NI    plan-1         O11   0.020
+4NI    plan-1         O12   0.020
+4NI    plan-2          C4   0.020
+4NI    plan-2          N5   0.020
+4NI    plan-2         O51   0.020
+4NI    plan-2         O52   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4NI SMILES           ACDLabs              10.04 "[O-][N+](=O)CCCC(=O)O"
+4NI SMILES_CANONICAL CACTVS               3.341 "OC(=O)CCC[N+]([O-])=O"
+4NI SMILES           CACTVS               3.341 "OC(=O)CCC[N+]([O-])=O"
+4NI SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CC(=O)O)C[N+](=O)[O-]"
+4NI SMILES           "OpenEye OEToolkits" 1.5.0 "C(CC(=O)O)C[N+](=O)[O-]"
+4NI InChI            InChI                1.03  "InChI=1S/C4H7NO4/c6-4(7)2-1-3-5(8)9/h1-3H2,(H,6,7)"
+4NI InChIKey         InChI                1.03  SUFKNMKUIYHURJ-UHFFFAOYSA-N
+4NI ?                acedrg               202         "dictionary generator"                  
+4NI ?                acedrg_database      11          "data source"                           
+4NI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4NI ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,230 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DAH     DAH     3,4-DIHYDROXYPHENYLALANINE     peptide     25     14     .
+#
+data_comp_DAH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DAH     N       N       NT3     1       -3.320      -1.185      0.043
+DAH     CA      C       CH1     0       -2.014      -0.540      0.348
+DAH     C       C       C       0       -2.258      0.881       0.871
+DAH     O       O       O       0       -1.813      1.162       2.002
+DAH     CB      C       CH2     0       -1.119      -0.539      -0.895
+DAH     CG      C       CR6     0       0.298       -0.058      -0.660
+DAH     CD1     C       CR16    0       0.750       1.145       -1.186
+DAH     CD2     C       CR16    0       1.182       -0.820      0.098
+DAH     CE1     C       CR16    0       2.054       1.587       -0.968
+DAH     CE2     C       CR6     0       2.484       -0.400      0.327
+DAH     CZ      C       CR6     0       2.922       0.816       -0.212
+DAH     OE2     O       OH1     0       3.356       -1.152      1.075
+DAH     OZ      O       OH1     0       4.200       1.227       0.014
+DAH     OXT     O       OC      -1      -2.886      1.661       0.127
+DAH     H       H       H       0       -3.181      -2.032      -0.260
+DAH     H2      H       H       0       -3.758      -0.706      -0.596
+DAH     H3      H       H       0       -3.831      -1.217      0.797
+DAH     HA      H       H       0       -1.564      -1.064      1.060
+DAH     HB2     H       H       0       -1.538      0.028       -1.575
+DAH     HB3     H       H       0       -1.085      -1.452      -1.250
+DAH     HD1     H       H       0       0.164       1.675       -1.702
+DAH     HD2     H       H       0       0.888       -1.641      0.463
+DAH     HE1     H       H       0       2.347       2.406       -1.333
+DAH     HE2     H       H       0       3.380       -1.959      0.783
+DAH     HZ      H       H       0       4.295       1.450       0.837
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DAH      N      n/a    CA     START
+DAH      H      N      .      .
+DAH      H2     N      .      .
+DAH      H3     N      .      .
+DAH      CA     N      C      .
+DAH      HA     CA     .      .
+DAH      CB     CA     CG     .
+DAH      HB2    CB     .      .
+DAH      HB3    CB     .      .
+DAH      CG     CB     CD2    .
+DAH      CD2    CG     CE2    .
+DAH      HD2    CD2    .      .
+DAH      CE2    CD2    CZ     .
+DAH      OE2    CE2    HE2    .
+DAH      HE2    OE2    .      .
+DAH      CZ     CE2    CE1    .
+DAH      OZ     CZ     HZ     .
+DAH      HZ     OZ     .      .
+DAH      CE1    CZ     CD1    .
+DAH      HE1    CE1    .      .
+DAH      CD1    CE1    HD1    .
+DAH      HD1    CD1    .      .
+DAH      C      CA     .      END
+DAH      O      C      .      .
+DAH      OXT    C      .      .
+DAH      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DAH       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+DAH       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DAH       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+DAH       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DAH       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DAH       CB        CG        SINGLE    n         1.514     0.010     1.514     0.010     
+DAH       CG        CD1       DOUBLE    y         1.385     0.011     1.385     0.011     
+DAH       CG        CD2       SINGLE    y         1.388     0.010     1.388     0.010     
+DAH       CD1       CE1       SINGLE    y         1.391     0.010     1.391     0.010     
+DAH       CD2       CE2       DOUBLE    y         1.383     0.010     1.383     0.010     
+DAH       CE1       CZ        DOUBLE    y         1.381     0.010     1.381     0.010     
+DAH       CE2       CZ        SINGLE    y         1.395     0.010     1.395     0.010     
+DAH       CE2       OE2       SINGLE    n         1.372     0.010     1.372     0.010     
+DAH       CZ        OZ        SINGLE    n         1.361     0.010     1.361     0.010     
+DAH       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DAH       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DAH       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DAH       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+DAH       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+DAH       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+DAH       CD1       HD1       SINGLE    n         1.082     0.013     0.943     0.017     
+DAH       CD2       HD2       SINGLE    n         1.082     0.013     0.945     0.016     
+DAH       CE1       HE1       SINGLE    n         1.082     0.013     0.944     0.020     
+DAH       OE2       HE2       SINGLE    n         0.970     0.012     0.858     0.020     
+DAH       OZ        HZ        SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DAH          CA           N           H     109.646    1.54
+DAH          CA           N          H2     109.646    1.54
+DAH          CA           N          H3     109.646    1.54
+DAH           H           N          H2     109.028    2.41
+DAH           H           N          H3     109.028    2.41
+DAH          H2           N          H3     109.028    2.41
+DAH           N          CA           C     109.448    1.50
+DAH           N          CA          CB     110.494    1.50
+DAH           N          CA          HA     108.601    1.50
+DAH           C          CA          CB     111.331    2.53
+DAH           C          CA          HA     108.450    1.50
+DAH          CB          CA          HA     108.690    1.50
+DAH          CA           C           O     117.228    2.13
+DAH          CA           C         OXT     117.228    2.13
+DAH           O           C         OXT     125.543    1.50
+DAH          CA          CB          CG     114.745    1.55
+DAH          CA          CB         HB2     108.434    1.50
+DAH          CA          CB         HB3     108.434    1.50
+DAH          CG          CB         HB2     108.862    1.50
+DAH          CG          CB         HB3     108.862    1.50
+DAH         HB2          CB         HB3     107.782    1.50
+DAH          CB          CG         CD1     121.169    1.50
+DAH          CB          CG         CD2     120.252    1.65
+DAH         CD1          CG         CD2     118.579    1.50
+DAH          CG         CD1         CE1     121.630    1.50
+DAH          CG         CD1         HD1     119.239    1.50
+DAH         CE1         CD1         HD1     119.132    1.50
+DAH          CG         CD2         CE2     121.134    1.50
+DAH          CG         CD2         HD2     119.369    1.50
+DAH         CE2         CD2         HD2     119.498    1.50
+DAH         CD1         CE1          CZ     119.722    1.50
+DAH         CD1         CE1         HE1     120.317    1.50
+DAH          CZ         CE1         HE1     119.961    1.50
+DAH         CD2         CE2          CZ     119.251    1.50
+DAH         CD2         CE2         OE2     122.038    2.52
+DAH          CZ         CE2         OE2     118.712    2.41
+DAH         CE1          CZ         CE2     119.685    1.50
+DAH         CE1          CZ          OZ     121.459    2.46
+DAH         CE2          CZ          OZ     118.856    2.41
+DAH         CE2         OE2         HE2     110.003    2.63
+DAH          CZ          OZ          HZ     110.003    2.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DAH             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+DAH             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DAH            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+DAH             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+DAH       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+DAH              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+DAH       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+DAH              const_18          CG         CD2         CE2         OE2     180.000   10.00     2
+DAH              const_10         CD1         CE1          CZ          OZ     180.000   10.00     2
+DAH              const_16         OE2         CE2          CZ          OZ       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DAH    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DAH    plan-1          CB   0.020
+DAH    plan-1         CD1   0.020
+DAH    plan-1         CD2   0.020
+DAH    plan-1         CE1   0.020
+DAH    plan-1         CE2   0.020
+DAH    plan-1          CG   0.020
+DAH    plan-1          CZ   0.020
+DAH    plan-1         HD1   0.020
+DAH    plan-1         HD2   0.020
+DAH    plan-1         HE1   0.020
+DAH    plan-1         OE2   0.020
+DAH    plan-1          OZ   0.020
+DAH    plan-2           C   0.020
+DAH    plan-2          CA   0.020
+DAH    plan-2           O   0.020
+DAH    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DAH SMILES           ACDLabs              12.01 "O=C(O)C(N)Cc1cc(O)c(O)cc1"
+DAH InChI            InChI                1.03  "InChI=1S/C9H11NO4/c10-6(9(13)14)3-5-1-2-7(11)8(12)4-5/h1-2,4,6,11-12H,3,10H2,(H,13,14)/t6-/m0/s1"
+DAH InChIKey         InChI                1.03  WTDRDQBEARUVNC-LURJTMIESA-N
+DAH SMILES_CANONICAL CACTVS               3.370 "N[C@@H](Cc1ccc(O)c(O)c1)C(O)=O"
+DAH SMILES           CACTVS               3.370 "N[CH](Cc1ccc(O)c(O)c1)C(O)=O"
+DAH SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "c1cc(c(cc1C[C@@H](C(=O)O)N)O)O"
+DAH SMILES           "OpenEye OEToolkits" 1.7.2 "c1cc(c(cc1CC(C(=O)O)N)O)O"
+DAH ?                acedrg               196         "dictionary generator"
+DAH ?                acedrg_database      11          "data source"
+DAH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DAH ?                refmac5              5.8.0222    "optimization tool"

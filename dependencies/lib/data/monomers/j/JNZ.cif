@@ -1,0 +1,171 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+JNZ     JNZ     1H-indazol-3-amine     NON-POLYMER     17     10     .     
+#
+data_comp_JNZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+JNZ     C8      C       CR16    0       -41.866     16.517      13.359      
+JNZ     C7      C       CR16    0       -42.824     15.824      12.605      
+JNZ     C9      C       CR16    0       -40.556     16.080      13.421      
+JNZ     C6      C       CR16    0       -42.500     14.681      11.895      
+JNZ     C10     C       CR56    0       -40.190     14.920      12.710      
+JNZ     C5      C       CR56    0       -41.166     14.237      11.958      
+JNZ     C2      C       CR5     0       -39.010     14.205      12.541      
+JNZ     N3      N       NRD5    0       -39.222     13.160      11.749      
+JNZ     N4      N       NR5     0       -40.539     13.182      11.395      
+JNZ     N1      N       NH2     0       -37.792     14.475      13.072      
+JNZ     H8      H       H       0       -42.121     17.294      13.832      
+JNZ     H7      H       H       0       -43.709     16.143      12.580      
+JNZ     H9      H       H       0       -39.922     16.547      13.926      
+JNZ     H6      H       H       0       -43.142     14.221      11.392      
+JNZ     HN4     H       H       0       -40.885     12.556      10.859      
+JNZ     HN1     H       H       0       -37.689     15.175      13.593      
+JNZ     HN1A    H       H       0       -37.110     13.948      12.893      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+JNZ       C8        C7        DOUBLE    y         1.395     0.011     1.395     0.011     
+JNZ       C8        C9        SINGLE    y         1.376     0.010     1.376     0.010     
+JNZ       C7        C6        SINGLE    y         1.377     0.010     1.377     0.010     
+JNZ       C9        C10       DOUBLE    y         1.401     0.011     1.401     0.011     
+JNZ       C6        C5        DOUBLE    y         1.400     0.010     1.400     0.010     
+JNZ       C10       C5        SINGLE    y         1.405     0.010     1.405     0.010     
+JNZ       C10       C2        SINGLE    y         1.389     0.020     1.389     0.020     
+JNZ       C5        N4        SINGLE    y         1.352     0.010     1.352     0.010     
+JNZ       C2        N3        DOUBLE    y         1.325     0.010     1.325     0.010     
+JNZ       C2        N1        SINGLE    n         1.355     0.012     1.355     0.012     
+JNZ       N3        N4        SINGLE    y         1.362     0.011     1.362     0.011     
+JNZ       C8        H8        SINGLE    n         1.082     0.013     0.944     0.018     
+JNZ       C7        H7        SINGLE    n         1.082     0.013     0.941     0.018     
+JNZ       C9        H9        SINGLE    n         1.082     0.013     0.936     0.010     
+JNZ       C6        H6        SINGLE    n         1.082     0.013     0.936     0.016     
+JNZ       N4        HN4       SINGLE    n         1.016     0.010     0.894     0.020     
+JNZ       N1        HN1       SINGLE    n         1.016     0.010     0.879     0.020     
+JNZ       N1        HN1A      SINGLE    n         1.016     0.010     0.879     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+JNZ          C7          C8          C9     121.242    1.50
+JNZ          C7          C8          H8     119.301    1.50
+JNZ          C9          C8          H8     119.456    1.50
+JNZ          C8          C7          C6     121.658    1.50
+JNZ          C8          C7          H7     119.225    1.50
+JNZ          C6          C7          H7     119.117    1.50
+JNZ          C8          C9         C10     119.016    1.50
+JNZ          C8          C9          H9     120.471    1.50
+JNZ         C10          C9          H9     120.514    1.50
+JNZ          C7          C6          C5     117.079    1.50
+JNZ          C7          C6          H6     121.457    1.50
+JNZ          C5          C6          H6     121.468    1.50
+JNZ          C9         C10          C5     119.328    1.50
+JNZ          C9         C10          C2     134.140    1.86
+JNZ          C5         C10          C2     106.532    1.62
+JNZ          C6          C5         C10     121.673    1.50
+JNZ          C6          C5          N4     131.231    1.50
+JNZ         C10          C5          N4     107.097    1.50
+JNZ         C10          C2          N3     109.461    1.50
+JNZ         C10          C2          N1     128.417    3.00
+JNZ          N3          C2          N1     122.121    2.14
+JNZ          C2          N3          N4     106.087    1.50
+JNZ          C5          N4          N3     110.822    1.50
+JNZ          C5          N4         HN4     128.060    2.98
+JNZ          N3          N4         HN4     121.118    3.00
+JNZ          C2          N1         HN1     119.763    1.59
+JNZ          C2          N1        HN1A     119.763    1.59
+JNZ         HN1          N1        HN1A     120.475    1.82
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+JNZ              const_13          C6          C7          C8          C9       0.000   10.00     2
+JNZ              const_29          C7          C8          C9         C10       0.000   10.00     2
+JNZ              const_17          C5          C6          C7          C8       0.000   10.00     2
+JNZ              const_25          C5         C10          C9          C8       0.000   10.00     2
+JNZ              const_21         C10          C5          C6          C7       0.000   10.00     2
+JNZ       const_sp2_sp2_1          C9         C10          C5          C6       0.000   10.00     2
+JNZ              const_36          C9         C10          C2          N1       0.000   10.00     2
+JNZ       const_sp2_sp2_7          C6          C5          N4          N3     180.000   10.00     2
+JNZ              const_12          N1          C2          N3          N4     180.000   10.00     2
+JNZ             sp2_sp2_1         C10          C2          N1         HN1     180.000   10.00     2
+JNZ       const_sp2_sp2_9          C2          N3          N4          C5       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+JNZ    plan-1         C10   0.020
+JNZ    plan-1          C2   0.020
+JNZ    plan-1          C5   0.020
+JNZ    plan-1          C6   0.020
+JNZ    plan-1          C7   0.020
+JNZ    plan-1          C8   0.020
+JNZ    plan-1          C9   0.020
+JNZ    plan-1          H6   0.020
+JNZ    plan-1          H7   0.020
+JNZ    plan-1          H8   0.020
+JNZ    plan-1          H9   0.020
+JNZ    plan-1          N4   0.020
+JNZ    plan-2         C10   0.020
+JNZ    plan-2          C2   0.020
+JNZ    plan-2          C5   0.020
+JNZ    plan-2          C6   0.020
+JNZ    plan-2          C9   0.020
+JNZ    plan-2         HN4   0.020
+JNZ    plan-2          N1   0.020
+JNZ    plan-2          N3   0.020
+JNZ    plan-2          N4   0.020
+JNZ    plan-3          C2   0.020
+JNZ    plan-3         HN1   0.020
+JNZ    plan-3        HN1A   0.020
+JNZ    plan-3          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+JNZ SMILES           ACDLabs              12.01 "n2c(c1ccccc1n2)N"
+JNZ SMILES_CANONICAL CACTVS               3.370 "Nc1n[nH]c2ccccc12"
+JNZ SMILES           CACTVS               3.370 "Nc1n[nH]c2ccccc12"
+JNZ SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1ccc2c(c1)c(n[nH]2)N"
+JNZ SMILES           "OpenEye OEToolkits" 1.7.0 "c1ccc2c(c1)c(n[nH]2)N"
+JNZ InChI            InChI                1.03  "InChI=1S/C7H7N3/c8-7-5-3-1-2-4-6(5)9-10-7/h1-4H,(H3,8,9,10)"
+JNZ InChIKey         InChI                1.03  YDTDKKULPWTHRV-UHFFFAOYSA-N
+JNZ ?                acedrg               190         "dictionary generator"                  
+JNZ ?                acedrg_database      11          "data source"                           
+JNZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+JNZ ?                refmac5              5.8.0158    "optimization tool"                     

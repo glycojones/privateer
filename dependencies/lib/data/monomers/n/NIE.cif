@@ -1,0 +1,112 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NIE     NIE     nitroethane     NON-POLYMER     10     5     .     
+#
+data_comp_NIE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NIE     N3      N       N       1       9.413       71.261      -60.393     
+NIE     C1      C       CH3     0       9.839       70.100      -62.544     
+NIE     C2      C       CH2     0       9.872       69.997      -61.045     
+NIE     O4      O       O       0       8.225       71.393      -60.172     
+NIE     O5      O       OC      -1      10.249      72.098      -60.117     
+NIE     H1      H       H       0       10.140      69.262      -62.934     
+NIE     H1A     H       H       0       10.424      70.821      -62.833     
+NIE     H1B     H       H       0       8.929       70.285      -62.837     
+NIE     H2      H       H       0       9.296       69.257      -60.758     
+NIE     H2A     H       H       0       10.787      69.799      -60.754     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NIE       N3        C2        SINGLE    n         1.494     0.015     1.494     0.015     
+NIE       N3        O4        DOUBLE    n         1.215     0.012     1.215     0.012     
+NIE       N3        O5        SINGLE    n         1.215     0.012     1.215     0.012     
+NIE       C1        C2        SINGLE    n         1.503     0.020     1.503     0.020     
+NIE       C1        H1        SINGLE    n         1.089     0.010     0.973     0.014     
+NIE       C1        H1A       SINGLE    n         1.089     0.010     0.973     0.014     
+NIE       C1        H1B       SINGLE    n         1.089     0.010     0.973     0.014     
+NIE       C2        H2        SINGLE    n         1.089     0.010     0.980     0.019     
+NIE       C2        H2A       SINGLE    n         1.089     0.010     0.980     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NIE          C2          N3          O4     118.072    1.50
+NIE          C2          N3          O5     118.065    1.50
+NIE          O4          N3          O5     123.848    1.50
+NIE          C2          C1          H1     109.538    1.50
+NIE          C2          C1         H1A     109.538    1.50
+NIE          C2          C1         H1B     109.538    1.50
+NIE          H1          C1         H1A     109.415    1.50
+NIE          H1          C1         H1B     109.415    1.50
+NIE         H1A          C1         H1B     109.415    1.50
+NIE          N3          C2          C1     111.308    2.28
+NIE          N3          C2          H2     109.030    1.50
+NIE          N3          C2         H2A     109.030    1.50
+NIE          C1          C2          H2     109.131    1.50
+NIE          C1          C2         H2A     109.131    1.50
+NIE          H2          C2         H2A     107.873    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NIE             sp2_sp3_2          O4          N3          C2          C1     120.000   10.00     6
+NIE             sp3_sp3_1          H1          C1          C2          N3     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NIE    plan-1          C2   0.020
+NIE    plan-1          N3   0.020
+NIE    plan-1          O4   0.020
+NIE    plan-1          O5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NIE SMILES           ACDLabs              10.04 "[O-][N+](=O)CC"
+NIE SMILES_CANONICAL CACTVS               3.341 "CC[N+]([O-])=O"
+NIE SMILES           CACTVS               3.341 "CC[N+]([O-])=O"
+NIE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC[N+](=O)[O-]"
+NIE SMILES           "OpenEye OEToolkits" 1.5.0 "CC[N+](=O)[O-]"
+NIE InChI            InChI                1.03  "InChI=1S/C2H5NO2/c1-2-3(4)5/h2H2,1H3"
+NIE InChIKey         InChI                1.03  MCSAJNNLRCFZED-UHFFFAOYSA-N
+NIE ?                acedrg               190         "dictionary generator"                  
+NIE ?                acedrg_database      11          "data source"                           
+NIE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NIE ?                refmac5              5.8.0158    "optimization tool"                     

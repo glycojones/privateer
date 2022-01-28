@@ -1,0 +1,632 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AEB      AEB 'AERUGINOSIN 98-B                    ' non-polymer        91  45 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AEB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AEB           O56    O    O         0.000      0.000    0.000    0.000
+ AEB           C55    C    C         0.000      0.628    0.286   -0.997
+ AEB           N57    N    NH1       0.000      1.821   -0.297   -1.232
+ AEB           H33    H    H         0.000      2.344   -0.059   -2.062
+ AEB           C58    C    CH2       0.000      2.358   -1.274   -0.282
+ AEB           H34    H    H         0.000      1.666   -2.113   -0.194
+ AEB           H35    H    H         0.000      2.481   -0.801    0.695
+ AEB           C59    C    CH2       0.000      3.714   -1.779   -0.780
+ AEB           H36    H    H         0.000      4.404   -0.938   -0.869
+ AEB           H37    H    H         0.000      3.589   -2.250   -1.757
+ AEB           C62    C    CH2       0.000      4.275   -2.799    0.212
+ AEB           H38    H    H         0.000      3.583   -3.639    0.299
+ AEB           H39    H    H         0.000      4.398   -2.327    1.189
+ AEB           C65    C    CH2       0.000      5.630   -3.303   -0.287
+ AEB           H40    H    H         0.000      6.321   -2.462   -0.374
+ AEB           H41    H    H         0.000      5.506   -3.774   -1.264
+ AEB           N68    N    NH1       0.000      6.168   -4.281    0.664
+ AEB           H42    H    H         0.000      5.644   -4.519    1.494
+ AEB           C71    C    C         0.000      7.384   -4.875    0.425
+ AEB           N72    N    NH2       0.000      8.097   -4.552   -0.706
+ AEB           H44    H    H         0.000      8.999   -4.985   -0.894
+ AEB           H43    H    H         0.000      7.735   -3.875   -1.374
+ AEB           N73    N    N         0.000      7.862   -5.745    1.270
+ AEB           H45    H    H         0.000      8.712   -6.168    1.115
+ AEB           C36    C    CH1       0.000      0.077    1.291   -1.974
+ AEB           H24    H    H         0.000      0.058    0.859   -2.985
+ AEB           C35    C    CH2       0.000      0.942    2.570   -1.964
+ AEB           H22    H    H         0.000      1.008    3.043   -2.946
+ AEB           H23    H    H         0.000      1.949    2.395   -1.578
+ AEB           C34    C    CH1       0.000      0.163    3.501   -0.986
+ AEB           H21    H    H         0.000      0.385    4.566   -1.144
+ AEB           C43    C    CH2       0.000      0.501    3.029    0.429
+ AEB           H30    H    H         0.000      1.504    3.377    0.687
+ AEB           H31    H    H         0.000      0.480    1.937    0.451
+ AEB           C42    C    CH2       0.000     -0.505    3.579    1.436
+ AEB           H28    H    H         0.000     -0.516    4.670    1.391
+ AEB           H29    H    H         0.000     -0.233    3.261    2.445
+ AEB           C39    C    CH1       0.000     -1.896    3.039    1.087
+ AEB           H27    H    H         0.000     -1.874    1.940    1.071
+ AEB           O49    O    O2        0.000     -2.845    3.487    2.057
+ AEB           S51    S    ST        0.000     -3.116    2.483    3.167
+ AEB           O54    O    OS        0.000     -4.210    2.995    3.914
+ AEB           O53    O    OH1       0.000     -1.912    2.504    4.098
+ AEB           H32    H    H         0.000     -1.917    1.928    4.855
+ AEB           O52    O    OS        0.000     -3.127    1.201    2.554
+ AEB           C37    C    CH2       0.000     -2.285    3.566   -0.295
+ AEB           H25    H    H         0.000     -2.321    4.657   -0.253
+ AEB           H26    H    H         0.000     -3.274    3.180   -0.548
+ AEB           C33    C    CH1       0.000     -1.289    3.133   -1.347
+ AEB           H20    H    H         0.000     -1.546    3.630   -2.293
+ AEB           N32    N    N         0.000     -1.286    1.686   -1.572
+ AEB           C29    C    C         0.000     -2.341    0.859   -1.431
+ AEB           O31    O    O         0.000     -2.193   -0.338   -1.545
+ AEB           C19    C    CH1       0.000     -3.706    1.425   -1.132
+ AEB           H10    H    H         0.000     -3.684    1.938   -0.160
+ AEB           C20    C    CH1       0.000     -4.097    2.420   -2.226
+ AEB           H11    H    H         0.000     -3.306    3.177   -2.332
+ AEB           C22    C    CH3       0.000     -5.411    3.106   -1.846
+ AEB           H16    H    H         0.000     -5.682    3.796   -2.602
+ AEB           H15    H    H         0.000     -6.173    2.378   -1.743
+ AEB           H14    H    H         0.000     -5.289    3.620   -0.927
+ AEB           C21    C    CH2       0.000     -4.273    1.679   -3.552
+ AEB           H12    H    H         0.000     -5.125    1.000   -3.477
+ AEB           H13    H    H         0.000     -3.370    1.105   -3.770
+ AEB           C23    C    CH3       0.000     -4.521    2.689   -4.672
+ AEB           H19    H    H         0.000     -5.359    3.292   -4.430
+ AEB           H18    H    H         0.000     -3.668    3.307   -4.791
+ AEB           H17    H    H         0.000     -4.710    2.176   -5.580
+ AEB           N18    N    NH1       0.000     -4.686    0.337   -1.088
+ AEB           H9     H    H         0.000     -4.512   -0.520   -1.594
+ AEB           C15    C    C         0.000     -5.820    0.479   -0.373
+ AEB           O17    O    O         0.000     -6.028    1.508    0.234
+ AEB           C12    C    CH1       0.000     -6.828   -0.639   -0.329
+ AEB           H7     H    H         0.000     -7.115   -0.915   -1.354
+ AEB           O16    O    OH1       0.000     -7.986   -0.209    0.390
+ AEB           H8     H    H         0.000     -7.734    0.033    1.291
+ AEB           C11    C    CH2       0.000     -6.214   -1.853    0.373
+ AEB           H5     H    H         0.000     -6.011   -1.605    1.416
+ AEB           H6     H    H         0.000     -5.281   -2.126   -0.124
+ AEB           C4     C    CR6       0.000     -7.177   -3.010    0.308
+ AEB           C3     C    CR16      0.000     -7.126   -3.892   -0.756
+ AEB           H2     H    H         0.000     -6.399   -3.747   -1.545
+ AEB           C5     C    CR16      0.000     -8.103   -3.194    1.318
+ AEB           H3     H    H         0.000     -8.139   -2.504    2.151
+ AEB           C6     C    CR16      0.000     -8.982   -4.258    1.264
+ AEB           H4     H    H         0.000     -9.708   -4.401    2.055
+ AEB           C1     C    CR6       0.000     -8.935   -5.143    0.197
+ AEB           O74    O    OH1       0.000     -9.799   -6.191    0.142
+ AEB           H47    H    H         0.000     -9.406   -6.956    0.584
+ AEB           C2     C    CR16      0.000     -8.004   -4.957   -0.814
+ AEB           H1     H    H         0.000     -7.965   -5.646   -1.648
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AEB      O56    n/a    C55    START
+ AEB      C55    O56    C36    .
+ AEB      N57    C55    C58    .
+ AEB      H33    N57    .      .
+ AEB      C58    N57    C59    .
+ AEB      H34    C58    .      .
+ AEB      H35    C58    .      .
+ AEB      C59    C58    C62    .
+ AEB      H36    C59    .      .
+ AEB      H37    C59    .      .
+ AEB      C62    C59    C65    .
+ AEB      H38    C62    .      .
+ AEB      H39    C62    .      .
+ AEB      C65    C62    N68    .
+ AEB      H40    C65    .      .
+ AEB      H41    C65    .      .
+ AEB      N68    C65    C71    .
+ AEB      H42    N68    .      .
+ AEB      C71    N68    N73    .
+ AEB      N72    C71    H43    .
+ AEB      H44    N72    .      .
+ AEB      H43    N72    .      .
+ AEB      N73    C71    H45    .
+ AEB      H45    N73    .      .
+ AEB      C36    C55    N32    .
+ AEB      H24    C36    .      .
+ AEB      C35    C36    C34    .
+ AEB      H22    C35    .      .
+ AEB      H23    C35    .      .
+ AEB      C34    C35    C43    .
+ AEB      H21    C34    .      .
+ AEB      C43    C34    C42    .
+ AEB      H30    C43    .      .
+ AEB      H31    C43    .      .
+ AEB      C42    C43    C39    .
+ AEB      H28    C42    .      .
+ AEB      H29    C42    .      .
+ AEB      C39    C42    C37    .
+ AEB      H27    C39    .      .
+ AEB      O49    C39    S51    .
+ AEB      S51    O49    O52    .
+ AEB      O54    S51    .      .
+ AEB      O53    S51    H32    .
+ AEB      H32    O53    .      .
+ AEB      O52    S51    .      .
+ AEB      C37    C39    C33    .
+ AEB      H25    C37    .      .
+ AEB      H26    C37    .      .
+ AEB      C33    C37    H20    .
+ AEB      H20    C33    .      .
+ AEB      N32    C36    C29    .
+ AEB      C29    N32    C19    .
+ AEB      O31    C29    .      .
+ AEB      C19    C29    N18    .
+ AEB      H10    C19    .      .
+ AEB      C20    C19    C21    .
+ AEB      H11    C20    .      .
+ AEB      C22    C20    H14    .
+ AEB      H16    C22    .      .
+ AEB      H15    C22    .      .
+ AEB      H14    C22    .      .
+ AEB      C21    C20    C23    .
+ AEB      H12    C21    .      .
+ AEB      H13    C21    .      .
+ AEB      C23    C21    H17    .
+ AEB      H19    C23    .      .
+ AEB      H18    C23    .      .
+ AEB      H17    C23    .      .
+ AEB      N18    C19    C15    .
+ AEB      H9     N18    .      .
+ AEB      C15    N18    C12    .
+ AEB      O17    C15    .      .
+ AEB      C12    C15    C11    .
+ AEB      H7     C12    .      .
+ AEB      O16    C12    H8     .
+ AEB      H8     O16    .      .
+ AEB      C11    C12    C4     .
+ AEB      H5     C11    .      .
+ AEB      H6     C11    .      .
+ AEB      C4     C11    C5     .
+ AEB      C3     C4     H2     .
+ AEB      H2     C3     .      .
+ AEB      C5     C4     C6     .
+ AEB      H3     C5     .      .
+ AEB      C6     C5     C1     .
+ AEB      H4     C6     .      .
+ AEB      C1     C6     C2     .
+ AEB      O74    C1     H47    .
+ AEB      H47    O74    .      .
+ AEB      C2     C1     H1     .
+ AEB      H1     C2     .      END
+ AEB      C3     C2     .    ADD
+ AEB      N32    C33    .    ADD
+ AEB      C33    C34    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AEB       C2        C1        double    1.390     0.020     1.390     0.020     
+AEB       C1        C6        single    1.390     0.020     1.390     0.020     
+AEB       O74       C1        single    1.362     0.020     1.362     0.020     
+AEB       C3        C2        single    1.390     0.020     1.390     0.020     
+AEB       H1        C2        single    1.082     0.013     0.975     0.010     
+AEB       C3        C4        double    1.390     0.020     1.390     0.020     
+AEB       H2        C3        single    1.082     0.013     0.975     0.010     
+AEB       C5        C4        single    1.390     0.020     1.390     0.020     
+AEB       C4        C11       single    1.511     0.020     1.511     0.020     
+AEB       C6        C5        double    1.390     0.020     1.390     0.020     
+AEB       H3        C5        single    1.082     0.013     0.975     0.010     
+AEB       H4        C6        single    1.082     0.013     0.975     0.010     
+AEB       C11       C12       single    1.524     0.020     1.524     0.020     
+AEB       H5        C11       single    1.089     0.010     0.989     0.005     
+AEB       H6        C11       single    1.089     0.010     0.989     0.005     
+AEB       C12       C15       single    1.500     0.020     1.500     0.020     
+AEB       O16       C12       single    1.432     0.020     1.432     0.020     
+AEB       H7        C12       single    1.089     0.010     0.989     0.005     
+AEB       O17       C15       double    1.220     0.020     1.220     0.020     
+AEB       C15       N18       single    1.330     0.020     1.330     0.020     
+AEB       H8        O16       single    0.970     0.012     0.839     0.014     
+AEB       N18       C19       single    1.450     0.020     1.450     0.020     
+AEB       H9        N18       single    1.016     0.010     0.899     0.007     
+AEB       C20       C19       single    1.524     0.020     1.524     0.020     
+AEB       C19       C29       single    1.500     0.020     1.500     0.020     
+AEB       H10       C19       single    1.089     0.010     0.989     0.005     
+AEB       C21       C20       single    1.524     0.020     1.524     0.020     
+AEB       C22       C20       single    1.524     0.020     1.524     0.020     
+AEB       H11       C20       single    1.089     0.010     0.989     0.005     
+AEB       C23       C21       single    1.513     0.020     1.513     0.020     
+AEB       H12       C21       single    1.089     0.010     0.989     0.005     
+AEB       H13       C21       single    1.089     0.010     0.989     0.005     
+AEB       H14       C22       single    1.089     0.010     0.989     0.005     
+AEB       H15       C22       single    1.089     0.010     0.989     0.005     
+AEB       H16       C22       single    1.089     0.010     0.989     0.005     
+AEB       H17       C23       single    1.089     0.010     0.989     0.005     
+AEB       H18       C23       single    1.089     0.010     0.989     0.005     
+AEB       H19       C23       single    1.089     0.010     0.989     0.005     
+AEB       O31       C29       double    1.220     0.020     1.220     0.020     
+AEB       C29       N32       single    1.330     0.020     1.330     0.020     
+AEB       N32       C33       single    1.455     0.020     1.455     0.020     
+AEB       N32       C36       single    1.455     0.020     1.455     0.020     
+AEB       C33       C34       single    1.524     0.020     1.524     0.020     
+AEB       C33       C37       single    1.524     0.020     1.524     0.020     
+AEB       H20       C33       single    1.089     0.010     0.989     0.005     
+AEB       C34       C35       single    1.524     0.020     1.524     0.020     
+AEB       C43       C34       single    1.524     0.020     1.524     0.020     
+AEB       H21       C34       single    1.089     0.010     0.989     0.005     
+AEB       C35       C36       single    1.524     0.020     1.524     0.020     
+AEB       H22       C35       single    1.089     0.010     0.989     0.005     
+AEB       H23       C35       single    1.089     0.010     0.989     0.005     
+AEB       C36       C55       single    1.500     0.020     1.500     0.020     
+AEB       H24       C36       single    1.089     0.010     0.989     0.005     
+AEB       C37       C39       single    1.524     0.020     1.524     0.020     
+AEB       H25       C37       single    1.089     0.010     0.989     0.005     
+AEB       H26       C37       single    1.089     0.010     0.989     0.005     
+AEB       C39       C42       single    1.524     0.020     1.524     0.020     
+AEB       O49       C39       single    1.426     0.020     1.426     0.020     
+AEB       H27       C39       single    1.089     0.010     0.989     0.005     
+AEB       C42       C43       single    1.524     0.020     1.524     0.020     
+AEB       H28       C42       single    1.089     0.010     0.989     0.005     
+AEB       H29       C42       single    1.089     0.010     0.989     0.005     
+AEB       H30       C43       single    1.089     0.010     0.989     0.005     
+AEB       H31       C43       single    1.089     0.010     0.989     0.005     
+AEB       S51       O49       single    1.535     0.020     1.535     0.020     
+AEB       O52       S51       double    1.436     0.020     1.436     0.020     
+AEB       O53       S51       single    1.635     0.020     1.635     0.020     
+AEB       O54       S51       double    1.436     0.020     1.436     0.020     
+AEB       H32       O53       single    0.970     0.012     0.839     0.014     
+AEB       C55       O56       double    1.220     0.020     1.220     0.020     
+AEB       N57       C55       single    1.330     0.020     1.330     0.020     
+AEB       C58       N57       single    1.450     0.020     1.450     0.020     
+AEB       H33       N57       single    1.016     0.010     0.899     0.007     
+AEB       C59       C58       single    1.524     0.020     1.524     0.020     
+AEB       H34       C58       single    1.089     0.010     0.989     0.005     
+AEB       H35       C58       single    1.089     0.010     0.989     0.005     
+AEB       C62       C59       single    1.524     0.020     1.524     0.020     
+AEB       H36       C59       single    1.089     0.010     0.989     0.005     
+AEB       H37       C59       single    1.089     0.010     0.989     0.005     
+AEB       C65       C62       single    1.524     0.020     1.524     0.020     
+AEB       H38       C62       single    1.089     0.010     0.989     0.005     
+AEB       H39       C62       single    1.089     0.010     0.989     0.005     
+AEB       N68       C65       single    1.450     0.020     1.450     0.020     
+AEB       H40       C65       single    1.089     0.010     0.989     0.005     
+AEB       H41       C65       single    1.089     0.010     0.989     0.005     
+AEB       C71       N68       single    1.330     0.020     1.330     0.020     
+AEB       H42       N68       single    1.016     0.010     0.899     0.007     
+AEB       N72       C71       single    1.332     0.020     1.332     0.020     
+AEB       N73       C71       double    1.260     0.020     1.260     0.020     
+AEB       H43       N72       single    1.016     0.010     0.899     0.007     
+AEB       H44       N72       single    1.016     0.010     0.899     0.007     
+AEB       H45       N73       single    1.016     0.010     0.899     0.007     
+AEB       H47       O74       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AEB      O56    C55    N57     123.000    3.000
+ AEB      O56    C55    C36     120.500    3.000
+ AEB      N57    C55    C36     116.500    3.000
+ AEB      C55    N57    H33     120.000    3.000
+ AEB      C55    N57    C58     121.500    3.000
+ AEB      H33    N57    C58     118.500    3.000
+ AEB      N57    C58    H34     109.470    3.000
+ AEB      N57    C58    H35     109.470    3.000
+ AEB      N57    C58    C59     112.000    3.000
+ AEB      H34    C58    H35     107.900    3.000
+ AEB      H34    C58    C59     109.470    3.000
+ AEB      H35    C58    C59     109.470    3.000
+ AEB      C58    C59    H36     109.470    3.000
+ AEB      C58    C59    H37     109.470    3.000
+ AEB      C58    C59    C62     111.000    3.000
+ AEB      H36    C59    H37     107.900    3.000
+ AEB      H36    C59    C62     109.470    3.000
+ AEB      H37    C59    C62     109.470    3.000
+ AEB      C59    C62    H38     109.470    3.000
+ AEB      C59    C62    H39     109.470    3.000
+ AEB      C59    C62    C65     111.000    3.000
+ AEB      H38    C62    H39     107.900    3.000
+ AEB      H38    C62    C65     109.470    3.000
+ AEB      H39    C62    C65     109.470    3.000
+ AEB      C62    C65    H40     109.470    3.000
+ AEB      C62    C65    H41     109.470    3.000
+ AEB      C62    C65    N68     112.000    3.000
+ AEB      H40    C65    H41     107.900    3.000
+ AEB      H40    C65    N68     109.470    3.000
+ AEB      H41    C65    N68     109.470    3.000
+ AEB      C65    N68    H42     118.500    3.000
+ AEB      C65    N68    C71     121.500    3.000
+ AEB      H42    N68    C71     120.000    3.000
+ AEB      N68    C71    N72     120.000    3.000
+ AEB      N68    C71    N73     120.000    3.000
+ AEB      N72    C71    N73     120.000    3.000
+ AEB      C71    N72    H44     120.000    3.000
+ AEB      C71    N72    H43     120.000    3.000
+ AEB      H44    N72    H43     120.000    3.000
+ AEB      C71    N73    H45     120.000    3.000
+ AEB      C55    C36    H24     108.810    3.000
+ AEB      C55    C36    C35     109.470    3.000
+ AEB      C55    C36    N32     111.600    3.000
+ AEB      H24    C36    C35     108.340    3.000
+ AEB      H24    C36    N32     109.470    3.000
+ AEB      C35    C36    N32     105.000    3.000
+ AEB      C36    C35    H22     109.470    3.000
+ AEB      C36    C35    H23     109.470    3.000
+ AEB      C36    C35    C34     111.000    3.000
+ AEB      H22    C35    H23     107.900    3.000
+ AEB      H22    C35    C34     109.470    3.000
+ AEB      H23    C35    C34     109.470    3.000
+ AEB      C35    C34    H21     108.340    3.000
+ AEB      C35    C34    C43     109.470    3.000
+ AEB      C35    C34    C33     111.000    3.000
+ AEB      H21    C34    C43     108.340    3.000
+ AEB      H21    C34    C33     108.340    3.000
+ AEB      C43    C34    C33     111.000    3.000
+ AEB      C34    C43    H30     109.470    3.000
+ AEB      C34    C43    H31     109.470    3.000
+ AEB      C34    C43    C42     111.000    3.000
+ AEB      H30    C43    H31     107.900    3.000
+ AEB      H30    C43    C42     109.470    3.000
+ AEB      H31    C43    C42     109.470    3.000
+ AEB      C43    C42    H28     109.470    3.000
+ AEB      C43    C42    H29     109.470    3.000
+ AEB      C43    C42    C39     111.000    3.000
+ AEB      H28    C42    H29     107.900    3.000
+ AEB      H28    C42    C39     109.470    3.000
+ AEB      H29    C42    C39     109.470    3.000
+ AEB      C42    C39    H27     108.340    3.000
+ AEB      C42    C39    O49     109.470    3.000
+ AEB      C42    C39    C37     109.470    3.000
+ AEB      H27    C39    O49     109.470    3.000
+ AEB      H27    C39    C37     108.340    3.000
+ AEB      O49    C39    C37     109.470    3.000
+ AEB      C39    O49    S51     120.000    3.000
+ AEB      O49    S51    O53     109.500    3.000
+ AEB      O49    S51    O54     109.500    3.000
+ AEB      O49    S51    O52     109.500    3.000
+ AEB      O53    S51    O54     109.500    3.000
+ AEB      O53    S51    O52     109.500    3.000
+ AEB      O54    S51    O52     109.500    3.000
+ AEB      S51    O53    H32     120.000    3.000
+ AEB      C39    C37    H25     109.470    3.000
+ AEB      C39    C37    H26     109.470    3.000
+ AEB      C39    C37    C33     111.000    3.000
+ AEB      H25    C37    H26     107.900    3.000
+ AEB      H25    C37    C33     109.470    3.000
+ AEB      H26    C37    C33     109.470    3.000
+ AEB      C37    C33    H20     108.340    3.000
+ AEB      C37    C33    N32     105.000    3.000
+ AEB      C37    C33    C34     111.000    3.000
+ AEB      N32    C33    C34     105.000    3.000
+ AEB      H20    C33    N32     109.470    3.000
+ AEB      H20    C33    C34     108.340    3.000
+ AEB      C36    N32    C29     121.000    3.000
+ AEB      C36    N32    C33     120.000    3.000
+ AEB      C29    N32    C33     121.000    3.000
+ AEB      N32    C29    O31     123.000    3.000
+ AEB      N32    C29    C19     116.500    3.000
+ AEB      O31    C29    C19     120.500    3.000
+ AEB      C29    C19    H10     108.810    3.000
+ AEB      C29    C19    C20     109.470    3.000
+ AEB      C29    C19    N18     111.600    3.000
+ AEB      H10    C19    C20     108.340    3.000
+ AEB      H10    C19    N18     108.550    3.000
+ AEB      C20    C19    N18     110.000    3.000
+ AEB      C19    C20    H11     108.340    3.000
+ AEB      C19    C20    C22     111.000    3.000
+ AEB      C19    C20    C21     111.000    3.000
+ AEB      H11    C20    C22     108.340    3.000
+ AEB      H11    C20    C21     108.340    3.000
+ AEB      C22    C20    C21     111.000    3.000
+ AEB      C20    C22    H16     109.470    3.000
+ AEB      C20    C22    H15     109.470    3.000
+ AEB      C20    C22    H14     109.470    3.000
+ AEB      H16    C22    H15     109.470    3.000
+ AEB      H16    C22    H14     109.470    3.000
+ AEB      H15    C22    H14     109.470    3.000
+ AEB      C20    C21    H12     109.470    3.000
+ AEB      C20    C21    H13     109.470    3.000
+ AEB      C20    C21    C23     111.000    3.000
+ AEB      H12    C21    H13     107.900    3.000
+ AEB      H12    C21    C23     109.470    3.000
+ AEB      H13    C21    C23     109.470    3.000
+ AEB      C21    C23    H19     109.470    3.000
+ AEB      C21    C23    H18     109.470    3.000
+ AEB      C21    C23    H17     109.470    3.000
+ AEB      H19    C23    H18     109.470    3.000
+ AEB      H19    C23    H17     109.470    3.000
+ AEB      H18    C23    H17     109.470    3.000
+ AEB      C19    N18    H9      118.500    3.000
+ AEB      C19    N18    C15     121.500    3.000
+ AEB      H9     N18    C15     120.000    3.000
+ AEB      N18    C15    O17     123.000    3.000
+ AEB      N18    C15    C12     116.500    3.000
+ AEB      O17    C15    C12     120.500    3.000
+ AEB      C15    C12    H7      108.810    3.000
+ AEB      C15    C12    O16     109.470    3.000
+ AEB      C15    C12    C11     109.470    3.000
+ AEB      H7     C12    O16     109.470    3.000
+ AEB      H7     C12    C11     108.340    3.000
+ AEB      O16    C12    C11     109.470    3.000
+ AEB      C12    O16    H8      109.470    3.000
+ AEB      C12    C11    H5      109.470    3.000
+ AEB      C12    C11    H6      109.470    3.000
+ AEB      C12    C11    C4      109.470    3.000
+ AEB      H5     C11    H6      107.900    3.000
+ AEB      H5     C11    C4      109.470    3.000
+ AEB      H6     C11    C4      109.470    3.000
+ AEB      C11    C4     C3      120.000    3.000
+ AEB      C11    C4     C5      120.000    3.000
+ AEB      C3     C4     C5      120.000    3.000
+ AEB      C4     C3     H2      120.000    3.000
+ AEB      C4     C3     C2      120.000    3.000
+ AEB      H2     C3     C2      120.000    3.000
+ AEB      C4     C5     H3      120.000    3.000
+ AEB      C4     C5     C6      120.000    3.000
+ AEB      H3     C5     C6      120.000    3.000
+ AEB      C5     C6     H4      120.000    3.000
+ AEB      C5     C6     C1      120.000    3.000
+ AEB      H4     C6     C1      120.000    3.000
+ AEB      C6     C1     O74     120.000    3.000
+ AEB      C6     C1     C2      120.000    3.000
+ AEB      O74    C1     C2      120.000    3.000
+ AEB      C1     O74    H47     109.470    3.000
+ AEB      C1     C2     H1      120.000    3.000
+ AEB      C1     C2     C3      120.000    3.000
+ AEB      H1     C2     C3      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AEB      CONST_1  O56    C55    N57    C58        0.000    0.000   0
+ AEB      var_1    C55    N57    C58    C59      179.979   20.000   3
+ AEB      var_2    N57    C58    C59    C62      180.000   20.000   3
+ AEB      var_3    C58    C59    C62    C65     -179.969   20.000   3
+ AEB      var_4    C59    C62    C65    N68     -179.967   20.000   3
+ AEB      var_5    C62    C65    N68    C71      180.000   20.000   3
+ AEB      CONST_2  C65    N68    C71    N73      180.000    0.000   0
+ AEB      CONST_3  N68    C71    N72    H43        0.000    0.000   0
+ AEB      CONST_4  N68    C71    N73    H45      180.000    0.000   0
+ AEB      var_6    O56    C55    C36    N32       -5.451   20.000   3
+ AEB      var_7    C55    C36    C35    C34      -90.000   20.000   3
+ AEB      var_8    C36    C35    C34    C43       90.000   20.000   3
+ AEB      var_9    C35    C34    C43    C42     -150.000   20.000   3
+ AEB      var_10   C34    C43    C42    C39       60.000   20.000   3
+ AEB      var_11   C43    C42    C39    C37      -60.000   20.000   3
+ AEB      var_12   C42    C39    O49    S51      -96.098   20.000   1
+ AEB      var_13   C39    O49    S51    O52      -38.533   20.000   1
+ AEB      var_14   O49    S51    O53    H32      179.986   20.000   1
+ AEB      var_15   C42    C39    C37    C33       60.000   20.000   3
+ AEB      var_16   C39    C37    C33    N32       60.000   20.000   3
+ AEB      var_17   C37    C33    C34    C35      150.000   20.000   3
+ AEB      var_18   C55    C36    N32    C29      -60.000   20.000   3
+ AEB      var_19   C36    N32    C33    C37     -150.000   20.000   3
+ AEB      CONST_5  C36    N32    C29    C19      180.000    0.000   0
+ AEB      var_20   N32    C29    C19    N18      177.392   20.000   3
+ AEB      var_21   C29    C19    C20    C21       66.031   20.000   3
+ AEB      var_22   C19    C20    C22    H14       59.988   20.000   3
+ AEB      var_23   C19    C20    C21    C23     -174.176   20.000   3
+ AEB      var_24   C20    C21    C23    H17     -176.134   20.000   3
+ AEB      var_25   C29    C19    N18    C15      155.015   20.000   3
+ AEB      CONST_6  C19    N18    C15    C12      180.000    0.000   0
+ AEB      var_26   N18    C15    C12    C11       65.012   20.000   3
+ AEB      var_27   C15    C12    O16    H8       -59.990   20.000   1
+ AEB      var_28   C15    C12    C11    C4      -175.000   20.000   3
+ AEB      var_29   C12    C11    C4     C5       -90.394   20.000   2
+ AEB      CONST_7  C11    C4     C3     C2       180.000    0.000   0
+ AEB      CONST_8  C4     C3     C2     C1         0.000    0.000   0
+ AEB      CONST_9  C11    C4     C5     C6       180.000    0.000   0
+ AEB      CONST_10 C4     C5     C6     C1         0.000    0.000   0
+ AEB      CONST_11 C5     C6     C1     C2         0.000    0.000   0
+ AEB      var_30   C6     C1     O74    H47      -90.032   20.000   1
+ AEB      CONST_12 C6     C1     C2     C3         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AEB      chir_01  C12    O16    C11    C15       positiv
+ AEB      chir_02  C19    N18    C29    C20       negativ
+ AEB      chir_03  C20    C19    C21    C22       negativ
+ AEB      chir_04  C33    N32    C34    C37       positiv
+ AEB      chir_05  C34    C33    C35    C43       positiv
+ AEB      chir_06  C36    N32    C35    C55       negativ
+ AEB      chir_07  C39    C37    C42    O49       negativ
+ AEB      chir_08  S51    O49    O52    O53       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AEB      plan-1    C3        0.020
+ AEB      plan-1    C2        0.020
+ AEB      plan-1    C4        0.020
+ AEB      plan-1    H2        0.020
+ AEB      plan-1    C1        0.020
+ AEB      plan-1    C6        0.020
+ AEB      plan-1    C5        0.020
+ AEB      plan-1    H1        0.020
+ AEB      plan-1    O74       0.020
+ AEB      plan-1    H4        0.020
+ AEB      plan-1    H3        0.020
+ AEB      plan-1    C11       0.020
+ AEB      plan-2    C15       0.020
+ AEB      plan-2    C12       0.020
+ AEB      plan-2    O17       0.020
+ AEB      plan-2    N18       0.020
+ AEB      plan-2    H9        0.020
+ AEB      plan-3    N18       0.020
+ AEB      plan-3    C15       0.020
+ AEB      plan-3    C19       0.020
+ AEB      plan-3    H9        0.020
+ AEB      plan-4    C29       0.020
+ AEB      plan-4    C19       0.020
+ AEB      plan-4    O31       0.020
+ AEB      plan-4    N32       0.020
+ AEB      plan-5    N32       0.020
+ AEB      plan-5    C29       0.020
+ AEB      plan-5    C33       0.020
+ AEB      plan-5    C36       0.020
+ AEB      plan-6    C55       0.020
+ AEB      plan-6    C36       0.020
+ AEB      plan-6    O56       0.020
+ AEB      plan-6    N57       0.020
+ AEB      plan-6    H33       0.020
+ AEB      plan-7    N57       0.020
+ AEB      plan-7    C55       0.020
+ AEB      plan-7    C58       0.020
+ AEB      plan-7    H33       0.020
+ AEB      plan-8    N68       0.020
+ AEB      plan-8    C65       0.020
+ AEB      plan-8    C71       0.020
+ AEB      plan-8    H42       0.020
+ AEB      plan-9    C71       0.020
+ AEB      plan-9    N68       0.020
+ AEB      plan-9    N73       0.020
+ AEB      plan-9    N72       0.020
+ AEB      plan-9    H45       0.020
+ AEB      plan-9    H42       0.020
+ AEB      plan-9    H44       0.020
+ AEB      plan-9    H43       0.020
+ AEB      plan-10   N72       0.020
+ AEB      plan-10   C71       0.020
+ AEB      plan-10   H43       0.020
+ AEB      plan-10   H44       0.020
+# ------------------------------------------------------

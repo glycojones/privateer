@@ -1,0 +1,188 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MHV      MHV '4-OXO-L-PIPECOLIC ACID              ' non-polymer        18  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MHV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MHV           OXT    O    OC       -0.500      0.000    0.000    0.000
+ MHV           C      C    C         0.000     -1.158    0.385   -0.274
+ MHV           O      O    OC       -0.500     -1.340    1.219   -1.188
+ MHV           CA     C    CH1       0.000     -2.334   -0.155    0.498
+ MHV           HA     H    H         0.000     -2.067   -0.237    1.561
+ MHV           CB     C    CH2       0.000     -2.710   -1.539   -0.044
+ MHV           HB1    H    H         0.000     -1.911   -2.253    0.167
+ MHV           HB2    H    H         0.000     -2.875   -1.486   -1.122
+ MHV           CG     C    C         0.000     -3.983   -1.987    0.642
+ MHV           OD1    O    O         0.000     -4.072   -3.086    1.136
+ MHV           CD2    C    CH2       0.000     -5.140   -1.011    0.689
+ MHV           HD1    H    H         0.000     -5.909   -1.375    1.373
+ MHV           HD2    H    H         0.000     -5.569   -0.891   -0.308
+ MHV           CE     C    CH2       0.000     -4.610    0.339    1.185
+ MHV           HE1    H    H         0.000     -4.282    0.242    2.222
+ MHV           HE2    H    H         0.000     -5.403    1.087    1.123
+ MHV           N      N    NH1       0.000     -3.477    0.755    0.349
+ MHV           H      H    H         0.000     -3.483    1.566   -0.254
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MHV      OXT    n/a    C      START
+ MHV      C      OXT    CA     .
+ MHV      O      C      .      .
+ MHV      CA     C      CB     .
+ MHV      HA     CA     .      .
+ MHV      CB     CA     CG     .
+ MHV      HB1    CB     .      .
+ MHV      HB2    CB     .      .
+ MHV      CG     CB     CD2    .
+ MHV      OD1    CG     .      .
+ MHV      CD2    CG     CE     .
+ MHV      HD1    CD2    .      .
+ MHV      HD2    CD2    .      .
+ MHV      CE     CD2    N      .
+ MHV      HE1    CE     .      .
+ MHV      HE2    CE     .      .
+ MHV      N      CE     H      .
+ MHV      H      N      .      END
+ MHV      N      CA     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MHV       N         CA        single    1.450     0.020     1.450     0.020     
+MHV       N         CE        single    1.450     0.020     1.450     0.020     
+MHV       CA        C         single    1.500     0.020     1.500     0.020     
+MHV       CB        CA        single    1.524     0.020     1.524     0.020     
+MHV       O         C         deloc     1.250     0.020     1.250     0.020     
+MHV       C         OXT       deloc     1.250     0.020     1.250     0.020     
+MHV       CG        CB        single    1.510     0.020     1.510     0.020     
+MHV       OD1       CG        double    1.220     0.020     1.220     0.020     
+MHV       CD2       CG        single    1.510     0.020     1.510     0.020     
+MHV       CE        CD2       single    1.524     0.020     1.524     0.020     
+MHV       H         N         single    1.036     0.016     0.914     0.007     
+MHV       HA        CA        single    1.089     0.010     0.989     0.005     
+MHV       HE1       CE        single    1.089     0.010     0.989     0.005     
+MHV       HE2       CE        single    1.089     0.010     0.989     0.005     
+MHV       HB1       CB        single    1.089     0.010     0.989     0.005     
+MHV       HB2       CB        single    1.089     0.010     0.989     0.005     
+MHV       HD1       CD2       single    1.089     0.010     0.989     0.005     
+MHV       HD2       CD2       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MHV      OXT    C      O       123.000    3.000
+ MHV      OXT    C      CA      118.500    3.000
+ MHV      O      C      CA      118.500    3.000
+ MHV      C      CA     HA      108.810    3.000
+ MHV      C      CA     CB      109.470    3.000
+ MHV      C      CA     N       111.600    3.000
+ MHV      HA     CA     CB      108.340    3.000
+ MHV      HA     CA     N       108.550    3.000
+ MHV      CB     CA     N       110.000    3.000
+ MHV      CA     CB     HB1     109.470    3.000
+ MHV      CA     CB     HB2     109.470    3.000
+ MHV      CA     CB     CG      109.470    3.000
+ MHV      HB1    CB     HB2     107.900    3.000
+ MHV      HB1    CB     CG      109.470    3.000
+ MHV      HB2    CB     CG      109.470    3.000
+ MHV      CB     CG     OD1     120.500    3.000
+ MHV      CB     CG     CD2     120.000    3.000
+ MHV      OD1    CG     CD2     120.500    3.000
+ MHV      CG     CD2    HD1     109.470    3.000
+ MHV      CG     CD2    HD2     109.470    3.000
+ MHV      CG     CD2    CE      109.470    3.000
+ MHV      HD1    CD2    HD2     107.900    3.000
+ MHV      HD1    CD2    CE      109.470    3.000
+ MHV      HD2    CD2    CE      109.470    3.000
+ MHV      CD2    CE     HE1     109.470    3.000
+ MHV      CD2    CE     HE2     109.470    3.000
+ MHV      CD2    CE     N       112.000    3.000
+ MHV      HE1    CE     HE2     107.900    3.000
+ MHV      HE1    CE     N       109.470    3.000
+ MHV      HE2    CE     N       109.470    3.000
+ MHV      CE     N      H       118.500    3.000
+ MHV      CE     N      CA      120.000    3.000
+ MHV      H      N      CA      118.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MHV      var_1    OXT    C      CA     CB       -80.088   20.000   3
+ MHV      var_2    C      CA     CB     CG       180.000   20.000   3
+ MHV      var_3    CA     CB     CG     CD2       60.000   20.000   3
+ MHV      var_4    CB     CG     CD2    CE       -60.000   20.000   3
+ MHV      var_5    CG     CD2    CE     N         60.000   20.000   3
+ MHV      var_6    CD2    CE     N      CA       -60.000   20.000   3
+ MHV      var_7    CE     N      CA     C        180.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MHV      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MHV      plan-1    N         0.020
+ MHV      plan-1    CA        0.020
+ MHV      plan-1    CE        0.020
+ MHV      plan-1    H         0.020
+ MHV      plan-2    C         0.020
+ MHV      plan-2    CA        0.020
+ MHV      plan-2    O         0.020
+ MHV      plan-2    OXT       0.020
+ MHV      plan-3    CG        0.020
+ MHV      plan-3    CB        0.020
+ MHV      plan-3    OD1       0.020
+ MHV      plan-3    CD2       0.020
+# ------------------------------------------------------

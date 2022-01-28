@@ -1,0 +1,223 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LYZ     LYZ     5-HYDROXYLYSINE     peptide     26     11     .
+#
+data_comp_LYZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LYZ     N       N       NT3     1       17.770      47.059      22.129
+LYZ     CA      C       CH1     0       16.617      47.973      22.362
+LYZ     C       C       C       0       15.679      47.922      21.149
+LYZ     O       O       O       0       14.453      47.885      21.379
+LYZ     CB      C       CH2     0       17.108      49.402      22.617
+LYZ     CG      C       CH2     0       17.765      49.615      23.974
+LYZ     CD      C       CH1     0       18.087      51.062      24.310
+LYZ     CE      C       CH2     0       18.989      51.212      25.519
+LYZ     NZ      N       NT3     1       19.332      52.634      25.758
+LYZ     OH      O       OH1     0       16.867      51.766      24.528
+LYZ     OXT     O       OC      -1      16.208      47.922      20.020
+LYZ     H       H       H       0       18.294      47.021      22.872
+LYZ     H2      H       H       0       18.270      47.359      21.430
+LYZ     H3      H       H       0       17.471      46.219      21.939
+LYZ     HA      H       H       0       16.126      47.658      23.156
+LYZ     HB2     H       H       0       16.344      50.012      22.541
+LYZ     HB3     H       H       0       17.750      49.640      21.916
+LYZ     HG2     H       H       0       18.598      49.097      24.004
+LYZ     HG3     H       H       0       17.174      49.255      24.668
+LYZ     HD      H       H       0       18.537      51.474      23.527
+LYZ     HE2     H       H       0       19.818      50.712      25.393
+LYZ     HE3     H       H       0       18.552      50.862      26.319
+LYZ     HZ1     H       H       0       19.966      52.705      26.402
+LYZ     HZ2     H       H       0       18.601      53.098      26.025
+LYZ     HZ3     H       H       0       19.652      53.017      25.000
+LYZ     HH      H       H       0       16.995      52.580      24.325
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+LYZ      N      n/a    CA     START
+LYZ      H      N      .      .
+LYZ      H2     N      .      .
+LYZ      H3     N      .      .
+LYZ      CA     N      C      .
+LYZ      HA     CA     .      .
+LYZ      CB     CA     CG     .
+LYZ      HB2    CB     .      .
+LYZ      HB3    CB     .      .
+LYZ      CG     CB     CD     .
+LYZ      HG2    CG     .      .
+LYZ      HG3    CG     .      .
+LYZ      CD     CG     CE     .
+LYZ      HD     CD     .      .
+LYZ      OH     CD     HH     .
+LYZ      HH     OH     .      .
+LYZ      CE     CD     NZ     .
+LYZ      HE2    CE     .      .
+LYZ      HE3    CE     .      .
+LYZ      NZ     CE     HZ1    .
+LYZ      HZ3    NZ     .      .
+LYZ      HZ2    NZ     .      .
+LYZ      HZ1    NZ     .      .
+LYZ      C      CA     .      END
+LYZ      O      C      .      .
+LYZ      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LYZ       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+LYZ       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+LYZ       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+LYZ       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+LYZ       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+LYZ       CB        CG        SINGLE    n         1.522     0.010     1.522     0.010     
+LYZ       CG        CD        SINGLE    n         1.520     0.017     1.520     0.017     
+LYZ       CD        CE        SINGLE    n         1.516     0.010     1.516     0.010     
+LYZ       CD        OH        SINGLE    n         1.424     0.020     1.424     0.020     
+LYZ       CE        NZ        SINGLE    n         1.482     0.012     1.482     0.012     
+LYZ       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+LYZ       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+LYZ       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+LYZ       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+LYZ       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+LYZ       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+LYZ       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+LYZ       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.016     
+LYZ       CD        HD        SINGLE    n         1.089     0.010     0.992     0.019     
+LYZ       CE        HE2       SINGLE    n         1.089     0.010     0.976     0.017     
+LYZ       CE        HE3       SINGLE    n         1.089     0.010     0.976     0.017     
+LYZ       NZ        HZ1       SINGLE    n         1.036     0.016     0.907     0.020     
+LYZ       NZ        HZ2       SINGLE    n         1.036     0.016     0.907     0.020     
+LYZ       NZ        HZ3       SINGLE    n         1.036     0.016     0.907     0.020     
+LYZ       OH        HH        SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LYZ          CA           N           H     110.062    1.93
+LYZ          CA           N          H2     110.062    1.93
+LYZ          CA           N          H3     110.062    1.93
+LYZ           H           N          H2     109.028    2.41
+LYZ           H           N          H3     109.028    2.41
+LYZ          H2           N          H3     109.028    2.41
+LYZ           N          CA           C     109.241    1.50
+LYZ           N          CA          CB     110.374    1.62
+LYZ           N          CA          HA     108.487    1.50
+LYZ           C          CA          CB     111.037    2.40
+LYZ           C          CA          HA     108.824    1.50
+LYZ          CB          CA          HA     108.967    1.50
+LYZ          CA           C           O     117.124    1.50
+LYZ          CA           C         OXT     117.124    1.50
+LYZ           O           C         OXT     125.752    1.50
+LYZ          CA          CB          CG     114.586    1.50
+LYZ          CA          CB         HB2     108.549    1.50
+LYZ          CA          CB         HB3     108.549    1.50
+LYZ          CG          CB         HB2     108.780    1.65
+LYZ          CG          CB         HB3     108.780    1.65
+LYZ         HB2          CB         HB3     107.844    1.50
+LYZ          CB          CG          CD     115.049    1.72
+LYZ          CB          CG         HG2     109.212    2.40
+LYZ          CB          CG         HG3     109.212    2.40
+LYZ          CD          CG         HG2     109.508    2.89
+LYZ          CD          CG         HG3     109.508    2.89
+LYZ         HG2          CG         HG3     107.428    1.50
+LYZ          CG          CD          CE     113.886    2.49
+LYZ          CG          CD          OH     109.024    2.32
+LYZ          CG          CD          HD     108.603    1.50
+LYZ          CE          CD          OH     110.059    2.69
+LYZ          CE          CD          HD     108.719    1.50
+LYZ          OH          CD          HD     107.665    2.30
+LYZ          CD          CE          NZ     111.449    1.50
+LYZ          CD          CE         HE2     111.059    1.64
+LYZ          CD          CE         HE3     111.059    1.64
+LYZ          NZ          CE         HE2     108.752    1.50
+LYZ          NZ          CE         HE3     108.752    1.50
+LYZ         HE2          CE         HE3     108.279    2.09
+LYZ          CE          NZ         HZ1     111.108    2.28
+LYZ          CE          NZ         HZ2     111.108    2.28
+LYZ          CE          NZ         HZ3     111.108    2.28
+LYZ         HZ1          NZ         HZ2     109.021    2.83
+LYZ         HZ1          NZ         HZ3     109.021    2.83
+LYZ         HZ2          NZ         HZ3     109.021    2.83
+LYZ          CD          OH          HH     107.580    2.18
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LYZ             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+LYZ             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+LYZ            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+LYZ            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+LYZ            sp3_sp3_28          CE          CD          CG          CB     180.000   10.00     3
+LYZ            sp3_sp3_37          CG          CD          CE          NZ     180.000   10.00     3
+LYZ            sp3_sp3_46          CG          CD          OH          HH     180.000   10.00     3
+LYZ            sp3_sp3_49          CD          CE          NZ         HZ1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+LYZ    chir_1    CA    N    C    CB    positive
+LYZ    chir_2    CD    OH    CE    CG    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LYZ    plan-1           C   0.020
+LYZ    plan-1          CA   0.020
+LYZ    plan-1           O   0.020
+LYZ    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LYZ SMILES           ACDLabs              10.04 "O=C(O)C(N)CCC(O)CN"
+LYZ SMILES_CANONICAL CACTVS               3.341 "NC[C@H](O)CC[C@H](N)C(O)=O"
+LYZ SMILES           CACTVS               3.341 "NC[CH](O)CC[CH](N)C(O)=O"
+LYZ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C[C@@H](C(=O)O)N)[C@H](CN)O"
+LYZ SMILES           "OpenEye OEToolkits" 1.5.0 "C(CC(C(=O)O)N)C(CN)O"
+LYZ InChI            InChI                1.03  "InChI=1S/C6H14N2O3/c7-3-4(9)1-2-5(8)6(10)11/h4-5,9H,1-3,7-8H2,(H,10,11)/t4-,5+/m1/s1"
+LYZ InChIKey         InChI                1.03  YSMODUONRAFBET-UHNVWZDZSA-N
+LYZ ?                acedrg               196         "dictionary generator"
+LYZ ?                acedrg_database      11          "data source"
+LYZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LYZ ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,308 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PYA     PYA     "3-(1,10-PHENANTHROL-2-YL)-L-ALANINE"     peptide    33     20     .
+#
+data_comp_PYA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PYA     C1      C       CR16    0       -0.758      1.164       -7.355
+PYA     C2      C       CR16    0       -1.620      0.113       -7.280
+PYA     C3      C       CR16    0       -2.573      0.098       -6.244
+PYA     N4      N       NRD6    0       -2.684      1.052       -5.329
+PYA     C4A     C       CR66    0       -1.822      2.107       -5.399
+PYA     C4B     C       CR66    0       -1.922      3.166       -4.409
+PYA     N5      N       NRD6    0       -2.875      3.076       -3.436
+PYA     C6      C       CR6     0       -2.967      4.044       -2.528
+PYA     C7      C       CR16    0       -2.103      5.171       -2.543
+PYA     C8      C       CR16    0       -1.148      5.271       -3.510
+PYA     C8A     C       CR66    0       -1.025      4.263       -4.483
+PYA     C9      C       CR16    0       -0.042      4.311       -5.525
+PYA     C10     C       CR16    0       0.050       3.332       -6.440
+PYA     C1A     C       CR66    0       -0.831      2.202       -6.410
+PYA     CB      C       CH2     0       -4.027      3.919       -1.469
+PYA     CA      C       CH1     0       -5.431      4.301       -1.987
+PYA     N       N       NT3     1       -5.505      5.759       -2.281
+PYA     C       C       C       0       -6.507      3.927       -0.960
+PYA     O       O       O       0       -6.465      4.503       0.145
+PYA     OXT     O       OC      -1      -7.350      3.073       -1.301
+PYA     HC1     H       H       0       -0.111      1.197       -8.039
+PYA     HC2     H       H       0       -1.581      -0.590      -7.907
+PYA     HC3     H       H       0       -3.169      -0.632      -6.195
+PYA     HC7     H       H       0       -2.192      5.842       -1.887
+PYA     HC8     H       H       0       -0.566      6.019       -3.528
+PYA     HC9     H       H       0       0.550       5.045       -5.566
+PYA     H10     H       H       0       0.705       3.386       -7.116
+PYA     HB3     H       H       0       -3.797      4.498       -0.712
+PYA     HB2     H       H       0       -4.049      2.993       -1.145
+PYA     HA      H       H       0       -5.610      3.801       -2.824
+PYA     H       H       H       0       -6.373      6.004       -2.422
+PYA     H2      H       H       0       -5.024      5.949       -3.031
+PYA     H3      H       H       0       -5.170      6.234       -1.580
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+PYA      N      n/a    CA     START
+PYA      H      N      .      .
+PYA      H2     N      .      .
+PYA      H3     N      .      .
+PYA      CA     N      C      .
+PYA      HA     CA     .      .
+PYA      CB     CA     C6     .
+PYA      HB3    CB     .      .
+PYA      HB2    CB     .      .
+PYA      C6     CB     C7     .
+PYA      N5     C6     .      .
+PYA      C7     C6     C8     .
+PYA      HC7    C7     .      .
+PYA      C8     C7     C8A    .
+PYA      HC8    C8     .      .
+PYA      C8A    C8     C9     .
+PYA      C4B    C8A    .      .
+PYA      C9     C8A    C10    .
+PYA      HC9    C9     .      .
+PYA      C10    C9     C1A    .
+PYA      H10    C10    .      .
+PYA      C1A    C10    C4A    .
+PYA      C1     C1A    HC1    .
+PYA      HC1    C1     .      .
+PYA      C4A    C1A    N4     .
+PYA      N4     C4A    C3     .
+PYA      C3     N4     C2     .
+PYA      HC3    C3     .      .
+PYA      C2     C3     HC2    .
+PYA      HC2    C2     .      .
+PYA      C      CA     .      END
+PYA      O      C      .      .
+PYA      OXT    C      .      .
+PYA      C1     C2     .    ADD
+PYA      C4A    C4B    .    ADD
+PYA      C4B    N5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PYA       C1        C2        DOUBLE    y         1.358     0.011     1.358     0.011     
+PYA       C1        C1A       SINGLE    y         1.402     0.010     1.402     0.010     
+PYA       C2        C3        SINGLE    y         1.406     0.010     1.406     0.010     
+PYA       C3        N4        DOUBLE    y         1.324     0.010     1.324     0.010     
+PYA       N4        C4A       SINGLE    y         1.358     0.010     1.358     0.010     
+PYA       C4A       C4B       SINGLE    y         1.448     0.010     1.448     0.010     
+PYA       C4A       C1A       DOUBLE    y         1.411     0.010     1.411     0.010     
+PYA       C4B       N5        DOUBLE    y         1.359     0.010     1.359     0.010     
+PYA       C4B       C8A       SINGLE    y         1.412     0.010     1.412     0.010     
+PYA       N5        C6        SINGLE    y         1.327     0.010     1.327     0.010     
+PYA       C6        C7        DOUBLE    y         1.417     0.010     1.417     0.010     
+PYA       C6        CB        SINGLE    n         1.503     0.010     1.503     0.010     
+PYA       C7        C8        SINGLE    y         1.360     0.010     1.360     0.010     
+PYA       C8        C8A       DOUBLE    y         1.403     0.010     1.403     0.010     
+PYA       C8A       C9        SINGLE    y         1.430     0.010     1.430     0.010     
+PYA       C9        C10       DOUBLE    y         1.341     0.010     1.341     0.010     
+PYA       C10       C1A       SINGLE    y         1.430     0.010     1.430     0.010     
+PYA       CB        CA        SINGLE    n         1.544     0.011     1.544     0.011     
+PYA       CA        N         SINGLE    n         1.487     0.010     1.487     0.010     
+PYA       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+PYA       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+PYA       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+PYA       C1        HC1       SINGLE    n         1.082     0.013     0.942     0.017     
+PYA       C2        HC2       SINGLE    n         1.082     0.013     0.942     0.019     
+PYA       C3        HC3       SINGLE    n         1.082     0.013     0.943     0.020     
+PYA       C7        HC7       SINGLE    n         1.082     0.013     0.943     0.017     
+PYA       C8        HC8       SINGLE    n         1.082     0.013     0.948     0.020     
+PYA       C9        HC9       SINGLE    n         1.082     0.013     0.943     0.020     
+PYA       C10       H10       SINGLE    n         1.082     0.013     0.943     0.020     
+PYA       CB        HB3       SINGLE    n         1.089     0.010     0.981     0.017     
+PYA       CB        HB2       SINGLE    n         1.089     0.010     0.981     0.017     
+PYA       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+PYA       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+PYA       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+PYA       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PYA          C2          C1         C1A     119.791    1.50
+PYA          C2          C1         HC1     120.264    1.50
+PYA         C1A          C1         HC1     119.945    1.50
+PYA          C1          C2          C3     118.813    1.50
+PYA          C1          C2         HC2     120.736    1.50
+PYA          C3          C2         HC2     120.456    1.50
+PYA          C2          C3          N4     124.097    1.50
+PYA          C2          C3         HC3     118.147    1.50
+PYA          N4          C3         HC3     117.756    1.50
+PYA          C3          N4         C4A     117.536    1.50
+PYA          N4         C4A         C4B     118.657    1.50
+PYA          N4         C4A         C1A     122.239    1.50
+PYA         C4B         C4A         C1A     119.104    1.50
+PYA         C4A         C4B          N5     118.585    1.50
+PYA         C4A         C4B         C8A     119.104    1.50
+PYA          N5         C4B         C8A     122.311    1.50
+PYA         C4B          N5          C6     118.692    1.50
+PYA          N5          C6          C7     122.114    1.50
+PYA          N5          C6          CB     117.772    1.82
+PYA          C7          C6          CB     120.113    1.64
+PYA          C6          C7          C8     119.688    1.50
+PYA          C6          C7         HC7     119.930    1.50
+PYA          C8          C7         HC7     120.382    1.50
+PYA          C7          C8         C8A     119.801    1.50
+PYA          C7          C8         HC8     120.233    1.50
+PYA         C8A          C8         HC8     119.965    1.50
+PYA         C4B         C8A          C8     117.394    1.50
+PYA         C4B         C8A          C9     119.807    1.50
+PYA          C8         C8A          C9     122.799    1.50
+PYA         C8A          C9         C10     121.089    1.50
+PYA         C8A          C9         HC9     119.270    1.50
+PYA         C10          C9         HC9     119.641    1.50
+PYA          C9         C10         C1A     121.089    1.50
+PYA          C9         C10         H10     119.641    1.50
+PYA         C1A         C10         H10     119.270    1.50
+PYA          C1         C1A         C4A     117.519    1.50
+PYA          C1         C1A         C10     122.674    1.50
+PYA         C4A         C1A         C10     119.807    1.50
+PYA          C6          CB          CA     111.525    1.84
+PYA          C6          CB         HB3     108.898    1.50
+PYA          C6          CB         HB2     108.898    1.50
+PYA          CA          CB         HB3     108.632    1.50
+PYA          CA          CB         HB2     108.632    1.50
+PYA         HB3          CB         HB2     107.735    1.50
+PYA          CB          CA           N     110.237    1.51
+PYA          CB          CA           C     111.326    2.41
+PYA          CB          CA          HA     108.873    1.50
+PYA           N          CA           C     109.448    1.50
+PYA           N          CA          HA     108.601    1.50
+PYA           C          CA          HA     108.450    1.50
+PYA          CA           N           H     109.646    1.54
+PYA          CA           N          H2     109.646    1.54
+PYA          CA           N          H3     109.646    1.54
+PYA           H           N          H2     109.028    2.41
+PYA           H           N          H3     109.028    2.41
+PYA          H2           N          H3     109.028    2.41
+PYA          CA           C           O     117.228    2.13
+PYA          CA           C         OXT     117.228    2.13
+PYA           O           C         OXT     125.543    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PYA              const_21         C1A          C1          C2          C3       0.000   10.00     2
+PYA              const_53          C2          C1         C1A         C4A       0.000   10.00     2
+PYA       const_sp2_sp2_9         C4B         C8A          C9         C10       0.000   10.00     2
+PYA              const_13         C1A         C10          C9         C8A       0.000   10.00     2
+PYA              const_18          C9         C10         C1A          C1     180.000   10.00     2
+PYA             sp3_sp3_4           N          CA          CB          C6      60.000   10.00     3
+PYA            sp3_sp3_10          CB          CA           N           H     180.000   10.00     3
+PYA             sp2_sp3_8           O           C          CA          CB     120.000   10.00     6
+PYA              const_25          C1          C2          C3          N4       0.000   10.00     2
+PYA              const_29          C2          C3          N4         C4A       0.000   10.00     2
+PYA              const_32         C4B         C4A          N4          C3     180.000   10.00     2
+PYA              const_33          C1         C1A         C4A          N4       0.000   10.00     2
+PYA       const_sp2_sp2_4          N4         C4A         C4B          N5       0.000   10.00     2
+PYA       const_sp2_sp2_6         C4A         C4B         C8A          C8     180.000   10.00     2
+PYA              const_38         C4A         C4B          N5          C6     180.000   10.00     2
+PYA              const_40          CB          C6          N5         C4B     180.000   10.00     2
+PYA             sp2_sp3_2          N5          C6          CB          CA     -90.000   10.00     6
+PYA              const_43          CB          C6          C7          C8     180.000   10.00     2
+PYA              const_45          C6          C7          C8         C8A       0.000   10.00     2
+PYA              const_49          C7          C8         C8A         C4B       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PYA    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PYA    plan-1          C1   0.020
+PYA    plan-1         C10   0.020
+PYA    plan-1         C1A   0.020
+PYA    plan-1          C2   0.020
+PYA    plan-1          C3   0.020
+PYA    plan-1         C4A   0.020
+PYA    plan-1         C4B   0.020
+PYA    plan-1         HC1   0.020
+PYA    plan-1         HC2   0.020
+PYA    plan-1         HC3   0.020
+PYA    plan-1          N4   0.020
+PYA    plan-2          C1   0.020
+PYA    plan-2         C10   0.020
+PYA    plan-2         C1A   0.020
+PYA    plan-2         C4A   0.020
+PYA    plan-2         C4B   0.020
+PYA    plan-2          C8   0.020
+PYA    plan-2         C8A   0.020
+PYA    plan-2          C9   0.020
+PYA    plan-2         H10   0.020
+PYA    plan-2         HC9   0.020
+PYA    plan-2          N4   0.020
+PYA    plan-2          N5   0.020
+PYA    plan-3         C4A   0.020
+PYA    plan-3         C4B   0.020
+PYA    plan-3          C6   0.020
+PYA    plan-3          C7   0.020
+PYA    plan-3          C8   0.020
+PYA    plan-3         C8A   0.020
+PYA    plan-3          C9   0.020
+PYA    plan-3          CB   0.020
+PYA    plan-3         HC7   0.020
+PYA    plan-3         HC8   0.020
+PYA    plan-3          N5   0.020
+PYA    plan-4           C   0.020
+PYA    plan-4          CA   0.020
+PYA    plan-4           O   0.020
+PYA    plan-4         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PYA SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc3nc2c(ccc1cccnc12)cc3"
+PYA SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1ccc2ccc3cccnc3c2n1)C(O)=O"
+PYA SMILES           CACTVS               3.341 "N[CH](Cc1ccc2ccc3cccnc3c2n1)C(O)=O"
+PYA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc2ccc3ccc(nc3c2nc1)C[C@@H](C(=O)O)N"
+PYA SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc2ccc3ccc(nc3c2nc1)CC(C(=O)O)N"
+PYA InChI            InChI                1.03  "InChI=1S/C15H13N3O2/c16-12(15(19)20)8-11-6-5-10-4-3-9-2-1-7-17-13(9)14(10)18-11/h1-7,12H,8,16H2,(H,19,20)/t12-/m0/s1"
+PYA InChIKey         InChI                1.03  LODBCIBKOKOGNL-LBPRGKRZSA-N
+PYA ?                acedrg               202         "dictionary generator"
+PYA ?                acedrg_database      11          "data source"
+PYA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PYA ?                refmac5              5.8.0222    "optimization tool"

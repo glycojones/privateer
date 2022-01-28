@@ -1,0 +1,176 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+F05     F05     2H-isoindol-1-amine     NON-POLYMER     18     10     .     
+#
+data_comp_F05
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+F05     C1      C       CR16    0       -2.761      2.102       11.526      
+F05     C2      C       CR16    0       -1.460      1.789       11.955      
+F05     C3      C       CR16    0       -0.339      2.234       11.264      
+F05     C4      C       CR56    0       -0.545      3.026       10.098      
+F05     C5      C       CR56    0       -1.854      3.341       9.667       
+F05     C6      C       CR16    0       -2.978      2.868       10.399      
+F05     C7      C       CR15    0       -1.742      4.116       8.518       
+F05     N8      N       NR5     0       -0.407      4.278       8.241       
+F05     C9      C       CR5     0       0.347       3.628       9.181       
+F05     N10     N       NH2     0       1.703       3.596       9.191       
+F05     H1      H       H       0       -3.499      1.783       12.020      
+F05     H2      H       H       0       -1.346      1.263       12.730      
+F05     H3      H       H       0       0.537       2.015       11.564      
+F05     H6      H       H       0       -3.854      3.073       10.120      
+F05     H7      H       H       0       -2.436      4.474       8.005       
+F05     HN8     H       H       0       -0.078      4.735       7.555       
+F05     HN10    H       H       0       2.125       3.161       9.825       
+F05     HN1A    H       H       0       2.155       4.011       8.564       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+F05       C1        C6        DOUBLE    y         1.373     0.010     1.373     0.010     
+F05       C1        C2        SINGLE    y         1.396     0.011     1.396     0.011     
+F05       C2        C3        DOUBLE    y         1.382     0.010     1.382     0.010     
+F05       C3        C4        SINGLE    y         1.414     0.013     1.414     0.013     
+F05       C4        C9        DOUBLE    y         1.419     0.020     1.419     0.020     
+F05       C4        C5        SINGLE    y         1.407     0.020     1.407     0.020     
+F05       C5        C7        DOUBLE    y         1.391     0.010     1.391     0.010     
+F05       C5        C6        SINGLE    y         1.414     0.013     1.414     0.013     
+F05       C7        N8        SINGLE    y         1.366     0.016     1.366     0.016     
+F05       N8        C9        SINGLE    y         1.367     0.011     1.367     0.011     
+F05       C9        N10       SINGLE    n         1.357     0.018     1.357     0.018     
+F05       C1        H1        SINGLE    n         1.082     0.013     0.944     0.018     
+F05       C2        H2        SINGLE    n         1.082     0.013     0.944     0.018     
+F05       C3        H3        SINGLE    n         1.082     0.013     0.951     0.020     
+F05       C6        H6        SINGLE    n         1.082     0.013     0.942     0.015     
+F05       C7        H7        SINGLE    n         1.082     0.013     0.934     0.010     
+F05       N8        HN8       SINGLE    n         1.016     0.010     0.887     0.020     
+F05       N10       HN10      SINGLE    n         1.016     0.010     0.877     0.020     
+F05       N10       HN1A      SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+F05          C6          C1          C2     121.211    1.50
+F05          C6          C1          H1     119.472    1.50
+F05          C2          C1          H1     119.317    1.50
+F05          C1          C2          C3     121.211    1.50
+F05          C1          C2          H2     119.317    1.50
+F05          C3          C2          H2     119.472    1.50
+F05          C2          C3          C4     117.506    1.50
+F05          C2          C3          H3     121.055    1.50
+F05          C4          C3          H3     121.440    1.50
+F05          C3          C4          C9     131.745    1.59
+F05          C3          C4          C5     120.544    1.50
+F05          C9          C4          C5     107.711    1.50
+F05          C4          C5          C7     107.902    1.50
+F05          C4          C5          C6     120.544    1.50
+F05          C7          C5          C6     131.554    1.50
+F05          C1          C6          C5     118.984    1.50
+F05          C1          C6          H6     120.486    1.50
+F05          C5          C6          H6     120.529    1.50
+F05          C5          C7          N8     107.754    1.50
+F05          C5          C7          H7     127.681    2.66
+F05          N8          C7          H7     124.565    1.61
+F05          C7          N8          C9     109.083    1.50
+F05          C7          N8         HN8     125.633    1.84
+F05          C9          N8         HN8     125.284    2.08
+F05          C4          C9          N8     107.551    1.65
+F05          C4          C9         N10     127.974    1.53
+F05          N8          C9         N10     124.475    1.89
+F05          C9         N10        HN10     119.884    1.50
+F05          C9         N10        HN1A     119.884    1.50
+F05        HN10         N10        HN1A     120.232    1.82
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+F05              const_37          C6          C1          C2          C3       0.000   10.00     2
+F05       const_sp2_sp2_1          C2          C1          C6          C5       0.000   10.00     2
+F05              const_17          C1          C2          C3          C4       0.000   10.00     2
+F05              const_14          C2          C3          C4          C9     180.000   10.00     2
+F05              const_10          C3          C4          C5          C7     180.000   10.00     2
+F05              const_24          C3          C4          C9         N10       0.000   10.00     2
+F05       const_sp2_sp2_5          C4          C5          C6          C1       0.000   10.00     2
+F05              const_33          C4          C5          C7          N8       0.000   10.00     2
+F05              const_29          C5          C7          N8          C9       0.000   10.00     2
+F05              const_27         N10          C9          N8          C7     180.000   10.00     2
+F05             sp2_sp2_1          C4          C9         N10        HN10     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+F05    plan-1          C1   0.020
+F05    plan-1          C2   0.020
+F05    plan-1          C3   0.020
+F05    plan-1          C4   0.020
+F05    plan-1          C5   0.020
+F05    plan-1          C6   0.020
+F05    plan-1          C7   0.020
+F05    plan-1          C9   0.020
+F05    plan-1          H1   0.020
+F05    plan-1          H2   0.020
+F05    plan-1          H3   0.020
+F05    plan-1          H6   0.020
+F05    plan-2          C3   0.020
+F05    plan-2          C4   0.020
+F05    plan-2          C5   0.020
+F05    plan-2          C6   0.020
+F05    plan-2          C7   0.020
+F05    plan-2          C9   0.020
+F05    plan-2          H7   0.020
+F05    plan-2         HN8   0.020
+F05    plan-2         N10   0.020
+F05    plan-2          N8   0.020
+F05    plan-3          C9   0.020
+F05    plan-3        HN10   0.020
+F05    plan-3        HN1A   0.020
+F05    plan-3         N10   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+F05 SMILES           ACDLabs              12.01 c1cccc2c1cnc2N
+F05 SMILES_CANONICAL CACTVS               3.370 "Nc1[nH]cc2ccccc12"
+F05 SMILES           CACTVS               3.370 "Nc1[nH]cc2ccccc12"
+F05 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1ccc2c(c1)c[nH]c2N"
+F05 SMILES           "OpenEye OEToolkits" 1.7.0 "c1ccc2c(c1)c[nH]c2N"
+F05 InChI            InChI                1.03  "InChI=1S/C8H8N2/c9-8-7-4-2-1-3-6(7)5-10-8/h1-5,10H,9H2"
+F05 InChIKey         InChI                1.03  SPSYMWKHDUJABD-UHFFFAOYSA-N
+F05 ?                acedrg               190         "dictionary generator"                  
+F05 ?                acedrg_database      11          "data source"                           
+F05 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+F05 ?                refmac5              5.8.0158    "optimization tool"                     

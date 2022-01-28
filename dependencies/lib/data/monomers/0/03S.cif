@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+03S     03S      "methanesulfonic acid"     NON-POLYMER     9     5     .     
+#
+data_comp_03S
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+03S     S10     S       S3      0       -0.016      0.109       0.063       
+03S     O11     O       O       0       -0.402      -0.979      0.939       
+03S     O12     O       O       0       -0.240      1.470       0.510       
+03S     C13     C       CH3     0       1.705       -0.056      -0.233      
+03S     OXT     O       OH1     0       -0.630      -0.097      -1.344      
+03S     H113    H       H       0       2.163       0.769       -0.007      
+03S     H213    H       H       0       1.864       -0.256      -1.169      
+03S     H313    H       H       0       2.068       -0.775      0.308       
+03S     HXT     H       H       0       -1.285      0.371       -1.438      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+03S       S10       O11       DOUBLE    n         1.450     0.020     1.450     0.020     
+03S       S10       O12       DOUBLE    n         1.450     0.020     1.450     0.020     
+03S       S10       C13       SINGLE    n         1.754     0.020     1.754     0.020     
+03S       S10       OXT       SINGLE    n         1.549     0.020     1.549     0.020     
+03S       C13       H113      SINGLE    n         1.089     0.010     0.970     0.013     
+03S       C13       H213      SINGLE    n         1.089     0.010     0.970     0.013     
+03S       C13       H313      SINGLE    n         1.089     0.010     0.970     0.013     
+03S       OXT       HXT       SINGLE    n         0.970     0.012     0.811     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+03S         O11         S10         O12     119.289    2.60
+03S         O11         S10         C13     107.244    1.60
+03S         O11         S10         OXT     110.831    2.65
+03S         O12         S10         C13     107.244    1.60
+03S         O12         S10         OXT     110.831    2.65
+03S         C13         S10         OXT     103.568    2.80
+03S         S10         C13        H113     110.813    1.50
+03S         S10         C13        H213     110.813    1.50
+03S         S10         C13        H313     110.813    1.50
+03S        H113         C13        H213     109.562    1.50
+03S        H113         C13        H313     109.562    1.50
+03S        H213         C13        H313     109.562    1.50
+03S         S10         OXT         HXT     110.371    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+03S             sp3_sp3_1        H113         C13         S10         O11     180.000   10.00     3
+03S            sp3_sp3_10         HXT         OXT         S10         O11     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+03S SMILES           ACDLabs              12.01 "O=S(=O)(O)C"
+03S InChI            InChI                1.03  "InChI=1S/CH4O3S/c1-5(2,3)4/h1H3,(H,2,3,4)"
+03S InChIKey         InChI                1.03  AFVFQIVMOAPDHO-UHFFFAOYSA-N
+03S SMILES_CANONICAL CACTVS               3.370 "C[S](O)(=O)=O"
+03S SMILES           CACTVS               3.370 "C[S](O)(=O)=O"
+03S SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "CS(=O)(=O)O"
+03S SMILES           "OpenEye OEToolkits" 1.7.2 "CS(=O)(=O)O"
+03S ?                acedrg               202         "dictionary generator"                  
+03S ?                acedrg_database      11          "data source"                           
+03S ?                rdkit                2017.03.2   "Chemoinformatics tool"
+03S ?                refmac5              5.8.0189    "optimization tool"                     

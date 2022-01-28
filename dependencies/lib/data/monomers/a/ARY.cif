@@ -1,0 +1,794 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ARY      ARY 'ARYLOMYCIN A2                       ' non-polymer       118  59 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ARY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ARY           O44    O    OC       -0.500      0.000    0.000    0.000
+ ARY           C43    C    C         0.000      0.509   -0.900   -0.704
+ ARY           O45    O    OC       -0.500      1.560   -0.764   -1.369
+ ARY           C34    C    CH1       0.000     -0.049   -2.281   -0.872
+ ARY           H34    H    H         0.000      0.794   -2.960   -1.064
+ ARY           N33    N    NH1       0.000     -0.626   -2.646    0.419
+ ARY           H33    H    H         0.000     -0.810   -1.908    1.082
+ ARY           C31    C    C         0.000     -0.938   -3.950    0.790
+ ARY           O32    O    O         0.000     -0.921   -4.920    0.031
+ ARY           C29    C    CH1       0.000     -1.334   -4.073    2.264
+ ARY           H29    H    H         0.000     -1.190   -3.103    2.759
+ ARY           C30    C    CH3       0.000     -0.469   -5.121    2.953
+ ARY           H303   H    H         0.000     -0.598   -6.056    2.474
+ ARY           H302   H    H         0.000      0.548   -4.832    2.896
+ ARY           H301   H    H         0.000     -0.756   -5.202    3.970
+ ARY           N28    N    NH1       0.000     -2.743   -4.445    2.341
+ ARY           H28    H    H         0.000     -3.116   -5.088    1.657
+ ARY           C26    C    C         0.000     -3.592   -3.942    3.328
+ ARY           O27    O    O         0.000     -3.224   -3.224    4.258
+ ARY           C35    C    CH2       0.000     -0.985   -2.343   -2.092
+ ARY           H351   H    H         0.000     -1.182   -3.402   -2.272
+ ARY           H352   H    H         0.000     -0.420   -1.931   -2.931
+ ARY           C36    C    CR6       0.000     -2.293   -1.604   -1.953
+ ARY           C37    C    CR16      0.000     -2.502   -0.327   -2.477
+ ARY           H37    H    H         0.000     -1.714    0.163   -3.035
+ ARY           C39    C    CR16      0.000     -3.728    0.322   -2.283
+ ARY           H39    H    H         0.000     -3.888    1.302   -2.715
+ ARY           C41    C    CR6       0.000     -4.748   -0.281   -1.537
+ ARY           O42    O    OH1       0.000     -5.941    0.372   -1.454
+ ARY           H42    H    H         0.000     -5.929    0.969   -0.693
+ ARY           C40    C    CR6       0.000     -4.553   -1.550   -0.988
+ ARY           C38    C    CR16      0.000     -3.336   -2.208   -1.251
+ ARY           H38    H    H         0.000     -3.205   -3.223   -0.895
+ ARY           C22    C    CR6       0.000     -5.506   -2.214   -0.090
+ ARY           C24    C    CR6       0.000     -6.823   -2.511   -0.438
+ ARY           O25    O    OH1       0.000     -7.433   -1.954   -1.520
+ ARY           H25    H    H         0.000     -8.359   -1.769   -1.310
+ ARY           C23    C    CR16      0.000     -7.589   -3.337    0.390
+ ARY           H23    H    H         0.000     -8.621   -3.544    0.134
+ ARY           C21    C    CR16      0.000     -7.036   -3.901    1.547
+ ARY           H21    H    H         0.000     -7.629   -4.577    2.150
+ ARY           C19    C    CR6       0.000     -5.724   -3.600    1.932
+ ARY           C20    C    CR16      0.000     -5.013   -2.699    1.136
+ ARY           H20    H    H         0.000     -4.042   -2.360    1.476
+ ARY           C18    C    CH1       0.000     -5.066   -4.312    3.102
+ ARY           H18    H    H         0.000     -5.113   -5.393    2.906
+ ARY           N16    N    N         0.000     -5.761   -4.060    4.343
+ ARY           C17    C    CH3       0.000     -5.821   -2.659    4.771
+ ARY           H173   H    H         0.000     -5.534   -2.029    3.969
+ ARY           H172   H    H         0.000     -6.810   -2.420    5.069
+ ARY           H171   H    H         0.000     -5.162   -2.508    5.588
+ ARY           C14    C    C         0.000     -6.349   -5.099    5.096
+ ARY           O15    O    O         0.000     -6.321   -6.288    4.772
+ ARY           C13    C    CH2       0.000     -7.038   -4.657    6.375
+ ARY           H131   H    H         0.000     -7.837   -3.955    6.128
+ ARY           H132   H    H         0.000     -6.310   -4.165    7.024
+ ARY           N12    N    NH1       0.000     -7.591   -5.796    7.052
+ ARY           H12    H    H         0.000     -7.016   -6.283    7.724
+ ARY           C10    C    C         0.000     -8.884   -6.260    6.823
+ ARY           O11    O    O         0.000     -9.675   -5.753    6.030
+ ARY           C8     C    CH1       0.000     -9.205   -7.508    7.634
+ ARY           H8     H    H         0.000     -8.268   -8.039    7.855
+ ARY           C9     C    CH3       0.000     -9.883   -7.145    8.945
+ ARY           H93    H    H         0.000    -10.835   -7.607    8.988
+ ARY           H92    H    H         0.000     -9.289   -7.482    9.754
+ ARY           H91    H    H         0.000     -9.997   -6.094    9.003
+ ARY           N7     N    NH1       0.000    -10.042   -8.359    6.828
+ ARY           HN7    H    H         0.000    -11.044   -8.269    6.913
+ ARY           C5     C    C         0.000     -9.533   -9.297    5.939
+ ARY           O6     O    O         0.000     -8.336   -9.501    5.745
+ ARY           C2     C    CH1       0.000    -10.634  -10.030    5.178
+ ARY           H2     H    H         0.000    -11.272  -10.546    5.909
+ ARY           C3     C    CH2       0.000    -11.507   -9.071    4.376
+ ARY           H31    H    H         0.000    -10.881   -8.533    3.661
+ ARY           H32    H    H         0.000    -11.973   -8.357    5.058
+ ARY           O4     O    OH1       0.000    -12.516   -9.790    3.677
+ ARY           HO4    H    H         0.000    -12.108  -10.508    3.174
+ ARY           N1     N    N         0.000    -10.017  -11.022    4.338
+ ARY           C49    C    CH3       0.000     -9.127  -10.514    3.288
+ ARY           H493   H    H         0.000     -8.615   -9.656    3.641
+ ARY           H492   H    H         0.000     -8.422  -11.261    3.028
+ ARY           H491   H    H         0.000     -9.697  -10.257    2.433
+ ARY           C46    C    C         0.000    -10.255  -12.402    4.513
+ ARY           O47    O    O         0.000    -10.995  -12.871    5.382
+ ARY           C48    C    CH2       0.000     -9.515  -13.321    3.545
+ ARY           H481   H    H         0.000     -8.448  -13.128    3.669
+ ARY           H482   H    H         0.000     -9.820  -13.037    2.535
+ ARY           C50    C    CH2       0.000     -9.796  -14.809    3.765
+ ARY           H501   H    H         0.000    -10.871  -14.969    3.653
+ ARY           H502   H    H         0.000     -9.497  -15.061    4.785
+ ARY           C51    C    CH2       0.000     -9.039  -15.699    2.774
+ ARY           H511   H    H         0.000     -7.970  -15.501    2.875
+ ARY           H512   H    H         0.000     -9.362  -15.444    1.762
+ ARY           C52    C    CH2       0.000     -9.313  -17.182    3.040
+ ARY           H521   H    H         0.000    -10.389  -17.355    2.972
+ ARY           H522   H    H         0.000     -8.969  -17.424    4.048
+ ARY           C53    C    CH2       0.000     -8.587  -18.070    2.026
+ ARY           H531   H    H         0.000     -7.515  -17.903    2.154
+ ARY           H532   H    H         0.000     -8.889  -17.742    1.029
+ ARY           C54    C    CH2       0.000     -8.897  -19.560    2.191
+ ARY           H541   H    H         0.000     -9.983  -19.656    2.123
+ ARY           H542   H    H         0.000     -8.572  -19.830    3.198
+ ARY           C55    C    CH2       0.000     -8.235  -20.493    1.172
+ ARY           H551   H    H         0.000     -7.162  -20.299    1.233
+ ARY           H552   H    H         0.000     -8.604  -20.185    0.191
+ ARY           C56    C    CH2       0.000     -8.498  -21.990    1.372
+ ARY           H561   H    H         0.000     -9.578  -22.124    1.290
+ ARY           H562   H    H         0.000     -8.179  -22.222    2.390
+ ARY           C57    C    CH1       0.000     -7.786  -22.932    0.382
+ ARY           H57    H    H         0.000     -8.026  -23.968    0.658
+ ARY           C59    C    CH3       0.000     -8.306  -22.678   -1.036
+ ARY           H593   H    H         0.000     -9.355  -22.824   -1.060
+ ARY           H592   H    H         0.000     -8.082  -21.683   -1.323
+ ARY           H591   H    H         0.000     -7.842  -23.352   -1.709
+ ARY           C58    C    CH3       0.000     -6.266  -22.766    0.412
+ ARY           H583   H    H         0.000     -5.828  -23.377   -0.334
+ ARY           H582   H    H         0.000     -6.017  -21.753    0.229
+ ARY           H581   H    H         0.000     -5.897  -23.053    1.363
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ARY      O44    n/a    C43    START
+ ARY      C43    O44    C34    .
+ ARY      O45    C43    .      .
+ ARY      C34    C43    C35    .
+ ARY      H34    C34    .      .
+ ARY      N33    C34    C31    .
+ ARY      H33    N33    .      .
+ ARY      C31    N33    C29    .
+ ARY      O32    C31    .      .
+ ARY      C29    C31    N28    .
+ ARY      H29    C29    .      .
+ ARY      C30    C29    H301   .
+ ARY      H303   C30    .      .
+ ARY      H302   C30    .      .
+ ARY      H301   C30    .      .
+ ARY      N28    C29    C26    .
+ ARY      H28    N28    .      .
+ ARY      C26    N28    O27    .
+ ARY      O27    C26    .      .
+ ARY      C35    C34    C36    .
+ ARY      H351   C35    .      .
+ ARY      H352   C35    .      .
+ ARY      C36    C35    C37    .
+ ARY      C37    C36    C39    .
+ ARY      H37    C37    .      .
+ ARY      C39    C37    C41    .
+ ARY      H39    C39    .      .
+ ARY      C41    C39    C40    .
+ ARY      O42    C41    H42    .
+ ARY      H42    O42    .      .
+ ARY      C40    C41    C22    .
+ ARY      C38    C40    H38    .
+ ARY      H38    C38    .      .
+ ARY      C22    C40    C24    .
+ ARY      C24    C22    C23    .
+ ARY      O25    C24    H25    .
+ ARY      H25    O25    .      .
+ ARY      C23    C24    C21    .
+ ARY      H23    C23    .      .
+ ARY      C21    C23    C19    .
+ ARY      H21    C21    .      .
+ ARY      C19    C21    C18    .
+ ARY      C20    C19    H20    .
+ ARY      H20    C20    .      .
+ ARY      C18    C19    N16    .
+ ARY      H18    C18    .      .
+ ARY      N16    C18    C14    .
+ ARY      C17    N16    H171   .
+ ARY      H173   C17    .      .
+ ARY      H172   C17    .      .
+ ARY      H171   C17    .      .
+ ARY      C14    N16    C13    .
+ ARY      O15    C14    .      .
+ ARY      C13    C14    N12    .
+ ARY      H131   C13    .      .
+ ARY      H132   C13    .      .
+ ARY      N12    C13    C10    .
+ ARY      H12    N12    .      .
+ ARY      C10    N12    C8     .
+ ARY      O11    C10    .      .
+ ARY      C8     C10    N7     .
+ ARY      H8     C8     .      .
+ ARY      C9     C8     H91    .
+ ARY      H93    C9     .      .
+ ARY      H92    C9     .      .
+ ARY      H91    C9     .      .
+ ARY      N7     C8     C5     .
+ ARY      HN7    N7     .      .
+ ARY      C5     N7     C2     .
+ ARY      O6     C5     .      .
+ ARY      C2     C5     N1     .
+ ARY      H2     C2     .      .
+ ARY      C3     C2     O4     .
+ ARY      H31    C3     .      .
+ ARY      H32    C3     .      .
+ ARY      O4     C3     HO4    .
+ ARY      HO4    O4     .      .
+ ARY      N1     C2     C46    .
+ ARY      C49    N1     H491   .
+ ARY      H493   C49    .      .
+ ARY      H492   C49    .      .
+ ARY      H491   C49    .      .
+ ARY      C46    N1     C48    .
+ ARY      O47    C46    .      .
+ ARY      C48    C46    C50    .
+ ARY      H481   C48    .      .
+ ARY      H482   C48    .      .
+ ARY      C50    C48    C51    .
+ ARY      H501   C50    .      .
+ ARY      H502   C50    .      .
+ ARY      C51    C50    C52    .
+ ARY      H511   C51    .      .
+ ARY      H512   C51    .      .
+ ARY      C52    C51    C53    .
+ ARY      H521   C52    .      .
+ ARY      H522   C52    .      .
+ ARY      C53    C52    C54    .
+ ARY      H531   C53    .      .
+ ARY      H532   C53    .      .
+ ARY      C54    C53    C55    .
+ ARY      H541   C54    .      .
+ ARY      H542   C54    .      .
+ ARY      C55    C54    C56    .
+ ARY      H551   C55    .      .
+ ARY      H552   C55    .      .
+ ARY      C56    C55    C57    .
+ ARY      H561   C56    .      .
+ ARY      H562   C56    .      .
+ ARY      C57    C56    C58    .
+ ARY      H57    C57    .      .
+ ARY      C59    C57    H591   .
+ ARY      H593   C59    .      .
+ ARY      H592   C59    .      .
+ ARY      H591   C59    .      .
+ ARY      C58    C57    H581   .
+ ARY      H583   C58    .      .
+ ARY      H582   C58    .      .
+ ARY      H581   C58    .      END
+ ARY      C18    C26    .    ADD
+ ARY      C36    C38    .    ADD
+ ARY      C22    C20    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ARY       C51       C50       single    1.524     0.020     1.524     0.020     
+ARY       C50       C48       single    1.524     0.020     1.524     0.020     
+ARY       H501      C50       single    1.089     0.010     0.989     0.005     
+ARY       H502      C50       single    1.089     0.010     0.989     0.005     
+ARY       C52       C51       single    1.524     0.020     1.524     0.020     
+ARY       H511      C51       single    1.089     0.010     0.989     0.005     
+ARY       H512      C51       single    1.089     0.010     0.989     0.005     
+ARY       C53       C52       single    1.524     0.020     1.524     0.020     
+ARY       H521      C52       single    1.089     0.010     0.989     0.005     
+ARY       H522      C52       single    1.089     0.010     0.989     0.005     
+ARY       C54       C53       single    1.524     0.020     1.524     0.020     
+ARY       H531      C53       single    1.089     0.010     0.989     0.005     
+ARY       H532      C53       single    1.089     0.010     0.989     0.005     
+ARY       C55       C54       single    1.524     0.020     1.524     0.020     
+ARY       H541      C54       single    1.089     0.010     0.989     0.005     
+ARY       H542      C54       single    1.089     0.010     0.989     0.005     
+ARY       C56       C55       single    1.524     0.020     1.524     0.020     
+ARY       H551      C55       single    1.089     0.010     0.989     0.005     
+ARY       H552      C55       single    1.089     0.010     0.989     0.005     
+ARY       C57       C56       single    1.524     0.020     1.524     0.020     
+ARY       H561      C56       single    1.089     0.010     0.989     0.005     
+ARY       H562      C56       single    1.089     0.010     0.989     0.005     
+ARY       C58       C57       single    1.524     0.020     1.524     0.020     
+ARY       C59       C57       single    1.524     0.020     1.524     0.020     
+ARY       H57       C57       single    1.089     0.010     0.989     0.005     
+ARY       H581      C58       single    1.089     0.010     0.989     0.005     
+ARY       H582      C58       single    1.089     0.010     0.989     0.005     
+ARY       H583      C58       single    1.089     0.010     0.989     0.005     
+ARY       H591      C59       single    1.089     0.010     0.989     0.005     
+ARY       H592      C59       single    1.089     0.010     0.989     0.005     
+ARY       H593      C59       single    1.089     0.010     0.989     0.005     
+ARY       C48       C46       single    1.510     0.020     1.510     0.020     
+ARY       H481      C48       single    1.089     0.010     0.989     0.005     
+ARY       H482      C48       single    1.089     0.010     0.989     0.005     
+ARY       O47       C46       double    1.220     0.020     1.220     0.020     
+ARY       C46       N1        single    1.330     0.020     1.330     0.020     
+ARY       C49       N1        single    1.455     0.020     1.455     0.020     
+ARY       N1        C2        single    1.455     0.020     1.455     0.020     
+ARY       H491      C49       single    1.089     0.010     0.989     0.005     
+ARY       H492      C49       single    1.089     0.010     0.989     0.005     
+ARY       H493      C49       single    1.089     0.010     0.989     0.005     
+ARY       C3        C2        single    1.524     0.020     1.524     0.020     
+ARY       C2        C5        single    1.500     0.020     1.500     0.020     
+ARY       H2        C2        single    1.089     0.010     0.989     0.005     
+ARY       O4        C3        single    1.432     0.020     1.432     0.020     
+ARY       H31       C3        single    1.089     0.010     0.989     0.005     
+ARY       H32       C3        single    1.089     0.010     0.989     0.005     
+ARY       HO4       O4        single    0.970     0.012     0.839     0.014     
+ARY       O6        C5        double    1.220     0.020     1.220     0.020     
+ARY       C5        N7        single    1.330     0.020     1.330     0.020     
+ARY       N7        C8        single    1.450     0.020     1.450     0.020     
+ARY       HN7       N7        single    1.016     0.010     0.899     0.007     
+ARY       C9        C8        single    1.524     0.020     1.524     0.020     
+ARY       C8        C10       single    1.500     0.020     1.500     0.020     
+ARY       H8        C8        single    1.089     0.010     0.989     0.005     
+ARY       H91       C9        single    1.089     0.010     0.989     0.005     
+ARY       H92       C9        single    1.089     0.010     0.989     0.005     
+ARY       H93       C9        single    1.089     0.010     0.989     0.005     
+ARY       O11       C10       double    1.220     0.020     1.220     0.020     
+ARY       C10       N12       single    1.330     0.020     1.330     0.020     
+ARY       N12       C13       single    1.450     0.020     1.450     0.020     
+ARY       H12       N12       single    1.016     0.010     0.899     0.007     
+ARY       C13       C14       single    1.510     0.020     1.510     0.020     
+ARY       H131      C13       single    1.089     0.010     0.989     0.005     
+ARY       H132      C13       single    1.089     0.010     0.989     0.005     
+ARY       O15       C14       double    1.220     0.020     1.220     0.020     
+ARY       C14       N16       single    1.330     0.020     1.330     0.020     
+ARY       C17       N16       single    1.455     0.020     1.455     0.020     
+ARY       N16       C18       single    1.455     0.020     1.455     0.020     
+ARY       H171      C17       single    1.089     0.010     0.989     0.005     
+ARY       H172      C17       single    1.089     0.010     0.989     0.005     
+ARY       H173      C17       single    1.089     0.010     0.989     0.005     
+ARY       C18       C26       single    1.500     0.020     1.500     0.020     
+ARY       C18       C19       single    1.480     0.020     1.480     0.020     
+ARY       H18       C18       single    1.089     0.010     0.989     0.005     
+ARY       O27       C26       double    1.220     0.020     1.220     0.020     
+ARY       C26       N28       single    1.330     0.020     1.330     0.020     
+ARY       N28       C29       single    1.450     0.020     1.450     0.020     
+ARY       H28       N28       single    1.016     0.010     0.899     0.007     
+ARY       C30       C29       single    1.524     0.020     1.524     0.020     
+ARY       C29       C31       single    1.500     0.020     1.500     0.020     
+ARY       H29       C29       single    1.089     0.010     0.989     0.005     
+ARY       H301      C30       single    1.089     0.010     0.989     0.005     
+ARY       H302      C30       single    1.089     0.010     0.989     0.005     
+ARY       H303      C30       single    1.089     0.010     0.989     0.005     
+ARY       O32       C31       double    1.220     0.020     1.220     0.020     
+ARY       C31       N33       single    1.330     0.020     1.330     0.020     
+ARY       N33       C34       single    1.450     0.020     1.450     0.020     
+ARY       H33       N33       single    1.016     0.010     0.899     0.007     
+ARY       C34       C43       single    1.500     0.020     1.500     0.020     
+ARY       C35       C34       single    1.524     0.020     1.524     0.020     
+ARY       H34       C34       single    1.089     0.010     0.989     0.005     
+ARY       O45       C43       deloc     1.250     0.020     1.250     0.020     
+ARY       C43       O44       deloc     1.250     0.020     1.250     0.020     
+ARY       C36       C35       single    1.511     0.020     1.511     0.020     
+ARY       H351      C35       single    1.089     0.010     0.989     0.005     
+ARY       H352      C35       single    1.089     0.010     0.989     0.005     
+ARY       C36       C38       single    1.390     0.020     1.390     0.020     
+ARY       C37       C36       double    1.390     0.020     1.390     0.020     
+ARY       C38       C40       double    1.390     0.020     1.390     0.020     
+ARY       H38       C38       single    1.082     0.013     0.975     0.010     
+ARY       C39       C37       single    1.390     0.020     1.390     0.020     
+ARY       H37       C37       single    1.082     0.013     0.975     0.010     
+ARY       C41       C39       double    1.390     0.020     1.390     0.020     
+ARY       H39       C39       single    1.082     0.013     0.975     0.010     
+ARY       O42       C41       single    1.362     0.020     1.362     0.020     
+ARY       C40       C41       single    1.487     0.020     1.487     0.020     
+ARY       H42       O42       single    0.970     0.012     0.839     0.014     
+ARY       C22       C40       single    1.487     0.020     1.487     0.020     
+ARY       C22       C20       single    1.390     0.020     1.390     0.020     
+ARY       C24       C22       double    1.487     0.020     1.487     0.020     
+ARY       C20       C19       double    1.390     0.020     1.390     0.020     
+ARY       H20       C20       single    1.082     0.013     0.975     0.010     
+ARY       C19       C21       single    1.390     0.020     1.390     0.020     
+ARY       C21       C23       double    1.390     0.020     1.390     0.020     
+ARY       H21       C21       single    1.082     0.013     0.975     0.010     
+ARY       C23       C24       single    1.390     0.020     1.390     0.020     
+ARY       H23       C23       single    1.082     0.013     0.975     0.010     
+ARY       O25       C24       single    1.362     0.020     1.362     0.020     
+ARY       H25       O25       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ARY      O44    C43    O45     123.000    3.000
+ ARY      O44    C43    C34     118.500    3.000
+ ARY      O45    C43    C34     118.500    3.000
+ ARY      C43    C34    H34     108.810    3.000
+ ARY      C43    C34    N33     111.600    3.000
+ ARY      C43    C34    C35     109.470    3.000
+ ARY      H34    C34    N33     108.550    3.000
+ ARY      H34    C34    C35     108.340    3.000
+ ARY      N33    C34    C35     110.000    3.000
+ ARY      C34    N33    H33     118.500    3.000
+ ARY      C34    N33    C31     121.500    3.000
+ ARY      H33    N33    C31     120.000    3.000
+ ARY      N33    C31    O32     123.000    3.000
+ ARY      N33    C31    C29     116.500    3.000
+ ARY      O32    C31    C29     120.500    3.000
+ ARY      C31    C29    H29     108.810    3.000
+ ARY      C31    C29    C30     109.470    3.000
+ ARY      C31    C29    N28     111.600    3.000
+ ARY      H29    C29    C30     108.340    3.000
+ ARY      H29    C29    N28     108.550    3.000
+ ARY      C30    C29    N28     110.000    3.000
+ ARY      C29    C30    H303    109.470    3.000
+ ARY      C29    C30    H302    109.470    3.000
+ ARY      C29    C30    H301    109.470    3.000
+ ARY      H303   C30    H302    109.470    3.000
+ ARY      H303   C30    H301    109.470    3.000
+ ARY      H302   C30    H301    109.470    3.000
+ ARY      C29    N28    H28     118.500    3.000
+ ARY      C29    N28    C26     121.500    3.000
+ ARY      H28    N28    C26     120.000    3.000
+ ARY      N28    C26    O27     123.000    3.000
+ ARY      N28    C26    C18     116.500    3.000
+ ARY      O27    C26    C18     120.500    3.000
+ ARY      C34    C35    H351    109.470    3.000
+ ARY      C34    C35    H352    109.470    3.000
+ ARY      C34    C35    C36     109.470    3.000
+ ARY      H351   C35    H352    107.900    3.000
+ ARY      H351   C35    C36     109.470    3.000
+ ARY      H352   C35    C36     109.470    3.000
+ ARY      C35    C36    C37     120.000    3.000
+ ARY      C35    C36    C38     120.000    3.000
+ ARY      C37    C36    C38     120.000    3.000
+ ARY      C36    C37    H37     120.000    3.000
+ ARY      C36    C37    C39     120.000    3.000
+ ARY      H37    C37    C39     120.000    3.000
+ ARY      C37    C39    H39     120.000    3.000
+ ARY      C37    C39    C41     120.000    3.000
+ ARY      H39    C39    C41     120.000    3.000
+ ARY      C39    C41    O42     120.000    3.000
+ ARY      C39    C41    C40     120.000    3.000
+ ARY      O42    C41    C40     120.000    3.000
+ ARY      C41    O42    H42     109.470    3.000
+ ARY      C41    C40    C38     120.000    3.000
+ ARY      C41    C40    C22     120.000    3.000
+ ARY      C38    C40    C22     120.000    3.000
+ ARY      C40    C38    H38     120.000    3.000
+ ARY      C40    C38    C36     120.000    3.000
+ ARY      H38    C38    C36     120.000    3.000
+ ARY      C40    C22    C24     120.000    3.000
+ ARY      C40    C22    C20     120.000    3.000
+ ARY      C24    C22    C20     120.000    3.000
+ ARY      C22    C24    O25     120.000    3.000
+ ARY      C22    C24    C23     120.000    3.000
+ ARY      O25    C24    C23     120.000    3.000
+ ARY      C24    O25    H25     109.470    3.000
+ ARY      C24    C23    H23     120.000    3.000
+ ARY      C24    C23    C21     120.000    3.000
+ ARY      H23    C23    C21     120.000    3.000
+ ARY      C23    C21    H21     120.000    3.000
+ ARY      C23    C21    C19     120.000    3.000
+ ARY      H21    C21    C19     120.000    3.000
+ ARY      C21    C19    C20     120.000    3.000
+ ARY      C21    C19    C18     120.000    3.000
+ ARY      C20    C19    C18     120.000    3.000
+ ARY      C19    C20    H20     120.000    3.000
+ ARY      C19    C20    C22     120.000    3.000
+ ARY      H20    C20    C22     120.000    3.000
+ ARY      C19    C18    H18     109.470    3.000
+ ARY      C19    C18    N16     109.500    3.000
+ ARY      C19    C18    C26     109.500    3.000
+ ARY      H18    C18    N16     109.470    3.000
+ ARY      H18    C18    C26     108.810    3.000
+ ARY      N16    C18    C26     111.600    3.000
+ ARY      C18    N16    C17     120.000    3.000
+ ARY      C18    N16    C14     121.000    3.000
+ ARY      C17    N16    C14     127.000    3.000
+ ARY      N16    C17    H173    109.470    3.000
+ ARY      N16    C17    H172    109.470    3.000
+ ARY      N16    C17    H171    109.470    3.000
+ ARY      H173   C17    H172    109.470    3.000
+ ARY      H173   C17    H171    109.470    3.000
+ ARY      H172   C17    H171    109.470    3.000
+ ARY      N16    C14    O15     123.000    3.000
+ ARY      N16    C14    C13     116.500    3.000
+ ARY      O15    C14    C13     120.500    3.000
+ ARY      C14    C13    H131    109.470    3.000
+ ARY      C14    C13    H132    109.470    3.000
+ ARY      C14    C13    N12     111.600    3.000
+ ARY      H131   C13    H132    107.900    3.000
+ ARY      H131   C13    N12     109.470    3.000
+ ARY      H132   C13    N12     109.470    3.000
+ ARY      C13    N12    H12     118.500    3.000
+ ARY      C13    N12    C10     121.500    3.000
+ ARY      H12    N12    C10     120.000    3.000
+ ARY      N12    C10    O11     123.000    3.000
+ ARY      N12    C10    C8      116.500    3.000
+ ARY      O11    C10    C8      120.500    3.000
+ ARY      C10    C8     H8      108.810    3.000
+ ARY      C10    C8     C9      109.470    3.000
+ ARY      C10    C8     N7      111.600    3.000
+ ARY      H8     C8     C9      108.340    3.000
+ ARY      H8     C8     N7      108.550    3.000
+ ARY      C9     C8     N7      110.000    3.000
+ ARY      C8     C9     H93     109.470    3.000
+ ARY      C8     C9     H92     109.470    3.000
+ ARY      C8     C9     H91     109.470    3.000
+ ARY      H93    C9     H92     109.470    3.000
+ ARY      H93    C9     H91     109.470    3.000
+ ARY      H92    C9     H91     109.470    3.000
+ ARY      C8     N7     HN7     118.500    3.000
+ ARY      C8     N7     C5      121.500    3.000
+ ARY      HN7    N7     C5      120.000    3.000
+ ARY      N7     C5     O6      123.000    3.000
+ ARY      N7     C5     C2      116.500    3.000
+ ARY      O6     C5     C2      120.500    3.000
+ ARY      C5     C2     H2      108.810    3.000
+ ARY      C5     C2     C3      109.470    3.000
+ ARY      C5     C2     N1      111.600    3.000
+ ARY      H2     C2     C3      108.340    3.000
+ ARY      H2     C2     N1      109.470    3.000
+ ARY      C3     C2     N1      105.000    3.000
+ ARY      C2     C3     H31     109.470    3.000
+ ARY      C2     C3     H32     109.470    3.000
+ ARY      C2     C3     O4      109.470    3.000
+ ARY      H31    C3     H32     107.900    3.000
+ ARY      H31    C3     O4      109.470    3.000
+ ARY      H32    C3     O4      109.470    3.000
+ ARY      C3     O4     HO4     109.470    3.000
+ ARY      C2     N1     C49     120.000    3.000
+ ARY      C2     N1     C46     121.000    3.000
+ ARY      C49    N1     C46     127.000    3.000
+ ARY      N1     C49    H493    109.470    3.000
+ ARY      N1     C49    H492    109.470    3.000
+ ARY      N1     C49    H491    109.470    3.000
+ ARY      H493   C49    H492    109.470    3.000
+ ARY      H493   C49    H491    109.470    3.000
+ ARY      H492   C49    H491    109.470    3.000
+ ARY      N1     C46    O47     123.000    3.000
+ ARY      N1     C46    C48     116.500    3.000
+ ARY      O47    C46    C48     120.500    3.000
+ ARY      C46    C48    H481    109.470    3.000
+ ARY      C46    C48    H482    109.470    3.000
+ ARY      C46    C48    C50     109.470    3.000
+ ARY      H481   C48    H482    107.900    3.000
+ ARY      H481   C48    C50     109.470    3.000
+ ARY      H482   C48    C50     109.470    3.000
+ ARY      C48    C50    H501    109.470    3.000
+ ARY      C48    C50    H502    109.470    3.000
+ ARY      C48    C50    C51     111.000    3.000
+ ARY      H501   C50    H502    107.900    3.000
+ ARY      H501   C50    C51     109.470    3.000
+ ARY      H502   C50    C51     109.470    3.000
+ ARY      C50    C51    H511    109.470    3.000
+ ARY      C50    C51    H512    109.470    3.000
+ ARY      C50    C51    C52     111.000    3.000
+ ARY      H511   C51    H512    107.900    3.000
+ ARY      H511   C51    C52     109.470    3.000
+ ARY      H512   C51    C52     109.470    3.000
+ ARY      C51    C52    H521    109.470    3.000
+ ARY      C51    C52    H522    109.470    3.000
+ ARY      C51    C52    C53     111.000    3.000
+ ARY      H521   C52    H522    107.900    3.000
+ ARY      H521   C52    C53     109.470    3.000
+ ARY      H522   C52    C53     109.470    3.000
+ ARY      C52    C53    H531    109.470    3.000
+ ARY      C52    C53    H532    109.470    3.000
+ ARY      C52    C53    C54     111.000    3.000
+ ARY      H531   C53    H532    107.900    3.000
+ ARY      H531   C53    C54     109.470    3.000
+ ARY      H532   C53    C54     109.470    3.000
+ ARY      C53    C54    H541    109.470    3.000
+ ARY      C53    C54    H542    109.470    3.000
+ ARY      C53    C54    C55     111.000    3.000
+ ARY      H541   C54    H542    107.900    3.000
+ ARY      H541   C54    C55     109.470    3.000
+ ARY      H542   C54    C55     109.470    3.000
+ ARY      C54    C55    H551    109.470    3.000
+ ARY      C54    C55    H552    109.470    3.000
+ ARY      C54    C55    C56     111.000    3.000
+ ARY      H551   C55    H552    107.900    3.000
+ ARY      H551   C55    C56     109.470    3.000
+ ARY      H552   C55    C56     109.470    3.000
+ ARY      C55    C56    H561    109.470    3.000
+ ARY      C55    C56    H562    109.470    3.000
+ ARY      C55    C56    C57     111.000    3.000
+ ARY      H561   C56    H562    107.900    3.000
+ ARY      H561   C56    C57     109.470    3.000
+ ARY      H562   C56    C57     109.470    3.000
+ ARY      C56    C57    H57     108.340    3.000
+ ARY      C56    C57    C59     111.000    3.000
+ ARY      C56    C57    C58     111.000    3.000
+ ARY      H57    C57    C59     108.340    3.000
+ ARY      H57    C57    C58     108.340    3.000
+ ARY      C59    C57    C58     111.000    3.000
+ ARY      C57    C59    H593    109.470    3.000
+ ARY      C57    C59    H592    109.470    3.000
+ ARY      C57    C59    H591    109.470    3.000
+ ARY      H593   C59    H592    109.470    3.000
+ ARY      H593   C59    H591    109.470    3.000
+ ARY      H592   C59    H591    109.470    3.000
+ ARY      C57    C58    H583    109.470    3.000
+ ARY      C57    C58    H582    109.470    3.000
+ ARY      C57    C58    H581    109.470    3.000
+ ARY      H583   C58    H582    109.470    3.000
+ ARY      H583   C58    H581    109.470    3.000
+ ARY      H582   C58    H581    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ARY      var_1    O44    C43    C34    C35       91.914   20.000   3
+ ARY      var_2    C43    C34    N33    C31     -162.946   20.000   3
+ ARY      CONST_1  C34    N33    C31    C29      180.000    0.000   0
+ ARY      var_3    N33    C31    C29    N28      113.222   20.000   3
+ ARY      var_4    C31    C29    C30    H301    -179.627   20.000   3
+ ARY      var_5    C31    C29    N28    C26     -142.754   20.000   3
+ ARY      CONST_2  C29    N28    C26    O27        0.000    0.000   0
+ ARY      var_6    C43    C34    C35    C36      -69.719   20.000   3
+ ARY      var_7    C34    C35    C36    C37       98.817   20.000   2
+ ARY      CONST_3  C35    C36    C38    C40      180.000    0.000   0
+ ARY      CONST_4  C35    C36    C37    C39      180.000    0.000   0
+ ARY      CONST_5  C36    C37    C39    C41        0.000    0.000   0
+ ARY      CONST_6  C37    C39    C41    C40        0.000    0.000   0
+ ARY      var_8    C39    C41    O42    H42      -89.322   20.000   1
+ ARY      CONST_7  C39    C41    C40    C22      180.000    0.000   0
+ ARY      CONST_8  C41    C40    C38    C36        0.000    0.000   0
+ ARY      CONST_9  C41    C40    C22    C24        0.000    0.000   0
+ ARY      CONST_10 C40    C22    C20    C19      180.000    0.000   0
+ ARY      CONST_11 C40    C22    C24    C23      180.000    0.000   0
+ ARY      var_9    C22    C24    O25    H25     -142.365   20.000   1
+ ARY      CONST_12 C22    C24    C23    C21        0.000    0.000   0
+ ARY      CONST_13 C24    C23    C21    C19        0.000    0.000   0
+ ARY      CONST_14 C23    C21    C19    C18      180.000    0.000   0
+ ARY      CONST_15 C21    C19    C20    C22        0.000    0.000   0
+ ARY      var_10   C21    C19    C18    N16      -62.349   20.000   1
+ ARY      var_11   C19    C18    C26    N28      -70.810   20.000   3
+ ARY      var_12   C19    C18    N16    C14      118.778   20.000   3
+ ARY      var_13   C18    N16    C17    H171    -106.518   20.000   1
+ ARY      CONST_16 C18    N16    C14    C13      180.000    0.000   0
+ ARY      var_14   N16    C14    C13    N12     -179.876   20.000   3
+ ARY      var_15   C14    C13    N12    C10      -90.041   20.000   3
+ ARY      CONST_17 C13    N12    C10    C8       180.000    0.000   0
+ ARY      var_16   N12    C10    C8     N7      -143.926   20.000   3
+ ARY      var_17   C10    C8     C9     H91        0.722   20.000   3
+ ARY      var_18   C10    C8     N7     C5        87.686   20.000   3
+ ARY      CONST_18 C8     N7     C5     C2       180.000    0.000   0
+ ARY      var_19   N7     C5     C2     N1      -177.097   20.000   3
+ ARY      var_20   C5     C2     C3     O4       179.749   20.000   3
+ ARY      var_21   C2     C3     O4     HO4      -51.644   20.000   1
+ ARY      var_22   C5     C2     N1     C46      116.849   20.000   3
+ ARY      var_23   C2     N1     C49    H491     -84.944   20.000   1
+ ARY      CONST_19 C2     N1     C46    C48      180.000    0.000   0
+ ARY      var_24   N1     C46    C48    C50      179.944   20.000   3
+ ARY      var_25   C46    C48    C50    C51      179.893   20.000   3
+ ARY      var_26   C48    C50    C51    C52      178.604   20.000   3
+ ARY      var_27   C50    C51    C52    C53      178.453   20.000   3
+ ARY      var_28   C51    C52    C53    C54     -176.326   20.000   3
+ ARY      var_29   C52    C53    C54    C55      177.990   20.000   3
+ ARY      var_30   C53    C54    C55    C56      177.548   20.000   3
+ ARY      var_31   C54    C55    C56    C57     -177.596   20.000   3
+ ARY      var_32   C55    C56    C57    C58       58.224   20.000   3
+ ARY      var_33   C56    C57    C59    H591    -177.890   20.000   3
+ ARY      var_34   C56    C57    C58    H581      64.367   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ARY      chir_01  C57    C56    C58    C59       positiv
+ ARY      chir_02  C2     N1     C3     C5        positiv
+ ARY      chir_03  C8     N7     C9     C10       positiv
+ ARY      chir_04  C18    N16    C26    C19       positiv
+ ARY      chir_05  C29    N28    C30    C31       negativ
+ ARY      chir_06  C34    N33    C43    C35       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ARY      plan-1    C46       0.020
+ ARY      plan-1    C48       0.020
+ ARY      plan-1    O47       0.020
+ ARY      plan-1    N1        0.020
+ ARY      plan-2    N1        0.020
+ ARY      plan-2    C46       0.020
+ ARY      plan-2    C49       0.020
+ ARY      plan-2    C2        0.020
+ ARY      plan-3    C5        0.020
+ ARY      plan-3    C2        0.020
+ ARY      plan-3    O6        0.020
+ ARY      plan-3    N7        0.020
+ ARY      plan-3    HN7       0.020
+ ARY      plan-4    N7        0.020
+ ARY      plan-4    C5        0.020
+ ARY      plan-4    C8        0.020
+ ARY      plan-4    HN7       0.020
+ ARY      plan-5    C10       0.020
+ ARY      plan-5    C8        0.020
+ ARY      plan-5    O11       0.020
+ ARY      plan-5    N12       0.020
+ ARY      plan-5    H12       0.020
+ ARY      plan-6    N12       0.020
+ ARY      plan-6    C10       0.020
+ ARY      plan-6    C13       0.020
+ ARY      plan-6    H12       0.020
+ ARY      plan-7    C14       0.020
+ ARY      plan-7    C13       0.020
+ ARY      plan-7    O15       0.020
+ ARY      plan-7    N16       0.020
+ ARY      plan-8    N16       0.020
+ ARY      plan-8    C14       0.020
+ ARY      plan-8    C17       0.020
+ ARY      plan-8    C18       0.020
+ ARY      plan-9    C26       0.020
+ ARY      plan-9    C18       0.020
+ ARY      plan-9    O27       0.020
+ ARY      plan-9    N28       0.020
+ ARY      plan-9    H28       0.020
+ ARY      plan-10   N28       0.020
+ ARY      plan-10   C26       0.020
+ ARY      plan-10   C29       0.020
+ ARY      plan-10   H28       0.020
+ ARY      plan-11   C31       0.020
+ ARY      plan-11   C29       0.020
+ ARY      plan-11   O32       0.020
+ ARY      plan-11   N33       0.020
+ ARY      plan-11   H33       0.020
+ ARY      plan-12   N33       0.020
+ ARY      plan-12   C31       0.020
+ ARY      plan-12   C34       0.020
+ ARY      plan-12   H33       0.020
+ ARY      plan-13   C43       0.020
+ ARY      plan-13   C34       0.020
+ ARY      plan-13   O45       0.020
+ ARY      plan-13   O44       0.020
+ ARY      plan-14   C36       0.020
+ ARY      plan-14   C35       0.020
+ ARY      plan-14   C38       0.020
+ ARY      plan-14   C37       0.020
+ ARY      plan-14   C39       0.020
+ ARY      plan-14   C41       0.020
+ ARY      plan-14   C40       0.020
+ ARY      plan-14   H38       0.020
+ ARY      plan-14   H37       0.020
+ ARY      plan-14   H39       0.020
+ ARY      plan-14   O42       0.020
+ ARY      plan-14   C22       0.020
+ ARY      plan-15   C22       0.020
+ ARY      plan-15   C40       0.020
+ ARY      plan-15   C20       0.020
+ ARY      plan-15   C24       0.020
+ ARY      plan-15   C19       0.020
+ ARY      plan-15   C21       0.020
+ ARY      plan-15   C23       0.020
+ ARY      plan-15   H20       0.020
+ ARY      plan-15   C18       0.020
+ ARY      plan-15   H21       0.020
+ ARY      plan-15   H23       0.020
+ ARY      plan-15   O25       0.020
+# ------------------------------------------------------

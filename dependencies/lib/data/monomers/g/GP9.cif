@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GP9     GP9      "(2R)-2,3-dihydroxypropyl phosphate"     non-polymer     17     10     .     
+#
+data_comp_GP9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GP9     C2      C       CH2     0       -19.793     10.045      -36.309     
+GP9     C3      C       CH1     0       -19.752     9.118       -35.112     
+GP9     C4      C       CH2     0       -20.844     8.071       -35.135     
+GP9     O2      O       OH1     0       -18.760     11.026      -36.248     
+GP9     O3      O       OH1     0       -18.481     8.471       -35.037     
+GP9     O4      O       O2      0       -20.791     7.274       -33.919     
+GP9     P1      P       P       0       -21.888     6.108       -33.709     
+GP9     O8      O       O       0       -23.232     6.809       -33.669     
+GP9     O9      O       OP      -1      -21.741     5.181       -34.901     
+GP9     O10     O       OP      -1      -21.532     5.439       -32.394     
+GP9     H21     H       H       0       -20.671     10.497      -36.340     
+GP9     H22     H       H       0       -19.689     9.513       -37.136     
+GP9     H3      H       H       0       -19.868     9.666       -34.300     
+GP9     H41     H       H       0       -20.727     7.489       -35.914     
+GP9     H42     H       H       0       -21.718     8.508       -35.202     
+GP9     HA      H       H       0       -18.737     11.433      -36.989     
+GP9     HB      H       H       0       -18.355     8.005       -35.737     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GP9       C2        C3        SINGLE    n         1.514     0.011     1.514     0.011     
+GP9       C2        O2        SINGLE    n         1.425     0.010     1.425     0.010     
+GP9       C3        C4        SINGLE    n         1.512     0.011     1.512     0.011     
+GP9       C3        O3        SINGLE    n         1.427     0.010     1.427     0.010     
+GP9       C4        O4        SINGLE    n         1.454     0.017     1.454     0.017     
+GP9       O4        P1        SINGLE    n         1.614     0.019     1.614     0.019     
+GP9       P1        O8        DOUBLE    n         1.517     0.019     1.517     0.019     
+GP9       P1        O9        SINGLE    n         1.517     0.019     1.517     0.019     
+GP9       P1        O10       SINGLE    n         1.517     0.019     1.517     0.019     
+GP9       C2        H21       SINGLE    n         1.089     0.010     0.988     0.020     
+GP9       C2        H22       SINGLE    n         1.089     0.010     0.988     0.020     
+GP9       C3        H3        SINGLE    n         1.089     0.010     0.987     0.019     
+GP9       C4        H41       SINGLE    n         1.089     0.010     0.980     0.015     
+GP9       C4        H42       SINGLE    n         1.089     0.010     0.980     0.015     
+GP9       O2        HA        SINGLE    n         0.970     0.012     0.846     0.020     
+GP9       O3        HB        SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GP9          C3          C2          O2     111.586    1.51
+GP9          C3          C2         H21     109.193    1.50
+GP9          C3          C2         H22     109.193    1.50
+GP9          O2          C2         H21     109.268    1.50
+GP9          O2          C2         H22     109.268    1.50
+GP9         H21          C2         H22     108.313    1.50
+GP9          C2          C3          C4     113.504    1.50
+GP9          C2          C3          O3     110.247    1.72
+GP9          C2          C3          H3     108.441    1.50
+GP9          C4          C3          O3     109.314    1.96
+GP9          C4          C3          H3     108.656    1.50
+GP9          O3          C3          H3     108.721    1.50
+GP9          C3          C4          O4     109.438    2.56
+GP9          C3          C4         H41     109.582    1.50
+GP9          C3          C4         H42     109.582    1.50
+GP9          O4          C4         H41     109.393    1.91
+GP9          O4          C4         H42     109.393    1.91
+GP9         H41          C4         H42     108.319    1.50
+GP9          C2          O2          HA     108.280    3.00
+GP9          C3          O3          HB     107.936    3.00
+GP9          C4          O4          P1     118.671    1.50
+GP9          O4          P1          O8     105.795    2.09
+GP9          O4          P1          O9     105.795    2.09
+GP9          O4          P1         O10     105.795    2.09
+GP9          O8          P1          O9     112.864    1.69
+GP9          O8          P1         O10     112.864    1.69
+GP9          O9          P1         O10     112.864    1.69
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GP9             sp3_sp3_1          O2          C2          C3          C4     180.000   10.00     3
+GP9            sp3_sp3_10          C3          C2          O2          HA     180.000   10.00     3
+GP9            sp3_sp3_13          C2          C3          C4          O4     180.000   10.00     3
+GP9            sp3_sp3_22          C2          C3          O3          HB     180.000   10.00     3
+GP9            sp3_sp3_25          C3          C4          O4          P1     180.000   10.00     3
+GP9            sp3_sp3_28          C4          O4          P1          O8     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+GP9    chir_1    C3    O3    C4    C2    positive
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GP9 SMILES           ACDLabs              10.04 "[O-]P([O-])(=O)OCC(O)CO"
+GP9 SMILES_CANONICAL CACTVS               3.352 "OC[C@@H](O)CO[P]([O-])([O-])=O"
+GP9 SMILES           CACTVS               3.352 "OC[CH](O)CO[P]([O-])([O-])=O"
+GP9 SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "C(C(COP(=O)([O-])[O-])O)O"
+GP9 SMILES           "OpenEye OEToolkits" 1.6.1 "C(C(COP(=O)([O-])[O-])O)O"
+GP9 InChI            InChI                1.03  "InChI=1S/C3H9O6P/c4-1-3(5)2-9-10(6,7)8/h3-5H,1-2H2,(H2,6,7,8)/p-2/t3-/m1/s1"
+GP9 InChIKey         InChI                1.03  AWUCVROLDVIAJX-GSVOUGTGSA-L
+GP9 ?                acedrg               202         "dictionary generator"                  
+GP9 ?                acedrg_database      11          "data source"                           
+GP9 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GP9 ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,190 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ECX     ECX     S-ethyl-L-cysteine     peptide     20     9     .
+#
+data_comp_ECX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ECX     C       C       C       0       -1.958      -0.875      1.425
+ECX     N       N       NT3     1       -2.819      0.987       0.046
+ECX     O       O       O       0       -2.480      -1.756      0.712
+ECX     CA      C       CH1     0       -1.618      0.460       0.750
+ECX     CB      C       CH2     0       -0.479      0.293       -0.239
+ECX     SC      S       S2      0       1.127       -0.104      0.506
+ECX     CD      C       CH2     0       2.202       -0.237      -0.953
+ECX     CE      C       CH3     0       3.580       -0.602      -0.566
+ECX     OXT     O       OC      -1      -1.689      -0.984      2.637
+ECX     H       H       H       0       -2.627      1.796       -0.328
+ECX     H2      H       H       0       -3.505      1.088       0.638
+ECX     H3      H       H       0       -3.071      0.407       -0.609
+ECX     HA      H       H       0       -1.358      1.109       1.444
+ECX     HB2     H       H       0       -0.390      1.116       -0.745
+ECX     HB3     H       H       0       -0.715      -0.412      -0.862
+ECX     HD      H       H       0       2.213       0.621       -1.428
+ECX     HDA     H       H       0       1.843       -0.918      -1.560
+ECX     HE      H       H       0       4.135       -0.656      -1.359
+ECX     HEA     H       H       0       3.574       -1.462      -0.118
+ECX     HEB     H       H       0       3.937       0.071       0.033
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ECX      N      n/a    CA     START
+ECX      H      N      .      .
+ECX      H2     N      .      .
+ECX      H3     N      .      .
+ECX      CA     N      C      .
+ECX      HA     CA     .      .
+ECX      CB     CA     SC     .
+ECX      HB2    CB     .      .
+ECX      HB3    CB     .      .
+ECX      SC     CB     CD     .
+ECX      CD     SC     CE     .
+ECX      HD     CD     .      .
+ECX      HDA    CD     .      .
+ECX      CE     CD     HE     .
+ECX      HEB    CE     .      .
+ECX      HEA    CE     .      .
+ECX      HE     CE     .      .
+ECX      C      CA     .      END
+ECX      O      C      .      .
+ECX      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ECX       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+ECX       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+ECX       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+ECX       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+ECX       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+ECX       CB        SC        SINGLE    n         1.814     0.010     1.814     0.010     
+ECX       SC        CD        SINGLE    n         1.817     0.015     1.817     0.015     
+ECX       CD        CE        SINGLE    n         1.477     0.020     1.477     0.020     
+ECX       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+ECX       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+ECX       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+ECX       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+ECX       CB        HB2       SINGLE    n         1.089     0.010     0.970     0.010     
+ECX       CB        HB3       SINGLE    n         1.089     0.010     0.970     0.010     
+ECX       CD        HD        SINGLE    n         1.089     0.010     0.981     0.013     
+ECX       CD        HDA       SINGLE    n         1.089     0.010     0.981     0.013     
+ECX       CE        HE        SINGLE    n         1.089     0.010     0.969     0.013     
+ECX       CE        HEA       SINGLE    n         1.089     0.010     0.969     0.013     
+ECX       CE        HEB       SINGLE    n         1.089     0.010     0.969     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ECX           O           C          CA     117.134    1.50
+ECX           O           C         OXT     125.732    1.50
+ECX          CA           C         OXT     117.134    1.50
+ECX          CA           N           H     109.671    1.50
+ECX          CA           N          H2     109.671    1.50
+ECX          CA           N          H3     109.671    1.50
+ECX           H           N          H2     109.028    2.41
+ECX           H           N          H3     109.028    2.41
+ECX          H2           N          H3     109.028    2.41
+ECX           C          CA           N     109.494    1.50
+ECX           C          CA          CB     110.419    2.31
+ECX           C          CA          HA     108.606    1.50
+ECX           N          CA          CB     109.354    1.50
+ECX           N          CA          HA     107.983    1.50
+ECX          CB          CA          HA     109.209    1.50
+ECX          CA          CB          SC     114.974    1.55
+ECX          CA          CB         HB2     108.537    1.50
+ECX          CA          CB         HB3     108.537    1.50
+ECX          SC          CB         HB2     108.759    1.50
+ECX          SC          CB         HB3     108.759    1.50
+ECX         HB2          CB         HB3     107.812    1.50
+ECX          CB          SC          CD     102.177    1.97
+ECX          SC          CD          CE     111.139    2.96
+ECX          SC          CD          HD     109.339    1.50
+ECX          SC          CD         HDA     109.339    1.50
+ECX          CE          CD          HD     109.420    1.50
+ECX          CE          CD         HDA     109.420    1.50
+ECX          HD          CD         HDA     108.153    1.50
+ECX          CD          CE          HE     109.476    1.50
+ECX          CD          CE         HEA     109.476    1.50
+ECX          CD          CE         HEB     109.476    1.50
+ECX          HE          CE         HEA     109.451    1.50
+ECX          HE          CE         HEB     109.451    1.50
+ECX         HEA          CE         HEB     109.451    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ECX             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+ECX             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+ECX            sp3_sp3_13           C          CA          CB          SC      60.000   10.00     3
+ECX            sp3_sp3_19          CA          CB          SC          CD     180.000   10.00     3
+ECX            sp3_sp3_22          CE          CD          SC          CB     180.000   10.00     3
+ECX            sp3_sp3_25          SC          CD          CE          HE     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ECX    chir_1    CA    N    CB    C    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ECX    plan-1           C   0.020
+ECX    plan-1          CA   0.020
+ECX    plan-1           O   0.020
+ECX    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ECX SMILES           ACDLabs              11.02 "O=C(O)C(N)CSCC"
+ECX SMILES_CANONICAL CACTVS               3.352 "CCSC[C@H](N)C(O)=O"
+ECX SMILES           CACTVS               3.352 "CCSC[CH](N)C(O)=O"
+ECX SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "CCSC[C@@H](C(=O)O)N"
+ECX SMILES           "OpenEye OEToolkits" 1.7.0 "CCSCC(C(=O)O)N"
+ECX InChI            InChI                1.03  "InChI=1S/C5H11NO2S/c1-2-9-3-4(6)5(7)8/h4H,2-3,6H2,1H3,(H,7,8)/t4-/m0/s1"
+ECX InChIKey         InChI                1.03  ULXKXLZEOGLCRJ-BYPYZUCNSA-N
+ECX ?                acedrg               196         "dictionary generator"
+ECX ?                acedrg_database      11          "data source"
+ECX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ECX ?                refmac5              5.8.0222    "optimization tool"

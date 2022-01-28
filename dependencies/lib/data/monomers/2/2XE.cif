@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2XE     2XE     4-bromobenzenethiol     NON-POLYMER     13     8     .     
+#
+data_comp_2XE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2XE     SAH     S       SH1     0       22.068      39.190      98.399      
+2XE     CAI     C       CR6     0       22.878      42.791      101.062     
+2XE     BR      BR      BR      0       23.216      44.294      102.173     
+2XE     CAK     C       CR16    0       21.782      42.808      100.212     
+2XE     CAL     C       CR16    0       21.532      41.701      99.393      
+2XE     CAM     C       CR6     0       22.381      40.580      99.427      
+2XE     CAN     C       CR16    0       23.484      40.592      100.299     
+2XE     CAO     C       CR16    0       23.732      41.700      101.117     
+2XE     H1      H       HSH1    0       22.915      38.323      98.615      
+2XE     H2      H       H       0       21.212      43.556      100.187     
+2XE     H3      H       H       0       20.790      41.705      98.814      
+2XE     H4      H       H       0       24.059      39.848      100.331     
+2XE     H5      H       H       0       24.472      41.704      101.699     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2XE       SAH       CAM       SINGLE    n         1.757     0.015     1.757     0.015     
+2XE       CAL       CAM       DOUBLE    y         1.385     0.018     1.385     0.018     
+2XE       CAK       CAL       SINGLE    y         1.386     0.014     1.386     0.014     
+2XE       CAM       CAN       SINGLE    y         1.385     0.018     1.385     0.018     
+2XE       CAI       CAK       DOUBLE    y         1.379     0.011     1.379     0.011     
+2XE       CAN       CAO       DOUBLE    y         1.386     0.014     1.386     0.014     
+2XE       CAI       CAO       SINGLE    y         1.379     0.011     1.379     0.011     
+2XE       CAI       BR        SINGLE    n         1.899     0.010     1.899     0.010     
+2XE       SAH       H1        SINGLE    n         1.338     0.010     1.171     0.208     
+2XE       CAK       H2        SINGLE    n         1.082     0.013     0.975     0.010     
+2XE       CAL       H3        SINGLE    n         1.082     0.013     0.975     0.010     
+2XE       CAN       H4        SINGLE    n         1.082     0.013     0.975     0.010     
+2XE       CAO       H5        SINGLE    n         1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2XE         CAM         SAH          H1     109.395    3.00
+2XE         CAK         CAI         CAO     121.567    1.50
+2XE         CAK         CAI          BR     119.217    1.50
+2XE         CAO         CAI          BR     119.217    1.50
+2XE         CAL         CAK         CAI     119.291    1.50
+2XE         CAL         CAK          H2     120.339    1.50
+2XE         CAI         CAK          H2     120.370    1.50
+2XE         CAM         CAL         CAK     120.445    1.50
+2XE         CAM         CAL          H3     119.638    1.50
+2XE         CAK         CAL          H3     119.917    1.50
+2XE         SAH         CAM         CAL     120.519    2.31
+2XE         SAH         CAM         CAN     120.519    2.31
+2XE         CAL         CAM         CAN     118.962    1.99
+2XE         CAM         CAN         CAO     120.445    1.50
+2XE         CAM         CAN          H4     119.638    1.50
+2XE         CAO         CAN          H4     119.917    1.50
+2XE         CAN         CAO         CAI     119.291    1.50
+2XE         CAN         CAO          H5     120.339    1.50
+2XE         CAI         CAO          H5     120.370    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2XE       const_sp2_sp2_3          BR         CAI         CAK         CAL     180.000   10.00     2
+2XE              const_23          BR         CAI         CAO         CAN     180.000   10.00     2
+2XE       const_sp2_sp2_5         CAI         CAK         CAL         CAM       0.000   10.00     2
+2XE              const_10         CAK         CAL         CAM         SAH     180.000   10.00     2
+2XE              const_15         SAH         CAM         CAN         CAO     180.000   10.00     2
+2XE              const_17         CAM         CAN         CAO         CAI       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+2XE    plan-1          BR   0.020
+2XE    plan-1         CAI   0.020
+2XE    plan-1         CAK   0.020
+2XE    plan-1         CAL   0.020
+2XE    plan-1         CAM   0.020
+2XE    plan-1         CAN   0.020
+2XE    plan-1         CAO   0.020
+2XE    plan-1          H2   0.020
+2XE    plan-1          H3   0.020
+2XE    plan-1          H4   0.020
+2XE    plan-1          H5   0.020
+2XE    plan-1         SAH   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2XE SMILES           ACDLabs              12.01 "Brc1ccc(S)cc1"
+2XE InChI            InChI                1.03  "InChI=1S/C6H5BrS/c7-5-1-3-6(8)4-2-5/h1-4,8H"
+2XE InChIKey         InChI                1.03  FTBCOQFMQSTCQQ-UHFFFAOYSA-N
+2XE SMILES_CANONICAL CACTVS               3.385 "Sc1ccc(Br)cc1"
+2XE SMILES           CACTVS               3.385 "Sc1ccc(Br)cc1"
+2XE SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1cc(ccc1S)Br"
+2XE SMILES           "OpenEye OEToolkits" 1.7.6 "c1cc(ccc1S)Br"
+2XE ?                acedrg               190         "dictionary generator"                  
+2XE ?                acedrg_database      11          "data source"                           
+2XE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2XE ?                refmac5              5.8.0158    "optimization tool"                     

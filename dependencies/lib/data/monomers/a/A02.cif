@@ -1,0 +1,924 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+A02      A02 '.                                   ' non-polymer       137  67 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_A02
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ A02           O      O    O         0.000      0.000    0.000    0.000
+ A02           C      C    C         0.000      0.259   -1.160    0.242
+ A02           NAF    N    NH2       0.000      1.337   -1.742   -0.321
+ A02           H2AF   H    H         0.000      1.933   -1.214   -0.947
+ A02           H1AF   H    H         0.000      1.557   -2.710   -0.122
+ A02           CA     C    CH1       0.000     -0.625   -1.950    1.172
+ A02           HA     H    H         0.000     -1.040   -2.815    0.636
+ A02           CB     C    CH2       0.000      0.199   -2.438    2.367
+ A02           H1B    H    H         0.000      0.538   -1.578    2.949
+ A02           H2B    H    H         0.000      1.065   -2.997    2.007
+ A02           CG     C    CH2       0.000     -0.665   -3.343    3.246
+ A02           H1G    H    H         0.000     -1.004   -4.201    2.662
+ A02           H2G    H    H         0.000     -1.532   -2.783    3.603
+ A02           CD     C    CH2       0.000      0.157   -3.830    4.441
+ A02           H1D    H    H         0.000      0.496   -2.971    5.023
+ A02           H2D    H    H         0.000      1.024   -4.389    4.082
+ A02           NE     N    NH1       0.000     -0.671   -4.697    5.283
+ A02           HNE    H    H         0.000     -1.630   -4.883    5.028
+ A02           CZ     C    C         0.000     -0.141   -5.257    6.422
+ A02           NH2    N    N         0.000      1.097   -5.016    6.752
+ A02           H1H2   H    H         0.000      1.479   -5.401    7.546
+ A02           NH1    N    NH2       0.000     -0.918   -6.071    7.212
+ A02           H2H1   H    H         0.000     -0.540   -6.492    8.058
+ A02           H1H1   H    H         0.000     -1.887   -6.266    6.966
+ A02           N      N    NH1       0.000     -1.719   -1.100    1.647
+ A02           HN     H    H         0.000     -1.635   -0.614    2.529
+ A02           CCD    C    C         0.000     -2.837   -0.964    0.908
+ A02           OAM    O    O         0.000     -2.939   -1.548   -0.151
+ A02           CCJ    C    CH1       0.000     -3.963   -0.090    1.397
+ A02           HCJ    H    H         0.000     -4.327   -0.467    2.363
+ A02           CBK    C    CH2       0.000     -3.457    1.344    1.567
+ A02           H1BK   H    H         0.000     -3.177    1.748    0.592
+ A02           H2BK   H    H         0.000     -2.585    1.346    2.224
+ A02           CBB    C    CH2       0.000     -4.562    2.205    2.180
+ A02           H1BB   H    H         0.000     -4.842    1.799    3.155
+ A02           H2BB   H    H         0.000     -5.434    2.202    1.522
+ A02           CBF    C    CH2       0.000     -4.056    3.639    2.350
+ A02           H1BF   H    H         0.000     -3.776    4.044    1.375
+ A02           H2BF   H    H         0.000     -3.184    3.641    3.007
+ A02           NBP    N    NH1       0.000     -5.114    4.464    2.938
+ A02           HNBP   H    H         0.000     -6.009    4.054    3.162
+ A02           CBX    C    C         0.000     -4.889    5.799    3.185
+ A02           NAE    N    N         0.000     -3.734    6.329    2.896
+ A02           H1AE   H    H         0.000     -3.563    7.260    3.064
+ A02           NAB    N    NH2       0.000     -5.883    6.573    3.737
+ A02           H2AB   H    H         0.000     -5.730    7.562    3.925
+ A02           H1AB   H    H         0.000     -6.790    6.171    3.967
+ A02           NBT    N    NH1       0.000     -5.056   -0.109    0.422
+ A02           HNBT   H    H         0.000     -4.864   -0.318   -0.548
+ A02           CCA    C    C         0.000     -6.317    0.151    0.818
+ A02           OAJ    O    O         0.000     -6.547    0.402    1.982
+ A02           CBH    C    CH2       0.000     -7.441    0.132   -0.185
+ A02           H1BH   H    H         0.000     -7.505   -0.859   -0.639
+ A02           H2BH   H    H         0.000     -7.248    0.875   -0.961
+ A02           CAY    C    CH2       0.000     -8.760    0.458    0.520
+ A02           H1AY   H    H         0.000     -8.693    1.449    0.974
+ A02           H2AY   H    H         0.000     -8.950   -0.285    1.297
+ A02           CAT    C    CH2       0.000     -9.901    0.437   -0.499
+ A02           H1AT   H    H         0.000     -9.965   -0.554   -0.952
+ A02           H2AT   H    H         0.000     -9.708    1.180   -1.276
+ A02           CAV    C    CH2       0.000    -11.220    0.764    0.206
+ A02           H1AV   H    H         0.000    -11.153    1.755    0.660
+ A02           H2AV   H    H         0.000    -11.410    0.021    0.983
+ A02           CBC    C    CH2       0.000    -12.361    0.743   -0.813
+ A02           H1BC   H    H         0.000    -12.426   -0.248   -1.266
+ A02           H2BC   H    H         0.000    -12.168    1.486   -1.590
+ A02           NBQ    N    NH1       0.000    -13.622    1.057   -0.138
+ A02           HNBQ   H    H         0.000    -13.631    1.244    0.854
+ A02           CCB    C    C         0.000    -14.771    1.096   -0.841
+ A02           OAK    O    O         0.000    -14.760    0.872   -2.034
+ A02           CCI    C    CH1       0.000    -16.070    1.418   -0.147
+ A02           HCI    H    H         0.000    -16.263    0.670    0.634
+ A02           CBJ    C    CH2       0.000    -15.978    2.806    0.487
+ A02           H1BJ   H    H         0.000    -15.875    3.558   -0.298
+ A02           H2BJ   H    H         0.000    -15.109    2.848    1.147
+ A02           CAZ    C    CH2       0.000    -17.248    3.083    1.296
+ A02           H1AZ   H    H         0.000    -17.351    2.329    2.079
+ A02           H2AZ   H    H         0.000    -18.116    3.040    0.635
+ A02           CAS    C    CH2       0.000    -17.155    4.471    1.931
+ A02           H1AS   H    H         0.000    -17.052    5.223    1.146
+ A02           H2AS   H    H         0.000    -16.286    4.512    2.590
+ A02           CAR    C    CH2       0.000    -18.425    4.747    2.740
+ A02           H1AR   H    H         0.000    -18.527    3.994    3.524
+ A02           H2AR   H    H         0.000    -19.293    4.705    2.080
+ A02           NAC    N    NH2       0.000    -18.336    6.081    3.350
+ A02           H2AC   H    H         0.000    -17.518    6.658    3.200
+ A02           H1AC   H    H         0.000    -19.094    6.432    3.924
+ A02           NBS    N    NH1       0.000    -17.163    1.398   -1.123
+ A02           HNBS   H    H         0.000    -16.971    1.566   -2.100
+ A02           CBZ    C    C         0.000    -18.425    1.154   -0.716
+ A02           OAI    O    O         0.000    -18.655    0.950    0.457
+ A02           CBG    C    CH2       0.000    -19.549    1.133   -1.720
+ A02           H1BG   H    H         0.000    -19.357    0.359   -2.466
+ A02           H2BG   H    H         0.000    -19.614    2.105   -2.214
+ A02           CAX    C    CH2       0.000    -20.867    0.836   -1.002
+ A02           H1AX   H    H         0.000    -21.058    1.610   -0.256
+ A02           H2AX   H    H         0.000    -20.801   -0.135   -0.508
+ A02           CAU    C    CH2       0.000    -22.009    0.815   -2.021
+ A02           H1AU   H    H         0.000    -21.816    0.041   -2.766
+ A02           H2AU   H    H         0.000    -22.073    1.787   -2.515
+ A02           CAW    C    CH2       0.000    -23.327    0.518   -1.303
+ A02           H1AW   H    H         0.000    -23.518    1.292   -0.557
+ A02           H2AW   H    H         0.000    -23.261   -0.454   -0.809
+ A02           CBD    C    CH2       0.000    -24.469    0.497   -2.322
+ A02           H1BD   H    H         0.000    -24.276   -0.277   -3.068
+ A02           H2BD   H    H         0.000    -24.533    1.469   -2.816
+ A02           NBR    N    NH1       0.000    -25.731    0.212   -1.635
+ A02           HNBR   H    H         0.000    -25.740    0.067   -0.636
+ A02           CCC    C    C         0.000    -26.880    0.144   -2.336
+ A02           OAL    O    O         0.000    -26.868    0.319   -3.537
+ A02           CCM    C    CH1       0.000    -28.178   -0.149   -1.631
+ A02           HCM    H    H         0.000    -28.334    0.562   -0.807
+ A02           CCK    C    CH1       0.000    -28.186   -1.599   -1.099
+ A02           HCK    H    H         0.000    -27.494   -2.226   -1.679
+ A02           OAN    O    OH1       0.000    -27.843   -1.625    0.288
+ A02           HOAN   H    H         0.000    -26.929   -1.331    0.400
+ A02           CCL    C    CH1       0.000    -29.644   -2.067   -1.306
+ A02           HCL    H    H         0.000    -29.680   -2.927   -1.990
+ A02           OAO    O    OH1       0.000    -30.246   -2.397   -0.053
+ A02           HOAO   H    H         0.000    -29.759   -3.124    0.357
+ A02           CCN    C    CH1       0.000    -30.344   -0.844   -1.938
+ A02           HCN    H    H         0.000    -30.836   -0.242   -1.161
+ A02           OBV    O    O2        0.000    -29.281   -0.090   -2.561
+ A02           N9     N    NR5       0.000    -31.319   -1.277   -2.943
+ A02           C4     C    CR56      0.000    -32.633   -1.597   -2.713
+ A02           N3     N    NRD6      0.000    -33.418   -1.631   -1.641
+ A02           C2     C    CR16      0.000    -34.680   -1.992   -1.745
+ A02           H2     H    H         0.000    -35.292   -2.009   -0.851
+ A02           C8     C    CR15      0.000    -31.086   -1.436   -4.276
+ A02           H8     H    H         0.000    -30.136   -1.259   -4.766
+ A02           N7     N    NRD5      0.000    -32.172   -1.831   -4.874
+ A02           C5     C    CR56      0.000    -33.169   -1.951   -3.964
+ A02           C6     C    CR6       0.000    -34.521   -2.329   -4.022
+ A02           N1     N    NRD6      0.000    -35.227   -2.333   -2.897
+ A02           N6     N    NH2       0.000    -35.103   -2.689   -5.225
+ A02           H2N6   H    H         0.000    -34.560   -2.684   -6.083
+ A02           H1N6   H    H         0.000    -36.081   -2.961   -5.264
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ A02      O      n/a    C      START
+ A02      C      O      CA     .
+ A02      NAF    C      H1AF   .
+ A02      H2AF   NAF    .      .
+ A02      H1AF   NAF    .      .
+ A02      CA     C      N      .
+ A02      HA     CA     .      .
+ A02      CB     CA     CG     .
+ A02      H1B    CB     .      .
+ A02      H2B    CB     .      .
+ A02      CG     CB     CD     .
+ A02      H1G    CG     .      .
+ A02      H2G    CG     .      .
+ A02      CD     CG     NE     .
+ A02      H1D    CD     .      .
+ A02      H2D    CD     .      .
+ A02      NE     CD     CZ     .
+ A02      HNE    NE     .      .
+ A02      CZ     NE     NH1    .
+ A02      NH2    CZ     H1H2   .
+ A02      H1H2   NH2    .      .
+ A02      NH1    CZ     H1H1   .
+ A02      H2H1   NH1    .      .
+ A02      H1H1   NH1    .      .
+ A02      N      CA     CCD    .
+ A02      HN     N      .      .
+ A02      CCD    N      CCJ    .
+ A02      OAM    CCD    .      .
+ A02      CCJ    CCD    NBT    .
+ A02      HCJ    CCJ    .      .
+ A02      CBK    CCJ    CBB    .
+ A02      H1BK   CBK    .      .
+ A02      H2BK   CBK    .      .
+ A02      CBB    CBK    CBF    .
+ A02      H1BB   CBB    .      .
+ A02      H2BB   CBB    .      .
+ A02      CBF    CBB    NBP    .
+ A02      H1BF   CBF    .      .
+ A02      H2BF   CBF    .      .
+ A02      NBP    CBF    CBX    .
+ A02      HNBP   NBP    .      .
+ A02      CBX    NBP    NAB    .
+ A02      NAE    CBX    H1AE   .
+ A02      H1AE   NAE    .      .
+ A02      NAB    CBX    H1AB   .
+ A02      H2AB   NAB    .      .
+ A02      H1AB   NAB    .      .
+ A02      NBT    CCJ    CCA    .
+ A02      HNBT   NBT    .      .
+ A02      CCA    NBT    CBH    .
+ A02      OAJ    CCA    .      .
+ A02      CBH    CCA    CAY    .
+ A02      H1BH   CBH    .      .
+ A02      H2BH   CBH    .      .
+ A02      CAY    CBH    CAT    .
+ A02      H1AY   CAY    .      .
+ A02      H2AY   CAY    .      .
+ A02      CAT    CAY    CAV    .
+ A02      H1AT   CAT    .      .
+ A02      H2AT   CAT    .      .
+ A02      CAV    CAT    CBC    .
+ A02      H1AV   CAV    .      .
+ A02      H2AV   CAV    .      .
+ A02      CBC    CAV    NBQ    .
+ A02      H1BC   CBC    .      .
+ A02      H2BC   CBC    .      .
+ A02      NBQ    CBC    CCB    .
+ A02      HNBQ   NBQ    .      .
+ A02      CCB    NBQ    CCI    .
+ A02      OAK    CCB    .      .
+ A02      CCI    CCB    NBS    .
+ A02      HCI    CCI    .      .
+ A02      CBJ    CCI    CAZ    .
+ A02      H1BJ   CBJ    .      .
+ A02      H2BJ   CBJ    .      .
+ A02      CAZ    CBJ    CAS    .
+ A02      H1AZ   CAZ    .      .
+ A02      H2AZ   CAZ    .      .
+ A02      CAS    CAZ    CAR    .
+ A02      H1AS   CAS    .      .
+ A02      H2AS   CAS    .      .
+ A02      CAR    CAS    NAC    .
+ A02      H1AR   CAR    .      .
+ A02      H2AR   CAR    .      .
+ A02      NAC    CAR    H1AC   .
+ A02      H2AC   NAC    .      .
+ A02      H1AC   NAC    .      .
+ A02      NBS    CCI    CBZ    .
+ A02      HNBS   NBS    .      .
+ A02      CBZ    NBS    CBG    .
+ A02      OAI    CBZ    .      .
+ A02      CBG    CBZ    CAX    .
+ A02      H1BG   CBG    .      .
+ A02      H2BG   CBG    .      .
+ A02      CAX    CBG    CAU    .
+ A02      H1AX   CAX    .      .
+ A02      H2AX   CAX    .      .
+ A02      CAU    CAX    CAW    .
+ A02      H1AU   CAU    .      .
+ A02      H2AU   CAU    .      .
+ A02      CAW    CAU    CBD    .
+ A02      H1AW   CAW    .      .
+ A02      H2AW   CAW    .      .
+ A02      CBD    CAW    NBR    .
+ A02      H1BD   CBD    .      .
+ A02      H2BD   CBD    .      .
+ A02      NBR    CBD    CCC    .
+ A02      HNBR   NBR    .      .
+ A02      CCC    NBR    CCM    .
+ A02      OAL    CCC    .      .
+ A02      CCM    CCC    CCK    .
+ A02      HCM    CCM    .      .
+ A02      CCK    CCM    CCL    .
+ A02      HCK    CCK    .      .
+ A02      OAN    CCK    HOAN   .
+ A02      HOAN   OAN    .      .
+ A02      CCL    CCK    CCN    .
+ A02      HCL    CCL    .      .
+ A02      OAO    CCL    HOAO   .
+ A02      HOAO   OAO    .      .
+ A02      CCN    CCL    N9     .
+ A02      HCN    CCN    .      .
+ A02      OBV    CCN    .      .
+ A02      N9     CCN    C8     .
+ A02      C4     N9     N3     .
+ A02      N3     C4     C2     .
+ A02      C2     N3     H2     .
+ A02      H2     C2     .      .
+ A02      C8     N9     N7     .
+ A02      H8     C8     .      .
+ A02      N7     C8     C5     .
+ A02      C5     N7     C6     .
+ A02      C6     C5     N6     .
+ A02      N1     C6     .      .
+ A02      N6     C6     H1N6   .
+ A02      H2N6   N6     .      .
+ A02      H1N6   N6     .      END
+ A02      N1     C2     .    ADD
+ A02      C4     C5     .    ADD
+ A02      OBV    CCM    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+A02       N1        C2        double    1.337     0.020     1.337     0.020     
+A02       N1        C6        single    1.350     0.020     1.350     0.020     
+A02       C2        N3        single    1.337     0.020     1.337     0.020     
+A02       H2        C2        single    1.082     0.013     0.975     0.010     
+A02       N3        C4        double    1.355     0.020     1.355     0.020     
+A02       C4        C5        single    1.490     0.020     1.490     0.020     
+A02       C4        N9        single    1.337     0.020     1.337     0.020     
+A02       C6        C5        double    1.490     0.020     1.490     0.020     
+A02       C5        N7        single    1.350     0.020     1.350     0.020     
+A02       N6        C6        single    1.355     0.020     1.355     0.020     
+A02       H1N6      N6        single    1.016     0.010     0.899     0.007     
+A02       H2N6      N6        single    1.016     0.010     0.899     0.007     
+A02       N7        C8        double    1.350     0.020     1.350     0.020     
+A02       C8        N9        single    1.337     0.020     1.337     0.020     
+A02       H8        C8        single    1.082     0.013     0.975     0.010     
+A02       N9        CCN       single    1.485     0.020     1.485     0.020     
+A02       OAL       CCC       double    1.220     0.020     1.220     0.020     
+A02       OAN       CCK       single    1.432     0.020     1.432     0.020     
+A02       HOAN      OAN       single    0.970     0.012     0.839     0.014     
+A02       OAO       CCL       single    1.432     0.020     1.432     0.020     
+A02       HOAO      OAO       single    0.970     0.012     0.839     0.014     
+A02       OBV       CCM       single    1.426     0.020     1.426     0.020     
+A02       OBV       CCN       single    1.426     0.020     1.426     0.020     
+A02       CCM       CCC       single    1.500     0.020     1.500     0.020     
+A02       CCL       CCK       single    1.524     0.020     1.524     0.020     
+A02       CCK       CCM       single    1.524     0.020     1.524     0.020     
+A02       HCK       CCK       single    1.089     0.010     0.989     0.005     
+A02       CCN       CCL       single    1.524     0.020     1.524     0.020     
+A02       HCL       CCL       single    1.089     0.010     0.989     0.005     
+A02       HCM       CCM       single    1.089     0.010     0.989     0.005     
+A02       HCN       CCN       single    1.089     0.010     0.989     0.005     
+A02       OAI       CBZ       double    1.220     0.020     1.220     0.020     
+A02       CBG       CBZ       single    1.510     0.020     1.510     0.020     
+A02       CAX       CBG       single    1.524     0.020     1.524     0.020     
+A02       H1BG      CBG       single    1.089     0.010     0.989     0.005     
+A02       H2BG      CBG       single    1.089     0.010     0.989     0.005     
+A02       CAU       CAX       single    1.524     0.020     1.524     0.020     
+A02       H1AX      CAX       single    1.089     0.010     0.989     0.005     
+A02       H2AX      CAX       single    1.089     0.010     0.989     0.005     
+A02       CAW       CAU       single    1.524     0.020     1.524     0.020     
+A02       H1AU      CAU       single    1.089     0.010     0.989     0.005     
+A02       H2AU      CAU       single    1.089     0.010     0.989     0.005     
+A02       CBD       CAW       single    1.524     0.020     1.524     0.020     
+A02       H1AW      CAW       single    1.089     0.010     0.989     0.005     
+A02       H2AW      CAW       single    1.089     0.010     0.989     0.005     
+A02       NBR       CBD       single    1.450     0.020     1.450     0.020     
+A02       H1BD      CBD       single    1.089     0.010     0.989     0.005     
+A02       H2BD      CBD       single    1.089     0.010     0.989     0.005     
+A02       HNBR      NBR       single    1.016     0.010     0.899     0.007     
+A02       NBS       CCI       single    1.450     0.020     1.450     0.020     
+A02       HNBS      NBS       single    1.016     0.010     0.899     0.007     
+A02       CCI       CCB       single    1.500     0.020     1.500     0.020     
+A02       CBJ       CCI       single    1.524     0.020     1.524     0.020     
+A02       HCI       CCI       single    1.089     0.010     0.989     0.005     
+A02       OAK       CCB       double    1.220     0.020     1.220     0.020     
+A02       CAZ       CBJ       single    1.524     0.020     1.524     0.020     
+A02       H1BJ      CBJ       single    1.089     0.010     0.989     0.005     
+A02       H2BJ      CBJ       single    1.089     0.010     0.989     0.005     
+A02       CAS       CAZ       single    1.524     0.020     1.524     0.020     
+A02       H1AZ      CAZ       single    1.089     0.010     0.989     0.005     
+A02       H2AZ      CAZ       single    1.089     0.010     0.989     0.005     
+A02       CAR       CAS       single    1.524     0.020     1.524     0.020     
+A02       H1AS      CAS       single    1.089     0.010     0.989     0.005     
+A02       H2AS      CAS       single    1.089     0.010     0.989     0.005     
+A02       NAC       CAR       single    1.450     0.020     1.450     0.020     
+A02       H1AR      CAR       single    1.089     0.010     0.989     0.005     
+A02       H2AR      CAR       single    1.089     0.010     0.989     0.005     
+A02       H1AC      NAC       single    1.036     0.016     0.914     0.007     
+A02       H2AC      NAC       single    1.036     0.016     0.914     0.007     
+A02       OAJ       CCA       double    1.220     0.020     1.220     0.020     
+A02       CBH       CCA       single    1.510     0.020     1.510     0.020     
+A02       CAY       CBH       single    1.524     0.020     1.524     0.020     
+A02       H1BH      CBH       single    1.089     0.010     0.989     0.005     
+A02       H2BH      CBH       single    1.089     0.010     0.989     0.005     
+A02       CAT       CAY       single    1.524     0.020     1.524     0.020     
+A02       H1AY      CAY       single    1.089     0.010     0.989     0.005     
+A02       H2AY      CAY       single    1.089     0.010     0.989     0.005     
+A02       CAV       CAT       single    1.524     0.020     1.524     0.020     
+A02       H1AT      CAT       single    1.089     0.010     0.989     0.005     
+A02       H2AT      CAT       single    1.089     0.010     0.989     0.005     
+A02       CBC       CAV       single    1.524     0.020     1.524     0.020     
+A02       H1AV      CAV       single    1.089     0.010     0.989     0.005     
+A02       H2AV      CAV       single    1.089     0.010     0.989     0.005     
+A02       NBQ       CBC       single    1.450     0.020     1.450     0.020     
+A02       H1BC      CBC       single    1.089     0.010     0.989     0.005     
+A02       H2BC      CBC       single    1.089     0.010     0.989     0.005     
+A02       HNBQ      NBQ       single    1.016     0.010     0.899     0.007     
+A02       NBT       CCJ       single    1.450     0.020     1.450     0.020     
+A02       HNBT      NBT       single    1.016     0.010     0.899     0.007     
+A02       CBK       CCJ       single    1.524     0.020     1.524     0.020     
+A02       CCJ       CCD       single    1.500     0.020     1.500     0.020     
+A02       HCJ       CCJ       single    1.089     0.010     0.989     0.005     
+A02       CBB       CBK       single    1.524     0.020     1.524     0.020     
+A02       H1BK      CBK       single    1.089     0.010     0.989     0.005     
+A02       H2BK      CBK       single    1.089     0.010     0.989     0.005     
+A02       CBF       CBB       single    1.524     0.020     1.524     0.020     
+A02       H1BB      CBB       single    1.089     0.010     0.989     0.005     
+A02       H2BB      CBB       single    1.089     0.010     0.989     0.005     
+A02       NBP       CBF       single    1.450     0.020     1.450     0.020     
+A02       H1BF      CBF       single    1.089     0.010     0.989     0.005     
+A02       H2BF      CBF       single    1.089     0.010     0.989     0.005     
+A02       CBX       NBP       single    1.330     0.020     1.330     0.020     
+A02       HNBP      NBP       single    1.016     0.010     0.899     0.007     
+A02       NAB       CBX       single    1.332     0.020     1.332     0.020     
+A02       NAE       CBX       double    1.260     0.020     1.260     0.020     
+A02       H1AB      NAB       single    1.016     0.010     0.899     0.007     
+A02       H2AB      NAB       single    1.016     0.010     0.899     0.007     
+A02       H1AE      NAE       single    1.016     0.010     0.899     0.007     
+A02       OAM       CCD       double    1.220     0.020     1.220     0.020     
+A02       N         CA        single    1.450     0.020     1.450     0.020     
+A02       HN        N         single    1.016     0.010     0.899     0.007     
+A02       CB        CA        single    1.524     0.020     1.524     0.020     
+A02       CA        C         single    1.500     0.020     1.500     0.020     
+A02       HA        CA        single    1.089     0.010     0.989     0.005     
+A02       CG        CB        single    1.524     0.020     1.524     0.020     
+A02       H1B       CB        single    1.089     0.010     0.989     0.005     
+A02       H2B       CB        single    1.089     0.010     0.989     0.005     
+A02       CD        CG        single    1.524     0.020     1.524     0.020     
+A02       H1G       CG        single    1.089     0.010     0.989     0.005     
+A02       H2G       CG        single    1.089     0.010     0.989     0.005     
+A02       NE        CD        single    1.450     0.020     1.450     0.020     
+A02       H1D       CD        single    1.089     0.010     0.989     0.005     
+A02       H2D       CD        single    1.089     0.010     0.989     0.005     
+A02       CZ        NE        single    1.330     0.020     1.330     0.020     
+A02       HNE       NE        single    1.016     0.010     0.899     0.007     
+A02       NH1       CZ        single    1.332     0.020     1.332     0.020     
+A02       NH2       CZ        double    1.260     0.020     1.260     0.020     
+A02       H1H1      NH1       single    1.016     0.010     0.899     0.007     
+A02       H2H1      NH1       single    1.016     0.010     0.899     0.007     
+A02       H1H2      NH2       single    1.016     0.010     0.899     0.007     
+A02       C         O         double    1.220     0.020     1.220     0.020     
+A02       H1AF      NAF       single    1.016     0.010     0.899     0.007     
+A02       H2AF      NAF       single    1.016     0.010     0.899     0.007     
+A02       CCC       NBR       single    1.330     0.020     1.330     0.020     
+A02       CBZ       NBS       single    1.330     0.020     1.330     0.020     
+A02       CCB       NBQ       single    1.330     0.020     1.330     0.020     
+A02       CCA       NBT       single    1.330     0.020     1.330     0.020     
+A02       CCD       N         single    1.330     0.020     1.330     0.020     
+A02       NAF       C         single    1.332     0.020     1.332     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ A02      O      C      NAF     123.000    3.000
+ A02      O      C      CA      120.500    3.000
+ A02      NAF    C      CA      120.000    3.000
+ A02      C      NAF    H2AF    120.000    3.000
+ A02      C      NAF    H1AF    120.000    3.000
+ A02      H2AF   NAF    H1AF    120.000    3.000
+ A02      C      CA     HA      108.810    3.000
+ A02      C      CA     CB      109.470    3.000
+ A02      C      CA     N       111.600    3.000
+ A02      HA     CA     CB      108.340    3.000
+ A02      HA     CA     N       108.550    3.000
+ A02      CB     CA     N       110.000    3.000
+ A02      CA     CB     H1B     109.470    3.000
+ A02      CA     CB     H2B     109.470    3.000
+ A02      CA     CB     CG      111.000    3.000
+ A02      H1B    CB     H2B     107.900    3.000
+ A02      H1B    CB     CG      109.470    3.000
+ A02      H2B    CB     CG      109.470    3.000
+ A02      CB     CG     H1G     109.470    3.000
+ A02      CB     CG     H2G     109.470    3.000
+ A02      CB     CG     CD      111.000    3.000
+ A02      H1G    CG     H2G     107.900    3.000
+ A02      H1G    CG     CD      109.470    3.000
+ A02      H2G    CG     CD      109.470    3.000
+ A02      CG     CD     H1D     109.470    3.000
+ A02      CG     CD     H2D     109.470    3.000
+ A02      CG     CD     NE      112.000    3.000
+ A02      H1D    CD     H2D     107.900    3.000
+ A02      H1D    CD     NE      109.470    3.000
+ A02      H2D    CD     NE      109.470    3.000
+ A02      CD     NE     HNE     118.500    3.000
+ A02      CD     NE     CZ      121.500    3.000
+ A02      HNE    NE     CZ      120.000    3.000
+ A02      NE     CZ     NH2     120.000    3.000
+ A02      NE     CZ     NH1     120.000    3.000
+ A02      NH2    CZ     NH1     120.000    3.000
+ A02      CZ     NH2    H1H2    120.000    3.000
+ A02      CZ     NH1    H2H1    120.000    3.000
+ A02      CZ     NH1    H1H1    120.000    3.000
+ A02      H2H1   NH1    H1H1    120.000    3.000
+ A02      CA     N      HN      118.500    3.000
+ A02      CA     N      CCD     121.500    3.000
+ A02      HN     N      CCD     120.000    3.000
+ A02      N      CCD    OAM     123.000    3.000
+ A02      N      CCD    CCJ     116.500    3.000
+ A02      OAM    CCD    CCJ     120.500    3.000
+ A02      CCD    CCJ    HCJ     108.810    3.000
+ A02      CCD    CCJ    CBK     109.470    3.000
+ A02      CCD    CCJ    NBT     111.600    3.000
+ A02      HCJ    CCJ    CBK     108.340    3.000
+ A02      HCJ    CCJ    NBT     108.550    3.000
+ A02      CBK    CCJ    NBT     110.000    3.000
+ A02      CCJ    CBK    H1BK    109.470    3.000
+ A02      CCJ    CBK    H2BK    109.470    3.000
+ A02      CCJ    CBK    CBB     111.000    3.000
+ A02      H1BK   CBK    H2BK    107.900    3.000
+ A02      H1BK   CBK    CBB     109.470    3.000
+ A02      H2BK   CBK    CBB     109.470    3.000
+ A02      CBK    CBB    H1BB    109.470    3.000
+ A02      CBK    CBB    H2BB    109.470    3.000
+ A02      CBK    CBB    CBF     111.000    3.000
+ A02      H1BB   CBB    H2BB    107.900    3.000
+ A02      H1BB   CBB    CBF     109.470    3.000
+ A02      H2BB   CBB    CBF     109.470    3.000
+ A02      CBB    CBF    H1BF    109.470    3.000
+ A02      CBB    CBF    H2BF    109.470    3.000
+ A02      CBB    CBF    NBP     112.000    3.000
+ A02      H1BF   CBF    H2BF    107.900    3.000
+ A02      H1BF   CBF    NBP     109.470    3.000
+ A02      H2BF   CBF    NBP     109.470    3.000
+ A02      CBF    NBP    HNBP    118.500    3.000
+ A02      CBF    NBP    CBX     121.500    3.000
+ A02      HNBP   NBP    CBX     120.000    3.000
+ A02      NBP    CBX    NAE     120.000    3.000
+ A02      NBP    CBX    NAB     120.000    3.000
+ A02      NAE    CBX    NAB     120.000    3.000
+ A02      CBX    NAE    H1AE    120.000    3.000
+ A02      CBX    NAB    H2AB    120.000    3.000
+ A02      CBX    NAB    H1AB    120.000    3.000
+ A02      H2AB   NAB    H1AB    120.000    3.000
+ A02      CCJ    NBT    HNBT    118.500    3.000
+ A02      CCJ    NBT    CCA     121.500    3.000
+ A02      HNBT   NBT    CCA     120.000    3.000
+ A02      NBT    CCA    OAJ     123.000    3.000
+ A02      NBT    CCA    CBH     116.500    3.000
+ A02      OAJ    CCA    CBH     120.500    3.000
+ A02      CCA    CBH    H1BH    109.470    3.000
+ A02      CCA    CBH    H2BH    109.470    3.000
+ A02      CCA    CBH    CAY     109.470    3.000
+ A02      H1BH   CBH    H2BH    107.900    3.000
+ A02      H1BH   CBH    CAY     109.470    3.000
+ A02      H2BH   CBH    CAY     109.470    3.000
+ A02      CBH    CAY    H1AY    109.470    3.000
+ A02      CBH    CAY    H2AY    109.470    3.000
+ A02      CBH    CAY    CAT     111.000    3.000
+ A02      H1AY   CAY    H2AY    107.900    3.000
+ A02      H1AY   CAY    CAT     109.470    3.000
+ A02      H2AY   CAY    CAT     109.470    3.000
+ A02      CAY    CAT    H1AT    109.470    3.000
+ A02      CAY    CAT    H2AT    109.470    3.000
+ A02      CAY    CAT    CAV     111.000    3.000
+ A02      H1AT   CAT    H2AT    107.900    3.000
+ A02      H1AT   CAT    CAV     109.470    3.000
+ A02      H2AT   CAT    CAV     109.470    3.000
+ A02      CAT    CAV    H1AV    109.470    3.000
+ A02      CAT    CAV    H2AV    109.470    3.000
+ A02      CAT    CAV    CBC     111.000    3.000
+ A02      H1AV   CAV    H2AV    107.900    3.000
+ A02      H1AV   CAV    CBC     109.470    3.000
+ A02      H2AV   CAV    CBC     109.470    3.000
+ A02      CAV    CBC    H1BC    109.470    3.000
+ A02      CAV    CBC    H2BC    109.470    3.000
+ A02      CAV    CBC    NBQ     112.000    3.000
+ A02      H1BC   CBC    H2BC    107.900    3.000
+ A02      H1BC   CBC    NBQ     109.470    3.000
+ A02      H2BC   CBC    NBQ     109.470    3.000
+ A02      CBC    NBQ    HNBQ    118.500    3.000
+ A02      CBC    NBQ    CCB     121.500    3.000
+ A02      HNBQ   NBQ    CCB     120.000    3.000
+ A02      NBQ    CCB    OAK     123.000    3.000
+ A02      NBQ    CCB    CCI     116.500    3.000
+ A02      OAK    CCB    CCI     120.500    3.000
+ A02      CCB    CCI    HCI     108.810    3.000
+ A02      CCB    CCI    CBJ     109.470    3.000
+ A02      CCB    CCI    NBS     111.600    3.000
+ A02      HCI    CCI    CBJ     108.340    3.000
+ A02      HCI    CCI    NBS     108.550    3.000
+ A02      CBJ    CCI    NBS     110.000    3.000
+ A02      CCI    CBJ    H1BJ    109.470    3.000
+ A02      CCI    CBJ    H2BJ    109.470    3.000
+ A02      CCI    CBJ    CAZ     111.000    3.000
+ A02      H1BJ   CBJ    H2BJ    107.900    3.000
+ A02      H1BJ   CBJ    CAZ     109.470    3.000
+ A02      H2BJ   CBJ    CAZ     109.470    3.000
+ A02      CBJ    CAZ    H1AZ    109.470    3.000
+ A02      CBJ    CAZ    H2AZ    109.470    3.000
+ A02      CBJ    CAZ    CAS     111.000    3.000
+ A02      H1AZ   CAZ    H2AZ    107.900    3.000
+ A02      H1AZ   CAZ    CAS     109.470    3.000
+ A02      H2AZ   CAZ    CAS     109.470    3.000
+ A02      CAZ    CAS    H1AS    109.470    3.000
+ A02      CAZ    CAS    H2AS    109.470    3.000
+ A02      CAZ    CAS    CAR     111.000    3.000
+ A02      H1AS   CAS    H2AS    107.900    3.000
+ A02      H1AS   CAS    CAR     109.470    3.000
+ A02      H2AS   CAS    CAR     109.470    3.000
+ A02      CAS    CAR    H1AR    109.470    3.000
+ A02      CAS    CAR    H2AR    109.470    3.000
+ A02      CAS    CAR    NAC     109.470    3.000
+ A02      H1AR   CAR    H2AR    107.900    3.000
+ A02      H1AR   CAR    NAC     109.470    3.000
+ A02      H2AR   CAR    NAC     109.470    3.000
+ A02      CAR    NAC    H2AC    120.000    3.000
+ A02      CAR    NAC    H1AC    120.000    3.000
+ A02      H2AC   NAC    H1AC    120.000    3.000
+ A02      CCI    NBS    HNBS    118.500    3.000
+ A02      CCI    NBS    CBZ     121.500    3.000
+ A02      HNBS   NBS    CBZ     120.000    3.000
+ A02      NBS    CBZ    OAI     123.000    3.000
+ A02      NBS    CBZ    CBG     116.500    3.000
+ A02      OAI    CBZ    CBG     120.500    3.000
+ A02      CBZ    CBG    H1BG    109.470    3.000
+ A02      CBZ    CBG    H2BG    109.470    3.000
+ A02      CBZ    CBG    CAX     109.470    3.000
+ A02      H1BG   CBG    H2BG    107.900    3.000
+ A02      H1BG   CBG    CAX     109.470    3.000
+ A02      H2BG   CBG    CAX     109.470    3.000
+ A02      CBG    CAX    H1AX    109.470    3.000
+ A02      CBG    CAX    H2AX    109.470    3.000
+ A02      CBG    CAX    CAU     111.000    3.000
+ A02      H1AX   CAX    H2AX    107.900    3.000
+ A02      H1AX   CAX    CAU     109.470    3.000
+ A02      H2AX   CAX    CAU     109.470    3.000
+ A02      CAX    CAU    H1AU    109.470    3.000
+ A02      CAX    CAU    H2AU    109.470    3.000
+ A02      CAX    CAU    CAW     111.000    3.000
+ A02      H1AU   CAU    H2AU    107.900    3.000
+ A02      H1AU   CAU    CAW     109.470    3.000
+ A02      H2AU   CAU    CAW     109.470    3.000
+ A02      CAU    CAW    H1AW    109.470    3.000
+ A02      CAU    CAW    H2AW    109.470    3.000
+ A02      CAU    CAW    CBD     111.000    3.000
+ A02      H1AW   CAW    H2AW    107.900    3.000
+ A02      H1AW   CAW    CBD     109.470    3.000
+ A02      H2AW   CAW    CBD     109.470    3.000
+ A02      CAW    CBD    H1BD    109.470    3.000
+ A02      CAW    CBD    H2BD    109.470    3.000
+ A02      CAW    CBD    NBR     112.000    3.000
+ A02      H1BD   CBD    H2BD    107.900    3.000
+ A02      H1BD   CBD    NBR     109.470    3.000
+ A02      H2BD   CBD    NBR     109.470    3.000
+ A02      CBD    NBR    HNBR    118.500    3.000
+ A02      CBD    NBR    CCC     121.500    3.000
+ A02      HNBR   NBR    CCC     120.000    3.000
+ A02      NBR    CCC    OAL     123.000    3.000
+ A02      NBR    CCC    CCM     116.500    3.000
+ A02      OAL    CCC    CCM     120.500    3.000
+ A02      CCC    CCM    HCM     108.810    3.000
+ A02      CCC    CCM    CCK     109.470    3.000
+ A02      CCC    CCM    OBV     109.470    3.000
+ A02      HCM    CCM    CCK     108.340    3.000
+ A02      HCM    CCM    OBV     109.470    3.000
+ A02      CCK    CCM    OBV     109.470    3.000
+ A02      CCM    CCK    HCK     108.340    3.000
+ A02      CCM    CCK    OAN     109.470    3.000
+ A02      CCM    CCK    CCL     111.000    3.000
+ A02      HCK    CCK    OAN     109.470    3.000
+ A02      HCK    CCK    CCL     108.340    3.000
+ A02      OAN    CCK    CCL     109.470    3.000
+ A02      CCK    OAN    HOAN    109.470    3.000
+ A02      CCK    CCL    HCL     108.340    3.000
+ A02      CCK    CCL    OAO     109.470    3.000
+ A02      CCK    CCL    CCN     111.000    3.000
+ A02      HCL    CCL    OAO     109.470    3.000
+ A02      HCL    CCL    CCN     108.340    3.000
+ A02      OAO    CCL    CCN     109.470    3.000
+ A02      CCL    OAO    HOAO    109.470    3.000
+ A02      CCL    CCN    HCN     108.340    3.000
+ A02      CCL    CCN    OBV     109.470    3.000
+ A02      CCL    CCN    N9      109.470    3.000
+ A02      HCN    CCN    OBV     109.470    3.000
+ A02      HCN    CCN    N9      109.470    3.000
+ A02      OBV    CCN    N9      109.470    3.000
+ A02      CCN    OBV    CCM     111.800    3.000
+ A02      CCN    N9     C4      126.000    3.000
+ A02      CCN    N9     C8      126.000    3.000
+ A02      C4     N9     C8      108.000    3.000
+ A02      N9     C4     N3      132.000    3.000
+ A02      N9     C4     C5      108.000    3.000
+ A02      N3     C4     C5      120.000    3.000
+ A02      C4     N3     C2      120.000    3.000
+ A02      N3     C2     H2      120.000    3.000
+ A02      N3     C2     N1      120.000    3.000
+ A02      H2     C2     N1      120.000    3.000
+ A02      N9     C8     H8      126.000    3.000
+ A02      N9     C8     N7      108.000    3.000
+ A02      H8     C8     N7      126.000    3.000
+ A02      C8     N7     C5      108.000    3.000
+ A02      N7     C5     C6      132.000    3.000
+ A02      N7     C5     C4      108.000    3.000
+ A02      C6     C5     C4      120.000    3.000
+ A02      C5     C6     N1      120.000    3.000
+ A02      C5     C6     N6      120.000    3.000
+ A02      N1     C6     N6      120.000    3.000
+ A02      C6     N1     C2      120.000    3.000
+ A02      C6     N6     H2N6    120.000    3.000
+ A02      C6     N6     H1N6    120.000    3.000
+ A02      H2N6   N6     H1N6    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ A02      CONST_1  O      C      NAF    H1AF     180.000    0.000   0
+ A02      var_1    O      C      CA     N         -0.010   20.000   3
+ A02      var_2    C      CA     CB     CG      -174.999   20.000   3
+ A02      var_3    CA     CB     CG     CD      -179.992   20.000   3
+ A02      var_4    CB     CG     CD     NE       179.992   20.000   3
+ A02      var_5    CG     CD     NE     CZ       179.962   20.000   3
+ A02      CONST_2  CD     NE     CZ     NH1      180.000    0.000   0
+ A02      CONST_3  NE     CZ     NH2    H1H2     180.000    0.000   0
+ A02      CONST_4  NE     CZ     NH1    H1H1       0.000    0.000   0
+ A02      var_6    C      CA     N      CCD       84.995   20.000   3
+ A02      CONST_5  CA     N      CCD    CCJ      180.000    0.000   0
+ A02      var_7    N      CCD    CCJ    NBT      179.997   20.000   3
+ A02      var_8    CCD    CCJ    CBK    CBB     -175.020   20.000   3
+ A02      var_9    CCJ    CBK    CBB    CBF      179.981   20.000   3
+ A02      var_10   CBK    CBB    CBF    NBP     -179.981   20.000   3
+ A02      var_11   CBB    CBF    NBP    CBX     -179.980   20.000   3
+ A02      CONST_6  CBF    NBP    CBX    NAB      180.000    0.000   0
+ A02      CONST_7  NBP    CBX    NAE    H1AE     180.000    0.000   0
+ A02      CONST_8  NBP    CBX    NAB    H1AB       0.000    0.000   0
+ A02      var_12   CCD    CCJ    NBT    CCA      155.019   20.000   3
+ A02      CONST_9  CCJ    NBT    CCA    CBH      180.000    0.000   0
+ A02      var_13   NBT    CCA    CBH    CAY     -179.987   20.000   3
+ A02      var_14   CCA    CBH    CAY    CAT     -179.970   20.000   3
+ A02      var_15   CBH    CAY    CAT    CAV      180.000   20.000   3
+ A02      var_16   CAY    CAT    CAV    CBC      180.000   20.000   3
+ A02      var_17   CAT    CAV    CBC    NBQ     -179.962   20.000   3
+ A02      var_18   CAV    CBC    NBQ    CCB     -179.987   20.000   3
+ A02      CONST_10 CBC    NBQ    CCB    CCI      180.000    0.000   0
+ A02      var_19   NBQ    CCB    CCI    NBS     -179.997   20.000   3
+ A02      var_20   CCB    CCI    CBJ    CAZ     -175.007   20.000   3
+ A02      var_21   CCI    CBJ    CAZ    CAS      179.978   20.000   3
+ A02      var_22   CBJ    CAZ    CAS    CAR     -179.971   20.000   3
+ A02      var_23   CAZ    CAS    CAR    NAC     -179.994   20.000   3
+ A02      var_24   CAS    CAR    NAC    H1AC     179.992   20.000   1
+ A02      var_25   CCB    CCI    NBS    CBZ      155.036   20.000   3
+ A02      CONST_11 CCI    NBS    CBZ    CBG      180.000    0.000   0
+ A02      var_26   NBS    CBZ    CBG    CAX      179.968   20.000   3
+ A02      var_27   CBZ    CBG    CAX    CAU      179.998   20.000   3
+ A02      var_28   CBG    CAX    CAU    CAW     -179.996   20.000   3
+ A02      var_29   CAX    CAU    CAW    CBD      180.000   20.000   3
+ A02      var_30   CAU    CAW    CBD    NBR      179.999   20.000   3
+ A02      var_31   CAW    CBD    NBR    CCC     -179.989   20.000   3
+ A02      CONST_12 CBD    NBR    CCC    CCM      180.000    0.000   0
+ A02      var_32   NBR    CCC    CCM    CCK      -68.172   20.000   3
+ A02      var_33   CCC    CCM    CCK    CCL     -150.000   20.000   3
+ A02      var_34   CCM    CCK    OAN    HOAN     -65.386   20.000   1
+ A02      var_35   CCM    CCK    CCL    CCN        0.000   20.000   3
+ A02      var_36   CCK    CCL    OAO    HOAO     -61.481   20.000   1
+ A02      var_37   CCK    CCL    CCN    N9       150.000   20.000   3
+ A02      var_38   CCL    CCN    OBV    CCM      -30.000   20.000   1
+ A02      var_39   CCN    OBV    CCM    CCC      150.000   20.000   1
+ A02      var_40   CCL    CCN    N9     C8       -91.829   20.000   1
+ A02      CONST_13 CCN    N9     C4     N3         0.000    0.000   0
+ A02      CONST_14 N9     C4     C5     N7         0.000    0.000   0
+ A02      CONST_15 N9     C4     N3     C2       180.000    0.000   0
+ A02      CONST_16 C4     N3     C2     N1         0.000    0.000   0
+ A02      CONST_17 CCN    N9     C8     N7       180.000    0.000   0
+ A02      CONST_18 N9     C8     N7     C5         0.000    0.000   0
+ A02      CONST_19 C8     N7     C5     C6       180.000    0.000   0
+ A02      CONST_20 N7     C5     C6     N6         0.000    0.000   0
+ A02      CONST_21 C5     C6     N1     C2         0.000    0.000   0
+ A02      CONST_22 C6     N1     C2     N3         0.000    0.000   0
+ A02      CONST_23 C5     C6     N6     H1N6    -179.999    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ A02      chir_01  CCK    OAN    CCL    CCM       negativ
+ A02      chir_02  CCL    OAO    CCK    CCN       positiv
+ A02      chir_03  CCM    OBV    CCC    CCK       positiv
+ A02      chir_04  CCN    N9     OBV    CCL       positiv
+ A02      chir_05  CCI    NBS    CCB    CBJ       negativ
+ A02      chir_06  CCJ    NBT    CBK    CCD       positiv
+ A02      chir_07  CA     N      CB     C         positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ A02      plan-1    N1        0.020
+ A02      plan-1    C2        0.020
+ A02      plan-1    C6        0.020
+ A02      plan-1    N3        0.020
+ A02      plan-1    H2        0.020
+ A02      plan-1    C4        0.020
+ A02      plan-1    C5        0.020
+ A02      plan-1    N9        0.020
+ A02      plan-1    N7        0.020
+ A02      plan-1    C8        0.020
+ A02      plan-1    N6        0.020
+ A02      plan-1    H8        0.020
+ A02      plan-1    CCN       0.020
+ A02      plan-1    H2N6      0.020
+ A02      plan-1    H1N6      0.020
+ A02      plan-2    N6        0.020
+ A02      plan-2    C6        0.020
+ A02      plan-2    H1N6      0.020
+ A02      plan-2    H2N6      0.020
+ A02      plan-3    CCC       0.020
+ A02      plan-3    OAL       0.020
+ A02      plan-3    CCM       0.020
+ A02      plan-3    NBR       0.020
+ A02      plan-3    HNBR      0.020
+ A02      plan-4    CBZ       0.020
+ A02      plan-4    OAI       0.020
+ A02      plan-4    CBG       0.020
+ A02      plan-4    NBS       0.020
+ A02      plan-4    HNBS      0.020
+ A02      plan-5    NBR       0.020
+ A02      plan-5    CCC       0.020
+ A02      plan-5    CBD       0.020
+ A02      plan-5    HNBR      0.020
+ A02      plan-6    NBS       0.020
+ A02      plan-6    CBZ       0.020
+ A02      plan-6    CCI       0.020
+ A02      plan-6    HNBS      0.020
+ A02      plan-7    CCB       0.020
+ A02      plan-7    CCI       0.020
+ A02      plan-7    OAK       0.020
+ A02      plan-7    NBQ       0.020
+ A02      plan-7    HNBQ      0.020
+ A02      plan-8    NAC       0.020
+ A02      plan-8    CAR       0.020
+ A02      plan-8    H1AC      0.020
+ A02      plan-8    H2AC      0.020
+ A02      plan-9    CCA       0.020
+ A02      plan-9    OAJ       0.020
+ A02      plan-9    CBH       0.020
+ A02      plan-9    NBT       0.020
+ A02      plan-9    HNBT      0.020
+ A02      plan-10   NBQ       0.020
+ A02      plan-10   CCB       0.020
+ A02      plan-10   CBC       0.020
+ A02      plan-10   HNBQ      0.020
+ A02      plan-11   NBT       0.020
+ A02      plan-11   CCA       0.020
+ A02      plan-11   CCJ       0.020
+ A02      plan-11   HNBT      0.020
+ A02      plan-12   NBP       0.020
+ A02      plan-12   CBF       0.020
+ A02      plan-12   CBX       0.020
+ A02      plan-12   HNBP      0.020
+ A02      plan-13   CBX       0.020
+ A02      plan-13   NBP       0.020
+ A02      plan-13   NAB       0.020
+ A02      plan-13   NAE       0.020
+ A02      plan-13   H1AE      0.020
+ A02      plan-13   HNBP      0.020
+ A02      plan-13   H2AB      0.020
+ A02      plan-13   H1AB      0.020
+ A02      plan-14   NAB       0.020
+ A02      plan-14   CBX       0.020
+ A02      plan-14   H1AB      0.020
+ A02      plan-14   H2AB      0.020
+ A02      plan-15   CCD       0.020
+ A02      plan-15   CCJ       0.020
+ A02      plan-15   OAM       0.020
+ A02      plan-15   N         0.020
+ A02      plan-15   HN        0.020
+ A02      plan-16   N         0.020
+ A02      plan-16   CCD       0.020
+ A02      plan-16   CA        0.020
+ A02      plan-16   HN        0.020
+ A02      plan-17   NE        0.020
+ A02      plan-17   CD        0.020
+ A02      plan-17   CZ        0.020
+ A02      plan-17   HNE       0.020
+ A02      plan-18   CZ        0.020
+ A02      plan-18   NE        0.020
+ A02      plan-18   NH1       0.020
+ A02      plan-18   NH2       0.020
+ A02      plan-18   H1H2      0.020
+ A02      plan-18   HNE       0.020
+ A02      plan-18   H2H1      0.020
+ A02      plan-18   H1H1      0.020
+ A02      plan-19   NH1       0.020
+ A02      plan-19   CZ        0.020
+ A02      plan-19   H1H1      0.020
+ A02      plan-19   H2H1      0.020
+ A02      plan-20   C         0.020
+ A02      plan-20   CA        0.020
+ A02      plan-20   O         0.020
+ A02      plan-20   NAF       0.020
+ A02      plan-20   H2AF      0.020
+ A02      plan-20   H1AF      0.020
+ A02      plan-21   NAF       0.020
+ A02      plan-21   C         0.020
+ A02      plan-21   H1AF      0.020
+ A02      plan-21   H2AF      0.020
+# ------------------------------------------------------

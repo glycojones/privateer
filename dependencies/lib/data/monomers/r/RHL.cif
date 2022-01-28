@@ -1,0 +1,428 @@
+global_
+_lib_name         mon_lib
+_lib_version      5.44
+_lib_update       30/05/14
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RHL      RHL '[N,N-di(pyridin-2-yl-kappaN)dodecana' non-polymer        58  27 .
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RHL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RHL           O1     O    O         0.000     32.851   45.191  112.781
+ RHL           C1     C    C         0.000     32.757   45.445  111.597
+ RHL           N5     N    N         0.000     31.545   45.987  111.087
+ RHL           C15    C    CR6       0.000     30.439   46.239  111.934
+ RHL           C14    C    CR16      0.000     29.686   45.187  112.426
+ RHL           H14    H    H         0.000     29.948   44.167  112.175
+ RHL           C13    C    CR16      0.000     28.612   45.440  113.229
+ RHL           H13    H    H         0.000     28.025   44.621  113.626
+ RHL           C12    C    CR16      0.000     28.280   46.730  113.530
+ RHL           H12    H    H         0.000     27.426   46.933  114.166
+ RHL           C11    C    CR16      0.000     29.030   47.782  113.026
+ RHL           H11    H    H         0.000     28.763   48.804  113.267
+ RHL           N4     N    NR6       0.000     30.103   47.526  112.228
+ RHL           C16    C    CR6       0.000     31.356   46.307  109.721
+ RHL           C17    C    CR16      0.000     30.898   45.344  108.837
+ RHL           H17    H    H         0.000     30.700   44.338  109.187
+ RHL           C18    C    CR16      0.000     30.696   45.663  107.527
+ RHL           H18    H    H         0.000     30.350   44.910  106.830
+ RHL           C19    C    CR16      0.000     30.932   46.938  107.099
+ RHL           H19    H    H         0.000     30.769   47.197  106.060
+ RHL           C20    C    CR16      0.000     31.379   47.903  107.990
+ RHL           H20    H    H         0.000     31.566   48.913  107.646
+ RHL           N6     N    NR6       0.000     31.582   47.580  109.296
+ RHL           RH1    RH   RH        0.000     31.813   48.502  111.106
+ RHL           C2     C    CH2       0.000     33.945   45.167  110.702
+ RHL           H21    H    H         0.000     34.124   46.025  110.050
+ RHL           H22    H    H         0.000     33.748   44.283  110.093
+ RHL           C3     C    CH2       0.000     35.166   44.925  111.569
+ RHL           H31    H    H         0.000     34.863   44.972  112.618
+ RHL           H32    H    H         0.000     35.897   45.711  111.368
+ RHL           C4     C    CH2       0.000     35.781   43.576  111.280
+ RHL           H41    H    H         0.000     35.196   43.075  110.506
+ RHL           H42    H    H         0.000     35.767   42.974  112.191
+ RHL           C5     C    CH2       0.000     37.205   43.746  110.808
+ RHL           H51    H    H         0.000     37.691   44.514  111.414
+ RHL           H52    H    H         0.000     37.198   44.059  109.762
+ RHL           C6     C    CH2       0.000     37.962   42.442  110.941
+ RHL           H61    H    H         0.000     37.358   41.614  110.563
+ RHL           H62    H    H         0.000     38.216   42.257  111.987
+ RHL           C7     C    CH2       0.000     39.228   42.558  110.127
+ RHL           H71    H    H         0.000     39.753   43.463  110.441
+ RHL           H72    H    H         0.000     38.949   42.647  109.075
+ RHL           C8     C    CH2       0.000     40.130   41.360  110.312
+ RHL           H81    H    H         0.000     39.616   40.433  110.049
+ RHL           H82    H    H         0.000     40.495   41.294  111.339
+ RHL           C9     C    CH2       0.000     41.290   41.575  109.378
+ RHL           H91    H    H         0.000     41.768   42.523  109.633
+ RHL           H92    H    H         0.000     40.907   41.626  108.357
+ RHL           CA     C    CH2       0.000     42.293   40.460  109.485
+ RHL           HA1    H    H         0.000     42.096   39.688  108.739
+ RHL           HA2    H    H         0.000     42.273   40.015  110.482
+ RHL           CB     C    CH2       0.000     43.649   41.073  109.232
+ RHL           HB1    H    H         0.000     44.184   41.169  110.179
+ RHL           HB2    H    H         0.000     43.521   42.062  108.786
+ RHL           C01    C    CH3       0.000     44.436   40.195  108.295
+ RHL           H013   H    H         0.000     44.558   39.238  108.730
+ RHL           H012   H    H         0.000     43.915   40.104  107.379
+ RHL           H011   H    H         0.000     45.385   40.629  108.121
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RHL      O1     n/a    C1     START
+ RHL      C1     O1     C2     .
+ RHL      N5     C1     C16    .
+ RHL      C15    N5     N4     .
+ RHL      C14    C15    C13    .
+ RHL      H14    C14    .      .
+ RHL      C13    C14    C12    .
+ RHL      H13    C13    .      .
+ RHL      C12    C13    C11    .
+ RHL      H12    C12    .      .
+ RHL      C11    C12    H11    .
+ RHL      H11    C11    .      .
+ RHL      N4     C15    .      .
+ RHL      C16    N5     C17    .
+ RHL      C17    C16    C18    .
+ RHL      H17    C17    .      .
+ RHL      C18    C17    C19    .
+ RHL      H18    C18    .      .
+ RHL      C19    C18    C20    .
+ RHL      H19    C19    .      .
+ RHL      C20    C19    N6     .
+ RHL      H20    C20    .      .
+ RHL      N6     C20    RH1    .
+ RHL      RH1    N6     .      .
+ RHL      C2     C1     C3     .
+ RHL      H21    C2     .      .
+ RHL      H22    C2     .      .
+ RHL      C3     C2     C4     .
+ RHL      H31    C3     .      .
+ RHL      H32    C3     .      .
+ RHL      C4     C3     C5     .
+ RHL      H41    C4     .      .
+ RHL      H42    C4     .      .
+ RHL      C5     C4     C6     .
+ RHL      H51    C5     .      .
+ RHL      H52    C5     .      .
+ RHL      C6     C5     C7     .
+ RHL      H61    C6     .      .
+ RHL      H62    C6     .      .
+ RHL      C7     C6     C8     .
+ RHL      H71    C7     .      .
+ RHL      H72    C7     .      .
+ RHL      C8     C7     C9     .
+ RHL      H81    C8     .      .
+ RHL      H82    C8     .      .
+ RHL      C9     C8     CA     .
+ RHL      H91    C9     .      .
+ RHL      H92    C9     .      .
+ RHL      CA     C9     CB     .
+ RHL      HA1    CA     .      .
+ RHL      HA2    CA     .      .
+ RHL      CB     CA     C01    .
+ RHL      HB1    CB     .      .
+ RHL      HB2    CB     .      .
+ RHL      C01    CB     H011   .
+ RHL      H013   C01    .      .
+ RHL      H012   C01    .      .
+ RHL      H011   C01    .      END
+ RHL      RH1    N4     .    ADD
+ RHL      N4     C11    .    ADD
+ RHL      N6     C16    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RHL       C1        O1        double    1.220     0.020     1.220     0.020     
+RHL       C2        C1        single    1.510     0.020     1.510     0.020     
+RHL       N5        C1        single    1.330     0.020     1.330     0.020     
+RHL       C3        C2        single    1.524     0.020     1.524     0.020     
+RHL       C4        C3        single    1.524     0.020     1.524     0.020     
+RHL       C5        C4        single    1.524     0.020     1.524     0.020     
+RHL       C6        C5        single    1.524     0.020     1.524     0.020     
+RHL       C7        C6        single    1.524     0.020     1.524     0.020     
+RHL       C8        C7        single    1.524     0.020     1.524     0.020     
+RHL       C9        C8        single    1.524     0.020     1.524     0.020     
+RHL       CA        C9        single    1.524     0.020     1.524     0.020     
+RHL       CB        CA        single    1.524     0.020     1.524     0.020     
+RHL       C01       CB        single    1.513     0.020     1.513     0.020     
+RHL       RH1       N4        single    2.266     0.020     2.266     0.020     
+RHL       RH1       N6        single    2.044     0.020     2.044     0.020     
+RHL       N4        C11       single    1.337     0.020     1.337     0.020     
+RHL       N4        C15       single    1.410     0.020     1.410     0.020     
+RHL       C15       N5        single    1.400     0.020     1.400     0.020     
+RHL       C16       N5        single    1.400     0.020     1.400     0.020     
+RHL       N6        C16       single    1.410     0.020     1.410     0.020     
+RHL       N6        C20       single    1.337     0.020     1.337     0.020     
+RHL       C11       C12       aromatic  1.390     0.020     1.390     0.020     
+RHL       C12       C13       aromatic  1.390     0.020     1.390     0.020     
+RHL       C13       C14       aromatic  1.390     0.020     1.390     0.020     
+RHL       C14       C15       aromatic  1.390     0.020     1.390     0.020     
+RHL       C17       C16       aromatic  1.390     0.020     1.390     0.020     
+RHL       C18       C17       aromatic  1.390     0.020     1.390     0.020     
+RHL       C19       C18       aromatic  1.390     0.020     1.390     0.020     
+RHL       C20       C19       aromatic  1.390     0.020     1.390     0.020     
+RHL       H21       C2        single    1.089     0.010     0.989     0.005     
+RHL       H22       C2        single    1.089     0.010     0.989     0.005     
+RHL       H31       C3        single    1.089     0.010     0.989     0.005     
+RHL       H32       C3        single    1.089     0.010     0.989     0.005     
+RHL       H41       C4        single    1.089     0.010     0.989     0.005     
+RHL       H42       C4        single    1.089     0.010     0.989     0.005     
+RHL       H51       C5        single    1.089     0.010     0.989     0.005     
+RHL       H52       C5        single    1.089     0.010     0.989     0.005     
+RHL       H61       C6        single    1.089     0.010     0.989     0.005     
+RHL       H62       C6        single    1.089     0.010     0.989     0.005     
+RHL       H71       C7        single    1.089     0.010     0.989     0.005     
+RHL       H72       C7        single    1.089     0.010     0.989     0.005     
+RHL       H81       C8        single    1.089     0.010     0.989     0.005     
+RHL       H82       C8        single    1.089     0.010     0.989     0.005     
+RHL       H91       C9        single    1.089     0.010     0.989     0.005     
+RHL       H92       C9        single    1.089     0.010     0.989     0.005     
+RHL       HA1       CA        single    1.089     0.010     0.989     0.005     
+RHL       HA2       CA        single    1.089     0.010     0.989     0.005     
+RHL       HB1       CB        single    1.089     0.010     0.989     0.005     
+RHL       HB2       CB        single    1.089     0.010     0.989     0.005     
+RHL       H11       C11       single    1.082     0.013     0.975     0.010     
+RHL       H12       C12       single    1.082     0.013     0.975     0.010     
+RHL       H13       C13       single    1.082     0.013     0.975     0.010     
+RHL       H14       C14       single    1.082     0.013     0.975     0.010     
+RHL       H17       C17       single    1.082     0.013     0.975     0.010     
+RHL       H18       C18       single    1.082     0.013     0.975     0.010     
+RHL       H19       C19       single    1.082     0.013     0.975     0.010     
+RHL       H20       C20       single    1.082     0.013     0.975     0.010     
+RHL       H011      C01       single    1.089     0.010     0.989     0.005     
+RHL       H012      C01       single    1.089     0.010     0.989     0.005     
+RHL       H013      C01       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RHL      O1     C1     N5      123.000    3.000
+ RHL      O1     C1     C2      120.500    3.000
+ RHL      N5     C1     C2      116.500    3.000
+ RHL      C1     N5     C15     120.000    3.000
+ RHL      C1     N5     C16     120.000    3.000
+ RHL      C15    N5     C16     120.000    3.000
+ RHL      N5     C15    C14     120.000    3.000
+ RHL      N5     C15    N4      120.000    3.000
+ RHL      C14    C15    N4      120.000    3.000
+ RHL      C15    C14    H14     120.000    3.000
+ RHL      C15    C14    C13     120.000    3.000
+ RHL      H14    C14    C13     120.000    3.000
+ RHL      C14    C13    H13     120.000    3.000
+ RHL      C14    C13    C12     120.000    3.000
+ RHL      H13    C13    C12     120.000    3.000
+ RHL      C13    C12    H12     120.000    3.000
+ RHL      C13    C12    C11     120.000    3.000
+ RHL      H12    C12    C11     120.000    3.000
+ RHL      C12    C11    H11     120.000    3.000
+ RHL      C12    C11    N4      120.000    3.000
+ RHL      H11    C11    N4      120.000    3.000
+ RHL      C15    N4     RH1     120.000    3.000
+ RHL      C15    N4     C11     120.000    3.000
+ RHL      RH1    N4     C11     120.000    3.000
+ RHL      N5     C16    C17     120.000    3.000
+ RHL      N5     C16    N6      120.000    3.000
+ RHL      C17    C16    N6      120.000    3.000
+ RHL      C16    C17    H17     120.000    3.000
+ RHL      C16    C17    C18     120.000    3.000
+ RHL      H17    C17    C18     120.000    3.000
+ RHL      C17    C18    H18     120.000    3.000
+ RHL      C17    C18    C19     120.000    3.000
+ RHL      H18    C18    C19     120.000    3.000
+ RHL      C18    C19    H19     120.000    3.000
+ RHL      C18    C19    C20     120.000    3.000
+ RHL      H19    C19    C20     120.000    3.000
+ RHL      C19    C20    H20     120.000    3.000
+ RHL      C19    C20    N6      120.000    3.000
+ RHL      H20    C20    N6      120.000    3.000
+ RHL      C20    N6     RH1     120.000    3.000
+ RHL      C20    N6     C16     120.000    3.000
+ RHL      RH1    N6     C16     120.000    3.000
+ RHL      N6     RH1    N4       99.140    3.000
+ RHL      C1     C2     H21     109.470    3.000
+ RHL      C1     C2     H22     109.470    3.000
+ RHL      C1     C2     C3      109.470    3.000
+ RHL      H21    C2     H22     107.900    3.000
+ RHL      H21    C2     C3      109.470    3.000
+ RHL      H22    C2     C3      109.470    3.000
+ RHL      C2     C3     H31     109.470    3.000
+ RHL      C2     C3     H32     109.470    3.000
+ RHL      C2     C3     C4      111.000    3.000
+ RHL      H31    C3     H32     107.900    3.000
+ RHL      H31    C3     C4      109.470    3.000
+ RHL      H32    C3     C4      109.470    3.000
+ RHL      C3     C4     H41     109.470    3.000
+ RHL      C3     C4     H42     109.470    3.000
+ RHL      C3     C4     C5      111.000    3.000
+ RHL      H41    C4     H42     107.900    3.000
+ RHL      H41    C4     C5      109.470    3.000
+ RHL      H42    C4     C5      109.470    3.000
+ RHL      C4     C5     H51     109.470    3.000
+ RHL      C4     C5     H52     109.470    3.000
+ RHL      C4     C5     C6      111.000    3.000
+ RHL      H51    C5     H52     107.900    3.000
+ RHL      H51    C5     C6      109.470    3.000
+ RHL      H52    C5     C6      109.470    3.000
+ RHL      C5     C6     H61     109.470    3.000
+ RHL      C5     C6     H62     109.470    3.000
+ RHL      C5     C6     C7      111.000    3.000
+ RHL      H61    C6     H62     107.900    3.000
+ RHL      H61    C6     C7      109.470    3.000
+ RHL      H62    C6     C7      109.470    3.000
+ RHL      C6     C7     H71     109.470    3.000
+ RHL      C6     C7     H72     109.470    3.000
+ RHL      C6     C7     C8      111.000    3.000
+ RHL      H71    C7     H72     107.900    3.000
+ RHL      H71    C7     C8      109.470    3.000
+ RHL      H72    C7     C8      109.470    3.000
+ RHL      C7     C8     H81     109.470    3.000
+ RHL      C7     C8     H82     109.470    3.000
+ RHL      C7     C8     C9      111.000    3.000
+ RHL      H81    C8     H82     107.900    3.000
+ RHL      H81    C8     C9      109.470    3.000
+ RHL      H82    C8     C9      109.470    3.000
+ RHL      C8     C9     H91     109.470    3.000
+ RHL      C8     C9     H92     109.470    3.000
+ RHL      C8     C9     CA      111.000    3.000
+ RHL      H91    C9     H92     107.900    3.000
+ RHL      H91    C9     CA      109.470    3.000
+ RHL      H92    C9     CA      109.470    3.000
+ RHL      C9     CA     HA1     109.470    3.000
+ RHL      C9     CA     HA2     109.470    3.000
+ RHL      C9     CA     CB      111.000    3.000
+ RHL      HA1    CA     HA2     107.900    3.000
+ RHL      HA1    CA     CB      109.470    3.000
+ RHL      HA2    CA     CB      109.470    3.000
+ RHL      CA     CB     HB1     109.470    3.000
+ RHL      CA     CB     HB2     109.470    3.000
+ RHL      CA     CB     C01     111.000    3.000
+ RHL      HB1    CB     HB2     107.900    3.000
+ RHL      HB1    CB     C01     109.470    3.000
+ RHL      HB2    CB     C01     109.470    3.000
+ RHL      CB     C01    H013    109.470    3.000
+ RHL      CB     C01    H012    109.470    3.000
+ RHL      CB     C01    H011    109.470    3.000
+ RHL      H013   C01    H012    109.470    3.000
+ RHL      H013   C01    H011    109.470    3.000
+ RHL      H012   C01    H011    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RHL      var_1            O1     C1     N5     C16              180.000           20.000   2
+ RHL      var_2            C1     N5     C15    N4               108.667           20.000   3
+ RHL      CONST_1          N5     C15    C14    C13                0.000            0.000   0
+ RHL      CONST_2          C15    C14    C13    C12                0.000            0.000   0
+ RHL      CONST_3          C14    C13    C12    C11                0.000            0.000   0
+ RHL      CONST_4          C13    C12    C11    N4                 0.000            0.000   0
+ RHL      CONST_5          N5     C15    N4     RH1                0.000            0.000   0
+ RHL      CONST_6          C15    N4     C11    C12                0.000            0.000   0
+ RHL      var_3            C1     N5     C16    C17               87.722           20.000   3
+ RHL      CONST_7          N5     C16    C17    C18                0.000            0.000   0
+ RHL      CONST_8          C16    C17    C18    C19                0.000            0.000   0
+ RHL      CONST_9          C17    C18    C19    C20                0.000            0.000   0
+ RHL      CONST_10         C18    C19    C20    N6                 0.000            0.000   0
+ RHL      CONST_11         C19    C20    N6     RH1                0.000            0.000   0
+ RHL      CONST_12         C20    N6     C16    N5                 0.000            0.000   0
+ RHL      var_4            C20    N6     RH1    N4               122.419           20.000   3
+ RHL      var_5            N6     RH1    N4     C15               51.740           20.000   3
+ RHL      var_6            O1     C1     C2     C3               180.000           20.000   3
+ RHL      var_7            C1     C2     C3     C4               180.000           20.000   3
+ RHL      var_8            C2     C3     C4     C5               180.000           20.000   3
+ RHL      var_9            C3     C4     C5     C6               180.000           20.000   3
+ RHL      var_10           C4     C5     C6     C7               180.000           20.000   3
+ RHL      var_11           C5     C6     C7     C8               180.000           20.000   3
+ RHL      var_12           C6     C7     C8     C9               180.000           20.000   3
+ RHL      var_13           C7     C8     C9     CA               180.000           20.000   3
+ RHL      var_14           C8     C9     CA     CB               180.000           20.000   3
+ RHL      var_15           C9     CA     CB     C01              180.000           20.000   3
+ RHL      var_16           CA     CB     C01    H011             180.000           20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RHL      chir_01          RH1    N6     .      N4        cross1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RHL      plan-1            C1        0.020
+ RHL      plan-1            O1        0.020
+ RHL      plan-1            C2        0.020
+ RHL      plan-1            N5        0.020
+ RHL      plan-2            N4        0.020
+ RHL      plan-2            RH1       0.020
+ RHL      plan-2            C11       0.020
+ RHL      plan-2            C15       0.020
+ RHL      plan-2            C12       0.020
+ RHL      plan-2            C13       0.020
+ RHL      plan-2            C14       0.020
+ RHL      plan-2            H11       0.020
+ RHL      plan-2            H12       0.020
+ RHL      plan-2            H13       0.020
+ RHL      plan-2            H14       0.020
+ RHL      plan-2            N5        0.020
+ RHL      plan-3            N5        0.020
+ RHL      plan-3            C1        0.020
+ RHL      plan-3            C15       0.020
+ RHL      plan-3            C16       0.020
+ RHL      plan-4            N6        0.020
+ RHL      plan-4            RH1       0.020
+ RHL      plan-4            C16       0.020
+ RHL      plan-4            C20       0.020
+ RHL      plan-4            C17       0.020
+ RHL      plan-4            C18       0.020
+ RHL      plan-4            C19       0.020
+ RHL      plan-4            N5        0.020
+ RHL      plan-4            H17       0.020
+ RHL      plan-4            H18       0.020
+ RHL      plan-4            H19       0.020
+ RHL      plan-4            H20       0.020
+# ------------------------------------------------------
+# ------------------------------------------------------

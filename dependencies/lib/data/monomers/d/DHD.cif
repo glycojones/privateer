@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DHD     DHD      "2,4-DIOXO-PENTANEDIOIC ACID"     NON-POLYMER     13     11     .     
+#
+data_comp_DHD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DHD     C1      C       C       0       -2.151      0.229       -0.455      
+DHD     C2      C       C       0       -1.127      -0.587      -0.243      
+DHD     C3      C       CH2     0       -0.028      -0.290      0.756       
+DHD     C4      C       C       0       1.117       0.525       0.187       
+DHD     C5      C       C       0       2.174       -0.014      -0.407      
+DHD     O11     O       O       0       -3.246      -0.218      -0.827      
+DHD     O12     O       OC      -1      -1.975      1.441       -0.296      
+DHD     O51     O       OC      -1      3.260       0.581       -0.391      
+DHD     O52     O       O       0       2.044       -1.094      -0.993      
+DHD     O4      O       O       0       1.028       1.742       0.263       
+DHD     O2      O       O       0       -1.024      -1.617      -0.896      
+DHD     H31     H       H       0       0.325       -1.136      1.104       
+DHD     H32     H       H       0       -0.410      0.189       1.521       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DHD       C1        C2        SINGLE    n         1.299     0.020     1.299     0.020     
+DHD       C1        O11       DOUBLE    n         1.230     0.020     1.230     0.020     
+DHD       C1        O12       SINGLE    n         1.230     0.020     1.230     0.020     
+DHD       C2        C3        SINGLE    n         1.506     0.020     1.506     0.020     
+DHD       C2        O2        DOUBLE    n         1.220     0.012     1.220     0.012     
+DHD       C3        C4        SINGLE    n         1.506     0.020     1.506     0.020     
+DHD       C4        C5        SINGLE    n         1.299     0.020     1.299     0.020     
+DHD       C4        O4        DOUBLE    n         1.220     0.012     1.220     0.012     
+DHD       C5        O51       SINGLE    n         1.230     0.020     1.230     0.020     
+DHD       C5        O52       DOUBLE    n         1.230     0.020     1.230     0.020     
+DHD       C3        H31       SINGLE    n         1.089     0.010     0.980     0.020     
+DHD       C3        H32       SINGLE    n         1.089     0.010     0.980     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DHD          C2          C1         O11     118.654    3.00
+DHD          C2          C1         O12     118.654    3.00
+DHD         O11          C1         O12     122.692    1.63
+DHD          C1          C2          C3     122.941    3.00
+DHD          C1          C2          O2     118.636    3.00
+DHD          C3          C2          O2     118.423    1.50
+DHD          C2          C3          C4     114.535    3.00
+DHD          C2          C3         H31     109.153    1.50
+DHD          C2          C3         H32     109.153    1.50
+DHD          C4          C3         H31     109.153    1.50
+DHD          C4          C3         H32     109.153    1.50
+DHD         H31          C3         H32     106.837    1.50
+DHD          C3          C4          C5     122.941    3.00
+DHD          C3          C4          O4     118.423    1.50
+DHD          C5          C4          O4     118.636    3.00
+DHD          C4          C5         O51     118.654    3.00
+DHD          C4          C5         O52     118.654    3.00
+DHD         O51          C5         O52     122.692    1.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DHD             sp2_sp2_1         O11          C1          C2          C3     180.000   10.00     2
+DHD             sp2_sp3_2          C1          C2          C3          C4     120.000   10.00     6
+DHD             sp2_sp3_8          C5          C4          C3          C2     120.000   10.00     6
+DHD             sp2_sp2_5          C3          C4          C5         O51     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DHD    plan-1          C1   0.020
+DHD    plan-1          C2   0.020
+DHD    plan-1         O11   0.020
+DHD    plan-1         O12   0.020
+DHD    plan-2          C1   0.020
+DHD    plan-2          C2   0.020
+DHD    plan-2          C3   0.020
+DHD    plan-2          O2   0.020
+DHD    plan-3          C3   0.020
+DHD    plan-3          C4   0.020
+DHD    plan-3          C5   0.020
+DHD    plan-3          O4   0.020
+DHD    plan-4          C4   0.020
+DHD    plan-4          C5   0.020
+DHD    plan-4         O51   0.020
+DHD    plan-4         O52   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DHD SMILES           ACDLabs              10.04 "O=C(C(=O)O)CC(=O)C(=O)O"
+DHD SMILES_CANONICAL CACTVS               3.341 "OC(=O)C(=O)CC(=O)C(O)=O"
+DHD SMILES           CACTVS               3.341 "OC(=O)C(=O)CC(=O)C(O)=O"
+DHD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)C(=O)O)C(=O)C(=O)O"
+DHD SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)C(=O)O)C(=O)C(=O)O"
+DHD InChI            InChI                1.03  "InChI=1S/C5H4O6/c6-2(4(8)9)1-3(7)5(10)11/h1H2,(H,8,9)(H,10,11)"
+DHD InChIKey         InChI                1.03  TVKBBTQJNQDZRU-UHFFFAOYSA-N
+DHD ?                acedrg               202         "dictionary generator"                  
+DHD ?                acedrg_database      11          "data source"                           
+DHD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DHD ?                refmac5              5.8.0189    "optimization tool"                     

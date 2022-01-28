@@ -1,0 +1,183 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PAL     PAL     "N-(PHOSPHONACETYL)-L-ASPARTICACID"     NON-POLYMER     22     16     .     
+#
+data_comp_PAL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PAL     P       P       P       0       3.170       -0.808      0.165       
+PAL     O1P     O       O       0       4.643       -0.826      -0.140      
+PAL     O2P     O       OP      -1      2.489       -2.036      -0.378      
+PAL     O3P     O       OP      -1      2.923       -0.661      1.642       
+PAL     C1P     C       CH2     0       2.449       0.638       -0.664      
+PAL     C1      C       C       0       1.003       0.868       -0.313      
+PAL     O1      O       O       0       0.684       1.819       0.404       
+PAL     N2      N       NH1     0       0.124       -0.007      -0.837      
+PAL     C2      C       CH1     0       -1.296      -0.099      -0.501      
+PAL     C4      C       C       0       -2.076      1.104       -1.070      
+PAL     O2      O       O       0       -2.191      2.127       -0.361      
+PAL     O3      O       OC      -1      -2.547      0.974       -2.218      
+PAL     C3      C       CH2     0       -1.536      -0.364      0.987       
+PAL     C5      C       C       0       -2.960      -0.783      1.312       
+PAL     O4      O       O       0       -3.356      -1.888      0.891       
+PAL     O5      O       OC      -1      -3.662      -0.000      1.983       
+PAL     H1P1    H       H       0       2.527       0.514       -1.629      
+PAL     H1P2    H       H       0       2.966       1.427       -0.416      
+PAL     HN2     H       H       0       0.409       -0.576      -1.437      
+PAL     H2      H       H       0       -1.636      -0.899      -0.969      
+PAL     H31     H       H       0       -1.327      0.441       1.501       
+PAL     H32     H       H       0       -0.934      -1.078      1.282       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PAL       P         O1P       DOUBLE    n         1.505     0.020     1.505     0.020     
+PAL       P         O2P       SINGLE    n         1.505     0.020     1.505     0.020     
+PAL       P         O3P       SINGLE    n         1.505     0.020     1.505     0.020     
+PAL       P         C1P       SINGLE    n         1.816     0.020     1.816     0.020     
+PAL       C1P       C1        SINGLE    n         1.501     0.017     1.501     0.017     
+PAL       C1        O1        DOUBLE    n         1.232     0.012     1.232     0.012     
+PAL       C1        N2        SINGLE    n         1.337     0.011     1.337     0.011     
+PAL       N2        C2        SINGLE    n         1.456     0.010     1.456     0.010     
+PAL       C2        C4        SINGLE    n         1.539     0.010     1.539     0.010     
+PAL       C2        C3        SINGLE    n         1.526     0.010     1.526     0.010     
+PAL       C4        O2        DOUBLE    n         1.247     0.019     1.247     0.019     
+PAL       C4        O3        SINGLE    n         1.247     0.019     1.247     0.019     
+PAL       C3        C5        SINGLE    n         1.519     0.012     1.519     0.012     
+PAL       C5        O4        DOUBLE    n         1.247     0.019     1.247     0.019     
+PAL       C5        O5        SINGLE    n         1.247     0.019     1.247     0.019     
+PAL       C1P       H1P1      SINGLE    n         1.089     0.010     0.975     0.020     
+PAL       C1P       H1P2      SINGLE    n         1.089     0.010     0.975     0.020     
+PAL       N2        HN2       SINGLE    n         1.016     0.010     0.873     0.020     
+PAL       C2        H2        SINGLE    n         1.089     0.010     0.987     0.016     
+PAL       C3        H31       SINGLE    n         1.089     0.010     0.979     0.016     
+PAL       C3        H32       SINGLE    n         1.089     0.010     0.979     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PAL         O1P           P         O2P     111.786    1.50
+PAL         O1P           P         O3P     111.786    1.50
+PAL         O1P           P         C1P     110.326    3.00
+PAL         O2P           P         O3P     111.786    1.50
+PAL         O2P           P         C1P     110.326    3.00
+PAL         O3P           P         C1P     110.326    3.00
+PAL           P         C1P          C1     113.247    3.00
+PAL           P         C1P        H1P1     108.528    1.50
+PAL           P         C1P        H1P2     108.528    1.50
+PAL          C1         C1P        H1P1     108.973    1.50
+PAL          C1         C1P        H1P2     108.973    1.50
+PAL        H1P1         C1P        H1P2     108.296    2.31
+PAL         C1P          C1          O1     121.194    1.52
+PAL         C1P          C1          N2     116.009    1.54
+PAL          O1          C1          N2     122.798    1.50
+PAL          C1          N2          C2     122.394    1.76
+PAL          C1          N2         HN2     119.284    1.94
+PAL          C2          N2         HN2     118.321    2.15
+PAL          N2          C2          C4     110.976    1.55
+PAL          N2          C2          C3     112.687    1.50
+PAL          N2          C2          H2     108.343    1.63
+PAL          C4          C2          C3     111.511    2.91
+PAL          C4          C2          H2     108.327    1.50
+PAL          C3          C2          H2     107.393    1.50
+PAL          C2          C4          O2     117.249    1.61
+PAL          C2          C4          O3     117.249    1.61
+PAL          O2          C4          O3     125.502    1.50
+PAL          C2          C3          C5     111.511    2.91
+PAL          C2          C3         H31     108.675    1.50
+PAL          C2          C3         H32     108.675    1.50
+PAL          C5          C3         H31     107.840    2.14
+PAL          C5          C3         H32     107.840    2.14
+PAL         H31          C3         H32     107.891    1.66
+PAL          C3          C5          O4     117.986    1.50
+PAL          C3          C5          O5     117.986    1.50
+PAL          O4          C5          O5     124.027    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PAL             sp3_sp3_1          C1         C1P           P         O1P     180.000   10.00     3
+PAL            sp2_sp3_20          O4          C5          C3          C2     120.000   10.00     6
+PAL             sp2_sp3_2          O1          C1         C1P           P     120.000   10.00     6
+PAL             sp2_sp2_1         C1P          C1          N2          C2     180.000   10.00     2
+PAL             sp2_sp3_7          C1          N2          C2          C4       0.000   10.00     6
+PAL            sp3_sp3_10          N2          C2          C3          C5     180.000   10.00     3
+PAL            sp2_sp3_13          O2          C4          C2          N2       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PAL    chir_1    C2    N2    C4    C3    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PAL    plan-1          C1   0.020
+PAL    plan-1         C1P   0.020
+PAL    plan-1          N2   0.020
+PAL    plan-1          O1   0.020
+PAL    plan-2          C1   0.020
+PAL    plan-2          C2   0.020
+PAL    plan-2         HN2   0.020
+PAL    plan-2          N2   0.020
+PAL    plan-3          C2   0.020
+PAL    plan-3          C4   0.020
+PAL    plan-3          O2   0.020
+PAL    plan-3          O3   0.020
+PAL    plan-4          C3   0.020
+PAL    plan-4          C5   0.020
+PAL    plan-4          O4   0.020
+PAL    plan-4          O5   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PAL SMILES           ACDLabs              10.04 "O=C(NC(C(=O)O)CC(=O)O)CP(=O)(O)O"
+PAL SMILES_CANONICAL CACTVS               3.341 "OC(=O)C[C@H](NC(=O)C[P](O)(O)=O)C(O)=O"
+PAL SMILES           CACTVS               3.341 "OC(=O)C[CH](NC(=O)C[P](O)(O)=O)C(O)=O"
+PAL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)NC(=O)CP(=O)(O)O)C(=O)O"
+PAL SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)NC(=O)CP(=O)(O)O)C(=O)O"
+PAL InChI            InChI                1.03  "InChI=1S/C6H10NO8P/c8-4(2-16(13,14)15)7-3(6(11)12)1-5(9)10/h3H,1-2H2,(H,7,8)(H,9,10)(H,11,12)(H2,13,14,15)/t3-/m0/s1"
+PAL InChIKey         InChI                1.03  ZZKNRXZVGOYGJT-VKHMYHEASA-N
+PAL ?                acedrg               190         "dictionary generator"                  
+PAL ?                acedrg_database      11          "data source"                           
+PAL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PAL ?                refmac5              5.8.0158    "optimization tool"                     

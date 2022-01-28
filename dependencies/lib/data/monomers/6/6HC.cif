@@ -1,0 +1,289 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+6HC      6HC '"1',5'-ANHYDRO-2',3'-DIDEOXY-2'-(CYT' DNA                35  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_6HC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 6HC           OP3    O    OP       -0.666      0.000    0.000    0.000
+ 6HC           P      P    P         0.000     -0.684    0.931   -0.977
+ 6HC           OP1    O    OP       -0.666     -0.856    0.229   -2.306
+ 6HC           OP2    O    OP       -0.666      0.161    2.171   -1.167
+ 6HC           "O5'"  O    O2        0.000     -2.128    1.347   -0.400
+ 6HC           "C5'"  C    CH2       0.000     -2.875    0.139   -0.243
+ 6HC           "H5'"  H    H         0.000     -2.353   -0.522    0.453
+ 6HC           "H5''" H    H         0.000     -2.971   -0.356   -1.211
+ 6HC           "C4'"  C    CH1       0.000     -4.264    0.465    0.306
+ 6HC           "H4'"  H    H         0.000     -4.165    0.966    1.279
+ 6HC           "C3'"  C    CH1       0.000     -5.059   -0.830    0.480
+ 6HC           "H3'"  H    H         0.000     -5.179   -1.322   -0.496
+ 6HC           "C2'"  C    CH2       0.000     -6.439   -0.497    1.061
+ 6HC           "H2'"  H    H         0.000     -6.331   -0.106    2.075
+ 6HC           "H2''" H    H         0.000     -7.060   -1.395    1.084
+ 6HC           "C1'"  C    CH1       0.000     -7.100    0.561    0.172
+ 6HC           "H1'"  H    H         0.000     -8.039    0.895    0.635
+ 6HC           "C6'"  C    CH2       0.000     -6.152    1.751    0.021
+ 6HC           "H6'2" H    H         0.000     -5.928    2.161    1.008
+ 6HC           "H6'1" H    H         0.000     -6.631    2.519   -0.590
+ 6HC           "O4'"  O    O2        0.000     -4.943    1.329   -0.605
+ 6HC           N1     N    NR6       0.000     -7.381   -0.013   -1.147
+ 6HC           C6     C    CR16      0.000     -6.772    0.500   -2.251
+ 6HC           H6     H    H         0.000     -6.084    1.332   -2.161
+ 6HC           C5     C    CR16      0.000     -7.034   -0.043   -3.464
+ 6HC           H5     H    H         0.000     -6.554    0.343   -4.355
+ 6HC           C4     C    CR6       0.000     -7.943   -1.118   -3.549
+ 6HC           N4     N    NH2       0.000     -8.232   -1.683   -4.769
+ 6HC           H42    H    H         0.000     -7.798   -1.329   -5.614
+ 6HC           H41    H    H         0.000     -8.881   -2.459   -4.834
+ 6HC           N3     N    NRD6      0.000     -8.513   -1.583   -2.445
+ 6HC           C2     C    CR6       0.000     -8.240   -1.042   -1.260
+ 6HC           O2     O    O         0.000     -8.777   -1.489   -0.260
+ 6HC           "O3'"  O    OH1       0.000     -4.361   -1.703    1.371
+ 6HC           "HO3'" H    H         0.000     -4.894   -2.505    1.452
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 6HC      OP3    n/a    P      START
+ 6HC      P      OP3    "O5'"  .
+ 6HC      OP1    P      .      .
+ 6HC      OP2    P      .      .
+ 6HC      "O5'"  P      "C5'"  .
+ 6HC      "C5'"  "O5'"  "C4'"  .
+ 6HC      "H5'"  "C5'"  .      .
+ 6HC      "H5''" "C5'"  .      .
+ 6HC      "C4'"  "C5'"  "C3'"  .
+ 6HC      "H4'"  "C4'"  .      .
+ 6HC      "C3'"  "C4'"  "O3'"  .
+ 6HC      "H3'"  "C3'"  .      .
+ 6HC      "C2'"  "C3'"  "C1'"  .
+ 6HC      "H2'"  "C2'"  .      .
+ 6HC      "H2''" "C2'"  .      .
+ 6HC      "C1'"  "C2'"  N1     .
+ 6HC      "H1'"  "C1'"  .      .
+ 6HC      "C6'"  "C1'"  "O4'"  .
+ 6HC      "H6'2" "C6'"  .      .
+ 6HC      "H6'1" "C6'"  .      .
+ 6HC      "O4'"  "C6'"  .      .
+ 6HC      N1     "C1'"  C6     .
+ 6HC      C6     N1     C5     .
+ 6HC      H6     C6     .      .
+ 6HC      C5     C6     C4     .
+ 6HC      H5     C5     .      .
+ 6HC      C4     C5     N3     .
+ 6HC      N4     C4     H41    .
+ 6HC      H42    N4     .      .
+ 6HC      H41    N4     .      .
+ 6HC      N3     C4     C2     .
+ 6HC      C2     N3     O2     .
+ 6HC      O2     C2     .      .
+ 6HC      "O3'"  "C3'"  .      END
+ 6HC      "HO3'" "O3'"  .      .
+ 6HC      "C4'"  "O4'"  .    ADD
+ 6HC      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+6HC       OP1       P         deloc     1.510     0.020     1.510     0.020     
+6HC       OP2       P         deloc     1.510     0.020     1.510     0.020     
+6HC       P         OP3       deloc     1.510     0.020     1.510     0.020     
+6HC       "O5'"     P         single    1.610     0.020     1.610     0.020     
+6HC       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+6HC       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+6HC       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+6HC       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+6HC       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+6HC       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+6HC       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+6HC       "O4'"     "C6'"     single    1.426     0.020     1.426     0.020     
+6HC       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+6HC       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+6HC       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+6HC       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+6HC       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+6HC       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+6HC       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+6HC       "C6'"     "C1'"     single    1.524     0.020     1.524     0.020     
+6HC       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+6HC       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+6HC       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+6HC       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+6HC       N1        C2        single    1.410     0.020     1.410     0.020     
+6HC       C6        N1        single    1.337     0.020     1.337     0.020     
+6HC       O2        C2        double    1.250     0.020     1.250     0.020     
+6HC       C2        N3        single    1.350     0.020     1.350     0.020     
+6HC       N3        C4        double    1.350     0.020     1.350     0.020     
+6HC       N4        C4        single    1.355     0.020     1.355     0.020     
+6HC       C4        C5        single    1.390     0.020     1.390     0.020     
+6HC       H41       N4        single    1.016     0.010     0.899     0.007     
+6HC       H42       N4        single    1.016     0.010     0.899     0.007     
+6HC       C5        C6        double    1.390     0.020     1.390     0.020     
+6HC       H5        C5        single    1.082     0.013     0.975     0.010     
+6HC       H6        C6        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 6HC      OP3    P      OP1     119.900    3.000
+ 6HC      OP3    P      OP2     119.900    3.000
+ 6HC      OP3    P      "O5'"   108.200    3.000
+ 6HC      OP1    P      OP2     119.900    3.000
+ 6HC      OP1    P      "O5'"   108.200    3.000
+ 6HC      OP2    P      "O5'"   108.200    3.000
+ 6HC      P      "O5'"  "C5'"   120.500    3.000
+ 6HC      "O5'"  "C5'"  "H5'"   109.470    3.000
+ 6HC      "O5'"  "C5'"  "H5''"  109.470    3.000
+ 6HC      "O5'"  "C5'"  "C4'"   109.470    3.000
+ 6HC      "H5'"  "C5'"  "H5''"  107.900    3.000
+ 6HC      "H5'"  "C5'"  "C4'"   109.470    3.000
+ 6HC      "H5''" "C5'"  "C4'"   109.470    3.000
+ 6HC      "C5'"  "C4'"  "H4'"   108.340    3.000
+ 6HC      "C5'"  "C4'"  "C3'"   111.000    3.000
+ 6HC      "C5'"  "C4'"  "O4'"   109.470    3.000
+ 6HC      "H4'"  "C4'"  "C3'"   108.340    3.000
+ 6HC      "H4'"  "C4'"  "O4'"   109.470    3.000
+ 6HC      "C3'"  "C4'"  "O4'"   109.470    3.000
+ 6HC      "C4'"  "C3'"  "H3'"   108.340    3.000
+ 6HC      "C4'"  "C3'"  "C2'"   111.000    3.000
+ 6HC      "C4'"  "C3'"  "O3'"   109.470    3.000
+ 6HC      "H3'"  "C3'"  "C2'"   108.340    3.000
+ 6HC      "H3'"  "C3'"  "O3'"   109.470    3.000
+ 6HC      "C2'"  "C3'"  "O3'"   109.470    3.000
+ 6HC      "C3'"  "C2'"  "H2'"   109.470    3.000
+ 6HC      "C3'"  "C2'"  "H2''"  109.470    3.000
+ 6HC      "C3'"  "C2'"  "C1'"   111.000    3.000
+ 6HC      "H2'"  "C2'"  "H2''"  107.900    3.000
+ 6HC      "H2'"  "C2'"  "C1'"   109.470    3.000
+ 6HC      "H2''" "C2'"  "C1'"   109.470    3.000
+ 6HC      "C2'"  "C1'"  "H1'"   108.340    3.000
+ 6HC      "C2'"  "C1'"  "C6'"   109.470    3.000
+ 6HC      "C2'"  "C1'"  N1      109.470    3.000
+ 6HC      "H1'"  "C1'"  "C6'"   108.340    3.000
+ 6HC      "H1'"  "C1'"  N1      109.470    3.000
+ 6HC      "C6'"  "C1'"  N1      109.470    3.000
+ 6HC      "C1'"  "C6'"  "H6'2"  109.470    3.000
+ 6HC      "C1'"  "C6'"  "H6'1"  109.470    3.000
+ 6HC      "C1'"  "C6'"  "O4'"   109.470    3.000
+ 6HC      "H6'2" "C6'"  "H6'1"  107.900    3.000
+ 6HC      "H6'2" "C6'"  "O4'"   109.470    3.000
+ 6HC      "H6'1" "C6'"  "O4'"   109.470    3.000
+ 6HC      "C6'"  "O4'"  "C4'"   111.800    3.000
+ 6HC      "C1'"  N1     C6      120.000    3.000
+ 6HC      "C1'"  N1     C2      120.000    3.000
+ 6HC      C6     N1     C2      120.000    3.000
+ 6HC      N1     C6     H6      120.000    3.000
+ 6HC      N1     C6     C5      120.000    3.000
+ 6HC      H6     C6     C5      120.000    3.000
+ 6HC      C6     C5     H5      120.000    3.000
+ 6HC      C6     C5     C4      120.000    3.000
+ 6HC      H5     C5     C4      120.000    3.000
+ 6HC      C5     C4     N4      120.000    3.000
+ 6HC      C5     C4     N3      120.000    3.000
+ 6HC      N4     C4     N3      120.000    3.000
+ 6HC      C4     N4     H42     120.000    3.000
+ 6HC      C4     N4     H41     120.000    3.000
+ 6HC      H42    N4     H41     120.000    3.000
+ 6HC      C4     N3     C2      120.000    3.000
+ 6HC      N3     C2     O2      120.000    3.000
+ 6HC      N3     C2     N1      120.000    3.000
+ 6HC      O2     C2     N1      120.000    3.000
+ 6HC      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 6HC      var_1    OP3    P      "O5'"  "C5'"    -59.972   20.000   1
+ 6HC      var_2    P      "O5'"  "C5'"  "C4'"    179.971   20.000   1
+ 6HC      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -179.710   20.000   3
+ 6HC      var_4    "C5'"  "C4'"  "O4'"  "C6'"    180.000   20.000   1
+ 6HC      var_5    "C5'"  "C4'"  "C3'"  "O3'"     60.000   20.000   3
+ 6HC      var_6    "C4'"  "C3'"  "C2'"  "C1'"     60.000   20.000   3
+ 6HC      var_7    "C3'"  "C2'"  "C1'"  N1        60.000   20.000   3
+ 6HC      var_8    "C2'"  "C1'"  "C6'"  "O4'"     60.000   20.000   3
+ 6HC      var_9    "C1'"  "C6'"  "O4'"  "C4'"    -60.000   20.000   1
+ 6HC      var_10   "C2'"  "C1'"  N1     C6      -117.005   20.000   1
+ 6HC      CONST_1  "C1'"  N1     C2     N3       180.000    0.000   0
+ 6HC      CONST_2  "C1'"  N1     C6     C5       180.000    0.000   0
+ 6HC      CONST_3  N1     C6     C5     C4         0.000    0.000   0
+ 6HC      CONST_4  C6     C5     C4     N3         0.000    0.000   0
+ 6HC      CONST_5  C5     C4     N4     H41      179.700    0.000   0
+ 6HC      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ 6HC      CONST_7  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 6HC      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ 6HC      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ 6HC      chir_03  "C1'"  "C2'"  "C6'"  N1        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 6HC      plan-1    N1        0.020
+ 6HC      plan-1    "C1'"     0.020
+ 6HC      plan-1    C2        0.020
+ 6HC      plan-1    C6        0.020
+ 6HC      plan-1    N3        0.020
+ 6HC      plan-1    C4        0.020
+ 6HC      plan-1    C5        0.020
+ 6HC      plan-1    O2        0.020
+ 6HC      plan-1    N4        0.020
+ 6HC      plan-1    H5        0.020
+ 6HC      plan-1    H6        0.020
+ 6HC      plan-1    H42       0.020
+ 6HC      plan-1    H41       0.020
+ 6HC      plan-2    N4        0.020
+ 6HC      plan-2    C4        0.020
+ 6HC      plan-2    H41       0.020
+ 6HC      plan-2    H42       0.020
+# ------------------------------------------------------

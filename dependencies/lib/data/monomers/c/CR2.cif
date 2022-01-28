@@ -1,0 +1,274 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CR2      CR2 '"{(4Z)-2-(aminomethyl)-4-[(4-hydroxy' non-polymer        32  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CR2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CR2           OXT    O    OC       -0.500      0.000    0.000    0.000
+ CR2           C3     C    C         0.000     -1.244   -0.060   -0.119
+ CR2           O3     O    OC       -0.500     -1.762   -0.116   -1.256
+ CR2           CA3    C    CH2       0.000     -2.119   -0.065    1.108
+ CR2           HA31   H    H         0.000     -1.950    0.851    1.678
+ CR2           HA32   H    H         0.000     -1.869   -0.929    1.728
+ CR2           N3     N    NR5       0.000     -3.525   -0.140    0.706
+ CR2           C1     C    CR5       0.000     -4.344    0.925    0.457
+ CR2           CA1    C    CH2       0.000     -3.918    2.367    0.560
+ CR2           HA11   H    H         0.000     -3.093    2.552   -0.131
+ CR2           HA12   H    H         0.000     -3.590    2.577    1.580
+ CR2           N1     N    NH2       0.000     -5.049    3.238    0.219
+ CR2           HN12   H    H         0.000     -5.945    2.837   -0.035
+ CR2           HN11   H    H         0.000     -4.942    4.245    0.235
+ CR2           C2     C    CR5       0.000     -4.234   -1.275    0.519
+ CR2           O2     O    O         0.000     -3.842   -2.422    0.646
+ CR2           CA2    C    CR5       0.000     -5.582   -0.830    0.124
+ CR2           N2     N    NRD5      0.000     -5.532    0.537    0.118
+ CR2           CB2    C    C1        0.000     -6.666   -1.625   -0.176
+ CR2           HB2    H    H         0.000     -6.554   -2.695   -0.216
+ CR2           CG2    C    CR6       0.000     -7.971   -1.014   -0.440
+ CR2           CD2    C    CR16      0.000     -8.094    0.381   -0.514
+ CR2           HD2    H    H         0.000     -7.223    1.010   -0.375
+ CR2           CE2    C    CR16      0.000     -9.318    0.946   -0.762
+ CR2           HE2    H    H         0.000     -9.414    2.024   -0.818
+ CR2           CZ     C    CR6       0.000    -10.436    0.140   -0.941
+ CR2           OH     O    OH1       0.000    -11.645    0.706   -1.187
+ CR2           HOH    H    H         0.000    -12.096    0.876   -0.349
+ CR2           CE1    C    CR16      0.000    -10.322   -1.244   -0.863
+ CR2           HE1    H    H         0.000    -11.198   -1.867   -0.999
+ CR2           CD1    C    CR16      0.000     -9.104   -1.822   -0.615
+ CR2           HD1    H    H         0.000     -9.016   -2.900   -0.554
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CR2      OXT    n/a    C3     START
+ CR2      C3     OXT    CA3    .
+ CR2      O3     C3     .      .
+ CR2      CA3    C3     N3     .
+ CR2      HA31   CA3    .      .
+ CR2      HA32   CA3    .      .
+ CR2      N3     CA3    C2     .
+ CR2      C1     N3     CA1    .
+ CR2      CA1    C1     N1     .
+ CR2      HA11   CA1    .      .
+ CR2      HA12   CA1    .      .
+ CR2      N1     CA1    HN11   .
+ CR2      HN12   N1     .      .
+ CR2      HN11   N1     .      .
+ CR2      C2     N3     CA2    .
+ CR2      O2     C2     .      .
+ CR2      CA2    C2     CB2    .
+ CR2      N2     CA2    .      .
+ CR2      CB2    CA2    CG2    .
+ CR2      HB2    CB2    .      .
+ CR2      CG2    CB2    CD2    .
+ CR2      CD2    CG2    CE2    .
+ CR2      HD2    CD2    .      .
+ CR2      CE2    CD2    CZ     .
+ CR2      HE2    CE2    .      .
+ CR2      CZ     CE2    CE1    .
+ CR2      OH     CZ     HOH    .
+ CR2      HOH    OH     .      .
+ CR2      CE1    CZ     CD1    .
+ CR2      HE1    CE1    .      .
+ CR2      CD1    CE1    HD1    .
+ CR2      HD1    CD1    .      END
+ CR2      C1     N2     .    ADD
+ CR2      CG2    CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CR2       O3        C3        deloc     1.250     0.020     1.250     0.020     
+CR2       CA3       C3        single    1.510     0.020     1.510     0.020     
+CR2       N3        CA3       single    1.462     0.020     1.462     0.020     
+CR2       C3        OXT       deloc     1.250     0.020     1.250     0.020     
+CR2       N1        CA1       single    1.450     0.020     1.450     0.020     
+CR2       O2        C2        double    1.285     0.020     1.285     0.020     
+CR2       C2        N3        single    1.337     0.020     1.337     0.020     
+CR2       C1        N3        single    1.337     0.020     1.337     0.020     
+CR2       CA2       C2        single    1.490     0.020     1.490     0.020     
+CR2       CA1       C1        single    1.510     0.020     1.510     0.020     
+CR2       C1        N2        double    1.350     0.020     1.350     0.020     
+CR2       N2        CA2       single    1.350     0.020     1.350     0.020     
+CR2       CB2       CA2       double    1.483     0.020     1.483     0.020     
+CR2       CG2       CB2       single    1.480     0.020     1.480     0.020     
+CR2       CD2       CG2       double    1.390     0.020     1.390     0.020     
+CR2       CG2       CD1       single    1.390     0.020     1.390     0.020     
+CR2       CE2       CD2       single    1.390     0.020     1.390     0.020     
+CR2       CD1       CE1       double    1.390     0.020     1.390     0.020     
+CR2       CZ        CE2       double    1.390     0.020     1.390     0.020     
+CR2       CE1       CZ        single    1.390     0.020     1.390     0.020     
+CR2       OH        CZ        single    1.362     0.020     1.362     0.020     
+CR2       HN11      N1        single    1.036     0.016     0.914     0.007     
+CR2       HN12      N1        single    1.036     0.016     0.914     0.007     
+CR2       HA11      CA1       single    1.089     0.010     0.989     0.005     
+CR2       HA12      CA1       single    1.089     0.010     0.989     0.005     
+CR2       HA31      CA3       single    1.089     0.010     0.989     0.005     
+CR2       HA32      CA3       single    1.089     0.010     0.989     0.005     
+CR2       HB2       CB2       single    1.082     0.013     0.975     0.010     
+CR2       HD1       CD1       single    1.082     0.013     0.975     0.010     
+CR2       HD2       CD2       single    1.082     0.013     0.975     0.010     
+CR2       HE1       CE1       single    1.082     0.013     0.975     0.010     
+CR2       HE2       CE2       single    1.082     0.013     0.975     0.010     
+CR2       HOH       OH        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CR2      OXT    C3     O3      123.000    3.000
+ CR2      OXT    C3     CA3     118.500    3.000
+ CR2      O3     C3     CA3     118.500    3.000
+ CR2      C3     CA3    HA31    109.470    3.000
+ CR2      C3     CA3    HA32    109.470    3.000
+ CR2      C3     CA3    N3      109.500    3.000
+ CR2      HA31   CA3    HA32    107.900    3.000
+ CR2      HA31   CA3    N3      109.500    3.000
+ CR2      HA32   CA3    N3      109.500    3.000
+ CR2      CA3    N3     C1      126.000    3.000
+ CR2      CA3    N3     C2      126.000    3.000
+ CR2      C1     N3     C2      108.000    3.000
+ CR2      N3     C1     CA1     126.000    3.000
+ CR2      N3     C1     N2      108.000    3.000
+ CR2      CA1    C1     N2      126.000    3.000
+ CR2      C1     CA1    HA11    109.470    3.000
+ CR2      C1     CA1    HA12    109.470    3.000
+ CR2      C1     CA1    N1      109.500    3.000
+ CR2      HA11   CA1    HA12    107.900    3.000
+ CR2      HA11   CA1    N1      109.470    3.000
+ CR2      HA12   CA1    N1      109.470    3.000
+ CR2      CA1    N1     HN12    120.000    3.000
+ CR2      CA1    N1     HN11    120.000    3.000
+ CR2      HN12   N1     HN11    120.000    3.000
+ CR2      N3     C2     O2      108.000    3.000
+ CR2      N3     C2     CA2     108.000    3.000
+ CR2      O2     C2     CA2     108.000    3.000
+ CR2      C2     CA2    N2      108.000    3.000
+ CR2      C2     CA2    CB2     117.000    3.000
+ CR2      N2     CA2    CB2     108.000    3.000
+ CR2      CA2    N2     C1      108.000    3.000
+ CR2      CA2    CB2    HB2     120.000    3.000
+ CR2      CA2    CB2    CG2     120.000    3.000
+ CR2      HB2    CB2    CG2     120.000    3.000
+ CR2      CB2    CG2    CD2     120.000    3.000
+ CR2      CB2    CG2    CD1     120.000    3.000
+ CR2      CD2    CG2    CD1     120.000    3.000
+ CR2      CG2    CD2    HD2     120.000    3.000
+ CR2      CG2    CD2    CE2     120.000    3.000
+ CR2      HD2    CD2    CE2     120.000    3.000
+ CR2      CD2    CE2    HE2     120.000    3.000
+ CR2      CD2    CE2    CZ      120.000    3.000
+ CR2      HE2    CE2    CZ      120.000    3.000
+ CR2      CE2    CZ     OH      120.000    3.000
+ CR2      CE2    CZ     CE1     120.000    3.000
+ CR2      OH     CZ     CE1     120.000    3.000
+ CR2      CZ     OH     HOH     109.470    3.000
+ CR2      CZ     CE1    HE1     120.000    3.000
+ CR2      CZ     CE1    CD1     120.000    3.000
+ CR2      HE1    CE1    CD1     120.000    3.000
+ CR2      CE1    CD1    HD1     120.000    3.000
+ CR2      CE1    CD1    CG2     120.000    3.000
+ CR2      HD1    CD1    CG2     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CR2      var_1    OXT    C3     CA3    N3      -180.000   20.000   3
+ CR2      var_2    C3     CA3    N3     C2        89.942   20.000   1
+ CR2      CONST_1  CA3    N3     C1     CA1        0.000    0.000   0
+ CR2      CONST_2  N3     C1     N2     CA2        0.000    0.000   0
+ CR2      var_3    N3     C1     CA1    N1       179.763   20.000   2
+ CR2      var_4    C1     CA1    N1     HN11    -179.978   20.000   1
+ CR2      CONST_3  CA3    N3     C2     CA2      180.000    0.000   0
+ CR2      CONST_4  N3     C2     CA2    CB2      180.000    0.000   0
+ CR2      CONST_5  C2     CA2    N2     C1         0.000    0.000   0
+ CR2      CONST_6  C2     CA2    CB2    CG2      174.800    0.000   0
+ CR2      var_5    CA2    CB2    CG2    CD2        6.033   20.000   1
+ CR2      CONST_7  CB2    CG2    CD1    CE1      180.000    0.000   0
+ CR2      CONST_8  CB2    CG2    CD2    CE2      180.000    0.000   0
+ CR2      CONST_9  CG2    CD2    CE2    CZ         0.000    0.000   0
+ CR2      CONST_10 CD2    CE2    CZ     CE1        0.000    0.000   0
+ CR2      var_6    CE2    CZ     OH     HOH      -89.734   20.000   1
+ CR2      CONST_11 CE2    CZ     CE1    CD1        0.000    0.000   0
+ CR2      CONST_12 CZ     CE1    CD1    CG2        0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CR2      plan-1    N1        0.020
+ CR2      plan-1    CA1       0.020
+ CR2      plan-1    HN11      0.020
+ CR2      plan-1    HN12      0.020
+ CR2      plan-2    C1        0.020
+ CR2      plan-2    CA1       0.020
+ CR2      plan-2    N2        0.020
+ CR2      plan-2    N3        0.020
+ CR2      plan-2    C2        0.020
+ CR2      plan-2    CA2       0.020
+ CR2      plan-2    CA3       0.020
+ CR2      plan-2    O2        0.020
+ CR2      plan-2    CB2       0.020
+ CR2      plan-2    CG2       0.020
+ CR2      plan-2    HB2       0.020
+ CR2      plan-3    C3        0.020
+ CR2      plan-3    CA3       0.020
+ CR2      plan-3    O3        0.020
+ CR2      plan-3    OXT       0.020
+ CR2      plan-4    CG2       0.020
+ CR2      plan-4    CB2       0.020
+ CR2      plan-4    CD1       0.020
+ CR2      plan-4    CD2       0.020
+ CR2      plan-4    CE1       0.020
+ CR2      plan-4    CE2       0.020
+ CR2      plan-4    CZ        0.020
+ CR2      plan-4    HD1       0.020
+ CR2      plan-4    HD2       0.020
+ CR2      plan-4    HE1       0.020
+ CR2      plan-4    HE2       0.020
+ CR2      plan-4    OH        0.020
+ CR2      plan-4    HB2       0.020
+# ------------------------------------------------------

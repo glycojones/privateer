@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DFE     DFE      "2-(1,1-DIFLUOROETHOXY)-1,1,1-TRIFLUOROETHANE"     NON-POLYMER     15     10     .     
+#
+data_comp_DFE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DFE     CAA     C       CH3     0       32.400      1.575       36.003      
+DFE     CAI     C       CT      0       33.273      0.771       36.890      
+DFE     FAB     F       F       0       32.523      -0.084      37.580      
+DFE     FAC     F       F       0       33.852      1.570       37.785      
+DFE     OAH     O       O2      0       34.230      0.048       36.117      
+DFE     CAG     C       CH2     0       35.379      0.710       35.591      
+DFE     CAJ     C       CT      0       36.078      -0.236      34.706      
+DFE     FAE     F       F       0       35.307      -0.635      33.693      
+DFE     FAF     F       F       0       37.175      0.301       34.168      
+DFE     FAD     F       F       0       36.465      -1.336      35.355      
+DFE     HAA1    H       H       0       32.249      1.097       35.169      
+DFE     HAA2    H       H       0       32.827      2.429       35.814      
+DFE     HAA3    H       H       0       31.546      1.733       36.442      
+DFE     HAG1    H       H       0       35.972      0.984       36.323      
+DFE     HAG2    H       H       0       35.113      1.508       35.083      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DFE       CAA       CAI       SINGLE    n         1.477     0.020     1.477     0.020     
+DFE       CAI       FAB       SINGLE    n         1.330     0.017     1.330     0.017     
+DFE       CAI       FAC       SINGLE    n         1.330     0.017     1.330     0.017     
+DFE       CAI       OAH       SINGLE    n         1.422     0.012     1.422     0.012     
+DFE       OAH       CAG       SINGLE    n         1.422     0.012     1.422     0.012     
+DFE       CAG       CAJ       SINGLE    n         1.472     0.020     1.472     0.020     
+DFE       CAJ       FAE       SINGLE    n         1.334     0.012     1.334     0.012     
+DFE       CAJ       FAF       SINGLE    n         1.334     0.012     1.334     0.012     
+DFE       CAJ       FAD       SINGLE    n         1.334     0.012     1.334     0.012     
+DFE       CAA       HAA1      SINGLE    n         1.089     0.010     0.973     0.015     
+DFE       CAA       HAA2      SINGLE    n         1.089     0.010     0.973     0.015     
+DFE       CAA       HAA3      SINGLE    n         1.089     0.010     0.973     0.015     
+DFE       CAG       HAG1      SINGLE    n         1.089     0.010     0.981     0.017     
+DFE       CAG       HAG2      SINGLE    n         1.089     0.010     0.981     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DFE         CAI         CAA        HAA1     109.513    1.50
+DFE         CAI         CAA        HAA2     109.513    1.50
+DFE         CAI         CAA        HAA3     109.513    1.50
+DFE        HAA1         CAA        HAA2     109.399    1.50
+DFE        HAA1         CAA        HAA3     109.399    1.50
+DFE        HAA2         CAA        HAA3     109.399    1.50
+DFE         CAA         CAI         FAB     110.248    2.29
+DFE         CAA         CAI         FAC     110.248    2.29
+DFE         CAA         CAI         OAH     109.882    3.00
+DFE         FAB         CAI         FAC     107.000    1.50
+DFE         FAB         CAI         OAH     111.174    2.45
+DFE         FAC         CAI         OAH     111.174    2.45
+DFE         CAI         OAH         CAG     113.200    3.00
+DFE         OAH         CAG         CAJ     107.872    1.50
+DFE         OAH         CAG        HAG1     109.668    1.50
+DFE         OAH         CAG        HAG2     109.668    1.50
+DFE         CAJ         CAG        HAG1     109.912    1.50
+DFE         CAJ         CAG        HAG2     109.912    1.50
+DFE        HAG1         CAG        HAG2     108.570    1.50
+DFE         CAG         CAJ         FAE     112.030    1.51
+DFE         CAG         CAJ         FAF     112.030    1.51
+DFE         CAG         CAJ         FAD     112.030    1.51
+DFE         FAE         CAJ         FAF     106.951    1.50
+DFE         FAE         CAJ         FAD     106.951    1.50
+DFE         FAF         CAJ         FAD     106.951    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DFE             sp3_sp3_1        HAA1         CAA         CAI         FAB     180.000   10.00     3
+DFE            sp3_sp3_10         CAA         CAI         OAH         CAG     180.000   10.00     3
+DFE            sp3_sp3_13         CAJ         CAG         OAH         CAI     180.000   10.00     3
+DFE            sp3_sp3_16         OAH         CAG         CAJ         FAE     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DFE SMILES           ACDLabs              10.04 "2-(1,1-difluoroethoxy)-1,1,1-trifluoroethane"
+DFE SMILES_CANONICAL CACTVS               3.341 "CC(F)(F)OCC(F)(F)F"
+DFE SMILES           CACTVS               3.341 "CC(F)(F)OCC(F)(F)F"
+DFE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(OCC(F)(F)F)(F)F"
+DFE SMILES           "OpenEye OEToolkits" 1.5.0 "CC(OCC(F)(F)F)(F)F"
+DFE InChI            InChI                1.03  "InChI=1S/C4H5F5O/c1-3(5,6)10-2-4(7,8)9/h2H2,1H3"
+DFE InChIKey         InChI                1.03  LUGFHDZVRRASHY-UHFFFAOYSA-N
+DFE ?                acedrg               202         "dictionary generator"                  
+DFE ?                acedrg_database      11          "data source"                           
+DFE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DFE ?                refmac5              5.8.0189    "optimization tool"                     

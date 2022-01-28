@@ -1,0 +1,200 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BLE      BLE 'LEUCINE BORONIC ACID                ' non-polymer        23   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BLE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BLE           O2     O    OH1       0.000      0.000    0.000    0.000
+ BLE           HO2    H    H         0.000      0.910    0.152   -0.224
+ BLE           B      B    B         0.000     -0.858    1.126    0.118
+ BLE           O1     O    OH1       0.000     -0.348    2.433   -0.097
+ BLE           HO1    H    H         0.000      0.571    2.524   -0.319
+ BLE           CA     C    CH1       0.000     -2.371    0.925    0.487
+ BLE           HA     H    H         0.000     -2.477    0.861    1.579
+ BLE           N      N    NH2       0.000     -3.152    2.063   -0.016
+ BLE           HN2    H    H         0.000     -3.860    1.924   -0.728
+ BLE           H      H    H         0.000     -2.989    2.995    0.347
+ BLE           CB     C    CH2       0.000     -2.884   -0.367   -0.153
+ BLE           HB2    H    H         0.000     -2.234   -1.197    0.131
+ BLE           HB3    H    H         0.000     -2.882   -0.261   -1.240
+ BLE           CG     C    CH1       0.000     -4.309   -0.644    0.331
+ BLE           HG     H    H         0.000     -4.330   -0.636    1.429
+ BLE           CD2    C    CH3       0.000     -4.762   -2.015   -0.178
+ BLE           HD23   H    H         0.000     -5.749   -2.208    0.156
+ BLE           HD22   H    H         0.000     -4.741   -2.024   -1.237
+ BLE           HD21   H    H         0.000     -4.112   -2.764    0.194
+ BLE           CD1    C    CH3       0.000     -5.249    0.436   -0.206
+ BLE           HD13   H    H         0.000     -6.253    0.169    0.004
+ BLE           HD12   H    H         0.000     -5.027    1.362    0.258
+ BLE           HD11   H    H         0.000     -5.121    0.528   -1.254
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BLE      O2     n/a    B      START
+ BLE      HO2    O2     .      .
+ BLE      B      O2     CA     .
+ BLE      O1     B      HO1    .
+ BLE      HO1    O1     .      .
+ BLE      CA     B      CB     .
+ BLE      HA     CA     .      .
+ BLE      N      CA     H      .
+ BLE      HN2    N      .      .
+ BLE      H      N      .      .
+ BLE      CB     CA     CG     .
+ BLE      HB2    CB     .      .
+ BLE      HB3    CB     .      .
+ BLE      CG     CB     CD1    .
+ BLE      HG     CG     .      .
+ BLE      CD2    CG     HD21   .
+ BLE      HD23   CD2    .      .
+ BLE      HD22   CD2    .      .
+ BLE      HD21   CD2    .      .
+ BLE      CD1    CG     HD11   .
+ BLE      HD13   CD1    .      .
+ BLE      HD12   CD1    .      .
+ BLE      HD11   CD1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BLE       CB        CA        single    1.524     0.020     1.524     0.020     
+BLE       N         CA        single    1.450     0.020     1.450     0.020     
+BLE       CA        B         single    1.600     0.020     1.600     0.020     
+BLE       HA        CA        single    1.089     0.010     0.989     0.005     
+BLE       CG        CB        single    1.524     0.020     1.524     0.020     
+BLE       HB2       CB        single    1.089     0.010     0.989     0.005     
+BLE       HB3       CB        single    1.089     0.010     0.989     0.005     
+BLE       CD1       CG        single    1.524     0.020     1.524     0.020     
+BLE       CD2       CG        single    1.524     0.020     1.524     0.020     
+BLE       HG        CG        single    1.089     0.010     0.989     0.005     
+BLE       HD11      CD1       single    1.089     0.010     0.989     0.005     
+BLE       HD12      CD1       single    1.089     0.010     0.989     0.005     
+BLE       HD13      CD1       single    1.089     0.010     0.989     0.005     
+BLE       HD21      CD2       single    1.089     0.010     0.989     0.005     
+BLE       HD22      CD2       single    1.089     0.010     0.989     0.005     
+BLE       HD23      CD2       single    1.089     0.010     0.989     0.005     
+BLE       H         N         single    1.036     0.016     0.914     0.007     
+BLE       HN2       N         single    1.036     0.016     0.914     0.007     
+BLE       O1        B         single    1.535     0.020     1.535     0.020     
+BLE       B         O2        single    1.535     0.020     1.535     0.020     
+BLE       HO1       O1        single    0.970     0.012     0.839     0.014     
+BLE       HO2       O2        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BLE      HO2    O2     B       120.000    3.000
+ BLE      O2     B      O1      120.000    3.000
+ BLE      O2     B      CA      120.000    3.000
+ BLE      O1     B      CA      120.000    3.000
+ BLE      B      O1     HO1     120.000    3.000
+ BLE      B      CA     HA      109.470    3.000
+ BLE      B      CA     N       109.500    3.000
+ BLE      B      CA     CB      109.470    3.000
+ BLE      HA     CA     N       109.470    3.000
+ BLE      HA     CA     CB      108.340    3.000
+ BLE      N      CA     CB      109.470    3.000
+ BLE      CA     N      HN2     120.000    3.000
+ BLE      CA     N      H       120.000    3.000
+ BLE      HN2    N      H       120.000    3.000
+ BLE      CA     CB     HB2     109.470    3.000
+ BLE      CA     CB     HB3     109.470    3.000
+ BLE      CA     CB     CG      111.000    3.000
+ BLE      HB2    CB     HB3     107.900    3.000
+ BLE      HB2    CB     CG      109.470    3.000
+ BLE      HB3    CB     CG      109.470    3.000
+ BLE      CB     CG     HG      108.340    3.000
+ BLE      CB     CG     CD2     111.000    3.000
+ BLE      CB     CG     CD1     111.000    3.000
+ BLE      HG     CG     CD2     108.340    3.000
+ BLE      HG     CG     CD1     108.340    3.000
+ BLE      CD2    CG     CD1     111.000    3.000
+ BLE      CG     CD2    HD23    109.470    3.000
+ BLE      CG     CD2    HD22    109.470    3.000
+ BLE      CG     CD2    HD21    109.470    3.000
+ BLE      HD23   CD2    HD22    109.470    3.000
+ BLE      HD23   CD2    HD21    109.470    3.000
+ BLE      HD22   CD2    HD21    109.470    3.000
+ BLE      CG     CD1    HD13    109.470    3.000
+ BLE      CG     CD1    HD12    109.470    3.000
+ BLE      CG     CD1    HD11    109.470    3.000
+ BLE      HD13   CD1    HD12    109.470    3.000
+ BLE      HD13   CD1    HD11    109.470    3.000
+ BLE      HD12   CD1    HD11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BLE      var_1    HO2    O2     B      CA      -179.974   20.000   1
+ BLE      var_2    O2     B      O1     HO1        0.008   20.000   1
+ BLE      var_3    O2     B      CA     CB       -35.108   20.000   1
+ BLE      var_4    B      CA     N      H        -63.975   20.000   1
+ BLE      var_5    B      CA     CB     CG       173.748   20.000   3
+ BLE      var_6    CA     CB     CG     CD1       66.515   20.000   3
+ BLE      var_7    CB     CG     CD2    HD21      60.036   20.000   3
+ BLE      var_8    CB     CG     CD1    HD11      51.561   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BLE      chir_01  CA     CB     N      B         positiv
+ BLE      chir_02  CG     CB     CD1    CD2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BLE      plan-1    N         0.020
+ BLE      plan-1    CA        0.020
+ BLE      plan-1    H         0.020
+ BLE      plan-1    HN2       0.020
+# ------------------------------------------------------

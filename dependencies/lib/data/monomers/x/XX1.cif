@@ -1,0 +1,303 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XX1     XX1     N~6~-7H-PURIN-6-YL-L-LYSINE     peptide     35     19     .
+#
+data_comp_XX1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+XX1     O       O       O       0       5.082       -1.911      1.288
+XX1     C       C       C       0       4.657       -1.463      0.204
+XX1     CA      C       CH1     0       4.078       -0.042      0.212
+XX1     N       N       NT3     1       4.716       0.751       -0.874
+XX1     CB      C       CH2     0       2.555       -0.063      0.033
+XX1     CG      C       CH2     0       1.761       -0.516      1.251
+XX1     CD      C       CH2     0       0.265       -0.544      1.021
+XX1     CE      C       CH2     0       -0.369      0.835       1.033
+XX1     NZ      N       NH1     0       -1.822      0.770       0.979
+XX1     C6      C       CR6     0       -2.539      0.425       -0.117
+XX1     C5      C       CR56    0       -3.940      0.248       -0.072
+XX1     N7      N       NR5     0       -4.930      0.329       0.884
+XX1     C8      C       CR15    0       -6.085      0.035       0.263
+XX1     N1      N       NRD6    0       -1.921      0.244       -1.306
+XX1     C2      C       CR16    0       -2.670      -0.096      -2.373
+XX1     N3      N       NRD6    0       -3.983      -0.290      -2.447
+XX1     C4      C       CR56    0       -4.603      -0.107      -1.257
+XX1     N9      N       NRD5    0       -5.952      -0.236      -1.026
+XX1     OXT     O       OC      -1      4.660       -2.069      -0.885
+XX1     HA      H       H       0       4.291       0.384       1.074
+XX1     H       H       H       0       4.410       1.609       -0.856
+XX1     H2      H       H       0       4.519       0.385       -1.685
+XX1     H3      H       H       0       5.621       0.761       -0.766
+XX1     HB2     H       H       0       2.339       -0.656      -0.717
+XX1     HB3     H       H       0       2.261       0.840       -0.209
+XX1     HG2     H       H       0       1.957       0.089       1.998
+XX1     HG3     H       H       0       2.060       -1.414      1.508
+XX1     HD2     H       H       0       -0.156      -1.090      1.719
+XX1     HD3     H       H       0       0.083       -0.969      0.156
+XX1     HE2     H       H       0       -0.039      1.353       0.271
+XX1     HE3     H       H       0       -0.103      1.305       1.849
+XX1     HZ      H       H       0       -2.256      0.972       1.718
+XX1     HN7     H       H       0       -4.829      0.537       1.753
+XX1     H8      H       H       0       -6.918      0.023       0.711
+XX1     HC2     H       H       0       -2.193      -0.214      -3.185
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+XX1      N      n/a    CA     START
+XX1      H      N      .      .
+XX1      H2     N      .      .
+XX1      H3     N      .      .
+XX1      CA     N      C      .
+XX1      HA     CA     .      .
+XX1      CB     CA     CG     .
+XX1      HB2    CB     .      .
+XX1      HB3    CB     .      .
+XX1      CG     CB     CD     .
+XX1      HG2    CG     .      .
+XX1      HG3    CG     .      .
+XX1      CD     CG     CE     .
+XX1      HD2    CD     .      .
+XX1      HD3    CD     .      .
+XX1      CE     CD     NZ     .
+XX1      HE2    CE     .      .
+XX1      HE3    CE     .      .
+XX1      NZ     CE     C6     .
+XX1      HZ     NZ     .      .
+XX1      C6     NZ     N1     .
+XX1      N1     C6     C2     .
+XX1      C2     N1     N3     .
+XX1      HC2    C2     .      .
+XX1      N3     C2     C4     .
+XX1      C4     N3     N9     .
+XX1      C5     C4     .      .
+XX1      N9     C4     C8     .
+XX1      C8     N9     N7     .
+XX1      H8     C8     .      .
+XX1      N7     C8     HN7    .
+XX1      HN7    N7     .      .
+XX1      C      CA     .      END
+XX1      O      C      .      .
+XX1      OXT    C      .      .
+XX1      C6     C5     .    ADD
+XX1      C5     N7     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XX1       O         C         DOUBLE    n         1.247     0.019     1.247     0.019     
+XX1       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+XX1       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+XX1       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+XX1       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+XX1       CB        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+XX1       CG        CD        SINGLE    n         1.514     0.020     1.514     0.020     
+XX1       CD        CE        SINGLE    n         1.517     0.014     1.517     0.014     
+XX1       CE        NZ        SINGLE    n         1.451     0.013     1.451     0.013     
+XX1       NZ        C6        SINGLE    n         1.344     0.016     1.344     0.016     
+XX1       C6        N1        DOUBLE    y         1.346     0.010     1.346     0.010     
+XX1       C6        C5        SINGLE    y         1.401     0.017     1.401     0.017     
+XX1       C5        C4        DOUBLE    y         1.401     0.020     1.401     0.020     
+XX1       C5        N7        SINGLE    y         1.379     0.010     1.379     0.010     
+XX1       N7        C8        SINGLE    y         1.342     0.010     1.342     0.010     
+XX1       C8        N9        DOUBLE    y         1.322     0.010     1.322     0.010     
+XX1       N1        C2        SINGLE    y         1.343     0.010     1.343     0.010     
+XX1       C2        N3        DOUBLE    y         1.325     0.010     1.325     0.010     
+XX1       N3        C4        SINGLE    y         1.350     0.011     1.350     0.011     
+XX1       C4        N9        SINGLE    y         1.375     0.010     1.375     0.010     
+XX1       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+XX1       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+XX1       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+XX1       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+XX1       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+XX1       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+XX1       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+XX1       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.016     
+XX1       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.016     
+XX1       CD        HD3       SINGLE    n         1.089     0.010     0.981     0.016     
+XX1       CE        HE2       SINGLE    n         1.089     0.010     0.979     0.013     
+XX1       CE        HE3       SINGLE    n         1.089     0.010     0.979     0.013     
+XX1       NZ        HZ        SINGLE    n         1.016     0.010     0.880     0.020     
+XX1       N7        HN7       SINGLE    n         1.016     0.010     0.900     0.020     
+XX1       C8        H8        SINGLE    n         1.082     0.013     0.946     0.020     
+XX1       C2        HC2       SINGLE    n         1.082     0.013     0.949     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+XX1           O           C          CA     117.124    1.50
+XX1           O           C         OXT     125.752    1.50
+XX1          CA           C         OXT     117.124    1.50
+XX1           C          CA           N     109.241    1.50
+XX1           C          CA          CB     111.037    2.40
+XX1           C          CA          HA     108.824    1.50
+XX1           N          CA          CB     110.374    1.62
+XX1           N          CA          HA     108.487    1.50
+XX1          CB          CA          HA     108.967    1.50
+XX1          CA           N           H     110.062    1.93
+XX1          CA           N          H2     110.062    1.93
+XX1          CA           N          H3     110.062    1.93
+XX1           H           N          H2     109.028    2.41
+XX1           H           N          H3     109.028    2.41
+XX1          H2           N          H3     109.028    2.41
+XX1          CA          CB          CG     115.311    1.56
+XX1          CA          CB         HB2     108.549    1.50
+XX1          CA          CB         HB3     108.549    1.50
+XX1          CG          CB         HB2     108.650    1.50
+XX1          CG          CB         HB3     108.650    1.50
+XX1         HB2          CB         HB3     107.844    1.50
+XX1          CB          CG          CD     113.328    2.00
+XX1          CB          CG         HG2     108.601    1.50
+XX1          CB          CG         HG3     108.601    1.50
+XX1          CD          CG         HG2     108.806    1.50
+XX1          CD          CG         HG3     108.806    1.50
+XX1         HG2          CG         HG3     107.646    1.50
+XX1          CG          CD          CE     113.252    1.84
+XX1          CG          CD         HD2     109.041    1.50
+XX1          CG          CD         HD3     109.041    1.50
+XX1          CE          CD         HD2     108.722    1.50
+XX1          CE          CD         HD3     108.722    1.50
+XX1         HD2          CD         HD3     107.927    1.57
+XX1          CD          CE          NZ     111.831    1.79
+XX1          CD          CE         HE2     109.537    1.50
+XX1          CD          CE         HE3     109.537    1.50
+XX1          NZ          CE         HE2     109.157    1.50
+XX1          NZ          CE         HE3     109.157    1.50
+XX1         HE2          CE         HE3     107.909    1.50
+XX1          CE          NZ          C6     123.394    1.50
+XX1          CE          NZ          HZ     117.995    2.37
+XX1          C6          NZ          HZ     118.611    1.50
+XX1          NZ          C6          N1     119.313    1.50
+XX1          NZ          C6          C5     122.689    2.29
+XX1          N1          C6          C5     117.999    1.50
+XX1          C6          C5          C4     118.399    1.50
+XX1          C6          C5          N7     136.154    1.50
+XX1          C4          C5          N7     105.447    1.50
+XX1          C5          N7          C8     106.460    1.50
+XX1          C5          N7         HN7     127.028    1.50
+XX1          C8          N7         HN7     126.512    2.71
+XX1          N7          C8          N9     113.626    1.50
+XX1          N7          C8          H8     122.945    1.50
+XX1          N9          C8          H8     123.429    1.50
+XX1          C6          N1          C2     118.130    1.50
+XX1          N1          C2          N3     129.015    1.50
+XX1          N1          C2         HC2     115.471    1.50
+XX1          N3          C2         HC2     115.514    1.50
+XX1          C2          N3          C4     112.364    1.50
+XX1          C5          C4          N3     124.093    1.50
+XX1          C5          C4          N9     110.574    1.50
+XX1          N3          C4          N9     125.334    1.50
+XX1          C8          N9          C4     103.894    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+XX1              const_27          C6          C5          N7          C8     180.000   10.00     2
+XX1       const_sp2_sp2_9          N3          C4          C5          C6       0.000   10.00     2
+XX1              const_17          N9          C8          N7          C5       0.000   10.00     2
+XX1              const_15          N7          C8          N9          C4       0.000   10.00     2
+XX1       const_sp2_sp2_3          N3          C2          N1          C6       0.000   10.00     2
+XX1       const_sp2_sp2_5          N1          C2          N3          C4       0.000   10.00     2
+XX1       const_sp2_sp2_7          C5          C4          N3          C2       0.000   10.00     2
+XX1              const_13          C5          C4          N9          C8       0.000   10.00     2
+XX1             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+XX1             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+XX1            sp3_sp3_10           C          CA          CB          CG     180.000   10.00     3
+XX1            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+XX1            sp3_sp3_28          CE          CD          CG          CB     180.000   10.00     3
+XX1            sp3_sp3_37          CG          CD          CE          NZ     180.000   10.00     3
+XX1             sp2_sp3_8          C6          NZ          CE          CD     120.000   10.00     6
+XX1             sp2_sp2_3          N1          C6          NZ          CE       0.000   10.00     2
+XX1              const_22          C4          C5          C6          NZ     180.000   10.00     2
+XX1       const_sp2_sp2_2          NZ          C6          N1          C2     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+XX1    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+XX1    plan-1          C4   0.020
+XX1    plan-1          C5   0.020
+XX1    plan-1          C6   0.020
+XX1    plan-1          C8   0.020
+XX1    plan-1          H8   0.020
+XX1    plan-1         HN7   0.020
+XX1    plan-1          N3   0.020
+XX1    plan-1          N7   0.020
+XX1    plan-1          N9   0.020
+XX1    plan-2          C2   0.020
+XX1    plan-2          C4   0.020
+XX1    plan-2          C5   0.020
+XX1    plan-2          C6   0.020
+XX1    plan-2         HC2   0.020
+XX1    plan-2          N1   0.020
+XX1    plan-2          N3   0.020
+XX1    plan-2          N7   0.020
+XX1    plan-2          N9   0.020
+XX1    plan-2          NZ   0.020
+XX1    plan-3           C   0.020
+XX1    plan-3          CA   0.020
+XX1    plan-3           O   0.020
+XX1    plan-3         OXT   0.020
+XX1    plan-4          C6   0.020
+XX1    plan-4          CE   0.020
+XX1    plan-4          HZ   0.020
+XX1    plan-4          NZ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+XX1 SMILES           ACDLabs              10.04 "O=C(O)C(N)CCCCNc1ncnc2ncnc12"
+XX1 SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCCCNc1ncnc2nc[nH]c12)C(O)=O"
+XX1 SMILES           CACTVS               3.341 "N[CH](CCCCNc1ncnc2nc[nH]c12)C(O)=O"
+XX1 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1[nH]c2c(n1)ncnc2NCCCC[C@@H](C(=O)O)N"
+XX1 SMILES           "OpenEye OEToolkits" 1.5.0 "c1[nH]c2c(n1)ncnc2NCCCCC(C(=O)O)N"
+XX1 InChI            InChI                1.03  "InChI=1S/C11H16N6O2/c12-7(11(18)19)3-1-2-4-13-9-8-10(15-5-14-8)17-6-16-9/h5-7H,1-4,12H2,(H,18,19)(H2,13,14,15,16,17)/t7-/m0/s1"
+XX1 InChIKey         InChI                1.03  YILGCMSDZVYLCZ-ZETCQYMHSA-N
+XX1 ?                acedrg               196         "dictionary generator"
+XX1 ?                acedrg_database      11          "data source"
+XX1 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+XX1 ?                refmac5              5.8.0222    "optimization tool"

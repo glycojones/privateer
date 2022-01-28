@@ -1,0 +1,536 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DEU      DEU 'CO(III)-(DEUTEROPORPHYRIN IX)       ' non-polymer        65  39 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DEU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DEU           O2A    O    OC       -0.500     -5.951    3.328   -1.986
+ DEU           CGA    C    C         0.000     -5.598    2.682   -0.974
+ DEU           O1A    O    OC       -0.500     -6.457    2.116   -0.263
+ DEU           CBA    C    CH2       0.000     -4.138    2.588   -0.612
+ DEU           HBA1   H    H         0.000     -3.741    3.590   -0.439
+ DEU           HBA2   H    H         0.000     -3.590    2.117   -1.431
+ DEU           CAA    C    CH2       0.000     -3.981    1.749    0.658
+ DEU           HAA1   H    H         0.000     -4.379    0.747    0.483
+ DEU           HAA2   H    H         0.000     -4.531    2.220    1.475
+ DEU           C2A    C    CR5       0.000     -2.522    1.655    1.021
+ DEU           C1A    C    CR5       0.000     -1.546    0.688    0.506
+ DEU           CHA    C    C1        0.000     -1.594   -0.645    0.064
+ DEU           HHA    H    H         0.000     -2.580   -1.077    0.090
+ DEU           C4D    C    CR5       0.000     -0.610   -1.516   -0.402
+ DEU           C3D    C    CR5       0.000     -0.506   -2.818   -0.911
+ DEU           CAD    C    CH2       0.000     -1.383   -3.986   -0.542
+ DEU           HAD1   H    H         0.000     -1.461   -4.665   -1.394
+ DEU           HAD2   H    H         0.000     -2.378   -3.623   -0.275
+ DEU           CBD    C    CH2       0.000     -0.771   -4.727    0.649
+ DEU           HBD1   H    H         0.000     -0.693   -4.046    1.499
+ DEU           HBD2   H    H         0.000      0.224   -5.087    0.380
+ DEU           CGD    C    C         0.000     -1.647   -5.896    1.018
+ DEU           O2D    O    OC       -0.500     -1.328   -6.640    1.972
+ DEU           O1D    O    OC       -0.500     -2.694   -6.122    0.371
+ DEU           C2D    C    CR5       0.000      0.547   -2.840   -1.818
+ DEU           CMD    C    CH3       0.000      1.041   -4.043   -2.581
+ DEU           HMD3   H    H         0.000      0.235   -4.708   -2.753
+ DEU           HMD2   H    H         0.000      1.445   -3.731   -3.509
+ DEU           HMD1   H    H         0.000      1.791   -4.535   -2.018
+ DEU           ND     N    NT        0.000      0.616   -0.996   -0.711
+ DEU           C1D    C    CR5       0.000      1.063   -1.551   -1.892
+ DEU           CHD    C    C1        0.000      1.724   -0.762   -2.842
+ DEU           HHD    H    H         0.000      1.983   -1.201   -3.791
+ DEU           C4C    C    CR5       0.000      2.065    0.595   -2.600
+ DEU           C3C    C    CR5       0.000      2.757    1.615   -3.364
+ DEU           C2C    C    CR15      0.000      3.476    2.336   -2.433
+ DEU           H2C    H    H         0.000      4.133    3.175   -2.625
+ DEU           CMC    C    CH3       0.000      2.702    1.839   -4.853
+ DEU           HMC3   H    H         0.000      3.047    0.972   -5.354
+ DEU           HMC2   H    H         0.000      1.704    2.041   -5.143
+ DEU           HMC1   H    H         0.000      3.317    2.662   -5.109
+ DEU           CO     CO   CO        3.000      1.080    0.553    0.042
+ DEU           NA     N    NT        1.000     -0.372    1.259    0.786
+ DEU           NB     N    NT        0.000      2.093    0.760    1.495
+ DEU           C1B    C    CR5       0.000      1.714    1.146    2.763
+ DEU           CHB    C    C1        0.000      0.476    1.763    2.976
+ DEU           HHB    H    H         0.000      0.246    2.136    3.960
+ DEU           C4A    C    CR5       0.000     -0.489    1.916    1.945
+ DEU           C3A    C    CR5       0.000     -1.834    2.457    1.909
+ DEU           CMA    C    CH3       0.000     -2.367    3.641    2.675
+ DEU           HMA3   H    H         0.000     -2.272    3.461    3.714
+ DEU           HMA2   H    H         0.000     -1.816    4.507    2.415
+ DEU           HMA1   H    H         0.000     -3.388    3.787    2.434
+ DEU           NC     N    NT        1.000      2.012    1.107   -1.367
+ DEU           C1C    C    CR5       0.000      3.169    1.733   -1.126
+ DEU           CHC    C    C1        0.000      3.811    1.600    0.108
+ DEU           HHC    H    H         0.000      4.802    2.022    0.127
+ DEU           C4B    C    CR5       0.000      3.423    1.029    1.318
+ DEU           C3B    C    CR5       0.000      3.930    0.837    2.610
+ DEU           C2B    C    CR15      0.000      2.865    0.887    3.501
+ DEU           H2B    H    H         0.000      2.921    0.750    4.574
+ DEU           CMB    C    CH3       0.000      5.376    0.615    2.970
+ DEU           HMB3   H    H         0.000      5.729   -0.260    2.489
+ DEU           HMB2   H    H         0.000      5.950    1.447    2.655
+ DEU           HMB1   H    H         0.000      5.465    0.501    4.019
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DEU      O2A    n/a    CGA    START
+ DEU      CGA    O2A    CBA    .
+ DEU      O1A    CGA    .      .
+ DEU      CBA    CGA    CAA    .
+ DEU      HBA1   CBA    .      .
+ DEU      HBA2   CBA    .      .
+ DEU      CAA    CBA    C2A    .
+ DEU      HAA1   CAA    .      .
+ DEU      HAA2   CAA    .      .
+ DEU      C2A    CAA    C1A    .
+ DEU      C1A    C2A    CHA    .
+ DEU      CHA    C1A    C4D    .
+ DEU      HHA    CHA    .      .
+ DEU      C4D    CHA    ND     .
+ DEU      C3D    C4D    C2D    .
+ DEU      CAD    C3D    CBD    .
+ DEU      HAD1   CAD    .      .
+ DEU      HAD2   CAD    .      .
+ DEU      CBD    CAD    CGD    .
+ DEU      HBD1   CBD    .      .
+ DEU      HBD2   CBD    .      .
+ DEU      CGD    CBD    O1D    .
+ DEU      O2D    CGD    .      .
+ DEU      O1D    CGD    .      .
+ DEU      C2D    C3D    CMD    .
+ DEU      CMD    C2D    HMD1   .
+ DEU      HMD3   CMD    .      .
+ DEU      HMD2   CMD    .      .
+ DEU      HMD1   CMD    .      .
+ DEU      ND     C4D    CO     .
+ DEU      C1D    ND     CHD    .
+ DEU      CHD    C1D    C4C    .
+ DEU      HHD    CHD    .      .
+ DEU      C4C    CHD    C3C    .
+ DEU      C3C    C4C    CMC    .
+ DEU      C2C    C3C    H2C    .
+ DEU      H2C    C2C    .      .
+ DEU      CMC    C3C    HMC1   .
+ DEU      HMC3   CMC    .      .
+ DEU      HMC2   CMC    .      .
+ DEU      HMC1   CMC    .      .
+ DEU      CO     ND     NC     .
+ DEU      NA     CO     .      .
+ DEU      NB     CO     C1B    .
+ DEU      C1B    NB     CHB    .
+ DEU      CHB    C1B    C4A    .
+ DEU      HHB    CHB    .      .
+ DEU      C4A    CHB    C3A    .
+ DEU      C3A    C4A    CMA    .
+ DEU      CMA    C3A    HMA1   .
+ DEU      HMA3   CMA    .      .
+ DEU      HMA2   CMA    .      .
+ DEU      HMA1   CMA    .      .
+ DEU      NC     CO     C1C    .
+ DEU      C1C    NC     CHC    .
+ DEU      CHC    C1C    C4B    .
+ DEU      HHC    CHC    .      .
+ DEU      C4B    CHC    C3B    .
+ DEU      C3B    C4B    CMB    .
+ DEU      C2B    C3B    H2B    .
+ DEU      H2B    C2B    .      .
+ DEU      CMB    C3B    HMB1   .
+ DEU      HMB3   CMB    .      .
+ DEU      HMB2   CMB    .      .
+ DEU      HMB1   CMB    .      END
+ DEU      C2A    C3A    .    ADD
+ DEU      C4A    NA     .    ADD
+ DEU      NA     C1A    .    ADD
+ DEU      C1B    C2B    .    ADD
+ DEU      C4B    NB     .    ADD
+ DEU      C1C    C2C    .    ADD
+ DEU      C4C    NC     .    ADD
+ DEU      C1D    C2D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DEU       CMB       C3B       single    1.506     0.020     1.506     0.020     
+DEU       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+DEU       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+DEU       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+DEU       CMC       C3C       single    1.506     0.020     1.506     0.020     
+DEU       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+DEU       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+DEU       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+DEU       CMA       C3A       single    1.506     0.020     1.506     0.020     
+DEU       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+DEU       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+DEU       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+DEU       CMD       C2D       single    1.506     0.020     1.506     0.020     
+DEU       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+DEU       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+DEU       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+DEU       CAA       CBA       single    1.524     0.020     1.524     0.020     
+DEU       C2A       CAA       single    1.510     0.020     1.510     0.020     
+DEU       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+DEU       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+DEU       CBA       CGA       single    1.510     0.020     1.510     0.020     
+DEU       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+DEU       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+DEU       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+DEU       CGA       O2A       deloc     1.250     0.020     1.250     0.020     
+DEU       CBD       CAD       single    1.524     0.020     1.524     0.020     
+DEU       CAD       C3D       single    1.510     0.020     1.510     0.020     
+DEU       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+DEU       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+DEU       CGD       CBD       single    1.510     0.020     1.510     0.020     
+DEU       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+DEU       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+DEU       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+DEU       O2D       CGD       deloc     1.250     0.020     1.250     0.020     
+DEU       C2A       C3A       double    1.490     0.020     1.490     0.020     
+DEU       C1A       C2A       single    1.490     0.020     1.490     0.020     
+DEU       C3A       C4A       single    1.490     0.020     1.490     0.020     
+DEU       C4A       NA        double    1.455     0.020     1.455     0.020     
+DEU       C4A       CHB       single    1.483     0.020     1.483     0.020     
+DEU       NA        C1A       single    1.455     0.020     1.455     0.020     
+DEU       NA        CO        single    1.900     0.020     1.900     0.020     
+DEU       CHA       C1A       double    1.483     0.020     1.483     0.020     
+DEU       CHB       C1B       double    1.483     0.020     1.483     0.020     
+DEU       HHB       CHB       single    1.082     0.013     0.975     0.010     
+DEU       C1B       C2B       single    1.387     0.020     1.387     0.020     
+DEU       C1B       NB        single    1.455     0.020     1.455     0.020     
+DEU       C2B       C3B       double    1.387     0.020     1.387     0.020     
+DEU       H2B       C2B       single    1.082     0.013     0.975     0.010     
+DEU       C3B       C4B       single    1.490     0.020     1.490     0.020     
+DEU       C4B       NB        single    1.455     0.020     1.455     0.020     
+DEU       C4B       CHC       double    1.483     0.020     1.483     0.020     
+DEU       NB        CO        single    1.900     0.020     1.900     0.020     
+DEU       CHC       C1C       single    1.483     0.020     1.483     0.020     
+DEU       HHC       CHC       single    1.082     0.013     0.975     0.010     
+DEU       C1C       C2C       single    1.387     0.020     1.387     0.020     
+DEU       C1C       NC        double    1.455     0.020     1.455     0.020     
+DEU       C2C       C3C       double    1.387     0.020     1.387     0.020     
+DEU       H2C       C2C       single    1.082     0.013     0.975     0.010     
+DEU       C3C       C4C       single    1.490     0.020     1.490     0.020     
+DEU       C4C       NC        single    1.455     0.020     1.455     0.020     
+DEU       C4C       CHD       double    1.483     0.020     1.483     0.020     
+DEU       NC        CO        single    1.900     0.020     1.900     0.020     
+DEU       CHD       C1D       single    1.483     0.020     1.483     0.020     
+DEU       HHD       CHD       single    1.082     0.013     0.975     0.010     
+DEU       C1D       C2D       double    1.490     0.020     1.490     0.020     
+DEU       C1D       ND        single    1.455     0.020     1.455     0.020     
+DEU       C2D       C3D       single    1.490     0.020     1.490     0.020     
+DEU       C3D       C4D       double    1.490     0.020     1.490     0.020     
+DEU       ND        C4D       single    1.455     0.020     1.455     0.020     
+DEU       C4D       CHA       single    1.483     0.020     1.483     0.020     
+DEU       CO        ND        single    1.900     0.020     1.900     0.020     
+DEU       HHA       CHA       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DEU      O2A    CGA    O1A     123.000    3.000
+ DEU      O2A    CGA    CBA     118.500    3.000
+ DEU      O1A    CGA    CBA     118.500    3.000
+ DEU      CGA    CBA    HBA1    109.470    3.000
+ DEU      CGA    CBA    HBA2    109.470    3.000
+ DEU      CGA    CBA    CAA     109.470    3.000
+ DEU      HBA1   CBA    HBA2    107.900    3.000
+ DEU      HBA1   CBA    CAA     109.470    3.000
+ DEU      HBA2   CBA    CAA     109.470    3.000
+ DEU      CBA    CAA    HAA1    109.470    3.000
+ DEU      CBA    CAA    HAA2    109.470    3.000
+ DEU      CBA    CAA    C2A     109.470    3.000
+ DEU      HAA1   CAA    HAA2    107.900    3.000
+ DEU      HAA1   CAA    C2A     109.470    3.000
+ DEU      HAA2   CAA    C2A     109.470    3.000
+ DEU      CAA    C2A    C1A     126.000    3.000
+ DEU      CAA    C2A    C3A     126.000    3.000
+ DEU      C1A    C2A    C3A     108.000    3.000
+ DEU      C2A    C1A    CHA     117.000    3.000
+ DEU      C2A    C1A    NA      108.000    3.000
+ DEU      CHA    C1A    NA      108.000    3.000
+ DEU      C1A    CHA    HHA     120.000    3.000
+ DEU      C1A    CHA    C4D     120.000    3.000
+ DEU      HHA    CHA    C4D     120.000    3.000
+ DEU      CHA    C4D    C3D     117.000    3.000
+ DEU      CHA    C4D    ND      108.000    3.000
+ DEU      C3D    C4D    ND      108.000    3.000
+ DEU      C4D    C3D    CAD     126.000    3.000
+ DEU      C4D    C3D    C2D     108.000    3.000
+ DEU      CAD    C3D    C2D     126.000    3.000
+ DEU      C3D    CAD    HAD1    109.470    3.000
+ DEU      C3D    CAD    HAD2    109.470    3.000
+ DEU      C3D    CAD    CBD     109.470    3.000
+ DEU      HAD1   CAD    HAD2    107.900    3.000
+ DEU      HAD1   CAD    CBD     109.470    3.000
+ DEU      HAD2   CAD    CBD     109.470    3.000
+ DEU      CAD    CBD    HBD1    109.470    3.000
+ DEU      CAD    CBD    HBD2    109.470    3.000
+ DEU      CAD    CBD    CGD     109.470    3.000
+ DEU      HBD1   CBD    HBD2    107.900    3.000
+ DEU      HBD1   CBD    CGD     109.470    3.000
+ DEU      HBD2   CBD    CGD     109.470    3.000
+ DEU      CBD    CGD    O2D     118.500    3.000
+ DEU      CBD    CGD    O1D     118.500    3.000
+ DEU      O2D    CGD    O1D     123.000    3.000
+ DEU      C3D    C2D    CMD     126.000    3.000
+ DEU      C3D    C2D    C1D     108.000    3.000
+ DEU      CMD    C2D    C1D     126.000    3.000
+ DEU      C2D    CMD    HMD3    109.470    3.000
+ DEU      C2D    CMD    HMD2    109.470    3.000
+ DEU      C2D    CMD    HMD1    109.470    3.000
+ DEU      HMD3   CMD    HMD2    109.470    3.000
+ DEU      HMD3   CMD    HMD1    109.470    3.000
+ DEU      HMD2   CMD    HMD1    109.470    3.000
+ DEU      C4D    ND     C1D     109.500    3.000
+ DEU      C4D    ND     CO      109.500    3.000
+ DEU      C1D    ND     CO      109.500    3.000
+ DEU      ND     C1D    CHD     108.000    3.000
+ DEU      ND     C1D    C2D     108.000    3.000
+ DEU      CHD    C1D    C2D     117.000    3.000
+ DEU      C1D    CHD    HHD     120.000    3.000
+ DEU      C1D    CHD    C4C     120.000    3.000
+ DEU      HHD    CHD    C4C     120.000    3.000
+ DEU      CHD    C4C    C3C     117.000    3.000
+ DEU      CHD    C4C    NC      108.000    3.000
+ DEU      C3C    C4C    NC      108.000    3.000
+ DEU      C4C    C3C    C2C     108.000    3.000
+ DEU      C4C    C3C    CMC     126.000    3.000
+ DEU      C2C    C3C    CMC     108.000    3.000
+ DEU      C3C    C2C    H2C     126.000    3.000
+ DEU      C3C    C2C    C1C     108.000    3.000
+ DEU      H2C    C2C    C1C     126.000    3.000
+ DEU      C3C    CMC    HMC3    109.470    3.000
+ DEU      C3C    CMC    HMC2    109.470    3.000
+ DEU      C3C    CMC    HMC1    109.470    3.000
+ DEU      HMC3   CMC    HMC2    109.470    3.000
+ DEU      HMC3   CMC    HMC1    109.470    3.000
+ DEU      HMC2   CMC    HMC1    109.470    3.000
+ DEU      ND     CO     NA       90.000    3.000
+ DEU      ND     CO     NB       90.000    3.000
+ DEU      ND     CO     NC       90.000    3.000
+ DEU      NA     CO     NB       90.000    3.000
+ DEU      NA     CO     NC       90.000    3.000
+ DEU      NB     CO     NC       90.000    3.000
+ DEU      CO     NA     C4A     109.500    3.000
+ DEU      CO     NA     C1A     109.500    3.000
+ DEU      C4A    NA     C1A     109.500    3.000
+ DEU      CO     NB     C1B     109.500    3.000
+ DEU      CO     NB     C4B     109.500    3.000
+ DEU      C1B    NB     C4B     109.500    3.000
+ DEU      NB     C1B    CHB     108.000    3.000
+ DEU      NB     C1B    C2B     108.000    3.000
+ DEU      CHB    C1B    C2B     108.000    3.000
+ DEU      C1B    CHB    HHB     120.000    3.000
+ DEU      C1B    CHB    C4A     120.000    3.000
+ DEU      HHB    CHB    C4A     120.000    3.000
+ DEU      CHB    C4A    C3A     117.000    3.000
+ DEU      CHB    C4A    NA      108.000    3.000
+ DEU      C3A    C4A    NA      108.000    3.000
+ DEU      C4A    C3A    CMA     126.000    3.000
+ DEU      C4A    C3A    C2A     108.000    3.000
+ DEU      CMA    C3A    C2A     126.000    3.000
+ DEU      C3A    CMA    HMA3    109.470    3.000
+ DEU      C3A    CMA    HMA2    109.470    3.000
+ DEU      C3A    CMA    HMA1    109.470    3.000
+ DEU      HMA3   CMA    HMA2    109.470    3.000
+ DEU      HMA3   CMA    HMA1    109.470    3.000
+ DEU      HMA2   CMA    HMA1    109.470    3.000
+ DEU      CO     NC     C1C     109.500    3.000
+ DEU      CO     NC     C4C     109.500    3.000
+ DEU      C1C    NC     C4C     109.500    3.000
+ DEU      NC     C1C    CHC     108.000    3.000
+ DEU      NC     C1C    C2C     108.000    3.000
+ DEU      CHC    C1C    C2C     108.000    3.000
+ DEU      C1C    CHC    HHC     120.000    3.000
+ DEU      C1C    CHC    C4B     120.000    3.000
+ DEU      HHC    CHC    C4B     120.000    3.000
+ DEU      CHC    C4B    C3B     117.000    3.000
+ DEU      CHC    C4B    NB      108.000    3.000
+ DEU      C3B    C4B    NB      108.000    3.000
+ DEU      C4B    C3B    C2B     108.000    3.000
+ DEU      C4B    C3B    CMB     126.000    3.000
+ DEU      C2B    C3B    CMB     108.000    3.000
+ DEU      C3B    C2B    H2B     126.000    3.000
+ DEU      C3B    C2B    C1B     108.000    3.000
+ DEU      H2B    C2B    C1B     126.000    3.000
+ DEU      C3B    CMB    HMB3    109.470    3.000
+ DEU      C3B    CMB    HMB2    109.470    3.000
+ DEU      C3B    CMB    HMB1    109.470    3.000
+ DEU      HMB3   CMB    HMB2    109.470    3.000
+ DEU      HMB3   CMB    HMB1    109.470    3.000
+ DEU      HMB2   CMB    HMB1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DEU      var_1    O2A    CGA    CBA    CAA      179.973   20.000   3
+ DEU      var_2    CGA    CBA    CAA    C2A     -179.974   20.000   3
+ DEU      var_3    CBA    CAA    C2A    C1A      -85.272   20.000   2
+ DEU      CONST_1  CAA    C2A    C3A    C4A      180.000    0.000   0
+ DEU      CONST_2  CAA    C2A    C1A    CHA        0.000    0.000   0
+ DEU      var_4    C2A    C1A    CHA    C4D     -179.065   20.000   1
+ DEU      var_5    C1A    CHA    C4D    ND       -12.112   20.000   1
+ DEU      CONST_3  CHA    C4D    C3D    C2D      180.000    0.000   0
+ DEU      var_6    C4D    C3D    CAD    CBD      -90.066   20.000   2
+ DEU      var_7    C3D    CAD    CBD    CGD     -179.956   20.000   3
+ DEU      var_8    CAD    CBD    CGD    O1D       -0.041   20.000   3
+ DEU      CONST_4  C4D    C3D    C2D    CMD      180.000    0.000   0
+ DEU      var_9    C3D    C2D    CMD    HMD1     -89.944   20.000   1
+ DEU      var_10   CHA    C4D    ND     CO        22.462   20.000   1
+ DEU      CONST_5  C4D    ND     C1D    CHD      139.983    0.000   0
+ DEU      CONST_6  ND     C1D    C2D    C3D        0.000    0.000   0
+ DEU      var_11   ND     C1D    CHD    C4C        5.421   20.000   1
+ DEU      var_12   C1D    CHD    C4C    C3C      178.330   20.000   1
+ DEU      var_13   CHD    C4C    NC     CO       -22.475   20.000   1
+ DEU      CONST_7  CHD    C4C    C3C    CMC        0.000    0.000   0
+ DEU      CONST_8  C4C    C3C    C2C    C1C        0.000    0.000   0
+ DEU      var_14   C4C    C3C    CMC    HMC1    -179.985   20.000   1
+ DEU      var_15   C4D    ND     CO     NC      -146.378   20.000   1
+ DEU      var_16   ND     CO     NA     C4A      141.095   20.000   1
+ DEU      CONST_9  CO     NA     C1A    C2A        0.000    0.000   0
+ DEU      var_17   ND     CO     NB     C1B     -107.520   20.000   1
+ DEU      var_18   CO     NB     C1B    CHB      -16.648   20.000   1
+ DEU      CONST_10 NB     C1B    C2B    C3B        0.000    0.000   0
+ DEU      var_19   NB     C1B    CHB    C4A        5.654   20.000   1
+ DEU      var_20   C1B    CHB    C4A    C3A      177.299   20.000   1
+ DEU      var_21   CHB    C4A    NA     CO       -21.528   20.000   1
+ DEU      CONST_11 CHB    C4A    C3A    CMA        0.000    0.000   0
+ DEU      var_22   C4A    C3A    CMA    HMA1     179.984   20.000   1
+ DEU      var_23   ND     CO     NC     C1C     -139.478   20.000   1
+ DEU      var_24   CO     NC     C1C    CHC       19.024   20.000   1
+ DEU      CONST_12 NC     C1C    C2C    C3C        0.000    0.000   0
+ DEU      var_25   NC     C1C    CHC    C4B       -9.023   20.000   1
+ DEU      var_26   C1C    CHC    C4B    C3B     -178.970   20.000   1
+ DEU      var_27   CHC    C4B    NB     CO        23.099   20.000   1
+ DEU      CONST_13 CHC    C4B    C3B    CMB        0.000    0.000   0
+ DEU      CONST_14 C4B    C3B    C2B    C1B        0.000    0.000   0
+ DEU      var_28   C4B    C3B    CMB    HMB1     179.965   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DEU      chir_01  NA     C4A    C1A    CO        positiv
+ DEU      chir_02  NB     C1B    C4B    CO        positiv
+ DEU      chir_03  NC     C1C    C4C    CO        negativ
+ DEU      chir_04  ND     C1D    C4D    CO        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DEU      plan-1    CGA       0.020
+ DEU      plan-1    CBA       0.020
+ DEU      plan-1    O1A       0.020
+ DEU      plan-1    O2A       0.020
+ DEU      plan-2    CGD       0.020
+ DEU      plan-2    CBD       0.020
+ DEU      plan-2    O1D       0.020
+ DEU      plan-2    O2D       0.020
+ DEU      plan-3    C2A       0.020
+ DEU      plan-3    CAA       0.020
+ DEU      plan-3    C3A       0.020
+ DEU      plan-3    C1A       0.020
+ DEU      plan-3    C4A       0.020
+ DEU      plan-3    NA        0.020
+ DEU      plan-3    CMA       0.020
+ DEU      plan-3    CHB       0.020
+ DEU      plan-3    CHA       0.020
+ DEU      plan-3    HHB       0.020
+ DEU      plan-3    HHA       0.020
+ DEU      plan-4    CHB       0.020
+ DEU      plan-4    C4A       0.020
+ DEU      plan-4    C1B       0.020
+ DEU      plan-4    HHB       0.020
+ DEU      plan-5    C1B       0.020
+ DEU      plan-5    CHB       0.020
+ DEU      plan-5    C2B       0.020
+ DEU      plan-5    NB        0.020
+ DEU      plan-5    C3B       0.020
+ DEU      plan-5    C4B       0.020
+ DEU      plan-5    H2B       0.020
+ DEU      plan-5    CMB       0.020
+ DEU      plan-5    CHC       0.020
+ DEU      plan-5    HHB       0.020
+ DEU      plan-5    HHC       0.020
+ DEU      plan-6    CHC       0.020
+ DEU      plan-6    C4B       0.020
+ DEU      plan-6    C1C       0.020
+ DEU      plan-6    HHC       0.020
+ DEU      plan-7    C1C       0.020
+ DEU      plan-7    CHC       0.020
+ DEU      plan-7    C2C       0.020
+ DEU      plan-7    NC        0.020
+ DEU      plan-7    C3C       0.020
+ DEU      plan-7    C4C       0.020
+ DEU      plan-7    H2C       0.020
+ DEU      plan-7    CMC       0.020
+ DEU      plan-7    CHD       0.020
+ DEU      plan-7    HHC       0.020
+ DEU      plan-7    HHD       0.020
+ DEU      plan-8    CHD       0.020
+ DEU      plan-8    C4C       0.020
+ DEU      plan-8    C1D       0.020
+ DEU      plan-8    HHD       0.020
+ DEU      plan-9    C1D       0.020
+ DEU      plan-9    CHD       0.020
+ DEU      plan-9    C2D       0.020
+ DEU      plan-9    ND        0.020
+ DEU      plan-9    C3D       0.020
+ DEU      plan-9    C4D       0.020
+ DEU      plan-9    CMD       0.020
+ DEU      plan-9    CAD       0.020
+ DEU      plan-9    CHA       0.020
+ DEU      plan-9    HHD       0.020
+ DEU      plan-9    HHA       0.020
+ DEU      plan-10   CHA       0.020
+ DEU      plan-10   C1A       0.020
+ DEU      plan-10   C4D       0.020
+ DEU      plan-10   HHA       0.020
+# ------------------------------------------------------

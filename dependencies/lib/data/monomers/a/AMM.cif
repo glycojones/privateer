@@ -1,0 +1,253 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AMM      AMM '(2S)-2-{[(AMINOMETHYL)(DIHYDROXY)SIL' non-polymer        32  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AMM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AMM           O      O    O         0.000      0.000    0.000    0.000
+ AMM           C      C    C1        0.000     -1.129    0.180    0.444
+ AMM           H      H    H         0.000     -1.449    1.191    0.633
+ AMM           CE     C    CH1       0.000     -2.098   -0.949    0.739
+ AMM           HE     H    H         0.000     -3.033   -0.530    1.136
+ AMM           CB     C    CH2       0.000     -1.474   -1.887    1.791
+ AMM           HB1    H    H         0.000     -0.540   -2.258    1.363
+ AMM           HB2    H    H         0.000     -2.169   -2.719    1.919
+ AMM           CG     C    CH1       0.000     -1.191   -1.234    3.162
+ AMM           HG     H    H         0.000     -0.806   -2.008    3.840
+ AMM           CD2    C    CH3       0.000     -0.118   -0.153    3.006
+ AMM           HD23   H    H         0.000      0.099    0.270    3.952
+ AMM           HD22   H    H         0.000      0.763   -0.583    2.602
+ AMM           HD21   H    H         0.000     -0.470    0.605    2.354
+ AMM           CD1    C    CH3       0.000     -2.445   -0.625    3.789
+ AMM           HD13   H    H         0.000     -2.182   -0.105    4.673
+ AMM           HD12   H    H         0.000     -2.893    0.048    3.103
+ AMM           HD11   H    H         0.000     -3.133   -1.396    4.025
+ AMM           CH2    C    CH2       0.000     -2.389   -1.671   -0.592
+ AMM           HH21   H    H         0.000     -2.993   -2.542   -0.327
+ AMM           HH22   H    H         0.000     -1.418   -2.003   -0.964
+ AMM           SI     SI   SI        0.000     -3.265   -0.683   -1.921
+ AMM           O2     O    OH1       0.000     -3.591   -1.655   -3.247
+ AMM           HO2    H    H         0.000     -4.032   -1.267   -3.997
+ AMM           O1     O    OH1       0.000     -2.293    0.587   -2.423
+ AMM           HO1    H    H         0.000     -1.445    0.385   -2.808
+ AMM           CA     C    CH2       0.000     -4.872    0.001   -1.208
+ AMM           HA1    H    H         0.000     -5.400    0.576   -1.972
+ AMM           HA2    H    H         0.000     -4.654    0.645   -0.354
+ AMM           N      N    NH2       0.000     -5.703   -1.114   -0.777
+ AMM           HN2    H    H         0.000     -5.890   -1.257    0.206
+ AMM           HN1    H    H         0.000     -6.095   -1.748   -1.460
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AMM      O      n/a    C      START
+ AMM      C      O      CE     .
+ AMM      H      C      .      .
+ AMM      CE     C      CH2    .
+ AMM      HE     CE     .      .
+ AMM      CB     CE     CG     .
+ AMM      HB1    CB     .      .
+ AMM      HB2    CB     .      .
+ AMM      CG     CB     CD1    .
+ AMM      HG     CG     .      .
+ AMM      CD2    CG     HD21   .
+ AMM      HD23   CD2    .      .
+ AMM      HD22   CD2    .      .
+ AMM      HD21   CD2    .      .
+ AMM      CD1    CG     HD11   .
+ AMM      HD13   CD1    .      .
+ AMM      HD12   CD1    .      .
+ AMM      HD11   CD1    .      .
+ AMM      CH2    CE     SI     .
+ AMM      HH21   CH2    .      .
+ AMM      HH22   CH2    .      .
+ AMM      SI     CH2    CA     .
+ AMM      O2     SI     HO2    .
+ AMM      HO2    O2     .      .
+ AMM      O1     SI     HO1    .
+ AMM      HO1    O1     .      .
+ AMM      CA     SI     N      .
+ AMM      HA1    CA     .      .
+ AMM      HA2    CA     .      .
+ AMM      N      CA     HN1    .
+ AMM      HN2    N      .      .
+ AMM      HN1    N      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AMM       N         CA        single    1.450     0.020     1.450     0.020     
+AMM       HN1       N         single    1.036     0.016     0.914     0.007     
+AMM       HN2       N         single    1.036     0.016     0.914     0.007     
+AMM       CA        SI        single    1.812     0.020     1.812     0.020     
+AMM       HA1       CA        single    1.089     0.010     0.989     0.005     
+AMM       HA2       CA        single    1.089     0.010     0.989     0.005     
+AMM       O1        SI        single    1.784     0.020     1.784     0.020     
+AMM       O2        SI        single    1.784     0.020     1.784     0.020     
+AMM       SI        CH2       single    1.812     0.020     1.812     0.020     
+AMM       HO1       O1        single    0.970     0.012     0.839     0.014     
+AMM       HO2       O2        single    0.970     0.012     0.839     0.014     
+AMM       CH2       CE        single    1.524     0.020     1.524     0.020     
+AMM       HH21      CH2       single    1.089     0.010     0.989     0.005     
+AMM       HH22      CH2       single    1.089     0.010     0.989     0.005     
+AMM       CE        C         single    1.510     0.020     1.510     0.020     
+AMM       CB        CE        single    1.524     0.020     1.524     0.020     
+AMM       HE        CE        single    1.089     0.010     0.989     0.005     
+AMM       C         O         double    1.220     0.020     1.220     0.020     
+AMM       H         C         single    1.082     0.013     0.975     0.010     
+AMM       CG        CB        single    1.524     0.020     1.524     0.020     
+AMM       HB1       CB        single    1.089     0.010     0.989     0.005     
+AMM       HB2       CB        single    1.089     0.010     0.989     0.005     
+AMM       CD1       CG        single    1.524     0.020     1.524     0.020     
+AMM       CD2       CG        single    1.524     0.020     1.524     0.020     
+AMM       HG        CG        single    1.089     0.010     0.989     0.005     
+AMM       HD11      CD1       single    1.089     0.010     0.989     0.005     
+AMM       HD12      CD1       single    1.089     0.010     0.989     0.005     
+AMM       HD13      CD1       single    1.089     0.010     0.989     0.005     
+AMM       HD21      CD2       single    1.089     0.010     0.989     0.005     
+AMM       HD22      CD2       single    1.089     0.010     0.989     0.005     
+AMM       HD23      CD2       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AMM      O      C      H       123.000    3.000
+ AMM      O      C      CE      120.500    3.000
+ AMM      H      C      CE      120.000    3.000
+ AMM      C      CE     HE      108.810    3.000
+ AMM      C      CE     CB      109.470    3.000
+ AMM      C      CE     CH2     109.470    3.000
+ AMM      HE     CE     CB      108.340    3.000
+ AMM      HE     CE     CH2     108.340    3.000
+ AMM      CB     CE     CH2     109.470    3.000
+ AMM      CE     CB     HB1     109.470    3.000
+ AMM      CE     CB     HB2     109.470    3.000
+ AMM      CE     CB     CG      111.000    3.000
+ AMM      HB1    CB     HB2     107.900    3.000
+ AMM      HB1    CB     CG      109.470    3.000
+ AMM      HB2    CB     CG      109.470    3.000
+ AMM      CB     CG     HG      108.340    3.000
+ AMM      CB     CG     CD2     111.000    3.000
+ AMM      CB     CG     CD1     111.000    3.000
+ AMM      HG     CG     CD2     108.340    3.000
+ AMM      HG     CG     CD1     108.340    3.000
+ AMM      CD2    CG     CD1     111.000    3.000
+ AMM      CG     CD2    HD23    109.470    3.000
+ AMM      CG     CD2    HD22    109.470    3.000
+ AMM      CG     CD2    HD21    109.470    3.000
+ AMM      HD23   CD2    HD22    109.470    3.000
+ AMM      HD23   CD2    HD21    109.470    3.000
+ AMM      HD22   CD2    HD21    109.470    3.000
+ AMM      CG     CD1    HD13    109.470    3.000
+ AMM      CG     CD1    HD12    109.470    3.000
+ AMM      CG     CD1    HD11    109.470    3.000
+ AMM      HD13   CD1    HD12    109.470    3.000
+ AMM      HD13   CD1    HD11    109.470    3.000
+ AMM      HD12   CD1    HD11    109.470    3.000
+ AMM      CE     CH2    HH21    109.470    3.000
+ AMM      CE     CH2    HH22    109.470    3.000
+ AMM      CE     CH2    SI      109.500    3.000
+ AMM      HH21   CH2    HH22    107.900    3.000
+ AMM      HH21   CH2    SI      109.500    3.000
+ AMM      HH22   CH2    SI      109.500    3.000
+ AMM      CH2    SI     O2      109.500    3.000
+ AMM      CH2    SI     O1      109.500    3.000
+ AMM      CH2    SI     CA      109.500    3.000
+ AMM      O2     SI     O1      109.500    3.000
+ AMM      O2     SI     CA      109.500    3.000
+ AMM      O1     SI     CA      109.500    3.000
+ AMM      SI     O2     HO2     120.000    3.000
+ AMM      SI     O1     HO1     120.000    3.000
+ AMM      SI     CA     HA1     109.500    3.000
+ AMM      SI     CA     HA2     109.500    3.000
+ AMM      SI     CA     N       109.500    3.000
+ AMM      HA1    CA     HA2     107.900    3.000
+ AMM      HA1    CA     N       109.470    3.000
+ AMM      HA2    CA     N       109.470    3.000
+ AMM      CA     N      HN2     120.000    3.000
+ AMM      CA     N      HN1     120.000    3.000
+ AMM      HN2    N      HN1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AMM      var_1    O      C      CE     CH2      -62.154   20.000   1
+ AMM      var_2    C      CE     CB     CG        62.381   20.000   3
+ AMM      var_3    CE     CB     CG     CD1       56.981   20.000   3
+ AMM      var_4    CB     CG     CD2    HD21      61.973   20.000   3
+ AMM      var_5    CB     CG     CD1    HD11      65.884   20.000   3
+ AMM      var_6    C      CE     CH2    SI       -64.259   20.000   3
+ AMM      var_7    CE     CH2    SI     CA       -55.272   20.000   1
+ AMM      var_8    CH2    SI     O2     HO2     -179.693   20.000   1
+ AMM      var_9    CH2    SI     O1     HO1       60.817   20.000   1
+ AMM      var_10   CH2    SI     CA     N        -59.870   20.000   1
+ AMM      var_11   SI     CA     N      HN1      -67.519   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AMM      chir_01  CE     CH2    C      CB        positiv
+ AMM      chir_02  CG     CB     CD1    CD2       positiv
+ AMM      chir_03  SI     CH2    O2     O1        both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AMM      plan-1    N         0.020
+ AMM      plan-1    CA        0.020
+ AMM      plan-1    HN1       0.020
+ AMM      plan-1    HN2       0.020
+ AMM      plan-2    C         0.020
+ AMM      plan-2    CE        0.020
+ AMM      plan-2    O         0.020
+ AMM      plan-2    H         0.020
+# ------------------------------------------------------

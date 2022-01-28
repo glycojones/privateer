@@ -1,0 +1,236 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EXY     EXY     "6-[(2R)-oxiran-2-yl]-L-norleucine"     peptide     27     12     .
+#
+data_comp_EXY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+EXY     N       N       NT3     1       -3.096      -0.620      -0.900
+EXY     CA      C       CH1     0       -2.676      -0.147      0.448
+EXY     C       C       C       0       -3.371      -0.997      1.519
+EXY     O       O       O       0       -3.146      -2.223      1.506
+EXY     OXT     O       OC      -1      -4.110      -0.400      2.327
+EXY     CB      C       CH2     0       -1.152      -0.220      0.591
+EXY     CG      C       CH2     0       -0.374      0.811       -0.216
+EXY     CD      C       CH2     0       1.081       0.940       0.165
+EXY     CE      C       CH2     0       1.925       -0.285      -0.167
+EXY     CF      C       CH1     0       3.389       -0.057      0.059
+EXY     CH      C       CH2     0       4.260       0.374       -1.004
+EXY     OF      O       O2      0       4.309       -0.978      -0.531
+EXY     H       H       H       0       -4.004      -0.598      -0.973
+EXY     H2      H       H       0       -2.809      -1.475      -1.034
+EXY     H3      H       H       0       -2.738      -0.086      -1.545
+EXY     HA      H       H       0       -2.962      0.790       0.552
+EXY     HB2     H       H       0       -0.859      -1.114      0.317
+EXY     HB3     H       H       0       -0.923      -0.109      1.537
+EXY     HG2     H       H       0       -0.801      1.687       -0.104
+EXY     HG3     H       H       0       -0.425      0.572       -1.166
+EXY     HD2     H       H       0       1.136       1.109       1.129
+EXY     HD3     H       H       0       1.457       1.717       -0.300
+EXY     HE2     H       H       0       1.782       -0.527      -1.102
+EXY     HE3     H       H       0       1.631       -1.034      0.385
+EXY     HF      H       H       0       3.630       0.254       0.966
+EXY     HH1     H       H       0       3.863       0.535       -1.878
+EXY     HH2     H       H       0       4.999       0.963       -0.774
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+EXY      N      n/a    CA     START
+EXY      H      N      .      .
+EXY      H2     N      .      .
+EXY      H3     N      .      .
+EXY      CA     N      C      .
+EXY      HA     CA     .      .
+EXY      CB     CA     CG     .
+EXY      HB2    CB     .      .
+EXY      HB3    CB     .      .
+EXY      CG     CB     CD     .
+EXY      HG2    CG     .      .
+EXY      HG3    CG     .      .
+EXY      CD     CG     CE     .
+EXY      HD2    CD     .      .
+EXY      HD3    CD     .      .
+EXY      CE     CD     CF     .
+EXY      HE2    CE     .      .
+EXY      HE3    CE     .      .
+EXY      CF     CE     OF     .
+EXY      HF     CF     .      .
+EXY      OF     CF     CH     .
+EXY      CH     OF     HH1    .
+EXY      HH2    CH     .      .
+EXY      HH1    CH     .      .
+EXY      C      CA     OXT    .
+EXY      O      C      .      .
+EXY      OXT    C      .      END
+EXY      CF     CH     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EXY       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+EXY       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+EXY       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+EXY       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+EXY       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+EXY       CB        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+EXY       CG        CD        SINGLE    n         1.509     0.020     1.509     0.020     
+EXY       CD        CE        SINGLE    n         1.524     0.010     1.524     0.010     
+EXY       CE        CF        SINGLE    n         1.498     0.013     1.498     0.013     
+EXY       CF        CH        SINGLE    n         1.441     0.020     1.441     0.020     
+EXY       CF        OF        SINGLE    n         1.430     0.018     1.430     0.018     
+EXY       CH        OF        SINGLE    n         1.432     0.012     1.432     0.012     
+EXY       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+EXY       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+EXY       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+EXY       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+EXY       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+EXY       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+EXY       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+EXY       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.016     
+EXY       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.016     
+EXY       CD        HD3       SINGLE    n         1.089     0.010     0.981     0.016     
+EXY       CE        HE2       SINGLE    n         1.089     0.010     0.976     0.014     
+EXY       CE        HE3       SINGLE    n         1.089     0.010     0.976     0.014     
+EXY       CF        HF        SINGLE    n         1.089     0.010     0.989     0.020     
+EXY       CH        HH1       SINGLE    n         1.089     0.010     0.973     0.010     
+EXY       CH        HH2       SINGLE    n         1.089     0.010     0.973     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+EXY          CA           N           H     110.062    1.93
+EXY          CA           N          H2     110.062    1.93
+EXY          CA           N          H3     110.062    1.93
+EXY           H           N          H2     109.028    2.41
+EXY           H           N          H3     109.028    2.41
+EXY          H2           N          H3     109.028    2.41
+EXY           N          CA           C     109.241    1.50
+EXY           N          CA          CB     110.374    1.62
+EXY           N          CA          HA     108.487    1.50
+EXY           C          CA          CB     111.037    2.40
+EXY           C          CA          HA     108.824    1.50
+EXY          CB          CA          HA     108.967    1.50
+EXY          CA           C           O     117.124    1.50
+EXY          CA           C         OXT     117.124    1.50
+EXY           O           C         OXT     125.752    1.50
+EXY          CA          CB          CG     115.311    1.56
+EXY          CA          CB         HB2     108.549    1.50
+EXY          CA          CB         HB3     108.549    1.50
+EXY          CG          CB         HB2     108.650    1.50
+EXY          CG          CB         HB3     108.650    1.50
+EXY         HB2          CB         HB3     107.844    1.50
+EXY          CB          CG          CD     114.183    2.57
+EXY          CB          CG         HG2     108.601    1.50
+EXY          CB          CG         HG3     108.601    1.50
+EXY          CD          CG         HG2     108.261    1.50
+EXY          CD          CG         HG3     108.261    1.50
+EXY         HG2          CG         HG3     107.646    1.50
+EXY          CG          CD          CE     114.268    1.50
+EXY          CG          CD         HD2     108.509    1.50
+EXY          CG          CD         HD3     108.509    1.50
+EXY          CE          CD         HD2     108.812    1.50
+EXY          CE          CD         HD3     108.812    1.50
+EXY         HD2          CD         HD3     107.934    1.50
+EXY          CD          CE          CF     113.021    2.35
+EXY          CD          CE         HE2     109.170    1.50
+EXY          CD          CE         HE3     109.170    1.50
+EXY          CF          CE         HE2     109.099    1.50
+EXY          CF          CE         HE3     109.099    1.50
+EXY         HE2          CE         HE3     108.048    1.50
+EXY          CE          CF          CH     120.272    3.00
+EXY          CE          CF          OF     117.659    1.50
+EXY          CE          CF          HF     114.609    1.50
+EXY          CH          CF          OF      59.852    1.50
+EXY          CH          CF          HF     115.425    1.50
+EXY          OF          CF          HF     114.692    1.76
+EXY          CF          CH          OF      59.694    1.50
+EXY          CF          CH         HH1     117.774    1.50
+EXY          CF          CH         HH2     117.774    1.50
+EXY          OF          CH         HH1     117.802    1.50
+EXY          OF          CH         HH2     117.802    1.50
+EXY         HH1          CH         HH2     114.945    1.50
+EXY          CF          OF          CH      60.454    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+EXY            sp3_sp3_16           C          CA           N           H      60.000   10.00     3
+EXY            sp3_sp3_10          CF          CH          OF          CF     -60.000   10.00     3
+EXY             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+EXY            sp3_sp3_25           N          CA          CB          CG      60.000   10.00     3
+EXY            sp3_sp3_31          CA          CB          CG          CD     180.000   10.00     3
+EXY            sp3_sp3_40          CE          CD          CG          CB     180.000   10.00     3
+EXY            sp3_sp3_49          CG          CD          CE          CF     180.000   10.00     3
+EXY            sp3_sp3_58          CD          CE          CF          CH     180.000   10.00     3
+EXY             sp3_sp3_1          CE          CF          CH          OF      60.000   10.00     3
+EXY            sp3_sp3_67          CE          CF          OF          CH     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+EXY    chir_1    CA    N    C    CB    both
+EXY    chir_2    CF    OF    CH    CE    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+EXY    plan-1           C   0.020
+EXY    plan-1          CA   0.020
+EXY    plan-1           O   0.020
+EXY    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+EXY SMILES           ACDLabs              10.04 "O=C(O)C(N)CCCCC1OC1"
+EXY SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCCC[C@@H]1CO1)C(O)=O"
+EXY SMILES           CACTVS               3.341 "N[CH](CCCC[CH]1CO1)C(O)=O"
+EXY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1[C@H](O1)CCCC[C@@H](C(=O)O)N"
+EXY SMILES           "OpenEye OEToolkits" 1.5.0 "C1C(O1)CCCCC(C(=O)O)N"
+EXY InChI            InChI                1.03  "InChI=1S/C8H15NO3/c9-7(8(10)11)4-2-1-3-6-5-12-6/h6-7H,1-5,9H2,(H,10,11)/t6-,7+/m1/s1"
+EXY InChIKey         InChI                1.03  VESDHWISIJZIDY-RQJHMYQMSA-N
+EXY ?                acedrg               196         "dictionary generator"
+EXY ?                acedrg_database      11          "data source"
+EXY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+EXY ?                refmac5              5.8.0222    "optimization tool"

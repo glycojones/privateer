@@ -1,0 +1,145 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BOC     BOC      "TERT-BUTYL HYDROGEN CARBONATE"     NON-POLYMER     18     8     .     
+#
+data_comp_BOC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BOC     O1      O       O       0       -1.773      -2.086      2.754       
+BOC     C       C       C       0       -1.306      -1.265      3.488       
+BOC     O2      O       O2      0       -0.117      -0.664      3.331       
+BOC     CT      C       CT      0       0.560       -0.454      2.019       
+BOC     C1      C       CH3     0       -0.352      0.131       0.960       
+BOC     C2      C       CH3     0       1.662       0.521       2.364       
+BOC     C3      C       CH3     0       1.143       -1.781      1.582       
+BOC     O3      O       OH1     0       -1.960      -0.915      4.567       
+BOC     H11     H       H       0       0.180       0.420       0.199       
+BOC     H12     H       H       0       -0.829      0.894       1.328       
+BOC     H13     H       H       0       -0.992      -0.540      0.669       
+BOC     H21     H       H       0       2.217       0.673       1.581       
+BOC     H22     H       H       0       2.206       0.155       3.081       
+BOC     H23     H       H       0       1.271       1.363       2.652       
+BOC     H31     H       H       0       1.811       -1.630      0.893       
+BOC     H32     H       H       0       0.438       -2.349      1.230       
+BOC     H33     H       H       0       1.559       -2.218      2.345       
+BOC     H3      H       H       0       -1.541      -1.236      5.268       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BOC       O1        C         DOUBLE    n         1.193     0.012     1.193     0.012     
+BOC       C         O2        SINGLE    n         1.332     0.012     1.332     0.012     
+BOC       O2        CT        SINGLE    n         1.484     0.010     1.484     0.010     
+BOC       CT        C1        SINGLE    n         1.512     0.011     1.512     0.011     
+BOC       CT        C2        SINGLE    n         1.512     0.011     1.512     0.011     
+BOC       CT        C3        SINGLE    n         1.512     0.011     1.512     0.011     
+BOC       C         O3        SINGLE    n         1.309     0.018     1.309     0.018     
+BOC       C1        H11       SINGLE    n         1.089     0.010     0.972     0.015     
+BOC       C1        H12       SINGLE    n         1.089     0.010     0.972     0.015     
+BOC       C1        H13       SINGLE    n         1.089     0.010     0.972     0.015     
+BOC       C2        H21       SINGLE    n         1.089     0.010     0.972     0.015     
+BOC       C2        H22       SINGLE    n         1.089     0.010     0.972     0.015     
+BOC       C2        H23       SINGLE    n         1.089     0.010     0.972     0.015     
+BOC       C3        H31       SINGLE    n         1.089     0.010     0.972     0.015     
+BOC       C3        H32       SINGLE    n         1.089     0.010     0.972     0.015     
+BOC       C3        H33       SINGLE    n         1.089     0.010     0.972     0.015     
+BOC       O3        H3        SINGLE    n         0.970     0.012     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BOC          O1           C          O2     123.481    1.50
+BOC          O1           C          O3     120.000    1.60
+BOC          O2           C          O3     116.519    3.00
+BOC           C          O2          CT     120.210    1.50
+BOC          O2          CT          C1     107.126    3.00
+BOC          O2          CT          C2     107.126    3.00
+BOC          O2          CT          C3     107.126    3.00
+BOC          C1          CT          C2     111.547    1.50
+BOC          C1          CT          C3     111.547    1.50
+BOC          C2          CT          C3     111.547    1.50
+BOC          CT          C1         H11     109.487    1.50
+BOC          CT          C1         H12     109.487    1.50
+BOC          CT          C1         H13     109.487    1.50
+BOC         H11          C1         H12     109.441    1.50
+BOC         H11          C1         H13     109.441    1.50
+BOC         H12          C1         H13     109.441    1.50
+BOC          CT          C2         H21     109.487    1.50
+BOC          CT          C2         H22     109.487    1.50
+BOC          CT          C2         H23     109.487    1.50
+BOC         H21          C2         H22     109.441    1.50
+BOC         H21          C2         H23     109.441    1.50
+BOC         H22          C2         H23     109.441    1.50
+BOC          CT          C3         H31     109.487    1.50
+BOC          CT          C3         H32     109.487    1.50
+BOC          CT          C3         H33     109.487    1.50
+BOC         H31          C3         H32     109.441    1.50
+BOC         H31          C3         H33     109.441    1.50
+BOC         H32          C3         H33     109.441    1.50
+BOC           C          O3          H3     108.839    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BOC             sp2_sp2_1          O1           C          O2          CT     180.000   10.00     2
+BOC             sp3_sp3_1          C1          CT          O2           C     180.000   10.00     3
+BOC             sp3_sp3_4         H11          C1          CT          O2     180.000   10.00     3
+BOC            sp3_sp3_13         H21          C2          CT          O2     180.000   10.00     3
+BOC            sp3_sp3_22         H31          C3          CT          O2     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BOC    plan-1           C   0.020
+BOC    plan-1          O1   0.020
+BOC    plan-1          O2   0.020
+BOC    plan-1          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BOC SMILES           ACDLabs              10.04 "O=C(O)OC(C)(C)C"
+BOC SMILES_CANONICAL CACTVS               3.341 "CC(C)(C)OC(O)=O"
+BOC SMILES           CACTVS               3.341 "CC(C)(C)OC(O)=O"
+BOC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)(C)OC(=O)O"
+BOC SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)(C)OC(=O)O"
+BOC InChI            InChI                1.03  "InChI=1S/C5H10O3/c1-5(2,3)8-4(6)7/h1-3H3,(H,6,7)"
+BOC InChIKey         InChI                1.03  XKXIQBVKMABYQJ-UHFFFAOYSA-N
+BOC ?                acedrg               202         "dictionary generator"                  
+BOC ?                acedrg_database      11          "data source"                           
+BOC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BOC ?                refmac5              5.8.0189    "optimization tool"                     

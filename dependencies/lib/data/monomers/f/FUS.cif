@@ -1,0 +1,107 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FUS     FUS      "sulfuric diamide"     NON-POLYMER     9     5     .     
+#
+data_comp_FUS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FUS     NAA     N       NT2     0       1.012       0.543       0.452       
+FUS     SAE     S       S3      0       0.047       -0.560      -0.190      
+FUS     OAC     O       O       0       0.219       -0.498      -1.597      
+FUS     OAD     O       O       0       0.276       -1.773      0.508       
+FUS     NAB     N       NT2     0       -1.459      -0.115      0.120       
+FUS     H1      H       H       0       1.733       0.197       0.838       
+FUS     H2      H       H       0       1.154       1.239       -0.082      
+FUS     H3      H       H       0       -2.006      -0.801      0.262       
+FUS     H4      H       H       0       -1.759      0.515       -0.429      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FUS       SAE       NAB       SINGLE    n         1.601     0.0179    1.601     0.0179    
+FUS       SAE       OAC       DOUBLE    n         1.418     0.0100    1.418     0.0100    
+FUS       NAA       SAE       SINGLE    n         1.601     0.0179    1.601     0.0179    
+FUS       SAE       OAD       DOUBLE    n         1.418     0.0100    1.418     0.0100    
+FUS       NAA       H1        SINGLE    n         1.036     0.016     0.888     0.0200    
+FUS       NAA       H2        SINGLE    n         1.036     0.016     0.888     0.0200    
+FUS       NAB       H3        SINGLE    n         1.036     0.016     0.888     0.0200    
+FUS       NAB       H4        SINGLE    n         1.036     0.016     0.888     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FUS         SAE         NAA          H1     113.277    3.00
+FUS         SAE         NAA          H2     113.277    3.00
+FUS          H1         NAA          H2     115.991    3.00
+FUS         NAB         SAE         OAC     107.257    1.50
+FUS         NAB         SAE         NAA     107.815    3.00
+FUS         NAB         SAE         OAD     107.257    1.50
+FUS         OAC         SAE         NAA     107.257    1.50
+FUS         OAC         SAE         OAD     120.615    1.78
+FUS         NAA         SAE         OAD     107.257    1.50
+FUS         SAE         NAB          H3     113.277    3.00
+FUS         SAE         NAB          H4     113.277    3.00
+FUS          H3         NAB          H4     115.991    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FUS             sp3_sp3_9          H1         NAA         SAE         NAB      60.000   10.00     3
+FUS             sp3_sp3_2          H3         NAB         SAE         OAC     -60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+FUS    chir_1    SAE    OAC    OAD    NAB    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FUS           SMILES              ACDLabs 12.01                               NS(=O)(=O)N
+FUS            InChI                InChI  1.03 InChI=1S/H4N2O2S/c1-5(2,3)4/h(H4,1,2,3,4)
+FUS         InChIKey                InChI  1.03               NVBFHJWHLNUMCV-UHFFFAOYSA-N
+FUS SMILES_CANONICAL               CACTVS 3.385                             N[S](N)(=O)=O
+FUS           SMILES               CACTVS 3.385                             N[S](N)(=O)=O
+FUS SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                               NS(=O)(=O)N
+FUS           SMILES "OpenEye OEToolkits" 2.0.6                               NS(=O)(=O)N
+FUS ?                acedrg               217         "dictionary generator"                  
+FUS ?                acedrg_database      11          "data source"                           
+FUS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FUS ?                refmac5              5.8.0253    "optimization tool"                     

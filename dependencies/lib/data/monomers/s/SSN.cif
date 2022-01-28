@@ -1,0 +1,124 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SSN     SSN      "4-oxobutanoic acid"     NON-POLYMER     12     7     .     
+#
+data_comp_SSN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SSN     C1      C       C       0       23.450      61.077      -31.463     
+SSN     O1      O       O       0       22.914      60.378      -32.346     
+SSN     C2      C       CH2     0       24.883      60.763      -31.070     
+SSN     O2      O       OC      -1      22.873      62.020      -30.885     
+SSN     C3      C       CH2     0       25.933      61.523      -31.856     
+SSN     C4      C       C1      0       27.334      61.217      -31.451     
+SSN     O4      O       O       0       28.317      61.694      -31.928     
+SSN     H2      H       H       0       25.030      59.802      -31.186     
+SSN     H2A     H       H       0       24.991      60.963      -30.117     
+SSN     H3      H       H       0       25.778      62.483      -31.748     
+SSN     H3A     H       H       0       25.830      61.314      -32.807     
+SSN     H4      H       H       0       27.454      60.592      -30.755     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SSN       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+SSN       C1        C2        SINGLE    n         1.519     0.012     1.519     0.012     
+SSN       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+SSN       C2        C3        SINGLE    n         1.516     0.020     1.516     0.020     
+SSN       C3        C4        SINGLE    n         1.490     0.012     1.490     0.012     
+SSN       C4        O4        DOUBLE    n         1.192     0.020     1.192     0.020     
+SSN       C2        H2        SINGLE    n         1.089     0.010     0.979     0.016     
+SSN       C2        H2A       SINGLE    n         1.089     0.010     0.979     0.016     
+SSN       C3        H3        SINGLE    n         1.089     0.010     0.979     0.016     
+SSN       C3        H3A       SINGLE    n         1.089     0.010     0.979     0.016     
+SSN       C4        H4        SINGLE    n         1.082     0.013     0.943     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SSN          O1          C1          C2     118.214    1.64
+SSN          O1          C1          O2     123.571    1.50
+SSN          C2          C1          O2     118.214    1.64
+SSN          C1          C2          C3     114.808    1.90
+SSN          C1          C2          H2     108.404    1.50
+SSN          C1          C2         H2A     108.404    1.50
+SSN          C3          C2          H2     109.197    1.50
+SSN          C3          C2         H2A     109.197    1.50
+SSN          H2          C2         H2A     107.521    1.50
+SSN          C2          C3          C4     114.481    1.97
+SSN          C2          C3          H3     109.197    1.50
+SSN          C2          C3         H3A     109.197    1.50
+SSN          C4          C3          H3     108.942    1.50
+SSN          C4          C3         H3A     108.942    1.50
+SSN          H3          C3         H3A     107.705    1.50
+SSN          C3          C4          O4     125.770    1.96
+SSN          C3          C4          H4     117.100    1.50
+SSN          O4          C4          H4     117.130    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SSN             sp2_sp3_2          O1          C1          C2          C3     120.000   10.00     6
+SSN             sp3_sp3_1          C1          C2          C3          C4     180.000   10.00     3
+SSN             sp2_sp3_8          O4          C4          C3          C2     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SSN    plan-1          C1   0.020
+SSN    plan-1          C2   0.020
+SSN    plan-1          O1   0.020
+SSN    plan-1          O2   0.020
+SSN    plan-2          C3   0.020
+SSN    plan-2          C4   0.020
+SSN    plan-2          H4   0.020
+SSN    plan-2          O4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SSN SMILES           ACDLabs              12.01 "O=CCCC(=O)O"
+SSN SMILES_CANONICAL CACTVS               3.370 "OC(=O)CCC=O"
+SSN SMILES           CACTVS               3.370 "OC(=O)CCC=O"
+SSN SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C(CC(=O)O)C=O"
+SSN SMILES           "OpenEye OEToolkits" 1.7.0 "C(CC(=O)O)C=O"
+SSN InChI            InChI                1.03  "InChI=1S/C4H6O3/c5-3-1-2-4(6)7/h3H,1-2H2,(H,6,7)"
+SSN InChIKey         InChI                1.03  UIUJIQZEACWQSV-UHFFFAOYSA-N
+SSN ?                acedrg               202         "dictionary generator"                  
+SSN ?                acedrg_database      11          "data source"                           
+SSN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SSN ?                refmac5              5.8.0189    "optimization tool"                     

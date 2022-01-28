@@ -1,0 +1,243 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HTI     HTI     "(4S)-4-{[(2S)-2-AMINO-3-OXOPROPYL]SULFANYL}-L-HOMOSERINE"     peptide     29     15     .
+#
+data_comp_HTI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HTI     N       N       NT3     1       3.723       0.492       1.343
+HTI     CA      C       CH1     0       3.516       -0.199      0.039
+HTI     CB      C       CH2     0       2.098       0.045       -0.451
+HTI     S       S       S2      0       0.811       -0.784      0.521
+HTI     CAH     C       CH1     0       -0.699      -0.315      -0.366
+HTI     OAI     O       OH1     0       -0.722      -0.988      -1.618
+HTI     CAJ     C       CH2     0       -1.941      -0.653      0.450
+HTI     CAK     C       CH1     0       -3.261      -0.211      -0.192
+HTI     NAL     N       NT3     1       -4.409      -0.850      0.508
+HTI     CAM     C       C       0       -3.424      1.313       -0.135
+HTI     OAN     O       OC      -1      -3.352      1.933       -1.215
+HTI     OAO     O       O       0       -3.616      1.823       0.987
+HTI     C       C       C       0       4.557       0.283       -0.982
+HTI     O       O       O       0       5.495       -0.495      -1.249
+HTI     OXT     O       OC      -1      4.396       1.421       -1.469
+HTI     H       H       H       0       3.898       1.377       1.204
+HTI     H2      H       H       0       4.424       0.113       1.784
+HTI     H3      H       H       0       2.974       0.415       1.858
+HTI     HA      H       H       0       3.644       -1.165      0.185
+HTI     HB2     H       H       0       2.032       -0.256      -1.371
+HTI     HB3     H       H       0       1.928       1.000       -0.439
+HTI     HAH     H       H       0       -0.662      0.661       -0.528
+HTI     HAI     H       H       0       -1.125      -0.507      -2.189
+HTI     HAJ1    H       H       0       -1.864      -0.228      1.330
+HTI     HAJ2    H       H       0       -1.971      -1.622      0.590
+HTI     HAK     H       H       0       -3.277      -0.496      -1.134
+HTI     HAL1    H       H       0       -5.194      -0.594      0.123
+HTI     HAL2    H       H       0       -4.416      -0.603      1.385
+HTI     H4      H       H       0       -4.340      -1.757      0.458
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+HTI      N      n/a    CA     START
+HTI      H      N      .      .
+HTI      H2     N      .      .
+HTI      H3     N      .      .
+HTI      CA     N      C      .
+HTI      HA     CA     .      .
+HTI      CB     CA     S      .
+HTI      HB2    CB     .      .
+HTI      HB3    CB     .      .
+HTI      S      CB     CAH    .
+HTI      CAH    S      CAJ    .
+HTI      HAH    CAH    .      .
+HTI      OAI    CAH    HAI    .
+HTI      HAI    OAI    .      .
+HTI      CAJ    CAH    CAK    .
+HTI      HAJ1   CAJ    .      .
+HTI      HAJ2   CAJ    .      .
+HTI      CAK    CAJ    CAM    .
+HTI      HAK    CAK    .      .
+HTI      NAL    CAK    HAL1   .
+HTI      H4     NAL    .      .
+HTI      HAL2   NAL    .      .
+HTI      HAL1   NAL    .      .
+HTI      CAM    CAK    OAO    .
+HTI      OAN    CAM    .      .
+HTI      OAO    CAM    .      .
+HTI      C      CA     .      END
+HTI      O      C      .      .
+HTI      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HTI       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+HTI       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+HTI       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+HTI       CB        S         SINGLE    n         1.813     0.011     1.813     0.011     
+HTI       S         CAH       SINGLE    n         1.813     0.017     1.813     0.017     
+HTI       CAH       OAI       SINGLE    n         1.421     0.017     1.421     0.017     
+HTI       CAH       CAJ       SINGLE    n         1.519     0.020     1.519     0.020     
+HTI       CAJ       CAK       SINGLE    n         1.532     0.010     1.532     0.010     
+HTI       CAK       NAL       SINGLE    n         1.488     0.011     1.488     0.011     
+HTI       CAK       CAM       SINGLE    n         1.533     0.011     1.533     0.011     
+HTI       CAM       OAN       SINGLE    n         1.247     0.019     1.247     0.019     
+HTI       CAM       OAO       DOUBLE    n         1.247     0.019     1.247     0.019     
+HTI       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+HTI       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+HTI       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+HTI       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+HTI       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+HTI       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+HTI       CB        HB2       SINGLE    n         1.089     0.010     0.970     0.010     
+HTI       CB        HB3       SINGLE    n         1.089     0.010     0.970     0.010     
+HTI       CAH       HAH       SINGLE    n         1.089     0.010     0.991     0.020     
+HTI       OAI       HAI       SINGLE    n         0.970     0.012     0.848     0.020     
+HTI       CAJ       HAJ1      SINGLE    n         1.089     0.010     0.980     0.016     
+HTI       CAJ       HAJ2      SINGLE    n         1.089     0.010     0.980     0.016     
+HTI       CAK       HAK       SINGLE    n         1.089     0.010     0.985     0.020     
+HTI       NAL       HAL1      SINGLE    n         1.036     0.016     0.911     0.020     
+HTI       NAL       HAL2      SINGLE    n         1.036     0.016     0.911     0.020     
+HTI       NAL       H4        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HTI          CA           N           H     109.671    1.50
+HTI          CA           N          H2     109.671    1.50
+HTI          CA           N          H3     109.671    1.50
+HTI           H           N          H2     109.028    2.41
+HTI           H           N          H3     109.028    2.41
+HTI          H2           N          H3     109.028    2.41
+HTI           N          CA          CB     109.354    1.50
+HTI           N          CA           C     109.494    1.50
+HTI           N          CA          HA     107.983    1.50
+HTI          CB          CA           C     110.419    2.31
+HTI          CB          CA          HA     109.209    1.50
+HTI           C          CA          HA     108.606    1.50
+HTI          CA          CB           S     114.974    1.55
+HTI          CA          CB         HB2     108.537    1.50
+HTI          CA          CB         HB3     108.537    1.50
+HTI           S          CB         HB2     108.654    1.50
+HTI           S          CB         HB3     108.654    1.50
+HTI         HB2          CB         HB3     107.812    1.50
+HTI          CB           S         CAH     101.840    1.86
+HTI           S         CAH         OAI     109.471    3.00
+HTI           S         CAH         CAJ     112.239    3.00
+HTI           S         CAH         HAH     107.856    1.50
+HTI         OAI         CAH         CAJ     109.482    3.00
+HTI         OAI         CAH         HAH     108.816    1.50
+HTI         CAJ         CAH         HAH     109.315    1.98
+HTI         CAH         OAI         HAI     109.233    2.58
+HTI         CAH         CAJ         CAK     111.094    2.85
+HTI         CAH         CAJ        HAJ1     108.798    1.50
+HTI         CAH         CAJ        HAJ2     108.798    1.50
+HTI         CAK         CAJ        HAJ1     108.567    1.50
+HTI         CAK         CAJ        HAJ2     108.567    1.50
+HTI        HAJ1         CAJ        HAJ2     107.715    1.50
+HTI         CAJ         CAK         NAL     110.245    1.51
+HTI         CAJ         CAK         CAM     110.728    2.07
+HTI         CAJ         CAK         HAK     109.207    1.50
+HTI         NAL         CAK         CAM     109.241    1.50
+HTI         NAL         CAK         HAK     108.487    1.50
+HTI         CAM         CAK         HAK     108.824    1.50
+HTI         CAK         NAL        HAL1     110.062    1.93
+HTI         CAK         NAL        HAL2     110.062    1.93
+HTI         CAK         NAL          H4     110.062    1.93
+HTI        HAL1         NAL        HAL2     109.028    2.41
+HTI        HAL1         NAL          H4     109.028    2.41
+HTI        HAL2         NAL          H4     109.028    2.41
+HTI         CAK         CAM         OAN     117.124    1.50
+HTI         CAK         CAM         OAO     117.124    1.50
+HTI         OAN         CAM         OAO     125.752    1.50
+HTI          CA           C           O     117.134    1.50
+HTI          CA           C         OXT     117.134    1.50
+HTI           O           C         OXT     125.732    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HTI             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+HTI             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+HTI            sp3_sp3_10           N          CA          CB           S     180.000   10.00     3
+HTI            sp3_sp3_19          CA          CB           S         CAH     180.000   10.00     3
+HTI            sp3_sp3_22         OAI         CAH           S          CB     180.000   10.00     3
+HTI            sp3_sp3_25           S         CAH         OAI         HAI     180.000   10.00     3
+HTI            sp3_sp3_28           S         CAH         CAJ         CAK     180.000   10.00     3
+HTI            sp3_sp3_38         CAH         CAJ         CAK         NAL     -60.000   10.00     3
+HTI            sp3_sp3_46         CAJ         CAK         NAL        HAL1     180.000   10.00     3
+HTI             sp2_sp3_8         OAN         CAM         CAK         CAJ     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+HTI    chir_1    CA    N    CB    C    negative
+HTI    chir_2    CAH    S    OAI    CAJ    negative
+HTI    chir_3    CAK    NAL    CAM    CAJ    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HTI    plan-1         CAK   0.020
+HTI    plan-1         CAM   0.020
+HTI    plan-1         OAN   0.020
+HTI    plan-1         OAO   0.020
+HTI    plan-2           C   0.020
+HTI    plan-2          CA   0.020
+HTI    plan-2           O   0.020
+HTI    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HTI SMILES           ACDLabs              10.04 "O=C(O)C(N)CSC(O)CC(C(=O)O)N"
+HTI SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CS[C@@H](O)C[C@H](N)C(O)=O)C(O)=O"
+HTI SMILES           CACTVS               3.341 "N[CH](CS[CH](O)C[CH](N)C(O)=O)C(O)=O"
+HTI SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)[C@H](O)SC[C@@H](C(=O)O)N"
+HTI SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)C(O)SCC(C(=O)O)N"
+HTI InChI            InChI                1.03  "InChI=1S/C7H14N2O5S/c8-3(6(11)12)1-5(10)15-2-4(9)7(13)14/h3-5,10H,1-2,8-9H2,(H,11,12)(H,13,14)/t3-,4-,5+/m0/s1"
+HTI InChIKey         InChI                1.03  ZGWOKDWPXPPFGS-VAYJURFESA-N
+HTI ?                acedrg               196         "dictionary generator"
+HTI ?                acedrg_database      11          "data source"
+HTI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HTI ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GHM     GHM      "benzene-1,2,4-tricarboxylic acid"     NON-POLYMER     18     15     .     
+#
+data_comp_GHM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GHM     C4      C       CR16    0       0.587       -1.479      -0.257      
+GHM     C5      C       CR6     0       1.232       -0.286      0.068       
+GHM     C6      C       C       0       2.733       -0.337      0.221       
+GHM     C7      C       CR6     0       0.465       0.883       0.232       
+GHM     C8      C       C       0       1.048       2.230       0.582       
+GHM     C9      C       CR16    0       -0.922      0.815       0.066       
+GHM     C3      C       CR16    0       -0.787      -1.530      -0.418      
+GHM     C1      C       C       0       -3.041      -0.431      -0.431      
+GHM     C2      C       CR6     0       -1.554      -0.382      -0.258      
+GHM     O1      O       O       0       -3.748      0.015       0.491       
+GHM     O2      O       OC      -1      -3.487      -0.915      -1.487      
+GHM     O3      O       O       0       3.210       -0.104      1.346       
+GHM     O4      O       OC      -1      3.410       -0.611      -0.786      
+GHM     O5      O       O       0       1.809       2.765       -0.244      
+GHM     O6      O       OC      -1      0.736       2.731       1.678       
+GHM     H1      H       H       0       1.091       -2.257      -0.367      
+GHM     H2      H       H       0       -1.437      1.602       0.177       
+GHM     H3      H       H       0       -1.202      -2.345      -0.637      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GHM       C8        O5        DOUBLE    n         1.244     0.0200    1.244     0.0200    
+GHM       C6        O3        DOUBLE    n         1.244     0.0200    1.244     0.0200    
+GHM       C7        C8        SINGLE    n         1.508     0.0126    1.508     0.0126    
+GHM       C8        O6        SINGLE    n         1.244     0.0200    1.244     0.0200    
+GHM       C7        C9        DOUBLE    y         1.393     0.0109    1.393     0.0109    
+GHM       C5        C7        SINGLE    y         1.402     0.0100    1.402     0.0100    
+GHM       C5        C6        SINGLE    n         1.508     0.0126    1.508     0.0126    
+GHM       C6        O4        SINGLE    n         1.244     0.0200    1.244     0.0200    
+GHM       C9        C2        SINGLE    y         1.389     0.0100    1.389     0.0100    
+GHM       C1        O1        DOUBLE    n         1.244     0.0200    1.244     0.0200    
+GHM       C4        C5        DOUBLE    y         1.390     0.0100    1.390     0.0100    
+GHM       C1        C2        SINGLE    n         1.498     0.0200    1.498     0.0200    
+GHM       C3        C2        DOUBLE    y         1.387     0.0103    1.387     0.0103    
+GHM       C4        C3        SINGLE    y         1.381     0.0100    1.381     0.0100    
+GHM       C1        O2        SINGLE    n         1.244     0.0200    1.244     0.0200    
+GHM       C4        H1        SINGLE    n         1.082     0.013     0.933     0.0117    
+GHM       C9        H2        SINGLE    n         1.082     0.013     0.946     0.0200    
+GHM       C3        H3        SINGLE    n         1.082     0.013     0.941     0.0168    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GHM          C5          C4          C3     121.124    1.50
+GHM          C5          C4          H1     119.315    1.50
+GHM          C3          C4          H1     119.561    1.50
+GHM          C7          C5          C6     123.692    2.64
+GHM          C7          C5          C4     118.969    1.50
+GHM          C6          C5          C4     117.339    1.99
+GHM          O3          C6          C5     117.798    1.50
+GHM          O3          C6          O4     124.399    1.50
+GHM          C5          C6          O4     117.793    1.50
+GHM          C8          C7          C9     117.403    2.09
+GHM          C8          C7          C5     123.656    2.64
+GHM          C9          C7          C5     118.941    1.50
+GHM          O5          C8          C7     117.798    1.50
+GHM          O5          C8          O6     124.399    1.50
+GHM          C7          C8          O6     117.793    1.50
+GHM          C7          C9          C2     121.206    1.50
+GHM          C7          C9          H2     118.994    1.50
+GHM          C2          C9          H2     119.800    1.50
+GHM          C2          C3          C4     120.482    1.50
+GHM          C2          C3          H3     119.832    1.50
+GHM          C4          C3          H3     119.686    1.50
+GHM          O1          C1          C2     117.791    1.50
+GHM          O1          C1          O2     124.418    1.50
+GHM          C2          C1          O2     117.791    1.50
+GHM          C9          C2          C1     120.281    1.50
+GHM          C9          C2          C3     119.278    1.50
+GHM          C1          C2          C3     120.441    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GHM       const_sp2_sp2_2          C3          C4          C5          C6     180.000   10.00     2
+GHM              const_21          C2          C3          C4          C5       0.000   10.00     2
+GHM             sp2_sp2_5          C7          C5          C6          O3     180.000   10.00     2
+GHM       const_sp2_sp2_8          C6          C5          C7          C8       0.000   10.00     2
+GHM             sp2_sp2_1          C9          C7          C8          O5     180.000   10.00     2
+GHM              const_11          C8          C7          C9          C2     180.000   10.00     2
+GHM              const_15          C1          C2          C9          C7     180.000   10.00     2
+GHM              const_19          C1          C2          C3          C4     180.000   10.00     2
+GHM             sp2_sp2_9          O1          C1          C2          C9     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GHM    plan-1          C1   0.020
+GHM    plan-1          C2   0.020
+GHM    plan-1          C3   0.020
+GHM    plan-1          C4   0.020
+GHM    plan-1          C5   0.020
+GHM    plan-1          C6   0.020
+GHM    plan-1          C7   0.020
+GHM    plan-1          C8   0.020
+GHM    plan-1          C9   0.020
+GHM    plan-1          H1   0.020
+GHM    plan-1          H2   0.020
+GHM    plan-1          H3   0.020
+GHM    plan-2          C5   0.020
+GHM    plan-2          C6   0.020
+GHM    plan-2          O3   0.020
+GHM    plan-2          O4   0.020
+GHM    plan-3          C7   0.020
+GHM    plan-3          C8   0.020
+GHM    plan-3          O5   0.020
+GHM    plan-3          O6   0.020
+GHM    plan-4          C1   0.020
+GHM    plan-4          C2   0.020
+GHM    plan-4          O1   0.020
+GHM    plan-4          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GHM           SMILES              ACDLabs 12.01                                                           c1cc(cc(c1C(O)=O)C(O)=O)C(O)=O
+GHM            InChI                InChI  1.03 InChI=1S/C9H6O6/c10-7(11)4-1-2-5(8(12)13)6(3-4)9(14)15/h1-3H,(H,10,11)(H,12,13)(H,14,15)
+GHM         InChIKey                InChI  1.03                                                              ARCGXLSVLAOJQL-UHFFFAOYSA-N
+GHM SMILES_CANONICAL               CACTVS 3.385                                                           OC(=O)c1ccc(C(O)=O)c(c1)C(O)=O
+GHM           SMILES               CACTVS 3.385                                                           OC(=O)c1ccc(C(O)=O)c(c1)C(O)=O
+GHM SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                                           c1cc(c(cc1C(=O)O)C(=O)O)C(=O)O
+GHM           SMILES "OpenEye OEToolkits" 2.0.6                                                           c1cc(c(cc1C(=O)O)C(=O)O)C(=O)O
+GHM ?                acedrg               217         "dictionary generator"                  
+GHM ?                acedrg_database      11          "data source"                           
+GHM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GHM ?                refmac5              5.8.0253    "optimization tool"                     

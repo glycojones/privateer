@@ -1,0 +1,188 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MFZ     MFZ      "3-(4,7-dichloro-1H-indol-3-yl)prop-2-yn-1-ol"     NON-POLYMER     22     15     .     
+#
+data_comp_MFZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MFZ     O1      O       OH1     0       22.724      8.759       59.008      
+MFZ     C2      C       CH2     0       23.738      9.583       59.556      
+MFZ     C3      C       CSP     0       24.678      8.780       60.341      
+MFZ     C4      C       CSP     0       25.437      8.120       60.980      
+MFZ     C5      C       CR5     0       26.301      7.286       61.740      
+MFZ     C6      C       CR15    0       27.586      7.635       62.101      
+MFZ     N7      N       NR5     0       28.131      6.611       62.821      
+MFZ     C9      C       CR56    0       27.220      5.590       62.940      
+MFZ     C10     C       CR6     0       27.301      4.347       63.575      
+MFZ     CL1     CL      CL      0       28.740      3.863       64.403      
+MFZ     C12     C       CR16    0       26.205      3.491       63.538      
+MFZ     C13     C       CR16    0       25.037      3.863       62.876      
+MFZ     C14     C       CR6     0       24.939      5.098       62.238      
+MFZ     CL2     CL      CL      0       23.476      5.515       61.433      
+MFZ     C16     C       CR56    0       26.041      5.972       62.269      
+MFZ     HO1     H       H       0       22.190      9.240       58.558      
+MFZ     H2      H       H       0       23.325      10.271      60.135      
+MFZ     H2A     H       H       0       24.223      10.039      58.823      
+MFZ     H6      H       H       0       28.033      8.438       61.896      
+MFZ     HN7     H       H       0       28.942      6.611       63.156      
+MFZ     H12     H       H       0       26.251      2.651       63.963      
+MFZ     H13     H       H       0       24.304      3.270       62.861      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MFZ       O1        C2        SINGLE    n         1.417     0.020     1.417     0.020     
+MFZ       C2        C3        SINGLE    n         1.464     0.011     1.464     0.011     
+MFZ       C3        C4        TRIPLE    n         1.192     0.010     1.192     0.010     
+MFZ       C4        C5        SINGLE    n         1.421     0.011     1.421     0.011     
+MFZ       C5        C6        DOUBLE    y         1.379     0.020     1.379     0.020     
+MFZ       C5        C16       SINGLE    y         1.438     0.010     1.438     0.010     
+MFZ       C6        N7        SINGLE    y         1.364     0.013     1.364     0.013     
+MFZ       N7        C9        SINGLE    y         1.373     0.010     1.373     0.010     
+MFZ       C9        C10       SINGLE    y         1.391     0.011     1.391     0.011     
+MFZ       C9        C16       DOUBLE    y         1.403     0.010     1.403     0.010     
+MFZ       C10       CL1       SINGLE    n         1.729     0.013     1.729     0.013     
+MFZ       C10       C12       DOUBLE    y         1.380     0.013     1.380     0.013     
+MFZ       C12       C13       SINGLE    y         1.380     0.013     1.380     0.013     
+MFZ       C13       C14       DOUBLE    y         1.380     0.013     1.380     0.013     
+MFZ       C14       CL2       SINGLE    n         1.721     0.011     1.721     0.011     
+MFZ       C14       C16       SINGLE    y         1.394     0.011     1.394     0.011     
+MFZ       O1        HO1       SINGLE    n         0.970     0.012     0.848     0.020     
+MFZ       C2        H2        SINGLE    n         1.089     0.010     0.990     0.010     
+MFZ       C2        H2A       SINGLE    n         1.089     0.010     0.990     0.010     
+MFZ       C6        H6        SINGLE    n         1.082     0.013     0.941     0.014     
+MFZ       N7        HN7       SINGLE    n         1.016     0.010     0.878     0.020     
+MFZ       C12       H12       SINGLE    n         1.082     0.013     0.943     0.017     
+MFZ       C13       H13       SINGLE    n         1.082     0.013     0.943     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MFZ          C2          O1         HO1     109.016    3.00
+MFZ          O1          C2          C3     109.984    1.89
+MFZ          O1          C2          H2     109.175    1.50
+MFZ          O1          C2         H2A     109.175    1.50
+MFZ          C3          C2          H2     109.370    1.50
+MFZ          C3          C2         H2A     109.370    1.50
+MFZ          H2          C2         H2A     108.291    1.50
+MFZ          C2          C3          C4     180.000    3.00
+MFZ          C3          C4          C5     177.524    1.50
+MFZ          C4          C5          C6     125.728    1.89
+MFZ          C4          C5         C16     126.292    3.00
+MFZ          C6          C5         C16     107.980    1.50
+MFZ          C5          C6          N7     107.814    1.50
+MFZ          C5          C6          H6     127.379    1.50
+MFZ          N7          C6          H6     124.807    1.50
+MFZ          C6          N7          C9     108.922    1.50
+MFZ          C6          N7         HN7     125.190    1.77
+MFZ          C9          N7         HN7     125.888    1.93
+MFZ          N7          C9         C10     131.825    1.50
+MFZ          N7          C9         C16     107.632    1.50
+MFZ         C10          C9         C16     120.543    1.63
+MFZ          C9         C10         CL1     120.983    1.50
+MFZ          C9         C10         C12     119.160    1.50
+MFZ         CL1         C10         C12     119.857    1.50
+MFZ         C10         C12         C13     120.297    1.50
+MFZ         C10         C12         H12     119.984    1.50
+MFZ         C13         C12         H12     119.719    1.50
+MFZ         C12         C13         C14     120.297    1.50
+MFZ         C12         C13         H13     119.719    1.50
+MFZ         C14         C13         H13     119.984    1.50
+MFZ         C13         C14         CL2     120.230    1.50
+MFZ         C13         C14         C16     119.160    1.50
+MFZ         CL2         C14         C16     120.610    1.50
+MFZ          C5         C16          C9     107.652    2.91
+MFZ          C5         C16         C14     131.805    2.09
+MFZ          C9         C16         C14     120.543    1.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MFZ             sp3_sp3_1          C3          C2          O1         HO1     180.000   10.00     3
+MFZ       const_sp2_sp2_9         C10         C12         C13         C14       0.000   10.00     2
+MFZ              const_14         C12         C13         C14         CL2     180.000   10.00     2
+MFZ              const_20         CL2         C14         C16          C5       0.000   10.00     2
+MFZ             sp3_sp3_4          C4          C3          C2          O1     180.000   10.00     3
+MFZ           other_tor_1          C2          C3          C4          C5     180.000   10.00     1
+MFZ           other_tor_2          C3          C4          C5          C6      90.000   10.00     1
+MFZ              const_38          C9         C16          C5          C4     180.000   10.00     2
+MFZ              const_23          C4          C5          C6          N7     180.000   10.00     2
+MFZ              const_25          C5          C6          N7          C9       0.000   10.00     2
+MFZ              const_31         C10          C9          N7          C6     180.000   10.00     2
+MFZ              const_33          C5         C16          C9          N7       0.000   10.00     2
+MFZ       const_sp2_sp2_4         CL1         C10          C9          N7       0.000   10.00     2
+MFZ       const_sp2_sp2_7         CL1         C10         C12         C13     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MFZ    plan-1         C10   0.020
+MFZ    plan-1         C12   0.020
+MFZ    plan-1         C13   0.020
+MFZ    plan-1         C14   0.020
+MFZ    plan-1         C16   0.020
+MFZ    plan-1          C5   0.020
+MFZ    plan-1          C9   0.020
+MFZ    plan-1         CL1   0.020
+MFZ    plan-1         CL2   0.020
+MFZ    plan-1         H12   0.020
+MFZ    plan-1         H13   0.020
+MFZ    plan-1          N7   0.020
+MFZ    plan-2         C10   0.020
+MFZ    plan-2         C14   0.020
+MFZ    plan-2         C16   0.020
+MFZ    plan-2          C4   0.020
+MFZ    plan-2          C5   0.020
+MFZ    plan-2          C6   0.020
+MFZ    plan-2          C9   0.020
+MFZ    plan-2          H6   0.020
+MFZ    plan-2         HN7   0.020
+MFZ    plan-2          N7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MFZ InChI            InChI                1.03  "InChI=1S/C11H7Cl2NO/c12-8-3-4-9(13)11-10(8)7(6-14-11)2-1-5-15/h3-4,6,14-15H,5H2"
+MFZ InChIKey         InChI                1.03  VIZAOCOKGQUJRZ-UHFFFAOYSA-N
+MFZ SMILES_CANONICAL CACTVS               3.385 "OCC#Cc1c[nH]c2c(Cl)ccc(Cl)c12"
+MFZ SMILES           CACTVS               3.385 "OCC#Cc1c[nH]c2c(Cl)ccc(Cl)c12"
+MFZ SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1cc(c2c(c1Cl)c(c[nH]2)C#CCO)Cl"
+MFZ SMILES           "OpenEye OEToolkits" 1.7.6 "c1cc(c2c(c1Cl)c(c[nH]2)C#CCO)Cl"
+MFZ ?                acedrg               202         "dictionary generator"                  
+MFZ ?                acedrg_database      11          "data source"                           
+MFZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MFZ ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,560 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+6HE      6HE '6-METHY-6-DEPROPIONATEHEMIN         ' non-polymer        68  39 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_6HE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 6HE           O2A    O    OC       -0.500     -6.844   -0.308   -2.003
+ 6HE           CGA    C    C         0.000     -6.782    0.342   -0.936
+ 6HE           O1A    O    OC       -0.500     -7.829    0.612   -0.307
+ 6HE           CBA    C    CH2       0.000     -5.446    0.800   -0.409
+ 6HE           HBA1   H    H         0.000     -5.279    0.370    0.581
+ 6HE           HBA2   H    H         0.000     -5.438    1.890   -0.337
+ 6HE           CAA    C    CH2       0.000     -4.339    0.342   -1.360
+ 6HE           HAA1   H    H         0.000     -4.508    0.773   -2.349
+ 6HE           HAA2   H    H         0.000     -4.350   -0.748   -1.432
+ 6HE           C2A    C    CR5       0.000     -3.003    0.799   -0.833
+ 6HE           C1A    C    CR5       0.000     -2.187    0.099    0.020
+ 6HE           C3A    C    CR5       0.000     -2.366    2.029   -1.129
+ 6HE           CMA    C    CH3       0.000     -2.901    3.113   -2.028
+ 6HE           HMA3   H    H         0.000     -2.093    3.630   -2.477
+ 6HE           HMA2   H    H         0.000     -3.506    2.680   -2.782
+ 6HE           HMA1   H    H         0.000     -3.480    3.791   -1.457
+ 6HE           C4A    C    CR5       0.000     -1.172    2.055   -0.450
+ 6HE           NA     N    NT        0.000     -0.969    0.706   -0.222
+ 6HE           FE     FE   FE        0.000      0.659   -0.006    0.328
+ 6HE           ND     N    NT        0.000      0.029   -1.409    1.325
+ 6HE           C4D    C    CR5       0.000     -1.315   -1.604    1.644
+ 6HE           C3D    C    CR5       0.000     -1.263   -2.646    2.587
+ 6HE           CAD    C    CH3       0.000     -2.315   -2.972    3.616
+ 6HE           HAD3   H    H         0.000     -2.453   -2.140    4.256
+ 6HE           HAD2   H    H         0.000     -3.228   -3.197    3.129
+ 6HE           HAD1   H    H         0.000     -2.004   -3.808    4.187
+ 6HE           C2D    C    CR5       0.000     -0.072   -3.316    2.396
+ 6HE           CMD    C    CH3       0.000      0.416   -4.508    3.178
+ 6HE           HMD3   H    H         0.000     -0.414   -5.074    3.514
+ 6HE           HMD2   H    H         0.000      1.026   -5.112    2.558
+ 6HE           HMD1   H    H         0.000      0.979   -4.177    4.012
+ 6HE           C1D    C    CR5       0.000      0.601   -2.681    1.337
+ 6HE           CHD    C    C1        0.000      1.503   -3.083    0.369
+ 6HE           HHD    H    H         0.000      1.807   -4.116    0.400
+ 6HE           CHA    C    C1        0.000     -2.327   -0.933    0.983
+ 6HE           HHA    H    H         0.000     -3.334   -1.227    1.226
+ 6HE           NC     N    NT        0.000      1.927   -0.920   -0.681
+ 6HE           C4C    C    CR5       0.000      2.072   -2.294   -0.656
+ 6HE           C3C    C    CR5       0.000      2.865   -2.488   -1.775
+ 6HE           CAC    C    C1        0.000      3.016   -3.740   -2.533
+ 6HE           HAC    H    H         0.000      3.237   -4.659   -2.016
+ 6HE           CBC    C    C2        0.000      2.880   -3.738   -3.857
+ 6HE           HBC2   H    H         0.000      2.990   -4.655   -4.416
+ 6HE           HBC1   H    H         0.000      2.659   -2.819   -4.379
+ 6HE           C2C    C    CR5       0.000      3.511   -1.237   -2.057
+ 6HE           CMC    C    CH3       0.000      4.473   -0.970   -3.186
+ 6HE           HMC3   H    H         0.000      4.238   -1.597   -4.006
+ 6HE           HMC2   H    H         0.000      4.396    0.044   -3.483
+ 6HE           HMC1   H    H         0.000      5.462   -1.169   -2.862
+ 6HE           C1C    C    CR5       0.000      3.102   -0.342   -1.128
+ 6HE           CHC    C    C1        0.000      3.595    0.919   -0.559
+ 6HE           HHC    H    H         0.000      4.594    1.215   -0.831
+ 6HE           NB     N    NT        0.000      1.574    1.556    0.610
+ 6HE           C4B    C    CR5       0.000      2.916    1.753    0.278
+ 6HE           C3B    C    CR5       0.000      3.209    3.034    0.923
+ 6HE           CAB    C    C1        0.000      4.535    3.549    1.303
+ 6HE           HAB    H    H         0.000      4.623    4.514    1.774
+ 6HE           CBB    C    C2        0.000      5.625    2.823    1.065
+ 6HE           HBB2   H    H         0.000      5.541    1.856    0.593
+ 6HE           HBB1   H    H         0.000      6.598    3.198    1.343
+ 6HE           C2B    C    CR5       0.000      1.974    3.671    1.104
+ 6HE           CMB    C    CH3       0.000      1.752    5.021    1.737
+ 6HE           HMB3   H    H         0.000      2.598    5.635    1.567
+ 6HE           HMB2   H    H         0.000      0.895    5.475    1.310
+ 6HE           HMB1   H    H         0.000      1.606    4.903    2.779
+ 6HE           C1B    C    CR5       0.000      0.983    2.825    0.587
+ 6HE           CHB    C    C1        0.000     -0.268    3.034    0.031
+ 6HE           HHB    H    H         0.000     -0.591    4.059   -0.044
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 6HE      O2A    n/a    CGA    START
+ 6HE      CGA    O2A    CBA    .
+ 6HE      O1A    CGA    .      .
+ 6HE      CBA    CGA    CAA    .
+ 6HE      HBA1   CBA    .      .
+ 6HE      HBA2   CBA    .      .
+ 6HE      CAA    CBA    C2A    .
+ 6HE      HAA1   CAA    .      .
+ 6HE      HAA2   CAA    .      .
+ 6HE      C2A    CAA    C3A    .
+ 6HE      C1A    C2A    .      .
+ 6HE      C3A    C2A    C4A    .
+ 6HE      CMA    C3A    HMA1   .
+ 6HE      HMA3   CMA    .      .
+ 6HE      HMA2   CMA    .      .
+ 6HE      HMA1   CMA    .      .
+ 6HE      C4A    C3A    NA     .
+ 6HE      NA     C4A    FE     .
+ 6HE      FE     NA     NB     .
+ 6HE      ND     FE     C4D    .
+ 6HE      C4D    ND     CHA    .
+ 6HE      C3D    C4D    C2D    .
+ 6HE      CAD    C3D    HAD1   .
+ 6HE      HAD3   CAD    .      .
+ 6HE      HAD2   CAD    .      .
+ 6HE      HAD1   CAD    .      .
+ 6HE      C2D    C3D    C1D    .
+ 6HE      CMD    C2D    HMD1   .
+ 6HE      HMD3   CMD    .      .
+ 6HE      HMD2   CMD    .      .
+ 6HE      HMD1   CMD    .      .
+ 6HE      C1D    C2D    CHD    .
+ 6HE      CHD    C1D    HHD    .
+ 6HE      HHD    CHD    .      .
+ 6HE      CHA    C4D    HHA    .
+ 6HE      HHA    CHA    .      .
+ 6HE      NC     FE     C4C    .
+ 6HE      C4C    NC     C3C    .
+ 6HE      C3C    C4C    C2C    .
+ 6HE      CAC    C3C    CBC    .
+ 6HE      HAC    CAC    .      .
+ 6HE      CBC    CAC    HBC1   .
+ 6HE      HBC2   CBC    .      .
+ 6HE      HBC1   CBC    .      .
+ 6HE      C2C    C3C    C1C    .
+ 6HE      CMC    C2C    HMC1   .
+ 6HE      HMC3   CMC    .      .
+ 6HE      HMC2   CMC    .      .
+ 6HE      HMC1   CMC    .      .
+ 6HE      C1C    C2C    CHC    .
+ 6HE      CHC    C1C    HHC    .
+ 6HE      HHC    CHC    .      .
+ 6HE      NB     FE     C4B    .
+ 6HE      C4B    NB     C3B    .
+ 6HE      C3B    C4B    C2B    .
+ 6HE      CAB    C3B    CBB    .
+ 6HE      HAB    CAB    .      .
+ 6HE      CBB    CAB    HBB1   .
+ 6HE      HBB2   CBB    .      .
+ 6HE      HBB1   CBB    .      .
+ 6HE      C2B    C3B    C1B    .
+ 6HE      CMB    C2B    HMB1   .
+ 6HE      HMB3   CMB    .      .
+ 6HE      HMB2   CMB    .      .
+ 6HE      HMB1   CMB    .      .
+ 6HE      C1B    C2B    CHB    .
+ 6HE      CHB    C1B    HHB    .
+ 6HE      HHB    CHB    .      END
+ 6HE      CHA    C1A    .    ADD
+ 6HE      CHB    C4A    .    ADD
+ 6HE      CHC    C4B    .    ADD
+ 6HE      CHD    C4C    .    ADD
+ 6HE      NA     C1A    .    ADD
+ 6HE      NB     C1B    .    ADD
+ 6HE      NC     C1C    .    ADD
+ 6HE      ND     C1D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+6HE       ND        FE        single    1.945     0.020     1.945     0.020     
+6HE       NC        FE        single    1.945     0.020     1.945     0.020     
+6HE       FE        NA        single    1.945     0.020     1.945     0.020     
+6HE       NB        FE        single    1.945     0.020     1.945     0.020     
+6HE       CHA       C4D       double    1.483     0.020     1.483     0.020     
+6HE       CHA       C1A       single    1.483     0.020     1.483     0.020     
+6HE       HHA       CHA       single    1.082     0.013     0.975     0.010     
+6HE       CHB       C4A       single    1.483     0.020     1.483     0.020     
+6HE       CHB       C1B       double    1.483     0.020     1.483     0.020     
+6HE       HHB       CHB       single    1.082     0.013     0.975     0.010     
+6HE       CHC       C1C       single    1.483     0.020     1.483     0.020     
+6HE       CHC       C4B       double    1.483     0.020     1.483     0.020     
+6HE       HHC       CHC       single    1.082     0.013     0.975     0.010     
+6HE       CHD       C1D       double    1.483     0.020     1.483     0.020     
+6HE       CHD       C4C       single    1.483     0.020     1.483     0.020     
+6HE       HHD       CHD       single    1.082     0.013     0.975     0.010     
+6HE       NA        C1A       single    1.455     0.020     1.455     0.020     
+6HE       NA        C4A       single    1.455     0.020     1.455     0.020     
+6HE       C1A       C2A       double    1.490     0.020     1.490     0.020     
+6HE       C2A       CAA       single    1.510     0.020     1.510     0.020     
+6HE       C3A       C2A       single    1.490     0.020     1.490     0.020     
+6HE       C4A       C3A       double    1.490     0.020     1.490     0.020     
+6HE       CMA       C3A       single    1.506     0.020     1.506     0.020     
+6HE       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+6HE       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+6HE       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+6HE       CAA       CBA       single    1.524     0.020     1.524     0.020     
+6HE       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+6HE       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+6HE       CBA       CGA       single    1.510     0.020     1.510     0.020     
+6HE       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+6HE       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+6HE       CGA       O2A       deloc     1.250     0.020     1.250     0.020     
+6HE       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+6HE       C4B       NB        single    1.455     0.020     1.455     0.020     
+6HE       NB        C1B       single    1.455     0.020     1.455     0.020     
+6HE       C1B       C2B       single    1.490     0.020     1.490     0.020     
+6HE       C2B       C3B       double    1.490     0.020     1.490     0.020     
+6HE       CMB       C2B       single    1.506     0.020     1.506     0.020     
+6HE       C3B       C4B       single    1.490     0.020     1.490     0.020     
+6HE       CAB       C3B       single    1.483     0.020     1.483     0.020     
+6HE       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+6HE       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+6HE       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+6HE       CBB       CAB       double    1.320     0.020     1.320     0.020     
+6HE       HAB       CAB       single    1.082     0.013     0.975     0.010     
+6HE       HBB1      CBB       single    1.082     0.013     0.975     0.010     
+6HE       HBB2      CBB       single    1.082     0.013     0.975     0.010     
+6HE       C4C       NC        single    1.455     0.020     1.455     0.020     
+6HE       NC        C1C       single    1.455     0.020     1.455     0.020     
+6HE       C1C       C2C       double    1.490     0.020     1.490     0.020     
+6HE       C2C       C3C       single    1.490     0.020     1.490     0.020     
+6HE       CMC       C2C       single    1.506     0.020     1.506     0.020     
+6HE       CAC       C3C       single    1.483     0.020     1.483     0.020     
+6HE       C3C       C4C       double    1.490     0.020     1.490     0.020     
+6HE       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+6HE       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+6HE       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+6HE       CBC       CAC       double    1.320     0.020     1.320     0.020     
+6HE       HAC       CAC       single    1.082     0.013     0.975     0.010     
+6HE       HBC1      CBC       single    1.082     0.013     0.975     0.010     
+6HE       HBC2      CBC       single    1.082     0.013     0.975     0.010     
+6HE       ND        C1D       single    1.455     0.020     1.455     0.020     
+6HE       C4D       ND        single    1.455     0.020     1.455     0.020     
+6HE       C1D       C2D       single    1.490     0.020     1.490     0.020     
+6HE       CMD       C2D       single    1.506     0.020     1.506     0.020     
+6HE       C2D       C3D       double    1.490     0.020     1.490     0.020     
+6HE       CAD       C3D       single    1.506     0.020     1.506     0.020     
+6HE       C3D       C4D       single    1.490     0.020     1.490     0.020     
+6HE       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+6HE       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+6HE       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+6HE       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+6HE       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+6HE       HAD3      CAD       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 6HE      O2A    CGA    O1A     123.000    3.000
+ 6HE      O2A    CGA    CBA     118.500    3.000
+ 6HE      O1A    CGA    CBA     118.500    3.000
+ 6HE      CGA    CBA    HBA1    109.470    3.000
+ 6HE      CGA    CBA    HBA2    109.470    3.000
+ 6HE      CGA    CBA    CAA     109.470    3.000
+ 6HE      HBA1   CBA    HBA2    107.900    3.000
+ 6HE      HBA1   CBA    CAA     109.470    3.000
+ 6HE      HBA2   CBA    CAA     109.470    3.000
+ 6HE      CBA    CAA    HAA1    109.470    3.000
+ 6HE      CBA    CAA    HAA2    109.470    3.000
+ 6HE      CBA    CAA    C2A     109.470    3.000
+ 6HE      HAA1   CAA    HAA2    107.900    3.000
+ 6HE      HAA1   CAA    C2A     109.470    3.000
+ 6HE      HAA2   CAA    C2A     109.470    3.000
+ 6HE      CAA    C2A    C1A     126.000    3.000
+ 6HE      CAA    C2A    C3A     126.000    3.000
+ 6HE      C1A    C2A    C3A     108.000    3.000
+ 6HE      C2A    C1A    CHA     117.000    3.000
+ 6HE      C2A    C1A    NA      108.000    3.000
+ 6HE      CHA    C1A    NA      108.000    3.000
+ 6HE      C2A    C3A    CMA     126.000    3.000
+ 6HE      C2A    C3A    C4A     108.000    3.000
+ 6HE      CMA    C3A    C4A     126.000    3.000
+ 6HE      C3A    CMA    HMA3    109.470    3.000
+ 6HE      C3A    CMA    HMA2    109.470    3.000
+ 6HE      C3A    CMA    HMA1    109.470    3.000
+ 6HE      HMA3   CMA    HMA2    109.470    3.000
+ 6HE      HMA3   CMA    HMA1    109.470    3.000
+ 6HE      HMA2   CMA    HMA1    109.470    3.000
+ 6HE      C3A    C4A    NA      108.000    3.000
+ 6HE      C3A    C4A    CHB     117.000    3.000
+ 6HE      NA     C4A    CHB     108.000    3.000
+ 6HE      C4A    NA     FE      109.500    3.000
+ 6HE      C4A    NA     C1A     109.500    3.000
+ 6HE      FE     NA     C1A     109.500    3.000
+ 6HE      NA     FE     ND       90.000    3.000
+ 6HE      NA     FE     NC       90.000    3.000
+ 6HE      NA     FE     NB       90.000    3.000
+ 6HE      ND     FE     NC       90.000    3.000
+ 6HE      ND     FE     NB       90.000    3.000
+ 6HE      NC     FE     NB       90.000    3.000
+ 6HE      FE     ND     C4D     109.500    3.000
+ 6HE      FE     ND     C1D     109.500    3.000
+ 6HE      C4D    ND     C1D     109.500    3.000
+ 6HE      ND     C4D    C3D     108.000    3.000
+ 6HE      ND     C4D    CHA     108.000    3.000
+ 6HE      C3D    C4D    CHA     117.000    3.000
+ 6HE      C4D    C3D    CAD     126.000    3.000
+ 6HE      C4D    C3D    C2D     108.000    3.000
+ 6HE      CAD    C3D    C2D     126.000    3.000
+ 6HE      C3D    CAD    HAD3    109.470    3.000
+ 6HE      C3D    CAD    HAD2    109.470    3.000
+ 6HE      C3D    CAD    HAD1    109.470    3.000
+ 6HE      HAD3   CAD    HAD2    109.470    3.000
+ 6HE      HAD3   CAD    HAD1    109.470    3.000
+ 6HE      HAD2   CAD    HAD1    109.470    3.000
+ 6HE      C3D    C2D    CMD     126.000    3.000
+ 6HE      C3D    C2D    C1D     108.000    3.000
+ 6HE      CMD    C2D    C1D     126.000    3.000
+ 6HE      C2D    CMD    HMD3    109.470    3.000
+ 6HE      C2D    CMD    HMD2    109.470    3.000
+ 6HE      C2D    CMD    HMD1    109.470    3.000
+ 6HE      HMD3   CMD    HMD2    109.470    3.000
+ 6HE      HMD3   CMD    HMD1    109.470    3.000
+ 6HE      HMD2   CMD    HMD1    109.470    3.000
+ 6HE      C2D    C1D    CHD     117.000    3.000
+ 6HE      C2D    C1D    ND      108.000    3.000
+ 6HE      CHD    C1D    ND      108.000    3.000
+ 6HE      C1D    CHD    HHD     120.000    3.000
+ 6HE      C1D    CHD    C4C     120.000    3.000
+ 6HE      HHD    CHD    C4C     120.000    3.000
+ 6HE      C4D    CHA    HHA     120.000    3.000
+ 6HE      C4D    CHA    C1A     120.000    3.000
+ 6HE      HHA    CHA    C1A     120.000    3.000
+ 6HE      FE     NC     C4C     109.500    3.000
+ 6HE      FE     NC     C1C     109.500    3.000
+ 6HE      C4C    NC     C1C     109.500    3.000
+ 6HE      NC     C4C    C3C     108.000    3.000
+ 6HE      NC     C4C    CHD     108.000    3.000
+ 6HE      C3C    C4C    CHD     117.000    3.000
+ 6HE      C4C    C3C    CAC     117.000    3.000
+ 6HE      C4C    C3C    C2C     108.000    3.000
+ 6HE      CAC    C3C    C2C     117.000    3.000
+ 6HE      C3C    CAC    HAC     120.000    3.000
+ 6HE      C3C    CAC    CBC     120.000    3.000
+ 6HE      HAC    CAC    CBC     120.000    3.000
+ 6HE      CAC    CBC    HBC2    120.000    3.000
+ 6HE      CAC    CBC    HBC1    120.000    3.000
+ 6HE      HBC2   CBC    HBC1    120.000    3.000
+ 6HE      C3C    C2C    CMC     126.000    3.000
+ 6HE      C3C    C2C    C1C     108.000    3.000
+ 6HE      CMC    C2C    C1C     126.000    3.000
+ 6HE      C2C    CMC    HMC3    109.470    3.000
+ 6HE      C2C    CMC    HMC2    109.470    3.000
+ 6HE      C2C    CMC    HMC1    109.470    3.000
+ 6HE      HMC3   CMC    HMC2    109.470    3.000
+ 6HE      HMC3   CMC    HMC1    109.470    3.000
+ 6HE      HMC2   CMC    HMC1    109.470    3.000
+ 6HE      C2C    C1C    CHC     117.000    3.000
+ 6HE      C2C    C1C    NC      108.000    3.000
+ 6HE      CHC    C1C    NC      108.000    3.000
+ 6HE      C1C    CHC    HHC     120.000    3.000
+ 6HE      C1C    CHC    C4B     120.000    3.000
+ 6HE      HHC    CHC    C4B     120.000    3.000
+ 6HE      FE     NB     C4B     109.500    3.000
+ 6HE      FE     NB     C1B     109.500    3.000
+ 6HE      C4B    NB     C1B     109.500    3.000
+ 6HE      NB     C4B    C3B     108.000    3.000
+ 6HE      NB     C4B    CHC     108.000    3.000
+ 6HE      C3B    C4B    CHC     117.000    3.000
+ 6HE      C4B    C3B    CAB     117.000    3.000
+ 6HE      C4B    C3B    C2B     108.000    3.000
+ 6HE      CAB    C3B    C2B     117.000    3.000
+ 6HE      C3B    CAB    HAB     120.000    3.000
+ 6HE      C3B    CAB    CBB     120.000    3.000
+ 6HE      HAB    CAB    CBB     120.000    3.000
+ 6HE      CAB    CBB    HBB2    120.000    3.000
+ 6HE      CAB    CBB    HBB1    120.000    3.000
+ 6HE      HBB2   CBB    HBB1    120.000    3.000
+ 6HE      C3B    C2B    CMB     126.000    3.000
+ 6HE      C3B    C2B    C1B     108.000    3.000
+ 6HE      CMB    C2B    C1B     126.000    3.000
+ 6HE      C2B    CMB    HMB3    109.470    3.000
+ 6HE      C2B    CMB    HMB2    109.470    3.000
+ 6HE      C2B    CMB    HMB1    109.470    3.000
+ 6HE      HMB3   CMB    HMB2    109.470    3.000
+ 6HE      HMB3   CMB    HMB1    109.470    3.000
+ 6HE      HMB2   CMB    HMB1    109.470    3.000
+ 6HE      C2B    C1B    CHB     117.000    3.000
+ 6HE      C2B    C1B    NB      108.000    3.000
+ 6HE      CHB    C1B    NB      108.000    3.000
+ 6HE      C1B    CHB    HHB     120.000    3.000
+ 6HE      C1B    CHB    C4A     120.000    3.000
+ 6HE      HHB    CHB    C4A     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 6HE      var_1    O2A    CGA    CBA    CAA       -0.024   20.000   3
+ 6HE      var_2    CGA    CBA    CAA    C2A     -179.966   20.000   3
+ 6HE      var_3    CBA    CAA    C2A    C3A      -89.931   20.000   2
+ 6HE      CONST_1  CAA    C2A    C1A    CHA        0.000    0.000   0
+ 6HE      CONST_2  CAA    C2A    C3A    C4A      180.000    0.000   0
+ 6HE      var_4    C2A    C3A    CMA    HMA1      90.075   20.000   1
+ 6HE      CONST_3  C2A    C3A    C4A    NA         0.000    0.000   0
+ 6HE      CONST_4  C3A    C4A    NA     FE         0.000    0.000   0
+ 6HE      CONST_5  C4A    NA     C1A    C2A       36.037    0.000   0
+ 6HE      var_5    C4A    NA     FE     NB         6.703   20.000   1
+ 6HE      var_6    NA     FE     ND     C4D       -8.445   20.000   1
+ 6HE      CONST_6  FE     ND     C1D    C2D        0.000    0.000   0
+ 6HE      var_7    FE     ND     C4D    CHA       15.353   20.000   1
+ 6HE      CONST_7  ND     C4D    C3D    C2D        0.000    0.000   0
+ 6HE      var_8    C4D    C3D    CAD    HAD1     179.958   20.000   1
+ 6HE      CONST_8  C4D    C3D    C2D    C1D        0.000    0.000   0
+ 6HE      var_9    C3D    C2D    CMD    HMD1     -90.039   20.000   1
+ 6HE      CONST_9  C3D    C2D    C1D    CHD      180.000    0.000   0
+ 6HE      var_10   C2D    C1D    CHD    C4C      178.782   20.000   1
+ 6HE      var_11   C1D    CHD    C4C    NC        10.094   20.000   1
+ 6HE      var_12   ND     C4D    CHA    C1A       -6.316   20.000   1
+ 6HE      var_13   C4D    CHA    C1A    C2A      172.305   20.000   1
+ 6HE      var_14   NA     FE     NC     C4C     -101.886   20.000   1
+ 6HE      CONST_10 FE     NC     C1C    C2C        0.000    0.000   0
+ 6HE      CONST_11 FE     NC     C4C    C3C        0.000    0.000   0
+ 6HE      CONST_12 NC     C4C    C3C    C2C        0.000    0.000   0
+ 6HE      var_15   C4C    C3C    CAC    CBC      129.986   20.000   1
+ 6HE      CONST_13 C3C    CAC    CBC    HBC1       0.022    0.000   0
+ 6HE      CONST_14 C4C    C3C    C2C    C1C        0.000    0.000   0
+ 6HE      var_16   C3C    C2C    CMC    HMC1     -89.992   20.000   1
+ 6HE      CONST_15 C3C    C2C    C1C    CHC      180.000    0.000   0
+ 6HE      var_17   C2C    C1C    CHC    C4B      171.271   20.000   1
+ 6HE      var_18   C1C    CHC    C4B    NB        -6.115   20.000   1
+ 6HE      var_19   NA     FE     NB     C4B     -140.411   20.000   1
+ 6HE      CONST_16 FE     NB     C1B    C2B        0.000    0.000   0
+ 6HE      CONST_17 FE     NB     C4B    C3B        0.000    0.000   0
+ 6HE      CONST_18 NB     C4B    C3B    C2B        0.000    0.000   0
+ 6HE      var_20   C4B    C3B    CAB    CBB       -0.093   20.000   1
+ 6HE      CONST_19 C3B    CAB    CBB    HBB1    -179.988    0.000   0
+ 6HE      CONST_20 C4B    C3B    C2B    C1B        0.000    0.000   0
+ 6HE      var_21   C3B    C2B    CMB    HMB1     -90.041   20.000   1
+ 6HE      CONST_21 C3B    C2B    C1B    CHB      180.000    0.000   0
+ 6HE      var_22   C2B    C1B    CHB    C4A     -179.709   20.000   1
+ 6HE      var_23   C1B    CHB    C4A    C3A     -172.573   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 6HE      chir_01  NA     FE     C1A    C4A       negativ
+ 6HE      chir_02  NB     FE     C1B    C4B       positiv
+ 6HE      chir_03  NC     FE     C1C    C4C       negativ
+ 6HE      chir_04  ND     FE     C1D    C4D       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 6HE      plan-1    CHA       0.020
+ 6HE      plan-1    C1A       0.020
+ 6HE      plan-1    C4D       0.020
+ 6HE      plan-1    HHA       0.020
+ 6HE      plan-2    CHB       0.020
+ 6HE      plan-2    C4A       0.020
+ 6HE      plan-2    C1B       0.020
+ 6HE      plan-2    HHB       0.020
+ 6HE      plan-3    CHC       0.020
+ 6HE      plan-3    C4B       0.020
+ 6HE      plan-3    C1C       0.020
+ 6HE      plan-3    HHC       0.020
+ 6HE      plan-4    CHD       0.020
+ 6HE      plan-4    C4C       0.020
+ 6HE      plan-4    C1D       0.020
+ 6HE      plan-4    HHD       0.020
+ 6HE      plan-5    C1A       0.020
+ 6HE      plan-5    CHA       0.020
+ 6HE      plan-5    NA        0.020
+ 6HE      plan-5    C2A       0.020
+ 6HE      plan-5    C3A       0.020
+ 6HE      plan-5    C4A       0.020
+ 6HE      plan-5    CAA       0.020
+ 6HE      plan-5    CMA       0.020
+ 6HE      plan-5    CHB       0.020
+ 6HE      plan-5    HHA       0.020
+ 6HE      plan-5    HHB       0.020
+ 6HE      plan-6    CGA       0.020
+ 6HE      plan-6    CBA       0.020
+ 6HE      plan-6    O1A       0.020
+ 6HE      plan-6    O2A       0.020
+ 6HE      plan-7    C1B       0.020
+ 6HE      plan-7    CHB       0.020
+ 6HE      plan-7    NB        0.020
+ 6HE      plan-7    C2B       0.020
+ 6HE      plan-7    C3B       0.020
+ 6HE      plan-7    C4B       0.020
+ 6HE      plan-7    CMB       0.020
+ 6HE      plan-7    CAB       0.020
+ 6HE      plan-7    CHC       0.020
+ 6HE      plan-7    HHB       0.020
+ 6HE      plan-7    HAB       0.020
+ 6HE      plan-7    HHC       0.020
+ 6HE      plan-8    CAB       0.020
+ 6HE      plan-8    C3B       0.020
+ 6HE      plan-8    CBB       0.020
+ 6HE      plan-8    HAB       0.020
+ 6HE      plan-8    HBB1      0.020
+ 6HE      plan-8    HBB2      0.020
+ 6HE      plan-9    C1C       0.020
+ 6HE      plan-9    CHC       0.020
+ 6HE      plan-9    NC        0.020
+ 6HE      plan-9    C2C       0.020
+ 6HE      plan-9    C3C       0.020
+ 6HE      plan-9    C4C       0.020
+ 6HE      plan-9    CMC       0.020
+ 6HE      plan-9    CAC       0.020
+ 6HE      plan-9    CHD       0.020
+ 6HE      plan-9    HHC       0.020
+ 6HE      plan-9    HAC       0.020
+ 6HE      plan-9    HHD       0.020
+ 6HE      plan-10   CAC       0.020
+ 6HE      plan-10   C3C       0.020
+ 6HE      plan-10   CBC       0.020
+ 6HE      plan-10   HAC       0.020
+ 6HE      plan-10   HBC1      0.020
+ 6HE      plan-10   HBC2      0.020
+ 6HE      plan-11   C1D       0.020
+ 6HE      plan-11   CHD       0.020
+ 6HE      plan-11   ND        0.020
+ 6HE      plan-11   C2D       0.020
+ 6HE      plan-11   C3D       0.020
+ 6HE      plan-11   C4D       0.020
+ 6HE      plan-11   CMD       0.020
+ 6HE      plan-11   CAD       0.020
+ 6HE      plan-11   CHA       0.020
+ 6HE      plan-11   HHD       0.020
+ 6HE      plan-11   HHA       0.020
+# ------------------------------------------------------

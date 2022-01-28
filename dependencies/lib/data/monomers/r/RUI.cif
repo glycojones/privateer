@@ -1,0 +1,321 @@
+global_
+_lib_name         mon_lib
+_lib_version      5.44
+_lib_update       30/05/14
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RUI      RUI '.                                   ' .                  30  23 .
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RUI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+ RUI           O11    O    O         0.000
+ RUI           C13    C    C1        0.000
+ RUI           RU     RU   RU        0.000
+ RUI           C18    C    C         0.000
+ RUI           C17    C    C         0.000
+ RUI           C16    C    C         0.000
+ RUI           C15    C    C         0.000
+ RUI           C14    C    C         0.000
+ RUI           C3     C    CR6       0.000
+ RUI           C4     C    CR16      0.000
+ RUI           H1     H    H         0.000
+ RUI           N      N    NR16      0.000
+ RUI           H2     H    H         0.000
+ RUI           N1     N    NR6       0.000
+ RUI           C9     C    CR16      0.000
+ RUI           H3     H    H         0.000
+ RUI           C11    C    CR16      0.000
+ RUI           H4     H    H         0.000
+ RUI           C10    C    CR16      0.000
+ RUI           H5     H    H         0.000
+ RUI           C8     C    CR66      0.000
+ RUI           C7     C    CR66      0.000
+ RUI           C6     C    CR16      0.000
+ RUI           H6     H    H         0.000
+ RUI           C5     C    CR16      0.000
+ RUI           H7     H    H         0.000
+ RUI           C      C    CR66      0.000
+ RUI           C1     C    CR66      0.000
+ RUI           C2     C    CR6       0.000
+ RUI           O      O    O         0.000
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RUI      O11    n/a    C13    START
+ RUI      C13    O11    RU     .
+ RUI      RU     C13    N1     .
+ RUI      C18    RU     C14    .
+ RUI      C17    C18    C16    .
+ RUI      C16    C17    C15    .
+ RUI      C15    C16    .      .
+ RUI      C14    C18    .      .
+ RUI      C3     RU     C4     .
+ RUI      C4     C3     N      .
+ RUI      H1     C4     .      .
+ RUI      N      C4     H2     .
+ RUI      H2     N      .      .
+ RUI      N1     RU     C9     .
+ RUI      C9     N1     C11    .
+ RUI      H3     C9     .      .
+ RUI      C11    C9     C10    .
+ RUI      H4     C11    .      .
+ RUI      C10    C11    C8     .
+ RUI      H5     C10    .      .
+ RUI      C8     C10    C6     .
+ RUI      C7     C8     .      .
+ RUI      C6     C8     C5     .
+ RUI      H6     C6     .      .
+ RUI      C5     C6     C      .
+ RUI      H7     C5     .      .
+ RUI      C      C5     C2     .
+ RUI      C1     C      .      .
+ RUI      C2     C      O      .
+ RUI      O      C2     .      END
+ RUI      C2     N      .    ADD
+ RUI      C3     C1     .    ADD
+ RUI      C1     C7     .    ADD
+ RUI      C7     N1     .    ADD
+ RUI      RU     C14    .    ADD
+ RUI      RU     C15    .    ADD
+ RUI      RU     C16    .    ADD
+ RUI      RU     C17    .    ADD
+ RUI      C14    C15    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RUI       O         C2        deloc     1.250     0.020     1.250     0.020     
+RUI       C2        N         single    1.337     0.020     1.337     0.020     
+RUI       C2        C         single    1.490     0.020     1.490     0.020     
+RUI       N         C4        single    1.337     0.020     1.337     0.020     
+RUI       H2        N         single    1.016     0.010     0.899     0.007     
+RUI       C4        C3        aromatic  1.390     0.020     1.390     0.020     
+RUI       H1        C4        single    1.082     0.013     0.975     0.010     
+RUI       C3        C1        single    1.490     0.020     1.490     0.020     
+RUI       C3        RU        metal     2.143     0.020     2.143     0.020     
+RUI       C1        C7        aromatic  1.390     0.020     1.390     0.020     
+RUI       C1        C         aromatic  1.390     0.020     1.390     0.020     
+RUI       C7        N1        single    1.410     0.020     1.410     0.020     
+RUI       C7        C8        aromatic  1.390     0.020     1.390     0.020     
+RUI       C9        N1        single    1.337     0.020     1.337     0.020     
+RUI       N1        RU        single    2.152     0.020     2.152     0.020     
+RUI       C11       C9        aromatic  1.390     0.020     1.390     0.020     
+RUI       H3        C9        single    1.082     0.013     0.975     0.010     
+RUI       C10       C11       aromatic  1.390     0.020     1.390     0.020     
+RUI       H4        C11       single    1.082     0.013     0.975     0.010     
+RUI       C8        C10       aromatic  1.390     0.020     1.390     0.020     
+RUI       H5        C10       single    1.082     0.013     0.975     0.010     
+RUI       C6        C8        aromatic  1.390     0.020     1.390     0.020     
+RUI       C5        C6        aromatic  1.390     0.020     1.390     0.020     
+RUI       H6        C6        single    1.082     0.013     0.975     0.010     
+RUI       C         C5        aromatic  1.390     0.020     1.390     0.020     
+RUI       H7        C5        single    1.082     0.013     0.975     0.010     
+RUI       C13       O11       tripple   1.220     0.020     1.220     0.020     
+RUI       RU        C13       metal     1.800     0.020     1.800     0.020     
+RUI       RU        C14       metal     2.209     0.020     2.209     0.020     
+RUI       RU        C15       metal     2.209     0.020     2.209     0.020     
+RUI       RU        C16       metal     2.209     0.020     2.209     0.020     
+RUI       RU        C17       metal     2.209     0.020     2.209     0.020     
+RUI       C18       RU        metal     2.209     0.020     2.209     0.020     
+RUI       C14       C15       deloc     1.330     0.020     1.330     0.020     
+RUI       C14       C18       deloc     1.330     0.020     1.330     0.020     
+RUI       C15       C16       deloc     1.330     0.020     1.330     0.020     
+RUI       C16       C17       deloc     1.330     0.020     1.330     0.020     
+RUI       C17       C18       deloc     1.330     0.020     1.330     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RUI      O11    C13    RU      180.000    1.000
+ RUI      C13    RU     C18     139.533    3.000
+ RUI      C13    RU     C3       94.608    3.000
+ RUI      C13    RU     N1       97.756    3.000
+ RUI      C13    RU     C14     104.187    3.000
+ RUI      C13    RU     C15      91.339    3.000
+ RUI      C13    RU     C16     113.368    3.000
+ RUI      C13    RU     C17     148.643    3.000
+ RUI      C18    RU     C3      124.146    3.000
+ RUI      C18    RU     N1      101.571    3.000
+ RUI      C3     RU     N1       77.196    3.000
+ RUI      C14    RU     C15      35.046    3.000
+ RUI      C14    RU     C16      59.269    3.000
+ RUI      C15    RU     C16      35.187    3.000
+ RUI      C14    RU     C17      59.707    3.000
+ RUI      C15    RU     C17      59.559    3.000
+ RUI      C16    RU     C17      35.322    3.000
+ RUI      C18    RU     C14      35.186    3.000
+ RUI      C3     RU     C14     150.275    3.000
+ RUI      N1     RU     C14     121.688    3.000
+ RUI      C18    RU     C15      59.464    3.000
+ RUI      C3     RU     C15     123.009    3.000
+ RUI      N1     RU     C15     157.215    3.000
+ RUI      C18    RU     C16      59.437    3.000
+ RUI      C3     RU     C16      92.279    3.000
+ RUI      N1     RU     C16     147.948    3.000
+ RUI      C18    RU     C17      35.329    3.000
+ RUI      C3     RU     C17      92.545    3.000
+ RUI      N1     RU     C17     113.601    3.000
+ RUI      RU     C18    C17      72.390    3.000
+ RUI      RU     C18    C14      73.158    3.000
+ RUI      C17    C18    C14     108.000    3.000
+ RUI      C18    C17    C16     108.000    3.000
+ RUI      C18    C17    RU       72.281    3.000
+ RUI      C16    C17    RU       72.319    3.000
+ RUI      C17    C16    C15     108.000    3.000
+ RUI      C17    C16    RU       72.359    3.000
+ RUI      C15    C16    RU       73.087    3.000
+ RUI      C16    C15    RU       71.726    3.000
+ RUI      C16    C15    C14     108.000    3.000
+ RUI      RU     C15    C14      72.513    3.000
+ RUI      C18    C14    RU       71.656    3.000
+ RUI      C18    C14    C15     108.000    3.000
+ RUI      RU     C14    C15      72.441    3.000
+ RUI      RU     C3     C4      120.000    3.000
+ RUI      RU     C3     C1      120.000    3.000
+ RUI      C4     C3     C1      120.000    3.000
+ RUI      C3     C4     H1      120.000    3.000
+ RUI      C3     C4     N       120.000    3.000
+ RUI      H1     C4     N       120.000    3.000
+ RUI      C4     N      H2      120.000    3.000
+ RUI      C4     N      C2      120.000    3.000
+ RUI      H2     N      C2      120.000    3.000
+ RUI      RU     N1     C9      120.000    3.000
+ RUI      RU     N1     C7      120.000    3.000
+ RUI      C9     N1     C7      120.000    3.000
+ RUI      N1     C9     H3      120.000    3.000
+ RUI      N1     C9     C11     120.000    3.000
+ RUI      H3     C9     C11     120.000    3.000
+ RUI      C9     C11    H4      120.000    3.000
+ RUI      C9     C11    C10     120.000    3.000
+ RUI      H4     C11    C10     120.000    3.000
+ RUI      C11    C10    H5      120.000    3.000
+ RUI      C11    C10    C8      120.000    3.000
+ RUI      H5     C10    C8      120.000    3.000
+ RUI      C10    C8     C7      120.000    3.000
+ RUI      C10    C8     C6      120.000    3.000
+ RUI      C7     C8     C6      120.000    3.000
+ RUI      C8     C7     C1      120.000    3.000
+ RUI      C8     C7     N1      120.000    3.000
+ RUI      C1     C7     N1      120.000    3.000
+ RUI      C8     C6     H6      120.000    3.000
+ RUI      C8     C6     C5      120.000    3.000
+ RUI      H6     C6     C5      120.000    3.000
+ RUI      C6     C5     H7      120.000    3.000
+ RUI      C6     C5     C       120.000    3.000
+ RUI      H7     C5     C       120.000    3.000
+ RUI      C5     C      C1      120.000    3.000
+ RUI      C5     C      C2      120.000    3.000
+ RUI      C1     C      C2      120.000    3.000
+ RUI      C      C1     C3      120.000    3.000
+ RUI      C      C1     C7      120.000    3.000
+ RUI      C3     C1     C7      120.000    3.000
+ RUI      C      C2     O       120.000    3.000
+ RUI      C      C2     N       120.000    3.000
+ RUI      O      C2     N       120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RUI      var_1            O11    C13    RU     N1              -135.622           20.000   3
+ RUI      var_2            C13    RU     C14    C18              171.794           20.000   3
+ RUI      var_3            C13    RU     C15    C16             -130.519           20.000   3
+ RUI      var_4            C13    RU     C16    C17              172.795           20.000   3
+ RUI      var_5            C13    RU     C17    C18              103.046           20.000   3
+ RUI      var_6            C13    RU     C18    C14              -12.311           20.000   3
+ RUI      var_7            RU     C18    C17    C16               63.865           20.000   3
+ RUI      var_8            C18    C17    C16    C15                0.373           20.000   3
+ RUI      CONST_1          C17    C16    C15    RU               -63.688            0.000   0
+ RUI      var_9            C18    C14    C15    C16               -0.157           20.000   3
+ RUI      var_10           C13    RU     C3     C4                80.100           20.000   3
+ RUI      CONST_2          RU     C3     C1     C                180.000            0.000   0
+ RUI      CONST_3          RU     C3     C4     N                  0.000            0.000   0
+ RUI      CONST_4          C3     C4     N      C2                 0.000            0.000   0
+ RUI      var_11           C13    RU     N1     C9               -90.551           20.000   3
+ RUI      CONST_5          RU     N1     C9     C11                0.000            0.000   0
+ RUI      CONST_6          N1     C9     C11    C10                0.000            0.000   0
+ RUI      CONST_7          C9     C11    C10    C8                 0.000            0.000   0
+ RUI      CONST_8          C11    C10    C8     C6               180.000            0.000   0
+ RUI      CONST_9          C10    C8     C7     C1               179.129            0.000   0
+ RUI      CONST_10         C8     C7     N1     RU               180.000            0.000   0
+ RUI      CONST_11         C10    C8     C6     C5               180.000            0.000   0
+ RUI      CONST_12         C8     C6     C5     C                  0.000            0.000   0
+ RUI      CONST_13         C6     C5     C      C2               180.000            0.000   0
+ RUI      CONST_14         C5     C      C1     C3               178.710            0.000   0
+ RUI      CONST_15         C      C1     C7     C8                -0.356            0.000   0
+ RUI      CONST_16         C5     C      C2     O                180.000            0.000   0
+ RUI      CONST_17         C      C2     N      C4                 0.000            0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RUI      plan-1            C2        0.020
+ RUI      plan-1            O         0.020
+ RUI      plan-1            N         0.020
+ RUI      plan-1            C         0.020
+ RUI      plan-1            C4        0.020
+ RUI      plan-1            C3        0.020
+ RUI      plan-1            H2        0.020
+ RUI      plan-1            H1        0.020
+ RUI      plan-1            C1        0.020
+ RUI      plan-1            RU        0.020
+ RUI      plan-1            C7        0.020
+ RUI      plan-1            C6        0.020
+ RUI      plan-1            C5        0.020
+ RUI      plan-1            N1        0.020
+ RUI      plan-1            C8        0.020
+ RUI      plan-1            C9        0.020
+ RUI      plan-1            C11       0.020
+ RUI      plan-1            C10       0.020
+ RUI      plan-1            H3        0.020
+ RUI      plan-1            H4        0.020
+ RUI      plan-1            H5        0.020
+ RUI      plan-1            H6        0.020
+ RUI      plan-1            H7        0.020
+ RUI      plan-2            C13       0.020
+ RUI      plan-2            O11       0.020
+ RUI      plan-2            RU        0.020
+ RUI      plan-4            C15       0.020
+ RUI      plan-4            C18       0.020
+ RUI      plan-4            C16       0.020
+ RUI      plan-4            C15       0.020
+ RUI      plan-4            C17       0.020
+# ------------------------------------------------------
+# ------------------------------------------------------
+# ------------------------------------------------------

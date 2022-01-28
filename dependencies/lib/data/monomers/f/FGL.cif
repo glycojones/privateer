@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FGL     FGL     "2-AMINOPROPANEDIOICACID"     peptide     12     8     .
+#
+data_comp_FGL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FGL     N       N       NT3     1       -0.758      -1.089      -0.178
+FGL     CA      C       CH1     0       0.040       0.037       0.395
+FGL     C       C       C       0       1.514       -0.044      -0.042
+FGL     O       O       O       0       2.379       0.227       0.811
+FGL     OXT     O       OC      -1      1.741       -0.374      -1.220
+FGL     OG1     O       OC      -1      -0.819      2.195       0.924
+FGL     OG2     O       O       0       -0.717      1.625       -1.211
+FGL     CB      C       C       0       -0.550      1.405       0.001
+FGL     H2      H       H       0       -1.566      -0.793      -0.467
+FGL     H       H       H       0       -0.889      -1.713      0.466
+FGL     H3      H       H       0       -0.319      -1.470      -0.874
+FGL     HA      H       H       0       0.012       -0.031      1.375
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+FGL      N      n/a    CA     START
+FGL      H2     N      .      .
+FGL      H      N      .      .
+FGL      H3     N      .      .
+FGL      CA     N      C      .
+FGL      HA     CA     .      .
+FGL      CB     CA     OG2    .
+FGL      OG1    CB     .      .
+FGL      OG2    CB     .      .
+FGL      C      CA     .      END
+FGL      O      C      .      .
+FGL      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FGL       N         CA        SINGLE    n         1.487     0.015     1.487     0.015     
+FGL       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+FGL       CA        CB        SINGLE    n         1.539     0.010     1.539     0.010     
+FGL       C         O         DOUBLE    n         1.244     0.020     1.244     0.020     
+FGL       C         OXT       SINGLE    n         1.244     0.020     1.244     0.020     
+FGL       OG1       CB        SINGLE    n         1.244     0.020     1.244     0.020     
+FGL       OG2       CB        DOUBLE    n         1.244     0.020     1.244     0.020     
+FGL       N         H2        SINGLE    n         1.036     0.016     0.906     0.020     
+FGL       N         H         SINGLE    n         1.036     0.016     0.906     0.020     
+FGL       N         H3        SINGLE    n         1.036     0.016     0.906     0.020     
+FGL       CA        HA        SINGLE    n         1.089     0.010     0.983     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FGL          CA           N          H2     109.014    2.44
+FGL          CA           N           H     109.014    2.44
+FGL          CA           N          H3     109.014    2.44
+FGL          H2           N           H     109.028    2.41
+FGL          H2           N          H3     109.028    2.41
+FGL           H           N          H3     109.028    2.41
+FGL           N          CA           C     109.935    2.65
+FGL           N          CA          CB     109.935    2.65
+FGL           N          CA          HA     108.765    1.50
+FGL           C          CA          CB     111.575    3.00
+FGL           C          CA          HA     108.186    1.50
+FGL          CB          CA          HA     108.186    1.50
+FGL          CA           C           O     117.234    1.60
+FGL          CA           C         OXT     117.234    1.60
+FGL           O           C         OXT     125.532    1.50
+FGL          CA          CB         OG1     117.234    1.60
+FGL          CA          CB         OG2     117.234    1.60
+FGL         OG1          CB         OG2     125.532    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FGL             sp3_sp3_1           C          CA           N          H2     180.000   10.00     3
+FGL             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+FGL             sp2_sp3_8         OG1          CB          CA           N     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FGL    plan-1           C   0.020
+FGL    plan-1          CA   0.020
+FGL    plan-1           O   0.020
+FGL    plan-1         OXT   0.020
+FGL    plan-2          CA   0.020
+FGL    plan-2          CB   0.020
+FGL    plan-2         OG1   0.020
+FGL    plan-2         OG2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FGL SMILES           ACDLabs              10.04 "O=C(O)C(N)C(=O)O"
+FGL SMILES_CANONICAL CACTVS               3.341 "NC(C(O)=O)C(O)=O"
+FGL SMILES           CACTVS               3.341 "NC(C(O)=O)C(O)=O"
+FGL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)(C(=O)O)N"
+FGL SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)(C(=O)O)N"
+FGL InChI            InChI                1.03  "InChI=1S/C3H5NO4/c4-1(2(5)6)3(7)8/h1H,4H2,(H,5,6)(H,7,8)"
+FGL InChIKey         InChI                1.03  JINBYESILADKFW-UHFFFAOYSA-N
+FGL ?                acedrg               196         "dictionary generator"
+FGL ?                acedrg_database      11          "data source"
+FGL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FGL ?                refmac5              5.8.0222    "optimization tool"

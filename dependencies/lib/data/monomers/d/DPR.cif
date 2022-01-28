@@ -1,0 +1,177 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DPR     DPR     D-PROLINE     P-peptide     16     8     .
+#
+data_comp_DPR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DPR     N       N       NT1     0       0.220       0.029       1.223
+DPR     CA      C       CH1     0       0.840       -0.526      0.018
+DPR     CB      C       CH2     0       -0.235      -0.302      -1.066
+DPR     CG      C       CH2     0       -1.279      0.587       -0.402
+DPR     CD      C       CH2     0       -1.208      0.240       1.070
+DPR     C       C       C       0       2.142       0.217       -0.321
+DPR     O       O       O       0       2.073       1.431       -0.433
+DPR     OXT     O       OC      -1      3.148       -0.456      -0.453
+DPR     H       H       H       0       0.650       0.710       1.743
+DPR     HA      H       H       0       1.007       -1.497      0.135
+DPR     HB2     H       H       0       -0.633      -1.154      -1.346
+DPR     HB3     H       H       0       0.144       0.141       -1.857
+DPR     HG2     H       H       0       -2.171      0.404       -0.760
+DPR     HG3     H       H       0       -1.070      1.533       -0.544
+DPR     HD2     H       H       0       -1.519      0.978       1.628
+DPR     HD3     H       H       0       -1.719      -0.565      1.276
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DPR      N      n/a    CD     START
+DPR      H      N      .      .
+DPR      CD     N      CG     .
+DPR      HD2    CD     .      .
+DPR      HD3    CD     .      .
+DPR      CG     CD     CB     .
+DPR      HG2    CG     .      .
+DPR      HG3    CG     .      .
+DPR      CB     CG     CA     .
+DPR      HB2    CB     .      .
+DPR      HB3    CB     .      .
+DPR      CA     CB     C      .
+DPR      HA     CA     .      .
+DPR      C      CA     .      END
+DPR      O      C      .      .
+DPR      OXT    C      .      .
+DPR      N      CA     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DPR       N         CA        SINGLE    n         1.468     0.015     1.468     0.015     
+DPR       N         CD        SINGLE    n         1.468     0.016     1.468     0.016     
+DPR       CA        CB        SINGLE    n         1.534     0.013     1.534     0.013     
+DPR       CA        C         SINGLE    n         1.536     0.010     1.536     0.010     
+DPR       CB        CG        SINGLE    n         1.508     0.020     1.508     0.020     
+DPR       CG        CD        SINGLE    n         1.515     0.012     1.515     0.012     
+DPR       C         O         DOUBLE    n         1.218     0.020     1.218     0.020     
+DPR       C         OXT       SINGLE    n         1.218     0.020     1.218     0.020     
+DPR       N         H         SINGLE    n         1.036     0.016     0.887     0.020     
+DPR       CA        HA        SINGLE    n         1.089     0.010     0.990     0.012     
+DPR       CB        HB2       SINGLE    n         1.089     0.010     0.981     0.019     
+DPR       CB        HB3       SINGLE    n         1.089     0.010     0.981     0.019     
+DPR       CG        HG2       SINGLE    n         1.089     0.010     0.979     0.013     
+DPR       CG        HG3       SINGLE    n         1.089     0.010     0.979     0.013     
+DPR       CD        HD2       SINGLE    n         1.089     0.010     0.975     0.010     
+DPR       CD        HD3       SINGLE    n         1.089     0.010     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DPR          CA           N          CD     109.056    3.00
+DPR          CA           N           H     109.307    3.00
+DPR          CD           N           H     106.136    2.25
+DPR           N          CA          CB     103.430    2.23
+DPR           N          CA           C     111.420    2.45
+DPR           N          CA          HA     109.296    1.50
+DPR          CB          CA           C     110.031    2.42
+DPR          CB          CA          HA     109.388    1.50
+DPR           C          CA          HA     110.011    1.50
+DPR          CA          CB          CG     103.507    1.50
+DPR          CA          CB         HB2     111.018    1.50
+DPR          CA          CB         HB3     111.018    1.50
+DPR          CG          CB         HB2     110.886    1.50
+DPR          CG          CB         HB3     110.886    1.50
+DPR         HB2          CB         HB3     108.922    1.50
+DPR          CB          CG          CD     104.503    1.95
+DPR          CB          CG         HG2     110.864    1.50
+DPR          CB          CG         HG3     110.864    1.50
+DPR          CD          CG         HG2     110.804    1.50
+DPR          CD          CG         HG3     110.804    1.50
+DPR         HG2          CG         HG3     108.899    1.50
+DPR           N          CD          CG     105.071    2.33
+DPR           N          CD         HD2     110.738    1.50
+DPR           N          CD         HD3     110.738    1.50
+DPR          CG          CD         HD2     110.867    1.50
+DPR          CG          CD         HD3     110.867    1.50
+DPR         HD2          CD         HD3     108.731    1.50
+DPR          CA           C           O     117.013    1.95
+DPR          CA           C         OXT     117.013    1.95
+DPR           O           C         OXT     125.975    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DPR             sp3_sp3_3           C          CA           N          CD     -60.000   10.00     3
+DPR            sp3_sp3_34          CG          CD           N          CA     180.000   10.00     3
+DPR            sp3_sp3_13           C          CA          CB          CG      60.000   10.00     3
+DPR             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DPR            sp3_sp3_16          CA          CB          CG          CD      60.000   10.00     3
+DPR            sp3_sp3_25           N          CD          CG          CB     -60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DPR    chir_1    N    CA    CD    H    negative
+DPR    chir_2    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DPR    plan-1           C   0.020
+DPR    plan-1          CA   0.020
+DPR    plan-1           O   0.020
+DPR    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DPR SMILES           ACDLabs              12.01 "O=C(O)C1NCCC1"
+DPR SMILES_CANONICAL CACTVS               3.370 "OC(=O)[C@H]1CCCN1"
+DPR SMILES           CACTVS               3.370 "OC(=O)[CH]1CCCN1"
+DPR SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C1C[C@@H](NC1)C(=O)O"
+DPR SMILES           "OpenEye OEToolkits" 1.7.0 "C1CC(NC1)C(=O)O"
+DPR InChI            InChI                1.03  "InChI=1S/C5H9NO2/c7-5(8)4-2-1-3-6-4/h4,6H,1-3H2,(H,7,8)/t4-/m1/s1"
+DPR InChIKey         InChI                1.03  ONIBWKKTOPOVIA-SCSAIBSYSA-N
+DPR ?                acedrg               196         "dictionary generator"
+DPR ?                acedrg_database      11          "data source"
+DPR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DPR ?                refmac5              5.8.0222    "optimization tool"

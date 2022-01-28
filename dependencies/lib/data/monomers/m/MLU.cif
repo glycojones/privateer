@@ -1,0 +1,212 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MLU     MLU     N-methyl-D-leucine     M-peptide     24     10     .
+#
+data_comp_MLU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MLU     N       N       NT1     0       20.551      25.408      26.255
+MLU     CN      C       CH3     0       20.323      25.726      24.844
+MLU     CA      C       CH1     0       19.385      25.622      27.126
+MLU     C       C       C       0       18.261      24.592      26.912
+MLU     O       O       O       0       18.574      23.386      26.965
+MLU     CB      C       CH2     0       19.865      25.582      28.582
+MLU     CG      C       CH1     0       18.866      26.046      29.646
+MLU     CD1     C       CH3     0       19.398      25.752      31.041
+MLU     CD2     C       CH3     0       18.549      27.528      29.502
+MLU     OXT     O       OC      -1      17.115      25.034      26.701
+MLU     H       H       H       0       20.782      24.549      26.316
+MLU     HCN1    H       H       0       21.170      25.707      24.357
+MLU     HCN2    H       H       0       19.930      26.616      24.760
+MLU     HCN3    H       H       0       19.716      25.072      24.446
+MLU     HA      H       H       0       19.018      26.521      26.941
+MLU     HB2     H       H       0       20.667      26.137      28.655
+MLU     HB3     H       H       0       20.129      24.663      28.792
+MLU     HG      H       H       0       18.026      25.540      29.529
+MLU     HD11    H       H       0       18.729      26.001      31.702
+MLU     HD12    H       H       0       20.210      26.265      31.194
+MLU     HD13    H       H       0       19.594      24.803      31.121
+MLU     HD21    H       H       0       18.103      27.846      30.307
+MLU     HD22    H       H       0       17.964      27.663      28.736
+MLU     HD23    H       H       0       19.374      28.026      29.371
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+MLU      N      n/a    CA     START
+MLU      H      N      .      .
+MLU      CN     N      HCN1   .
+MLU      HCN3   CN     .      .
+MLU      HCN2   CN     .      .
+MLU      HCN1   CN     .      .
+MLU      CA     N      C      .
+MLU      HA     CA     .      .
+MLU      CB     CA     CG     .
+MLU      HB2    CB     .      .
+MLU      HB3    CB     .      .
+MLU      CG     CB     CD1    .
+MLU      HG     CG     .      .
+MLU      CD2    CG     HD21   .
+MLU      HD23   CD2    .      .
+MLU      HD22   CD2    .      .
+MLU      HD21   CD2    .      .
+MLU      CD1    CG     HD11   .
+MLU      HD13   CD1    .      .
+MLU      HD12   CD1    .      .
+MLU      HD11   CD1    .      .
+MLU      C      CA     .      END
+MLU      O      C      .      .
+MLU      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MLU       N         CN        SINGLE    n         1.463     0.015     1.463     0.015     
+MLU       N         CA        SINGLE    n         1.468     0.014     1.468     0.014     
+MLU       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+MLU       CA        CB        SINGLE    n         1.530     0.014     1.530     0.014     
+MLU       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+MLU       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+MLU       CB        CG        SINGLE    n         1.528     0.011     1.528     0.011     
+MLU       CG        CD1       SINGLE    n         1.521     0.015     1.521     0.015     
+MLU       CG        CD2       SINGLE    n         1.521     0.015     1.521     0.015     
+MLU       N         H         SINGLE    n         1.036     0.016     0.890     0.020     
+MLU       CN        HCN1      SINGLE    n         1.089     0.010     0.977     0.013     
+MLU       CN        HCN2      SINGLE    n         1.089     0.010     0.977     0.013     
+MLU       CN        HCN3      SINGLE    n         1.089     0.010     0.977     0.013     
+MLU       CA        HA        SINGLE    n         1.089     0.010     0.990     0.020     
+MLU       CB        HB2       SINGLE    n         1.089     0.010     0.978     0.012     
+MLU       CB        HB3       SINGLE    n         1.089     0.010     0.978     0.012     
+MLU       CG        HG        SINGLE    n         1.089     0.010     0.989     0.016     
+MLU       CD1       HD11      SINGLE    n         1.089     0.010     0.973     0.015     
+MLU       CD1       HD12      SINGLE    n         1.089     0.010     0.973     0.015     
+MLU       CD1       HD13      SINGLE    n         1.089     0.010     0.973     0.015     
+MLU       CD2       HD21      SINGLE    n         1.089     0.010     0.973     0.015     
+MLU       CD2       HD22      SINGLE    n         1.089     0.010     0.973     0.015     
+MLU       CD2       HD23      SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MLU          CN           N          CA     112.615    2.70
+MLU          CN           N           H     108.144    3.00
+MLU          CA           N           H     106.958    3.00
+MLU           N          CN        HCN1     110.215    1.50
+MLU           N          CN        HCN2     110.215    1.50
+MLU           N          CN        HCN3     110.215    1.50
+MLU        HCN1          CN        HCN2     109.279    1.79
+MLU        HCN1          CN        HCN3     109.279    1.79
+MLU        HCN2          CN        HCN3     109.279    1.79
+MLU           N          CA           C     113.481    2.07
+MLU           N          CA          CB     109.731    2.61
+MLU           N          CA          HA     108.712    1.50
+MLU           C          CA          CB     109.518    1.62
+MLU           C          CA          HA     108.327    1.50
+MLU          CB          CA          HA     108.412    1.50
+MLU          CA           C           O     117.249    1.61
+MLU          CA           C         OXT     117.249    1.61
+MLU           O           C         OXT     125.502    1.50
+MLU          CA          CB          CG     115.116    1.50
+MLU          CA          CB         HB2     108.495    1.50
+MLU          CA          CB         HB3     108.495    1.50
+MLU          CG          CB         HB2     108.478    1.50
+MLU          CG          CB         HB3     108.478    1.50
+MLU         HB2          CB         HB3     107.542    1.50
+MLU          CB          CG         CD1     110.880    1.50
+MLU          CB          CG         CD2     110.880    1.50
+MLU          CB          CG          HG     108.053    1.50
+MLU         CD1          CG         CD2     110.507    1.50
+MLU         CD1          CG          HG     108.052    1.50
+MLU         CD2          CG          HG     108.052    1.50
+MLU          CG         CD1        HD11     109.488    1.50
+MLU          CG         CD1        HD12     109.488    1.50
+MLU          CG         CD1        HD13     109.488    1.50
+MLU        HD11         CD1        HD12     109.411    1.50
+MLU        HD11         CD1        HD13     109.411    1.50
+MLU        HD12         CD1        HD13     109.411    1.50
+MLU          CG         CD2        HD21     109.488    1.50
+MLU          CG         CD2        HD22     109.488    1.50
+MLU          CG         CD2        HD23     109.488    1.50
+MLU        HD21         CD2        HD22     109.411    1.50
+MLU        HD21         CD2        HD23     109.411    1.50
+MLU        HD22         CD2        HD23     109.411    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MLU             sp3_sp3_1        HCN1          CN           N          CA     180.000   10.00     3
+MLU             sp3_sp3_9           C          CA           N          CN      60.000   10.00     3
+MLU             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+MLU            sp3_sp3_16           N          CA          CB          CG      60.000   10.00     3
+MLU            sp3_sp3_22          CA          CB          CG         CD1     180.000   10.00     3
+MLU            sp3_sp3_31        HD11         CD1          CG          CB     180.000   10.00     3
+MLU            sp3_sp3_40        HD21         CD2          CG          CB     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MLU    chir_1    N    CA    CN    H    positive
+MLU    chir_2    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MLU    plan-1           C   0.020
+MLU    plan-1          CA   0.020
+MLU    plan-1           O   0.020
+MLU    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MLU InChI            InChI                1.03  "InChI=1S/C7H15NO2/c1-5(2)4-6(8-3)7(9)10/h5-6,8H,4H2,1-3H3,(H,9,10)/t6-/m1/s1"
+MLU InChIKey         InChI                1.03  XJODGRWDFZVTKW-ZCFIWIBFSA-N
+MLU SMILES           ACDLabs              12.01 "O=C(O)C(NC)CC(C)C"
+MLU SMILES_CANONICAL CACTVS               3.370 "CN[C@H](CC(C)C)C(O)=O"
+MLU SMILES           CACTVS               3.370 "CN[CH](CC(C)C)C(O)=O"
+MLU SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "CC(C)C[C@H](C(=O)O)NC"
+MLU SMILES           "OpenEye OEToolkits" 1.7.6 "CC(C)CC(C(=O)O)NC"
+MLU ?                acedrg               196         "dictionary generator"
+MLU ?                acedrg_database      11          "data source"
+MLU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MLU ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,154 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TBS     TBS      4,5,6,7-TETRABROMOBENZOTRIAZOLE     NON-POLYMER     14     13     .     
+#
+data_comp_TBS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TBS     C1      C       CR6     0       30.442      24.116      25.802      
+TBS     C2      C       CR6     0       30.863      25.442      25.500      
+TBS     C3      C       CR6     0       30.965      26.400      26.515      
+TBS     C4      C       CR6     0       30.126      23.758      27.118      
+TBS     N5      N       NR5     0       30.013      24.727      29.465      
+TBS     C6      C       CR56    0       30.229      24.719      28.128      
+TBS     C7      C       CR56    0       30.643      26.024      27.833      
+TBS     N8      N       NRD5    0       30.651      26.739      29.008      
+TBS     N9      N       NRD5    0       30.270      25.943      29.974      
+TBS     BR10    BR      BR      0       29.565      21.987      27.509      
+TBS     BR11    BR      BR      0       30.304      22.818      24.422      
+TBS     BR12    BR      BR      0       31.292      25.931      23.716      
+TBS     BR13    BR      BR      0       31.521      28.164      26.137      
+TBS     H51     H       H       0       29.740      24.046      29.965      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TBS       C1        C2        DOUBLE    y         1.393     0.017     1.393     0.017     
+TBS       C1        C4        SINGLE    y         1.379     0.014     1.379     0.014     
+TBS       C1        BR11      SINGLE    n         1.897     0.011     1.897     0.011     
+TBS       C2        C3        SINGLE    y         1.379     0.014     1.379     0.014     
+TBS       C2        BR12      SINGLE    n         1.897     0.011     1.897     0.011     
+TBS       C3        C7        DOUBLE    y         1.397     0.013     1.397     0.013     
+TBS       C3        BR13      SINGLE    n         1.884     0.018     1.884     0.018     
+TBS       C4        C6        DOUBLE    y         1.391     0.011     1.391     0.011     
+TBS       C4        BR10      SINGLE    n         1.896     0.013     1.896     0.013     
+TBS       N5        C6        SINGLE    y         1.354     0.011     1.354     0.011     
+TBS       N5        N9        SINGLE    y         1.340     0.011     1.340     0.011     
+TBS       C6        C7        SINGLE    y         1.397     0.011     1.397     0.011     
+TBS       C7        N8        SINGLE    y         1.377     0.010     1.377     0.010     
+TBS       N8        N9        DOUBLE    y         1.306     0.010     1.306     0.010     
+TBS       N5        H51       SINGLE    n         1.016     0.010     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TBS          C2          C1          C4     120.241    1.50
+TBS          C2          C1        BR11     120.707    1.50
+TBS          C4          C1        BR11     119.052    1.50
+TBS          C1          C2          C3     120.241    1.50
+TBS          C1          C2        BR12     120.707    1.50
+TBS          C3          C2        BR12     119.052    1.50
+TBS          C2          C3          C7     118.704    1.50
+TBS          C2          C3        BR13     120.422    1.50
+TBS          C7          C3        BR13     120.874    1.50
+TBS          C1          C4          C6     119.104    1.50
+TBS          C1          C4        BR10     118.884    1.50
+TBS          C6          C4        BR10     122.012    2.22
+TBS          C6          N5          N9     110.192    1.50
+TBS          C6          N5         H51     127.068    3.00
+TBS          N9          N5         H51     122.740    2.48
+TBS          C4          C6          N5     134.250    1.50
+TBS          C4          C6          C7     120.748    1.84
+TBS          N5          C6          C7     105.002    1.50
+TBS          C3          C7          C6     120.962    1.99
+TBS          C3          C7          N8     130.613    1.50
+TBS          C6          C7          N8     108.425    1.50
+TBS          C7          N8          N9     108.217    1.50
+TBS          N5          N9          N8     108.165    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TBS       const_sp2_sp2_4        BR11          C1          C2        BR12       0.000   10.00     2
+TBS              const_31        BR11          C1          C4        BR10       0.000   10.00     2
+TBS       const_sp2_sp2_8        BR12          C2          C3        BR13       0.000   10.00     2
+TBS              const_11        BR13          C3          C7          C6     180.000   10.00     2
+TBS              const_20        BR10          C4          C6          N5       0.000   10.00     2
+TBS              const_23          C4          C6          N5          N9     180.000   10.00     2
+TBS              const_32          C6          N5          N9          N8       0.000   10.00     2
+TBS              const_13          C4          C6          C7          C3       0.000   10.00     2
+TBS              const_26          C3          C7          N8          N9     180.000   10.00     2
+TBS              const_27          C7          N8          N9          N5       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TBS    plan-1        BR10   0.020
+TBS    plan-1        BR11   0.020
+TBS    plan-1        BR12   0.020
+TBS    plan-1        BR13   0.020
+TBS    plan-1          C1   0.020
+TBS    plan-1          C2   0.020
+TBS    plan-1          C3   0.020
+TBS    plan-1          C4   0.020
+TBS    plan-1          C6   0.020
+TBS    plan-1          C7   0.020
+TBS    plan-1          N5   0.020
+TBS    plan-1          N8   0.020
+TBS    plan-2          C3   0.020
+TBS    plan-2          C4   0.020
+TBS    plan-2          C6   0.020
+TBS    plan-2          C7   0.020
+TBS    plan-2         H51   0.020
+TBS    plan-2          N5   0.020
+TBS    plan-2          N8   0.020
+TBS    plan-2          N9   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TBS SMILES           ACDLabs              10.04 "Brc2c1c(nnn1)c(Br)c(Br)c2Br"
+TBS SMILES_CANONICAL CACTVS               3.341 "Brc1c(Br)c(Br)c2nn[nH]c2c1Br"
+TBS SMILES           CACTVS               3.341 "Brc1c(Br)c(Br)c2nn[nH]c2c1Br"
+TBS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c12c(c(c(c(c1Br)Br)Br)Br)nn[nH]2"
+TBS SMILES           "OpenEye OEToolkits" 1.5.0 "c12c(c(c(c(c1Br)Br)Br)Br)nn[nH]2"
+TBS InChI            InChI                1.03  "InChI=1S/C6HBr4N3/c7-1-2(8)4(10)6-5(3(1)9)11-13-12-6/h(H,11,12,13)"
+TBS InChIKey         InChI                1.03  OMZYUVOATZSGJY-UHFFFAOYSA-N
+TBS ?                acedrg               202         "dictionary generator"                  
+TBS ?                acedrg_database      11          "data source"                           
+TBS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TBS ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,280 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DOA      DOA '12-AMINO-DODECANOIC ACID            ' non-polymer        39  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DOA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DOA           OXT    O    OC       -0.500      0.000    0.000    0.000
+ DOA           C      C    C         0.000     -1.206   -0.006   -0.333
+ DOA           O      O    OC       -0.500     -1.520   -0.018   -1.544
+ DOA           CA2    C    CH2       0.000     -2.281    0.003    0.722
+ DOA           HA21   H    H         0.000     -2.180    0.901    1.335
+ DOA           HA22   H    H         0.000     -2.177   -0.881    1.353
+ DOA           C10    C    CH2       0.000     -3.656   -0.006    0.052
+ DOA           H101   H    H         0.000     -3.754   -0.903   -0.562
+ DOA           H102   H    H         0.000     -3.757    0.879   -0.580
+ DOA           C9     C    CH2       0.000     -4.747    0.002    1.123
+ DOA           H91    H    H         0.000     -4.646    0.900    1.737
+ DOA           H92    H    H         0.000     -4.643   -0.882    1.754
+ DOA           C8     C    CH2       0.000     -6.122   -0.007    0.453
+ DOA           H81    H    H         0.000     -6.220   -0.904   -0.162
+ DOA           H82    H    H         0.000     -6.224    0.878   -0.179
+ DOA           C7     C    CH2       0.000     -7.214    0.001    1.525
+ DOA           H71    H    H         0.000     -7.113    0.899    2.139
+ DOA           H72    H    H         0.000     -7.109   -0.883    2.156
+ DOA           C6     C    CH2       0.000     -8.587   -0.008    0.854
+ DOA           H61    H    H         0.000     -8.686   -0.906    0.240
+ DOA           H62    H    H         0.000     -8.689    0.877    0.222
+ DOA           C5     C    CH2       0.000     -9.679    0.002    1.926
+ DOA           H51    H    H         0.000     -9.578    0.900    2.539
+ DOA           H52    H    H         0.000     -9.574   -0.883    2.558
+ DOA           C4     C    CH2       0.000    -11.054   -0.009    1.256
+ DOA           H41    H    H         0.000    -11.152   -0.907    0.642
+ DOA           H42    H    H         0.000    -11.155    0.875    0.623
+ DOA           C3     C    CH2       0.000    -12.144    0.001    2.326
+ DOA           H31    H    H         0.000    -12.043    0.899    2.939
+ DOA           H32    H    H         0.000    -12.040   -0.884    2.959
+ DOA           C2     C    CH2       0.000    -13.519   -0.010    1.656
+ DOA           H21    H    H         0.000    -13.617   -0.908    1.043
+ DOA           H22    H    H         0.000    -13.621    0.874    1.023
+ DOA           CA     C    CH2       0.000    -14.610    0.000    2.728
+ DOA           HA1    H    H         0.000    -14.509    0.898    3.341
+ DOA           HA2    H    H         0.000    -14.506   -0.885    3.360
+ DOA           N      N    NH2       0.000    -15.930   -0.010    2.085
+ DOA           H2     H    H         0.000    -16.543   -0.810    2.187
+ DOA           H      H    H         0.000    -16.237    0.784    1.535
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DOA      OXT    n/a    C      START
+ DOA      C      OXT    CA2    .
+ DOA      O      C      .      .
+ DOA      CA2    C      C10    .
+ DOA      HA21   CA2    .      .
+ DOA      HA22   CA2    .      .
+ DOA      C10    CA2    C9     .
+ DOA      H101   C10    .      .
+ DOA      H102   C10    .      .
+ DOA      C9     C10    C8     .
+ DOA      H91    C9     .      .
+ DOA      H92    C9     .      .
+ DOA      C8     C9     C7     .
+ DOA      H81    C8     .      .
+ DOA      H82    C8     .      .
+ DOA      C7     C8     C6     .
+ DOA      H71    C7     .      .
+ DOA      H72    C7     .      .
+ DOA      C6     C7     C5     .
+ DOA      H61    C6     .      .
+ DOA      H62    C6     .      .
+ DOA      C5     C6     C4     .
+ DOA      H51    C5     .      .
+ DOA      H52    C5     .      .
+ DOA      C4     C5     C3     .
+ DOA      H41    C4     .      .
+ DOA      H42    C4     .      .
+ DOA      C3     C4     C2     .
+ DOA      H31    C3     .      .
+ DOA      H32    C3     .      .
+ DOA      C2     C3     CA     .
+ DOA      H21    C2     .      .
+ DOA      H22    C2     .      .
+ DOA      CA     C2     N      .
+ DOA      HA1    CA     .      .
+ DOA      HA2    CA     .      .
+ DOA      N      CA     H      .
+ DOA      H2     N      .      .
+ DOA      H      N      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DOA       N         CA        single    1.450     0.020     1.450     0.020     
+DOA       H         N         single    1.036     0.016     0.914     0.007     
+DOA       H2        N         single    1.036     0.016     0.914     0.007     
+DOA       CA        C2        single    1.524     0.020     1.524     0.020     
+DOA       HA1       CA        single    1.089     0.010     0.989     0.005     
+DOA       HA2       CA        single    1.089     0.010     0.989     0.005     
+DOA       C2        C3        single    1.524     0.020     1.524     0.020     
+DOA       H21       C2        single    1.089     0.010     0.989     0.005     
+DOA       H22       C2        single    1.089     0.010     0.989     0.005     
+DOA       C3        C4        single    1.524     0.020     1.524     0.020     
+DOA       H31       C3        single    1.089     0.010     0.989     0.005     
+DOA       H32       C3        single    1.089     0.010     0.989     0.005     
+DOA       C4        C5        single    1.524     0.020     1.524     0.020     
+DOA       H41       C4        single    1.089     0.010     0.989     0.005     
+DOA       H42       C4        single    1.089     0.010     0.989     0.005     
+DOA       C5        C6        single    1.524     0.020     1.524     0.020     
+DOA       H51       C5        single    1.089     0.010     0.989     0.005     
+DOA       H52       C5        single    1.089     0.010     0.989     0.005     
+DOA       C6        C7        single    1.524     0.020     1.524     0.020     
+DOA       H61       C6        single    1.089     0.010     0.989     0.005     
+DOA       H62       C6        single    1.089     0.010     0.989     0.005     
+DOA       C7        C8        single    1.524     0.020     1.524     0.020     
+DOA       H71       C7        single    1.089     0.010     0.989     0.005     
+DOA       H72       C7        single    1.089     0.010     0.989     0.005     
+DOA       C8        C9        single    1.524     0.020     1.524     0.020     
+DOA       H81       C8        single    1.089     0.010     0.989     0.005     
+DOA       H82       C8        single    1.089     0.010     0.989     0.005     
+DOA       C9        C10       single    1.524     0.020     1.524     0.020     
+DOA       H91       C9        single    1.089     0.010     0.989     0.005     
+DOA       H92       C9        single    1.089     0.010     0.989     0.005     
+DOA       C10       CA2       single    1.524     0.020     1.524     0.020     
+DOA       H101      C10       single    1.089     0.010     0.989     0.005     
+DOA       H102      C10       single    1.089     0.010     0.989     0.005     
+DOA       CA2       C         single    1.510     0.020     1.510     0.020     
+DOA       HA21      CA2       single    1.089     0.010     0.989     0.005     
+DOA       HA22      CA2       single    1.089     0.010     0.989     0.005     
+DOA       O         C         deloc     1.250     0.020     1.250     0.020     
+DOA       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DOA      OXT    C      O       123.000    3.000
+ DOA      OXT    C      CA2     118.500    3.000
+ DOA      O      C      CA2     118.500    3.000
+ DOA      C      CA2    HA21    109.470    3.000
+ DOA      C      CA2    HA22    109.470    3.000
+ DOA      C      CA2    C10     109.470    3.000
+ DOA      HA21   CA2    HA22    107.900    3.000
+ DOA      HA21   CA2    C10     109.470    3.000
+ DOA      HA22   CA2    C10     109.470    3.000
+ DOA      CA2    C10    H101    109.470    3.000
+ DOA      CA2    C10    H102    109.470    3.000
+ DOA      CA2    C10    C9      111.000    3.000
+ DOA      H101   C10    H102    107.900    3.000
+ DOA      H101   C10    C9      109.470    3.000
+ DOA      H102   C10    C9      109.470    3.000
+ DOA      C10    C9     H91     109.470    3.000
+ DOA      C10    C9     H92     109.470    3.000
+ DOA      C10    C9     C8      111.000    3.000
+ DOA      H91    C9     H92     107.900    3.000
+ DOA      H91    C9     C8      109.470    3.000
+ DOA      H92    C9     C8      109.470    3.000
+ DOA      C9     C8     H81     109.470    3.000
+ DOA      C9     C8     H82     109.470    3.000
+ DOA      C9     C8     C7      111.000    3.000
+ DOA      H81    C8     H82     107.900    3.000
+ DOA      H81    C8     C7      109.470    3.000
+ DOA      H82    C8     C7      109.470    3.000
+ DOA      C8     C7     H71     109.470    3.000
+ DOA      C8     C7     H72     109.470    3.000
+ DOA      C8     C7     C6      111.000    3.000
+ DOA      H71    C7     H72     107.900    3.000
+ DOA      H71    C7     C6      109.470    3.000
+ DOA      H72    C7     C6      109.470    3.000
+ DOA      C7     C6     H61     109.470    3.000
+ DOA      C7     C6     H62     109.470    3.000
+ DOA      C7     C6     C5      111.000    3.000
+ DOA      H61    C6     H62     107.900    3.000
+ DOA      H61    C6     C5      109.470    3.000
+ DOA      H62    C6     C5      109.470    3.000
+ DOA      C6     C5     H51     109.470    3.000
+ DOA      C6     C5     H52     109.470    3.000
+ DOA      C6     C5     C4      111.000    3.000
+ DOA      H51    C5     H52     107.900    3.000
+ DOA      H51    C5     C4      109.470    3.000
+ DOA      H52    C5     C4      109.470    3.000
+ DOA      C5     C4     H41     109.470    3.000
+ DOA      C5     C4     H42     109.470    3.000
+ DOA      C5     C4     C3      111.000    3.000
+ DOA      H41    C4     H42     107.900    3.000
+ DOA      H41    C4     C3      109.470    3.000
+ DOA      H42    C4     C3      109.470    3.000
+ DOA      C4     C3     H31     109.470    3.000
+ DOA      C4     C3     H32     109.470    3.000
+ DOA      C4     C3     C2      111.000    3.000
+ DOA      H31    C3     H32     107.900    3.000
+ DOA      H31    C3     C2      109.470    3.000
+ DOA      H32    C3     C2      109.470    3.000
+ DOA      C3     C2     H21     109.470    3.000
+ DOA      C3     C2     H22     109.470    3.000
+ DOA      C3     C2     CA      111.000    3.000
+ DOA      H21    C2     H22     107.900    3.000
+ DOA      H21    C2     CA      109.470    3.000
+ DOA      H22    C2     CA      109.470    3.000
+ DOA      C2     CA     HA1     109.470    3.000
+ DOA      C2     CA     HA2     109.470    3.000
+ DOA      C2     CA     N       109.470    3.000
+ DOA      HA1    CA     HA2     107.900    3.000
+ DOA      HA1    CA     N       109.470    3.000
+ DOA      HA2    CA     N       109.470    3.000
+ DOA      CA     N      H2      120.000    3.000
+ DOA      CA     N      H       120.000    3.000
+ DOA      H2     N      H       120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DOA      var_1    OXT    C      CA2    C10      179.972   20.000   3
+ DOA      var_2    C      CA2    C10    C9       179.955   20.000   3
+ DOA      var_3    CA2    C10    C9     C8       180.000   20.000   3
+ DOA      var_4    C10    C9     C8     C7       180.000   20.000   3
+ DOA      var_5    C9     C8     C7     C6      -180.000   20.000   3
+ DOA      var_6    C8     C7     C6     C5      -179.960   20.000   3
+ DOA      var_7    C7     C6     C5     C4      -179.960   20.000   3
+ DOA      var_8    C6     C5     C4     C3      -180.000   20.000   3
+ DOA      var_9    C5     C4     C3     C2       180.000   20.000   3
+ DOA      var_10   C4     C3     C2     CA       180.000   20.000   3
+ DOA      var_11   C3     C2     CA     N        179.979   20.000   3
+ DOA      var_12   C2     CA     N      H        -66.188   20.000   1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ DOA      plan-1    N         0.020
+ DOA      plan-1    CA        0.020
+ DOA      plan-1    H         0.020
+ DOA      plan-1    H2        0.020
+ DOA      plan-2    C         0.020
+ DOA      plan-2    CA2       0.020
+ DOA      plan-2    O         0.020
+ DOA      plan-2    OXT       0.020
+# ------------------------------------------------------

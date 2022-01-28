@@ -1,0 +1,562 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PCD      PCD '(MOLYBDOPTERIN-CYTOSINE DINUCLEOTIDE' non-polymer        72  48 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PCD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PCD           OM1    O    O         0.000      0.000    0.000    0.000
+ PCD           MO     MO   MO        0.000      1.563   -0.610    0.048
+ PCD           "S8'"  S    S2        0.000      1.261   -2.711   -1.155
+ PCD           OM2    O    O         0.000      1.633   -1.576    1.442
+ PCD           OR1    O    O         0.000      3.072    0.870    0.908
+ PCD           HR12   H    H         0.000      3.514    0.289    1.517
+ PCD           HR11   H    H         0.000      3.191    1.688    1.377
+ PCD           "S7'"  S    S2        0.000      2.272    0.040   -2.060
+ PCD           "C7'"  C    C         0.000      1.795   -1.119   -3.316
+ PCD           "C8'"  C    C         0.000      1.253   -2.293   -2.894
+ PCD           "C6'"  C    CH1       0.000      1.934   -0.877   -4.810
+ PCD           "H6'"  H    H         0.000      2.914   -0.418   -5.003
+ PCD           "N5'"  N    NH1       0.000      0.880    0.157   -4.991
+ PCD           "H5'"  H    H         0.000      0.448    0.715   -4.269
+ PCD           C4A    C    CR6       0.000      0.605    0.200   -6.373
+ PCD           "C4'"  C    CR6       0.000     -0.192    1.221   -6.832
+ PCD           "O4'"  O    OH1       0.000     -0.786    2.238   -6.120
+ PCD           "H4'"  H    H         0.000     -1.289    2.806   -6.721
+ PCD           "N3'"  N    NRD6      0.000     -0.632    1.542   -8.073
+ PCD           "C2'"  C    CR6       0.000     -0.226    0.719   -9.079
+ PCD           "N2'"  N    NH2       0.000     -0.369    0.598  -10.417
+ PCD           "H2'1" H    H         0.000      0.079   -0.163  -10.905
+ PCD           "H2'2" H    H         0.000     -0.924    1.270  -10.927
+ PCD           "N1'"  N    NRD6      0.000      0.576   -0.370   -8.818
+ PCD           C4B    C    CR6       0.000      0.922   -0.548   -7.536
+ PCD           "N8'"  N    NH1       0.000      1.715   -1.555   -6.933
+ PCD           "H8'"  H    H         0.000      2.379   -1.945   -7.586
+ PCD           C7     C    CH1       0.000      1.826   -2.173   -5.629
+ PCD           H7     H    H         0.000      2.700   -2.832   -5.527
+ PCD           "O9'"  O    O2        0.000      0.602   -2.775   -5.208
+ PCD           "C9'"  C    CH1       0.000      0.653   -3.303   -3.885
+ PCD           "H9'"  H    H         0.000      1.267   -4.213   -3.885
+ PCD           C10    C    CH2       0.000     -0.763   -3.670   -3.581
+ PCD           H102   H    H         0.000     -1.311   -2.739   -3.420
+ PCD           H101   H    H         0.000     -0.754   -4.251   -2.656
+ PCD           O3B    O    O2        0.000     -1.387   -4.414   -4.597
+ PCD           PB     P    P         0.000     -2.133   -5.753   -4.330
+ PCD           O1B    O    OP       -0.500     -2.303   -6.056   -2.888
+ PCD           O2B    O    OP       -0.500     -2.906   -5.988   -5.573
+ PCD           O3A    O    O2        0.000     -0.871   -6.653   -4.696
+ PCD           PA     P    P         0.000     -0.658   -8.176   -5.315
+ PCD           O1A    O    OP       -0.500     -1.395   -9.186   -4.517
+ PCD           O2A    O    OP       -0.500      0.759   -8.585   -5.160
+ PCD           "O5'"  O    O2        0.000     -1.010   -8.320   -6.869
+ PCD           "C5'"  C    CH2       0.000     -0.779   -7.093   -7.595
+ PCD           "H5'2" H    H         0.000      0.266   -6.815   -7.743
+ PCD           "H5'1" H    H         0.000     -1.341   -6.222   -7.251
+ PCD           C4D    C    CH1       0.000     -1.380   -7.604   -8.943
+ PCD           H4D    H    H         0.000     -1.357   -6.739   -9.621
+ PCD           "C3'"  C    CH1       0.000     -2.900   -8.000   -8.818
+ PCD           "H3'"  H    H         0.000     -3.435   -7.858   -7.869
+ PCD           "O3'"  O    OH1       0.000     -3.538   -7.735  -10.035
+ PCD           H3O1   H    H         0.000     -3.883   -6.834  -10.020
+ PCD           C2D    C    CH1       0.000     -2.565   -9.430   -9.323
+ PCD           "H2'"  H    H         0.000     -2.345   -9.758   -8.297
+ PCD           "O2'"  O    OH1       0.000     -3.604  -10.393   -9.431
+ PCD           H2O1   H    H         0.000     -4.431  -10.008   -9.113
+ PCD           O4D    O    O2        0.000     -0.578   -8.611   -9.577
+ PCD           "C1'"  C    CH1       0.000     -1.172   -9.885   -9.791
+ PCD           "H1'"  H    H         0.000     -1.247  -10.001  -10.881
+ PCD           N1     N    NR6       0.000     -0.529  -11.092   -9.307
+ PCD           C6     C    CR16      0.000     -0.047  -11.100   -8.053
+ PCD           H6     H    H         0.000     -0.119  -10.223   -7.421
+ PCD           C5     C    CR16      0.000      0.536  -12.249   -7.600
+ PCD           H5     H    H         0.000      0.937  -12.279   -6.595
+ PCD           C4     C    CR6       0.000      0.634  -13.465   -8.462
+ PCD           N4     N    NH2       0.000      1.179  -14.582   -8.056
+ PCD           H41    H    H         0.000      1.218  -15.361   -8.683
+ PCD           H42    H    H         0.000      1.546  -14.636   -7.126
+ PCD           N3     N    NRD6      0.000      0.114  -13.300   -9.690
+ PCD           C2     C    CR6       0.000     -0.461  -12.166  -10.148
+ PCD           O2     O    O         0.000     -0.886  -12.218  -11.313
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PCD      OM1    n/a    MO     START
+ PCD      MO     OM1    "S7'"  .
+ PCD      "S8'"  MO     .      .
+ PCD      OM2    MO     .      .
+ PCD      OR1    MO     HR11   .
+ PCD      HR12   OR1    .      .
+ PCD      HR11   OR1    .      .
+ PCD      "S7'"  MO     "C7'"  .
+ PCD      "C7'"  "S7'"  "C6'"  .
+ PCD      "C8'"  "C7'"  .      .
+ PCD      "C6'"  "C7'"  "N5'"  .
+ PCD      "H6'"  "C6'"  .      .
+ PCD      "N5'"  "C6'"  C4A    .
+ PCD      "H5'"  "N5'"  .      .
+ PCD      C4A    "N5'"  "C4'"  .
+ PCD      "C4'"  C4A    "N3'"  .
+ PCD      "O4'"  "C4'"  "H4'"  .
+ PCD      "H4'"  "O4'"  .      .
+ PCD      "N3'"  "C4'"  "C2'"  .
+ PCD      "C2'"  "N3'"  "N1'"  .
+ PCD      "N2'"  "C2'"  "H2'2" .
+ PCD      "H2'1" "N2'"  .      .
+ PCD      "H2'2" "N2'"  .      .
+ PCD      "N1'"  "C2'"  C4B    .
+ PCD      C4B    "N1'"  "N8'"  .
+ PCD      "N8'"  C4B    C7     .
+ PCD      "H8'"  "N8'"  .      .
+ PCD      C7     "N8'"  "O9'"  .
+ PCD      H7     C7     .      .
+ PCD      "O9'"  C7     "C9'"  .
+ PCD      "C9'"  "O9'"  C10    .
+ PCD      "H9'"  "C9'"  .      .
+ PCD      C10    "C9'"  O3B    .
+ PCD      H102   C10    .      .
+ PCD      H101   C10    .      .
+ PCD      O3B    C10    PB     .
+ PCD      PB     O3B    O3A    .
+ PCD      O1B    PB     .      .
+ PCD      O2B    PB     .      .
+ PCD      O3A    PB     PA     .
+ PCD      PA     O3A    "O5'"  .
+ PCD      O1A    PA     .      .
+ PCD      O2A    PA     .      .
+ PCD      "O5'"  PA     "C5'"  .
+ PCD      "C5'"  "O5'"  C4D    .
+ PCD      "H5'2" "C5'"  .      .
+ PCD      "H5'1" "C5'"  .      .
+ PCD      C4D    "C5'"  O4D    .
+ PCD      H4D    C4D    .      .
+ PCD      "C3'"  C4D    C2D    .
+ PCD      "H3'"  "C3'"  .      .
+ PCD      "O3'"  "C3'"  H3O1   .
+ PCD      H3O1   "O3'"  .      .
+ PCD      C2D    "C3'"  "O2'"  .
+ PCD      "H2'"  C2D    .      .
+ PCD      "O2'"  C2D    H2O1   .
+ PCD      H2O1   "O2'"  .      .
+ PCD      O4D    C4D    "C1'"  .
+ PCD      "C1'"  O4D    N1     .
+ PCD      "H1'"  "C1'"  .      .
+ PCD      N1     "C1'"  C6     .
+ PCD      C6     N1     C5     .
+ PCD      H6     C6     .      .
+ PCD      C5     C6     C4     .
+ PCD      H5     C5     .      .
+ PCD      C4     C5     N3     .
+ PCD      N4     C4     H42    .
+ PCD      H41    N4     .      .
+ PCD      H42    N4     .      .
+ PCD      N3     C4     C2     .
+ PCD      C2     N3     O2     .
+ PCD      O2     C2     .      END
+ PCD      N1     C2     .    ADD
+ PCD      "C1'"  C2D    .    ADD
+ PCD      "C9'"  "C8'"  .    ADD
+ PCD      "C8'"  "S8'"  .    ADD
+ PCD      "C6'"  C7     .    ADD
+ PCD      C4A    C4B    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PCD       N1        C2        single    1.410     0.020     1.410     0.020     
+PCD       C6        N1        single    1.337     0.020     1.337     0.020     
+PCD       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+PCD       C2        N3        single    1.350     0.020     1.350     0.020     
+PCD       O2        C2        double    1.250     0.020     1.250     0.020     
+PCD       N3        C4        double    1.350     0.020     1.350     0.020     
+PCD       C4        C5        single    1.390     0.020     1.390     0.020     
+PCD       N4        C4        single    1.355     0.020     1.355     0.020     
+PCD       C5        C6        double    1.390     0.020     1.390     0.020     
+PCD       H5        C5        single    1.082     0.013     0.975     0.010     
+PCD       H6        C6        single    1.082     0.013     0.975     0.010     
+PCD       H42       N4        single    1.016     0.010     0.899     0.007     
+PCD       H41       N4        single    1.016     0.010     0.899     0.007     
+PCD       "C1'"     C2D       single    1.524     0.020     1.524     0.020     
+PCD       "C1'"     O4D       single    1.426     0.020     1.426     0.020     
+PCD       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+PCD       "O2'"     C2D       single    1.432     0.020     1.432     0.020     
+PCD       C2D       "C3'"     single    1.524     0.020     1.524     0.020     
+PCD       "H2'"     C2D       single    1.089     0.010     0.989     0.005     
+PCD       H2O1      "O2'"     single    0.970     0.012     0.839     0.014     
+PCD       "C3'"     C4D       single    1.524     0.020     1.524     0.020     
+PCD       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+PCD       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+PCD       O4D       C4D       single    1.426     0.020     1.426     0.020     
+PCD       C4D       "C5'"     single    1.524     0.020     1.524     0.020     
+PCD       H4D       C4D       single    1.089     0.010     0.989     0.005     
+PCD       H3O1      "O3'"     single    0.970     0.012     0.839     0.014     
+PCD       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+PCD       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+PCD       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+PCD       "O5'"     PA        single    1.610     0.020     1.610     0.020     
+PCD       O1A       PA        deloc     1.510     0.020     1.510     0.020     
+PCD       O2A       PA        deloc     1.510     0.020     1.510     0.020     
+PCD       PA        O3A       single    1.610     0.020     1.610     0.020     
+PCD       O3A       PB        single    1.610     0.020     1.610     0.020     
+PCD       O1B       PB        deloc     1.510     0.020     1.510     0.020     
+PCD       O2B       PB        deloc     1.510     0.020     1.510     0.020     
+PCD       PB        O3B       single    1.610     0.020     1.610     0.020     
+PCD       O3B       C10       single    1.426     0.020     1.426     0.020     
+PCD       C10       "C9'"     single    1.524     0.020     1.524     0.020     
+PCD       H102      C10       single    1.089     0.010     0.989     0.005     
+PCD       H101      C10       single    1.089     0.010     0.989     0.005     
+PCD       "C9'"     "C8'"     single    1.500     0.020     1.500     0.020     
+PCD       "C9'"     "O9'"     single    1.426     0.020     1.426     0.020     
+PCD       "H9'"     "C9'"     single    1.089     0.010     0.989     0.005     
+PCD       "C8'"     "S8'"     single    1.665     0.020     1.665     0.020     
+PCD       "C8'"     "C7'"     double    1.330     0.020     1.330     0.020     
+PCD       "S8'"     MO        single    2.325     0.020     2.325     0.020     
+PCD       "C7'"     "S7'"     single    1.665     0.020     1.665     0.020     
+PCD       "C6'"     "C7'"     single    1.500     0.020     1.500     0.020     
+PCD       "S7'"     MO        single    2.325     0.020     2.325     0.020     
+PCD       "C6'"     C7        single    1.524     0.020     1.524     0.020     
+PCD       "N5'"     "C6'"     single    1.450     0.020     1.450     0.020     
+PCD       "H6'"     "C6'"     single    1.089     0.010     0.989     0.005     
+PCD       "O9'"     C7        single    1.426     0.020     1.426     0.020     
+PCD       C7        "N8'"     single    1.450     0.020     1.450     0.020     
+PCD       H7        C7        single    1.089     0.010     0.989     0.005     
+PCD       C4A       "N5'"     single    1.350     0.020     1.350     0.020     
+PCD       "H5'"     "N5'"     single    1.016     0.010     0.899     0.007     
+PCD       C4A       C4B       double    1.487     0.020     1.487     0.020     
+PCD       "C4'"     C4A       single    1.487     0.020     1.487     0.020     
+PCD       "N8'"     C4B       single    1.350     0.020     1.350     0.020     
+PCD       "H8'"     "N8'"     single    1.016     0.010     0.899     0.007     
+PCD       C4B       "N1'"     single    1.350     0.020     1.350     0.020     
+PCD       "N1'"     "C2'"     double    1.350     0.020     1.350     0.020     
+PCD       "N2'"     "C2'"     single    1.355     0.020     1.355     0.020     
+PCD       "C2'"     "N3'"     single    1.350     0.020     1.350     0.020     
+PCD       "H2'2"    "N2'"     single    1.016     0.010     0.899     0.007     
+PCD       "H2'1"    "N2'"     single    1.016     0.010     0.899     0.007     
+PCD       "N3'"     "C4'"     double    1.350     0.020     1.350     0.020     
+PCD       "O4'"     "C4'"     single    1.362     0.020     1.362     0.020     
+PCD       "H4'"     "O4'"     single    0.970     0.012     0.839     0.014     
+PCD       OR1       MO        single    1.865     0.020     1.865     0.020     
+PCD       OM2       MO        double    1.865     0.020     1.865     0.020     
+PCD       MO        OM1       double    1.865     0.020     1.865     0.020     
+PCD       HR11      OR1       single    0.970     0.012     0.839     0.014     
+PCD       HR12      OR1       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PCD      OM1    MO     "S8'"    90.000    3.000
+ PCD      OM1    MO     OM2      90.000    3.000
+ PCD      OM1    MO     OR1      90.000    3.000
+ PCD      OM1    MO     "S7'"    90.000    3.000
+ PCD      "S8'"  MO     OM2     144.000    3.000
+ PCD      "S8'"  MO     OR1     144.000    3.000
+ PCD      OM2    MO     OR1      72.000    3.000
+ PCD      "S8'"  MO     "S7'"    72.000    3.000
+ PCD      OM2    MO     "S7'"    72.000    3.000
+ PCD      OR1    MO     "S7'"   144.000    3.000
+ PCD      MO     "S8'"  "C8'"   106.184    3.000
+ PCD      MO     OR1    HR12    120.000    3.000
+ PCD      MO     OR1    HR11    120.000    3.000
+ PCD      HR12   OR1    HR11    120.000    3.000
+ PCD      MO     "S7'"  "C7'"   112.244    3.000
+ PCD      "S7'"  "C7'"  "C8'"   120.000    3.000
+ PCD      "S7'"  "C7'"  "C6'"   120.000    3.000
+ PCD      "C8'"  "C7'"  "C6'"   120.000    3.000
+ PCD      "C7'"  "C8'"  "C9'"   120.000    3.000
+ PCD      "C7'"  "C8'"  "S8'"   120.000    3.000
+ PCD      "C9'"  "C8'"  "S8'"   120.000    3.000
+ PCD      "C7'"  "C6'"  "H6'"   108.810    3.000
+ PCD      "C7'"  "C6'"  "N5'"   111.600    3.000
+ PCD      "C7'"  "C6'"  C7      109.470    3.000
+ PCD      "H6'"  "C6'"  "N5'"   108.550    3.000
+ PCD      "H6'"  "C6'"  C7      108.340    3.000
+ PCD      "N5'"  "C6'"  C7      110.000    3.000
+ PCD      "C6'"  "N5'"  "H5'"   118.500    3.000
+ PCD      "C6'"  "N5'"  C4A     120.000    3.000
+ PCD      "H5'"  "N5'"  C4A     120.000    3.000
+ PCD      "N5'"  C4A    "C4'"   120.000    3.000
+ PCD      "N5'"  C4A    C4B     120.000    3.000
+ PCD      "C4'"  C4A    C4B     120.000    3.000
+ PCD      C4A    "C4'"  "O4'"   120.000    3.000
+ PCD      C4A    "C4'"  "N3'"   120.000    3.000
+ PCD      "O4'"  "C4'"  "N3'"   120.000    3.000
+ PCD      "C4'"  "O4'"  "H4'"   109.470    3.000
+ PCD      "C4'"  "N3'"  "C2'"   120.000    3.000
+ PCD      "N3'"  "C2'"  "N2'"   120.000    3.000
+ PCD      "N3'"  "C2'"  "N1'"   120.000    3.000
+ PCD      "N2'"  "C2'"  "N1'"   120.000    3.000
+ PCD      "C2'"  "N2'"  "H2'1"  120.000    3.000
+ PCD      "C2'"  "N2'"  "H2'2"  120.000    3.000
+ PCD      "H2'1" "N2'"  "H2'2"  120.000    3.000
+ PCD      "C2'"  "N1'"  C4B     120.000    3.000
+ PCD      "N1'"  C4B    "N8'"   120.000    3.000
+ PCD      "N1'"  C4B    C4A     120.000    3.000
+ PCD      "N8'"  C4B    C4A     120.000    3.000
+ PCD      C4B    "N8'"  "H8'"   120.000    3.000
+ PCD      C4B    "N8'"  C7      120.000    3.000
+ PCD      "H8'"  "N8'"  C7      118.500    3.000
+ PCD      "N8'"  C7     H7      108.550    3.000
+ PCD      "N8'"  C7     "O9'"   109.500    3.000
+ PCD      "N8'"  C7     "C6'"   110.000    3.000
+ PCD      H7     C7     "O9'"   109.470    3.000
+ PCD      H7     C7     "C6'"   108.340    3.000
+ PCD      "O9'"  C7     "C6'"   109.470    3.000
+ PCD      C7     "O9'"  "C9'"   111.800    3.000
+ PCD      "O9'"  "C9'"  "H9'"   109.470    3.000
+ PCD      "O9'"  "C9'"  C10     109.470    3.000
+ PCD      "O9'"  "C9'"  "C8'"   109.470    3.000
+ PCD      "H9'"  "C9'"  C10     108.340    3.000
+ PCD      "H9'"  "C9'"  "C8'"   108.810    3.000
+ PCD      C10    "C9'"  "C8'"   109.470    3.000
+ PCD      "C9'"  C10    H102    109.470    3.000
+ PCD      "C9'"  C10    H101    109.470    3.000
+ PCD      "C9'"  C10    O3B     109.470    3.000
+ PCD      H102   C10    H101    107.900    3.000
+ PCD      H102   C10    O3B     109.470    3.000
+ PCD      H101   C10    O3B     109.470    3.000
+ PCD      C10    O3B    PB      120.500    3.000
+ PCD      O3B    PB     O1B     108.200    3.000
+ PCD      O3B    PB     O2B     108.200    3.000
+ PCD      O3B    PB     O3A     102.600    3.000
+ PCD      O1B    PB     O2B     119.900    3.000
+ PCD      O1B    PB     O3A     108.200    3.000
+ PCD      O2B    PB     O3A     108.200    3.000
+ PCD      PB     O3A    PA      120.500    3.000
+ PCD      O3A    PA     O1A     108.200    3.000
+ PCD      O3A    PA     O2A     108.200    3.000
+ PCD      O3A    PA     "O5'"   102.600    3.000
+ PCD      O1A    PA     O2A     119.900    3.000
+ PCD      O1A    PA     "O5'"   108.200    3.000
+ PCD      O2A    PA     "O5'"   108.200    3.000
+ PCD      PA     "O5'"  "C5'"   120.500    3.000
+ PCD      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ PCD      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ PCD      "O5'"  "C5'"  C4D     109.470    3.000
+ PCD      "H5'2" "C5'"  "H5'1"  107.900    3.000
+ PCD      "H5'2" "C5'"  C4D     109.470    3.000
+ PCD      "H5'1" "C5'"  C4D     109.470    3.000
+ PCD      "C5'"  C4D    H4D     108.340    3.000
+ PCD      "C5'"  C4D    "C3'"   111.000    3.000
+ PCD      "C5'"  C4D    O4D     109.470    3.000
+ PCD      H4D    C4D    "C3'"   108.340    3.000
+ PCD      H4D    C4D    O4D     109.470    3.000
+ PCD      "C3'"  C4D    O4D     109.470    3.000
+ PCD      C4D    "C3'"  "H3'"   108.340    3.000
+ PCD      C4D    "C3'"  "O3'"   109.470    3.000
+ PCD      C4D    "C3'"  C2D     111.000    3.000
+ PCD      "H3'"  "C3'"  "O3'"   109.470    3.000
+ PCD      "H3'"  "C3'"  C2D     108.340    3.000
+ PCD      "O3'"  "C3'"  C2D     109.470    3.000
+ PCD      "C3'"  "O3'"  H3O1    109.470    3.000
+ PCD      "C3'"  C2D    "H2'"   108.340    3.000
+ PCD      "C3'"  C2D    "O2'"   109.470    3.000
+ PCD      "C3'"  C2D    "C1'"   111.000    3.000
+ PCD      "H2'"  C2D    "O2'"   109.470    3.000
+ PCD      "H2'"  C2D    "C1'"   108.340    3.000
+ PCD      "O2'"  C2D    "C1'"   109.470    3.000
+ PCD      C2D    "O2'"  H2O1    109.470    3.000
+ PCD      C4D    O4D    "C1'"   111.800    3.000
+ PCD      O4D    "C1'"  "H1'"   109.470    3.000
+ PCD      O4D    "C1'"  N1      109.470    3.000
+ PCD      O4D    "C1'"  C2D     109.470    3.000
+ PCD      "H1'"  "C1'"  N1      109.470    3.000
+ PCD      "H1'"  "C1'"  C2D     108.340    3.000
+ PCD      N1     "C1'"  C2D     109.470    3.000
+ PCD      "C1'"  N1     C6      120.000    3.000
+ PCD      "C1'"  N1     C2      120.000    3.000
+ PCD      C6     N1     C2      120.000    3.000
+ PCD      N1     C6     H6      120.000    3.000
+ PCD      N1     C6     C5      120.000    3.000
+ PCD      H6     C6     C5      120.000    3.000
+ PCD      C6     C5     H5      120.000    3.000
+ PCD      C6     C5     C4      120.000    3.000
+ PCD      H5     C5     C4      120.000    3.000
+ PCD      C5     C4     N4      120.000    3.000
+ PCD      C5     C4     N3      120.000    3.000
+ PCD      N4     C4     N3      120.000    3.000
+ PCD      C4     N4     H41     120.000    3.000
+ PCD      C4     N4     H42     120.000    3.000
+ PCD      H41    N4     H42     120.000    3.000
+ PCD      C4     N3     C2      120.000    3.000
+ PCD      N3     C2     O2      120.000    3.000
+ PCD      N3     C2     N1      120.000    3.000
+ PCD      O2     C2     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PCD      var_1    "C8'"  "S8'"  MO     "S7'"      0.000   20.000   1
+ PCD      var_2    HR12   OR1    MO     "S8'"      0.000   20.000   1
+ PCD      var_3    "C7'"  "S7'"  MO     "S8'"      0.000   20.000   1
+ PCD      var_4    MO     "S7'"  "C7'"  "C6'"    180.000   20.000   1
+ PCD      var_5    "S7'"  "C7'"  "C8'"  "C9'"    180.000   20.000   1
+ PCD      var_6    "C7'"  "C8'"  "S8'"  MO        30.000   20.000   1
+ PCD      var_7    "S7'"  "C7'"  "C6'"  "N5'"    -60.000   20.000   3
+ PCD      var_8    "C7'"  "C6'"  C7     "N8'"    180.000   20.000   3
+ PCD      var_9    "C7'"  "C6'"  "N5'"  C4A     -150.000   20.000   3
+ PCD      var_10   "C6'"  "N5'"  C4A    "C4'"    180.000   20.000   1
+ PCD      CONST_1  "N5'"  C4A    C4B    "N1'"    180.000    0.000   0
+ PCD      CONST_2  "N5'"  C4A    "C4'"  "N3'"    180.000    0.000   0
+ PCD      var_11   C4A    "C4'"  "O4'"  "H4'"   -179.986   20.000   1
+ PCD      CONST_3  C4A    "C4'"  "N3'"  "C2'"      0.000    0.000   0
+ PCD      CONST_4  "C4'"  "N3'"  "C2'"  "N1'"      0.000    0.000   0
+ PCD      CONST_5  "N3'"  "C2'"  "N2'"  "H2'2"     0.140    0.000   0
+ PCD      CONST_6  "N3'"  "C2'"  "N1'"  C4B        0.000    0.000   0
+ PCD      CONST_7  "C2'"  "N1'"  C4B    "N8'"    180.000    0.000   0
+ PCD      var_12   "N1'"  C4B    "N8'"  C7      -150.000   20.000   1
+ PCD      var_13   C4B    "N8'"  C7     "O9'"     60.000   20.000   3
+ PCD      var_14   "N8'"  C7     "O9'"  "C9'"    180.000   20.000   1
+ PCD      var_15   C7     "O9'"  "C9'"  C10      180.000   20.000   1
+ PCD      var_16   "O9'"  "C9'"  "C8'"  "C7'"      0.000   20.000   3
+ PCD      var_17   "O9'"  "C9'"  C10    O3B       48.242   20.000   3
+ PCD      var_18   "C9'"  C10    O3B    PB       128.849   20.000   1
+ PCD      var_19   C10    O3B    PB     O3A      -95.295   20.000   1
+ PCD      var_20   O3B    PB     O3A    PA      -151.094   20.000   1
+ PCD      var_21   PB     O3A    PA     "O5'"     72.379   20.000   1
+ PCD      var_22   O3A    PA     "O5'"  "C5'"     29.965   20.000   1
+ PCD      var_23   PA     "O5'"  "C5'"  C4D     -173.842   20.000   1
+ PCD      var_24   "O5'"  "C5'"  C4D    O4D      -69.345   20.000   3
+ PCD      var_25   "C5'"  C4D    "C3'"  C2D     -120.000   20.000   3
+ PCD      var_26   C4D    "C3'"  "O3'"  H3O1     -90.383   20.000   1
+ PCD      var_27   C4D    "C3'"  C2D    "O2'"    180.000   20.000   3
+ PCD      var_28   "C3'"  C2D    "O2'"  H2O1      -2.810   20.000   1
+ PCD      var_29   "C5'"  C4D    O4D    "C1'"    120.000   20.000   1
+ PCD      var_30   C4D    O4D    "C1'"  N1      -120.000   20.000   1
+ PCD      var_31   O4D    "C1'"  C2D    "C3'"      0.000   20.000   3
+ PCD      var_32   O4D    "C1'"  N1     C6        45.884   20.000   1
+ PCD      CONST_8  "C1'"  N1     C2     N3       180.000    0.000   0
+ PCD      CONST_9  "C1'"  N1     C6     C5       180.000    0.000   0
+ PCD      CONST_10 N1     C6     C5     C4         0.000    0.000   0
+ PCD      CONST_11 C6     C5     C4     N3         0.000    0.000   0
+ PCD      CONST_12 C5     C4     N4     H42        0.295    0.000   0
+ PCD      CONST_13 C5     C4     N3     C2         0.000    0.000   0
+ PCD      CONST_14 C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ PCD      chir_01  "C1'"  N1     C2D    O4D       negativ
+                   .      .      .      .      .
+ PCD      chir_02  C2D    "C1'"  "O2'"  "C3'"     positiv
+                   .      .      .      .      .
+ PCD      chir_03  "C3'"  C2D    C4D    "O3'"     negativ
+                   .      .      .      .      .
+ PCD      chir_04  C4D    "C3'"  O4D    "C5'"     positiv
+                   .      .      .      .      .
+ PCD      chir_05  "C9'"  C10    "C8'"  "O9'"     positiv
+                   .      .      .      .      .
+ PCD      chir_06  "C6'"  "C7'"  C7     "N5'"     negativ
+                   .      .      .      .      .
+ PCD      chir_07  C7     "C6'"  "O9'"  "N8'"     negativ
+                   .      .      .      .      .
+ PCD      chir_08  MO     .      .      "S8'"     cross5
+                   "S7'"  OM2    OR1    .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PCD      plan-1    N1        0.020
+ PCD      plan-1    C2        0.020
+ PCD      plan-1    C6        0.020
+ PCD      plan-1    "C1'"     0.020
+ PCD      plan-1    N3        0.020
+ PCD      plan-1    C4        0.020
+ PCD      plan-1    C5        0.020
+ PCD      plan-1    O2        0.020
+ PCD      plan-1    N4        0.020
+ PCD      plan-1    H5        0.020
+ PCD      plan-1    H6        0.020
+ PCD      plan-1    H41       0.020
+ PCD      plan-1    H42       0.020
+ PCD      plan-2    N4        0.020
+ PCD      plan-2    C4        0.020
+ PCD      plan-2    H42       0.020
+ PCD      plan-2    H41       0.020
+ PCD      plan-3    "C8'"     0.020
+ PCD      plan-3    "C9'"     0.020
+ PCD      plan-3    "S8'"     0.020
+ PCD      plan-3    "C7'"     0.020
+ PCD      plan-4    "C7'"     0.020
+ PCD      plan-4    "C8'"     0.020
+ PCD      plan-4    "S7'"     0.020
+ PCD      plan-4    "C6'"     0.020
+ PCD      plan-5    "N5'"     0.020
+ PCD      plan-5    "C6'"     0.020
+ PCD      plan-5    C4A       0.020
+ PCD      plan-5    "H5'"     0.020
+ PCD      plan-6    C4A       0.020
+ PCD      plan-6    "N5'"     0.020
+ PCD      plan-6    C4B       0.020
+ PCD      plan-6    "C4'"     0.020
+ PCD      plan-6    "N1'"     0.020
+ PCD      plan-6    "C2'"     0.020
+ PCD      plan-6    "N3'"     0.020
+ PCD      plan-6    "N8'"     0.020
+ PCD      plan-6    "N2'"     0.020
+ PCD      plan-6    "O4'"     0.020
+ PCD      plan-6    "H5'"     0.020
+ PCD      plan-6    "H8'"     0.020
+ PCD      plan-6    "H2'1"    0.020
+ PCD      plan-6    "H2'2"    0.020
+ PCD      plan-7    "N8'"     0.020
+ PCD      plan-7    C7        0.020
+ PCD      plan-7    C4B       0.020
+ PCD      plan-7    "H8'"     0.020
+ PCD      plan-8    "N2'"     0.020
+ PCD      plan-8    "C2'"     0.020
+ PCD      plan-8    "H2'2"    0.020
+ PCD      plan-8    "H2'1"    0.020
+# ------------------------------------------------------

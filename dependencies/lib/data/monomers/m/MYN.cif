@@ -1,0 +1,229 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MYN     MYN     "(2S)-amino[(4R)-2-amino-1,4,5,6-tetrahydropyrimidin-4-yl]ethanoic"     peptide      24     12     .
+#
+data_comp_MYN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MYN     CA      C       CH1     0       -1.828      -0.197      -0.183
+MYN     N       N       NT3     1       -2.420      0.852       -1.058
+MYN     C       C       C       0       -2.196      0.129       1.274
+MYN     CB      C       CH1     0       -0.333      -0.400      -0.477
+MYN     CG      C       CH2     0       0.292       -1.505      0.359
+MYN     CD      C       CH2     0       1.791       -1.567      0.137
+MYN     NE      N       NR6     0       2.380       -0.229      0.137
+MYN     CZ      C       CR6     0       1.686       0.892       -0.108
+MYN     N1      N       NRD6    0       0.381       0.887       -0.363
+MYN     NZ      N       NH2     0       2.320       2.050       -0.085
+MYN     O       O       O       0       -3.279      -0.320      1.698
+MYN     OXT     O       OC      -1      -1.397      0.821       1.937
+MYN     H4      H       H       0       -2.275      -1.046      -0.410
+MYN     H       H       H       0       -2.219      0.679       -1.930
+MYN     H2      H       H       0       -2.085      1.671       -0.837
+MYN     H3      H       H       0       -3.326      0.867       -0.963
+MYN     H20     H       H       0       -0.276      -0.676      -1.426
+MYN     H21     H       H       0       0.117       -1.347      1.299
+MYN     H21A    H       H       0       -0.106      -2.356      0.118
+MYN     H22     H       H       0       1.976       -2.005      -0.723
+MYN     H22A    H       H       0       2.204       -2.106      0.848
+MYN     HN23    H       H       0       3.228       -0.167      0.307
+MYN     HN26    H       H       0       1.980       2.724       0.357
+MYN     HN2A    H       H       0       3.079       2.141       -0.512
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+MYN      N      n/a    CA     START
+MYN      H      N      .      .
+MYN      H2     N      .      .
+MYN      H3     N      .      .
+MYN      CA     N      C      .
+MYN      H4     CA     .      .
+MYN      CB     CA     N1     .
+MYN      H20    CB     .      .
+MYN      N1     CB     CZ     .
+MYN      CZ     N1     NE     .
+MYN      NZ     CZ     HN26   .
+MYN      HN2A   NZ     .      .
+MYN      HN26   NZ     .      .
+MYN      NE     CZ     CD     .
+MYN      HN23   NE     .      .
+MYN      CD     NE     CG     .
+MYN      H22    CD     .      .
+MYN      H22A   CD     .      .
+MYN      CG     CD     H21    .
+MYN      H21A   CG     .      .
+MYN      H21    CG     .      .
+MYN      C      CA     OXT    .
+MYN      O      C      .      .
+MYN      OXT    C      .      END
+MYN      CB     CG     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MYN       CA        N         SINGLE    n         1.488     0.010     1.488     0.010     
+MYN       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+MYN       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+MYN       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+MYN       CA        CB        SINGLE    n         1.532     0.011     1.532     0.011     
+MYN       CB        N1        SINGLE    n         1.465     0.018     1.465     0.018     
+MYN       CB        CG        SINGLE    n         1.513     0.013     1.513     0.013     
+MYN       CG        CD        SINGLE    n         1.513     0.014     1.513     0.014     
+MYN       CD        NE        SINGLE    n         1.459     0.010     1.459     0.010     
+MYN       NE        CZ        SINGLE    n         1.329     0.019     1.329     0.019     
+MYN       CZ        NZ        SINGLE    n         1.320     0.011     1.320     0.011     
+MYN       CZ        N1        DOUBLE    n         1.319     0.020     1.319     0.020     
+MYN       CA        H4        SINGLE    n         1.089     0.010     0.986     0.020     
+MYN       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+MYN       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+MYN       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+MYN       CB        H20       SINGLE    n         1.089     0.010     0.990     0.012     
+MYN       CG        H21       SINGLE    n         1.089     0.010     0.970     0.010     
+MYN       CG        H21A      SINGLE    n         1.089     0.010     0.970     0.010     
+MYN       CD        H22       SINGLE    n         1.089     0.010     0.983     0.010     
+MYN       CD        H22A      SINGLE    n         1.089     0.010     0.983     0.010     
+MYN       NE        HN23      SINGLE    n         1.016     0.010     0.866     0.020     
+MYN       NZ        HN26      SINGLE    n         1.016     0.010     0.875     0.020     
+MYN       NZ        HN2A      SINGLE    n         1.016     0.010     0.875     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MYN           N          CA           C     109.415    1.50
+MYN           N          CA          CB     113.823    1.83
+MYN           N          CA          H4     108.441    1.50
+MYN           C          CA          CB     113.355    2.65
+MYN           C          CA          H4     108.585    1.50
+MYN          CB          CA          H4     108.141    1.50
+MYN          CA           N           H     109.856    1.85
+MYN          CA           N          H2     109.856    1.85
+MYN          CA           N          H3     109.856    1.85
+MYN           H           N          H2     108.504    2.72
+MYN           H           N          H3     108.504    2.72
+MYN          H2           N          H3     108.504    2.72
+MYN          CA           C           O     117.220    1.50
+MYN          CA           C         OXT     117.220    1.50
+MYN           O           C         OXT     125.559    1.75
+MYN          CA          CB          N1     109.088    1.95
+MYN          CA          CB          CG     111.163    2.25
+MYN          CA          CB         H20     108.376    2.22
+MYN          N1          CB          CG     112.961    3.00
+MYN          N1          CB         H20     108.158    1.74
+MYN          CG          CB         H20     108.585    1.50
+MYN          CB          CG          CD     111.124    1.57
+MYN          CB          CG         H21     109.351    1.50
+MYN          CB          CG        H21A     109.351    1.50
+MYN          CD          CG         H21     109.398    1.50
+MYN          CD          CG        H21A     109.398    1.50
+MYN         H21          CG        H21A     108.019    1.50
+MYN          CG          CD          NE     111.088    1.71
+MYN          CG          CD         H22     109.572    1.50
+MYN          CG          CD        H22A     109.572    1.50
+MYN          NE          CD         H22     109.596    1.50
+MYN          NE          CD        H22A     109.596    1.50
+MYN         H22          CD        H22A     108.210    1.50
+MYN          CD          NE          CZ     123.536    2.69
+MYN          CD          NE        HN23     117.822    2.67
+MYN          CZ          NE        HN23     118.642    1.87
+MYN          NE          CZ          NZ     118.622    1.58
+MYN          NE          CZ          N1     122.730    2.48
+MYN          NZ          CZ          N1     118.648    1.93
+MYN          CB          N1          CZ     118.328    2.71
+MYN          CZ          NZ        HN26     119.866    1.50
+MYN          CZ          NZ        HN2A     119.866    1.50
+MYN        HN26          NZ        HN2A     120.268    1.81
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MYN            sp3_sp3_10           C          CA           N           H     180.000   10.00     3
+MYN            sp2_sp3_10           O           C          CA           N       0.000   10.00     6
+MYN            sp3_sp3_19           N          CA          CB          N1     180.000   10.00     3
+MYN            sp3_sp3_34          CA          CB          CG          CD     -60.000   10.00     3
+MYN             sp2_sp3_2          CZ          N1          CB          CA     120.000   10.00     6
+MYN             sp3_sp3_1          NE          CD          CG          CB      60.000   10.00     3
+MYN             sp2_sp3_4          CZ          NE          CD          CG       0.000   10.00     6
+MYN             sp2_sp2_5          NZ          CZ          NE          CD     180.000   10.00     2
+MYN             sp2_sp2_2          NZ          CZ          N1          CB     180.000   10.00     2
+MYN             sp2_sp2_7          NE          CZ          NZ        HN26     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MYN    chir_1    CA    N    C    CB    positive
+MYN    chir_2    CB    N1    CA    CG    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MYN    plan-1           C   0.020
+MYN    plan-1          CA   0.020
+MYN    plan-1           O   0.020
+MYN    plan-1         OXT   0.020
+MYN    plan-2          CD   0.020
+MYN    plan-2          CZ   0.020
+MYN    plan-2        HN23   0.020
+MYN    plan-2          NE   0.020
+MYN    plan-3          CZ   0.020
+MYN    plan-3          N1   0.020
+MYN    plan-3          NE   0.020
+MYN    plan-3          NZ   0.020
+MYN    plan-4          CZ   0.020
+MYN    plan-4        HN26   0.020
+MYN    plan-4        HN2A   0.020
+MYN    plan-4          NZ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MYN SMILES_CANONICAL CACTVS               3.352 "N[C@@H]([C@H]1CCNC(=N1)N)C(O)=O"
+MYN SMILES           CACTVS               3.352 "N[CH]([CH]1CCNC(=N1)N)C(O)=O"
+MYN SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C1CNC(=N[C@H]1[C@@H](C(=O)O)N)N"
+MYN SMILES           "OpenEye OEToolkits" 1.7.0 "C1CNC(=NC1C(C(=O)O)N)N"
+MYN InChI            InChI                1.03  "InChI=1S/C6H12N4O2/c7-4(5(11)12)3-1-2-9-6(8)10-3/h3-4H,1-2,7H2,(H,11,12)(H3,8,9,10)/t3-,4+/m1/s1"
+MYN InChIKey         InChI                1.03  XHNWDEHKMJLKGG-DMTCNVIQSA-N
+MYN ?                acedrg               202         "dictionary generator"
+MYN ?                acedrg_database      11          "data source"
+MYN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MYN ?                refmac5              5.8.0222    "optimization tool"

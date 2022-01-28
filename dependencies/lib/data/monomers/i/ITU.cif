@@ -1,0 +1,131 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ITU     ITU     ETHYLISOTHIOUREA     NON-POLYMER     14     6     .     
+#
+data_comp_ITU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ITU     C1      C       CH3     0       1.357       7.713       69.317      
+ITU     C2      C       CH2     0       1.061       8.593       68.145      
+ITU     S       S       S2      0       -0.531      9.429       68.329      
+ITU     C3      C       C       0       -0.648      10.412      66.874      
+ITU     N1      N       NH2     0       -1.172      9.820       65.793      
+ITU     N2      N       NH1     0       -0.253      11.648      66.826      
+ITU     H11     H       H       0       2.199       7.255       69.173      
+ITU     H12     H       H       0       0.648       7.061       69.419      
+ITU     H13     H       H       0       1.417       8.253       70.120      
+ITU     H21     H       H       0       1.046       8.056       67.329      
+ITU     H22     H       H       0       1.765       9.265       68.056      
+ITU     HN11    H       H       0       -1.249      10.269      65.041      
+ITU     HN12    H       H       0       -1.440      8.984       65.831      
+ITU     HN2     H       H       0       0.083       11.958      67.594      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ITU       C1        C2        SINGLE    n         1.495     0.020     1.495     0.020     
+ITU       C2        S         SINGLE    n         1.808     0.010     1.808     0.010     
+ITU       S         C3        SINGLE    n         1.755     0.014     1.755     0.014     
+ITU       C3        N1        SINGLE    n         1.330     0.020     1.330     0.020     
+ITU       C3        N2        DOUBLE    n         1.291     0.020     1.291     0.020     
+ITU       C1        H11       SINGLE    n         1.089     0.010     0.969     0.013     
+ITU       C1        H12       SINGLE    n         1.089     0.010     0.969     0.013     
+ITU       C1        H13       SINGLE    n         1.089     0.010     0.969     0.013     
+ITU       C2        H21       SINGLE    n         1.089     0.010     0.977     0.010     
+ITU       C2        H22       SINGLE    n         1.089     0.010     0.977     0.010     
+ITU       N1        HN11      SINGLE    n         1.016     0.010     0.878     0.020     
+ITU       N1        HN12      SINGLE    n         1.016     0.010     0.878     0.020     
+ITU       N2        HN2       SINGLE    n         1.016     0.010     0.892     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ITU          C2          C1         H11     109.476    1.50
+ITU          C2          C1         H12     109.476    1.50
+ITU          C2          C1         H13     109.476    1.50
+ITU         H11          C1         H12     109.451    1.50
+ITU         H11          C1         H13     109.451    1.50
+ITU         H12          C1         H13     109.451    1.50
+ITU          C1          C2           S     111.175    2.82
+ITU          C1          C2         H21     109.420    1.50
+ITU          C1          C2         H22     109.420    1.50
+ITU           S          C2         H21     108.897    1.50
+ITU           S          C2         H22     108.897    1.50
+ITU         H21          C2         H22     108.153    1.50
+ITU          C2           S          C3     103.459    2.03
+ITU           S          C3          N1     115.606    3.00
+ITU           S          C3          N2     122.410    3.00
+ITU          N1          C3          N2     121.984    3.00
+ITU          C3          N1        HN11     120.029    1.50
+ITU          C3          N1        HN12     120.029    1.50
+ITU        HN11          N1        HN12     119.941    1.51
+ITU          C3          N2         HN2     112.238    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ITU             sp3_sp3_1         H11          C1          C2           S     180.000   10.00     3
+ITU            sp3_sp3_10          C1          C2           S          C3     180.000   10.00     3
+ITU             sp2_sp2_1           S          C3          N1        HN11     180.000   10.00     2
+ITU             sp2_sp2_5           S          C3          N2         HN2     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ITU    plan-1          C3   0.020
+ITU    plan-1          N1   0.020
+ITU    plan-1          N2   0.020
+ITU    plan-1           S   0.020
+ITU    plan-2          C3   0.020
+ITU    plan-2        HN11   0.020
+ITU    plan-2        HN12   0.020
+ITU    plan-2          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ITU SMILES           ACDLabs              10.04 "[N@H]=C(SCC)N"
+ITU SMILES_CANONICAL CACTVS               3.341 "CCSC(N)=N"
+ITU SMILES           CACTVS               3.341 "CCSC(N)=N"
+ITU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCSC(=N)N"
+ITU SMILES           "OpenEye OEToolkits" 1.5.0 "CCSC(=N)N"
+ITU InChI            InChI                1.03  "InChI=1S/C3H8N2S/c1-2-6-3(4)5/h2H2,1H3,(H3,4,5)"
+ITU InChIKey         InChI                1.03  VFIZBHJTOHUOEK-UHFFFAOYSA-N
+ITU ?                acedrg               190         "dictionary generator"                  
+ITU ?                acedrg_database      11          "data source"                           
+ITU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ITU ?                refmac5              5.8.0158    "optimization tool"                     

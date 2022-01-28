@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BA9     BA9      propane-2,2-diol     NON-POLYMER     13     5     .     
+#
+data_comp_BA9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BA9     O1      O       OH1     0       15.554      -30.353     -15.321     
+BA9     C       C       CT      0       16.611      -31.226     -15.089     
+BA9     O       O       OH1     0       16.314      -32.251     -14.198     
+BA9     C2      C       CH3     0       17.733      -30.415     -14.466     
+BA9     C1      C       CH3     0       16.985      -31.863     -16.419     
+BA9     H1      H       H       0       15.173      -30.159     -14.587     
+BA9     H2      H       H       0       15.546      -32.568     -14.370     
+BA9     H3      H       H       0       18.425      -31.009     -14.151     
+BA9     H4      H       H       0       17.387      -29.903     -13.725     
+BA9     H5      H       H       0       18.102      -29.815     -15.126     
+BA9     H6      H       H       0       16.445      -32.650     -16.567     
+BA9     H7      H       H       0       17.917      -32.112     -16.406     
+BA9     H8      H       H       0       16.834      -31.233     -17.136     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BA9       C         C1        SINGLE    n         1.517     0.0141    1.517     0.0141    
+BA9       O1        C         SINGLE    n         1.385     0.0185    1.385     0.0185    
+BA9       C         C2        SINGLE    n         1.517     0.0141    1.517     0.0141    
+BA9       C         O         SINGLE    n         1.385     0.0185    1.385     0.0185    
+BA9       O1        H1        SINGLE    n         0.970     0.012     0.848     0.0200    
+BA9       O         H2        SINGLE    n         0.970     0.012     0.848     0.0200    
+BA9       C2        H3        SINGLE    n         1.089     0.010     0.965     0.0200    
+BA9       C2        H4        SINGLE    n         1.089     0.010     0.965     0.0200    
+BA9       C2        H5        SINGLE    n         1.089     0.010     0.965     0.0200    
+BA9       C1        H6        SINGLE    n         1.089     0.010     0.965     0.0200    
+BA9       C1        H7        SINGLE    n         1.089     0.010     0.965     0.0200    
+BA9       C1        H8        SINGLE    n         1.089     0.010     0.965     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BA9           C          O1          H1     108.906    3.00
+BA9          C1           C          O1     107.375    2.58
+BA9          C1           C          C2     113.880    1.50
+BA9          C1           C           O     107.375    2.58
+BA9          O1           C          C2     107.375    2.58
+BA9          O1           C           O     113.458    2.75
+BA9          C2           C           O     107.375    2.58
+BA9           C           O          H2     108.906    3.00
+BA9           C          C2          H3     109.486    1.50
+BA9           C          C2          H4     109.486    1.50
+BA9           C          C2          H5     109.486    1.50
+BA9          H3          C2          H4     109.390    2.19
+BA9          H3          C2          H5     109.390    2.19
+BA9          H4          C2          H5     109.390    2.19
+BA9           C          C1          H6     109.486    1.50
+BA9           C          C1          H7     109.486    1.50
+BA9           C          C1          H8     109.486    1.50
+BA9          H6          C1          H7     109.390    2.19
+BA9          H6          C1          H8     109.390    2.19
+BA9          H7          C1          H8     109.390    2.19
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BA9            sp3_sp3_10          C1           C          O1          H1     180.000   10.00     3
+BA9            sp3_sp3_23          C1           C           O          H2      60.000   10.00     3
+BA9            sp3_sp3_19          C1           C          C2          H3     -60.000   10.00     3
+BA9             sp3_sp3_4          O1           C          C1          H6      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+BA9    chir_1    C    O1    O    C1    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BA9           SMILES              ACDLabs 12.01                              OC(C)(O)C
+BA9            InChI                InChI  1.03 InChI=1S/C3H8O2/c1-3(2,4)5/h4-5H,1-2H3
+BA9         InChIKey                InChI  1.03            CIBMHJPPKCXONB-UHFFFAOYSA-N
+BA9 SMILES_CANONICAL               CACTVS 3.385                              CC(C)(O)O
+BA9           SMILES               CACTVS 3.385                              CC(C)(O)O
+BA9 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                              CC(C)(O)O
+BA9           SMILES "OpenEye OEToolkits" 2.0.6                              CC(C)(O)O
+BA9 ?                acedrg               217         "dictionary generator"                  
+BA9 ?                acedrg_database      11          "data source"                           
+BA9 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BA9 ?                refmac5              5.8.0253    "optimization tool"                     

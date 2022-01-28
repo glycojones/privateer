@@ -1,0 +1,203 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HTN     HTN     "(3R)-3-hydroxy-N-methyl-D-asparagine"     peptide     21     11     .
+#
+data_comp_HTN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HTN     O       O       O       0       3.361       0.289       -0.651
+HTN     C       C       C       0       2.367       0.417       0.091
+HTN     CE      C       CH3     0       -2.780      1.348       0.116
+HTN     N       N       NT3     1       0.842       -0.888      1.531
+HTN     CA      C       CH1     0       1.388       -0.765      0.151
+HTN     CB      C       CH1     0       0.277       -0.672      -0.915
+HTN     OG      O       OH1     0       0.854       -0.645      -2.209
+HTN     CG      C       C       0       -0.641      0.537       -0.731
+HTN     OD1     O       O       0       -0.338      1.604       -1.264
+HTN     ND2     N       NH1     0       -1.720      0.360       0.016
+HTN     OXT     O       OC      -1      2.097       1.416       0.788
+HTN     HE1     H       H       0       -2.400      2.212       0.344
+HTN     HE2     H       H       0       -3.408      1.080       0.806
+HTN     HE3     H       H       0       -3.244      1.414       -0.734
+HTN     H       H       H       0       0.543       -0.079      1.826
+HTN     H2      H       H       0       1.493       -1.185      2.096
+HTN     H3      H       H       0       0.151       -1.481      1.540
+HTN     HA      H       H       0       1.895       -1.589      -0.039
+HTN     HB3     H       H       0       -0.275      -1.489      -0.845
+HTN     HOG     H       H       0       0.268       -0.879      -2.776
+HTN     HD22    H       H       0       -1.800      -0.376      0.478
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+HTN      N      n/a    CA     START
+HTN      H      N      .      .
+HTN      H2     N      .      .
+HTN      H3     N      .      .
+HTN      CA     N      C      .
+HTN      HA     CA     .      .
+HTN      CB     CA     CG     .
+HTN      HB3    CB     .      .
+HTN      OG     CB     HOG    .
+HTN      HOG    OG     .      .
+HTN      CG     CB     OD1    .
+HTN      ND2    CG     CE     .
+HTN      HD22   ND2    .      .
+HTN      CE     ND2    HE1    .
+HTN      HE3    CE     .      .
+HTN      HE2    CE     .      .
+HTN      HE1    CE     .      .
+HTN      OD1    CG     .      .
+HTN      C      CA     OXT    .
+HTN      O      C      .      .
+HTN      OXT    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HTN       O         C         DOUBLE    n         1.247     0.019     1.247     0.019     
+HTN       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+HTN       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+HTN       CE        ND2       SINGLE    n         1.450     0.011     1.450     0.011     
+HTN       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+HTN       CA        CB        SINGLE    n         1.539     0.011     1.539     0.011     
+HTN       CB        OG        SINGLE    n         1.415     0.012     1.415     0.012     
+HTN       CB        CG        SINGLE    n         1.525     0.010     1.525     0.010     
+HTN       CG        OD1       DOUBLE    n         1.229     0.012     1.229     0.012     
+HTN       CG        ND2       SINGLE    n         1.321     0.010     1.321     0.010     
+HTN       CE        HE1       SINGLE    n         1.089     0.010     0.971     0.020     
+HTN       CE        HE2       SINGLE    n         1.089     0.010     0.971     0.020     
+HTN       CE        HE3       SINGLE    n         1.089     0.010     0.971     0.020     
+HTN       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+HTN       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+HTN       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+HTN       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+HTN       CB        HB3       SINGLE    n         1.089     0.010     0.989     0.018     
+HTN       OG        HOG       SINGLE    n         0.970     0.012     0.848     0.020     
+HTN       ND2       HD22      SINGLE    n         1.016     0.010     0.872     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HTN           O           C          CA     117.003    1.50
+HTN           O           C         OXT     125.994    1.50
+HTN          CA           C         OXT     117.003    1.50
+HTN         ND2          CE         HE1     109.480    1.50
+HTN         ND2          CE         HE2     109.480    1.50
+HTN         ND2          CE         HE3     109.480    1.50
+HTN         HE1          CE         HE2     109.279    1.79
+HTN         HE1          CE         HE3     109.279    1.79
+HTN         HE2          CE         HE3     109.279    1.79
+HTN          CA           N           H     109.889    1.50
+HTN          CA           N          H2     109.889    1.50
+HTN          CA           N          H3     109.889    1.50
+HTN           H           N          H2     109.028    2.41
+HTN           H           N          H3     109.028    2.41
+HTN          H2           N          H3     109.028    2.41
+HTN           C          CA           N     109.414    1.50
+HTN           C          CA          CB     111.511    2.91
+HTN           C          CA          HA     108.600    1.50
+HTN           N          CA          CB     112.810    3.00
+HTN           N          CA          HA     108.031    1.50
+HTN          CB          CA          HA     107.549    1.55
+HTN          CA          CB          OG     110.423    2.15
+HTN          CA          CB          CG     111.511    2.91
+HTN          CA          CB         HB3     108.277    1.50
+HTN          OG          CB          CG     109.850    1.55
+HTN          OG          CB         HB3     108.675    1.50
+HTN          CG          CB         HB3     108.529    1.70
+HTN          CB          OG         HOG     108.894    3.00
+HTN          CB          CG         OD1     119.335    1.78
+HTN          CB          CG         ND2     116.631    1.50
+HTN         OD1          CG         ND2     124.035    1.50
+HTN          CE         ND2          CG     122.468    1.50
+HTN          CE         ND2        HD22     118.608    1.58
+HTN          CG         ND2        HD22     118.924    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HTN             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+HTN             sp2_sp3_7          CG         ND2          CE         HE1       0.000   10.00     6
+HTN             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+HTN            sp3_sp3_11           C          CA          CB          OG     -60.000   10.00     3
+HTN            sp3_sp3_19          CA          CB          OG         HOG     180.000   10.00     3
+HTN            sp2_sp3_14         OD1          CG          CB          CA     120.000   10.00     6
+HTN             sp2_sp2_1          CB          CG         ND2          CE     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+HTN    chir_1    CA    N    C    CB    both
+HTN    chir_2    CB    OG    CG    CA    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HTN    plan-1           C   0.020
+HTN    plan-1          CA   0.020
+HTN    plan-1           O   0.020
+HTN    plan-1         OXT   0.020
+HTN    plan-2          CB   0.020
+HTN    plan-2          CG   0.020
+HTN    plan-2         ND2   0.020
+HTN    plan-2         OD1   0.020
+HTN    plan-3          CE   0.020
+HTN    plan-3          CG   0.020
+HTN    plan-3        HD22   0.020
+HTN    plan-3         ND2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HTN SMILES           ACDLabs              10.04 "O=C(NC)C(O)C(C(=O)O)N"
+HTN SMILES_CANONICAL CACTVS               3.341 "CNC(=O)[C@H](O)[C@@H](N)C(O)=O"
+HTN SMILES           CACTVS               3.341 "CNC(=O)[CH](O)[CH](N)C(O)=O"
+HTN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CNC(=O)[C@@H]([C@H](C(=O)O)N)O"
+HTN SMILES           "OpenEye OEToolkits" 1.5.0 "CNC(=O)C(C(C(=O)O)N)O"
+HTN InChI            InChI                1.03  "InChI=1S/C5H10N2O4/c1-7-4(9)3(8)2(6)5(10)11/h2-3,8H,6H2,1H3,(H,7,9)(H,10,11)/t2-,3-/m1/s1"
+HTN InChIKey         InChI                1.03  GZWUZRUMLUBXRQ-PWNYCUMCSA-N
+HTN ?                acedrg               196         "dictionary generator"
+HTN ?                acedrg_database      11          "data source"
+HTN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HTN ?                refmac5              5.8.0222    "optimization tool"

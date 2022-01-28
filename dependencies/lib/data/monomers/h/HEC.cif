@@ -1,0 +1,593 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HEC      HEC 'HEME C                              ' non-polymer        75  43 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HEC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HEC           O2D    O    OC       -0.500      0.000    0.000    0.000
+ HEC           CGD    C    C         0.000     -0.233   -1.227    0.071
+ HEC           O1D    O    OC       -0.500      0.283   -2.050    0.859
+ HEC           CBD    C    CH2       0.000     -1.228   -1.825   -0.882
+ HEC           HBD1   H    H         0.000     -0.656   -2.269   -1.699
+ HEC           HBD2   H    H         0.000     -1.831   -1.000   -1.267
+ HEC           CAD    C    CH2       0.000     -2.141   -2.880   -0.268
+ HEC           HAD1   H    H         0.000     -3.059   -2.825   -0.856
+ HEC           HAD2   H    H         0.000     -2.336   -2.518    0.744
+ HEC           C3D    C    CR5       0.000     -1.655   -4.341   -0.207
+ HEC           C2D    C    CR5       0.000     -1.514   -5.144    0.844
+ HEC           CMD    C    CH3       0.000     -1.779   -4.860    2.344
+ HEC           HMD3   H    H         0.000     -2.515   -5.529    2.716
+ HEC           HMD2   H    H         0.000     -0.884   -4.987    2.902
+ HEC           HMD1   H    H         0.000     -2.125   -3.863    2.470
+ HEC           C1D    C    CR5       0.000     -1.036   -6.425    0.378
+ HEC           CHD    C    C1        0.000     -0.748   -7.523    1.163
+ HEC           HHD    H    H         0.000     -0.938   -7.419    2.218
+ HEC           C4D    C    CR5       0.000     -1.248   -5.094   -1.387
+ HEC           CHA    C    C1        0.000     -1.273   -4.623   -2.681
+ HEC           HHA    H    H         0.000     -1.503   -3.582   -2.832
+ HEC           ND     N    NR5       0.000     -0.899   -6.364   -0.998
+ HEC           FE     FE   FE        0.000     -0.290   -7.874   -2.176
+ HEC           NB     N    NR5       0.000      0.230   -9.400   -3.363
+ HEC           C4B    C    CR5       0.000      1.492   -9.714   -3.811
+ HEC           C3B    C    CR5       0.000      1.400  -10.880   -4.637
+ HEC           CAB    C    C1        0.000      2.589  -11.607   -5.353
+ HEC           HAB    H    H         0.000      3.368  -12.158   -4.853
+ HEC           CBB    C    CH3       0.000      2.488  -11.434   -6.745
+ HEC           HBB3   H    H         0.000      1.574  -11.846   -7.062
+ HEC           HBB2   H    H         0.000      2.522  -10.403   -6.951
+ HEC           HBB1   H    H         0.000      3.296  -11.930   -7.197
+ HEC           C2B    C    CR5       0.000      0.118  -11.265   -4.697
+ HEC           CMB    C    CH3       0.000     -0.513  -12.454   -5.457
+ HEC           HMB3   H    H         0.000     -1.003  -13.103   -4.773
+ HEC           HMB2   H    H         0.000     -1.222  -12.098   -6.163
+ HEC           HMB1   H    H         0.000      0.241  -12.999   -5.970
+ HEC           C1B    C    CR5       0.000     -0.635  -10.336   -3.905
+ HEC           CHB    C    C1        0.000     -2.000  -10.359   -3.746
+ HEC           HHB    H    H         0.000     -2.873  -10.913   -3.446
+ HEC           NC     N    NR5       0.000      0.028   -9.041   -0.578
+ HEC           C4C    C    CR5       0.000     -0.246   -8.735    0.751
+ HEC           C3C    C    CR5       0.000      0.115   -9.853    1.567
+ HEC           CAC    C    C1        0.000     -0.089   -9.929    3.133
+ HEC           HAC    H    H         0.000     -1.051  -10.081    3.593
+ HEC           CBC    C    CH3       0.000      1.064   -9.784    3.848
+ HEC           HBC3   H    H         0.000      1.714  -10.556    3.565
+ HEC           HBC2   H    H         0.000      1.467   -8.845    3.616
+ HEC           HBC1   H    H         0.000      0.819   -9.850    4.865
+ HEC           C2C    C    CR5       0.000      0.566  -10.844    0.791
+ HEC           CMC    C    CH3       0.000      1.050  -12.253    1.182
+ HEC           HMC3   H    H         0.000      0.460  -12.987    0.692
+ HEC           HMC2   H    H         0.000      2.065  -12.378    0.897
+ HEC           HMC1   H    H         0.000      0.966  -12.386    2.232
+ HEC           C1C    C    CR5       0.000      0.543  -10.325   -0.572
+ HEC           CHC    C    C1        0.000      0.912  -11.064   -1.675
+ HEC           HHC    H    H         0.000      0.958  -12.139   -1.652
+ HEC           NA     N    NR5       0.000     -0.654   -6.725   -3.780
+ HEC           C4A    C    CR5       0.000     -0.550   -7.106   -5.108
+ HEC           C3A    C    CR5       0.000     -0.819   -5.975   -5.961
+ HEC           CMA    C    CH3       0.000     -0.776   -6.037   -7.506
+ HEC           HMA3   H    H         0.000     -1.730   -5.794   -7.905
+ HEC           HMA2   H    H         0.000     -0.060   -5.345   -7.876
+ HEC           HMA1   H    H         0.000     -0.508   -7.015   -7.822
+ HEC           C2A    C    CR5       0.000     -1.112   -4.937   -5.171
+ HEC           C1A    C    CR5       0.000     -1.021   -5.394   -3.799
+ HEC           CAA    C    CH2       0.000     -1.504   -3.497   -5.562
+ HEC           HAA1   H    H         0.000     -1.058   -3.287   -6.536
+ HEC           HAA2   H    H         0.000     -1.077   -2.824   -4.815
+ HEC           CBA    C    CH2       0.000     -3.030   -3.284   -5.636
+ HEC           HBA1   H    H         0.000     -3.472   -3.789   -4.774
+ HEC           HBA2   H    H         0.000     -3.382   -3.760   -6.554
+ HEC           CGA    C    C         0.000     -3.438   -1.828   -5.633
+ HEC           O1A    O    OC       -0.500     -4.638   -1.596   -5.901
+ HEC           O2A    O    OC       -0.500     -2.529   -1.016   -5.351
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HEC      O2D    n/a    CGD    START
+ HEC      CGD    O2D    CBD    .
+ HEC      O1D    CGD    .      .
+ HEC      CBD    CGD    CAD    .
+ HEC      HBD1   CBD    .      .
+ HEC      HBD2   CBD    .      .
+ HEC      CAD    CBD    C3D    .
+ HEC      HAD1   CAD    .      .
+ HEC      HAD2   CAD    .      .
+ HEC      C3D    CAD    C4D    .
+ HEC      C2D    C3D    C1D    .
+ HEC      CMD    C2D    HMD1   .
+ HEC      HMD3   CMD    .      .
+ HEC      HMD2   CMD    .      .
+ HEC      HMD1   CMD    .      .
+ HEC      C1D    C2D    CHD    .
+ HEC      CHD    C1D    HHD    .
+ HEC      HHD    CHD    .      .
+ HEC      C4D    C3D    ND     .
+ HEC      CHA    C4D    HHA    .
+ HEC      HHA    CHA    .      .
+ HEC      ND     C4D    FE     .
+ HEC      FE     ND     NA     .
+ HEC      NB     FE     C4B    .
+ HEC      C4B    NB     C3B    .
+ HEC      C3B    C4B    C2B    .
+ HEC      CAB    C3B    CBB    .
+ HEC      HAB    CAB    .      .
+ HEC      CBB    CAB    HBB1   .
+ HEC      HBB3   CBB    .      .
+ HEC      HBB2   CBB    .      .
+ HEC      HBB1   CBB    .      .
+ HEC      C2B    C3B    C1B    .
+ HEC      CMB    C2B    HMB1   .
+ HEC      HMB3   CMB    .      .
+ HEC      HMB2   CMB    .      .
+ HEC      HMB1   CMB    .      .
+ HEC      C1B    C2B    CHB    .
+ HEC      CHB    C1B    HHB    .
+ HEC      HHB    CHB    .      .
+ HEC      NC     FE     C4C    .
+ HEC      C4C    NC     C3C    .
+ HEC      C3C    C4C    C2C    .
+ HEC      CAC    C3C    CBC    .
+ HEC      HAC    CAC    .      .
+ HEC      CBC    CAC    HBC1   .
+ HEC      HBC3   CBC    .      .
+ HEC      HBC2   CBC    .      .
+ HEC      HBC1   CBC    .      .
+ HEC      C2C    C3C    C1C    .
+ HEC      CMC    C2C    HMC1   .
+ HEC      HMC3   CMC    .      .
+ HEC      HMC2   CMC    .      .
+ HEC      HMC1   CMC    .      .
+ HEC      C1C    C2C    CHC    .
+ HEC      CHC    C1C    HHC    .
+ HEC      HHC    CHC    .      .
+ HEC      NA     FE     C4A    .
+ HEC      C4A    NA     C3A    .
+ HEC      C3A    C4A    C2A    .
+ HEC      CMA    C3A    HMA1   .
+ HEC      HMA3   CMA    .      .
+ HEC      HMA2   CMA    .      .
+ HEC      HMA1   CMA    .      .
+ HEC      C2A    C3A    CAA    .
+ HEC      C1A    C2A    .      .
+ HEC      CAA    C2A    CBA    .
+ HEC      HAA1   CAA    .      .
+ HEC      HAA2   CAA    .      .
+ HEC      CBA    CAA    CGA    .
+ HEC      HBA1   CBA    .      .
+ HEC      HBA2   CBA    .      .
+ HEC      CGA    CBA    O2A    .
+ HEC      O1A    CGA    .      .
+ HEC      O2A    CGA    .      END
+ HEC      CHA    C1A    .    ADD
+ HEC      CHB    C4A    .    ADD
+ HEC      CHC    C4B    .    ADD
+ HEC      CHD    C4C    .    ADD
+ HEC      NA     C1A    .    ADD
+ HEC      NB     C1B    .    ADD
+ HEC      NC     C1C    .    ADD
+ HEC      ND     C1D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HEC       NA        FE        single    2.090     0.020     2.090     0.020     
+HEC       NB        FE        single    2.090     0.020     2.090     0.020     
+HEC       NC        FE        single    2.090     0.020     2.090     0.020     
+HEC       FE        ND        single    2.090     0.020     2.090     0.020     
+HEC       CHA       C1A       double    1.483     0.020     1.483     0.020     
+HEC       CHA       C4D       single    1.483     0.020     1.483     0.020     
+HEC       HHA       CHA       single    1.082     0.013     0.975     0.010     
+HEC       CHB       C4A       double    1.483     0.020     1.483     0.020     
+HEC       CHB       C1B       single    1.483     0.020     1.483     0.020     
+HEC       HHB       CHB       single    1.082     0.013     0.975     0.010     
+HEC       CHC       C4B       double    1.483     0.020     1.483     0.020     
+HEC       CHC       C1C       single    1.483     0.020     1.483     0.020     
+HEC       HHC       CHC       single    1.082     0.013     0.975     0.010     
+HEC       CHD       C4C       double    1.483     0.020     1.483     0.020     
+HEC       CHD       C1D       single    1.483     0.020     1.483     0.020     
+HEC       HHD       CHD       single    1.082     0.013     0.975     0.010     
+HEC       NA        C1A       single    1.337     0.020     1.337     0.020     
+HEC       C4A       NA        single    1.337     0.020     1.337     0.020     
+HEC       C1A       C2A       single    1.490     0.020     1.490     0.020     
+HEC       C2A       C3A       double    1.490     0.020     1.490     0.020     
+HEC       CAA       C2A       single    1.510     0.020     1.510     0.020     
+HEC       C3A       C4A       single    1.490     0.020     1.490     0.020     
+HEC       CMA       C3A       single    1.506     0.020     1.506     0.020     
+HEC       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+HEC       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+HEC       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+HEC       CBA       CAA       single    1.524     0.020     1.524     0.020     
+HEC       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+HEC       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+HEC       CGA       CBA       single    1.510     0.020     1.510     0.020     
+HEC       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+HEC       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+HEC       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+HEC       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+HEC       NB        C1B       single    1.337     0.020     1.337     0.020     
+HEC       C4B       NB        single    1.337     0.020     1.337     0.020     
+HEC       C1B       C2B       double    1.490     0.020     1.490     0.020     
+HEC       C2B       C3B       single    1.490     0.020     1.490     0.020     
+HEC       CMB       C2B       single    1.506     0.020     1.506     0.020     
+HEC       C3B       C4B       single    1.490     0.020     1.490     0.020     
+HEC       CAB       C3B       double    1.483     0.020     1.483     0.020     
+HEC       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+HEC       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+HEC       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+HEC       CBB       CAB       single    1.510     0.020     1.510     0.020     
+HEC       HAB       CAB       single    1.082     0.013     0.975     0.010     
+HEC       HBB1      CBB       single    1.089     0.010     0.989     0.005     
+HEC       HBB2      CBB       single    1.089     0.010     0.989     0.005     
+HEC       HBB3      CBB       single    1.089     0.010     0.989     0.005     
+HEC       NC        C1C       single    1.337     0.020     1.337     0.020     
+HEC       C4C       NC        single    1.337     0.020     1.337     0.020     
+HEC       C1C       C2C       double    1.490     0.020     1.490     0.020     
+HEC       C2C       C3C       single    1.490     0.020     1.490     0.020     
+HEC       CMC       C2C       single    1.506     0.020     1.506     0.020     
+HEC       C3C       C4C       single    1.490     0.020     1.490     0.020     
+HEC       CAC       C3C       double    1.483     0.020     1.483     0.020     
+HEC       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+HEC       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+HEC       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+HEC       CBC       CAC       single    1.510     0.020     1.510     0.020     
+HEC       HAC       CAC       single    1.082     0.013     0.975     0.010     
+HEC       HBC1      CBC       single    1.089     0.010     0.989     0.005     
+HEC       HBC2      CBC       single    1.089     0.010     0.989     0.005     
+HEC       HBC3      CBC       single    1.089     0.010     0.989     0.005     
+HEC       ND        C1D       single    1.337     0.020     1.337     0.020     
+HEC       ND        C4D       single    1.337     0.020     1.337     0.020     
+HEC       C1D       C2D       double    1.490     0.020     1.490     0.020     
+HEC       C2D       C3D       single    1.490     0.020     1.490     0.020     
+HEC       CMD       C2D       single    1.506     0.020     1.506     0.020     
+HEC       C4D       C3D       double    1.490     0.020     1.490     0.020     
+HEC       C3D       CAD       single    1.510     0.020     1.510     0.020     
+HEC       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+HEC       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+HEC       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+HEC       CAD       CBD       single    1.524     0.020     1.524     0.020     
+HEC       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+HEC       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+HEC       CBD       CGD       single    1.510     0.020     1.510     0.020     
+HEC       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+HEC       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+HEC       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+HEC       CGD       O2D       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HEC      O2D    CGD    O1D     123.000    3.000
+ HEC      O2D    CGD    CBD     118.500    3.000
+ HEC      O1D    CGD    CBD     118.500    3.000
+ HEC      CGD    CBD    HBD1    109.470    3.000
+ HEC      CGD    CBD    HBD2    109.470    3.000
+ HEC      CGD    CBD    CAD     109.470    3.000
+ HEC      HBD1   CBD    HBD2    107.900    3.000
+ HEC      HBD1   CBD    CAD     109.470    3.000
+ HEC      HBD2   CBD    CAD     109.470    3.000
+ HEC      CBD    CAD    HAD1    109.470    3.000
+ HEC      CBD    CAD    HAD2    109.470    3.000
+ HEC      CBD    CAD    C3D     109.470    3.000
+ HEC      HAD1   CAD    HAD2    107.900    3.000
+ HEC      HAD1   CAD    C3D     109.470    3.000
+ HEC      HAD2   CAD    C3D     109.470    3.000
+ HEC      CAD    C3D    C2D     126.000    3.000
+ HEC      CAD    C3D    C4D     126.000    3.000
+ HEC      C2D    C3D    C4D     108.000    3.000
+ HEC      C3D    C2D    CMD     126.000    3.000
+ HEC      C3D    C2D    C1D     108.000    3.000
+ HEC      CMD    C2D    C1D     126.000    3.000
+ HEC      C2D    CMD    HMD3    109.470    3.000
+ HEC      C2D    CMD    HMD2    109.470    3.000
+ HEC      C2D    CMD    HMD1    109.470    3.000
+ HEC      HMD3   CMD    HMD2    109.470    3.000
+ HEC      HMD3   CMD    HMD1    109.470    3.000
+ HEC      HMD2   CMD    HMD1    109.470    3.000
+ HEC      C2D    C1D    CHD     117.000    3.000
+ HEC      C2D    C1D    ND      108.000    3.000
+ HEC      CHD    C1D    ND      108.000    3.000
+ HEC      C1D    CHD    HHD     120.000    3.000
+ HEC      C1D    CHD    C4C     120.000    3.000
+ HEC      HHD    CHD    C4C     120.000    3.000
+ HEC      C3D    C4D    CHA     117.000    3.000
+ HEC      C3D    C4D    ND      108.000    3.000
+ HEC      CHA    C4D    ND      108.000    3.000
+ HEC      C4D    CHA    HHA     120.000    3.000
+ HEC      C4D    CHA    C1A     120.000    3.000
+ HEC      HHA    CHA    C1A     120.000    3.000
+ HEC      C4D    ND     FE      126.000    3.000
+ HEC      C4D    ND     C1D     108.000    3.000
+ HEC      FE     ND     C1D     126.000    3.000
+ HEC      ND     FE     NB      180.000    3.000
+ HEC      ND     FE     NC       90.000    3.000
+ HEC      ND     FE     NA       90.000    3.000
+ HEC      NB     FE     NC       90.000    3.000
+ HEC      NB     FE     NA       90.000    3.000
+ HEC      NC     FE     NA      180.000    3.000
+ HEC      FE     NB     C4B     126.000    3.000
+ HEC      FE     NB     C1B     126.000    3.000
+ HEC      C4B    NB     C1B     108.000    3.000
+ HEC      NB     C4B    C3B     108.000    3.000
+ HEC      NB     C4B    CHC     108.000    3.000
+ HEC      C3B    C4B    CHC     117.000    3.000
+ HEC      C4B    C3B    CAB     117.000    3.000
+ HEC      C4B    C3B    C2B     108.000    3.000
+ HEC      CAB    C3B    C2B     117.000    3.000
+ HEC      C3B    CAB    HAB     120.000    3.000
+ HEC      C3B    CAB    CBB     120.000    3.000
+ HEC      HAB    CAB    CBB     120.000    3.000
+ HEC      CAB    CBB    HBB3    109.470    3.000
+ HEC      CAB    CBB    HBB2    109.470    3.000
+ HEC      CAB    CBB    HBB1    109.470    3.000
+ HEC      HBB3   CBB    HBB2    109.470    3.000
+ HEC      HBB3   CBB    HBB1    109.470    3.000
+ HEC      HBB2   CBB    HBB1    109.470    3.000
+ HEC      C3B    C2B    CMB     126.000    3.000
+ HEC      C3B    C2B    C1B     108.000    3.000
+ HEC      CMB    C2B    C1B     126.000    3.000
+ HEC      C2B    CMB    HMB3    109.470    3.000
+ HEC      C2B    CMB    HMB2    109.470    3.000
+ HEC      C2B    CMB    HMB1    109.470    3.000
+ HEC      HMB3   CMB    HMB2    109.470    3.000
+ HEC      HMB3   CMB    HMB1    109.470    3.000
+ HEC      HMB2   CMB    HMB1    109.470    3.000
+ HEC      C2B    C1B    CHB     117.000    3.000
+ HEC      C2B    C1B    NB      108.000    3.000
+ HEC      CHB    C1B    NB      108.000    3.000
+ HEC      C1B    CHB    HHB     120.000    3.000
+ HEC      C1B    CHB    C4A     120.000    3.000
+ HEC      HHB    CHB    C4A     120.000    3.000
+ HEC      FE     NC     C4C     126.000    3.000
+ HEC      FE     NC     C1C     126.000    3.000
+ HEC      C4C    NC     C1C     108.000    3.000
+ HEC      NC     C4C    C3C     108.000    3.000
+ HEC      NC     C4C    CHD     108.000    3.000
+ HEC      C3C    C4C    CHD     117.000    3.000
+ HEC      C4C    C3C    CAC     117.000    3.000
+ HEC      C4C    C3C    C2C     108.000    3.000
+ HEC      CAC    C3C    C2C     117.000    3.000
+ HEC      C3C    CAC    HAC     120.000    3.000
+ HEC      C3C    CAC    CBC     120.000    3.000
+ HEC      HAC    CAC    CBC     120.000    3.000
+ HEC      CAC    CBC    HBC3    109.470    3.000
+ HEC      CAC    CBC    HBC2    109.470    3.000
+ HEC      CAC    CBC    HBC1    109.470    3.000
+ HEC      HBC3   CBC    HBC2    109.470    3.000
+ HEC      HBC3   CBC    HBC1    109.470    3.000
+ HEC      HBC2   CBC    HBC1    109.470    3.000
+ HEC      C3C    C2C    CMC     126.000    3.000
+ HEC      C3C    C2C    C1C     108.000    3.000
+ HEC      CMC    C2C    C1C     126.000    3.000
+ HEC      C2C    CMC    HMC3    109.470    3.000
+ HEC      C2C    CMC    HMC2    109.470    3.000
+ HEC      C2C    CMC    HMC1    109.470    3.000
+ HEC      HMC3   CMC    HMC2    109.470    3.000
+ HEC      HMC3   CMC    HMC1    109.470    3.000
+ HEC      HMC2   CMC    HMC1    109.470    3.000
+ HEC      C2C    C1C    CHC     117.000    3.000
+ HEC      C2C    C1C    NC      108.000    3.000
+ HEC      CHC    C1C    NC      108.000    3.000
+ HEC      C1C    CHC    HHC     120.000    3.000
+ HEC      C1C    CHC    C4B     120.000    3.000
+ HEC      HHC    CHC    C4B     120.000    3.000
+ HEC      FE     NA     C4A     126.000    3.000
+ HEC      FE     NA     C1A     126.000    3.000
+ HEC      C4A    NA     C1A     108.000    3.000
+ HEC      NA     C4A    C3A     108.000    3.000
+ HEC      NA     C4A    CHB     108.000    3.000
+ HEC      C3A    C4A    CHB     117.000    3.000
+ HEC      C4A    C3A    CMA     126.000    3.000
+ HEC      C4A    C3A    C2A     108.000    3.000
+ HEC      CMA    C3A    C2A     126.000    3.000
+ HEC      C3A    CMA    HMA3    109.470    3.000
+ HEC      C3A    CMA    HMA2    109.470    3.000
+ HEC      C3A    CMA    HMA1    109.470    3.000
+ HEC      HMA3   CMA    HMA2    109.470    3.000
+ HEC      HMA3   CMA    HMA1    109.470    3.000
+ HEC      HMA2   CMA    HMA1    109.470    3.000
+ HEC      C3A    C2A    C1A     108.000    3.000
+ HEC      C3A    C2A    CAA     126.000    3.000
+ HEC      C1A    C2A    CAA     126.000    3.000
+ HEC      C2A    C1A    CHA     117.000    3.000
+ HEC      C2A    C1A    NA      108.000    3.000
+ HEC      CHA    C1A    NA      108.000    3.000
+ HEC      C2A    CAA    HAA1    109.470    3.000
+ HEC      C2A    CAA    HAA2    109.470    3.000
+ HEC      C2A    CAA    CBA     109.470    3.000
+ HEC      HAA1   CAA    HAA2    107.900    3.000
+ HEC      HAA1   CAA    CBA     109.470    3.000
+ HEC      HAA2   CAA    CBA     109.470    3.000
+ HEC      CAA    CBA    HBA1    109.470    3.000
+ HEC      CAA    CBA    HBA2    109.470    3.000
+ HEC      CAA    CBA    CGA     109.470    3.000
+ HEC      HBA1   CBA    HBA2    107.900    3.000
+ HEC      HBA1   CBA    CGA     109.470    3.000
+ HEC      HBA2   CBA    CGA     109.470    3.000
+ HEC      CBA    CGA    O1A     118.500    3.000
+ HEC      CBA    CGA    O2A     118.500    3.000
+ HEC      O1A    CGA    O2A     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HEC      var_1    O2D    CGD    CBD    CAD     -140.243   20.000   3
+ HEC      var_2    CGD    CBD    CAD    C3D      -85.836   20.000   3
+ HEC      var_3    CBD    CAD    C3D    C4D      -56.969   20.000   2
+ HEC      CONST_1  CAD    C3D    C2D    C1D      180.000    0.000   0
+ HEC      var_4    C3D    C2D    CMD    HMD1       0.338   20.000   1
+ HEC      CONST_2  C3D    C2D    C1D    CHD      180.000    0.000   0
+ HEC      var_5    C2D    C1D    CHD    C4C      180.000   20.000   1
+ HEC      var_6    C1D    CHD    C4C    NC         0.000   20.000   1
+ HEC      CONST_3  CAD    C3D    C4D    ND       180.000    0.000   0
+ HEC      var_7    C3D    C4D    CHA    C1A      180.000   20.000   1
+ HEC      var_8    C4D    CHA    C1A    C2A      180.000   20.000   1
+ HEC      CONST_4  C3D    C4D    ND     FE       180.000    0.000   0
+ HEC      CONST_5  C4D    ND     C1D    C2D        0.000    0.000   0
+ HEC      var_9    C1D    ND     FE     NC         0.000   20.000   1
+ HEC      var_10   C4B    NB     FE     NC         0.000   20.000   1
+ HEC      CONST_6  FE     NB     C1B    C2B      180.000    0.000   0
+ HEC      CONST_7  FE     NB     C4B    C3B      180.000    0.000   0
+ HEC      CONST_8  NB     C4B    C3B    C2B        0.000    0.000   0
+ HEC      CONST_9  C4B    C3B    CAB    CBB     -111.152    0.000   0
+ HEC      var_11   C3B    CAB    CBB    HBB1     179.971   20.000   1
+ HEC      CONST_10 C4B    C3B    C2B    C1B        0.000    0.000   0
+ HEC      var_12   C3B    C2B    CMB    HMB1       0.695   20.000   1
+ HEC      CONST_11 C3B    C2B    C1B    CHB      180.000    0.000   0
+ HEC      var_13   C2B    C1B    CHB    C4A      180.000   20.000   1
+ HEC      var_14   C1B    CHB    C4A    NA         0.000   20.000   1
+ HEC      var_15   C4C    NC     FE     ND         0.000   20.000   1
+ HEC      CONST_12 FE     NC     C1C    C2C      180.000    0.000   0
+ HEC      CONST_13 FE     NC     C4C    C3C      180.000    0.000   0
+ HEC      CONST_14 NC     C4C    C3C    C2C        0.000    0.000   0
+ HEC      CONST_15 C4C    C3C    CAC    CBC     -105.299    0.000   0
+ HEC      var_16   C3C    CAC    CBC    HBC1    -179.980   20.000   1
+ HEC      CONST_16 C4C    C3C    C2C    C1C        0.000    0.000   0
+ HEC      var_17   C3C    C2C    CMC    HMC1       1.261   20.000   1
+ HEC      CONST_17 C3C    C2C    C1C    CHC      180.000    0.000   0
+ HEC      var_18   C2C    C1C    CHC    C4B      180.000   20.000   1
+ HEC      var_19   C1C    CHC    C4B    NB         0.000   20.000   1
+ HEC      var_20   C1A    NA     FE     ND         0.000   20.000   1
+ HEC      CONST_18 FE     NA     C1A    C2A      180.000    0.000   0
+ HEC      CONST_19 FE     NA     C4A    C3A      180.000    0.000   0
+ HEC      CONST_20 NA     C4A    C3A    C2A        0.000    0.000   0
+ HEC      var_21   C4A    C3A    CMA    HMA1      -0.934   20.000   1
+ HEC      CONST_21 C4A    C3A    C2A    CAA      180.000    0.000   0
+ HEC      CONST_22 C3A    C2A    C1A    CHA      180.000    0.000   0
+ HEC      var_22   C3A    C2A    CAA    CBA       93.871   20.000   2
+ HEC      var_23   C2A    CAA    CBA    CGA      163.892   20.000   3
+ HEC      var_24   CAA    CBA    CGA    O2A      -11.336   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HEC      chir_01  FE     ND     NB     NC        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HEC      plan-1    CHA       0.020
+ HEC      plan-1    C1A       0.020
+ HEC      plan-1    C4D       0.020
+ HEC      plan-1    HHA       0.020
+ HEC      plan-2    CHB       0.020
+ HEC      plan-2    C4A       0.020
+ HEC      plan-2    C1B       0.020
+ HEC      plan-2    HHB       0.020
+ HEC      plan-3    CHC       0.020
+ HEC      plan-3    C4B       0.020
+ HEC      plan-3    C1C       0.020
+ HEC      plan-3    HHC       0.020
+ HEC      plan-4    CHD       0.020
+ HEC      plan-4    C4C       0.020
+ HEC      plan-4    C1D       0.020
+ HEC      plan-4    HHD       0.020
+ HEC      plan-5    NA        0.020
+ HEC      plan-5    FE        0.020
+ HEC      plan-5    C1A       0.020
+ HEC      plan-5    C4A       0.020
+ HEC      plan-5    C2A       0.020
+ HEC      plan-5    C3A       0.020
+ HEC      plan-5    CHA       0.020
+ HEC      plan-5    CAA       0.020
+ HEC      plan-5    CMA       0.020
+ HEC      plan-5    CHB       0.020
+ HEC      plan-5    HHA       0.020
+ HEC      plan-5    HHB       0.020
+ HEC      plan-6    CGA       0.020
+ HEC      plan-6    CBA       0.020
+ HEC      plan-6    O1A       0.020
+ HEC      plan-6    O2A       0.020
+ HEC      plan-7    NB        0.020
+ HEC      plan-7    FE        0.020
+ HEC      plan-7    C1B       0.020
+ HEC      plan-7    C4B       0.020
+ HEC      plan-7    C2B       0.020
+ HEC      plan-7    C3B       0.020
+ HEC      plan-7    CHB       0.020
+ HEC      plan-7    CMB       0.020
+ HEC      plan-7    CAB       0.020
+ HEC      plan-7    CHC       0.020
+ HEC      plan-7    CBB       0.020
+ HEC      plan-7    HAB       0.020
+ HEC      plan-7    HHB       0.020
+ HEC      plan-7    HHC       0.020
+ HEC      plan-8    NC        0.020
+ HEC      plan-8    FE        0.020
+ HEC      plan-8    C1C       0.020
+ HEC      plan-8    C4C       0.020
+ HEC      plan-8    C2C       0.020
+ HEC      plan-8    C3C       0.020
+ HEC      plan-8    CHC       0.020
+ HEC      plan-8    CMC       0.020
+ HEC      plan-8    CAC       0.020
+ HEC      plan-8    CHD       0.020
+ HEC      plan-8    CBC       0.020
+ HEC      plan-8    HAC       0.020
+ HEC      plan-8    HHC       0.020
+ HEC      plan-8    HHD       0.020
+ HEC      plan-9    ND        0.020
+ HEC      plan-9    FE        0.020
+ HEC      plan-9    C1D       0.020
+ HEC      plan-9    C4D       0.020
+ HEC      plan-9    C2D       0.020
+ HEC      plan-9    C3D       0.020
+ HEC      plan-9    CHD       0.020
+ HEC      plan-9    CMD       0.020
+ HEC      plan-9    CAD       0.020
+ HEC      plan-9    CHA       0.020
+ HEC      plan-9    HHD       0.020
+ HEC      plan-9    HHA       0.020
+ HEC      plan-10   CGD       0.020
+ HEC      plan-10   CBD       0.020
+ HEC      plan-10   O1D       0.020
+ HEC      plan-10   O2D       0.020
+# ------------------------------------------------------

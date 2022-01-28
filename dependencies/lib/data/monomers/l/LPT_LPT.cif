@@ -1,0 +1,211 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LPT      LPT 'CIS-(AMMINE)(CYCLOHEXYLAMINE)PLATINU' non-polymer        25   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LPT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LPT           N1     N    NT3       0.000      0.000    0.000    0.000
+ LPT           HN11   H    H         0.000      0.673    0.767   -0.016
+ LPT           HN12   H    H         0.000     -0.774    0.066   -0.662
+ LPT           HN13   H    H         0.000     -0.264    0.089    0.961
+ LPT           PT     PT   PT        2.000      0.707   -1.814   -0.514
+ LPT           N2     N    NT2       0.000      2.258   -1.946    0.813
+ LPT           HN21   H    H         0.000      2.452   -0.963    1.066
+ LPT           HN22   H    H         0.000      3.039   -2.314    0.245
+ LPT           C3     C    CH1       0.000      2.118   -2.747    2.030
+ LPT           H3     H    H         0.000      2.059   -2.079    2.901
+ LPT           C8     C    CH2       0.000      3.339   -3.668    2.176
+ LPT           H82    H    H         0.000      4.259   -3.081    2.218
+ LPT           H81    H    H         0.000      3.393   -4.368    1.340
+ LPT           C4     C    CH2       0.000      0.871   -3.601    1.969
+ LPT           H41    H    H         0.000      0.969   -4.321    1.154
+ LPT           H42    H    H         0.000      0.006   -2.959    1.784
+ LPT           C5     C    CH2       0.000      0.683   -4.338    3.275
+ LPT           H51    H    H         0.000     -0.223   -4.945    3.213
+ LPT           H52    H    H         0.000      0.577   -3.610    4.082
+ LPT           C6     C    CH2       0.000      1.877   -5.234    3.551
+ LPT           H61    H    H         0.000      1.898   -6.032    2.806
+ LPT           H62    H    H         0.000      1.766   -5.671    4.546
+ LPT           C7     C    CH2       0.000      3.167   -4.445    3.486
+ LPT           H72    H    H         0.000      3.990   -5.154    3.600
+ LPT           H71    H    H         0.000      3.168   -3.749    4.327
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LPT      N1     n/a    PT     START
+ LPT      HN11   N1     .      .
+ LPT      HN12   N1     .      .
+ LPT      HN13   N1     .      .
+ LPT      PT     N1     N2     .
+ LPT      N2     PT     C3     .
+ LPT      HN21   N2     .      .
+ LPT      HN22   N2     .      .
+ LPT      C3     N2     C4     .
+ LPT      H3     C3     .      .
+ LPT      C8     C3     H81    .
+ LPT      H82    C8     .      .
+ LPT      H81    C8     .      .
+ LPT      C4     C3     C5     .
+ LPT      H41    C4     .      .
+ LPT      H42    C4     .      .
+ LPT      C5     C4     C6     .
+ LPT      H51    C5     .      .
+ LPT      H52    C5     .      .
+ LPT      C6     C5     C7     .
+ LPT      H61    C6     .      .
+ LPT      H62    C6     .      .
+ LPT      C7     C6     H71    .
+ LPT      H72    C7     .      .
+ LPT      H71    C7     .      END
+ LPT      C8     C7     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LPT       C8        C7        single    1.524     0.020     1.524     0.020     
+LPT       C8        C3        single    1.524     0.020     1.524     0.020     
+LPT       H81       C8        single    1.089     0.010     0.989     0.005     
+LPT       H82       C8        single    1.089     0.010     0.989     0.005     
+LPT       C7        C6        single    1.524     0.020     1.524     0.020     
+LPT       H71       C7        single    1.089     0.010     0.989     0.005     
+LPT       H72       C7        single    1.089     0.010     0.989     0.005     
+LPT       C6        C5        single    1.524     0.020     1.524     0.020     
+LPT       H61       C6        single    1.089     0.010     0.989     0.005     
+LPT       H62       C6        single    1.089     0.010     0.989     0.005     
+LPT       C5        C4        single    1.524     0.020     1.524     0.020     
+LPT       H51       C5        single    1.089     0.010     0.989     0.005     
+LPT       H52       C5        single    1.089     0.010     0.989     0.005     
+LPT       C4        C3        single    1.524     0.020     1.524     0.020     
+LPT       H41       C4        single    1.089     0.010     0.989     0.005     
+LPT       H42       C4        single    1.089     0.010     0.989     0.005     
+LPT       C3        N2        single    1.475     0.020     1.475     0.020     
+LPT       H3        C3        single    1.089     0.010     0.989     0.005     
+LPT       N2        PT        single    2.035     0.020     2.035     0.020     
+LPT       HN21      N2        single    1.036     0.016     0.914     0.007     
+LPT       HN22      N2        single    1.036     0.016     0.914     0.007     
+LPT       PT        N1        single    2.035     0.020     2.035     0.020     
+LPT       HN11      N1        single    1.036     0.016     0.914     0.007     
+LPT       HN12      N1        single    1.036     0.016     0.914     0.007     
+LPT       HN13      N1        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LPT      HN11   N1     HN12    109.470    3.000
+ LPT      HN11   N1     HN13    109.470    3.000
+ LPT      HN12   N1     HN13    109.470    3.000
+ LPT      HN11   N1     PT      109.500    3.000
+ LPT      HN12   N1     PT      109.500    3.000
+ LPT      HN13   N1     PT      109.500    3.000
+ LPT      N1     PT     N2       90.000    3.000
+ LPT      PT     N2     HN21    109.500    3.000
+ LPT      PT     N2     HN22    109.500    3.000
+ LPT      PT     N2     C3      109.500    3.000
+ LPT      HN21   N2     HN22    109.500    3.000
+ LPT      HN21   N2     C3      109.500    3.000
+ LPT      HN22   N2     C3      109.500    3.000
+ LPT      N2     C3     H3      109.500    3.000
+ LPT      N2     C3     C8      109.500    3.000
+ LPT      N2     C3     C4      109.500    3.000
+ LPT      H3     C3     C8      108.340    3.000
+ LPT      H3     C3     C4      108.340    3.000
+ LPT      C8     C3     C4      109.470    3.000
+ LPT      C3     C8     H82     109.470    3.000
+ LPT      C3     C8     H81     109.470    3.000
+ LPT      C3     C8     C7      111.000    3.000
+ LPT      H82    C8     H81     107.900    3.000
+ LPT      H82    C8     C7      109.470    3.000
+ LPT      H81    C8     C7      109.470    3.000
+ LPT      C3     C4     H41     109.470    3.000
+ LPT      C3     C4     H42     109.470    3.000
+ LPT      C3     C4     C5      111.000    3.000
+ LPT      H41    C4     H42     107.900    3.000
+ LPT      H41    C4     C5      109.470    3.000
+ LPT      H42    C4     C5      109.470    3.000
+ LPT      C4     C5     H51     109.470    3.000
+ LPT      C4     C5     H52     109.470    3.000
+ LPT      C4     C5     C6      111.000    3.000
+ LPT      H51    C5     H52     107.900    3.000
+ LPT      H51    C5     C6      109.470    3.000
+ LPT      H52    C5     C6      109.470    3.000
+ LPT      C5     C6     H61     109.470    3.000
+ LPT      C5     C6     H62     109.470    3.000
+ LPT      C5     C6     C7      111.000    3.000
+ LPT      H61    C6     H62     107.900    3.000
+ LPT      H61    C6     C7      109.470    3.000
+ LPT      H62    C6     C7      109.470    3.000
+ LPT      C6     C7     H72     109.470    3.000
+ LPT      C6     C7     H71     109.470    3.000
+ LPT      C6     C7     C8      111.000    3.000
+ LPT      H72    C7     H71     107.900    3.000
+ LPT      H72    C7     C8      109.470    3.000
+ LPT      H71    C7     C8      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LPT      var_1    HN11   N1     PT     N2         0.000   20.000   1
+ LPT      var_2    HN21   N2     PT     N1         0.000   20.000   1
+ LPT      var_3    PT     N2     C3     C4        11.375   20.000   1
+ LPT      var_4    N2     C3     C8     C7       180.000   20.000   3
+ LPT      var_5    C3     C8     C7     C6        60.000   20.000   3
+ LPT      var_6    N2     C3     C4     C5       180.000   20.000   3
+ LPT      var_7    C3     C4     C5     C6       -60.000   20.000   3
+ LPT      var_8    C4     C5     C6     C7        60.000   20.000   3
+ LPT      var_9    C5     C6     C7     C8       -60.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LPT      chir_01  C3     C8     C4     N2        positiv
+ LPT      chir_02  PT     N1     .      N2        cross1
+# ------------------------------------------------------

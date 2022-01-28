@@ -1,0 +1,298 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IGU      IGU '2'-DEOXYISOGUANINE-5'-MONOPHOSPHATE ' DNA                35  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_IGU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ IGU           OP3    O    OP       -0.666      0.000    0.000    0.000
+ IGU           P      P    P         0.000     -0.446    1.293    0.646
+ IGU           OP1    O    OP       -0.666      0.674    2.162    1.177
+ IGU           OP2    O    OP       -0.666     -1.312    1.933   -0.417
+ IGU           "O5'"  O    O2        0.000     -1.511    0.795    1.759
+ IGU           "C5'"  C    CH2       0.000     -2.590   -0.023    1.343
+ IGU           "H5'"  H    H         0.000     -2.207   -0.945    0.900
+ IGU           "H5''" H    H         0.000     -3.196    0.509    0.607
+ IGU           "C4'"  C    CH1       0.000     -3.444   -0.359    2.558
+ IGU           "H4'"  H    H         0.000     -2.828   -0.861    3.318
+ IGU           "C3'"  C    CH1       0.000     -4.645   -1.232    2.211
+ IGU           "H3'"  H    H         0.000     -4.453   -1.854    1.325
+ IGU           "C2'"  C    CH2       0.000     -5.743   -0.224    1.961
+ IGU           "H2'"  H    H         0.000     -6.741   -0.615    2.169
+ IGU           "H2''" H    H         0.000     -5.721    0.196    0.953
+ IGU           "C1'"  C    CH1       0.000     -5.400    0.861    2.971
+ IGU           "H1'"  H    H         0.000     -5.830    0.582    3.944
+ IGU           "O4'"  O    O2        0.000     -3.966    0.876    3.092
+ IGU           N9     N    NR5       0.000     -5.883    2.190    2.614
+ IGU           C4     C    CR56      0.000     -7.048    2.782    2.982
+ IGU           C5     C    CR56      0.000     -7.057    4.016    2.406
+ IGU           N7     N    NRD5      0.000     -5.922    4.228    1.677
+ IGU           C8     C    CR15      0.000     -5.234    3.110    1.822
+ IGU           H8     H    H         0.000     -4.266    2.936    1.368
+ IGU           N3     N    NR16      0.000     -8.049    2.298    3.764
+ IGU           HN3    H    H         0.000     -8.005    1.348    4.186
+ IGU           C2     C    CR6       0.000     -9.146    3.150    3.972
+ IGU           N1     N    NRD6      0.000     -9.166    4.423    3.384
+ IGU           C6     C    CR6       0.000     -8.192    4.862    2.637
+ IGU           N6     N    NH2       0.000     -8.105    6.076    2.019
+ IGU           HN62   H    H         0.000     -7.948    6.129    1.021
+ IGU           HN61   H    H         0.000     -8.198    6.928    2.557
+ IGU           O2     O    O         0.000    -10.083    2.762    4.675
+ IGU           "O3'"  O    OH1       0.000     -5.006   -2.020    3.342
+ IGU           "HO3'" H    H         0.000     -5.016   -1.421    4.104
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ IGU      OP3    n/a    P      START
+ IGU      P      OP3    "O5'"  .
+ IGU      OP1    P      .      .
+ IGU      OP2    P      .      .
+ IGU      "O5'"  P      "C5'"  .
+ IGU      "C5'"  "O5'"  "C4'"  .
+ IGU      "H5'"  "C5'"  .      .
+ IGU      "H5''" "C5'"  .      .
+ IGU      "C4'"  "C5'"  "C3'"  .
+ IGU      "H4'"  "C4'"  .      .
+ IGU      "C3'"  "C4'"  "O3'"  .
+ IGU      "H3'"  "C3'"  .      .
+ IGU      "C2'"  "C3'"  "C1'"  .
+ IGU      "H2'"  "C2'"  .      .
+ IGU      "H2''" "C2'"  .      .
+ IGU      "C1'"  "C2'"  N9     .
+ IGU      "H1'"  "C1'"  .      .
+ IGU      "O4'"  "C1'"  .      .
+ IGU      N9     "C1'"  C4     .
+ IGU      C4     N9     N3     .
+ IGU      C5     C4     N7     .
+ IGU      N7     C5     C8     .
+ IGU      C8     N7     H8     .
+ IGU      H8     C8     .      .
+ IGU      N3     C4     C2     .
+ IGU      HN3    N3     .      .
+ IGU      C2     N3     O2     .
+ IGU      N1     C2     C6     .
+ IGU      C6     N1     N6     .
+ IGU      N6     C6     HN61   .
+ IGU      HN62   N6     .      .
+ IGU      HN61   N6     .      .
+ IGU      O2     C2     .      .
+ IGU      "O3'"  "C3'"  .      END
+ IGU      "HO3'" "O3'"  .      .
+ IGU      "C4'"  "O4'"  .    ADD
+ IGU      N9     C8     .    ADD
+ IGU      C6     C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IGU       OP1       P         deloc     1.510     0.020     1.510     0.020     
+IGU       OP2       P         deloc     1.510     0.020     1.510     0.020     
+IGU       P         OP3       deloc     1.510     0.020     1.510     0.020     
+IGU       "O5'"     P         single    1.610     0.020     1.610     0.020     
+IGU       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+IGU       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+IGU       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+IGU       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+IGU       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+IGU       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+IGU       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+IGU       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+IGU       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+IGU       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+IGU       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+IGU       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+IGU       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+IGU       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+IGU       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+IGU       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+IGU       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+IGU       N9        C8        single    1.337     0.020     1.337     0.020     
+IGU       C4        N9        single    1.337     0.020     1.337     0.020     
+IGU       C8        N7        double    1.350     0.020     1.350     0.020     
+IGU       H8        C8        single    1.082     0.013     0.975     0.010     
+IGU       N7        C5        single    1.350     0.020     1.350     0.020     
+IGU       N6        C6        single    1.355     0.020     1.355     0.020     
+IGU       C6        C5        single    1.490     0.020     1.490     0.020     
+IGU       C6        N1        double    1.350     0.020     1.350     0.020     
+IGU       HN61      N6        single    1.016     0.010     0.899     0.007     
+IGU       HN62      N6        single    1.016     0.010     0.899     0.007     
+IGU       C5        C4        double    1.490     0.020     1.490     0.020     
+IGU       N1        C2        single    1.350     0.020     1.350     0.020     
+IGU       O2        C2        double    1.250     0.020     1.250     0.020     
+IGU       C2        N3        single    1.337     0.020     1.337     0.020     
+IGU       N3        C4        single    1.337     0.020     1.337     0.020     
+IGU       HN3       N3        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ IGU      OP3    P      OP1     119.900    3.000
+ IGU      OP3    P      OP2     119.900    3.000
+ IGU      OP3    P      "O5'"   108.200    3.000
+ IGU      OP1    P      OP2     119.900    3.000
+ IGU      OP1    P      "O5'"   108.200    3.000
+ IGU      OP2    P      "O5'"   108.200    3.000
+ IGU      P      "O5'"  "C5'"   120.500    3.000
+ IGU      "O5'"  "C5'"  "H5'"   109.470    3.000
+ IGU      "O5'"  "C5'"  "H5''"  109.470    3.000
+ IGU      "O5'"  "C5'"  "C4'"   109.470    3.000
+ IGU      "H5'"  "C5'"  "H5''"  107.900    3.000
+ IGU      "H5'"  "C5'"  "C4'"   109.470    3.000
+ IGU      "H5''" "C5'"  "C4'"   109.470    3.000
+ IGU      "C5'"  "C4'"  "H4'"   108.340    3.000
+ IGU      "C5'"  "C4'"  "C3'"   111.000    3.000
+ IGU      "C5'"  "C4'"  "O4'"   109.470    3.000
+ IGU      "H4'"  "C4'"  "C3'"   108.340    3.000
+ IGU      "H4'"  "C4'"  "O4'"   109.470    3.000
+ IGU      "C3'"  "C4'"  "O4'"   109.470    3.000
+ IGU      "C4'"  "C3'"  "H3'"   108.340    3.000
+ IGU      "C4'"  "C3'"  "C2'"   111.000    3.000
+ IGU      "C4'"  "C3'"  "O3'"   109.470    3.000
+ IGU      "H3'"  "C3'"  "C2'"   108.340    3.000
+ IGU      "H3'"  "C3'"  "O3'"   109.470    3.000
+ IGU      "C2'"  "C3'"  "O3'"   109.470    3.000
+ IGU      "C3'"  "C2'"  "H2'"   109.470    3.000
+ IGU      "C3'"  "C2'"  "H2''"  109.470    3.000
+ IGU      "C3'"  "C2'"  "C1'"   111.000    3.000
+ IGU      "H2'"  "C2'"  "H2''"  107.900    3.000
+ IGU      "H2'"  "C2'"  "C1'"   109.470    3.000
+ IGU      "H2''" "C2'"  "C1'"   109.470    3.000
+ IGU      "C2'"  "C1'"  "H1'"   108.340    3.000
+ IGU      "C2'"  "C1'"  "O4'"   109.470    3.000
+ IGU      "C2'"  "C1'"  N9      109.470    3.000
+ IGU      "H1'"  "C1'"  "O4'"   109.470    3.000
+ IGU      "H1'"  "C1'"  N9      109.470    3.000
+ IGU      "O4'"  "C1'"  N9      109.470    3.000
+ IGU      "C1'"  "O4'"  "C4'"   111.800    3.000
+ IGU      "C1'"  N9     C4      126.000    3.000
+ IGU      "C1'"  N9     C8      126.000    3.000
+ IGU      C4     N9     C8      108.000    3.000
+ IGU      N9     C4     C5      108.000    3.000
+ IGU      N9     C4     N3      132.000    3.000
+ IGU      C5     C4     N3      120.000    3.000
+ IGU      C4     C5     N7      108.000    3.000
+ IGU      C4     C5     C6      120.000    3.000
+ IGU      N7     C5     C6      132.000    3.000
+ IGU      C5     N7     C8      108.000    3.000
+ IGU      N7     C8     H8      126.000    3.000
+ IGU      N7     C8     N9      108.000    3.000
+ IGU      H8     C8     N9      126.000    3.000
+ IGU      C4     N3     HN3     120.000    3.000
+ IGU      C4     N3     C2      120.000    3.000
+ IGU      HN3    N3     C2      120.000    3.000
+ IGU      N3     C2     N1      120.000    3.000
+ IGU      N3     C2     O2      120.000    3.000
+ IGU      N1     C2     O2      120.000    3.000
+ IGU      C2     N1     C6      120.000    3.000
+ IGU      N1     C6     N6      120.000    3.000
+ IGU      N1     C6     C5      120.000    3.000
+ IGU      N6     C6     C5      120.000    3.000
+ IGU      C6     N6     HN62    120.000    3.000
+ IGU      C6     N6     HN61    120.000    3.000
+ IGU      HN62   N6     HN61    120.000    3.000
+ IGU      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ IGU      var_1    OP3    P      "O5'"  "C5'"    -54.180   20.000   1
+ IGU      var_2    P      "O5'"  "C5'"  "C4'"    179.954   20.000   1
+ IGU      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.546   20.000   3
+ IGU      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ IGU      var_5    "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ IGU      var_6    "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ IGU      var_7    "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ IGU      var_8    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ IGU      var_9    "C2'"  "C1'"  N9     C4        93.492   20.000   1
+ IGU      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ IGU      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ IGU      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ IGU      CONST_4  C4     C5     N7     C8         0.000    0.000   0
+ IGU      CONST_5  C5     N7     C8     N9         0.000    0.000   0
+ IGU      CONST_6  N9     C4     N3     C2       180.000    0.000   0
+ IGU      CONST_7  C4     N3     C2     O2       180.000    0.000   0
+ IGU      CONST_8  N3     C2     N1     C6         0.000    0.000   0
+ IGU      CONST_9  C2     N1     C6     N6       180.000    0.000   0
+ IGU      CONST_10 N1     C6     C5     C4         0.000    0.000   0
+ IGU      CONST_11 N1     C6     N6     HN61      55.059    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ IGU      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ IGU      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ IGU      chir_03  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ IGU      plan-1    N9        0.020
+ IGU      plan-1    "C1'"     0.020
+ IGU      plan-1    C8        0.020
+ IGU      plan-1    C4        0.020
+ IGU      plan-1    N7        0.020
+ IGU      plan-1    H8        0.020
+ IGU      plan-1    C5        0.020
+ IGU      plan-1    C6        0.020
+ IGU      plan-1    N6        0.020
+ IGU      plan-1    N1        0.020
+ IGU      plan-1    C2        0.020
+ IGU      plan-1    N3        0.020
+ IGU      plan-1    O2        0.020
+ IGU      plan-1    HN3       0.020
+ IGU      plan-1    HN62      0.020
+ IGU      plan-1    HN61      0.020
+ IGU      plan-2    N6        0.020
+ IGU      plan-2    C6        0.020
+ IGU      plan-2    HN61      0.020
+ IGU      plan-2    HN62      0.020
+# ------------------------------------------------------

@@ -1,0 +1,183 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ILG     ILG     "GLUTAMYLGROUP"     peptide     18     9     .
+#
+data_comp_ILG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ILG     N       N       NT3     1       -1.938      -0.911      0.787
+ILG     CA      C       CH1     0       -0.905      0.136       0.554
+ILG     C       C       C       0       -1.523      1.284       -0.254
+ILG     O       O       O       0       -2.108      0.983       -1.313
+ILG     CB      C       CH2     0       0.305       -0.462      -0.169
+ILG     CG      C       CH2     0       1.535       0.437       -0.149
+ILG     CD      C       C1      0       2.775       -0.218      -0.653
+ILG     OE1     O       O       0       3.850       0.291       -0.729
+ILG     OXT     O       OC      -1      -1.397      2.435       0.207
+ILG     H       H       H       0       -1.591      -1.584      1.293
+ILG     H2      H       H       0       -2.219      -1.255      -0.009
+ILG     H3      H       H       0       -2.653      -0.554      1.224
+ILG     HA      H       H       0       -0.614      0.485       1.428
+ILG     HB2     H       H       0       0.057       -0.642      -1.099
+ILG     HB3     H       H       0       0.530       -1.317      0.254
+ILG     HG2     H       H       0       1.689       0.740       0.771
+ILG     HG3     H       H       0       1.355       1.231       -0.696
+ILG     HD      H       H       0       2.703       -1.114      -0.936
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ILG      N      n/a    CA     START
+ILG      H      N      .      .
+ILG      H2     N      .      .
+ILG      H3     N      .      .
+ILG      CA     N      C      .
+ILG      HA     CA     .      .
+ILG      CB     CA     CG     .
+ILG      HB2    CB     .      .
+ILG      HB3    CB     .      .
+ILG      CG     CB     CD     .
+ILG      HG2    CG     .      .
+ILG      HG3    CG     .      .
+ILG      CD     CG     OE1    .
+ILG      HD     CD     .      .
+ILG      OE1    CD     .      .
+ILG      C      CA     .      END
+ILG      O      C      .      .
+ILG      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ILG       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+ILG       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+ILG       CA        CB        SINGLE    n         1.530     0.011     1.530     0.011     
+ILG       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+ILG       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+ILG       CB        CG        SINGLE    n         1.523     0.015     1.523     0.015     
+ILG       CG        CD        SINGLE    n         1.490     0.012     1.490     0.012     
+ILG       CD        OE1       DOUBLE    n         1.192     0.020     1.192     0.020     
+ILG       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+ILG       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+ILG       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+ILG       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+ILG       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.018     
+ILG       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.018     
+ILG       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.019     
+ILG       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.019     
+ILG       CD        HD        SINGLE    n         1.082     0.013     0.943     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ILG          CA           N           H     110.062    1.93
+ILG          CA           N          H2     110.062    1.93
+ILG          CA           N          H3     110.062    1.93
+ILG           H           N          H2     109.028    2.41
+ILG           H           N          H3     109.028    2.41
+ILG          H2           N          H3     109.028    2.41
+ILG           N          CA           C     109.241    1.50
+ILG           N          CA          CB     110.374    1.62
+ILG           N          CA          HA     108.487    1.50
+ILG           C          CA          CB     111.037    2.40
+ILG           C          CA          HA     108.824    1.50
+ILG          CB          CA          HA     108.967    1.50
+ILG          CA           C           O     117.124    1.50
+ILG          CA           C         OXT     117.124    1.50
+ILG           O           C         OXT     125.752    1.50
+ILG          CA          CB          CG     113.488    1.50
+ILG          CA          CB         HB2     108.549    1.50
+ILG          CA          CB         HB3     108.549    1.50
+ILG          CG          CB         HB2     108.915    1.50
+ILG          CG          CB         HB3     108.915    1.50
+ILG         HB2          CB         HB3     107.844    1.50
+ILG          CB          CG          CD     114.504    2.22
+ILG          CB          CG         HG2     108.844    1.50
+ILG          CB          CG         HG3     108.844    1.50
+ILG          CD          CG         HG2     108.942    1.50
+ILG          CD          CG         HG3     108.942    1.50
+ILG         HG2          CG         HG3     107.705    1.50
+ILG          CG          CD         OE1     125.770    1.96
+ILG          CG          CD          HD     117.100    1.50
+ILG         OE1          CD          HD     117.130    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ILG             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+ILG             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+ILG            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+ILG            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+ILG             sp2_sp3_8         OE1          CD          CG          CB     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ILG    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ILG    plan-1           C   0.020
+ILG    plan-1          CA   0.020
+ILG    plan-1           O   0.020
+ILG    plan-1         OXT   0.020
+ILG    plan-2          CD   0.020
+ILG    plan-2          CG   0.020
+ILG    plan-2          HD   0.020
+ILG    plan-2         OE1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ILG SMILES           ACDLabs              10.04 "O=CCCC(C(=O)O)[NH3+]"
+ILG SMILES_CANONICAL CACTVS               3.341 "[NH3+][C@@H](CCC=O)C(O)=O"
+ILG SMILES           CACTVS               3.341 "[NH3+][CH](CCC=O)C(O)=O"
+ILG SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C[C@@H](C(=O)O)[NH3+])C=O"
+ILG SMILES           "OpenEye OEToolkits" 1.5.0 "C(CC(C(=O)O)[NH3+])C=O"
+ILG InChI            InChI                1.03  "InChI=1S/C5H9NO3/c6-4(5(8)9)2-1-3-7/h3-4H,1-2,6H2,(H,8,9)/p+1/t4-/m0/s1"
+ILG InChIKey         InChI                1.03  KABXUUFDPUOJMW-BYPYZUCNSA-O
+ILG ?                acedrg               196         "dictionary generator"
+ILG ?                acedrg_database      11          "data source"
+ILG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ILG ?                refmac5              5.8.0222    "optimization tool"

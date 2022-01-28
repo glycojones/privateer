@@ -1,0 +1,129 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BBR     BBR      "(3-bromo-2-oxo-propoxy)phosphonic acid"     non-polymer     14     10     .     
+#
+data_comp_BBR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BBR     P       P       P       0       -2.501      0.145       -0.390      
+BBR     O1P     O       OP      -1      -2.501      -1.193      -1.104      
+BBR     O2P     O       OP      -1      -3.061      1.268       -1.243      
+BBR     O3P     O       O       0       -3.134      0.079       0.987       
+BBR     O1      O       O2      0       -0.949      0.513       -0.144      
+BBR     C1      C       CH2     0       -0.080      -0.362      0.570       
+BBR     C2      C       C       0       1.290       0.254       0.732       
+BBR     O3      O       O       0       1.666       0.651       1.811       
+BBR     C3      C       CH2     0       2.146       0.351       -0.479      
+BBR     BR      BR      BR      0       3.518       -1.007      -0.458      
+BBR     H1C1    H       H       0       0.007       -1.213      0.091       
+BBR     H1C2    H       H       0       -0.452      -0.553      1.458       
+BBR     H3C1    H       H       0       2.568       1.238       -0.514      
+BBR     H3C2    H       H       0       1.595       0.244       -1.286      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BBR       P         O1P       SINGLE    n         1.517     0.019     1.517     0.019     
+BBR       P         O2P       SINGLE    n         1.517     0.019     1.517     0.019     
+BBR       P         O3P       DOUBLE    n         1.517     0.019     1.517     0.019     
+BBR       P         O1        SINGLE    n         1.614     0.019     1.614     0.019     
+BBR       O1        C1        SINGLE    n         1.425     0.016     1.425     0.016     
+BBR       C1        C2        SINGLE    n         1.510     0.015     1.510     0.015     
+BBR       C2        O3        DOUBLE    n         1.209     0.020     1.209     0.020     
+BBR       C2        C3        SINGLE    n         1.484     0.020     1.484     0.020     
+BBR       C3        BR        SINGLE    n         1.930     0.018     1.930     0.018     
+BBR       C1        H1C1      SINGLE    n         1.089     0.010     0.981     0.014     
+BBR       C1        H1C2      SINGLE    n         1.089     0.010     0.981     0.014     
+BBR       C3        H3C1      SINGLE    n         1.089     0.010     0.983     0.012     
+BBR       C3        H3C2      SINGLE    n         1.089     0.010     0.983     0.012     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BBR         O1P           P         O2P     112.864    1.69
+BBR         O1P           P         O3P     112.864    1.69
+BBR         O1P           P          O1     105.795    2.09
+BBR         O2P           P         O3P     112.864    1.69
+BBR         O2P           P          O1     105.795    2.09
+BBR         O3P           P          O1     105.795    2.09
+BBR           P          O1          C1     121.496    2.55
+BBR          O1          C1          C2     111.322    2.69
+BBR          O1          C1        H1C1     110.196    2.06
+BBR          O1          C1        H1C2     110.196    2.06
+BBR          C2          C1        H1C1     109.084    1.50
+BBR          C2          C1        H1C2     109.084    1.50
+BBR        H1C1          C1        H1C2     107.985    1.50
+BBR          C1          C2          O3     120.831    1.86
+BBR          C1          C2          C3     117.197    2.45
+BBR          O3          C2          C3     121.972    1.76
+BBR          C2          C3          BR     110.599    2.05
+BBR          C2          C3        H3C1     109.516    1.50
+BBR          C2          C3        H3C2     109.516    1.50
+BBR          BR          C3        H3C1     109.212    1.50
+BBR          BR          C3        H3C2     109.212    1.50
+BBR        H3C1          C3        H3C2     107.930    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BBR             sp3_sp3_1          C1          O1           P         O1P     180.000   10.00     3
+BBR             sp3_sp3_4          C2          C1          O1           P     180.000   10.00     3
+BBR             sp2_sp3_2          O3          C2          C1          O1     120.000   10.00     6
+BBR             sp2_sp3_8          C1          C2          C3          BR     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BBR    plan-1          C1   0.020
+BBR    plan-1          C2   0.020
+BBR    plan-1          C3   0.020
+BBR    plan-1          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BBR SMILES           ACDLabs              10.04 "O=P(O)(O)OCC(=O)CBr"
+BBR SMILES_CANONICAL CACTVS               3.341 "O[P](O)(=O)OCC(=O)CBr"
+BBR SMILES           CACTVS               3.341 "O[P](O)(=O)OCC(=O)CBr"
+BBR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)CBr)OP(=O)(O)O"
+BBR SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)CBr)OP(=O)(O)O"
+BBR InChI            InChI                1.03  "InChI=1S/C3H6BrO5P/c4-1-3(5)2-9-10(6,7)8/h1-2H2,(H2,6,7,8)"
+BBR InChIKey         InChI                1.03  QXVSTTOPPFAZGJ-UHFFFAOYSA-N
+BBR ?                acedrg               202         "dictionary generator"                  
+BBR ?                acedrg_database      11          "data source"                           
+BBR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BBR ?                refmac5              5.8.0189    "optimization tool"                     

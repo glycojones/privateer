@@ -1,0 +1,123 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PYM     PYM      PYRUVAMIDE     NON-POLYMER     11     6     .     
+#
+data_comp_PYM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PYM     C1      C       C       0       82.833      57.058      17.097      
+PYM     N1      N       NH2     0       81.824      57.195      17.951      
+PYM     O1      O       O       0       82.894      56.104      16.321      
+PYM     C2      C       C       0       83.905      58.061      17.071      
+PYM     O2      O       O       0       83.887      59.031      17.835      
+PYM     C3      C       CH3     0       85.060      57.941      16.114      
+PYM     HN12    H       H       0       81.791      57.889      18.507      
+PYM     HN11    H       H       0       81.172      56.592      17.971      
+PYM     H33     H       H       0       85.667      58.688      16.236      
+PYM     H32     H       H       0       84.727      57.944      15.204      
+PYM     H31     H       H       0       85.533      57.112      16.281      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PYM       C1        N1        SINGLE    n         1.325     0.011     1.325     0.011     
+PYM       C1        O1        DOUBLE    n         1.229     0.013     1.229     0.013     
+PYM       C1        C2        SINGLE    n         1.445     0.020     1.445     0.020     
+PYM       C2        O2        DOUBLE    n         1.230     0.019     1.230     0.019     
+PYM       C2        C3        SINGLE    n         1.501     0.012     1.501     0.012     
+PYM       N1        HN12      SINGLE    n         1.016     0.010     0.887     0.020     
+PYM       N1        HN11      SINGLE    n         1.016     0.010     0.887     0.020     
+PYM       C3        H33       SINGLE    n         1.089     0.010     0.969     0.018     
+PYM       C3        H32       SINGLE    n         1.089     0.010     0.969     0.018     
+PYM       C3        H31       SINGLE    n         1.089     0.010     0.969     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PYM          N1          C1          O1     122.512    1.50
+PYM          N1          C1          C2     117.954    3.00
+PYM          O1          C1          C2     119.534    3.00
+PYM          C1          N1        HN12     120.050    1.99
+PYM          C1          N1        HN11     120.050    1.99
+PYM        HN12          N1        HN11     119.900    2.38
+PYM          C1          C2          O2     121.169    2.59
+PYM          C1          C2          C3     120.310    3.00
+PYM          O2          C2          C3     118.521    1.73
+PYM          C2          C3         H33     109.540    1.50
+PYM          C2          C3         H32     109.540    1.50
+PYM          C2          C3         H31     109.540    1.50
+PYM         H33          C3         H32     109.400    1.50
+PYM         H33          C3         H31     109.400    1.50
+PYM         H32          C3         H31     109.400    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PYM             sp2_sp2_3          O1          C1          N1        HN12       0.000   10.00     2
+PYM             sp2_sp2_6          N1          C1          C2          O2       0.000   10.00     2
+PYM             sp2_sp3_1          C1          C2          C3         H33       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PYM    plan-1          C1   0.020
+PYM    plan-1          C2   0.020
+PYM    plan-1          N1   0.020
+PYM    plan-1          O1   0.020
+PYM    plan-2          C1   0.020
+PYM    plan-2        HN11   0.020
+PYM    plan-2        HN12   0.020
+PYM    plan-2          N1   0.020
+PYM    plan-3          C1   0.020
+PYM    plan-3          C2   0.020
+PYM    plan-3          C3   0.020
+PYM    plan-3          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PYM SMILES           ACDLabs              10.04 "O=C(C(=O)N)C"
+PYM SMILES_CANONICAL CACTVS               3.341 "CC(=O)C(N)=O"
+PYM SMILES           CACTVS               3.341 "CC(=O)C(N)=O"
+PYM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)C(=O)N"
+PYM SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)C(=O)N"
+PYM InChI            InChI                1.03  "InChI=1S/C3H5NO2/c1-2(5)3(4)6/h1H3,(H2,4,6)"
+PYM InChIKey         InChI                1.03  FPOLWERNILTNDK-UHFFFAOYSA-N
+PYM ?                acedrg               202         "dictionary generator"                  
+PYM ?                acedrg_database      11          "data source"                           
+PYM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PYM ?                refmac5              5.8.0189    "optimization tool"                     

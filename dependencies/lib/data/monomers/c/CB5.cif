@@ -1,0 +1,526 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CB5      CB5 'COBALT BIS(1,2-DICARBOLLIDE)        ' non-polymer        23  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CB5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CB5           B7     B    B         0.000      0.066   -0.048    0.005
+ CB5           B27    B    B         0.000      3.454   -0.200    1.024
+ CB5           B32    B    B         0.000      4.108   -1.669    0.673
+ CB5           B31    B    B         0.000      4.286   -1.000    2.171
+ CB5           B28    B    B         0.000      2.553   -1.360    0.052
+ CB5           B29    B    B         0.000      3.014   -2.859    0.698
+ CB5           C22    C    C         0.000      2.953   -0.363    2.609
+ CB5           B26    B    B         0.000      3.295   -1.666    3.253
+ CB5           B30    B    B         0.000      4.117   -2.686    2.080
+ CB5           C21    C    C         0.000      1.794   -1.565    2.700
+ CB5           B25    B    B         0.000      2.621   -2.912    2.889
+ CB5           B24    B    B         0.000      1.401   -2.124    1.099
+ CB5           CO     CO   CO        0.000      1.548   -0.142    1.323
+ CB5           C2     C    C         0.000     -0.395   -0.102    1.614
+ CB5           C1     C    C         0.000      0.440    1.074    2.506
+ CB5           B4     B    B         0.000      1.675    1.824    1.474
+ CB5           B6     B    B         0.000     -1.116    1.151    2.083
+ CB5           B10    B    B         0.000     -1.170    2.245    0.770
+ CB5           B9     B    B         0.000      0.456    2.667    0.524
+ CB5           B5     B    B         0.000     -0.306    2.470    2.085
+ CB5           B11    B    B         0.000     -1.325    0.629    0.566
+ CB5           B12    B    B         0.000     -0.338    1.516   -0.451
+ CB5           B8     B    B         0.000      1.313    1.262   -0.171
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CB5      B7     n/a    C2     START
+ CB5      B27    B7     C22    DUMMY
+ CB5      B32    B27    .      .
+ CB5      B31    B27    .      .
+ CB5      B28    B27    B29    .
+ CB5      B29    B28    .      .
+ CB5      C22    B27    C21    .
+ CB5      B26    C22    B30    .
+ CB5      B30    B26    .      .
+ CB5      C21    C22    CO     .
+ CB5      B25    C21    .      .
+ CB5      B24    C21    .      .
+ CB5      CO     C21    .      .
+ CB5      C2     B7     B6     .
+ CB5      C1     C2     B4     .
+ CB5      B4     C1     .      .
+ CB5      B6     C2     B10    .
+ CB5      B10    B6     B12    .
+ CB5      B9     B10    .      .
+ CB5      B5     B10    .      .
+ CB5      B11    B10    .      .
+ CB5      B12    B10    B8     .
+ CB5      B8     B12    .      END
+ CB5      B7     CO     .    ADD
+ CB5      B7     B8     .    ADD
+ CB5      B7     B12    .    ADD
+ CB5      B7     B11    .    ADD
+ CB5      CO     B24    .    ADD
+ CB5      CO     C22    .    ADD
+ CB5      CO     B27    .    ADD
+ CB5      CO     B8     .    ADD
+ CB5      CO     B4     .    ADD
+ CB5      CO     C2     .    ADD
+ CB5      CO     C1     .    ADD
+ CB5      CO     B28    .    ADD
+ CB5      B24    B29    .    ADD
+ CB5      B24    B28    .    ADD
+ CB5      B29    B30    .    ADD
+ CB5      B29    B32    .    ADD
+ CB5      B25    B30    .    ADD
+ CB5      B25    B26    .    ADD
+ CB5      B30    B32    .    ADD
+ CB5      B30    B31    .    ADD
+ CB5      B32    B31    .    ADD
+ CB5      B32    B28    .    ADD
+ CB5      B31    B26    .    ADD
+ CB5      B31    C22    .    ADD
+ CB5      B26    C21    .    ADD
+ CB5      B8     B4     .    ADD
+ CB5      B8     B9     .    ADD
+ CB5      B4     B9     .    ADD
+ CB5      B9     B5     .    ADD
+ CB5      B9     B12    .    ADD
+ CB5      B5     B6     .    ADD
+ CB5      B5     C1     .    ADD
+ CB5      B12    B11    .    ADD
+ CB5      B11    B6     .    ADD
+ CB5      B11    C2     .    ADD
+ CB5      B6     C1     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CB5       B7        CO        single    1.990     0.020     1.990     0.020     
+CB5       B7        B8        single    1.600     0.020     1.600     0.020     
+CB5       B7        B12       single    1.600     0.020     1.600     0.020     
+CB5       B7        B11       single    1.600     0.020     1.600     0.020     
+CB5       C2        B7        single    1.465     0.020     1.465     0.020     
+CB5       CO        B24       single    1.990     0.020     1.990     0.020     
+CB5       CO        C22       single    1.980     0.020     1.980     0.020     
+CB5       CO        B27       single    1.990     0.020     1.990     0.020     
+CB5       CO        B8        single    1.990     0.020     1.990     0.020     
+CB5       CO        B4        single    1.990     0.020     1.990     0.020     
+CB5       CO        C2        single    1.980     0.020     1.980     0.020     
+CB5       CO        C1        single    1.980     0.020     1.980     0.020     
+CB5       CO        B28       single    1.990     0.020     1.990     0.020     
+CB5       CO        C21       single    1.980     0.020     1.980     0.020     
+CB5       B24       B29       single    1.600     0.020     1.600     0.020     
+CB5       B24       B28       single    1.600     0.020     1.600     0.020     
+CB5       B24       C21       single    1.465     0.020     1.465     0.020     
+CB5       B29       B30       single    1.600     0.020     1.600     0.020     
+CB5       B29       B32       single    1.600     0.020     1.600     0.020     
+CB5       B29       B28       single    1.600     0.020     1.600     0.020     
+CB5       B25       B30       single    1.600     0.020     1.600     0.020     
+CB5       B25       B26       single    1.600     0.020     1.600     0.020     
+CB5       B25       C21       single    1.465     0.020     1.465     0.020     
+CB5       B30       B32       single    1.600     0.020     1.600     0.020     
+CB5       B30       B31       single    1.600     0.020     1.600     0.020     
+CB5       B30       B26       single    1.600     0.020     1.600     0.020     
+CB5       B32       B31       single    1.600     0.020     1.600     0.020     
+CB5       B32       B27       single    1.600     0.020     1.600     0.020     
+CB5       B32       B28       single    1.600     0.020     1.600     0.020     
+CB5       B31       B26       single    1.600     0.020     1.600     0.020     
+CB5       B31       C22       single    1.465     0.020     1.465     0.020     
+CB5       B31       B27       single    1.600     0.020     1.600     0.020     
+CB5       B26       C22       single    1.465     0.020     1.465     0.020     
+CB5       B26       C21       single    1.465     0.020     1.465     0.020     
+CB5       C22       B27       single    1.465     0.020     1.465     0.020     
+CB5       C21       C22       single    1.460     0.020     1.460     0.020     
+CB5       B28       B27       single    1.600     0.020     1.600     0.020     
+CB5       B8        B4        single    1.600     0.020     1.600     0.020     
+CB5       B8        B9        single    1.600     0.020     1.600     0.020     
+CB5       B8        B12       single    1.600     0.020     1.600     0.020     
+CB5       B4        B9        single    1.600     0.020     1.600     0.020     
+CB5       B4        C1        single    1.465     0.020     1.465     0.020     
+CB5       B9        B5        single    1.600     0.020     1.600     0.020     
+CB5       B9        B12       single    1.600     0.020     1.600     0.020     
+CB5       B9        B10       single    1.600     0.020     1.600     0.020     
+CB5       B5        B6        single    1.600     0.020     1.600     0.020     
+CB5       B5        C1        single    1.465     0.020     1.465     0.020     
+CB5       B5        B10       single    1.600     0.020     1.600     0.020     
+CB5       B12       B11       single    1.600     0.020     1.600     0.020     
+CB5       B12       B10       single    1.600     0.020     1.600     0.020     
+CB5       B11       B6        single    1.600     0.020     1.600     0.020     
+CB5       B11       C2        single    1.465     0.020     1.465     0.020     
+CB5       B11       B10       single    1.600     0.020     1.600     0.020     
+CB5       B6        C2        single    1.465     0.020     1.465     0.020     
+CB5       B6        C1        single    1.465     0.020     1.465     0.020     
+CB5       B10       B6        single    1.600     0.020     1.600     0.020     
+CB5       C1        C2        single    1.460     0.020     1.460     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CB5      CO     B7     B8       66.296    3.000
+ CB5      CO     B7     B12     120.000    3.000
+ CB5      B8     B7     B12      60.000    3.000
+ CB5      CO     B7     B11     120.000    3.000
+ CB5      B8     B7     B11     120.000    3.000
+ CB5      B12    B7     B11      60.000    3.000
+ CB5      C2     B7     CO       67.982    3.000
+ CB5      C2     B7     B8      120.000    3.000
+ CB5      C2     B7     B12     120.000    3.000
+ CB5      C2     B7     B11      56.902    3.000
+ CB5      B32    B27    B31      60.000    3.000
+ CB5      B32    B27    B28      60.000    3.000
+ CB5      B31    B27    B28     120.000    3.000
+ CB5      B32    B27    C22     120.000    3.000
+ CB5      B31    B27    C22      56.902    3.000
+ CB5      B28    B27    C22     120.000    3.000
+ CB5      B32    B27    CO      120.000    3.000
+ CB5      B31    B27    CO      120.000    3.000
+ CB5      B28    B27    CO       66.296    3.000
+ CB5      C22    B27    CO       67.982    3.000
+ CB5      B27    B32    B29     120.000    3.000
+ CB5      B27    B32    B30     120.000    3.000
+ CB5      B27    B32    B31      60.000    3.000
+ CB5      B27    B32    B28      60.000    3.000
+ CB5      B29    B32    B30      60.000    3.000
+ CB5      B29    B32    B31     120.000    3.000
+ CB5      B30    B32    B31      60.000    3.000
+ CB5      B29    B32    B28      60.000    3.000
+ CB5      B30    B32    B28     120.000    3.000
+ CB5      B31    B32    B28     120.000    3.000
+ CB5      B27    B31    B30     120.000    3.000
+ CB5      B27    B31    B32      60.000    3.000
+ CB5      B27    B31    B26     120.000    3.000
+ CB5      B27    B31    C22      56.902    3.000
+ CB5      B30    B31    B32      60.000    3.000
+ CB5      B30    B31    B26      60.000    3.000
+ CB5      B32    B31    B26     120.000    3.000
+ CB5      B30    B31    C22     120.000    3.000
+ CB5      B32    B31    C22     120.000    3.000
+ CB5      B26    B31    C22      56.902    3.000
+ CB5      B27    B28    B29     120.000    3.000
+ CB5      B27    B28    CO       66.296    3.000
+ CB5      B27    B28    B24     120.000    3.000
+ CB5      B27    B28    B32      60.000    3.000
+ CB5      CO     B28    B24      66.296    3.000
+ CB5      CO     B28    B32     120.000    3.000
+ CB5      B24    B28    B32     120.000    3.000
+ CB5      B29    B28    CO      120.000    3.000
+ CB5      B29    B28    B24      60.000    3.000
+ CB5      B29    B28    B32      60.000    3.000
+ CB5      B28    B29    B24      60.000    3.000
+ CB5      B28    B29    B30     120.000    3.000
+ CB5      B28    B29    B32      60.000    3.000
+ CB5      B24    B29    B30     120.000    3.000
+ CB5      B24    B29    B32     120.000    3.000
+ CB5      B30    B29    B32      60.000    3.000
+ CB5      B27    C22    B26     120.000    3.000
+ CB5      B27    C22    C21     120.000    3.000
+ CB5      B27    C22    CO       68.709    3.000
+ CB5      B27    C22    B31      66.196    3.000
+ CB5      B26    C22    C21      60.113    3.000
+ CB5      CO     C22    B31     120.000    3.000
+ CB5      B26    C22    CO      120.000    3.000
+ CB5      C21    C22    CO       68.365    3.000
+ CB5      B26    C22    B31      66.196    3.000
+ CB5      C21    C22    B31     120.000    3.000
+ CB5      C22    B26    B30     120.000    3.000
+ CB5      C22    B26    B25     120.000    3.000
+ CB5      C22    B26    B31      56.902    3.000
+ CB5      C22    B26    C21      59.774    3.000
+ CB5      B25    B26    B31     120.000    3.000
+ CB5      B25    B26    C21      56.902    3.000
+ CB5      B31    B26    C21     120.000    3.000
+ CB5      B30    B26    B25      60.000    3.000
+ CB5      B30    B26    B31      60.000    3.000
+ CB5      B30    B26    C21     120.000    3.000
+ CB5      B26    B30    B29     120.000    3.000
+ CB5      B26    B30    B25      60.000    3.000
+ CB5      B26    B30    B32     120.000    3.000
+ CB5      B26    B30    B31      60.000    3.000
+ CB5      B29    B30    B25     120.000    3.000
+ CB5      B29    B30    B32      60.000    3.000
+ CB5      B25    B30    B32     120.000    3.000
+ CB5      B29    B30    B31     120.000    3.000
+ CB5      B25    B30    B31     120.000    3.000
+ CB5      B32    B30    B31      60.000    3.000
+ CB5      C22    C21    B25     120.000    3.000
+ CB5      C22    C21    B24     120.000    3.000
+ CB5      C22    C21    CO       68.365    3.000
+ CB5      C22    C21    B26      60.113    3.000
+ CB5      B25    C21    B24     120.000    3.000
+ CB5      B25    C21    CO      120.000    3.000
+ CB5      B24    C21    CO       68.709    3.000
+ CB5      B25    C21    B26      66.196    3.000
+ CB5      B24    C21    B26     120.000    3.000
+ CB5      CO     C21    B26     120.000    3.000
+ CB5      C21    B25    B30     120.000    3.000
+ CB5      C21    B25    B26      56.902    3.000
+ CB5      B30    B25    B26      60.000    3.000
+ CB5      C21    B24    CO       67.982    3.000
+ CB5      C21    B24    B29     120.000    3.000
+ CB5      C21    B24    B28     120.000    3.000
+ CB5      CO     B24    B29     120.000    3.000
+ CB5      CO     B24    B28      66.296    3.000
+ CB5      B29    B24    B28      60.000    3.000
+ CB5      C21    CO     B7       90.000    3.000
+ CB5      C21    CO     B24      43.309    3.000
+ CB5      C21    CO     C22      43.269    3.000
+ CB5      C21    CO     B27      90.000    3.000
+ CB5      C21    CO     B8      180.000    3.000
+ CB5      C21    CO     B4       90.000    3.000
+ CB5      C21    CO     C2       90.000    3.000
+ CB5      C21    CO     C1       90.000    3.000
+ CB5      C21    CO     B28      90.000    3.000
+ CB5      B7     CO     B24      90.000    3.000
+ CB5      B7     CO     C22     180.000    3.000
+ CB5      B24    CO     C22      90.000    3.000
+ CB5      B7     CO     B27      90.000    3.000
+ CB5      B24    CO     B27      90.000    3.000
+ CB5      C22    CO     B27      43.309    3.000
+ CB5      B7     CO     B8       47.408    3.000
+ CB5      B24    CO     B8       90.000    3.000
+ CB5      C22    CO     B8       90.000    3.000
+ CB5      B27    CO     B8       90.000    3.000
+ CB5      B7     CO     B4       90.000    3.000
+ CB5      B24    CO     B4      180.000    3.000
+ CB5      C22    CO     B4       90.000    3.000
+ CB5      B27    CO     B4       90.000    3.000
+ CB5      B8     CO     B4       47.408    3.000
+ CB5      B7     CO     C2       43.309    3.000
+ CB5      B24    CO     C2       90.000    3.000
+ CB5      C22    CO     C2       90.000    3.000
+ CB5      B27    CO     C2      180.000    3.000
+ CB5      B8     CO     C2       90.000    3.000
+ CB5      B4     CO     C2       90.000    3.000
+ CB5      B7     CO     C1       90.000    3.000
+ CB5      B24    CO     C1       90.000    3.000
+ CB5      C22    CO     C1       90.000    3.000
+ CB5      B27    CO     C1       90.000    3.000
+ CB5      B8     CO     C1       90.000    3.000
+ CB5      B4     CO     C1       43.309    3.000
+ CB5      C2     CO     C1       43.269    3.000
+ CB5      B7     CO     B28      90.000    3.000
+ CB5      B24    CO     B28      47.408    3.000
+ CB5      C22    CO     B28      90.000    3.000
+ CB5      B27    CO     B28      47.408    3.000
+ CB5      B8     CO     B28      90.000    3.000
+ CB5      B4     CO     B28      90.000    3.000
+ CB5      C2     CO     B28      90.000    3.000
+ CB5      C1     CO     B28     180.000    3.000
+ CB5      B7     C2     C1      120.000    3.000
+ CB5      B7     C2     B6      120.000    3.000
+ CB5      B7     C2     CO       68.709    3.000
+ CB5      B7     C2     B11      66.196    3.000
+ CB5      C1     C2     B6       60.113    3.000
+ CB5      CO     C2     B11     120.000    3.000
+ CB5      C1     C2     CO       68.365    3.000
+ CB5      B6     C2     CO      120.000    3.000
+ CB5      C1     C2     B11     120.000    3.000
+ CB5      B6     C2     B11      66.196    3.000
+ CB5      C2     C1     B4      120.000    3.000
+ CB5      C2     C1     CO       68.365    3.000
+ CB5      C2     C1     B5      120.000    3.000
+ CB5      C2     C1     B6       60.113    3.000
+ CB5      CO     C1     B5      120.000    3.000
+ CB5      CO     C1     B6      120.000    3.000
+ CB5      B5     C1     B6       66.196    3.000
+ CB5      B4     C1     CO       68.709    3.000
+ CB5      B4     C1     B5      120.000    3.000
+ CB5      B4     C1     B6      120.000    3.000
+ CB5      C1     B4     CO       67.982    3.000
+ CB5      C1     B4     B8      120.000    3.000
+ CB5      C1     B4     B9      120.000    3.000
+ CB5      CO     B4     B8       66.296    3.000
+ CB5      CO     B4     B9      120.000    3.000
+ CB5      B8     B4     B9       60.000    3.000
+ CB5      C2     B6     B10     120.000    3.000
+ CB5      C2     B6     B5      120.000    3.000
+ CB5      C2     B6     B11      56.902    3.000
+ CB5      C2     B6     C1       59.774    3.000
+ CB5      B5     B6     B11     120.000    3.000
+ CB5      B5     B6     C1       56.902    3.000
+ CB5      B11    B6     C1      120.000    3.000
+ CB5      B10    B6     B5       60.000    3.000
+ CB5      B10    B6     B11      60.000    3.000
+ CB5      B10    B6     C1      120.000    3.000
+ CB5      B6     B10    B9      120.000    3.000
+ CB5      B6     B10    B5       60.000    3.000
+ CB5      B6     B10    B11      60.000    3.000
+ CB5      B6     B10    B12     120.000    3.000
+ CB5      B9     B10    B5       60.000    3.000
+ CB5      B9     B10    B11     120.000    3.000
+ CB5      B5     B10    B11     120.000    3.000
+ CB5      B9     B10    B12      60.000    3.000
+ CB5      B5     B10    B12     120.000    3.000
+ CB5      B11    B10    B12      60.000    3.000
+ CB5      B10    B9     B8      120.000    3.000
+ CB5      B10    B9     B4      120.000    3.000
+ CB5      B10    B9     B5       60.000    3.000
+ CB5      B10    B9     B12      60.000    3.000
+ CB5      B8     B9     B4       60.000    3.000
+ CB5      B8     B9     B5      120.000    3.000
+ CB5      B4     B9     B5      120.000    3.000
+ CB5      B8     B9     B12      60.000    3.000
+ CB5      B4     B9     B12     120.000    3.000
+ CB5      B5     B9     B12     120.000    3.000
+ CB5      B10    B5     B9       60.000    3.000
+ CB5      B10    B5     B6       60.000    3.000
+ CB5      B10    B5     C1      120.000    3.000
+ CB5      B9     B5     B6      120.000    3.000
+ CB5      B9     B5     C1      120.000    3.000
+ CB5      B6     B5     C1       56.902    3.000
+ CB5      B10    B11    B7      120.000    3.000
+ CB5      B10    B11    B12      60.000    3.000
+ CB5      B10    B11    B6       60.000    3.000
+ CB5      B10    B11    C2      120.000    3.000
+ CB5      B7     B11    B12      60.000    3.000
+ CB5      B7     B11    B6      120.000    3.000
+ CB5      B12    B11    B6      120.000    3.000
+ CB5      B7     B11    C2       56.902    3.000
+ CB5      B12    B11    C2      120.000    3.000
+ CB5      B6     B11    C2       56.902    3.000
+ CB5      B10    B12    B8      120.000    3.000
+ CB5      B10    B12    B7      120.000    3.000
+ CB5      B10    B12    B9       60.000    3.000
+ CB5      B10    B12    B11      60.000    3.000
+ CB5      B7     B12    B9      120.000    3.000
+ CB5      B7     B12    B11      60.000    3.000
+ CB5      B9     B12    B11     120.000    3.000
+ CB5      B8     B12    B7       60.000    3.000
+ CB5      B8     B12    B9       60.000    3.000
+ CB5      B8     B12    B11     120.000    3.000
+ CB5      B12    B8     B7       60.000    3.000
+ CB5      B12    B8     CO      120.000    3.000
+ CB5      B12    B8     B4      120.000    3.000
+ CB5      B12    B8     B9       60.000    3.000
+ CB5      B7     B8     CO       66.296    3.000
+ CB5      B7     B8     B4      120.000    3.000
+ CB5      CO     B8     B4       66.296    3.000
+ CB5      B7     B8     B9      120.000    3.000
+ CB5      CO     B8     B9      120.000    3.000
+ CB5      B4     B8     B9       60.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CB5      var_1    C22    B27    B32    B29       60.683   20.000   3
+ CB5      var_2    C22    B27    B31    B30       95.546   20.000   3
+ CB5      var_3    B27    B31    B26    C22      -31.876   20.000   3
+ CB5      var_4    C22    B27    B28    B29      -60.383   20.000   3
+ CB5      var_5    B27    B28    B29    B24       97.406   20.000   3
+ CB5      var_6    B28    B29    B30    B26       63.818   20.000   3
+ CB5      var_7    B28    B29    B32    B27       39.205   20.000   3
+ CB5      var_8    B28    B27    C22    C21       -0.446   20.000   3
+ CB5      var_9    B27    C22    B26    B30       -4.880   20.000   3
+ CB5      var_10   C22    B26    B30    B29      -60.065   20.000   3
+ CB5      var_11   B26    B30    B32    B27       -1.139   20.000   3
+ CB5      var_12   B26    B30    B31    B27     -100.011   20.000   3
+ CB5      var_13   B27    C22    C21    CO       -51.139   20.000   3
+ CB5      var_14   C22    C21    B25    B30       -2.676   20.000   3
+ CB5      var_15   C21    B25    B30    B26       40.857   20.000   3
+ CB5      var_16   C21    B25    B26    C22      -33.556   20.000   3
+ CB5      var_17   C22    C21    B24    CO       -51.268   20.000   3
+ CB5      var_18   C21    B24    B29    B28     -101.057   20.000   3
+ CB5      var_19   C21    B24    B28    B27       -2.216   20.000   3
+ CB5      var_20   C22    C21    CO     B7       177.079   20.000   3
+ CB5      var_21   C21    CO     B7     C2        59.742   20.000   3
+ CB5      var_22   C21    CO     C22    B27      127.609   20.000   3
+ CB5      var_23   C21    CO     B27    B7       136.532   20.000   3
+ CB5      var_24   C21    CO     B8     B12     -154.226   20.000   3
+ CB5      var_25   C21    CO     B4     C1       -59.579   20.000   3
+ CB5      var_26   C21    CO     C2     B7      -137.139   20.000   3
+ CB5      var_27   C21    CO     C1     C2       -92.734   20.000   3
+ CB5      var_28   C21    CO     B28    B27      -83.743   20.000   3
+ CB5      var_29   B27    B7     C2     B6       117.220   20.000   3
+ CB5      var_30   B7     C2     C1     B4        -0.223   20.000   3
+ CB5      var_31   C2     C1     B4     CO       -49.514   20.000   3
+ CB5      var_32   C1     B4     B9     B10        0.771   20.000   3
+ CB5      var_33   B7     C2     B6     B10       -2.627   20.000   3
+ CB5      var_34   C2     B6     B10    B12        2.114   20.000   3
+ CB5      var_35   B6     B10    B9     B8        63.511   20.000   3
+ CB5      var_36   B6     B10    B5     B9       138.409   20.000   3
+ CB5      var_37   B10    B5     B6     C2        97.782   20.000   3
+ CB5      var_38   B10    B5     C1     C2        -0.567   20.000   3
+ CB5      var_39   B6     B10    B11    B7       -99.824   20.000   3
+ CB5      var_40   B10    B11    B7     C2        95.819   20.000   3
+ CB5      var_41   B10    B11    B6     C2      -133.277   20.000   3
+ CB5      var_42   B10    B11    C2     B7      -102.090   20.000   3
+ CB5      var_43   B6     B10    B12    B8       -63.459   20.000   3
+ CB5      var_44   B10    B12    B7     C2        -0.424   20.000   3
+ CB5      var_45   B10    B12    B8     B7       100.499   20.000   3
+ CB5      var_46   B12    B8     B7     C2       -97.530   20.000   3
+ CB5      var_47   B12    B8     B4     C1        59.413   20.000   3
+ CB5      var_48   B12    B8     B9     B10       37.464   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CB5      chir_01  B7     CO     B8     B12       positiv
+ CB5      chir_02  B24    CO     B29    B28       positiv
+ CB5      chir_03  B29    B24    B30    B32       positiv
+ CB5      chir_04  B25    B30    B26    C21       negativ
+ CB5      chir_05  B30    B29    B25    B32       positiv
+ CB5      chir_06  B32    B29    B30    B31       positiv
+ CB5      chir_07  B31    B30    B32    B26       negativ
+ CB5      chir_08  B26    B25    B30    B31       negativ
+ CB5      chir_09  C22    CO     B31    B26       positiv
+ CB5      chir_10  B27    CO     B32    B31       positiv
+ CB5      chir_11  B8     B7     CO     B4        positiv
+ CB5      chir_12  B4     CO     B8     B9        negativ
+ CB5      chir_13  B9     B8     B4     B5        positiv
+ CB5      chir_14  B5     B9     B6     C1        negativ
+ CB5      chir_15  B12    B7     B8     B9        positiv
+ CB5      chir_16  B11    B7     B12    B6        positiv
+ CB5      chir_17  B6     B5     B11    C2        negativ
+ CB5      chir_18  C2     B7     CO     B11       negativ
+ CB5      chir_19  C1     CO     B4     B5        negativ
+ CB5      chir_20  B28    CO     B24    B29       positiv
+ CB5      chir_21  C21    CO     B24    B25       negativ
+ CB5      chir_22  B10    B9     B5     B12       positiv
+# ------------------------------------------------------

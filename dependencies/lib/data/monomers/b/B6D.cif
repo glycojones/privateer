@@ -1,0 +1,287 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B6D      B6D '2,4-bis(acetylamino)-2,4,6-trideoxy-' pyranose           35  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_B6D
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ B6D           C1     C    CH1       0.000      0.000    0.000    0.000
+ B6D           H1     H    H         0.000      0.212   -0.169   -1.065
+ B6D           O51    O    OH1       0.000      1.230    0.135    0.715
+ B6D           H18    H    H         0.000      1.727    0.884    0.361
+ B6D           O5     O    O2        0.000     -0.772    1.194    0.150
+ B6D           C5     C    CH1       0.000     -2.017    1.176   -0.550
+ B6D           H5     H    H         0.000     -1.833    1.023   -1.623
+ B6D           C6     C    CH3       0.000     -2.739    2.508   -0.341
+ B6D           H6B    H    H         0.000     -3.663    2.495   -0.859
+ B6D           H6A    H    H         0.000     -2.917    2.656    0.693
+ B6D           H6     H    H         0.000     -2.138    3.298   -0.712
+ B6D           C4     C    CH1       0.000     -2.886    0.035   -0.014
+ B6D           H4     H    H         0.000     -3.105    0.208    1.049
+ B6D           N4     N    NH1       0.000     -4.140   -0.024   -0.768
+ B6D           HN4    H    H         0.000     -4.225   -0.648   -1.558
+ B6D           C10    C    C         0.000     -5.180    0.755   -0.409
+ B6D           C9     C    CH3       0.000     -6.470    0.694   -1.186
+ B6D           H9B    H    H         0.000     -6.377   -0.009   -1.973
+ B6D           H9A    H    H         0.000     -7.258    0.399   -0.542
+ B6D           H9     H    H         0.000     -6.685    1.649   -1.591
+ B6D           O10    O    O         0.000     -5.077    1.504    0.539
+ B6D           C3     C    CH1       0.000     -2.131   -1.289   -0.172
+ B6D           H3     H    H         0.000     -1.956   -1.489   -1.238
+ B6D           O3     O    OH1       0.000     -2.904   -2.350    0.394
+ B6D           HO3    H    H         0.000     -2.424   -3.184    0.300
+ B6D           C2     C    CH1       0.000     -0.788   -1.188    0.559
+ B6D           H2     H    H         0.000     -0.964   -1.040    1.634
+ B6D           N2     N    NH1       0.000     -0.025   -2.422    0.352
+ B6D           HN2    H    H         0.000     -0.203   -2.995   -0.460
+ B6D           C7     C    C         0.000      0.914   -2.791    1.246
+ B6D           O7     O    O         0.000      1.128   -2.102    2.221
+ B6D           C8     C    CH3       0.000      1.699   -4.060    1.033
+ B6D           H8B    H    H         0.000      1.974   -4.467    1.972
+ B6D           H8A    H    H         0.000      1.104   -4.760    0.506
+ B6D           H8     H    H         0.000      2.572   -3.846    0.472
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B6D      C1     n/a    O5     START
+ B6D      H1     C1     .      .
+ B6D      O51    C1     H18    .
+ B6D      H18    O51    .      .
+ B6D      O5     C1     .      END
+ B6D      C5     O5     C4     .
+ B6D      H5     C5     .      .
+ B6D      C6     C5     H6     .
+ B6D      H6B    C6     .      .
+ B6D      H6A    C6     .      .
+ B6D      H6     C6     .      .
+ B6D      C4     C5     C3     .
+ B6D      H4     C4     .      .
+ B6D      N4     C4     C10    .
+ B6D      HN4    N4     .      .
+ B6D      C10    N4     O10    .
+ B6D      C9     C10    H9     .
+ B6D      H9B    C9     .      .
+ B6D      H9A    C9     .      .
+ B6D      H9     C9     .      .
+ B6D      O10    C10    .      .
+ B6D      C3     C4     C2     .
+ B6D      H3     C3     .      .
+ B6D      O3     C3     HO3    .
+ B6D      HO3    O3     .      .
+ B6D      C2     C3     N2     .
+ B6D      H2     C2     .      .
+ B6D      N2     C2     C7     .
+ B6D      HN2    N2     .      .
+ B6D      C7     N2     C8     .
+ B6D      O7     C7     .      .
+ B6D      C8     C7     H8     .
+ B6D      H8B    C8     .      .
+ B6D      H8A    C8     .      .
+ B6D      H8     C8     .      .
+ B6D      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B6D       C1        C2        single    1.524     0.020     1.524     0.020     
+B6D       O51       C1        single    1.432     0.020     1.432     0.020     
+B6D       C7        N2        single    1.330     0.020     1.330     0.020     
+B6D       O3        C3        single    1.432     0.020     1.432     0.020     
+B6D       C2        C3        single    1.524     0.020     1.524     0.020     
+B6D       C3        C4        single    1.524     0.020     1.524     0.020     
+B6D       H4        C4        single    1.089     0.010     0.989     0.005     
+B6D       C4        C5        single    1.524     0.020     1.524     0.020     
+B6D       C5        O5        single    1.426     0.020     1.426     0.020     
+B6D       C6        C5        single    1.524     0.020     1.524     0.020     
+B6D       H6B       C6        single    1.089     0.010     0.989     0.005     
+B6D       O7        C7        double    1.220     0.020     1.220     0.020     
+B6D       C8        C7        single    1.500     0.020     1.500     0.020     
+B6D       H8        C8        single    1.089     0.010     0.989     0.005     
+B6D       H8B       C8        single    1.089     0.010     0.989     0.005     
+B6D       H9A       C9        single    1.089     0.010     0.989     0.005     
+B6D       C9        C10       single    1.500     0.020     1.500     0.020     
+B6D       N2        C2        single    1.450     0.020     1.450     0.020     
+B6D       H2        C2        single    1.089     0.010     0.989     0.005     
+B6D       N4        C4        single    1.450     0.020     1.450     0.020     
+B6D       C10       N4        single    1.330     0.020     1.330     0.020     
+B6D       O10       C10       double    1.220     0.020     1.220     0.020     
+B6D       O5        C1        single    1.426     0.020     1.426     0.020     
+B6D       HO3       O3        single    0.970     0.012     0.839     0.014     
+B6D       H1        C1        single    1.089     0.010     0.989     0.005     
+B6D       H3        C3        single    1.089     0.010     0.989     0.005     
+B6D       HN2       N2        single    1.016     0.010     0.899     0.007     
+B6D       H5        C5        single    1.089     0.010     0.989     0.005     
+B6D       H8A       C8        single    1.089     0.010     0.989     0.005     
+B6D       HN4       N4        single    1.016     0.010     0.899     0.007     
+B6D       H9        C9        single    1.089     0.010     0.989     0.005     
+B6D       H9B       C9        single    1.089     0.010     0.989     0.005     
+B6D       H6        C6        single    1.089     0.010     0.989     0.005     
+B6D       H6A       C6        single    1.089     0.010     0.989     0.005     
+B6D       H18       O51       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ B6D      H1     C1     O51     109.470    3.000
+ B6D      H1     C1     O5      109.470    3.000
+ B6D      O51    C1     O5      109.470    3.000
+ B6D      H1     C1     C2      108.340    3.000
+ B6D      O51    C1     C2      109.470    3.000
+ B6D      O5     C1     C2      109.470    3.000
+ B6D      C1     O51    H18     109.470    3.000
+ B6D      C1     O5     C5      111.800    3.000
+ B6D      O5     C5     H5      109.470    3.000
+ B6D      O5     C5     C6      109.470    3.000
+ B6D      O5     C5     C4      109.470    3.000
+ B6D      H5     C5     C6      108.340    3.000
+ B6D      H5     C5     C4      108.340    3.000
+ B6D      C6     C5     C4      111.000    3.000
+ B6D      C5     C6     H6B     109.470    3.000
+ B6D      C5     C6     H6A     109.470    3.000
+ B6D      C5     C6     H6      109.470    3.000
+ B6D      H6B    C6     H6A     109.470    3.000
+ B6D      H6B    C6     H6      109.470    3.000
+ B6D      H6A    C6     H6      109.470    3.000
+ B6D      C5     C4     H4      108.340    3.000
+ B6D      C5     C4     N4      110.000    3.000
+ B6D      C5     C4     C3      111.000    3.000
+ B6D      H4     C4     N4      108.550    3.000
+ B6D      H4     C4     C3      108.340    3.000
+ B6D      N4     C4     C3      110.000    3.000
+ B6D      C4     N4     HN4     118.500    3.000
+ B6D      C4     N4     C10     121.500    3.000
+ B6D      HN4    N4     C10     120.000    3.000
+ B6D      N4     C10    C9      116.500    3.000
+ B6D      N4     C10    O10     123.000    3.000
+ B6D      C9     C10    O10     123.000    3.000
+ B6D      C10    C9     H9B     109.470    3.000
+ B6D      C10    C9     H9A     109.470    3.000
+ B6D      C10    C9     H9      109.470    3.000
+ B6D      H9B    C9     H9A     109.470    3.000
+ B6D      H9B    C9     H9      109.470    3.000
+ B6D      H9A    C9     H9      109.470    3.000
+ B6D      C4     C3     H3      108.340    3.000
+ B6D      C4     C3     O3      109.470    3.000
+ B6D      C4     C3     C2      111.000    3.000
+ B6D      H3     C3     O3      109.470    3.000
+ B6D      H3     C3     C2      108.340    3.000
+ B6D      O3     C3     C2      109.470    3.000
+ B6D      C3     O3     HO3     109.470    3.000
+ B6D      C3     C2     H2      108.340    3.000
+ B6D      C3     C2     N2      110.000    3.000
+ B6D      C3     C2     C1      111.000    3.000
+ B6D      H2     C2     N2      108.550    3.000
+ B6D      H2     C2     C1      108.340    3.000
+ B6D      N2     C2     C1      110.000    3.000
+ B6D      C2     N2     HN2     118.500    3.000
+ B6D      C2     N2     C7      121.500    3.000
+ B6D      HN2    N2     C7      120.000    3.000
+ B6D      N2     C7     O7      123.000    3.000
+ B6D      N2     C7     C8      116.500    3.000
+ B6D      O7     C7     C8      123.000    3.000
+ B6D      C7     C8     H8B     109.470    3.000
+ B6D      C7     C8     H8A     109.470    3.000
+ B6D      C7     C8     H8      109.470    3.000
+ B6D      H8B    C8     H8A     109.470    3.000
+ B6D      H8B    C8     H8      109.470    3.000
+ B6D      H8A    C8     H8      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ B6D      var_1    O5     C1     O51    H18      -60.158   20.000   1
+ B6D      var_2    C1     O5     C5     C4        60.000   20.000   1
+ B6D      var_3    O5     C5     C6     H6        60.060   20.000   3
+ B6D      var_4    O5     C5     C4     C3       -60.000   20.000   3
+ B6D      var_5    C5     C4     N4     C10      -85.301   20.000   3
+ B6D      CONST_1  C4     N4     C10    O10        0.000    0.000   0
+ B6D      var_6    N4     C10    C9     H9      -119.997   20.000   1
+ B6D      var_7    C5     C4     C3     C2        60.000   20.000   3
+ B6D      var_8    C4     C3     O3     HO3     -179.604   20.000   1
+ B6D      var_9    C4     C3     C2     N2       180.000   20.000   3
+ B6D      var_10   C3     C2     C1     O5        60.000   20.000   3
+ B6D      var_11   C3     C2     N2     C7      -155.311   20.000   3
+ B6D      CONST_2  C2     N2     C7     C8       180.000    0.000   0
+ B6D      var_12   N2     C7     C8     H8        90.017   20.000   1
+ B6D      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ B6D      chir_01  C1     C2     O5     O51       negativ
+ B6D      chir_02  C3     C4     C2     O3        negativ
+ B6D      chir_03  C4     C3     C5     N4        negativ
+ B6D      chir_04  C5     C4     C6     O5        negativ
+ B6D      chir_05  C2     C1     N2     C3        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ B6D      plan-1    N2        0.020
+ B6D      plan-1    C7        0.020
+ B6D      plan-1    C2        0.020
+ B6D      plan-1    HN2       0.020
+ B6D      plan-2    C7        0.020
+ B6D      plan-2    N2        0.020
+ B6D      plan-2    C8        0.020
+ B6D      plan-2    O7        0.020
+ B6D      plan-2    HN2       0.020
+ B6D      plan-3    N4        0.020
+ B6D      plan-3    C4        0.020
+ B6D      plan-3    C10       0.020
+ B6D      plan-3    HN4       0.020
+ B6D      plan-4    C10       0.020
+ B6D      plan-4    C9        0.020
+ B6D      plan-4    N4        0.020
+ B6D      plan-4    O10       0.020
+ B6D      plan-4    HN4       0.020
+# ------------------------------------------------------

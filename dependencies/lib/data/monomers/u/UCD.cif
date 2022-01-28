@@ -1,0 +1,358 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UCD      UCD '"(4S,5R,6R)-6-((2R,3R,4R,5R,6R)-3-AC' pyranose           46  26 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_UCD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ UCD           C1     C    CH1       0.000      0.000    0.000    0.000
+ UCD           H1     H    H         0.000     -0.126   -0.197    1.074
+ UCD           O1     O    OH1       0.000      1.263    0.628   -0.223
+ UCD           HO1    H    H         0.000      1.971    0.045    0.082
+ UCD           O5     O    O2        0.000     -0.048   -1.232   -0.717
+ UCD           C5     C    CH1       0.000     -1.242   -1.911   -0.329
+ UCD           H5     H    H         0.000     -1.284   -1.978    0.767
+ UCD           C6     C    CH2       0.000     -1.242   -3.319   -0.927
+ UCD           H61    H    H         0.000     -1.108   -3.255   -2.008
+ UCD           H62    H    H         0.000     -2.194   -3.807   -0.707
+ UCD           O6     O    OH1       0.000     -0.174   -4.079   -0.357
+ UCD           HO6    H    H         0.000     -0.174   -4.969   -0.735
+ UCD           C4     C    CH1       0.000     -2.463   -1.143   -0.840
+ UCD           H4     H    H         0.000     -3.380   -1.679   -0.557
+ UCD           O4     O    OH1       0.000     -2.396   -1.029   -2.263
+ UCD           HO4    H    H         0.000     -2.384   -1.912   -2.655
+ UCD           C3     C    CH1       0.000     -2.473    0.257   -0.214
+ UCD           H3     H    H         0.000     -2.632    0.173    0.871
+ UCD           C2     C    CH1       0.000     -1.121    0.924   -0.484
+ UCD           H2     H    H         0.000     -1.009    1.104   -1.562
+ UCD           N2     N    NH1       0.000     -1.050    2.198    0.236
+ UCD           HN2    H    H         0.000     -1.613    2.343    1.062
+ UCD           CAP    C    C         0.000     -0.234    3.176   -0.203
+ UCD           OAB    O    O         0.000      0.441    3.003   -1.195
+ UCD           CAA    C    CH3       0.000     -0.162    4.487    0.537
+ UCD           HAA3   H    H         0.000     -1.120    4.940    0.551
+ UCD           HAA2   H    H         0.000      0.160    4.315    1.532
+ UCD           HAA1   H    H         0.000      0.525    5.131    0.052
+ UCD           O3     O    O2        0.000     -3.523    1.034   -0.793
+ UCD           CAX    C    CH1       0.000     -4.687    0.818    0.008
+ UCD           HAX    H    H         0.000     -4.460    1.056    1.057
+ UCD           CAU    C    CH1       0.000     -5.824    1.721   -0.488
+ UCD           HAU    H    H         0.000     -6.167    1.381   -1.475
+ UCD           OAH    O    OH1       0.000     -5.373    3.074   -0.571
+ UCD           HAH    H    H         0.000     -6.104    3.640   -0.855
+ UCD           CAS    C    CH1       0.000     -6.971    1.614    0.527
+ UCD           HAS    H    H         0.000     -6.734    2.213    1.418
+ UCD           OAF    O    OH1       0.000     -8.184    2.086   -0.062
+ UCD           HAF    H    H         0.000     -8.906    1.998    0.575
+ UCD           CAJ    C    C1        0.000     -7.123    0.166    0.914
+ UCD           HAJ    H    H         0.000     -7.997   -0.136    1.467
+ UCD           CAR    C    C         0.000     -6.222   -0.746    0.600
+ UCD           OAM    O    O2        0.000     -5.089   -0.543   -0.094
+ UCD           CAQ    C    C         0.000     -6.484   -2.123    1.055
+ UCD           OAE    O    OC       -0.500     -5.669   -3.035    0.791
+ UCD           OAC    O    OC       -0.500     -7.520   -2.379    1.707
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ UCD      C1     n/a    O5     START
+ UCD      H1     C1     .      .
+ UCD      O1     C1     HO1    .
+ UCD      HO1    O1     .      .
+ UCD      O5     C1     .      END
+ UCD      C5     O5     C4     .
+ UCD      H5     C5     .      .
+ UCD      C6     C5     O6     .
+ UCD      H61    C6     .      .
+ UCD      H62    C6     .      .
+ UCD      O6     C6     HO6    .
+ UCD      HO6    O6     .      .
+ UCD      C4     C5     C3     .
+ UCD      H4     C4     .      .
+ UCD      O4     C4     HO4    .
+ UCD      HO4    O4     .      .
+ UCD      C3     C4     O3     .
+ UCD      H3     C3     .      .
+ UCD      C2     C3     N2     .
+ UCD      H2     C2     .      .
+ UCD      N2     C2     CAP    .
+ UCD      HN2    N2     .      .
+ UCD      CAP    N2     CAA    .
+ UCD      OAB    CAP    .      .
+ UCD      CAA    CAP    HAA1   .
+ UCD      HAA3   CAA    .      .
+ UCD      HAA2   CAA    .      .
+ UCD      HAA1   CAA    .      .
+ UCD      O3     C3     CAX    .
+ UCD      CAX    O3     CAU    .
+ UCD      HAX    CAX    .      .
+ UCD      CAU    CAX    CAS    .
+ UCD      HAU    CAU    .      .
+ UCD      OAH    CAU    HAH    .
+ UCD      HAH    OAH    .      .
+ UCD      CAS    CAU    CAJ    .
+ UCD      HAS    CAS    .      .
+ UCD      OAF    CAS    HAF    .
+ UCD      HAF    OAF    .      .
+ UCD      CAJ    CAS    CAR    .
+ UCD      HAJ    CAJ    .      .
+ UCD      CAR    CAJ    CAQ    .
+ UCD      OAM    CAR    .      .
+ UCD      CAQ    CAR    OAC    .
+ UCD      OAE    CAQ    .      .
+ UCD      OAC    CAQ    .      .
+ UCD      C2     C1     .    ADD
+ UCD      CAX    OAM    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UCD       CAA       CAP       single    1.500     0.020     1.500     0.020     
+UCD       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+UCD       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+UCD       HAA3      CAA       single    1.089     0.010     0.989     0.005     
+UCD       OAB       CAP       double    1.220     0.020     1.220     0.020     
+UCD       CAP       N2        single    1.330     0.020     1.330     0.020     
+UCD       N2        C2        single    1.450     0.020     1.450     0.020     
+UCD       HN2       N2        single    1.016     0.010     0.899     0.007     
+UCD       C2        C1        single    1.524     0.020     1.524     0.020     
+UCD       C2        C3        single    1.524     0.020     1.524     0.020     
+UCD       H2        C2        single    1.089     0.010     0.989     0.005     
+UCD       O1        C1        single    1.432     0.020     1.432     0.020     
+UCD       O5        C1        single    1.426     0.020     1.426     0.020     
+UCD       H1        C1        single    1.089     0.010     0.989     0.005     
+UCD       HO1       O1        single    0.970     0.012     0.839     0.014     
+UCD       C5        O5        single    1.426     0.020     1.426     0.020     
+UCD       C6        C5        single    1.524     0.020     1.524     0.020     
+UCD       C4        C5        single    1.524     0.020     1.524     0.020     
+UCD       H5        C5        single    1.089     0.010     0.989     0.005     
+UCD       O6        C6        single    1.432     0.020     1.432     0.020     
+UCD       H61       C6        single    1.089     0.010     0.989     0.005     
+UCD       H62       C6        single    1.089     0.010     0.989     0.005     
+UCD       HO6       O6        single    0.970     0.012     0.839     0.014     
+UCD       O4        C4        single    1.432     0.020     1.432     0.020     
+UCD       C3        C4        single    1.524     0.020     1.524     0.020     
+UCD       H4        C4        single    1.089     0.010     0.989     0.005     
+UCD       HO4       O4        single    0.970     0.012     0.839     0.014     
+UCD       O3        C3        single    1.426     0.020     1.426     0.020     
+UCD       H3        C3        single    1.089     0.010     0.989     0.005     
+UCD       CAX       O3        single    1.426     0.020     1.426     0.020     
+UCD       CAX       OAM       single    1.426     0.020     1.426     0.020     
+UCD       CAU       CAX       single    1.524     0.020     1.524     0.020     
+UCD       HAX       CAX       single    1.089     0.010     0.989     0.005     
+UCD       OAM       CAR       single    1.454     0.020     1.454     0.020     
+UCD       CAQ       CAR       single    1.460     0.020     1.460     0.020     
+UCD       CAR       CAJ       double    1.340     0.020     1.340     0.020     
+UCD       OAE       CAQ       deloc     1.250     0.020     1.250     0.020     
+UCD       OAC       CAQ       deloc     1.250     0.020     1.250     0.020     
+UCD       CAJ       CAS       single    1.510     0.020     1.510     0.020     
+UCD       HAJ       CAJ       single    1.082     0.013     0.975     0.010     
+UCD       OAF       CAS       single    1.432     0.020     1.432     0.020     
+UCD       CAS       CAU       single    1.524     0.020     1.524     0.020     
+UCD       HAS       CAS       single    1.089     0.010     0.989     0.005     
+UCD       HAF       OAF       single    0.970     0.012     0.839     0.014     
+UCD       OAH       CAU       single    1.432     0.020     1.432     0.020     
+UCD       HAU       CAU       single    1.089     0.010     0.989     0.005     
+UCD       HAH       OAH       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ UCD      H1     C1     O1      109.470    3.000
+ UCD      H1     C1     O5      109.470    3.000
+ UCD      O1     C1     O5      109.470    3.000
+ UCD      H1     C1     C2      108.340    3.000
+ UCD      O1     C1     C2      109.470    3.000
+ UCD      O5     C1     C2      109.470    3.000
+ UCD      C1     O1     HO1     109.470    3.000
+ UCD      C1     O5     C5      111.800    3.000
+ UCD      O5     C5     H5      109.470    3.000
+ UCD      O5     C5     C6      109.470    3.000
+ UCD      O5     C5     C4      109.470    3.000
+ UCD      H5     C5     C6      108.340    3.000
+ UCD      H5     C5     C4      108.340    3.000
+ UCD      C6     C5     C4      111.000    3.000
+ UCD      C5     C6     H61     109.470    3.000
+ UCD      C5     C6     H62     109.470    3.000
+ UCD      C5     C6     O6      109.470    3.000
+ UCD      H61    C6     H62     107.900    3.000
+ UCD      H61    C6     O6      109.470    3.000
+ UCD      H62    C6     O6      109.470    3.000
+ UCD      C6     O6     HO6     109.470    3.000
+ UCD      C5     C4     H4      108.340    3.000
+ UCD      C5     C4     O4      109.470    3.000
+ UCD      C5     C4     C3      111.000    3.000
+ UCD      H4     C4     O4      109.470    3.000
+ UCD      H4     C4     C3      108.340    3.000
+ UCD      O4     C4     C3      109.470    3.000
+ UCD      C4     O4     HO4     109.470    3.000
+ UCD      C4     C3     H3      108.340    3.000
+ UCD      C4     C3     C2      111.000    3.000
+ UCD      C4     C3     O3      109.470    3.000
+ UCD      H3     C3     C2      108.340    3.000
+ UCD      H3     C3     O3      109.470    3.000
+ UCD      C2     C3     O3      109.470    3.000
+ UCD      C3     C2     H2      108.340    3.000
+ UCD      C3     C2     N2      110.000    3.000
+ UCD      C3     C2     C1      111.000    3.000
+ UCD      H2     C2     N2      108.550    3.000
+ UCD      H2     C2     C1      108.340    3.000
+ UCD      N2     C2     C1      110.000    3.000
+ UCD      C2     N2     HN2     118.500    3.000
+ UCD      C2     N2     CAP     121.500    3.000
+ UCD      HN2    N2     CAP     120.000    3.000
+ UCD      N2     CAP    OAB     123.000    3.000
+ UCD      N2     CAP    CAA     116.500    3.000
+ UCD      OAB    CAP    CAA     123.000    3.000
+ UCD      CAP    CAA    HAA3    109.470    3.000
+ UCD      CAP    CAA    HAA2    109.470    3.000
+ UCD      CAP    CAA    HAA1    109.470    3.000
+ UCD      HAA3   CAA    HAA2    109.470    3.000
+ UCD      HAA3   CAA    HAA1    109.470    3.000
+ UCD      HAA2   CAA    HAA1    109.470    3.000
+ UCD      C3     O3     CAX     111.800    3.000
+ UCD      O3     CAX    HAX     109.470    3.000
+ UCD      O3     CAX    CAU     109.470    3.000
+ UCD      O3     CAX    OAM     109.470    3.000
+ UCD      HAX    CAX    CAU     108.340    3.000
+ UCD      HAX    CAX    OAM     109.470    3.000
+ UCD      CAU    CAX    OAM     109.470    3.000
+ UCD      CAX    CAU    HAU     108.340    3.000
+ UCD      CAX    CAU    OAH     109.470    3.000
+ UCD      CAX    CAU    CAS     111.000    3.000
+ UCD      HAU    CAU    OAH     109.470    3.000
+ UCD      HAU    CAU    CAS     108.340    3.000
+ UCD      OAH    CAU    CAS     109.470    3.000
+ UCD      CAU    OAH    HAH     109.470    3.000
+ UCD      CAU    CAS    HAS     108.340    3.000
+ UCD      CAU    CAS    OAF     109.470    3.000
+ UCD      CAU    CAS    CAJ     109.470    3.000
+ UCD      HAS    CAS    OAF     109.470    3.000
+ UCD      HAS    CAS    CAJ     108.810    3.000
+ UCD      OAF    CAS    CAJ     109.470    3.000
+ UCD      CAS    OAF    HAF     109.470    3.000
+ UCD      CAS    CAJ    HAJ     120.000    3.000
+ UCD      CAS    CAJ    CAR     120.500    3.000
+ UCD      HAJ    CAJ    CAR     120.000    3.000
+ UCD      CAJ    CAR    OAM     120.000    3.000
+ UCD      CAJ    CAR    CAQ     120.000    3.000
+ UCD      OAM    CAR    CAQ     120.000    3.000
+ UCD      CAR    OAM    CAX     111.800    3.000
+ UCD      CAR    CAQ    OAE     120.000    3.000
+ UCD      CAR    CAQ    OAC     120.000    3.000
+ UCD      OAE    CAQ    OAC     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ UCD      var_1    O5     C1     O1     HO1      -59.793   20.000   1
+ UCD      var_2    C1     O5     C5     C4        60.000   20.000   1
+ UCD      var_3    O5     C5     C6     O6        65.071   20.000   3
+ UCD      var_4    C5     C6     O6     HO6     -179.993   20.000   1
+ UCD      var_5    O5     C5     C4     C3       -60.000   20.000   3
+ UCD      var_6    C5     C4     O4     HO4       60.021   20.000   1
+ UCD      var_7    C5     C4     C3     O3       180.000   20.000   3
+ UCD      var_8    C4     C3     C2     N2       180.000   20.000   3
+ UCD      var_9    C3     C2     C1     O5        60.000   20.000   3
+ UCD      var_10   C3     C2     N2     CAP     -155.204   20.000   3
+ UCD      CONST_1  C2     N2     CAP    CAA      180.000    0.000   0
+ UCD      var_11   N2     CAP    CAA    HAA1    -179.969   20.000   1
+ UCD      var_12   C4     C3     O3     CAX       89.967   20.000   1
+ UCD      var_13   C3     O3     CAX    CAU      175.077   20.000   1
+ UCD      var_14   O3     CAX    OAM    CAR      180.000   20.000   1
+ UCD      var_15   O3     CAX    CAU    CAS      180.000   20.000   3
+ UCD      var_16   CAX    CAU    OAH    HAH     -178.042   20.000   1
+ UCD      var_17   CAX    CAU    CAS    CAJ      -30.000   20.000   3
+ UCD      var_18   CAU    CAS    OAF    HAF      178.789   20.000   1
+ UCD      var_19   CAU    CAS    CAJ    CAR        0.000   20.000   1
+ UCD      var_20   CAS    CAJ    CAR    CAQ      180.000   20.000   1
+ UCD      var_21   CAJ    CAR    OAM    CAX       30.000   20.000   1
+ UCD      var_22   CAJ    CAR    CAQ    OAC       -0.048   20.000   1
+ UCD      var_1    C2     C1     O5     C5       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ UCD      chir_01  C2     N2     C1     C3        negativ
+ UCD      chir_02  C1     C2     O1     O5        positiv
+ UCD      chir_03  C5     O5     C6     C4        positiv
+ UCD      chir_04  C4     C5     O4     C3        positiv
+ UCD      chir_05  C3     C2     C4     O3        positiv
+ UCD      chir_06  CAX    O3     OAM    CAU       positiv
+ UCD      chir_07  CAS    CAJ    OAF    CAU       positiv
+ UCD      chir_08  CAU    CAX    CAS    OAH       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ UCD      plan-1    CAP       0.020
+ UCD      plan-1    CAA       0.020
+ UCD      plan-1    OAB       0.020
+ UCD      plan-1    N2        0.020
+ UCD      plan-1    HN2       0.020
+ UCD      plan-2    N2        0.020
+ UCD      plan-2    CAP       0.020
+ UCD      plan-2    C2        0.020
+ UCD      plan-2    HN2       0.020
+ UCD      plan-3    CAR       0.020
+ UCD      plan-3    OAM       0.020
+ UCD      plan-3    CAQ       0.020
+ UCD      plan-3    CAJ       0.020
+ UCD      plan-3    HAJ       0.020
+ UCD      plan-4    CAQ       0.020
+ UCD      plan-4    CAR       0.020
+ UCD      plan-4    OAE       0.020
+ UCD      plan-4    OAC       0.020
+ UCD      plan-5    CAJ       0.020
+ UCD      plan-5    CAR       0.020
+ UCD      plan-5    CAS       0.020
+ UCD      plan-5    HAJ       0.020
+# ------------------------------------------------------

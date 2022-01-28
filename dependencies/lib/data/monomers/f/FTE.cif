@@ -1,0 +1,140 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FTE     FTE      phenylisothiocyanate     NON-POLYMER     14     9     .     
+#
+data_comp_FTE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FTE     C1      C       CR16    0       1.955       5.977       29.985      
+FTE     C2      C       CR6     0       2.758       4.840       30.052      
+FTE     C3      C       CR16    0       2.188       3.640       30.493      
+FTE     C4      C       CR16    0       0.849       3.589       30.856      
+FTE     C5      C       CR16    0       0.058       4.727       30.785      
+FTE     C6      C       CR16    0       0.612       5.918       30.349      
+FTE     N13     N       N       0       4.125       4.935       29.670      
+FTE     C15     C       CSP     0       5.091       4.037       29.673      
+FTE     S17     S       S1      0       6.091       2.782       29.673      
+FTE     H1      H       H       0       2.326       6.789       29.689      
+FTE     H3      H       H       0       2.713       2.862       30.545      
+FTE     H4      H       H       0       0.476       2.774       31.152      
+FTE     H5      H       H       0       -0.852      4.689       31.032      
+FTE     H6      H       H       0       0.079       6.695       30.299      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FTE       C1        C2        DOUBLE    y         1.387     0.010     1.387     0.010     
+FTE       C1        C6        SINGLE    y         1.383     0.010     1.383     0.010     
+FTE       C2        C3        SINGLE    y         1.387     0.010     1.387     0.010     
+FTE       C2        N13       SINGLE    n         1.411     0.020     1.411     0.020     
+FTE       C3        C4        DOUBLE    y         1.383     0.010     1.383     0.010     
+FTE       C4        C5        SINGLE    y         1.376     0.012     1.376     0.012     
+FTE       C5        C6        DOUBLE    y         1.377     0.012     1.377     0.012     
+FTE       N13       C15       DOUBLE    n         1.315     0.020     1.315     0.020     
+FTE       C15       S17       DOUBLE    n         1.584     0.020     1.584     0.020     
+FTE       C1        H1        SINGLE    n         1.082     0.013     0.941     0.020     
+FTE       C3        H3        SINGLE    n         1.082     0.013     0.941     0.020     
+FTE       C4        H4        SINGLE    n         1.082     0.013     0.944     0.020     
+FTE       C5        H5        SINGLE    n         1.082     0.013     0.944     0.016     
+FTE       C6        H6        SINGLE    n         1.082     0.013     0.944     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FTE          C2          C1          C6     120.281    1.50
+FTE          C2          C1          H1     119.665    1.50
+FTE          C6          C1          H1     120.051    1.50
+FTE          C1          C2          C3     118.658    1.50
+FTE          C1          C2         N13     120.671    2.02
+FTE          C3          C2         N13     120.671    2.02
+FTE          C2          C3          C4     120.281    1.50
+FTE          C2          C3          H3     119.665    1.50
+FTE          C4          C3          H3     120.051    1.50
+FTE          C3          C4          C5     120.465    1.50
+FTE          C3          C4          H4     119.626    1.50
+FTE          C5          C4          H4     119.909    1.50
+FTE          C4          C5          C6     119.856    1.50
+FTE          C4          C5          H5     120.072    1.50
+FTE          C6          C5          H5     120.072    1.50
+FTE          C1          C6          C5     120.465    1.50
+FTE          C1          C6          H6     119.626    1.50
+FTE          C5          C6          H6     119.909    1.50
+FTE          C2         N13         C15     126.486    3.00
+FTE         N13         C15         S17     176.249    1.75
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FTE       const_sp2_sp2_2          C6          C1          C2         N13     180.000   10.00     2
+FTE              const_21          C2          C1          C6          C5       0.000   10.00     2
+FTE       const_sp2_sp2_7         N13          C2          C3          C4     180.000   10.00     2
+FTE             sp2_sp2_1          C1          C2         N13         C15     180.000   10.00     2
+FTE       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+FTE              const_13          C3          C4          C5          C6       0.000   10.00     2
+FTE              const_17          C4          C5          C6          C1       0.000   10.00     2
+FTE           other_tor_1         S17         C15         N13          C2      90.000   10.00     1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FTE    plan-1          C1   0.020
+FTE    plan-1          C2   0.020
+FTE    plan-1          C3   0.020
+FTE    plan-1          C4   0.020
+FTE    plan-1          C5   0.020
+FTE    plan-1          C6   0.020
+FTE    plan-1          H1   0.020
+FTE    plan-1          H3   0.020
+FTE    plan-1          H4   0.020
+FTE    plan-1          H5   0.020
+FTE    plan-1          H6   0.020
+FTE    plan-1         N13   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FTE SMILES           ACDLabs              12.01 S=C=N\c1ccccc1
+FTE SMILES_CANONICAL CACTVS               3.370 S=C=Nc1ccccc1
+FTE SMILES           CACTVS               3.370 S=C=Nc1ccccc1
+FTE SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1ccc(cc1)N=C=S"
+FTE SMILES           "OpenEye OEToolkits" 1.7.0 "c1ccc(cc1)N=C=S"
+FTE InChI            InChI                1.03  InChI=1S/C7H5NS/c9-6-8-7-4-2-1-3-5-7/h1-5H
+FTE InChIKey         InChI                1.03  QKFJKGMPGYROCL-UHFFFAOYSA-N
+FTE ?                acedrg               202         "dictionary generator"                  
+FTE ?                acedrg_database      11          "data source"                           
+FTE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FTE ?                refmac5              5.8.0189    "optimization tool"                     

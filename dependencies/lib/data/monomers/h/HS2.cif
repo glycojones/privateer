@@ -1,0 +1,365 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HS2      HS2 '2-deoxy-4-O-(4-deoxy-alpha-L-threo-h' non-polymer        48  26 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HS2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HS2           O34    O    OC       -0.500      0.000    0.000    0.000
+ HS2           C27    C    C         0.000     -1.233   -0.189    0.094
+ HS2           O35    O    OC       -0.500     -1.725   -1.288   -0.246
+ HS2           C19    C    C         0.000     -2.106    0.881    0.608
+ HS2           O13    O    O2        0.000     -3.437    0.644    0.692
+ HS2           C13    C    CH1       0.000     -4.304    1.771    0.841
+ HS2           H13    H    H         0.000     -4.352    2.327   -0.105
+ HS2           C12    C    CH1       0.000     -3.737    2.677    1.942
+ HS2           H12    H    H         0.000     -3.630    2.105    2.875
+ HS2           O18    O    OH1       0.000     -4.614    3.785    2.153
+ HS2           HO18   H    H         0.000     -4.244    4.363    2.834
+ HS2           C17    C    CH1       0.000     -2.365    3.185    1.487
+ HS2           H17    H    H         0.000     -2.496    3.933    0.693
+ HS2           O25    O    OH1       0.000     -1.685    3.779    2.595
+ HS2           HO25   H    H         0.000     -0.819    4.098    2.307
+ HS2           C24    C    C1        0.000     -1.553    2.032    0.961
+ HS2           H24    H    H         0.000     -0.486    2.146    0.868
+ HS2           O3     O    O2        0.000     -5.613    1.331    1.206
+ HS2           C1     C    CH1       0.000     -6.320    0.673    0.153
+ HS2           H1     H    H         0.000     -5.607    0.328   -0.609
+ HS2           C2     C    CH1       0.000     -7.315    1.647   -0.481
+ HS2           H2     H    H         0.000     -8.001    2.023    0.290
+ HS2           C6     C    CH2       0.000     -6.557    2.821   -1.104
+ HS2           H6     H    H         0.000     -5.944    2.459   -1.932
+ HS2           H6A    H    H         0.000     -5.914    3.280   -0.350
+ HS2           O11    O    OH1       0.000     -7.491    3.788   -1.588
+ HS2           HO11   H    H         0.000     -7.011    4.530   -1.982
+ HS2           O5     O    O2        0.000     -8.062    0.971   -1.494
+ HS2           C10    C    CH1       0.000     -8.833   -0.133   -1.014
+ HS2           H10    H    H         0.000     -9.389   -0.582   -1.849
+ HS2           O15    O    OH1       0.000     -9.751    0.324   -0.020
+ HS2           HO15   H    H         0.000    -10.342    0.984   -0.407
+ HS2           C3     C    CH1       0.000     -7.897   -1.178   -0.402
+ HS2           H3     H    H         0.000     -7.216   -1.560   -1.176
+ HS2           C4     C    CH1       0.000     -7.082   -0.529    0.720
+ HS2           H4     H    H         0.000     -7.758   -0.193    1.519
+ HS2           O9     O    OH1       0.000     -6.153   -1.478    1.248
+ HS2           HO9    H    H         0.000     -6.636   -2.236    1.606
+ HS2           N14    N    NH1       0.000     -8.689   -2.287    0.145
+ HS2           HN14   H    H         0.000     -8.982   -2.360    1.109
+ HS2           C7     C    CH1       0.000     -9.001   -3.277   -0.896
+ HS2           H7     H    H         0.000     -8.243   -3.223   -1.690
+ HS2           O7     O    OH1       0.000    -10.289   -3.000   -1.447
+ HS2           HO7    H    H         0.000    -10.492   -3.651   -2.132
+ HS2           C8     C    CH3       0.000     -8.998   -4.679   -0.284
+ HS2           H8B    H    H         0.000     -9.222   -5.393   -1.033
+ HS2           H8A    H    H         0.000     -8.043   -4.886    0.126
+ HS2           H8     H    H         0.000     -9.728   -4.732    0.482
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HS2      O34    n/a    C27    START
+ HS2      C27    O34    C19    .
+ HS2      O35    C27    .      .
+ HS2      C19    C27    O13    .
+ HS2      O13    C19    C13    .
+ HS2      C13    O13    O3     .
+ HS2      H13    C13    .      .
+ HS2      C12    C13    C17    .
+ HS2      H12    C12    .      .
+ HS2      O18    C12    HO18   .
+ HS2      HO18   O18    .      .
+ HS2      C17    C12    C24    .
+ HS2      H17    C17    .      .
+ HS2      O25    C17    HO25   .
+ HS2      HO25   O25    .      .
+ HS2      C24    C17    H24    .
+ HS2      H24    C24    .      .
+ HS2      O3     C13    C1     .
+ HS2      C1     O3     C2     .
+ HS2      H1     C1     .      .
+ HS2      C2     C1     O5     .
+ HS2      H2     C2     .      .
+ HS2      C6     C2     O11    .
+ HS2      H6     C6     .      .
+ HS2      H6A    C6     .      .
+ HS2      O11    C6     HO11   .
+ HS2      HO11   O11    .      .
+ HS2      O5     C2     C10    .
+ HS2      C10    O5     C3     .
+ HS2      H10    C10    .      .
+ HS2      O15    C10    HO15   .
+ HS2      HO15   O15    .      .
+ HS2      C3     C10    N14    .
+ HS2      H3     C3     .      .
+ HS2      C4     C3     O9     .
+ HS2      H4     C4     .      .
+ HS2      O9     C4     HO9    .
+ HS2      HO9    O9     .      .
+ HS2      N14    C3     C7     .
+ HS2      HN14   N14    .      .
+ HS2      C7     N14    C8     .
+ HS2      H7     C7     .      .
+ HS2      O7     C7     HO7    .
+ HS2      HO7    O7     .      .
+ HS2      C8     C7     H8     .
+ HS2      H8B    C8     .      .
+ HS2      H8A    C8     .      .
+ HS2      H8     C8     .      END
+ HS2      C19    C24    .    ADD
+ HS2      C1     C4     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HS2       O35       C27       deloc     1.250     0.020     1.250     0.020     
+HS2       C27       O34       deloc     1.250     0.020     1.250     0.020     
+HS2       C19       C27       single    1.460     0.020     1.460     0.020     
+HS2       O13       C19       single    1.454     0.020     1.454     0.020     
+HS2       C19       C24       double    1.340     0.020     1.340     0.020     
+HS2       C24       C17       single    1.510     0.020     1.510     0.020     
+HS2       H24       C24       single    1.082     0.013     0.975     0.010     
+HS2       O25       C17       single    1.432     0.020     1.432     0.020     
+HS2       C17       C12       single    1.524     0.020     1.524     0.020     
+HS2       H17       C17       single    1.089     0.010     0.989     0.005     
+HS2       HO25      O25       single    0.970     0.012     0.839     0.014     
+HS2       C12       C13       single    1.524     0.020     1.524     0.020     
+HS2       O18       C12       single    1.432     0.020     1.432     0.020     
+HS2       H12       C12       single    1.089     0.010     0.989     0.005     
+HS2       HO18      O18       single    0.970     0.012     0.839     0.014     
+HS2       O3        C13       single    1.426     0.020     1.426     0.020     
+HS2       C13       O13       single    1.426     0.020     1.426     0.020     
+HS2       H13       C13       single    1.089     0.010     0.989     0.005     
+HS2       C1        O3        single    1.426     0.020     1.426     0.020     
+HS2       C2        C1        single    1.524     0.020     1.524     0.020     
+HS2       C1        C4        single    1.524     0.020     1.524     0.020     
+HS2       H1        C1        single    1.089     0.010     0.989     0.005     
+HS2       C4        C3        single    1.524     0.020     1.524     0.020     
+HS2       O9        C4        single    1.432     0.020     1.432     0.020     
+HS2       H4        C4        single    1.089     0.010     0.989     0.005     
+HS2       HO9       O9        single    0.970     0.012     0.839     0.014     
+HS2       C3        C10       single    1.524     0.020     1.524     0.020     
+HS2       N14       C3        single    1.450     0.020     1.450     0.020     
+HS2       H3        C3        single    1.089     0.010     0.989     0.005     
+HS2       C7        N14       single    1.450     0.020     1.450     0.020     
+HS2       HN14      N14       single    1.036     0.016     0.914     0.007     
+HS2       C8        C7        single    1.524     0.020     1.524     0.020     
+HS2       O7        C7        single    1.432     0.020     1.432     0.020     
+HS2       H7        C7        single    1.089     0.010     0.989     0.005     
+HS2       H8        C8        single    1.089     0.010     0.989     0.005     
+HS2       H8A       C8        single    1.089     0.010     0.989     0.005     
+HS2       H8B       C8        single    1.089     0.010     0.989     0.005     
+HS2       HO7       O7        single    0.970     0.012     0.839     0.014     
+HS2       O15       C10       single    1.432     0.020     1.432     0.020     
+HS2       C10       O5        single    1.426     0.020     1.426     0.020     
+HS2       H10       C10       single    1.089     0.010     0.989     0.005     
+HS2       HO15      O15       single    0.970     0.012     0.839     0.014     
+HS2       O5        C2        single    1.426     0.020     1.426     0.020     
+HS2       C6        C2        single    1.524     0.020     1.524     0.020     
+HS2       H2        C2        single    1.089     0.010     0.989     0.005     
+HS2       O11       C6        single    1.432     0.020     1.432     0.020     
+HS2       H6        C6        single    1.089     0.010     0.989     0.005     
+HS2       H6A       C6        single    1.089     0.010     0.989     0.005     
+HS2       HO11      O11       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HS2      O34    C27    O35     123.000    3.000
+ HS2      O34    C27    C19     120.000    3.000
+ HS2      O35    C27    C19     120.000    3.000
+ HS2      C27    C19    O13     120.000    3.000
+ HS2      C27    C19    C24     120.000    3.000
+ HS2      O13    C19    C24     120.000    3.000
+ HS2      C19    O13    C13     111.800    3.000
+ HS2      O13    C13    H13     109.470    3.000
+ HS2      O13    C13    C12     109.470    3.000
+ HS2      O13    C13    O3      109.470    3.000
+ HS2      H13    C13    C12     108.340    3.000
+ HS2      H13    C13    O3      109.470    3.000
+ HS2      C12    C13    O3      109.470    3.000
+ HS2      C13    C12    H12     108.340    3.000
+ HS2      C13    C12    O18     109.470    3.000
+ HS2      C13    C12    C17     111.000    3.000
+ HS2      H12    C12    O18     109.470    3.000
+ HS2      H12    C12    C17     108.340    3.000
+ HS2      O18    C12    C17     109.470    3.000
+ HS2      C12    O18    HO18    109.470    3.000
+ HS2      C12    C17    H17     108.340    3.000
+ HS2      C12    C17    O25     109.470    3.000
+ HS2      C12    C17    C24     109.470    3.000
+ HS2      H17    C17    O25     109.470    3.000
+ HS2      H17    C17    C24     108.810    3.000
+ HS2      O25    C17    C24     109.470    3.000
+ HS2      C17    O25    HO25    109.470    3.000
+ HS2      C17    C24    H24     120.000    3.000
+ HS2      C17    C24    C19     120.500    3.000
+ HS2      H24    C24    C19     120.000    3.000
+ HS2      C13    O3     C1      111.800    3.000
+ HS2      O3     C1     H1      109.470    3.000
+ HS2      O3     C1     C2      109.470    3.000
+ HS2      O3     C1     C4      109.470    3.000
+ HS2      H1     C1     C2      108.340    3.000
+ HS2      H1     C1     C4      108.340    3.000
+ HS2      C2     C1     C4      111.000    3.000
+ HS2      C1     C2     H2      108.340    3.000
+ HS2      C1     C2     C6      111.000    3.000
+ HS2      C1     C2     O5      109.470    3.000
+ HS2      H2     C2     C6      108.340    3.000
+ HS2      H2     C2     O5      109.470    3.000
+ HS2      C6     C2     O5      109.470    3.000
+ HS2      C2     C6     H6      109.470    3.000
+ HS2      C2     C6     H6A     109.470    3.000
+ HS2      C2     C6     O11     109.470    3.000
+ HS2      H6     C6     H6A     107.900    3.000
+ HS2      H6     C6     O11     109.470    3.000
+ HS2      H6A    C6     O11     109.470    3.000
+ HS2      C6     O11    HO11    109.470    3.000
+ HS2      C2     O5     C10     111.800    3.000
+ HS2      O5     C10    H10     109.470    3.000
+ HS2      O5     C10    O15     109.470    3.000
+ HS2      O5     C10    C3      109.470    3.000
+ HS2      H10    C10    O15     109.470    3.000
+ HS2      H10    C10    C3      108.340    3.000
+ HS2      O15    C10    C3      109.470    3.000
+ HS2      C10    O15    HO15    109.470    3.000
+ HS2      C10    C3     H3      108.340    3.000
+ HS2      C10    C3     C4      111.000    3.000
+ HS2      C10    C3     N14     110.000    3.000
+ HS2      H3     C3     C4      108.340    3.000
+ HS2      H3     C3     N14     108.550    3.000
+ HS2      C4     C3     N14     110.000    3.000
+ HS2      C3     C4     H4      108.340    3.000
+ HS2      C3     C4     O9      109.470    3.000
+ HS2      C3     C4     C1      111.000    3.000
+ HS2      H4     C4     O9      109.470    3.000
+ HS2      H4     C4     C1      108.340    3.000
+ HS2      O9     C4     C1      109.470    3.000
+ HS2      C4     O9     HO9     109.470    3.000
+ HS2      C3     N14    HN14    118.500    3.000
+ HS2      C3     N14    C7      120.000    3.000
+ HS2      HN14   N14    C7      118.500    3.000
+ HS2      N14    C7     H7      108.550    3.000
+ HS2      N14    C7     O7      109.470    3.000
+ HS2      N14    C7     C8      110.000    3.000
+ HS2      H7     C7     O7      109.470    3.000
+ HS2      H7     C7     C8      108.340    3.000
+ HS2      O7     C7     C8      109.470    3.000
+ HS2      C7     O7     HO7     109.470    3.000
+ HS2      C7     C8     H8B     109.470    3.000
+ HS2      C7     C8     H8A     109.470    3.000
+ HS2      C7     C8     H8      109.470    3.000
+ HS2      H8B    C8     H8A     109.470    3.000
+ HS2      H8B    C8     H8      109.470    3.000
+ HS2      H8A    C8     H8      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HS2      var_1    O34    C27    C19    O13      179.731   20.000   1
+ HS2      var_2    C27    C19    C24    C17      180.000   20.000   1
+ HS2      var_3    C27    C19    O13    C13     -150.000   20.000   1
+ HS2      var_4    C19    O13    C13    O3       180.000   20.000   1
+ HS2      var_5    O13    C13    C12    C17       60.000   20.000   3
+ HS2      var_6    C13    C12    O18    HO18    -178.838   20.000   1
+ HS2      var_7    C13    C12    C17    C24      -60.000   20.000   3
+ HS2      var_8    C12    C17    O25    HO25     179.922   20.000   1
+ HS2      var_9    C12    C17    C24    C19       30.000   20.000   1
+ HS2      var_10   O13    C13    O3     C1       -71.118   20.000   1
+ HS2      var_11   C13    O3     C1     C2      -100.530   20.000   1
+ HS2      var_12   O3     C1     C4     C3       180.000   20.000   3
+ HS2      var_13   O3     C1     C2     O5       180.000   20.000   3
+ HS2      var_14   C1     C2     C6     O11     -174.776   20.000   3
+ HS2      var_15   C2     C6     O11    HO11     179.993   20.000   1
+ HS2      var_16   C1     C2     O5     C10       60.000   20.000   1
+ HS2      var_17   C2     O5     C10    C3       -60.000   20.000   1
+ HS2      var_18   O5     C10    O15    HO15      60.126   20.000   1
+ HS2      var_19   O5     C10    C3     N14      180.000   20.000   3
+ HS2      var_20   C10    C3     C4     O9       180.000   20.000   3
+ HS2      var_21   C3     C4     O9     HO9      -60.467   20.000   1
+ HS2      var_22   C10    C3     N14    C7        85.245   20.000   3
+ HS2      var_23   C3     N14    C7     C8       144.970   20.000   3
+ HS2      var_24   N14    C7     O7     HO7      179.949   20.000   1
+ HS2      var_25   N14    C7     C8     H8        60.025   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HS2      chir_01  C17    C24    O25    C12       positiv
+ HS2      chir_02  C12    C17    O18    C13       negativ
+ HS2      chir_03  C13    C12    O13    O3        negativ
+ HS2      chir_04  C1     O3     C4     C2        negativ
+ HS2      chir_05  C4     C1     O9     C3        positiv
+ HS2      chir_06  C3     C4     N14    C10       negativ
+ HS2      chir_07  C7     N14    C8     O7        negativ
+ HS2      chir_08  C10    C3     O15    O5        negativ
+ HS2      chir_09  C2     C1     O5     C6        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HS2      plan-1    C27       0.020
+ HS2      plan-1    O35       0.020
+ HS2      plan-1    O34       0.020
+ HS2      plan-1    C19       0.020
+ HS2      plan-2    C19       0.020
+ HS2      plan-2    C27       0.020
+ HS2      plan-2    C24       0.020
+ HS2      plan-2    O13       0.020
+ HS2      plan-2    H24       0.020
+ HS2      plan-3    C24       0.020
+ HS2      plan-3    C19       0.020
+ HS2      plan-3    C17       0.020
+ HS2      plan-3    H24       0.020
+ HS2      plan-4    N14       0.020
+ HS2      plan-4    C3        0.020
+ HS2      plan-4    C7        0.020
+ HS2      plan-4    HN14      0.020
+# ------------------------------------------------------

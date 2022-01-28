@@ -1,0 +1,163 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LML     LML      "ISOBUTYL MALONIC ACID"     NON-POLYMER     21     11     .     
+#
+data_comp_LML
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LML     C1      C       C       0       2.479       -1.344      0.005       
+LML     O1      O       O       0       2.950       -1.244      1.154       
+LML     OXT     O       OC      -1      2.813       -2.218      -0.815      
+LML     CA      C       CH1     0       1.412       -0.323      -0.434      
+LML     CB      C       CH2     0       0.216       -0.352      0.534       
+LML     CG      C       CH1     0       -1.032      0.449       0.123       
+LML     CD1     C       CH3     0       -2.027      0.515       1.272       
+LML     CD2     C       CH3     0       -1.696      -0.143      -1.113      
+LML     C       C       C       0       2.036       1.082       -0.548      
+LML     O       O       O       0       2.143       1.579       -1.685      
+LML     O2      O       OC      -1      2.403       1.648       0.499       
+LML     HA      H       H       0       1.094       -0.590      -1.327      
+LML     HB1     H       H       0       0.512       -0.020      1.409       
+LML     HB2     H       H       0       -0.060      -1.287      0.658       
+LML     HG      H       H       0       -0.757      1.373       -0.090      
+LML     HD11    H       H       0       -2.791      1.058       1.010       
+LML     HD12    H       H       0       -1.600      0.912       2.051       
+LML     HD13    H       H       0       -2.329      -0.384      1.492       
+LML     HD21    H       H       0       -2.570      0.265       -1.241      
+LML     HD22    H       H       0       -1.800      -1.103      -0.998      
+LML     HD23    H       H       0       -1.141      0.031       -1.894      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LML       C1        O1        DOUBLE    n         1.244     0.020     1.244     0.020     
+LML       C1        OXT       SINGLE    n         1.244     0.020     1.244     0.020     
+LML       C1        CA        SINGLE    n         1.539     0.010     1.539     0.010     
+LML       CA        CB        SINGLE    n         1.530     0.014     1.530     0.014     
+LML       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+LML       CB        CG        SINGLE    n         1.532     0.015     1.532     0.015     
+LML       CG        CD1       SINGLE    n         1.521     0.015     1.521     0.015     
+LML       CG        CD2       SINGLE    n         1.521     0.015     1.521     0.015     
+LML       C         O         DOUBLE    n         1.244     0.020     1.244     0.020     
+LML       C         O2        SINGLE    n         1.244     0.020     1.244     0.020     
+LML       CA        HA        SINGLE    n         1.089     0.010     0.985     0.014     
+LML       CB        HB1       SINGLE    n         1.089     0.010     0.982     0.016     
+LML       CB        HB2       SINGLE    n         1.089     0.010     0.982     0.016     
+LML       CG        HG        SINGLE    n         1.089     0.010     0.989     0.016     
+LML       CD1       HD11      SINGLE    n         1.089     0.010     0.973     0.015     
+LML       CD1       HD12      SINGLE    n         1.089     0.010     0.973     0.015     
+LML       CD1       HD13      SINGLE    n         1.089     0.010     0.973     0.015     
+LML       CD2       HD21      SINGLE    n         1.089     0.010     0.973     0.015     
+LML       CD2       HD22      SINGLE    n         1.089     0.010     0.973     0.015     
+LML       CD2       HD23      SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LML          O1          C1         OXT     124.400    1.50
+LML          O1          C1          CA     117.800    1.60
+LML         OXT          C1          CA     117.800    1.60
+LML          C1          CA          CB     110.294    1.95
+LML          C1          CA           C     111.575    3.00
+LML          C1          CA          HA     108.186    1.50
+LML          CB          CA           C     110.294    1.95
+LML          CB          CA          HA     108.234    1.50
+LML           C          CA          HA     108.186    1.50
+LML          CA          CB          CG     111.094    2.85
+LML          CA          CB         HB1     108.882    1.50
+LML          CA          CB         HB2     108.882    1.50
+LML          CG          CB         HB1     108.194    1.50
+LML          CG          CB         HB2     108.194    1.50
+LML         HB1          CB         HB2     107.599    1.50
+LML          CB          CG         CD1     111.049    1.51
+LML          CB          CG         CD2     111.049    1.51
+LML          CB          CG          HG     108.023    1.50
+LML         CD1          CG         CD2     110.507    1.50
+LML         CD1          CG          HG     108.052    1.50
+LML         CD2          CG          HG     108.052    1.50
+LML          CG         CD1        HD11     109.488    1.50
+LML          CG         CD1        HD12     109.488    1.50
+LML          CG         CD1        HD13     109.488    1.50
+LML        HD11         CD1        HD12     109.411    1.50
+LML        HD11         CD1        HD13     109.411    1.50
+LML        HD12         CD1        HD13     109.411    1.50
+LML          CG         CD2        HD21     109.488    1.50
+LML          CG         CD2        HD22     109.488    1.50
+LML          CG         CD2        HD23     109.488    1.50
+LML        HD21         CD2        HD22     109.411    1.50
+LML        HD21         CD2        HD23     109.411    1.50
+LML        HD22         CD2        HD23     109.411    1.50
+LML          CA           C           O     117.800    1.60
+LML          CA           C          O2     117.800    1.60
+LML           O           C          O2     124.400    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LML             sp2_sp3_2          O1          C1          CA          CB     120.000   10.00     6
+LML             sp3_sp3_1          C1          CA          CB          CG     180.000   10.00     3
+LML             sp2_sp3_8           O           C          CA          C1     120.000   10.00     6
+LML            sp3_sp3_10          CA          CB          CG         CD1     180.000   10.00     3
+LML            sp3_sp3_19        HD11         CD1          CG          CB     180.000   10.00     3
+LML            sp3_sp3_28        HD21         CD2          CG          CB     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LML    plan-1          C1   0.020
+LML    plan-1          CA   0.020
+LML    plan-1          O1   0.020
+LML    plan-1         OXT   0.020
+LML    plan-2           C   0.020
+LML    plan-2          CA   0.020
+LML    plan-2           O   0.020
+LML    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LML SMILES           ACDLabs              10.04 "O=C(O)C(C(=O)O)CC(C)C"
+LML SMILES_CANONICAL CACTVS               3.341 "CC(C)CC(C(O)=O)C(O)=O"
+LML SMILES           CACTVS               3.341 "CC(C)CC(C(O)=O)C(O)=O"
+LML SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)CC(C(=O)O)C(=O)O"
+LML SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)CC(C(=O)O)C(=O)O"
+LML InChI            InChI                1.03  "InChI=1S/C7H12O4/c1-4(2)3-5(6(8)9)7(10)11/h4-5H,3H2,1-2H3,(H,8,9)(H,10,11)"
+LML InChIKey         InChI                1.03  FTKIARCSSZWRFJ-UHFFFAOYSA-N
+LML ?                acedrg               202         "dictionary generator"                  
+LML ?                acedrg_database      11          "data source"                           
+LML ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LML ?                refmac5              5.8.0189    "optimization tool"                     

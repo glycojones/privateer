@@ -1,0 +1,107 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AE9     AE9      2-AZIDOETHANOL     non-polymer     11     6     .     
+#
+data_comp_AE9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AE9     NAS     N       N       0       1.417       0.220       0.693       
+AE9     CAM     C       CH2     0       0.120       0.761       0.219       
+AE9     CAO     C       CH2     0       -1.037      -0.010      0.773       
+AE9     O1      O       OH1     0       -1.029      -1.355      0.313       
+AE9     NAC     N       N       -1      3.009       -0.608      -0.834      
+AE9     NAT     N       N       1       2.198       -0.194      -0.163      
+AE9     HAM1    H       H       0       0.086       0.734       -0.762      
+AE9     HAM2    H       H       0       0.045       1.699       0.495       
+AE9     HAO1    H       H       0       -1.878      0.419       0.504       
+AE9     HAO2    H       H       0       -0.997      -0.004      1.755       
+AE9     H1      H       H       0       -1.681      -1.769      0.658       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AE9       CAO       O1        SINGLE    n         1.421     0.020     1.421     0.020     
+AE9       CAM       CAO       SINGLE    n         1.497     0.015     1.497     0.015     
+AE9       NAS       CAM       SINGLE    n         1.474     0.020     1.474     0.020     
+AE9       NAS       NAT       DOUBLE    n         1.227     0.016     1.227     0.016     
+AE9       NAC       NAT       DOUBLE    n         1.131     0.010     1.131     0.010     
+AE9       CAM       HAM1      SINGLE    n         1.089     0.010     0.981     0.014     
+AE9       CAM       HAM2      SINGLE    n         1.089     0.010     0.981     0.014     
+AE9       CAO       HAO1      SINGLE    n         1.089     0.010     0.982     0.020     
+AE9       CAO       HAO2      SINGLE    n         1.089     0.010     0.982     0.020     
+AE9       O1        H1        SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AE9         CAM         NAS         NAT     116.087    1.56
+AE9         CAO         CAM         NAS     112.276    3.00
+AE9         CAO         CAM        HAM1     109.389    1.50
+AE9         CAO         CAM        HAM2     109.389    1.50
+AE9         NAS         CAM        HAM1     109.121    1.50
+AE9         NAS         CAM        HAM2     109.121    1.50
+AE9        HAM1         CAM        HAM2     107.876    1.50
+AE9          O1         CAO         CAM     111.519    1.55
+AE9          O1         CAO        HAO1     109.500    1.50
+AE9          O1         CAO        HAO2     109.500    1.50
+AE9         CAM         CAO        HAO1     109.769    1.50
+AE9         CAM         CAO        HAO2     109.769    1.50
+AE9        HAO1         CAO        HAO2     108.121    1.50
+AE9         CAO          O1          H1     109.054    3.00
+AE9         NAS         NAT         NAC     172.297    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AE9             sp2_sp3_2         NAT         NAS         CAM         CAO     120.000   10.00     6
+AE9             sp2_sp2_1         CAM         NAS         NAT         NAC     180.000   10.00     2
+AE9             sp3_sp3_4         NAS         CAM         CAO          O1     180.000   10.00     3
+AE9             sp3_sp3_1         CAM         CAO          O1          H1     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AE9 SMILES           ACDLabs              10.04 "[N-]=[N+]=N\CCO"
+AE9 SMILES_CANONICAL CACTVS               3.352 "OCCN=[N+]=[N-]"
+AE9 SMILES           CACTVS               3.352 "OCCN=[N+]=[N-]"
+AE9 SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "C(CO)N=[N+]=[N-]"
+AE9 SMILES           "OpenEye OEToolkits" 1.6.1 "C(CO)N=[N+]=[N-]"
+AE9 InChI            InChI                1.03  InChI=1S/C2H5N3O/c3-5-4-1-2-6/h6H,1-2H2
+AE9 InChIKey         InChI                1.03  BSULWPSUVMOMAN-UHFFFAOYSA-N
+AE9 ?                acedrg               202         "dictionary generator"                  
+AE9 ?                acedrg_database      11          "data source"                           
+AE9 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AE9 ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,227 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AB5      AB5 '2(S)-AMINO-6-BORONOHEXANOIC ACID    ' non-polymer        28  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AB5
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AB5           OT     O    OC       -0.500      0.000    0.000    0.000
+ AB5           C      C    C         0.000     -0.915   -0.462    0.718
+ AB5           O      O    OC       -0.500     -0.773   -1.574    1.273
+ AB5           CA     C    CH1       0.000     -2.188    0.322    0.913
+ AB5           HA     H    H         0.000     -2.514    0.236    1.959
+ AB5           N      N    NT3       1.000     -1.946    1.734    0.589
+ AB5           H0C    H    H         0.000     -1.639    1.811   -0.393
+ AB5           H0B    H    H         0.000     -2.819    2.268    0.723
+ AB5           H0A    H    H         0.000     -1.213    2.106    1.213
+ AB5           CB     C    CH2       0.000     -3.275   -0.235   -0.009
+ AB5           HB1    H    H         0.000     -3.390   -1.306    0.169
+ AB5           HB2    H    H         0.000     -2.989   -0.069   -1.050
+ AB5           CG     C    CH2       0.000     -4.599    0.477    0.277
+ AB5           HG1    H    H         0.000     -4.482    1.548    0.099
+ AB5           HG2    H    H         0.000     -4.883    0.311    1.319
+ AB5           CD     C    CH2       0.000     -5.686   -0.078   -0.644
+ AB5           HD1    H    H         0.000     -5.801   -1.150   -0.466
+ AB5           HD2    H    H         0.000     -5.400    0.087   -1.685
+ AB5           CE     C    CH2       0.000     -7.010    0.633   -0.358
+ AB5           HE1    H    H         0.000     -6.894    1.704   -0.536
+ AB5           HE2    H    H         0.000     -7.294    0.468    0.684
+ AB5           B      B    B        -1.000     -8.145    0.052   -1.319
+ AB5           O3     O    OH1       0.000     -7.788    0.261   -2.622
+ AB5           H3     H    H         0.000     -8.385   -0.040   -3.286
+ AB5           O1     O    OH1       0.000     -9.328    0.689   -1.064
+ AB5           H1     H    H         0.000     -9.350    1.623   -1.184
+ AB5           O2     O    OH1       0.000     -8.291   -1.287   -1.095
+ AB5           H2     H    H         0.000     -7.537   -1.833   -1.239
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AB5      OT     n/a    C      START
+ AB5      C      OT     CA     .
+ AB5      O      C      .      .
+ AB5      CA     C      CB     .
+ AB5      HA     CA     .      .
+ AB5      N      CA     H0A    .
+ AB5      H0C    N      .      .
+ AB5      H0B    N      .      .
+ AB5      H0A    N      .      .
+ AB5      CB     CA     CG     .
+ AB5      HB1    CB     .      .
+ AB5      HB2    CB     .      .
+ AB5      CG     CB     CD     .
+ AB5      HG1    CG     .      .
+ AB5      HG2    CG     .      .
+ AB5      CD     CG     CE     .
+ AB5      HD1    CD     .      .
+ AB5      HD2    CD     .      .
+ AB5      CE     CD     B      .
+ AB5      HE1    CE     .      .
+ AB5      HE2    CE     .      .
+ AB5      B      CE     O2     .
+ AB5      O3     B      H3     .
+ AB5      H3     O3     .      .
+ AB5      O1     B      H1     .
+ AB5      H1     O1     .      .
+ AB5      O2     B      H2     .
+ AB5      H2     O2     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AB5       N         CA        single    1.488     0.020     1.488     0.020     
+AB5       H0A       N         single    1.036     0.016     0.914     0.007     
+AB5       H0B       N         single    1.036     0.016     0.914     0.007     
+AB5       H0C       N         single    1.036     0.016     0.914     0.007     
+AB5       CA        C         single    1.500     0.020     1.500     0.020     
+AB5       CB        CA        single    1.524     0.020     1.524     0.020     
+AB5       HA        CA        single    1.089     0.010     0.989     0.005     
+AB5       O         C         deloc     1.250     0.020     1.250     0.020     
+AB5       C         OT        deloc     1.250     0.020     1.250     0.020     
+AB5       CG        CB        single    1.524     0.020     1.524     0.020     
+AB5       HB1       CB        single    1.089     0.010     0.989     0.005     
+AB5       HB2       CB        single    1.089     0.010     0.989     0.005     
+AB5       CD        CG        single    1.524     0.020     1.524     0.020     
+AB5       HG1       CG        single    1.089     0.010     0.989     0.005     
+AB5       HG2       CG        single    1.089     0.010     0.989     0.005     
+AB5       CE        CD        single    1.524     0.020     1.524     0.020     
+AB5       HD1       CD        single    1.089     0.010     0.989     0.005     
+AB5       HD2       CD        single    1.089     0.010     0.989     0.005     
+AB5       B         CE        single    1.600     0.020     1.600     0.020     
+AB5       HE1       CE        single    1.089     0.010     0.989     0.005     
+AB5       HE2       CE        single    1.089     0.010     0.989     0.005     
+AB5       O2        B         single    1.535     0.020     1.535     0.020     
+AB5       O1        B         single    1.535     0.020     1.535     0.020     
+AB5       O3        B         single    1.535     0.020     1.535     0.020     
+AB5       H2        O2        single    0.970     0.012     0.839     0.014     
+AB5       H1        O1        single    0.970     0.012     0.839     0.014     
+AB5       H3        O3        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AB5      OT     C      O       123.000    3.000
+ AB5      OT     C      CA      118.500    3.000
+ AB5      O      C      CA      118.500    3.000
+ AB5      C      CA     HA      108.810    3.000
+ AB5      C      CA     N       111.600    3.000
+ AB5      C      CA     CB      109.470    3.000
+ AB5      HA     CA     N       108.550    3.000
+ AB5      HA     CA     CB      108.340    3.000
+ AB5      N      CA     CB      110.000    3.000
+ AB5      CA     N      H0C     109.470    3.000
+ AB5      CA     N      H0B     109.470    3.000
+ AB5      CA     N      H0A     109.470    3.000
+ AB5      H0C    N      H0B     109.470    3.000
+ AB5      H0C    N      H0A     109.470    3.000
+ AB5      H0B    N      H0A     109.470    3.000
+ AB5      CA     CB     HB1     109.470    3.000
+ AB5      CA     CB     HB2     109.470    3.000
+ AB5      CA     CB     CG      111.000    3.000
+ AB5      HB1    CB     HB2     107.900    3.000
+ AB5      HB1    CB     CG      109.470    3.000
+ AB5      HB2    CB     CG      109.470    3.000
+ AB5      CB     CG     HG1     109.470    3.000
+ AB5      CB     CG     HG2     109.470    3.000
+ AB5      CB     CG     CD      111.000    3.000
+ AB5      HG1    CG     HG2     107.900    3.000
+ AB5      HG1    CG     CD      109.470    3.000
+ AB5      HG2    CG     CD      109.470    3.000
+ AB5      CG     CD     HD1     109.470    3.000
+ AB5      CG     CD     HD2     109.470    3.000
+ AB5      CG     CD     CE      111.000    3.000
+ AB5      HD1    CD     HD2     107.900    3.000
+ AB5      HD1    CD     CE      109.470    3.000
+ AB5      HD2    CD     CE      109.470    3.000
+ AB5      CD     CE     HE1     109.470    3.000
+ AB5      CD     CE     HE2     109.470    3.000
+ AB5      CD     CE     B       109.500    3.000
+ AB5      HE1    CE     HE2     107.900    3.000
+ AB5      HE1    CE     B       109.500    3.000
+ AB5      HE2    CE     B       109.500    3.000
+ AB5      CE     B      O3      120.000    3.000
+ AB5      CE     B      O1      120.000    3.000
+ AB5      CE     B      O2      120.000    3.000
+ AB5      O3     B      O1      120.000    3.000
+ AB5      O3     B      O2      120.000    3.000
+ AB5      O1     B      O2      120.000    3.000
+ AB5      B      O3     H3      120.000    3.000
+ AB5      B      O1     H1      120.000    3.000
+ AB5      B      O2     H2      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AB5      var_1    OT     C      CA     CB        99.988   20.000   3
+ AB5      var_2    C      CA     N      H0A      -60.048   20.000   1
+ AB5      var_3    C      CA     CB     CG       174.995   20.000   3
+ AB5      var_4    CA     CB     CG     CD      -180.000   20.000   3
+ AB5      var_5    CB     CG     CD     CE       180.000   20.000   3
+ AB5      var_6    CG     CD     CE     B       -179.971   20.000   3
+ AB5      var_7    CD     CE     B      O2        60.020   20.000   1
+ AB5      var_8    CE     B      O3     H3      -179.957   20.000   1
+ AB5      var_9    CE     B      O1     H1        59.943   20.000   1
+ AB5      var_10   CE     B      O2     H2       -60.016   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AB5      chir_01  CA     N      C      CB        positiv
+ AB5      chir_02  B      CE     O2     O1        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AB5      plan-1    C         0.020
+ AB5      plan-1    CA        0.020
+ AB5      plan-1    O         0.020
+ AB5      plan-1    OT        0.020
+# ------------------------------------------------------

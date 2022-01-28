@@ -1,0 +1,133 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+938     938     4-chloranylpyrimidin-5-amine     NON-POLYMER     12     8     .     
+#
+data_comp_938
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+938     C1      C       CR16    0       -18.129     23.607      -6.404      
+938     C2      C       CR16    0       -19.084     21.573      -6.866      
+938     C3      C       CR6     0       -17.433     21.647      -5.229      
+938     CL      CL      CL      0       -16.469     20.803      -4.056      
+938     C       C       CR6     0       -17.298     23.039      -5.432      
+938     N       N       NH2     0       -16.399     23.797      -4.716      
+938     N2      N       NRD6    0       -18.329     20.896      -5.944      
+938     N1      N       NRD6    0       -19.015     22.882      -7.115      
+938     H1      H       H       0       -18.070     24.544      -6.572      
+938     H2      H       H       0       -19.707     21.067      -7.367      
+938     H3      H       H       0       -15.889     23.419      -4.109      
+938     H4      H       H       0       -16.337     24.659      -4.867      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+938       C2        N1        SINGLE    y         1.326     0.010     1.326     0.010     
+938       C2        N2        DOUBLE    y         1.341     0.020     1.341     0.020     
+938       C1        N1        DOUBLE    y         1.335     0.012     1.335     0.012     
+938       C3        N2        SINGLE    y         1.347     0.020     1.347     0.020     
+938       C1        C         SINGLE    y         1.390     0.012     1.390     0.012     
+938       C3        C         DOUBLE    y         1.394     0.019     1.394     0.019     
+938       C3        CL        SINGLE    n         1.737     0.020     1.737     0.020     
+938       C         N         SINGLE    n         1.373     0.020     1.373     0.020     
+938       C1        H1        SINGLE    n         1.082     0.013     0.953     0.020     
+938       C2        H2        SINGLE    n         1.082     0.013     0.946     0.017     
+938       N         H3        SINGLE    n         1.016     0.010     0.877     0.020     
+938       N         H4        SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+938          N1          C1           C     122.181    1.50
+938          N1          C1          H1     118.660    1.50
+938           C          C1          H1     119.159    1.50
+938          N1          C2          N2     125.369    1.50
+938          N1          C2          H2     117.474    1.50
+938          N2          C2          H2     117.157    1.50
+938          N2          C3           C     122.612    1.75
+938          N2          C3          CL     116.313    1.50
+938           C          C3          CL     121.075    1.76
+938          C1           C          C3     117.299    1.64
+938          C1           C           N     121.350    1.86
+938          C3           C           N     121.350    1.86
+938           C           N          H3     119.789    2.29
+938           C           N          H4     119.789    2.29
+938          H3           N          H4     120.421    3.00
+938          C2          N2          C3     116.027    1.51
+938          C2          N1          C1     116.511    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+938              const_15           N           C          C1          N1     180.000   10.00     2
+938       const_sp2_sp2_1           C          C1          N1          C2       0.000   10.00     2
+938       const_sp2_sp2_5          N1          C2          N2          C3       0.000   10.00     2
+938       const_sp2_sp2_3          N2          C2          N1          C1       0.000   10.00     2
+938              const_12           N           C          C3          CL       0.000   10.00     2
+938       const_sp2_sp2_8          CL          C3          N2          C2     180.000   10.00     2
+938             sp2_sp2_1          C1           C           N          H3     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+938    plan-1           C   0.020
+938    plan-1          C1   0.020
+938    plan-1          C2   0.020
+938    plan-1          C3   0.020
+938    plan-1          CL   0.020
+938    plan-1          H1   0.020
+938    plan-1          H2   0.020
+938    plan-1           N   0.020
+938    plan-1          N1   0.020
+938    plan-1          N2   0.020
+938    plan-2           C   0.020
+938    plan-2          H3   0.020
+938    plan-2          H4   0.020
+938    plan-2           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+938 InChI            InChI                1.03  "InChI=1S/C4H4ClN3/c5-4-3(6)1-7-2-8-4/h1-2H,6H2"
+938 InChIKey         InChI                1.03  LHGMCUVJFRBVBH-UHFFFAOYSA-N
+938 SMILES_CANONICAL CACTVS               3.385 Nc1cncnc1Cl
+938 SMILES           CACTVS               3.385 Nc1cncnc1Cl
+938 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "c1c(c(ncn1)Cl)N"
+938 SMILES           "OpenEye OEToolkits" 2.0.6 "c1c(c(ncn1)Cl)N"
+938 ?                acedrg               190         "dictionary generator"                  
+938 ?                acedrg_database      11          "data source"                           
+938 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+938 ?                refmac5              5.8.0158    "optimization tool"                     

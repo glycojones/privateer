@@ -1,0 +1,318 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+23G      23G '.                                   ' RNA                37  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_23G
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 23G           OP3    O    OP       -0.666      0.000    0.000    0.000
+ 23G           P      P    P         0.000     -0.956    0.294    1.135
+ 23G           OP1    O    OP       -0.666     -0.464    1.499    1.908
+ 23G           OP2    O    OP       -0.666     -1.026   -0.903    2.058
+ 23G           "O5'"  O    O2        0.000     -2.420    0.599    0.540
+ 23G           "C5'"  C    CH2       0.000     -3.519    1.015    1.351
+ 23G           "H5'"  H    H         0.000     -3.269    1.954    1.850
+ 23G           "H5'A" H    H         0.000     -3.727    0.250    2.102
+ 23G           "C4'"  C    CH1       0.000     -4.756    1.217    0.472
+ 23G           "H4'"  H    H         0.000     -4.524    1.878   -0.376
+ 23G           "O4'"  O    O2        0.000     -5.259   -0.052    0.004
+ 23G           "C1'"  C    CH1       0.000     -6.637    0.149   -0.353
+ 23G           "H1'"  H    H         0.000     -6.716    0.390   -1.422
+ 23G           N9     N    NR5       0.000     -7.410   -1.060   -0.055
+ 23G           C4     C    CR56      0.000     -8.598   -1.422   -0.628
+ 23G           N3     N    NRD6      0.000     -9.393   -0.874   -1.555
+ 23G           C2     C    CR6       0.000    -10.510   -1.459   -1.925
+ 23G           N2     N    NH2       0.000    -11.292   -0.860   -2.879
+ 23G           HN2A   H    H         0.000    -11.010    0.022   -3.291
+ 23G           HN2    H    H         0.000    -12.157   -1.294   -3.178
+ 23G           C8     C    CR15      0.000     -7.076   -2.031    0.844
+ 23G           H8     H    H         0.000     -6.184   -2.030    1.459
+ 23G           N7     N    NRD5      0.000     -7.988   -2.958    0.851
+ 23G           C5     C    CR56      0.000     -8.959   -2.640   -0.039
+ 23G           C6     C    CR6       0.000    -10.163   -3.259   -0.447
+ 23G           O6     O    O         0.000    -10.516   -4.320    0.039
+ 23G           N1     N    NR16      0.000    -10.914   -2.645   -1.389
+ 23G           HN1    H    H         0.000    -11.804   -3.080   -1.706
+ 23G           "C3'"  C    CH1       0.000     -5.928    1.787    1.303
+ 23G           "H3'"  H    H         0.000     -5.938    1.368    2.319
+ 23G           "C2'"  C    CH1       0.000     -7.164    1.329    0.491
+ 23G           "H2'"  H    H         0.000     -8.006    1.040    1.136
+ 23G           "O2'"  O    O2        0.000     -7.505    2.404   -0.417
+ 23G           "O3'"  O    O2        0.000     -5.855    3.217    1.329
+ 23G           PC     P    P         0.000     -7.146    3.723    0.476
+ 23G           OC2    O    OP       -0.500     -6.789    4.869   -0.395
+ 23G           OC1    O    OP       -0.500     -8.270    4.075    1.377
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 23G      OP3    n/a    P      START
+ 23G      P      OP3    "O5'"  .
+ 23G      OP1    P      .      .
+ 23G      OP2    P      .      .
+ 23G      "O5'"  P      "C5'"  .
+ 23G      "C5'"  "O5'"  "C4'"  .
+ 23G      "H5'"  "C5'"  .      .
+ 23G      "H5'A" "C5'"  .      .
+ 23G      "C4'"  "C5'"  "C3'"  .
+ 23G      "H4'"  "C4'"  .      .
+ 23G      "O4'"  "C4'"  "C1'"  .
+ 23G      "C1'"  "O4'"  N9     .
+ 23G      "H1'"  "C1'"  .      .
+ 23G      N9     "C1'"  C8     .
+ 23G      C4     N9     N3     .
+ 23G      N3     C4     C2     .
+ 23G      C2     N3     N2     .
+ 23G      N2     C2     HN2    .
+ 23G      HN2A   N2     .      .
+ 23G      HN2    N2     .      .
+ 23G      C8     N9     N7     .
+ 23G      H8     C8     .      .
+ 23G      N7     C8     C5     .
+ 23G      C5     N7     C6     .
+ 23G      C6     C5     N1     .
+ 23G      O6     C6     .      .
+ 23G      N1     C6     HN1    .
+ 23G      HN1    N1     .      .
+ 23G      "C3'"  "C4'"  "O3'"  .
+ 23G      "H3'"  "C3'"  .      .
+ 23G      "C2'"  "C3'"  "O2'"  .
+ 23G      "H2'"  "C2'"  .      .
+ 23G      "O2'"  "C2'"  .      .
+ 23G      "O3'"  "C3'"  .      END
+ 23G      PC     "O3'"  OC1    .
+ 23G      OC2    PC     .      .
+ 23G      OC1    PC     .      .
+ 23G      N1     C2     .    ADD
+ 23G      C4     C5     .    ADD
+ 23G      PC     "O2'"  .    ADD
+ 23G      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+23G       "O5'"     P         single    1.610     0.020     1.610     0.020     
+23G       OP1       P         deloc     1.510     0.020     1.510     0.020     
+23G       OP2       P         deloc     1.510     0.020     1.510     0.020     
+23G       N1        C2        single    1.337     0.020     1.337     0.020     
+23G       N1        C6        single    1.337     0.020     1.337     0.020     
+23G       HN1       N1        single    1.016     0.010     0.899     0.007     
+23G       N2        C2        single    1.355     0.020     1.355     0.020     
+23G       C2        N3        double    1.350     0.020     1.350     0.020     
+23G       HN2       N2        single    1.016     0.010     0.899     0.007     
+23G       HN2A      N2        single    1.016     0.010     0.899     0.007     
+23G       N3        C4        single    1.355     0.020     1.355     0.020     
+23G       C4        C5        double    1.490     0.020     1.490     0.020     
+23G       C4        N9        single    1.337     0.020     1.337     0.020     
+23G       C6        C5        single    1.490     0.020     1.490     0.020     
+23G       C5        N7        single    1.350     0.020     1.350     0.020     
+23G       O6        C6        double    1.250     0.020     1.250     0.020     
+23G       N7        C8        double    1.350     0.020     1.350     0.020     
+23G       C8        N9        single    1.337     0.020     1.337     0.020     
+23G       H8        C8        single    1.082     0.013     0.975     0.010     
+23G       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+23G       PC        "O2'"     single    1.610     0.020     1.610     0.020     
+23G       PC        "O3'"     single    1.610     0.020     1.610     0.020     
+23G       OC1       PC        deloc     1.510     0.020     1.510     0.020     
+23G       OC2       PC        deloc     1.510     0.020     1.510     0.020     
+23G       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+23G       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+23G       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+23G       "O2'"     "C2'"     single    1.426     0.020     1.426     0.020     
+23G       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+23G       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+23G       "O3'"     "C3'"     single    1.426     0.020     1.426     0.020     
+23G       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+23G       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+23G       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+23G       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+23G       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+23G       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+23G       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+23G       "H5'A"    "C5'"     single    1.089     0.010     0.989     0.005     
+23G       P         OP3       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 23G      OP3    P      OP1     119.900    3.000
+ 23G      OP3    P      OP2     119.900    3.000
+ 23G      OP3    P      "O5'"   108.200    3.000
+ 23G      OP1    P      OP2     119.900    3.000
+ 23G      OP1    P      "O5'"   108.200    3.000
+ 23G      OP2    P      "O5'"   108.200    3.000
+ 23G      P      "O5'"  "C5'"   120.500    3.000
+ 23G      "O5'"  "C5'"  "H5'"   109.470    3.000
+ 23G      "O5'"  "C5'"  "H5'A"  109.470    3.000
+ 23G      "O5'"  "C5'"  "C4'"   109.470    3.000
+ 23G      "H5'"  "C5'"  "H5'A"  107.900    3.000
+ 23G      "H5'"  "C5'"  "C4'"   109.470    3.000
+ 23G      "H5'A" "C5'"  "C4'"   109.470    3.000
+ 23G      "C5'"  "C4'"  "H4'"   108.340    3.000
+ 23G      "C5'"  "C4'"  "O4'"   109.470    3.000
+ 23G      "C5'"  "C4'"  "C3'"   111.000    3.000
+ 23G      "H4'"  "C4'"  "O4'"   109.470    3.000
+ 23G      "H4'"  "C4'"  "C3'"   108.340    3.000
+ 23G      "O4'"  "C4'"  "C3'"   109.470    3.000
+ 23G      "C4'"  "O4'"  "C1'"   111.800    3.000
+ 23G      "O4'"  "C1'"  "H1'"   109.470    3.000
+ 23G      "O4'"  "C1'"  N9      109.470    3.000
+ 23G      "O4'"  "C1'"  "C2'"   109.470    3.000
+ 23G      "H1'"  "C1'"  N9      109.470    3.000
+ 23G      "H1'"  "C1'"  "C2'"   108.340    3.000
+ 23G      N9     "C1'"  "C2'"   109.470    3.000
+ 23G      "C1'"  N9     C4      126.000    3.000
+ 23G      "C1'"  N9     C8      126.000    3.000
+ 23G      C4     N9     C8      108.000    3.000
+ 23G      N9     C4     N3      132.000    3.000
+ 23G      N9     C4     C5      108.000    3.000
+ 23G      N3     C4     C5      120.000    3.000
+ 23G      C4     N3     C2      120.000    3.000
+ 23G      N3     C2     N2      120.000    3.000
+ 23G      N3     C2     N1      120.000    3.000
+ 23G      N2     C2     N1      120.000    3.000
+ 23G      C2     N2     HN2A    120.000    3.000
+ 23G      C2     N2     HN2     120.000    3.000
+ 23G      HN2A   N2     HN2     120.000    3.000
+ 23G      N9     C8     H8      126.000    3.000
+ 23G      N9     C8     N7      108.000    3.000
+ 23G      H8     C8     N7      126.000    3.000
+ 23G      C8     N7     C5      108.000    3.000
+ 23G      N7     C5     C6      132.000    3.000
+ 23G      N7     C5     C4      108.000    3.000
+ 23G      C6     C5     C4      120.000    3.000
+ 23G      C5     C6     O6      120.000    3.000
+ 23G      C5     C6     N1      120.000    3.000
+ 23G      O6     C6     N1      120.000    3.000
+ 23G      C6     N1     HN1     120.000    3.000
+ 23G      C6     N1     C2      120.000    3.000
+ 23G      HN1    N1     C2      120.000    3.000
+ 23G      "C4'"  "C3'"  "H3'"   108.340    3.000
+ 23G      "C4'"  "C3'"  "C2'"   111.000    3.000
+ 23G      "C4'"  "C3'"  "O3'"   109.470    3.000
+ 23G      "H3'"  "C3'"  "C2'"   108.340    3.000
+ 23G      "H3'"  "C3'"  "O3'"   109.470    3.000
+ 23G      "C2'"  "C3'"  "O3'"   109.470    3.000
+ 23G      "C3'"  "C2'"  "H2'"   108.340    3.000
+ 23G      "C3'"  "C2'"  "O2'"   109.470    3.000
+ 23G      "C3'"  "C2'"  "C1'"   111.000    3.000
+ 23G      "H2'"  "C2'"  "O2'"   109.470    3.000
+ 23G      "H2'"  "C2'"  "C1'"   108.340    3.000
+ 23G      "O2'"  "C2'"  "C1'"   109.470    3.000
+ 23G      "C2'"  "O2'"  PC      120.500    3.000
+ 23G      "C3'"  "O3'"  PC      120.500    3.000
+ 23G      "O3'"  PC     OC2     108.200    3.000
+ 23G      "O3'"  PC     OC1     108.200    3.000
+ 23G      "O3'"  PC     "O2'"   102.600    3.000
+ 23G      OC2    PC     OC1     119.900    3.000
+ 23G      OC2    PC     "O2'"   108.200    3.000
+ 23G      OC1    PC     "O2'"   108.200    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 23G      var_1    OP3    P      "O5'"  "C5'"   -174.962   20.000   1
+ 23G      var_2    P      "O5'"  "C5'"  "C4'"    179.999   20.000   1
+ 23G      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -175.007   20.000   3
+ 23G      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ 23G      var_5    "C4'"  "O4'"  "C1'"  N9      -150.000   20.000   1
+ 23G      var_6    "O4'"  "C1'"  "C2'"  "C3'"      0.000   20.000   3
+ 23G      var_7    "O4'"  "C1'"  N9     C8        22.884   20.000   1
+ 23G      CONST_1  "C1'"  N9     C4     N3         0.000    0.000   0
+ 23G      CONST_2  N9     C4     C5     N7         0.000    0.000   0
+ 23G      CONST_3  N9     C4     N3     C2       180.000    0.000   0
+ 23G      CONST_4  C4     N3     C2     N2       180.000    0.000   0
+ 23G      CONST_5  N3     C2     N2     HN2     -179.958    0.000   0
+ 23G      CONST_6  "C1'"  N9     C8     N7       180.000    0.000   0
+ 23G      CONST_7  N9     C8     N7     C5         0.000    0.000   0
+ 23G      CONST_8  C8     N7     C5     C6       180.000    0.000   0
+ 23G      CONST_9  N7     C5     C6     N1       180.000    0.000   0
+ 23G      CONST_10 C5     C6     N1     C2         0.000    0.000   0
+ 23G      CONST_11 C6     N1     C2     N3         0.000    0.000   0
+ 23G      var_8    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ 23G      var_9    "C4'"  "C3'"  "C2'"  "O2'"    -90.000   20.000   3
+ 23G      var_10   "C3'"  "C2'"  "O2'"  PC       -30.000   20.000   1
+ 23G      var_11   "C3'"  "O3'"  PC     OC1       90.000   20.000   1
+ 23G      var_12   "O3'"  PC     "O2'"  "C2'"     30.000   20.000   1
+ 23G      var_1    "C2'"  "C3'"  "O3'"  PC        60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 23G      chir_01  "C1'"  N9     "C2'"  "O4'"     negativ
+ 23G      chir_02  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ 23G      chir_03  "C3'"  "C2'"  "O3'"  "C4'"     positiv
+ 23G      chir_04  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 23G      plan-1    N1        0.020
+ 23G      plan-1    C2        0.020
+ 23G      plan-1    C6        0.020
+ 23G      plan-1    HN1       0.020
+ 23G      plan-1    N3        0.020
+ 23G      plan-1    N2        0.020
+ 23G      plan-1    C4        0.020
+ 23G      plan-1    C5        0.020
+ 23G      plan-1    N9        0.020
+ 23G      plan-1    N7        0.020
+ 23G      plan-1    C8        0.020
+ 23G      plan-1    O6        0.020
+ 23G      plan-1    H8        0.020
+ 23G      plan-1    "C1'"     0.020
+ 23G      plan-1    HN2A      0.020
+ 23G      plan-1    HN2       0.020
+ 23G      plan-2    N2        0.020
+ 23G      plan-2    C2        0.020
+ 23G      plan-2    HN2       0.020
+ 23G      plan-2    HN2A      0.020
+# ------------------------------------------------------

@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TF4     TF4      "DICHLORO-ACETIC ACID"     NON-POLYMER     7     6     .     
+#
+data_comp_TF4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TF4     C1      C       CH1     0       57.130      44.556      80.916      
+TF4     C       C       C       0       55.597      44.496      80.838      
+TF4     O       O       O       0       55.115      43.522      80.225      
+TF4     CL1     CL      CL      0       57.670      45.099      82.512      
+TF4     CL2     CL      CL      0       57.779      45.618      79.658      
+TF4     O2      O       OC      -1      54.981      45.431      81.390      
+TF4     H1      H       H       0       57.482      43.663      80.769      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TF4       C1        C         SINGLE    n         1.530     0.020     1.530     0.020     
+TF4       C1        CL1       SINGLE    n         1.769     0.019     1.769     0.019     
+TF4       C1        CL2       SINGLE    n         1.769     0.019     1.769     0.019     
+TF4       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+TF4       C         O2        SINGLE    n         1.247     0.019     1.247     0.019     
+TF4       C1        H1        SINGLE    n         1.089     0.010     0.971     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TF4           C          C1         CL1     110.797    1.74
+TF4           C          C1         CL2     110.797    1.74
+TF4           C          C1          H1     108.407    1.50
+TF4         CL1          C1         CL2     110.236    1.50
+TF4         CL1          C1          H1     108.575    3.00
+TF4         CL2          C1          H1     108.575    3.00
+TF4          C1           C           O     116.072    1.93
+TF4          C1           C          O2     116.072    1.93
+TF4           O           C          O2     127.856    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TF4             sp2_sp3_2           O           C          C1         CL1     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TF4    plan-1           C   0.020
+TF4    plan-1          C1   0.020
+TF4    plan-1           O   0.020
+TF4    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TF4 SMILES           ACDLabs              10.04 "ClC(Cl)C(=O)O"
+TF4 SMILES_CANONICAL CACTVS               3.341 "OC(=O)C(Cl)Cl"
+TF4 SMILES           CACTVS               3.341 "OC(=O)C(Cl)Cl"
+TF4 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)(Cl)Cl"
+TF4 SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)(Cl)Cl"
+TF4 InChI            InChI                1.03  "InChI=1S/C2H2Cl2O2/c3-1(4)2(5)6/h1H,(H,5,6)"
+TF4 InChIKey         InChI                1.03  JXTHNDFMNIQAHM-UHFFFAOYSA-N
+TF4 ?                acedrg               202         "dictionary generator"                  
+TF4 ?                acedrg_database      11          "data source"                           
+TF4 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TF4 ?                refmac5              5.8.0189    "optimization tool"                     

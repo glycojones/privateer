@@ -1,0 +1,237 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AZY     AZY      3-AZIDO-L-TYROSINE  peptide    26     16     .     
+#
+data_comp_AZY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AZY     OXT     O       OC      -1      4.279       0.207       -0.431      
+AZY     C       C       C       0       3.704       -0.697      0.208       
+AZY     O       O       O       0       4.226       -1.768      0.577       
+AZY     CA      C       CH1     0       2.230       -0.469      0.569       
+AZY     N       N       NT3     1       2.073       0.863       1.215       
+AZY     CB      C       CH2     0       1.349       -0.578      -0.680      
+AZY     CG      C       CR6     0       -0.136      -0.495      -0.422      
+AZY     CD2     C       CR16    0       -0.891      0.586       -0.885      
+AZY     CD1     C       CR16    0       -0.797      -1.491      0.283       
+AZY     CE1     C       CR16    0       -2.159      -1.428      0.527       
+AZY     CZ      C       CR6     0       -2.911      -0.347      0.064       
+AZY     OH      O       OH1     0       -4.246      -0.316      0.321       
+AZY     CE2     C       CR6     0       -2.270      0.685       -0.652      
+AZY     N1      N       N       0       -3.074      1.784       -1.125      
+AZY     N2      N       N       1       -2.519      2.879       -1.354      
+AZY     N3      N       N       -1      -1.998      3.815       -1.714      
+AZY     HA      H       H       0       1.952       -1.168      1.214       
+AZY     H       H       H       0       2.124       1.520       0.586       
+AZY     H2      H       H       0       2.731       0.989       1.834       
+AZY     H3      H       H       0       1.265       0.910       1.634       
+AZY     HB1     H       H       0       1.543       -1.432      -1.118      
+AZY     HB2     H       H       0       1.604       0.137       -1.299      
+AZY     HD2     H       H       0       -0.462      1.269       -1.364      
+AZY     HD1     H       H       0       -0.307      -2.230      0.605       
+AZY     HE1     H       H       0       -2.584      -2.119      1.010       
+AZY     HOH     H       H       0       -4.407      0.281       0.915       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AZY      N      n/a    CA     START
+ AZY      H      N      .      .
+ AZY      H2     N      .      .
+ AZY      H3     N      .      .
+ AZY      CA     N      C      .
+ AZY      HA     CA     .      .
+ AZY      CB     CA     CG     .
+ AZY      HB1    CB     .      .
+ AZY      HB2    CB     .      .
+ AZY      CG     CB     CD1    .
+ AZY      CD1    CG     CE1    .
+ AZY      HD1    CD1    .      .
+ AZY      CE1    CD1    CZ     .
+ AZY      HE1    CE1    .      .
+ AZY      CZ     CE1    CE2    .
+ AZY      OH     CZ     HOH    .
+ AZY      HOH    OH     .      .
+ AZY      CE2    CZ     N1     .
+ AZY      CD2    CE2    HD2    .
+ AZY      HD2    CD2    .      .
+ AZY      N1     CE2    N2     .
+ AZY      N2     N1     N3     .
+ AZY      N3     N2     .      .
+ AZY      C      CA     .      END
+ AZY      OXT    C      .      .
+ AZY      O      C      .      .
+ AZY      CG     CD2    .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AZY       OXT       C         SINGLE    n         1.247     0.019     1.247     0.019     
+AZY       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+AZY       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+AZY       CA        N         SINGLE    n         1.487     0.010     1.487     0.010     
+AZY       CA        CB        SINGLE    n         1.531     0.010     1.531     0.010     
+AZY       CB        CG        SINGLE    n         1.508     0.010     1.508     0.010     
+AZY       CG        CD1       DOUBLE    y         1.385     0.011     1.385     0.011     
+AZY       CG        CD2       SINGLE    y         1.393     0.010     1.393     0.010     
+AZY       CD2       CE2       DOUBLE    y         1.387     0.015     1.387     0.015     
+AZY       CD1       CE1       SINGLE    y         1.382     0.010     1.382     0.010     
+AZY       CE1       CZ        DOUBLE    y         1.391     0.012     1.391     0.012     
+AZY       CZ        OH        SINGLE    n         1.358     0.015     1.358     0.015     
+AZY       CZ        CE2       SINGLE    y         1.401     0.013     1.401     0.013     
+AZY       CE2       N1        SINGLE    n         1.427     0.020     1.427     0.020     
+AZY       N1        N2        DOUBLE    n         1.244     0.020     1.244     0.020     
+AZY       N2        N3        DOUBLE    n         1.131     0.010     1.131     0.010     
+AZY       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+AZY       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+AZY       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+AZY       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+AZY       CB        HB1       SINGLE    n         1.089     0.010     0.980     0.016     
+AZY       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+AZY       CD2       HD2       SINGLE    n         1.082     0.013     0.939     0.013     
+AZY       CD1       HD1       SINGLE    n         1.082     0.013     0.943     0.017     
+AZY       CE1       HE1       SINGLE    n         1.082     0.013     0.944     0.010     
+AZY       OH        HOH       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AZY         OXT           C           O     125.543    1.50
+AZY         OXT           C          CA     117.229    2.13
+AZY           O           C          CA     117.229    2.13
+AZY           C          CA           N     109.448    1.50
+AZY           C          CA          CB     111.331    2.53
+AZY           C          CA          HA     108.450    1.50
+AZY           N          CA          CB     110.494    1.50
+AZY           N          CA          HA     108.601    1.50
+AZY          CB          CA          HA     108.690    1.50
+AZY          CA           N           H     109.646    1.54
+AZY          CA           N          H2     109.646    1.54
+AZY          CA           N          H3     109.646    1.54
+AZY           H           N          H2     109.028    2.41
+AZY           H           N          H3     109.028    2.41
+AZY          H2           N          H3     109.028    2.41
+AZY          CA          CB          CG     114.745    1.55
+AZY          CA          CB         HB1     108.434    1.50
+AZY          CA          CB         HB2     108.434    1.50
+AZY          CG          CB         HB1     108.862    1.50
+AZY          CG          CB         HB2     108.862    1.50
+AZY         HB1          CB         HB2     107.782    1.50
+AZY          CB          CG         CD1     121.130    1.50
+AZY          CB          CG         CD2     120.971    1.50
+AZY         CD1          CG         CD2     117.899    1.50
+AZY          CG         CD2         CE2     121.943    1.50
+AZY          CG         CD2         HD2     119.416    1.50
+AZY         CE2         CD2         HD2     118.641    1.50
+AZY          CG         CD1         CE1     121.924    1.50
+AZY          CG         CD1         HD1     119.092    1.50
+AZY         CE1         CD1         HD1     118.985    1.50
+AZY         CD1         CE1          CZ     120.407    1.50
+AZY         CD1         CE1         HE1     120.030    1.50
+AZY          CZ         CE1         HE1     119.564    1.50
+AZY         CE1          CZ          OH     119.738    3.00
+AZY         CE1          CZ         CE2     118.875    1.50
+AZY          OH          CZ         CE2     121.387    1.50
+AZY          CZ          OH         HOH     109.343    2.75
+AZY         CD2         CE2          CZ     118.953    1.50
+AZY         CD2         CE2          N1     120.634    3.00
+AZY          CZ         CE2          N1     120.414    3.00
+AZY         CE2          N1          N2     116.795    1.72
+AZY          N1          N2          N3     171.801    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AZY              const_16          N1         CE2          CZ          OH       0.000   10.00     2
+AZY             sp2_sp2_1         CD2         CE2          N1          N2     180.000   10.00     2
+AZY             sp2_sp2_3         CE2          N1          N2          N3     180.000   10.00     2
+AZY             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+AZY             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+AZY            sp3_sp3_10           C          CA          CB          CG     180.000   10.00     3
+AZY             sp2_sp3_8         CD1          CG          CB          CA     -90.000   10.00     6
+AZY              const_22         CE2         CD2          CG          CB     180.000   10.00     2
+AZY       const_sp2_sp2_2         CE1         CD1          CG          CB     180.000   10.00     2
+AZY              const_18          CG         CD2         CE2          N1     180.000   10.00     2
+AZY       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+AZY              const_10         CD1         CE1          CZ          OH     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+AZY    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AZY    plan-1          CB   0.020
+AZY    plan-1         CD1   0.020
+AZY    plan-1         CD2   0.020
+AZY    plan-1         CE1   0.020
+AZY    plan-1         CE2   0.020
+AZY    plan-1          CG   0.020
+AZY    plan-1          CZ   0.020
+AZY    plan-1         HD1   0.020
+AZY    plan-1         HD2   0.020
+AZY    plan-1         HE1   0.020
+AZY    plan-1          N1   0.020
+AZY    plan-1          OH   0.020
+AZY    plan-2           C   0.020
+AZY    plan-2          CA   0.020
+AZY    plan-2           O   0.020
+AZY    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AZY SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc1ccc(O)c(\N=[N+]=[N-])c1"
+AZY SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1ccc(O)c(c1)N=[N+]=[N-])C(O)=O"
+AZY SMILES           CACTVS               3.341 "N[CH](Cc1ccc(O)c(c1)N=[N+]=[N-])C(O)=O"
+AZY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1C[C@@H](C(=O)O)N)N=[N+]=[N-])O"
+AZY SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1CC(C(=O)O)N)N=[N+]=[N-])O"
+AZY InChI            InChI                1.03  "InChI=1S/C9H10N4O3/c10-6(9(15)16)3-5-1-2-8(14)7(4-5)12-13-11/h1-2,4,6,14H,3,10H2,(H,15,16)/t6-/m0/s1"
+AZY InChIKey         InChI                1.03  VGCRDUSYLLNJSS-LURJTMIESA-N
+AZY ?                acedrg               202         "dictionary generator"                  
+AZY ?                acedrg_database      11          "data source"                           
+AZY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AZY ?                refmac5              5.8.0222    "optimization tool"                     

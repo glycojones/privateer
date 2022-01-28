@@ -1,0 +1,314 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+6MZ      6MZ 'N6-METHYLADENOSINE-5'-MONOPHOSPHATE ' non-polymer        38  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_6MZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 6MZ           O3P    O    OP       -0.666      0.000    0.000    0.000
+ 6MZ           P      P    P         0.000     -0.502    0.926   -1.086
+ 6MZ           O1P    O    OP       -0.666     -0.670    0.007   -2.276
+ 6MZ           O2P    O    OP       -0.666      0.355    2.149   -1.328
+ 6MZ           "O5'"  O    O2        0.000     -2.022    1.236   -0.623
+ 6MZ           "C5'"  C    CH2       0.000     -2.890    0.145   -0.375
+ 6MZ           "H5'1" H    H         0.000     -2.484   -0.477    0.426
+ 6MZ           "H5'2" H    H         0.000     -2.999   -0.456   -1.281
+ 6MZ           "C4'"  C    CH1       0.000     -4.246    0.686    0.041
+ 6MZ           "H4'"  H    H         0.000     -4.128    1.319    0.931
+ 6MZ           "C3'"  C    CH1       0.000     -5.270   -0.400    0.325
+ 6MZ           "H3'"  H    H         0.000     -5.180   -1.196   -0.427
+ 6MZ           "O3'"  O    OH1       0.000     -5.119   -0.949    1.616
+ 6MZ           HB     H    H         0.000     -4.183   -0.955    1.852
+ 6MZ           "C2'"  C    CH1       0.000     -6.582    0.337    0.130
+ 6MZ           "H2'"  H    H         0.000     -7.377   -0.349   -0.194
+ 6MZ           "O2'"  O    OH1       0.000     -6.961    1.039    1.313
+ 6MZ           HA     H    H         0.000     -7.681    1.649    1.107
+ 6MZ           "C1'"  C    CH1       0.000     -6.246    1.346   -0.969
+ 6MZ           "H1'"  H    H         0.000     -6.668    2.322   -0.691
+ 6MZ           "O4'"  O    O2        0.000     -4.808    1.465   -1.028
+ 6MZ           N9     N    NR5       0.000     -6.758    0.971   -2.288
+ 6MZ           C4     C    CR56      0.000     -7.946    1.353   -2.847
+ 6MZ           N3     N    NRD6      0.000     -8.885    2.145   -2.308
+ 6MZ           C8     C    CR15      0.000     -6.128    0.164   -3.200
+ 6MZ           H8     H    H         0.000     -5.161   -0.293   -3.035
+ 6MZ           N7     N    NRD5      0.000     -6.836    0.008   -4.298
+ 6MZ           C5     C    CR56      0.000     -7.974    0.746   -4.091
+ 6MZ           C6     C    CR6       0.000     -9.098    0.978   -4.879
+ 6MZ           N6     N    NH1       0.000     -9.211    0.402   -6.156
+ 6MZ           H6     H    H         0.000     -8.458   -0.183   -6.489
+ 6MZ           C9     C    CH3       0.000    -10.345    0.605   -7.008
+ 6MZ           H9     H    H         0.000    -10.075    0.385   -8.006
+ 6MZ           H9C2   H    H         0.000    -11.130   -0.034   -6.702
+ 6MZ           H9C1   H    H         0.000    -10.658    1.613   -6.937
+ 6MZ           N1     N    NRD6      0.000    -10.088    1.769   -4.398
+ 6MZ           C2     C    CR16      0.000     -9.921    2.296   -3.161
+ 6MZ           H2     H    H         0.000    -10.730    2.923   -2.808
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 6MZ      O3P    n/a    P      START
+ 6MZ      P      O3P    "O5'"  .
+ 6MZ      O1P    P      .      .
+ 6MZ      O2P    P      .      .
+ 6MZ      "O5'"  P      "C5'"  .
+ 6MZ      "C5'"  "O5'"  "C4'"  .
+ 6MZ      "H5'1" "C5'"  .      .
+ 6MZ      "H5'2" "C5'"  .      .
+ 6MZ      "C4'"  "C5'"  "C3'"  .
+ 6MZ      "H4'"  "C4'"  .      .
+ 6MZ      "C3'"  "C4'"  "C2'"  .
+ 6MZ      "H3'"  "C3'"  .      .
+ 6MZ      "O3'"  "C3'"  HB     .
+ 6MZ      HB     "O3'"  .      .
+ 6MZ      "C2'"  "C3'"  "C1'"  .
+ 6MZ      "H2'"  "C2'"  .      .
+ 6MZ      "O2'"  "C2'"  HA     .
+ 6MZ      HA     "O2'"  .      .
+ 6MZ      "C1'"  "C2'"  N9     .
+ 6MZ      "H1'"  "C1'"  .      .
+ 6MZ      "O4'"  "C1'"  .      .
+ 6MZ      N9     "C1'"  C8     .
+ 6MZ      C4     N9     N3     .
+ 6MZ      N3     C4     .      .
+ 6MZ      C8     N9     N7     .
+ 6MZ      H8     C8     .      .
+ 6MZ      N7     C8     C5     .
+ 6MZ      C5     N7     C6     .
+ 6MZ      C6     C5     N1     .
+ 6MZ      N6     C6     C9     .
+ 6MZ      H6     N6     .      .
+ 6MZ      C9     N6     H9C1   .
+ 6MZ      H9     C9     .      .
+ 6MZ      H9C2   C9     .      .
+ 6MZ      H9C1   C9     .      .
+ 6MZ      N1     C6     C2     .
+ 6MZ      C2     N1     H2     .
+ 6MZ      H2     C2     .      END
+ 6MZ      C2     N3     .    ADD
+ 6MZ      C4     C5     .    ADD
+ 6MZ      "C4'"  "O4'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+6MZ       C4        C5        single    1.490     0.020     1.490     0.020     
+6MZ       C4        N9        single    1.337     0.020     1.337     0.020     
+6MZ       C2        N3        single    1.337     0.020     1.337     0.020     
+6MZ       N3        C4        double    1.355     0.020     1.355     0.020     
+6MZ       C2        N1        double    1.337     0.020     1.337     0.020     
+6MZ       C6        C5        double    1.490     0.020     1.490     0.020     
+6MZ       N1        C6        single    1.350     0.020     1.350     0.020     
+6MZ       N6        C6        single    1.350     0.020     1.350     0.020     
+6MZ       C9        N6        single    1.450     0.020     1.450     0.020     
+6MZ       C5        N7        single    1.350     0.020     1.350     0.020     
+6MZ       C8        N9        single    1.337     0.020     1.337     0.020     
+6MZ       N7        C8        double    1.350     0.020     1.350     0.020     
+6MZ       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+6MZ       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+6MZ       H9C1      C9        single    1.089     0.010     0.989     0.005     
+6MZ       H9C2      C9        single    1.089     0.010     0.989     0.005     
+6MZ       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+6MZ       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+6MZ       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+6MZ       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+6MZ       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+6MZ       HA        "O2'"     single    0.970     0.012     0.839     0.014     
+6MZ       HB        "O3'"     single    0.970     0.012     0.839     0.014     
+6MZ       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+6MZ       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+6MZ       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+6MZ       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+6MZ       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+6MZ       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+6MZ       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+6MZ       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+6MZ       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+6MZ       O1P       P         deloc     1.510     0.020     1.510     0.020     
+6MZ       O2P       P         deloc     1.510     0.020     1.510     0.020     
+6MZ       "O5'"     P         single    1.610     0.020     1.610     0.020     
+6MZ       P         O3P       deloc     1.510     0.020     1.510     0.020     
+6MZ       H2        C2        single    1.082     0.013     0.975     0.010     
+6MZ       H8        C8        single    1.082     0.013     0.975     0.010     
+6MZ       H6        N6        single    1.016     0.010     0.899     0.007     
+6MZ       H9        C9        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 6MZ      O3P    P      O1P     119.900    3.000
+ 6MZ      O3P    P      O2P     119.900    3.000
+ 6MZ      O3P    P      "O5'"   108.200    3.000
+ 6MZ      O1P    P      O2P     119.900    3.000
+ 6MZ      O1P    P      "O5'"   108.200    3.000
+ 6MZ      O2P    P      "O5'"   108.200    3.000
+ 6MZ      P      "O5'"  "C5'"   120.500    3.000
+ 6MZ      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ 6MZ      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ 6MZ      "O5'"  "C5'"  "C4'"   109.470    3.000
+ 6MZ      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ 6MZ      "H5'1" "C5'"  "C4'"   109.470    3.000
+ 6MZ      "H5'2" "C5'"  "C4'"   109.470    3.000
+ 6MZ      "C5'"  "C4'"  "H4'"   108.340    3.000
+ 6MZ      "C5'"  "C4'"  "C3'"   111.000    3.000
+ 6MZ      "C5'"  "C4'"  "O4'"   109.470    3.000
+ 6MZ      "H4'"  "C4'"  "C3'"   108.340    3.000
+ 6MZ      "H4'"  "C4'"  "O4'"   109.470    3.000
+ 6MZ      "C3'"  "C4'"  "O4'"   109.470    3.000
+ 6MZ      "C4'"  "C3'"  "H3'"   108.340    3.000
+ 6MZ      "C4'"  "C3'"  "O3'"   109.470    3.000
+ 6MZ      "C4'"  "C3'"  "C2'"   111.000    3.000
+ 6MZ      "H3'"  "C3'"  "O3'"   109.470    3.000
+ 6MZ      "H3'"  "C3'"  "C2'"   108.340    3.000
+ 6MZ      "O3'"  "C3'"  "C2'"   109.470    3.000
+ 6MZ      "C3'"  "O3'"  HB      109.470    3.000
+ 6MZ      "C3'"  "C2'"  "H2'"   108.340    3.000
+ 6MZ      "C3'"  "C2'"  "O2'"   109.470    3.000
+ 6MZ      "C3'"  "C2'"  "C1'"   111.000    3.000
+ 6MZ      "H2'"  "C2'"  "O2'"   109.470    3.000
+ 6MZ      "H2'"  "C2'"  "C1'"   108.340    3.000
+ 6MZ      "O2'"  "C2'"  "C1'"   109.470    3.000
+ 6MZ      "C2'"  "O2'"  HA      109.470    3.000
+ 6MZ      "C2'"  "C1'"  "H1'"   108.340    3.000
+ 6MZ      "C2'"  "C1'"  "O4'"   109.470    3.000
+ 6MZ      "C2'"  "C1'"  N9      109.470    3.000
+ 6MZ      "H1'"  "C1'"  "O4'"   109.470    3.000
+ 6MZ      "H1'"  "C1'"  N9      109.470    3.000
+ 6MZ      "O4'"  "C1'"  N9      109.470    3.000
+ 6MZ      "C1'"  "O4'"  "C4'"   111.800    3.000
+ 6MZ      "C1'"  N9     C4      126.000    3.000
+ 6MZ      "C1'"  N9     C8      126.000    3.000
+ 6MZ      C4     N9     C8      108.000    3.000
+ 6MZ      N9     C4     N3      132.000    3.000
+ 6MZ      N9     C4     C5      108.000    3.000
+ 6MZ      N3     C4     C5      120.000    3.000
+ 6MZ      C4     N3     C2      120.000    3.000
+ 6MZ      N9     C8     H8      126.000    3.000
+ 6MZ      N9     C8     N7      108.000    3.000
+ 6MZ      H8     C8     N7      126.000    3.000
+ 6MZ      C8     N7     C5      108.000    3.000
+ 6MZ      N7     C5     C6      132.000    3.000
+ 6MZ      N7     C5     C4      108.000    3.000
+ 6MZ      C6     C5     C4      120.000    3.000
+ 6MZ      C5     C6     N6      120.000    3.000
+ 6MZ      C5     C6     N1      120.000    3.000
+ 6MZ      N6     C6     N1      120.000    3.000
+ 6MZ      C6     N6     H6      120.000    3.000
+ 6MZ      C6     N6     C9      120.000    3.000
+ 6MZ      H6     N6     C9      118.500    3.000
+ 6MZ      N6     C9     H9      109.470    3.000
+ 6MZ      N6     C9     H9C2    109.470    3.000
+ 6MZ      N6     C9     H9C1    109.470    3.000
+ 6MZ      H9     C9     H9C2    109.470    3.000
+ 6MZ      H9     C9     H9C1    109.470    3.000
+ 6MZ      H9C2   C9     H9C1    109.470    3.000
+ 6MZ      C6     N1     C2      120.000    3.000
+ 6MZ      N1     C2     H2      120.000    3.000
+ 6MZ      N1     C2     N3      120.000    3.000
+ 6MZ      H2     C2     N3      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 6MZ      var_1    O3P    P      "O5'"  "C5'"    -54.200   20.000   1
+ 6MZ      var_2    P      "O5'"  "C5'"  "C4'"   -179.979   20.000   1
+ 6MZ      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.549   20.000   3
+ 6MZ      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ 6MZ      var_5    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ 6MZ      var_6    "C4'"  "C3'"  "O3'"  HB       -33.671   20.000   1
+ 6MZ      var_7    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ 6MZ      var_8    "C3'"  "C2'"  "O2'"  HA       167.522   20.000   1
+ 6MZ      var_9    "C3'"  "C2'"  "C1'"  N9        90.000   20.000   3
+ 6MZ      var_10   "C2'"  "C1'"  "O4'"  "C4'"      0.000   20.000   1
+ 6MZ      var_11   "C2'"  "C1'"  N9     C8       -86.378   20.000   1
+ 6MZ      CONST_1  "C1'"  N9     C4     N3         0.000    0.000   0
+ 6MZ      CONST_2  N9     C4     C5     N7         0.000    0.000   0
+ 6MZ      CONST_3  N9     C4     N3     C2       180.000    0.000   0
+ 6MZ      CONST_4  "C1'"  N9     C8     N7       180.000    0.000   0
+ 6MZ      CONST_5  N9     C8     N7     C5         0.000    0.000   0
+ 6MZ      CONST_6  C8     N7     C5     C6       180.000    0.000   0
+ 6MZ      CONST_7  N7     C5     C6     N1       180.000    0.000   0
+ 6MZ      var_12   C5     C6     N6     C9       179.941   20.000   1
+ 6MZ      var_13   C6     N6     C9     H9C1      39.872   20.000   1
+ 6MZ      CONST_8  C5     C6     N1     C2         0.000    0.000   0
+ 6MZ      CONST_9  C6     N1     C2     N3         0.000    0.000   0
+ 6MZ      CONST_10 N1     C2     N3     C4         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 6MZ      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ 6MZ      chir_02  "C1'"  N9     "O4'"  "C2'"     positiv
+ 6MZ      chir_03  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ 6MZ      chir_04  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 6MZ      plan-1    C2        0.020
+ 6MZ      plan-1    N3        0.020
+ 6MZ      plan-1    N1        0.020
+ 6MZ      plan-1    H2        0.020
+ 6MZ      plan-1    C6        0.020
+ 6MZ      plan-1    C4        0.020
+ 6MZ      plan-1    C5        0.020
+ 6MZ      plan-1    N6        0.020
+ 6MZ      plan-1    N9        0.020
+ 6MZ      plan-1    N7        0.020
+ 6MZ      plan-1    C8        0.020
+ 6MZ      plan-1    "C1'"     0.020
+ 6MZ      plan-1    H8        0.020
+ 6MZ      plan-1    H6        0.020
+ 6MZ      plan-2    N6        0.020
+ 6MZ      plan-2    C6        0.020
+ 6MZ      plan-2    C9        0.020
+ 6MZ      plan-2    H6        0.020
+# ------------------------------------------------------

@@ -1,0 +1,200 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+H5M     H5M     TRANS-3-HYDROXY-5-METHYLPROLINE     P-peptide     20     10     .
+#
+data_comp_H5M
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+H5M     N       N       NT1     0       -0.047      0.484       1.121
+H5M     CA      C       CH1     0       1.231       -0.111      0.697
+H5M     C       C       C       0       2.226       0.976       0.263
+H5M     O       O       O       0       3.319       0.978       0.802
+H5M     OXT     O       OC      -1      1.849       1.760       -0.590
+H5M     CB      C       CH1     0       0.838       -1.054      -0.445
+H5M     CG      C       CH2     0       -0.455      -0.470      -1.001
+H5M     CD      C       CH1     0       -1.163      0.065       0.252
+H5M     OB      O       OH1     0       0.644       -2.359      0.077
+H5M     CD1     C       CH3     0       -2.135      1.205       -0.017
+H5M     H       H       H       0       -0.214      0.251       1.965
+H5M     HA      H       H       0       1.610       -0.637      1.446
+H5M     HB      H       H       0       1.538       -1.065      -1.146
+H5M     HG2     H       H       0       -0.997      -1.167      -1.444
+H5M     HG3     H       H       0       -0.267      0.258       -1.642
+H5M     HD      H       H       0       -1.650      -0.674      0.695
+H5M     HOB     H       H       0       0.561       -2.912      -0.562
+H5M     HD11    H       H       0       -2.292      1.284       -0.972
+H5M     HD12    H       H       0       -1.761      2.037       0.317
+H5M     HD13    H       H       0       -2.976      1.025       0.433
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+H5M      N      n/a    CD     START
+H5M      H      N      .      .
+H5M      CD     N      CG     .
+H5M      HD     CD     .      .
+H5M      CD1    CD     HD11   .
+H5M      HD13   CD1    .      .
+H5M      HD12   CD1    .      .
+H5M      HD11   CD1    .      .
+H5M      CG     CD     CB     .
+H5M      HG2    CG     .      .
+H5M      HG3    CG     .      .
+H5M      CB     CG     CA     .
+H5M      HB     CB     .      .
+H5M      OB     CB     HOB    .
+H5M      HOB    OB     .      .
+H5M      CA     CB     C      .
+H5M      HA     CA     .      .
+H5M      C      CA     .      END
+H5M      O      C      .      .
+H5M      OXT    C      .      .
+H5M      N      CA     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+H5M       N         CA        SINGLE    n         1.468     0.015     1.468     0.015     
+H5M       N         CD        SINGLE    n         1.475     0.010     1.475     0.010     
+H5M       CA        C         SINGLE    n         1.536     0.010     1.536     0.010     
+H5M       CA        CB        SINGLE    n         1.528     0.016     1.528     0.016     
+H5M       C         O         DOUBLE    n         1.218     0.020     1.218     0.020     
+H5M       C         OXT       SINGLE    n         1.218     0.020     1.218     0.020     
+H5M       CB        CG        SINGLE    n         1.526     0.011     1.526     0.011     
+H5M       CB        OB        SINGLE    n         1.418     0.010     1.418     0.010     
+H5M       CG        CD        SINGLE    n         1.535     0.012     1.535     0.012     
+H5M       CD        CD1       SINGLE    n         1.520     0.010     1.520     0.010     
+H5M       N         H         SINGLE    n         1.036     0.016     0.890     0.020     
+H5M       CA        HA        SINGLE    n         1.089     0.010     0.990     0.012     
+H5M       CB        HB        SINGLE    n         1.089     0.010     0.990     0.011     
+H5M       CG        HG2       SINGLE    n         1.089     0.010     0.988     0.010     
+H5M       CG        HG3       SINGLE    n         1.089     0.010     0.988     0.010     
+H5M       CD        HD        SINGLE    n         1.089     0.010     0.990     0.014     
+H5M       OB        HOB       SINGLE    n         0.970     0.012     0.849     0.020     
+H5M       CD1       HD11      SINGLE    n         1.089     0.010     0.971     0.017     
+H5M       CD1       HD12      SINGLE    n         1.089     0.010     0.971     0.017     
+H5M       CD1       HD13      SINGLE    n         1.089     0.010     0.971     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+H5M          CA           N          CD     109.056    3.00
+H5M          CA           N           H     109.307    3.00
+H5M          CD           N           H     110.078    2.70
+H5M           N          CA           C     111.420    2.45
+H5M           N          CA          CB     103.104    2.01
+H5M           N          CA          HA     109.296    1.50
+H5M           C          CA          CB     112.424    2.46
+H5M           C          CA          HA     110.011    1.50
+H5M          CB          CA          HA     109.475    1.50
+H5M          CA           C           O     117.013    1.95
+H5M          CA           C         OXT     117.013    1.95
+H5M           O           C         OXT     125.975    1.50
+H5M          CA          CB          CG     104.443    2.26
+H5M          CA          CB          OB     108.501    1.50
+H5M          CA          CB          HB     110.061    1.50
+H5M          CG          CB          OB     111.292    2.16
+H5M          CG          CB          HB     109.867    1.50
+H5M          OB          CB          HB     109.908    1.74
+H5M          CB          CG          CD     103.659    1.76
+H5M          CB          CG         HG2     110.757    1.50
+H5M          CB          CG         HG3     110.757    1.50
+H5M          CD          CG         HG2     110.817    1.50
+H5M          CD          CG         HG3     110.817    1.50
+H5M         HG2          CG         HG3     109.113    1.50
+H5M           N          CD          CG     103.453    1.87
+H5M           N          CD         CD1     111.633    2.37
+H5M           N          CD          HD     108.836    1.79
+H5M          CG          CD         CD1     113.917    1.50
+H5M          CG          CD          HD     109.529    1.50
+H5M         CD1          CD          HD     109.109    1.50
+H5M          CB          OB         HOB     109.603    3.00
+H5M          CD         CD1        HD11     109.448    1.50
+H5M          CD         CD1        HD12     109.448    1.50
+H5M          CD         CD1        HD13     109.448    1.50
+H5M        HD11         CD1        HD12     109.421    1.50
+H5M        HD11         CD1        HD13     109.421    1.50
+H5M        HD12         CD1        HD13     109.421    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+H5M             sp3_sp3_3           C          CA           N          CD     -60.000   10.00     3
+H5M            sp3_sp3_36         CD1          CD           N          CA      60.000   10.00     3
+H5M             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+H5M            sp3_sp3_11           C          CA          CB          OB     -60.000   10.00     3
+H5M            sp3_sp3_19          OB          CB          CG          CD     -60.000   10.00     3
+H5M            sp3_sp3_40          CA          CB          OB         HOB     180.000   10.00     3
+H5M            sp3_sp3_28         CD1          CD          CG          CB     180.000   10.00     3
+H5M            sp3_sp3_43           N          CD         CD1        HD11     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+H5M    chir_1    N    CA    CD    H    negative
+H5M    chir_2    CA    N    C    CB    positive
+H5M    chir_3    CB    OB    CA    CG    positive
+H5M    chir_4    CD    N    CG    CD1    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+H5M    plan-1           C   0.020
+H5M    plan-1          CA   0.020
+H5M    plan-1           O   0.020
+H5M    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+H5M SMILES           ACDLabs              10.04 "O=C(O)C1NC(C)CC1O"
+H5M SMILES_CANONICAL CACTVS               3.341 "C[C@H]1C[C@H](O)[C@H](N1)C(O)=O"
+H5M SMILES           CACTVS               3.341 "C[CH]1C[CH](O)[CH](N1)C(O)=O"
+H5M SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[C@H]1C[C@@H]([C@H](N1)C(=O)O)O"
+H5M SMILES           "OpenEye OEToolkits" 1.5.0 "CC1CC(C(N1)C(=O)O)O"
+H5M InChI            InChI                1.03  "InChI=1S/C6H11NO3/c1-3-2-4(8)5(7-3)6(9)10/h3-5,7-8H,2H2,1H3,(H,9,10)/t3-,4-,5-/m0/s1"
+H5M InChIKey         InChI                1.03  RVIGBNHLNBRMFX-YUPRTTJUSA-N
+H5M ?                acedrg               196         "dictionary generator"
+H5M ?                acedrg_database      11          "data source"
+H5M ?                rdkit                2017.03.2   "Chemoinformatics tool"
+H5M ?                refmac5              5.8.0222    "optimization tool"

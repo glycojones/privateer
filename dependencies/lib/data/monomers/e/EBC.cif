@@ -1,0 +1,174 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EBC     EBC      "N,N'-ethane-1,2-diylbis(2-iodoacetamide)"     NON-POLYMER     22     12     .     
+#
+data_comp_EBC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+EBC     O10     O       O       0       17.878      -40.685     -34.578     
+EBC     C2      C       C       0       17.658      -41.732     -33.968     
+EBC     C1      C       CH2     0       17.146      -41.658     -32.546     
+EBC     N3      N       NH1     0       17.857      -42.953     -34.473     
+EBC     C4      C       CH2     0       18.377      -43.242     -35.807     
+EBC     C5      C       CH2     0       19.873      -43.487     -35.789     
+EBC     N6      N       NH1     0       20.606      -42.333     -35.275     
+EBC     C7      C       C       0       21.080      -42.205     -34.031     
+EBC     O9      O       O       0       20.993      -43.071     -33.161     
+EBC     C8      C       CH2     0       21.756      -40.892     -33.698     
+EBC     I2      I       I       0       15.040      -42.068     -32.515     
+EBC     I       I       I       0       23.656      -40.785     -34.691     
+EBC     H1      H       H       0       17.317      -40.768     -32.182     
+EBC     H3      H       H       0       17.620      -42.309     -31.993     
+EBC     H4      H       H       0       17.659      -43.643     -33.974     
+EBC     H5      H       H       0       18.176      -42.502     -36.415     
+EBC     H6      H       H       0       17.928      -44.040     -36.155     
+EBC     H7      H       H       0       20.175      -43.673     -36.701     
+EBC     H8      H       H       0       20.065      -44.280     -35.248     
+EBC     H9      H       H       0       20.742      -41.677     -35.836     
+EBC     H10     H       H       0       21.882      -40.823     -32.731     
+EBC     H12     H       H       0       21.189      -40.150     -33.984     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EBC       C4        C5        SINGLE    n         1.513     0.018     1.513     0.018     
+EBC       C5        N6        SINGLE    n         1.456     0.010     1.456     0.010     
+EBC       N3        C4        SINGLE    n         1.456     0.010     1.456     0.010     
+EBC       N6        C7        SINGLE    n         1.330     0.010     1.330     0.010     
+EBC       C7        C8        SINGLE    n         1.507     0.020     1.507     0.020     
+EBC       C2        N3        SINGLE    n         1.330     0.010     1.330     0.010     
+EBC       C7        O9        DOUBLE    n         1.229     0.012     1.229     0.012     
+EBC       O10       C2        DOUBLE    n         1.229     0.012     1.229     0.012     
+EBC       C2        C1        SINGLE    n         1.507     0.020     1.507     0.020     
+EBC       C1        I2        SINGLE    n         2.146     0.018     2.146     0.018     
+EBC       C8        I         SINGLE    n         2.146     0.018     2.146     0.018     
+EBC       C1        H1        SINGLE    n         1.089     0.010     0.977     0.010     
+EBC       C1        H3        SINGLE    n         1.089     0.010     0.977     0.010     
+EBC       N3        H4        SINGLE    n         1.016     0.010     0.872     0.020     
+EBC       C4        H5        SINGLE    n         1.089     0.010     0.979     0.015     
+EBC       C4        H6        SINGLE    n         1.089     0.010     0.979     0.015     
+EBC       C5        H7        SINGLE    n         1.089     0.010     0.979     0.015     
+EBC       C5        H8        SINGLE    n         1.089     0.010     0.979     0.015     
+EBC       N6        H9        SINGLE    n         1.016     0.010     0.872     0.020     
+EBC       C8        H10       SINGLE    n         1.089     0.010     0.977     0.010     
+EBC       C8        H12       SINGLE    n         1.089     0.010     0.977     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+EBC          N3          C2         O10     123.146    1.50
+EBC          N3          C2          C1     116.220    1.61
+EBC         O10          C2          C1     120.634    2.48
+EBC          C2          C1          I2     109.633    2.57
+EBC          C2          C1          H1     109.553    1.50
+EBC          C2          C1          H3     109.553    1.50
+EBC          I2          C1          H1     109.886    1.50
+EBC          I2          C1          H3     109.886    1.50
+EBC          H1          C1          H3     108.137    1.50
+EBC          C4          N3          C2     122.917    1.80
+EBC          C4          N3          H4     118.446    2.02
+EBC          C2          N3          H4     118.637    1.94
+EBC          C5          C4          N3     111.385    1.50
+EBC          C5          C4          H5     109.342    1.50
+EBC          C5          C4          H6     109.342    1.50
+EBC          N3          C4          H5     109.265    1.50
+EBC          N3          C4          H6     109.265    1.50
+EBC          H5          C4          H6     107.909    1.50
+EBC          C4          C5          N6     111.385    1.50
+EBC          C4          C5          H7     109.342    1.50
+EBC          C4          C5          H8     109.342    1.50
+EBC          N6          C5          H7     109.265    1.50
+EBC          N6          C5          H8     109.265    1.50
+EBC          H7          C5          H8     107.909    1.50
+EBC          C5          N6          C7     122.917    1.80
+EBC          C5          N6          H9     118.446    2.02
+EBC          C7          N6          H9     118.637    1.94
+EBC          N6          C7          C8     116.220    1.61
+EBC          N6          C7          O9     123.146    1.50
+EBC          C8          C7          O9     120.634    2.48
+EBC          C7          C8           I     109.633    2.57
+EBC          C7          C8         H10     109.553    1.50
+EBC          C7          C8         H12     109.553    1.50
+EBC           I          C8         H10     109.886    1.50
+EBC           I          C8         H12     109.886    1.50
+EBC         H10          C8         H12     108.137    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+EBC            sp2_sp3_20          N3          C2          C1          I2     120.000   10.00     6
+EBC             sp2_sp2_7         O10          C2          N3          C4       0.000   10.00     2
+EBC             sp2_sp3_8          C2          N3          C4          C5     120.000   10.00     6
+EBC             sp3_sp3_1          N3          C4          C5          N6     180.000   10.00     3
+EBC             sp2_sp3_2          C7          N6          C5          C4     120.000   10.00     6
+EBC             sp2_sp2_1          C8          C7          N6          C5     180.000   10.00     2
+EBC            sp2_sp3_14          N6          C7          C8           I     120.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+EBC    plan-1          C1   0.020
+EBC    plan-1          C2   0.020
+EBC    plan-1          N3   0.020
+EBC    plan-1         O10   0.020
+EBC    plan-2          C2   0.020
+EBC    plan-2          C4   0.020
+EBC    plan-2          H4   0.020
+EBC    plan-2          N3   0.020
+EBC    plan-3          C5   0.020
+EBC    plan-3          C7   0.020
+EBC    plan-3          H9   0.020
+EBC    plan-3          N6   0.020
+EBC    plan-4          C7   0.020
+EBC    plan-4          C8   0.020
+EBC    plan-4          N6   0.020
+EBC    plan-4          O9   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+EBC SMILES           ACDLabs              12.01 "O=C(NCCNC(=O)CI)CI"
+EBC InChI            InChI                1.03  "InChI=1S/C6H10I2N2O2/c7-3-5(11)9-1-2-10-6(12)4-8/h1-4H2,(H,9,11)(H,10,12)"
+EBC InChIKey         InChI                1.03  RLFPCLMBTQOMLI-UHFFFAOYSA-N
+EBC SMILES_CANONICAL CACTVS               3.370 "ICC(=O)NCCNC(=O)CI"
+EBC SMILES           CACTVS               3.370 "ICC(=O)NCCNC(=O)CI"
+EBC SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C(CNC(=O)CI)NC(=O)CI"
+EBC SMILES           "OpenEye OEToolkits" 1.7.6 "C(CNC(=O)CI)NC(=O)CI"
+EBC ?                acedrg               202         "dictionary generator"                  
+EBC ?                acedrg_database      11          "data source"                           
+EBC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+EBC ?                refmac5              5.8.0189    "optimization tool"                     

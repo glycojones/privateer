@@ -1,0 +1,273 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NAM      NAM 'NAM NAPTHYLAMINOALANINE             ' non-polymer        30  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NAM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NAM           O      O    O         0.000      0.000    0.000    0.000
+ NAM           C      C    C         0.000     -1.093    0.189    0.487
+ NAM           NXT    N    NH2       0.000     -1.257    0.123    1.823
+ NAM           HNX2   H    H         0.000     -2.169    0.280    2.235
+ NAM           HNX1   H    H         0.000     -0.469   -0.085    2.425
+ NAM           CA     C    CH1       0.000     -2.270    0.500   -0.401
+ NAM           HA     H    H         0.000     -2.981    1.137    0.144
+ NAM           N      N    NH2       0.000     -1.804    1.203   -1.604
+ NAM           H2     H    H         0.000     -0.835    1.487   -1.687
+ NAM           H      H    H         0.000     -2.448    1.407   -2.359
+ NAM           CB     C    CH2       0.000     -2.961   -0.803   -0.807
+ NAM           HB2    H    H         0.000     -3.307   -1.326    0.087
+ NAM           HB3    H    H         0.000     -2.254   -1.437   -1.346
+ NAM           CG     C    CR6       0.000     -4.137   -0.493   -1.695
+ NAM           CD2    C    CR66      0.000     -5.407   -0.277   -1.135
+ NAM           CZ2    C    CR16      0.000     -5.611   -0.333    0.255
+ NAM           HZ2    H    H         0.000     -4.782   -0.549    0.918
+ NAM           CH2    C    CR16      0.000     -6.854   -0.114    0.762
+ NAM           HH2    H    H         0.000     -7.009   -0.160    1.833
+ NAM           CP     C    CR16      0.000     -7.932    0.170   -0.075
+ NAM           HP     H    H         0.000     -8.911    0.339    0.354
+ NAM           CH1    C    CR16      0.000     -7.770    0.239   -1.425
+ NAM           HH1    H    H         0.000     -8.616    0.463   -2.064
+ NAM           CE2    C    CR66      0.000     -6.502    0.017   -1.985
+ NAM           CZ1    C    CR16      0.000     -6.297    0.079   -3.374
+ NAM           HZ1    H    H         0.000     -7.125    0.299   -4.037
+ NAM           CE1    C    CR16      0.000     -5.054   -0.140   -3.882
+ NAM           HE1    H    H         0.000     -4.899   -0.090   -4.952
+ NAM           CD1    C    CR16      0.000     -3.977   -0.425   -3.045
+ NAM           HD1    H    H         0.000     -2.998   -0.597   -3.475
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NAM      O      n/a    C      START
+ NAM      C      O      CA     .
+ NAM      NXT    C      HNX1   .
+ NAM      HNX2   NXT    .      .
+ NAM      HNX1   NXT    .      .
+ NAM      CA     C      CB     .
+ NAM      HA     CA     .      .
+ NAM      N      CA     H      .
+ NAM      H2     N      .      .
+ NAM      H      N      .      .
+ NAM      CB     CA     CG     .
+ NAM      HB2    CB     .      .
+ NAM      HB3    CB     .      .
+ NAM      CG     CB     CD2    .
+ NAM      CD2    CG     CE2    .
+ NAM      CZ2    CD2    CH2    .
+ NAM      HZ2    CZ2    .      .
+ NAM      CH2    CZ2    CP     .
+ NAM      HH2    CH2    .      .
+ NAM      CP     CH2    CH1    .
+ NAM      HP     CP     .      .
+ NAM      CH1    CP     HH1    .
+ NAM      HH1    CH1    .      .
+ NAM      CE2    CD2    CZ1    .
+ NAM      CZ1    CE2    CE1    .
+ NAM      HZ1    CZ1    .      .
+ NAM      CE1    CZ1    CD1    .
+ NAM      HE1    CE1    .      .
+ NAM      CD1    CE1    HD1    .
+ NAM      HD1    CD1    .      END
+ NAM      CG     CD1    .    ADD
+ NAM      CE2    CH1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NAM       N         CA        single    1.450     0.020     1.450     0.020     
+NAM       H         N         single    1.036     0.016     0.914     0.007     
+NAM       H2        N         single    1.036     0.016     0.914     0.007     
+NAM       CB        CA        single    1.524     0.020     1.524     0.020     
+NAM       CA        C         single    1.500     0.020     1.500     0.020     
+NAM       HA        CA        single    1.089     0.010     0.989     0.005     
+NAM       CG        CB        single    1.511     0.020     1.511     0.020     
+NAM       HB2       CB        single    1.089     0.010     0.989     0.005     
+NAM       HB3       CB        single    1.089     0.010     0.989     0.005     
+NAM       C         O         double    1.220     0.020     1.220     0.020     
+NAM       NXT       C         single    1.332     0.020     1.332     0.020     
+NAM       HNX1      NXT       single    1.016     0.010     0.899     0.007     
+NAM       HNX2      NXT       single    1.016     0.010     0.899     0.007     
+NAM       CG        CD1       double    1.390     0.020     1.390     0.020     
+NAM       CD2       CG        single    1.490     0.020     1.490     0.020     
+NAM       CD1       CE1       single    1.390     0.020     1.390     0.020     
+NAM       HD1       CD1       single    1.082     0.013     0.975     0.010     
+NAM       CE1       CZ1       double    1.390     0.020     1.390     0.020     
+NAM       HE1       CE1       single    1.082     0.013     0.975     0.010     
+NAM       CZ1       CE2       single    1.390     0.020     1.390     0.020     
+NAM       HZ1       CZ1       single    1.082     0.013     0.975     0.010     
+NAM       CE2       CH1       single    1.390     0.020     1.390     0.020     
+NAM       CE2       CD2       double    1.490     0.020     1.490     0.020     
+NAM       CH1       CP        double    1.390     0.020     1.390     0.020     
+NAM       HH1       CH1       single    1.082     0.013     0.975     0.010     
+NAM       CP        CH2       single    1.390     0.020     1.390     0.020     
+NAM       HP        CP        single    1.082     0.013     0.975     0.010     
+NAM       CH2       CZ2       double    1.390     0.020     1.390     0.020     
+NAM       HH2       CH2       single    1.082     0.013     0.975     0.010     
+NAM       CZ2       CD2       single    1.390     0.020     1.390     0.020     
+NAM       HZ2       CZ2       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NAM      O      C      NXT     123.000    3.000
+ NAM      O      C      CA      120.500    3.000
+ NAM      NXT    C      CA      120.000    3.000
+ NAM      C      NXT    HNX2    120.000    3.000
+ NAM      C      NXT    HNX1    120.000    3.000
+ NAM      HNX2   NXT    HNX1    120.000    3.000
+ NAM      C      CA     HA      108.810    3.000
+ NAM      C      CA     N       109.470    3.000
+ NAM      C      CA     CB      109.470    3.000
+ NAM      HA     CA     N       109.470    3.000
+ NAM      HA     CA     CB      108.340    3.000
+ NAM      N      CA     CB      109.470    3.000
+ NAM      CA     N      H2      120.000    3.000
+ NAM      CA     N      H       120.000    3.000
+ NAM      H2     N      H       120.000    3.000
+ NAM      CA     CB     HB2     109.470    3.000
+ NAM      CA     CB     HB3     109.470    3.000
+ NAM      CA     CB     CG      109.470    3.000
+ NAM      HB2    CB     HB3     107.900    3.000
+ NAM      HB2    CB     CG      109.470    3.000
+ NAM      HB3    CB     CG      109.470    3.000
+ NAM      CB     CG     CD2     120.000    3.000
+ NAM      CB     CG     CD1     120.000    3.000
+ NAM      CD2    CG     CD1     120.000    3.000
+ NAM      CG     CD2    CZ2     120.000    3.000
+ NAM      CG     CD2    CE2     120.000    3.000
+ NAM      CZ2    CD2    CE2     120.000    3.000
+ NAM      CD2    CZ2    HZ2     120.000    3.000
+ NAM      CD2    CZ2    CH2     120.000    3.000
+ NAM      HZ2    CZ2    CH2     120.000    3.000
+ NAM      CZ2    CH2    HH2     120.000    3.000
+ NAM      CZ2    CH2    CP      120.000    3.000
+ NAM      HH2    CH2    CP      120.000    3.000
+ NAM      CH2    CP     HP      120.000    3.000
+ NAM      CH2    CP     CH1     120.000    3.000
+ NAM      HP     CP     CH1     120.000    3.000
+ NAM      CP     CH1    HH1     120.000    3.000
+ NAM      CP     CH1    CE2     120.000    3.000
+ NAM      HH1    CH1    CE2     120.000    3.000
+ NAM      CD2    CE2    CZ1     120.000    3.000
+ NAM      CD2    CE2    CH1     120.000    3.000
+ NAM      CZ1    CE2    CH1     120.000    3.000
+ NAM      CE2    CZ1    HZ1     120.000    3.000
+ NAM      CE2    CZ1    CE1     120.000    3.000
+ NAM      HZ1    CZ1    CE1     120.000    3.000
+ NAM      CZ1    CE1    HE1     120.000    3.000
+ NAM      CZ1    CE1    CD1     120.000    3.000
+ NAM      HE1    CE1    CD1     120.000    3.000
+ NAM      CE1    CD1    HD1     120.000    3.000
+ NAM      CE1    CD1    CG      120.000    3.000
+ NAM      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NAM      CONST_1  O      C      NXT    HNX1       0.000    0.000   0
+ NAM      var_1    O      C      CA     CB        90.033   20.000   3
+ NAM      var_2    C      CA     N      H        173.748   20.000   1
+ NAM      var_3    C      CA     CB     CG      -179.949   20.000   3
+ NAM      var_4    CA     CB     CG     CD2      -90.272   20.000   2
+ NAM      CONST_2  CB     CG     CD1    CE1      180.000    0.000   0
+ NAM      CONST_3  CB     CG     CD2    CE2      180.000    0.000   0
+ NAM      CONST_4  CG     CD2    CZ2    CH2      180.000    0.000   0
+ NAM      CONST_5  CD2    CZ2    CH2    CP         0.000    0.000   0
+ NAM      CONST_6  CZ2    CH2    CP     CH1        0.000    0.000   0
+ NAM      CONST_7  CH2    CP     CH1    CE2        0.000    0.000   0
+ NAM      CONST_8  CG     CD2    CE2    CZ1        0.000    0.000   0
+ NAM      CONST_9  CD2    CE2    CH1    CP         0.000    0.000   0
+ NAM      CONST_10 CD2    CE2    CZ1    CE1        0.000    0.000   0
+ NAM      CONST_11 CE2    CZ1    CE1    CD1        0.000    0.000   0
+ NAM      CONST_12 CZ1    CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NAM      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NAM      plan-1    N         0.020
+ NAM      plan-1    CA        0.020
+ NAM      plan-1    H         0.020
+ NAM      plan-1    H2        0.020
+ NAM      plan-2    C         0.020
+ NAM      plan-2    CA        0.020
+ NAM      plan-2    O         0.020
+ NAM      plan-2    NXT       0.020
+ NAM      plan-2    HNX2      0.020
+ NAM      plan-2    HNX1      0.020
+ NAM      plan-3    NXT       0.020
+ NAM      plan-3    C         0.020
+ NAM      plan-3    HNX1      0.020
+ NAM      plan-3    HNX2      0.020
+ NAM      plan-4    CG        0.020
+ NAM      plan-4    CB        0.020
+ NAM      plan-4    CD1       0.020
+ NAM      plan-4    CD2       0.020
+ NAM      plan-4    CE1       0.020
+ NAM      plan-4    CZ1       0.020
+ NAM      plan-4    HD1       0.020
+ NAM      plan-4    HE1       0.020
+ NAM      plan-4    CE2       0.020
+ NAM      plan-4    HZ1       0.020
+ NAM      plan-4    CH1       0.020
+ NAM      plan-4    CP        0.020
+ NAM      plan-4    CH2       0.020
+ NAM      plan-4    CZ2       0.020
+ NAM      plan-4    HH1       0.020
+ NAM      plan-4    HP        0.020
+ NAM      plan-4    HH2       0.020
+ NAM      plan-4    HZ2       0.020
+# ------------------------------------------------------

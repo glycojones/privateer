@@ -1,0 +1,121 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ICF     ICF      "1-CHLORO-2,2,2-TRIFLUOROETHYL DIFLUOROMETHYL ETHER"     NON-POLYMER     12     10     .     
+#
+data_comp_ICF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ICF     FAC     F       F       0       38.106      0.579       34.023      
+ICF     CAJ     C       CT      0       36.862      0.944       34.325      
+ICF     FAD     F       F       0       36.181      0.995       33.183      
+ICF     FAE     F       F       0       36.924      2.186       34.800      
+ICF     CAI     C       CH1     0       36.233      0.008       35.302      
+ICF     CLAF    CL      CL      0       36.146      -1.595      34.602      
+ICF     OAG     O       O2      0       34.930      0.494       35.617      
+ICF     CAH     C       CH1     0       34.388      0.038       36.857      
+ICF     FAB     F       F       0       34.939      0.678       37.874      
+ICF     FAA     F       F       0       33.105      0.349       36.933      
+ICF     HAI     H       H       0       36.784      -0.033      36.114      
+ICF     HAH     H       H       0       34.516      -0.920      36.938      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ICF       FAC       CAJ       SINGLE    n         1.331     0.013     1.331     0.013     
+ICF       CAJ       FAD       SINGLE    n         1.331     0.013     1.331     0.013     
+ICF       CAJ       FAE       SINGLE    n         1.331     0.013     1.331     0.013     
+ICF       CAJ       CAI       SINGLE    n         1.493     0.016     1.493     0.016     
+ICF       CAI       CLAF      SINGLE    n         1.752     0.020     1.752     0.020     
+ICF       CAI       OAG       SINGLE    n         1.422     0.012     1.422     0.012     
+ICF       OAG       CAH       SINGLE    n         1.417     0.020     1.417     0.020     
+ICF       CAH       FAB       SINGLE    n         1.322     0.017     1.322     0.017     
+ICF       CAH       FAA       SINGLE    n         1.322     0.017     1.322     0.017     
+ICF       CAI       HAI       SINGLE    n         1.089     0.010     0.981     0.017     
+ICF       CAH       HAH       SINGLE    n         1.089     0.010     0.970     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ICF         FAC         CAJ         FAD     107.197    1.50
+ICF         FAC         CAJ         FAE     107.197    1.50
+ICF         FAC         CAJ         CAI     111.793    1.50
+ICF         FAD         CAJ         FAE     107.197    1.50
+ICF         FAD         CAJ         CAI     111.793    1.50
+ICF         FAE         CAJ         CAI     111.793    1.50
+ICF         CAJ         CAI        CLAF     110.334    2.69
+ICF         CAJ         CAI         OAG     109.882    3.00
+ICF         CAJ         CAI         HAI     109.891    1.50
+ICF        CLAF         CAI         OAG     110.664    2.02
+ICF        CLAF         CAI         HAI     108.918    1.50
+ICF         OAG         CAI         HAI     109.680    1.50
+ICF         CAI         OAG         CAH     112.286    2.05
+ICF         OAG         CAH         FAB     111.174    2.45
+ICF         OAG         CAH         FAA     111.174    2.45
+ICF         OAG         CAH         HAH     109.503    1.50
+ICF         FAB         CAH         FAA     104.663    1.50
+ICF         FAB         CAH         HAH     111.255    1.50
+ICF         FAA         CAH         HAH     111.255    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ICF             sp3_sp3_4        CLAF         CAI         CAJ         FAC      60.000   10.00     3
+ICF            sp3_sp3_11         CAJ         CAI         OAG         CAH      60.000   10.00     3
+ICF            sp3_sp3_13         FAB         CAH         OAG         CAI     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ICF    chir_1    CAI    CLAF    OAG    CAJ    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ICF SMILES           ACDLabs              10.04 "(2S)-2-chloro-2-(difluoromethoxy)-1,1,1-trifluoroethane"
+ICF SMILES_CANONICAL CACTVS               3.341 "FC(F)O[C@@H](Cl)C(F)(F)F"
+ICF SMILES           CACTVS               3.341 "FC(F)O[CH](Cl)C(F)(F)F"
+ICF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[C@H](C(F)(F)F)(OC(F)F)Cl"
+ICF SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(F)(F)F)(OC(F)F)Cl"
+ICF InChI            InChI                1.03  "InChI=1S/C3H2ClF5O/c4-1(3(7,8)9)10-2(5)6/h1-2H/t1-/m1/s1"
+ICF InChIKey         InChI                1.03  PIWKPBJCKXDKJR-PVQJCKRUSA-N
+ICF ?                acedrg               202         "dictionary generator"                  
+ICF ?                acedrg_database      11          "data source"                           
+ICF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ICF ?                refmac5              5.8.0189    "optimization tool"                     

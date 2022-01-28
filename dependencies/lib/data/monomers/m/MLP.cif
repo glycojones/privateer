@@ -1,0 +1,127 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MLP     MLP      1-AMINOCYCLOPROPYLPHOSPHONATE     NON-POLYMER     14     8     .     
+#
+data_comp_MLP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MLP     C1      C       CH2     0       23.110      21.872      151.226     
+MLP     C2      C       CH2     0       23.479      22.757      152.353     
+MLP     C3      C       CT      0       22.037      22.658      151.931     
+MLP     N4      N       NT2     0       21.136      21.948      152.787     
+MLP     P5      P       P       0       21.239      24.034      151.112     
+MLP     O6      O       OP      -1      20.072      23.475      150.340     
+MLP     O7      O       OP      -1      22.261      24.662      150.200     
+MLP     O8      O       O       0       20.789      24.990      152.187     
+MLP     H11     H       H       0       23.354      22.154      150.327     
+MLP     H12     H       H       0       23.133      20.911      151.376     
+MLP     H21     H       H       0       23.728      22.341      153.197     
+MLP     H22     H       H       0       23.949      23.584      152.148     
+MLP     HN41    H       H       0       20.987      22.298      153.589     
+MLP     HN42    H       H       0       21.244      21.068      152.844     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MLP       C1        C2        SINGLE    n         1.476     0.014     1.476     0.014     
+MLP       C1        C3        SINGLE    n         1.507     0.014     1.507     0.014     
+MLP       C2        C3        SINGLE    n         1.507     0.014     1.507     0.014     
+MLP       C3        N4        SINGLE    n         1.431     0.020     1.431     0.020     
+MLP       C3        P5        SINGLE    n         1.790     0.020     1.790     0.020     
+MLP       P5        O6        SINGLE    n         1.507     0.020     1.507     0.020     
+MLP       P5        O7        SINGLE    n         1.507     0.020     1.507     0.020     
+MLP       P5        O8        DOUBLE    n         1.507     0.020     1.507     0.020     
+MLP       C1        H11       SINGLE    n         1.089     0.010     0.973     0.020     
+MLP       C1        H12       SINGLE    n         1.089     0.010     0.973     0.020     
+MLP       C2        H21       SINGLE    n         1.089     0.010     0.973     0.020     
+MLP       C2        H22       SINGLE    n         1.089     0.010     0.973     0.020     
+MLP       N4        HN41      SINGLE    n         1.036     0.016     0.888     0.020     
+MLP       N4        HN42      SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MLP          C2          C1          C3      60.077    2.22
+MLP          C2          C1         H11     117.823    1.50
+MLP          C2          C1         H12     117.823    1.50
+MLP          C3          C1         H11     117.283    1.74
+MLP          C3          C1         H12     117.283    1.74
+MLP         H11          C1         H12     114.868    1.50
+MLP          C1          C2          C3      60.077    2.22
+MLP          C1          C2         H21     117.823    1.50
+MLP          C1          C2         H22     117.823    1.50
+MLP          C3          C2         H21     117.283    1.74
+MLP          C3          C2         H22     117.283    1.74
+MLP         H21          C2         H22     114.868    1.50
+MLP          C1          C3          C2      60.077    2.22
+MLP          C1          C3          N4     117.259    1.99
+MLP          C1          C3          P5     118.827    3.00
+MLP          C2          C3          N4     117.259    1.99
+MLP          C2          C3          P5     118.827    3.00
+MLP          N4          C3          P5     109.471    3.00
+MLP          C3          N4        HN41     116.768    3.00
+MLP          C3          N4        HN42     116.768    3.00
+MLP        HN41          N4        HN42     110.637    3.00
+MLP          C3          P5          O6     109.471    3.00
+MLP          C3          P5          O7     109.471    3.00
+MLP          C3          P5          O8     109.471    3.00
+MLP          O6          P5          O7     112.897    2.03
+MLP          O6          P5          O8     112.897    2.03
+MLP          O7          P5          O8     112.897    2.03
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MLP             sp3_sp3_1          C3          C1          C2          C3      60.000   10.00     3
+MLP            sp3_sp3_20          C2          C1          C3          N4     -60.000   10.00     3
+MLP            sp3_sp3_11          C1          C2          C3          N4      60.000   10.00     3
+MLP            sp3_sp3_32          P5          C3          N4        HN41     -60.000   10.00     3
+MLP            sp3_sp3_40          N4          C3          P5          O6     -60.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MLP SMILES           ACDLabs              10.04 "[O-]P(=O)(O)C1(N)CC1"
+MLP SMILES_CANONICAL CACTVS               3.341 "NC1(CC1)[P](O)([O-])=O"
+MLP SMILES           CACTVS               3.341 "NC1(CC1)[P](O)([O-])=O"
+MLP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1CC1(N)[P@](=O)(O)[O-]"
+MLP SMILES           "OpenEye OEToolkits" 1.5.0 "C1CC1(N)P(=O)(O)[O-]"
+MLP InChI            InChI                1.03  "InChI=1S/C3H8NO3P/c4-3(1-2-3)8(5,6)7/h1-2,4H2,(H2,5,6,7)/p-1"
+MLP InChIKey         InChI                1.03  WKCJTSHOKDLADL-UHFFFAOYSA-M
+MLP ?                acedrg               202         "dictionary generator"                  
+MLP ?                acedrg_database      11          "data source"                           
+MLP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MLP ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,175 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GLQ      GLQ '4-AMINO-5-OXO-PENTANOIC ACID        ' non-polymer        17   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GLQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GLQ           OE2    O    OC       -0.500      0.000    0.000    0.000
+ GLQ           CD     C    C         0.000     -1.191   -0.377    0.060
+ GLQ           OE1    O    OC       -0.500     -1.462   -1.540    0.434
+ GLQ           CG     C    CH2       0.000     -2.301    0.570   -0.316
+ GLQ           HG1    H    H         0.000     -2.174    0.883   -1.355
+ GLQ           HG2    H    H         0.000     -2.267    1.446    0.334
+ GLQ           CB     C    CH2       0.000     -3.650   -0.135   -0.156
+ GLQ           HB1    H    H         0.000     -3.774   -0.449    0.882
+ GLQ           HB2    H    H         0.000     -3.681   -1.012   -0.806
+ GLQ           CA     C    CH1       0.000     -4.777    0.827   -0.539
+ GLQ           HA     H    H         0.000     -4.601    1.211   -1.554
+ GLQ           N      N    NH2       0.000     -4.808    1.947    0.410
+ GLQ           H2     H    H         0.000     -4.086    2.041    1.115
+ GLQ           H      H    H         0.000     -5.552    2.634    0.366
+ GLQ           C      C    C1        0.000     -6.095    0.097   -0.499
+ GLQ           HXT    H    H         0.000     -6.257   -0.758   -1.133
+ GLQ           O      O    O         0.000     -6.970    0.472    0.244
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GLQ      OE2    n/a    CD     START
+ GLQ      CD     OE2    CG     .
+ GLQ      OE1    CD     .      .
+ GLQ      CG     CD     CB     .
+ GLQ      HG1    CG     .      .
+ GLQ      HG2    CG     .      .
+ GLQ      CB     CG     CA     .
+ GLQ      HB1    CB     .      .
+ GLQ      HB2    CB     .      .
+ GLQ      CA     CB     C      .
+ GLQ      HA     CA     .      .
+ GLQ      N      CA     H      .
+ GLQ      H2     N      .      .
+ GLQ      H      N      .      .
+ GLQ      C      CA     O      .
+ GLQ      HXT    C      .      .
+ GLQ      O      C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GLQ       N         CA        single    1.450     0.020     1.450     0.020     
+GLQ       H         N         single    1.036     0.016     0.914     0.007     
+GLQ       H2        N         single    1.036     0.016     0.914     0.007     
+GLQ       C         CA        single    1.510     0.020     1.510     0.020     
+GLQ       CA        CB        single    1.524     0.020     1.524     0.020     
+GLQ       HA        CA        single    1.089     0.010     0.989     0.005     
+GLQ       O         C         double    1.220     0.020     1.220     0.020     
+GLQ       HXT       C         single    1.082     0.013     0.975     0.010     
+GLQ       CB        CG        single    1.524     0.020     1.524     0.020     
+GLQ       HB1       CB        single    1.089     0.010     0.989     0.005     
+GLQ       HB2       CB        single    1.089     0.010     0.989     0.005     
+GLQ       CG        CD        single    1.510     0.020     1.510     0.020     
+GLQ       HG1       CG        single    1.089     0.010     0.989     0.005     
+GLQ       HG2       CG        single    1.089     0.010     0.989     0.005     
+GLQ       OE1       CD        deloc     1.250     0.020     1.250     0.020     
+GLQ       CD        OE2       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GLQ      OE2    CD     OE1     123.000    3.000
+ GLQ      OE2    CD     CG      118.500    3.000
+ GLQ      OE1    CD     CG      118.500    3.000
+ GLQ      CD     CG     HG1     109.470    3.000
+ GLQ      CD     CG     HG2     109.470    3.000
+ GLQ      CD     CG     CB      109.470    3.000
+ GLQ      HG1    CG     HG2     107.900    3.000
+ GLQ      HG1    CG     CB      109.470    3.000
+ GLQ      HG2    CG     CB      109.470    3.000
+ GLQ      CG     CB     HB1     109.470    3.000
+ GLQ      CG     CB     HB2     109.470    3.000
+ GLQ      CG     CB     CA      111.000    3.000
+ GLQ      HB1    CB     HB2     107.900    3.000
+ GLQ      HB1    CB     CA      109.470    3.000
+ GLQ      HB2    CB     CA      109.470    3.000
+ GLQ      CB     CA     HA      108.340    3.000
+ GLQ      CB     CA     N       109.470    3.000
+ GLQ      CB     CA     C       109.470    3.000
+ GLQ      HA     CA     N       109.470    3.000
+ GLQ      HA     CA     C       108.810    3.000
+ GLQ      N      CA     C       109.470    3.000
+ GLQ      CA     N      H2      120.000    3.000
+ GLQ      CA     N      H       120.000    3.000
+ GLQ      H2     N      H       120.000    3.000
+ GLQ      CA     C      HXT     120.000    3.000
+ GLQ      CA     C      O       120.500    3.000
+ GLQ      HXT    C      O       123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GLQ      var_1    OE2    CD     CG     CB       179.996   20.000   3
+ GLQ      var_2    CD     CG     CB     CA      -179.980   20.000   3
+ GLQ      var_3    CG     CB     CA     C        175.019   20.000   3
+ GLQ      var_4    CB     CA     N      H       -173.762   20.000   1
+ GLQ      var_5    CB     CA     C      O        119.971   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GLQ      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GLQ      plan-1    N         0.020
+ GLQ      plan-1    CA        0.020
+ GLQ      plan-1    H         0.020
+ GLQ      plan-1    H2        0.020
+ GLQ      plan-2    C         0.020
+ GLQ      plan-2    CA        0.020
+ GLQ      plan-2    O         0.020
+ GLQ      plan-2    HXT       0.020
+ GLQ      plan-3    CD        0.020
+ GLQ      plan-3    CG        0.020
+ GLQ      plan-3    OE1       0.020
+ GLQ      plan-3    OE2       0.020
+# ------------------------------------------------------

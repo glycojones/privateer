@@ -1,0 +1,295 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CMR      CMR '2'-DEOXY-CYTIDINE-5'-RP-MONOMETHYLPH' non-polymer        36  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CMR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CMR           O2     O    O         0.000      0.000    0.000    0.000
+ CMR           C2     C    CR6       0.000     -0.713   -1.002    0.079
+ CMR           N3     N    NRD6      0.000     -0.329   -2.180   -0.539
+ CMR           C4     C    CR6       0.000     -1.072   -3.254   -0.466
+ CMR           N4     N    NH2       0.000     -0.673   -4.414   -1.087
+ CMR           H42    H    H         0.000      0.036   -4.390   -1.812
+ CMR           H41    H    H         0.000     -1.083   -5.303   -0.826
+ CMR           C5     C    CR16      0.000     -2.357   -3.263    0.280
+ CMR           H5     H    H         0.000     -2.975   -4.151    0.342
+ CMR           C6     C    CR16      0.000     -2.708   -2.121    0.867
+ CMR           H6     H    H         0.000     -3.638   -2.086    1.421
+ CMR           N1     N    NR6       0.000     -1.932   -0.975    0.799
+ CMR           "C1'"  C    CH1       0.000     -2.395    0.207    1.465
+ CMR           "H1'"  H    H         0.000     -1.530    0.821    1.752
+ CMR           "O4'"  O    O2        0.000     -3.118   -0.165    2.646
+ CMR           "C2'"  C    CH2       0.000     -3.331    1.040    0.604
+ CMR           "H2'"  H    H         0.000     -3.903    0.437   -0.105
+ CMR           "H2''" H    H         0.000     -2.815    1.838    0.067
+ CMR           "C3'"  C    CH1       0.000     -4.267    1.640    1.627
+ CMR           "H3'"  H    H         0.000     -5.250    1.861    1.187
+ CMR           "O3'"  O    OH1       0.000     -3.678    2.810    2.190
+ CMR           "HO3'" H    H         0.000     -4.241    3.574    2.006
+ CMR           "C4'"  C    CH1       0.000     -4.368    0.550    2.684
+ CMR           "H4'"  H    H         0.000     -4.510    1.003    3.676
+ CMR           "C5'"  C    CH2       0.000     -5.485   -0.446    2.405
+ CMR           "H5'"  H    H         0.000     -5.316   -0.930    1.441
+ CMR           "H5''" H    H         0.000     -6.446    0.073    2.386
+ CMR           "O5'"  O    O2        0.000     -5.495   -1.424    3.431
+ CMR           P      P    P         0.000     -6.572   -2.629    3.422
+ CMR           OP1    O    O         0.000     -6.362   -3.652    4.499
+ CMR           OP3    O    OH1       0.000     -6.493   -3.226    1.921
+ CMR           HOP3   H    H         0.000     -5.734   -3.764    1.651
+ CMR           CMP    C    CH3       0.000     -8.171   -1.846    3.480
+ CMR           HMP3   H    H         0.000     -8.155   -0.976    2.879
+ CMR           HMP2   H    H         0.000     -8.901   -2.518    3.115
+ CMR           HMP1   H    H         0.000     -8.394   -1.584    4.480
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CMR      O2     n/a    C2     START
+ CMR      C2     O2     N1     .
+ CMR      N3     C2     C4     .
+ CMR      C4     N3     C5     .
+ CMR      N4     C4     H41    .
+ CMR      H42    N4     .      .
+ CMR      H41    N4     .      .
+ CMR      C5     C4     C6     .
+ CMR      H5     C5     .      .
+ CMR      C6     C5     H6     .
+ CMR      H6     C6     .      .
+ CMR      N1     C2     "C1'"  .
+ CMR      "C1'"  N1     "C2'"  .
+ CMR      "H1'"  "C1'"  .      .
+ CMR      "O4'"  "C1'"  .      .
+ CMR      "C2'"  "C1'"  "C3'"  .
+ CMR      "H2'"  "C2'"  .      .
+ CMR      "H2''" "C2'"  .      .
+ CMR      "C3'"  "C2'"  "C4'"  .
+ CMR      "H3'"  "C3'"  .      .
+ CMR      "O3'"  "C3'"  "HO3'" .
+ CMR      "HO3'" "O3'"  .      .
+ CMR      "C4'"  "C3'"  "C5'"  .
+ CMR      "H4'"  "C4'"  .      .
+ CMR      "C5'"  "C4'"  "O5'"  .
+ CMR      "H5'"  "C5'"  .      .
+ CMR      "H5''" "C5'"  .      .
+ CMR      "O5'"  "C5'"  P      .
+ CMR      P      "O5'"  CMP    .
+ CMR      OP1    P      .      .
+ CMR      OP3    P      HOP3   .
+ CMR      HOP3   OP3    .      .
+ CMR      CMP    P      HMP1   .
+ CMR      HMP3   CMP    .      .
+ CMR      HMP2   CMP    .      .
+ CMR      HMP1   CMP    .      END
+ CMR      "C4'"  "O4'"  .    ADD
+ CMR      N1     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CMR       CMP       P         single    1.812     0.020     1.812     0.020     
+CMR       OP1       P         double    1.480     0.020     1.480     0.020     
+CMR       P         "O5'"     single    1.610     0.020     1.610     0.020     
+CMR       OP3       P         single    1.610     0.020     1.610     0.020     
+CMR       HMP1      CMP       single    1.089     0.010     0.989     0.005     
+CMR       HMP2      CMP       single    1.089     0.010     0.989     0.005     
+CMR       HMP3      CMP       single    1.089     0.010     0.989     0.005     
+CMR       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+CMR       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+CMR       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+CMR       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+CMR       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+CMR       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+CMR       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+CMR       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+CMR       "C1'"     N1        single    1.465     0.020     1.465     0.020     
+CMR       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+CMR       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+CMR       N1        C6        single    1.337     0.020     1.337     0.020     
+CMR       N1        C2        single    1.410     0.020     1.410     0.020     
+CMR       C6        C5        double    1.390     0.020     1.390     0.020     
+CMR       H6        C6        single    1.082     0.013     0.975     0.010     
+CMR       C5        C4        single    1.390     0.020     1.390     0.020     
+CMR       H5        C5        single    1.082     0.013     0.975     0.010     
+CMR       N4        C4        single    1.355     0.020     1.355     0.020     
+CMR       C4        N3        double    1.350     0.020     1.350     0.020     
+CMR       H41       N4        single    1.016     0.010     0.899     0.007     
+CMR       H42       N4        single    1.016     0.010     0.899     0.007     
+CMR       N3        C2        single    1.350     0.020     1.350     0.020     
+CMR       C2        O2        double    1.250     0.020     1.250     0.020     
+CMR       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+CMR       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+CMR       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+CMR       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+CMR       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+CMR       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+CMR       HOP3      OP3       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CMR      O2     C2     N3      120.000    3.000
+ CMR      O2     C2     N1      120.000    3.000
+ CMR      N3     C2     N1      120.000    3.000
+ CMR      C2     N3     C4      120.000    3.000
+ CMR      N3     C4     N4      120.000    3.000
+ CMR      N3     C4     C5      120.000    3.000
+ CMR      N4     C4     C5      120.000    3.000
+ CMR      C4     N4     H42     120.000    3.000
+ CMR      C4     N4     H41     120.000    3.000
+ CMR      H42    N4     H41     120.000    3.000
+ CMR      C4     C5     H5      120.000    3.000
+ CMR      C4     C5     C6      120.000    3.000
+ CMR      H5     C5     C6      120.000    3.000
+ CMR      C5     C6     H6      120.000    3.000
+ CMR      C5     C6     N1      120.000    3.000
+ CMR      H6     C6     N1      120.000    3.000
+ CMR      C2     N1     "C1'"   120.000    3.000
+ CMR      C2     N1     C6      120.000    3.000
+ CMR      "C1'"  N1     C6      120.000    3.000
+ CMR      N1     "C1'"  "H1'"   109.470    3.000
+ CMR      N1     "C1'"  "O4'"   109.470    3.000
+ CMR      N1     "C1'"  "C2'"   109.470    3.000
+ CMR      "H1'"  "C1'"  "O4'"   109.470    3.000
+ CMR      "H1'"  "C1'"  "C2'"   108.340    3.000
+ CMR      "O4'"  "C1'"  "C2'"   109.470    3.000
+ CMR      "C1'"  "O4'"  "C4'"   111.800    3.000
+ CMR      "C1'"  "C2'"  "H2'"   109.470    3.000
+ CMR      "C1'"  "C2'"  "H2''"  109.470    3.000
+ CMR      "C1'"  "C2'"  "C3'"   111.000    3.000
+ CMR      "H2'"  "C2'"  "H2''"  107.900    3.000
+ CMR      "H2'"  "C2'"  "C3'"   109.470    3.000
+ CMR      "H2''" "C2'"  "C3'"   109.470    3.000
+ CMR      "C2'"  "C3'"  "H3'"   108.340    3.000
+ CMR      "C2'"  "C3'"  "O3'"   109.470    3.000
+ CMR      "C2'"  "C3'"  "C4'"   111.000    3.000
+ CMR      "H3'"  "C3'"  "O3'"   109.470    3.000
+ CMR      "H3'"  "C3'"  "C4'"   108.340    3.000
+ CMR      "O3'"  "C3'"  "C4'"   109.470    3.000
+ CMR      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ CMR      "C3'"  "C4'"  "H4'"   108.340    3.000
+ CMR      "C3'"  "C4'"  "C5'"   111.000    3.000
+ CMR      "C3'"  "C4'"  "O4'"   109.470    3.000
+ CMR      "H4'"  "C4'"  "C5'"   108.340    3.000
+ CMR      "H4'"  "C4'"  "O4'"   109.470    3.000
+ CMR      "C5'"  "C4'"  "O4'"   109.470    3.000
+ CMR      "C4'"  "C5'"  "H5'"   109.470    3.000
+ CMR      "C4'"  "C5'"  "H5''"  109.470    3.000
+ CMR      "C4'"  "C5'"  "O5'"   109.470    3.000
+ CMR      "H5'"  "C5'"  "H5''"  107.900    3.000
+ CMR      "H5'"  "C5'"  "O5'"   109.470    3.000
+ CMR      "H5''" "C5'"  "O5'"   109.470    3.000
+ CMR      "C5'"  "O5'"  P       120.500    3.000
+ CMR      "O5'"  P      OP1     109.500    3.000
+ CMR      "O5'"  P      OP3     109.500    3.000
+ CMR      "O5'"  P      CMP     109.500    3.000
+ CMR      OP1    P      OP3     109.500    3.000
+ CMR      OP1    P      CMP     109.500    3.000
+ CMR      OP3    P      CMP     109.500    3.000
+ CMR      P      OP3    HOP3    120.000    3.000
+ CMR      P      CMP    HMP3    109.500    3.000
+ CMR      P      CMP    HMP2    109.500    3.000
+ CMR      P      CMP    HMP1    109.500    3.000
+ CMR      HMP3   CMP    HMP2    109.470    3.000
+ CMR      HMP3   CMP    HMP1    109.470    3.000
+ CMR      HMP2   CMP    HMP1    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CMR      CONST_1  O2     C2     N3     C4       180.000    0.000   0
+ CMR      CONST_2  C2     N3     C4     C5         0.000    0.000   0
+ CMR      CONST_3  N3     C4     N4     H41      162.324    0.000   0
+ CMR      CONST_4  N3     C4     C5     C6         0.000    0.000   0
+ CMR      CONST_5  C4     C5     C6     N1         0.000    0.000   0
+ CMR      CONST_6  O2     C2     N1     "C1'"      0.000    0.000   0
+ CMR      CONST_7  C2     N1     C6     C5         0.000    0.000   0
+ CMR      var_1    C2     N1     "C1'"  "C2'"     93.474   20.000   1
+ CMR      var_2    N1     "C1'"  "O4'"  "C4'"   -120.000   20.000   1
+ CMR      var_3    N1     "C1'"  "C2'"  "C3'"    150.000   20.000   3
+ CMR      var_4    "C1'"  "C2'"  "C3'"  "C4'"    -30.000   20.000   3
+ CMR      var_5    "C2'"  "C3'"  "O3'"  "HO3'"   119.295   20.000   1
+ CMR      var_6    "C2'"  "C3'"  "C4'"  "C5'"    -90.000   20.000   3
+ CMR      var_7    "C3'"  "C4'"  "O4'"  "C1'"      0.000   20.000   1
+ CMR      var_8    "C3'"  "C4'"  "C5'"  "O5'"    179.531   20.000   3
+ CMR      var_9    "C4'"  "C5'"  "O5'"  P        179.979   20.000   1
+ CMR      var_10   "C5'"  "O5'"  P      CMP      -60.003   20.000   1
+ CMR      var_11   "O5'"  P      OP3    HOP3      73.980   20.000   1
+ CMR      var_12   "O5'"  P      CMP    HMP1     -81.259   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CMR      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ CMR      chir_02  "C1'"  "O4'"  N1     "C2'"     negativ
+ CMR      chir_03  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CMR      plan-1    N1        0.020
+ CMR      plan-1    "C1'"     0.020
+ CMR      plan-1    C6        0.020
+ CMR      plan-1    C2        0.020
+ CMR      plan-1    C5        0.020
+ CMR      plan-1    C4        0.020
+ CMR      plan-1    N3        0.020
+ CMR      plan-1    H6        0.020
+ CMR      plan-1    H5        0.020
+ CMR      plan-1    N4        0.020
+ CMR      plan-1    O2        0.020
+ CMR      plan-1    H42       0.020
+ CMR      plan-1    H41       0.020
+ CMR      plan-2    N4        0.020
+ CMR      plan-2    C4        0.020
+ CMR      plan-2    H41       0.020
+ CMR      plan-2    H42       0.020
+# ------------------------------------------------------

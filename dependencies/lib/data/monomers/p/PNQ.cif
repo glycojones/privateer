@@ -1,0 +1,269 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PNQ      PNQ 'P-NITROPHENYL AMINOETHYLDIPHOSPHATE ' non-polymer        34  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PNQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PNQ           O4B    O    O        -1.000     47.100   56.896   21.645
+ PNQ           N4     N    N         1.000     46.463   56.277   20.865
+ PNQ           O4A    O    O         0.000     47.070   55.581   20.079
+ PNQ           C4     C    CR6       0.000     44.971   56.244   20.947
+ PNQ           C5     C    CR16      0.000     44.277   57.035   21.884
+ PNQ           H5     H    H         0.000     44.808   57.643   22.606
+ PNQ           C6     C    CR16      0.000     42.880   57.009   21.850
+ PNQ           H6     H    H         0.000     42.312   57.601   22.557
+ PNQ           C3     C    CR16      0.000     44.287   55.476   20.004
+ PNQ           H3     H    H         0.000     44.851   54.855   19.319
+ PNQ           C2     C    CR16      0.000     42.909   55.489   19.924
+ PNQ           H2     H    H         0.000     42.390   54.957   19.136
+ PNQ           C1     C    CR6       0.000     42.204   56.210   20.892
+ PNQ           NA3    N    NH1       0.000     40.754   56.275   20.790
+ PNQ           HNA1   H    H         0.000     40.278   55.801   20.036
+ PNQ           CA2    C    CH2       0.000     40.052   56.963   21.696
+ PNQ           HA21   H    H         0.000     40.169   58.036   21.534
+ PNQ           HA22   H    H         0.000     40.383   56.711   22.706
+ PNQ           CA1    C    CH2       0.000     38.581   56.578   21.528
+ PNQ           HA11   H    H         0.000     37.929   57.208   22.137
+ PNQ           HA12   H    H         0.000     38.410   55.529   21.779
+ PNQ           OE2    O    O2        0.000     38.298   56.788   20.162
+ PNQ           PA     P    P         0.000     36.833   57.418   19.972
+ PNQ           OA1    O    OP       -0.500     36.488   57.234   18.542
+ PNQ           OA2    O    OP       -0.500     36.807   58.851   20.353
+ PNQ           OA3    O    O2        0.000     35.807   56.602   20.895
+ PNQ           PB     P    P         0.000     34.216   56.722   20.997
+ PNQ           OB1    O    OP       -0.500     33.676   55.350   20.840
+ PNQ           OB2    O    OP       -0.500     33.717   57.660   19.962
+ PNQ           OB3    O    O2        0.000     33.961   57.339   22.464
+ PNQ           BE     BE   BE        0.000     32.728   58.281   23.026
+ PNQ           F1     F    F         0.000     31.479   57.470   23.358
+ PNQ           F2     F    F         0.000     33.304   58.901   24.295
+ PNQ           F3     F    F         0.000     32.428   59.285   21.903
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PNQ      O4B    n/a    N4     START
+ PNQ      N4     O4B    C4     .
+ PNQ      O4A    N4     .      .
+ PNQ      C4     N4     C3     .
+ PNQ      C5     C4     C6     .
+ PNQ      H5     C5     .      .
+ PNQ      C6     C5     H6     .
+ PNQ      H6     C6     .      .
+ PNQ      C3     C4     C2     .
+ PNQ      H3     C3     .      .
+ PNQ      C2     C3     C1     .
+ PNQ      H2     C2     .      .
+ PNQ      C1     C2     NA3    .
+ PNQ      NA3    C1     CA2    .
+ PNQ      HNA1   NA3    .      .
+ PNQ      CA2    NA3    CA1    .
+ PNQ      HA21   CA2    .      .
+ PNQ      HA22   CA2    .      .
+ PNQ      CA1    CA2    OE2    .
+ PNQ      HA11   CA1    .      .
+ PNQ      HA12   CA1    .      .
+ PNQ      OE2    CA1    PA     .
+ PNQ      PA     OE2    OA3    .
+ PNQ      OA1    PA     .      .
+ PNQ      OA2    PA     .      .
+ PNQ      OA3    PA     PB     .
+ PNQ      PB     OA3    OB3    .
+ PNQ      OB1    PB     .      .
+ PNQ      OB2    PB     .      .
+ PNQ      OB3    PB     BE     .
+ PNQ      BE     OB3    F3     .
+ PNQ      F1     BE     .      .
+ PNQ      F2     BE     .      .
+ PNQ      F3     BE     .      END
+ PNQ      C1     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PNQ       F1        BE        single    1.765     0.020     1.765     0.020     
+PNQ       F2        BE        single    1.765     0.020     1.765     0.020     
+PNQ       F3        BE        single    1.765     0.020     1.765     0.020     
+PNQ       BE        OB3       single    1.750     0.020     1.750     0.020     
+PNQ       OB1       PB        deloc     1.510     0.020     1.510     0.020     
+PNQ       OB2       PB        deloc     1.510     0.020     1.510     0.020     
+PNQ       OB3       PB        single    1.610     0.020     1.610     0.020     
+PNQ       PB        OA3       single    1.610     0.020     1.610     0.020     
+PNQ       OA3       PA        single    1.610     0.020     1.610     0.020     
+PNQ       OA1       PA        deloc     1.510     0.020     1.510     0.020     
+PNQ       OA2       PA        deloc     1.510     0.020     1.510     0.020     
+PNQ       PA        OE2       single    1.610     0.020     1.610     0.020     
+PNQ       OE2       CA1       single    1.426     0.020     1.426     0.020     
+PNQ       CA2       NA3       single    1.450     0.020     1.450     0.020     
+PNQ       NA3       C1        single    1.350     0.020     1.350     0.020     
+PNQ       HNA1      NA3       single    1.016     0.010     0.899     0.007     
+PNQ       CA1       CA2       single    1.524     0.020     1.524     0.020     
+PNQ       HA21      CA2       single    1.089     0.010     0.989     0.005     
+PNQ       HA22      CA2       single    1.089     0.010     0.989     0.005     
+PNQ       HA11      CA1       single    1.089     0.010     0.989     0.005     
+PNQ       HA12      CA1       single    1.089     0.010     0.989     0.005     
+PNQ       C1        C6        double    1.390     0.020     1.390     0.020     
+PNQ       C1        C2        single    1.390     0.020     1.390     0.020     
+PNQ       C6        C5        single    1.390     0.020     1.390     0.020     
+PNQ       H6        C6        single    1.082     0.013     0.975     0.010     
+PNQ       C5        C4        double    1.390     0.020     1.390     0.020     
+PNQ       H5        C5        single    1.082     0.013     0.975     0.010     
+PNQ       C3        C4        single    1.390     0.020     1.390     0.020     
+PNQ       C4        N4        single    1.400     0.020     1.400     0.020     
+PNQ       C2        C3        double    1.390     0.020     1.390     0.020     
+PNQ       H3        C3        single    1.082     0.013     0.975     0.010     
+PNQ       H2        C2        single    1.082     0.013     0.975     0.010     
+PNQ       O4A       N4        double    1.220     0.020     1.220     0.020     
+PNQ       N4        O4B       single    1.400     0.020     1.400     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PNQ      O4B    N4     O4A     120.000    3.000
+ PNQ      O4B    N4     C4      120.000    3.000
+ PNQ      O4A    N4     C4      120.000    3.000
+ PNQ      N4     C4     C5      120.000    3.000
+ PNQ      N4     C4     C3      120.000    3.000
+ PNQ      C5     C4     C3      120.000    3.000
+ PNQ      C4     C5     H5      120.000    3.000
+ PNQ      C4     C5     C6      120.000    3.000
+ PNQ      H5     C5     C6      120.000    3.000
+ PNQ      C5     C6     H6      120.000    3.000
+ PNQ      C5     C6     C1      120.000    3.000
+ PNQ      H6     C6     C1      120.000    3.000
+ PNQ      C4     C3     H3      120.000    3.000
+ PNQ      C4     C3     C2      120.000    3.000
+ PNQ      H3     C3     C2      120.000    3.000
+ PNQ      C3     C2     H2      120.000    3.000
+ PNQ      C3     C2     C1      120.000    3.000
+ PNQ      H2     C2     C1      120.000    3.000
+ PNQ      C2     C1     NA3     120.000    3.000
+ PNQ      C2     C1     C6      120.000    3.000
+ PNQ      NA3    C1     C6      120.000    3.000
+ PNQ      C1     NA3    HNA1    120.000    3.000
+ PNQ      C1     NA3    CA2     120.000    3.000
+ PNQ      HNA1   NA3    CA2     118.500    3.000
+ PNQ      NA3    CA2    HA21    109.470    3.000
+ PNQ      NA3    CA2    HA22    109.470    3.000
+ PNQ      NA3    CA2    CA1     112.000    3.000
+ PNQ      HA21   CA2    HA22    107.900    3.000
+ PNQ      HA21   CA2    CA1     109.470    3.000
+ PNQ      HA22   CA2    CA1     109.470    3.000
+ PNQ      CA2    CA1    HA11    109.470    3.000
+ PNQ      CA2    CA1    HA12    109.470    3.000
+ PNQ      CA2    CA1    OE2     109.470    3.000
+ PNQ      HA11   CA1    HA12    107.900    3.000
+ PNQ      HA11   CA1    OE2     109.470    3.000
+ PNQ      HA12   CA1    OE2     109.470    3.000
+ PNQ      CA1    OE2    PA      120.500    3.000
+ PNQ      OE2    PA     OA1     108.200    3.000
+ PNQ      OE2    PA     OA2     108.200    3.000
+ PNQ      OE2    PA     OA3     102.600    3.000
+ PNQ      OA1    PA     OA2     119.900    3.000
+ PNQ      OA1    PA     OA3     108.200    3.000
+ PNQ      OA2    PA     OA3     108.200    3.000
+ PNQ      PA     OA3    PB      120.500    3.000
+ PNQ      OA3    PB     OB1     108.200    3.000
+ PNQ      OA3    PB     OB2     108.200    3.000
+ PNQ      OA3    PB     OB3     102.600    3.000
+ PNQ      OB1    PB     OB2     119.900    3.000
+ PNQ      OB1    PB     OB3     108.200    3.000
+ PNQ      OB2    PB     OB3     108.200    3.000
+ PNQ      PB     OB3    BE      120.000    3.000
+ PNQ      OB3    BE     F1      120.000    3.000
+ PNQ      OB3    BE     F2      120.000    3.000
+ PNQ      OB3    BE     F3      120.000    3.000
+ PNQ      F1     BE     F2      120.000    3.000
+ PNQ      F1     BE     F3      120.000    3.000
+ PNQ      F2     BE     F3      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PNQ      var_1    O4B    N4     C4     C3      -179.068   20.000   1
+ PNQ      CONST_1  N4     C4     C5     C6       180.000    0.000   0
+ PNQ      CONST_2  C4     C5     C6     C1         0.000    0.000   0
+ PNQ      CONST_3  N4     C4     C3     C2       180.000    0.000   0
+ PNQ      CONST_4  C4     C3     C2     C1         0.000    0.000   0
+ PNQ      CONST_5  C3     C2     C1     NA3      180.000    0.000   0
+ PNQ      CONST_6  C2     C1     C6     C5         0.000    0.000   0
+ PNQ      var_2    C2     C1     NA3    CA2     -179.621   20.000   1
+ PNQ      var_3    C1     NA3    CA2    CA1     -166.760   20.000   3
+ PNQ      var_4    NA3    CA2    CA1    OE2      -53.062   20.000   3
+ PNQ      var_5    CA2    CA1    OE2    PA      -140.729   20.000   1
+ PNQ      var_6    CA1    OE2    PA     OA3      -45.873   20.000   1
+ PNQ      var_7    OE2    PA     OA3    PB      -174.197   20.000   1
+ PNQ      var_8    PA     OA3    PB     OB3     -111.564   20.000   1
+ PNQ      var_9    OA3    PB     OB3    BE       151.515   20.000   1
+ PNQ      var_10   PB     OB3    BE     F3       -40.438   20.000   1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PNQ      plan-1    NA3       0.020
+ PNQ      plan-1    CA2       0.020
+ PNQ      plan-1    C1        0.020
+ PNQ      plan-1    HNA1      0.020
+ PNQ      plan-2    C1        0.020
+ PNQ      plan-2    NA3       0.020
+ PNQ      plan-2    C6        0.020
+ PNQ      plan-2    C2        0.020
+ PNQ      plan-2    C5        0.020
+ PNQ      plan-2    C4        0.020
+ PNQ      plan-2    C3        0.020
+ PNQ      plan-2    H6        0.020
+ PNQ      plan-2    H5        0.020
+ PNQ      plan-2    N4        0.020
+ PNQ      plan-2    H3        0.020
+ PNQ      plan-2    H2        0.020
+ PNQ      plan-2    HNA1      0.020
+ PNQ      plan-3    N4        0.020
+ PNQ      plan-3    C4        0.020
+ PNQ      plan-3    O4A       0.020
+ PNQ      plan-3    O4B       0.020
+# ------------------------------------------------------

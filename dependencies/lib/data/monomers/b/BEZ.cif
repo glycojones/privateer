@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BEZ     BEZ      "BENZOIC ACID"     NON-POLYMER     14     9     .     
+#
+data_comp_BEZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BEZ     C       C       C       0       -7.899      -22.018     15.001      
+BEZ     O1      O       O       0       -8.912      -21.385     15.352      
+BEZ     O2      O       OC      -1      -6.839      -22.065     15.651      
+BEZ     C1      C       CR6     0       -7.958      -22.773     13.707      
+BEZ     C2      C       CR16    0       -6.949      -22.623     12.757      
+BEZ     C3      C       CR16    0       -7.005      -23.325     11.558      
+BEZ     C4      C       CR16    0       -8.064      -24.178     11.298      
+BEZ     C5      C       CR16    0       -9.071      -24.333     12.237      
+BEZ     C6      C       CR16    0       -9.021      -23.635     13.439      
+BEZ     H2      H       H       0       -6.227      -22.045     12.927      
+BEZ     H3      H       H       0       -6.320      -23.219     10.919      
+BEZ     H4      H       H       0       -8.100      -24.653     10.483      
+BEZ     H5      H       H       0       -9.793      -24.914     12.062      
+BEZ     H6      H       H       0       -9.708      -23.744     14.073      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BEZ       C         O1        DOUBLE    n         1.244     0.020     1.244     0.020     
+BEZ       C         O2        SINGLE    n         1.244     0.020     1.244     0.020     
+BEZ       C         C1        SINGLE    n         1.498     0.020     1.498     0.020     
+BEZ       C1        C2        DOUBLE    y         1.387     0.010     1.387     0.010     
+BEZ       C1        C6        SINGLE    y         1.387     0.010     1.387     0.010     
+BEZ       C2        C3        SINGLE    y         1.384     0.010     1.384     0.010     
+BEZ       C3        C4        DOUBLE    y         1.376     0.011     1.376     0.011     
+BEZ       C4        C5        SINGLE    y         1.376     0.012     1.376     0.012     
+BEZ       C5        C6        DOUBLE    y         1.384     0.010     1.384     0.010     
+BEZ       C2        H2        SINGLE    n         1.082     0.013     0.941     0.017     
+BEZ       C3        H3        SINGLE    n         1.082     0.013     0.943     0.018     
+BEZ       C4        H4        SINGLE    n         1.082     0.013     0.944     0.016     
+BEZ       C5        H5        SINGLE    n         1.082     0.013     0.943     0.018     
+BEZ       C6        H6        SINGLE    n         1.082     0.013     0.941     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BEZ          O1           C          O2     124.418    1.50
+BEZ          O1           C          C1     117.791    1.50
+BEZ          O2           C          C1     117.791    1.50
+BEZ           C          C1          C2     120.408    1.50
+BEZ           C          C1          C6     120.408    1.50
+BEZ          C2          C1          C6     119.184    1.50
+BEZ          C1          C2          C3     120.191    1.50
+BEZ          C1          C2          H2     119.955    1.50
+BEZ          C3          C2          H2     119.854    1.50
+BEZ          C2          C3          C4     120.239    1.50
+BEZ          C2          C3          H3     119.835    1.50
+BEZ          C4          C3          H3     119.926    1.50
+BEZ          C3          C4          C5     119.957    1.50
+BEZ          C3          C4          H4     120.022    1.50
+BEZ          C5          C4          H4     120.022    1.50
+BEZ          C4          C5          C6     120.239    1.50
+BEZ          C4          C5          H5     119.926    1.50
+BEZ          C6          C5          H5     119.835    1.50
+BEZ          C1          C6          C5     120.191    1.50
+BEZ          C1          C6          H6     119.955    1.50
+BEZ          C5          C6          H6     119.854    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BEZ             sp2_sp2_1          O1           C          C1          C2     180.000   10.00     2
+BEZ       const_sp2_sp2_3           C          C1          C2          C3     180.000   10.00     2
+BEZ              const_23           C          C1          C6          C5     180.000   10.00     2
+BEZ       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+BEZ       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+BEZ              const_13          C3          C4          C5          C6       0.000   10.00     2
+BEZ              const_17          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BEZ    plan-1           C   0.020
+BEZ    plan-1          C1   0.020
+BEZ    plan-1          C2   0.020
+BEZ    plan-1          C3   0.020
+BEZ    plan-1          C4   0.020
+BEZ    plan-1          C5   0.020
+BEZ    plan-1          C6   0.020
+BEZ    plan-1          H2   0.020
+BEZ    plan-1          H3   0.020
+BEZ    plan-1          H4   0.020
+BEZ    plan-1          H5   0.020
+BEZ    plan-1          H6   0.020
+BEZ    plan-2           C   0.020
+BEZ    plan-2          C1   0.020
+BEZ    plan-2          O1   0.020
+BEZ    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BEZ SMILES           ACDLabs              12.01 "O=C(O)c1ccccc1"
+BEZ InChI            InChI                1.03  "InChI=1S/C7H6O2/c8-7(9)6-4-2-1-3-5-6/h1-5H,(H,8,9)"
+BEZ InChIKey         InChI                1.03  WPYMKLBDIGXBTP-UHFFFAOYSA-N
+BEZ SMILES_CANONICAL CACTVS               3.370 "OC(=O)c1ccccc1"
+BEZ SMILES           CACTVS               3.370 "OC(=O)c1ccccc1"
+BEZ SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1ccc(cc1)C(=O)O"
+BEZ SMILES           "OpenEye OEToolkits" 1.7.6 "c1ccc(cc1)C(=O)O"
+BEZ ?                acedrg               202         "dictionary generator"                  
+BEZ ?                acedrg_database      11          "data source"                           
+BEZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BEZ ?                refmac5              5.8.0189    "optimization tool"                     

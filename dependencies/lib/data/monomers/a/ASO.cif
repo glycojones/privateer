@@ -1,0 +1,200 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ASO      ASO '1,5-ANHYDROSORBITOL                 ' pyranose           23  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ASO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ASO           C1     C    CH2       0.000      0.000    0.000    0.000
+ ASO           H11    H    H         0.000      1.016   -0.397   -0.048
+ ASO           H12    H    H         0.000      0.040    1.089    0.076
+ ASO           O5     O    O2        0.000     -0.658   -0.528    1.149
+ ASO           C5     C    CH1       0.000     -1.908    0.146    1.280
+ ASO           H5     H    H         0.000     -1.740    1.232    1.265
+ ASO           C6     C    CH2       0.000     -2.562   -0.248    2.604
+ ASO           H61    H    H         0.000     -2.731   -1.327    2.618
+ ASO           H62    H    H         0.000     -3.518    0.270    2.705
+ ASO           O6     O    OH1       0.000     -1.707    0.115    3.688
+ ASO           HO6    H    H         0.000     -2.156   -0.150    4.501
+ ASO           C4     C    CH1       0.000     -2.827   -0.241    0.120
+ ASO           H4     H    H         0.000     -2.977   -1.330    0.117
+ ASO           O4     O    OH1       0.000     -4.088    0.415    0.270
+ ASO           HO4    H    H         0.000     -4.666    0.174   -0.466
+ ASO           C3     C    CH1       0.000     -2.178    0.191   -1.199
+ ASO           H3     H    H         0.000     -2.124    1.288   -1.241
+ ASO           O3     O    OH1       0.000     -2.951   -0.293   -2.298
+ ASO           HO3    H    H         0.000     -2.530   -0.029   -3.128
+ ASO           C2     C    CH1       0.000     -0.765   -0.397   -1.264
+ ASO           H2     H    H         0.000     -0.826   -1.493   -1.328
+ ASO           O2     O    OH1       0.000     -0.086    0.111   -2.415
+ ASO           HO2    H    H         0.000      0.807   -0.257   -2.449
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ASO      C1     n/a    O5     START
+ ASO      H11    C1     .      .
+ ASO      H12    C1     .      .
+ ASO      O5     C1     .      END
+ ASO      C5     O5     C4     .
+ ASO      H5     C5     .      .
+ ASO      C6     C5     O6     .
+ ASO      H61    C6     .      .
+ ASO      H62    C6     .      .
+ ASO      O6     C6     .      .
+ ASO      HO6    O6     .      .
+ ASO      C4     C5     C3     .
+ ASO      H4     C4     .      .
+ ASO      O4     C4     HO4    .
+ ASO      HO4    O4     .      .
+ ASO      C3     C4     C2     .
+ ASO      H3     C3     .      .
+ ASO      O3     C3     HO3    .
+ ASO      HO3    O3     .      .
+ ASO      C2     C3     O2     .
+ ASO      H2     C2     .      .
+ ASO      O2     C2     HO2    .
+ ASO      HO2    O2     .      .
+ ASO      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ASO       C1        C2        single    1.524     0.020     1.524     0.020     
+ASO       O5        C1        single    1.426     0.020     1.426     0.020     
+ASO       H11       C1        single    1.089     0.010     0.989     0.005     
+ASO       H12       C1        single    1.089     0.010     0.989     0.005     
+ASO       C2        C3        single    1.524     0.020     1.524     0.020     
+ASO       O2        C2        single    1.432     0.020     1.432     0.020     
+ASO       H2        C2        single    1.089     0.010     0.989     0.005     
+ASO       C3        C4        single    1.524     0.020     1.524     0.020     
+ASO       O3        C3        single    1.432     0.020     1.432     0.020     
+ASO       H3        C3        single    1.089     0.010     0.989     0.005     
+ASO       C4        C5        single    1.524     0.020     1.524     0.020     
+ASO       O4        C4        single    1.432     0.020     1.432     0.020     
+ASO       H4        C4        single    1.089     0.010     0.989     0.005     
+ASO       C6        C5        single    1.524     0.020     1.524     0.020     
+ASO       C5        O5        single    1.426     0.020     1.426     0.020     
+ASO       H5        C5        single    1.089     0.010     0.989     0.005     
+ASO       O6        C6        single    1.432     0.020     1.432     0.020     
+ASO       H61       C6        single    1.089     0.010     0.989     0.005     
+ASO       H62       C6        single    1.089     0.010     0.989     0.005     
+ASO       HO2       O2        single    0.970     0.012     0.839     0.014     
+ASO       HO3       O3        single    0.970     0.012     0.839     0.014     
+ASO       HO4       O4        single    0.970     0.012     0.839     0.014     
+ASO       HO6       O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ASO      H11    C1     H12     107.900    3.000
+ ASO      H11    C1     O5      109.470    3.000
+ ASO      H12    C1     O5      109.470    3.000
+ ASO      H11    C1     C2      109.470    3.000
+ ASO      H12    C1     C2      109.470    3.000
+ ASO      O5     C1     C2      109.470    3.000
+ ASO      C1     O5     C5      111.800    3.000
+ ASO      O5     C5     H5      109.470    3.000
+ ASO      O5     C5     C6      109.470    3.000
+ ASO      O5     C5     C4      109.470    3.000
+ ASO      H5     C5     C6      108.340    3.000
+ ASO      H5     C5     C4      108.340    3.000
+ ASO      C6     C5     C4      111.000    3.000
+ ASO      C5     C6     H61     109.470    3.000
+ ASO      C5     C6     H62     109.470    3.000
+ ASO      C5     C6     O6      109.470    3.000
+ ASO      H61    C6     H62     107.900    3.000
+ ASO      H61    C6     O6      109.470    3.000
+ ASO      H62    C6     O6      109.470    3.000
+ ASO      C6     O6     HO6     109.470    3.000
+ ASO      C5     C4     H4      108.340    3.000
+ ASO      C5     C4     O4      109.470    3.000
+ ASO      C5     C4     C3      111.000    3.000
+ ASO      H4     C4     O4      109.470    3.000
+ ASO      H4     C4     C3      108.340    3.000
+ ASO      O4     C4     C3      109.470    3.000
+ ASO      C4     O4     HO4     109.470    3.000
+ ASO      C4     C3     H3      108.340    3.000
+ ASO      C4     C3     O3      109.470    3.000
+ ASO      C4     C3     C2      111.000    3.000
+ ASO      H3     C3     O3      109.470    3.000
+ ASO      H3     C3     C2      108.340    3.000
+ ASO      O3     C3     C2      109.470    3.000
+ ASO      C3     O3     HO3     109.470    3.000
+ ASO      C3     C2     H2      108.340    3.000
+ ASO      C3     C2     O2      109.470    3.000
+ ASO      C3     C2     C1      111.000    3.000
+ ASO      H2     C2     O2      109.470    3.000
+ ASO      H2     C2     C1      108.340    3.000
+ ASO      O2     C2     C1      109.470    3.000
+ ASO      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ASO      var_1    C1     O5     C5     C4        60.000   20.000   1
+ ASO      var_2    O5     C5     C6     O6        59.805   20.000   3
+ ASO      var_3    O5     C5     C4     C3       -60.000   20.000   3
+ ASO      var_4    C5     C4     O4     HO4      179.620   20.000   1
+ ASO      var_5    C5     C4     C3     C2        60.000   20.000   3
+ ASO      var_6    C4     C3     O3     HO3     -179.177   20.000   1
+ ASO      var_7    C4     C3     C2     O2       180.000   20.000   3
+ ASO      var_8    C3     C2     C1     O5        60.000   20.000   3
+ ASO      var_9    C3     C2     O2     HO2      179.564   20.000   1
+ ASO      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ASO      chir_01  C2     C1     C3     O2        negativ
+ ASO      chir_02  C3     C2     C4     O3        positiv
+ ASO      chir_03  C4     C3     C5     O4        negativ
+ ASO      chir_04  C5     C4     C6     O5        negativ
+# ------------------------------------------------------

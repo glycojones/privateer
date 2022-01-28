@@ -1,0 +1,132 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PIH     PIH      IODOPHENYL     NON-POLYMER     12     7     .     
+#
+data_comp_PIH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PIH     C1      C       CR16    0       63.348      83.438      53.663      
+PIH     C2      C       CR16    0       63.744      82.316      54.402      
+PIH     C3      C       CR16    0       65.015      81.788      54.249      
+PIH     C4      C       CR16    0       65.913      82.379      53.349      
+PIH     C5      C       CR16    0       65.530      83.501      52.605      
+PIH     C6      C       CR6     0       64.248      84.019      52.771      
+PIH     I6      I       I       0       63.662      85.699      51.662      
+PIH     H1      H       H       0       62.479      83.799      53.768      
+PIH     H2      H       H       0       63.140      81.919      55.007      
+PIH     H3      H       H       0       65.277      81.032      54.750      
+PIH     H4      H       H       0       66.779      82.021      53.244      
+PIH     H5      H       H       0       66.134      83.903      51.996      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PIH       C1        C2        DOUBLE    y         1.394     0.010     1.394     0.010     
+PIH       C1        C6        SINGLE    y         1.373     0.017     1.373     0.017     
+PIH       C2        C3        SINGLE    y         1.376     0.012     1.376     0.012     
+PIH       C3        C4        DOUBLE    y         1.379     0.020     1.379     0.020     
+PIH       C4        C5        SINGLE    y         1.394     0.010     1.394     0.010     
+PIH       C5        C6        DOUBLE    y         1.373     0.017     1.373     0.017     
+PIH       C6        I6        SINGLE    n         2.097     0.016     2.097     0.016     
+PIH       C1        H1        SINGLE    n         1.082     0.013     0.947     0.015     
+PIH       C2        H2        SINGLE    n         1.082     0.013     0.943     0.015     
+PIH       C3        H3        SINGLE    n         1.082     0.013     0.944     0.016     
+PIH       C4        H4        SINGLE    n         1.082     0.013     0.943     0.015     
+PIH       C5        H5        SINGLE    n         1.082     0.013     0.947     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PIH          C2          C1          C6     119.031    1.50
+PIH          C2          C1          H1     120.474    1.50
+PIH          C6          C1          H1     120.495    1.50
+PIH          C1          C2          C3     120.396    1.50
+PIH          C1          C2          H2     119.689    1.50
+PIH          C3          C2          H2     119.915    1.50
+PIH          C2          C3          C4     120.144    1.50
+PIH          C2          C3          H3     119.928    1.50
+PIH          C4          C3          H3     119.928    1.50
+PIH          C3          C4          C5     120.396    1.50
+PIH          C3          C4          H4     119.915    1.50
+PIH          C5          C4          H4     119.689    1.50
+PIH          C4          C5          C6     119.031    1.50
+PIH          C4          C5          H5     120.474    1.50
+PIH          C6          C5          H5     120.495    1.50
+PIH          C1          C6          C5     121.004    1.50
+PIH          C1          C6          I6     119.498    1.50
+PIH          C5          C6          I6     119.498    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PIH       const_sp2_sp2_1          C6          C1          C2          C3       0.000   10.00     2
+PIH              const_22          C2          C1          C6          I6     180.000   10.00     2
+PIH       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+PIH       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+PIH              const_13          C3          C4          C5          C6       0.000   10.00     2
+PIH              const_18          C4          C5          C6          I6     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PIH    plan-1          C1   0.020
+PIH    plan-1          C2   0.020
+PIH    plan-1          C3   0.020
+PIH    plan-1          C4   0.020
+PIH    plan-1          C5   0.020
+PIH    plan-1          C6   0.020
+PIH    plan-1          H1   0.020
+PIH    plan-1          H2   0.020
+PIH    plan-1          H3   0.020
+PIH    plan-1          H4   0.020
+PIH    plan-1          H5   0.020
+PIH    plan-1          I6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PIH SMILES           ACDLabs              10.04 Ic1ccccc1
+PIH SMILES_CANONICAL CACTVS               3.341 Ic1ccccc1
+PIH SMILES           CACTVS               3.341 Ic1ccccc1
+PIH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)I"
+PIH SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)I"
+PIH InChI            InChI                1.03  InChI=1S/C6H5I/c7-6-4-2-1-3-5-6/h1-5H
+PIH InChIKey         InChI                1.03  SNHMUERNLJLMHN-UHFFFAOYSA-N
+PIH ?                acedrg               202         "dictionary generator"                  
+PIH ?                acedrg_database      11          "data source"                           
+PIH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PIH ?                refmac5              5.8.0189    "optimization tool"                     

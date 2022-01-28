@@ -1,0 +1,147 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OHG     OHG      (2-methyl-1H-imidazol-4-yl)methanol     NON-POLYMER     16     8     .     
+#
+data_comp_OHG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OHG     CAA     C       CH3     0       48.949      -6.204      101.626     
+OHG     CAB     C       CR5     0       50.033      -5.190      101.622     
+OHG     NAC     N       NRD5    0       50.926      -5.020      102.584     
+OHG     NAF     N       NR5     0       50.240      -4.311      100.628     
+OHG     CAE     C       CR15    0       51.316      -3.540      100.964     
+OHG     CAD     C       CR5     0       51.744      -3.978      102.179     
+OHG     CAG     C       CH2     0       52.887      -3.479      103.002     
+OHG     OAH     O       OH1     0       54.083      -4.180      102.707     
+OHG     H1      H       H       0       49.226      -6.978      102.143     
+OHG     H2      H       H       0       48.755      -6.479      100.715     
+OHG     H3      H       H       0       48.148      -5.825      102.023     
+OHG     H5      H       H       0       49.759      -4.248      99.885      
+OHG     H6      H       H       0       51.680      -2.841      100.442     
+OHG     H7      H       H       0       52.678      -3.587      103.953     
+OHG     H8      H       H       0       53.024      -2.524      102.828     
+OHG     H9      H       H       0       54.372      -3.926      101.932     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OHG       NAF       CAE       SINGLE    y         1.366     0.0167    1.366     0.0167    
+OHG       CAB       NAF       SINGLE    y         1.341     0.0136    1.341     0.0136    
+OHG       CAE       CAD       DOUBLE    y         1.362     0.0100    1.362     0.0100    
+OHG       CAA       CAB       SINGLE    n         1.485     0.0100    1.485     0.0100    
+OHG       CAB       NAC       DOUBLE    y         1.323     0.0100    1.323     0.0100    
+OHG       NAC       CAD       SINGLE    y         1.386     0.0126    1.386     0.0126    
+OHG       CAD       CAG       SINGLE    n         1.494     0.0100    1.494     0.0100    
+OHG       CAG       OAH       SINGLE    n         1.417     0.0163    1.417     0.0163    
+OHG       CAA       H1        SINGLE    n         1.089     0.010     0.971     0.0200    
+OHG       CAA       H2        SINGLE    n         1.089     0.010     0.971     0.0200    
+OHG       CAA       H3        SINGLE    n         1.089     0.010     0.971     0.0200    
+OHG       NAF       H5        SINGLE    n         1.016     0.010     0.887     0.0200    
+OHG       CAE       H6        SINGLE    n         1.082     0.013     0.945     0.0191    
+OHG       CAG       H7        SINGLE    n         1.089     0.010     0.980     0.0156    
+OHG       CAG       H8        SINGLE    n         1.089     0.010     0.980     0.0156    
+OHG       OAH       H9        SINGLE    n         0.970     0.012     0.866     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OHG         CAB         CAA          H1     109.694    1.50
+OHG         CAB         CAA          H2     109.694    1.50
+OHG         CAB         CAA          H3     109.694    1.50
+OHG          H1         CAA          H2     109.308    2.38
+OHG          H1         CAA          H3     109.308    2.38
+OHG          H2         CAA          H3     109.308    2.38
+OHG         NAF         CAB         CAA     124.290    1.50
+OHG         NAF         CAB         NAC     110.229    1.50
+OHG         CAA         CAB         NAC     125.482    1.50
+OHG         CAB         NAC         CAD     106.431    1.50
+OHG         CAE         NAF         CAB     107.741    1.50
+OHG         CAE         NAF          H5     126.445    1.94
+OHG         CAB         NAF          H5     125.814    2.46
+OHG         NAF         CAE         CAD     106.799    1.50
+OHG         NAF         CAE          H6     125.692    1.72
+OHG         CAD         CAE          H6     127.509    1.50
+OHG         CAE         CAD         NAC     108.801    1.50
+OHG         CAE         CAD         CAG     128.517    1.50
+OHG         NAC         CAD         CAG     122.682    1.50
+OHG         CAD         CAG         OAH     111.519    1.50
+OHG         CAD         CAG          H7     109.578    1.50
+OHG         CAD         CAG          H8     109.578    1.50
+OHG         OAH         CAG          H7     109.192    1.50
+OHG         OAH         CAG          H8     109.192    1.50
+OHG          H7         CAG          H8     108.101    1.50
+OHG         CAG         OAH          H9     108.825    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OHG             sp2_sp3_1         NAF         CAB         CAA          H1     150.000   10.00     6
+OHG              const_16         CAA         CAB         NAC         CAD     180.000   10.00     2
+OHG       const_sp2_sp2_3         CAA         CAB         NAF         CAE     180.000   10.00     2
+OHG              const_14         CAG         CAD         NAC         CAB     180.000   10.00     2
+OHG       const_sp2_sp2_5         CAD         CAE         NAF         CAB       0.000   10.00     2
+OHG              const_11         CAG         CAD         CAE         NAF     180.000   10.00     2
+OHG             sp2_sp3_8         CAE         CAD         CAG         OAH     -90.000   10.00     6
+OHG             sp3_sp3_1         CAD         CAG         OAH          H9     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OHG    plan-1         CAA   0.020
+OHG    plan-1         CAB   0.020
+OHG    plan-1         CAD   0.020
+OHG    plan-1         CAE   0.020
+OHG    plan-1         CAG   0.020
+OHG    plan-1          H5   0.020
+OHG    plan-1          H6   0.020
+OHG    plan-1         NAC   0.020
+OHG    plan-1         NAF   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OHG           SMILES              ACDLabs 12.01                                              Cc1nc(cn1)CO
+OHG            InChI                InChI  1.03 InChI=1S/C5H8N2O/c1-4-6-2-5(3-8)7-4/h2,8H,3H2,1H3,(H,6,7)
+OHG         InChIKey                InChI  1.03                               MQRMTENGXFRETM-UHFFFAOYSA-N
+OHG SMILES_CANONICAL               CACTVS 3.385                                           Cc1[nH]cc(CO)n1
+OHG           SMILES               CACTVS 3.385                                           Cc1[nH]cc(CO)n1
+OHG SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                           Cc1[nH]cc(n1)CO
+OHG           SMILES "OpenEye OEToolkits" 2.0.7                                           Cc1[nH]cc(n1)CO
+OHG ?                acedrg               217         "dictionary generator"                  
+OHG ?                acedrg_database      11          "data source"                           
+OHG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OHG ?                refmac5              5.8.0253    "optimization tool"                     

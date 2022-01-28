@@ -1,0 +1,134 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LNK     LNK      PENTANE     NON-POLYMER     17     5     .     
+#
+data_comp_LNK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LNK     C1      C       CH3     0       -4.282      -3.018      -13.156     
+LNK     C2      C       CH2     0       -4.583      -1.844      -12.255     
+LNK     C3      C       CH2     0       -4.535      -0.513      -12.960     
+LNK     C4      C       CH2     0       -3.149      -0.037      -13.324     
+LNK     C5      C       CH3     0       -3.083      1.355       -13.918     
+LNK     H11     H       H       0       -4.371      -3.846      -12.653     
+LNK     H12     H       H       0       -3.373      -2.943      -13.496     
+LNK     H13     H       H       0       -4.906      -3.024      -13.902     
+LNK     H21     H       H       0       -3.934      -1.834      -11.518     
+LNK     H22     H       H       0       -5.477      -1.963      -11.866     
+LNK     H31     H       H       0       -4.956      0.160       -12.384     
+LNK     H32     H       H       0       -5.069      -0.575      -13.781     
+LNK     H41     H       H       0       -2.762      -0.671      -13.967     
+LNK     H42     H       H       0       -2.591      -0.060      -12.516     
+LNK     H51     H       H       0       -2.516      1.918       -13.362     
+LNK     H52     H       H       0       -3.976      1.742       -13.961     
+LNK     H23     H       H       0       -2.709      1.308       -14.815     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LNK       C1        C2        SINGLE    n         1.510     0.020     1.510     0.020     
+LNK       C2        C3        SINGLE    n         1.507     0.020     1.507     0.020     
+LNK       C3        C4        SINGLE    n         1.507     0.020     1.507     0.020     
+LNK       C4        C5        SINGLE    n         1.510     0.020     1.510     0.020     
+LNK       C1        H11       SINGLE    n         1.089     0.010     0.973     0.016     
+LNK       C1        H12       SINGLE    n         1.089     0.010     0.973     0.016     
+LNK       C1        H13       SINGLE    n         1.089     0.010     0.973     0.016     
+LNK       C2        H21       SINGLE    n         1.089     0.010     0.982     0.015     
+LNK       C2        H22       SINGLE    n         1.089     0.010     0.982     0.015     
+LNK       C3        H31       SINGLE    n         1.089     0.010     0.981     0.016     
+LNK       C3        H32       SINGLE    n         1.089     0.010     0.981     0.016     
+LNK       C4        H41       SINGLE    n         1.089     0.010     0.982     0.015     
+LNK       C4        H42       SINGLE    n         1.089     0.010     0.982     0.015     
+LNK       C5        H51       SINGLE    n         1.089     0.010     0.973     0.016     
+LNK       C5        H52       SINGLE    n         1.089     0.010     0.973     0.016     
+LNK       C5        H23       SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LNK          C2          C1         H11     109.554    1.50
+LNK          C2          C1         H12     109.554    1.50
+LNK          C2          C1         H13     109.554    1.50
+LNK         H11          C1         H12     109.380    1.50
+LNK         H11          C1         H13     109.380    1.50
+LNK         H12          C1         H13     109.380    1.50
+LNK          C1          C2          C3     113.719    3.00
+LNK          C1          C2         H21     108.918    1.50
+LNK          C1          C2         H22     108.918    1.50
+LNK          C3          C2         H21     108.758    1.50
+LNK          C3          C2         H22     108.758    1.50
+LNK         H21          C2         H22     107.763    1.50
+LNK          C2          C3          C4     115.238    3.00
+LNK          C2          C3         H31     108.653    1.50
+LNK          C2          C3         H32     108.653    1.50
+LNK          C4          C3         H31     108.653    1.50
+LNK          C4          C3         H32     108.653    1.50
+LNK         H31          C3         H32     107.646    1.50
+LNK          C3          C4          C5     113.719    3.00
+LNK          C3          C4         H41     108.758    1.50
+LNK          C3          C4         H42     108.758    1.50
+LNK          C5          C4         H41     108.918    1.50
+LNK          C5          C4         H42     108.918    1.50
+LNK         H41          C4         H42     107.763    1.50
+LNK          C4          C5         H51     109.554    1.50
+LNK          C4          C5         H52     109.554    1.50
+LNK          C4          C5         H23     109.554    1.50
+LNK         H51          C5         H52     109.380    1.50
+LNK         H51          C5         H23     109.380    1.50
+LNK         H52          C5         H23     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LNK             sp3_sp3_1         H11          C1          C2          C3     180.000   10.00     3
+LNK            sp3_sp3_10          C1          C2          C3          C4     180.000   10.00     3
+LNK            sp3_sp3_19          C2          C3          C4          C5     180.000   10.00     3
+LNK            sp3_sp3_28          C3          C4          C5         H51     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LNK SMILES           ACDLabs              10.04 CCCCC
+LNK SMILES_CANONICAL CACTVS               3.341 CCCCC
+LNK SMILES           CACTVS               3.341 CCCCC
+LNK SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCCCC
+LNK SMILES           "OpenEye OEToolkits" 1.5.0 CCCCC
+LNK InChI            InChI                1.03  InChI=1S/C5H12/c1-3-5-4-2/h3-5H2,1-2H3
+LNK InChIKey         InChI                1.03  OFBQJSOFQDEBGM-UHFFFAOYSA-N
+LNK ?                acedrg               202         "dictionary generator"                  
+LNK ?                acedrg_database      11          "data source"                           
+LNK ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LNK ?                refmac5              5.8.0189    "optimization tool"                     

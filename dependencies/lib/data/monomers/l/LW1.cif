@@ -1,0 +1,134 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LW1     LW1      thiophene-2-carbaldehyde     NON-POLYMER     11     7     .     
+#
+data_comp_LW1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LW1     C2      C       C1      0       9.611       -4.620      21.285      
+LW1     C3      C       CR5     0       10.991      -4.276      21.582      
+LW1     C4      C       CR15    0       11.989      -5.116      21.988      
+LW1     C5      C       CR15    0       13.215      -4.432      22.159      
+LW1     C6      C       CR15    0       13.125      -3.111      21.905      
+LW1     O1      O       O       0       8.714       -3.828      21.127      
+LW1     S7      S       S2      0       11.556      -2.654      21.441      
+LW1     H1      H       H       0       9.404       -5.530      21.211      
+LW1     H2      H       H       0       11.867      -6.034      22.134      
+LW1     H3      H       H       0       14.011      -4.854      22.423      
+LW1     H4      H       H       0       13.843      -2.510      21.975      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LW1       C2        O1        DOUBLE    n         1.206     0.0200    1.206     0.0200    
+LW1       C2        C3        SINGLE    n         1.450     0.0200    1.450     0.0200    
+LW1       C3        C4        DOUBLE    n         1.366     0.0123    1.366     0.0123    
+LW1       C3        S7        SINGLE    n         1.721     0.0142    1.721     0.0142    
+LW1       C4        C5        SINGLE    n         1.417     0.0156    1.417     0.0156    
+LW1       C6        S7        SINGLE    n         1.698     0.0136    1.698     0.0136    
+LW1       C5        C6        DOUBLE    n         1.351     0.0189    1.351     0.0189    
+LW1       C2        H1        SINGLE    n         1.082     0.013     0.936     0.0100    
+LW1       C4        H2        SINGLE    n         1.082     0.013     0.937     0.0119    
+LW1       C5        H3        SINGLE    n         1.082     0.013     0.939     0.0147    
+LW1       C6        H4        SINGLE    n         1.082     0.013     0.939     0.0177    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LW1          O1          C2          C3     125.104    1.50
+LW1          O1          C2          H1     117.656    1.50
+LW1          C3          C2          H1     117.240    1.50
+LW1          C2          C3          C4     127.664    1.50
+LW1          C2          C3          S7     120.954    1.93
+LW1          C4          C3          S7     111.382    1.50
+LW1          C3          C4          C5     112.276    2.00
+LW1          C3          C4          H2     123.357    1.50
+LW1          C5          C4          H2     124.382    1.50
+LW1          C4          C5          C6     113.702    1.50
+LW1          C4          C5          H3     123.177    1.50
+LW1          C6          C5          H3     123.121    1.50
+LW1          S7          C6          C5     112.502    1.50
+LW1          S7          C6          H4     123.472    1.50
+LW1          C5          C6          H4     124.007    1.50
+LW1          C3          S7          C6      91.448    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LW1            sp2_sp2_13          O1          C2          C3          C4     180.000   10.00     2
+LW1             sp2_sp2_3          C2          C3          C4          C5     180.000   10.00     2
+LW1             sp2_sp2_5          C3          C4          C5          C6       0.000   10.00     2
+LW1             sp2_sp2_9          C4          C5          C6          S7       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LW1    plan-1          C2   0.020
+LW1    plan-1          C3   0.020
+LW1    plan-1          H1   0.020
+LW1    plan-1          O1   0.020
+LW1    plan-2          C2   0.020
+LW1    plan-2          C3   0.020
+LW1    plan-2          C4   0.020
+LW1    plan-2          S7   0.020
+LW1    plan-3          C3   0.020
+LW1    plan-3          C4   0.020
+LW1    plan-3          C5   0.020
+LW1    plan-3          H2   0.020
+LW1    plan-4          C4   0.020
+LW1    plan-4          C5   0.020
+LW1    plan-4          C6   0.020
+LW1    plan-4          H3   0.020
+LW1    plan-5          C5   0.020
+LW1    plan-5          C6   0.020
+LW1    plan-5          H4   0.020
+LW1    plan-5          S7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LW1           SMILES              ACDLabs 12.01                           C(c1cccs1)=O
+LW1            InChI                InChI  1.03 InChI=1S/C5H4OS/c6-4-5-2-1-3-7-5/h1-4H
+LW1         InChIKey                InChI  1.03            CNUDBTRUORMMPA-UHFFFAOYSA-N
+LW1 SMILES_CANONICAL               CACTVS 3.385                             O=Cc1sccc1
+LW1           SMILES               CACTVS 3.385                             O=Cc1sccc1
+LW1 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                           c1cc(sc1)C=O
+LW1           SMILES "OpenEye OEToolkits" 2.0.6                           c1cc(sc1)C=O
+LW1 ?                acedrg               217         "dictionary generator"                  
+LW1 ?                acedrg_database      11          "data source"                           
+LW1 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LW1 ?                refmac5              5.8.0253    "optimization tool"                     

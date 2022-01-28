@@ -1,0 +1,103 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MCR     MCR      "SULFANYLACETIC ACID"     NON-POLYMER     8     5     .     
+#
+data_comp_MCR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MCR     O1      O       OC      -1      -0.071      2.450       -1.601      
+MCR     C1      C       C       0       -0.518      1.285       -1.595      
+MCR     O2      O       O       0       -1.602      0.922       -2.094      
+MCR     C2      C       CH2     0       0.330       0.219       -0.923      
+MCR     S2      S       SH1     0       1.448       -0.615      -2.087      
+MCR     H21     H       H       0       -0.261      -0.441      -0.518      
+MCR     H22     H       H       0       0.855       0.636       -0.217      
+MCR     HS2     H       HSH1    0       1.977       -1.366      -1.301      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MCR       O1        C1        SINGLE    n         1.247     0.019     1.247     0.019     
+MCR       C1        O2        DOUBLE    n         1.247     0.019     1.247     0.019     
+MCR       C1        C2        SINGLE    n         1.519     0.010     1.519     0.010     
+MCR       C2        S2        SINGLE    n         1.817     0.015     1.817     0.015     
+MCR       C2        H21       SINGLE    n         1.089     0.010     0.989     0.005     
+MCR       C2        H22       SINGLE    n         1.089     0.010     0.989     0.005     
+MCR       S2        HS2       SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MCR          O1          C1          O2     125.576    1.50
+MCR          O1          C1          C2     117.212    2.93
+MCR          O2          C1          C2     117.212    2.93
+MCR          C1          C2          S2     111.968    3.00
+MCR          C1          C2         H21     108.575    1.82
+MCR          C1          C2         H22     108.575    1.82
+MCR          S2          C2         H21     109.066    1.50
+MCR          S2          C2         H22     109.066    1.50
+MCR         H21          C2         H22     108.193    1.80
+MCR          C2          S2         HS2      97.885    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MCR             sp2_sp3_2          O1          C1          C2          S2     120.000   10.00     6
+MCR             sp3_sp3_1          C1          C2          S2         HS2     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MCR    plan-1          C1   0.020
+MCR    plan-1          C2   0.020
+MCR    plan-1          O1   0.020
+MCR    plan-1          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MCR SMILES           ACDLabs              10.04 "O=C(O)CS"
+MCR SMILES_CANONICAL CACTVS               3.341 "OC(=O)CS"
+MCR SMILES           CACTVS               3.341 "OC(=O)CS"
+MCR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)S"
+MCR SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)S"
+MCR InChI            InChI                1.03  "InChI=1S/C2H4O2S/c3-2(4)1-5/h5H,1H2,(H,3,4)"
+MCR InChIKey         InChI                1.03  CWERGRDVMFNCDR-UHFFFAOYSA-N
+MCR ?                acedrg               202         "dictionary generator"                  
+MCR ?                acedrg_database      11          "data source"                           
+MCR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MCR ?                refmac5              5.8.0189    "optimization tool"                     

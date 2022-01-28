@@ -1,0 +1,376 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+7JA      7JA 'N-({(1R,2S)-3-oxo-2-[(2Z)-pent-2-en-' non-polymer        51  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_7JA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 7JA           OXT    O    OC       -0.500      0.000    0.000    0.000
+ 7JA           C      C    C         0.000     -1.236   -0.095   -0.165
+ 7JA           O      O    OC       -0.500     -1.729    0.057   -1.305
+ 7JA           CA     C    CH1       0.000     -2.131   -0.399    1.009
+ 7JA           HA     H    H         0.000     -2.024    0.391    1.766
+ 7JA           CB     C    CH1       0.000     -1.736   -1.746    1.617
+ 7JA           HB     H    H         0.000     -2.444   -2.010    2.415
+ 7JA           CG2    C    CH3       0.000     -1.764   -2.824    0.532
+ 7JA           HG2B   H    H         0.000     -1.490   -3.757    0.952
+ 7JA           HG2A   H    H         0.000     -2.741   -2.893    0.128
+ 7JA           HG2    H    H         0.000     -1.082   -2.570   -0.237
+ 7JA           CG1    C    CH2       0.000     -0.324   -1.646    2.200
+ 7JA           HG1    H    H         0.000     -0.281   -0.817    2.909
+ 7JA           H29    H    H         0.000      0.391   -1.471    1.393
+ 7JA           CD1    C    CH3       0.000      0.024   -2.953    2.917
+ 7JA           H28    H    H         0.000     -0.017   -3.760    2.230
+ 7JA           HD1A   H    H         0.000      1.002   -2.888    3.322
+ 7JA           HD1    H    H         0.000     -0.669   -3.125    3.701
+ 7JA           N      N    NH1       0.000     -3.524   -0.457    0.558
+ 7JA           HN     H    H         0.000     -3.940   -1.346    0.318
+ 7JA           C13    C    C         0.000     -4.249    0.674    0.462
+ 7JA           O14    O    O         0.000     -3.750    1.741    0.750
+ 7JA           C12    C    CH2       0.000     -5.682    0.614   -0.001
+ 7JA           H12    H    H         0.000     -6.258   -0.014    0.682
+ 7JA           H12A   H    H         0.000     -5.722    0.188   -1.006
+ 7JA           C11    C    CH1       0.000     -6.272    2.026   -0.020
+ 7JA           H11    H    H         0.000     -6.130    2.508    0.958
+ 7JA           C10    C    CH2       0.000     -5.604    2.867   -1.130
+ 7JA           H10    H    H         0.000     -5.187    2.245   -1.925
+ 7JA           H10A   H    H         0.000     -4.826    3.525   -0.738
+ 7JA           C09    C    CH2       0.000     -6.768    3.718   -1.695
+ 7JA           H09    H    H         0.000     -6.591    4.041   -2.723
+ 7JA           H09A   H    H         0.000     -6.990    4.589   -1.074
+ 7JA           C07    C    C         0.000     -7.947    2.753   -1.660
+ 7JA           O08    O    O         0.000     -8.830    2.635   -2.477
+ 7JA           C06    C    CH1       0.000     -7.770    1.970   -0.370
+ 7JA           H06    H    H         0.000     -8.362    2.430    0.433
+ 7JA           C05    C    CH2       0.000     -8.205    0.518   -0.576
+ 7JA           H05    H    H         0.000     -7.946   -0.068    0.309
+ 7JA           H05A   H    H         0.000     -7.692    0.104   -1.447
+ 7JA           C04    C    C1        0.000     -9.695    0.466   -0.797
+ 7JA           H04    H    H         0.000    -10.361    0.925   -0.086
+ 7JA           C03    C    C1        0.000    -10.179   -0.138   -1.853
+ 7JA           H03    H    H         0.000    -11.231   -0.071   -2.077
+ 7JA           C02    C    CH2       0.000     -9.266   -0.927   -2.756
+ 7JA           H02    H    H         0.000     -8.275   -0.994   -2.302
+ 7JA           H27    H    H         0.000     -9.189   -0.427   -3.723
+ 7JA           C01    C    CH3       0.000     -9.834   -2.335   -2.952
+ 7JA           H26    H    H         0.000     -9.910   -2.823   -2.013
+ 7JA           H01A   H    H         0.000    -10.796   -2.273   -3.393
+ 7JA           H01    H    H         0.000     -9.193   -2.893   -3.586
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 7JA      OXT    n/a    C      START
+ 7JA      C      OXT    CA     .
+ 7JA      O      C      .      .
+ 7JA      CA     C      N      .
+ 7JA      HA     CA     .      .
+ 7JA      CB     CA     CG1    .
+ 7JA      HB     CB     .      .
+ 7JA      CG2    CB     HG2    .
+ 7JA      HG2B   CG2    .      .
+ 7JA      HG2A   CG2    .      .
+ 7JA      HG2    CG2    .      .
+ 7JA      CG1    CB     CD1    .
+ 7JA      HG1    CG1    .      .
+ 7JA      H29    CG1    .      .
+ 7JA      CD1    CG1    HD1    .
+ 7JA      H28    CD1    .      .
+ 7JA      HD1A   CD1    .      .
+ 7JA      HD1    CD1    .      .
+ 7JA      N      CA     C13    .
+ 7JA      HN     N      .      .
+ 7JA      C13    N      C12    .
+ 7JA      O14    C13    .      .
+ 7JA      C12    C13    C11    .
+ 7JA      H12    C12    .      .
+ 7JA      H12A   C12    .      .
+ 7JA      C11    C12    C06    .
+ 7JA      H11    C11    .      .
+ 7JA      C10    C11    C09    .
+ 7JA      H10    C10    .      .
+ 7JA      H10A   C10    .      .
+ 7JA      C09    C10    C07    .
+ 7JA      H09    C09    .      .
+ 7JA      H09A   C09    .      .
+ 7JA      C07    C09    O08    .
+ 7JA      O08    C07    .      .
+ 7JA      C06    C11    C05    .
+ 7JA      H06    C06    .      .
+ 7JA      C05    C06    C04    .
+ 7JA      H05    C05    .      .
+ 7JA      H05A   C05    .      .
+ 7JA      C04    C05    C03    .
+ 7JA      H04    C04    .      .
+ 7JA      C03    C04    C02    .
+ 7JA      H03    C03    .      .
+ 7JA      C02    C03    C01    .
+ 7JA      H02    C02    .      .
+ 7JA      H27    C02    .      .
+ 7JA      C01    C02    H01    .
+ 7JA      H26    C01    .      .
+ 7JA      H01A   C01    .      .
+ 7JA      H01    C01    .      END
+ 7JA      C06    C07    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+7JA       C         OXT       deloc     1.250     0.020     1.250     0.020     
+7JA       N         CA        single    1.450     0.020     1.450     0.020     
+7JA       HN        N         single    1.016     0.010     0.899     0.007     
+7JA       O         C         deloc     1.250     0.020     1.250     0.020     
+7JA       CA        C         single    1.500     0.020     1.500     0.020     
+7JA       CB        CA        single    1.524     0.020     1.524     0.020     
+7JA       HA        CA        single    1.089     0.010     0.989     0.005     
+7JA       CG1       CB        single    1.524     0.020     1.524     0.020     
+7JA       CG2       CB        single    1.524     0.020     1.524     0.020     
+7JA       HB        CB        single    1.089     0.010     0.989     0.005     
+7JA       C01       C02       single    1.513     0.020     1.513     0.020     
+7JA       H01       C01       single    1.089     0.010     0.989     0.005     
+7JA       H01A      C01       single    1.089     0.010     0.989     0.005     
+7JA       C02       C03       single    1.510     0.020     1.510     0.020     
+7JA       H02       C02       single    1.089     0.010     0.989     0.005     
+7JA       C03       C04       double    1.330     0.020     1.330     0.020     
+7JA       H03       C03       single    1.082     0.013     0.975     0.010     
+7JA       C04       C05       single    1.510     0.020     1.510     0.020     
+7JA       H04       C04       single    1.082     0.013     0.975     0.010     
+7JA       C05       C06       single    1.524     0.020     1.524     0.020     
+7JA       H05       C05       single    1.089     0.010     0.989     0.005     
+7JA       H05A      C05       single    1.089     0.010     0.989     0.005     
+7JA       C06       C11       single    1.524     0.020     1.524     0.020     
+7JA       C06       C07       single    1.500     0.020     1.500     0.020     
+7JA       H06       C06       single    1.089     0.010     0.989     0.005     
+7JA       O08       C07       double    1.220     0.020     1.220     0.020     
+7JA       C07       C09       single    1.510     0.020     1.510     0.020     
+7JA       H09       C09       single    1.089     0.010     0.989     0.005     
+7JA       H09A      C09       single    1.089     0.010     0.989     0.005     
+7JA       C09       C10       single    1.524     0.020     1.524     0.020     
+7JA       H10       C10       single    1.089     0.010     0.989     0.005     
+7JA       H10A      C10       single    1.089     0.010     0.989     0.005     
+7JA       C10       C11       single    1.524     0.020     1.524     0.020     
+7JA       H11       C11       single    1.089     0.010     0.989     0.005     
+7JA       C11       C12       single    1.524     0.020     1.524     0.020     
+7JA       C12       C13       single    1.510     0.020     1.510     0.020     
+7JA       H12       C12       single    1.089     0.010     0.989     0.005     
+7JA       H12A      C12       single    1.089     0.010     0.989     0.005     
+7JA       C13       N         single    1.330     0.020     1.330     0.020     
+7JA       O14       C13       double    1.220     0.020     1.220     0.020     
+7JA       HD1       CD1       single    1.089     0.010     0.989     0.005     
+7JA       HD1A      CD1       single    1.089     0.010     0.989     0.005     
+7JA       CD1       CG1       single    1.513     0.020     1.513     0.020     
+7JA       HG1       CG1       single    1.089     0.010     0.989     0.005     
+7JA       HG2       CG2       single    1.089     0.010     0.989     0.005     
+7JA       HG2A      CG2       single    1.089     0.010     0.989     0.005     
+7JA       HG2B      CG2       single    1.089     0.010     0.989     0.005     
+7JA       H26       C01       single    1.089     0.010     0.989     0.005     
+7JA       H27       C02       single    1.089     0.010     0.989     0.005     
+7JA       H28       CD1       single    1.089     0.010     0.989     0.005     
+7JA       H29       CG1       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 7JA      OXT    C      O       123.000    3.000
+ 7JA      OXT    C      CA      118.500    3.000
+ 7JA      O      C      CA      118.500    3.000
+ 7JA      C      CA     HA      108.810    3.000
+ 7JA      C      CA     CB      109.470    3.000
+ 7JA      C      CA     N       111.600    3.000
+ 7JA      HA     CA     CB      108.340    3.000
+ 7JA      HA     CA     N       108.550    3.000
+ 7JA      CB     CA     N       110.000    3.000
+ 7JA      CA     CB     HB      108.340    3.000
+ 7JA      CA     CB     CG2     111.000    3.000
+ 7JA      CA     CB     CG1     111.000    3.000
+ 7JA      HB     CB     CG2     108.340    3.000
+ 7JA      HB     CB     CG1     108.340    3.000
+ 7JA      CG2    CB     CG1     111.000    3.000
+ 7JA      CB     CG2    HG2B    109.470    3.000
+ 7JA      CB     CG2    HG2A    109.470    3.000
+ 7JA      CB     CG2    HG2     109.470    3.000
+ 7JA      HG2B   CG2    HG2A    109.470    3.000
+ 7JA      HG2B   CG2    HG2     109.470    3.000
+ 7JA      HG2A   CG2    HG2     109.470    3.000
+ 7JA      CB     CG1    HG1     109.470    3.000
+ 7JA      CB     CG1    H29     109.470    3.000
+ 7JA      CB     CG1    CD1     111.000    3.000
+ 7JA      HG1    CG1    H29     107.900    3.000
+ 7JA      HG1    CG1    CD1     109.470    3.000
+ 7JA      H29    CG1    CD1     109.470    3.000
+ 7JA      CG1    CD1    H28     109.470    3.000
+ 7JA      CG1    CD1    HD1A    109.470    3.000
+ 7JA      CG1    CD1    HD1     109.470    3.000
+ 7JA      H28    CD1    HD1A    109.470    3.000
+ 7JA      H28    CD1    HD1     109.470    3.000
+ 7JA      HD1A   CD1    HD1     109.470    3.000
+ 7JA      CA     N      HN      118.500    3.000
+ 7JA      CA     N      C13     121.500    3.000
+ 7JA      HN     N      C13     120.000    3.000
+ 7JA      N      C13    O14     123.000    3.000
+ 7JA      N      C13    C12     116.500    3.000
+ 7JA      O14    C13    C12     120.500    3.000
+ 7JA      C13    C12    H12     109.470    3.000
+ 7JA      C13    C12    H12A    109.470    3.000
+ 7JA      C13    C12    C11     109.470    3.000
+ 7JA      H12    C12    H12A    107.900    3.000
+ 7JA      H12    C12    C11     109.470    3.000
+ 7JA      H12A   C12    C11     109.470    3.000
+ 7JA      C12    C11    H11     108.340    3.000
+ 7JA      C12    C11    C10     109.470    3.000
+ 7JA      C12    C11    C06     111.000    3.000
+ 7JA      H11    C11    C10     108.340    3.000
+ 7JA      H11    C11    C06     108.340    3.000
+ 7JA      C10    C11    C06     111.000    3.000
+ 7JA      C11    C10    H10     109.470    3.000
+ 7JA      C11    C10    H10A    109.470    3.000
+ 7JA      C11    C10    C09     111.000    3.000
+ 7JA      H10    C10    H10A    107.900    3.000
+ 7JA      H10    C10    C09     109.470    3.000
+ 7JA      H10A   C10    C09     109.470    3.000
+ 7JA      C10    C09    H09     109.470    3.000
+ 7JA      C10    C09    H09A    109.470    3.000
+ 7JA      C10    C09    C07     109.470    3.000
+ 7JA      H09    C09    H09A    107.900    3.000
+ 7JA      H09    C09    C07     109.470    3.000
+ 7JA      H09A   C09    C07     109.470    3.000
+ 7JA      C09    C07    O08     120.500    3.000
+ 7JA      C09    C07    C06     120.000    3.000
+ 7JA      O08    C07    C06     120.500    3.000
+ 7JA      C11    C06    H06     108.340    3.000
+ 7JA      C11    C06    C05     111.000    3.000
+ 7JA      C11    C06    C07     109.470    3.000
+ 7JA      H06    C06    C05     108.340    3.000
+ 7JA      H06    C06    C07     108.810    3.000
+ 7JA      C05    C06    C07     109.470    3.000
+ 7JA      C06    C05    H05     109.470    3.000
+ 7JA      C06    C05    H05A    109.470    3.000
+ 7JA      C06    C05    C04     109.470    3.000
+ 7JA      H05    C05    H05A    107.900    3.000
+ 7JA      H05    C05    C04     109.470    3.000
+ 7JA      H05A   C05    C04     109.470    3.000
+ 7JA      C05    C04    H04     120.000    3.000
+ 7JA      C05    C04    C03     120.000    3.000
+ 7JA      H04    C04    C03     120.000    3.000
+ 7JA      C04    C03    H03     120.000    3.000
+ 7JA      C04    C03    C02     120.000    3.000
+ 7JA      H03    C03    C02     120.000    3.000
+ 7JA      C03    C02    H02     109.470    3.000
+ 7JA      C03    C02    H27     109.470    3.000
+ 7JA      C03    C02    C01     109.500    3.000
+ 7JA      H02    C02    H27     107.900    3.000
+ 7JA      H02    C02    C01     109.470    3.000
+ 7JA      H27    C02    C01     109.470    3.000
+ 7JA      C02    C01    H26     109.470    3.000
+ 7JA      C02    C01    H01A    109.470    3.000
+ 7JA      C02    C01    H01     109.470    3.000
+ 7JA      H26    C01    H01A    109.470    3.000
+ 7JA      H26    C01    H01     109.470    3.000
+ 7JA      H01A   C01    H01     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 7JA      var_1    OXT    C      CA     N        179.957   20.000   3
+ 7JA      var_2    C      CA     CB     CG1       65.029   20.000   3
+ 7JA      var_3    CA     CB     CG2    HG2       59.984   20.000   3
+ 7JA      var_4    CA     CB     CG1    CD1      175.000   20.000   3
+ 7JA      var_5    CB     CG1    CD1    HD1      -60.017   20.000   3
+ 7JA      var_6    C      CA     N      C13      -85.010   20.000   3
+ 7JA      CONST_1  CA     N      C13    C12      180.000    0.000   0
+ 7JA      var_7    N      C13    C12    C11      179.989   20.000   3
+ 7JA      var_8    C13    C12    C11    C06     -175.033   20.000   3
+ 7JA      var_9    C12    C11    C10    C09      150.000   20.000   3
+ 7JA      var_10   C11    C10    C09    C07      -30.000   20.000   3
+ 7JA      var_11   C10    C09    C07    O08     -150.000   20.000   3
+ 7JA      var_12   C12    C11    C06    C05        0.000   20.000   3
+ 7JA      var_13   C11    C06    C07    C09      -30.000   20.000   3
+ 7JA      var_14   C11    C06    C05    C04      174.992   20.000   3
+ 7JA      var_15   C06    C05    C04    C03      126.412   20.000   1
+ 7JA      CONST_2  C05    C04    C03    C02        7.626    0.000   0
+ 7JA      var_16   C04    C03    C02    C01      127.593   20.000   1
+ 7JA      var_17   C03    C02    C01    H01     -179.979   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 7JA      chir_01  CA     C      N      CB        negativ
+ 7JA      chir_02  CB     CA     CG1    CG2       positiv
+ 7JA      chir_03  C06    C05    C07    C11       positiv
+ 7JA      chir_04  C11    C06    C10    C12       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 7JA      plan-1    C         0.020
+ 7JA      plan-1    O         0.020
+ 7JA      plan-1    CA        0.020
+ 7JA      plan-1    OXT       0.020
+ 7JA      plan-2    N         0.020
+ 7JA      plan-2    CA        0.020
+ 7JA      plan-2    C13       0.020
+ 7JA      plan-2    HN        0.020
+ 7JA      plan-3    C03       0.020
+ 7JA      plan-3    C02       0.020
+ 7JA      plan-3    C04       0.020
+ 7JA      plan-3    H03       0.020
+ 7JA      plan-3    C05       0.020
+ 7JA      plan-3    H04       0.020
+ 7JA      plan-4    C07       0.020
+ 7JA      plan-4    C06       0.020
+ 7JA      plan-4    O08       0.020
+ 7JA      plan-4    C09       0.020
+ 7JA      plan-5    C13       0.020
+ 7JA      plan-5    N         0.020
+ 7JA      plan-5    C12       0.020
+ 7JA      plan-5    O14       0.020
+ 7JA      plan-5    HN        0.020
+# ------------------------------------------------------

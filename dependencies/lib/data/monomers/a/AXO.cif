@@ -1,0 +1,107 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AXO     AXO      "(1E)-N-hydroxyethanimine"     NON-POLYMER     9     4     .     
+#
+data_comp_AXO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AXO     C1      C       C1      0       21.099      16.168      38.673      
+AXO     C2      C       CH3     0       22.325      16.356      37.849      
+AXO     N       N       N       0       20.007      15.776      38.162      
+AXO     O1      O       OH1     0       18.946      15.704      39.102      
+AXO     H1      H       H       0       21.117      16.338      39.597      
+AXO     H3      H       H       0       22.077      16.487      36.919      
+AXO     H4      H       H       0       22.889      15.570      37.926      
+AXO     H5      H       H       0       22.810      17.135      38.167      
+AXO     H7      H       H       0       18.948      14.902      39.415      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AXO       C1        C2        SINGLE    n         1.487     0.017     1.487     0.017     
+AXO       C1        N         DOUBLE    n         1.264     0.010     1.264     0.010     
+AXO       N         O1        SINGLE    n         1.414     0.018     1.414     0.018     
+AXO       C1        H1        SINGLE    n         1.082     0.013     0.938     0.013     
+AXO       C2        H3        SINGLE    n         1.089     0.010     0.971     0.014     
+AXO       C2        H4        SINGLE    n         1.089     0.010     0.971     0.014     
+AXO       C2        H5        SINGLE    n         1.089     0.010     0.971     0.014     
+AXO       O1        H7        SINGLE    n         0.970     0.012     0.861     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AXO          C2          C1           N     121.616    3.00
+AXO          C2          C1          H1     121.368    3.00
+AXO           N          C1          H1     117.015    1.58
+AXO          C1          C2          H3     109.452    1.50
+AXO          C1          C2          H4     109.452    1.50
+AXO          C1          C2          H5     109.452    1.50
+AXO          H3          C2          H4     109.476    1.50
+AXO          H3          C2          H5     109.476    1.50
+AXO          H4          C2          H5     109.476    1.50
+AXO          C1           N          O1     111.667    1.50
+AXO           N          O1          H7     106.570    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AXO             sp2_sp3_1           N          C1          C2          H3       0.000   10.00     6
+AXO             sp2_sp2_1          C2          C1           N          O1     180.000   10.00     2
+AXO             sp2_sp3_7          C1           N          O1          H7       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AXO    plan-1          C1   0.020
+AXO    plan-1          C2   0.020
+AXO    plan-1          H1   0.020
+AXO    plan-1           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AXO SMILES           ACDLabs              12.01 "N(/O)=C\C"
+AXO InChI            InChI                1.03  InChI=1S/C2H5NO/c1-2-3-4/h2,4H,1H3/b3-2+
+AXO InChIKey         InChI                1.03  FZENGILVLUJGJX-NSCUHMNNSA-N
+AXO SMILES_CANONICAL CACTVS               3.385 C/C=N/O
+AXO SMILES           CACTVS               3.385 CC=NO
+AXO SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 C/C=N/O
+AXO SMILES           "OpenEye OEToolkits" 1.7.6 CC=NO
+AXO ?                acedrg               202         "dictionary generator"                  
+AXO ?                acedrg_database      11          "data source"                           
+AXO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AXO ?                refmac5              5.8.0189    "optimization tool"                     

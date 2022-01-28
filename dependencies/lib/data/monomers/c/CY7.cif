@@ -1,0 +1,585 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CY7      CY7 'S-{(1S)-3-{[(4Z)-4-{[3-CHLORO-4-(PYR' non-polymer        82  47 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CY7
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CY7           OXT    O    OC       -0.500      0.000    0.000    0.000
+ CY7           C      C    C         0.000      0.034    0.136    1.243
+ CY7           O      O    OC       -0.500      1.085   -0.113    1.873
+ CY7           CA     C    CH1       0.000     -1.194    0.602    1.982
+ CY7           HA     H    H         0.000     -2.085    0.124    1.551
+ CY7           N      N    NH2       0.000     -1.080    0.236    3.401
+ CY7           HN2    H    H         0.000     -1.031    0.955    4.113
+ CY7           HN1    H    H         0.000     -1.049   -0.739    3.677
+ CY7           CB     C    CH2       0.000     -1.320    2.122    1.857
+ CY7           HBC1   H    H         0.000     -1.404    2.394    0.803
+ CY7           HBC2   H    H         0.000     -0.434    2.596    2.285
+ CY7           SG     S    S2        0.000     -2.798    2.683    2.748
+ CY7           CBT    C    CH1       0.000     -2.775    4.478    2.487
+ CY7           HBT    H    H         0.000     -2.733    4.691    1.410
+ CY7           CAY    C    CH2       0.000     -1.545    5.076    3.174
+ CY7           HAY1   H    H         0.000     -1.587    4.865    4.245
+ CY7           HAY2   H    H         0.000     -1.531    6.157    3.018
+ CY7           NBU    N    NT        0.000     -0.328    4.483    2.604
+ CY7           CAC    C    CH3       0.000      0.856    4.852    3.392
+ CY7           HAC3   H    H         0.000      1.718    4.412    2.960
+ CY7           HAC2   H    H         0.000      0.963    5.905    3.397
+ CY7           HAC1   H    H         0.000      0.743    4.503    4.385
+ CY7           CAB    C    CH3       0.000     -0.165    4.868    1.196
+ CY7           HAB3   H    H         0.000      0.718    4.428    0.810
+ CY7           HAB2   H    H         0.000     -1.000    4.532    0.639
+ CY7           HAB1   H    H         0.000     -0.094    5.923    1.124
+ CY7           CAX    C    CH2       0.000     -4.042    5.096    3.082
+ CY7           HAX1   H    H         0.000     -3.986    6.184    3.005
+ CY7           HAX2   H    H         0.000     -4.127    4.810    4.132
+ CY7           CBH    C    C         0.000     -5.246    4.598    2.324
+ CY7           OAG    O    O         0.000     -5.104    3.825    1.399
+ CY7           NBB    N    NH1       0.000     -6.480    5.011    2.672
+ CY7           HBB    H    H         0.000     -6.605    5.604    3.481
+ CY7           CBM    C    CR6       0.000     -7.591    4.619    1.913
+ CY7           CAS    C    CR16      0.000     -7.618    3.369    1.323
+ CY7           HAS    H    H         0.000     -6.783    2.691    1.445
+ CY7           CBO    C    CR6       0.000     -8.670    5.493    1.753
+ CY7           OBD    O    O2        0.000     -8.636    6.720    2.335
+ CY7           CAU    C    CH2       0.000     -9.770    7.566    2.134
+ CY7           HAU1   H    H         0.000    -10.663    7.077    2.531
+ CY7           HAU2   H    H         0.000     -9.902    7.749    1.066
+ CY7           CAA    C    CH3       0.000     -9.550    8.895    2.859
+ CY7           HAA3   H    H         0.000     -8.684    9.372    2.474
+ CY7           HAA2   H    H         0.000    -10.391    9.525    2.712
+ CY7           HAA1   H    H         0.000     -9.421    8.720    3.896
+ CY7           CAT    C    CR16      0.000     -9.774    5.117    1.009
+ CY7           HAT    H    H         0.000    -10.606    5.801    0.891
+ CY7           CBQ    C    CR66      0.000     -9.815    3.863    0.413
+ CY7           CBR    C    CR66      0.000     -8.727    2.988    0.570
+ CY7           NBA    N    NR16      0.000    -10.915    3.467   -0.331
+ CY7           HBA    H    H         0.000    -11.798    4.011   -0.253
+ CY7           CAQ    C    CR16      0.000    -10.876    2.395   -1.156
+ CY7           HAQ    H    H         0.000    -11.660    2.265   -1.891
+ CY7           CBL    C    CR6       0.000     -9.863    1.466   -1.082
+ CY7           CAJ    C    CSP       0.000     -9.845    0.332   -1.957
+ CY7           NAD    N    NS        0.000     -9.831   -0.566   -2.653
+ CY7           CBP    C    CR6       0.000     -8.794    1.663   -0.080
+ CY7           NBC    N    N         0.000     -7.936    0.703    0.216
+ CY7           CBI    C    CR6       0.000     -8.123   -0.556   -0.281
+ CY7           CAR    C    CR16      0.000     -7.180   -1.115   -1.148
+ CY7           HAR    H    H         0.000     -6.299   -0.551   -1.428
+ CY7           CBJ    C    CR6       0.000     -7.373   -2.387   -1.646
+ CY7           CLA    CL   CL        0.000     -6.203   -3.084   -2.722
+ CY7           CAO    C    CR16      0.000     -9.261   -1.288    0.072
+ CY7           HAO    H    H         0.000     -9.997   -0.858    0.740
+ CY7           CAP    C    CR16      0.000     -9.444   -2.559   -0.431
+ CY7           HAP    H    H         0.000    -10.325   -3.127   -0.158
+ CY7           CBN    C    CR6       0.000     -8.502   -3.113   -1.287
+ CY7           OBE    O    O2        0.000     -8.688   -4.366   -1.780
+ CY7           CAV    C    CH2       0.000     -9.872   -5.055   -1.370
+ CY7           HAV1   H    H         0.000    -10.750   -4.484   -1.677
+ CY7           HAV2   H    H         0.000     -9.871   -5.164   -0.283
+ CY7           CBK    C    CR6       0.000     -9.906   -6.417   -2.013
+ CY7           CAN    C    CR16      0.000     -8.877   -6.806   -2.850
+ CY7           HAN    H    H         0.000     -8.048   -6.137   -3.046
+ CY7           NAZ    N    NRD6      0.000    -10.918   -7.227   -1.769
+ CY7           CAM    C    CR16      0.000    -10.991   -8.428   -2.308
+ CY7           HAM    H    H         0.000    -11.839   -9.065   -2.085
+ CY7           CAK    C    CR16      0.000     -9.999   -8.884   -3.155
+ CY7           HAK    H    H         0.000    -10.064   -9.872   -3.595
+ CY7           CAL    C    CR16      0.000     -8.919   -8.061   -3.436
+ CY7           HAL    H    H         0.000     -8.127   -8.392   -4.096
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CY7      OXT    n/a    C      START
+ CY7      C      OXT    CA     .
+ CY7      O      C      .      .
+ CY7      CA     C      CB     .
+ CY7      HA     CA     .      .
+ CY7      N      CA     HN1    .
+ CY7      HN2    N      .      .
+ CY7      HN1    N      .      .
+ CY7      CB     CA     SG     .
+ CY7      HBC1   CB     .      .
+ CY7      HBC2   CB     .      .
+ CY7      SG     CB     CBT    .
+ CY7      CBT    SG     CAX    .
+ CY7      HBT    CBT    .      .
+ CY7      CAY    CBT    NBU    .
+ CY7      HAY1   CAY    .      .
+ CY7      HAY2   CAY    .      .
+ CY7      NBU    CAY    CAB    .
+ CY7      CAC    NBU    HAC1   .
+ CY7      HAC3   CAC    .      .
+ CY7      HAC2   CAC    .      .
+ CY7      HAC1   CAC    .      .
+ CY7      CAB    NBU    HAB1   .
+ CY7      HAB3   CAB    .      .
+ CY7      HAB2   CAB    .      .
+ CY7      HAB1   CAB    .      .
+ CY7      CAX    CBT    CBH    .
+ CY7      HAX1   CAX    .      .
+ CY7      HAX2   CAX    .      .
+ CY7      CBH    CAX    NBB    .
+ CY7      OAG    CBH    .      .
+ CY7      NBB    CBH    CBM    .
+ CY7      HBB    NBB    .      .
+ CY7      CBM    NBB    CBO    .
+ CY7      CAS    CBM    HAS    .
+ CY7      HAS    CAS    .      .
+ CY7      CBO    CBM    CAT    .
+ CY7      OBD    CBO    CAU    .
+ CY7      CAU    OBD    CAA    .
+ CY7      HAU1   CAU    .      .
+ CY7      HAU2   CAU    .      .
+ CY7      CAA    CAU    HAA1   .
+ CY7      HAA3   CAA    .      .
+ CY7      HAA2   CAA    .      .
+ CY7      HAA1   CAA    .      .
+ CY7      CAT    CBO    CBQ    .
+ CY7      HAT    CAT    .      .
+ CY7      CBQ    CAT    NBA    .
+ CY7      CBR    CBQ    .      .
+ CY7      NBA    CBQ    CAQ    .
+ CY7      HBA    NBA    .      .
+ CY7      CAQ    NBA    CBL    .
+ CY7      HAQ    CAQ    .      .
+ CY7      CBL    CAQ    CBP    .
+ CY7      CAJ    CBL    NAD    .
+ CY7      NAD    CAJ    .      .
+ CY7      CBP    CBL    NBC    .
+ CY7      NBC    CBP    CBI    .
+ CY7      CBI    NBC    CAO    .
+ CY7      CAR    CBI    CBJ    .
+ CY7      HAR    CAR    .      .
+ CY7      CBJ    CAR    CLA    .
+ CY7      CLA    CBJ    .      .
+ CY7      CAO    CBI    CAP    .
+ CY7      HAO    CAO    .      .
+ CY7      CAP    CAO    CBN    .
+ CY7      HAP    CAP    .      .
+ CY7      CBN    CAP    OBE    .
+ CY7      OBE    CBN    CAV    .
+ CY7      CAV    OBE    CBK    .
+ CY7      HAV1   CAV    .      .
+ CY7      HAV2   CAV    .      .
+ CY7      CBK    CAV    NAZ    .
+ CY7      CAN    CBK    HAN    .
+ CY7      HAN    CAN    .      .
+ CY7      NAZ    CBK    CAM    .
+ CY7      CAM    NAZ    CAK    .
+ CY7      HAM    CAM    .      .
+ CY7      CAK    CAM    CAL    .
+ CY7      HAK    CAK    .      .
+ CY7      CAL    CAK    HAL    .
+ CY7      HAL    CAL    .      END
+ CY7      CAN    CAL    .    ADD
+ CY7      CBN    CBJ    .    ADD
+ CY7      CBP    CBR    .    ADD
+ CY7      CBR    CAS    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CY7       CAN       CAL       single    1.390     0.020     1.390     0.020     
+CY7       CAN       CBK       double    1.390     0.020     1.390     0.020     
+CY7       HAN       CAN       single    1.082     0.013     0.975     0.010     
+CY7       CAL       CAK       double    1.390     0.020     1.390     0.020     
+CY7       HAL       CAL       single    1.082     0.013     0.975     0.010     
+CY7       CAK       CAM       single    1.390     0.020     1.390     0.020     
+CY7       HAK       CAK       single    1.082     0.013     0.975     0.010     
+CY7       CAM       NAZ       double    1.337     0.020     1.337     0.020     
+CY7       HAM       CAM       single    1.082     0.013     0.975     0.010     
+CY7       NAZ       CBK       single    1.350     0.020     1.350     0.020     
+CY7       CBK       CAV       single    1.511     0.020     1.511     0.020     
+CY7       CAV       OBE       single    1.426     0.020     1.426     0.020     
+CY7       HAV1      CAV       single    1.089     0.010     0.989     0.005     
+CY7       HAV2      CAV       single    1.089     0.010     0.989     0.005     
+CY7       OBE       CBN       single    1.370     0.020     1.370     0.020     
+CY7       CBN       CBJ       single    1.487     0.020     1.487     0.020     
+CY7       CBN       CAP       double    1.390     0.020     1.390     0.020     
+CY7       CBJ       CAR       double    1.390     0.020     1.390     0.020     
+CY7       CLA       CBJ       single    1.795     0.020     1.795     0.020     
+CY7       CAR       CBI       single    1.390     0.020     1.390     0.020     
+CY7       HAR       CAR       single    1.082     0.013     0.975     0.010     
+CY7       CAP       CAO       single    1.390     0.020     1.390     0.020     
+CY7       HAP       CAP       single    1.082     0.013     0.975     0.010     
+CY7       CAO       CBI       double    1.390     0.020     1.390     0.020     
+CY7       HAO       CAO       single    1.082     0.013     0.975     0.010     
+CY7       CBI       NBC       single    1.400     0.020     1.400     0.020     
+CY7       NBC       CBP       double    1.355     0.020     1.355     0.020     
+CY7       CBP       CBR       single    1.490     0.020     1.490     0.020     
+CY7       CBP       CBL       single    1.487     0.020     1.487     0.020     
+CY7       CBR       CAS       single    1.390     0.020     1.390     0.020     
+CY7       CBR       CBQ       double    1.490     0.020     1.490     0.020     
+CY7       CAS       CBM       double    1.390     0.020     1.390     0.020     
+CY7       HAS       CAS       single    1.082     0.013     0.975     0.010     
+CY7       CAJ       CBL       single    1.285     0.020     1.285     0.020     
+CY7       CBL       CAQ       double    1.390     0.020     1.390     0.020     
+CY7       NAD       CAJ       triple    1.158     0.020     1.158     0.020     
+CY7       CAQ       NBA       single    1.337     0.020     1.337     0.020     
+CY7       HAQ       CAQ       single    1.082     0.013     0.975     0.010     
+CY7       NBA       CBQ       single    1.337     0.020     1.337     0.020     
+CY7       HBA       NBA       single    1.016     0.010     0.899     0.007     
+CY7       CBQ       CAT       single    1.390     0.020     1.390     0.020     
+CY7       CAT       CBO       double    1.390     0.020     1.390     0.020     
+CY7       HAT       CAT       single    1.082     0.013     0.975     0.010     
+CY7       OBD       CBO       single    1.370     0.020     1.370     0.020     
+CY7       CBO       CBM       single    1.487     0.020     1.487     0.020     
+CY7       CAU       OBD       single    1.426     0.020     1.426     0.020     
+CY7       CAA       CAU       single    1.513     0.020     1.513     0.020     
+CY7       HAU1      CAU       single    1.089     0.010     0.989     0.005     
+CY7       HAU2      CAU       single    1.089     0.010     0.989     0.005     
+CY7       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+CY7       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+CY7       HAA3      CAA       single    1.089     0.010     0.989     0.005     
+CY7       CBM       NBB       single    1.350     0.020     1.350     0.020     
+CY7       NBB       CBH       single    1.330     0.020     1.330     0.020     
+CY7       HBB       NBB       single    1.016     0.010     0.899     0.007     
+CY7       OAG       CBH       double    1.220     0.020     1.220     0.020     
+CY7       CBH       CAX       single    1.510     0.020     1.510     0.020     
+CY7       CAX       CBT       single    1.524     0.020     1.524     0.020     
+CY7       HAX1      CAX       single    1.089     0.010     0.989     0.005     
+CY7       HAX2      CAX       single    1.089     0.010     0.989     0.005     
+CY7       CAY       CBT       single    1.524     0.020     1.524     0.020     
+CY7       CBT       SG        single    1.765     0.020     1.765     0.020     
+CY7       HBT       CBT       single    1.089     0.010     0.989     0.005     
+CY7       NBU       CAY       single    1.469     0.020     1.469     0.020     
+CY7       HAY1      CAY       single    1.089     0.010     0.989     0.005     
+CY7       HAY2      CAY       single    1.089     0.010     0.989     0.005     
+CY7       CAB       NBU       single    1.469     0.020     1.469     0.020     
+CY7       CAC       NBU       single    1.469     0.020     1.469     0.020     
+CY7       HAB1      CAB       single    1.089     0.010     0.989     0.005     
+CY7       HAB2      CAB       single    1.089     0.010     0.989     0.005     
+CY7       HAB3      CAB       single    1.089     0.010     0.989     0.005     
+CY7       HAC1      CAC       single    1.089     0.010     0.989     0.005     
+CY7       HAC2      CAC       single    1.089     0.010     0.989     0.005     
+CY7       HAC3      CAC       single    1.089     0.010     0.989     0.005     
+CY7       SG        CB        single    1.762     0.020     1.762     0.020     
+CY7       CB        CA        single    1.524     0.020     1.524     0.020     
+CY7       HBC1      CB        single    1.089     0.010     0.989     0.005     
+CY7       HBC2      CB        single    1.089     0.010     0.989     0.005     
+CY7       CA        C         single    1.500     0.020     1.500     0.020     
+CY7       N         CA        single    1.450     0.020     1.450     0.020     
+CY7       HA        CA        single    1.089     0.010     0.989     0.005     
+CY7       O         C         deloc     1.250     0.020     1.250     0.020     
+CY7       C         OXT       deloc     1.250     0.020     1.250     0.020     
+CY7       HN1       N         single    1.036     0.016     0.914     0.007     
+CY7       HN2       N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CY7      OXT    C      O       123.000    3.000
+ CY7      OXT    C      CA      118.500    3.000
+ CY7      O      C      CA      118.500    3.000
+ CY7      C      CA     HA      108.810    3.000
+ CY7      C      CA     N       109.470    3.000
+ CY7      C      CA     CB      109.470    3.000
+ CY7      HA     CA     N       109.470    3.000
+ CY7      HA     CA     CB      108.340    3.000
+ CY7      N      CA     CB      109.470    3.000
+ CY7      CA     N      HN2     120.000    3.000
+ CY7      CA     N      HN1     120.000    3.000
+ CY7      HN2    N      HN1     120.000    3.000
+ CY7      CA     CB     HBC1    109.470    3.000
+ CY7      CA     CB     HBC2    109.470    3.000
+ CY7      CA     CB     SG      109.500    3.000
+ CY7      HBC1   CB     HBC2    107.900    3.000
+ CY7      HBC1   CB     SG      109.500    3.000
+ CY7      HBC2   CB     SG      109.500    3.000
+ CY7      CB     SG     CBT     103.003    3.000
+ CY7      SG     CBT    HBT     109.500    3.000
+ CY7      SG     CBT    CAY     109.500    3.000
+ CY7      SG     CBT    CAX     109.500    3.000
+ CY7      HBT    CBT    CAY     108.340    3.000
+ CY7      HBT    CBT    CAX     108.340    3.000
+ CY7      CAY    CBT    CAX     109.470    3.000
+ CY7      CBT    CAY    HAY1    109.470    3.000
+ CY7      CBT    CAY    HAY2    109.470    3.000
+ CY7      CBT    CAY    NBU     109.500    3.000
+ CY7      HAY1   CAY    HAY2    107.900    3.000
+ CY7      HAY1   CAY    NBU     109.470    3.000
+ CY7      HAY2   CAY    NBU     109.470    3.000
+ CY7      CAY    NBU    CAC     109.470    3.000
+ CY7      CAY    NBU    CAB     109.470    3.000
+ CY7      CAC    NBU    CAB     109.470    3.000
+ CY7      NBU    CAC    HAC3    109.470    3.000
+ CY7      NBU    CAC    HAC2    109.470    3.000
+ CY7      NBU    CAC    HAC1    109.470    3.000
+ CY7      HAC3   CAC    HAC2    109.470    3.000
+ CY7      HAC3   CAC    HAC1    109.470    3.000
+ CY7      HAC2   CAC    HAC1    109.470    3.000
+ CY7      NBU    CAB    HAB3    109.470    3.000
+ CY7      NBU    CAB    HAB2    109.470    3.000
+ CY7      NBU    CAB    HAB1    109.470    3.000
+ CY7      HAB3   CAB    HAB2    109.470    3.000
+ CY7      HAB3   CAB    HAB1    109.470    3.000
+ CY7      HAB2   CAB    HAB1    109.470    3.000
+ CY7      CBT    CAX    HAX1    109.470    3.000
+ CY7      CBT    CAX    HAX2    109.470    3.000
+ CY7      CBT    CAX    CBH     109.470    3.000
+ CY7      HAX1   CAX    HAX2    107.900    3.000
+ CY7      HAX1   CAX    CBH     109.470    3.000
+ CY7      HAX2   CAX    CBH     109.470    3.000
+ CY7      CAX    CBH    OAG     120.500    3.000
+ CY7      CAX    CBH    NBB     116.500    3.000
+ CY7      OAG    CBH    NBB     123.000    3.000
+ CY7      CBH    NBB    HBB     120.000    3.000
+ CY7      CBH    NBB    CBM     120.000    3.000
+ CY7      HBB    NBB    CBM     120.000    3.000
+ CY7      NBB    CBM    CAS     120.000    3.000
+ CY7      NBB    CBM    CBO     120.000    3.000
+ CY7      CAS    CBM    CBO     120.000    3.000
+ CY7      CBM    CAS    HAS     120.000    3.000
+ CY7      CBM    CAS    CBR     120.000    3.000
+ CY7      HAS    CAS    CBR     120.000    3.000
+ CY7      CBM    CBO    OBD     120.000    3.000
+ CY7      CBM    CBO    CAT     120.000    3.000
+ CY7      OBD    CBO    CAT     120.000    3.000
+ CY7      CBO    OBD    CAU     120.000    3.000
+ CY7      OBD    CAU    HAU1    109.470    3.000
+ CY7      OBD    CAU    HAU2    109.470    3.000
+ CY7      OBD    CAU    CAA     109.470    3.000
+ CY7      HAU1   CAU    HAU2    107.900    3.000
+ CY7      HAU1   CAU    CAA     109.470    3.000
+ CY7      HAU2   CAU    CAA     109.470    3.000
+ CY7      CAU    CAA    HAA3    109.470    3.000
+ CY7      CAU    CAA    HAA2    109.470    3.000
+ CY7      CAU    CAA    HAA1    109.470    3.000
+ CY7      HAA3   CAA    HAA2    109.470    3.000
+ CY7      HAA3   CAA    HAA1    109.470    3.000
+ CY7      HAA2   CAA    HAA1    109.470    3.000
+ CY7      CBO    CAT    HAT     120.000    3.000
+ CY7      CBO    CAT    CBQ     120.000    3.000
+ CY7      HAT    CAT    CBQ     120.000    3.000
+ CY7      CAT    CBQ    CBR     120.000    3.000
+ CY7      CAT    CBQ    NBA     120.000    3.000
+ CY7      CBR    CBQ    NBA     120.000    3.000
+ CY7      CBQ    CBR    CBP     120.000    3.000
+ CY7      CBQ    CBR    CAS     120.000    3.000
+ CY7      CBP    CBR    CAS     120.000    3.000
+ CY7      CBQ    NBA    HBA     120.000    3.000
+ CY7      CBQ    NBA    CAQ     120.000    3.000
+ CY7      HBA    NBA    CAQ     120.000    3.000
+ CY7      NBA    CAQ    HAQ     120.000    3.000
+ CY7      NBA    CAQ    CBL     120.000    3.000
+ CY7      HAQ    CAQ    CBL     120.000    3.000
+ CY7      CAQ    CBL    CAJ     120.000    3.000
+ CY7      CAQ    CBL    CBP     120.000    3.000
+ CY7      CAJ    CBL    CBP     120.000    3.000
+ CY7      CBL    CAJ    NAD     180.000    3.000
+ CY7      CBL    CBP    NBC     120.000    3.000
+ CY7      CBL    CBP    CBR     120.000    3.000
+ CY7      NBC    CBP    CBR     120.000    3.000
+ CY7      CBP    NBC    CBI     120.000    3.000
+ CY7      NBC    CBI    CAR     120.000    3.000
+ CY7      NBC    CBI    CAO     120.000    3.000
+ CY7      CAR    CBI    CAO     120.000    3.000
+ CY7      CBI    CAR    HAR     120.000    3.000
+ CY7      CBI    CAR    CBJ     120.000    3.000
+ CY7      HAR    CAR    CBJ     120.000    3.000
+ CY7      CAR    CBJ    CLA     120.000    3.000
+ CY7      CAR    CBJ    CBN     120.000    3.000
+ CY7      CLA    CBJ    CBN     120.000    3.000
+ CY7      CBI    CAO    HAO     120.000    3.000
+ CY7      CBI    CAO    CAP     120.000    3.000
+ CY7      HAO    CAO    CAP     120.000    3.000
+ CY7      CAO    CAP    HAP     120.000    3.000
+ CY7      CAO    CAP    CBN     120.000    3.000
+ CY7      HAP    CAP    CBN     120.000    3.000
+ CY7      CAP    CBN    OBE     120.000    3.000
+ CY7      CAP    CBN    CBJ     120.000    3.000
+ CY7      OBE    CBN    CBJ     120.000    3.000
+ CY7      CBN    OBE    CAV     120.000    3.000
+ CY7      OBE    CAV    HAV1    109.470    3.000
+ CY7      OBE    CAV    HAV2    109.470    3.000
+ CY7      OBE    CAV    CBK     109.470    3.000
+ CY7      HAV1   CAV    HAV2    107.900    3.000
+ CY7      HAV1   CAV    CBK     109.470    3.000
+ CY7      HAV2   CAV    CBK     109.470    3.000
+ CY7      CAV    CBK    CAN     120.000    3.000
+ CY7      CAV    CBK    NAZ     120.000    3.000
+ CY7      CAN    CBK    NAZ     120.000    3.000
+ CY7      CBK    CAN    HAN     120.000    3.000
+ CY7      CBK    CAN    CAL     120.000    3.000
+ CY7      HAN    CAN    CAL     120.000    3.000
+ CY7      CBK    NAZ    CAM     120.000    3.000
+ CY7      NAZ    CAM    HAM     120.000    3.000
+ CY7      NAZ    CAM    CAK     120.000    3.000
+ CY7      HAM    CAM    CAK     120.000    3.000
+ CY7      CAM    CAK    HAK     120.000    3.000
+ CY7      CAM    CAK    CAL     120.000    3.000
+ CY7      HAK    CAK    CAL     120.000    3.000
+ CY7      CAK    CAL    HAL     120.000    3.000
+ CY7      CAK    CAL    CAN     120.000    3.000
+ CY7      HAL    CAL    CAN     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CY7      var_1    OXT    C      CA     CB       -80.014   20.000   3
+ CY7      var_2    C      CA     N      HN1      -63.984   20.000   1
+ CY7      var_3    C      CA     CB     SG      -179.969   20.000   3
+ CY7      var_4    CA     CB     SG     CBT     -179.968   20.000   1
+ CY7      var_5    CB     SG     CBT    CAX      175.029   20.000   1
+ CY7      var_6    SG     CBT    CAY    NBU       59.993   20.000   3
+ CY7      var_7    CBT    CAY    NBU    CAB       66.041   20.000   1
+ CY7      var_8    CAY    NBU    CAC    HAC1      60.036   20.000   1
+ CY7      var_9    CAY    NBU    CAB    HAB1      60.020   20.000   1
+ CY7      var_10   SG     CBT    CAX    CBH      -65.009   20.000   3
+ CY7      var_11   CBT    CAX    CBH    NBB     -179.999   20.000   3
+ CY7      CONST_1  CAX    CBH    NBB    CBM      180.000    0.000   0
+ CY7      var_12   CBH    NBB    CBM    CBO     -145.665   20.000   1
+ CY7      CONST_2  NBB    CBM    CAS    CBR      180.000    0.000   0
+ CY7      CONST_3  NBB    CBM    CBO    CAT      180.000    0.000   0
+ CY7      var_13   CBM    CBO    OBD    CAU     -179.971   20.000   1
+ CY7      var_14   CBO    OBD    CAU    CAA     -179.952   20.000   1
+ CY7      var_15   OBD    CAU    CAA    HAA1     -59.965   20.000   3
+ CY7      CONST_4  CBM    CBO    CAT    CBQ        0.000    0.000   0
+ CY7      CONST_5  CBO    CAT    CBQ    NBA      180.000    0.000   0
+ CY7      CONST_6  CAT    CBQ    CBR    CBP      180.000    0.000   0
+ CY7      CONST_7  CBQ    CBR    CAS    CBM        0.000    0.000   0
+ CY7      CONST_8  CAT    CBQ    NBA    CAQ      180.000    0.000   0
+ CY7      CONST_9  CBQ    NBA    CAQ    CBL        0.000    0.000   0
+ CY7      CONST_10 NBA    CAQ    CBL    CBP        0.000    0.000   0
+ CY7      var_16   CAQ    CBL    CAJ    NAD       30.106   20.000   1
+ CY7      CONST_11 CAQ    CBL    CBP    NBC      180.000    0.000   0
+ CY7      CONST_12 CBL    CBP    CBR    CBQ        0.000    0.000   0
+ CY7      CONST_13 CBL    CBP    NBC    CBI       -8.218    0.000   0
+ CY7      var_17   CBP    NBC    CBI    CAO      -62.850   20.000   1
+ CY7      CONST_14 NBC    CBI    CAR    CBJ      180.000    0.000   0
+ CY7      CONST_15 CBI    CAR    CBJ    CLA      180.000    0.000   0
+ CY7      CONST_16 NBC    CBI    CAO    CAP      180.000    0.000   0
+ CY7      CONST_17 CBI    CAO    CAP    CBN        0.000    0.000   0
+ CY7      CONST_18 CAO    CAP    CBN    OBE      180.000    0.000   0
+ CY7      CONST_19 CAP    CBN    CBJ    CAR        0.000    0.000   0
+ CY7      var_18   CAP    CBN    OBE    CAV       -0.293   20.000   1
+ CY7      var_19   CBN    OBE    CAV    CBK      179.992   20.000   1
+ CY7      var_20   OBE    CAV    CBK    NAZ     -179.997   20.000   2
+ CY7      CONST_20 CAV    CBK    CAN    CAL      180.000    0.000   0
+ CY7      CONST_21 CBK    CAN    CAL    CAK        0.000    0.000   0
+ CY7      CONST_22 CAV    CBK    NAZ    CAM      180.000    0.000   0
+ CY7      CONST_23 CBK    NAZ    CAM    CAK        0.000    0.000   0
+ CY7      CONST_24 NAZ    CAM    CAK    CAL        0.000    0.000   0
+ CY7      CONST_25 CAM    CAK    CAL    CAN        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CY7      chir_01  CBT    CAX    CAY    SG        negativ
+ CY7      chir_02  NBU    CAY    CAB    CAC       negativ
+ CY7      chir_03  CA     CB     C      N         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CY7      plan-1    CAN       0.020
+ CY7      plan-1    CAL       0.020
+ CY7      plan-1    CBK       0.020
+ CY7      plan-1    HAN       0.020
+ CY7      plan-1    CAK       0.020
+ CY7      plan-1    CAM       0.020
+ CY7      plan-1    NAZ       0.020
+ CY7      plan-1    HAL       0.020
+ CY7      plan-1    HAK       0.020
+ CY7      plan-1    HAM       0.020
+ CY7      plan-1    CAV       0.020
+ CY7      plan-2    CBN       0.020
+ CY7      plan-2    OBE       0.020
+ CY7      plan-2    CBJ       0.020
+ CY7      plan-2    CAP       0.020
+ CY7      plan-2    CAR       0.020
+ CY7      plan-2    CAO       0.020
+ CY7      plan-2    CBI       0.020
+ CY7      plan-2    CLA       0.020
+ CY7      plan-2    HAR       0.020
+ CY7      plan-2    HAP       0.020
+ CY7      plan-2    HAO       0.020
+ CY7      plan-2    NBC       0.020
+ CY7      plan-3    NBC       0.020
+ CY7      plan-3    CBI       0.020
+ CY7      plan-3    CBP       0.020
+ CY7      plan-3    CBR       0.020
+ CY7      plan-3    CBL       0.020
+ CY7      plan-3    CAQ       0.020
+ CY7      plan-3    NBA       0.020
+ CY7      plan-3    CAS       0.020
+ CY7      plan-3    CBQ       0.020
+ CY7      plan-3    CAT       0.020
+ CY7      plan-3    CBO       0.020
+ CY7      plan-3    CBM       0.020
+ CY7      plan-3    HAS       0.020
+ CY7      plan-3    CAJ       0.020
+ CY7      plan-3    HAQ       0.020
+ CY7      plan-3    HBA       0.020
+ CY7      plan-3    HAT       0.020
+ CY7      plan-3    OBD       0.020
+ CY7      plan-3    NBB       0.020
+ CY7      plan-3    HBB       0.020
+ CY7      plan-4    NBB       0.020
+ CY7      plan-4    CBM       0.020
+ CY7      plan-4    CBH       0.020
+ CY7      plan-4    HBB       0.020
+ CY7      plan-5    CBH       0.020
+ CY7      plan-5    NBB       0.020
+ CY7      plan-5    OAG       0.020
+ CY7      plan-5    CAX       0.020
+ CY7      plan-5    HBB       0.020
+ CY7      plan-6    C         0.020
+ CY7      plan-6    CA        0.020
+ CY7      plan-6    O         0.020
+ CY7      plan-6    OXT       0.020
+ CY7      plan-7    N         0.020
+ CY7      plan-7    CA        0.020
+ CY7      plan-7    HN1       0.020
+ CY7      plan-7    HN2       0.020
+# ------------------------------------------------------

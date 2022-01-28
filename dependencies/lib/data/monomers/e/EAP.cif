@@ -1,0 +1,127 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EAP     EAP      2-AMINO-VINYL-PHOSPHATE     NON-POLYMER     12     8     .     
+#
+data_comp_EAP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+EAP     O1      O       O       0       -3.263      -1.380      -0.310      
+EAP     O2      O       OP      -1      -2.678      0.888       0.538       
+EAP     O3      O       OP      -1      -2.409      0.355       -1.880      
+EAP     O4      O       O2      0       -0.862      -0.674      -0.198      
+EAP     P       P       P       0       -2.356      -0.185      -0.472      
+EAP     C1      C       C1      0       0.183       0.164       -0.135      
+EAP     C2      C       C1      0       1.453       -0.461      0.280       
+EAP     N3      N       NH2     0       2.570       0.251       0.383       
+EAP     H11     H       H       0       0.101       1.087       -0.344      
+EAP     H21     H       H       0       1.467       -1.387      0.475       
+EAP     HN31    H       H       0       3.311       -0.130      0.629       
+EAP     HN32    H       H       0       2.566       1.102       0.206       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EAP       O1        P         DOUBLE    n         1.509     0.020     1.509     0.020     
+EAP       O2        P         SINGLE    n         1.509     0.020     1.509     0.020     
+EAP       O3        P         SINGLE    n         1.509     0.020     1.509     0.020     
+EAP       O4        P         SINGLE    n         1.595     0.020     1.595     0.020     
+EAP       O4        C1        SINGLE    n         1.340     0.015     1.340     0.015     
+EAP       C1        C2        DOUBLE    n         1.474     0.020     1.474     0.020     
+EAP       C2        N3        SINGLE    n         1.328     0.015     1.328     0.015     
+EAP       C1        H11       SINGLE    n         1.082     0.013     0.950     0.020     
+EAP       C2        H21       SINGLE    n         1.082     0.013     0.946     0.011     
+EAP       N3        HN31      SINGLE    n         1.016     0.010     0.869     0.015     
+EAP       N3        HN32      SINGLE    n         1.016     0.010     0.869     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+EAP           P          O4          C1     122.808    2.93
+EAP          O1           P          O2     112.864    1.69
+EAP          O1           P          O3     112.864    1.69
+EAP          O1           P          O4     112.304    3.00
+EAP          O2           P          O3     112.864    1.69
+EAP          O2           P          O4     112.304    3.00
+EAP          O3           P          O4     112.304    3.00
+EAP          O4          C1          C2     114.871    2.32
+EAP          O4          C1         H11     121.864    2.47
+EAP          C2          C1         H11     123.265    2.33
+EAP          C1          C2          N3     120.911    3.00
+EAP          C1          C2         H21     119.169    2.36
+EAP          N3          C2         H21     119.920    2.25
+EAP          C2          N3        HN31     120.236    1.50
+EAP          C2          N3        HN32     120.236    1.50
+EAP        HN31          N3        HN32     119.527    2.31
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+EAP             sp3_sp3_1          O1           P          O4          C1     180.000   10.00     3
+EAP             sp2_sp2_1          C2          C1          O4           P     180.000   10.00     2
+EAP             sp2_sp2_3          O4          C1          C2          N3     180.000   10.00     2
+EAP             sp2_sp2_7          C1          C2          N3        HN31     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+EAP    plan-1          C1   0.020
+EAP    plan-1          C2   0.020
+EAP    plan-1         H11   0.020
+EAP    plan-1          O4   0.020
+EAP    plan-2          C1   0.020
+EAP    plan-2          C2   0.020
+EAP    plan-2         H21   0.020
+EAP    plan-2          N3   0.020
+EAP    plan-3          C2   0.020
+EAP    plan-3        HN31   0.020
+EAP    plan-3        HN32   0.020
+EAP    plan-3          N3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+EAP SMILES           ACDLabs              10.04 "O=P(O\C=C\N)(O)O"
+EAP SMILES_CANONICAL CACTVS               3.341 "N/C=C/O[P](O)(O)=O"
+EAP SMILES           CACTVS               3.341 "NC=CO[P](O)(O)=O"
+EAP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=COP(=O)(O)O)N"
+EAP SMILES           "OpenEye OEToolkits" 1.5.0 "C(=COP(=O)(O)O)N"
+EAP InChI            InChI                1.03  "InChI=1S/C2H6NO4P/c3-1-2-7-8(4,5)6/h1-2H,3H2,(H2,4,5,6)/b2-1+"
+EAP InChIKey         InChI                1.03  KYMLMTPYCDIFEC-OWOJBTEDSA-N
+EAP ?                acedrg               202         "dictionary generator"                  
+EAP ?                acedrg_database      11          "data source"                           
+EAP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+EAP ?                refmac5              5.8.0189    "optimization tool"                     

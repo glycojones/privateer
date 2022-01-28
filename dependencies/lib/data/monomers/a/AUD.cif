@@ -1,0 +1,150 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AUD     AUD      Acesulfame     NON-POLYMER     15     10     .     
+#
+data_comp_AUD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AUD     CAJ     C       CH3     0       -2.046      7.475       84.127      
+AUD     CAC     C       CR6     0       -1.654      6.362       85.016      
+AUD     OAB     O       O2      0       -2.782      5.762       85.583      
+AUD     SAA     S       S3      0       -2.629      5.020       87.011      
+AUD     OAG     O       O       0       -3.528      3.926       87.003      
+AUD     OAH     O       O       0       -2.764      6.015       88.010      
+AUD     NAF     N       NR6     0       -1.088      4.433       87.060      
+AUD     CAE     C       CR6     0       -0.114      4.855       86.201      
+AUD     OAI     O       O       0       0.992       4.319       86.238      
+AUD     CAD     C       CR16    0       -0.405      5.937       85.267      
+AUD     HAJ     H       H       0       -1.267      7.793       83.642      
+AUD     HAK     H       H       0       -2.415      8.200       84.657      
+AUD     HAL     H       H       0       -2.715      7.165       83.495      
+AUD     HAF     H       H       0       -0.876      3.828       87.657      
+AUD     HAD     H       H       0       0.303       6.354       84.822      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AUD       CAJ       CAC       SINGLE    n         1.478     0.010     1.478     0.010     
+AUD       CAC       OAB       SINGLE    n         1.392     0.012     1.392     0.012     
+AUD       CAC       CAD       DOUBLE    n         1.331     0.014     1.331     0.014     
+AUD       OAB       SAA       SINGLE    n         1.609     0.020     1.609     0.020     
+AUD       SAA       OAG       DOUBLE    n         1.416     0.010     1.416     0.010     
+AUD       SAA       OAH       DOUBLE    n         1.416     0.010     1.416     0.010     
+AUD       SAA       NAF       SINGLE    n         1.642     0.020     1.642     0.020     
+AUD       NAF       CAE       SINGLE    n         1.340     0.020     1.340     0.020     
+AUD       CAE       OAI       DOUBLE    n         1.229     0.011     1.229     0.011     
+AUD       CAE       CAD       SINGLE    n         1.452     0.010     1.452     0.010     
+AUD       CAJ       HAJ       SINGLE    n         1.089     0.010     0.971     0.020     
+AUD       CAJ       HAK       SINGLE    n         1.089     0.010     0.971     0.020     
+AUD       CAJ       HAL       SINGLE    n         1.089     0.010     0.971     0.020     
+AUD       NAF       HAF       SINGLE    n         1.016     0.010     0.874     0.020     
+AUD       CAD       HAD       SINGLE    n         1.082     0.013     0.935     0.012     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AUD         CAC         CAJ         HAJ     109.457    1.50
+AUD         CAC         CAJ         HAK     109.457    1.50
+AUD         CAC         CAJ         HAL     109.457    1.50
+AUD         HAJ         CAJ         HAK     109.335    1.57
+AUD         HAJ         CAJ         HAL     109.335    1.57
+AUD         HAK         CAJ         HAL     109.335    1.57
+AUD         CAJ         CAC         OAB     111.375    1.50
+AUD         CAJ         CAC         CAD     127.547    1.50
+AUD         OAB         CAC         CAD     121.078    1.50
+AUD         CAC         OAB         SAA     117.309    1.50
+AUD         OAB         SAA         OAG     107.351    1.50
+AUD         OAB         SAA         OAH     107.351    1.50
+AUD         OAB         SAA         NAF     109.471    3.00
+AUD         OAG         SAA         OAH     119.669    1.50
+AUD         OAG         SAA         NAF     109.252    1.67
+AUD         OAH         SAA         NAF     109.252    1.67
+AUD         SAA         NAF         CAE     120.922    2.11
+AUD         SAA         NAF         HAF     120.969    2.52
+AUD         CAE         NAF         HAF     118.109    2.09
+AUD         NAF         CAE         OAI     120.486    1.50
+AUD         NAF         CAE         CAD     115.840    2.68
+AUD         OAI         CAE         CAD     123.674    1.65
+AUD         CAC         CAD         CAE     120.125    2.19
+AUD         CAC         CAD         HAD     119.608    1.50
+AUD         CAE         CAD         HAD     120.267    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AUD             sp2_sp3_7         OAB         CAC         CAJ         HAJ     150.000   10.00     6
+AUD             sp2_sp2_2         CAJ         CAC         OAB         SAA     180.000   10.00     2
+AUD            sp2_sp2_13         CAJ         CAC         CAD         CAE     180.000   10.00     2
+AUD             sp3_sp3_2         OAG         SAA         OAB         CAC     180.000   10.00     3
+AUD             sp2_sp3_2         CAE         NAF         SAA         OAG     120.000   10.00     6
+AUD             sp2_sp2_5         OAI         CAE         NAF         SAA     180.000   10.00     2
+AUD             sp2_sp2_8         CAC         CAD         CAE         OAI     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AUD    plan-1         CAC   0.020
+AUD    plan-1         CAD   0.020
+AUD    plan-1         CAJ   0.020
+AUD    plan-1         OAB   0.020
+AUD    plan-2         CAE   0.020
+AUD    plan-2         HAF   0.020
+AUD    plan-2         NAF   0.020
+AUD    plan-2         SAA   0.020
+AUD    plan-3         CAD   0.020
+AUD    plan-3         CAE   0.020
+AUD    plan-3         NAF   0.020
+AUD    plan-3         OAI   0.020
+AUD    plan-4         CAC   0.020
+AUD    plan-4         CAD   0.020
+AUD    plan-4         CAE   0.020
+AUD    plan-4         HAD   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AUD SMILES           ACDLabs              12.01 "CC=1OS(=O)(=O)NC(=O)C=1"
+AUD InChI            InChI                1.03  "InChI=1S/C4H5NO4S/c1-3-2-4(6)5-10(7,8)9-3/h2H,1H3,(H,5,6)"
+AUD InChIKey         InChI                1.03  YGCFIWIQZPHFLU-UHFFFAOYSA-N
+AUD SMILES_CANONICAL CACTVS               3.385 "CC1=CC(=O)N[S](=O)(=O)O1"
+AUD SMILES           CACTVS               3.385 "CC1=CC(=O)N[S](=O)(=O)O1"
+AUD SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "CC1=CC(=O)NS(=O)(=O)O1"
+AUD SMILES           "OpenEye OEToolkits" 2.0.6 "CC1=CC(=O)NS(=O)(=O)O1"
+AUD ?                acedrg               202         "dictionary generator"                  
+AUD ?                acedrg_database      11          "data source"                           
+AUD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AUD ?                refmac5              5.8.0189    "optimization tool"                     

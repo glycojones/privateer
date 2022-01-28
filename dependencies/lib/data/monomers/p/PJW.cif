@@ -1,0 +1,191 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PJW     PJW      benzo[b][1]benziodole     non-polymer     21     13     .     
+#
+data_comp_PJW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PJW     IAA     I       I       0       -0.958      -0.253      2.647       
+PJW     CAB     C       CR56    0       -1.714      0.109       0.739       
+PJW     CAC     C       CR16    0       -3.044      0.332       0.408       
+PJW     CAD     C       CR16    0       -3.382      0.560       -0.927      
+PJW     CAE     C       CR16    0       -2.402      0.564       -1.913      
+PJW     CAF     C       CR16    0       -1.068      0.343       -1.603      
+PJW     CAG     C       CR56    0       -0.675      0.110       -0.285      
+PJW     CAH     C       CR56    0       0.709       -0.140      0.194       
+PJW     CAI     C       CR16    0       1.863       -0.187      -0.590      
+PJW     CAJ     C       CR16    0       3.099       -0.432      -0.008      
+PJW     CAK     C       CR16    0       3.226       -0.637      1.361       
+PJW     CAL     C       CR16    0       2.104       -0.601      2.193       
+PJW     CAM     C       CR56    0       0.858       -0.357      1.631       
+PJW     H1      H       H       0       -3.710      0.330       1.078       
+PJW     H2      H       H       0       -4.288      0.714       -1.165      
+PJW     H3      H       H       0       -2.650      0.720       -2.810      
+PJW     H4      H       H       0       -0.419      0.351       -2.291      
+PJW     H5      H       H       0       1.802       -0.051      -1.524      
+PJW     H6      H       H       0       3.869       -0.461      -0.553      
+PJW     H7      H       H       0       4.084       -0.802      1.733       
+PJW     H8      H       H       0       2.191       -0.740      3.124       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PJW       IAA       CAB       SINGLE    n         2.099     0.0129    2.099     0.0129    
+PJW       IAA       CAM       SINGLE    n         2.099     0.0129    2.099     0.0129    
+PJW       CAB       CAC       DOUBLE    y         1.383     0.0145    1.383     0.0145    
+PJW       CAB       CAG       SINGLE    y         1.415     0.0198    1.415     0.0198    
+PJW       CAC       CAD       SINGLE    y         1.394     0.0158    1.394     0.0158    
+PJW       CAD       CAE       DOUBLE    y         1.388     0.0124    1.388     0.0124    
+PJW       CAE       CAF       SINGLE    y         1.383     0.0100    1.383     0.0100    
+PJW       CAF       CAG       DOUBLE    y         1.390     0.0100    1.390     0.0100    
+PJW       CAG       CAH       SINGLE    n         1.466     0.0117    1.466     0.0117    
+PJW       CAH       CAI       DOUBLE    y         1.390     0.0100    1.390     0.0100    
+PJW       CAH       CAM       SINGLE    y         1.415     0.0198    1.415     0.0198    
+PJW       CAI       CAJ       SINGLE    y         1.383     0.0100    1.383     0.0100    
+PJW       CAJ       CAK       DOUBLE    y         1.388     0.0124    1.388     0.0124    
+PJW       CAK       CAL       SINGLE    y         1.394     0.0158    1.394     0.0158    
+PJW       CAL       CAM       DOUBLE    y         1.383     0.0145    1.383     0.0145    
+PJW       CAC       H1        SINGLE    n         1.082     0.013     0.945     0.0100    
+PJW       CAD       H2        SINGLE    n         1.082     0.013     0.949     0.0111    
+PJW       CAE       H3        SINGLE    n         1.082     0.013     0.944     0.0187    
+PJW       CAF       H4        SINGLE    n         1.082     0.013     0.946     0.0198    
+PJW       CAI       H5        SINGLE    n         1.082     0.013     0.946     0.0198    
+PJW       CAJ       H6        SINGLE    n         1.082     0.013     0.944     0.0187    
+PJW       CAK       H7        SINGLE    n         1.082     0.013     0.949     0.0111    
+PJW       CAL       H8        SINGLE    n         1.082     0.013     0.945     0.0100    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PJW         CAB         IAA         CAM     107.306    3.00
+PJW         IAA         CAB         CAC     131.853    3.00
+PJW         IAA         CAB         CAG     107.306    3.00
+PJW         CAC         CAB         CAG     120.841    1.50
+PJW         CAB         CAC         CAD     118.842    1.50
+PJW         CAB         CAC          H1     120.519    1.50
+PJW         CAD         CAC          H1     120.640    1.50
+PJW         CAC         CAD         CAE     120.629    1.50
+PJW         CAC         CAD          H2     119.755    1.50
+PJW         CAE         CAD          H2     119.616    1.50
+PJW         CAD         CAE         CAF     120.862    1.50
+PJW         CAD         CAE          H3     119.509    1.50
+PJW         CAF         CAE          H3     119.629    1.50
+PJW         CAE         CAF         CAG     119.118    1.50
+PJW         CAE         CAF          H4     120.502    1.50
+PJW         CAG         CAF          H4     120.381    1.50
+PJW         CAB         CAG         CAF     119.709    1.50
+PJW         CAB         CAG         CAH     109.042    1.71
+PJW         CAF         CAG         CAH     131.250    1.52
+PJW         CAG         CAH         CAI     131.250    1.52
+PJW         CAG         CAH         CAM     109.042    1.71
+PJW         CAI         CAH         CAM     119.709    1.50
+PJW         CAH         CAI         CAJ     119.118    1.50
+PJW         CAH         CAI          H5     120.381    1.50
+PJW         CAJ         CAI          H5     120.502    1.50
+PJW         CAI         CAJ         CAK     120.862    1.50
+PJW         CAI         CAJ          H6     119.629    1.50
+PJW         CAK         CAJ          H6     119.509    1.50
+PJW         CAJ         CAK         CAL     120.629    1.50
+PJW         CAJ         CAK          H7     119.616    1.50
+PJW         CAL         CAK          H7     119.755    1.50
+PJW         CAK         CAL         CAM     118.842    1.50
+PJW         CAK         CAL          H8     120.640    1.50
+PJW         CAM         CAL          H8     120.519    1.50
+PJW         IAA         CAM         CAH     107.306    3.00
+PJW         IAA         CAM         CAL     131.853    3.00
+PJW         CAH         CAM         CAL     120.841    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PJW           other_tor_2         CAM         IAA         CAB         CAC     180.000   10.00     1
+PJW           other_tor_3         CAB         IAA         CAM         CAH       0.000   10.00     1
+PJW              const_41         CAJ         CAK         CAL         CAM       0.000   10.00     2
+PJW              const_46         CAK         CAL         CAM         IAA     180.000   10.00     2
+PJW       const_sp2_sp2_3         IAA         CAB         CAC         CAD     180.000   10.00     2
+PJW              const_22         IAA         CAB         CAG         CAF     180.000   10.00     2
+PJW       const_sp2_sp2_5         CAB         CAC         CAD         CAE       0.000   10.00     2
+PJW       const_sp2_sp2_9         CAC         CAD         CAE         CAF       0.000   10.00     2
+PJW              const_13         CAD         CAE         CAF         CAG       0.000   10.00     2
+PJW              const_17         CAE         CAF         CAG         CAB       0.000   10.00     2
+PJW             sp2_sp2_2         CAB         CAG         CAH         CAI     180.000   10.00     2
+PJW              const_25         CAG         CAH         CAM         IAA       0.000   10.00     2
+PJW              const_31         CAG         CAH         CAI         CAJ     180.000   10.00     2
+PJW              const_33         CAH         CAI         CAJ         CAK       0.000   10.00     2
+PJW              const_37         CAI         CAJ         CAK         CAL       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PJW    plan-1         CAG   0.020
+PJW    plan-1         CAH   0.020
+PJW    plan-1         CAI   0.020
+PJW    plan-1         CAJ   0.020
+PJW    plan-1         CAK   0.020
+PJW    plan-1         CAL   0.020
+PJW    plan-1         CAM   0.020
+PJW    plan-1          H5   0.020
+PJW    plan-1          H6   0.020
+PJW    plan-1          H7   0.020
+PJW    plan-1          H8   0.020
+PJW    plan-1         IAA   0.020
+PJW    plan-2         CAB   0.020
+PJW    plan-2         CAC   0.020
+PJW    plan-2         CAD   0.020
+PJW    plan-2         CAE   0.020
+PJW    plan-2         CAF   0.020
+PJW    plan-2         CAG   0.020
+PJW    plan-2         CAH   0.020
+PJW    plan-2          H1   0.020
+PJW    plan-2          H2   0.020
+PJW    plan-2          H3   0.020
+PJW    plan-2          H4   0.020
+PJW    plan-2         IAA   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PJW            InChI                InChI  1.03 InChI=1S/C12H9I/c1-3-7-11-9(5-1)10-6-2-4-8-12(10)13-11/h1-8,13H
+PJW         InChIKey                InChI  1.03                                     PEWVMQDYYUSPRM-UHFFFAOYSA-N
+PJW SMILES_CANONICAL               CACTVS 3.385                                         "[I]1c2ccccc2c3ccccc13"
+PJW           SMILES               CACTVS 3.385                                         "[I]1c2ccccc2c3ccccc13"
+PJW SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                          c1ccc2c(c1)-c3ccccc3I2
+PJW           SMILES "OpenEye OEToolkits" 2.0.7                                          c1ccc2c(c1)-c3ccccc3I2
+PJW ?                acedrg               217         "dictionary generator"                  
+PJW ?                acedrg_database      11          "data source"                           
+PJW ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PJW ?                refmac5              5.8.0253    "optimization tool"                     

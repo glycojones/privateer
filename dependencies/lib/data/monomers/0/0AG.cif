@@ -1,0 +1,246 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0AG      0AG 'N-(ethoxycarbonyl)-L-leucine        ' non-polymer        30  14 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_0AG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 0AG           OXT    O    OC       -0.500      0.000    0.000    0.000
+ 0AG           C      C    C         0.000     -1.015   -0.720    0.133
+ 0AG           O      O    OC       -0.500     -0.892   -1.914    0.483
+ 0AG           CA     C    CH1       0.000     -2.383   -0.149   -0.130
+ 0AG           HA     H    H         0.000     -2.441    0.201   -1.170
+ 0AG           CB     C    CH2       0.000     -2.638    1.025    0.818
+ 0AG           HBC1   H    H         0.000     -1.848    1.769    0.693
+ 0AG           HBC2   H    H         0.000     -2.638    0.666    1.849
+ 0AG           CG     C    CH1       0.000     -3.992    1.658    0.495
+ 0AG           HG     H    H         0.000     -4.773    0.884    0.518
+ 0AG           CD2    C    CH3       0.000     -3.941    2.290   -0.897
+ 0AG           HD23   H    H         0.000     -4.878    2.730   -1.121
+ 0AG           HD22   H    H         0.000     -3.188    3.036   -0.920
+ 0AG           HD21   H    H         0.000     -3.720    1.545   -1.617
+ 0AG           CD1    C    CH3       0.000     -4.312    2.736    1.533
+ 0AG           HD13   H    H         0.000     -5.227    3.209    1.283
+ 0AG           HD12   H    H         0.000     -4.395    2.292    2.492
+ 0AG           HD11   H    H         0.000     -3.535    3.457    1.546
+ 0AG           N      N    NH1       0.000     -3.396   -1.184    0.093
+ 0AG           H      H    H         0.000     -3.861   -1.251    0.987
+ 0AG           C1     C    C         0.000     -3.707   -2.046   -0.895
+ 0AG           O1     O    O         0.000     -3.149   -1.963   -1.972
+ 0AG           O2     O    O2        0.000     -4.638   -2.997   -0.691
+ 0AG           C4     C    CH2       0.000     -4.923   -3.891   -1.799
+ 0AG           H41    H    H         0.000     -4.012   -4.424   -2.078
+ 0AG           H42    H    H         0.000     -5.278   -3.309   -2.653
+ 0AG           C3     C    CH3       0.000     -5.997   -4.896   -1.381
+ 0AG           H33    H    H         0.000     -6.207   -5.550   -2.189
+ 0AG           H32    H    H         0.000     -5.653   -5.461   -0.553
+ 0AG           H31    H    H         0.000     -6.882   -4.379   -1.109
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 0AG      OXT    n/a    C      START
+ 0AG      C      OXT    CA     .
+ 0AG      O      C      .      .
+ 0AG      CA     C      N      .
+ 0AG      HA     CA     .      .
+ 0AG      CB     CA     CG     .
+ 0AG      HBC1   CB     .      .
+ 0AG      HBC2   CB     .      .
+ 0AG      CG     CB     CD1    .
+ 0AG      HG     CG     .      .
+ 0AG      CD2    CG     HD21   .
+ 0AG      HD23   CD2    .      .
+ 0AG      HD22   CD2    .      .
+ 0AG      HD21   CD2    .      .
+ 0AG      CD1    CG     HD11   .
+ 0AG      HD13   CD1    .      .
+ 0AG      HD12   CD1    .      .
+ 0AG      HD11   CD1    .      .
+ 0AG      N      CA     C1     .
+ 0AG      H      N      .      .
+ 0AG      C1     N      O2     .
+ 0AG      O1     C1     .      .
+ 0AG      O2     C1     C4     .
+ 0AG      C4     O2     C3     .
+ 0AG      H41    C4     .      .
+ 0AG      H42    C4     .      .
+ 0AG      C3     C4     H31    .
+ 0AG      H33    C3     .      .
+ 0AG      H32    C3     .      .
+ 0AG      H31    C3     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0AG       C3        C4        single    1.513     0.020     1.513     0.020     
+0AG       H31       C3        single    1.089     0.010     0.989     0.005     
+0AG       H32       C3        single    1.089     0.010     0.989     0.005     
+0AG       H33       C3        single    1.089     0.010     0.989     0.005     
+0AG       C4        O2        single    1.426     0.020     1.426     0.020     
+0AG       H41       C4        single    1.089     0.010     0.989     0.005     
+0AG       H42       C4        single    1.089     0.010     0.989     0.005     
+0AG       O2        C1        single    1.454     0.020     1.454     0.020     
+0AG       O1        C1        double    1.220     0.020     1.220     0.020     
+0AG       C1        N         single    1.330     0.020     1.330     0.020     
+0AG       N         CA        single    1.450     0.020     1.450     0.020     
+0AG       H         N         single    1.016     0.010     0.899     0.007     
+0AG       CA        C         single    1.500     0.020     1.500     0.020     
+0AG       CB        CA        single    1.524     0.020     1.524     0.020     
+0AG       HA        CA        single    1.089     0.010     0.989     0.005     
+0AG       O         C         deloc     1.250     0.020     1.250     0.020     
+0AG       C         OXT       deloc     1.250     0.020     1.250     0.020     
+0AG       CG        CB        single    1.524     0.020     1.524     0.020     
+0AG       HBC1      CB        single    1.089     0.010     0.989     0.005     
+0AG       HBC2      CB        single    1.089     0.010     0.989     0.005     
+0AG       CD1       CG        single    1.524     0.020     1.524     0.020     
+0AG       CD2       CG        single    1.524     0.020     1.524     0.020     
+0AG       HG        CG        single    1.089     0.010     0.989     0.005     
+0AG       HD11      CD1       single    1.089     0.010     0.989     0.005     
+0AG       HD12      CD1       single    1.089     0.010     0.989     0.005     
+0AG       HD13      CD1       single    1.089     0.010     0.989     0.005     
+0AG       HD21      CD2       single    1.089     0.010     0.989     0.005     
+0AG       HD22      CD2       single    1.089     0.010     0.989     0.005     
+0AG       HD23      CD2       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 0AG      OXT    C      O       123.000    3.000
+ 0AG      OXT    C      CA      118.500    3.000
+ 0AG      O      C      CA      118.500    3.000
+ 0AG      C      CA     HA      108.810    3.000
+ 0AG      C      CA     CB      109.470    3.000
+ 0AG      C      CA     N       111.600    3.000
+ 0AG      HA     CA     CB      108.340    3.000
+ 0AG      HA     CA     N       108.550    3.000
+ 0AG      CB     CA     N       110.000    3.000
+ 0AG      CA     CB     HBC1    109.470    3.000
+ 0AG      CA     CB     HBC2    109.470    3.000
+ 0AG      CA     CB     CG      111.000    3.000
+ 0AG      HBC1   CB     HBC2    107.900    3.000
+ 0AG      HBC1   CB     CG      109.470    3.000
+ 0AG      HBC2   CB     CG      109.470    3.000
+ 0AG      CB     CG     HG      108.340    3.000
+ 0AG      CB     CG     CD2     111.000    3.000
+ 0AG      CB     CG     CD1     111.000    3.000
+ 0AG      HG     CG     CD2     108.340    3.000
+ 0AG      HG     CG     CD1     108.340    3.000
+ 0AG      CD2    CG     CD1     111.000    3.000
+ 0AG      CG     CD2    HD23    109.470    3.000
+ 0AG      CG     CD2    HD22    109.470    3.000
+ 0AG      CG     CD2    HD21    109.470    3.000
+ 0AG      HD23   CD2    HD22    109.470    3.000
+ 0AG      HD23   CD2    HD21    109.470    3.000
+ 0AG      HD22   CD2    HD21    109.470    3.000
+ 0AG      CG     CD1    HD13    109.470    3.000
+ 0AG      CG     CD1    HD12    109.470    3.000
+ 0AG      CG     CD1    HD11    109.470    3.000
+ 0AG      HD13   CD1    HD12    109.470    3.000
+ 0AG      HD13   CD1    HD11    109.470    3.000
+ 0AG      HD12   CD1    HD11    109.470    3.000
+ 0AG      CA     N      H       118.500    3.000
+ 0AG      CA     N      C1      121.500    3.000
+ 0AG      H      N      C1      120.000    3.000
+ 0AG      N      C1     O1      123.000    3.000
+ 0AG      N      C1     O2      118.000    3.000
+ 0AG      O1     C1     O2      119.000    3.000
+ 0AG      C1     O2     C4      120.000    3.000
+ 0AG      O2     C4     H41     109.470    3.000
+ 0AG      O2     C4     H42     109.470    3.000
+ 0AG      O2     C4     C3      109.470    3.000
+ 0AG      H41    C4     H42     107.900    3.000
+ 0AG      H41    C4     C3      109.470    3.000
+ 0AG      H42    C4     C3      109.470    3.000
+ 0AG      C4     C3     H33     109.470    3.000
+ 0AG      C4     C3     H32     109.470    3.000
+ 0AG      C4     C3     H31     109.470    3.000
+ 0AG      H33    C3     H32     109.470    3.000
+ 0AG      H33    C3     H31     109.470    3.000
+ 0AG      H32    C3     H31     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 0AG      var_1    OXT    C      CA     N       -179.984   20.000   3
+ 0AG      var_2    C      CA     CB     CG       176.641   20.000   3
+ 0AG      var_3    CA     CB     CG     CD1      174.164   20.000   3
+ 0AG      var_4    CB     CG     CD2    HD21      60.058   20.000   3
+ 0AG      var_5    CB     CG     CD1    HD11      57.167   20.000   3
+ 0AG      var_6    C      CA     N      C1       -84.968   20.000   3
+ 0AG      CONST_1  CA     N      C1     O2       180.000    0.000   0
+ 0AG      var_7    N      C1     O2     C4      -179.992   20.000   1
+ 0AG      var_8    C1     O2     C4     C3       179.951   20.000   1
+ 0AG      var_9    O2     C4     C3     H31       59.963   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 0AG      chir_01  CA     N      C      CB        positiv
+ 0AG      chir_02  CG     CB     CD1    CD2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 0AG      plan-1    C1        0.020
+ 0AG      plan-1    O2        0.020
+ 0AG      plan-1    O1        0.020
+ 0AG      plan-1    N         0.020
+ 0AG      plan-1    H         0.020
+ 0AG      plan-2    N         0.020
+ 0AG      plan-2    C1        0.020
+ 0AG      plan-2    CA        0.020
+ 0AG      plan-2    H         0.020
+ 0AG      plan-3    C         0.020
+ 0AG      plan-3    CA        0.020
+ 0AG      plan-3    O         0.020
+ 0AG      plan-3    OXT       0.020
+# ------------------------------------------------------

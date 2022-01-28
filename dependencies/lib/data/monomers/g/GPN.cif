@@ -1,0 +1,302 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GPN      GPN '2-AMINOETHYLGLYCINE-CARBONYLMETHYLEN' non-polymer        37  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GPN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GPN           O6     O    O         0.000      0.000    0.000    0.000
+ GPN           C6     C    CR6       0.000     -1.081   -0.539    0.166
+ GPN           N1     N    NR16      0.000     -1.208   -1.594    1.000
+ GPN           HN1    H    H         0.000     -0.375   -1.955    1.509
+ GPN           C2     C    CR6       0.000     -2.422   -2.189    1.180
+ GPN           N2     N    NH2       0.000     -2.520   -3.258    2.034
+ GPN           HN22   H    H         0.000     -3.413   -3.714    2.182
+ GPN           HN21   H    H         0.000     -1.701   -3.599    2.523
+ GPN           N3     N    NRD6      0.000     -3.500   -1.767    0.557
+ GPN           C4     C    CR56      0.000     -3.452   -0.723   -0.280
+ GPN           C5     C    CR56      0.000     -2.234   -0.075   -0.509
+ GPN           N7     N    NRD5      0.000     -2.472    0.927   -1.392
+ GPN           C8     C    CR15      0.000     -3.733    0.926   -1.713
+ GPN           H8     H    H         0.000     -4.200    1.620   -2.402
+ GPN           N9     N    NR5       0.000     -4.379   -0.079   -1.053
+ GPN           "C8'"  C    CH2       0.000     -5.804   -0.402   -1.150
+ GPN           "H8'1" H    H         0.000     -5.937   -1.484   -1.076
+ GPN           "H8'2" H    H         0.000     -6.191   -0.054   -2.109
+ GPN           "C7'"  C    C         0.000     -6.550    0.276   -0.029
+ GPN           "O7'"  O    O         0.000     -5.950    0.961    0.771
+ GPN           "N4'"  N    N         0.000     -7.884    0.119    0.084
+ GPN           "C5'"  C    CH2       0.000     -8.609    0.777    1.172
+ GPN           "H5'1" H    H         0.000     -7.952    0.878    2.038
+ GPN           "H5'2" H    H         0.000     -9.479    0.176    1.445
+ GPN           "C'"   C    C         0.000     -9.061    2.143    0.722
+ GPN           OXT    O    OC       -0.500     -9.703    2.879    1.504
+ GPN           "O1'"  O    OC       -0.500     -8.794    2.540   -0.434
+ GPN           "C3'"  C    CH2       0.000     -8.609   -0.710   -0.883
+ GPN           "H3'1" H    H         0.000     -8.099   -0.673   -1.848
+ GPN           "H3'2" H    H         0.000     -9.627   -0.331   -0.996
+ GPN           "C2'"  C    CH2       0.000     -8.654   -2.155   -0.383
+ GPN           "H2'1" H    H         0.000     -9.164   -2.190    0.583
+ GPN           "H2'2" H    H         0.000     -7.636   -2.533   -0.269
+ GPN           "N1'"  N    NT3       1.000     -9.382   -2.985   -1.352
+ GPN           "H1'3" H    H         0.000    -10.342   -2.624   -1.456
+ GPN           "H1'2" H    H         0.000     -8.897   -2.949   -2.262
+ GPN           "H1'1" H    H         0.000     -9.411   -3.959   -1.012
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GPN      O6     n/a    C6     START
+ GPN      C6     O6     N1     .
+ GPN      N1     C6     C2     .
+ GPN      HN1    N1     .      .
+ GPN      C2     N1     N3     .
+ GPN      N2     C2     HN21   .
+ GPN      HN22   N2     .      .
+ GPN      HN21   N2     .      .
+ GPN      N3     C2     C4     .
+ GPN      C4     N3     N9     .
+ GPN      C5     C4     N7     .
+ GPN      N7     C5     C8     .
+ GPN      C8     N7     H8     .
+ GPN      H8     C8     .      .
+ GPN      N9     C4     "C8'"  .
+ GPN      "C8'"  N9     "C7'"  .
+ GPN      "H8'1" "C8'"  .      .
+ GPN      "H8'2" "C8'"  .      .
+ GPN      "C7'"  "C8'"  "N4'"  .
+ GPN      "O7'"  "C7'"  .      .
+ GPN      "N4'"  "C7'"  "C3'"  .
+ GPN      "C5'"  "N4'"  "C'"   .
+ GPN      "H5'1" "C5'"  .      .
+ GPN      "H5'2" "C5'"  .      .
+ GPN      "C'"   "C5'"  "O1'"  .
+ GPN      OXT    "C'"   .      .
+ GPN      "O1'"  "C'"   .      .
+ GPN      "C3'"  "N4'"  "C2'"  .
+ GPN      "H3'1" "C3'"  .      .
+ GPN      "H3'2" "C3'"  .      .
+ GPN      "C2'"  "C3'"  "N1'"  .
+ GPN      "H2'1" "C2'"  .      .
+ GPN      "H2'2" "C2'"  .      .
+ GPN      "N1'"  "C2'"  "H1'1" .
+ GPN      "H1'3" "N1'"  .      .
+ GPN      "H1'2" "N1'"  .      .
+ GPN      "H1'1" "N1'"  .      END
+ GPN      N9     C8     .    ADD
+ GPN      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GPN       "C7'"     "C8'"     single    1.510     0.020     1.510     0.020     
+GPN       "C8'"     N9        single    1.462     0.020     1.462     0.020     
+GPN       "H8'1"    "C8'"     single    1.089     0.010     0.989     0.005     
+GPN       "H8'2"    "C8'"     single    1.089     0.010     0.989     0.005     
+GPN       "O7'"     "C7'"     double    1.220     0.020     1.220     0.020     
+GPN       "N4'"     "C7'"     single    1.330     0.020     1.330     0.020     
+GPN       "C'"      "C5'"     single    1.510     0.020     1.510     0.020     
+GPN       "C5'"     "N4'"     single    1.455     0.020     1.455     0.020     
+GPN       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+GPN       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+GPN       "O1'"     "C'"      deloc     1.250     0.020     1.250     0.020     
+GPN       OXT       "C'"      deloc     1.250     0.020     1.250     0.020     
+GPN       "C3'"     "N4'"     single    1.455     0.020     1.455     0.020     
+GPN       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+GPN       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+GPN       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+GPN       "N1'"     "C2'"     single    1.488     0.020     1.488     0.020     
+GPN       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+GPN       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+GPN       "H1'1"    "N1'"     single    1.036     0.016     0.914     0.007     
+GPN       "H1'2"    "N1'"     single    1.036     0.016     0.914     0.007     
+GPN       "H1'3"    "N1'"     single    1.036     0.016     0.914     0.007     
+GPN       N9        C8        single    1.337     0.020     1.337     0.020     
+GPN       N9        C4        single    1.337     0.020     1.337     0.020     
+GPN       C8        N7        double    1.350     0.020     1.350     0.020     
+GPN       H8        C8        single    1.082     0.013     0.975     0.010     
+GPN       N7        C5        single    1.350     0.020     1.350     0.020     
+GPN       C5        C6        single    1.490     0.020     1.490     0.020     
+GPN       C5        C4        double    1.490     0.020     1.490     0.020     
+GPN       C6        O6        double    1.250     0.020     1.250     0.020     
+GPN       N1        C6        single    1.337     0.020     1.337     0.020     
+GPN       C2        N1        single    1.337     0.020     1.337     0.020     
+GPN       HN1       N1        single    1.016     0.010     0.899     0.007     
+GPN       N2        C2        single    1.355     0.020     1.355     0.020     
+GPN       N3        C2        double    1.350     0.020     1.350     0.020     
+GPN       HN21      N2        single    1.016     0.010     0.899     0.007     
+GPN       HN22      N2        single    1.016     0.010     0.899     0.007     
+GPN       C4        N3        single    1.355     0.020     1.355     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GPN      O6     C6     N1      120.000    3.000
+ GPN      O6     C6     C5      120.000    3.000
+ GPN      N1     C6     C5      120.000    3.000
+ GPN      C6     N1     HN1     120.000    3.000
+ GPN      C6     N1     C2      120.000    3.000
+ GPN      HN1    N1     C2      120.000    3.000
+ GPN      N1     C2     N2      120.000    3.000
+ GPN      N1     C2     N3      120.000    3.000
+ GPN      N2     C2     N3      120.000    3.000
+ GPN      C2     N2     HN22    120.000    3.000
+ GPN      C2     N2     HN21    120.000    3.000
+ GPN      HN22   N2     HN21    120.000    3.000
+ GPN      C2     N3     C4      120.000    3.000
+ GPN      N3     C4     C5      120.000    3.000
+ GPN      N3     C4     N9      132.000    3.000
+ GPN      C5     C4     N9      108.000    3.000
+ GPN      C4     C5     N7      108.000    3.000
+ GPN      C4     C5     C6      120.000    3.000
+ GPN      N7     C5     C6      132.000    3.000
+ GPN      C5     N7     C8      108.000    3.000
+ GPN      N7     C8     H8      126.000    3.000
+ GPN      N7     C8     N9      108.000    3.000
+ GPN      H8     C8     N9      126.000    3.000
+ GPN      C4     N9     "C8'"   126.000    3.000
+ GPN      C4     N9     C8      108.000    3.000
+ GPN      "C8'"  N9     C8      126.000    3.000
+ GPN      N9     "C8'"  "H8'1"  109.500    3.000
+ GPN      N9     "C8'"  "H8'2"  109.500    3.000
+ GPN      N9     "C8'"  "C7'"   109.500    3.000
+ GPN      "H8'1" "C8'"  "H8'2"  107.900    3.000
+ GPN      "H8'1" "C8'"  "C7'"   109.470    3.000
+ GPN      "H8'2" "C8'"  "C7'"   109.470    3.000
+ GPN      "C8'"  "C7'"  "O7'"   120.500    3.000
+ GPN      "C8'"  "C7'"  "N4'"   116.500    3.000
+ GPN      "O7'"  "C7'"  "N4'"   123.000    3.000
+ GPN      "C7'"  "N4'"  "C5'"   127.000    3.000
+ GPN      "C7'"  "N4'"  "C3'"   127.000    3.000
+ GPN      "C5'"  "N4'"  "C3'"   120.000    3.000
+ GPN      "N4'"  "C5'"  "H5'1"  109.470    3.000
+ GPN      "N4'"  "C5'"  "H5'2"  109.470    3.000
+ GPN      "N4'"  "C5'"  "C'"    109.500    3.000
+ GPN      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ GPN      "H5'1" "C5'"  "C'"    109.470    3.000
+ GPN      "H5'2" "C5'"  "C'"    109.470    3.000
+ GPN      "C5'"  "C'"   OXT     118.500    3.000
+ GPN      "C5'"  "C'"   "O1'"   118.500    3.000
+ GPN      OXT    "C'"   "O1'"   123.000    3.000
+ GPN      "N4'"  "C3'"  "H3'1"  109.470    3.000
+ GPN      "N4'"  "C3'"  "H3'2"  109.470    3.000
+ GPN      "N4'"  "C3'"  "C2'"   105.000    3.000
+ GPN      "H3'1" "C3'"  "H3'2"  107.900    3.000
+ GPN      "H3'1" "C3'"  "C2'"   109.470    3.000
+ GPN      "H3'2" "C3'"  "C2'"   109.470    3.000
+ GPN      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ GPN      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ GPN      "C3'"  "C2'"  "N1'"   110.000    3.000
+ GPN      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ GPN      "H2'1" "C2'"  "N1'"   109.470    3.000
+ GPN      "H2'2" "C2'"  "N1'"   109.470    3.000
+ GPN      "C2'"  "N1'"  "H1'3"  109.470    3.000
+ GPN      "C2'"  "N1'"  "H1'2"  109.470    3.000
+ GPN      "C2'"  "N1'"  "H1'1"  109.470    3.000
+ GPN      "H1'3" "N1'"  "H1'2"  109.470    3.000
+ GPN      "H1'3" "N1'"  "H1'1"  109.470    3.000
+ GPN      "H1'2" "N1'"  "H1'1"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GPN      CONST_1  O6     C6     N1     C2       180.000    0.000   0
+ GPN      CONST_2  C6     N1     C2     N3         0.000    0.000   0
+ GPN      CONST_3  N1     C2     N2     HN21      -0.042    0.000   0
+ GPN      CONST_4  N1     C2     N3     C4         0.000    0.000   0
+ GPN      CONST_5  C2     N3     C4     N9       180.000    0.000   0
+ GPN      CONST_6  N3     C4     C5     N7       180.000    0.000   0
+ GPN      CONST_7  C4     C5     C6     O6       180.000    0.000   0
+ GPN      CONST_8  C4     C5     N7     C8         0.000    0.000   0
+ GPN      CONST_9  C5     N7     C8     N9         0.000    0.000   0
+ GPN      CONST_10 N3     C4     N9     "C8'"      0.000    0.000   0
+ GPN      CONST_11 C4     N9     C8     N7         0.000    0.000   0
+ GPN      var_1    C4     N9     "C8'"  "C7'"     84.692   20.000   1
+ GPN      var_2    N9     "C8'"  "C7'"  "N4'"   -179.982   20.000   3
+ GPN      CONST_12 "C8'"  "C7'"  "N4'"  "C3'"      0.000    0.000   0
+ GPN      var_3    "C7'"  "N4'"  "C5'"  "C'"      89.982   20.000   1
+ GPN      var_4    "N4'"  "C5'"  "C'"   "O1'"     -0.015   20.000   3
+ GPN      var_5    "C7'"  "N4'"  "C3'"  "C2'"     89.972   20.000   1
+ GPN      var_6    "N4'"  "C3'"  "C2'"  "N1'"    179.989   20.000   3
+ GPN      var_7    "C3'"  "C2'"  "N1'"  "H1'1"  -179.981   20.000   1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GPN      plan-1    "C7'"     0.020
+ GPN      plan-1    "C8'"     0.020
+ GPN      plan-1    "O7'"     0.020
+ GPN      plan-1    "N4'"     0.020
+ GPN      plan-2    "C'"      0.020
+ GPN      plan-2    "C5'"     0.020
+ GPN      plan-2    "O1'"     0.020
+ GPN      plan-2    OXT       0.020
+ GPN      plan-3    "N4'"     0.020
+ GPN      plan-3    "C7'"     0.020
+ GPN      plan-3    "C5'"     0.020
+ GPN      plan-3    "C3'"     0.020
+ GPN      plan-4    N9        0.020
+ GPN      plan-4    "C8'"     0.020
+ GPN      plan-4    C8        0.020
+ GPN      plan-4    C4        0.020
+ GPN      plan-4    N7        0.020
+ GPN      plan-4    H8        0.020
+ GPN      plan-4    C5        0.020
+ GPN      plan-4    C6        0.020
+ GPN      plan-4    N1        0.020
+ GPN      plan-4    C2        0.020
+ GPN      plan-4    N3        0.020
+ GPN      plan-4    O6        0.020
+ GPN      plan-4    HN1       0.020
+ GPN      plan-4    N2        0.020
+ GPN      plan-4    HN22      0.020
+ GPN      plan-4    HN21      0.020
+ GPN      plan-5    N2        0.020
+ GPN      plan-5    C2        0.020
+ GPN      plan-5    HN21      0.020
+ GPN      plan-5    HN22      0.020
+# ------------------------------------------------------

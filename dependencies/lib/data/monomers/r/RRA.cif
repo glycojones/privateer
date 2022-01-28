@@ -1,0 +1,98 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RRA     RRA      prop-2-yn-1-amine     NON-POLYMER     9     4     .     
+#
+data_comp_RRA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+RRA     N03     N       NT2     0       12.032      6.926       -2.095      
+RRA     C37     C       CH2     0       12.158      6.894       -3.556      
+RRA     C38     C       CSP     0       11.135      6.047       -4.177      
+RRA     C39     C       CSP     0       10.289      5.381       -4.654      
+RRA     HN03    H       H       0       12.608      7.492       -1.726      
+RRA     HN0A    H       H       0       11.219      7.174       -1.837      
+RRA     H37     H       H       0       13.047      6.555       -3.796      
+RRA     H37A    H       H       0       12.078      7.807       -3.907      
+RRA     H39     H       H       0       9.608       4.838       -5.034      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RRA       N03       C37       SINGLE    n         1.467     0.020     1.467     0.020     
+RRA       C37       C38       SINGLE    n         1.466     0.010     1.466     0.010     
+RRA       C38       C39       TRIPLE    n         1.178     0.011     1.178     0.011     
+RRA       N03       HN03      SINGLE    n         1.036     0.016     0.888     0.020     
+RRA       N03       HN0A      SINGLE    n         1.036     0.016     0.888     0.020     
+RRA       C37       H37       SINGLE    n         1.089     0.010     0.981     0.015     
+RRA       C37       H37A      SINGLE    n         1.089     0.010     0.981     0.015     
+RRA       C39       H39       SINGLE    n         1.048     0.010     0.950     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+RRA         C37         N03        HN03     111.861    3.00
+RRA         C37         N03        HN0A     111.861    3.00
+RRA        HN03         N03        HN0A     107.243    3.00
+RRA         N03         C37         C38     111.850    1.90
+RRA         N03         C37         H37     109.140    1.50
+RRA         N03         C37        H37A     109.140    1.50
+RRA         C38         C37         H37     109.127    1.50
+RRA         C38         C37        H37A     109.127    1.50
+RRA         H37         C37        H37A     107.890    1.50
+RRA         C37         C38         C39     178.300    1.50
+RRA         C38         C39         H39     179.517    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+RRA             sp3_sp3_1         C38         C37         N03        HN03     180.000   10.00     3
+RRA             sp3_sp3_7         C39         C38         C37         N03     180.000   10.00     3
+RRA           other_tor_1         C37         C38         C39         H39     180.000   10.00     1
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+RRA SMILES           ACDLabs              12.01 C#CCN
+RRA SMILES_CANONICAL CACTVS               3.370 NCC#C
+RRA SMILES           CACTVS               3.370 NCC#C
+RRA SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 C#CCN
+RRA SMILES           "OpenEye OEToolkits" 1.7.2 C#CCN
+RRA InChI            InChI                1.03  InChI=1S/C3H5N/c1-2-3-4/h1H,3-4H2
+RRA InChIKey         InChI                1.03  JKANAVGODYYCQF-UHFFFAOYSA-N
+RRA ?                acedrg               202         "dictionary generator"                  
+RRA ?                acedrg_database      11          "data source"                           
+RRA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+RRA ?                refmac5              5.8.0189    "optimization tool"                     

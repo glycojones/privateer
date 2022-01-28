@@ -1,0 +1,142 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DEP     DEP      "DIETHYL PHOSPHONATE"     NON-POLYMER     19     8     .     
+#
+data_comp_DEP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DEP     C1      C       CH2     0       72.681      9.079       10.777      
+DEP     C2      C       CH3     0       71.569      9.600       9.956       
+DEP     C3      C       CH2     0       73.529      10.338      14.282      
+DEP     C4      C       CH3     0       74.437      10.919      15.291      
+DEP     O1      O       O2      0       73.546      10.183      11.176      
+DEP     O2      O       O2      0       74.268      9.393       13.451      
+DEP     O3      O       O       0       75.716      11.084      12.187      
+DEP     P       P       P       0       74.857      9.871       12.041      
+DEP     H11     H       H       0       73.196      8.425       10.260      
+DEP     H12     H       H       0       72.325      8.633       11.573      
+DEP     H21     H       H       0       70.987      8.867       9.696       
+DEP     H22     H       H       0       71.925      10.027      9.160       
+DEP     H23     H       H       0       71.061      10.248      10.471      
+DEP     H31     H       H       0       73.153      11.051      13.723      
+DEP     H32     H       H       0       72.789      9.876       14.729      
+DEP     H41     H       H       0       73.980      11.633      15.766      
+DEP     H42     H       H       0       75.225      11.277      14.851      
+DEP     H43     H       H       0       74.704      10.231      15.922      
+DEP     HP1     H       H       0       75.483      8.889       11.501      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DEP       C1        C2        SINGLE    n         1.477     0.020     1.477     0.020     
+DEP       C1        O1        SINGLE    n         1.458     0.016     1.458     0.016     
+DEP       C3        C4        SINGLE    n         1.477     0.020     1.477     0.020     
+DEP       C3        O2        SINGLE    n         1.458     0.016     1.458     0.016     
+DEP       O1        P         SINGLE    n         1.601     0.012     1.601     0.012     
+DEP       O2        P         SINGLE    n         1.601     0.012     1.601     0.012     
+DEP       O3        P         DOUBLE    n         1.493     0.016     1.493     0.016     
+DEP       C1        H11       SINGLE    n         1.089     0.010     0.989     0.005     
+DEP       C1        H12       SINGLE    n         1.089     0.010     0.989     0.005     
+DEP       C2        H21       SINGLE    n         1.089     0.010     0.989     0.005     
+DEP       C2        H22       SINGLE    n         1.089     0.010     0.989     0.005     
+DEP       C2        H23       SINGLE    n         1.089     0.010     0.989     0.005     
+DEP       C3        H31       SINGLE    n         1.089     0.010     0.989     0.005     
+DEP       C3        H32       SINGLE    n         1.089     0.010     0.989     0.005     
+DEP       C4        H41       SINGLE    n         1.089     0.010     0.989     0.005     
+DEP       C4        H42       SINGLE    n         1.089     0.010     0.989     0.005     
+DEP       C4        H43       SINGLE    n         1.089     0.010     0.989     0.005     
+DEP       P         HP1       SINGLE    n         1.284     0.020     1.284     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DEP          C2          C1          O1     109.382    2.49
+DEP          C2          C1         H11     109.788    1.50
+DEP          C2          C1         H12     109.788    1.50
+DEP          O1          C1         H11     109.739    1.50
+DEP          O1          C1         H12     109.739    1.50
+DEP         H11          C1         H12     108.343    1.50
+DEP          C1          C2         H21     109.474    1.50
+DEP          C1          C2         H22     109.474    1.50
+DEP          C1          C2         H23     109.474    1.50
+DEP         H21          C2         H22     109.410    1.50
+DEP         H21          C2         H23     109.410    1.50
+DEP         H22          C2         H23     109.410    1.50
+DEP          C4          C3          O2     109.382    2.49
+DEP          C4          C3         H31     109.788    1.50
+DEP          C4          C3         H32     109.788    1.50
+DEP          O2          C3         H31     109.739    1.50
+DEP          O2          C3         H32     109.739    1.50
+DEP         H31          C3         H32     108.343    1.50
+DEP          C3          C4         H41     109.474    1.50
+DEP          C3          C4         H42     109.474    1.50
+DEP          C3          C4         H43     109.474    1.50
+DEP         H41          C4         H42     109.410    1.50
+DEP         H41          C4         H43     109.410    1.50
+DEP         H42          C4         H43     109.410    1.50
+DEP          C1          O1           P     119.135    1.78
+DEP          C3          O2           P     119.135    1.78
+DEP          O1           P          O2     101.077    2.30
+DEP          O1           P          O3     108.530    2.45
+DEP          O1           P         HP1     104.778    2.90
+DEP          O2           P          O3     108.530    2.45
+DEP          O2           P         HP1     104.778    2.90
+DEP          O3           P         HP1     108.562    2.72
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DEP             sp3_sp3_1          O1          C1          C2         H21     180.000   10.00     3
+DEP            sp3_sp3_10          C2          C1          O1           P     180.000   10.00     3
+DEP            sp3_sp3_13          O2          C3          C4         H41     180.000   10.00     3
+DEP            sp3_sp3_22          C4          C3          O2           P     180.000   10.00     3
+DEP            sp3_sp3_25          C1          O1           P          O2     180.000   10.00     3
+DEP            sp3_sp3_28          C3          O2           P          O1     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DEP SMILES           ACDLabs              10.04 "O=P(OCC)OCC"
+DEP SMILES_CANONICAL CACTVS               3.341 "CCO[PH](=O)OCC"
+DEP SMILES           CACTVS               3.341 "CCO[PH](=O)OCC"
+DEP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCOP(=O)OCC"
+DEP SMILES           "OpenEye OEToolkits" 1.5.0 "CCOP(=O)OCC"
+DEP InChI            InChI                1.03  "InChI=1S/C4H11O3P/c1-3-6-8(5)7-4-2/h8H,3-4H2,1-2H3"
+DEP InChIKey         InChI                1.03  MJUJXFBTEFXVKU-UHFFFAOYSA-N
+DEP ?                acedrg               202         "dictionary generator"                  
+DEP ?                acedrg_database      11          "data source"                           
+DEP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DEP ?                refmac5              5.8.0189    "optimization tool"                     

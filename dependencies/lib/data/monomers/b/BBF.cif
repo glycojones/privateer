@@ -1,0 +1,132 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BBF     BBF      1-bromo-2,3,4,5,6-pentafluorobenzene     NON-POLYMER     12     12     .     
+#
+data_comp_BBF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BBF     F6      F       F       0       27.519      5.495       2.338       
+BBF     C6      C       CR6     0       27.018      6.072       3.445       
+BBF     C1      C       CR6     0       27.464      7.336       3.850       
+BBF     BR1     BR      BR      0       28.765      8.259       2.867       
+BBF     C5      C       CR6     0       26.060      5.395       4.170       
+BBF     F5      F       F       0       25.643      4.183       3.769       
+BBF     C4      C       CR6     0       25.521      5.967       5.323       
+BBF     F4      F       F       0       24.588      5.308       6.030       
+BBF     C3      C       CR6     0       25.950      7.212       5.734       
+BBF     F3      F       F       0       25.432      7.763       6.844       
+BBF     C2      C       CR6     0       26.909      7.891       5.010       
+BBF     F2      F       F       0       27.304      9.103       5.441       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BBF       F6        C6        SINGLE    n         1.346     0.010     1.346     0.010     
+BBF       C6        C1        DOUBLE    y         1.383     0.015     1.383     0.015     
+BBF       C6        C5        SINGLE    y         1.372     0.010     1.372     0.010     
+BBF       C1        BR1       SINGLE    n         1.874     0.010     1.874     0.010     
+BBF       C1        C2        SINGLE    y         1.383     0.015     1.383     0.015     
+BBF       C5        F5        SINGLE    n         1.343     0.010     1.343     0.010     
+BBF       C5        C4        DOUBLE    y         1.383     0.012     1.383     0.012     
+BBF       C4        F4        SINGLE    n         1.343     0.010     1.343     0.010     
+BBF       C4        C3        SINGLE    y         1.371     0.010     1.371     0.010     
+BBF       C3        F3        SINGLE    n         1.343     0.010     1.343     0.010     
+BBF       C3        C2        DOUBLE    y         1.372     0.010     1.372     0.010     
+BBF       C2        F2        SINGLE    n         1.346     0.010     1.346     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BBF          F6          C6          C1     120.348    1.50
+BBF          F6          C6          C5     118.580    1.50
+BBF          C1          C6          C5     121.072    1.50
+BBF          C6          C1         BR1     120.876    1.50
+BBF          C6          C1          C2     118.249    1.50
+BBF         BR1          C1          C2     120.876    1.50
+BBF          C6          C5          F5     120.108    1.50
+BBF          C6          C5          C4     120.071    1.50
+BBF          F5          C5          C4     119.821    1.50
+BBF          C5          C4          F4     120.268    1.50
+BBF          C5          C4          C3     119.464    1.50
+BBF          F4          C4          C3     120.268    1.50
+BBF          C4          C3          F3     119.821    1.50
+BBF          C4          C3          C2     120.071    1.50
+BBF          F3          C3          C2     120.108    1.50
+BBF          C1          C2          C3     121.072    1.50
+BBF          C1          C2          F2     120.348    1.50
+BBF          C3          C2          F2     118.580    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BBF       const_sp2_sp2_4         BR1          C1          C6          F6       0.000   10.00     2
+BBF              const_24          F5          C5          C6          F6       0.000   10.00     2
+BBF       const_sp2_sp2_8         BR1          C1          C2          F2       0.000   10.00     2
+BBF              const_20          F4          C4          C5          F5       0.000   10.00     2
+BBF              const_16          F3          C3          C4          F4       0.000   10.00     2
+BBF              const_12          F2          C2          C3          F3       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BBF    plan-1         BR1   0.020
+BBF    plan-1          C1   0.020
+BBF    plan-1          C2   0.020
+BBF    plan-1          C3   0.020
+BBF    plan-1          C4   0.020
+BBF    plan-1          C5   0.020
+BBF    plan-1          C6   0.020
+BBF    plan-1          F2   0.020
+BBF    plan-1          F3   0.020
+BBF    plan-1          F4   0.020
+BBF    plan-1          F5   0.020
+BBF    plan-1          F6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BBF SMILES           ACDLabs              10.04 "Fc1c(F)c(F)c(F)c(Br)c1F"
+BBF SMILES_CANONICAL CACTVS               3.341 "Fc1c(F)c(F)c(Br)c(F)c1F"
+BBF SMILES           CACTVS               3.341 "Fc1c(F)c(F)c(Br)c(F)c1F"
+BBF SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1(c(c(c(c(c1F)F)Br)F)F)F"
+BBF SMILES           "OpenEye OEToolkits" 1.5.0 "c1(c(c(c(c(c1F)F)Br)F)F)F"
+BBF InChI            InChI                1.03  "InChI=1S/C6BrF5/c7-1-2(8)4(10)6(12)5(11)3(1)9"
+BBF InChIKey         InChI                1.03  XEKTVXADUPBFOA-UHFFFAOYSA-N
+BBF ?                acedrg               202         "dictionary generator"                  
+BBF ?                acedrg_database      11          "data source"                           
+BBF ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BBF ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,219 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SVX      SVX 'O-[(R)-ETHOXY(METHYL)PHOSPHORYL]-L-S' non-polymer        26  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SVX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SVX           O6     O    O         0.000      0.000    0.000    0.000
+ SVX           P1     P    P         0.000     -1.445    0.393    0.109
+ SVX           C4     C    CH3       0.000     -1.737    2.134   -0.137
+ SVX           H4C3   H    H         0.000     -2.048    2.566    0.776
+ SVX           H4C2   H    H         0.000     -0.844    2.593   -0.464
+ SVX           H4C1   H    H         0.000     -2.492    2.260   -0.866
+ SVX           O5     O    O2        0.000     -2.101    0.049    1.548
+ SVX           C2     C    CH2       0.000     -3.482    0.254    1.787
+ SVX           H2C1   H    H         0.000     -4.070   -0.350    1.093
+ SVX           H2C2   H    H         0.000     -3.727    1.309    1.645
+ SVX           C1     C    CH3       0.000     -3.803   -0.153    3.209
+ SVX           H1C3   H    H         0.000     -3.567   -1.176    3.346
+ SVX           H1C2   H    H         0.000     -3.233    0.434    3.882
+ SVX           H1C1   H    H         0.000     -4.835   -0.001    3.396
+ SVX           OG     O    O2        0.000     -2.423   -0.349   -0.947
+ SVX           CB     C    CH2       0.000     -2.266   -0.088   -2.331
+ SVX           HBC1   H    H         0.000     -1.221    0.148   -2.542
+ SVX           HBC2   H    H         0.000     -2.894    0.758   -2.617
+ SVX           CA     C    CH1       0.000     -2.679   -1.321   -3.122
+ SVX           HA     H    H         0.000     -2.029   -2.161   -2.843
+ SVX           N      N    NH2       0.000     -2.580   -1.099   -4.544
+ SVX           HN2    H    H         0.000     -2.533   -1.886   -5.173
+ SVX           HN1    H    H         0.000     -2.557   -0.158   -4.906
+ SVX           C      C    C         0.000     -4.118   -1.687   -2.822
+ SVX           O      O    OC       -0.500     -5.119   -1.210   -3.402
+ SVX           OXT    O    OC       -0.500     -4.205   -2.504   -1.878
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SVX      O6     n/a    P1     START
+ SVX      P1     O6     OG     .
+ SVX      C4     P1     H4C1   .
+ SVX      H4C3   C4     .      .
+ SVX      H4C2   C4     .      .
+ SVX      H4C1   C4     .      .
+ SVX      O5     P1     C2     .
+ SVX      C2     O5     C1     .
+ SVX      H2C1   C2     .      .
+ SVX      H2C2   C2     .      .
+ SVX      C1     C2     H1C1   .
+ SVX      H1C3   C1     .      .
+ SVX      H1C2   C1     .      .
+ SVX      H1C1   C1     .      .
+ SVX      OG     P1     CB     .
+ SVX      CB     OG     CA     .
+ SVX      HBC1   CB     .      .
+ SVX      HBC2   CB     .      .
+ SVX      CA     CB     C      .
+ SVX      HA     CA     .      .
+ SVX      N      CA     HN1    .
+ SVX      HN2    N      .      .
+ SVX      HN1    N      .      .
+ SVX      C      CA     OXT    .
+ SVX      O      C      .      .
+ SVX      OXT    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SVX       CB        OG        single    1.426     0.020     1.426     0.020     
+SVX       OG        P1        single    1.610     0.020     1.610     0.020     
+SVX       C4        P1        single    1.812     0.020     1.812     0.020     
+SVX       OXT       C         deloc     1.250     0.020     1.250     0.020     
+SVX       P1        O6        double    1.480     0.020     1.480     0.020     
+SVX       C2        O5        single    1.426     0.020     1.426     0.020     
+SVX       O5        P1        single    1.610     0.020     1.610     0.020     
+SVX       C1        C2        single    1.513     0.020     1.513     0.020     
+SVX       HN1       N         single    1.036     0.016     0.914     0.007     
+SVX       HN2       N         single    1.036     0.016     0.914     0.007     
+SVX       HA        CA        single    1.089     0.010     0.989     0.005     
+SVX       HBC1      CB        single    1.089     0.010     0.989     0.005     
+SVX       HBC2      CB        single    1.089     0.010     0.989     0.005     
+SVX       H4C1      C4        single    1.089     0.010     0.989     0.005     
+SVX       H4C2      C4        single    1.089     0.010     0.989     0.005     
+SVX       H4C3      C4        single    1.089     0.010     0.989     0.005     
+SVX       H2C1      C2        single    1.089     0.010     0.989     0.005     
+SVX       H2C2      C2        single    1.089     0.010     0.989     0.005     
+SVX       H1C1      C1        single    1.089     0.010     0.989     0.005     
+SVX       H1C2      C1        single    1.089     0.010     0.989     0.005     
+SVX       H1C3      C1        single    1.089     0.010     0.989     0.005     
+SVX       N         CA        single    1.450     0.020     1.450     0.020     
+SVX       C         CA        single    1.500     0.020     1.500     0.020     
+SVX       CA        CB        single    1.524     0.020     1.524     0.020     
+SVX       O         C         deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SVX      O6     P1     C4      109.500    3.000
+ SVX      O6     P1     O5      109.500    3.000
+ SVX      O6     P1     OG      109.500    3.000
+ SVX      C4     P1     O5      109.500    3.000
+ SVX      C4     P1     OG      109.500    3.000
+ SVX      O5     P1     OG      102.600    3.000
+ SVX      P1     C4     H4C3    109.500    3.000
+ SVX      P1     C4     H4C2    109.500    3.000
+ SVX      P1     C4     H4C1    109.500    3.000
+ SVX      H4C3   C4     H4C2    109.470    3.000
+ SVX      H4C3   C4     H4C1    109.470    3.000
+ SVX      H4C2   C4     H4C1    109.470    3.000
+ SVX      P1     O5     C2      120.500    3.000
+ SVX      O5     C2     H2C1    109.470    3.000
+ SVX      O5     C2     H2C2    109.470    3.000
+ SVX      O5     C2     C1      109.470    3.000
+ SVX      H2C1   C2     H2C2    107.900    3.000
+ SVX      H2C1   C2     C1      109.470    3.000
+ SVX      H2C2   C2     C1      109.470    3.000
+ SVX      C2     C1     H1C3    109.470    3.000
+ SVX      C2     C1     H1C2    109.470    3.000
+ SVX      C2     C1     H1C1    109.470    3.000
+ SVX      H1C3   C1     H1C2    109.470    3.000
+ SVX      H1C3   C1     H1C1    109.470    3.000
+ SVX      H1C2   C1     H1C1    109.470    3.000
+ SVX      P1     OG     CB      120.500    3.000
+ SVX      OG     CB     HBC1    109.470    3.000
+ SVX      OG     CB     HBC2    109.470    3.000
+ SVX      OG     CB     CA      109.470    3.000
+ SVX      HBC1   CB     HBC2    107.900    3.000
+ SVX      HBC1   CB     CA      109.470    3.000
+ SVX      HBC2   CB     CA      109.470    3.000
+ SVX      CB     CA     HA      108.340    3.000
+ SVX      CB     CA     N       109.470    3.000
+ SVX      CB     CA     C       109.470    3.000
+ SVX      HA     CA     N       109.470    3.000
+ SVX      HA     CA     C       108.810    3.000
+ SVX      N      CA     C       109.470    3.000
+ SVX      CA     N      HN2     120.000    3.000
+ SVX      CA     N      HN1     120.000    3.000
+ SVX      HN2    N      HN1     120.000    3.000
+ SVX      CA     C      O       118.500    3.000
+ SVX      CA     C      OXT     118.500    3.000
+ SVX      O      C      OXT     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SVX      var_1    O6     P1     C4     H4C1     128.313   20.000   1
+ SVX      var_2    O6     P1     O5     C2      -174.938   20.000   1
+ SVX      var_3    P1     O5     C2     C1      -179.962   20.000   1
+ SVX      var_4    O5     C2     C1     H1C1     179.973   20.000   3
+ SVX      var_5    O6     P1     OG     CB       -65.496   20.000   1
+ SVX      var_6    P1     OG     CB     CA       149.971   20.000   1
+ SVX      var_7    OG     CB     CA     C         58.767   20.000   3
+ SVX      var_8    CB     CA     N      HN1      -19.482   20.000   1
+ SVX      var_9    CB     CA     C      OXT      -91.636   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SVX      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SVX      plan-1    N         0.020
+ SVX      plan-1    CA        0.020
+ SVX      plan-1    HN1       0.020
+ SVX      plan-1    HN2       0.020
+ SVX      plan-2    C         0.020
+ SVX      plan-2    CA        0.020
+ SVX      plan-2    O         0.020
+ SVX      plan-2    OXT       0.020
+# ------------------------------------------------------

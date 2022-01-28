@@ -1,0 +1,234 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NYB     NYB     "N-METHYL-S-[(1R)-1-METHYLPROPYL]-L-CYSTEINE"     M-peptide     28     12     .
+#
+data_comp_NYB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NYB     N       N       NT1     0       -2.874      0.010       -0.779
+NYB     CA      C       CH1     0       -2.196      0.263       0.501
+NYB     CB      C       CH2     0       -0.710      0.516       0.270
+NYB     SG      S       S2      0       0.145       -0.873      -0.522
+NYB     CD      C       CH1     0       1.879       -0.267      -0.569
+NYB     CE1     C       CH3     0       2.595       -0.758      -1.795
+NYB     CE2     C       CH2     0       2.601       -0.655      0.713
+NYB     CF      C       CH3     0       3.905       0.062       0.978
+NYB     CN      C       CH3     0       -4.200      -0.601      -0.656
+NYB     C       C       C       0       -2.811      1.428       1.298
+NYB     O       O       O       0       -3.305      1.162       2.413
+NYB     OXT     O       OC      -1      -2.772      2.559       0.775
+NYB     H       H       H       0       -2.962      0.790       -1.201
+NYB     HA      H       H       0       -2.269      -0.554      1.057
+NYB     HB1     H       H       0       -0.286      0.697       1.124
+NYB     HB2     H       H       0       -0.609      1.304       -0.287
+NYB     HD      H       H       0       1.855       0.719       -0.610
+NYB     HE11    H       H       0       3.466       -0.330      -1.856
+NYB     HE12    H       H       0       2.071       -0.541      -2.586
+NYB     HE13    H       H       0       2.711       -1.723      -1.739
+NYB     HE21    H       H       0       2.779       -1.619      0.684
+NYB     HE22    H       H       0       1.998       -0.486      1.468
+NYB     HF1     H       H       0       4.260       -0.215      1.840
+NYB     HF2     H       H       0       3.753       1.023       0.987
+NYB     HF3     H       H       0       4.545       -0.156      0.279
+NYB     HN1     H       H       0       -4.532      -0.858      -1.538
+NYB     HN2     H       H       0       -4.827      0.034       -0.256
+NYB     HN3     H       H       0       -4.152      -1.397      -0.092
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+NYB      N      n/a    CA     START
+NYB      H      N      .      .
+NYB      CN     N      HN1    .
+NYB      HN3    CN     .      .
+NYB      HN2    CN     .      .
+NYB      HN1    CN     .      .
+NYB      CA     N      C      .
+NYB      HA     CA     .      .
+NYB      CB     CA     SG     .
+NYB      HB1    CB     .      .
+NYB      HB2    CB     .      .
+NYB      SG     CB     CD     .
+NYB      CD     SG     CE2    .
+NYB      HD     CD     .      .
+NYB      CE1    CD     HE11   .
+NYB      HE13   CE1    .      .
+NYB      HE12   CE1    .      .
+NYB      HE11   CE1    .      .
+NYB      CE2    CD     CF     .
+NYB      HE21   CE2    .      .
+NYB      HE22   CE2    .      .
+NYB      CF     CE2    HF1    .
+NYB      HF3    CF     .      .
+NYB      HF2    CF     .      .
+NYB      HF1    CF     .      .
+NYB      C      CA     .      END
+NYB      O      C      .      .
+NYB      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NYB       N         CA        SINGLE    n         1.468     0.014     1.468     0.014     
+NYB       N         CN        SINGLE    n         1.463     0.015     1.463     0.015     
+NYB       CA        CB        SINGLE    n         1.525     0.010     1.525     0.010     
+NYB       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+NYB       CB        SG        SINGLE    n         1.813     0.011     1.813     0.011     
+NYB       SG        CD        SINGLE    n         1.838     0.012     1.838     0.012     
+NYB       CD        CE1       SINGLE    n         1.503     0.016     1.503     0.016     
+NYB       CD        CE2       SINGLE    n         1.522     0.020     1.522     0.020     
+NYB       CE2       CF        SINGLE    n         1.511     0.020     1.511     0.020     
+NYB       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+NYB       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+NYB       N         H         SINGLE    n         1.036     0.016     0.890     0.020     
+NYB       CA        HA        SINGLE    n         1.089     0.010     0.990     0.020     
+NYB       CB        HB1       SINGLE    n         1.089     0.010     0.970     0.010     
+NYB       CB        HB2       SINGLE    n         1.089     0.010     0.970     0.010     
+NYB       CD        HD        SINGLE    n         1.089     0.010     0.987     0.013     
+NYB       CE1       HE11      SINGLE    n         1.089     0.010     0.973     0.015     
+NYB       CE1       HE12      SINGLE    n         1.089     0.010     0.973     0.015     
+NYB       CE1       HE13      SINGLE    n         1.089     0.010     0.973     0.015     
+NYB       CE2       HE21      SINGLE    n         1.089     0.010     0.981     0.016     
+NYB       CE2       HE22      SINGLE    n         1.089     0.010     0.981     0.016     
+NYB       CF        HF1       SINGLE    n         1.089     0.010     0.973     0.016     
+NYB       CF        HF2       SINGLE    n         1.089     0.010     0.973     0.016     
+NYB       CF        HF3       SINGLE    n         1.089     0.010     0.973     0.016     
+NYB       CN        HN1       SINGLE    n         1.089     0.010     0.977     0.013     
+NYB       CN        HN2       SINGLE    n         1.089     0.010     0.977     0.013     
+NYB       CN        HN3       SINGLE    n         1.089     0.010     0.977     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NYB          CA           N          CN     112.615    2.70
+NYB          CA           N           H     106.958    3.00
+NYB          CN           N           H     108.144    3.00
+NYB           N          CA          CB     111.883    2.59
+NYB           N          CA           C     113.481    2.07
+NYB           N          CA          HA     108.712    1.50
+NYB          CB          CA           C     110.594    1.50
+NYB          CB          CA          HA     107.802    1.50
+NYB           C          CA          HA     108.169    1.50
+NYB          CA          CB          SG     112.239    3.00
+NYB          CA          CB         HB1     108.695    1.50
+NYB          CA          CB         HB2     108.695    1.50
+NYB          SG          CB         HB1     108.654    1.50
+NYB          SG          CB         HB2     108.654    1.50
+NYB         HB1          CB         HB2     107.812    1.50
+NYB          CB          SG          CD     101.840    1.86
+NYB          SG          CD         CE1     112.239    3.00
+NYB          SG          CD         CE2     110.191    2.12
+NYB          SG          CD          HD     108.307    1.50
+NYB         CE1          CD         CE2     112.976    2.96
+NYB         CE1          CD          HD     108.175    1.50
+NYB         CE2          CD          HD     107.920    1.50
+NYB          CD         CE1        HE11     109.479    1.50
+NYB          CD         CE1        HE12     109.479    1.50
+NYB          CD         CE1        HE13     109.479    1.50
+NYB        HE11         CE1        HE12     109.455    1.50
+NYB        HE11         CE1        HE13     109.455    1.50
+NYB        HE12         CE1        HE13     109.455    1.50
+NYB          CD         CE2          CF     116.052    3.00
+NYB          CD         CE2        HE21     108.188    1.50
+NYB          CD         CE2        HE22     108.188    1.50
+NYB          CF         CE2        HE21     108.418    1.50
+NYB          CF         CE2        HE22     108.418    1.50
+NYB        HE21         CE2        HE22     107.703    1.50
+NYB         CE2          CF         HF1     109.629    1.50
+NYB         CE2          CF         HF2     109.629    1.50
+NYB         CE2          CF         HF3     109.629    1.50
+NYB         HF1          CF         HF2     109.380    1.50
+NYB         HF1          CF         HF3     109.380    1.50
+NYB         HF2          CF         HF3     109.380    1.50
+NYB           N          CN         HN1     110.215    1.50
+NYB           N          CN         HN2     110.215    1.50
+NYB           N          CN         HN3     110.215    1.50
+NYB         HN1          CN         HN2     109.279    1.79
+NYB         HN1          CN         HN3     109.279    1.79
+NYB         HN2          CN         HN3     109.279    1.79
+NYB          CA           C           O     117.226    1.56
+NYB          CA           C         OXT     117.226    1.56
+NYB           O           C         OXT     125.548    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NYB             sp3_sp3_1          CB          CA           N          CN     180.000   10.00     3
+NYB             sp3_sp3_7         HN1          CN           N          CA     180.000   10.00     3
+NYB            sp3_sp3_13           N          CA          CB          SG     180.000   10.00     3
+NYB             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+NYB            sp3_sp3_22          CA          CB          SG          CD     180.000   10.00     3
+NYB            sp3_sp3_25         CE1          CD          SG          CB     180.000   10.00     3
+NYB            sp3_sp3_28          SG          CD         CE1        HE11     180.000   10.00     3
+NYB            sp3_sp3_37          SG          CD         CE2          CF     180.000   10.00     3
+NYB            sp3_sp3_46          CD         CE2          CF         HF1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+NYB    chir_1    N    CA    CN    H    negative
+NYB    chir_2    CA    N    CB    C    negative
+NYB    chir_3    CD    SG    CE2    CE1    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NYB    plan-1           C   0.020
+NYB    plan-1          CA   0.020
+NYB    plan-1           O   0.020
+NYB    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NYB SMILES           ACDLabs              10.04 "O=C(O)C(NC)CSC(CC)C"
+NYB SMILES_CANONICAL CACTVS               3.352 "CC[C@@H](C)SC[C@H](NC)C(O)=O"
+NYB SMILES           CACTVS               3.352 "CC[CH](C)SC[CH](NC)C(O)=O"
+NYB SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "CC[C@@H](C)SC[C@@H](C(=O)O)NC"
+NYB SMILES           "OpenEye OEToolkits" 1.6.1 "CCC(C)SCC(C(=O)O)NC"
+NYB InChI            InChI                1.03  "InChI=1S/C8H17NO2S/c1-4-6(2)12-5-7(9-3)8(10)11/h6-7,9H,4-5H2,1-3H3,(H,10,11)/t6-,7+/m1/s1"
+NYB InChIKey         InChI                1.03  UXCFOODULRZHMV-RQJHMYQMSA-N
+NYB ?                acedrg               196         "dictionary generator"
+NYB ?                acedrg_database      11          "data source"
+NYB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NYB ?                refmac5              5.8.0222    "optimization tool"

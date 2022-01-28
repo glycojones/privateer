@@ -1,0 +1,222 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+F6P      F6P 'FRUCTOSE-6-PHOSPHATE                ' non-polymer        27  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_F6P
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ F6P           O3P    O    OP       -0.666      0.000    0.000    0.000
+ F6P           P      P    P         0.000     -0.627    0.391    1.320
+ F6P           O1P    O    OP       -0.666     -0.840    1.889    1.353
+ F6P           O2P    O    OP       -0.666      0.291   -0.011    2.454
+ F6P           O6     O    O2        0.000     -2.043   -0.356    1.485
+ F6P           C6     C    CH2       0.000     -2.861    0.064    0.392
+ F6P           H61    H    H         0.000     -2.381   -0.214   -0.549
+ F6P           H62    H    H         0.000     -2.988    1.148    0.429
+ F6P           C5     C    CH1       0.000     -4.228   -0.615    0.489
+ F6P           H5     H    H         0.000     -4.116   -1.707    0.444
+ F6P           C4     C    CH1       0.000     -5.158   -0.122   -0.648
+ F6P           H4     H    H         0.000     -5.004    0.948   -0.848
+ F6P           O4     O    OH1       0.000     -4.976   -0.898   -1.834
+ F6P           HO4    H    H         0.000     -5.566   -0.570   -2.526
+ F6P           C3     C    CH1       0.000     -6.556   -0.376   -0.019
+ F6P           H3     H    H         0.000     -6.870   -1.418   -0.173
+ F6P           O3     O    OH1       0.000     -7.526    0.529   -0.551
+ F6P           HO3    H    H         0.000     -7.604    0.392   -1.504
+ F6P           O5     O    O2        0.000     -4.889   -0.232    1.706
+ F6P           C2     C    CT        0.000     -6.297   -0.098    1.476
+ F6P           O2     O    OH1       0.000     -6.715    1.229    1.803
+ F6P           HO2    H    H         0.000     -6.547    1.398    2.739
+ F6P           C1     C    CH2       0.000     -7.061   -1.108    2.333
+ F6P           H11    H    H         0.000     -6.728   -2.118    2.088
+ F6P           H12    H    H         0.000     -8.131   -1.019    2.132
+ F6P           O1     O    OH1       0.000     -6.812   -0.845    3.716
+ F6P           HO1    H    H         0.000     -7.295   -1.484    4.257
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ F6P      O3P    n/a    P      START
+ F6P      P      O3P    O6     .
+ F6P      O1P    P      .      .
+ F6P      O2P    P      .      .
+ F6P      O6     P      C6     .
+ F6P      C6     O6     C5     .
+ F6P      H61    C6     .      .
+ F6P      H62    C6     .      .
+ F6P      C5     C6     O5     .
+ F6P      H5     C5     .      .
+ F6P      C4     C5     C3     .
+ F6P      H4     C4     .      .
+ F6P      O4     C4     HO4    .
+ F6P      HO4    O4     .      .
+ F6P      C3     C4     O3     .
+ F6P      H3     C3     .      .
+ F6P      O3     C3     HO3    .
+ F6P      HO3    O3     .      .
+ F6P      O5     C5     C2     .
+ F6P      C2     O5     C1     .
+ F6P      O2     C2     HO2    .
+ F6P      HO2    O2     .      .
+ F6P      C1     C2     O1     .
+ F6P      H11    C1     .      .
+ F6P      H12    C1     .      .
+ F6P      O1     C1     HO1    .
+ F6P      HO1    O1     .      END
+ F6P      C2     C3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+F6P       O1        C1        single    1.432     0.020     1.432     0.020     
+F6P       HO1       O1        single    0.970     0.012     0.839     0.014     
+F6P       C1        C2        single    1.524     0.020     1.524     0.020     
+F6P       H11       C1        single    1.089     0.010     0.989     0.005     
+F6P       H12       C1        single    1.089     0.010     0.989     0.005     
+F6P       O2        C2        single    1.432     0.020     1.432     0.020     
+F6P       C2        C3        single    1.524     0.020     1.524     0.020     
+F6P       C2        O5        single    1.426     0.020     1.426     0.020     
+F6P       HO2       O2        single    0.970     0.012     0.839     0.014     
+F6P       O3        C3        single    1.432     0.020     1.432     0.020     
+F6P       C3        C4        single    1.524     0.020     1.524     0.020     
+F6P       H3        C3        single    1.089     0.010     0.989     0.005     
+F6P       HO3       O3        single    0.970     0.012     0.839     0.014     
+F6P       O4        C4        single    1.432     0.020     1.432     0.020     
+F6P       C4        C5        single    1.524     0.020     1.524     0.020     
+F6P       H4        C4        single    1.089     0.010     0.989     0.005     
+F6P       HO4       O4        single    0.970     0.012     0.839     0.014     
+F6P       O5        C5        single    1.426     0.020     1.426     0.020     
+F6P       C5        C6        single    1.524     0.020     1.524     0.020     
+F6P       H5        C5        single    1.089     0.010     0.989     0.005     
+F6P       C6        O6        single    1.426     0.020     1.426     0.020     
+F6P       H61       C6        single    1.089     0.010     0.989     0.005     
+F6P       H62       C6        single    1.089     0.010     0.989     0.005     
+F6P       O6        P         single    1.610     0.020     1.610     0.020     
+F6P       O1P       P         deloc     1.510     0.020     1.510     0.020     
+F6P       O2P       P         deloc     1.510     0.020     1.510     0.020     
+F6P       P         O3P       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ F6P      O3P    P      O1P     119.900    3.000
+ F6P      O3P    P      O2P     119.900    3.000
+ F6P      O3P    P      O6      108.200    3.000
+ F6P      O1P    P      O2P     119.900    3.000
+ F6P      O1P    P      O6      108.200    3.000
+ F6P      O2P    P      O6      108.200    3.000
+ F6P      P      O6     C6      120.500    3.000
+ F6P      O6     C6     H61     109.470    3.000
+ F6P      O6     C6     H62     109.470    3.000
+ F6P      O6     C6     C5      109.470    3.000
+ F6P      H61    C6     H62     107.900    3.000
+ F6P      H61    C6     C5      109.470    3.000
+ F6P      H62    C6     C5      109.470    3.000
+ F6P      C6     C5     H5      108.340    3.000
+ F6P      C6     C5     C4      111.000    3.000
+ F6P      C6     C5     O5      109.470    3.000
+ F6P      H5     C5     C4      108.340    3.000
+ F6P      H5     C5     O5      109.470    3.000
+ F6P      C4     C5     O5      109.470    3.000
+ F6P      C5     C4     H4      108.340    3.000
+ F6P      C5     C4     O4      109.470    3.000
+ F6P      C5     C4     C3      111.000    3.000
+ F6P      H4     C4     O4      109.470    3.000
+ F6P      H4     C4     C3      108.340    3.000
+ F6P      O4     C4     C3      109.470    3.000
+ F6P      C4     O4     HO4     109.470    3.000
+ F6P      C4     C3     H3      108.340    3.000
+ F6P      C4     C3     O3      109.470    3.000
+ F6P      C4     C3     C2      111.000    3.000
+ F6P      H3     C3     O3      109.470    3.000
+ F6P      H3     C3     C2      108.340    3.000
+ F6P      O3     C3     C2      109.470    3.000
+ F6P      C3     O3     HO3     109.470    3.000
+ F6P      C5     O5     C2      111.800    3.000
+ F6P      O5     C2     O2      109.470    3.000
+ F6P      O5     C2     C1      109.470    3.000
+ F6P      O5     C2     C3      109.470    3.000
+ F6P      O2     C2     C1      109.470    3.000
+ F6P      O2     C2     C3      109.470    3.000
+ F6P      C1     C2     C3      111.000    3.000
+ F6P      C2     O2     HO2     109.470    3.000
+ F6P      C2     C1     H11     109.470    3.000
+ F6P      C2     C1     H12     109.470    3.000
+ F6P      C2     C1     O1      109.470    3.000
+ F6P      H11    C1     H12     107.900    3.000
+ F6P      H11    C1     O1      109.470    3.000
+ F6P      H12    C1     O1      109.470    3.000
+ F6P      C1     O1     HO1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ F6P      var_1    O3P    P      O6     C6       -60.022   20.000   1
+ F6P      var_2    P      O6     C6     C5       179.963   20.000   1
+ F6P      var_3    O6     C6     C5     O5        61.547   20.000   3
+ F6P      var_4    C6     C5     C4     C3      -150.000   20.000   3
+ F6P      var_5    C5     C4     O4     HO4     -179.976   20.000   1
+ F6P      var_6    C5     C4     C3     O3       150.000   20.000   3
+ F6P      var_7    C4     C3     O3     HO3       61.398   20.000   1
+ F6P      var_8    C6     C5     O5     C2       150.000   20.000   1
+ F6P      var_9    C5     O5     C2     C1       120.000   20.000   1
+ F6P      var_10   O5     C2     C3     C4       -30.000   20.000   1
+ F6P      var_11   O5     C2     O2     HO2      -61.551   20.000   1
+ F6P      var_12   O5     C2     C1     O1        61.533   20.000   1
+ F6P      var_13   C2     C1     O1     HO1     -179.982   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ F6P      chir_01  C2     C1     O2     C3        positiv
+ F6P      chir_02  C3     C2     O3     C4        negativ
+ F6P      chir_03  C4     C3     O4     C5        positiv
+ F6P      chir_04  C5     C4     O5     C6        positiv
+# ------------------------------------------------------

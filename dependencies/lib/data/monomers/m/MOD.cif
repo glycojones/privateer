@@ -1,0 +1,417 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MOD      MOD 'L-METHIONYL ADENYLATE               ' non-polymer        56  30 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MOD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MOD           O2S    O    OP       -0.500      0.000    0.000    0.000
+ MOD           P1     P    P         0.000     -1.415   -0.411   -0.173
+ MOD           O1S    O    OP       -0.500     -1.860   -1.162    1.026
+ MOD           O1     O    O2        0.000     -1.545   -1.350   -1.474
+ MOD           C9     C    CH2       0.000     -0.622   -2.426   -1.301
+ MOD           H91    H    H         0.000     -0.875   -2.980   -0.394
+ MOD           H92    H    H         0.000      0.390   -2.026   -1.210
+ MOD           CA     C    CH1       0.000     -0.696   -3.361   -2.509
+ MOD           HA     H    H         0.000     -1.734   -3.693   -2.653
+ MOD           CB     C    CH2       0.000      0.200   -4.578   -2.269
+ MOD           HB1    H    H         0.000     -0.082   -5.057   -1.329
+ MOD           HB2    H    H         0.000      1.242   -4.257   -2.214
+ MOD           CG     C    CH2       0.000      0.030   -5.572   -3.421
+ MOD           HG1    H    H         0.000      0.312   -5.091   -4.360
+ MOD           HG2    H    H         0.000     -1.013   -5.891   -3.475
+ MOD           SD     S    S2        0.000      1.092   -7.015   -3.135
+ MOD           CE     C    CH3       0.000      0.696   -7.993   -4.611
+ MOD           HE3    H    H         0.000      1.248   -8.901   -4.604
+ MOD           HE2    H    H         0.000     -0.342   -8.221   -4.629
+ MOD           HE1    H    H         0.000      0.944   -7.446   -5.487
+ MOD           N2     N    NH2       0.000     -0.240   -2.647   -3.710
+ MOD           HN22   H    H         0.000     -0.860   -2.528   -4.502
+ MOD           HN21   H    H         0.000      0.700   -2.268   -3.754
+ MOD           "O5'"  O    O2        0.000     -2.335    0.897   -0.359
+ MOD           "C5'"  C    CH2       0.000     -2.086    1.741    0.767
+ MOD           "H5'1" H    H         0.000     -1.028    2.010    0.793
+ MOD           "H5'2" H    H         0.000     -2.348    1.210    1.684
+ MOD           "C4'"  C    CH1       0.000     -2.934    3.009    0.650
+ MOD           "H4'"  H    H         0.000     -2.749    3.494   -0.319
+ MOD           "C3'"  C    CH1       0.000     -2.588    3.979    1.796
+ MOD           "H3'"  H    H         0.000     -1.848    3.526    2.471
+ MOD           "O3'"  O    OH1       0.000     -2.101    5.220    1.282
+ MOD           H2     H    H         0.000     -1.947    5.833    2.013
+ MOD           "C2'"  C    CH1       0.000     -3.936    4.188    2.533
+ MOD           H1     H    H         0.000     -4.011    3.529    3.409
+ MOD           "O2'"  O    OH1       0.000     -4.104    5.556    2.910
+ MOD           "H2'"  H    H         0.000     -3.453    5.785    3.588
+ MOD           "C1'"  C    CH1       0.000     -4.966    3.784    1.447
+ MOD           "H1'"  H    H         0.000     -5.138    4.615    0.749
+ MOD           "O4'"  O    O2        0.000     -4.328    2.678    0.773
+ MOD           N9     N    NR5       0.000     -6.227    3.357    2.059
+ MOD           C4     C    CH1       0.000     -7.549    3.963    1.881
+ MOD           H4     H    H         0.000     -7.988    3.693    0.910
+ MOD           C5     C    CR56      0.000     -8.331    3.348    3.040
+ MOD           N7     N    NRD5      0.000     -7.609    2.288    3.448
+ MOD           C8     C    CR15      0.000     -6.417    2.301    2.932
+ MOD           H8     H    H         0.000     -5.656    1.565    3.160
+ MOD           N3     N    NRD6      0.000     -7.563    5.409    2.091
+ MOD           C2     C    CR16      0.000     -8.680    5.938    2.518
+ MOD           H3     H    H         0.000     -8.754    7.006    2.684
+ MOD           N1     N    NR16      0.000     -9.767    5.114    2.756
+ MOD           HN1    H    H         0.000    -10.728    5.363    2.446
+ MOD           C6     C    CR6       0.000     -9.487    3.910    3.448
+ MOD           N6     N    NH2       0.000    -10.309    3.371    4.433
+ MOD           HN62   H    H         0.000    -11.171    3.838    4.702
+ MOD           HN61   H    H         0.000    -10.059    2.502    4.899
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MOD      O2S    n/a    P1     START
+ MOD      P1     O2S    "O5'"  .
+ MOD      O1S    P1     .      .
+ MOD      O1     P1     C9     .
+ MOD      C9     O1     CA     .
+ MOD      H91    C9     .      .
+ MOD      H92    C9     .      .
+ MOD      CA     C9     N2     .
+ MOD      HA     CA     .      .
+ MOD      CB     CA     CG     .
+ MOD      HB1    CB     .      .
+ MOD      HB2    CB     .      .
+ MOD      CG     CB     SD     .
+ MOD      HG1    CG     .      .
+ MOD      HG2    CG     .      .
+ MOD      SD     CG     CE     .
+ MOD      CE     SD     HE1    .
+ MOD      HE3    CE     .      .
+ MOD      HE2    CE     .      .
+ MOD      HE1    CE     .      .
+ MOD      N2     CA     HN21   .
+ MOD      HN22   N2     .      .
+ MOD      HN21   N2     .      .
+ MOD      "O5'"  P1     "C5'"  .
+ MOD      "C5'"  "O5'"  "C4'"  .
+ MOD      "H5'1" "C5'"  .      .
+ MOD      "H5'2" "C5'"  .      .
+ MOD      "C4'"  "C5'"  "C3'"  .
+ MOD      "H4'"  "C4'"  .      .
+ MOD      "C3'"  "C4'"  "C2'"  .
+ MOD      "H3'"  "C3'"  .      .
+ MOD      "O3'"  "C3'"  H2     .
+ MOD      H2     "O3'"  .      .
+ MOD      "C2'"  "C3'"  "C1'"  .
+ MOD      H1     "C2'"  .      .
+ MOD      "O2'"  "C2'"  "H2'"  .
+ MOD      "H2'"  "O2'"  .      .
+ MOD      "C1'"  "C2'"  N9     .
+ MOD      "H1'"  "C1'"  .      .
+ MOD      "O4'"  "C1'"  .      .
+ MOD      N9     "C1'"  C4     .
+ MOD      C4     N9     N3     .
+ MOD      H4     C4     .      .
+ MOD      C5     C4     N7     .
+ MOD      N7     C5     C8     .
+ MOD      C8     N7     H8     .
+ MOD      H8     C8     .      .
+ MOD      N3     C4     C2     .
+ MOD      C2     N3     N1     .
+ MOD      H3     C2     .      .
+ MOD      N1     C2     C6     .
+ MOD      HN1    N1     .      .
+ MOD      C6     N1     N6     .
+ MOD      N6     C6     HN61   .
+ MOD      HN62   N6     .      .
+ MOD      HN61   N6     .      END
+ MOD      "C4'"  "O4'"  .    ADD
+ MOD      N9     C8     .    ADD
+ MOD      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MOD       N2        CA        single    1.450     0.020     1.450     0.020     
+MOD       HN21      N2        single    1.036     0.016     0.914     0.007     
+MOD       HN22      N2        single    1.036     0.016     0.914     0.007     
+MOD       CB        CA        single    1.524     0.020     1.524     0.020     
+MOD       CA        C9        single    1.524     0.020     1.524     0.020     
+MOD       HA        CA        single    1.089     0.010     0.989     0.005     
+MOD       CG        CB        single    1.524     0.020     1.524     0.020     
+MOD       HB1       CB        single    1.089     0.010     0.989     0.005     
+MOD       HB2       CB        single    1.089     0.010     0.989     0.005     
+MOD       SD        CG        single    1.762     0.020     1.762     0.020     
+MOD       HG1       CG        single    1.089     0.010     0.989     0.005     
+MOD       HG2       CG        single    1.089     0.010     0.989     0.005     
+MOD       CE        SD        single    1.762     0.020     1.762     0.020     
+MOD       HE1       CE        single    1.089     0.010     0.989     0.005     
+MOD       HE2       CE        single    1.089     0.010     0.989     0.005     
+MOD       HE3       CE        single    1.089     0.010     0.989     0.005     
+MOD       C9        O1        single    1.426     0.020     1.426     0.020     
+MOD       H91       C9        single    1.089     0.010     0.989     0.005     
+MOD       H92       C9        single    1.089     0.010     0.989     0.005     
+MOD       O1        P1        single    1.610     0.020     1.610     0.020     
+MOD       O1S       P1        deloc     1.510     0.020     1.510     0.020     
+MOD       P1        O2S       deloc     1.510     0.020     1.510     0.020     
+MOD       "O5'"     P1        single    1.610     0.020     1.610     0.020     
+MOD       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+MOD       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+MOD       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+MOD       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+MOD       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+MOD       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+MOD       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+MOD       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+MOD       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+MOD       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+MOD       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+MOD       H2        "O3'"     single    0.970     0.012     0.839     0.014     
+MOD       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+MOD       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+MOD       H1        "C2'"     single    1.089     0.010     0.989     0.005     
+MOD       "H2'"     "O2'"     single    0.970     0.012     0.839     0.014     
+MOD       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+MOD       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+MOD       N9        C8        single    1.337     0.020     1.337     0.020     
+MOD       C4        N9        single    1.485     0.020     1.485     0.020     
+MOD       C8        N7        double    1.350     0.020     1.350     0.020     
+MOD       H8        C8        single    1.082     0.013     0.975     0.010     
+MOD       N7        C5        single    1.350     0.020     1.350     0.020     
+MOD       C5        C6        double    1.490     0.020     1.490     0.020     
+MOD       C5        C4        single    1.460     0.020     1.460     0.020     
+MOD       N6        C6        single    1.355     0.020     1.355     0.020     
+MOD       C6        N1        single    1.337     0.020     1.337     0.020     
+MOD       HN61      N6        single    1.016     0.010     0.899     0.007     
+MOD       HN62      N6        single    1.016     0.010     0.899     0.007     
+MOD       N1        C2        single    1.337     0.020     1.337     0.020     
+MOD       HN1       N1        single    1.016     0.010     0.899     0.007     
+MOD       C2        N3        double    1.337     0.020     1.337     0.020     
+MOD       H3        C2        single    1.082     0.013     0.975     0.010     
+MOD       N3        C4        single    1.465     0.020     1.465     0.020     
+MOD       H4        C4        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MOD      O2S    P1     O1S     119.900    3.000
+ MOD      O2S    P1     O1      108.200    3.000
+ MOD      O2S    P1     "O5'"   108.200    3.000
+ MOD      O1S    P1     O1      108.200    3.000
+ MOD      O1S    P1     "O5'"   108.200    3.000
+ MOD      O1     P1     "O5'"   102.600    3.000
+ MOD      P1     O1     C9      120.500    3.000
+ MOD      O1     C9     H91     109.470    3.000
+ MOD      O1     C9     H92     109.470    3.000
+ MOD      O1     C9     CA      109.470    3.000
+ MOD      H91    C9     H92     107.900    3.000
+ MOD      H91    C9     CA      109.470    3.000
+ MOD      H92    C9     CA      109.470    3.000
+ MOD      C9     CA     HA      108.340    3.000
+ MOD      C9     CA     CB      109.470    3.000
+ MOD      C9     CA     N2      109.470    3.000
+ MOD      HA     CA     CB      108.340    3.000
+ MOD      HA     CA     N2      109.470    3.000
+ MOD      CB     CA     N2      109.470    3.000
+ MOD      CA     CB     HB1     109.470    3.000
+ MOD      CA     CB     HB2     109.470    3.000
+ MOD      CA     CB     CG      111.000    3.000
+ MOD      HB1    CB     HB2     107.900    3.000
+ MOD      HB1    CB     CG      109.470    3.000
+ MOD      HB2    CB     CG      109.470    3.000
+ MOD      CB     CG     HG1     109.470    3.000
+ MOD      CB     CG     HG2     109.470    3.000
+ MOD      CB     CG     SD      109.500    3.000
+ MOD      HG1    CG     HG2     107.900    3.000
+ MOD      HG1    CG     SD      109.500    3.000
+ MOD      HG2    CG     SD      109.500    3.000
+ MOD      CG     SD     CE       99.953    3.000
+ MOD      SD     CE     HE3     109.500    3.000
+ MOD      SD     CE     HE2     109.500    3.000
+ MOD      SD     CE     HE1     109.500    3.000
+ MOD      HE3    CE     HE2     109.470    3.000
+ MOD      HE3    CE     HE1     109.470    3.000
+ MOD      HE2    CE     HE1     109.470    3.000
+ MOD      CA     N2     HN22    120.000    3.000
+ MOD      CA     N2     HN21    120.000    3.000
+ MOD      HN22   N2     HN21    120.000    3.000
+ MOD      P1     "O5'"  "C5'"   120.500    3.000
+ MOD      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ MOD      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ MOD      "O5'"  "C5'"  "C4'"   109.470    3.000
+ MOD      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ MOD      "H5'1" "C5'"  "C4'"   109.470    3.000
+ MOD      "H5'2" "C5'"  "C4'"   109.470    3.000
+ MOD      "C5'"  "C4'"  "H4'"   108.340    3.000
+ MOD      "C5'"  "C4'"  "C3'"   111.000    3.000
+ MOD      "C5'"  "C4'"  "O4'"   109.470    3.000
+ MOD      "H4'"  "C4'"  "C3'"   108.340    3.000
+ MOD      "H4'"  "C4'"  "O4'"   109.470    3.000
+ MOD      "C3'"  "C4'"  "O4'"   109.470    3.000
+ MOD      "C4'"  "C3'"  "H3'"   108.340    3.000
+ MOD      "C4'"  "C3'"  "O3'"   109.470    3.000
+ MOD      "C4'"  "C3'"  "C2'"   111.000    3.000
+ MOD      "H3'"  "C3'"  "O3'"   109.470    3.000
+ MOD      "H3'"  "C3'"  "C2'"   108.340    3.000
+ MOD      "O3'"  "C3'"  "C2'"   109.470    3.000
+ MOD      "C3'"  "O3'"  H2      109.470    3.000
+ MOD      "C3'"  "C2'"  H1      108.340    3.000
+ MOD      "C3'"  "C2'"  "O2'"   109.470    3.000
+ MOD      "C3'"  "C2'"  "C1'"   111.000    3.000
+ MOD      H1     "C2'"  "O2'"   109.470    3.000
+ MOD      H1     "C2'"  "C1'"   108.340    3.000
+ MOD      "O2'"  "C2'"  "C1'"   109.470    3.000
+ MOD      "C2'"  "O2'"  "H2'"   109.470    3.000
+ MOD      "C2'"  "C1'"  "H1'"   108.340    3.000
+ MOD      "C2'"  "C1'"  "O4'"   109.470    3.000
+ MOD      "C2'"  "C1'"  N9      109.470    3.000
+ MOD      "H1'"  "C1'"  "O4'"   109.470    3.000
+ MOD      "H1'"  "C1'"  N9      109.470    3.000
+ MOD      "O4'"  "C1'"  N9      109.470    3.000
+ MOD      "C1'"  "O4'"  "C4'"   111.800    3.000
+ MOD      "C1'"  N9     C4      108.000    3.000
+ MOD      "C1'"  N9     C8      126.000    3.000
+ MOD      C4     N9     C8      126.000    3.000
+ MOD      N9     C4     H4      109.470    3.000
+ MOD      N9     C4     C5      109.500    3.000
+ MOD      N9     C4     N3      109.500    3.000
+ MOD      H4     C4     C5      109.500    3.000
+ MOD      H4     C4     N3      109.500    3.000
+ MOD      C5     C4     N3      109.500    3.000
+ MOD      C4     C5     N7      120.000    3.000
+ MOD      C4     C5     C6      120.000    3.000
+ MOD      N7     C5     C6      132.000    3.000
+ MOD      C5     N7     C8      108.000    3.000
+ MOD      N7     C8     H8      126.000    3.000
+ MOD      N7     C8     N9      108.000    3.000
+ MOD      H8     C8     N9      126.000    3.000
+ MOD      C4     N3     C2      120.000    3.000
+ MOD      N3     C2     H3      120.000    3.000
+ MOD      N3     C2     N1      120.000    3.000
+ MOD      H3     C2     N1      120.000    3.000
+ MOD      C2     N1     HN1     120.000    3.000
+ MOD      C2     N1     C6      120.000    3.000
+ MOD      HN1    N1     C6      120.000    3.000
+ MOD      N1     C6     N6      120.000    3.000
+ MOD      N1     C6     C5      120.000    3.000
+ MOD      N6     C6     C5      120.000    3.000
+ MOD      C6     N6     HN62    120.000    3.000
+ MOD      C6     N6     HN61    120.000    3.000
+ MOD      HN62   N6     HN61    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MOD      var_1    O2S    P1     O1     C9        54.974   20.000   1
+ MOD      var_2    P1     O1     C9     CA       179.976   20.000   1
+ MOD      var_3    O1     C9     CA     N2        65.028   20.000   3
+ MOD      var_4    C9     CA     CB     CG       175.022   20.000   3
+ MOD      var_5    CA     CB     CG     SD      -179.967   20.000   3
+ MOD      var_6    CB     CG     SD     CE       179.990   20.000   1
+ MOD      var_7    CG     SD     CE     HE1       60.040   20.000   1
+ MOD      var_8    C9     CA     N2     HN21      59.966   20.000   1
+ MOD      var_9    O2S    P1     "O5'"  "C5'"    -55.003   20.000   1
+ MOD      var_10   P1     "O5'"  "C5'"  "C4'"    179.956   20.000   1
+ MOD      var_11   "O5'"  "C5'"  "C4'"  "C3'"   -175.311   20.000   3
+ MOD      var_12   "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ MOD      var_13   "C5'"  "C4'"  "C3'"  "C2'"   -120.000   20.000   3
+ MOD      var_14   "C4'"  "C3'"  "O3'"  H2       176.199   20.000   1
+ MOD      var_15   "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ MOD      var_16   "C3'"  "C2'"  "O2'"  "H2'"    -67.381   20.000   1
+ MOD      var_17   "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ MOD      var_18   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ MOD      var_19   "C2'"  "C1'"  N9     C4       119.077   20.000   1
+ MOD      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ MOD      CONST_2  "C1'"  N9     C4     N3       -60.000    0.000   0
+ MOD      CONST_3  N9     C4     C5     N7       -30.000    0.000   0
+ MOD      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ MOD      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ MOD      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ MOD      CONST_7  N9     C4     N3     C2      -150.000    0.000   0
+ MOD      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ MOD      CONST_9  N3     C2     N1     C6        30.000    0.000   0
+ MOD      CONST_10 C2     N1     C6     N6       150.000    0.000   0
+ MOD      CONST_11 N1     C6     N6     HN61    -179.973    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MOD      chir_01  CA     N2     CB     C9        negativ
+ MOD      chir_02  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ MOD      chir_03  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ MOD      chir_04  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ MOD      chir_05  "C1'"  "O4'"  "C2'"  N9        positiv
+ MOD      chir_06  C4     N9     C5     N3        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MOD      plan-1    N2        0.020
+ MOD      plan-1    CA        0.020
+ MOD      plan-1    HN21      0.020
+ MOD      plan-1    HN22      0.020
+ MOD      plan-2    N9        0.020
+ MOD      plan-2    "C1'"     0.020
+ MOD      plan-2    C8        0.020
+ MOD      plan-2    C4        0.020
+ MOD      plan-2    N7        0.020
+ MOD      plan-2    H8        0.020
+ MOD      plan-2    C5        0.020
+ MOD      plan-2    C6        0.020
+ MOD      plan-2    N1        0.020
+ MOD      plan-2    C2        0.020
+ MOD      plan-2    N3        0.020
+ MOD      plan-2    N6        0.020
+ MOD      plan-2    HN1       0.020
+ MOD      plan-2    H3        0.020
+ MOD      plan-2    HN62      0.020
+ MOD      plan-2    HN61      0.020
+ MOD      plan-3    N6        0.020
+ MOD      plan-3    C6        0.020
+ MOD      plan-3    HN61      0.020
+ MOD      plan-3    HN62      0.020
+# ------------------------------------------------------

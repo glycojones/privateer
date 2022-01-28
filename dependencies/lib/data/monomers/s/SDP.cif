@@ -1,0 +1,248 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SDP     SDP     "2-AMINO-3-(DIETHOXY-PHOSPHORYLOXY)-PROPIONICACID"     peptide     31     15     .
+#
+data_comp_SDP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SDP     N       N       NT3     1       4.297       4.102       -1.560
+SDP     CA      C       CH1     0       4.576       2.645       -1.672
+SDP     CB      C       CH2     0       3.314       1.906       -2.078
+SDP     OG      O       O2      0       3.565       0.481       -1.990
+SDP     C       C       C       0       5.728       2.400       -2.656
+SDP     O       O       O       0       5.568       2.793       -3.829
+SDP     C31     C       CH2     0       1.156       -0.427      -0.165
+SDP     C32     C       CH3     0       -0.094      0.131       0.390
+SDP     C41     C       CH2     0       3.117       -0.378      -4.965
+SDP     C42     C       CH3     0       2.581       0.151       -6.236
+SDP     O1      O       O2      0       1.218       -0.179      -1.598
+SDP     O2      O       O2      0       2.140       -0.196      -3.900
+SDP     O3      O       O       0       2.918       -1.988      -2.239
+SDP     P       P       P       0       2.488       -0.569      -2.422
+SDP     OXT     O       OC      -1      6.742       1.825       -2.213
+SDP     H       H       H       0       5.079       4.564       -1.473
+SDP     H2      H       H       0       3.777       4.260       -0.829
+SDP     H3      H       H       0       3.860       4.391       -2.307
+SDP     HA      H       H       0       4.857       2.316       -0.776
+SDP     HB2     H       H       0       3.065       2.147       -2.997
+SDP     HB3     H       H       0       2.573       2.153       -1.483
+SDP     H311    H       H       0       1.191       -1.392      0.002
+SDP     H312    H       H       0       1.928       -0.011      0.273
+SDP     H321    H       H       0       -0.122      -0.026      1.348
+SDP     H322    H       H       0       -0.856      -0.300      -0.030
+SDP     H323    H       H       0       -0.127      1.086       0.217
+SDP     H411    H       H       0       3.945       0.092       -4.733
+SDP     H412    H       H       0       3.320       -1.332      -5.063
+SDP     H421    H       H       0       3.243       0.041       -6.938
+SDP     H422    H       H       0       2.373       1.094       -6.133
+SDP     H423    H       H       0       1.773       -0.333      -6.474
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+SDP      N      n/a    CA     START
+SDP      H      N      .      .
+SDP      H2     N      .      .
+SDP      H3     N      .      .
+SDP      CA     N      C      .
+SDP      HA     CA     .      .
+SDP      CB     CA     OG     .
+SDP      HB2    CB     .      .
+SDP      HB3    CB     .      .
+SDP      OG     CB     P      .
+SDP      P      OG     O1     .
+SDP      O3     P      .      .
+SDP      O2     P      C41    .
+SDP      C41    O2     C42    .
+SDP      H411   C41    .      .
+SDP      H412   C41    .      .
+SDP      C42    C41    H421   .
+SDP      H423   C42    .      .
+SDP      H422   C42    .      .
+SDP      H421   C42    .      .
+SDP      O1     P      C31    .
+SDP      C31    O1     C32    .
+SDP      H311   C31    .      .
+SDP      H312   C31    .      .
+SDP      C32    C31    H321   .
+SDP      H323   C32    .      .
+SDP      H322   C32    .      .
+SDP      H321   C32    .      .
+SDP      C      CA     .      END
+SDP      O      C      .      .
+SDP      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SDP       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+SDP       CA        CB        SINGLE    n         1.515     0.017     1.515     0.017     
+SDP       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+SDP       CB        OG        SINGLE    n         1.447     0.017     1.447     0.017     
+SDP       OG        P         SINGLE    n         1.563     0.014     1.563     0.014     
+SDP       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+SDP       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SDP       C31       C32       SINGLE    n         1.477     0.020     1.477     0.020     
+SDP       C31       O1        SINGLE    n         1.456     0.016     1.456     0.016     
+SDP       C41       C42       SINGLE    n         1.477     0.020     1.477     0.020     
+SDP       C41       O2        SINGLE    n         1.456     0.016     1.456     0.016     
+SDP       O1        P         SINGLE    n         1.563     0.014     1.563     0.014     
+SDP       O2        P         SINGLE    n         1.563     0.014     1.563     0.014     
+SDP       O3        P         DOUBLE    n         1.494     0.017     1.494     0.017     
+SDP       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+SDP       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+SDP       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+SDP       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+SDP       CB        HB2       SINGLE    n         1.089     0.010     0.982     0.018     
+SDP       CB        HB3       SINGLE    n         1.089     0.010     0.982     0.018     
+SDP       C31       H311      SINGLE    n         1.089     0.010     0.980     0.015     
+SDP       C31       H312      SINGLE    n         1.089     0.010     0.980     0.015     
+SDP       C32       H321      SINGLE    n         1.089     0.010     0.971     0.016     
+SDP       C32       H322      SINGLE    n         1.089     0.010     0.971     0.016     
+SDP       C32       H323      SINGLE    n         1.089     0.010     0.971     0.016     
+SDP       C41       H411      SINGLE    n         1.089     0.010     0.980     0.015     
+SDP       C41       H412      SINGLE    n         1.089     0.010     0.980     0.015     
+SDP       C42       H421      SINGLE    n         1.089     0.010     0.971     0.016     
+SDP       C42       H422      SINGLE    n         1.089     0.010     0.971     0.016     
+SDP       C42       H423      SINGLE    n         1.089     0.010     0.971     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SDP          CA           N           H     109.619    1.50
+SDP          CA           N          H2     109.619    1.50
+SDP          CA           N          H3     109.619    1.50
+SDP           H           N          H2     109.028    2.41
+SDP           H           N          H3     109.028    2.41
+SDP          H2           N          H3     109.028    2.41
+SDP           N          CA          CB     109.782    1.50
+SDP           N          CA           C     109.829    1.50
+SDP           N          CA          HA     108.049    1.50
+SDP          CB          CA           C     111.899    1.50
+SDP          CB          CA          HA     108.381    1.50
+SDP           C          CA          HA     108.255    1.50
+SDP          CA          CB          OG     108.381    1.50
+SDP          CA          CB         HB2     110.023    1.50
+SDP          CA          CB         HB3     110.023    1.50
+SDP          OG          CB         HB2     109.758    1.50
+SDP          OG          CB         HB3     109.758    1.50
+SDP         HB2          CB         HB3     108.157    1.50
+SDP          CB          OG           P     121.004    1.85
+SDP          CA           C           O     117.181    1.50
+SDP          CA           C         OXT     117.181    1.50
+SDP           O           C         OXT     125.637    1.50
+SDP         C32         C31          O1     109.855    1.50
+SDP         C32         C31        H311     109.788    1.50
+SDP         C32         C31        H312     109.788    1.50
+SDP          O1         C31        H311     109.502    1.50
+SDP          O1         C31        H312     109.502    1.50
+SDP        H311         C31        H312     108.343    1.50
+SDP         C31         C32        H321     109.474    1.50
+SDP         C31         C32        H322     109.474    1.50
+SDP         C31         C32        H323     109.474    1.50
+SDP        H321         C32        H322     109.410    1.50
+SDP        H321         C32        H323     109.410    1.50
+SDP        H322         C32        H323     109.410    1.50
+SDP         C42         C41          O2     109.855    1.50
+SDP         C42         C41        H411     109.788    1.50
+SDP         C42         C41        H412     109.788    1.50
+SDP          O2         C41        H411     109.502    1.50
+SDP          O2         C41        H412     109.502    1.50
+SDP        H411         C41        H412     108.343    1.50
+SDP         C41         C42        H421     109.474    1.50
+SDP         C41         C42        H422     109.474    1.50
+SDP         C41         C42        H423     109.474    1.50
+SDP        H421         C42        H422     109.410    1.50
+SDP        H421         C42        H423     109.410    1.50
+SDP        H422         C42        H423     109.410    1.50
+SDP         C31          O1           P     121.004    1.85
+SDP         C41          O2           P     121.004    1.85
+SDP          OG           P          O1     104.287    3.00
+SDP          OG           P          O2     104.287    3.00
+SDP          OG           P          O3     114.486    2.64
+SDP          O1           P          O2     104.287    3.00
+SDP          O1           P          O3     114.486    2.64
+SDP          O2           P          O3     114.486    2.64
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SDP             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+SDP            sp3_sp3_49         C31          O1           P          OG     180.000   10.00     3
+SDP            sp3_sp3_52         C41          O2           P          OG     180.000   10.00     3
+SDP            sp3_sp3_10           N          CA          CB          OG     180.000   10.00     3
+SDP             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+SDP            sp3_sp3_19          CA          CB          OG           P     180.000   10.00     3
+SDP            sp3_sp3_22          CB          OG           P          O1     180.000   10.00     3
+SDP            sp3_sp3_34         C32         C31          O1           P     180.000   10.00     3
+SDP            sp3_sp3_25          O1         C31         C32        H321     180.000   10.00     3
+SDP            sp3_sp3_46         C42         C41          O2           P     180.000   10.00     3
+SDP            sp3_sp3_37          O2         C41         C42        H421     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SDP    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SDP    plan-1           C   0.020
+SDP    plan-1          CA   0.020
+SDP    plan-1           O   0.020
+SDP    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SDP SMILES           ACDLabs              10.04 "O=C(O)C(N)COP(=O)(OCC)OCC"
+SDP SMILES_CANONICAL CACTVS               3.341 "CCO[P](=O)(OCC)OC[C@H](N)C(O)=O"
+SDP SMILES           CACTVS               3.341 "CCO[P](=O)(OCC)OC[CH](N)C(O)=O"
+SDP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCOP(=O)(OCC)OC[C@@H](C(=O)O)N"
+SDP SMILES           "OpenEye OEToolkits" 1.5.0 "CCOP(=O)(OCC)OCC(C(=O)O)N"
+SDP InChI            InChI                1.03  "InChI=1S/C7H16NO6P/c1-3-12-15(11,13-4-2)14-5-6(8)7(9)10/h6H,3-5,8H2,1-2H3,(H,9,10)/t6-/m0/s1"
+SDP InChIKey         InChI                1.03  MOFCKRBDMJNCOC-LURJTMIESA-N
+SDP ?                acedrg               196         "dictionary generator"
+SDP ?                acedrg_database      11          "data source"
+SDP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SDP ?                refmac5              5.8.0222    "optimization tool"

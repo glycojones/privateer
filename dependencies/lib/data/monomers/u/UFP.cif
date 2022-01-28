@@ -1,0 +1,264 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+UFP      UFP '5-FLUORO-2'-DEOXYURIDINE-5'-MONOPHOS' non-polymer        31  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_UFP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ UFP           O3P    O    OP       -0.666      0.000    0.000    0.000
+ UFP           P      P    P         0.000     -1.255    0.159   -0.830
+ UFP           O1P    O    OP       -0.666     -1.696   -1.194   -1.344
+ UFP           O2P    O    OP       -0.666     -0.971    1.075   -2.001
+ UFP           "O5'"  O    O2        0.000     -2.422    0.795    0.078
+ UFP           "C5'"  C    CH2       0.000     -2.643   -0.110    1.160
+ UFP           "H5'1" H    H         0.000     -1.721   -0.222    1.734
+ UFP           "H5'2" H    H         0.000     -2.944   -1.082    0.763
+ UFP           "C4'"  C    CH1       0.000     -3.747    0.436    2.067
+ UFP           "H4'"  H    H         0.000     -3.451    1.410    2.482
+ UFP           "C3'"  C    CH1       0.000     -4.062   -0.559    3.205
+ UFP           "H3'"  H    H         0.000     -3.778   -1.579    2.913
+ UFP           "O3'"  O    OH1       0.000     -3.390   -0.176    4.406
+ UFP           "HO3'" H    H         0.000     -3.622   -0.792    5.114
+ UFP           "C2'"  C    CH2       0.000     -5.593   -0.454    3.385
+ UFP           "H2'2" H    H         0.000     -5.866   -0.106    4.383
+ UFP           "H2'1" H    H         0.000     -6.096   -1.402    3.181
+ UFP           "O4'"  O    O2        0.000     -4.987    0.560    1.332
+ UFP           "C1'"  C    CH1       0.000     -6.024    0.594    2.336
+ UFP           "H1'"  H    H         0.000     -6.080    1.591    2.793
+ UFP           N1     N    NR6       0.000     -7.316    0.227    1.750
+ UFP           C6     C    CR16      0.000     -8.382    1.079    1.870
+ UFP           H6     H    H         0.000     -8.270    2.020    2.396
+ UFP           C5     C    CR6       0.000     -9.572    0.741    1.330
+ UFP           F5     F    F         0.000    -10.635    1.569    1.440
+ UFP           C4     C    CR6       0.000     -9.692   -0.494    0.647
+ UFP           O4     O    O         0.000    -10.755   -0.821    0.150
+ UFP           N3     N    NR16      0.000     -8.618   -1.304    0.550
+ UFP           HN3    H    H         0.000     -8.699   -2.214    0.053
+ UFP           C2     C    CR6       0.000     -7.442   -0.940    1.094
+ UFP           O2     O    O         0.000     -6.483   -1.681    0.999
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ UFP      O3P    n/a    P      START
+ UFP      P      O3P    "O5'"  .
+ UFP      O1P    P      .      .
+ UFP      O2P    P      .      .
+ UFP      "O5'"  P      "C5'"  .
+ UFP      "C5'"  "O5'"  "C4'"  .
+ UFP      "H5'1" "C5'"  .      .
+ UFP      "H5'2" "C5'"  .      .
+ UFP      "C4'"  "C5'"  "O4'"  .
+ UFP      "H4'"  "C4'"  .      .
+ UFP      "C3'"  "C4'"  "C2'"  .
+ UFP      "H3'"  "C3'"  .      .
+ UFP      "O3'"  "C3'"  "HO3'" .
+ UFP      "HO3'" "O3'"  .      .
+ UFP      "C2'"  "C3'"  "H2'1" .
+ UFP      "H2'2" "C2'"  .      .
+ UFP      "H2'1" "C2'"  .      .
+ UFP      "O4'"  "C4'"  "C1'"  .
+ UFP      "C1'"  "O4'"  N1     .
+ UFP      "H1'"  "C1'"  .      .
+ UFP      N1     "C1'"  C6     .
+ UFP      C6     N1     C5     .
+ UFP      H6     C6     .      .
+ UFP      C5     C6     C4     .
+ UFP      F5     C5     .      .
+ UFP      C4     C5     N3     .
+ UFP      O4     C4     .      .
+ UFP      N3     C4     C2     .
+ UFP      HN3    N3     .      .
+ UFP      C2     N3     O2     .
+ UFP      O2     C2     .      END
+ UFP      N1     C2     .    ADD
+ UFP      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+UFP       N1        C2        single    1.410     0.020     1.410     0.020     
+UFP       C6        N1        single    1.337     0.020     1.337     0.020     
+UFP       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+UFP       C2        N3        single    1.337     0.020     1.337     0.020     
+UFP       O2        C2        double    1.250     0.020     1.250     0.020     
+UFP       N3        C4        single    1.337     0.020     1.337     0.020     
+UFP       HN3       N3        single    1.016     0.010     0.899     0.007     
+UFP       C4        C5        single    1.487     0.020     1.487     0.020     
+UFP       O4        C4        double    1.250     0.020     1.250     0.020     
+UFP       C5        C6        double    1.390     0.020     1.390     0.020     
+UFP       F5        C5        single    1.345     0.020     1.345     0.020     
+UFP       H6        C6        single    1.082     0.013     0.975     0.010     
+UFP       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+UFP       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+UFP       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+UFP       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+UFP       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+UFP       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+UFP       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+UFP       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+UFP       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+UFP       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+UFP       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+UFP       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+UFP       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+UFP       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+UFP       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+UFP       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+UFP       "O5'"     P         single    1.610     0.020     1.610     0.020     
+UFP       O1P       P         deloc     1.510     0.020     1.510     0.020     
+UFP       O2P       P         deloc     1.510     0.020     1.510     0.020     
+UFP       P         O3P       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ UFP      O3P    P      O1P     119.900    3.000
+ UFP      O3P    P      O2P     119.900    3.000
+ UFP      O3P    P      "O5'"   108.200    3.000
+ UFP      O1P    P      O2P     119.900    3.000
+ UFP      O1P    P      "O5'"   108.200    3.000
+ UFP      O2P    P      "O5'"   108.200    3.000
+ UFP      P      "O5'"  "C5'"   120.500    3.000
+ UFP      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ UFP      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ UFP      "O5'"  "C5'"  "C4'"   109.470    3.000
+ UFP      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ UFP      "H5'1" "C5'"  "C4'"   109.470    3.000
+ UFP      "H5'2" "C5'"  "C4'"   109.470    3.000
+ UFP      "C5'"  "C4'"  "H4'"   108.340    3.000
+ UFP      "C5'"  "C4'"  "C3'"   111.000    3.000
+ UFP      "C5'"  "C4'"  "O4'"   109.470    3.000
+ UFP      "H4'"  "C4'"  "C3'"   108.340    3.000
+ UFP      "H4'"  "C4'"  "O4'"   109.470    3.000
+ UFP      "C3'"  "C4'"  "O4'"   109.470    3.000
+ UFP      "C4'"  "C3'"  "H3'"   108.340    3.000
+ UFP      "C4'"  "C3'"  "O3'"   109.470    3.000
+ UFP      "C4'"  "C3'"  "C2'"   111.000    3.000
+ UFP      "H3'"  "C3'"  "O3'"   109.470    3.000
+ UFP      "H3'"  "C3'"  "C2'"   108.340    3.000
+ UFP      "O3'"  "C3'"  "C2'"   109.470    3.000
+ UFP      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ UFP      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ UFP      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ UFP      "C3'"  "C2'"  "C1'"   111.000    3.000
+ UFP      "H2'2" "C2'"  "H2'1"  107.900    3.000
+ UFP      "H2'2" "C2'"  "C1'"   109.470    3.000
+ UFP      "H2'1" "C2'"  "C1'"   109.470    3.000
+ UFP      "C4'"  "O4'"  "C1'"   111.800    3.000
+ UFP      "O4'"  "C1'"  "H1'"   109.470    3.000
+ UFP      "O4'"  "C1'"  N1      109.470    3.000
+ UFP      "O4'"  "C1'"  "C2'"   109.470    3.000
+ UFP      "H1'"  "C1'"  N1      109.470    3.000
+ UFP      "H1'"  "C1'"  "C2'"   108.340    3.000
+ UFP      N1     "C1'"  "C2'"   109.470    3.000
+ UFP      "C1'"  N1     C6      120.000    3.000
+ UFP      "C1'"  N1     C2      120.000    3.000
+ UFP      C6     N1     C2      120.000    3.000
+ UFP      N1     C6     H6      120.000    3.000
+ UFP      N1     C6     C5      120.000    3.000
+ UFP      H6     C6     C5      120.000    3.000
+ UFP      C6     C5     F5      120.000    3.000
+ UFP      C6     C5     C4      120.000    3.000
+ UFP      F5     C5     C4      120.000    3.000
+ UFP      C5     C4     O4      120.000    3.000
+ UFP      C5     C4     N3      120.000    3.000
+ UFP      O4     C4     N3      120.000    3.000
+ UFP      C4     N3     HN3     120.000    3.000
+ UFP      C4     N3     C2      120.000    3.000
+ UFP      HN3    N3     C2      120.000    3.000
+ UFP      N3     C2     O2      120.000    3.000
+ UFP      N3     C2     N1      120.000    3.000
+ UFP      O2     C2     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ UFP      var_1    O3P    P      "O5'"  "C5'"    -60.077   20.000   1
+ UFP      var_2    P      "O5'"  "C5'"  "C4'"   -179.989   20.000   1
+ UFP      var_3    "O5'"  "C5'"  "C4'"  "O4'"     61.463   20.000   3
+ UFP      var_4    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ UFP      var_5    "C4'"  "C3'"  "O3'"  "HO3'"   178.092   20.000   1
+ UFP      var_6    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ UFP      var_7    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ UFP      var_8    "C4'"  "O4'"  "C1'"  N1      -150.000   20.000   1
+ UFP      var_9    "O4'"  "C1'"  "C2'"  "C3'"     30.000   20.000   3
+ UFP      var_10   "O4'"  "C1'"  N1     C6      -124.546   20.000   1
+ UFP      CONST_1  "C1'"  N1     C2     N3       180.000    0.000   0
+ UFP      CONST_2  "C1'"  N1     C6     C5       180.000    0.000   0
+ UFP      CONST_3  N1     C6     C5     C4         0.000    0.000   0
+ UFP      CONST_4  C6     C5     C4     N3         0.000    0.000   0
+ UFP      CONST_5  C5     C4     N3     C2         0.000    0.000   0
+ UFP      CONST_6  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ UFP      chir_01  "C1'"  N1     "C2'"  "O4'"     negativ
+ UFP      chir_02  "C3'"  "C2'"  "C4'"  "O3'"     negativ
+ UFP      chir_03  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ UFP      plan-1    N1        0.020
+ UFP      plan-1    C2        0.020
+ UFP      plan-1    C6        0.020
+ UFP      plan-1    "C1'"     0.020
+ UFP      plan-1    N3        0.020
+ UFP      plan-1    C4        0.020
+ UFP      plan-1    C5        0.020
+ UFP      plan-1    O2        0.020
+ UFP      plan-1    HN3       0.020
+ UFP      plan-1    O4        0.020
+ UFP      plan-1    F5        0.020
+ UFP      plan-1    H6        0.020
+# ------------------------------------------------------

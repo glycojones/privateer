@@ -1,0 +1,217 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+I2M     I2M     3-methyl-L-alloisoleucine     peptide     25     10     .
+#
+data_comp_I2M
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+I2M     N       N       NT3     1       18.678      4.263       0.245
+I2M     CA      C       CH1     0       17.883      4.086       -1.006
+I2M     CB      C       CT      0       17.730      5.399       -1.885
+I2M     CG3     C       CH3     0       19.056      5.817       -2.537
+I2M     CG2     C       CH3     0       16.705      5.166       -3.003
+I2M     CG1     C       CH2     0       17.260      6.604       -1.031
+I2M     CD1     C       CH3     0       15.971      6.450       -0.245
+I2M     C       C       C       0       18.454      2.898       -1.796
+I2M     O       O       O       0       19.696      2.774       -1.831
+I2M     OXT     O       OC      -1      17.633      2.139       -2.349
+I2M     H       H       H       0       18.826      3.453       0.639
+I2M     H2      H       H       0       18.224      4.787       0.835
+I2M     H3      H       H       0       19.481      4.647       0.060
+I2M     HA      H       H       0       16.966      3.849       -0.739
+I2M     HG31    H       H       0       18.946      6.677       -2.978
+I2M     HG32    H       H       0       19.325      5.154       -3.196
+I2M     HG33    H       H       0       19.746      5.893       -1.857
+I2M     HG21    H       H       0       16.477      6.015       -3.420
+I2M     HG22    H       H       0       15.901      4.764       -2.631
+I2M     HG23    H       H       0       17.081      4.571       -3.675
+I2M     HG12    H       H       0       17.162      7.372       -1.632
+I2M     HG13    H       H       0       17.981      6.816       -0.401
+I2M     HD11    H       H       0       15.766      7.287       0.206
+I2M     HD12    H       H       0       16.073      5.745       0.417
+I2M     HD13    H       H       0       15.243      6.224       -0.848
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+I2M      N      n/a    CA     START
+I2M      H      N      .      .
+I2M      H2     N      .      .
+I2M      H3     N      .      .
+I2M      CA     N      C      .
+I2M      HA     CA     .      .
+I2M      CB     CA     CG1    .
+I2M      CG3    CB     HG31   .
+I2M      HG33   CG3    .      .
+I2M      HG32   CG3    .      .
+I2M      HG31   CG3    .      .
+I2M      CG2    CB     HG21   .
+I2M      HG23   CG2    .      .
+I2M      HG22   CG2    .      .
+I2M      HG21   CG2    .      .
+I2M      CG1    CB     CD1    .
+I2M      HG12   CG1    .      .
+I2M      HG13   CG1    .      .
+I2M      CD1    CG1    HD11   .
+I2M      HD13   CD1    .      .
+I2M      HD12   CD1    .      .
+I2M      HD11   CD1    .      .
+I2M      C      CA     OXT    .
+I2M      O      C      .      .
+I2M      OXT    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+I2M       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+I2M       CA        CB        SINGLE    n         1.573     0.014     1.573     0.014     
+I2M       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+I2M       CB        CG3       SINGLE    n         1.531     0.012     1.531     0.012     
+I2M       CB        CG2       SINGLE    n         1.531     0.012     1.531     0.012     
+I2M       CB        CG1       SINGLE    n         1.545     0.011     1.545     0.011     
+I2M       CG1       CD1       SINGLE    n         1.511     0.020     1.511     0.020     
+I2M       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+I2M       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+I2M       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+I2M       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+I2M       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+I2M       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+I2M       CG3       HG31      SINGLE    n         1.089     0.010     0.973     0.015     
+I2M       CG3       HG32      SINGLE    n         1.089     0.010     0.973     0.015     
+I2M       CG3       HG33      SINGLE    n         1.089     0.010     0.973     0.015     
+I2M       CG2       HG21      SINGLE    n         1.089     0.010     0.973     0.015     
+I2M       CG2       HG22      SINGLE    n         1.089     0.010     0.973     0.015     
+I2M       CG2       HG23      SINGLE    n         1.089     0.010     0.973     0.015     
+I2M       CG1       HG12      SINGLE    n         1.089     0.010     0.981     0.016     
+I2M       CG1       HG13      SINGLE    n         1.089     0.010     0.981     0.016     
+I2M       CD1       HD11      SINGLE    n         1.089     0.010     0.973     0.016     
+I2M       CD1       HD12      SINGLE    n         1.089     0.010     0.973     0.016     
+I2M       CD1       HD13      SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+I2M          CA           N           H     109.853    1.85
+I2M          CA           N          H2     109.853    1.85
+I2M          CA           N          H3     109.853    1.85
+I2M           H           N          H2     109.028    2.41
+I2M           H           N          H3     109.028    2.41
+I2M          H2           N          H3     109.028    2.41
+I2M           N          CA          CB     112.810    3.00
+I2M           N          CA           C     109.414    1.50
+I2M           N          CA          HA     108.444    1.50
+I2M          CB          CA           C     111.511    2.91
+I2M          CB          CA          HA     105.876    1.50
+I2M           C          CA          HA     108.600    1.50
+I2M          CA          CB         CG3     110.196    2.15
+I2M          CA          CB         CG2     110.196    2.15
+I2M          CA          CB         CG1     111.094    2.85
+I2M         CG3          CB         CG2     108.765    1.50
+I2M         CG3          CB         CG1     110.236    3.00
+I2M         CG2          CB         CG1     110.236    3.00
+I2M          CB         CG3        HG31     109.575    1.50
+I2M          CB         CG3        HG32     109.575    1.50
+I2M          CB         CG3        HG33     109.575    1.50
+I2M        HG31         CG3        HG32     109.377    1.50
+I2M        HG31         CG3        HG33     109.377    1.50
+I2M        HG32         CG3        HG33     109.377    1.50
+I2M          CB         CG2        HG21     109.575    1.50
+I2M          CB         CG2        HG22     109.575    1.50
+I2M          CB         CG2        HG23     109.575    1.50
+I2M        HG21         CG2        HG22     109.377    1.50
+I2M        HG21         CG2        HG23     109.377    1.50
+I2M        HG22         CG2        HG23     109.377    1.50
+I2M          CB         CG1         CD1     116.397    1.50
+I2M          CB         CG1        HG12     107.314    1.50
+I2M          CB         CG1        HG13     107.314    1.50
+I2M         CD1         CG1        HG12     108.311    1.50
+I2M         CD1         CG1        HG13     108.311    1.50
+I2M        HG12         CG1        HG13     107.441    1.50
+I2M         CG1         CD1        HD11     109.504    1.50
+I2M         CG1         CD1        HD12     109.504    1.50
+I2M         CG1         CD1        HD13     109.504    1.50
+I2M        HD11         CD1        HD12     109.380    1.50
+I2M        HD11         CD1        HD13     109.380    1.50
+I2M        HD12         CD1        HD13     109.380    1.50
+I2M          CA           C           O     117.139    1.50
+I2M          CA           C         OXT     117.139    1.50
+I2M           O           C         OXT     125.721    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+I2M             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+I2M            sp3_sp3_10           N          CA          CB         CG3     180.000   10.00     3
+I2M             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+I2M            sp3_sp3_19          CA          CB         CG3        HG31     180.000   10.00     3
+I2M            sp3_sp3_28          CA          CB         CG2        HG21     180.000   10.00     3
+I2M            sp3_sp3_37          CA          CB         CG1         CD1     180.000   10.00     3
+I2M            sp3_sp3_46        HD11         CD1         CG1          CB     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+I2M    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+I2M    plan-1           C   0.020
+I2M    plan-1          CA   0.020
+I2M    plan-1           O   0.020
+I2M    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+I2M SMILES           ACDLabs              10.04 "O=C(O)C(N)C(C)(CC)C"
+I2M SMILES_CANONICAL CACTVS               3.341 "CCC(C)(C)[C@H](N)C(O)=O"
+I2M SMILES           CACTVS               3.341 "CCC(C)(C)[CH](N)C(O)=O"
+I2M SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCC(C)(C)[C@@H](C(=O)O)N"
+I2M SMILES           "OpenEye OEToolkits" 1.5.0 "CCC(C)(C)C(C(=O)O)N"
+I2M InChI            InChI                1.03  "InChI=1S/C7H15NO2/c1-4-7(2,3)5(8)6(9)10/h5H,4,8H2,1-3H3,(H,9,10)/t5-/m1/s1"
+I2M InChIKey         InChI                1.03  AQIFZAKDNFZWND-RXMQYKEDSA-N
+I2M ?                acedrg               196         "dictionary generator"
+I2M ?                acedrg_database      11          "data source"
+I2M ?                rdkit                2017.03.2   "Chemoinformatics tool"
+I2M ?                refmac5              5.8.0222    "optimization tool"

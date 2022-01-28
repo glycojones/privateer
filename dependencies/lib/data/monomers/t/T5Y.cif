@@ -1,0 +1,130 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+T5Y     T5Y      pyridin-2-ol     non-polymer     12     7     .     
+#
+data_comp_T5Y
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+T5Y     C4      C       CR16    0       13.887      -26.537     4.377       
+T5Y     N       N       NRD6    0       12.701      -27.154     4.166       
+T5Y     C       C       CR6     0       11.752      -26.466     3.532       
+T5Y     O       O       OH1     0       10.556      -27.093     3.321       
+T5Y     C1      C       CR16    0       11.934      -25.152     3.082       
+T5Y     C2      C       CR16    0       13.155      -24.550     3.312       
+T5Y     C3      C       CR16    0       14.155      -25.245     3.969       
+T5Y     H4      H       H       0       14.560      -27.017     4.824       
+T5Y     H       H       H       0       9.925       -26.667     3.716       
+T5Y     H1      H       H       0       11.247      -24.689     2.637       
+T5Y     H2      H       H       0       13.302      -23.667     3.020       
+T5Y     H3      H       H       0       14.995      -24.849     4.135       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+T5Y       C         O         SINGLE    n         1.367     0.0200    1.367     0.0200    
+T5Y       C         C1        SINGLE    y         1.393     0.0136    1.393     0.0136    
+T5Y       C1        C2        DOUBLE    y         1.377     0.0104    1.377     0.0104    
+T5Y       C2        C3        SINGLE    y         1.381     0.0100    1.381     0.0100    
+T5Y       C4        C3        DOUBLE    y         1.374     0.0152    1.374     0.0152    
+T5Y       C4        N         SINGLE    y         1.349     0.0100    1.349     0.0100    
+T5Y       N         C         DOUBLE    y         1.324     0.0141    1.324     0.0141    
+T5Y       C4        H4        SINGLE    n         1.082     0.013     0.940     0.0133    
+T5Y       O         H         SINGLE    n         0.970     0.012     0.858     0.0200    
+T5Y       C1        H1        SINGLE    n         1.082     0.013     0.941     0.0101    
+T5Y       C2        H2        SINGLE    n         1.082     0.013     0.942     0.0100    
+T5Y       C3        H3        SINGLE    n         1.082     0.013     0.944     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+T5Y          C3          C4           N     123.458    1.50
+T5Y          C3          C4          H4     118.593    1.50
+T5Y           N          C4          H4     117.948    1.60
+T5Y          C4           N           C     116.877    1.50
+T5Y           O           C          C1     119.708    1.50
+T5Y           O           C           N     117.356    1.59
+T5Y          C1           C           N     122.926    1.50
+T5Y           C           O           H     110.159    1.50
+T5Y           C          C1          C2     118.195    1.50
+T5Y           C          C1          H1     121.211    1.50
+T5Y          C2          C1          H1     120.594    1.50
+T5Y          C1          C2          C3     120.196    1.50
+T5Y          C1          C2          H2     119.603    1.50
+T5Y          C3          C2          H2     120.201    1.50
+T5Y          C2          C3          C4     118.347    1.50
+T5Y          C2          C3          H3     120.897    1.50
+T5Y          C4          C3          H3     120.756    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+T5Y              const_19          C3          C4           N           C       0.000   10.00     2
+T5Y       const_sp2_sp2_1          C2          C3          C4           N       0.000   10.00     2
+T5Y              const_18           O           C           N          C4     180.000   10.00     2
+T5Y              const_15           O           C          C1          C2     180.000   10.00     2
+T5Y       const_sp2_sp2_9           C          C1          C2          C3       0.000   10.00     2
+T5Y       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+T5Y    plan-1           C   0.020
+T5Y    plan-1          C1   0.020
+T5Y    plan-1          C2   0.020
+T5Y    plan-1          C3   0.020
+T5Y    plan-1          C4   0.020
+T5Y    plan-1          H1   0.020
+T5Y    plan-1          H2   0.020
+T5Y    plan-1          H3   0.020
+T5Y    plan-1          H4   0.020
+T5Y    plan-1           N   0.020
+T5Y    plan-1           O   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+T5Y           SMILES              ACDLabs 12.01                                    c1nc(O)ccc1
+T5Y            InChI                InChI  1.03 InChI=1S/C5H5NO/c7-5-3-1-2-4-6-5/h1-4H,(H,6,7)
+T5Y         InChIKey                InChI  1.03                    UBQKCCHYAOITMY-UHFFFAOYSA-N
+T5Y SMILES_CANONICAL               CACTVS 3.385                                      Oc1ccccn1
+T5Y           SMILES               CACTVS 3.385                                      Oc1ccccn1
+T5Y SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                    c1ccnc(c1)O
+T5Y           SMILES "OpenEye OEToolkits" 2.0.7                                    c1ccnc(c1)O
+T5Y ?                acedrg               217         "dictionary generator"                  
+T5Y ?                acedrg_database      11          "data source"                           
+T5Y ?                rdkit                2017.03.2   "Chemoinformatics tool"
+T5Y ?                refmac5              5.8.0253    "optimization tool"                     

@@ -1,0 +1,120 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RCI     RCI     "(R)-2-Chloropropionicacid"     NON-POLYMER     10     6     .     
+#
+data_comp_RCI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+RCI     CL1     CL      CL      0       23.576      24.152      117.983     
+RCI     O2      O       O       0       22.175      25.008      120.511     
+RCI     O3      O       OC      -1      23.384      23.468      121.543     
+RCI     C4      C       CH1     0       22.848      23.114      119.260     
+RCI     C5      C       CH3     0       21.530      22.548      118.773     
+RCI     C6      C       C       0       22.799      23.929      120.542     
+RCI     H2      H       H       0       23.460      22.352      119.419     
+RCI     H3      H       H       0       20.817      22.790      119.383     
+RCI     H4      H       H       0       21.591      21.583      118.725     
+RCI     H5      H       H       0       21.325      22.897      117.894     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RCI       CL1       C4        SINGLE    n         1.800     0.018     1.800     0.018     
+RCI       C4        C5        SINGLE    n         1.505     0.020     1.505     0.020     
+RCI       C4        C6        SINGLE    n         1.519     0.012     1.519     0.012     
+RCI       O2        C6        DOUBLE    n         1.247     0.019     1.247     0.019     
+RCI       O3        C6        SINGLE    n         1.247     0.019     1.247     0.019     
+RCI       C4        H2        SINGLE    n         1.089     0.010     0.990     0.016     
+RCI       C5        H3        SINGLE    n         1.089     0.010     0.968     0.020     
+RCI       C5        H4        SINGLE    n         1.089     0.010     0.968     0.020     
+RCI       C5        H5        SINGLE    n         1.089     0.010     0.968     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+RCI         CL1          C4          C5     110.334    2.69
+RCI         CL1          C4          C6     110.491    2.68
+RCI         CL1          C4          H2     109.286    1.50
+RCI          C5          C4          C6     116.743    3.00
+RCI          C5          C4          H2     109.085    1.50
+RCI          C6          C4          H2     108.627    1.50
+RCI          C4          C5          H3     109.468    1.50
+RCI          C4          C5          H4     109.468    1.50
+RCI          C4          C5          H5     109.468    1.50
+RCI          H3          C5          H4     108.988    2.61
+RCI          H3          C5          H5     108.988    2.61
+RCI          H4          C5          H5     108.988    2.61
+RCI          C4          C6          O2     117.429    2.33
+RCI          C4          C6          O3     117.429    2.33
+RCI          O2          C6          O3     125.142    1.75
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+RCI             sp3_sp3_1         CL1          C4          C5          H3     180.000   10.00     3
+RCI             sp2_sp3_1          O2          C6          C4         CL1       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+RCI    chir_1    C4    CL1    C6    C5    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+RCI    plan-1          C4   0.020
+RCI    plan-1          C6   0.020
+RCI    plan-1          O2   0.020
+RCI    plan-1          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+RCI InChI            InChI                1.03  "InChI=1S/C3H5ClO2/c1-2(4)3(5)6/h2H,1H3,(H,5,6)/t2-/m1/s1"
+RCI InChIKey         InChI                1.03  GAWAYYRQGQZKCR-UWTATZPHSA-N
+RCI SMILES_CANONICAL CACTVS               3.385 "C[C@@H](Cl)C(O)=O"
+RCI SMILES           CACTVS               3.385 "C[CH](Cl)C(O)=O"
+RCI SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "C[C@H](C(=O)O)Cl"
+RCI SMILES           "OpenEye OEToolkits" 2.0.6 "CC(C(=O)O)Cl"
+RCI ?                acedrg               190         "dictionary generator"                  
+RCI ?                acedrg_database      11          "data source"                           
+RCI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+RCI ?                refmac5              5.8.0158    "optimization tool"                     

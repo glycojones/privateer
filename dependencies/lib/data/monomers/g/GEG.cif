@@ -1,0 +1,161 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GEG     GEG      "(4E)-4-AMINOHEX-4-ENOIC ACID"     NON-POLYMER     19     9     .     
+#
+data_comp_GEG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GEG     "C1'"   C       C       0       2.821       -0.339      0.656       
+GEG     "O1'"   O       O       0       3.513       0.505       1.258       
+GEG     "O2'"   O       OC      -1      3.082       -1.559      0.638       
+GEG     C1      C       CH2     0       1.592       0.143       -0.096      
+GEG     C2      C       CH2     0       0.354       0.297       0.766       
+GEG     C3      C       C       0       -0.856      0.716       -0.037      
+GEG     C4      C       C1      0       -1.812      -0.181      -0.573      
+GEG     C5      C       CH3     0       -1.760      -1.677      -0.506      
+GEG     N3      N       NH2     0       -0.995      2.013       -0.255      
+GEG     H1C1    H       H       0       1.410       -0.491      -0.819      
+GEG     H1C2    H       H       0       1.810       1.002       -0.512      
+GEG     H2C1    H       H       0       0.525       0.969       1.458       
+GEG     H2C2    H       H       0       0.167       -0.549      1.219       
+GEG     H4      H       H       0       -2.555      0.201       -1.014      
+GEG     H5C1    H       H       0       -0.836      -1.974      -0.491      
+GEG     H5C2    H       H       0       -2.205      -2.052      -1.283      
+GEG     H5C3    H       H       0       -2.210      -1.982      0.299       
+GEG     H3N1    H       H       0       -1.735      2.340       -0.609      
+GEG     H3N2    H       H       0       -0.339      2.571       -0.060      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GEG       "C1'"     "O1'"     DOUBLE    n         1.247     0.019     1.247     0.019     
+GEG       "C1'"     "O2'"     SINGLE    n         1.247     0.019     1.247     0.019     
+GEG       "C1'"     C1        SINGLE    n         1.519     0.012     1.519     0.012     
+GEG       C1        C2        SINGLE    n         1.516     0.020     1.516     0.020     
+GEG       C2        C3        SINGLE    n         1.507     0.012     1.507     0.012     
+GEG       C3        C4        DOUBLE    n         1.397     0.020     1.397     0.020     
+GEG       C3        N3        SINGLE    n         1.314     0.013     1.314     0.013     
+GEG       C4        C5        SINGLE    n         1.497     0.011     1.497     0.011     
+GEG       C1        H1C1      SINGLE    n         1.089     0.010     0.979     0.016     
+GEG       C1        H1C2      SINGLE    n         1.089     0.010     0.979     0.016     
+GEG       C2        H2C1      SINGLE    n         1.089     0.010     0.979     0.016     
+GEG       C2        H2C2      SINGLE    n         1.089     0.010     0.979     0.016     
+GEG       C4        H4        SINGLE    n         1.082     0.013     0.945     0.020     
+GEG       C5        H5C1      SINGLE    n         1.089     0.010     0.971     0.014     
+GEG       C5        H5C2      SINGLE    n         1.089     0.010     0.971     0.014     
+GEG       C5        H5C3      SINGLE    n         1.089     0.010     0.971     0.014     
+GEG       N3        H3N1      SINGLE    n         1.016     0.010     0.881     0.020     
+GEG       N3        H3N2      SINGLE    n         1.016     0.010     0.881     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GEG       "O1'"       "C1'"       "O2'"     123.571    1.50
+GEG       "O1'"       "C1'"          C1     118.214    1.64
+GEG       "O2'"       "C1'"          C1     118.214    1.64
+GEG       "C1'"          C1          C2     114.808    1.90
+GEG       "C1'"          C1        H1C1     108.404    1.50
+GEG       "C1'"          C1        H1C2     108.404    1.50
+GEG          C2          C1        H1C1     110.067    1.85
+GEG          C2          C1        H1C2     110.067    1.85
+GEG        H1C1          C1        H1C2     107.521    1.50
+GEG          C1          C2          C3     111.511    2.91
+GEG          C1          C2        H2C1     109.041    1.50
+GEG          C1          C2        H2C2     109.041    1.50
+GEG          C3          C2        H2C1     108.709    1.50
+GEG          C3          C2        H2C2     108.709    1.50
+GEG        H2C1          C2        H2C2     107.424    1.50
+GEG          C2          C3          C4     123.622    3.00
+GEG          C2          C3          N3     117.491    2.46
+GEG          C4          C3          N3     118.887    3.00
+GEG          C3          C4          C5     124.221    3.00
+GEG          C3          C4          H4     117.625    1.82
+GEG          C5          C4          H4     118.154    1.66
+GEG          C4          C5        H5C1     109.567    1.50
+GEG          C4          C5        H5C2     109.567    1.50
+GEG          C4          C5        H5C3     109.567    1.50
+GEG        H5C1          C5        H5C2     109.305    1.50
+GEG        H5C1          C5        H5C3     109.305    1.50
+GEG        H5C2          C5        H5C3     109.305    1.50
+GEG          C3          N3        H3N1     120.188    2.46
+GEG          C3          N3        H3N2     120.186    2.46
+GEG        H3N1          N3        H3N2     119.624    2.06
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GEG             sp2_sp3_2       "O1'"       "C1'"          C1          C2     120.000   10.00     6
+GEG             sp3_sp3_1       "C1'"          C1          C2          C3     180.000   10.00     3
+GEG             sp2_sp3_8          C4          C3          C2          C1     120.000   10.00     6
+GEG             sp2_sp2_1          C2          C3          C4          C5     180.000   10.00     2
+GEG             sp2_sp2_5          C2          C3          N3        H3N1     180.000   10.00     2
+GEG            sp2_sp3_13          C3          C4          C5        H5C1       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GEG    plan-1          C1   0.020
+GEG    plan-1       "C1'"   0.020
+GEG    plan-1       "O1'"   0.020
+GEG    plan-1       "O2'"   0.020
+GEG    plan-2          C2   0.020
+GEG    plan-2          C3   0.020
+GEG    plan-2          C4   0.020
+GEG    plan-2          N3   0.020
+GEG    plan-3          C3   0.020
+GEG    plan-3          C4   0.020
+GEG    plan-3          C5   0.020
+GEG    plan-3          H4   0.020
+GEG    plan-4          C3   0.020
+GEG    plan-4        H3N1   0.020
+GEG    plan-4        H3N2   0.020
+GEG    plan-4          N3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GEG SMILES           ACDLabs              10.04 "O=C(O)CCC(=C/C)\N"
+GEG SMILES_CANONICAL CACTVS               3.341 "C\C=C(N)/CCC(O)=O"
+GEG SMILES           CACTVS               3.341 "CC=C(N)CCC(O)=O"
+GEG SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C\C=C(/CCC(=O)O)\N"
+GEG SMILES           "OpenEye OEToolkits" 1.5.0 "CC=C(CCC(=O)O)N"
+GEG InChI            InChI                1.03  "InChI=1S/C6H11NO2/c1-2-5(7)3-4-6(8)9/h2H,3-4,7H2,1H3,(H,8,9)/b5-2+"
+GEG InChIKey         InChI                1.03  KQFBUAIXCIGKAP-GORDUTHDSA-N
+GEG ?                acedrg               202         "dictionary generator"                  
+GEG ?                acedrg_database      11          "data source"                           
+GEG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GEG ?                refmac5              5.8.0189    "optimization tool"                     

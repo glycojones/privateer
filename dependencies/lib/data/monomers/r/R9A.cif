@@ -1,0 +1,893 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+R9A      R9A 'RUTHENIUM WIRE, 9 CARBON LINKER     ' non-polymer       127  58 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_R9A
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ R9A           CM1    C    CH3       0.000      0.099    0.061   -0.057
+ R9A           HM13   H    H         0.000     -0.391   -0.208   -0.992
+ R9A           HM12   H    H         0.000     -0.360    0.961    0.349
+ R9A           HM11   H    H         0.000      1.157    0.240   -0.238
+ R9A           NNG    N    N         0.000     -0.051   -1.031    0.897
+ R9A           CM2    C    CH3       0.000      1.124   -1.713    1.465
+ R9A           HM21   H    H         0.000      2.034   -1.270    1.057
+ R9A           HM22   H    H         0.000      1.121   -1.602    2.550
+ R9A           HM23   H    H         0.000      1.089   -2.773    1.208
+ R9A           CNE    C    CR6       0.000     -1.334   -1.427    1.274
+ R9A           CND    C    CR16      0.000     -1.481   -2.460    2.171
+ R9A           HND    H    H         0.000     -0.606   -2.949    2.570
+ R9A           CNC    C    CR16      0.000     -2.726   -2.872    2.562
+ R9A           HNC    H    H         0.000     -2.763   -3.683    3.274
+ R9A           CNB    C    CR16      0.000     -3.918   -2.371    2.150
+ R9A           HNB    H    H         0.000     -4.860   -2.757    2.510
+ R9A           CNA    C    CR6       0.000     -3.846   -1.351    1.256
+ R9A           CNF    C    CR16      0.000     -2.569   -0.905    0.850
+ R9A           HNF    H    H         0.000     -2.539   -0.085    0.148
+ R9A           OL5    O    O2        0.000     -4.969   -0.759    0.773
+ R9A           CL4    C    CH2       0.000     -6.119   -1.386    1.345
+ R9A           HL91   H    H         0.000     -6.108   -1.278    2.429
+ R9A           HL92   H    H         0.000     -6.138   -2.445    1.087
+ R9A           CL3    C    CH2       0.000     -7.359   -0.698    0.774
+ R9A           HL81   H    H         0.000     -7.405   -0.807   -0.310
+ R9A           HL82   H    H         0.000     -7.375    0.361    1.033
+ R9A           CL2    C    CH2       0.000     -8.562   -1.398    1.409
+ R9A           HL71   H    H         0.000     -8.514   -1.289    2.493
+ R9A           HL72   H    H         0.000     -8.545   -2.456    1.150
+ R9A           CL1    C    CH2       0.000     -9.845   -0.769    0.892
+ R9A           HL61   H    H         0.000     -9.910   -0.877   -0.191
+ R9A           HL62   H    H         0.000     -9.881    0.289    1.153
+ R9A           CL0    C    CH2       0.000    -11.015   -1.497    1.549
+ R9A           HL51   H    H         0.000    -10.981   -1.385    2.632
+ R9A           HL52   H    H         0.000    -11.004   -2.556    1.293
+ R9A           CL5    C    CH2       0.000    -12.291   -0.855    1.009
+ R9A           HL41   H    H         0.000    -12.349   -0.958   -0.075
+ R9A           HL42   H    H         0.000    -12.337    0.201    1.275
+ R9A           CL6    C    CH2       0.000    -13.457   -1.594    1.654
+ R9A           HL31   H    H         0.000    -13.413   -1.495    2.739
+ R9A           HL32   H    H         0.000    -13.429   -2.650    1.385
+ R9A           CL7    C    CH2       0.000    -14.744   -0.973    1.139
+ R9A           HL21   H    H         0.000    -14.805   -1.091    0.057
+ R9A           HL22   H    H         0.000    -14.769    0.087    1.390
+ R9A           CL8    C    CH2       0.000    -15.927   -1.682    1.798
+ R9A           HL11   H    H         0.000    -15.908   -1.521    2.876
+ R9A           HL12   H    H         0.000    -15.886   -2.752    1.591
+ R9A           CA0    C    CR6       0.000    -17.191   -1.109    1.227
+ R9A           CAK    C    CR66      0.000    -17.928   -1.555    0.156
+ R9A           CAM    C    CR16      0.000    -17.789   -0.024    1.859
+ R9A           HAM    H    H         0.000    -17.385    0.297    2.812
+ R9A           CAN    C    CR16      0.000    -18.838    0.648    1.356
+ R9A           HAN    H    H         0.000    -19.085    1.586    1.836
+ R9A           NAA    N    NR6       0.000    -19.626    0.274    0.304
+ R9A           CAB    C    CR66      0.000    -19.058   -0.771   -0.418
+ R9A           RU     RU   RU        0.000    -21.499    0.720   -0.358
+ R9A           NBA    N    NT        0.000    -22.412   -0.678    0.915
+ R9A           CBB    C    CH2       0.000    -21.498   -1.680    1.372
+ R9A           HBB    H    H         0.000    -20.849   -1.250    2.136
+ R9A           HBB1   H    H         0.000    -20.893   -2.022    0.532
+ R9A           CBC    C    CH2       0.000    -22.259   -2.844    1.953
+ R9A           HBC    H    H         0.000    -21.916   -2.917    2.990
+ R9A           HBC1   H    H         0.000    -21.912   -3.717    1.394
+ R9A           CBD    C    CH2       0.000    -23.728   -2.792    1.923
+ R9A           HBD    H    H         0.000    -23.970   -2.440    2.928
+ R9A           HBD0   H    H         0.000    -23.997   -3.847    1.834
+ R9A           CBE    C    CH2       0.000    -24.389   -2.103    1.053
+ R9A           HBE0   H    H         0.000    -25.029   -1.426    1.571
+ R9A           HBE    H    H         0.000    -24.978   -2.770    0.468
+ R9A           CBF    C    CH1       0.000    -23.486   -1.350    0.178
+ R9A           HBF    H    H         0.000    -22.971   -2.122   -0.410
+ R9A           CBG    C    CH1       0.000    -24.129   -0.501   -0.824
+ R9A           HBG    H    H         0.000    -23.737   -0.931   -1.767
+ R9A           CBH    C    CH2       0.000    -25.615   -0.541   -1.066
+ R9A           HBH    H    H         0.000    -26.154    0.096   -0.378
+ R9A           HBH1   H    H         0.000    -26.007   -1.548   -1.004
+ R9A           CBI    C    CH2       0.000    -25.784   -0.009   -2.502
+ R9A           HBI    H    H         0.000    -26.835   -0.017   -2.780
+ R9A           HBI1   H    H         0.000    -25.222   -0.629   -3.196
+ R9A           CBJ    C    CH2       0.000    -25.264    1.391   -2.548
+ R9A           HBJ    H    H         0.000    -25.917    2.011   -1.928
+ R9A           HBJ1   H    H         0.000    -25.318    1.733   -3.585
+ R9A           CBK    C    CH2       0.000    -23.840    1.501   -2.052
+ R9A           HBK1   H    H         0.000    -23.646    2.561   -1.927
+ R9A           HBK    H    H         0.000    -23.214    1.113   -2.847
+ R9A           NBL    N    NT        0.000    -23.547    0.820   -0.842
+ R9A           NCA    N    NT        0.000    -20.762    2.349   -1.418
+ R9A           CCB    C    CH2       0.000    -20.918    2.317   -2.808
+ R9A           HCB    H    H         0.000    -21.974    2.398   -3.045
+ R9A           HCB1   H    H         0.000    -20.536    1.374   -3.183
+ R9A           CCC    C    CH2       0.000    -20.158    3.470   -3.459
+ R9A           HCC    H    H         0.000    -20.473    3.523   -4.498
+ R9A           HCC1   H    H         0.000    -19.099    3.229   -3.414
+ R9A           CCD    C    CH2       0.000    -20.403    4.803   -2.789
+ R9A           HCD    H    H         0.000    -21.441    5.100   -2.915
+ R9A           HCD1   H    H         0.000    -19.755    5.562   -3.220
+ R9A           CCE    C    CH2       0.000    -20.092    4.652   -1.303
+ R9A           HCE1   H    H         0.000    -20.208    5.584   -0.766
+ R9A           HCE    H    H         0.000    -19.097    4.261   -1.133
+ R9A           CCF    C    CH1       0.000    -21.128    3.645   -0.808
+ R9A           HCF    H    H         0.000    -22.147    3.948   -1.106
+ R9A           CCG    C    CH1       0.000    -21.031    3.475    0.677
+ R9A           HCG    H    H         0.000    -20.006    3.139    0.847
+ R9A           CCH    C    C1        0.000    -21.174    4.714    1.549
+ R9A           HCH    H    H         0.000    -21.379    5.714    1.178
+ R9A           CCI    C    C1        0.000    -20.987    4.348    3.027
+ R9A           HCI    H    H         0.000    -20.333    4.878    3.720
+ R9A           CCJ    C    CH2       0.000    -21.839    3.148    3.389
+ R9A           HCJ    H    H         0.000    -22.869    3.499    3.444
+ R9A           HCJ1   H    H         0.000    -21.515    2.820    4.377
+ R9A           CCK    C    CH2       0.000    -21.749    1.975    2.404
+ R9A           HCK1   H    H         0.000    -22.545    1.293    2.677
+ R9A           HCK    H    H         0.000    -20.792    1.503    2.588
+ R9A           NCL    N    NT        0.000    -21.859    2.309    1.018
+ R9A           NAD    N    NR6       0.000    -20.985   -0.632   -1.776
+ R9A           CAC    C    CR66      0.000    -19.767   -1.229   -1.434
+ R9A           CAE    C    CR16      0.000    -21.507   -1.126   -2.948
+ R9A           HAE    H    H         0.000    -22.311   -0.567   -3.409
+ R9A           CAF    C    CR16      0.000    -21.100   -2.246   -3.568
+ R9A           HAF    H    H         0.000    -21.697   -2.613   -4.395
+ R9A           CAG    C    CR16      0.000    -19.970   -2.961   -3.220
+ R9A           HAG    H    H         0.000    -19.625   -3.828   -3.762
+ R9A           CAH    C    CR66      0.000    -19.332   -2.458   -2.118
+ R9A           CAI    C    CR16      0.000    -18.181   -3.153   -1.631
+ R9A           HAI    H    H         0.000    -17.836   -4.034   -2.152
+ R9A           CAJ    C    CR16      0.000    -17.526   -2.736   -0.548
+ R9A           HAJ    H    H         0.000    -16.676   -3.299   -0.194
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ R9A      CM1    n/a    NNG    START
+ R9A      HM13   CM1    .      .
+ R9A      HM12   CM1    .      .
+ R9A      HM11   CM1    .      .
+ R9A      NNG    CM1    CNE    .
+ R9A      CM2    NNG    HM23   .
+ R9A      HM21   CM2    .      .
+ R9A      HM22   CM2    .      .
+ R9A      HM23   CM2    .      .
+ R9A      CNE    NNG    CND    .
+ R9A      CND    CNE    CNC    .
+ R9A      HND    CND    .      .
+ R9A      CNC    CND    CNB    .
+ R9A      HNC    CNC    .      .
+ R9A      CNB    CNC    CNA    .
+ R9A      HNB    CNB    .      .
+ R9A      CNA    CNB    OL5    .
+ R9A      CNF    CNA    HNF    .
+ R9A      HNF    CNF    .      .
+ R9A      OL5    CNA    CL4    .
+ R9A      CL4    OL5    CL3    .
+ R9A      HL91   CL4    .      .
+ R9A      HL92   CL4    .      .
+ R9A      CL3    CL4    CL2    .
+ R9A      HL81   CL3    .      .
+ R9A      HL82   CL3    .      .
+ R9A      CL2    CL3    CL1    .
+ R9A      HL71   CL2    .      .
+ R9A      HL72   CL2    .      .
+ R9A      CL1    CL2    CL0    .
+ R9A      HL61   CL1    .      .
+ R9A      HL62   CL1    .      .
+ R9A      CL0    CL1    CL5    .
+ R9A      HL51   CL0    .      .
+ R9A      HL52   CL0    .      .
+ R9A      CL5    CL0    CL6    .
+ R9A      HL41   CL5    .      .
+ R9A      HL42   CL5    .      .
+ R9A      CL6    CL5    CL7    .
+ R9A      HL31   CL6    .      .
+ R9A      HL32   CL6    .      .
+ R9A      CL7    CL6    CL8    .
+ R9A      HL21   CL7    .      .
+ R9A      HL22   CL7    .      .
+ R9A      CL8    CL7    CA0    .
+ R9A      HL11   CL8    .      .
+ R9A      HL12   CL8    .      .
+ R9A      CA0    CL8    CAM    .
+ R9A      CAK    CA0    .      .
+ R9A      CAM    CA0    CAN    .
+ R9A      HAM    CAM    .      .
+ R9A      CAN    CAM    NAA    .
+ R9A      HAN    CAN    .      .
+ R9A      NAA    CAN    RU     .
+ R9A      CAB    NAA    .      .
+ R9A      RU     NAA    NAD    .
+ R9A      NBA    RU     CBF    .
+ R9A      CBB    NBA    CBC    .
+ R9A      HBB    CBB    .      .
+ R9A      HBB1   CBB    .      .
+ R9A      CBC    CBB    CBD    .
+ R9A      HBC    CBC    .      .
+ R9A      HBC1   CBC    .      .
+ R9A      CBD    CBC    CBE    .
+ R9A      HBD    CBD    .      .
+ R9A      HBD0   CBD    .      .
+ R9A      CBE    CBD    HBE    .
+ R9A      HBE0   CBE    .      .
+ R9A      HBE    CBE    .      .
+ R9A      CBF    NBA    CBG    .
+ R9A      HBF    CBF    .      .
+ R9A      CBG    CBF    NBL    .
+ R9A      HBG    CBG    .      .
+ R9A      CBH    CBG    CBI    .
+ R9A      HBH    CBH    .      .
+ R9A      HBH1   CBH    .      .
+ R9A      CBI    CBH    CBJ    .
+ R9A      HBI    CBI    .      .
+ R9A      HBI1   CBI    .      .
+ R9A      CBJ    CBI    CBK    .
+ R9A      HBJ    CBJ    .      .
+ R9A      HBJ1   CBJ    .      .
+ R9A      CBK    CBJ    HBK    .
+ R9A      HBK1   CBK    .      .
+ R9A      HBK    CBK    .      .
+ R9A      NBL    CBG    .      .
+ R9A      NCA    RU     CCF    .
+ R9A      CCB    NCA    CCC    .
+ R9A      HCB    CCB    .      .
+ R9A      HCB1   CCB    .      .
+ R9A      CCC    CCB    CCD    .
+ R9A      HCC    CCC    .      .
+ R9A      HCC1   CCC    .      .
+ R9A      CCD    CCC    CCE    .
+ R9A      HCD    CCD    .      .
+ R9A      HCD1   CCD    .      .
+ R9A      CCE    CCD    HCE    .
+ R9A      HCE1   CCE    .      .
+ R9A      HCE    CCE    .      .
+ R9A      CCF    NCA    CCG    .
+ R9A      HCF    CCF    .      .
+ R9A      CCG    CCF    NCL    .
+ R9A      HCG    CCG    .      .
+ R9A      CCH    CCG    CCI    .
+ R9A      HCH    CCH    .      .
+ R9A      CCI    CCH    CCJ    .
+ R9A      HCI    CCI    .      .
+ R9A      CCJ    CCI    CCK    .
+ R9A      HCJ    CCJ    .      .
+ R9A      HCJ1   CCJ    .      .
+ R9A      CCK    CCJ    HCK    .
+ R9A      HCK1   CCK    .      .
+ R9A      HCK    CCK    .      .
+ R9A      NCL    CCG    .      .
+ R9A      NAD    RU     CAE    .
+ R9A      CAC    NAD    .      .
+ R9A      CAE    NAD    CAF    .
+ R9A      HAE    CAE    .      .
+ R9A      CAF    CAE    CAG    .
+ R9A      HAF    CAF    .      .
+ R9A      CAG    CAF    CAH    .
+ R9A      HAG    CAG    .      .
+ R9A      CAH    CAG    CAI    .
+ R9A      CAI    CAH    CAJ    .
+ R9A      HAI    CAI    .      .
+ R9A      CAJ    CAI    HAJ    .
+ R9A      HAJ    CAJ    .      END
+ R9A      CNE    CNF    .    ADD
+ R9A      CAK    CAJ    .    ADD
+ R9A      CAK    CAB    .    ADD
+ R9A      CAB    CAC    .    ADD
+ R9A      CAC    CAH    .    ADD
+ R9A      RU     NCL    .    ADD
+ R9A      RU     NBL    .    ADD
+ R9A      NCL    CCK    .    ADD
+ R9A      CCF    CCE    .    ADD
+ R9A      NBL    CBK    .    ADD
+ R9A      CBF    CBE    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+R9A       CM2       NNG       single    1.466     0.020     1.466     0.020     
+R9A       HM23      CM2       single    1.089     0.010     0.989     0.005     
+R9A       HM22      CM2       single    1.089     0.010     0.989     0.005     
+R9A       HM21      CM2       single    1.089     0.010     0.989     0.005     
+R9A       NNG       CM1       single    1.465     0.020     1.465     0.020     
+R9A       CNE       NNG       single    1.396     0.020     1.396     0.020     
+R9A       HM13      CM1       single    1.089     0.010     0.989     0.005     
+R9A       HM12      CM1       single    1.089     0.010     0.989     0.005     
+R9A       HM11      CM1       single    1.089     0.010     0.989     0.005     
+R9A       CNE       CNF       single    1.389     0.020     1.389     0.020     
+R9A       CND       CNE       double    1.390     0.020     1.390     0.020     
+R9A       CNF       CNA       double    1.386     0.020     1.386     0.020     
+R9A       HNF       CNF       single    1.082     0.013     0.975     0.010     
+R9A       CNA       CNB       single    1.388     0.020     1.388     0.020     
+R9A       OL5       CNA       single    1.359     0.020     1.359     0.020     
+R9A       CNB       CNC       double    1.382     0.020     1.382     0.020     
+R9A       HNB       CNB       single    1.082     0.013     0.975     0.010     
+R9A       CNC       CND       single    1.381     0.020     1.381     0.020     
+R9A       HNC       CNC       single    1.082     0.013     0.975     0.010     
+R9A       HND       CND       single    1.082     0.013     0.975     0.010     
+R9A       CL4       OL5       single    1.429     0.020     1.429     0.020     
+R9A       CL3       CL4       single    1.529     0.020     1.529     0.020     
+R9A       HL91      CL4       single    1.089     0.010     0.989     0.005     
+R9A       HL92      CL4       single    1.089     0.010     0.989     0.005     
+R9A       CL2       CL3       single    1.530     0.020     1.530     0.020     
+R9A       HL81      CL3       single    1.089     0.010     0.989     0.005     
+R9A       HL82      CL3       single    1.089     0.010     0.989     0.005     
+R9A       CL1       CL2       single    1.530     0.020     1.530     0.020     
+R9A       HL71      CL2       single    1.089     0.010     0.989     0.005     
+R9A       HL72      CL2       single    1.089     0.010     0.989     0.005     
+R9A       CL0       CL1       single    1.530     0.020     1.530     0.020     
+R9A       HL61      CL1       single    1.089     0.010     0.989     0.005     
+R9A       HL62      CL1       single    1.089     0.010     0.989     0.005     
+R9A       CAK       CAJ       single    1.458     0.020     1.458     0.020     
+R9A       CAK       CAB       single    1.471     0.020     1.471     0.020     
+R9A       CAK       CA0       double    1.388     0.020     1.388     0.020     
+R9A       CAJ       CAI       double    1.356     0.020     1.356     0.020     
+R9A       HAJ       CAJ       single    1.082     0.013     0.975     0.010     
+R9A       CAB       CAC       double    1.323     0.020     1.323     0.020     
+R9A       CAB       NAA       single    1.399     0.020     1.399     0.020     
+R9A       CAC       CAH       single    1.468     0.020     1.468     0.020     
+R9A       CAC       NAD       single    1.398     0.020     1.398     0.020     
+R9A       CAI       CAH       single    1.458     0.020     1.458     0.020     
+R9A       CAH       CAG       double    1.389     0.020     1.389     0.020     
+R9A       CAM       CA0       single    1.410     0.020     1.410     0.020     
+R9A       CA0       CL8       single    1.506     0.020     1.506     0.020     
+R9A       HAI       CAI       single    1.082     0.013     0.975     0.010     
+R9A       CAG       CAF       single    1.409     0.020     1.409     0.020     
+R9A       HAG       CAG       single    1.082     0.013     0.975     0.010     
+R9A       CAF       CAE       double    1.347     0.020     1.347     0.020     
+R9A       HAF       CAF       single    1.082     0.013     0.975     0.010     
+R9A       CAE       NAD       single    1.387     0.020     1.387     0.020     
+R9A       HAE       CAE       single    1.082     0.013     0.975     0.010     
+R9A       NAD       RU        single    2.033     0.020     2.033     0.020     
+R9A       NAA       CAN       single    1.386     0.020     1.386     0.020     
+R9A       RU        NAA       single    2.036     0.020     2.036     0.020     
+R9A       CAN       CAM       double    1.347     0.020     1.347     0.020     
+R9A       HAN       CAN       single    1.082     0.013     0.975     0.010     
+R9A       HAM       CAM       single    1.082     0.013     0.975     0.010     
+R9A       RU        NCL       single    2.120     0.020     2.120     0.020     
+R9A       NCA       RU        single    2.102     0.020     2.102     0.020     
+R9A       RU        NBL       single    2.116     0.020     2.116     0.020     
+R9A       NBA       RU        single    2.122     0.020     2.122     0.020     
+R9A       NCL       CCK       single    1.448     0.020     1.448     0.020     
+R9A       NCL       CCG       single    1.484     0.020     1.484     0.020     
+R9A       CCK       CCJ       single    1.536     0.020     1.536     0.020     
+R9A       HCK       CCK       single    1.089     0.010     0.989     0.005     
+R9A       HCK1      CCK       single    1.089     0.010     0.989     0.005     
+R9A       CCJ       CCI       single    1.531     0.020     1.531     0.020     
+R9A       HCJ       CCJ       single    1.089     0.010     0.989     0.005     
+R9A       HCJ1      CCJ       single    1.089     0.010     0.989     0.005     
+R9A       CCI       CCH       double    1.539     0.020     1.539     0.020     
+R9A       HCI       CCI       single    1.082     0.013     0.975     0.010     
+R9A       CCH       CCG       single    1.521     0.020     1.521     0.020     
+R9A       CCG       CCF       single    1.514     0.020     1.514     0.020     
+R9A       HCG       CCG       single    1.089     0.010     0.989     0.005     
+R9A       HCH       CCH       single    1.082     0.013     0.975     0.010     
+R9A       CCF       CCE       single    1.522     0.020     1.522     0.020     
+R9A       CCF       NCA       single    1.469     0.020     1.469     0.020     
+R9A       HCF       CCF       single    1.089     0.010     0.989     0.005     
+R9A       CCE       CCD       single    1.545     0.020     1.545     0.020     
+R9A       HCE       CCE       single    1.089     0.010     0.989     0.005     
+R9A       HCE1      CCE       single    1.089     0.010     0.989     0.005     
+R9A       CCD       CCC       single    1.534     0.020     1.534     0.020     
+R9A       HCD       CCD       single    1.089     0.010     0.989     0.005     
+R9A       HCD1      CCD       single    1.089     0.010     0.989     0.005     
+R9A       CCC       CCB       single    1.547     0.020     1.547     0.020     
+R9A       HCC       CCC       single    1.089     0.010     0.989     0.005     
+R9A       HCC1      CCC       single    1.089     0.010     0.989     0.005     
+R9A       CCB       NCA       single    1.435     0.020     1.435     0.020     
+R9A       HCB       CCB       single    1.089     0.010     0.989     0.005     
+R9A       HCB1      CCB       single    1.089     0.010     0.989     0.005     
+R9A       NBL       CBK       single    1.440     0.020     1.440     0.020     
+R9A       NBL       CBG       single    1.481     0.020     1.481     0.020     
+R9A       CBK       CBJ       single    1.535     0.020     1.535     0.020     
+R9A       HBK       CBK       single    1.089     0.010     0.989     0.005     
+R9A       HBK1      CBK       single    1.089     0.010     0.989     0.005     
+R9A       CL5       CL0       single    1.530     0.020     1.530     0.020     
+R9A       HL51      CL0       single    1.089     0.010     0.989     0.005     
+R9A       HL52      CL0       single    1.089     0.010     0.989     0.005     
+R9A       CBJ       CBI       single    1.528     0.020     1.528     0.020     
+R9A       HBJ       CBJ       single    1.089     0.010     0.989     0.005     
+R9A       HBJ1      CBJ       single    1.089     0.010     0.989     0.005     
+R9A       CBI       CBH       single    1.544     0.020     1.544     0.020     
+R9A       HBI       CBI       single    1.089     0.010     0.989     0.005     
+R9A       HBI1      CBI       single    1.089     0.010     0.989     0.005     
+R9A       CL7       CL6       single    1.530     0.020     1.530     0.020     
+R9A       CL6       CL5       single    1.530     0.020     1.530     0.020     
+R9A       HL31      CL6       single    1.089     0.010     0.989     0.005     
+R9A       HL32      CL6       single    1.089     0.010     0.989     0.005     
+R9A       CL8       CL7       single    1.530     0.020     1.530     0.020     
+R9A       HL21      CL7       single    1.089     0.010     0.989     0.005     
+R9A       HL22      CL7       single    1.089     0.010     0.989     0.005     
+R9A       HL41      CL5       single    1.089     0.010     0.989     0.005     
+R9A       HL42      CL5       single    1.089     0.010     0.989     0.005     
+R9A       CBH       CBG       single    1.523     0.020     1.523     0.020     
+R9A       CBG       CBF       single    1.495     0.020     1.495     0.020     
+R9A       HBG       CBG       single    1.089     0.010     0.989     0.005     
+R9A       HL11      CL8       single    1.089     0.010     0.989     0.005     
+R9A       HL12      CL8       single    1.089     0.010     0.989     0.005     
+R9A       HBH       CBH       single    1.089     0.010     0.989     0.005     
+R9A       HBH1      CBH       single    1.089     0.010     0.989     0.005     
+R9A       CBF       CBE       single    1.503     0.020     1.503     0.020     
+R9A       CBF       NBA       single    1.495     0.020     1.495     0.020     
+R9A       HBF       CBF       single    1.089     0.010     0.989     0.005     
+R9A       CBE       CBD       single    1.322     0.020     1.322     0.020     
+R9A       HBE       CBE       single    1.089     0.010     0.989     0.005     
+R9A       CBD       CBC       single    1.501     0.020     1.501     0.020     
+R9A       HBD       CBD       single    1.089     0.010     0.989     0.005     
+R9A       CBC       CBB       single    1.528     0.020     1.528     0.020     
+R9A       HBC       CBC       single    1.089     0.010     0.989     0.005     
+R9A       HBC1      CBC       single    1.089     0.010     0.989     0.005     
+R9A       CBB       NBA       single    1.455     0.020     1.455     0.020     
+R9A       HBB       CBB       single    1.089     0.010     0.989     0.005     
+R9A       HBB1      CBB       single    1.089     0.010     0.989     0.005     
+R9A       HBE0      CBE       single    1.089     0.010     0.989     0.005     
+R9A       HBD0      CBD       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ R9A      HM13   CM1    HM12    109.489    3.000
+ R9A      HM13   CM1    HM11    109.476    3.000
+ R9A      HM12   CM1    HM11    109.509    3.000
+ R9A      HM13   CM1    NNG     109.459    3.000
+ R9A      HM12   CM1    NNG     109.428    3.000
+ R9A      HM11   CM1    NNG     109.467    3.000
+ R9A      CM1    NNG    CM2     119.980    3.000
+ R9A      CM1    NNG    CNE     120.021    3.000
+ R9A      CM2    NNG    CNE     119.999    3.000
+ R9A      NNG    CM2    HM21    109.446    3.000
+ R9A      NNG    CM2    HM22    109.477    3.000
+ R9A      NNG    CM2    HM23    109.416    3.000
+ R9A      HM21   CM2    HM22    109.523    3.000
+ R9A      HM21   CM2    HM23    109.478    3.000
+ R9A      HM22   CM2    HM23    109.487    3.000
+ R9A      NNG    CNE    CND     120.068    3.000
+ R9A      NNG    CNE    CNF     120.042    3.000
+ R9A      CND    CNE    CNF     119.890    3.000
+ R9A      CNE    CND    HND     119.967    3.000
+ R9A      CNE    CND    CNC     120.045    3.000
+ R9A      HND    CND    CNC     119.988    3.000
+ R9A      CND    CNC    HNC     119.905    3.000
+ R9A      CND    CNC    CNB     120.143    3.000
+ R9A      HNC    CNC    CNB     119.951    3.000
+ R9A      CNC    CNB    HNB     119.959    3.000
+ R9A      CNC    CNB    CNA     120.065    3.000
+ R9A      HNB    CNB    CNA     119.976    3.000
+ R9A      CNB    CNA    CNF     120.035    3.000
+ R9A      CNB    CNA    OL5     120.019    3.000
+ R9A      CNF    CNA    OL5     119.946    3.000
+ R9A      CNA    CNF    HNF     120.147    3.000
+ R9A      CNA    CNF    CNE     119.820    3.000
+ R9A      HNF    CNF    CNE     120.031    3.000
+ R9A      CNA    OL5    CL4     106.812    3.000
+ R9A      OL5    CL4    HL91    109.444    3.000
+ R9A      OL5    CL4    HL92    109.464    3.000
+ R9A      OL5    CL4    CL3     109.523    3.000
+ R9A      HL91   CL4    HL92    109.459    3.000
+ R9A      HL91   CL4    CL3     109.463    3.000
+ R9A      HL92   CL4    CL3     109.475    3.000
+ R9A      CL4    CL3    HL81    109.463    3.000
+ R9A      CL4    CL3    HL82    109.475    3.000
+ R9A      CL4    CL3    CL2     109.506    3.000
+ R9A      HL81   CL3    HL82    109.459    3.000
+ R9A      HL81   CL3    CL2     109.447    3.000
+ R9A      HL82   CL3    CL2     109.478    3.000
+ R9A      CL3    CL2    HL71    109.447    3.000
+ R9A      CL3    CL2    HL72    109.478    3.000
+ R9A      CL3    CL2    CL1     109.483    3.000
+ R9A      HL71   CL2    HL72    109.459    3.000
+ R9A      HL71   CL2    CL1     109.450    3.000
+ R9A      HL72   CL2    CL1     109.511    3.000
+ R9A      CL2    CL1    HL61    109.450    3.000
+ R9A      CL2    CL1    HL62    109.511    3.000
+ R9A      CL2    CL1    CL0     109.483    3.000
+ R9A      HL61   CL1    HL62    109.459    3.000
+ R9A      HL61   CL1    CL0     109.447    3.000
+ R9A      HL62   CL1    CL0     109.478    3.000
+ R9A      CL1    CL0    HL51    109.447    3.000
+ R9A      CL1    CL0    HL52    109.519    3.000
+ R9A      CL1    CL0    CL5     109.521    3.000
+ R9A      HL51   CL0    HL52    109.467    3.000
+ R9A      HL51   CL0    CL5     109.454    3.000
+ R9A      HL52   CL0    CL5     109.419    3.000
+ R9A      CL0    CL5    HL41    109.454    3.000
+ R9A      CL0    CL5    HL42    109.420    3.000
+ R9A      CL0    CL5    CL6     109.521    3.000
+ R9A      HL41   CL5    HL42    109.467    3.000
+ R9A      HL41   CL5    CL6     109.447    3.000
+ R9A      HL42   CL5    CL6     109.519    3.000
+ R9A      CL5    CL6    HL31    109.447    3.000
+ R9A      CL5    CL6    HL32    109.478    3.000
+ R9A      CL5    CL6    CL7     109.483    3.000
+ R9A      HL31   CL6    HL32    109.459    3.000
+ R9A      HL31   CL6    CL7     109.450    3.000
+ R9A      HL32   CL6    CL7     109.511    3.000
+ R9A      CL6    CL7    HL21    109.450    3.000
+ R9A      CL6    CL7    HL22    109.511    3.000
+ R9A      CL6    CL7    CL8     109.463    3.000
+ R9A      HL21   CL7    HL22    109.459    3.000
+ R9A      HL21   CL7    CL8     109.478    3.000
+ R9A      HL22   CL7    CL8     109.466    3.000
+ R9A      CL7    CL8    HL11    109.478    3.000
+ R9A      CL7    CL8    HL12    109.435    3.000
+ R9A      CL7    CL8    CA0     109.479    3.000
+ R9A      HL11   CL8    HL12    109.511    3.000
+ R9A      HL11   CL8    CA0     109.480    3.000
+ R9A      HL12   CL8    CA0     109.444    3.000
+ R9A      CL8    CA0    CAK     121.072    3.000
+ R9A      CL8    CA0    CAM     119.518    3.000
+ R9A      CAK    CA0    CAM     119.408    3.000
+ R9A      CA0    CAK    CAJ     122.573    3.000
+ R9A      CA0    CAK    CAB     118.092    3.000
+ R9A      CAJ    CAK    CAB     119.334    3.000
+ R9A      CA0    CAM    HAM     119.267    3.000
+ R9A      CA0    CAM    CAN     121.816    3.000
+ R9A      HAM    CAM    CAN     118.916    3.000
+ R9A      CAM    CAN    HAN     117.655    3.000
+ R9A      CAM    CAN    NAA     121.733    3.000
+ R9A      HAN    CAN    NAA     120.595    3.000
+ R9A      CAN    NAA    CAB     118.903    3.000
+ R9A      CAN    NAA    RU      133.215    3.000
+ R9A      CAB    NAA    RU      107.882    3.000
+ R9A      NAA    CAB    CAK     119.758    3.000
+ R9A      NAA    CAB    CAC     119.768    3.000
+ R9A      CAK    CAB    CAC     120.473    3.000
+ R9A      NAA    RU     NBA      92.069    3.000
+ R9A      NAA    RU     NCA      91.048    3.000
+ R9A      NAA    RU     NAD      83.716    3.000
+ R9A      NAA    RU     NCL      95.281    3.000
+ R9A      NAA    RU     NBL     167.145    3.000
+ R9A      NBA    RU     NCA     173.486    3.000
+ R9A      NBA    RU     NAD      93.336    3.000
+ R9A      NCA    RU     NAD      92.689    3.000
+ R9A      NCL    RU     NBL      87.665    3.000
+ R9A      NBA    RU     NCL      91.909    3.000
+ R9A      NCA    RU     NCL      82.107    3.000
+ R9A      NAD    RU     NCL     174.691    3.000
+ R9A      NBA    RU     NBL      75.303    3.000
+ R9A      NCA    RU     NBL     101.759    3.000
+ R9A      NAD    RU     NBL      94.457    3.000
+ R9A      RU     NBA    CBB     110.016    3.000
+ R9A      RU     NBA    CBF     105.048    3.000
+ R9A      CBB    NBA    CBF     104.120    3.000
+ R9A      NBA    CBB    HBB     109.547    3.000
+ R9A      NBA    CBB    HBB1    109.688    3.000
+ R9A      NBA    CBB    CBC     111.093    3.000
+ R9A      HBB    CBB    HBB1    109.336    3.000
+ R9A      HBB    CBB    CBC     108.204    3.000
+ R9A      HBB1   CBB    CBC     108.939    3.000
+ R9A      CBB    CBC    HBC     108.316    3.000
+ R9A      CBB    CBC    HBC1    108.658    3.000
+ R9A      CBB    CBC    CBD     114.482    3.000
+ R9A      HBC    CBC    HBC1    108.138    3.000
+ R9A      HBC    CBC    CBD     108.321    3.000
+ R9A      HBC1   CBC    CBD     108.757    3.000
+ R9A      CBC    CBD    HBD     119.068    3.000
+ R9A      CBC    CBD    HBD0    109.470    3.000
+ R9A      CBC    CBD    CBE     121.274    3.000
+ R9A      HBD    CBD    HBD0    107.900    3.000
+ R9A      HBD    CBD    CBE     119.658    3.000
+ R9A      HBD0   CBD    CBE     109.470    3.000
+ R9A      CBD    CBE    HBE0    109.470    3.000
+ R9A      CBD    CBE    HBE     123.238    3.000
+ R9A      CBD    CBE    CBF     114.198    3.000
+ R9A      HBE0   CBE    HBE     107.900    3.000
+ R9A      HBE0   CBE    CBF     109.470    3.000
+ R9A      HBE    CBE    CBF     122.564    3.000
+ R9A      NBA    CBF    HBF     108.575    3.000
+ R9A      NBA    CBF    CBG     110.958    3.000
+ R9A      NBA    CBF    CBE     104.212    3.000
+ R9A      HBF    CBF    CBG     107.539    3.000
+ R9A      HBF    CBF    CBE     108.302    3.000
+ R9A      CBG    CBF    CBE     116.992    3.000
+ R9A      CBF    CBG    HBG     105.516    3.000
+ R9A      CBF    CBG    CBH     117.249    3.000
+ R9A      CBF    CBG    NBL     112.183    3.000
+ R9A      HBG    CBG    CBH     104.986    3.000
+ R9A      HBG    CBG    NBL     107.519    3.000
+ R9A      CBH    CBG    NBL     108.683    3.000
+ R9A      CBG    CBH    HBH     109.792    3.000
+ R9A      CBG    CBH    HBH1    109.792    3.000
+ R9A      CBG    CBH    CBI     104.368    3.000
+ R9A      HBH    CBH    HBH1    112.067    3.000
+ R9A      HBH    CBH    CBI     110.223    3.000
+ R9A      HBH1   CBH    CBI     110.321    3.000
+ R9A      CBH    CBI    HBI     109.372    3.000
+ R9A      CBH    CBI    HBI1    109.598    3.000
+ R9A      CBH    CBI    CBJ     108.559    3.000
+ R9A      HBI    CBI    HBI1    109.864    3.000
+ R9A      HBI    CBI    CBJ     109.642    3.000
+ R9A      HBI1   CBI    CBJ     109.784    3.000
+ R9A      CBI    CBJ    HBJ     108.928    3.000
+ R9A      CBI    CBJ    HBJ1    109.109    3.000
+ R9A      CBI    CBJ    CBK     112.544    3.000
+ R9A      HBJ    CBJ    HBJ1    108.358    3.000
+ R9A      HBJ    CBJ    CBK     108.801    3.000
+ R9A      HBJ1   CBJ    CBK     109.016    3.000
+ R9A      CBJ    CBK    HBK1    105.861    3.000
+ R9A      CBJ    CBK    HBK     109.649    3.000
+ R9A      CBJ    CBK    NBL     111.466    3.000
+ R9A      HBK1   CBK    HBK     109.689    3.000
+ R9A      HBK1   CBK    NBL     107.829    3.000
+ R9A      HBK    CBK    NBL     112.129    3.000
+ R9A      CBG    NBL    RU      104.981    3.000
+ R9A      CBG    NBL    CBK     108.036    3.000
+ R9A      RU     NBL    CBK     112.495    3.000
+ R9A      RU     NCA    CCB     114.817    3.000
+ R9A      RU     NCA    CCF     108.035    3.000
+ R9A      CCB    NCA    CCF     109.494    3.000
+ R9A      NCA    CCB    HCB     111.210    3.000
+ R9A      NCA    CCB    HCB1    112.706    3.000
+ R9A      NCA    CCB    CCC     108.345    3.000
+ R9A      HCB    CCB    HCB1    109.805    3.000
+ R9A      HCB    CCB    CCC     108.487    3.000
+ R9A      HCB1   CCB    CCC     106.064    3.000
+ R9A      CCB    CCC    HCC     109.033    3.000
+ R9A      CCB    CCC    HCC1    109.023    3.000
+ R9A      CCB    CCC    CCD     109.938    3.000
+ R9A      HCC    CCC    HCC1    110.127    3.000
+ R9A      HCC    CCC    CCD     109.326    3.000
+ R9A      HCC1   CCC    CCD     109.382    3.000
+ R9A      CCC    CCD    HCD     109.529    3.000
+ R9A      CCC    CCD    HCD1    109.393    3.000
+ R9A      CCC    CCD    CCE     108.289    3.000
+ R9A      HCD    CCD    HCD1    110.330    3.000
+ R9A      HCD    CCD    CCE     109.684    3.000
+ R9A      HCD1   CCD    CCE     109.583    3.000
+ R9A      CCD    CCE    HCE1    109.969    3.000
+ R9A      CCD    CCE    HCE     110.331    3.000
+ R9A      CCD    CCE    CCF     105.272    3.000
+ R9A      HCE1   CCE    HCE     111.561    3.000
+ R9A      HCE1   CCE    CCF     109.592    3.000
+ R9A      HCE    CCE    CCF     109.926    3.000
+ R9A      NCA    CCF    HCF     108.271    3.000
+ R9A      NCA    CCF    CCG     109.311    3.000
+ R9A      NCA    CCF    CCE     108.847    3.000
+ R9A      HCF    CCF    CCG     106.738    3.000
+ R9A      HCF    CCF    CCE     107.036    3.000
+ R9A      CCG    CCF    CCE     116.349    3.000
+ R9A      CCF    CCG    HCG     107.960    3.000
+ R9A      CCF    CCG    CCH     114.977    3.000
+ R9A      CCF    CCG    NCL     105.098    3.000
+ R9A      HCG    CCG    CCH     109.052    3.000
+ R9A      HCG    CCG    NCL     110.545    3.000
+ R9A      CCH    CCG    NCL     109.139    3.000
+ R9A      CCG    CCH    HCH     110.040    3.000
+ R9A      CCG    CCH    CCI     106.539    3.000
+ R9A      HCH    CCH    CCI     109.664    3.000
+ R9A      CCH    CCI    HCI     109.336    3.000
+ R9A      CCH    CCI    CCJ     108.851    3.000
+ R9A      HCI    CCI    CCJ     109.491    3.000
+ R9A      CCI    CCJ    HCJ     109.225    3.000
+ R9A      CCI    CCJ    HCJ1    109.314    3.000
+ R9A      CCI    CCJ    CCK     110.577    3.000
+ R9A      HCJ    CCJ    HCJ1    109.346    3.000
+ R9A      HCJ    CCJ    CCK     109.096    3.000
+ R9A      HCJ1   CCJ    CCK     109.265    3.000
+ R9A      CCJ    CCK    HCK1    107.969    3.000
+ R9A      CCJ    CCK    HCK     109.722    3.000
+ R9A      CCJ    CCK    NCL     109.901    3.000
+ R9A      HCK1   CCK    HCK     107.789    3.000
+ R9A      HCK1   CCK    NCL     109.173    3.000
+ R9A      HCK    CCK    NCL     112.173    3.000
+ R9A      CCG    NCL    RU      105.141    3.000
+ R9A      CCG    NCL    CCK     109.300    3.000
+ R9A      RU     NCL    CCK     110.131    3.000
+ R9A      RU     NAD    CAC     107.879    3.000
+ R9A      RU     NAD    CAE     133.082    3.000
+ R9A      CAC    NAD    CAE     119.039    3.000
+ R9A      NAD    CAC    CAB     119.992    3.000
+ R9A      NAD    CAC    CAH     119.503    3.000
+ R9A      CAB    CAC    CAH     120.498    3.000
+ R9A      NAD    CAE    HAE     120.034    3.000
+ R9A      NAD    CAE    CAF     121.788    3.000
+ R9A      HAE    CAE    CAF     118.164    3.000
+ R9A      CAE    CAF    HAF     118.970    3.000
+ R9A      CAE    CAF    CAG     121.708    3.000
+ R9A      HAF    CAF    CAG     119.321    3.000
+ R9A      CAF    CAG    HAG     120.345    3.000
+ R9A      CAF    CAG    CAH     119.281    3.000
+ R9A      HAG    CAG    CAH     120.374    3.000
+ R9A      CAG    CAH    CAI     122.026    3.000
+ R9A      CAG    CAH    CAC     118.431    3.000
+ R9A      CAI    CAH    CAC     119.542    3.000
+ R9A      CAH    CAI    HAI     120.099    3.000
+ R9A      CAH    CAI    CAJ     119.868    3.000
+ R9A      HAI    CAI    CAJ     120.033    3.000
+ R9A      CAI    CAJ    HAJ     118.891    3.000
+ R9A      CAI    CAJ    CAK     120.113    3.000
+ R9A      HAJ    CAJ    CAK     120.996    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ R9A      var_1    HM11   CM1    NNG    CNE      179.934   20.000   3
+ R9A      var_2    CM1    NNG    CM2    HM23    -120.038   20.000   3
+ R9A      var_3    CM1    NNG    CNE    CND      180.000   20.000   3
+ R9A      CONST_1  NNG    CNE    CNF    CNA      179.673    0.000   0
+ R9A      CONST_2  NNG    CNE    CND    CNC      180.000    0.000   0
+ R9A      CONST_3  CNE    CND    CNC    CNB        0.101    0.000   0
+ R9A      CONST_4  CND    CNC    CNB    CNA       -0.105    0.000   0
+ R9A      CONST_5  CNC    CNB    CNA    OL5      180.000    0.000   0
+ R9A      CONST_6  CNB    CNA    CNF    CNE        0.526    0.000   0
+ R9A      var_4    CNB    CNA    OL5    CL4        0.052   20.000   3
+ R9A      var_5    CNA    OL5    CL4    CL3      179.966   20.000   3
+ R9A      var_6    OL5    CL4    CL3    CL2      180.000   20.000   3
+ R9A      var_7    CL4    CL3    CL2    CL1     -179.966   20.000   3
+ R9A      var_8    CL3    CL2    CL1    CL0      180.000   20.000   3
+ R9A      var_9    CL2    CL1    CL0    CL5      179.966   20.000   3
+ R9A      var_10   CL1    CL0    CL5    CL6     -179.972   20.000   3
+ R9A      var_11   CL0    CL5    CL6    CL7     -179.972   20.000   3
+ R9A      var_12   CL5    CL6    CL7    CL8      180.000   20.000   3
+ R9A      var_13   CL6    CL7    CL8    CA0      179.956   20.000   3
+ R9A      var_14   CL7    CL8    CA0    CAM      -84.391   20.000   2
+ R9A      CONST_7  CL8    CA0    CAK    CAJ       -0.497    0.000   0
+ R9A      CONST_8  CA0    CAK    CAJ    CAI     -177.102    0.000   0
+ R9A      CONST_9  CA0    CAK    CAB    NAA       -2.729    0.000   0
+ R9A      CONST_10 CL8    CA0    CAM    CAN     -178.383    0.000   0
+ R9A      CONST_11 CA0    CAM    CAN    NAA        1.289    0.000   0
+ R9A      CONST_12 CAM    CAN    NAA    RU       174.545    0.000   0
+ R9A      CONST_13 CAN    NAA    CAB    CAK        6.134    0.000   0
+ R9A      CONST_14 NAA    CAB    CAC    NAD        0.485    0.000   0
+ R9A      CONST_15 CAN    NAA    RU     NAD      172.764    0.000   0
+ R9A      var_15   NAA    RU     NCL    CCG       65.002   20.000   3
+ R9A      var_16   NAA    RU     NBL    CBG      -35.593   20.000   3
+ R9A      var_17   NAA    RU     NBA    CBF     -131.076   20.000   3
+ R9A      var_18   RU     NBA    CBB    CBC     -167.372   20.000   3
+ R9A      var_19   NBA    CBB    CBC    CBD        6.135   20.000   3
+ R9A      var_20   CBB    CBC    CBD    CBE       24.280   20.000   3
+ R9A      var_21   CBC    CBD    CBE    CBF       -0.103   20.000   3
+ R9A      var_22   RU     NBA    CBF    CBG      -37.839   20.000   3
+ R9A      var_23   NBA    CBF    CBE    CBD      -50.979   20.000   3
+ R9A      var_24   NBA    CBF    CBG    NBL       -0.369   20.000   3
+ R9A      var_25   CBF    CBG    CBH    CBI     -161.326   20.000   3
+ R9A      var_26   CBG    CBH    CBI    CBJ      -60.260   20.000   3
+ R9A      var_27   CBH    CBI    CBJ    CBK       52.564   20.000   3
+ R9A      var_28   CBI    CBJ    CBK    NBL      -51.550   20.000   3
+ R9A      var_29   CBF    CBG    NBL    RU        38.516   20.000   3
+ R9A      var_30   CBG    NBL    CBK    CBJ       58.162   20.000   3
+ R9A      var_31   NAA    RU     NCA    CCF     -101.421   20.000   3
+ R9A      var_32   RU     NCA    CCB    CCC     -175.150   20.000   3
+ R9A      var_33   NCA    CCB    CCC    CCD      -58.375   20.000   3
+ R9A      var_34   CCB    CCC    CCD    CCE       57.785   20.000   3
+ R9A      var_35   CCC    CCD    CCE    CCF      -60.355   20.000   3
+ R9A      var_36   RU     NCA    CCF    CCG       36.977   20.000   3
+ R9A      var_37   NCA    CCF    CCE    CCD       65.801   20.000   3
+ R9A      var_38   NCA    CCF    CCG    NCL      -60.153   20.000   3
+ R9A      var_39   CCF    CCG    CCH    CCI     -177.467   20.000   3
+ R9A      var_40   CCG    CCH    CCI    CCJ      -59.355   20.000   3
+ R9A      var_41   CCH    CCI    CCJ    CCK       56.024   20.000   3
+ R9A      var_42   CCI    CCJ    CCK    NCL      -56.809   20.000   3
+ R9A      var_43   CCF    CCG    NCL    RU        51.185   20.000   3
+ R9A      var_44   CCG    NCL    CCK    CCJ       61.191   20.000   3
+ R9A      CONST_16 NAA    RU     NAD    CAE     -172.410    0.000   0
+ R9A      CONST_17 RU     NAD    CAC    CAB       -6.613    0.000   0
+ R9A      CONST_18 NAD    CAC    CAH    CAG        2.809    0.000   0
+ R9A      CONST_19 RU     NAD    CAE    CAF     -175.043    0.000   0
+ R9A      CONST_20 NAD    CAE    CAF    CAG       -1.326    0.000   0
+ R9A      CONST_21 CAE    CAF    CAG    CAH       -1.780    0.000   0
+ R9A      CONST_22 CAF    CAG    CAH    CAI     -179.086    0.000   0
+ R9A      CONST_23 CAG    CAH    CAI    CAJ      176.623    0.000   0
+ R9A      CONST_24 CAH    CAI    CAJ    CAK       -0.063    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ R9A      chir_01  NCL    RU     CCK    CCG       negativ
+                   .      .      .      .      .
+ R9A      chir_02  CCG    NCL    CCH    CCF       positiv
+                   .      .      .      .      .
+ R9A      chir_03  CCF    CCG    CCE    NCA       negativ
+                   .      .      .      .      .
+ R9A      chir_04  NCA    RU     CCF    CCB       positiv
+                   .      .      .      .      .
+ R9A      chir_05  NBL    RU     CBK    CBG       negativ
+                   .      .      .      .      .
+ R9A      chir_06  CBG    NBL    CBH    CBF       positiv
+                   .      .      .      .      .
+ R9A      chir_07  CBF    CBG    CBE    NBA       positiv
+                   .      .      .      .      .
+ R9A      chir_08  NBA    RU     CBF    CBB       negativ
+                   .      .      .      .      .
+ R9A      chir_09  RU     NAA    NBL    NCA       cross4
+                   NCL    NBA    NAD    .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ R9A      plan-1    NNG       0.020
+ R9A      plan-1    CM2       0.020
+ R9A      plan-1    CM1       0.020
+ R9A      plan-1    CNE       0.020
+ R9A      plan-2    CNE       0.020
+ R9A      plan-2    NNG       0.020
+ R9A      plan-2    CNF       0.020
+ R9A      plan-2    CND       0.020
+ R9A      plan-2    CNA       0.020
+ R9A      plan-2    CNB       0.020
+ R9A      plan-2    CNC       0.020
+ R9A      plan-2    HNF       0.020
+ R9A      plan-2    OL5       0.020
+ R9A      plan-2    HNB       0.020
+ R9A      plan-2    HNC       0.020
+ R9A      plan-2    HND       0.020
+ R9A      plan-3    CAK       0.020
+ R9A      plan-3    CAJ       0.020
+ R9A      plan-3    CAB       0.020
+ R9A      plan-3    CA0       0.020
+ R9A      plan-3    NAA       0.020
+ R9A      plan-3    CAN       0.020
+ R9A      plan-3    CAM       0.020
+ R9A      plan-3    CAI       0.020
+ R9A      plan-3    HAJ       0.020
+ R9A      plan-3    CAC       0.020
+ R9A      plan-3    CAH       0.020
+ R9A      plan-3    NAD       0.020
+ R9A      plan-3    CAG       0.020
+ R9A      plan-3    CAF       0.020
+ R9A      plan-3    CAE       0.020
+ R9A      plan-3    CL8       0.020
+ R9A      plan-3    HAI       0.020
+ R9A      plan-3    HAG       0.020
+ R9A      plan-3    HAF       0.020
+ R9A      plan-3    HAE       0.020
+ R9A      plan-3    RU        0.020
+ R9A      plan-3    HAN       0.020
+ R9A      plan-3    HAM       0.020
+ R9A      plan-4    CCI       0.020
+ R9A      plan-4    CCJ       0.020
+ R9A      plan-4    CCH       0.020
+ R9A      plan-4    HCI       0.020
+ R9A      plan-4    HCH       0.020
+ R9A      plan-5    CCH       0.020
+ R9A      plan-5    CCI       0.020
+ R9A      plan-5    CCG       0.020
+ R9A      plan-5    HCH       0.020
+ R9A      plan-5    HCI       0.020
+# ------------------------------------------------------

@@ -1,0 +1,150 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ALT      ALT 'THIOALANINE                         ' non-polymer        13   6 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ALT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ALT           S      S    S1        0.000      0.000    0.000    0.000
+ ALT           C      C    C         0.000     -0.883    0.245    1.310
+ ALT           OXT    O    OH1       0.000     -0.286    0.391    2.506
+ ALT           HXT    H    H         0.000      0.674    0.322    2.401
+ ALT           CA     C    CH1       0.000     -2.384    0.313    1.205
+ ALT           HA     H    H         0.000     -2.731    1.295    1.558
+ ALT           CB     C    CH3       0.000     -3.007   -0.787    2.065
+ ALT           HB3    H    H         0.000     -2.672   -1.733    1.727
+ ALT           HB2    H    H         0.000     -2.718   -0.652    3.076
+ ALT           HB1    H    H         0.000     -4.062   -0.740    1.991
+ ALT           N      N    NH2       0.000     -2.786    0.126   -0.195
+ ALT           H2     H    H         0.000     -2.086    0.074   -0.926
+ ALT           H      H    H         0.000     -3.766    0.047   -0.441
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ALT      S      n/a    C      START
+ ALT      C      S      CA     .
+ ALT      OXT    C      HXT    .
+ ALT      HXT    OXT    .      .
+ ALT      CA     C      N      .
+ ALT      HA     CA     .      .
+ ALT      CB     CA     HB1    .
+ ALT      HB3    CB     .      .
+ ALT      HB2    CB     .      .
+ ALT      HB1    CB     .      .
+ ALT      N      CA     H      .
+ ALT      H2     N      .      .
+ ALT      H      N      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ALT       N         CA        single    1.450     0.020     1.450     0.020     
+ALT       H         N         single    1.036     0.016     0.914     0.007     
+ALT       H2        N         single    1.036     0.016     0.914     0.007     
+ALT       CB        CA        single    1.524     0.020     1.524     0.020     
+ALT       CA        C         single    1.500     0.020     1.500     0.020     
+ALT       HA        CA        single    1.089     0.010     0.989     0.005     
+ALT       HB1       CB        single    1.089     0.010     0.989     0.005     
+ALT       HB2       CB        single    1.089     0.010     0.989     0.005     
+ALT       HB3       CB        single    1.089     0.010     0.989     0.005     
+ALT       C         S         double    1.565     0.020     1.565     0.020     
+ALT       OXT       C         single    1.330     0.020     1.330     0.020     
+ALT       HXT       OXT       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ALT      S      C      OXT     120.000    3.000
+ ALT      S      C      CA      120.000    3.000
+ ALT      OXT    C      CA      120.000    3.000
+ ALT      C      OXT    HXT     109.470    3.000
+ ALT      C      CA     HA      108.810    3.000
+ ALT      C      CA     CB      109.470    3.000
+ ALT      C      CA     N       109.470    3.000
+ ALT      HA     CA     CB      108.340    3.000
+ ALT      HA     CA     N       109.470    3.000
+ ALT      CB     CA     N       109.470    3.000
+ ALT      CA     CB     HB3     109.470    3.000
+ ALT      CA     CB     HB2     109.470    3.000
+ ALT      CA     CB     HB1     109.470    3.000
+ ALT      HB3    CB     HB2     109.470    3.000
+ ALT      HB3    CB     HB1     109.470    3.000
+ ALT      HB2    CB     HB1     109.470    3.000
+ ALT      CA     N      H2      120.000    3.000
+ ALT      CA     N      H       120.000    3.000
+ ALT      H2     N      H       120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ALT      var_1    S      C      OXT    HXT       -0.019   20.000   1
+ ALT      var_2    S      C      CA     N          0.040   20.000   3
+ ALT      var_3    C      CA     CB     HB1     -179.917   20.000   3
+ ALT      var_4    C      CA     N      H        173.739   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ALT      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ALT      plan-1    N         0.020
+ ALT      plan-1    CA        0.020
+ ALT      plan-1    H         0.020
+ ALT      plan-1    H2        0.020
+ ALT      plan-2    C         0.020
+ ALT      plan-2    CA        0.020
+ ALT      plan-2    S         0.020
+ ALT      plan-2    OXT       0.020
+# ------------------------------------------------------

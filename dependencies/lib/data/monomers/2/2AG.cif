@@ -1,0 +1,181 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2AG     2AG     "(2S)-2-aminopent-4-enoicacid"     peptide     17     8     .     
+#
+data_comp_2AG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2AG     C1A     C       C2      0       -11.443     19.923      -56.029     
+2AG     C1E     C       C1      0       -10.909     19.484      -57.125     
+2AG     CB      C       CH2     0       -9.966      18.329      -57.240     
+2AG     CA      C       CH1     0       -10.606     16.977      -56.907     
+2AG     C       C       C       0       -11.661     16.596      -57.954     
+2AG     O       O       O       0       -11.257     16.358      -59.109     
+2AG     OXT     O       OC      -1      -12.848     16.550      -57.574     
+2AG     N       N       NT3     1       -9.580      15.901      -56.815     
+2AG     H1A     H       H       0       -12.034     20.665      -56.051     
+2AG     H1AA    H       H       0       -11.245     19.502      -55.202     
+2AG     H1E     H       H       0       -11.133     19.934      -57.925     
+2AG     HB2     H       H       0       -9.215      18.478      -56.641     
+2AG     HB3     H       H       0       -9.619      18.299      -58.148     
+2AG     HA      H       H       0       -11.050     17.055      -56.030     
+2AG     H       H       H       0       -9.957      15.083      -56.959     
+2AG     H2      H       H       0       -9.205      15.903      -55.984     
+2AG     H3      H       H       0       -8.923      16.035      -57.433     
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 2AG      N      n/a    CA     START
+ 2AG      H      N      .      .
+ 2AG      H2     N      .      .
+ 2AG      H3     N      .      .
+ 2AG      CA     N      C      .
+ 2AG      HA     CA     .      .
+ 2AG      CB     CA     C1E    .
+ 2AG      HB2    CB     .      .
+ 2AG      HB3    CB     .      .
+ 2AG      C1E    CB     C1A    .
+ 2AG      H1E    C1E    .      .
+ 2AG      C1A    C1E    H1A    .
+ 2AG      H1AA   C1A    .      .
+ 2AG      H1A    C1A    .      .
+ 2AG      C      CA     .      END
+ 2AG      O      C      .      .
+ 2AG      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2AG       C1A       C1E       DOUBLE    n         1.296     0.020     1.296     0.020     
+2AG       C1E       CB        SINGLE    n         1.495     0.010     1.495     0.010     
+2AG       CB        CA        SINGLE    n         1.531     0.011     1.531     0.011     
+2AG       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+2AG       CA        N         SINGLE    n         1.488     0.010     1.488     0.010     
+2AG       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+2AG       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+2AG       C1A       H1A       SINGLE    n         1.082     0.013     0.949     0.020     
+2AG       C1A       H1AA      SINGLE    n         1.082     0.013     0.949     0.020     
+2AG       C1E       H1E       SINGLE    n         1.082     0.013     0.945     0.020     
+2AG       CB        HB2       SINGLE    n         1.089     0.010     0.972     0.010     
+2AG       CB        HB3       SINGLE    n         1.089     0.010     0.972     0.010     
+2AG       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+2AG       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+2AG       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+2AG       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2AG         C1E         C1A         H1A     120.077    2.71
+2AG         C1E         C1A        H1AA     120.077    2.71
+2AG         H1A         C1A        H1AA     119.846    2.15
+2AG         C1A         C1E          CB     125.820    3.00
+2AG         C1A         C1E         H1E     117.255    2.13
+2AG          CB         C1E         H1E     116.926    1.85
+2AG         C1E          CB          CA     113.351    1.50
+2AG         C1E          CB         HB2     108.659    1.50
+2AG         C1E          CB         HB3     108.659    1.50
+2AG          CA          CB         HB2     108.808    1.77
+2AG          CA          CB         HB3     108.808    1.77
+2AG         HB2          CB         HB3     107.673    1.50
+2AG          CB          CA           C     111.540    2.60
+2AG          CB          CA           N     111.386    1.50
+2AG          CB          CA          HA     108.539    1.53
+2AG           C          CA           N     109.241    1.50
+2AG           C          CA          HA     108.824    1.50
+2AG           N          CA          HA     108.487    1.50
+2AG          CA           C           O     117.124    1.50
+2AG          CA           C         OXT     117.124    1.50
+2AG           O           C         OXT     125.752    1.50
+2AG          CA           N           H     110.062    1.93
+2AG          CA           N          H2     110.062    1.93
+2AG          CA           N          H3     110.062    1.93
+2AG           H           N          H2     109.028    2.41
+2AG           H           N          H3     109.028    2.41
+2AG          H2           N          H3     109.028    2.41
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+2AG             sp2_sp2_1         H1A         C1A         C1E          CB     180.000   10.00     2
+2AG             sp2_sp3_2         C1A         C1E          CB          CA     120.000   10.00     6
+2AG             sp3_sp3_1           C          CA          CB         C1E     180.000   10.00     3
+2AG             sp2_sp3_7           O           C          CA          CB       0.000   10.00     6
+2AG            sp3_sp3_10          CB          CA           N           H     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+2AG    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+2AG    plan-1         C1A   0.020
+2AG    plan-1         C1E   0.020
+2AG    plan-1         H1A   0.020
+2AG    plan-1        H1AA   0.020
+2AG    plan-2         C1A   0.020
+2AG    plan-2         C1E   0.020
+2AG    plan-2          CB   0.020
+2AG    plan-2         H1E   0.020
+2AG    plan-3           C   0.020
+2AG    plan-3          CA   0.020
+2AG    plan-3           O   0.020
+2AG    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2AG SMILES           ACDLabs              12.01 "O=C(O)C(N)C/C=C"
+2AG SMILES_CANONICAL CACTVS               3.370 "N[C@@H](CC=C)C(O)=O"
+2AG SMILES           CACTVS               3.370 "N[CH](CC=C)C(O)=O"
+2AG SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 "C=CC[C@@H](C(=O)O)N"
+2AG SMILES           "OpenEye OEToolkits" 1.7.2 "C=CCC(C(=O)O)N"
+2AG InChI            InChI                1.03  "InChI=1S/C5H9NO2/c1-2-3-4(6)5(7)8/h2,4H,1,3,6H2,(H,7,8)/t4-/m0/s1"
+2AG InChIKey         InChI                1.03  WNNNWFKQCKFSDK-BYPYZUCNSA-N
+2AG ?                acedrg               196         "dictionary generator"                  
+2AG ?                acedrg_database      11          "data source"                           
+2AG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2AG ?                refmac5              5.8.0222    "optimization tool"                     

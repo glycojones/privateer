@@ -1,0 +1,773 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PFC      PFC 'PHENYLFERRICROCIN-IRON              ' non-polymer       104  56 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PFC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PFC           O17    O    O         0.000      0.000    0.000    0.000
+ PFC           C8     C    C         0.000     -0.171   -1.234    0.059
+ PFC           C17    C    CH2       0.000      0.846   -2.100    0.785
+ PFC           H172   H    H         0.000      0.666   -1.932    1.849
+ PFC           H171   H    H         0.000      1.822   -1.694    0.514
+ PFC           N9     N    NH1       0.000      0.818   -3.534    0.505
+ PFC           H9     H    H         0.000      0.599   -4.148    1.276
+ PFC           C2     C    C         0.000      1.057   -4.102   -0.675
+ PFC           O2     O    O         0.000      1.325   -3.413   -1.687
+ PFC           C11    C    CH1       0.000      1.012   -5.627   -0.728
+ PFC           H11    H    H         0.000      1.967   -5.977   -1.144
+ PFC           C38    C    CH2       0.000      0.913   -6.141    0.720
+ PFC           H382   H    H         0.000     -0.036   -5.777    1.117
+ PFC           H381   H    H         0.000      1.737   -5.684    1.271
+ PFC           C39    C    CR6       0.000      0.979   -7.639    0.866
+ PFC           C41    C    CR16      0.000      1.306   -8.467   -0.209
+ PFC           H41    H    H         0.000      1.524   -8.031   -1.175
+ PFC           C43    C    CR16      0.000      1.353   -9.857   -0.048
+ PFC           H43    H    H         0.000      1.614  -10.491   -0.886
+ PFC           C44    C    CR16      0.000      1.064  -10.424    1.196
+ PFC           H44    H    H         0.000      1.091  -11.499    1.322
+ PFC           C42    C    CR16      0.000      0.741   -9.604    2.271
+ PFC           H42    H    H         0.000      0.526  -10.038    3.239
+ PFC           C40    C    CR16      0.000      0.694   -8.222    2.100
+ PFC           H40    H    H         0.000      0.432   -7.591    2.939
+ PFC           N2     N    NH1       0.000     -0.063   -6.145   -1.576
+ PFC           H2     H    H         0.000      0.148   -6.920   -2.188
+ PFC           C5     C    C         0.000     -1.304   -5.657   -1.591
+ PFC           O5     O    O         0.000     -1.632   -4.710   -0.848
+ PFC           C14    C    CH2       0.000     -2.301   -6.291   -2.536
+ PFC           H142   H    H         0.000     -2.593   -7.250   -2.102
+ PFC           H141   H    H         0.000     -1.784   -6.464   -3.482
+ PFC           N7     N    NH1       0.000     -3.494   -5.478   -2.772
+ PFC           H7     H    H         0.000     -3.860   -4.935   -2.003
+ PFC           C1     C    C         0.000     -4.125   -5.412   -3.943
+ PFC           O1     O    O         0.000     -3.692   -6.071   -4.911
+ PFC           N4     N    NH1       0.000     -1.253   -1.753   -0.505
+ PFC           H4     H    H         0.000     -1.415   -2.749   -0.465
+ PFC           C16    C    CH1       0.000     -2.214   -0.884   -1.184
+ PFC           H16    H    H         0.000     -2.133    0.129   -0.765
+ PFC           C24    C    CH2       0.000     -1.913   -0.823   -2.683
+ PFC           H242   H    H         0.000     -1.122   -0.081   -2.817
+ PFC           H241   H    H         0.000     -2.823   -0.475   -3.176
+ PFC           C29    C    CH2       0.000     -1.480   -2.140   -3.289
+ PFC           H292   H    H         0.000     -2.247   -2.888   -3.080
+ PFC           H291   H    H         0.000     -0.540   -2.445   -2.825
+ PFC           C34    C    CH2       0.000     -1.288   -2.016   -4.789
+ PFC           H342   H    H         0.000     -1.468   -2.992   -5.243
+ PFC           H341   H    H         0.000     -0.257   -1.711   -4.981
+ PFC           N8     N    N         0.000     -2.208   -1.028   -5.366
+ PFC           O14    O    O2        0.000     -3.511   -1.435   -5.376
+ PFC           FE     FE   FE        0.000     -4.771    0.042   -5.754
+ PFC           O3     O    O2        0.000     -5.208   -0.294   -7.721
+ PFC           C3     C    C         0.000     -6.019   -1.216   -7.918
+ PFC           C36    C    CH3       0.000     -6.366   -1.640   -9.280
+ PFC           H361   H    H         0.000     -6.123   -2.661   -9.397
+ PFC           H362   H    H         0.000     -7.402   -1.498   -9.433
+ PFC           H363   H    H         0.000     -5.819   -1.059   -9.973
+ PFC           O6     O    O2        0.000     -5.666    1.862   -5.677
+ PFC           C6     C    C         0.000     -5.968    2.194   -4.506
+ PFC           C35    C    CH3       0.000     -6.739    3.422   -4.244
+ PFC           H351   H    H         0.000     -7.643    3.168   -3.758
+ PFC           H352   H    H         0.000     -6.170    4.065   -3.628
+ PFC           H353   H    H         0.000     -6.950    3.902   -5.163
+ PFC           O8     O    O2        0.000     -2.959    0.843   -6.308
+ PFC           C9     C    C         0.000     -1.984    0.185   -5.881
+ PFC           C37    C    CH3       0.000     -0.605    0.723   -5.931
+ PFC           H371   H    H         0.000     -0.219    0.784   -4.948
+ PFC           H372   H    H         0.000      0.000    0.079   -6.512
+ PFC           H373   H    H         0.000     -0.622    1.686   -6.367
+ PFC           O10    O    O2        0.000     -6.188   -1.340   -5.640
+ PFC           N5     N    N         0.000     -6.586   -1.806   -6.866
+ PFC           C30    C    CH2       0.000     -7.555   -2.911   -6.809
+ PFC           H302   H    H         0.000     -7.552   -3.401   -7.785
+ PFC           H301   H    H         0.000     -8.539   -2.475   -6.625
+ PFC           C25    C    CH2       0.000     -7.236   -3.940   -5.716
+ PFC           H252   H    H         0.000     -7.735   -4.869   -6.001
+ PFC           H251   H    H         0.000     -7.673   -3.563   -4.789
+ PFC           C18    C    CH2       0.000     -5.741   -4.205   -5.507
+ PFC           H182   H    H         0.000     -5.202   -3.304   -5.809
+ PFC           H181   H    H         0.000     -5.459   -5.033   -6.161
+ PFC           C10    C    CH1       0.000     -5.387   -4.552   -4.057
+ PFC           H10    H    H         0.000     -6.226   -5.113   -3.622
+ PFC           N1     N    NH1       0.000     -5.203   -3.337   -3.283
+ PFC           H1     H    H         0.000     -4.450   -2.706   -3.518
+ PFC           C4     C    C         0.000     -6.008   -3.041   -2.272
+ PFC           O4     O    O         0.000     -6.805   -3.902   -1.843
+ PFC           O11    O    O2        0.000     -4.861    0.304   -3.807
+ PFC           N6     N    N         0.000     -5.585    1.416   -3.480
+ PFC           C32    C    CH2       0.000     -5.823    1.553   -2.037
+ PFC           H322   H    H         0.000     -6.040    2.600   -1.815
+ PFC           H321   H    H         0.000     -4.922    1.248   -1.501
+ PFC           C27    C    CH2       0.000     -7.003    0.681   -1.595
+ PFC           H272   H    H         0.000     -7.929    1.188   -1.871
+ PFC           H271   H    H         0.000     -6.961    0.569   -0.509
+ PFC           C21    C    CH2       0.000     -6.959   -0.705   -2.256
+ PFC           H212   H    H         0.000     -6.736   -0.548   -3.314
+ PFC           H211   H    H         0.000     -7.955   -1.139   -2.156
+ PFC           C13    C    CH1       0.000     -5.919   -1.658   -1.649
+ PFC           H13    H    H         0.000     -6.105   -1.743   -0.569
+ PFC           N3     N    NH1       0.000     -4.565   -1.166   -1.856
+ PFC           H3     H    H         0.000     -4.340   -0.646   -2.692
+ PFC           C7     C    C         0.000     -3.625   -1.401   -0.948
+ PFC           O7     O    O         0.000     -3.905   -2.040    0.086
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PFC      O17    n/a    C8     START
+ PFC      C8     O17    N4     .
+ PFC      C17    C8     N9     .
+ PFC      H172   C17    .      .
+ PFC      H171   C17    .      .
+ PFC      N9     C17    C2     .
+ PFC      H9     N9     .      .
+ PFC      C2     N9     C11    .
+ PFC      O2     C2     .      .
+ PFC      C11    C2     N2     .
+ PFC      H11    C11    .      .
+ PFC      C38    C11    C39    .
+ PFC      H382   C38    .      .
+ PFC      H381   C38    .      .
+ PFC      C39    C38    C41    .
+ PFC      C41    C39    C43    .
+ PFC      H41    C41    .      .
+ PFC      C43    C41    C44    .
+ PFC      H43    C43    .      .
+ PFC      C44    C43    C42    .
+ PFC      H44    C44    .      .
+ PFC      C42    C44    C40    .
+ PFC      H42    C42    .      .
+ PFC      C40    C42    H40    .
+ PFC      H40    C40    .      .
+ PFC      N2     C11    C5     .
+ PFC      H2     N2     .      .
+ PFC      C5     N2     C14    .
+ PFC      O5     C5     .      .
+ PFC      C14    C5     N7     .
+ PFC      H142   C14    .      .
+ PFC      H141   C14    .      .
+ PFC      N7     C14    C1     .
+ PFC      H7     N7     .      .
+ PFC      C1     N7     O1     .
+ PFC      O1     C1     .      .
+ PFC      N4     C8     C16    .
+ PFC      H4     N4     .      .
+ PFC      C16    N4     C24    .
+ PFC      H16    C16    .      .
+ PFC      C24    C16    C29    .
+ PFC      H242   C24    .      .
+ PFC      H241   C24    .      .
+ PFC      C29    C24    C34    .
+ PFC      H292   C29    .      .
+ PFC      H291   C29    .      .
+ PFC      C34    C29    N8     .
+ PFC      H342   C34    .      .
+ PFC      H341   C34    .      .
+ PFC      N8     C34    O14    .
+ PFC      O14    N8     FE     .
+ PFC      FE     O14    O11    .
+ PFC      O3     FE     C3     .
+ PFC      C3     O3     C36    .
+ PFC      C36    C3     H363   .
+ PFC      H361   C36    .      .
+ PFC      H362   C36    .      .
+ PFC      H363   C36    .      .
+ PFC      O6     FE     C6     .
+ PFC      C6     O6     C35    .
+ PFC      C35    C6     H353   .
+ PFC      H351   C35    .      .
+ PFC      H352   C35    .      .
+ PFC      H353   C35    .      .
+ PFC      O8     FE     C9     .
+ PFC      C9     O8     C37    .
+ PFC      C37    C9     H373   .
+ PFC      H371   C37    .      .
+ PFC      H372   C37    .      .
+ PFC      H373   C37    .      .
+ PFC      O10    FE     N5     .
+ PFC      N5     O10    C30    .
+ PFC      C30    N5     C25    .
+ PFC      H302   C30    .      .
+ PFC      H301   C30    .      .
+ PFC      C25    C30    C18    .
+ PFC      H252   C25    .      .
+ PFC      H251   C25    .      .
+ PFC      C18    C25    C10    .
+ PFC      H182   C18    .      .
+ PFC      H181   C18    .      .
+ PFC      C10    C18    N1     .
+ PFC      H10    C10    .      .
+ PFC      N1     C10    C4     .
+ PFC      H1     N1     .      .
+ PFC      C4     N1     O4     .
+ PFC      O4     C4     .      .
+ PFC      O11    FE     N6     .
+ PFC      N6     O11    C32    .
+ PFC      C32    N6     C27    .
+ PFC      H322   C32    .      .
+ PFC      H321   C32    .      .
+ PFC      C27    C32    C21    .
+ PFC      H272   C27    .      .
+ PFC      H271   C27    .      .
+ PFC      C21    C27    C13    .
+ PFC      H212   C21    .      .
+ PFC      H211   C21    .      .
+ PFC      C13    C21    N3     .
+ PFC      H13    C13    .      .
+ PFC      N3     C13    C7     .
+ PFC      H3     N3     .      .
+ PFC      C7     N3     O7     .
+ PFC      O7     C7     .      END
+ PFC      C1     C10    .    ADD
+ PFC      C3     N5     .    ADD
+ PFC      C4     C13    .    ADD
+ PFC      C6     N6     .    ADD
+ PFC      C7     C16    .    ADD
+ PFC      C9     N8     .    ADD
+ PFC      C39    C40    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PFC       C1        C10       single    1.500     0.020     1.500     0.020     
+PFC       C1        N7        single    1.330     0.020     1.330     0.020     
+PFC       O1        C1        double    1.220     0.020     1.220     0.020     
+PFC       C11       C2        single    1.500     0.020     1.500     0.020     
+PFC       C2        N9        single    1.330     0.020     1.330     0.020     
+PFC       O2        C2        double    1.220     0.020     1.220     0.020     
+PFC       C3        N5        single    1.330     0.020     1.330     0.020     
+PFC       C3        O3        double    1.454     0.020     1.454     0.020     
+PFC       C36       C3        single    1.500     0.020     1.500     0.020     
+PFC       C4        C13       single    1.500     0.020     1.500     0.020     
+PFC       C4        N1        single    1.330     0.020     1.330     0.020     
+PFC       O4        C4        double    1.220     0.020     1.220     0.020     
+PFC       C14       C5        single    1.510     0.020     1.510     0.020     
+PFC       C5        N2        single    1.330     0.020     1.330     0.020     
+PFC       O5        C5        double    1.220     0.020     1.220     0.020     
+PFC       C6        N6        single    1.330     0.020     1.330     0.020     
+PFC       C6        O6        double    1.454     0.020     1.454     0.020     
+PFC       C35       C6        single    1.500     0.020     1.500     0.020     
+PFC       C7        C16       single    1.500     0.020     1.500     0.020     
+PFC       C7        N3        single    1.330     0.020     1.330     0.020     
+PFC       O7        C7        double    1.220     0.020     1.220     0.020     
+PFC       C17       C8        single    1.510     0.020     1.510     0.020     
+PFC       N4        C8        single    1.330     0.020     1.330     0.020     
+PFC       C8        O17       double    1.220     0.020     1.220     0.020     
+PFC       C9        N8        single    1.330     0.020     1.330     0.020     
+PFC       C9        O8        double    1.454     0.020     1.454     0.020     
+PFC       C37       C9        single    1.500     0.020     1.500     0.020     
+PFC       C10       C18       single    1.524     0.020     1.524     0.020     
+PFC       N1        C10       single    1.450     0.020     1.450     0.020     
+PFC       H10       C10       single    1.089     0.010     0.989     0.005     
+PFC       N2        C11       single    1.450     0.020     1.450     0.020     
+PFC       C38       C11       single    1.524     0.020     1.524     0.020     
+PFC       H11       C11       single    1.089     0.010     0.989     0.005     
+PFC       C13       C21       single    1.524     0.020     1.524     0.020     
+PFC       N3        C13       single    1.450     0.020     1.450     0.020     
+PFC       H13       C13       single    1.089     0.010     0.989     0.005     
+PFC       N7        C14       single    1.450     0.020     1.450     0.020     
+PFC       H142      C14       single    1.089     0.010     0.989     0.005     
+PFC       H141      C14       single    1.089     0.010     0.989     0.005     
+PFC       C24       C16       single    1.524     0.020     1.524     0.020     
+PFC       C16       N4        single    1.450     0.020     1.450     0.020     
+PFC       H16       C16       single    1.089     0.010     0.989     0.005     
+PFC       N9        C17       single    1.450     0.020     1.450     0.020     
+PFC       H172      C17       single    1.089     0.010     0.989     0.005     
+PFC       H171      C17       single    1.089     0.010     0.989     0.005     
+PFC       C18       C25       single    1.524     0.020     1.524     0.020     
+PFC       H182      C18       single    1.089     0.010     0.989     0.005     
+PFC       H181      C18       single    1.089     0.010     0.989     0.005     
+PFC       C21       C27       single    1.524     0.020     1.524     0.020     
+PFC       H212      C21       single    1.089     0.010     0.989     0.005     
+PFC       H211      C21       single    1.089     0.010     0.989     0.005     
+PFC       C29       C24       single    1.524     0.020     1.524     0.020     
+PFC       H242      C24       single    1.089     0.010     0.989     0.005     
+PFC       H241      C24       single    1.089     0.010     0.989     0.005     
+PFC       C25       C30       single    1.524     0.020     1.524     0.020     
+PFC       H252      C25       single    1.089     0.010     0.989     0.005     
+PFC       H251      C25       single    1.089     0.010     0.989     0.005     
+PFC       C27       C32       single    1.524     0.020     1.524     0.020     
+PFC       H272      C27       single    1.089     0.010     0.989     0.005     
+PFC       H271      C27       single    1.089     0.010     0.989     0.005     
+PFC       C34       C29       single    1.524     0.020     1.524     0.020     
+PFC       H292      C29       single    1.089     0.010     0.989     0.005     
+PFC       H291      C29       single    1.089     0.010     0.989     0.005     
+PFC       C30       N5        single    1.455     0.020     1.455     0.020     
+PFC       H302      C30       single    1.089     0.010     0.989     0.005     
+PFC       H301      C30       single    1.089     0.010     0.989     0.005     
+PFC       C32       N6        single    1.455     0.020     1.455     0.020     
+PFC       H322      C32       single    1.089     0.010     0.989     0.005     
+PFC       H321      C32       single    1.089     0.010     0.989     0.005     
+PFC       N8        C34       single    1.455     0.020     1.455     0.020     
+PFC       H342      C34       single    1.089     0.010     0.989     0.005     
+PFC       H341      C34       single    1.089     0.010     0.989     0.005     
+PFC       O3        FE        single    1.870     0.020     1.870     0.020     
+PFC       O6        FE        single    1.870     0.020     1.870     0.020     
+PFC       O8        FE        single    1.870     0.020     1.870     0.020     
+PFC       O10       FE        single    1.870     0.020     1.870     0.020     
+PFC       O11       FE        single    1.870     0.020     1.870     0.020     
+PFC       FE        O14       single    1.870     0.020     1.870     0.020     
+PFC       H1        N1        single    1.016     0.010     0.899     0.007     
+PFC       H2        N2        single    1.016     0.010     0.899     0.007     
+PFC       H3        N3        single    1.016     0.010     0.899     0.007     
+PFC       H4        N4        single    1.016     0.010     0.899     0.007     
+PFC       N5        O10       single    1.255     0.020     1.255     0.020     
+PFC       N6        O11       single    1.255     0.020     1.255     0.020     
+PFC       H7        N7        single    1.016     0.010     0.899     0.007     
+PFC       O14       N8        single    1.255     0.020     1.255     0.020     
+PFC       H9        N9        single    1.016     0.010     0.899     0.007     
+PFC       H353      C35       single    1.089     0.010     0.989     0.005     
+PFC       H352      C35       single    1.089     0.010     0.989     0.005     
+PFC       H351      C35       single    1.089     0.010     0.989     0.005     
+PFC       H363      C36       single    1.089     0.010     0.989     0.005     
+PFC       H362      C36       single    1.089     0.010     0.989     0.005     
+PFC       H361      C36       single    1.089     0.010     0.989     0.005     
+PFC       H373      C37       single    1.089     0.010     0.989     0.005     
+PFC       H372      C37       single    1.089     0.010     0.989     0.005     
+PFC       H371      C37       single    1.089     0.010     0.989     0.005     
+PFC       C39       C38       single    1.511     0.020     1.511     0.020     
+PFC       H382      C38       single    1.089     0.010     0.989     0.005     
+PFC       H381      C38       single    1.089     0.010     0.989     0.005     
+PFC       C39       C40       double    1.390     0.020     1.390     0.020     
+PFC       C41       C39       single    1.390     0.020     1.390     0.020     
+PFC       C40       C42       single    1.390     0.020     1.390     0.020     
+PFC       H40       C40       single    1.082     0.013     0.975     0.010     
+PFC       C43       C41       double    1.390     0.020     1.390     0.020     
+PFC       H41       C41       single    1.082     0.013     0.975     0.010     
+PFC       C42       C44       double    1.390     0.020     1.390     0.020     
+PFC       H42       C42       single    1.082     0.013     0.975     0.010     
+PFC       C44       C43       single    1.390     0.020     1.390     0.020     
+PFC       H43       C43       single    1.082     0.013     0.975     0.010     
+PFC       H44       C44       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PFC      O17    C8     C17     120.500    3.000
+ PFC      O17    C8     N4      123.000    3.000
+ PFC      C17    C8     N4      116.500    3.000
+ PFC      C8     C17    H172    109.470    3.000
+ PFC      C8     C17    H171    109.470    3.000
+ PFC      C8     C17    N9      111.600    3.000
+ PFC      H172   C17    H171    107.900    3.000
+ PFC      H172   C17    N9      109.470    3.000
+ PFC      H171   C17    N9      109.470    3.000
+ PFC      C17    N9     H9      118.500    3.000
+ PFC      C17    N9     C2      121.500    3.000
+ PFC      H9     N9     C2      120.000    3.000
+ PFC      N9     C2     O2      123.000    3.000
+ PFC      N9     C2     C11     116.500    3.000
+ PFC      O2     C2     C11     120.500    3.000
+ PFC      C2     C11    H11     108.810    3.000
+ PFC      C2     C11    C38     109.470    3.000
+ PFC      C2     C11    N2      111.600    3.000
+ PFC      H11    C11    C38     108.340    3.000
+ PFC      H11    C11    N2      108.550    3.000
+ PFC      C38    C11    N2      110.000    3.000
+ PFC      C11    C38    H382    109.470    3.000
+ PFC      C11    C38    H381    109.470    3.000
+ PFC      C11    C38    C39     109.470    3.000
+ PFC      H382   C38    H381    107.900    3.000
+ PFC      H382   C38    C39     109.470    3.000
+ PFC      H381   C38    C39     109.470    3.000
+ PFC      C38    C39    C41     120.000    3.000
+ PFC      C38    C39    C40     120.000    3.000
+ PFC      C41    C39    C40     120.000    3.000
+ PFC      C39    C41    H41     120.000    3.000
+ PFC      C39    C41    C43     120.000    3.000
+ PFC      H41    C41    C43     120.000    3.000
+ PFC      C41    C43    H43     120.000    3.000
+ PFC      C41    C43    C44     120.000    3.000
+ PFC      H43    C43    C44     120.000    3.000
+ PFC      C43    C44    H44     120.000    3.000
+ PFC      C43    C44    C42     120.000    3.000
+ PFC      H44    C44    C42     120.000    3.000
+ PFC      C44    C42    H42     120.000    3.000
+ PFC      C44    C42    C40     120.000    3.000
+ PFC      H42    C42    C40     120.000    3.000
+ PFC      C42    C40    H40     120.000    3.000
+ PFC      C42    C40    C39     120.000    3.000
+ PFC      H40    C40    C39     120.000    3.000
+ PFC      C11    N2     H2      118.500    3.000
+ PFC      C11    N2     C5      121.500    3.000
+ PFC      H2     N2     C5      120.000    3.000
+ PFC      N2     C5     O5      123.000    3.000
+ PFC      N2     C5     C14     116.500    3.000
+ PFC      O5     C5     C14     120.500    3.000
+ PFC      C5     C14    H142    109.470    3.000
+ PFC      C5     C14    H141    109.470    3.000
+ PFC      C5     C14    N7      111.600    3.000
+ PFC      H142   C14    H141    107.900    3.000
+ PFC      H142   C14    N7      109.470    3.000
+ PFC      H141   C14    N7      109.470    3.000
+ PFC      C14    N7     H7      118.500    3.000
+ PFC      C14    N7     C1      121.500    3.000
+ PFC      H7     N7     C1      120.000    3.000
+ PFC      N7     C1     O1      123.000    3.000
+ PFC      N7     C1     C10     116.500    3.000
+ PFC      O1     C1     C10     120.500    3.000
+ PFC      C8     N4     H4      120.000    3.000
+ PFC      C8     N4     C16     121.500    3.000
+ PFC      H4     N4     C16     118.500    3.000
+ PFC      N4     C16    H16     108.550    3.000
+ PFC      N4     C16    C24     110.000    3.000
+ PFC      N4     C16    C7      111.600    3.000
+ PFC      H16    C16    C24     108.340    3.000
+ PFC      H16    C16    C7      108.810    3.000
+ PFC      C24    C16    C7      109.470    3.000
+ PFC      C16    C24    H242    109.470    3.000
+ PFC      C16    C24    H241    109.470    3.000
+ PFC      C16    C24    C29     111.000    3.000
+ PFC      H242   C24    H241    107.900    3.000
+ PFC      H242   C24    C29     109.470    3.000
+ PFC      H241   C24    C29     109.470    3.000
+ PFC      C24    C29    H292    109.470    3.000
+ PFC      C24    C29    H291    109.470    3.000
+ PFC      C24    C29    C34     111.000    3.000
+ PFC      H292   C29    H291    107.900    3.000
+ PFC      H292   C29    C34     109.470    3.000
+ PFC      H291   C29    C34     109.470    3.000
+ PFC      C29    C34    H342    109.470    3.000
+ PFC      C29    C34    H341    109.470    3.000
+ PFC      C29    C34    N8      105.000    3.000
+ PFC      H342   C34    H341    107.900    3.000
+ PFC      H342   C34    N8      109.470    3.000
+ PFC      H341   C34    N8      109.470    3.000
+ PFC      C34    N8     O14     120.000    3.000
+ PFC      C34    N8     C9      127.000    3.000
+ PFC      O14    N8     C9      120.000    3.000
+ PFC      N8     O14    FE      120.000    3.000
+ PFC      O14    FE     O3       90.000    3.000
+ PFC      O14    FE     O6      144.000    3.000
+ PFC      O14    FE     O8       72.000    3.000
+ PFC      O14    FE     O10      72.000    3.000
+ PFC      O14    FE     O11      90.000    3.000
+ PFC      O3     FE     O6       90.000    3.000
+ PFC      O3     FE     O8       90.000    3.000
+ PFC      O6     FE     O8       72.000    3.000
+ PFC      O3     FE     O10      90.000    3.000
+ PFC      O6     FE     O10     144.000    3.000
+ PFC      O8     FE     O10     144.000    3.000
+ PFC      O3     FE     O11     180.000    3.000
+ PFC      O6     FE     O11      90.000    3.000
+ PFC      O8     FE     O11      90.000    3.000
+ PFC      O10    FE     O11      90.000    3.000
+ PFC      FE     O3     C3      120.000    3.000
+ PFC      O3     C3     C36     120.000    3.000
+ PFC      O3     C3     N5      120.000    3.000
+ PFC      C36    C3     N5      116.500    3.000
+ PFC      C3     C36    H361    109.470    3.000
+ PFC      C3     C36    H362    109.470    3.000
+ PFC      C3     C36    H363    109.470    3.000
+ PFC      H361   C36    H362    109.470    3.000
+ PFC      H361   C36    H363    109.470    3.000
+ PFC      H362   C36    H363    109.470    3.000
+ PFC      FE     O6     C6      120.000    3.000
+ PFC      O6     C6     C35     120.000    3.000
+ PFC      O6     C6     N6      120.000    3.000
+ PFC      C35    C6     N6      116.500    3.000
+ PFC      C6     C35    H351    109.470    3.000
+ PFC      C6     C35    H352    109.470    3.000
+ PFC      C6     C35    H353    109.470    3.000
+ PFC      H351   C35    H352    109.470    3.000
+ PFC      H351   C35    H353    109.470    3.000
+ PFC      H352   C35    H353    109.470    3.000
+ PFC      FE     O8     C9      120.000    3.000
+ PFC      O8     C9     C37     120.000    3.000
+ PFC      O8     C9     N8      120.000    3.000
+ PFC      C37    C9     N8      116.500    3.000
+ PFC      C9     C37    H371    109.470    3.000
+ PFC      C9     C37    H372    109.470    3.000
+ PFC      C9     C37    H373    109.470    3.000
+ PFC      H371   C37    H372    109.470    3.000
+ PFC      H371   C37    H373    109.470    3.000
+ PFC      H372   C37    H373    109.470    3.000
+ PFC      FE     O10    N5      120.000    3.000
+ PFC      O10    N5     C30     120.000    3.000
+ PFC      O10    N5     C3      120.000    3.000
+ PFC      C30    N5     C3      127.000    3.000
+ PFC      N5     C30    H302    109.470    3.000
+ PFC      N5     C30    H301    109.470    3.000
+ PFC      N5     C30    C25     105.000    3.000
+ PFC      H302   C30    H301    107.900    3.000
+ PFC      H302   C30    C25     109.470    3.000
+ PFC      H301   C30    C25     109.470    3.000
+ PFC      C30    C25    H252    109.470    3.000
+ PFC      C30    C25    H251    109.470    3.000
+ PFC      C30    C25    C18     111.000    3.000
+ PFC      H252   C25    H251    107.900    3.000
+ PFC      H252   C25    C18     109.470    3.000
+ PFC      H251   C25    C18     109.470    3.000
+ PFC      C25    C18    H182    109.470    3.000
+ PFC      C25    C18    H181    109.470    3.000
+ PFC      C25    C18    C10     111.000    3.000
+ PFC      H182   C18    H181    107.900    3.000
+ PFC      H182   C18    C10     109.470    3.000
+ PFC      H181   C18    C10     109.470    3.000
+ PFC      C18    C10    H10     108.340    3.000
+ PFC      C18    C10    N1      110.000    3.000
+ PFC      C18    C10    C1      109.470    3.000
+ PFC      H10    C10    N1      108.550    3.000
+ PFC      H10    C10    C1      108.810    3.000
+ PFC      N1     C10    C1      111.600    3.000
+ PFC      C10    N1     H1      118.500    3.000
+ PFC      C10    N1     C4      121.500    3.000
+ PFC      H1     N1     C4      120.000    3.000
+ PFC      N1     C4     O4      123.000    3.000
+ PFC      N1     C4     C13     116.500    3.000
+ PFC      O4     C4     C13     120.500    3.000
+ PFC      FE     O11    N6      120.000    3.000
+ PFC      O11    N6     C32     120.000    3.000
+ PFC      O11    N6     C6      120.000    3.000
+ PFC      C32    N6     C6      127.000    3.000
+ PFC      N6     C32    H322    109.470    3.000
+ PFC      N6     C32    H321    109.470    3.000
+ PFC      N6     C32    C27     105.000    3.000
+ PFC      H322   C32    H321    107.900    3.000
+ PFC      H322   C32    C27     109.470    3.000
+ PFC      H321   C32    C27     109.470    3.000
+ PFC      C32    C27    H272    109.470    3.000
+ PFC      C32    C27    H271    109.470    3.000
+ PFC      C32    C27    C21     111.000    3.000
+ PFC      H272   C27    H271    107.900    3.000
+ PFC      H272   C27    C21     109.470    3.000
+ PFC      H271   C27    C21     109.470    3.000
+ PFC      C27    C21    H212    109.470    3.000
+ PFC      C27    C21    H211    109.470    3.000
+ PFC      C27    C21    C13     111.000    3.000
+ PFC      H212   C21    H211    107.900    3.000
+ PFC      H212   C21    C13     109.470    3.000
+ PFC      H211   C21    C13     109.470    3.000
+ PFC      C21    C13    H13     108.340    3.000
+ PFC      C21    C13    N3      110.000    3.000
+ PFC      C21    C13    C4      109.470    3.000
+ PFC      H13    C13    N3      108.550    3.000
+ PFC      H13    C13    C4      108.810    3.000
+ PFC      N3     C13    C4      111.600    3.000
+ PFC      C13    N3     H3      118.500    3.000
+ PFC      C13    N3     C7      121.500    3.000
+ PFC      H3     N3     C7      120.000    3.000
+ PFC      N3     C7     O7      123.000    3.000
+ PFC      N3     C7     C16     116.500    3.000
+ PFC      O7     C7     C16     120.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PFC      var_1    O17    C8     C17    N9      -162.826   20.000   3
+ PFC      var_2    C8     C17    N9     C2        63.087   20.000   3
+ PFC      CONST_1  C17    N9     C2     C11      180.000    0.000   0
+ PFC      var_3    N9     C2     C11    N2       115.628   20.000   3
+ PFC      var_4    C2     C11    C38    C39     -174.927   20.000   3
+ PFC      var_5    C11    C38    C39    C41        9.134   20.000   2
+ PFC      CONST_2  C38    C39    C40    C42      180.000    0.000   0
+ PFC      CONST_3  C38    C39    C41    C43      180.000    0.000   0
+ PFC      CONST_4  C39    C41    C43    C44        0.000    0.000   0
+ PFC      CONST_5  C41    C43    C44    C42        0.000    0.000   0
+ PFC      CONST_6  C43    C44    C42    C40        0.000    0.000   0
+ PFC      CONST_7  C44    C42    C40    C39        0.000    0.000   0
+ PFC      var_6    C2     C11    N2     C5       -42.685   20.000   3
+ PFC      CONST_8  C11    N2     C5     C14      180.000    0.000   0
+ PFC      var_7    N2     C5     C14    N7      -163.414   20.000   3
+ PFC      var_8    C5     C14    N7     C1       144.108   20.000   3
+ PFC      CONST_9  C14    N7     C1     O1         0.000    0.000   0
+ PFC      var_9    N7     C1     C10    C18      161.460   20.000   3
+ PFC      CONST_10 O17    C8     N4     C16        0.000    0.000   0
+ PFC      var_10   C8     N4     C16    C24       94.584   20.000   3
+ PFC      var_11   N4     C16    C24    C29       38.937   20.000   3
+ PFC      var_12   C16    C24    C29    C34      176.336   20.000   3
+ PFC      var_13   C24    C29    C34    N8       -31.731   20.000   3
+ PFC      var_14   C29    C34    N8     O14      -70.527   20.000   1
+ PFC      var_15   C34    N8     O14    FE       180.000   20.000   1
+ PFC      var_16   N8     O14    FE     O8         0.000   20.000   1
+ PFC      var_17   C3     O3     FE     O10        0.000   20.000   1
+ PFC      var_18   FE     O3     C3     C36      180.000   20.000   1
+ PFC      CONST_11 O3     C3     N5     O10        0.000    0.000   0
+ PFC      var_19   O3     C3     C36    H363       0.843   20.000   1
+ PFC      var_20   C6     O6     FE     O11        0.000   20.000   1
+ PFC      var_21   FE     O6     C6     C35      180.000   20.000   1
+ PFC      CONST_12 O6     C6     N6     O11        0.000    0.000   0
+ PFC      var_22   O6     C6     C35    H353      -0.211   20.000   1
+ PFC      var_23   C9     O8     FE     O14        0.000   20.000   1
+ PFC      var_24   FE     O8     C9     C37      180.000   20.000   1
+ PFC      CONST_13 O8     C9     N8     C34      180.000    0.000   0
+ PFC      var_25   O8     C9     C37    H373      -0.324   20.000   1
+ PFC      var_26   N5     O10    FE     O3         0.000   20.000   1
+ PFC      var_27   FE     O10    N5     C30      180.000   20.000   1
+ PFC      var_28   O10    N5     C30    C25      -40.997   20.000   1
+ PFC      var_29   N5     C30    C25    C18      -36.523   20.000   3
+ PFC      var_30   C30    C25    C18    C10      148.157   20.000   3
+ PFC      var_31   C25    C18    C10    N1       -84.430   20.000   3
+ PFC      var_32   C18    C10    N1     C4       116.052   20.000   3
+ PFC      CONST_14 C10    N1     C4     O4         0.000    0.000   0
+ PFC      var_33   N1     C4     C13    C21       95.159   20.000   3
+ PFC      var_34   N6     O11    FE     O6         0.000   20.000   1
+ PFC      var_35   FE     O11    N6     C32      180.000   20.000   1
+ PFC      var_36   O11    N6     C32    C27      -81.500   20.000   1
+ PFC      var_37   N6     C32    C27    C21       42.371   20.000   3
+ PFC      var_38   C32    C27    C21    C13       76.120   20.000   3
+ PFC      var_39   C27    C21    C13    N3       -64.541   20.000   3
+ PFC      var_40   C21    C13    N3     C7       147.123   20.000   3
+ PFC      CONST_15 C13    N3     C7     O7         0.000    0.000   0
+ PFC      var_41   N3     C7     C16    N4      -151.709   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ PFC      chir_01  C10    C1     C18    N1        positiv
+                   .      .      .      .      .
+ PFC      chir_02  C11    C2     N2     C38       positiv
+                   .      .      .      .      .
+ PFC      chir_03  C13    C4     C21    N3        positiv
+                   .      .      .      .      .
+ PFC      chir_04  C16    C7     C24    N4        positiv
+                   .      .      .      .      .
+ PFC      chir_05  FE     O3     O11    O14       cross5
+                   O10    .      O6     O8     .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PFC      plan-1    C1        0.020
+ PFC      plan-1    C10       0.020
+ PFC      plan-1    N7        0.020
+ PFC      plan-1    O1        0.020
+ PFC      plan-1    H7        0.020
+ PFC      plan-2    C2        0.020
+ PFC      plan-2    C11       0.020
+ PFC      plan-2    N9        0.020
+ PFC      plan-2    O2        0.020
+ PFC      plan-2    H9        0.020
+ PFC      plan-3    C3        0.020
+ PFC      plan-3    N5        0.020
+ PFC      plan-3    O3        0.020
+ PFC      plan-3    C36       0.020
+ PFC      plan-4    C4        0.020
+ PFC      plan-4    C13       0.020
+ PFC      plan-4    N1        0.020
+ PFC      plan-4    O4        0.020
+ PFC      plan-4    H1        0.020
+ PFC      plan-5    C5        0.020
+ PFC      plan-5    C14       0.020
+ PFC      plan-5    N2        0.020
+ PFC      plan-5    O5        0.020
+ PFC      plan-5    H2        0.020
+ PFC      plan-6    C6        0.020
+ PFC      plan-6    N6        0.020
+ PFC      plan-6    O6        0.020
+ PFC      plan-6    C35       0.020
+ PFC      plan-7    C7        0.020
+ PFC      plan-7    C16       0.020
+ PFC      plan-7    N3        0.020
+ PFC      plan-7    O7        0.020
+ PFC      plan-7    H3        0.020
+ PFC      plan-8    C8        0.020
+ PFC      plan-8    C17       0.020
+ PFC      plan-8    N4        0.020
+ PFC      plan-8    O17       0.020
+ PFC      plan-8    H4        0.020
+ PFC      plan-9    C9        0.020
+ PFC      plan-9    N8        0.020
+ PFC      plan-9    O8        0.020
+ PFC      plan-9    C37       0.020
+ PFC      plan-10   N1        0.020
+ PFC      plan-10   C4        0.020
+ PFC      plan-10   C10       0.020
+ PFC      plan-10   H1        0.020
+ PFC      plan-11   N2        0.020
+ PFC      plan-11   C5        0.020
+ PFC      plan-11   C11       0.020
+ PFC      plan-11   H2        0.020
+ PFC      plan-12   N3        0.020
+ PFC      plan-12   C7        0.020
+ PFC      plan-12   C13       0.020
+ PFC      plan-12   H3        0.020
+ PFC      plan-13   N4        0.020
+ PFC      plan-13   C8        0.020
+ PFC      plan-13   C16       0.020
+ PFC      plan-13   H4        0.020
+ PFC      plan-14   N5        0.020
+ PFC      plan-14   C3        0.020
+ PFC      plan-14   C30       0.020
+ PFC      plan-14   O10       0.020
+ PFC      plan-15   N6        0.020
+ PFC      plan-15   C6        0.020
+ PFC      plan-15   C32       0.020
+ PFC      plan-15   O11       0.020
+ PFC      plan-16   N7        0.020
+ PFC      plan-16   C1        0.020
+ PFC      plan-16   C14       0.020
+ PFC      plan-16   H7        0.020
+ PFC      plan-17   N8        0.020
+ PFC      plan-17   C9        0.020
+ PFC      plan-17   C34       0.020
+ PFC      plan-17   O14       0.020
+ PFC      plan-18   N9        0.020
+ PFC      plan-18   C2        0.020
+ PFC      plan-18   C17       0.020
+ PFC      plan-18   H9        0.020
+ PFC      plan-19   C39       0.020
+ PFC      plan-19   C38       0.020
+ PFC      plan-19   C40       0.020
+ PFC      plan-19   C41       0.020
+ PFC      plan-19   C42       0.020
+ PFC      plan-19   C43       0.020
+ PFC      plan-19   C44       0.020
+ PFC      plan-19   H40       0.020
+ PFC      plan-19   H41       0.020
+ PFC      plan-19   H42       0.020
+ PFC      plan-19   H43       0.020
+ PFC      plan-19   H44       0.020
+# ------------------------------------------------------

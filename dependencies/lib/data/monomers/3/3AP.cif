@@ -1,0 +1,156 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3AP     3AP     3-AMINOPYRIDINE     NON-POLYMER     14     7     .     
+#
+data_comp_3AP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3AP     N1      N       NR6     1       33.141      93.261      47.881      
+3AP     C2      C       CR16    0       32.233      93.253      46.882      
+3AP     C3      C       CR6     0       30.913      93.668      47.110      
+3AP     C4      C       CR16    0       30.596      94.118      48.416      
+3AP     C5      C       CR16    0       31.563      94.105      49.416      
+3AP     C6      C       CR16    0       32.851      93.670      49.131      
+3AP     N3      N       NH2     0       29.999      93.636      46.128      
+3AP     HN1     H       H       0       33.962      92.982      47.697      
+3AP     H2      H       H       0       32.493      92.965      46.025      
+3AP     H4      H       H       0       29.724      94.427      48.603      
+3AP     H5      H       H       0       31.342      94.392      50.286      
+3AP     H6      H       H       0       33.517      93.659      49.796      
+3AP     HN31    H       H       0       30.218      93.346      45.334      
+3AP     HN32    H       H       0       29.185      93.905      46.283      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3AP       N1        C2        DOUBLE    n         1.338     0.014     1.338     0.014     
+3AP       N1        C6        SINGLE    n         1.338     0.014     1.338     0.014     
+3AP       C2        C3        SINGLE    n         1.389     0.013     1.389     0.013     
+3AP       C3        C4        DOUBLE    n         1.405     0.012     1.405     0.012     
+3AP       C3        N3        SINGLE    n         1.338     0.015     1.338     0.015     
+3AP       C4        C5        SINGLE    n         1.380     0.013     1.380     0.013     
+3AP       C5        C6        DOUBLE    n         1.378     0.015     1.378     0.015     
+3AP       N1        HN1       SINGLE    n         1.016     0.010     0.886     0.020     
+3AP       C2        H2        SINGLE    n         1.082     0.013     0.941     0.017     
+3AP       C4        H4        SINGLE    n         1.082     0.013     0.943     0.020     
+3AP       C5        H5        SINGLE    n         1.082     0.013     0.942     0.017     
+3AP       C6        H6        SINGLE    n         1.082     0.013     0.941     0.017     
+3AP       N3        HN31      SINGLE    n         1.016     0.010     0.871     0.020     
+3AP       N3        HN32      SINGLE    n         1.016     0.010     0.871     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3AP          C2          N1          C6     123.262    1.50
+3AP          C2          N1         HN1     117.668    2.67
+3AP          C6          N1         HN1     119.070    2.17
+3AP          N1          C2          C3     120.645    1.50
+3AP          N1          C2          H2     119.360    1.50
+3AP          C3          C2          H2     119.995    1.50
+3AP          C2          C3          C4     116.667    1.50
+3AP          C2          C3          N3     121.057    1.50
+3AP          C4          C3          N3     122.276    1.50
+3AP          C3          C4          C5     119.561    1.50
+3AP          C3          C4          H4     119.935    1.50
+3AP          C5          C4          H4     120.504    1.50
+3AP          C4          C5          C6     120.208    1.50
+3AP          C4          C5          H5     119.774    1.50
+3AP          C6          C5          H5     120.017    1.50
+3AP          N1          C6          C5     119.656    1.50
+3AP          N1          C6          H6     119.657    1.50
+3AP          C5          C6          H6     120.687    1.70
+3AP          C3          N3        HN31     119.892    2.02
+3AP          C3          N3        HN32     119.884    2.02
+3AP        HN31          N3        HN32     120.208    1.77
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3AP             sp2_sp2_1          C3          C2          N1          C6       0.000   10.00     2
+3AP            sp2_sp2_21          C5          C6          N1          C2       0.000   10.00     2
+3AP             sp2_sp2_6          N1          C2          C3          N3     180.000   10.00     2
+3AP            sp2_sp2_11          N3          C3          C4          C5     180.000   10.00     2
+3AP            sp2_sp2_25          C2          C3          N3        HN31     180.000   10.00     2
+3AP            sp2_sp2_13          C3          C4          C5          C6       0.000   10.00     2
+3AP            sp2_sp2_17          C4          C5          C6          N1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+3AP    plan-1          C2   0.020
+3AP    plan-1          C6   0.020
+3AP    plan-1         HN1   0.020
+3AP    plan-1          N1   0.020
+3AP    plan-2          C2   0.020
+3AP    plan-2          C3   0.020
+3AP    plan-2          H2   0.020
+3AP    plan-2          N1   0.020
+3AP    plan-3          C2   0.020
+3AP    plan-3          C3   0.020
+3AP    plan-3          C4   0.020
+3AP    plan-3          N3   0.020
+3AP    plan-4          C3   0.020
+3AP    plan-4          C4   0.020
+3AP    plan-4          C5   0.020
+3AP    plan-4          H4   0.020
+3AP    plan-5          C4   0.020
+3AP    plan-5          C5   0.020
+3AP    plan-5          C6   0.020
+3AP    plan-5          H5   0.020
+3AP    plan-6          C5   0.020
+3AP    plan-6          C6   0.020
+3AP    plan-6          H6   0.020
+3AP    plan-6          N1   0.020
+3AP    plan-7          C3   0.020
+3AP    plan-7        HN31   0.020
+3AP    plan-7        HN32   0.020
+3AP    plan-7          N3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3AP SMILES           ACDLabs              10.04 "Nc1ccc[nH+]c1"
+3AP SMILES_CANONICAL CACTVS               3.341 "Nc1ccc[nH+]c1"
+3AP SMILES           CACTVS               3.341 "Nc1ccc[nH+]c1"
+3AP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c[nH+]c1)N"
+3AP SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c[nH+]c1)N"
+3AP InChI            InChI                1.03  InChI=1S/C5H6N2/c6-5-2-1-3-7-4-5/h1-4H,6H2/p+1
+3AP InChIKey         InChI                1.03  CUYKNJBYIJFRCU-UHFFFAOYSA-O
+3AP ?                acedrg               190         "dictionary generator"                  
+3AP ?                acedrg_database      11          "data source"                           
+3AP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3AP ?                refmac5              5.8.0158    "optimization tool"                     

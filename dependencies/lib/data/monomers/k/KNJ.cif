@@ -1,0 +1,574 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KNJ      KNJ '(4R)-3-[(2S,3S)-3-{[(4-amino-2,6-dim' non-polymer        80  40 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_KNJ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ KNJ           O5     O    O         0.000      0.000    0.000    0.000
+ KNJ           C26    C    C         0.000      0.522   -1.085    0.156
+ KNJ           N5     N    NH1       0.000      1.865   -1.187    0.186
+ KNJ           HN5    H    H         0.000      2.300   -2.090    0.315
+ KNJ           C27    C    CH2       0.000      2.695    0.010    0.030
+ KNJ           H27    H    H         0.000      2.466    0.718    0.829
+ KNJ           H27A   H    H         0.000      2.486    0.474   -0.937
+ KNJ           C28    C    C         0.000      4.150   -0.377    0.100
+ KNJ           C29    C    C2        0.000      4.822   -0.605   -1.002
+ KNJ           H29A   H    H         0.000      5.860   -0.879   -0.948
+ KNJ           H29    H    H         0.000      4.332   -0.516   -1.955
+ KNJ           C30    C    CH3       0.000      4.833   -0.499    1.437
+ KNJ           H30B   H    H         0.000      5.861   -0.261    1.334
+ KNJ           H30A   H    H         0.000      4.385    0.169    2.126
+ KNJ           H30    H    H         0.000      4.737   -1.491    1.795
+ KNJ           C21    C    CH1       0.000     -0.333   -2.316    0.317
+ KNJ           H21    H    H         0.000      0.083   -2.929    1.129
+ KNJ           C22    C    CT        0.000     -0.286   -3.133   -0.994
+ KNJ           C23    C    CH3       0.000      0.023   -2.229   -2.189
+ KNJ           H23B   H    H         0.000      1.009   -1.851   -2.102
+ KNJ           H23A   H    H         0.000     -0.061   -2.787   -3.086
+ KNJ           H23    H    H         0.000     -0.663   -1.422   -2.210
+ KNJ           C24    C    CH3       0.000      0.728   -4.276   -0.897
+ KNJ           H24B   H    H         0.000      1.706   -3.876   -0.823
+ KNJ           H24A   H    H         0.000      0.521   -4.861   -0.038
+ KNJ           H24    H    H         0.000      0.660   -4.884   -1.762
+ KNJ           S2     S    S2        0.000     -2.008   -3.781   -1.082
+ KNJ           C25    C    CH2       0.000     -2.739   -2.305   -0.259
+ KNJ           H25    H    H         0.000     -3.652   -2.539    0.293
+ KNJ           H25A   H    H         0.000     -2.936   -1.487   -0.955
+ KNJ           N4     N    N         0.000     -1.679   -1.905    0.687
+ KNJ           C20    C    C         0.000     -1.939   -1.205    1.810
+ KNJ           O4     O    O         0.000     -1.033   -0.899    2.556
+ KNJ           C19    C    CH1       0.000     -3.354   -0.804    2.136
+ KNJ           H19    H    H         0.000     -3.995   -1.697    2.146
+ KNJ           O2     O    OH1       0.000     -3.387   -0.180    3.422
+ KNJ           HO2    H    H         0.000     -2.823    0.606    3.412
+ KNJ           C11    C    CH1       0.000     -3.863    0.178    1.079
+ KNJ           H11    H    H         0.000     -3.754   -0.270    0.081
+ KNJ           C12    C    CH2       0.000     -3.049    1.471    1.150
+ KNJ           H12    H    H         0.000     -1.987    1.238    1.053
+ KNJ           H12A   H    H         0.000     -3.227    1.961    2.109
+ KNJ           C13    C    CR6       0.000     -3.466    2.389    0.030
+ KNJ           C14    C    CR16      0.000     -4.491    3.297    0.227
+ KNJ           H14    H    H         0.000     -4.993    3.347    1.186
+ KNJ           C15    C    CR16      0.000     -4.874    4.139   -0.800
+ KNJ           H15    H    H         0.000     -5.677    4.849   -0.646
+ KNJ           C18    C    CR16      0.000     -2.821    2.329   -1.190
+ KNJ           H18    H    H         0.000     -2.013    1.625   -1.341
+ KNJ           C17    C    CR16      0.000     -3.208    3.168   -2.219
+ KNJ           H17    H    H         0.000     -2.708    3.115   -3.178
+ KNJ           C16    C    CR16      0.000     -4.233    4.075   -2.023
+ KNJ           H16    H    H         0.000     -4.534    4.735   -2.828
+ KNJ           N3     N    NH1       0.000     -5.275    0.476    1.329
+ KNJ           HN3    H    H         0.000     -5.655    0.380    2.260
+ KNJ           C10    C    C         0.000     -6.068    0.878    0.317
+ KNJ           O6     O    O         0.000     -5.613    0.994   -0.801
+ KNJ           C9     C    CH2       0.000     -7.521    1.185    0.574
+ KNJ           H9     H    H         0.000     -7.597    1.990    1.307
+ KNJ           H9A    H    H         0.000     -8.017    0.293    0.962
+ KNJ           O1     O    O2        0.000     -8.147    1.588   -0.646
+ KNJ           C8     C    CR6       0.000     -9.468    1.902   -0.588
+ KNJ           C2     C    CR6       0.000    -10.425    0.917   -0.786
+ KNJ           C1     C    CH3       0.000     -9.999   -0.501   -1.067
+ KNJ           H1B    H    H         0.000     -9.073   -0.693   -0.589
+ KNJ           H1A    H    H         0.000    -10.732   -1.170   -0.697
+ KNJ           H1     H    H         0.000     -9.892   -0.638   -2.112
+ KNJ           C7     C    CR6       0.000     -9.860    3.207   -0.326
+ KNJ           C6     C    CH3       0.000     -8.819    4.275   -0.104
+ KNJ           H6B    H    H         0.000     -7.946    4.036   -0.653
+ KNJ           H6A    H    H         0.000     -9.197    5.209   -0.430
+ KNJ           H6     H    H         0.000     -8.584    4.330    0.927
+ KNJ           C5     C    CR16      0.000    -11.202    3.528   -0.272
+ KNJ           H5     H    H         0.000    -11.507    4.548   -0.071
+ KNJ           C4     C    CR6       0.000    -12.160    2.544   -0.475
+ KNJ           N1     N    NH2       0.000    -13.520    2.869   -0.422
+ KNJ           HN1A   H    H         0.000    -14.233    2.157   -0.570
+ KNJ           HN1    H    H         0.000    -13.821    3.823   -0.233
+ KNJ           C3     C    CR16      0.000    -11.768    1.238   -0.733
+ KNJ           H3     H    H         0.000    -12.514    0.470   -0.893
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ KNJ      O5     n/a    C26    START
+ KNJ      C26    O5     C21    .
+ KNJ      N5     C26    C27    .
+ KNJ      HN5    N5     .      .
+ KNJ      C27    N5     C28    .
+ KNJ      H27    C27    .      .
+ KNJ      H27A   C27    .      .
+ KNJ      C28    C27    C30    .
+ KNJ      C29    C28    H29    .
+ KNJ      H29A   C29    .      .
+ KNJ      H29    C29    .      .
+ KNJ      C30    C28    H30    .
+ KNJ      H30B   C30    .      .
+ KNJ      H30A   C30    .      .
+ KNJ      H30    C30    .      .
+ KNJ      C21    C26    C22    .
+ KNJ      H21    C21    .      .
+ KNJ      C22    C21    S2     .
+ KNJ      C23    C22    H23    .
+ KNJ      H23B   C23    .      .
+ KNJ      H23A   C23    .      .
+ KNJ      H23    C23    .      .
+ KNJ      C24    C22    H24    .
+ KNJ      H24B   C24    .      .
+ KNJ      H24A   C24    .      .
+ KNJ      H24    C24    .      .
+ KNJ      S2     C22    C25    .
+ KNJ      C25    S2     N4     .
+ KNJ      H25    C25    .      .
+ KNJ      H25A   C25    .      .
+ KNJ      N4     C25    C20    .
+ KNJ      C20    N4     C19    .
+ KNJ      O4     C20    .      .
+ KNJ      C19    C20    C11    .
+ KNJ      H19    C19    .      .
+ KNJ      O2     C19    HO2    .
+ KNJ      HO2    O2     .      .
+ KNJ      C11    C19    N3     .
+ KNJ      H11    C11    .      .
+ KNJ      C12    C11    C13    .
+ KNJ      H12    C12    .      .
+ KNJ      H12A   C12    .      .
+ KNJ      C13    C12    C18    .
+ KNJ      C14    C13    C15    .
+ KNJ      H14    C14    .      .
+ KNJ      C15    C14    H15    .
+ KNJ      H15    C15    .      .
+ KNJ      C18    C13    C17    .
+ KNJ      H18    C18    .      .
+ KNJ      C17    C18    C16    .
+ KNJ      H17    C17    .      .
+ KNJ      C16    C17    H16    .
+ KNJ      H16    C16    .      .
+ KNJ      N3     C11    C10    .
+ KNJ      HN3    N3     .      .
+ KNJ      C10    N3     C9     .
+ KNJ      O6     C10    .      .
+ KNJ      C9     C10    O1     .
+ KNJ      H9     C9     .      .
+ KNJ      H9A    C9     .      .
+ KNJ      O1     C9     C8     .
+ KNJ      C8     O1     C7     .
+ KNJ      C2     C8     C1     .
+ KNJ      C1     C2     H1     .
+ KNJ      H1B    C1     .      .
+ KNJ      H1A    C1     .      .
+ KNJ      H1     C1     .      .
+ KNJ      C7     C8     C5     .
+ KNJ      C6     C7     H6     .
+ KNJ      H6B    C6     .      .
+ KNJ      H6A    C6     .      .
+ KNJ      H6     C6     .      .
+ KNJ      C5     C7     C4     .
+ KNJ      H5     C5     .      .
+ KNJ      C4     C5     C3     .
+ KNJ      N1     C4     HN1    .
+ KNJ      HN1A   N1     .      .
+ KNJ      HN1    N1     .      .
+ KNJ      C3     C4     H3     .
+ KNJ      H3     C3     .      END
+ KNJ      C2     C3     .    ADD
+ KNJ      C16    C15    .    ADD
+ KNJ      N4     C21    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KNJ       C6        C7        single    1.506     0.020     1.506     0.020     
+KNJ       C5        C7        double    1.390     0.020     1.390     0.020     
+KNJ       C7        C8        single    1.487     0.020     1.487     0.020     
+KNJ       C4        C5        single    1.390     0.020     1.390     0.020     
+KNJ       N1        C4        single    1.355     0.020     1.355     0.020     
+KNJ       C3        C4        double    1.390     0.020     1.390     0.020     
+KNJ       C2        C3        single    1.390     0.020     1.390     0.020     
+KNJ       C1        C2        single    1.506     0.020     1.506     0.020     
+KNJ       C2        C8        double    1.487     0.020     1.487     0.020     
+KNJ       C8        O1        single    1.370     0.020     1.370     0.020     
+KNJ       O1        C9        single    1.426     0.020     1.426     0.020     
+KNJ       C9        C10       single    1.510     0.020     1.510     0.020     
+KNJ       O6        C10       double    1.220     0.020     1.220     0.020     
+KNJ       C10       N3        single    1.330     0.020     1.330     0.020     
+KNJ       N3        C11       single    1.450     0.020     1.450     0.020     
+KNJ       C12       C11       single    1.524     0.020     1.524     0.020     
+KNJ       C11       C19       single    1.524     0.020     1.524     0.020     
+KNJ       C13       C12       single    1.511     0.020     1.511     0.020     
+KNJ       C14       C13       double    1.390     0.020     1.390     0.020     
+KNJ       C18       C13       single    1.390     0.020     1.390     0.020     
+KNJ       C15       C14       single    1.390     0.020     1.390     0.020     
+KNJ       C16       C15       double    1.390     0.020     1.390     0.020     
+KNJ       C16       C17       single    1.390     0.020     1.390     0.020     
+KNJ       C17       C18       double    1.390     0.020     1.390     0.020     
+KNJ       O2        C19       single    1.432     0.020     1.432     0.020     
+KNJ       C19       C20       single    1.500     0.020     1.500     0.020     
+KNJ       O4        C20       double    1.220     0.020     1.220     0.020     
+KNJ       C20       N4        single    1.330     0.020     1.330     0.020     
+KNJ       N4        C25       single    1.455     0.020     1.455     0.020     
+KNJ       N4        C21       single    1.455     0.020     1.455     0.020     
+KNJ       C25       S2        single    1.762     0.020     1.762     0.020     
+KNJ       S2        C22       single    1.762     0.020     1.762     0.020     
+KNJ       C24       C22       single    1.524     0.020     1.524     0.020     
+KNJ       C23       C22       single    1.524     0.020     1.524     0.020     
+KNJ       C22       C21       single    1.524     0.020     1.524     0.020     
+KNJ       C21       C26       single    1.500     0.020     1.500     0.020     
+KNJ       C26       O5        double    1.220     0.020     1.220     0.020     
+KNJ       N5        C26       single    1.330     0.020     1.330     0.020     
+KNJ       C27       N5        single    1.450     0.020     1.450     0.020     
+KNJ       C28       C27       single    1.510     0.020     1.510     0.020     
+KNJ       C30       C28       single    1.500     0.020     1.500     0.020     
+KNJ       C29       C28       double    1.320     0.020     1.320     0.020     
+KNJ       H6        C6        single    1.089     0.010     0.989     0.005     
+KNJ       H6A       C6        single    1.089     0.010     0.989     0.005     
+KNJ       H6B       C6        single    1.089     0.010     0.989     0.005     
+KNJ       H5        C5        single    1.082     0.013     0.975     0.010     
+KNJ       HN1       N1        single    1.016     0.010     0.899     0.007     
+KNJ       HN1A      N1        single    1.016     0.010     0.899     0.007     
+KNJ       H3        C3        single    1.082     0.013     0.975     0.010     
+KNJ       H1        C1        single    1.089     0.010     0.989     0.005     
+KNJ       H1A       C1        single    1.089     0.010     0.989     0.005     
+KNJ       H1B       C1        single    1.089     0.010     0.989     0.005     
+KNJ       H9        C9        single    1.089     0.010     0.989     0.005     
+KNJ       H9A       C9        single    1.089     0.010     0.989     0.005     
+KNJ       HN3       N3        single    1.016     0.010     0.899     0.007     
+KNJ       H11       C11       single    1.089     0.010     0.989     0.005     
+KNJ       H12       C12       single    1.089     0.010     0.989     0.005     
+KNJ       H12A      C12       single    1.089     0.010     0.989     0.005     
+KNJ       H14       C14       single    1.082     0.013     0.975     0.010     
+KNJ       H15       C15       single    1.082     0.013     0.975     0.010     
+KNJ       H16       C16       single    1.082     0.013     0.975     0.010     
+KNJ       H17       C17       single    1.082     0.013     0.975     0.010     
+KNJ       H18       C18       single    1.082     0.013     0.975     0.010     
+KNJ       H19       C19       single    1.089     0.010     0.989     0.005     
+KNJ       HO2       O2        single    0.970     0.012     0.839     0.014     
+KNJ       H25       C25       single    1.089     0.010     0.989     0.005     
+KNJ       H25A      C25       single    1.089     0.010     0.989     0.005     
+KNJ       H24       C24       single    1.089     0.010     0.989     0.005     
+KNJ       H24A      C24       single    1.089     0.010     0.989     0.005     
+KNJ       H24B      C24       single    1.089     0.010     0.989     0.005     
+KNJ       H23       C23       single    1.089     0.010     0.989     0.005     
+KNJ       H23A      C23       single    1.089     0.010     0.989     0.005     
+KNJ       H23B      C23       single    1.089     0.010     0.989     0.005     
+KNJ       H21       C21       single    1.089     0.010     0.989     0.005     
+KNJ       HN5       N5        single    1.016     0.010     0.899     0.007     
+KNJ       H27       C27       single    1.089     0.010     0.989     0.005     
+KNJ       H27A      C27       single    1.089     0.010     0.989     0.005     
+KNJ       H30       C30       single    1.089     0.010     0.989     0.005     
+KNJ       H30A      C30       single    1.089     0.010     0.989     0.005     
+KNJ       H30B      C30       single    1.089     0.010     0.989     0.005     
+KNJ       H29       C29       single    1.082     0.013     0.975     0.010     
+KNJ       H29A      C29       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ KNJ      O5     C26    N5      123.000    3.000
+ KNJ      O5     C26    C21     120.500    3.000
+ KNJ      N5     C26    C21     116.500    3.000
+ KNJ      C26    N5     HN5     120.000    3.000
+ KNJ      C26    N5     C27     121.500    3.000
+ KNJ      HN5    N5     C27     118.500    3.000
+ KNJ      N5     C27    H27     109.470    3.000
+ KNJ      N5     C27    H27A    109.470    3.000
+ KNJ      N5     C27    C28     111.600    3.000
+ KNJ      H27    C27    H27A    107.900    3.000
+ KNJ      H27    C27    C28     109.470    3.000
+ KNJ      H27A   C27    C28     109.470    3.000
+ KNJ      C27    C28    C29     120.000    3.000
+ KNJ      C27    C28    C30     120.000    3.000
+ KNJ      C29    C28    C30     120.000    3.000
+ KNJ      C28    C29    H29A    120.000    3.000
+ KNJ      C28    C29    H29     120.000    3.000
+ KNJ      H29A   C29    H29     120.000    3.000
+ KNJ      C28    C30    H30B    109.470    3.000
+ KNJ      C28    C30    H30A    109.470    3.000
+ KNJ      C28    C30    H30     109.470    3.000
+ KNJ      H30B   C30    H30A    109.470    3.000
+ KNJ      H30B   C30    H30     109.470    3.000
+ KNJ      H30A   C30    H30     109.470    3.000
+ KNJ      C26    C21    H21     108.810    3.000
+ KNJ      C26    C21    C22     109.470    3.000
+ KNJ      C26    C21    N4      111.600    3.000
+ KNJ      H21    C21    C22     108.340    3.000
+ KNJ      H21    C21    N4      109.470    3.000
+ KNJ      C22    C21    N4      109.500    3.000
+ KNJ      C21    C22    C23     111.000    3.000
+ KNJ      C21    C22    C24     111.000    3.000
+ KNJ      C21    C22    S2      109.500    3.000
+ KNJ      C23    C22    C24     111.000    3.000
+ KNJ      C23    C22    S2      109.500    3.000
+ KNJ      C24    C22    S2      109.500    3.000
+ KNJ      C22    C23    H23B    109.470    3.000
+ KNJ      C22    C23    H23A    109.470    3.000
+ KNJ      C22    C23    H23     109.470    3.000
+ KNJ      H23B   C23    H23A    109.470    3.000
+ KNJ      H23B   C23    H23     109.470    3.000
+ KNJ      H23A   C23    H23     109.470    3.000
+ KNJ      C22    C24    H24B    109.470    3.000
+ KNJ      C22    C24    H24A    109.470    3.000
+ KNJ      C22    C24    H24     109.470    3.000
+ KNJ      H24B   C24    H24A    109.470    3.000
+ KNJ      H24B   C24    H24     109.470    3.000
+ KNJ      H24A   C24    H24     109.470    3.000
+ KNJ      C22    S2     C25      93.910    3.000
+ KNJ      S2     C25    H25     109.500    3.000
+ KNJ      S2     C25    H25A    109.500    3.000
+ KNJ      S2     C25    N4      109.500    3.000
+ KNJ      H25    C25    H25A    107.900    3.000
+ KNJ      H25    C25    N4      109.470    3.000
+ KNJ      H25A   C25    N4      109.470    3.000
+ KNJ      C25    N4     C20     127.000    3.000
+ KNJ      C25    N4     C21     112.000    3.000
+ KNJ      C20    N4     C21     121.000    3.000
+ KNJ      N4     C20    O4      123.000    3.000
+ KNJ      N4     C20    C19     116.500    3.000
+ KNJ      O4     C20    C19     120.500    3.000
+ KNJ      C20    C19    H19     108.810    3.000
+ KNJ      C20    C19    O2      109.470    3.000
+ KNJ      C20    C19    C11     109.470    3.000
+ KNJ      H19    C19    O2      109.470    3.000
+ KNJ      H19    C19    C11     108.340    3.000
+ KNJ      O2     C19    C11     109.470    3.000
+ KNJ      C19    O2     HO2     109.470    3.000
+ KNJ      C19    C11    H11     108.340    3.000
+ KNJ      C19    C11    C12     111.000    3.000
+ KNJ      C19    C11    N3      110.000    3.000
+ KNJ      H11    C11    C12     108.340    3.000
+ KNJ      H11    C11    N3      108.550    3.000
+ KNJ      C12    C11    N3      110.000    3.000
+ KNJ      C11    C12    H12     109.470    3.000
+ KNJ      C11    C12    H12A    109.470    3.000
+ KNJ      C11    C12    C13     109.470    3.000
+ KNJ      H12    C12    H12A    107.900    3.000
+ KNJ      H12    C12    C13     109.470    3.000
+ KNJ      H12A   C12    C13     109.470    3.000
+ KNJ      C12    C13    C14     120.000    3.000
+ KNJ      C12    C13    C18     120.000    3.000
+ KNJ      C14    C13    C18     120.000    3.000
+ KNJ      C13    C14    H14     120.000    3.000
+ KNJ      C13    C14    C15     120.000    3.000
+ KNJ      H14    C14    C15     120.000    3.000
+ KNJ      C14    C15    H15     120.000    3.000
+ KNJ      C14    C15    C16     120.000    3.000
+ KNJ      H15    C15    C16     120.000    3.000
+ KNJ      C13    C18    H18     120.000    3.000
+ KNJ      C13    C18    C17     120.000    3.000
+ KNJ      H18    C18    C17     120.000    3.000
+ KNJ      C18    C17    H17     120.000    3.000
+ KNJ      C18    C17    C16     120.000    3.000
+ KNJ      H17    C17    C16     120.000    3.000
+ KNJ      C17    C16    H16     120.000    3.000
+ KNJ      C17    C16    C15     120.000    3.000
+ KNJ      H16    C16    C15     120.000    3.000
+ KNJ      C11    N3     HN3     118.500    3.000
+ KNJ      C11    N3     C10     121.500    3.000
+ KNJ      HN3    N3     C10     120.000    3.000
+ KNJ      N3     C10    O6      123.000    3.000
+ KNJ      N3     C10    C9      116.500    3.000
+ KNJ      O6     C10    C9      120.500    3.000
+ KNJ      C10    C9     H9      109.470    3.000
+ KNJ      C10    C9     H9A     109.470    3.000
+ KNJ      C10    C9     O1      109.470    3.000
+ KNJ      H9     C9     H9A     107.900    3.000
+ KNJ      H9     C9     O1      109.470    3.000
+ KNJ      H9A    C9     O1      109.470    3.000
+ KNJ      C9     O1     C8      120.000    3.000
+ KNJ      O1     C8     C2      120.000    3.000
+ KNJ      O1     C8     C7      120.000    3.000
+ KNJ      C2     C8     C7      120.000    3.000
+ KNJ      C8     C2     C1      120.000    3.000
+ KNJ      C8     C2     C3      120.000    3.000
+ KNJ      C1     C2     C3      120.000    3.000
+ KNJ      C2     C1     H1B     109.470    3.000
+ KNJ      C2     C1     H1A     109.470    3.000
+ KNJ      C2     C1     H1      109.470    3.000
+ KNJ      H1B    C1     H1A     109.470    3.000
+ KNJ      H1B    C1     H1      109.470    3.000
+ KNJ      H1A    C1     H1      109.470    3.000
+ KNJ      C8     C7     C6      120.000    3.000
+ KNJ      C8     C7     C5      120.000    3.000
+ KNJ      C6     C7     C5      120.000    3.000
+ KNJ      C7     C6     H6B     109.470    3.000
+ KNJ      C7     C6     H6A     109.470    3.000
+ KNJ      C7     C6     H6      109.470    3.000
+ KNJ      H6B    C6     H6A     109.470    3.000
+ KNJ      H6B    C6     H6      109.470    3.000
+ KNJ      H6A    C6     H6      109.470    3.000
+ KNJ      C7     C5     H5      120.000    3.000
+ KNJ      C7     C5     C4      120.000    3.000
+ KNJ      H5     C5     C4      120.000    3.000
+ KNJ      C5     C4     N1      120.000    3.000
+ KNJ      C5     C4     C3      120.000    3.000
+ KNJ      N1     C4     C3      120.000    3.000
+ KNJ      C4     N1     HN1A    120.000    3.000
+ KNJ      C4     N1     HN1     120.000    3.000
+ KNJ      HN1A   N1     HN1     120.000    3.000
+ KNJ      C4     C3     H3      120.000    3.000
+ KNJ      C4     C3     C2      120.000    3.000
+ KNJ      H3     C3     C2      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ KNJ      CONST_1  O5     C26    N5     C27        0.000    0.000   0
+ KNJ      var_1    C26    N5     C27    C28      180.000   20.000   3
+ KNJ      var_2    N5     C27    C28    C30      -85.090   20.000   3
+ KNJ      CONST_2  C27    C28    C29    H29       -0.098    0.000   0
+ KNJ      var_3    C27    C28    C30    H30       90.066   20.000   1
+ KNJ      var_4    O5     C26    C21    C22      105.188   20.000   3
+ KNJ      var_5    C26    C21    C22    S2      -150.000   20.000   1
+ KNJ      var_6    C21    C22    C23    H23      -53.407   20.000   1
+ KNJ      var_7    C21    C22    C24    H24      173.559   20.000   1
+ KNJ      var_8    C21    C22    S2     C25       30.000   20.000   1
+ KNJ      var_9    C22    S2     C25    N4       -30.000   20.000   1
+ KNJ      var_10   S2     C25    N4     C20     -150.000   20.000   1
+ KNJ      var_11   C25    N4     C21    C26      120.000   20.000   3
+ KNJ      CONST_3  C25    N4     C20    C19        0.000    0.000   0
+ KNJ      var_12   N4     C20    C19    C11      -65.004   20.000   3
+ KNJ      var_13   C20    C19    O2     HO2       60.048   20.000   1
+ KNJ      var_14   C20    C19    C11    N3       175.029   20.000   3
+ KNJ      var_15   C19    C11    C12    C13      174.959   20.000   3
+ KNJ      var_16   C11    C12    C13    C18      -90.287   20.000   2
+ KNJ      CONST_4  C12    C13    C14    C15      180.000    0.000   0
+ KNJ      CONST_5  C13    C14    C15    C16        0.000    0.000   0
+ KNJ      CONST_6  C12    C13    C18    C17      180.000    0.000   0
+ KNJ      CONST_7  C13    C18    C17    C16        0.000    0.000   0
+ KNJ      CONST_8  C18    C17    C16    C15        0.000    0.000   0
+ KNJ      CONST_9  C17    C16    C15    C14        0.000    0.000   0
+ KNJ      var_17   C19    C11    N3     C10     -154.982   20.000   3
+ KNJ      CONST_10 C11    N3     C10    C9       180.000    0.000   0
+ KNJ      var_18   N3     C10    C9     O1       179.991   20.000   3
+ KNJ      var_19   C10    C9     O1     C8       179.969   20.000   1
+ KNJ      var_20   C9     O1     C8     C7        90.031   20.000   1
+ KNJ      CONST_11 O1     C8     C2     C1         0.000    0.000   0
+ KNJ      CONST_12 C8     C2     C3     C4         0.000    0.000   0
+ KNJ      var_21   C8     C2     C1     H1       -89.717   20.000   1
+ KNJ      CONST_13 O1     C8     C7     C5       180.000    0.000   0
+ KNJ      var_22   C8     C7     C6     H6       -90.267   20.000   1
+ KNJ      CONST_14 C8     C7     C5     C4         0.000    0.000   0
+ KNJ      CONST_15 C7     C5     C4     C3         0.000    0.000   0
+ KNJ      CONST_16 C5     C4     N1     HN1       -0.079    0.000   0
+ KNJ      CONST_17 C5     C4     C3     C2         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ KNJ      chir_01  C19    C20    C11    O2        positiv
+ KNJ      chir_02  C11    N3     C19    C12       positiv
+ KNJ      chir_03  C21    C26    N4     C22       negativ
+ KNJ      chir_04  C22    C21    C23    C24       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ KNJ      plan-1    C2        0.020
+ KNJ      plan-1    C1        0.020
+ KNJ      plan-1    C3        0.020
+ KNJ      plan-1    C8        0.020
+ KNJ      plan-1    C4        0.020
+ KNJ      plan-1    C7        0.020
+ KNJ      plan-1    C5        0.020
+ KNJ      plan-1    H3        0.020
+ KNJ      plan-1    N1        0.020
+ KNJ      plan-1    C6        0.020
+ KNJ      plan-1    H5        0.020
+ KNJ      plan-1    O1        0.020
+ KNJ      plan-1    HN1A      0.020
+ KNJ      plan-1    HN1       0.020
+ KNJ      plan-2    N1        0.020
+ KNJ      plan-2    C4        0.020
+ KNJ      plan-2    HN1       0.020
+ KNJ      plan-2    HN1A      0.020
+ KNJ      plan-3    C10       0.020
+ KNJ      plan-3    C9        0.020
+ KNJ      plan-3    O6        0.020
+ KNJ      plan-3    N3        0.020
+ KNJ      plan-3    HN3       0.020
+ KNJ      plan-4    C20       0.020
+ KNJ      plan-4    O4        0.020
+ KNJ      plan-4    C19       0.020
+ KNJ      plan-4    N4        0.020
+ KNJ      plan-5    N3        0.020
+ KNJ      plan-5    C10       0.020
+ KNJ      plan-5    C11       0.020
+ KNJ      plan-5    HN3       0.020
+ KNJ      plan-6    C13       0.020
+ KNJ      plan-6    C12       0.020
+ KNJ      plan-6    C14       0.020
+ KNJ      plan-6    C18       0.020
+ KNJ      plan-6    C16       0.020
+ KNJ      plan-6    C15       0.020
+ KNJ      plan-6    C17       0.020
+ KNJ      plan-6    H16       0.020
+ KNJ      plan-6    H14       0.020
+ KNJ      plan-6    H18       0.020
+ KNJ      plan-6    H15       0.020
+ KNJ      plan-6    H17       0.020
+ KNJ      plan-7    C26       0.020
+ KNJ      plan-7    O5        0.020
+ KNJ      plan-7    C21       0.020
+ KNJ      plan-7    N5        0.020
+ KNJ      plan-7    HN5       0.020
+ KNJ      plan-8    N4        0.020
+ KNJ      plan-8    C20       0.020
+ KNJ      plan-8    C21       0.020
+ KNJ      plan-8    C25       0.020
+ KNJ      plan-9    N5        0.020
+ KNJ      plan-9    C26       0.020
+ KNJ      plan-9    C27       0.020
+ KNJ      plan-9    HN5       0.020
+ KNJ      plan-10   C28       0.020
+ KNJ      plan-10   C27       0.020
+ KNJ      plan-10   C30       0.020
+ KNJ      plan-10   C29       0.020
+ KNJ      plan-10   H29       0.020
+ KNJ      plan-10   H29A      0.020
+# ------------------------------------------------------

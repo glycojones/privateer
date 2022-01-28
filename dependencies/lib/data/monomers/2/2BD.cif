@@ -1,0 +1,346 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2BD      2BD '.                                   ' DNA                44  27 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_2BD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 2BD           OP3    O    OP       -0.666      0.000    0.000    0.000
+ 2BD           P      P    P         0.000     -1.225    0.721    0.519
+ 2BD           OP1    O    OP       -0.666     -1.389    0.702    2.023
+ 2BD           OP2    O    OP       -0.666     -1.108    2.096   -0.101
+ 2BD           "O5'"  O    O2        0.000     -2.431    0.028   -0.310
+ 2BD           "C5'"  C    CH2       0.000     -2.353    0.005   -1.725
+ 2BD           "H5'"  H    H         0.000     -1.459   -0.539   -2.038
+ 2BD           "H5''" H    H         0.000     -2.310    1.026   -2.110
+ 2BD           "C4'"  C    CH1       0.000     -3.591   -0.693   -2.269
+ 2BD           "H4'"  H    H         0.000     -3.659   -1.708   -1.853
+ 2BD           "C3'"  C    CH1       0.000     -3.607   -0.758   -3.793
+ 2BD           "H3'"  H    H         0.000     -2.591   -0.759   -4.211
+ 2BD           "C2'"  C    CH2       0.000     -4.374    0.484   -4.184
+ 2BD           "H2'"  H    H         0.000     -4.897    0.385   -5.137
+ 2BD           "H2''" H    H         0.000     -3.755    1.384   -4.201
+ 2BD           "C1'"  C    CH1       0.000     -5.389    0.585   -3.054
+ 2BD           "H1'"  H    H         0.000     -6.246   -0.060   -3.294
+ 2BD           "O4'"  O    O2        0.000     -4.748    0.075   -1.873
+ 2BD           N9     N    NR5       0.000     -5.881    1.937   -2.809
+ 2BD           C8     C    CR15      0.000     -5.291    2.875   -1.998
+ 2BD           H8     H    H         0.000     -4.377    2.702   -1.442
+ 2BD           N7     N    NRD5      0.000     -5.963    4.009   -1.971
+ 2BD           C4     C    CR56      0.000     -7.000    2.515   -3.331
+ 2BD           C5     C    CR56      0.000     -7.024    3.782   -2.800
+ 2BD           N3     N    NRD6      0.000     -7.875    1.936   -4.180
+ 2BD           C2     C    CR16      0.000     -8.843    2.748   -4.498
+ 2BD           H2     H    H         0.000     -9.596    2.369   -5.177
+ 2BD           N1     N    NR6       0.000     -9.003    4.074   -4.044
+ 2BD           CAN    C    CH1       0.000    -10.143    4.842   -4.515
+ 2BD           HAN    H    H         0.000    -10.098    5.850   -4.079
+ 2BD           CAO    C    CH2       0.000    -11.457    4.181   -4.101
+ 2BD           HAO1   H    H         0.000    -11.511    3.177   -4.528
+ 2BD           HAO2   H    H         0.000    -12.296    4.776   -4.467
+ 2BD           OAP    O    OH1       0.000    -11.514    4.099   -2.681
+ 2BD           HAP    H    H         0.000    -10.658    3.804   -2.343
+ 2BD           CAL    C    C1        0.000    -10.035    4.952   -6.008
+ 2BD           HAL2   H    H         0.000    -10.103    4.048   -6.590
+ 2BD           CAM    C    C2        0.000     -9.860    6.108   -6.659
+ 2BD           HAM2   H    H         0.000     -9.788    7.037   -6.112
+ 2BD           HAM1   H    H         0.000     -9.789    6.123   -7.737
+ 2BD           C6     C    CR6       0.000     -8.095    4.682   -3.146
+ 2BD           O6     O    O         0.000     -8.173    5.821   -2.700
+ 2BD           "O3'"  O    OH1       0.000     -4.353   -1.899   -4.213
+ 2BD           "HO3'" H    H         0.000     -4.610   -2.373   -3.408
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 2BD      OP3    n/a    P      START
+ 2BD      P      OP3    "O5'"  .
+ 2BD      OP1    P      .      .
+ 2BD      OP2    P      .      .
+ 2BD      "O5'"  P      "C5'"  .
+ 2BD      "C5'"  "O5'"  "C4'"  .
+ 2BD      "H5'"  "C5'"  .      .
+ 2BD      "H5''" "C5'"  .      .
+ 2BD      "C4'"  "C5'"  "C3'"  .
+ 2BD      "H4'"  "C4'"  .      .
+ 2BD      "C3'"  "C4'"  "O3'"  .
+ 2BD      "H3'"  "C3'"  .      .
+ 2BD      "C2'"  "C3'"  "C1'"  .
+ 2BD      "H2'"  "C2'"  .      .
+ 2BD      "H2''" "C2'"  .      .
+ 2BD      "C1'"  "C2'"  N9     .
+ 2BD      "H1'"  "C1'"  .      .
+ 2BD      "O4'"  "C1'"  .      .
+ 2BD      N9     "C1'"  C4     .
+ 2BD      C8     N9     N7     .
+ 2BD      H8     C8     .      .
+ 2BD      N7     C8     .      .
+ 2BD      C4     N9     N3     .
+ 2BD      C5     C4     .      .
+ 2BD      N3     C4     C2     .
+ 2BD      C2     N3     N1     .
+ 2BD      H2     C2     .      .
+ 2BD      N1     C2     C6     .
+ 2BD      CAN    N1     CAL    .
+ 2BD      HAN    CAN    .      .
+ 2BD      CAO    CAN    OAP    .
+ 2BD      HAO1   CAO    .      .
+ 2BD      HAO2   CAO    .      .
+ 2BD      OAP    CAO    HAP    .
+ 2BD      HAP    OAP    .      .
+ 2BD      CAL    CAN    CAM    .
+ 2BD      HAL2   CAL    .      .
+ 2BD      CAM    CAL    HAM1   .
+ 2BD      HAM2   CAM    .      .
+ 2BD      HAM1   CAM    .      .
+ 2BD      C6     N1     O6     .
+ 2BD      O6     C6     .      .
+ 2BD      "O3'"  "C3'"  .      END
+ 2BD      "HO3'" "O3'"  .      .
+ 2BD      "C4'"  "O4'"  .    ADD
+ 2BD      C6     C5     .    ADD
+ 2BD      C5     N7     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2BD       OP1       P         deloc     1.510     0.020     1.510     0.020     
+2BD       OP2       P         deloc     1.510     0.020     1.510     0.020     
+2BD       P         OP3       deloc     1.510     0.020     1.510     0.020     
+2BD       "O5'"     P         single    1.610     0.020     1.610     0.020     
+2BD       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+2BD       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+2BD       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+2BD       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+2BD       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+2BD       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+2BD       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+2BD       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+2BD       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+2BD       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+2BD       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+2BD       O6        C6        double    1.250     0.020     1.250     0.020     
+2BD       C6        C5        single    1.490     0.020     1.490     0.020     
+2BD       C6        N1        single    1.410     0.020     1.410     0.020     
+2BD       C5        N7        single    1.350     0.020     1.350     0.020     
+2BD       C5        C4        double    1.490     0.020     1.490     0.020     
+2BD       N7        C8        double    1.350     0.020     1.350     0.020     
+2BD       C8        N9        single    1.337     0.020     1.337     0.020     
+2BD       H8        C8        single    1.082     0.013     0.975     0.010     
+2BD       C4        N9        single    1.337     0.020     1.337     0.020     
+2BD       N3        C4        single    1.355     0.020     1.355     0.020     
+2BD       C2        N3        double    1.337     0.020     1.337     0.020     
+2BD       N1        C2        single    1.337     0.020     1.337     0.020     
+2BD       H2        C2        single    1.082     0.013     0.975     0.010     
+2BD       CAN       N1        single    1.465     0.020     1.465     0.020     
+2BD       CAL       CAN       single    1.510     0.020     1.510     0.020     
+2BD       CAO       CAN       single    1.524     0.020     1.524     0.020     
+2BD       HAN       CAN       single    1.089     0.010     0.989     0.005     
+2BD       CAM       CAL       double    1.320     0.020     1.320     0.020     
+2BD       HAL2      CAL       single    1.082     0.013     0.975     0.010     
+2BD       HAM1      CAM       single    1.082     0.013     0.975     0.010     
+2BD       HAM2      CAM       single    1.082     0.013     0.975     0.010     
+2BD       OAP       CAO       single    1.432     0.020     1.432     0.020     
+2BD       HAO1      CAO       single    1.089     0.010     0.989     0.005     
+2BD       HAO2      CAO       single    1.089     0.010     0.989     0.005     
+2BD       HAP       OAP       single    0.970     0.012     0.839     0.014     
+2BD       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+2BD       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+2BD       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+2BD       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+2BD       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+2BD       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 2BD      OP3    P      OP1     119.900    3.000
+ 2BD      OP3    P      OP2     119.900    3.000
+ 2BD      OP3    P      "O5'"   108.200    3.000
+ 2BD      OP1    P      OP2     119.900    3.000
+ 2BD      OP1    P      "O5'"   108.200    3.000
+ 2BD      OP2    P      "O5'"   108.200    3.000
+ 2BD      P      "O5'"  "C5'"   120.500    3.000
+ 2BD      "O5'"  "C5'"  "H5'"   109.470    3.000
+ 2BD      "O5'"  "C5'"  "H5''"  109.470    3.000
+ 2BD      "O5'"  "C5'"  "C4'"   109.470    3.000
+ 2BD      "H5'"  "C5'"  "H5''"  107.900    3.000
+ 2BD      "H5'"  "C5'"  "C4'"   109.470    3.000
+ 2BD      "H5''" "C5'"  "C4'"   109.470    3.000
+ 2BD      "C5'"  "C4'"  "H4'"   108.340    3.000
+ 2BD      "C5'"  "C4'"  "C3'"   111.000    3.000
+ 2BD      "C5'"  "C4'"  "O4'"   109.470    3.000
+ 2BD      "H4'"  "C4'"  "C3'"   108.340    3.000
+ 2BD      "H4'"  "C4'"  "O4'"   109.470    3.000
+ 2BD      "C3'"  "C4'"  "O4'"   109.470    3.000
+ 2BD      "C4'"  "C3'"  "H3'"   108.340    3.000
+ 2BD      "C4'"  "C3'"  "C2'"   111.000    3.000
+ 2BD      "C4'"  "C3'"  "O3'"   109.470    3.000
+ 2BD      "H3'"  "C3'"  "C2'"   108.340    3.000
+ 2BD      "H3'"  "C3'"  "O3'"   109.470    3.000
+ 2BD      "C2'"  "C3'"  "O3'"   109.470    3.000
+ 2BD      "C3'"  "C2'"  "H2'"   109.470    3.000
+ 2BD      "C3'"  "C2'"  "H2''"  109.470    3.000
+ 2BD      "C3'"  "C2'"  "C1'"   111.000    3.000
+ 2BD      "H2'"  "C2'"  "H2''"  107.900    3.000
+ 2BD      "H2'"  "C2'"  "C1'"   109.470    3.000
+ 2BD      "H2''" "C2'"  "C1'"   109.470    3.000
+ 2BD      "C2'"  "C1'"  "H1'"   108.340    3.000
+ 2BD      "C2'"  "C1'"  "O4'"   109.470    3.000
+ 2BD      "C2'"  "C1'"  N9      109.470    3.000
+ 2BD      "H1'"  "C1'"  "O4'"   109.470    3.000
+ 2BD      "H1'"  "C1'"  N9      109.470    3.000
+ 2BD      "O4'"  "C1'"  N9      109.470    3.000
+ 2BD      "C1'"  "O4'"  "C4'"   111.800    3.000
+ 2BD      "C1'"  N9     C8      126.000    3.000
+ 2BD      "C1'"  N9     C4      126.000    3.000
+ 2BD      C8     N9     C4      108.000    3.000
+ 2BD      N9     C8     H8      126.000    3.000
+ 2BD      N9     C8     N7      108.000    3.000
+ 2BD      H8     C8     N7      126.000    3.000
+ 2BD      C8     N7     C5      108.000    3.000
+ 2BD      N9     C4     C5      108.000    3.000
+ 2BD      N9     C4     N3      132.000    3.000
+ 2BD      C5     C4     N3      120.000    3.000
+ 2BD      C4     C5     C6      120.000    3.000
+ 2BD      C4     C5     N7      108.000    3.000
+ 2BD      C6     C5     N7      132.000    3.000
+ 2BD      C4     N3     C2      120.000    3.000
+ 2BD      N3     C2     H2      120.000    3.000
+ 2BD      N3     C2     N1      120.000    3.000
+ 2BD      H2     C2     N1      120.000    3.000
+ 2BD      C2     N1     CAN     120.000    3.000
+ 2BD      C2     N1     C6      120.000    3.000
+ 2BD      CAN    N1     C6      120.000    3.000
+ 2BD      N1     CAN    HAN     109.470    3.000
+ 2BD      N1     CAN    CAO     109.470    3.000
+ 2BD      N1     CAN    CAL     109.500    3.000
+ 2BD      HAN    CAN    CAO     108.340    3.000
+ 2BD      HAN    CAN    CAL     108.810    3.000
+ 2BD      CAO    CAN    CAL     109.470    3.000
+ 2BD      CAN    CAO    HAO1    109.470    3.000
+ 2BD      CAN    CAO    HAO2    109.470    3.000
+ 2BD      CAN    CAO    OAP     109.470    3.000
+ 2BD      HAO1   CAO    HAO2    107.900    3.000
+ 2BD      HAO1   CAO    OAP     109.470    3.000
+ 2BD      HAO2   CAO    OAP     109.470    3.000
+ 2BD      CAO    OAP    HAP     109.470    3.000
+ 2BD      CAN    CAL    HAL2    120.000    3.000
+ 2BD      CAN    CAL    CAM     120.000    3.000
+ 2BD      HAL2   CAL    CAM     120.000    3.000
+ 2BD      CAL    CAM    HAM2    120.000    3.000
+ 2BD      CAL    CAM    HAM1    120.000    3.000
+ 2BD      HAM2   CAM    HAM1    120.000    3.000
+ 2BD      N1     C6     O6      120.000    3.000
+ 2BD      N1     C6     C5      120.000    3.000
+ 2BD      O6     C6     C5      120.000    3.000
+ 2BD      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 2BD      var_1    OP3    P      "O5'"  "C5'"    -54.182   20.000   1
+ 2BD      var_2    P      "O5'"  "C5'"  "C4'"    179.971   20.000   1
+ 2BD      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.520   20.000   3
+ 2BD      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ 2BD      var_5    "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ 2BD      var_6    "C4'"  "C3'"  "C2'"  "C1'"    -30.000   20.000   3
+ 2BD      var_7    "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ 2BD      var_8    "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ 2BD      var_9    "C2'"  "C1'"  N9     C4        93.453   20.000   1
+ 2BD      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ 2BD      CONST_2  N9     C8     N7     C5         0.000    0.000   0
+ 2BD      CONST_3  "C1'"  N9     C4     N3         0.000    0.000   0
+ 2BD      CONST_4  N9     C4     C5     C6       180.000    0.000   0
+ 2BD      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ 2BD      CONST_6  N9     C4     N3     C2       180.000    0.000   0
+ 2BD      CONST_7  C4     N3     C2     N1         0.000    0.000   0
+ 2BD      CONST_8  N3     C2     N1     C6         0.000    0.000   0
+ 2BD      var_10   C2     N1     CAN    CAL      -60.854   20.000   1
+ 2BD      var_11   N1     CAN    CAO    OAP       60.016   20.000   3
+ 2BD      var_12   CAN    CAO    OAP    HAP      -43.683   20.000   1
+ 2BD      var_13   N1     CAN    CAL    CAM     -115.592   20.000   1
+ 2BD      CONST_9  CAN    CAL    CAM    HAM1     179.941    0.000   0
+ 2BD      CONST_10 C2     N1     C6     O6       180.000    0.000   0
+ 2BD      CONST_11 N1     C6     C5     C4         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 2BD      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ 2BD      chir_02  "C1'"  "O4'"  N9     "C2'"     negativ
+ 2BD      chir_03  CAN    N1     CAL    CAO       negativ
+ 2BD      chir_04  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 2BD      plan-1    C6        0.020
+ 2BD      plan-1    O6        0.020
+ 2BD      plan-1    C5        0.020
+ 2BD      plan-1    N1        0.020
+ 2BD      plan-1    N3        0.020
+ 2BD      plan-1    C2        0.020
+ 2BD      plan-1    N7        0.020
+ 2BD      plan-1    C4        0.020
+ 2BD      plan-1    C8        0.020
+ 2BD      plan-1    N9        0.020
+ 2BD      plan-1    H8        0.020
+ 2BD      plan-1    "C1'"     0.020
+ 2BD      plan-1    H2        0.020
+ 2BD      plan-1    CAN       0.020
+ 2BD      plan-2    CAL       0.020
+ 2BD      plan-2    CAN       0.020
+ 2BD      plan-2    CAM       0.020
+ 2BD      plan-2    HAL2      0.020
+ 2BD      plan-2    HAM1      0.020
+ 2BD      plan-2    HAM2      0.020
+# ------------------------------------------------------

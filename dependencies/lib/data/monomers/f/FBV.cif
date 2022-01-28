@@ -1,0 +1,153 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FBV     FBV      2-fluorobenzenesulfonamide     non-polymer     17     11     .     
+#
+data_comp_FBV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FBV     C1      C       CR16    0       16.949      6.062       14.157      
+FBV     C2      C       CR16    0       15.616      6.038       14.534      
+FBV     C3      C       CR16    0       15.137      5.023       15.354      
+FBV     C4      C       CR6     0       16.000      4.023       15.800      
+FBV     C5      C       CR6     0       17.355      4.066       15.405      
+FBV     C6      C       CR16    0       17.827      5.077       14.590      
+FBV     S       S       S3      0       15.388      2.733       16.843      
+FBV     N2      N       NT2     0       16.192      1.390       16.497      
+FBV     O1      O       O       0       15.711      3.075       18.197      
+FBV     O2      O       O       0       14.017      2.495       16.501      
+FBV     F       F       F       0       18.216      3.110       15.822      
+FBV     H1      H       H       0       17.265      6.753       13.602      
+FBV     H2      H       H       0       15.031      6.711       14.235      
+FBV     H3      H       H       0       14.229      5.013       15.608      
+FBV     H6      H       H       0       18.731      5.098       14.331      
+FBV     H21N    H       H       0       16.370      1.309       15.650      
+FBV     H22N    H       H       0       15.860      0.686       16.884      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FBV       C1        C2        DOUBLE    y         1.376     0.012     1.376     0.012     
+FBV       C1        C6        SINGLE    y         1.381     0.010     1.381     0.010     
+FBV       C2        C3        SINGLE    y         1.384     0.010     1.384     0.010     
+FBV       C3        C4        DOUBLE    y         1.388     0.010     1.388     0.010     
+FBV       C4        C5        SINGLE    y         1.393     0.016     1.393     0.016     
+FBV       C4        S         SINGLE    n         1.767     0.011     1.767     0.011     
+FBV       C5        C6        DOUBLE    y         1.374     0.010     1.374     0.010     
+FBV       C5        F         SINGLE    n         1.352     0.010     1.352     0.010     
+FBV       S         N2        SINGLE    n         1.603     0.011     1.603     0.011     
+FBV       S         O1        DOUBLE    n         1.433     0.010     1.433     0.010     
+FBV       S         O2        DOUBLE    n         1.433     0.010     1.433     0.010     
+FBV       C1        H1        SINGLE    n         1.082     0.013     0.941     0.020     
+FBV       C2        H2        SINGLE    n         1.082     0.013     0.940     0.018     
+FBV       C3        H3        SINGLE    n         1.082     0.013     0.943     0.013     
+FBV       C6        H6        SINGLE    n         1.082     0.013     0.940     0.020     
+FBV       N2        H21N      SINGLE    n         1.036     0.016     0.869     0.020     
+FBV       N2        H22N      SINGLE    n         1.036     0.016     0.869     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FBV          C2          C1          C6     120.517    1.50
+FBV          C2          C1          H1     119.898    1.50
+FBV          C6          C1          H1     119.585    1.50
+FBV          C1          C2          C3     120.598    1.50
+FBV          C1          C2          H2     119.802    1.50
+FBV          C3          C2          H2     119.600    1.50
+FBV          C2          C3          C4     120.292    1.50
+FBV          C2          C3          H3     119.846    1.50
+FBV          C4          C3          H3     119.862    1.50
+FBV          C3          C4          C5     119.432    1.74
+FBV          C3          C4           S     119.464    1.50
+FBV          C5          C4           S     121.104    2.45
+FBV          C4          C5          C6     120.788    1.50
+FBV          C4          C5           F     120.219    1.50
+FBV          C6          C5           F     118.993    1.50
+FBV          C1          C6          C5     118.374    1.50
+FBV          C1          C6          H6     120.782    1.50
+FBV          C5          C6          H6     120.844    1.50
+FBV          C4           S          N2     108.348    1.50
+FBV          C4           S          O1     108.022    1.50
+FBV          C4           S          O2     108.022    1.50
+FBV          N2           S          O1     107.154    1.50
+FBV          N2           S          O2     107.154    1.50
+FBV          O1           S          O2     118.954    1.50
+FBV           S          N2        H21N     113.070    3.00
+FBV           S          N2        H22N     113.070    3.00
+FBV        H21N          N2        H22N     115.993    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FBV       const_sp2_sp2_1          C6          C1          C2          C3       0.000   10.00     2
+FBV              const_21          C2          C1          C6          C5       0.000   10.00     2
+FBV       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+FBV              const_10          C2          C3          C4           S     180.000   10.00     2
+FBV              const_16           S          C4          C5           F       0.000   10.00     2
+FBV             sp2_sp3_1          C3          C4           S          N2     150.000   10.00     6
+FBV              const_19           F          C5          C6          C1     180.000   10.00     2
+FBV             sp3_sp3_2        H21N          N2           S          O1     -60.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FBV    plan-1          C1   0.020
+FBV    plan-1          C2   0.020
+FBV    plan-1          C3   0.020
+FBV    plan-1          C4   0.020
+FBV    plan-1          C5   0.020
+FBV    plan-1          C6   0.020
+FBV    plan-1           F   0.020
+FBV    plan-1          H1   0.020
+FBV    plan-1          H2   0.020
+FBV    plan-1          H3   0.020
+FBV    plan-1          H6   0.020
+FBV    plan-1           S   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FBV SMILES           ACDLabs              10.04 "O=S(=O)(c1ccccc1F)N"
+FBV SMILES_CANONICAL CACTVS               3.352 "N[S](=O)(=O)c1ccccc1F"
+FBV SMILES           CACTVS               3.352 "N[S](=O)(=O)c1ccccc1F"
+FBV SMILES_CANONICAL "OpenEye OEToolkits" 1.6.1 "c1ccc(c(c1)F)S(=O)(=O)N"
+FBV SMILES           "OpenEye OEToolkits" 1.6.1 "c1ccc(c(c1)F)S(=O)(=O)N"
+FBV InChI            InChI                1.03  "InChI=1S/C6H6FNO2S/c7-5-3-1-2-4-6(5)11(8,9)10/h1-4H,(H2,8,9,10)"
+FBV InChIKey         InChI                1.03  WFLBWYLZCQOPCA-UHFFFAOYSA-N
+FBV ?                acedrg               202         "dictionary generator"                  
+FBV ?                acedrg_database      11          "data source"                           
+FBV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FBV ?                refmac5              5.8.0189    "optimization tool"                     

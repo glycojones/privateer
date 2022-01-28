@@ -1,0 +1,157 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+8VY     8VY      "1,3-bis(bromomethyl)benzene"     NON-POLYMER     18     10     .     
+#
+data_comp_8VY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+8VY     C1      C       CR6     0       37.112      -4.832      141.296     
+8VY     C2      C       CR16    0       36.565      -3.545      141.378     
+8VY     C3      C       CR6     0       36.004      -2.917      140.258     
+8VY     C4      C       CR16    0       35.997      -3.599      139.047     
+8VY     C5      C       CR16    0       36.536      -4.876      138.953     
+8VY     C6      C       CR16    0       37.090      -5.488      140.071     
+8VY     "C1'"   C       CH2     0       37.704      -5.480      142.499     
+8VY     "C3'"   C       CH2     0       35.428      -1.548      140.368     
+8VY     BR1     BR      BR      0       36.338      -6.487      143.500     
+8VY     BR2     BR      BR      0       33.528      -1.623      140.883     
+8VY     H1      H       H       0       36.575      -3.092      142.203     
+8VY     H2      H       H       0       35.623      -3.192      138.282     
+8VY     H3      H       H       0       36.526      -5.331      138.124     
+8VY     H4      H       H       0       37.454      -6.356      139.997     
+8VY     H5      H       H       0       38.093      -4.796      143.082     
+8VY     H6      H       H       0       38.419      -6.091      142.224     
+8VY     H7      H       H       0       35.512      -1.087      139.507     
+8VY     H8      H       H       0       35.925      -1.037      141.040     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+8VY       C4        C5        DOUBLE    y         1.382     0.010     1.382     0.010     
+8VY       C5        C6        SINGLE    y         1.382     0.010     1.382     0.010     
+8VY       C3        C4        SINGLE    y         1.382     0.011     1.382     0.011     
+8VY       C1        C6        DOUBLE    y         1.382     0.011     1.382     0.011     
+8VY       C3        "C3'"     SINGLE    n         1.489     0.010     1.489     0.010     
+8VY       C2        C3        DOUBLE    y         1.391     0.013     1.391     0.013     
+8VY       C1        C2        SINGLE    y         1.391     0.013     1.391     0.013     
+8VY       C1        "C1'"     SINGLE    n         1.489     0.010     1.489     0.010     
+8VY       "C1'"     BR1       SINGLE    n         1.970     0.012     1.970     0.012     
+8VY       "C3'"     BR2       SINGLE    n         1.970     0.012     1.970     0.012     
+8VY       C2        H1        SINGLE    n         1.082     0.013     0.941     0.016     
+8VY       C4        H2        SINGLE    n         1.082     0.013     0.944     0.017     
+8VY       C5        H3        SINGLE    n         1.082     0.013     0.945     0.013     
+8VY       C6        H4        SINGLE    n         1.082     0.013     0.944     0.017     
+8VY       "C1'"     H5        SINGLE    n         1.089     0.010     0.980     0.012     
+8VY       "C1'"     H6        SINGLE    n         1.089     0.010     0.980     0.012     
+8VY       "C3'"     H7        SINGLE    n         1.089     0.010     0.980     0.012     
+8VY       "C3'"     H8        SINGLE    n         1.089     0.010     0.980     0.012     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+8VY          C6          C1          C2     118.751    1.50
+8VY          C6          C1       "C1'"     120.796    1.50
+8VY          C2          C1       "C1'"     120.452    1.50
+8VY          C3          C2          C1     121.745    1.50
+8VY          C3          C2          H1     119.128    1.50
+8VY          C1          C2          H1     119.128    1.50
+8VY          C4          C3       "C3'"     120.796    1.50
+8VY          C4          C3          C2     118.751    1.50
+8VY       "C3'"          C3          C2     120.452    1.50
+8VY          C5          C4          C3     120.381    1.50
+8VY          C5          C4          H2     119.765    1.50
+8VY          C3          C4          H2     119.854    1.50
+8VY          C4          C5          C6     119.991    1.50
+8VY          C4          C5          H3     120.004    1.50
+8VY          C6          C5          H3     120.004    1.50
+8VY          C5          C6          C1     120.381    1.50
+8VY          C5          C6          H4     119.765    1.50
+8VY          C1          C6          H4     119.854    1.50
+8VY          C1       "C1'"         BR1     110.901    1.50
+8VY          C1       "C1'"          H5     109.465    1.50
+8VY          C1       "C1'"          H6     109.465    1.50
+8VY         BR1       "C1'"          H5     109.126    2.95
+8VY         BR1       "C1'"          H6     109.126    2.95
+8VY          H5       "C1'"          H6     108.181    1.50
+8VY          C3       "C3'"         BR2     110.901    1.50
+8VY          C3       "C3'"          H7     109.465    1.50
+8VY          C3       "C3'"          H8     109.465    1.50
+8VY         BR2       "C3'"          H7     109.126    2.95
+8VY         BR2       "C3'"          H8     109.126    2.95
+8VY          H7       "C3'"          H8     108.181    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+8VY              const_23       "C1'"          C1          C2          C3     180.000   10.00     2
+8VY       const_sp2_sp2_3       "C1'"          C1          C6          C5     180.000   10.00     2
+8VY             sp2_sp3_8          C6          C1       "C1'"         BR1     -90.000   10.00     6
+8VY              const_18          C1          C2          C3       "C3'"     180.000   10.00     2
+8VY              const_15       "C3'"          C3          C4          C5     180.000   10.00     2
+8VY             sp2_sp3_2          C4          C3       "C3'"         BR2     -90.000   10.00     6
+8VY       const_sp2_sp2_9          C3          C4          C5          C6       0.000   10.00     2
+8VY       const_sp2_sp2_5          C4          C5          C6          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+8VY    plan-1          C1   0.020
+8VY    plan-1       "C1'"   0.020
+8VY    plan-1          C2   0.020
+8VY    plan-1          C3   0.020
+8VY    plan-1       "C3'"   0.020
+8VY    plan-1          C4   0.020
+8VY    plan-1          C5   0.020
+8VY    plan-1          C6   0.020
+8VY    plan-1          H1   0.020
+8VY    plan-1          H2   0.020
+8VY    plan-1          H3   0.020
+8VY    plan-1          H4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+8VY InChI            InChI                1.03  "InChI=1S/C8H8Br2/c9-5-7-2-1-3-8(4-7)6-10/h1-4H,5-6H2"
+8VY InChIKey         InChI                1.03  OXHOPZLBSSTTBU-UHFFFAOYSA-N
+8VY SMILES_CANONICAL CACTVS               3.385 "BrCc1cccc(CBr)c1"
+8VY SMILES           CACTVS               3.385 "BrCc1cccc(CBr)c1"
+8VY SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "c1cc(cc(c1)CBr)CBr"
+8VY SMILES           "OpenEye OEToolkits" 2.0.6 "c1cc(cc(c1)CBr)CBr"
+8VY ?                acedrg               202         "dictionary generator"                  
+8VY ?                acedrg_database      11          "data source"                           
+8VY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+8VY ?                refmac5              5.8.0189    "optimization tool"                     

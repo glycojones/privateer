@@ -1,0 +1,183 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PBQ     PBQ      PENTABROMOPSEUDILIN     non-polymer     21     17     .     
+#
+data_comp_PBQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PBQ     CH      C       CR6     0       23.060      49.646      26.794      
+PBQ     CG      C       CR6     0       24.693      48.837      28.404      
+PBQ     CD1     C       CR5     0       25.160      48.619      29.779      
+PBQ     CD2     C       CR16    0       25.495      48.410      27.327      
+PBQ     CE2     C       CR6     0       25.073      48.607      26.022      
+PBQ     CR      C       CR6     0       23.457      49.463      28.127      
+PBQ     O       O       OH1     0       22.646      49.893      29.132      
+PBQ     C3      C       CR16    0       23.854      49.225      25.746      
+PBQ     C7      C       CR5     0       25.118      47.924      31.885      
+PBQ     C8      C       CR5     0       26.317      48.558      31.692      
+PBQ     C9      C       CR5     0       26.345      48.993      30.376      
+PBQ     N11     N       NR5     0       24.417      47.960      30.729      
+PBQ     BR13    BR      BR      0       26.169      48.025      24.586      
+PBQ     BR14    BR      BR      0       21.407      50.484      26.416      
+PBQ     BR17    BR      BR      0       27.764      49.922      29.590      
+PBQ     BR18    BR      BR      0       27.665      48.797      32.952      
+PBQ     BR19    BR      BR      0       24.453      47.117      33.416      
+PBQ     HD2     H       H       0       26.316      47.994      27.497      
+PBQ     H       H       H       0       22.992      50.585      29.501      
+PBQ     H3      H       H       0       23.576      49.354      24.864      
+PBQ     H11     H       H       0       23.615      47.617      30.607      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PBQ       CH        CR        DOUBLE    y         1.393     0.011     1.393     0.011     
+PBQ       CH        C3        SINGLE    y         1.373     0.010     1.373     0.010     
+PBQ       CH        BR14      SINGLE    n         1.891     0.011     1.891     0.011     
+PBQ       CG        CD1       SINGLE    n         1.467     0.010     1.467     0.010     
+PBQ       CG        CD2       DOUBLE    y         1.399     0.011     1.399     0.011     
+PBQ       CG        CR        SINGLE    y         1.403     0.010     1.403     0.010     
+PBQ       CD1       C9        DOUBLE    y         1.381     0.016     1.381     0.016     
+PBQ       CD1       N11       SINGLE    y         1.375     0.010     1.375     0.010     
+PBQ       CD2       CE2       SINGLE    y         1.372     0.014     1.372     0.014     
+PBQ       CE2       C3        DOUBLE    y         1.384     0.012     1.384     0.012     
+PBQ       CE2       BR13      SINGLE    n         1.898     0.011     1.898     0.011     
+PBQ       CR        O         SINGLE    n         1.358     0.015     1.358     0.015     
+PBQ       C7        C8        DOUBLE    y         1.368     0.012     1.368     0.012     
+PBQ       C7        N11       SINGLE    y         1.352     0.018     1.352     0.018     
+PBQ       C7        BR19      SINGLE    n         1.854     0.010     1.854     0.010     
+PBQ       C8        C9        SINGLE    y         1.385     0.018     1.385     0.018     
+PBQ       C8        BR18      SINGLE    n         1.861     0.010     1.861     0.010     
+PBQ       C9        BR17      SINGLE    n         1.869     0.010     1.869     0.010     
+PBQ       CD2       HD2       SINGLE    n         1.082     0.013     0.936     0.010     
+PBQ       O         H         SINGLE    n         0.970     0.012     0.858     0.020     
+PBQ       C3        H3        SINGLE    n         1.082     0.013     0.934     0.010     
+PBQ       N11       H11       SINGLE    n         1.016     0.010     0.880     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PBQ          CR          CH          C3     121.459    1.50
+PBQ          CR          CH        BR14     119.092    1.50
+PBQ          C3          CH        BR14     119.449    1.50
+PBQ         CD1          CG         CD2     119.866    1.50
+PBQ         CD1          CG          CR     121.334    1.50
+PBQ         CD2          CG          CR     118.801    1.50
+PBQ          CG         CD1          C9     129.290    2.59
+PBQ          CG         CD1         N11     123.130    1.50
+PBQ          C9         CD1         N11     107.581    1.50
+PBQ          CG         CD2         CE2     119.865    1.50
+PBQ          CG         CD2         HD2     119.874    1.50
+PBQ         CE2         CD2         HD2     120.261    1.50
+PBQ         CD2         CE2          C3     120.897    1.50
+PBQ         CD2         CE2        BR13     119.619    1.50
+PBQ          C3         CE2        BR13     119.484    1.50
+PBQ          CH          CR          CG     120.037    1.50
+PBQ          CH          CR           O     119.458    2.48
+PBQ          CG          CR           O     120.506    2.00
+PBQ          CR           O           H     109.337    3.00
+PBQ          CH          C3         CE2     118.942    1.50
+PBQ          CH          C3          H3     120.396    1.50
+PBQ         CE2          C3          H3     120.662    1.50
+PBQ          C8          C7         N11     108.432    1.50
+PBQ          C8          C7        BR19     129.346    1.50
+PBQ         N11          C7        BR19     122.222    1.50
+PBQ          C7          C8          C9     107.004    1.50
+PBQ          C7          C8        BR18     126.816    1.50
+PBQ          C9          C8        BR18     126.179    1.87
+PBQ         CD1          C9          C8     108.073    1.50
+PBQ         CD1          C9        BR17     127.140    1.50
+PBQ          C8          C9        BR17     124.788    1.87
+PBQ         CD1         N11          C7     108.910    1.50
+PBQ         CD1         N11         H11     125.651    1.67
+PBQ          C7         N11         H11     125.440    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PBQ       const_sp2_sp2_4        BR14          CH          CR           O       0.000   10.00     2
+PBQ              const_38         CE2          C3          CH        BR14     180.000   10.00     2
+PBQ             sp2_sp2_1          C9         CD1          CG         CD2     180.000   10.00     2
+PBQ              const_10         CE2         CD2          CG         CD1     180.000   10.00     2
+PBQ       const_sp2_sp2_8         CD1          CG          CR           O       0.000   10.00     2
+PBQ              const_24        BR17          C9         CD1          CG       0.000   10.00     2
+PBQ              const_43          CG         CD1         N11          C7     180.000   10.00     2
+PBQ              const_14          CG         CD2         CE2        BR13     180.000   10.00     2
+PBQ              const_18          CH          C3         CE2        BR13     180.000   10.00     2
+PBQ              const_35        BR19          C7         N11         CD1     180.000   10.00     2
+PBQ              const_32        BR19          C7          C8        BR18       0.000   10.00     2
+PBQ              const_28        BR18          C8          C9        BR17       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PBQ    plan-1        BR13   0.020
+PBQ    plan-1        BR14   0.020
+PBQ    plan-1          C3   0.020
+PBQ    plan-1         CD1   0.020
+PBQ    plan-1         CD2   0.020
+PBQ    plan-1         CE2   0.020
+PBQ    plan-1          CG   0.020
+PBQ    plan-1          CH   0.020
+PBQ    plan-1          CR   0.020
+PBQ    plan-1          H3   0.020
+PBQ    plan-1         HD2   0.020
+PBQ    plan-1           O   0.020
+PBQ    plan-2        BR17   0.020
+PBQ    plan-2        BR18   0.020
+PBQ    plan-2        BR19   0.020
+PBQ    plan-2          C7   0.020
+PBQ    plan-2          C8   0.020
+PBQ    plan-2          C9   0.020
+PBQ    plan-2         CD1   0.020
+PBQ    plan-2          CG   0.020
+PBQ    plan-2         H11   0.020
+PBQ    plan-2         N11   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PBQ SMILES           ACDLabs              10.04 "Brc2c(c1cc(Br)cc(Br)c1O)nc(Br)c2Br"
+PBQ SMILES_CANONICAL CACTVS               3.341 "Oc1c(Br)cc(Br)cc1c2[nH]c(Br)c(Br)c2Br"
+PBQ SMILES           CACTVS               3.341 "Oc1c(Br)cc(Br)cc1c2[nH]c(Br)c(Br)c2Br"
+PBQ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(cc(c(c1c2c(c(c([nH]2)Br)Br)Br)O)Br)Br"
+PBQ SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(cc(c(c1c2c(c(c([nH]2)Br)Br)Br)O)Br)Br"
+PBQ InChI            InChI                1.03  "InChI=1S/C10H4Br5NO/c11-3-1-4(9(17)5(12)2-3)8-6(13)7(14)10(15)16-8/h1-2,16-17H"
+PBQ InChIKey         InChI                1.03  LXMNWKJHYOZUQL-UHFFFAOYSA-N
+PBQ ?                acedrg               202         "dictionary generator"                  
+PBQ ?                acedrg_database      11          "data source"                           
+PBQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PBQ ?                refmac5              5.8.0189    "optimization tool"                     

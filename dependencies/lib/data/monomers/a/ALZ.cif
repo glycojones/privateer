@@ -1,0 +1,387 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ALZ      ALZ '.                                   ' non-polymer        50  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ALZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ALZ           O14    O    O         0.000      0.000    0.000    0.000
+ ALZ           C14    C    C         0.000      0.215    1.134    0.377
+ ALZ           O15    O    O2        0.000      0.639    2.066   -0.496
+ ALZ           C16    C    CH2       0.000      0.841    1.715   -1.891
+ ALZ           H161   H    H         0.000     -0.100    1.362   -2.317
+ ALZ           H162   H    H         0.000      1.591    0.925   -1.961
+ ALZ           C17    C    CR6       0.000      1.314    2.928   -2.650
+ ALZ           C22    C    CR16      0.000      0.397    3.775   -3.242
+ ALZ           H22    H    H         0.000     -0.663    3.565   -3.163
+ ALZ           C21    C    CR16      0.000      0.830    4.889   -3.935
+ ALZ           H21    H    H         0.000      0.110    5.557   -4.392
+ ALZ           C20    C    CR16      0.000      2.184    5.151   -4.044
+ ALZ           H20    H    H         0.000      2.524    6.023   -4.590
+ ALZ           C19    C    CR16      0.000      3.101    4.303   -3.457
+ ALZ           H19    H    H         0.000      4.161    4.509   -3.542
+ ALZ           C18    C    CR16      0.000      2.668    3.190   -2.760
+ ALZ           H18    H    H         0.000      3.387    2.524   -2.301
+ ALZ           N8     N    N         0.000      0.027    1.459    1.671
+ ALZ           C12    C    CH2       0.000      0.250    2.794    2.264
+ ALZ           H121   H    H         0.000     -0.628    3.436    2.155
+ ALZ           H122   H    H         0.000      1.118    3.291    1.826
+ ALZ           C11    C    CH2       0.000      0.510    2.523    3.768
+ ALZ           H111   H    H         0.000      0.258    3.370    4.409
+ ALZ           H112   H    H         0.000      1.532    2.201    3.977
+ ALZ           C10    C    CH2       0.000     -0.469    1.353    4.046
+ ALZ           H101   H    H         0.000     -1.488    1.696    4.236
+ ALZ           H102   H    H         0.000     -0.140    0.718    4.871
+ ALZ           C9     C    CH1       0.000     -0.432    0.550    2.729
+ ALZ           H9     H    H         0.000      0.265   -0.294    2.826
+ ALZ           C8     C    C         0.000     -1.811    0.038    2.402
+ ALZ           O8     O    O         0.000     -2.565    0.714    1.732
+ ALZ           N7     N    NH1       0.000     -2.209   -1.168    2.852
+ ALZ           HN7    H    H         0.000     -1.581   -1.730    3.409
+ ALZ           N6     N    NH1       0.000     -3.458   -1.632    2.555
+ ALZ           HN6    H    H         0.000     -4.162   -1.157    2.009
+ ALZ           C5     C    CH2       0.000     -3.579   -2.953    3.183
+ ALZ           H51    H    H         0.000     -3.445   -2.856    4.262
+ ALZ           H52    H    H         0.000     -2.811   -3.618    2.781
+ ALZ           C4     C    CH2       0.000     -4.963   -3.534    2.889
+ ALZ           H41    H    H         0.000     -5.095   -3.629    1.809
+ ALZ           H42    H    H         0.000     -5.729   -2.867    3.291
+ ALZ           C3     C    CH2       0.000     -5.089   -4.910    3.542
+ ALZ           H31    H    H         0.000     -4.957   -4.813    4.622
+ ALZ           H32    H    H         0.000     -4.321   -5.574    3.141
+ ALZ           C2     C    CH2       0.000     -6.473   -5.492    3.247
+ ALZ           H21A   H    H         0.000     -6.604   -5.587    2.167
+ ALZ           H22A   H    H         0.000     -7.240   -4.826    3.648
+ ALZ           N1     N    NH2       0.000     -6.594   -6.814    3.875
+ ALZ           HN12   H    H         0.000     -7.250   -6.962    4.633
+ ALZ           HN11   H    H         0.000     -6.024   -7.587    3.553
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ALZ      O14    n/a    C14    START
+ ALZ      C14    O14    N8     .
+ ALZ      O15    C14    C16    .
+ ALZ      C16    O15    C17    .
+ ALZ      H161   C16    .      .
+ ALZ      H162   C16    .      .
+ ALZ      C17    C16    C22    .
+ ALZ      C22    C17    C21    .
+ ALZ      H22    C22    .      .
+ ALZ      C21    C22    C20    .
+ ALZ      H21    C21    .      .
+ ALZ      C20    C21    C19    .
+ ALZ      H20    C20    .      .
+ ALZ      C19    C20    C18    .
+ ALZ      H19    C19    .      .
+ ALZ      C18    C19    H18    .
+ ALZ      H18    C18    .      .
+ ALZ      N8     C14    C12    .
+ ALZ      C12    N8     C11    .
+ ALZ      H121   C12    .      .
+ ALZ      H122   C12    .      .
+ ALZ      C11    C12    C10    .
+ ALZ      H111   C11    .      .
+ ALZ      H112   C11    .      .
+ ALZ      C10    C11    C9     .
+ ALZ      H101   C10    .      .
+ ALZ      H102   C10    .      .
+ ALZ      C9     C10    C8     .
+ ALZ      H9     C9     .      .
+ ALZ      C8     C9     N7     .
+ ALZ      O8     C8     .      .
+ ALZ      N7     C8     N6     .
+ ALZ      HN7    N7     .      .
+ ALZ      N6     N7     C5     .
+ ALZ      HN6    N6     .      .
+ ALZ      C5     N6     C4     .
+ ALZ      H51    C5     .      .
+ ALZ      H52    C5     .      .
+ ALZ      C4     C5     C3     .
+ ALZ      H41    C4     .      .
+ ALZ      H42    C4     .      .
+ ALZ      C3     C4     C2     .
+ ALZ      H31    C3     .      .
+ ALZ      H32    C3     .      .
+ ALZ      C2     C3     N1     .
+ ALZ      H21A   C2     .      .
+ ALZ      H22A   C2     .      .
+ ALZ      N1     C2     HN11   .
+ ALZ      HN12   N1     .      .
+ ALZ      HN11   N1     .      END
+ ALZ      C9     N8     .    ADD
+ ALZ      C17    C18    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ALZ       N1        C2        single    1.450     0.020     1.450     0.020     
+ALZ       HN11      N1        single    1.036     0.016     0.914     0.007     
+ALZ       HN12      N1        single    1.036     0.016     0.914     0.007     
+ALZ       C2        C3        single    1.524     0.020     1.524     0.020     
+ALZ       H21A      C2        single    1.089     0.010     0.989     0.005     
+ALZ       H22A      C2        single    1.089     0.010     0.989     0.005     
+ALZ       C3        C4        single    1.524     0.020     1.524     0.020     
+ALZ       H31       C3        single    1.089     0.010     0.989     0.005     
+ALZ       H32       C3        single    1.089     0.010     0.989     0.005     
+ALZ       C4        C5        single    1.524     0.020     1.524     0.020     
+ALZ       H41       C4        single    1.089     0.010     0.989     0.005     
+ALZ       H42       C4        single    1.089     0.010     0.989     0.005     
+ALZ       C5        N6        single    1.450     0.020     1.450     0.020     
+ALZ       H51       C5        single    1.089     0.010     0.989     0.005     
+ALZ       H52       C5        single    1.089     0.010     0.989     0.005     
+ALZ       N6        N7        single    1.400     0.020     1.400     0.020     
+ALZ       HN6       N6        single    1.036     0.016     0.914     0.007     
+ALZ       N7        C8        single    1.330     0.020     1.330     0.020     
+ALZ       HN7       N7        single    1.016     0.010     0.899     0.007     
+ALZ       O8        C8        double    1.220     0.020     1.220     0.020     
+ALZ       C8        C9        single    1.500     0.020     1.500     0.020     
+ALZ       C9        N8        single    1.455     0.020     1.455     0.020     
+ALZ       C9        C10       single    1.524     0.020     1.524     0.020     
+ALZ       H9        C9        single    1.089     0.010     0.989     0.005     
+ALZ       C12       N8        single    1.455     0.020     1.455     0.020     
+ALZ       N8        C14       single    1.330     0.020     1.330     0.020     
+ALZ       C10       C11       single    1.524     0.020     1.524     0.020     
+ALZ       H101      C10       single    1.089     0.010     0.989     0.005     
+ALZ       H102      C10       single    1.089     0.010     0.989     0.005     
+ALZ       C11       C12       single    1.524     0.020     1.524     0.020     
+ALZ       H111      C11       single    1.089     0.010     0.989     0.005     
+ALZ       H112      C11       single    1.089     0.010     0.989     0.005     
+ALZ       H121      C12       single    1.089     0.010     0.989     0.005     
+ALZ       H122      C12       single    1.089     0.010     0.989     0.005     
+ALZ       C14       O14       double    1.220     0.020     1.220     0.020     
+ALZ       O15       C14       single    1.454     0.020     1.454     0.020     
+ALZ       C16       O15       single    1.426     0.020     1.426     0.020     
+ALZ       C17       C16       single    1.511     0.020     1.511     0.020     
+ALZ       H161      C16       single    1.089     0.010     0.989     0.005     
+ALZ       H162      C16       single    1.089     0.010     0.989     0.005     
+ALZ       C17       C18       double    1.390     0.020     1.390     0.020     
+ALZ       C22       C17       single    1.390     0.020     1.390     0.020     
+ALZ       C18       C19       single    1.390     0.020     1.390     0.020     
+ALZ       H18       C18       single    1.082     0.013     0.975     0.010     
+ALZ       C19       C20       double    1.390     0.020     1.390     0.020     
+ALZ       H19       C19       single    1.082     0.013     0.975     0.010     
+ALZ       C20       C21       single    1.390     0.020     1.390     0.020     
+ALZ       H20       C20       single    1.082     0.013     0.975     0.010     
+ALZ       C21       C22       double    1.390     0.020     1.390     0.020     
+ALZ       H21       C21       single    1.082     0.013     0.975     0.010     
+ALZ       H22       C22       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ALZ      O14    C14    O15     119.000    3.000
+ ALZ      O14    C14    N8      123.000    3.000
+ ALZ      O15    C14    N8      120.000    3.000
+ ALZ      C14    O15    C16     120.000    3.000
+ ALZ      O15    C16    H161    109.470    3.000
+ ALZ      O15    C16    H162    109.470    3.000
+ ALZ      O15    C16    C17     109.470    3.000
+ ALZ      H161   C16    H162    107.900    3.000
+ ALZ      H161   C16    C17     109.470    3.000
+ ALZ      H162   C16    C17     109.470    3.000
+ ALZ      C16    C17    C22     120.000    3.000
+ ALZ      C16    C17    C18     120.000    3.000
+ ALZ      C22    C17    C18     120.000    3.000
+ ALZ      C17    C22    H22     120.000    3.000
+ ALZ      C17    C22    C21     120.000    3.000
+ ALZ      H22    C22    C21     120.000    3.000
+ ALZ      C22    C21    H21     120.000    3.000
+ ALZ      C22    C21    C20     120.000    3.000
+ ALZ      H21    C21    C20     120.000    3.000
+ ALZ      C21    C20    H20     120.000    3.000
+ ALZ      C21    C20    C19     120.000    3.000
+ ALZ      H20    C20    C19     120.000    3.000
+ ALZ      C20    C19    H19     120.000    3.000
+ ALZ      C20    C19    C18     120.000    3.000
+ ALZ      H19    C19    C18     120.000    3.000
+ ALZ      C19    C18    H18     120.000    3.000
+ ALZ      C19    C18    C17     120.000    3.000
+ ALZ      H18    C18    C17     120.000    3.000
+ ALZ      C14    N8     C12     127.000    3.000
+ ALZ      C14    N8     C9      121.000    3.000
+ ALZ      C12    N8     C9      112.000    3.000
+ ALZ      N8     C12    H121    109.470    3.000
+ ALZ      N8     C12    H122    109.470    3.000
+ ALZ      N8     C12    C11     105.000    3.000
+ ALZ      H121   C12    H122    107.900    3.000
+ ALZ      H121   C12    C11     109.470    3.000
+ ALZ      H122   C12    C11     109.470    3.000
+ ALZ      C12    C11    H111    109.470    3.000
+ ALZ      C12    C11    H112    109.470    3.000
+ ALZ      C12    C11    C10     111.000    3.000
+ ALZ      H111   C11    H112    107.900    3.000
+ ALZ      H111   C11    C10     109.470    3.000
+ ALZ      H112   C11    C10     109.470    3.000
+ ALZ      C11    C10    H101    109.470    3.000
+ ALZ      C11    C10    H102    109.470    3.000
+ ALZ      C11    C10    C9      111.000    3.000
+ ALZ      H101   C10    H102    107.900    3.000
+ ALZ      H101   C10    C9      109.470    3.000
+ ALZ      H102   C10    C9      109.470    3.000
+ ALZ      C10    C9     H9      108.340    3.000
+ ALZ      C10    C9     C8      109.470    3.000
+ ALZ      C10    C9     N8      105.000    3.000
+ ALZ      H9     C9     C8      108.810    3.000
+ ALZ      H9     C9     N8      109.470    3.000
+ ALZ      C8     C9     N8      111.600    3.000
+ ALZ      C9     C8     O8      120.500    3.000
+ ALZ      C9     C8     N7      116.500    3.000
+ ALZ      O8     C8     N7      123.000    3.000
+ ALZ      C8     N7     HN7     120.000    3.000
+ ALZ      C8     N7     N6      120.000    3.000
+ ALZ      HN7    N7     N6      120.000    3.000
+ ALZ      N7     N6     HN6     120.000    3.000
+ ALZ      N7     N6     C5      120.000    3.000
+ ALZ      HN6    N6     C5      118.500    3.000
+ ALZ      N6     C5     H51     109.470    3.000
+ ALZ      N6     C5     H52     109.470    3.000
+ ALZ      N6     C5     C4      112.000    3.000
+ ALZ      H51    C5     H52     107.900    3.000
+ ALZ      H51    C5     C4      109.470    3.000
+ ALZ      H52    C5     C4      109.470    3.000
+ ALZ      C5     C4     H41     109.470    3.000
+ ALZ      C5     C4     H42     109.470    3.000
+ ALZ      C5     C4     C3      111.000    3.000
+ ALZ      H41    C4     H42     107.900    3.000
+ ALZ      H41    C4     C3      109.470    3.000
+ ALZ      H42    C4     C3      109.470    3.000
+ ALZ      C4     C3     H31     109.470    3.000
+ ALZ      C4     C3     H32     109.470    3.000
+ ALZ      C4     C3     C2      111.000    3.000
+ ALZ      H31    C3     H32     107.900    3.000
+ ALZ      H31    C3     C2      109.470    3.000
+ ALZ      H32    C3     C2      109.470    3.000
+ ALZ      C3     C2     H21A    109.470    3.000
+ ALZ      C3     C2     H22A    109.470    3.000
+ ALZ      C3     C2     N1      109.470    3.000
+ ALZ      H21A   C2     H22A    107.900    3.000
+ ALZ      H21A   C2     N1      109.470    3.000
+ ALZ      H22A   C2     N1      109.470    3.000
+ ALZ      C2     N1     HN12    120.000    3.000
+ ALZ      C2     N1     HN11    120.000    3.000
+ ALZ      HN12   N1     HN11    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ALZ      var_1    O14    C14    O15    C16       -0.074   20.000   1
+ ALZ      var_2    C14    O15    C16    C17     -179.986   20.000   1
+ ALZ      var_3    O15    C16    C17    C22      -90.272   20.000   2
+ ALZ      CONST_1  C16    C17    C18    C19      180.000    0.000   0
+ ALZ      CONST_2  C16    C17    C22    C21      180.000    0.000   0
+ ALZ      CONST_3  C17    C22    C21    C20        0.000    0.000   0
+ ALZ      CONST_4  C22    C21    C20    C19        0.000    0.000   0
+ ALZ      CONST_5  C21    C20    C19    C18        0.000    0.000   0
+ ALZ      CONST_6  C20    C19    C18    C17        0.000    0.000   0
+ ALZ      CONST_7  O14    C14    N8     C12      180.000    0.000   0
+ ALZ      var_4    C14    N8     C12    C11     -150.000   20.000   1
+ ALZ      var_5    N8     C12    C11    C10      -30.000   20.000   3
+ ALZ      var_6    C12    C11    C10    C9        30.000   20.000   3
+ ALZ      var_7    C11    C10    C9     C8      -150.000   20.000   3
+ ALZ      var_8    C10    C9     N8     C14      180.000   20.000   3
+ ALZ      var_9    C10    C9     C8     N7       -90.260   20.000   3
+ ALZ      CONST_8  C9     C8     N7     N6       180.000    0.000   0
+ ALZ      var_10   C8     N7     N6     C5      -179.993   20.000   1
+ ALZ      var_11   N7     N6     C5     C4       179.994   20.000   3
+ ALZ      var_12   N6     C5     C4     C3       179.993   20.000   3
+ ALZ      var_13   C5     C4     C3     C2      -179.948   20.000   3
+ ALZ      var_14   C4     C3     C2     N1      -179.993   20.000   3
+ ALZ      var_15   C3     C2     N1     HN11     -66.273   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ALZ      chir_01  C9     C8     N8     C10       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ALZ      plan-1    N1        0.020
+ ALZ      plan-1    C2        0.020
+ ALZ      plan-1    HN11      0.020
+ ALZ      plan-1    HN12      0.020
+ ALZ      plan-2    N6        0.020
+ ALZ      plan-2    C5        0.020
+ ALZ      plan-2    N7        0.020
+ ALZ      plan-2    HN6       0.020
+ ALZ      plan-2    HN7       0.020
+ ALZ      plan-3    N7        0.020
+ ALZ      plan-3    N6        0.020
+ ALZ      plan-3    C8        0.020
+ ALZ      plan-3    HN7       0.020
+ ALZ      plan-3    HN6       0.020
+ ALZ      plan-4    C8        0.020
+ ALZ      plan-4    N7        0.020
+ ALZ      plan-4    O8        0.020
+ ALZ      plan-4    C9        0.020
+ ALZ      plan-4    HN7       0.020
+ ALZ      plan-5    N8        0.020
+ ALZ      plan-5    C9        0.020
+ ALZ      plan-5    C12       0.020
+ ALZ      plan-5    C14       0.020
+ ALZ      plan-6    C14       0.020
+ ALZ      plan-6    N8        0.020
+ ALZ      plan-6    O14       0.020
+ ALZ      plan-6    O15       0.020
+ ALZ      plan-7    C17       0.020
+ ALZ      plan-7    C16       0.020
+ ALZ      plan-7    C18       0.020
+ ALZ      plan-7    C22       0.020
+ ALZ      plan-7    C19       0.020
+ ALZ      plan-7    C20       0.020
+ ALZ      plan-7    C21       0.020
+ ALZ      plan-7    H18       0.020
+ ALZ      plan-7    H19       0.020
+ ALZ      plan-7    H20       0.020
+ ALZ      plan-7    H21       0.020
+ ALZ      plan-7    H22       0.020
+# ------------------------------------------------------

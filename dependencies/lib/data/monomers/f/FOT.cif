@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FOT     FOT      "5-FLUORO-2,6-DIOXO-1,2,3,6-TETRAHYDROPYRIMIDINE-4-CARBOXYLIC ACID"     NON-POLYMER     14     12     .     
+#
+data_comp_FOT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FOT     C2      C       CR6     0       0.960       18.656      5.333       
+FOT     C6      C       CR6     0       0.071       20.929      5.725       
+FOT     C5      C       CR6     0       -1.214      20.414      5.653       
+FOT     O2      O       O       0       1.932       17.922      5.198       
+FOT     N3      N       NR6     0       -0.338      18.193      5.269       
+FOT     N1      N       NR6     0       1.093       20.008      5.559       
+FOT     O6      O       O       0       0.326       22.112      5.922       
+FOT     F5      F       F       0       -2.252      21.260      5.807       
+FOT     C4      C       CR6     0       -1.424      19.037      5.424       
+FOT     C41     C       C       0       -2.797      18.440      5.339       
+FOT     O42     O       O       0       -3.551      18.909      4.504       
+FOT     O41     O       OC      -1      -3.052      17.532      6.111       
+FOT     HN3     H       H       0       -0.462      17.333      5.126       
+FOT     HN1     H       H       0       1.964       20.331      5.604       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FOT       C2        O2        DOUBLE    n         1.225     0.010     1.225     0.010     
+FOT       C2        N3        SINGLE    y         1.374     0.010     1.374     0.010     
+FOT       C2        N1        SINGLE    y         1.370     0.010     1.370     0.010     
+FOT       C6        C5        SINGLE    y         1.374     0.013     1.374     0.013     
+FOT       C6        N1        SINGLE    y         1.377     0.010     1.377     0.010     
+FOT       C6        O6        DOUBLE    n         1.226     0.010     1.226     0.010     
+FOT       C5        F5        SINGLE    n         1.348     0.012     1.348     0.012     
+FOT       C5        C4        DOUBLE    y         1.393     0.018     1.393     0.018     
+FOT       N3        C4        SINGLE    y         1.365     0.017     1.365     0.017     
+FOT       C4        C41       SINGLE    n         1.496     0.020     1.496     0.020     
+FOT       C41       O42       DOUBLE    n         1.219     0.020     1.219     0.020     
+FOT       C41       O41       SINGLE    n         1.219     0.020     1.219     0.020     
+FOT       N3        HN3       SINGLE    n         1.016     0.010     0.879     0.020     
+FOT       N1        HN1       SINGLE    n         1.016     0.010     0.929     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FOT          O2          C2          N3     122.705    1.50
+FOT          O2          C2          N1     121.882    1.50
+FOT          N3          C2          N1     115.413    1.50
+FOT          C5          C6          N1     114.801    1.50
+FOT          C5          C6          O6     124.431    1.50
+FOT          N1          C6          O6     120.767    1.50
+FOT          C6          C5          F5     118.226    1.50
+FOT          C6          C5          C4     120.619    1.50
+FOT          F5          C5          C4     121.154    1.50
+FOT          C2          N3          C4     122.099    1.50
+FOT          C2          N3         HN3     118.098    1.73
+FOT          C4          N3         HN3     119.803    2.44
+FOT          C2          N1          C6     126.719    1.50
+FOT          C2          N1         HN1     116.152    2.30
+FOT          C6          N1         HN1     117.129    1.50
+FOT          C5          C4          N3     120.348    1.64
+FOT          C5          C4         C41     122.143    1.55
+FOT          N3          C4         C41     117.509    1.50
+FOT          C4         C41         O42     116.880    1.50
+FOT          C4         C41         O41     116.880    1.50
+FOT         O42         C41         O41     126.239    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FOT       const_sp2_sp2_3          O2          C2          N3          C4     180.000   10.00     2
+FOT              const_23          O2          C2          N1          C6     180.000   10.00     2
+FOT              const_16          F5          C5          C6          O6       0.000   10.00     2
+FOT              const_19          O6          C6          N1          C2     180.000   10.00     2
+FOT              const_12         C41          C4          C5          F5       0.000   10.00     2
+FOT       const_sp2_sp2_7         C41          C4          N3          C2     180.000   10.00     2
+FOT             sp2_sp2_1          C5          C4         C41         O42     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FOT    plan-1          C2   0.020
+FOT    plan-1          C4   0.020
+FOT    plan-1         C41   0.020
+FOT    plan-1          C5   0.020
+FOT    plan-1          C6   0.020
+FOT    plan-1          F5   0.020
+FOT    plan-1         HN1   0.020
+FOT    plan-1         HN3   0.020
+FOT    plan-1          N1   0.020
+FOT    plan-1          N3   0.020
+FOT    plan-1          O2   0.020
+FOT    plan-1          O6   0.020
+FOT    plan-2          C4   0.020
+FOT    plan-2         C41   0.020
+FOT    plan-2         O41   0.020
+FOT    plan-2         O42   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FOT SMILES           ACDLabs              10.04 "O=C(O)C1=C(F)C(=O)NC(=O)N1"
+FOT SMILES_CANONICAL CACTVS               3.341 "OC(=O)C1=C(F)C(=O)NC(=O)N1"
+FOT SMILES           CACTVS               3.341 "OC(=O)C1=C(F)C(=O)NC(=O)N1"
+FOT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1(=C(NC(=O)NC1=O)C(=O)O)F"
+FOT SMILES           "OpenEye OEToolkits" 1.5.0 "C1(=C(NC(=O)NC1=O)C(=O)O)F"
+FOT InChI            InChI                1.03  "InChI=1S/C5H3FN2O4/c6-1-2(4(10)11)7-5(12)8-3(1)9/h(H,10,11)(H2,7,8,9,12)"
+FOT InChIKey         InChI                1.03  SEHFUALWMUWDKS-UHFFFAOYSA-N
+FOT ?                acedrg               202         "dictionary generator"                  
+FOT ?                acedrg_database      11          "data source"                           
+FOT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FOT ?                refmac5              5.8.0189    "optimization tool"                     

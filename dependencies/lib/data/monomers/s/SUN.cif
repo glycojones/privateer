@@ -1,0 +1,254 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SUN     SUN     "O-[(R)-(DIMETHYLAMINO)(ETHOXY)PHOSPHORYL]-L-SERINE"     peptide   32     15     .
+#
+data_comp_SUN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SUN     N       N       NT3     1       3.820       -0.217      -0.652
+SUN     CA      C       CH1     0       2.802       -0.184      0.433
+SUN     CB      C       CH2     0       1.408       -0.237      -0.171
+SUN     OG      O       O2      0       0.433       -0.241      0.903
+SUN     C       C       C       0       3.015       1.054       1.316
+SUN     O       O       O       0       3.531       0.872       2.437
+SUN     O1      O       O       0       -1.936      -0.225      1.827
+SUN     P1      P       P       0       -1.115      -0.259      0.624
+SUN     N1      N       NT      0       -1.398      -1.590      -0.308
+SUN     C2      C       CH3     0       -0.993      -2.914      0.179
+SUN     C1      C       CH3     0       -2.595      -1.656      -1.154
+SUN     O2      O       O2      0       -1.298      0.987       -0.316
+SUN     C3      C       CH2     0       -1.260      2.350       0.205
+SUN     C4      C       CH3     0       -2.637      2.786       0.513
+SUN     OXT     O       OC      -1      2.662       2.157       0.851
+SUN     H       H       H       0       4.652       -0.081      -0.302
+SUN     H2      H       H       0       3.641       0.435       -1.263
+SUN     H3      H       H       0       3.801       -1.029      -1.066
+SUN     HA      H       H       0       2.929       -0.995      0.997
+SUN     HBC1    H       H       0       1.308       -1.050      -0.713
+SUN     HBC2    H       H       0       1.264       0.539       -0.754
+SUN     H2C1    H       H       0       -0.879      -3.520      -0.570
+SUN     H2C2    H       H       0       -1.676      -3.266      0.773
+SUN     H2C3    H       H       0       -0.154      -2.845      0.663
+SUN     H1C1    H       H       0       -2.491      -2.354      -1.821
+SUN     H1C2    H       H       0       -2.729      -0.806      -1.604
+SUN     H1C3    H       H       0       -3.372      -1.852      -0.606
+SUN     H3C1    H       H       0       -0.864      2.950       -0.461
+SUN     H3C2    H       H       0       -0.711      2.387       1.016
+SUN     H4C1    H       H       0       -2.609      3.580       1.072
+SUN     H4C2    H       H       0       -3.104      2.076       0.984
+SUN     H4C3    H       H       0       -3.106      2.988       -0.313
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+SUN      N      n/a    CA     START
+SUN      H      N      .      .
+SUN      H2     N      .      .
+SUN      H3     N      .      .
+SUN      CA     N      C      .
+SUN      HA     CA     .      .
+SUN      CB     CA     OG     .
+SUN      HBC1   CB     .      .
+SUN      HBC2   CB     .      .
+SUN      OG     CB     P1     .
+SUN      P1     OG     O2     .
+SUN      O1     P1     .      .
+SUN      N1     P1     C2     .
+SUN      C1     N1     H1C1   .
+SUN      H1C3   C1     .      .
+SUN      H1C2   C1     .      .
+SUN      H1C1   C1     .      .
+SUN      C2     N1     H2C1   .
+SUN      H2C3   C2     .      .
+SUN      H2C2   C2     .      .
+SUN      H2C1   C2     .      .
+SUN      O2     P1     C3     .
+SUN      C3     O2     C4     .
+SUN      H3C1   C3     .      .
+SUN      H3C2   C3     .      .
+SUN      C4     C3     H4C1   .
+SUN      H4C3   C4     .      .
+SUN      H4C2   C4     .      .
+SUN      H4C1   C4     .      .
+SUN      C      CA     .      END
+SUN      O      C      .      .
+SUN      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SUN       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+SUN       CA        CB        SINGLE    n         1.515     0.017     1.515     0.017     
+SUN       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+SUN       CB        OG        SINGLE    n         1.447     0.017     1.447     0.017     
+SUN       OG        P1        SINGLE    n         1.571     0.011     1.571     0.011     
+SUN       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+SUN       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SUN       O1        P1        DOUBLE    n         1.457     0.014     1.457     0.014     
+SUN       P1        N1        SINGLE    n         1.645     0.018     1.645     0.018     
+SUN       P1        O2        SINGLE    n         1.571     0.011     1.571     0.011     
+SUN       N1        C2        SINGLE    n         1.466     0.010     1.466     0.010     
+SUN       N1        C1        SINGLE    n         1.466     0.010     1.466     0.010     
+SUN       O2        C3        SINGLE    n         1.458     0.016     1.458     0.016     
+SUN       C3        C4        SINGLE    n         1.477     0.020     1.477     0.020     
+SUN       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+SUN       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+SUN       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+SUN       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+SUN       CB        HBC1      SINGLE    n         1.089     0.010     0.982     0.018     
+SUN       CB        HBC2      SINGLE    n         1.089     0.010     0.982     0.018     
+SUN       C2        H2C1      SINGLE    n         1.089     0.010     0.971     0.018     
+SUN       C2        H2C2      SINGLE    n         1.089     0.010     0.971     0.018     
+SUN       C2        H2C3      SINGLE    n         1.089     0.010     0.971     0.018     
+SUN       C1        H1C1      SINGLE    n         1.089     0.010     0.971     0.018     
+SUN       C1        H1C2      SINGLE    n         1.089     0.010     0.971     0.018     
+SUN       C1        H1C3      SINGLE    n         1.089     0.010     0.971     0.018     
+SUN       C3        H3C1      SINGLE    n         1.089     0.010     0.980     0.015     
+SUN       C3        H3C2      SINGLE    n         1.089     0.010     0.980     0.015     
+SUN       C4        H4C1      SINGLE    n         1.089     0.010     0.971     0.016     
+SUN       C4        H4C2      SINGLE    n         1.089     0.010     0.971     0.016     
+SUN       C4        H4C3      SINGLE    n         1.089     0.010     0.971     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SUN          CA           N           H     109.619    1.50
+SUN          CA           N          H2     109.619    1.50
+SUN          CA           N          H3     109.619    1.50
+SUN           H           N          H2     109.028    2.41
+SUN           H           N          H3     109.028    2.41
+SUN          H2           N          H3     109.028    2.41
+SUN           N          CA          CB     109.782    1.50
+SUN           N          CA           C     109.829    1.50
+SUN           N          CA          HA     108.049    1.50
+SUN          CB          CA           C     111.899    1.50
+SUN          CB          CA          HA     108.381    1.50
+SUN           C          CA          HA     108.255    1.50
+SUN          CA          CB          OG     108.381    1.50
+SUN          CA          CB        HBC1     110.023    1.50
+SUN          CA          CB        HBC2     110.023    1.50
+SUN          OG          CB        HBC1     109.739    1.50
+SUN          OG          CB        HBC2     109.739    1.50
+SUN        HBC1          CB        HBC2     108.157    1.50
+SUN          CB          OG          P1     120.987    1.99
+SUN          CA           C           O     117.181    1.50
+SUN          CA           C         OXT     117.181    1.50
+SUN           O           C         OXT     125.637    1.50
+SUN          OG          P1          O1     114.386    2.57
+SUN          OG          P1          N1     104.521    3.00
+SUN          OG          P1          O2     101.741    2.74
+SUN          O1          P1          N1     113.406    3.00
+SUN          O1          P1          O2     114.386    2.57
+SUN          N1          P1          O2     104.521    3.00
+SUN          P1          N1          C2     120.863    2.69
+SUN          P1          N1          C1     120.863    2.69
+SUN          C2          N1          C1     112.457    1.50
+SUN          N1          C2        H2C1     109.853    1.50
+SUN          N1          C2        H2C2     109.853    1.50
+SUN          N1          C2        H2C3     109.853    1.50
+SUN        H2C1          C2        H2C2     109.332    1.50
+SUN        H2C1          C2        H2C3     109.332    1.50
+SUN        H2C2          C2        H2C3     109.332    1.50
+SUN          N1          C1        H1C1     109.853    1.50
+SUN          N1          C1        H1C2     109.853    1.50
+SUN          N1          C1        H1C3     109.853    1.50
+SUN        H1C1          C1        H1C2     109.332    1.50
+SUN        H1C1          C1        H1C3     109.332    1.50
+SUN        H1C2          C1        H1C3     109.332    1.50
+SUN          P1          O2          C3     120.987    1.99
+SUN          O2          C3          C4     108.997    1.50
+SUN          O2          C3        H3C1     109.898    1.50
+SUN          O2          C3        H3C2     109.898    1.50
+SUN          C4          C3        H3C1     109.788    1.50
+SUN          C4          C3        H3C2     109.788    1.50
+SUN        H3C1          C3        H3C2     108.343    1.50
+SUN          C3          C4        H4C1     109.474    1.50
+SUN          C3          C4        H4C2     109.474    1.50
+SUN          C3          C4        H4C3     109.474    1.50
+SUN        H4C1          C4        H4C2     109.410    1.50
+SUN        H4C1          C4        H4C3     109.410    1.50
+SUN        H4C2          C4        H4C3     109.410    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SUN             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+SUN            sp3_sp3_46          C4          C3          O2          P1     180.000   10.00     3
+SUN            sp3_sp3_49          O2          C3          C4        H4C1     180.000   10.00     3
+SUN            sp3_sp3_13           N          CA          CB          OG      60.000   10.00     3
+SUN             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+SUN            sp3_sp3_19          CA          CB          OG          P1     180.000   10.00     3
+SUN            sp3_sp3_22          CB          OG          P1          O1     180.000   10.00     3
+SUN            sp3_sp3_31          C3          O2          P1          OG     180.000   10.00     3
+SUN            sp3_sp3_25          C2          N1          P1          OG     180.000   10.00     3
+SUN            sp3_sp3_40        H1C1          C1          N1          P1     180.000   10.00     3
+SUN            sp3_sp3_34        H2C1          C2          N1          P1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SUN    chir_1    CA    N    C    CB    both
+SUN    chir_2    P1    OG    O2    O1    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SUN    plan-1           C   0.020
+SUN    plan-1          CA   0.020
+SUN    plan-1           O   0.020
+SUN    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SUN SMILES           ACDLabs              10.04 "O=P(OCC)(OCC(N)C(=O)O)N(C)C"
+SUN SMILES_CANONICAL CACTVS               3.341 "CCO[P@@](=O)(OC[C@H](N)C(O)=O)N(C)C"
+SUN SMILES           CACTVS               3.341 "CCO[P](=O)(OC[CH](N)C(O)=O)N(C)C"
+SUN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCO[P@](=O)(N(C)C)OC[C@@H](C(=O)O)N"
+SUN SMILES           "OpenEye OEToolkits" 1.5.0 "CCOP(=O)(N(C)C)OCC(C(=O)O)N"
+SUN InChI            InChI                1.03  "InChI=1S/C7H17N2O5P/c1-4-13-15(12,9(2)3)14-5-6(8)7(10)11/h6H,4-5,8H2,1-3H3,(H,10,11)/t6-,15+/m0/s1"
+SUN InChIKey         InChI                1.03  RIJCTVRGPFRGFH-WDDATRMLSA-N
+SUN ?                acedrg               202         "dictionary generator"
+SUN ?                acedrg_database      11          "data source"
+SUN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SUN ?                refmac5              5.8.0222    "optimization tool"

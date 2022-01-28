@@ -1,0 +1,144 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+JFD     JFD      6-amino-5-bromo-1,2,3,4-tetrahydropyrimidine-2,4-dione     NON-POLYMER     14     10     .     
+#
+data_comp_JFD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+JFD     BR      BR      BR      0       18.178      2.221       28.306      
+JFD     C5      C       CR6     0       16.820      2.415       29.610      
+JFD     C4      C       CR6     0       16.272      3.722       29.869      
+JFD     O8      O       O       0       16.638      4.755       29.282      
+JFD     N3      N       NR6     0       15.280      3.801       30.834      
+JFD     C2      C       CR6     0       14.797      2.726       31.546      
+JFD     O9      O       O       0       13.917      2.854       32.390      
+JFD     N1      N       NR6     0       15.355      1.499       31.259      
+JFD     C6      C       CR6     0       16.342      1.330       30.319      
+JFD     N7      N       NH2     0       16.838      0.117       30.091      
+JFD     HN3     H       H       0       14.926      4.599       31.012      
+JFD     HN1     H       H       0       15.056      0.798       31.708      
+JFD     HN7     H       H       0       16.322      -0.510      29.756      
+JFD     HN7A    H       H       0       17.679      -0.053      30.276      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+JFD       BR        C5        SINGLE    n         1.892     0.010     1.892     0.010     
+JFD       C5        C4        SINGLE    y         1.424     0.020     1.424     0.020     
+JFD       C5        C6        DOUBLE    y         1.374     0.010     1.374     0.010     
+JFD       C4        O8        DOUBLE    n         1.242     0.018     1.242     0.018     
+JFD       C4        N3        SINGLE    y         1.381     0.010     1.381     0.010     
+JFD       N3        C2        SINGLE    y         1.370     0.010     1.370     0.010     
+JFD       C2        O9        DOUBLE    n         1.226     0.011     1.226     0.011     
+JFD       C2        N1        SINGLE    y         1.369     0.010     1.369     0.010     
+JFD       N1        C6        SINGLE    y         1.365     0.010     1.365     0.010     
+JFD       C6        N7        SINGLE    n         1.329     0.013     1.329     0.013     
+JFD       N3        HN3       SINGLE    n         1.016     0.010     0.889     0.020     
+JFD       N1        HN1       SINGLE    n         1.016     0.010     0.885     0.010     
+JFD       N7        HN7       SINGLE    n         1.016     0.010     0.878     0.020     
+JFD       N7        HN7A      SINGLE    n         1.016     0.010     0.878     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+JFD          BR          C5          C4     119.522    1.50
+JFD          BR          C5          C6     120.511    1.61
+JFD          C4          C5          C6     119.968    1.50
+JFD          C5          C4          O8     122.908    3.00
+JFD          C5          C4          N3     118.119    2.98
+JFD          O8          C4          N3     118.973    1.50
+JFD          C4          N3          C2     124.797    1.50
+JFD          C4          N3         HN3     118.222    1.78
+JFD          C2          N3         HN3     116.981    2.30
+JFD          N3          C2          O9     121.999    1.50
+JFD          N3          C2          N1     115.963    1.50
+JFD          O9          C2          N1     122.038    1.50
+JFD          C2          N1          C6     121.457    1.60
+JFD          C2          N1         HN1     118.355    1.94
+JFD          C6          N1         HN1     120.189    1.63
+JFD          C5          C6          N1     119.697    1.64
+JFD          C5          C6          N7     119.780    1.50
+JFD          N1          C6          N7     120.523    1.61
+JFD          C6          N7         HN7     119.878    2.77
+JFD          C6          N7        HN7A     119.878    2.77
+JFD         HN7          N7        HN7A     120.243    1.85
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+JFD       const_sp2_sp2_4          O8          C4          C5          BR       0.000   10.00     2
+JFD              const_24          BR          C5          C6          N7       0.000   10.00     2
+JFD       const_sp2_sp2_7          O8          C4          N3          C2     180.000   10.00     2
+JFD              const_11          O9          C2          N3          C4     180.000   10.00     2
+JFD              const_15          O9          C2          N1          C6     180.000   10.00     2
+JFD              const_19          N7          C6          N1          C2     180.000   10.00     2
+JFD             sp2_sp2_1          C5          C6          N7         HN7     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+JFD    plan-1          BR   0.020
+JFD    plan-1          C2   0.020
+JFD    plan-1          C4   0.020
+JFD    plan-1          C5   0.020
+JFD    plan-1          C6   0.020
+JFD    plan-1         HN1   0.020
+JFD    plan-1         HN3   0.020
+JFD    plan-1          N1   0.020
+JFD    plan-1          N3   0.020
+JFD    plan-1          N7   0.020
+JFD    plan-1          O8   0.020
+JFD    plan-1          O9   0.020
+JFD    plan-2          C6   0.020
+JFD    plan-2         HN7   0.020
+JFD    plan-2        HN7A   0.020
+JFD    plan-2          N7   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+JFD SMILES           ACDLabs              10.04 "BrC=1C(=O)NC(=O)NC=1N"
+JFD SMILES_CANONICAL CACTVS               3.341 "NC1=C(Br)C(=O)NC(=O)N1"
+JFD SMILES           CACTVS               3.341 "NC1=C(Br)C(=O)NC(=O)N1"
+JFD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1(=C(NC(=O)NC1=O)N)Br"
+JFD SMILES           "OpenEye OEToolkits" 1.5.0 "C1(=C(NC(=O)NC1=O)N)Br"
+JFD InChI            InChI                1.03  "InChI=1S/C4H4BrN3O2/c5-1-2(6)7-4(10)8-3(1)9/h(H4,6,7,8,9,10)"
+JFD InChIKey         InChI                1.03  FSLBEEVCUZFKRL-UHFFFAOYSA-N
+JFD ?                acedrg               202         "dictionary generator"                  
+JFD ?                acedrg_database      11          "data source"                           
+JFD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+JFD ?                refmac5              5.8.0189    "optimization tool"                     

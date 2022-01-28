@@ -1,0 +1,312 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+XMM      XMM '(2R,3S,4S,5S,6R)-2-(5-BROMO-4-CHLORO' pyranose           38  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_XMM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ XMM           C1     C    CH1       0.000      0.000    0.000    0.000
+ XMM           H1     H    H         0.000      0.629   -0.573    0.696
+ XMM           C2     C    CH1       0.000      0.644    1.363   -0.265
+ XMM           H2     H    H         0.000      0.759    1.906    0.684
+ XMM           O2     O    OH1       0.000      1.927    1.177   -0.867
+ XMM           HO2    H    H         0.000      2.490    0.665   -0.272
+ XMM           O1     O    O2        0.000     -1.294    0.192    0.576
+ XMM           C7     C    CR5       0.000     -1.719   -1.030    1.001
+ XMM           C11    C    CR15      0.000     -1.050   -2.192    0.898
+ XMM           H11    H    H         0.000     -0.068   -2.307    0.456
+ XMM           N1     N    NR15      0.000     -1.798   -3.210    1.439
+ XMM           HN1    H    H         0.000     -1.507   -4.208    1.484
+ XMM           C9     C    CR56      0.000     -2.992   -2.713    1.911
+ XMM           C12    C    CR16      0.000     -4.089   -3.297    2.536
+ XMM           H12    H    H         0.000     -4.096   -4.362    2.735
+ XMM           C14    C    CR16      0.000     -5.167   -2.521    2.903
+ XMM           H14    H    H         0.000     -6.018   -2.982    3.389
+ XMM           C13    C    CR6       0.000     -5.172   -1.154    2.655
+ XMM           C10    C    CR6       0.000     -4.096   -0.554    2.037
+ XMM           CL     CL   CL        0.000     -4.107    1.154    1.730
+ XMM           C8     C    CR56      0.000     -2.994   -1.328    1.664
+ XMM           BR     BR   BR        0.000     -6.663   -0.111    3.169
+ XMM           O5     O    O2        0.000     -0.128   -0.719   -1.225
+ XMM           C5     C    CH1       0.000     -1.089   -0.037   -2.028
+ XMM           H5     H    H         0.000     -2.010    0.112   -1.447
+ XMM           C6     C    CH2       0.000     -1.402   -0.875   -3.269
+ XMM           H61    H    H         0.000     -0.473   -1.098   -3.800
+ XMM           H62    H    H         0.000     -2.069   -0.315   -3.927
+ XMM           O6     O    OH1       0.000     -2.032   -2.095   -2.874
+ XMM           HO6    H    H         0.000     -2.229   -2.625   -3.659
+ XMM           C4     C    CH1       0.000     -0.533    1.322   -2.458
+ XMM           H4     H    H         0.000      0.401    1.177   -3.018
+ XMM           O4     O    OH1       0.000     -1.488    1.990   -3.284
+ XMM           HO4    H    H         0.000     -1.138    2.851   -3.549
+ XMM           C3     C    CH1       0.000     -0.257    2.167   -1.208
+ XMM           H3     H    H         0.000     -1.205    2.401   -0.704
+ XMM           O3     O    OH1       0.000      0.400    3.379   -1.582
+ XMM           HO3    H    H         0.000      0.584    3.903   -0.790
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ XMM      C1     n/a    O5     START
+ XMM      H1     C1     .      .
+ XMM      C2     C1     O2     .
+ XMM      H2     C2     .      .
+ XMM      O2     C2     HO2    .
+ XMM      HO2    O2     .      .
+ XMM      O1     C1     C7     .
+ XMM      C7     O1     C11    .
+ XMM      C11    C7     N1     .
+ XMM      H11    C11    .      .
+ XMM      N1     C11    C9     .
+ XMM      HN1    N1     .      .
+ XMM      C9     N1     C12    .
+ XMM      C12    C9     C14    .
+ XMM      H12    C12    .      .
+ XMM      C14    C12    C13    .
+ XMM      H14    C14    .      .
+ XMM      C13    C14    BR     .
+ XMM      C10    C13    C8     .
+ XMM      CL     C10    .      .
+ XMM      C8     C10    .      .
+ XMM      BR     C13    .      .
+ XMM      O5     C1     .      END
+ XMM      C5     O5     C4     .
+ XMM      H5     C5     .      .
+ XMM      C6     C5     O6     .
+ XMM      H61    C6     .      .
+ XMM      H62    C6     .      .
+ XMM      O6     C6     HO6    .
+ XMM      HO6    O6     .      .
+ XMM      C4     C5     C3     .
+ XMM      H4     C4     .      .
+ XMM      O4     C4     HO4    .
+ XMM      HO4    O4     .      .
+ XMM      C3     C4     O3     .
+ XMM      H3     C3     .      .
+ XMM      O3     C3     HO3    .
+ XMM      HO3    O3     .      .
+ XMM      C2     C3     .    ADD
+ XMM      C7     C8     .    ADD
+ XMM      C8     C9     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+XMM       O2        C2        single    1.432     0.020     1.432     0.020     
+XMM       HO2       O2        single    0.970     0.012     0.839     0.014     
+XMM       C2        C3        single    1.524     0.020     1.524     0.020     
+XMM       C2        C1        single    1.524     0.020     1.524     0.020     
+XMM       H2        C2        single    1.089     0.010     0.989     0.005     
+XMM       O3        C3        single    1.432     0.020     1.432     0.020     
+XMM       C3        C4        single    1.524     0.020     1.524     0.020     
+XMM       H3        C3        single    1.089     0.010     0.989     0.005     
+XMM       HO3       O3        single    0.970     0.012     0.839     0.014     
+XMM       O4        C4        single    1.432     0.020     1.432     0.020     
+XMM       C4        C5        single    1.524     0.020     1.524     0.020     
+XMM       H4        C4        single    1.089     0.010     0.989     0.005     
+XMM       HO4       O4        single    0.970     0.012     0.839     0.014     
+XMM       C5        O5        single    1.426     0.020     1.426     0.020     
+XMM       C6        C5        single    1.524     0.020     1.524     0.020     
+XMM       H5        C5        single    1.089     0.010     0.989     0.005     
+XMM       O5        C1        single    1.426     0.020     1.426     0.020     
+XMM       O6        C6        single    1.432     0.020     1.432     0.020     
+XMM       H61       C6        single    1.089     0.010     0.989     0.005     
+XMM       H62       C6        single    1.089     0.010     0.989     0.005     
+XMM       HO6       O6        single    0.970     0.012     0.839     0.014     
+XMM       O1        C1        single    1.426     0.020     1.426     0.020     
+XMM       H1        C1        single    1.089     0.010     0.989     0.005     
+XMM       C7        O1        single    1.370     0.020     1.370     0.020     
+XMM       C7        C8        single    1.490     0.020     1.490     0.020     
+XMM       C11       C7        double    1.387     0.020     1.387     0.020     
+XMM       C8        C9        double    1.490     0.020     1.490     0.020     
+XMM       C8        C10       single    1.490     0.020     1.490     0.020     
+XMM       C9        N1        single    1.340     0.020     1.340     0.020     
+XMM       C12       C9        single    1.390     0.020     1.390     0.020     
+XMM       N1        C11       single    1.350     0.020     1.350     0.020     
+XMM       HN1       N1        single    1.016     0.010     0.899     0.007     
+XMM       H11       C11       single    1.082     0.013     0.975     0.010     
+XMM       CL        C10       single    1.795     0.020     1.795     0.020     
+XMM       C10       C13       double    1.487     0.020     1.487     0.020     
+XMM       BR        C13       single    1.890     0.020     1.890     0.020     
+XMM       C13       C14       single    1.390     0.020     1.390     0.020     
+XMM       C14       C12       double    1.390     0.020     1.390     0.020     
+XMM       H14       C14       single    1.082     0.013     0.975     0.010     
+XMM       H12       C12       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ XMM      H1     C1     C2      108.340    3.000
+ XMM      H1     C1     O1      109.470    3.000
+ XMM      C2     C1     O1      109.470    3.000
+ XMM      H1     C1     O5      109.470    3.000
+ XMM      C2     C1     O5      109.470    3.000
+ XMM      O1     C1     O5      109.470    3.000
+ XMM      C1     C2     H2      108.340    3.000
+ XMM      C1     C2     O2      109.470    3.000
+ XMM      C1     C2     C3      111.000    3.000
+ XMM      H2     C2     O2      109.470    3.000
+ XMM      H2     C2     C3      108.340    3.000
+ XMM      O2     C2     C3      109.470    3.000
+ XMM      C2     O2     HO2     109.470    3.000
+ XMM      C1     O1     C7      120.000    3.000
+ XMM      O1     C7     C11     108.000    3.000
+ XMM      O1     C7     C8      108.000    3.000
+ XMM      C11    C7     C8      108.000    3.000
+ XMM      C7     C11    H11     126.000    3.000
+ XMM      C7     C11    N1      108.000    3.000
+ XMM      H11    C11    N1      126.000    3.000
+ XMM      C11    N1     HN1     126.000    3.000
+ XMM      C11    N1     C9      108.000    3.000
+ XMM      HN1    N1     C9      126.000    3.000
+ XMM      N1     C9     C12     132.000    3.000
+ XMM      N1     C9     C8      108.000    3.000
+ XMM      C12    C9     C8      120.000    3.000
+ XMM      C9     C12    H12     120.000    3.000
+ XMM      C9     C12    C14     120.000    3.000
+ XMM      H12    C12    C14     120.000    3.000
+ XMM      C12    C14    H14     120.000    3.000
+ XMM      C12    C14    C13     120.000    3.000
+ XMM      H14    C14    C13     120.000    3.000
+ XMM      C14    C13    C10     120.000    3.000
+ XMM      C14    C13    BR      120.000    3.000
+ XMM      C10    C13    BR      120.000    3.000
+ XMM      C13    C10    CL      120.000    3.000
+ XMM      C13    C10    C8      120.000    3.000
+ XMM      CL     C10    C8      120.000    3.000
+ XMM      C10    C8     C7      132.000    3.000
+ XMM      C10    C8     C9      120.000    3.000
+ XMM      C7     C8     C9      108.000    3.000
+ XMM      C1     O5     C5      111.800    3.000
+ XMM      O5     C5     H5      109.470    3.000
+ XMM      O5     C5     C6      109.470    3.000
+ XMM      O5     C5     C4      109.470    3.000
+ XMM      H5     C5     C6      108.340    3.000
+ XMM      H5     C5     C4      108.340    3.000
+ XMM      C6     C5     C4      111.000    3.000
+ XMM      C5     C6     H61     109.470    3.000
+ XMM      C5     C6     H62     109.470    3.000
+ XMM      C5     C6     O6      109.470    3.000
+ XMM      H61    C6     H62     107.900    3.000
+ XMM      H61    C6     O6      109.470    3.000
+ XMM      H62    C6     O6      109.470    3.000
+ XMM      C6     O6     HO6     109.470    3.000
+ XMM      C5     C4     H4      108.340    3.000
+ XMM      C5     C4     O4      109.470    3.000
+ XMM      C5     C4     C3      111.000    3.000
+ XMM      H4     C4     O4      109.470    3.000
+ XMM      H4     C4     C3      108.340    3.000
+ XMM      O4     C4     C3      109.470    3.000
+ XMM      C4     O4     HO4     109.470    3.000
+ XMM      C4     C3     H3      108.340    3.000
+ XMM      C4     C3     O3      109.470    3.000
+ XMM      C4     C3     C2      111.000    3.000
+ XMM      H3     C3     O3      109.470    3.000
+ XMM      H3     C3     C2      108.340    3.000
+ XMM      O3     C3     C2      109.470    3.000
+ XMM      C3     O3     HO3     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ XMM      var_1    O5     C1     C2     O2       -60.000   20.000   3
+ XMM      var_2    C1     C2     C3     C4       -60.000   20.000   3
+ XMM      var_3    C1     C2     O2     HO2      -59.995   20.000   1
+ XMM      var_4    O5     C1     O1     C7        70.025   20.000   1
+ XMM      var_5    C1     O1     C7     C11        0.036   20.000   1
+ XMM      CONST_1  O1     C7     C8     C10        0.000    0.000   0
+ XMM      CONST_2  O1     C7     C11    N1       180.000    0.000   0
+ XMM      CONST_3  C7     C11    N1     C9         0.000    0.000   0
+ XMM      CONST_4  C11    N1     C9     C12      180.000    0.000   0
+ XMM      CONST_5  N1     C9     C12    C14      180.000    0.000   0
+ XMM      CONST_6  C9     C12    C14    C13        0.000    0.000   0
+ XMM      CONST_7  C12    C14    C13    BR       180.000    0.000   0
+ XMM      CONST_8  C14    C13    C10    C8         0.000    0.000   0
+ XMM      CONST_9  C13    C10    C8     C7       180.000    0.000   0
+ XMM      CONST_10 C10    C8     C9     N1       180.000    0.000   0
+ XMM      var_6    C1     O5     C5     C4        60.000   20.000   1
+ XMM      var_7    O5     C5     C6     O6        64.888   20.000   3
+ XMM      var_8    C5     C6     O6     HO6     -179.971   20.000   1
+ XMM      var_9    O5     C5     C4     C3       -60.000   20.000   3
+ XMM      var_10   C5     C4     O4     HO4      179.549   20.000   1
+ XMM      var_11   C5     C4     C3     O3       180.000   20.000   3
+ XMM      var_12   C4     C3     O3     HO3     -179.174   20.000   1
+ XMM      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ XMM      chir_01  C2     O2     C3     C1        negativ
+ XMM      chir_02  C3     C2     O3     C4        negativ
+ XMM      chir_03  C4     C3     O4     C5        positiv
+ XMM      chir_04  C5     C4     O5     C6        positiv
+ XMM      chir_05  C1     C2     O5     O1        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ XMM      plan-1    C7        0.020
+ XMM      plan-1    O1        0.020
+ XMM      plan-1    C8        0.020
+ XMM      plan-1    C11       0.020
+ XMM      plan-1    N1        0.020
+ XMM      plan-1    C9        0.020
+ XMM      plan-1    C10       0.020
+ XMM      plan-1    C13       0.020
+ XMM      plan-1    C14       0.020
+ XMM      plan-1    C12       0.020
+ XMM      plan-1    HN1       0.020
+ XMM      plan-1    H11       0.020
+ XMM      plan-1    CL        0.020
+ XMM      plan-1    BR        0.020
+ XMM      plan-1    H14       0.020
+ XMM      plan-1    H12       0.020
+# ------------------------------------------------------

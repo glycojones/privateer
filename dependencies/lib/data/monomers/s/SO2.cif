@@ -1,0 +1,63 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SO2     SO2      "SULFUR DIOXIDE"     NON-POLYMER     3     3     .     
+#
+data_comp_SO2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SO2     S       S       S2      0       -0.009      0.475       -0.054      
+SO2     O1      O       O       0       -1.183      -0.238      -0.436      
+SO2     O2      O       O       0       1.204       -0.273      -0.006      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SO2       S         O1        DOUBLE    n         1.426     0.020     1.426     0.020     
+SO2       S         O2        DOUBLE    n         1.426     0.020     1.426     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SO2          O1           S          O2     116.542    2.84
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SO2 SMILES           ACDLabs              10.04 O=S=O
+SO2 SMILES_CANONICAL CACTVS               3.341 "O=[S]=O"
+SO2 SMILES           CACTVS               3.341 "O=[S]=O"
+SO2 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 O=S=O
+SO2 SMILES           "OpenEye OEToolkits" 1.5.0 O=S=O
+SO2 InChI            InChI                1.03  InChI=1S/O2S/c1-3-2
+SO2 InChIKey         InChI                1.03  RAHZWNYVWXNFOC-UHFFFAOYSA-N
+SO2 ?                acedrg               202         "dictionary generator"                  
+SO2 ?                acedrg_database      11          "data source"                           
+SO2 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SO2 ?                refmac5              5.8.0189    "optimization tool"                     

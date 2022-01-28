@@ -1,0 +1,845 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+R6A      R6A 'RUTHENIUM WIRE, 6 CARBON LINKER     ' non-polymer       118  55 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_R6A
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ R6A           CM1    C    CH3       0.000      0.073    0.021   -0.031
+ R6A           HM13   H    H         0.000     -0.260   -0.264   -1.028
+ R6A           HM12   H    H         0.000     -0.266    1.033    0.191
+ R6A           HM11   H    H         0.000      1.161   -0.017    0.015
+ R6A           NNG    N    N         0.000     -0.486   -0.904    0.950
+ R6A           CM2    C    CH3       0.000      0.405   -1.628    1.866
+ R6A           HM21   H    H         0.000      0.550   -1.041    2.774
+ R6A           HM22   H    H         0.000     -0.040   -2.590    2.124
+ R6A           HM23   H    H         0.000      1.369   -1.792    1.383
+ R6A           CNE    C    CR6       0.000     -1.869   -1.012    1.058
+ R6A           CND    C    CR16      0.000     -2.412   -1.879    1.974
+ R6A           HND    H    H         0.000     -1.767   -2.451    2.624
+ R6A           CNC    C    CR16      0.000     -3.767   -2.018    2.064
+ R6A           HNC    H    H         0.000     -4.137   -2.729    2.788
+ R6A           CNB    C    CR16      0.000     -4.692   -1.348    1.331
+ R6A           HNB    H    H         0.000     -5.751   -1.503    1.477
+ R6A           CNA    C    CR6       0.000     -4.222   -0.475    0.403
+ R6A           CNF    C    CR16      0.000     -2.828   -0.332    0.291
+ R6A           HNF    H    H         0.000     -2.462    0.363   -0.450
+ R6A           OL5    O    O2        0.000     -5.052    0.246   -0.391
+ R6A           CL4    C    CH2       0.000     -6.393   -0.101   -0.054
+ R6A           HL61   H    H         0.000     -6.596    0.137    0.991
+ R6A           HL62   H    H         0.000     -6.565   -1.163   -0.223
+ R6A           CL3    C    CH2       0.000     -7.319    0.715   -0.951
+ R6A           HL51   H    H         0.000     -7.154    0.481   -2.004
+ R6A           HL52   H    H         0.000     -7.180    1.785   -0.792
+ R6A           CL2    C    CH2       0.000     -8.740    0.319   -0.555
+ R6A           HL41   H    H         0.000     -8.920    0.547    0.495
+ R6A           HL42   H    H         0.000     -8.900   -0.746   -0.727
+ R6A           CL1    C    CH2       0.000     -9.695    1.119   -1.419
+ R6A           HL31   H    H         0.000     -9.531    0.897   -2.474
+ R6A           HL32   H    H         0.000     -9.558    2.188   -1.248
+ R6A           CL0    C    CH2       0.000    -11.107    0.719   -1.028
+ R6A           HL21   H    H         0.000    -11.296    0.958    0.018
+ R6A           HL22   H    H         0.000    -11.259   -0.348   -1.189
+ R6A           CL5    C    CH2       0.000    -12.066    1.511   -1.914
+ R6A           HL11   H    H         0.000    -11.934    1.232   -2.959
+ R6A           HL12   H    H         0.000    -11.892    2.580   -1.799
+ R6A           CA0    C    CR6       0.000    -13.456    1.182   -1.481
+ R6A           CAK    C    CR66      0.000    -14.278    1.909   -0.661
+ R6A           CAM    C    CR16      0.000    -14.081    0.097   -2.075
+ R6A           HAM    H    H         0.000    -13.530   -0.460   -2.823
+ R6A           CAN    C    CR16      0.000    -15.320   -0.303   -1.783
+ R6A           HAN    H    H         0.000    -15.702   -1.154   -2.330
+ R6A           NAA    N    NR6       0.000    -16.148    0.258   -0.863
+ R6A           CAB    C    CR66      0.000    -15.669    1.485   -0.382
+ R6A           RU     RU   RU        0.000    -17.942   -0.170   -0.064
+ R6A           NBA    N    NT        0.000    -19.033    0.633   -1.637
+ R6A           CBB    C    CH2       0.000    -18.494    0.645   -2.918
+ R6A           HBB    H    H         0.000    -17.851   -0.218   -3.024
+ R6A           HBB1   H    H         0.000    -17.907    1.546   -3.030
+ R6A           CBC    C    CH2       0.000    -19.570    0.607   -3.980
+ R6A           HBC    H    H         0.000    -19.845   -0.438   -4.134
+ R6A           HBC1   H    H         0.000    -19.141    1.008   -4.900
+ R6A           CBD    C    CH2       0.000    -20.769    1.385   -3.614
+ R6A           HBD    H    H         0.000    -21.571    0.943   -4.209
+ R6A           HBD0   H    H         0.000    -20.560    2.393   -3.979
+ R6A           CBE    C    CH2       0.000    -21.133    1.440   -2.362
+ R6A           HBE0   H    H         0.000    -22.194    1.325   -2.334
+ R6A           HBE    H    H         0.000    -20.871    2.408   -1.996
+ R6A           CBF    C    CH1       0.000    -20.492    0.389   -1.503
+ R6A           HBF    H    H         0.000    -20.782   -0.626   -1.786
+ R6A           CBG    C    CH1       0.000    -20.764    0.697   -0.036
+ R6A           HBG    H    H         0.000    -20.394    1.697    0.185
+ R6A           CBH    C    CH2       0.000    -22.219    0.619    0.368
+ R6A           HBH    H    H         0.000    -22.634   -0.341    0.065
+ R6A           HBH1   H    H         0.000    -22.777    1.422   -0.109
+ R6A           CBI    C    CH2       0.000    -22.316    0.761    1.883
+ R6A           HBI    H    H         0.000    -23.355    0.633    2.182
+ R6A           HBI1   H    H         0.000    -21.977    1.757    2.165
+ R6A           CBJ    C    CH2       0.000    -21.466   -0.271    2.567
+ R6A           HBJ    H    H         0.000    -21.907   -1.249    2.367
+ R6A           HBJ1   H    H         0.000    -21.499   -0.071    3.638
+ R6A           CBK    C    CH2       0.000    -20.022   -0.258    2.092
+ R6A           HBK1   H    H         0.000    -19.524   -1.124    2.510
+ R6A           HBK    H    H         0.000    -19.554    0.642    2.469
+ R6A           NBL    N    NT        0.000    -19.919   -0.290    0.673
+ R6A           NCA    N    NT        0.000    -17.208   -1.161    1.629
+ R6A           CCB    C    CH2       0.000    -16.361   -0.331    2.435
+ R6A           HCB    H    H         0.000    -16.906    0.534    2.810
+ R6A           HCB1   H    H         0.000    -15.493    0.006    1.868
+ R6A           CCC    C    CH2       0.000    -15.901   -1.192    3.607
+ R6A           HCC    H    H         0.000    -16.790   -1.482    4.170
+ R6A           HCC1   H    H         0.000    -15.259   -0.573    4.236
+ R6A           CCD    C    CH2       0.000    -15.149   -2.427    3.180
+ R6A           HCD    H    H         0.000    -14.883   -3.014    4.059
+ R6A           HCD1   H    H         0.000    -14.241   -2.136    2.651
+ R6A           CCE    C    CH2       0.000    -16.030   -3.261    2.258
+ R6A           HCE1   H    H         0.000    -16.903   -3.637    2.777
+ R6A           HCE    H    H         0.000    -15.482   -4.090    1.828
+ R6A           CCF    C    CH1       0.000    -16.456   -2.332    1.177
+ R6A           HCF    H    H         0.000    -15.500   -1.903    0.807
+ R6A           CCG    C    CH1       0.000    -17.019   -2.999   -0.008
+ R6A           HCG    H    H         0.000    -16.237   -2.700   -0.729
+ R6A           CCH    C    C1        0.000    -16.981   -4.505   -0.280
+ R6A           HCH    H    H         0.000    -16.918   -5.274    0.480
+ R6A           CCI    C    C1        0.000    -17.046   -4.764   -1.813
+ R6A           HCI    H    H         0.000    -16.380   -5.428   -2.361
+ R6A           CCJ    C    CH2       0.000    -18.167   -3.962   -2.433
+ R6A           HCJ    H    H         0.000    -19.112   -4.413   -2.135
+ R6A           HCJ1   H    H         0.000    -18.065   -4.017   -3.515
+ R6A           CCK    C    CH2       0.000    -18.137   -2.487   -1.986
+ R6A           HCK1   H    H         0.000    -19.028   -2.036   -2.419
+ R6A           HCK    H    H         0.000    -17.252   -2.062   -2.456
+ R6A           NCL    N    NT        0.000    -18.104   -2.227   -0.570
+ R6A           NAD    N    NR6       0.000    -17.695    1.701    0.727
+ R6A           CAC    C    CR66      0.000    -16.443    2.213    0.404
+ R6A           CAE    C    CR16      0.000    -18.374    2.566    1.562
+ R6A           HAE    H    H         0.000    -19.418    2.341    1.731
+ R6A           CAF    C    CR16      0.000    -17.894    3.658    2.193
+ R6A           HAF    H    H         0.000    -18.546    4.182    2.882
+ R6A           CAG    C    CR16      0.000    -16.620    4.139    2.005
+ R6A           HAG    H    H         0.000    -16.237    5.028    2.483
+ R6A           CAH    C    CR66      0.000    -15.890    3.364    1.144
+ R6A           CAI    C    CR16      0.000    -14.542    3.753    0.885
+ R6A           HAI    H    H         0.000    -14.134    4.621    1.379
+ R6A           CAJ    C    CR16      0.000    -13.779    3.058    0.039
+ R6A           HAJ    H    H         0.000    -12.759    3.368   -0.123
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ R6A      CM1    n/a    NNG    START
+ R6A      HM13   CM1    .      .
+ R6A      HM12   CM1    .      .
+ R6A      HM11   CM1    .      .
+ R6A      NNG    CM1    CNE    .
+ R6A      CM2    NNG    HM23   .
+ R6A      HM21   CM2    .      .
+ R6A      HM22   CM2    .      .
+ R6A      HM23   CM2    .      .
+ R6A      CNE    NNG    CND    .
+ R6A      CND    CNE    CNC    .
+ R6A      HND    CND    .      .
+ R6A      CNC    CND    CNB    .
+ R6A      HNC    CNC    .      .
+ R6A      CNB    CNC    CNA    .
+ R6A      HNB    CNB    .      .
+ R6A      CNA    CNB    OL5    .
+ R6A      CNF    CNA    HNF    .
+ R6A      HNF    CNF    .      .
+ R6A      OL5    CNA    CL4    .
+ R6A      CL4    OL5    CL3    .
+ R6A      HL61   CL4    .      .
+ R6A      HL62   CL4    .      .
+ R6A      CL3    CL4    CL2    .
+ R6A      HL51   CL3    .      .
+ R6A      HL52   CL3    .      .
+ R6A      CL2    CL3    CL1    .
+ R6A      HL41   CL2    .      .
+ R6A      HL42   CL2    .      .
+ R6A      CL1    CL2    CL0    .
+ R6A      HL31   CL1    .      .
+ R6A      HL32   CL1    .      .
+ R6A      CL0    CL1    CL5    .
+ R6A      HL21   CL0    .      .
+ R6A      HL22   CL0    .      .
+ R6A      CL5    CL0    CA0    .
+ R6A      HL11   CL5    .      .
+ R6A      HL12   CL5    .      .
+ R6A      CA0    CL5    CAM    .
+ R6A      CAK    CA0    .      .
+ R6A      CAM    CA0    CAN    .
+ R6A      HAM    CAM    .      .
+ R6A      CAN    CAM    NAA    .
+ R6A      HAN    CAN    .      .
+ R6A      NAA    CAN    RU     .
+ R6A      CAB    NAA    .      .
+ R6A      RU     NAA    NAD    .
+ R6A      NBA    RU     CBF    .
+ R6A      CBB    NBA    CBC    .
+ R6A      HBB    CBB    .      .
+ R6A      HBB1   CBB    .      .
+ R6A      CBC    CBB    CBD    .
+ R6A      HBC    CBC    .      .
+ R6A      HBC1   CBC    .      .
+ R6A      CBD    CBC    CBE    .
+ R6A      HBD    CBD    .      .
+ R6A      HBD0   CBD    .      .
+ R6A      CBE    CBD    HBE    .
+ R6A      HBE0   CBE    .      .
+ R6A      HBE    CBE    .      .
+ R6A      CBF    NBA    CBG    .
+ R6A      HBF    CBF    .      .
+ R6A      CBG    CBF    NBL    .
+ R6A      HBG    CBG    .      .
+ R6A      CBH    CBG    CBI    .
+ R6A      HBH    CBH    .      .
+ R6A      HBH1   CBH    .      .
+ R6A      CBI    CBH    CBJ    .
+ R6A      HBI    CBI    .      .
+ R6A      HBI1   CBI    .      .
+ R6A      CBJ    CBI    CBK    .
+ R6A      HBJ    CBJ    .      .
+ R6A      HBJ1   CBJ    .      .
+ R6A      CBK    CBJ    HBK    .
+ R6A      HBK1   CBK    .      .
+ R6A      HBK    CBK    .      .
+ R6A      NBL    CBG    .      .
+ R6A      NCA    RU     CCF    .
+ R6A      CCB    NCA    CCC    .
+ R6A      HCB    CCB    .      .
+ R6A      HCB1   CCB    .      .
+ R6A      CCC    CCB    CCD    .
+ R6A      HCC    CCC    .      .
+ R6A      HCC1   CCC    .      .
+ R6A      CCD    CCC    CCE    .
+ R6A      HCD    CCD    .      .
+ R6A      HCD1   CCD    .      .
+ R6A      CCE    CCD    HCE    .
+ R6A      HCE1   CCE    .      .
+ R6A      HCE    CCE    .      .
+ R6A      CCF    NCA    CCG    .
+ R6A      HCF    CCF    .      .
+ R6A      CCG    CCF    NCL    .
+ R6A      HCG    CCG    .      .
+ R6A      CCH    CCG    CCI    .
+ R6A      HCH    CCH    .      .
+ R6A      CCI    CCH    CCJ    .
+ R6A      HCI    CCI    .      .
+ R6A      CCJ    CCI    CCK    .
+ R6A      HCJ    CCJ    .      .
+ R6A      HCJ1   CCJ    .      .
+ R6A      CCK    CCJ    HCK    .
+ R6A      HCK1   CCK    .      .
+ R6A      HCK    CCK    .      .
+ R6A      NCL    CCG    .      .
+ R6A      NAD    RU     CAE    .
+ R6A      CAC    NAD    .      .
+ R6A      CAE    NAD    CAF    .
+ R6A      HAE    CAE    .      .
+ R6A      CAF    CAE    CAG    .
+ R6A      HAF    CAF    .      .
+ R6A      CAG    CAF    CAH    .
+ R6A      HAG    CAG    .      .
+ R6A      CAH    CAG    CAI    .
+ R6A      CAI    CAH    CAJ    .
+ R6A      HAI    CAI    .      .
+ R6A      CAJ    CAI    HAJ    .
+ R6A      HAJ    CAJ    .      END
+ R6A      CNE    CNF    .    ADD
+ R6A      CAK    CAJ    .    ADD
+ R6A      CAK    CAB    .    ADD
+ R6A      CAB    CAC    .    ADD
+ R6A      CAC    CAH    .    ADD
+ R6A      RU     NCL    .    ADD
+ R6A      RU     NBL    .    ADD
+ R6A      NCL    CCK    .    ADD
+ R6A      CCF    CCE    .    ADD
+ R6A      NBL    CBK    .    ADD
+ R6A      CBF    CBE    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+R6A       CM2       NNG       single    1.465     0.020     1.465     0.020     
+R6A       HM23      CM2       single    1.089     0.010     0.989     0.005     
+R6A       HM22      CM2       single    1.089     0.010     0.989     0.005     
+R6A       HM21      CM2       single    1.089     0.010     0.989     0.005     
+R6A       NNG       CM1       single    1.465     0.020     1.465     0.020     
+R6A       CNE       NNG       single    1.397     0.020     1.397     0.020     
+R6A       HM13      CM1       single    1.089     0.010     0.989     0.005     
+R6A       HM12      CM1       single    1.089     0.010     0.989     0.005     
+R6A       HM11      CM1       single    1.089     0.010     0.989     0.005     
+R6A       CNE       CNF       single    1.388     0.020     1.388     0.020     
+R6A       CND       CNE       double    1.390     0.020     1.390     0.020     
+R6A       CNF       CNA       double    1.386     0.020     1.386     0.020     
+R6A       HNF       CNF       single    1.082     0.013     0.975     0.010     
+R6A       CNA       CNB       single    1.388     0.020     1.388     0.020     
+R6A       OL5       CNA       single    1.359     0.020     1.359     0.020     
+R6A       CNB       CNC       double    1.383     0.020     1.383     0.020     
+R6A       HNB       CNB       single    1.082     0.013     0.975     0.010     
+R6A       CNC       CND       single    1.381     0.020     1.381     0.020     
+R6A       HNC       CNC       single    1.082     0.013     0.975     0.010     
+R6A       HND       CND       single    1.082     0.013     0.975     0.010     
+R6A       CL4       OL5       single    1.429     0.020     1.429     0.020     
+R6A       CL3       CL4       single    1.530     0.020     1.530     0.020     
+R6A       HL61      CL4       single    1.089     0.010     0.989     0.005     
+R6A       HL62      CL4       single    1.089     0.010     0.989     0.005     
+R6A       CL2       CL3       single    1.530     0.020     1.530     0.020     
+R6A       HL51      CL3       single    1.089     0.010     0.989     0.005     
+R6A       HL52      CL3       single    1.089     0.010     0.989     0.005     
+R6A       CL1       CL2       single    1.530     0.020     1.530     0.020     
+R6A       HL41      CL2       single    1.089     0.010     0.989     0.005     
+R6A       HL42      CL2       single    1.089     0.010     0.989     0.005     
+R6A       CL0       CL1       single    1.530     0.020     1.530     0.020     
+R6A       HL31      CL1       single    1.089     0.010     0.989     0.005     
+R6A       HL32      CL1       single    1.089     0.010     0.989     0.005     
+R6A       CAK       CAJ       single    1.458     0.020     1.458     0.020     
+R6A       CAK       CAB       single    1.470     0.020     1.470     0.020     
+R6A       CAK       CA0       double    1.387     0.020     1.387     0.020     
+R6A       CAJ       CAI       double    1.355     0.020     1.355     0.020     
+R6A       HAJ       CAJ       single    1.082     0.013     0.975     0.010     
+R6A       CAB       CAC       double    1.324     0.020     1.324     0.020     
+R6A       CAB       NAA       single    1.399     0.020     1.399     0.020     
+R6A       CAC       CAH       single    1.468     0.020     1.468     0.020     
+R6A       CAC       NAD       single    1.398     0.020     1.398     0.020     
+R6A       CAI       CAH       single    1.458     0.020     1.458     0.020     
+R6A       CAH       CAG       double    1.388     0.020     1.388     0.020     
+R6A       CAM       CA0       single    1.410     0.020     1.410     0.020     
+R6A       CA0       CL5       single    1.507     0.020     1.507     0.020     
+R6A       HAI       CAI       single    1.082     0.013     0.975     0.010     
+R6A       CAG       CAF       single    1.409     0.020     1.409     0.020     
+R6A       HAG       CAG       single    1.082     0.013     0.975     0.010     
+R6A       CAF       CAE       double    1.348     0.020     1.348     0.020     
+R6A       HAF       CAF       single    1.082     0.013     0.975     0.010     
+R6A       CAE       NAD       single    1.386     0.020     1.386     0.020     
+R6A       HAE       CAE       single    1.082     0.013     0.975     0.010     
+R6A       NAD       RU        single    2.036     0.020     2.036     0.020     
+R6A       NAA       CAN       single    1.387     0.020     1.387     0.020     
+R6A       RU        NAA       single    2.032     0.020     2.032     0.020     
+R6A       CAN       CAM       double    1.347     0.020     1.347     0.020     
+R6A       HAN       CAN       single    1.082     0.013     0.975     0.010     
+R6A       HAM       CAM       single    1.082     0.013     0.975     0.010     
+R6A       RU        NCL       single    2.116     0.020     2.116     0.020     
+R6A       NCA       RU        single    2.121     0.020     2.121     0.020     
+R6A       RU        NBL       single    2.122     0.020     2.122     0.020     
+R6A       NBA       RU        single    2.105     0.020     2.105     0.020     
+R6A       NCL       CCK       single    1.446     0.020     1.446     0.020     
+R6A       NCL       CCG       single    1.487     0.020     1.487     0.020     
+R6A       CCK       CCJ       single    1.542     0.020     1.542     0.020     
+R6A       HCK       CCK       single    1.089     0.010     0.989     0.005     
+R6A       HCK1      CCK       single    1.089     0.010     0.989     0.005     
+R6A       CCJ       CCI       single    1.531     0.020     1.531     0.020     
+R6A       HCJ       CCJ       single    1.089     0.010     0.989     0.005     
+R6A       HCJ1      CCJ       single    1.089     0.010     0.989     0.005     
+R6A       CCI       CCH       double    1.543     0.020     1.543     0.020     
+R6A       HCI       CCI       single    1.082     0.013     0.975     0.010     
+R6A       CCH       CCG       single    1.523     0.020     1.523     0.020     
+R6A       CCG       CCF       single    1.494     0.020     1.494     0.020     
+R6A       HCG       CCG       single    1.089     0.010     0.989     0.005     
+R6A       HCH       CCH       single    1.082     0.013     0.975     0.010     
+R6A       CCF       CCE       single    1.523     0.020     1.523     0.020     
+R6A       CCF       NCA       single    1.486     0.020     1.486     0.020     
+R6A       HCF       CCF       single    1.089     0.010     0.989     0.005     
+R6A       CCE       CCD       single    1.544     0.020     1.544     0.020     
+R6A       HCE       CCE       single    1.089     0.010     0.989     0.005     
+R6A       HCE1      CCE       single    1.089     0.010     0.989     0.005     
+R6A       CCD       CCC       single    1.531     0.020     1.531     0.020     
+R6A       HCD       CCD       single    1.089     0.010     0.989     0.005     
+R6A       HCD1      CCD       single    1.089     0.010     0.989     0.005     
+R6A       CCC       CCB       single    1.536     0.020     1.536     0.020     
+R6A       HCC       CCC       single    1.089     0.010     0.989     0.005     
+R6A       HCC1      CCC       single    1.089     0.010     0.989     0.005     
+R6A       CCB       NCA       single    1.459     0.020     1.459     0.020     
+R6A       HCB       CCB       single    1.089     0.010     0.989     0.005     
+R6A       HCB1      CCB       single    1.089     0.010     0.989     0.005     
+R6A       NBL       CBK       single    1.443     0.020     1.443     0.020     
+R6A       NBL       CBG       single    1.481     0.020     1.481     0.020     
+R6A       CBK       CBJ       single    1.534     0.020     1.534     0.020     
+R6A       HBK       CBK       single    1.089     0.010     0.989     0.005     
+R6A       HBK1      CBK       single    1.089     0.010     0.989     0.005     
+R6A       CL5       CL0       single    1.530     0.020     1.530     0.020     
+R6A       HL21      CL0       single    1.089     0.010     0.989     0.005     
+R6A       HL22      CL0       single    1.089     0.010     0.989     0.005     
+R6A       CBJ       CBI       single    1.528     0.020     1.528     0.020     
+R6A       HBJ       CBJ       single    1.089     0.010     0.989     0.005     
+R6A       HBJ1      CBJ       single    1.089     0.010     0.989     0.005     
+R6A       CBI       CBH       single    1.537     0.020     1.537     0.020     
+R6A       HBI       CBI       single    1.089     0.010     0.989     0.005     
+R6A       HBI1      CBI       single    1.089     0.010     0.989     0.005     
+R6A       HL11      CL5       single    1.089     0.010     0.989     0.005     
+R6A       HL12      CL5       single    1.089     0.010     0.989     0.005     
+R6A       CBH       CBG       single    1.518     0.020     1.518     0.020     
+R6A       CBG       CBF       single    1.525     0.020     1.525     0.020     
+R6A       HBG       CBG       single    1.089     0.010     0.989     0.005     
+R6A       HBH       CBH       single    1.089     0.010     0.989     0.005     
+R6A       HBH1      CBH       single    1.089     0.010     0.989     0.005     
+R6A       CBF       CBE       single    1.499     0.020     1.499     0.020     
+R6A       CBF       NBA       single    1.473     0.020     1.473     0.020     
+R6A       HBF       CBF       single    1.089     0.010     0.989     0.005     
+R6A       CBE       CBD       single    1.324     0.020     1.324     0.020     
+R6A       HBE       CBE       single    1.089     0.010     0.989     0.005     
+R6A       CBD       CBC       single    1.505     0.020     1.505     0.020     
+R6A       HBD       CBD       single    1.089     0.010     0.989     0.005     
+R6A       CBC       CBB       single    1.532     0.020     1.532     0.020     
+R6A       HBC       CBC       single    1.089     0.010     0.989     0.005     
+R6A       HBC1      CBC       single    1.089     0.010     0.989     0.005     
+R6A       CBB       NBA       single    1.419     0.020     1.419     0.020     
+R6A       HBB       CBB       single    1.089     0.010     0.989     0.005     
+R6A       HBB1      CBB       single    1.089     0.010     0.989     0.005     
+R6A       HBE0      CBE       single    1.089     0.010     0.989     0.005     
+R6A       HBD0      CBD       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ R6A      HM13   CM1    HM12    109.440    3.000
+ R6A      HM13   CM1    HM11    109.469    3.000
+ R6A      HM12   CM1    HM11    109.463    3.000
+ R6A      HM13   CM1    NNG     109.470    3.000
+ R6A      HM12   CM1    NNG     109.517    3.000
+ R6A      HM11   CM1    NNG     109.468    3.000
+ R6A      CM1    NNG    CM2     120.023    3.000
+ R6A      CM1    NNG    CNE     119.987    3.000
+ R6A      CM2    NNG    CNE     119.990    3.000
+ R6A      NNG    CM2    HM21    109.447    3.000
+ R6A      NNG    CM2    HM22    109.459    3.000
+ R6A      NNG    CM2    HM23    109.456    3.000
+ R6A      HM21   CM2    HM22    109.520    3.000
+ R6A      HM21   CM2    HM23    109.442    3.000
+ R6A      HM22   CM2    HM23    109.503    3.000
+ R6A      NNG    CNE    CND     120.035    3.000
+ R6A      NNG    CNE    CNF     120.039    3.000
+ R6A      CND    CNE    CNF     119.925    3.000
+ R6A      CNE    CND    HND     119.979    3.000
+ R6A      CNE    CND    CNC     120.049    3.000
+ R6A      HND    CND    CNC     119.972    3.000
+ R6A      CND    CNC    HNC     119.974    3.000
+ R6A      CND    CNC    CNB     120.096    3.000
+ R6A      HNC    CNC    CNB     119.929    3.000
+ R6A      CNC    CNB    HNB     119.887    3.000
+ R6A      CNC    CNB    CNA     120.089    3.000
+ R6A      HNB    CNB    CNA     120.024    3.000
+ R6A      CNB    CNA    CNF     119.973    3.000
+ R6A      CNB    CNA    OL5     120.000    3.000
+ R6A      CNF    CNA    OL5     120.027    3.000
+ R6A      CNA    CNF    HNF     120.069    3.000
+ R6A      CNA    CNF    CNE     119.864    3.000
+ R6A      HNF    CNF    CNE     120.063    3.000
+ R6A      CNA    OL5    CL4     106.771    3.000
+ R6A      OL5    CL4    HL61    109.495    3.000
+ R6A      OL5    CL4    HL62    109.510    3.000
+ R6A      OL5    CL4    CL3     109.462    3.000
+ R6A      HL61   CL4    HL62    109.454    3.000
+ R6A      HL61   CL4    CL3     109.474    3.000
+ R6A      HL62   CL4    CL3     109.432    3.000
+ R6A      CL4    CL3    HL51    109.474    3.000
+ R6A      CL4    CL3    HL52    109.444    3.000
+ R6A      CL4    CL3    CL2     109.484    3.000
+ R6A      HL51   CL3    HL52    109.444    3.000
+ R6A      HL51   CL3    CL2     109.495    3.000
+ R6A      HL52   CL3    CL2     109.487    3.000
+ R6A      CL3    CL2    HL41    109.495    3.000
+ R6A      CL3    CL2    HL42    109.420    3.000
+ R6A      CL3    CL2    CL1     109.457    3.000
+ R6A      HL41   CL2    HL42    109.512    3.000
+ R6A      HL41   CL2    CL1     109.486    3.000
+ R6A      HL42   CL2    CL1     109.457    3.000
+ R6A      CL2    CL1    HL31    109.486    3.000
+ R6A      CL2    CL1    HL32    109.499    3.000
+ R6A      CL2    CL1    CL0     109.480    3.000
+ R6A      HL31   CL1    HL32    109.451    3.000
+ R6A      HL31   CL1    CL0     109.460    3.000
+ R6A      HL32   CL1    CL0     109.450    3.000
+ R6A      CL1    CL0    HL21    109.460    3.000
+ R6A      CL1    CL0    HL22    109.501    3.000
+ R6A      CL1    CL0    CL5     109.480    3.000
+ R6A      HL21   CL0    HL22    109.454    3.000
+ R6A      HL21   CL0    CL5     109.441    3.000
+ R6A      HL22   CL0    CL5     109.492    3.000
+ R6A      CL0    CL5    HL11    109.481    3.000
+ R6A      CL0    CL5    HL12    109.533    3.000
+ R6A      CL0    CL5    CA0     109.463    3.000
+ R6A      HL11   CL5    HL12    109.470    3.000
+ R6A      HL11   CL5    CA0     109.399    3.000
+ R6A      HL12   CL5    CA0     109.481    3.000
+ R6A      CL5    CA0    CAK     121.148    3.000
+ R6A      CL5    CA0    CAM     119.485    3.000
+ R6A      CAK    CA0    CAM     119.366    3.000
+ R6A      CA0    CAK    CAJ     122.359    3.000
+ R6A      CA0    CAK    CAB     118.181    3.000
+ R6A      CAJ    CAK    CAB     119.460    3.000
+ R6A      CA0    CAM    HAM     119.223    3.000
+ R6A      CA0    CAM    CAN     121.768    3.000
+ R6A      HAM    CAM    CAN     119.009    3.000
+ R6A      CAM    CAN    HAN     117.616    3.000
+ R6A      CAM    CAN    NAA     121.933    3.000
+ R6A      HAN    CAN    NAA     120.444    3.000
+ R6A      CAN    NAA    CAB     118.706    3.000
+ R6A      CAN    NAA    RU      133.175    3.000
+ R6A      CAB    NAA    RU      108.119    3.000
+ R6A      NAA    CAB    CAK     119.894    3.000
+ R6A      NAA    CAB    CAC     119.733    3.000
+ R6A      CAK    CAB    CAC     120.373    3.000
+ R6A      NAA    RU     NBA      93.535    3.000
+ R6A      NAA    RU     NCA      94.547    3.000
+ R6A      NAA    RU     NAD      83.832    3.000
+ R6A      NAA    RU     NCL      95.465    3.000
+ R6A      NAA    RU     NBL     174.559    3.000
+ R6A      NBA    RU     NCA     171.509    3.000
+ R6A      NBA    RU     NAD      90.331    3.000
+ R6A      NCA    RU     NAD      93.119    3.000
+ R6A      NCL    RU     NBL      87.347    3.000
+ R6A      NBA    RU     NCL     100.690    3.000
+ R6A      NCA    RU     NCL      75.952    3.000
+ R6A      NAD    RU     NCL     168.979    3.000
+ R6A      NBA    RU     NBL      81.349    3.000
+ R6A      NCA    RU     NBL      90.652    3.000
+ R6A      NAD    RU     NBL      94.296    3.000
+ R6A      RU     NBA    CBB     115.031    3.000
+ R6A      RU     NBA    CBF     107.764    3.000
+ R6A      CBB    NBA    CBF     113.725    3.000
+ R6A      NBA    CBB    HBB     108.664    3.000
+ R6A      NBA    CBB    HBB1    113.735    3.000
+ R6A      NBA    CBB    CBC     112.781    3.000
+ R6A      HBB    CBB    HBB1    105.600    3.000
+ R6A      HBB    CBB    CBC     106.305    3.000
+ R6A      HBB1   CBB    CBC     109.241    3.000
+ R6A      CBB    CBC    HBC     108.771    3.000
+ R6A      CBB    CBC    HBC1    108.882    3.000
+ R6A      CBB    CBC    CBD     112.703    3.000
+ R6A      HBC    CBC    HBC1    108.924    3.000
+ R6A      HBC    CBC    CBD     108.737    3.000
+ R6A      HBC1   CBC    CBD     108.761    3.000
+ R6A      CBC    CBD    HBD     119.969    3.000
+ R6A      CBC    CBD    HBD0    109.470    3.000
+ R6A      CBC    CBD    CBE     119.189    3.000
+ R6A      HBD    CBD    HBD0    107.900    3.000
+ R6A      HBD    CBD    CBE     120.841    3.000
+ R6A      HBD0   CBD    CBE     109.470    3.000
+ R6A      CBD    CBE    HBE0    109.470    3.000
+ R6A      CBD    CBE    HBE     123.160    3.000
+ R6A      CBD    CBE    CBF     114.043    3.000
+ R6A      HBE0   CBE    HBE     107.900    3.000
+ R6A      HBE0   CBE    CBF     109.470    3.000
+ R6A      HBE    CBE    CBF     122.797    3.000
+ R6A      NBA    CBF    HBF     110.381    3.000
+ R6A      NBA    CBF    CBG     106.110    3.000
+ R6A      NBA    CBF    CBE     107.225    3.000
+ R6A      HBF    CBF    CBG     108.207    3.000
+ R6A      HBF    CBF    CBE     109.779    3.000
+ R6A      CBG    CBF    CBE     115.055    3.000
+ R6A      CBF    CBG    HBG     108.186    3.000
+ R6A      CBF    CBG    CBH     114.370    3.000
+ R6A      CBF    CBG    NBL     103.574    3.000
+ R6A      HBG    CBG    CBH     109.934    3.000
+ R6A      HBG    CBG    NBL     111.254    3.000
+ R6A      CBH    CBG    NBL     109.394    3.000
+ R6A      CBG    CBH    HBH     109.988    3.000
+ R6A      CBG    CBH    HBH1    110.008    3.000
+ R6A      CBG    CBH    CBI     107.640    3.000
+ R6A      HBH    CBH    HBH1    109.994    3.000
+ R6A      HBH    CBH    CBI     109.535    3.000
+ R6A      HBH1   CBH    CBI     109.639    3.000
+ R6A      CBH    CBI    HBI     109.141    3.000
+ R6A      CBH    CBI    HBI1    109.464    3.000
+ R6A      CBH    CBI    CBJ     109.779    3.000
+ R6A      HBI    CBI    HBI1    109.330    3.000
+ R6A      HBI    CBI    CBJ     109.402    3.000
+ R6A      HBI1   CBI    CBJ     109.710    3.000
+ R6A      CBI    CBJ    HBJ     109.212    3.000
+ R6A      CBI    CBJ    HBJ1    109.360    3.000
+ R6A      CBI    CBJ    CBK     110.820    3.000
+ R6A      HBJ    CBJ    HBJ1    108.973    3.000
+ R6A      HBJ    CBJ    CBK     109.119    3.000
+ R6A      HBJ1   CBJ    CBK     109.328    3.000
+ R6A      CBJ    CBK    HBK1    107.576    3.000
+ R6A      CBJ    CBK    HBK     109.943    3.000
+ R6A      CBJ    CBK    NBL     110.006    3.000
+ R6A      HBK1   CBK    HBK     107.185    3.000
+ R6A      HBK1   CBK    NBL     108.986    3.000
+ R6A      HBK    CBK    NBL     112.962    3.000
+ R6A      CBG    NBL    RU      105.010    3.000
+ R6A      CBG    NBL    CBK     110.550    3.000
+ R6A      RU     NBL    CBK     110.253    3.000
+ R6A      RU     NCA    CCB     109.989    3.000
+ R6A      RU     NCA    CCF     104.863    3.000
+ R6A      CCB    NCA    CCF     104.216    3.000
+ R6A      NCA    CCB    HCB     110.056    3.000
+ R6A      NCA    CCB    HCB1    109.767    3.000
+ R6A      NCA    CCB    CCC     108.154    3.000
+ R6A      HCB    CCB    HCB1    109.911    3.000
+ R6A      HCB    CCB    CCC     109.555    3.000
+ R6A      HCB1   CCB    CCC     109.370    3.000
+ R6A      CCB    CCC    HCC     109.163    3.000
+ R6A      CCB    CCC    HCC1    109.190    3.000
+ R6A      CCB    CCC    CCD     111.456    3.000
+ R6A      HCC    CCC    HCC1    108.871    3.000
+ R6A      HCC    CCC    CCD     109.083    3.000
+ R6A      HCC1   CCC    CCD     109.038    3.000
+ R6A      CCC    CCD    HCD     109.524    3.000
+ R6A      CCC    CCD    HCD1    109.362    3.000
+ R6A      CCC    CCD    CCE     109.419    3.000
+ R6A      HCD    CCD    HCD1    109.729    3.000
+ R6A      HCD    CCD    CCE     109.454    3.000
+ R6A      HCD1   CCD    CCE     109.339    3.000
+ R6A      CCD    CCE    HCE1    110.151    3.000
+ R6A      CCD    CCE    HCE     110.031    3.000
+ R6A      CCD    CCE    CCF     105.352    3.000
+ R6A      HCE1   CCE    HCE     111.570    3.000
+ R6A      HCE1   CCE    CCF     109.700    3.000
+ R6A      HCE    CCE    CCF     109.852    3.000
+ R6A      NCA    CCF    HCF     106.808    3.000
+ R6A      NCA    CCF    CCG     112.474    3.000
+ R6A      NCA    CCF    CCE     107.268    3.000
+ R6A      HCF    CCF    CCG     105.539    3.000
+ R6A      HCF    CCF    CCE     105.963    3.000
+ R6A      CCG    CCF    CCE     118.054    3.000
+ R6A      CCF    CCG    HCG     105.941    3.000
+ R6A      CCF    CCG    CCH     117.339    3.000
+ R6A      CCF    CCG    NCL     111.506    3.000
+ R6A      HCG    CCG    CCH     105.688    3.000
+ R6A      HCG    CCG    NCL     107.681    3.000
+ R6A      CCH    CCG    NCL     108.127    3.000
+ R6A      CCG    CCH    HCH     109.743    3.000
+ R6A      CCG    CCH    CCI     105.659    3.000
+ R6A      HCH    CCH    CCI     110.080    3.000
+ R6A      CCH    CCI    HCI     109.530    3.000
+ R6A      CCH    CCI    CCJ     108.953    3.000
+ R6A      HCI    CCI    CCJ     109.610    3.000
+ R6A      CCI    CCJ    HCJ     109.189    3.000
+ R6A      CCI    CCJ    HCJ1    109.460    3.000
+ R6A      CCI    CCJ    CCK     110.748    3.000
+ R6A      HCJ    CCJ    HCJ1    109.540    3.000
+ R6A      HCJ    CCJ    CCK     108.826    3.000
+ R6A      HCJ1   CCJ    CCK     109.059    3.000
+ R6A      CCJ    CCK    HCK1    108.507    3.000
+ R6A      CCJ    CCK    HCK     107.525    3.000
+ R6A      CCJ    CCK    NCL     108.630    3.000
+ R6A      HCK1   CCK    HCK     110.324    3.000
+ R6A      HCK1   CCK    NCL     110.668    3.000
+ R6A      HCK    CCK    NCL     111.082    3.000
+ R6A      CCG    NCL    RU      105.352    3.000
+ R6A      CCG    NCL    CCK     106.444    3.000
+ R6A      RU     NCL    CCK     112.591    3.000
+ R6A      RU     NAD    CAC     107.875    3.000
+ R6A      RU     NAD    CAE     133.097    3.000
+ R6A      CAC    NAD    CAE     119.027    3.000
+ R6A      NAD    CAC    CAB     120.003    3.000
+ R6A      NAD    CAC    CAH     119.470    3.000
+ R6A      CAB    CAC    CAH     120.521    3.000
+ R6A      NAD    CAE    HAE     120.563    3.000
+ R6A      NAD    CAE    CAF     121.912    3.000
+ R6A      HAE    CAE    CAF     117.497    3.000
+ R6A      CAE    CAF    HAF     118.983    3.000
+ R6A      CAE    CAF    CAG     121.598    3.000
+ R6A      HAF    CAF    CAG     119.419    3.000
+ R6A      CAF    CAG    HAG     120.327    3.000
+ R6A      CAF    CAG    CAH     119.293    3.000
+ R6A      HAG    CAG    CAH     120.381    3.000
+ R6A      CAG    CAH    CAI     121.868    3.000
+ R6A      CAG    CAH    CAC     118.529    3.000
+ R6A      CAI    CAH    CAC     119.602    3.000
+ R6A      CAH    CAI    HAI     120.077    3.000
+ R6A      CAH    CAI    CAJ     119.861    3.000
+ R6A      HAI    CAI    CAJ     120.062    3.000
+ R6A      CAI    CAJ    HAJ     118.897    3.000
+ R6A      CAI    CAJ    CAK     120.101    3.000
+ R6A      HAJ    CAJ    CAK     121.001    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ R6A      var_1    HM11   CM1    NNG    CNE     -179.966   20.000   3
+ R6A      var_2    CM1    NNG    CM2    HM23     -29.955   20.000   3
+ R6A      var_3    CM1    NNG    CNE    CND      180.000   20.000   3
+ R6A      CONST_1  NNG    CNE    CNF    CNA      179.683    0.000   0
+ R6A      CONST_2  NNG    CNE    CND    CNC      180.000    0.000   0
+ R6A      CONST_3  CNE    CND    CNC    CNB       -0.020    0.000   0
+ R6A      CONST_4  CND    CNC    CNB    CNA        0.020    0.000   0
+ R6A      CONST_5  CNC    CNB    CNA    OL5      180.000    0.000   0
+ R6A      CONST_6  CNB    CNA    CNF    CNE        0.641    0.000   0
+ R6A      var_4    CNB    CNA    OL5    CL4       -0.040   20.000   3
+ R6A      var_5    CNA    OL5    CL4    CL3      179.980   20.000   3
+ R6A      var_6    OL5    CL4    CL3    CL2      179.972   20.000   3
+ R6A      var_7    CL4    CL3    CL2    CL1      180.000   20.000   3
+ R6A      var_8    CL3    CL2    CL1    CL0     -179.972   20.000   3
+ R6A      var_9    CL2    CL1    CL0    CL5     -179.944   20.000   3
+ R6A      var_10   CL1    CL0    CL5    CA0     -179.972   20.000   3
+ R6A      var_11   CL0    CL5    CA0    CAM      -85.554   20.000   2
+ R6A      CONST_7  CL5    CA0    CAK    CAJ        0.515    0.000   0
+ R6A      CONST_8  CA0    CAK    CAJ    CAI      177.805    0.000   0
+ R6A      CONST_9  CA0    CAK    CAB    NAA        1.881    0.000   0
+ R6A      CONST_10 CL5    CA0    CAM    CAN      178.814    0.000   0
+ R6A      CONST_11 CA0    CAM    CAN    NAA       -0.946    0.000   0
+ R6A      CONST_12 CAM    CAN    NAA    RU      -176.101    0.000   0
+ R6A      CONST_13 CAN    NAA    CAB    CAK       -4.413    0.000   0
+ R6A      CONST_14 NAA    CAB    CAC    NAD       -0.495    0.000   0
+ R6A      CONST_15 CAN    NAA    RU     NAD     -174.460    0.000   0
+ R6A      var_12   NAA    RU     NCL    CCG       47.762   20.000   3
+ R6A      var_13   NAA    RU     NBL    CBG       -4.320   20.000   3
+ R6A      var_14   NAA    RU     NBA    CBF      171.183   20.000   3
+ R6A      var_15   RU     NBA    CBB    CBC      149.095   20.000   3
+ R6A      var_16   NBA    CBB    CBC    CBD       26.119   20.000   3
+ R6A      var_17   CBB    CBC    CBD    CBE      -39.657   20.000   3
+ R6A      var_18   CBC    CBD    CBE    CBF       -0.964   20.000   3
+ R6A      var_19   RU     NBA    CBF    CBG       43.158   20.000   3
+ R6A      var_20   NBA    CBF    CBE    CBD       51.895   20.000   3
+ R6A      var_21   NBA    CBF    CBG    NBL      -65.458   20.000   3
+ R6A      var_22   CBF    CBG    CBH    CBI      177.709   20.000   3
+ R6A      var_23   CBG    CBH    CBI    CBJ      -57.311   20.000   3
+ R6A      var_24   CBH    CBI    CBJ    CBK       54.524   20.000   3
+ R6A      var_25   CBI    CBJ    CBK    NBL      -55.836   20.000   3
+ R6A      var_26   CBF    CBG    NBL    RU        53.537   20.000   3
+ R6A      var_27   CBG    NBL    CBK    CBJ       60.721   20.000   3
+ R6A      var_28   NAA    RU     NCA    CCF      -49.378   20.000   3
+ R6A      var_29   RU     NCA    CCB    CCC     -179.727   20.000   3
+ R6A      var_30   NCA    CCB    CCC    CCD       58.063   20.000   3
+ R6A      var_31   CCB    CCC    CCD    CCE      -52.037   20.000   3
+ R6A      var_32   CCC    CCD    CCE    CCF       56.291   20.000   3
+ R6A      var_33   RU     NCA    CCF    CCG      -36.965   20.000   3
+ R6A      var_34   NCA    CCF    CCE    CCD      -69.373   20.000   3
+ R6A      var_35   NCA    CCF    CCG    NCL       -0.185   20.000   3
+ R6A      var_36   CCF    CCG    CCH    CCI     -165.495   20.000   3
+ R6A      var_37   CCG    CCH    CCI    CCJ      -58.078   20.000   3
+ R6A      var_38   CCH    CCI    CCJ    CCK       54.605   20.000   3
+ R6A      var_39   CCI    CCJ    CCK    NCL      -58.507   20.000   3
+ R6A      var_40   CCF    CCG    NCL    RU        37.462   20.000   3
+ R6A      var_41   CCG    NCL    CCK    CCJ       65.553   20.000   3
+ R6A      CONST_16 NAA    RU     NAD    CAE      174.061    0.000   0
+ R6A      CONST_17 RU     NAD    CAC    CAB        5.093    0.000   0
+ R6A      CONST_18 NAD    CAC    CAH    CAG       -1.539    0.000   0
+ R6A      CONST_19 RU     NAD    CAE    CAF      175.577    0.000   0
+ R6A      CONST_20 NAD    CAE    CAF    CAG        1.988    0.000   0
+ R6A      CONST_21 CAE    CAF    CAG    CAH        1.052    0.000   0
+ R6A      CONST_22 CAF    CAG    CAH    CAI      178.882    0.000   0
+ R6A      CONST_23 CAG    CAH    CAI    CAJ     -177.817    0.000   0
+ R6A      CONST_24 CAH    CAI    CAJ    CAK        0.138    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ R6A      chir_01  NCL    RU     CCK    CCG       negativ
+                   .      .      .      .      .
+ R6A      chir_02  CCG    NCL    CCH    CCF       positiv
+                   .      .      .      .      .
+ R6A      chir_03  CCF    CCG    CCE    NCA       positiv
+                   .      .      .      .      .
+ R6A      chir_04  NCA    RU     CCF    CCB       negativ
+                   .      .      .      .      .
+ R6A      chir_05  NBL    RU     CBK    CBG       negativ
+                   .      .      .      .      .
+ R6A      chir_06  CBG    NBL    CBH    CBF       positiv
+                   .      .      .      .      .
+ R6A      chir_07  CBF    CBG    CBE    NBA       negativ
+                   .      .      .      .      .
+ R6A      chir_08  NBA    RU     CBF    CBB       positiv
+                   .      .      .      .      .
+ R6A      chir_09  RU     NAA    NBL    NCA       cross4
+                   NCL    NBA    NAD    .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ R6A      plan-1    NNG       0.020
+ R6A      plan-1    CM2       0.020
+ R6A      plan-1    CM1       0.020
+ R6A      plan-1    CNE       0.020
+ R6A      plan-2    CNE       0.020
+ R6A      plan-2    NNG       0.020
+ R6A      plan-2    CNF       0.020
+ R6A      plan-2    CND       0.020
+ R6A      plan-2    CNA       0.020
+ R6A      plan-2    CNB       0.020
+ R6A      plan-2    CNC       0.020
+ R6A      plan-2    HNF       0.020
+ R6A      plan-2    OL5       0.020
+ R6A      plan-2    HNB       0.020
+ R6A      plan-2    HNC       0.020
+ R6A      plan-2    HND       0.020
+ R6A      plan-3    CAK       0.020
+ R6A      plan-3    CAJ       0.020
+ R6A      plan-3    CAB       0.020
+ R6A      plan-3    CA0       0.020
+ R6A      plan-3    NAA       0.020
+ R6A      plan-3    CAN       0.020
+ R6A      plan-3    CAM       0.020
+ R6A      plan-3    CAI       0.020
+ R6A      plan-3    HAJ       0.020
+ R6A      plan-3    CAC       0.020
+ R6A      plan-3    CAH       0.020
+ R6A      plan-3    NAD       0.020
+ R6A      plan-3    CAG       0.020
+ R6A      plan-3    CAF       0.020
+ R6A      plan-3    CAE       0.020
+ R6A      plan-3    CL5       0.020
+ R6A      plan-3    HAI       0.020
+ R6A      plan-3    HAG       0.020
+ R6A      plan-3    HAF       0.020
+ R6A      plan-3    HAE       0.020
+ R6A      plan-3    RU        0.020
+ R6A      plan-3    HAN       0.020
+ R6A      plan-3    HAM       0.020
+ R6A      plan-4    CCI       0.020
+ R6A      plan-4    CCJ       0.020
+ R6A      plan-4    CCH       0.020
+ R6A      plan-4    HCI       0.020
+ R6A      plan-4    HCH       0.020
+ R6A      plan-5    CCH       0.020
+ R6A      plan-5    CCI       0.020
+ R6A      plan-5    CCG       0.020
+ R6A      plan-5    HCH       0.020
+ R6A      plan-5    HCI       0.020
+# ------------------------------------------------------

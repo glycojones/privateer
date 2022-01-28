@@ -1,0 +1,330 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CLD     CLD      "D-PARA-CHLOROPHENYL-1-ACTEAMIDOBORONIC ACID ALANINE"  peptide   42     23     .     
+#
+data_comp_CLD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CLD     N       N       NT3     1       17.175      3.950       27.274      
+CLD     CA      C       CH1     0       18.321      3.394       26.506      
+CLD     CB      C       CH2     0       18.210      3.766       25.041      
+CLD     OB3     O       O2      0       17.042      3.181       24.466      
+CLD     C       C       C       0       19.641      3.885       27.112      
+CLD     O       O       O       0       20.454      3.017       27.492      
+CLD     OXT     O       OC      -1      19.811      5.118       27.181      
+CLD     N9      N       NH1     0       14.985      3.066       21.278      
+CLD     C8      C       CH1     0       15.293      2.756       22.675      
+CLD     C7      C       CH2     0       14.029      2.894       23.542      
+CLD     C1      C       CR6     0       12.916      1.939       23.170      
+CLD     C2      C       CR16    0       11.743      2.397       22.581      
+CLD     C3      C       CR16    0       10.713      1.524       22.235      
+CLD     C6      C       CR16    0       13.034      0.575       23.404      
+CLD     C5      C       CR16    0       12.014      -0.313      23.064      
+CLD     C4      C       CR6     0       10.866      0.178       22.483      
+CLD     CL4     CL      CL      0       9.586       -0.921      22.054      
+CLD     OB1     O       OH1     0       16.020      5.112       23.414      
+CLD     OB2     O       OH1     0       17.604      3.729       22.164      
+CLD     B       B       B       -1      16.517      3.717       23.190      
+CLD     C10     C       C       0       14.754      2.163       20.311      
+CLD     O10     O       O       0       14.938      0.955       20.457      
+CLD     C11     C       CH3     0       14.230      2.711       19.022      
+CLD     H       H       H       0       17.225      3.678       28.142      
+CLD     H2      H       H       0       16.392      3.656       26.913      
+CLD     H3      H       H       0       17.196      4.860       27.242      
+CLD     HA      H       H       0       18.290      2.402       26.584      
+CLD     HB2     H       H       0       19.007      3.449       24.563      
+CLD     HB3     H       H       0       18.169      4.743       24.956      
+CLD     HN9     H       H       0       14.953      3.911       21.069      
+CLD     H8      H       H       0       15.594      1.815       22.728      
+CLD     H71     H       H       0       13.696      3.813       23.468      
+CLD     H72     H       H       0       14.275      2.741       24.479      
+CLD     HC2     H       H       0       11.641      3.319       22.412      
+CLD     HC3     H       H       0       9.927       1.848       21.838      
+CLD     H6      H       H       0       13.821      0.242       23.802      
+CLD     H5      H       H       0       12.107      -1.233      23.229      
+CLD     HOB1    H       H       0       15.440      5.335       22.839      
+CLD     HOB2    H       H       0       17.833      2.939       21.960      
+CLD     H111    H       H       0       14.058      1.983       18.403      
+CLD     H112    H       H       0       14.884      3.315       18.634      
+CLD     H113    H       H       0       13.404      3.196       19.185      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CLD      N      n/a    CA     START
+ CLD      H      N      .      .
+ CLD      H2     N      .      .
+ CLD      H3     N      .      .
+ CLD      CA     N      C      .
+ CLD      HA     CA     .      .
+ CLD      CB     CA     OB3    .
+ CLD      HB2    CB     .      .
+ CLD      HB3    CB     .      .
+ CLD      OB3    CB     B      .
+ CLD      B      OB3    C8     .
+ CLD      OB1    B      HOB1   .
+ CLD      HOB1   OB1    .      .
+ CLD      OB2    B      HOB2   .
+ CLD      HOB2   OB2    .      .
+ CLD      C8     B      C7     .
+ CLD      H8     C8     .      .
+ CLD      N9     C8     C10    .
+ CLD      HN9    N9     .      .
+ CLD      C10    N9     O10    .
+ CLD      C11    C10    H111   .
+ CLD      H113   C11    .      .
+ CLD      H112   C11    .      .
+ CLD      H111   C11    .      .
+ CLD      O10    C10    .      .
+ CLD      C7     C8     C1     .
+ CLD      H71    C7     .      .
+ CLD      H72    C7     .      .
+ CLD      C1     C7     C6     .
+ CLD      C6     C1     C5     .
+ CLD      H6     C6     .      .
+ CLD      C5     C6     C4     .
+ CLD      H5     C5     .      .
+ CLD      C4     C5     C3     .
+ CLD      CL4    C4     .      .
+ CLD      C3     C4     C2     .
+ CLD      HC3    C3     .      .
+ CLD      C2     C3     HC2    .
+ CLD      HC2    C2     .      .
+ CLD      C      CA     .      END
+ CLD      O      C      .      .
+ CLD      OXT    C      .      .
+ CLD      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CLD       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+CLD       CA        CB        SINGLE    n         1.515     0.017     1.515     0.017     
+CLD       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+CLD       CB        OB3       SINGLE    n         1.425     0.020     1.425     0.020     
+CLD       OB3       B         SINGLE    n         1.477     0.020     1.477     0.020     
+CLD       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+CLD       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+CLD       N9        C8        SINGLE    n         1.459     0.011     1.459     0.011     
+CLD       N9        C10       SINGLE    n         1.337     0.011     1.337     0.011     
+CLD       C8        C7        SINGLE    n         1.538     0.010     1.538     0.010     
+CLD       C8        B         SINGLE    n         1.633     0.020     1.633     0.020     
+CLD       C7        C1        SINGLE    n         1.512     0.011     1.512     0.011     
+CLD       C1        C2        DOUBLE    y         1.385     0.011     1.385     0.011     
+CLD       C1        C6        SINGLE    y         1.385     0.011     1.385     0.011     
+CLD       C2        C3        SINGLE    y         1.380     0.020     1.380     0.020     
+CLD       C3        C4        DOUBLE    y         1.373     0.011     1.373     0.011     
+CLD       C6        C5        DOUBLE    y         1.380     0.020     1.380     0.020     
+CLD       C5        C4        SINGLE    y         1.373     0.011     1.373     0.011     
+CLD       C4        CL4       SINGLE    n         1.741     0.010     1.741     0.010     
+CLD       OB1       B         SINGLE    n         1.494     0.020     1.494     0.020     
+CLD       OB2       B         SINGLE    n         1.494     0.020     1.494     0.020     
+CLD       C10       O10       DOUBLE    n         1.229     0.012     1.229     0.012     
+CLD       C10       C11       SINGLE    n         1.495     0.010     1.495     0.010     
+CLD       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+CLD       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+CLD       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+CLD       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+CLD       CB        HB2       SINGLE    n         1.089     0.010     0.982     0.020     
+CLD       CB        HB3       SINGLE    n         1.089     0.010     0.982     0.020     
+CLD       N9        HN9       SINGLE    n         1.016     0.010     0.872     0.020     
+CLD       C8        H8        SINGLE    n         1.089     0.010     0.990     0.014     
+CLD       C7        H71       SINGLE    n         1.089     0.010     0.981     0.015     
+CLD       C7        H72       SINGLE    n         1.089     0.010     0.981     0.015     
+CLD       C2        HC2       SINGLE    n         1.082     0.013     0.943     0.017     
+CLD       C3        HC3       SINGLE    n         1.082     0.013     0.939     0.018     
+CLD       C6        H6        SINGLE    n         1.082     0.013     0.943     0.017     
+CLD       C5        H5        SINGLE    n         1.082     0.013     0.939     0.018     
+CLD       OB1       HOB1      SINGLE    n         0.970     0.012     0.848     0.020     
+CLD       OB2       HOB2      SINGLE    n         0.970     0.012     0.848     0.020     
+CLD       C11       H111      SINGLE    n         1.089     0.010     0.971     0.014     
+CLD       C11       H112      SINGLE    n         1.089     0.010     0.971     0.014     
+CLD       C11       H113      SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CLD          CA           N           H     109.619    1.50
+CLD          CA           N          H2     109.619    1.50
+CLD          CA           N          H3     109.619    1.50
+CLD           H           N          H2     109.028    2.41
+CLD           H           N          H3     109.028    2.41
+CLD          H2           N          H3     109.028    2.41
+CLD           N          CA          CB     110.608    1.50
+CLD           N          CA           C     109.829    1.50
+CLD           N          CA          HA     108.049    1.50
+CLD          CB          CA           C     111.527    1.50
+CLD          CB          CA          HA     108.597    1.50
+CLD           C          CA          HA     108.255    1.50
+CLD          CA          CB         OB3     110.589    2.35
+CLD          CA          CB         HB2     109.469    1.50
+CLD          CA          CB         HB3     109.469    1.50
+CLD         OB3          CB         HB2     109.664    1.50
+CLD         OB3          CB         HB3     109.664    1.50
+CLD         HB2          CB         HB3     108.319    1.50
+CLD          CB         OB3           B     118.513    2.13
+CLD          CA           C           O     117.181    1.50
+CLD          CA           C         OXT     117.181    1.50
+CLD           O           C         OXT     125.637    1.50
+CLD          C8          N9         C10     123.657    1.62
+CLD          C8          N9         HN9     117.696    2.87
+CLD         C10          N9         HN9     118.647    1.94
+CLD          N9          C8          C7     110.142    1.50
+CLD          N9          C8           B     109.471    3.00
+CLD          N9          C8          H8     108.049    1.50
+CLD          C7          C8           B     114.075    3.00
+CLD          C7          C8          H8     108.202    1.50
+CLD           B          C8          H8     109.037    1.50
+CLD          C8          C7          C1     113.900    1.50
+CLD          C8          C7         H71     108.744    1.50
+CLD          C8          C7         H72     108.744    1.50
+CLD          C1          C7         H71     108.906    1.50
+CLD          C1          C7         H72     108.906    1.50
+CLD         H71          C7         H72     107.735    1.50
+CLD          C7          C1          C2     121.074    1.50
+CLD          C7          C1          C6     121.074    1.50
+CLD          C2          C1          C6     117.852    1.50
+CLD          C1          C2          C3     121.402    1.50
+CLD          C1          C2         HC2     119.287    1.50
+CLD          C3          C2         HC2     119.311    1.50
+CLD          C2          C3          C4     119.041    1.50
+CLD          C2          C3         HC3     120.507    1.50
+CLD          C4          C3         HC3     120.452    1.50
+CLD          C1          C6          C5     121.402    1.50
+CLD          C1          C6          H6     119.287    1.50
+CLD          C5          C6          H6     119.311    1.50
+CLD          C6          C5          C4     119.041    1.50
+CLD          C6          C5          H5     120.507    1.50
+CLD          C4          C5          H5     120.452    1.50
+CLD          C3          C4          C5     121.262    1.50
+CLD          C3          C4         CL4     119.369    1.50
+CLD          C5          C4         CL4     119.369    1.50
+CLD           B         OB1        HOB1     110.747    3.00
+CLD           B         OB2        HOB2     110.747    3.00
+CLD         OB3           B          C8     109.544    1.93
+CLD         OB3           B         OB1     110.049    3.00
+CLD         OB3           B         OB2     110.049    3.00
+CLD          C8           B         OB1     109.544    1.93
+CLD          C8           B         OB2     109.544    1.93
+CLD         OB1           B         OB2     110.049    3.00
+CLD          N9         C10         O10     122.594    1.50
+CLD          N9         C10         C11     115.848    1.50
+CLD         O10         C10         C11     121.558    1.50
+CLD         C10         C11        H111     109.678    1.50
+CLD         C10         C11        H112     109.678    1.50
+CLD         C10         C11        H113     109.678    1.50
+CLD        H111         C11        H112     109.365    1.50
+CLD        H111         C11        H113     109.365    1.50
+CLD        H112         C11        H113     109.365    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CLD             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+CLD       const_sp2_sp2_3          C7          C1          C2          C3     180.000   10.00     2
+CLD              const_23          C7          C1          C6          C5     180.000   10.00     2
+CLD       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+CLD              const_10          C2          C3          C4         CL4     180.000   10.00     2
+CLD              const_17          C4          C5          C6          C1       0.000   10.00     2
+CLD              const_15         CL4          C4          C5          C6     180.000   10.00     2
+CLD            sp3_sp3_43         OB3           B         OB1        HOB1     180.000   10.00     3
+CLD            sp3_sp3_46         OB3           B         OB2        HOB2     180.000   10.00     3
+CLD            sp3_sp3_10           N          CA          CB         OB3     180.000   10.00     3
+CLD             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+CLD            sp2_sp3_19          N9         C10         C11        H111       0.000   10.00     6
+CLD            sp3_sp3_19          CA          CB         OB3           B     180.000   10.00     3
+CLD            sp3_sp3_22          C8           B         OB3          CB     180.000   10.00     3
+CLD             sp2_sp2_3         O10         C10          N9          C8       0.000   10.00     2
+CLD             sp2_sp3_7         C10          N9          C8          C7       0.000   10.00     6
+CLD            sp3_sp3_34         OB3           B          C8          N9     180.000   10.00     3
+CLD            sp3_sp3_25          C1          C7          C8          N9     180.000   10.00     3
+CLD            sp2_sp3_14          C2          C1          C7          C8     -90.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+CLD    chir_1    CA    N    C    CB    positive
+CLD    chir_2    C8    N9    C7    B    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CLD    plan-1          C1   0.020
+CLD    plan-1          C2   0.020
+CLD    plan-1          C3   0.020
+CLD    plan-1          C4   0.020
+CLD    plan-1          C5   0.020
+CLD    plan-1          C6   0.020
+CLD    plan-1          C7   0.020
+CLD    plan-1         CL4   0.020
+CLD    plan-1          H5   0.020
+CLD    plan-1          H6   0.020
+CLD    plan-1         HC2   0.020
+CLD    plan-1         HC3   0.020
+CLD    plan-2           C   0.020
+CLD    plan-2          CA   0.020
+CLD    plan-2           O   0.020
+CLD    plan-2         OXT   0.020
+CLD    plan-3         C10   0.020
+CLD    plan-3          C8   0.020
+CLD    plan-3         HN9   0.020
+CLD    plan-3          N9   0.020
+CLD    plan-4         C10   0.020
+CLD    plan-4         C11   0.020
+CLD    plan-4          N9   0.020
+CLD    plan-4         O10   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CLD SMILES           ACDLabs              10.04 "Clc1ccc(cc1)CC(NC(=O)C)[B-](O)(O)OCC(C(=O)O)N"
+CLD SMILES_CANONICAL CACTVS               3.341 "CC(=O)N[C@H](Cc1ccc(Cl)cc1)[B-](O)(O)OC[C@H](N)C(O)=O"
+CLD SMILES           CACTVS               3.341 "CC(=O)N[CH](Cc1ccc(Cl)cc1)[B-](O)(O)OC[CH](N)C(O)=O"
+CLD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[B-]([C@@H](Cc1ccc(cc1)Cl)NC(=O)C)(O)(O)OC[C@@H](C(=O)O)N"
+CLD SMILES           "OpenEye OEToolkits" 1.5.0 "[B-](C(Cc1ccc(cc1)Cl)NC(=O)C)(O)(O)OCC(C(=O)O)N"
+CLD InChI            InChI                1.03  "InChI=1S/C13H19BClN2O6/c1-8(18)17-12(6-9-2-4-10(15)5-3-9)14(21,22)23-7-11(16)13(19)20/h2-5,11-12,21-22H,6-7,16H2,1H3,(H,17,18)(H,19,20)/q-1/t11-,12+/m0/s1"
+CLD InChIKey         InChI                1.03  RJXOEUFRQATKAB-NWDGAFQWSA-N
+CLD ?                acedrg               202         "dictionary generator"                  
+CLD ?                acedrg_database      11          "data source"                           
+CLD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CLD ?                refmac5              5.8.0222    "optimization tool"                     

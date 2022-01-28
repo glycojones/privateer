@@ -1,0 +1,190 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LEI     LEI     3-sulfanyl-D-valine     peptide     20     9     .
+#
+data_comp_LEI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LEI     N       N       NT3     1       8.447       2.322       6.113
+LEI     CA      C       CH1     0       8.232       0.903       5.699
+LEI     CB      C       CT      0       8.770       -0.167      6.692
+LEI     C8      C       CH3     0       8.198       0.086       8.080
+LEI     C9      C       CH3     0       10.291      -0.237      6.773
+LEI     SG      S       SH1     0       8.171       -1.805      6.157
+LEI     C       C       C       0       8.779       0.696       4.278
+LEI     O       O       O       0       9.856       1.257       3.990
+LEI     OXT     O       OC      -1      8.105       -0.019      3.510
+LEI     H       H       H       0       8.337       2.879       5.399
+LEI     H2      H       H       0       9.285       2.437       6.446
+LEI     H3      H       H       0       7.840       2.553       6.752
+LEI     HA      H       H       0       7.259       0.750       5.668
+LEI     H8      H       H       0       8.423       -0.658      8.665
+LEI     H8A     H       H       0       7.230       0.171       8.022
+LEI     H8B     H       H       0       8.573       0.908       8.442
+LEI     H9      H       H       0       10.550      -0.772      7.543
+LEI     H9A     H       H       0       10.657      0.659       6.866
+LEI     H9B     H       H       0       10.643      -0.648      5.964
+LEI     HSG     H       HSH1    0       8.741       -2.470      6.990
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+LEI      N      n/a    CA     START
+LEI      H      N      .      .
+LEI      H2     N      .      .
+LEI      H3     N      .      .
+LEI      CA     N      C      .
+LEI      HA     CA     .      .
+LEI      CB     CA     C8     .
+LEI      SG     CB     HSG    .
+LEI      HSG    SG     .      .
+LEI      C9     CB     H9     .
+LEI      H9B    C9     .      .
+LEI      H9A    C9     .      .
+LEI      H9     C9     .      .
+LEI      C8     CB     H8     .
+LEI      H8B    C8     .      .
+LEI      H8A    C8     .      .
+LEI      H8     C8     .      .
+LEI      C      CA     .      END
+LEI      O      C      .      .
+LEI      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LEI       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+LEI       CA        CB        SINGLE    n         1.550     0.010     1.550     0.010     
+LEI       CB        C9        SINGLE    n         1.522     0.011     1.522     0.011     
+LEI       CB        C8        SINGLE    n         1.522     0.011     1.522     0.011     
+LEI       CB        SG        SINGLE    n         1.823     0.019     1.823     0.019     
+LEI       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+LEI       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+LEI       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+LEI       N         H         SINGLE    n         1.036     0.016     0.914     0.007     
+LEI       N         H2        SINGLE    n         1.036     0.016     0.914     0.007     
+LEI       N         H3        SINGLE    n         1.036     0.016     0.914     0.007     
+LEI       CA        HA        SINGLE    n         1.089     0.010     0.989     0.005     
+LEI       C8        H8        SINGLE    n         1.089     0.010     0.989     0.005     
+LEI       C8        H8A       SINGLE    n         1.089     0.010     0.989     0.005     
+LEI       C8        H8B       SINGLE    n         1.089     0.010     0.989     0.005     
+LEI       C9        H9        SINGLE    n         1.089     0.010     0.989     0.005     
+LEI       C9        H9A       SINGLE    n         1.089     0.010     0.989     0.005     
+LEI       C9        H9B       SINGLE    n         1.089     0.010     0.989     0.005     
+LEI       SG        HSG       SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LEI          CA           N           H     109.853    1.85
+LEI          CA           N          H2     109.853    1.85
+LEI          CA           N          H3     109.853    1.85
+LEI           H           N          H2     109.028    2.41
+LEI           H           N          H3     109.028    2.41
+LEI          H2           N          H3     109.028    2.41
+LEI           N          CA          CB     112.810    3.00
+LEI           N          CA           C     109.414    1.50
+LEI           N          CA          HA     108.444    1.50
+LEI          CB          CA           C     111.511    2.91
+LEI          CB          CA          HA     106.559    1.91
+LEI           C          CA          HA     108.600    1.50
+LEI          CA          CB          C9     112.111    2.52
+LEI          CA          CB          C8     112.111    2.52
+LEI          CA          CB          SG     112.239    3.00
+LEI          C9          CB          C8     110.565    1.50
+LEI          C9          CB          SG     112.239    3.00
+LEI          C8          CB          SG     112.239    3.00
+LEI          CB          C8          H8     109.452    1.50
+LEI          CB          C8         H8A     109.452    1.50
+LEI          CB          C8         H8B     109.452    1.50
+LEI          H8          C8         H8A     109.433    1.50
+LEI          H8          C8         H8B     109.433    1.50
+LEI         H8A          C8         H8B     109.433    1.50
+LEI          CB          C9          H9     109.452    1.50
+LEI          CB          C9         H9A     109.452    1.50
+LEI          CB          C9         H9B     109.452    1.50
+LEI          H9          C9         H9A     109.433    1.50
+LEI          H9          C9         H9B     109.433    1.50
+LEI         H9A          C9         H9B     109.433    1.50
+LEI          CB          SG         HSG      97.885    3.00
+LEI          CA           C         OXT     117.139    1.50
+LEI          CA           C           O     117.139    1.50
+LEI         OXT           C           O     125.721    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LEI             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+LEI            sp3_sp3_10           N          CA          CB          C9     180.000   10.00     3
+LEI             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+LEI            sp3_sp3_28          H8          C8          CB          CA     180.000   10.00     3
+LEI            sp3_sp3_19          H9          C9          CB          CA     180.000   10.00     3
+LEI            sp3_sp3_37          CA          CB          SG         HSG     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+LEI    chir_1    CA    N    CB    C    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LEI    plan-1           C   0.020
+LEI    plan-1          CA   0.020
+LEI    plan-1           O   0.020
+LEI    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LEI SMILES           ACDLabs              10.04 "O=C(O)C(N)C(S)(C)C"
+LEI SMILES_CANONICAL CACTVS               3.341 "CC(C)(S)[C@@H](N)C(O)=O"
+LEI SMILES           CACTVS               3.341 "CC(C)(S)[CH](N)C(O)=O"
+LEI SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)([C@H](C(=O)O)N)S"
+LEI SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)(C(C(=O)O)N)S"
+LEI InChI            InChI                1.03  "InChI=1S/C5H11NO2S/c1-5(2,9)3(6)4(7)8/h3,9H,6H2,1-2H3,(H,7,8)/t3-/m0/s1"
+LEI InChIKey         InChI                1.03  VVNCNSJFMMFHPL-VKHMYHEASA-N
+LEI ?                acedrg               202         "dictionary generator"
+LEI ?                acedrg_database      11          "data source"
+LEI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LEI ?                refmac5              5.8.0222    "optimization tool"

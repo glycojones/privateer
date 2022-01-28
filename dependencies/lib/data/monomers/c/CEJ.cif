@@ -1,0 +1,135 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CEJ     CEJ     CYCLOPENTANE-1,3-DIONE     NON-POLYMER     13     7     .     
+#
+data_comp_CEJ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CEJ     C1      C       CH2     0       5.537       17.369      -7.280      
+CEJ     O3      O       O       0       4.936       18.913      -9.041      
+CEJ     C2      C       CR5     0       5.597       18.643      -8.069      
+CEJ     C7      C       CR5     0       7.041       18.903      -6.124      
+CEJ     C5      C       CH2     0       6.377       17.562      -6.029      
+CEJ     O8      O       O       0       7.770       19.399      -5.301      
+CEJ     C10     C       CH2     0       6.645       19.534      -7.442      
+CEJ     H1C1    H       H       0       4.607       17.174      -7.049      
+CEJ     H1C2    H       H       0       5.883       16.633      -7.823      
+CEJ     H5C1    H       H       0       7.061       16.866      -5.957      
+CEJ     H5C2    H       H       0       5.820       17.532      -5.226      
+CEJ     H101    H       H       0       6.286       20.434      -7.296      
+CEJ     H102    H       H       0       7.424       19.616      -8.031      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CEJ       C1        C2        SINGLE    n         1.500     0.010     1.500     0.010     
+CEJ       C1        C5        SINGLE    n         1.521     0.012     1.521     0.012     
+CEJ       O3        C2        DOUBLE    n         1.206     0.010     1.206     0.010     
+CEJ       C2        C10       SINGLE    n         1.509     0.019     1.509     0.019     
+CEJ       C7        C5        SINGLE    n         1.500     0.010     1.500     0.010     
+CEJ       C7        O8        DOUBLE    n         1.206     0.010     1.206     0.010     
+CEJ       C7        C10       SINGLE    n         1.509     0.019     1.509     0.019     
+CEJ       C1        H1C1      SINGLE    n         1.089     0.010     0.978     0.016     
+CEJ       C1        H1C2      SINGLE    n         1.089     0.010     0.978     0.016     
+CEJ       C5        H5C1      SINGLE    n         1.089     0.010     0.978     0.016     
+CEJ       C5        H5C2      SINGLE    n         1.089     0.010     0.978     0.016     
+CEJ       C10       H101      SINGLE    n         1.089     0.010     0.980     0.010     
+CEJ       C10       H102      SINGLE    n         1.089     0.010     0.980     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CEJ          C2          C1          C5     104.760    2.12
+CEJ          C2          C1        H1C1     109.870    1.87
+CEJ          C2          C1        H1C2     109.870    1.87
+CEJ          C5          C1        H1C1     111.206    1.50
+CEJ          C5          C1        H1C2     111.206    1.50
+CEJ        H1C1          C1        H1C2     108.761    1.50
+CEJ          C1          C2          O3     127.200    1.50
+CEJ          C1          C2         C10     106.344    1.59
+CEJ          O3          C2         C10     126.456    1.50
+CEJ          C5          C7          O8     127.200    1.50
+CEJ          C5          C7         C10     106.344    1.59
+CEJ          O8          C7         C10     126.456    1.50
+CEJ          C1          C5          C7     104.760    2.12
+CEJ          C1          C5        H5C1     111.206    1.50
+CEJ          C1          C5        H5C2     111.206    1.50
+CEJ          C7          C5        H5C1     109.870    1.87
+CEJ          C7          C5        H5C2     109.870    1.87
+CEJ        H5C1          C5        H5C2     108.761    1.50
+CEJ          C2         C10          C7     102.792    1.88
+CEJ          C2         C10        H101     110.616    1.50
+CEJ          C2         C10        H102     110.616    1.50
+CEJ          C7         C10        H101     110.616    1.50
+CEJ          C7         C10        H102     110.616    1.50
+CEJ        H101         C10        H102     108.226    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CEJ             sp2_sp3_4          O3          C2          C1          C5     180.000   10.00     6
+CEJ             sp3_sp3_1          C2          C1          C5          C7     180.000   10.00     3
+CEJ            sp2_sp3_10          O3          C2         C10          C7     180.000   10.00     6
+CEJ            sp2_sp3_22          O8          C7          C5          C1     180.000   10.00     6
+CEJ            sp2_sp3_16          O8          C7         C10          C2     180.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+CEJ    plan-1          C1   0.020
+CEJ    plan-1         C10   0.020
+CEJ    plan-1          C2   0.020
+CEJ    plan-1          O3   0.020
+CEJ    plan-2         C10   0.020
+CEJ    plan-2          C5   0.020
+CEJ    plan-2          C7   0.020
+CEJ    plan-2          O8   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CEJ SMILES           ACDLabs              10.04 "O=C1CC(=O)CC1"
+CEJ SMILES_CANONICAL CACTVS               3.341 "O=C1CCC(=O)C1"
+CEJ SMILES           CACTVS               3.341 "O=C1CCC(=O)C1"
+CEJ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1CC(=O)CC1=O"
+CEJ SMILES           "OpenEye OEToolkits" 1.5.0 "C1CC(=O)CC1=O"
+CEJ InChI            InChI                1.03  "InChI=1S/C5H6O2/c6-4-1-2-5(7)3-4/h1-3H2"
+CEJ InChIKey         InChI                1.03  LOGSONSNCYTHPS-UHFFFAOYSA-N
+CEJ ?                acedrg               190         "dictionary generator"                  
+CEJ ?                acedrg_database      11          "data source"                           
+CEJ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CEJ ?                refmac5              5.8.0158    "optimization tool"                     

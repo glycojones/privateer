@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TFS     TFS      "trifluoromethanesulfonic acid"     NON-POLYMER     9     8     .     
+#
+data_comp_TFS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TFS     FAC     F       F       0       1.589       0.770       -0.803      
+TFS     CAD     C       CT      0       1.041       -0.177      -0.060      
+TFS     FAG     F       F       0       1.580       -1.331      -0.420      
+TFS     FAA     F       F       0       1.383       0.050       1.197       
+TFS     SAE     S       S3      0       -0.753      -0.205      -0.255      
+TFS     OAH     O       OH1     0       -1.176      1.228       0.155       
+TFS     OAF     O       O       0       -1.238      -1.160      0.691       
+TFS     OAB     O       O       0       -0.996      -0.422      -1.646      
+TFS     HOAH    H       H       0       -1.806      1.476       -0.292      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TFS       FAC       CAD       SINGLE    n         1.323     0.011     1.323     0.011     
+TFS       CAD       FAG       SINGLE    n         1.323     0.011     1.323     0.011     
+TFS       CAD       FAA       SINGLE    n         1.323     0.011     1.323     0.011     
+TFS       CAD       SAE       SINGLE    n         1.804     0.020     1.804     0.020     
+TFS       SAE       OAF       DOUBLE    n         1.429     0.020     1.429     0.020     
+TFS       SAE       OAB       DOUBLE    n         1.429     0.020     1.429     0.020     
+TFS       SAE       OAH       SINGLE    n         1.549     0.020     1.549     0.020     
+TFS       OAH       HOAH      SINGLE    n         0.970     0.012     0.811     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TFS         FAC         CAD         FAG     107.491    1.50
+TFS         FAC         CAD         FAA     107.491    1.50
+TFS         FAC         CAD         SAE     111.072    1.50
+TFS         FAG         CAD         FAA     107.491    1.50
+TFS         FAG         CAD         SAE     111.072    1.50
+TFS         FAA         CAD         SAE     111.072    1.50
+TFS         CAD         SAE         OAF     106.183    1.64
+TFS         CAD         SAE         OAB     106.183    1.64
+TFS         CAD         SAE         OAH     103.568    2.80
+TFS         OAF         SAE         OAB     119.289    2.60
+TFS         OAF         SAE         OAH     110.831    2.65
+TFS         OAB         SAE         OAH     110.831    2.65
+TFS         SAE         OAH        HOAH     110.371    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TFS             sp3_sp3_1         FAC         CAD         SAE         OAF     180.000   10.00     3
+TFS            sp3_sp3_10        HOAH         OAH         SAE         CAD     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TFS SMILES           ACDLabs              10.04 "FC(F)(F)S(=O)(=O)O"
+TFS SMILES_CANONICAL CACTVS               3.341 "O[S](=O)(=O)C(F)(F)F"
+TFS SMILES           CACTVS               3.341 "O[S](=O)(=O)C(F)(F)F"
+TFS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(F)(F)(F)S(=O)(=O)O"
+TFS SMILES           "OpenEye OEToolkits" 1.5.0 "C(F)(F)(F)S(=O)(=O)O"
+TFS InChI            InChI                1.03  "InChI=1S/CHF3O3S/c2-1(3,4)8(5,6)7/h(H,5,6,7)"
+TFS InChIKey         InChI                1.03  ITMCEJHCFYSIIV-UHFFFAOYSA-N
+TFS ?                acedrg               202         "dictionary generator"                  
+TFS ?                acedrg_database      11          "data source"                           
+TFS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TFS ?                refmac5              5.8.0189    "optimization tool"                     

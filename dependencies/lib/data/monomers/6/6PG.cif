@@ -1,0 +1,223 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+6PG      6PG '6-PHOSPHOGLUCONIC ACID              ' non-polymer        27  17 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_6PG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 6PG           O3P    O    OP       -0.666      0.000    0.000    0.000
+ 6PG           P      P    P         0.000     -0.220   -0.340   -1.458
+ 6PG           O1P    O    OP       -0.666     -0.259   -1.843   -1.623
+ 6PG           O2P    O    OP       -0.666      0.912    0.229   -2.285
+ 6PG           O6     O    O2        0.000     -1.617    0.290   -1.950
+ 6PG           C6     C    CH2       0.000     -2.640   -0.283   -1.136
+ 6PG           H61    H    H         0.000     -2.450   -0.036   -0.089
+ 6PG           H62    H    H         0.000     -2.637   -1.368   -1.260
+ 6PG           C5     C    CH1       0.000     -4.000    0.277   -1.555
+ 6PG           H5     H    H         0.000     -4.001    1.368   -1.430
+ 6PG           O5     O    OH1       0.000     -4.247   -0.045   -2.925
+ 6PG           HO5    H    H         0.000     -4.246   -1.005   -3.035
+ 6PG           C4     C    CH1       0.000     -5.096   -0.336   -0.683
+ 6PG           H4     H    H         0.000     -5.095   -1.428   -0.808
+ 6PG           O4     O    OH1       0.000     -4.850   -0.015    0.687
+ 6PG           HO4    H    H         0.000     -4.851    0.945    0.797
+ 6PG           C3     C    CH1       0.000     -6.456    0.223   -1.102
+ 6PG           H3     H    H         0.000     -6.645   -0.025   -2.156
+ 6PG           O3     O    OH1       0.000     -6.457    1.642   -0.938
+ 6PG           HO3    H    H         0.000     -6.291    1.859   -0.011
+ 6PG           C2     C    CH1       0.000     -7.552   -0.391   -0.230
+ 6PG           H2     H    H         0.000     -7.552   -1.483   -0.355
+ 6PG           O2     O    OH1       0.000     -7.306   -0.069    1.141
+ 6PG           HO2    H    H         0.000     -7.308    0.892    1.250
+ 6PG           C1     C    C         0.000     -8.892    0.162   -0.642
+ 6PG           O1A    O    OC       -0.500     -9.592    0.789    0.183
+ 6PG           O1     O    OC       -0.500     -9.306   -0.009   -1.810
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 6PG      O3P    n/a    P      START
+ 6PG      P      O3P    O6     .
+ 6PG      O1P    P      .      .
+ 6PG      O2P    P      .      .
+ 6PG      O6     P      C6     .
+ 6PG      C6     O6     C5     .
+ 6PG      H61    C6     .      .
+ 6PG      H62    C6     .      .
+ 6PG      C5     C6     C4     .
+ 6PG      H5     C5     .      .
+ 6PG      O5     C5     HO5    .
+ 6PG      HO5    O5     .      .
+ 6PG      C4     C5     C3     .
+ 6PG      H4     C4     .      .
+ 6PG      O4     C4     HO4    .
+ 6PG      HO4    O4     .      .
+ 6PG      C3     C4     C2     .
+ 6PG      H3     C3     .      .
+ 6PG      O3     C3     HO3    .
+ 6PG      HO3    O3     .      .
+ 6PG      C2     C3     C1     .
+ 6PG      H2     C2     .      .
+ 6PG      O2     C2     HO2    .
+ 6PG      HO2    O2     .      .
+ 6PG      C1     C2     O1     .
+ 6PG      O1A    C1     .      .
+ 6PG      O1     C1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+6PG       C1        C2        single    1.500     0.020     1.500     0.020     
+6PG       O1A       C1        deloc     1.250     0.020     1.250     0.020     
+6PG       O1        C1        deloc     1.250     0.020     1.250     0.020     
+6PG       C2        C3        single    1.524     0.020     1.524     0.020     
+6PG       O2        C2        single    1.432     0.020     1.432     0.020     
+6PG       H2        C2        single    1.089     0.010     0.989     0.005     
+6PG       C3        C4        single    1.524     0.020     1.524     0.020     
+6PG       O3        C3        single    1.432     0.020     1.432     0.020     
+6PG       H3        C3        single    1.089     0.010     0.989     0.005     
+6PG       C4        C5        single    1.524     0.020     1.524     0.020     
+6PG       O4        C4        single    1.432     0.020     1.432     0.020     
+6PG       H4        C4        single    1.089     0.010     0.989     0.005     
+6PG       C5        C6        single    1.524     0.020     1.524     0.020     
+6PG       O5        C5        single    1.432     0.020     1.432     0.020     
+6PG       H5        C5        single    1.089     0.010     0.989     0.005     
+6PG       C6        O6        single    1.426     0.020     1.426     0.020     
+6PG       H61       C6        single    1.089     0.010     0.989     0.005     
+6PG       H62       C6        single    1.089     0.010     0.989     0.005     
+6PG       HO2       O2        single    0.970     0.012     0.839     0.014     
+6PG       HO3       O3        single    0.970     0.012     0.839     0.014     
+6PG       HO4       O4        single    0.970     0.012     0.839     0.014     
+6PG       HO5       O5        single    0.970     0.012     0.839     0.014     
+6PG       O6        P         single    1.610     0.020     1.610     0.020     
+6PG       O1P       P         deloc     1.510     0.020     1.510     0.020     
+6PG       O2P       P         deloc     1.510     0.020     1.510     0.020     
+6PG       P         O3P       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 6PG      O3P    P      O1P     119.900    3.000
+ 6PG      O3P    P      O2P     119.900    3.000
+ 6PG      O3P    P      O6      108.200    3.000
+ 6PG      O1P    P      O2P     119.900    3.000
+ 6PG      O1P    P      O6      108.200    3.000
+ 6PG      O2P    P      O6      108.200    3.000
+ 6PG      P      O6     C6      120.500    3.000
+ 6PG      O6     C6     H61     109.470    3.000
+ 6PG      O6     C6     H62     109.470    3.000
+ 6PG      O6     C6     C5      109.470    3.000
+ 6PG      H61    C6     H62     107.900    3.000
+ 6PG      H61    C6     C5      109.470    3.000
+ 6PG      H62    C6     C5      109.470    3.000
+ 6PG      C6     C5     H5      108.340    3.000
+ 6PG      C6     C5     O5      109.470    3.000
+ 6PG      C6     C5     C4      111.000    3.000
+ 6PG      H5     C5     O5      109.470    3.000
+ 6PG      H5     C5     C4      108.340    3.000
+ 6PG      O5     C5     C4      109.470    3.000
+ 6PG      C5     O5     HO5     109.470    3.000
+ 6PG      C5     C4     H4      108.340    3.000
+ 6PG      C5     C4     O4      109.470    3.000
+ 6PG      C5     C4     C3      111.000    3.000
+ 6PG      H4     C4     O4      109.470    3.000
+ 6PG      H4     C4     C3      108.340    3.000
+ 6PG      O4     C4     C3      109.470    3.000
+ 6PG      C4     O4     HO4     109.470    3.000
+ 6PG      C4     C3     H3      108.340    3.000
+ 6PG      C4     C3     O3      109.470    3.000
+ 6PG      C4     C3     C2      111.000    3.000
+ 6PG      H3     C3     O3      109.470    3.000
+ 6PG      H3     C3     C2      108.340    3.000
+ 6PG      O3     C3     C2      109.470    3.000
+ 6PG      C3     O3     HO3     109.470    3.000
+ 6PG      C3     C2     H2      108.340    3.000
+ 6PG      C3     C2     O2      109.470    3.000
+ 6PG      C3     C2     C1      109.470    3.000
+ 6PG      H2     C2     O2      109.470    3.000
+ 6PG      H2     C2     C1      108.810    3.000
+ 6PG      O2     C2     C1      109.470    3.000
+ 6PG      C2     O2     HO2     109.470    3.000
+ 6PG      C2     C1     O1A     118.500    3.000
+ 6PG      C2     C1     O1      118.500    3.000
+ 6PG      O1A    C1     O1      123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 6PG      var_1    O3P    P      O6     C6       -59.911   20.000   1
+ 6PG      var_2    P      O6     C6     C5      -179.992   20.000   1
+ 6PG      var_3    O6     C6     C5     C4      -179.994   20.000   3
+ 6PG      var_4    C6     C5     O5     HO5       60.069   20.000   1
+ 6PG      var_5    C6     C5     C4     C3       180.000   20.000   3
+ 6PG      var_6    C5     C4     O4     HO4       60.020   20.000   1
+ 6PG      var_7    C5     C4     C3     C2       179.971   20.000   3
+ 6PG      var_8    C4     C3     O3     HO3      -60.014   20.000   1
+ 6PG      var_9    C4     C3     C2     C1       179.940   20.000   3
+ 6PG      var_10   C3     C2     O2     HO2       60.090   20.000   1
+ 6PG      var_11   C3     C2     C1     O1        60.042   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 6PG      chir_01  C2     C1     C3     O2        negativ
+ 6PG      chir_02  C3     C2     C4     O3        positiv
+ 6PG      chir_03  C4     C3     C5     O4        negativ
+ 6PG      chir_04  C5     C4     C6     O5        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 6PG      plan-1    C1        0.020
+ 6PG      plan-1    C2        0.020
+ 6PG      plan-1    O1A       0.020
+ 6PG      plan-1    O1        0.020
+# ------------------------------------------------------

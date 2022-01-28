@@ -1,0 +1,72 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2PO     2PO      PHOSPHONATE     NON-POLYMER     5     4     .     
+#
+data_comp_2PO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+2PO     P       P       P       0       51.631      -1.955      29.931      
+2PO     O1P     O       OP      -1      51.838      -2.295      31.402      
+2PO     O2P     O       OP      -1      50.693      -0.769      29.739      
+2PO     O3P     O       O       0       51.205      -3.167      29.112      
+2PO     HP      H       H       0       52.775      -1.591      29.476      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2PO       P         O1P       SINGLE    n         1.524     0.020     1.524     0.020     
+2PO       P         O2P       SINGLE    n         1.524     0.020     1.524     0.020     
+2PO       P         O3P       DOUBLE    n         1.524     0.020     1.524     0.020     
+2PO       P         HP        SINGLE    n         1.284     0.020     1.284     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+2PO         O1P           P         O2P     112.278    1.50
+2PO         O1P           P         O3P     112.278    1.50
+2PO         O1P           P          HP     106.496    1.50
+2PO         O2P           P         O3P     112.278    1.50
+2PO         O2P           P          HP     106.496    1.50
+2PO         O3P           P          HP     106.496    1.50
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+2PO SMILES           ACDLabs              10.04 "[O-]P([O-])=O"
+2PO SMILES_CANONICAL CACTVS               3.341 "[O-][PH]([O-])=O"
+2PO SMILES           CACTVS               3.341 "[O-][PH]([O-])=O"
+2PO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[O-]P(=O)[O-]"
+2PO SMILES           "OpenEye OEToolkits" 1.5.0 "[O-]P(=O)[O-]"
+2PO InChI            InChI                1.03  "InChI=1S/H3O3P/c1-4(2)3/h4H,(H2,1,2,3)/p-2"
+2PO InChIKey         InChI                1.03  ABLZXFCXXLZCGV-UHFFFAOYSA-L
+2PO ?                acedrg               202         "dictionary generator"                  
+2PO ?                acedrg_database      11          "data source"                           
+2PO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+2PO ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,171 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AX7     AX7      1H-benzimidazol-2-amine     NON-POLYMER     17     10     .     
+#
+data_comp_AX7
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AX7     NAF     N       NR5     0       7.215       -11.489     14.275      
+AX7     CAI     C       CR56    0       6.130       -12.288     14.586      
+AX7     CAD     C       CR16    0       5.738       -13.555     14.169      
+AX7     CAB     C       CR16    0       4.563       -14.057     14.701      
+AX7     CAC     C       CR16    0       3.802       -13.319     15.621      
+AX7     CAE     C       CR16    0       4.195       -12.060     16.033      
+AX7     CAJ     C       CR56    0       5.379       -11.538     15.505      
+AX7     NAG     N       NRD5    0       6.005       -10.316     15.737      
+AX7     CAH     C       CR5     0       7.089       -10.335     14.985      
+AX7     NAA     N       NH2     0       7.981       -9.339      14.913      
+AX7     HNAF    H       H       0       7.878       -11.663     13.728      
+AX7     HAD     H       H       0       6.245       -14.048     13.555      
+AX7     HAB     H       H       0       4.269       -14.912     14.441      
+AX7     HAC     H       H       0       3.009       -13.687     15.964      
+AX7     HAE     H       H       0       3.684       -11.566     16.649      
+AX7     HNAA    H       H       0       8.681       -9.425      14.398      
+AX7     HNAB    H       H       0       7.855       -8.612      15.382      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AX7       NAF       CAI       SINGLE    y         1.382     0.010     1.382     0.010     
+AX7       NAF       CAH       SINGLE    y         1.359     0.013     1.359     0.013     
+AX7       CAI       CAD       DOUBLE    y         1.384     0.010     1.384     0.010     
+AX7       CAI       CAJ       SINGLE    y         1.399     0.010     1.399     0.010     
+AX7       CAD       CAB       SINGLE    y         1.377     0.010     1.377     0.010     
+AX7       CAB       CAC       DOUBLE    y         1.396     0.011     1.396     0.011     
+AX7       CAC       CAE       SINGLE    y         1.375     0.010     1.375     0.010     
+AX7       CAE       CAJ       DOUBLE    y         1.391     0.010     1.391     0.010     
+AX7       CAJ       NAG       SINGLE    y         1.393     0.010     1.393     0.010     
+AX7       NAG       CAH       DOUBLE    y         1.318     0.011     1.318     0.011     
+AX7       CAH       NAA       SINGLE    n         1.338     0.012     1.338     0.012     
+AX7       NAF       HNAF      SINGLE    n         1.016     0.010     0.877     0.020     
+AX7       CAD       HAD       SINGLE    n         1.082     0.013     0.936     0.016     
+AX7       CAB       HAB       SINGLE    n         1.082     0.013     0.941     0.018     
+AX7       CAC       HAC       SINGLE    n         1.082     0.013     0.939     0.016     
+AX7       CAE       HAE       SINGLE    n         1.082     0.013     0.940     0.019     
+AX7       NAA       HNAA      SINGLE    n         1.016     0.010     0.874     0.019     
+AX7       NAA       HNAB      SINGLE    n         1.016     0.010     0.874     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AX7         CAI         NAF         CAH     107.120    1.50
+AX7         CAI         NAF        HNAF     128.365    2.11
+AX7         CAH         NAF        HNAF     124.515    2.34
+AX7         NAF         CAI         CAD     132.650    1.50
+AX7         NAF         CAI         CAJ     105.106    1.50
+AX7         CAD         CAI         CAJ     122.244    1.50
+AX7         CAI         CAD         CAB     116.713    1.50
+AX7         CAI         CAD         HAD     121.713    1.50
+AX7         CAB         CAD         HAD     121.573    1.50
+AX7         CAD         CAB         CAC     121.628    1.50
+AX7         CAD         CAB         HAB     119.132    1.50
+AX7         CAC         CAB         HAB     119.240    1.50
+AX7         CAB         CAC         CAE     121.628    1.50
+AX7         CAB         CAC         HAC     119.240    1.50
+AX7         CAE         CAC         HAC     119.132    1.50
+AX7         CAC         CAE         CAJ     117.727    1.50
+AX7         CAC         CAE         HAE     121.359    1.50
+AX7         CAJ         CAE         HAE     120.915    1.50
+AX7         CAI         CAJ         CAE     120.060    1.50
+AX7         CAI         CAJ         NAG     110.039    1.50
+AX7         CAE         CAJ         NAG     129.901    1.50
+AX7         CAJ         NAG         CAH     105.356    1.50
+AX7         NAF         CAH         NAG     112.380    1.50
+AX7         NAF         CAH         NAA     122.918    1.50
+AX7         NAG         CAH         NAA     124.702    1.50
+AX7         CAH         NAA        HNAA     119.586    1.87
+AX7         CAH         NAA        HNAB     119.586    1.87
+AX7        HNAA         NAA        HNAB     120.828    2.45
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AX7              const_23         CAD         CAI         NAF         CAH     180.000   10.00     2
+AX7              const_35         NAA         CAH         NAF         CAI     180.000   10.00     2
+AX7       const_sp2_sp2_2         CAB         CAD         CAI         NAF     180.000   10.00     2
+AX7              const_26         NAF         CAI         CAJ         CAE     180.000   10.00     2
+AX7       const_sp2_sp2_5         CAC         CAB         CAD         CAI       0.000   10.00     2
+AX7       const_sp2_sp2_9         CAD         CAB         CAC         CAE       0.000   10.00     2
+AX7              const_13         CAB         CAC         CAE         CAJ       0.000   10.00     2
+AX7              const_17         CAC         CAE         CAJ         CAI       0.000   10.00     2
+AX7              const_29         CAI         CAJ         NAG         CAH       0.000   10.00     2
+AX7              const_32         NAA         CAH         NAG         CAJ     180.000   10.00     2
+AX7             sp2_sp2_1         NAF         CAH         NAA        HNAA     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AX7    plan-1         CAD   0.020
+AX7    plan-1         CAE   0.020
+AX7    plan-1         CAH   0.020
+AX7    plan-1         CAI   0.020
+AX7    plan-1         CAJ   0.020
+AX7    plan-1        HNAF   0.020
+AX7    plan-1         NAA   0.020
+AX7    plan-1         NAF   0.020
+AX7    plan-1         NAG   0.020
+AX7    plan-2         CAB   0.020
+AX7    plan-2         CAC   0.020
+AX7    plan-2         CAD   0.020
+AX7    plan-2         CAE   0.020
+AX7    plan-2         CAI   0.020
+AX7    plan-2         CAJ   0.020
+AX7    plan-2         HAB   0.020
+AX7    plan-2         HAC   0.020
+AX7    plan-2         HAD   0.020
+AX7    plan-2         HAE   0.020
+AX7    plan-2         NAF   0.020
+AX7    plan-2         NAG   0.020
+AX7    plan-3         CAH   0.020
+AX7    plan-3        HNAA   0.020
+AX7    plan-3        HNAB   0.020
+AX7    plan-3         NAA   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AX7 SMILES           ACDLabs              10.04 n2c1ccccc1nc2N
+AX7 SMILES_CANONICAL CACTVS               3.341 "Nc1[nH]c2ccccc2n1"
+AX7 SMILES           CACTVS               3.341 "Nc1[nH]c2ccccc2n1"
+AX7 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)[nH]c(n2)N"
+AX7 SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)[nH]c(n2)N"
+AX7 InChI            InChI                1.03  "InChI=1S/C7H7N3/c8-7-9-5-3-1-2-4-6(5)10-7/h1-4H,(H3,8,9,10)"
+AX7 InChIKey         InChI                1.03  JWYUFVNJZUSCSM-UHFFFAOYSA-N
+AX7 ?                acedrg               202         "dictionary generator"                  
+AX7 ?                acedrg_database      11          "data source"                           
+AX7 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AX7 ?                refmac5              5.8.0189    "optimization tool"                     

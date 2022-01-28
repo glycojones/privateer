@@ -1,0 +1,223 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LYM      LYM 'DEOXY-METHYL-LYSINE                 ' non-polymer        26  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LYM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LYM           O      O    O         0.000      0.000    0.000    0.000
+ LYM           C      C    C         0.000     -0.654   -0.791   -0.636
+ LYM           CM     C    CH3       0.000      0.006   -1.629   -1.700
+ LYM           HM3    H    H         0.000     -0.107   -2.656   -1.465
+ LYM           HM2    H    H         0.000     -0.445   -1.431   -2.638
+ LYM           HM1    H    H         0.000      1.038   -1.392   -1.749
+ LYM           CA     C    CH1       0.000     -2.129   -0.939   -0.368
+ LYM           HA     H    H         0.000     -2.440   -1.969   -0.589
+ LYM           N      N    NH2       0.000     -2.402   -0.637    1.044
+ LYM           H2     H    H         0.000     -1.638   -0.469    1.689
+ LYM           H      H    H         0.000     -3.356   -0.595    1.384
+ LYM           CB     C    CH2       0.000     -2.910    0.031   -1.255
+ LYM           HB2    H    H         0.000     -2.706   -0.192   -2.304
+ LYM           HB3    H    H         0.000     -2.599    1.055   -1.035
+ LYM           CG     C    CH2       0.000     -4.407   -0.119   -0.983
+ LYM           HG2    H    H         0.000     -4.608    0.104    0.067
+ LYM           HG3    H    H         0.000     -4.714   -1.143   -1.202
+ LYM           CD     C    CH2       0.000     -5.188    0.852   -1.870
+ LYM           HD2    H    H         0.000     -4.983    0.628   -2.919
+ LYM           HD3    H    H         0.000     -4.877    1.875   -1.650
+ LYM           CE     C    CH2       0.000     -6.685    0.702   -1.598
+ LYM           HE2    H    H         0.000     -6.887    0.924   -0.548
+ LYM           HE3    H    H         0.000     -6.993   -0.322   -1.818
+ LYM           NZ     N    NH2       0.000     -7.435    1.634   -2.449
+ LYM           HZ2    H    H         0.000     -6.946    2.247   -3.091
+ LYM           HZ1    H    H         0.000     -8.446    1.671   -2.400
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LYM      O      n/a    C      START
+ LYM      C      O      CA     .
+ LYM      CM     C      HM1    .
+ LYM      HM3    CM     .      .
+ LYM      HM2    CM     .      .
+ LYM      HM1    CM     .      .
+ LYM      CA     C      CB     .
+ LYM      HA     CA     .      .
+ LYM      N      CA     H      .
+ LYM      H2     N      .      .
+ LYM      H      N      .      .
+ LYM      CB     CA     CG     .
+ LYM      HB2    CB     .      .
+ LYM      HB3    CB     .      .
+ LYM      CG     CB     CD     .
+ LYM      HG2    CG     .      .
+ LYM      HG3    CG     .      .
+ LYM      CD     CG     CE     .
+ LYM      HD2    CD     .      .
+ LYM      HD3    CD     .      .
+ LYM      CE     CD     NZ     .
+ LYM      HE2    CE     .      .
+ LYM      HE3    CE     .      .
+ LYM      NZ     CE     HZ1    .
+ LYM      HZ2    NZ     .      .
+ LYM      HZ1    NZ     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LYM       N         CA        single    1.450     0.020     1.450     0.020     
+LYM       H         N         single    1.036     0.016     0.914     0.007     
+LYM       H2        N         single    1.036     0.016     0.914     0.007     
+LYM       CA        C         single    1.500     0.020     1.500     0.020     
+LYM       CB        CA        single    1.524     0.020     1.524     0.020     
+LYM       HA        CA        single    1.089     0.010     0.989     0.005     
+LYM       C         O         double    1.220     0.020     1.220     0.020     
+LYM       CM        C         single    1.500     0.020     1.500     0.020     
+LYM       CG        CB        single    1.524     0.020     1.524     0.020     
+LYM       HB2       CB        single    1.089     0.010     0.989     0.005     
+LYM       HB3       CB        single    1.089     0.010     0.989     0.005     
+LYM       CD        CG        single    1.524     0.020     1.524     0.020     
+LYM       HG2       CG        single    1.089     0.010     0.989     0.005     
+LYM       HG3       CG        single    1.089     0.010     0.989     0.005     
+LYM       CE        CD        single    1.524     0.020     1.524     0.020     
+LYM       HD2       CD        single    1.089     0.010     0.989     0.005     
+LYM       HD3       CD        single    1.089     0.010     0.989     0.005     
+LYM       NZ        CE        single    1.450     0.020     1.450     0.020     
+LYM       HE2       CE        single    1.089     0.010     0.989     0.005     
+LYM       HE3       CE        single    1.089     0.010     0.989     0.005     
+LYM       HZ1       NZ        single    1.036     0.016     0.914     0.007     
+LYM       HZ2       NZ        single    1.036     0.016     0.914     0.007     
+LYM       HM1       CM        single    1.089     0.010     0.989     0.005     
+LYM       HM2       CM        single    1.089     0.010     0.989     0.005     
+LYM       HM3       CM        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LYM      O      C      CM      123.000    3.000
+ LYM      O      C      CA      120.500    3.000
+ LYM      CM     C      CA      120.000    3.000
+ LYM      C      CM     HM3     109.470    3.000
+ LYM      C      CM     HM2     109.470    3.000
+ LYM      C      CM     HM1     109.470    3.000
+ LYM      HM3    CM     HM2     109.470    3.000
+ LYM      HM3    CM     HM1     109.470    3.000
+ LYM      HM2    CM     HM1     109.470    3.000
+ LYM      C      CA     HA      108.810    3.000
+ LYM      C      CA     N       109.470    3.000
+ LYM      C      CA     CB      109.470    3.000
+ LYM      HA     CA     N       109.470    3.000
+ LYM      HA     CA     CB      108.340    3.000
+ LYM      N      CA     CB      109.470    3.000
+ LYM      CA     N      H2      120.000    3.000
+ LYM      CA     N      H       120.000    3.000
+ LYM      H2     N      H       120.000    3.000
+ LYM      CA     CB     HB2     109.470    3.000
+ LYM      CA     CB     HB3     109.470    3.000
+ LYM      CA     CB     CG      111.000    3.000
+ LYM      HB2    CB     HB3     107.900    3.000
+ LYM      HB2    CB     CG      109.470    3.000
+ LYM      HB3    CB     CG      109.470    3.000
+ LYM      CB     CG     HG2     109.470    3.000
+ LYM      CB     CG     HG3     109.470    3.000
+ LYM      CB     CG     CD      111.000    3.000
+ LYM      HG2    CG     HG3     107.900    3.000
+ LYM      HG2    CG     CD      109.470    3.000
+ LYM      HG3    CG     CD      109.470    3.000
+ LYM      CG     CD     HD2     109.470    3.000
+ LYM      CG     CD     HD3     109.470    3.000
+ LYM      CG     CD     CE      111.000    3.000
+ LYM      HD2    CD     HD3     107.900    3.000
+ LYM      HD2    CD     CE      109.470    3.000
+ LYM      HD3    CD     CE      109.470    3.000
+ LYM      CD     CE     HE2     109.470    3.000
+ LYM      CD     CE     HE3     109.470    3.000
+ LYM      CD     CE     NZ      109.470    3.000
+ LYM      HE2    CE     HE3     107.900    3.000
+ LYM      HE2    CE     NZ      109.470    3.000
+ LYM      HE3    CE     NZ      109.470    3.000
+ LYM      CE     NZ     HZ2     120.000    3.000
+ LYM      CE     NZ     HZ1     120.000    3.000
+ LYM      HZ2    NZ     HZ1     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LYM      var_1    O      C      CM     HM1        0.069   20.000   1
+ LYM      var_2    O      C      CA     CB        89.921   20.000   3
+ LYM      var_3    C      CA     N      H        173.854   20.000   1
+ LYM      var_4    C      CA     CB     CG      -179.988   20.000   3
+ LYM      var_5    CA     CB     CG     CD       180.000   20.000   3
+ LYM      var_6    CB     CG     CD     CE       180.000   20.000   3
+ LYM      var_7    CG     CD     CE     NZ       179.970   20.000   3
+ LYM      var_8    CD     CE     NZ     HZ1     -179.992   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LYM      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LYM      plan-1    N         0.020
+ LYM      plan-1    CA        0.020
+ LYM      plan-1    H         0.020
+ LYM      plan-1    H2        0.020
+ LYM      plan-2    C         0.020
+ LYM      plan-2    CA        0.020
+ LYM      plan-2    O         0.020
+ LYM      plan-2    CM        0.020
+ LYM      plan-3    NZ        0.020
+ LYM      plan-3    CE        0.020
+ LYM      plan-3    HZ1       0.020
+ LYM      plan-3    HZ2       0.020
+# ------------------------------------------------------

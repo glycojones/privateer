@@ -1,0 +1,230 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MEA      MEA 'N-METHYLPHENYLALANINE               ' non-polymer        25  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MEA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MEA           OXT    O    OC       -0.500      0.000    0.000    0.000
+ MEA           C      C    C         0.000     -0.774   -0.968    0.170
+ MEA           O      O    OC       -0.500     -0.330   -2.059    0.589
+ MEA           CA     C    CH1       0.000     -2.244   -0.819   -0.131
+ MEA           HA     H    H         0.000     -2.377   -0.555   -1.190
+ MEA           N      N    NH1       0.000     -2.932   -2.086    0.148
+ MEA           H      H    H         0.000     -3.397   -2.305    1.017
+ MEA           C1     C    CH3       0.000     -2.853   -2.993   -1.005
+ MEA           HC3    H    H         0.000     -3.356   -3.899   -0.782
+ MEA           HC2    H    H         0.000     -3.308   -2.539   -1.849
+ MEA           HC1    H    H         0.000     -1.837   -3.202   -1.226
+ MEA           CB     C    CH2       0.000     -2.834    0.286    0.747
+ MEA           HB1    H    H         0.000     -2.263    1.206    0.606
+ MEA           HB2    H    H         0.000     -2.781   -0.016    1.795
+ MEA           CG     C    CR6       0.000     -4.271    0.521    0.362
+ MEA           CD2    C    CR16      0.000     -4.584    1.453   -0.611
+ MEA           HD2    H    H         0.000     -3.796    2.017   -1.093
+ MEA           CE2    C    CR16      0.000     -5.902    1.664   -0.967
+ MEA           HE2    H    H         0.000     -6.146    2.389   -1.734
+ MEA           CZ     C    CR16      0.000     -6.910    0.950   -0.346
+ MEA           HZ     H    H         0.000     -7.943    1.119   -0.623
+ MEA           CE1    C    CR16      0.000     -6.598    0.021    0.629
+ MEA           HE1    H    H         0.000     -7.387   -0.539    1.115
+ MEA           CD1    C    CR16      0.000     -5.279   -0.192    0.984
+ MEA           HD1    H    H         0.000     -5.036   -0.919    1.749
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MEA      OXT    n/a    C      START
+ MEA      C      OXT    CA     .
+ MEA      O      C      .      .
+ MEA      CA     C      CB     .
+ MEA      HA     CA     .      .
+ MEA      N      CA     C1     .
+ MEA      H      N      .      .
+ MEA      C1     N      HC1    .
+ MEA      HC3    C1     .      .
+ MEA      HC2    C1     .      .
+ MEA      HC1    C1     .      .
+ MEA      CB     CA     CG     .
+ MEA      HB1    CB     .      .
+ MEA      HB2    CB     .      .
+ MEA      CG     CB     CD2    .
+ MEA      CD2    CG     CE2    .
+ MEA      HD2    CD2    .      .
+ MEA      CE2    CD2    CZ     .
+ MEA      HE2    CE2    .      .
+ MEA      CZ     CE2    CE1    .
+ MEA      HZ     CZ     .      .
+ MEA      CE1    CZ     CD1    .
+ MEA      HE1    CE1    .      .
+ MEA      CD1    CE1    HD1    .
+ MEA      HD1    CD1    .      END
+ MEA      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MEA       C1        N         single    1.450     0.020     1.450     0.020     
+MEA       HC1       C1        single    1.089     0.010     0.989     0.005     
+MEA       HC2       C1        single    1.089     0.010     0.989     0.005     
+MEA       HC3       C1        single    1.089     0.010     0.989     0.005     
+MEA       N         CA        single    1.450     0.020     1.450     0.020     
+MEA       H         N         single    1.036     0.016     0.914     0.007     
+MEA       CA        C         single    1.500     0.020     1.500     0.020     
+MEA       CB        CA        single    1.524     0.020     1.524     0.020     
+MEA       HA        CA        single    1.089     0.010     0.989     0.005     
+MEA       O         C         deloc     1.250     0.020     1.250     0.020     
+MEA       C         OXT       deloc     1.250     0.020     1.250     0.020     
+MEA       CG        CB        single    1.511     0.020     1.511     0.020     
+MEA       HB1       CB        single    1.089     0.010     0.989     0.005     
+MEA       HB2       CB        single    1.089     0.010     0.989     0.005     
+MEA       CG        CD1       double    1.390     0.020     1.390     0.020     
+MEA       CD2       CG        single    1.390     0.020     1.390     0.020     
+MEA       CD1       CE1       single    1.390     0.020     1.390     0.020     
+MEA       HD1       CD1       single    1.082     0.013     0.975     0.010     
+MEA       CE1       CZ        double    1.390     0.020     1.390     0.020     
+MEA       HE1       CE1       single    1.082     0.013     0.975     0.010     
+MEA       CZ        CE2       single    1.390     0.020     1.390     0.020     
+MEA       HZ        CZ        single    1.082     0.013     0.975     0.010     
+MEA       CE2       CD2       double    1.390     0.020     1.390     0.020     
+MEA       HE2       CE2       single    1.082     0.013     0.975     0.010     
+MEA       HD2       CD2       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MEA      OXT    C      O       123.000    3.000
+ MEA      OXT    C      CA      118.500    3.000
+ MEA      O      C      CA      118.500    3.000
+ MEA      C      CA     HA      108.810    3.000
+ MEA      C      CA     N       111.600    3.000
+ MEA      C      CA     CB      109.470    3.000
+ MEA      HA     CA     N       108.550    3.000
+ MEA      HA     CA     CB      108.340    3.000
+ MEA      N      CA     CB      110.000    3.000
+ MEA      CA     N      H       118.500    3.000
+ MEA      CA     N      C1      120.000    3.000
+ MEA      H      N      C1      118.500    3.000
+ MEA      N      C1     HC3     109.470    3.000
+ MEA      N      C1     HC2     109.470    3.000
+ MEA      N      C1     HC1     109.470    3.000
+ MEA      HC3    C1     HC2     109.470    3.000
+ MEA      HC3    C1     HC1     109.470    3.000
+ MEA      HC2    C1     HC1     109.470    3.000
+ MEA      CA     CB     HB1     109.470    3.000
+ MEA      CA     CB     HB2     109.470    3.000
+ MEA      CA     CB     CG      109.470    3.000
+ MEA      HB1    CB     HB2     107.900    3.000
+ MEA      HB1    CB     CG      109.470    3.000
+ MEA      HB2    CB     CG      109.470    3.000
+ MEA      CB     CG     CD2     120.000    3.000
+ MEA      CB     CG     CD1     120.000    3.000
+ MEA      CD2    CG     CD1     120.000    3.000
+ MEA      CG     CD2    HD2     120.000    3.000
+ MEA      CG     CD2    CE2     120.000    3.000
+ MEA      HD2    CD2    CE2     120.000    3.000
+ MEA      CD2    CE2    HE2     120.000    3.000
+ MEA      CD2    CE2    CZ      120.000    3.000
+ MEA      HE2    CE2    CZ      120.000    3.000
+ MEA      CE2    CZ     HZ      120.000    3.000
+ MEA      CE2    CZ     CE1     120.000    3.000
+ MEA      HZ     CZ     CE1     120.000    3.000
+ MEA      CZ     CE1    HE1     120.000    3.000
+ MEA      CZ     CE1    CD1     120.000    3.000
+ MEA      HE1    CE1    CD1     120.000    3.000
+ MEA      CE1    CD1    HD1     120.000    3.000
+ MEA      CE1    CD1    CG      120.000    3.000
+ MEA      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MEA      var_1    OXT    C      CA     CB       -59.969   20.000   3
+ MEA      var_2    C      CA     N      C1       -85.003   20.000   3
+ MEA      var_3    CA     N      C1     HC1       60.040   20.000   1
+ MEA      var_4    C      CA     CB     CG       174.972   20.000   3
+ MEA      var_5    CA     CB     CG     CD2      -90.232   20.000   2
+ MEA      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ MEA      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ MEA      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ MEA      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ MEA      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ MEA      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MEA      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MEA      plan-1    N         0.020
+ MEA      plan-1    C1        0.020
+ MEA      plan-1    CA        0.020
+ MEA      plan-1    H         0.020
+ MEA      plan-2    C         0.020
+ MEA      plan-2    CA        0.020
+ MEA      plan-2    O         0.020
+ MEA      plan-2    OXT       0.020
+ MEA      plan-3    CG        0.020
+ MEA      plan-3    CB        0.020
+ MEA      plan-3    CD1       0.020
+ MEA      plan-3    CD2       0.020
+ MEA      plan-3    CE1       0.020
+ MEA      plan-3    CZ        0.020
+ MEA      plan-3    CE2       0.020
+ MEA      plan-3    HD1       0.020
+ MEA      plan-3    HE1       0.020
+ MEA      plan-3    HZ        0.020
+ MEA      plan-3    HE2       0.020
+ MEA      plan-3    HD2       0.020
+# ------------------------------------------------------

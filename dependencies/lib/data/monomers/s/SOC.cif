@@ -1,0 +1,152 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SOC     SOC      .              non-polymer     16     9     .     
+#
+data_comp_SOC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SOC     CB      C       CH2     0       0.520       -0.730      -0.379      
+SOC     CA      C       CH1     0       -0.618      0.069       0.253       
+SOC     C       C       C       0       -0.973      1.297       -0.594      
+SOC     O       O       O       0       -1.486      1.088       -1.712      
+SOC     OXT     O       OC      -1      -0.724      2.416       -0.105      
+SOC     N       N       NT3     1       -1.825      -0.787      0.418       
+SOC     SE      SE      SE      0       2.157       0.299       -0.261      
+SOC     OD1     O       O       0       2.229       1.344       -1.501      
+SOC     OD2     O       O       0       3.432       -0.702      -0.322      
+SOC     HB2     H       H       0       0.303       -0.914      -1.317      
+SOC     HB3     H       H       0       0.621       -1.580      0.098       
+SOC     HA      H       H       0       -0.326      0.373       1.143       
+SOC     H       H       H       0       -2.488      -0.315      0.827       
+SOC     H2      H       H       0       -1.621      -1.515      0.928       
+SOC     H3      H       H       0       -2.119      -1.069      -0.397      
+SOC     HE      H       H       0       2.178       1.060       1.035       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SOC          CB          CA      SINGLE       n     1.527  0.0109     1.527  0.0109
+SOC          CA           C      SINGLE       n     1.533  0.0100     1.533  0.0100
+SOC           C           O      DOUBLE       n     1.247  0.0187     1.247  0.0187
+SOC           C         OXT      SINGLE       n     1.247  0.0187     1.247  0.0187
+SOC          CA           N      SINGLE       n     1.488  0.0100     1.488  0.0100
+SOC          CB          SE      SINGLE       n     1.936  0.0200     1.936  0.0200
+SOC          SE         OD1      DOUBLE       n     1.623  0.0169     1.623  0.0169
+SOC          SE         OD2      DOUBLE       n     1.623  0.0169     1.623  0.0169
+SOC          CB         HB2      SINGLE       n     1.089  0.0100     0.980  0.0160
+SOC          CB         HB3      SINGLE       n     1.089  0.0100     0.980  0.0160
+SOC          CA          HA      SINGLE       n     1.089  0.0100     0.985  0.0200
+SOC           N           H      SINGLE       n     1.036  0.0160     0.911  0.0200
+SOC           N          H2      SINGLE       n     1.036  0.0160     0.911  0.0200
+SOC           N          H3      SINGLE       n     1.036  0.0160     0.911  0.0200
+SOC          SE          HE      SINGLE       n     1.195  0.0100     1.503  0.0200
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SOC          CA          CB          SE     108.134    1.50
+SOC          CA          CB         HB2     108.507    1.50
+SOC          CA          CB         HB3     108.507    1.50
+SOC          SE          CB         HB2     109.442    1.55
+SOC          SE          CB         HB3     109.442    1.55
+SOC         HB2          CB         HB3     108.398    1.50
+SOC          CB          CA           C     110.778    2.06
+SOC          CB          CA           N     110.361    1.54
+SOC          CB          CA          HA     108.236    1.50
+SOC           C          CA           N     109.414    1.50
+SOC           C          CA          HA     108.600    1.50
+SOC           N          CA          HA     108.444    1.50
+SOC          CA           C           O     117.139    1.50
+SOC          CA           C         OXT     117.139    1.50
+SOC           O           C         OXT     125.721    1.50
+SOC          CA           N           H     109.853    1.85
+SOC          CA           N          H2     109.853    1.85
+SOC          CA           N          H3     109.853    1.85
+SOC           H           N          H2     109.028    2.41
+SOC           H           N          H3     109.028    2.41
+SOC          H2           N          H3     109.028    2.41
+SOC          CB          SE         OD1     109.471    3.00
+SOC          CB          SE         OD2     109.471    3.00
+SOC          CB          SE          HE     109.471    3.00
+SOC         OD1          SE         OD2     109.471    3.00
+SOC         OD1          SE          HE     109.471    3.00
+SOC         OD2          SE          HE     109.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SOC             sp3_sp3_1           C          CA          CB          SE     180.000   10.00     3
+SOC            sp3_sp3_20          CA          CB          SE         OD1     -60.000   10.00     3
+SOC             sp2_sp3_1           O           C          CA          CB       0.000   10.00     6
+SOC            sp3_sp3_10          CB          CA           N           H     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SOC    chir_1    CA    N    CB    C    negative
+SOC    chir_1    SE    OD1    OD2    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SOC    plan-1           C   0.020
+SOC    plan-1          CA   0.020
+SOC    plan-1           O   0.020
+SOC    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SOC SMILES           ACDLabs              10.04 "O=C(O)C(N)C[SeH](=O)=O"
+SOC SMILES_CANONICAL CACTVS               3.341 "N[C@@H](C[SeH](=O)=O)C(O)=O"
+SOC SMILES           CACTVS               3.341 "N[CH](C[SeH](=O)=O)C(O)=O"
+SOC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)[SeH](=O)=O"
+SOC SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)[SeH](=O)=O"
+SOC InChI            InChI                1.03  "InChI=1S/C3H7NO4Se/c4-2(3(5)6)1-9(7)8/h2,9H,1,4H2,(H,5,6)/t2-/m0/s1"
+SOC InChIKey         InChI                1.03  LQMXQNUAKTVFAG-REOHCLBHSA-N
+SOC ?                acedrg               196         "dictionary generator"
+SOC ?                acedrg_database      11          "data source"
+SOC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SOC ?                refmac5              5.8.0222    "optimization tool"
+SOC ?                acedrg               226         "dictionary generator"                  
+SOC ?                acedrg_database      11          "data source"                           
+SOC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SOC ?                refmac5              5.8.0267    "optimization tool"                     

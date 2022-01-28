@@ -1,0 +1,188 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AHB     AHB     BETA-HYDROXYASPARAGINE  peptide  18     10     .     
+#
+data_comp_AHB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AHB     N       N       NT3     1       -1.385      -1.113      0.036       
+AHB     CA      C       CH1     0       -0.689      0.130       0.470       
+AHB     CB      C       CH1     0       0.446       0.543       -0.485      
+AHB     OB      O       OH1     0       -0.054      0.707       -1.800      
+AHB     CG      C       C       0       1.583       -0.476      -0.471      
+AHB     OD1     O       O       0       1.755       -1.237      -1.428      
+AHB     ND2     N       NH2     0       2.345       -0.493      0.610       
+AHB     C       C       C       0       -1.707      1.268       0.624       
+AHB     O       O       O       0       -2.357      1.587       -0.391      
+AHB     OXT     O       OC      -1      -1.809      1.788       1.753       
+AHB     H       H       H       0       -2.190      -1.189      0.459       
+AHB     H2      H       H       0       -0.878      -1.841      0.245       
+AHB     H3      H       H       0       -1.522      -1.095      -0.864      
+AHB     HA      H       H       0       -0.282      -0.044      1.351       
+AHB     HB      H       H       0       0.806       1.411       -0.177      
+AHB     HOB     H       H       0       0.498       1.170       -2.248      
+AHB     HD21    H       H       0       3.019       -1.062      0.669       
+AHB     HD22    H       H       0       2.184       0.063       1.279       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AHB      N      n/a    CA     START
+ AHB      H      N      .      .
+ AHB      H2     N      .      .
+ AHB      H3     N      .      .
+ AHB      CA     N      C      .
+ AHB      HA     CA     .      .
+ AHB      CB     CA     CG     .
+ AHB      HB     CB     .      .
+ AHB      OB     CB     HOB    .
+ AHB      HOB    OB     .      .
+ AHB      CG     CB     ND2    .
+ AHB      OD1    CG     .      .
+ AHB      ND2    CG     HD21   .
+ AHB      HD22   ND2    .      .
+ AHB      HD21   ND2    .      .
+ AHB      C      CA     .      END
+ AHB      O      C      .      .
+ AHB      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AHB       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+AHB       CA        CB        SINGLE    n         1.539     0.011     1.539     0.011     
+AHB       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+AHB       CB        OB        SINGLE    n         1.415     0.012     1.415     0.012     
+AHB       CB        CG        SINGLE    n         1.525     0.010     1.525     0.010     
+AHB       CG        OD1       DOUBLE    n         1.234     0.010     1.234     0.010     
+AHB       CG        ND2       SINGLE    n         1.322     0.011     1.322     0.011     
+AHB       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+AHB       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+AHB       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+AHB       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+AHB       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+AHB       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+AHB       CB        HB        SINGLE    n         1.089     0.010     0.989     0.018     
+AHB       OB        HOB       SINGLE    n         0.970     0.012     0.848     0.020     
+AHB       ND2       HD21      SINGLE    n         1.016     0.010     0.884     0.020     
+AHB       ND2       HD22      SINGLE    n         1.016     0.010     0.884     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AHB          CA           N           H     109.889    1.50
+AHB          CA           N          H2     109.889    1.50
+AHB          CA           N          H3     109.889    1.50
+AHB           H           N          H2     109.028    2.41
+AHB           H           N          H3     109.028    2.41
+AHB          H2           N          H3     109.028    2.41
+AHB           N          CA          CB     112.810    3.00
+AHB           N          CA           C     109.414    1.50
+AHB           N          CA          HA     108.031    1.50
+AHB          CB          CA           C     111.511    2.91
+AHB          CB          CA          HA     107.549    1.55
+AHB           C          CA          HA     108.600    1.50
+AHB          CA          CB          OB     110.423    2.15
+AHB          CA          CB          CG     111.511    2.91
+AHB          CA          CB          HB     108.277    1.50
+AHB          OB          CB          CG     109.850    1.55
+AHB          OB          CB          HB     108.675    1.50
+AHB          CG          CB          HB     108.529    1.70
+AHB          CB          OB         HOB     108.894    3.00
+AHB          CB          CG         OD1     120.126    1.78
+AHB          CB          CG         ND2     116.478    1.98
+AHB         OD1          CG         ND2     123.396    1.50
+AHB          CG         ND2        HD21     120.117    1.50
+AHB          CG         ND2        HD22     120.117    1.50
+AHB        HD21         ND2        HD22     119.766    2.38
+AHB          CA           C           O     117.003    1.50
+AHB          CA           C         OXT     117.003    1.50
+AHB           O           C         OXT     125.994    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AHB             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+AHB            sp3_sp3_10           N          CA          CB          OB     180.000   10.00     3
+AHB             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+AHB            sp3_sp3_19          CA          CB          OB         HOB     180.000   10.00     3
+AHB             sp2_sp3_7         OD1          CG          CB          CA       0.000   10.00     6
+AHB             sp2_sp2_1          CB          CG         ND2        HD21     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+AHB    chir_1    CA    N    C    CB    positive
+AHB    chir_2    CB    OB    CG    CA    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AHB    plan-1          CB   0.020
+AHB    plan-1          CG   0.020
+AHB    plan-1         ND2   0.020
+AHB    plan-1         OD1   0.020
+AHB    plan-2          CG   0.020
+AHB    plan-2        HD21   0.020
+AHB    plan-2        HD22   0.020
+AHB    plan-2         ND2   0.020
+AHB    plan-3           C   0.020
+AHB    plan-3          CA   0.020
+AHB    plan-3           O   0.020
+AHB    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AHB SMILES           ACDLabs              10.04 "O=C(O)C(N)C(O)C(=O)N"
+AHB SMILES_CANONICAL CACTVS               3.341 "N[C@@H]([C@H](O)C(N)=O)C(O)=O"
+AHB SMILES           CACTVS               3.341 "N[CH]([CH](O)C(N)=O)C(O)=O"
+AHB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[C@H]([C@@H](C(=O)N)O)(C(=O)O)N"
+AHB SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)N)O)(C(=O)O)N"
+AHB InChI            InChI                1.03  "InChI=1S/C4H8N2O4/c5-1(4(9)10)2(7)3(6)8/h1-2,7H,5H2,(H2,6,8)(H,9,10)/t1-,2-/m0/s1"
+AHB InChIKey         InChI                1.03  VQTLPSCRBFYDNX-LWMBPPNESA-N
+AHB ?                acedrg               196         "dictionary generator"                  
+AHB ?                acedrg_database      11          "data source"                           
+AHB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AHB ?                refmac5              5.8.0222    "optimization tool"                     

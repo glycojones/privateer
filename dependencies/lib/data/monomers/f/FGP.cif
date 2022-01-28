@@ -1,0 +1,172 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FGP      FGP '2-AMINO-3-HYDROXY-3-PHOSPHONOOXY-PRO' non-polymer        17  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FGP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FGP           O2     O    OC       -0.500      0.000    0.000    0.000
+ FGP           C      C    C         0.000     -1.243   -0.143    0.012
+ FGP           O      O    OC       -0.500     -2.018    0.642   -0.578
+ FGP           CA     C    CH1       0.000     -1.722   -1.382    0.747
+ FGP           HA     H    H         0.000     -1.019   -1.593    1.565
+ FGP           N      N    NH2       0.000     -3.037   -1.111    1.328
+ FGP           HN2    H    H         0.000     -3.115   -0.580    2.187
+ FGP           HN1    H    H         0.000     -3.875   -1.453    0.875
+ FGP           CB     C    CH1       0.000     -1.772   -2.608   -0.175
+ FGP           HB     H    H         0.000     -2.092   -3.472    0.424
+ FGP           OG1    O    OH1       0.000     -2.725   -2.414   -1.219
+ FGP           HOG    H    H         0.000     -2.704   -1.492   -1.506
+ FGP           OG2    O    O2        0.000     -0.480   -2.891   -0.704
+ FGP           P      P    P         0.000     -0.253   -4.137   -1.708
+ FGP           O1P    O    OP       -0.666      1.175   -4.304   -2.182
+ FGP           O2P    O    OP       -0.666     -0.813   -5.332   -0.968
+ FGP           O3P    O    OP       -0.666     -1.250   -3.912   -2.823
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FGP      O2     n/a    C      START
+ FGP      C      O2     CA     .
+ FGP      O      C      .      .
+ FGP      CA     C      CB     .
+ FGP      HA     CA     .      .
+ FGP      N      CA     HN1    .
+ FGP      HN2    N      .      .
+ FGP      HN1    N      .      .
+ FGP      CB     CA     OG2    .
+ FGP      HB     CB     .      .
+ FGP      OG1    CB     HOG    .
+ FGP      HOG    OG1    .      .
+ FGP      OG2    CB     P      .
+ FGP      P      OG2    O3P    .
+ FGP      O1P    P      .      .
+ FGP      O2P    P      .      .
+ FGP      O3P    P      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FGP       N         CA        single    1.450     0.020     1.450     0.020     
+FGP       HN1       N         single    1.036     0.016     0.914     0.007     
+FGP       HN2       N         single    1.036     0.016     0.914     0.007     
+FGP       CB        CA        single    1.524     0.020     1.524     0.020     
+FGP       CA        C         single    1.500     0.020     1.500     0.020     
+FGP       HA        CA        single    1.089     0.010     0.989     0.005     
+FGP       OG1       CB        single    1.432     0.020     1.432     0.020     
+FGP       OG2       CB        single    1.426     0.020     1.426     0.020     
+FGP       HB        CB        single    1.089     0.010     0.989     0.005     
+FGP       HOG       OG1       single    0.970     0.012     0.839     0.014     
+FGP       P         OG2       single    1.610     0.020     1.610     0.020     
+FGP       O         C         deloc     1.250     0.020     1.250     0.020     
+FGP       C         O2        deloc     1.250     0.020     1.250     0.020     
+FGP       O1P       P         deloc     1.510     0.020     1.510     0.020     
+FGP       O2P       P         deloc     1.510     0.020     1.510     0.020     
+FGP       O3P       P         deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FGP      O2     C      O       123.000    3.000
+ FGP      O2     C      CA      118.500    3.000
+ FGP      O      C      CA      118.500    3.000
+ FGP      C      CA     HA      108.810    3.000
+ FGP      C      CA     N       109.470    3.000
+ FGP      C      CA     CB      109.470    3.000
+ FGP      HA     CA     N       109.470    3.000
+ FGP      HA     CA     CB      108.340    3.000
+ FGP      N      CA     CB      109.470    3.000
+ FGP      CA     N      HN2     120.000    3.000
+ FGP      CA     N      HN1     120.000    3.000
+ FGP      HN2    N      HN1     120.000    3.000
+ FGP      CA     CB     HB      108.340    3.000
+ FGP      CA     CB     OG1     109.470    3.000
+ FGP      CA     CB     OG2     109.470    3.000
+ FGP      HB     CB     OG1     109.470    3.000
+ FGP      HB     CB     OG2     109.470    3.000
+ FGP      OG1    CB     OG2     109.470    3.000
+ FGP      CB     OG1    HOG     109.470    3.000
+ FGP      CB     OG2    P       120.500    3.000
+ FGP      OG2    P      O1P     108.200    3.000
+ FGP      OG2    P      O2P     108.200    3.000
+ FGP      OG2    P      O3P     108.200    3.000
+ FGP      O1P    P      O2P     119.900    3.000
+ FGP      O1P    P      O3P     119.900    3.000
+ FGP      O2P    P      O3P     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FGP      var_1    O2     C      CA     CB       -87.615   20.000   3
+ FGP      var_2    C      CA     N      HN1      101.102   20.000   1
+ FGP      var_3    C      CA     CB     OG2       59.987   20.000   3
+ FGP      var_4    CA     CB     OG1    HOG       37.259   20.000   1
+ FGP      var_5    CA     CB     OG2    P        179.954   20.000   1
+ FGP      var_6    CB     OG2    P      O3P       54.611   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FGP      chir_01  CA     N      CB     C         negativ
+ FGP      chir_02  CB     CA     OG1    OG2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FGP      plan-1    N         0.020
+ FGP      plan-1    CA        0.020
+ FGP      plan-1    HN1       0.020
+ FGP      plan-1    HN2       0.020
+ FGP      plan-2    C         0.020
+ FGP      plan-2    CA        0.020
+ FGP      plan-2    O         0.020
+ FGP      plan-2    O2        0.020
+# ------------------------------------------------------

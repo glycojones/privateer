@@ -1,0 +1,128 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HPV     HPV      "2-oxo-3-(phosphonooxy)propanoic acid"     NON-POLYMER     13     11     .     
+#
+data_comp_HPV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HPV     C2      C       C       0       1.519       -0.598      0.151       
+HPV     O4P     O       OP      -1      -2.354      1.113       -1.053      
+HPV     P       P       P       0       -2.285      0.429       0.299       
+HPV     O2P     O       OP      -1      -2.766      1.314       1.433       
+HPV     O3P     O       O       0       -2.940      -0.940      0.301       
+HPV     O1P     O       O2      0       -0.718      0.167       0.580       
+HPV     C3      C       CH2     0       0.097       -0.545      -0.347      
+HPV     O3      O       O       0       1.856       -1.618      0.770       
+HPV     C1      C       C       0       2.377       0.398       -0.019      
+HPV     O1      O       O       0       3.596       0.179       -0.048      
+HPV     O2      O       OC      -1      1.930       1.545       -0.122      
+HPV     H3      H       H       0       -0.246      -1.454      -0.462      
+HPV     H3A     H       H       0       0.073       -0.103      -1.219      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HPV       C2        C3        SINGLE    n         1.498     0.020     1.498     0.020     
+HPV       C2        O3        DOUBLE    n         1.230     0.019     1.230     0.019     
+HPV       C2        C1        SINGLE    n         1.299     0.020     1.299     0.020     
+HPV       O4P       P         SINGLE    n         1.517     0.019     1.517     0.019     
+HPV       P         O2P       SINGLE    n         1.517     0.019     1.517     0.019     
+HPV       P         O3P       DOUBLE    n         1.517     0.019     1.517     0.019     
+HPV       P         O1P       SINGLE    n         1.614     0.019     1.614     0.019     
+HPV       O1P       C3        SINGLE    n         1.425     0.016     1.425     0.016     
+HPV       C1        O1        DOUBLE    n         1.230     0.020     1.230     0.020     
+HPV       C1        O2        SINGLE    n         1.230     0.020     1.230     0.020     
+HPV       C3        H3        SINGLE    n         1.089     0.010     0.978     0.014     
+HPV       C3        H3A       SINGLE    n         1.089     0.010     0.978     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HPV          C3          C2          O3     118.016    1.59
+HPV          C3          C2          C1     122.917    2.02
+HPV          O3          C2          C1     119.066    3.00
+HPV         O4P           P         O2P     112.864    1.69
+HPV         O4P           P         O3P     112.864    1.69
+HPV         O4P           P         O1P     105.795    2.09
+HPV         O2P           P         O3P     112.864    1.69
+HPV         O2P           P         O1P     105.795    2.09
+HPV         O3P           P         O1P     105.795    2.09
+HPV           P         O1P          C3     121.496    2.55
+HPV          C2          C3         O1P     110.575    2.78
+HPV          C2          C3          H3     109.672    1.50
+HPV          C2          C3         H3A     109.672    1.50
+HPV         O1P          C3          H3     110.196    2.06
+HPV         O1P          C3         H3A     110.196    2.06
+HPV          H3          C3         H3A     107.985    1.50
+HPV          C2          C1          O1     118.654    3.00
+HPV          C2          C1          O2     118.654    3.00
+HPV          O1          C1          O2     122.692    1.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HPV             sp2_sp3_2          O3          C2          C3         O1P     120.000   10.00     6
+HPV             sp2_sp2_1          O1          C1          C2          C3     180.000   10.00     2
+HPV             sp3_sp3_1          C3         O1P           P         O4P     180.000   10.00     3
+HPV             sp3_sp3_4          C2          C3         O1P           P     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HPV    plan-1          C1   0.020
+HPV    plan-1          C2   0.020
+HPV    plan-1          C3   0.020
+HPV    plan-1          O3   0.020
+HPV    plan-2          C1   0.020
+HPV    plan-2          C2   0.020
+HPV    plan-2          O1   0.020
+HPV    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HPV SMILES           ACDLabs              10.04 "O=P(O)(O)OCC(=O)C(=O)O"
+HPV SMILES_CANONICAL CACTVS               3.341 "OC(=O)C(=O)CO[P](O)(O)=O"
+HPV SMILES           CACTVS               3.341 "OC(=O)C(=O)CO[P](O)(O)=O"
+HPV SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)C(=O)O)OP(=O)(O)O"
+HPV SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)C(=O)O)OP(=O)(O)O"
+HPV InChI            InChI                1.03  "InChI=1S/C3H5O7P/c4-2(3(5)6)1-10-11(7,8)9/h1H2,(H,5,6)(H2,7,8,9)"
+HPV InChIKey         InChI                1.03  LFLUCDOSQPJJBE-UHFFFAOYSA-N
+HPV ?                acedrg               202         "dictionary generator"                  
+HPV ?                acedrg_database      11          "data source"                           
+HPV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HPV ?                refmac5              5.8.0189    "optimization tool"                     

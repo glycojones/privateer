@@ -1,0 +1,308 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MPN      MPN '"PHOSPHORIC ACID MONO-(2-AMINO-4-OXO' non-polymer        34  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MPN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MPN           O4     O    O         0.000      0.000    0.000    0.000
+ MPN           C4     C    CR6       0.000     -0.494    0.907    0.656
+ MPN           C9     C    CR6       0.000     -1.825    1.309    0.426
+ MPN           N5     N    NH1       0.000     -2.611    0.683   -0.566
+ MPN           H5     H    H         0.000     -2.342   -0.209   -0.956
+ MPN           C6     C    CH1       0.000     -3.831    1.368   -1.015
+ MPN           H6     H    H         0.000     -3.606    2.213   -1.681
+ MPN           "C1'"  C    C         0.000     -4.722    0.342   -1.685
+ MPN           "S1'"  S    S1        0.000     -4.901    0.301   -3.273
+ MPN           "C2'"  C    C         0.000     -5.422   -0.608   -0.794
+ MPN           "S2'"  S    S1        0.000     -5.627   -2.145   -1.183
+ MPN           N3     N    NRD6      0.000      0.227    1.528    1.604
+ MPN           C2     C    CR6       0.000     -0.291    2.504    2.319
+ MPN           N2     N    NH2       0.000      0.479    3.113    3.278
+ MPN           H22    H    H         0.000      0.097    3.865    3.839
+ MPN           H21    H    H         0.000      1.435    2.814    3.431
+ MPN           N1     N    NR16      0.000     -1.574    2.917    2.133
+ MPN           H1     H    H         0.000     -1.963    3.686    2.715
+ MPN           C10    C    CR6       0.000     -2.352    2.320    1.177
+ MPN           N8     N    NH1       0.000     -3.656    2.726    0.971
+ MPN           H8     H    H         0.000     -3.976    3.624    1.304
+ MPN           C7     C    CH1       0.000     -4.571    1.820    0.255
+ MPN           H7     H    H         0.000     -5.496    2.349   -0.013
+ MPN           "O3'"  O    O2        0.000     -4.865    0.710    1.100
+ MPN           "C3'"  C    CH1       0.000     -5.934   -0.033    0.513
+ MPN           "H3'"  H    H         0.000     -6.788    0.631    0.319
+ MPN           "C4'"  C    CH2       0.000     -6.358   -1.165    1.451
+ MPN           "H4'1" H    H         0.000     -5.509   -1.830    1.623
+ MPN           "H4'2" H    H         0.000     -7.174   -1.729    0.994
+ MPN           "O4'"  O    O2        0.000     -6.794   -0.616    2.694
+ MPN           P      P    P         0.000     -7.223   -1.855    3.627
+ MPN           O3P    O    OP       -0.666     -7.697   -1.339    4.968
+ MPN           O1P    O    OP       -0.666     -6.033   -2.767    3.830
+ MPN           O2P    O    OP       -0.666     -8.341   -2.626    2.960
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MPN      O4     n/a    C4     START
+ MPN      C4     O4     N3     .
+ MPN      C9     C4     N5     .
+ MPN      N5     C9     C6     .
+ MPN      H5     N5     .      .
+ MPN      C6     N5     "C1'"  .
+ MPN      H6     C6     .      .
+ MPN      "C1'"  C6     "C2'"  .
+ MPN      "S1'"  "C1'"  .      .
+ MPN      "C2'"  "C1'"  "S2'"  .
+ MPN      "S2'"  "C2'"  .      .
+ MPN      N3     C4     C2     .
+ MPN      C2     N3     N1     .
+ MPN      N2     C2     H21    .
+ MPN      H22    N2     .      .
+ MPN      H21    N2     .      .
+ MPN      N1     C2     C10    .
+ MPN      H1     N1     .      .
+ MPN      C10    N1     N8     .
+ MPN      N8     C10    C7     .
+ MPN      H8     N8     .      .
+ MPN      C7     N8     "O3'"  .
+ MPN      H7     C7     .      .
+ MPN      "O3'"  C7     "C3'"  .
+ MPN      "C3'"  "O3'"  "C4'"  .
+ MPN      "H3'"  "C3'"  .      .
+ MPN      "C4'"  "C3'"  "O4'"  .
+ MPN      "H4'1" "C4'"  .      .
+ MPN      "H4'2" "C4'"  .      .
+ MPN      "O4'"  "C4'"  P      .
+ MPN      P      "O4'"  O2P    .
+ MPN      O3P    P      .      .
+ MPN      O1P    P      .      .
+ MPN      O2P    P      .      END
+ MPN      "C3'"  "C2'"  .    ADD
+ MPN      C7     C6     .    ADD
+ MPN      C10    C9     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MPN       O3P       P         deloc     1.510     0.020     1.510     0.020     
+MPN       O1P       P         deloc     1.510     0.020     1.510     0.020     
+MPN       O2P       P         deloc     1.510     0.020     1.510     0.020     
+MPN       P         "O4'"     single    1.610     0.020     1.610     0.020     
+MPN       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+MPN       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+MPN       "H4'1"    "C4'"     single    1.089     0.010     0.989     0.005     
+MPN       "H4'2"    "C4'"     single    1.089     0.010     0.989     0.005     
+MPN       "C3'"     "C2'"     single    1.500     0.020     1.500     0.020     
+MPN       "C3'"     "O3'"     single    1.426     0.020     1.426     0.020     
+MPN       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+MPN       "S2'"     "C2'"     double    1.565     0.020     1.565     0.020     
+MPN       "C2'"     "C1'"     single    1.460     0.020     1.460     0.020     
+MPN       "O3'"     C7        single    1.426     0.020     1.426     0.020     
+MPN       C7        C6        single    1.524     0.020     1.524     0.020     
+MPN       C7        N8        single    1.450     0.020     1.450     0.020     
+MPN       H7        C7        single    1.089     0.010     0.989     0.005     
+MPN       "C1'"     C6        single    1.500     0.020     1.500     0.020     
+MPN       C6        N5        single    1.450     0.020     1.450     0.020     
+MPN       H6        C6        single    1.089     0.010     0.989     0.005     
+MPN       "S1'"     "C1'"     double    1.565     0.020     1.565     0.020     
+MPN       N5        C9        single    1.350     0.020     1.350     0.020     
+MPN       H5        N5        single    1.016     0.010     0.899     0.007     
+MPN       N8        C10       single    1.350     0.020     1.350     0.020     
+MPN       H8        N8        single    1.016     0.010     0.899     0.007     
+MPN       C10       C9        double    1.487     0.020     1.487     0.020     
+MPN       C10       N1        single    1.337     0.020     1.337     0.020     
+MPN       C9        C4        single    1.487     0.020     1.487     0.020     
+MPN       C4        O4        double    1.250     0.020     1.250     0.020     
+MPN       N3        C4        single    1.350     0.020     1.350     0.020     
+MPN       C2        N3        double    1.350     0.020     1.350     0.020     
+MPN       N1        C2        single    1.337     0.020     1.337     0.020     
+MPN       N2        C2        single    1.355     0.020     1.355     0.020     
+MPN       H1        N1        single    1.016     0.010     0.899     0.007     
+MPN       H21       N2        single    1.016     0.010     0.899     0.007     
+MPN       H22       N2        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MPN      O4     C4     C9      120.000    3.000
+ MPN      O4     C4     N3      120.000    3.000
+ MPN      C9     C4     N3      120.000    3.000
+ MPN      C4     C9     N5      120.000    3.000
+ MPN      C4     C9     C10     120.000    3.000
+ MPN      N5     C9     C10     120.000    3.000
+ MPN      C9     N5     H5      120.000    3.000
+ MPN      C9     N5     C6      120.000    3.000
+ MPN      H5     N5     C6      118.500    3.000
+ MPN      N5     C6     H6      108.550    3.000
+ MPN      N5     C6     "C1'"   111.600    3.000
+ MPN      N5     C6     C7      110.000    3.000
+ MPN      H6     C6     "C1'"   108.810    3.000
+ MPN      H6     C6     C7      108.340    3.000
+ MPN      "C1'"  C6     C7      109.470    3.000
+ MPN      C6     "C1'"  "S1'"   120.000    3.000
+ MPN      C6     "C1'"  "C2'"   120.000    3.000
+ MPN      "S1'"  "C1'"  "C2'"   120.000    3.000
+ MPN      "C1'"  "C2'"  "S2'"   120.000    3.000
+ MPN      "C1'"  "C2'"  "C3'"   120.000    3.000
+ MPN      "S2'"  "C2'"  "C3'"   120.000    3.000
+ MPN      C4     N3     C2      120.000    3.000
+ MPN      N3     C2     N2      120.000    3.000
+ MPN      N3     C2     N1      120.000    3.000
+ MPN      N2     C2     N1      120.000    3.000
+ MPN      C2     N2     H22     120.000    3.000
+ MPN      C2     N2     H21     120.000    3.000
+ MPN      H22    N2     H21     120.000    3.000
+ MPN      C2     N1     H1      120.000    3.000
+ MPN      C2     N1     C10     120.000    3.000
+ MPN      H1     N1     C10     120.000    3.000
+ MPN      N1     C10    N8      120.000    3.000
+ MPN      N1     C10    C9      120.000    3.000
+ MPN      N8     C10    C9      120.000    3.000
+ MPN      C10    N8     H8      120.000    3.000
+ MPN      C10    N8     C7      120.000    3.000
+ MPN      H8     N8     C7      118.500    3.000
+ MPN      N8     C7     H7      108.550    3.000
+ MPN      N8     C7     "O3'"   109.500    3.000
+ MPN      N8     C7     C6      110.000    3.000
+ MPN      H7     C7     "O3'"   109.470    3.000
+ MPN      H7     C7     C6      108.340    3.000
+ MPN      "O3'"  C7     C6      109.470    3.000
+ MPN      C7     "O3'"  "C3'"   111.800    3.000
+ MPN      "O3'"  "C3'"  "H3'"   109.470    3.000
+ MPN      "O3'"  "C3'"  "C4'"   109.470    3.000
+ MPN      "O3'"  "C3'"  "C2'"   109.470    3.000
+ MPN      "H3'"  "C3'"  "C4'"   108.340    3.000
+ MPN      "H3'"  "C3'"  "C2'"   108.810    3.000
+ MPN      "C4'"  "C3'"  "C2'"   109.470    3.000
+ MPN      "C3'"  "C4'"  "H4'1"  109.470    3.000
+ MPN      "C3'"  "C4'"  "H4'2"  109.470    3.000
+ MPN      "C3'"  "C4'"  "O4'"   109.470    3.000
+ MPN      "H4'1" "C4'"  "H4'2"  107.900    3.000
+ MPN      "H4'1" "C4'"  "O4'"   109.470    3.000
+ MPN      "H4'2" "C4'"  "O4'"   109.470    3.000
+ MPN      "C4'"  "O4'"  P       120.500    3.000
+ MPN      "O4'"  P      O3P     108.200    3.000
+ MPN      "O4'"  P      O1P     108.200    3.000
+ MPN      "O4'"  P      O2P     108.200    3.000
+ MPN      O3P    P      O1P     119.900    3.000
+ MPN      O3P    P      O2P     119.900    3.000
+ MPN      O1P    P      O2P     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MPN      CONST_1  O4     C4     C9     N5         0.000    0.000   0
+ MPN      var_1    C4     C9     N5     C6      -150.000   20.000   1
+ MPN      var_2    C9     N5     C6     "C1'"   -150.000   20.000   3
+ MPN      var_3    N5     C6     "C1'"  "C2'"     60.000   20.000   3
+ MPN      var_4    C6     "C1'"  "C2'"  "S2'"   -150.000   20.000   1
+ MPN      CONST_2  O4     C4     N3     C2       180.000    0.000   0
+ MPN      CONST_3  C4     N3     C2     N1         0.000    0.000   0
+ MPN      CONST_4  N3     C2     N2     H21        0.061    0.000   0
+ MPN      CONST_5  N3     C2     N1     C10        0.000    0.000   0
+ MPN      CONST_6  C2     N1     C10    N8       180.000    0.000   0
+ MPN      CONST_7  N1     C10    C9     C4         0.000    0.000   0
+ MPN      var_5    N1     C10    N8     C7      -150.000   20.000   1
+ MPN      var_6    C10    N8     C7     "O3'"     60.000   20.000   3
+ MPN      var_7    N8     C7     C6     N5        60.000   20.000   3
+ MPN      var_8    N8     C7     "O3'"  "C3'"    180.000   20.000   1
+ MPN      var_9    C7     "O3'"  "C3'"  "C4'"    180.000   20.000   1
+ MPN      var_10   "O3'"  "C3'"  "C2'"  "C1'"    -60.000   20.000   3
+ MPN      var_11   "O3'"  "C3'"  "C4'"  "O4'"     59.996   20.000   3
+ MPN      var_12   "C3'"  "C4'"  "O4'"  P        179.996   20.000   1
+ MPN      var_13   "C4'"  "O4'"  P      O2P      -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MPN      chir_01  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+ MPN      chir_02  C7     "O3'"  C6     N8        positiv
+ MPN      chir_03  C6     C7     "C1'"  N5        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MPN      plan-1    "C2'"     0.020
+ MPN      plan-1    "C3'"     0.020
+ MPN      plan-1    "S2'"     0.020
+ MPN      plan-1    "C1'"     0.020
+ MPN      plan-2    "C1'"     0.020
+ MPN      plan-2    "C2'"     0.020
+ MPN      plan-2    C6        0.020
+ MPN      plan-2    "S1'"     0.020
+ MPN      plan-3    N5        0.020
+ MPN      plan-3    C6        0.020
+ MPN      plan-3    C9        0.020
+ MPN      plan-3    H5        0.020
+ MPN      plan-4    N8        0.020
+ MPN      plan-4    C7        0.020
+ MPN      plan-4    C10       0.020
+ MPN      plan-4    H8        0.020
+ MPN      plan-5    C10       0.020
+ MPN      plan-5    N8        0.020
+ MPN      plan-5    C9        0.020
+ MPN      plan-5    N1        0.020
+ MPN      plan-5    C4        0.020
+ MPN      plan-5    N3        0.020
+ MPN      plan-5    C2        0.020
+ MPN      plan-5    N5        0.020
+ MPN      plan-5    O4        0.020
+ MPN      plan-5    N2        0.020
+ MPN      plan-5    H1        0.020
+ MPN      plan-5    H8        0.020
+ MPN      plan-5    H5        0.020
+ MPN      plan-5    H22       0.020
+ MPN      plan-5    H21       0.020
+ MPN      plan-6    N2        0.020
+ MPN      plan-6    C2        0.020
+ MPN      plan-6    H21       0.020
+ MPN      plan-6    H22       0.020
+# ------------------------------------------------------

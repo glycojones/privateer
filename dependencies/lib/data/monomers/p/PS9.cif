@@ -1,0 +1,99 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PS9     PS9      octathiocane     NON-POLYMER     8     8     .     
+#
+data_comp_PS9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PS9     S2      S       S2      0       37.982      91.154      106.584     
+PS9     S3      S       S2      0       37.216      91.050      108.503     
+PS9     S4      S       S2      0       38.759      91.812      109.650     
+PS9     S5      S       S2      0       37.942      93.581      110.344     
+PS9     S6      S       S2      0       38.889      94.985      109.158     
+PS9     S7      S       S2      0       37.336      95.729      108.013     
+PS9     S8      S       S2      0       36.631      94.073      106.993     
+PS9     S9      S       S2      0       38.359      93.169      106.306     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PS9       S2        S9        SINGLE    n         2.068     0.010     2.068     0.010     
+PS9       S2        S3        SINGLE    n         2.068     0.010     2.068     0.010     
+PS9       S3        S4        SINGLE    n         2.068     0.010     2.068     0.010     
+PS9       S4        S5        SINGLE    n         2.068     0.010     2.068     0.010     
+PS9       S5        S6        SINGLE    n         2.068     0.010     2.068     0.010     
+PS9       S6        S7        SINGLE    n         2.068     0.010     2.068     0.010     
+PS9       S7        S8        SINGLE    n         2.068     0.010     2.068     0.010     
+PS9       S8        S9        SINGLE    n         2.068     0.010     2.068     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PS9          S9          S2          S3     102.017    3.00
+PS9          S2          S3          S4     102.017    3.00
+PS9          S3          S4          S5     102.017    3.00
+PS9          S4          S5          S6     102.017    3.00
+PS9          S5          S6          S7     102.017    3.00
+PS9          S6          S7          S8     102.017    3.00
+PS9          S7          S8          S9     102.017    3.00
+PS9          S2          S9          S8     102.017    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PS9             sp3_sp3_2          S9          S2          S3          S4     180.000   10.00     3
+PS9             sp3_sp3_1          S3          S2          S9          S8     180.000   10.00     3
+PS9             sp3_sp3_3          S2          S3          S4          S5     180.000   10.00     3
+PS9             sp3_sp3_4          S3          S4          S5          S6     180.000   10.00     3
+PS9             sp3_sp3_5          S4          S5          S6          S7     180.000   10.00     3
+PS9             sp3_sp3_6          S5          S6          S7          S8     180.000   10.00     3
+PS9             sp3_sp3_7          S6          S7          S8          S9     180.000   10.00     3
+PS9             sp3_sp3_8          S7          S8          S9          S2     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PS9 SMILES           ACDLabs              10.04 S1SSSSSSS1
+PS9 SMILES_CANONICAL CACTVS               3.341 S1SSSSSSS1
+PS9 SMILES           CACTVS               3.341 S1SSSSSSS1
+PS9 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 S1SSSSSSS1
+PS9 SMILES           "OpenEye OEToolkits" 1.5.0 S1SSSSSSS1
+PS9 InChI            InChI                1.03  InChI=1S/S8/c1-2-4-6-8-7-5-3-1
+PS9 InChIKey         InChI                1.03  JLQNHALFVCURHW-UHFFFAOYSA-N
+PS9 ?                acedrg               202         "dictionary generator"                  
+PS9 ?                acedrg_database      11          "data source"                           
+PS9 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PS9 ?                refmac5              5.8.0189    "optimization tool"                     

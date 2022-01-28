@@ -1,0 +1,86 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NSM     NSM      NITROSOMETHANE     NON-POLYMER     6     3     .     
+#
+data_comp_NSM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NSM     O1      O       O       0       0.102       5.783       17.623      
+NSM     N       N       N       0       -0.602      5.107       16.837      
+NSM     C1      C       CH3     0       -0.511      3.651       16.808      
+NSM     H11     H       H       0       -0.238      3.365       15.928      
+NSM     H12     H       H       0       -1.374      3.272       17.016      
+NSM     H13     H       H       0       0.137       3.353       17.458      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NSM       O1        N         DOUBLE    n         1.251     0.020     1.251     0.020     
+NSM       N         C1        SINGLE    n         1.457     0.020     1.457     0.020     
+NSM       C1        H11       SINGLE    n         1.089     0.010     0.965     0.011     
+NSM       C1        H12       SINGLE    n         1.089     0.010     0.965     0.011     
+NSM       C1        H13       SINGLE    n         1.089     0.010     0.965     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NSM          O1           N          C1     120.000    3.00
+NSM           N          C1         H11     109.364    1.50
+NSM           N          C1         H12     109.364    1.50
+NSM           N          C1         H13     109.364    1.50
+NSM         H11          C1         H12     109.432    1.50
+NSM         H11          C1         H13     109.432    1.50
+NSM         H12          C1         H13     109.432    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NSM             sp2_sp3_1          O1           N          C1         H11       0.000   10.00     6
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NSM SMILES           ACDLabs              10.04 O=NC
+NSM SMILES_CANONICAL CACTVS               3.341 CN=O
+NSM SMILES           CACTVS               3.341 CN=O
+NSM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CN=O
+NSM SMILES           "OpenEye OEToolkits" 1.5.0 CN=O
+NSM InChI            InChI                1.03  InChI=1S/CH3NO/c1-2-3/h1H3
+NSM InChIKey         InChI                1.03  IMHRONYAKYWGCC-UHFFFAOYSA-N
+NSM ?                acedrg               202         "dictionary generator"                  
+NSM ?                acedrg_database      11          "data source"                           
+NSM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NSM ?                refmac5              5.8.0189    "optimization tool"                     

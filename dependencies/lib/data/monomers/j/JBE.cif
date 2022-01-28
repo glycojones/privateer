@@ -1,0 +1,150 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+JBE     JBE      3-nitropyridin-2-amine     NON-POLYMER     15     10     .     
+#
+data_comp_JBE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+JBE     O01     O       O       0       -1.962      1.133       1.717       
+JBE     N02     N       N       1       -1.456      1.378       0.633       
+JBE     O03     O       OC      -1      -1.836      2.286       -0.089      
+JBE     C04     C       CR6     0       -0.347      0.547       0.180       
+JBE     C05     C       CR16    0       0.862       1.182       -0.118      
+JBE     C06     C       CR16    0       1.928       0.417       -0.549      
+JBE     C07     C       CR16    0       1.760       -0.949      -0.670      
+JBE     N08     N       NRD6    0       0.613       -1.592      -0.392      
+JBE     C09     C       CR6     0       -0.447      -0.867      0.032       
+JBE     N10     N       NH2     0       -1.549      -1.546      0.291       
+JBE     H1      H       H       0       0.946       2.115       -0.025      
+JBE     H2      H       H       0       2.753       0.821       -0.755      
+JBE     H3      H       H       0       2.492       -1.466      -0.964      
+JBE     H4      H       H       0       -1.523      -2.230      0.839       
+JBE     H5      H       H       0       -2.305      -1.311      -0.086      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+JBE       O01       N02       DOUBLE    n         1.221     0.0162    1.221     0.0162    
+JBE       N02       O03       SINGLE    n         1.221     0.0162    1.221     0.0162    
+JBE       N02       C04       SINGLE    n         1.457     0.0200    1.457     0.0200    
+JBE       C04       C05       DOUBLE    y         1.394     0.0127    1.394     0.0127    
+JBE       C04       C09       SINGLE    y         1.415     0.0180    1.415     0.0180    
+JBE       C05       C06       SINGLE    y         1.379     0.0100    1.379     0.0100    
+JBE       C09       N10       SINGLE    n         1.320     0.0105    1.320     0.0105    
+JBE       N08       C09       DOUBLE    y         1.347     0.0101    1.347     0.0101    
+JBE       C06       C07       DOUBLE    y         1.374     0.0152    1.374     0.0152    
+JBE       C07       N08       SINGLE    y         1.337     0.0121    1.337     0.0121    
+JBE       C05       H1        SINGLE    n         1.082     0.013     0.941     0.0200    
+JBE       C06       H2        SINGLE    n         1.082     0.013     0.941     0.0154    
+JBE       C07       H3        SINGLE    n         1.082     0.013     0.943     0.0178    
+JBE       N10       H4        SINGLE    n         1.016     0.010     0.877     0.0200    
+JBE       N10       H5        SINGLE    n         1.016     0.010     0.877     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+JBE         O01         N02         O03     123.001    1.50
+JBE         O01         N02         C04     118.499    1.50
+JBE         O03         N02         C04     118.499    1.50
+JBE         N02         C04         C05     117.554    1.50
+JBE         N02         C04         C09     122.773    1.57
+JBE         C05         C04         C09     119.673    1.50
+JBE         C04         C05         C06     119.310    1.50
+JBE         C04         C05          H1     120.194    1.50
+JBE         C06         C05          H1     120.496    1.50
+JBE         C05         C06         C07     119.129    1.50
+JBE         C05         C06          H2     120.275    1.50
+JBE         C07         C06          H2     120.596    1.50
+JBE         C06         C07         N08     123.959    1.50
+JBE         C06         C07          H3     118.355    1.50
+JBE         N08         C07          H3     117.686    1.50
+JBE         C09         N08         C07     117.566    1.50
+JBE         C04         C09         N10     123.438    2.55
+JBE         C04         C09         N08     120.363    1.50
+JBE         N10         C09         N08     116.200    1.50
+JBE         C09         N10          H4     119.872    1.50
+JBE         C09         N10          H5     119.872    1.50
+JBE          H4         N10          H5     120.257    1.85
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+JBE             sp2_sp2_1         C05         C04         N02         O01     180.000   10.00     2
+JBE       const_sp2_sp2_3         N02         C04         C05         C06     180.000   10.00     2
+JBE              const_20         N02         C04         C09         N10       0.000   10.00     2
+JBE       const_sp2_sp2_5         C04         C05         C06         C07       0.000   10.00     2
+JBE       const_sp2_sp2_9         C05         C06         C07         N08       0.000   10.00     2
+JBE              const_13         C06         C07         N08         C09       0.000   10.00     2
+JBE              const_16         N10         C09         N08         C07     180.000   10.00     2
+JBE             sp2_sp2_5         C04         C09         N10          H4     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+JBE    plan-1         C04   0.020
+JBE    plan-1         C05   0.020
+JBE    plan-1         C06   0.020
+JBE    plan-1         C07   0.020
+JBE    plan-1         C09   0.020
+JBE    plan-1          H1   0.020
+JBE    plan-1          H2   0.020
+JBE    plan-1          H3   0.020
+JBE    plan-1         N02   0.020
+JBE    plan-1         N08   0.020
+JBE    plan-1         N10   0.020
+JBE    plan-2         C04   0.020
+JBE    plan-2         N02   0.020
+JBE    plan-2         O01   0.020
+JBE    plan-2         O03   0.020
+JBE    plan-3         C09   0.020
+JBE    plan-3          H4   0.020
+JBE    plan-3          H5   0.020
+JBE    plan-3         N10   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+JBE            InChI                InChI  1.03 InChI=1S/C5H5N3O2/c6-5-4(8(9)10)2-1-3-7-5/h1-3H,(H2,6,7)
+JBE         InChIKey                InChI  1.03                              BPYHGTCRXDWOIQ-UHFFFAOYSA-N
+JBE SMILES_CANONICAL               CACTVS 3.385                                    Nc1ncccc1[N+]([O-])=O
+JBE           SMILES               CACTVS 3.385                                    Nc1ncccc1[N+]([O-])=O
+JBE SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                c1cc(c(nc1)N)[N+](=O)[O-]
+JBE           SMILES "OpenEye OEToolkits" 2.0.7                                c1cc(c(nc1)N)[N+](=O)[O-]
+JBE ?                acedrg               217         "dictionary generator"                  
+JBE ?                acedrg_database      11          "data source"                           
+JBE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+JBE ?                refmac5              5.8.0253    "optimization tool"                     

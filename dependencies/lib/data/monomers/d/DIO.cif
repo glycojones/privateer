@@ -1,0 +1,127 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DIO     DIO     "1,4-DIETHYLENEDIOXIDE"     NON-POLYMER     14     6     .     
+#
+data_comp_DIO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DIO     C1      C       CH2     0       4.019       34.569      4.857       
+DIO     C2      C       CH2     0       2.520       32.753      5.069       
+DIO     "C1'"   C       CH2     0       3.118       35.192      3.827       
+DIO     "C2'"   C       CH2     0       1.620       33.375      4.038       
+DIO     O1      O       O2      0       3.268       33.756      5.766       
+DIO     "O1'"   O       O2      0       2.370       34.189      3.129       
+DIO     H11     H       H       0       4.694       34.016      4.412       
+DIO     H12     H       H       0       4.479       35.274      5.360       
+DIO     H21     H       H       0       3.141       32.134      4.631       
+DIO     H22     H       H       0       1.982       32.246      5.712       
+DIO     "H1'1"  H       H       0       2.497       35.811      4.265       
+DIO     "H1'2"  H       H       0       3.657       35.698      3.183       
+DIO     "H2'1"  H       H       0       0.944       33.928      4.484       
+DIO     "H2'2"  H       H       0       1.160       32.671      3.536       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DIO       C1        "C1'"     SINGLE    n         1.490     0.020     1.490     0.020     
+DIO       C1        O1        SINGLE    n         1.424     0.014     1.424     0.014     
+DIO       C2        "C2'"     SINGLE    n         1.490     0.020     1.490     0.020     
+DIO       C2        O1        SINGLE    n         1.424     0.014     1.424     0.014     
+DIO       "C1'"     "O1'"     SINGLE    n         1.424     0.014     1.424     0.014     
+DIO       "C2'"     "O1'"     SINGLE    n         1.424     0.014     1.424     0.014     
+DIO       C1        H11       SINGLE    n         1.089     0.010     0.980     0.015     
+DIO       C1        H12       SINGLE    n         1.089     0.010     0.980     0.015     
+DIO       C2        H21       SINGLE    n         1.089     0.010     0.980     0.015     
+DIO       C2        H22       SINGLE    n         1.089     0.010     0.980     0.015     
+DIO       "C1'"     "H1'1"    SINGLE    n         1.089     0.010     0.980     0.015     
+DIO       "C1'"     "H1'2"    SINGLE    n         1.089     0.010     0.980     0.015     
+DIO       "C2'"     "H2'1"    SINGLE    n         1.089     0.010     0.980     0.015     
+DIO       "C2'"     "H2'2"    SINGLE    n         1.089     0.010     0.980     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DIO       "C1'"          C1          O1     110.807    1.50
+DIO       "C1'"          C1         H11     109.567    1.50
+DIO       "C1'"          C1         H12     109.567    1.50
+DIO          O1          C1         H11     109.222    1.50
+DIO          O1          C1         H12     109.222    1.50
+DIO         H11          C1         H12     108.389    1.66
+DIO       "C2'"          C2          O1     110.807    1.50
+DIO       "C2'"          C2         H21     109.567    1.50
+DIO       "C2'"          C2         H22     109.567    1.50
+DIO          O1          C2         H21     109.222    1.50
+DIO          O1          C2         H22     109.222    1.50
+DIO         H21          C2         H22     108.389    1.66
+DIO          C1       "C1'"       "O1'"     110.807    1.50
+DIO          C1       "C1'"      "H1'1"     109.567    1.50
+DIO          C1       "C1'"      "H1'2"     109.567    1.50
+DIO       "O1'"       "C1'"      "H1'1"     109.222    1.50
+DIO       "O1'"       "C1'"      "H1'2"     109.222    1.50
+DIO      "H1'1"       "C1'"      "H1'2"     108.389    1.66
+DIO          C2       "C2'"       "O1'"     110.807    1.50
+DIO          C2       "C2'"      "H2'1"     109.567    1.50
+DIO          C2       "C2'"      "H2'2"     109.567    1.50
+DIO       "O1'"       "C2'"      "H2'1"     109.222    1.50
+DIO       "O1'"       "C2'"      "H2'2"     109.222    1.50
+DIO      "H2'1"       "C2'"      "H2'2"     108.389    1.66
+DIO          C1          O1          C2     109.677    1.50
+DIO       "C1'"       "O1'"       "C2'"     109.677    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DIO             sp3_sp3_1          O1          C1       "C1'"       "O1'"      60.000   10.00     3
+DIO            sp3_sp3_28       "C1'"          C1          O1          C2     180.000   10.00     3
+DIO            sp3_sp3_16          O1          C2       "C2'"       "O1'"     -60.000   10.00     3
+DIO            sp3_sp3_25       "C2'"          C2          O1          C1      60.000   10.00     3
+DIO            sp3_sp3_10          C1       "C1'"       "O1'"       "C2'"     -60.000   10.00     3
+DIO            sp3_sp3_13          C2       "C2'"       "O1'"       "C1'"      60.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DIO SMILES           ACDLabs              10.04 O1CCOCC1
+DIO SMILES_CANONICAL CACTVS               3.341 C1COCCO1
+DIO SMILES           CACTVS               3.341 C1COCCO1
+DIO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 C1COCCO1
+DIO SMILES           "OpenEye OEToolkits" 1.5.0 C1COCCO1
+DIO InChI            InChI                1.03  InChI=1S/C4H8O2/c1-2-6-4-3-5-1/h1-4H2
+DIO InChIKey         InChI                1.03  RYHBNJHYFVUHQT-UHFFFAOYSA-N
+DIO ?                acedrg               190         "dictionary generator"                  
+DIO ?                acedrg_database      11          "data source"                           
+DIO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DIO ?                refmac5              5.8.0158    "optimization tool"                     

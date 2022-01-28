@@ -1,0 +1,203 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PR3      PR3 'S,S-PROPYLTHIOCYSTEINE              ' non-polymer        23  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PR3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PR3           O      O    O         0.000      0.000    0.000    0.000
+ PR3           C      C    C1        0.000     -1.081    0.241    0.480
+ PR3           HC     H    H         0.000     -1.181    0.373    1.544
+ PR3           CA     C    CH1       0.000     -2.291    0.355   -0.410
+ PR3           HA     H    H         0.000     -2.727    1.359   -0.308
+ PR3           N      N    NH2       0.000     -1.894    0.134   -1.807
+ PR3           H2     H    H         0.000     -0.925   -0.047   -2.041
+ PR3           H      H    H         0.000     -2.587    0.162   -2.546
+ PR3           CB     C    CH2       0.000     -3.327   -0.694   -0.002
+ PR3           HB2    H    H         0.000     -2.902   -1.692   -0.129
+ PR3           HB3    H    H         0.000     -4.213   -0.594   -0.633
+ PR3           SG     S    S2        0.000     -3.786   -0.445    1.733
+ PR3           SD     S    S2        0.000     -4.994    1.199    1.551
+ PR3           CE     C    CH2       0.000     -6.596    0.388    1.300
+ PR3           HE2    H    H         0.000     -6.553   -0.232    0.402
+ PR3           HE3    H    H         0.000     -7.372    1.147    1.180
+ PR3           CZ     C    CH2       0.000     -6.920   -0.488    2.510
+ PR3           HZ2    H    H         0.000     -6.962    0.134    3.407
+ PR3           HZ3    H    H         0.000     -6.142   -1.244    2.629
+ PR3           CH     C    CH3       0.000     -8.271   -1.173    2.298
+ PR3           HH3    H    H         0.000     -9.029   -0.440    2.182
+ PR3           HH2    H    H         0.000     -8.233   -1.777    1.428
+ PR3           HH1    H    H         0.000     -8.498   -1.780    3.137
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PR3      O      n/a    C      START
+ PR3      C      O      CA     .
+ PR3      HC     C      .      .
+ PR3      CA     C      CB     .
+ PR3      HA     CA     .      .
+ PR3      N      CA     H      .
+ PR3      H2     N      .      .
+ PR3      H      N      .      .
+ PR3      CB     CA     SG     .
+ PR3      HB2    CB     .      .
+ PR3      HB3    CB     .      .
+ PR3      SG     CB     SD     .
+ PR3      SD     SG     CE     .
+ PR3      CE     SD     CZ     .
+ PR3      HE2    CE     .      .
+ PR3      HE3    CE     .      .
+ PR3      CZ     CE     CH     .
+ PR3      HZ2    CZ     .      .
+ PR3      HZ3    CZ     .      .
+ PR3      CH     CZ     HH1    .
+ PR3      HH3    CH     .      .
+ PR3      HH2    CH     .      .
+ PR3      HH1    CH     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PR3       N         CA        single    1.450     0.020     1.450     0.020     
+PR3       H         N         single    1.036     0.016     0.914     0.007     
+PR3       H2        N         single    1.036     0.016     0.914     0.007     
+PR3       CA        C         single    1.510     0.020     1.510     0.020     
+PR3       CB        CA        single    1.524     0.020     1.524     0.020     
+PR3       HA        CA        single    1.089     0.010     0.989     0.005     
+PR3       C         O         double    1.220     0.020     1.220     0.020     
+PR3       HC        C         single    1.082     0.013     0.975     0.010     
+PR3       SG        CB        single    1.762     0.020     1.762     0.020     
+PR3       HB2       CB        single    1.089     0.010     0.989     0.005     
+PR3       HB3       CB        single    1.089     0.010     0.989     0.005     
+PR3       SD        SG        single    2.000     0.020     2.000     0.020     
+PR3       CE        SD        single    1.762     0.020     1.762     0.020     
+PR3       CZ        CE        single    1.524     0.020     1.524     0.020     
+PR3       HE2       CE        single    1.089     0.010     0.989     0.005     
+PR3       HE3       CE        single    1.089     0.010     0.989     0.005     
+PR3       CH        CZ        single    1.513     0.020     1.513     0.020     
+PR3       HZ2       CZ        single    1.089     0.010     0.989     0.005     
+PR3       HZ3       CZ        single    1.089     0.010     0.989     0.005     
+PR3       HH1       CH        single    1.089     0.010     0.989     0.005     
+PR3       HH2       CH        single    1.089     0.010     0.989     0.005     
+PR3       HH3       CH        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PR3      O      C      HC      123.000    3.000
+ PR3      O      C      CA      120.500    3.000
+ PR3      HC     C      CA      120.000    3.000
+ PR3      C      CA     HA      108.810    3.000
+ PR3      C      CA     N       109.470    3.000
+ PR3      C      CA     CB      109.470    3.000
+ PR3      HA     CA     N       109.470    3.000
+ PR3      HA     CA     CB      108.340    3.000
+ PR3      N      CA     CB      109.470    3.000
+ PR3      CA     N      H2      120.000    3.000
+ PR3      CA     N      H       120.000    3.000
+ PR3      H2     N      H       120.000    3.000
+ PR3      CA     CB     HB2     109.470    3.000
+ PR3      CA     CB     HB3     109.470    3.000
+ PR3      CA     CB     SG      109.500    3.000
+ PR3      HB2    CB     HB3     107.900    3.000
+ PR3      HB2    CB     SG      109.500    3.000
+ PR3      HB3    CB     SG      109.500    3.000
+ PR3      CB     SG     SD      100.020    3.000
+ PR3      SG     SD     CE      100.031    3.000
+ PR3      SD     CE     HE2     109.500    3.000
+ PR3      SD     CE     HE3     109.500    3.000
+ PR3      SD     CE     CZ      109.500    3.000
+ PR3      HE2    CE     HE3     107.900    3.000
+ PR3      HE2    CE     CZ      109.470    3.000
+ PR3      HE3    CE     CZ      109.470    3.000
+ PR3      CE     CZ     HZ2     109.470    3.000
+ PR3      CE     CZ     HZ3     109.470    3.000
+ PR3      CE     CZ     CH      111.000    3.000
+ PR3      HZ2    CZ     HZ3     107.900    3.000
+ PR3      HZ2    CZ     CH      109.470    3.000
+ PR3      HZ3    CZ     CH      109.470    3.000
+ PR3      CZ     CH     HH3     109.470    3.000
+ PR3      CZ     CH     HH2     109.470    3.000
+ PR3      CZ     CH     HH1     109.470    3.000
+ PR3      HH3    CH     HH2     109.470    3.000
+ PR3      HH3    CH     HH1     109.470    3.000
+ PR3      HH2    CH     HH1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PR3      var_1    O      C      CA     CB       120.061   20.000   1
+ PR3      var_2    C      CA     N      H        179.141   20.000   1
+ PR3      var_3    C      CA     CB     SG        58.597   20.000   3
+ PR3      var_4    CA     CB     SG     SD        75.453   20.000   1
+ PR3      var_5    CB     SG     SD     CE        89.992   20.000   1
+ PR3      var_6    SG     SD     CE     CZ        60.022   20.000   1
+ PR3      var_7    SD     CE     CZ     CH      -179.967   20.000   3
+ PR3      var_8    CE     CZ     CH     HH1     -179.985   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PR3      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PR3      plan-1    N         0.020
+ PR3      plan-1    CA        0.020
+ PR3      plan-1    H         0.020
+ PR3      plan-1    H2        0.020
+ PR3      plan-2    C         0.020
+ PR3      plan-2    CA        0.020
+ PR3      plan-2    O         0.020
+ PR3      plan-2    HC        0.020
+# ------------------------------------------------------

@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IDM     IDM      INDOLINE     NON-POLYMER     18     9     .     
+#
+data_comp_IDM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+IDM     N1      N       NR5     0       34.092      92.716      48.388      
+IDM     C2      C       CH2     0       34.357      91.960      47.171      
+IDM     C3      C       CH2     0       33.152      92.229      46.269      
+IDM     C4A     C       CR56    0       32.276      93.142      47.084      
+IDM     C4      C       CR16    0       31.045      93.711      46.772      
+IDM     C5      C       CR16    0       30.428      94.534      47.712      
+IDM     C6      C       CR16    0       31.036      94.782      48.945      
+IDM     C7      C       CR16    0       32.269      94.220      49.275      
+IDM     C7A     C       CR56    0       32.878      93.397      48.324      
+IDM     HN1     H       H       0       34.636      92.737      49.077      
+IDM     H21     H       H       0       35.186      92.265      46.749      
+IDM     H22     H       H       0       34.440      91.005      47.370      
+IDM     H31     H       H       0       32.683      91.393      46.047      
+IDM     H32     H       H       0       33.428      92.659      45.428      
+IDM     H4      H       H       0       30.636      93.538      45.929      
+IDM     H5      H       H       0       29.592      94.928      47.515      
+IDM     H6      H       H       0       30.606      95.341      49.569      
+IDM     H7      H       H       0       32.680      94.390      50.112      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IDM       N1        C2        SINGLE    n         1.450     0.020     1.450     0.020     
+IDM       N1        C7A       SINGLE    n         1.393     0.013     1.393     0.013     
+IDM       C2        C3        SINGLE    n         1.528     0.013     1.528     0.013     
+IDM       C3        C4A       SINGLE    n         1.506     0.010     1.506     0.010     
+IDM       C4A       C4        DOUBLE    y         1.384     0.010     1.384     0.010     
+IDM       C4A       C7A       SINGLE    y         1.395     0.010     1.395     0.010     
+IDM       C4        C5        SINGLE    y         1.388     0.010     1.388     0.010     
+IDM       C5        C6        DOUBLE    y         1.388     0.012     1.388     0.012     
+IDM       C6        C7        SINGLE    y         1.387     0.010     1.387     0.010     
+IDM       C7        C7A       DOUBLE    y         1.389     0.010     1.389     0.010     
+IDM       N1        HN1       SINGLE    n         1.016     0.010     0.878     0.020     
+IDM       C2        H21       SINGLE    n         1.089     0.010     0.979     0.020     
+IDM       C2        H22       SINGLE    n         1.089     0.010     0.979     0.020     
+IDM       C3        H31       SINGLE    n         1.089     0.010     0.984     0.020     
+IDM       C3        H32       SINGLE    n         1.089     0.010     0.984     0.020     
+IDM       C4        H4        SINGLE    n         1.082     0.013     0.952     0.020     
+IDM       C5        H5        SINGLE    n         1.082     0.013     0.944     0.019     
+IDM       C6        H6        SINGLE    n         1.082     0.013     0.941     0.017     
+IDM       C7        H7        SINGLE    n         1.082     0.013     0.948     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+IDM          C2          N1         C7A     110.320    1.81
+IDM          C2          N1         HN1     124.687    1.80
+IDM         C7A          N1         HN1     124.993    1.50
+IDM          N1          C2          C3     103.241    1.50
+IDM          N1          C2         H21     110.965    1.50
+IDM          N1          C2         H22     110.965    1.50
+IDM          C3          C2         H21     111.698    2.09
+IDM          C3          C2         H22     111.698    2.09
+IDM         H21          C2         H22     109.055    1.50
+IDM          C2          C3         C4A     103.290    1.50
+IDM          C2          C3         H31     111.306    1.50
+IDM          C2          C3         H32     111.306    1.50
+IDM         C4A          C3         H31     111.340    1.50
+IDM         C4A          C3         H32     111.340    1.50
+IDM         H31          C3         H32     108.439    1.70
+IDM          C3         C4A          C4     130.227    1.50
+IDM          C3         C4A         C7A     109.633    1.50
+IDM          C4         C4A         C7A     120.140    1.50
+IDM         C4A          C4          C5     119.001    1.50
+IDM         C4A          C4          H4     120.177    1.50
+IDM          C5          C4          H4     120.823    1.50
+IDM          C4          C5          C6     120.867    1.50
+IDM          C4          C5          H5     119.607    1.50
+IDM          C6          C5          H5     119.526    1.50
+IDM          C5          C6          C7     121.556    1.50
+IDM          C5          C6          H6     119.350    1.50
+IDM          C7          C6          H6     119.094    1.50
+IDM          C6          C7         C7A     117.200    1.50
+IDM          C6          C7          H7     121.520    1.50
+IDM         C7A          C7          H7     121.280    1.50
+IDM          N1         C7A         C4A     108.542    2.06
+IDM          N1         C7A          C7     130.222    1.50
+IDM         C4A         C7A          C7     121.236    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+IDM             sp2_sp3_1         C7A          N1          C2          C3       0.000   10.00     6
+IDM             sp2_sp2_1         C4A         C7A          N1          C2       0.000   10.00     2
+IDM             sp3_sp3_1          N1          C2          C3         C4A     -60.000   10.00     3
+IDM            sp2_sp3_10          C4         C4A          C3          C2     180.000   10.00     6
+IDM       const_sp2_sp2_6          C5          C4         C4A          C3     180.000   10.00     2
+IDM       const_sp2_sp2_1          C3         C4A         C7A          N1       0.000   10.00     2
+IDM       const_sp2_sp2_9         C4A          C4          C5          C6       0.000   10.00     2
+IDM              const_13          C4          C5          C6          C7       0.000   10.00     2
+IDM              const_17          C5          C6          C7         C7A       0.000   10.00     2
+IDM              const_22          C6          C7         C7A          N1     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+IDM    plan-1          C3   0.020
+IDM    plan-1          C4   0.020
+IDM    plan-1         C4A   0.020
+IDM    plan-1          C5   0.020
+IDM    plan-1          C6   0.020
+IDM    plan-1          C7   0.020
+IDM    plan-1         C7A   0.020
+IDM    plan-1          H4   0.020
+IDM    plan-1          H5   0.020
+IDM    plan-1          H6   0.020
+IDM    plan-1          H7   0.020
+IDM    plan-1          N1   0.020
+IDM    plan-2          C2   0.020
+IDM    plan-2         C7A   0.020
+IDM    plan-2         HN1   0.020
+IDM    plan-2          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+IDM SMILES           ACDLabs              10.04 c1cccc2c1CCN2
+IDM SMILES_CANONICAL CACTVS               3.341 C1Cc2ccccc2N1
+IDM SMILES           CACTVS               3.341 C1Cc2ccccc2N1
+IDM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)CCN2"
+IDM SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc2c(c1)CCN2"
+IDM InChI            InChI                1.03  "InChI=1S/C8H9N/c1-2-4-8-7(3-1)5-6-9-8/h1-4,9H,5-6H2"
+IDM InChIKey         InChI                1.03  LPAGFVYQRIESJQ-UHFFFAOYSA-N
+IDM ?                acedrg               202         "dictionary generator"                  
+IDM ?                acedrg_database      11          "data source"                           
+IDM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+IDM ?                refmac5              5.8.0189    "optimization tool"                     

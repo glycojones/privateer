@@ -1,0 +1,200 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5RP      5RP 'RIBULOSE-5-PHOSPHATE                ' non-polymer        23  14 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_5RP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 5RP           O4     O    O         0.000      0.000    0.000    0.000
+ 5RP           C3     C    C         0.000     -0.684    0.727   -0.679
+ 5RP           C2     C    CH2       0.000     -0.074    1.461   -1.843
+ 5RP           H21    H    H         0.000     -0.189    2.537   -1.694
+ 5RP           H22    H    H         0.000     -0.582    1.167   -2.764
+ 5RP           O1     O    OH1       0.000      1.314    1.138   -1.939
+ 5RP           HO1    H    H         0.000      1.703    1.610   -2.688
+ 5RP           C5     C    CH1       0.000     -2.147    0.899   -0.361
+ 5RP           H5     H    H         0.000     -2.472    1.904   -0.664
+ 5RP           O13    O    OH1       0.000     -2.351    0.736    1.044
+ 5RP           H13    H    H         0.000     -2.065   -0.148    1.310
+ 5RP           C6     C    CH1       0.000     -2.960   -0.151   -1.118
+ 5RP           H6     H    H         0.000     -2.635   -1.156   -0.814
+ 5RP           O14    O    OH1       0.000     -2.756    0.011   -2.524
+ 5RP           H14    H    H         0.000     -3.042    0.895   -2.790
+ 5RP           C7     C    CH2       0.000     -4.444    0.024   -0.797
+ 5RP           H71    H    H         0.000     -4.766    1.023   -1.099
+ 5RP           H72    H    H         0.000     -4.600   -0.099    0.277
+ 5RP           O8     O    O2        0.000     -5.205   -0.957   -1.504
+ 5RP           P9     P    P         0.000     -6.749   -0.716   -1.120
+ 5RP           O12    O    OP       -0.666     -7.159    0.680   -1.532
+ 5RP           O11    O    OP       -0.666     -7.614   -1.727   -1.841
+ 5RP           O10    O    OP       -0.666     -6.928   -0.874    0.375
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 5RP      O4     n/a    C3     START
+ 5RP      C3     O4     C5     .
+ 5RP      C2     C3     O1     .
+ 5RP      H21    C2     .      .
+ 5RP      H22    C2     .      .
+ 5RP      O1     C2     HO1    .
+ 5RP      HO1    O1     .      .
+ 5RP      C5     C3     C6     .
+ 5RP      H5     C5     .      .
+ 5RP      O13    C5     H13    .
+ 5RP      H13    O13    .      .
+ 5RP      C6     C5     C7     .
+ 5RP      H6     C6     .      .
+ 5RP      O14    C6     H14    .
+ 5RP      H14    O14    .      .
+ 5RP      C7     C6     O8     .
+ 5RP      H71    C7     .      .
+ 5RP      H72    C7     .      .
+ 5RP      O8     C7     P9     .
+ 5RP      P9     O8     O10    .
+ 5RP      O12    P9     .      .
+ 5RP      O11    P9     .      .
+ 5RP      O10    P9     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5RP       C2        C3        single    1.510     0.020     1.510     0.020     
+5RP       O1        C2        single    1.432     0.020     1.432     0.020     
+5RP       H21       C2        single    1.089     0.010     0.989     0.005     
+5RP       H22       C2        single    1.089     0.010     0.989     0.005     
+5RP       C5        C3        single    1.500     0.020     1.500     0.020     
+5RP       C3        O4        double    1.220     0.020     1.220     0.020     
+5RP       O13       C5        single    1.432     0.020     1.432     0.020     
+5RP       C6        C5        single    1.524     0.020     1.524     0.020     
+5RP       H5        C5        single    1.089     0.010     0.989     0.005     
+5RP       H13       O13       single    0.970     0.012     0.839     0.014     
+5RP       O14       C6        single    1.432     0.020     1.432     0.020     
+5RP       C7        C6        single    1.524     0.020     1.524     0.020     
+5RP       H6        C6        single    1.089     0.010     0.989     0.005     
+5RP       H14       O14       single    0.970     0.012     0.839     0.014     
+5RP       O8        C7        single    1.426     0.020     1.426     0.020     
+5RP       H71       C7        single    1.089     0.010     0.989     0.005     
+5RP       H72       C7        single    1.089     0.010     0.989     0.005     
+5RP       P9        O8        single    1.610     0.020     1.610     0.020     
+5RP       O12       P9        deloc     1.510     0.020     1.510     0.020     
+5RP       O11       P9        deloc     1.510     0.020     1.510     0.020     
+5RP       O10       P9        deloc     1.510     0.020     1.510     0.020     
+5RP       HO1       O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 5RP      O4     C3     C2      120.500    3.000
+ 5RP      O4     C3     C5      120.500    3.000
+ 5RP      C2     C3     C5      120.000    3.000
+ 5RP      C3     C2     H21     109.470    3.000
+ 5RP      C3     C2     H22     109.470    3.000
+ 5RP      C3     C2     O1      109.500    3.000
+ 5RP      H21    C2     H22     107.900    3.000
+ 5RP      H21    C2     O1      109.470    3.000
+ 5RP      H22    C2     O1      109.470    3.000
+ 5RP      C2     O1     HO1     109.470    3.000
+ 5RP      C3     C5     H5      108.810    3.000
+ 5RP      C3     C5     O13     109.470    3.000
+ 5RP      C3     C5     C6      109.470    3.000
+ 5RP      H5     C5     O13     109.470    3.000
+ 5RP      H5     C5     C6      108.340    3.000
+ 5RP      O13    C5     C6      109.470    3.000
+ 5RP      C5     O13    H13     109.470    3.000
+ 5RP      C5     C6     H6      108.340    3.000
+ 5RP      C5     C6     O14     109.470    3.000
+ 5RP      C5     C6     C7      111.000    3.000
+ 5RP      H6     C6     O14     109.470    3.000
+ 5RP      H6     C6     C7      108.340    3.000
+ 5RP      O14    C6     C7      109.470    3.000
+ 5RP      C6     O14    H14     109.470    3.000
+ 5RP      C6     C7     H71     109.470    3.000
+ 5RP      C6     C7     H72     109.470    3.000
+ 5RP      C6     C7     O8      109.470    3.000
+ 5RP      H71    C7     H72     107.900    3.000
+ 5RP      H71    C7     O8      109.470    3.000
+ 5RP      H72    C7     O8      109.470    3.000
+ 5RP      C7     O8     P9      120.500    3.000
+ 5RP      O8     P9     O12     108.200    3.000
+ 5RP      O8     P9     O11     108.200    3.000
+ 5RP      O8     P9     O10     108.200    3.000
+ 5RP      O12    P9     O11     119.900    3.000
+ 5RP      O12    P9     O10     119.900    3.000
+ 5RP      O11    P9     O10     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 5RP      var_1    O4     C3     C2     O1         0.004   20.000   3
+ 5RP      var_2    C3     C2     O1     HO1      179.961   20.000   1
+ 5RP      var_3    O4     C3     C5     C6       -90.003   20.000   3
+ 5RP      var_4    C3     C5     O13    H13      -60.034   20.000   1
+ 5RP      var_5    C3     C5     C6     C7      -179.933   20.000   3
+ 5RP      var_6    C5     C6     O14    H14      -59.970   20.000   1
+ 5RP      var_7    C5     C6     C7     O8      -179.999   20.000   3
+ 5RP      var_8    C6     C7     O8     P9       179.940   20.000   1
+ 5RP      var_9    C7     O8     P9     O10      -59.967   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 5RP      chir_01  C5     C3     O13    C6        positiv
+ 5RP      chir_02  C6     C5     O14    C7        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 5RP      plan-1    C3        0.020
+ 5RP      plan-1    C2        0.020
+ 5RP      plan-1    C5        0.020
+ 5RP      plan-1    O4        0.020
+# ------------------------------------------------------

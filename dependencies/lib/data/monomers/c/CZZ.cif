@@ -1,0 +1,160 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CZZ      CZZ 'THIARSAHYDROXY-CYSTEINE             ' peptide            15   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CZZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CZZ           N      N    NH2       0.000      0.000    0.000    0.000
+ CZZ           H    H    H         0.000      0.114   -0.694   -0.728
+ CZZ           H2    H    H         0.000      0.557    0.845   -0.025
+ CZZ           CA     C    CH1       0.000     -0.963   -0.216    1.081
+ CZZ           HCA    H    H         0.000     -0.424   -0.304    2.035
+ CZZ           CB     C    CH2       0.000     -1.906    0.983    1.143
+ CZZ           HCB1   H    H         0.000     -2.390    1.097    0.171
+ CZZ           HCB2   H    H         0.000     -1.319    1.877    1.362
+ CZZ           SG     S    S2        0.000     -3.146    0.760    2.404
+ CZZ           AS     AS   AS1       0.000     -2.518    0.644    4.012
+ CZZ           O1     O    OH1       0.000     -3.978    0.680    5.147
+ CZZ           HO1    H    H         0.000     -4.849    0.752    4.767
+ CZZ           C      C    C         0.000     -1.760   -1.487    0.837
+ CZZ           O      O    OC       -0.500     -2.404   -1.579   -0.232
+ CZZ           OXT    O    OC       -0.500     -1.737   -2.384    1.708
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CZZ      N      n/a    CA     START
+ CZZ      H    N      .      .
+ CZZ      H2    N      .      .
+ CZZ      CA     N      C      .
+ CZZ      HCA    CA     .      .
+ CZZ      CB     CA     SG     .
+ CZZ      HCB1   CB     .      .
+ CZZ      HCB2   CB     .      .
+ CZZ      SG     CB     AS     .
+ CZZ      AS     SG     O1     .
+ CZZ      O1     AS     HO1    .
+ CZZ      HO1    O1     .      .
+ CZZ      C      CA     .      END
+ CZZ      O      C      .      .
+ CZZ      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CZZ       CA        N         single    1.450     0.020     1.450     0.020     
+CZZ       CB        CA        single    1.524     0.020     1.524     0.020     
+CZZ       C         CA        single    1.500     0.020     1.500     0.020     
+CZZ       HCA       CA        single    1.089     0.010     0.989     0.005     
+CZZ       SG        CB        single    1.762     0.020     1.762     0.020     
+CZZ       HCB1      CB        single    1.089     0.010     0.989     0.005     
+CZZ       HCB2      CB        single    1.089     0.010     0.989     0.005     
+CZZ       AS        SG        single    2.230     0.020     2.230     0.020     
+CZZ       O1        AS        single    1.964     0.020     1.964     0.020     
+CZZ       HO1       O1        single    0.970     0.012     0.839     0.014     
+CZZ       O         C         deloc     1.250     0.020     1.250     0.020     
+CZZ       OXT       C         deloc     1.250     0.020     1.250     0.020     
+CZZ       H         N         single    1.036     0.016     0.914     0.007     
+CZZ       H2        N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CZZ      H    N      H2     120.000    3.000
+ CZZ      H    N      CA      120.000    3.000
+ CZZ      H2    N      CA      120.000    3.000
+ CZZ      N      CA     HCA     109.470    3.000
+ CZZ      N      CA     CB      109.470    3.000
+ CZZ      N      CA     C       109.470    3.000
+ CZZ      HCA    CA     CB      108.340    3.000
+ CZZ      HCA    CA     C       108.810    3.000
+ CZZ      CB     CA     C       109.470    3.000
+ CZZ      CA     CB     HCB1    109.470    3.000
+ CZZ      CA     CB     HCB2    109.470    3.000
+ CZZ      CA     CB     SG      109.500    3.000
+ CZZ      HCB1   CB     HCB2    107.900    3.000
+ CZZ      HCB1   CB     SG      109.500    3.000
+ CZZ      HCB2   CB     SG      109.500    3.000
+ CZZ      CB     SG     AS      114.415    3.000
+ CZZ      SG     AS     O1       90.000    3.000
+ CZZ      AS     O1     HO1     120.000    3.000
+ CZZ      CA     C      O       118.500    3.000
+ CZZ      CA     C      OXT     118.500    3.000
+ CZZ      O      C      OXT     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CZZ      var_1    H2    N      CA     C        175.000   20.000   1
+ CZZ      var_2    N      CA     CB     SG       177.976   20.000   3
+ CZZ      var_3    CA     CB     SG     AS        62.839   20.000   1
+ CZZ      var_4    CB     SG     AS     O1         0.000   20.000   1
+ CZZ      var_5    HO1    O1     AS     SG         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CZZ      chir_01  CA     N      CB     C         negativ
+ CZZ      chir_02  AS     SG     .      O1        cross1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CZZ      plan-1    N         0.020
+ CZZ      plan-1    CA        0.020
+ CZZ      plan-1    H       0.020
+ CZZ      plan-1    H2       0.020
+ CZZ      plan-2    C         0.020
+ CZZ      plan-2    CA        0.020
+ CZZ      plan-2    O         0.020
+ CZZ      plan-2    OXT       0.020
+# ------------------------------------------------------

@@ -1,0 +1,164 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IMR     IMR      IMINORIBITOL     NON-POLYMER     20     9     .     
+#
+data_comp_IMR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+IMR     "O5'"   O       OH1     0       5.809       9.843       8.363       
+IMR     "C5'"   C       CH2     0       5.821       11.115      7.735       
+IMR     "C4'"   C       CH1     0       4.546       11.354      6.947       
+IMR     "N4'"   N       NT1     0       3.378       11.462      7.842       
+IMR     "C3'"   C       CH1     0       4.534       12.680      6.164       
+IMR     "O3'"   O       OH1     0       3.940       12.518      4.880       
+IMR     "C2'"   C       CH1     0       3.778       13.649      7.078       
+IMR     "O2'"   O       OH1     0       3.164       14.716      6.381       
+IMR     "C1'"   C       CH2     0       2.730       12.774      7.729       
+IMR     "HO'5"  H       H       0       6.498       9.764       8.851       
+IMR     "H5'1"  H       H       0       6.593       11.168      7.131       
+IMR     "H5'2"  H       H       0       5.918       11.811      8.420       
+IMR     "H4'"   H       H       0       4.402       10.599      6.324       
+IMR     "HN'4"  H       H       0       2.784       10.855      7.634       
+IMR     "H3'"   H       H       0       5.463       13.005      6.052       
+IMR     "HO'3"  H       H       0       3.152       12.216      4.972       
+IMR     "H2'"   H       H       0       4.390       14.007      7.754       
+IMR     "HO'2"  H       H       0       3.755       15.151      5.955       
+IMR     "H1'1"  H       H       0       2.485       13.114      8.616       
+IMR     "H1'2"  H       H       0       1.924       12.712      7.173       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IMR       "O5'"     "C5'"     SINGLE    n         1.419     0.010     1.419     0.010     
+IMR       "C5'"     "C4'"     SINGLE    n         1.516     0.013     1.516     0.013     
+IMR       "C4'"     "N4'"     SINGLE    n         1.475     0.010     1.475     0.010     
+IMR       "C4'"     "C3'"     SINGLE    n         1.536     0.015     1.536     0.015     
+IMR       "N4'"     "C1'"     SINGLE    n         1.466     0.013     1.466     0.013     
+IMR       "C3'"     "O3'"     SINGLE    n         1.421     0.010     1.421     0.010     
+IMR       "C3'"     "C2'"     SINGLE    n         1.529     0.014     1.529     0.014     
+IMR       "C2'"     "O2'"     SINGLE    n         1.413     0.010     1.413     0.010     
+IMR       "C2'"     "C1'"     SINGLE    n         1.512     0.016     1.512     0.016     
+IMR       "O5'"     "HO'5"    SINGLE    n         0.970     0.012     0.848     0.020     
+IMR       "C5'"     "H5'1"    SINGLE    n         1.089     0.010     0.982     0.018     
+IMR       "C5'"     "H5'2"    SINGLE    n         1.089     0.010     0.982     0.018     
+IMR       "C4'"     "H4'"     SINGLE    n         1.089     0.010     0.990     0.014     
+IMR       "N4'"     "HN'4"    SINGLE    n         1.036     0.016     0.874     0.020     
+IMR       "C3'"     "H3'"     SINGLE    n         1.089     0.010     0.990     0.017     
+IMR       "O3'"     "HO'3"    SINGLE    n         0.970     0.012     0.849     0.020     
+IMR       "C2'"     "H2'"     SINGLE    n         1.089     0.010     0.980     0.010     
+IMR       "O2'"     "HO'2"    SINGLE    n         0.970     0.012     0.849     0.020     
+IMR       "C1'"     "H1'1"    SINGLE    n         1.089     0.010     0.981     0.019     
+IMR       "C1'"     "H1'2"    SINGLE    n         1.089     0.010     0.981     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+IMR       "C5'"       "O5'"      "HO'5"     109.332    2.33
+IMR       "O5'"       "C5'"       "C4'"     111.564    1.72
+IMR       "O5'"       "C5'"      "H5'1"     109.270    1.50
+IMR       "O5'"       "C5'"      "H5'2"     109.270    1.50
+IMR       "C4'"       "C5'"      "H5'1"     109.608    1.50
+IMR       "C4'"       "C5'"      "H5'2"     109.608    1.50
+IMR      "H5'1"       "C5'"      "H5'2"     108.330    1.50
+IMR       "C5'"       "C4'"       "N4'"     111.633    2.37
+IMR       "C5'"       "C4'"       "C3'"     113.697    1.51
+IMR       "C5'"       "C4'"       "H4'"     109.324    1.50
+IMR       "N4'"       "C4'"       "C3'"     103.104    2.01
+IMR       "N4'"       "C4'"       "H4'"     108.836    1.79
+IMR       "C3'"       "C4'"       "H4'"     109.485    1.57
+IMR       "C4'"       "N4'"       "C1'"     109.056    3.00
+IMR       "C4'"       "N4'"      "HN'4"     110.078    2.70
+IMR       "C1'"       "N4'"      "HN'4"     107.738    2.27
+IMR       "C4'"       "C3'"       "O3'"     111.549    2.36
+IMR       "C4'"       "C3'"       "C2'"     104.666    1.50
+IMR       "C4'"       "C3'"       "H3'"     109.851    1.50
+IMR       "O3'"       "C3'"       "C2'"     112.463    2.73
+IMR       "O3'"       "C3'"       "H3'"     110.147    1.64
+IMR       "C2'"       "C3'"       "H3'"     110.255    2.04
+IMR       "C3'"       "O3'"      "HO'3"     108.584    1.68
+IMR       "C3'"       "C2'"       "O2'"     112.463    2.73
+IMR       "C3'"       "C2'"       "C1'"     103.148    1.99
+IMR       "C3'"       "C2'"       "H2'"     110.255    2.04
+IMR       "O2'"       "C2'"       "C1'"     110.916    2.22
+IMR       "O2'"       "C2'"       "H2'"     110.027    1.50
+IMR       "C1'"       "C2'"       "H2'"     110.749    1.50
+IMR       "C2'"       "O2'"      "HO'2"     109.442    1.50
+IMR       "N4'"       "C1'"       "C2'"     103.104    2.01
+IMR       "N4'"       "C1'"      "H1'1"     110.393    1.50
+IMR       "N4'"       "C1'"      "H1'2"     110.393    1.50
+IMR       "C2'"       "C1'"      "H1'1"     111.050    1.50
+IMR       "C2'"       "C1'"      "H1'2"     111.050    1.50
+IMR      "H1'1"       "C1'"      "H1'2"     109.055    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+IMR            sp3_sp3_31       "C4'"       "C5'"       "O5'"      "HO'5"     180.000   10.00     3
+IMR            sp3_sp3_37       "N4'"       "C4'"       "C5'"       "O5'"      60.000   10.00     3
+IMR             sp3_sp3_5       "C5'"       "C4'"       "N4'"       "C1'"     180.000   10.00     3
+IMR            sp3_sp3_47       "O3'"       "C3'"       "C4'"       "C5'"     180.000   10.00     3
+IMR             sp3_sp3_7       "C2'"       "C1'"       "N4'"       "C4'"     -60.000   10.00     3
+IMR            sp3_sp3_52       "C4'"       "C3'"       "O3'"      "HO'3"     180.000   10.00     3
+IMR            sp3_sp3_27       "O2'"       "C2'"       "C3'"       "O3'"      60.000   10.00     3
+IMR            sp3_sp3_55       "C3'"       "C2'"       "O2'"      "HO'2"     180.000   10.00     3
+IMR            sp3_sp3_14       "N4'"       "C1'"       "C2'"       "O2'"     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+IMR    chir_1    "C4'"    "N4'"    "C3'"    "C5'"    both
+IMR    chir_2    "N4'"    "C4'"    "C1'"    "HN'4"    negative
+IMR    chir_3    "C3'"    "O3'"    "C2'"    "C4'"    both
+IMR    chir_4    "C2'"    "O2'"    "C3'"    "C1'"    positive
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+IMR SMILES           ACDLabs              10.04 "OCC1NCC(O)C1O"
+IMR SMILES_CANONICAL CACTVS               3.341 "OC[C@H]1NC[C@H](O)[C@@H]1O"
+IMR SMILES           CACTVS               3.341 "OC[CH]1NC[CH](O)[CH]1O"
+IMR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1[C@@H]([C@@H]([C@H](N1)CO)O)O"
+IMR SMILES           "OpenEye OEToolkits" 1.5.0 "C1C(C(C(N1)CO)O)O"
+IMR InChI            InChI                1.03  "InChI=1S/C5H11NO3/c7-2-3-5(9)4(8)1-6-3/h3-9H,1-2H2/t3-,4+,5-/m1/s1"
+IMR InChIKey         InChI                1.03  OQEBIHBLFRADNM-MROZADKFSA-N
+IMR ?                acedrg               202         "dictionary generator"                  
+IMR ?                acedrg_database      11          "data source"                           
+IMR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+IMR ?                refmac5              5.8.0189    "optimization tool"                     

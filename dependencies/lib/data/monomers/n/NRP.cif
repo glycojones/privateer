@@ -1,0 +1,337 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NRP      NRP '"{4-[(4-hydroxyphenyl)methylidene]-2' non-polymer        42  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NRP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NRP           OXT    O    OC       -0.500      0.000    0.000    0.000
+ NRP           C      C    C         0.000     -1.220   -0.207    0.184
+ NRP           O      O    OC       -0.500     -1.618   -0.669    1.276
+ NRP           CA3    C    CH2       0.000     -2.209    0.096   -0.912
+ NRP           HA3    H    H         0.000     -1.969   -0.502   -1.793
+ NRP           HA3A   H    H         0.000     -2.155    1.156   -1.167
+ NRP           N3     N    NR5       0.000     -3.562   -0.230   -0.452
+ NRP           C1     C    CR5       0.000     -4.426    0.627    0.193
+ NRP           CA1    C    C         0.000     -4.119    2.028    0.528
+ NRP           CB1    C    CH2       0.000     -5.146    2.877    1.231
+ NRP           HB1    H    H         0.000     -4.641    3.629    1.840
+ NRP           HB1A   H    H         0.000     -5.762    2.244    1.873
+ NRP           CG1    C    CH1       0.000     -6.033    3.570    0.194
+ NRP           HG1    H    H         0.000     -6.460    2.818   -0.484
+ NRP           CD4    C    CH3       0.000     -5.193    4.563   -0.611
+ NRP           HD4B   H    H         0.000     -4.466    4.038   -1.175
+ NRP           HD4A   H    H         0.000     -5.822    5.108   -1.267
+ NRP           HD4    H    H         0.000     -4.708    5.235    0.050
+ NRP           CD3    C    CH3       0.000     -7.164    4.316    0.905
+ NRP           HD3B   H    H         0.000     -7.777    4.796    0.188
+ NRP           HD3A   H    H         0.000     -7.746    3.628    1.463
+ NRP           HD3    H    H         0.000     -6.753    5.041    1.559
+ NRP           N      N    N         0.000     -2.968    2.531    0.217
+ NRP           HN     H    H         0.000     -2.758    3.443    0.430
+ NRP           C2     C    CR5       0.000     -4.181   -1.424   -0.586
+ NRP           O2     O    O         0.000     -3.735   -2.432   -1.103
+ NRP           CA2    C    CR5       0.000     -5.510   -1.247    0.025
+ NRP           N2     N    NRD5      0.000     -5.557    0.030    0.464
+ NRP           CB2    C    C1        0.000     -6.509   -2.199    0.128
+ NRP           HB2    H    H         0.000     -7.487   -1.917    0.483
+ NRP           CG2    C    CR6       0.000     -6.239   -3.587   -0.244
+ NRP           CD1    C    CR16      0.000     -5.002   -4.172    0.066
+ NRP           HD1    H    H         0.000     -4.241   -3.595    0.578
+ NRP           CE1    C    CR16      0.000     -4.759   -5.471   -0.279
+ NRP           HE1    H    H         0.000     -3.804   -5.924   -0.040
+ NRP           CD2    C    CR16      0.000     -7.217   -4.340   -0.912
+ NRP           HD2    H    H         0.000     -8.173   -3.893   -1.158
+ NRP           CE2    C    CR16      0.000     -6.961   -5.638   -1.252
+ NRP           HE2    H    H         0.000     -7.714   -6.221   -1.768
+ NRP           CZ     C    CR6       0.000     -5.733   -6.213   -0.937
+ NRP           OH     O    OH1       0.000     -5.485   -7.503   -1.277
+ NRP           HOH    H    H         0.000     -5.090   -7.533   -2.159
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NRP      OXT    n/a    C      START
+ NRP      C      OXT    CA3    .
+ NRP      O      C      .      .
+ NRP      CA3    C      N3     .
+ NRP      HA3    CA3    .      .
+ NRP      HA3A   CA3    .      .
+ NRP      N3     CA3    C2     .
+ NRP      C1     N3     CA1    .
+ NRP      CA1    C1     N      .
+ NRP      CB1    CA1    CG1    .
+ NRP      HB1    CB1    .      .
+ NRP      HB1A   CB1    .      .
+ NRP      CG1    CB1    CD3    .
+ NRP      HG1    CG1    .      .
+ NRP      CD4    CG1    HD4    .
+ NRP      HD4B   CD4    .      .
+ NRP      HD4A   CD4    .      .
+ NRP      HD4    CD4    .      .
+ NRP      CD3    CG1    HD3    .
+ NRP      HD3B   CD3    .      .
+ NRP      HD3A   CD3    .      .
+ NRP      HD3    CD3    .      .
+ NRP      N      CA1    HN     .
+ NRP      HN     N      .      .
+ NRP      C2     N3     CA2    .
+ NRP      O2     C2     .      .
+ NRP      CA2    C2     CB2    .
+ NRP      N2     CA2    .      .
+ NRP      CB2    CA2    CG2    .
+ NRP      HB2    CB2    .      .
+ NRP      CG2    CB2    CD2    .
+ NRP      CD1    CG2    CE1    .
+ NRP      HD1    CD1    .      .
+ NRP      CE1    CD1    HE1    .
+ NRP      HE1    CE1    .      .
+ NRP      CD2    CG2    CE2    .
+ NRP      HD2    CD2    .      .
+ NRP      CE2    CD2    CZ     .
+ NRP      HE2    CE2    .      .
+ NRP      CZ     CE2    OH     .
+ NRP      OH     CZ     HOH    .
+ NRP      HOH    OH     .      END
+ NRP      C1     N2     .    ADD
+ NRP      CZ     CE1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NRP       C         OXT       deloc     1.250     0.020     1.250     0.020     
+NRP       N         CA1       double    1.260     0.020     1.260     0.020     
+NRP       HN        N         single    1.016     0.010     0.899     0.007     
+NRP       O         C         deloc     1.250     0.020     1.250     0.020     
+NRP       CA1       C1        single    1.490     0.020     1.490     0.020     
+NRP       C1        N2        double    1.350     0.020     1.350     0.020     
+NRP       CA2       C2        single    1.490     0.020     1.490     0.020     
+NRP       O2        C2        double    1.285     0.020     1.285     0.020     
+NRP       C1        N3        single    1.337     0.020     1.337     0.020     
+NRP       C2        N3        single    1.337     0.020     1.337     0.020     
+NRP       OH        CZ        single    1.362     0.020     1.362     0.020     
+NRP       HOH       OH        single    0.970     0.012     0.839     0.014     
+NRP       CZ        CE2       single    1.390     0.020     1.390     0.020     
+NRP       CB1       CA1       single    1.510     0.020     1.510     0.020     
+NRP       N2        CA2       single    1.350     0.020     1.350     0.020     
+NRP       CB2       CA2       double    1.483     0.020     1.483     0.020     
+NRP       CA3       C         single    1.510     0.020     1.510     0.020     
+NRP       N3        CA3       single    1.462     0.020     1.462     0.020     
+NRP       HA3       CA3       single    1.089     0.010     0.989     0.005     
+NRP       HA3A      CA3       single    1.089     0.010     0.989     0.005     
+NRP       CG1       CB1       single    1.524     0.020     1.524     0.020     
+NRP       HB1       CB1       single    1.089     0.010     0.989     0.005     
+NRP       HB1A      CB1       single    1.089     0.010     0.989     0.005     
+NRP       HB2       CB2       single    1.082     0.013     0.975     0.010     
+NRP       CD1       CG2       double    1.390     0.020     1.390     0.020     
+NRP       HD1       CD1       single    1.082     0.013     0.975     0.010     
+NRP       HD2       CD2       single    1.082     0.013     0.975     0.010     
+NRP       HD3       CD3       single    1.089     0.010     0.989     0.005     
+NRP       HD3A      CD3       single    1.089     0.010     0.989     0.005     
+NRP       HD3B      CD3       single    1.089     0.010     0.989     0.005     
+NRP       HD4       CD4       single    1.089     0.010     0.989     0.005     
+NRP       HD4A      CD4       single    1.089     0.010     0.989     0.005     
+NRP       HD4B      CD4       single    1.089     0.010     0.989     0.005     
+NRP       CZ        CE1       double    1.390     0.020     1.390     0.020     
+NRP       CE1       CD1       single    1.390     0.020     1.390     0.020     
+NRP       HE1       CE1       single    1.082     0.013     0.975     0.010     
+NRP       CE2       CD2       double    1.390     0.020     1.390     0.020     
+NRP       HE2       CE2       single    1.082     0.013     0.975     0.010     
+NRP       CD3       CG1       single    1.524     0.020     1.524     0.020     
+NRP       CD4       CG1       single    1.524     0.020     1.524     0.020     
+NRP       HG1       CG1       single    1.089     0.010     0.989     0.005     
+NRP       CG2       CB2       single    1.480     0.020     1.480     0.020     
+NRP       CD2       CG2       single    1.390     0.020     1.390     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NRP      OXT    C      O       123.000    3.000
+ NRP      OXT    C      CA3     118.500    3.000
+ NRP      O      C      CA3     118.500    3.000
+ NRP      C      CA3    HA3     109.470    3.000
+ NRP      C      CA3    HA3A    109.470    3.000
+ NRP      C      CA3    N3      109.500    3.000
+ NRP      HA3    CA3    HA3A    107.900    3.000
+ NRP      HA3    CA3    N3      109.500    3.000
+ NRP      HA3A   CA3    N3      109.500    3.000
+ NRP      CA3    N3     C1      126.000    3.000
+ NRP      CA3    N3     C2      126.000    3.000
+ NRP      C1     N3     C2      108.000    3.000
+ NRP      N3     C1     CA1     126.000    3.000
+ NRP      N3     C1     N2      108.000    3.000
+ NRP      CA1    C1     N2      126.000    3.000
+ NRP      C1     CA1    CB1     116.500    3.000
+ NRP      C1     CA1    N       120.000    3.000
+ NRP      CB1    CA1    N       116.500    3.000
+ NRP      CA1    CB1    HB1     109.470    3.000
+ NRP      CA1    CB1    HB1A    109.470    3.000
+ NRP      CA1    CB1    CG1     109.470    3.000
+ NRP      HB1    CB1    HB1A    107.900    3.000
+ NRP      HB1    CB1    CG1     109.470    3.000
+ NRP      HB1A   CB1    CG1     109.470    3.000
+ NRP      CB1    CG1    HG1     108.340    3.000
+ NRP      CB1    CG1    CD4     111.000    3.000
+ NRP      CB1    CG1    CD3     111.000    3.000
+ NRP      HG1    CG1    CD4     108.340    3.000
+ NRP      HG1    CG1    CD3     108.340    3.000
+ NRP      CD4    CG1    CD3     111.000    3.000
+ NRP      CG1    CD4    HD4B    109.470    3.000
+ NRP      CG1    CD4    HD4A    109.470    3.000
+ NRP      CG1    CD4    HD4     109.470    3.000
+ NRP      HD4B   CD4    HD4A    109.470    3.000
+ NRP      HD4B   CD4    HD4     109.470    3.000
+ NRP      HD4A   CD4    HD4     109.470    3.000
+ NRP      CG1    CD3    HD3B    109.470    3.000
+ NRP      CG1    CD3    HD3A    109.470    3.000
+ NRP      CG1    CD3    HD3     109.470    3.000
+ NRP      HD3B   CD3    HD3A    109.470    3.000
+ NRP      HD3B   CD3    HD3     109.470    3.000
+ NRP      HD3A   CD3    HD3     109.470    3.000
+ NRP      CA1    N      HN      120.000    3.000
+ NRP      N3     C2     O2      108.000    3.000
+ NRP      N3     C2     CA2     108.000    3.000
+ NRP      O2     C2     CA2     108.000    3.000
+ NRP      C2     CA2    N2      108.000    3.000
+ NRP      C2     CA2    CB2     117.000    3.000
+ NRP      N2     CA2    CB2     108.000    3.000
+ NRP      CA2    N2     C1      108.000    3.000
+ NRP      CA2    CB2    HB2     120.000    3.000
+ NRP      CA2    CB2    CG2     120.000    3.000
+ NRP      HB2    CB2    CG2     120.000    3.000
+ NRP      CB2    CG2    CD1     120.000    3.000
+ NRP      CB2    CG2    CD2     120.000    3.000
+ NRP      CD1    CG2    CD2     120.000    3.000
+ NRP      CG2    CD1    HD1     120.000    3.000
+ NRP      CG2    CD1    CE1     120.000    3.000
+ NRP      HD1    CD1    CE1     120.000    3.000
+ NRP      CD1    CE1    HE1     120.000    3.000
+ NRP      CD1    CE1    CZ      120.000    3.000
+ NRP      HE1    CE1    CZ      120.000    3.000
+ NRP      CG2    CD2    HD2     120.000    3.000
+ NRP      CG2    CD2    CE2     120.000    3.000
+ NRP      HD2    CD2    CE2     120.000    3.000
+ NRP      CD2    CE2    HE2     120.000    3.000
+ NRP      CD2    CE2    CZ      120.000    3.000
+ NRP      HE2    CE2    CZ      120.000    3.000
+ NRP      CE2    CZ     OH      120.000    3.000
+ NRP      CE2    CZ     CE1     120.000    3.000
+ NRP      OH     CZ     CE1     120.000    3.000
+ NRP      CZ     OH     HOH     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NRP      var_1    OXT    C      CA3    N3      -179.993   20.000   3
+ NRP      var_2    C      CA3    N3     C2       -90.007   20.000   1
+ NRP      CONST_1  CA3    N3     C1     CA1        0.000    0.000   0
+ NRP      CONST_2  N3     C1     N2     CA2        0.000    0.000   0
+ NRP      var_3    N3     C1     CA1    N         -0.203   20.000   1
+ NRP      var_4    C1     CA1    CB1    CG1      -89.244   20.000   3
+ NRP      var_5    CA1    CB1    CG1    CD3      174.211   20.000   3
+ NRP      var_6    CB1    CG1    CD4    HD4      -54.795   20.000   3
+ NRP      var_7    CB1    CG1    CD3    HD3       59.979   20.000   3
+ NRP      CONST_3  C1     CA1    N      HN       180.000    0.000   0
+ NRP      CONST_4  CA3    N3     C2     CA2      180.000    0.000   0
+ NRP      CONST_5  N3     C2     CA2    CB2      180.000    0.000   0
+ NRP      CONST_6  C2     CA2    N2     C1         0.000    0.000   0
+ NRP      CONST_7  C2     CA2    CB2    CG2        7.867    0.000   0
+ NRP      var_8    CA2    CB2    CG2    CD2     -141.428   20.000   1
+ NRP      CONST_8  CB2    CG2    CD1    CE1      180.000    0.000   0
+ NRP      CONST_9  CG2    CD1    CE1    CZ         0.000    0.000   0
+ NRP      CONST_10 CB2    CG2    CD2    CE2      180.000    0.000   0
+ NRP      CONST_11 CG2    CD2    CE2    CZ         0.000    0.000   0
+ NRP      CONST_12 CD2    CE2    CZ     OH       180.000    0.000   0
+ NRP      CONST_13 CE2    CZ     CE1    CD1        0.000    0.000   0
+ NRP      var_9    CE2    CZ     OH     HOH       90.042   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NRP      chir_01  CG1    CB1    CD3    CD4       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NRP      plan-1    C         0.020
+ NRP      plan-1    O         0.020
+ NRP      plan-1    OXT       0.020
+ NRP      plan-1    CA3       0.020
+ NRP      plan-2    N         0.020
+ NRP      plan-2    CA1       0.020
+ NRP      plan-2    HN        0.020
+ NRP      plan-2    C1        0.020
+ NRP      plan-2    CB1       0.020
+ NRP      plan-3    C1        0.020
+ NRP      plan-3    N2        0.020
+ NRP      plan-3    N3        0.020
+ NRP      plan-3    CA1       0.020
+ NRP      plan-3    C2        0.020
+ NRP      plan-3    CA2       0.020
+ NRP      plan-3    O2        0.020
+ NRP      plan-3    CA3       0.020
+ NRP      plan-3    CB2       0.020
+ NRP      plan-3    CG2       0.020
+ NRP      plan-3    HB2       0.020
+ NRP      plan-4    CZ        0.020
+ NRP      plan-4    OH        0.020
+ NRP      plan-4    CE1       0.020
+ NRP      plan-4    CE2       0.020
+ NRP      plan-4    CD1       0.020
+ NRP      plan-4    CD2       0.020
+ NRP      plan-4    CG2       0.020
+ NRP      plan-4    HD1       0.020
+ NRP      plan-4    HD2       0.020
+ NRP      plan-4    HE1       0.020
+ NRP      plan-4    HE2       0.020
+ NRP      plan-4    CB2       0.020
+ NRP      plan-4    HB2       0.020
+# ------------------------------------------------------

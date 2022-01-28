@@ -1,0 +1,207 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LOL      LOL 'LEUCINOL                            ' non-polymer        24   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LOL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LOL           OXT    O    OH1       0.000      0.000    0.000    0.000
+ LOL           HXT    H    H         0.000     -0.024   -0.162    0.953
+ LOL           C      C    CH1       0.000     -0.709    1.206   -0.295
+ LOL           HC     H    H         0.000     -0.683    1.391   -1.378
+ LOL           O      O    OH1       0.000     -0.094    2.300    0.390
+ LOL           HO     H    H         0.000      0.824    2.386    0.100
+ LOL           CA     C    CH1       0.000     -2.162    1.068    0.164
+ LOL           HA     H    H         0.000     -2.188    0.883    1.247
+ LOL           N      N    NH2       0.000     -2.890    2.307   -0.139
+ LOL           H2     H    H         0.000     -3.246    2.888    0.611
+ LOL           H      H    H         0.000     -3.042    2.589   -1.101
+ LOL           CB     C    CH2       0.000     -2.820   -0.103   -0.569
+ LOL           HB3    H    H         0.000     -2.226   -1.006   -0.419
+ LOL           HB2    H    H         0.000     -2.876    0.122   -1.636
+ LOL           CG     C    CH1       0.000     -4.230   -0.321   -0.019
+ LOL           HG     H    H         0.000     -4.795    0.620   -0.075
+ LOL           CD2    C    CH3       0.000     -4.144   -0.777    1.439
+ LOL           HD23   H    H         0.000     -3.652   -0.035    2.014
+ LOL           HD22   H    H         0.000     -5.120   -0.929    1.821
+ LOL           HD21   H    H         0.000     -3.600   -1.684    1.495
+ LOL           CD1    C    CH3       0.000     -4.942   -1.393   -0.847
+ LOL           HD13   H    H         0.000     -4.397   -2.301   -0.795
+ LOL           HD12   H    H         0.000     -5.918   -1.546   -0.465
+ LOL           HD11   H    H         0.000     -5.004   -1.078   -1.856
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LOL      OXT    n/a    C      START
+ LOL      HXT    OXT    .      .
+ LOL      C      OXT    CA     .
+ LOL      HC     C      .      .
+ LOL      O      C      HO     .
+ LOL      HO     O      .      .
+ LOL      CA     C      CB     .
+ LOL      HA     CA     .      .
+ LOL      N      CA     H      .
+ LOL      H2     N      .      .
+ LOL      H      N      .      .
+ LOL      CB     CA     CG     .
+ LOL      HB3    CB     .      .
+ LOL      HB2    CB     .      .
+ LOL      CG     CB     CD1    .
+ LOL      HG     CG     .      .
+ LOL      CD2    CG     HD21   .
+ LOL      HD23   CD2    .      .
+ LOL      HD22   CD2    .      .
+ LOL      HD21   CD2    .      .
+ LOL      CD1    CG     HD11   .
+ LOL      HD13   CD1    .      .
+ LOL      HD12   CD1    .      .
+ LOL      HD11   CD1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LOL       CD1       CG        single    1.524     0.020     1.524     0.020     
+LOL       HD11      CD1       single    1.089     0.010     0.989     0.005     
+LOL       HD12      CD1       single    1.089     0.010     0.989     0.005     
+LOL       HD13      CD1       single    1.089     0.010     0.989     0.005     
+LOL       CD2       CG        single    1.524     0.020     1.524     0.020     
+LOL       HD21      CD2       single    1.089     0.010     0.989     0.005     
+LOL       HD22      CD2       single    1.089     0.010     0.989     0.005     
+LOL       HD23      CD2       single    1.089     0.010     0.989     0.005     
+LOL       CG        CB        single    1.524     0.020     1.524     0.020     
+LOL       HG        CG        single    1.089     0.010     0.989     0.005     
+LOL       CB        CA        single    1.524     0.020     1.524     0.020     
+LOL       HB3       CB        single    1.089     0.010     0.989     0.005     
+LOL       HB2       CB        single    1.089     0.010     0.989     0.005     
+LOL       N         CA        single    1.450     0.020     1.450     0.020     
+LOL       H         N         single    1.036     0.016     0.914     0.007     
+LOL       H2        N         single    1.036     0.016     0.914     0.007     
+LOL       CA        C         single    1.524     0.020     1.524     0.020     
+LOL       HA        CA        single    1.089     0.010     0.989     0.005     
+LOL       O         C         single    1.432     0.020     1.432     0.020     
+LOL       C         OXT       single    1.432     0.020     1.432     0.020     
+LOL       HC        C         single    1.089     0.010     0.989     0.005     
+LOL       HO        O         single    0.970     0.012     0.839     0.014     
+LOL       HXT       OXT       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LOL      HXT    OXT    C       109.470    3.000
+ LOL      OXT    C      HC      109.470    3.000
+ LOL      OXT    C      O       109.500    3.000
+ LOL      OXT    C      CA      109.470    3.000
+ LOL      HC     C      O       109.470    3.000
+ LOL      HC     C      CA      108.340    3.000
+ LOL      O      C      CA      109.470    3.000
+ LOL      C      O      HO      109.470    3.000
+ LOL      C      CA     HA      108.340    3.000
+ LOL      C      CA     N       109.470    3.000
+ LOL      C      CA     CB      111.000    3.000
+ LOL      HA     CA     N       109.470    3.000
+ LOL      HA     CA     CB      108.340    3.000
+ LOL      N      CA     CB      109.470    3.000
+ LOL      CA     N      H2      120.000    3.000
+ LOL      CA     N      H       120.000    3.000
+ LOL      H2     N      H       120.000    3.000
+ LOL      CA     CB     HB3     109.470    3.000
+ LOL      CA     CB     HB2     109.470    3.000
+ LOL      CA     CB     CG      111.000    3.000
+ LOL      HB3    CB     HB2     107.900    3.000
+ LOL      HB3    CB     CG      109.470    3.000
+ LOL      HB2    CB     CG      109.470    3.000
+ LOL      CB     CG     HG      108.340    3.000
+ LOL      CB     CG     CD2     111.000    3.000
+ LOL      CB     CG     CD1     111.000    3.000
+ LOL      HG     CG     CD2     108.340    3.000
+ LOL      HG     CG     CD1     108.340    3.000
+ LOL      CD2    CG     CD1     111.000    3.000
+ LOL      CG     CD2    HD23    109.470    3.000
+ LOL      CG     CD2    HD22    109.470    3.000
+ LOL      CG     CD2    HD21    109.470    3.000
+ LOL      HD23   CD2    HD22    109.470    3.000
+ LOL      HD23   CD2    HD21    109.470    3.000
+ LOL      HD22   CD2    HD21    109.470    3.000
+ LOL      CG     CD1    HD13    109.470    3.000
+ LOL      CG     CD1    HD12    109.470    3.000
+ LOL      CG     CD1    HD11    109.470    3.000
+ LOL      HD13   CD1    HD12    109.470    3.000
+ LOL      HD13   CD1    HD11    109.470    3.000
+ LOL      HD12   CD1    HD11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LOL      var_1    HXT    OXT    C      CA       -59.945   20.000   1
+ LOL      var_2    OXT    C      O      HO        59.996   20.000   1
+ LOL      var_3    OXT    C      CA     CB       -60.031   20.000   3
+ LOL      var_4    C      CA     N      H         65.607   20.000   1
+ LOL      var_5    C      CA     CB     CG       174.885   20.000   3
+ LOL      var_6    CA     CB     CG     CD1      174.164   20.000   3
+ LOL      var_7    CB     CG     CD2    HD21     -60.000   20.000   3
+ LOL      var_8    CB     CG     CD1    HD11     -60.115   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LOL      chir_01  CG     CD1    CD2    CB        negativ
+ LOL      chir_02  CA     CB     N      C         positiv
+ LOL      chir_03  C      CA     O      OXT       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ LOL      plan-1    N         0.020
+ LOL      plan-1    CA        0.020
+ LOL      plan-1    H         0.020
+ LOL      plan-1    H2        0.020
+# ------------------------------------------------------

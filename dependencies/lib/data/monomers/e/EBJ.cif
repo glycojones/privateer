@@ -1,0 +1,115 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EBJ     EBJ      1H-1,2,3-triazole-5-thiol     NON-POLYMER     9     6     .     
+#
+data_comp_EBJ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+EBJ     S1      S       SH1     0       26.724      39.207      42.780      
+EBJ     C2      C       CR5     0       25.895      38.108      41.701      
+EBJ     N3      N       NR5     0       24.577      37.867      41.731      
+EBJ     N4      N       NRD5    0       24.278      36.976      40.769      
+EBJ     N5      N       NRD5    0       25.393      36.659      40.140      
+EBJ     C6      C       CR15    0       26.415      37.348      40.697      
+EBJ     H2      H       HSH1    0       27.938      39.149      42.572      
+EBJ     H3      H       H       0       23.961      38.206      42.269      
+EBJ     H1      H       H       0       27.327      37.301      40.429      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EBJ       N5        C6        SINGLE    y         1.354     0.011     1.354     0.011     
+EBJ       N4        N5        DOUBLE    y         1.317     0.011     1.317     0.011     
+EBJ       C2        C6        DOUBLE    y         1.371     0.020     1.371     0.020     
+EBJ       N3        N4        SINGLE    y         1.343     0.010     1.343     0.010     
+EBJ       C2        N3        SINGLE    y         1.340     0.012     1.340     0.012     
+EBJ       S1        C2        SINGLE    n         1.749     0.013     1.749     0.013     
+EBJ       S1        H2        SINGLE    n         1.338     0.010     1.171     0.208     
+EBJ       N3        H3        SINGLE    n         1.016     0.010     0.899     0.007     
+EBJ       C6        H1        SINGLE    n         1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+EBJ          C2          S1          H2     109.471    3.00
+EBJ          C6          C2          N3     107.704    2.30
+EBJ          C6          C2          S1     128.188    2.36
+EBJ          N3          C2          S1     124.108    2.08
+EBJ          N4          N3          C2     108.256    1.50
+EBJ          N4          N3          H3     122.482    3.00
+EBJ          C2          N3          H3     129.261    3.00
+EBJ          N5          N4          N3     107.063    1.50
+EBJ          C6          N5          N4     108.398    1.50
+EBJ          N5          C6          C2     108.578    2.56
+EBJ          N5          C6          H1     125.281    1.50
+EBJ          C2          C6          H1     126.141    2.15
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+EBJ              const_12          S1          C2          N3          N4     180.000   10.00     2
+EBJ       const_sp2_sp2_3          S1          C2          C6          N5     180.000   10.00     2
+EBJ       const_sp2_sp2_8          C2          N3          N4          N5       0.000   10.00     2
+EBJ       const_sp2_sp2_7          N3          N4          N5          C6       0.000   10.00     2
+EBJ       const_sp2_sp2_5          C2          C6          N5          N4       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+EBJ    plan-1          C2   0.020
+EBJ    plan-1          C6   0.020
+EBJ    plan-1          H1   0.020
+EBJ    plan-1          H3   0.020
+EBJ    plan-1          N3   0.020
+EBJ    plan-1          N4   0.020
+EBJ    plan-1          N5   0.020
+EBJ    plan-1          S1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+EBJ SMILES           ACDLabs              12.01 Sc1nnnc1
+EBJ InChI            InChI                1.03  "InChI=1S/C2H3N3S/c6-2-1-3-5-4-2/h1H,(H2,3,4,5,6)"
+EBJ InChIKey         InChI                1.03  LLCOQBODWBFTDD-UHFFFAOYSA-N
+EBJ SMILES_CANONICAL CACTVS               3.385 "Sc1[nH]nnc1"
+EBJ SMILES           CACTVS               3.385 "Sc1[nH]nnc1"
+EBJ SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "c1c([nH]nn1)S"
+EBJ SMILES           "OpenEye OEToolkits" 2.0.6 "c1c([nH]nn1)S"
+EBJ ?                acedrg               202         "dictionary generator"                  
+EBJ ?                acedrg_database      11          "data source"                           
+EBJ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+EBJ ?                refmac5              5.8.0189    "optimization tool"                     

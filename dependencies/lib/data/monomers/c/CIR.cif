@@ -1,0 +1,222 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CIR      CIR 'CITRULLINE                          ' non-polymer        24  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CIR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CIR           O7     O    O         0.000      0.000    0.000    0.000
+ CIR           C7     C    C         0.000     -0.576   -0.859    0.638
+ CIR           N8     N    NH2       0.000      0.130   -1.792    1.306
+ CIR           HN82   H    H         0.000      1.143   -1.782    1.279
+ CIR           HN81   H    H         0.000     -0.346   -2.509    1.839
+ CIR           N6     N    NH1       0.000     -1.923   -0.878    0.679
+ CIR           HN6    H    H         0.000     -2.402   -1.591    1.210
+ CIR           C5     C    CH2       0.000     -2.693    0.136   -0.047
+ CIR           H51    H    H         0.000     -2.459    0.077   -1.112
+ CIR           H52    H    H         0.000     -2.431    1.128    0.328
+ CIR           C4     C    CH2       0.000     -4.188   -0.112    0.162
+ CIR           H41    H    H         0.000     -4.421   -0.054    1.228
+ CIR           H42    H    H         0.000     -4.448   -1.104   -0.212
+ CIR           C3     C    CH2       0.000     -4.991    0.948   -0.595
+ CIR           H31    H    H         0.000     -4.757    0.889   -1.660
+ CIR           H32    H    H         0.000     -4.729    1.939   -0.221
+ CIR           C2     C    CH1       0.000     -6.487    0.700   -0.385
+ CIR           H2     H    H         0.000     -6.706    0.671    0.691
+ CIR           N2     N    NH2       0.000     -6.861   -0.582   -0.997
+ CIR           HN22   H    H         0.000     -7.257   -1.323   -0.430
+ CIR           HN21   H    H         0.000     -6.727   -0.734   -1.989
+ CIR           C1     C    C         0.000     -7.275    1.812   -1.029
+ CIR           O1     O    OC       -0.500     -7.798    1.639   -2.152
+ CIR           O2     O    OC       -0.500     -7.410    2.906   -0.437
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CIR      O7     n/a    C7     START
+ CIR      C7     O7     N6     .
+ CIR      N8     C7     HN81   .
+ CIR      HN82   N8     .      .
+ CIR      HN81   N8     .      .
+ CIR      N6     C7     C5     .
+ CIR      HN6    N6     .      .
+ CIR      C5     N6     C4     .
+ CIR      H51    C5     .      .
+ CIR      H52    C5     .      .
+ CIR      C4     C5     C3     .
+ CIR      H41    C4     .      .
+ CIR      H42    C4     .      .
+ CIR      C3     C4     C2     .
+ CIR      H31    C3     .      .
+ CIR      H32    C3     .      .
+ CIR      C2     C3     C1     .
+ CIR      H2     C2     .      .
+ CIR      N2     C2     HN21   .
+ CIR      HN22   N2     .      .
+ CIR      HN21   N2     .      .
+ CIR      C1     C2     O2     .
+ CIR      O1     C1     .      .
+ CIR      O2     C1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CIR       O1        C1        deloc     1.250     0.020     1.250     0.020     
+CIR       O2        C1        deloc     1.250     0.020     1.250     0.020     
+CIR       C1        C2        single    1.500     0.020     1.500     0.020     
+CIR       N2        C2        single    1.450     0.020     1.450     0.020     
+CIR       C2        C3        single    1.524     0.020     1.524     0.020     
+CIR       H2        C2        single    1.089     0.010     0.989     0.005     
+CIR       HN21      N2        single    1.036     0.016     0.914     0.007     
+CIR       HN22      N2        single    1.036     0.016     0.914     0.007     
+CIR       C3        C4        single    1.524     0.020     1.524     0.020     
+CIR       H31       C3        single    1.089     0.010     0.989     0.005     
+CIR       H32       C3        single    1.089     0.010     0.989     0.005     
+CIR       C4        C5        single    1.524     0.020     1.524     0.020     
+CIR       H41       C4        single    1.089     0.010     0.989     0.005     
+CIR       H42       C4        single    1.089     0.010     0.989     0.005     
+CIR       C5        N6        single    1.450     0.020     1.450     0.020     
+CIR       H51       C5        single    1.089     0.010     0.989     0.005     
+CIR       H52       C5        single    1.089     0.010     0.989     0.005     
+CIR       N6        C7        single    1.330     0.020     1.330     0.020     
+CIR       HN6       N6        single    1.016     0.010     0.899     0.007     
+CIR       C7        O7        double    1.220     0.020     1.220     0.020     
+CIR       N8        C7        single    1.332     0.020     1.332     0.020     
+CIR       HN81      N8        single    1.016     0.010     0.899     0.007     
+CIR       HN82      N8        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CIR      O7     C7     N8      123.000    3.000
+ CIR      O7     C7     N6      123.000    3.000
+ CIR      N8     C7     N6      120.000    3.000
+ CIR      C7     N8     HN82    120.000    3.000
+ CIR      C7     N8     HN81    120.000    3.000
+ CIR      HN82   N8     HN81    120.000    3.000
+ CIR      C7     N6     HN6     120.000    3.000
+ CIR      C7     N6     C5      121.500    3.000
+ CIR      HN6    N6     C5      118.500    3.000
+ CIR      N6     C5     H51     109.470    3.000
+ CIR      N6     C5     H52     109.470    3.000
+ CIR      N6     C5     C4      112.000    3.000
+ CIR      H51    C5     H52     107.900    3.000
+ CIR      H51    C5     C4      109.470    3.000
+ CIR      H52    C5     C4      109.470    3.000
+ CIR      C5     C4     H41     109.470    3.000
+ CIR      C5     C4     H42     109.470    3.000
+ CIR      C5     C4     C3      111.000    3.000
+ CIR      H41    C4     H42     107.900    3.000
+ CIR      H41    C4     C3      109.470    3.000
+ CIR      H42    C4     C3      109.470    3.000
+ CIR      C4     C3     H31     109.470    3.000
+ CIR      C4     C3     H32     109.470    3.000
+ CIR      C4     C3     C2      111.000    3.000
+ CIR      H31    C3     H32     107.900    3.000
+ CIR      H31    C3     C2      109.470    3.000
+ CIR      H32    C3     C2      109.470    3.000
+ CIR      C3     C2     H2      108.340    3.000
+ CIR      C3     C2     N2      109.470    3.000
+ CIR      C3     C2     C1      109.470    3.000
+ CIR      H2     C2     N2      109.470    3.000
+ CIR      H2     C2     C1      108.810    3.000
+ CIR      N2     C2     C1      109.470    3.000
+ CIR      C2     N2     HN22    120.000    3.000
+ CIR      C2     N2     HN21    120.000    3.000
+ CIR      HN22   N2     HN21    120.000    3.000
+ CIR      C2     C1     O1      118.500    3.000
+ CIR      C2     C1     O2      118.500    3.000
+ CIR      O1     C1     O2      123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CIR      CONST_1  O7     C7     N8     HN81     180.000    0.000   0
+ CIR      CONST_2  O7     C7     N6     C5         0.000    0.000   0
+ CIR      var_1    C7     N6     C5     C4       179.966   20.000   3
+ CIR      var_2    N6     C5     C4     C3       179.982   20.000   3
+ CIR      var_3    C5     C4     C3     C2      -179.967   20.000   3
+ CIR      var_4    C4     C3     C2     C1       175.026   20.000   3
+ CIR      var_5    C3     C2     N2     HN21     -59.909   20.000   1
+ CIR      var_6    C3     C2     C1     O2       -80.332   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CIR      chir_01  C2     C1     N2     C3        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CIR      plan-1    C1        0.020
+ CIR      plan-1    O1        0.020
+ CIR      plan-1    O2        0.020
+ CIR      plan-1    C2        0.020
+ CIR      plan-2    N2        0.020
+ CIR      plan-2    C2        0.020
+ CIR      plan-2    HN21      0.020
+ CIR      plan-2    HN22      0.020
+ CIR      plan-3    N6        0.020
+ CIR      plan-3    C5        0.020
+ CIR      plan-3    C7        0.020
+ CIR      plan-3    HN6       0.020
+ CIR      plan-4    C7        0.020
+ CIR      plan-4    N6        0.020
+ CIR      plan-4    O7        0.020
+ CIR      plan-4    N8        0.020
+ CIR      plan-4    HN6       0.020
+ CIR      plan-4    HN82      0.020
+ CIR      plan-4    HN81      0.020
+ CIR      plan-5    N8        0.020
+ CIR      plan-5    C7        0.020
+ CIR      plan-5    HN81      0.020
+ CIR      plan-5    HN82      0.020
+# ------------------------------------------------------

@@ -1,0 +1,181 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ITM      ITM 'ISOCITRIC ACID-MAGNESIUM COMPLEX    ' non-polymer        18  14 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ITM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ITM           MG     MG   MG        0.000      0.000    0.000    0.000
+ ITM           O7     O    O2        0.000     -1.704   -0.204   -0.663
+ ITM           C2     C    CH1       0.000     -2.580   -0.277    0.465
+ ITM           H2     H    H         0.000     -2.045   -0.721    1.317
+ ITM           C1     C    C         0.000     -3.045    1.108    0.831
+ ITM           O2     O    OC       -0.500     -3.747    1.283    1.852
+ ITM           O1     O    OC       -0.500     -2.728    2.084    0.115
+ ITM           C3     C    CH1       0.000     -3.791   -1.145    0.115
+ ITM           H3     H    H         0.000     -4.506   -1.129    0.949
+ ITM           C6     C    C         0.000     -4.453   -0.607   -1.126
+ ITM           O6     O    OC       -0.500     -4.904    0.560   -1.138
+ ITM           O5     O    OC       -0.500     -4.552   -1.325   -2.145
+ ITM           C4     C    CH2       0.000     -3.332   -2.584   -0.135
+ ITM           H41    H    H         0.000     -2.773   -2.943    0.732
+ ITM           H42    H    H         0.000     -2.689   -2.612   -1.018
+ ITM           C5     C    C         0.000     -4.534   -3.463   -0.359
+ ITM           O3     O    OC       -0.500     -5.684   -2.972   -0.320
+ ITM           O4     O    OC       -0.500     -4.383   -4.685   -0.583
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ITM      MG     n/a    O7     START
+ ITM      O7     MG     C2     .
+ ITM      C2     O7     C3     .
+ ITM      H2     C2     .      .
+ ITM      C1     C2     O1     .
+ ITM      O2     C1     .      .
+ ITM      O1     C1     .      .
+ ITM      C3     C2     C4     .
+ ITM      H3     C3     .      .
+ ITM      C6     C3     O5     .
+ ITM      O6     C6     .      .
+ ITM      O5     C6     .      .
+ ITM      C4     C3     C5     .
+ ITM      H41    C4     .      .
+ ITM      H42    C4     .      .
+ ITM      C5     C4     O4     .
+ ITM      O3     C5     .      .
+ ITM      O4     C5     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ITM       O1        C1        deloc     1.250     0.020     1.250     0.020     
+ITM       O2        C1        deloc     1.250     0.020     1.250     0.020     
+ITM       C1        C2        single    1.500     0.020     1.500     0.020     
+ITM       C2        O7        single    1.426     0.020     1.426     0.020     
+ITM       C3        C2        single    1.524     0.020     1.524     0.020     
+ITM       H2        C2        single    1.089     0.010     0.989     0.005     
+ITM       O7        MG        single    1.970     0.020     1.970     0.020     
+ITM       C4        C3        single    1.524     0.020     1.524     0.020     
+ITM       C6        C3        single    1.500     0.020     1.500     0.020     
+ITM       H3        C3        single    1.089     0.010     0.989     0.005     
+ITM       C5        C4        single    1.510     0.020     1.510     0.020     
+ITM       H41       C4        single    1.089     0.010     0.989     0.005     
+ITM       H42       C4        single    1.089     0.010     0.989     0.005     
+ITM       O3        C5        deloc     1.250     0.020     1.250     0.020     
+ITM       O4        C5        deloc     1.250     0.020     1.250     0.020     
+ITM       O5        C6        deloc     1.250     0.020     1.250     0.020     
+ITM       O6        C6        deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ITM      MG     O7     C2      120.000    3.000
+ ITM      O7     C2     H2      109.470    3.000
+ ITM      O7     C2     C1      109.470    3.000
+ ITM      O7     C2     C3      109.470    3.000
+ ITM      H2     C2     C1      108.810    3.000
+ ITM      H2     C2     C3      108.340    3.000
+ ITM      C1     C2     C3      109.470    3.000
+ ITM      C2     C1     O2      118.500    3.000
+ ITM      C2     C1     O1      118.500    3.000
+ ITM      O2     C1     O1      123.000    3.000
+ ITM      C2     C3     H3      108.340    3.000
+ ITM      C2     C3     C6      109.470    3.000
+ ITM      C2     C3     C4      111.000    3.000
+ ITM      H3     C3     C6      108.810    3.000
+ ITM      H3     C3     C4      108.340    3.000
+ ITM      C6     C3     C4      109.470    3.000
+ ITM      C3     C6     O6      118.500    3.000
+ ITM      C3     C6     O5      118.500    3.000
+ ITM      O6     C6     O5      123.000    3.000
+ ITM      C3     C4     H41     109.470    3.000
+ ITM      C3     C4     H42     109.470    3.000
+ ITM      C3     C4     C5      109.470    3.000
+ ITM      H41    C4     H42     107.900    3.000
+ ITM      H41    C4     C5      109.470    3.000
+ ITM      H42    C4     C5      109.470    3.000
+ ITM      C4     C5     O3      118.500    3.000
+ ITM      C4     C5     O4      118.500    3.000
+ ITM      O3     C5     O4      123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ITM      var_1    MG     O7     C2     C3      -150.015   20.000   1
+ ITM      var_2    O7     C2     C1     O1         4.947   20.000   3
+ ITM      var_3    O7     C2     C3     C4        65.042   20.000   3
+ ITM      var_4    C2     C3     C6     O5       120.000   20.000   3
+ ITM      var_5    C2     C3     C4     C5       174.988   20.000   3
+ ITM      var_6    C3     C4     C5     O4       179.946   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ITM      chir_01  C2     C1     O7     C3        positiv
+ ITM      chir_02  C3     C2     C4     C6        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ITM      plan-1    C1        0.020
+ ITM      plan-1    O1        0.020
+ ITM      plan-1    O2        0.020
+ ITM      plan-1    C2        0.020
+ ITM      plan-2    C5        0.020
+ ITM      plan-2    C4        0.020
+ ITM      plan-2    O3        0.020
+ ITM      plan-2    O4        0.020
+ ITM      plan-3    C6        0.020
+ ITM      plan-3    C3        0.020
+ ITM      plan-3    O5        0.020
+ ITM      plan-3    O6        0.020
+# ------------------------------------------------------

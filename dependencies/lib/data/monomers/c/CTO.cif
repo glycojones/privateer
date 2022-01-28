@@ -1,0 +1,578 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CTO      CTO 'TRIACETYLCHITOTRIOSE                ' non-polymer        84  43 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CTO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CTO           O73    O    O         0.000      0.000    0.000    0.000
+ CTO           C73    C    C         0.000     -0.243    1.030    0.594
+ CTO           C83    C    CH3       0.000      0.774    2.141    0.622
+ CTO           H833   H    H         0.000      0.360    3.013    0.186
+ CTO           H832   H    H         0.000      1.048    2.345    1.625
+ CTO           H831   H    H         0.000      1.634    1.849    0.076
+ CTO           N23    N    NH1       0.000     -1.423    1.179    1.227
+ CTO           HNN    H    H         0.000     -1.625    2.036    1.722
+ CTO           C23    C    CH1       0.000     -2.412    0.099    1.200
+ CTO           H23    H    H         0.000     -2.309   -0.470    0.265
+ CTO           C33    C    CH1       0.000     -3.823    0.692    1.286
+ CTO           H33    H    H         0.000     -3.893    1.348    2.165
+ CTO           O33    O    OH1       0.000     -4.106    1.444    0.105
+ CTO           HOX    H    H         0.000     -3.470    2.167    0.023
+ CTO           C43    C    CH1       0.000     -4.829   -0.455    1.419
+ CTO           H43    H    H         0.000     -4.834   -1.048    0.494
+ CTO           C53    C    CH1       0.000     -4.421   -1.345    2.596
+ CTO           H53    H    H         0.000     -4.394   -0.745    3.516
+ CTO           C63    C    CH2       0.000     -5.439   -2.475    2.755
+ CTO           H631   H    H         0.000     -5.413   -3.115    1.870
+ CTO           H632   H    H         0.000     -6.439   -2.050    2.865
+ CTO           O63    O    OH1       0.000     -5.117   -3.247    3.913
+ CTO           HO3    H    H         0.000     -5.762   -3.961    4.013
+ CTO           O53    O    O2        0.000     -3.129   -1.901    2.355
+ CTO           C13    C    CH1       0.000     -2.186   -0.832    2.393
+ CTO           H13    H    H         0.000     -2.311   -0.266    3.327
+ CTO           O13    O    OH1       0.000     -0.862   -1.367    2.334
+ CTO           HOD    H    H         0.000     -0.719   -1.955    3.088
+ CTO           O43    O    O2        0.000     -6.134    0.076    1.653
+ CTO           C12    C    CH1       0.000     -6.977   -0.425    0.612
+ CTO           H12    H    H         0.000     -6.894   -1.520    0.570
+ CTO           O52    O    O2        0.000     -6.569    0.130   -0.636
+ CTO           C52    C    CH1       0.000     -7.309   -0.526   -1.662
+ CTO           H52    H    H         0.000     -7.201   -1.614   -1.550
+ CTO           C62    C    CH2       0.000     -6.771   -0.101   -3.029
+ CTO           H621   H    H         0.000     -6.808    0.987   -3.112
+ CTO           H622   H    H         0.000     -7.384   -0.546   -3.815
+ CTO           O62    O    OH1       0.000     -5.420   -0.544   -3.169
+ CTO           HO2    H    H         0.000     -5.081   -0.274   -4.033
+ CTO           C42    C    CH1       0.000     -8.787   -0.149   -1.559
+ CTO           H42    H    H         0.000     -8.895    0.942   -1.647
+ CTO           C32    C    CH1       0.000     -9.327   -0.608   -0.199
+ CTO           H32    H    H         0.000     -9.317   -1.706   -0.150
+ CTO           O32    O    OH1       0.000    -10.664   -0.131   -0.028
+ CTO           HOW    H    H         0.000    -11.002   -0.423    0.830
+ CTO           C22    C    CH1       0.000     -8.428   -0.035    0.902
+ CTO           H22    H    H         0.000     -8.519    1.060    0.919
+ CTO           N22    N    NH1       0.000     -8.833   -0.583    2.199
+ CTO           HNM    H    H         0.000     -9.241   -1.506    2.252
+ CTO           C72    C    C         0.000     -8.663    0.143    3.320
+ CTO           C82    C    CH3       0.000     -9.080   -0.420    4.654
+ CTO           H823   H    H         0.000    -10.118   -0.628    4.642
+ CTO           H822   H    H         0.000     -8.544   -1.314    4.845
+ CTO           H821   H    H         0.000     -8.871    0.285    5.417
+ CTO           O72    O    O         0.000     -8.174    1.250    3.256
+ CTO           O42    O    O2        0.000     -9.520   -0.788   -2.606
+ CTO           C11    C    CH1       0.000    -10.070    0.251   -3.418
+ CTO           H11    H    H         0.000     -9.269    0.936   -3.727
+ CTO           O51    O    O2        0.000    -11.047    0.970   -2.671
+ CTO           C51    C    CH1       0.000    -11.439    2.102   -3.447
+ CTO           H51    H    H         0.000    -10.544    2.662   -3.754
+ CTO           C61    C    CH2       0.000    -12.343    3.006   -2.608
+ CTO           H611   H    H         0.000    -13.231    2.449   -2.302
+ CTO           H612   H    H         0.000    -12.644    3.872   -3.202
+ CTO           O61    O    OH1       0.000    -11.632    3.447   -1.448
+ CTO           HO6    H    H         0.000    -12.204    4.018   -0.918
+ CTO           C41    C    CH1       0.000    -12.200    1.637   -4.691
+ CTO           H41    H    H         0.000    -13.082    1.057   -4.387
+ CTO           O41    O    OH1       0.000    -12.614    2.775   -5.449
+ CTO           HO4    H    H         0.000    -13.190    3.330   -4.907
+ CTO           C31    C    CH1       0.000    -11.276    0.759   -5.542
+ CTO           H31    H    H         0.000    -10.447    1.366   -5.933
+ CTO           O31    O    OH1       0.000    -12.014    0.200   -6.629
+ CTO           HOV    H    H         0.000    -12.373    0.913   -7.175
+ CTO           C21    C    CH1       0.000    -10.720   -0.364   -4.660
+ CTO           H21    H    H         0.000    -11.538   -1.032   -4.355
+ CTO           N21    N    NH1       0.000     -9.719   -1.126   -5.410
+ CTO           HNL    H    H         0.000     -9.169   -0.671   -6.124
+ CTO           C71    C    C         0.000     -9.533   -2.435   -5.148
+ CTO           O71    O    O         0.000    -10.194   -2.981   -4.291
+ CTO           C81    C    CH3       0.000     -8.503   -3.219   -5.920
+ CTO           H813   H    H         0.000     -8.741   -3.197   -6.952
+ CTO           H812   H    H         0.000     -7.545   -2.790   -5.770
+ CTO           H811   H    H         0.000     -8.495   -4.223   -5.582
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CTO      O73    n/a    C73    START
+ CTO      C73    O73    N23    .
+ CTO      C83    C73    H831   .
+ CTO      H833   C83    .      .
+ CTO      H832   C83    .      .
+ CTO      H831   C83    .      .
+ CTO      N23    C73    C23    .
+ CTO      HNN    N23    .      .
+ CTO      C23    N23    C33    .
+ CTO      H23    C23    .      .
+ CTO      C33    C23    C43    .
+ CTO      H33    C33    .      .
+ CTO      O33    C33    HOX    .
+ CTO      HOX    O33    .      .
+ CTO      C43    C33    O43    .
+ CTO      H43    C43    .      .
+ CTO      C53    C43    O53    .
+ CTO      H53    C53    .      .
+ CTO      C63    C53    O63    .
+ CTO      H631   C63    .      .
+ CTO      H632   C63    .      .
+ CTO      O63    C63    HO3    .
+ CTO      HO3    O63    .      .
+ CTO      O53    C53    C13    .
+ CTO      C13    O53    O13    .
+ CTO      H13    C13    .      .
+ CTO      O13    C13    HOD    .
+ CTO      HOD    O13    .      .
+ CTO      O43    C43    C12    .
+ CTO      C12    O43    O52    .
+ CTO      H12    C12    .      .
+ CTO      O52    C12    C52    .
+ CTO      C52    O52    C42    .
+ CTO      H52    C52    .      .
+ CTO      C62    C52    O62    .
+ CTO      H621   C62    .      .
+ CTO      H622   C62    .      .
+ CTO      O62    C62    HO2    .
+ CTO      HO2    O62    .      .
+ CTO      C42    C52    O42    .
+ CTO      H42    C42    .      .
+ CTO      C32    C42    C22    .
+ CTO      H32    C32    .      .
+ CTO      O32    C32    HOW    .
+ CTO      HOW    O32    .      .
+ CTO      C22    C32    N22    .
+ CTO      H22    C22    .      .
+ CTO      N22    C22    C72    .
+ CTO      HNM    N22    .      .
+ CTO      C72    N22    O72    .
+ CTO      C82    C72    H821   .
+ CTO      H823   C82    .      .
+ CTO      H822   C82    .      .
+ CTO      H821   C82    .      .
+ CTO      O72    C72    .      .
+ CTO      O42    C42    C11    .
+ CTO      C11    O42    O51    .
+ CTO      H11    C11    .      .
+ CTO      O51    C11    C51    .
+ CTO      C51    O51    C41    .
+ CTO      H51    C51    .      .
+ CTO      C61    C51    O61    .
+ CTO      H611   C61    .      .
+ CTO      H612   C61    .      .
+ CTO      O61    C61    HO6    .
+ CTO      HO6    O61    .      .
+ CTO      C41    C51    C31    .
+ CTO      H41    C41    .      .
+ CTO      O41    C41    HO4    .
+ CTO      HO4    O41    .      .
+ CTO      C31    C41    C21    .
+ CTO      H31    C31    .      .
+ CTO      O31    C31    HOV    .
+ CTO      HOV    O31    .      .
+ CTO      C21    C31    N21    .
+ CTO      H21    C21    .      .
+ CTO      N21    C21    C71    .
+ CTO      HNL    N21    .      .
+ CTO      C71    N21    C81    .
+ CTO      O71    C71    .      .
+ CTO      C81    C71    H811   .
+ CTO      H813   C81    .      .
+ CTO      H812   C81    .      .
+ CTO      H811   C81    .      END
+ CTO      C11    C21    .    ADD
+ CTO      C12    C22    .    ADD
+ CTO      C13    C23    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CTO       C11       C21       single    1.524     0.020     1.524     0.020     
+CTO       O51       C11       single    1.426     0.020     1.426     0.020     
+CTO       C11       O42       single    1.426     0.020     1.426     0.020     
+CTO       H11       C11       single    1.089     0.010     0.989     0.005     
+CTO       N21       C21       single    1.450     0.020     1.450     0.020     
+CTO       C21       C31       single    1.524     0.020     1.524     0.020     
+CTO       H21       C21       single    1.089     0.010     0.989     0.005     
+CTO       C71       N21       single    1.330     0.020     1.330     0.020     
+CTO       HNL       N21       single    1.016     0.010     0.899     0.007     
+CTO       O71       C71       double    1.220     0.020     1.220     0.020     
+CTO       C81       C71       single    1.500     0.020     1.500     0.020     
+CTO       H811      C81       single    1.089     0.010     0.989     0.005     
+CTO       H812      C81       single    1.089     0.010     0.989     0.005     
+CTO       H813      C81       single    1.089     0.010     0.989     0.005     
+CTO       O31       C31       single    1.432     0.020     1.432     0.020     
+CTO       C31       C41       single    1.524     0.020     1.524     0.020     
+CTO       H31       C31       single    1.089     0.010     0.989     0.005     
+CTO       HOV       O31       single    0.970     0.012     0.839     0.014     
+CTO       O41       C41       single    1.432     0.020     1.432     0.020     
+CTO       C41       C51       single    1.524     0.020     1.524     0.020     
+CTO       H41       C41       single    1.089     0.010     0.989     0.005     
+CTO       HO4       O41       single    0.970     0.012     0.839     0.014     
+CTO       C51       O51       single    1.426     0.020     1.426     0.020     
+CTO       C61       C51       single    1.524     0.020     1.524     0.020     
+CTO       H51       C51       single    1.089     0.010     0.989     0.005     
+CTO       O61       C61       single    1.432     0.020     1.432     0.020     
+CTO       H611      C61       single    1.089     0.010     0.989     0.005     
+CTO       H612      C61       single    1.089     0.010     0.989     0.005     
+CTO       HO6       O61       single    0.970     0.012     0.839     0.014     
+CTO       C12       C22       single    1.524     0.020     1.524     0.020     
+CTO       O52       C12       single    1.426     0.020     1.426     0.020     
+CTO       C12       O43       single    1.426     0.020     1.426     0.020     
+CTO       H12       C12       single    1.089     0.010     0.989     0.005     
+CTO       N22       C22       single    1.450     0.020     1.450     0.020     
+CTO       C22       C32       single    1.524     0.020     1.524     0.020     
+CTO       H22       C22       single    1.089     0.010     0.989     0.005     
+CTO       C72       N22       single    1.330     0.020     1.330     0.020     
+CTO       HNM       N22       single    1.016     0.010     0.899     0.007     
+CTO       O72       C72       double    1.220     0.020     1.220     0.020     
+CTO       C82       C72       single    1.500     0.020     1.500     0.020     
+CTO       H821      C82       single    1.089     0.010     0.989     0.005     
+CTO       H822      C82       single    1.089     0.010     0.989     0.005     
+CTO       H823      C82       single    1.089     0.010     0.989     0.005     
+CTO       O32       C32       single    1.432     0.020     1.432     0.020     
+CTO       C32       C42       single    1.524     0.020     1.524     0.020     
+CTO       H32       C32       single    1.089     0.010     0.989     0.005     
+CTO       HOW       O32       single    0.970     0.012     0.839     0.014     
+CTO       O42       C42       single    1.426     0.020     1.426     0.020     
+CTO       C42       C52       single    1.524     0.020     1.524     0.020     
+CTO       H42       C42       single    1.089     0.010     0.989     0.005     
+CTO       C52       O52       single    1.426     0.020     1.426     0.020     
+CTO       C62       C52       single    1.524     0.020     1.524     0.020     
+CTO       H52       C52       single    1.089     0.010     0.989     0.005     
+CTO       O62       C62       single    1.432     0.020     1.432     0.020     
+CTO       H621      C62       single    1.089     0.010     0.989     0.005     
+CTO       H622      C62       single    1.089     0.010     0.989     0.005     
+CTO       HO2       O62       single    0.970     0.012     0.839     0.014     
+CTO       O13       C13       single    1.432     0.020     1.432     0.020     
+CTO       C13       C23       single    1.524     0.020     1.524     0.020     
+CTO       C13       O53       single    1.426     0.020     1.426     0.020     
+CTO       H13       C13       single    1.089     0.010     0.989     0.005     
+CTO       HOD       O13       single    0.970     0.012     0.839     0.014     
+CTO       C23       N23       single    1.450     0.020     1.450     0.020     
+CTO       C33       C23       single    1.524     0.020     1.524     0.020     
+CTO       H23       C23       single    1.089     0.010     0.989     0.005     
+CTO       N23       C73       single    1.330     0.020     1.330     0.020     
+CTO       HNN       N23       single    1.016     0.010     0.899     0.007     
+CTO       C73       O73       double    1.220     0.020     1.220     0.020     
+CTO       C83       C73       single    1.500     0.020     1.500     0.020     
+CTO       H831      C83       single    1.089     0.010     0.989     0.005     
+CTO       H832      C83       single    1.089     0.010     0.989     0.005     
+CTO       H833      C83       single    1.089     0.010     0.989     0.005     
+CTO       O33       C33       single    1.432     0.020     1.432     0.020     
+CTO       C43       C33       single    1.524     0.020     1.524     0.020     
+CTO       H33       C33       single    1.089     0.010     0.989     0.005     
+CTO       HOX       O33       single    0.970     0.012     0.839     0.014     
+CTO       O43       C43       single    1.426     0.020     1.426     0.020     
+CTO       C53       C43       single    1.524     0.020     1.524     0.020     
+CTO       H43       C43       single    1.089     0.010     0.989     0.005     
+CTO       O53       C53       single    1.426     0.020     1.426     0.020     
+CTO       C63       C53       single    1.524     0.020     1.524     0.020     
+CTO       H53       C53       single    1.089     0.010     0.989     0.005     
+CTO       O63       C63       single    1.432     0.020     1.432     0.020     
+CTO       H631      C63       single    1.089     0.010     0.989     0.005     
+CTO       H632      C63       single    1.089     0.010     0.989     0.005     
+CTO       HO3       O63       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CTO      O73    C73    C83     123.000    3.000
+ CTO      O73    C73    N23     123.000    3.000
+ CTO      C83    C73    N23     116.500    3.000
+ CTO      C73    C83    H833    109.470    3.000
+ CTO      C73    C83    H832    109.470    3.000
+ CTO      C73    C83    H831    109.470    3.000
+ CTO      H833   C83    H832    109.470    3.000
+ CTO      H833   C83    H831    109.470    3.000
+ CTO      H832   C83    H831    109.470    3.000
+ CTO      C73    N23    HNN     120.000    3.000
+ CTO      C73    N23    C23     121.500    3.000
+ CTO      HNN    N23    C23     118.500    3.000
+ CTO      N23    C23    H23     108.550    3.000
+ CTO      N23    C23    C33     110.000    3.000
+ CTO      N23    C23    C13     110.000    3.000
+ CTO      H23    C23    C33     108.340    3.000
+ CTO      H23    C23    C13     108.340    3.000
+ CTO      C33    C23    C13     111.000    3.000
+ CTO      C23    C33    H33     108.340    3.000
+ CTO      C23    C33    O33     109.470    3.000
+ CTO      C23    C33    C43     111.000    3.000
+ CTO      H33    C33    O33     109.470    3.000
+ CTO      H33    C33    C43     108.340    3.000
+ CTO      O33    C33    C43     109.470    3.000
+ CTO      C33    O33    HOX     109.470    3.000
+ CTO      C33    C43    H43     108.340    3.000
+ CTO      C33    C43    C53     111.000    3.000
+ CTO      C33    C43    O43     109.470    3.000
+ CTO      H43    C43    C53     108.340    3.000
+ CTO      H43    C43    O43     109.470    3.000
+ CTO      C53    C43    O43     109.470    3.000
+ CTO      C43    C53    H53     108.340    3.000
+ CTO      C43    C53    C63     111.000    3.000
+ CTO      C43    C53    O53     109.470    3.000
+ CTO      H53    C53    C63     108.340    3.000
+ CTO      H53    C53    O53     109.470    3.000
+ CTO      C63    C53    O53     109.470    3.000
+ CTO      C53    C63    H631    109.470    3.000
+ CTO      C53    C63    H632    109.470    3.000
+ CTO      C53    C63    O63     109.470    3.000
+ CTO      H631   C63    H632    107.900    3.000
+ CTO      H631   C63    O63     109.470    3.000
+ CTO      H632   C63    O63     109.470    3.000
+ CTO      C63    O63    HO3     109.470    3.000
+ CTO      C53    O53    C13     111.800    3.000
+ CTO      O53    C13    H13     109.470    3.000
+ CTO      O53    C13    O13     109.470    3.000
+ CTO      O53    C13    C23     109.470    3.000
+ CTO      H13    C13    O13     109.470    3.000
+ CTO      H13    C13    C23     108.340    3.000
+ CTO      O13    C13    C23     109.470    3.000
+ CTO      C13    O13    HOD     109.470    3.000
+ CTO      C43    O43    C12     111.800    3.000
+ CTO      O43    C12    H12     109.470    3.000
+ CTO      O43    C12    O52     109.470    3.000
+ CTO      O43    C12    C22     109.470    3.000
+ CTO      H12    C12    O52     109.470    3.000
+ CTO      H12    C12    C22     108.340    3.000
+ CTO      O52    C12    C22     109.470    3.000
+ CTO      C12    O52    C52     111.800    3.000
+ CTO      O52    C52    H52     109.470    3.000
+ CTO      O52    C52    C62     109.470    3.000
+ CTO      O52    C52    C42     109.470    3.000
+ CTO      H52    C52    C62     108.340    3.000
+ CTO      H52    C52    C42     108.340    3.000
+ CTO      C62    C52    C42     111.000    3.000
+ CTO      C52    C62    H621    109.470    3.000
+ CTO      C52    C62    H622    109.470    3.000
+ CTO      C52    C62    O62     109.470    3.000
+ CTO      H621   C62    H622    107.900    3.000
+ CTO      H621   C62    O62     109.470    3.000
+ CTO      H622   C62    O62     109.470    3.000
+ CTO      C62    O62    HO2     109.470    3.000
+ CTO      C52    C42    H42     108.340    3.000
+ CTO      C52    C42    C32     111.000    3.000
+ CTO      C52    C42    O42     109.470    3.000
+ CTO      H42    C42    C32     108.340    3.000
+ CTO      H42    C42    O42     109.470    3.000
+ CTO      C32    C42    O42     109.470    3.000
+ CTO      C42    C32    H32     108.340    3.000
+ CTO      C42    C32    O32     109.470    3.000
+ CTO      C42    C32    C22     111.000    3.000
+ CTO      H32    C32    O32     109.470    3.000
+ CTO      H32    C32    C22     108.340    3.000
+ CTO      O32    C32    C22     109.470    3.000
+ CTO      C32    O32    HOW     109.470    3.000
+ CTO      C32    C22    H22     108.340    3.000
+ CTO      C32    C22    N22     110.000    3.000
+ CTO      C32    C22    C12     111.000    3.000
+ CTO      H22    C22    N22     108.550    3.000
+ CTO      H22    C22    C12     108.340    3.000
+ CTO      N22    C22    C12     110.000    3.000
+ CTO      C22    N22    HNM     118.500    3.000
+ CTO      C22    N22    C72     121.500    3.000
+ CTO      HNM    N22    C72     120.000    3.000
+ CTO      N22    C72    C82     116.500    3.000
+ CTO      N22    C72    O72     123.000    3.000
+ CTO      C82    C72    O72     123.000    3.000
+ CTO      C72    C82    H823    109.470    3.000
+ CTO      C72    C82    H822    109.470    3.000
+ CTO      C72    C82    H821    109.470    3.000
+ CTO      H823   C82    H822    109.470    3.000
+ CTO      H823   C82    H821    109.470    3.000
+ CTO      H822   C82    H821    109.470    3.000
+ CTO      C42    O42    C11     111.800    3.000
+ CTO      O42    C11    H11     109.470    3.000
+ CTO      O42    C11    O51     109.470    3.000
+ CTO      O42    C11    C21     109.470    3.000
+ CTO      H11    C11    O51     109.470    3.000
+ CTO      H11    C11    C21     108.340    3.000
+ CTO      O51    C11    C21     109.470    3.000
+ CTO      C11    O51    C51     111.800    3.000
+ CTO      O51    C51    H51     109.470    3.000
+ CTO      O51    C51    C61     109.470    3.000
+ CTO      O51    C51    C41     109.470    3.000
+ CTO      H51    C51    C61     108.340    3.000
+ CTO      H51    C51    C41     108.340    3.000
+ CTO      C61    C51    C41     111.000    3.000
+ CTO      C51    C61    H611    109.470    3.000
+ CTO      C51    C61    H612    109.470    3.000
+ CTO      C51    C61    O61     109.470    3.000
+ CTO      H611   C61    H612    107.900    3.000
+ CTO      H611   C61    O61     109.470    3.000
+ CTO      H612   C61    O61     109.470    3.000
+ CTO      C61    O61    HO6     109.470    3.000
+ CTO      C51    C41    H41     108.340    3.000
+ CTO      C51    C41    O41     109.470    3.000
+ CTO      C51    C41    C31     111.000    3.000
+ CTO      H41    C41    O41     109.470    3.000
+ CTO      H41    C41    C31     108.340    3.000
+ CTO      O41    C41    C31     109.470    3.000
+ CTO      C41    O41    HO4     109.470    3.000
+ CTO      C41    C31    H31     108.340    3.000
+ CTO      C41    C31    O31     109.470    3.000
+ CTO      C41    C31    C21     111.000    3.000
+ CTO      H31    C31    O31     109.470    3.000
+ CTO      H31    C31    C21     108.340    3.000
+ CTO      O31    C31    C21     109.470    3.000
+ CTO      C31    O31    HOV     109.470    3.000
+ CTO      C31    C21    H21     108.340    3.000
+ CTO      C31    C21    N21     110.000    3.000
+ CTO      C31    C21    C11     111.000    3.000
+ CTO      H21    C21    N21     108.550    3.000
+ CTO      H21    C21    C11     108.340    3.000
+ CTO      N21    C21    C11     110.000    3.000
+ CTO      C21    N21    HNL     118.500    3.000
+ CTO      C21    N21    C71     121.500    3.000
+ CTO      HNL    N21    C71     120.000    3.000
+ CTO      N21    C71    O71     123.000    3.000
+ CTO      N21    C71    C81     116.500    3.000
+ CTO      O71    C71    C81     123.000    3.000
+ CTO      C71    C81    H813    109.470    3.000
+ CTO      C71    C81    H812    109.470    3.000
+ CTO      C71    C81    H811    109.470    3.000
+ CTO      H813   C81    H812    109.470    3.000
+ CTO      H813   C81    H811    109.470    3.000
+ CTO      H812   C81    H811    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CTO      var_1    O73    C73    C83    H831       0.018   20.000   1
+ CTO      CONST_1  O73    C73    N23    C23        0.000    0.000   0
+ CTO      var_2    C73    N23    C23    C33     -150.159   20.000   3
+ CTO      var_3    N23    C23    C33    C43      180.000   20.000   3
+ CTO      var_4    C23    C33    O33    HOX      -60.724   20.000   1
+ CTO      var_5    C23    C33    C43    O43      180.000   20.000   3
+ CTO      var_6    C33    C43    C53    O53      -60.000   20.000   3
+ CTO      var_7    C43    C53    C63    O63     -175.626   20.000   3
+ CTO      var_8    C53    C63    O63    HO3     -179.987   20.000   1
+ CTO      var_9    C43    C53    O53    C13       60.000   20.000   1
+ CTO      var_10   C53    O53    C13    O13      180.000   20.000   1
+ CTO      var_11   O53    C13    C23    N23      180.000   20.000   3
+ CTO      var_12   O53    C13    O13    HOD      -59.785   20.000   1
+ CTO      var_13   C33    C43    O43    C12      122.865   20.000   1
+ CTO      var_14   C43    O43    C12    O52      -66.768   20.000   1
+ CTO      var_15   O43    C12    C22    C32      180.000   20.000   3
+ CTO      var_16   O43    C12    O52    C52      180.000   20.000   1
+ CTO      var_17   C12    O52    C52    C42       60.000   20.000   1
+ CTO      var_18   O52    C52    C62    O62       64.077   20.000   3
+ CTO      var_19   C52    C62    O62    HO2     -179.997   20.000   1
+ CTO      var_20   O52    C52    C42    O42      180.000   20.000   3
+ CTO      var_21   C52    C42    C32    C22       60.000   20.000   3
+ CTO      var_22   C42    C32    O32    HOW      179.985   20.000   1
+ CTO      var_23   C42    C32    C22    N22      180.000   20.000   3
+ CTO      var_24   C32    C22    N22    C72     -150.045   20.000   3
+ CTO      CONST_2  C22    N22    C72    O72        0.000    0.000   0
+ CTO      var_25   N22    C72    C82    H821     179.985   20.000   1
+ CTO      var_26   C52    C42    O42    C11     -117.498   20.000   1
+ CTO      var_27   C42    O42    C11    O51      -66.849   20.000   1
+ CTO      var_28   O42    C11    C21    C31      180.000   20.000   3
+ CTO      var_29   O42    C11    O51    C51      180.000   20.000   1
+ CTO      var_30   C11    O51    C51    C41       60.000   20.000   1
+ CTO      var_31   O51    C51    C61    O61       60.013   20.000   3
+ CTO      var_32   C51    C61    O61    HO6     -179.983   20.000   1
+ CTO      var_33   O51    C51    C41    C31      -60.000   20.000   3
+ CTO      var_34   C51    C41    O41    HO4      -59.970   20.000   1
+ CTO      var_35   C51    C41    C31    C21       60.000   20.000   3
+ CTO      var_36   C41    C31    O31    HOV       59.961   20.000   1
+ CTO      var_37   C41    C31    C21    N21      180.000   20.000   3
+ CTO      var_38   C31    C21    N21    C71     -149.962   20.000   3
+ CTO      CONST_3  C21    N21    C71    C81      180.000    0.000   0
+ CTO      var_39   N21    C71    C81    H811     179.982   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CTO      chir_01  C11    C21    O51    O42       negativ
+ CTO      chir_02  C21    C11    N21    C31       positiv
+ CTO      chir_03  C31    C21    O31    C41       negativ
+ CTO      chir_04  C41    C31    O41    C51       positiv
+ CTO      chir_05  C51    C41    O51    C61       positiv
+ CTO      chir_06  C12    C22    O52    O43       negativ
+ CTO      chir_07  C22    C12    N22    C32       positiv
+ CTO      chir_08  C32    C22    O32    C42       negativ
+ CTO      chir_09  C42    C32    O42    C52       positiv
+ CTO      chir_10  C52    C42    O52    C62       positiv
+ CTO      chir_11  C13    O13    C23    O53       negativ
+ CTO      chir_12  C23    C13    N23    C33       positiv
+ CTO      chir_13  C33    C23    O33    C43       negativ
+ CTO      chir_14  C43    C33    O43    C53       positiv
+ CTO      chir_15  C53    C43    O53    C63       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CTO      plan-1    N21       0.020
+ CTO      plan-1    C21       0.020
+ CTO      plan-1    C71       0.020
+ CTO      plan-1    HNL       0.020
+ CTO      plan-2    C71       0.020
+ CTO      plan-2    N21       0.020
+ CTO      plan-2    O71       0.020
+ CTO      plan-2    C81       0.020
+ CTO      plan-2    HNL       0.020
+ CTO      plan-3    N22       0.020
+ CTO      plan-3    C22       0.020
+ CTO      plan-3    C72       0.020
+ CTO      plan-3    HNM       0.020
+ CTO      plan-4    C72       0.020
+ CTO      plan-4    N22       0.020
+ CTO      plan-4    O72       0.020
+ CTO      plan-4    C82       0.020
+ CTO      plan-4    HNM       0.020
+ CTO      plan-5    N23       0.020
+ CTO      plan-5    C23       0.020
+ CTO      plan-5    C73       0.020
+ CTO      plan-5    HNN       0.020
+ CTO      plan-6    C73       0.020
+ CTO      plan-6    N23       0.020
+ CTO      plan-6    O73       0.020
+ CTO      plan-6    C83       0.020
+ CTO      plan-6    HNN       0.020
+# ------------------------------------------------------

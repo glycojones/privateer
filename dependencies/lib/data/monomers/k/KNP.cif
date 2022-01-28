@@ -1,0 +1,161 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KNP     KNP      "(2,6-difluorophenoxy)acetic acid"     non-polymer     18     13     .     
+#
+data_comp_KNP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KNP     F1      F       F       0       -0.031      -2.553      -0.390      
+KNP     F2      F       F       0       -0.342      2.019       0.857       
+KNP     O1      O       OC      -1      4.283       -0.033      0.331       
+KNP     O2      O       O2      0       1.272       -0.335      0.202       
+KNP     O3      O       O       0       3.741       0.337       -1.787      
+KNP     C1      C       C       0       3.491       0.321       -0.565      
+KNP     C2      C       CH2     0       2.107       0.771       -0.124      
+KNP     C3      C       CR16    0       -2.895      -0.446      0.225       
+KNP     C4      C       CR16    0       -2.141      -1.563      -0.089      
+KNP     C5      C       CR6     0       -0.764      -1.463      -0.084      
+KNP     C6      C       CR6     0       -0.106      -0.266      0.218       
+KNP     C7      C       CR6     0       -0.908      0.837       0.541       
+KNP     C8      C       CR16    0       -2.288      0.756       0.541       
+KNP     H2      H       H       0       2.197       1.342       0.660       
+KNP     H3      H       H       0       1.696       1.298       -0.834      
+KNP     H4      H       H       0       -3.839      -0.505      0.222       
+KNP     H5      H       H       0       -2.555      -2.382      -0.306      
+KNP     H6      H       H       0       -2.803      1.516       0.754       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KNP       F1        C5        SINGLE    n         1.348     0.010     1.348     0.010     
+KNP       F2        C7        SINGLE    n         1.348     0.010     1.348     0.010     
+KNP       O1        C1        SINGLE    n         1.247     0.019     1.247     0.019     
+KNP       O2        C2        SINGLE    n         1.420     0.010     1.420     0.010     
+KNP       O2        C6        SINGLE    n         1.369     0.011     1.369     0.011     
+KNP       O3        C1        DOUBLE    n         1.247     0.019     1.247     0.019     
+KNP       C1        C2        SINGLE    n         1.520     0.010     1.520     0.010     
+KNP       C3        C4        DOUBLE    y         1.377     0.010     1.377     0.010     
+KNP       C3        C8        SINGLE    y         1.377     0.010     1.377     0.010     
+KNP       C4        C5        SINGLE    y         1.374     0.010     1.374     0.010     
+KNP       C5        C6        DOUBLE    y         1.385     0.011     1.385     0.011     
+KNP       C6        C7        SINGLE    y         1.385     0.011     1.385     0.011     
+KNP       C7        C8        DOUBLE    y         1.374     0.010     1.374     0.010     
+KNP       C2        H2        SINGLE    n         1.089     0.010     0.974     0.010     
+KNP       C2        H3        SINGLE    n         1.089     0.010     0.974     0.010     
+KNP       C3        H4        SINGLE    n         1.082     0.013     0.946     0.016     
+KNP       C4        H5        SINGLE    n         1.082     0.013     0.942     0.013     
+KNP       C8        H6        SINGLE    n         1.082     0.013     0.942     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KNP          C2          O2          C6     117.343    1.83
+KNP          O1          C1          O3     125.570    1.50
+KNP          O1          C1          C2     117.215    2.48
+KNP          O3          C1          C2     117.215    2.48
+KNP          O2          C2          C1     111.607    2.58
+KNP          O2          C2          H2     109.378    1.50
+KNP          O2          C2          H3     109.378    1.50
+KNP          C1          C2          H2     109.314    1.50
+KNP          C1          C2          H3     109.314    1.50
+KNP          H2          C2          H3     108.052    1.50
+KNP          C4          C3          C8     120.768    1.50
+KNP          C4          C3          H4     119.616    1.50
+KNP          C8          C3          H4     119.616    1.50
+KNP          C3          C4          C5     118.729    1.50
+KNP          C3          C4          H5     121.088    1.50
+KNP          C5          C4          H5     120.182    1.50
+KNP          F1          C5          C4     119.530    1.50
+KNP          F1          C5          C6     118.654    1.50
+KNP          C4          C5          C6     121.816    1.50
+KNP          O2          C6          C5     120.930    2.86
+KNP          O2          C6          C7     120.930    2.86
+KNP          C5          C6          C7     118.140    1.50
+KNP          F2          C7          C6     118.654    1.50
+KNP          F2          C7          C8     119.530    1.50
+KNP          C6          C7          C8     121.816    1.50
+KNP          C3          C8          C7     118.729    1.50
+KNP          C3          C8          H6     121.088    1.50
+KNP          C7          C8          H6     120.182    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KNP              const_16          O2          C6          C7          F2       0.000   10.00     2
+KNP              const_19          F2          C7          C8          C3     180.000   10.00     2
+KNP             sp2_sp2_1          C5          C6          O2          C2     180.000   10.00     2
+KNP             sp3_sp3_1          C1          C2          O2          C6     180.000   10.00     3
+KNP             sp2_sp3_2          O1          C1          C2          O2     120.000   10.00     6
+KNP              const_21          C4          C3          C8          C7       0.000   10.00     2
+KNP       const_sp2_sp2_1          C8          C3          C4          C5       0.000   10.00     2
+KNP       const_sp2_sp2_6          C3          C4          C5          F1     180.000   10.00     2
+KNP              const_12          F1          C5          C6          O2       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KNP    plan-1          C3   0.020
+KNP    plan-1          C4   0.020
+KNP    plan-1          C5   0.020
+KNP    plan-1          C6   0.020
+KNP    plan-1          C7   0.020
+KNP    plan-1          C8   0.020
+KNP    plan-1          F1   0.020
+KNP    plan-1          F2   0.020
+KNP    plan-1          H4   0.020
+KNP    plan-1          H5   0.020
+KNP    plan-1          H6   0.020
+KNP    plan-1          O2   0.020
+KNP    plan-2          C1   0.020
+KNP    plan-2          C2   0.020
+KNP    plan-2          O1   0.020
+KNP    plan-2          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KNP SMILES           ACDLabs              12.01 "O=C(O)COc1c(F)cccc1F"
+KNP SMILES_CANONICAL CACTVS               3.370 "OC(=O)COc1c(F)cccc1F"
+KNP SMILES           CACTVS               3.370 "OC(=O)COc1c(F)cccc1F"
+KNP SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1cc(c(c(c1)F)OCC(=O)O)F"
+KNP SMILES           "OpenEye OEToolkits" 1.7.0 "c1cc(c(c(c1)F)OCC(=O)O)F"
+KNP InChI            InChI                1.03  "InChI=1S/C8H6F2O3/c9-5-2-1-3-6(10)8(5)13-4-7(11)12/h1-3H,4H2,(H,11,12)"
+KNP InChIKey         InChI                1.03  OOTAWLNUYMHJOL-UHFFFAOYSA-N
+KNP ?                acedrg               202         "dictionary generator"                  
+KNP ?                acedrg_database      11          "data source"                           
+KNP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KNP ?                refmac5              5.8.0189    "optimization tool"                     

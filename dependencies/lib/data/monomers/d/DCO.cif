@@ -1,0 +1,136 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DCO     DCO      "3,3-DICHLORO-2-PHOSPHONOMETHYL-ACRYLIC ACID"     NON-POLYMER     14     12     .     
+#
+data_comp_DCO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DCO     O1      O       O       0       20.803      34.301      -12.063     
+DCO     C1      C       C       0       21.371      33.503      -12.820     
+DCO     O2      O       OC      -1      20.695      32.803      -13.579     
+DCO     C2      C       C       0       22.693      33.359      -12.782     
+DCO     C3      C       CH2     0       23.449      33.289      -14.095     
+DCO     P1      P       P       0       23.978      31.595      -14.492     
+DCO     O3      O       OP      -1      22.811      30.680      -14.238     
+DCO     O4      O       OP      -1      24.379      31.571      -15.943     
+DCO     O5      O       O       0       25.141      31.249      -13.603     
+DCO     C4      C       C       0       23.370      33.172      -11.652     
+DCO     CL1     CL      CL      0       22.700      32.284      -10.333     
+DCO     CL2     CL      CL      0       24.943      33.818      -11.367     
+DCO     H31     H       H       0       24.239      33.856      -14.078     
+DCO     H32     H       H       0       22.903      33.614      -14.838     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DCO       O1        C1        DOUBLE    n         1.230     0.020     1.230     0.020     
+DCO       C1        O2        SINGLE    n         1.230     0.020     1.230     0.020     
+DCO       C1        C2        SINGLE    n         1.322     0.010     1.322     0.010     
+DCO       C2        C3        SINGLE    n         1.507     0.012     1.507     0.012     
+DCO       C2        C4        DOUBLE    n         1.322     0.010     1.322     0.010     
+DCO       C3        P1        SINGLE    n         1.816     0.020     1.816     0.020     
+DCO       P1        O3        SINGLE    n         1.505     0.020     1.505     0.020     
+DCO       P1        O4        SINGLE    n         1.505     0.020     1.505     0.020     
+DCO       P1        O5        DOUBLE    n         1.505     0.020     1.505     0.020     
+DCO       C4        CL1       SINGLE    n         1.721     0.016     1.721     0.016     
+DCO       C4        CL2       SINGLE    n         1.721     0.016     1.721     0.016     
+DCO       C3        H31       SINGLE    n         1.089     0.010     0.975     0.020     
+DCO       C3        H32       SINGLE    n         1.089     0.010     0.975     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DCO          O1          C1          O2     120.233    1.63
+DCO          O1          C1          C2     119.884    1.50
+DCO          O2          C1          C2     119.884    1.50
+DCO          C1          C2          C3     118.827    3.00
+DCO          C1          C2          C4     122.346    3.00
+DCO          C3          C2          C4     118.827    3.00
+DCO          C2          C3          P1     113.247    3.00
+DCO          C2          C3         H31     110.881    2.03
+DCO          C2          C3         H32     110.881    2.03
+DCO          P1          C3         H31     108.528    1.50
+DCO          P1          C3         H32     108.528    1.50
+DCO         H31          C3         H32     108.296    2.31
+DCO          C3          P1          O3     110.326    3.00
+DCO          C3          P1          O4     110.326    3.00
+DCO          C3          P1          O5     110.326    3.00
+DCO          O3          P1          O4     111.786    1.50
+DCO          O3          P1          O5     111.786    1.50
+DCO          O4          P1          O5     111.786    1.50
+DCO          C2          C4         CL1     121.866    3.00
+DCO          C2          C4         CL2     121.866    3.00
+DCO         CL1          C4         CL2     116.268    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DCO             sp2_sp2_1          O1          C1          C2          C3     180.000   10.00     2
+DCO             sp2_sp3_2          C1          C2          C3          P1     120.000   10.00     6
+DCO             sp2_sp2_7          C1          C2          C4         CL1       0.000   10.00     2
+DCO             sp3_sp3_1          C2          C3          P1          O3     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DCO    plan-1          C1   0.020
+DCO    plan-1          C2   0.020
+DCO    plan-1          O1   0.020
+DCO    plan-1          O2   0.020
+DCO    plan-2          C1   0.020
+DCO    plan-2          C2   0.020
+DCO    plan-2          C3   0.020
+DCO    plan-2          C4   0.020
+DCO    plan-3          C2   0.020
+DCO    plan-3          C4   0.020
+DCO    plan-3         CL1   0.020
+DCO    plan-3         CL2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DCO SMILES           ACDLabs              10.04 "O=C(O)\C(=C(/Cl)Cl)CP(=O)(O)O"
+DCO SMILES_CANONICAL CACTVS               3.341 "OC(=O)C(C[P](O)(O)=O)=C(Cl)Cl"
+DCO SMILES           CACTVS               3.341 "OC(=O)C(C[P](O)(O)=O)=C(Cl)Cl"
+DCO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=C(Cl)Cl)C(=O)O)P(=O)(O)O"
+DCO SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=C(Cl)Cl)C(=O)O)P(=O)(O)O"
+DCO InChI            InChI                1.03  "InChI=1S/C4H5Cl2O5P/c5-3(6)2(4(7)8)1-12(9,10)11/h1H2,(H,7,8)(H2,9,10,11)"
+DCO InChIKey         InChI                1.03  IBGSKYLUHGAGLB-UHFFFAOYSA-N
+DCO ?                acedrg               202         "dictionary generator"                  
+DCO ?                acedrg_database      11          "data source"                           
+DCO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DCO ?                refmac5              5.8.0189    "optimization tool"                     

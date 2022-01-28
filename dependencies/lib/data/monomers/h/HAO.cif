@@ -1,0 +1,256 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HAO      HAO '{[3-(hydrazinocarbonyl)-4-methoxyphe' non-polymer        28  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HAO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HAO           O5     O    OC       -0.500      0.000    0.000    0.000
+ HAO           C23    C    C         0.000     -1.051   -0.562    0.381
+ HAO           O24    O    OC       -0.500     -0.995   -1.681    0.937
+ HAO           C21    C    C         0.000     -2.371    0.104    0.171
+ HAO           O22    O    O         0.000     -2.425    1.191   -0.368
+ HAO           N20    N    NH1       0.000     -3.503   -0.501    0.582
+ HAO           HN20   H    H         0.000     -3.454   -1.371    1.092
+ HAO           C19    C    CR6       0.000     -4.746    0.076    0.301
+ HAO           C13    C    CR16      0.000     -5.837   -0.732    0.026
+ HAO           H13    H    H         0.000     -5.729   -1.809    0.029
+ HAO           C18    C    CR16      0.000     -4.883    1.461    0.297
+ HAO           H18    H    H         0.000     -4.028    2.088    0.517
+ HAO           C17    C    CR16      0.000     -6.104    2.038    0.016
+ HAO           H17    H    H         0.000     -6.203    3.117    0.011
+ HAO           C14    C    CR6       0.000     -7.206    1.242   -0.261
+ HAO           O15    O    O2        0.000     -8.405    1.813   -0.537
+ HAO           C15    C    CH3       0.000     -8.462    3.240   -0.527
+ HAO           H15B   H    H         0.000     -9.447    3.556   -0.756
+ HAO           H15A   H    H         0.000     -8.192    3.598    0.432
+ HAO           H15    H    H         0.000     -7.791    3.626   -1.250
+ HAO           C12    C    CR6       0.000     -7.076   -0.153   -0.254
+ HAO           C10    C    C         0.000     -8.244   -1.007   -0.547
+ HAO           O11    O    O         0.000     -9.320   -0.501   -0.795
+ HAO           N9     N    NH1       0.000     -8.116   -2.349   -0.539
+ HAO           H10    H    H         0.000     -7.221   -2.770   -0.332
+ HAO           N8     N    NH2       0.000     -9.196   -3.140   -0.810
+ HAO           H9     H    H         0.000     -9.477   -3.836   -0.143
+ HAO           HN8    H    H         0.000     -9.694   -3.015   -1.673
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HAO      O5     n/a    C23    START
+ HAO      C23    O5     C21    .
+ HAO      O24    C23    .      .
+ HAO      C21    C23    N20    .
+ HAO      O22    C21    .      .
+ HAO      N20    C21    C19    .
+ HAO      HN20   N20    .      .
+ HAO      C19    N20    C18    .
+ HAO      C13    C19    H13    .
+ HAO      H13    C13    .      .
+ HAO      C18    C19    C17    .
+ HAO      H18    C18    .      .
+ HAO      C17    C18    C14    .
+ HAO      H17    C17    .      .
+ HAO      C14    C17    C12    .
+ HAO      O15    C14    C15    .
+ HAO      C15    O15    H15    .
+ HAO      H15B   C15    .      .
+ HAO      H15A   C15    .      .
+ HAO      H15    C15    .      .
+ HAO      C12    C14    C10    .
+ HAO      C10    C12    N9     .
+ HAO      O11    C10    .      .
+ HAO      N9     C10    N8     .
+ HAO      H10    N9     .      .
+ HAO      N8     N9     HN8    .
+ HAO      H9     N8     .      .
+ HAO      HN8    N8     .      END
+ HAO      C12    C13    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HAO       N8        N9        single    1.400     0.020     1.400     0.020     
+HAO       HN8       N8        single    1.036     0.016     0.914     0.007     
+HAO       N9        C10       single    1.330     0.020     1.330     0.020     
+HAO       C10       C12       single    1.500     0.020     1.500     0.020     
+HAO       O11       C10       double    1.220     0.020     1.220     0.020     
+HAO       C12       C14       single    1.487     0.020     1.487     0.020     
+HAO       C12       C13       double    1.390     0.020     1.390     0.020     
+HAO       C13       C19       single    1.390     0.020     1.390     0.020     
+HAO       H13       C13       single    1.082     0.013     0.975     0.010     
+HAO       C14       C17       double    1.390     0.020     1.390     0.020     
+HAO       O15       C14       single    1.370     0.020     1.370     0.020     
+HAO       H15       C15       single    1.089     0.010     0.989     0.005     
+HAO       H15A      C15       single    1.089     0.010     0.989     0.005     
+HAO       H15B      C15       single    1.089     0.010     0.989     0.005     
+HAO       C15       O15       single    1.426     0.020     1.426     0.020     
+HAO       H17       C17       single    1.082     0.013     0.975     0.010     
+HAO       C17       C18       single    1.390     0.020     1.390     0.020     
+HAO       H18       C18       single    1.082     0.013     0.975     0.010     
+HAO       C18       C19       double    1.390     0.020     1.390     0.020     
+HAO       C19       N20       single    1.350     0.020     1.350     0.020     
+HAO       HN20      N20       single    1.016     0.010     0.899     0.007     
+HAO       N20       C21       single    1.330     0.020     1.330     0.020     
+HAO       O22       C21       double    1.220     0.020     1.220     0.020     
+HAO       C21       C23       single    1.460     0.020     1.460     0.020     
+HAO       C23       O5        deloc     1.250     0.020     1.250     0.020     
+HAO       O24       C23       deloc     1.250     0.020     1.250     0.020     
+HAO       H9        N8        single    1.036     0.016     0.914     0.007     
+HAO       H10       N9        single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HAO      O5     C23    O24     123.000    3.000
+ HAO      O5     C23    C21     120.000    3.000
+ HAO      O24    C23    C21     120.000    3.000
+ HAO      C23    C21    O22     120.500    3.000
+ HAO      C23    C21    N20     120.000    3.000
+ HAO      O22    C21    N20     123.000    3.000
+ HAO      C21    N20    HN20    120.000    3.000
+ HAO      C21    N20    C19     120.000    3.000
+ HAO      HN20   N20    C19     120.000    3.000
+ HAO      N20    C19    C13     120.000    3.000
+ HAO      N20    C19    C18     120.000    3.000
+ HAO      C13    C19    C18     120.000    3.000
+ HAO      C19    C13    H13     120.000    3.000
+ HAO      C19    C13    C12     120.000    3.000
+ HAO      H13    C13    C12     120.000    3.000
+ HAO      C19    C18    H18     120.000    3.000
+ HAO      C19    C18    C17     120.000    3.000
+ HAO      H18    C18    C17     120.000    3.000
+ HAO      C18    C17    H17     120.000    3.000
+ HAO      C18    C17    C14     120.000    3.000
+ HAO      H17    C17    C14     120.000    3.000
+ HAO      C17    C14    O15     120.000    3.000
+ HAO      C17    C14    C12     120.000    3.000
+ HAO      O15    C14    C12     120.000    3.000
+ HAO      C14    O15    C15     120.000    3.000
+ HAO      O15    C15    H15B    109.470    3.000
+ HAO      O15    C15    H15A    109.470    3.000
+ HAO      O15    C15    H15     109.470    3.000
+ HAO      H15B   C15    H15A    109.470    3.000
+ HAO      H15B   C15    H15     109.470    3.000
+ HAO      H15A   C15    H15     109.470    3.000
+ HAO      C14    C12    C10     120.000    3.000
+ HAO      C14    C12    C13     120.000    3.000
+ HAO      C10    C12    C13     120.000    3.000
+ HAO      C12    C10    O11     120.500    3.000
+ HAO      C12    C10    N9      120.000    3.000
+ HAO      O11    C10    N9      123.000    3.000
+ HAO      C10    N9     H10     120.000    3.000
+ HAO      C10    N9     N8      120.000    3.000
+ HAO      H10    N9     N8      120.000    3.000
+ HAO      N9     N8     H9      120.000    3.000
+ HAO      N9     N8     HN8     120.000    3.000
+ HAO      H9     N8     HN8     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HAO      var_1    O5     C23    C21    N20     -179.990   20.000   1
+ HAO      CONST_1  C23    C21    N20    C19      180.000    0.000   0
+ HAO      var_2    C21    N20    C19    C18      -35.146   20.000   1
+ HAO      CONST_2  N20    C19    C13    C12      180.000    0.000   0
+ HAO      CONST_3  N20    C19    C18    C17      180.000    0.000   0
+ HAO      CONST_4  C19    C18    C17    C14        0.000    0.000   0
+ HAO      CONST_5  C18    C17    C14    C12        0.000    0.000   0
+ HAO      var_3    C17    C14    O15    C15        0.076   20.000   1
+ HAO      var_4    C14    O15    C15    H15       59.991   20.000   1
+ HAO      CONST_6  C17    C14    C12    C10      180.000    0.000   0
+ HAO      CONST_7  C14    C12    C13    C19        0.000    0.000   0
+ HAO      var_5    C14    C12    C10    N9      -179.988   20.000   1
+ HAO      CONST_8  C12    C10    N9     N8       180.000    0.000   0
+ HAO      CONST_9  C10    N9     N8     HN8       56.032    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HAO      plan-1    N8        0.020
+ HAO      plan-1    N9        0.020
+ HAO      plan-1    HN8       0.020
+ HAO      plan-1    H9        0.020
+ HAO      plan-1    H10       0.020
+ HAO      plan-2    N9        0.020
+ HAO      plan-2    N8        0.020
+ HAO      plan-2    C10       0.020
+ HAO      plan-2    H10       0.020
+ HAO      plan-2    H9        0.020
+ HAO      plan-2    HN8       0.020
+ HAO      plan-3    C10       0.020
+ HAO      plan-3    N9        0.020
+ HAO      plan-3    O11       0.020
+ HAO      plan-3    C12       0.020
+ HAO      plan-3    H10       0.020
+ HAO      plan-4    C12       0.020
+ HAO      plan-4    C10       0.020
+ HAO      plan-4    C13       0.020
+ HAO      plan-4    C14       0.020
+ HAO      plan-4    C17       0.020
+ HAO      plan-4    C18       0.020
+ HAO      plan-4    C19       0.020
+ HAO      plan-4    H13       0.020
+ HAO      plan-4    O15       0.020
+ HAO      plan-4    H17       0.020
+ HAO      plan-4    H18       0.020
+ HAO      plan-4    N20       0.020
+ HAO      plan-4    HN20      0.020
+ HAO      plan-5    N20       0.020
+ HAO      plan-5    C19       0.020
+ HAO      plan-5    C21       0.020
+ HAO      plan-5    HN20      0.020
+ HAO      plan-6    C21       0.020
+ HAO      plan-6    N20       0.020
+ HAO      plan-6    O22       0.020
+ HAO      plan-6    C23       0.020
+ HAO      plan-6    HN20      0.020
+ HAO      plan-7    C23       0.020
+ HAO      plan-7    C21       0.020
+ HAO      plan-7    O24       0.020
+ HAO      plan-7    O5        0.020
+# ------------------------------------------------------

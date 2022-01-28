@@ -1,0 +1,189 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GAD      GAD '2,6-ANHYDRO-3-DEOXY-D-ERYTHRO-HEX-2-' non-polymer        18  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GAD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GAD           O6B    O    OC       -0.500      0.000    0.000    0.000
+ GAD           C6     C    C         0.000     -1.166   -0.159   -0.424
+ GAD           O6A    O    OC       -0.500     -1.366   -0.375   -1.640
+ GAD           C5     C    C         0.000     -2.306   -0.091    0.508
+ GAD           O5     O    O2        0.000     -2.018    0.144    1.800
+ GAD           C1     C    CH2       0.000     -3.061   -0.347    2.633
+ GAD           H12    H    H         0.000     -2.843   -0.102    3.675
+ GAD           H11    H    H         0.000     -3.138   -1.431    2.524
+ GAD           C4     C    C1        0.000     -3.507   -0.268   -0.007
+ GAD           H4     H    H         0.000     -3.598   -0.439   -1.067
+ GAD           C3     C    CH1       0.000     -4.757   -0.241    0.834
+ GAD           H3     H    H         0.000     -5.159   -1.259    0.932
+ GAD           O3     O    OH1       0.000     -5.732    0.604    0.222
+ GAD           HO3    H    H         0.000     -5.945    0.265   -0.658
+ GAD           C2     C    CH1       0.000     -4.387    0.305    2.220
+ GAD           H2     H    H         0.000     -4.267    1.397    2.171
+ GAD           O2     O    OH1       0.000     -5.408   -0.029    3.162
+ GAD           HO2    H    H         0.000     -5.160    0.304    4.036
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GAD      O6B    n/a    C6     START
+ GAD      C6     O6B    C5     .
+ GAD      O6A    C6     .      .
+ GAD      C5     C6     C4     .
+ GAD      O5     C5     C1     .
+ GAD      C1     O5     H11    .
+ GAD      H12    C1     .      .
+ GAD      H11    C1     .      .
+ GAD      C4     C5     C3     .
+ GAD      H4     C4     .      .
+ GAD      C3     C4     C2     .
+ GAD      H3     C3     .      .
+ GAD      O3     C3     HO3    .
+ GAD      HO3    O3     .      .
+ GAD      C2     C3     O2     .
+ GAD      H2     C2     .      .
+ GAD      O2     C2     HO2    .
+ GAD      HO2    O2     .      END
+ GAD      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GAD       C1        C2        single    1.524     0.020     1.524     0.020     
+GAD       C1        O5        single    1.426     0.020     1.426     0.020     
+GAD       H11       C1        single    1.089     0.010     0.989     0.005     
+GAD       H12       C1        single    1.089     0.010     0.989     0.005     
+GAD       O2        C2        single    1.432     0.020     1.432     0.020     
+GAD       C2        C3        single    1.524     0.020     1.524     0.020     
+GAD       H2        C2        single    1.089     0.010     0.989     0.005     
+GAD       HO2       O2        single    0.970     0.012     0.839     0.014     
+GAD       O3        C3        single    1.432     0.020     1.432     0.020     
+GAD       C3        C4        single    1.510     0.020     1.510     0.020     
+GAD       H3        C3        single    1.089     0.010     0.989     0.005     
+GAD       HO3       O3        single    0.970     0.012     0.839     0.014     
+GAD       C4        C5        double    1.340     0.020     1.340     0.020     
+GAD       H4        C4        single    1.082     0.013     0.975     0.010     
+GAD       C5        C6        single    1.460     0.020     1.460     0.020     
+GAD       O5        C5        single    1.454     0.020     1.454     0.020     
+GAD       O6A       C6        deloc     1.250     0.020     1.250     0.020     
+GAD       C6        O6B       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GAD      O6B    C6     O6A     123.000    3.000
+ GAD      O6B    C6     C5      120.000    3.000
+ GAD      O6A    C6     C5      120.000    3.000
+ GAD      C6     C5     O5      120.000    3.000
+ GAD      C6     C5     C4      120.000    3.000
+ GAD      O5     C5     C4      120.000    3.000
+ GAD      C5     O5     C1      120.000    3.000
+ GAD      O5     C1     H12     109.470    3.000
+ GAD      O5     C1     H11     109.470    3.000
+ GAD      O5     C1     C2      109.470    3.000
+ GAD      H12    C1     H11     107.900    3.000
+ GAD      H12    C1     C2      109.470    3.000
+ GAD      H11    C1     C2      109.470    3.000
+ GAD      C5     C4     H4      120.000    3.000
+ GAD      C5     C4     C3      120.500    3.000
+ GAD      H4     C4     C3      120.000    3.000
+ GAD      C4     C3     H3      108.810    3.000
+ GAD      C4     C3     O3      109.470    3.000
+ GAD      C4     C3     C2      109.470    3.000
+ GAD      H3     C3     O3      109.470    3.000
+ GAD      H3     C3     C2      108.340    3.000
+ GAD      O3     C3     C2      109.470    3.000
+ GAD      C3     O3     HO3     109.470    3.000
+ GAD      C3     C2     H2      108.340    3.000
+ GAD      C3     C2     O2      109.470    3.000
+ GAD      C3     C2     C1      111.000    3.000
+ GAD      H2     C2     O2      109.470    3.000
+ GAD      H2     C2     C1      108.340    3.000
+ GAD      O2     C2     C1      109.470    3.000
+ GAD      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GAD      var_1    O6B    C6     C5     C4      -179.960   20.000   1
+ GAD      var_2    C6     C5     O5     C1      -150.000   20.000   1
+ GAD      var_3    C5     O5     C1     C2       -60.000   20.000   1
+ GAD      var_4    O5     C1     C2     C3        60.000   20.000   3
+ GAD      var_5    C6     C5     C4     C3       180.000   20.000   1
+ GAD      var_6    C5     C4     C3     C2         0.000   20.000   1
+ GAD      var_7    C4     C3     O3     HO3       60.024   20.000   1
+ GAD      var_8    C4     C3     C2     O2      -150.000   20.000   3
+ GAD      var_9    C3     C2     O2     HO2      178.930   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GAD      chir_01  C2     C1     O2     C3        positiv
+ GAD      chir_02  C3     C2     O3     C4        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GAD      plan-1    C4        0.020
+ GAD      plan-1    C3        0.020
+ GAD      plan-1    C5        0.020
+ GAD      plan-1    H4        0.020
+ GAD      plan-2    C5        0.020
+ GAD      plan-2    C4        0.020
+ GAD      plan-2    C6        0.020
+ GAD      plan-2    O5        0.020
+ GAD      plan-2    H4        0.020
+ GAD      plan-3    C6        0.020
+ GAD      plan-3    C5        0.020
+ GAD      plan-3    O6A       0.020
+ GAD      plan-3    O6B       0.020
+# ------------------------------------------------------

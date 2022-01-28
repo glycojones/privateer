@@ -1,0 +1,185 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SVW      SVW 'O-[(R)-AMINO(HYDROXY)PHOSPHORYL]-L-S' non-polymer        19  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SVW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SVW           OXT    O    OC       -0.500      0.000    0.000    0.000
+ SVW           C      C    C         0.000      0.764   -0.159    0.978
+ SVW           O      O    OC       -0.500      1.995   -0.341    0.856
+ SVW           CA     C    CH1       0.000      0.025   -0.052    2.296
+ SVW           HC     H    H         0.000     -1.020   -0.359    2.148
+ SVW           N      N    NH2       0.000      0.658   -0.962    3.219
+ SVW           HN2    H    H         0.000      0.119   -1.700    3.647
+ SVW           HN1    H    H         0.000      1.638   -0.858    3.434
+ SVW           CB     C    CH2       0.000      0.055    1.380    2.810
+ SVW           HBC1   H    H         0.000      1.090    1.687    2.978
+ SVW           HBC2   H    H         0.000     -0.499    1.444    3.748
+ SVW           OG     O    O2        0.000     -0.544    2.235    1.843
+ SVW           P1     P    P         0.000     -0.652    3.830    2.124
+ SVW           O3     O    O         0.000     -1.113    4.578    0.900
+ SVW           N2     N    NH2       0.000     -1.549    4.043    3.496
+ SVW           H2N2   H    H         0.000     -2.029    3.259    3.879
+ SVW           H2N1   H    H         0.000     -1.588    4.951    3.904
+ SVW           O4     O    OH1       0.000      0.880    4.208    2.509
+ SVW           H4     H    H         0.000      1.406    4.773    1.922
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SVW      OXT    n/a    C      START
+ SVW      C      OXT    CA     .
+ SVW      O      C      .      .
+ SVW      CA     C      CB     .
+ SVW      HC     CA     .      .
+ SVW      N      CA     HN1    .
+ SVW      HN2    N      .      .
+ SVW      HN1    N      .      .
+ SVW      CB     CA     OG     .
+ SVW      HBC1   CB     .      .
+ SVW      HBC2   CB     .      .
+ SVW      OG     CB     P1     .
+ SVW      P1     OG     O4     .
+ SVW      O3     P1     .      .
+ SVW      N2     P1     H2N1   .
+ SVW      H2N2   N2     .      .
+ SVW      H2N1   N2     .      .
+ SVW      O4     P1     H4     .
+ SVW      H4     O4     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SVW       HN1       N         single    1.036     0.016     0.914     0.007     
+SVW       HN2       N         single    1.036     0.016     0.914     0.007     
+SVW       HC        CA        single    1.089     0.010     0.989     0.005     
+SVW       N         CA        single    1.450     0.020     1.450     0.020     
+SVW       CA        C         single    1.500     0.020     1.500     0.020     
+SVW       O         C         deloc     1.250     0.020     1.250     0.020     
+SVW       CB        CA        single    1.524     0.020     1.524     0.020     
+SVW       OG        CB        single    1.426     0.020     1.426     0.020     
+SVW       P1        OG        single    1.610     0.020     1.610     0.020     
+SVW       O3        P1        double    1.480     0.020     1.480     0.020     
+SVW       O4        P1        single    1.610     0.020     1.610     0.020     
+SVW       N2        P1        single    1.750     0.020     1.750     0.020     
+SVW       C         OXT       deloc     1.250     0.020     1.250     0.020     
+SVW       HBC1      CB        single    1.089     0.010     0.989     0.005     
+SVW       HBC2      CB        single    1.089     0.010     0.989     0.005     
+SVW       H4        O4        single    0.970     0.012     0.839     0.014     
+SVW       H2N1      N2        single    1.036     0.016     0.914     0.007     
+SVW       H2N2      N2        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SVW      OXT    C      O       123.000    3.000
+ SVW      OXT    C      CA      118.500    3.000
+ SVW      O      C      CA      118.500    3.000
+ SVW      C      CA     HC      108.810    3.000
+ SVW      C      CA     N       109.470    3.000
+ SVW      C      CA     CB      109.470    3.000
+ SVW      HC     CA     N       109.470    3.000
+ SVW      HC     CA     CB      108.340    3.000
+ SVW      N      CA     CB      109.470    3.000
+ SVW      CA     N      HN2     120.000    3.000
+ SVW      CA     N      HN1     120.000    3.000
+ SVW      HN2    N      HN1     120.000    3.000
+ SVW      CA     CB     HBC1    109.470    3.000
+ SVW      CA     CB     HBC2    109.470    3.000
+ SVW      CA     CB     OG      109.470    3.000
+ SVW      HBC1   CB     HBC2    107.900    3.000
+ SVW      HBC1   CB     OG      109.470    3.000
+ SVW      HBC2   CB     OG      109.470    3.000
+ SVW      CB     OG     P1      120.500    3.000
+ SVW      OG     P1     O3      109.500    3.000
+ SVW      OG     P1     N2      109.500    3.000
+ SVW      OG     P1     O4      109.500    3.000
+ SVW      O3     P1     N2      109.500    3.000
+ SVW      O3     P1     O4      109.500    3.000
+ SVW      N2     P1     O4      109.500    3.000
+ SVW      P1     N2     H2N2    120.000    3.000
+ SVW      P1     N2     H2N1    120.000    3.000
+ SVW      H2N2   N2     H2N1    120.000    3.000
+ SVW      P1     O4     H4      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SVW      var_1    OXT    C      CA     CB       -91.673   20.000   3
+ SVW      var_2    C      CA     N      HN1       58.744   20.000   1
+ SVW      var_3    C      CA     CB     OG        58.803   20.000   3
+ SVW      var_4    CA     CB     OG     P1       179.986   20.000   1
+ SVW      var_5    CB     OG     P1     O4        51.911   20.000   1
+ SVW      var_6    OG     P1     N2     H2N1     169.663   20.000   1
+ SVW      var_7    OG     P1     O4     H4       112.819   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SVW      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SVW      plan-1    N         0.020
+ SVW      plan-1    CA        0.020
+ SVW      plan-1    HN1       0.020
+ SVW      plan-1    HN2       0.020
+ SVW      plan-2    C         0.020
+ SVW      plan-2    CA        0.020
+ SVW      plan-2    O         0.020
+ SVW      plan-2    OXT       0.020
+ SVW      plan-3    N2        0.020
+ SVW      plan-3    P1        0.020
+ SVW      plan-3    H2N1      0.020
+ SVW      plan-3    H2N2      0.020
+# ------------------------------------------------------

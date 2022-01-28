@@ -1,0 +1,183 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+B51      B51 'NICKEL/IRON/SULFUR CLUSTER          ' non-polymer        12   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_B51
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ B51           HS4    H    H         0.000     57.313   10.643   48.519
+ B51           S4     S    ST        0.000     56.099   10.861   48.523
+ B51           FE2    FE   FE        0.000     54.599   10.211   50.017
+ B51           NI1    NI   NI        0.000     54.997   12.282   47.325
+ B51           S2     S    ST        0.000     53.384   11.369   46.501
+ B51           HS2    H    H         0.000     52.854   11.470   45.392
+ B51           S1     S    ST        0.000     53.110   11.959   50.290
+ B51           HS1    H    H         0.000     52.599   12.648   51.176
+ B51           FE3    FE   FE        0.000     54.488    9.718   47.470
+ B51           S3     S    ST        0.000     53.274    8.663   49.093
+ B51           HS3    H    H         0.000     52.823    7.543   49.347
+ B51           FE1    FE   FE        0.000     52.549   10.696   48.583
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ B51      HS4    n/a    S4     START
+ B51      S4     HS4    FE3    .
+ B51      FE2    S4     .      .
+ B51      NI1    S4     S1     .
+ B51      S2     NI1    HS2    .
+ B51      HS2    S2     .      .
+ B51      S1     NI1    HS1    .
+ B51      HS1    S1     .      .
+ B51      FE3    S4     S3     .
+ B51      S3     FE3    FE1    .
+ B51      HS3    S3     .      .
+ B51      FE1    S3     .      END
+ B51      S1     FE1    .    ADD
+ B51      S1     FE2    .    ADD
+ B51      FE1    S2     .    ADD
+ B51      S2     FE3    .    ADD
+ B51      S3     FE2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+B51       S1        FE1       single    2.135     0.020     2.135     0.020     
+B51       S1        FE2       single    2.135     0.020     2.135     0.020     
+B51       FE1       S2        single    2.135     0.020     2.135     0.020     
+B51       FE1       S3        single    2.135     0.020     2.135     0.020     
+B51       S2        FE3       single    2.135     0.020     2.135     0.020     
+B51       S2        NI1       single    2.300     0.020     2.300     0.020     
+B51       S3        FE2       single    2.135     0.020     2.135     0.020     
+B51       S3        FE3       single    2.135     0.020     2.135     0.020     
+B51       FE2       S4        single    2.135     0.020     2.135     0.020     
+B51       FE3       S4        single    2.135     0.020     2.135     0.020     
+B51       NI1       S4        single    2.300     0.020     2.300     0.020     
+B51       S1        NI1       single    2.300     0.020     2.300     0.020     
+B51       HS1       S1        single    1.338     0.010     1.171     0.208     
+B51       HS2       S2        single    1.338     0.010     1.171     0.208     
+B51       HS3       S3        single    1.338     0.010     1.171     0.208     
+B51       S4        HS4       single    1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ B51      HS4    S4     FE2     109.500    3.000
+ B51      HS4    S4     NI1     109.500    3.000
+ B51      HS4    S4     FE3     109.500    3.000
+ B51      FE2    S4     NI1     109.500    3.000
+ B51      FE2    S4     FE3     109.500    3.000
+ B51      NI1    S4     FE3     109.500    3.000
+ B51      S4     FE2    S1       90.000    3.000
+ B51      S4     FE2    S3       90.000    3.000
+ B51      S1     FE2    S3       90.000    3.000
+ B51      S4     NI1    S2       90.000    3.000
+ B51      S4     NI1    S1       90.000    3.000
+ B51      S2     NI1    S1       90.000    3.000
+ B51      NI1    S2     HS2     109.500    3.000
+ B51      NI1    S2     FE1     109.500    3.000
+ B51      NI1    S2     FE3     109.500    3.000
+ B51      FE1    S2     FE3     109.500    3.000
+ B51      HS2    S2     FE1     109.500    3.000
+ B51      HS2    S2     FE3     109.500    3.000
+ B51      NI1    S1     HS1     109.500    3.000
+ B51      NI1    S1     FE1     109.500    3.000
+ B51      NI1    S1     FE2     109.500    3.000
+ B51      FE1    S1     FE2     109.500    3.000
+ B51      HS1    S1     FE1     109.500    3.000
+ B51      HS1    S1     FE2     109.500    3.000
+ B51      S4     FE3    S3       90.000    3.000
+ B51      S4     FE3    S2       90.000    3.000
+ B51      S3     FE3    S2      120.000    3.000
+ B51      FE3    S3     HS3     109.500    3.000
+ B51      FE3    S3     FE1     109.500    3.000
+ B51      FE3    S3     FE2     109.500    3.000
+ B51      HS3    S3     FE1     109.500    3.000
+ B51      HS3    S3     FE2     109.500    3.000
+ B51      FE1    S3     FE2     109.500    3.000
+ B51      S3     FE1    S1       90.000    3.000
+ B51      S3     FE1    S2       90.000    3.000
+ B51      S1     FE1    S2       90.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ B51      var_1    HS4    S4     FE2    S1       175.000   20.000   1
+ B51      var_2    HS4    S4     NI1    S1       175.000   20.000   1
+ B51      var_3    S4     NI1    S2     FE1       56.649   20.000   1
+ B51      var_4    FE1    S2     FE3    S4         0.000   20.000   1
+ B51      var_5    S4     NI1    S1     FE1      -94.386   20.000   1
+ B51      var_6    NI1    S1     FE1    S3       105.280   20.000   1
+ B51      var_7    NI1    S1     FE2    S4        17.416   20.000   1
+ B51      var_8    FE2    S4     FE3    S2         0.000   20.000   1
+ B51      var_9    HS3    S3     FE3    S4         0.000   20.000   1
+ B51      var_10   FE3    S3     FE2    S4       -13.707   20.000   1
+ B51      var_11   FE3    S3     FE1    S1      -107.235   20.000   1
+ B51      var_12   S3     FE1    S2     NI1      -92.517   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ B51      chir_01  S1     FE1    FE2    NI1       negativ
+                   .      .      .      .      .
+ B51      chir_02  S2     FE1    FE3    NI1       positiv
+                   .      .      .      .      .
+ B51      chir_03  S3     FE1    FE2    FE3       positiv
+                   .      .      .      .      .
+ B51      chir_04  S4     FE2    FE3    NI1       negativ
+                   .      .      .      .      .
+ B51      chir_05  FE3    S4     .      S3        cross3
+                   S2     .      .      .      .
+# ------------------------------------------------------

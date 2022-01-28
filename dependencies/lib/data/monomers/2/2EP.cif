@@ -1,0 +1,208 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+2EP      2EP '2-ETHYLPIPERIDINE                   ' non-polymer        23   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_2EP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 2EP           "C2'"  C    CH3       0.000      0.000    0.000    0.000
+ 2EP           "H2'1" H    H         0.000      0.741    0.365    0.665
+ 2EP           "H2'2" H    H         0.000      0.101   -1.051   -0.094
+ 2EP           "H2'3" H    H         0.000      0.130    0.451   -0.951
+ 2EP           "C1'"  C    CH2       0.000     -1.390    0.337    0.543
+ 2EP           "H1'1" H    H         0.000     -1.488    1.420    0.641
+ 2EP           "H1'2" H    H         0.000     -1.520   -0.129    1.522
+ 2EP           C2     C    CH1       0.000     -2.456   -0.188   -0.420
+ 2EP           H2     H    H         0.000     -2.355   -1.278   -0.516
+ 2EP           C3     C    CH2       0.000     -3.844    0.147    0.128
+ 2EP           H31    H    H         0.000     -3.956    1.231    0.202
+ 2EP           H32    H    H         0.000     -3.964   -0.299    1.117
+ 2EP           C4     C    CH2       0.000     -4.908   -0.413   -0.820
+ 2EP           H41    H    H         0.000     -5.900   -0.110   -0.480
+ 2EP           H42    H    H         0.000     -4.848   -1.504   -0.836
+ 2EP           C5     C    CH2       0.000     -4.659    0.135   -2.227
+ 2EP           H51    H    H         0.000     -4.796    1.218   -2.228
+ 2EP           H52    H    H         0.000     -5.363   -0.320   -2.927
+ 2EP           C6     C    CH2       0.000     -3.227   -0.200   -2.652
+ 2EP           H61    H    H         0.000     -3.056    0.167   -3.666
+ 2EP           H62    H    H         0.000     -3.087   -1.283   -2.629
+ 2EP           N1     N    NH1       0.000     -2.278    0.436   -1.734
+ 2EP           HN1    H    H         0.000     -1.622    1.168   -1.964
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 2EP      "C2'"  n/a    "C1'"  START
+ 2EP      "H2'1" "C2'"  .      .
+ 2EP      "H2'2" "C2'"  .      .
+ 2EP      "H2'3" "C2'"  .      .
+ 2EP      "C1'"  "C2'"  C2     .
+ 2EP      "H1'1" "C1'"  .      .
+ 2EP      "H1'2" "C1'"  .      .
+ 2EP      C2     "C1'"  C3     .
+ 2EP      H2     C2     .      .
+ 2EP      C3     C2     C4     .
+ 2EP      H31    C3     .      .
+ 2EP      H32    C3     .      .
+ 2EP      C4     C3     C5     .
+ 2EP      H41    C4     .      .
+ 2EP      H42    C4     .      .
+ 2EP      C5     C4     C6     .
+ 2EP      H51    C5     .      .
+ 2EP      H52    C5     .      .
+ 2EP      C6     C5     N1     .
+ 2EP      H61    C6     .      .
+ 2EP      H62    C6     .      .
+ 2EP      N1     C6     HN1    .
+ 2EP      HN1    N1     .      END
+ 2EP      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+2EP       N1        C2        single    1.450     0.020     1.450     0.020     
+2EP       N1        C6        single    1.450     0.020     1.450     0.020     
+2EP       HN1       N1        single    1.036     0.016     0.914     0.007     
+2EP       C3        C2        single    1.524     0.020     1.524     0.020     
+2EP       C2        "C1'"     single    1.524     0.020     1.524     0.020     
+2EP       H2        C2        single    1.089     0.010     0.989     0.005     
+2EP       C4        C3        single    1.524     0.020     1.524     0.020     
+2EP       H31       C3        single    1.089     0.010     0.989     0.005     
+2EP       H32       C3        single    1.089     0.010     0.989     0.005     
+2EP       C5        C4        single    1.524     0.020     1.524     0.020     
+2EP       H41       C4        single    1.089     0.010     0.989     0.005     
+2EP       H42       C4        single    1.089     0.010     0.989     0.005     
+2EP       C6        C5        single    1.524     0.020     1.524     0.020     
+2EP       H51       C5        single    1.089     0.010     0.989     0.005     
+2EP       H52       C5        single    1.089     0.010     0.989     0.005     
+2EP       H61       C6        single    1.089     0.010     0.989     0.005     
+2EP       H62       C6        single    1.089     0.010     0.989     0.005     
+2EP       "C1'"     "C2'"     single    1.513     0.020     1.513     0.020     
+2EP       "H1'1"    "C1'"     single    1.089     0.010     0.989     0.005     
+2EP       "H1'2"    "C1'"     single    1.089     0.010     0.989     0.005     
+2EP       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+2EP       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+2EP       "H2'3"    "C2'"     single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 2EP      "H2'1" "C2'"  "H2'2"  109.470    3.000
+ 2EP      "H2'1" "C2'"  "H2'3"  109.470    3.000
+ 2EP      "H2'2" "C2'"  "H2'3"  109.470    3.000
+ 2EP      "H2'1" "C2'"  "C1'"   109.470    3.000
+ 2EP      "H2'2" "C2'"  "C1'"   109.470    3.000
+ 2EP      "H2'3" "C2'"  "C1'"   109.470    3.000
+ 2EP      "C2'"  "C1'"  "H1'1"  109.470    3.000
+ 2EP      "C2'"  "C1'"  "H1'2"  109.470    3.000
+ 2EP      "C2'"  "C1'"  C2      111.000    3.000
+ 2EP      "H1'1" "C1'"  "H1'2"  107.900    3.000
+ 2EP      "H1'1" "C1'"  C2      109.470    3.000
+ 2EP      "H1'2" "C1'"  C2      109.470    3.000
+ 2EP      "C1'"  C2     H2      108.340    3.000
+ 2EP      "C1'"  C2     C3      109.470    3.000
+ 2EP      "C1'"  C2     N1      110.000    3.000
+ 2EP      H2     C2     C3      108.340    3.000
+ 2EP      H2     C2     N1      108.550    3.000
+ 2EP      C3     C2     N1      110.000    3.000
+ 2EP      C2     C3     H31     109.470    3.000
+ 2EP      C2     C3     H32     109.470    3.000
+ 2EP      C2     C3     C4      111.000    3.000
+ 2EP      H31    C3     H32     107.900    3.000
+ 2EP      H31    C3     C4      109.470    3.000
+ 2EP      H32    C3     C4      109.470    3.000
+ 2EP      C3     C4     H41     109.470    3.000
+ 2EP      C3     C4     H42     109.470    3.000
+ 2EP      C3     C4     C5      111.000    3.000
+ 2EP      H41    C4     H42     107.900    3.000
+ 2EP      H41    C4     C5      109.470    3.000
+ 2EP      H42    C4     C5      109.470    3.000
+ 2EP      C4     C5     H51     109.470    3.000
+ 2EP      C4     C5     H52     109.470    3.000
+ 2EP      C4     C5     C6      111.000    3.000
+ 2EP      H51    C5     H52     107.900    3.000
+ 2EP      H51    C5     C6      109.470    3.000
+ 2EP      H52    C5     C6      109.470    3.000
+ 2EP      C5     C6     H61     109.470    3.000
+ 2EP      C5     C6     H62     109.470    3.000
+ 2EP      C5     C6     N1      112.000    3.000
+ 2EP      H61    C6     H62     107.900    3.000
+ 2EP      H61    C6     N1      109.470    3.000
+ 2EP      H62    C6     N1      109.470    3.000
+ 2EP      C6     N1     HN1     118.500    3.000
+ 2EP      C6     N1     C2      120.000    3.000
+ 2EP      HN1    N1     C2      118.500    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 2EP      var_1    "H2'3" "C2'"  "C1'"  C2        59.902   20.000   3
+ 2EP      var_2    "C2'"  "C1'"  C2     C3       179.857   20.000   3
+ 2EP      var_3    "C1'"  C2     C3     C4       180.000   20.000   3
+ 2EP      var_4    C2     C3     C4     C5       -60.000   20.000   3
+ 2EP      var_5    C3     C4     C5     C6        60.000   20.000   3
+ 2EP      var_6    C4     C5     C6     N1       -60.000   20.000   3
+ 2EP      var_7    C5     C6     N1     C2        60.000   20.000   3
+ 2EP      var_8    C6     N1     C2     "C1'"    180.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 2EP      chir_01  C2     N1     C3     "C1'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 2EP      plan-1    N1        0.020
+ 2EP      plan-1    C2        0.020
+ 2EP      plan-1    C6        0.020
+ 2EP      plan-1    HN1       0.020
+# ------------------------------------------------------

@@ -1,0 +1,169 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NCY     NCY     N-METHYLCYSTEINE     M-peptide     16     8     .
+#
+data_comp_NCY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NCY     N       N       NT1     0       3.105       -1.150      -0.868
+NCY     CA      C       CH1     0       1.641       -1.251      -0.745
+NCY     CB      C       CH2     0       1.092       -0.248      0.266
+NCY     SG      S       SH1     0       -0.687      -0.397      0.581
+NCY     CN      C       CH3     0       3.742       -2.304      -1.509
+NCY     C       C       C       0       0.923       -1.081      -2.096
+NCY     O       O       O       0       1.081       0.003       -2.693
+NCY     OXT     O       OC      -1      0.233       -2.037      -2.501
+NCY     H       H       H       0       3.449       -1.083      -0.049
+NCY     HA      H       H       0       1.421       -2.154      -0.403
+NCY     HB2     H       H       0       1.275       0.657       -0.060
+NCY     HB3     H       H       0       1.566       -0.364      1.114
+NCY     HG      H       HSH1    0       -0.760      0.445       1.437
+NCY     HCN1    H       H       0       4.714       -2.228      -1.439
+NCY     HCN2    H       H       0       3.496       -2.343      -2.454
+NCY     HCN3    H       H       0       3.458       -3.130      -1.072
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+NCY      N      n/a    CA     START
+NCY      H      N      .      .
+NCY      CN     N      HCN1   .
+NCY      HCN3   CN     .      .
+NCY      HCN2   CN     .      .
+NCY      HCN1   CN     .      .
+NCY      CA     N      C      .
+NCY      HA     CA     .      .
+NCY      CB     CA     SG     .
+NCY      HB2    CB     .      .
+NCY      HB3    CB     .      .
+NCY      SG     CB     HG     .
+NCY      HG     SG     .      .
+NCY      C      CA     .      END
+NCY      O      C      .      .
+NCY      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NCY       N         CA        SINGLE    n         1.468     0.014     1.468     0.014     
+NCY       N         CN        SINGLE    n         1.463     0.015     1.463     0.015     
+NCY       CA        CB        SINGLE    n         1.525     0.010     1.525     0.010     
+NCY       CA        C         SINGLE    n         1.539     0.010     1.539     0.010     
+NCY       CB        SG        SINGLE    n         1.812     0.010     1.812     0.010     
+NCY       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+NCY       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+NCY       N         H         SINGLE    n         1.036     0.016     0.914     0.007     
+NCY       CA        HA        SINGLE    n         1.089     0.010     0.989     0.005     
+NCY       CB        HB2       SINGLE    n         1.089     0.010     0.989     0.005     
+NCY       CB        HB3       SINGLE    n         1.089     0.010     0.989     0.005     
+NCY       SG        HG        SINGLE    n         1.338     0.010     1.171     0.208     
+NCY       CN        HCN1      SINGLE    n         1.089     0.010     0.989     0.005     
+NCY       CN        HCN2      SINGLE    n         1.089     0.010     0.989     0.005     
+NCY       CN        HCN3      SINGLE    n         1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NCY          CA           N          CN     112.615    2.70
+NCY          CA           N           H     106.958    3.00
+NCY          CN           N           H     108.144    3.00
+NCY           N          CA          CB     111.883    2.59
+NCY           N          CA           C     113.481    2.07
+NCY           N          CA          HA     108.712    1.50
+NCY          CB          CA           C     110.594    1.50
+NCY          CB          CA          HA     107.636    1.50
+NCY           C          CA          HA     108.169    1.50
+NCY          CA          CB          SG     114.370    1.50
+NCY          CA          CB         HB2     108.682    1.50
+NCY          CA          CB         HB3     108.682    1.50
+NCY          SG          CB         HB2     108.544    1.50
+NCY          SG          CB         HB3     108.544    1.50
+NCY         HB2          CB         HB3     107.930    1.50
+NCY          CB          SG          HG      97.249    3.00
+NCY           N          CN        HCN1     110.215    1.50
+NCY           N          CN        HCN2     110.215    1.50
+NCY           N          CN        HCN3     110.215    1.50
+NCY        HCN1          CN        HCN2     109.279    1.79
+NCY        HCN1          CN        HCN3     109.279    1.79
+NCY        HCN2          CN        HCN3     109.279    1.79
+NCY          CA           C           O     117.226    1.56
+NCY          CA           C         OXT     117.226    1.56
+NCY           O           C         OXT     125.548    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NCY             sp3_sp3_4          CB          CA           N          CN     180.000   10.00     3
+NCY             sp3_sp3_7        HCN1          CN           N          CA     180.000   10.00     3
+NCY            sp3_sp3_13           N          CA          CB          SG     180.000   10.00     3
+NCY             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+NCY            sp3_sp3_22          CA          CB          SG          HG     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+NCY    chir_1    N    CA    CN    H    both
+NCY    chir_2    CA    N    CB    C    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NCY    plan-1           C   0.020
+NCY    plan-1          CA   0.020
+NCY    plan-1           O   0.020
+NCY    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NCY SMILES           ACDLabs              10.04 "O=C(O)C(NC)CS"
+NCY SMILES_CANONICAL CACTVS               3.341 "CN[C@@H](CS)C(O)=O"
+NCY SMILES           CACTVS               3.341 "CN[CH](CS)C(O)=O"
+NCY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CN[C@@H](CS)C(=O)O"
+NCY SMILES           "OpenEye OEToolkits" 1.5.0 "CNC(CS)C(=O)O"
+NCY InChI            InChI                1.03  "InChI=1S/C4H9NO2S/c1-5-3(2-8)4(6)7/h3,5,8H,2H2,1H3,(H,6,7)/t3-/m0/s1"
+NCY InChIKey         InChI                1.03  DVOOXRTYGGLORL-VKHMYHEASA-N
+NCY ?                acedrg               196         "dictionary generator"
+NCY ?                acedrg_database      11          "data source"
+NCY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NCY ?                refmac5              5.8.0222    "optimization tool"

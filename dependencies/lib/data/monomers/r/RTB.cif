@@ -1,0 +1,445 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RTB      RTB '.                                   ' non-polymer        52  33 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RTB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RTB           H331   H    H         0.000     23.141   13.169   21.270
+ RTB           C33    C    CR16      0.000     22.246   13.017   20.680
+ RTB           C10    C    CR66      0.000     22.001   11.717   20.082
+ RTB           C9     C    CR16      0.000     22.837   10.625   20.202
+ RTB           H91    H    H         0.000     23.746   10.693   20.787
+ RTB           C8     C    CR16      0.000     22.497    9.426   19.558
+ RTB           H81    H    H         0.000     23.131    8.552   19.639
+ RTB           C7     C    CR16      0.000     21.343    9.391   18.825
+ RTB           H71    H    H         0.000     21.069    8.473   18.321
+ RTB           C32    C    CR16      0.000     21.365   14.058   20.513
+ RTB           H321   H    H         0.000     21.584   15.009   20.982
+ RTB           C20    C    CR66      0.000     20.140   13.925   19.722
+ RTB           C19    C    CR16      0.000     19.213   14.935   19.532
+ RTB           H191   H    H         0.000     19.363   15.906   19.988
+ RTB           C18    C    CR16      0.000     18.105   14.698   18.764
+ RTB           H181   H    H         0.000     17.380   15.484   18.593
+ RTB           C17    C    CR16      0.000     17.916   13.421   18.198
+ RTB           H171   H    H         0.000     17.026   13.236   17.609
+ RTB           C21    C    CR66      0.000     19.920   12.673   19.152
+ RTB           C11    C    CR66      0.000     20.856   11.606   19.323
+ RTB           N2     N    NR6       0.000     20.533   10.470   18.711
+ RTB           N4     N    NR6       0.000     18.797   12.431   18.364
+ RTB           RU     RU   RU        2.000     18.850   10.529   17.686
+ RTB           N5     N    NR6       0.000     19.984   10.821   16.046
+ RTB           C23    C    CR16      0.000     20.470   11.986   15.561
+ RTB           H231   H    H         0.000     20.257   12.901   16.100
+ RTB           C24    C    CR16      0.000     21.239   12.059   14.388
+ RTB           H241   H    H         0.000     21.607   13.011   14.025
+ RTB           C25    C    CR16      0.000     21.514   10.895   13.711
+ RTB           H251   H    H         0.000     22.111   10.926   12.808
+ RTB           C26    C    CR16      0.000     21.036    9.692   14.172
+ RTB           H261   H    H         0.000     21.252    8.781   13.628
+ RTB           C22    C    CR6       0.000     20.265    9.641   15.351
+ RTB           C12    C    CR6       0.000     19.707    8.429   15.921
+ RTB           N6     N    NR6       0.000     17.779    9.606   19.099
+ RTB           C28    C    CR16      0.000     17.140   10.159   20.188
+ RTB           H281   H    H         0.000     17.193   11.231   20.333
+ RTB           C29    C    CR16      0.000     16.446    9.413   21.086
+ RTB           H291   H    H         0.000     15.969    9.880   21.939
+ RTB           C30    C    CR16      0.000     16.359    8.045   20.892
+ RTB           H301   H    H         0.000     15.795    7.436   21.588
+ RTB           C31    C    CR16      0.000     16.989    7.453   19.814
+ RTB           H311   H    H         0.000     16.940    6.381   19.671
+ RTB           C27    C    CR6       0.000     17.680    8.243   18.924
+ RTB           C16    C    CR6       0.000     18.402    7.727   17.736
+ RTB           N3     N    NR6       0.000     18.999    8.678   17.041
+ RTB           C15    C    CR16      0.000     18.465    6.389   17.335
+ RTB           H151   H    H         0.000     17.973    5.602   17.894
+ RTB           C14    C    CR16      0.000     19.205    6.117   16.160
+ RTB           H141   H    H         0.000     19.288    5.097   15.806
+ RTB           C13    C    CR16      0.000     19.826    7.137   15.454
+ RTB           H131   H    H         0.000     20.392    6.923   14.556
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RTB      H331   n/a    C33    START
+ RTB      C33    H331   C32    .
+ RTB      C10    C33    C9     .
+ RTB      C9     C10    C8     .
+ RTB      H91    C9     .      .
+ RTB      C8     C9     C7     .
+ RTB      H81    C8     .      .
+ RTB      C7     C8     H71    .
+ RTB      H71    C7     .      .
+ RTB      C32    C33    C20    .
+ RTB      H321   C32    .      .
+ RTB      C20    C32    C21    .
+ RTB      C19    C20    C18    .
+ RTB      H191   C19    .      .
+ RTB      C18    C19    C17    .
+ RTB      H181   C18    .      .
+ RTB      C17    C18    H171   .
+ RTB      H171   C17    .      .
+ RTB      C21    C20    N4     .
+ RTB      C11    C21    N2     .
+ RTB      N2     C11    .      .
+ RTB      N4     C21    RU     .
+ RTB      RU     N4     N6     .
+ RTB      N5     RU     C23    .
+ RTB      C23    N5     C24    .
+ RTB      H231   C23    .      .
+ RTB      C24    C23    C25    .
+ RTB      H241   C24    .      .
+ RTB      C25    C24    C26    .
+ RTB      H251   C25    .      .
+ RTB      C26    C25    C22    .
+ RTB      H261   C26    .      .
+ RTB      C22    C26    C12    .
+ RTB      C12    C22    .      .
+ RTB      N6     RU     C28    .
+ RTB      C28    N6     C29    .
+ RTB      H281   C28    .      .
+ RTB      C29    C28    C30    .
+ RTB      H291   C29    .      .
+ RTB      C30    C29    C31    .
+ RTB      H301   C30    .      .
+ RTB      C31    C30    C27    .
+ RTB      H311   C31    .      .
+ RTB      C27    C31    C16    .
+ RTB      C16    C27    C15    .
+ RTB      N3     C16    .      .
+ RTB      C15    C16    C14    .
+ RTB      H151   C15    .      .
+ RTB      C14    C15    C13    .
+ RTB      H141   C14    .      .
+ RTB      C13    C14    H131   .
+ RTB      H131   C13    .      END
+ RTB      RU     N2     .    ADD
+ RTB      RU     N3     .    ADD
+ RTB      N2     C7     .    ADD
+ RTB      N3     C12    .    ADD
+ RTB      N4     C17    .    ADD
+ RTB      N5     C22    .    ADD
+ RTB      N6     C27    .    ADD
+ RTB      C10    C11    .    ADD
+ RTB      C12    C13    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RTB       RU        N2        single    1.971     0.020     1.971     0.020     
+RTB       RU        N3        single    1.966     0.020     1.966     0.020     
+RTB       RU        N4        single    2.020     0.020     2.020     0.020     
+RTB       N5        RU        single    2.015     0.020     2.015     0.020     
+RTB       N6        RU        single    1.999     0.020     1.999     0.020     
+RTB       N2        C7        single    1.337     0.020     1.337     0.020     
+RTB       N2        C11       double    1.337     0.020     1.337     0.020     
+RTB       N3        C12       single    1.410     0.020     1.410     0.020     
+RTB       N3        C16       double    1.337     0.020     1.337     0.020     
+RTB       N4        C17       single    1.337     0.020     1.337     0.020     
+RTB       N4        C21       double    1.337     0.020     1.337     0.020     
+RTB       N5        C22       double    1.337     0.020     1.337     0.020     
+RTB       C23       N5        single    1.337     0.020     1.337     0.020     
+RTB       N6        C27       single    1.410     0.020     1.410     0.020     
+RTB       C28       N6        double    1.337     0.020     1.337     0.020     
+RTB       C7        C8        double    1.390     0.020     1.390     0.020     
+RTB       H71       C7        single    1.082     0.013     0.975     0.010     
+RTB       C8        C9        single    1.390     0.020     1.390     0.020     
+RTB       H81       C8        single    1.082     0.013     0.975     0.010     
+RTB       C9        C10       double    1.390     0.020     1.390     0.020     
+RTB       H91       C9        single    1.082     0.013     0.975     0.010     
+RTB       C10       C11       single    1.490     0.020     1.490     0.020     
+RTB       C10       C33       single    1.390     0.020     1.390     0.020     
+RTB       C11       C21       single    1.490     0.020     1.490     0.020     
+RTB       C12       C13       double    1.390     0.020     1.390     0.020     
+RTB       C12       C22       single    1.487     0.020     1.487     0.020     
+RTB       C13       C14       single    1.390     0.020     1.390     0.020     
+RTB       H131      C13       single    1.082     0.013     0.975     0.010     
+RTB       C14       C15       double    1.390     0.020     1.390     0.020     
+RTB       H141      C14       single    1.082     0.013     0.975     0.010     
+RTB       C15       C16       single    1.390     0.020     1.390     0.020     
+RTB       H151      C15       single    1.082     0.013     0.975     0.010     
+RTB       C16       C27       single    1.487     0.020     1.487     0.020     
+RTB       C17       C18       double    1.390     0.020     1.390     0.020     
+RTB       H171      C17       single    1.082     0.013     0.975     0.010     
+RTB       C18       C19       single    1.390     0.020     1.390     0.020     
+RTB       H181      C18       single    1.082     0.013     0.975     0.010     
+RTB       C19       C20       double    1.390     0.020     1.390     0.020     
+RTB       H191      C19       single    1.082     0.013     0.975     0.010     
+RTB       C21       C20       single    1.490     0.020     1.490     0.020     
+RTB       C20       C32       single    1.390     0.020     1.390     0.020     
+RTB       C22       C26       single    1.390     0.020     1.390     0.020     
+RTB       C24       C23       double    1.390     0.020     1.390     0.020     
+RTB       H231      C23       single    1.082     0.013     0.975     0.010     
+RTB       C25       C24       single    1.390     0.020     1.390     0.020     
+RTB       H241      C24       single    1.082     0.013     0.975     0.010     
+RTB       C26       C25       double    1.390     0.020     1.390     0.020     
+RTB       H251      C25       single    1.082     0.013     0.975     0.010     
+RTB       H261      C26       single    1.082     0.013     0.975     0.010     
+RTB       C27       C31       double    1.390     0.020     1.390     0.020     
+RTB       C29       C28       single    1.390     0.020     1.390     0.020     
+RTB       H281      C28       single    1.082     0.013     0.975     0.010     
+RTB       C30       C29       double    1.390     0.020     1.390     0.020     
+RTB       H291      C29       single    1.082     0.013     0.975     0.010     
+RTB       C31       C30       single    1.390     0.020     1.390     0.020     
+RTB       H301      C30       single    1.082     0.013     0.975     0.010     
+RTB       H311      C31       single    1.082     0.013     0.975     0.010     
+RTB       C32       C33       double    1.390     0.020     1.390     0.020     
+RTB       H321      C32       single    1.082     0.013     0.975     0.010     
+RTB       C33       H331      single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RTB      H331   C33    C10     120.000    3.000
+ RTB      H331   C33    C32     120.000    3.000
+ RTB      C10    C33    C32     120.000    3.000
+ RTB      C33    C10    C9      120.000    3.000
+ RTB      C33    C10    C11     120.000    3.000
+ RTB      C9     C10    C11     120.000    3.000
+ RTB      C10    C9     H91     120.000    3.000
+ RTB      C10    C9     C8      120.000    3.000
+ RTB      H91    C9     C8      120.000    3.000
+ RTB      C9     C8     H81     120.000    3.000
+ RTB      C9     C8     C7      120.000    3.000
+ RTB      H81    C8     C7      120.000    3.000
+ RTB      C8     C7     H71     120.000    3.000
+ RTB      C8     C7     N2      120.000    3.000
+ RTB      H71    C7     N2      120.000    3.000
+ RTB      C33    C32    H321    120.000    3.000
+ RTB      C33    C32    C20     120.000    3.000
+ RTB      H321   C32    C20     120.000    3.000
+ RTB      C32    C20    C19     120.000    3.000
+ RTB      C32    C20    C21     120.000    3.000
+ RTB      C19    C20    C21     120.000    3.000
+ RTB      C20    C19    H191    120.000    3.000
+ RTB      C20    C19    C18     120.000    3.000
+ RTB      H191   C19    C18     120.000    3.000
+ RTB      C19    C18    H181    120.000    3.000
+ RTB      C19    C18    C17     120.000    3.000
+ RTB      H181   C18    C17     120.000    3.000
+ RTB      C18    C17    H171    120.000    3.000
+ RTB      C18    C17    N4      120.000    3.000
+ RTB      H171   C17    N4      120.000    3.000
+ RTB      C20    C21    C11     120.000    3.000
+ RTB      C20    C21    N4      120.000    3.000
+ RTB      C11    C21    N4      120.000    3.000
+ RTB      C21    C11    N2      120.000    3.000
+ RTB      C21    C11    C10     120.000    3.000
+ RTB      N2     C11    C10     120.000    3.000
+ RTB      C11    N2     RU      120.000    3.000
+ RTB      C11    N2     C7      120.000    3.000
+ RTB      RU     N2     C7      120.000    3.000
+ RTB      C21    N4     RU      120.000    3.000
+ RTB      C21    N4     C17     120.000    3.000
+ RTB      RU     N4     C17     120.000    3.000
+ RTB      N4     RU     N5       98.713    3.000
+ RTB      N4     RU     N6      100.572    3.000
+ RTB      N4     RU     N2       82.881    3.000
+ RTB      N4     RU     N3      177.128    3.000
+ RTB      N5     RU     N6      160.686    3.000
+ RTB      N2     RU     N3       94.457    3.000
+ RTB      N5     RU     N2       86.966    3.000
+ RTB      N6     RU     N2       94.362    3.000
+ RTB      N5     RU     N3       80.024    3.000
+ RTB      N6     RU     N3       80.663    3.000
+ RTB      RU     N5     C23     120.000    3.000
+ RTB      RU     N5     C22     120.000    3.000
+ RTB      C23    N5     C22     120.000    3.000
+ RTB      N5     C23    H231    120.000    3.000
+ RTB      N5     C23    C24     120.000    3.000
+ RTB      H231   C23    C24     120.000    3.000
+ RTB      C23    C24    H241    120.000    3.000
+ RTB      C23    C24    C25     120.000    3.000
+ RTB      H241   C24    C25     120.000    3.000
+ RTB      C24    C25    H251    120.000    3.000
+ RTB      C24    C25    C26     120.000    3.000
+ RTB      H251   C25    C26     120.000    3.000
+ RTB      C25    C26    H261    120.000    3.000
+ RTB      C25    C26    C22     120.000    3.000
+ RTB      H261   C26    C22     120.000    3.000
+ RTB      C26    C22    C12     120.000    3.000
+ RTB      C26    C22    N5      120.000    3.000
+ RTB      C12    C22    N5      120.000    3.000
+ RTB      C22    C12    N3      120.000    3.000
+ RTB      C22    C12    C13     120.000    3.000
+ RTB      N3     C12    C13     120.000    3.000
+ RTB      RU     N6     C28     120.000    3.000
+ RTB      RU     N6     C27     120.000    3.000
+ RTB      C28    N6     C27     120.000    3.000
+ RTB      N6     C28    H281    120.000    3.000
+ RTB      N6     C28    C29     120.000    3.000
+ RTB      H281   C28    C29     120.000    3.000
+ RTB      C28    C29    H291    120.000    3.000
+ RTB      C28    C29    C30     120.000    3.000
+ RTB      H291   C29    C30     120.000    3.000
+ RTB      C29    C30    H301    120.000    3.000
+ RTB      C29    C30    C31     120.000    3.000
+ RTB      H301   C30    C31     120.000    3.000
+ RTB      C30    C31    H311    120.000    3.000
+ RTB      C30    C31    C27     120.000    3.000
+ RTB      H311   C31    C27     120.000    3.000
+ RTB      C31    C27    C16     120.000    3.000
+ RTB      C31    C27    N6      120.000    3.000
+ RTB      C16    C27    N6      120.000    3.000
+ RTB      C27    C16    N3      120.000    3.000
+ RTB      C27    C16    C15     120.000    3.000
+ RTB      N3     C16    C15     120.000    3.000
+ RTB      C16    N3     RU      120.000    3.000
+ RTB      C16    N3     C12     120.000    3.000
+ RTB      RU     N3     C12     120.000    3.000
+ RTB      C16    C15    H151    120.000    3.000
+ RTB      C16    C15    C14     120.000    3.000
+ RTB      H151   C15    C14     120.000    3.000
+ RTB      C15    C14    H141    120.000    3.000
+ RTB      C15    C14    C13     120.000    3.000
+ RTB      H141   C14    C13     120.000    3.000
+ RTB      C14    C13    H131    120.000    3.000
+ RTB      C14    C13    C12     120.000    3.000
+ RTB      H131   C13    C12     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RTB      CONST_1  H331   C33    C10    C9         0.000    0.000   0
+ RTB      CONST_2  C33    C10    C11    C21       -2.119    0.000   0
+ RTB      CONST_3  C33    C10    C9     C8       180.000    0.000   0
+ RTB      CONST_4  C10    C9     C8     C7         0.000    0.000   0
+ RTB      CONST_5  C9     C8     C7     N2         0.000    0.000   0
+ RTB      CONST_6  H331   C33    C32    C20      180.000    0.000   0
+ RTB      CONST_7  C33    C32    C20    C21        0.000    0.000   0
+ RTB      CONST_8  C32    C20    C19    C18      180.000    0.000   0
+ RTB      CONST_9  C20    C19    C18    C17        0.000    0.000   0
+ RTB      CONST_10 C19    C18    C17    N4         0.000    0.000   0
+ RTB      CONST_11 C32    C20    C21    N4      -179.174    0.000   0
+ RTB      CONST_12 C20    C21    C11    N2      -179.109    0.000   0
+ RTB      CONST_13 C21    C11    N2     RU         0.000    0.000   0
+ RTB      CONST_14 C11    N2     C7     C8         0.000    0.000   0
+ RTB      CONST_15 C20    C21    N4     RU       180.000    0.000   0
+ RTB      CONST_16 C21    N4     C17    C18        0.000    0.000   0
+ RTB      var_1    C21    N4     RU     N6        93.173   20.000   1
+ RTB      CONST_17 N4     RU     N2     C11       -0.522    0.000   0
+ RTB      var_2    N4     RU     N3     C16       92.927   20.000   1
+ RTB      var_3    N4     RU     N5     C23       -3.164   20.000   1
+ RTB      CONST_18 RU     N5     C22    C26      180.000    0.000   0
+ RTB      CONST_19 RU     N5     C23    C24      180.000    0.000   0
+ RTB      CONST_20 N5     C23    C24    C25        0.000    0.000   0
+ RTB      CONST_21 C23    C24    C25    C26        0.000    0.000   0
+ RTB      CONST_22 C24    C25    C26    C22        0.000    0.000   0
+ RTB      CONST_23 C25    C26    C22    C12      180.000    0.000   0
+ RTB      CONST_24 C26    C22    C12    N3       180.000    0.000   0
+ RTB      CONST_25 C22    C12    C13    C14      180.000    0.000   0
+ RTB      var_4    N4     RU     N6     C28        2.752   20.000   1
+ RTB      CONST_26 RU     N6     C27    C31      180.000    0.000   0
+ RTB      CONST_27 RU     N6     C28    C29      180.000    0.000   0
+ RTB      CONST_28 N6     C28    C29    C30        0.000    0.000   0
+ RTB      CONST_29 C28    C29    C30    C31        0.000    0.000   0
+ RTB      CONST_30 C29    C30    C31    C27        0.000    0.000   0
+ RTB      CONST_31 C30    C31    C27    C16      180.000    0.000   0
+ RTB      CONST_32 C31    C27    C16    C15        0.000    0.000   0
+ RTB      CONST_33 C27    C16    N3     RU         0.000    0.000   0
+ RTB      CONST_34 C16    N3     C12    C22      180.000    0.000   0
+ RTB      CONST_35 C27    C16    C15    C14      180.000    0.000   0
+ RTB      CONST_36 C16    C15    C14    C13        0.000    0.000   0
+ RTB      CONST_37 C15    C14    C13    C12        0.000    0.000   0
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RTB      plan-1    N2        0.020
+ RTB      plan-1    RU        0.020
+ RTB      plan-1    C7        0.020
+ RTB      plan-1    C11       0.020
+ RTB      plan-1    C8        0.020
+ RTB      plan-1    C9        0.020
+ RTB      plan-1    H71       0.020
+ RTB      plan-1    H81       0.020
+ RTB      plan-1    C10       0.020
+ RTB      plan-1    H91       0.020
+ RTB      plan-1    C33       0.020
+ RTB      plan-1    C20       0.020
+ RTB      plan-1    C21       0.020
+ RTB      plan-1    C32       0.020
+ RTB      plan-1    C19       0.020
+ RTB      plan-1    N4        0.020
+ RTB      plan-1    H321      0.020
+ RTB      plan-1    H331      0.020
+ RTB      plan-1    C17       0.020
+ RTB      plan-1    C18       0.020
+ RTB      plan-1    H171      0.020
+ RTB      plan-1    H181      0.020
+ RTB      plan-1    H191      0.020
+ RTB      plan-2    N3        0.020
+ RTB      plan-2    RU        0.020
+ RTB      plan-2    C12       0.020
+ RTB      plan-2    C16       0.020
+ RTB      plan-2    C13       0.020
+ RTB      plan-2    C14       0.020
+ RTB      plan-2    C15       0.020
+ RTB      plan-2    C22       0.020
+ RTB      plan-2    H131      0.020
+ RTB      plan-2    H141      0.020
+ RTB      plan-2    H151      0.020
+ RTB      plan-2    C27       0.020
+ RTB      plan-2    N5        0.020
+ RTB      plan-2    C23       0.020
+ RTB      plan-2    C24       0.020
+ RTB      plan-2    C25       0.020
+ RTB      plan-2    C26       0.020
+ RTB      plan-2    H231      0.020
+ RTB      plan-2    H241      0.020
+ RTB      plan-2    H251      0.020
+ RTB      plan-2    H261      0.020
+ RTB      plan-2    N6        0.020
+ RTB      plan-2    C28       0.020
+ RTB      plan-2    C29       0.020
+ RTB      plan-2    C30       0.020
+ RTB      plan-2    C31       0.020
+ RTB      plan-2    H281      0.020
+ RTB      plan-2    H291      0.020
+ RTB      plan-2    H301      0.020
+ RTB      plan-2    H311      0.020
+# ------------------------------------------------------

@@ -1,0 +1,182 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GAU      GAU '(4S)-4-AMINO-5-HYDROXYPENTANOIC ACID' non-polymer        19   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GAU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GAU           OE1    O    OC       -0.500      0.000    0.000    0.000
+ GAU           CD     C    C         0.000     -0.873    0.774   -0.451
+ GAU           OE2    O    OC       -0.500     -0.535    1.848   -0.996
+ GAU           CG     C    CH2       0.000     -2.332    0.413   -0.337
+ GAU           HG2    H    H         0.000     -2.770    0.353   -1.335
+ GAU           HG3    H    H         0.000     -2.852    1.179    0.242
+ GAU           CB     C    CH2       0.000     -2.468   -0.939    0.365
+ GAU           HB2    H    H         0.000     -2.028   -0.878    1.362
+ GAU           HB3    H    H         0.000     -1.947   -1.704   -0.215
+ GAU           CA     C    CH1       0.000     -3.949   -1.306    0.481
+ GAU           HA     H    H         0.000     -4.412   -1.281   -0.516
+ GAU           N      N    NH2       0.000     -4.626   -0.342    1.359
+ GAU           H2     H    H         0.000     -4.129    0.471    1.705
+ GAU           H      H    H         0.000     -5.593   -0.483    1.626
+ GAU           C      C    CH2       0.000     -4.082   -2.712    1.069
+ GAU           HO1    H    H         0.000     -3.702   -2.714    2.093
+ GAU           HO2    H    H         0.000     -3.504   -3.414    0.465
+ GAU           OXT    O    OH1       0.000     -5.457   -3.101    1.069
+ GAU           HXT    H    H         0.000     -5.540   -3.990    1.441
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GAU      OE1    n/a    CD     START
+ GAU      CD     OE1    CG     .
+ GAU      OE2    CD     .      .
+ GAU      CG     CD     CB     .
+ GAU      HG2    CG     .      .
+ GAU      HG3    CG     .      .
+ GAU      CB     CG     CA     .
+ GAU      HB2    CB     .      .
+ GAU      HB3    CB     .      .
+ GAU      CA     CB     C      .
+ GAU      HA     CA     .      .
+ GAU      N      CA     H      .
+ GAU      H2     N      .      .
+ GAU      H      N      .      .
+ GAU      C      CA     OXT    .
+ GAU      HO1    C      .      .
+ GAU      HO2    C      .      .
+ GAU      OXT    C      HXT    .
+ GAU      HXT    OXT    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GAU       N         CA        single    1.450     0.020     1.450     0.020     
+GAU       H         N         single    1.036     0.016     0.914     0.007     
+GAU       H2        N         single    1.036     0.016     0.914     0.007     
+GAU       CA        CB        single    1.524     0.020     1.524     0.020     
+GAU       C         CA        single    1.524     0.020     1.524     0.020     
+GAU       HA        CA        single    1.089     0.010     0.989     0.005     
+GAU       CB        CG        single    1.524     0.020     1.524     0.020     
+GAU       HB2       CB        single    1.089     0.010     0.989     0.005     
+GAU       HB3       CB        single    1.089     0.010     0.989     0.005     
+GAU       CG        CD        single    1.510     0.020     1.510     0.020     
+GAU       HG2       CG        single    1.089     0.010     0.989     0.005     
+GAU       HG3       CG        single    1.089     0.010     0.989     0.005     
+GAU       OE2       CD        deloc     1.250     0.020     1.250     0.020     
+GAU       CD        OE1       deloc     1.250     0.020     1.250     0.020     
+GAU       OXT       C         single    1.432     0.020     1.432     0.020     
+GAU       HO1       C         single    1.089     0.010     0.989     0.005     
+GAU       HO2       C         single    1.089     0.010     0.989     0.005     
+GAU       HXT       OXT       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GAU      OE1    CD     OE2     123.000    3.000
+ GAU      OE1    CD     CG      118.500    3.000
+ GAU      OE2    CD     CG      118.500    3.000
+ GAU      CD     CG     HG2     109.470    3.000
+ GAU      CD     CG     HG3     109.470    3.000
+ GAU      CD     CG     CB      109.470    3.000
+ GAU      HG2    CG     HG3     107.900    3.000
+ GAU      HG2    CG     CB      109.470    3.000
+ GAU      HG3    CG     CB      109.470    3.000
+ GAU      CG     CB     HB2     109.470    3.000
+ GAU      CG     CB     HB3     109.470    3.000
+ GAU      CG     CB     CA      111.000    3.000
+ GAU      HB2    CB     HB3     107.900    3.000
+ GAU      HB2    CB     CA      109.470    3.000
+ GAU      HB3    CB     CA      109.470    3.000
+ GAU      CB     CA     HA      108.340    3.000
+ GAU      CB     CA     N       109.470    3.000
+ GAU      CB     CA     C       109.470    3.000
+ GAU      HA     CA     N       109.470    3.000
+ GAU      HA     CA     C       108.340    3.000
+ GAU      N      CA     C       109.470    3.000
+ GAU      CA     N      H2      120.000    3.000
+ GAU      CA     N      H       120.000    3.000
+ GAU      H2     N      H       120.000    3.000
+ GAU      CA     C      HO1     109.470    3.000
+ GAU      CA     C      HO2     109.470    3.000
+ GAU      CA     C      OXT     109.470    3.000
+ GAU      HO1    C      HO2     107.900    3.000
+ GAU      HO1    C      OXT     109.470    3.000
+ GAU      HO2    C      OXT     109.470    3.000
+ GAU      C      OXT    HXT     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GAU      var_1    OE1    CD     CG     CB        -0.005   20.000   3
+ GAU      var_2    CD     CG     CB     CA       179.979   20.000   3
+ GAU      var_3    CG     CB     CA     C        175.030   20.000   3
+ GAU      var_4    CB     CA     N      H       -173.835   20.000   1
+ GAU      var_5    CB     CA     C      OXT     -174.963   20.000   3
+ GAU      var_6    CA     C      OXT    HXT      179.980   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GAU      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GAU      plan-1    N         0.020
+ GAU      plan-1    CA        0.020
+ GAU      plan-1    H         0.020
+ GAU      plan-1    H2        0.020
+ GAU      plan-2    CD        0.020
+ GAU      plan-2    CG        0.020
+ GAU      plan-2    OE2       0.020
+ GAU      plan-2    OE1       0.020
+# ------------------------------------------------------

@@ -1,0 +1,313 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TIL      TIL '[2-[5-CARBOXYETHYL-2-PHENOLATO(NITRI' non-polymer        34  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TIL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TIL           O1A    O    OC       -0.500      0.000    0.000    0.000
+ TIL           CGA    C    C         0.000     -0.216   -0.619   -1.065
+ TIL           O2A    O    OC       -0.500      0.676   -1.318   -1.596
+ TIL           CBA    C    CH2       0.000     -1.594   -0.529   -1.704
+ TIL           HBA1   H    H         0.000     -1.668   -1.223   -2.544
+ TIL           HBA2   H    H         0.000     -1.782    0.487   -2.056
+ TIL           CAA    C    CH2       0.000     -2.618   -0.899   -0.648
+ TIL           HAA1   H    H         0.000     -2.542   -0.168    0.160
+ TIL           HAA2   H    H         0.000     -2.360   -1.889   -0.267
+ TIL           CC5    C    CR6       0.000     -4.034   -0.915   -1.185
+ TIL           CC4    C    CR16      0.000     -4.622   -2.122   -1.598
+ TIL           HC4    H    H         0.000     -4.068   -3.050   -1.534
+ TIL           CC3    C    CR16      0.000     -5.945   -2.111   -2.097
+ TIL           HC3    H    H         0.000     -6.408   -3.023   -2.455
+ TIL           CC2    C    CR6       0.000     -6.650   -0.889   -2.119
+ TIL           NB     N    N         0.000     -7.937   -0.649   -2.556
+ TIL           CB     C    C1        0.000     -8.682   -1.675   -2.617
+ TIL           HB     H    H         0.000     -8.276   -2.598   -2.240
+ TIL           CB1    C    CR6       0.000    -10.053   -1.717   -3.157
+ TIL           CB6    C    CR16      0.000    -10.771   -2.928   -3.097
+ TIL           HB6    H    H         0.000    -10.319   -3.808   -2.657
+ TIL           CB5    C    CR16      0.000    -12.073   -2.986   -3.612
+ TIL           HB5    H    H         0.000    -12.629   -3.915   -3.579
+ TIL           CB4    C    CR16      0.000    -12.652   -1.843   -4.166
+ TIL           HB4    H    H         0.000    -13.659   -1.882   -4.562
+ TIL           CB3    C    CR16      0.000    -11.929   -0.650   -4.209
+ TIL           HB3    H    H         0.000    -12.381    0.231   -4.648
+ TIL           CB2    C    CR6       0.000    -10.628   -0.574   -3.693
+ TIL           OB     O    O2        0.000     -9.957    0.612   -3.759
+ TIL           CR     CR   CR        1.000     -8.405    1.121   -2.904
+ TIL           OA     O    O2        0.000     -6.895    1.338   -1.849
+ TIL           CC1    C    CR6       0.000     -6.055    0.265   -1.711
+ TIL           CC6    C    CR16      0.000     -4.749    0.285   -1.233
+ TIL           HC6    H    H         0.000     -4.295    1.212   -0.905
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TIL      O1A    n/a    CGA    START
+ TIL      CGA    O1A    CBA    .
+ TIL      O2A    CGA    .      .
+ TIL      CBA    CGA    CAA    .
+ TIL      HBA1   CBA    .      .
+ TIL      HBA2   CBA    .      .
+ TIL      CAA    CBA    CC5    .
+ TIL      HAA1   CAA    .      .
+ TIL      HAA2   CAA    .      .
+ TIL      CC5    CAA    CC4    .
+ TIL      CC4    CC5    CC3    .
+ TIL      HC4    CC4    .      .
+ TIL      CC3    CC4    CC2    .
+ TIL      HC3    CC3    .      .
+ TIL      CC2    CC3    NB     .
+ TIL      NB     CC2    CB     .
+ TIL      CB     NB     CB1    .
+ TIL      HB     CB     .      .
+ TIL      CB1    CB     CB6    .
+ TIL      CB6    CB1    CB5    .
+ TIL      HB6    CB6    .      .
+ TIL      CB5    CB6    CB4    .
+ TIL      HB5    CB5    .      .
+ TIL      CB4    CB5    CB3    .
+ TIL      HB4    CB4    .      .
+ TIL      CB3    CB4    CB2    .
+ TIL      HB3    CB3    .      .
+ TIL      CB2    CB3    OB     .
+ TIL      OB     CB2    CR     .
+ TIL      CR     OB     OA     .
+ TIL      OA     CR     CC1    .
+ TIL      CC1    OA     CC6    .
+ TIL      CC6    CC1    HC6    .
+ TIL      HC6    CC6    .      END
+ TIL      CC5    CC6    .    ADD
+ TIL      CC1    CC2    .    ADD
+ TIL      CR     NB     .    ADD
+ TIL      CB2    CB1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TIL       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+TIL       CGA       O1A       deloc     1.250     0.020     1.250     0.020     
+TIL       CBA       CGA       single    1.510     0.020     1.510     0.020     
+TIL       CAA       CBA       single    1.524     0.020     1.524     0.020     
+TIL       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+TIL       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+TIL       CC5       CAA       single    1.511     0.020     1.511     0.020     
+TIL       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+TIL       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+TIL       CC4       CC5       single    1.390     0.020     1.390     0.020     
+TIL       CC5       CC6       double    1.390     0.020     1.390     0.020     
+TIL       CC6       CC1       single    1.390     0.020     1.390     0.020     
+TIL       HC6       CC6       single    1.082     0.013     0.975     0.010     
+TIL       CC1       CC2       double    1.487     0.020     1.487     0.020     
+TIL       CC1       OA        single    1.370     0.020     1.370     0.020     
+TIL       CC2       CC3       single    1.390     0.020     1.390     0.020     
+TIL       NB        CC2       single    1.400     0.020     1.400     0.020     
+TIL       CC3       CC4       double    1.390     0.020     1.390     0.020     
+TIL       HC3       CC3       single    1.082     0.013     0.975     0.010     
+TIL       HC4       CC4       single    1.082     0.013     0.975     0.010     
+TIL       OA        CR        single    1.855     0.020     1.855     0.020     
+TIL       CR        OB        single    1.843     0.020     1.843     0.020     
+TIL       CR        NB        single    1.864     0.020     1.864     0.020     
+TIL       CB        NB        double    1.260     0.020     1.260     0.020     
+TIL       OB        CB2       single    1.370     0.020     1.370     0.020     
+TIL       CB2       CB3       double    1.390     0.020     1.390     0.020     
+TIL       CB2       CB1       single    1.487     0.020     1.487     0.020     
+TIL       CB6       CB1       double    1.390     0.020     1.390     0.020     
+TIL       CB1       CB        single    1.480     0.020     1.480     0.020     
+TIL       HB        CB        single    1.082     0.013     0.975     0.010     
+TIL       CB3       CB4       single    1.390     0.020     1.390     0.020     
+TIL       HB3       CB3       single    1.082     0.013     0.975     0.010     
+TIL       CB4       CB5       double    1.390     0.020     1.390     0.020     
+TIL       HB4       CB4       single    1.082     0.013     0.975     0.010     
+TIL       CB5       CB6       single    1.390     0.020     1.390     0.020     
+TIL       HB5       CB5       single    1.082     0.013     0.975     0.010     
+TIL       HB6       CB6       single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TIL      O1A    CGA    O2A     123.000    3.000
+ TIL      O1A    CGA    CBA     118.500    3.000
+ TIL      O2A    CGA    CBA     118.500    3.000
+ TIL      CGA    CBA    HBA1    109.470    3.000
+ TIL      CGA    CBA    HBA2    109.470    3.000
+ TIL      CGA    CBA    CAA     109.470    3.000
+ TIL      HBA1   CBA    HBA2    107.900    3.000
+ TIL      HBA1   CBA    CAA     109.470    3.000
+ TIL      HBA2   CBA    CAA     109.470    3.000
+ TIL      CBA    CAA    HAA1    109.470    3.000
+ TIL      CBA    CAA    HAA2    109.470    3.000
+ TIL      CBA    CAA    CC5     109.470    3.000
+ TIL      HAA1   CAA    HAA2    107.900    3.000
+ TIL      HAA1   CAA    CC5     109.470    3.000
+ TIL      HAA2   CAA    CC5     109.470    3.000
+ TIL      CAA    CC5    CC4     120.000    3.000
+ TIL      CAA    CC5    CC6     120.000    3.000
+ TIL      CC4    CC5    CC6     120.000    3.000
+ TIL      CC5    CC4    HC4     120.000    3.000
+ TIL      CC5    CC4    CC3     120.000    3.000
+ TIL      HC4    CC4    CC3     120.000    3.000
+ TIL      CC4    CC3    HC3     120.000    3.000
+ TIL      CC4    CC3    CC2     120.000    3.000
+ TIL      HC3    CC3    CC2     120.000    3.000
+ TIL      CC3    CC2    NB      120.000    3.000
+ TIL      CC3    CC2    CC1     120.000    3.000
+ TIL      NB     CC2    CC1     120.000    3.000
+ TIL      CC2    NB     CB      120.000    3.000
+ TIL      CC2    NB     CR      120.000    3.000
+ TIL      CB     NB     CR      120.000    3.000
+ TIL      NB     CB     HB      120.000    3.000
+ TIL      NB     CB     CB1     120.000    3.000
+ TIL      HB     CB     CB1     120.000    3.000
+ TIL      CB     CB1    CB6     120.000    3.000
+ TIL      CB     CB1    CB2     120.000    3.000
+ TIL      CB6    CB1    CB2     120.000    3.000
+ TIL      CB1    CB6    HB6     120.000    3.000
+ TIL      CB1    CB6    CB5     120.000    3.000
+ TIL      HB6    CB6    CB5     120.000    3.000
+ TIL      CB6    CB5    HB5     120.000    3.000
+ TIL      CB6    CB5    CB4     120.000    3.000
+ TIL      HB5    CB5    CB4     120.000    3.000
+ TIL      CB5    CB4    HB4     120.000    3.000
+ TIL      CB5    CB4    CB3     120.000    3.000
+ TIL      HB4    CB4    CB3     120.000    3.000
+ TIL      CB4    CB3    HB3     120.000    3.000
+ TIL      CB4    CB3    CB2     120.000    3.000
+ TIL      HB3    CB3    CB2     120.000    3.000
+ TIL      CB3    CB2    OB      120.000    3.000
+ TIL      CB3    CB2    CB1     120.000    3.000
+ TIL      OB     CB2    CB1     120.000    3.000
+ TIL      CB2    OB     CR      120.000    3.000
+ TIL      OB     CR     OA      180.000    3.000
+ TIL      OB     CR     NB       90.000    3.000
+ TIL      OA     CR     NB       90.000    3.000
+ TIL      CR     OA     CC1     120.000    3.000
+ TIL      OA     CC1    CC6     120.000    3.000
+ TIL      OA     CC1    CC2     120.000    3.000
+ TIL      CC6    CC1    CC2     120.000    3.000
+ TIL      CC1    CC6    HC6     120.000    3.000
+ TIL      CC1    CC6    CC5     120.000    3.000
+ TIL      HC6    CC6    CC5     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TIL      var_1    O1A    CGA    CBA    CAA      -52.854   20.000   3
+ TIL      var_2    CGA    CBA    CAA    CC5     -177.063   20.000   3
+ TIL      var_3    CBA    CAA    CC5    CC4       96.650   20.000   2
+ TIL      CONST_1  CAA    CC5    CC6    CC1      180.000    0.000   0
+ TIL      CONST_2  CAA    CC5    CC4    CC3      180.000    0.000   0
+ TIL      CONST_3  CC5    CC4    CC3    CC2        0.000    0.000   0
+ TIL      CONST_4  CC4    CC3    CC2    NB       180.000    0.000   0
+ TIL      var_4    CC3    CC2    NB     CB        30.000   20.000   1
+ TIL      var_5    CC2    NB     CB     CB1      180.000   20.000   1
+ TIL      var_6    NB     CB     CB1    CB6      180.000   20.000   1
+ TIL      CONST_5  CB     CB1    CB6    CB5      180.000    0.000   0
+ TIL      CONST_6  CB1    CB6    CB5    CB4        0.000    0.000   0
+ TIL      CONST_7  CB6    CB5    CB4    CB3        0.000    0.000   0
+ TIL      CONST_8  CB5    CB4    CB3    CB2        0.000    0.000   0
+ TIL      CONST_9  CB4    CB3    CB2    OB       180.000    0.000   0
+ TIL      CONST_10 CB3    CB2    CB1    CB       180.000    0.000   0
+ TIL      var_7    CB3    CB2    OB     CR       180.000   20.000   1
+ TIL      var_8    CB2    OB     CR     NB         0.000   20.000   1
+ TIL      var_9    CB     NB     CR     OB         0.000   20.000   1
+ TIL      var_10   CC1    OA     CR     NB         0.000   20.000   1
+ TIL      var_11   CR     OA     CC1    CC6      150.000   20.000   1
+ TIL      CONST_11 OA     CC1    CC2    CC3      180.000    0.000   0
+ TIL      CONST_12 OA     CC1    CC6    CC5      180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TIL      chir_01  CR     OB     OA     NB        cross1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TIL      plan-1    CGA       0.020
+ TIL      plan-1    O2A       0.020
+ TIL      plan-1    O1A       0.020
+ TIL      plan-1    CBA       0.020
+ TIL      plan-2    CC5       0.020
+ TIL      plan-2    CAA       0.020
+ TIL      plan-2    CC6       0.020
+ TIL      plan-2    CC4       0.020
+ TIL      plan-2    CC1       0.020
+ TIL      plan-2    CC2       0.020
+ TIL      plan-2    CC3       0.020
+ TIL      plan-2    HC6       0.020
+ TIL      plan-2    OA        0.020
+ TIL      plan-2    NB        0.020
+ TIL      plan-2    HC3       0.020
+ TIL      plan-2    HC4       0.020
+ TIL      plan-3    NB        0.020
+ TIL      plan-3    CC2       0.020
+ TIL      plan-3    CR        0.020
+ TIL      plan-3    CB        0.020
+ TIL      plan-3    HB        0.020
+ TIL      plan-4    CB2       0.020
+ TIL      plan-4    OB        0.020
+ TIL      plan-4    CB1       0.020
+ TIL      plan-4    CB3       0.020
+ TIL      plan-4    CB4       0.020
+ TIL      plan-4    CB5       0.020
+ TIL      plan-4    CB6       0.020
+ TIL      plan-4    CB        0.020
+ TIL      plan-4    HB3       0.020
+ TIL      plan-4    HB4       0.020
+ TIL      plan-4    HB5       0.020
+ TIL      plan-4    HB6       0.020
+ TIL      plan-4    HB        0.020
+ TIL      plan-5    CB        0.020
+ TIL      plan-5    NB        0.020
+ TIL      plan-5    CB1       0.020
+ TIL      plan-5    HB        0.020
+# ------------------------------------------------------

@@ -1,0 +1,554 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HUD      HUD '"TERT-BUTYL [(1S)-1-{[(1R,2S,5S)-2-(' non-polymer        78  36 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HUD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HUD           O34    O    O         0.000      0.000    0.000    0.000
+ HUD           C36    C    C         0.000     -0.727    0.723    0.660
+ HUD           N35    N    NH2       0.000     -1.019    2.045    0.451
+ HUD           H352   H    H         0.000     -1.646    2.544    1.078
+ HUD           H351   H    H         0.000     -0.613    2.549   -0.333
+ HUD           C33    C    C         0.000     -1.378    0.161    1.890
+ HUD           O32    O    O         0.000     -0.622   -0.251    2.762
+ HUD           C27    C    CH1       0.000     -2.892    0.216    2.019
+ HUD           H27    H    H         0.000     -3.154    1.139    2.555
+ HUD           C28    C    CH2       0.000     -3.408   -0.970    2.837
+ HUD           H281   H    H         0.000     -4.494   -0.879    2.908
+ HUD           H282   H    H         0.000     -2.971   -0.901    3.836
+ HUD           C29    C    CH1       0.000     -3.054   -2.294    2.224
+ HUD           H29    H    H         0.000     -2.094   -2.335    1.691
+ HUD           C31    C    CH2       0.000     -4.147   -3.139    1.664
+ HUD           H311   H    H         0.000     -4.015   -3.921    0.913
+ HUD           H312   H    H         0.000     -5.213   -2.997    1.855
+ HUD           C30    C    CH2       0.000     -3.459   -3.542    2.935
+ HUD           H302   H    H         0.000     -2.604   -4.219    2.999
+ HUD           H301   H    H         0.000     -3.802   -3.295    3.941
+ HUD           N26    N    NH1       0.000     -3.506    0.268    0.711
+ HUD           HN26   H    H         0.000     -3.064   -0.232   -0.047
+ HUD           C24    C    C         0.000     -4.668    0.967    0.449
+ HUD           O25    O    O         0.000     -5.322    1.620    1.253
+ HUD           C18    C    CH1       0.000     -5.121    0.883   -0.974
+ HUD           H18    H    H         0.000     -4.799   -0.059   -1.440
+ HUD           C19    C    CH1       0.000     -4.675    2.066   -1.776
+ HUD           H19    H    H         0.000     -3.748    2.569   -1.466
+ HUD           C21    C    CT        0.000     -5.136    2.272   -3.195
+ HUD           C23    C    CH3       0.000     -4.304    3.156   -4.061
+ HUD           H233   H    H         0.000     -3.552    3.607   -3.472
+ HUD           H232   H    H         0.000     -3.862    2.574   -4.825
+ HUD           H231   H    H         0.000     -4.921    3.900   -4.488
+ HUD           C22    C    CH3       0.000     -5.771    1.143   -3.935
+ HUD           H223   H    H         0.000     -5.268    1.007   -4.854
+ HUD           H222   H    H         0.000     -5.698    0.264   -3.353
+ HUD           H221   H    H         0.000     -6.786    1.374   -4.112
+ HUD           C20    C    CH1       0.000     -5.864    2.922   -2.049
+ HUD           H20    H    H         0.000     -5.749    4.008   -1.924
+ HUD           C17    C    CH2       0.000     -7.066    2.278   -1.440
+ HUD           H172   H    H         0.000     -7.855    2.113   -2.177
+ HUD           H171   H    H         0.000     -7.463    2.866   -0.610
+ HUD           N16    N    N         0.000     -6.584    0.985   -0.939
+ HUD           C14    C    C         0.000     -7.387   -0.084   -0.564
+ HUD           O15    O    O         0.000     -6.954   -1.160   -0.147
+ HUD           C9     C    CH1       0.000     -8.873    0.138   -0.695
+ HUD           H9     H    H         0.000     -9.030    1.158   -1.072
+ HUD           C10    C    CT        0.000     -9.616    0.009    0.664
+ HUD           C13    C    CH3       0.000     -9.425   -1.419    1.220
+ HUD           H133   H    H         0.000     -9.881   -2.120    0.569
+ HUD           H132   H    H         0.000     -8.390   -1.637    1.299
+ HUD           H131   H    H         0.000     -9.872   -1.492    2.180
+ HUD           C12    C    CH3       0.000     -9.013    0.997    1.686
+ HUD           H123   H    H         0.000     -9.465    0.852    2.634
+ HUD           H122   H    H         0.000     -7.968    0.833    1.769
+ HUD           H121   H    H         0.000     -9.186    1.993    1.366
+ HUD           C11    C    CH3       0.000    -11.129    0.286    0.551
+ HUD           H113   H    H         0.000    -11.568   -0.401   -0.127
+ HUD           H112   H    H         0.000    -11.584    0.178    1.503
+ HUD           H111   H    H         0.000    -11.286    1.274    0.199
+ HUD           N8     N    NH1       0.000     -9.338   -0.796   -1.716
+ HUD           HN8    H    H         0.000     -9.290   -1.785   -1.520
+ HUD           C1     C    C         0.000     -9.837   -0.395   -2.929
+ HUD           O2     O    O         0.000     -9.959    0.763   -3.316
+ HUD           O3     O    O2        0.000    -10.185   -1.497   -3.658
+ HUD           C4     C    CT        0.000    -10.726   -1.240   -4.958
+ HUD           C7     C    CH3       0.000    -12.001   -0.413   -4.800
+ HUD           H73    H    H         0.000    -12.417   -0.217   -5.754
+ HUD           H72    H    H         0.000    -12.701   -0.950   -4.214
+ HUD           H71    H    H         0.000    -11.771    0.504   -4.321
+ HUD           C6     C    CH3       0.000    -11.039   -2.589   -5.601
+ HUD           H63    H    H         0.000    -11.460   -2.435   -6.561
+ HUD           H62    H    H         0.000    -10.146   -3.152   -5.695
+ HUD           H61    H    H         0.000    -11.727   -3.119   -4.995
+ HUD           C5     C    CH3       0.000     -9.683   -0.482   -5.778
+ HUD           H53    H    H         0.000    -10.055   -0.314   -6.756
+ HUD           H52    H    H         0.000     -9.477    0.448   -5.315
+ HUD           H51    H    H         0.000     -8.793   -1.053   -5.833
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HUD      O34    n/a    C36    START
+ HUD      C36    O34    C33    .
+ HUD      N35    C36    H351   .
+ HUD      H352   N35    .      .
+ HUD      H351   N35    .      .
+ HUD      C33    C36    C27    .
+ HUD      O32    C33    .      .
+ HUD      C27    C33    N26    .
+ HUD      H27    C27    .      .
+ HUD      C28    C27    C29    .
+ HUD      H281   C28    .      .
+ HUD      H282   C28    .      .
+ HUD      C29    C28    C31    .
+ HUD      H29    C29    .      .
+ HUD      C31    C29    C30    .
+ HUD      H311   C31    .      .
+ HUD      H312   C31    .      .
+ HUD      C30    C31    H301   .
+ HUD      H302   C30    .      .
+ HUD      H301   C30    .      .
+ HUD      N26    C27    C24    .
+ HUD      HN26   N26    .      .
+ HUD      C24    N26    C18    .
+ HUD      O25    C24    .      .
+ HUD      C18    C24    N16    .
+ HUD      H18    C18    .      .
+ HUD      C19    C18    C21    .
+ HUD      H19    C19    .      .
+ HUD      C21    C19    C20    .
+ HUD      C23    C21    H231   .
+ HUD      H233   C23    .      .
+ HUD      H232   C23    .      .
+ HUD      H231   C23    .      .
+ HUD      C22    C21    H221   .
+ HUD      H223   C22    .      .
+ HUD      H222   C22    .      .
+ HUD      H221   C22    .      .
+ HUD      C20    C21    C17    .
+ HUD      H20    C20    .      .
+ HUD      C17    C20    H171   .
+ HUD      H172   C17    .      .
+ HUD      H171   C17    .      .
+ HUD      N16    C18    C14    .
+ HUD      C14    N16    C9     .
+ HUD      O15    C14    .      .
+ HUD      C9     C14    N8     .
+ HUD      H9     C9     .      .
+ HUD      C10    C9     C11    .
+ HUD      C13    C10    H131   .
+ HUD      H133   C13    .      .
+ HUD      H132   C13    .      .
+ HUD      H131   C13    .      .
+ HUD      C12    C10    H121   .
+ HUD      H123   C12    .      .
+ HUD      H122   C12    .      .
+ HUD      H121   C12    .      .
+ HUD      C11    C10    H111   .
+ HUD      H113   C11    .      .
+ HUD      H112   C11    .      .
+ HUD      H111   C11    .      .
+ HUD      N8     C9     C1     .
+ HUD      HN8    N8     .      .
+ HUD      C1     N8     O3     .
+ HUD      O2     C1     .      .
+ HUD      O3     C1     C4     .
+ HUD      C4     O3     C5     .
+ HUD      C7     C4     H71    .
+ HUD      H73    C7     .      .
+ HUD      H72    C7     .      .
+ HUD      H71    C7     .      .
+ HUD      C6     C4     H61    .
+ HUD      H63    C6     .      .
+ HUD      H62    C6     .      .
+ HUD      H61    C6     .      .
+ HUD      C5     C4     H51    .
+ HUD      H53    C5     .      .
+ HUD      H52    C5     .      .
+ HUD      H51    C5     .      END
+ HUD      N16    C17    .    ADD
+ HUD      C19    C20    .    ADD
+ HUD      C29    C30    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HUD       C1        N8        single    1.330     0.020     1.330     0.020     
+HUD       O3        C1        single    1.454     0.020     1.454     0.020     
+HUD       O2        C1        double    1.220     0.020     1.220     0.020     
+HUD       C4        O3        single    1.426     0.020     1.426     0.020     
+HUD       C6        C4        single    1.524     0.020     1.524     0.020     
+HUD       C5        C4        single    1.524     0.020     1.524     0.020     
+HUD       C7        C4        single    1.524     0.020     1.524     0.020     
+HUD       H51       C5        single    1.089     0.010     0.989     0.005     
+HUD       H52       C5        single    1.089     0.010     0.989     0.005     
+HUD       H53       C5        single    1.089     0.010     0.989     0.005     
+HUD       H61       C6        single    1.089     0.010     0.989     0.005     
+HUD       H62       C6        single    1.089     0.010     0.989     0.005     
+HUD       H63       C6        single    1.089     0.010     0.989     0.005     
+HUD       H71       C7        single    1.089     0.010     0.989     0.005     
+HUD       H72       C7        single    1.089     0.010     0.989     0.005     
+HUD       H73       C7        single    1.089     0.010     0.989     0.005     
+HUD       N8        C9        single    1.450     0.020     1.450     0.020     
+HUD       HN8       N8        single    1.016     0.010     0.899     0.007     
+HUD       C10       C9        single    1.524     0.020     1.524     0.020     
+HUD       C9        C14       single    1.500     0.020     1.500     0.020     
+HUD       H9        C9        single    1.089     0.010     0.989     0.005     
+HUD       C12       C10       single    1.524     0.020     1.524     0.020     
+HUD       C13       C10       single    1.524     0.020     1.524     0.020     
+HUD       C11       C10       single    1.524     0.020     1.524     0.020     
+HUD       H111      C11       single    1.089     0.010     0.989     0.005     
+HUD       H112      C11       single    1.089     0.010     0.989     0.005     
+HUD       H113      C11       single    1.089     0.010     0.989     0.005     
+HUD       H121      C12       single    1.089     0.010     0.989     0.005     
+HUD       H122      C12       single    1.089     0.010     0.989     0.005     
+HUD       H123      C12       single    1.089     0.010     0.989     0.005     
+HUD       H131      C13       single    1.089     0.010     0.989     0.005     
+HUD       H132      C13       single    1.089     0.010     0.989     0.005     
+HUD       H133      C13       single    1.089     0.010     0.989     0.005     
+HUD       O15       C14       double    1.220     0.020     1.220     0.020     
+HUD       C14       N16       single    1.330     0.020     1.330     0.020     
+HUD       N16       C17       single    1.455     0.020     1.455     0.020     
+HUD       N16       C18       single    1.455     0.020     1.455     0.020     
+HUD       C17       C20       single    1.524     0.020     1.524     0.020     
+HUD       H171      C17       single    1.089     0.010     0.989     0.005     
+HUD       H172      C17       single    1.089     0.010     0.989     0.005     
+HUD       C18       C24       single    1.500     0.020     1.500     0.020     
+HUD       C19       C18       single    1.524     0.020     1.524     0.020     
+HUD       H18       C18       single    1.089     0.010     0.989     0.005     
+HUD       C19       C20       single    1.524     0.020     1.524     0.020     
+HUD       C21       C19       single    1.524     0.020     1.524     0.020     
+HUD       H19       C19       single    1.089     0.010     0.989     0.005     
+HUD       C20       C21       single    1.524     0.020     1.524     0.020     
+HUD       H20       C20       single    1.089     0.010     0.989     0.005     
+HUD       C23       C21       single    1.524     0.020     1.524     0.020     
+HUD       C22       C21       single    1.524     0.020     1.524     0.020     
+HUD       H221      C22       single    1.089     0.010     0.989     0.005     
+HUD       H222      C22       single    1.089     0.010     0.989     0.005     
+HUD       H223      C22       single    1.089     0.010     0.989     0.005     
+HUD       H231      C23       single    1.089     0.010     0.989     0.005     
+HUD       H232      C23       single    1.089     0.010     0.989     0.005     
+HUD       H233      C23       single    1.089     0.010     0.989     0.005     
+HUD       O25       C24       double    1.220     0.020     1.220     0.020     
+HUD       C24       N26       single    1.330     0.020     1.330     0.020     
+HUD       N26       C27       single    1.450     0.020     1.450     0.020     
+HUD       HN26      N26       single    1.016     0.010     0.899     0.007     
+HUD       C28       C27       single    1.524     0.020     1.524     0.020     
+HUD       C27       C33       single    1.500     0.020     1.500     0.020     
+HUD       H27       C27       single    1.089     0.010     0.989     0.005     
+HUD       C29       C28       single    1.524     0.020     1.524     0.020     
+HUD       H281      C28       single    1.089     0.010     0.989     0.005     
+HUD       H282      C28       single    1.089     0.010     0.989     0.005     
+HUD       C29       C30       single    1.524     0.020     1.524     0.020     
+HUD       C31       C29       single    1.524     0.020     1.524     0.020     
+HUD       H29       C29       single    1.089     0.010     0.989     0.005     
+HUD       C30       C31       single    1.524     0.020     1.524     0.020     
+HUD       H301      C30       single    1.089     0.010     0.989     0.005     
+HUD       H302      C30       single    1.089     0.010     0.989     0.005     
+HUD       H311      C31       single    1.089     0.010     0.989     0.005     
+HUD       H312      C31       single    1.089     0.010     0.989     0.005     
+HUD       O32       C33       double    1.220     0.020     1.220     0.020     
+HUD       C33       C36       single    1.460     0.020     1.460     0.020     
+HUD       C36       O34       double    1.220     0.020     1.220     0.020     
+HUD       N35       C36       single    1.332     0.020     1.332     0.020     
+HUD       H351      N35       single    1.016     0.010     0.899     0.007     
+HUD       H352      N35       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HUD      O34    C36    N35     123.000    3.000
+ HUD      O34    C36    C33     120.500    3.000
+ HUD      N35    C36    C33     120.000    3.000
+ HUD      C36    N35    H352    120.000    3.000
+ HUD      C36    N35    H351    120.000    3.000
+ HUD      H352   N35    H351    120.000    3.000
+ HUD      C36    C33    O32     120.500    3.000
+ HUD      C36    C33    C27     120.000    3.000
+ HUD      O32    C33    C27     120.500    3.000
+ HUD      C33    C27    H27     108.810    3.000
+ HUD      C33    C27    C28     109.470    3.000
+ HUD      C33    C27    N26     111.600    3.000
+ HUD      H27    C27    C28     108.340    3.000
+ HUD      H27    C27    N26     108.550    3.000
+ HUD      C28    C27    N26     110.000    3.000
+ HUD      C27    C28    H281    109.470    3.000
+ HUD      C27    C28    H282    109.470    3.000
+ HUD      C27    C28    C29     111.000    3.000
+ HUD      H281   C28    H282    107.900    3.000
+ HUD      H281   C28    C29     109.470    3.000
+ HUD      H282   C28    C29     109.470    3.000
+ HUD      C28    C29    H29     108.340    3.000
+ HUD      C28    C29    C31     109.470    3.000
+ HUD      C28    C29    C30     109.470    3.000
+ HUD      H29    C29    C31     108.340    3.000
+ HUD      H29    C29    C30     108.340    3.000
+ HUD      C31    C29    C30      60.000    3.000
+ HUD      C29    C31    H311    109.470    3.000
+ HUD      C29    C31    H312    109.470    3.000
+ HUD      C29    C31    C30      60.000    3.000
+ HUD      H311   C31    H312    107.900    3.000
+ HUD      H311   C31    C30     109.470    3.000
+ HUD      H312   C31    C30     109.470    3.000
+ HUD      C31    C30    H302    109.470    3.000
+ HUD      C31    C30    H301    109.470    3.000
+ HUD      C31    C30    C29      60.000    3.000
+ HUD      H302   C30    H301    107.900    3.000
+ HUD      H302   C30    C29     109.470    3.000
+ HUD      H301   C30    C29     109.470    3.000
+ HUD      C27    N26    HN26    118.500    3.000
+ HUD      C27    N26    C24     121.500    3.000
+ HUD      HN26   N26    C24     120.000    3.000
+ HUD      N26    C24    O25     123.000    3.000
+ HUD      N26    C24    C18     116.500    3.000
+ HUD      O25    C24    C18     120.500    3.000
+ HUD      C24    C18    H18     108.810    3.000
+ HUD      C24    C18    C19     109.470    3.000
+ HUD      C24    C18    N16     111.600    3.000
+ HUD      H18    C18    C19     108.340    3.000
+ HUD      H18    C18    N16     109.470    3.000
+ HUD      C19    C18    N16     105.000    3.000
+ HUD      C18    C19    H19     108.340    3.000
+ HUD      C18    C19    C21     111.000    3.000
+ HUD      C18    C19    C20     111.000    3.000
+ HUD      H19    C19    C21     108.340    3.000
+ HUD      H19    C19    C20     108.340    3.000
+ HUD      C21    C19    C20      60.000    3.000
+ HUD      C19    C21    C23     111.000    3.000
+ HUD      C19    C21    C22     111.000    3.000
+ HUD      C19    C21    C20      60.000    3.000
+ HUD      C23    C21    C22     111.000    3.000
+ HUD      C23    C21    C20     111.000    3.000
+ HUD      C22    C21    C20     111.000    3.000
+ HUD      C21    C23    H233    109.470    3.000
+ HUD      C21    C23    H232    109.470    3.000
+ HUD      C21    C23    H231    109.470    3.000
+ HUD      H233   C23    H232    109.470    3.000
+ HUD      H233   C23    H231    109.470    3.000
+ HUD      H232   C23    H231    109.470    3.000
+ HUD      C21    C22    H223    109.470    3.000
+ HUD      C21    C22    H222    109.470    3.000
+ HUD      C21    C22    H221    109.470    3.000
+ HUD      H223   C22    H222    109.470    3.000
+ HUD      H223   C22    H221    109.470    3.000
+ HUD      H222   C22    H221    109.470    3.000
+ HUD      C21    C20    H20     108.340    3.000
+ HUD      C21    C20    C17     111.000    3.000
+ HUD      C21    C20    C19      60.000    3.000
+ HUD      H20    C20    C17     108.340    3.000
+ HUD      H20    C20    C19     108.340    3.000
+ HUD      C17    C20    C19     111.000    3.000
+ HUD      C20    C17    H172    109.470    3.000
+ HUD      C20    C17    H171    109.470    3.000
+ HUD      C20    C17    N16     105.000    3.000
+ HUD      H172   C17    H171    107.900    3.000
+ HUD      H172   C17    N16     109.470    3.000
+ HUD      H171   C17    N16     109.470    3.000
+ HUD      C18    N16    C14     121.000    3.000
+ HUD      C18    N16    C17     112.000    3.000
+ HUD      C14    N16    C17     127.000    3.000
+ HUD      N16    C14    O15     123.000    3.000
+ HUD      N16    C14    C9      116.500    3.000
+ HUD      O15    C14    C9      120.500    3.000
+ HUD      C14    C9     H9      108.810    3.000
+ HUD      C14    C9     C10     109.470    3.000
+ HUD      C14    C9     N8      111.600    3.000
+ HUD      H9     C9     C10     108.340    3.000
+ HUD      H9     C9     N8      108.550    3.000
+ HUD      C10    C9     N8      110.000    3.000
+ HUD      C9     C10    C13     111.000    3.000
+ HUD      C9     C10    C12     111.000    3.000
+ HUD      C9     C10    C11     111.000    3.000
+ HUD      C13    C10    C12     111.000    3.000
+ HUD      C13    C10    C11     111.000    3.000
+ HUD      C12    C10    C11     111.000    3.000
+ HUD      C10    C13    H133    109.470    3.000
+ HUD      C10    C13    H132    109.470    3.000
+ HUD      C10    C13    H131    109.470    3.000
+ HUD      H133   C13    H132    109.470    3.000
+ HUD      H133   C13    H131    109.470    3.000
+ HUD      H132   C13    H131    109.470    3.000
+ HUD      C10    C12    H123    109.470    3.000
+ HUD      C10    C12    H122    109.470    3.000
+ HUD      C10    C12    H121    109.470    3.000
+ HUD      H123   C12    H122    109.470    3.000
+ HUD      H123   C12    H121    109.470    3.000
+ HUD      H122   C12    H121    109.470    3.000
+ HUD      C10    C11    H113    109.470    3.000
+ HUD      C10    C11    H112    109.470    3.000
+ HUD      C10    C11    H111    109.470    3.000
+ HUD      H113   C11    H112    109.470    3.000
+ HUD      H113   C11    H111    109.470    3.000
+ HUD      H112   C11    H111    109.470    3.000
+ HUD      C9     N8     HN8     118.500    3.000
+ HUD      C9     N8     C1      121.500    3.000
+ HUD      HN8    N8     C1      120.000    3.000
+ HUD      N8     C1     O2      123.000    3.000
+ HUD      N8     C1     O3      118.000    3.000
+ HUD      O2     C1     O3      119.000    3.000
+ HUD      C1     O3     C4      120.000    3.000
+ HUD      O3     C4     C7      109.470    3.000
+ HUD      O3     C4     C6      109.470    3.000
+ HUD      O3     C4     C5      109.470    3.000
+ HUD      C7     C4     C6      111.000    3.000
+ HUD      C7     C4     C5      111.000    3.000
+ HUD      C6     C4     C5      111.000    3.000
+ HUD      C4     C7     H73     109.470    3.000
+ HUD      C4     C7     H72     109.470    3.000
+ HUD      C4     C7     H71     109.470    3.000
+ HUD      H73    C7     H72     109.470    3.000
+ HUD      H73    C7     H71     109.470    3.000
+ HUD      H72    C7     H71     109.470    3.000
+ HUD      C4     C6     H63     109.470    3.000
+ HUD      C4     C6     H62     109.470    3.000
+ HUD      C4     C6     H61     109.470    3.000
+ HUD      H63    C6     H62     109.470    3.000
+ HUD      H63    C6     H61     109.470    3.000
+ HUD      H62    C6     H61     109.470    3.000
+ HUD      C4     C5     H53     109.470    3.000
+ HUD      C4     C5     H52     109.470    3.000
+ HUD      C4     C5     H51     109.470    3.000
+ HUD      H53    C5     H52     109.470    3.000
+ HUD      H53    C5     H51     109.470    3.000
+ HUD      H52    C5     H51     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HUD      CONST_1  O34    C36    N35    H351       0.000    0.000   0
+ HUD      var_1    O34    C36    C33    C27     -123.922   20.000   1
+ HUD      var_2    C36    C33    C27    N26       25.357   20.000   3
+ HUD      var_3    C33    C27    C28    C29      -59.535   20.000   3
+ HUD      var_4    C27    C28    C29    C31     -111.767   20.000   3
+ HUD      var_5    C28    C29    C30    C31      108.615   20.000   3
+ HUD      var_6    C28    C29    C31    C30     -108.524   20.000   3
+ HUD      var_7    C33    C27    N26    C24     -145.880   20.000   3
+ HUD      CONST_2  C27    N26    C24    C18      180.000    0.000   0
+ HUD      var_8    N26    C24    C18    N16      149.590   20.000   3
+ HUD      var_9    C24    C18    C19    C21      180.000   20.000   3
+ HUD      var_10   C18    C19    C20    C21     -120.000   20.000   3
+ HUD      var_11   C18    C19    C21    C20       94.346   20.000   1
+ HUD      var_12   C19    C21    C23    H231    -127.000   20.000   1
+ HUD      var_13   C19    C21    C22    H221     112.938   20.000   1
+ HUD      var_14   C19    C21    C20    C17      -95.076   20.000   1
+ HUD      var_15   C21    C20    C17    N16       60.000   20.000   3
+ HUD      var_16   C24    C18    N16    C14      -90.000   20.000   3
+ HUD      var_17   C18    N16    C17    C20        0.000   20.000   1
+ HUD      CONST_3  C18    N16    C14    C9       180.000    0.000   0
+ HUD      var_18   N16    C14    C9     N8       115.065   20.000   3
+ HUD      var_19   C14    C9     C10    C11      177.851   20.000   1
+ HUD      var_20   C9     C10    C13    H131     176.022   20.000   1
+ HUD      var_21   C9     C10    C12    H121      64.697   20.000   1
+ HUD      var_22   C9     C10    C11    H111     -60.421   20.000   1
+ HUD      var_23   C14    C9     N8     C1      -113.874   20.000   3
+ HUD      CONST_4  C9     N8     C1     O3       180.000    0.000   0
+ HUD      var_24   N8     C1     O3     C4      -179.980   20.000   1
+ HUD      var_25   C1     O3     C4     C5        60.010   20.000   1
+ HUD      var_26   O3     C4     C7     H71       60.217   20.000   1
+ HUD      var_27   O3     C4     C6     H61       58.884   20.000   1
+ HUD      var_28   O3     C4     C5     H51       57.988   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HUD      chir_01  C4     O3     C5     C6        negativ
+ HUD      chir_02  C9     N8     C10    C14       negativ
+ HUD      chir_03  C10    C9     C11    C12       positiv
+ HUD      chir_04  C18    N16    C19    C24       negativ
+ HUD      chir_05  C19    C18    C20    C21       positiv
+ HUD      chir_06  C20    C17    C19    C21       negativ
+ HUD      chir_07  C21    C19    C20    C22       positiv
+ HUD      chir_08  C27    N26    C28    C33       negativ
+ HUD      chir_09  C29    C28    C30    C31       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HUD      plan-1    C1        0.020
+ HUD      plan-1    O2        0.020
+ HUD      plan-1    O3        0.020
+ HUD      plan-1    N8        0.020
+ HUD      plan-1    HN8       0.020
+ HUD      plan-2    N8        0.020
+ HUD      plan-2    C1        0.020
+ HUD      plan-2    C9        0.020
+ HUD      plan-2    HN8       0.020
+ HUD      plan-3    C14       0.020
+ HUD      plan-3    C9        0.020
+ HUD      plan-3    O15       0.020
+ HUD      plan-3    N16       0.020
+ HUD      plan-4    N16       0.020
+ HUD      plan-4    C14       0.020
+ HUD      plan-4    C17       0.020
+ HUD      plan-4    C18       0.020
+ HUD      plan-5    C24       0.020
+ HUD      plan-5    C18       0.020
+ HUD      plan-5    O25       0.020
+ HUD      plan-5    N26       0.020
+ HUD      plan-5    HN26      0.020
+ HUD      plan-6    N26       0.020
+ HUD      plan-6    C24       0.020
+ HUD      plan-6    C27       0.020
+ HUD      plan-6    HN26      0.020
+ HUD      plan-7    C33       0.020
+ HUD      plan-7    C27       0.020
+ HUD      plan-7    O32       0.020
+ HUD      plan-7    C36       0.020
+ HUD      plan-8    N35       0.020
+ HUD      plan-8    C36       0.020
+ HUD      plan-8    H351      0.020
+ HUD      plan-8    H352      0.020
+ HUD      plan-9    C36       0.020
+ HUD      plan-9    C33       0.020
+ HUD      plan-9    O34       0.020
+ HUD      plan-9    N35       0.020
+ HUD      plan-9    H352      0.020
+ HUD      plan-9    H351      0.020
+# ------------------------------------------------------

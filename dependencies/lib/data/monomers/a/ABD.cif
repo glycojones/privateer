@@ -1,0 +1,831 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ABD      ABD 'ACARBOSE DERIVED HEXASACCHARIDE     ' non-polymer       129  66 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ABD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ABD           O6G    O    OH1       0.000      0.000    0.000    0.000
+ ABD           HO6G   H    H         0.000      0.897    0.125   -0.339
+ ABD           C6G    C    CH2       0.000     -0.132    0.672    1.254
+ ABD           H6G1   H    H         0.000      0.062    1.738    1.117
+ ABD           H6G2   H    H         0.000      0.588    0.261    1.964
+ ABD           C5G    C    CH1       0.000     -1.551    0.475    1.792
+ ABD           H5G    H    H         0.000     -2.274    0.887    1.074
+ ABD           C4G    C    CH1       0.000     -1.692    1.201    3.131
+ ABD           H4G    H    H         0.000     -0.985    0.775    3.857
+ ABD           O4G    O    OH1       0.000     -1.413    2.591    2.953
+ ABD           HOG4   H    H         0.000     -1.502    3.048    3.800
+ ABD           C3G    C    CH1       0.000     -3.125    1.026    3.646
+ ABD           H3G    H    H         0.000     -3.824    1.543    2.975
+ ABD           O3G    O    OH1       0.000     -3.231    1.570    4.963
+ ABD           HO3G   H    H         0.000     -4.136    1.459    5.285
+ ABD           C2G    C    CH1       0.000     -3.453   -0.469    3.678
+ ABD           H2G    H    H         0.000     -2.824   -0.969    4.427
+ ABD           O2G    O    OH1       0.000     -4.830   -0.650    4.013
+ ABD           HO2G   H    H         0.000     -5.036   -1.594    4.032
+ ABD           O5G    O    O2        0.000     -1.801   -0.918    1.969
+ ABD           C1G    C    CH1       0.000     -3.180   -1.070    2.296
+ ABD           H1G    H    H         0.000     -3.437   -2.138    2.306
+ ABD           O4H    O    O2        0.000     -3.978   -0.399    1.320
+ ABD           C4H    C    CH1       0.000     -3.830   -1.122    0.096
+ ABD           H4H    H    H         0.000     -2.807   -1.518    0.025
+ ABD           C3H    C    CH1       0.000     -4.832   -2.281    0.060
+ ABD           H3H    H    H         0.000     -5.847   -1.897    0.236
+ ABD           O3H    O    OH1       0.000     -4.499   -3.236    1.069
+ ABD           HO3H   H    H         0.000     -5.132   -3.966    1.043
+ ABD           C2H    C    CH1       0.000     -4.765   -2.941   -1.320
+ ABD           H2H    H    H         0.000     -3.783   -3.416   -1.453
+ ABD           O2H    O    OH1       0.000     -5.792   -3.929   -1.427
+ ABD           HO2H   H    H         0.000     -5.749   -4.344   -2.299
+ ABD           C5H    C    CH1       0.000     -4.101   -0.190   -1.085
+ ABD           H5H    H    H         0.000     -5.132    0.186   -1.024
+ ABD           C6H    C    CH2       0.000     -3.126    0.987   -1.038
+ ABD           H6H1   H    H         0.000     -2.104    0.616   -1.145
+ ABD           H6H2   H    H         0.000     -3.226    1.503   -0.081
+ ABD           O6H    O    OH1       0.000     -3.420    1.893   -2.103
+ ABD           HO6H   H    H         0.000     -2.803    2.637   -2.072
+ ABD           O5H    O    O2        0.000     -3.927   -0.899   -2.310
+ ABD           C1H    C    CH1       0.000     -4.967   -1.872   -2.397
+ ABD           H1H    H    H         0.000     -4.944   -2.344   -3.389
+ ABD           O4I    O    O2        0.000     -6.231   -1.235   -2.202
+ ABD           C4I    C    CH1       0.000     -6.541   -0.554   -3.419
+ ABD           H4I    H    H         0.000     -5.621   -0.131   -3.849
+ ABD           C3I    C    CH1       0.000     -7.168   -1.537   -4.415
+ ABD           H3I    H    H         0.000     -8.027   -2.038   -3.947
+ ABD           O3I    O    OH1       0.000     -6.197   -2.511   -4.803
+ ABD           HO3I   H    H         0.000     -6.595   -3.130   -5.430
+ ABD           C2I    C    CH1       0.000     -7.635   -0.754   -5.645
+ ABD           H2I    H    H         0.000     -6.764   -0.341   -6.172
+ ABD           O2I    O    OH1       0.000     -8.354   -1.626   -6.521
+ ABD           HO2I   H    H         0.000     -7.777   -2.350   -6.800
+ ABD           C5I    C    CH1       0.000     -7.538    0.572   -3.136
+ ABD           H5I    H    H         0.000     -8.465    0.145   -2.728
+ ABD           C6I    C    CH2       0.000     -6.933    1.540   -2.118
+ ABD           H6I1   H    H         0.000     -6.042    2.007   -2.545
+ ABD           H6I2   H    H         0.000     -6.658    0.992   -1.214
+ ABD           O6I    O    OH1       0.000     -7.891    2.549   -1.792
+ ABD           HO6I   H    H         0.000     -7.508    3.160   -1.149
+ ABD           O5I    O    O2        0.000     -7.829    1.273   -4.343
+ ABD           C1I    C    CH1       0.000     -8.550    0.385   -5.195
+ ABD           H1I    H    H         0.000     -8.909    0.936   -6.076
+ ABD           N1J    N    NH1       0.000     -9.697   -0.167   -4.464
+ ABD           HN1J   H    H         0.000     -9.663   -0.820   -3.694
+ ABD           C4J    C    CH1       0.000    -10.903    0.414   -5.068
+ ABD           H4J    H    H         0.000    -10.634    0.934   -5.998
+ ABD           C3J    C    CH1       0.000    -11.912   -0.699   -5.376
+ ABD           H3J    H    H         0.000    -12.101   -1.286   -4.467
+ ABD           O3J    O    OH1       0.000    -11.392   -1.552   -6.397
+ ABD           HO3J   H    H         0.000    -12.036   -2.244   -6.596
+ ABD           C2J    C    CH1       0.000    -13.218   -0.057   -5.856
+ ABD           H2J    H    H         0.000    -13.050    0.443   -6.820
+ ABD           O2J    O    OH1       0.000    -14.220   -1.064   -6.008
+ ABD           HO2J   H    H         0.000    -15.044   -0.656   -6.304
+ ABD           C5J    C    CH1       0.000    -11.538    1.406   -4.092
+ ABD           H5J    H    H         0.000    -11.829    0.878   -3.173
+ ABD           C6J    C    CH3       0.000    -10.527    2.502   -3.751
+ ABD           H6J3   H    H         0.000     -9.718    2.082   -3.212
+ ABD           H6J2   H    H         0.000    -10.164    2.940   -4.645
+ ABD           H6J1   H    H         0.000    -10.996    3.246   -3.160
+ ABD           O5J    O    O2        0.000    -12.693    1.994   -4.686
+ ABD           C1J    C    CH1       0.000    -13.678    0.971   -4.821
+ ABD           H1J    H    H         0.000    -14.627    1.419   -5.147
+ ABD           O4K    O    O2        0.000    -13.866    0.323   -3.560
+ ABD           C4K    C    CH1       0.000    -14.473    1.281   -2.690
+ ABD           H4K    H    H         0.000    -14.079    2.282   -2.913
+ ABD           C3K    C    CH1       0.000    -15.992    1.271   -2.897
+ ABD           H3K    H    H         0.000    -16.373    0.247   -2.779
+ ABD           O3K    O    OH1       0.000    -16.301    1.750   -4.207
+ ABD           HO3K   H    H         0.000    -17.260    1.742   -4.335
+ ABD           C2K    C    CH1       0.000    -16.635    2.183   -1.846
+ ABD           H2K    H    H         0.000    -16.335    3.224   -2.031
+ ABD           O2K    O    OH1       0.000    -18.058    2.074   -1.926
+ ABD           HO2K   H    H         0.000    -18.462    2.651   -1.263
+ ABD           C5K    C    CH1       0.000    -14.163    0.920   -1.237
+ ABD           H5K    H    H         0.000    -14.577   -0.073   -1.011
+ ABD           C6K    C    CH2       0.000    -12.647    0.897   -1.030
+ ABD           H6K1   H    H         0.000    -12.242    1.896   -1.205
+ ABD           H6K2   H    H         0.000    -12.195    0.194   -1.732
+ ABD           O6K    O    OH1       0.000    -12.356    0.491    0.310
+ ABD           HO6K   H    H         0.000    -11.398    0.477    0.440
+ ABD           O5K    O    O2        0.000    -14.746    1.887   -0.365
+ ABD           C1K    C    CH1       0.000    -16.163    1.753   -0.457
+ ABD           H1K    H    H         0.000    -16.640    2.388    0.303
+ ABD           O4L    O    O2        0.000    -16.527    0.389   -0.232
+ ABD           C4L    C    CH1       0.000    -16.422    0.161    1.174
+ ABD           H4L    H    H         0.000    -15.560    0.712    1.573
+ ABD           C3L    C    CH1       0.000    -17.702    0.639    1.868
+ ABD           H3L    H    H         0.000    -18.575    0.167    1.397
+ ABD           O3L    O    OH1       0.000    -17.806    2.059    1.757
+ ABD           HO3L   H    H         0.000    -18.614    2.358    2.196
+ ABD           C2L    C    CH1       0.000    -17.637    0.239    3.347
+ ABD           H2L    H    H         0.000    -16.827    0.793    3.843
+ ABD           O2L    O    OH1       0.000    -18.881    0.544    3.980
+ ABD           HO2L   H    H         0.000    -18.838    0.291    4.912
+ ABD           C5L    C    CH1       0.000    -16.240   -1.335    1.437
+ ABD           H5L    H    H         0.000    -17.114   -1.882    1.055
+ ABD           C6L    C    CH2       0.000    -14.981   -1.829    0.721
+ ABD           H6L1   H    H         0.000    -14.105   -1.328    1.140
+ ABD           H6L2   H    H         0.000    -15.055   -1.600   -0.344
+ ABD           O6L    O    OH1       0.000    -14.854   -3.241    0.898
+ ABD           HO6L   H    H         0.000    -14.058   -3.551    0.446
+ ABD           O5L    O    O2        0.000    -16.110   -1.569    2.838
+ ABD           C1L    C    CH1       0.000    -17.365   -1.263    3.445
+ ABD           H1L    H    H         0.000    -18.164   -1.813    2.929
+ ABD           O1L    O    OH1       0.000    -17.332   -1.652    4.820
+ ABD           HO1L   H    H         0.000    -17.159   -2.601    4.882
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ABD      O6G    n/a    C6G    START
+ ABD      HO6G   O6G    .      .
+ ABD      C6G    O6G    C5G    .
+ ABD      H6G1   C6G    .      .
+ ABD      H6G2   C6G    .      .
+ ABD      C5G    C6G    O5G    .
+ ABD      H5G    C5G    .      .
+ ABD      C4G    C5G    C3G    .
+ ABD      H4G    C4G    .      .
+ ABD      O4G    C4G    HOG4   .
+ ABD      HOG4   O4G    .      .
+ ABD      C3G    C4G    C2G    .
+ ABD      H3G    C3G    .      .
+ ABD      O3G    C3G    HO3G   .
+ ABD      HO3G   O3G    .      .
+ ABD      C2G    C3G    O2G    .
+ ABD      H2G    C2G    .      .
+ ABD      O2G    C2G    HO2G   .
+ ABD      HO2G   O2G    .      .
+ ABD      O5G    C5G    C1G    .
+ ABD      C1G    O5G    O4H    .
+ ABD      H1G    C1G    .      .
+ ABD      O4H    C1G    C4H    .
+ ABD      C4H    O4H    C5H    .
+ ABD      H4H    C4H    .      .
+ ABD      C3H    C4H    C2H    .
+ ABD      H3H    C3H    .      .
+ ABD      O3H    C3H    HO3H   .
+ ABD      HO3H   O3H    .      .
+ ABD      C2H    C3H    O2H    .
+ ABD      H2H    C2H    .      .
+ ABD      O2H    C2H    HO2H   .
+ ABD      HO2H   O2H    .      .
+ ABD      C5H    C4H    O5H    .
+ ABD      H5H    C5H    .      .
+ ABD      C6H    C5H    O6H    .
+ ABD      H6H1   C6H    .      .
+ ABD      H6H2   C6H    .      .
+ ABD      O6H    C6H    HO6H   .
+ ABD      HO6H   O6H    .      .
+ ABD      O5H    C5H    C1H    .
+ ABD      C1H    O5H    O4I    .
+ ABD      H1H    C1H    .      .
+ ABD      O4I    C1H    C4I    .
+ ABD      C4I    O4I    C5I    .
+ ABD      H4I    C4I    .      .
+ ABD      C3I    C4I    C2I    .
+ ABD      H3I    C3I    .      .
+ ABD      O3I    C3I    HO3I   .
+ ABD      HO3I   O3I    .      .
+ ABD      C2I    C3I    O2I    .
+ ABD      H2I    C2I    .      .
+ ABD      O2I    C2I    HO2I   .
+ ABD      HO2I   O2I    .      .
+ ABD      C5I    C4I    O5I    .
+ ABD      H5I    C5I    .      .
+ ABD      C6I    C5I    O6I    .
+ ABD      H6I1   C6I    .      .
+ ABD      H6I2   C6I    .      .
+ ABD      O6I    C6I    HO6I   .
+ ABD      HO6I   O6I    .      .
+ ABD      O5I    C5I    C1I    .
+ ABD      C1I    O5I    N1J    .
+ ABD      H1I    C1I    .      .
+ ABD      N1J    C1I    C4J    .
+ ABD      HN1J   N1J    .      .
+ ABD      C4J    N1J    C5J    .
+ ABD      H4J    C4J    .      .
+ ABD      C3J    C4J    C2J    .
+ ABD      H3J    C3J    .      .
+ ABD      O3J    C3J    HO3J   .
+ ABD      HO3J   O3J    .      .
+ ABD      C2J    C3J    O2J    .
+ ABD      H2J    C2J    .      .
+ ABD      O2J    C2J    HO2J   .
+ ABD      HO2J   O2J    .      .
+ ABD      C5J    C4J    O5J    .
+ ABD      H5J    C5J    .      .
+ ABD      C6J    C5J    H6J1   .
+ ABD      H6J3   C6J    .      .
+ ABD      H6J2   C6J    .      .
+ ABD      H6J1   C6J    .      .
+ ABD      O5J    C5J    C1J    .
+ ABD      C1J    O5J    O4K    .
+ ABD      H1J    C1J    .      .
+ ABD      O4K    C1J    C4K    .
+ ABD      C4K    O4K    C5K    .
+ ABD      H4K    C4K    .      .
+ ABD      C3K    C4K    C2K    .
+ ABD      H3K    C3K    .      .
+ ABD      O3K    C3K    HO3K   .
+ ABD      HO3K   O3K    .      .
+ ABD      C2K    C3K    O2K    .
+ ABD      H2K    C2K    .      .
+ ABD      O2K    C2K    HO2K   .
+ ABD      HO2K   O2K    .      .
+ ABD      C5K    C4K    O5K    .
+ ABD      H5K    C5K    .      .
+ ABD      C6K    C5K    O6K    .
+ ABD      H6K1   C6K    .      .
+ ABD      H6K2   C6K    .      .
+ ABD      O6K    C6K    HO6K   .
+ ABD      HO6K   O6K    .      .
+ ABD      O5K    C5K    C1K    .
+ ABD      C1K    O5K    O4L    .
+ ABD      H1K    C1K    .      .
+ ABD      O4L    C1K    C4L    .
+ ABD      C4L    O4L    C5L    .
+ ABD      H4L    C4L    .      .
+ ABD      C3L    C4L    C2L    .
+ ABD      H3L    C3L    .      .
+ ABD      O3L    C3L    HO3L   .
+ ABD      HO3L   O3L    .      .
+ ABD      C2L    C3L    O2L    .
+ ABD      H2L    C2L    .      .
+ ABD      O2L    C2L    HO2L   .
+ ABD      HO2L   O2L    .      .
+ ABD      C5L    C4L    O5L    .
+ ABD      H5L    C5L    .      .
+ ABD      C6L    C5L    O6L    .
+ ABD      H6L1   C6L    .      .
+ ABD      H6L2   C6L    .      .
+ ABD      O6L    C6L    HO6L   .
+ ABD      HO6L   O6L    .      .
+ ABD      O5L    C5L    C1L    .
+ ABD      C1L    O5L    O1L    .
+ ABD      H1L    C1L    .      .
+ ABD      O1L    C1L    HO1L   .
+ ABD      HO1L   O1L    .      END
+ ABD      C1L    C2L    .    ADD
+ ABD      C1K    C2K    .    ADD
+ ABD      C1J    C2J    .    ADD
+ ABD      C1I    C2I    .    ADD
+ ABD      C1H    C2H    .    ADD
+ ABD      C1G    C2G    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ABD       O1L       C1L       single    1.432     0.020     1.432     0.020     
+ABD       C1L       C2L       single    1.524     0.020     1.524     0.020     
+ABD       C1L       O5L       single    1.426     0.020     1.426     0.020     
+ABD       H1L       C1L       single    1.089     0.010     0.989     0.005     
+ABD       HO1L      O1L       single    0.970     0.012     0.839     0.014     
+ABD       O2L       C2L       single    1.432     0.020     1.432     0.020     
+ABD       C2L       C3L       single    1.524     0.020     1.524     0.020     
+ABD       H2L       C2L       single    1.089     0.010     0.989     0.005     
+ABD       HO2L      O2L       single    0.970     0.012     0.839     0.014     
+ABD       O3L       C3L       single    1.432     0.020     1.432     0.020     
+ABD       C3L       C4L       single    1.524     0.020     1.524     0.020     
+ABD       H3L       C3L       single    1.089     0.010     0.989     0.005     
+ABD       HO3L      O3L       single    0.970     0.012     0.839     0.014     
+ABD       C5L       C4L       single    1.524     0.020     1.524     0.020     
+ABD       C4L       O4L       single    1.426     0.020     1.426     0.020     
+ABD       H4L       C4L       single    1.089     0.010     0.989     0.005     
+ABD       O5L       C5L       single    1.426     0.020     1.426     0.020     
+ABD       C6L       C5L       single    1.524     0.020     1.524     0.020     
+ABD       H5L       C5L       single    1.089     0.010     0.989     0.005     
+ABD       O6L       C6L       single    1.432     0.020     1.432     0.020     
+ABD       H6L1      C6L       single    1.089     0.010     0.989     0.005     
+ABD       H6L2      C6L       single    1.089     0.010     0.989     0.005     
+ABD       HO6L      O6L       single    0.970     0.012     0.839     0.014     
+ABD       O4L       C1K       single    1.426     0.020     1.426     0.020     
+ABD       C1K       C2K       single    1.524     0.020     1.524     0.020     
+ABD       C1K       O5K       single    1.426     0.020     1.426     0.020     
+ABD       H1K       C1K       single    1.089     0.010     0.989     0.005     
+ABD       O2K       C2K       single    1.432     0.020     1.432     0.020     
+ABD       C2K       C3K       single    1.524     0.020     1.524     0.020     
+ABD       H2K       C2K       single    1.089     0.010     0.989     0.005     
+ABD       HO2K      O2K       single    0.970     0.012     0.839     0.014     
+ABD       O3K       C3K       single    1.432     0.020     1.432     0.020     
+ABD       C3K       C4K       single    1.524     0.020     1.524     0.020     
+ABD       H3K       C3K       single    1.089     0.010     0.989     0.005     
+ABD       HO3K      O3K       single    0.970     0.012     0.839     0.014     
+ABD       C5K       C4K       single    1.524     0.020     1.524     0.020     
+ABD       C4K       O4K       single    1.426     0.020     1.426     0.020     
+ABD       H4K       C4K       single    1.089     0.010     0.989     0.005     
+ABD       O5K       C5K       single    1.426     0.020     1.426     0.020     
+ABD       C6K       C5K       single    1.524     0.020     1.524     0.020     
+ABD       H5K       C5K       single    1.089     0.010     0.989     0.005     
+ABD       O6K       C6K       single    1.432     0.020     1.432     0.020     
+ABD       H6K1      C6K       single    1.089     0.010     0.989     0.005     
+ABD       H6K2      C6K       single    1.089     0.010     0.989     0.005     
+ABD       HO6K      O6K       single    0.970     0.012     0.839     0.014     
+ABD       O4K       C1J       single    1.426     0.020     1.426     0.020     
+ABD       C1J       C2J       single    1.524     0.020     1.524     0.020     
+ABD       C1J       O5J       single    1.426     0.020     1.426     0.020     
+ABD       H1J       C1J       single    1.089     0.010     0.989     0.005     
+ABD       O2J       C2J       single    1.432     0.020     1.432     0.020     
+ABD       C2J       C3J       single    1.524     0.020     1.524     0.020     
+ABD       H2J       C2J       single    1.089     0.010     0.989     0.005     
+ABD       HO2J      O2J       single    0.970     0.012     0.839     0.014     
+ABD       O3J       C3J       single    1.432     0.020     1.432     0.020     
+ABD       C3J       C4J       single    1.524     0.020     1.524     0.020     
+ABD       H3J       C3J       single    1.089     0.010     0.989     0.005     
+ABD       HO3J      O3J       single    0.970     0.012     0.839     0.014     
+ABD       C5J       C4J       single    1.524     0.020     1.524     0.020     
+ABD       C4J       N1J       single    1.450     0.020     1.450     0.020     
+ABD       H4J       C4J       single    1.089     0.010     0.989     0.005     
+ABD       O5J       C5J       single    1.426     0.020     1.426     0.020     
+ABD       C6J       C5J       single    1.524     0.020     1.524     0.020     
+ABD       H5J       C5J       single    1.089     0.010     0.989     0.005     
+ABD       H6J1      C6J       single    1.089     0.010     0.989     0.005     
+ABD       H6J2      C6J       single    1.089     0.010     0.989     0.005     
+ABD       H6J3      C6J       single    1.089     0.010     0.989     0.005     
+ABD       N1J       C1I       single    1.450     0.020     1.450     0.020     
+ABD       HN1J      N1J       single    1.036     0.016     0.914     0.007     
+ABD       C1I       C2I       single    1.524     0.020     1.524     0.020     
+ABD       C1I       O5I       single    1.426     0.020     1.426     0.020     
+ABD       H1I       C1I       single    1.089     0.010     0.989     0.005     
+ABD       O2I       C2I       single    1.432     0.020     1.432     0.020     
+ABD       C2I       C3I       single    1.524     0.020     1.524     0.020     
+ABD       H2I       C2I       single    1.089     0.010     0.989     0.005     
+ABD       HO2I      O2I       single    0.970     0.012     0.839     0.014     
+ABD       O3I       C3I       single    1.432     0.020     1.432     0.020     
+ABD       C3I       C4I       single    1.524     0.020     1.524     0.020     
+ABD       H3I       C3I       single    1.089     0.010     0.989     0.005     
+ABD       HO3I      O3I       single    0.970     0.012     0.839     0.014     
+ABD       C5I       C4I       single    1.524     0.020     1.524     0.020     
+ABD       C4I       O4I       single    1.426     0.020     1.426     0.020     
+ABD       H4I       C4I       single    1.089     0.010     0.989     0.005     
+ABD       O5I       C5I       single    1.426     0.020     1.426     0.020     
+ABD       C6I       C5I       single    1.524     0.020     1.524     0.020     
+ABD       H5I       C5I       single    1.089     0.010     0.989     0.005     
+ABD       O6I       C6I       single    1.432     0.020     1.432     0.020     
+ABD       H6I1      C6I       single    1.089     0.010     0.989     0.005     
+ABD       H6I2      C6I       single    1.089     0.010     0.989     0.005     
+ABD       HO6I      O6I       single    0.970     0.012     0.839     0.014     
+ABD       O4I       C1H       single    1.426     0.020     1.426     0.020     
+ABD       C1H       C2H       single    1.524     0.020     1.524     0.020     
+ABD       C1H       O5H       single    1.426     0.020     1.426     0.020     
+ABD       H1H       C1H       single    1.089     0.010     0.989     0.005     
+ABD       O2H       C2H       single    1.432     0.020     1.432     0.020     
+ABD       C2H       C3H       single    1.524     0.020     1.524     0.020     
+ABD       H2H       C2H       single    1.089     0.010     0.989     0.005     
+ABD       HO2H      O2H       single    0.970     0.012     0.839     0.014     
+ABD       O3H       C3H       single    1.432     0.020     1.432     0.020     
+ABD       C3H       C4H       single    1.524     0.020     1.524     0.020     
+ABD       H3H       C3H       single    1.089     0.010     0.989     0.005     
+ABD       HO3H      O3H       single    0.970     0.012     0.839     0.014     
+ABD       C5H       C4H       single    1.524     0.020     1.524     0.020     
+ABD       C4H       O4H       single    1.426     0.020     1.426     0.020     
+ABD       H4H       C4H       single    1.089     0.010     0.989     0.005     
+ABD       O5H       C5H       single    1.426     0.020     1.426     0.020     
+ABD       C6H       C5H       single    1.524     0.020     1.524     0.020     
+ABD       H5H       C5H       single    1.089     0.010     0.989     0.005     
+ABD       O6H       C6H       single    1.432     0.020     1.432     0.020     
+ABD       H6H1      C6H       single    1.089     0.010     0.989     0.005     
+ABD       H6H2      C6H       single    1.089     0.010     0.989     0.005     
+ABD       HO6H      O6H       single    0.970     0.012     0.839     0.014     
+ABD       O4H       C1G       single    1.426     0.020     1.426     0.020     
+ABD       C1G       C2G       single    1.524     0.020     1.524     0.020     
+ABD       C1G       O5G       single    1.426     0.020     1.426     0.020     
+ABD       H1G       C1G       single    1.089     0.010     0.989     0.005     
+ABD       O2G       C2G       single    1.432     0.020     1.432     0.020     
+ABD       C2G       C3G       single    1.524     0.020     1.524     0.020     
+ABD       H2G       C2G       single    1.089     0.010     0.989     0.005     
+ABD       HO2G      O2G       single    0.970     0.012     0.839     0.014     
+ABD       O3G       C3G       single    1.432     0.020     1.432     0.020     
+ABD       C3G       C4G       single    1.524     0.020     1.524     0.020     
+ABD       H3G       C3G       single    1.089     0.010     0.989     0.005     
+ABD       HO3G      O3G       single    0.970     0.012     0.839     0.014     
+ABD       O4G       C4G       single    1.432     0.020     1.432     0.020     
+ABD       C4G       C5G       single    1.524     0.020     1.524     0.020     
+ABD       H4G       C4G       single    1.089     0.010     0.989     0.005     
+ABD       HOG4      O4G       single    0.970     0.012     0.839     0.014     
+ABD       O5G       C5G       single    1.426     0.020     1.426     0.020     
+ABD       C5G       C6G       single    1.524     0.020     1.524     0.020     
+ABD       H5G       C5G       single    1.089     0.010     0.989     0.005     
+ABD       C6G       O6G       single    1.432     0.020     1.432     0.020     
+ABD       H6G1      C6G       single    1.089     0.010     0.989     0.005     
+ABD       H6G2      C6G       single    1.089     0.010     0.989     0.005     
+ABD       HO6G      O6G       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ABD      HO6G   O6G    C6G     109.470    3.000
+ ABD      O6G    C6G    H6G1    109.470    3.000
+ ABD      O6G    C6G    H6G2    109.470    3.000
+ ABD      O6G    C6G    C5G     109.470    3.000
+ ABD      H6G1   C6G    H6G2    107.900    3.000
+ ABD      H6G1   C6G    C5G     109.470    3.000
+ ABD      H6G2   C6G    C5G     109.470    3.000
+ ABD      C6G    C5G    H5G     108.340    3.000
+ ABD      C6G    C5G    C4G     111.000    3.000
+ ABD      C6G    C5G    O5G     109.470    3.000
+ ABD      H5G    C5G    C4G     108.340    3.000
+ ABD      H5G    C5G    O5G     109.470    3.000
+ ABD      C4G    C5G    O5G     109.470    3.000
+ ABD      C5G    C4G    H4G     108.340    3.000
+ ABD      C5G    C4G    O4G     109.470    3.000
+ ABD      C5G    C4G    C3G     111.000    3.000
+ ABD      H4G    C4G    O4G     109.470    3.000
+ ABD      H4G    C4G    C3G     108.340    3.000
+ ABD      O4G    C4G    C3G     109.470    3.000
+ ABD      C4G    O4G    HOG4    109.470    3.000
+ ABD      C4G    C3G    H3G     108.340    3.000
+ ABD      C4G    C3G    O3G     109.470    3.000
+ ABD      C4G    C3G    C2G     111.000    3.000
+ ABD      H3G    C3G    O3G     109.470    3.000
+ ABD      H3G    C3G    C2G     108.340    3.000
+ ABD      O3G    C3G    C2G     109.470    3.000
+ ABD      C3G    O3G    HO3G    109.470    3.000
+ ABD      C3G    C2G    H2G     108.340    3.000
+ ABD      C3G    C2G    O2G     109.470    3.000
+ ABD      C3G    C2G    C1G     111.000    3.000
+ ABD      H2G    C2G    O2G     109.470    3.000
+ ABD      H2G    C2G    C1G     108.340    3.000
+ ABD      O2G    C2G    C1G     109.470    3.000
+ ABD      C2G    O2G    HO2G    109.470    3.000
+ ABD      C5G    O5G    C1G     111.800    3.000
+ ABD      O5G    C1G    H1G     109.470    3.000
+ ABD      O5G    C1G    O4H     109.470    3.000
+ ABD      O5G    C1G    C2G     109.470    3.000
+ ABD      H1G    C1G    O4H     109.470    3.000
+ ABD      H1G    C1G    C2G     108.340    3.000
+ ABD      O4H    C1G    C2G     109.470    3.000
+ ABD      C1G    O4H    C4H     111.800    3.000
+ ABD      O4H    C4H    H4H     109.470    3.000
+ ABD      O4H    C4H    C3H     109.470    3.000
+ ABD      O4H    C4H    C5H     109.470    3.000
+ ABD      H4H    C4H    C3H     108.340    3.000
+ ABD      H4H    C4H    C5H     108.340    3.000
+ ABD      C3H    C4H    C5H     111.000    3.000
+ ABD      C4H    C3H    H3H     108.340    3.000
+ ABD      C4H    C3H    O3H     109.470    3.000
+ ABD      C4H    C3H    C2H     111.000    3.000
+ ABD      H3H    C3H    O3H     109.470    3.000
+ ABD      H3H    C3H    C2H     108.340    3.000
+ ABD      O3H    C3H    C2H     109.470    3.000
+ ABD      C3H    O3H    HO3H    109.470    3.000
+ ABD      C3H    C2H    H2H     108.340    3.000
+ ABD      C3H    C2H    O2H     109.470    3.000
+ ABD      C3H    C2H    C1H     111.000    3.000
+ ABD      H2H    C2H    O2H     109.470    3.000
+ ABD      H2H    C2H    C1H     108.340    3.000
+ ABD      O2H    C2H    C1H     109.470    3.000
+ ABD      C2H    O2H    HO2H    109.470    3.000
+ ABD      C4H    C5H    H5H     108.340    3.000
+ ABD      C4H    C5H    C6H     111.000    3.000
+ ABD      C4H    C5H    O5H     109.470    3.000
+ ABD      H5H    C5H    C6H     108.340    3.000
+ ABD      H5H    C5H    O5H     109.470    3.000
+ ABD      C6H    C5H    O5H     109.470    3.000
+ ABD      C5H    C6H    H6H1    109.470    3.000
+ ABD      C5H    C6H    H6H2    109.470    3.000
+ ABD      C5H    C6H    O6H     109.470    3.000
+ ABD      H6H1   C6H    H6H2    107.900    3.000
+ ABD      H6H1   C6H    O6H     109.470    3.000
+ ABD      H6H2   C6H    O6H     109.470    3.000
+ ABD      C6H    O6H    HO6H    109.470    3.000
+ ABD      C5H    O5H    C1H     111.800    3.000
+ ABD      O5H    C1H    H1H     109.470    3.000
+ ABD      O5H    C1H    O4I     109.470    3.000
+ ABD      O5H    C1H    C2H     109.470    3.000
+ ABD      H1H    C1H    O4I     109.470    3.000
+ ABD      H1H    C1H    C2H     108.340    3.000
+ ABD      O4I    C1H    C2H     109.470    3.000
+ ABD      C1H    O4I    C4I     111.800    3.000
+ ABD      O4I    C4I    H4I     109.470    3.000
+ ABD      O4I    C4I    C3I     109.470    3.000
+ ABD      O4I    C4I    C5I     109.470    3.000
+ ABD      H4I    C4I    C3I     108.340    3.000
+ ABD      H4I    C4I    C5I     108.340    3.000
+ ABD      C3I    C4I    C5I     111.000    3.000
+ ABD      C4I    C3I    H3I     108.340    3.000
+ ABD      C4I    C3I    O3I     109.470    3.000
+ ABD      C4I    C3I    C2I     111.000    3.000
+ ABD      H3I    C3I    O3I     109.470    3.000
+ ABD      H3I    C3I    C2I     108.340    3.000
+ ABD      O3I    C3I    C2I     109.470    3.000
+ ABD      C3I    O3I    HO3I    109.470    3.000
+ ABD      C3I    C2I    H2I     108.340    3.000
+ ABD      C3I    C2I    O2I     109.470    3.000
+ ABD      C3I    C2I    C1I     111.000    3.000
+ ABD      H2I    C2I    O2I     109.470    3.000
+ ABD      H2I    C2I    C1I     108.340    3.000
+ ABD      O2I    C2I    C1I     109.470    3.000
+ ABD      C2I    O2I    HO2I    109.470    3.000
+ ABD      C4I    C5I    H5I     108.340    3.000
+ ABD      C4I    C5I    C6I     111.000    3.000
+ ABD      C4I    C5I    O5I     109.470    3.000
+ ABD      H5I    C5I    C6I     108.340    3.000
+ ABD      H5I    C5I    O5I     109.470    3.000
+ ABD      C6I    C5I    O5I     109.470    3.000
+ ABD      C5I    C6I    H6I1    109.470    3.000
+ ABD      C5I    C6I    H6I2    109.470    3.000
+ ABD      C5I    C6I    O6I     109.470    3.000
+ ABD      H6I1   C6I    H6I2    107.900    3.000
+ ABD      H6I1   C6I    O6I     109.470    3.000
+ ABD      H6I2   C6I    O6I     109.470    3.000
+ ABD      C6I    O6I    HO6I    109.470    3.000
+ ABD      C5I    O5I    C1I     111.800    3.000
+ ABD      O5I    C1I    H1I     109.470    3.000
+ ABD      O5I    C1I    N1J     109.500    3.000
+ ABD      O5I    C1I    C2I     109.470    3.000
+ ABD      H1I    C1I    N1J     108.550    3.000
+ ABD      H1I    C1I    C2I     108.340    3.000
+ ABD      N1J    C1I    C2I     110.000    3.000
+ ABD      C1I    N1J    HN1J    118.500    3.000
+ ABD      C1I    N1J    C4J     120.000    3.000
+ ABD      HN1J   N1J    C4J     118.500    3.000
+ ABD      N1J    C4J    H4J     108.550    3.000
+ ABD      N1J    C4J    C3J     110.000    3.000
+ ABD      N1J    C4J    C5J     110.000    3.000
+ ABD      H4J    C4J    C3J     108.340    3.000
+ ABD      H4J    C4J    C5J     108.340    3.000
+ ABD      C3J    C4J    C5J     111.000    3.000
+ ABD      C4J    C3J    H3J     108.340    3.000
+ ABD      C4J    C3J    O3J     109.470    3.000
+ ABD      C4J    C3J    C2J     111.000    3.000
+ ABD      H3J    C3J    O3J     109.470    3.000
+ ABD      H3J    C3J    C2J     108.340    3.000
+ ABD      O3J    C3J    C2J     109.470    3.000
+ ABD      C3J    O3J    HO3J    109.470    3.000
+ ABD      C3J    C2J    H2J     108.340    3.000
+ ABD      C3J    C2J    O2J     109.470    3.000
+ ABD      C3J    C2J    C1J     111.000    3.000
+ ABD      H2J    C2J    O2J     109.470    3.000
+ ABD      H2J    C2J    C1J     108.340    3.000
+ ABD      O2J    C2J    C1J     109.470    3.000
+ ABD      C2J    O2J    HO2J    109.470    3.000
+ ABD      C4J    C5J    H5J     108.340    3.000
+ ABD      C4J    C5J    C6J     111.000    3.000
+ ABD      C4J    C5J    O5J     109.470    3.000
+ ABD      H5J    C5J    C6J     108.340    3.000
+ ABD      H5J    C5J    O5J     109.470    3.000
+ ABD      C6J    C5J    O5J     109.470    3.000
+ ABD      C5J    C6J    H6J3    109.470    3.000
+ ABD      C5J    C6J    H6J2    109.470    3.000
+ ABD      C5J    C6J    H6J1    109.470    3.000
+ ABD      H6J3   C6J    H6J2    109.470    3.000
+ ABD      H6J3   C6J    H6J1    109.470    3.000
+ ABD      H6J2   C6J    H6J1    109.470    3.000
+ ABD      C5J    O5J    C1J     111.800    3.000
+ ABD      O5J    C1J    H1J     109.470    3.000
+ ABD      O5J    C1J    O4K     109.470    3.000
+ ABD      O5J    C1J    C2J     109.470    3.000
+ ABD      H1J    C1J    O4K     109.470    3.000
+ ABD      H1J    C1J    C2J     108.340    3.000
+ ABD      O4K    C1J    C2J     109.470    3.000
+ ABD      C1J    O4K    C4K     111.800    3.000
+ ABD      O4K    C4K    H4K     109.470    3.000
+ ABD      O4K    C4K    C3K     109.470    3.000
+ ABD      O4K    C4K    C5K     109.470    3.000
+ ABD      H4K    C4K    C3K     108.340    3.000
+ ABD      H4K    C4K    C5K     108.340    3.000
+ ABD      C3K    C4K    C5K     111.000    3.000
+ ABD      C4K    C3K    H3K     108.340    3.000
+ ABD      C4K    C3K    O3K     109.470    3.000
+ ABD      C4K    C3K    C2K     111.000    3.000
+ ABD      H3K    C3K    O3K     109.470    3.000
+ ABD      H3K    C3K    C2K     108.340    3.000
+ ABD      O3K    C3K    C2K     109.470    3.000
+ ABD      C3K    O3K    HO3K    109.470    3.000
+ ABD      C3K    C2K    H2K     108.340    3.000
+ ABD      C3K    C2K    O2K     109.470    3.000
+ ABD      C3K    C2K    C1K     111.000    3.000
+ ABD      H2K    C2K    O2K     109.470    3.000
+ ABD      H2K    C2K    C1K     108.340    3.000
+ ABD      O2K    C2K    C1K     109.470    3.000
+ ABD      C2K    O2K    HO2K    109.470    3.000
+ ABD      C4K    C5K    H5K     108.340    3.000
+ ABD      C4K    C5K    C6K     111.000    3.000
+ ABD      C4K    C5K    O5K     109.470    3.000
+ ABD      H5K    C5K    C6K     108.340    3.000
+ ABD      H5K    C5K    O5K     109.470    3.000
+ ABD      C6K    C5K    O5K     109.470    3.000
+ ABD      C5K    C6K    H6K1    109.470    3.000
+ ABD      C5K    C6K    H6K2    109.470    3.000
+ ABD      C5K    C6K    O6K     109.470    3.000
+ ABD      H6K1   C6K    H6K2    107.900    3.000
+ ABD      H6K1   C6K    O6K     109.470    3.000
+ ABD      H6K2   C6K    O6K     109.470    3.000
+ ABD      C6K    O6K    HO6K    109.470    3.000
+ ABD      C5K    O5K    C1K     111.800    3.000
+ ABD      O5K    C1K    H1K     109.470    3.000
+ ABD      O5K    C1K    O4L     109.470    3.000
+ ABD      O5K    C1K    C2K     109.470    3.000
+ ABD      H1K    C1K    O4L     109.470    3.000
+ ABD      H1K    C1K    C2K     108.340    3.000
+ ABD      O4L    C1K    C2K     109.470    3.000
+ ABD      C1K    O4L    C4L     111.800    3.000
+ ABD      O4L    C4L    H4L     109.470    3.000
+ ABD      O4L    C4L    C3L     109.470    3.000
+ ABD      O4L    C4L    C5L     109.470    3.000
+ ABD      H4L    C4L    C3L     108.340    3.000
+ ABD      H4L    C4L    C5L     108.340    3.000
+ ABD      C3L    C4L    C5L     111.000    3.000
+ ABD      C4L    C3L    H3L     108.340    3.000
+ ABD      C4L    C3L    O3L     109.470    3.000
+ ABD      C4L    C3L    C2L     111.000    3.000
+ ABD      H3L    C3L    O3L     109.470    3.000
+ ABD      H3L    C3L    C2L     108.340    3.000
+ ABD      O3L    C3L    C2L     109.470    3.000
+ ABD      C3L    O3L    HO3L    109.470    3.000
+ ABD      C3L    C2L    H2L     108.340    3.000
+ ABD      C3L    C2L    O2L     109.470    3.000
+ ABD      C3L    C2L    C1L     111.000    3.000
+ ABD      H2L    C2L    O2L     109.470    3.000
+ ABD      H2L    C2L    C1L     108.340    3.000
+ ABD      O2L    C2L    C1L     109.470    3.000
+ ABD      C2L    O2L    HO2L    109.470    3.000
+ ABD      C4L    C5L    H5L     108.340    3.000
+ ABD      C4L    C5L    C6L     111.000    3.000
+ ABD      C4L    C5L    O5L     109.470    3.000
+ ABD      H5L    C5L    C6L     108.340    3.000
+ ABD      H5L    C5L    O5L     109.470    3.000
+ ABD      C6L    C5L    O5L     109.470    3.000
+ ABD      C5L    C6L    H6L1    109.470    3.000
+ ABD      C5L    C6L    H6L2    109.470    3.000
+ ABD      C5L    C6L    O6L     109.470    3.000
+ ABD      H6L1   C6L    H6L2    107.900    3.000
+ ABD      H6L1   C6L    O6L     109.470    3.000
+ ABD      H6L2   C6L    O6L     109.470    3.000
+ ABD      C6L    O6L    HO6L    109.470    3.000
+ ABD      C5L    O5L    C1L     111.800    3.000
+ ABD      O5L    C1L    H1L     109.470    3.000
+ ABD      O5L    C1L    O1L     109.470    3.000
+ ABD      O5L    C1L    C2L     109.470    3.000
+ ABD      H1L    C1L    O1L     109.470    3.000
+ ABD      H1L    C1L    C2L     108.340    3.000
+ ABD      O1L    C1L    C2L     109.470    3.000
+ ABD      C1L    O1L    HO1L    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ABD      var_1    HO6G   O6G    C6G    C5G     -179.973   20.000   1
+ ABD      var_2    O6G    C6G    C5G    O5G       59.979   20.000   3
+ ABD      var_3    C6G    C5G    C4G    C3G      180.000   20.000   3
+ ABD      var_4    C5G    C4G    O4G    HOG4    -179.958   20.000   1
+ ABD      var_5    C5G    C4G    C3G    C2G       60.000   20.000   3
+ ABD      var_6    C4G    C3G    O3G    HO3G     179.933   20.000   1
+ ABD      var_7    C4G    C3G    C2G    O2G      180.000   20.000   3
+ ABD      var_8    C3G    C2G    O2G    HO2G     179.978   20.000   1
+ ABD      var_9    C6G    C5G    O5G    C1G      180.000   20.000   1
+ ABD      var_10   C5G    O5G    C1G    O4H       60.000   20.000   1
+ ABD      var_11   O5G    C1G    C2G    C3G       60.000   20.000   3
+ ABD      var_12   O5G    C1G    O4H    C4H       67.927   20.000   1
+ ABD      var_13   C1G    O4H    C4H    C5H     -154.906   20.000   1
+ ABD      var_14   O4H    C4H    C3H    C2H      180.000   20.000   3
+ ABD      var_15   C4H    C3H    O3H    HO3H    -179.913   20.000   1
+ ABD      var_16   C4H    C3H    C2H    O2H      180.000   20.000   3
+ ABD      var_17   C3H    C2H    O2H    HO2H     179.971   20.000   1
+ ABD      var_18   O4H    C4H    C5H    O5H      180.000   20.000   3
+ ABD      var_19   C4H    C5H    C6H    O6H     -177.192   20.000   3
+ ABD      var_20   C5H    C6H    O6H    HO6H     179.963   20.000   1
+ ABD      var_21   C4H    C5H    O5H    C1H       60.000   20.000   1
+ ABD      var_22   C5H    O5H    C1H    O4I       60.000   20.000   1
+ ABD      var_23   O5H    C1H    C2H    C3H       60.000   20.000   3
+ ABD      var_24   O5H    C1H    O4I    C4I       76.457   20.000   1
+ ABD      var_25   C1H    O4I    C4I    C5I     -157.432   20.000   1
+ ABD      var_26   O4I    C4I    C3I    C2I      180.000   20.000   3
+ ABD      var_27   C4I    C3I    O3I    HO3I    -179.999   20.000   1
+ ABD      var_28   C4I    C3I    C2I    O2I      180.000   20.000   3
+ ABD      var_29   C3I    C2I    O2I    HO2I     -60.037   20.000   1
+ ABD      var_30   O4I    C4I    C5I    O5I      180.000   20.000   3
+ ABD      var_31   C4I    C5I    C6I    O6I     -176.644   20.000   3
+ ABD      var_32   C5I    C6I    O6I    HO6I    -179.979   20.000   1
+ ABD      var_33   C4I    C5I    O5I    C1I       60.000   20.000   1
+ ABD      var_34   C5I    O5I    C1I    N1J       60.000   20.000   1
+ ABD      var_35   O5I    C1I    C2I    C3I       60.000   20.000   3
+ ABD      var_36   O5I    C1I    N1J    C4J      110.708   20.000   3
+ ABD      var_37   C1I    N1J    C4J    C5J     -109.539   20.000   3
+ ABD      var_38   N1J    C4J    C3J    C2J      180.000   20.000   3
+ ABD      var_39   C4J    C3J    O3J    HO3J    -179.236   20.000   1
+ ABD      var_40   C4J    C3J    C2J    O2J      180.000   20.000   3
+ ABD      var_41   C3J    C2J    O2J    HO2J     179.582   20.000   1
+ ABD      var_42   N1J    C4J    C5J    O5J      180.000   20.000   3
+ ABD      var_43   C4J    C5J    C6J    H6J1     173.911   20.000   3
+ ABD      var_44   C4J    C5J    O5J    C1J       60.000   20.000   1
+ ABD      var_45   C5J    O5J    C1J    O4K       60.000   20.000   1
+ ABD      var_46   O5J    C1J    C2J    C3J       60.000   20.000   3
+ ABD      var_47   O5J    C1J    O4K    C4K       67.818   20.000   1
+ ABD      var_48   C1J    O4K    C4K    C5K     -155.579   20.000   1
+ ABD      var_49   O4K    C4K    C3K    C2K      180.000   20.000   3
+ ABD      var_50   C4K    C3K    O3K    HO3K     179.986   20.000   1
+ ABD      var_51   C4K    C3K    C2K    O2K      180.000   20.000   3
+ ABD      var_52   C3K    C2K    O2K    HO2K    -179.940   20.000   1
+ ABD      var_53   O4K    C4K    C5K    O5K      180.000   20.000   3
+ ABD      var_54   C4K    C5K    C6K    O6K     -176.963   20.000   3
+ ABD      var_55   C5K    C6K    O6K    HO6K     179.975   20.000   1
+ ABD      var_56   C4K    C5K    O5K    C1K       60.000   20.000   1
+ ABD      var_57   C5K    O5K    C1K    O4L       60.000   20.000   1
+ ABD      var_58   O5K    C1K    C2K    C3K       60.000   20.000   3
+ ABD      var_59   O5K    C1K    O4L    C4L       76.127   20.000   1
+ ABD      var_60   C1K    O4L    C4L    C5L     -157.443   20.000   1
+ ABD      var_61   O4L    C4L    C3L    C2L      180.000   20.000   3
+ ABD      var_62   C4L    C3L    O3L    HO3L    -179.982   20.000   1
+ ABD      var_63   C4L    C3L    C2L    O2L      180.000   20.000   3
+ ABD      var_64   C3L    C2L    O2L    HO2L    -179.989   20.000   1
+ ABD      var_65   O4L    C4L    C5L    O5L      180.000   20.000   3
+ ABD      var_66   C4L    C5L    C6L    O6L     -176.520   20.000   3
+ ABD      var_67   C5L    C6L    O6L    HO6L    -179.980   20.000   1
+ ABD      var_68   C4L    C5L    O5L    C1L       60.000   20.000   1
+ ABD      var_69   C5L    O5L    C1L    O1L      180.000   20.000   1
+ ABD      var_70   O5L    C1L    C2L    C3L       60.000   20.000   3
+ ABD      var_71   O5L    C1L    O1L    HO1L     -59.647   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ABD      chir_01  C1L    O1L    C2L    O5L       negativ
+ ABD      chir_02  C2L    C1L    O2L    C3L       positiv
+ ABD      chir_03  C3L    C2L    O3L    C4L       negativ
+ ABD      chir_04  C4L    C3L    C5L    O4L       negativ
+ ABD      chir_05  C5L    C4L    O5L    C6L       positiv
+ ABD      chir_06  C1K    O4L    C2K    O5K       positiv
+ ABD      chir_07  C2K    C1K    O2K    C3K       positiv
+ ABD      chir_08  C3K    C2K    O3K    C4K       negativ
+ ABD      chir_09  C4K    C3K    C5K    O4K       negativ
+ ABD      chir_10  C5K    C4K    O5K    C6K       positiv
+ ABD      chir_11  C1J    O4K    C2J    O5J       positiv
+ ABD      chir_12  C2J    C1J    O2J    C3J       positiv
+ ABD      chir_13  C3J    C2J    O3J    C4J       negativ
+ ABD      chir_14  C4J    C3J    C5J    N1J       negativ
+ ABD      chir_15  C5J    C4J    O5J    C6J       positiv
+ ABD      chir_16  C1I    N1J    C2I    O5I       positiv
+ ABD      chir_17  C2I    C1I    O2I    C3I       positiv
+ ABD      chir_18  C3I    C2I    O3I    C4I       negativ
+ ABD      chir_19  C4I    C3I    C5I    O4I       negativ
+ ABD      chir_20  C5I    C4I    O5I    C6I       positiv
+ ABD      chir_21  C1H    O4I    C2H    O5H       positiv
+ ABD      chir_22  C2H    C1H    O2H    C3H       positiv
+ ABD      chir_23  C3H    C2H    O3H    C4H       negativ
+ ABD      chir_24  C4H    C3H    C5H    O4H       negativ
+ ABD      chir_25  C5H    C4H    O5H    C6H       positiv
+ ABD      chir_26  C1G    O4H    C2G    O5G       positiv
+ ABD      chir_27  C2G    C1G    O2G    C3G       positiv
+ ABD      chir_28  C3G    C2G    O3G    C4G       negativ
+ ABD      chir_29  C4G    C3G    O4G    C5G       positiv
+ ABD      chir_30  C5G    C4G    O5G    C6G       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ABD      plan-1    N1J       0.020
+ ABD      plan-1    C4J       0.020
+ ABD      plan-1    C1I       0.020
+ ABD      plan-1    HN1J      0.020
+# ------------------------------------------------------

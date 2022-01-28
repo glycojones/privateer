@@ -1,0 +1,227 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HPH      HPH 'PHENYLALANINDIOL                    ' non-polymer        25  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HPH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HPH           OXT    O    OH1       0.000      0.000    0.000    0.000
+ HPH           HXT    H    H         0.000      0.842    0.025    0.475
+ HPH           C      C    CH1       0.000     -1.076   -0.007    0.940
+ HPH           HC     H    H         0.000     -1.030    0.901    1.557
+ HPH           O      O    OH1       0.000     -0.968   -1.159    1.780
+ HPH           HO     H    H         0.000     -1.009   -1.957    1.237
+ HPH           CA     C    CH1       0.000     -2.408   -0.046    0.189
+ HPH           HA     H    H         0.000     -2.452    0.790   -0.522
+ HPH           N      N    NH2       0.000     -2.522   -1.317   -0.541
+ HPH           H2     H    H         0.000     -2.622   -1.320   -1.550
+ HPH           H      H    H         0.000     -2.500   -2.198   -0.042
+ HPH           CB     C    CH2       0.000     -3.561    0.072    1.188
+ HPH           HB2    H    H         0.000     -3.428    0.972    1.793
+ HPH           HB3    H    H         0.000     -3.569   -0.805    1.839
+ HPH           CG     C    CR6       0.000     -4.867    0.157    0.441
+ HPH           CD2    C    CR16      0.000     -5.373    1.388    0.072
+ HPH           HD2    H    H         0.000     -4.831    2.293    0.319
+ HPH           CE2    C    CR16      0.000     -6.571    1.466   -0.613
+ HPH           HE2    H    H         0.000     -6.968    2.432   -0.903
+ HPH           CZ     C    CR16      0.000     -7.264    0.311   -0.929
+ HPH           HZ     H    H         0.000     -8.201    0.372   -1.469
+ HPH           CE1    C    CR16      0.000     -6.760   -0.920   -0.556
+ HPH           HE1    H    H         0.000     -7.303   -1.824   -0.801
+ HPH           CD1    C    CR16      0.000     -5.561   -0.998    0.130
+ HPH           HD1    H    H         0.000     -5.167   -1.963    0.423
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HPH      OXT    n/a    C      START
+ HPH      HXT    OXT    .      .
+ HPH      C      OXT    CA     .
+ HPH      HC     C      .      .
+ HPH      O      C      HO     .
+ HPH      HO     O      .      .
+ HPH      CA     C      CB     .
+ HPH      HA     CA     .      .
+ HPH      N      CA     H      .
+ HPH      H2     N      .      .
+ HPH      H      N      .      .
+ HPH      CB     CA     CG     .
+ HPH      HB2    CB     .      .
+ HPH      HB3    CB     .      .
+ HPH      CG     CB     CD2    .
+ HPH      CD2    CG     CE2    .
+ HPH      HD2    CD2    .      .
+ HPH      CE2    CD2    CZ     .
+ HPH      HE2    CE2    .      .
+ HPH      CZ     CE2    CE1    .
+ HPH      HZ     CZ     .      .
+ HPH      CE1    CZ     CD1    .
+ HPH      HE1    CE1    .      .
+ HPH      CD1    CE1    HD1    .
+ HPH      HD1    CD1    .      END
+ HPH      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HPH       O         C         single    1.432     0.020     1.432     0.020     
+HPH       C         OXT       single    1.432     0.020     1.432     0.020     
+HPH       CA        C         single    1.524     0.020     1.524     0.020     
+HPH       HC        C         single    1.089     0.010     0.989     0.005     
+HPH       HO        O         single    0.970     0.012     0.839     0.014     
+HPH       HXT       OXT       single    0.970     0.012     0.839     0.014     
+HPH       N         CA        single    1.450     0.020     1.450     0.020     
+HPH       CB        CA        single    1.524     0.020     1.524     0.020     
+HPH       HA        CA        single    1.089     0.010     0.989     0.005     
+HPH       H         N         single    1.036     0.016     0.914     0.007     
+HPH       H2        N         single    1.036     0.016     0.914     0.007     
+HPH       CG        CB        single    1.511     0.020     1.511     0.020     
+HPH       HB2       CB        single    1.089     0.010     0.989     0.005     
+HPH       HB3       CB        single    1.089     0.010     0.989     0.005     
+HPH       CG        CD1       double    1.390     0.020     1.390     0.020     
+HPH       CD2       CG        single    1.390     0.020     1.390     0.020     
+HPH       CD1       CE1       single    1.390     0.020     1.390     0.020     
+HPH       HD1       CD1       single    1.082     0.013     0.975     0.010     
+HPH       CE2       CD2       double    1.390     0.020     1.390     0.020     
+HPH       HD2       CD2       single    1.082     0.013     0.975     0.010     
+HPH       CE1       CZ        double    1.390     0.020     1.390     0.020     
+HPH       HE1       CE1       single    1.082     0.013     0.975     0.010     
+HPH       CZ        CE2       single    1.390     0.020     1.390     0.020     
+HPH       HE2       CE2       single    1.082     0.013     0.975     0.010     
+HPH       HZ        CZ        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HPH      HXT    OXT    C       109.470    3.000
+ HPH      OXT    C      HC      109.470    3.000
+ HPH      OXT    C      O       109.500    3.000
+ HPH      OXT    C      CA      109.470    3.000
+ HPH      HC     C      O       109.470    3.000
+ HPH      HC     C      CA      108.340    3.000
+ HPH      O      C      CA      109.470    3.000
+ HPH      C      O      HO      109.470    3.000
+ HPH      C      CA     HA      108.340    3.000
+ HPH      C      CA     N       109.470    3.000
+ HPH      C      CA     CB      111.000    3.000
+ HPH      HA     CA     N       109.470    3.000
+ HPH      HA     CA     CB      108.340    3.000
+ HPH      N      CA     CB      109.470    3.000
+ HPH      CA     N      H2      120.000    3.000
+ HPH      CA     N      H       120.000    3.000
+ HPH      H2     N      H       120.000    3.000
+ HPH      CA     CB     HB2     109.470    3.000
+ HPH      CA     CB     HB3     109.470    3.000
+ HPH      CA     CB     CG      109.470    3.000
+ HPH      HB2    CB     HB3     107.900    3.000
+ HPH      HB2    CB     CG      109.470    3.000
+ HPH      HB3    CB     CG      109.470    3.000
+ HPH      CB     CG     CD2     120.000    3.000
+ HPH      CB     CG     CD1     120.000    3.000
+ HPH      CD2    CG     CD1     120.000    3.000
+ HPH      CG     CD2    HD2     120.000    3.000
+ HPH      CG     CD2    CE2     120.000    3.000
+ HPH      HD2    CD2    CE2     120.000    3.000
+ HPH      CD2    CE2    HE2     120.000    3.000
+ HPH      CD2    CE2    CZ      120.000    3.000
+ HPH      HE2    CE2    CZ      120.000    3.000
+ HPH      CE2    CZ     HZ      120.000    3.000
+ HPH      CE2    CZ     CE1     120.000    3.000
+ HPH      HZ     CZ     CE1     120.000    3.000
+ HPH      CZ     CE1    HE1     120.000    3.000
+ HPH      CZ     CE1    CD1     120.000    3.000
+ HPH      HE1    CE1    CD1     120.000    3.000
+ HPH      CE1    CD1    HD1     120.000    3.000
+ HPH      CE1    CD1    CG      120.000    3.000
+ HPH      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HPH      var_1    HXT    OXT    C      CA       179.996   20.000   1
+ HPH      var_2    OXT    C      O      HO       -60.024   20.000   1
+ HPH      var_3    OXT    C      CA     CB      -174.985   20.000   3
+ HPH      var_4    C      CA     N      H         59.998   20.000   1
+ HPH      var_5    C      CA     CB     CG       175.022   20.000   3
+ HPH      var_6    CA     CB     CG     CD2      -90.265   20.000   2
+ HPH      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ HPH      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ HPH      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ HPH      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ HPH      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ HPH      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ HPH      chir_01  C      O      OXT    CA        negativ
+ HPH      chir_02  CA     C      N      CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HPH      plan-1    N         0.020
+ HPH      plan-1    CA        0.020
+ HPH      plan-1    H         0.020
+ HPH      plan-1    H2        0.020
+ HPH      plan-2    CG        0.020
+ HPH      plan-2    CB        0.020
+ HPH      plan-2    CD1       0.020
+ HPH      plan-2    CD2       0.020
+ HPH      plan-2    CE1       0.020
+ HPH      plan-2    CE2       0.020
+ HPH      plan-2    CZ        0.020
+ HPH      plan-2    HD1       0.020
+ HPH      plan-2    HD2       0.020
+ HPH      plan-2    HE1       0.020
+ HPH      plan-2    HE2       0.020
+ HPH      plan-2    HZ        0.020
+# ------------------------------------------------------

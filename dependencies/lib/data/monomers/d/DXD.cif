@@ -1,0 +1,205 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DXD      DXD '(1S,3S,4R)-4-(PHOSPHOOXYMETHYL)-CYCL' DNA                24  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_DXD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ DXD           OP3    O    OP       -0.666      0.000    0.000    0.000
+ DXD           P      P    P         0.000     -1.007    0.559    0.981
+ DXD           OP1    O    OP       -0.666     -0.446    0.919    2.338
+ DXD           OP2    O    OP       -0.666     -1.637    1.703    0.217
+ DXD           "O5'"  O    O2        0.000     -2.163   -0.574    0.997
+ DXD           "C5'"  C    CH2       0.000     -2.742   -0.968   -0.236
+ DXD           "H5'1" H    H         0.000     -1.971   -1.375   -0.894
+ DXD           "H5'2" H    H         0.000     -3.212   -0.107   -0.716
+ DXD           "C4'"  C    CH1       0.000     -3.792   -2.034    0.037
+ DXD           "H4'"  H    H         0.000     -3.308   -2.915    0.480
+ DXD           "C3'"  C    CH1       0.000     -4.559   -2.455   -1.217
+ DXD           "H3'"  H    H         0.000     -4.766   -1.574   -1.840
+ DXD           "C2'"  C    CH2       0.000     -5.875   -3.049   -0.702
+ DXD           "H2'1" H    H         0.000     -5.861   -4.140   -0.751
+ DXD           "H2'2" H    H         0.000     -6.727   -2.671   -1.271
+ DXD           "C1'"  C    CH1       0.000     -5.996   -2.603    0.759
+ DXD           "H1'"  H    H         0.000     -6.990   -2.180    0.958
+ DXD           "O6'"  O    OH1       0.000     -5.745   -3.726    1.599
+ DXD           "H7'"  H    H         0.000     -6.199   -4.501    1.243
+ DXD           "C6'"  C    CH2       0.000     -4.908   -1.554    0.961
+ DXD           "H6'2" H    H         0.000     -4.542   -1.522    1.990
+ DXD           "H6'1" H    H         0.000     -5.228   -0.554    0.659
+ DXD           "O3'"  O    OH1       0.000     -3.817   -3.405   -1.961
+ DXD           "HO3'" H    H         0.000     -4.019   -4.280   -1.586
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ DXD      OP3    n/a    P      START
+ DXD      P      OP3    "O5'"  .
+ DXD      OP1    P      .      .
+ DXD      OP2    P      .      .
+ DXD      "O5'"  P      "C5'"  .
+ DXD      "C5'"  "O5'"  "C4'"  .
+ DXD      "H5'1" "C5'"  .      .
+ DXD      "H5'2" "C5'"  .      .
+ DXD      "C4'"  "C5'"  "C3'"  .
+ DXD      "H4'"  "C4'"  .      .
+ DXD      "C3'"  "C4'"  "O3'"  .
+ DXD      "H3'"  "C3'"  .      .
+ DXD      "C2'"  "C3'"  "C1'"  .
+ DXD      "H2'1" "C2'"  .      .
+ DXD      "H2'2" "C2'"  .      .
+ DXD      "C1'"  "C2'"  "C6'"  .
+ DXD      "H1'"  "C1'"  .      .
+ DXD      "O6'"  "C1'"  "H7'"  .
+ DXD      "H7'"  "O6'"  .      .
+ DXD      "C6'"  "C1'"  "H6'1" .
+ DXD      "H6'2" "C6'"  .      .
+ DXD      "H6'1" "C6'"  .      .
+ DXD      "O3'"  "C3'"  .      END
+ DXD      "HO3'" "O3'"  .      .
+ DXD      "C4'"  "C6'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DXD       OP1       P         deloc     1.510     0.020     1.510     0.020     
+DXD       OP2       P         deloc     1.510     0.020     1.510     0.020     
+DXD       "O5'"     P         single    1.610     0.020     1.610     0.020     
+DXD       P         OP3       deloc     1.510     0.020     1.510     0.020     
+DXD       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+DXD       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+DXD       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+DXD       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+DXD       "C4'"     "C6'"     single    1.524     0.020     1.524     0.020     
+DXD       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+DXD       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+DXD       "C6'"     "C1'"     single    1.524     0.020     1.524     0.020     
+DXD       "O6'"     "C1'"     single    1.432     0.020     1.432     0.020     
+DXD       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+DXD       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+DXD       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+DXD       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+DXD       "H7'"     "O6'"     single    0.970     0.012     0.839     0.014     
+DXD       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+DXD       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+DXD       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+DXD       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+DXD       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+DXD       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ DXD      OP3    P      OP1     119.900    3.000
+ DXD      OP3    P      OP2     119.900    3.000
+ DXD      OP3    P      "O5'"   108.200    3.000
+ DXD      OP1    P      OP2     119.900    3.000
+ DXD      OP1    P      "O5'"   108.200    3.000
+ DXD      OP2    P      "O5'"   108.200    3.000
+ DXD      P      "O5'"  "C5'"   120.500    3.000
+ DXD      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ DXD      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ DXD      "O5'"  "C5'"  "C4'"   109.470    3.000
+ DXD      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ DXD      "H5'1" "C5'"  "C4'"   109.470    3.000
+ DXD      "H5'2" "C5'"  "C4'"   109.470    3.000
+ DXD      "C5'"  "C4'"  "H4'"   108.340    3.000
+ DXD      "C5'"  "C4'"  "C3'"   111.000    3.000
+ DXD      "C5'"  "C4'"  "C6'"   109.470    3.000
+ DXD      "H4'"  "C4'"  "C3'"   108.340    3.000
+ DXD      "H4'"  "C4'"  "C6'"   108.340    3.000
+ DXD      "C3'"  "C4'"  "C6'"   111.000    3.000
+ DXD      "C4'"  "C3'"  "H3'"   108.340    3.000
+ DXD      "C4'"  "C3'"  "C2'"   111.000    3.000
+ DXD      "C4'"  "C3'"  "O3'"   109.470    3.000
+ DXD      "H3'"  "C3'"  "C2'"   108.340    3.000
+ DXD      "H3'"  "C3'"  "O3'"   109.470    3.000
+ DXD      "C2'"  "C3'"  "O3'"   109.470    3.000
+ DXD      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ DXD      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ DXD      "C3'"  "C2'"  "C1'"   111.000    3.000
+ DXD      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ DXD      "H2'1" "C2'"  "C1'"   109.470    3.000
+ DXD      "H2'2" "C2'"  "C1'"   109.470    3.000
+ DXD      "C2'"  "C1'"  "H1'"   108.340    3.000
+ DXD      "C2'"  "C1'"  "O6'"   109.470    3.000
+ DXD      "C2'"  "C1'"  "C6'"   109.470    3.000
+ DXD      "H1'"  "C1'"  "O6'"   109.470    3.000
+ DXD      "H1'"  "C1'"  "C6'"   108.340    3.000
+ DXD      "O6'"  "C1'"  "C6'"   109.470    3.000
+ DXD      "C1'"  "O6'"  "H7'"   109.470    3.000
+ DXD      "C1'"  "C6'"  "H6'2"  109.470    3.000
+ DXD      "C1'"  "C6'"  "H6'1"  109.470    3.000
+ DXD      "C1'"  "C6'"  "C4'"   111.000    3.000
+ DXD      "H6'2" "C6'"  "H6'1"  107.900    3.000
+ DXD      "H6'2" "C6'"  "C4'"   109.470    3.000
+ DXD      "H6'1" "C6'"  "C4'"   109.470    3.000
+ DXD      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ DXD      var_1    OP3    P      "O5'"  "C5'"    -54.236   20.000   1
+ DXD      var_2    P      "O5'"  "C5'"  "C4'"   -179.991   20.000   1
+ DXD      var_3    "O5'"  "C5'"  "C4'"  "C3'"    175.541   20.000   3
+ DXD      var_4    "C5'"  "C4'"  "C6'"  "C1'"    150.000   20.000   3
+ DXD      var_5    "C5'"  "C4'"  "C3'"  "O3'"     90.000   20.000   3
+ DXD      var_6    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ DXD      var_7    "C3'"  "C2'"  "C1'"  "C6'"      0.000   20.000   3
+ DXD      var_8    "C2'"  "C1'"  "O6'"  "H7'"    -42.988   20.000   1
+ DXD      var_9    "C2'"  "C1'"  "C6'"  "C4'"    -30.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ DXD      chir_01  "C4'"  "C5'"  "C6'"  "C3'"     negativ
+ DXD      chir_02  "C1'"  "C6'"  "O6'"  "C2'"     positiv
+ DXD      chir_03  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+# ------------------------------------------------------

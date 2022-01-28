@@ -1,0 +1,330 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TDG      TDG 'THIODIGALACTOSIDE                   ' saccharide         45  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TDG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TDG           "O6'"  O    OH1       0.000      0.000    0.000    0.000
+ TDG           "HO6'" H    H         0.000      0.868   -0.401   -0.140
+ TDG           "C6'"  C    CH2       0.000     -0.232    0.155    1.401
+ TDG           "H6'1" H    H         0.000      0.541    0.798    1.829
+ TDG           "H6'2" H    H         0.000     -0.199   -0.823    1.886
+ TDG           "C5'"  C    CH1       0.000     -1.606    0.791    1.623
+ TDG           "H5'"  H    H         0.000     -1.639    1.773    1.132
+ TDG           "C4'"  C    CH1       0.000     -1.849    0.963    3.125
+ TDG           "H4'"  H    H         0.000     -1.059    1.596    3.555
+ TDG           "O4'"  O    OH1       0.000     -1.835   -0.316    3.761
+ TDG           "HO4'" H    H         0.000     -1.989   -0.205    4.709
+ TDG           "C3'"  C    CH1       0.000     -3.211    1.629    3.337
+ TDG           "H3'"  H    H         0.000     -3.188    2.653    2.939
+ TDG           "O3'"  O    OH1       0.000     -3.517    1.662    4.732
+ TDG           "HO3'" H    H         0.000     -4.378    2.083    4.862
+ TDG           "C2'"  C    CH1       0.000     -4.275    0.813    2.593
+ TDG           "H2'"  H    H         0.000     -4.372   -0.178    3.059
+ TDG           "O2'"  O    OH1       0.000     -5.530    1.495    2.654
+ TDG           "HO2'" H    H         0.000     -6.199    0.980    2.184
+ TDG           "O5'"  O    O2        0.000     -2.613   -0.052    1.066
+ TDG           "C1'"  C    CH1       0.000     -3.850    0.653    1.132
+ TDG           "H1'"  H    H         0.000     -3.730    1.645    0.675
+ TDG           S1     S    S2        0.000     -5.121   -0.276    0.233
+ TDG           C1     C    CH1       0.000     -4.377   -0.308   -1.421
+ TDG           H1     H    H         0.000     -3.402   -0.813   -1.373
+ TDG           O5     O    O2        0.000     -4.196    1.027   -1.886
+ TDG           C5     C    CH1       0.000     -3.449    0.963   -3.101
+ TDG           H5     H    H         0.000     -2.538    0.370   -2.939
+ TDG           C6     C    CH2       0.000     -3.065    2.379   -3.536
+ TDG           H61    H    H         0.000     -3.971    2.967   -3.697
+ TDG           H62    H    H         0.000     -2.493    2.331   -4.465
+ TDG           O6     O    OH1       0.000     -2.272    2.992   -2.517
+ TDG           HO6    H    H         0.000     -2.030    3.886   -2.793
+ TDG           C4     C    CH1       0.000     -4.296    0.306   -4.193
+ TDG           H4     H    H         0.000     -3.725    0.277   -5.132
+ TDG           O4     O    OH1       0.000     -5.496    1.055   -4.388
+ TDG           HO4    H    H         0.000     -6.030    0.633   -5.075
+ TDG           C3     C    CH1       0.000     -4.645   -1.122   -3.763
+ TDG           H3     H    H         0.000     -3.729   -1.728   -3.717
+ TDG           O3     O    OH1       0.000     -5.556   -1.699   -4.701
+ TDG           HO3    H    H         0.000     -5.784   -2.595   -4.419
+ TDG           C2     C    CH1       0.000     -5.297   -1.069   -2.377
+ TDG           H2     H    H         0.000     -6.265   -0.553   -2.446
+ TDG           O2     O    OH1       0.000     -5.498   -2.398   -1.891
+ TDG           HO2    H    H         0.000     -5.904   -2.361   -1.014
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TDG      "O6'"  n/a    "C6'"  START
+ TDG      "HO6'" "O6'"  .      .
+ TDG      "C6'"  "O6'"  "C5'"  .
+ TDG      "H6'1" "C6'"  .      .
+ TDG      "H6'2" "C6'"  .      .
+ TDG      "C5'"  "C6'"  "O5'"  .
+ TDG      "H5'"  "C5'"  .      .
+ TDG      "C4'"  "C5'"  "C3'"  .
+ TDG      "H4'"  "C4'"  .      .
+ TDG      "O4'"  "C4'"  "HO4'" .
+ TDG      "HO4'" "O4'"  .      .
+ TDG      "C3'"  "C4'"  "C2'"  .
+ TDG      "H3'"  "C3'"  .      .
+ TDG      "O3'"  "C3'"  "HO3'" .
+ TDG      "HO3'" "O3'"  .      .
+ TDG      "C2'"  "C3'"  "O2'"  .
+ TDG      "H2'"  "C2'"  .      .
+ TDG      "O2'"  "C2'"  "HO2'" .
+ TDG      "HO2'" "O2'"  .      .
+ TDG      "O5'"  "C5'"  "C1'"  .
+ TDG      "C1'"  "O5'"  S1     .
+ TDG      "H1'"  "C1'"  .      .
+ TDG      S1     "C1'"  C1     .
+ TDG      C1     S1     O5     .
+ TDG      H1     C1     .      .
+ TDG      O5     C1     C5     .
+ TDG      C5     O5     C4     .
+ TDG      H5     C5     .      .
+ TDG      C6     C5     O6     .
+ TDG      H61    C6     .      .
+ TDG      H62    C6     .      .
+ TDG      O6     C6     HO6    .
+ TDG      HO6    O6     .      .
+ TDG      C4     C5     C3     .
+ TDG      H4     C4     .      .
+ TDG      O4     C4     HO4    .
+ TDG      HO4    O4     .      .
+ TDG      C3     C4     C2     .
+ TDG      H3     C3     .      .
+ TDG      O3     C3     HO3    .
+ TDG      HO3    O3     .      .
+ TDG      C2     C3     O2     .
+ TDG      H2     C2     .      .
+ TDG      O2     C2     HO2    .
+ TDG      HO2    O2     .      END
+ TDG      C1     C2     .    ADD
+ TDG      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TDG       C1        S1        single    1.765     0.020     1.765     0.020     
+TDG       C1        C2        single    1.524     0.020     1.524     0.020     
+TDG       O5        C1        single    1.426     0.020     1.426     0.020     
+TDG       H1        C1        single    1.089     0.010     0.989     0.005     
+TDG       S1        "C1'"     single    1.765     0.020     1.765     0.020     
+TDG       O2        C2        single    1.432     0.020     1.432     0.020     
+TDG       C2        C3        single    1.524     0.020     1.524     0.020     
+TDG       H2        C2        single    1.089     0.010     0.989     0.005     
+TDG       HO2       O2        single    0.970     0.012     0.839     0.014     
+TDG       O3        C3        single    1.432     0.020     1.432     0.020     
+TDG       C3        C4        single    1.524     0.020     1.524     0.020     
+TDG       H3        C3        single    1.089     0.010     0.989     0.005     
+TDG       HO3       O3        single    0.970     0.012     0.839     0.014     
+TDG       O4        C4        single    1.432     0.020     1.432     0.020     
+TDG       C4        C5        single    1.524     0.020     1.524     0.020     
+TDG       H4        C4        single    1.089     0.010     0.989     0.005     
+TDG       HO4       O4        single    0.970     0.012     0.839     0.014     
+TDG       C5        O5        single    1.426     0.020     1.426     0.020     
+TDG       C6        C5        single    1.524     0.020     1.524     0.020     
+TDG       H5        C5        single    1.089     0.010     0.989     0.005     
+TDG       O6        C6        single    1.432     0.020     1.432     0.020     
+TDG       H61       C6        single    1.089     0.010     0.989     0.005     
+TDG       H62       C6        single    1.089     0.010     0.989     0.005     
+TDG       HO6       O6        single    0.970     0.012     0.839     0.014     
+TDG       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+TDG       "C1'"     "O5'"     single    1.426     0.020     1.426     0.020     
+TDG       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+TDG       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+TDG       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+TDG       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+TDG       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+TDG       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+TDG       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+TDG       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+TDG       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+TDG       "O4'"     "C4'"     single    1.432     0.020     1.432     0.020     
+TDG       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+TDG       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+TDG       "HO4'"    "O4'"     single    0.970     0.012     0.839     0.014     
+TDG       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+TDG       "C5'"     "C6'"     single    1.524     0.020     1.524     0.020     
+TDG       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+TDG       "C6'"     "O6'"     single    1.432     0.020     1.432     0.020     
+TDG       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+TDG       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+TDG       "HO6'"    "O6'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TDG      "HO6'" "O6'"  "C6'"   109.470    3.000
+ TDG      "O6'"  "C6'"  "H6'1"  109.470    3.000
+ TDG      "O6'"  "C6'"  "H6'2"  109.470    3.000
+ TDG      "O6'"  "C6'"  "C5'"   109.470    3.000
+ TDG      "H6'1" "C6'"  "H6'2"  107.900    3.000
+ TDG      "H6'1" "C6'"  "C5'"   109.470    3.000
+ TDG      "H6'2" "C6'"  "C5'"   109.470    3.000
+ TDG      "C6'"  "C5'"  "H5'"   108.340    3.000
+ TDG      "C6'"  "C5'"  "C4'"   111.000    3.000
+ TDG      "C6'"  "C5'"  "O5'"   109.470    3.000
+ TDG      "H5'"  "C5'"  "C4'"   108.340    3.000
+ TDG      "H5'"  "C5'"  "O5'"   109.470    3.000
+ TDG      "C4'"  "C5'"  "O5'"   109.470    3.000
+ TDG      "C5'"  "C4'"  "H4'"   108.340    3.000
+ TDG      "C5'"  "C4'"  "O4'"   109.470    3.000
+ TDG      "C5'"  "C4'"  "C3'"   111.000    3.000
+ TDG      "H4'"  "C4'"  "O4'"   109.470    3.000
+ TDG      "H4'"  "C4'"  "C3'"   108.340    3.000
+ TDG      "O4'"  "C4'"  "C3'"   109.470    3.000
+ TDG      "C4'"  "O4'"  "HO4'"  109.470    3.000
+ TDG      "C4'"  "C3'"  "H3'"   108.340    3.000
+ TDG      "C4'"  "C3'"  "O3'"   109.470    3.000
+ TDG      "C4'"  "C3'"  "C2'"   111.000    3.000
+ TDG      "H3'"  "C3'"  "O3'"   109.470    3.000
+ TDG      "H3'"  "C3'"  "C2'"   108.340    3.000
+ TDG      "O3'"  "C3'"  "C2'"   109.470    3.000
+ TDG      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ TDG      "C3'"  "C2'"  "H2'"   108.340    3.000
+ TDG      "C3'"  "C2'"  "O2'"   109.470    3.000
+ TDG      "C3'"  "C2'"  "C1'"   111.000    3.000
+ TDG      "H2'"  "C2'"  "O2'"   109.470    3.000
+ TDG      "H2'"  "C2'"  "C1'"   108.340    3.000
+ TDG      "O2'"  "C2'"  "C1'"   109.470    3.000
+ TDG      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ TDG      "C5'"  "O5'"  "C1'"   111.800    3.000
+ TDG      "O5'"  "C1'"  "H1'"   109.470    3.000
+ TDG      "O5'"  "C1'"  S1      109.500    3.000
+ TDG      "O5'"  "C1'"  "C2'"   109.470    3.000
+ TDG      "H1'"  "C1'"  S1      109.500    3.000
+ TDG      "H1'"  "C1'"  "C2'"   108.340    3.000
+ TDG      S1     "C1'"  "C2'"   109.500    3.000
+ TDG      "C1'"  S1     C1      100.011    3.000
+ TDG      S1     C1     H1      109.500    3.000
+ TDG      S1     C1     O5      109.500    3.000
+ TDG      S1     C1     C2      109.500    3.000
+ TDG      H1     C1     O5      109.470    3.000
+ TDG      H1     C1     C2      108.340    3.000
+ TDG      O5     C1     C2      109.470    3.000
+ TDG      C1     O5     C5      111.800    3.000
+ TDG      O5     C5     H5      109.470    3.000
+ TDG      O5     C5     C6      109.470    3.000
+ TDG      O5     C5     C4      109.470    3.000
+ TDG      H5     C5     C6      108.340    3.000
+ TDG      H5     C5     C4      108.340    3.000
+ TDG      C6     C5     C4      111.000    3.000
+ TDG      C5     C6     H61     109.470    3.000
+ TDG      C5     C6     H62     109.470    3.000
+ TDG      C5     C6     O6      109.470    3.000
+ TDG      H61    C6     H62     107.900    3.000
+ TDG      H61    C6     O6      109.470    3.000
+ TDG      H62    C6     O6      109.470    3.000
+ TDG      C6     O6     HO6     109.470    3.000
+ TDG      C5     C4     H4      108.340    3.000
+ TDG      C5     C4     O4      109.470    3.000
+ TDG      C5     C4     C3      111.000    3.000
+ TDG      H4     C4     O4      109.470    3.000
+ TDG      H4     C4     C3      108.340    3.000
+ TDG      O4     C4     C3      109.470    3.000
+ TDG      C4     O4     HO4     109.470    3.000
+ TDG      C4     C3     H3      108.340    3.000
+ TDG      C4     C3     O3      109.470    3.000
+ TDG      C4     C3     C2      111.000    3.000
+ TDG      H3     C3     O3      109.470    3.000
+ TDG      H3     C3     C2      108.340    3.000
+ TDG      O3     C3     C2      109.470    3.000
+ TDG      C3     O3     HO3     109.470    3.000
+ TDG      C3     C2     H2      108.340    3.000
+ TDG      C3     C2     O2      109.470    3.000
+ TDG      C3     C2     C1      111.000    3.000
+ TDG      H2     C2     O2      109.470    3.000
+ TDG      H2     C2     C1      108.340    3.000
+ TDG      O2     C2     C1      109.470    3.000
+ TDG      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TDG      var_1    "HO6'" "O6'"  "C6'"  "C5'"    179.995   20.000   1
+ TDG      var_2    "O6'"  "C6'"  "C5'"  "O5'"     60.079   20.000   3
+ TDG      var_3    "C6'"  "C5'"  "C4'"  "C3'"    180.000   20.000   3
+ TDG      var_4    "C5'"  "C4'"  "O4'"  "HO4'"  -179.985   20.000   1
+ TDG      var_5    "C5'"  "C4'"  "C3'"  "C2'"     60.000   20.000   3
+ TDG      var_6    "C4'"  "C3'"  "O3'"  "HO3'"   179.995   20.000   1
+ TDG      var_7    "C4'"  "C3'"  "C2'"  "O2'"    180.000   20.000   3
+ TDG      var_8    "C3'"  "C2'"  "O2'"  "HO2'"   179.962   20.000   1
+ TDG      var_9    "C6'"  "C5'"  "O5'"  "C1'"    180.000   20.000   1
+ TDG      var_10   "C5'"  "O5'"  "C1'"  S1       180.000   20.000   1
+ TDG      var_11   "O5'"  "C1'"  "C2'"  "C3'"     60.000   20.000   3
+ TDG      var_12   "O5'"  "C1'"  S1     C1       -59.948   20.000   1
+ TDG      var_13   "C1'"  S1     C1     O5       -59.968   20.000   1
+ TDG      var_14   S1     C1     C2     C3       180.000   20.000   3
+ TDG      var_15   S1     C1     O5     C5       180.000   20.000   1
+ TDG      var_16   C1     O5     C5     C4        60.000   20.000   1
+ TDG      var_17   O5     C5     C6     O6        59.901   20.000   3
+ TDG      var_18   C5     C6     O6     HO6      179.962   20.000   1
+ TDG      var_19   O5     C5     C4     C3       -60.000   20.000   3
+ TDG      var_20   C5     C4     O4     HO4     -179.666   20.000   1
+ TDG      var_21   C5     C4     C3     C2        60.000   20.000   3
+ TDG      var_22   C4     C3     O3     HO3     -179.160   20.000   1
+ TDG      var_23   C4     C3     C2     O2       180.000   20.000   3
+ TDG      var_24   C3     C2     O2     HO2      179.574   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TDG      chir_01  C1     S1     C2     O5        negativ
+ TDG      chir_02  C2     C1     O2     C3        positiv
+ TDG      chir_03  C3     C2     O3     C4        negativ
+ TDG      chir_04  C4     C3     O4     C5        negativ
+ TDG      chir_05  C5     C4     O5     C6        positiv
+ TDG      chir_06  "C1'"  S1     "C2'"  "O5'"     negativ
+ TDG      chir_07  "C2'"  "C1'"  "O2'"  "C3'"     positiv
+ TDG      chir_08  "C3'"  "C2'"  "O3'"  "C4'"     negativ
+ TDG      chir_09  "C4'"  "C3'"  "O4'"  "C5'"     negativ
+ TDG      chir_10  "C5'"  "C4'"  "O5'"  "C6'"     positiv
+# ------------------------------------------------------

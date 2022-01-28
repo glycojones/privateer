@@ -1,0 +1,147 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DTV     DTV     "(2S,3S)-1,4-DIMERCAPTOBUTANE-2,3-DIOL"     NON-POLYMER     18     8     .     
+#
+data_comp_DTV
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DTV     S1      S       SH1     0       3.410       0.847       -0.178      
+DTV     C1      C       CH2     0       1.649       1.045       -0.551      
+DTV     C2      C       CH1     0       0.783       -0.004      0.113       
+DTV     O2      O       OH1     0       0.874       0.133       1.532       
+DTV     C3      C       CH1     0       -0.691      0.058       -0.322      
+DTV     O3      O       OH1     0       -1.251      1.304       0.084       
+DTV     C4      C       CH2     0       -1.531      -1.074      0.230       
+DTV     S4      S       SH1     0       -3.241      -1.057      -0.368      
+DTV     H1      H       HSH1    0       3.809       1.816       -0.769      
+DTV     H1C1    H       H       0       1.536       0.999       -1.525      
+DTV     H1C2    H       H       0       1.372       1.938       -0.255      
+DTV     H2      H       H       0       1.136       -0.900      -0.127      
+DTV     HA      H       H       0       0.556       0.882       1.776       
+DTV     H3      H       H       0       -0.721      0.019       -1.313      
+DTV     HB      H       H       0       -1.985      1.426       -0.321      
+DTV     H4C1    H       H       0       -1.553      -1.021      1.210       
+DTV     H4C2    H       H       0       -1.130      -1.934      -0.019      
+DTV     H4      H       HSH1    0       -3.060      -0.439      -1.384      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DTV       S1        C1        SINGLE    n         1.811     0.010     1.811     0.010     
+DTV       C1        C2        SINGLE    n         1.514     0.010     1.514     0.010     
+DTV       C2        O2        SINGLE    n         1.424     0.020     1.424     0.020     
+DTV       C2        C3        SINGLE    n         1.535     0.020     1.535     0.020     
+DTV       C3        O3        SINGLE    n         1.424     0.020     1.424     0.020     
+DTV       C3        C4        SINGLE    n         1.514     0.010     1.514     0.010     
+DTV       C4        S4        SINGLE    n         1.811     0.010     1.811     0.010     
+DTV       S1        H1        SINGLE    n         1.338     0.010     1.171     0.208     
+DTV       C1        H1C1      SINGLE    n         1.089     0.010     0.989     0.005     
+DTV       C1        H1C2      SINGLE    n         1.089     0.010     0.989     0.005     
+DTV       C2        H2        SINGLE    n         1.089     0.010     0.989     0.005     
+DTV       O2        HA        SINGLE    n         0.970     0.012     0.839     0.014     
+DTV       C3        H3        SINGLE    n         1.089     0.010     0.989     0.005     
+DTV       O3        HB        SINGLE    n         0.970     0.012     0.839     0.014     
+DTV       C4        H4C1      SINGLE    n         1.089     0.010     0.989     0.005     
+DTV       C4        H4C2      SINGLE    n         1.089     0.010     0.989     0.005     
+DTV       S4        H4        SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DTV          C1          S1          H1      97.649    3.00
+DTV          S1          C1          C2     112.239    3.00
+DTV          S1          C1        H1C1     107.876    2.03
+DTV          S1          C1        H1C2     107.876    2.03
+DTV          C2          C1        H1C1     109.473    1.50
+DTV          C2          C1        H1C2     109.473    1.50
+DTV        H1C1          C1        H1C2     107.922    1.50
+DTV          C1          C2          O2     109.489    1.87
+DTV          C1          C2          C3     113.484    1.50
+DTV          C1          C2          H2     108.682    1.50
+DTV          O2          C2          C3     109.320    2.01
+DTV          O2          C2          H2     108.183    1.96
+DTV          C3          C2          H2     108.450    1.83
+DTV          C2          O2          HA     109.265    3.00
+DTV          C2          C3          O3     109.320    2.01
+DTV          C2          C3          C4     113.484    1.50
+DTV          C2          C3          H3     108.450    1.83
+DTV          O3          C3          C4     109.489    1.87
+DTV          O3          C3          H3     108.183    1.96
+DTV          C4          C3          H3     108.682    1.50
+DTV          C3          O3          HB     109.265    3.00
+DTV          C3          C4          S4     112.239    3.00
+DTV          C3          C4        H4C1     109.473    1.50
+DTV          C3          C4        H4C2     109.473    1.50
+DTV          S4          C4        H4C1     107.876    2.03
+DTV          S4          C4        H4C2     107.876    2.03
+DTV        H4C1          C4        H4C2     107.922    1.50
+DTV          C4          S4          H4      97.649    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DTV             sp3_sp3_1          C2          C1          S1          H1     180.000   10.00     3
+DTV             sp3_sp3_4          S1          C1          C2          O2     180.000   10.00     3
+DTV            sp3_sp3_13          C1          C2          O2          HA     180.000   10.00     3
+DTV            sp3_sp3_16          C1          C2          C3          O3     180.000   10.00     3
+DTV            sp3_sp3_25          C2          C3          O3          HB     180.000   10.00     3
+DTV            sp3_sp3_28          C2          C3          C4          S4     180.000   10.00     3
+DTV            sp3_sp3_37          C3          C4          S4          H4     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DTV    chir_1    C2    O2    C1    C3    positive
+DTV    chir_2    C3    O3    C4    C2    positive
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DTV SMILES           ACDLabs              10.04 "SCC(O)C(O)CS"
+DTV SMILES_CANONICAL CACTVS               3.341 "O[C@H](CS)[C@H](O)CS"
+DTV SMILES           CACTVS               3.341 "O[CH](CS)[CH](O)CS"
+DTV SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@H]([C@@H](CS)O)O)S"
+DTV SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(CS)O)O)S"
+DTV InChI            InChI                1.03  "InChI=1S/C4H10O2S2/c5-3(1-7)4(6)2-8/h3-8H,1-2H2/t3-,4-/m1/s1"
+DTV InChIKey         InChI                1.03  VHJLVAABSRFDPM-QWWZWVQMSA-N
+DTV ?                acedrg               190         "dictionary generator"                  
+DTV ?                acedrg_database      11          "data source"                           
+DTV ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DTV ?                refmac5              5.8.0158    "optimization tool"                     

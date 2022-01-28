@@ -1,0 +1,72 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+THJ     THJ      THIOSULFATE     NON-POLYMER     5     5     .     
+#
+data_comp_THJ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+THJ     S1      S       S3      0       -0.096      -0.009      0.010       
+THJ     O1      O       O       0       -0.572      -0.779      -1.107      
+THJ     O2      O       O       0       -0.437      -0.668      1.242       
+THJ     O3      O       OS      -1      -0.674      1.307       -0.019      
+THJ     S2      S       S1      -1      1.890       0.152       -0.111      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+THJ       S1        O1        DOUBLE    n         1.438     0.016     1.438     0.016     
+THJ       S1        O2        DOUBLE    n         1.438     0.016     1.438     0.016     
+THJ       S1        O3        SINGLE    n         1.438     0.016     1.438     0.016     
+THJ       S1        S2        SINGLE    n         1.996     0.016     1.996     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+THJ          O1          S1          O2     109.980    1.50
+THJ          O1          S1          O3     109.980    1.50
+THJ          O1          S1          S2     108.969    1.50
+THJ          O2          S1          O3     109.980    1.50
+THJ          O2          S1          S2     108.969    1.50
+THJ          O3          S1          S2     108.969    1.50
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+THJ SMILES           ACDLabs              10.04 "[O-]S([S-])(=O)=O"
+THJ SMILES_CANONICAL CACTVS               3.341 "[O-][S]([S-])(=O)=O"
+THJ SMILES           CACTVS               3.341 "[O-][S]([S-])(=O)=O"
+THJ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[O-]S(=O)(=O)[S-]"
+THJ SMILES           "OpenEye OEToolkits" 1.5.0 "[O-]S(=O)(=O)[S-]"
+THJ InChI            InChI                1.03  "InChI=1S/H2O3S2/c1-5(2,3)4/h(H2,1,2,3,4)/p-2"
+THJ InChIKey         InChI                1.03  DHCDFWKWKRSZHF-UHFFFAOYSA-L
+THJ ?                acedrg               202         "dictionary generator"                  
+THJ ?                acedrg_database      11          "data source"                           
+THJ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+THJ ?                refmac5              5.8.0189    "optimization tool"                     

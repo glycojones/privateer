@@ -1,0 +1,204 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CNB      CNB 'OXO-IRON CLUSTER 1                  ' non-polymer        22  14 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CNB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CNB           O2U    O    OH1       0.000      0.000    0.000    0.000
+ CNB           H2U    H    H         0.000      0.302   -0.806   -0.392
+ CNB           FE2    FE   FE        0.000     -1.292    0.903   -0.846
+ CNB           O2A    O    OH1       0.000     -1.320   -0.349   -2.125
+ CNB           H2A    H    H         0.000     -1.128   -0.077   -3.010
+ CNB           O2B    O    OH1       0.000     -0.868    2.135   -2.074
+ CNB           H2B    H    H         0.000     -0.777    1.849   -2.971
+ CNB           O12    O    O2        0.000     -1.234    2.156    0.418
+ CNB           FE1    FE   FE        0.000     -1.063    1.343    1.994
+ CNB           O1B    O    OH1       0.000      0.710    1.570    1.910
+ CNB           H1B    H    H         0.000      1.061    2.008    1.149
+ CNB           O1A    O    OH1       0.000     -0.895    0.692    3.653
+ CNB           H1A    H    H         0.000     -0.024    0.640    4.018
+ CNB           O23    O    O2        0.000     -3.002    0.559   -0.485
+ CNB           FE3    FE   FE        0.000     -3.064   -0.465    0.972
+ CNB           O13    O    O2        0.000     -2.800    0.947    2.025
+ CNB           O3U    O    OH1       0.000     -4.730   -0.961    0.542
+ CNB           H3U    H    H         0.000     -5.106   -0.600   -0.247
+ CNB           O3B    O    OH1       0.000     -3.132   -1.518    2.417
+ CNB           H3B    H    H         0.000     -3.025   -1.110    3.264
+ CNB           O3A    O    OH1       0.000     -1.665   -1.400    0.364
+ CNB           H3A    H    H         0.000     -1.296   -1.146   -0.468
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CNB      O2U    n/a    FE2    START
+ CNB      H2U    O2U    .      .
+ CNB      FE2    O2U    O23    .
+ CNB      O2A    FE2    H2A    .
+ CNB      H2A    O2A    .      .
+ CNB      O2B    FE2    H2B    .
+ CNB      H2B    O2B    .      .
+ CNB      O12    FE2    FE1    .
+ CNB      FE1    O12    O1A    .
+ CNB      O1B    FE1    H1B    .
+ CNB      H1B    O1B    .      .
+ CNB      O1A    FE1    H1A    .
+ CNB      H1A    O1A    .      .
+ CNB      O23    FE2    FE3    .
+ CNB      FE3    O23    O3A    .
+ CNB      O13    FE3    .      .
+ CNB      O3U    FE3    H3U    .
+ CNB      H3U    O3U    .      .
+ CNB      O3B    FE3    H3B    .
+ CNB      H3B    O3B    .      .
+ CNB      O3A    FE3    H3A    .
+ CNB      H3A    O3A    .      END
+ CNB      FE1    O13    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CNB       FE1       O13       single    1.870     0.020     1.870     0.020     
+CNB       FE1       O12       single    1.870     0.020     1.870     0.020     
+CNB       O1A       FE1       single    1.970     0.020     1.970     0.020     
+CNB       O1B       FE1       single    1.970     0.020     1.970     0.020     
+CNB       O23       FE2       single    1.870     0.020     1.870     0.020     
+CNB       O12       FE2       single    1.870     0.020     1.870     0.020     
+CNB       O2A       FE2       single    1.970     0.020     1.970     0.020     
+CNB       O2B       FE2       single    1.970     0.020     1.970     0.020     
+CNB       FE2       O2U       single    1.970     0.020     1.970     0.020     
+CNB       O3A       FE3       single    1.970     0.020     1.970     0.020     
+CNB       O3B       FE3       single    1.970     0.020     1.970     0.020     
+CNB       O3U       FE3       single    1.970     0.020     1.970     0.020     
+CNB       FE3       O23       single    1.870     0.020     1.870     0.020     
+CNB       O13       FE3       single    1.870     0.020     1.870     0.020     
+CNB       H3A       O3A       single    0.970     0.012     0.967     0.020     
+CNB       H3B       O3B       single    0.970     0.012     0.967     0.020     
+CNB       H3U       O3U       single    0.970     0.012     0.967     0.020     
+CNB       H1A       O1A       single    0.970     0.012     0.967     0.020     
+CNB       H1B       O1B       single    0.970     0.012     0.967     0.020     
+CNB       H2A       O2A       single    0.970     0.012     0.967     0.020     
+CNB       H2B       O2B       single    0.970     0.012     0.967     0.020     
+CNB       H2U       O2U       single    0.970     0.012     0.967     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CNB      H2U    O2U    FE2     120.000    3.000
+ CNB      O2U    FE2    O2A      90.000    3.000
+ CNB      O2U    FE2    O2B     120.000    3.000
+ CNB      O2U    FE2    O12      90.000    3.000
+ CNB      O2U    FE2    O23     120.000    3.000
+ CNB      O2A    FE2    O2B      90.000    3.000
+ CNB      O2A    FE2    O12     180.000    3.000
+ CNB      O2B    FE2    O12      90.000    3.000
+ CNB      O2A    FE2    O23      90.000    3.000
+ CNB      O2B    FE2    O23     120.000    3.000
+ CNB      O12    FE2    O23      90.000    3.000
+ CNB      FE2    O2A    H2A     120.000    3.000
+ CNB      FE2    O2B    H2B     120.000    3.000
+ CNB      FE2    O12    FE1     120.000    3.000
+ CNB      O12    FE1    O1B      90.000    3.000
+ CNB      O12    FE1    O1A     180.000    3.000
+ CNB      O12    FE1    O13      90.000    3.000
+ CNB      O1B    FE1    O1A      90.000    3.000
+ CNB      O1B    FE1    O13     180.000    3.000
+ CNB      O1A    FE1    O13      90.000    3.000
+ CNB      FE1    O1B    H1B     120.000    3.000
+ CNB      FE1    O1A    H1A     120.000    3.000
+ CNB      FE2    O23    FE3     120.000    3.000
+ CNB      O23    FE3    O13      90.000    3.000
+ CNB      O23    FE3    O3U      90.000    3.000
+ CNB      O23    FE3    O3B     180.000    3.000
+ CNB      O23    FE3    O3A      90.000    3.000
+ CNB      O13    FE3    O3U     120.000    3.000
+ CNB      O13    FE3    O3B      90.000    3.000
+ CNB      O3U    FE3    O3B      90.000    3.000
+ CNB      O13    FE3    O3A     120.000    3.000
+ CNB      O3U    FE3    O3A     120.000    3.000
+ CNB      O3B    FE3    O3A      90.000    3.000
+ CNB      FE3    O13    FE1     120.000    3.000
+ CNB      FE3    O3U    H3U     120.000    3.000
+ CNB      FE3    O3B    H3B     120.000    3.000
+ CNB      FE3    O3A    H3A     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CNB      var_1    H2U    O2U    FE2    O2A        0.000   20.000   1
+ CNB      var_2    H2A    O2A    FE2    O2B        0.000   20.000   1
+ CNB      var_3    H2B    O2B    FE2    O2A        0.000   20.000   1
+ CNB      var_4    FE1    O12    FE2    O23        0.000   20.000   1
+ CNB      var_5    FE2    O12    FE1    O13        0.000   20.000   1
+ CNB      var_6    FE3    O13    FE1    O12        0.000   20.000   1
+ CNB      var_7    H1B    O1B    FE1    O12        0.000   20.000   1
+ CNB      var_8    H1A    O1A    FE1    O1B        0.000   20.000   1
+ CNB      var_9    FE3    O23    FE2    O12        0.000   20.000   1
+ CNB      var_10   FE2    O23    FE3    O13        0.000   20.000   1
+ CNB      var_11   FE1    O13    FE3    O23        0.000   20.000   1
+ CNB      var_12   H3U    O3U    FE3    O23        0.000   20.000   1
+ CNB      var_13   H3B    O3B    FE3    O13        0.000   20.000   1
+ CNB      var_14   H3A    O3A    FE3    O23        0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ CNB      chir_01  FE1    O12    O1A    O1B       cross2
+                   .      .      .      .      .
+ CNB      chir_02  FE2    O2A    O12    O2B       cross3
+                   O2U    O23    .      .      .
+ CNB      chir_03  FE3    O23    O3B    O13       cross3
+                   O3A    O3U    .      .      .
+# ------------------------------------------------------

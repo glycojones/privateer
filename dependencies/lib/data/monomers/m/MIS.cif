@@ -1,0 +1,228 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MIS     MIS     MONOISOPROPYLPHOSPHORYLSERINE     peptide     27     14     .
+#
+data_comp_MIS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MIS     N       N       NT3     1       8.678       41.102      32.592
+MIS     CA      C       CH1     0       7.289       41.028      32.064
+MIS     CB      C       CH2     0       6.473       40.047      32.884
+MIS     OG      O       O2      0       7.018       38.721      32.685
+MIS     P       P       P       0       6.280       37.460      33.352
+MIS     O1P     O       OP      -1      4.924       37.323      32.714
+MIS     O2P     O       O       0       6.398       37.582      34.846
+MIS     O3P     O       O2      0       7.184       36.220      32.876
+MIS     C1      C       CH1     0       8.628       36.144      33.144
+MIS     C2      C       CH3     0       9.345       36.218      31.814
+MIS     C3      C       CH3     0       8.885       34.853      33.890
+MIS     C       C       C       0       6.656       42.426      32.049
+MIS     O       O       O       0       6.431       42.940      30.935
+MIS     OXT     O       OC      -1      6.412       42.951      33.154
+MIS     H       H       H       0       8.685       41.550      33.386
+MIS     H2      H       H       0       9.210       41.539      31.996
+MIS     H3      H       H       0       9.004       40.260      32.721
+MIS     HA      H       H       0       7.332       40.694      31.128
+MIS     HB2     H       H       0       5.534       40.068      32.600
+MIS     HB3     H       H       0       6.513       40.286      33.835
+MIS     H1      H       H       0       8.901       36.910      33.709
+MIS     H21     H       H       0       10.305      36.270      31.965
+MIS     H22     H       H       0       9.049       37.010      31.329
+MIS     H23     H       H       0       9.141       35.423      31.290
+MIS     H31     H       H       0       9.834       34.783      34.101
+MIS     H32     H       H       0       8.620       34.098      33.335
+MIS     H33     H       H       0       8.368       34.845      34.716
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+MIS      N      n/a    CA     START
+MIS      H      N      .      .
+MIS      H2     N      .      .
+MIS      H3     N      .      .
+MIS      CA     N      C      .
+MIS      HA     CA     .      .
+MIS      CB     CA     OG     .
+MIS      HB2    CB     .      .
+MIS      HB3    CB     .      .
+MIS      OG     CB     P      .
+MIS      P      OG     O3P    .
+MIS      O1P    P      .      .
+MIS      O2P    P      .      .
+MIS      O3P    P      C1     .
+MIS      C1     O3P    C2     .
+MIS      H1     C1     .      .
+MIS      C3     C1     H31    .
+MIS      H33    C3     .      .
+MIS      H32    C3     .      .
+MIS      H31    C3     .      .
+MIS      C2     C1     H21    .
+MIS      H23    C2     .      .
+MIS      H22    C2     .      .
+MIS      H21    C2     .      .
+MIS      C      CA     .      END
+MIS      O      C      .      .
+MIS      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MIS       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+MIS       CA        CB        SINGLE    n         1.515     0.017     1.515     0.017     
+MIS       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+MIS       CB        OG        SINGLE    n         1.447     0.017     1.447     0.017     
+MIS       OG        P         SINGLE    n         1.606     0.011     1.606     0.011     
+MIS       P         O1P       SINGLE    n         1.504     0.011     1.504     0.011     
+MIS       P         O2P       DOUBLE    n         1.504     0.011     1.504     0.011     
+MIS       P         O3P       SINGLE    n         1.606     0.011     1.606     0.011     
+MIS       O3P       C1        SINGLE    n         1.468     0.015     1.468     0.015     
+MIS       C1        C2        SINGLE    n         1.513     0.011     1.513     0.011     
+MIS       C1        C3        SINGLE    n         1.513     0.011     1.513     0.011     
+MIS       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+MIS       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+MIS       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+MIS       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+MIS       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+MIS       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+MIS       CB        HB2       SINGLE    n         1.089     0.010     0.982     0.018     
+MIS       CB        HB3       SINGLE    n         1.089     0.010     0.982     0.018     
+MIS       C1        H1        SINGLE    n         1.089     0.010     0.990     0.015     
+MIS       C2        H21       SINGLE    n         1.089     0.010     0.974     0.015     
+MIS       C2        H22       SINGLE    n         1.089     0.010     0.974     0.015     
+MIS       C2        H23       SINGLE    n         1.089     0.010     0.974     0.015     
+MIS       C3        H31       SINGLE    n         1.089     0.010     0.974     0.015     
+MIS       C3        H32       SINGLE    n         1.089     0.010     0.974     0.015     
+MIS       C3        H33       SINGLE    n         1.089     0.010     0.974     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MIS          CA           N           H     109.619    1.50
+MIS          CA           N          H2     109.619    1.50
+MIS          CA           N          H3     109.619    1.50
+MIS           H           N          H2     109.028    2.41
+MIS           H           N          H3     109.028    2.41
+MIS          H2           N          H3     109.028    2.41
+MIS           N          CA          CB     109.782    1.50
+MIS           N          CA           C     109.829    1.50
+MIS           N          CA          HA     108.049    1.50
+MIS          CB          CA           C     111.899    1.50
+MIS          CB          CA          HA     108.381    1.50
+MIS           C          CA          HA     108.255    1.50
+MIS          CA          CB          OG     108.381    1.50
+MIS          CA          CB         HB2     110.023    1.50
+MIS          CA          CB         HB3     110.023    1.50
+MIS          OG          CB         HB2     109.758    1.50
+MIS          OG          CB         HB3     109.758    1.50
+MIS         HB2          CB         HB3     108.157    1.50
+MIS          CB          OG           P     119.251    1.51
+MIS          OG           P         O1P     107.777    3.00
+MIS          OG           P         O2P     107.777    3.00
+MIS          OG           P         O3P     102.789    2.10
+MIS         O1P           P         O2P     119.782    1.83
+MIS         O1P           P         O3P     107.912    2.57
+MIS         O2P           P         O3P     107.912    2.57
+MIS           P         O3P          C1     121.496    2.55
+MIS         O3P          C1          C2     107.625    1.78
+MIS         O3P          C1          C3     107.625    1.78
+MIS         O3P          C1          H1     109.315    1.50
+MIS          C2          C1          C3     113.304    1.50
+MIS          C2          C1          H1     109.427    1.50
+MIS          C3          C1          H1     109.427    1.50
+MIS          C1          C2         H21     109.476    1.50
+MIS          C1          C2         H22     109.476    1.50
+MIS          C1          C2         H23     109.476    1.50
+MIS         H21          C2         H22     109.425    1.50
+MIS         H21          C2         H23     109.425    1.50
+MIS         H22          C2         H23     109.425    1.50
+MIS          C1          C3         H31     109.476    1.50
+MIS          C1          C3         H32     109.476    1.50
+MIS          C1          C3         H33     109.476    1.50
+MIS         H31          C3         H32     109.425    1.50
+MIS         H31          C3         H33     109.425    1.50
+MIS         H32          C3         H33     109.425    1.50
+MIS          CA           C           O     117.181    1.50
+MIS          CA           C         OXT     117.181    1.50
+MIS           O           C         OXT     125.637    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MIS             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+MIS             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+MIS            sp3_sp3_10           N          CA          CB          OG     180.000   10.00     3
+MIS            sp3_sp3_19          CA          CB          OG           P     180.000   10.00     3
+MIS            sp3_sp3_23          CB          OG           P         O1P     -60.000   10.00     3
+MIS            sp3_sp3_26          C1         O3P           P          OG     -60.000   10.00     3
+MIS            sp3_sp3_28          C2          C1         O3P           P     180.000   10.00     3
+MIS            sp3_sp3_40         O3P          C1          C3         H31     180.000   10.00     3
+MIS            sp3_sp3_31         O3P          C1          C2         H21     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MIS    chir_1    CA    N    C    CB    positive
+MIS    chir_2    P    O3P    OG    O1P    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MIS    plan-1           C   0.020
+MIS    plan-1          CA   0.020
+MIS    plan-1           O   0.020
+MIS    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MIS SMILES           ACDLabs              10.04 "O=P(OCC(N)C(=O)O)(OC(C)C)O"
+MIS SMILES_CANONICAL CACTVS               3.341 "CC(C)O[P@@](O)(=O)OC[C@H](N)C(O)=O"
+MIS SMILES           CACTVS               3.341 "CC(C)O[P](O)(=O)OC[CH](N)C(O)=O"
+MIS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)O[P@](=O)(O)OC[C@@H](C(=O)O)N"
+MIS SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)OP(=O)(O)OCC(C(=O)O)N"
+MIS InChI            InChI                1.03  "InChI=1S/C6H14NO6P/c1-4(2)13-14(10,11)12-3-5(7)6(8)9/h4-5H,3,7H2,1-2H3,(H,8,9)(H,10,11)/t5-/m0/s1"
+MIS InChIKey         InChI                1.03  DALHHSOTZKMXMV-YFKPBYRVSA-N
+MIS ?                acedrg               196         "dictionary generator"
+MIS ?                acedrg_database      11          "data source"
+MIS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MIS ?                refmac5              5.8.0222    "optimization tool"

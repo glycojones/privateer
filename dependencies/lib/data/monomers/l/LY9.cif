@@ -1,0 +1,159 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LY9     LY9      "L-arabinaric acid"     NON-POLYMER     18     12     .     
+#
+data_comp_LY9
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LY9     OAA     O       O       0       28.577      -27.622     63.911      
+LY9     OAB     O       OH1     0       26.358      -26.761     62.362      
+LY9     OAC     O       OH1     0       27.400      -24.855     59.646      
+LY9     OAD     O       OC      -1      28.136      -27.832     58.072      
+LY9     OAE     O       OC      -1      28.794      -25.452     64.319      
+LY9     CAF     C       C       0       28.397      -26.418     63.639      
+LY9     CAG     C       CH1     0       27.619      -26.100     62.355      
+LY9     CAH     C       CH1     0       28.427      -26.473     61.105      
+LY9     CAI     C       CH1     0       27.693      -26.239     59.780      
+LY9     CAJ     C       C       0       28.506      -26.758     58.587      
+LY9     OAK     O       O       0       29.483      -26.074     58.218      
+LY9     OAL     O       OH1     0       29.662      -25.736     61.098      
+LY9     HOAB    H       H       0       26.467      -27.603     62.321      
+LY9     HOAC    H       H       0       26.833      -24.753     59.025      
+LY9     HAG     H       H       0       27.455      -25.126     62.335      
+LY9     HAH     H       H       0       28.646      -27.434     61.163      
+LY9     HAI     H       H       0       26.840      -26.736     59.798      
+LY9     HOAL    H       H       0       29.495      -24.905     61.053      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LY9       OAA       CAF       DOUBLE    n         1.247     0.019     1.247     0.019     
+LY9       OAB       CAG       SINGLE    n         1.419     0.017     1.419     0.017     
+LY9       OAC       CAI       SINGLE    n         1.419     0.017     1.419     0.017     
+LY9       OAD       CAJ       SINGLE    n         1.247     0.019     1.247     0.019     
+LY9       OAE       CAF       SINGLE    n         1.247     0.019     1.247     0.019     
+LY9       CAF       CAG       SINGLE    n         1.533     0.010     1.533     0.010     
+LY9       CAG       CAH       SINGLE    n         1.526     0.013     1.526     0.013     
+LY9       CAH       CAI       SINGLE    n         1.526     0.013     1.526     0.013     
+LY9       CAH       OAL       SINGLE    n         1.435     0.011     1.435     0.011     
+LY9       CAI       CAJ       SINGLE    n         1.533     0.010     1.533     0.010     
+LY9       CAJ       OAK       DOUBLE    n         1.247     0.019     1.247     0.019     
+LY9       OAB       HOAB      SINGLE    n         0.970     0.012     0.848     0.020     
+LY9       OAC       HOAC      SINGLE    n         0.970     0.012     0.848     0.020     
+LY9       CAG       HAG       SINGLE    n         1.089     0.010     0.988     0.014     
+LY9       CAH       HAH       SINGLE    n         1.089     0.010     0.987     0.015     
+LY9       CAI       HAI       SINGLE    n         1.089     0.010     0.988     0.014     
+LY9       OAL       HOAL      SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LY9         CAG         OAB        HOAB     108.941    3.00
+LY9         CAI         OAC        HOAC     108.941    3.00
+LY9         OAA         CAF         OAE     125.683    1.50
+LY9         OAA         CAF         CAG     117.159    1.50
+LY9         OAE         CAF         CAG     117.159    1.50
+LY9         OAB         CAG         CAF     111.490    1.56
+LY9         OAB         CAG         CAH     109.434    2.40
+LY9         OAB         CAG         HAG     108.747    1.50
+LY9         CAF         CAG         CAH     111.511    2.91
+LY9         CAF         CAG         HAG     108.467    1.50
+LY9         CAH         CAG         HAG     108.687    1.50
+LY9         CAG         CAH         CAI     111.094    2.85
+LY9         CAG         CAH         OAL     109.317    1.50
+LY9         CAG         CAH         HAH     108.238    1.72
+LY9         CAI         CAH         OAL     109.317    1.50
+LY9         CAI         CAH         HAH     108.238    1.72
+LY9         OAL         CAH         HAH     108.243    1.50
+LY9         OAC         CAI         CAH     109.434    2.40
+LY9         OAC         CAI         CAJ     111.490    1.56
+LY9         OAC         CAI         HAI     108.747    1.50
+LY9         CAH         CAI         CAJ     111.511    2.91
+LY9         CAH         CAI         HAI     108.687    1.50
+LY9         CAJ         CAI         HAI     108.467    1.50
+LY9         OAD         CAJ         CAI     117.159    1.50
+LY9         OAD         CAJ         OAK     125.683    1.50
+LY9         CAI         CAJ         OAK     117.159    1.50
+LY9         CAH         OAL        HOAL     108.564    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LY9             sp3_sp3_1         CAF         CAG         OAB        HOAB     180.000   10.00     3
+LY9             sp3_sp3_4         CAH         CAI         OAC        HOAC     180.000   10.00     3
+LY9             sp2_sp3_1         OAA         CAF         CAG         OAB       0.000   10.00     6
+LY9             sp3_sp3_7         OAB         CAG         CAH         CAI     180.000   10.00     3
+LY9            sp3_sp3_25         CAG         CAH         OAL        HOAL     180.000   10.00     3
+LY9            sp3_sp3_17         CAG         CAH         CAI         OAC     -60.000   10.00     3
+LY9             sp2_sp3_7         OAD         CAJ         CAI         OAC       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+LY9    chir_1    CAG    OAB    CAF    CAH    negative
+LY9    chir_2    CAI    OAC    CAJ    CAH    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LY9    plan-1         CAF   0.020
+LY9    plan-1         CAG   0.020
+LY9    plan-1         OAA   0.020
+LY9    plan-1         OAE   0.020
+LY9    plan-2         CAI   0.020
+LY9    plan-2         CAJ   0.020
+LY9    plan-2         OAD   0.020
+LY9    plan-2         OAK   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LY9 SMILES           ACDLabs              12.01 "O=C(O)C(O)C(O)C(O)C(=O)O"
+LY9 SMILES_CANONICAL CACTVS               3.370 "O[C@@H]([C@@H](O)C(O)=O)[C@@H](O)C(O)=O"
+LY9 SMILES           CACTVS               3.370 "O[CH]([CH](O)C(O)=O)[CH](O)C(O)=O"
+LY9 SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "[C@@H](C([C@H](C(=O)O)O)O)(C(=O)O)O"
+LY9 SMILES           "OpenEye OEToolkits" 1.7.0 "C(C(C(=O)O)O)(C(C(=O)O)O)O"
+LY9 InChI            InChI                1.03  "InChI=1S/C5H8O7/c6-1(2(7)4(9)10)3(8)5(11)12/h1-3,6-8H,(H,9,10)(H,11,12)/t2-,3-/m1/s1"
+LY9 InChIKey         InChI                1.03  NPTTZSYLTYJCPR-PWNYCUMCSA-N
+LY9 ?                acedrg               202         "dictionary generator"                  
+LY9 ?                acedrg_database      11          "data source"                           
+LY9 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LY9 ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,164 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+URC     URC      "URIC ACID"     NON-POLYMER     16     12     .     
+#
+data_comp_URC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+URC     N1      N       NR6     0       -2.060      0.677       0.117       
+URC     C2      C       CR6     0       -2.081      -0.704      0.229       
+URC     C6      C       CR6     0       -0.900      1.455       -0.042      
+URC     N3      N       NR6     0       -0.880      -1.383      0.184       
+URC     O11     O       O       0       -3.128      -1.317      0.365       
+URC     C4      C       CR56    0       0.306       -0.704      0.030       
+URC     C5      C       CR56    0       0.315       0.709       -0.084      
+URC     N9      N       NR5     0       1.611       -1.129      -0.044      
+URC     O13     O       O       0       -0.997      2.685       -0.133      
+URC     N7      N       NR5     0       1.629       1.087       -0.223      
+URC     C8      C       CR5     0       2.416       -0.032      -0.199      
+URC     O24     O       O       0       3.647       -0.049      -0.300      
+URC     HN1     H       H       0       -2.841      1.097       0.148       
+URC     HN3     H       H       0       -0.884      -2.266      0.255       
+URC     HN9     H       H       0       1.899       -1.959      -0.001      
+URC     HN7     H       H       0       1.936       1.915       -0.315      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+URC       N1        C2        SINGLE    y         1.373     0.012     1.373     0.012     
+URC       N1        C6        SINGLE    y         1.392     0.012     1.392     0.012     
+URC       C2        N3        SINGLE    y         1.371     0.012     1.371     0.012     
+URC       C2        O11       DOUBLE    n         1.220     0.011     1.220     0.011     
+URC       C6        C5        SINGLE    y         1.419     0.011     1.419     0.011     
+URC       C6        O13       DOUBLE    n         1.237     0.013     1.237     0.013     
+URC       N3        C4        SINGLE    y         1.361     0.020     1.361     0.020     
+URC       C4        C5        DOUBLE    y         1.419     0.020     1.419     0.020     
+URC       C4        N9        SINGLE    y         1.375     0.013     1.375     0.013     
+URC       C5        N7        SINGLE    y         1.376     0.011     1.376     0.011     
+URC       N9        C8        SINGLE    y         1.366     0.011     1.366     0.011     
+URC       N7        C8        SINGLE    y         1.366     0.011     1.366     0.011     
+URC       C8        O24       DOUBLE    n         1.235     0.014     1.235     0.014     
+URC       N1        HN1       SINGLE    n         1.016     0.010     0.886     0.020     
+URC       N3        HN3       SINGLE    n         1.016     0.010     0.885     0.020     
+URC       N9        HN9       SINGLE    n         1.016     0.010     0.880     0.020     
+URC       N7        HN7       SINGLE    n         1.016     0.010     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+URC          C2          N1          C6     123.695    2.07
+URC          C2          N1         HN1     117.739    1.94
+URC          C6          N1         HN1     118.566    1.86
+URC          N1          C2          N3     118.487    1.50
+URC          N1          C2         O11     121.448    1.50
+URC          N3          C2         O11     120.065    1.67
+URC          N1          C6          C5     113.888    1.50
+URC          N1          C6         O13     119.903    1.50
+URC          C5          C6         O13     126.209    1.50
+URC          C2          N3          C4     121.321    1.50
+URC          C2          N3         HN3     118.446    2.15
+URC          C4          N3         HN3     120.233    1.50
+URC          N3          C4          C5     121.371    1.50
+URC          N3          C4          N9     131.163    1.50
+URC          C5          C4          N9     107.466    1.50
+URC          C6          C5          C4     121.238    1.63
+URC          C6          C5          N7     131.296    1.50
+URC          C4          C5          N7     107.466    1.50
+URC          C4          N9          C8     108.054    1.50
+URC          C4          N9         HN9     127.075    1.82
+URC          C8          N9         HN9     124.871    1.80
+URC          C5          N7          C8     109.160    1.50
+URC          C5          N7         HN7     126.564    1.93
+URC          C8          N7         HN7     124.276    1.80
+URC          N9          C8          N7     107.853    1.50
+URC          N9          C8         O24     126.073    1.50
+URC          N7          C8         O24     126.073    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+URC       const_sp2_sp2_3         O11          C2          N1          C6     180.000   10.00     2
+URC              const_35         O13          C6          N1          C2     180.000   10.00     2
+URC       const_sp2_sp2_7         O11          C2          N3          C4     180.000   10.00     2
+URC              const_18          C4          C5          C6         O13     180.000   10.00     2
+URC       const_sp2_sp2_9          C5          C4          N3          C2       0.000   10.00     2
+URC              const_13          N3          C4          C5          C6       0.000   10.00     2
+URC              const_39          N3          C4          N9          C8     180.000   10.00     2
+URC              const_23          C6          C5          N7          C8     180.000   10.00     2
+URC              const_31         O24          C8          N9          C4     180.000   10.00     2
+URC              const_27         O24          C8          N7          C5     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+URC    plan-1          C2   0.020
+URC    plan-1          C4   0.020
+URC    plan-1          C5   0.020
+URC    plan-1          C6   0.020
+URC    plan-1         HN1   0.020
+URC    plan-1         HN3   0.020
+URC    plan-1          N1   0.020
+URC    plan-1          N3   0.020
+URC    plan-1          N7   0.020
+URC    plan-1          N9   0.020
+URC    plan-1         O11   0.020
+URC    plan-1         O13   0.020
+URC    plan-2          C4   0.020
+URC    plan-2          C5   0.020
+URC    plan-2          C6   0.020
+URC    plan-2          C8   0.020
+URC    plan-2         HN7   0.020
+URC    plan-2         HN9   0.020
+URC    plan-2          N3   0.020
+URC    plan-2          N7   0.020
+URC    plan-2          N9   0.020
+URC    plan-2         O24   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+URC SMILES           ACDLabs              10.04 "O=C1C2=C(NC(=O)N1)NC(=O)N2"
+URC SMILES_CANONICAL CACTVS               3.341 "O=C1NC(=O)C2=C(N1)NC(=O)N2"
+URC SMILES           CACTVS               3.341 "O=C1NC(=O)C2=C(N1)NC(=O)N2"
+URC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C12=C(NC(=O)N1)NC(=O)NC2=O"
+URC SMILES           "OpenEye OEToolkits" 1.5.0 "C12=C(NC(=O)N1)NC(=O)NC2=O"
+URC InChI            InChI                1.03  "InChI=1S/C5H4N4O3/c10-3-1-2(7-4(11)6-1)8-5(12)9-3/h(H4,6,7,8,9,10,11,12)"
+URC InChIKey         InChI                1.03  LEHOTFFKMJEONL-UHFFFAOYSA-N
+URC ?                acedrg               202         "dictionary generator"                  
+URC ?                acedrg_database      11          "data source"                           
+URC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+URC ?                refmac5              5.8.0189    "optimization tool"                     

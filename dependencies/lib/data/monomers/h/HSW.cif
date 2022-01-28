@@ -1,0 +1,111 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HSW     HSW      N-hydroxysulfamide     NON-POLYMER     10     6     .     
+#
+data_comp_HSW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HSW     O3      O       OH1     0       2.122       0.265       -0.350      
+HSW     N2      N       NT1     0       0.991       -0.192      0.420       
+HSW     S1      S       S3      0       -0.363      0.510       -0.192      
+HSW     O2      O       O       0       -0.273      1.887       0.135       
+HSW     O1      O       O       0       -0.450      0.087       -1.542      
+HSW     N1      N       NT2     0       -1.633      -0.084      0.580       
+HSW     HO3     H       H       0       2.789       -0.057      0.065       
+HSW     HN2     H       H       0       0.984       -1.097      0.331       
+HSW     HN11    H       H       0       -2.366      -0.111      0.080       
+HSW     HN12    H       H       0       -1.732      0.245       1.399       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HSW       O3        N2        SINGLE    n         1.442     0.020     1.442     0.020     
+HSW       N2        S1        SINGLE    n         1.643     0.011     1.643     0.011     
+HSW       S1        O2        DOUBLE    n         1.418     0.011     1.418     0.011     
+HSW       S1        O1        DOUBLE    n         1.418     0.011     1.418     0.011     
+HSW       S1        N1        SINGLE    n         1.601     0.018     1.601     0.018     
+HSW       O3        HO3       SINGLE    n         0.970     0.012     0.849     0.020     
+HSW       N2        HN2       SINGLE    n         1.036     0.016     0.909     0.020     
+HSW       N1        HN11      SINGLE    n         1.036     0.016     0.888     0.020     
+HSW       N1        HN12      SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HSW          N2          O3         HO3     103.604    3.00
+HSW          O3          N2          S1     108.183    2.23
+HSW          O3          N2         HN2     105.620    3.00
+HSW          S1          N2         HN2     112.477    3.00
+HSW          N2          S1          O2     105.779    2.04
+HSW          N2          S1          O1     105.779    2.04
+HSW          N2          S1          N1     107.815    3.00
+HSW          O2          S1          O1     120.615    1.78
+HSW          O2          S1          N1     107.257    1.50
+HSW          O1          S1          N1     107.257    1.50
+HSW          S1          N1        HN11     113.277    3.00
+HSW          S1          N1        HN12     113.277    3.00
+HSW        HN11          N1        HN12     115.991    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HSW             sp3_sp3_1          S1          N2          O3         HO3     180.000   10.00     3
+HSW             sp3_sp3_3          O3          N2          S1          O2     180.000   10.00     3
+HSW             sp3_sp3_9        HN11          N1          S1          N2     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+HSW    chir_1    N2    S1    O3    HN2    positive
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HSW SMILES           ACDLabs              10.04 "O=S(=O)(N)NO"
+HSW SMILES_CANONICAL CACTVS               3.341 "N[S](=O)(=O)NO"
+HSW SMILES           CACTVS               3.341 "N[S](=O)(=O)NO"
+HSW SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "NS(=O)(=O)NO"
+HSW SMILES           "OpenEye OEToolkits" 1.5.0 "NS(=O)(=O)NO"
+HSW InChI            InChI                1.03  "InChI=1S/H4N2O3S/c1-6(4,5)2-3/h2-3H,(H2,1,4,5)"
+HSW InChIKey         InChI                1.03  FZTCJYJKHSXPEX-UHFFFAOYSA-N
+HSW ?                acedrg               202         "dictionary generator"                  
+HSW ?                acedrg_database      11          "data source"                           
+HSW ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HSW ?                refmac5              5.8.0189    "optimization tool"                     

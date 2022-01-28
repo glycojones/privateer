@@ -1,0 +1,190 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MF3     MF3     "2-AMINO-4-TRIFLUOROMETHYLSULFANYL-BUTYRICACID"     peptide     20     12     .
+#
+data_comp_MF3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MF3     N       N       NT3     1       -2.707      -0.810      0.676
+MF3     CA      C       CH1     0       -1.513      0.068       0.526
+MF3     C       C       C       0       -1.878      1.290       -0.327
+MF3     O       O       O       0       -1.540      2.410       0.106
+MF3     CB      C       CH2     0       -0.356      -0.692      -0.134
+MF3     CG      C       CH2     0       0.985       0.008       -0.006
+MF3     SD      S       S2      0       2.379       -1.028      -0.515
+MF3     CE      C       CT      0       3.726       0.148       -0.403
+MF3     OXT     O       OC      -1      -2.488      1.076       -1.394
+MF3     FZ1     F       F       0       3.886       0.604       0.827
+MF3     FZ2     F       F       0       4.880       -0.386      -0.764
+MF3     FZ3     F       F       0       3.536       1.202       -1.178
+MF3     H       H       H       0       -2.861      -1.266      -0.098
+MF3     H2      H       H       0       -3.445      -0.313      0.879
+MF3     H3      H       H       0       -2.567      -1.411      1.348
+MF3     HA      H       H       0       -1.238      0.375       1.421
+MF3     HB2     H       H       0       -0.561      -0.817      -1.083
+MF3     HB3     H       H       0       -0.291      -1.578      0.274
+MF3     HG2     H       H       0       1.120       0.278       0.928
+MF3     HG3     H       H       0       0.981       0.819       -0.557
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+MF3      N      n/a    CA     START
+MF3      H      N      .      .
+MF3      H2     N      .      .
+MF3      H3     N      .      .
+MF3      CA     N      C      .
+MF3      HA     CA     .      .
+MF3      CB     CA     CG     .
+MF3      HB2    CB     .      .
+MF3      HB3    CB     .      .
+MF3      CG     CB     SD     .
+MF3      HG2    CG     .      .
+MF3      HG3    CG     .      .
+MF3      SD     CG     CE     .
+MF3      CE     SD     FZ3    .
+MF3      FZ1    CE     .      .
+MF3      FZ2    CE     .      .
+MF3      FZ3    CE     .      .
+MF3      C      CA     .      END
+MF3      O      C      .      .
+MF3      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MF3       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+MF3       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+MF3       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+MF3       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+MF3       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+MF3       CB        CG        SINGLE    n         1.517     0.020     1.517     0.020     
+MF3       CG        SD        SINGLE    n         1.809     0.020     1.809     0.020     
+MF3       SD        CE        SINGLE    n         1.791     0.010     1.791     0.010     
+MF3       CE        FZ1       SINGLE    n         1.322     0.017     1.322     0.017     
+MF3       CE        FZ2       SINGLE    n         1.322     0.017     1.322     0.017     
+MF3       CE        FZ3       SINGLE    n         1.322     0.017     1.322     0.017     
+MF3       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+MF3       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+MF3       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+MF3       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+MF3       CB        HB2       SINGLE    n         1.089     0.010     0.978     0.020     
+MF3       CB        HB3       SINGLE    n         1.089     0.010     0.978     0.020     
+MF3       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.013     
+MF3       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MF3          CA           N           H     110.062    1.93
+MF3          CA           N          H2     110.062    1.93
+MF3          CA           N          H3     110.062    1.93
+MF3           H           N          H2     109.028    2.41
+MF3           H           N          H3     109.028    2.41
+MF3          H2           N          H3     109.028    2.41
+MF3           N          CA           C     109.241    1.50
+MF3           N          CA          CB     110.906    1.50
+MF3           N          CA          HA     108.487    1.50
+MF3           C          CA          CB     109.344    1.50
+MF3           C          CA          HA     108.824    1.50
+MF3          CB          CA          HA     109.670    1.50
+MF3          CA           C           O     117.124    1.50
+MF3          CA           C         OXT     117.124    1.50
+MF3           O           C         OXT     125.752    1.50
+MF3          CA          CB          CG     113.476    1.50
+MF3          CA          CB         HB2     108.666    1.50
+MF3          CA          CB         HB3     108.666    1.50
+MF3          CG          CB         HB2     108.955    1.50
+MF3          CG          CB         HB3     108.955    1.50
+MF3         HB2          CB         HB3     107.698    1.50
+MF3          CB          CG          SD     113.263    2.33
+MF3          CB          CG         HG2     109.206    1.50
+MF3          CB          CG         HG3     109.206    1.50
+MF3          SD          CG         HG2     108.654    1.50
+MF3          SD          CG         HG3     108.654    1.50
+MF3         HG2          CG         HG3     107.939    1.50
+MF3          CG          SD          CE     100.622    1.50
+MF3          SD          CE         FZ1     112.043    3.00
+MF3          SD          CE         FZ2     112.043    3.00
+MF3          SD          CE         FZ3     112.043    3.00
+MF3         FZ1          CE         FZ2     106.706    1.51
+MF3         FZ1          CE         FZ3     106.706    1.51
+MF3         FZ2          CE         FZ3     106.706    1.51
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MF3             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+MF3             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+MF3            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+MF3            sp3_sp3_19          CA          CB          CG          SD     180.000   10.00     3
+MF3            sp3_sp3_28          CB          CG          SD          CE     180.000   10.00     3
+MF3            sp3_sp3_31         FZ1          CE          SD          CG     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+MF3    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MF3    plan-1           C   0.020
+MF3    plan-1          CA   0.020
+MF3    plan-1           O   0.020
+MF3    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MF3 SMILES           ACDLabs              10.04 "FC(F)(F)SCCC(N)C(=O)O"
+MF3 SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCSC(F)(F)F)C(O)=O"
+MF3 SMILES           CACTVS               3.341 "N[CH](CCSC(F)(F)F)C(O)=O"
+MF3 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CSC(F)(F)F)[C@@H](C(=O)O)N"
+MF3 SMILES           "OpenEye OEToolkits" 1.5.0 "C(CSC(F)(F)F)C(C(=O)O)N"
+MF3 InChI            InChI                1.03  "InChI=1S/C5H8F3NO2S/c6-5(7,8)12-2-1-3(9)4(10)11/h3H,1-2,9H2,(H,10,11)/t3-/m0/s1"
+MF3 InChIKey         InChI                1.03  YLJLTSVBCXYTQK-VKHMYHEASA-N
+MF3 ?                acedrg               196         "dictionary generator"
+MF3 ?                acedrg_database      11          "data source"
+MF3 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MF3 ?                refmac5              5.8.0222    "optimization tool"

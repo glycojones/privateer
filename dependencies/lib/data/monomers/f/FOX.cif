@@ -1,0 +1,331 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FOX      FOX '.                                   ' non-polymer        40  24 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FOX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FOX           O3P    O    OP       -0.666      0.000    0.000    0.000
+ FOX           P      P    P         0.000     -1.098    0.663   -0.802
+ FOX           O1P    O    OP       -0.666     -0.645    1.813   -1.675
+ FOX           O2P    O    OP       -0.666     -1.739   -0.493   -1.538
+ FOX           "O5'"  O    O2        0.000     -2.189    1.052    0.330
+ FOX           "C5'"  C    CH2       0.000     -2.664    0.030    1.189
+ FOX           "H5'1" H    H         0.000     -1.831   -0.400    1.750
+ FOX           "H5'2" H    H         0.000     -3.148   -0.753    0.602
+ FOX           "C4'"  C    CH1       0.000     -3.670    0.635    2.157
+ FOX           "H4'"  H    H         0.000     -3.163    1.402    2.758
+ FOX           "C3'"  C    CH1       0.000     -4.290   -0.396    3.098
+ FOX           "H3'"  H    H         0.000     -4.580   -1.299    2.542
+ FOX           "O3'"  O    OH1       0.000     -3.404   -0.724    4.150
+ FOX           H3T    H    H         0.000     -3.905   -0.819    4.971
+ FOX           "C2'"  C    CH2       0.000     -5.525    0.332    3.613
+ FOX           "H2'1" H    H         0.000     -5.277    1.079    4.370
+ FOX           "H2'2" H    H         0.000     -6.272   -0.356    4.013
+ FOX           "C1'"  C    CH1       0.000     -6.082    1.028    2.373
+ FOX           "H1'"  H    H         0.000     -6.531    1.989    2.658
+ FOX           "C6'"  C    CH2       0.000     -4.875    1.274    1.454
+ FOX           "H6'2" H    H         0.000     -4.694    2.343    1.320
+ FOX           "H6'1" H    H         0.000     -5.020    0.806    0.479
+ FOX           N9     N    NH1       0.000     -7.071    0.207    1.713
+ FOX           H9     H    H         0.000     -7.092   -0.782    1.914
+ FOX           C4     C    CR6       0.000     -7.952    0.703    0.854
+ FOX           C5     C    CR6       0.000     -8.880   -0.062    0.236
+ FOX           N7     N    NH1       0.000     -9.000   -1.409    0.433
+ FOX           H7     H    H         0.000     -8.169   -1.934    0.664
+ FOX           C8     C    C1        0.000    -10.192   -2.090    0.335
+ FOX           H8     H    H         0.000    -11.054   -1.494    0.087
+ FOX           O8     O    O         0.000    -10.399   -3.287    0.492
+ FOX           C6     C    CR6       0.000     -9.854    0.563   -0.732
+ FOX           O6     O    O         0.000    -10.691   -0.141   -1.291
+ FOX           N1     N    NRD6      0.000     -9.757    1.926   -0.953
+ FOX           C2     C    CR6       0.000     -8.841    2.613   -0.327
+ FOX           N2     N    NH2       0.000     -8.681    3.964   -0.492
+ FOX           H22    H    H         0.000     -9.081    4.431   -1.297
+ FOX           H21    H    H         0.000     -8.162    4.505    0.190
+ FOX           N3     N    NR16      0.000     -7.950    2.053    0.555
+ FOX           H3     H    H         0.000     -7.248    2.667    1.016
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FOX      O3P    n/a    P      START
+ FOX      P      O3P    "O5'"  .
+ FOX      O1P    P      .      .
+ FOX      O2P    P      .      .
+ FOX      "O5'"  P      "C5'"  .
+ FOX      "C5'"  "O5'"  "C4'"  .
+ FOX      "H5'1" "C5'"  .      .
+ FOX      "H5'2" "C5'"  .      .
+ FOX      "C4'"  "C5'"  "C3'"  .
+ FOX      "H4'"  "C4'"  .      .
+ FOX      "C3'"  "C4'"  "C2'"  .
+ FOX      "H3'"  "C3'"  .      .
+ FOX      "O3'"  "C3'"  H3T    .
+ FOX      H3T    "O3'"  .      .
+ FOX      "C2'"  "C3'"  "C1'"  .
+ FOX      "H2'1" "C2'"  .      .
+ FOX      "H2'2" "C2'"  .      .
+ FOX      "C1'"  "C2'"  N9     .
+ FOX      "H1'"  "C1'"  .      .
+ FOX      "C6'"  "C1'"  "H6'1" .
+ FOX      "H6'2" "C6'"  .      .
+ FOX      "H6'1" "C6'"  .      .
+ FOX      N9     "C1'"  C4     .
+ FOX      H9     N9     .      .
+ FOX      C4     N9     C5     .
+ FOX      C5     C4     C6     .
+ FOX      N7     C5     C8     .
+ FOX      H7     N7     .      .
+ FOX      C8     N7     O8     .
+ FOX      H8     C8     .      .
+ FOX      O8     C8     .      .
+ FOX      C6     C5     N1     .
+ FOX      O6     C6     .      .
+ FOX      N1     C6     C2     .
+ FOX      C2     N1     N3     .
+ FOX      N2     C2     H21    .
+ FOX      H22    N2     .      .
+ FOX      H21    N2     .      .
+ FOX      N3     C2     H3     .
+ FOX      H3     N3     .      END
+ FOX      "C4'"  "C6'"  .    ADD
+ FOX      C4     N3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FOX       O1P       P         deloc     1.510     0.020     1.510     0.020     
+FOX       O2P       P         deloc     1.510     0.020     1.510     0.020     
+FOX       "O5'"     P         single    1.610     0.020     1.610     0.020     
+FOX       P         O3P       deloc     1.510     0.020     1.510     0.020     
+FOX       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+FOX       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+FOX       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+FOX       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+FOX       "C4'"     "C6'"     single    1.524     0.020     1.524     0.020     
+FOX       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+FOX       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+FOX       "C6'"     "C1'"     single    1.524     0.020     1.524     0.020     
+FOX       "H6'1"    "C6'"     single    1.089     0.010     0.989     0.005     
+FOX       "H6'2"    "C6'"     single    1.089     0.010     0.989     0.005     
+FOX       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+FOX       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+FOX       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+FOX       H3T       "O3'"     single    0.970     0.012     0.839     0.014     
+FOX       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+FOX       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+FOX       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+FOX       N9        "C1'"     single    1.450     0.020     1.450     0.020     
+FOX       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+FOX       C4        N9        single    1.350     0.020     1.350     0.020     
+FOX       H9        N9        single    1.016     0.010     0.899     0.007     
+FOX       C4        N3        single    1.337     0.020     1.337     0.020     
+FOX       C5        C4        double    1.487     0.020     1.487     0.020     
+FOX       N3        C2        single    1.337     0.020     1.337     0.020     
+FOX       H3        N3        single    1.016     0.010     0.899     0.007     
+FOX       N2        C2        single    1.355     0.020     1.355     0.020     
+FOX       C2        N1        double    1.350     0.020     1.350     0.020     
+FOX       H21       N2        single    1.016     0.010     0.899     0.007     
+FOX       H22       N2        single    1.016     0.010     0.899     0.007     
+FOX       N1        C6        single    1.350     0.020     1.350     0.020     
+FOX       O6        C6        double    1.250     0.020     1.250     0.020     
+FOX       C6        C5        single    1.487     0.020     1.487     0.020     
+FOX       N7        C5        single    1.350     0.020     1.350     0.020     
+FOX       C8        N7        single    1.330     0.020     1.330     0.020     
+FOX       H7        N7        single    1.016     0.010     0.899     0.007     
+FOX       O8        C8        double    1.220     0.020     1.220     0.020     
+FOX       H8        C8        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FOX      O3P    P      O1P     119.900    3.000
+ FOX      O3P    P      O2P     119.900    3.000
+ FOX      O3P    P      "O5'"   108.200    3.000
+ FOX      O1P    P      O2P     119.900    3.000
+ FOX      O1P    P      "O5'"   108.200    3.000
+ FOX      O2P    P      "O5'"   108.200    3.000
+ FOX      P      "O5'"  "C5'"   120.500    3.000
+ FOX      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ FOX      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ FOX      "O5'"  "C5'"  "C4'"   109.470    3.000
+ FOX      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ FOX      "H5'1" "C5'"  "C4'"   109.470    3.000
+ FOX      "H5'2" "C5'"  "C4'"   109.470    3.000
+ FOX      "C5'"  "C4'"  "H4'"   108.340    3.000
+ FOX      "C5'"  "C4'"  "C3'"   111.000    3.000
+ FOX      "C5'"  "C4'"  "C6'"   109.470    3.000
+ FOX      "H4'"  "C4'"  "C3'"   108.340    3.000
+ FOX      "H4'"  "C4'"  "C6'"   108.340    3.000
+ FOX      "C3'"  "C4'"  "C6'"   111.000    3.000
+ FOX      "C4'"  "C3'"  "H3'"   108.340    3.000
+ FOX      "C4'"  "C3'"  "O3'"   109.470    3.000
+ FOX      "C4'"  "C3'"  "C2'"   111.000    3.000
+ FOX      "H3'"  "C3'"  "O3'"   109.470    3.000
+ FOX      "H3'"  "C3'"  "C2'"   108.340    3.000
+ FOX      "O3'"  "C3'"  "C2'"   109.470    3.000
+ FOX      "C3'"  "O3'"  H3T     109.470    3.000
+ FOX      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ FOX      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ FOX      "C3'"  "C2'"  "C1'"   111.000    3.000
+ FOX      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ FOX      "H2'1" "C2'"  "C1'"   109.470    3.000
+ FOX      "H2'2" "C2'"  "C1'"   109.470    3.000
+ FOX      "C2'"  "C1'"  "H1'"   108.340    3.000
+ FOX      "C2'"  "C1'"  "C6'"   109.470    3.000
+ FOX      "C2'"  "C1'"  N9      110.000    3.000
+ FOX      "H1'"  "C1'"  "C6'"   108.340    3.000
+ FOX      "H1'"  "C1'"  N9      108.550    3.000
+ FOX      "C6'"  "C1'"  N9      110.000    3.000
+ FOX      "C1'"  "C6'"  "H6'2"  109.470    3.000
+ FOX      "C1'"  "C6'"  "H6'1"  109.470    3.000
+ FOX      "C1'"  "C6'"  "C4'"   111.000    3.000
+ FOX      "H6'2" "C6'"  "H6'1"  107.900    3.000
+ FOX      "H6'2" "C6'"  "C4'"   109.470    3.000
+ FOX      "H6'1" "C6'"  "C4'"   109.470    3.000
+ FOX      "C1'"  N9     H9      118.500    3.000
+ FOX      "C1'"  N9     C4      120.000    3.000
+ FOX      H9     N9     C4      120.000    3.000
+ FOX      N9     C4     C5      120.000    3.000
+ FOX      N9     C4     N3      120.000    3.000
+ FOX      C5     C4     N3      120.000    3.000
+ FOX      C4     C5     N7      120.000    3.000
+ FOX      C4     C5     C6      120.000    3.000
+ FOX      N7     C5     C6      120.000    3.000
+ FOX      C5     N7     H7      120.000    3.000
+ FOX      C5     N7     C8      120.000    3.000
+ FOX      H7     N7     C8      120.000    3.000
+ FOX      N7     C8     H8      120.000    3.000
+ FOX      N7     C8     O8      120.000    3.000
+ FOX      H8     C8     O8      123.000    3.000
+ FOX      C5     C6     O6      120.000    3.000
+ FOX      C5     C6     N1      120.000    3.000
+ FOX      O6     C6     N1      120.000    3.000
+ FOX      C6     N1     C2      120.000    3.000
+ FOX      N1     C2     N2      120.000    3.000
+ FOX      N1     C2     N3      120.000    3.000
+ FOX      N2     C2     N3      120.000    3.000
+ FOX      C2     N2     H22     120.000    3.000
+ FOX      C2     N2     H21     120.000    3.000
+ FOX      H22    N2     H21     120.000    3.000
+ FOX      C2     N3     H3      120.000    3.000
+ FOX      C2     N3     C4      120.000    3.000
+ FOX      H3     N3     C4      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FOX      var_1    O3P    P      "O5'"  "C5'"    -54.225   20.000   1
+ FOX      var_2    P      "O5'"  "C5'"  "C4'"   -179.989   20.000   1
+ FOX      var_3    "O5'"  "C5'"  "C4'"  "C3'"    177.691   20.000   3
+ FOX      var_4    "C5'"  "C4'"  "C6'"  "C1'"    150.000   20.000   3
+ FOX      var_5    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ FOX      var_6    "C4'"  "C3'"  "O3'"  H3T      140.665   20.000   1
+ FOX      var_7    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ FOX      var_8    "C3'"  "C2'"  "C1'"  N9        90.000   20.000   3
+ FOX      var_9    "C2'"  "C1'"  "C6'"  "C4'"      0.000   20.000   3
+ FOX      var_10   "C2'"  "C1'"  N9     C4       161.144   20.000   3
+ FOX      var_11   "C1'"  N9     C4     C5      -179.913   20.000   1
+ FOX      CONST_1  N9     C4     N3     C2       180.000    0.000   0
+ FOX      CONST_2  N9     C4     C5     C6       180.000    0.000   0
+ FOX      var_12   C4     C5     N7     C8       150.028   20.000   1
+ FOX      var_13   C5     N7     C8     O8       179.995   20.000   1
+ FOX      CONST_3  C4     C5     C6     N1         0.000    0.000   0
+ FOX      CONST_4  C5     C6     N1     C2         0.000    0.000   0
+ FOX      CONST_5  C6     N1     C2     N3         0.000    0.000   0
+ FOX      CONST_6  N1     C2     N2     H21      161.925    0.000   0
+ FOX      CONST_7  N1     C2     N3     C4         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FOX      chir_01  "C4'"  "C5'"  "C6'"  "C3'"     negativ
+ FOX      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ FOX      chir_03  "C1'"  "C6'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FOX      plan-1    N9        0.020
+ FOX      plan-1    "C1'"     0.020
+ FOX      plan-1    C4        0.020
+ FOX      plan-1    H9        0.020
+ FOX      plan-2    C4        0.020
+ FOX      plan-2    N9        0.020
+ FOX      plan-2    N3        0.020
+ FOX      plan-2    C5        0.020
+ FOX      plan-2    C2        0.020
+ FOX      plan-2    N1        0.020
+ FOX      plan-2    C6        0.020
+ FOX      plan-2    H3        0.020
+ FOX      plan-2    N2        0.020
+ FOX      plan-2    O6        0.020
+ FOX      plan-2    N7        0.020
+ FOX      plan-2    H9        0.020
+ FOX      plan-2    H22       0.020
+ FOX      plan-2    H21       0.020
+ FOX      plan-2    H7        0.020
+ FOX      plan-3    N2        0.020
+ FOX      plan-3    C2        0.020
+ FOX      plan-3    H21       0.020
+ FOX      plan-3    H22       0.020
+ FOX      plan-4    N7        0.020
+ FOX      plan-4    C5        0.020
+ FOX      plan-4    C8        0.020
+ FOX      plan-4    H7        0.020
+ FOX      plan-4    H8        0.020
+ FOX      plan-5    C8        0.020
+ FOX      plan-5    N7        0.020
+ FOX      plan-5    O8        0.020
+ FOX      plan-5    H8        0.020
+ FOX      plan-5    H7        0.020
+# ------------------------------------------------------

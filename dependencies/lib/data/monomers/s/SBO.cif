@@ -1,0 +1,105 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SBO      SBO 'TRIHYDROXYANTIMONITE(III)           ' non-polymer         7   4 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SBO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SBO           O3     O    OH1       0.000      0.000    0.000    0.000
+ SBO           H31    H    H         0.000      0.481   -0.319   -0.776
+ SBO           SB     SB   SB        0.000     -2.001   -0.351    0.175
+ SBO           O2     O    OH1       0.000     -2.982    0.500   -1.397
+ SBO           H21    H    H         0.000     -2.774    0.227   -2.301
+ SBO           O1     O    OH1       0.000     -2.683    0.454    1.920
+ SBO           H11    H    H         0.000     -2.319    0.157    2.765
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SBO      O3     n/a    SB     START
+ SBO      H31    O3     .      .
+ SBO      SB     O3     O1     .
+ SBO      O2     SB     H21    .
+ SBO      H21    O2     .      .
+ SBO      O1     SB     H11    .
+ SBO      H11    O1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SBO       O1        SB        single    2.039     0.020     2.039     0.020     
+SBO       O2        SB        single    2.039     0.020     2.039     0.020     
+SBO       SB        O3        single    2.039     0.020     2.039     0.020     
+SBO       H11       O1        single    0.970     0.012     0.967     0.020     
+SBO       H21       O2        single    0.970     0.012     0.967     0.020     
+SBO       H31       O3        single    0.970     0.012     0.967     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SBO      H31    O3     SB      120.000    3.000
+ SBO      O3     SB     O2      109.505    3.000
+ SBO      O3     SB     O1      109.498    3.000
+ SBO      O2     SB     O1      109.503    3.000
+ SBO      SB     O2     H21     120.000    3.000
+ SBO      SB     O1     H11     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SBO      var_1    H31    O3     SB     O1       179.988   20.000   1
+ SBO      var_2    O3     SB     O2     H21       59.931   20.000   1
+ SBO      var_3    O3     SB     O1     H11      -59.959   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SBO      chir_01  SB     O3     O2     O1        both
+# ------------------------------------------------------

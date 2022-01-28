@@ -1,0 +1,133 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CAD      CAD 'CACODYLIC ACID                      ' non-polymer        12   5 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CAD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CAD           O2     O    O         0.000      0.000    0.000    0.000
+ CAD           AS     AS   AS        0.000     -1.340   -0.041   -0.844
+ CAD           O1     O    OH1       0.000     -2.250    1.543   -0.628
+ CAD           HO1    H    H         0.000     -2.525    1.800    0.250
+ CAD           C2     C    CH3       0.000     -0.905   -0.300   -2.768
+ CAD           H23    H    H         0.000     -0.299    0.501   -3.109
+ CAD           H22    H    H         0.000     -0.381   -1.213   -2.897
+ CAD           H21    H    H         0.000     -1.799   -0.329   -3.337
+ CAD           C1     C    CH3       0.000     -2.475   -1.549   -0.211
+ CAD           H13    H    H         0.000     -2.709   -1.415    0.815
+ CAD           H12    H    H         0.000     -3.374   -1.581   -0.773
+ CAD           H11    H    H         0.000     -1.954   -2.465   -0.334
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CAD      O2     n/a    AS     START
+ CAD      AS     O2     C1     .
+ CAD      O1     AS     HO1    .
+ CAD      HO1    O1     .      .
+ CAD      C2     AS     H21    .
+ CAD      H23    C2     .      .
+ CAD      H22    C2     .      .
+ CAD      H21    C2     .      .
+ CAD      C1     AS     H11    .
+ CAD      H13    C1     .      .
+ CAD      H12    C1     .      .
+ CAD      H11    C1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CAD       C1        AS        single    1.962     0.020     1.962     0.020     
+CAD       C2        AS        single    1.962     0.020     1.962     0.020     
+CAD       O1        AS        single    1.934     0.020     1.934     0.020     
+CAD       AS        O2        double    1.740     0.020     1.740     0.020     
+CAD       H11       C1        single    1.089     0.010     0.989     0.005     
+CAD       H12       C1        single    1.089     0.010     0.989     0.005     
+CAD       H13       C1        single    1.089     0.010     0.989     0.005     
+CAD       H21       C2        single    1.089     0.010     0.989     0.005     
+CAD       H22       C2        single    1.089     0.010     0.989     0.005     
+CAD       H23       C2        single    1.089     0.010     0.989     0.005     
+CAD       HO1       O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CAD      O2     AS     O1      109.470    3.000
+ CAD      O2     AS     C2      109.470    3.000
+ CAD      O2     AS     C1      109.470    3.000
+ CAD      O1     AS     C2      109.470    3.000
+ CAD      O1     AS     C1      109.470    3.000
+ CAD      C2     AS     C1      109.470    3.000
+ CAD      AS     O1     HO1     120.000    3.000
+ CAD      AS     C2     H23     109.500    3.000
+ CAD      AS     C2     H22     109.500    3.000
+ CAD      AS     C2     H21     109.500    3.000
+ CAD      H23    C2     H22     109.470    3.000
+ CAD      H23    C2     H21     109.470    3.000
+ CAD      H22    C2     H21     109.470    3.000
+ CAD      AS     C1     H13     109.500    3.000
+ CAD      AS     C1     H12     109.500    3.000
+ CAD      AS     C1     H11     109.500    3.000
+ CAD      H13    C1     H12     109.470    3.000
+ CAD      H13    C1     H11     109.470    3.000
+ CAD      H12    C1     H11     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CAD      var_1    O2     AS     O1     HO1      -59.980   20.000   1
+ CAD      var_2    O2     AS     C2     H21     -179.994   20.000   1
+ CAD      var_3    O2     AS     C1     H11      -60.025   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CAD      chir_01  AS     O2     O1     C2        both
+# ------------------------------------------------------

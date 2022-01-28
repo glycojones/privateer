@@ -1,0 +1,522 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VER      VER 'IRON-OCTAETHYLPORPHYRIN             ' non-polymer        64  38 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VER
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+ VER           O2D    O    OC       -0.500   
+ VER           CGD    C    C         0.000   
+ VER           O1D    O    OC       -0.500   
+ VER           CBD    C    CH2       0.000   
+ VER           HBD1   H    H         0.000   
+ VER           HBD2   H    H         0.000   
+ VER           CAD    C    CH2       0.000   
+ VER           HAD1   H    H         0.000   
+ VER           HAD2   H    H         0.000   
+ VER           C3D    C    CR5       0.000   
+ VER           C4D    C    CR5       0.000   
+ VER           CHA    C    C1        0.000   
+ VER           HHA    H    H         0.000  
+ VER           C2D    C    CR5       0.000   
+ VER           CMD    C    CH3       0.000   
+ VER           HMD3   H    H         0.000  
+ VER           HMD2   H    H         0.000   
+ VER           HMD1   H    H         0.000   
+ VER           C1D    C    CR5       0.000   
+ VER           ND     N    NR5       0.000   
+ VER           CHD    C    C1        0.000   
+ VER           HHD    H    H         0.000   
+ VER           C4C    C    CR5       0.000   
+ VER           NC     N    NR5       0.000   
+ VER           FE     FE   FE        0.000   
+ VER           C3C    C    CR5       0.000   
+ VER           CAC    C    C1        0.000   
+ VER           HAC    H    H         0.000  
+ VER           CBC    C    C2        0.000   
+ VER           HBC2   H    H         0.000   
+ VER           HBC1   H    H         0.000  
+ VER           C2C    C    CR5       0.000   
+ VER           CMC    C    CH3       0.000   
+ VER           HMC3   H    H         0.000  
+ VER           HMC2   H    H         0.000   
+ VER           HMC1   H    H         0.000 
+ VER           C1C    C    CR5       0.000   
+ VER           O      O    O2        1.000   
+ VER           C4B    C    CR5       0.000   
+ VER           NB     N    NR5       0.000   
+ VER           C3B    C    CR5       0.000   
+ VER           CAB    C    C1        0.000   
+ VER           HAB    H    H         0.000  
+ VER           CBB    C    C2        0.000   
+ VER           HBB2   H    H         0.000   
+ VER           HBB1   H    H         0.000   
+ VER           C2B    C    CR5       0.000   
+ VER           CMB    C    CH3       0.000   
+ VER           HMB3   H    H         0.000   
+ VER           HMB2   H    H         0.000   
+ VER           HMB1   H    H         0.000  
+ VER           C1B    C    CR5       0.000   
+ VER           CHB    C    C1        0.000   
+ VER           HHB    H    H         0.000  
+ VER           C4A    C    CR5       0.000   
+ VER           NA     N    NR5       0.000   
+ VER           C3A    C    CR5       0.000   
+ VER           C1     C    CH3       0.000   
+ VER           H13    H    H         0.000  
+ VER           H12    H    H         0.000   
+ VER           H11    H    H         0.000  
+ VER           CMA    C    CR15      0.000   
+ VER           HMA    H    H         0.000   
+ VER           C1A    C    CR5       0.000   
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VER      O2D    n/a    CGD    START
+ VER      CGD    O2D    CBD    .
+ VER      O1D    CGD    .      .
+ VER      CBD    CGD    CAD    .
+ VER      HBD1   CBD    .      .
+ VER      HBD2   CBD    .      .
+ VER      CAD    CBD    C3D    .
+ VER      HAD1   CAD    .      .
+ VER      HAD2   CAD    .      .
+ VER      C3D    CAD    C2D    .
+ VER      C4D    C3D    CHA    .
+ VER      CHA    C4D    HHA    .
+ VER      HHA    CHA    .      .
+ VER      C2D    C3D    C1D    .
+ VER      CMD    C2D    HMD1   .
+ VER      HMD3   CMD    .      .
+ VER      HMD2   CMD    .      .
+ VER      HMD1   CMD    .      .
+ VER      C1D    C2D    CHD    .
+ VER      ND     C1D    .      .
+ VER      CHD    C1D    C4C    .
+ VER      HHD    CHD    .      .
+ VER      C4C    CHD    C3C    .
+ VER      NC     C4C    FE     .
+ VER      FE     NC     .      .
+ VER      C3C    C4C    C2C    .
+ VER      CAC    C3C    CBC    .
+ VER      HAC    CAC    .      .
+ VER      CBC    CAC    HBC1   .
+ VER      HBC2   CBC    .      .
+ VER      HBC1   CBC    .      .
+ VER      C2C    C3C    C1C    .
+ VER      CMC    C2C    HMC1   .
+ VER      HMC3   CMC    .      .
+ VER      HMC2   CMC    .      .
+ VER      HMC1   CMC    .      .
+ VER      C1C    C2C    O      .
+ VER      O      C1C    C4B    .
+ VER      C4B    O      C3B    .
+ VER      NB     C4B    .      .
+ VER      C3B    C4B    C2B    .
+ VER      CAB    C3B    CBB    .
+ VER      HAB    CAB    .      .
+ VER      CBB    CAB    HBB1   .
+ VER      HBB2   CBB    .      .
+ VER      HBB1   CBB    .      .
+ VER      C2B    C3B    C1B    .
+ VER      CMB    C2B    HMB1   .
+ VER      HMB3   CMB    .      .
+ VER      HMB2   CMB    .      .
+ VER      HMB1   CMB    .      .
+ VER      C1B    C2B    CHB    .
+ VER      CHB    C1B    C4A    .
+ VER      HHB    CHB    .      .
+ VER      C4A    CHB    C3A    .
+ VER      NA     C4A    .      .
+ VER      C3A    C4A    CMA    .
+ VER      C1     C3A    H11    .
+ VER      H13    C1     .      .
+ VER      H12    C1     .      .
+ VER      H11    C1     .      .
+ VER      CMA    C3A    C1A    .
+ VER      HMA    CMA    .      .
+ VER      C1A    CMA    .      END
+ VER      FE     NA     .    ADD
+ VER      FE     NB     .    ADD
+ VER      FE     ND     .    ADD
+ VER      NA     C1A    .    ADD
+ VER      NB     C1B    .    ADD
+ VER      NC     C1C    .    ADD
+ VER      ND     C4D    .    ADD
+ VER      C1A    CHA    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VER       FE        NA        single    2.090     0.020     2.090     0.020     
+VER       FE        NB        single    2.090     0.020     2.090     0.020     
+VER       FE        NC        single    2.090     0.020     2.090     0.020     
+VER       FE        ND        single    2.090     0.020     2.090     0.020     
+VER       NA        C1A       double    1.337     0.020     1.337     0.020     
+VER       NA        C4A       single    1.337     0.020     1.337     0.020     
+VER       NB        C1B       single    1.337     0.020     1.337     0.020     
+VER       NB        C4B       single    1.337     0.020     1.337     0.020     
+VER       NC        C1C       single    1.337     0.020     1.337     0.020     
+VER       NC        C4C       double    1.337     0.020     1.337     0.020     
+VER       ND        C4D       single    1.337     0.020     1.337     0.020     
+VER       ND        C1D       single    1.337     0.020     1.337     0.020     
+VER       C1A       CHA       single    1.483     0.020     1.483     0.020     
+VER       C1A       CMA       single    1.387     0.020     1.387     0.020     
+VER       CHA       C4D       double    1.483     0.020     1.483     0.020     
+VER       HHA       CHA       single    1.082     0.013     0.975     0.010     
+VER       C4D       C3D       single    1.490     0.020     1.490     0.020     
+VER       CHB       C1B       single    1.483     0.020     1.483     0.020     
+VER       C1B       C2B       double    1.490     0.020     1.490     0.020     
+VER       C4A       CHB       double    1.483     0.020     1.483     0.020     
+VER       HHB       CHB       single    1.082     0.013     0.975     0.010     
+VER       C3A       C4A       single    1.490     0.020     1.490     0.020     
+VER       O         C1C       double    1.370     0.020     1.370     0.020     
+VER       C1C       C2C       single    1.490     0.020     1.490     0.020     
+VER       C4B       O         single    1.370     0.020     1.370     0.020     
+VER       C3B       C4B       double    1.490     0.020     1.490     0.020     
+VER       CHD       C1D       double    1.483     0.020     1.483     0.020     
+VER       C1D       C2D       single    1.490     0.020     1.490     0.020     
+VER       C4C       CHD       single    1.483     0.020     1.483     0.020     
+VER       HHD       CHD       single    1.082     0.013     0.975     0.010     
+VER       C3C       C4C       single    1.490     0.020     1.490     0.020     
+VER       CMA       C3A       double    1.387     0.020     1.387     0.020     
+VER       C1        C3A       single    1.506     0.020     1.506     0.020     
+VER       HMA       CMA       single    1.082     0.013     0.975     0.010     
+VER       CMB       C2B       single    1.506     0.020     1.506     0.020     
+VER       C2B       C3B       single    1.490     0.020     1.490     0.020     
+VER       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+VER       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+VER       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+VER       CAB       C3B       single    1.483     0.020     1.483     0.020     
+VER       CBB       CAB       double    1.320     0.020     1.320     0.020     
+VER       HAB       CAB       single    1.082     0.013     0.975     0.010     
+VER       HBB1      CBB       single    1.082     0.013     0.975     0.010     
+VER       HBB2      CBB       single    1.082     0.013     0.975     0.010     
+VER       CMC       C2C       single    1.506     0.020     1.506     0.020     
+VER       C2C       C3C       double    1.490     0.020     1.490     0.020     
+VER       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+VER       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+VER       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+VER       CAC       C3C       single    1.483     0.020     1.483     0.020     
+VER       CBC       CAC       double    1.320     0.020     1.320     0.020     
+VER       HAC       CAC       single    1.082     0.013     0.975     0.010     
+VER       HBC1      CBC       single    1.082     0.013     0.975     0.010     
+VER       HBC2      CBC       single    1.082     0.013     0.975     0.010     
+VER       CMD       C2D       single    1.506     0.020     1.506     0.020     
+VER       C2D       C3D       double    1.490     0.020     1.490     0.020     
+VER       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+VER       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+VER       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+VER       C3D       CAD       single    1.510     0.020     1.510     0.020     
+VER       CAD       CBD       single    1.524     0.020     1.524     0.020     
+VER       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+VER       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+VER       CBD       CGD       single    1.510     0.020     1.510     0.020     
+VER       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+VER       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+VER       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+VER       CGD       O2D       deloc     1.250     0.020     1.250     0.020     
+VER       H11       C1        single    1.089     0.010     0.989     0.005     
+VER       H12       C1        single    1.089     0.010     0.989     0.005     
+VER       H13       C1        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VER      O2D    CGD    O1D     123.000    3.000
+ VER      O2D    CGD    CBD     118.500    3.000
+ VER      O1D    CGD    CBD     118.500    3.000
+ VER      CGD    CBD    HBD1    109.470    3.000
+ VER      CGD    CBD    HBD2    109.470    3.000
+ VER      CGD    CBD    CAD     109.470    3.000
+ VER      HBD1   CBD    HBD2    107.900    3.000
+ VER      HBD1   CBD    CAD     109.470    3.000
+ VER      HBD2   CBD    CAD     109.470    3.000
+ VER      CBD    CAD    HAD1    109.470    3.000
+ VER      CBD    CAD    HAD2    109.470    3.000
+ VER      CBD    CAD    C3D     109.470    3.000
+ VER      HAD1   CAD    HAD2    107.900    3.000
+ VER      HAD1   CAD    C3D     109.470    3.000
+ VER      HAD2   CAD    C3D     109.470    3.000
+ VER      CAD    C3D    C4D     126.000    3.000
+ VER      CAD    C3D    C2D     126.000    3.000
+ VER      C4D    C3D    C2D     108.000    3.000
+ VER      C3D    C4D    CHA     117.000    3.000
+ VER      C3D    C4D    ND      108.000    3.000
+ VER      CHA    C4D    ND      108.000    3.000
+ VER      C4D    CHA    HHA     120.000    3.000
+ VER      C4D    CHA    C1A     120.000    3.000
+ VER      HHA    CHA    C1A     120.000    3.000
+ VER      C3D    C2D    CMD     126.000    3.000
+ VER      C3D    C2D    C1D     108.000    3.000
+ VER      CMD    C2D    C1D     126.000    3.000
+ VER      C2D    CMD    HMD3    109.470    3.000
+ VER      C2D    CMD    HMD2    109.470    3.000
+ VER      C2D    CMD    HMD1    109.470    3.000
+ VER      HMD3   CMD    HMD2    109.470    3.000
+ VER      HMD3   CMD    HMD1    109.470    3.000
+ VER      HMD2   CMD    HMD1    109.470    3.000
+ VER      C2D    C1D    ND      108.000    3.000
+ VER      C2D    C1D    CHD     117.000    3.000
+ VER      ND     C1D    CHD     108.000    3.000
+ VER      C1D    ND     FE      126.000    3.000
+ VER      C1D    ND     C4D     108.000    3.000
+ VER      FE     ND     C4D     126.000    3.000
+ VER      C1D    CHD    HHD     120.000    3.000
+ VER      C1D    CHD    C4C     120.000    3.000
+ VER      HHD    CHD    C4C     120.000    3.000
+ VER      CHD    C4C    NC      108.000    3.000
+ VER      CHD    C4C    C3C     117.000    3.000
+ VER      NC     C4C    C3C     108.000    3.000
+ VER      C4C    NC     FE      126.000    3.000
+ VER      C4C    NC     C1C     108.000    3.000
+ VER      FE     NC     C1C     126.000    3.000
+ VER      NC     FE     NA       90.000    3.000
+ VER      NC     FE     NB       90.000    3.000
+ VER      NC     FE     ND       90.000    3.000
+ VER      NA     FE     NB       90.000    3.000
+ VER      NA     FE     ND       90.000    3.000
+ VER      NB     FE     ND       90.000    3.000
+ VER      C4C    C3C    CAC     117.000    3.000
+ VER      C4C    C3C    C2C     108.000    3.000
+ VER      CAC    C3C    C2C     117.000    3.000
+ VER      C3C    CAC    HAC     120.000    3.000
+ VER      C3C    CAC    CBC     120.000    3.000
+ VER      HAC    CAC    CBC     120.000    3.000
+ VER      CAC    CBC    HBC2    120.000    3.000
+ VER      CAC    CBC    HBC1    120.000    3.000
+ VER      HBC2   CBC    HBC1    120.000    3.000
+ VER      C3C    C2C    CMC     126.000    3.000
+ VER      C3C    C2C    C1C     108.000    3.000
+ VER      CMC    C2C    C1C     126.000    3.000
+ VER      C2C    CMC    HMC3    109.470    3.000
+ VER      C2C    CMC    HMC2    109.470    3.000
+ VER      C2C    CMC    HMC1    109.470    3.000
+ VER      HMC3   CMC    HMC2    109.470    3.000
+ VER      HMC3   CMC    HMC1    109.470    3.000
+ VER      HMC2   CMC    HMC1    109.470    3.000
+ VER      C2C    C1C    O       108.000    3.000
+ VER      C2C    C1C    NC      108.000    3.000
+ VER      O      C1C    NC      108.000    3.000
+ VER      C1C    O      C4B     108.000    3.000
+ VER      O      C4B    NB      108.000    3.000
+ VER      O      C4B    C3B     108.000    3.000
+ VER      NB     C4B    C3B     108.000    3.000
+ VER      C4B    NB     FE      126.000    3.000
+ VER      C4B    NB     C1B     108.000    3.000
+ VER      FE     NB     C1B     126.000    3.000
+ VER      C4B    C3B    CAB     117.000    3.000
+ VER      C4B    C3B    C2B     108.000    3.000
+ VER      CAB    C3B    C2B     117.000    3.000
+ VER      C3B    CAB    HAB     120.000    3.000
+ VER      C3B    CAB    CBB     120.000    3.000
+ VER      HAB    CAB    CBB     120.000    3.000
+ VER      CAB    CBB    HBB2    120.000    3.000
+ VER      CAB    CBB    HBB1    120.000    3.000
+ VER      HBB2   CBB    HBB1    120.000    3.000
+ VER      C3B    C2B    CMB     126.000    3.000
+ VER      C3B    C2B    C1B     108.000    3.000
+ VER      CMB    C2B    C1B     126.000    3.000
+ VER      C2B    CMB    HMB3    109.470    3.000
+ VER      C2B    CMB    HMB2    109.470    3.000
+ VER      C2B    CMB    HMB1    109.470    3.000
+ VER      HMB3   CMB    HMB2    109.470    3.000
+ VER      HMB3   CMB    HMB1    109.470    3.000
+ VER      HMB2   CMB    HMB1    109.470    3.000
+ VER      C2B    C1B    CHB     117.000    3.000
+ VER      C2B    C1B    NB      108.000    3.000
+ VER      CHB    C1B    NB      108.000    3.000
+ VER      C1B    CHB    HHB     120.000    3.000
+ VER      C1B    CHB    C4A     120.000    3.000
+ VER      HHB    CHB    C4A     120.000    3.000
+ VER      CHB    C4A    NA      108.000    3.000
+ VER      CHB    C4A    C3A     117.000    3.000
+ VER      NA     C4A    C3A     108.000    3.000
+ VER      C4A    NA     FE      126.000    3.000
+ VER      C4A    NA     C1A     108.000    3.000
+ VER      FE     NA     C1A     126.000    3.000
+ VER      C4A    C3A    C1      126.000    3.000
+ VER      C4A    C3A    CMA     108.000    3.000
+ VER      C1     C3A    CMA     108.000    3.000
+ VER      C3A    C1     H13     109.470    3.000
+ VER      C3A    C1     H12     109.470    3.000
+ VER      C3A    C1     H11     109.470    3.000
+ VER      H13    C1     H12     109.470    3.000
+ VER      H13    C1     H11     109.470    3.000
+ VER      H12    C1     H11     109.470    3.000
+ VER      C3A    CMA    HMA     126.000    3.000
+ VER      C3A    CMA    C1A     108.000    3.000
+ VER      HMA    CMA    C1A     126.000    3.000
+ VER      CMA    C1A    NA      108.000    3.000
+ VER      CMA    C1A    CHA     108.000    3.000
+ VER      NA     C1A    CHA     108.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VER      var_1    O2D    CGD    CBD    CAD        0.000   20.000   3
+ VER      var_2    CGD    CBD    CAD    C3D        0.000   20.000   3
+ VER      var_3    CBD    CAD    C3D    C2D        0.000   20.000   2
+ VER      CONST_1  CAD    C3D    C4D    CHA        0.000    0.000   0
+ VER      var_4    C3D    C4D    CHA    C1A        0.000   20.000   1
+ VER      CONST_2  CAD    C3D    C2D    C1D        0.000    0.000   0
+ VER      var_5    C3D    C2D    CMD    HMD1       0.000   20.000   1
+ VER      CONST_3  C3D    C2D    C1D    CHD        0.000    0.000   0
+ VER      CONST_4  C2D    C1D    ND     FE         0.000    0.000   0
+ VER      CONST_5  C1D    ND     C4D    C3D        0.000    0.000   0
+ VER      var_6    C2D    C1D    CHD    C4C        0.000   20.000   1
+ VER      var_7    C1D    CHD    C4C    C3C        0.000   20.000   1
+ VER      CONST_6  CHD    C4C    NC     FE         0.000    0.000   0
+ VER      CONST_7  C4C    NC     C1C    C2C        0.000    0.000   0
+ VER      var_8    C4C    NC     FE     NA         0.000   20.000   1
+ VER      var_9    NC     FE     NA     C4A        0.000   20.000   1
+ VER      var_10   NC     FE     NB     C4B        0.000   20.000   1
+ VER      var_11   NC     FE     ND     C1D        0.000   20.000   1
+ VER      CONST_8  CHD    C4C    C3C    C2C        0.000    0.000   0
+ VER      var_12   C4C    C3C    CAC    CBC        0.000   20.000   1
+ VER      CONST_9  C3C    CAC    CBC    HBC1       0.000    0.000   0
+ VER      CONST_10 C4C    C3C    C2C    C1C        0.000    0.000   0
+ VER      var_13   C3C    C2C    CMC    HMC1       0.000   20.000   1
+ VER      CONST_11 C3C    C2C    C1C    O          0.000    0.000   0
+ VER      var_14   C2C    C1C    O      C4B        0.000   20.000   1
+ VER      var_15   C1C    O      C4B    C3B        0.000   20.000   1
+ VER      CONST_12 O      C4B    NB     FE         0.000    0.000   0
+ VER      CONST_13 C4B    NB     C1B    C2B        0.000    0.000   0
+ VER      CONST_14 O      C4B    C3B    C2B        0.000    0.000   0
+ VER      var_16   C4B    C3B    CAB    CBB        0.000   20.000   1
+ VER      CONST_15 C3B    CAB    CBB    HBB1       0.000    0.000   0
+ VER      CONST_16 C4B    C3B    C2B    C1B        0.000    0.000   0
+ VER      var_17   C3B    C2B    CMB    HMB1       0.000   20.000   1
+ VER      CONST_17 C3B    C2B    C1B    CHB        0.000    0.000   0
+ VER      var_18   C2B    C1B    CHB    C4A        0.000   20.000   1
+ VER      var_19   C1B    CHB    C4A    C3A        0.000   20.000   1
+ VER      CONST_18 CHB    C4A    NA     FE         0.000    0.000   0
+ VER      CONST_19 C4A    NA     C1A    CMA        0.000    0.000   0
+ VER      CONST_20 CHB    C4A    C3A    CMA        0.000    0.000   0
+ VER      var_20   C4A    C3A    C1     H11        0.000   20.000   1
+ VER      CONST_21 C4A    C3A    CMA    C1A        0.000    0.000   0
+ VER      CONST_22 C3A    CMA    C1A    NA         0.000    0.000   0
+ VER      var_21   CMA    C1A    CHA    C4D        0.000   20.000   1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ VER      plan-1    NA        0.020
+ VER      plan-1    FE        0.020
+ VER      plan-1    C1A       0.020
+ VER      plan-1    C4A       0.020
+ VER      plan-1    C3A       0.020
+ VER      plan-1    CMA       0.020
+ VER      plan-1    CHA       0.020
+ VER      plan-1    CHB       0.020
+ VER      plan-1    C1        0.020
+ VER      plan-1    HMA       0.020
+ VER      plan-1    HHA       0.020
+ VER      plan-1    HHB       0.020
+ VER      plan-2    NB        0.020
+ VER      plan-2    FE        0.020
+ VER      plan-2    C1B       0.020
+ VER      plan-2    C4B       0.020
+ VER      plan-2    C2B       0.020
+ VER      plan-2    C3B       0.020
+ VER      plan-2    CHB       0.020
+ VER      plan-2    O         0.020
+ VER      plan-2    CMB       0.020
+ VER      plan-2    CAB       0.020
+ VER      plan-2    HHB       0.020
+ VER      plan-2    HAB       0.020
+ VER      plan-3    NC        0.020
+ VER      plan-3    FE        0.020
+ VER      plan-3    C1C       0.020
+ VER      plan-3    C4C       0.020
+ VER      plan-3    C2C       0.020
+ VER      plan-3    C3C       0.020
+ VER      plan-3    O         0.020
+ VER      plan-3    CHD       0.020
+ VER      plan-3    CMC       0.020
+ VER      plan-3    CAC       0.020
+ VER      plan-3    HHD       0.020
+ VER      plan-3    HAC       0.020
+ VER      plan-4    ND        0.020
+ VER      plan-4    FE        0.020
+ VER      plan-4    C4D       0.020
+ VER      plan-4    C1D       0.020
+ VER      plan-4    C2D       0.020
+ VER      plan-4    C3D       0.020
+ VER      plan-4    CHA       0.020
+ VER      plan-4    CHD       0.020
+ VER      plan-4    CMD       0.020
+ VER      plan-4    CAD       0.020
+ VER      plan-4    HHA       0.020
+ VER      plan-4    HHD       0.020
+ VER      plan-5    CHA       0.020
+ VER      plan-5    C1A       0.020
+ VER      plan-5    C4D       0.020
+ VER      plan-5    HHA       0.020
+ VER      plan-6    CHB       0.020
+ VER      plan-6    C1B       0.020
+ VER      plan-6    C4A       0.020
+ VER      plan-6    HHB       0.020
+ VER      plan-7    CHD       0.020
+ VER      plan-7    C1D       0.020
+ VER      plan-7    C4C       0.020
+ VER      plan-7    HHD       0.020
+ VER      plan-8    CAB       0.020
+ VER      plan-8    C3B       0.020
+ VER      plan-8    CBB       0.020
+ VER      plan-8    HAB       0.020
+ VER      plan-8    HBB1      0.020
+ VER      plan-8    HBB2      0.020
+ VER      plan-9    CAC       0.020
+ VER      plan-9    C3C       0.020
+ VER      plan-9    CBC       0.020
+ VER      plan-9    HAC       0.020
+ VER      plan-9    HBC1      0.020
+ VER      plan-9    HBC2      0.020
+ VER      plan-10   CGD       0.020
+ VER      plan-10   CBD       0.020
+ VER      plan-10   O1D       0.020
+ VER      plan-10   O2D       0.020
+# ------------------------------------------------------

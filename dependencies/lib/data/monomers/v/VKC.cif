@@ -1,0 +1,133 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VKC     VKC      "(2-hydroxyethoxy)acetic acid"     NON-POLYMER     15     8     .     
+#
+data_comp_VKC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+VKC     C       C       C       0       35.675      8.772       13.470      
+VKC     O       O       O       0       35.890      9.358       12.390      
+VKC     CA      C       CH2     0       35.556      7.259       13.429      
+VKC     CD      C       CH2     0       32.627      5.134       12.761      
+VKC     CG      C       CH2     0       34.053      5.453       13.082      
+VKC     OAD     O       O2      0       34.232      6.860       13.133      
+VKC     OE1     O       OH1     0       32.398      3.743       12.660      
+VKC     OXT     O       OC      -1      35.549      9.326       14.580      
+VKC     HA      H       H       0       35.829      6.890       14.304      
+VKC     HAA     H       H       0       36.174      6.905       12.744      
+VKC     HD      H       H       0       32.386      5.560       11.911      
+VKC     HDA     H       H       0       32.049      5.503       13.461      
+VKC     HG      H       H       0       34.641      5.069       12.394      
+VKC     HGA     H       H       0       34.294      5.057       13.948      
+VKC     HOE1    H       H       0       31.618      3.608       12.360      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VKC       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+VKC       C         CA        SINGLE    n         1.519     0.010     1.519     0.010     
+VKC       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+VKC       CA        OAD       SINGLE    n         1.413     0.012     1.413     0.012     
+VKC       CD        CG        SINGLE    n         1.496     0.020     1.496     0.020     
+VKC       CD        OE1       SINGLE    n         1.414     0.020     1.414     0.020     
+VKC       CG        OAD       SINGLE    n         1.417     0.020     1.417     0.020     
+VKC       CA        HA        SINGLE    n         1.089     0.010     0.988     0.020     
+VKC       CA        HAA       SINGLE    n         1.089     0.010     0.988     0.020     
+VKC       CD        HD        SINGLE    n         1.089     0.010     0.980     0.014     
+VKC       CD        HDA       SINGLE    n         1.089     0.010     0.980     0.014     
+VKC       CG        HG        SINGLE    n         1.089     0.010     0.982     0.018     
+VKC       CG        HGA       SINGLE    n         1.089     0.010     0.982     0.018     
+VKC       OE1       HOE1      SINGLE    n         0.970     0.012     0.846     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+VKC           O           C          CA     117.286    2.89
+VKC           O           C         OXT     125.428    1.50
+VKC          CA           C         OXT     117.286    2.89
+VKC           C          CA         OAD     110.772    2.37
+VKC           C          CA          HA     108.876    1.50
+VKC           C          CA         HAA     108.876    1.50
+VKC         OAD          CA          HA     109.643    1.50
+VKC         OAD          CA         HAA     109.643    1.50
+VKC          HA          CA         HAA     107.776    1.50
+VKC          CG          CD         OE1     112.284    1.56
+VKC          CG          CD          HD     109.198    1.50
+VKC          CG          CD         HDA     109.198    1.50
+VKC         OE1          CD          HD     109.012    1.50
+VKC         OE1          CD         HDA     109.012    1.50
+VKC          HD          CD         HDA     108.093    1.50
+VKC          CD          CG         OAD     109.904    1.68
+VKC          CD          CG          HG     109.795    1.50
+VKC          CD          CG         HGA     109.795    1.50
+VKC         OAD          CG          HG     109.691    1.50
+VKC         OAD          CG         HGA     109.691    1.50
+VKC          HG          CG         HGA     108.274    1.50
+VKC          CA         OAD          CG     113.233    2.32
+VKC          CD         OE1        HOE1     109.347    1.86
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+VKC             sp2_sp3_2           O           C          CA         OAD     120.000   10.00     6
+VKC             sp3_sp3_1           C          CA         OAD          CG     180.000   10.00     3
+VKC             sp3_sp3_4         OE1          CD          CG         OAD     180.000   10.00     3
+VKC            sp3_sp3_13          CG          CD         OE1        HOE1     180.000   10.00     3
+VKC            sp3_sp3_16          CD          CG         OAD          CA     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+VKC    plan-1           C   0.020
+VKC    plan-1          CA   0.020
+VKC    plan-1           O   0.020
+VKC    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+VKC SMILES           ACDLabs              12.01 "[O-]C(=O)COCCO"
+VKC InChI            InChI                1.03  "InChI=1S/C4H8O4/c5-1-2-8-3-4(6)7/h5H,1-3H2,(H,6,7)/p-1"
+VKC InChIKey         InChI                1.03  VDNMIIDPBBCMTM-UHFFFAOYSA-M
+VKC SMILES_CANONICAL CACTVS               3.385 "OCCOCC(O)=O"
+VKC SMILES           CACTVS               3.385 "OCCOCC(O)=O"
+VKC SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "C(COCC(=O)O)O"
+VKC SMILES           "OpenEye OEToolkits" 1.7.6 "C(COCC(=O)O)O"
+VKC ?                acedrg               202         "dictionary generator"                  
+VKC ?                acedrg_database      11          "data source"                           
+VKC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+VKC ?                refmac5              5.8.0189    "optimization tool"                     

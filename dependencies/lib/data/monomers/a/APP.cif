@@ -1,0 +1,220 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+APP      APP '1-ACETYL-2-CARBOXYPIPERIDINE        ' non-polymer        24  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_APP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ APP           O2     O    OC       -0.500      0.000    0.000    0.000
+ APP           "C'"   C    C         0.000     -1.138   -0.482   -0.194
+ APP           O1     O    OC       -0.500     -1.269   -1.705   -0.418
+ APP           C2     C    CH1       0.000     -2.352    0.410   -0.157
+ APP           H2     H    H         0.000     -2.058    1.415    0.179
+ APP           C3     C    CH2       0.000     -3.383   -0.168    0.808
+ APP           H31    H    H         0.000     -2.985   -0.144    1.825
+ APP           H32    H    H         0.000     -3.604   -1.201    0.529
+ APP           C4     C    CH2       0.000     -4.665    0.665    0.741
+ APP           H41    H    H         0.000     -4.438    1.701    1.001
+ APP           H42    H    H         0.000     -5.395    0.266    1.448
+ APP           C5     C    CH2       0.000     -5.240    0.607   -0.676
+ APP           H51    H    H         0.000     -6.167    1.182   -0.717
+ APP           H52    H    H         0.000     -5.445   -0.432   -0.944
+ APP           C6     C    CH2       0.000     -4.226    1.198   -1.658
+ APP           H61    H    H         0.000     -4.088    2.262   -1.451
+ APP           H62    H    H         0.000     -4.585    1.072   -2.681
+ APP           N1     N    N         0.000     -2.945    0.496   -1.497
+ APP           C      C    C         0.000     -2.331   -0.062   -2.558
+ APP           O      O    O         0.000     -1.225   -0.544   -2.433
+ APP           CM     C    CH3       0.000     -3.016   -0.086   -3.900
+ APP           HM3    H    H         0.000     -3.927   -0.620   -3.823
+ APP           HM2    H    H         0.000     -3.215    0.906   -4.214
+ APP           HM1    H    H         0.000     -2.388   -0.560   -4.609
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ APP      O2     n/a    "C'"   START
+ APP      "C'"   O2     C2     .
+ APP      O1     "C'"   .      .
+ APP      C2     "C'"   C3     .
+ APP      H2     C2     .      .
+ APP      C3     C2     C4     .
+ APP      H31    C3     .      .
+ APP      H32    C3     .      .
+ APP      C4     C3     C5     .
+ APP      H41    C4     .      .
+ APP      H42    C4     .      .
+ APP      C5     C4     C6     .
+ APP      H51    C5     .      .
+ APP      H52    C5     .      .
+ APP      C6     C5     N1     .
+ APP      H61    C6     .      .
+ APP      H62    C6     .      .
+ APP      N1     C6     C      .
+ APP      C      N1     CM     .
+ APP      O      C      .      .
+ APP      CM     C      HM1    .
+ APP      HM3    CM     .      .
+ APP      HM2    CM     .      .
+ APP      HM1    CM     .      END
+ APP      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+APP       C         N1        single    1.330     0.020     1.330     0.020     
+APP       N1        C2        single    1.455     0.020     1.455     0.020     
+APP       N1        C6        single    1.455     0.020     1.455     0.020     
+APP       O         C         double    1.220     0.020     1.220     0.020     
+APP       CM        C         single    1.500     0.020     1.500     0.020     
+APP       HM1       CM        single    1.089     0.010     0.989     0.005     
+APP       HM2       CM        single    1.089     0.010     0.989     0.005     
+APP       HM3       CM        single    1.089     0.010     0.989     0.005     
+APP       C2        "C'"      single    1.500     0.020     1.500     0.020     
+APP       C3        C2        single    1.524     0.020     1.524     0.020     
+APP       H2        C2        single    1.089     0.010     0.989     0.005     
+APP       O1        "C'"      deloc     1.250     0.020     1.250     0.020     
+APP       "C'"      O2        deloc     1.250     0.020     1.250     0.020     
+APP       C4        C3        single    1.524     0.020     1.524     0.020     
+APP       H31       C3        single    1.089     0.010     0.989     0.005     
+APP       H32       C3        single    1.089     0.010     0.989     0.005     
+APP       C5        C4        single    1.524     0.020     1.524     0.020     
+APP       H41       C4        single    1.089     0.010     0.989     0.005     
+APP       H42       C4        single    1.089     0.010     0.989     0.005     
+APP       C6        C5        single    1.524     0.020     1.524     0.020     
+APP       H51       C5        single    1.089     0.010     0.989     0.005     
+APP       H52       C5        single    1.089     0.010     0.989     0.005     
+APP       H61       C6        single    1.089     0.010     0.989     0.005     
+APP       H62       C6        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ APP      O2     "C'"   O1      123.000    3.000
+ APP      O2     "C'"   C2      118.500    3.000
+ APP      O1     "C'"   C2      118.500    3.000
+ APP      "C'"   C2     H2      108.810    3.000
+ APP      "C'"   C2     C3      109.470    3.000
+ APP      "C'"   C2     N1      111.600    3.000
+ APP      H2     C2     C3      108.340    3.000
+ APP      H2     C2     N1      109.470    3.000
+ APP      C3     C2     N1      105.000    3.000
+ APP      C2     C3     H31     109.470    3.000
+ APP      C2     C3     H32     109.470    3.000
+ APP      C2     C3     C4      111.000    3.000
+ APP      H31    C3     H32     107.900    3.000
+ APP      H31    C3     C4      109.470    3.000
+ APP      H32    C3     C4      109.470    3.000
+ APP      C3     C4     H41     109.470    3.000
+ APP      C3     C4     H42     109.470    3.000
+ APP      C3     C4     C5      111.000    3.000
+ APP      H41    C4     H42     107.900    3.000
+ APP      H41    C4     C5      109.470    3.000
+ APP      H42    C4     C5      109.470    3.000
+ APP      C4     C5     H51     109.470    3.000
+ APP      C4     C5     H52     109.470    3.000
+ APP      C4     C5     C6      111.000    3.000
+ APP      H51    C5     H52     107.900    3.000
+ APP      H51    C5     C6      109.470    3.000
+ APP      H52    C5     C6      109.470    3.000
+ APP      C5     C6     H61     109.470    3.000
+ APP      C5     C6     H62     109.470    3.000
+ APP      C5     C6     N1      105.000    3.000
+ APP      H61    C6     H62     107.900    3.000
+ APP      H61    C6     N1      109.470    3.000
+ APP      H62    C6     N1      109.470    3.000
+ APP      C6     N1     C       127.000    3.000
+ APP      C6     N1     C2      112.000    3.000
+ APP      C      N1     C2      121.000    3.000
+ APP      N1     C      O       123.000    3.000
+ APP      N1     C      CM      116.500    3.000
+ APP      O      C      CM      123.000    3.000
+ APP      C      CM     HM3     109.470    3.000
+ APP      C      CM     HM2     109.470    3.000
+ APP      C      CM     HM1     109.470    3.000
+ APP      HM3    CM     HM2     109.470    3.000
+ APP      HM3    CM     HM1     109.470    3.000
+ APP      HM2    CM     HM1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ APP      var_1    O2     "C'"   C2     C3      -127.363   20.000   3
+ APP      var_2    "C'"   C2     C3     C4       180.000   20.000   3
+ APP      var_3    C2     C3     C4     C5        60.000   20.000   3
+ APP      var_4    C3     C4     C5     C6       -60.000   20.000   3
+ APP      var_5    C4     C5     C6     N1        60.000   20.000   3
+ APP      var_6    C5     C6     N1     C        120.000   20.000   1
+ APP      var_7    C6     N1     C2     "C'"     180.000   20.000   3
+ APP      CONST_1  C6     N1     C      CM         0.000    0.000   0
+ APP      var_8    N1     C      CM     HM1     -179.968   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ APP      chir_01  C2     N1     "C'"   C3        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ APP      plan-1    N1        0.020
+ APP      plan-1    C         0.020
+ APP      plan-1    C2        0.020
+ APP      plan-1    C6        0.020
+ APP      plan-2    C         0.020
+ APP      plan-2    N1        0.020
+ APP      plan-2    O         0.020
+ APP      plan-2    CM        0.020
+ APP      plan-3    "C'"      0.020
+ APP      plan-3    C2        0.020
+ APP      plan-3    O1        0.020
+ APP      plan-3    O2        0.020
+# ------------------------------------------------------

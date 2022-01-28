@@ -1,0 +1,522 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LMU      LMU 'DODECYL-ALPHA-D-MALTOSIDE           ' non-polymer        81  35 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_LMU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ LMU           "O6'"  O    OH1       0.000      0.000    0.000    0.000
+ LMU           "H6'"  H    H         0.000      0.901   -0.216    0.277
+ LMU           "C6'"  C    CH2       0.000     -0.313   -0.714   -1.198
+ LMU           H6D    H    H         0.000     -0.234   -1.787   -1.013
+ LMU           H6E    H    H         0.000      0.389   -0.429   -1.984
+ LMU           "C5'"  C    CH1       0.000     -1.738   -0.374   -1.636
+ LMU           "H5'"  H    H         0.000     -2.436   -0.602   -0.819
+ LMU           "C4'"  C    CH1       0.000     -2.104   -1.208   -2.866
+ LMU           "H4'"  H    H         0.000     -1.421   -0.964   -3.692
+ LMU           "C3'"  C    CH1       0.000     -3.543   -0.885   -3.279
+ LMU           "H3'"  H    H         0.000     -4.236   -1.224   -2.496
+ LMU           "O3'"  O    OH1       0.000     -3.850   -1.544   -4.509
+ LMU           H3O2   H    H         0.000     -4.758   -1.337   -4.767
+ LMU           "C2'"  C    CH1       0.000     -3.672    0.631   -3.457
+ LMU           "H2'"  H    H         0.000     -3.058    0.955   -4.309
+ LMU           "O2'"  O    OH1       0.000     -5.040    0.969   -3.698
+ LMU           H2O2   H    H         0.000     -5.120    1.926   -3.810
+ LMU           O1B    O    O2        0.000     -1.995   -2.597   -2.550
+ LMU           C1B    C    CH1       0.000     -1.757   -3.283   -3.780
+ LMU           H1B    H    H         0.000     -2.438   -2.897   -4.551
+ LMU           O5B    O    O2        0.000     -0.407   -3.067   -4.189
+ LMU           C5B    C    CH1       0.000      0.436   -3.414   -3.092
+ LMU           H5B    H    H         0.000      0.104   -2.877   -2.193
+ LMU           C6B    C    CH2       0.000      1.879   -3.020   -3.417
+ LMU           "H6'2" H    H         0.000      2.208   -3.552   -4.311
+ LMU           "H6'1" H    H         0.000      2.525   -3.286   -2.578
+ LMU           O6B    O    OH1       0.000      1.948   -1.611   -3.646
+ LMU           H6B    H    H         0.000      2.860   -1.363   -3.850
+ LMU           C4B    C    CH1       0.000      0.366   -4.922   -2.840
+ LMU           H4B    H    H         0.000      0.675   -5.461   -3.747
+ LMU           "O4'"  O    OH1       0.000      1.235   -5.267   -1.760
+ LMU           H4O1   H    H         0.000      1.190   -6.219   -1.602
+ LMU           C3B    C    CH1       0.000     -1.074   -5.301   -2.485
+ LMU           H3B    H    H         0.000     -1.349   -4.846   -1.523
+ LMU           O3B    O    OH1       0.000     -1.187   -6.723   -2.391
+ LMU           H3O1   H    H         0.000     -2.097   -6.960   -2.167
+ LMU           C2B    C    CH1       0.000     -2.004   -4.780   -3.585
+ LMU           H2B    H    H         0.000     -1.798   -5.313   -4.524
+ LMU           O2B    O    OH1       0.000     -3.365   -4.993   -3.202
+ LMU           H2O1   H    H         0.000     -3.950   -4.664   -3.897
+ LMU           "O5'"  O    O2        0.000     -1.817    1.015   -1.955
+ LMU           "C1'"  C    CH1       0.000     -3.189    1.327   -2.183
+ LMU           "H1'"  H    H         0.000     -3.302    2.414   -2.296
+ LMU           "O1'"  O    O2        0.000     -3.970    0.882   -1.072
+ LMU           C1     C    CH2       0.000     -3.476    1.566    0.080
+ LMU           H12    H    H         0.000     -3.583    2.643   -0.063
+ LMU           H11    H    H         0.000     -2.421    1.322    0.223
+ LMU           C2     C    CH2       0.000     -4.273    1.132    1.311
+ LMU           H22    H    H         0.000     -4.165    0.055    1.451
+ LMU           H21    H    H         0.000     -5.327    1.376    1.165
+ LMU           C3     C    CH2       0.000     -3.744    1.864    2.546
+ LMU           H32    H    H         0.000     -3.851    2.942    2.403
+ LMU           H31    H    H         0.000     -2.690    1.620    2.689
+ LMU           C4     C    CH2       0.000     -4.541    1.431    3.778
+ LMU           H42    H    H         0.000     -4.434    0.353    3.918
+ LMU           H41    H    H         0.000     -5.595    1.675    3.632
+ LMU           C5     C    CH2       0.000     -4.013    2.163    5.012
+ LMU           H52    H    H         0.000     -4.119    3.240    4.869
+ LMU           H51    H    H         0.000     -2.958    1.919    5.155
+ LMU           C6     C    CH2       0.000     -4.809    1.729    6.244
+ LMU           H62    H    H         0.000     -4.701    0.652    6.385
+ LMU           H61    H    H         0.000     -5.864    1.972    6.098
+ LMU           C7     C    CH2       0.000     -4.282    2.463    7.477
+ LMU           H72    H    H         0.000     -4.390    3.540    7.333
+ LMU           H71    H    H         0.000     -3.227    2.220    7.620
+ LMU           C8     C    CH2       0.000     -5.078    2.028    8.709
+ LMU           H82    H    H         0.000     -4.970    0.951    8.850
+ LMU           H81    H    H         0.000     -6.132    2.271    8.564
+ LMU           C9     C    CH2       0.000     -4.550    2.761    9.943
+ LMU           H92    H    H         0.000     -4.658    3.838    9.800
+ LMU           H91    H    H         0.000     -3.495    2.518   10.086
+ LMU           C10    C    CH2       0.000     -5.346    2.327   11.175
+ LMU           H102   H    H         0.000     -5.238    1.249   11.316
+ LMU           H101   H    H         0.000     -6.401    2.570   11.030
+ LMU           C11    C    CH2       0.000     -4.818    3.059   12.410
+ LMU           H112   H    H         0.000     -4.925    4.137   12.266
+ LMU           H111   H    H         0.000     -3.763    2.816   12.552
+ LMU           C12    C    CH3       0.000     -5.615    2.626   13.641
+ LMU           H121   H    H         0.000     -6.639    2.863   13.505
+ LMU           H122   H    H         0.000     -5.513    1.580   13.782
+ LMU           H123   H    H         0.000     -5.250    3.132   14.498
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ LMU      "O6'"  n/a    "C6'"  START
+ LMU      "H6'"  "O6'"  .      .
+ LMU      "C6'"  "O6'"  "C5'"  .
+ LMU      H6D    "C6'"  .      .
+ LMU      H6E    "C6'"  .      .
+ LMU      "C5'"  "C6'"  "O5'"  .
+ LMU      "H5'"  "C5'"  .      .
+ LMU      "C4'"  "C5'"  O1B    .
+ LMU      "H4'"  "C4'"  .      .
+ LMU      "C3'"  "C4'"  "C2'"  .
+ LMU      "H3'"  "C3'"  .      .
+ LMU      "O3'"  "C3'"  H3O2   .
+ LMU      H3O2   "O3'"  .      .
+ LMU      "C2'"  "C3'"  "O2'"  .
+ LMU      "H2'"  "C2'"  .      .
+ LMU      "O2'"  "C2'"  H2O2   .
+ LMU      H2O2   "O2'"  .      .
+ LMU      O1B    "C4'"  C1B    .
+ LMU      C1B    O1B    O5B    .
+ LMU      H1B    C1B    .      .
+ LMU      O5B    C1B    C5B    .
+ LMU      C5B    O5B    C4B    .
+ LMU      H5B    C5B    .      .
+ LMU      C6B    C5B    O6B    .
+ LMU      "H6'2" C6B    .      .
+ LMU      "H6'1" C6B    .      .
+ LMU      O6B    C6B    H6B    .
+ LMU      H6B    O6B    .      .
+ LMU      C4B    C5B    C3B    .
+ LMU      H4B    C4B    .      .
+ LMU      "O4'"  C4B    H4O1   .
+ LMU      H4O1   "O4'"  .      .
+ LMU      C3B    C4B    C2B    .
+ LMU      H3B    C3B    .      .
+ LMU      O3B    C3B    H3O1   .
+ LMU      H3O1   O3B    .      .
+ LMU      C2B    C3B    O2B    .
+ LMU      H2B    C2B    .      .
+ LMU      O2B    C2B    H2O1   .
+ LMU      H2O1   O2B    .      .
+ LMU      "O5'"  "C5'"  "C1'"  .
+ LMU      "C1'"  "O5'"  "O1'"  .
+ LMU      "H1'"  "C1'"  .      .
+ LMU      "O1'"  "C1'"  C1     .
+ LMU      C1     "O1'"  C2     .
+ LMU      H12    C1     .      .
+ LMU      H11    C1     .      .
+ LMU      C2     C1     C3     .
+ LMU      H22    C2     .      .
+ LMU      H21    C2     .      .
+ LMU      C3     C2     C4     .
+ LMU      H32    C3     .      .
+ LMU      H31    C3     .      .
+ LMU      C4     C3     C5     .
+ LMU      H42    C4     .      .
+ LMU      H41    C4     .      .
+ LMU      C5     C4     C6     .
+ LMU      H52    C5     .      .
+ LMU      H51    C5     .      .
+ LMU      C6     C5     C7     .
+ LMU      H62    C6     .      .
+ LMU      H61    C6     .      .
+ LMU      C7     C6     C8     .
+ LMU      H72    C7     .      .
+ LMU      H71    C7     .      .
+ LMU      C8     C7     C9     .
+ LMU      H82    C8     .      .
+ LMU      H81    C8     .      .
+ LMU      C9     C8     C10    .
+ LMU      H92    C9     .      .
+ LMU      H91    C9     .      .
+ LMU      C10    C9     C11    .
+ LMU      H102   C10    .      .
+ LMU      H101   C10    .      .
+ LMU      C11    C10    C12    .
+ LMU      H112   C11    .      .
+ LMU      H111   C11    .      .
+ LMU      C12    C11    H123   .
+ LMU      H121   C12    .      .
+ LMU      H122   C12    .      .
+ LMU      H123   C12    .      END
+ LMU      C1B    C2B    .    ADD
+ LMU      "C1'"  "C2'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LMU       C1B       C2B       single    1.524     0.020     1.524     0.020     
+LMU       C1B       O1B       single    1.426     0.020     1.426     0.020     
+LMU       O5B       C1B       single    1.426     0.020     1.426     0.020     
+LMU       H1B       C1B       single    1.089     0.010     0.989     0.005     
+LMU       C2B       C3B       single    1.524     0.020     1.524     0.020     
+LMU       O2B       C2B       single    1.432     0.020     1.432     0.020     
+LMU       H2B       C2B       single    1.089     0.010     0.989     0.005     
+LMU       C3B       C4B       single    1.524     0.020     1.524     0.020     
+LMU       O3B       C3B       single    1.432     0.020     1.432     0.020     
+LMU       H3B       C3B       single    1.089     0.010     0.989     0.005     
+LMU       C4B       C5B       single    1.524     0.020     1.524     0.020     
+LMU       "O4'"     C4B       single    1.432     0.020     1.432     0.020     
+LMU       H4B       C4B       single    1.089     0.010     0.989     0.005     
+LMU       C6B       C5B       single    1.524     0.020     1.524     0.020     
+LMU       C5B       O5B       single    1.426     0.020     1.426     0.020     
+LMU       H5B       C5B       single    1.089     0.010     0.989     0.005     
+LMU       O6B       C6B       single    1.432     0.020     1.432     0.020     
+LMU       "H6'2"    C6B       single    1.089     0.010     0.989     0.005     
+LMU       "H6'1"    C6B       single    1.089     0.010     0.989     0.005     
+LMU       O1B       "C4'"     single    1.426     0.020     1.426     0.020     
+LMU       H2O1      O2B       single    0.970     0.012     0.839     0.014     
+LMU       H3O1      O3B       single    0.970     0.012     0.839     0.014     
+LMU       H4O1      "O4'"     single    0.970     0.012     0.839     0.014     
+LMU       H6B       O6B       single    0.970     0.012     0.839     0.014     
+LMU       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+LMU       "O1'"     "C1'"     single    1.426     0.020     1.426     0.020     
+LMU       "C1'"     "O5'"     single    1.426     0.020     1.426     0.020     
+LMU       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+LMU       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+LMU       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+LMU       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+LMU       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+LMU       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+LMU       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+LMU       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+LMU       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+LMU       "C5'"     "C6'"     single    1.524     0.020     1.524     0.020     
+LMU       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+LMU       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+LMU       "C6'"     "O6'"     single    1.432     0.020     1.432     0.020     
+LMU       H6D       "C6'"     single    1.089     0.010     0.989     0.005     
+LMU       H6E       "C6'"     single    1.089     0.010     0.989     0.005     
+LMU       C1        "O1'"     single    1.426     0.020     1.426     0.020     
+LMU       H2O2      "O2'"     single    0.970     0.012     0.839     0.014     
+LMU       H3O2      "O3'"     single    0.970     0.012     0.839     0.014     
+LMU       "H6'"     "O6'"     single    0.970     0.012     0.839     0.014     
+LMU       C2        C1        single    1.524     0.020     1.524     0.020     
+LMU       H12       C1        single    1.089     0.010     0.989     0.005     
+LMU       H11       C1        single    1.089     0.010     0.989     0.005     
+LMU       C3        C2        single    1.524     0.020     1.524     0.020     
+LMU       H22       C2        single    1.089     0.010     0.989     0.005     
+LMU       H21       C2        single    1.089     0.010     0.989     0.005     
+LMU       C4        C3        single    1.524     0.020     1.524     0.020     
+LMU       H32       C3        single    1.089     0.010     0.989     0.005     
+LMU       H31       C3        single    1.089     0.010     0.989     0.005     
+LMU       C5        C4        single    1.524     0.020     1.524     0.020     
+LMU       H42       C4        single    1.089     0.010     0.989     0.005     
+LMU       H41       C4        single    1.089     0.010     0.989     0.005     
+LMU       C6        C5        single    1.524     0.020     1.524     0.020     
+LMU       H52       C5        single    1.089     0.010     0.989     0.005     
+LMU       H51       C5        single    1.089     0.010     0.989     0.005     
+LMU       C7        C6        single    1.524     0.020     1.524     0.020     
+LMU       H62       C6        single    1.089     0.010     0.989     0.005     
+LMU       H61       C6        single    1.089     0.010     0.989     0.005     
+LMU       C8        C7        single    1.524     0.020     1.524     0.020     
+LMU       H72       C7        single    1.089     0.010     0.989     0.005     
+LMU       H71       C7        single    1.089     0.010     0.989     0.005     
+LMU       C9        C8        single    1.524     0.020     1.524     0.020     
+LMU       H82       C8        single    1.089     0.010     0.989     0.005     
+LMU       H81       C8        single    1.089     0.010     0.989     0.005     
+LMU       C10       C9        single    1.524     0.020     1.524     0.020     
+LMU       H92       C9        single    1.089     0.010     0.989     0.005     
+LMU       H91       C9        single    1.089     0.010     0.989     0.005     
+LMU       C11       C10       single    1.524     0.020     1.524     0.020     
+LMU       H102      C10       single    1.089     0.010     0.989     0.005     
+LMU       H101      C10       single    1.089     0.010     0.989     0.005     
+LMU       C12       C11       single    1.513     0.020     1.513     0.020     
+LMU       H112      C11       single    1.089     0.010     0.989     0.005     
+LMU       H111      C11       single    1.089     0.010     0.989     0.005     
+LMU       H123      C12       single    1.089     0.010     0.989     0.005     
+LMU       H122      C12       single    1.089     0.010     0.989     0.005     
+LMU       H121      C12       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ LMU      "H6'"  "O6'"  "C6'"   109.470    3.000
+ LMU      "O6'"  "C6'"  H6D     109.470    3.000
+ LMU      "O6'"  "C6'"  H6E     109.470    3.000
+ LMU      "O6'"  "C6'"  "C5'"   109.470    3.000
+ LMU      H6D    "C6'"  H6E     107.900    3.000
+ LMU      H6D    "C6'"  "C5'"   109.470    3.000
+ LMU      H6E    "C6'"  "C5'"   109.470    3.000
+ LMU      "C6'"  "C5'"  "H5'"   108.340    3.000
+ LMU      "C6'"  "C5'"  "C4'"   111.000    3.000
+ LMU      "C6'"  "C5'"  "O5'"   109.470    3.000
+ LMU      "H5'"  "C5'"  "C4'"   108.340    3.000
+ LMU      "H5'"  "C5'"  "O5'"   109.470    3.000
+ LMU      "C4'"  "C5'"  "O5'"   109.470    3.000
+ LMU      "C5'"  "C4'"  "H4'"   108.340    3.000
+ LMU      "C5'"  "C4'"  "C3'"   111.000    3.000
+ LMU      "C5'"  "C4'"  O1B     109.470    3.000
+ LMU      "H4'"  "C4'"  "C3'"   108.340    3.000
+ LMU      "H4'"  "C4'"  O1B     109.470    3.000
+ LMU      "C3'"  "C4'"  O1B     109.470    3.000
+ LMU      "C4'"  "C3'"  "H3'"   108.340    3.000
+ LMU      "C4'"  "C3'"  "O3'"   109.470    3.000
+ LMU      "C4'"  "C3'"  "C2'"   111.000    3.000
+ LMU      "H3'"  "C3'"  "O3'"   109.470    3.000
+ LMU      "H3'"  "C3'"  "C2'"   108.340    3.000
+ LMU      "O3'"  "C3'"  "C2'"   109.470    3.000
+ LMU      "C3'"  "O3'"  H3O2    109.470    3.000
+ LMU      "C3'"  "C2'"  "H2'"   108.340    3.000
+ LMU      "C3'"  "C2'"  "O2'"   109.470    3.000
+ LMU      "C3'"  "C2'"  "C1'"   111.000    3.000
+ LMU      "H2'"  "C2'"  "O2'"   109.470    3.000
+ LMU      "H2'"  "C2'"  "C1'"   108.340    3.000
+ LMU      "O2'"  "C2'"  "C1'"   109.470    3.000
+ LMU      "C2'"  "O2'"  H2O2    109.470    3.000
+ LMU      "C4'"  O1B    C1B     111.800    3.000
+ LMU      O1B    C1B    H1B     109.470    3.000
+ LMU      O1B    C1B    O5B     109.470    3.000
+ LMU      O1B    C1B    C2B     109.470    3.000
+ LMU      H1B    C1B    O5B     109.470    3.000
+ LMU      H1B    C1B    C2B     108.340    3.000
+ LMU      O5B    C1B    C2B     109.470    3.000
+ LMU      C1B    O5B    C5B     111.800    3.000
+ LMU      O5B    C5B    H5B     109.470    3.000
+ LMU      O5B    C5B    C6B     109.470    3.000
+ LMU      O5B    C5B    C4B     109.470    3.000
+ LMU      H5B    C5B    C6B     108.340    3.000
+ LMU      H5B    C5B    C4B     108.340    3.000
+ LMU      C6B    C5B    C4B     111.000    3.000
+ LMU      C5B    C6B    "H6'2"  109.470    3.000
+ LMU      C5B    C6B    "H6'1"  109.470    3.000
+ LMU      C5B    C6B    O6B     109.470    3.000
+ LMU      "H6'2" C6B    "H6'1"  107.900    3.000
+ LMU      "H6'2" C6B    O6B     109.470    3.000
+ LMU      "H6'1" C6B    O6B     109.470    3.000
+ LMU      C6B    O6B    H6B     109.470    3.000
+ LMU      C5B    C4B    H4B     108.340    3.000
+ LMU      C5B    C4B    "O4'"   109.470    3.000
+ LMU      C5B    C4B    C3B     111.000    3.000
+ LMU      H4B    C4B    "O4'"   109.470    3.000
+ LMU      H4B    C4B    C3B     108.340    3.000
+ LMU      "O4'"  C4B    C3B     109.470    3.000
+ LMU      C4B    "O4'"  H4O1    109.470    3.000
+ LMU      C4B    C3B    H3B     108.340    3.000
+ LMU      C4B    C3B    O3B     109.470    3.000
+ LMU      C4B    C3B    C2B     111.000    3.000
+ LMU      H3B    C3B    O3B     109.470    3.000
+ LMU      H3B    C3B    C2B     108.340    3.000
+ LMU      O3B    C3B    C2B     109.470    3.000
+ LMU      C3B    O3B    H3O1    109.470    3.000
+ LMU      C3B    C2B    H2B     108.340    3.000
+ LMU      C3B    C2B    O2B     109.470    3.000
+ LMU      C3B    C2B    C1B     111.000    3.000
+ LMU      H2B    C2B    O2B     109.470    3.000
+ LMU      H2B    C2B    C1B     108.340    3.000
+ LMU      O2B    C2B    C1B     109.470    3.000
+ LMU      C2B    O2B    H2O1    109.470    3.000
+ LMU      "C5'"  "O5'"  "C1'"   111.800    3.000
+ LMU      "O5'"  "C1'"  "H1'"   109.470    3.000
+ LMU      "O5'"  "C1'"  "O1'"   109.470    3.000
+ LMU      "O5'"  "C1'"  "C2'"   109.470    3.000
+ LMU      "H1'"  "C1'"  "O1'"   109.470    3.000
+ LMU      "H1'"  "C1'"  "C2'"   108.340    3.000
+ LMU      "O1'"  "C1'"  "C2'"   109.470    3.000
+ LMU      "C1'"  "O1'"  C1      111.800    3.000
+ LMU      "O1'"  C1     H12     109.470    3.000
+ LMU      "O1'"  C1     H11     109.470    3.000
+ LMU      "O1'"  C1     C2      109.470    3.000
+ LMU      H12    C1     H11     107.900    3.000
+ LMU      H12    C1     C2      109.470    3.000
+ LMU      H11    C1     C2      109.470    3.000
+ LMU      C1     C2     H22     109.470    3.000
+ LMU      C1     C2     H21     109.470    3.000
+ LMU      C1     C2     C3      111.000    3.000
+ LMU      H22    C2     H21     107.900    3.000
+ LMU      H22    C2     C3      109.470    3.000
+ LMU      H21    C2     C3      109.470    3.000
+ LMU      C2     C3     H32     109.470    3.000
+ LMU      C2     C3     H31     109.470    3.000
+ LMU      C2     C3     C4      111.000    3.000
+ LMU      H32    C3     H31     107.900    3.000
+ LMU      H32    C3     C4      109.470    3.000
+ LMU      H31    C3     C4      109.470    3.000
+ LMU      C3     C4     H42     109.470    3.000
+ LMU      C3     C4     H41     109.470    3.000
+ LMU      C3     C4     C5      111.000    3.000
+ LMU      H42    C4     H41     107.900    3.000
+ LMU      H42    C4     C5      109.470    3.000
+ LMU      H41    C4     C5      109.470    3.000
+ LMU      C4     C5     H52     109.470    3.000
+ LMU      C4     C5     H51     109.470    3.000
+ LMU      C4     C5     C6      111.000    3.000
+ LMU      H52    C5     H51     107.900    3.000
+ LMU      H52    C5     C6      109.470    3.000
+ LMU      H51    C5     C6      109.470    3.000
+ LMU      C5     C6     H62     109.470    3.000
+ LMU      C5     C6     H61     109.470    3.000
+ LMU      C5     C6     C7      111.000    3.000
+ LMU      H62    C6     H61     107.900    3.000
+ LMU      H62    C6     C7      109.470    3.000
+ LMU      H61    C6     C7      109.470    3.000
+ LMU      C6     C7     H72     109.470    3.000
+ LMU      C6     C7     H71     109.470    3.000
+ LMU      C6     C7     C8      111.000    3.000
+ LMU      H72    C7     H71     107.900    3.000
+ LMU      H72    C7     C8      109.470    3.000
+ LMU      H71    C7     C8      109.470    3.000
+ LMU      C7     C8     H82     109.470    3.000
+ LMU      C7     C8     H81     109.470    3.000
+ LMU      C7     C8     C9      111.000    3.000
+ LMU      H82    C8     H81     107.900    3.000
+ LMU      H82    C8     C9      109.470    3.000
+ LMU      H81    C8     C9      109.470    3.000
+ LMU      C8     C9     H92     109.470    3.000
+ LMU      C8     C9     H91     109.470    3.000
+ LMU      C8     C9     C10     111.000    3.000
+ LMU      H92    C9     H91     107.900    3.000
+ LMU      H92    C9     C10     109.470    3.000
+ LMU      H91    C9     C10     109.470    3.000
+ LMU      C9     C10    H102    109.470    3.000
+ LMU      C9     C10    H101    109.470    3.000
+ LMU      C9     C10    C11     111.000    3.000
+ LMU      H102   C10    H101    107.900    3.000
+ LMU      H102   C10    C11     109.470    3.000
+ LMU      H101   C10    C11     109.470    3.000
+ LMU      C10    C11    H112    109.470    3.000
+ LMU      C10    C11    H111    109.470    3.000
+ LMU      C10    C11    C12     111.000    3.000
+ LMU      H112   C11    H111    107.900    3.000
+ LMU      H112   C11    C12     109.470    3.000
+ LMU      H111   C11    C12     109.470    3.000
+ LMU      C11    C12    H121    109.470    3.000
+ LMU      C11    C12    H122    109.470    3.000
+ LMU      C11    C12    H123    109.470    3.000
+ LMU      H121   C12    H122    109.470    3.000
+ LMU      H121   C12    H123    109.470    3.000
+ LMU      H122   C12    H123    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ LMU      var_1    "H6'"  "O6'"  "C6'"  "C5'"    179.960   20.000   1
+ LMU      var_2    "O6'"  "C6'"  "C5'"  "O5'"     63.446   20.000   3
+ LMU      var_3    "C6'"  "C5'"  "C4'"  O1B       60.000   20.000   3
+ LMU      var_4    "C5'"  "C4'"  "C3'"  "C2'"     60.000   20.000   3
+ LMU      var_5    "C4'"  "C3'"  "O3'"  H3O2     179.998   20.000   1
+ LMU      var_6    "C4'"  "C3'"  "C2'"  "O2'"    180.000   20.000   3
+ LMU      var_7    "C3'"  "C2'"  "O2'"  H2O2     179.979   20.000   1
+ LMU      var_8    "C5'"  "C4'"  O1B    C1B     -154.919   20.000   1
+ LMU      var_9    "C4'"  O1B    C1B    O5B       74.986   20.000   1
+ LMU      var_10   O1B    C1B    C2B    C3B      -60.000   20.000   3
+ LMU      var_11   O1B    C1B    O5B    C5B       60.000   20.000   1
+ LMU      var_12   C1B    O5B    C5B    C4B       60.000   20.000   1
+ LMU      var_13   O5B    C5B    C6B    O6B       59.978   20.000   3
+ LMU      var_14   C5B    C6B    O6B    H6B      179.958   20.000   1
+ LMU      var_15   O5B    C5B    C4B    C3B      -60.000   20.000   3
+ LMU      var_16   C5B    C4B    "O4'"  H4O1     179.999   20.000   1
+ LMU      var_17   C5B    C4B    C3B    C2B       60.000   20.000   3
+ LMU      var_18   C4B    C3B    O3B    H3O1    -179.998   20.000   1
+ LMU      var_19   C4B    C3B    C2B    O2B      180.000   20.000   3
+ LMU      var_20   C3B    C2B    O2B    H2O1     179.985   20.000   1
+ LMU      var_21   "C6'"  "C5'"  "O5'"  "C1'"    180.000   20.000   1
+ LMU      var_22   "C5'"  "O5'"  "C1'"  "O1'"     60.000   20.000   1
+ LMU      var_23   "O5'"  "C1'"  "C2'"  "C3'"     60.000   20.000   3
+ LMU      var_24   "O5'"  "C1'"  "O1'"  C1        59.836   20.000   1
+ LMU      var_25   "C1'"  "O1'"  C1     C2      -179.973   20.000   1
+ LMU      var_26   "O1'"  C1     C2     C3       180.000   20.000   3
+ LMU      var_27   C1     C2     C3     C4       179.987   20.000   3
+ LMU      var_28   C2     C3     C4     C5       179.987   20.000   3
+ LMU      var_29   C3     C4     C5     C6       180.000   20.000   3
+ LMU      var_30   C4     C5     C6     C7      -179.925   20.000   3
+ LMU      var_31   C5     C6     C7     C8      -179.963   20.000   3
+ LMU      var_32   C6     C7     C8     C9       179.963   20.000   3
+ LMU      var_33   C7     C8     C9     C10      180.000   20.000   3
+ LMU      var_34   C8     C9     C10    C11      180.000   20.000   3
+ LMU      var_35   C9     C10    C11    C12      179.963   20.000   3
+ LMU      var_36   C10    C11    C12    H123     179.938   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ LMU      chir_01  C1B    C2B    O1B    O5B       negativ
+ LMU      chir_02  C2B    C1B    C3B    O2B       negativ
+ LMU      chir_03  C3B    C2B    C4B    O3B       positiv
+ LMU      chir_04  C4B    C3B    C5B    "O4'"     negativ
+ LMU      chir_05  C5B    C4B    C6B    O5B       negativ
+ LMU      chir_06  "C1'"  "C2'"  "O1'"  "O5'"     negativ
+ LMU      chir_07  "C2'"  "C1'"  "C3'"  "O2'"     negativ
+ LMU      chir_08  "C3'"  "C2'"  "C4'"  "O3'"     positiv
+ LMU      chir_09  "C4'"  O1B    "C3'"  "C5'"     negativ
+ LMU      chir_10  "C5'"  "C4'"  "C6'"  "O5'"     negativ
+# ------------------------------------------------------

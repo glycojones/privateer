@@ -1,0 +1,195 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ORP      ORP '2-DEOXY-5-PHOSPHONO-RIBOSE          ' non-polymer        22  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ORP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ORP           O3P    O    OP       -0.666      0.000    0.000    0.000
+ ORP           P      P    P         0.000     -0.560   -0.026   -1.405
+ ORP           O1P    O    OP       -0.666     -0.662   -1.457   -1.883
+ ORP           O2P    O    OP       -0.666      0.357    0.749   -2.327
+ ORP           O5     O    O2        0.000     -2.023    0.647   -1.413
+ ORP           C5     C    CH2       0.000     -2.838   -0.125   -0.530
+ ORP           H51    H    H         0.000     -2.406   -0.105    0.473
+ ORP           H52    H    H         0.000     -2.883   -1.156   -0.886
+ ORP           C4     C    CH1       0.000     -4.248    0.464   -0.491
+ ORP           H4     H    H         0.000     -4.206    1.508   -0.150
+ ORP           C3     C    CH1       0.000     -5.135   -0.363    0.462
+ ORP           H3     H    H         0.000     -4.734   -1.379    0.584
+ ORP           O3     O    OH1       0.000     -5.272    0.283    1.728
+ ORP           HO3    H    H         0.000     -5.901   -0.208    2.274
+ ORP           C2     C    CH2       0.000     -6.492   -0.394   -0.293
+ ORP           H22    H    H         0.000     -7.102    0.497   -0.130
+ ORP           H21    H    H         0.000     -7.088   -1.284   -0.084
+ ORP           O4     O    O2        0.000     -4.837    0.402   -1.796
+ ORP           C1     C    CH1       0.000     -6.009   -0.428   -1.764
+ ORP           H1     H    H         0.000     -5.756   -1.456   -2.058
+ ORP           O1     O    OH1       0.000     -7.015    0.101   -2.629
+ ORP           HO1    H    H         0.000     -6.692    0.094   -3.540
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ORP      O3P    n/a    P      START
+ ORP      P      O3P    O5     .
+ ORP      O1P    P      .      .
+ ORP      O2P    P      .      .
+ ORP      O5     P      C5     .
+ ORP      C5     O5     C4     .
+ ORP      H51    C5     .      .
+ ORP      H52    C5     .      .
+ ORP      C4     C5     O4     .
+ ORP      H4     C4     .      .
+ ORP      C3     C4     C2     .
+ ORP      H3     C3     .      .
+ ORP      O3     C3     HO3    .
+ ORP      HO3    O3     .      .
+ ORP      C2     C3     H21    .
+ ORP      H22    C2     .      .
+ ORP      H21    C2     .      .
+ ORP      O4     C4     C1     .
+ ORP      C1     O4     O1     .
+ ORP      H1     C1     .      .
+ ORP      O1     C1     HO1    .
+ ORP      HO1    O1     .      END
+ ORP      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ORP       O1        C1        single    1.432     0.020     1.432     0.020     
+ORP       C1        C2        single    1.524     0.020     1.524     0.020     
+ORP       C1        O4        single    1.426     0.020     1.426     0.020     
+ORP       H1        C1        single    1.089     0.010     0.989     0.005     
+ORP       HO1       O1        single    0.970     0.012     0.839     0.014     
+ORP       C2        C3        single    1.524     0.020     1.524     0.020     
+ORP       H21       C2        single    1.089     0.010     0.989     0.005     
+ORP       H22       C2        single    1.089     0.010     0.989     0.005     
+ORP       O3        C3        single    1.432     0.020     1.432     0.020     
+ORP       C3        C4        single    1.524     0.020     1.524     0.020     
+ORP       H3        C3        single    1.089     0.010     0.989     0.005     
+ORP       HO3       O3        single    0.970     0.012     0.839     0.014     
+ORP       O4        C4        single    1.426     0.020     1.426     0.020     
+ORP       C4        C5        single    1.524     0.020     1.524     0.020     
+ORP       H4        C4        single    1.089     0.010     0.989     0.005     
+ORP       C5        O5        single    1.426     0.020     1.426     0.020     
+ORP       H51       C5        single    1.089     0.010     0.989     0.005     
+ORP       H52       C5        single    1.089     0.010     0.989     0.005     
+ORP       O5        P         single    1.610     0.020     1.610     0.020     
+ORP       O1P       P         deloc     1.510     0.020     1.510     0.020     
+ORP       O2P       P         deloc     1.510     0.020     1.510     0.020     
+ORP       P         O3P       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ORP      O3P    P      O1P     119.900    3.000
+ ORP      O3P    P      O2P     119.900    3.000
+ ORP      O3P    P      O5      108.200    3.000
+ ORP      O1P    P      O2P     119.900    3.000
+ ORP      O1P    P      O5      108.200    3.000
+ ORP      O2P    P      O5      108.200    3.000
+ ORP      P      O5     C5      120.500    3.000
+ ORP      O5     C5     H51     109.470    3.000
+ ORP      O5     C5     H52     109.470    3.000
+ ORP      O5     C5     C4      109.470    3.000
+ ORP      H51    C5     H52     107.900    3.000
+ ORP      H51    C5     C4      109.470    3.000
+ ORP      H52    C5     C4      109.470    3.000
+ ORP      C5     C4     H4      108.340    3.000
+ ORP      C5     C4     C3      111.000    3.000
+ ORP      C5     C4     O4      109.470    3.000
+ ORP      H4     C4     C3      108.340    3.000
+ ORP      H4     C4     O4      109.470    3.000
+ ORP      C3     C4     O4      109.470    3.000
+ ORP      C4     C3     H3      108.340    3.000
+ ORP      C4     C3     O3      109.470    3.000
+ ORP      C4     C3     C2      111.000    3.000
+ ORP      H3     C3     O3      109.470    3.000
+ ORP      H3     C3     C2      108.340    3.000
+ ORP      O3     C3     C2      109.470    3.000
+ ORP      C3     O3     HO3     109.470    3.000
+ ORP      C3     C2     H22     109.470    3.000
+ ORP      C3     C2     H21     109.470    3.000
+ ORP      C3     C2     C1      111.000    3.000
+ ORP      H22    C2     H21     107.900    3.000
+ ORP      H22    C2     C1      109.470    3.000
+ ORP      H21    C2     C1      109.470    3.000
+ ORP      C4     O4     C1      111.800    3.000
+ ORP      O4     C1     H1      109.470    3.000
+ ORP      O4     C1     O1      109.470    3.000
+ ORP      O4     C1     C2      109.470    3.000
+ ORP      H1     C1     O1      109.470    3.000
+ ORP      H1     C1     C2      108.340    3.000
+ ORP      O1     C1     C2      109.470    3.000
+ ORP      C1     O1     HO1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ORP      var_1    O3P    P      O5     C5       -60.031   20.000   1
+ ORP      var_2    P      O5     C5     C4       179.973   20.000   1
+ ORP      var_3    O5     C5     C4     O4        61.857   20.000   3
+ ORP      var_4    C5     C4     C3     C2      -150.000   20.000   3
+ ORP      var_5    C4     C3     O3     HO3      174.346   20.000   1
+ ORP      var_6    C4     C3     C2     C1        30.000   20.000   3
+ ORP      var_7    C5     C4     O4     C1       120.000   20.000   1
+ ORP      var_8    C4     O4     C1     O1       150.000   20.000   1
+ ORP      var_9    O4     C1     C2     C3       -30.000   20.000   3
+ ORP      var_10   O4     C1     O1     HO1       62.749   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ORP      chir_01  C1     O1     C2     O4        positiv
+ ORP      chir_02  C3     C2     O3     C4        positiv
+ ORP      chir_03  C4     C3     O4     C5        positiv
+# ------------------------------------------------------

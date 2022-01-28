@@ -1,0 +1,281 @@
+# Created using JLigand 1.0.25
+# and
+# dictionary  5.28    ( 10/04/2011 )
+# libcheck    5.1.14  ( 01/10/2010 )
+# refmac      5.6.117 ( 13/06/2011 )
+#
+# Authors: Andrey Lebedev, Paul Young, Alexei Vagin, Garib Murshudov
+# E-mail: andrey.lebedev@stfc.ac.uk
+#
+
+global_
+_lib_name         mon_lib
+_lib_version      5.28
+_lib_update       10/04/2011
+
+data_comp_list
+
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ADX      ADX "ADENOSINE-5'-PHOSPHOSULFATE         " .                  39  27 .
+
+data_comp_ADX
+
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ADX           O2A    O    OP       -0.500     -1.110   -4.501    1.136
+ ADX           PA     P    P         0.000     -2.328   -3.608    1.129
+ ADX           O1A    O    OP       -0.500     -3.255   -3.609   -0.062
+ ADX           O3A    O    O2        0.000     -3.194   -3.916    2.452
+ ADX           SB     S    ST        0.000     -3.911   -5.263    2.630
+ ADX           O2B    O    OS       -0.330     -2.936   -6.371    2.509
+ ADX           O3B    O    OS       -0.330     -4.956   -5.412    1.592
+ ADX           O1B    O    OS       -0.330     -4.540   -5.310    3.968
+ ADX           "O5'"  O    O2        0.000     -1.837   -2.095    1.381
+ ADX           "C5'"  C    CH2       0.000     -0.858   -1.500    0.530
+ ADX           "H5'"  H    H         0.000     -1.267   -1.379   -0.475
+ ADX           "H5''" H    H         0.000      0.014   -2.153    0.462
+ ADX           "C4'"  C    CH1       0.000     -0.438   -0.147    1.094
+ ADX           "H4'"  H    H         0.000     -0.369   -0.233    2.187
+ ADX           "C3'"  C    CH1       0.000     -1.393    0.992    0.759
+ ADX           "H3'"  H    H         0.000     -1.948    0.751   -0.158
+ ADX           "O3'"  O    OH1       0.000     -2.300    1.229    1.841
+ ADX           "HO3'" H    H         0.000     -2.903    0.478    1.926
+ ADX           "C2'"  C    CH1       0.000     -0.497    2.193    0.494
+ ADX           "H2'"  H    H         0.000     -0.656    2.546   -0.535
+ ADX           "O2'"  O    OH1       0.000     -0.751    3.245    1.430
+ ADX           "HO2'" H    H         0.000     -1.631    3.614    1.269
+ ADX           "C1'"  C    CH1       0.000      0.928    1.672    0.637
+ ADX           "H1'"  H    H         0.000      1.311    1.963    1.625
+ ADX           "O4'"  O    O2        0.000      0.827    0.247    0.565
+ ADX           N9     N    NR5       0.000      1.822    2.217   -0.423
+ ADX           C4     C    CR56      0.000      2.423    1.524   -1.401
+ ADX           C5     C    CR56      0.000      3.192    2.504   -2.185
+ ADX           N7     N    NRD5      0.000      2.988    3.701   -1.608
+ ADX           C8     C    CR15      0.000      2.160    3.516   -0.548
+ ADX           H8     H    H         0.000      1.818    4.304    0.111
+ ADX           N3     N    NRD6      0.000      2.461    0.220   -1.781
+ ADX           C2     C    CR16      0.000      3.181   -0.185   -2.847
+ ADX           H2     H    H         0.000      3.176   -1.237   -3.107
+ ADX           N1     N    NRD6      0.000      3.906    0.664   -3.606
+ ADX           C6     C    CR6       0.000      3.964    1.992   -3.346
+ ADX           N6     N    NH2       0.000      4.699    2.824   -4.121
+ ADX           HN62   H    H         0.000      5.217    2.457   -4.906
+ ADX           HN61   H    H         0.000      4.730    3.812   -3.913
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ADX       O2A       PA        deloc     1.510     0.020     1.510     0.020     
+ADX       PA        O1A       deloc     1.510     0.020     1.510     0.020     
+ADX       PA        O3A       single    1.610     0.020     1.610     0.020     
+ADX       PA        "O5'"     single    1.610     0.020     1.610     0.020     
+ADX       O3A       SB        single    1.535     0.020     1.535     0.020     
+ADX       SB        O2B       deloc     1.480     0.020     1.480     0.020     
+ADX       SB        O3B       deloc     1.480     0.020     1.480     0.020     
+ADX       SB        O1B       deloc     1.480     0.020     1.480     0.020     
+ADX       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+ADX       "C5'"     "H5'"     single    1.089     0.010     0.989     0.005     
+ADX       "C5'"     "H5''"    single    1.089     0.010     0.989     0.005     
+ADX       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+ADX       "C4'"     "H4'"     single    1.089     0.010     0.989     0.005     
+ADX       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+ADX       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+ADX       "C3'"     "H3'"     single    1.089     0.010     0.989     0.005     
+ADX       "C3'"     "O3'"     single    1.432     0.020     1.432     0.020     
+ADX       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+ADX       "O3'"     "HO3'"    single    0.970     0.012     0.839     0.014     
+ADX       "C2'"     "H2'"     single    1.089     0.010     0.989     0.005     
+ADX       "C2'"     "O2'"     single    1.432     0.020     1.432     0.020     
+ADX       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+ADX       "O2'"     "HO2'"    single    0.970     0.012     0.839     0.014     
+ADX       "C1'"     "H1'"     single    1.089     0.010     0.989     0.005     
+ADX       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+ADX       "C1'"     N9        single    1.485     0.020     1.485     0.020     
+ADX       N9        C4        single    1.337     0.020     1.337     0.020     
+ADX       N9        C8        single    1.337     0.020     1.337     0.020     
+ADX       C4        C5        double    1.490     0.020     1.490     0.020     
+ADX       C4        N3        single    1.355     0.020     1.355     0.020     
+ADX       C5        N7        single    1.350     0.020     1.350     0.020     
+ADX       C5        C6        single    1.490     0.020     1.490     0.020     
+ADX       N7        C8        double    1.350     0.020     1.350     0.020     
+ADX       C8        H8        single    1.082     0.013     0.975     0.010     
+ADX       N3        C2        double    1.337     0.020     1.337     0.020     
+ADX       C2        H2        single    1.082     0.013     0.975     0.010     
+ADX       C2        N1        single    1.337     0.020     1.337     0.020     
+ADX       N1        C6        double    1.350     0.020     1.350     0.020     
+ADX       C6        N6        single    1.355     0.020     1.355     0.020     
+ADX       N6        HN62      single    1.016     0.010     0.899     0.007     
+ADX       N6        HN61      single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ADX      O2A    PA     O1A     119.900    3.000
+ ADX      O2A    PA     O3A     108.200    3.000
+ ADX      O2A    PA     "O5'"   108.200    3.000
+ ADX      PA     O3A    SB      120.000    3.000
+ ADX      PA     "O5'"  "C5'"   120.500    3.000
+ ADX      O1A    PA     O3A     108.200    3.000
+ ADX      O1A    PA     "O5'"   108.200    3.000
+ ADX      O3A    PA     "O5'"   102.600    3.000
+ ADX      O3A    SB     O2B     109.500    3.000
+ ADX      O3A    SB     O3B     109.500    3.000
+ ADX      O3A    SB     O1B     109.500    3.000
+ ADX      O2B    SB     O3B     109.500    3.000
+ ADX      O2B    SB     O1B     109.500    3.000
+ ADX      O3B    SB     O1B     109.500    3.000
+ ADX      "O5'"  "C5'"  "H5'"   109.470    3.000
+ ADX      "O5'"  "C5'"  "H5''"  109.470    3.000
+ ADX      "O5'"  "C5'"  "C4'"   109.470    3.000
+ ADX      "C5'"  "C4'"  "H4'"   108.340    3.000
+ ADX      "C5'"  "C4'"  "C3'"   111.000    3.000
+ ADX      "C5'"  "C4'"  "O4'"   109.470    3.000
+ ADX      "H5'"  "C5'"  "H5''"  107.900    3.000
+ ADX      "H5'"  "C5'"  "C4'"   109.470    3.000
+ ADX      "H5''" "C5'"  "C4'"   109.470    3.000
+ ADX      "C4'"  "C3'"  "H3'"   108.340    3.000
+ ADX      "C4'"  "C3'"  "O3'"   109.470    3.000
+ ADX      "C4'"  "C3'"  "C2'"   111.000    3.000
+ ADX      "C4'"  "O4'"  "C1'"   111.800    3.000
+ ADX      "H4'"  "C4'"  "C3'"   108.340    3.000
+ ADX      "H4'"  "C4'"  "O4'"   109.470    3.000
+ ADX      "C3'"  "C4'"  "O4'"   109.470    3.000
+ ADX      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ ADX      "C3'"  "C2'"  "H2'"   108.340    3.000
+ ADX      "C3'"  "C2'"  "O2'"   109.470    3.000
+ ADX      "C3'"  "C2'"  "C1'"   111.000    3.000
+ ADX      "H3'"  "C3'"  "O3'"   109.470    3.000
+ ADX      "H3'"  "C3'"  "C2'"   108.340    3.000
+ ADX      "O3'"  "C3'"  "C2'"   109.470    3.000
+ ADX      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ ADX      "C2'"  "C1'"  "H1'"   108.340    3.000
+ ADX      "C2'"  "C1'"  "O4'"   109.470    3.000
+ ADX      "C2'"  "C1'"  N9      109.470    3.000
+ ADX      "H2'"  "C2'"  "O2'"   109.470    3.000
+ ADX      "H2'"  "C2'"  "C1'"   108.340    3.000
+ ADX      "O2'"  "C2'"  "C1'"   109.470    3.000
+ ADX      "C1'"  N9     C4      126.000    3.000
+ ADX      "C1'"  N9     C8      126.000    3.000
+ ADX      "H1'"  "C1'"  "O4'"   109.470    3.000
+ ADX      "H1'"  "C1'"  N9      109.470    3.000
+ ADX      "O4'"  "C1'"  N9      109.470    3.000
+ ADX      N9     C4     C5      108.000    3.000
+ ADX      N9     C4     N3      132.000    3.000
+ ADX      N9     C8     N7      108.000    3.000
+ ADX      N9     C8     H8      126.000    3.000
+ ADX      C4     N9     C8      108.000    3.000
+ ADX      C4     C5     N7      108.000    3.000
+ ADX      C4     C5     C6      120.000    3.000
+ ADX      C4     N3     C2      120.000    3.000
+ ADX      C5     C4     N3      120.000    3.000
+ ADX      C5     N7     C8      108.000    3.000
+ ADX      C5     C6     N1      120.000    3.000
+ ADX      C5     C6     N6      120.000    3.000
+ ADX      N7     C5     C6      132.000    3.000
+ ADX      N7     C8     H8      126.000    3.000
+ ADX      N3     C2     H2      120.000    3.000
+ ADX      N3     C2     N1      120.000    3.000
+ ADX      C2     N1     C6      120.000    3.000
+ ADX      H2     C2     N1      120.000    3.000
+ ADX      N1     C6     N6      120.000    3.000
+ ADX      C6     N6     HN62    120.000    3.000
+ ADX      C6     N6     HN61    120.000    3.000
+ ADX      HN62   N6     HN61    120.000    3.000
+
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ADX      var_1    PA     O3A    SB     O1B      175.000   20.000   1
+ ADX      var_4    PA     "O5'"  "C5'"  "C4'"    175.000   20.000   1
+ ADX      var_3    O3A    PA     "O5'"  "C5'"    175.000   20.000   1
+ ADX      var_2    SB     O3A    PA     "O5'"    175.000   20.000   1
+ ADX      var_5    "O5'"  "C5'"  "C4'"  "O4'"    175.000   20.000   3
+ ADX      var_6    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ ADX      var_7    "C5'"  "C4'"  "O4'"  "C1'"    180.000   20.000   1
+ ADX      var_8    "C4'"  "O4'"  "C1'"  N9       180.000   20.000   1
+ ADX      var_9    "C3'"  "C2'"  "C1'"  "O4'"     30.000   20.000   3
+ ADX      var_11   "O3'"  "C3'"  "C2'"  "C1'"    120.000   20.000   3
+ ADX      var_12   "HO3'" "O3'"  "C3'"  "C2'"    175.000   20.000   1
+ ADX      var_10   "HO2'" "O2'"  "C2'"  "C1'"    175.000   20.000   1
+ ADX      CONST_1  "C1'"  N9     C4     N3         0.000    0.000   0
+ ADX      CONST_2  "C1'"  N9     C8     N7       180.000    0.000   0
+ ADX      var_13   "O4'"  "C1'"  N9     C8       175.000   20.000   1
+ ADX      CONST_10 N9     C4     N3     C2       180.000    0.000   0
+ ADX      CONST_3  N9     C8     N7     C5         0.000    0.000   0
+ ADX      CONST_9  C4     N3     C2     N1         0.000    0.000   0
+ ADX      CONST_7  C5     C6     N1     C2         0.000    0.000   0
+ ADX      CONST_6  C5     C6     N6     HN62     180.000    0.000   0
+ ADX      CONST_11 N7     C5     C4     N3       180.000    0.000   0
+ ADX      CONST_5  N7     C5     C6     N1       180.000    0.000   0
+ ADX      CONST_4  C8     N7     C5     C6       180.000    0.000   0
+ ADX      CONST_8  N3     C2     N1     C6         0.000    0.000   0
+
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ADX      chir_05  SB     O3A    O2B    O3B       both
+ ADX      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ ADX      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ ADX      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ ADX      chir_04  "C1'"  "C2'"  N9     "O4'"     positiv
+
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ADX      plan-2    C6        0.020
+ ADX      plan-2    N6        0.020
+ ADX      plan-2    HN62      0.020
+ ADX      plan-2    HN61      0.020
+ ADX      plan-1    "C1'"     0.020
+ ADX      plan-1    N9        0.020
+ ADX      plan-1    C4        0.020
+ ADX      plan-1    C5        0.020
+ ADX      plan-1    N7        0.020
+ ADX      plan-1    C8        0.020
+ ADX      plan-1    H8        0.020
+ ADX      plan-1    N3        0.020
+ ADX      plan-1    C2        0.020
+ ADX      plan-1    H2        0.020
+ ADX      plan-1    N1        0.020
+ ADX      plan-1    C6        0.020
+ ADX      plan-1    N6        0.020
+ ADX      plan-1    HN62      0.020
+ ADX      plan-1    HN61      0.020
+

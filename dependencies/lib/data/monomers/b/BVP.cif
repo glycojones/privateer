@@ -1,0 +1,291 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BVP      BVP '(E)-5-(2-BROMOVINYL)-2'-DEOXYURIDINE' non-polymer        35  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BVP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BVP           O2     O    O         0.000      0.000    0.000    0.000
+ BVP           C2     C    CR6       0.000     -0.420    0.028    1.141
+ BVP           N3     N    NR16      0.000      0.271   -0.604    2.106
+ BVP           HN3    H    H         0.000      1.150   -1.107    1.869
+ BVP           C4     C    CR6       0.000     -0.171   -0.589    3.382
+ BVP           O4     O    O         0.000      0.446   -1.164    4.260
+ BVP           C5     C    CR6       0.000     -1.413    0.136    3.689
+ BVP           C5A    C    C1        0.000     -1.940    0.184    5.067
+ BVP           H5A    H    H         0.000     -2.800    0.791    5.294
+ BVP           C5B    C    C1        0.000     -1.355   -0.523    6.027
+ BVP           H5B    H    H         0.000     -0.448   -1.066    5.820
+ BVP           BR     BR   BR        0.000     -2.113   -0.576    7.759
+ BVP           C6     C    CR16      0.000     -2.066    0.763    2.667
+ BVP           H6     H    H         0.000     -2.984    1.305    2.857
+ BVP           N1     N    NR6       0.000     -1.552    0.700    1.403
+ BVP           "C1'"  C    CH1       0.000     -2.256    1.373    0.309
+ BVP           "H1'"  H    H         0.000     -3.224    1.759    0.658
+ BVP           "C2'"  C    CH2       0.000     -1.393    2.522   -0.259
+ BVP           "H2'2" H    H         0.000     -0.328    2.363   -0.079
+ BVP           "H2'1" H    H         0.000     -1.687    3.494    0.143
+ BVP           "O4'"  O    O2        0.000     -2.445    0.471   -0.802
+ BVP           "C4'"  C    CH1       0.000     -2.668    1.319   -1.952
+ BVP           "H4'"  H    H         0.000     -3.700    1.696   -1.954
+ BVP           "C3'"  C    CH1       0.000     -1.671    2.486   -1.778
+ BVP           H1     H    H         0.000     -0.745    2.287   -2.334
+ BVP           "O3'"  O    OH1       0.000     -2.258    3.715   -2.209
+ BVP           "H3'"  H    H         0.000     -1.633    4.438   -2.065
+ BVP           "C5'"  C    CH2       0.000     -2.380    0.551   -3.244
+ BVP           "H5'1" H    H         0.000     -1.378    0.120   -3.194
+ BVP           "H5'2" H    H         0.000     -2.440    1.234   -4.093
+ BVP           "O5'"  O    O2        0.000     -3.343   -0.494   -3.402
+ BVP           P      P    P         0.000     -2.982   -1.256   -4.773
+ BVP           O1P    O    OP       -0.666     -2.935   -0.256   -5.908
+ BVP           O2P    O    OP       -0.666     -1.633   -1.928   -4.636
+ BVP           O3P    O    OP       -0.666     -4.039   -2.299   -5.064
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BVP      O2     n/a    C2     START
+ BVP      C2     O2     N1     .
+ BVP      N3     C2     C4     .
+ BVP      HN3    N3     .      .
+ BVP      C4     N3     C5     .
+ BVP      O4     C4     .      .
+ BVP      C5     C4     C6     .
+ BVP      C5A    C5     C5B    .
+ BVP      H5A    C5A    .      .
+ BVP      C5B    C5A    BR     .
+ BVP      H5B    C5B    .      .
+ BVP      BR     C5B    .      .
+ BVP      C6     C5     H6     .
+ BVP      H6     C6     .      .
+ BVP      N1     C2     "C1'"  .
+ BVP      "C1'"  N1     "O4'"  .
+ BVP      "H1'"  "C1'"  .      .
+ BVP      "C2'"  "C1'"  "H2'1" .
+ BVP      "H2'2" "C2'"  .      .
+ BVP      "H2'1" "C2'"  .      .
+ BVP      "O4'"  "C1'"  "C4'"  .
+ BVP      "C4'"  "O4'"  "C5'"  .
+ BVP      "H4'"  "C4'"  .      .
+ BVP      "C3'"  "C4'"  "O3'"  .
+ BVP      H1     "C3'"  .      .
+ BVP      "O3'"  "C3'"  "H3'"  .
+ BVP      "H3'"  "O3'"  .      .
+ BVP      "C5'"  "C4'"  "O5'"  .
+ BVP      "H5'1" "C5'"  .      .
+ BVP      "H5'2" "C5'"  .      .
+ BVP      "O5'"  "C5'"  P      .
+ BVP      P      "O5'"  O3P    .
+ BVP      O1P    P      .      .
+ BVP      O2P    P      .      .
+ BVP      O3P    P      .      END
+ BVP      "C3'"  "C2'"  .    ADD
+ BVP      N1     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BVP       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+BVP       "H3'"     "O3'"     single    0.970     0.012     0.839     0.014     
+BVP       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+BVP       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+BVP       H1        "C3'"     single    1.089     0.010     0.989     0.005     
+BVP       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+BVP       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+BVP       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+BVP       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+BVP       "C1'"     N1        single    1.465     0.020     1.465     0.020     
+BVP       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+BVP       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+BVP       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+BVP       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+BVP       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+BVP       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+BVP       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+BVP       P         "O5'"     single    1.610     0.020     1.610     0.020     
+BVP       O1P       P         deloc     1.510     0.020     1.510     0.020     
+BVP       O2P       P         deloc     1.510     0.020     1.510     0.020     
+BVP       O3P       P         deloc     1.510     0.020     1.510     0.020     
+BVP       N1        C6        single    1.337     0.020     1.337     0.020     
+BVP       N1        C2        single    1.410     0.020     1.410     0.020     
+BVP       C6        C5        double    1.390     0.020     1.390     0.020     
+BVP       H6        C6        single    1.082     0.013     0.975     0.010     
+BVP       C5A       C5        single    1.480     0.020     1.480     0.020     
+BVP       C5        C4        single    1.487     0.020     1.487     0.020     
+BVP       C5B       C5A       double    1.330     0.020     1.330     0.020     
+BVP       H5A       C5A       single    1.082     0.013     0.975     0.010     
+BVP       BR        C5B       single    1.915     0.020     1.915     0.020     
+BVP       H5B       C5B       single    1.082     0.013     0.975     0.010     
+BVP       O4        C4        double    1.250     0.020     1.250     0.020     
+BVP       C4        N3        single    1.337     0.020     1.337     0.020     
+BVP       N3        C2        single    1.337     0.020     1.337     0.020     
+BVP       HN3       N3        single    1.016     0.010     0.899     0.007     
+BVP       C2        O2        double    1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BVP      O2     C2     N3      120.000    3.000
+ BVP      O2     C2     N1      120.000    3.000
+ BVP      N3     C2     N1      120.000    3.000
+ BVP      C2     N3     HN3     120.000    3.000
+ BVP      C2     N3     C4      120.000    3.000
+ BVP      HN3    N3     C4      120.000    3.000
+ BVP      N3     C4     O4      120.000    3.000
+ BVP      N3     C4     C5      120.000    3.000
+ BVP      O4     C4     C5      120.000    3.000
+ BVP      C4     C5     C5A     120.000    3.000
+ BVP      C4     C5     C6      120.000    3.000
+ BVP      C5A    C5     C6      120.000    3.000
+ BVP      C5     C5A    H5A     120.000    3.000
+ BVP      C5     C5A    C5B     120.000    3.000
+ BVP      H5A    C5A    C5B     120.000    3.000
+ BVP      C5A    C5B    H5B     120.000    3.000
+ BVP      C5A    C5B    BR      120.000    3.000
+ BVP      H5B    C5B    BR      120.000    3.000
+ BVP      C5     C6     H6      120.000    3.000
+ BVP      C5     C6     N1      120.000    3.000
+ BVP      H6     C6     N1      120.000    3.000
+ BVP      C2     N1     "C1'"   120.000    3.000
+ BVP      C2     N1     C6      120.000    3.000
+ BVP      "C1'"  N1     C6      120.000    3.000
+ BVP      N1     "C1'"  "H1'"   109.470    3.000
+ BVP      N1     "C1'"  "C2'"   109.470    3.000
+ BVP      N1     "C1'"  "O4'"   109.470    3.000
+ BVP      "H1'"  "C1'"  "C2'"   108.340    3.000
+ BVP      "H1'"  "C1'"  "O4'"   109.470    3.000
+ BVP      "C2'"  "C1'"  "O4'"   109.470    3.000
+ BVP      "C1'"  "C2'"  "H2'2"  109.470    3.000
+ BVP      "C1'"  "C2'"  "H2'1"  109.470    3.000
+ BVP      "C1'"  "C2'"  "C3'"   111.000    3.000
+ BVP      "H2'2" "C2'"  "H2'1"  107.900    3.000
+ BVP      "H2'2" "C2'"  "C3'"   109.470    3.000
+ BVP      "H2'1" "C2'"  "C3'"   109.470    3.000
+ BVP      "C1'"  "O4'"  "C4'"   111.800    3.000
+ BVP      "O4'"  "C4'"  "H4'"   109.470    3.000
+ BVP      "O4'"  "C4'"  "C3'"   109.470    3.000
+ BVP      "O4'"  "C4'"  "C5'"   109.470    3.000
+ BVP      "H4'"  "C4'"  "C3'"   108.340    3.000
+ BVP      "H4'"  "C4'"  "C5'"   108.340    3.000
+ BVP      "C3'"  "C4'"  "C5'"   111.000    3.000
+ BVP      "C4'"  "C3'"  H1      108.340    3.000
+ BVP      "C4'"  "C3'"  "O3'"   109.470    3.000
+ BVP      "C4'"  "C3'"  "C2'"   111.000    3.000
+ BVP      H1     "C3'"  "O3'"   109.470    3.000
+ BVP      H1     "C3'"  "C2'"   108.340    3.000
+ BVP      "O3'"  "C3'"  "C2'"   109.470    3.000
+ BVP      "C3'"  "O3'"  "H3'"   109.470    3.000
+ BVP      "C4'"  "C5'"  "H5'1"  109.470    3.000
+ BVP      "C4'"  "C5'"  "H5'2"  109.470    3.000
+ BVP      "C4'"  "C5'"  "O5'"   109.470    3.000
+ BVP      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ BVP      "H5'1" "C5'"  "O5'"   109.470    3.000
+ BVP      "H5'2" "C5'"  "O5'"   109.470    3.000
+ BVP      "C5'"  "O5'"  P       120.500    3.000
+ BVP      "O5'"  P      O1P     108.200    3.000
+ BVP      "O5'"  P      O2P     108.200    3.000
+ BVP      "O5'"  P      O3P     108.200    3.000
+ BVP      O1P    P      O2P     119.900    3.000
+ BVP      O1P    P      O3P     119.900    3.000
+ BVP      O2P    P      O3P     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BVP      CONST_1  O2     C2     N3     C4       180.000    0.000   0
+ BVP      CONST_2  C2     N3     C4     C5         0.000    0.000   0
+ BVP      CONST_3  N3     C4     C5     C6         0.000    0.000   0
+ BVP      var_1    C4     C5     C5A    C5B       -5.570   20.000   1
+ BVP      CONST_4  C5     C5A    C5B    BR      -174.918    0.000   0
+ BVP      CONST_5  C4     C5     C6     N1         0.000    0.000   0
+ BVP      CONST_6  O2     C2     N1     "C1'"      0.000    0.000   0
+ BVP      CONST_7  C2     N1     C6     C5         0.000    0.000   0
+ BVP      var_2    C2     N1     "C1'"  "O4'"     50.125   20.000   1
+ BVP      var_3    N1     "C1'"  "C2'"  "C3'"    150.000   20.000   3
+ BVP      var_4    N1     "C1'"  "O4'"  "C4'"   -150.000   20.000   1
+ BVP      var_5    "C1'"  "O4'"  "C4'"  "C5'"    150.000   20.000   1
+ BVP      var_6    "O4'"  "C4'"  "C3'"  "O3'"   -150.000   20.000   3
+ BVP      var_7    "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ BVP      var_8    "C4'"  "C3'"  "O3'"  "H3'"    178.089   20.000   1
+ BVP      var_9    "O4'"  "C4'"  "C5'"  "O5'"     66.464   20.000   3
+ BVP      var_10   "C4'"  "C5'"  "O5'"  P        179.993   20.000   1
+ BVP      var_11   "C5'"  "O5'"  P      O3P     -175.006   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BVP      chir_01  "C3'"  "O3'"  "C2'"  "C4'"     negativ
+ BVP      chir_02  "C1'"  "C2'"  "O4'"  N1        negativ
+ BVP      chir_03  "C4'"  "C3'"  "O4'"  "C5'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BVP      plan-1    N1        0.020
+ BVP      plan-1    "C1'"     0.020
+ BVP      plan-1    C6        0.020
+ BVP      plan-1    C2        0.020
+ BVP      plan-1    C5        0.020
+ BVP      plan-1    C4        0.020
+ BVP      plan-1    N3        0.020
+ BVP      plan-1    H6        0.020
+ BVP      plan-1    C5A       0.020
+ BVP      plan-1    O4        0.020
+ BVP      plan-1    HN3       0.020
+ BVP      plan-1    O2        0.020
+ BVP      plan-1    H5A       0.020
+ BVP      plan-2    C5A       0.020
+ BVP      plan-2    C5        0.020
+ BVP      plan-2    C5B       0.020
+ BVP      plan-2    H5A       0.020
+ BVP      plan-2    BR        0.020
+ BVP      plan-2    H5B       0.020
+# ------------------------------------------------------

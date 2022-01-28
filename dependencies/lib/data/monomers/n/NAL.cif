@@ -1,0 +1,271 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NAL     NAL     "BETA-(2-NAPHTHYL)-ALANINE"     peptide     29     16     .
+#
+data_comp_NAL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NAL     C1      C       CR16    0       0.363       -0.955      0.112
+NAL     C2      C       CR6     0       -0.569      -0.108      0.649
+NAL     C3      C       CR16    0       -0.143      1.150       1.146
+NAL     C4      C       CR16    0       1.170       1.524       1.099
+NAL     C4A     C       CR66    0       2.147       0.661       0.549
+NAL     C5      C       CR16    0       3.530       1.010       0.479
+NAL     C6      C       CR16    0       4.440       0.150       -0.059
+NAL     C7      C       CR16    0       4.028       -1.101      -0.557
+NAL     C8      C       CR16    0       2.716       -1.469      -0.507
+NAL     C8A     C       CR66    0       1.735       -0.605      0.044
+NAL     C9      C       CH2     0       -2.027      -0.492      0.714
+NAL     CA      C       CH1     0       -2.787      -0.324      -0.606
+NAL     C       C       C       0       -4.199      -0.915      -0.496
+NAL     N       N       NT3     1       -2.876      1.112       -0.988
+NAL     O       O       O       0       -4.472      -1.891      -1.224
+NAL     OXT     O       OC      -1      -4.978      -0.378      0.316
+NAL     H1      H       H       0       0.087       -1.789      -0.220
+NAL     HC3     H       H       0       -0.780      1.736       1.516
+NAL     H4      H       H       0       1.430       2.366       1.437
+NAL     H5      H       H       0       3.815       1.846       0.810
+NAL     H6      H       H       0       5.351       0.394       -0.099
+NAL     H7      H       H       0       4.666       -1.690      -0.928
+NAL     H8      H       H       0       2.455       -2.310      -0.845
+NAL     H91     H       H       0       -2.469      0.053       1.398
+NAL     H92     H       H       0       -2.093      -1.429      0.991
+NAL     HA      H       H       0       -2.297      -0.810      -1.317
+NAL     H       H       H       0       -3.462      1.214       -1.680
+NAL     H2      H       H       0       -2.058      1.413       -1.252
+NAL     H3      H       H       0       -3.163      1.604       -0.278
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+NAL      N      n/a    CA     START
+NAL      H      N      .      .
+NAL      H2     N      .      .
+NAL      H3     N      .      .
+NAL      CA     N      C      .
+NAL      HA     CA     .      .
+NAL      C9     CA     C2     .
+NAL      H91    C9     .      .
+NAL      H92    C9     .      .
+NAL      C2     C9     C3     .
+NAL      C3     C2     C4     .
+NAL      HC3    C3     .      .
+NAL      C4     C3     C4A    .
+NAL      H4     C4     .      .
+NAL      C4A    C4     C8A    .
+NAL      C8A    C4A    C8     .
+NAL      C1     C8A    H1     .
+NAL      H1     C1     .      .
+NAL      C8     C8A    C7     .
+NAL      H8     C8     .      .
+NAL      C7     C8     C6     .
+NAL      H7     C7     .      .
+NAL      C6     C7     C5     .
+NAL      H6     C6     .      .
+NAL      C5     C6     H5     .
+NAL      H5     C5     .      .
+NAL      C      CA     .      END
+NAL      O      C      .      .
+NAL      OXT    C      .      .
+NAL      C1     C2     .    ADD
+NAL      C4A    C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NAL       C5        C6        DOUBLE    y         1.358     0.012     1.358     0.012     
+NAL       C6        C7        SINGLE    y         1.402     0.013     1.402     0.013     
+NAL       C4A       C5        SINGLE    y         1.421     0.016     1.421     0.016     
+NAL       C7        C8        DOUBLE    y         1.358     0.012     1.358     0.012     
+NAL       C4        C4A       DOUBLE    y         1.411     0.013     1.411     0.013     
+NAL       C4A       C8A       SINGLE    y         1.416     0.011     1.416     0.011     
+NAL       C8        C8A       SINGLE    y         1.415     0.011     1.415     0.011     
+NAL       C3        C4        SINGLE    y         1.364     0.010     1.364     0.010     
+NAL       C1        C8A       DOUBLE    y         1.413     0.010     1.413     0.010     
+NAL       C2        C3        DOUBLE    y         1.412     0.013     1.412     0.013     
+NAL       C1        C2        SINGLE    y         1.365     0.010     1.365     0.010     
+NAL       C2        C9        SINGLE    n         1.508     0.010     1.508     0.010     
+NAL       C9        CA        SINGLE    n         1.531     0.010     1.531     0.010     
+NAL       CA        N         SINGLE    n         1.487     0.010     1.487     0.010     
+NAL       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+NAL       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+NAL       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+NAL       C1        H1        SINGLE    n         1.082     0.013     0.939     0.016     
+NAL       C3        HC3       SINGLE    n         1.082     0.013     0.941     0.011     
+NAL       C4        H4        SINGLE    n         1.082     0.013     0.943     0.018     
+NAL       C5        H5        SINGLE    n         1.082     0.013     0.944     0.019     
+NAL       C6        H6        SINGLE    n         1.082     0.013     0.944     0.018     
+NAL       C7        H7        SINGLE    n         1.082     0.013     0.944     0.018     
+NAL       C8        H8        SINGLE    n         1.082     0.013     0.944     0.019     
+NAL       C9        H91       SINGLE    n         1.089     0.010     0.980     0.016     
+NAL       C9        H92       SINGLE    n         1.089     0.010     0.980     0.016     
+NAL       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+NAL       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+NAL       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+NAL       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NAL         C8A          C1          C2     121.279    1.50
+NAL         C8A          C1          H1     119.325    1.50
+NAL          C2          C1          H1     119.396    1.50
+NAL          C3          C2          C1     118.639    1.50
+NAL          C3          C2          C9     120.141    1.50
+NAL          C1          C2          C9     121.221    1.50
+NAL          C4          C3          C2     121.502    1.50
+NAL          C4          C3         HC3     119.473    1.50
+NAL          C2          C3         HC3     119.025    1.50
+NAL         C4A          C4          C3     121.011    1.50
+NAL         C4A          C4          H4     119.406    1.50
+NAL          C3          C4          H4     119.582    1.50
+NAL          C5         C4A          C4     122.345    1.50
+NAL          C5         C4A         C8A     118.775    1.50
+NAL          C4         C4A         C8A     118.880    1.50
+NAL          C6          C5         C4A     120.911    1.50
+NAL          C6          C5          H5     119.659    1.50
+NAL         C4A          C5          H5     119.431    1.50
+NAL          C5          C6          C7     120.314    1.50
+NAL          C5          C6          H6     119.871    1.50
+NAL          C7          C6          H6     119.815    1.50
+NAL          C6          C7          C8     120.314    1.50
+NAL          C6          C7          H7     119.815    1.50
+NAL          C8          C7          H7     119.871    1.50
+NAL          C7          C8         C8A     120.911    1.50
+NAL          C7          C8          H8     119.659    1.50
+NAL         C8A          C8          H8     119.431    1.50
+NAL         C4A         C8A          C8     118.775    1.50
+NAL         C4A         C8A          C1     118.689    1.50
+NAL          C8         C8A          C1     122.537    1.50
+NAL          C2          C9          CA     114.187    1.55
+NAL          C2          C9         H91     108.906    1.50
+NAL          C2          C9         H92     108.906    1.50
+NAL          CA          C9         H91     108.434    1.50
+NAL          CA          C9         H92     108.434    1.50
+NAL         H91          C9         H92     107.782    1.50
+NAL          C9          CA           N     110.494    1.50
+NAL          C9          CA           C     111.331    2.53
+NAL          C9          CA          HA     108.690    1.50
+NAL           N          CA           C     109.448    1.50
+NAL           N          CA          HA     108.601    1.50
+NAL           C          CA          HA     108.450    1.50
+NAL          CA           C           O     117.228    2.13
+NAL          CA           C         OXT     117.228    2.13
+NAL           O           C         OXT     125.543    1.50
+NAL          CA           N           H     109.646    1.54
+NAL          CA           N          H2     109.646    1.54
+NAL          CA           N          H3     109.646    1.54
+NAL           H           N          H2     109.028    2.41
+NAL           H           N          H3     109.028    2.41
+NAL          H2           N          H3     109.028    2.41
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NAL              const_42         C8A          C1          C2          C9     180.000   10.00     2
+NAL       const_sp2_sp2_1          C2          C1         C8A         C4A       0.000   10.00     2
+NAL             sp3_sp3_1          C2          C9          CA           N     180.000   10.00     3
+NAL             sp2_sp3_7           O           C          CA          C9       0.000   10.00     6
+NAL            sp3_sp3_10          C9          CA           N           H     180.000   10.00     3
+NAL             sp2_sp3_2          C3          C2          C9          CA     -90.000   10.00     6
+NAL              const_19          C9          C2          C3          C4     180.000   10.00     2
+NAL              const_13          C2          C3          C4         C4A       0.000   10.00     2
+NAL              const_10          C3          C4         C4A          C5     180.000   10.00     2
+NAL              const_23          C4         C4A          C5          C6     180.000   10.00     2
+NAL       const_sp2_sp2_5          C5         C4A         C8A          C8       0.000   10.00     2
+NAL              const_25         C4A          C5          C6          C7       0.000   10.00     2
+NAL              const_29          C5          C6          C7          C8       0.000   10.00     2
+NAL              const_33          C6          C7          C8         C8A       0.000   10.00     2
+NAL              const_37          C7          C8         C8A         C4A       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+NAL    chir_1    CA    N    C    C9    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NAL    plan-1          C1   0.020
+NAL    plan-1          C2   0.020
+NAL    plan-1          C3   0.020
+NAL    plan-1          C4   0.020
+NAL    plan-1         C4A   0.020
+NAL    plan-1          C5   0.020
+NAL    plan-1          C8   0.020
+NAL    plan-1         C8A   0.020
+NAL    plan-1          C9   0.020
+NAL    plan-1          H1   0.020
+NAL    plan-1          H4   0.020
+NAL    plan-1         HC3   0.020
+NAL    plan-2          C1   0.020
+NAL    plan-2          C4   0.020
+NAL    plan-2         C4A   0.020
+NAL    plan-2          C5   0.020
+NAL    plan-2          C6   0.020
+NAL    plan-2          C7   0.020
+NAL    plan-2          C8   0.020
+NAL    plan-2         C8A   0.020
+NAL    plan-2          H5   0.020
+NAL    plan-2          H6   0.020
+NAL    plan-2          H7   0.020
+NAL    plan-2          H8   0.020
+NAL    plan-3           C   0.020
+NAL    plan-3          CA   0.020
+NAL    plan-3           O   0.020
+NAL    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NAL SMILES           ACDLabs              12.01 "O=C(O)C(N)Cc2ccc1c(cccc1)c2"
+NAL SMILES_CANONICAL CACTVS               3.370 "N[C@@H](Cc1ccc2ccccc2c1)C(O)=O"
+NAL SMILES           CACTVS               3.370 "N[CH](Cc1ccc2ccccc2c1)C(O)=O"
+NAL SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "c1ccc2cc(ccc2c1)C[C@@H](C(=O)O)N"
+NAL SMILES           "OpenEye OEToolkits" 1.7.0 "c1ccc2cc(ccc2c1)CC(C(=O)O)N"
+NAL InChI            InChI                1.03  "InChI=1S/C13H13NO2/c14-12(13(15)16)8-9-5-6-10-3-1-2-4-11(10)7-9/h1-7,12H,8,14H2,(H,15,16)/t12-/m0/s1"
+NAL InChIKey         InChI                1.03  JPZXHKDZASGCLU-LBPRGKRZSA-N
+NAL ?                acedrg               202         "dictionary generator"
+NAL ?                acedrg_database      11          "data source"
+NAL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NAL ?                refmac5              5.8.0222    "optimization tool"

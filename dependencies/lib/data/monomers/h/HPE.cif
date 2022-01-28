@@ -1,0 +1,238 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HPE     HPE     HOMOPHENYLALANINE     peptide     26     13     .
+#
+data_comp_HPE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HPE     N       N       NT3     1       5.136       19.946      15.471
+HPE     CA      C       CH1     0       4.067       20.678      16.204
+HPE     C       C       C       0       2.829       20.797      15.306
+HPE     O       O       O       0       2.972       21.385      14.216
+HPE     CB      C       CH2     0       4.565       22.067      16.632
+HPE     CG      C       CH2     0       5.577       22.037      17.778
+HPE     CD      C       CR6     0       5.882       23.400      18.354
+HPE     CE1     C       CR16    0       6.563       24.351      17.603
+HPE     CE2     C       CR16    0       5.490       23.737      19.645
+HPE     CZ1     C       CR16    0       6.846       25.605      18.129
+HPE     CZ2     C       CR16    0       5.774       24.992      20.169
+HPE     CH      C       CR16    0       6.451       25.923      19.411
+HPE     OXT     O       OC      -1      1.769       20.297      15.731
+HPE     H       H       H       0       5.404       20.429      14.746
+HPE     H2      H       H       0       4.826       19.137      15.189
+HPE     H3      H       H       0       5.853       19.809      16.016
+HPE     HA      H       H       0       3.828       20.159      17.007
+HPE     HB2     H       H       0       3.794       22.607      16.905
+HPE     HB3     H       H       0       4.976       22.505      15.857
+HPE     HG2     H       H       0       6.413       21.640      17.454
+HPE     HG3     H       H       0       5.232       21.460      18.493
+HPE     HE1     H       H       0       6.837       24.140      16.724
+HPE     HE2     H       H       0       5.026       23.106      20.172
+HPE     HZ1     H       H       0       7.310       26.240      17.607
+HPE     HZ2     H       H       0       5.502       25.207      21.047
+HPE     HH      H       H       0       6.643       26.776      19.768
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+HPE      N      n/a    CA     START
+HPE      H      N      .      .
+HPE      H2     N      .      .
+HPE      H3     N      .      .
+HPE      CA     N      C      .
+HPE      HA     CA     .      .
+HPE      CB     CA     CG     .
+HPE      HB2    CB     .      .
+HPE      HB3    CB     .      .
+HPE      CG     CB     CD     .
+HPE      HG2    CG     .      .
+HPE      HG3    CG     .      .
+HPE      CD     CG     CE2    .
+HPE      CE2    CD     CZ2    .
+HPE      HE2    CE2    .      .
+HPE      CZ2    CE2    CH     .
+HPE      HZ2    CZ2    .      .
+HPE      CH     CZ2    CZ1    .
+HPE      HH     CH     .      .
+HPE      CZ1    CH     CE1    .
+HPE      HZ1    CZ1    .      .
+HPE      CE1    CZ1    HE1    .
+HPE      HE1    CE1    .      .
+HPE      C      CA     .      END
+HPE      O      C      .      .
+HPE      OXT    C      .      .
+HPE      CD     CE1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HPE       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+HPE       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+HPE       CA        CB        SINGLE    n         1.535     0.014     1.535     0.014     
+HPE       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+HPE       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+HPE       CB        CG        SINGLE    n         1.528     0.020     1.528     0.020     
+HPE       CG        CD        SINGLE    n         1.510     0.010     1.510     0.010     
+HPE       CD        CE1       DOUBLE    y         1.385     0.011     1.385     0.011     
+HPE       CD        CE2       SINGLE    y         1.385     0.011     1.385     0.011     
+HPE       CE1       CZ1       SINGLE    y         1.386     0.010     1.386     0.010     
+HPE       CE2       CZ2       DOUBLE    y         1.386     0.010     1.386     0.010     
+HPE       CZ1       CH        DOUBLE    y         1.374     0.013     1.374     0.013     
+HPE       CZ2       CH        SINGLE    y         1.374     0.013     1.374     0.013     
+HPE       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+HPE       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+HPE       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+HPE       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+HPE       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.018     
+HPE       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.018     
+HPE       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.015     
+HPE       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.015     
+HPE       CE1       HE1       SINGLE    n         1.082     0.013     0.944     0.017     
+HPE       CE2       HE2       SINGLE    n         1.082     0.013     0.944     0.017     
+HPE       CZ1       HZ1       SINGLE    n         1.082     0.013     0.944     0.018     
+HPE       CZ2       HZ2       SINGLE    n         1.082     0.013     0.944     0.018     
+HPE       CH        HH        SINGLE    n         1.082     0.013     0.944     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HPE          CA           N           H     110.062    1.93
+HPE          CA           N          H2     110.062    1.93
+HPE          CA           N          H3     110.062    1.93
+HPE           H           N          H2     109.028    2.41
+HPE           H           N          H3     109.028    2.41
+HPE          H2           N          H3     109.028    2.41
+HPE           N          CA           C     109.241    1.50
+HPE           N          CA          CB     110.245    1.51
+HPE           N          CA          HA     108.487    1.50
+HPE           C          CA          CB     110.728    2.07
+HPE           C          CA          HA     108.824    1.50
+HPE          CB          CA          HA     109.207    1.50
+HPE          CA           C           O     117.124    1.50
+HPE          CA           C         OXT     117.124    1.50
+HPE           O           C         OXT     125.752    1.50
+HPE          CA          CB          CG     113.701    1.50
+HPE          CA          CB         HB2     108.567    1.50
+HPE          CA          CB         HB3     108.567    1.50
+HPE          CG          CB         HB2     108.891    1.50
+HPE          CG          CB         HB3     108.891    1.50
+HPE         HB2          CB         HB3     107.721    1.50
+HPE          CB          CG          CD     114.108    2.12
+HPE          CB          CG         HG2     109.192    1.50
+HPE          CB          CG         HG3     109.192    1.50
+HPE          CD          CG         HG2     108.803    1.50
+HPE          CD          CG         HG3     108.803    1.50
+HPE         HG2          CG         HG3     107.745    1.50
+HPE          CG          CD         CE1     120.970    1.50
+HPE          CG          CD         CE2     120.970    1.50
+HPE         CE1          CD         CE2     118.060    1.50
+HPE          CD         CE1         CZ1     120.624    1.50
+HPE          CD         CE1         HE1     119.591    1.50
+HPE         CZ1         CE1         HE1     119.786    1.50
+HPE          CD         CE2         CZ2     120.624    1.50
+HPE          CD         CE2         HE2     119.591    1.50
+HPE         CZ2         CE2         HE2     119.786    1.50
+HPE         CE1         CZ1          CH     120.325    1.50
+HPE         CE1         CZ1         HZ1     119.792    1.50
+HPE          CH         CZ1         HZ1     119.883    1.50
+HPE         CE2         CZ2          CH     120.325    1.50
+HPE         CE2         CZ2         HZ2     119.792    1.50
+HPE          CH         CZ2         HZ2     119.883    1.50
+HPE         CZ1          CH         CZ2     120.043    1.50
+HPE         CZ1          CH          HH     119.979    1.50
+HPE         CZ2          CH          HH     119.979    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HPE             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+HPE              const_13         CZ1          CH         CZ2         CE2       0.000   10.00     2
+HPE             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+HPE            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+HPE            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+HPE             sp2_sp3_8         CE1          CD          CG          CB     -90.000   10.00     6
+HPE       const_sp2_sp2_3          CG          CD         CE1         CZ1     180.000   10.00     2
+HPE              const_23          CG          CD         CE2         CZ2     180.000   10.00     2
+HPE       const_sp2_sp2_5          CD         CE1         CZ1          CH       0.000   10.00     2
+HPE              const_17          CD         CE2         CZ2          CH       0.000   10.00     2
+HPE       const_sp2_sp2_9         CZ2          CH         CZ1         CE1       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+HPE    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HPE    plan-1          CD   0.020
+HPE    plan-1         CE1   0.020
+HPE    plan-1         CE2   0.020
+HPE    plan-1          CG   0.020
+HPE    plan-1          CH   0.020
+HPE    plan-1         CZ1   0.020
+HPE    plan-1         CZ2   0.020
+HPE    plan-1         HE1   0.020
+HPE    plan-1         HE2   0.020
+HPE    plan-1          HH   0.020
+HPE    plan-1         HZ1   0.020
+HPE    plan-1         HZ2   0.020
+HPE    plan-2           C   0.020
+HPE    plan-2          CA   0.020
+HPE    plan-2           O   0.020
+HPE    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HPE SMILES           ACDLabs              10.04 "O=C(O)C(N)CCc1ccccc1"
+HPE SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCc1ccccc1)C(O)=O"
+HPE SMILES           CACTVS               3.341 "N[CH](CCc1ccccc1)C(O)=O"
+HPE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)CC[C@@H](C(=O)O)N"
+HPE SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)CCC(C(=O)O)N"
+HPE InChI            InChI                1.03  "InChI=1S/C10H13NO2/c11-9(10(12)13)7-6-8-4-2-1-3-5-8/h1-5,9H,6-7,11H2,(H,12,13)/t9-/m0/s1"
+HPE InChIKey         InChI                1.03  JTTHKOPSMAVJFE-VIFPVBQESA-N
+HPE ?                acedrg               196         "dictionary generator"
+HPE ?                acedrg_database      11          "data source"
+HPE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HPE ?                refmac5              5.8.0222    "optimization tool"

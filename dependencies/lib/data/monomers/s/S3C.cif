@@ -1,0 +1,171 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+S3C     S3C      "(2Z)-2-sulfanyl-3-(2,3,6-trichlorophenyl)prop-2-enoic acid"     NON-POLYMER     19     15     .     
+#
+data_comp_S3C
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+S3C     C10     C       CR6     0       -24.988     -9.057      62.456      
+S3C     C15     C       CR16    0       -23.197     -10.210     64.254      
+S3C     CL1     CL      CL      0       -21.265     -8.404      63.818      
+S3C     C2      C       CR6     0       -22.846     -9.070      63.542      
+S3C     C3      C       CR6     0       -23.726     -8.461      62.627      
+S3C     C4      C       C1      0       -23.345     -7.254      61.878      
+S3C     C5      C       C       0       -22.771     -7.118      60.639      
+S3C     C6      C       C       0       -22.062     -5.968      60.184      
+S3C     O7      O       OC      -1      -21.578     -5.200      61.019      
+S3C     O8      O       O       0       -21.946     -5.807      58.966      
+S3C     S9      S       SH1     0       -22.994     -8.500      59.560      
+S3C     CL2     CL      CL      0       -26.134     -8.379      61.352      
+S3C     C12     C       CR6     0       -25.341     -10.205     63.172      
+S3C     CL3     CL      CL      0       -26.892     -10.944     62.969      
+S3C     C14     C       CR16    0       -24.446     -10.776     64.067      
+S3C     H1      H       H       0       -22.588     -10.595     64.860      
+S3C     H2      H       H       0       -23.540     -6.439      62.306      
+S3C     H3      H       HSH1    0       -22.196     -9.240      60.139      
+S3C     H5      H       H       0       -24.691     -11.545     64.543      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+S3C       C6        O8        DOUBLE    n         1.230     0.020     1.230     0.020     
+S3C       C5        S9        SINGLE    n         1.757     0.020     1.757     0.020     
+S3C       C5        C6        SINGLE    n         1.403     0.020     1.403     0.020     
+S3C       C6        O7        SINGLE    n         1.230     0.020     1.230     0.020     
+S3C       C4        C5        DOUBLE    n         1.355     0.020     1.355     0.020     
+S3C       C10       CL2       SINGLE    n         1.728     0.010     1.728     0.010     
+S3C       C3        C4        SINGLE    n         1.467     0.011     1.467     0.011     
+S3C       C10       C3        DOUBLE    y         1.395     0.011     1.395     0.011     
+S3C       C10       C12       SINGLE    y         1.389     0.010     1.389     0.010     
+S3C       C12       CL3       SINGLE    n         1.729     0.010     1.729     0.010     
+S3C       C2        C3        SINGLE    y         1.400     0.010     1.400     0.010     
+S3C       C12       C14       DOUBLE    y         1.380     0.010     1.380     0.010     
+S3C       CL1       C2        SINGLE    n         1.737     0.010     1.737     0.010     
+S3C       C15       C2        DOUBLE    y         1.383     0.010     1.383     0.010     
+S3C       C15       C14       SINGLE    y         1.377     0.010     1.377     0.010     
+S3C       C15       H1        SINGLE    n         1.082     0.013     0.975     0.010     
+S3C       C4        H2        SINGLE    n         1.082     0.013     0.975     0.010     
+S3C       S9        H3        SINGLE    n         1.338     0.010     1.171     0.208     
+S3C       C14       H5        SINGLE    n         1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+S3C         CL2         C10          C3     120.330    1.50
+S3C         CL2         C10         C12     118.870    1.50
+S3C          C3         C10         C12     120.800    1.50
+S3C          C2         C15         C14     119.484    1.50
+S3C          C2         C15          H1     120.209    1.50
+S3C         C14         C15          H1     120.309    1.50
+S3C          C3          C2         CL1     119.584    1.50
+S3C          C3          C2         C15     122.732    1.50
+S3C         CL1          C2         C15     117.685    1.50
+S3C          C4          C3         C10     121.281    1.50
+S3C          C4          C3          C2     121.281    1.50
+S3C         C10          C3          C2     117.437    1.50
+S3C          C5          C4          C3     130.138    1.85
+S3C          C5          C4          H2     114.190    1.50
+S3C          C3          C4          H2     115.673    1.50
+S3C          S9          C5          C6     120.178    3.00
+S3C          S9          C5          C4     116.555    3.00
+S3C          C6          C5          C4     123.267    3.00
+S3C          O8          C6          C5     117.738    3.00
+S3C          O8          C6          O7     124.523    1.63
+S3C          C5          C6          O7     117.738    3.00
+S3C          C5          S9          H3      95.891    2.59
+S3C         C10         C12         CL3     120.836    1.50
+S3C         C10         C12         C14     120.059    1.50
+S3C         CL3         C12         C14     119.113    1.50
+S3C         C12         C14         C15     119.486    1.50
+S3C         C12         C14          H5     120.094    1.50
+S3C         C15         C14          H5     120.420    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+S3C              const_24         CL2         C10         C12         CL3       0.000   10.00     2
+S3C       const_sp2_sp2_4         CL2         C10          C3          C4       0.000   10.00     2
+S3C              const_19         CL3         C12         C14         C15     180.000   10.00     2
+S3C              const_13         C12         C14         C15          C2       0.000   10.00     2
+S3C              const_10         C14         C15          C2         CL1     180.000   10.00     2
+S3C       const_sp2_sp2_8         CL1          C2          C3          C4       0.000   10.00     2
+S3C             sp2_sp2_9         C10          C3          C4          C5     180.000   10.00     2
+S3C             sp2_sp2_6          C3          C4          C5          S9       0.000   10.00     2
+S3C             sp2_sp2_3          S9          C5          C6          O8       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+S3C    plan-1         C10   0.020
+S3C    plan-1         C12   0.020
+S3C    plan-1         C14   0.020
+S3C    plan-1         C15   0.020
+S3C    plan-1          C2   0.020
+S3C    plan-1          C3   0.020
+S3C    plan-1          C4   0.020
+S3C    plan-1         CL1   0.020
+S3C    plan-1         CL2   0.020
+S3C    plan-1         CL3   0.020
+S3C    plan-1          H1   0.020
+S3C    plan-1          H5   0.020
+S3C    plan-2          C3   0.020
+S3C    plan-2          C4   0.020
+S3C    plan-2          C5   0.020
+S3C    plan-2          H2   0.020
+S3C    plan-3          C4   0.020
+S3C    plan-3          C5   0.020
+S3C    plan-3          C6   0.020
+S3C    plan-3          S9   0.020
+S3C    plan-4          C5   0.020
+S3C    plan-4          C6   0.020
+S3C    plan-4          O7   0.020
+S3C    plan-4          O8   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+S3C SMILES           ACDLabs              12.01 "Clc1c(\C=C(/S)C(=O)O)c(Cl)ccc1Cl"
+S3C InChI            InChI                1.03  "InChI=1S/C9H5Cl3O2S/c10-5-1-2-6(11)8(12)4(5)3-7(15)9(13)14/h1-3,15H,(H,13,14)/b7-3-"
+S3C InChIKey         InChI                1.03  ZCOCHUAGSBNGCP-CLTKARDFSA-N
+S3C SMILES_CANONICAL CACTVS               3.385 "OC(=O)\C(S)=C\c1c(Cl)ccc(Cl)c1Cl"
+S3C SMILES           CACTVS               3.385 "OC(=O)C(S)=Cc1c(Cl)ccc(Cl)c1Cl"
+S3C SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1cc(c(c(c1Cl)/C=C(/C(=O)O)\S)Cl)Cl"
+S3C SMILES           "OpenEye OEToolkits" 1.7.6 "c1cc(c(c(c1Cl)C=C(C(=O)O)S)Cl)Cl"
+S3C ?                acedrg               202         "dictionary generator"                  
+S3C ?                acedrg_database      11          "data source"                           
+S3C ?                rdkit                2017.03.2   "Chemoinformatics tool"
+S3C ?                refmac5              5.8.0189    "optimization tool"                     

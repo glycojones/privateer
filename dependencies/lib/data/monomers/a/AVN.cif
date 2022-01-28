@@ -1,0 +1,186 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AVN      AVN '(2S)-AMINO[(5S)-3-CHLORO-4,5-DIHYDRO' non-polymer        17  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AVN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AVN           CL1    CL   CL        0.000      0.000    0.000    0.000
+ AVN           C4     C    C         0.000     -1.726   -0.187    0.013
+ AVN           N2     N    N         0.000     -2.356   -1.292    0.118
+ AVN           O3     O    O2        0.000     -3.760   -1.136    0.092
+ AVN           C5     C    CH2       0.000     -2.740    0.937   -0.096
+ AVN           H51    H    H         0.000     -2.860    1.302   -1.118
+ AVN           H52    H    H         0.000     -2.515    1.777    0.565
+ AVN           C3     C    CH1       0.000     -4.048    0.251    0.366
+ AVN           H3     H    H         0.000     -4.220    0.412    1.439
+ AVN           C2     C    CH1       0.000     -5.242    0.736   -0.459
+ AVN           H2     H    H         0.000     -5.050    0.551   -1.525
+ AVN           N1     N    NH2       0.000     -5.437    2.175   -0.239
+ AVN           HN12   H    H         0.000     -4.860    2.674    0.429
+ AVN           HN11   H    H         0.000     -6.149    2.680   -0.753
+ AVN           C1     C    C         0.000     -6.481   -0.010   -0.035
+ AVN           O1     O    OC       -0.500     -6.694   -1.165   -0.465
+ AVN           O2     O    OC       -0.500     -7.295    0.525    0.750
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AVN      CL1    n/a    C4     START
+ AVN      C4     CL1    C5     .
+ AVN      N2     C4     O3     .
+ AVN      O3     N2     .      .
+ AVN      C5     C4     C3     .
+ AVN      H51    C5     .      .
+ AVN      H52    C5     .      .
+ AVN      C3     C5     C2     .
+ AVN      H3     C3     .      .
+ AVN      C2     C3     C1     .
+ AVN      H2     C2     .      .
+ AVN      N1     C2     HN11   .
+ AVN      HN12   N1     .      .
+ AVN      HN11   N1     .      .
+ AVN      C1     C2     O2     .
+ AVN      O1     C1     .      .
+ AVN      O2     C1     .      END
+ AVN      C3     O3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AVN       O1        C1        deloc     1.250     0.020     1.250     0.020     
+AVN       O2        C1        deloc     1.250     0.020     1.250     0.020     
+AVN       C1        C2        single    1.500     0.020     1.500     0.020     
+AVN       H2        C2        single    1.089     0.010     0.989     0.005     
+AVN       N1        C2        single    1.450     0.020     1.450     0.020     
+AVN       C2        C3        single    1.524     0.020     1.524     0.020     
+AVN       HN11      N1        single    1.036     0.016     0.914     0.007     
+AVN       HN12      N1        single    1.036     0.016     0.914     0.007     
+AVN       H3        C3        single    1.089     0.010     0.989     0.005     
+AVN       C3        O3        single    1.426     0.020     1.426     0.020     
+AVN       C3        C5        single    1.524     0.020     1.524     0.020     
+AVN       O3        N2        single    1.255     0.020     1.255     0.020     
+AVN       N2        C4        double    1.260     0.020     1.260     0.020     
+AVN       C4        CL1       single    1.765     0.020     1.765     0.020     
+AVN       C5        C4        single    1.510     0.020     1.510     0.020     
+AVN       H51       C5        single    1.089     0.010     0.989     0.005     
+AVN       H52       C5        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AVN      CL1    C4     N2      120.000    3.000
+ AVN      CL1    C4     C5      120.000    3.000
+ AVN      N2     C4     C5      116.500    3.000
+ AVN      C4     N2     O3      120.000    3.000
+ AVN      N2     O3     C3      120.000    3.000
+ AVN      C4     C5     H51     109.470    3.000
+ AVN      C4     C5     H52     109.470    3.000
+ AVN      C4     C5     C3      109.470    3.000
+ AVN      H51    C5     H52     107.900    3.000
+ AVN      H51    C5     C3      109.470    3.000
+ AVN      H52    C5     C3      109.470    3.000
+ AVN      C5     C3     H3      108.340    3.000
+ AVN      C5     C3     C2      111.000    3.000
+ AVN      C5     C3     O3      109.470    3.000
+ AVN      H3     C3     C2      108.340    3.000
+ AVN      H3     C3     O3      109.470    3.000
+ AVN      C2     C3     O3      109.470    3.000
+ AVN      C3     C2     H2      108.340    3.000
+ AVN      C3     C2     N1      109.470    3.000
+ AVN      C3     C2     C1      109.470    3.000
+ AVN      H2     C2     N1      109.470    3.000
+ AVN      H2     C2     C1      108.810    3.000
+ AVN      N1     C2     C1      109.470    3.000
+ AVN      C2     N1     HN12    120.000    3.000
+ AVN      C2     N1     HN11    120.000    3.000
+ AVN      HN12   N1     HN11    120.000    3.000
+ AVN      C2     C1     O1      118.500    3.000
+ AVN      C2     C1     O2      118.500    3.000
+ AVN      O1     C1     O2      123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AVN      CONST_1  CL1    C4     N2     O3       180.000    0.000   0
+ AVN      var_1    C4     N2     O3     C3       -30.000   20.000   1
+ AVN      var_2    CL1    C4     C5     C3      -150.000   20.000   3
+ AVN      var_3    C4     C5     C3     C2      -150.000   20.000   3
+ AVN      var_4    C5     C3     O3     N2        30.000   20.000   1
+ AVN      var_5    C5     C3     C2     C1       176.806   20.000   3
+ AVN      var_6    C3     C2     N1     HN11     176.074   20.000   1
+ AVN      var_7    C3     C2     C1     O2        99.719   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AVN      chir_01  C2     C1     N1     C3        negativ
+ AVN      chir_02  C3     C2     O3     C5        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AVN      plan-1    C1        0.020
+ AVN      plan-1    O1        0.020
+ AVN      plan-1    O2        0.020
+ AVN      plan-1    C2        0.020
+ AVN      plan-2    N1        0.020
+ AVN      plan-2    C2        0.020
+ AVN      plan-2    HN11      0.020
+ AVN      plan-2    HN12      0.020
+ AVN      plan-3    N2        0.020
+ AVN      plan-3    O3        0.020
+ AVN      plan-3    C4        0.020
+ AVN      plan-4    C4        0.020
+ AVN      plan-4    N2        0.020
+ AVN      plan-4    C5        0.020
+ AVN      plan-4    CL1       0.020
+# ------------------------------------------------------

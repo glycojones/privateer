@@ -1,0 +1,146 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FUX     FUX      5-HYDROXYMETHYL-FURFURAL     NON-POLYMER     15     9     .     
+#
+data_comp_FUX
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FUX     C1      C       C1      0       0.824       -2.220      -4.104      
+FUX     C2      C       CR5     0       0.494       -1.805      -2.766      
+FUX     O3      O       O2      0       -0.016      -2.733      -1.882      
+FUX     C4      C       CR5     0       -0.238      -2.079      -0.703      
+FUX     C5      C       CR15    0       0.115       -0.784      -0.822      
+FUX     C6      C       CR15    0       0.585       -0.604      -2.147      
+FUX     C7      C       CH2     0       -0.792      -2.886      0.409       
+FUX     O8      O       OH1     0       -2.206      -2.795      0.488       
+FUX     OXT     O       O       0       1.279       -1.494      -4.968      
+FUX     H1      H       H       0       0.672       -3.135      -4.321      
+FUX     H5      H       H       0       0.058       -0.117      -0.147      
+FUX     H6      H       H       0       0.900       0.195       -2.524      
+FUX     H71     H       H       0       -0.404      -2.580      1.255       
+FUX     H72     H       H       0       -0.537      -3.823      0.287       
+FUX     HO8     H       H       0       -2.452      -3.109      1.257       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FUX       C1        C2        SINGLE    n         1.439     0.010     1.439     0.010     
+FUX       C1        OXT       DOUBLE    n         1.217     0.018     1.217     0.018     
+FUX       C2        O3        SINGLE    y         1.380     0.010     1.380     0.010     
+FUX       C2        C6        DOUBLE    y         1.354     0.010     1.354     0.010     
+FUX       O3        C4        SINGLE    y         1.367     0.010     1.367     0.010     
+FUX       C4        C5        DOUBLE    y         1.347     0.011     1.347     0.011     
+FUX       C4        C7        SINGLE    n         1.482     0.010     1.482     0.010     
+FUX       C5        C6        SINGLE    y         1.416     0.013     1.416     0.013     
+FUX       C7        O8        SINGLE    n         1.419     0.012     1.419     0.012     
+FUX       C1        H1        SINGLE    n         1.082     0.013     0.953     0.020     
+FUX       C5        H5        SINGLE    n         1.082     0.013     0.951     0.010     
+FUX       C6        H6        SINGLE    n         1.082     0.013     0.938     0.015     
+FUX       C7        H71       SINGLE    n         1.089     0.010     0.979     0.011     
+FUX       C7        H72       SINGLE    n         1.089     0.010     0.979     0.011     
+FUX       O8        HO8       SINGLE    n         0.970     0.012     0.866     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FUX          C2          C1         OXT     125.053    1.80
+FUX          C2          C1          H1     116.871    1.76
+FUX         OXT          C1          H1     118.062    1.50
+FUX          C1          C2          O3     119.058    1.50
+FUX          C1          C2          C6     131.697    1.50
+FUX          O3          C2          C6     109.245    1.50
+FUX          C2          O3          C4     106.992    1.50
+FUX          O3          C4          C5     109.971    1.50
+FUX          O3          C4          C7     116.573    1.50
+FUX          C5          C4          C7     133.456    1.50
+FUX          C4          C5          C6     106.845    1.50
+FUX          C4          C5          H5     126.601    1.50
+FUX          C6          C5          H5     126.554    1.50
+FUX          C2          C6          C5     106.947    1.50
+FUX          C2          C6          H6     126.445    1.50
+FUX          C5          C6          H6     126.607    1.50
+FUX          C4          C7          O8     112.302    1.50
+FUX          C4          C7         H71     109.267    1.50
+FUX          C4          C7         H72     109.267    1.50
+FUX          O8          C7         H71     109.142    1.50
+FUX          O8          C7         H72     109.142    1.50
+FUX         H71          C7         H72     107.699    1.51
+FUX          C7          O8         HO8     107.982    1.81
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FUX             sp2_sp2_2         OXT          C1          C2          O3       0.000   10.00     2
+FUX       const_sp2_sp2_2          C1          C2          O3          C4     180.000   10.00     2
+FUX              const_15          C1          C2          C6          C5     180.000   10.00     2
+FUX       const_sp2_sp2_4          C7          C4          O3          C2     180.000   10.00     2
+FUX       const_sp2_sp2_7          C7          C4          C5          C6     180.000   10.00     2
+FUX             sp2_sp3_2          O3          C4          C7          O8     -90.000   10.00     6
+FUX       const_sp2_sp2_9          C4          C5          C6          C2       0.000   10.00     2
+FUX             sp3_sp3_1          C4          C7          O8         HO8     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FUX    plan-1          C1   0.020
+FUX    plan-1          C2   0.020
+FUX    plan-1          C4   0.020
+FUX    plan-1          C5   0.020
+FUX    plan-1          C6   0.020
+FUX    plan-1          C7   0.020
+FUX    plan-1          H5   0.020
+FUX    plan-1          H6   0.020
+FUX    plan-1          O3   0.020
+FUX    plan-2          C1   0.020
+FUX    plan-2          C2   0.020
+FUX    plan-2          H1   0.020
+FUX    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FUX SMILES           ACDLabs              10.04 "O=Cc1oc(cc1)CO"
+FUX SMILES_CANONICAL CACTVS               3.341 "OCc1oc(C=O)cc1"
+FUX SMILES           CACTVS               3.341 "OCc1oc(C=O)cc1"
+FUX SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(oc1CO)C=O"
+FUX SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(oc1CO)C=O"
+FUX InChI            InChI                1.03  "InChI=1S/C6H6O3/c7-3-5-1-2-6(4-8)9-5/h1-3,8H,4H2"
+FUX InChIKey         InChI                1.03  NOEGNKMFWQHSLB-UHFFFAOYSA-N
+FUX ?                acedrg               202         "dictionary generator"                  
+FUX ?                acedrg_database      11          "data source"                           
+FUX ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FUX ?                refmac5              5.8.0189    "optimization tool"                     

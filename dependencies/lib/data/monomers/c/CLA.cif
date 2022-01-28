@@ -1,0 +1,943 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CLA      CLA 'CHLOROPHYLL A                       ' non-polymer       137  65 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CLA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CLA           O1D    O    O        -0.500     28.235   70.652   18.184
+ CLA           CGD    C    C         0.000     28.304   71.373   17.164
+ CLA           O2D    O    O2       -0.500     27.597   71.146   16.157
+ CLA           CED    C    CH3       0.000     26.507   70.120   15.984
+ CLA           HED3   H    H         0.000     26.893   69.137   16.130
+ CLA           HED2   H    H         0.000     25.725   70.284   16.690
+ CLA           HED1   H    H         0.000     26.093   70.177   15.004
+ CLA           CBD    C    CH1       0.000     29.296   72.550   17.091
+ CLA           HBD    H    H         0.000     29.820   72.548   16.125
+ CLA           CAD    C    CR5       0.000     28.536   73.884   17.288
+ CLA           OBD    O    O         0.000     27.541   74.168   16.623
+ CLA           C3D    C    CR55      0.000     29.263   74.658   18.268
+ CLA           C2D    C    CR5       0.000     29.429   75.892   18.838
+ CLA           CMD    C    CH3       0.000     28.633   77.184   18.566
+ CLA           HMD3   H    H         0.000     28.172   77.520   19.462
+ CLA           HMD2   H    H         0.000     29.285   77.941   18.206
+ CLA           HMD1   H    H         0.000     27.882   76.999   17.838
+ CLA           C1D    C    CR5       0.000     30.543   75.734   19.772
+ CLA           CHD    C    C1        0.000     31.077   76.711   20.624
+ CLA           HHD    H    H         0.000     30.682   77.709   20.534
+ CLA           C4D    C    CR55      0.000     30.259   73.785   18.824
+ CLA           ND     N    NT        0.000     30.991   74.430   19.778
+ CLA           MG     MG   MG        0.000     32.169   73.436   21.100
+ CLA           NC     N    NR5       1.000     32.707   75.299   21.862
+ CLA           C4C    C    CR5       0.000     32.085   76.504   21.588
+ CLA           C3C    C    CR5       0.000     32.651   77.512   22.444
+ CLA           CAC    C    CH2       0.000     32.318   79.048   22.410
+ CLA           HAC1   H    H         0.000     31.844   79.296   21.458
+ CLA           HAC2   H    H         0.000     33.241   79.622   22.516
+ CLA           CBC    C    CH3       0.000     31.374   79.387   23.551
+ CLA           HBC3   H    H         0.000     30.479   78.829   23.448
+ CLA           HBC2   H    H         0.000     31.834   79.147   24.475
+ CLA           HBC1   H    H         0.000     31.148   80.422   23.528
+ CLA           C2C    C    CR5       0.000     33.573   76.903   23.240
+ CLA           CMC    C    CH3       0.000     34.428   77.567   24.361
+ CLA           HMC3   H    H         0.000     34.249   77.084   25.291
+ CLA           HMC2   H    H         0.000     35.462   77.489   24.126
+ CLA           HMC1   H    H         0.000     34.174   78.595   24.454
+ CLA           C1C    C    CR5       0.000     33.651   75.526   22.843
+ CLA           CHC    C    C1        0.000     34.551   74.571   23.367
+ CLA           HHC    H    H         0.000     35.227   74.903   24.137
+ CLA           NB     N    NR5       0.000     33.880   72.640   21.984
+ CLA           C4B    C    CR5       0.000     34.640   73.223   22.970
+ CLA           C3B    C    CR5       0.000     35.546   72.203   23.514
+ CLA           CAB    C    C1        0.000     36.535   72.169   24.565
+ CLA           HAB    H    H         0.000     37.127   71.281   24.711
+ CLA           CBB    C    C2        0.000     36.727   73.246   25.372
+ CLA           HBB2   H    H         0.000     37.470   73.221   26.162
+ CLA           HBB1   H    H         0.000     36.140   74.149   25.240
+ CLA           C2B    C    CR5       0.000     35.354   71.069   22.782
+ CLA           CMB    C    CH3       0.000     36.011   69.724   22.917
+ CLA           HMB3   H    H         0.000     35.277   68.994   23.136
+ CLA           HMB2   H    H         0.000     36.496   69.476   22.009
+ CLA           HMB1   H    H         0.000     36.722   69.756   23.701
+ CLA           C1B    C    CR5       0.000     34.338   71.345   21.801
+ CLA           CHB    C    C1        0.000     33.881   70.407   20.869
+ CLA           HHB    H    H         0.000     34.380   69.453   20.879
+ CLA           CHA    C    CR5       0.000     30.311   72.514   18.250
+ CLA           C1A    C    C         0.000     31.186   71.518   18.677
+ CLA           NA     N    N         1.000     32.069   71.687   19.759
+ CLA           C4A    C    C         0.000     32.858   70.551   19.925
+ CLA           C3A    C    CH1       0.000     32.428   69.486   18.951
+ CLA           H3A    H    H         0.000     33.288   69.104   18.384
+ CLA           CMA    C    CH3       0.000     31.740   68.352   19.731
+ CLA           HMA3   H    H         0.000     30.951   68.750   20.316
+ CLA           HMA2   H    H         0.000     31.348   67.639   19.052
+ CLA           HMA1   H    H         0.000     32.444   67.879   20.367
+ CLA           C2A    C    CH1       0.000     31.431   70.184   18.024
+ CLA           H2A    H    H         0.000     30.493   69.612   18.001
+ CLA           CAA    C    CH2       0.000     32.015   70.264   16.604
+ CLA           HAA1   H    H         0.000     33.013   70.699   16.691
+ CLA           HAA2   H    H         0.000     31.374   70.937   16.030
+ CLA           CBA    C    CH2       0.000     32.107   68.901   15.885
+ CLA           HBA1   H    H         0.000     32.822   68.276   16.424
+ CLA           HBA2   H    H         0.000     32.469   69.072   14.869
+ CLA           CGA    C    C         0.000     30.752   68.199   15.833
+ CLA           O1A    O    O        -0.500     29.772   68.788   15.326
+ CLA           O2A    O    O2       -0.500     30.563   67.073   16.343
+ CLA           C1     C    CH2       0.000     29.150   66.541   16.532
+ CLA           H11    H    H         0.000     29.164   65.456   16.656
+ CLA           H12    H    H         0.000     28.527   66.800   15.673
+ CLA           C2     C    C1        0.000     28.601   67.168   17.745
+ CLA           H2     H    H         0.000     28.257   68.182   17.630
+ CLA           C3     C    C         0.000     28.467   66.631   19.011
+ CLA           C4     C    CH3       0.000     28.876   65.188   19.371
+ CLA           H43    H    H         0.000     28.324   64.497   18.783
+ CLA           H42    H    H         0.000     29.913   65.048   19.186
+ CLA           H41    H    H         0.000     28.680   65.001   20.398
+ CLA           C5     C    CH2       0.000     27.810   67.400   20.169
+ CLA           H51    H    H         0.000     28.196   68.422   20.175
+ CLA           H52    H    H         0.000     28.071   66.908   21.109
+ CLA           C6     C    CH2       0.000     26.271   67.429   20.010
+ CLA           H61    H    H         0.000     26.015   67.269   18.961
+ CLA           H62    H    H         0.000     25.895   68.402   20.331
+ CLA           C7     C    CH2       0.000     25.650   66.348   20.849
+ CLA           H71    H    H         0.000     25.939   66.556   21.881
+ CLA           H72    H    H         0.000     26.105   65.409   20.527
+ CLA           C8     C    CH1       0.000     24.112   66.235   20.756
+ CLA           H8     H    H         0.000     23.769   65.520   21.517
+ CLA           C9     C    CH3       0.000     23.420   67.574   21.004
+ CLA           H93    H    H         0.000     23.665   67.925   21.973
+ CLA           H92    H    H         0.000     23.743   68.278   20.282
+ CLA           H91    H    H         0.000     22.371   67.449   20.930
+ CLA           C10    C    CH2       0.000     23.724   65.703   19.389
+ CLA           H101   H    H         0.000     24.021   66.474   18.674
+ CLA           H102   H    H         0.000     22.635   65.619   19.400
+ CLA           C11    C    CH2       0.000     24.332   64.373   18.983
+ CLA           H111   H    H         0.000     24.084   63.586   19.699
+ CLA           H112   H    H         0.000     25.417   64.444   18.884
+ CLA           C12    C    CH2       0.000     23.717   64.042   17.629
+ CLA           H121   H    H         0.000     23.580   65.000   17.124
+ CLA           H122   H    H         0.000     22.741   63.603   17.846
+ CLA           C13    C    CH1       0.000     24.516   63.094   16.723
+ CLA           H13    H    H         0.000     23.903   62.913   15.829
+ CLA           C14    C    CH3       0.000     24.753   61.731   17.384
+ CLA           H143   H    H         0.000     25.297   61.863   18.284
+ CLA           H142   H    H         0.000     23.821   61.274   17.600
+ CLA           H141   H    H         0.000     25.306   61.109   16.727
+ CLA           C15    C    CH2       0.000     25.824   63.759   16.243
+ CLA           H151   H    H         0.000     26.165   63.172   15.388
+ CLA           H152   H    H         0.000     26.537   63.652   17.064
+ CLA           C16    C    CH2       0.000     25.720   65.226   15.846
+ CLA           H161   H    H         0.000     26.738   65.611   15.760
+ CLA           H162   H    H         0.000     25.204   65.745   16.657
+ CLA           C17    C    CH2       0.000     24.979   65.456   14.544
+ CLA           H171   H    H         0.000     23.972   65.052   14.669
+ CLA           H172   H    H         0.000     25.503   64.891   13.770
+ CLA           C18    C    CH1       0.000     24.892   66.933   14.132
+ CLA           H18    H    H         0.000     25.917   67.324   14.059
+ CLA           C20    C    CH3       0.000     24.157   67.752   15.163
+ CLA           H203   H    H         0.000     23.175   67.374   15.274
+ CLA           H202   H    H         0.000     24.668   67.691   16.087
+ CLA           H201   H    H         0.000     24.117   68.760   14.844
+ CLA           C19    C    CH3       0.000     24.229   67.109   12.780
+ CLA           H193   H    H         0.000     24.789   66.593   12.045
+ CLA           H192   H    H         0.000     23.246   66.717   12.817
+ CLA           H191   H    H         0.000     24.191   68.139   12.539
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CLA      O1D    n/a    CGD    START
+ CLA      CGD    O1D    CBD    .
+ CLA      O2D    CGD    CED    .
+ CLA      CED    O2D    HED1   .
+ CLA      HED3   CED    .      .
+ CLA      HED2   CED    .      .
+ CLA      HED1   CED    .      .
+ CLA      CBD    CGD    CHA    .
+ CLA      HBD    CBD    .      .
+ CLA      CAD    CBD    C3D    .
+ CLA      OBD    CAD    .      .
+ CLA      C3D    CAD    C4D    .
+ CLA      C2D    C3D    C1D    .
+ CLA      CMD    C2D    HMD1   .
+ CLA      HMD3   CMD    .      .
+ CLA      HMD2   CMD    .      .
+ CLA      HMD1   CMD    .      .
+ CLA      C1D    C2D    CHD    .
+ CLA      CHD    C1D    HHD    .
+ CLA      HHD    CHD    .      .
+ CLA      C4D    C3D    ND     .
+ CLA      ND     C4D    MG     .
+ CLA      MG     ND     NB     .
+ CLA      NC     MG     C4C    .
+ CLA      C4C    NC     C3C    .
+ CLA      C3C    C4C    C2C    .
+ CLA      CAC    C3C    CBC    .
+ CLA      HAC1   CAC    .      .
+ CLA      HAC2   CAC    .      .
+ CLA      CBC    CAC    HBC1   .
+ CLA      HBC3   CBC    .      .
+ CLA      HBC2   CBC    .      .
+ CLA      HBC1   CBC    .      .
+ CLA      C2C    C3C    C1C    .
+ CLA      CMC    C2C    HMC1   .
+ CLA      HMC3   CMC    .      .
+ CLA      HMC2   CMC    .      .
+ CLA      HMC1   CMC    .      .
+ CLA      C1C    C2C    CHC    .
+ CLA      CHC    C1C    HHC    .
+ CLA      HHC    CHC    .      .
+ CLA      NB     MG     C4B    .
+ CLA      C4B    NB     C3B    .
+ CLA      C3B    C4B    C2B    .
+ CLA      CAB    C3B    CBB    .
+ CLA      HAB    CAB    .      .
+ CLA      CBB    CAB    HBB1   .
+ CLA      HBB2   CBB    .      .
+ CLA      HBB1   CBB    .      .
+ CLA      C2B    C3B    C1B    .
+ CLA      CMB    C2B    HMB1   .
+ CLA      HMB3   CMB    .      .
+ CLA      HMB2   CMB    .      .
+ CLA      HMB1   CMB    .      .
+ CLA      C1B    C2B    CHB    .
+ CLA      CHB    C1B    HHB    .
+ CLA      HHB    CHB    .      .
+ CLA      CHA    CBD    C1A    .
+ CLA      C1A    CHA    NA     .
+ CLA      NA     C1A    C4A    .
+ CLA      C4A    NA     C3A    .
+ CLA      C3A    C4A    C2A    .
+ CLA      H3A    C3A    .      .
+ CLA      CMA    C3A    HMA1   .
+ CLA      HMA3   CMA    .      .
+ CLA      HMA2   CMA    .      .
+ CLA      HMA1   CMA    .      .
+ CLA      C2A    C3A    CAA    .
+ CLA      H2A    C2A    .      .
+ CLA      CAA    C2A    CBA    .
+ CLA      HAA1   CAA    .      .
+ CLA      HAA2   CAA    .      .
+ CLA      CBA    CAA    CGA    .
+ CLA      HBA1   CBA    .      .
+ CLA      HBA2   CBA    .      .
+ CLA      CGA    CBA    O2A    .
+ CLA      O1A    CGA    .      .
+ CLA      O2A    CGA    C1     .
+ CLA      C1     O2A    C2     .
+ CLA      H11    C1     .      .
+ CLA      H12    C1     .      .
+ CLA      C2     C1     C3     .
+ CLA      H2     C2     .      .
+ CLA      C3     C2     C5     .
+ CLA      C4     C3     H41    .
+ CLA      H43    C4     .      .
+ CLA      H42    C4     .      .
+ CLA      H41    C4     .      .
+ CLA      C5     C3     C6     .
+ CLA      H51    C5     .      .
+ CLA      H52    C5     .      .
+ CLA      C6     C5     C7     .
+ CLA      H61    C6     .      .
+ CLA      H62    C6     .      .
+ CLA      C7     C6     C8     .
+ CLA      H71    C7     .      .
+ CLA      H72    C7     .      .
+ CLA      C8     C7     C10    .
+ CLA      H8     C8     .      .
+ CLA      C9     C8     H91    .
+ CLA      H93    C9     .      .
+ CLA      H92    C9     .      .
+ CLA      H91    C9     .      .
+ CLA      C10    C8     C11    .
+ CLA      H101   C10    .      .
+ CLA      H102   C10    .      .
+ CLA      C11    C10    C12    .
+ CLA      H111   C11    .      .
+ CLA      H112   C11    .      .
+ CLA      C12    C11    C13    .
+ CLA      H121   C12    .      .
+ CLA      H122   C12    .      .
+ CLA      C13    C12    C15    .
+ CLA      H13    C13    .      .
+ CLA      C14    C13    H141   .
+ CLA      H143   C14    .      .
+ CLA      H142   C14    .      .
+ CLA      H141   C14    .      .
+ CLA      C15    C13    C16    .
+ CLA      H151   C15    .      .
+ CLA      H152   C15    .      .
+ CLA      C16    C15    C17    .
+ CLA      H161   C16    .      .
+ CLA      H162   C16    .      .
+ CLA      C17    C16    C18    .
+ CLA      H171   C17    .      .
+ CLA      H172   C17    .      .
+ CLA      C18    C17    C19    .
+ CLA      H18    C18    .      .
+ CLA      C20    C18    H201   .
+ CLA      H203   C20    .      .
+ CLA      H202   C20    .      .
+ CLA      H201   C20    .      .
+ CLA      C19    C18    H191   .
+ CLA      H193   C19    .      .
+ CLA      H192   C19    .      .
+ CLA      H191   C19    .      END
+ CLA      MG     NA     .    ADD
+ CLA      CHA    C4D    .    ADD
+ CLA      CHB    C4A    .    ADD
+ CLA      CHC    C4B    .    ADD
+ CLA      CHD    C4C    .    ADD
+ CLA      C1A    C2A    .    ADD
+ CLA      NB     C1B    .    ADD
+ CLA      NC     C1C    .    ADD
+ CLA      ND     C1D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CLA       MG        NA        single    1.955     0.020     1.955     0.020     
+CLA       NB        MG        single    2.035     0.020     2.035     0.020     
+CLA       NC        MG        single    2.035     0.020     2.035     0.020     
+CLA       MG        ND        single    2.045     0.020     2.045     0.020     
+CLA       C1A       CHA       single    1.490     0.020     1.490     0.020     
+CLA       CHA       C4D       double    1.490     0.020     1.490     0.020     
+CLA       CHA       CBD       single    1.480     0.020     1.480     0.020     
+CLA       CHB       C4A       double    1.340     0.020     1.340     0.020     
+CLA       CHB       C1B       single    1.483     0.020     1.483     0.020     
+CLA       HHB       CHB       single    1.082     0.013     0.975     0.010     
+CLA       CHC       C4B       single    1.483     0.020     1.483     0.020     
+CLA       CHC       C1C       double    1.483     0.020     1.483     0.020     
+CLA       HHC       CHC       single    1.082     0.013     0.975     0.010     
+CLA       CHD       C4C       single    1.483     0.020     1.483     0.020     
+CLA       CHD       C1D       double    1.483     0.020     1.483     0.020     
+CLA       HHD       CHD       single    1.082     0.013     0.975     0.010     
+CLA       NA        C1A       double    1.260     0.020     1.260     0.020     
+CLA       C4A       NA        single    1.330     0.020     1.330     0.020     
+CLA       C1A       C2A       single    1.500     0.020     1.500     0.020     
+CLA       C2A       C3A       single    1.524     0.020     1.524     0.020     
+CLA       CAA       C2A       single    1.524     0.020     1.524     0.020     
+CLA       H2A       C2A       single    1.089     0.010     0.989     0.005     
+CLA       C3A       C4A       single    1.500     0.020     1.500     0.020     
+CLA       CMA       C3A       single    1.524     0.020     1.524     0.020     
+CLA       H3A       C3A       single    1.089     0.010     0.989     0.005     
+CLA       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+CLA       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+CLA       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+CLA       CBA       CAA       single    1.524     0.020     1.524     0.020     
+CLA       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+CLA       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+CLA       CGA       CBA       single    1.510     0.020     1.510     0.020     
+CLA       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+CLA       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+CLA       O1A       CGA       deloc     1.220     0.020     1.220     0.020     
+CLA       O2A       CGA       deloc     1.454     0.020     1.454     0.020     
+CLA       C1        O2A       single    1.426     0.020     1.426     0.020     
+CLA       NB        C1B       single    1.337     0.020     1.337     0.020     
+CLA       C4B       NB        single    1.337     0.020     1.337     0.020     
+CLA       C1B       C2B       double    1.490     0.020     1.490     0.020     
+CLA       C2B       C3B       single    1.490     0.020     1.490     0.020     
+CLA       CMB       C2B       single    1.506     0.020     1.506     0.020     
+CLA       C3B       C4B       double    1.490     0.020     1.490     0.020     
+CLA       CAB       C3B       single    1.483     0.020     1.483     0.020     
+CLA       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+CLA       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+CLA       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+CLA       CBB       CAB       double    1.320     0.020     1.320     0.020     
+CLA       HAB       CAB       single    1.082     0.013     0.975     0.010     
+CLA       HBB1      CBB       single    1.082     0.013     0.975     0.010     
+CLA       HBB2      CBB       single    1.082     0.013     0.975     0.010     
+CLA       NC        C1C       single    1.337     0.020     1.337     0.020     
+CLA       C4C       NC        double    1.337     0.020     1.337     0.020     
+CLA       C1C       C2C       single    1.490     0.020     1.490     0.020     
+CLA       C2C       C3C       double    1.490     0.020     1.490     0.020     
+CLA       CMC       C2C       single    1.506     0.020     1.506     0.020     
+CLA       C3C       C4C       single    1.490     0.020     1.490     0.020     
+CLA       CAC       C3C       single    1.510     0.020     1.510     0.020     
+CLA       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+CLA       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+CLA       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+CLA       CBC       CAC       single    1.513     0.020     1.513     0.020     
+CLA       HAC1      CAC       single    1.089     0.010     0.989     0.005     
+CLA       HAC2      CAC       single    1.089     0.010     0.989     0.005     
+CLA       HBC1      CBC       single    1.089     0.010     0.989     0.005     
+CLA       HBC2      CBC       single    1.089     0.010     0.989     0.005     
+CLA       HBC3      CBC       single    1.089     0.010     0.989     0.005     
+CLA       ND        C1D       single    1.455     0.020     1.455     0.020     
+CLA       ND        C4D       single    1.405     0.020     1.405     0.020     
+CLA       C1D       C2D       single    1.490     0.020     1.490     0.020     
+CLA       C2D       C3D       double    1.490     0.020     1.490     0.020     
+CLA       CMD       C2D       single    1.506     0.020     1.506     0.020     
+CLA       C4D       C3D       single    1.390     0.020     1.390     0.020     
+CLA       C3D       CAD       single    1.490     0.020     1.490     0.020     
+CLA       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+CLA       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+CLA       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+CLA       OBD       CAD       double    1.285     0.020     1.285     0.020     
+CLA       CAD       CBD       single    1.480     0.020     1.480     0.020     
+CLA       CBD       CGD       single    1.500     0.020     1.500     0.020     
+CLA       HBD       CBD       single    1.089     0.010     0.989     0.005     
+CLA       CGD       O1D       deloc     1.220     0.020     1.220     0.020     
+CLA       O2D       CGD       deloc     1.454     0.020     1.454     0.020     
+CLA       CED       O2D       single    1.426     0.020     1.426     0.020     
+CLA       HED1      CED       single    1.089     0.010     0.989     0.005     
+CLA       HED2      CED       single    1.089     0.010     0.989     0.005     
+CLA       HED3      CED       single    1.089     0.010     0.989     0.005     
+CLA       C2        C1        single    1.510     0.020     1.510     0.020     
+CLA       H11       C1        single    1.089     0.010     0.989     0.005     
+CLA       H12       C1        single    1.089     0.010     0.989     0.005     
+CLA       C3        C2        double    1.340     0.020     1.340     0.020     
+CLA       H2        C2        single    1.082     0.013     0.975     0.010     
+CLA       C4        C3        single    1.500     0.020     1.500     0.020     
+CLA       C5        C3        single    1.510     0.020     1.510     0.020     
+CLA       H41       C4        single    1.089     0.010     0.989     0.005     
+CLA       H42       C4        single    1.089     0.010     0.989     0.005     
+CLA       H43       C4        single    1.089     0.010     0.989     0.005     
+CLA       C6        C5        single    1.524     0.020     1.524     0.020     
+CLA       H51       C5        single    1.089     0.010     0.989     0.005     
+CLA       H52       C5        single    1.089     0.010     0.989     0.005     
+CLA       C7        C6        single    1.524     0.020     1.524     0.020     
+CLA       H61       C6        single    1.089     0.010     0.989     0.005     
+CLA       H62       C6        single    1.089     0.010     0.989     0.005     
+CLA       C8        C7        single    1.524     0.020     1.524     0.020     
+CLA       H71       C7        single    1.089     0.010     0.989     0.005     
+CLA       H72       C7        single    1.089     0.010     0.989     0.005     
+CLA       C9        C8        single    1.524     0.020     1.524     0.020     
+CLA       C10       C8        single    1.524     0.020     1.524     0.020     
+CLA       H8        C8        single    1.089     0.010     0.989     0.005     
+CLA       H91       C9        single    1.089     0.010     0.989     0.005     
+CLA       H92       C9        single    1.089     0.010     0.989     0.005     
+CLA       H93       C9        single    1.089     0.010     0.989     0.005     
+CLA       C11       C10       single    1.524     0.020     1.524     0.020     
+CLA       H101      C10       single    1.089     0.010     0.989     0.005     
+CLA       H102      C10       single    1.089     0.010     0.989     0.005     
+CLA       C12       C11       single    1.524     0.020     1.524     0.020     
+CLA       H111      C11       single    1.089     0.010     0.989     0.005     
+CLA       H112      C11       single    1.089     0.010     0.989     0.005     
+CLA       C13       C12       single    1.524     0.020     1.524     0.020     
+CLA       H121      C12       single    1.089     0.010     0.989     0.005     
+CLA       H122      C12       single    1.089     0.010     0.989     0.005     
+CLA       C14       C13       single    1.524     0.020     1.524     0.020     
+CLA       C15       C13       single    1.524     0.020     1.524     0.020     
+CLA       H13       C13       single    1.089     0.010     0.989     0.005     
+CLA       H141      C14       single    1.089     0.010     0.989     0.005     
+CLA       H142      C14       single    1.089     0.010     0.989     0.005     
+CLA       H143      C14       single    1.089     0.010     0.989     0.005     
+CLA       C16       C15       single    1.524     0.020     1.524     0.020     
+CLA       H151      C15       single    1.089     0.010     0.989     0.005     
+CLA       H152      C15       single    1.089     0.010     0.989     0.005     
+CLA       C17       C16       single    1.524     0.020     1.524     0.020     
+CLA       H161      C16       single    1.089     0.010     0.989     0.005     
+CLA       H162      C16       single    1.089     0.010     0.989     0.005     
+CLA       C18       C17       single    1.524     0.020     1.524     0.020     
+CLA       H171      C17       single    1.089     0.010     0.989     0.005     
+CLA       H172      C17       single    1.089     0.010     0.989     0.005     
+CLA       C19       C18       single    1.524     0.020     1.524     0.020     
+CLA       C20       C18       single    1.524     0.020     1.524     0.020     
+CLA       H18       C18       single    1.089     0.010     0.989     0.005     
+CLA       H191      C19       single    1.089     0.010     0.989     0.005     
+CLA       H192      C19       single    1.089     0.010     0.989     0.005     
+CLA       H193      C19       single    1.089     0.010     0.989     0.005     
+CLA       H201      C20       single    1.089     0.010     0.989     0.005     
+CLA       H202      C20       single    1.089     0.010     0.989     0.005     
+CLA       H203      C20       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CLA      O1D    CGD    O2D     119.000    3.000
+ CLA      O1D    CGD    CBD     120.500    3.000
+ CLA      O2D    CGD    CBD     120.000    3.000
+ CLA      CGD    O2D    CED     120.000    3.000
+ CLA      O2D    CED    HED3    109.470    3.000
+ CLA      O2D    CED    HED2    109.470    3.000
+ CLA      O2D    CED    HED1    109.470    3.000
+ CLA      HED3   CED    HED2    109.470    3.000
+ CLA      HED3   CED    HED1    109.470    3.000
+ CLA      HED2   CED    HED1    109.470    3.000
+ CLA      CGD    CBD    HBD     108.810    3.000
+ CLA      CGD    CBD    CAD     109.500    3.000
+ CLA      CGD    CBD    CHA     109.500    3.000
+ CLA      HBD    CBD    CAD     109.470    3.000
+ CLA      HBD    CBD    CHA     109.470    3.000
+ CLA      CAD    CBD    CHA     109.500    3.000
+ CLA      CBD    CAD    OBD     108.000    3.000
+ CLA      CBD    CAD    C3D     108.000    3.000
+ CLA      OBD    CAD    C3D     108.000    3.000
+ CLA      CAD    C3D    C2D     108.000    3.000
+ CLA      CAD    C3D    C4D     108.000    3.000
+ CLA      C2D    C3D    C4D     108.000    3.000
+ CLA      C3D    C2D    CMD     108.000    3.000
+ CLA      C3D    C2D    C1D     108.000    3.000
+ CLA      CMD    C2D    C1D     126.000    3.000
+ CLA      C2D    CMD    HMD3    109.470    3.000
+ CLA      C2D    CMD    HMD2    109.470    3.000
+ CLA      C2D    CMD    HMD1    109.470    3.000
+ CLA      HMD3   CMD    HMD2    109.470    3.000
+ CLA      HMD3   CMD    HMD1    109.470    3.000
+ CLA      HMD2   CMD    HMD1    109.470    3.000
+ CLA      C2D    C1D    CHD     117.000    3.000
+ CLA      C2D    C1D    ND      108.000    3.000
+ CLA      CHD    C1D    ND      108.000    3.000
+ CLA      C1D    CHD    HHD     120.000    3.000
+ CLA      C1D    CHD    C4C     120.000    3.000
+ CLA      HHD    CHD    C4C     120.000    3.000
+ CLA      C3D    C4D    ND      108.000    3.000
+ CLA      C3D    C4D    CHA     108.000    3.000
+ CLA      ND     C4D    CHA     108.000    3.000
+ CLA      C4D    ND     MG      109.500    3.000
+ CLA      C4D    ND     C1D     109.500    3.000
+ CLA      MG     ND     C1D     109.500    3.000
+ CLA      ND     MG     NC       90.000    3.000
+ CLA      ND     MG     NB       90.000    3.000
+ CLA      ND     MG     NA       90.000    3.000
+ CLA      NC     MG     NB       90.000    3.000
+ CLA      NC     MG     NA       90.000    3.000
+ CLA      NB     MG     NA       90.000    3.000
+ CLA      MG     NC     C4C     126.000    3.000
+ CLA      MG     NC     C1C     126.000    3.000
+ CLA      C4C    NC     C1C     108.000    3.000
+ CLA      NC     C4C    C3C     108.000    3.000
+ CLA      NC     C4C    CHD     108.000    3.000
+ CLA      C3C    C4C    CHD     117.000    3.000
+ CLA      C4C    C3C    CAC     126.000    3.000
+ CLA      C4C    C3C    C2C     108.000    3.000
+ CLA      CAC    C3C    C2C     126.000    3.000
+ CLA      C3C    CAC    HAC1    109.470    3.000
+ CLA      C3C    CAC    HAC2    109.470    3.000
+ CLA      C3C    CAC    CBC     109.470    3.000
+ CLA      HAC1   CAC    HAC2    107.900    3.000
+ CLA      HAC1   CAC    CBC     109.470    3.000
+ CLA      HAC2   CAC    CBC     109.470    3.000
+ CLA      CAC    CBC    HBC3    109.470    3.000
+ CLA      CAC    CBC    HBC2    109.470    3.000
+ CLA      CAC    CBC    HBC1    109.470    3.000
+ CLA      HBC3   CBC    HBC2    109.470    3.000
+ CLA      HBC3   CBC    HBC1    109.470    3.000
+ CLA      HBC2   CBC    HBC1    109.470    3.000
+ CLA      C3C    C2C    CMC     126.000    3.000
+ CLA      C3C    C2C    C1C     108.000    3.000
+ CLA      CMC    C2C    C1C     126.000    3.000
+ CLA      C2C    CMC    HMC3    109.470    3.000
+ CLA      C2C    CMC    HMC2    109.470    3.000
+ CLA      C2C    CMC    HMC1    109.470    3.000
+ CLA      HMC3   CMC    HMC2    109.470    3.000
+ CLA      HMC3   CMC    HMC1    109.470    3.000
+ CLA      HMC2   CMC    HMC1    109.470    3.000
+ CLA      C2C    C1C    CHC     117.000    3.000
+ CLA      C2C    C1C    NC      108.000    3.000
+ CLA      CHC    C1C    NC      108.000    3.000
+ CLA      C1C    CHC    HHC     120.000    3.000
+ CLA      C1C    CHC    C4B     120.000    3.000
+ CLA      HHC    CHC    C4B     120.000    3.000
+ CLA      MG     NB     C4B     126.000    3.000
+ CLA      MG     NB     C1B     126.000    3.000
+ CLA      C4B    NB     C1B     108.000    3.000
+ CLA      NB     C4B    C3B     108.000    3.000
+ CLA      NB     C4B    CHC     108.000    3.000
+ CLA      C3B    C4B    CHC     117.000    3.000
+ CLA      C4B    C3B    CAB     117.000    3.000
+ CLA      C4B    C3B    C2B     108.000    3.000
+ CLA      CAB    C3B    C2B     117.000    3.000
+ CLA      C3B    CAB    HAB     120.000    3.000
+ CLA      C3B    CAB    CBB     120.000    3.000
+ CLA      HAB    CAB    CBB     120.000    3.000
+ CLA      CAB    CBB    HBB2    120.000    3.000
+ CLA      CAB    CBB    HBB1    120.000    3.000
+ CLA      HBB2   CBB    HBB1    120.000    3.000
+ CLA      C3B    C2B    CMB     126.000    3.000
+ CLA      C3B    C2B    C1B     108.000    3.000
+ CLA      CMB    C2B    C1B     126.000    3.000
+ CLA      C2B    CMB    HMB3    109.470    3.000
+ CLA      C2B    CMB    HMB2    109.470    3.000
+ CLA      C2B    CMB    HMB1    109.470    3.000
+ CLA      HMB3   CMB    HMB2    109.470    3.000
+ CLA      HMB3   CMB    HMB1    109.470    3.000
+ CLA      HMB2   CMB    HMB1    109.470    3.000
+ CLA      C2B    C1B    CHB     117.000    3.000
+ CLA      C2B    C1B    NB      108.000    3.000
+ CLA      CHB    C1B    NB      108.000    3.000
+ CLA      C1B    CHB    HHB     120.000    3.000
+ CLA      C1B    CHB    C4A     120.000    3.000
+ CLA      HHB    CHB    C4A     120.000    3.000
+ CLA      CBD    CHA    C1A     108.000    3.000
+ CLA      CBD    CHA    C4D     108.000    3.000
+ CLA      C1A    CHA    C4D     108.000    3.000
+ CLA      CHA    C1A    NA      120.000    3.000
+ CLA      CHA    C1A    C2A     120.000    3.000
+ CLA      NA     C1A    C2A     116.500    3.000
+ CLA      C1A    NA     C4A     120.000    3.000
+ CLA      C1A    NA     MG      120.000    3.000
+ CLA      C4A    NA     MG      120.000    3.000
+ CLA      NA     C4A    C3A     116.500    3.000
+ CLA      NA     C4A    CHB     116.500    3.000
+ CLA      C3A    C4A    CHB     120.000    3.000
+ CLA      C4A    C3A    H3A     108.810    3.000
+ CLA      C4A    C3A    CMA     109.470    3.000
+ CLA      C4A    C3A    C2A     109.470    3.000
+ CLA      H3A    C3A    CMA     108.340    3.000
+ CLA      H3A    C3A    C2A     108.340    3.000
+ CLA      CMA    C3A    C2A     111.000    3.000
+ CLA      C3A    CMA    HMA3    109.470    3.000
+ CLA      C3A    CMA    HMA2    109.470    3.000
+ CLA      C3A    CMA    HMA1    109.470    3.000
+ CLA      HMA3   CMA    HMA2    109.470    3.000
+ CLA      HMA3   CMA    HMA1    109.470    3.000
+ CLA      HMA2   CMA    HMA1    109.470    3.000
+ CLA      C3A    C2A    H2A     108.340    3.000
+ CLA      C3A    C2A    CAA     111.000    3.000
+ CLA      C3A    C2A    C1A     109.470    3.000
+ CLA      H2A    C2A    CAA     108.340    3.000
+ CLA      H2A    C2A    C1A     108.810    3.000
+ CLA      CAA    C2A    C1A     109.470    3.000
+ CLA      C2A    CAA    HAA1    109.470    3.000
+ CLA      C2A    CAA    HAA2    109.470    3.000
+ CLA      C2A    CAA    CBA     111.000    3.000
+ CLA      HAA1   CAA    HAA2    107.900    3.000
+ CLA      HAA1   CAA    CBA     109.470    3.000
+ CLA      HAA2   CAA    CBA     109.470    3.000
+ CLA      CAA    CBA    HBA1    109.470    3.000
+ CLA      CAA    CBA    HBA2    109.470    3.000
+ CLA      CAA    CBA    CGA     109.470    3.000
+ CLA      HBA1   CBA    HBA2    107.900    3.000
+ CLA      HBA1   CBA    CGA     109.470    3.000
+ CLA      HBA2   CBA    CGA     109.470    3.000
+ CLA      CBA    CGA    O1A     120.500    3.000
+ CLA      CBA    CGA    O2A     120.000    3.000
+ CLA      O1A    CGA    O2A     119.000    3.000
+ CLA      CGA    O2A    C1      120.000    3.000
+ CLA      O2A    C1     H11     109.470    3.000
+ CLA      O2A    C1     H12     109.470    3.000
+ CLA      O2A    C1     C2      109.500    3.000
+ CLA      H11    C1     H12     107.900    3.000
+ CLA      H11    C1     C2      109.470    3.000
+ CLA      H12    C1     C2      109.470    3.000
+ CLA      C1     C2     H2      120.000    3.000
+ CLA      C1     C2     C3      120.500    3.000
+ CLA      H2     C2     C3      120.000    3.000
+ CLA      C2     C3     C4      120.000    3.000
+ CLA      C2     C3     C5      120.000    3.000
+ CLA      C4     C3     C5      120.000    3.000
+ CLA      C3     C4     H43     109.470    3.000
+ CLA      C3     C4     H42     109.470    3.000
+ CLA      C3     C4     H41     109.470    3.000
+ CLA      H43    C4     H42     109.470    3.000
+ CLA      H43    C4     H41     109.470    3.000
+ CLA      H42    C4     H41     109.470    3.000
+ CLA      C3     C5     H51     109.470    3.000
+ CLA      C3     C5     H52     109.470    3.000
+ CLA      C3     C5     C6      109.470    3.000
+ CLA      H51    C5     H52     107.900    3.000
+ CLA      H51    C5     C6      109.470    3.000
+ CLA      H52    C5     C6      109.470    3.000
+ CLA      C5     C6     H61     109.470    3.000
+ CLA      C5     C6     H62     109.470    3.000
+ CLA      C5     C6     C7      111.000    3.000
+ CLA      H61    C6     H62     107.900    3.000
+ CLA      H61    C6     C7      109.470    3.000
+ CLA      H62    C6     C7      109.470    3.000
+ CLA      C6     C7     H71     109.470    3.000
+ CLA      C6     C7     H72     109.470    3.000
+ CLA      C6     C7     C8      111.000    3.000
+ CLA      H71    C7     H72     107.900    3.000
+ CLA      H71    C7     C8      109.470    3.000
+ CLA      H72    C7     C8      109.470    3.000
+ CLA      C7     C8     H8      108.340    3.000
+ CLA      C7     C8     C9      111.000    3.000
+ CLA      C7     C8     C10     109.470    3.000
+ CLA      H8     C8     C9      108.340    3.000
+ CLA      H8     C8     C10     108.340    3.000
+ CLA      C9     C8     C10     111.000    3.000
+ CLA      C8     C9     H93     109.470    3.000
+ CLA      C8     C9     H92     109.470    3.000
+ CLA      C8     C9     H91     109.470    3.000
+ CLA      H93    C9     H92     109.470    3.000
+ CLA      H93    C9     H91     109.470    3.000
+ CLA      H92    C9     H91     109.470    3.000
+ CLA      C8     C10    H101    109.470    3.000
+ CLA      C8     C10    H102    109.470    3.000
+ CLA      C8     C10    C11     111.000    3.000
+ CLA      H101   C10    H102    107.900    3.000
+ CLA      H101   C10    C11     109.470    3.000
+ CLA      H102   C10    C11     109.470    3.000
+ CLA      C10    C11    H111    109.470    3.000
+ CLA      C10    C11    H112    109.470    3.000
+ CLA      C10    C11    C12     111.000    3.000
+ CLA      H111   C11    H112    107.900    3.000
+ CLA      H111   C11    C12     109.470    3.000
+ CLA      H112   C11    C12     109.470    3.000
+ CLA      C11    C12    H121    109.470    3.000
+ CLA      C11    C12    H122    109.470    3.000
+ CLA      C11    C12    C13     111.000    3.000
+ CLA      H121   C12    H122    107.900    3.000
+ CLA      H121   C12    C13     109.470    3.000
+ CLA      H122   C12    C13     109.470    3.000
+ CLA      C12    C13    H13     108.340    3.000
+ CLA      C12    C13    C14     111.000    3.000
+ CLA      C12    C13    C15     109.470    3.000
+ CLA      H13    C13    C14     108.340    3.000
+ CLA      H13    C13    C15     108.340    3.000
+ CLA      C14    C13    C15     111.000    3.000
+ CLA      C13    C14    H143    109.470    3.000
+ CLA      C13    C14    H142    109.470    3.000
+ CLA      C13    C14    H141    109.470    3.000
+ CLA      H143   C14    H142    109.470    3.000
+ CLA      H143   C14    H141    109.470    3.000
+ CLA      H142   C14    H141    109.470    3.000
+ CLA      C13    C15    H151    109.470    3.000
+ CLA      C13    C15    H152    109.470    3.000
+ CLA      C13    C15    C16     111.000    3.000
+ CLA      H151   C15    H152    107.900    3.000
+ CLA      H151   C15    C16     109.470    3.000
+ CLA      H152   C15    C16     109.470    3.000
+ CLA      C15    C16    H161    109.470    3.000
+ CLA      C15    C16    H162    109.470    3.000
+ CLA      C15    C16    C17     111.000    3.000
+ CLA      H161   C16    H162    107.900    3.000
+ CLA      H161   C16    C17     109.470    3.000
+ CLA      H162   C16    C17     109.470    3.000
+ CLA      C16    C17    H171    109.470    3.000
+ CLA      C16    C17    H172    109.470    3.000
+ CLA      C16    C17    C18     111.000    3.000
+ CLA      H171   C17    H172    107.900    3.000
+ CLA      H171   C17    C18     109.470    3.000
+ CLA      H172   C17    C18     109.470    3.000
+ CLA      C17    C18    H18     108.340    3.000
+ CLA      C17    C18    C20     111.000    3.000
+ CLA      C17    C18    C19     111.000    3.000
+ CLA      H18    C18    C20     108.340    3.000
+ CLA      H18    C18    C19     108.340    3.000
+ CLA      C20    C18    C19     111.000    3.000
+ CLA      C18    C20    H203    109.470    3.000
+ CLA      C18    C20    H202    109.470    3.000
+ CLA      C18    C20    H201    109.470    3.000
+ CLA      H203   C20    H202    109.470    3.000
+ CLA      H203   C20    H201    109.470    3.000
+ CLA      H202   C20    H201    109.470    3.000
+ CLA      C18    C19    H193    109.470    3.000
+ CLA      C18    C19    H192    109.470    3.000
+ CLA      C18    C19    H191    109.470    3.000
+ CLA      H193   C19    H192    109.470    3.000
+ CLA      H193   C19    H191    109.470    3.000
+ CLA      H192   C19    H191    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CLA      var_1    O1D    CGD    O2D    CED        5.404   20.000   1
+ CLA      var_2    CGD    O2D    CED    HED1    -179.970   20.000   1
+ CLA      var_3    O1D    CGD    CBD    CHA       11.365   20.000   3
+ CLA      CONST_1  CGD    CBD    CAD    C3D        0.000    0.000   0
+ CLA      CONST_2  CBD    CAD    C3D    C4D       -9.633    0.000   0
+ CLA      CONST_3  CAD    C3D    C2D    C1D     -176.431    0.000   0
+ CLA      var_4    C3D    C2D    CMD    HMD1       0.346   20.000   1
+ CLA      CONST_4  C3D    C2D    C1D    CHD      180.000    0.000   0
+ CLA      var_5    C2D    C1D    CHD    C4C      174.837   20.000   1
+ CLA      var_6    C1D    CHD    C4C    NC        -0.611   20.000   1
+ CLA      CONST_5  CAD    C3D    C4D    ND      -179.304    0.000   0
+ CLA      CONST_6  C3D    C4D    ND     MG         0.000    0.000   0
+ CLA      CONST_7  C4D    ND     C1D    C2D        3.744    0.000   0
+ CLA      var_7    C4D    ND     MG     NB       100.727   20.000   1
+ CLA      var_8    ND     MG     NA     C1A      -12.812   20.000   1
+ CLA      var_9    ND     MG     NC     C4C       12.615   20.000   1
+ CLA      CONST_8  MG     NC     C1C    C2C     -170.675    0.000   0
+ CLA      CONST_9  MG     NC     C4C    C3C      172.599    0.000   0
+ CLA      CONST_10 NC     C4C    C3C    C2C        0.000    0.000   0
+ CLA      var_10   C4C    C3C    CAC    CBC      102.317   20.000   2
+ CLA      var_11   C3C    CAC    CBC    HBC1    -179.932   20.000   3
+ CLA      CONST_11 C4C    C3C    C2C    C1C        0.000    0.000   0
+ CLA      var_12   C3C    C2C    CMC    HMC1       1.690   20.000   1
+ CLA      CONST_12 C3C    C2C    C1C    CHC      180.000    0.000   0
+ CLA      var_13   C2C    C1C    CHC    C4B     -179.283   20.000   1
+ CLA      var_14   C1C    CHC    C4B    NB         1.634   20.000   1
+ CLA      var_15   ND     MG     NB     C4B       94.164   20.000   1
+ CLA      CONST_13 MG     NB     C1B    C2B     -167.410    0.000   0
+ CLA      CONST_14 MG     NB     C4B    C3B      166.865    0.000   0
+ CLA      CONST_15 NB     C4B    C3B    C2B        0.000    0.000   0
+ CLA      var_16   C4B    C3B    CAB    CBB        4.619   20.000   1
+ CLA      CONST_16 C3B    CAB    CBB    HBB1       0.001    0.000   0
+ CLA      CONST_17 C4B    C3B    C2B    C1B        0.000    0.000   0
+ CLA      var_17   C3B    C2B    CMB    HMB1      -1.369   20.000   1
+ CLA      CONST_18 C3B    C2B    C1B    CHB      180.000    0.000   0
+ CLA      var_18   C2B    C1B    CHB    C4A      176.446   20.000   1
+ CLA      var_19   C1B    CHB    C4A    NA        -1.355   20.000   1
+ CLA      var_20   CGD    CBD    CHA    C1A       54.851   20.000   1
+ CLA      CONST_19 CBD    CHA    C4D    C3D        4.461    0.000   0
+ CLA      var_21   CBD    CHA    C1A    NA       178.670   20.000   1
+ CLA      var_22   CHA    C1A    C2A    C3A     -177.426   20.000   3
+ CLA      CONST_20 CHA    C1A    NA     C4A      180.000    0.000   0
+ CLA      CONST_21 C1A    NA     C4A    C3A        0.000    0.000   0
+ CLA      var_23   NA     C4A    C3A    C2A        8.644   20.000   3
+ CLA      var_24   C4A    C3A    CMA    HMA1     -65.476   20.000   3
+ CLA      var_25   C4A    C3A    C2A    CAA      113.720   20.000   3
+ CLA      var_26   C3A    C2A    CAA    CBA       69.873   20.000   3
+ CLA      var_27   C2A    CAA    CBA    CGA       55.606   20.000   3
+ CLA      var_28   CAA    CBA    CGA    O2A     -120.523   20.000   3
+ CLA      var_29   CBA    CGA    O2A    C1       166.927   20.000   1
+ CLA      var_30   CGA    O2A    C1     C2       -80.006   20.000   1
+ CLA      var_31   O2A    C1     C2     C3      -101.781   20.000   1
+ CLA      CONST_22 C1     C2     C3     C5      -177.177    0.000   0
+ CLA      var_32   C2     C3     C4     H41     -179.929   20.000   1
+ CLA      var_33   C2     C3     C5     C6        75.542   20.000   3
+ CLA      var_34   C3     C5     C6     C7        97.580   20.000   3
+ CLA      var_35   C5     C6     C7     C8      -178.374   20.000   3
+ CLA      var_36   C6     C7     C8     C10       70.135   20.000   3
+ CLA      var_37   C7     C8     C9     H91      179.957   20.000   3
+ CLA      var_38   C7     C8     C10    C11       56.328   20.000   3
+ CLA      var_39   C8     C10    C11    C12      176.669   20.000   3
+ CLA      var_40   C10    C11    C12    C13      156.131   20.000   3
+ CLA      var_41   C11    C12    C13    C15      -67.452   20.000   3
+ CLA      var_42   C12    C13    C14    H141     179.977   20.000   3
+ CLA      var_43   C12    C13    C15    C16      -41.015   20.000   3
+ CLA      var_44   C13    C15    C16    C17      -71.688   20.000   3
+ CLA      var_45   C15    C16    C17    C18     -179.126   20.000   3
+ CLA      var_46   C16    C17    C18    C19      176.038   20.000   3
+ CLA      var_47   C17    C18    C20    H201    -179.934   20.000   3
+ CLA      var_48   C17    C18    C19    H191     179.982   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CLA      chir_01  C2A    C1A    C3A    CAA       positiv
+ CLA      chir_02  C3A    C2A    C4A    CMA       negativ
+ CLA      chir_03  ND     MG     C1D    C4D       positiv
+ CLA      chir_04  CBD    CHA    CAD    CGD       positiv
+ CLA      chir_05  C8     C7     C9     C10       negativ
+ CLA      chir_06  C13    C12    C14    C15       positiv
+ CLA      chir_07  C18    C17    C19    C20       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CLA      plan-1    CHA       0.020
+ CLA      plan-1    C1A       0.020
+ CLA      plan-1    C4D       0.020
+ CLA      plan-1    CBD       0.020
+ CLA      plan-1    CAD       0.020
+ CLA      plan-1    ND        0.020
+ CLA      plan-1    C3D       0.020
+ CLA      plan-1    OBD       0.020
+ CLA      plan-1    C1D       0.020
+ CLA      plan-1    C2D       0.020
+ CLA      plan-1    CHD       0.020
+ CLA      plan-1    CMD       0.020
+ CLA      plan-1    HHD       0.020
+ CLA      plan-2    CHB       0.020
+ CLA      plan-2    C4A       0.020
+ CLA      plan-2    C1B       0.020
+ CLA      plan-2    HHB       0.020
+ CLA      plan-3    CHC       0.020
+ CLA      plan-3    C4B       0.020
+ CLA      plan-3    C1C       0.020
+ CLA      plan-3    HHC       0.020
+ CLA      plan-4    CHD       0.020
+ CLA      plan-4    C4C       0.020
+ CLA      plan-4    C1D       0.020
+ CLA      plan-4    HHD       0.020
+ CLA      plan-5    NA        0.020
+ CLA      plan-5    MG        0.020
+ CLA      plan-5    C1A       0.020
+ CLA      plan-5    C4A       0.020
+ CLA      plan-6    C1A       0.020
+ CLA      plan-6    CHA       0.020
+ CLA      plan-6    NA        0.020
+ CLA      plan-6    C2A       0.020
+ CLA      plan-7    C4A       0.020
+ CLA      plan-7    CHB       0.020
+ CLA      plan-7    NA        0.020
+ CLA      plan-7    C3A       0.020
+ CLA      plan-7    HHB       0.020
+ CLA      plan-8    CGA       0.020
+ CLA      plan-8    CBA       0.020
+ CLA      plan-8    O1A       0.020
+ CLA      plan-8    O2A       0.020
+ CLA      plan-9    NB        0.020
+ CLA      plan-9    MG        0.020
+ CLA      plan-9    C1B       0.020
+ CLA      plan-9    C4B       0.020
+ CLA      plan-9    C2B       0.020
+ CLA      plan-9    C3B       0.020
+ CLA      plan-9    CHB       0.020
+ CLA      plan-9    CMB       0.020
+ CLA      plan-9    CAB       0.020
+ CLA      plan-9    CHC       0.020
+ CLA      plan-9    HHB       0.020
+ CLA      plan-9    HAB       0.020
+ CLA      plan-9    HHC       0.020
+ CLA      plan-10   CAB       0.020
+ CLA      plan-10   C3B       0.020
+ CLA      plan-10   CBB       0.020
+ CLA      plan-10   HAB       0.020
+ CLA      plan-10   HBB1      0.020
+ CLA      plan-10   HBB2      0.020
+ CLA      plan-11   NC        0.020
+ CLA      plan-11   MG        0.020
+ CLA      plan-11   C1C       0.020
+ CLA      plan-11   C4C       0.020
+ CLA      plan-11   C2C       0.020
+ CLA      plan-11   C3C       0.020
+ CLA      plan-11   CHC       0.020
+ CLA      plan-11   CMC       0.020
+ CLA      plan-11   CAC       0.020
+ CLA      plan-11   CHD       0.020
+ CLA      plan-11   HHC       0.020
+ CLA      plan-11   HHD       0.020
+ CLA      plan-12   CGD       0.020
+ CLA      plan-12   CBD       0.020
+ CLA      plan-12   O1D       0.020
+ CLA      plan-12   O2D       0.020
+ CLA      plan-13   C2        0.020
+ CLA      plan-13   C1        0.020
+ CLA      plan-13   C3        0.020
+ CLA      plan-13   H2        0.020
+ CLA      plan-13   C4        0.020
+ CLA      plan-13   C5        0.020
+# ------------------------------------------------------

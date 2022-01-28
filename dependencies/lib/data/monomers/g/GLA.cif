@@ -1,0 +1,206 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GLA      GLA 'ALPHA D-GALACTOSE                   ' pyranose           24  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GLA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GLA           C1     C    CH1       0.000      0.000    0.000    0.000
+ GLA           H1     H    H         0.000      0.921   -0.595   -0.076
+ GLA           O1     O    OH1       0.000      0.338    1.379    0.162
+ GLA           HO1    H    H         0.000      0.864    1.489    0.965
+ GLA           O5     O    O2        0.000     -0.755   -0.438    1.126
+ GLA           C5     C    CH1       0.000     -1.842    0.468    1.297
+ GLA           H5     H    H         0.000     -1.457    1.497    1.333
+ GLA           C6     C    CH2       0.000     -2.569    0.151    2.605
+ GLA           H61    H    H         0.000     -2.952   -0.871    2.569
+ GLA           H62    H    H         0.000     -3.401    0.846    2.736
+ GLA           O6     O    OH1       0.000     -1.660    0.282    3.699
+ GLA           HO6    H    H         0.000     -2.157    0.074    4.503
+ GLA           C4     C    CH1       0.000     -2.818    0.332    0.126
+ GLA           H4     H    H         0.000     -3.664    1.018    0.272
+ GLA           O4     O    OH1       0.000     -3.298   -1.011    0.054
+ GLA           HO4    H    H         0.000     -3.910   -1.094   -0.689
+ GLA           C3     C    CH1       0.000     -2.089    0.686   -1.174
+ GLA           H3     H    H         0.000     -1.812    1.750   -1.165
+ GLA           O3     O    OH1       0.000     -2.940    0.420   -2.291
+ GLA           HO3    H    H         0.000     -2.473    0.633   -3.110
+ GLA           C2     C    CH1       0.000     -0.825   -0.174   -1.277
+ GLA           H2     H    H         0.000     -1.107   -1.230   -1.392
+ GLA           O2     O    OH1       0.000     -0.054    0.241   -2.405
+ GLA           HO2    H    H         0.000      0.746   -0.298   -2.464
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GLA      C1     n/a    O5     START
+ GLA      H1     C1     .      .
+ GLA      O1     C1     HO1    .
+ GLA      HO1    O1     .      .
+ GLA      O5     C1     .      END
+ GLA      C5     O5     C4     .
+ GLA      H5     C5     .      .
+ GLA      C6     C5     O6     .
+ GLA      H61    C6     .      .
+ GLA      H62    C6     .      .
+ GLA      O6     C6     .      .
+ GLA      HO6    O6     .      .
+ GLA      C4     C5     C3     .
+ GLA      H4     C4     .      .
+ GLA      O4     C4     HO4    .
+ GLA      HO4    O4     .      .
+ GLA      C3     C4     C2     .
+ GLA      H3     C3     .      .
+ GLA      O3     C3     HO3    .
+ GLA      HO3    O3     .      .
+ GLA      C2     C3     O2     .
+ GLA      H2     C2     .      .
+ GLA      O2     C2     HO2    .
+ GLA      HO2    O2     .      .
+ GLA      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GLA       C1        C2        single    1.524     0.020     1.524     0.020     
+GLA       O1        C1        single    1.432     0.020     1.432     0.020     
+GLA       O5        C1        single    1.426     0.020     1.426     0.020     
+GLA       H1        C1        single    1.089     0.010     0.989     0.005     
+GLA       C2        C3        single    1.524     0.020     1.524     0.020     
+GLA       O2        C2        single    1.432     0.020     1.432     0.020     
+GLA       H2        C2        single    1.089     0.010     0.989     0.005     
+GLA       C3        C4        single    1.524     0.020     1.524     0.020     
+GLA       O3        C3        single    1.432     0.020     1.432     0.020     
+GLA       H3        C3        single    1.089     0.010     0.989     0.005     
+GLA       C4        C5        single    1.524     0.020     1.524     0.020     
+GLA       O4        C4        single    1.432     0.020     1.432     0.020     
+GLA       H4        C4        single    1.089     0.010     0.989     0.005     
+GLA       C6        C5        single    1.524     0.020     1.524     0.020     
+GLA       C5        O5        single    1.426     0.020     1.426     0.020     
+GLA       H5        C5        single    1.089     0.010     0.989     0.005     
+GLA       O6        C6        single    1.432     0.020     1.432     0.020     
+GLA       H61       C6        single    1.089     0.010     0.989     0.005     
+GLA       H62       C6        single    1.089     0.010     0.989     0.005     
+GLA       HO1       O1        single    0.970     0.012     0.839     0.014     
+GLA       HO2       O2        single    0.970     0.012     0.839     0.014     
+GLA       HO3       O3        single    0.970     0.012     0.839     0.014     
+GLA       HO4       O4        single    0.970     0.012     0.839     0.014     
+GLA       HO6       O6        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GLA      H1     C1     O1      109.470    3.000
+ GLA      H1     C1     O5      109.470    3.000
+ GLA      O1     C1     O5      109.470    3.000
+ GLA      H1     C1     C2      108.340    3.000
+ GLA      O1     C1     C2      109.470    3.000
+ GLA      O5     C1     C2      109.470    3.000
+ GLA      C1     O1     HO1     109.470    3.000
+ GLA      C1     O5     C5      111.800    3.000
+ GLA      O5     C5     H5      109.470    3.000
+ GLA      O5     C5     C6      109.470    3.000
+ GLA      O5     C5     C4      109.470    3.000
+ GLA      H5     C5     C6      108.340    3.000
+ GLA      H5     C5     C4      108.340    3.000
+ GLA      C6     C5     C4      111.000    3.000
+ GLA      C5     C6     H61     109.470    3.000
+ GLA      C5     C6     H62     109.470    3.000
+ GLA      C5     C6     O6      109.470    3.000
+ GLA      H61    C6     H62     107.900    3.000
+ GLA      H61    C6     O6      109.470    3.000
+ GLA      H62    C6     O6      109.470    3.000
+ GLA      C6     O6     HO6     109.470    3.000
+ GLA      C5     C4     H4      108.340    3.000
+ GLA      C5     C4     O4      109.470    3.000
+ GLA      C5     C4     C3      111.000    3.000
+ GLA      H4     C4     O4      109.470    3.000
+ GLA      H4     C4     C3      108.340    3.000
+ GLA      O4     C4     C3      109.470    3.000
+ GLA      C4     O4     HO4     109.470    3.000
+ GLA      C4     C3     H3      108.340    3.000
+ GLA      C4     C3     O3      109.470    3.000
+ GLA      C4     C3     C2      111.000    3.000
+ GLA      H3     C3     O3      109.470    3.000
+ GLA      H3     C3     C2      108.340    3.000
+ GLA      O3     C3     C2      109.470    3.000
+ GLA      C3     O3     HO3     109.470    3.000
+ GLA      C3     C2     H2      108.340    3.000
+ GLA      C3     C2     O2      109.470    3.000
+ GLA      C3     C2     C1      111.000    3.000
+ GLA      H2     C2     O2      109.470    3.000
+ GLA      H2     C2     C1      108.340    3.000
+ GLA      O2     C2     C1      109.470    3.000
+ GLA      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GLA      var_1    O5     C1     O1     HO1       59.999   20.000   1
+ GLA      var_2    C1     O5     C5     C4        60.000   20.000   1
+ GLA      var_3    O5     C5     C6     O6        59.887   20.000   3
+ GLA      var_4    O5     C5     C4     C3       -60.000   20.000   3
+ GLA      var_5    C5     C4     O4     HO4     -179.659   20.000   1
+ GLA      var_6    C5     C4     C3     C2        60.000   20.000   3
+ GLA      var_7    C4     C3     O3     HO3     -179.187   20.000   1
+ GLA      var_8    C4     C3     C2     O2       180.000   20.000   3
+ GLA      var_9    C3     C2     C1     O5        60.000   20.000   3
+ GLA      var_10   C3     C2     O2     HO2      179.564   20.000   1
+ GLA      var_1    C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GLA      chir_01  C1     C2     O1     O5        negativ
+ GLA      chir_02  C2     C1     C3     O2        negativ
+ GLA      chir_03  C3     C2     C4     O3        positiv
+ GLA      chir_04  C4     C3     C5     O4        positiv
+ GLA      chir_05  C5     C4     C6     O5        negativ
+# ------------------------------------------------------

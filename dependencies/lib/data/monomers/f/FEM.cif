@@ -1,0 +1,398 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FEM      FEM 'N-(2-FERROCENYLETHYL)MALEIMIDE      ' non-polymer        37  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FEM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FEM           O19    O    O         0.000     34.699   20.757  100.004
+ FEM           C17    C    C         0.000     34.458   21.339   98.948
+ FEM           C16    C    CH2       0.000     34.005   22.769   98.866
+ FEM           H161   H    H         0.000     34.810   23.476   99.077
+ FEM           H162   H    H         0.000     33.158   22.978   99.523
+ FEM           C15    C    CH2       0.000     33.560   22.914   97.380
+ FEM           H151   H    H         0.000     33.985   23.796   96.895
+ FEM           H152   H    H         0.000     32.474   22.923   97.262
+ FEM           C14    C    C         0.000     34.125   21.670   96.747
+ FEM           O18    O    O         0.000     34.152   21.477   95.549
+ FEM           N13    N    N         0.000     34.551   20.830   97.698
+ FEM           C12    C    CH2       0.000     35.077   19.495   97.431
+ FEM           H121   H    H         0.000     34.754   19.166   96.441
+ FEM           H122   H    H         0.000     34.705   18.798   98.184
+ FEM           C11    C    CH2       0.000     36.620   19.537   97.484
+ FEM           H111   H    H         0.000     36.932   20.017   98.414
+ FEM           H112   H    H         0.000     36.990   20.116   96.635
+ FEM           C1     C    CT        0.000     37.190   18.121   97.424
+ FEM           C5     C    CH1       0.000     37.499   17.312   98.525
+ FEM           H5     H    H         0.000     37.408   17.597   99.582
+ FEM           C4     C    CH1       0.000     37.906   16.069   98.043
+ FEM           H4     H    H         0.000     38.197   15.204   98.655
+ FEM           C3     C    CH1       0.000     37.851   16.106   96.644
+ FEM           H3     H    H         0.000     38.091   15.275   95.966
+ FEM           C2     C    CH1       0.000     37.408   17.373   96.264
+ FEM           H2     H    H         0.000     37.236   17.715   95.234
+ FEM           FE     FE   FE        0.000     39.188   17.553   97.332
+ FEM           C10    C    CH1       0.000     40.890   17.788   96.150
+ FEM           H10    H    H         0.000     40.988   17.499   95.094
+ FEM           C6     C    CH1       0.000     41.193   16.985   97.253
+ FEM           H6     H    H         0.000     41.571   15.954   97.216
+ FEM           C9     C    CH1       0.000     40.480   19.036   96.625
+ FEM           H9     H    H         0.000     40.196   19.901   96.009
+ FEM           C8     C    CH1       0.000     40.529   19.002   98.020
+ FEM           H8     H    H         0.000     40.288   19.836   98.694
+ FEM           C7     C    CH1       0.000     40.970   17.735   98.408
+ FEM           H7     H    H         0.000     41.139   17.398   99.440
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FEM      O19    n/a    C17    START
+ FEM      C17    O19    N13    .
+ FEM      C16    C17    C15    .
+ FEM      H161   C16    .      .
+ FEM      H162   C16    .      .
+ FEM      C15    C16    C14    .
+ FEM      H151   C15    .      .
+ FEM      H152   C15    .      .
+ FEM      C14    C15    O18    .
+ FEM      O18    C14    .      .
+ FEM      N13    C17    C12    .
+ FEM      C12    N13    C11    .
+ FEM      H121   C12    .      .
+ FEM      H122   C12    .      .
+ FEM      C11    C12    C1     .
+ FEM      H111   C11    .      .
+ FEM      H112   C11    .      .
+ FEM      C1     C11    C5     .
+ FEM      C5     C1     FE     .
+ FEM      H5     C5     .      .
+ FEM      C4     C5     C3     .
+ FEM      H4     C4     .      .
+ FEM      C3     C4     C2     .
+ FEM      H3     C3     .      .
+ FEM      C2     C3     H2     .
+ FEM      H2     C2     .      .
+ FEM      FE     C5     C10    .
+ FEM      C10    FE     C9     .
+ FEM      H10    C10    .      .
+ FEM      C6     C10    H6     .
+ FEM      H6     C6     .      .
+ FEM      C9     C10    C8     .
+ FEM      H9     C9     .      .
+ FEM      C8     C9     C7     .
+ FEM      H8     C8     .      .
+ FEM      C7     C8     H7     .
+ FEM      H7     C7     .      END
+ FEM      FE     C1     .    ADD
+ FEM      FE     C2     .    ADD
+ FEM      FE     C3     .    ADD
+ FEM      FE     C4     .    ADD
+ FEM      FE     C6     .    ADD
+ FEM      FE     C7     .    ADD
+ FEM      FE     C8     .    ADD
+ FEM      FE     C9     .    ADD
+ FEM      C1     C2     .    ADD
+ FEM      C6     C7     .    ADD
+ FEM      N13    C14    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FEM       FE        C1        single    1.997     0.020     1.997     0.020     
+FEM       FE        C2        single    2.000     0.020     2.000     0.020     
+FEM       FE        C3        single    2.000     0.020     2.000     0.020     
+FEM       FE        C4        single    2.000     0.020     2.000     0.020     
+FEM       FE        C5        single    2.000     0.020     2.000     0.020     
+FEM       FE        C6        single    2.000     0.020     2.000     0.020     
+FEM       FE        C7        single    2.000     0.020     2.000     0.020     
+FEM       FE        C8        single    2.000     0.020     2.000     0.020     
+FEM       FE        C9        single    2.000     0.020     2.000     0.020     
+FEM       C10       FE        single    2.000     0.020     2.000     0.020     
+FEM       C1        C2        double    1.524     0.020     1.524     0.020     
+FEM       C5        C1        single    1.524     0.020     1.524     0.020     
+FEM       C1        C11       single    1.524     0.020     1.524     0.020     
+FEM       C2        C3        single    1.524     0.020     1.524     0.020     
+FEM       H2        C2        single    1.089     0.010     0.989     0.005     
+FEM       C3        C4        single    1.524     0.020     1.524     0.020     
+FEM       H3        C3        single    1.089     0.010     0.989     0.005     
+FEM       C4        C5        double    1.524     0.020     1.524     0.020     
+FEM       H4        C4        single    1.089     0.010     0.989     0.005     
+FEM       H5        C5        single    1.089     0.010     0.989     0.005     
+FEM       C6        C7        double    1.524     0.020     1.524     0.020     
+FEM       C6        C10       single    1.524     0.020     1.524     0.020     
+FEM       H6        C6        single    1.089     0.010     0.989     0.005     
+FEM       C7        C8        single    1.524     0.020     1.524     0.020     
+FEM       H7        C7        single    1.089     0.010     0.989     0.005     
+FEM       C8        C9        double    1.524     0.020     1.524     0.020     
+FEM       H8        C8        single    1.089     0.010     0.989     0.005     
+FEM       C9        C10       single    1.524     0.020     1.524     0.020     
+FEM       H9        C9        single    1.089     0.010     0.989     0.005     
+FEM       H10       C10       single    1.089     0.010     0.989     0.005     
+FEM       C11       C12       single    1.524     0.020     1.524     0.020     
+FEM       H111      C11       single    1.089     0.010     0.989     0.005     
+FEM       H112      C11       single    1.089     0.010     0.989     0.005     
+FEM       C12       N13       single    1.455     0.020     1.455     0.020     
+FEM       H121      C12       single    1.089     0.010     0.989     0.005     
+FEM       H122      C12       single    1.089     0.010     0.989     0.005     
+FEM       N13       C14       single    1.330     0.020     1.330     0.020     
+FEM       N13       C17       single    1.330     0.020     1.330     0.020     
+FEM       C14       C15       single    1.510     0.020     1.510     0.020     
+FEM       O18       C14       double    1.220     0.020     1.220     0.020     
+FEM       C15       C16       single    1.524     0.020     1.524     0.020     
+FEM       H151      C15       single    1.089     0.010     0.989     0.005     
+FEM       H152      C15       single    1.089     0.010     0.989     0.005     
+FEM       C16       C17       single    1.510     0.020     1.510     0.020     
+FEM       H161      C16       single    1.089     0.010     0.989     0.005     
+FEM       H162      C16       single    1.089     0.010     0.989     0.005     
+FEM       C17       O19       double    1.220     0.020     1.220     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FEM      O19    C17    C16     120.500    3.000
+ FEM      O19    C17    N13     123.000    3.000
+ FEM      C16    C17    N13     116.500    3.000
+ FEM      C17    C16    H161    109.470    3.000
+ FEM      C17    C16    H162    109.470    3.000
+ FEM      C17    C16    C15     109.470    3.000
+ FEM      H161   C16    H162    107.900    3.000
+ FEM      H161   C16    C15     109.470    3.000
+ FEM      H162   C16    C15     109.470    3.000
+ FEM      C16    C15    H151    109.470    3.000
+ FEM      C16    C15    H152    109.470    3.000
+ FEM      C16    C15    C14     109.470    3.000
+ FEM      H151   C15    H152    107.900    3.000
+ FEM      H151   C15    C14     109.470    3.000
+ FEM      H152   C15    C14     109.470    3.000
+ FEM      C15    C14    O18     120.500    3.000
+ FEM      C15    C14    N13     116.500    3.000
+ FEM      O18    C14    N13     123.000    3.000
+ FEM      C17    N13    C12     127.000    3.000
+ FEM      C17    N13    C14     120.000    3.000
+ FEM      C12    N13    C14     127.000    3.000
+ FEM      N13    C12    H121    109.470    3.000
+ FEM      N13    C12    H122    109.470    3.000
+ FEM      N13    C12    C11     105.000    3.000
+ FEM      H121   C12    H122    107.900    3.000
+ FEM      H121   C12    C11     109.470    3.000
+ FEM      H122   C12    C11     109.470    3.000
+ FEM      C12    C11    H111    109.470    3.000
+ FEM      C12    C11    H112    109.470    3.000
+ FEM      C12    C11    C1      111.000    3.000
+ FEM      H111   C11    H112    107.900    3.000
+ FEM      H111   C11    C1      109.470    3.000
+ FEM      H112   C11    C1      109.470    3.000
+ FEM      C11    C1     C5      111.000    3.000
+ FEM      C11    C1     FE      109.500    3.000
+ FEM      C11    C1     C2      111.000    3.000
+ FEM      FE     C1     C2       67.691    3.000
+ FEM      C5     C1     FE       67.691    3.000
+ FEM      C5     C1     C2      111.000    3.000
+ FEM      C1     C5     H5      108.340    3.000
+ FEM      C1     C5     C4      111.000    3.000
+ FEM      C1     C5     FE       67.482    3.000
+ FEM      H5     C5     C4      108.340    3.000
+ FEM      H5     C5     FE      109.500    3.000
+ FEM      C4     C5     FE       67.604    3.000
+ FEM      C5     C4     H4      108.340    3.000
+ FEM      C5     C4     C3      111.000    3.000
+ FEM      C5     C4     FE       67.604    3.000
+ FEM      H4     C4     C3      108.340    3.000
+ FEM      H4     C4     FE      109.500    3.000
+ FEM      C3     C4     FE       67.604    3.000
+ FEM      C4     C3     H3      108.340    3.000
+ FEM      C4     C3     C2      111.000    3.000
+ FEM      C4     C3     FE       67.604    3.000
+ FEM      H3     C3     C2      108.340    3.000
+ FEM      H3     C3     FE      109.500    3.000
+ FEM      C2     C3     FE       67.604    3.000
+ FEM      C3     C2     H2      108.340    3.000
+ FEM      C3     C2     FE       67.604    3.000
+ FEM      C3     C2     C1      111.000    3.000
+ FEM      FE     C2     C1       67.482    3.000
+ FEM      H2     C2     FE      109.500    3.000
+ FEM      H2     C2     C1      108.340    3.000
+ FEM      C5     FE     C10     180.000    3.000
+ FEM      C5     FE     C1       44.827    3.000
+ FEM      C5     FE     C2       90.000    3.000
+ FEM      C5     FE     C3       90.000    3.000
+ FEM      C5     FE     C4       44.791    3.000
+ FEM      C5     FE     C6       90.000    3.000
+ FEM      C5     FE     C7       90.000    3.000
+ FEM      C5     FE     C8       90.000    3.000
+ FEM      C5     FE     C9       90.000    3.000
+ FEM      C1     FE     C2       44.827    3.000
+ FEM      C1     FE     C3       90.000    3.000
+ FEM      C2     FE     C3       44.791    3.000
+ FEM      C1     FE     C4       90.000    3.000
+ FEM      C2     FE     C4       90.000    3.000
+ FEM      C3     FE     C4       44.791    3.000
+ FEM      C1     FE     C6      180.000    3.000
+ FEM      C2     FE     C6       90.000    3.000
+ FEM      C3     FE     C6       90.000    3.000
+ FEM      C4     FE     C6       90.000    3.000
+ FEM      C1     FE     C7       90.000    3.000
+ FEM      C2     FE     C7      180.000    3.000
+ FEM      C3     FE     C7       90.000    3.000
+ FEM      C4     FE     C7       90.000    3.000
+ FEM      C6     FE     C7       44.791    3.000
+ FEM      C1     FE     C8       90.000    3.000
+ FEM      C2     FE     C8       90.000    3.000
+ FEM      C3     FE     C8      180.000    3.000
+ FEM      C4     FE     C8       90.000    3.000
+ FEM      C6     FE     C8       90.000    3.000
+ FEM      C7     FE     C8       44.791    3.000
+ FEM      C1     FE     C9       90.000    3.000
+ FEM      C2     FE     C9       90.000    3.000
+ FEM      C3     FE     C9       90.000    3.000
+ FEM      C4     FE     C9      180.000    3.000
+ FEM      C6     FE     C9       90.000    3.000
+ FEM      C7     FE     C9       90.000    3.000
+ FEM      C8     FE     C9       44.791    3.000
+ FEM      C10    FE     C1       90.000    3.000
+ FEM      C10    FE     C2       90.000    3.000
+ FEM      C10    FE     C3       90.000    3.000
+ FEM      C10    FE     C4       90.000    3.000
+ FEM      C10    FE     C6       44.791    3.000
+ FEM      C10    FE     C7       90.000    3.000
+ FEM      C10    FE     C8       90.000    3.000
+ FEM      C10    FE     C9       44.791    3.000
+ FEM      FE     C10    H10     109.500    3.000
+ FEM      FE     C10    C6       67.604    3.000
+ FEM      FE     C10    C9       67.604    3.000
+ FEM      H10    C10    C6      108.340    3.000
+ FEM      H10    C10    C9      108.340    3.000
+ FEM      C6     C10    C9      111.000    3.000
+ FEM      C10    C6     H6      108.340    3.000
+ FEM      C10    C6     FE       67.604    3.000
+ FEM      C10    C6     C7      111.000    3.000
+ FEM      FE     C6     C7       67.604    3.000
+ FEM      H6     C6     FE      109.500    3.000
+ FEM      H6     C6     C7      108.340    3.000
+ FEM      C10    C9     H9      108.340    3.000
+ FEM      C10    C9     C8      111.000    3.000
+ FEM      C10    C9     FE       67.604    3.000
+ FEM      H9     C9     C8      108.340    3.000
+ FEM      H9     C9     FE      109.500    3.000
+ FEM      C8     C9     FE       67.604    3.000
+ FEM      C9     C8     H8      108.340    3.000
+ FEM      C9     C8     C7      111.000    3.000
+ FEM      C9     C8     FE       67.604    3.000
+ FEM      H8     C8     C7      108.340    3.000
+ FEM      H8     C8     FE      109.500    3.000
+ FEM      C7     C8     FE       67.604    3.000
+ FEM      C8     C7     H7      108.340    3.000
+ FEM      C8     C7     FE       67.604    3.000
+ FEM      C8     C7     C6      111.000    3.000
+ FEM      FE     C7     C6       67.604    3.000
+ FEM      H7     C7     FE      109.500    3.000
+ FEM      H7     C7     C6      108.340    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FEM      var_1    O19    C17    C16    C15     -168.509   20.000   3
+ FEM      var_2    C17    C16    C15    C14      -13.164   20.000   3
+ FEM      var_3    C16    C15    C14    O18     -170.015   20.000   3
+ FEM      CONST_1  O19    C17    N13    C12        0.000    0.000   0
+ FEM      CONST_2  C17    N13    C14    C15        0.000    0.000   0
+ FEM      var_4    C17    N13    C12    C11      -79.125   20.000   1
+ FEM      var_5    N13    C12    C11    C1       171.252   20.000   3
+ FEM      var_6    C12    C11    C1     C5       -92.149   20.000   1
+ FEM      var_7    C11    C1     C2     C3      -176.045   20.000   1
+ FEM      var_8    C11    C1     C5     FE      -123.128   20.000   1
+ FEM      var_9    C1     C5     C4     C3         0.048   20.000   3
+ FEM      var_10   C5     C4     C3     C2        -0.070   20.000   3
+ FEM      var_11   C4     C3     C2     FE        60.579   20.000   3
+ FEM      var_12   C1     C5     FE     C10      166.207   20.000   1
+ FEM      var_13   C5     FE     C1     C11      120.826   20.000   1
+ FEM      var_14   C5     FE     C2     C3       -80.657   20.000   1
+ FEM      var_15   C5     FE     C3     C4       -37.422   20.000   1
+ FEM      var_16   C5     FE     C6     C10     -179.821   20.000   1
+ FEM      var_17   C5     FE     C7     C8       -99.603   20.000   1
+ FEM      var_18   C5     FE     C8     C9      -142.873   20.000   1
+ FEM      var_19   C5     FE     C9     C10      179.252   20.000   1
+ FEM      var_20   C5     FE     C10    C9        61.528   20.000   1
+ FEM      var_21   C10    C6     C7     C8         0.002   20.000   3
+ FEM      var_22   FE     C10    C9     C8        60.770   20.000   3
+ FEM      var_23   C10    C9     C8     C7         0.056   20.000   3
+ FEM      var_24   C9     C8     C7     FE       -60.690   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FEM      chir_01  C1     FE     C2     C5        negativ
+ FEM      chir_02  C2     FE     C1     C3        positiv
+ FEM      chir_03  C3     FE     C2     C4        positiv
+ FEM      chir_04  C4     FE     C3     C5        positiv
+ FEM      chir_05  C5     FE     C1     C4        negativ
+ FEM      chir_06  C6     FE     C7     C10       positiv
+ FEM      chir_07  C7     FE     C6     C8        negativ
+ FEM      chir_08  C8     FE     C7     C9        negativ
+ FEM      chir_09  C9     FE     C8     C10       negativ
+ FEM      chir_10  C10    FE     C6     C9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FEM      plan-1    N13       0.020
+ FEM      plan-1    C12       0.020
+ FEM      plan-1    C14       0.020
+ FEM      plan-1    C17       0.020
+ FEM      plan-2    C14       0.020
+ FEM      plan-2    N13       0.020
+ FEM      plan-2    C15       0.020
+ FEM      plan-2    O18       0.020
+ FEM      plan-3    C17       0.020
+ FEM      plan-3    N13       0.020
+ FEM      plan-3    C16       0.020
+ FEM      plan-3    O19       0.020
+# ------------------------------------------------------

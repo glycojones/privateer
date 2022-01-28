@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GLL     GLL     GLYCOLURIL     NON-POLYMER     16     10     .     
+#
+data_comp_GLL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GLL     C1      C       CR5     0       35.767      11.730      -4.364      
+GLL     O1      O       O       0       36.674      12.362      -3.799      
+GLL     N1      N       NR5     0       35.189      12.059      -5.540      
+GLL     N2      N       NR5     0       35.191      10.596      -3.908      
+GLL     C2      C       CH1     0       34.155      11.134      -5.935      
+GLL     C3      C       CH1     0       34.157      10.101      -4.783      
+GLL     "N1'"   N       NR5     0       32.820      11.675      -5.881      
+GLL     "N2'"   N       NR5     0       32.821      10.211      -4.251      
+GLL     "C1'"   C       CR5     0       32.071      11.129      -4.898      
+GLL     "O1'"   O       O       0       30.892      11.420      -4.636      
+GLL     HN1     H       H       0       35.422      12.759      -6.009      
+GLL     HN2     H       H       0       35.424      10.207      -3.161      
+GLL     H2      H       H       0       34.348      10.715      -6.803      
+GLL     H3      H       H       0       34.351      9.193       -5.106      
+GLL     "HN1'"  H       H       0       32.521      12.291      -6.425      
+GLL     "HN2'"  H       H       0       32.524      9.736       -3.580      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GLL       C1        O1        DOUBLE    n         1.242     0.010     1.242     0.010     
+GLL       C1        N1        SINGLE    n         1.351     0.010     1.351     0.010     
+GLL       C1        N2        SINGLE    n         1.351     0.010     1.351     0.010     
+GLL       N1        C2        SINGLE    n         1.442     0.010     1.442     0.010     
+GLL       N2        C3        SINGLE    n         1.442     0.010     1.442     0.010     
+GLL       C2        C3        SINGLE    n         1.547     0.011     1.547     0.011     
+GLL       C2        "N1'"     SINGLE    n         1.442     0.010     1.442     0.010     
+GLL       C3        "N2'"     SINGLE    n         1.442     0.010     1.442     0.010     
+GLL       "N1'"     "C1'"     SINGLE    n         1.351     0.010     1.351     0.010     
+GLL       "N2'"     "C1'"     SINGLE    n         1.351     0.010     1.351     0.010     
+GLL       "C1'"     "O1'"     DOUBLE    n         1.242     0.010     1.242     0.010     
+GLL       N1        HN1       SINGLE    n         1.016     0.010     0.874     0.013     
+GLL       N2        HN2       SINGLE    n         1.016     0.010     0.874     0.013     
+GLL       C2        H2        SINGLE    n         1.089     0.010     0.983     0.017     
+GLL       C3        H3        SINGLE    n         1.089     0.010     0.983     0.017     
+GLL       "N1'"     "HN1'"    SINGLE    n         1.016     0.010     0.874     0.013     
+GLL       "N2'"     "HN2'"    SINGLE    n         1.016     0.010     0.874     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GLL          O1          C1          N1     125.707    1.50
+GLL          O1          C1          N2     125.707    1.50
+GLL          N1          C1          N2     108.587    1.50
+GLL          C1          N1          C2     113.078    1.50
+GLL          C1          N1         HN1     123.132    2.15
+GLL          C2          N1         HN1     123.790    1.50
+GLL          C1          N2          C3     113.078    1.50
+GLL          C1          N2         HN2     123.132    2.15
+GLL          C3          N2         HN2     123.790    1.50
+GLL          N1          C2          C3     102.945    1.50
+GLL          N1          C2       "N1'"     114.341    1.50
+GLL          N1          C2          H2     111.858    1.50
+GLL          C3          C2       "N1'"     102.945    1.50
+GLL          C3          C2          H2     111.752    1.50
+GLL       "N1'"          C2          H2     111.858    1.50
+GLL          N2          C3          C2     102.945    1.50
+GLL          N2          C3       "N2'"     114.341    1.50
+GLL          N2          C3          H3     111.858    1.50
+GLL          C2          C3       "N2'"     102.945    1.50
+GLL          C2          C3          H3     111.752    1.50
+GLL       "N2'"          C3          H3     111.858    1.50
+GLL          C2       "N1'"       "C1'"     113.078    1.50
+GLL          C2       "N1'"      "HN1'"     123.790    1.50
+GLL       "C1'"       "N1'"      "HN1'"     123.132    2.15
+GLL          C3       "N2'"       "C1'"     113.078    1.50
+GLL          C3       "N2'"      "HN2'"     123.790    1.50
+GLL       "C1'"       "N2'"      "HN2'"     123.132    2.15
+GLL       "N1'"       "C1'"       "N2'"     108.587    1.50
+GLL       "N1'"       "C1'"       "O1'"     125.707    1.50
+GLL       "N2'"       "C1'"       "O1'"     125.707    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GLL            sp2_sp2_11          O1          C1          N1          C2     180.000   10.00     2
+GLL            sp2_sp2_15          O1          C1          N2          C3     180.000   10.00     2
+GLL             sp2_sp3_7          C1          N1          C2          C3       0.000   10.00     6
+GLL            sp2_sp3_13          C1          N2          C3          C2       0.000   10.00     6
+GLL             sp3_sp3_1          N1          C2          C3          N2      60.000   10.00     3
+GLL            sp2_sp3_21       "C1'"       "N1'"          C2          N1    -120.000   10.00     6
+GLL             sp2_sp3_3       "C1'"       "N2'"          C3          N2    -120.000   10.00     6
+GLL             sp2_sp2_7       "O1'"       "C1'"       "N1'"          C2     180.000   10.00     2
+GLL             sp2_sp2_3       "O1'"       "C1'"       "N2'"          C3     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GLL    plan-1          C1   0.020
+GLL    plan-1          N1   0.020
+GLL    plan-1          N2   0.020
+GLL    plan-1          O1   0.020
+GLL    plan-2          C1   0.020
+GLL    plan-2          C2   0.020
+GLL    plan-2         HN1   0.020
+GLL    plan-2          N1   0.020
+GLL    plan-3          C1   0.020
+GLL    plan-3          C3   0.020
+GLL    plan-3         HN2   0.020
+GLL    plan-3          N2   0.020
+GLL    plan-4       "C1'"   0.020
+GLL    plan-4          C2   0.020
+GLL    plan-4      "HN1'"   0.020
+GLL    plan-4       "N1'"   0.020
+GLL    plan-5       "C1'"   0.020
+GLL    plan-5          C3   0.020
+GLL    plan-5      "HN2'"   0.020
+GLL    plan-5       "N2'"   0.020
+GLL    plan-6       "C1'"   0.020
+GLL    plan-6       "N1'"   0.020
+GLL    plan-6       "N2'"   0.020
+GLL    plan-6       "O1'"   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GLL SMILES           ACDLabs              10.04 "O=C1NC2NC(=O)NC2N1"
+GLL SMILES_CANONICAL CACTVS               3.341 "O=C1N[C@@H]2NC(=O)N[C@@H]2N1"
+GLL SMILES           CACTVS               3.341 "O=C1N[CH]2NC(=O)N[CH]2N1"
+GLL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C12C(NC(=O)N1)NC(=O)N2"
+GLL SMILES           "OpenEye OEToolkits" 1.5.0 "C12C(NC(=O)N1)NC(=O)N2"
+GLL InChI            InChI                1.03  "InChI=1S/C4H6N4O2/c9-3-5-1-2(7-3)8-4(10)6-1/h1-2H,(H2,5,7,9)(H2,6,8,10)/t1-,2+"
+GLL InChIKey         InChI                1.03  VPVSTMAPERLKKM-XIXRPRMCSA-N
+GLL ?                acedrg               190         "dictionary generator"                  
+GLL ?                acedrg_database      11          "data source"                           
+GLL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GLL ?                refmac5              5.8.0158    "optimization tool"                     

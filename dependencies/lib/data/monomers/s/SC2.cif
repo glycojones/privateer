@@ -1,0 +1,181 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SC2      SC2 'N-ACETYL-L-CYSTEINE                 ' non-polymer        18  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_SC2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ SC2           OT     O    O         0.000      0.000    0.000    0.000
+ SC2           CT     C    C         0.000     -0.611    0.554   -0.889
+ SC2           CM     C    CH3       0.000      0.119    1.433   -1.870
+ SC2           HMC3   H    H         0.000      0.589    2.229   -1.352
+ SC2           HMC2   H    H         0.000      0.852    0.863   -2.380
+ SC2           HMC1   H    H         0.000     -0.570    1.829   -2.572
+ SC2           N      N    NH1       0.000     -1.944    0.382   -1.000
+ SC2           H2     H    H         0.000     -2.452    0.843   -1.740
+ SC2           CA     C    CH1       0.000     -2.653   -0.474   -0.045
+ SC2           HA     H    H         0.000     -2.189   -0.380    0.947
+ SC2           C      C    C         0.000     -2.577   -1.907   -0.501
+ SC2           O      O    OC       -0.500     -1.973   -2.196   -1.558
+ SC2           OXT    O    OC       -0.500     -3.121   -2.809    0.175
+ SC2           CB     C    CH2       0.000     -4.119   -0.041    0.035
+ SC2           HBC1   H    H         0.000     -4.648   -0.680    0.746
+ SC2           HBC2   H    H         0.000     -4.580   -0.136   -0.950
+ SC2           SG     S    SH1       0.000     -4.212    1.685    0.585
+ SC2           HSG    H    H         0.000     -5.539    1.768    0.559
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ SC2      OT     n/a    CT     START
+ SC2      CT     OT     N      .
+ SC2      CM     CT     HMC1   .
+ SC2      HMC3   CM     .      .
+ SC2      HMC2   CM     .      .
+ SC2      HMC1   CM     .      .
+ SC2      N      CT     CA     .
+ SC2      H2     N      .      .
+ SC2      CA     N      CB     .
+ SC2      HA     CA     .      .
+ SC2      C      CA     OXT    .
+ SC2      O      C      .      .
+ SC2      OXT    C      .      .
+ SC2      CB     CA     SG     .
+ SC2      HBC1   CB     .      .
+ SC2      HBC2   CB     .      .
+ SC2      SG     CB     HSG    .
+ SC2      HSG    SG     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SC2       OXT       C         deloc     1.250     0.020     1.250     0.020     
+SC2       O         C         deloc     1.250     0.020     1.250     0.020     
+SC2       C         CA        single    1.500     0.020     1.500     0.020     
+SC2       CB        CA        single    1.524     0.020     1.524     0.020     
+SC2       SG        CB        single    1.810     0.020     1.810     0.020     
+SC2       HBC1      CB        single    1.089     0.010     0.989     0.005     
+SC2       HBC2      CB        single    1.089     0.010     0.989     0.005     
+SC2       N         CT        single    1.330     0.020     1.330     0.020     
+SC2       CT        OT        double    1.220     0.020     1.220     0.020     
+SC2       CM        CT        single    1.500     0.020     1.500     0.020     
+SC2       CA        N         single    1.450     0.020     1.450     0.020     
+SC2       HA        CA        single    1.089     0.010     0.989     0.005     
+SC2       H2        N         single    1.016     0.010     0.899     0.007     
+SC2       HMC1      CM        single    1.089     0.010     0.989     0.005     
+SC2       HMC2      CM        single    1.089     0.010     0.989     0.005     
+SC2       HMC3      CM        single    1.089     0.010     0.989     0.005     
+SC2       HSG       SG        single    1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ SC2      OT     CT     CM      123.000    3.000
+ SC2      OT     CT     N       123.000    3.000
+ SC2      CM     CT     N       116.500    3.000
+ SC2      CT     CM     HMC3    109.470    3.000
+ SC2      CT     CM     HMC2    109.470    3.000
+ SC2      CT     CM     HMC1    109.470    3.000
+ SC2      HMC3   CM     HMC2    109.470    3.000
+ SC2      HMC3   CM     HMC1    109.470    3.000
+ SC2      HMC2   CM     HMC1    109.470    3.000
+ SC2      CT     N      H2      120.000    3.000
+ SC2      CT     N      CA      121.500    3.000
+ SC2      H2     N      CA      118.500    3.000
+ SC2      N      CA     HA      108.550    3.000
+ SC2      N      CA     C       111.600    3.000
+ SC2      N      CA     CB      110.000    3.000
+ SC2      HA     CA     C       108.810    3.000
+ SC2      HA     CA     CB      108.340    3.000
+ SC2      C      CA     CB      109.470    3.000
+ SC2      CA     C      O       118.500    3.000
+ SC2      CA     C      OXT     118.500    3.000
+ SC2      O      C      OXT     123.000    3.000
+ SC2      CA     CB     HBC1    109.470    3.000
+ SC2      CA     CB     HBC2    109.470    3.000
+ SC2      CA     CB     SG      112.500    3.000
+ SC2      HBC1   CB     HBC2    107.900    3.000
+ SC2      HBC1   CB     SG      109.470    3.000
+ SC2      HBC2   CB     SG      109.470    3.000
+ SC2      CB     SG     HSG      96.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ SC2      var_1    OT     CT     CM     HMC1     179.917   20.000   1
+ SC2      CONST_1  OT     CT     N      CA         0.000    0.000   0
+ SC2      var_2    CT     N      CA     CB       154.971   20.000   3
+ SC2      var_3    N      CA     C      OXT      179.967   20.000   3
+ SC2      var_4    N      CA     CB     SG       -60.004   20.000   3
+ SC2      var_5    CA     CB     SG     HSG      179.991   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ SC2      chir_01  CA     C      CB     N         positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ SC2      plan-1    C         0.020
+ SC2      plan-1    CA        0.020
+ SC2      plan-1    OXT       0.020
+ SC2      plan-1    O         0.020
+ SC2      plan-2    CT        0.020
+ SC2      plan-2    N         0.020
+ SC2      plan-2    OT        0.020
+ SC2      plan-2    CM        0.020
+ SC2      plan-2    H2        0.020
+ SC2      plan-3    N         0.020
+ SC2      plan-3    CT        0.020
+ SC2      plan-3    CA        0.020
+ SC2      plan-3    H2        0.020
+# ------------------------------------------------------

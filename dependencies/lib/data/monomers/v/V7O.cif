@@ -1,0 +1,222 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+V7O      V7O 'META VANADATE                       ' non-polymer        26  26 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_V7O
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ V7O           O19    O    O         0.000      0.000    0.000    0.000
+ V7O           V7     V    V         0.000      0.266   -1.242   -0.946
+ V7O           O17    O    O         0.000      1.580   -1.990   -0.478
+ V7O           O18    O    O         0.000      0.446   -0.740   -2.437
+ V7O           O14    O    O         0.000     -1.163   -2.398   -0.857
+ V7O           V6     V    V         0.000     -0.030   -3.820   -1.134
+ V7O           O16    O    O         0.000      0.162   -4.912   -0.003
+ V7O           O15    O    O         0.000      0.753   -3.954   -2.504
+ V7O           V5     V    V         0.000     -2.296   -0.975   -0.579
+ V7O           O13    O    O         0.000     -2.213    0.015   -1.813
+ V7O           O12    O    O2        0.000     -4.022   -1.590   -0.402
+ V7O           V4     V    V         0.000     -5.088   -0.115   -0.130
+ V7O           O10    O    O         0.000     -4.622    0.636    1.184
+ V7O           O11    O    O         0.000     -4.964    0.862   -1.369
+ V7O           O9     O    O2        0.000     -6.838   -0.649    0.058
+ V7O           V3     V    V         0.000     -7.833    0.874    0.325
+ V7O           O7     O    O         0.000     -7.328    1.612    1.633
+ V7O           O8     O    O         0.000     -7.670    1.838   -0.921
+ V7O           O4     O    O         0.000     -9.607    0.423    0.523
+ V7O           V1     V    V         0.000    -10.035    2.200    0.737
+ V7O           O3     O    O         0.000     -9.462    3.032   -0.481
+ V7O           O2     O    O         0.000     -9.404    2.736    2.088
+ V7O           O1     O    O         0.000    -11.610    2.360    0.791
+ V7O           V2     V    V         0.000    -11.379   -0.029    0.721
+ V7O           O5     O    O         0.000    -12.187   -0.618   -0.507
+ V7O           O6     O    O         0.000    -12.095    0.169    2.119
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ V7O      O19    n/a    V7     START
+ V7O      V7     O19    O14    .
+ V7O      O17    V7     .      .
+ V7O      O18    V7     .      .
+ V7O      O14    V7     V5     .
+ V7O      V6     O14    O15    .
+ V7O      O16    V6     .      .
+ V7O      O15    V6     .      .
+ V7O      V5     O14    O12    .
+ V7O      O13    V5     .      .
+ V7O      O12    V5     V4     .
+ V7O      V4     O12    O9     .
+ V7O      O10    V4     .      .
+ V7O      O11    V4     .      .
+ V7O      O9     V4     V3     .
+ V7O      V3     O9     O4     .
+ V7O      O7     V3     .      .
+ V7O      O8     V3     .      .
+ V7O      O4     V3     V2     .
+ V7O      V1     O4     O1     .
+ V7O      O3     V1     .      .
+ V7O      O2     V1     .      .
+ V7O      O1     V1     .      .
+ V7O      V2     O4     O6     .
+ V7O      O5     V2     .      .
+ V7O      O6     V2     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+V7O       O1        V1        double    1.910     0.020     1.910     0.020     
+V7O       O2        V1        double    1.910     0.020     1.910     0.020     
+V7O       O3        V1        double    1.910     0.020     1.910     0.020     
+V7O       V1        O4        single    1.910     0.020     1.910     0.020     
+V7O       V2        O4        single    1.910     0.020     1.910     0.020     
+V7O       O5        V2        double    1.910     0.020     1.910     0.020     
+V7O       O6        V2        double    1.910     0.020     1.910     0.020     
+V7O       O4        V3        single    1.910     0.020     1.910     0.020     
+V7O       O7        V3        double    1.910     0.020     1.910     0.020     
+V7O       O8        V3        double    1.910     0.020     1.910     0.020     
+V7O       V3        O9        single    2.004     0.020     2.004     0.020     
+V7O       O9        V4        single    2.004     0.020     2.004     0.020     
+V7O       O10       V4        double    1.910     0.020     1.910     0.020     
+V7O       O11       V4        double    1.910     0.020     1.910     0.020     
+V7O       V4        O12       single    2.004     0.020     2.004     0.020     
+V7O       O12       V5        single    2.004     0.020     2.004     0.020     
+V7O       O13       V5        double    1.910     0.020     1.910     0.020     
+V7O       V5        O14       single    1.910     0.020     1.910     0.020     
+V7O       V6        O14       single    1.910     0.020     1.910     0.020     
+V7O       O15       V6        double    1.910     0.020     1.910     0.020     
+V7O       O16       V6        double    1.910     0.020     1.910     0.020     
+V7O       O14       V7        single    1.910     0.020     1.910     0.020     
+V7O       O17       V7        double    1.910     0.020     1.910     0.020     
+V7O       O18       V7        double    1.910     0.020     1.910     0.020     
+V7O       V7        O19       double    1.910     0.020     1.910     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ V7O      O19    V7     O17     109.453    3.000
+ V7O      O19    V7     O18     109.471    3.000
+ V7O      O19    V7     O14     109.455    3.000
+ V7O      O17    V7     O18     109.521    3.000
+ V7O      O17    V7     O14     109.455    3.000
+ V7O      O18    V7     O14     109.471    3.000
+ V7O      V7     O14    V6      120.000    3.000
+ V7O      V7     O14    V5      120.000    3.000
+ V7O      V6     O14    V5      120.000    3.000
+ V7O      O14    V6     O16     120.000    3.000
+ V7O      O14    V6     O15     120.000    3.000
+ V7O      O16    V6     O15     120.000    3.000
+ V7O      O14    V5     O13     109.466    3.000
+ V7O      O14    V5     O12     109.455    3.000
+ V7O      O13    V5     O12     109.455    3.000
+ V7O      V5     O12    V4      120.000    3.000
+ V7O      O12    V4     O10     109.433    3.000
+ V7O      O12    V4     O11     109.479    3.000
+ V7O      O12    V4     O9      109.477    3.000
+ V7O      O10    V4     O11     109.506    3.000
+ V7O      O10    V4     O9      109.446    3.000
+ V7O      O11    V4     O9      109.487    3.000
+ V7O      V4     O9     V3      120.000    3.000
+ V7O      O9     V3     O7      109.464    3.000
+ V7O      O9     V3     O8      109.507    3.000
+ V7O      O9     V3     O4      109.496    3.000
+ V7O      O7     V3     O8      109.458    3.000
+ V7O      O7     V3     O4      109.449    3.000
+ V7O      O8     V3     O4      109.453    3.000
+ V7O      V3     O4     V1      120.000    3.000
+ V7O      V3     O4     V2      120.000    3.000
+ V7O      V1     O4     V2      120.000    3.000
+ V7O      O4     V1     O3      109.492    3.000
+ V7O      O4     V1     O2      109.449    3.000
+ V7O      O4     V1     O1      109.456    3.000
+ V7O      O3     V1     O2      109.508    3.000
+ V7O      O3     V1     O1      109.477    3.000
+ V7O      O2     V1     O1      109.445    3.000
+ V7O      O4     V2     O5      120.000    3.000
+ V7O      O4     V2     O6      120.000    3.000
+ V7O      O5     V2     O6      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ V7O      var_1    O19    V7     O14    V5        31.978   20.000   1
+ V7O      var_2    V7     O14    V6     O16        0.000   20.000   1
+ V7O      var_3    V7     O14    V5     O12      179.993   20.000   1
+ V7O      var_4    O14    V5     O12    V4      -179.963   20.000   1
+ V7O      var_5    V5     O12    V4     O9      -179.982   20.000   1
+ V7O      var_6    O12    V4     O9     V3       180.000   20.000   1
+ V7O      var_7    V4     O9     V3     O4       179.983   20.000   1
+ V7O      var_8    O9     V3     O4     V2        -0.636   20.000   1
+ V7O      var_9    V3     O4     V1     O1       173.514   20.000   1
+ V7O      var_10   V3     O4     V2     O5         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ V7O      chir_01  V1     O4     O3     O2        both
+                   .      .      .      .      .
+ V7O      chir_02  V2     .      .      O4        cross3
+                   O5     O6     .      .      .
+ V7O      chir_03  V3     O9     O7     O8        both
+                   .      .      .      .      .
+ V7O      chir_04  V4     O12    O10    O11       both
+                   .      .      .      .      .
+ V7O      chir_05  V5     O14    O13    O12       both
+                   .      .      .      .      .
+ V7O      chir_06  V6     .      .      O16       cross3
+                   O14    O15    .      .      .
+ V7O      chir_07  V7     O19    O17    O18       both
+                   .      .      .      .      .
+# ------------------------------------------------------

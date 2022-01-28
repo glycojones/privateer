@@ -1,0 +1,203 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ASB     ASB     "ASPARTICACID-4-CARBOXYMETHYLESTER"  peptide  21     13     .     
+#
+data_comp_ASB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ASB     N       N       NT3     1       13.413      12.204      37.820      
+ASB     CA      C       CH1     0       13.140      11.004      36.982      
+ASB     C       C       C       0       14.085      11.015      35.773      
+ASB     O       O       O       0       13.988      11.977      34.985      
+ASB     CB      C       CH2     0       11.668      10.956      36.562      
+ASB     CG      C       C       0       11.277      9.705       35.827      
+ASB     OD1     O       O2      0       11.351      8.624       36.618      
+ASB     OD2     O       O       0       10.931      9.676       34.672      
+ASB     C2      C       CH2     0       11.179      7.327       36.015      
+ASB     C1      C       C       0       11.394      6.221       37.034      
+ASB     O1      O       OC      -1      12.255      5.358       36.769      
+ASB     O2      O       O       0       10.695      6.251       38.066      
+ASB     OXT     O       OC      -1      14.881      10.062      35.666      
+ASB     H       H       H       0       13.276      12.963      37.334      
+ASB     H2      H       H       0       14.276      12.192      38.113      
+ASB     H3      H       H       0       12.857      12.212      38.541      
+ASB     HCA     H       H       0       13.335      10.203      37.523      
+ASB     HB2     H       H       0       11.478      11.725      35.988      
+ASB     HB3     H       H       0       11.110      11.031      37.363      
+ASB     HC21    H       H       0       11.817      7.213       35.282      
+ASB     HC22    H       H       0       10.276      7.250       35.647      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ASB      N      n/a    CA     START
+ ASB      H      N      .      .
+ ASB      H2     N      .      .
+ ASB      H3     N      .      .
+ ASB      CA     N      C      .
+ ASB      HCA    CA     .      .
+ ASB      CB     CA     CG     .
+ ASB      HB2    CB     .      .
+ ASB      HB3    CB     .      .
+ ASB      CG     CB     OD1    .
+ ASB      OD2    CG     .      .
+ ASB      OD1    CG     C2     .
+ ASB      C2     OD1    C1     .
+ ASB      HC21   C2     .      .
+ ASB      HC22   C2     .      .
+ ASB      C1     C2     O2     .
+ ASB      O1     C1     .      .
+ ASB      O2     C1     .      .
+ ASB      C      CA     .      END
+ ASB      O      C      .      .
+ ASB      OXT    C      .      .
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ASB       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+ASB       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+ASB       CA        CB        SINGLE    n         1.531     0.011     1.531     0.011     
+ASB       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+ASB       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+ASB       CB        CG        SINGLE    n         1.502     0.010     1.502     0.010     
+ASB       CG        OD1       SINGLE    n         1.328     0.020     1.328     0.020     
+ASB       CG        OD2       DOUBLE    n         1.203     0.015     1.203     0.015     
+ASB       OD1       C2        SINGLE    n         1.437     0.013     1.437     0.013     
+ASB       C2        C1        SINGLE    n         1.519     0.010     1.519     0.010     
+ASB       C1        O1        SINGLE    n         1.247     0.019     1.247     0.019     
+ASB       C1        O2        DOUBLE    n         1.247     0.019     1.247     0.019     
+ASB       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+ASB       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+ASB       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+ASB       CA        HCA       SINGLE    n         1.089     0.010     0.986     0.020     
+ASB       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.016     
+ASB       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.016     
+ASB       C2        HC21      SINGLE    n         1.089     0.010     0.978     0.014     
+ASB       C2        HC22      SINGLE    n         1.089     0.010     0.978     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ASB          CA           N           H     110.062    1.93
+ASB          CA           N          H2     110.062    1.93
+ASB          CA           N          H3     110.062    1.93
+ASB           H           N          H2     109.028    2.41
+ASB           H           N          H3     109.028    2.41
+ASB          H2           N          H3     109.028    2.41
+ASB           N          CA           C     109.241    1.50
+ASB           N          CA          CB     111.338    1.50
+ASB           N          CA         HCA     108.487    1.50
+ASB           C          CA          CB     111.804    2.58
+ASB           C          CA         HCA     108.824    1.50
+ASB          CB          CA         HCA     108.666    1.69
+ASB          CA           C           O     117.124    1.50
+ASB          CA           C         OXT     117.124    1.50
+ASB           O           C         OXT     125.752    1.50
+ASB          CA          CB          CG     113.374    1.50
+ASB          CA          CB         HB2     108.488    2.17
+ASB          CA          CB         HB3     108.488    2.17
+ASB          CG          CB         HB2     108.336    1.50
+ASB          CG          CB         HB3     108.336    1.50
+ASB         HB2          CB         HB3     107.891    1.66
+ASB          CB          CG         OD1     111.855    1.92
+ASB          CB          CG         OD2     124.766    1.50
+ASB         OD1          CG         OD2     123.378    1.50
+ASB          CG         OD1          C2     116.057    1.73
+ASB         OD1          C2          C1     110.354    2.51
+ASB         OD1          C2        HC21     109.474    1.50
+ASB         OD1          C2        HC22     109.474    1.50
+ASB          C1          C2        HC21     108.876    1.50
+ASB          C1          C2        HC22     108.876    1.50
+ASB        HC21          C2        HC22     107.776    1.50
+ASB          C2          C1          O1     117.286    2.89
+ASB          C2          C1          O2     117.286    2.89
+ASB          O1          C1          O2     125.428    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ASB             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+ASB             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+ASB            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+ASB             sp2_sp3_8         OD1          CG          CB          CA     120.000   10.00     6
+ASB             sp2_sp2_1          CB          CG         OD1          C2     180.000   10.00     2
+ASB            sp3_sp3_19          C1          C2         OD1          CG     180.000   10.00     3
+ASB            sp2_sp3_14          O1          C1          C2         OD1     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ASB    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ASB    plan-1           C   0.020
+ASB    plan-1          CA   0.020
+ASB    plan-1           O   0.020
+ASB    plan-1         OXT   0.020
+ASB    plan-2          CB   0.020
+ASB    plan-2          CG   0.020
+ASB    plan-2         OD1   0.020
+ASB    plan-2         OD2   0.020
+ASB    plan-3          C1   0.020
+ASB    plan-3          C2   0.020
+ASB    plan-3          O1   0.020
+ASB    plan-3          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ASB SMILES           ACDLabs              10.04 "O=C(OCC(=O)O)CC(C(=O)O)N"
+ASB SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CC(=O)OCC(O)=O)C(O)=O"
+ASB SMILES           CACTVS               3.341 "N[CH](CC(=O)OCC(O)=O)C(O)=O"
+ASB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)C(=O)OCC(=O)O"
+ASB SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)C(=O)OCC(=O)O"
+ASB InChI            InChI                1.03  "InChI=1S/C6H9NO6/c7-3(6(11)12)1-5(10)13-2-4(8)9/h3H,1-2,7H2,(H,8,9)(H,11,12)/t3-/m0/s1"
+ASB InChIKey         InChI                1.03  VYJCBTPDYBSANG-VKHMYHEASA-N
+ASB ?                acedrg               196         "dictionary generator"                  
+ASB ?                acedrg_database      11          "data source"                           
+ASB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ASB ?                refmac5              5.8.0222    "optimization tool"                     

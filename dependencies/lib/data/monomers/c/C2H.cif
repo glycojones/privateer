@@ -1,0 +1,77 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+C2H     C2H      acetylene     NON-POLYMER     4     2     .     
+#
+data_comp_C2H
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+C2H     C       C       CSP     0       -0.551      0.279       -0.408      
+C2H     C1      C       CSP     0       0.561       0.134       0.408       
+C2H     H2      H       H       0       -0.988      1.124       -0.523      
+C2H     H4      H       H       0       1.200       0.839       0.523       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+C2H       C         C1        TRIPLE    n         1.386     0.020     1.386     0.020     
+C2H       C         H2        SINGLE    n         1.048     0.010     0.958     0.020     
+C2H       C1        H4        SINGLE    n         1.048     0.010     0.958     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+C2H          C1           C          H2     121.953    3.00
+C2H           C          C1          H4     121.953    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+C2H           other_tor_1          H2           C          C1          H4     180.000   10.00     1
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+C2H SMILES           ACDLabs              12.01 C#C
+C2H InChI            InChI                1.03  InChI=1S/C2H2/c1-2/h1-2H
+C2H InChIKey         InChI                1.03  HSFWRNGVRCDJHI-UHFFFAOYSA-N
+C2H SMILES_CANONICAL CACTVS               3.385 C#C
+C2H SMILES           CACTVS               3.385 C#C
+C2H SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 C#C
+C2H SMILES           "OpenEye OEToolkits" 2.0.6 C#C
+C2H ?                acedrg               202         "dictionary generator"                  
+C2H ?                acedrg_database      11          "data source"                           
+C2H ?                rdkit                2017.03.2   "Chemoinformatics tool"
+C2H ?                refmac5              5.8.0189    "optimization tool"                     

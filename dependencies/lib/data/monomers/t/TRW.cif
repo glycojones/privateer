@@ -1,0 +1,351 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TRW      TRW '"TRW3-(2-AMINO-3-HYDROXY-PROPYL)-6-(' non-polymer        41  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TRW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TRW           O      O    O         0.000      0.000    0.000    0.000
+ TRW           C      C    C1        0.000     -0.995    0.379   -0.569
+ TRW           HC     H    H         0.000     -0.912    1.012   -1.436
+ TRW           CA     C    CH1       0.000     -2.354   -0.034   -0.065
+ TRW           HA     H    H         0.000     -2.883   -0.590   -0.852
+ TRW           N      N    NH2       0.000     -2.199   -0.890    1.118
+ TRW           H2     H    H         0.000     -2.559   -1.838    1.115
+ TRW           H      H    H         0.000     -1.731   -0.540    1.945
+ TRW           CB     C    CH2       0.000     -3.161    1.211    0.308
+ TRW           HB2    H    H         0.000     -3.275    1.847   -0.572
+ TRW           HB3    H    H         0.000     -2.635    1.764    1.090
+ TRW           CG     C    CR5       0.000     -4.519    0.797    0.811
+ TRW           CD1    C    CR15      0.000     -4.851    0.528    2.082
+ TRW           HD1    H    H         0.000     -4.173    0.574    2.925
+ TRW           NE1    N    NR15      0.000     -6.175    0.187    2.157
+ TRW           HE1    H    H         0.000     -6.679   -0.067    3.030
+ TRW           CE2    C    CR56      0.000     -6.740    0.229    0.900
+ TRW           CZ2    C    CR6       0.000     -8.022   -0.021    0.418
+ TRW           O7     O    OH1       0.000     -9.015   -0.392    1.272
+ TRW           HO7    H    H         0.000     -9.467    0.396    1.602
+ TRW           CH2    C    CR6       0.000     -8.284    0.112   -0.939
+ TRW           CZ3    C    CR16      0.000     -7.275    0.494   -1.817
+ TRW           HZ3    H    H         0.000     -7.492    0.594   -2.873
+ TRW           CE3    C    CR16      0.000     -6.013    0.742   -1.358
+ TRW           HE3    H    H         0.000     -5.233    1.035   -2.049
+ TRW           CD2    C    CR56      0.000     -5.730    0.619    0.004
+ TRW           N6     N    NH1       0.000     -9.574   -0.137   -1.426
+ TRW           HN6    H    H         0.000    -10.309   -0.412   -0.791
+ TRW           N1     N    NH1       0.000     -9.844   -0.006   -2.794
+ TRW           HN1    H    H         0.000     -9.109    0.269   -3.430
+ TRW           C1     C    CR6       0.000    -11.129   -0.254   -3.280
+ TRW           C6     C    CR16      0.000    -12.140   -0.641   -2.410
+ TRW           HC6    H    H         0.000    -11.931   -0.753   -1.353
+ TRW           C5     C    CR16      0.000    -13.411   -0.882   -2.893
+ TRW           HC5    H    H         0.000    -14.201   -1.175   -2.213
+ TRW           C4     C    CR16      0.000    -13.675   -0.750   -4.244
+ TRW           HC4    H    H         0.000    -14.672   -0.944   -4.620
+ TRW           C3     C    CR16      0.000    -12.670   -0.371   -5.114
+ TRW           HC3    H    H         0.000    -12.881   -0.268   -6.171
+ TRW           C2     C    CR16      0.000    -11.398   -0.124   -4.637
+ TRW           HC2    H    H         0.000    -10.612    0.172   -5.319
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TRW      O      n/a    C      START
+ TRW      C      O      CA     .
+ TRW      HC     C      .      .
+ TRW      CA     C      CB     .
+ TRW      HA     CA     .      .
+ TRW      N      CA     H      .
+ TRW      H2     N      .      .
+ TRW      H      N      .      .
+ TRW      CB     CA     CG     .
+ TRW      HB2    CB     .      .
+ TRW      HB3    CB     .      .
+ TRW      CG     CB     CD1    .
+ TRW      CD1    CG     NE1    .
+ TRW      HD1    CD1    .      .
+ TRW      NE1    CD1    CE2    .
+ TRW      HE1    NE1    .      .
+ TRW      CE2    NE1    CZ2    .
+ TRW      CZ2    CE2    CH2    .
+ TRW      O7     CZ2    HO7    .
+ TRW      HO7    O7     .      .
+ TRW      CH2    CZ2    N6     .
+ TRW      CZ3    CH2    CE3    .
+ TRW      HZ3    CZ3    .      .
+ TRW      CE3    CZ3    CD2    .
+ TRW      HE3    CE3    .      .
+ TRW      CD2    CE3    .      .
+ TRW      N6     CH2    N1     .
+ TRW      HN6    N6     .      .
+ TRW      N1     N6     C1     .
+ TRW      HN1    N1     .      .
+ TRW      C1     N1     C6     .
+ TRW      C6     C1     C5     .
+ TRW      HC6    C6     .      .
+ TRW      C5     C6     C4     .
+ TRW      HC5    C5     .      .
+ TRW      C4     C5     C3     .
+ TRW      HC4    C4     .      .
+ TRW      C3     C4     C2     .
+ TRW      HC3    C3     .      .
+ TRW      C2     C3     HC2    .
+ TRW      HC2    C2     .      END
+ TRW      CG     CD2    .    ADD
+ TRW      CD2    CE2    .    ADD
+ TRW      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TRW       N         CA        single    1.450     0.020     1.450     0.020     
+TRW       H         N         single    1.036     0.016     0.914     0.007     
+TRW       H2        N         single    1.036     0.016     0.914     0.007     
+TRW       CB        CA        single    1.524     0.020     1.524     0.020     
+TRW       CA        C         single    1.510     0.020     1.510     0.020     
+TRW       HA        CA        single    1.089     0.010     0.989     0.005     
+TRW       CG        CB        single    1.510     0.020     1.510     0.020     
+TRW       HB2       CB        single    1.089     0.010     0.989     0.005     
+TRW       HB3       CB        single    1.089     0.010     0.989     0.005     
+TRW       CG        CD2       single    1.490     0.020     1.490     0.020     
+TRW       CD1       CG        double    1.387     0.020     1.387     0.020     
+TRW       CD2       CE2       double    1.490     0.020     1.490     0.020     
+TRW       CD2       CE3       single    1.390     0.020     1.390     0.020     
+TRW       CE2       NE1       single    1.340     0.020     1.340     0.020     
+TRW       CZ2       CE2       single    1.490     0.020     1.490     0.020     
+TRW       CE3       CZ3       double    1.390     0.020     1.390     0.020     
+TRW       HE3       CE3       single    1.082     0.013     0.975     0.010     
+TRW       NE1       CD1       single    1.350     0.020     1.350     0.020     
+TRW       HD1       CD1       single    1.082     0.013     0.975     0.010     
+TRW       HE1       NE1       single    1.016     0.010     0.899     0.007     
+TRW       CH2       CZ2       double    1.487     0.020     1.487     0.020     
+TRW       O7        CZ2       single    1.362     0.020     1.362     0.020     
+TRW       CZ3       CH2       single    1.390     0.020     1.390     0.020     
+TRW       HZ3       CZ3       single    1.082     0.013     0.975     0.010     
+TRW       N6        CH2       single    1.350     0.020     1.350     0.020     
+TRW       N1        N6        single    1.400     0.020     1.400     0.020     
+TRW       HN6       N6        single    1.016     0.010     0.899     0.007     
+TRW       HO7       O7        single    0.970     0.012     0.839     0.014     
+TRW       C         O         double    1.220     0.020     1.220     0.020     
+TRW       HC        C         single    1.082     0.013     0.975     0.010     
+TRW       C1        N1        single    1.350     0.020     1.350     0.020     
+TRW       HN1       N1        single    1.016     0.010     0.899     0.007     
+TRW       C1        C2        double    1.390     0.020     1.390     0.020     
+TRW       C6        C1        single    1.390     0.020     1.390     0.020     
+TRW       C2        C3        single    1.390     0.020     1.390     0.020     
+TRW       HC2       C2        single    1.082     0.013     0.975     0.010     
+TRW       C3        C4        double    1.390     0.020     1.390     0.020     
+TRW       HC3       C3        single    1.082     0.013     0.975     0.010     
+TRW       C4        C5        single    1.390     0.020     1.390     0.020     
+TRW       HC4       C4        single    1.082     0.013     0.975     0.010     
+TRW       C5        C6        double    1.390     0.020     1.390     0.020     
+TRW       HC5       C5        single    1.082     0.013     0.975     0.010     
+TRW       HC6       C6        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TRW      O      C      HC      123.000    3.000
+ TRW      O      C      CA      120.500    3.000
+ TRW      HC     C      CA      120.000    3.000
+ TRW      C      CA     HA      108.810    3.000
+ TRW      C      CA     N       109.470    3.000
+ TRW      C      CA     CB      109.470    3.000
+ TRW      HA     CA     N       109.470    3.000
+ TRW      HA     CA     CB      108.340    3.000
+ TRW      N      CA     CB      109.470    3.000
+ TRW      CA     N      H2      120.000    3.000
+ TRW      CA     N      H       120.000    3.000
+ TRW      H2     N      H       120.000    3.000
+ TRW      CA     CB     HB2     109.470    3.000
+ TRW      CA     CB     HB3     109.470    3.000
+ TRW      CA     CB     CG      109.470    3.000
+ TRW      HB2    CB     HB3     107.900    3.000
+ TRW      HB2    CB     CG      109.470    3.000
+ TRW      HB3    CB     CG      109.470    3.000
+ TRW      CB     CG     CD1     126.000    3.000
+ TRW      CB     CG     CD2     126.000    3.000
+ TRW      CD1    CG     CD2     108.000    3.000
+ TRW      CG     CD1    HD1     126.000    3.000
+ TRW      CG     CD1    NE1     108.000    3.000
+ TRW      HD1    CD1    NE1     126.000    3.000
+ TRW      CD1    NE1    HE1     126.000    3.000
+ TRW      CD1    NE1    CE2     108.000    3.000
+ TRW      HE1    NE1    CE2     126.000    3.000
+ TRW      NE1    CE2    CZ2     132.000    3.000
+ TRW      NE1    CE2    CD2     108.000    3.000
+ TRW      CZ2    CE2    CD2     120.000    3.000
+ TRW      CE2    CZ2    O7      120.000    3.000
+ TRW      CE2    CZ2    CH2     120.000    3.000
+ TRW      O7     CZ2    CH2     120.000    3.000
+ TRW      CZ2    O7     HO7     109.470    3.000
+ TRW      CZ2    CH2    CZ3     120.000    3.000
+ TRW      CZ2    CH2    N6      120.000    3.000
+ TRW      CZ3    CH2    N6      120.000    3.000
+ TRW      CH2    CZ3    HZ3     120.000    3.000
+ TRW      CH2    CZ3    CE3     120.000    3.000
+ TRW      HZ3    CZ3    CE3     120.000    3.000
+ TRW      CZ3    CE3    HE3     120.000    3.000
+ TRW      CZ3    CE3    CD2     120.000    3.000
+ TRW      HE3    CE3    CD2     120.000    3.000
+ TRW      CE3    CD2    CG      126.000    3.000
+ TRW      CE3    CD2    CE2     120.000    3.000
+ TRW      CG     CD2    CE2     108.000    3.000
+ TRW      CH2    N6     HN6     120.000    3.000
+ TRW      CH2    N6     N1      120.000    3.000
+ TRW      HN6    N6     N1      120.000    3.000
+ TRW      N6     N1     HN1     120.000    3.000
+ TRW      N6     N1     C1      120.000    3.000
+ TRW      HN1    N1     C1      120.000    3.000
+ TRW      N1     C1     C6      120.000    3.000
+ TRW      N1     C1     C2      120.000    3.000
+ TRW      C6     C1     C2      120.000    3.000
+ TRW      C1     C6     HC6     120.000    3.000
+ TRW      C1     C6     C5      120.000    3.000
+ TRW      HC6    C6     C5      120.000    3.000
+ TRW      C6     C5     HC5     120.000    3.000
+ TRW      C6     C5     C4      120.000    3.000
+ TRW      HC5    C5     C4      120.000    3.000
+ TRW      C5     C4     HC4     120.000    3.000
+ TRW      C5     C4     C3      120.000    3.000
+ TRW      HC4    C4     C3      120.000    3.000
+ TRW      C4     C3     HC3     120.000    3.000
+ TRW      C4     C3     C2      120.000    3.000
+ TRW      HC3    C3     C2      120.000    3.000
+ TRW      C3     C2     HC2     120.000    3.000
+ TRW      C3     C2     C1      120.000    3.000
+ TRW      HC2    C2     C1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TRW      var_1    O      C      CA     CB       119.982   20.000   1
+ TRW      var_2    C      CA     N      H         59.996   20.000   1
+ TRW      var_3    C      CA     CB     CG       179.974   20.000   3
+ TRW      var_4    CA     CB     CG     CD1       90.040   20.000   2
+ TRW      CONST_1  CB     CG     CD2    CE3        0.000    0.000   0
+ TRW      CONST_2  CB     CG     CD1    NE1      180.000    0.000   0
+ TRW      CONST_3  CG     CD1    NE1    CE2        0.000    0.000   0
+ TRW      CONST_4  CD1    NE1    CE2    CZ2      180.000    0.000   0
+ TRW      CONST_5  NE1    CE2    CZ2    CH2      180.000    0.000   0
+ TRW      var_5    CE2    CZ2    O7     HO7       89.901   20.000   1
+ TRW      CONST_6  CE2    CZ2    CH2    N6       180.000    0.000   0
+ TRW      CONST_7  CZ2    CH2    CZ3    CE3        0.000    0.000   0
+ TRW      CONST_8  CH2    CZ3    CE3    CD2        0.000    0.000   0
+ TRW      CONST_9  CZ3    CE3    CD2    CG       180.000    0.000   0
+ TRW      CONST_10 CE3    CD2    CE2    NE1      180.000    0.000   0
+ TRW      var_6    CZ2    CH2    N6     N1      -179.902   20.000   1
+ TRW      var_7    CH2    N6     N1     C1      -179.978   20.000   1
+ TRW      var_8    N6     N1     C1     C6        -0.427   20.000   1
+ TRW      CONST_11 N1     C1     C2     C3       180.000    0.000   0
+ TRW      CONST_12 N1     C1     C6     C5       180.000    0.000   0
+ TRW      CONST_13 C1     C6     C5     C4         0.000    0.000   0
+ TRW      CONST_14 C6     C5     C4     C3         0.000    0.000   0
+ TRW      CONST_15 C5     C4     C3     C2         0.000    0.000   0
+ TRW      CONST_16 C4     C3     C2     C1         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TRW      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TRW      plan-1    N         0.020
+ TRW      plan-1    CA        0.020
+ TRW      plan-1    H         0.020
+ TRW      plan-1    H2        0.020
+ TRW      plan-2    CG        0.020
+ TRW      plan-2    CB        0.020
+ TRW      plan-2    CD2       0.020
+ TRW      plan-2    CD1       0.020
+ TRW      plan-2    NE1       0.020
+ TRW      plan-2    CE2       0.020
+ TRW      plan-2    CE3       0.020
+ TRW      plan-2    CZ2       0.020
+ TRW      plan-2    CZ3       0.020
+ TRW      plan-2    CH2       0.020
+ TRW      plan-2    HE3       0.020
+ TRW      plan-2    HD1       0.020
+ TRW      plan-2    HE1       0.020
+ TRW      plan-2    O7        0.020
+ TRW      plan-2    HZ3       0.020
+ TRW      plan-2    N6        0.020
+ TRW      plan-2    HN6       0.020
+ TRW      plan-3    N6        0.020
+ TRW      plan-3    CH2       0.020
+ TRW      plan-3    N1        0.020
+ TRW      plan-3    HN6       0.020
+ TRW      plan-3    HN1       0.020
+ TRW      plan-4    C         0.020
+ TRW      plan-4    CA        0.020
+ TRW      plan-4    O         0.020
+ TRW      plan-4    HC        0.020
+ TRW      plan-5    N1        0.020
+ TRW      plan-5    N6        0.020
+ TRW      plan-5    C1        0.020
+ TRW      plan-5    HN1       0.020
+ TRW      plan-5    HN6       0.020
+ TRW      plan-6    C1        0.020
+ TRW      plan-6    N1        0.020
+ TRW      plan-6    C2        0.020
+ TRW      plan-6    C6        0.020
+ TRW      plan-6    C3        0.020
+ TRW      plan-6    C4        0.020
+ TRW      plan-6    C5        0.020
+ TRW      plan-6    HC2       0.020
+ TRW      plan-6    HC3       0.020
+ TRW      plan-6    HC4       0.020
+ TRW      plan-6    HC5       0.020
+ TRW      plan-6    HC6       0.020
+ TRW      plan-6    HN1       0.020
+# ------------------------------------------------------

@@ -1,0 +1,112 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NPN     NPN      "N-PROPYL ISOCYANIDE"     NON-POLYMER     12     5     .     
+#
+data_comp_NPN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NPN     C       C       C       -1      36.850      5.916       11.879      
+NPN     N       N       N       1       35.646      6.410       12.233      
+NPN     C1      C       CH2     0       35.564      7.636       13.027      
+NPN     C2      C       CH2     0       34.125      7.912       13.408      
+NPN     C3      C       CH3     0       33.233      8.190       12.212      
+NPN     H11     H       H       0       35.919      8.389       12.506      
+NPN     H12     H       H       0       36.109      7.539       13.838      
+NPN     H21     H       H       0       34.103      8.683       14.012      
+NPN     H22     H       H       0       33.776      7.137       13.896      
+NPN     H31     H       H       0       32.690      7.406       12.023      
+NPN     H32     H       H       0       33.776      8.402       11.431      
+NPN     H33     H       H       0       32.651      8.944       12.411      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NPN       C         N         TRIPLE    n         1.349     0.020     1.349     0.020     
+NPN       N         C1        SINGLE    n         1.463     0.014     1.463     0.014     
+NPN       C1        C2        SINGLE    n         1.510     0.020     1.510     0.020     
+NPN       C2        C3        SINGLE    n         1.511     0.020     1.511     0.020     
+NPN       C1        H11       SINGLE    n         1.089     0.010     0.982     0.017     
+NPN       C1        H12       SINGLE    n         1.089     0.010     0.982     0.017     
+NPN       C2        H21       SINGLE    n         1.089     0.010     0.980     0.015     
+NPN       C2        H22       SINGLE    n         1.089     0.010     0.980     0.015     
+NPN       C3        H31       SINGLE    n         1.089     0.010     0.973     0.016     
+NPN       C3        H32       SINGLE    n         1.089     0.010     0.973     0.016     
+NPN       C3        H33       SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NPN           C           N          C1     120.000    3.00
+NPN           N          C1          C2     109.508    2.50
+NPN           N          C1         H11     109.364    1.50
+NPN           N          C1         H12     109.364    1.50
+NPN          C2          C1         H11     109.550    1.61
+NPN          C2          C1         H12     109.550    1.61
+NPN         H11          C1         H12     108.106    1.50
+NPN          C1          C2          C3     112.521    1.50
+NPN          C1          C2         H21     108.852    1.50
+NPN          C1          C2         H22     108.852    1.50
+NPN          C3          C2         H21     109.408    1.50
+NPN          C3          C2         H22     109.408    1.50
+NPN         H21          C2         H22     108.070    1.50
+NPN          C2          C3         H31     109.531    1.50
+NPN          C2          C3         H32     109.531    1.50
+NPN          C2          C3         H33     109.531    1.50
+NPN         H31          C3         H32     109.380    1.50
+NPN         H31          C3         H33     109.380    1.50
+NPN         H32          C3         H33     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NPN             sp2_sp3_2           C           N          C1          C2     120.000   10.00     6
+NPN             sp3_sp3_1           N          C1          C2          C3     180.000   10.00     3
+NPN            sp3_sp3_10          C1          C2          C3         H31     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NPN SMILES           ACDLabs              10.04 "propyl isocyanide"
+NPN SMILES_CANONICAL CACTVS               3.341 "CCC[N+]#[C-]"
+NPN SMILES           CACTVS               3.341 "CCC[N+]#[C-]"
+NPN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCC[N+]#[C-]"
+NPN SMILES           "OpenEye OEToolkits" 1.5.0 "CCC[N+]#[C-]"
+NPN InChI            InChI                1.03  InChI=1S/C4H7N/c1-3-4-5-2/h3-4H2,1H3
+NPN InChIKey         InChI                1.03  FFDKYFGBIQQMSR-UHFFFAOYSA-N
+NPN ?                acedrg               202         "dictionary generator"                  
+NPN ?                acedrg_database      11          "data source"                           
+NPN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NPN ?                refmac5              5.8.0189    "optimization tool"                     

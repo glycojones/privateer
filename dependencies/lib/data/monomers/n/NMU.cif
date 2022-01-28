@@ -1,0 +1,123 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NMU     NMU     N-METHYLUREA     NON-POLYMER     11     5     .     
+#
+data_comp_NMU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NMU     C1      C       C       0       9.529       24.961      41.792      
+NMU     O2      O       O       0       9.342       25.576      42.864      
+NMU     N3      N       NH2     0       9.404       25.584      40.610      
+NMU     N4      N       NH1     0       9.864       23.666      41.815      
+NMU     C5      C       CH3     0       10.449      22.953      42.929      
+NMU     HN31    H       H       0       9.143       26.426      40.590      
+NMU     HN32    H       H       0       9.587       25.169      39.854      
+NMU     HN4     H       H       0       9.685       23.199      41.072      
+NMU     H51     H       H       0       10.917      23.559      43.526      
+NMU     H52     H       H       0       11.084      22.294      42.604      
+NMU     H53     H       H       0       9.758       22.493      43.433      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NMU       C1        O2        DOUBLE    n         1.243     0.018     1.243     0.018     
+NMU       C1        N3        SINGLE    n         1.334     0.016     1.334     0.016     
+NMU       C1        N4        SINGLE    n         1.331     0.010     1.331     0.010     
+NMU       N4        C5        SINGLE    n         1.443     0.010     1.443     0.010     
+NMU       N3        HN31      SINGLE    n         1.016     0.010     0.881     0.020     
+NMU       N3        HN32      SINGLE    n         1.016     0.010     0.881     0.020     
+NMU       N4        HN4       SINGLE    n         1.016     0.010     0.894     0.020     
+NMU       C5        H51       SINGLE    n         1.089     0.010     0.971     0.020     
+NMU       C5        H52       SINGLE    n         1.089     0.010     0.971     0.020     
+NMU       C5        H53       SINGLE    n         1.089     0.010     0.971     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NMU          O2          C1          N3     121.974    1.81
+NMU          O2          C1          N4     119.240    1.50
+NMU          N3          C1          N4     118.786    1.50
+NMU          C1          N3        HN31     119.809    2.97
+NMU          C1          N3        HN32     119.809    2.97
+NMU        HN31          N3        HN32     120.382    2.62
+NMU          C1          N4          C5     124.911    1.50
+NMU          C1          N4         HN4     116.367    1.50
+NMU          C5          N4         HN4     118.722    1.50
+NMU          N4          C5         H51     110.997    1.85
+NMU          N4          C5         H52     110.997    1.85
+NMU          N4          C5         H53     110.997    1.85
+NMU         H51          C5         H52     109.279    1.79
+NMU         H51          C5         H53     109.279    1.79
+NMU         H52          C5         H53     109.279    1.79
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NMU             sp2_sp2_3          O2          C1          N3        HN31       0.000   10.00     2
+NMU             sp2_sp2_7          O2          C1          N4          C5       0.000   10.00     2
+NMU             sp2_sp3_1          C1          N4          C5         H51       0.000   10.00     6
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NMU    plan-1          C1   0.020
+NMU    plan-1          N3   0.020
+NMU    plan-1          N4   0.020
+NMU    plan-1          O2   0.020
+NMU    plan-2          C1   0.020
+NMU    plan-2        HN31   0.020
+NMU    plan-2        HN32   0.020
+NMU    plan-2          N3   0.020
+NMU    plan-3          C1   0.020
+NMU    plan-3          C5   0.020
+NMU    plan-3         HN4   0.020
+NMU    plan-3          N4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NMU SMILES           ACDLabs              10.04 "O=C(N)NC"
+NMU SMILES_CANONICAL CACTVS               3.341 "CNC(N)=O"
+NMU SMILES           CACTVS               3.341 "CNC(N)=O"
+NMU SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CNC(=O)N"
+NMU SMILES           "OpenEye OEToolkits" 1.5.0 "CNC(=O)N"
+NMU InChI            InChI                1.03  "InChI=1S/C2H6N2O/c1-4-2(3)5/h1H3,(H3,3,4,5)"
+NMU InChIKey         InChI                1.03  XGEGHDBEHXKFPX-UHFFFAOYSA-N
+NMU ?                acedrg               190         "dictionary generator"                  
+NMU ?                acedrg_database      11          "data source"                           
+NMU ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NMU ?                refmac5              5.8.0158    "optimization tool"                     

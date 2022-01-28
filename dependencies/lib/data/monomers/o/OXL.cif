@@ -1,0 +1,98 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OXL     OXL      "OXALATE ION"     NON-POLYMER     6     6     .     
+#
+data_comp_OXL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OXL     C1      C       C       0       -23.084     -14.625     40.009      
+OXL     C2      C       C       0       -23.312     -13.371     40.876      
+OXL     O1      O       O       0       -23.125     -15.719     40.579      
+OXL     O2      O       O       0       -23.270     -12.277     40.307      
+OXL     O3      O       OC      -1      -22.876     -14.448     38.806      
+OXL     O4      O       OC      -1      -23.519     -13.548     42.080      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OXL       C1        C2        SINGLE    n         1.522     0.020     1.522     0.020     
+OXL       C1        O1        DOUBLE    n         1.230     0.020     1.230     0.020     
+OXL       C1        O3        SINGLE    n         1.230     0.020     1.230     0.020     
+OXL       C2        O2        DOUBLE    n         1.230     0.020     1.230     0.020     
+OXL       C2        O4        SINGLE    n         1.230     0.020     1.230     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OXL          C2          C1          O1     116.844    1.50
+OXL          C2          C1          O3     116.844    1.50
+OXL          O1          C1          O3     126.312    1.50
+OXL          C1          C2          O2     116.844    1.50
+OXL          C1          C2          O4     116.844    1.50
+OXL          O2          C2          O4     126.312    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OXL             sp2_sp2_1          O1          C1          C2          O2     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OXL    plan-1          C1   0.020
+OXL    plan-1          C2   0.020
+OXL    plan-1          O1   0.020
+OXL    plan-1          O3   0.020
+OXL    plan-2          C1   0.020
+OXL    plan-2          C2   0.020
+OXL    plan-2          O2   0.020
+OXL    plan-2          O4   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OXL SMILES           ACDLabs              10.04 "[O-]C(=O)C([O-])=O"
+OXL SMILES_CANONICAL CACTVS               3.341 "[O-]C(=O)C([O-])=O"
+OXL SMILES           CACTVS               3.341 "[O-]C(=O)C([O-])=O"
+OXL SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=O)(C(=O)[O-])[O-]"
+OXL SMILES           "OpenEye OEToolkits" 1.5.0 "C(=O)(C(=O)[O-])[O-]"
+OXL InChI            InChI                1.03  "InChI=1S/C2H2O4/c3-1(4)2(5)6/h(H,3,4)(H,5,6)/p-2"
+OXL InChIKey         InChI                1.03  MUBZPKHOEPUJKR-UHFFFAOYSA-L
+OXL ?                acedrg               202         "dictionary generator"                  
+OXL ?                acedrg_database      11          "data source"                           
+OXL ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OXL ?                refmac5              5.8.0189    "optimization tool"                     

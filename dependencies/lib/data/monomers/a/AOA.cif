@@ -1,0 +1,111 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AOA     AOA      "(AMINOOXY)ACETIC ACID"     NON-POLYMER     10     6     .     
+#
+data_comp_AOA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AOA     C1      C       CH2     0       0.197       -0.101      -0.302      
+AOA     N1      N       NT2     0       -1.780      0.570       0.731       
+AOA     O1      O       O2      0       -0.391      0.330       0.925       
+AOA     C2      C       C       0       1.700       -0.277      -0.176      
+AOA     O2      O       OC      -1      2.157       -1.427      -0.336      
+AOA     O3      O       O       0       2.375       0.740       0.079       
+AOA     H1C1    H       H       0       0.009       0.567       -1.005      
+AOA     H1C2    H       H       0       -0.207      -0.962      -0.572      
+AOA     H1N1    H       H       0       -2.085      1.086       1.465       
+AOA     H1N2    H       H       0       -2.210      -0.272      0.666       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AOA       C1        O1        SINGLE    n         1.427     0.011     1.427     0.011     
+AOA       C1        C2        SINGLE    n         1.519     0.010     1.519     0.010     
+AOA       N1        O1        SINGLE    n         1.423     0.020     1.423     0.020     
+AOA       C2        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+AOA       C2        O3        DOUBLE    n         1.247     0.019     1.247     0.019     
+AOA       C1        H1C1      SINGLE    n         1.089     0.010     0.988     0.020     
+AOA       C1        H1C2      SINGLE    n         1.089     0.010     0.988     0.020     
+AOA       N1        H1N1      SINGLE    n         1.036     0.016     0.948     0.020     
+AOA       N1        H1N2      SINGLE    n         1.036     0.016     0.948     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AOA          O1          C1          C2     110.427    2.31
+AOA          O1          C1        H1C1     108.659    1.50
+AOA          O1          C1        H1C2     108.659    1.50
+AOA          C2          C1        H1C1     108.463    1.50
+AOA          C2          C1        H1C2     108.463    1.50
+AOA        H1C1          C1        H1C2     107.933    1.50
+AOA          O1          N1        H1N1     107.495    3.00
+AOA          O1          N1        H1N2     107.495    3.00
+AOA        H1N1          N1        H1N2     112.988    3.00
+AOA          C1          O1          N1     109.509    1.50
+AOA          C1          C2          O2     117.286    2.89
+AOA          C1          C2          O3     117.286    2.89
+AOA          O2          C2          O3     125.428    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AOA             sp3_sp3_1          C2          C1          O1          N1     180.000   10.00     3
+AOA             sp2_sp3_2          O2          C2          C1          O1     120.000   10.00     6
+AOA             sp3_sp3_4        H1N1          N1          O1          C1     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AOA    plan-1          C1   0.020
+AOA    plan-1          C2   0.020
+AOA    plan-1          O2   0.020
+AOA    plan-1          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AOA SMILES           ACDLabs              10.04 "O=C(O)CON"
+AOA SMILES_CANONICAL CACTVS               3.341 "NOCC(O)=O"
+AOA SMILES           CACTVS               3.341 "NOCC(O)=O"
+AOA SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)ON"
+AOA SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)ON"
+AOA InChI            InChI                1.03  "InChI=1S/C2H5NO3/c3-6-1-2(4)5/h1,3H2,(H,4,5)"
+AOA InChIKey         InChI                1.03  NQRKYASMKDDGHT-UHFFFAOYSA-N
+AOA ?                acedrg               202         "dictionary generator"                  
+AOA ?                acedrg_database      11          "data source"                           
+AOA ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AOA ?                refmac5              5.8.0189    "optimization tool"                     

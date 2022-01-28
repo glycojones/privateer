@@ -1,0 +1,267 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IPN      IPN '2-AMINOETHYLGLYCINE-CARBONYLMETHYLEN' non-polymer        33  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_IPN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ IPN           I5     I    I         0.000      0.000    0.000    0.000
+ IPN           C5     C    CR6       0.000     -1.960    0.699    0.249
+ IPN           C6     C    CR16      0.000     -2.970    0.173   -0.477
+ IPN           H6     H    H         0.000     -2.773   -0.616   -1.193
+ IPN           C4     C    CR6       0.000     -2.242    1.729    1.178
+ IPN           O4     O    O         0.000     -1.347    2.219    1.842
+ IPN           N3     N    NR16      0.000     -3.511    2.162    1.320
+ IPN           HN3    H    H         0.000     -3.728    2.916    2.004
+ IPN           C2     C    CR6       0.000     -4.499    1.624    0.580
+ IPN           O2     O    O         0.000     -5.638    2.025    0.720
+ IPN           N1     N    NR6       0.000     -4.244    0.640   -0.302
+ IPN           "C8'"  C    CH2       0.000     -5.341    0.069   -1.088
+ IPN           "H8'1" H    H         0.000     -4.959   -0.268   -2.054
+ IPN           "H8'2" H    H         0.000     -6.108    0.830   -1.248
+ IPN           "C7'"  C    C         0.000     -5.937   -1.099   -0.346
+ IPN           "O7'"  O    O         0.000     -5.431   -1.482    0.688
+ IPN           "N4'"  N    N         0.000     -7.031   -1.718   -0.830
+ IPN           "C5'"  C    CH2       0.000     -7.574   -1.333   -2.135
+ IPN           "H5'1" H    H         0.000     -7.978   -2.215   -2.636
+ IPN           "H5'2" H    H         0.000     -6.778   -0.901   -2.747
+ IPN           "C'"   C    C         0.000     -8.669   -0.316   -1.943
+ IPN           "O2'"  O    OC       -0.500     -9.335    0.080   -2.926
+ IPN           "O1'"  O    OC       -0.500     -8.913    0.132   -0.801
+ IPN           "C3'"  C    CH2       0.000     -7.677   -2.778   -0.053
+ IPN           "H3'1" H    H         0.000     -8.747   -2.791   -0.274
+ IPN           "H3'2" H    H         0.000     -7.530   -2.588    1.013
+ IPN           "C2'"  C    CH2       0.000     -7.063   -4.129   -0.421
+ IPN           "H2'1" H    H         0.000     -5.994   -4.115   -0.199
+ IPN           "H2'2" H    H         0.000     -7.210   -4.317   -1.487
+ IPN           "N1'"  N    NT3       1.000     -7.712   -5.192    0.359
+ IPN           "H1'3" H    H         0.000     -7.570   -5.010    1.364
+ IPN           "H1'2" H    H         0.000     -8.721   -5.202    0.146
+ IPN           "H1'1" H    H         0.000     -7.295   -6.101    0.108
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ IPN      I5     n/a    C5     START
+ IPN      C5     I5     C4     .
+ IPN      C6     C5     H6     .
+ IPN      H6     C6     .      .
+ IPN      C4     C5     N3     .
+ IPN      O4     C4     .      .
+ IPN      N3     C4     C2     .
+ IPN      HN3    N3     .      .
+ IPN      C2     N3     N1     .
+ IPN      O2     C2     .      .
+ IPN      N1     C2     "C8'"  .
+ IPN      "C8'"  N1     "C7'"  .
+ IPN      "H8'1" "C8'"  .      .
+ IPN      "H8'2" "C8'"  .      .
+ IPN      "C7'"  "C8'"  "N4'"  .
+ IPN      "O7'"  "C7'"  .      .
+ IPN      "N4'"  "C7'"  "C3'"  .
+ IPN      "C5'"  "N4'"  "C'"   .
+ IPN      "H5'1" "C5'"  .      .
+ IPN      "H5'2" "C5'"  .      .
+ IPN      "C'"   "C5'"  "O1'"  .
+ IPN      "O2'"  "C'"   .      .
+ IPN      "O1'"  "C'"   .      .
+ IPN      "C3'"  "N4'"  "C2'"  .
+ IPN      "H3'1" "C3'"  .      .
+ IPN      "H3'2" "C3'"  .      .
+ IPN      "C2'"  "C3'"  "N1'"  .
+ IPN      "H2'1" "C2'"  .      .
+ IPN      "H2'2" "C2'"  .      .
+ IPN      "N1'"  "C2'"  "H1'1" .
+ IPN      "H1'3" "N1'"  .      .
+ IPN      "H1'2" "N1'"  .      .
+ IPN      "H1'1" "N1'"  .      END
+ IPN      N1     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IPN       "C7'"     "C8'"     single    1.510     0.020     1.510     0.020     
+IPN       "C8'"     N1        single    1.465     0.020     1.465     0.020     
+IPN       "H8'1"    "C8'"     single    1.089     0.010     0.989     0.005     
+IPN       "H8'2"    "C8'"     single    1.089     0.010     0.989     0.005     
+IPN       "O7'"     "C7'"     double    1.220     0.020     1.220     0.020     
+IPN       "N4'"     "C7'"     single    1.330     0.020     1.330     0.020     
+IPN       "C'"      "C5'"     single    1.510     0.020     1.510     0.020     
+IPN       "C5'"     "N4'"     single    1.455     0.020     1.455     0.020     
+IPN       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+IPN       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+IPN       "O1'"     "C'"      deloc     1.250     0.020     1.250     0.020     
+IPN       "O2'"     "C'"      deloc     1.250     0.020     1.250     0.020     
+IPN       "C3'"     "N4'"     single    1.455     0.020     1.455     0.020     
+IPN       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+IPN       "H3'1"    "C3'"     single    1.089     0.010     0.989     0.005     
+IPN       "H3'2"    "C3'"     single    1.089     0.010     0.989     0.005     
+IPN       "N1'"     "C2'"     single    1.488     0.020     1.488     0.020     
+IPN       "H2'1"    "C2'"     single    1.089     0.010     0.989     0.005     
+IPN       "H2'2"    "C2'"     single    1.089     0.010     0.989     0.005     
+IPN       "H1'1"    "N1'"     single    1.036     0.016     0.914     0.007     
+IPN       "H1'2"    "N1'"     single    1.036     0.016     0.914     0.007     
+IPN       "H1'3"    "N1'"     single    1.036     0.016     0.914     0.007     
+IPN       N1        C6        single    1.337     0.020     1.337     0.020     
+IPN       N1        C2        single    1.410     0.020     1.410     0.020     
+IPN       C6        C5        double    1.390     0.020     1.390     0.020     
+IPN       H6        C6        single    1.082     0.013     0.975     0.010     
+IPN       O2        C2        double    1.250     0.020     1.250     0.020     
+IPN       C2        N3        single    1.337     0.020     1.337     0.020     
+IPN       N3        C4        single    1.337     0.020     1.337     0.020     
+IPN       HN3       N3        single    1.016     0.010     0.899     0.007     
+IPN       O4        C4        double    1.250     0.020     1.250     0.020     
+IPN       C4        C5        single    1.487     0.020     1.487     0.020     
+IPN       C5        I5        single    2.090     0.020     2.090     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ IPN      I5     C5     C6      120.000    3.000
+ IPN      I5     C5     C4      120.000    3.000
+ IPN      C6     C5     C4      120.000    3.000
+ IPN      C5     C6     H6      120.000    3.000
+ IPN      C5     C6     N1      120.000    3.000
+ IPN      H6     C6     N1      120.000    3.000
+ IPN      C5     C4     O4      120.000    3.000
+ IPN      C5     C4     N3      120.000    3.000
+ IPN      O4     C4     N3      120.000    3.000
+ IPN      C4     N3     HN3     120.000    3.000
+ IPN      C4     N3     C2      120.000    3.000
+ IPN      HN3    N3     C2      120.000    3.000
+ IPN      N3     C2     O2      120.000    3.000
+ IPN      N3     C2     N1      120.000    3.000
+ IPN      O2     C2     N1      120.000    3.000
+ IPN      C2     N1     "C8'"   120.000    3.000
+ IPN      C2     N1     C6      120.000    3.000
+ IPN      "C8'"  N1     C6      120.000    3.000
+ IPN      N1     "C8'"  "H8'1"  109.470    3.000
+ IPN      N1     "C8'"  "H8'2"  109.470    3.000
+ IPN      N1     "C8'"  "C7'"   109.500    3.000
+ IPN      "H8'1" "C8'"  "H8'2"  107.900    3.000
+ IPN      "H8'1" "C8'"  "C7'"   109.470    3.000
+ IPN      "H8'2" "C8'"  "C7'"   109.470    3.000
+ IPN      "C8'"  "C7'"  "O7'"   120.500    3.000
+ IPN      "C8'"  "C7'"  "N4'"   116.500    3.000
+ IPN      "O7'"  "C7'"  "N4'"   123.000    3.000
+ IPN      "C7'"  "N4'"  "C5'"   127.000    3.000
+ IPN      "C7'"  "N4'"  "C3'"   127.000    3.000
+ IPN      "C5'"  "N4'"  "C3'"   120.000    3.000
+ IPN      "N4'"  "C5'"  "H5'1"  109.470    3.000
+ IPN      "N4'"  "C5'"  "H5'2"  109.470    3.000
+ IPN      "N4'"  "C5'"  "C'"    109.500    3.000
+ IPN      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ IPN      "H5'1" "C5'"  "C'"    109.470    3.000
+ IPN      "H5'2" "C5'"  "C'"    109.470    3.000
+ IPN      "C5'"  "C'"   "O2'"   118.500    3.000
+ IPN      "C5'"  "C'"   "O1'"   118.500    3.000
+ IPN      "O2'"  "C'"   "O1'"   123.000    3.000
+ IPN      "N4'"  "C3'"  "H3'1"  109.470    3.000
+ IPN      "N4'"  "C3'"  "H3'2"  109.470    3.000
+ IPN      "N4'"  "C3'"  "C2'"   105.000    3.000
+ IPN      "H3'1" "C3'"  "H3'2"  107.900    3.000
+ IPN      "H3'1" "C3'"  "C2'"   109.470    3.000
+ IPN      "H3'2" "C3'"  "C2'"   109.470    3.000
+ IPN      "C3'"  "C2'"  "H2'1"  109.470    3.000
+ IPN      "C3'"  "C2'"  "H2'2"  109.470    3.000
+ IPN      "C3'"  "C2'"  "N1'"   110.000    3.000
+ IPN      "H2'1" "C2'"  "H2'2"  107.900    3.000
+ IPN      "H2'1" "C2'"  "N1'"   109.470    3.000
+ IPN      "H2'2" "C2'"  "N1'"   109.470    3.000
+ IPN      "C2'"  "N1'"  "H1'3"  109.470    3.000
+ IPN      "C2'"  "N1'"  "H1'2"  109.470    3.000
+ IPN      "C2'"  "N1'"  "H1'1"  109.470    3.000
+ IPN      "H1'3" "N1'"  "H1'2"  109.470    3.000
+ IPN      "H1'3" "N1'"  "H1'1"  109.470    3.000
+ IPN      "H1'2" "N1'"  "H1'1"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ IPN      CONST_1  I5     C5     C6     N1       180.000    0.000   0
+ IPN      CONST_2  I5     C5     C4     N3       180.000    0.000   0
+ IPN      CONST_3  C5     C4     N3     C2         0.000    0.000   0
+ IPN      CONST_4  C4     N3     C2     N1         0.000    0.000   0
+ IPN      CONST_5  N3     C2     N1     "C8'"    180.000    0.000   0
+ IPN      CONST_6  C2     N1     C6     C5         0.000    0.000   0
+ IPN      var_1    C2     N1     "C8'"  "C7'"    -90.251   20.000   1
+ IPN      var_2    N1     "C8'"  "C7'"  "N4'"    174.863   20.000   3
+ IPN      CONST_7  "C8'"  "C7'"  "N4'"  "C3'"    180.000    0.000   0
+ IPN      var_3    "C7'"  "N4'"  "C5'"  "C'"     -94.755   20.000   1
+ IPN      var_4    "N4'"  "C5'"  "C'"   "O1'"      5.045   20.000   3
+ IPN      var_5    "C7'"  "N4'"  "C3'"  "C2'"    -89.967   20.000   1
+ IPN      var_6    "N4'"  "C3'"  "C2'"  "N1'"   -179.981   20.000   3
+ IPN      var_7    "C3'"  "C2'"  "N1'"  "H1'1"   180.000   20.000   1
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ IPN      plan-1    "C7'"     0.020
+ IPN      plan-1    "C8'"     0.020
+ IPN      plan-1    "O7'"     0.020
+ IPN      plan-1    "N4'"     0.020
+ IPN      plan-2    "C'"      0.020
+ IPN      plan-2    "C5'"     0.020
+ IPN      plan-2    "O1'"     0.020
+ IPN      plan-2    "O2'"     0.020
+ IPN      plan-3    "N4'"     0.020
+ IPN      plan-3    "C7'"     0.020
+ IPN      plan-3    "C5'"     0.020
+ IPN      plan-3    "C3'"     0.020
+ IPN      plan-4    N1        0.020
+ IPN      plan-4    "C8'"     0.020
+ IPN      plan-4    C6        0.020
+ IPN      plan-4    C2        0.020
+ IPN      plan-4    N3        0.020
+ IPN      plan-4    C4        0.020
+ IPN      plan-4    C5        0.020
+ IPN      plan-4    H6        0.020
+ IPN      plan-4    O2        0.020
+ IPN      plan-4    HN3       0.020
+ IPN      plan-4    O4        0.020
+ IPN      plan-4    I5        0.020
+# ------------------------------------------------------

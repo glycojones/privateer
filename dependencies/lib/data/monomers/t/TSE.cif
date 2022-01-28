@@ -1,0 +1,120 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TSE     TSE      "THIOPHOSPHONOACETIC ACID"     NON-POLYMER     12     8     .     
+#
+data_comp_TSE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TSE     C3P     C       C       0       1.836       0.004       -0.168      
+TSE     O4P     O       OC      -1      2.240       -1.107      -0.554      
+TSE     O5P     O       O       0       2.409       1.087       -0.380      
+TSE     P       P       P       0       -0.944      0.216       -0.380      
+TSE     S1P     S       S1      0       -0.989      1.939       -1.291      
+TSE     C2P     C       CH2     0       0.542       0.040       0.624       
+TSE     O3P     O       OH1     0       -0.949      -0.982      -1.357      
+TSE     O2P     O       OH1     0       -2.139      0.010       0.578       
+TSE     H2P1    H       H       0       0.572       0.792       1.244       
+TSE     H2P2    H       H       0       0.459       -0.787      1.133       
+TSE     HOP3    H       H       0       -0.517      -1.640      -1.067      
+TSE     HOP2    H       H       0       -2.081      -0.698      1.023       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TSE       C3P       O4P       SINGLE    n         1.244     0.020     1.244     0.020     
+TSE       C3P       O5P       DOUBLE    n         1.244     0.020     1.244     0.020     
+TSE       C3P       C2P       SINGLE    n         1.517     0.020     1.517     0.020     
+TSE       P         S1P       DOUBLE    n         1.949     0.020     1.949     0.020     
+TSE       P         C2P       SINGLE    n         1.802     0.014     1.802     0.014     
+TSE       P         O3P       SINGLE    n         1.546     0.012     1.546     0.012     
+TSE       P         O2P       SINGLE    n         1.546     0.012     1.546     0.012     
+TSE       C2P       H2P1      SINGLE    n         1.089     0.010     0.975     0.020     
+TSE       C2P       H2P2      SINGLE    n         1.089     0.010     0.975     0.020     
+TSE       O3P       HOP3      SINGLE    n         0.970     0.012     0.839     0.020     
+TSE       O2P       HOP2      SINGLE    n         0.970     0.012     0.839     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TSE         O4P         C3P         O5P     125.142    1.75
+TSE         O4P         C3P         C2P     117.429    2.33
+TSE         O5P         C3P         C2P     117.429    2.33
+TSE         S1P           P         C2P     112.146    2.50
+TSE         S1P           P         O3P     113.924    3.00
+TSE         S1P           P         O2P     113.924    3.00
+TSE         C2P           P         O3P     106.686    2.19
+TSE         C2P           P         O2P     106.686    2.19
+TSE         O3P           P         O2P     107.232    2.49
+TSE         C3P         C2P           P     113.247    3.00
+TSE         C3P         C2P        H2P1     108.627    1.50
+TSE         C3P         C2P        H2P2     108.627    1.50
+TSE           P         C2P        H2P1     107.103    2.06
+TSE           P         C2P        H2P2     107.103    2.06
+TSE        H2P1         C2P        H2P2     108.296    2.31
+TSE           P         O3P        HOP3     112.825    3.00
+TSE           P         O2P        HOP2     112.825    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TSE             sp2_sp3_2         O4P         C3P         C2P           P     120.000   10.00     6
+TSE             sp3_sp3_1         C3P         C2P           P         S1P     180.000   10.00     3
+TSE            sp3_sp3_10        HOP3         O3P           P         S1P     180.000   10.00     3
+TSE            sp3_sp3_13        HOP2         O2P           P         S1P     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TSE    plan-1         C2P   0.020
+TSE    plan-1         C3P   0.020
+TSE    plan-1         O4P   0.020
+TSE    plan-1         O5P   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TSE SMILES           ACDLabs              10.04 "O=C(O)CP(=S)(O)O"
+TSE SMILES_CANONICAL CACTVS               3.341 "OC(=O)C[P](O)(O)=S"
+TSE SMILES           CACTVS               3.341 "OC(=O)C[P](O)(O)=S"
+TSE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)P(=S)(O)O"
+TSE SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)P(=S)(O)O"
+TSE InChI            InChI                1.03  "InChI=1S/C2H5O4PS/c3-2(4)1-7(5,6)8/h1H2,(H,3,4)(H2,5,6,8)"
+TSE InChIKey         InChI                1.03  KUUMDZYFBMADNM-UHFFFAOYSA-N
+TSE ?                acedrg               202         "dictionary generator"                  
+TSE ?                acedrg_database      11          "data source"                           
+TSE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TSE ?                refmac5              5.8.0189    "optimization tool"                     

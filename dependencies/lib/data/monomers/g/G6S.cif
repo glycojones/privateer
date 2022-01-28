@@ -1,0 +1,229 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+G6S      G6S 'D-GALACTOSE-6-SULFATE               ' pyranose           28  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_G6S
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ G6S           C1     C    CH1       0.000      0.000    0.000    0.000
+ G6S           H1     H    H         0.000      0.297   -0.068   -1.056
+ G6S           O1     O    OH1       0.000      1.043    0.626    0.750
+ G6S           HO1    H    H         0.000      1.202    1.514    0.401
+ G6S           O5     O    O2        0.000     -1.196    0.776    0.110
+ G6S           C5     C    CH1       0.000     -2.302    0.250   -0.628
+ G6S           H5     H    H         0.000     -2.035    0.185   -1.692
+ G6S           C6     C    CH2       0.000     -3.511    1.172   -0.460
+ G6S           H6     H    H         0.000     -3.721    1.306    0.603
+ G6S           H6A    H    H         0.000     -4.379    0.724   -0.948
+ G6S           O6     O    O2        0.000     -3.230    2.440   -1.055
+ G6S           S      S    ST        0.000     -4.370    3.442   -0.946
+ G6S           O7     O    OS        0.000     -4.005    4.555   -1.752
+ G6S           O9     O    OH1       0.000     -4.396    3.942    0.490
+ G6S           HO9    H    H         0.000     -5.056    4.582    0.732
+ G6S           O8     O    OS        0.000     -5.571    2.706   -1.137
+ G6S           C4     C    CH1       0.000     -2.647   -1.145   -0.102
+ G6S           H4     H    H         0.000     -3.468   -1.569   -0.696
+ G6S           O4     O    OH1       0.000     -3.045   -1.055    1.268
+ G6S           HO4    H    H         0.000     -3.258   -1.938    1.599
+ G6S           C3     C    CH1       0.000     -1.413   -2.045   -0.218
+ G6S           H3     H    H         0.000     -1.136   -2.156   -1.276
+ G6S           O3     O    OH1       0.000     -1.704   -3.330    0.338
+ G6S           HO3    H    H         0.000     -0.922   -3.895    0.271
+ G6S           C2     C    CH1       0.000     -0.253   -1.405    0.551
+ G6S           H2     H    H         0.000     -0.511   -1.341    1.618
+ G6S           O2     O    OH1       0.000      0.923   -2.200    0.390
+ G6S           HO2    H    H         0.000      1.655   -1.792    0.872
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ G6S      C1     n/a    O5     START
+ G6S      H1     C1     .      .
+ G6S      O1     C1     HO1    .
+ G6S      HO1    O1     .      .
+ G6S      O5     C1     .      END
+ G6S      C5     O5     C4     .
+ G6S      H5     C5     .      .
+ G6S      C6     C5     O6     .
+ G6S      H6     C6     .      .
+ G6S      H6A    C6     .      .
+ G6S      O6     C6     S      .
+ G6S      S      O6     O8     .
+ G6S      O7     S      .      .
+ G6S      O9     S      HO9    .
+ G6S      HO9    O9     .      .
+ G6S      O8     S      .      .
+ G6S      C4     C5     C3     .
+ G6S      H4     C4     .      .
+ G6S      O4     C4     HO4    .
+ G6S      HO4    O4     .      .
+ G6S      C3     C4     C2     .
+ G6S      H3     C3     .      .
+ G6S      O3     C3     HO3    .
+ G6S      HO3    O3     .      .
+ G6S      C2     C3     O2     .
+ G6S      H2     C2     .      .
+ G6S      O2     C2     HO2    .
+ G6S      HO2    O2     .      .
+ G6S      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+G6S       C1        C2        single    1.524     0.020     1.524     0.020     
+G6S       O1        C1        single    1.432     0.020     1.432     0.020     
+G6S       O5        C1        single    1.426     0.020     1.426     0.020     
+G6S       C2        C3        single    1.524     0.020     1.524     0.020     
+G6S       O2        C2        single    1.432     0.020     1.432     0.020     
+G6S       C3        C4        single    1.524     0.020     1.524     0.020     
+G6S       O3        C3        single    1.432     0.020     1.432     0.020     
+G6S       C4        C5        single    1.524     0.020     1.524     0.020     
+G6S       O4        C4        single    1.432     0.020     1.432     0.020     
+G6S       C6        C5        single    1.524     0.020     1.524     0.020     
+G6S       C5        O5        single    1.426     0.020     1.426     0.020     
+G6S       O6        C6        single    1.426     0.020     1.426     0.020     
+G6S       S         O6        single    1.535     0.020     1.535     0.020     
+G6S       O7        S         double    1.436     0.020     1.436     0.020     
+G6S       O8        S         double    1.436     0.020     1.436     0.020     
+G6S       O9        S         single    1.635     0.020     1.635     0.020     
+G6S       H1        C1        single    1.089     0.010     0.989     0.005     
+G6S       H2        C2        single    1.089     0.010     0.989     0.005     
+G6S       H3        C3        single    1.089     0.010     0.989     0.005     
+G6S       H4        C4        single    1.089     0.010     0.989     0.005     
+G6S       H5        C5        single    1.089     0.010     0.989     0.005     
+G6S       H6        C6        single    1.089     0.010     0.989     0.005     
+G6S       H6A       C6        single    1.089     0.010     0.989     0.005     
+G6S       HO2       O2        single    0.970     0.012     0.839     0.014     
+G6S       HO4       O4        single    0.970     0.012     0.839     0.014     
+G6S       HO3       O3        single    0.970     0.012     0.839     0.014     
+G6S       HO1       O1        single    0.970     0.012     0.839     0.014     
+G6S       HO9       O9        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ G6S      H1     C1     O1      109.470    3.000
+ G6S      H1     C1     O5      109.470    3.000
+ G6S      O1     C1     O5      109.470    3.000
+ G6S      H1     C1     C2      108.340    3.000
+ G6S      O1     C1     C2      109.470    3.000
+ G6S      O5     C1     C2      109.470    3.000
+ G6S      C1     O1     HO1     109.470    3.000
+ G6S      C1     O5     C5      111.800    3.000
+ G6S      O5     C5     H5      109.470    3.000
+ G6S      O5     C5     C6      109.470    3.000
+ G6S      O5     C5     C4      109.470    3.000
+ G6S      H5     C5     C6      108.340    3.000
+ G6S      H5     C5     C4      108.340    3.000
+ G6S      C6     C5     C4      111.000    3.000
+ G6S      C5     C6     H6      109.470    3.000
+ G6S      C5     C6     H6A     109.470    3.000
+ G6S      C5     C6     O6      109.470    3.000
+ G6S      H6     C6     H6A     107.900    3.000
+ G6S      H6     C6     O6      109.470    3.000
+ G6S      H6A    C6     O6      109.470    3.000
+ G6S      C6     O6     S       120.000    3.000
+ G6S      O6     S      O7      109.500    3.000
+ G6S      O6     S      O9      109.500    3.000
+ G6S      O6     S      O8      109.500    3.000
+ G6S      O7     S      O9      109.500    3.000
+ G6S      O7     S      O8      109.500    3.000
+ G6S      O9     S      O8      109.500    3.000
+ G6S      S      O9     HO9     120.000    3.000
+ G6S      C5     C4     H4      108.340    3.000
+ G6S      C5     C4     O4      109.470    3.000
+ G6S      C5     C4     C3      111.000    3.000
+ G6S      H4     C4     O4      109.470    3.000
+ G6S      H4     C4     C3      108.340    3.000
+ G6S      O4     C4     C3      109.470    3.000
+ G6S      C4     O4     HO4     109.470    3.000
+ G6S      C4     C3     H3      108.340    3.000
+ G6S      C4     C3     O3      109.470    3.000
+ G6S      C4     C3     C2      111.000    3.000
+ G6S      H3     C3     O3      109.470    3.000
+ G6S      H3     C3     C2      108.340    3.000
+ G6S      O3     C3     C2      109.470    3.000
+ G6S      C3     O3     HO3     109.470    3.000
+ G6S      C3     C2     H2      108.340    3.000
+ G6S      C3     C2     O2      109.470    3.000
+ G6S      C3     C2     C1      111.000    3.000
+ G6S      H2     C2     O2      109.470    3.000
+ G6S      H2     C2     C1      108.340    3.000
+ G6S      O2     C2     C1      109.470    3.000
+ G6S      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ G6S      var_1    O5     C1     O1     HO1      -60.037   20.000   1
+ G6S      var_2    C1     O5     C5     C4        60.000   20.000   1
+ G6S      var_3    O5     C5     C6     O6        65.055   20.000   3
+ G6S      var_4    C5     C6     O6     S        179.993   20.000   1
+ G6S      var_5    C6     O6     S      O8       -38.563   20.000   1
+ G6S      var_6    O6     S      O9     HO9      179.983   20.000   1
+ G6S      var_7    O5     C5     C4     C3       -60.000   20.000   3
+ G6S      var_8    C5     C4     O4     HO4     -179.721   20.000   1
+ G6S      var_9    C5     C4     C3     C2        60.000   20.000   3
+ G6S      var_10   C4     C3     O3     HO3     -179.519   20.000   1
+ G6S      var_11   C4     C3     C2     O2       180.000   20.000   3
+ G6S      var_12   C3     C2     C1     O5        60.000   20.000   3
+ G6S      var_13   C3     C2     O2     HO2      179.643   20.000   1
+ G6S      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ G6S      chir_01  C1     C2     O1     O5        positiv
+ G6S      chir_02  C2     C1     C3     O2        negativ
+ G6S      chir_03  C3     C2     C4     O3        positiv
+ G6S      chir_04  C4     C3     C5     O4        positiv
+ G6S      chir_05  C5     C4     C6     O5        negativ
+ G6S      chir_06  S      O6     O7     O8        negativ
+# ------------------------------------------------------

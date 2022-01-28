@@ -1,0 +1,636 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AMK      AMK '"(S)-4-AMINO-4-{(S)-1-[(S)-2-CARBAMO' non-polymer        93  45 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AMK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AMK           O92    O    O         0.000      0.000    0.000    0.000
+ AMK           C91    C    C         0.000     -0.376    1.015    0.547
+ AMK           N93    N    NH2       0.000      0.128    2.208    0.174
+ AMK           H932   H    H         0.000      0.820    2.262   -0.563
+ AMK           H931   H    H         0.000     -0.183    3.058    0.628
+ AMK           C88    C    CH2       0.000     -1.407    0.941    1.643
+ AMK           H881   H    H         0.000     -2.314    1.460    1.324
+ AMK           H882   H    H         0.000     -1.014    1.418    2.544
+ AMK           C51    C    CH1       0.000     -1.732   -0.524    1.941
+ AMK           H51    H    H         0.000     -2.439   -0.579    2.781
+ AMK           N53    N    NH1       0.000     -0.501   -1.236    2.291
+ AMK           H53    H    H         0.000      0.024   -1.718    1.575
+ AMK           C55    C    C         0.000     -0.068   -1.247    3.567
+ AMK           C57    C    CH1       0.000      1.256   -1.881    3.908
+ AMK           H57    H    H         0.000      2.059   -1.370    3.359
+ AMK           C78    C    CH1       0.000      1.229   -3.359    3.514
+ AMK           H78    H    H         0.000      1.048   -3.447    2.434
+ AMK           C84    C    CH3       0.000      0.111   -4.071    4.279
+ AMK           H843   H    H         0.000      0.092   -5.095    4.007
+ AMK           H842   H    H         0.000      0.285   -3.987    5.321
+ AMK           H841   H    H         0.000     -0.820   -3.626    4.040
+ AMK           C80    C    CH3       0.000      2.573   -4.003    3.861
+ AMK           H803   H    H         0.000      3.349   -3.511    3.333
+ AMK           H802   H    H         0.000      2.748   -3.919    4.903
+ AMK           H801   H    H         0.000      2.556   -5.027    3.588
+ AMK           N59    N    NH1       0.000      1.497   -1.763    5.348
+ AMK           H59    H    H         0.000      0.718   -1.670    5.985
+ AMK           C61    C    C         0.000      2.757   -1.779    5.824
+ AMK           C63    C    CH1       0.000      3.005   -1.658    7.306
+ AMK           H63    H    H         0.000      2.253   -2.244    7.853
+ AMK           C68    C    CH2       0.000      2.908   -0.189    7.721
+ AMK           H681   H    H         0.000      1.944    0.215    7.406
+ AMK           H682   H    H         0.000      3.711    0.377    7.245
+ AMK           C71    C    CH2       0.000      3.036   -0.079    9.241
+ AMK           H711   H    H         0.000      4.000   -0.484    9.555
+ AMK           H712   H    H         0.000      2.232   -0.646    9.716
+ AMK           C74    C    C         0.000      2.940    1.368    9.650
+ AMK           O76    O    OC       -0.500      3.021    1.683   10.858
+ AMK           O75    O    OC       -0.500      2.780    2.254    8.781
+ AMK           N65    N    NH2       0.000      4.347   -2.169    7.621
+ AMK           H652   H    H         0.000      4.461   -2.948    8.258
+ AMK           H651   H    H         0.000      5.167   -1.745    7.203
+ AMK           O62    O    O         0.000      3.693   -1.891    5.060
+ AMK           O56    O    O         0.000     -0.743   -0.745    4.440
+ AMK           C49    C    C         0.000     -2.350   -1.157    0.722
+ AMK           O50    O    O         0.000     -1.816   -2.111    0.197
+ AMK           N1     N    NH1       0.000     -3.498   -0.665    0.215
+ AMK           HN1    H    H         0.000     -3.901    0.176    0.602
+ AMK           C3     C    CH1       0.000     -4.162   -1.351   -0.897
+ AMK           H3     H    H         0.000     -3.405   -1.819   -1.542
+ AMK           C36    C    CH2       0.000     -5.098   -2.428   -0.346
+ AMK           H361   H    H         0.000     -5.908   -1.954    0.212
+ AMK           H362   H    H         0.000     -4.539   -3.091    0.317
+ AMK           C39    C    CH1       0.000     -5.682   -3.238   -1.506
+ AMK           H39    H    H         0.000     -6.155   -2.557   -2.227
+ AMK           C45    C    CH3       0.000     -6.727   -4.218   -0.968
+ AMK           H453   H    H         0.000     -7.503   -3.680   -0.488
+ AMK           H452   H    H         0.000     -7.132   -4.780   -1.770
+ AMK           H451   H    H         0.000     -6.271   -4.875   -0.273
+ AMK           C41    C    CH3       0.000     -4.561   -4.016   -2.198
+ AMK           H413   H    H         0.000     -4.975   -4.652   -2.937
+ AMK           H412   H    H         0.000     -3.888   -3.337   -2.655
+ AMK           H411   H    H         0.000     -4.040   -4.599   -1.483
+ AMK           C5     C    CH1       0.000     -4.970   -0.339   -1.712
+ AMK           H5     H    H         0.000     -5.468   -0.853   -2.546
+ AMK           O7     O    OH1       0.000     -5.954    0.270   -0.872
+ AMK           HO7    H    H         0.000     -5.516    0.722   -0.138
+ AMK           C9     C    CH1       0.000     -4.034    0.738   -2.262
+ AMK           H9     H    H         0.000     -3.262    0.286   -2.900
+ AMK           C19    C    CH2       0.000     -3.381    1.533   -1.104
+ AMK           H191   H    H         0.000     -2.479    1.052   -0.719
+ AMK           H192   H    H         0.000     -4.072    1.721   -0.280
+ AMK           C16    C    CH2       0.000     -3.004    2.874   -1.780
+ AMK           H161   H    H         0.000     -2.076    2.798   -2.351
+ AMK           H162   H    H         0.000     -2.919    3.688   -1.056
+ AMK           C13    C    CH2       0.000     -4.178    3.158   -2.739
+ AMK           H131   H    H         0.000     -3.821    3.611   -3.666
+ AMK           H132   H    H         0.000     -4.911    3.817   -2.271
+ AMK           C11    C    CH1       0.000     -4.832    1.797   -3.049
+ AMK           H11    H    H         0.000     -5.880    1.801   -2.719
+ AMK           C22    C    C         0.000     -4.759    1.514   -4.527
+ AMK           O23    O    O         0.000     -4.152    0.545   -4.929
+ AMK           N24    N    NH1       0.000     -5.369    2.339   -5.402
+ AMK           H24    H    H         0.000     -5.874    3.147   -5.067
+ AMK           C26    C    CH1       0.000     -5.297    2.064   -6.839
+ AMK           H26    H    H         0.000     -4.317    1.629   -7.080
+ AMK           C28    C    CH3       0.000     -6.402    1.077   -7.225
+ AMK           H283   H    H         0.000     -6.352    0.877   -8.264
+ AMK           H282   H    H         0.000     -6.275    0.174   -6.686
+ AMK           H281   H    H         0.000     -7.348    1.495   -6.992
+ AMK           C32    C    C         0.000     -5.481    3.348   -7.606
+ AMK           O33    O    OC       -0.500     -5.456    3.339   -8.857
+ AMK           O34    O    OC       -0.500     -5.659    4.423   -6.992
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AMK      O92    n/a    C91    START
+ AMK      C91    O92    C88    .
+ AMK      N93    C91    H931   .
+ AMK      H932   N93    .      .
+ AMK      H931   N93    .      .
+ AMK      C88    C91    C51    .
+ AMK      H881   C88    .      .
+ AMK      H882   C88    .      .
+ AMK      C51    C88    C49    .
+ AMK      H51    C51    .      .
+ AMK      N53    C51    C55    .
+ AMK      H53    N53    .      .
+ AMK      C55    N53    O56    .
+ AMK      C57    C55    N59    .
+ AMK      H57    C57    .      .
+ AMK      C78    C57    C80    .
+ AMK      H78    C78    .      .
+ AMK      C84    C78    H841   .
+ AMK      H843   C84    .      .
+ AMK      H842   C84    .      .
+ AMK      H841   C84    .      .
+ AMK      C80    C78    H801   .
+ AMK      H803   C80    .      .
+ AMK      H802   C80    .      .
+ AMK      H801   C80    .      .
+ AMK      N59    C57    C61    .
+ AMK      H59    N59    .      .
+ AMK      C61    N59    O62    .
+ AMK      C63    C61    N65    .
+ AMK      H63    C63    .      .
+ AMK      C68    C63    C71    .
+ AMK      H681   C68    .      .
+ AMK      H682   C68    .      .
+ AMK      C71    C68    C74    .
+ AMK      H711   C71    .      .
+ AMK      H712   C71    .      .
+ AMK      C74    C71    O75    .
+ AMK      O76    C74    .      .
+ AMK      O75    C74    .      .
+ AMK      N65    C63    H651   .
+ AMK      H652   N65    .      .
+ AMK      H651   N65    .      .
+ AMK      O62    C61    .      .
+ AMK      O56    C55    .      .
+ AMK      C49    C51    N1     .
+ AMK      O50    C49    .      .
+ AMK      N1     C49    C3     .
+ AMK      HN1    N1     .      .
+ AMK      C3     N1     C5     .
+ AMK      H3     C3     .      .
+ AMK      C36    C3     C39    .
+ AMK      H361   C36    .      .
+ AMK      H362   C36    .      .
+ AMK      C39    C36    C41    .
+ AMK      H39    C39    .      .
+ AMK      C45    C39    H451   .
+ AMK      H453   C45    .      .
+ AMK      H452   C45    .      .
+ AMK      H451   C45    .      .
+ AMK      C41    C39    H411   .
+ AMK      H413   C41    .      .
+ AMK      H412   C41    .      .
+ AMK      H411   C41    .      .
+ AMK      C5     C3     C9     .
+ AMK      H5     C5     .      .
+ AMK      O7     C5     HO7    .
+ AMK      HO7    O7     .      .
+ AMK      C9     C5     C19    .
+ AMK      H9     C9     .      .
+ AMK      C19    C9     C16    .
+ AMK      H191   C19    .      .
+ AMK      H192   C19    .      .
+ AMK      C16    C19    C13    .
+ AMK      H161   C16    .      .
+ AMK      H162   C16    .      .
+ AMK      C13    C16    C11    .
+ AMK      H131   C13    .      .
+ AMK      H132   C13    .      .
+ AMK      C11    C13    C22    .
+ AMK      H11    C11    .      .
+ AMK      C22    C11    N24    .
+ AMK      O23    C22    .      .
+ AMK      N24    C22    C26    .
+ AMK      H24    N24    .      .
+ AMK      C26    N24    C32    .
+ AMK      H26    C26    .      .
+ AMK      C28    C26    H281   .
+ AMK      H283   C28    .      .
+ AMK      H282   C28    .      .
+ AMK      H281   C28    .      .
+ AMK      C32    C26    O34    .
+ AMK      O33    C32    .      .
+ AMK      O34    C32    .      END
+ AMK      C9     C11    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AMK       C3        N1        single    1.450     0.020     1.450     0.020     
+AMK       N1        C49       single    1.330     0.020     1.330     0.020     
+AMK       HN1       N1        single    1.016     0.010     0.899     0.007     
+AMK       C5        C3        single    1.524     0.020     1.524     0.020     
+AMK       C36       C3        single    1.524     0.020     1.524     0.020     
+AMK       H3        C3        single    1.089     0.010     0.989     0.005     
+AMK       O7        C5        single    1.432     0.020     1.432     0.020     
+AMK       C9        C5        single    1.524     0.020     1.524     0.020     
+AMK       H5        C5        single    1.089     0.010     0.989     0.005     
+AMK       HO7       O7        single    0.970     0.012     0.839     0.014     
+AMK       C9        C11       single    1.524     0.020     1.524     0.020     
+AMK       C19       C9        single    1.524     0.020     1.524     0.020     
+AMK       H9        C9        single    1.089     0.010     0.989     0.005     
+AMK       C11       C13       single    1.524     0.020     1.524     0.020     
+AMK       C22       C11       single    1.500     0.020     1.500     0.020     
+AMK       H11       C11       single    1.089     0.010     0.989     0.005     
+AMK       C13       C16       single    1.524     0.020     1.524     0.020     
+AMK       H131      C13       single    1.089     0.010     0.989     0.005     
+AMK       H132      C13       single    1.089     0.010     0.989     0.005     
+AMK       C16       C19       single    1.524     0.020     1.524     0.020     
+AMK       H161      C16       single    1.089     0.010     0.989     0.005     
+AMK       H162      C16       single    1.089     0.010     0.989     0.005     
+AMK       H191      C19       single    1.089     0.010     0.989     0.005     
+AMK       H192      C19       single    1.089     0.010     0.989     0.005     
+AMK       O23       C22       double    1.220     0.020     1.220     0.020     
+AMK       N24       C22       single    1.330     0.020     1.330     0.020     
+AMK       C26       N24       single    1.450     0.020     1.450     0.020     
+AMK       H24       N24       single    1.016     0.010     0.899     0.007     
+AMK       C28       C26       single    1.524     0.020     1.524     0.020     
+AMK       C32       C26       single    1.500     0.020     1.500     0.020     
+AMK       H26       C26       single    1.089     0.010     0.989     0.005     
+AMK       H281      C28       single    1.089     0.010     0.989     0.005     
+AMK       H282      C28       single    1.089     0.010     0.989     0.005     
+AMK       H283      C28       single    1.089     0.010     0.989     0.005     
+AMK       O33       C32       deloc     1.250     0.020     1.250     0.020     
+AMK       O34       C32       deloc     1.250     0.020     1.250     0.020     
+AMK       C39       C36       single    1.524     0.020     1.524     0.020     
+AMK       H361      C36       single    1.089     0.010     0.989     0.005     
+AMK       H362      C36       single    1.089     0.010     0.989     0.005     
+AMK       C41       C39       single    1.524     0.020     1.524     0.020     
+AMK       C45       C39       single    1.524     0.020     1.524     0.020     
+AMK       H39       C39       single    1.089     0.010     0.989     0.005     
+AMK       H411      C41       single    1.089     0.010     0.989     0.005     
+AMK       H412      C41       single    1.089     0.010     0.989     0.005     
+AMK       H413      C41       single    1.089     0.010     0.989     0.005     
+AMK       H451      C45       single    1.089     0.010     0.989     0.005     
+AMK       H452      C45       single    1.089     0.010     0.989     0.005     
+AMK       H453      C45       single    1.089     0.010     0.989     0.005     
+AMK       O50       C49       double    1.220     0.020     1.220     0.020     
+AMK       C49       C51       single    1.500     0.020     1.500     0.020     
+AMK       N53       C51       single    1.450     0.020     1.450     0.020     
+AMK       C51       C88       single    1.524     0.020     1.524     0.020     
+AMK       H51       C51       single    1.089     0.010     0.989     0.005     
+AMK       C55       N53       single    1.330     0.020     1.330     0.020     
+AMK       H53       N53       single    1.016     0.010     0.899     0.007     
+AMK       O56       C55       double    1.220     0.020     1.220     0.020     
+AMK       C57       C55       single    1.500     0.020     1.500     0.020     
+AMK       N59       C57       single    1.450     0.020     1.450     0.020     
+AMK       C78       C57       single    1.524     0.020     1.524     0.020     
+AMK       H57       C57       single    1.089     0.010     0.989     0.005     
+AMK       C61       N59       single    1.330     0.020     1.330     0.020     
+AMK       H59       N59       single    1.016     0.010     0.899     0.007     
+AMK       O62       C61       double    1.220     0.020     1.220     0.020     
+AMK       C63       C61       single    1.500     0.020     1.500     0.020     
+AMK       N65       C63       single    1.450     0.020     1.450     0.020     
+AMK       C68       C63       single    1.524     0.020     1.524     0.020     
+AMK       H63       C63       single    1.089     0.010     0.989     0.005     
+AMK       H651      N65       single    1.036     0.016     0.914     0.007     
+AMK       H652      N65       single    1.036     0.016     0.914     0.007     
+AMK       C71       C68       single    1.524     0.020     1.524     0.020     
+AMK       H681      C68       single    1.089     0.010     0.989     0.005     
+AMK       H682      C68       single    1.089     0.010     0.989     0.005     
+AMK       C74       C71       single    1.510     0.020     1.510     0.020     
+AMK       H711      C71       single    1.089     0.010     0.989     0.005     
+AMK       H712      C71       single    1.089     0.010     0.989     0.005     
+AMK       O75       C74       deloc     1.250     0.020     1.250     0.020     
+AMK       O76       C74       deloc     1.250     0.020     1.250     0.020     
+AMK       C80       C78       single    1.524     0.020     1.524     0.020     
+AMK       C84       C78       single    1.524     0.020     1.524     0.020     
+AMK       H78       C78       single    1.089     0.010     0.989     0.005     
+AMK       H801      C80       single    1.089     0.010     0.989     0.005     
+AMK       H802      C80       single    1.089     0.010     0.989     0.005     
+AMK       H803      C80       single    1.089     0.010     0.989     0.005     
+AMK       H841      C84       single    1.089     0.010     0.989     0.005     
+AMK       H842      C84       single    1.089     0.010     0.989     0.005     
+AMK       H843      C84       single    1.089     0.010     0.989     0.005     
+AMK       C88       C91       single    1.510     0.020     1.510     0.020     
+AMK       H881      C88       single    1.089     0.010     0.989     0.005     
+AMK       H882      C88       single    1.089     0.010     0.989     0.005     
+AMK       C91       O92       double    1.220     0.020     1.220     0.020     
+AMK       N93       C91       single    1.332     0.020     1.332     0.020     
+AMK       H931      N93       single    1.016     0.010     0.899     0.007     
+AMK       H932      N93       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AMK      O92    C91    N93     123.000    3.000
+ AMK      O92    C91    C88     120.500    3.000
+ AMK      N93    C91    C88     116.500    3.000
+ AMK      C91    N93    H932    120.000    3.000
+ AMK      C91    N93    H931    120.000    3.000
+ AMK      H932   N93    H931    120.000    3.000
+ AMK      C91    C88    H881    109.470    3.000
+ AMK      C91    C88    H882    109.470    3.000
+ AMK      C91    C88    C51     109.470    3.000
+ AMK      H881   C88    H882    107.900    3.000
+ AMK      H881   C88    C51     109.470    3.000
+ AMK      H882   C88    C51     109.470    3.000
+ AMK      C88    C51    H51     108.340    3.000
+ AMK      C88    C51    N53     110.000    3.000
+ AMK      C88    C51    C49     109.470    3.000
+ AMK      H51    C51    N53     108.550    3.000
+ AMK      H51    C51    C49     108.810    3.000
+ AMK      N53    C51    C49     111.600    3.000
+ AMK      C51    N53    H53     118.500    3.000
+ AMK      C51    N53    C55     121.500    3.000
+ AMK      H53    N53    C55     120.000    3.000
+ AMK      N53    C55    C57     116.500    3.000
+ AMK      N53    C55    O56     123.000    3.000
+ AMK      C57    C55    O56     120.500    3.000
+ AMK      C55    C57    H57     108.810    3.000
+ AMK      C55    C57    C78     109.470    3.000
+ AMK      C55    C57    N59     111.600    3.000
+ AMK      H57    C57    C78     108.340    3.000
+ AMK      H57    C57    N59     108.550    3.000
+ AMK      C78    C57    N59     110.000    3.000
+ AMK      C57    C78    H78     108.340    3.000
+ AMK      C57    C78    C84     111.000    3.000
+ AMK      C57    C78    C80     111.000    3.000
+ AMK      H78    C78    C84     108.340    3.000
+ AMK      H78    C78    C80     108.340    3.000
+ AMK      C84    C78    C80     111.000    3.000
+ AMK      C78    C84    H843    109.470    3.000
+ AMK      C78    C84    H842    109.470    3.000
+ AMK      C78    C84    H841    109.470    3.000
+ AMK      H843   C84    H842    109.470    3.000
+ AMK      H843   C84    H841    109.470    3.000
+ AMK      H842   C84    H841    109.470    3.000
+ AMK      C78    C80    H803    109.470    3.000
+ AMK      C78    C80    H802    109.470    3.000
+ AMK      C78    C80    H801    109.470    3.000
+ AMK      H803   C80    H802    109.470    3.000
+ AMK      H803   C80    H801    109.470    3.000
+ AMK      H802   C80    H801    109.470    3.000
+ AMK      C57    N59    H59     118.500    3.000
+ AMK      C57    N59    C61     121.500    3.000
+ AMK      H59    N59    C61     120.000    3.000
+ AMK      N59    C61    C63     116.500    3.000
+ AMK      N59    C61    O62     123.000    3.000
+ AMK      C63    C61    O62     120.500    3.000
+ AMK      C61    C63    H63     108.810    3.000
+ AMK      C61    C63    C68     109.470    3.000
+ AMK      C61    C63    N65     109.470    3.000
+ AMK      H63    C63    C68     108.340    3.000
+ AMK      H63    C63    N65     109.470    3.000
+ AMK      C68    C63    N65     109.470    3.000
+ AMK      C63    C68    H681    109.470    3.000
+ AMK      C63    C68    H682    109.470    3.000
+ AMK      C63    C68    C71     111.000    3.000
+ AMK      H681   C68    H682    107.900    3.000
+ AMK      H681   C68    C71     109.470    3.000
+ AMK      H682   C68    C71     109.470    3.000
+ AMK      C68    C71    H711    109.470    3.000
+ AMK      C68    C71    H712    109.470    3.000
+ AMK      C68    C71    C74     109.470    3.000
+ AMK      H711   C71    H712    107.900    3.000
+ AMK      H711   C71    C74     109.470    3.000
+ AMK      H712   C71    C74     109.470    3.000
+ AMK      C71    C74    O76     118.500    3.000
+ AMK      C71    C74    O75     118.500    3.000
+ AMK      O76    C74    O75     123.000    3.000
+ AMK      C63    N65    H652    120.000    3.000
+ AMK      C63    N65    H651    120.000    3.000
+ AMK      H652   N65    H651    120.000    3.000
+ AMK      C51    C49    O50     120.500    3.000
+ AMK      C51    C49    N1      116.500    3.000
+ AMK      O50    C49    N1      123.000    3.000
+ AMK      C49    N1     HN1     120.000    3.000
+ AMK      C49    N1     C3      121.500    3.000
+ AMK      HN1    N1     C3      118.500    3.000
+ AMK      N1     C3     H3      108.550    3.000
+ AMK      N1     C3     C36     110.000    3.000
+ AMK      N1     C3     C5      110.000    3.000
+ AMK      H3     C3     C36     108.340    3.000
+ AMK      H3     C3     C5      108.340    3.000
+ AMK      C36    C3     C5      111.000    3.000
+ AMK      C3     C36    H361    109.470    3.000
+ AMK      C3     C36    H362    109.470    3.000
+ AMK      C3     C36    C39     111.000    3.000
+ AMK      H361   C36    H362    107.900    3.000
+ AMK      H361   C36    C39     109.470    3.000
+ AMK      H362   C36    C39     109.470    3.000
+ AMK      C36    C39    H39     108.340    3.000
+ AMK      C36    C39    C45     111.000    3.000
+ AMK      C36    C39    C41     111.000    3.000
+ AMK      H39    C39    C45     108.340    3.000
+ AMK      H39    C39    C41     108.340    3.000
+ AMK      C45    C39    C41     111.000    3.000
+ AMK      C39    C45    H453    109.470    3.000
+ AMK      C39    C45    H452    109.470    3.000
+ AMK      C39    C45    H451    109.470    3.000
+ AMK      H453   C45    H452    109.470    3.000
+ AMK      H453   C45    H451    109.470    3.000
+ AMK      H452   C45    H451    109.470    3.000
+ AMK      C39    C41    H413    109.470    3.000
+ AMK      C39    C41    H412    109.470    3.000
+ AMK      C39    C41    H411    109.470    3.000
+ AMK      H413   C41    H412    109.470    3.000
+ AMK      H413   C41    H411    109.470    3.000
+ AMK      H412   C41    H411    109.470    3.000
+ AMK      C3     C5     H5      108.340    3.000
+ AMK      C3     C5     O7      109.470    3.000
+ AMK      C3     C5     C9      111.000    3.000
+ AMK      H5     C5     O7      109.470    3.000
+ AMK      H5     C5     C9      108.340    3.000
+ AMK      O7     C5     C9      109.470    3.000
+ AMK      C5     O7     HO7     109.470    3.000
+ AMK      C5     C9     H9      108.340    3.000
+ AMK      C5     C9     C19     111.000    3.000
+ AMK      C5     C9     C11     111.000    3.000
+ AMK      H9     C9     C19     108.340    3.000
+ AMK      H9     C9     C11     108.340    3.000
+ AMK      C19    C9     C11     111.000    3.000
+ AMK      C9     C19    H191    109.470    3.000
+ AMK      C9     C19    H192    109.470    3.000
+ AMK      C9     C19    C16     111.000    3.000
+ AMK      H191   C19    H192    107.900    3.000
+ AMK      H191   C19    C16     109.470    3.000
+ AMK      H192   C19    C16     109.470    3.000
+ AMK      C19    C16    H161    109.470    3.000
+ AMK      C19    C16    H162    109.470    3.000
+ AMK      C19    C16    C13     111.000    3.000
+ AMK      H161   C16    H162    107.900    3.000
+ AMK      H161   C16    C13     109.470    3.000
+ AMK      H162   C16    C13     109.470    3.000
+ AMK      C16    C13    H131    109.470    3.000
+ AMK      C16    C13    H132    109.470    3.000
+ AMK      C16    C13    C11     111.000    3.000
+ AMK      H131   C13    H132    107.900    3.000
+ AMK      H131   C13    C11     109.470    3.000
+ AMK      H132   C13    C11     109.470    3.000
+ AMK      C13    C11    H11     108.340    3.000
+ AMK      C13    C11    C22     109.470    3.000
+ AMK      C13    C11    C9      111.000    3.000
+ AMK      H11    C11    C22     108.810    3.000
+ AMK      H11    C11    C9      108.340    3.000
+ AMK      C22    C11    C9      109.470    3.000
+ AMK      C11    C22    O23     120.500    3.000
+ AMK      C11    C22    N24     116.500    3.000
+ AMK      O23    C22    N24     123.000    3.000
+ AMK      C22    N24    H24     120.000    3.000
+ AMK      C22    N24    C26     121.500    3.000
+ AMK      H24    N24    C26     118.500    3.000
+ AMK      N24    C26    H26     108.550    3.000
+ AMK      N24    C26    C28     110.000    3.000
+ AMK      N24    C26    C32     111.600    3.000
+ AMK      H26    C26    C28     108.340    3.000
+ AMK      H26    C26    C32     108.810    3.000
+ AMK      C28    C26    C32     109.470    3.000
+ AMK      C26    C28    H283    109.470    3.000
+ AMK      C26    C28    H282    109.470    3.000
+ AMK      C26    C28    H281    109.470    3.000
+ AMK      H283   C28    H282    109.470    3.000
+ AMK      H283   C28    H281    109.470    3.000
+ AMK      H282   C28    H281    109.470    3.000
+ AMK      C26    C32    O33     118.500    3.000
+ AMK      C26    C32    O34     118.500    3.000
+ AMK      O33    C32    O34     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AMK      CONST_1  O92    C91    N93    H931     180.000    0.000   0
+ AMK      var_1    O92    C91    C88    C51        4.202   20.000   3
+ AMK      var_2    C91    C88    C51    C49      -63.355   20.000   3
+ AMK      var_3    C88    C51    N53    C55       86.998   20.000   3
+ AMK      CONST_2  C51    N53    C55    O56        0.000    0.000   0
+ AMK      var_4    N53    C55    C57    N59      179.951   20.000   3
+ AMK      var_5    C55    C57    C78    C80     -179.973   20.000   3
+ AMK      var_6    C57    C78    C84    H841      60.016   20.000   3
+ AMK      var_7    C57    C78    C80    H801    -179.985   20.000   3
+ AMK      var_8    C55    C57    N59    C61     -154.991   20.000   3
+ AMK      CONST_3  C57    N59    C61    O62        0.000    0.000   0
+ AMK      var_9    N59    C61    C63    N65      159.979   20.000   3
+ AMK      var_10   C61    C63    C68    C71      174.993   20.000   3
+ AMK      var_11   C63    C68    C71    C74      179.993   20.000   3
+ AMK      var_12   C68    C71    C74    O75       -0.004   20.000   3
+ AMK      var_13   C61    C63    N65    H651      60.013   20.000   1
+ AMK      var_14   C88    C51    C49    N1       -60.051   20.000   3
+ AMK      CONST_4  C51    C49    N1     C3       180.000    0.000   0
+ AMK      var_15   C49    N1     C3     C5      -152.579   20.000   3
+ AMK      var_16   N1     C3     C36    C39     -174.281   20.000   3
+ AMK      var_17   C3     C36    C39    C41       65.806   20.000   3
+ AMK      var_18   C36    C39    C45    H451     -60.008   20.000   3
+ AMK      var_19   C36    C39    C41    H411      54.290   20.000   3
+ AMK      var_20   N1     C3     C5     C9        59.939   20.000   3
+ AMK      var_21   C3     C5     O7     HO7       59.994   20.000   1
+ AMK      var_22   C3     C5     C9     C19      -63.196   20.000   3
+ AMK      var_23   C5     C9     C11    C13      150.000   20.000   3
+ AMK      var_24   C5     C9     C19    C16     -150.000   20.000   3
+ AMK      var_25   C9     C19    C16    C13       30.000   20.000   3
+ AMK      var_26   C19    C16    C13    C11      -30.000   20.000   3
+ AMK      var_27   C16    C13    C11    C22     -120.000   20.000   3
+ AMK      var_28   C13    C11    C22    N24      -61.467   20.000   3
+ AMK      CONST_5  C11    C22    N24    C26      180.000    0.000   0
+ AMK      var_29   C22    N24    C26    C32     -155.024   20.000   3
+ AMK      var_30   N24    C26    C28    H281      59.972   20.000   3
+ AMK      var_31   N24    C26    C32    O34        0.065   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AMK      chir_01  C3     N1     C5     C36       positiv
+ AMK      chir_02  C5     C3     O7     C9        negativ
+ AMK      chir_03  C9     C5     C11    C19       negativ
+ AMK      chir_04  C11    C9     C13    C22       negativ
+ AMK      chir_05  C26    N24    C28    C32       negativ
+ AMK      chir_06  C39    C36    C41    C45       negativ
+ AMK      chir_07  C51    C49    N53    C88       negativ
+ AMK      chir_08  C57    C55    N59    C78       negativ
+ AMK      chir_09  C63    C61    N65    C68       negativ
+ AMK      chir_10  C78    C57    C80    C84       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AMK      plan-1    N1        0.020
+ AMK      plan-1    C3        0.020
+ AMK      plan-1    C49       0.020
+ AMK      plan-1    HN1       0.020
+ AMK      plan-2    C22       0.020
+ AMK      plan-2    C11       0.020
+ AMK      plan-2    O23       0.020
+ AMK      plan-2    N24       0.020
+ AMK      plan-2    H24       0.020
+ AMK      plan-3    N24       0.020
+ AMK      plan-3    C22       0.020
+ AMK      plan-3    C26       0.020
+ AMK      plan-3    H24       0.020
+ AMK      plan-4    C32       0.020
+ AMK      plan-4    C26       0.020
+ AMK      plan-4    O33       0.020
+ AMK      plan-4    O34       0.020
+ AMK      plan-5    C49       0.020
+ AMK      plan-5    N1        0.020
+ AMK      plan-5    O50       0.020
+ AMK      plan-5    C51       0.020
+ AMK      plan-5    HN1       0.020
+ AMK      plan-6    N53       0.020
+ AMK      plan-6    C51       0.020
+ AMK      plan-6    C55       0.020
+ AMK      plan-6    H53       0.020
+ AMK      plan-7    C55       0.020
+ AMK      plan-7    N53       0.020
+ AMK      plan-7    O56       0.020
+ AMK      plan-7    C57       0.020
+ AMK      plan-7    H53       0.020
+ AMK      plan-8    N59       0.020
+ AMK      plan-8    C57       0.020
+ AMK      plan-8    C61       0.020
+ AMK      plan-8    H59       0.020
+ AMK      plan-9    C61       0.020
+ AMK      plan-9    N59       0.020
+ AMK      plan-9    O62       0.020
+ AMK      plan-9    C63       0.020
+ AMK      plan-9    H59       0.020
+ AMK      plan-10   N65       0.020
+ AMK      plan-10   C63       0.020
+ AMK      plan-10   H651      0.020
+ AMK      plan-10   H652      0.020
+ AMK      plan-11   C74       0.020
+ AMK      plan-11   C71       0.020
+ AMK      plan-11   O75       0.020
+ AMK      plan-11   O76       0.020
+ AMK      plan-12   C91       0.020
+ AMK      plan-12   C88       0.020
+ AMK      plan-12   O92       0.020
+ AMK      plan-12   N93       0.020
+ AMK      plan-12   H932      0.020
+ AMK      plan-12   H931      0.020
+ AMK      plan-13   N93       0.020
+ AMK      plan-13   C91       0.020
+ AMK      plan-13   H931      0.020
+ AMK      plan-13   H932      0.020
+# ------------------------------------------------------

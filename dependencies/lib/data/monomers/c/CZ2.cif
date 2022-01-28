@@ -1,0 +1,170 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CZ2      CZ2 'S-(DIHYDROXYARSINO)CYSTEINE         ' peptide            17  10 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CZ2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CZ2           N      N    NH2       0.000      0.000    0.000    0.000
+ CZ2           H    H    H         0.000      0.669   -0.759    0.055
+ CZ2           H2    H    H         0.000     -0.742   -0.041   -0.688
+ CZ2           CA     C    CH1       0.000      0.105    1.148    0.909
+ CZ2           HCA    H    H         0.000      0.328    2.055    0.330
+ CZ2           CB     C    CH2       0.000     -1.219    1.331    1.655
+ CZ2           HB2    H    H         0.000     -1.141    2.184    2.332
+ CZ2           HB3    H    H         0.000     -1.440    0.430    2.231
+ CZ2           SG     S    S2        0.000     -2.549    1.627    0.458
+ CZ2           AS     AS   AS1       0.000     -2.902   -0.404   -0.418
+ CZ2           O2     O    OH1       0.000     -4.242   -0.306   -1.675
+ CZ2           HO2    H    H         0.000     -4.495   -1.103   -2.129
+ CZ2           O1     O    OH1       0.000     -3.397   -1.569    0.917
+ CZ2           HO1    H    H         0.000     -3.579   -2.474    0.684
+ CZ2           C      C    C         0.000      1.211    0.902    1.904
+ CZ2           O      O    OC       -0.500      1.615   -0.263    2.115
+ CZ2           OXT    O    OC       -0.500      1.725    1.864    2.518
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CZ2      N      n/a    CA     START
+ CZ2      H    N      .      .
+ CZ2      H2    N      .      .
+ CZ2      CA     N      C      .
+ CZ2      HCA    CA     .      .
+ CZ2      CB     CA     SG     .
+ CZ2      HB2    CB     .      .
+ CZ2      HB3    CB     .      .
+ CZ2      SG     CB     AS     .
+ CZ2      AS     SG     O1     .
+ CZ2      O2     AS     HO2    .
+ CZ2      HO2    O2     .      .
+ CZ2      O1     AS     HO1    .
+ CZ2      HO1    O1     .      .
+ CZ2      C      CA     .      END
+ CZ2      O      C      .      .
+ CZ2      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CZ2       CA        N         single    1.450     0.020     1.450     0.020     
+CZ2       CB        CA        single    1.524     0.020     1.524     0.020     
+CZ2       C         CA        single    1.500     0.020     1.500     0.020     
+CZ2       HCA       CA        single    1.089     0.010     0.989     0.005     
+CZ2       SG        CB        single    1.762     0.020     1.762     0.020     
+CZ2       HB2       CB        single    1.089     0.010     0.989     0.005     
+CZ2       HB3       CB        single    1.089     0.010     0.989     0.005     
+CZ2       AS        SG        single    2.230     0.020     2.230     0.020     
+CZ2       O         C         deloc     1.250     0.020     1.250     0.020     
+CZ2       OXT       C         deloc     1.250     0.020     1.250     0.020     
+CZ2       O1        AS        single    1.964     0.020     1.964     0.020     
+CZ2       O2        AS        single    1.964     0.020     1.964     0.020     
+CZ2       HO1       O1        single    0.970     0.012     0.839     0.014     
+CZ2       HO2       O2        single    0.970     0.012     0.839     0.014     
+CZ2       H         N         single    1.036     0.016     0.914     0.007     
+CZ2       H2        N         single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CZ2      H    N      H2     120.000    3.000
+ CZ2      H    N      CA      120.000    3.000
+ CZ2      H2    N      CA      120.000    3.000
+ CZ2      N      CA     HCA     109.470    3.000
+ CZ2      N      CA     CB      109.470    3.000
+ CZ2      N      CA     C       109.470    3.000
+ CZ2      HCA    CA     CB      108.340    3.000
+ CZ2      HCA    CA     C       108.810    3.000
+ CZ2      CB     CA     C       109.470    3.000
+ CZ2      CA     CB     HB2     109.470    3.000
+ CZ2      CA     CB     HB3     109.470    3.000
+ CZ2      CA     CB     SG      109.500    3.000
+ CZ2      HB2    CB     HB3     107.900    3.000
+ CZ2      HB2    CB     SG      109.500    3.000
+ CZ2      HB3    CB     SG      109.500    3.000
+ CZ2      CB     SG     AS      103.007    3.000
+ CZ2      SG     AS     O2      120.000    3.000
+ CZ2      SG     AS     O1      120.000    3.000
+ CZ2      O2     AS     O1      120.000    3.000
+ CZ2      AS     O2     HO2     120.000    3.000
+ CZ2      AS     O1     HO1     120.000    3.000
+ CZ2      CA     C      O       118.500    3.000
+ CZ2      CA     C      OXT     118.500    3.000
+ CZ2      O      C      OXT     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CZ2      var_1    H2    N      CA     C        175.000   20.000   1
+ CZ2      var_2    N      CA     CB     SG       -60.040   20.000   3
+ CZ2      var_3    CA     CB     SG     AS        75.019   20.000   1
+ CZ2      var_4    CB     SG     AS     O1        59.987   20.000   1
+ CZ2      var_5    SG     AS     O2     HO2      179.978   20.000   1
+ CZ2      var_6    SG     AS     O1     HO1     -179.954   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CZ2      chir_01  CA     N      CB     C         negativ
+ CZ2      chir_02  AS     SG     O2     O1        both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CZ2      plan-1    N         0.020
+ CZ2      plan-1    CA        0.020
+ CZ2      plan-1    H       0.020
+ CZ2      plan-1    H2       0.020
+ CZ2      plan-2    C         0.020
+ CZ2      plan-2    CA        0.020
+ CZ2      plan-2    O         0.020
+ CZ2      plan-2    OXT       0.020
+# ------------------------------------------------------

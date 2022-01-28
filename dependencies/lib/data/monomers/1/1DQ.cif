@@ -1,0 +1,130 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+1DQ     1DQ     "5-(trifluoromethyl)-1H-imidazole"     NON-POLYMER     12     9     .     
+#
+data_comp_1DQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+1DQ     FAA     F       F       0       -2.175      -0.348      -1.151      
+1DQ     CAI     C       CT      0       -1.697      0.096       0.006       
+1DQ     FAB     F       F       0       -2.191      -0.701      0.946       
+1DQ     FAC     F       F       0       -2.241      1.291       0.203       
+1DQ     CAH     C       CR5     0       -0.208      0.141       0.025       
+1DQ     CAE     C       CR15    0       0.651       1.178       0.216       
+1DQ     NAG     N       NRD5    0       1.949       0.724       0.145       
+1DQ     CAD     C       CR15    0       1.862       -0.567      -0.085      
+1DQ     NAF     N       NR5     0       0.587       -0.962      -0.165      
+1DQ     H1      H       H       0       0.404       2.074       0.373       
+1DQ     H3      H       H       0       2.597       -1.141      -0.181      
+1DQ     H4      H       H       0       0.301       -1.789      -0.313      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+1DQ       CAI       FAB       SINGLE    n         1.328     0.016     1.328     0.016     
+1DQ       CAD       NAF       SINGLE    y         1.337     0.014     1.337     0.014     
+1DQ       CAH       NAF       SINGLE    y         1.373     0.010     1.373     0.010     
+1DQ       NAG       CAD       DOUBLE    y         1.313     0.010     1.313     0.010     
+1DQ       CAI       CAH       SINGLE    n         1.490     0.011     1.490     0.011     
+1DQ       CAH       CAE       DOUBLE    y         1.361     0.012     1.361     0.012     
+1DQ       CAI       FAC       SINGLE    n         1.328     0.016     1.328     0.016     
+1DQ       FAA       CAI       SINGLE    n         1.328     0.016     1.328     0.016     
+1DQ       CAE       NAG       SINGLE    y         1.377     0.010     1.377     0.010     
+1DQ       CAE       H1        SINGLE    n         1.082     0.013     0.942     0.018     
+1DQ       CAD       H3        SINGLE    n         1.082     0.013     0.937     0.020     
+1DQ       NAF       H4        SINGLE    n         1.016     0.010     0.887     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+1DQ         FAB         CAI         CAH     112.389    1.50
+1DQ         FAB         CAI         FAC     106.380    1.50
+1DQ         FAB         CAI         FAA     106.380    1.50
+1DQ         CAH         CAI         FAC     112.389    1.50
+1DQ         CAH         CAI         FAA     112.389    1.50
+1DQ         FAC         CAI         FAA     106.380    1.50
+1DQ         NAF         CAH         CAI     123.444    1.50
+1DQ         NAF         CAH         CAE     105.714    1.50
+1DQ         CAI         CAH         CAE     130.841    1.50
+1DQ         CAH         CAE         NAG     109.672    1.50
+1DQ         CAH         CAE          H1     125.673    1.50
+1DQ         NAG         CAE          H1     124.655    2.11
+1DQ         CAD         NAG         CAE     105.455    1.50
+1DQ         NAF         CAD         NAG     111.173    1.50
+1DQ         NAF         CAD          H3     124.161    1.50
+1DQ         NAG         CAD          H3     124.666    1.50
+1DQ         CAD         NAF         CAH     107.986    2.04
+1DQ         CAD         NAF          H4     126.220    2.69
+1DQ         CAH         NAF          H4     125.794    1.79
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+1DQ             sp2_sp3_1         NAF         CAH         CAI         FAB     150.000   10.00     6
+1DQ              const_14         NAG         CAE         CAH         CAI     180.000   10.00     2
+1DQ       const_sp2_sp2_3         CAI         CAH         NAF         CAD     180.000   10.00     2
+1DQ              const_11         CAH         CAE         NAG         CAD       0.000   10.00     2
+1DQ       const_sp2_sp2_9         NAF         CAD         NAG         CAE       0.000   10.00     2
+1DQ       const_sp2_sp2_5         NAG         CAD         NAF         CAH       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+1DQ    plan-1         CAD   0.020
+1DQ    plan-1         CAE   0.020
+1DQ    plan-1         CAH   0.020
+1DQ    plan-1         CAI   0.020
+1DQ    plan-1          H1   0.020
+1DQ    plan-1          H3   0.020
+1DQ    plan-1          H4   0.020
+1DQ    plan-1         NAF   0.020
+1DQ    plan-1         NAG   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+1DQ SMILES           ACDLabs              12.01 "FC(F)(F)c1cncn1"
+1DQ InChI            InChI                1.03  "InChI=1S/C4H3F3N2/c5-4(6,7)3-1-8-2-9-3/h1-2H,(H,8,9)"
+1DQ InChIKey         InChI                1.03  DFLGRTIPTPCKPJ-UHFFFAOYSA-N
+1DQ SMILES_CANONICAL CACTVS               3.370 "FC(F)(F)c1[nH]cnc1"
+1DQ SMILES           CACTVS               3.370 "FC(F)(F)c1[nH]cnc1"
+1DQ SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1c([nH]cn1)C(F)(F)F"
+1DQ SMILES           "OpenEye OEToolkits" 1.7.6 "c1c([nH]cn1)C(F)(F)F"
+1DQ ?                acedrg               190         "dictionary generator"                  
+1DQ ?                acedrg_database      11          "data source"                           
+1DQ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+1DQ ?                refmac5              5.8.0158    "optimization tool"                     

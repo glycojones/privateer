@@ -1,0 +1,173 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MAZ     MAZ      "FORMIC ACID 3-AMINO-BENZYL ESTER"     NON-POLYMER     20     11     .     
+#
+data_comp_MAZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MAZ     C1      C       CR16    0       6.017       43.522      17.307      
+MAZ     C2      C       CR16    0       6.100       42.443      16.434      
+MAZ     C3      C       CR6     0       4.987       42.040      15.702      
+MAZ     C4      C       CR16    0       3.783       42.732      15.861      
+MAZ     C6      C       CR16    0       4.816       44.210      17.459      
+MAZ     C12     C       CH2     0       5.064       40.872      14.761      
+MAZ     O13     O       O2      0       4.219       39.802      15.269      
+MAZ     C16     C       C1      0       4.720       38.911      16.135      
+MAZ     O18     O       O       0       5.570       39.108      16.948      
+MAZ     N11     N       NH2     0       2.489       44.500      16.884      
+MAZ     C5      C       CR6     0       3.683       43.824      16.739      
+MAZ     HC1     H       H       0       6.776       43.791      17.797      
+MAZ     HC2     H       H       0       6.918       41.983      16.337      
+MAZ     HC4     H       H       0       3.022       42.467      15.373      
+MAZ     HC6     H       H       0       4.763       44.941      18.051      
+MAZ     H121    H       H       0       5.991       40.560      14.680      
+MAZ     H122    H       H       0       4.753       41.142      13.871      
+MAZ     H16     H       H       0       4.344       38.040      16.086      
+MAZ     H111    H       H       0       2.430       45.170      17.449      
+MAZ     H112    H       H       0       1.789       44.261      16.413      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MAZ       C1        C2        DOUBLE    y         1.380     0.013     1.380     0.013     
+MAZ       C1        C6        SINGLE    y         1.381     0.014     1.381     0.014     
+MAZ       C2        C3        SINGLE    y         1.383     0.011     1.383     0.011     
+MAZ       C3        C4        DOUBLE    y         1.390     0.010     1.390     0.010     
+MAZ       C3        C12       SINGLE    n         1.501     0.010     1.501     0.010     
+MAZ       C4        C5        SINGLE    y         1.397     0.010     1.397     0.010     
+MAZ       C6        C5        DOUBLE    y         1.390     0.010     1.390     0.010     
+MAZ       C12       O13       SINGLE    n         1.451     0.013     1.451     0.013     
+MAZ       O13       C16       SINGLE    n         1.327     0.020     1.327     0.020     
+MAZ       C16       O18       DOUBLE    n         1.191     0.010     1.191     0.010     
+MAZ       N11       C5        SINGLE    n         1.376     0.019     1.376     0.019     
+MAZ       C1        HC1       SINGLE    n         1.082     0.013     0.943     0.018     
+MAZ       C2        HC2       SINGLE    n         1.082     0.013     0.944     0.017     
+MAZ       C4        HC4       SINGLE    n         1.082     0.013     0.942     0.014     
+MAZ       C6        HC6       SINGLE    n         1.082     0.013     0.943     0.018     
+MAZ       C12       H121      SINGLE    n         1.089     0.010     0.980     0.016     
+MAZ       C12       H122      SINGLE    n         1.089     0.010     0.980     0.016     
+MAZ       C16       H16       SINGLE    n         1.082     0.013     0.950     0.019     
+MAZ       N11       H111      SINGLE    n         1.016     0.010     0.877     0.020     
+MAZ       N11       H112      SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MAZ          C2          C1          C6     120.568    1.50
+MAZ          C2          C1         HC1     119.812    1.50
+MAZ          C6          C1         HC1     119.620    1.50
+MAZ          C1          C2          C3     120.604    1.50
+MAZ          C1          C2         HC2     119.709    1.50
+MAZ          C3          C2         HC2     119.687    1.50
+MAZ          C2          C3          C4     118.753    1.50
+MAZ          C2          C3         C12     120.612    1.50
+MAZ          C4          C3         C12     120.635    1.72
+MAZ          C3          C4          C5     120.655    1.50
+MAZ          C3          C4         HC4     120.075    1.50
+MAZ          C5          C4         HC4     119.270    1.50
+MAZ          C1          C6          C5     120.750    1.50
+MAZ          C1          C6         HC6     119.878    1.50
+MAZ          C5          C6         HC6     119.371    1.50
+MAZ          C3         C12         O13     109.188    1.98
+MAZ          C3         C12        H121     109.785    1.50
+MAZ          C3         C12        H122     109.785    1.50
+MAZ         O13         C12        H121     109.610    1.50
+MAZ         O13         C12        H122     109.610    1.50
+MAZ        H121         C12        H122     108.275    1.50
+MAZ         C12         O13         C16     116.852    2.05
+MAZ         O13         C16         O18     125.724    1.50
+MAZ         O13         C16         H16     115.832    3.00
+MAZ         O18         C16         H16     118.445    3.00
+MAZ          C5         N11        H111     119.811    2.73
+MAZ          C5         N11        H112     119.811    2.73
+MAZ        H111         N11        H112     120.379    3.00
+MAZ          C4          C5          C6     118.671    1.50
+MAZ          C4          C5         N11     120.557    1.50
+MAZ          C6          C5         N11     120.772    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MAZ       const_sp2_sp2_1          C6          C1          C2          C3       0.000   10.00     2
+MAZ              const_21          C2          C1          C6          C5       0.000   10.00     2
+MAZ       const_sp2_sp2_6          C1          C2          C3         C12     180.000   10.00     2
+MAZ              const_11         C12          C3          C4          C5     180.000   10.00     2
+MAZ             sp2_sp3_2          C2          C3         C12         O13     -90.000   10.00     6
+MAZ              const_14          C3          C4          C5         N11     180.000   10.00     2
+MAZ              const_19         N11          C5          C6          C1     180.000   10.00     2
+MAZ             sp3_sp3_1          C3         C12         O13         C16     180.000   10.00     3
+MAZ             sp2_sp2_1         O18         C16         O13         C12     180.000   10.00     2
+MAZ             sp2_sp2_3          C4          C5         N11        H111     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+MAZ    plan-1          C1   0.020
+MAZ    plan-1         C12   0.020
+MAZ    plan-1          C2   0.020
+MAZ    plan-1          C3   0.020
+MAZ    plan-1          C4   0.020
+MAZ    plan-1          C5   0.020
+MAZ    plan-1          C6   0.020
+MAZ    plan-1         HC1   0.020
+MAZ    plan-1         HC2   0.020
+MAZ    plan-1         HC4   0.020
+MAZ    plan-1         HC6   0.020
+MAZ    plan-1         N11   0.020
+MAZ    plan-2         C16   0.020
+MAZ    plan-2         H16   0.020
+MAZ    plan-2         O13   0.020
+MAZ    plan-2         O18   0.020
+MAZ    plan-3          C5   0.020
+MAZ    plan-3        H111   0.020
+MAZ    plan-3        H112   0.020
+MAZ    plan-3         N11   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MAZ SMILES           ACDLabs              10.04 "O=COCc1cc(N)ccc1"
+MAZ SMILES_CANONICAL CACTVS               3.341 "Nc1cccc(COC=O)c1"
+MAZ SMILES           CACTVS               3.341 "Nc1cccc(COC=O)c1"
+MAZ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(cc(c1)N)COC=O"
+MAZ SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(cc(c1)N)COC=O"
+MAZ InChI            InChI                1.03  "InChI=1S/C8H9NO2/c9-8-3-1-2-7(4-8)5-11-6-10/h1-4,6H,5,9H2"
+MAZ InChIKey         InChI                1.03  HQSVUDJPQLTFFW-UHFFFAOYSA-N
+MAZ ?                acedrg               202         "dictionary generator"                  
+MAZ ?                acedrg_database      11          "data source"                           
+MAZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MAZ ?                refmac5              5.8.0189    "optimization tool"                     

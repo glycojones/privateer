@@ -1,0 +1,277 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FA2      FA2 '5-(6-AMINO-9H-PURIN-9-YL)-4-HYDROXYT' non-polymer        31  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FA2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FA2           OP2    O    OP       -0.666      0.000    0.000    0.000
+ FA2           P      P    P         0.000     -1.511   -0.046   -0.065
+ FA2           OP3    O    OP       -0.666     -1.911   -0.362    1.359
+ FA2           OP1    O    OP       -0.666     -2.170    1.181   -0.657
+ FA2           "O3'"  O    O2        0.000     -1.821   -1.431   -0.837
+ FA2           "C3'"  C    CH1       0.000     -3.166   -1.856   -0.935
+ FA2           "H3'"  H    H         0.000     -3.578   -2.060    0.063
+ FA2           "C2'"  C    CH1       0.000     -3.296   -3.075   -1.820
+ FA2           "H2'"  H    H         0.000     -2.617   -3.007   -2.682
+ FA2           "O2'"  O    OH1       0.000     -3.070   -4.272   -1.094
+ FA2           "HO2'" H    H         0.000     -3.885   -4.790   -1.072
+ FA2           "C4'"  C    CH2       0.000     -4.026   -0.847   -1.666
+ FA2           "H4'1" H    H         0.000     -3.454   -0.342   -2.447
+ FA2           "H4'2" H    H         0.000     -4.428   -0.105   -0.973
+ FA2           "O4'"  O    O2        0.000     -5.103   -1.583   -2.260
+ FA2           "C1'"  C    CH1       0.000     -4.749   -2.979   -2.267
+ FA2           "H1'"  H    H         0.000     -5.380   -3.510   -1.540
+ FA2           N9     N    NR5       0.000     -4.993   -3.531   -3.597
+ FA2           C8     C    CR15      0.000     -4.851   -2.864   -4.785
+ FA2           H8     H    H         0.000     -4.535   -1.831   -4.864
+ FA2           N7     N    NRD5      0.000     -5.144   -3.623   -5.819
+ FA2           C5     C    CR56      0.000     -5.491   -4.835   -5.279
+ FA2           C4     C    CR56      0.000     -5.402   -4.799   -3.895
+ FA2           C6     C    CR6       0.000     -5.894   -6.038   -5.851
+ FA2           N6     N    NH2       0.000     -6.011   -6.164   -7.246
+ FA2           H6B    H    H         0.000     -6.915   -6.069   -7.707
+ FA2           H6A    H    H         0.000     -5.194   -6.355   -7.825
+ FA2           N1     N    NRD6      0.000     -6.176   -7.089   -5.045
+ FA2           C2     C    CR16      0.000     -6.045   -6.907   -3.709
+ FA2           H2     H    H         0.000     -6.277   -7.768   -3.095
+ FA2           N3     N    NRD6      0.000     -5.665   -5.797   -3.038
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FA2      OP2    n/a    P      START
+ FA2      P      OP2    "O3'"  .
+ FA2      OP3    P      .      .
+ FA2      OP1    P      .      .
+ FA2      "O3'"  P      "C3'"  .
+ FA2      "C3'"  "O3'"  "C4'"  .
+ FA2      "H3'"  "C3'"  .      .
+ FA2      "C2'"  "C3'"  "O2'"  .
+ FA2      "H2'"  "C2'"  .      .
+ FA2      "O2'"  "C2'"  "HO2'" .
+ FA2      "HO2'" "O2'"  .      .
+ FA2      "C4'"  "C3'"  "O4'"  .
+ FA2      "H4'1" "C4'"  .      .
+ FA2      "H4'2" "C4'"  .      .
+ FA2      "O4'"  "C4'"  "C1'"  .
+ FA2      "C1'"  "O4'"  N9     .
+ FA2      "H1'"  "C1'"  .      .
+ FA2      N9     "C1'"  C8     .
+ FA2      C8     N9     N7     .
+ FA2      H8     C8     .      .
+ FA2      N7     C8     C5     .
+ FA2      C5     N7     C6     .
+ FA2      C4     C5     .      .
+ FA2      C6     C5     N1     .
+ FA2      N6     C6     H6A    .
+ FA2      H6B    N6     .      .
+ FA2      H6A    N6     .      .
+ FA2      N1     C6     C2     .
+ FA2      C2     N1     N3     .
+ FA2      H2     C2     .      .
+ FA2      N3     C2     .      END
+ FA2      N9     C4     .    ADD
+ FA2      C4     N3     .    ADD
+ FA2      "C2'"  "C1'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FA2       OP1       P         deloc     1.510     0.020     1.510     0.020     
+FA2       P         OP2       deloc     1.510     0.020     1.510     0.020     
+FA2       "O3'"     P         single    1.610     0.020     1.610     0.020     
+FA2       OP3       P         deloc     1.510     0.020     1.510     0.020     
+FA2       "C3'"     "O3'"     single    1.426     0.020     1.426     0.020     
+FA2       N9        C4        single    1.337     0.020     1.337     0.020     
+FA2       C8        N9        single    1.337     0.020     1.337     0.020     
+FA2       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+FA2       C4        N3        single    1.355     0.020     1.355     0.020     
+FA2       C4        C5        double    1.490     0.020     1.490     0.020     
+FA2       N3        C2        double    1.337     0.020     1.337     0.020     
+FA2       C2        N1        single    1.337     0.020     1.337     0.020     
+FA2       H2        C2        single    1.082     0.013     0.975     0.010     
+FA2       N1        C6        double    1.350     0.020     1.350     0.020     
+FA2       N6        C6        single    1.355     0.020     1.355     0.020     
+FA2       C6        C5        single    1.490     0.020     1.490     0.020     
+FA2       H6A       N6        single    1.016     0.010     0.899     0.007     
+FA2       H6B       N6        single    1.016     0.010     0.899     0.007     
+FA2       C5        N7        single    1.350     0.020     1.350     0.020     
+FA2       N7        C8        double    1.350     0.020     1.350     0.020     
+FA2       H8        C8        single    1.082     0.013     0.975     0.010     
+FA2       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+FA2       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+FA2       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+FA2       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+FA2       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+FA2       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+FA2       "H4'1"    "C4'"     single    1.089     0.010     0.989     0.005     
+FA2       "H4'2"    "C4'"     single    1.089     0.010     0.989     0.005     
+FA2       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+FA2       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+FA2       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+FA2       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FA2      OP2    P      OP3     119.900    3.000
+ FA2      OP2    P      OP1     119.900    3.000
+ FA2      OP2    P      "O3'"   108.200    3.000
+ FA2      OP3    P      OP1     119.900    3.000
+ FA2      OP3    P      "O3'"   108.200    3.000
+ FA2      OP1    P      "O3'"   108.200    3.000
+ FA2      P      "O3'"  "C3'"   120.500    3.000
+ FA2      "O3'"  "C3'"  "H3'"   109.470    3.000
+ FA2      "O3'"  "C3'"  "C2'"   109.470    3.000
+ FA2      "O3'"  "C3'"  "C4'"   109.470    3.000
+ FA2      "H3'"  "C3'"  "C2'"   108.340    3.000
+ FA2      "H3'"  "C3'"  "C4'"   108.340    3.000
+ FA2      "C2'"  "C3'"  "C4'"   111.000    3.000
+ FA2      "C3'"  "C2'"  "H2'"   108.340    3.000
+ FA2      "C3'"  "C2'"  "O2'"   109.470    3.000
+ FA2      "C3'"  "C2'"  "C1'"   111.000    3.000
+ FA2      "H2'"  "C2'"  "O2'"   109.470    3.000
+ FA2      "H2'"  "C2'"  "C1'"   108.340    3.000
+ FA2      "O2'"  "C2'"  "C1'"   109.470    3.000
+ FA2      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ FA2      "C3'"  "C4'"  "H4'1"  109.470    3.000
+ FA2      "C3'"  "C4'"  "H4'2"  109.470    3.000
+ FA2      "C3'"  "C4'"  "O4'"   109.470    3.000
+ FA2      "H4'1" "C4'"  "H4'2"  107.900    3.000
+ FA2      "H4'1" "C4'"  "O4'"   109.470    3.000
+ FA2      "H4'2" "C4'"  "O4'"   109.470    3.000
+ FA2      "C4'"  "O4'"  "C1'"   111.800    3.000
+ FA2      "O4'"  "C1'"  "H1'"   109.470    3.000
+ FA2      "O4'"  "C1'"  N9      109.470    3.000
+ FA2      "O4'"  "C1'"  "C2'"   109.470    3.000
+ FA2      "H1'"  "C1'"  N9      109.470    3.000
+ FA2      "H1'"  "C1'"  "C2'"   108.340    3.000
+ FA2      N9     "C1'"  "C2'"   109.470    3.000
+ FA2      "C1'"  N9     C8      126.000    3.000
+ FA2      "C1'"  N9     C4      126.000    3.000
+ FA2      C8     N9     C4      108.000    3.000
+ FA2      N9     C8     H8      126.000    3.000
+ FA2      N9     C8     N7      108.000    3.000
+ FA2      H8     C8     N7      126.000    3.000
+ FA2      C8     N7     C5      108.000    3.000
+ FA2      N7     C5     C4      108.000    3.000
+ FA2      N7     C5     C6      132.000    3.000
+ FA2      C4     C5     C6      120.000    3.000
+ FA2      C5     C4     N9      108.000    3.000
+ FA2      C5     C4     N3      120.000    3.000
+ FA2      N9     C4     N3      132.000    3.000
+ FA2      C5     C6     N6      120.000    3.000
+ FA2      C5     C6     N1      120.000    3.000
+ FA2      N6     C6     N1      120.000    3.000
+ FA2      C6     N6     H6B     120.000    3.000
+ FA2      C6     N6     H6A     120.000    3.000
+ FA2      H6B    N6     H6A     120.000    3.000
+ FA2      C6     N1     C2      120.000    3.000
+ FA2      N1     C2     H2      120.000    3.000
+ FA2      N1     C2     N3      120.000    3.000
+ FA2      H2     C2     N3      120.000    3.000
+ FA2      C2     N3     C4      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FA2      var_1    OP2    P      "O3'"  "C3'"    173.095   20.000   1
+ FA2      var_2    P      "O3'"  "C3'"  "C4'"     59.981   20.000   1
+ FA2      var_3    "O3'"  "C3'"  "C2'"  "O2'"     90.000   20.000   3
+ FA2      var_4    "C3'"  "C2'"  "C1'"  "O4'"     30.000   20.000   3
+ FA2      var_5    "C3'"  "C2'"  "O2'"  "HO2'"   114.925   20.000   1
+ FA2      var_6    "O3'"  "C3'"  "C4'"  "O4'"    150.000   20.000   3
+ FA2      var_7    "C3'"  "C4'"  "O4'"  "C1'"    -30.000   20.000   1
+ FA2      var_8    "C4'"  "O4'"  "C1'"  N9      -120.000   20.000   1
+ FA2      var_9    "O4'"  "C1'"  N9     C8        33.516   20.000   1
+ FA2      CONST_1  "C1'"  N9     C4     C5       180.000    0.000   0
+ FA2      CONST_2  "C1'"  N9     C8     N7       180.000    0.000   0
+ FA2      CONST_3  N9     C8     N7     C5         0.000    0.000   0
+ FA2      CONST_4  C8     N7     C5     C6       180.000    0.000   0
+ FA2      CONST_5  N7     C5     C4     N9         0.000    0.000   0
+ FA2      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ FA2      CONST_7  N7     C5     C6     N1       180.000    0.000   0
+ FA2      CONST_8  C5     C6     N6     H6A       82.212    0.000   0
+ FA2      CONST_9  C5     C6     N1     C2         0.000    0.000   0
+ FA2      CONST_10 C6     N1     C2     N3         0.000    0.000   0
+ FA2      CONST_11 N1     C2     N3     C4         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FA2      chir_01  "C2'"  "C1'"  "C3'"  "O2'"     negativ
+ FA2      chir_02  "C1'"  N9     "C2'"  "O4'"     negativ
+ FA2      chir_03  "C3'"  "O3'"  "C2'"  "C4'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FA2      plan-1    N9        0.020
+ FA2      plan-1    C4        0.020
+ FA2      plan-1    C8        0.020
+ FA2      plan-1    "C1'"     0.020
+ FA2      plan-1    N7        0.020
+ FA2      plan-1    N3        0.020
+ FA2      plan-1    C5        0.020
+ FA2      plan-1    C2        0.020
+ FA2      plan-1    N1        0.020
+ FA2      plan-1    C6        0.020
+ FA2      plan-1    H2        0.020
+ FA2      plan-1    N6        0.020
+ FA2      plan-1    H8        0.020
+ FA2      plan-1    H6B       0.020
+ FA2      plan-1    H6A       0.020
+ FA2      plan-2    N6        0.020
+ FA2      plan-2    C6        0.020
+ FA2      plan-2    H6A       0.020
+ FA2      plan-2    H6B       0.020
+# ------------------------------------------------------

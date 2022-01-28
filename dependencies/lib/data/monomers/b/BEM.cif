@@ -1,0 +1,205 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BEM      BEM 'beta-D-mannuronic acid              ' pyranose           22  13 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BEM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BEM           C1     C    CH1       0.000      0.000    0.000    0.000
+ BEM           H1     H    H         0.000      0.198   -0.190   -1.064
+ BEM           O1     O    OH1       0.000      1.095    0.723    0.567
+ BEM           HO1    H    H         0.000      1.199    1.565    0.104
+ BEM           O5     O    O2        0.000     -1.198    0.768    0.132
+ BEM           C5     C    CH1       0.000     -2.354    0.145   -0.429
+ BEM           H5     H    H         0.000     -2.187   -0.043   -1.499
+ BEM           C6     C    C         0.000     -3.546    1.052   -0.258
+ BEM           O6A    O    OC       -0.500     -4.648    0.740   -0.762
+ BEM           O6B    O    OC       -0.500     -3.434    2.118    0.388
+ BEM           C4     C    CH1       0.000     -2.616   -1.182    0.289
+ BEM           H4     H    H         0.000     -2.824   -0.991    1.351
+ BEM           O4     O    OH1       0.000     -3.739   -1.834   -0.308
+ BEM           HO4    H    H         0.000     -4.520   -1.270   -0.227
+ BEM           C3     C    CH1       0.000     -1.378   -2.074    0.161
+ BEM           H3     H    H         0.000     -1.200   -2.308   -0.898
+ BEM           O3     O    OH1       0.000     -1.586   -3.287    0.891
+ BEM           HO3    H    H         0.000     -0.803   -3.849    0.810
+ BEM           C2     C    CH1       0.000     -0.166   -1.333    0.735
+ BEM           H2     H    H         0.000      0.737   -1.943    0.598
+ BEM           O2     O    OH1       0.000     -0.371   -1.088    2.128
+ BEM           HO2    H    H         0.000      0.393   -0.616    2.487
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BEM      C1     n/a    O5     START
+ BEM      H1     C1     .      .
+ BEM      O1     C1     HO1    .
+ BEM      HO1    O1     .      .
+ BEM      O5     C1     .      END
+ BEM      C5     O5     C4     .
+ BEM      H5     C5     .      .
+ BEM      C6     C5     O6B    .
+ BEM      O6A    C6     .      .
+ BEM      O6B    C6     .      .
+ BEM      C4     C5     C3     .
+ BEM      H4     C4     .      .
+ BEM      O4     C4     HO4    .
+ BEM      HO4    O4     .      .
+ BEM      C3     C4     C2     .
+ BEM      H3     C3     .      .
+ BEM      O3     C3     HO3    .
+ BEM      HO3    O3     .      .
+ BEM      C2     C3     O2     .
+ BEM      H2     C2     .      .
+ BEM      O2     C2     HO2    .
+ BEM      HO2    O2     .      .
+ BEM      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BEM       O3        C3        single    1.432     0.020     1.432     0.020     
+BEM       O2        C2        single    1.432     0.020     1.432     0.020     
+BEM       C3        C4        single    1.524     0.020     1.524     0.020     
+BEM       C2        C3        single    1.524     0.020     1.524     0.020     
+BEM       O4        C4        single    1.432     0.020     1.432     0.020     
+BEM       C4        C5        single    1.524     0.020     1.524     0.020     
+BEM       C1        C2        single    1.524     0.020     1.524     0.020     
+BEM       O6B       C6        deloc     1.250     0.020     1.250     0.020     
+BEM       C5        O5        single    1.426     0.020     1.426     0.020     
+BEM       C6        C5        single    1.500     0.020     1.500     0.020     
+BEM       O5        C1        single    1.426     0.020     1.426     0.020     
+BEM       O1        C1        single    1.432     0.020     1.432     0.020     
+BEM       O6A       C6        deloc     1.250     0.020     1.250     0.020     
+BEM       H1        C1        single    1.089     0.010     0.989     0.005     
+BEM       H2        C2        single    1.089     0.010     0.989     0.005     
+BEM       HO2       O2        single    0.970     0.012     0.839     0.014     
+BEM       H3        C3        single    1.089     0.010     0.989     0.005     
+BEM       HO3       O3        single    0.970     0.012     0.839     0.014     
+BEM       H4        C4        single    1.089     0.010     0.989     0.005     
+BEM       HO4       O4        single    0.970     0.012     0.839     0.014     
+BEM       H5        C5        single    1.089     0.010     0.989     0.005     
+BEM       HO1       O1        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BEM      H1     C1     O1      109.470    3.000
+ BEM      H1     C1     O5      109.470    3.000
+ BEM      O1     C1     O5      109.470    3.000
+ BEM      H1     C1     C2      108.340    3.000
+ BEM      O1     C1     C2      109.470    3.000
+ BEM      O5     C1     C2      109.470    3.000
+ BEM      C1     O1     HO1     109.470    3.000
+ BEM      C1     O5     C5      111.800    3.000
+ BEM      O5     C5     H5      109.470    3.000
+ BEM      O5     C5     C6      109.470    3.000
+ BEM      O5     C5     C4      109.470    3.000
+ BEM      H5     C5     C6      108.810    3.000
+ BEM      H5     C5     C4      108.340    3.000
+ BEM      C6     C5     C4      109.470    3.000
+ BEM      C5     C6     O6A     118.500    3.000
+ BEM      C5     C6     O6B     118.500    3.000
+ BEM      O6A    C6     O6B     123.000    3.000
+ BEM      C5     C4     H4      108.340    3.000
+ BEM      C5     C4     O4      109.470    3.000
+ BEM      C5     C4     C3      111.000    3.000
+ BEM      H4     C4     O4      109.470    3.000
+ BEM      H4     C4     C3      108.340    3.000
+ BEM      O4     C4     C3      109.470    3.000
+ BEM      C4     O4     HO4     109.470    3.000
+ BEM      C4     C3     H3      108.340    3.000
+ BEM      C4     C3     O3      109.470    3.000
+ BEM      C4     C3     C2      111.000    3.000
+ BEM      H3     C3     O3      109.470    3.000
+ BEM      H3     C3     C2      108.340    3.000
+ BEM      O3     C3     C2      109.470    3.000
+ BEM      C3     O3     HO3     109.470    3.000
+ BEM      C3     C2     H2      108.340    3.000
+ BEM      C3     C2     O2      109.470    3.000
+ BEM      C3     C2     C1      111.000    3.000
+ BEM      H2     C2     O2      109.470    3.000
+ BEM      H2     C2     C1      108.340    3.000
+ BEM      O2     C2     C1      109.470    3.000
+ BEM      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BEM      var_1    O5     C1     O1     HO1      -60.021   20.000   1
+ BEM      var_2    C1     O5     C5     C4        60.000   20.000   1
+ BEM      var_3    O5     C5     C6     O6B       -4.891   20.000   3
+ BEM      var_4    O5     C5     C4     C3       -60.000   20.000   3
+ BEM      var_5    C5     C4     O4     HO4      -60.348   20.000   1
+ BEM      var_6    C5     C4     C3     C2        60.000   20.000   3
+ BEM      var_7    C4     C3     O3     HO3     -179.959   20.000   1
+ BEM      var_8    C4     C3     C2     O2        60.000   20.000   3
+ BEM      var_9    C3     C2     C1     O5        60.000   20.000   3
+ BEM      var_10   C3     C2     O2     HO2     -179.691   20.000   1
+ BEM      var_1    C5     O5     C1     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ BEM      chir_01  C1     C2     O5     O1        negativ
+ BEM      chir_02  C2     C1     O2     C3        negativ
+ BEM      chir_03  C3     C2     O3     C4        negativ
+ BEM      chir_04  C4     C3     O4     C5        positiv
+ BEM      chir_05  C5     C4     O5     C6        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BEM      plan-1    C6        0.020
+ BEM      plan-1    C5        0.020
+ BEM      plan-1    O6A       0.020
+ BEM      plan-1    O6B       0.020
+# ------------------------------------------------------

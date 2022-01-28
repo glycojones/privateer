@@ -1,0 +1,145 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DTD     DTD      "DITHIANE DIOL"     NON-POLYMER     16     8     .     
+#
+data_comp_DTD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DTD     S1      S       S2      0       1.891       49.250      21.904      
+DTD     C1      C       CH2     0       2.986       50.299      20.924      
+DTD     C2      C       CH1     0       2.266       51.167      19.905      
+DTD     O2      O       OH1     0       3.227       51.739      19.013      
+DTD     C3      C       CH1     0       1.459       52.264      20.604      
+DTD     O3      O       OH1     0       0.939       53.194      19.650      
+DTD     C4      C       CH2     0       0.306       51.662      21.392      
+DTD     S4      S       S2      0       0.818       50.727      22.850      
+DTD     H11     H       H       0       3.489       50.871      21.536      
+DTD     H12     H       H       0       3.624       49.723      20.459      
+DTD     H21     H       H       0       1.649       50.600      19.379      
+DTD     HO2     H       H       0       3.747       52.252      19.433      
+DTD     H31     H       H       0       2.052       52.752      21.227      
+DTD     HO3     H       H       0       0.453       52.796      19.088      
+DTD     H41     H       H       0       -0.204      51.065      20.810      
+DTD     H42     H       H       0       -0.290      52.378      21.683      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DTD       S1        C1        SINGLE    n         1.806     0.017     1.806     0.017     
+DTD       S1        S4        SINGLE    n         2.057     0.020     2.057     0.020     
+DTD       C1        C2        SINGLE    n         1.519     0.010     1.519     0.010     
+DTD       C2        O2        SINGLE    n         1.428     0.013     1.428     0.013     
+DTD       C2        C3        SINGLE    n         1.522     0.016     1.522     0.016     
+DTD       C3        O3        SINGLE    n         1.428     0.013     1.428     0.013     
+DTD       C3        C4        SINGLE    n         1.519     0.010     1.519     0.010     
+DTD       C4        S4        SINGLE    n         1.806     0.017     1.806     0.017     
+DTD       C1        H11       SINGLE    n         1.089     0.010     0.977     0.019     
+DTD       C1        H12       SINGLE    n         1.089     0.010     0.977     0.019     
+DTD       C2        H21       SINGLE    n         1.089     0.010     0.989     0.018     
+DTD       O2        HO2       SINGLE    n         0.970     0.012     0.841     0.020     
+DTD       C3        H31       SINGLE    n         1.089     0.010     0.989     0.018     
+DTD       O3        HO3       SINGLE    n         0.970     0.012     0.841     0.020     
+DTD       C4        H41       SINGLE    n         1.089     0.010     0.977     0.019     
+DTD       C4        H42       SINGLE    n         1.089     0.010     0.977     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DTD          C1          S1          S4      98.585    1.50
+DTD          S1          C1          C2     114.001    2.73
+DTD          S1          C1         H11     108.206    1.50
+DTD          S1          C1         H12     108.206    1.50
+DTD          C2          C1         H11     109.146    1.50
+DTD          C2          C1         H12     109.146    1.50
+DTD         H11          C1         H12     107.999    1.91
+DTD          C1          C2          O2     109.488    1.64
+DTD          C1          C2          C3     110.239    1.50
+DTD          C1          C2         H21     109.213    1.50
+DTD          O2          C2          C3     110.081    2.02
+DTD          O2          C2         H21     108.790    1.50
+DTD          C3          C2         H21     109.166    1.50
+DTD          C2          O2         HO2     109.099    3.00
+DTD          C2          C3          O3     110.081    2.02
+DTD          C2          C3          C4     110.239    1.50
+DTD          C2          C3         H31     109.166    1.50
+DTD          O3          C3          C4     109.488    1.64
+DTD          O3          C3         H31     108.790    1.50
+DTD          C4          C3         H31     109.213    1.50
+DTD          C3          O3         HO3     109.099    3.00
+DTD          C3          C4          S4     114.001    2.73
+DTD          C3          C4         H41     109.146    1.50
+DTD          C3          C4         H42     109.146    1.50
+DTD          S4          C4         H41     108.206    1.50
+DTD          S4          C4         H42     108.206    1.50
+DTD         H41          C4         H42     107.999    1.91
+DTD          S1          S4          C4      98.585    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DTD             sp3_sp3_1          C2          C1          S1          S4      60.000   10.00     3
+DTD            sp3_sp3_34          C1          S1          S4          C4     180.000   10.00     3
+DTD             sp3_sp3_6          S1          C1          C2          O2     180.000   10.00     3
+DTD            sp3_sp3_36          C1          C2          O2         HO2      60.000   10.00     3
+DTD            sp3_sp3_17          O2          C2          C3          O3      60.000   10.00     3
+DTD            sp3_sp3_38          C2          C3          O3         HO3     180.000   10.00     3
+DTD            sp3_sp3_28          O3          C3          C4          S4      60.000   10.00     3
+DTD            sp3_sp3_31          C3          C4          S4          S1      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DTD    chir_1    C2    O2    C1    C3    both
+DTD    chir_2    C3    O3    C4    C2    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DTD SMILES           ACDLabs              10.04 OC1CSSCC1O
+DTD SMILES_CANONICAL CACTVS               3.341 "O[C@H]1CSSC[C@@H]1O"
+DTD SMILES           CACTVS               3.341 "O[CH]1CSSC[CH]1O"
+DTD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1[C@@H]([C@H](CSS1)O)O"
+DTD SMILES           "OpenEye OEToolkits" 1.5.0 "C1C(C(CSS1)O)O"
+DTD InChI            InChI                1.03  "InChI=1S/C4H8O2S2/c5-3-1-7-8-2-4(3)6/h3-6H,1-2H2/t3-,4-/m0/s1"
+DTD InChIKey         InChI                1.03  YPGMOWHXEQDBBV-IMJSIDKUSA-N
+DTD ?                acedrg               202         "dictionary generator"                  
+DTD ?                acedrg_database      11          "data source"                           
+DTD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DTD ?                refmac5              5.8.0189    "optimization tool"                     

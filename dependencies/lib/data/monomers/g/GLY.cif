@@ -1,0 +1,128 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GLY     GLY     GLYCINE     L-peptide     10     5     .     
+#
+data_comp_GLY
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GLY     N       N       NT3     1       -1.110      0.356       -0.212      
+GLY     H       H       H       0       -1.600      -0.006      -1.017      
+GLY     H2      H       H       0       -0.811      1.249       -0.407      
+GLY     H3      H       H       0       -1.716      0.387       0.532       
+GLY     CA      C       CH2     0       0.022       -0.573      0.124       
+GLY     HA3     H       H       0       -0.153      -0.984      1.008       
+GLY     HA2     H       H       0       0.050       -1.299      -0.548      
+GLY     C       C       C       0       1.371       0.129       0.158       
+GLY     O       O       O       0       1.605       1.013       0.982       
+GLY     OXT     O       OC      -1      2.261       -0.170      -0.638      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GLY      N      n/a    CA     START
+ GLY      H      N      .      .
+ GLY      H2     N      .      .
+ GLY      H3     N      .      .
+ GLY      CA     N      C      .
+ GLY      HA3    CA     .      .
+ GLY      HA2    CA     .      .
+ GLY      C      CA     .      END
+ GLY      O      C      .      .
+ GLY      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GLY       CA        C         SINGLE    n         1.519     0.012     1.519     0.012     
+GLY       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+GLY       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+GLY       CA        N         SINGLE    n         1.476     0.010     1.476     0.010     
+GLY       CA        HA3       SINGLE    n         1.089     0.010     0.990     0.020     
+GLY       CA        HA2       SINGLE    n         1.089     0.010     0.990     0.020     
+GLY       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+GLY       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+GLY       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GLY           C          CA           N     111.723    1.50
+GLY           C          CA         HA3     109.424    1.50
+GLY           C          CA         HA2     109.424    1.50
+GLY           N          CA         HA3     109.054    1.50
+GLY           N          CA         HA2     109.054    1.50
+GLY         HA3          CA         HA2     108.229    1.89
+GLY          CA           C           O     117.073    1.50
+GLY          CA           C         OXT     117.073    1.50
+GLY           O           C         OXT     125.855    1.50
+GLY          CA           N           H     110.311    2.11
+GLY          CA           N          H2     110.311    2.11
+GLY          CA           N          H3     110.311    2.11
+GLY           H           N          H2     109.021    2.83
+GLY           H           N          H3     109.021    2.83
+GLY          H2           N          H3     109.021    2.83
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GLY             sp2_sp3_2           O           C          CA           N     120.000   10.00     6
+GLY             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GLY    plan-1           C   0.020
+GLY    plan-1          CA   0.020
+GLY    plan-1           O   0.020
+GLY    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GLY SMILES           ACDLabs              10.04 "O=C(O)CN"
+GLY SMILES_CANONICAL CACTVS               3.341 "NCC(O)=O"
+GLY SMILES           CACTVS               3.341 "NCC(O)=O"
+GLY SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)N"
+GLY SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(=O)O)N"
+GLY InChI            InChI                1.03  "InChI=1S/C2H5NO2/c3-1-2(4)5/h1,3H2,(H,4,5)"
+GLY InChIKey         InChI                1.03  DHMQDGOQFOQNFH-UHFFFAOYSA-N
+GLY ?                acedrg               195         "dictionary generator"                  
+GLY ?                acedrg_database      11          "data source"                           
+GLY ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GLY ?                refmac5              5.8.0189    "optimization tool"                     

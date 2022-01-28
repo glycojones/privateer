@@ -1,0 +1,340 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+LLP     LLP     "(2S)-2-amino-6-[[3-hydroxy-2-methyl-5-(phosphonooxymethyl)pyridin-4-yl]methylideneamino]hexanoic"     peptide   45     25     .
+#
+data_comp_LLP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+LLP     N1      N       NRD6    0       -28.538     -11.624     3.157
+LLP     C2      C       CR6     0       -28.181     -12.818     3.633
+LLP     "C2'"   C       CH3     0       -29.059     -13.993     3.336
+LLP     C3      C       CR6     0       -26.996     -12.956     4.391
+LLP     O3      O       OH1     0       -26.665     -14.187     4.856
+LLP     C4      C       CR6     0       -26.194     -11.816     4.643
+LLP     "C4'"   C       C1      0       -24.962     -11.933     5.429
+LLP     C5      C       CR6     0       -26.608     -10.571     4.123
+LLP     C6      C       CR16    0       -27.774     -10.535     3.399
+LLP     "C5'"   C       CH2     0       -25.827     -9.302      4.343
+LLP     OP4     O       O2      0       -24.561     -9.319      3.611
+LLP     P       P       P       0       -23.497     -8.111      3.750
+LLP     OP1     O       O       0       -22.549     -8.256      2.575
+LLP     OP2     O       OP      -1      -22.812     -8.314      5.088
+LLP     OP3     O       OP      -1      -24.307     -6.829      3.694
+LLP     N       N       NT3     1       -19.302     -9.684      4.155
+LLP     CA      C       CH1     0       -19.237     -10.981     3.427
+LLP     CB      C       CH2     0       -20.625     -11.365     2.899
+LLP     CG      C       CH2     0       -21.387     -12.374     3.748
+LLP     CD      C       CH2     0       -21.836     -11.821     5.096
+LLP     CE      C       CH2     0       -22.769     -12.750     5.842
+LLP     NZ      N       N       0       -24.075     -12.820     5.184
+LLP     C       C       C       0       -18.206     -10.866     2.295
+LLP     O       O       O       0       -17.249     -11.667     2.310
+LLP     OXT     O       OC      -1      -18.399     -9.979      1.441
+LLP     "H2'1"  H       H       0       -29.073     -14.596     4.096
+LLP     "H2'2"  H       H       0       -28.720     -14.462     2.556
+LLP     "H2'3"  H       H       0       -29.963     -13.685     3.158
+LLP     HO3     H       H       0       -26.767     -14.185     5.708
+LLP     "H4'1"  H       H       0       -24.823     -11.333     6.138
+LLP     H6      H       H       0       -28.059     -9.716      3.050
+LLP     "H5'1"  H       H       0       -25.638     -9.189      5.300
+LLP     "H5'2"  H       H       0       -26.352     -8.528      4.045
+LLP     H       H       H       0       -19.503     -9.008      3.577
+LLP     H2      H       H       0       -18.499     -9.507      4.547
+LLP     H3      H       H       0       -19.942     -9.718      4.801
+LLP     HA      H       H       0       -18.935     -11.675     4.059
+LLP     HB2     H       H       0       -20.528     -11.736     1.996
+LLP     HB3     H       H       0       -21.164     -10.551     2.828
+LLP     HG2     H       H       0       -20.814     -13.156     3.899
+LLP     HG3     H       H       0       -22.175     -12.673     3.246
+LLP     HD2     H       H       0       -22.288     -10.964     4.955
+LLP     HD3     H       H       0       -21.045     -11.657     5.651
+LLP     HE2     H       H       0       -22.876     -12.435     6.766
+LLP     HE3     H       H       0       -22.374     -13.649     5.874
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+LLP      N      n/a    CA     START
+LLP      H      N      .      .
+LLP      H2     N      .      .
+LLP      H3     N      .      .
+LLP      CA     N      C      .
+LLP      HA     CA     .      .
+LLP      CB     CA     CG     .
+LLP      HB2    CB     .      .
+LLP      HB3    CB     .      .
+LLP      CG     CB     CD     .
+LLP      HG2    CG     .      .
+LLP      HG3    CG     .      .
+LLP      CD     CG     CE     .
+LLP      HD2    CD     .      .
+LLP      HD3    CD     .      .
+LLP      CE     CD     NZ     .
+LLP      HE2    CE     .      .
+LLP      HE3    CE     .      .
+LLP      NZ     CE     "C4'"  .
+LLP      "C4'"  NZ     C4     .
+LLP      "H4'1" "C4'"  .      .
+LLP      C4     "C4'"  C5     .
+LLP      C3     C4     C2     .
+LLP      O3     C3     HO3    .
+LLP      HO3    O3     .      .
+LLP      C2     C3     "C2'"  .
+LLP      "C2'"  C2     "H2'1" .
+LLP      "H2'3" "C2'"  .      .
+LLP      "H2'2" "C2'"  .      .
+LLP      "H2'1" "C2'"  .      .
+LLP      C5     C4     "C5'"  .
+LLP      C6     C5     N1     .
+LLP      H6     C6     .      .
+LLP      N1     C6     .      .
+LLP      "C5'"  C5     OP4    .
+LLP      "H5'1" "C5'"  .      .
+LLP      "H5'2" "C5'"  .      .
+LLP      OP4    "C5'"  P      .
+LLP      P      OP4    OP3    .
+LLP      OP1    P      .      .
+LLP      OP2    P      .      .
+LLP      OP3    P      .      .
+LLP      C      CA     .      END
+LLP      O      C      .      .
+LLP      OXT    C      .      .
+LLP      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+LLP       N1        C2        DOUBLE    y         1.330     0.010     1.330     0.010     
+LLP       N1        C6        SINGLE    y         1.349     0.010     1.349     0.010     
+LLP       C2        "C2'"     SINGLE    n         1.494     0.010     1.494     0.010     
+LLP       C2        C3        SINGLE    y         1.400     0.015     1.400     0.015     
+LLP       C3        O3        SINGLE    n         1.354     0.014     1.354     0.014     
+LLP       C3        C4        DOUBLE    y         1.405     0.013     1.405     0.013     
+LLP       C4        "C4'"     SINGLE    n         1.459     0.015     1.459     0.015     
+LLP       C4        C5        SINGLE    y         1.403     0.011     1.403     0.011     
+LLP       "C4'"     NZ        DOUBLE    n         1.270     0.017     1.270     0.017     
+LLP       C5        C6        DOUBLE    y         1.368     0.010     1.368     0.010     
+LLP       C5        "C5'"     SINGLE    n         1.503     0.010     1.503     0.010     
+LLP       "C5'"     OP4       SINGLE    n         1.462     0.010     1.462     0.010     
+LLP       OP4       P         SINGLE    n         1.614     0.019     1.614     0.019     
+LLP       P         OP1       DOUBLE    n         1.517     0.019     1.517     0.019     
+LLP       P         OP2       SINGLE    n         1.517     0.019     1.517     0.019     
+LLP       P         OP3       SINGLE    n         1.517     0.019     1.517     0.019     
+LLP       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+LLP       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+LLP       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+LLP       CB        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+LLP       CG        CD        SINGLE    n         1.523     0.012     1.523     0.012     
+LLP       CD        CE        SINGLE    n         1.513     0.020     1.513     0.020     
+LLP       CE        NZ        SINGLE    n         1.462     0.010     1.462     0.010     
+LLP       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+LLP       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+LLP       "C2'"     "H2'1"    SINGLE    n         1.089     0.010     0.971     0.014     
+LLP       "C2'"     "H2'2"    SINGLE    n         1.089     0.010     0.971     0.014     
+LLP       "C2'"     "H2'3"    SINGLE    n         1.089     0.010     0.971     0.014     
+LLP       O3        HO3       SINGLE    n         0.970     0.012     0.858     0.020     
+LLP       "C4'"     "H4'1"    SINGLE    n         1.082     0.013     0.939     0.019     
+LLP       C6        H6        SINGLE    n         1.082     0.013     0.935     0.020     
+LLP       "C5'"     "H5'1"    SINGLE    n         1.089     0.010     0.982     0.011     
+LLP       "C5'"     "H5'2"    SINGLE    n         1.089     0.010     0.982     0.011     
+LLP       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+LLP       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+LLP       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+LLP       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+LLP       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+LLP       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+LLP       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+LLP       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.016     
+LLP       CD        HD2       SINGLE    n         1.089     0.010     0.980     0.016     
+LLP       CD        HD3       SINGLE    n         1.089     0.010     0.980     0.016     
+LLP       CE        HE2       SINGLE    n         1.089     0.010     0.982     0.011     
+LLP       CE        HE3       SINGLE    n         1.089     0.010     0.982     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+LLP          C2          N1          C6     119.480    1.60
+LLP          N1          C2       "C2'"     118.991    1.50
+LLP          N1          C2          C3     120.420    1.50
+LLP       "C2'"          C2          C3     120.589    1.50
+LLP          C2       "C2'"      "H2'1"     109.484    1.50
+LLP          C2       "C2'"      "H2'2"     109.484    1.50
+LLP          C2       "C2'"      "H2'3"     109.484    1.50
+LLP      "H2'1"       "C2'"      "H2'2"     109.339    1.66
+LLP      "H2'1"       "C2'"      "H2'3"     109.339    1.66
+LLP      "H2'2"       "C2'"      "H2'3"     109.339    1.66
+LLP          C2          C3          O3     118.230    1.71
+LLP          C2          C3          C4     119.687    1.50
+LLP          O3          C3          C4     122.083    1.50
+LLP          C3          O3         HO3     108.001    2.98
+LLP          C3          C4       "C4'"     120.419    1.50
+LLP          C3          C4          C5     118.980    1.50
+LLP       "C4'"          C4          C5     120.602    2.10
+LLP          C4       "C4'"          NZ     122.438    1.52
+LLP          C4       "C4'"      "H4'1"     118.833    1.50
+LLP          NZ       "C4'"      "H4'1"     118.729    1.50
+LLP          C4          C5          C6     118.109    1.50
+LLP          C4          C5       "C5'"     121.832    1.50
+LLP          C6          C5       "C5'"     120.059    1.59
+LLP          N1          C6          C5     123.324    1.50
+LLP          N1          C6          H6     118.073    1.50
+LLP          C5          C6          H6     118.603    1.50
+LLP          C5       "C5'"         OP4     110.538    2.24
+LLP          C5       "C5'"      "H5'1"     109.800    1.50
+LLP          C5       "C5'"      "H5'2"     109.800    1.50
+LLP         OP4       "C5'"      "H5'1"     108.933    1.90
+LLP         OP4       "C5'"      "H5'2"     108.933    1.90
+LLP      "H5'1"       "C5'"      "H5'2"     108.248    1.50
+LLP       "C5'"         OP4           P     121.496    2.55
+LLP         OP4           P         OP1     105.808    2.07
+LLP         OP4           P         OP2     105.808    2.07
+LLP         OP4           P         OP3     105.808    2.07
+LLP         OP1           P         OP2     112.864    1.69
+LLP         OP1           P         OP3     112.864    1.69
+LLP         OP2           P         OP3     112.864    1.69
+LLP          CA           N           H     110.062    1.93
+LLP          CA           N          H2     110.062    1.93
+LLP          CA           N          H3     110.062    1.93
+LLP           H           N          H2     109.028    2.41
+LLP           H           N          H3     109.028    2.41
+LLP          H2           N          H3     109.028    2.41
+LLP           N          CA          CB     110.374    1.62
+LLP           N          CA           C     109.241    1.50
+LLP           N          CA          HA     108.487    1.50
+LLP          CB          CA           C     111.037    2.40
+LLP          CB          CA          HA     108.967    1.50
+LLP           C          CA          HA     108.824    1.50
+LLP          CA          CB          CG     115.311    1.56
+LLP          CA          CB         HB2     108.549    1.50
+LLP          CA          CB         HB3     108.549    1.50
+LLP          CG          CB         HB2     108.650    1.50
+LLP          CG          CB         HB3     108.650    1.50
+LLP         HB2          CB         HB3     107.844    1.50
+LLP          CB          CG          CD     113.328    2.00
+LLP          CB          CG         HG2     108.601    1.50
+LLP          CB          CG         HG3     108.601    1.50
+LLP          CD          CG         HG2     108.806    1.50
+LLP          CD          CG         HG3     108.806    1.50
+LLP         HG2          CG         HG3     107.646    1.50
+LLP          CG          CD          CE     112.984    1.50
+LLP          CG          CD         HD2     109.041    1.50
+LLP          CG          CD         HD3     109.041    1.50
+LLP          CE          CD         HD2     108.887    1.50
+LLP          CE          CD         HD3     108.887    1.50
+LLP         HD2          CD         HD3     107.927    1.57
+LLP          CD          CE          NZ     110.871    1.50
+LLP          CD          CE         HE2     109.449    1.50
+LLP          CD          CE         HE3     109.449    1.50
+LLP          NZ          CE         HE2     109.419    1.50
+LLP          NZ          CE         HE3     109.419    1.50
+LLP         HE2          CE         HE3     108.106    1.50
+LLP       "C4'"          NZ          CE     118.382    1.50
+LLP          CA           C           O     117.124    1.50
+LLP          CA           C         OXT     117.124    1.50
+LLP           O           C         OXT     125.752    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+LLP       const_sp2_sp2_2       "C2'"          C2          N1          C6     180.000   10.00     2
+LLP              const_19          C5          C6          N1          C2       0.000   10.00     2
+LLP             sp3_sp3_4       "C5'"         OP4           P         OP1     180.000   10.00     3
+LLP             sp3_sp3_7          CB          CA           N           H     180.000   10.00     3
+LLP            sp3_sp3_16           N          CA          CB          CG     180.000   10.00     3
+LLP            sp2_sp3_15           O           C          CA           N       0.000   10.00     6
+LLP            sp3_sp3_25          CA          CB          CG          CD     180.000   10.00     3
+LLP            sp3_sp3_34          CE          CD          CG          CB     180.000   10.00     3
+LLP            sp3_sp3_43          CG          CD          CE          NZ     180.000   10.00     3
+LLP             sp2_sp3_1          N1          C2       "C2'"      "H2'1"     150.000   10.00     6
+LLP       const_sp2_sp2_6       "C2'"          C2          C3          O3       0.000   10.00     2
+LLP            sp2_sp3_22       "C4'"          NZ          CE          CD     120.000   10.00     6
+LLP              const_10          O3          C3          C4       "C4'"       0.000   10.00     2
+LLP             sp2_sp2_1          C3          C4       "C4'"          NZ     180.000   10.00     2
+LLP              const_14       "C4'"          C4          C5       "C5'"       0.000   10.00     2
+LLP             sp2_sp2_5          C4       "C4'"          NZ          CE     180.000   10.00     2
+LLP              const_17       "C5'"          C5          C6          N1     180.000   10.00     2
+LLP            sp2_sp3_10          C4          C5       "C5'"         OP4     -90.000   10.00     6
+LLP             sp3_sp3_1          C5       "C5'"         OP4           P     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+LLP    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+LLP    plan-1          C2   0.020
+LLP    plan-1       "C2'"   0.020
+LLP    plan-1          C3   0.020
+LLP    plan-1          C4   0.020
+LLP    plan-1       "C4'"   0.020
+LLP    plan-1          C5   0.020
+LLP    plan-1       "C5'"   0.020
+LLP    plan-1          C6   0.020
+LLP    plan-1          H6   0.020
+LLP    plan-1          N1   0.020
+LLP    plan-1          O3   0.020
+LLP    plan-2          C4   0.020
+LLP    plan-2       "C4'"   0.020
+LLP    plan-2      "H4'1"   0.020
+LLP    plan-2          NZ   0.020
+LLP    plan-3           C   0.020
+LLP    plan-3          CA   0.020
+LLP    plan-3           O   0.020
+LLP    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+LLP SMILES           ACDLabs              12.01 "n1c(C)c(O)c(\C=N\CCCCC(N)C(=O)O)c(c1)COP(=O)(O)O"
+LLP InChI            InChI                1.03  "InChI=1S/C14H22N3O7P/c1-9-13(18)11(10(6-17-9)8-24-25(21,22)23)7-16-5-3-2-4-12(15)14(19)20/h6-7,12,18H,2-5,8,15H2,1H3,(H,19,20)(H2,21,22,23)/b16-7+/t12-/m0/s1"
+LLP InChIKey         InChI                1.03  YQSOQJORMNSDJL-QFULYMJESA-N
+LLP SMILES_CANONICAL CACTVS               3.385 "Cc1ncc(CO[P](O)(O)=O)c(C=NCCCC[C@H](N)C(O)=O)c1O"
+LLP SMILES           CACTVS               3.385 "Cc1ncc(CO[P](O)(O)=O)c(C=NCCCC[CH](N)C(O)=O)c1O"
+LLP SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "Cc1c(c(c(cn1)COP(=O)(O)O)/C=N/CCCCC(C(=O)O)N)O"
+LLP SMILES           "OpenEye OEToolkits" 1.7.6 "Cc1c(c(c(cn1)COP(=O)(O)O)C=NCCCCC(C(=O)O)N)O"
+LLP ?                acedrg               202         "dictionary generator"
+LLP ?                acedrg_database      11          "data source"
+LLP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+LLP ?                refmac5              5.8.0222    "optimization tool"

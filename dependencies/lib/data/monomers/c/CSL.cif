@@ -1,0 +1,296 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CSL      CSL '(D)-2'-METHYLSELENYL-2'-DEOXYCYTIDIN' non-polymer        36  22 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CSL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CSL           O3P    O    OP       -0.666      0.000    0.000    0.000
+ CSL           P      P    P         0.000     -0.440   -1.171    0.852
+ CSL           O2P    O    OP       -0.666      0.170   -1.048    2.231
+ CSL           O1P    O    OP       -0.666      0.017   -2.463    0.210
+ CSL           "O5'"  O    O2        0.000     -2.045   -1.171    0.974
+ CSL           "C5'"  C    CH2       0.000     -2.911   -1.379   -0.144
+ CSL           "H5'1" H    H         0.000     -2.708   -2.357   -0.584
+ CSL           "H5'2" H    H         0.000     -2.733   -0.601   -0.891
+ CSL           "C4'"  C    CH1       0.000     -4.367   -1.318    0.321
+ CSL           "H4'"  H    H         0.000     -4.551   -2.053    1.118
+ CSL           "C3'"  C    CH1       0.000     -5.330   -1.553   -0.872
+ CSL           "H3'"  H    H         0.000     -4.945   -1.080   -1.786
+ CSL           "O3'"  O    OH1       0.000     -5.557   -2.949   -1.077
+ CSL           H3T    H    H         0.000     -4.720   -3.383   -1.288
+ CSL           "C2'"  C    CH1       0.000     -6.622   -0.848   -0.388
+ CSL           "H2'"  H    H         0.000     -7.094   -0.300   -1.215
+ CSL           "SE2'" SE   SE        0.000     -7.870   -2.152    0.374
+ CSL           "CA'"  C    CH3       0.000     -8.300   -3.227   -1.207
+ CSL           "HA'3" H    H         0.000     -8.982   -3.991   -0.939
+ CSL           "HA'2" H    H         0.000     -8.735   -2.607   -1.947
+ CSL           "HA'1" H    H         0.000     -7.413   -3.663   -1.588
+ CSL           "C1'"  C    CH1       0.000     -6.134    0.130    0.698
+ CSL           "H1'"  H    H         0.000     -6.580   -0.135    1.668
+ CSL           "O4'"  O    O2        0.000     -4.704    0.012    0.768
+ CSL           N1     N    NR6       0.000     -6.504    1.501    0.336
+ CSL           C6     C    CR16      0.000     -7.385    2.193    1.112
+ CSL           H6     H    H         0.000     -7.816    1.733    1.993
+ CSL           C5     C    CR16      0.000     -7.715    3.460    0.771
+ CSL           H5     H    H         0.000     -8.407    4.031    1.378
+ CSL           C4     C    CR6       0.000     -7.146    4.026   -0.389
+ CSL           N4     N    NH2       0.000     -7.468    5.310   -0.763
+ CSL           HN42   H    H         0.000     -8.117    5.858   -0.209
+ CSL           HN41   H    H         0.000     -7.060    5.719   -1.596
+ CSL           N3     N    NRD6      0.000     -6.297    3.311   -1.117
+ CSL           C2     C    CR6       0.000     -5.977    2.068   -0.764
+ CSL           O2     O    O         0.000     -5.194    1.432   -1.451
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CSL      O3P    n/a    P      START
+ CSL      P      O3P    "O5'"  .
+ CSL      O2P    P      .      .
+ CSL      O1P    P      .      .
+ CSL      "O5'"  P      "C5'"  .
+ CSL      "C5'"  "O5'"  "C4'"  .
+ CSL      "H5'1" "C5'"  .      .
+ CSL      "H5'2" "C5'"  .      .
+ CSL      "C4'"  "C5'"  "C3'"  .
+ CSL      "H4'"  "C4'"  .      .
+ CSL      "C3'"  "C4'"  "C2'"  .
+ CSL      "H3'"  "C3'"  .      .
+ CSL      "O3'"  "C3'"  H3T    .
+ CSL      H3T    "O3'"  .      .
+ CSL      "C2'"  "C3'"  "C1'"  .
+ CSL      "H2'"  "C2'"  .      .
+ CSL      "SE2'" "C2'"  "CA'"  .
+ CSL      "CA'"  "SE2'" "HA'1" .
+ CSL      "HA'3" "CA'"  .      .
+ CSL      "HA'2" "CA'"  .      .
+ CSL      "HA'1" "CA'"  .      .
+ CSL      "C1'"  "C2'"  N1     .
+ CSL      "H1'"  "C1'"  .      .
+ CSL      "O4'"  "C1'"  .      .
+ CSL      N1     "C1'"  C6     .
+ CSL      C6     N1     C5     .
+ CSL      H6     C6     .      .
+ CSL      C5     C6     C4     .
+ CSL      H5     C5     .      .
+ CSL      C4     C5     N3     .
+ CSL      N4     C4     HN41   .
+ CSL      HN42   N4     .      .
+ CSL      HN41   N4     .      .
+ CSL      N3     C4     C2     .
+ CSL      C2     N3     O2     .
+ CSL      O2     C2     .      END
+ CSL      "C4'"  "O4'"  .    ADD
+ CSL      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CSL       O2P       P         deloc     1.510     0.020     1.510     0.020     
+CSL       O1P       P         deloc     1.510     0.020     1.510     0.020     
+CSL       "O5'"     P         single    1.610     0.020     1.610     0.020     
+CSL       P         O3P       deloc     1.510     0.020     1.510     0.020     
+CSL       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+CSL       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+CSL       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+CSL       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+CSL       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+CSL       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+CSL       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+CSL       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+CSL       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+CSL       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+CSL       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+CSL       N1        C2        single    1.410     0.020     1.410     0.020     
+CSL       C6        N1        single    1.337     0.020     1.337     0.020     
+CSL       O2        C2        double    1.250     0.020     1.250     0.020     
+CSL       C2        N3        single    1.350     0.020     1.350     0.020     
+CSL       N3        C4        double    1.350     0.020     1.350     0.020     
+CSL       N4        C4        single    1.355     0.020     1.355     0.020     
+CSL       C4        C5        single    1.390     0.020     1.390     0.020     
+CSL       HN41      N4        single    1.016     0.010     0.899     0.007     
+CSL       HN42      N4        single    1.016     0.010     0.899     0.007     
+CSL       C5        C6        double    1.390     0.020     1.390     0.020     
+CSL       H5        C5        single    1.082     0.013     0.975     0.010     
+CSL       H6        C6        single    1.082     0.013     0.975     0.010     
+CSL       "SE2'"    "C2'"     single    1.970     0.020     1.970     0.020     
+CSL       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+CSL       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+CSL       "CA'"     "SE2'"    single    1.970     0.020     1.970     0.020     
+CSL       "HA'1"    "CA'"     single    1.089     0.010     0.989     0.005     
+CSL       "HA'2"    "CA'"     single    1.089     0.010     0.989     0.005     
+CSL       "HA'3"    "CA'"     single    1.089     0.010     0.989     0.005     
+CSL       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+CSL       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+CSL       H3T       "O3'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CSL      O3P    P      O2P     119.900    3.000
+ CSL      O3P    P      O1P     119.900    3.000
+ CSL      O3P    P      "O5'"   108.200    3.000
+ CSL      O2P    P      O1P     119.900    3.000
+ CSL      O2P    P      "O5'"   108.200    3.000
+ CSL      O1P    P      "O5'"   108.200    3.000
+ CSL      P      "O5'"  "C5'"   120.500    3.000
+ CSL      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ CSL      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ CSL      "O5'"  "C5'"  "C4'"   109.470    3.000
+ CSL      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ CSL      "H5'1" "C5'"  "C4'"   109.470    3.000
+ CSL      "H5'2" "C5'"  "C4'"   109.470    3.000
+ CSL      "C5'"  "C4'"  "H4'"   108.340    3.000
+ CSL      "C5'"  "C4'"  "C3'"   111.000    3.000
+ CSL      "C5'"  "C4'"  "O4'"   109.470    3.000
+ CSL      "H4'"  "C4'"  "C3'"   108.340    3.000
+ CSL      "H4'"  "C4'"  "O4'"   109.470    3.000
+ CSL      "C3'"  "C4'"  "O4'"   109.470    3.000
+ CSL      "C4'"  "C3'"  "H3'"   108.340    3.000
+ CSL      "C4'"  "C3'"  "O3'"   109.470    3.000
+ CSL      "C4'"  "C3'"  "C2'"   111.000    3.000
+ CSL      "H3'"  "C3'"  "O3'"   109.470    3.000
+ CSL      "H3'"  "C3'"  "C2'"   108.340    3.000
+ CSL      "O3'"  "C3'"  "C2'"   109.470    3.000
+ CSL      "C3'"  "O3'"  H3T     109.470    3.000
+ CSL      "C3'"  "C2'"  "H2'"   108.340    3.000
+ CSL      "C3'"  "C2'"  "SE2'"  109.500    3.000
+ CSL      "C3'"  "C2'"  "C1'"   111.000    3.000
+ CSL      "H2'"  "C2'"  "SE2'"  109.500    3.000
+ CSL      "H2'"  "C2'"  "C1'"   108.340    3.000
+ CSL      "SE2'" "C2'"  "C1'"   109.500    3.000
+ CSL      "C2'"  "SE2'" "CA'"    98.000    3.000
+ CSL      "SE2'" "CA'"  "HA'3"  109.500    3.000
+ CSL      "SE2'" "CA'"  "HA'2"  109.500    3.000
+ CSL      "SE2'" "CA'"  "HA'1"  109.500    3.000
+ CSL      "HA'3" "CA'"  "HA'2"  109.470    3.000
+ CSL      "HA'3" "CA'"  "HA'1"  109.470    3.000
+ CSL      "HA'2" "CA'"  "HA'1"  109.470    3.000
+ CSL      "C2'"  "C1'"  "H1'"   108.340    3.000
+ CSL      "C2'"  "C1'"  "O4'"   109.470    3.000
+ CSL      "C2'"  "C1'"  N1      109.470    3.000
+ CSL      "H1'"  "C1'"  "O4'"   109.470    3.000
+ CSL      "H1'"  "C1'"  N1      109.470    3.000
+ CSL      "O4'"  "C1'"  N1      109.470    3.000
+ CSL      "C1'"  "O4'"  "C4'"   111.800    3.000
+ CSL      "C1'"  N1     C6      120.000    3.000
+ CSL      "C1'"  N1     C2      120.000    3.000
+ CSL      C6     N1     C2      120.000    3.000
+ CSL      N1     C6     H6      120.000    3.000
+ CSL      N1     C6     C5      120.000    3.000
+ CSL      H6     C6     C5      120.000    3.000
+ CSL      C6     C5     H5      120.000    3.000
+ CSL      C6     C5     C4      120.000    3.000
+ CSL      H5     C5     C4      120.000    3.000
+ CSL      C5     C4     N4      120.000    3.000
+ CSL      C5     C4     N3      120.000    3.000
+ CSL      N4     C4     N3      120.000    3.000
+ CSL      C4     N4     HN42    120.000    3.000
+ CSL      C4     N4     HN41    120.000    3.000
+ CSL      HN42   N4     HN41    120.000    3.000
+ CSL      C4     N3     C2      120.000    3.000
+ CSL      N3     C2     O2      120.000    3.000
+ CSL      N3     C2     N1      120.000    3.000
+ CSL      O2     C2     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CSL      var_1    O3P    P      "O5'"  "C5'"     65.063   20.000   1
+ CSL      var_2    P      "O5'"  "C5'"  "C4'"    179.970   20.000   1
+ CSL      var_3    "O5'"  "C5'"  "C4'"  "C3'"   -179.500   20.000   3
+ CSL      var_4    "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ CSL      var_5    "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ CSL      var_6    "C4'"  "C3'"  "O3'"  H3T      -61.478   20.000   1
+ CSL      var_7    "C4'"  "C3'"  "C2'"  "C1'"     30.000   20.000   3
+ CSL      var_8    "C3'"  "C2'"  "SE2'" "CA'"    -65.200   20.000   1
+ CSL      var_9    "C2'"  "SE2'" "CA'"  "HA'1"    59.990   20.000   1
+ CSL      var_10   "C3'"  "C2'"  "C1'"  N1       120.000   20.000   3
+ CSL      var_11   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ CSL      var_12   "C2'"  "C1'"  N1     C6       115.453   20.000   1
+ CSL      CONST_1  "C1'"  N1     C2     N3       180.000    0.000   0
+ CSL      CONST_2  "C1'"  N1     C6     C5       180.000    0.000   0
+ CSL      CONST_3  N1     C6     C5     C4         0.000    0.000   0
+ CSL      CONST_4  C6     C5     C4     N3         0.000    0.000   0
+ CSL      CONST_5  C5     C4     N4     HN41     179.995    0.000   0
+ CSL      CONST_6  C5     C4     N3     C2         0.000    0.000   0
+ CSL      CONST_7  C4     N3     C2     O2       180.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CSL      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ CSL      chir_02  "C1'"  "O4'"  N1     "C2'"     negativ
+ CSL      chir_03  "C2'"  "C1'"  "SE2'" "C3'"     positiv
+ CSL      chir_04  "C3'"  "C4'"  "C2'"  "O3'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CSL      plan-1    N1        0.020
+ CSL      plan-1    "C1'"     0.020
+ CSL      plan-1    C2        0.020
+ CSL      plan-1    C6        0.020
+ CSL      plan-1    N3        0.020
+ CSL      plan-1    C4        0.020
+ CSL      plan-1    C5        0.020
+ CSL      plan-1    O2        0.020
+ CSL      plan-1    N4        0.020
+ CSL      plan-1    H5        0.020
+ CSL      plan-1    H6        0.020
+ CSL      plan-1    HN42      0.020
+ CSL      plan-1    HN41      0.020
+ CSL      plan-2    N4        0.020
+ CSL      plan-2    C4        0.020
+ CSL      plan-2    HN41      0.020
+ CSL      plan-2    HN42      0.020
+# ------------------------------------------------------

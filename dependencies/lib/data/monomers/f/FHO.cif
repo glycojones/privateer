@@ -1,0 +1,217 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FHO     FHO     N^5^-FORMYL-N^5^-HYDROXY-L-ORNITHINE     peptide    24     12     .
+#
+data_comp_FHO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+FHO     N       N       NT3     1       -67.332     -41.528     18.253
+FHO     CA      C       CH1     0       -65.876     -41.671     18.533
+FHO     CB      C       CH2     0       -65.197     -40.297     18.523
+FHO     CG      C       CH2     0       -63.676     -40.350     18.498
+FHO     CD      C       CH2     0       -63.024     -38.982     18.300
+FHO     NE      N       N       0       -63.345     -38.057     19.393
+FHO     OZ      O       OH1     0       -64.113     -36.984     19.024
+FHO     CZ      C       C1      0       -62.939     -38.219     20.648
+FHO     OH      O       O       0       -63.208     -37.447     21.570
+FHO     C       C       C       0       -65.682     -42.373     19.884
+FHO     O       O       O       0       -66.273     -41.886     20.868
+FHO     OXT     O       OC      -1      -64.947     -43.380     19.900
+FHO     H       H       H       0       -67.765     -42.315     18.411
+FHO     H2      H       H       0       -67.458     -41.296     17.381
+FHO     H3      H       H       0       -67.691     -40.881     18.784
+FHO     HA      H       H       0       -65.477     -42.229     17.827
+FHO     HB1C    H       H       0       -65.484     -39.803     19.320
+FHO     HB2C    H       H       0       -65.508     -39.803     17.736
+FHO     HG1C    H       H       0       -63.386     -40.940     17.770
+FHO     HG2C    H       H       0       -63.350     -40.731     19.341
+FHO     HD1C    H       H       0       -63.331     -38.600     17.450
+FHO     HD2C    H       H       0       -62.050     -39.095     18.253
+FHO     HOZ     H       H       0       -64.913     -37.288     18.864
+FHO     HZ      H       H       0       -62.399     -38.993     20.844
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+FHO      N      n/a    CA     START
+FHO      H      N      .      .
+FHO      H2     N      .      .
+FHO      H3     N      .      .
+FHO      CA     N      C      .
+FHO      HA     CA     .      .
+FHO      CB     CA     CG     .
+FHO      HB1C   CB     .      .
+FHO      HB2C   CB     .      .
+FHO      CG     CB     CD     .
+FHO      HG1C   CG     .      .
+FHO      HG2C   CG     .      .
+FHO      CD     CG     NE     .
+FHO      HD1C   CD     .      .
+FHO      HD2C   CD     .      .
+FHO      NE     CD     CZ     .
+FHO      OZ     NE     HOZ    .
+FHO      HOZ    OZ     .      .
+FHO      CZ     NE     OH     .
+FHO      HZ     CZ     .      .
+FHO      OH     CZ     .      .
+FHO      C      CA     .      END
+FHO      O      C      .      .
+FHO      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FHO       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+FHO       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+FHO       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+FHO       CB        CG        SINGLE    n         1.522     0.010     1.522     0.010     
+FHO       CG        CD        SINGLE    n         1.525     0.019     1.525     0.019     
+FHO       CD        NE        SINGLE    n         1.464     0.016     1.464     0.016     
+FHO       NE        OZ        SINGLE    n         1.366     0.020     1.366     0.020     
+FHO       NE        CZ        SINGLE    n         1.324     0.020     1.324     0.020     
+FHO       CZ        OH        DOUBLE    n         1.232     0.010     1.232     0.010     
+FHO       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+FHO       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+FHO       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+FHO       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+FHO       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+FHO       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+FHO       CB        HB1C      SINGLE    n         1.089     0.010     0.980     0.016     
+FHO       CB        HB2C      SINGLE    n         1.089     0.010     0.980     0.016     
+FHO       CG        HG1C      SINGLE    n         1.089     0.010     0.981     0.016     
+FHO       CG        HG2C      SINGLE    n         1.089     0.010     0.981     0.016     
+FHO       CD        HD1C      SINGLE    n         1.089     0.010     0.981     0.015     
+FHO       CD        HD2C      SINGLE    n         1.089     0.010     0.981     0.015     
+FHO       OZ        HOZ       SINGLE    n         0.970     0.012     0.871     0.020     
+FHO       CZ        HZ        SINGLE    n         1.082     0.013     0.964     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+FHO          CA           N           H     110.062    1.93
+FHO          CA           N          H2     110.062    1.93
+FHO          CA           N          H3     110.062    1.93
+FHO           H           N          H2     109.028    2.41
+FHO           H           N          H3     109.028    2.41
+FHO          H2           N          H3     109.028    2.41
+FHO           N          CA          CB     110.374    1.62
+FHO           N          CA           C     109.241    1.50
+FHO           N          CA          HA     108.487    1.50
+FHO          CB          CA           C     111.037    2.40
+FHO          CB          CA          HA     108.967    1.50
+FHO           C          CA          HA     108.824    1.50
+FHO          CA          CB          CG     114.117    1.50
+FHO          CA          CB        HB1C     108.549    1.50
+FHO          CA          CB        HB2C     108.549    1.50
+FHO          CG          CB        HB1C     108.775    1.50
+FHO          CG          CB        HB2C     108.775    1.50
+FHO        HB1C          CB        HB2C     107.844    1.50
+FHO          CB          CG          CD     113.118    2.03
+FHO          CB          CG        HG1C     109.262    1.50
+FHO          CB          CG        HG2C     109.262    1.50
+FHO          CD          CG        HG1C     108.518    1.50
+FHO          CD          CG        HG2C     108.518    1.50
+FHO        HG1C          CG        HG2C     107.927    1.57
+FHO          CG          CD          NE     111.670    1.50
+FHO          CG          CD        HD1C     109.148    1.50
+FHO          CG          CD        HD2C     109.148    1.50
+FHO          NE          CD        HD1C     109.068    1.50
+FHO          NE          CD        HD2C     109.068    1.50
+FHO        HD1C          CD        HD2C     108.384    1.50
+FHO          CD          NE          OZ     114.417    3.00
+FHO          CD          NE          CZ     124.436    2.35
+FHO          OZ          NE          CZ     121.147    2.14
+FHO          NE          OZ         HOZ     106.835    3.00
+FHO          NE          CZ          OH     123.822    1.98
+FHO          NE          CZ          HZ     117.675    2.15
+FHO          OH          CZ          HZ     118.502    2.29
+FHO          CA           C           O     117.124    1.50
+FHO          CA           C         OXT     117.124    1.50
+FHO           O           C         OXT     125.752    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+FHO             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+FHO            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+FHO             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+FHO            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+FHO            sp3_sp3_28          NE          CD          CG          CB     180.000   10.00     3
+FHO             sp2_sp3_8          OZ          NE          CD          CG     120.000   10.00     6
+FHO             sp2_sp2_1          OH          CZ          NE          CD     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+FHO    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+FHO    plan-1          CD   0.020
+FHO    plan-1          CZ   0.020
+FHO    plan-1          NE   0.020
+FHO    plan-1          OZ   0.020
+FHO    plan-2          CZ   0.020
+FHO    plan-2          HZ   0.020
+FHO    plan-2          NE   0.020
+FHO    plan-2          OH   0.020
+FHO    plan-3           C   0.020
+FHO    plan-3          CA   0.020
+FHO    plan-3           O   0.020
+FHO    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+FHO SMILES           ACDLabs              10.04 "O=C(O)C(N)CCCN(O)C=O"
+FHO SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCCN(O)C=O)C(O)=O"
+FHO SMILES           CACTVS               3.341 "N[CH](CCCN(O)C=O)C(O)=O"
+FHO SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(C[C@@H](C(=O)O)N)CN(C=O)O"
+FHO SMILES           "OpenEye OEToolkits" 1.5.0 "C(CC(C(=O)O)N)CN(C=O)O"
+FHO InChI            InChI                1.03  "InChI=1S/C6H12N2O4/c7-5(6(10)11)2-1-3-8(12)4-9/h4-5,12H,1-3,7H2,(H,10,11)/t5-/m0/s1"
+FHO InChIKey         InChI                1.03  KORLZEIJSHHTDW-YFKPBYRVSA-N
+FHO ?                acedrg               202         "dictionary generator"
+FHO ?                acedrg_database      11          "data source"
+FHO ?                rdkit                2017.03.2   "Chemoinformatics tool"
+FHO ?                refmac5              5.8.0222    "optimization tool"

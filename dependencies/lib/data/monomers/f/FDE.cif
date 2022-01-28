@@ -1,0 +1,537 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FDE      FDE 'FE(III) DEUTEROPORPHYRIN IX         ' non-polymer        65  39 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FDE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FDE           O2D    O    OC       -0.500      0.000    0.000    0.000
+ FDE           CGD    C    C         0.000     -0.438   -1.018   -0.580
+ FDE           O1D    O    OC       -0.500     -0.725   -1.007   -1.798
+ FDE           CBD    C    CH2       0.000     -0.678   -2.278    0.218
+ FDE           HBD1   H    H         0.000     -1.403   -2.871   -0.344
+ FDE           HBD2   H    H         0.000     -1.121   -1.968    1.166
+ FDE           CAD    C    CH2       0.000      0.567   -3.116    0.486
+ FDE           HAD1   H    H         0.000      1.280   -2.540    1.080
+ FDE           HAD2   H    H         0.000      1.031   -3.401   -0.461
+ FDE           C3D    C    CR5       0.000      0.165   -4.357    1.244
+ FDE           C2D    C    CR5       0.000      0.170   -5.730    0.727
+ FDE           CMD    C    CH3       0.000      0.589   -6.186   -0.669
+ FDE           HMD3   H    H         0.000     -0.050   -5.750   -1.395
+ FDE           HMD2   H    H         0.000      1.589   -5.885   -0.859
+ FDE           HMD1   H    H         0.000      0.525   -7.242   -0.735
+ FDE           C4D    C    CR5       0.000     -0.305   -4.462    2.603
+ FDE           CHA    C    C1        0.000     -0.398   -3.403    3.456
+ FDE           HHA    H    H         0.000     -0.017   -2.459    3.105
+ FDE           ND     N    NR5       0.000     -0.576   -5.780    2.925
+ FDE           C1D    C    CR5       0.000     -0.281   -6.538    1.816
+ FDE           CHD    C    C1        0.000     -0.372   -7.873    1.744
+ FDE           HHD    H    H         0.000     -0.176   -8.328    0.788
+ FDE           C4C    C    CR5       0.000     -0.682   -8.688    2.752
+ FDE           C3C    C    CR5       0.000     -0.611  -10.104    2.703
+ FDE           CMF    C    CH3       0.000     -0.257  -11.011    1.546
+ FDE           HMF3   H    H         0.000     -0.830  -10.742    0.696
+ FDE           HMF2   H    H         0.000      0.773  -10.913    1.320
+ FDE           HMF1   H    H         0.000     -0.467  -12.017    1.807
+ FDE           C2C    C    CR15      0.000     -0.953  -10.556    3.863
+ FDE           H2C    H    H         0.000     -1.010  -11.604    4.133
+ FDE           FE     FE   FE        0.000     -1.240   -6.432    4.708
+ FDE           NA     N    NT        0.000     -1.440   -4.546    5.312
+ FDE           C1A    C    CR5       0.000     -0.928   -3.426    4.713
+ FDE           NC     N    NR5       0.000     -1.057   -8.303    4.022
+ FDE           C1C    C    CR5       0.000     -1.251   -9.445    4.754
+ FDE           CHC    C    C1        0.000     -1.680   -9.483    6.072
+ FDE           HHC    H    H         0.000     -1.692  -10.446    6.552
+ FDE           C4B    C    CR5       0.000     -2.095   -8.404    6.827
+ FDE           C3B    C    CR5       0.000     -2.704   -8.432    8.137
+ FDE           CME    C    CH3       0.000     -3.020   -9.646    9.034
+ FDE           HME3   H    H         0.000     -4.029   -9.944    8.894
+ FDE           HME2   H    H         0.000     -2.381  -10.456    8.783
+ FDE           HME1   H    H         0.000     -2.871   -9.390   10.053
+ FDE           C2B    C    CR15      0.000     -2.942   -7.176    8.503
+ FDE           H2B    H    H         0.000     -2.990   -6.405    9.261
+ FDE           NB     N    NR5       0.000     -1.966   -7.089    6.421
+ FDE           C1B    C    CR5       0.000     -3.147   -7.780    6.593
+ FDE           CHB    C    C1        0.000     -4.077   -8.055    5.590
+ FDE           HHB    H    H         0.000     -4.912   -8.685    5.845
+ FDE           C4A    C    CR5       0.000     -4.007   -7.584    4.306
+ FDE           C3A    C    CR5       0.000     -5.063   -7.622    3.327
+ FDE           CMA    C    CH3       0.000     -6.443   -8.189    3.546
+ FDE           HMA3   H    H         0.000     -6.962   -7.594    4.252
+ FDE           HMA2   H    H         0.000     -6.973   -8.193    2.629
+ FDE           HMA1   H    H         0.000     -6.363   -9.180    3.911
+ FDE           C2A    C    CR5       0.000     -4.620   -7.078    2.217
+ FDE           CAA    C    CH2       0.000     -5.391   -6.893    0.912
+ FDE           HAA1   H    H         0.000     -5.863   -7.840    0.644
+ FDE           HAA2   H    H         0.000     -4.690   -6.601    0.127
+ FDE           CBA    C    CH2       0.000     -6.461   -5.816    1.068
+ FDE           HBA1   H    H         0.000     -5.952   -4.909    1.404
+ FDE           HBA2   H    H         0.000     -7.145   -6.158    1.847
+ FDE           CGA    C    C         0.000     -7.234   -5.523   -0.187
+ FDE           O1A    O    OC       -0.500     -6.792   -5.812   -1.321
+ FDE           O2A    O    OC       -0.500     -8.376   -5.032   -0.043
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FDE      O2D    n/a    CGD    START
+ FDE      CGD    O2D    CBD    .
+ FDE      O1D    CGD    .      .
+ FDE      CBD    CGD    CAD    .
+ FDE      HBD1   CBD    .      .
+ FDE      HBD2   CBD    .      .
+ FDE      CAD    CBD    C3D    .
+ FDE      HAD1   CAD    .      .
+ FDE      HAD2   CAD    .      .
+ FDE      C3D    CAD    C4D    .
+ FDE      C2D    C3D    CMD    .
+ FDE      CMD    C2D    HMD1   .
+ FDE      HMD3   CMD    .      .
+ FDE      HMD2   CMD    .      .
+ FDE      HMD1   CMD    .      .
+ FDE      C4D    C3D    ND     .
+ FDE      CHA    C4D    HHA    .
+ FDE      HHA    CHA    .      .
+ FDE      ND     C4D    FE     .
+ FDE      C1D    ND     CHD    .
+ FDE      CHD    C1D    C4C    .
+ FDE      HHD    CHD    .      .
+ FDE      C4C    CHD    C3C    .
+ FDE      C3C    C4C    C2C    .
+ FDE      CMF    C3C    HMF1   .
+ FDE      HMF3   CMF    .      .
+ FDE      HMF2   CMF    .      .
+ FDE      HMF1   CMF    .      .
+ FDE      C2C    C3C    H2C    .
+ FDE      H2C    C2C    .      .
+ FDE      FE     ND     NB     .
+ FDE      NA     FE     C1A    .
+ FDE      C1A    NA     .      .
+ FDE      NC     FE     C1C    .
+ FDE      C1C    NC     CHC    .
+ FDE      CHC    C1C    C4B    .
+ FDE      HHC    CHC    .      .
+ FDE      C4B    CHC    C3B    .
+ FDE      C3B    C4B    C2B    .
+ FDE      CME    C3B    HME1   .
+ FDE      HME3   CME    .      .
+ FDE      HME2   CME    .      .
+ FDE      HME1   CME    .      .
+ FDE      C2B    C3B    H2B    .
+ FDE      H2B    C2B    .      .
+ FDE      NB     FE     C1B    .
+ FDE      C1B    NB     CHB    .
+ FDE      CHB    C1B    C4A    .
+ FDE      HHB    CHB    .      .
+ FDE      C4A    CHB    C3A    .
+ FDE      C3A    C4A    C2A    .
+ FDE      CMA    C3A    HMA1   .
+ FDE      HMA3   CMA    .      .
+ FDE      HMA2   CMA    .      .
+ FDE      HMA1   CMA    .      .
+ FDE      C2A    C3A    CAA    .
+ FDE      CAA    C2A    CBA    .
+ FDE      HAA1   CAA    .      .
+ FDE      HAA2   CAA    .      .
+ FDE      CBA    CAA    CGA    .
+ FDE      HBA1   CBA    .      .
+ FDE      HBA2   CBA    .      .
+ FDE      CGA    CBA    O2A    .
+ FDE      O1A    CGA    .      .
+ FDE      O2A    CGA    .      END
+ FDE      CHA    C1A    .    ADD
+ FDE      C1A    C2A    .    ADD
+ FDE      C4A    NA     .    ADD
+ FDE      C1B    C2B    .    ADD
+ FDE      C4B    NB     .    ADD
+ FDE      C1C    C2C    .    ADD
+ FDE      C4C    NC     .    ADD
+ FDE      C1D    C2D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FDE       CHA       C1A       single    1.483     0.020     1.483     0.020     
+FDE       CHA       C4D       double    1.483     0.020     1.483     0.020     
+FDE       HHA       CHA       single    1.082     0.013     0.975     0.010     
+FDE       C1A       C2A       single    1.490     0.020     1.490     0.020     
+FDE       C1A       NA        double    1.455     0.020     1.455     0.020     
+FDE       CAA       C2A       single    1.510     0.020     1.510     0.020     
+FDE       C2A       C3A       double    1.490     0.020     1.490     0.020     
+FDE       CBA       CAA       single    1.524     0.020     1.524     0.020     
+FDE       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+FDE       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+FDE       CGA       CBA       single    1.510     0.020     1.510     0.020     
+FDE       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+FDE       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+FDE       O1A       CGA       deloc     1.250     0.020     1.250     0.020     
+FDE       O2A       CGA       deloc     1.250     0.020     1.250     0.020     
+FDE       CMA       C3A       single    1.506     0.020     1.506     0.020     
+FDE       C3A       C4A       single    1.490     0.020     1.490     0.020     
+FDE       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+FDE       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+FDE       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+FDE       C4A       NA        single    1.455     0.020     1.455     0.020     
+FDE       C4A       CHB       double    1.483     0.020     1.483     0.020     
+FDE       NA        FE        single    1.945     0.020     1.945     0.020     
+FDE       CHB       C1B       single    1.483     0.020     1.483     0.020     
+FDE       HHB       CHB       single    1.082     0.013     0.975     0.010     
+FDE       C1B       C2B       double    1.387     0.020     1.387     0.020     
+FDE       C1B       NB        single    1.337     0.020     1.337     0.020     
+FDE       C2B       C3B       single    1.387     0.020     1.387     0.020     
+FDE       H2B       C2B       single    1.082     0.013     0.975     0.010     
+FDE       CME       C3B       single    1.506     0.020     1.506     0.020     
+FDE       C3B       C4B       double    1.490     0.020     1.490     0.020     
+FDE       HME1      CME       single    1.089     0.010     0.989     0.005     
+FDE       HME2      CME       single    1.089     0.010     0.989     0.005     
+FDE       HME3      CME       single    1.089     0.010     0.989     0.005     
+FDE       C4B       NB        single    1.337     0.020     1.337     0.020     
+FDE       C4B       CHC       single    1.483     0.020     1.483     0.020     
+FDE       NB        FE        single    2.090     0.020     2.090     0.020     
+FDE       CHC       C1C       double    1.483     0.020     1.483     0.020     
+FDE       HHC       CHC       single    1.082     0.013     0.975     0.010     
+FDE       C1C       C2C       single    1.387     0.020     1.387     0.020     
+FDE       C1C       NC        single    1.337     0.020     1.337     0.020     
+FDE       C2C       C3C       double    1.387     0.020     1.387     0.020     
+FDE       H2C       C2C       single    1.082     0.013     0.975     0.010     
+FDE       CMF       C3C       single    1.506     0.020     1.506     0.020     
+FDE       C3C       C4C       single    1.490     0.020     1.490     0.020     
+FDE       HMF1      CMF       single    1.089     0.010     0.989     0.005     
+FDE       HMF2      CMF       single    1.089     0.010     0.989     0.005     
+FDE       HMF3      CMF       single    1.089     0.010     0.989     0.005     
+FDE       C4C       NC        double    1.337     0.020     1.337     0.020     
+FDE       C4C       CHD       single    1.483     0.020     1.483     0.020     
+FDE       NC        FE        single    2.090     0.020     2.090     0.020     
+FDE       CHD       C1D       double    1.483     0.020     1.483     0.020     
+FDE       HHD       CHD       single    1.082     0.013     0.975     0.010     
+FDE       C1D       C2D       single    1.490     0.020     1.490     0.020     
+FDE       C1D       ND        single    1.337     0.020     1.337     0.020     
+FDE       CMD       C2D       single    1.506     0.020     1.506     0.020     
+FDE       C2D       C3D       double    1.490     0.020     1.490     0.020     
+FDE       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+FDE       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+FDE       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+FDE       C3D       CAD       single    1.510     0.020     1.510     0.020     
+FDE       C4D       C3D       single    1.490     0.020     1.490     0.020     
+FDE       CAD       CBD       single    1.524     0.020     1.524     0.020     
+FDE       HAD1      CAD       single    1.089     0.010     0.989     0.005     
+FDE       HAD2      CAD       single    1.089     0.010     0.989     0.005     
+FDE       CBD       CGD       single    1.510     0.020     1.510     0.020     
+FDE       HBD1      CBD       single    1.089     0.010     0.989     0.005     
+FDE       HBD2      CBD       single    1.089     0.010     0.989     0.005     
+FDE       O1D       CGD       deloc     1.250     0.020     1.250     0.020     
+FDE       CGD       O2D       deloc     1.250     0.020     1.250     0.020     
+FDE       ND        C4D       single    1.337     0.020     1.337     0.020     
+FDE       FE        ND        single    2.090     0.020     2.090     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FDE      O2D    CGD    O1D     123.000    3.000
+ FDE      O2D    CGD    CBD     118.500    3.000
+ FDE      O1D    CGD    CBD     118.500    3.000
+ FDE      CGD    CBD    HBD1    109.470    3.000
+ FDE      CGD    CBD    HBD2    109.470    3.000
+ FDE      CGD    CBD    CAD     109.470    3.000
+ FDE      HBD1   CBD    HBD2    107.900    3.000
+ FDE      HBD1   CBD    CAD     109.470    3.000
+ FDE      HBD2   CBD    CAD     109.470    3.000
+ FDE      CBD    CAD    HAD1    109.470    3.000
+ FDE      CBD    CAD    HAD2    109.470    3.000
+ FDE      CBD    CAD    C3D     109.470    3.000
+ FDE      HAD1   CAD    HAD2    107.900    3.000
+ FDE      HAD1   CAD    C3D     109.470    3.000
+ FDE      HAD2   CAD    C3D     109.470    3.000
+ FDE      CAD    C3D    C2D     126.000    3.000
+ FDE      CAD    C3D    C4D     126.000    3.000
+ FDE      C2D    C3D    C4D     108.000    3.000
+ FDE      C3D    C2D    CMD     126.000    3.000
+ FDE      C3D    C2D    C1D     108.000    3.000
+ FDE      CMD    C2D    C1D     126.000    3.000
+ FDE      C2D    CMD    HMD3    109.470    3.000
+ FDE      C2D    CMD    HMD2    109.470    3.000
+ FDE      C2D    CMD    HMD1    109.470    3.000
+ FDE      HMD3   CMD    HMD2    109.470    3.000
+ FDE      HMD3   CMD    HMD1    109.470    3.000
+ FDE      HMD2   CMD    HMD1    109.470    3.000
+ FDE      C3D    C4D    CHA     117.000    3.000
+ FDE      C3D    C4D    ND      108.000    3.000
+ FDE      CHA    C4D    ND      108.000    3.000
+ FDE      C4D    CHA    HHA     120.000    3.000
+ FDE      C4D    CHA    C1A     120.000    3.000
+ FDE      HHA    CHA    C1A     120.000    3.000
+ FDE      C4D    ND     C1D     108.000    3.000
+ FDE      C4D    ND     FE      126.000    3.000
+ FDE      C1D    ND     FE      126.000    3.000
+ FDE      ND     C1D    CHD     108.000    3.000
+ FDE      ND     C1D    C2D     108.000    3.000
+ FDE      CHD    C1D    C2D     117.000    3.000
+ FDE      C1D    CHD    HHD     120.000    3.000
+ FDE      C1D    CHD    C4C     120.000    3.000
+ FDE      HHD    CHD    C4C     120.000    3.000
+ FDE      CHD    C4C    C3C     117.000    3.000
+ FDE      CHD    C4C    NC      108.000    3.000
+ FDE      C3C    C4C    NC      108.000    3.000
+ FDE      C4C    C3C    CMF     126.000    3.000
+ FDE      C4C    C3C    C2C     108.000    3.000
+ FDE      CMF    C3C    C2C     108.000    3.000
+ FDE      C3C    CMF    HMF3    109.470    3.000
+ FDE      C3C    CMF    HMF2    109.470    3.000
+ FDE      C3C    CMF    HMF1    109.470    3.000
+ FDE      HMF3   CMF    HMF2    109.470    3.000
+ FDE      HMF3   CMF    HMF1    109.470    3.000
+ FDE      HMF2   CMF    HMF1    109.470    3.000
+ FDE      C3C    C2C    H2C     126.000    3.000
+ FDE      C3C    C2C    C1C     108.000    3.000
+ FDE      H2C    C2C    C1C     126.000    3.000
+ FDE      ND     FE     NA       90.000    3.000
+ FDE      ND     FE     NC       90.000    3.000
+ FDE      ND     FE     NB      180.000    3.000
+ FDE      NA     FE     NC      180.000    3.000
+ FDE      NA     FE     NB       90.000    3.000
+ FDE      NC     FE     NB       90.000    3.000
+ FDE      FE     NA     C1A     109.500    3.000
+ FDE      FE     NA     C4A     109.500    3.000
+ FDE      C1A    NA     C4A     109.500    3.000
+ FDE      NA     C1A    CHA     108.000    3.000
+ FDE      NA     C1A    C2A     108.000    3.000
+ FDE      CHA    C1A    C2A     117.000    3.000
+ FDE      FE     NC     C1C     126.000    3.000
+ FDE      FE     NC     C4C     126.000    3.000
+ FDE      C1C    NC     C4C     108.000    3.000
+ FDE      NC     C1C    CHC     108.000    3.000
+ FDE      NC     C1C    C2C     108.000    3.000
+ FDE      CHC    C1C    C2C     108.000    3.000
+ FDE      C1C    CHC    HHC     120.000    3.000
+ FDE      C1C    CHC    C4B     120.000    3.000
+ FDE      HHC    CHC    C4B     120.000    3.000
+ FDE      CHC    C4B    C3B     117.000    3.000
+ FDE      CHC    C4B    NB      108.000    3.000
+ FDE      C3B    C4B    NB      108.000    3.000
+ FDE      C4B    C3B    CME     126.000    3.000
+ FDE      C4B    C3B    C2B     108.000    3.000
+ FDE      CME    C3B    C2B     108.000    3.000
+ FDE      C3B    CME    HME3    109.470    3.000
+ FDE      C3B    CME    HME2    109.470    3.000
+ FDE      C3B    CME    HME1    109.470    3.000
+ FDE      HME3   CME    HME2    109.470    3.000
+ FDE      HME3   CME    HME1    109.470    3.000
+ FDE      HME2   CME    HME1    109.470    3.000
+ FDE      C3B    C2B    H2B     126.000    3.000
+ FDE      C3B    C2B    C1B     108.000    3.000
+ FDE      H2B    C2B    C1B     126.000    3.000
+ FDE      FE     NB     C1B     126.000    3.000
+ FDE      FE     NB     C4B     126.000    3.000
+ FDE      C1B    NB     C4B     108.000    3.000
+ FDE      NB     C1B    CHB     108.000    3.000
+ FDE      NB     C1B    C2B     108.000    3.000
+ FDE      CHB    C1B    C2B     108.000    3.000
+ FDE      C1B    CHB    HHB     120.000    3.000
+ FDE      C1B    CHB    C4A     120.000    3.000
+ FDE      HHB    CHB    C4A     120.000    3.000
+ FDE      CHB    C4A    C3A     117.000    3.000
+ FDE      CHB    C4A    NA      108.000    3.000
+ FDE      C3A    C4A    NA      108.000    3.000
+ FDE      C4A    C3A    CMA     126.000    3.000
+ FDE      C4A    C3A    C2A     108.000    3.000
+ FDE      CMA    C3A    C2A     126.000    3.000
+ FDE      C3A    CMA    HMA3    109.470    3.000
+ FDE      C3A    CMA    HMA2    109.470    3.000
+ FDE      C3A    CMA    HMA1    109.470    3.000
+ FDE      HMA3   CMA    HMA2    109.470    3.000
+ FDE      HMA3   CMA    HMA1    109.470    3.000
+ FDE      HMA2   CMA    HMA1    109.470    3.000
+ FDE      C3A    C2A    CAA     126.000    3.000
+ FDE      C3A    C2A    C1A     108.000    3.000
+ FDE      CAA    C2A    C1A     126.000    3.000
+ FDE      C2A    CAA    HAA1    109.470    3.000
+ FDE      C2A    CAA    HAA2    109.470    3.000
+ FDE      C2A    CAA    CBA     109.470    3.000
+ FDE      HAA1   CAA    HAA2    107.900    3.000
+ FDE      HAA1   CAA    CBA     109.470    3.000
+ FDE      HAA2   CAA    CBA     109.470    3.000
+ FDE      CAA    CBA    HBA1    109.470    3.000
+ FDE      CAA    CBA    HBA2    109.470    3.000
+ FDE      CAA    CBA    CGA     109.470    3.000
+ FDE      HBA1   CBA    HBA2    107.900    3.000
+ FDE      HBA1   CBA    CGA     109.470    3.000
+ FDE      HBA2   CBA    CGA     109.470    3.000
+ FDE      CBA    CGA    O1A     118.500    3.000
+ FDE      CBA    CGA    O2A     118.500    3.000
+ FDE      O1A    CGA    O2A     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FDE      var_1    O2D    CGD    CBD    CAD      -80.760   20.000   3
+ FDE      var_2    CGD    CBD    CAD    C3D     -178.038   20.000   3
+ FDE      var_3    CBD    CAD    C3D    C4D      -69.434   20.000   2
+ FDE      CONST_1  CAD    C3D    C2D    CMD        0.000    0.000   0
+ FDE      var_4    C3D    C2D    CMD    HMD1     177.590   20.000   1
+ FDE      CONST_2  CAD    C3D    C4D    ND       180.000    0.000   0
+ FDE      var_5    C3D    C4D    CHA    C1A      180.000   20.000   1
+ FDE      var_6    C4D    CHA    C1A    NA         0.000   20.000   1
+ FDE      CONST_3  C3D    C4D    ND     FE       180.000    0.000   0
+ FDE      CONST_4  C4D    ND     C1D    CHD      180.000    0.000   0
+ FDE      CONST_5  ND     C1D    C2D    C3D        0.000    0.000   0
+ FDE      var_7    ND     C1D    CHD    C4C        0.000   20.000   1
+ FDE      var_8    C1D    CHD    C4C    C3C      180.000   20.000   1
+ FDE      CONST_6  CHD    C4C    NC     FE         0.000    0.000   0
+ FDE      CONST_7  CHD    C4C    C3C    C2C      180.000    0.000   0
+ FDE      var_9    C4C    C3C    CMF    HMF1    -170.057   20.000   1
+ FDE      CONST_8  C4C    C3C    C2C    C1C        0.000    0.000   0
+ FDE      var_10   C4D    ND     FE     NA         0.000   20.000   1
+ FDE      var_11   C1A    NA     FE     ND         0.000   20.000   1
+ FDE      var_12   FE     NA     C1A    CHA        0.000   20.000   1
+ FDE      CONST_9  NA     C1A    C2A    C3A        0.000    0.000   0
+ FDE      var_13   C4C    NC     FE     ND         0.000   20.000   1
+ FDE      CONST_10 FE     NC     C1C    CHC        0.000    0.000   0
+ FDE      CONST_11 NC     C1C    C2C    C3C        0.000    0.000   0
+ FDE      var_14   NC     C1C    CHC    C4B        0.000   20.000   1
+ FDE      var_15   C1C    CHC    C4B    C3B      180.000   20.000   1
+ FDE      CONST_12 CHC    C4B    NB     FE         0.000    0.000   0
+ FDE      CONST_13 CHC    C4B    C3B    C2B      180.000    0.000   0
+ FDE      var_16   C4B    C3B    CME    HME1     144.265   20.000   1
+ FDE      CONST_14 C4B    C3B    C2B    C1B        0.000    0.000   0
+ FDE      var_17   C1B    NB     FE     NA         0.000   20.000   1
+ FDE      CONST_15 FE     NB     C1B    CHB        0.000    0.000   0
+ FDE      CONST_16 NB     C1B    C2B    C3B        0.000    0.000   0
+ FDE      var_18   NB     C1B    CHB    C4A        0.000   20.000   1
+ FDE      var_19   C1B    CHB    C4A    C3A      180.000   20.000   1
+ FDE      var_20   CHB    C4A    NA     FE         0.000   20.000   1
+ FDE      CONST_17 CHB    C4A    C3A    C2A      180.000    0.000   0
+ FDE      var_21   C4A    C3A    CMA    HMA1     -53.236   20.000   1
+ FDE      CONST_18 C4A    C3A    C2A    CAA      180.000    0.000   0
+ FDE      var_22   C3A    C2A    CAA    CBA       71.058   20.000   2
+ FDE      var_23   C2A    CAA    CBA    CGA      177.546   20.000   3
+ FDE      var_24   CAA    CBA    CGA    O2A      155.906   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FDE      chir_01  NA     C1A    C4A    FE        positiv
+ FDE      chir_02  FE     ND     NB     NA        cross2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FDE      plan-1    CHA       0.020
+ FDE      plan-1    C1A       0.020
+ FDE      plan-1    C4D       0.020
+ FDE      plan-1    HHA       0.020
+ FDE      plan-2    C1A       0.020
+ FDE      plan-2    CHA       0.020
+ FDE      plan-2    C2A       0.020
+ FDE      plan-2    NA        0.020
+ FDE      plan-2    C3A       0.020
+ FDE      plan-2    C4A       0.020
+ FDE      plan-2    CAA       0.020
+ FDE      plan-2    CMA       0.020
+ FDE      plan-2    CHB       0.020
+ FDE      plan-2    HHA       0.020
+ FDE      plan-2    HHB       0.020
+ FDE      plan-3    CGA       0.020
+ FDE      plan-3    CBA       0.020
+ FDE      plan-3    O1A       0.020
+ FDE      plan-3    O2A       0.020
+ FDE      plan-4    CHB       0.020
+ FDE      plan-4    C4A       0.020
+ FDE      plan-4    C1B       0.020
+ FDE      plan-4    HHB       0.020
+ FDE      plan-5    C1B       0.020
+ FDE      plan-5    CHB       0.020
+ FDE      plan-5    C2B       0.020
+ FDE      plan-5    NB        0.020
+ FDE      plan-5    C3B       0.020
+ FDE      plan-5    C4B       0.020
+ FDE      plan-5    H2B       0.020
+ FDE      plan-5    CME       0.020
+ FDE      plan-5    CHC       0.020
+ FDE      plan-5    FE        0.020
+ FDE      plan-5    HHB       0.020
+ FDE      plan-5    HHC       0.020
+ FDE      plan-6    CHC       0.020
+ FDE      plan-6    C4B       0.020
+ FDE      plan-6    C1C       0.020
+ FDE      plan-6    HHC       0.020
+ FDE      plan-7    C1C       0.020
+ FDE      plan-7    CHC       0.020
+ FDE      plan-7    C2C       0.020
+ FDE      plan-7    NC        0.020
+ FDE      plan-7    C3C       0.020
+ FDE      plan-7    C4C       0.020
+ FDE      plan-7    H2C       0.020
+ FDE      plan-7    CMF       0.020
+ FDE      plan-7    CHD       0.020
+ FDE      plan-7    FE        0.020
+ FDE      plan-7    HHC       0.020
+ FDE      plan-7    HHD       0.020
+ FDE      plan-8    CHD       0.020
+ FDE      plan-8    C4C       0.020
+ FDE      plan-8    C1D       0.020
+ FDE      plan-8    HHD       0.020
+ FDE      plan-9    C1D       0.020
+ FDE      plan-9    CHD       0.020
+ FDE      plan-9    C2D       0.020
+ FDE      plan-9    ND        0.020
+ FDE      plan-9    C3D       0.020
+ FDE      plan-9    C4D       0.020
+ FDE      plan-9    CMD       0.020
+ FDE      plan-9    CAD       0.020
+ FDE      plan-9    CHA       0.020
+ FDE      plan-9    FE        0.020
+ FDE      plan-9    HHD       0.020
+ FDE      plan-9    HHA       0.020
+ FDE      plan-10   CGD       0.020
+ FDE      plan-10   CBD       0.020
+ FDE      plan-10   O1D       0.020
+ FDE      plan-10   O2D       0.020
+# ------------------------------------------------------

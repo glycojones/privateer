@@ -1,0 +1,138 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EMM     EMM      "[METHYL(VINYL)AMINO]METHANOL"     NON-POLYMER     14     7     .     
+#
+data_comp_EMM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+EMM     C1      C       C1      0       -0.578      0.717       -0.702      
+EMM     C2      C       CH3     0       -0.408      -1.268      0.792       
+EMM     C       C       C       0       1.670       0.066       0.254       
+EMM     O       O       O       0       2.463       -0.838      0.409       
+EMM     N       N       N       0       0.263       -0.147      0.106       
+EMM     C3      C       C2      0       -1.900      0.696       -0.833      
+EMM     OXT     O       OH1     0       2.061       1.344       0.239       
+EMM     H1      H       H       0       -0.143      1.374       -1.209      
+EMM     H2C1    H       H       0       0.226       -1.789      1.309       
+EMM     H2C2    H       H       0       -0.828      -1.846      0.135       
+EMM     H2C3    H       H       0       -1.090      -0.924      1.390       
+EMM     H3C1    H       H       0       -2.317      1.324       -1.409      
+EMM     H3C2    H       H       0       -2.437      0.073       -0.363      
+EMM     HXT     H       H       0       2.514       1.513       -0.494      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EMM       C1        N         SINGLE    n         1.416     0.019     1.416     0.019     
+EMM       C1        C3        DOUBLE    n         1.308     0.020     1.308     0.020     
+EMM       C2        N         SINGLE    n         1.468     0.010     1.468     0.010     
+EMM       C         O         DOUBLE    n         1.212     0.011     1.212     0.011     
+EMM       C         N         SINGLE    n         1.400     0.020     1.400     0.020     
+EMM       C         OXT       SINGLE    n         1.331     0.020     1.331     0.020     
+EMM       C1        H1        SINGLE    n         1.082     0.013     0.937     0.012     
+EMM       C2        H2C1      SINGLE    n         1.089     0.010     0.970     0.015     
+EMM       C2        H2C2      SINGLE    n         1.089     0.010     0.970     0.015     
+EMM       C2        H2C3      SINGLE    n         1.089     0.010     0.970     0.015     
+EMM       C3        H3C1      SINGLE    n         1.082     0.013     0.949     0.020     
+EMM       C3        H3C2      SINGLE    n         1.082     0.013     0.949     0.020     
+EMM       OXT       HXT       SINGLE    n         0.970     0.012     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+EMM           N          C1          C3     121.308    3.00
+EMM           N          C1          H1     118.786    1.50
+EMM          C3          C1          H1     119.905    2.08
+EMM           N          C2        H2C1     110.053    1.50
+EMM           N          C2        H2C2     110.053    1.50
+EMM           N          C2        H2C3     110.053    1.50
+EMM        H2C1          C2        H2C2     109.408    1.50
+EMM        H2C1          C2        H2C3     109.408    1.50
+EMM        H2C2          C2        H2C3     109.408    1.50
+EMM           O           C           N     122.976    2.24
+EMM           O           C         OXT     122.892    1.50
+EMM           N           C         OXT     114.133    3.00
+EMM          C1           N          C2     115.029    1.50
+EMM          C1           N           C     124.841    2.86
+EMM          C2           N           C     120.130    2.35
+EMM          C1          C3        H3C1     120.002    1.95
+EMM          C1          C3        H3C2     120.002    1.95
+EMM        H3C1          C3        H3C2     119.997    2.01
+EMM           C         OXT         HXT     110.339    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+EMM             sp2_sp2_2          C3          C1           N          C2       0.000   10.00     2
+EMM             sp2_sp2_5           N          C1          C3        H3C1     180.000   10.00     2
+EMM             sp2_sp3_1          C1           N          C2        H2C1       0.000   10.00     6
+EMM            sp2_sp2_11           O           C           N          C1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+EMM    plan-1          C1   0.020
+EMM    plan-1          C3   0.020
+EMM    plan-1          H1   0.020
+EMM    plan-1           N   0.020
+EMM    plan-2           C   0.020
+EMM    plan-2           N   0.020
+EMM    plan-2           O   0.020
+EMM    plan-2         OXT   0.020
+EMM    plan-3           C   0.020
+EMM    plan-3          C1   0.020
+EMM    plan-3          C2   0.020
+EMM    plan-3           N   0.020
+EMM    plan-4          C1   0.020
+EMM    plan-4          C3   0.020
+EMM    plan-4        H3C1   0.020
+EMM    plan-4        H3C2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+EMM SMILES           ACDLabs              10.04 "O=C(O)N(\C=C)C"
+EMM SMILES_CANONICAL CACTVS               3.341 "CN(C=C)C(O)=O"
+EMM SMILES           CACTVS               3.341 "CN(C=C)C(O)=O"
+EMM SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CN(C=C)C(=O)O"
+EMM SMILES           "OpenEye OEToolkits" 1.5.0 "CN(C=C)C(=O)O"
+EMM InChI            InChI                1.03  "InChI=1S/C4H7NO2/c1-3-5(2)4(6)7/h3H,1H2,2H3,(H,6,7)"
+EMM InChIKey         InChI                1.03  RIKKDQCPYLBOND-UHFFFAOYSA-N
+EMM ?                acedrg               202         "dictionary generator"                  
+EMM ?                acedrg_database      11          "data source"                           
+EMM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+EMM ?                refmac5              5.8.0189    "optimization tool"                     

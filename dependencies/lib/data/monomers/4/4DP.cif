@@ -1,0 +1,307 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4DP     4DP     "3-[5-(DIMETHYLAMINO)-1,3-DIOXO-1,3-DIHYDRO-2H-ISOINDOL-2-YL]-L-ALANINE"  peptide   35     20     .     
+#
+data_comp_4DP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4DP     OAP     O       O       0       -25.525     64.155      13.610      
+4DP     CAJ     C       CR5     0       -26.707     64.120      13.900      
+4DP     CAL     C       CR56    0       -27.743     65.179      13.750      
+4DP     CAG     C       CR16    0       -27.637     66.452      13.237      
+4DP     CAH     C       CR6     0       -28.805     67.242      13.221      
+4DP     NAM     N       N       0       -28.751     68.518      12.719      
+4DP     CAD     C       CH3     0       -29.268     69.644      13.472      
+4DP     CAC     C       CH3     0       -28.173     68.787      11.416      
+4DP     CAE     C       CR16    0       -30.033     66.735      13.716      
+4DP     CAF     C       CR16    0       -30.104     65.445      14.229      
+4DP     CAK     C       CR56    0       -28.948     64.677      14.238      
+4DP     CAI     C       CR5     0       -28.712     63.290      14.713      
+4DP     OAO     O       O       0       -29.495     62.509      15.223      
+4DP     NAN     N       NR5     0       -27.363     63.020      14.461      
+4DP     CB      C       CH2     0       -26.716     61.743      14.754      
+4DP     CA      C       CH1     0       -26.153     61.666      16.180      
+4DP     C       C       C       0       -25.553     60.282      16.460      
+4DP     O       O       O       0       -24.450     60.024      15.939      
+4DP     N       N       NT3     1       -25.119     62.716      16.397      
+4DP     OXT     O       OC      -1      -26.211     59.514      17.190      
+4DP     HAG     H       H       0       -26.827     66.783      12.911      
+4DP     HAD1    H       H       0       -29.187     69.470      14.424      
+4DP     HAD2    H       H       0       -30.204     69.781      13.250      
+4DP     HAD3    H       H       0       -28.766     70.446      13.250      
+4DP     HAC1    H       H       0       -28.289     68.015      10.838      
+4DP     HAC2    H       H       0       -27.225     68.975      11.514      
+4DP     HAC3    H       H       0       -28.611     69.556      11.015      
+4DP     HAE     H       H       0       -30.801     67.278      13.697      
+4DP     HAF     H       H       0       -30.911     65.108      14.556      
+4DP     HB3     H       H       0       -25.986     61.599      14.118      
+4DP     HB2     H       H       0       -27.365     61.020      14.632      
+4DP     HA      H       H       0       -26.893     61.821      16.812      
+4DP     H       H       H       0       -24.655     62.549      17.165      
+4DP     H2      H       H       0       -25.516     63.532      16.471      
+4DP     H3      H       H       0       -24.537     62.730      15.696      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 4DP      N      n/a    CA     START
+ 4DP      H      N      .      .
+ 4DP      H2     N      .      .
+ 4DP      H3     N      .      .
+ 4DP      CA     N      C      .
+ 4DP      HA     CA     .      .
+ 4DP      CB     CA     NAN    .
+ 4DP      HB3    CB     .      .
+ 4DP      HB2    CB     .      .
+ 4DP      NAN    CB     CAI    .
+ 4DP      CAJ    NAN    OAP    .
+ 4DP      OAP    CAJ    .      .
+ 4DP      CAI    NAN    CAK    .
+ 4DP      OAO    CAI    .      .
+ 4DP      CAK    CAI    CAF    .
+ 4DP      CAL    CAK    .      .
+ 4DP      CAF    CAK    CAE    .
+ 4DP      HAF    CAF    .      .
+ 4DP      CAE    CAF    CAH    .
+ 4DP      HAE    CAE    .      .
+ 4DP      CAH    CAE    NAM    .
+ 4DP      CAG    CAH    HAG    .
+ 4DP      HAG    CAG    .      .
+ 4DP      NAM    CAH    CAD    .
+ 4DP      CAC    NAM    HAC1   .
+ 4DP      HAC3   CAC    .      .
+ 4DP      HAC2   CAC    .      .
+ 4DP      HAC1   CAC    .      .
+ 4DP      CAD    NAM    HAD1   .
+ 4DP      HAD3   CAD    .      .
+ 4DP      HAD2   CAD    .      .
+ 4DP      HAD1   CAD    .      .
+ 4DP      C      CA     .      END
+ 4DP      O      C      .      .
+ 4DP      OXT    C      .      .
+ 4DP      CAJ    CAL    .    ADD
+ 4DP      CAL    CAG    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4DP       OAP       CAJ       DOUBLE    n         1.217     0.015     1.217     0.015     
+4DP       CAJ       CAL       SINGLE    n         1.490     0.010     1.490     0.010     
+4DP       CAJ       NAN       SINGLE    n         1.396     0.010     1.396     0.010     
+4DP       CAL       CAG       DOUBLE    y         1.373     0.010     1.373     0.010     
+4DP       CAL       CAK       SINGLE    y         1.393     0.010     1.393     0.010     
+4DP       CAG       CAH       SINGLE    y         1.403     0.012     1.403     0.012     
+4DP       CAH       NAM       SINGLE    n         1.367     0.012     1.367     0.012     
+4DP       CAH       CAE       DOUBLE    y         1.412     0.010     1.412     0.010     
+4DP       NAM       CAC       SINGLE    n         1.447     0.012     1.447     0.012     
+4DP       NAM       CAD       SINGLE    n         1.447     0.012     1.447     0.012     
+4DP       CAE       CAF       SINGLE    y         1.385     0.011     1.385     0.011     
+4DP       CAF       CAK       DOUBLE    y         1.384     0.010     1.384     0.010     
+4DP       CAK       CAI       SINGLE    n         1.485     0.010     1.485     0.010     
+4DP       CAI       NAN       SINGLE    n         1.396     0.010     1.396     0.010     
+4DP       CAI       OAO       DOUBLE    n         1.217     0.015     1.217     0.015     
+4DP       NAN       CB        SINGLE    n         1.459     0.010     1.459     0.010     
+4DP       CB        CA        SINGLE    n         1.535     0.011     1.535     0.011     
+4DP       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+4DP       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+4DP       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+4DP       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+4DP       CAG       HAG       SINGLE    n         1.082     0.013     0.934     0.010     
+4DP       CAD       HAD1      SINGLE    n         1.089     0.010     0.971     0.018     
+4DP       CAD       HAD2      SINGLE    n         1.089     0.010     0.971     0.018     
+4DP       CAD       HAD3      SINGLE    n         1.089     0.010     0.971     0.018     
+4DP       CAC       HAC1      SINGLE    n         1.089     0.010     0.971     0.018     
+4DP       CAC       HAC2      SINGLE    n         1.089     0.010     0.971     0.018     
+4DP       CAC       HAC3      SINGLE    n         1.089     0.010     0.971     0.018     
+4DP       CAE       HAE       SINGLE    n         1.082     0.013     0.941     0.010     
+4DP       CAF       HAF       SINGLE    n         1.082     0.013     0.934     0.010     
+4DP       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.015     
+4DP       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.015     
+4DP       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+4DP       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+4DP       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+4DP       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4DP         OAP         CAJ         CAL     129.353    1.50
+4DP         OAP         CAJ         NAN     124.766    1.50
+4DP         CAL         CAJ         NAN     105.881    1.50
+4DP         CAJ         CAL         CAG     129.806    1.50
+4DP         CAJ         CAL         CAK     108.160    1.50
+4DP         CAG         CAL         CAK     122.034    1.50
+4DP         CAL         CAG         CAH     117.161    1.53
+4DP         CAL         CAG         HAG     121.779    1.50
+4DP         CAH         CAG         HAG     121.060    1.50
+4DP         CAG         CAH         NAM     119.265    1.50
+4DP         CAG         CAH         CAE     121.390    2.03
+4DP         NAM         CAH         CAE     119.345    1.50
+4DP         CAH         NAM         CAC     121.020    1.50
+4DP         CAH         NAM         CAD     121.020    1.50
+4DP         CAC         NAM         CAD     117.960    1.50
+4DP         NAM         CAD        HAD1     109.662    1.50
+4DP         NAM         CAD        HAD2     109.662    1.50
+4DP         NAM         CAD        HAD3     109.662    1.50
+4DP        HAD1         CAD        HAD2     109.352    1.56
+4DP        HAD1         CAD        HAD3     109.352    1.56
+4DP        HAD2         CAD        HAD3     109.352    1.56
+4DP         NAM         CAC        HAC1     109.662    1.50
+4DP         NAM         CAC        HAC2     109.662    1.50
+4DP         NAM         CAC        HAC3     109.662    1.50
+4DP        HAC1         CAC        HAC2     109.352    1.56
+4DP        HAC1         CAC        HAC3     109.352    1.56
+4DP        HAC2         CAC        HAC3     109.352    1.56
+4DP         CAH         CAE         CAF     120.091    1.50
+4DP         CAH         CAE         HAE     119.630    1.50
+4DP         CAF         CAE         HAE     120.279    1.50
+4DP         CAE         CAF         CAK     117.961    1.50
+4DP         CAE         CAF         HAF     120.743    1.50
+4DP         CAK         CAF         HAF     121.296    1.50
+4DP         CAL         CAK         CAF     121.363    1.50
+4DP         CAL         CAK         CAI     108.160    1.50
+4DP         CAF         CAK         CAI     130.477    1.50
+4DP         CAK         CAI         NAN     105.881    1.50
+4DP         CAK         CAI         OAO     129.353    1.50
+4DP         NAN         CAI         OAO     124.766    1.50
+4DP         CAJ         NAN         CAI     111.916    1.50
+4DP         CAJ         NAN          CB     124.042    1.50
+4DP         CAI         NAN          CB     124.042    1.50
+4DP         NAN          CB          CA     112.712    1.50
+4DP         NAN          CB         HB3     109.019    1.50
+4DP         NAN          CB         HB2     109.019    1.50
+4DP          CA          CB         HB3     108.744    1.50
+4DP          CA          CB         HB2     108.744    1.50
+4DP         HB3          CB         HB2     107.913    1.50
+4DP          CB          CA           C     111.500    2.27
+4DP          CB          CA           N     110.327    1.50
+4DP          CB          CA          HA     108.202    1.50
+4DP           C          CA           N     109.414    1.50
+4DP           C          CA          HA     108.600    1.50
+4DP           N          CA          HA     108.444    1.50
+4DP          CA           C           O     117.139    1.50
+4DP          CA           C         OXT     117.139    1.50
+4DP           O           C         OXT     125.721    1.50
+4DP          CA           N           H     109.853    1.85
+4DP          CA           N          H2     109.853    1.85
+4DP          CA           N          H3     109.853    1.85
+4DP           H           N          H2     109.028    2.41
+4DP           H           N          H3     109.028    2.41
+4DP          H2           N          H3     109.028    2.41
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4DP             sp2_sp2_7         OAO         CAI         CAK         CAL     180.000   10.00     2
+4DP            sp2_sp2_12         OAO         CAI         NAN          CB       0.000   10.00     2
+4DP            sp2_sp3_14         CAJ         NAN          CB          CA     -90.000   10.00     6
+4DP             sp3_sp3_1           C          CA          CB         NAN     180.000   10.00     3
+4DP            sp2_sp3_20           O           C          CA          CB     120.000   10.00     6
+4DP            sp3_sp3_10          CB          CA           N           H     180.000   10.00     3
+4DP            sp2_sp2_16         OAP         CAJ         NAN          CB       0.000   10.00     2
+4DP             sp2_sp2_4         OAP         CAJ         CAL         CAG       0.000   10.00     2
+4DP              const_22         CAF         CAK         CAL         CAJ     180.000   10.00     2
+4DP       const_sp2_sp2_2         CAH         CAG         CAL         CAJ     180.000   10.00     2
+4DP       const_sp2_sp2_6         CAL         CAG         CAH         NAM     180.000   10.00     2
+4DP            sp2_sp2_17         CAG         CAH         NAM         CAC     180.000   10.00     2
+4DP              const_10         CAF         CAE         CAH         NAM     180.000   10.00     2
+4DP            sp2_sp3_10         CAC         NAM         CAD        HAD1     180.000   10.00     6
+4DP             sp2_sp3_4         CAD         NAM         CAC        HAC1     180.000   10.00     6
+4DP              const_13         CAH         CAE         CAF         CAK       0.000   10.00     2
+4DP              const_17         CAE         CAF         CAK         CAL       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+4DP    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4DP    plan-1         CAE   0.020
+4DP    plan-1         CAF   0.020
+4DP    plan-1         CAG   0.020
+4DP    plan-1         CAH   0.020
+4DP    plan-1         CAI   0.020
+4DP    plan-1         CAJ   0.020
+4DP    plan-1         CAK   0.020
+4DP    plan-1         CAL   0.020
+4DP    plan-1         HAE   0.020
+4DP    plan-1         HAF   0.020
+4DP    plan-1         HAG   0.020
+4DP    plan-1         NAM   0.020
+4DP    plan-2         CAJ   0.020
+4DP    plan-2         CAL   0.020
+4DP    plan-2         NAN   0.020
+4DP    plan-2         OAP   0.020
+4DP    plan-3         CAC   0.020
+4DP    plan-3         CAD   0.020
+4DP    plan-3         CAH   0.020
+4DP    plan-3         NAM   0.020
+4DP    plan-4         CAI   0.020
+4DP    plan-4         CAK   0.020
+4DP    plan-4         NAN   0.020
+4DP    plan-4         OAO   0.020
+4DP    plan-5         CAI   0.020
+4DP    plan-5         CAJ   0.020
+4DP    plan-5          CB   0.020
+4DP    plan-5         NAN   0.020
+4DP    plan-6           C   0.020
+4DP    plan-6          CA   0.020
+4DP    plan-6           O   0.020
+4DP    plan-6         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4DP SMILES           ACDLabs              10.04 "O=C(O)C(N)CN2C(=O)c1ccc(cc1C2=O)N(C)C"
+4DP SMILES_CANONICAL CACTVS               3.341 "CN(C)c1ccc2C(=O)N(C[C@H](N)C(O)=O)C(=O)c2c1"
+4DP SMILES           CACTVS               3.341 "CN(C)c1ccc2C(=O)N(C[CH](N)C(O)=O)C(=O)c2c1"
+4DP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CN(C)c1ccc2c(c1)C(=O)N(C2=O)C[C@@H](C(=O)O)N"
+4DP SMILES           "OpenEye OEToolkits" 1.5.0 "CN(C)c1ccc2c(c1)C(=O)N(C2=O)CC(C(=O)O)N"
+4DP InChI            InChI                1.03  "InChI=1S/C13H15N3O4/c1-15(2)7-3-4-8-9(5-7)12(18)16(11(8)17)6-10(14)13(19)20/h3-5,10H,6,14H2,1-2H3,(H,19,20)/t10-/m0/s1"
+4DP InChIKey         InChI                1.03  NLRIIORQBUXJMD-JTQLQIEISA-N
+4DP ?                acedrg               196         "dictionary generator"                  
+4DP ?                acedrg_database      11          "data source"                           
+4DP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4DP ?                refmac5              5.8.0222    "optimization tool"                     

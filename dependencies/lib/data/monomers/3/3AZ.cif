@@ -1,0 +1,189 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3AZ      3AZ '3-(aminomethyl)benzoic acid         ' non-polymer        19  11 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_3AZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 3AZ           OXT    O    OC       -0.500      0.000    0.000    0.000
+ 3AZ           C      C    C         0.000     -1.090   -0.608   -0.092
+ 3AZ           O      O    OC       -0.500     -1.102   -1.851   -0.232
+ 3AZ           C3     C    CR6       0.000     -2.361    0.141   -0.027
+ 3AZ           C2     C    CR16      0.000     -3.579   -0.535   -0.123
+ 3AZ           H2     H    H         0.000     -3.594   -1.611   -0.245
+ 3AZ           C4     C    CR16      0.000     -2.351    1.528    0.130
+ 3AZ           H4     H    H         0.000     -1.410    2.059    0.205
+ 3AZ           C5     C    CR16      0.000     -3.542    2.222    0.190
+ 3AZ           H5     H    H         0.000     -3.535    3.298    0.312
+ 3AZ           C6     C    CR16      0.000     -4.745    1.545    0.094
+ 3AZ           H6     H    H         0.000     -5.677    2.094    0.140
+ 3AZ           C1     C    CR6       0.000     -4.763    0.170   -0.062
+ 3AZ           CA     C    CH2       0.000     -6.077   -0.558   -0.173
+ 3AZ           HA     H    H         0.000     -5.949   -1.447   -0.794
+ 3AZ           HAA    H    H         0.000     -6.820    0.100   -0.629
+ 3AZ           N      N    NH2       0.000     -6.530   -0.955    1.167
+ 3AZ           HNA    H    H         0.000     -6.733   -1.927    1.371
+ 3AZ           HN     H    H         0.000     -6.643   -0.260    1.896
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 3AZ      OXT    n/a    C      START
+ 3AZ      C      OXT    C3     .
+ 3AZ      O      C      .      .
+ 3AZ      C3     C      C4     .
+ 3AZ      C2     C3     H2     .
+ 3AZ      H2     C2     .      .
+ 3AZ      C4     C3     C5     .
+ 3AZ      H4     C4     .      .
+ 3AZ      C5     C4     C6     .
+ 3AZ      H5     C5     .      .
+ 3AZ      C6     C5     C1     .
+ 3AZ      H6     C6     .      .
+ 3AZ      C1     C6     CA     .
+ 3AZ      CA     C1     N      .
+ 3AZ      HA     CA     .      .
+ 3AZ      HAA    CA     .      .
+ 3AZ      N      CA     HN     .
+ 3AZ      HNA    N      .      .
+ 3AZ      HN     N      .      END
+ 3AZ      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3AZ       O         C         deloc     1.250     0.020     1.250     0.020     
+3AZ       C3        C         single    1.500     0.020     1.500     0.020     
+3AZ       C         OXT       deloc     1.250     0.020     1.250     0.020     
+3AZ       N         CA        single    1.450     0.020     1.450     0.020     
+3AZ       HN        N         single    1.036     0.016     0.914     0.007     
+3AZ       HNA       N         single    1.036     0.016     0.914     0.007     
+3AZ       C1        C2        double    1.390     0.020     1.390     0.020     
+3AZ       C1        C6        single    1.390     0.020     1.390     0.020     
+3AZ       CA        C1        single    1.511     0.020     1.511     0.020     
+3AZ       C2        C3        single    1.390     0.020     1.390     0.020     
+3AZ       H2        C2        single    1.082     0.013     0.975     0.010     
+3AZ       C4        C3        double    1.390     0.020     1.390     0.020     
+3AZ       C5        C4        single    1.390     0.020     1.390     0.020     
+3AZ       H4        C4        single    1.082     0.013     0.975     0.010     
+3AZ       C6        C5        double    1.390     0.020     1.390     0.020     
+3AZ       H5        C5        single    1.082     0.013     0.975     0.010     
+3AZ       H6        C6        single    1.082     0.013     0.975     0.010     
+3AZ       HA        CA        single    1.089     0.010     0.989     0.005     
+3AZ       HAA       CA        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 3AZ      OXT    C      O       123.000    3.000
+ 3AZ      OXT    C      C3      120.000    3.000
+ 3AZ      O      C      C3      120.000    3.000
+ 3AZ      C      C3     C2      120.000    3.000
+ 3AZ      C      C3     C4      120.000    3.000
+ 3AZ      C2     C3     C4      120.000    3.000
+ 3AZ      C3     C2     H2      120.000    3.000
+ 3AZ      C3     C2     C1      120.000    3.000
+ 3AZ      H2     C2     C1      120.000    3.000
+ 3AZ      C3     C4     H4      120.000    3.000
+ 3AZ      C3     C4     C5      120.000    3.000
+ 3AZ      H4     C4     C5      120.000    3.000
+ 3AZ      C4     C5     H5      120.000    3.000
+ 3AZ      C4     C5     C6      120.000    3.000
+ 3AZ      H5     C5     C6      120.000    3.000
+ 3AZ      C5     C6     H6      120.000    3.000
+ 3AZ      C5     C6     C1      120.000    3.000
+ 3AZ      H6     C6     C1      120.000    3.000
+ 3AZ      C6     C1     CA      120.000    3.000
+ 3AZ      C6     C1     C2      120.000    3.000
+ 3AZ      CA     C1     C2      120.000    3.000
+ 3AZ      C1     CA     HA      109.470    3.000
+ 3AZ      C1     CA     HAA     109.470    3.000
+ 3AZ      C1     CA     N       109.500    3.000
+ 3AZ      HA     CA     HAA     107.900    3.000
+ 3AZ      HA     CA     N       109.470    3.000
+ 3AZ      HAA    CA     N       109.470    3.000
+ 3AZ      CA     N      HNA     120.000    3.000
+ 3AZ      CA     N      HN      120.000    3.000
+ 3AZ      HNA    N      HN      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 3AZ      var_1    OXT    C      C3     C4         0.285   20.000   3
+ 3AZ      CONST_1  C      C3     C2     C1         0.000    0.000   0
+ 3AZ      CONST_2  C      C3     C4     C5         0.000    0.000   0
+ 3AZ      CONST_3  C3     C4     C5     C6         0.000    0.000   0
+ 3AZ      CONST_4  C4     C5     C6     C1         0.000    0.000   0
+ 3AZ      CONST_5  C5     C6     C1     CA         0.000    0.000   0
+ 3AZ      CONST_6  C6     C1     C2     C3         0.000    0.000   0
+ 3AZ      var_2    C6     C1     CA     N          0.000   20.000   2
+ 3AZ      var_3    C1     CA     N      HN        56.003   20.000   3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 3AZ      plan-1    C         0.020
+ 3AZ      plan-1    O         0.020
+ 3AZ      plan-1    C3        0.020
+ 3AZ      plan-1    OXT       0.020
+ 3AZ      plan-2    N         0.020
+ 3AZ      plan-2    CA        0.020
+ 3AZ      plan-2    HN        0.020
+ 3AZ      plan-2    HNA       0.020
+ 3AZ      plan-3    C1        0.020
+ 3AZ      plan-3    C2        0.020
+ 3AZ      plan-3    C6        0.020
+ 3AZ      plan-3    CA        0.020
+ 3AZ      plan-3    C3        0.020
+ 3AZ      plan-3    C4        0.020
+ 3AZ      plan-3    C5        0.020
+ 3AZ      plan-3    H2        0.020
+ 3AZ      plan-3    C         0.020
+ 3AZ      plan-3    H4        0.020
+ 3AZ      plan-3    H5        0.020
+ 3AZ      plan-3    H6        0.020
+# ------------------------------------------------------

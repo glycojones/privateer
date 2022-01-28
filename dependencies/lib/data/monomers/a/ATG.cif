@@ -1,0 +1,351 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ATG      ATG 'PHOSPHOTHIOPHOSPHORIC ACID-ADENYLATE' non-polymer        45  31 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ATG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ATG           O2A    O    OP       -0.500      0.000    0.000    0.000
+ ATG           PA     P    P         0.000     -1.088   -0.013    1.008
+ ATG           O1A    O    OP       -0.500     -1.330    1.367    1.492
+ ATG           O3A    O    O2        0.000     -0.662   -0.948    2.245
+ ATG           PB     P    P         0.000      0.684   -0.316    2.864
+ ATG           O1B    O    OP       -0.500      0.414    1.069    3.320
+ ATG           O2B    O    OP       -0.500      1.745   -0.298    1.829
+ ATG           O3B    O    O2        0.000      1.169   -1.207    4.114
+ ATG           PG     P    P         0.000      2.511   -0.521    4.682
+ ATG           O2G    O    OH1       0.000      3.055   -1.366    5.940
+ ATG           HOG2   H    H         0.000      3.858   -1.086    6.399
+ ATG           S3G    S    SH1       0.000      3.986   -0.492    3.161
+ ATG           HSG3   H    H         0.000      4.260   -1.737    2.771
+ ATG           O1G    O    O         0.000      2.214    0.863    5.108
+ ATG           "O5'"  O    O2        0.000     -2.433   -0.589    0.337
+ ATG           "C5'"  C    CH2       0.000     -2.759    0.279   -0.749
+ ATG           "H5'1" H    H         0.000     -1.937    0.285   -1.468
+ ATG           "H5'2" H    H         0.000     -2.916    1.291   -0.370
+ ATG           "C4'"  C    CH1       0.000     -4.035   -0.215   -1.433
+ ATG           "H4'"  H    H         0.000     -3.887   -1.228   -1.832
+ ATG           "C3'"  C    CH1       0.000     -4.451    0.752   -2.564
+ ATG           "H3'"  H    H         0.000     -4.047    1.757   -2.379
+ ATG           "O3'"  O    OH1       0.000     -4.010    0.260   -3.830
+ ATG           "HO3'" H    H         0.000     -4.279    0.876   -4.525
+ ATG           "C2'"  C    CH1       0.000     -5.996    0.766   -2.495
+ ATG           "H2'"  H    H         0.000     -6.361    1.780   -2.276
+ ATG           "O2'"  O    OH1       0.000     -6.556    0.287   -3.720
+ ATG           "HO2'" H    H         0.000     -6.287    0.867   -4.445
+ ATG           "C1'"  C    CH1       0.000     -6.328   -0.189   -1.329
+ ATG           "H1'"  H    H         0.000     -6.534   -1.199   -1.710
+ ATG           "O4'"  O    O2        0.000     -5.142   -0.197   -0.505
+ ATG           N9     N    NR5       0.000     -7.475    0.311   -0.568
+ ATG           C4     C    CR56      0.000     -8.793    0.001   -0.787
+ ATG           C5     C    CR56      0.000     -9.523    0.716    0.177
+ ATG           N7     N    NRD5      0.000     -8.629    1.406    0.925
+ ATG           C8     C    CR15      0.000     -7.427    1.173    0.487
+ ATG           H8     H    H         0.000     -6.521    1.600    0.901
+ ATG           N3     N    NRD6      0.000     -9.444   -0.768   -1.653
+ ATG           C2     C    CR16      0.000    -10.757   -0.864   -1.608
+ ATG           H2     H    H         0.000    -11.257   -1.499   -2.329
+ ATG           N1     N    NRD6      0.000    -11.486   -0.216   -0.718
+ ATG           C6     C    CR6       0.000    -10.922    0.575    0.188
+ ATG           N6     N    NH2       0.000    -11.694    1.250    1.117
+ ATG           HN62   H    H         0.000    -11.259    1.855    1.808
+ ATG           HN61   H    H         0.000    -12.704    1.149    1.120
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ATG      O2A    n/a    PA     START
+ ATG      PA     O2A    "O5'"  .
+ ATG      O1A    PA     .      .
+ ATG      O3A    PA     PB     .
+ ATG      PB     O3A    O3B    .
+ ATG      O1B    PB     .      .
+ ATG      O2B    PB     .      .
+ ATG      O3B    PB     PG     .
+ ATG      PG     O3B    O1G    .
+ ATG      O2G    PG     HOG2   .
+ ATG      HOG2   O2G    .      .
+ ATG      S3G    PG     HSG3   .
+ ATG      HSG3   S3G    .      .
+ ATG      O1G    PG     .      .
+ ATG      "O5'"  PA     "C5'"  .
+ ATG      "C5'"  "O5'"  "C4'"  .
+ ATG      "H5'1" "C5'"  .      .
+ ATG      "H5'2" "C5'"  .      .
+ ATG      "C4'"  "C5'"  "C3'"  .
+ ATG      "H4'"  "C4'"  .      .
+ ATG      "C3'"  "C4'"  "C2'"  .
+ ATG      "H3'"  "C3'"  .      .
+ ATG      "O3'"  "C3'"  "HO3'" .
+ ATG      "HO3'" "O3'"  .      .
+ ATG      "C2'"  "C3'"  "C1'"  .
+ ATG      "H2'"  "C2'"  .      .
+ ATG      "O2'"  "C2'"  "HO2'" .
+ ATG      "HO2'" "O2'"  .      .
+ ATG      "C1'"  "C2'"  N9     .
+ ATG      "H1'"  "C1'"  .      .
+ ATG      "O4'"  "C1'"  .      .
+ ATG      N9     "C1'"  C4     .
+ ATG      C4     N9     N3     .
+ ATG      C5     C4     N7     .
+ ATG      N7     C5     C8     .
+ ATG      C8     N7     H8     .
+ ATG      H8     C8     .      .
+ ATG      N3     C4     C2     .
+ ATG      C2     N3     N1     .
+ ATG      H2     C2     .      .
+ ATG      N1     C2     C6     .
+ ATG      C6     N1     N6     .
+ ATG      N6     C6     HN61   .
+ ATG      HN62   N6     .      .
+ ATG      HN61   N6     .      END
+ ATG      "C4'"  "O4'"  .    ADD
+ ATG      N9     C8     .    ADD
+ ATG      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ATG       O1G       PG        double    1.480     0.020     1.480     0.020     
+ATG       O2G       PG        single    1.610     0.020     1.610     0.020     
+ATG       S3G       PG        single    2.075     0.020     2.075     0.020     
+ATG       PG        O3B       single    1.610     0.020     1.610     0.020     
+ATG       HOG2      O2G       single    0.970     0.012     0.839     0.014     
+ATG       HSG3      S3G       single    1.338     0.010     1.171     0.208     
+ATG       O1B       PB        deloc     1.510     0.020     1.510     0.020     
+ATG       O2B       PB        deloc     1.510     0.020     1.510     0.020     
+ATG       O3B       PB        single    1.610     0.020     1.610     0.020     
+ATG       PB        O3A       single    1.610     0.020     1.610     0.020     
+ATG       O1A       PA        deloc     1.510     0.020     1.510     0.020     
+ATG       PA        O2A       deloc     1.510     0.020     1.510     0.020     
+ATG       O3A       PA        single    1.610     0.020     1.610     0.020     
+ATG       "O5'"     PA        single    1.610     0.020     1.610     0.020     
+ATG       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+ATG       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+ATG       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+ATG       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+ATG       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+ATG       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+ATG       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+ATG       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+ATG       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+ATG       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+ATG       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+ATG       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+ATG       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+ATG       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+ATG       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+ATG       "HO2'"    "O2'"     single    0.970     0.012     0.839     0.014     
+ATG       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+ATG       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+ATG       N9        C8        single    1.337     0.020     1.337     0.020     
+ATG       C4        N9        single    1.337     0.020     1.337     0.020     
+ATG       C8        N7        double    1.350     0.020     1.350     0.020     
+ATG       H8        C8        single    1.082     0.013     0.975     0.010     
+ATG       N7        C5        single    1.350     0.020     1.350     0.020     
+ATG       C5        C6        single    1.490     0.020     1.490     0.020     
+ATG       C5        C4        double    1.490     0.020     1.490     0.020     
+ATG       N6        C6        single    1.355     0.020     1.355     0.020     
+ATG       C6        N1        double    1.350     0.020     1.350     0.020     
+ATG       HN61      N6        single    1.016     0.010     0.899     0.007     
+ATG       HN62      N6        single    1.016     0.010     0.899     0.007     
+ATG       N1        C2        single    1.337     0.020     1.337     0.020     
+ATG       C2        N3        double    1.337     0.020     1.337     0.020     
+ATG       H2        C2        single    1.082     0.013     0.975     0.010     
+ATG       N3        C4        single    1.355     0.020     1.355     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ATG      O2A    PA     O1A     119.900    3.000
+ ATG      O2A    PA     O3A     108.200    3.000
+ ATG      O2A    PA     "O5'"   108.200    3.000
+ ATG      O1A    PA     O3A     108.200    3.000
+ ATG      O1A    PA     "O5'"   108.200    3.000
+ ATG      O3A    PA     "O5'"   102.600    3.000
+ ATG      PA     O3A    PB      120.500    3.000
+ ATG      O3A    PB     O1B     108.200    3.000
+ ATG      O3A    PB     O2B     108.200    3.000
+ ATG      O3A    PB     O3B     102.600    3.000
+ ATG      O1B    PB     O2B     119.900    3.000
+ ATG      O1B    PB     O3B     108.200    3.000
+ ATG      O2B    PB     O3B     108.200    3.000
+ ATG      PB     O3B    PG      120.500    3.000
+ ATG      O3B    PG     S3G     109.500    3.000
+ ATG      O3B    PG     O2G     109.500    3.000
+ ATG      O3B    PG     O1G     109.500    3.000
+ ATG      S3G    PG     O2G     109.500    3.000
+ ATG      S3G    PG     O1G     109.500    3.000
+ ATG      O2G    PG     O1G     109.500    3.000
+ ATG      PG     S3G    HSG3    109.500    3.000
+ ATG      PG     O2G    HOG2    120.000    3.000
+ ATG      PA     "O5'"  "C5'"   120.500    3.000
+ ATG      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ ATG      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ ATG      "O5'"  "C5'"  "C4'"   109.470    3.000
+ ATG      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ ATG      "H5'1" "C5'"  "C4'"   109.470    3.000
+ ATG      "H5'2" "C5'"  "C4'"   109.470    3.000
+ ATG      "C5'"  "C4'"  "H4'"   108.340    3.000
+ ATG      "C5'"  "C4'"  "C3'"   111.000    3.000
+ ATG      "C5'"  "C4'"  "O4'"   109.470    3.000
+ ATG      "H4'"  "C4'"  "C3'"   108.340    3.000
+ ATG      "H4'"  "C4'"  "O4'"   109.470    3.000
+ ATG      "C3'"  "C4'"  "O4'"   109.470    3.000
+ ATG      "C4'"  "C3'"  "H3'"   108.340    3.000
+ ATG      "C4'"  "C3'"  "O3'"   109.470    3.000
+ ATG      "C4'"  "C3'"  "C2'"   111.000    3.000
+ ATG      "H3'"  "C3'"  "O3'"   109.470    3.000
+ ATG      "H3'"  "C3'"  "C2'"   108.340    3.000
+ ATG      "O3'"  "C3'"  "C2'"   109.470    3.000
+ ATG      "C3'"  "O3'"  "HO3'"  109.470    3.000
+ ATG      "C3'"  "C2'"  "H2'"   108.340    3.000
+ ATG      "C3'"  "C2'"  "O2'"   109.470    3.000
+ ATG      "C3'"  "C2'"  "C1'"   111.000    3.000
+ ATG      "H2'"  "C2'"  "O2'"   109.470    3.000
+ ATG      "H2'"  "C2'"  "C1'"   108.340    3.000
+ ATG      "O2'"  "C2'"  "C1'"   109.470    3.000
+ ATG      "C2'"  "O2'"  "HO2'"  109.470    3.000
+ ATG      "C2'"  "C1'"  "H1'"   108.340    3.000
+ ATG      "C2'"  "C1'"  "O4'"   109.470    3.000
+ ATG      "C2'"  "C1'"  N9      109.470    3.000
+ ATG      "H1'"  "C1'"  "O4'"   109.470    3.000
+ ATG      "H1'"  "C1'"  N9      109.470    3.000
+ ATG      "O4'"  "C1'"  N9      109.470    3.000
+ ATG      "C1'"  "O4'"  "C4'"   111.800    3.000
+ ATG      "C1'"  N9     C4      126.000    3.000
+ ATG      "C1'"  N9     C8      126.000    3.000
+ ATG      C4     N9     C8      108.000    3.000
+ ATG      N9     C4     C5      108.000    3.000
+ ATG      N9     C4     N3      132.000    3.000
+ ATG      C5     C4     N3      120.000    3.000
+ ATG      C4     C5     N7      108.000    3.000
+ ATG      C4     C5     C6      120.000    3.000
+ ATG      N7     C5     C6      132.000    3.000
+ ATG      C5     N7     C8      108.000    3.000
+ ATG      N7     C8     H8      126.000    3.000
+ ATG      N7     C8     N9      108.000    3.000
+ ATG      H8     C8     N9      126.000    3.000
+ ATG      C4     N3     C2      120.000    3.000
+ ATG      N3     C2     H2      120.000    3.000
+ ATG      N3     C2     N1      120.000    3.000
+ ATG      H2     C2     N1      120.000    3.000
+ ATG      C2     N1     C6      120.000    3.000
+ ATG      N1     C6     N6      120.000    3.000
+ ATG      N1     C6     C5      120.000    3.000
+ ATG      N6     C6     C5      120.000    3.000
+ ATG      C6     N6     HN62    120.000    3.000
+ ATG      C6     N6     HN61    120.000    3.000
+ ATG      HN62   N6     HN61    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ATG      var_1    O2A    PA     O3A    PB        59.954   20.000   1
+ ATG      var_2    PA     O3A    PB     O3B     -179.993   20.000   1
+ ATG      var_3    O3A    PB     O3B    PG      -179.967   20.000   1
+ ATG      var_4    PB     O3B    PG     O1G       59.994   20.000   1
+ ATG      var_5    O3B    PG     S3G    HSG3     -60.029   20.000   1
+ ATG      var_6    O3B    PG     O2G    HOG2     179.978   20.000   1
+ ATG      var_7    O2A    PA     "O5'"  "C5'"    -59.966   20.000   1
+ ATG      var_8    PA     "O5'"  "C5'"  "C4'"    179.949   20.000   1
+ ATG      var_9    "O5'"  "C5'"  "C4'"  "C3'"    176.901   20.000   3
+ ATG      var_10   "C5'"  "C4'"  "O4'"  "C1'"    150.000   20.000   1
+ ATG      var_11   "C5'"  "C4'"  "C3'"  "C2'"   -150.000   20.000   3
+ ATG      var_12   "C4'"  "C3'"  "O3'"  "HO3'"   179.958   20.000   1
+ ATG      var_13   "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ ATG      var_14   "C3'"  "C2'"  "O2'"  "HO2'"   -61.453   20.000   1
+ ATG      var_15   "C3'"  "C2'"  "C1'"  N9       150.000   20.000   3
+ ATG      var_16   "C2'"  "C1'"  "O4'"  "C4'"    -30.000   20.000   1
+ ATG      var_17   "C2'"  "C1'"  N9     C4        91.426   20.000   1
+ ATG      CONST_1  "C1'"  N9     C8     N7       180.000    0.000   0
+ ATG      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ ATG      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ ATG      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ ATG      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ ATG      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ ATG      CONST_7  N9     C4     N3     C2       180.000    0.000   0
+ ATG      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ ATG      CONST_9  N3     C2     N1     C6         0.000    0.000   0
+ ATG      CONST_10 C2     N1     C6     N6       180.000    0.000   0
+ ATG      CONST_11 N1     C6     N6     HN61       0.028    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ATG      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ ATG      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     negativ
+ ATG      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     negativ
+ ATG      chir_04  "C1'"  "O4'"  "C2'"  N9        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ATG      plan-1    N9        0.020
+ ATG      plan-1    "C1'"     0.020
+ ATG      plan-1    C8        0.020
+ ATG      plan-1    C4        0.020
+ ATG      plan-1    N7        0.020
+ ATG      plan-1    H8        0.020
+ ATG      plan-1    C5        0.020
+ ATG      plan-1    C6        0.020
+ ATG      plan-1    N1        0.020
+ ATG      plan-1    C2        0.020
+ ATG      plan-1    N3        0.020
+ ATG      plan-1    N6        0.020
+ ATG      plan-1    H2        0.020
+ ATG      plan-1    HN62      0.020
+ ATG      plan-1    HN61      0.020
+ ATG      plan-2    N6        0.020
+ ATG      plan-2    C6        0.020
+ ATG      plan-2    HN61      0.020
+ ATG      plan-2    HN62      0.020
+# ------------------------------------------------------

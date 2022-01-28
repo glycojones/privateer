@@ -1,0 +1,282 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NYS     NYS     "S-{5-[(1R)-2-amino-1-hydroxyethyl]-2,3-dihydroxyphenyl}-L-cysteine"     peptide    35     19     .
+#
+data_comp_NYS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NYS     N       N       NT3     1       23.194      -0.669      -3.299
+NYS     CA      C       CH1     0       21.860      -0.957      -3.891
+NYS     CB      C       CH2     0       20.741      -0.356      -3.064
+NYS     C       C       C       0       21.821      -0.444      -5.335
+NYS     O       O       O       0       22.094      0.759       -5.519
+NYS     SG      S       S2      0       19.103      -0.960      -3.552
+NYS     CXP     C       CR6     0       18.015      -0.126      -2.427
+NYS     CXH     C       CR16    0       17.731      -0.689      -1.181
+NYS     CXQ     C       CR6     0       17.449      1.102       -2.805
+NYS     OXF     O       OH1     0       17.715      1.669       -4.018
+NYS     CXO     C       CR6     0       16.594      1.750       -1.909
+NYS     OXE     O       OH1     0       16.038      2.945       -2.268
+NYS     CXG     C       CR16    0       16.316      1.183       -0.672
+NYS     CXN     C       CR6     0       16.879      -0.037      -0.292
+NYS     CXJ     C       CH1     0       16.558      -0.639      1.068
+NYS     OXG     O       OH1     0       16.654      0.318       2.109
+NYS     CXI     C       CH2     0       15.149      -1.227      1.070
+NYS     NXA     N       NT2     0       14.847      -1.912      2.328
+NYS     OXT     O       OC      -1      21.520      -1.266      -6.223
+NYS     H       H       H       0       23.224      -0.976      -2.442
+NYS     H2      H       H       0       23.344      0.231       -3.299
+NYS     H3      H       H       0       23.844      -1.081      -3.787
+NYS     HA      H       H       0       21.744      -1.935      -3.906
+NYS     HB1     H       H       0       20.756      0.620       -3.158
+NYS     HB2     H       H       0       20.884      -0.569      -2.119
+NYS     HXH     H       H       0       18.115      -1.509      -0.940
+NYS     HOXF    H       H       0       17.392      1.174       -4.640
+NYS     HOXE    H       H       0       16.639      3.558       -2.275
+NYS     HXG     H       H       0       15.736      1.633       -0.077
+NYS     HXJ     H       H       0       17.204      -1.361      1.249
+NYS     HOXG    H       H       0       17.470      0.518       2.220
+NYS     HXI1    H       H       0       15.057      -1.866      0.331
+NYS     HXI2    H       H       0       14.492      -0.510      0.933
+NYS     HXA1    H       H       0       14.080      -2.354      2.256
+NYS     HXA2    H       H       0       15.479      -2.510      2.508
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+NYS      N      n/a    CA     START
+NYS      H      N      .      .
+NYS      H2     N      .      .
+NYS      H3     N      .      .
+NYS      CA     N      C      .
+NYS      HA     CA     .      .
+NYS      CB     CA     SG     .
+NYS      HB1    CB     .      .
+NYS      HB2    CB     .      .
+NYS      SG     CB     CXP    .
+NYS      CXP    SG     CXQ    .
+NYS      CXQ    CXP    CXO    .
+NYS      OXF    CXQ    HOXF   .
+NYS      HOXF   OXF    .      .
+NYS      CXO    CXQ    CXG    .
+NYS      OXE    CXO    HOXE   .
+NYS      HOXE   OXE    .      .
+NYS      CXG    CXO    CXN    .
+NYS      HXG    CXG    .      .
+NYS      CXN    CXG    CXJ    .
+NYS      CXH    CXN    HXH    .
+NYS      HXH    CXH    .      .
+NYS      CXJ    CXN    CXI    .
+NYS      HXJ    CXJ    .      .
+NYS      OXG    CXJ    HOXG   .
+NYS      HOXG   OXG    .      .
+NYS      CXI    CXJ    NXA    .
+NYS      HXI1   CXI    .      .
+NYS      HXI2   CXI    .      .
+NYS      NXA    CXI    HXA1   .
+NYS      HXA2   NXA    .      .
+NYS      HXA1   NXA    .      .
+NYS      C      CA     .      END
+NYS      O      C      .      .
+NYS      OXT    C      .      .
+NYS      CXP    CXH    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NYS       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+NYS       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+NYS       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+NYS       CXQ       OXF       SINGLE    n         1.364     0.013     1.364     0.013     
+NYS       CB        SG        SINGLE    n         1.812     0.017     1.812     0.017     
+NYS       SG        CXP       SINGLE    n         1.772     0.010     1.772     0.010     
+NYS       CA        CB        SINGLE    n         1.515     0.012     1.515     0.012     
+NYS       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+NYS       CXP       CXQ       DOUBLE    y         1.400     0.013     1.400     0.013     
+NYS       CXQ       CXO       SINGLE    y         1.393     0.010     1.393     0.010     
+NYS       CXP       CXH       SINGLE    y         1.394     0.018     1.394     0.018     
+NYS       CXO       OXE       SINGLE    n         1.365     0.010     1.365     0.010     
+NYS       CXO       CXG       DOUBLE    y         1.383     0.010     1.383     0.010     
+NYS       CXH       CXN       DOUBLE    y         1.389     0.011     1.389     0.011     
+NYS       CXG       CXN       SINGLE    y         1.386     0.012     1.386     0.012     
+NYS       CXN       CXJ       SINGLE    n         1.521     0.010     1.521     0.010     
+NYS       CXJ       CXI       SINGLE    n         1.527     0.011     1.527     0.011     
+NYS       CXJ       OXG       SINGLE    n         1.417     0.014     1.417     0.014     
+NYS       CXI       NXA       SINGLE    n         1.464     0.020     1.464     0.020     
+NYS       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+NYS       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+NYS       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+NYS       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+NYS       CB        HB1       SINGLE    n         1.089     0.010     0.980     0.015     
+NYS       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.015     
+NYS       CXH       HXH       SINGLE    n         1.082     0.013     0.937     0.010     
+NYS       OXF       HOXF      SINGLE    n         0.970     0.012     0.858     0.020     
+NYS       OXE       HOXE      SINGLE    n         0.970     0.012     0.858     0.020     
+NYS       CXG       HXG       SINGLE    n         1.082     0.013     0.945     0.016     
+NYS       CXJ       HXJ       SINGLE    n         1.089     0.010     0.986     0.012     
+NYS       OXG       HOXG      SINGLE    n         0.970     0.012     0.848     0.020     
+NYS       CXI       HXI1      SINGLE    n         1.089     0.010     0.982     0.015     
+NYS       CXI       HXI2      SINGLE    n         1.089     0.010     0.982     0.015     
+NYS       NXA       HXA1      SINGLE    n         1.036     0.016     0.888     0.020     
+NYS       NXA       HXA2      SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NYS          CA           N           H     109.671    1.50
+NYS          CA           N          H2     109.671    1.50
+NYS          CA           N          H3     109.671    1.50
+NYS           H           N          H2     109.028    2.41
+NYS           H           N          H3     109.028    2.41
+NYS          H2           N          H3     109.028    2.41
+NYS           C          CA          CB     111.511    2.91
+NYS           C          CA           N     109.494    1.50
+NYS           C          CA          HA     108.606    1.50
+NYS          CB          CA           N     112.810    3.00
+NYS          CB          CA          HA     108.763    1.50
+NYS           N          CA          HA     107.983    1.50
+NYS          SG          CB          CA     112.239    3.00
+NYS          SG          CB         HB1     108.737    1.50
+NYS          SG          CB         HB2     108.737    1.50
+NYS          CA          CB         HB1     109.493    1.50
+NYS          CA          CB         HB2     109.493    1.50
+NYS         HB1          CB         HB2     107.984    1.50
+NYS         OXT           C           O     125.732    1.50
+NYS         OXT           C          CA     117.134    1.50
+NYS           O           C          CA     117.134    1.50
+NYS          CB          SG         CXP     103.360    1.67
+NYS          SG         CXP         CXQ     117.427    2.26
+NYS          SG         CXP         CXH     120.475    3.00
+NYS         CXQ         CXP         CXH     122.098    1.50
+NYS         CXP         CXH         CXN     120.803    1.50
+NYS         CXP         CXH         HXH     119.723    1.50
+NYS         CXN         CXH         HXH     119.474    1.50
+NYS         OXF         CXQ         CXP     120.935    2.25
+NYS         OXF         CXQ         CXO     119.530    2.54
+NYS         CXP         CXQ         CXO     119.535    1.50
+NYS         CXQ         OXF        HOXF     109.337    3.00
+NYS         CXQ         CXO         OXE     118.898    2.54
+NYS         CXQ         CXO         CXG     119.344    1.50
+NYS         OXE         CXO         CXG     121.759    2.52
+NYS         CXO         OXE        HOXE     110.003    2.63
+NYS         CXO         CXG         CXN     119.932    1.50
+NYS         CXO         CXG         HXG     119.884    1.50
+NYS         CXN         CXG         HXG     120.184    1.50
+NYS         CXH         CXN         CXG     118.288    1.50
+NYS         CXH         CXN         CXJ     121.230    1.50
+NYS         CXG         CXN         CXJ     120.482    1.50
+NYS         CXN         CXJ         CXI     110.619    1.69
+NYS         CXN         CXJ         OXG     112.088    1.90
+NYS         CXN         CXJ         HXJ     108.561    1.50
+NYS         CXI         CXJ         OXG     109.047    2.04
+NYS         CXI         CXJ         HXJ     109.057    1.50
+NYS         OXG         CXJ         HXJ     108.687    1.50
+NYS         CXJ         OXG        HOXG     108.665    2.27
+NYS         CXJ         CXI         NXA     111.883    2.59
+NYS         CXJ         CXI        HXI1     109.677    1.73
+NYS         CXJ         CXI        HXI2     109.677    1.73
+NYS         NXA         CXI        HXI1     108.870    1.50
+NYS         NXA         CXI        HXI2     108.870    1.50
+NYS        HXI1         CXI        HXI2     107.873    1.50
+NYS         CXI         NXA        HXA1     109.962    3.00
+NYS         CXI         NXA        HXA2     109.962    3.00
+NYS        HXA1         NXA        HXA2     107.243    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NYS            sp3_sp3_13           C          CA           N           H     180.000   10.00     3
+NYS              const_10         CXN         CXG         CXO         OXE     180.000   10.00     2
+NYS              const_14         CXO         CXG         CXN         CXJ     180.000   10.00     2
+NYS            sp2_sp3_13         CXH         CXN         CXJ         CXI     150.000   10.00     6
+NYS            sp3_sp3_32         CXI         CXJ         OXG        HOXG      60.000   10.00     3
+NYS            sp3_sp3_23         NXA         CXI         CXJ         OXG     -60.000   10.00     3
+NYS            sp3_sp3_34         CXJ         CXI         NXA        HXA1     180.000   10.00     3
+NYS             sp3_sp3_7           C          CA          CB          SG      60.000   10.00     3
+NYS             sp2_sp3_1         OXT           C          CA          CB       0.000   10.00     6
+NYS             sp3_sp3_1          CA          CB          SG         CXP     180.000   10.00     3
+NYS              const_22         CXN         CXH         CXP          SG     180.000   10.00     2
+NYS       const_sp2_sp2_4          SG         CXP         CXQ         OXF       0.000   10.00     2
+NYS              const_18         CXP         CXH         CXN         CXJ     180.000   10.00     2
+NYS       const_sp2_sp2_8         OXE         CXO         CXQ         OXF       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+NYS    chir_1    CA    N    CB    C    both
+NYS    chir_2    CXJ    OXG    CXI    CXN    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NYS    plan-1         CXG   0.020
+NYS    plan-1         CXH   0.020
+NYS    plan-1         CXJ   0.020
+NYS    plan-1         CXN   0.020
+NYS    plan-1         CXO   0.020
+NYS    plan-1         CXP   0.020
+NYS    plan-1         CXQ   0.020
+NYS    plan-1         HXG   0.020
+NYS    plan-1         HXH   0.020
+NYS    plan-1         OXE   0.020
+NYS    plan-1         OXF   0.020
+NYS    plan-1          SG   0.020
+NYS    plan-2           C   0.020
+NYS    plan-2          CA   0.020
+NYS    plan-2           O   0.020
+NYS    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NYS SMILES           ACDLabs              10.04 "O=C(O)C(N)CSc1cc(cc(O)c1O)C(O)CN"
+NYS SMILES_CANONICAL CACTVS               3.341 "NC[C@H](O)c1cc(O)c(O)c(SC[C@H](N)C(O)=O)c1"
+NYS SMILES           CACTVS               3.341 "NC[CH](O)c1cc(O)c(O)c(SC[CH](N)C(O)=O)c1"
+NYS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c(cc(c(c1O)O)SC[C@@H](C(=O)O)N)[C@H](CN)O"
+NYS SMILES           "OpenEye OEToolkits" 1.5.0 "c1c(cc(c(c1O)O)SCC(C(=O)O)N)C(CN)O"
+NYS InChI            InChI                1.03  "InChI=1S/C11H16N2O5S/c12-3-8(15)5-1-7(14)10(16)9(2-5)19-4-6(13)11(17)18/h1-2,6,8,14-16H,3-4,12-13H2,(H,17,18)/t6-,8-/m0/s1"
+NYS InChIKey         InChI                1.03  ZELSWMBFRRNKHX-XPUUQOCRSA-N
+NYS ?                acedrg               202         "dictionary generator"
+NYS ?                acedrg_database      11          "data source"
+NYS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NYS ?                refmac5              5.8.0222    "optimization tool"

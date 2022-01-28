@@ -1,0 +1,103 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ENC     ENC      "ETHYL ISOCYANIDE"     NON-POLYMER     10     4     .     
+#
+data_comp_ENC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ENC     C       C       CSP     0       35.689      6.187       11.032      
+ENC     N       N       N       1       35.543      6.848       11.977      
+ENC     C1      C       CH2     0       34.807      7.665       12.966      
+ENC     C2      C       CH3     0       33.385      7.863       12.583      
+ENC     H       H       H       0       35.807      5.655       10.260      
+ENC     H11     H       H       0       35.243      8.541       13.047      
+ENC     H12     H       H       0       34.846      7.222       13.842      
+ENC     H21     H       H       0       32.808      7.500       13.277      
+ENC     H22     H       H       0       33.196      7.410       11.742      
+ENC     H23     H       H       0       33.205      8.814       12.482      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ENC       C         N         TRIPLE    n         1.161     0.020     1.161     0.020     
+ENC       N         C1        SINGLE    n         1.474     0.020     1.474     0.020     
+ENC       C1        C2        SINGLE    n         1.478     0.020     1.478     0.020     
+ENC       C         H         SINGLE    n         1.048     0.010     0.944     0.020     
+ENC       C1        H11       SINGLE    n         1.089     0.010     0.982     0.017     
+ENC       C1        H12       SINGLE    n         1.089     0.010     0.982     0.017     
+ENC       C2        H21       SINGLE    n         1.089     0.010     0.973     0.015     
+ENC       C2        H22       SINGLE    n         1.089     0.010     0.973     0.015     
+ENC       C2        H23       SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ENC           N           C           H     180.000    3.00
+ENC           C           N          C1     155.949    3.00
+ENC           N          C1          C2     109.508    2.50
+ENC           N          C1         H11     109.306    1.50
+ENC           N          C1         H12     109.306    1.50
+ENC          C2          C1         H11     109.377    1.50
+ENC          C2          C1         H12     109.377    1.50
+ENC         H11          C1         H12     108.417    1.50
+ENC          C1          C2         H21     109.760    1.50
+ENC          C1          C2         H22     109.760    1.50
+ENC          C1          C2         H23     109.760    1.50
+ENC         H21          C2         H22     109.415    1.50
+ENC         H21          C2         H23     109.415    1.50
+ENC         H22          C2         H23     109.415    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ENC           other_tor_1           H           C           N          C1      90.000   10.00     1
+ENC             sp2_sp3_2           C           N          C1          C2     120.000   10.00     6
+ENC             sp3_sp3_1           N          C1          C2         H21     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ENC SMILES           ACDLabs              10.04 "C#[N+]CC"
+ENC SMILES_CANONICAL CACTVS               3.341 "CC[N+]#C"
+ENC SMILES           CACTVS               3.341 "CC[N+]#C"
+ENC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC[N+]#C"
+ENC SMILES           "OpenEye OEToolkits" 1.5.0 "CC[N+]#C"
+ENC InChI            InChI                1.03  InChI=1S/C3H6N/c1-3-4-2/h2H,3H2,1H3/q+1
+ENC InChIKey         InChI                1.03  JEGVKBYNUPNGJU-UHFFFAOYSA-N
+ENC ?                acedrg               202         "dictionary generator"                  
+ENC ?                acedrg_database      11          "data source"                           
+ENC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ENC ?                refmac5              5.8.0189    "optimization tool"                     

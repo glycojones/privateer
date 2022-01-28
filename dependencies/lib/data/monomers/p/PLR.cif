@@ -1,0 +1,186 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PLR     PLR      "(5-HYDROXY-4,6-DIMETHYLPYRIDIN-3-YL)METHYL DIHYDROGEN PHOSPHATE"     NON-POLYMER     25     15     .     
+#
+data_comp_PLR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PLR     N1      N       NRD6    0       56.046      72.907      6.199       
+PLR     C2      C       CR6     0       57.247      72.714      6.753       
+PLR     C2A     C       CH3     0       57.613      73.529      7.959       
+PLR     C3      C       CR6     0       58.143      71.752      6.205       
+PLR     O3      O       OH1     0       59.366      71.576      6.795       
+PLR     C4      C       CR6     0       57.763      71.001      5.075       
+PLR     C4A     C       CH3     0       58.728      69.987      4.498       
+PLR     C5      C       CR6     0       56.486      71.234      4.505       
+PLR     C6      C       CR16    0       55.674      72.197      5.116       
+PLR     C5A     C       CH2     0       55.974      70.498      3.299       
+PLR     O4P     O       O2      0       55.600      69.128      3.647       
+PLR     P       P       P       0       55.109      68.078      2.524       
+PLR     O1P     O       O       0       54.718      66.820      3.276       
+PLR     O2P     O       OP      -1      56.298      67.869      1.604       
+PLR     O3P     O       OP      -1      53.934      68.737      1.827       
+PLR     H2A1    H       H       0       58.534      73.827      7.890       
+PLR     H2A2    H       H       0       57.508      72.988      8.759       
+PLR     H2A3    H       H       0       57.032      74.306      8.018       
+PLR     HO3     H       H       0       59.961      71.916      6.279       
+PLR     H4A1    H       H       0       58.266      69.334      3.953       
+PLR     H4A2    H       H       0       59.182      69.517      5.216       
+PLR     H4A3    H       H       0       59.390      70.442      3.953       
+PLR     H6      H       H       0       54.823      72.363      4.756       
+PLR     H5A1    H       H       0       56.664      70.475      2.601       
+PLR     H5A2    H       H       0       55.186      70.954      2.930       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PLR       N1        C2        DOUBLE    y         1.331     0.010     1.331     0.010     
+PLR       N1        C6        SINGLE    y         1.342     0.010     1.342     0.010     
+PLR       C2        C2A       SINGLE    n         1.497     0.010     1.497     0.010     
+PLR       C2        C3        SINGLE    y         1.400     0.015     1.400     0.015     
+PLR       C3        O3        SINGLE    n         1.364     0.013     1.364     0.013     
+PLR       C3        C4        DOUBLE    y         1.396     0.010     1.396     0.010     
+PLR       C4        C4A       SINGLE    n         1.506     0.010     1.506     0.010     
+PLR       C4        C5        SINGLE    y         1.401     0.010     1.401     0.010     
+PLR       C5        C6        DOUBLE    y         1.383     0.014     1.383     0.014     
+PLR       C5        C5A       SINGLE    n         1.498     0.010     1.498     0.010     
+PLR       C5A       O4P       SINGLE    n         1.462     0.010     1.462     0.010     
+PLR       O4P       P         SINGLE    n         1.614     0.019     1.614     0.019     
+PLR       P         O1P       DOUBLE    n         1.517     0.019     1.517     0.019     
+PLR       P         O2P       SINGLE    n         1.517     0.019     1.517     0.019     
+PLR       P         O3P       SINGLE    n         1.517     0.019     1.517     0.019     
+PLR       C2A       H2A1      SINGLE    n         1.089     0.010     0.971     0.014     
+PLR       C2A       H2A2      SINGLE    n         1.089     0.010     0.971     0.014     
+PLR       C2A       H2A3      SINGLE    n         1.089     0.010     0.971     0.014     
+PLR       O3        HO3       SINGLE    n         0.970     0.012     0.858     0.020     
+PLR       C4A       H4A1      SINGLE    n         1.089     0.010     0.971     0.013     
+PLR       C4A       H4A2      SINGLE    n         1.089     0.010     0.971     0.013     
+PLR       C4A       H4A3      SINGLE    n         1.089     0.010     0.971     0.013     
+PLR       C6        H6        SINGLE    n         1.082     0.013     0.940     0.020     
+PLR       C5A       H5A1      SINGLE    n         1.089     0.010     0.982     0.011     
+PLR       C5A       H5A2      SINGLE    n         1.089     0.010     0.982     0.011     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PLR          C2          N1          C6     119.476    1.60
+PLR          N1          C2         C2A     118.993    1.50
+PLR          N1          C2          C3     120.416    1.50
+PLR         C2A          C2          C3     120.591    1.50
+PLR          C2         C2A        H2A1     109.484    1.50
+PLR          C2         C2A        H2A2     109.484    1.50
+PLR          C2         C2A        H2A3     109.484    1.50
+PLR        H2A1         C2A        H2A2     109.339    1.66
+PLR        H2A1         C2A        H2A3     109.339    1.66
+PLR        H2A2         C2A        H2A3     109.339    1.66
+PLR          C2          C3          O3     119.235    1.71
+PLR          C2          C3          C4     119.866    1.50
+PLR          O3          C3          C4     120.899    2.61
+PLR          C3          O3         HO3     108.001    2.98
+PLR          C3          C4         C4A     120.431    1.50
+PLR          C3          C4          C5     119.036    1.50
+PLR         C4A          C4          C5     120.533    1.50
+PLR          C4         C4A        H4A1     109.993    1.51
+PLR          C4         C4A        H4A2     109.993    1.51
+PLR          C4         C4A        H4A3     109.993    1.51
+PLR        H4A1         C4A        H4A2     109.348    1.50
+PLR        H4A1         C4A        H4A3     109.348    1.50
+PLR        H4A2         C4A        H4A3     109.348    1.50
+PLR          C4          C5          C6     117.885    1.50
+PLR          C4          C5         C5A     121.186    1.51
+PLR          C6          C5         C5A     120.930    1.59
+PLR          N1          C6          C5     123.320    1.50
+PLR          N1          C6          H6     118.075    1.50
+PLR          C5          C6          H6     118.605    1.50
+PLR          C5         C5A         O4P     110.538    2.24
+PLR          C5         C5A        H5A1     109.800    1.50
+PLR          C5         C5A        H5A2     109.800    1.50
+PLR         O4P         C5A        H5A1     108.933    1.90
+PLR         O4P         C5A        H5A2     108.933    1.90
+PLR        H5A1         C5A        H5A2     108.248    1.50
+PLR         C5A         O4P           P     121.496    2.55
+PLR         O4P           P         O1P     105.808    2.07
+PLR         O4P           P         O2P     105.808    2.07
+PLR         O4P           P         O3P     105.808    2.07
+PLR         O1P           P         O2P     112.864    1.69
+PLR         O1P           P         O3P     112.864    1.69
+PLR         O2P           P         O3P     112.864    1.69
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PLR       const_sp2_sp2_2         C2A          C2          N1          C6     180.000   10.00     2
+PLR              const_19          C5          C6          N1          C2       0.000   10.00     2
+PLR             sp3_sp3_4         C5A         O4P           P         O1P     180.000   10.00     3
+PLR             sp2_sp3_1          N1          C2         C2A        H2A1     150.000   10.00     6
+PLR       const_sp2_sp2_6         C2A          C2          C3          O3       0.000   10.00     2
+PLR              const_10          O3          C3          C4         C4A       0.000   10.00     2
+PLR             sp2_sp3_9          C3          C4         C4A        H4A1     150.000   10.00     6
+PLR              const_14         C4A          C4          C5         C5A       0.000   10.00     2
+PLR              const_17         C5A          C5          C6          N1     180.000   10.00     2
+PLR            sp2_sp3_16          C4          C5         C5A         O4P     -90.000   10.00     6
+PLR             sp3_sp3_1          C5         C5A         O4P           P     180.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PLR    plan-1          C2   0.020
+PLR    plan-1         C2A   0.020
+PLR    plan-1          C3   0.020
+PLR    plan-1          C4   0.020
+PLR    plan-1         C4A   0.020
+PLR    plan-1          C5   0.020
+PLR    plan-1         C5A   0.020
+PLR    plan-1          C6   0.020
+PLR    plan-1          H6   0.020
+PLR    plan-1          N1   0.020
+PLR    plan-1          O3   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PLR SMILES           ACDLabs              10.04 "O=P(O)(O)OCc1cnc(c(O)c1C)C"
+PLR SMILES_CANONICAL CACTVS               3.341 "Cc1ncc(CO[P](O)(O)=O)c(C)c1O"
+PLR SMILES           CACTVS               3.341 "Cc1ncc(CO[P](O)(O)=O)c(C)c1O"
+PLR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "Cc1c(cnc(c1O)C)COP(=O)(O)O"
+PLR SMILES           "OpenEye OEToolkits" 1.5.0 "Cc1c(cnc(c1O)C)COP(=O)(O)O"
+PLR InChI            InChI                1.03  "InChI=1S/C8H12NO5P/c1-5-7(4-14-15(11,12)13)3-9-6(2)8(5)10/h3,10H,4H2,1-2H3,(H2,11,12,13)"
+PLR InChIKey         InChI                1.03  RBCOYOYDYNXAFA-UHFFFAOYSA-N
+PLR ?                acedrg               202         "dictionary generator"                  
+PLR ?                acedrg_database      11          "data source"                           
+PLR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PLR ?                refmac5              5.8.0189    "optimization tool"                     

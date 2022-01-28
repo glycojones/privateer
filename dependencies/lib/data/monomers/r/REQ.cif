@@ -1,0 +1,360 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+REQ      REQ '(4,7-DIMETHYL-1,10-PHENANTHROLINE-KA' non-polymer        44  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_REQ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ REQ           O3     O    OH1       0.000      0.000    0.000    0.000
+ REQ           HO3    H    H         0.000     -0.546    0.158    0.755
+ REQ           C3     C    CH2       0.000      0.816   -0.660    0.361
+ REQ           H31    H    H         0.000      0.200   -1.197   -0.364
+ REQ           H32    H    H         0.000      0.200   -0.368    1.214
+ REQ           RE     RE   RE        1.000      2.251   -1.804    0.962
+ REQ           C1     C    CH2       0.000      3.283   -0.168    1.217
+ REQ           H11    H    H         0.000      2.654   -0.360    2.089
+ REQ           H12    H    H         0.000      2.654   -0.063    0.331
+ REQ           O1     O    OH1       0.000      3.889    0.813    1.383
+ REQ           HO1    H    H         0.000      4.032    0.879    2.318
+ REQ           C2     C    CH2       0.000      2.817   -1.878   -0.884
+ REQ           H21    H    H         0.000      3.261   -2.721   -0.351
+ REQ           H22    H    H         0.000      3.176   -0.943   -0.449
+ REQ           O2     O    OH1       0.000      3.114   -1.925   -1.986
+ REQ           HO2    H    H         0.000      3.840   -2.533   -2.031
+ REQ           N2     N    NR6       0.000      3.842   -3.030    1.788
+ REQ           C16    C    CR16      0.000      4.408   -3.029    3.020
+ REQ           H16    H    H         0.000      4.033   -2.332    3.759
+ REQ           C15    C    CR16      0.000      5.468   -3.899    3.386
+ REQ           H15    H    H         0.000      5.889   -3.865    4.384
+ REQ           C14    C    CR6       0.000      5.959   -4.794    2.442
+ REQ           C20    C    CH3       0.000      7.059   -5.677    2.850
+ REQ           H203   H    H         0.000      7.932   -5.405    2.323
+ REQ           H202   H    H         0.000      7.218   -5.572    3.889
+ REQ           H201   H    H         0.000      6.799   -6.676    2.626
+ REQ           C13    C    CR66      0.000      5.409   -4.845    1.127
+ REQ           C12    C    CR66      0.000      4.335   -3.933    0.844
+ REQ           C11    C    CR66      0.000      3.718   -3.912   -0.470
+ REQ           N1     N    NR6       0.000      2.685   -3.012   -0.672
+ REQ           C18    C    CR16      0.000      5.853   -5.744    0.056
+ REQ           H18    H    H         0.000      6.658   -6.441    0.252
+ REQ           C17    C    CR16      0.000      5.278   -5.726   -1.183
+ REQ           H17    H    H         0.000      5.640   -6.406   -1.944
+ REQ           C10    C    CR66      0.000      4.177   -4.804   -1.511
+ REQ           C9     C    CR6       0.000      3.503   -4.697   -2.789
+ REQ           C19    C    CH3       0.000      3.904   -5.520   -3.932
+ REQ           H193   H    H         0.000      4.321   -4.896   -4.675
+ REQ           H192   H    H         0.000      4.621   -6.227   -3.612
+ REQ           H191   H    H         0.000      3.054   -6.016   -4.313
+ REQ           C8     C    CR16      0.000      2.487   -3.802   -2.970
+ REQ           H8     H    H         0.000      1.988   -3.731   -3.929
+ REQ           C7     C    CR16      0.000      2.092   -2.967   -1.893
+ REQ           H7     H    H         0.000      1.283   -2.265   -2.051
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ REQ      O3     n/a    C3     START
+ REQ      HO3    O3     .      .
+ REQ      C3     O3     RE     .
+ REQ      H31    C3     .      .
+ REQ      H32    C3     .      .
+ REQ      RE     C3     N2     .
+ REQ      C1     RE     O1     .
+ REQ      H11    C1     .      .
+ REQ      H12    C1     .      .
+ REQ      O1     C1     HO1    .
+ REQ      HO1    O1     .      .
+ REQ      C2     RE     O2     .
+ REQ      H21    C2     .      .
+ REQ      H22    C2     .      .
+ REQ      O2     C2     HO2    .
+ REQ      HO2    O2     .      .
+ REQ      N2     RE     C16    .
+ REQ      C16    N2     C15    .
+ REQ      H16    C16    .      .
+ REQ      C15    C16    C14    .
+ REQ      H15    C15    .      .
+ REQ      C14    C15    C13    .
+ REQ      C20    C14    H201   .
+ REQ      H203   C20    .      .
+ REQ      H202   C20    .      .
+ REQ      H201   C20    .      .
+ REQ      C13    C14    C18    .
+ REQ      C12    C13    C11    .
+ REQ      C11    C12    N1     .
+ REQ      N1     C11    .      .
+ REQ      C18    C13    C17    .
+ REQ      H18    C18    .      .
+ REQ      C17    C18    C10    .
+ REQ      H17    C17    .      .
+ REQ      C10    C17    C9     .
+ REQ      C9     C10    C8     .
+ REQ      C19    C9     H191   .
+ REQ      H193   C19    .      .
+ REQ      H192   C19    .      .
+ REQ      H191   C19    .      .
+ REQ      C8     C9     C7     .
+ REQ      H8     C8     .      .
+ REQ      C7     C8     H7     .
+ REQ      H7     C7     .      END
+ REQ      RE     N1     .    ADD
+ REQ      N1     C7     .    ADD
+ REQ      N2     C12    .    ADD
+ REQ      C10    C11    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+REQ       C1        RE        single    1.951     0.020     1.951     0.020     
+REQ       RE        C3        single    1.931     0.020     1.931     0.020     
+REQ       RE        N1        single    2.160     0.020     2.160     0.020     
+REQ       N2        RE        single    2.172     0.020     2.172     0.020     
+REQ       C2        RE        single    1.932     0.020     1.932     0.020     
+REQ       N1        C7        double    1.337     0.020     1.337     0.020     
+REQ       N1        C11       single    1.410     0.020     1.410     0.020     
+REQ       N2        C12       double    1.337     0.020     1.337     0.020     
+REQ       C16       N2        single    1.337     0.020     1.337     0.020     
+REQ       O1        C1        single    1.432     0.020     1.432     0.020     
+REQ       HO1       O1        single    0.970     0.012     0.839     0.014     
+REQ       O2        C2        single    1.432     0.020     1.432     0.020     
+REQ       HO2       O2        single    0.970     0.012     0.839     0.014     
+REQ       C3        O3        single    1.432     0.020     1.432     0.020     
+REQ       HO3       O3        single    0.970     0.012     0.839     0.014     
+REQ       H11       C1        single    1.089     0.010     0.989     0.005     
+REQ       H12       C1        single    1.089     0.010     0.989     0.005     
+REQ       H21       C2        single    1.089     0.010     0.989     0.005     
+REQ       H22       C2        single    1.089     0.010     0.989     0.005     
+REQ       H31       C3        single    1.089     0.010     0.989     0.005     
+REQ       H32       C3        single    1.089     0.010     0.989     0.005     
+REQ       C7        C8        single    1.390     0.020     1.390     0.020     
+REQ       H7        C7        single    1.082     0.013     0.975     0.010     
+REQ       C8        C9        double    1.390     0.020     1.390     0.020     
+REQ       H8        C8        single    1.082     0.013     0.975     0.010     
+REQ       C19       C9        single    1.506     0.020     1.506     0.020     
+REQ       C9        C10       single    1.490     0.020     1.490     0.020     
+REQ       C10       C11       double    1.490     0.020     1.490     0.020     
+REQ       C10       C17       single    1.390     0.020     1.390     0.020     
+REQ       C11       C12       single    1.490     0.020     1.490     0.020     
+REQ       C12       C13       single    1.490     0.020     1.490     0.020     
+REQ       C18       C13       single    1.390     0.020     1.390     0.020     
+REQ       C13       C14       double    1.490     0.020     1.490     0.020     
+REQ       C14       C15       single    1.390     0.020     1.390     0.020     
+REQ       C20       C14       single    1.506     0.020     1.506     0.020     
+REQ       C15       C16       double    1.390     0.020     1.390     0.020     
+REQ       H15       C15       single    1.082     0.013     0.975     0.010     
+REQ       H16       C16       single    1.082     0.013     0.975     0.010     
+REQ       C17       C18       double    1.390     0.020     1.390     0.020     
+REQ       H17       C17       single    1.082     0.013     0.975     0.010     
+REQ       H18       C18       single    1.082     0.013     0.975     0.010     
+REQ       H191      C19       single    1.089     0.010     0.989     0.005     
+REQ       H192      C19       single    1.089     0.010     0.989     0.005     
+REQ       H193      C19       single    1.089     0.010     0.989     0.005     
+REQ       H201      C20       single    1.089     0.010     0.989     0.005     
+REQ       H202      C20       single    1.089     0.010     0.989     0.005     
+REQ       H203      C20       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ REQ      HO3    O3     C3      109.470    3.000
+ REQ      O3     C3     H31     109.470    3.000
+ REQ      O3     C3     H32     109.470    3.000
+ REQ      O3     C3     RE      109.500    3.000
+ REQ      H31    C3     H32     107.900    3.000
+ REQ      H31    C3     RE      109.500    3.000
+ REQ      H32    C3     RE      109.500    3.000
+ REQ      C3     RE     C1       90.000    3.000
+ REQ      C3     RE     C2       90.000    3.000
+ REQ      C3     RE     N2      180.000    3.000
+ REQ      C3     RE     N1       90.000    3.000
+ REQ      C1     RE     C2       90.000    3.000
+ REQ      C1     RE     N2       90.000    3.000
+ REQ      C2     RE     N2       90.000    3.000
+ REQ      C1     RE     N1       90.000    3.000
+ REQ      C2     RE     N1      180.000    3.000
+ REQ      N2     RE     N1       90.000    3.000
+ REQ      RE     C1     H11     109.500    3.000
+ REQ      RE     C1     H12     109.500    3.000
+ REQ      RE     C1     O1      109.500    3.000
+ REQ      H11    C1     H12     107.900    3.000
+ REQ      H11    C1     O1      109.470    3.000
+ REQ      H12    C1     O1      109.470    3.000
+ REQ      C1     O1     HO1     109.470    3.000
+ REQ      RE     C2     H21     109.500    3.000
+ REQ      RE     C2     H22     109.500    3.000
+ REQ      RE     C2     O2      109.500    3.000
+ REQ      H21    C2     H22     107.900    3.000
+ REQ      H21    C2     O2      109.470    3.000
+ REQ      H22    C2     O2      109.470    3.000
+ REQ      C2     O2     HO2     109.470    3.000
+ REQ      RE     N2     C16     120.000    3.000
+ REQ      RE     N2     C12     120.000    3.000
+ REQ      C16    N2     C12     120.000    3.000
+ REQ      N2     C16    H16     120.000    3.000
+ REQ      N2     C16    C15     120.000    3.000
+ REQ      H16    C16    C15     120.000    3.000
+ REQ      C16    C15    H15     120.000    3.000
+ REQ      C16    C15    C14     120.000    3.000
+ REQ      H15    C15    C14     120.000    3.000
+ REQ      C15    C14    C20     120.000    3.000
+ REQ      C15    C14    C13     120.000    3.000
+ REQ      C20    C14    C13     120.000    3.000
+ REQ      C14    C20    H203    109.470    3.000
+ REQ      C14    C20    H202    109.470    3.000
+ REQ      C14    C20    H201    109.470    3.000
+ REQ      H203   C20    H202    109.470    3.000
+ REQ      H203   C20    H201    109.470    3.000
+ REQ      H202   C20    H201    109.470    3.000
+ REQ      C14    C13    C12     120.000    3.000
+ REQ      C14    C13    C18     120.000    3.000
+ REQ      C12    C13    C18     120.000    3.000
+ REQ      C13    C12    C11     120.000    3.000
+ REQ      C13    C12    N2      120.000    3.000
+ REQ      C11    C12    N2      120.000    3.000
+ REQ      C12    C11    N1      120.000    3.000
+ REQ      C12    C11    C10     120.000    3.000
+ REQ      N1     C11    C10     120.000    3.000
+ REQ      C11    N1     RE      120.000    3.000
+ REQ      C11    N1     C7      120.000    3.000
+ REQ      RE     N1     C7      120.000    3.000
+ REQ      C13    C18    H18     120.000    3.000
+ REQ      C13    C18    C17     120.000    3.000
+ REQ      H18    C18    C17     120.000    3.000
+ REQ      C18    C17    H17     120.000    3.000
+ REQ      C18    C17    C10     120.000    3.000
+ REQ      H17    C17    C10     120.000    3.000
+ REQ      C17    C10    C9      120.000    3.000
+ REQ      C17    C10    C11     120.000    3.000
+ REQ      C9     C10    C11     120.000    3.000
+ REQ      C10    C9     C19     120.000    3.000
+ REQ      C10    C9     C8      120.000    3.000
+ REQ      C19    C9     C8      120.000    3.000
+ REQ      C9     C19    H193    109.470    3.000
+ REQ      C9     C19    H192    109.470    3.000
+ REQ      C9     C19    H191    109.470    3.000
+ REQ      H193   C19    H192    109.470    3.000
+ REQ      H193   C19    H191    109.470    3.000
+ REQ      H192   C19    H191    109.470    3.000
+ REQ      C9     C8     H8      120.000    3.000
+ REQ      C9     C8     C7      120.000    3.000
+ REQ      H8     C8     C7      120.000    3.000
+ REQ      C8     C7     H7      120.000    3.000
+ REQ      C8     C7     N1      120.000    3.000
+ REQ      H7     C7     N1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ REQ      var_1    HO3    O3     C3     RE      -169.938   20.000   1
+ REQ      var_2    O3     C3     RE     C1         0.000   20.000   1
+ REQ      var_3    C11    N1     RE     N2         0.000   20.000   1
+ REQ      var_4    H11    C1     RE     C3         0.000   20.000   1
+ REQ      var_5    RE     C1     O1     HO1       46.379   20.000   1
+ REQ      var_6    H21    C2     RE     C3         0.000   20.000   1
+ REQ      var_7    RE     C2     O2     HO2     -135.553   20.000   1
+ REQ      var_8    C12    N2     RE     N1         0.000   20.000   1
+ REQ      CONST_1  RE     N2     C12    C13      180.000    0.000   0
+ REQ      CONST_2  RE     N2     C16    C15      180.000    0.000   0
+ REQ      CONST_3  N2     C16    C15    C14        0.000    0.000   0
+ REQ      CONST_4  C16    C15    C14    C13        0.000    0.000   0
+ REQ      var_9    C15    C14    C20    H201     128.017   20.000   1
+ REQ      CONST_5  C15    C14    C13    C18      180.000    0.000   0
+ REQ      CONST_6  C14    C13    C12    C11      180.000    0.000   0
+ REQ      CONST_7  C13    C12    C11    N1       180.000    0.000   0
+ REQ      CONST_8  C12    C11    N1     RE         0.000    0.000   0
+ REQ      CONST_9  C11    N1     C7     C8         0.000    0.000   0
+ REQ      CONST_10 C14    C13    C18    C17      180.000    0.000   0
+ REQ      CONST_11 C13    C18    C17    C10        0.000    0.000   0
+ REQ      CONST_12 C18    C17    C10    C9       180.000    0.000   0
+ REQ      CONST_13 C17    C10    C11    C12        0.000    0.000   0
+ REQ      CONST_14 C17    C10    C9     C8       180.000    0.000   0
+ REQ      var_10   C10    C9     C19    H191     127.288   20.000   1
+ REQ      CONST_15 C10    C9     C8     C7         0.000    0.000   0
+ REQ      CONST_16 C9     C8     C7     N1         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ REQ      chir_01  RE     C3     N2     C1        cross4
+                   C2     .      N1     .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ REQ      plan-1    N1        0.020
+ REQ      plan-1    RE        0.020
+ REQ      plan-1    C7        0.020
+ REQ      plan-1    C11       0.020
+ REQ      plan-1    C8        0.020
+ REQ      plan-1    C9        0.020
+ REQ      plan-1    H7        0.020
+ REQ      plan-1    H8        0.020
+ REQ      plan-1    C10       0.020
+ REQ      plan-1    C19       0.020
+ REQ      plan-1    C17       0.020
+ REQ      plan-1    C12       0.020
+ REQ      plan-1    C13       0.020
+ REQ      plan-1    C18       0.020
+ REQ      plan-1    N2        0.020
+ REQ      plan-1    C14       0.020
+ REQ      plan-1    C15       0.020
+ REQ      plan-1    C20       0.020
+ REQ      plan-1    C16       0.020
+ REQ      plan-1    H15       0.020
+ REQ      plan-1    H16       0.020
+ REQ      plan-1    H17       0.020
+ REQ      plan-1    H18       0.020
+# ------------------------------------------------------

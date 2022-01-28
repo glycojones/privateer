@@ -1,0 +1,168 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GM7     GM7      "4-aminobenzene-1,2-dicarboxylic acid"     NON-POLYMER     18     13     .     
+#
+data_comp_GM7
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+GM7     C10     C       C       0       -6.804      -12.501     35.320      
+GM7     C13     C       CR16    0       -5.941      -14.536     34.182      
+GM7     C02     C       CR6     0       -6.103      -15.740     33.488      
+GM7     C03     C       CR16    0       -7.396      -16.186     33.194      
+GM7     C04     C       CR16    0       -8.494      -15.446     33.585      
+GM7     C05     C       CR6     0       -8.349      -14.245     34.276      
+GM7     C06     C       C       0       -9.616      -13.516     34.655      
+GM7     C09     C       CR6     0       -7.051      -13.790     34.575      
+GM7     N01     N       NH2     0       -4.995      -16.480     33.098      
+GM7     O07     O       OC      -1      -9.893      -13.425     35.864      
+GM7     O08     O       O       0       -10.313     -13.048     33.737      
+GM7     O11     O       OC      -1      -6.322      -12.575     36.465      
+GM7     O12     O       O       0       -7.096      -11.435     34.748      
+GM7     H1      H       H       0       -5.077      -14.235     34.380      
+GM7     H2      H       H       0       -7.513      -16.996     32.728      
+GM7     H3      H       H       0       -9.358      -15.761     33.379      
+GM7     H4      H       H       0       -4.190      -16.217     33.327      
+GM7     H5      H       H       0       -5.102      -17.210     32.623      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GM7       C02       N01       SINGLE    n         1.386     0.0200    1.386     0.0200    
+GM7       C02       C03       SINGLE    y         1.396     0.0104    1.396     0.0104    
+GM7       C13       C02       DOUBLE    y         1.394     0.0100    1.394     0.0100    
+GM7       C10       O12       DOUBLE    n         1.244     0.0200    1.244     0.0200    
+GM7       C03       C04       DOUBLE    y         1.379     0.0100    1.379     0.0100    
+GM7       C13       C09       SINGLE    y         1.388     0.0100    1.388     0.0100    
+GM7       C04       C05       SINGLE    y         1.391     0.0100    1.391     0.0100    
+GM7       C05       C09       DOUBLE    y         1.402     0.0100    1.402     0.0100    
+GM7       C10       C09       SINGLE    n         1.508     0.0126    1.508     0.0126    
+GM7       C06       O08       DOUBLE    n         1.244     0.0200    1.244     0.0200    
+GM7       C05       C06       SINGLE    n         1.508     0.0126    1.508     0.0126    
+GM7       C10       O11       SINGLE    n         1.244     0.0200    1.244     0.0200    
+GM7       C06       O07       SINGLE    n         1.244     0.0200    1.244     0.0200    
+GM7       C13       H1        SINGLE    n         1.082     0.013     0.936     0.0100    
+GM7       C03       H2        SINGLE    n         1.082     0.013     0.942     0.0198    
+GM7       C04       H3        SINGLE    n         1.082     0.013     0.941     0.0168    
+GM7       N01       H4        SINGLE    n         1.016     0.010     0.877     0.0200    
+GM7       N01       H5        SINGLE    n         1.016     0.010     0.877     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+GM7         O12         C10         C09     117.798    1.50
+GM7         O12         C10         O11     124.399    1.50
+GM7         C09         C10         O11     117.793    1.50
+GM7         C02         C13         C09     119.700    1.50
+GM7         C02         C13          H1     119.718    1.50
+GM7         C09         C13          H1     120.581    1.50
+GM7         N01         C02         C03     120.721    1.50
+GM7         N01         C02         C13     120.506    1.50
+GM7         C03         C02         C13     118.774    1.50
+GM7         C02         C03         C04     120.777    1.50
+GM7         C02         C03          H2     119.324    1.50
+GM7         C04         C03          H2     119.899    1.50
+GM7         C03         C04         C05     121.901    1.50
+GM7         C03         C04          H3     119.054    1.50
+GM7         C05         C04          H3     119.044    1.50
+GM7         C04         C05         C09     119.187    1.50
+GM7         C04         C05         C06     117.230    1.99
+GM7         C09         C05         C06     123.583    2.64
+GM7         O08         C06         C05     117.798    1.50
+GM7         O08         C06         O07     124.399    1.50
+GM7         C05         C06         O07     117.793    1.50
+GM7         C13         C09         C05     119.661    1.50
+GM7         C13         C09         C10     118.302    1.50
+GM7         C05         C09         C10     122.037    2.64
+GM7         C02         N01          H4     119.811    2.73
+GM7         C02         N01          H5     119.811    2.73
+GM7          H4         N01          H5     120.379    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+GM7             sp2_sp2_5         C13         C09         C10         O12     180.000   10.00     2
+GM7       const_sp2_sp2_3         N01         C02         C13         C09     180.000   10.00     2
+GM7              const_23         C10         C09         C13         C02     180.000   10.00     2
+GM7       const_sp2_sp2_7         N01         C02         C03         C04     180.000   10.00     2
+GM7             sp2_sp2_1         C03         C02         N01          H4     180.000   10.00     2
+GM7       const_sp2_sp2_9         C02         C03         C04         C05       0.000   10.00     2
+GM7              const_14         C03         C04         C05         C06     180.000   10.00     2
+GM7             sp2_sp2_9         C04         C05         C06         O08     180.000   10.00     2
+GM7              const_20         C06         C05         C09         C10       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+GM7    plan-1         C02   0.020
+GM7    plan-1         C03   0.020
+GM7    plan-1         C04   0.020
+GM7    plan-1         C05   0.020
+GM7    plan-1         C06   0.020
+GM7    plan-1         C09   0.020
+GM7    plan-1         C10   0.020
+GM7    plan-1         C13   0.020
+GM7    plan-1          H1   0.020
+GM7    plan-1          H2   0.020
+GM7    plan-1          H3   0.020
+GM7    plan-1         N01   0.020
+GM7    plan-2         C09   0.020
+GM7    plan-2         C10   0.020
+GM7    plan-2         O11   0.020
+GM7    plan-2         O12   0.020
+GM7    plan-3         C05   0.020
+GM7    plan-3         C06   0.020
+GM7    plan-3         O07   0.020
+GM7    plan-3         O08   0.020
+GM7    plan-4         C02   0.020
+GM7    plan-4          H4   0.020
+GM7    plan-4          H5   0.020
+GM7    plan-4         N01   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+GM7           SMILES              ACDLabs 12.01                                                      C(O)(c1cc(ccc1C(O)=O)N)=O
+GM7            InChI                InChI  1.03 InChI=1S/C8H7NO4/c9-4-1-2-5(7(10)11)6(3-4)8(12)13/h1-3H,9H2,(H,10,11)(H,12,13)
+GM7         InChIKey                InChI  1.03                                                    OXSANYRLJHSQEP-UHFFFAOYSA-N
+GM7 SMILES_CANONICAL               CACTVS 3.385                                                      Nc1ccc(C(O)=O)c(c1)C(O)=O
+GM7           SMILES               CACTVS 3.385                                                      Nc1ccc(C(O)=O)c(c1)C(O)=O
+GM7 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                                      c1cc(c(cc1N)C(=O)O)C(=O)O
+GM7           SMILES "OpenEye OEToolkits" 2.0.6                                                      c1cc(c(cc1N)C(=O)O)C(=O)O
+GM7 ?                acedrg               217         "dictionary generator"                  
+GM7 ?                acedrg_database      11          "data source"                           
+GM7 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+GM7 ?                refmac5              5.8.0253    "optimization tool"                     

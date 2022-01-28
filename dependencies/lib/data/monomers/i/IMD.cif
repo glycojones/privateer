@@ -1,0 +1,132 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+IMD     IMD      IMIDAZOLE     NON-POLYMER     10     5     .     
+#
+data_comp_IMD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+IMD     N1      N       NR5     0       -13.562     -13.470     -0.343      
+IMD     C2      C       CR15    0       -14.427     -12.514     -0.698      
+IMD     N3      N       NR5     1       -15.081     -12.133     0.381       
+IMD     C4      C       CR15    0       -14.629     -12.850     1.453       
+IMD     C5      C       CR15    0       -13.682     -13.688     1.002       
+IMD     HN1     H       H       0       -13.012     -13.885     -0.885      
+IMD     H2      H       H       0       -14.548     -12.172     -1.567      
+IMD     HN3     H       H       0       -15.705     -11.519     0.404       
+IMD     H4      H       H       0       -14.929     -12.769     2.343       
+IMD     H5      H       H       0       -13.190     -14.309     1.511       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+IMD       N1        C2        SINGLE    n         1.341     0.020     1.341     0.020     
+IMD       N1        C5        SINGLE    n         1.369     0.014     1.369     0.014     
+IMD       C2        N3        DOUBLE    n         1.318     0.013     1.318     0.013     
+IMD       N3        C4        SINGLE    n         1.364     0.015     1.364     0.015     
+IMD       C4        C5        DOUBLE    n         1.341     0.014     1.341     0.014     
+IMD       N1        HN1       SINGLE    n         1.016     0.010     0.877     0.020     
+IMD       C2        H2        SINGLE    n         1.082     0.013     0.942     0.016     
+IMD       N3        HN3       SINGLE    n         1.016     0.010     0.876     0.020     
+IMD       C4        H4        SINGLE    n         1.082     0.013     0.943     0.017     
+IMD       C5        H5        SINGLE    n         1.082     0.013     0.942     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+IMD          C2          N1          C5     108.831    1.50
+IMD          C2          N1         HN1     125.368    1.59
+IMD          C5          N1         HN1     125.801    1.58
+IMD          N1          C2          N3     108.289    1.50
+IMD          N1          C2          H2     125.855    1.50
+IMD          N3          C2          H2     125.855    1.50
+IMD          C2          N3          C4     108.831    1.50
+IMD          C2          N3         HN3     125.368    1.59
+IMD          C4          N3         HN3     125.801    1.58
+IMD          N3          C4          C5     107.024    1.50
+IMD          N3          C4          H4     126.261    1.50
+IMD          C5          C4          H4     126.714    1.50
+IMD          N1          C5          C4     107.024    1.50
+IMD          N1          C5          H5     126.261    1.50
+IMD          C4          C5          H5     126.714    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+IMD             sp2_sp2_1          N3          C2          N1          C5       0.000   10.00     2
+IMD            sp2_sp2_17          C4          C5          N1          C2       0.000   10.00     2
+IMD             sp2_sp2_5          N1          C2          N3          C4       0.000   10.00     2
+IMD             sp2_sp2_9          C5          C4          N3          C2       0.000   10.00     2
+IMD            sp2_sp2_13          N3          C4          C5          N1       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+IMD    plan-1          C2   0.020
+IMD    plan-1          C5   0.020
+IMD    plan-1         HN1   0.020
+IMD    plan-1          N1   0.020
+IMD    plan-2          C2   0.020
+IMD    plan-2          H2   0.020
+IMD    plan-2          N1   0.020
+IMD    plan-2          N3   0.020
+IMD    plan-3          C2   0.020
+IMD    plan-3          C4   0.020
+IMD    plan-3         HN3   0.020
+IMD    plan-3          N3   0.020
+IMD    plan-4          C4   0.020
+IMD    plan-4          C5   0.020
+IMD    plan-4          H4   0.020
+IMD    plan-4          N3   0.020
+IMD    plan-5          C4   0.020
+IMD    plan-5          C5   0.020
+IMD    plan-5          H5   0.020
+IMD    plan-5          N1   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+IMD SMILES           ACDLabs              10.04 "c1c[nH+]cn1"
+IMD SMILES_CANONICAL CACTVS               3.341 "[nH]1cc[nH+]c1"
+IMD SMILES           CACTVS               3.341 "[nH]1cc[nH+]c1"
+IMD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c[nH+]c[nH]1"
+IMD SMILES           "OpenEye OEToolkits" 1.5.0 "c1c[nH+]c[nH]1"
+IMD InChI            InChI                1.03  "InChI=1S/C3H4N2/c1-2-5-3-4-1/h1-3H,(H,4,5)/p+1"
+IMD InChIKey         InChI                1.03  RAXXELZNTBOGNW-UHFFFAOYSA-O
+IMD ?                acedrg               202         "dictionary generator"                  
+IMD ?                acedrg_database      11          "data source"                           
+IMD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+IMD ?                refmac5              5.8.0189    "optimization tool"                     

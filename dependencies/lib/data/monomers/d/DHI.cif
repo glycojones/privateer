@@ -1,0 +1,220 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+DHI     DHI     D-HISTIDINE     peptide     21     11     .
+#
+data_comp_DHI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+DHI     N       N       NT3     1       -2.519      -1.355      0.064
+DHI     CA      C       CH1     0       -1.286      -0.566      0.334
+DHI     C       C       C       0       -1.668      0.797       0.925
+DHI     O       O       O       0       -1.229      1.070       2.061
+DHI     CB      C       CH2     0       -0.450      -0.432      -0.948
+DHI     CG      C       CR5     0       0.905       0.155       -0.730
+DHI     ND1     N       NR5     1       1.873       -0.478      0.026
+DHI     CD2     C       CR15    0       1.458       1.309       -1.163
+DHI     CE1     C       CR15    0       2.929       0.304       0.126
+DHI     NE2     N       NR5     0       2.700       1.406       -0.596
+DHI     OXT     O       OC      -1      -2.391      1.535       0.227
+DHI     H       H       H       0       -3.042      -0.916      -0.539
+DHI     H2      H       H       0       -2.988      -1.471      0.837
+DHI     H3      H       H       0       -2.297      -2.171      -0.273
+DHI     HA      H       H       0       -0.753      -1.056      1.004
+DHI     HB2     H       H       0       -0.939      0.132       -1.587
+DHI     HB3     H       H       0       -0.347      -1.321      -1.354
+DHI     HD1     H       H       0       1.796       -1.274      0.383
+DHI     HD2     H       H       0       1.066       1.932       -1.746
+DHI     HE1     H       H       0       3.708       0.117       0.621
+DHI     HE2     H       H       0       3.255       2.079       -0.690
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+DHI      N      n/a    CA     START
+DHI      H      N      .      .
+DHI      H2     N      .      .
+DHI      H3     N      .      .
+DHI      CA     N      C      .
+DHI      HA     CA     .      .
+DHI      CB     CA     CG     .
+DHI      HB2    CB     .      .
+DHI      HB3    CB     .      .
+DHI      CG     CB     CD2    .
+DHI      CD2    CG     NE2    .
+DHI      HD2    CD2    .      .
+DHI      NE2    CD2    CE1    .
+DHI      HE2    NE2    .      .
+DHI      CE1    NE2    ND1    .
+DHI      HE1    CE1    .      .
+DHI      ND1    CE1    HD1    .
+DHI      HD1    ND1    .      .
+DHI      C      CA     .      END
+DHI      O      C      .      .
+DHI      OXT    C      .      .
+DHI      CG     ND1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+DHI       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+DHI       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+DHI       CA        CB        SINGLE    n         1.535     0.013     1.535     0.013     
+DHI       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+DHI       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+DHI       CB        CG        SINGLE    n         1.492     0.011     1.492     0.011     
+DHI       CG        ND1       SINGLE    n         1.380     0.016     1.380     0.016     
+DHI       CG        CD2       DOUBLE    n         1.350     0.011     1.350     0.011     
+DHI       ND1       CE1       DOUBLE    n         1.318     0.013     1.318     0.013     
+DHI       CD2       NE2       SINGLE    n         1.369     0.014     1.369     0.014     
+DHI       CE1       NE2       SINGLE    n         1.341     0.020     1.341     0.020     
+DHI       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+DHI       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+DHI       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+DHI       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+DHI       CB        HB2       SINGLE    n         1.089     0.010     0.983     0.013     
+DHI       CB        HB3       SINGLE    n         1.089     0.010     0.983     0.013     
+DHI       ND1       HD1       SINGLE    n         1.016     0.010     0.876     0.020     
+DHI       CD2       HD2       SINGLE    n         1.082     0.013     0.939     0.013     
+DHI       CE1       HE1       SINGLE    n         1.082     0.013     0.942     0.016     
+DHI       NE2       HE2       SINGLE    n         1.016     0.010     0.877     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+DHI          CA           N           H     109.834    1.50
+DHI          CA           N          H2     109.834    1.50
+DHI          CA           N          H3     109.834    1.50
+DHI           H           N          H2     109.028    2.41
+DHI           H           N          H3     109.028    2.41
+DHI          H2           N          H3     109.028    2.41
+DHI           N          CA           C     109.655    1.50
+DHI           N          CA          CB     110.437    1.50
+DHI           N          CA          HA     108.059    1.50
+DHI           C          CA          CB     112.128    2.24
+DHI           C          CA          HA     108.268    1.50
+DHI          CB          CA          HA     108.685    1.67
+DHI          CA           C           O     117.101    1.50
+DHI          CA           C         OXT     117.101    1.50
+DHI           O           C         OXT     125.798    1.50
+DHI          CA          CB          CG     113.731    1.50
+DHI          CA          CB         HB2     108.757    1.50
+DHI          CA          CB         HB3     108.757    1.50
+DHI          CG          CB         HB2     108.751    1.50
+DHI          CG          CB         HB3     108.751    1.50
+DHI         HB2          CB         HB3     107.606    1.50
+DHI          CB          CG         ND1     122.437    1.50
+DHI          CB          CG         CD2     131.499    1.50
+DHI         ND1          CG         CD2     106.064    1.50
+DHI          CG         ND1         CE1     109.258    1.50
+DHI          CG         ND1         HD1     125.371    1.50
+DHI         CE1         ND1         HD1     125.371    1.85
+DHI          CG         CD2         NE2     107.401    1.50
+DHI          CG         CD2         HD2     126.544    1.80
+DHI         NE2         CD2         HD2     126.055    1.55
+DHI         ND1         CE1         NE2     108.331    1.50
+DHI         ND1         CE1         HE1     125.720    1.50
+DHI         NE2         CE1         HE1     125.949    1.50
+DHI         CD2         NE2         CE1     108.946    1.50
+DHI         CD2         NE2         HE2     125.602    2.04
+DHI         CE1         NE2         HE2     125.452    1.59
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+DHI             sp3_sp3_4           C          CA           N           H      60.000   10.00     3
+DHI             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+DHI            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+DHI             sp2_sp3_8         ND1          CG          CB          CA     -90.000   10.00     6
+DHI             sp2_sp2_3          CB          CG         ND1         CE1     180.000   10.00     2
+DHI            sp2_sp2_18         NE2         CD2          CG          CB     180.000   10.00     2
+DHI             sp2_sp2_5         NE2         CE1         ND1          CG       0.000   10.00     2
+DHI            sp2_sp2_13          CG         CD2         NE2         CE1       0.000   10.00     2
+DHI             sp2_sp2_9         ND1         CE1         NE2         CD2       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+DHI    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+DHI    plan-1           C   0.020
+DHI    plan-1          CA   0.020
+DHI    plan-1           O   0.020
+DHI    plan-1         OXT   0.020
+DHI    plan-2          CB   0.020
+DHI    plan-2         CD2   0.020
+DHI    plan-2          CG   0.020
+DHI    plan-2         ND1   0.020
+DHI    plan-3         CE1   0.020
+DHI    plan-3          CG   0.020
+DHI    plan-3         HD1   0.020
+DHI    plan-3         ND1   0.020
+DHI    plan-4         CD2   0.020
+DHI    plan-4          CG   0.020
+DHI    plan-4         HD2   0.020
+DHI    plan-4         NE2   0.020
+DHI    plan-5         CE1   0.020
+DHI    plan-5         HE1   0.020
+DHI    plan-5         ND1   0.020
+DHI    plan-5         NE2   0.020
+DHI    plan-6         CD2   0.020
+DHI    plan-6         CE1   0.020
+DHI    plan-6         HE2   0.020
+DHI    plan-6         NE2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+DHI SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc1cnc[nH+]1"
+DHI SMILES_CANONICAL CACTVS               3.341 "N[C@H](Cc1c[nH]c[nH+]1)C(O)=O"
+DHI SMILES           CACTVS               3.341 "N[CH](Cc1c[nH]c[nH+]1)C(O)=O"
+DHI SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1c([nH+]c[nH]1)C[C@H](C(=O)O)N"
+DHI SMILES           "OpenEye OEToolkits" 1.5.0 "c1c([nH+]c[nH]1)CC(C(=O)O)N"
+DHI InChI            InChI                1.03  "InChI=1S/C6H9N3O2/c7-5(6(10)11)1-4-2-8-3-9-4/h2-3,5H,1,7H2,(H,8,9)(H,10,11)/p+1/t5-/m1/s1"
+DHI InChIKey         InChI                1.03  HNDVDQJCIGZPNO-RXMQYKEDSA-O
+DHI ?                acedrg               196         "dictionary generator"
+DHI ?                acedrg_database      11          "data source"
+DHI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+DHI ?                refmac5              5.8.0222    "optimization tool"

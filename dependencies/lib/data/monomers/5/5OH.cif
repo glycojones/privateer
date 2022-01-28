@@ -1,0 +1,235 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+5OH     5OH     "(2S)-amino[(4R,6S)-2-amino-6-hydroxy-3,4,5,6-tetrahydropyrimidin-4-yl]ethanoicacid"  peptide  25     13     .     
+#
+data_comp_5OH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+5OH     C       C       C       0       -2.887      0.354       0.590       
+5OH     N       N       NT3     1       -1.901      -0.529      -1.487      
+5OH     O       O       O       0       -3.103      1.446       0.026       
+5OH     CA      C       CH1     0       -1.790      -0.542      -0.002      
+5OH     CB      C       CH1     0       -0.385      -0.168      0.528       
+5OH     NP      N       NR6     0       0.608       -1.159      0.082       
+5OH     CQ      C       CR6     0       1.896       -0.879      -0.159      
+5OH     NQ      N       NH2     0       2.692       -1.851      -0.566      
+5OH     CR      C       CH2     0       0.082       1.251       0.164       
+5OH     NR      N       NRD6    0       2.406       0.340       -0.014      
+5OH     CS      C       CH1     0       1.556       1.443       0.464       
+5OH     OS      O       OH1     0       1.993       2.621       -0.132      
+5OH     OXT     O       OC      -1      -3.487      -0.072      1.596       
+5OH     H       H       H       0       -1.226      -1.012      -1.859      
+5OH     H2      H       H       0       -1.862      0.325       -1.802      
+5OH     H3      H       H       0       -2.695      -0.895      -1.742      
+5OH     HA      H       H       0       -1.969      -1.464      0.298       
+5OH     HP      H       H       0       -0.433      -0.214      1.512       
+5OH     HNP     H       H       0       0.334       -1.974      -0.026      
+5OH     HNQ     H       H       0       3.289       -1.696      -1.188      
+5OH     HNQA    H       H       0       2.620       -2.649      -0.214      
+5OH     HR      H       H       0       -0.439      1.906       0.675       
+5OH     HRA     H       H       0       -0.075      1.411       -0.790      
+5OH     HS      H       H       0       1.681       1.519       1.445       
+5OH     HOS     H       H       0       1.708       3.301       0.335       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 5OH      N      n/a    CA     START
+ 5OH      H      N      .      .
+ 5OH      H2     N      .      .
+ 5OH      H3     N      .      .
+ 5OH      CA     N      C      .
+ 5OH      HA     CA     .      .
+ 5OH      CB     CA     CR     .
+ 5OH      HP     CB     .      .
+ 5OH      CR     CB     CS     .
+ 5OH      HR     CR     .      .
+ 5OH      HRA    CR     .      .
+ 5OH      CS     CR     NR     .
+ 5OH      HS     CS     .      .
+ 5OH      OS     CS     HOS    .
+ 5OH      HOS    OS     .      .
+ 5OH      NR     CS     CQ     .
+ 5OH      CQ     NR     NP     .
+ 5OH      NQ     CQ     HNQ    .
+ 5OH      HNQA   NQ     .      .
+ 5OH      HNQ    NQ     .      .
+ 5OH      NP     CQ     HNP    .
+ 5OH      HNP    NP     .      .
+ 5OH      C      CA     OXT    .
+ 5OH      O      C      .      .
+ 5OH      OXT    C      .      END
+ 5OH      CB     NP     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+5OH       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+5OH       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+5OH       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+5OH       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+5OH       CA        CB        SINGLE    n         1.544     0.012     1.544     0.012     
+5OH       CB        CR        SINGLE    n         1.531     0.015     1.531     0.015     
+5OH       CB        NP        SINGLE    n         1.468     0.010     1.468     0.010     
+5OH       NP        CQ        SINGLE    n         1.329     0.019     1.329     0.019     
+5OH       CQ        NR        DOUBLE    n         1.319     0.020     1.319     0.020     
+5OH       CQ        NQ        SINGLE    n         1.320     0.011     1.320     0.011     
+5OH       NR        CS        SINGLE    n         1.466     0.017     1.466     0.017     
+5OH       CR        CS        SINGLE    n         1.512     0.016     1.512     0.016     
+5OH       CS        OS        SINGLE    n         1.391     0.020     1.391     0.020     
+5OH       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+5OH       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+5OH       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+5OH       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+5OH       CB        HP        SINGLE    n         1.089     0.010     0.986     0.013     
+5OH       NP        HNP       SINGLE    n         1.016     0.010     0.866     0.020     
+5OH       NQ        HNQ       SINGLE    n         1.016     0.010     0.875     0.020     
+5OH       NQ        HNQA      SINGLE    n         1.016     0.010     0.875     0.020     
+5OH       CR        HR        SINGLE    n         1.089     0.010     0.981     0.017     
+5OH       CR        HRA       SINGLE    n         1.089     0.010     0.981     0.017     
+5OH       CS        HS        SINGLE    n         1.089     0.010     0.991     0.020     
+5OH       OS        HOS       SINGLE    n         0.970     0.012     0.872     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+5OH          CA           C         OXT     117.220    1.50
+5OH          CA           C           O     117.220    1.50
+5OH         OXT           C           O     125.559    1.75
+5OH          CA           N           H     109.856    1.85
+5OH          CA           N          H2     109.856    1.85
+5OH          CA           N          H3     109.856    1.85
+5OH           H           N          H2     108.504    2.72
+5OH           H           N          H3     108.504    2.72
+5OH          H2           N          H3     108.504    2.72
+5OH           C          CA           N     109.415    1.50
+5OH           C          CA          CB     113.355    2.65
+5OH           C          CA          HA     108.585    1.50
+5OH           N          CA          CB     113.823    1.83
+5OH           N          CA          HA     108.441    1.50
+5OH          CB          CA          HA     107.767    1.50
+5OH          CA          CB          CR     113.522    1.99
+5OH          CA          CB          NP     110.271    2.01
+5OH          CA          CB          HP     107.095    1.50
+5OH          CR          CB          NP     109.918    1.50
+5OH          CR          CB          HP     107.540    1.50
+5OH          NP          CB          HP     108.119    1.50
+5OH          CB          NP          CQ     123.605    2.69
+5OH          CB          NP         HNP     117.684    2.13
+5OH          CQ          NP         HNP     118.711    1.87
+5OH          NP          CQ          NR     122.730    2.48
+5OH          NP          CQ          NQ     118.622    1.58
+5OH          NR          CQ          NQ     118.648    1.93
+5OH          CQ          NQ         HNQ     119.866    1.50
+5OH          CQ          NQ        HNQA     119.866    1.50
+5OH         HNQ          NQ        HNQA     120.268    1.81
+5OH          CB          CR          CS     111.124    1.57
+5OH          CB          CR          HR     109.019    1.50
+5OH          CB          CR         HRA     109.019    1.50
+5OH          CS          CR          HR     109.061    1.50
+5OH          CS          CR         HRA     109.061    1.50
+5OH          HR          CR         HRA     108.019    1.50
+5OH          CQ          NR          CS     118.328    2.71
+5OH          NR          CS          CR     112.961    3.00
+5OH          NR          CS          OS     108.535    1.50
+5OH          NR          CS          HS     108.158    1.74
+5OH          CR          CS          OS     109.336    1.57
+5OH          CR          CS          HS     109.463    1.54
+5OH          OS          CS          HS     108.888    1.50
+5OH          CS          OS         HOS     109.134    2.44
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+5OH             sp2_sp3_4         OXT           C          CA           N       0.000   10.00     6
+5OH            sp3_sp3_37          NR          CS          OS         HOS     180.000   10.00     3
+5OH            sp3_sp3_19           C          CA           N           H     180.000   10.00     3
+5OH            sp3_sp3_29           C          CA          CB          CR     -60.000   10.00     3
+5OH            sp2_sp3_11          CQ          NP          CB          CA     120.000   10.00     6
+5OH             sp3_sp3_7          CA          CB          CR          CS     180.000   10.00     3
+5OH             sp2_sp2_5          NQ          CQ          NP          CB     180.000   10.00     2
+5OH             sp2_sp2_7          NP          CQ          NQ         HNQ     180.000   10.00     2
+5OH             sp2_sp2_2          NQ          CQ          NR          CS     180.000   10.00     2
+5OH            sp3_sp3_11          CB          CR          CS          OS      60.000   10.00     3
+5OH             sp2_sp3_2          CQ          NR          CS          OS     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+5OH    chir_1    CA    N    C    CB    positive
+5OH    chir_2    CB    NP    CA    CR    both
+5OH    chir_3    CS    OS    NR    CR    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+5OH    plan-1           C   0.020
+5OH    plan-1          CA   0.020
+5OH    plan-1           O   0.020
+5OH    plan-1         OXT   0.020
+5OH    plan-2          CB   0.020
+5OH    plan-2          CQ   0.020
+5OH    plan-2         HNP   0.020
+5OH    plan-2          NP   0.020
+5OH    plan-3          CQ   0.020
+5OH    plan-3          NP   0.020
+5OH    plan-3          NQ   0.020
+5OH    plan-3          NR   0.020
+5OH    plan-4          CQ   0.020
+5OH    plan-4         HNQ   0.020
+5OH    plan-4        HNQA   0.020
+5OH    plan-4          NQ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+5OH SMILES_CANONICAL CACTVS               3.352 "N[C@@H]([C@H]1C[C@H](O)N=C(N)N1)C(O)=O"
+5OH SMILES           CACTVS               3.352 "N[CH]([CH]1C[CH](O)N=C(N)N1)C(O)=O"
+5OH SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "C1[C@@H](NC(=N[C@H]1O)N)[C@@H](C(=O)O)N"
+5OH SMILES           "OpenEye OEToolkits" 1.7.0 "C1C(NC(=NC1O)N)C(C(=O)O)N"
+5OH InChI            InChI                1.03  "InChI=1S/C6H12N4O3/c7-4(5(12)13)2-1-3(11)10-6(8)9-2/h2-4,11H,1,7H2,(H,12,13)(H3,8,9,10)/t2-,3+,4+/m1/s1"
+5OH InChIKey         InChI                1.03  JHJFDHNZNBHFJZ-UZBSEBFBSA-N
+5OH ?                acedrg               196         "dictionary generator"                  
+5OH ?                acedrg_database      11          "data source"                           
+5OH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+5OH ?                refmac5              5.8.0222    "optimization tool"                     

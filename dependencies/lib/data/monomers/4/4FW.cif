@@ -1,0 +1,259 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+4FW     4FW     4-FLUOROTRYPTOPHANE  peptide   27     16     .     
+#
+data_comp_4FW
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+4FW     N       N       NT3     1       -2.056      4.152       5.927       
+4FW     CA      C       CH1     0       -1.293      2.880       5.796       
+4FW     CB      C       CH2     0       -2.238      1.676       5.910       
+4FW     CG      C       CR5     0       -1.539      0.354       6.014       
+4FW     CD2     C       CR56    0       -0.844      -0.160      7.165       
+4FW     CE2     C       CR56    0       -0.345      -1.434      6.809       
+4FW     CE3     C       CR6     0       -0.595      0.329       8.458       
+4FW     CD1     C       CR15    0       -1.432      -0.602      5.044       
+4FW     NE1     N       NR5     0       -0.719      -1.675      5.510       
+4FW     CZ2     C       CR16    0       0.386       -2.214      7.705       
+4FW     CZ3     C       CR16    0       0.131       -0.446      9.349       
+4FW     F       F       F       0       -1.046      1.531       8.848       
+4FW     CH2     C       CR16    0       0.613       -1.704      8.969       
+4FW     C       C       C       0       -0.520      2.872       4.470       
+4FW     O       O       O       0       -1.183      3.014       3.424       
+4FW     OXT     O       OC      -1      0.717       2.724       4.534       
+4FW     H       H       H       0       -1.507      4.862       5.763       
+4FW     H2      H       H       0       -2.389      4.220       6.772       
+4FW     H3      H       H       0       -2.744      4.157       5.331       
+4FW     HA      H       H       0       -0.648      2.835       6.540       
+4FW     HB2     H       H       0       -2.822      1.668       5.125       
+4FW     HB3     H       H       0       -2.801      1.802       6.701       
+4FW     HD1     H       H       0       -1.795      -0.538      4.174       
+4FW     HE1     H       H       0       -0.533      -2.399      5.050       
+4FW     HZ2     H       H       0       0.713       -3.061      7.454       
+4FW     HZ3     H       H       0       0.301       -0.123      10.218      
+4FW     HH2     H       H       0       1.105       -2.219      9.585       
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 4FW      N      n/a    CA     START
+ 4FW      H      N      .      .
+ 4FW      H2     N      .      .
+ 4FW      H3     N      .      .
+ 4FW      CA     N      C      .
+ 4FW      HA     CA     .      .
+ 4FW      CB     CA     CG     .
+ 4FW      HB2    CB     .      .
+ 4FW      HB3    CB     .      .
+ 4FW      CG     CB     CD1    .
+ 4FW      CD1    CG     NE1    .
+ 4FW      HD1    CD1    .      .
+ 4FW      NE1    CD1    CE2    .
+ 4FW      HE1    NE1    .      .
+ 4FW      CE2    NE1    CZ2    .
+ 4FW      CZ2    CE2    CH2    .
+ 4FW      HZ2    CZ2    .      .
+ 4FW      CH2    CZ2    CZ3    .
+ 4FW      HH2    CH2    .      .
+ 4FW      CZ3    CH2    CE3    .
+ 4FW      HZ3    CZ3    .      .
+ 4FW      CE3    CZ3    F      .
+ 4FW      CD2    CE3    .      .
+ 4FW      F      CE3    .      .
+ 4FW      C      CA     .      END
+ 4FW      O      C      .      .
+ 4FW      OXT    C      .      .
+ 4FW      CG     CD2    .    ADD
+ 4FW      CD2    CE2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+4FW       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+4FW       CA        CB        SINGLE    n         1.534     0.012     1.534     0.012     
+4FW       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+4FW       CB        CG        SINGLE    n         1.499     0.010     1.499     0.010     
+4FW       CG        CD2       SINGLE    y         1.440     0.010     1.440     0.010     
+4FW       CG        CD1       DOUBLE    y         1.365     0.010     1.365     0.010     
+4FW       CD2       CE2       DOUBLE    y         1.411     0.010     1.411     0.010     
+4FW       CD2       CE3       SINGLE    y         1.400     0.012     1.400     0.012     
+4FW       CE2       NE1       SINGLE    y         1.373     0.010     1.373     0.010     
+4FW       CE2       CZ2       SINGLE    y         1.392     0.010     1.392     0.010     
+4FW       CE3       CZ3       DOUBLE    y         1.380     0.013     1.380     0.013     
+4FW       CE3       F         SINGLE    n         1.342     0.010     1.342     0.010     
+4FW       CD1       NE1       SINGLE    y         1.369     0.010     1.369     0.010     
+4FW       CZ2       CH2       DOUBLE    y         1.378     0.010     1.378     0.010     
+4FW       CZ3       CH2       SINGLE    y         1.395     0.011     1.395     0.011     
+4FW       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+4FW       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+4FW       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+4FW       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+4FW       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+4FW       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+4FW       CB        HB2       SINGLE    n         1.089     0.010     0.979     0.020     
+4FW       CB        HB3       SINGLE    n         1.089     0.010     0.979     0.020     
+4FW       CD1       HD1       SINGLE    n         1.082     0.013     0.945     0.020     
+4FW       NE1       HE1       SINGLE    n         1.016     0.010     0.877     0.020     
+4FW       CZ2       HZ2       SINGLE    n         1.082     0.013     0.942     0.019     
+4FW       CZ3       HZ3       SINGLE    n         1.082     0.013     0.943     0.017     
+4FW       CH2       HH2       SINGLE    n         1.082     0.013     0.942     0.018     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+4FW          CA           N           H     109.321    1.91
+4FW          CA           N          H2     109.321    1.91
+4FW          CA           N          H3     109.321    1.91
+4FW           H           N          H2     109.028    2.41
+4FW           H           N          H3     109.028    2.41
+4FW          H2           N          H3     109.028    2.41
+4FW           N          CA          CB     110.562    1.50
+4FW           N          CA           C     109.666    1.50
+4FW           N          CA          HA     108.030    1.50
+4FW          CB          CA           C     111.644    1.50
+4FW          CB          CA          HA     108.128    1.50
+4FW           C          CA          HA     108.922    1.50
+4FW          CA          CB          CG     113.843    1.64
+4FW          CA          CB         HB2     108.266    1.50
+4FW          CA          CB         HB3     108.266    1.50
+4FW          CG          CB         HB2     109.029    1.50
+4FW          CG          CB         HB3     109.029    1.50
+4FW         HB2          CB         HB3     107.759    1.50
+4FW          CB          CG         CD2     126.370    1.63
+4FW          CB          CG         CD1     127.237    1.62
+4FW         CD2          CG         CD1     106.393    1.50
+4FW          CG         CD2         CE2     107.138    1.50
+4FW          CG         CD2         CE3     133.906    1.50
+4FW         CE2         CD2         CE3     118.957    1.50
+4FW         CD2         CE2         NE1     107.464    1.50
+4FW         CD2         CE2         CZ2     122.033    1.50
+4FW         NE1         CE2         CZ2     130.503    1.50
+4FW         CD2         CE3         CZ3     119.323    1.50
+4FW         CD2         CE3           F     121.349    1.50
+4FW         CZ3         CE3           F     119.328    1.74
+4FW          CG         CD1         NE1     110.184    1.50
+4FW          CG         CD1         HD1     125.269    1.59
+4FW         NE1         CD1         HD1     124.547    1.50
+4FW         CE2         NE1         CD1     108.822    1.50
+4FW         CE2         NE1         HE1     125.740    1.60
+4FW         CD1         NE1         HE1     125.438    1.77
+4FW         CE2         CZ2         CH2     117.776    1.50
+4FW         CE2         CZ2         HZ2     120.942    1.50
+4FW         CH2         CZ2         HZ2     121.282    1.50
+4FW         CE3         CZ3         CH2     120.460    1.50
+4FW         CE3         CZ3         HZ3     119.782    1.50
+4FW         CH2         CZ3         HZ3     119.758    1.50
+4FW         CZ2         CH2         CZ3     121.451    1.50
+4FW         CZ2         CH2         HH2     118.916    1.50
+4FW         CZ3         CH2         HH2     119.633    1.50
+4FW          CA           C           O     117.134    1.50
+4FW          CA           C         OXT     117.134    1.50
+4FW           O           C         OXT     125.731    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+4FW             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+4FW              const_25         CZ2         CH2         CZ3         CE3       0.000   10.00     2
+4FW             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+4FW            sp3_sp3_13           N          CA          CB          CG      60.000   10.00     3
+4FW             sp2_sp3_8         CD2          CG          CB          CA     -90.000   10.00     6
+4FW       const_sp2_sp2_2         CE2         CD2          CG          CB     180.000   10.00     2
+4FW              const_34         NE1         CD1          CG          CB     180.000   10.00     2
+4FW       const_sp2_sp2_5          CG         CD2         CE2         NE1       0.000   10.00     2
+4FW              const_40          CG         CD2         CE3           F       0.000   10.00     2
+4FW       const_sp2_sp2_9         CD2         CE2         NE1         CD1       0.000   10.00     2
+4FW              const_17         CD2         CE2         CZ2         CH2       0.000   10.00     2
+4FW              const_31           F         CE3         CZ3         CH2     180.000   10.00     2
+4FW              const_13          CG         CD1         NE1         CE2       0.000   10.00     2
+4FW              const_21         CZ3         CH2         CZ2         CE2       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+4FW    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+4FW    plan-1         CD2   0.020
+4FW    plan-1         CE2   0.020
+4FW    plan-1         CE3   0.020
+4FW    plan-1          CG   0.020
+4FW    plan-1         CH2   0.020
+4FW    plan-1         CZ2   0.020
+4FW    plan-1         CZ3   0.020
+4FW    plan-1           F   0.020
+4FW    plan-1         HH2   0.020
+4FW    plan-1         HZ2   0.020
+4FW    plan-1         HZ3   0.020
+4FW    plan-1         NE1   0.020
+4FW    plan-2          CB   0.020
+4FW    plan-2         CD1   0.020
+4FW    plan-2         CD2   0.020
+4FW    plan-2         CE2   0.020
+4FW    plan-2         CE3   0.020
+4FW    plan-2          CG   0.020
+4FW    plan-2         CZ2   0.020
+4FW    plan-2         HD1   0.020
+4FW    plan-2         HE1   0.020
+4FW    plan-2         NE1   0.020
+4FW    plan-3           C   0.020
+4FW    plan-3          CA   0.020
+4FW    plan-3           O   0.020
+4FW    plan-3         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+4FW SMILES           ACDLabs              10.04 "O=C(O)C(N)Cc2c1c(F)cccc1nc2"
+4FW SMILES_CANONICAL CACTVS               3.341 "N[C@@H](Cc1c[nH]c2cccc(F)c12)C(O)=O"
+4FW SMILES           CACTVS               3.341 "N[CH](Cc1c[nH]c2cccc(F)c12)C(O)=O"
+4FW SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc2c(c(c1)F)c(c[nH]2)C[C@@H](C(=O)O)N"
+4FW SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc2c(c(c1)F)c(c[nH]2)CC(C(=O)O)N"
+4FW InChI            InChI                1.03  "InChI=1S/C11H11FN2O2/c12-7-2-1-3-9-10(7)6(5-14-9)4-8(13)11(15)16/h1-3,5,8,14H,4,13H2,(H,15,16)/t8-/m0/s1"
+4FW InChIKey         InChI                1.03  DEBQMEYEKKWIKC-QMMMGPOBSA-N
+4FW ?                acedrg               196         "dictionary generator"                  
+4FW ?                acedrg_database      11          "data source"                           
+4FW ?                rdkit                2017.03.2   "Chemoinformatics tool"
+4FW ?                refmac5              5.8.0222    "optimization tool"                     

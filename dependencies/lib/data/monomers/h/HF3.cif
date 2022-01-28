@@ -1,0 +1,246 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HF3      HF3 'SMALLEST HF-OXO-PHOSPHATE CLUSTER HF' non-polymer        26  19 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HF3
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+ HF3           O4     O    O         0.000   
+ HF3           P      P    P         0.000   
+ HF3           O3     O    O2        0.000   
+ HF3           HFC    HF   HF        0.000   
+ HF3           OAC    O    O2        0.000   
+ HF3           OBC    O    O2        0.000   
+ HF3           OC1    O    OH1       0.000   
+ HF3           HC11   H    H         0.000  
+ HF3           OC2    O    OH1       0.000   
+ HF3           HC21   H    H         0.000   
+ HF3           O00    O    O         0.000   
+ HF3           O1     O    O2        0.000   
+ HF3           HFA    HF   HF        0.000   
+ HF3           OA1    O    OH1       0.000   
+ HF3           HA11   H    H         0.000   
+ HF3           OA2    O    OH1       0.000   
+ HF3           HA21   H    H         0.000  
+ HF3           O2     O    O2        0.000   
+ HF3           HFB    HF   HF        0.000   
+ HF3           OAB    O    O2        0.000   
+ HF3           OB2    O    OH1       0.000   
+ HF3           HB21   H    H         0.000   
+ HF3           OB1    O    OH1       0.000   
+ HF3           HB11   H    H         0.000   
+ HF3           OB3    O    OH1       0.000   
+ HF3           HB31   H    H         0.000  
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HF3      O4     n/a    P      START
+ HF3      P      O4     O2     .
+ HF3      O3     P      HFC    .
+ HF3      HFC    O3     O00    .
+ HF3      OAC    HFC    .      .
+ HF3      OBC    HFC    .      .
+ HF3      OC1    HFC    HC11   .
+ HF3      HC11   OC1    .      .
+ HF3      OC2    HFC    HC21   .
+ HF3      HC21   OC2    .      .
+ HF3      O00    HFC    .      .
+ HF3      O1     P      HFA    .
+ HF3      HFA    O1     OA2    .
+ HF3      OA1    HFA    HA11   .
+ HF3      HA11   OA1    .      .
+ HF3      OA2    HFA    HA21   .
+ HF3      HA21   OA2    .      .
+ HF3      O2     P      HFB    .
+ HF3      HFB    O2     OB3    .
+ HF3      OAB    HFB    .      .
+ HF3      OB2    HFB    HB21   .
+ HF3      HB21   OB2    .      .
+ HF3      OB1    HFB    HB11   .
+ HF3      HB11   OB1    .      .
+ HF3      OB3    HFB    HB31   .
+ HF3      HB31   OB3    .      END
+ HF3      HFA    O00    .    ADD
+ HF3      HFA    OAB    .    ADD
+ HF3      HFA    OAC    .    ADD
+ HF3      O00    HFB    .    ADD
+ HF3      HFB    OBC    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HF3       OB3       HFB       single    1.800     0.020     1.800     0.020     
+HF3       HB31      OB3       single    0.970     0.012     0.839     0.014     
+HF3       OB1       HFB       single    1.800     0.020     1.800     0.020     
+HF3       HB11      OB1       single    0.970     0.012     0.839     0.014     
+HF3       OB2       HFB       single    1.800     0.020     1.800     0.020     
+HF3       HB21      OB2       single    0.970     0.012     0.839     0.014     
+HF3       HFA       O00       single    1.800     0.020     1.800     0.020     
+HF3       HFA       OAB       single    1.800     0.020     1.800     0.020     
+HF3       HFA       OAC       single    1.800     0.020     1.800     0.020     
+HF3       OA2       HFA       single    1.800     0.020     1.800     0.020     
+HF3       OA1       HFA       single    1.800     0.020     1.800     0.020     
+HF3       HFA       O1        single    1.800     0.020     1.800     0.020     
+HF3       O00       HFB       single    1.800     0.020     1.800     0.020     
+HF3       O00       HFC       single    1.800     0.020     1.800     0.020     
+HF3       OAB       HFB       single    1.800     0.020     1.800     0.020     
+HF3       OAC       HFC       single    1.800     0.020     1.800     0.020     
+HF3       HA21      OA2       single    0.970     0.012     0.839     0.014     
+HF3       HA11      OA1       single    0.970     0.012     0.839     0.014     
+HF3       HFB       OBC       single    1.800     0.020     1.800     0.020     
+HF3       HFB       O2        single    1.800     0.020     1.800     0.020     
+HF3       OBC       HFC       single    1.800     0.020     1.800     0.020     
+HF3       OC1       HFC       single    1.800     0.020     1.800     0.020     
+HF3       OC2       HFC       single    1.800     0.020     1.800     0.020     
+HF3       HFC       O3        single    1.800     0.020     1.800     0.020     
+HF3       HC11      OC1       single    0.970     0.012     0.839     0.014     
+HF3       HC21      OC2       single    0.970     0.012     0.839     0.014     
+HF3       O1        P         single    1.610     0.020     1.610     0.020     
+HF3       O2        P         single    1.610     0.020     1.610     0.020     
+HF3       O3        P         single    1.610     0.020     1.610     0.020     
+HF3       P         O4        double    1.480     0.020     1.480     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HF3      O4     P      O3      109.500    3.000
+ HF3      O4     P      O1      109.500    3.000
+ HF3      O4     P      O2      109.500    3.000
+ HF3      O3     P      O1      102.600    3.000
+ HF3      O3     P      O2      102.600    3.000
+ HF3      O1     P      O2      102.600    3.000
+ HF3      P      O3     HFC     120.000    3.000
+ HF3      O3     HFC    OC2      90.000    3.000
+ HF3      O3     HFC    OAC      90.000    3.000
+ HF3      O3     HFC    OBC      90.000    3.000
+ HF3      O3     HFC    OC1      90.000    3.000
+ HF3      O3     HFC    O00      90.000    3.000
+ HF3      OC2    HFC    OAC      90.000    3.000
+ HF3      OC2    HFC    OBC      90.000    3.000
+ HF3      OAC    HFC    OBC      90.000    3.000
+ HF3      OC2    HFC    OC1      90.000    3.000
+ HF3      OAC    HFC    OC1      90.000    3.000
+ HF3      OBC    HFC    OC1      90.000    3.000
+ HF3      OC2    HFC    O00      90.000    3.000
+ HF3      OAC    HFC    O00      90.000    3.000
+ HF3      OBC    HFC    O00      90.000    3.000
+ HF3      OC1    HFC    O00      90.000    3.000
+ HF3      HFC    OC2    HC21    120.000    3.000
+ HF3      HFC    OAC    HFA     120.000    3.000
+ HF3      HFC    OBC    HFB     120.000    3.000
+ HF3      HFC    OC1    HC11    120.000    3.000
+ HF3      HFC    O00    HFA     120.000    3.000
+ HF3      HFC    O00    HFB     120.000    3.000
+ HF3      HFA    O00    HFB     120.000    3.000
+ HF3      P      O1     HFA     120.000    3.000
+ HF3      O1     HFA    OA1      90.000    3.000
+ HF3      O1     HFA    OA2      90.000    3.000
+ HF3      O1     HFA    O00      90.000    3.000
+ HF3      O1     HFA    OAB      90.000    3.000
+ HF3      O1     HFA    OAC      90.000    3.000
+ HF3      OA1    HFA    OA2      90.000    3.000
+ HF3      O00    HFA    OAB      90.000    3.000
+ HF3      O00    HFA    OAC      90.000    3.000
+ HF3      OAB    HFA    OAC      90.000    3.000
+ HF3      OA1    HFA    O00      90.000    3.000
+ HF3      OA2    HFA    O00      90.000    3.000
+ HF3      OA1    HFA    OAB      90.000    3.000
+ HF3      OA2    HFA    OAB      90.000    3.000
+ HF3      OA1    HFA    OAC      90.000    3.000
+ HF3      OA2    HFA    OAC      90.000    3.000
+ HF3      HFA    OA1    HA11    120.000    3.000
+ HF3      HFA    OA2    HA21    120.000    3.000
+ HF3      P      O2     HFB     120.000    3.000
+ HF3      O2     HFB    OAB      90.000    3.000
+ HF3      O2     HFB    OB2      90.000    3.000
+ HF3      O2     HFB    OB1      90.000    3.000
+ HF3      O2     HFB    OB3      90.000    3.000
+ HF3      O2     HFB    O00      90.000    3.000
+ HF3      O2     HFB    OBC      90.000    3.000
+ HF3      OAB    HFB    OB2      90.000    3.000
+ HF3      OAB    HFB    OB1      90.000    3.000
+ HF3      OB2    HFB    OB1      90.000    3.000
+ HF3      OAB    HFB    OB3      90.000    3.000
+ HF3      OB2    HFB    OB3      90.000    3.000
+ HF3      OB1    HFB    OB3      90.000    3.000
+ HF3      O00    HFB    OBC      90.000    3.000
+ HF3      OAB    HFB    O00      90.000    3.000
+ HF3      OB2    HFB    O00      90.000    3.000
+ HF3      OB1    HFB    O00      90.000    3.000
+ HF3      OB3    HFB    O00      90.000    3.000
+ HF3      OAB    HFB    OBC      90.000    3.000
+ HF3      OB2    HFB    OBC      90.000    3.000
+ HF3      OB1    HFB    OBC      90.000    3.000
+ HF3      OB3    HFB    OBC      90.000    3.000
+ HF3      HFB    OAB    HFA     120.000    3.000
+ HF3      HFB    OB2    HB21    120.000    3.000
+ HF3      HFB    OB1    HB11    120.000    3.000
+ HF3      HFB    OB3    HB31    120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HF3      var_1    O4     P      O3     HFC        0.000   20.000   1
+ HF3      var_2    P      O3     HFC    O00        0.000   20.000   1
+ HF3      var_3    O3     HFC    OC2    HC21       0.000   20.000   1
+ HF3      var_4    O3     HFC    OAC    HFA        0.000   20.000   1
+ HF3      var_5    O3     HFC    OBC    HFB        0.000   20.000   1
+ HF3      var_6    O3     HFC    OC1    HC11       0.000   20.000   1
+ HF3      var_7    O3     HFC    O00    HFA        0.000   20.000   1
+ HF3      var_8    HFC    O00    HFB    O2         0.000   20.000   1
+ HF3      var_9    O4     P      O1     HFA        0.000   20.000   1
+ HF3      var_10   P      O1     HFA    OA2        0.000   20.000   1
+ HF3      var_11   O1     HFA    O00    HFC        0.000   20.000   1
+ HF3      var_12   O1     HFA    OAB    HFB        0.000   20.000   1
+ HF3      var_13   O1     HFA    OAC    HFC        0.000   20.000   1
+ HF3      var_14   O1     HFA    OA1    HA11       0.000   20.000   1
+ HF3      var_15   O1     HFA    OA2    HA21       0.000   20.000   1
+ HF3      var_16   O4     P      O2     HFB        0.000   20.000   1
+ HF3      var_17   P      O2     HFB    OB3        0.000   20.000   1
+ HF3      var_18   O2     HFB    OBC    HFC        0.000   20.000   1
+ HF3      var_19   O2     HFB    OAB    HFA        0.000   20.000   1
+ HF3      var_20   O2     HFB    OB2    HB21       0.000   20.000   1
+ HF3      var_21   O2     HFB    OB1    HB11       0.000   20.000   1
+ HF3      var_22   O2     HFB    OB3    HB31       0.000   20.000   1
+# ------------------------------------------------------

@@ -1,0 +1,257 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CR1      CR1 '1-DEOXY-1-METHOXYCARBAMIDO-BETA-D-GL' pyranose           31  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CR1
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CR1           C1     C    CH1       0.000      0.000    0.000    0.000
+ CR1           H11    H    H         0.000      0.139   -1.090    0.017
+ CR1           N2     N    NH1       0.000      0.398    0.561    1.293
+ CR1           H1N2   H    H         0.000     -0.048    1.399    1.638
+ CR1           C7     C    C         0.000      1.358   -0.040    2.023
+ CR1           O8     O    O2        0.000      1.723    0.475    3.211
+ CR1           C8     C    CH3       0.000      2.756   -0.172    3.998
+ CR1           H83    H    H         0.000      2.461   -1.164    4.234
+ CR1           H82    H    H         0.000      3.663   -0.201    3.447
+ CR1           H81    H    H         0.000      2.913    0.367    4.899
+ CR1           O7     O    O         0.000      1.893   -1.048    1.608
+ CR1           O5     O    O2        0.000      0.808    0.563   -1.030
+ CR1           C5     C    CH1       0.000      0.517   -0.135   -2.239
+ CR1           H51    H    H         0.000      0.621   -1.216   -2.069
+ CR1           C6     C    CH2       0.000      1.495    0.305   -3.330
+ CR1           H61    H    H         0.000      1.392    1.379   -3.498
+ CR1           H62    H    H         0.000      1.272   -0.230   -4.255
+ CR1           O6     O    OH1       0.000      2.831    0.012   -2.919
+ CR1           H1O6   H    H         0.000      3.449    0.291   -3.608
+ CR1           C4     C    CH1       0.000     -0.914    0.173   -2.684
+ CR1           H41    H    H         0.000     -1.027    1.256   -2.831
+ CR1           O4     O    OH1       0.000     -1.190   -0.507   -3.911
+ CR1           H1O4   H    H         0.000     -2.094   -0.310   -4.191
+ CR1           C3     C    CH1       0.000     -1.887   -0.302   -1.601
+ CR1           H31    H    H         0.000     -1.850   -1.397   -1.526
+ CR1           O3     O    OH1       0.000     -3.214    0.112   -1.935
+ CR1           H1O3   H    H         0.000     -3.826   -0.189   -1.250
+ CR1           C2     C    CH1       0.000     -1.472    0.320   -0.263
+ CR1           H21    H    H         0.000     -1.610    1.410   -0.305
+ CR1           O2     O    OH1       0.000     -2.275   -0.222    0.786
+ CR1           H1O2   H    H         0.000     -2.011    0.171    1.628
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CR1      C1     n/a    O5     START
+ CR1      H11    C1     .      .
+ CR1      N2     C1     C7     .
+ CR1      H1N2   N2     .      .
+ CR1      C7     N2     O7     .
+ CR1      O8     C7     C8     .
+ CR1      C8     O8     H81    .
+ CR1      H83    C8     .      .
+ CR1      H82    C8     .      .
+ CR1      H81    C8     .      .
+ CR1      O7     C7     .      .
+ CR1      O5     C1     .      END
+ CR1      C5     O5     C4     .
+ CR1      H51    C5     .      .
+ CR1      C6     C5     O6     .
+ CR1      H61    C6     .      .
+ CR1      H62    C6     .      .
+ CR1      O6     C6     H1O6   .
+ CR1      H1O6   O6     .      .
+ CR1      C4     C5     C3     .
+ CR1      H41    C4     .      .
+ CR1      O4     C4     H1O4   .
+ CR1      H1O4   O4     .      .
+ CR1      C3     C4     C2     .
+ CR1      H31    C3     .      .
+ CR1      O3     C3     H1O3   .
+ CR1      H1O3   O3     .      .
+ CR1      C2     C3     O2     .
+ CR1      H21    C2     .      .
+ CR1      O2     C2     H1O2   .
+ CR1      H1O2   O2     .      .
+ CR1      C2     C1     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CR1       O2        C2        single    1.432     0.020     1.432     0.020     
+CR1       C2        C1        single    1.524     0.020     1.524     0.020     
+CR1       C2        C3        single    1.524     0.020     1.524     0.020     
+CR1       H21       C2        single    1.089     0.010     0.989     0.005     
+CR1       H1O2      O2        single    0.970     0.012     0.839     0.014     
+CR1       C4        C5        single    1.524     0.020     1.524     0.020     
+CR1       C3        C4        single    1.524     0.020     1.524     0.020     
+CR1       O4        C4        single    1.432     0.020     1.432     0.020     
+CR1       H41       C4        single    1.089     0.010     0.989     0.005     
+CR1       C6        C5        single    1.524     0.020     1.524     0.020     
+CR1       C5        O5        single    1.426     0.020     1.426     0.020     
+CR1       H51       C5        single    1.089     0.010     0.989     0.005     
+CR1       O6        C6        single    1.432     0.020     1.432     0.020     
+CR1       H61       C6        single    1.089     0.010     0.989     0.005     
+CR1       H62       C6        single    1.089     0.010     0.989     0.005     
+CR1       O5        C1        single    1.426     0.020     1.426     0.020     
+CR1       N2        C1        single    1.450     0.020     1.450     0.020     
+CR1       H11       C1        single    1.089     0.010     0.989     0.005     
+CR1       O3        C3        single    1.432     0.020     1.432     0.020     
+CR1       H31       C3        single    1.089     0.010     0.989     0.005     
+CR1       H1O3      O3        single    0.970     0.012     0.839     0.014     
+CR1       H1O4      O4        single    0.970     0.012     0.839     0.014     
+CR1       C7        N2        single    1.330     0.020     1.330     0.020     
+CR1       H1N2      N2        single    1.016     0.010     0.899     0.007     
+CR1       H1O6      O6        single    0.970     0.012     0.839     0.014     
+CR1       O7        C7        double    1.220     0.020     1.220     0.020     
+CR1       O8        C7        single    1.454     0.020     1.454     0.020     
+CR1       C8        O8        single    1.426     0.020     1.426     0.020     
+CR1       H81       C8        single    1.089     0.010     0.989     0.005     
+CR1       H82       C8        single    1.089     0.010     0.989     0.005     
+CR1       H83       C8        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CR1      H11    C1     N2      108.550    3.000
+ CR1      H11    C1     O5      109.470    3.000
+ CR1      N2     C1     O5      109.500    3.000
+ CR1      H11    C1     C2      108.340    3.000
+ CR1      N2     C1     C2      110.000    3.000
+ CR1      O5     C1     C2      109.470    3.000
+ CR1      C1     N2     H1N2    118.500    3.000
+ CR1      C1     N2     C7      121.500    3.000
+ CR1      H1N2   N2     C7      120.000    3.000
+ CR1      N2     C7     O8      118.000    3.000
+ CR1      N2     C7     O7      123.000    3.000
+ CR1      O8     C7     O7      119.000    3.000
+ CR1      C7     O8     C8      120.000    3.000
+ CR1      O8     C8     H83     109.470    3.000
+ CR1      O8     C8     H82     109.470    3.000
+ CR1      O8     C8     H81     109.470    3.000
+ CR1      H83    C8     H82     109.470    3.000
+ CR1      H83    C8     H81     109.470    3.000
+ CR1      H82    C8     H81     109.470    3.000
+ CR1      C1     O5     C5      111.800    3.000
+ CR1      O5     C5     H51     109.470    3.000
+ CR1      O5     C5     C6      109.470    3.000
+ CR1      O5     C5     C4      109.470    3.000
+ CR1      H51    C5     C6      108.340    3.000
+ CR1      H51    C5     C4      108.340    3.000
+ CR1      C6     C5     C4      111.000    3.000
+ CR1      C5     C6     H61     109.470    3.000
+ CR1      C5     C6     H62     109.470    3.000
+ CR1      C5     C6     O6      109.470    3.000
+ CR1      H61    C6     H62     107.900    3.000
+ CR1      H61    C6     O6      109.470    3.000
+ CR1      H62    C6     O6      109.470    3.000
+ CR1      C6     O6     H1O6    109.470    3.000
+ CR1      C5     C4     H41     108.340    3.000
+ CR1      C5     C4     O4      109.470    3.000
+ CR1      C5     C4     C3      111.000    3.000
+ CR1      H41    C4     O4      109.470    3.000
+ CR1      H41    C4     C3      108.340    3.000
+ CR1      O4     C4     C3      109.470    3.000
+ CR1      C4     O4     H1O4    109.470    3.000
+ CR1      C4     C3     H31     108.340    3.000
+ CR1      C4     C3     O3      109.470    3.000
+ CR1      C4     C3     C2      111.000    3.000
+ CR1      H31    C3     O3      109.470    3.000
+ CR1      H31    C3     C2      108.340    3.000
+ CR1      O3     C3     C2      109.470    3.000
+ CR1      C3     O3     H1O3    109.470    3.000
+ CR1      C3     C2     H21     108.340    3.000
+ CR1      C3     C2     O2      109.470    3.000
+ CR1      C3     C2     C1      111.000    3.000
+ CR1      H21    C2     O2      109.470    3.000
+ CR1      H21    C2     C1      108.340    3.000
+ CR1      O2     C2     C1      109.470    3.000
+ CR1      C2     O2     H1O2    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CR1      var_1    O5     C1     N2     C7       -89.780   20.000   3
+ CR1      CONST_1  C1     N2     C7     O7         0.000    0.000   0
+ CR1      var_2    N2     C7     O8     C8       179.941   20.000   1
+ CR1      var_3    C7     O8     C8     H81     -179.994   20.000   1
+ CR1      var_4    C1     O5     C5     C4        60.000   20.000   1
+ CR1      var_5    O5     C5     C6     O6        59.920   20.000   3
+ CR1      var_6    C5     C6     O6     H1O6    -179.951   20.000   1
+ CR1      var_7    O5     C5     C4     C3       -60.000   20.000   3
+ CR1      var_8    C5     C4     O4     H1O4    -179.955   20.000   1
+ CR1      var_9    C5     C4     C3     C2        60.000   20.000   3
+ CR1      var_10   C4     C3     O3     H1O3     179.987   20.000   1
+ CR1      var_11   C4     C3     C2     O2       180.000   20.000   3
+ CR1      var_12   C3     C2     C1     O5        60.000   20.000   3
+ CR1      var_13   C3     C2     O2     H1O2     179.971   20.000   1
+ CR1      var_1    C2     C1     O5     C5       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CR1      chir_01  C2     O2     C1     C3        negativ
+ CR1      chir_02  C4     C5     C3     O4        positiv
+ CR1      chir_03  C5     C4     C6     O5        negativ
+ CR1      chir_04  C1     C2     O5     N2        negativ
+ CR1      chir_05  C3     C2     C4     O3        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CR1      plan-1    N2        0.020
+ CR1      plan-1    C1        0.020
+ CR1      plan-1    C7        0.020
+ CR1      plan-1    H1N2      0.020
+ CR1      plan-2    C7        0.020
+ CR1      plan-2    N2        0.020
+ CR1      plan-2    O7        0.020
+ CR1      plan-2    O8        0.020
+ CR1      plan-2    H1N2      0.020
+# ------------------------------------------------------

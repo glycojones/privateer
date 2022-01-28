@@ -1,0 +1,136 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+E5U     E5U      "2-methoxypropanedioic acid"     non-polymer     13     9     .     
+#
+data_comp_E5U
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+E5U     C1      C       C       0       1.637       -0.899      -0.578      
+E5U     C2      C       CH1     0       0.454       0.004       -0.237      
+E5U     O6      O       O       0       1.151       0.728       1.910       
+E5U     C3      C       C       0       0.874       1.089       0.752       
+E5U     O7      O       OC      -1      1.972       -1.745      0.271       
+E5U     O8      O       O       0       2.187       -0.727      -1.682      
+E5U     O4      O       O2      0       -0.618      -0.771      0.288       
+E5U     C41     C       CH3     0       -1.918      -0.225      0.044       
+E5U     O5      O       OC      -1      0.910       2.259       0.332       
+E5U     H1      H       H       0       0.145       0.448       -1.079      
+E5U     H4      H       H       0       -2.583      -0.761      0.505       
+E5U     H5      H       H       0       -2.100      -0.235      -0.910      
+E5U     H6      H       H       0       -1.956      0.688       0.372       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+E5U       O4        C41       SINGLE    n         1.426     0.0147    1.426     0.0147    
+E5U       C2        O4        SINGLE    n         1.421     0.0100    1.421     0.0100    
+E5U       C2        C3        SINGLE    n         1.526     0.0200    1.526     0.0200    
+E5U       C1        C2        SINGLE    n         1.526     0.0200    1.526     0.0200    
+E5U       O6        C3        DOUBLE    n         1.244     0.0200    1.244     0.0200    
+E5U       C1        O8        DOUBLE    n         1.244     0.0200    1.244     0.0200    
+E5U       C1        O7        SINGLE    n         1.244     0.0200    1.244     0.0200    
+E5U       C3        O5        SINGLE    n         1.244     0.0200    1.244     0.0200    
+E5U       C2        H1        SINGLE    n         1.089     0.010     0.989     0.005     
+E5U       C41       H4        SINGLE    n         1.089     0.010     0.989     0.005     
+E5U       C41       H5        SINGLE    n         1.089     0.010     0.989     0.005     
+E5U       C41       H6        SINGLE    n         1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+E5U          C2          C1          O8     117.233    1.50
+E5U          C2          C1          O7     117.233    1.50
+E5U          O8          C1          O7     125.534    1.50
+E5U          O4          C2          C3     110.427    2.31
+E5U          O4          C2          C1     110.427    2.31
+E5U          O4          C2          H1     108.104    1.50
+E5U          C3          C2          C1     111.575    3.00
+E5U          C3          C2          H1     108.456    1.50
+E5U          C1          C2          H1     108.456    1.50
+E5U          C2          C3          O6     117.233    1.50
+E5U          C2          C3          O5     117.233    1.50
+E5U          O6          C3          O5     125.534    1.50
+E5U         C41          O4          C2     113.018    1.50
+E5U          O4         C41          H4     109.461    1.50
+E5U          O4         C41          H5     109.461    1.50
+E5U          O4         C41          H6     109.461    1.50
+E5U          H4         C41          H5     109.532    1.53
+E5U          H4         C41          H6     109.532    1.53
+E5U          H5         C41          H6     109.532    1.53
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+E5U             sp2_sp3_8          O8          C1          C2          O4     120.000   10.00     6
+E5U             sp2_sp3_1          O6          C3          C2          O4       0.000   10.00     6
+E5U             sp3_sp3_5          C3          C2          O4         C41      60.000   10.00     3
+E5U             sp3_sp3_1          H4         C41          O4          C2     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+E5U    chir_1    C2    O4    C3    C1    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+E5U    plan-1          C1   0.020
+E5U    plan-1          C2   0.020
+E5U    plan-1          O7   0.020
+E5U    plan-1          O8   0.020
+E5U    plan-2          C2   0.020
+E5U    plan-2          C3   0.020
+E5U    plan-2          O5   0.020
+E5U    plan-2          O6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+E5U            InChI                InChI  1.03 InChI=1S/C4H6O5/c1-9-2(3(5)6)4(7)8/h2H,1H3,(H,5,6)(H,7,8)
+E5U         InChIKey                InChI  1.03                               VLDSMCHWNWDAKQ-UHFFFAOYSA-N
+E5U SMILES_CANONICAL               CACTVS 3.385                                         COC(C(O)=O)C(O)=O
+E5U           SMILES               CACTVS 3.385                                         COC(C(O)=O)C(O)=O
+E5U SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                         COC(C(=O)O)C(=O)O
+E5U           SMILES "OpenEye OEToolkits" 2.0.7                                         COC(C(=O)O)C(=O)O
+E5U ?                acedrg               217         "dictionary generator"                  
+E5U ?                acedrg_database      11          "data source"                           
+E5U ?                rdkit                2017.03.2   "Chemoinformatics tool"
+E5U ?                refmac5              5.8.0253    "optimization tool"                     

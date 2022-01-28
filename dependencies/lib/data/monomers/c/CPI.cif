@@ -1,0 +1,190 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CPI      CPI '6-CARBOXYPIPERIDINE                 ' non-polymer        19   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CPI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CPI           OXT    O    OC       -0.500      0.000    0.000    0.000
+ CPI           C      C    C         0.000     -1.042   -0.586   -0.369
+ CPI           O      O    OC       -0.500     -0.976   -1.502   -1.219
+ CPI           CA     C    CH1       0.000     -2.375   -0.188    0.209
+ CPI           HA     H    H         0.000     -2.264    0.012    1.284
+ CPI           N      N    NH1       0.000     -3.338   -1.278    0.011
+ CPI           H      H    H         0.000     -3.130   -2.144   -0.466
+ CPI           CB     C    CH2       0.000     -2.880    1.074   -0.495
+ CPI           HB2    H    H         0.000     -2.977    0.882   -1.565
+ CPI           HB3    H    H         0.000     -2.170    1.889   -0.335
+ CPI           CG     C    CH2       0.000     -4.244    1.463    0.082
+ CPI           HG2    H    H         0.000     -4.628    2.339   -0.446
+ CPI           HG3    H    H         0.000     -4.140    1.696    1.143
+ CPI           CD     C    CH2       0.000     -5.216    0.293   -0.094
+ CPI           HD2    H    H         0.000     -5.351    0.088   -1.158
+ CPI           HD3    H    H         0.000     -6.179    0.548    0.352
+ CPI           CE     C    CH2       0.000     -4.644   -0.947    0.598
+ CPI           HE3    H    H         0.000     -5.329   -1.787    0.462
+ CPI           HE2    H    H         0.000     -4.524   -0.745    1.664
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CPI      OXT    n/a    C      START
+ CPI      C      OXT    CA     .
+ CPI      O      C      .      .
+ CPI      CA     C      CB     .
+ CPI      HA     CA     .      .
+ CPI      N      CA     H      .
+ CPI      H      N      .      .
+ CPI      CB     CA     CG     .
+ CPI      HB2    CB     .      .
+ CPI      HB3    CB     .      .
+ CPI      CG     CB     CD     .
+ CPI      HG2    CG     .      .
+ CPI      HG3    CG     .      .
+ CPI      CD     CG     CE     .
+ CPI      HD2    CD     .      .
+ CPI      HD3    CD     .      .
+ CPI      CE     CD     HE2    .
+ CPI      HE3    CE     .      .
+ CPI      HE2    CE     .      END
+ CPI      N      CE     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CPI       N         CE        single    1.450     0.020     1.450     0.020     
+CPI       N         CA        single    1.450     0.020     1.450     0.020     
+CPI       H         N         single    1.036     0.016     0.914     0.007     
+CPI       CE        CD        single    1.524     0.020     1.524     0.020     
+CPI       HE2       CE        single    1.089     0.010     0.989     0.005     
+CPI       HE3       CE        single    1.089     0.010     0.989     0.005     
+CPI       CD        CG        single    1.524     0.020     1.524     0.020     
+CPI       HD2       CD        single    1.089     0.010     0.989     0.005     
+CPI       HD3       CD        single    1.089     0.010     0.989     0.005     
+CPI       CG        CB        single    1.524     0.020     1.524     0.020     
+CPI       HG2       CG        single    1.089     0.010     0.989     0.005     
+CPI       HG3       CG        single    1.089     0.010     0.989     0.005     
+CPI       CB        CA        single    1.524     0.020     1.524     0.020     
+CPI       HB2       CB        single    1.089     0.010     0.989     0.005     
+CPI       HB3       CB        single    1.089     0.010     0.989     0.005     
+CPI       CA        C         single    1.500     0.020     1.500     0.020     
+CPI       HA        CA        single    1.089     0.010     0.989     0.005     
+CPI       O         C         deloc     1.250     0.020     1.250     0.020     
+CPI       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CPI      OXT    C      O       123.000    3.000
+ CPI      OXT    C      CA      118.500    3.000
+ CPI      O      C      CA      118.500    3.000
+ CPI      C      CA     HA      108.810    3.000
+ CPI      C      CA     N       111.600    3.000
+ CPI      C      CA     CB      109.470    3.000
+ CPI      HA     CA     N       108.550    3.000
+ CPI      HA     CA     CB      108.340    3.000
+ CPI      N      CA     CB      110.000    3.000
+ CPI      CA     N      H       118.500    3.000
+ CPI      CA     N      CE      120.000    3.000
+ CPI      H      N      CE      118.500    3.000
+ CPI      CA     CB     HB2     109.470    3.000
+ CPI      CA     CB     HB3     109.470    3.000
+ CPI      CA     CB     CG      111.000    3.000
+ CPI      HB2    CB     HB3     107.900    3.000
+ CPI      HB2    CB     CG      109.470    3.000
+ CPI      HB3    CB     CG      109.470    3.000
+ CPI      CB     CG     HG2     109.470    3.000
+ CPI      CB     CG     HG3     109.470    3.000
+ CPI      CB     CG     CD      111.000    3.000
+ CPI      HG2    CG     HG3     107.900    3.000
+ CPI      HG2    CG     CD      109.470    3.000
+ CPI      HG3    CG     CD      109.470    3.000
+ CPI      CG     CD     HD2     109.470    3.000
+ CPI      CG     CD     HD3     109.470    3.000
+ CPI      CG     CD     CE      111.000    3.000
+ CPI      HD2    CD     HD3     107.900    3.000
+ CPI      HD2    CD     CE      109.470    3.000
+ CPI      HD3    CD     CE      109.470    3.000
+ CPI      CD     CE     HE3     109.470    3.000
+ CPI      CD     CE     HE2     109.470    3.000
+ CPI      CD     CE     N       112.000    3.000
+ CPI      HE3    CE     HE2     107.900    3.000
+ CPI      HE3    CE     N       109.470    3.000
+ CPI      HE2    CE     N       109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CPI      var_1    OXT    C      CA     CB        79.933   20.000   3
+ CPI      var_2    C      CA     N      CE       180.000   20.000   3
+ CPI      var_3    CA     N      CE     CD        60.000   20.000   3
+ CPI      var_4    C      CA     CB     CG       180.000   20.000   3
+ CPI      var_5    CA     CB     CG     CD       -60.000   20.000   3
+ CPI      var_6    CB     CG     CD     CE        60.000   20.000   3
+ CPI      var_7    CG     CD     CE     N        -60.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CPI      chir_01  CA     N      CB     C         positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CPI      plan-1    N         0.020
+ CPI      plan-1    CE        0.020
+ CPI      plan-1    CA        0.020
+ CPI      plan-1    H         0.020
+ CPI      plan-2    C         0.020
+ CPI      plan-2    CA        0.020
+ CPI      plan-2    O         0.020
+ CPI      plan-2    OXT       0.020
+# ------------------------------------------------------

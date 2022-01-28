@@ -1,0 +1,337 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NMT      NMT '1-(O2-(METHYLCARBAMOYL)-O5-HYDROXYPH' DNA                44  26 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NMT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NMT           OP3    O    OP       -0.666      0.000    0.000    0.000
+ NMT           P      P    P         0.000      0.523   -0.307    1.386
+ NMT           OP2    O    OP       -0.666      0.612   -1.818    1.396
+ NMT           OP1    O    OP       -0.666      1.799    0.410    1.770
+ NMT           "O5'"  O    O2        0.000     -0.743   -0.012    2.350
+ NMT           "C5'"  C    CH2       0.000     -1.976   -0.647    2.059
+ NMT           "H5'"  H    H         0.000     -1.852   -1.731    2.097
+ NMT           "H5''" H    H         0.000     -2.317   -0.355    1.064
+ NMT           "C4'"  C    CH1       0.000     -3.003   -0.214    3.098
+ NMT           "H4'"  H    H         0.000     -2.642   -0.465    4.105
+ NMT           "O4'"  O    O2        0.000     -3.185    1.214    2.984
+ NMT           "C1'"  C    CH1       0.000     -4.481    1.481    2.422
+ NMT           "H1'"  H    H         0.000     -5.148    1.872    3.203
+ NMT           N1     N    NR6       0.000     -4.344    2.453    1.375
+ NMT           C2     C    CR6       0.000     -5.369    3.385    1.101
+ NMT           O2     O    O         0.000     -6.431    3.437    1.723
+ NMT           N3     N    NR16      0.000     -5.100    4.272    0.053
+ NMT           HN3    H    H         0.000     -5.841    4.968   -0.168
+ NMT           C4     C    CR6       0.000     -3.952    4.324   -0.723
+ NMT           O4     O    O         0.000     -3.782    5.134   -1.631
+ NMT           C5     C    CR6       0.000     -2.919    3.312   -0.377
+ NMT           C5M    C    CH3       0.000     -1.651    3.303   -1.169
+ NMT           H73    H    H         0.000     -1.658    4.112   -1.851
+ NMT           H72    H    H         0.000     -0.827    3.399   -0.513
+ NMT           H71    H    H         0.000     -1.577    2.391   -1.701
+ NMT           C6     C    CR16      0.000     -3.173    2.461    0.626
+ NMT           H6     H    H         0.000     -2.413    1.729    0.869
+ NMT           "C3'"  C    CH1       0.000     -4.379   -0.830    2.876
+ NMT           "H3'"  H    H         0.000     -4.314   -1.841    2.449
+ NMT           "C2'"  C    CH1       0.000     -5.014    0.152    1.915
+ NMT           "H2'"  H    H         0.000     -4.647   -0.033    0.895
+ NMT           "O6'"  O    O2        0.000     -6.425    0.088    1.937
+ NMT           "C7'"  C    CH1       0.000     -6.961   -0.820    0.960
+ NMT           "H7'"  H    H         0.000     -6.651   -0.470   -0.035
+ NMT           "O7'"  O    OH1       0.000     -6.429   -2.130    1.152
+ NMT           H1     H    H         0.000     -7.001   -2.624    1.755
+ NMT           "N8'"  N    NH1       0.000     -8.425   -0.808    1.009
+ NMT           "H8'"  H    H         0.000     -8.989   -1.628    1.178
+ NMT           "C9'"  C    CH3       0.000     -8.975    0.522    0.786
+ NMT           "H9'3" H    H         0.000     -8.361    1.050    0.103
+ NMT           "H9'2" H    H         0.000     -9.953    0.439    0.387
+ NMT           "H9'1" H    H         0.000     -9.013    1.049    1.704
+ NMT           "O3'"  O    OH1       0.000     -5.071   -0.820    4.124
+ NMT           "HO3'" H    H         0.000     -4.583   -0.214    4.703
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NMT      OP3    n/a    P      START
+ NMT      P      OP3    "O5'"  .
+ NMT      OP2    P      .      .
+ NMT      OP1    P      .      .
+ NMT      "O5'"  P      "C5'"  .
+ NMT      "C5'"  "O5'"  "C4'"  .
+ NMT      "H5'"  "C5'"  .      .
+ NMT      "H5''" "C5'"  .      .
+ NMT      "C4'"  "C5'"  "C3'"  .
+ NMT      "H4'"  "C4'"  .      .
+ NMT      "O4'"  "C4'"  "C1'"  .
+ NMT      "C1'"  "O4'"  N1     .
+ NMT      "H1'"  "C1'"  .      .
+ NMT      N1     "C1'"  C2     .
+ NMT      C2     N1     N3     .
+ NMT      O2     C2     .      .
+ NMT      N3     C2     C4     .
+ NMT      HN3    N3     .      .
+ NMT      C4     N3     C5     .
+ NMT      O4     C4     .      .
+ NMT      C5     C4     C6     .
+ NMT      C5M    C5     H71    .
+ NMT      H73    C5M    .      .
+ NMT      H72    C5M    .      .
+ NMT      H71    C5M    .      .
+ NMT      C6     C5     H6     .
+ NMT      H6     C6     .      .
+ NMT      "C3'"  "C4'"  "O3'"  .
+ NMT      "H3'"  "C3'"  .      .
+ NMT      "C2'"  "C3'"  "O6'"  .
+ NMT      "H2'"  "C2'"  .      .
+ NMT      "O6'"  "C2'"  "C7'"  .
+ NMT      "C7'"  "O6'"  "N8'"  .
+ NMT      "H7'"  "C7'"  .      .
+ NMT      "O7'"  "C7'"  H1     .
+ NMT      H1     "O7'"  .      .
+ NMT      "N8'"  "C7'"  "C9'"  .
+ NMT      "H8'"  "N8'"  .      .
+ NMT      "C9'"  "N8'"  "H9'1" .
+ NMT      "H9'3" "C9'"  .      .
+ NMT      "H9'2" "C9'"  .      .
+ NMT      "H9'1" "C9'"  .      .
+ NMT      "O3'"  "C3'"  .      END
+ NMT      "HO3'" "O3'"  .      .
+ NMT      N1     C6     .    ADD
+ NMT      "C2'"  "C1'"  .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NMT       P         OP3       deloc     1.510     0.020     1.510     0.020     
+NMT       OP2       P         deloc     1.510     0.020     1.510     0.020     
+NMT       "O5'"     P         single    1.610     0.020     1.610     0.020     
+NMT       OP1       P         deloc     1.510     0.020     1.510     0.020     
+NMT       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+NMT       N1        C6        single    1.337     0.020     1.337     0.020     
+NMT       C2        N1        single    1.410     0.020     1.410     0.020     
+NMT       N1        "C1'"     single    1.465     0.020     1.465     0.020     
+NMT       C6        C5        double    1.390     0.020     1.390     0.020     
+NMT       H6        C6        single    1.082     0.013     0.975     0.010     
+NMT       O2        C2        double    1.250     0.020     1.250     0.020     
+NMT       N3        C2        single    1.337     0.020     1.337     0.020     
+NMT       C4        N3        single    1.337     0.020     1.337     0.020     
+NMT       HN3       N3        single    1.016     0.010     0.899     0.007     
+NMT       O4        C4        double    1.250     0.020     1.250     0.020     
+NMT       C5        C4        single    1.487     0.020     1.487     0.020     
+NMT       C5M       C5        single    1.506     0.020     1.506     0.020     
+NMT       H71       C5M       single    1.089     0.010     0.989     0.005     
+NMT       H72       C5M       single    1.089     0.010     0.989     0.005     
+NMT       H73       C5M       single    1.089     0.010     0.989     0.005     
+NMT       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+NMT       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+NMT       "O6'"     "C2'"     single    1.426     0.020     1.426     0.020     
+NMT       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+NMT       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+NMT       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+NMT       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+NMT       "O4'"     "C4'"     single    1.426     0.020     1.426     0.020     
+NMT       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+NMT       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+NMT       "C1'"     "O4'"     single    1.426     0.020     1.426     0.020     
+NMT       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+NMT       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+NMT       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+NMT       "HO3'"    "O3'"     single    0.970     0.012     0.839     0.014     
+NMT       "C7'"     "O6'"     single    1.426     0.020     1.426     0.020     
+NMT       "N8'"     "C7'"     single    1.450     0.020     1.450     0.020     
+NMT       "O7'"     "C7'"     single    1.432     0.020     1.432     0.020     
+NMT       "H7'"     "C7'"     single    1.089     0.010     0.989     0.005     
+NMT       "C9'"     "N8'"     single    1.450     0.020     1.450     0.020     
+NMT       "H8'"     "N8'"     single    1.036     0.016     0.914     0.007     
+NMT       "H9'1"    "C9'"     single    1.089     0.010     0.989     0.005     
+NMT       "H9'2"    "C9'"     single    1.089     0.010     0.989     0.005     
+NMT       "H9'3"    "C9'"     single    1.089     0.010     0.989     0.005     
+NMT       H1        "O7'"     single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NMT      OP3    P      OP2     119.900    3.000
+ NMT      OP3    P      OP1     119.900    3.000
+ NMT      OP3    P      "O5'"   108.200    3.000
+ NMT      OP2    P      OP1     119.900    3.000
+ NMT      OP2    P      "O5'"   108.200    3.000
+ NMT      OP1    P      "O5'"   108.200    3.000
+ NMT      P      "O5'"  "C5'"   120.500    3.000
+ NMT      "O5'"  "C5'"  "H5'"   109.470    3.000
+ NMT      "O5'"  "C5'"  "H5''"  109.470    3.000
+ NMT      "O5'"  "C5'"  "C4'"   109.470    3.000
+ NMT      "H5'"  "C5'"  "H5''"  107.900    3.000
+ NMT      "H5'"  "C5'"  "C4'"   109.470    3.000
+ NMT      "H5''" "C5'"  "C4'"   109.470    3.000
+ NMT      "C5'"  "C4'"  "H4'"   108.340    3.000
+ NMT      "C5'"  "C4'"  "O4'"   109.470    3.000
+ NMT      "C5'"  "C4'"  "C3'"   111.000    3.000
+ NMT      "H4'"  "C4'"  "O4'"   109.470    3.000
+ NMT      "H4'"  "C4'"  "C3'"   108.340    3.000
+ NMT      "O4'"  "C4'"  "C3'"   109.470    3.000
+ NMT      "C4'"  "O4'"  "C1'"   111.800    3.000
+ NMT      "O4'"  "C1'"  "H1'"   109.470    3.000
+ NMT      "O4'"  "C1'"  N1      109.470    3.000
+ NMT      "O4'"  "C1'"  "C2'"   109.470    3.000
+ NMT      "H1'"  "C1'"  N1      109.470    3.000
+ NMT      "H1'"  "C1'"  "C2'"   108.340    3.000
+ NMT      N1     "C1'"  "C2'"   109.470    3.000
+ NMT      "C1'"  N1     C2      120.000    3.000
+ NMT      "C1'"  N1     C6      120.000    3.000
+ NMT      C2     N1     C6      120.000    3.000
+ NMT      N1     C2     O2      120.000    3.000
+ NMT      N1     C2     N3      120.000    3.000
+ NMT      O2     C2     N3      120.000    3.000
+ NMT      C2     N3     HN3     120.000    3.000
+ NMT      C2     N3     C4      120.000    3.000
+ NMT      HN3    N3     C4      120.000    3.000
+ NMT      N3     C4     O4      120.000    3.000
+ NMT      N3     C4     C5      120.000    3.000
+ NMT      O4     C4     C5      120.000    3.000
+ NMT      C4     C5     C5M     120.000    3.000
+ NMT      C4     C5     C6      120.000    3.000
+ NMT      C5M    C5     C6      120.000    3.000
+ NMT      C5     C5M    H73     109.470    3.000
+ NMT      C5     C5M    H72     109.470    3.000
+ NMT      C5     C5M    H71     109.470    3.000
+ NMT      H73    C5M    H72     109.470    3.000
+ NMT      H73    C5M    H71     109.470    3.000
+ NMT      H72    C5M    H71     109.470    3.000
+ NMT      C5     C6     H6      120.000    3.000
+ NMT      C5     C6     N1      120.000    3.000
+ NMT      H6     C6     N1      120.000    3.000
+ NMT      "C4'"  "C3'"  "H3'"   108.340    3.000
+ NMT      "C4'"  "C3'"  "C2'"   111.000    3.000
+ NMT      "C4'"  "C3'"  "O3'"   109.470    3.000
+ NMT      "H3'"  "C3'"  "C2'"   108.340    3.000
+ NMT      "H3'"  "C3'"  "O3'"   109.470    3.000
+ NMT      "C2'"  "C3'"  "O3'"   109.470    3.000
+ NMT      "C3'"  "C2'"  "H2'"   108.340    3.000
+ NMT      "C3'"  "C2'"  "O6'"   109.470    3.000
+ NMT      "C3'"  "C2'"  "C1'"   111.000    3.000
+ NMT      "H2'"  "C2'"  "O6'"   109.470    3.000
+ NMT      "H2'"  "C2'"  "C1'"   108.340    3.000
+ NMT      "O6'"  "C2'"  "C1'"   109.470    3.000
+ NMT      "C2'"  "O6'"  "C7'"   111.800    3.000
+ NMT      "O6'"  "C7'"  "H7'"   109.470    3.000
+ NMT      "O6'"  "C7'"  "O7'"   109.470    3.000
+ NMT      "O6'"  "C7'"  "N8'"   109.500    3.000
+ NMT      "H7'"  "C7'"  "O7'"   109.470    3.000
+ NMT      "H7'"  "C7'"  "N8'"   108.550    3.000
+ NMT      "O7'"  "C7'"  "N8'"   109.470    3.000
+ NMT      "C7'"  "O7'"  H1      109.470    3.000
+ NMT      "C7'"  "N8'"  "H8'"   118.500    3.000
+ NMT      "C7'"  "N8'"  "C9'"   120.000    3.000
+ NMT      "H8'"  "N8'"  "C9'"   118.500    3.000
+ NMT      "N8'"  "C9'"  "H9'3"  109.470    3.000
+ NMT      "N8'"  "C9'"  "H9'2"  109.470    3.000
+ NMT      "N8'"  "C9'"  "H9'1"  109.470    3.000
+ NMT      "H9'3" "C9'"  "H9'2"  109.470    3.000
+ NMT      "H9'3" "C9'"  "H9'1"  109.470    3.000
+ NMT      "H9'2" "C9'"  "H9'1"  109.470    3.000
+ NMT      "C3'"  "O3'"  "HO3'"  109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NMT      var_1    OP3    P      "O5'"  "C5'"     53.194   20.000   1
+ NMT      var_2    P      "O5'"  "C5'"  "C4'"   -179.986   20.000   1
+ NMT      var_3    "O5'"  "C5'"  "C4'"  "C3'"    179.497   20.000   3
+ NMT      var_4    "C5'"  "C4'"  "O4'"  "C1'"    120.000   20.000   1
+ NMT      var_5    "C4'"  "O4'"  "C1'"  N1      -120.000   20.000   1
+ NMT      var_6    "O4'"  "C1'"  N1     C2      -147.813   20.000   1
+ NMT      CONST_1  "C1'"  N1     C6     C5       180.000    0.000   0
+ NMT      CONST_2  "C1'"  N1     C2     N3       180.000    0.000   0
+ NMT      CONST_3  N1     C2     N3     C4         0.000    0.000   0
+ NMT      CONST_4  C2     N3     C4     C5         0.000    0.000   0
+ NMT      CONST_5  N3     C4     C5     C6         0.000    0.000   0
+ NMT      var_7    C4     C5     C5M    H71     -115.793   20.000   1
+ NMT      CONST_6  C4     C5     C6     N1         0.000    0.000   0
+ NMT      var_8    "C5'"  "C4'"  "C3'"  "O3'"    150.000   20.000   3
+ NMT      var_9    "C4'"  "C3'"  "C2'"  "O6'"   -150.000   20.000   3
+ NMT      var_10   "C3'"  "C2'"  "C1'"  "O4'"     30.000   20.000   3
+ NMT      var_11   "C3'"  "C2'"  "O6'"  "C7'"    -92.012   20.000   1
+ NMT      var_12   "C2'"  "O6'"  "C7'"  "N8'"   -178.268   20.000   1
+ NMT      var_13   "O6'"  "C7'"  "O7'"  H1        90.224   20.000   1
+ NMT      var_14   "O6'"  "C7'"  "N8'"  "C9'"     57.768   20.000   3
+ NMT      var_15   "C7'"  "N8'"  "C9'"  "H9'1"   -86.142   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ NMT      chir_01  "C2'"  "C1'"  "C3'"  "O6'"     negativ
+ NMT      chir_02  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ NMT      chir_03  "C1'"  N1     "C2'"  "O4'"     negativ
+ NMT      chir_04  "C3'"  "C2'"  "C4'"  "O3'"     negativ
+ NMT      chir_05  "C7'"  "O6'"  "N8'"  "O7'"     positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ NMT      plan-1    N1        0.020
+ NMT      plan-1    C6        0.020
+ NMT      plan-1    C2        0.020
+ NMT      plan-1    "C1'"     0.020
+ NMT      plan-1    N3        0.020
+ NMT      plan-1    C4        0.020
+ NMT      plan-1    C5        0.020
+ NMT      plan-1    H6        0.020
+ NMT      plan-1    O2        0.020
+ NMT      plan-1    HN3       0.020
+ NMT      plan-1    O4        0.020
+ NMT      plan-1    C5M       0.020
+ NMT      plan-2    "N8'"     0.020
+ NMT      plan-2    "C7'"     0.020
+ NMT      plan-2    "C9'"     0.020
+ NMT      plan-2    "H8'"     0.020
+# ------------------------------------------------------

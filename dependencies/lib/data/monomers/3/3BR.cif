@@ -1,0 +1,108 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+3BR     3BR     1-BROMOPROPANE     NON-POLYMER     11     4     .     
+#
+data_comp_3BR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+3BR     BR1     BR      BR      0       71.541      42.906      72.683      
+3BR     C1      C       CH2     0       72.371      44.605      72.188      
+3BR     C2      C       CH2     0       71.400      45.520      71.488      
+3BR     C3      C       CH3     0       72.010      46.855      71.095      
+3BR     H11     H       H       0       73.131      44.431      71.601      
+3BR     H12     H       H       0       72.705      45.045      72.993      
+3BR     H21     H       H       0       70.633      45.683      72.077      
+3BR     H22     H       H       0       71.066      45.074      70.681      
+3BR     H31     H       H       0       71.951      46.966      70.130      
+3BR     H32     H       H       0       72.944      46.891      71.366      
+3BR     H33     H       H       0       71.521      47.575      71.531      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+3BR       BR1       C1        SINGLE    n         1.955     0.014     1.955     0.014     
+3BR       C1        C2        SINGLE    n         1.503     0.017     1.503     0.017     
+3BR       C2        C3        SINGLE    n         1.511     0.020     1.511     0.020     
+3BR       C1        H11       SINGLE    n         1.089     0.010     0.976     0.013     
+3BR       C1        H12       SINGLE    n         1.089     0.010     0.976     0.013     
+3BR       C2        H21       SINGLE    n         1.089     0.010     0.981     0.016     
+3BR       C2        H22       SINGLE    n         1.089     0.010     0.981     0.016     
+3BR       C3        H31       SINGLE    n         1.089     0.010     0.973     0.016     
+3BR       C3        H32       SINGLE    n         1.089     0.010     0.973     0.016     
+3BR       C3        H33       SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+3BR         BR1          C1          C2     111.845    1.50
+3BR         BR1          C1         H11     109.135    1.50
+3BR         BR1          C1         H12     109.135    1.50
+3BR          C2          C1         H11     109.301    1.50
+3BR          C2          C1         H12     109.301    1.50
+3BR         H11          C1         H12     108.034    1.50
+3BR          C1          C2          C3     109.609    3.00
+3BR          C1          C2         H21     109.077    1.50
+3BR          C1          C2         H22     109.077    1.50
+3BR          C3          C2         H21     108.957    1.50
+3BR          C3          C2         H22     108.957    1.50
+3BR         H21          C2         H22     107.715    1.50
+3BR          C2          C3         H31     109.557    1.50
+3BR          C2          C3         H32     109.557    1.50
+3BR          C2          C3         H33     109.557    1.50
+3BR         H31          C3         H32     109.380    1.50
+3BR         H31          C3         H33     109.380    1.50
+3BR         H32          C3         H33     109.380    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+3BR             sp3_sp3_1         BR1          C1          C2          C3     180.000   10.00     3
+3BR            sp3_sp3_10          C1          C2          C3         H31     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+3BR SMILES           ACDLabs              10.04 BrCCC
+3BR SMILES_CANONICAL CACTVS               3.341 CCCBr
+3BR SMILES           CACTVS               3.341 CCCBr
+3BR SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 CCCBr
+3BR SMILES           "OpenEye OEToolkits" 1.5.0 CCCBr
+3BR InChI            InChI                1.03  InChI=1S/C3H7Br/c1-2-3-4/h2-3H2,1H3
+3BR InChIKey         InChI                1.03  CYNYIHKIEHGYOZ-UHFFFAOYSA-N
+3BR ?                acedrg               190         "dictionary generator"                  
+3BR ?                acedrg_database      11          "data source"                           
+3BR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+3BR ?                refmac5              5.8.0158    "optimization tool"                     

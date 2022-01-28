@@ -1,0 +1,237 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0NZ      0NZ '2-deoxy-beta-D-glucopyranose 6-phosp' pyranose           28  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_0NZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+0NZ    C1     C   CH2       0      -2.265      -1.639      -0.309
+0NZ    C2     C   CH2   0.000      -3.435      -0.762       0.187
+0NZ    C3     C   CH2   0.000      -3.220       0.692      -0.230
+0NZ    C4     C   CH2   0.000      -1.868       1.173       0.258
+0NZ    C5     C   CH2   0.000      -0.776       0.261      -0.264
+0NZ    C6     C   CH2   0.000       0.586       0.697       0.285
+0NZ    O1     O    O2   0.000      -2.432      -2.990       0.150
+0NZ    O3     O    O2   0.000      -4.283       1.510       0.302
+0NZ    O4     O    O2   0.000      -1.626       2.536      -0.220
+0NZ    O5     O    O2   0.000      -1.010      -1.106       0.133
+0NZ    O6     O    O2   0.000       1.684      -0.145      -0.338
+0NZ     P     P     P   0.000       3.212       0.077       0.030
+0NZ   O1P     O     O   0.000       3.593       1.484      -0.238
+0NZ   O2P     O    O2   0.000       3.480      -0.355       1.535
+0NZ   O3P     O    O2   0.000       4.106      -0.907      -0.854
+0NZ    H1     H     H   0.000      -2.287      -1.616      -1.373
+0NZ    H2     H     H   0.000      -4.288      -1.100      -0.218
+0NZ    H3     H     H   0.000      -3.455      -0.807       1.154
+0NZ    H4     H     H   0.000      -3.250       0.748      -1.203
+0NZ    H5     H     H   0.000      -1.846       1.198       1.241
+0NZ    H6     H     H   0.000      -0.760       0.283      -1.270
+0NZ    H7     H     H   0.000       0.778       1.717       0.058
+0NZ    H8     H     H   0.000       0.620       0.579       1.279
+0NZ    H9     H     H   0.000      -1.704      -3.452      -0.133
+0NZ   H10     H     H   0.000      -5.016       1.234       0.054
+0NZ   H11     H     H   0.000      -2.240       3.080       0.061
+0NZ   H12     H     H   0.000       3.223      -1.138       1.794
+0NZ   H13     H     H   0.000       4.940      -0.831      -0.740
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0NZ       O3        C3        SING      1.431     0.010     1.431     0.010     
+0NZ       O4        C4        SING      1.427     0.010     1.427     0.010     
+0NZ       C4        C3        SING      1.520     0.010     1.520     0.010     
+0NZ       C4        C5        SING      1.527     0.010     1.527     0.010     
+0NZ       C3        C2        SING      1.516     0.012     1.516     0.012     
+0NZ       C6        C5        SING      1.511     0.020     1.511     0.020     
+0NZ       C6        O6        SING      1.439     0.020     1.439     0.020     
+0NZ       C5        O5        SING      1.440     0.020     1.440     0.020     
+0NZ       C2        C1        SING      1.505     0.015     1.505     0.015     
+0NZ       O5        C1        SING      1.416     0.017     1.416     0.017     
+0NZ       O6        P         SING      1.570     0.017     1.570     0.017     
+0NZ       O1P       P         DOUB      1.488     0.012     1.488     0.012     
+0NZ       C1        O1        SING      1.398     0.010     1.398     0.010     
+0NZ       P         O2P       SING      1.539     0.016     1.539     0.016     
+0NZ       P         O3P       SING      1.539     0.016     1.539     0.016     
+0NZ       C1        H1        SING      1.089     0.010     0.996     0.010     
+0NZ       C2        H2        SING      1.089     0.010     0.971     0.020     
+0NZ       C2        H3        SING      1.089     0.010     0.971     0.020     
+0NZ       C3        H4        SING      1.089     0.010     0.988     0.018     
+0NZ       C4        H5        SING      1.089     0.010     0.989     0.016     
+0NZ       C5        H6        SING      1.089     0.010     0.986     0.019     
+0NZ       C6        H7        SING      1.089     0.010     0.970     0.010     
+0NZ       C6        H8        SING      1.089     0.010     0.970     0.010     
+0NZ       O1        H9        SING      0.970     0.012     0.863     0.020     
+0NZ       O3        H10       SING      0.970     0.012     0.854     0.020     
+0NZ       O4        H11       SING      0.970     0.012     0.854     0.020     
+0NZ       O2P       H12       SING      0.970     0.012     0.854     0.020     
+0NZ       O3P       H13       SING      0.970     0.012     0.854     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+0NZ    C2    C1      O5   111.196    1.58
+0NZ    C2    C1      O1   109.047    2.49
+0NZ    C2    C1      H1   110.144    2.29
+0NZ    O5    C1      O1   109.857    2.64
+0NZ    O5    C1      H1   109.112    1.51
+0NZ    O1    C1      H1   109.196    0.82
+0NZ    C3    C2      C1   111.085    2.33
+0NZ    C3    C2      H2   109.287    0.17
+0NZ    C3    C2      H3   109.287    0.17
+0NZ    C1    C2      H2   108.941    1.55
+0NZ    C1    C2      H3   108.941    1.55
+0NZ    H2    C2      H3   108.302    2.07
+0NZ    O3    C3      C4   109.593    1.52
+0NZ    O3    C3      C2   109.558    2.02
+0NZ    O3    C3      H4   108.831    0.94
+0NZ    C4    C3      C2   110.391    1.56
+0NZ    C4    C3      H4   108.810    0.69
+0NZ    C2    C3      H4   109.197    1.24
+0NZ    O4    C4      C3   109.687    1.71
+0NZ    O4    C4      C5   109.050    2.02
+0NZ    O4    C4      H5   108.787    1.25
+0NZ    C3    C4      C5   110.289    1.64
+0NZ    C3    C4      H5   108.837    0.70
+0NZ    C5    C4      H5   109.144    0.72
+0NZ    C4    C5      C6   113.176    1.95
+0NZ    C4    C5      O5   109.512    1.31
+0NZ    C4    C5      H6   109.062    1.62
+0NZ    C6    C5      O5   106.852    1.97
+0NZ    C6    C5      H6   108.979    1.37
+0NZ    O5    C5      H6   109.008    1.42
+0NZ    C5    C6      O6   108.743    1.01
+0NZ    C5    C6      H7   109.686    1.06
+0NZ    C5    C6      H8   109.686    1.06
+0NZ    O6    C6      H7   109.984    0.27
+0NZ    O6    C6      H8   109.984    0.27
+0NZ    H7    C6      H8   108.577    0.14
+0NZ    C1    O1      H9   108.991    1.07
+0NZ    C3    O3     H10   109.428    3.00
+0NZ    C4    O4     H11   108.943    2.95
+0NZ    C5    O5      C1   113.280    1.71
+0NZ    C6    O6       P   121.609    0.55
+0NZ    O6     P     O1P   111.691    3.00
+0NZ    O6     P     O2P   107.849    3.00
+0NZ    O6     P     O3P   107.849    3.00
+0NZ   O1P     P     O2P   114.361    1.86
+0NZ   O1P     P     O3P   114.361    1.86
+0NZ   O2P     P     O3P   107.465    0.72
+0NZ     P   O2P     H12   114.176    3.00
+0NZ     P   O3P     H13   114.176    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+0NZ       sp3_sp3_1      O5      C1      C2      C3      60.000   10.00     3
+0NZ       sp3_sp3_2      O5      C1      C2      H2     180.000   10.00     3
+0NZ       sp3_sp3_3      O5      C1      C2      H3     -60.000   10.00     3
+0NZ       sp3_sp3_4      O1      C1      C2      C3     -60.000   10.00     3
+0NZ       sp3_sp3_5      O1      C1      C2      H2      60.000   10.00     3
+0NZ       sp3_sp3_6      O1      C1      C2      H3     180.000   10.00     3
+0NZ       sp3_sp3_7      H1      C1      C2      C3     180.000   10.00     3
+0NZ       sp3_sp3_8      H1      C1      C2      H2     -60.000   10.00     3
+0NZ       sp3_sp3_9      H1      C1      C2      H3      60.000   10.00     3
+0NZ      sp3_sp3_10      C1      C2      C3      C4     -60.000   10.00     3
+0NZ      sp3_sp3_11      C1      C2      C3      O3      60.000   10.00     3
+0NZ      sp3_sp3_12      C1      C2      C3      H4     180.000   10.00     3
+0NZ      sp3_sp3_13      H2      C2      C3      C4     180.000   10.00     3
+0NZ      sp3_sp3_14      H2      C2      C3      O3     -60.000   10.00     3
+0NZ      sp3_sp3_15      H2      C2      C3      H4      60.000   10.00     3
+0NZ      sp3_sp3_16      H3      C2      C3      C4      60.000   10.00     3
+0NZ      sp3_sp3_17      H3      C2      C3      O3     180.000   10.00     3
+0NZ      sp3_sp3_18      H3      C2      C3      H4     -60.000   10.00     3
+0NZ      sp3_sp3_19      C2      C3      C4      C5      60.000   10.00     3
+0NZ      sp3_sp3_20      C2      C3      C4      O4     180.000   10.00     3
+0NZ      sp3_sp3_21      C2      C3      C4      H5     -60.000   10.00     3
+0NZ      sp3_sp3_22      O3      C3      C4      C5     -60.000   10.00     3
+0NZ      sp3_sp3_23      O3      C3      C4      O4      60.000   10.00     3
+0NZ      sp3_sp3_24      O3      C3      C4      H5     180.000   10.00     3
+0NZ      sp3_sp3_25      H4      C3      C4      C5     180.000   10.00     3
+0NZ      sp3_sp3_26      H4      C3      C4      O4     -60.000   10.00     3
+0NZ      sp3_sp3_27      H4      C3      C4      H5      60.000   10.00     3
+0NZ      sp3_sp3_28      C3      C4      C5      O5     -60.000   10.00     3
+0NZ      sp3_sp3_29      C3      C4      C5      C6      60.000   10.00     3
+0NZ      sp3_sp3_30      C3      C4      C5      H6     180.000   10.00     3
+0NZ      sp3_sp3_31      O4      C4      C5      O5     180.000   10.00     3
+0NZ      sp3_sp3_32      O4      C4      C5      C6     -60.000   10.00     3
+0NZ      sp3_sp3_33      O4      C4      C5      H6      60.000   10.00     3
+0NZ      sp3_sp3_34      H5      C4      C5      O5      60.000   10.00     3
+0NZ      sp3_sp3_35      H5      C4      C5      C6     180.000   10.00     3
+0NZ      sp3_sp3_36      H5      C4      C5      H6     -60.000   10.00     3
+0NZ      sp3_sp3_37      C4      C5      O5      C1      60.000   10.00     3
+0NZ      sp3_sp3_38      C6      C5      O5      C1     180.000   10.00     3
+0NZ      sp3_sp3_39      H6      C5      O5      C1     -60.000   10.00     3
+0NZ      sp3_sp3_40      C4      C3      O3     H10     180.000   10.00     3
+0NZ      sp3_sp3_41      C2      C3      O3     H10     -60.000   10.00     3
+0NZ      sp3_sp3_42      H4      C3      O3     H10      60.000   10.00     3
+0NZ      sp3_sp3_43      C3      C4      O4     H11     180.000   10.00     3
+0NZ      sp3_sp3_44      C5      C4      O4     H11     -60.000   10.00     3
+0NZ      sp3_sp3_45      H5      C4      O4     H11      60.000   10.00     3
+0NZ      sp3_sp3_46      C4      C5      C6      O6     180.000   10.00     3
+0NZ      sp3_sp3_47      C4      C5      C6      H7     -60.000   10.00     3
+0NZ      sp3_sp3_48      C4      C5      C6      H8      60.000   10.00     3
+0NZ      sp3_sp3_49      O5      C5      C6      O6      60.000   10.00     3
+0NZ      sp3_sp3_50      O5      C5      C6      H7     180.000   10.00     3
+0NZ      sp3_sp3_51      O5      C5      C6      H8     -60.000   10.00     3
+0NZ      sp3_sp3_52      H6      C5      C6      O6     -60.000   10.00     3
+0NZ      sp3_sp3_53      H6      C5      C6      H7      60.000   10.00     3
+0NZ      sp3_sp3_54      H6      C5      C6      H8     180.000   10.00     3
+0NZ      sp3_sp3_55      C5      C6      O6       P     180.000   10.00     3
+0NZ      sp3_sp3_56      H7      C6      O6       P     -60.000   10.00     3
+0NZ      sp3_sp3_57      H8      C6      O6       P      60.000   10.00     3
+0NZ      sp3_sp3_58      C2      C1      O5      C5      60.000   10.00     3
+0NZ      sp3_sp3_59      O1      C1      O5      C5     180.000   10.00     3
+0NZ      sp3_sp3_60      H1      C1      O5      C5     -60.000   10.00     3
+0NZ      sp3_sp3_61     O1P       P      O6      C6     180.000   10.00     3
+0NZ      sp3_sp3_62     O2P       P      O6      C6     -60.000   10.00     3
+0NZ      sp3_sp3_63     O3P       P      O6      C6      60.000   10.00     3
+0NZ      sp3_sp3_64      C2      C1      O1      H9     180.000   10.00     3
+0NZ      sp3_sp3_65      O5      C1      O1      H9     -60.000   10.00     3
+0NZ      sp3_sp3_66      H1      C1      O1      H9      60.000   10.00     3
+0NZ      sp3_sp3_67      O6       P     O2P     H12     180.000   10.00     3
+0NZ      sp3_sp3_68     O1P       P     O2P     H12     -60.000   10.00     3
+0NZ      sp3_sp3_69     O3P       P     O2P     H12      60.000   10.00     3
+0NZ      sp3_sp3_70      O6       P     O3P     H13     180.000   10.00     3
+0NZ      sp3_sp3_71     O1P       P     O3P     H13     -60.000   10.00     3
+0NZ      sp3_sp3_72     O2P       P     O3P     H13      60.000   10.00     3

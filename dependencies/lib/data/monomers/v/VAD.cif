@@ -1,0 +1,169 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+VAD      VAD 'DEAMINOHYDROXYVALINE                ' non-polymer        17   8 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_VAD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ VAD           OXT    O    OC       -0.500      0.000    0.000    0.000
+ VAD           C      C    C         0.000     -1.162    0.066   -0.460
+ VAD           O      O    OC       -0.500     -1.353    0.524   -1.608
+ VAD           CA     C    CH1       0.000     -2.327   -0.403    0.370
+ VAD           HA     H    H         0.000     -2.199   -1.468    0.613
+ VAD           OE     O    OH1       0.000     -3.538   -0.226   -0.369
+ VAD           HOE    H    H         0.000     -3.651    0.711   -0.582
+ VAD           CB     C    CH1       0.000     -2.395    0.410    1.663
+ VAD           HB     H    H         0.000     -2.524    1.474    1.420
+ VAD           CG2    C    CH3       0.000     -1.098    0.219    2.453
+ VAD           HG23   H    H         0.000     -0.277    0.549    1.870
+ VAD           HG22   H    H         0.000     -1.143    0.782    3.349
+ VAD           HG21   H    H         0.000     -0.973   -0.806    2.687
+ VAD           CG1    C    CH3       0.000     -3.579   -0.068    2.505
+ VAD           HG13   H    H         0.000     -4.478    0.063    1.959
+ VAD           HG12   H    H         0.000     -3.456   -1.093    2.740
+ VAD           HG11   H    H         0.000     -3.627    0.496    3.401
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ VAD      OXT    n/a    C      START
+ VAD      C      OXT    CA     .
+ VAD      O      C      .      .
+ VAD      CA     C      CB     .
+ VAD      HA     CA     .      .
+ VAD      OE     CA     HOE    .
+ VAD      HOE    OE     .      .
+ VAD      CB     CA     CG1    .
+ VAD      HB     CB     .      .
+ VAD      CG2    CB     HG21   .
+ VAD      HG23   CG2    .      .
+ VAD      HG22   CG2    .      .
+ VAD      HG21   CG2    .      .
+ VAD      CG1    CB     HG11   .
+ VAD      HG13   CG1    .      .
+ VAD      HG12   CG1    .      .
+ VAD      HG11   CG1    .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+VAD       CB        CA        single    1.524     0.020     1.524     0.020     
+VAD       CA        C         single    1.500     0.020     1.500     0.020     
+VAD       OE        CA        single    1.432     0.020     1.432     0.020     
+VAD       HA        CA        single    1.089     0.010     0.989     0.005     
+VAD       CG1       CB        single    1.524     0.020     1.524     0.020     
+VAD       CG2       CB        single    1.524     0.020     1.524     0.020     
+VAD       HB        CB        single    1.089     0.010     0.989     0.005     
+VAD       HG11      CG1       single    1.089     0.010     0.989     0.005     
+VAD       HG12      CG1       single    1.089     0.010     0.989     0.005     
+VAD       HG13      CG1       single    1.089     0.010     0.989     0.005     
+VAD       HG21      CG2       single    1.089     0.010     0.989     0.005     
+VAD       HG22      CG2       single    1.089     0.010     0.989     0.005     
+VAD       HG23      CG2       single    1.089     0.010     0.989     0.005     
+VAD       O         C         deloc     1.250     0.020     1.250     0.020     
+VAD       C         OXT       deloc     1.250     0.020     1.250     0.020     
+VAD       HOE       OE        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ VAD      OXT    C      O       123.000    3.000
+ VAD      OXT    C      CA      118.500    3.000
+ VAD      O      C      CA      118.500    3.000
+ VAD      C      CA     HA      108.810    3.000
+ VAD      C      CA     OE      109.470    3.000
+ VAD      C      CA     CB      109.470    3.000
+ VAD      HA     CA     OE      109.470    3.000
+ VAD      HA     CA     CB      108.340    3.000
+ VAD      OE     CA     CB      109.470    3.000
+ VAD      CA     OE     HOE     109.470    3.000
+ VAD      CA     CB     HB      108.340    3.000
+ VAD      CA     CB     CG2     111.000    3.000
+ VAD      CA     CB     CG1     111.000    3.000
+ VAD      HB     CB     CG2     108.340    3.000
+ VAD      HB     CB     CG1     108.340    3.000
+ VAD      CG2    CB     CG1     111.000    3.000
+ VAD      CB     CG2    HG23    109.470    3.000
+ VAD      CB     CG2    HG22    109.470    3.000
+ VAD      CB     CG2    HG21    109.470    3.000
+ VAD      HG23   CG2    HG22    109.470    3.000
+ VAD      HG23   CG2    HG21    109.470    3.000
+ VAD      HG22   CG2    HG21    109.470    3.000
+ VAD      CB     CG1    HG13    109.470    3.000
+ VAD      CB     CG1    HG12    109.470    3.000
+ VAD      CB     CG1    HG11    109.470    3.000
+ VAD      HG13   CG1    HG12    109.470    3.000
+ VAD      HG13   CG1    HG11    109.470    3.000
+ VAD      HG12   CG1    HG11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ VAD      var_1    OXT    C      CA     CB        59.994   20.000   3
+ VAD      var_2    C      CA     OE     HOE      -60.066   20.000   1
+ VAD      var_3    C      CA     CB     CG1      179.991   20.000   3
+ VAD      var_4    CA     CB     CG2    HG21     -60.035   20.000   3
+ VAD      var_5    CA     CB     CG1    HG11     179.996   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ VAD      chir_01  CA     CB     C      OE        positiv
+ VAD      chir_02  CB     CA     CG1    CG2       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ VAD      plan-1    C         0.020
+ VAD      plan-1    CA        0.020
+ VAD      plan-1    O         0.020
+ VAD      plan-1    OXT       0.020
+# ------------------------------------------------------

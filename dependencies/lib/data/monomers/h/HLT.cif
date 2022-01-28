@@ -1,0 +1,104 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HLT     HLT      2-BROMO-2-CHLORO-1,1,1-TRIFLUOROETHANE     NON-POLYMER     8     7     .     
+#
+data_comp_HLT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HLT     F1      F       F       0       -0.382      -23.251     -4.195      
+HLT     C2      C       CT      0       -0.277      -21.925     -4.149      
+HLT     F2      F       F       0       -1.498      -21.394     -4.163      
+HLT     F3      F       F       0       0.331       -21.579     -3.016      
+HLT     C1      C       CH1     0       0.501       -21.437     -5.311      
+HLT     BR      BR      BR      0       2.292       -22.203     -5.270      
+HLT     CL      CL      CL      0       -0.300      -21.887     -6.835      
+HLT     HC1     H       H       0       0.571       -20.467     -5.266      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HLT       F1        C2        SINGLE    n         1.331     0.013     1.331     0.013     
+HLT       C2        F2        SINGLE    n         1.331     0.013     1.331     0.013     
+HLT       C2        F3        SINGLE    n         1.331     0.013     1.331     0.013     
+HLT       C2        C1        SINGLE    n         1.482     0.020     1.482     0.020     
+HLT       C1        BR        SINGLE    n         1.948     0.016     1.948     0.016     
+HLT       C1        CL        SINGLE    n         1.780     0.020     1.780     0.020     
+HLT       C1        HC1       SINGLE    n         1.089     0.010     0.973     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HLT          F1          C2          F2     107.197    1.50
+HLT          F1          C2          F3     107.197    1.50
+HLT          F1          C2          C1     108.218    1.50
+HLT          F2          C2          F3     107.197    1.50
+HLT          F2          C2          C1     108.218    1.50
+HLT          F3          C2          C1     108.218    1.50
+HLT          C2          C1          BR     109.720    2.68
+HLT          C2          C1          CL     110.657    3.00
+HLT          C2          C1         HC1     109.260    1.85
+HLT          BR          C1          CL     109.471    3.00
+HLT          BR          C1         HC1     109.026    1.50
+HLT          CL          C1         HC1     108.963    1.58
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HLT             sp3_sp3_1          BR          C1          C2          F1     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+HLT    chir_1    C1    BR    CL    C2    negative
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HLT SMILES           ACDLabs              10.04 "BrC(Cl)C(F)(F)F"
+HLT SMILES_CANONICAL CACTVS               3.341 "FC(F)(F)[C@H](Cl)Br"
+HLT SMILES           CACTVS               3.341 "FC(F)(F)[CH](Cl)Br"
+HLT SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[C@@H](C(F)(F)F)(Cl)Br"
+HLT SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(F)(F)F)(Cl)Br"
+HLT InChI            InChI                1.03  "InChI=1S/C2HBrClF3/c3-1(4)2(5,6)7/h1H/t1-/m0/s1"
+HLT InChIKey         InChI                1.03  BCQZXOMGPXTTIC-SFOWXEAESA-N
+HLT ?                acedrg               202         "dictionary generator"                  
+HLT ?                acedrg_database      11          "data source"                           
+HLT ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HLT ?                refmac5              5.8.0189    "optimization tool"                     

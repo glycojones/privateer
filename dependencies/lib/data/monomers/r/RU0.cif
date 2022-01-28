@@ -1,0 +1,269 @@
+# Created using JLigand 1.0.40
+# and
+# dictionary  5.41    ( 11/02/2013 )
+# libcheck    5.2.1   ( 10/04/2013 )
+# refmac      5.8.73  ( 25/05/2014 )
+#
+# Authors: Andrey Lebedev, Paul Young, Alexei Vagin, Garib Murshudov
+# E-mail: andrey.lebedev@stfc.ac.uk
+#
+
+global_
+_lib_name         mon_lib
+_lib_version      5.41
+_lib_update       11/02/2013
+
+data_comp_list
+
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RU0      RU0 'Tetrakis(acetato)chloridodiruthenium' non-polymer        32  20 .
+
+data_comp_RU0
+
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RU0           CL2    Cl   CL        0.000     -2.704   -2.091    1.850
+ RU0           RU1    Ru   RU        0.000     -1.339   -0.414    0.595
+ RU0           O1     O    O2       -0.500     -2.433    0.898    1.161
+ RU0           O22    O    O2       -0.500     -0.303   -0.174    2.047
+ RU0           C2     C    C         0.000      0.884    0.660    1.950
+ RU0           C20    C    CH3       0.000      1.915    0.636    3.039
+ RU0           H9     H    H         0.000      1.922    1.570    3.538
+ RU0           H20A   H    H         0.000      2.869    0.453    2.617
+ RU0           H20    H    H         0.000      1.682   -0.131    3.730
+ RU0           O33    O    O2       -0.500     -2.375   -0.658   -0.857
+ RU0           C3     C    C         0.000     -1.953   -0.084   -2.123
+ RU0           C30    C    CH3       0.000     -2.473   -0.631   -3.420
+ RU0           H12    H    H         0.000     -1.927   -1.499   -3.681
+ RU0           H30A   H    H         0.000     -2.362    0.098   -4.180
+ RU0           H30    H    H         0.000     -3.498   -0.877   -3.313
+ RU0           O7     O    O2       -0.500     -0.246   -1.729    0.032
+ RU0           C7     C    C         0.000      0.917   -1.408   -0.779
+ RU0           C8     C    CH3       0.000      1.897   -2.481   -1.149
+ RU0           H6     H    H         0.000      1.688   -2.828   -2.127
+ RU0           H5     H    H         0.000      1.817   -3.284   -0.463
+ RU0           H4     H    H         0.000      2.880   -2.087   -1.117
+ RU0           O8     O    O2       -0.500      1.125   -0.041   -1.230
+ RU0           RU2    Ru   RU        0.000      0.027    1.268   -0.663
+ RU0           O2     O    O2       -0.500      1.065    1.512    0.787
+ RU0           O3     O    O2       -0.500     -1.011    1.022   -2.113
+ RU0           CL1    Cl   CL        0.000      1.387    2.948   -1.918
+ RU0           O11    O    O2       -0.500     -1.069    2.579   -0.096
+ RU0           C1     C    C         0.000     -2.047    2.280    0.937
+ RU0           C6     C    CH3       0.000     -2.643    3.381    1.761
+ RU0           H3     H    H         0.000     -3.095    2.970    2.627
+ RU0           H2     H    H         0.000     -1.882    4.058    2.050
+ RU0           H1     H    H         0.000     -3.374    3.894    1.192
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RU0       CL2       RU1       metal     2.500     0.020     2.500     0.020     
+RU0       RU1       O1        metal     1.800     0.020     1.800     0.020     
+RU0       RU1       O22       metal     1.800     0.020     1.800     0.020     
+RU0       RU1       O33       metal     1.800     0.020     1.800     0.020     
+RU0       RU1       O7        metal     1.800     0.020     1.800     0.020     
+RU0       RU1       RU2       metal     2.280     0.020     2.280     0.020     
+RU0       O1        C1        deloc     1.454     0.020     1.454     0.020     
+RU0       O22       C2        deloc     1.454     0.020     1.454     0.020     
+RU0       C2        C20       single    1.500     0.020     1.500     0.020     
+RU0       C2        O2        deloc     1.454     0.020     1.454     0.020     
+RU0       C20       H9        single    1.089     0.010     0.989     0.005     
+RU0       C20       H20A      single    1.089     0.010     0.989     0.005     
+RU0       C20       H20       single    1.089     0.010     0.989     0.005     
+RU0       O33       C3        deloc     1.454     0.020     1.454     0.020     
+RU0       C3        C30       single    1.500     0.020     1.500     0.020     
+RU0       C3        O3        deloc     1.454     0.020     1.454     0.020     
+RU0       C30       H12       single    1.089     0.010     0.989     0.005     
+RU0       C30       H30A      single    1.089     0.010     0.989     0.005     
+RU0       C30       H30       single    1.089     0.010     0.989     0.005     
+RU0       O7        C7        deloc     1.454     0.020     1.454     0.020     
+RU0       C7        C8        single    1.500     0.020     1.500     0.020     
+RU0       C7        O8        deloc     1.454     0.020     1.454     0.020     
+RU0       C8        H6        single    1.089     0.010     0.989     0.005     
+RU0       C8        H5        single    1.089     0.010     0.989     0.005     
+RU0       C8        H4        single    1.089     0.010     0.989     0.005     
+RU0       O8        RU2       metal     1.800     0.020     1.800     0.020     
+RU0       RU2       O2        metal     1.800     0.020     1.800     0.020     
+RU0       RU2       O3        metal     1.800     0.020     1.800     0.020     
+RU0       RU2       CL1       metal     2.500     0.020     2.500     0.020     
+RU0       RU2       O11       metal     1.800     0.020     1.800     0.020     
+RU0       O11       C1        deloc     1.454     0.020     1.454     0.020     
+RU0       C1        C6        single    1.500     0.020     1.500     0.020     
+RU0       C6        H3        single    1.089     0.010     0.989     0.005     
+RU0       C6        H2        single    1.089     0.010     0.989     0.005     
+RU0       C6        H1        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RU0      CL2    RU1    O1       90.000    3.000
+ RU0      CL2    RU1    O22      90.000    3.000
+ RU0      CL2    RU1    O33      90.000    3.000
+ RU0      CL2    RU1    O7       90.000    3.000
+ RU0      CL2    RU1    RU2     180.000    3.000
+ RU0      RU1    O1     C1      120.000    3.000
+ RU0      RU1    O22    C2      120.000    3.000
+ RU0      RU1    O33    C3      120.000    3.000
+ RU0      RU1    O7     C7      120.000    3.000
+ RU0      RU1    RU2    O8       90.000    3.000
+ RU0      RU1    RU2    O2       90.000    3.000
+ RU0      RU1    RU2    O3       90.000    3.000
+ RU0      RU1    RU2    CL1     180.000    3.000
+ RU0      RU1    RU2    O11      90.000    3.000
+ RU0      O1     RU1    O22      90.000    3.000
+ RU0      O1     RU1    O33      90.000    3.000
+ RU0      O1     RU1    O7      180.000    3.000
+ RU0      O1     RU1    RU2      90.000    3.000
+ RU0      O1     C1     O11     120.000    3.000
+ RU0      O1     C1     C6      120.000    3.000
+ RU0      O22    RU1    O33     180.000    3.000
+ RU0      O22    RU1    O7       90.000    3.000
+ RU0      O22    RU1    RU2      90.000    3.000
+ RU0      O22    C2     C20     120.000    3.000
+ RU0      O22    C2     O2      120.000    3.000
+ RU0      C2     C20    H9      109.470    3.000
+ RU0      C2     C20    H20A    109.470    3.000
+ RU0      C2     C20    H20     109.470    3.000
+ RU0      C2     O2     RU2     120.000    3.000
+ RU0      C20    C2     O2      120.000    3.000
+ RU0      H9     C20    H20A    109.470    3.000
+ RU0      H9     C20    H20     109.470    3.000
+ RU0      H20A   C20    H20     109.470    3.000
+ RU0      O33    RU1    O7       90.000    3.000
+ RU0      O33    RU1    RU2      90.000    3.000
+ RU0      O33    C3     C30     120.000    3.000
+ RU0      O33    C3     O3      120.000    3.000
+ RU0      C3     C30    H12     109.470    3.000
+ RU0      C3     C30    H30A    109.470    3.000
+ RU0      C3     C30    H30     109.470    3.000
+ RU0      C3     O3     RU2     120.000    3.000
+ RU0      C30    C3     O3      120.000    3.000
+ RU0      H12    C30    H30A    109.470    3.000
+ RU0      H12    C30    H30     109.470    3.000
+ RU0      H30A   C30    H30     109.470    3.000
+ RU0      O7     RU1    RU2      90.000    3.000
+ RU0      O7     C7     C8      120.000    3.000
+ RU0      O7     C7     O8      120.000    3.000
+ RU0      C7     C8     H6      109.470    3.000
+ RU0      C7     C8     H5      109.470    3.000
+ RU0      C7     C8     H4      109.470    3.000
+ RU0      C7     O8     RU2     120.000    3.000
+ RU0      C8     C7     O8      120.000    3.000
+ RU0      H6     C8     H5      109.470    3.000
+ RU0      H6     C8     H4      109.470    3.000
+ RU0      H5     C8     H4      109.470    3.000
+ RU0      O8     RU2    O2       90.000    3.000
+ RU0      O8     RU2    O3       90.000    3.000
+ RU0      O8     RU2    CL1      90.000    3.000
+ RU0      O8     RU2    O11     180.000    3.000
+ RU0      RU2    O11    C1      120.000    3.000
+ RU0      O2     RU2    O3      180.000    3.000
+ RU0      O2     RU2    CL1      90.000    3.000
+ RU0      O2     RU2    O11      90.000    3.000
+ RU0      O3     RU2    CL1      90.000    3.000
+ RU0      O3     RU2    O11      90.000    3.000
+ RU0      CL1    RU2    O11      90.000    3.000
+ RU0      O11    C1     C6      120.000    3.000
+ RU0      C1     C6     H3      109.470    3.000
+ RU0      C1     C6     H2      109.470    3.000
+ RU0      C1     C6     H1      109.470    3.000
+ RU0      H3     C6     H2      109.470    3.000
+ RU0      H3     C6     H1      109.470    3.000
+ RU0      H2     C6     H1      109.470    3.000
+
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RU0      var_13   RU1    O1     C1     O11      180.000   20.000   3
+ RU0      var_20   RU1    O22    C2     O2       180.000   20.000   3
+ RU0      var_17   RU1    O33    C3     O3       180.000   20.000   3
+ RU0      var_9    RU1    O7     C7     O8       180.000   20.000   3
+ RU0      var_6    RU1    RU2    O8     C7         0.000   20.000   3
+ RU0      var_18   RU1    RU2    O2     C2         0.000   20.000   3
+ RU0      var_14   RU1    RU2    O3     C3         0.000   20.000   3
+ RU0      var_10   RU1    RU2    O11    C1         0.000   20.000   3
+ RU0      var_1    O1     RU1    RU2    O11        0.000   20.000   3
+ RU0      var_11   O1     C1     O11    RU2      180.000   20.000   3
+ RU0      var_3    C2     O22    RU1    RU2        0.000   20.000   3
+ RU0      var_19   C20    C2     O2     RU2      180.000   20.000   3
+ RU0      var_21   H20    C20    C2     O2       180.000   20.000   3
+ RU0      var_15   O33    C3     O3     RU2      180.000   20.000   3
+ RU0      var_4    C3     O33    RU1    RU2        0.000   20.000   3
+ RU0      var_16   H30    C30    C3     O3       180.000   20.000   3
+ RU0      var_7    O7     C7     O8     RU2      180.000   20.000   3
+ RU0      var_5    C7     O7     RU1    RU2        0.000   20.000   3
+ RU0      var_8    H6     C8     C7     O8       180.000   20.000   3
+ RU0      var_2    RU2    RU1    O1     C1         0.000   20.000   3
+ RU0      var_12   O11    C1     C6     H1       180.000   20.000   3
+
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ RU0      chir_01  RU1    CL2    RU2    O1        cross4
+                   O22    O7     O33    .      .
+ RU0      chir_02  RU2    RU1    CL1    O8        cross4
+                   O3     O11    O2     .      .
+
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RU0      plan-4    O1        0.020
+ RU0      plan-4    O11       0.020
+ RU0      plan-4    C1        0.020
+ RU0      plan-4    C6        0.020
+ RU0      plan-1    O22       0.020
+ RU0      plan-1    C2        0.020
+ RU0      plan-1    C20       0.020
+ RU0      plan-1    O2        0.020
+ RU0      plan-2    O33       0.020
+ RU0      plan-2    C3        0.020
+ RU0      plan-2    C30       0.020
+ RU0      plan-2    O3        0.020
+ RU0      plan-3    O7        0.020
+ RU0      plan-3    C7        0.020
+ RU0      plan-3    C8        0.020
+ RU0      plan-3    O8        0.020
+

@@ -1,0 +1,63 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SCN     SCN     "THIOCYANATEION"     NON-POLYMER     3     3     .     
+#
+data_comp_SCN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SCN     S       S       S1      -1      -27.898     47.142      46.967      
+SCN     C       C       CSP     0       -27.675     47.839      48.360      
+SCN     N       N       N       0       -27.478     48.348      49.398      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SCN       S         C         SINGLE    n         1.574     0.020     1.574     0.020     
+SCN       C         N         TRIPLE    n         1.173     0.020     1.173     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SCN           S           C           N     178.404    1.50
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SCN SMILES           ACDLabs              10.04 "[S-]C#N"
+SCN SMILES_CANONICAL CACTVS               3.341 "[S-]C#N"
+SCN SMILES           CACTVS               3.341 "[S-]C#N"
+SCN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(#N)[S-]"
+SCN SMILES           "OpenEye OEToolkits" 1.5.0 "C(#N)[S-]"
+SCN InChI            InChI                1.03  InChI=1S/CHNS/c2-1-3/h3H/p-1
+SCN InChIKey         InChI                1.03  ZMZDMBWJUHKJPS-UHFFFAOYSA-M
+SCN ?                acedrg               190         "dictionary generator"                  
+SCN ?                acedrg_database      11          "data source"                           
+SCN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SCN ?                refmac5              5.8.0158    "optimization tool"                     

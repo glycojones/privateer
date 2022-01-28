@@ -1,0 +1,456 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OAD      OAD '.                                   ' non-polymer        62  39 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_OAD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ OAD           O6D    O    O        -0.500      0.000    0.000    0.000
+ OAD           C6D    C    C         0.000      0.000    0.000    0.000
+ OAD           C7D    C    CH3       0.000      0.000    0.000    0.000
+ OAD           H7R3   H    H         0.000      0.000    0.000    0.000
+ OAD           H7R2   H    H         0.000      0.000    0.000    0.000
+ OAD           H7R1   H    H         0.000      0.000    0.000    0.000
+ OAD           O2D    O    O2       -0.500      0.000    0.000    0.000
+ OAD           C2D    C    CH1       0.000      0.000    0.000    0.000
+ OAD           "HR'2" H    H         0.000      0.000    0.000    0.000
+ OAD           C1D    C    CH1       0.000      0.000    0.000    0.000
+ OAD           "HR'1" H    H         0.000      0.000    0.000    0.000
+ OAD           O1D    O    OH1       0.000      0.000    0.000    0.000
+ OAD           HOR1   H    H         0.000      0.000    0.000    0.000
+ OAD           O4D    O    O2        0.000      0.000    0.000    0.000
+ OAD           C3D    C    CH1       0.000      0.000    0.000    0.000
+ OAD           "HR'3" H    H         0.000      0.000    0.000    0.000
+ OAD           O3D    O    OH1       0.000      0.000    0.000    0.000
+ OAD           HOR3   H    H         0.000      0.000    0.000    0.000
+ OAD           C4D    C    CH1       0.000      0.000    0.000    0.000
+ OAD           "HR'4" H    H         0.000      0.000    0.000    0.000
+ OAD           C5D    C    CH2       0.000      0.000    0.000    0.000
+ OAD           H5R1   H    H         0.000      0.000    0.000    0.000
+ OAD           H5R2   H    H         0.000      0.000    0.000    0.000
+ OAD           O5D    O    O2        0.000      0.000    0.000    0.000
+ OAD           PB     P    P         0.000      0.000    0.000    0.000
+ OAD           O1B    O    OP       -0.500      0.000    0.000    0.000
+ OAD           O2B    O    OP       -0.500      0.000    0.000    0.000
+ OAD           O3A    O    O2        0.000      0.000    0.000    0.000
+ OAD           PA     P    P         0.000      0.000    0.000    0.000
+ OAD           O1A    O    OP       -0.500      0.000    0.000    0.000
+ OAD           O2A    O    OP       -0.500      0.000    0.000    0.000
+ OAD           "O5'"  O    O2        0.000      0.000    0.000    0.000
+ OAD           "C5'"  C    CH2       0.000      0.000    0.000    0.000
+ OAD           "H5'1" H    H         0.000      0.000    0.000    0.000
+ OAD           "H5'2" H    H         0.000      0.000    0.000    0.000
+ OAD           "C4'"  C    CH1       0.000      0.000    0.000    0.000
+ OAD           "H'4"  H    H         0.000      0.000    0.000    0.000
+ OAD           "C3'"  C    CH1       0.000      0.000    0.000    0.000
+ OAD           "H'3"  H    H         0.000      0.000    0.000    0.000
+ OAD           "O3'"  O    OH1       0.000      0.000    0.000    0.000
+ OAD           "HO'3" H    H         0.000      0.000    0.000    0.000
+ OAD           "C2'"  C    CH1       0.000      0.000    0.000    0.000
+ OAD           "H'2"  H    H         0.000      0.000    0.000    0.000
+ OAD           "O2'"  O    OH1       0.000      0.000    0.000    0.000
+ OAD           "HO'2" H    H         0.000      0.000    0.000    0.000
+ OAD           "C1'"  C    CH1       0.000      0.000    0.000    0.000
+ OAD           "H'1"  H    H         0.000      0.000    0.000    0.000
+ OAD           "O4'"  O    O2        0.000      0.000    0.000    0.000
+ OAD           N9     N    NR5       0.000      0.000    0.000    0.000
+ OAD           C4     C    CR56      0.000      0.000    0.000    0.000
+ OAD           C5     C    CR56      0.000      0.000    0.000    0.000
+ OAD           N7     N    NRD5      0.000      0.000    0.000    0.000
+ OAD           C8     C    CR15      0.000      0.000    0.000    0.000
+ OAD           H8     H    H         0.000      0.000    0.000    0.000
+ OAD           N3     N    NRD6      0.000      0.000    0.000    0.000
+ OAD           C2     C    CR16      0.000      0.000    0.000    0.000
+ OAD           H2     H    H         0.000      0.000    0.000    0.000
+ OAD           N1     N    NRD6      0.000      0.000    0.000    0.000
+ OAD           C6     C    CR6       0.000      0.000    0.000    0.000
+ OAD           N6     N    NH2       0.000      0.000    0.000    0.000
+ OAD           H62    H    H         0.000      0.000    0.000    0.000
+ OAD           H61    H    H         0.000      0.000    0.000    0.000
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ OAD      O6D    n/a    C6D    START
+ OAD      C6D    O6D    O2D    .
+ OAD      C7D    C6D    H7R1   .
+ OAD      H7R3   C7D    .      .
+ OAD      H7R2   C7D    .      .
+ OAD      H7R1   C7D    .      .
+ OAD      O2D    C6D    C2D    .
+ OAD      C2D    O2D    C3D    .
+ OAD      "HR'2" C2D    .      .
+ OAD      C1D    C2D    O4D    .
+ OAD      "HR'1" C1D    .      .
+ OAD      O1D    C1D    HOR1   .
+ OAD      HOR1   O1D    .      .
+ OAD      O4D    C1D    .      .
+ OAD      C3D    C2D    C4D    .
+ OAD      "HR'3" C3D    .      .
+ OAD      O3D    C3D    HOR3   .
+ OAD      HOR3   O3D    .      .
+ OAD      C4D    C3D    C5D    .
+ OAD      "HR'4" C4D    .      .
+ OAD      C5D    C4D    O5D    .
+ OAD      H5R1   C5D    .      .
+ OAD      H5R2   C5D    .      .
+ OAD      O5D    C5D    PB     .
+ OAD      PB     O5D    O3A    .
+ OAD      O1B    PB     .      .
+ OAD      O2B    PB     .      .
+ OAD      O3A    PB     PA     .
+ OAD      PA     O3A    "O5'"  .
+ OAD      O1A    PA     .      .
+ OAD      O2A    PA     .      .
+ OAD      "O5'"  PA     "C5'"  .
+ OAD      "C5'"  "O5'"  "C4'"  .
+ OAD      "H5'1" "C5'"  .      .
+ OAD      "H5'2" "C5'"  .      .
+ OAD      "C4'"  "C5'"  "C3'"  .
+ OAD      "H'4"  "C4'"  .      .
+ OAD      "C3'"  "C4'"  "C2'"  .
+ OAD      "H'3"  "C3'"  .      .
+ OAD      "O3'"  "C3'"  "HO'3" .
+ OAD      "HO'3" "O3'"  .      .
+ OAD      "C2'"  "C3'"  "C1'"  .
+ OAD      "H'2"  "C2'"  .      .
+ OAD      "O2'"  "C2'"  "HO'2" .
+ OAD      "HO'2" "O2'"  .      .
+ OAD      "C1'"  "C2'"  N9     .
+ OAD      "H'1"  "C1'"  .      .
+ OAD      "O4'"  "C1'"  .      .
+ OAD      N9     "C1'"  C4     .
+ OAD      C4     N9     N3     .
+ OAD      C5     C4     N7     .
+ OAD      N7     C5     C8     .
+ OAD      C8     N7     H8     .
+ OAD      H8     C8     .      .
+ OAD      N3     C4     C2     .
+ OAD      C2     N3     N1     .
+ OAD      H2     C2     .      .
+ OAD      N1     C2     C6     .
+ OAD      C6     N1     N6     .
+ OAD      N6     C6     H61    .
+ OAD      H62    N6     .      .
+ OAD      H61    N6     .      END
+ OAD      "C4'"  "O4'"  .    ADD
+ OAD      N9     C8     .    ADD
+ OAD      C5     C6     .    ADD
+ OAD      C4D    O4D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OAD       O1A       PA        deloc     1.510     0.020     1.510     0.020     
+OAD       O2A       PA        deloc     1.510     0.020     1.510     0.020     
+OAD       "O5'"     PA        single    1.610     0.020     1.610     0.020     
+OAD       PA        O3A       single    1.610     0.020     1.610     0.020     
+OAD       "C5'"     "O5'"     single    1.426     0.020     1.426     0.020     
+OAD       "C4'"     "C5'"     single    1.524     0.020     1.524     0.020     
+OAD       "H5'1"    "C5'"     single    1.089     0.010     0.989     0.005     
+OAD       "H5'2"    "C5'"     single    1.089     0.010     0.989     0.005     
+OAD       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+OAD       "C3'"     "C4'"     single    1.524     0.020     1.524     0.020     
+OAD       "H'4"     "C4'"     single    1.089     0.010     0.989     0.005     
+OAD       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+OAD       "O3'"     "C3'"     single    1.432     0.020     1.432     0.020     
+OAD       "C2'"     "C3'"     single    1.524     0.020     1.524     0.020     
+OAD       "H'3"     "C3'"     single    1.089     0.010     0.989     0.005     
+OAD       "HO'3"    "O3'"     single    0.970     0.012     0.839     0.014     
+OAD       "O2'"     "C2'"     single    1.432     0.020     1.432     0.020     
+OAD       "C1'"     "C2'"     single    1.524     0.020     1.524     0.020     
+OAD       "H'2"     "C2'"     single    1.089     0.010     0.989     0.005     
+OAD       "HO'2"    "O2'"     single    0.970     0.012     0.839     0.014     
+OAD       N9        "C1'"     single    1.485     0.020     1.485     0.020     
+OAD       "H'1"     "C1'"     single    1.089     0.010     0.989     0.005     
+OAD       N9        C8        single    1.337     0.020     1.337     0.020     
+OAD       C4        N9        single    1.337     0.020     1.337     0.020     
+OAD       C8        N7        double    1.350     0.020     1.350     0.020     
+OAD       H8        C8        single    1.082     0.013     0.975     0.010     
+OAD       N7        C5        single    1.350     0.020     1.350     0.020     
+OAD       C5        C6        double    1.490     0.020     1.490     0.020     
+OAD       C5        C4        single    1.490     0.020     1.490     0.020     
+OAD       N6        C6        single    1.355     0.020     1.355     0.020     
+OAD       C6        N1        single    1.350     0.020     1.350     0.020     
+OAD       H61       N6        single    1.016     0.010     0.899     0.007     
+OAD       H62       N6        single    1.016     0.010     0.899     0.007     
+OAD       N1        C2        double    1.337     0.020     1.337     0.020     
+OAD       C2        N3        single    1.337     0.020     1.337     0.020     
+OAD       H2        C2        single    1.082     0.013     0.975     0.010     
+OAD       N3        C4        double    1.355     0.020     1.355     0.020     
+OAD       O3A       PB        single    1.610     0.020     1.610     0.020     
+OAD       O1B       PB        deloc     1.510     0.020     1.510     0.020     
+OAD       O2B       PB        deloc     1.510     0.020     1.510     0.020     
+OAD       PB        O5D       single    1.610     0.020     1.610     0.020     
+OAD       C2D       O2D       single    1.426     0.020     1.426     0.020     
+OAD       O2D       C6D       deloc     1.454     0.020     1.454     0.020     
+OAD       O5D       C5D       single    1.426     0.020     1.426     0.020     
+OAD       C5D       C4D       single    1.524     0.020     1.524     0.020     
+OAD       H5R1      C5D       single    1.089     0.010     0.989     0.005     
+OAD       H5R2      C5D       single    1.089     0.010     0.989     0.005     
+OAD       C4D       O4D       single    1.426     0.020     1.426     0.020     
+OAD       C4D       C3D       single    1.524     0.020     1.524     0.020     
+OAD       "HR'4"    C4D       single    1.089     0.010     0.989     0.005     
+OAD       O4D       C1D       single    1.426     0.020     1.426     0.020     
+OAD       O3D       C3D       single    1.432     0.020     1.432     0.020     
+OAD       C3D       C2D       single    1.524     0.020     1.524     0.020     
+OAD       "HR'3"    C3D       single    1.089     0.010     0.989     0.005     
+OAD       HOR3      O3D       single    0.970     0.012     0.839     0.014     
+OAD       C1D       C2D       single    1.524     0.020     1.524     0.020     
+OAD       "HR'2"    C2D       single    1.089     0.010     0.989     0.005     
+OAD       O1D       C1D       single    1.432     0.020     1.432     0.020     
+OAD       "HR'1"    C1D       single    1.089     0.010     0.989     0.005     
+OAD       HOR1      O1D       single    0.970     0.012     0.839     0.014     
+OAD       C6D       O6D       deloc     1.220     0.020     1.220     0.020     
+OAD       C7D       C6D       single    1.500     0.020     1.500     0.020     
+OAD       H7R1      C7D       single    1.089     0.010     0.989     0.005     
+OAD       H7R2      C7D       single    1.089     0.010     0.989     0.005     
+OAD       H7R3      C7D       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ OAD      O6D    C6D    C7D     123.000    3.000
+ OAD      O6D    C6D    O2D     119.000    3.000
+ OAD      C7D    C6D    O2D     120.000    3.000
+ OAD      C6D    C7D    H7R3    109.470    3.000
+ OAD      C6D    C7D    H7R2    109.470    3.000
+ OAD      C6D    C7D    H7R1    109.470    3.000
+ OAD      H7R3   C7D    H7R2    109.470    3.000
+ OAD      H7R3   C7D    H7R1    109.470    3.000
+ OAD      H7R2   C7D    H7R1    109.470    3.000
+ OAD      C6D    O2D    C2D     111.800    3.000
+ OAD      O2D    C2D    "HR'2"  109.470    3.000
+ OAD      O2D    C2D    C1D     109.470    3.000
+ OAD      O2D    C2D    C3D     109.470    3.000
+ OAD      "HR'2" C2D    C1D     108.340    3.000
+ OAD      "HR'2" C2D    C3D     108.340    3.000
+ OAD      C1D    C2D    C3D     111.000    3.000
+ OAD      C2D    C1D    "HR'1"  108.340    3.000
+ OAD      C2D    C1D    O1D     109.470    3.000
+ OAD      C2D    C1D    O4D     109.470    3.000
+ OAD      "HR'1" C1D    O1D     109.470    3.000
+ OAD      "HR'1" C1D    O4D     109.470    3.000
+ OAD      O1D    C1D    O4D     109.470    3.000
+ OAD      C1D    O1D    HOR1    109.470    3.000
+ OAD      C1D    O4D    C4D     111.800    3.000
+ OAD      C2D    C3D    "HR'3"  108.340    3.000
+ OAD      C2D    C3D    O3D     109.470    3.000
+ OAD      C2D    C3D    C4D     111.000    3.000
+ OAD      "HR'3" C3D    O3D     109.470    3.000
+ OAD      "HR'3" C3D    C4D     108.340    3.000
+ OAD      O3D    C3D    C4D     109.470    3.000
+ OAD      C3D    O3D    HOR3    109.470    3.000
+ OAD      C3D    C4D    "HR'4"  108.340    3.000
+ OAD      C3D    C4D    C5D     111.000    3.000
+ OAD      C3D    C4D    O4D     109.470    3.000
+ OAD      "HR'4" C4D    C5D     108.340    3.000
+ OAD      "HR'4" C4D    O4D     109.470    3.000
+ OAD      C5D    C4D    O4D     109.470    3.000
+ OAD      C4D    C5D    H5R1    109.470    3.000
+ OAD      C4D    C5D    H5R2    109.470    3.000
+ OAD      C4D    C5D    O5D     109.470    3.000
+ OAD      H5R1   C5D    H5R2    107.900    3.000
+ OAD      H5R1   C5D    O5D     109.470    3.000
+ OAD      H5R2   C5D    O5D     109.470    3.000
+ OAD      C5D    O5D    PB      120.500    3.000
+ OAD      O5D    PB     O1B     108.200    3.000
+ OAD      O5D    PB     O2B     108.200    3.000
+ OAD      O5D    PB     O3A     102.600    3.000
+ OAD      O1B    PB     O2B     119.900    3.000
+ OAD      O1B    PB     O3A     108.200    3.000
+ OAD      O2B    PB     O3A     108.200    3.000
+ OAD      PB     O3A    PA      120.500    3.000
+ OAD      O3A    PA     O1A     108.200    3.000
+ OAD      O3A    PA     O2A     108.200    3.000
+ OAD      O3A    PA     "O5'"   102.600    3.000
+ OAD      O1A    PA     O2A     119.900    3.000
+ OAD      O1A    PA     "O5'"   108.200    3.000
+ OAD      O2A    PA     "O5'"   108.200    3.000
+ OAD      PA     "O5'"  "C5'"   120.500    3.000
+ OAD      "O5'"  "C5'"  "H5'1"  109.470    3.000
+ OAD      "O5'"  "C5'"  "H5'2"  109.470    3.000
+ OAD      "O5'"  "C5'"  "C4'"   109.470    3.000
+ OAD      "H5'1" "C5'"  "H5'2"  107.900    3.000
+ OAD      "H5'1" "C5'"  "C4'"   109.470    3.000
+ OAD      "H5'2" "C5'"  "C4'"   109.470    3.000
+ OAD      "C5'"  "C4'"  "H'4"   108.340    3.000
+ OAD      "C5'"  "C4'"  "C3'"   111.000    3.000
+ OAD      "C5'"  "C4'"  "O4'"   109.470    3.000
+ OAD      "H'4"  "C4'"  "C3'"   108.340    3.000
+ OAD      "H'4"  "C4'"  "O4'"   109.470    3.000
+ OAD      "C3'"  "C4'"  "O4'"   109.470    3.000
+ OAD      "C4'"  "C3'"  "H'3"   108.340    3.000
+ OAD      "C4'"  "C3'"  "O3'"   109.470    3.000
+ OAD      "C4'"  "C3'"  "C2'"   111.000    3.000
+ OAD      "H'3"  "C3'"  "O3'"   109.470    3.000
+ OAD      "H'3"  "C3'"  "C2'"   108.340    3.000
+ OAD      "O3'"  "C3'"  "C2'"   109.470    3.000
+ OAD      "C3'"  "O3'"  "HO'3"  109.470    3.000
+ OAD      "C3'"  "C2'"  "H'2"   108.340    3.000
+ OAD      "C3'"  "C2'"  "O2'"   109.470    3.000
+ OAD      "C3'"  "C2'"  "C1'"   111.000    3.000
+ OAD      "H'2"  "C2'"  "O2'"   109.470    3.000
+ OAD      "H'2"  "C2'"  "C1'"   108.340    3.000
+ OAD      "O2'"  "C2'"  "C1'"   109.470    3.000
+ OAD      "C2'"  "O2'"  "HO'2"  109.470    3.000
+ OAD      "C2'"  "C1'"  "H'1"   108.340    3.000
+ OAD      "C2'"  "C1'"  "O4'"   109.470    3.000
+ OAD      "C2'"  "C1'"  N9      109.470    3.000
+ OAD      "H'1"  "C1'"  "O4'"   109.470    3.000
+ OAD      "H'1"  "C1'"  N9      109.470    3.000
+ OAD      "O4'"  "C1'"  N9      109.470    3.000
+ OAD      "C1'"  "O4'"  "C4'"   111.800    3.000
+ OAD      "C1'"  N9     C4      126.000    3.000
+ OAD      "C1'"  N9     C8      126.000    3.000
+ OAD      C4     N9     C8      108.000    3.000
+ OAD      N9     C4     C5      108.000    3.000
+ OAD      N9     C4     N3      132.000    3.000
+ OAD      C5     C4     N3      120.000    3.000
+ OAD      C4     C5     N7      108.000    3.000
+ OAD      C4     C5     C6      120.000    3.000
+ OAD      N7     C5     C6      132.000    3.000
+ OAD      C5     N7     C8      108.000    3.000
+ OAD      N7     C8     H8      126.000    3.000
+ OAD      N7     C8     N9      108.000    3.000
+ OAD      H8     C8     N9      126.000    3.000
+ OAD      C4     N3     C2      120.000    3.000
+ OAD      N3     C2     H2      120.000    3.000
+ OAD      N3     C2     N1      120.000    3.000
+ OAD      H2     C2     N1      120.000    3.000
+ OAD      C2     N1     C6      120.000    3.000
+ OAD      N1     C6     N6      120.000    3.000
+ OAD      N1     C6     C5      120.000    3.000
+ OAD      N6     C6     C5      120.000    3.000
+ OAD      C6     N6     H62     120.000    3.000
+ OAD      C6     N6     H61     120.000    3.000
+ OAD      H62    N6     H61     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ OAD      var_1    O6D    C6D    C7D    H7R1       0.000   20.000   1
+ OAD      var_2    O6D    C6D    O2D    C2D        0.000   20.000   1
+ OAD      var_3    C6D    O2D    C2D    C3D        0.000   20.000   1
+ OAD      var_4    O2D    C2D    C1D    O4D        0.000   20.000   3
+ OAD      var_5    C2D    C1D    O1D    HOR1       0.000   20.000   1
+ OAD      var_6    C2D    C1D    O4D    C4D        0.000   20.000   1
+ OAD      var_7    O2D    C2D    C3D    C4D        0.000   20.000   3
+ OAD      var_8    C2D    C3D    O3D    HOR3       0.000   20.000   1
+ OAD      var_9    C2D    C3D    C4D    C5D        0.000   20.000   3
+ OAD      var_10   C3D    C4D    O4D    C1D        0.000   20.000   1
+ OAD      var_11   C3D    C4D    C5D    O5D        0.000   20.000   3
+ OAD      var_12   C4D    C5D    O5D    PB         0.000   20.000   1
+ OAD      var_13   C5D    O5D    PB     O3A        0.000   20.000   1
+ OAD      var_14   O5D    PB     O3A    PA         0.000   20.000   1
+ OAD      var_15   PB     O3A    PA     "O5'"      0.000   20.000   1
+ OAD      var_16   O3A    PA     "O5'"  "C5'"      0.000   20.000   1
+ OAD      var_17   PA     "O5'"  "C5'"  "C4'"      0.000   20.000   1
+ OAD      var_18   "O5'"  "C5'"  "C4'"  "C3'"      0.000   20.000   3
+ OAD      var_19   "C5'"  "C4'"  "O4'"  "C1'"      0.000   20.000   1
+ OAD      var_20   "C5'"  "C4'"  "C3'"  "C2'"      0.000   20.000   3
+ OAD      var_21   "C4'"  "C3'"  "O3'"  "HO'3"     0.000   20.000   1
+ OAD      var_22   "C4'"  "C3'"  "C2'"  "C1'"      0.000   20.000   3
+ OAD      var_23   "C3'"  "C2'"  "O2'"  "HO'2"     0.000   20.000   1
+ OAD      var_24   "C3'"  "C2'"  "C1'"  N9         0.000   20.000   3
+ OAD      var_25   "C2'"  "C1'"  "O4'"  "C4'"      0.000   20.000   1
+ OAD      var_26   "C2'"  "C1'"  N9     C4         0.000   20.000   1
+ OAD      CONST_1  "C1'"  N9     C8     N7         0.000    0.000   0
+ OAD      CONST_2  "C1'"  N9     C4     N3         0.000    0.000   0
+ OAD      CONST_3  N9     C4     C5     N7         0.000    0.000   0
+ OAD      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ OAD      CONST_5  C4     C5     N7     C8         0.000    0.000   0
+ OAD      CONST_6  C5     N7     C8     N9         0.000    0.000   0
+ OAD      CONST_7  N9     C4     N3     C2         0.000    0.000   0
+ OAD      CONST_8  C4     N3     C2     N1         0.000    0.000   0
+ OAD      CONST_9  N3     C2     N1     C6         0.000    0.000   0
+ OAD      CONST_10 C2     N1     C6     N6         0.000    0.000   0
+ OAD      CONST_11 N1     C6     N6     H61        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ OAD      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     positiv
+ OAD      chir_02  "C3'"  "C4'"  "O3'"  "C2'"     positiv
+ OAD      chir_03  "C2'"  "C3'"  "O2'"  "C1'"     positiv
+ OAD      chir_04  "C1'"  "O4'"  "C2'"  N9        positiv
+ OAD      chir_05  C4D    C5D    O4D    C3D       positiv
+ OAD      chir_06  C3D    C4D    O3D    C2D       positiv
+ OAD      chir_07  C2D    O2D    C3D    C1D       positiv
+ OAD      chir_08  C1D    O4D    C2D    O1D       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ OAD      plan-1    N9        0.020
+ OAD      plan-1    "C1'"     0.020
+ OAD      plan-1    C8        0.020
+ OAD      plan-1    C4        0.020
+ OAD      plan-1    N7        0.020
+ OAD      plan-1    H8        0.020
+ OAD      plan-1    C5        0.020
+ OAD      plan-1    C6        0.020
+ OAD      plan-1    N1        0.020
+ OAD      plan-1    C2        0.020
+ OAD      plan-1    N3        0.020
+ OAD      plan-1    N6        0.020
+ OAD      plan-1    H2        0.020
+ OAD      plan-1    H62       0.020
+ OAD      plan-1    H61       0.020
+ OAD      plan-2    N6        0.020
+ OAD      plan-2    C6        0.020
+ OAD      plan-2    H61       0.020
+ OAD      plan-2    H62       0.020
+ OAD      plan-3    C6D       0.020
+ OAD      plan-3    O2D       0.020
+ OAD      plan-3    O6D       0.020
+ OAD      plan-3    C7D       0.020
+# ------------------------------------------------------

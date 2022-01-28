@@ -1,0 +1,259 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SEB     SEB     O-BENZYLSULFONYL-SERINE     peptide     30     17     .
+#
+data_comp_SEB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SEB     C       C       C       0       17.188      22.747      -2.691
+SEB     N       N       NT3     1       14.944      22.435      -1.698
+SEB     CI2     C       CR16    0       20.805      21.999      -2.016
+SEB     CH2     C       CR16    0       20.174      22.686      -0.987
+SEB     CJ      C       CR16    0       21.347      20.751      -1.787
+SEB     CI1     C       CR16    0       21.260      20.187      -0.530
+SEB     CH1     C       CR16    0       20.630      20.874      0.501
+SEB     CZ      C       CR6     0       20.079      22.128      0.280
+SEB     CE      C       CH2     0       19.397      22.873      1.399
+SEB     OD2     O       O       0       17.868      20.901      2.093
+SEB     OD1     O       O       0       17.092      23.208      2.530
+SEB     SD      S       S3      0       17.721      22.256      1.676
+SEB     OG      O       O2      0       17.014      22.265      0.265
+SEB     CB      C       CH2     0       16.695      23.530      -0.346
+SEB     CA      C       CH1     0       16.134      23.326      -1.739
+SEB     O       O       O       0       17.806      23.553      -3.416
+SEB     OXT     O       OC      -1      17.355      21.511      -2.674
+SEB     H       H       H       0       14.320      22.782      -1.134
+SEB     H2      H       H       0       15.189      21.608      -1.402
+SEB     H3      H       H       0       14.586      22.361      -2.533
+SEB     HI2     H       H       0       20.862      22.387      -2.875
+SEB     HH2     H       H       0       19.805      23.540      -1.151
+SEB     HJ      H       H       0       21.776      20.284      -2.487
+SEB     HI1     H       H       0       21.630      19.334      -0.369
+SEB     HH1     H       H       0       20.574      20.482      1.358
+SEB     HE3     H       H       0       19.361      23.836      1.178
+SEB     HE2     H       H       0       19.926      22.772      2.228
+SEB     HB3     H       H       0       17.504      24.084      -0.397
+SEB     HB2     H       H       0       16.033      24.002      0.205
+SEB     HA      H       H       0       15.844      24.209      -2.096
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+SEB      N      n/a    CA     START
+SEB      H      N      .      .
+SEB      H2     N      .      .
+SEB      H3     N      .      .
+SEB      CA     N      C      .
+SEB      HA     CA     .      .
+SEB      CB     CA     OG     .
+SEB      HB3    CB     .      .
+SEB      HB2    CB     .      .
+SEB      OG     CB     SD     .
+SEB      SD     OG     CE     .
+SEB      OD2    SD     .      .
+SEB      OD1    SD     .      .
+SEB      CE     SD     CZ     .
+SEB      HE3    CE     .      .
+SEB      HE2    CE     .      .
+SEB      CZ     CE     CH1    .
+SEB      CH2    CZ     HH2    .
+SEB      HH2    CH2    .      .
+SEB      CH1    CZ     CI1    .
+SEB      HH1    CH1    .      .
+SEB      CI1    CH1    CJ     .
+SEB      HI1    CI1    .      .
+SEB      CJ     CI1    CI2    .
+SEB      HJ     CJ     .      .
+SEB      CI2    CJ     HI2    .
+SEB      HI2    CI2    .      .
+SEB      C      CA     .      END
+SEB      O      C      .      .
+SEB      OXT    C      .      .
+SEB      CI2    CH2    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SEB       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+SEB       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+SEB       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SEB       N         CA        SINGLE    n         1.487     0.010     1.487     0.010     
+SEB       CI2       CH2       DOUBLE    y         1.386     0.010     1.386     0.010     
+SEB       CI2       CJ        SINGLE    y         1.376     0.012     1.376     0.012     
+SEB       CH2       CZ        SINGLE    y         1.383     0.011     1.383     0.011     
+SEB       CJ        CI1       DOUBLE    y         1.376     0.012     1.376     0.012     
+SEB       CI1       CH1       SINGLE    y         1.386     0.010     1.386     0.010     
+SEB       CH1       CZ        DOUBLE    y         1.383     0.011     1.383     0.011     
+SEB       CZ        CE        SINGLE    n         1.507     0.010     1.507     0.010     
+SEB       CE        SD        SINGLE    n         1.806     0.020     1.806     0.020     
+SEB       OD2       SD        DOUBLE    n         1.425     0.016     1.425     0.016     
+SEB       OD1       SD        DOUBLE    n         1.425     0.016     1.425     0.016     
+SEB       SD        OG        SINGLE    n         1.577     0.010     1.577     0.010     
+SEB       OG        CB        SINGLE    n         1.437     0.020     1.437     0.020     
+SEB       CB        CA        SINGLE    n         1.515     0.017     1.515     0.017     
+SEB       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+SEB       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+SEB       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+SEB       CI2       HI2       SINGLE    n         1.082     0.013     0.944     0.018     
+SEB       CH2       HH2       SINGLE    n         1.082     0.013     0.944     0.017     
+SEB       CJ        HJ        SINGLE    n         1.082     0.013     0.944     0.016     
+SEB       CI1       HI1       SINGLE    n         1.082     0.013     0.944     0.018     
+SEB       CH1       HH1       SINGLE    n         1.082     0.013     0.944     0.017     
+SEB       CE        HE3       SINGLE    n         1.089     0.010     0.988     0.010     
+SEB       CE        HE2       SINGLE    n         1.089     0.010     0.988     0.010     
+SEB       CB        HB3       SINGLE    n         1.089     0.010     0.982     0.020     
+SEB       CB        HB2       SINGLE    n         1.089     0.010     0.982     0.020     
+SEB       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SEB          CA           C           O     117.181    1.50
+SEB          CA           C         OXT     117.181    1.50
+SEB           O           C         OXT     125.637    1.50
+SEB          CA           N           H     109.619    1.50
+SEB          CA           N          H2     109.619    1.50
+SEB          CA           N          H3     109.619    1.50
+SEB           H           N          H2     109.028    2.41
+SEB           H           N          H3     109.028    2.41
+SEB          H2           N          H3     109.028    2.41
+SEB         CH2         CI2          CJ     120.277    1.50
+SEB         CH2         CI2         HI2     119.816    1.50
+SEB          CJ         CI2         HI2     119.907    1.50
+SEB         CI2         CH2          CZ     120.413    1.50
+SEB         CI2         CH2         HH2     119.794    1.50
+SEB          CZ         CH2         HH2     119.793    1.50
+SEB         CI2          CJ         CI1     119.999    1.50
+SEB         CI2          CJ          HJ     119.998    1.50
+SEB         CI1          CJ          HJ     119.998    1.50
+SEB          CJ         CI1         CH1     120.277    1.50
+SEB          CJ         CI1         HI1     119.907    1.50
+SEB         CH1         CI1         HI1     119.816    1.50
+SEB         CI1         CH1          CZ     120.413    1.50
+SEB         CI1         CH1         HH1     119.794    1.50
+SEB          CZ         CH1         HH1     119.793    1.50
+SEB         CH2          CZ         CH1     118.626    1.50
+SEB         CH2          CZ          CE     120.687    1.50
+SEB         CH1          CZ          CE     120.687    1.50
+SEB          CZ          CE          SD     110.264    2.69
+SEB          CZ          CE         HE3     109.274    1.50
+SEB          CZ          CE         HE2     109.274    1.50
+SEB          SD          CE         HE3     109.400    1.50
+SEB          SD          CE         HE2     109.400    1.50
+SEB         HE3          CE         HE2     107.913    1.50
+SEB          CE          SD         OD2     104.582    2.45
+SEB          CE          SD         OD1     104.582    2.45
+SEB          CE          SD          OG     103.568    2.80
+SEB         OD2          SD         OD1     119.289    2.60
+SEB         OD2          SD          OG     107.121    2.49
+SEB         OD1          SD          OG     107.121    2.49
+SEB          SD          OG          CB     118.259    1.50
+SEB          OG          CB          CA     110.589    2.35
+SEB          OG          CB         HB3     109.340    2.33
+SEB          OG          CB         HB2     109.340    2.33
+SEB          CA          CB         HB3     109.469    1.50
+SEB          CA          CB         HB2     109.469    1.50
+SEB         HB3          CB         HB2     108.319    1.50
+SEB           C          CA           N     109.829    1.50
+SEB           C          CA          CB     111.527    1.50
+SEB           C          CA          HA     108.255    1.50
+SEB           N          CA          CB     110.608    1.50
+SEB           N          CA          HA     108.049    1.50
+SEB          CB          CA          HA     108.597    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SEB             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+SEB            sp3_sp3_19          CB          OG          SD          CE     180.000   10.00     3
+SEB            sp3_sp3_22          CA          CB          OG          SD     180.000   10.00     3
+SEB            sp3_sp3_25           C          CA          CB          OG     180.000   10.00     3
+SEB             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+SEB       const_sp2_sp2_1          CZ         CH2         CI2          CJ       0.000   10.00     2
+SEB              const_21         CH2         CI2          CJ         CI1       0.000   10.00     2
+SEB       const_sp2_sp2_6         CI2         CH2          CZ          CE     180.000   10.00     2
+SEB              const_17         CH1         CI1          CJ         CI2       0.000   10.00     2
+SEB              const_13          CZ         CH1         CI1          CJ       0.000   10.00     2
+SEB              const_10         CI1         CH1          CZ          CE     180.000   10.00     2
+SEB             sp2_sp3_8         CH2          CZ          CE          SD     -90.000   10.00     6
+SEB            sp3_sp3_10          CZ          CE          SD         OD2     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SEB    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SEB    plan-1          CE   0.020
+SEB    plan-1         CH1   0.020
+SEB    plan-1         CH2   0.020
+SEB    plan-1         CI1   0.020
+SEB    plan-1         CI2   0.020
+SEB    plan-1          CJ   0.020
+SEB    plan-1          CZ   0.020
+SEB    plan-1         HH1   0.020
+SEB    plan-1         HH2   0.020
+SEB    plan-1         HI1   0.020
+SEB    plan-1         HI2   0.020
+SEB    plan-1          HJ   0.020
+SEB    plan-2           C   0.020
+SEB    plan-2          CA   0.020
+SEB    plan-2           O   0.020
+SEB    plan-2         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SEB SMILES           ACDLabs              10.04 "O=C(O)C(N)COS(=O)(=O)Cc1ccccc1"
+SEB SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CO[S](=O)(=O)Cc1ccccc1)C(O)=O"
+SEB SMILES           CACTVS               3.341 "N[CH](CO[S](=O)(=O)Cc1ccccc1)C(O)=O"
+SEB SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)CS(=O)(=O)OC[C@@H](C(=O)O)N"
+SEB SMILES           "OpenEye OEToolkits" 1.5.0 "c1ccc(cc1)CS(=O)(=O)OCC(C(=O)O)N"
+SEB InChI            InChI                1.03  "InChI=1S/C10H13NO5S/c11-9(10(12)13)6-16-17(14,15)7-8-4-2-1-3-5-8/h1-5,9H,6-7,11H2,(H,12,13)/t9-/m0/s1"
+SEB InChIKey         InChI                1.03  GCZVEKLTOLTWLM-VIFPVBQESA-N
+SEB ?                acedrg               196         "dictionary generator"
+SEB ?                acedrg_database      11          "data source"
+SEB ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SEB ?                refmac5              5.8.0222    "optimization tool"

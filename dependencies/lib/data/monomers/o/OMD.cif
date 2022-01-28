@@ -1,0 +1,163 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OMD     OMD      "2-(3,6-DIHYDROXYPHENYL)ACETIC ACID"     NON-POLYMER     19     12     .     
+#
+data_comp_OMD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OMD     C1      C       C       0       2.700       -0.628      0.655       
+OMD     C2      C       CH2     0       1.733       -0.862      -0.501      
+OMD     "C1'"   C       CR6     0       0.368       -0.266      -0.284      
+OMD     "C2'"   C       CR16    0       -0.727      -1.083      0.013       
+OMD     "C3'"   C       CR6     0       -2.000      -0.545      0.218       
+OMD     "O3'"   O       OH1     0       -3.053      -1.370      0.505       
+OMD     "C4'"   C       CR16    0       -2.186      0.831       0.128       
+OMD     "C5'"   C       CR16    0       -1.109      1.663       -0.164      
+OMD     "C6'"   C       CR6     0       0.159       1.120       -0.368      
+OMD     "O6'"   O       OH1     0       1.202       1.955       -0.654      
+OMD     O1      O       O       0       3.535       0.289       0.545       
+OMD     O2      O       OC      -1      2.609       -1.363      1.654       
+OMD     H21     H       H       0       1.644       -1.823      -0.641      
+OMD     H22     H       H       0       2.118       -0.483      -1.313      
+OMD     "H2'"   H       H       0       -0.598      -2.017      0.073       
+OMD     HO3     H       H       0       -3.376      -1.176      1.276       
+OMD     "H4'"   H       H       0       -3.042      1.200       0.266       
+OMD     "H5'"   H       H       0       -1.235      2.597       -0.225      
+OMD     HO6     H       H       0       1.415       1.849       -1.478      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OMD       C1        C2        SINGLE    n         1.525     0.014     1.525     0.014     
+OMD       C1        O1        DOUBLE    n         1.244     0.020     1.244     0.020     
+OMD       C1        O2        SINGLE    n         1.244     0.020     1.244     0.020     
+OMD       C2        "C1'"     SINGLE    n         1.502     0.010     1.502     0.010     
+OMD       "C1'"     "C2'"     DOUBLE    y         1.387     0.011     1.387     0.011     
+OMD       "C1'"     "C6'"     SINGLE    y         1.393     0.010     1.393     0.010     
+OMD       "C2'"     "C3'"     SINGLE    y         1.390     0.010     1.390     0.010     
+OMD       "C3'"     "O3'"     SINGLE    n         1.368     0.010     1.368     0.010     
+OMD       "C3'"     "C4'"     DOUBLE    y         1.386     0.010     1.386     0.010     
+OMD       "C4'"     "C5'"     SINGLE    y         1.387     0.010     1.387     0.010     
+OMD       "C5'"     "C6'"     DOUBLE    y         1.387     0.010     1.387     0.010     
+OMD       "C6'"     "O6'"     SINGLE    n         1.364     0.013     1.364     0.013     
+OMD       C2        H21       SINGLE    n         1.089     0.010     0.975     0.011     
+OMD       C2        H22       SINGLE    n         1.089     0.010     0.975     0.011     
+OMD       "C2'"     "H2'"     SINGLE    n         1.082     0.013     0.945     0.016     
+OMD       "O3'"     HO3       SINGLE    n         0.970     0.012     0.858     0.020     
+OMD       "C4'"     "H4'"     SINGLE    n         1.082     0.013     0.942     0.017     
+OMD       "C5'"     "H5'"     SINGLE    n         1.082     0.013     0.944     0.020     
+OMD       "O6'"     HO6       SINGLE    n         0.970     0.012     0.858     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OMD          C2          C1          O1     118.115    1.50
+OMD          C2          C1          O2     118.115    1.50
+OMD          O1          C1          O2     123.770    1.50
+OMD          C1          C2       "C1'"     113.985    2.64
+OMD          C1          C2         H21     108.710    1.50
+OMD          C1          C2         H22     108.710    1.50
+OMD       "C1'"          C2         H21     108.842    1.50
+OMD       "C1'"          C2         H22     108.842    1.50
+OMD         H21          C2         H22     107.676    1.52
+OMD          C2       "C1'"       "C2'"     121.048    1.50
+OMD          C2       "C1'"       "C6'"     120.885    1.50
+OMD       "C2'"       "C1'"       "C6'"     118.067    1.50
+OMD       "C1'"       "C2'"       "C3'"     120.859    1.50
+OMD       "C1'"       "C2'"       "H2'"     119.026    1.50
+OMD       "C3'"       "C2'"       "H2'"     120.115    1.50
+OMD       "C2'"       "C3'"       "O3'"     119.876    2.43
+OMD       "C2'"       "C3'"       "C4'"     119.866    1.50
+OMD       "O3'"       "C3'"       "C4'"     120.258    2.50
+OMD       "C3'"       "O3'"         HO3     110.017    2.50
+OMD       "C3'"       "C4'"       "C5'"     120.402    1.50
+OMD       "C3'"       "C4'"       "H4'"     119.829    1.50
+OMD       "C5'"       "C4'"       "H4'"     119.768    1.50
+OMD       "C4'"       "C5'"       "C6'"     120.048    1.50
+OMD       "C4'"       "C5'"       "H5'"     120.087    1.50
+OMD       "C6'"       "C5'"       "H5'"     119.865    1.50
+OMD       "C1'"       "C6'"       "C5'"     120.758    1.50
+OMD       "C1'"       "C6'"       "O6'"     119.366    1.50
+OMD       "C5'"       "C6'"       "O6'"     119.875    1.65
+OMD       "C6'"       "O6'"         HO6     108.378    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OMD             sp2_sp3_2          O1          C1          C2       "C1'"     120.000   10.00     6
+OMD             sp2_sp3_8       "C2'"       "C1'"          C2          C1     -90.000   10.00     6
+OMD       const_sp2_sp2_3          C2       "C1'"       "C2'"       "C3'"     180.000   10.00     2
+OMD              const_24          C2       "C1'"       "C6'"       "O6'"       0.000   10.00     2
+OMD       const_sp2_sp2_6       "C1'"       "C2'"       "C3'"       "O3'"     180.000   10.00     2
+OMD              const_11       "O3'"       "C3'"       "C4'"       "C5'"     180.000   10.00     2
+OMD              const_13       "C3'"       "C4'"       "C5'"       "C6'"       0.000   10.00     2
+OMD              const_18       "C4'"       "C5'"       "C6'"       "O6'"     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OMD    plan-1       "C1'"   0.020
+OMD    plan-1          C2   0.020
+OMD    plan-1       "C2'"   0.020
+OMD    plan-1       "C3'"   0.020
+OMD    plan-1       "C4'"   0.020
+OMD    plan-1       "C5'"   0.020
+OMD    plan-1       "C6'"   0.020
+OMD    plan-1       "H2'"   0.020
+OMD    plan-1       "H4'"   0.020
+OMD    plan-1       "H5'"   0.020
+OMD    plan-1       "O3'"   0.020
+OMD    plan-1       "O6'"   0.020
+OMD    plan-2          C1   0.020
+OMD    plan-2          C2   0.020
+OMD    plan-2          O1   0.020
+OMD    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OMD SMILES           ACDLabs              10.04 "O=C(O)Cc1cc(O)ccc1O"
+OMD SMILES_CANONICAL CACTVS               3.341 "OC(=O)Cc1cc(O)ccc1O"
+OMD SMILES           CACTVS               3.341 "OC(=O)Cc1cc(O)ccc1O"
+OMD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1O)CC(=O)O)O"
+OMD SMILES           "OpenEye OEToolkits" 1.5.0 "c1cc(c(cc1O)CC(=O)O)O"
+OMD InChI            InChI                1.03  "InChI=1S/C8H8O4/c9-6-1-2-7(10)5(3-6)4-8(11)12/h1-3,9-10H,4H2,(H,11,12)"
+OMD InChIKey         InChI                1.03  IGMNYECMUMZDDF-UHFFFAOYSA-N
+OMD ?                acedrg               202         "dictionary generator"                  
+OMD ?                acedrg_database      11          "data source"                           
+OMD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OMD ?                refmac5              5.8.0189    "optimization tool"                     

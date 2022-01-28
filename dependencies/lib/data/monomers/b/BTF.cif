@@ -1,0 +1,512 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BTF      BTF '.                                   ' non-polymer        66  39 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BTF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BTF           O2     O    O         0.000      0.000    0.000    0.000
+ BTF           C25    C    C         0.000     -0.939   -0.461   -0.677
+ BTF           N9     N    NH1       0.000     -2.054    0.222   -1.060
+ BTF           H41    H    H         0.000     -2.217    1.188   -0.815
+ BTF           C23    C    CH1       0.000     -3.020   -0.587   -1.880
+ BTF           H37    H    H         0.000     -3.062   -0.162   -2.892
+ BTF           N8     N    NH1       0.000     -1.072   -1.695   -1.174
+ BTF           H40    H    H         0.000     -0.380   -2.418   -1.035
+ BTF           C24    C    CH1       0.000     -2.318   -1.916   -1.946
+ BTF           H38    H    H         0.000     -2.079   -2.168   -2.989
+ BTF           C22    C    CH2       0.000     -3.291   -2.912   -1.381
+ BTF           H35    H    H         0.000     -2.774   -3.756   -0.921
+ BTF           H36    H    H         0.000     -3.975   -3.280   -2.149
+ BTF           S1     S    S2        0.000     -4.236   -2.005   -0.106
+ BTF           C21    C    CH1       0.000     -4.466   -0.640   -1.303
+ BTF           H34    H    H         0.000     -5.154   -0.970   -2.094
+ BTF           C20    C    CH2       0.000     -4.876    0.809   -0.840
+ BTF           H32    H    H         0.000     -4.154    1.549   -1.191
+ BTF           H33    H    H         0.000     -4.953    0.863    0.248
+ BTF           C19    C    CH2       0.000     -6.366    1.118   -1.520
+ BTF           H30    H    H         0.000     -6.097    1.186   -2.576
+ BTF           H31    H    H         0.000     -6.563    2.119   -1.130
+ BTF           C16    C    CH2       0.000     -7.879    0.073   -1.333
+ BTF           H26    H    H         0.000     -7.787   -0.775   -0.652
+ BTF           H27    H    H         0.000     -8.343   -0.257   -2.265
+ BTF           C17    C    CH2       0.000     -8.729    1.138   -0.698
+ BTF           H28    H    H         0.000     -8.353    2.125   -0.977
+ BTF           H29    H    H         0.000     -8.700    1.033    0.388
+ BTF           C18    C    C         0.000    -10.170    0.982   -1.190
+ BTF           O1     O    O         0.000    -11.190    1.127   -0.372
+ BTF           N7     N    NH1       0.000    -10.401    0.503   -2.415
+ BTF           H39    H    H         0.000     -9.983    0.937   -3.226
+ BTF           C15    C    CH2       0.000    -11.225   -0.600   -2.549
+ BTF           H24    H    H         0.000    -11.336   -1.085   -1.577
+ BTF           H25    H    H         0.000    -10.774   -1.301   -3.255
+ BTF           C7     C    CR6       0.000    -12.612   -0.163   -3.070
+ BTF           C8     C    CR16      0.000    -13.516    0.548   -2.131
+ BTF           H6     H    H         0.000    -13.201    0.737   -1.112
+ BTF           C9     C    CR6       0.000    -14.852    0.999   -2.592
+ BTF           C4     C    CR6       0.000    -15.850    1.723   -1.703
+ BTF           C5     C    CR16      0.000    -15.584    2.061   -0.267
+ BTF           H4     H    H         0.000    -14.638    1.795    0.188
+ BTF           C1     C    CR6       0.000    -16.593    2.741    0.506
+ BTF           C26    C    CH3       0.000    -16.492    3.031    2.015
+ BTF           H271   H    H         0.000    -17.153    3.820    2.276
+ BTF           H261   H    H         0.000    -16.753    2.163    2.568
+ BTF           H251   H    H         0.000    -15.499    3.314    2.263
+ BTF           N2     N    NR6       0.000    -15.263    0.729   -3.982
+ BTF           C10    C    CR16      0.000    -14.377    0.015   -4.941
+ BTF           H7     H    H         0.000    -14.706   -0.170   -5.957
+ BTF           C6     C    CR16      0.000    -13.051   -0.435   -4.495
+ BTF           H5     H    H         0.000    -12.393   -0.958   -5.179
+ BTF           FE1    FE   FE        0.000    -17.236    1.496   -4.343
+ BTF           C11    C    CSP       0.000    -17.472    0.897   -6.328
+ BTF           N3     N    NS        0.000    -17.786    0.480   -7.569
+ BTF           C12    C    CSP       0.000    -19.156    2.161   -4.825
+ BTF           N4     N    NS        0.000    -20.440    2.682   -4.974
+ BTF           C13    C    CSP       0.000    -16.553    3.244   -5.241
+ BTF           N5     N    NS        0.000    -16.215    4.365   -5.946
+ BTF           C14    C    CSP       0.000    -17.865   -0.399   -3.659
+ BTF           N6     N    NS        0.000    -18.153   -1.669   -3.205
+ BTF           N1     N    NR6       0.000    -17.142    2.097   -2.323
+ BTF           C3     C    CR16      0.000    -18.164    2.773   -1.583
+ BTF           H3     H    H         0.000    -19.104    3.036   -2.053
+ BTF           C2     C    CR16      0.000    -17.901    3.117   -0.109
+ BTF           H2     H    H         0.000    -18.655    3.627    0.477
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BTF      O2     n/a    C25    START
+ BTF      C25    O2     N8     .
+ BTF      N9     C25    C23    .
+ BTF      H41    N9     .      .
+ BTF      C23    N9     H37    .
+ BTF      H37    C23    .      .
+ BTF      N8     C25    C24    .
+ BTF      H40    N8     .      .
+ BTF      C24    N8     C22    .
+ BTF      H38    C24    .      .
+ BTF      C22    C24    S1     .
+ BTF      H35    C22    .      .
+ BTF      H36    C22    .      .
+ BTF      S1     C22    C21    .
+ BTF      C21    S1     C20    .
+ BTF      H34    C21    .      .
+ BTF      C20    C21    C19    .
+ BTF      H32    C20    .      .
+ BTF      H33    C20    .      .
+ BTF      C19    C20    C16    .
+ BTF      H30    C19    .      .
+ BTF      H31    C19    .      .
+ BTF      C16    C19    C17    .
+ BTF      H26    C16    .      .
+ BTF      H27    C16    .      .
+ BTF      C17    C16    C18    .
+ BTF      H28    C17    .      .
+ BTF      H29    C17    .      .
+ BTF      C18    C17    N7     .
+ BTF      O1     C18    .      .
+ BTF      N7     C18    C15    .
+ BTF      H39    N7     .      .
+ BTF      C15    N7     C7     .
+ BTF      H24    C15    .      .
+ BTF      H25    C15    .      .
+ BTF      C7     C15    C8     .
+ BTF      C8     C7     C9     .
+ BTF      H6     C8     .      .
+ BTF      C9     C8     N2     .
+ BTF      C4     C9     C5     .
+ BTF      C5     C4     C1     .
+ BTF      H4     C5     .      .
+ BTF      C1     C5     C26    .
+ BTF      C26    C1     H251   .
+ BTF      H271   C26    .      .
+ BTF      H261   C26    .      .
+ BTF      H251   C26    .      .
+ BTF      N2     C9     FE1    .
+ BTF      C10    N2     C6     .
+ BTF      H7     C10    .      .
+ BTF      C6     C10    H5     .
+ BTF      H5     C6     .      .
+ BTF      FE1    N2     N1     .
+ BTF      C11    FE1    N3     .
+ BTF      N3     C11    .      .
+ BTF      C12    FE1    N4     .
+ BTF      N4     C12    .      .
+ BTF      C13    FE1    N5     .
+ BTF      N5     C13    .      .
+ BTF      C14    FE1    N6     .
+ BTF      N6     C14    .      .
+ BTF      N1     FE1    C3     .
+ BTF      C3     N1     C2     .
+ BTF      H3     C3     .      .
+ BTF      C2     C3     H2     .
+ BTF      H2     C2     .      END
+ BTF      C1     C2     .    ADD
+ BTF      N1     C4     .    ADD
+ BTF      C6     C7     .    ADD
+ BTF      C21    C23    .    ADD
+ BTF      C23    C24    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BTF       C1        C2        double    1.390     0.020     1.390     0.020     
+BTF       C1        C5        single    1.390     0.020     1.390     0.020     
+BTF       C2        C3        single    1.390     0.020     1.390     0.020     
+BTF       C3        N1        double    1.337     0.020     1.337     0.020     
+BTF       N1        C4        single    1.410     0.020     1.410     0.020     
+BTF       N1        FE1       single    1.935     0.020     1.935     0.020     
+BTF       C5        C4        double    1.390     0.020     1.390     0.020     
+BTF       C4        C9        single    1.487     0.020     1.487     0.020     
+BTF       C6        C7        double    1.390     0.020     1.390     0.020     
+BTF       C6        C10       single    1.390     0.020     1.390     0.020     
+BTF       C8        C7        single    1.390     0.020     1.390     0.020     
+BTF       C7        C15       single    1.511     0.020     1.511     0.020     
+BTF       C9        C8        double    1.390     0.020     1.390     0.020     
+BTF       N2        C9        single    1.410     0.020     1.410     0.020     
+BTF       C10       N2        double    1.337     0.020     1.337     0.020     
+BTF       FE1       N2        single    1.935     0.020     1.935     0.020     
+BTF       C11       FE1       single    1.825     0.020     1.825     0.020     
+BTF       C12       FE1       single    1.825     0.020     1.825     0.020     
+BTF       C13       FE1       single    1.825     0.020     1.825     0.020     
+BTF       C14       FE1       single    1.825     0.020     1.825     0.020     
+BTF       N3        C11       triple    1.158     0.020     1.158     0.020     
+BTF       N4        C12       triple    1.158     0.020     1.158     0.020     
+BTF       N5        C13       triple    1.158     0.020     1.158     0.020     
+BTF       N6        C14       triple    1.158     0.020     1.158     0.020     
+BTF       C15       N7        single    1.450     0.020     1.450     0.020     
+BTF       C17       C16       single    1.524     0.020     1.524     0.020     
+BTF       C16       C19       single    1.524     0.020     1.524     0.020     
+BTF       C18       C17       single    1.510     0.020     1.510     0.020     
+BTF       N7        C18       single    1.330     0.020     1.330     0.020     
+BTF       O1        C18       double    1.220     0.020     1.220     0.020     
+BTF       C19       C20       single    1.524     0.020     1.524     0.020     
+BTF       C20       C21       single    1.524     0.020     1.524     0.020     
+BTF       C21       C23       single    1.524     0.020     1.524     0.020     
+BTF       C21       S1        single    1.765     0.020     1.765     0.020     
+BTF       C22       C24       single    1.524     0.020     1.524     0.020     
+BTF       S1        C22       single    1.762     0.020     1.762     0.020     
+BTF       C23       C24       single    1.524     0.020     1.524     0.020     
+BTF       C23       N9        single    1.450     0.020     1.450     0.020     
+BTF       C24       N8        single    1.450     0.020     1.450     0.020     
+BTF       C25       O2        double    1.220     0.020     1.220     0.020     
+BTF       N8        C25       single    1.330     0.020     1.330     0.020     
+BTF       N9        C25       single    1.330     0.020     1.330     0.020     
+BTF       C26       C1        single    1.506     0.020     1.506     0.020     
+BTF       H2        C2        single    1.082     0.013     0.975     0.010     
+BTF       H3        C3        single    1.082     0.013     0.975     0.010     
+BTF       H4        C5        single    1.082     0.013     0.975     0.010     
+BTF       H5        C6        single    1.082     0.013     0.975     0.010     
+BTF       H6        C8        single    1.082     0.013     0.975     0.010     
+BTF       H7        C10       single    1.082     0.013     0.975     0.010     
+BTF       H24       C15       single    1.089     0.010     0.989     0.005     
+BTF       H25       C15       single    1.089     0.010     0.989     0.005     
+BTF       H26       C16       single    1.089     0.010     0.989     0.005     
+BTF       H27       C16       single    1.089     0.010     0.989     0.005     
+BTF       H28       C17       single    1.089     0.010     0.989     0.005     
+BTF       H29       C17       single    1.089     0.010     0.989     0.005     
+BTF       H30       C19       single    1.089     0.010     0.989     0.005     
+BTF       H31       C19       single    1.089     0.010     0.989     0.005     
+BTF       H32       C20       single    1.089     0.010     0.989     0.005     
+BTF       H33       C20       single    1.089     0.010     0.989     0.005     
+BTF       H34       C21       single    1.089     0.010     0.989     0.005     
+BTF       H35       C22       single    1.089     0.010     0.989     0.005     
+BTF       H36       C22       single    1.089     0.010     0.989     0.005     
+BTF       H37       C23       single    1.089     0.010     0.989     0.005     
+BTF       H38       C24       single    1.089     0.010     0.989     0.005     
+BTF       H39       N7        single    1.016     0.010     0.899     0.007     
+BTF       H40       N8        single    1.016     0.010     0.899     0.007     
+BTF       H41       N9        single    1.016     0.010     0.899     0.007     
+BTF       H251      C26       single    1.089     0.010     0.989     0.005     
+BTF       H261      C26       single    1.089     0.010     0.989     0.005     
+BTF       H271      C26       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BTF      O2     C25    N9      123.000    3.000
+ BTF      O2     C25    N8      123.000    3.000
+ BTF      N9     C25    N8      120.000    3.000
+ BTF      C25    N9     H41     120.000    3.000
+ BTF      C25    N9     C23     121.500    3.000
+ BTF      H41    N9     C23     118.500    3.000
+ BTF      N9     C23    H37     108.550    3.000
+ BTF      N9     C23    C21     110.000    3.000
+ BTF      N9     C23    C24     110.000    3.000
+ BTF      C21    C23    C24     111.000    3.000
+ BTF      H37    C23    C21     108.340    3.000
+ BTF      H37    C23    C24     108.340    3.000
+ BTF      C25    N8     H40     120.000    3.000
+ BTF      C25    N8     C24     121.500    3.000
+ BTF      H40    N8     C24     118.500    3.000
+ BTF      N8     C24    H38     108.550    3.000
+ BTF      N8     C24    C22     110.000    3.000
+ BTF      N8     C24    C23     110.000    3.000
+ BTF      H38    C24    C22     108.340    3.000
+ BTF      H38    C24    C23     108.340    3.000
+ BTF      C22    C24    C23     111.000    3.000
+ BTF      C24    C22    H35     109.470    3.000
+ BTF      C24    C22    H36     109.470    3.000
+ BTF      C24    C22    S1      109.500    3.000
+ BTF      H35    C22    H36     107.900    3.000
+ BTF      H35    C22    S1      109.500    3.000
+ BTF      H36    C22    S1      109.500    3.000
+ BTF      C22    S1     C21      88.769    3.000
+ BTF      S1     C21    H34     109.500    3.000
+ BTF      S1     C21    C20     109.500    3.000
+ BTF      S1     C21    C23     109.500    3.000
+ BTF      H34    C21    C20     108.340    3.000
+ BTF      H34    C21    C23     108.340    3.000
+ BTF      C20    C21    C23     111.000    3.000
+ BTF      C21    C20    H32     109.470    3.000
+ BTF      C21    C20    H33     109.470    3.000
+ BTF      C21    C20    C19     111.000    3.000
+ BTF      H32    C20    H33     107.900    3.000
+ BTF      H32    C20    C19     109.470    3.000
+ BTF      H33    C20    C19     109.470    3.000
+ BTF      C20    C19    H30     109.470    3.000
+ BTF      C20    C19    H31     109.470    3.000
+ BTF      C20    C19    C16     111.000    3.000
+ BTF      H30    C19    H31     107.900    3.000
+ BTF      H30    C19    C16     109.470    3.000
+ BTF      H31    C19    C16     109.470    3.000
+ BTF      C19    C16    H26     109.470    3.000
+ BTF      C19    C16    H27     109.470    3.000
+ BTF      C19    C16    C17     111.000    3.000
+ BTF      H26    C16    H27     107.900    3.000
+ BTF      H26    C16    C17     109.470    3.000
+ BTF      H27    C16    C17     109.470    3.000
+ BTF      C16    C17    H28     109.470    3.000
+ BTF      C16    C17    H29     109.470    3.000
+ BTF      C16    C17    C18     109.470    3.000
+ BTF      H28    C17    H29     107.900    3.000
+ BTF      H28    C17    C18     109.470    3.000
+ BTF      H29    C17    C18     109.470    3.000
+ BTF      C17    C18    O1      120.500    3.000
+ BTF      C17    C18    N7      116.500    3.000
+ BTF      O1     C18    N7      123.000    3.000
+ BTF      C18    N7     H39     120.000    3.000
+ BTF      C18    N7     C15     121.500    3.000
+ BTF      H39    N7     C15     118.500    3.000
+ BTF      N7     C15    H24     109.470    3.000
+ BTF      N7     C15    H25     109.470    3.000
+ BTF      N7     C15    C7      109.500    3.000
+ BTF      H24    C15    H25     107.900    3.000
+ BTF      H24    C15    C7      109.470    3.000
+ BTF      H25    C15    C7      109.470    3.000
+ BTF      C15    C7     C8      120.000    3.000
+ BTF      C15    C7     C6      120.000    3.000
+ BTF      C8     C7     C6      120.000    3.000
+ BTF      C7     C8     H6      120.000    3.000
+ BTF      C7     C8     C9      120.000    3.000
+ BTF      H6     C8     C9      120.000    3.000
+ BTF      C8     C9     C4      120.000    3.000
+ BTF      C8     C9     N2      120.000    3.000
+ BTF      C4     C9     N2      120.000    3.000
+ BTF      C9     C4     C5      120.000    3.000
+ BTF      C9     C4     N1      120.000    3.000
+ BTF      C5     C4     N1      120.000    3.000
+ BTF      C4     C5     H4      120.000    3.000
+ BTF      C4     C5     C1      120.000    3.000
+ BTF      H4     C5     C1      120.000    3.000
+ BTF      C5     C1     C26     120.000    3.000
+ BTF      C5     C1     C2      120.000    3.000
+ BTF      C26    C1     C2      120.000    3.000
+ BTF      C1     C26    H271    109.470    3.000
+ BTF      C1     C26    H261    109.470    3.000
+ BTF      C1     C26    H251    109.470    3.000
+ BTF      H271   C26    H261    109.470    3.000
+ BTF      H271   C26    H251    109.470    3.000
+ BTF      H261   C26    H251    109.470    3.000
+ BTF      C9     N2     C10     120.000    3.000
+ BTF      C9     N2     FE1     120.000    3.000
+ BTF      C10    N2     FE1     120.000    3.000
+ BTF      N2     C10    H7      120.000    3.000
+ BTF      N2     C10    C6      120.000    3.000
+ BTF      H7     C10    C6      120.000    3.000
+ BTF      C10    C6     H5      120.000    3.000
+ BTF      C10    C6     C7      120.000    3.000
+ BTF      H5     C6     C7      120.000    3.000
+ BTF      N2     FE1    C11      90.000    3.000
+ BTF      N2     FE1    C12     180.000    3.000
+ BTF      N2     FE1    C13      90.000    3.000
+ BTF      N2     FE1    C14      90.000    3.000
+ BTF      N2     FE1    N1       90.000    3.000
+ BTF      C11    FE1    C12      90.000    3.000
+ BTF      C11    FE1    C13      90.000    3.000
+ BTF      C12    FE1    C13      90.000    3.000
+ BTF      C11    FE1    C14      90.000    3.000
+ BTF      C12    FE1    C14      90.000    3.000
+ BTF      C13    FE1    C14     180.000    3.000
+ BTF      C11    FE1    N1      180.000    3.000
+ BTF      C12    FE1    N1       90.000    3.000
+ BTF      C13    FE1    N1       90.000    3.000
+ BTF      C14    FE1    N1       90.000    3.000
+ BTF      FE1    C11    N3      180.000    3.000
+ BTF      FE1    C12    N4      180.000    3.000
+ BTF      FE1    C13    N5      180.000    3.000
+ BTF      FE1    C14    N6      180.000    3.000
+ BTF      FE1    N1     C3      120.000    3.000
+ BTF      FE1    N1     C4      120.000    3.000
+ BTF      C3     N1     C4      120.000    3.000
+ BTF      N1     C3     H3      120.000    3.000
+ BTF      N1     C3     C2      120.000    3.000
+ BTF      H3     C3     C2      120.000    3.000
+ BTF      C3     C2     H2      120.000    3.000
+ BTF      C3     C2     C1      120.000    3.000
+ BTF      H2     C2     C1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BTF      CONST_1  O2     C25    N9     C23      180.000    0.000   0
+ BTF      var_1    C25    N9     C23    C21      120.000   20.000   3
+ BTF      var_2    N9     C23    C24    N8         0.000   20.000   3
+ BTF      CONST_2  O2     C25    N8     C24      180.000    0.000   0
+ BTF      var_3    C25    N8     C24    C22     -120.000   20.000   3
+ BTF      var_4    N8     C24    C22    S1        90.000   20.000   3
+ BTF      var_5    C24    C22    S1     C21       60.000   20.000   1
+ BTF      var_6    C22    S1     C21    C20     -150.000   20.000   1
+ BTF      var_7    S1     C21    C23    N9       -90.000   20.000   3
+ BTF      var_8    S1     C21    C20    C19     -116.847   20.000   3
+ BTF      var_9    C21    C20    C19    C16       55.232   20.000   3
+ BTF      var_10   C20    C19    C16    C17      120.002   20.000   3
+ BTF      var_11   C19    C16    C17    C18      144.098   20.000   3
+ BTF      var_12   C16    C17    C18    N7       -31.126   20.000   3
+ BTF      CONST_3  C17    C18    N7     C15      180.000    0.000   0
+ BTF      var_13   C18    N7     C15    C7       104.030   20.000   3
+ BTF      var_14   N7     C15    C7     C8       -73.147   20.000   2
+ BTF      CONST_4  C15    C7     C8     C9       180.000    0.000   0
+ BTF      CONST_5  C7     C8     C9     N2         0.000    0.000   0
+ BTF      CONST_6  C8     C9     C4     C5         0.000    0.000   0
+ BTF      CONST_7  C9     C4     C5     C1       180.000    0.000   0
+ BTF      CONST_8  C4     C5     C1     C26      180.000    0.000   0
+ BTF      CONST_9  C5     C1     C2     C3         0.000    0.000   0
+ BTF      var_15   C5     C1     C26    H251      39.536   20.000   1
+ BTF      CONST_10 C8     C9     N2     FE1      180.000    0.000   0
+ BTF      CONST_11 C9     N2     C10    C6         0.000    0.000   0
+ BTF      CONST_12 N2     C10    C6     C7         0.000    0.000   0
+ BTF      CONST_13 C10    C6     C7     C15      180.000    0.000   0
+ BTF      CONST_14 C9     N2     FE1    N1         0.000    0.000   0
+ BTF      var_16   N3     C11    FE1    N2       180.000   20.000   1
+ BTF      var_17   N4     C12    FE1    N2       180.000   20.000   1
+ BTF      var_18   N5     C13    FE1    N2       180.000   20.000   1
+ BTF      var_19   N6     C14    FE1    N2       180.000   20.000   1
+ BTF      CONST_15 C4     N1     FE1    N2         0.000    0.000   0
+ BTF      CONST_16 FE1    N1     C4     C9         0.000    0.000   0
+ BTF      CONST_17 FE1    N1     C3     C2       180.000    0.000   0
+ BTF      CONST_18 N1     C3     C2     C1         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ BTF      chir_01  C21    C20    C23    S1        negativ
+                   .      .      .      .      .
+ BTF      chir_02  C23    C21    C24    N9        positiv
+                   .      .      .      .      .
+ BTF      chir_03  C24    C22    C23    N8        negativ
+                   .      .      .      .      .
+ BTF      chir_04  FE1    N2     C12    C11       cross4
+                   C13    N1     C14    .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BTF      plan-1    C1        0.020
+ BTF      plan-1    C2        0.020
+ BTF      plan-1    C5        0.020
+ BTF      plan-1    C26       0.020
+ BTF      plan-1    C3        0.020
+ BTF      plan-1    N1        0.020
+ BTF      plan-1    C4        0.020
+ BTF      plan-1    H2        0.020
+ BTF      plan-1    H3        0.020
+ BTF      plan-1    FE1       0.020
+ BTF      plan-1    C9        0.020
+ BTF      plan-1    H4        0.020
+ BTF      plan-1    C6        0.020
+ BTF      plan-1    C7        0.020
+ BTF      plan-1    C10       0.020
+ BTF      plan-1    H5        0.020
+ BTF      plan-1    C8        0.020
+ BTF      plan-1    N2        0.020
+ BTF      plan-1    C15       0.020
+ BTF      plan-1    H6        0.020
+ BTF      plan-1    H7        0.020
+ BTF      plan-2    C18       0.020
+ BTF      plan-2    C17       0.020
+ BTF      plan-2    N7        0.020
+ BTF      plan-2    O1        0.020
+ BTF      plan-2    H39       0.020
+ BTF      plan-3    C25       0.020
+ BTF      plan-3    O2        0.020
+ BTF      plan-3    N8        0.020
+ BTF      plan-3    N9        0.020
+ BTF      plan-3    H40       0.020
+ BTF      plan-3    H41       0.020
+ BTF      plan-4    N7        0.020
+ BTF      plan-4    C15       0.020
+ BTF      plan-4    C18       0.020
+ BTF      plan-4    H39       0.020
+ BTF      plan-5    N8        0.020
+ BTF      plan-5    C24       0.020
+ BTF      plan-5    C25       0.020
+ BTF      plan-5    H40       0.020
+ BTF      plan-6    N9        0.020
+ BTF      plan-6    C23       0.020
+ BTF      plan-6    C25       0.020
+ BTF      plan-6    H41       0.020
+# ------------------------------------------------------

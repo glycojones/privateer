@@ -1,0 +1,252 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PSA      PSA '3-HYDROXY-4-AMINO-5-PHENYLPENTANOIC ' non-polymer        29  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PSA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PSA           OXT    O    OC       -0.500      0.000    0.000    0.000
+ PSA           C      C    C         0.000     -1.077   -0.576   -0.269
+ PSA           O      O    OC       -0.500     -1.092   -1.810   -0.474
+ PSA           CM     C    CH2       0.000     -2.357    0.216   -0.345
+ PSA           HM1    H    H         0.000     -2.264    0.981   -1.119
+ PSA           HM2    H    H         0.000     -2.545    0.695    0.618
+ PSA           CH     C    CH1       0.000     -3.517   -0.720   -0.687
+ PSA           HC     H    H         0.000     -3.609   -1.489    0.093
+ PSA           OH     O    OH1       0.000     -3.268   -1.346   -1.945
+ PSA           HH     H    H         0.000     -3.188   -0.670   -2.631
+ PSA           CA     C    CH1       0.000     -4.816    0.084   -0.763
+ PSA           HA     H    H         0.000     -5.006    0.566    0.206
+ PSA           N      N    NH2       0.000     -4.693    1.111   -1.805
+ PSA           H2     H    H         0.000     -3.808    1.260   -2.275
+ PSA           H      H    H         0.000     -5.493    1.678   -2.061
+ PSA           CB     C    CH2       0.000     -5.976   -0.853   -1.104
+ PSA           HB2    H    H         0.000     -6.066   -1.616   -0.328
+ PSA           HB3    H    H         0.000     -5.785   -1.333   -2.066
+ PSA           CG     C    CR6       0.000     -7.255   -0.060   -1.181
+ PSA           CD2    C    CR16      0.000     -8.033    0.106   -0.051
+ PSA           HD2    H    H         0.000     -7.724   -0.334    0.889
+ PSA           CE2    C    CR16      0.000     -9.205    0.836   -0.121
+ PSA           HE2    H    H         0.000     -9.812    0.972    0.766
+ PSA           CZ     C    CR16      0.000     -9.604    1.391   -1.322
+ PSA           HZ     H    H         0.000    -10.523    1.961   -1.378
+ PSA           CE1    C    CR16      0.000     -8.828    1.220   -2.452
+ PSA           HE1    H    H         0.000     -9.139    1.655   -3.394
+ PSA           CD1    C    CR16      0.000     -7.654    0.494   -2.382
+ PSA           HD1    H    H         0.000     -7.046    0.360   -3.269
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PSA      OXT    n/a    C      START
+ PSA      C      OXT    CM     .
+ PSA      O      C      .      .
+ PSA      CM     C      CH     .
+ PSA      HM1    CM     .      .
+ PSA      HM2    CM     .      .
+ PSA      CH     CM     CA     .
+ PSA      HC     CH     .      .
+ PSA      OH     CH     HH     .
+ PSA      HH     OH     .      .
+ PSA      CA     CH     CB     .
+ PSA      HA     CA     .      .
+ PSA      N      CA     H      .
+ PSA      H2     N      .      .
+ PSA      H      N      .      .
+ PSA      CB     CA     CG     .
+ PSA      HB2    CB     .      .
+ PSA      HB3    CB     .      .
+ PSA      CG     CB     CD2    .
+ PSA      CD2    CG     CE2    .
+ PSA      HD2    CD2    .      .
+ PSA      CE2    CD2    CZ     .
+ PSA      HE2    CE2    .      .
+ PSA      CZ     CE2    CE1    .
+ PSA      HZ     CZ     .      .
+ PSA      CE1    CZ     CD1    .
+ PSA      HE1    CE1    .      .
+ PSA      CD1    CE1    HD1    .
+ PSA      HD1    CD1    .      END
+ PSA      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PSA       N         CA        single    1.450     0.020     1.450     0.020     
+PSA       H         N         single    1.036     0.016     0.914     0.007     
+PSA       H2        N         single    1.036     0.016     0.914     0.007     
+PSA       CB        CA        single    1.524     0.020     1.524     0.020     
+PSA       CA        CH        single    1.524     0.020     1.524     0.020     
+PSA       HA        CA        single    1.089     0.010     0.989     0.005     
+PSA       CG        CB        single    1.511     0.020     1.511     0.020     
+PSA       HB2       CB        single    1.089     0.010     0.989     0.005     
+PSA       HB3       CB        single    1.089     0.010     0.989     0.005     
+PSA       CG        CD1       double    1.390     0.020     1.390     0.020     
+PSA       CD2       CG        single    1.390     0.020     1.390     0.020     
+PSA       CD1       CE1       single    1.390     0.020     1.390     0.020     
+PSA       HD1       CD1       single    1.082     0.013     0.975     0.010     
+PSA       CE2       CD2       double    1.390     0.020     1.390     0.020     
+PSA       HD2       CD2       single    1.082     0.013     0.975     0.010     
+PSA       CE1       CZ        double    1.390     0.020     1.390     0.020     
+PSA       HE1       CE1       single    1.082     0.013     0.975     0.010     
+PSA       CZ        CE2       single    1.390     0.020     1.390     0.020     
+PSA       HE2       CE2       single    1.082     0.013     0.975     0.010     
+PSA       HZ        CZ        single    1.082     0.013     0.975     0.010     
+PSA       OH        CH        single    1.432     0.020     1.432     0.020     
+PSA       CH        CM        single    1.524     0.020     1.524     0.020     
+PSA       HC        CH        single    1.089     0.010     0.989     0.005     
+PSA       HH        OH        single    0.970     0.012     0.839     0.014     
+PSA       CM        C         single    1.510     0.020     1.510     0.020     
+PSA       HM1       CM        single    1.089     0.010     0.989     0.005     
+PSA       HM2       CM        single    1.089     0.010     0.989     0.005     
+PSA       O         C         deloc     1.250     0.020     1.250     0.020     
+PSA       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PSA      OXT    C      O       123.000    3.000
+ PSA      OXT    C      CM      118.500    3.000
+ PSA      O      C      CM      118.500    3.000
+ PSA      C      CM     HM1     109.470    3.000
+ PSA      C      CM     HM2     109.470    3.000
+ PSA      C      CM     CH      109.470    3.000
+ PSA      HM1    CM     HM2     107.900    3.000
+ PSA      HM1    CM     CH      109.470    3.000
+ PSA      HM2    CM     CH      109.470    3.000
+ PSA      CM     CH     HC      108.340    3.000
+ PSA      CM     CH     OH      109.470    3.000
+ PSA      CM     CH     CA      111.000    3.000
+ PSA      HC     CH     OH      109.470    3.000
+ PSA      HC     CH     CA      108.340    3.000
+ PSA      OH     CH     CA      109.470    3.000
+ PSA      CH     OH     HH      109.470    3.000
+ PSA      CH     CA     HA      108.340    3.000
+ PSA      CH     CA     N       109.470    3.000
+ PSA      CH     CA     CB      111.000    3.000
+ PSA      HA     CA     N       109.470    3.000
+ PSA      HA     CA     CB      108.340    3.000
+ PSA      N      CA     CB      109.470    3.000
+ PSA      CA     N      H2      120.000    3.000
+ PSA      CA     N      H       120.000    3.000
+ PSA      H2     N      H       120.000    3.000
+ PSA      CA     CB     HB2     109.470    3.000
+ PSA      CA     CB     HB3     109.470    3.000
+ PSA      CA     CB     CG      109.470    3.000
+ PSA      HB2    CB     HB3     107.900    3.000
+ PSA      HB2    CB     CG      109.470    3.000
+ PSA      HB3    CB     CG      109.470    3.000
+ PSA      CB     CG     CD2     120.000    3.000
+ PSA      CB     CG     CD1     120.000    3.000
+ PSA      CD2    CG     CD1     120.000    3.000
+ PSA      CG     CD2    HD2     120.000    3.000
+ PSA      CG     CD2    CE2     120.000    3.000
+ PSA      HD2    CD2    CE2     120.000    3.000
+ PSA      CD2    CE2    HE2     120.000    3.000
+ PSA      CD2    CE2    CZ      120.000    3.000
+ PSA      HE2    CE2    CZ      120.000    3.000
+ PSA      CE2    CZ     HZ      120.000    3.000
+ PSA      CE2    CZ     CE1     120.000    3.000
+ PSA      HZ     CZ     CE1     120.000    3.000
+ PSA      CZ     CE1    HE1     120.000    3.000
+ PSA      CZ     CE1    CD1     120.000    3.000
+ PSA      HE1    CE1    CD1     120.000    3.000
+ PSA      CE1    CD1    HD1     120.000    3.000
+ PSA      CE1    CD1    CG      120.000    3.000
+ PSA      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PSA      var_1    OXT    C      CM     CH       179.991   20.000   3
+ PSA      var_2    C      CM     CH     CA       179.968   20.000   3
+ PSA      var_3    CM     CH     OH     HH       -60.065   20.000   1
+ PSA      var_4    CM     CH     CA     CB      -179.962   20.000   3
+ PSA      var_5    CH     CA     N      H        173.754   20.000   1
+ PSA      var_6    CH     CA     CB     CG      -179.928   20.000   3
+ PSA      var_7    CA     CB     CG     CD2      -90.325   20.000   2
+ PSA      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ PSA      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ PSA      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ PSA      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ PSA      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ PSA      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PSA      chir_01  CA     N      CB     CH        negativ
+ PSA      chir_02  CH     CA     OH     CM        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PSA      plan-1    N         0.020
+ PSA      plan-1    CA        0.020
+ PSA      plan-1    H         0.020
+ PSA      plan-1    H2        0.020
+ PSA      plan-2    CG        0.020
+ PSA      plan-2    CB        0.020
+ PSA      plan-2    CD1       0.020
+ PSA      plan-2    CD2       0.020
+ PSA      plan-2    CE1       0.020
+ PSA      plan-2    CE2       0.020
+ PSA      plan-2    CZ        0.020
+ PSA      plan-2    HD1       0.020
+ PSA      plan-2    HD2       0.020
+ PSA      plan-2    HE1       0.020
+ PSA      plan-2    HE2       0.020
+ PSA      plan-2    HZ        0.020
+ PSA      plan-3    C         0.020
+ PSA      plan-3    CM        0.020
+ PSA      plan-3    O         0.020
+ PSA      plan-3    OXT       0.020
+# ------------------------------------------------------

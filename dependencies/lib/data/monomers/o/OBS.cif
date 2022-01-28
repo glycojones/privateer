@@ -1,0 +1,370 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OBS     OBS     "(Z)-N^6-[(4S,5R)-5-(2-CARBOXYETHYL)-4-(CARBOXYMETHYL)-1-HYDROXYDIHYDRO-2H-THIOPYRANIUM-3(4H)-YLIDENE]-L-LYSINE"     peptide     50     26     .
+#
+data_comp_OBS
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OBS     O4      O       O       0       5.791       -3.417      -5.436
+OBS     C11     C       C       0       4.675       -3.947      -5.269
+OBS     O3      O       OC      -1      4.191       -4.796      -6.044
+OBS     C10     C       CH2     0       3.859       -3.536      -4.056
+OBS     C9      C       CH2     0       2.934       -2.335      -4.284
+OBS     C8      C       CH1     0       1.859       -2.115      -3.204
+OBS     C7      C       CH2     0       0.941       -0.947      -3.582
+OBS     C5      C       CH2     0       0.310       -0.804      -0.930
+OBS     C3      C       CH1     0       2.429       -1.963      -1.761
+OBS     C2      C       CH2     0       3.400       -0.795      -1.579
+OBS     C1      C       C       0       4.056       -0.718      -0.210
+OBS     O1      O       O       0       5.082       -1.401      -0.016
+OBS     O2      O       OC      -1      3.535       0.023       0.647
+OBS     C4      C       CR6     0       1.313       -1.911      -0.742
+OBS     NZ      N       N       0       1.169       -2.749      0.262
+OBS     CE      C       CH2     0       2.013       -3.918      0.620
+OBS     CD      C       CH2     0       1.511       -4.592      1.876
+OBS     CG      C       CH2     0       1.675       -3.731      3.122
+OBS     CB      C       CH2     0       1.290       -4.444      4.412
+OBS     CA      C       CH1     0       1.177       -3.542      5.646
+OBS     N       N       NT3     1       2.523       -3.065      6.068
+OBS     C       C       C       0       0.510       -4.286      6.810
+OBS     O       O       O       0       1.220       -5.079      7.462
+OBS     OXT     O       OC      -1      -0.695      -4.047      7.020
+OBS     S6      S       S3      0       -0.530      -0.843      -2.539
+OBS     O5      O       O       0       -1.095      0.532       -2.753
+OBS     H101    H       H       0       4.477       -3.324      -3.324
+OBS     H102    H       H       0       3.316       -4.303      -3.772
+OBS     H9C1    H       H       0       2.478       -2.454      -5.145
+OBS     H9C2    H       H       0       3.479       -1.524      -4.352
+OBS     H8      H       H       0       1.293       -2.927      -3.197
+OBS     H7C1    H       H       0       1.428       -0.101      -3.506
+OBS     H7C2    H       H       0       0.635       -1.060      -4.506
+OBS     H5C1    H       H       0       0.763       0.060       -0.837
+OBS     H5C2    H       H       0       -0.374      -0.869      -0.229
+OBS     HA      H       H       0       2.942       -2.786      -1.582
+OBS     H2C1    H       H       0       2.927       0.047       -1.734
+OBS     H2C2    H       H       0       4.115       -0.862      -2.243
+OBS     HEC1    H       H       0       2.947       -3.620      0.758
+OBS     HEC2    H       H       0       2.007       -4.569      -0.126
+OBS     HDC1    H       H       0       1.999       -5.432      2.003
+OBS     HDC2    H       H       0       0.562       -4.809      1.762
+OBS     HGC1    H       H       0       1.120       -2.928      3.030
+OBS     HGC2    H       H       0       2.610       -3.443      3.189
+OBS     HBC1    H       H       0       1.959       -5.136      4.596
+OBS     HBC2    H       H       0       0.429       -4.890      4.274
+OBS     HB      H       H       0       0.628       -2.757      5.417
+OBS     HN1     H       H       0       2.457       -2.569      6.830
+OBS     HN2     H       H       0       2.892       -2.548      5.415
+OBS     H3      H       H       0       3.071       -3.776      6.225
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+OBS      N      n/a    CA     START
+OBS      HN1    N      .      .
+OBS      HN2    N      .      .
+OBS      H3     N      .      .
+OBS      CA     N      C      .
+OBS      HB     CA     .      .
+OBS      CB     CA     CG     .
+OBS      HBC1   CB     .      .
+OBS      HBC2   CB     .      .
+OBS      CG     CB     CD     .
+OBS      HGC1   CG     .      .
+OBS      HGC2   CG     .      .
+OBS      CD     CG     CE     .
+OBS      HDC1   CD     .      .
+OBS      HDC2   CD     .      .
+OBS      CE     CD     NZ     .
+OBS      HEC1   CE     .      .
+OBS      HEC2   CE     .      .
+OBS      NZ     CE     C4     .
+OBS      C4     NZ     C5     .
+OBS      C3     C4     C8     .
+OBS      HA     C3     .      .
+OBS      C2     C3     C1     .
+OBS      H2C1   C2     .      .
+OBS      H2C2   C2     .      .
+OBS      C1     C2     O1     .
+OBS      O2     C1     .      .
+OBS      O1     C1     .      .
+OBS      C8     C3     C9     .
+OBS      H8     C8     .      .
+OBS      C9     C8     C10    .
+OBS      H9C1   C9     .      .
+OBS      H9C2   C9     .      .
+OBS      C10    C9     C11    .
+OBS      H101   C10    .      .
+OBS      H102   C10    .      .
+OBS      C11    C10    O4     .
+OBS      O3     C11    .      .
+OBS      O4     C11    .      .
+OBS      C5     C4     S6     .
+OBS      H5C1   C5     .      .
+OBS      H5C2   C5     .      .
+OBS      S6     C5     O5     .
+OBS      C7     S6     H7C1   .
+OBS      H7C2   C7     .      .
+OBS      H7C1   C7     .      .
+OBS      O5     S6     .      .
+OBS      C      CA     .      END
+OBS      O      C      .      .
+OBS      OXT    C      .      .
+OBS      C8     C7     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OBS       O4        C11       DOUBLE    n         1.247     0.019     1.247     0.019     
+OBS       C11       O3        SINGLE    n         1.247     0.019     1.247     0.019     
+OBS       C11       C10       SINGLE    n         1.519     0.012     1.519     0.012     
+OBS       C10       C9        SINGLE    n         1.532     0.012     1.532     0.012     
+OBS       C9        C8        SINGLE    n         1.536     0.012     1.536     0.012     
+OBS       C8        C7        SINGLE    n         1.531     0.010     1.531     0.010     
+OBS       C8        C3        SINGLE    n         1.552     0.010     1.552     0.010     
+OBS       C7        S6        SINGLE    n         1.806     0.012     1.806     0.012     
+OBS       C5        C4        SINGLE    n         1.498     0.020     1.498     0.020     
+OBS       C5        S6        SINGLE    n         1.815     0.020     1.815     0.020     
+OBS       C3        C2        SINGLE    n         1.522     0.013     1.522     0.013     
+OBS       C3        C4        SINGLE    n         1.507     0.010     1.507     0.010     
+OBS       C2        C1        SINGLE    n         1.519     0.012     1.519     0.012     
+OBS       C1        O1        DOUBLE    n         1.247     0.019     1.247     0.019     
+OBS       C1        O2        SINGLE    n         1.247     0.019     1.247     0.019     
+OBS       C4        NZ        DOUBLE    n         1.305     0.020     1.305     0.020     
+OBS       NZ        CE        SINGLE    n         1.483     0.020     1.483     0.020     
+OBS       CE        CD        SINGLE    n         1.511     0.011     1.511     0.011     
+OBS       CD        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+OBS       CG        CB        SINGLE    n         1.523     0.012     1.523     0.012     
+OBS       CB        CA        SINGLE    n         1.532     0.010     1.532     0.010     
+OBS       CA        N         SINGLE    n         1.488     0.011     1.488     0.011     
+OBS       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+OBS       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+OBS       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+OBS       S6        O5        DOUBLE    n         1.502     0.012     1.502     0.012     
+OBS       C10       H101      SINGLE    n         1.089     0.010     0.981     0.019     
+OBS       C10       H102      SINGLE    n         1.089     0.010     0.981     0.019     
+OBS       C9        H9C1      SINGLE    n         1.089     0.010     0.981     0.020     
+OBS       C9        H9C2      SINGLE    n         1.089     0.010     0.981     0.020     
+OBS       C8        H8        SINGLE    n         1.089     0.010     0.990     0.013     
+OBS       C7        H7C1      SINGLE    n         1.089     0.010     0.980     0.017     
+OBS       C7        H7C2      SINGLE    n         1.089     0.010     0.980     0.017     
+OBS       C5        H5C1      SINGLE    n         1.089     0.010     0.981     0.020     
+OBS       C5        H5C2      SINGLE    n         1.089     0.010     0.981     0.020     
+OBS       C3        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+OBS       C2        H2C1      SINGLE    n         1.089     0.010     0.979     0.012     
+OBS       C2        H2C2      SINGLE    n         1.089     0.010     0.979     0.012     
+OBS       CE        HEC1      SINGLE    n         1.089     0.010     0.990     0.010     
+OBS       CE        HEC2      SINGLE    n         1.089     0.010     0.990     0.010     
+OBS       CD        HDC1      SINGLE    n         1.089     0.010     0.980     0.016     
+OBS       CD        HDC2      SINGLE    n         1.089     0.010     0.980     0.016     
+OBS       CG        HGC1      SINGLE    n         1.089     0.010     0.981     0.016     
+OBS       CG        HGC2      SINGLE    n         1.089     0.010     0.981     0.016     
+OBS       CB        HBC1      SINGLE    n         1.089     0.010     0.980     0.016     
+OBS       CB        HBC2      SINGLE    n         1.089     0.010     0.980     0.016     
+OBS       CA        HB        SINGLE    n         1.089     0.010     0.985     0.020     
+OBS       N         HN1       SINGLE    n         1.036     0.016     0.911     0.020     
+OBS       N         HN2       SINGLE    n         1.036     0.016     0.911     0.020     
+OBS       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OBS          O4         C11          O3     123.625    1.50
+OBS          O4         C11         C10     118.187    1.67
+OBS          O3         C11         C10     118.187    1.67
+OBS         C11         C10          C9     114.504    2.22
+OBS         C11         C10        H101     108.416    1.50
+OBS         C11         C10        H102     108.416    1.50
+OBS          C9         C10        H101     108.701    1.50
+OBS          C9         C10        H102     108.701    1.50
+OBS        H101         C10        H102     107.544    1.50
+OBS         C10          C9          C8     114.301    2.00
+OBS         C10          C9        H9C1     108.885    1.50
+OBS         C10          C9        H9C2     108.885    1.50
+OBS          C8          C9        H9C1     108.361    1.50
+OBS          C8          C9        H9C2     108.361    1.50
+OBS        H9C1          C9        H9C2     107.696    1.50
+OBS          C9          C8          C7     112.291    2.45
+OBS          C9          C8          C3     110.815    2.12
+OBS          C9          C8          H8     107.292    1.50
+OBS          C7          C8          C3     111.124    1.57
+OBS          C7          C8          H8     107.437    1.74
+OBS          C3          C8          H8     107.135    1.50
+OBS          C8          C7          S6     111.843    2.36
+OBS          C8          C7        H7C1     109.204    1.50
+OBS          C8          C7        H7C2     109.204    1.50
+OBS          S6          C7        H7C1     106.754    2.56
+OBS          S6          C7        H7C2     106.754    2.56
+OBS        H7C1          C7        H7C2     108.826    2.09
+OBS          C4          C5          S6     112.265    2.44
+OBS          C4          C5        H5C1     108.678    1.50
+OBS          C4          C5        H5C2     108.678    1.50
+OBS          S6          C5        H5C1     107.733    2.15
+OBS          S6          C5        H5C2     107.733    2.15
+OBS        H5C1          C5        H5C2     107.827    2.60
+OBS          C8          C3          C2     111.163    2.25
+OBS          C8          C3          C4     112.021    2.38
+OBS          C8          C3          HA     106.467    1.50
+OBS          C2          C3          C4     110.115    2.66
+OBS          C2          C3          HA     107.283    1.50
+OBS          C4          C3          HA     106.973    1.50
+OBS          C3          C2          C1     113.355    2.65
+OBS          C3          C2        H2C1     108.898    1.50
+OBS          C3          C2        H2C2     108.898    1.50
+OBS          C1          C2        H2C1     107.939    1.56
+OBS          C1          C2        H2C2     107.939    1.56
+OBS        H2C1          C2        H2C2     107.802    1.50
+OBS          C2          C1          O1     117.888    1.50
+OBS          C2          C1          O2     117.880    1.50
+OBS          O1          C1          O2     124.218    1.50
+OBS          C5          C4          C3     115.526    1.99
+OBS          C5          C4          NZ     122.237    3.00
+OBS          C3          C4          NZ     122.237    3.00
+OBS          C4          NZ          CE     123.085    3.00
+OBS          NZ          CE          CD     111.617    3.00
+OBS          NZ          CE        HEC1     109.510    1.50
+OBS          NZ          CE        HEC2     109.510    1.50
+OBS          CD          CE        HEC1     109.481    1.50
+OBS          CD          CE        HEC2     109.481    1.50
+OBS        HEC1          CE        HEC2     108.043    1.50
+OBS          CE          CD          CG     113.266    2.15
+OBS          CE          CD        HDC1     108.928    1.50
+OBS          CE          CD        HDC2     108.928    1.50
+OBS          CG          CD        HDC1     109.041    1.50
+OBS          CG          CD        HDC2     109.041    1.50
+OBS        HDC1          CD        HDC2     107.927    1.57
+OBS          CD          CG          CB     113.328    2.00
+OBS          CD          CG        HGC1     108.806    1.50
+OBS          CD          CG        HGC2     108.806    1.50
+OBS          CB          CG        HGC1     108.601    1.50
+OBS          CB          CG        HGC2     108.601    1.50
+OBS        HGC1          CG        HGC2     107.646    1.50
+OBS          CG          CB          CA     115.311    1.56
+OBS          CG          CB        HBC1     108.650    1.50
+OBS          CG          CB        HBC2     108.650    1.50
+OBS          CA          CB        HBC1     108.549    1.50
+OBS          CA          CB        HBC2     108.549    1.50
+OBS        HBC1          CB        HBC2     107.844    1.50
+OBS          CB          CA           N     110.374    1.62
+OBS          CB          CA           C     111.037    2.40
+OBS          CB          CA          HB     108.967    1.50
+OBS           N          CA           C     109.241    1.50
+OBS           N          CA          HB     108.487    1.50
+OBS           C          CA          HB     108.824    1.50
+OBS          CA           N         HN1     110.062    1.93
+OBS          CA           N         HN2     110.062    1.93
+OBS          CA           N          H3     110.062    1.93
+OBS         HN1           N         HN2     109.028    2.41
+OBS         HN1           N          H3     109.028    2.41
+OBS         HN2           N          H3     109.028    2.41
+OBS          CA           C           O     117.124    1.50
+OBS          CA           C         OXT     117.124    1.50
+OBS           O           C         OXT     125.752    1.50
+OBS          C7          S6          C5      97.526    1.50
+OBS          C7          S6          O5     106.065    1.50
+OBS          C5          S6          O5     106.308    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OBS             sp2_sp2_1          C5          C4          NZ          CE     180.000   10.00     2
+OBS            sp2_sp3_26          C4          NZ          CE          CD     120.000   10.00     6
+OBS            sp3_sp3_58          CG          CD          CE          NZ     180.000   10.00     3
+OBS            sp3_sp3_67          CE          CD          CG          CB     180.000   10.00     3
+OBS            sp3_sp3_76          CA          CB          CG          CD     180.000   10.00     3
+OBS            sp3_sp3_88           N          CA          CB          CG      60.000   10.00     3
+OBS            sp3_sp3_94          CB          CA           N         HN1     180.000   10.00     3
+OBS            sp2_sp3_29           O           C          CA          CB     120.000   10.00     6
+OBS            sp2_sp3_14          O4         C11         C10          C9     120.000   10.00     6
+OBS            sp3_sp3_22         C11         C10          C9          C8     180.000   10.00     3
+OBS            sp3_sp3_31          C7          C8          C9         C10     180.000   10.00     3
+OBS             sp3_sp3_2          S6          C7          C8          C9     180.000   10.00     3
+OBS            sp3_sp3_44          C2          C3          C8          C9     180.000   10.00     3
+OBS            sp3_sp3_11          C8          C7          S6          O5      60.000   10.00     3
+OBS             sp2_sp3_4          NZ          C4          C5          S6     180.000   10.00     6
+OBS            sp3_sp3_17          C4          C5          S6          O5     180.000   10.00     3
+OBS            sp2_sp3_12          NZ          C4          C3          C2      60.000   10.00     6
+OBS            sp3_sp3_49          C1          C2          C3          C8     180.000   10.00     3
+OBS            sp2_sp3_20          O1          C1          C2          C3     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+OBS    chir_1    C8    C7    C3    C9    positive
+OBS    chir_2    C3    C4    C8    C2    both
+OBS    chir_3    CA    N    C    CB    both
+OBS    chir_4    S6    O5    C5    C7    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OBS    plan-1         C10   0.020
+OBS    plan-1         C11   0.020
+OBS    plan-1          O3   0.020
+OBS    plan-1          O4   0.020
+OBS    plan-2          C1   0.020
+OBS    plan-2          C2   0.020
+OBS    plan-2          O1   0.020
+OBS    plan-2          O2   0.020
+OBS    plan-3          C3   0.020
+OBS    plan-3          C4   0.020
+OBS    plan-3          C5   0.020
+OBS    plan-3          NZ   0.020
+OBS    plan-4           C   0.020
+OBS    plan-4          CA   0.020
+OBS    plan-4           O   0.020
+OBS    plan-4         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OBS SMILES           ACDLabs              10.04 "O=S1C/C(=N/CCCCC(C(=O)O)N)C(C(CCC(=O)O)C1)CC(=O)O"
+OBS SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CCCCN=C1C[S@@](=O)C[C@@H](CCC(O)=O)[C@H]1CC(O)=O)C(O)=O"
+OBS SMILES           CACTVS               3.341 "N[CH](CCCCN=C1C[S](=O)C[CH](CCC(O)=O)[CH]1CC(O)=O)C(O)=O"
+OBS SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1[C@H]([C@H](/C(=N\CCCC[C@@H](C(=O)O)N)/C[S@]1=O)CC(=O)O)CCC(=O)O"
+OBS SMILES           "OpenEye OEToolkits" 1.5.0 "C1C(C(C(=NCCCCC(C(=O)O)N)CS1=O)CC(=O)O)CCC(=O)O"
+OBS InChI            InChI                1.03  "InChI=1S/C16H26N2O7S/c17-12(16(23)24)3-1-2-6-18-13-9-26(25)8-10(4-5-14(19)20)11(13)7-15(21)22/h10-12H,1-9,17H2,(H,19,20)(H,21,22)(H,23,24)/b18-13-/t10-,11-,12+,26+/m1/s1"
+OBS InChIKey         InChI                1.03  OXEYOJPDXMYXIZ-KYPNPPHMSA-N
+OBS ?                acedrg               196         "dictionary generator"
+OBS ?                acedrg_database      11          "data source"
+OBS ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OBS ?                refmac5              5.8.0222    "optimization tool"

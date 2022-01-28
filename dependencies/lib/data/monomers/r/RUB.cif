@@ -1,0 +1,216 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+RUB      RUB 'RIBULOSE-1,5-DIPHOSPHATE            ' non-polymer        26  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_RUB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ RUB           O6P    O    OP       -0.666      0.000    0.000    0.000
+ RUB           P2     P    P         0.000     -0.511    0.054   -1.423
+ RUB           O4P    O    OP       -0.666     -0.572   -1.347   -1.990
+ RUB           O5P    O    OP       -0.666      0.424    0.897   -2.263
+ RUB           O5     O    O2        0.000     -1.983    0.704   -1.441
+ RUB           C5     C    CH2       0.000     -2.815   -0.132   -0.637
+ RUB           H51    H    H         0.000     -2.418   -0.168    0.380
+ RUB           H52    H    H         0.000     -2.830   -1.141   -1.056
+ RUB           C4     C    CH1       0.000     -4.237    0.432   -0.612
+ RUB           H4     H    H         0.000     -4.220    1.447   -0.190
+ RUB           O4     O    OH1       0.000     -4.754    0.479   -1.942
+ RUB           HO4    H    H         0.000     -4.768   -0.414   -2.313
+ RUB           C3     C    CH1       0.000     -5.127   -0.463    0.251
+ RUB           H3     H    H         0.000     -5.144   -1.478   -0.171
+ RUB           O3     O    OH1       0.000     -4.610   -0.510    1.582
+ RUB           HO3    H    H         0.000     -4.595    0.383    1.952
+ RUB           C2     C    C         0.000     -6.526    0.093    0.275
+ RUB           O2     O    O         0.000     -6.846    0.886    1.127
+ RUB           C1     C    CH2       0.000     -7.528   -0.340   -0.764
+ RUB           H11    H    H         0.000     -7.671   -1.421   -0.702
+ RUB           H12    H    H         0.000     -7.157   -0.080   -1.757
+ RUB           O1     O    O2        0.000     -8.773    0.321   -0.531
+ RUB           P1     P    P         0.000     -9.790   -0.185   -1.671
+ RUB           O1P    O    OP       -0.666     -9.953   -1.685   -1.570
+ RUB           O2P    O    OP       -0.666    -11.135    0.481   -1.480
+ RUB           O3P    O    OP       -0.666     -9.238    0.172   -3.034
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ RUB      O6P    n/a    P2     START
+ RUB      P2     O6P    O5     .
+ RUB      O4P    P2     .      .
+ RUB      O5P    P2     .      .
+ RUB      O5     P2     C5     .
+ RUB      C5     O5     C4     .
+ RUB      H51    C5     .      .
+ RUB      H52    C5     .      .
+ RUB      C4     C5     C3     .
+ RUB      H4     C4     .      .
+ RUB      O4     C4     HO4    .
+ RUB      HO4    O4     .      .
+ RUB      C3     C4     C2     .
+ RUB      H3     C3     .      .
+ RUB      O3     C3     HO3    .
+ RUB      HO3    O3     .      .
+ RUB      C2     C3     C1     .
+ RUB      O2     C2     .      .
+ RUB      C1     C2     O1     .
+ RUB      H11    C1     .      .
+ RUB      H12    C1     .      .
+ RUB      O1     C1     P1     .
+ RUB      P1     O1     O3P    .
+ RUB      O1P    P1     .      .
+ RUB      O2P    P1     .      .
+ RUB      O3P    P1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+RUB       C1        C2        single    1.510     0.020     1.510     0.020     
+RUB       O1        C1        single    1.426     0.020     1.426     0.020     
+RUB       H11       C1        single    1.089     0.010     0.989     0.005     
+RUB       H12       C1        single    1.089     0.010     0.989     0.005     
+RUB       C2        C3        single    1.500     0.020     1.500     0.020     
+RUB       O2        C2        double    1.220     0.020     1.220     0.020     
+RUB       C3        C4        single    1.524     0.020     1.524     0.020     
+RUB       O3        C3        single    1.432     0.020     1.432     0.020     
+RUB       H3        C3        single    1.089     0.010     0.989     0.005     
+RUB       C4        C5        single    1.524     0.020     1.524     0.020     
+RUB       O4        C4        single    1.432     0.020     1.432     0.020     
+RUB       H4        C4        single    1.089     0.010     0.989     0.005     
+RUB       C5        O5        single    1.426     0.020     1.426     0.020     
+RUB       H51       C5        single    1.089     0.010     0.989     0.005     
+RUB       H52       C5        single    1.089     0.010     0.989     0.005     
+RUB       P1        O1        single    1.610     0.020     1.610     0.020     
+RUB       HO3       O3        single    0.970     0.012     0.839     0.014     
+RUB       HO4       O4        single    0.970     0.012     0.839     0.014     
+RUB       O5        P2        single    1.610     0.020     1.610     0.020     
+RUB       O1P       P1        deloc     1.510     0.020     1.510     0.020     
+RUB       O2P       P1        deloc     1.510     0.020     1.510     0.020     
+RUB       O3P       P1        deloc     1.510     0.020     1.510     0.020     
+RUB       O4P       P2        deloc     1.510     0.020     1.510     0.020     
+RUB       O5P       P2        deloc     1.510     0.020     1.510     0.020     
+RUB       P2        O6P       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ RUB      O6P    P2     O4P     119.900    3.000
+ RUB      O6P    P2     O5P     119.900    3.000
+ RUB      O6P    P2     O5      108.200    3.000
+ RUB      O4P    P2     O5P     119.900    3.000
+ RUB      O4P    P2     O5      108.200    3.000
+ RUB      O5P    P2     O5      108.200    3.000
+ RUB      P2     O5     C5      120.500    3.000
+ RUB      O5     C5     H51     109.470    3.000
+ RUB      O5     C5     H52     109.470    3.000
+ RUB      O5     C5     C4      109.470    3.000
+ RUB      H51    C5     H52     107.900    3.000
+ RUB      H51    C5     C4      109.470    3.000
+ RUB      H52    C5     C4      109.470    3.000
+ RUB      C5     C4     H4      108.340    3.000
+ RUB      C5     C4     O4      109.470    3.000
+ RUB      C5     C4     C3      111.000    3.000
+ RUB      H4     C4     O4      109.470    3.000
+ RUB      H4     C4     C3      108.340    3.000
+ RUB      O4     C4     C3      109.470    3.000
+ RUB      C4     O4     HO4     109.470    3.000
+ RUB      C4     C3     H3      108.340    3.000
+ RUB      C4     C3     O3      109.470    3.000
+ RUB      C4     C3     C2      109.470    3.000
+ RUB      H3     C3     O3      109.470    3.000
+ RUB      H3     C3     C2      108.810    3.000
+ RUB      O3     C3     C2      109.470    3.000
+ RUB      C3     O3     HO3     109.470    3.000
+ RUB      C3     C2     O2      120.500    3.000
+ RUB      C3     C2     C1      120.000    3.000
+ RUB      O2     C2     C1      120.500    3.000
+ RUB      C2     C1     H11     109.470    3.000
+ RUB      C2     C1     H12     109.470    3.000
+ RUB      C2     C1     O1      109.470    3.000
+ RUB      H11    C1     H12     107.900    3.000
+ RUB      H11    C1     O1      109.470    3.000
+ RUB      H12    C1     O1      109.470    3.000
+ RUB      C1     O1     P1      120.500    3.000
+ RUB      O1     P1     O1P     108.200    3.000
+ RUB      O1     P1     O2P     108.200    3.000
+ RUB      O1     P1     O3P     108.200    3.000
+ RUB      O1P    P1     O2P     119.900    3.000
+ RUB      O1P    P1     O3P     119.900    3.000
+ RUB      O2P    P1     O3P     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ RUB      var_1    O6P    P2     O5     C5       -59.967   20.000   1
+ RUB      var_2    P2     O5     C5     C4       180.000   20.000   1
+ RUB      var_3    O5     C5     C4     C3      -179.973   20.000   3
+ RUB      var_4    C5     C4     O4     HO4       60.014   20.000   1
+ RUB      var_5    C5     C4     C3     C2       179.990   20.000   3
+ RUB      var_6    C4     C3     O3     HO3       60.019   20.000   1
+ RUB      var_7    C4     C3     C2     C1        89.974   20.000   3
+ RUB      var_8    C3     C2     C1     O1       179.990   20.000   3
+ RUB      var_9    C2     C1     O1     P1       179.976   20.000   1
+ RUB      var_10   C1     O1     P1     O3P      -59.937   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ RUB      chir_01  C3     C2     C4     O3        negativ
+ RUB      chir_02  C4     C3     C5     O4        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ RUB      plan-1    C2        0.020
+ RUB      plan-1    C1        0.020
+ RUB      plan-1    C3        0.020
+ RUB      plan-1    O2        0.020
+# ------------------------------------------------------

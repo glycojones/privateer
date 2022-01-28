@@ -1,0 +1,174 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ADZ     ADZ     9-METHYL-9H-PURIN-6-AMINE     NON-POLYMER     18     11     .     
+#
+data_comp_ADZ
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ADZ     N9      N       NT      0       -8.564      43.317      134.605     
+ADZ     C8      C       CR15    0       -9.610      42.527      134.220     
+ADZ     N7      N       NRD5    0       -9.820      41.494      135.005     
+ADZ     C5      C       CR56    0       -8.836      41.616      135.980     
+ADZ     C6      C       CR6     0       -8.504      40.839      137.116     
+ADZ     N6      N       NH2     0       -9.162      39.738      137.471     
+ADZ     N1      N       NRD6    0       -7.454      41.250      137.882     
+ADZ     C2      C       CR16    0       -6.790      42.364      137.522     
+ADZ     N3      N       NRD6    0       -7.008      43.174      136.480     
+ADZ     C4      C       CR56    0       -8.055      42.738      135.744     
+ADZ     "C1'"   C       CH3     0       -8.094      44.528      133.935     
+ADZ     H8      H       H       0       -10.134     42.714      133.452     
+ADZ     H6N1    H       H       0       -10.018     39.666      137.293     
+ADZ     H6N2    H       H       0       -8.736      39.087      137.878     
+ADZ     H2      H       H       0       -6.070      42.608      138.084     
+ADZ     "H1'1"  H       H       0       -7.162      44.678      134.151     
+ADZ     "H1'2"  H       H       0       -8.618      45.286      134.232     
+ADZ     "H1'3"  H       H       0       -8.190      44.426      132.978     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ADZ       N9        C8        SINGLE    y         1.368     0.015     1.368     0.015     
+ADZ       N9        C4        SINGLE    y         1.384     0.019     1.384     0.019     
+ADZ       N9        "C1'"     SINGLE    n         1.461     0.010     1.461     0.010     
+ADZ       C8        N7        DOUBLE    y         1.313     0.010     1.313     0.010     
+ADZ       N7        C5        SINGLE    y         1.388     0.010     1.388     0.010     
+ADZ       C5        C6        SINGLE    y         1.408     0.010     1.408     0.010     
+ADZ       C5        C4        DOUBLE    y         1.382     0.010     1.382     0.010     
+ADZ       C6        N6        SINGLE    n         1.330     0.010     1.330     0.010     
+ADZ       C6        N1        DOUBLE    y         1.354     0.010     1.354     0.010     
+ADZ       N1        C2        SINGLE    y         1.339     0.010     1.339     0.010     
+ADZ       C2        N3        DOUBLE    y         1.330     0.010     1.330     0.010     
+ADZ       N3        C4        SINGLE    y         1.345     0.010     1.345     0.010     
+ADZ       C8        H8        SINGLE    n         1.082     0.013     0.948     0.020     
+ADZ       N6        H6N1      SINGLE    n         1.016     0.010     0.877     0.020     
+ADZ       N6        H6N2      SINGLE    n         1.016     0.010     0.877     0.020     
+ADZ       C2        H2        SINGLE    n         1.082     0.013     0.945     0.020     
+ADZ       "C1'"     "H1'1"    SINGLE    n         1.089     0.010     0.968     0.015     
+ADZ       "C1'"     "H1'2"    SINGLE    n         1.089     0.010     0.968     0.015     
+ADZ       "C1'"     "H1'3"    SINGLE    n         1.089     0.010     0.968     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ADZ          C8          N9          C4     107.594    1.50
+ADZ          C8          N9       "C1'"     124.795    3.00
+ADZ          C4          N9       "C1'"     124.908    2.72
+ADZ          N9          C8          N7     114.617    1.50
+ADZ          N9          C8          H8     122.237    1.50
+ADZ          N7          C8          H8     123.146    1.50
+ADZ          C8          N7          C5     103.565    1.50
+ADZ          N7          C5          C6     132.358    1.50
+ADZ          N7          C5          C4     110.673    1.50
+ADZ          C6          C5          C4     116.969    1.50
+ADZ          C5          C6          N6     123.765    1.50
+ADZ          C5          C6          N1     117.462    1.50
+ADZ          N6          C6          N1     118.773    1.50
+ADZ          C6          N6        H6N1     119.723    1.50
+ADZ          C6          N6        H6N2     119.723    1.50
+ADZ        H6N1          N6        H6N2     120.554    1.88
+ADZ          C6          N1          C2     118.575    1.50
+ADZ          N1          C2          N3     129.385    1.50
+ADZ          N1          C2          H2     115.286    1.50
+ADZ          N3          C2          H2     115.329    1.50
+ADZ          C2          N3          C4     110.494    1.50
+ADZ          N9          C4          C5     107.346    1.69
+ADZ          N9          C4          N3     125.538    1.56
+ADZ          C5          C4          N3     127.116    1.50
+ADZ          N9       "C1'"      "H1'1"     109.468    1.50
+ADZ          N9       "C1'"      "H1'2"     109.468    1.50
+ADZ          N9       "C1'"      "H1'3"     109.468    1.50
+ADZ      "H1'1"       "C1'"      "H1'2"     109.427    1.50
+ADZ      "H1'1"       "C1'"      "H1'3"     109.427    1.50
+ADZ      "H1'2"       "C1'"      "H1'3"     109.427    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ADZ              const_14          N7          C8          N9       "C1'"     180.000   10.00     2
+ADZ             sp2_sp3_1          C8          N9       "C1'"      "H1'1"     150.000   10.00     6
+ADZ              const_26          C5          C4          N9       "C1'"     180.000   10.00     2
+ADZ              const_17          N9          C8          N7          C5       0.000   10.00     2
+ADZ              const_20          C6          C5          N7          C8     180.000   10.00     2
+ADZ       const_sp2_sp2_4          N7          C5          C6          N6       0.000   10.00     2
+ADZ              const_21          N9          C4          C5          N7       0.000   10.00     2
+ADZ             sp2_sp2_1          C5          C6          N6        H6N1     180.000   10.00     2
+ADZ       const_sp2_sp2_6          N6          C6          N1          C2     180.000   10.00     2
+ADZ       const_sp2_sp2_7          N3          C2          N1          C6       0.000   10.00     2
+ADZ       const_sp2_sp2_9          N1          C2          N3          C4       0.000   10.00     2
+ADZ              const_12          N9          C4          N3          C2     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ADZ    plan-1       "C1'"   0.020
+ADZ    plan-1          C4   0.020
+ADZ    plan-1          C5   0.020
+ADZ    plan-1          C6   0.020
+ADZ    plan-1          C8   0.020
+ADZ    plan-1          H8   0.020
+ADZ    plan-1          N3   0.020
+ADZ    plan-1          N7   0.020
+ADZ    plan-1          N9   0.020
+ADZ    plan-2          C2   0.020
+ADZ    plan-2          C4   0.020
+ADZ    plan-2          C5   0.020
+ADZ    plan-2          C6   0.020
+ADZ    plan-2          H2   0.020
+ADZ    plan-2          N1   0.020
+ADZ    plan-2          N3   0.020
+ADZ    plan-2          N6   0.020
+ADZ    plan-2          N7   0.020
+ADZ    plan-2          N9   0.020
+ADZ    plan-3          C6   0.020
+ADZ    plan-3        H6N1   0.020
+ADZ    plan-3        H6N2   0.020
+ADZ    plan-3          N6   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+ADZ SMILES           ACDLabs              10.04 "n1c(c2ncn(c2nc1)C)N"
+ADZ SMILES_CANONICAL CACTVS               3.341 "Cn1cnc2c(N)ncnc12"
+ADZ SMILES           CACTVS               3.341 "Cn1cnc2c(N)ncnc12"
+ADZ SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 Cn1cnc2c1ncnc2N
+ADZ SMILES           "OpenEye OEToolkits" 1.5.0 Cn1cnc2c1ncnc2N
+ADZ InChI            InChI                1.03  "InChI=1S/C6H7N5/c1-11-3-10-4-5(7)8-2-9-6(4)11/h2-3H,1H3,(H2,7,8,9)"
+ADZ InChIKey         InChI                1.03  WRXCXOUDSPTXNX-UHFFFAOYSA-N
+ADZ ?                acedrg               190         "dictionary generator"                  
+ADZ ?                acedrg_database      11          "data source"                           
+ADZ ?                rdkit                2017.03.2   "Chemoinformatics tool"
+ADZ ?                refmac5              5.8.0158    "optimization tool"                     

@@ -1,0 +1,283 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CHF      CHF 'CYCLOHEXYLFLUOROSTATONE             ' non-polymer        36  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_CHF
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ CHF           OXT    O    OC       -0.500      0.000    0.000    0.000
+ CHF           C      C    C         0.000     -0.716    0.928   -0.437
+ CHF           O      O    OC       -0.500     -0.204    1.845   -1.117
+ CHF           CM     C    CT        0.000     -2.194    0.942   -0.145
+ CHF           F1     F    F         0.000     -2.647    2.264   -0.094
+ CHF           F2     F    F         0.000     -2.432    0.320    1.085
+ CHF           CH     C    CT        0.000     -2.940    0.190   -1.249
+ CHF           OH1    O    OH1       0.000     -2.477   -1.160   -1.301
+ CHF           HH1    H    H         0.000     -2.643   -1.590   -0.451
+ CHF           OH2    O    OH1       0.000     -2.697    0.825   -2.505
+ CHF           HH2    H    H         0.000     -3.010    1.739   -2.469
+ CHF           CA     C    CH1       0.000     -4.439    0.204   -0.953
+ CHF           HA     H    H         0.000     -4.626   -0.285    0.014
+ CHF           N      N    NH2       0.000     -4.915    1.592   -0.899
+ CHF           H2     H    H         0.000     -4.258    2.361   -0.956
+ CHF           H      H    H         0.000     -5.904    1.791   -0.805
+ CHF           CB     C    CH2       0.000     -5.185   -0.547   -2.057
+ CHF           HB2    H    H         0.000     -4.830   -1.579   -2.097
+ CHF           HB3    H    H         0.000     -4.999   -0.062   -3.017
+ CHF           CG     C    CH1       0.000     -6.686   -0.534   -1.760
+ CHF           HG     H    H         0.000     -7.041    0.505   -1.719
+ CHF           CD2    C    CH2       0.000     -6.946   -1.214   -0.415
+ CHF           HD23   H    H         0.000     -6.413   -0.677    0.372
+ CHF           HD22   H    H         0.000     -6.590   -2.245   -0.455
+ CHF           CE2    C    CH2       0.000     -8.447   -1.201   -0.118
+ CHF           HE23   H    H         0.000     -8.800   -0.169   -0.075
+ CHF           HE22   H    H         0.000     -8.632   -1.688    0.842
+ CHF           CZ     C    CH2       0.000     -9.192   -1.952   -1.223
+ CHF           HZ2    H    H         0.000    -10.263   -1.942   -1.010
+ CHF           HZ3    H    H         0.000     -8.840   -2.984   -1.262
+ CHF           CE1    C    CH2       0.000     -8.932   -1.272   -2.567
+ CHF           HE12   H    H         0.000     -9.287   -0.240   -2.527
+ CHF           HE13   H    H         0.000     -9.465   -1.808   -3.355
+ CHF           CD1    C    CH2       0.000     -7.432   -1.285   -2.864
+ CHF           HD13   H    H         0.000     -7.247   -0.801   -3.825
+ CHF           HD12   H    H         0.000     -7.079   -2.318   -2.905
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ CHF      OXT    n/a    C      START
+ CHF      C      OXT    CM     .
+ CHF      O      C      .      .
+ CHF      CM     C      CH     .
+ CHF      F1     CM     .      .
+ CHF      F2     CM     .      .
+ CHF      CH     CM     CA     .
+ CHF      OH1    CH     HH1    .
+ CHF      HH1    OH1    .      .
+ CHF      OH2    CH     HH2    .
+ CHF      HH2    OH2    .      .
+ CHF      CA     CH     CB     .
+ CHF      HA     CA     .      .
+ CHF      N      CA     H      .
+ CHF      H2     N      .      .
+ CHF      H      N      .      .
+ CHF      CB     CA     CG     .
+ CHF      HB2    CB     .      .
+ CHF      HB3    CB     .      .
+ CHF      CG     CB     CD2    .
+ CHF      HG     CG     .      .
+ CHF      CD2    CG     CE2    .
+ CHF      HD23   CD2    .      .
+ CHF      HD22   CD2    .      .
+ CHF      CE2    CD2    CZ     .
+ CHF      HE23   CE2    .      .
+ CHF      HE22   CE2    .      .
+ CHF      CZ     CE2    CE1    .
+ CHF      HZ2    CZ     .      .
+ CHF      HZ3    CZ     .      .
+ CHF      CE1    CZ     CD1    .
+ CHF      HE12   CE1    .      .
+ CHF      HE13   CE1    .      .
+ CHF      CD1    CE1    HD12   .
+ CHF      HD13   CD1    .      .
+ CHF      HD12   CD1    .      END
+ CHF      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CHF       N         CA        single    1.450     0.020     1.450     0.020     
+CHF       H         N         single    1.036     0.016     0.914     0.007     
+CHF       H2        N         single    1.036     0.016     0.914     0.007     
+CHF       CB        CA        single    1.524     0.020     1.524     0.020     
+CHF       CA        CH        single    1.524     0.020     1.524     0.020     
+CHF       HA        CA        single    1.089     0.010     0.989     0.005     
+CHF       CG        CB        single    1.524     0.020     1.524     0.020     
+CHF       HB2       CB        single    1.089     0.010     0.989     0.005     
+CHF       HB3       CB        single    1.089     0.010     0.989     0.005     
+CHF       CG        CD1       single    1.524     0.020     1.524     0.020     
+CHF       CD2       CG        single    1.524     0.020     1.524     0.020     
+CHF       HG        CG        single    1.089     0.010     0.989     0.005     
+CHF       CD1       CE1       single    1.524     0.020     1.524     0.020     
+CHF       HD12      CD1       single    1.089     0.010     0.989     0.005     
+CHF       HD13      CD1       single    1.089     0.010     0.989     0.005     
+CHF       CE2       CD2       single    1.524     0.020     1.524     0.020     
+CHF       HD23      CD2       single    1.089     0.010     0.989     0.005     
+CHF       HD22      CD2       single    1.089     0.010     0.989     0.005     
+CHF       CE1       CZ        single    1.524     0.020     1.524     0.020     
+CHF       HE12      CE1       single    1.089     0.010     0.989     0.005     
+CHF       HE13      CE1       single    1.089     0.010     0.989     0.005     
+CHF       CZ        CE2       single    1.524     0.020     1.524     0.020     
+CHF       HE23      CE2       single    1.089     0.010     0.989     0.005     
+CHF       HE22      CE2       single    1.089     0.010     0.989     0.005     
+CHF       HZ2       CZ        single    1.089     0.010     0.989     0.005     
+CHF       HZ3       CZ        single    1.089     0.010     0.989     0.005     
+CHF       OH1       CH        single    1.432     0.020     1.432     0.020     
+CHF       OH2       CH        single    1.432     0.020     1.432     0.020     
+CHF       CH        CM        single    1.524     0.020     1.524     0.020     
+CHF       HH1       OH1       single    0.970     0.012     0.839     0.014     
+CHF       HH2       OH2       single    0.970     0.012     0.839     0.014     
+CHF       F1        CM        single    1.320     0.020     1.320     0.020     
+CHF       F2        CM        single    1.320     0.020     1.320     0.020     
+CHF       CM        C         single    1.507     0.020     1.507     0.020     
+CHF       O         C         deloc     1.250     0.020     1.250     0.020     
+CHF       C         OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ CHF      OXT    C      O       123.000    3.000
+ CHF      OXT    C      CM      118.500    3.000
+ CHF      O      C      CM      118.500    3.000
+ CHF      C      CM     F1      109.470    3.000
+ CHF      C      CM     F2      109.470    3.000
+ CHF      C      CM     CH      111.000    3.000
+ CHF      F1     CM     F2      109.470    3.000
+ CHF      F1     CM     CH      109.470    3.000
+ CHF      F2     CM     CH      109.470    3.000
+ CHF      CM     CH     OH1     109.470    3.000
+ CHF      CM     CH     OH2     109.470    3.000
+ CHF      CM     CH     CA      111.000    3.000
+ CHF      OH1    CH     OH2     109.470    3.000
+ CHF      OH1    CH     CA      109.470    3.000
+ CHF      OH2    CH     CA      109.470    3.000
+ CHF      CH     OH1    HH1     109.470    3.000
+ CHF      CH     OH2    HH2     109.470    3.000
+ CHF      CH     CA     HA      108.340    3.000
+ CHF      CH     CA     N       109.500    3.000
+ CHF      CH     CA     CB      111.000    3.000
+ CHF      HA     CA     N       109.470    3.000
+ CHF      HA     CA     CB      108.340    3.000
+ CHF      N      CA     CB      109.470    3.000
+ CHF      CA     N      H2      120.000    3.000
+ CHF      CA     N      H       120.000    3.000
+ CHF      H2     N      H       120.000    3.000
+ CHF      CA     CB     HB2     109.470    3.000
+ CHF      CA     CB     HB3     109.470    3.000
+ CHF      CA     CB     CG      111.000    3.000
+ CHF      HB2    CB     HB3     107.900    3.000
+ CHF      HB2    CB     CG      109.470    3.000
+ CHF      HB3    CB     CG      109.470    3.000
+ CHF      CB     CG     HG      108.340    3.000
+ CHF      CB     CG     CD2     109.470    3.000
+ CHF      CB     CG     CD1     109.470    3.000
+ CHF      HG     CG     CD2     108.340    3.000
+ CHF      HG     CG     CD1     108.340    3.000
+ CHF      CD2    CG     CD1     109.470    3.000
+ CHF      CG     CD2    HD23    109.470    3.000
+ CHF      CG     CD2    HD22    109.470    3.000
+ CHF      CG     CD2    CE2     111.000    3.000
+ CHF      HD23   CD2    HD22    107.900    3.000
+ CHF      HD23   CD2    CE2     109.470    3.000
+ CHF      HD22   CD2    CE2     109.470    3.000
+ CHF      CD2    CE2    HE23    109.470    3.000
+ CHF      CD2    CE2    HE22    109.470    3.000
+ CHF      CD2    CE2    CZ      111.000    3.000
+ CHF      HE23   CE2    HE22    107.900    3.000
+ CHF      HE23   CE2    CZ      109.470    3.000
+ CHF      HE22   CE2    CZ      109.470    3.000
+ CHF      CE2    CZ     HZ2     109.470    3.000
+ CHF      CE2    CZ     HZ3     109.470    3.000
+ CHF      CE2    CZ     CE1     111.000    3.000
+ CHF      HZ2    CZ     HZ3     107.900    3.000
+ CHF      HZ2    CZ     CE1     109.470    3.000
+ CHF      HZ3    CZ     CE1     109.470    3.000
+ CHF      CZ     CE1    HE12    109.470    3.000
+ CHF      CZ     CE1    HE13    109.470    3.000
+ CHF      CZ     CE1    CD1     111.000    3.000
+ CHF      HE12   CE1    HE13    107.900    3.000
+ CHF      HE12   CE1    CD1     109.470    3.000
+ CHF      HE13   CE1    CD1     109.470    3.000
+ CHF      CE1    CD1    HD13    109.470    3.000
+ CHF      CE1    CD1    HD12    109.470    3.000
+ CHF      CE1    CD1    CG      111.000    3.000
+ CHF      HD13   CD1    HD12    107.900    3.000
+ CHF      HD13   CD1    CG      109.470    3.000
+ CHF      HD12   CD1    CG      109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ CHF      var_1    OXT    C      CM     CH       -89.931   20.000   1
+ CHF      var_2    C      CM     CH     CA      -180.000   20.000   1
+ CHF      var_3    CM     CH     OH1    HH1       60.050   20.000   1
+ CHF      var_4    CM     CH     OH2    HH2      -60.020   20.000   1
+ CHF      var_5    CM     CH     CA     CB       180.000   20.000   1
+ CHF      var_6    CH     CA     N      H        173.838   20.000   1
+ CHF      var_7    CH     CA     CB     CG       179.975   20.000   3
+ CHF      var_8    CA     CB     CG     CD2      -59.988   20.000   3
+ CHF      var_9    CB     CG     CD1    CE1      180.000   20.000   3
+ CHF      var_10   CB     CG     CD2    CE2      180.000   20.000   3
+ CHF      var_11   CG     CD2    CE2    CZ        60.000   20.000   3
+ CHF      var_12   CD2    CE2    CZ     CE1      -60.000   20.000   3
+ CHF      var_13   CE2    CZ     CE1    CD1       60.000   20.000   3
+ CHF      var_14   CZ     CE1    CD1    CG       -60.000   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ CHF      chir_01  CA     N      CB     CH        negativ
+ CHF      chir_02  CG     CB     CD1    CD2       negativ
+ CHF      chir_03  CH     CA     OH1    OH2       negativ
+ CHF      chir_04  CM     CH     F1     F2        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ CHF      plan-1    N         0.020
+ CHF      plan-1    CA        0.020
+ CHF      plan-1    H         0.020
+ CHF      plan-1    H2        0.020
+ CHF      plan-2    C         0.020
+ CHF      plan-2    CM        0.020
+ CHF      plan-2    O         0.020
+ CHF      plan-2    OXT       0.020
+# ------------------------------------------------------

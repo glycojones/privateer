@@ -1,0 +1,126 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+9O0     9O0      "(2R)-3,3,3-trifluoro-2-hydroxypropanoic acid"     NON-POLYMER     11     9     .     
+#
+data_comp_9O0
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+9O0     OAE     O       OC      -1      -5.960      -30.110     -28.737     
+9O0     CAG     C       C       0       -5.401      -30.189     -29.849     
+9O0     OAF     O       O       0       -4.586      -29.364     -30.312     
+9O0     CAH     C       CH1     0       -5.747      -31.405     -30.718     
+9O0     CAD     C       CT      0       -4.608      -32.417     -30.735     
+9O0     FAB     F       F       0       -4.337      -32.869     -29.515     
+9O0     FAI     F       F       0       -3.489      -31.886     -31.218     
+9O0     FAA     F       F       0       -4.904      -33.470     -31.490     
+9O0     OAC     O       OH1     0       -6.018      -31.022     -32.037     
+9O0     H2      H       H       0       -6.548      -31.831     -30.336     
+9O0     H3      H       H       0       -6.597      -31.521     -32.403     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+9O0       CAH       OAC       SINGLE    n         1.400     0.0100    1.400     0.0100    
+9O0       CAD       FAA       SINGLE    n         1.329     0.0135    1.329     0.0135    
+9O0       CAD       FAI       SINGLE    n         1.329     0.0135    1.329     0.0135    
+9O0       CAH       CAD       SINGLE    n         1.523     0.0100    1.523     0.0100    
+9O0       CAG       CAH       SINGLE    n         1.533     0.0100    1.533     0.0100    
+9O0       CAD       FAB       SINGLE    n         1.329     0.0135    1.329     0.0135    
+9O0       CAG       OAF       DOUBLE    n         1.247     0.0187    1.247     0.0187    
+9O0       OAE       CAG       SINGLE    n         1.247     0.0187    1.247     0.0187    
+9O0       CAH       H2        SINGLE    n         1.089     0.010     0.984     0.0100    
+9O0       OAC       H3        SINGLE    n         0.970     0.012     0.848     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+9O0         CAH         CAG         OAF     117.167    1.52
+9O0         CAH         CAG         OAE     117.167    1.52
+9O0         OAF         CAG         OAE     125.666    1.50
+9O0         OAC         CAH         CAD     108.753    1.50
+9O0         OAC         CAH         CAG     111.343    1.72
+9O0         OAC         CAH          H2     109.487    1.50
+9O0         CAD         CAH         CAG     111.511    2.91
+9O0         CAD         CAH          H2     109.441    1.50
+9O0         CAG         CAH          H2     108.330    1.50
+9O0         FAA         CAD         FAI     107.364    1.50
+9O0         FAA         CAD         CAH     111.557    1.50
+9O0         FAA         CAD         FAB     107.364    1.50
+9O0         FAI         CAD         CAH     111.557    1.50
+9O0         FAI         CAD         FAB     107.364    1.50
+9O0         CAH         CAD         FAB     111.557    1.50
+9O0         CAH         OAC          H3     112.024    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+9O0             sp2_sp3_2         OAF         CAG         CAH         OAC     120.000   10.00     6
+9O0             sp3_sp3_4         FAA         CAD         CAH         OAC     180.000   10.00     3
+9O0             sp3_sp3_2         CAD         CAH         OAC          H3      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+9O0    chir_1    CAH    OAC    CAD    CAG    both
+9O0    chir_2    CAD    FAA    FAI    FAB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+9O0    plan-1         CAG   0.020
+9O0    plan-1         CAH   0.020
+9O0    plan-1         OAE   0.020
+9O0    plan-1         OAF   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+9O0           SMILES              ACDLabs 12.01                                           OC(=O)C(C(F)(F)F)O
+9O0            InChI                InChI  1.03 InChI=1S/C3H3F3O3/c4-3(5,6)1(7)2(8)9/h1,7H,(H,8,9)/t1-/m1/s1
+9O0         InChIKey                InChI  1.03                                  BVKGUTLIPHZYCX-PVQJCKRUSA-N
+9O0 SMILES_CANONICAL               CACTVS 3.385                                       O[C@H](C(O)=O)C(F)(F)F
+9O0           SMILES               CACTVS 3.385                                        O[CH](C(O)=O)C(F)(F)F
+9O0 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                  "[C@@H](C(=O)O)(C(F)(F)F)O"
+9O0           SMILES "OpenEye OEToolkits" 2.0.6                                         C(C(=O)O)(C(F)(F)F)O
+9O0 ?                acedrg               217         "dictionary generator"                  
+9O0 ?                acedrg_database      11          "data source"                           
+9O0 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+9O0 ?                refmac5              5.8.0253    "optimization tool"                     

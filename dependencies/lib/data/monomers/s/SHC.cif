@@ -1,0 +1,254 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+SHC     SHC     S-HEXYLCYSTEINE     peptide     32     13     .
+#
+data_comp_SHC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+SHC     N       N       NT3     1       -5.077      1.329       -0.475
+SHC     CA      C       CH1     0       -4.273      0.082       -0.610
+SHC     CB      C       CH2     0       -2.838      0.359       -0.202
+SHC     SG      S       S2      0       -1.671      -0.983      -0.557
+SHC     C1      C       CH2     0       -0.126      -0.326      0.115
+SHC     C2      C       CH2     0       1.060       -1.259      -0.084
+SHC     C3      C       CH2     0       2.314       -0.771      0.604
+SHC     C4      C       CH2     0       3.001       0.355       -0.130
+SHC     C5      C       CH2     0       4.259       0.852       0.533
+SHC     C6      C       CH3     0       5.444       -0.064      0.348
+SHC     C       C       C       0       -4.884      -1.027      0.256
+SHC     OXT     O       OC      -1      -5.107      -0.757      1.452
+SHC     O       O       O       0       -5.115      -2.121      -0.298
+SHC     H       H       H       0       -5.951      1.155       -0.665
+SHC     H2      H       H       0       -4.766      1.959       -1.055
+SHC     H3      H       H       0       -5.012      1.647       0.376
+SHC     HA      H       H       0       -4.297      -0.199      -1.554
+SHC     HB2     H       H       0       -2.820      0.541       0.751
+SHC     HB3     H       H       0       -2.539      1.159       -0.661
+SHC     H11     H       H       0       -0.246      -0.159      1.075
+SHC     H12     H       H       0       0.065       0.533       -0.318
+SHC     H21     H       H       0       1.237       -1.349      -1.044
+SHC     H22     H       H       0       0.830       -2.146      0.265
+SHC     H31     H       H       0       2.942       -1.520      0.692
+SHC     H32     H       H       0       2.085       -0.466      1.508
+SHC     H41     H       H       0       2.374       1.105       -0.213
+SHC     H42     H       H       0       3.223       0.051       -1.036
+SHC     H51     H       H       0       4.088       0.961       1.494
+SHC     H52     H       H       0       4.481       1.736       0.167
+SHC     H61     H       H       0       6.236       0.343       0.742
+SHC     H62     H       H       0       5.596       -0.213      -0.601
+SHC     H63     H       H       0       5.269       -0.916      0.784
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+SHC      N      n/a    CA     START
+SHC      H      N      .      .
+SHC      H2     N      .      .
+SHC      H3     N      .      .
+SHC      CA     N      C      .
+SHC      HA     CA     .      .
+SHC      CB     CA     SG     .
+SHC      HB2    CB     .      .
+SHC      HB3    CB     .      .
+SHC      SG     CB     C1     .
+SHC      C1     SG     C2     .
+SHC      H11    C1     .      .
+SHC      H12    C1     .      .
+SHC      C2     C1     C3     .
+SHC      H21    C2     .      .
+SHC      H22    C2     .      .
+SHC      C3     C2     C4     .
+SHC      H31    C3     .      .
+SHC      H32    C3     .      .
+SHC      C4     C3     C5     .
+SHC      H41    C4     .      .
+SHC      H42    C4     .      .
+SHC      C5     C4     C6     .
+SHC      H51    C5     .      .
+SHC      H52    C5     .      .
+SHC      C6     C5     H61    .
+SHC      H63    C6     .      .
+SHC      H62    C6     .      .
+SHC      H61    C6     .      .
+SHC      C      CA     .      END
+SHC      OXT    C      .      .
+SHC      O      C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+SHC       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+SHC       CA        CB        SINGLE    n         1.516     0.017     1.516     0.017     
+SHC       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+SHC       CB        SG        SINGLE    n         1.814     0.010     1.814     0.010     
+SHC       SG        C1        SINGLE    n         1.809     0.020     1.809     0.020     
+SHC       C1        C2        SINGLE    n         1.522     0.011     1.522     0.011     
+SHC       C2        C3        SINGLE    n         1.510     0.020     1.510     0.020     
+SHC       C3        C4        SINGLE    n         1.509     0.020     1.509     0.020     
+SHC       C4        C5        SINGLE    n         1.507     0.020     1.507     0.020     
+SHC       C5        C6        SINGLE    n         1.510     0.020     1.510     0.020     
+SHC       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+SHC       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+SHC       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+SHC       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+SHC       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+SHC       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+SHC       CB        HB2       SINGLE    n         1.089     0.010     0.970     0.010     
+SHC       CB        HB3       SINGLE    n         1.089     0.010     0.970     0.010     
+SHC       C1        H11       SINGLE    n         1.089     0.010     0.981     0.013     
+SHC       C1        H12       SINGLE    n         1.089     0.010     0.981     0.013     
+SHC       C2        H21       SINGLE    n         1.089     0.010     0.981     0.016     
+SHC       C2        H22       SINGLE    n         1.089     0.010     0.981     0.016     
+SHC       C3        H31       SINGLE    n         1.089     0.010     0.981     0.016     
+SHC       C3        H32       SINGLE    n         1.089     0.010     0.981     0.016     
+SHC       C4        H41       SINGLE    n         1.089     0.010     0.981     0.016     
+SHC       C4        H42       SINGLE    n         1.089     0.010     0.981     0.016     
+SHC       C5        H51       SINGLE    n         1.089     0.010     0.982     0.015     
+SHC       C5        H52       SINGLE    n         1.089     0.010     0.982     0.015     
+SHC       C6        H61       SINGLE    n         1.089     0.010     0.973     0.016     
+SHC       C6        H62       SINGLE    n         1.089     0.010     0.973     0.016     
+SHC       C6        H63       SINGLE    n         1.089     0.010     0.973     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+SHC          CA           N           H     109.671    1.50
+SHC          CA           N          H2     109.671    1.50
+SHC          CA           N          H3     109.671    1.50
+SHC           H           N          H2     109.028    2.41
+SHC           H           N          H3     109.028    2.41
+SHC          H2           N          H3     109.028    2.41
+SHC           N          CA          CB     109.354    1.50
+SHC           N          CA           C     109.494    1.50
+SHC           N          CA          HA     107.983    1.50
+SHC          CB          CA           C     110.419    2.31
+SHC          CB          CA          HA     109.209    1.50
+SHC           C          CA          HA     108.606    1.50
+SHC          CA          CB          SG     114.974    1.55
+SHC          CA          CB         HB2     108.537    1.50
+SHC          CA          CB         HB3     108.537    1.50
+SHC          SG          CB         HB2     108.759    1.50
+SHC          SG          CB         HB3     108.759    1.50
+SHC         HB2          CB         HB3     107.812    1.50
+SHC          CB          SG          C1     102.177    1.97
+SHC          SG          C1          C2     113.263    2.33
+SHC          SG          C1         H11     108.801    1.50
+SHC          SG          C1         H12     108.801    1.50
+SHC          C2          C1         H11     109.210    1.50
+SHC          C2          C1         H12     109.210    1.50
+SHC         H11          C1         H12     107.939    1.50
+SHC          C1          C2          C3     112.774    1.50
+SHC          C1          C2         H21     108.903    1.50
+SHC          C1          C2         H22     108.903    1.50
+SHC          C3          C2         H21     108.963    1.50
+SHC          C3          C2         H22     108.963    1.50
+SHC         H21          C2         H22     107.852    1.50
+SHC          C2          C3          C4     113.198    1.72
+SHC          C2          C3         H31     108.891    1.50
+SHC          C2          C3         H32     108.891    1.50
+SHC          C4          C3         H31     108.698    1.50
+SHC          C4          C3         H32     108.698    1.50
+SHC         H31          C3         H32     107.646    1.50
+SHC          C3          C4          C5     114.362    3.00
+SHC          C3          C4         H41     108.698    1.50
+SHC          C3          C4         H42     108.698    1.50
+SHC          C5          C4         H41     108.653    1.50
+SHC          C5          C4         H42     108.653    1.50
+SHC         H41          C4         H42     107.646    1.50
+SHC          C4          C5          C6     113.719    3.00
+SHC          C4          C5         H51     108.758    1.50
+SHC          C4          C5         H52     108.758    1.50
+SHC          C6          C5         H51     108.918    1.50
+SHC          C6          C5         H52     108.918    1.50
+SHC         H51          C5         H52     107.763    1.50
+SHC          C5          C6         H61     109.554    1.50
+SHC          C5          C6         H62     109.554    1.50
+SHC          C5          C6         H63     109.554    1.50
+SHC         H61          C6         H62     109.380    1.50
+SHC         H61          C6         H63     109.380    1.50
+SHC         H62          C6         H63     109.380    1.50
+SHC          CA           C         OXT     117.134    1.50
+SHC          CA           C           O     117.134    1.50
+SHC         OXT           C           O     125.732    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+SHC             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+SHC             sp2_sp3_1         OXT           C          CA           N       0.000   10.00     6
+SHC            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+SHC            sp3_sp3_19          CA          CB          SG          C1     180.000   10.00     3
+SHC            sp3_sp3_22          C2          C1          SG          CB     180.000   10.00     3
+SHC            sp3_sp3_25          SG          C1          C2          C3     180.000   10.00     3
+SHC            sp3_sp3_34          C1          C2          C3          C4     180.000   10.00     3
+SHC            sp3_sp3_43          C2          C3          C4          C5     180.000   10.00     3
+SHC            sp3_sp3_52          C3          C4          C5          C6     180.000   10.00     3
+SHC            sp3_sp3_61          C4          C5          C6         H61     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+SHC    chir_1    CA    N    CB    C    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+SHC    plan-1           C   0.020
+SHC    plan-1          CA   0.020
+SHC    plan-1           O   0.020
+SHC    plan-1         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+SHC SMILES           ACDLabs              10.04 "O=C(O)C(N)CSCCCCCC"
+SHC SMILES_CANONICAL CACTVS               3.341 "CCCCCCSC[C@H](N)C(O)=O"
+SHC SMILES           CACTVS               3.341 "CCCCCCSC[CH](N)C(O)=O"
+SHC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CCCCCCSC[C@@H](C(=O)O)N"
+SHC SMILES           "OpenEye OEToolkits" 1.5.0 "CCCCCCSCC(C(=O)O)N"
+SHC InChI            InChI                1.03  "InChI=1S/C9H19NO2S/c1-2-3-4-5-6-13-7-8(10)9(11)12/h8H,2-7,10H2,1H3,(H,11,12)/t8-/m0/s1"
+SHC InChIKey         InChI                1.03  NALKEWMBCJKRLB-QMMMGPOBSA-N
+SHC ?                acedrg               196         "dictionary generator"
+SHC ?                acedrg_database      11          "data source"
+SHC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+SHC ?                refmac5              5.8.0222    "optimization tool"

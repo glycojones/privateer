@@ -1,0 +1,251 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+I58     I58     4R-FLUORO-N6-ETHANIMIDOYL-L-LYSINE     peptide     30     14     .
+#
+data_comp_I58
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+I58     N       N       NT3     1       -2.902      1.464       -0.337
+I58     C       C       C       0       -4.406      -0.429      -0.804
+I58     O       O       O       0       -4.660      -1.021      -1.873
+I58     OXT     O       OC      -1      -5.232      -0.151      0.088
+I58     CA      C       CH1     0       -2.950      -0.007      -0.564
+I58     CB      C       CH2     0       -2.336      -0.746      0.633
+I58     CG      C       CH1     0       -0.925      -1.267      0.403
+I58     F       F       F       0       -0.590      -2.090      1.502
+I58     CD      C       CH2     0       0.130       -0.180      0.302
+I58     CE      C       CH2     0       1.541       -0.709      0.139
+I58     NZ      N       NH1     0       2.513       0.339       -0.204
+I58     CX      C       C       0       3.852       0.171       -0.177
+I58     NX      N       NH1     0       4.371       -0.980      0.028
+I58     CT      C       CH3     0       4.680       1.395       -0.395
+I58     H       H       H       0       -2.048      1.723       -0.154
+I58     H2      H       H       0       -3.436      1.692       0.365
+I58     H3      H       H       0       -3.189      1.903       -1.082
+I58     HA      H       H       0       -2.425      -0.211      -1.372
+I58     HB2     H       H       0       -2.906      -1.510      0.862
+I58     HB3     H       H       0       -2.312      -0.134      1.398
+I58     HG      H       H       0       -0.905      -1.827      -0.413
+I58     HD2     H       H       0       0.086       0.371       1.113
+I58     HD3     H       H       0       -0.087      0.393       -0.464
+I58     HE2     H       H       0       1.550       -1.390      -0.567
+I58     HE3     H       H       0       1.823       -1.138      0.975
+I58     HZ      H       H       0       2.191       1.107       -0.448
+I58     HNX     H       H       0       5.235       -0.996      -0.007
+I58     HT1     H       H       0       4.195       2.179       -0.090
+I58     HT2     H       H       0       4.883       1.486       -1.340
+I58     HT3     H       H       0       5.509       1.321       0.107
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+I58      N      n/a    CA     START
+I58      H      N      .      .
+I58      H2     N      .      .
+I58      H3     N      .      .
+I58      CA     N      C      .
+I58      HA     CA     .      .
+I58      CB     CA     CG     .
+I58      HB2    CB     .      .
+I58      HB3    CB     .      .
+I58      CG     CB     CD     .
+I58      HG     CG     .      .
+I58      F      CG     .      .
+I58      CD     CG     CE     .
+I58      HD2    CD     .      .
+I58      HD3    CD     .      .
+I58      CE     CD     NZ     .
+I58      HE2    CE     .      .
+I58      HE3    CE     .      .
+I58      NZ     CE     CX     .
+I58      HZ     NZ     .      .
+I58      CX     NZ     NX     .
+I58      CT     CX     HT1    .
+I58      HT3    CT     .      .
+I58      HT2    CT     .      .
+I58      HT1    CT     .      .
+I58      NX     CX     HNX    .
+I58      HNX    NX     .      .
+I58      C      CA     .      END
+I58      O      C      .      .
+I58      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+I58       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+I58       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+I58       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+I58       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+I58       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+I58       CB        CG        SINGLE    n         1.520     0.017     1.520     0.017     
+I58       CG        F         SINGLE    n         1.414     0.016     1.414     0.016     
+I58       CG        CD        SINGLE    n         1.516     0.020     1.516     0.020     
+I58       CD        CE        SINGLE    n         1.515     0.014     1.515     0.014     
+I58       CE        NZ        SINGLE    n         1.468     0.010     1.468     0.010     
+I58       NZ        CX        SINGLE    n         1.338     0.018     1.338     0.018     
+I58       CX        NX        DOUBLE    n         1.269     0.020     1.269     0.020     
+I58       CX        CT        SINGLE    n         1.490     0.012     1.490     0.012     
+I58       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+I58       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+I58       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+I58       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+I58       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+I58       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+I58       CG        HG        SINGLE    n         1.089     0.010     0.990     0.018     
+I58       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.016     
+I58       CD        HD3       SINGLE    n         1.089     0.010     0.981     0.016     
+I58       CE        HE2       SINGLE    n         1.089     0.010     0.981     0.015     
+I58       CE        HE3       SINGLE    n         1.089     0.010     0.981     0.015     
+I58       NZ        HZ        SINGLE    n         1.016     0.010     0.867     0.020     
+I58       NX        HNX       SINGLE    n         1.016     0.010     0.864     0.020     
+I58       CT        HT1       SINGLE    n         1.089     0.010     0.971     0.014     
+I58       CT        HT2       SINGLE    n         1.089     0.010     0.971     0.014     
+I58       CT        HT3       SINGLE    n         1.089     0.010     0.971     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+I58          CA           N           H     110.062    1.93
+I58          CA           N          H2     110.062    1.93
+I58          CA           N          H3     110.062    1.93
+I58           H           N          H2     109.028    2.41
+I58           H           N          H3     109.028    2.41
+I58          H2           N          H3     109.028    2.41
+I58           O           C         OXT     125.752    1.50
+I58           O           C          CA     117.124    1.50
+I58         OXT           C          CA     117.124    1.50
+I58           N          CA           C     109.241    1.50
+I58           N          CA          CB     110.245    1.51
+I58           N          CA          HA     108.487    1.50
+I58           C          CA          CB     110.728    2.07
+I58           C          CA          HA     108.824    1.50
+I58          CB          CA          HA     109.207    1.50
+I58          CA          CB          CG     114.535    1.69
+I58          CA          CB         HB2     108.567    1.50
+I58          CA          CB         HB3     108.567    1.50
+I58          CG          CB         HB2     108.198    1.50
+I58          CG          CB         HB3     108.198    1.50
+I58         HB2          CB         HB3     108.929    2.30
+I58          CB          CG           F     107.645    1.50
+I58          CB          CG          CD     113.743    2.68
+I58          CB          CG          HG     109.739    1.50
+I58           F          CG          CD     107.645    1.50
+I58           F          CG          HG     107.879    1.55
+I58          CD          CG          HG     109.739    1.50
+I58          CG          CD          CE     113.326    2.10
+I58          CG          CD         HD2     108.198    1.50
+I58          CG          CD         HD3     108.198    1.50
+I58          CE          CD         HD2     108.805    1.50
+I58          CE          CD         HD3     108.805    1.50
+I58         HD2          CD         HD3     107.715    1.50
+I58          CD          CE          NZ     112.309    1.89
+I58          CD          CE         HE2     109.099    1.50
+I58          CD          CE         HE3     109.099    1.50
+I58          NZ          CE         HE2     108.615    1.50
+I58          NZ          CE         HE3     108.615    1.50
+I58         HE2          CE         HE3     107.877    1.50
+I58          CE          NZ          CX     123.901    1.99
+I58          CE          NZ          HZ     117.308    1.65
+I58          CX          NZ          HZ     118.791    3.00
+I58          NZ          CX          NX     121.471    3.00
+I58          NZ          CX          CT     116.083    1.98
+I58          NX          CX          CT     122.446    3.00
+I58          CX          NX         HNX     112.238    3.00
+I58          CX          CT         HT1     109.456    1.50
+I58          CX          CT         HT2     109.456    1.50
+I58          CX          CT         HT3     109.456    1.50
+I58         HT1          CT         HT2     109.261    2.44
+I58         HT1          CT         HT3     109.261    2.44
+I58         HT2          CT         HT3     109.261    2.44
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+I58             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+I58             sp2_sp2_3          NX          CX          NZ          CE       0.000   10.00     2
+I58             sp2_sp2_5          NZ          CX          NX         HNX     180.000   10.00     2
+I58            sp2_sp3_13          NZ          CX          CT         HT1       0.000   10.00     6
+I58             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+I58            sp3_sp3_10           N          CA          CB          CG     180.000   10.00     3
+I58            sp3_sp3_19          CA          CB          CG           F     180.000   10.00     3
+I58            sp3_sp3_28          CE          CD          CG          CB     180.000   10.00     3
+I58            sp3_sp3_37          CG          CD          CE          NZ     180.000   10.00     3
+I58             sp2_sp3_8          CX          NZ          CE          CD     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+I58    chir_1    CA    N    C    CB    positive
+I58    chir_2    CG    F    CB    CD    negative
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+I58    plan-1           C   0.020
+I58    plan-1          CA   0.020
+I58    plan-1           O   0.020
+I58    plan-1         OXT   0.020
+I58    plan-2          CE   0.020
+I58    plan-2          CX   0.020
+I58    plan-2          HZ   0.020
+I58    plan-2          NZ   0.020
+I58    plan-3          CT   0.020
+I58    plan-3          CX   0.020
+I58    plan-3          NX   0.020
+I58    plan-3          NZ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+I58 SMILES           ACDLabs              10.04 "FC(CCNC(=[N@H])C)CC(N)C(=O)O"
+I58 SMILES_CANONICAL CACTVS               3.341 "CC(=N)NCC[C@@H](F)C[C@H](N)C(O)=O"
+I58 SMILES           CACTVS               3.341 "CC(=N)NCC[CH](F)C[CH](N)C(O)=O"
+I58 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[H]/N=C(/C)\NCC[C@H](C[C@@H](C(=O)O)N)F"
+I58 SMILES           "OpenEye OEToolkits" 1.5.0 "[H]N=C(C)NCCC(CC(C(=O)O)N)F"
+I58 InChI            InChI                1.03  "InChI=1S/C8H16FN3O2/c1-5(10)12-3-2-6(9)4-7(11)8(13)14/h6-7H,2-4,11H2,1H3,(H2,10,12)(H,13,14)/t6-,7+/m1/s1"
+I58 InChIKey         InChI                1.03  LTCJJIZTKXNFGK-RQJHMYQMSA-N
+I58 ?                acedrg               196         "dictionary generator"
+I58 ?                acedrg_database      11          "data source"
+I58 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+I58 ?                refmac5              5.8.0222    "optimization tool"

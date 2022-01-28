@@ -1,0 +1,155 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NTN     NTN      ISONICOTINAMIDINE     NON-POLYMER     16     9     .     
+#
+data_comp_NTN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+NTN     NZ      N       NH2     0       2.476       1.189       -0.113      
+NTN     CI1     C       C       0       2.154       1.151       1.201       
+NTN     CI2     C       CR6     0       1.338       0.004       1.681       
+NTN     NI1     N       NH1     0       2.558       2.101       1.986       
+NTN     CI3     C       CR16    0       0.092       -0.273      1.119       
+NTN     CI4     C       CR16    0       -0.632      -1.354      1.602       
+NTN     NI2     N       NRD6    0       -0.198      -2.155      2.588       
+NTN     CI5     C       CR16    0       1.002       -1.879      3.122       
+NTN     CI6     C       CR16    0       1.799       -0.821      2.707       
+NTN     HZ1     H       H       0       2.942       1.872       -0.436      
+NTN     HZ2     H       H       0       2.227       0.531       -0.656      
+NTN     H2      H       H       0       2.349       2.050       2.783       
+NTN     H3      H       H       0       -0.247      0.267       0.423       
+NTN     H4      H       H       0       -1.476      -1.539      1.218       
+NTN     H5      H       H       0       1.318       -2.435      3.817       
+NTN     H6      H       H       0       2.638       -0.659      3.108       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NTN       NZ        CI1       SINGLE    n         1.347     0.016     1.347     0.016     
+NTN       CI1       CI2       SINGLE    n         1.484     0.011     1.484     0.011     
+NTN       CI1       NI1       DOUBLE    n         1.287     0.020     1.287     0.020     
+NTN       CI2       CI3       DOUBLE    y         1.388     0.011     1.388     0.011     
+NTN       CI2       CI6       SINGLE    y         1.388     0.011     1.388     0.011     
+NTN       CI3       CI4       SINGLE    y         1.381     0.010     1.381     0.010     
+NTN       CI4       NI2       DOUBLE    y         1.332     0.011     1.332     0.011     
+NTN       NI2       CI5       SINGLE    y         1.332     0.011     1.332     0.011     
+NTN       CI5       CI6       DOUBLE    y         1.381     0.010     1.381     0.010     
+NTN       NZ        HZ1       SINGLE    n         1.016     0.010     0.887     0.020     
+NTN       NZ        HZ2       SINGLE    n         1.016     0.010     0.887     0.020     
+NTN       NI1       H2        SINGLE    n         1.016     0.010     0.823     0.020     
+NTN       CI3       H3        SINGLE    n         1.082     0.013     0.944     0.010     
+NTN       CI4       H4        SINGLE    n         1.082     0.013     0.945     0.020     
+NTN       CI5       H5        SINGLE    n         1.082     0.013     0.945     0.020     
+NTN       CI6       H6        SINGLE    n         1.082     0.013     0.944     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+NTN         CI1          NZ         HZ1     119.893    1.50
+NTN         CI1          NZ         HZ2     119.893    1.50
+NTN         HZ1          NZ         HZ2     120.214    2.70
+NTN          NZ         CI1         CI2     117.501    1.50
+NTN          NZ         CI1         NI1     120.652    2.66
+NTN         CI2         CI1         NI1     121.847    3.00
+NTN         CI1         CI2         CI3     120.616    1.66
+NTN         CI1         CI2         CI6     120.616    1.66
+NTN         CI3         CI2         CI6     118.769    1.50
+NTN         CI1         NI1          H2     114.748    3.00
+NTN         CI2         CI3         CI4     119.122    1.50
+NTN         CI2         CI3          H3     120.095    1.50
+NTN         CI4         CI3          H3     120.783    1.50
+NTN         CI3         CI4         NI2     123.356    1.50
+NTN         CI3         CI4          H4     118.506    1.50
+NTN         NI2         CI4          H4     118.138    1.50
+NTN         CI4         NI2         CI5     116.275    1.50
+NTN         NI2         CI5         CI6     123.356    1.50
+NTN         NI2         CI5          H5     118.138    1.50
+NTN         CI6         CI5          H5     118.506    1.50
+NTN         CI2         CI6         CI5     119.122    1.50
+NTN         CI2         CI6          H6     120.095    1.50
+NTN         CI5         CI6          H6     120.783    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+NTN             sp2_sp2_3         NI1         CI1          NZ         HZ1       0.000   10.00     2
+NTN             sp2_sp2_5          NZ         CI1         CI2         CI3     180.000   10.00     2
+NTN             sp2_sp2_9          NZ         CI1         NI1          H2     180.000   10.00     2
+NTN       const_sp2_sp2_3         CI1         CI2         CI3         CI4     180.000   10.00     2
+NTN              const_19         CI1         CI2         CI6         CI5     180.000   10.00     2
+NTN       const_sp2_sp2_5         CI2         CI3         CI4         NI2       0.000   10.00     2
+NTN       const_sp2_sp2_9         CI3         CI4         NI2         CI5       0.000   10.00     2
+NTN              const_11         CI6         CI5         NI2         CI4       0.000   10.00     2
+NTN              const_13         NI2         CI5         CI6         CI2       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+NTN    plan-1         CI1   0.020
+NTN    plan-1         CI2   0.020
+NTN    plan-1         CI3   0.020
+NTN    plan-1         CI4   0.020
+NTN    plan-1         CI5   0.020
+NTN    plan-1         CI6   0.020
+NTN    plan-1          H3   0.020
+NTN    plan-1          H4   0.020
+NTN    plan-1          H5   0.020
+NTN    plan-1          H6   0.020
+NTN    plan-1         NI2   0.020
+NTN    plan-2         CI1   0.020
+NTN    plan-2         HZ1   0.020
+NTN    plan-2         HZ2   0.020
+NTN    plan-2          NZ   0.020
+NTN    plan-3         CI1   0.020
+NTN    plan-3         CI2   0.020
+NTN    plan-3         NI1   0.020
+NTN    plan-3          NZ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+NTN SMILES           ACDLabs              10.04 "[N@H]=C(N)c1ccncc1"
+NTN SMILES_CANONICAL CACTVS               3.341 "NC(=N)c1ccncc1"
+NTN SMILES           CACTVS               3.341 "NC(=N)c1ccncc1"
+NTN SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1cnccc1C(=N)N"
+NTN SMILES           "OpenEye OEToolkits" 1.5.0 "c1cnccc1C(=N)N"
+NTN InChI            InChI                1.03  "InChI=1S/C6H7N3/c7-6(8)5-1-3-9-4-2-5/h1-4H,(H3,7,8)"
+NTN InChIKey         InChI                1.03  BIJRUEBMNUUNIJ-UHFFFAOYSA-N
+NTN ?                acedrg               202         "dictionary generator"                  
+NTN ?                acedrg_database      11          "data source"                           
+NTN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+NTN ?                refmac5              5.8.0189    "optimization tool"                     

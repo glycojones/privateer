@@ -1,0 +1,262 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+143     143     S-2,3-DIHYDRO-5-GLYCIN-2-YL-ISOXAZOL-3-YL-CYSTEINE     peptide     30     17     .     
+#
+data_comp_143
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+143     N       N       NT3     1       -4.597      -0.119      -0.563      
+143     CA      C       CH1     0       -3.369      0.308       0.162       
+143     CB      C       CH2     0       -2.537      -0.879      0.606       
+143     SG      S       S2      0       -0.863      -0.381      1.120       
+143     C       C       C       0       -3.754      1.183       1.362       
+143     O       O       O       0       -3.195      2.294       1.462       
+143     CI      C       CH1     0       3.841       -0.236      -0.439      
+143     NI      N       NT3     1       4.347       0.153       0.909       
+143     CJ      C       C       0       4.309       0.777       -1.498      
+143     OJ1     O       OC      -1      4.399       1.968       -1.148      
+143     OJ2     O       O       0       4.564       0.338       -2.635      
+143     CF      C       CR5     0       2.354       -0.419      -0.460      
+143     OF      O       O2      0       1.872       -1.667      -0.630      
+143     NX      N       NT1     0       0.447       -1.531      -1.000      
+143     CD      C       CH1     0       0.028       -0.225      -0.481      
+143     CE      C       CR15    0       1.350       0.484       -0.326      
+143     OXT     O       OC      -1      -4.599      0.720       2.154       
+143     H       H       H       0       -5.164      0.589       -0.662      
+143     H2      H       H       0       -5.019      -0.777      -0.094      
+143     H3      H       H       0       -4.373      -0.436      -1.387      
+143     HA      H       H       0       -2.830      0.851       -0.459      
+143     HB2     H       H       0       -2.470      -1.521      -0.132      
+143     HB3     H       H       0       -2.984      -1.328      1.353       
+143     HI      H       H       0       4.269       -1.094      -0.675      
+143     HI1     H       H       0       3.864       -0.270      1.555       
+143     HI2     H       H       0       4.274       1.053       1.021       
+143     HI3     H       H       0       5.220       -0.090      0.980       
+143     HX      H       H       0       -0.015      -2.241      -0.690      
+143     HD      H       H       0       -0.537      0.250       -1.136      
+143     HE      H       H       0       1.443       1.408       -0.163      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 143      N      n/a    CA     START
+ 143      H      N      .      .
+ 143      H2     N      .      .
+ 143      H3     N      .      .
+ 143      CA     N      C      .
+ 143      HA     CA     .      .
+ 143      CB     CA     SG     .
+ 143      HB2    CB     .      .
+ 143      HB3    CB     .      .
+ 143      SG     CB     CD     .
+ 143      CD     SG     CE     .
+ 143      HD     CD     .      .
+ 143      NX     CD     OF     .
+ 143      HX    NX     .      .
+ 143      OF     NX     .      .
+ 143      CE     CD     CF     .
+ 143      HE     CE     .      .
+ 143      CF     CE     CI     .
+ 143      CI     CF     CJ     .
+ 143      NI     CI     HI1    .
+ 143      HI     CI     .      .
+ 143      HI2    NI     .      .
+ 143      HI1    NI     .      .
+ 143      HI3    NI     .      .
+ 143      CJ     CI     OJ2    .
+ 143      OJ1    CJ     .      .
+ 143      OJ2    CJ     .      .
+ 143      C      CA     .      END
+ 143      O      C      .      .
+ 143      OXT    C      .      .
+ 143      CF     OF     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+143       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+143       CA        CB        SINGLE    n         1.515     0.012     1.515     0.012     
+143       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+143       CB        SG        SINGLE    n         1.819     0.020     1.819     0.020     
+143       SG        CD        SINGLE    n         1.836     0.020     1.836     0.020     
+143       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+143       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+143       CI        NI        SINGLE    n         1.487     0.015     1.487     0.015     
+143       CI        CJ        SINGLE    n         1.536     0.015     1.536     0.015     
+143       CI        CF        SINGLE    n         1.497     0.014     1.497     0.014     
+143       CJ        OJ1       SINGLE    n         1.244     0.020     1.244     0.020     
+143       CJ        OJ2       DOUBLE    n         1.244     0.020     1.244     0.020     
+143       CF        OF        SINGLE    n         1.345     0.020     1.345     0.020     
+143       CF        CE        DOUBLE    n         1.362     0.020     1.362     0.020     
+143       OF        NX        SINGLE    n         1.471     0.020     1.471     0.020     
+143       NX        CD        SINGLE    n         1.462     0.019     1.462     0.019     
+143       CD        CE        SINGLE    n         1.514     0.020     1.514     0.020     
+143       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+143       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+143       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+143       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+143       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.015     
+143       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.015     
+143       CI        HI        SINGLE    n         1.089     0.010     0.987     0.020     
+143       NI        HI1       SINGLE    n         1.036     0.016     0.909     0.020     
+143       NI        HI2       SINGLE    n         1.036     0.016     0.909     0.020     
+143       NI        HI3       SINGLE    n         1.036     0.016     0.909     0.020     
+143       NX        HX        SINGLE    n         1.016     0.010     0.901     0.019     
+143       CD        HD        SINGLE    n         1.089     0.010     0.987     0.016     
+143       CE        HE        SINGLE    n         1.082     0.013     0.943     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+143          CA           N           H     109.671    1.50
+143          CA           N          H2     109.671    1.50
+143          CA           N          H3     109.671    1.50
+143           H           N          H2     109.028    2.41
+143           H           N          H3     109.028    2.41
+143          H2           N          H3     109.028    2.41
+143           N          CA          CB     112.810    3.00
+143           N          CA           C     109.494    1.50
+143           N          CA          HA     107.983    1.50
+143          CB          CA           C     111.511    2.91
+143          CB          CA          HA     108.763    1.50
+143           C          CA          HA     108.606    1.50
+143          CA          CB          SG     112.239    3.00
+143          CA          CB         HB2     109.493    1.50
+143          CA          CB         HB3     109.493    1.50
+143          SG          CB         HB2     109.461    1.50
+143          SG          CB         HB3     109.461    1.50
+143         HB2          CB         HB3     107.984    1.50
+143          CB          SG          CD     102.828    1.99
+143          CA           C           O     117.134    1.50
+143          CA           C         OXT     117.134    1.50
+143           O           C         OXT     125.732    1.50
+143          NI          CI          CJ     109.935    2.65
+143          NI          CI          CF     112.320    1.50
+143          NI          CI          HI     107.792    1.50
+143          CJ          CI          CF     113.528    2.79
+143          CJ          CI          HI     106.938    1.92
+143          CF          CI          HI     109.382    1.50
+143          CI          NI         HI1     109.553    2.25
+143          CI          NI         HI2     109.553    2.25
+143          CI          NI         HI3     109.553    2.25
+143         HI1          NI         HI2     109.480    1.50
+143         HI1          NI         HI3     109.480    1.50
+143         HI2          NI         HI3     109.480    1.50
+143          CI          CJ         OJ1     117.260    1.75
+143          CI          CJ         OJ2     117.260    1.75
+143         OJ1          CJ         OJ2     125.480    1.75
+143          CI          CF          OF     117.731    2.02
+143          CI          CF          CE     130.310    2.76
+143          OF          CF          CE     111.959    2.48
+143          CF          OF          NX     106.424    1.50
+143          OF          NX          CD     103.988    3.00
+143          OF          NX          HX     109.471    3.00
+143          CD          NX          HX     114.884    3.00
+143          SG          CD          NX     109.868    3.00
+143          SG          CD          CE     111.369    3.00
+143          SG          CD          HD     109.485    1.50
+143          NX          CD          CE     102.310    1.50
+143          NX          CD          HD     110.535    1.50
+143          CE          CD          HD     109.531    1.73
+143          CF          CE          CD     110.389    2.72
+143          CF          CE          HE     125.783    1.73
+143          CD          CE          HE     123.827    1.51
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+143             sp3_sp3_4          CB          CA           N           H      60.000   10.00     3
+143             sp2_sp2_2          CI          CF          OF          NX     180.000   10.00     2
+143             sp2_sp2_6          CD          CE          CF          CI     180.000   10.00     2
+143             sp2_sp2_3          CD          NX          OF          CF       0.000   10.00     2
+143             sp2_sp3_3          OF          NX          CD          SG    -120.000   10.00     6
+143             sp2_sp3_8          CF          CE          CD          SG     120.000   10.00     6
+143            sp3_sp3_10           N          CA          CB          SG     180.000   10.00     3
+143            sp2_sp3_14           O           C          CA           N     120.000   10.00     6
+143            sp3_sp3_19          CA          CB          SG          CD     180.000   10.00     3
+143            sp3_sp3_23          NX          CD          SG          CB      60.000   10.00     3
+143            sp2_sp3_25          OF          CF          CI          NI     150.000   10.00     6
+143            sp3_sp3_25          CJ          CI          NI         HI1     180.000   10.00     3
+143            sp2_sp3_19         OJ1          CJ          CI          NI       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+143    chir_1    CA    N    CB    C    both
+143    chir_2    CI    NI    CJ    CF    positive
+143    chir_3    CD    SG    NX    CE    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+143    plan-1           C   0.020
+143    plan-1          CA   0.020
+143    plan-1           O   0.020
+143    plan-1         OXT   0.020
+143    plan-2          CI   0.020
+143    plan-2          CJ   0.020
+143    plan-2         OJ1   0.020
+143    plan-2         OJ2   0.020
+143    plan-3          CE   0.020
+143    plan-3          CF   0.020
+143    plan-3          CI   0.020
+143    plan-3          OF   0.020
+143    plan-4          CD   0.020
+143    plan-4          CE   0.020
+143    plan-4          CF   0.020
+143    plan-4          HE   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+143 SMILES           ACDLabs              10.04 "O=C(O)C(C=1ONC(SCC(N)C(=O)O)C=1)N"
+143 SMILES_CANONICAL CACTVS               3.341 "N[C@@H](CS[C@H]1NOC(=C1)[C@H](N)C(O)=O)C(O)=O"
+143 SMILES           CACTVS               3.341 "N[CH](CS[CH]1NOC(=C1)[CH](N)C(O)=O)C(O)=O"
+143 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C1=C(ON[C@@H]1SC[C@@H](C(=O)O)N)[C@@H](C(=O)O)N"
+143 SMILES           "OpenEye OEToolkits" 1.5.0 "C1=C(ONC1SCC(C(=O)O)N)C(C(=O)O)N"
+143 InChI            InChI                1.03  "InChI=1S/C8H13N3O5S/c9-3(7(12)13)2-17-5-1-4(16-11-5)6(10)8(14)15/h1,3,5-6,11H,2,9-10H2,(H,12,13)(H,14,15)/t3-,5+,6-/m0/s1"
+143 InChIKey         InChI                1.03  BKLXHXYNMPKLBR-LFRDXLMFSA-N
+143 ?                acedrg               196         "dictionary generator"                  
+143 ?                acedrg_database      11          "data source"                           
+143 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+143 ?                refmac5              5.8.0222    "optimization tool"                     

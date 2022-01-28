@@ -1,0 +1,130 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PPK     PPK      "(DIPHOSPHONO)AMINOPHOSPHONIC ACID"     NON-POLYMER     14     13     .     
+#
+data_comp_PPK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PPK     O1G     O       OP      -1      -2.253      -0.974      -2.189      
+PPK     PG      P       P       0       -1.927      -0.435      -0.819      
+PPK     O2G     O       OP      -1      -1.973      1.071       -0.877      
+PPK     O3G     O       O       0       -2.989      -0.906      0.143       
+PPK     N3B     N       NT1     0       -0.451      -0.945      -0.338      
+PPK     PB      P       P       0       0.273       -0.618      1.091       
+PPK     O1B     O       OP      -1      -0.727      -0.520      2.210       
+PPK     O2B     O       O       0       1.502       -1.458      1.296       
+PPK     O3A     O       O2      0       0.819       0.875       0.890       
+PPK     PA      P       P       0       1.851       1.527       -0.165      
+PPK     O1A     O       OP      -1      3.220       1.032       0.233       
+PPK     O2A     O       OP      -1      1.706       3.022       -0.020      
+PPK     O4A     O       O       0       1.425       1.029       -1.525      
+PPK     H3B     H       H       0       -0.124      -1.577      -0.776      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PPK       O1G       PG        SINGLE    n         1.508     0.020     1.508     0.020     
+PPK       PG        O2G       SINGLE    n         1.508     0.020     1.508     0.020     
+PPK       PG        O3G       DOUBLE    n         1.508     0.020     1.508     0.020     
+PPK       PG        N3B       SINGLE    n         1.634     0.017     1.634     0.017     
+PPK       N3B       PB        SINGLE    n         1.635     0.018     1.635     0.018     
+PPK       PB        O1B       SINGLE    n         1.504     0.013     1.504     0.013     
+PPK       PB        O2B       DOUBLE    n         1.504     0.013     1.504     0.013     
+PPK       PB        O3A       SINGLE    n         1.603     0.016     1.603     0.016     
+PPK       O3A       PA        SINGLE    n         1.614     0.019     1.614     0.019     
+PPK       PA        O1A       SINGLE    n         1.509     0.020     1.509     0.020     
+PPK       PA        O2A       SINGLE    n         1.509     0.020     1.509     0.020     
+PPK       PA        O4A       DOUBLE    n         1.509     0.020     1.509     0.020     
+PPK       N3B       H3B       SINGLE    n         1.036     0.016     0.836     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PPK         O1G          PG         O2G     111.149    3.00
+PPK         O1G          PG         O3G     111.149    3.00
+PPK         O1G          PG         N3B     113.406    3.00
+PPK         O2G          PG         O3G     111.149    3.00
+PPK         O2G          PG         N3B     113.406    3.00
+PPK         O3G          PG         N3B     113.406    3.00
+PPK          PG         N3B          PB     126.472    2.99
+PPK          PG         N3B         H3B     115.833    3.00
+PPK          PB         N3B         H3B     115.833    3.00
+PPK         N3B          PB         O1B     113.406    3.00
+PPK         N3B          PB         O2B     113.406    3.00
+PPK         N3B          PB         O3A     104.521    3.00
+PPK         O1B          PB         O2B     118.893    1.50
+PPK         O1B          PB         O3A     106.011    3.00
+PPK         O2B          PB         O3A     106.011    3.00
+PPK          PB         O3A          PA     132.584    3.00
+PPK         O3A          PA         O1A     105.965    2.38
+PPK         O3A          PA         O2A     105.965    2.38
+PPK         O3A          PA         O4A     105.965    2.38
+PPK         O1A          PA         O2A     112.716    1.50
+PPK         O1A          PA         O4A     112.716    1.50
+PPK         O2A          PA         O4A     112.716    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PPK             sp3_sp3_1          PB         N3B          PG         O1G     180.000   10.00     3
+PPK             sp3_sp3_8          PG         N3B          PB         O1B     -60.000   10.00     3
+PPK            sp3_sp3_15          PA         O3A          PB         N3B      60.000   10.00     3
+PPK            sp3_sp3_16          PB         O3A          PA         O1A     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PPK    chir_1    N3B    PB    PG    H3B    positive
+PPK    chir_2    PB    O3A    O1B    O2B    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PPK SMILES           ACDLabs              10.04 "O=P(OP(=O)(O)O)(O)NP(=O)(O)O"
+PPK SMILES_CANONICAL CACTVS               3.341 "O[P](O)(=O)N[P@@](O)(=O)O[P](O)(O)=O"
+PPK SMILES           CACTVS               3.341 "O[P](O)(=O)N[P](O)(=O)O[P](O)(O)=O"
+PPK SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "N(P(=O)(O)O)[P@](=O)(O)OP(=O)(O)O"
+PPK SMILES           "OpenEye OEToolkits" 1.5.0 "N(P(=O)(O)O)P(=O)(O)OP(=O)(O)O"
+PPK InChI            InChI                1.03  "InChI=1S/H6NO9P3/c2-11(3,4)1-12(5,6)10-13(7,8)9/h(H2,7,8,9)(H4,1,2,3,4,5,6)"
+PPK InChIKey         InChI                1.03  PELPUMGXMYVGSQ-UHFFFAOYSA-N
+PPK ?                acedrg               202         "dictionary generator"                  
+PPK ?                acedrg_database      11          "data source"                           
+PPK ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PPK ?                refmac5              5.8.0189    "optimization tool"                     

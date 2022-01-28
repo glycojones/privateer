@@ -1,0 +1,273 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HCN      HCN '2 IRON/2 SULFUR/3 CARBONYL/2 CYANIDE' non-polymer        28  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_HCN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ HCN           O7     O    O         0.000      0.000    0.000    0.000
+ HCN           C7     C    C1        0.000     -1.126    0.364   -0.043
+ HCN           H7     H    H         0.000     -1.490   -0.548    0.399
+ HCN           FE2    FE   FE        0.000     -2.751    1.044   -0.174
+ HCN           C6     C    CSP       0.000     -3.230    0.557    1.631
+ HCN           N6     N    NS        0.000     -3.633    0.204    2.636
+ HCN           O2     O    O         0.000     -3.523   -0.954   -1.210
+ HCN           H12    H    H         0.000     -2.781   -1.443   -1.548
+ HCN           HO2    H    H         0.000     -4.109   -0.735   -1.925
+ HCN           S1     S    ST        0.000     -2.298    1.830   -2.309
+ HCN           HS1    H    H         0.000     -1.125    1.888   -2.685
+ HCN           C9     C    CH2       0.000     -3.584    1.219   -3.490
+ HCN           H9A    H    H         0.000     -3.064    0.537   -4.166
+ HCN           H9     H    H         0.000     -3.916    2.098   -4.046
+ HCN           O1     O    O2        0.000     -4.759    0.531   -2.898
+ HCN           S2     S    ST        0.000     -4.814    2.018   -0.431
+ HCN           HS2    H    H         0.000     -5.446    2.245    0.604
+ HCN           C10    C    CH2       0.000     -5.754    1.139   -1.814
+ HCN           H10A   H    H         0.000     -6.419    1.861   -2.293
+ HCN           H10    H    H         0.000     -6.348    0.336   -1.373
+ HCN           C5     C    C         0.000     -2.038    2.770    0.519
+ HCN           O5     O    O         0.000     -1.426    3.041    1.507
+ HCN           FE1    FE   FE        0.000     -3.089    3.461   -0.911
+ HCN           C3     C    C1        0.000     -3.633    4.593    0.293
+ HCN           H3     H    H         0.000     -2.777    4.466    0.935
+ HCN           O3     O    O         0.000     -4.187    5.417    1.016
+ HCN           C4     C    CSP       0.000     -1.553    4.377   -1.279
+ HCN           N4     N    NS        0.000     -0.524    4.979   -1.516
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ HCN      O7     n/a    C7     START
+ HCN      C7     O7     FE2    .
+ HCN      H7     C7     .      .
+ HCN      FE2    C7     C5     .
+ HCN      C6     FE2    N6     .
+ HCN      N6     C6     .      .
+ HCN      O2     FE2    HO2    .
+ HCN      H12    O2     .      .
+ HCN      HO2    O2     .      .
+ HCN      S1     FE2    C9     .
+ HCN      HS1    S1     .      .
+ HCN      C9     S1     O1     .
+ HCN      H9A    C9     .      .
+ HCN      H9     C9     .      .
+ HCN      O1     C9     .      .
+ HCN      S2     FE2    C10    .
+ HCN      HS2    S2     .      .
+ HCN      C10    S2     H10    .
+ HCN      H10A   C10    .      .
+ HCN      H10    C10    .      .
+ HCN      C5     FE2    FE1    .
+ HCN      O5     C5     .      .
+ HCN      FE1    C5     C4     .
+ HCN      C3     FE1    O3     .
+ HCN      H3     C3     .      .
+ HCN      O3     C3     .      .
+ HCN      C4     FE1    N4     .
+ HCN      N4     C4     .      END
+ HCN      FE1    S1     .    ADD
+ HCN      FE1    S2     .    ADD
+ HCN      O1     C10    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HCN       FE1       S1        single    2.135     0.020     2.135     0.020     
+HCN       C3        FE1       single    1.900     0.020     1.900     0.020     
+HCN       C4        FE1       single    1.825     0.020     1.825     0.020     
+HCN       FE1       C5        single    1.900     0.020     1.900     0.020     
+HCN       C5        FE2       single    1.900     0.020     1.900     0.020     
+HCN       C6        FE2       single    1.825     0.020     1.825     0.020     
+HCN       FE2       C7        single    1.900     0.020     1.900     0.020     
+HCN       S1        FE2       single    2.135     0.020     2.135     0.020     
+HCN       HS1       S1        single    1.338     0.010     1.171     0.208     
+HCN       FE1       S2        single    2.135     0.020     2.135     0.020     
+HCN       S2        FE2       single    2.135     0.020     2.135     0.020     
+HCN       HS2       S2        single    1.338     0.010     1.171     0.208     
+HCN       O1        C9        single    1.426     0.020     1.426     0.020     
+HCN       C10       S2        single    1.662     0.020     1.662     0.020     
+HCN       O1        C10       single    1.426     0.020     1.426     0.020     
+HCN       H10       C10       single    1.089     0.010     0.989     0.005     
+HCN       H10A      C10       single    1.089     0.010     0.989     0.005     
+HCN       C9        S1        single    1.662     0.020     1.662     0.020     
+HCN       H9        C9        single    1.089     0.010     0.989     0.005     
+HCN       H9A       C9        single    1.089     0.010     0.989     0.005     
+HCN       O3        C3        double    1.220     0.020     1.220     0.020     
+HCN       H3        C3        single    1.082     0.013     0.975     0.010     
+HCN       N4        C4        triple    1.158     0.020     1.158     0.020     
+HCN       O5        C5        double    1.220     0.020     1.220     0.020     
+HCN       N6        C6        triple    1.158     0.020     1.158     0.020     
+HCN       C7        O7        double    1.220     0.020     1.220     0.020     
+HCN       H7        C7        single    1.082     0.013     0.975     0.010     
+HCN       O2        FE2       single    2.040     0.020     2.040     0.020     
+HCN       HO2       O2        single    0.970     0.012     0.839     0.014     
+HCN       H12       O2        single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ HCN      O7     C7     H7      123.000    3.000
+ HCN      O7     C7     FE2     120.000    3.000
+ HCN      H7     C7     FE2     120.000    3.000
+ HCN      C7     FE2    C6       90.000    3.000
+ HCN      C7     FE2    O2       90.000    3.000
+ HCN      C7     FE2    S1       90.000    3.000
+ HCN      C7     FE2    S2      180.000    3.000
+ HCN      C7     FE2    C5       90.000    3.000
+ HCN      C6     FE2    O2       90.000    3.000
+ HCN      C6     FE2    S1      180.000    3.000
+ HCN      O2     FE2    S1       90.000    3.000
+ HCN      C6     FE2    S2       90.000    3.000
+ HCN      O2     FE2    S2       90.000    3.000
+ HCN      S1     FE2    S2       90.000    3.000
+ HCN      C6     FE2    C5       90.000    3.000
+ HCN      O2     FE2    C5      180.000    3.000
+ HCN      S1     FE2    C5       90.000    3.000
+ HCN      S2     FE2    C5       90.000    3.000
+ HCN      FE2    C6     N6      180.000    3.000
+ HCN      FE2    O2     H12     120.000    3.000
+ HCN      FE2    O2     HO2     120.000    3.000
+ HCN      H12    O2     HO2     120.000    3.000
+ HCN      FE2    S1     HS1     109.500    3.000
+ HCN      FE2    S1     C9      109.500    3.000
+ HCN      FE2    S1     FE1     109.500    3.000
+ HCN      HS1    S1     C9      109.500    3.000
+ HCN      HS1    S1     FE1     109.500    3.000
+ HCN      C9     S1     FE1     109.500    3.000
+ HCN      S1     C9     H9A     109.500    3.000
+ HCN      S1     C9     H9      109.500    3.000
+ HCN      S1     C9     O1      109.500    3.000
+ HCN      H9A    C9     H9      107.900    3.000
+ HCN      H9A    C9     O1      109.470    3.000
+ HCN      H9     C9     O1      109.470    3.000
+ HCN      C9     O1     C10     111.800    3.000
+ HCN      FE2    S2     HS2     109.500    3.000
+ HCN      FE2    S2     C10     109.500    3.000
+ HCN      FE2    S2     FE1     109.500    3.000
+ HCN      HS2    S2     C10     109.500    3.000
+ HCN      HS2    S2     FE1     109.500    3.000
+ HCN      C10    S2     FE1     109.500    3.000
+ HCN      S2     C10    H10A    109.500    3.000
+ HCN      S2     C10    H10     109.500    3.000
+ HCN      S2     C10    O1      109.500    3.000
+ HCN      H10A   C10    H10     107.900    3.000
+ HCN      H10A   C10    O1      109.470    3.000
+ HCN      H10    C10    O1      109.470    3.000
+ HCN      FE2    C5     O5      120.000    3.000
+ HCN      FE2    C5     FE1     120.000    3.000
+ HCN      O5     C5     FE1     120.000    3.000
+ HCN      C5     FE1    C3       90.000    3.000
+ HCN      C5     FE1    C4       90.000    3.000
+ HCN      C5     FE1    S1       90.000    3.000
+ HCN      C5     FE1    S2       90.000    3.000
+ HCN      C3     FE1    C4       90.000    3.000
+ HCN      S1     FE1    S2       90.000    3.000
+ HCN      C3     FE1    S1      180.000    3.000
+ HCN      C4     FE1    S1       90.000    3.000
+ HCN      C3     FE1    S2       90.000    3.000
+ HCN      C4     FE1    S2      180.000    3.000
+ HCN      FE1    C3     H3      120.000    3.000
+ HCN      FE1    C3     O3      120.000    3.000
+ HCN      H3     C3     O3      123.000    3.000
+ HCN      FE1    C4     N4      180.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ HCN      var_1    O7     C7     FE2    O2         0.000   20.000   1
+ HCN      var_2    N6     C6     FE2    C7       180.000   20.000   1
+ HCN      var_3    H12    O2     FE2    C7         0.000   20.000   1
+ HCN      var_4    C9     S1     FE2    S2         0.000   20.000   1
+ HCN      var_5    FE2    S1     C9     O1         8.662   20.000   1
+ HCN      var_6    S1     C9     O1     C10       64.132   20.000   1
+ HCN      var_7    C9     O1     C10    S2       -65.421   20.000   1
+ HCN      var_8    C10    S2     FE2    S1         0.000   20.000   1
+ HCN      var_9    FE2    S2     C10    O1        -6.665   20.000   1
+ HCN      var_10   FE1    C5     FE2    S1         0.000   20.000   1
+ HCN      var_11   FE2    C5     FE1    S1         0.000   20.000   1
+ HCN      var_12   FE2    S1     FE1    C5         0.000   20.000   1
+ HCN      var_13   FE2    S2     FE1    C5         0.000   20.000   1
+ HCN      var_14   H3     C3     FE1    C5         0.000   20.000   1
+ HCN      var_15   N4     C4     FE1    C5       180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ HCN      chir_01  S1     FE1    FE2    C9        negativ
+                   .      .      .      .      .
+ HCN      chir_02  S2     FE1    FE2    C10       positiv
+                   .      .      .      .      .
+ HCN      chir_03  FE1    C5     .      S1        cross4
+                   C4     C3     S2     .      .
+ HCN      chir_04  FE2    C7     S2     O2        cross4
+                   S1     C5     C6     .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ HCN      plan-1    C3        0.020
+ HCN      plan-1    FE1       0.020
+ HCN      plan-1    O3        0.020
+ HCN      plan-1    H3        0.020
+ HCN      plan-2    C5        0.020
+ HCN      plan-2    FE1       0.020
+ HCN      plan-2    FE2       0.020
+ HCN      plan-2    O5        0.020
+ HCN      plan-3    C7        0.020
+ HCN      plan-3    FE2       0.020
+ HCN      plan-3    O7        0.020
+ HCN      plan-3    H7        0.020
+# ------------------------------------------------------

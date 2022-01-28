@@ -1,0 +1,437 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TGU      TGU 'TRIGALACTURONIC ACID                ' non-polymer        60  37 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TGU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TGU           OAZ    O    OC       -0.500      0.000    0.000    0.000
+ TGU           C6C    C    C         0.000     -0.013   -0.941    0.825
+ TGU           O6C    O    OC       -0.500      1.036   -1.260    1.427
+ TGU           C5C    C    CH1       0.000     -1.294   -1.690    1.093
+ TGU           H5C    H    H         0.000     -1.503   -1.684    2.172
+ TGU           C4C    C    CH1       0.000     -1.150   -3.135    0.609
+ TGU           H4C    H    H         0.000     -0.352   -3.635    1.175
+ TGU           O4C    O    OH1       0.000     -0.826   -3.142   -0.782
+ TGU           HG     H    H         0.000      0.010   -2.677   -0.920
+ TGU           C3C    C    CH1       0.000     -2.475   -3.872    0.830
+ TGU           H3C    H    H         0.000     -2.700   -3.911    1.905
+ TGU           O3C    O    OH1       0.000     -2.375   -5.201    0.313
+ TGU           HF     H    H         0.000     -1.669   -5.673    0.776
+ TGU           C2C    C    CH1       0.000     -3.593   -3.122    0.099
+ TGU           H2C    H    H         0.000     -3.394   -3.128   -0.982
+ TGU           O2C    O    OH1       0.000     -4.845   -3.760    0.358
+ TGU           HE     H    H         0.000     -5.550   -3.282   -0.099
+ TGU           O5C    O    O2        0.000     -2.370   -1.058    0.395
+ TGU           C1C    C    CH1       0.000     -3.642   -1.677    0.603
+ TGU           H1C    H    H         0.000     -3.882   -1.670    1.676
+ TGU           O4B    O    O2        0.000     -4.645   -0.955   -0.114
+ TGU           C4B    C    CH1       0.000     -4.940    0.330    0.435
+ TGU           H4B    H    H         0.000     -4.080    0.687    1.019
+ TGU           C3B    C    CH1       0.000     -6.169    0.228    1.344
+ TGU           H3B    H    H         0.000     -6.368    1.205    1.807
+ TGU           O3B    O    OH1       0.000     -5.930   -0.745    2.363
+ TGU           HD     H    H         0.000     -6.709   -0.813    2.932
+ TGU           C2B    C    CH1       0.000     -7.378   -0.197    0.504
+ TGU           H2B    H    H         0.000     -7.200   -1.196    0.083
+ TGU           O2B    O    OH1       0.000     -8.545   -0.225    1.328
+ TGU           HC     H    H         0.000     -9.308   -0.488    0.796
+ TGU           C5B    C    CH1       0.000     -5.235    1.316   -0.698
+ TGU           H5B    H    H         0.000     -5.423    2.313   -0.277
+ TGU           C6B    C    C         0.000     -4.052    1.378   -1.631
+ TGU           OAN    O    OC       -0.500     -4.160    0.961   -2.806
+ TGU           O6B    O    OC       -0.500     -2.964    1.845   -1.229
+ TGU           O5B    O    O2        0.000     -6.388    0.879   -1.420
+ TGU           C1B    C    CH1       0.000     -7.578    0.810   -0.632
+ TGU           H1B    H    H         0.000     -8.418    0.487   -1.263
+ TGU           O4A    O    O2        0.000     -7.862    2.097   -0.083
+ TGU           C4A    C    CH1       0.000     -8.288    3.060   -1.050
+ TGU           H4A    H    H         0.000     -7.831    2.831   -2.023
+ TGU           C3A    C    CH1       0.000     -7.861    4.461   -0.601
+ TGU           H3A    H    H         0.000     -8.143    5.196   -1.368
+ TGU           O3A    O    OH1       0.000     -6.444    4.490   -0.408
+ TGU           HB     H    H         0.000     -6.177    5.372   -0.118
+ TGU           C2A    C    CH1       0.000     -8.564    4.799    0.717
+ TGU           H2A    H    H         0.000     -8.242    4.095    1.497
+ TGU           O2A    O    OH1       0.000     -8.228    6.132    1.109
+ TGU           HA     H    H         0.000     -8.677    6.347    1.938
+ TGU           C5A    C    CH1       0.000     -9.812    3.018   -1.178
+ TGU           H5A    H    H         0.000    -10.135    3.729   -1.952
+ TGU           C6A    C    C         0.000    -10.245    1.626   -1.562
+ TGU           OAC    O    OC       -0.500     -9.916    1.153   -2.672
+ TGU           O6A    O    OC       -0.500    -10.936    0.945   -0.772
+ TGU           O5A    O    O2        0.000    -10.405    3.372    0.073
+ TGU           C1A    C    CH1       0.000    -10.078    4.690    0.521
+ TGU           H1A    H    H         0.000    -10.587    4.890    1.474
+ TGU           O1X    O    OH1       0.000    -10.502    5.643   -0.455
+ TGU           H1X    H    H         0.000    -11.459    5.573   -0.578
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TGU      OAZ    n/a    C6C    START
+ TGU      C6C    OAZ    C5C    .
+ TGU      O6C    C6C    .      .
+ TGU      C5C    C6C    O5C    .
+ TGU      H5C    C5C    .      .
+ TGU      C4C    C5C    C3C    .
+ TGU      H4C    C4C    .      .
+ TGU      O4C    C4C    HG     .
+ TGU      HG     O4C    .      .
+ TGU      C3C    C4C    C2C    .
+ TGU      H3C    C3C    .      .
+ TGU      O3C    C3C    HF     .
+ TGU      HF     O3C    .      .
+ TGU      C2C    C3C    O2C    .
+ TGU      H2C    C2C    .      .
+ TGU      O2C    C2C    HE     .
+ TGU      HE     O2C    .      .
+ TGU      O5C    C5C    C1C    .
+ TGU      C1C    O5C    O4B    .
+ TGU      H1C    C1C    .      .
+ TGU      O4B    C1C    C4B    .
+ TGU      C4B    O4B    C5B    .
+ TGU      H4B    C4B    .      .
+ TGU      C3B    C4B    C2B    .
+ TGU      H3B    C3B    .      .
+ TGU      O3B    C3B    HD     .
+ TGU      HD     O3B    .      .
+ TGU      C2B    C3B    O2B    .
+ TGU      H2B    C2B    .      .
+ TGU      O2B    C2B    HC     .
+ TGU      HC     O2B    .      .
+ TGU      C5B    C4B    O5B    .
+ TGU      H5B    C5B    .      .
+ TGU      C6B    C5B    O6B    .
+ TGU      OAN    C6B    .      .
+ TGU      O6B    C6B    .      .
+ TGU      O5B    C5B    C1B    .
+ TGU      C1B    O5B    O4A    .
+ TGU      H1B    C1B    .      .
+ TGU      O4A    C1B    C4A    .
+ TGU      C4A    O4A    C5A    .
+ TGU      H4A    C4A    .      .
+ TGU      C3A    C4A    C2A    .
+ TGU      H3A    C3A    .      .
+ TGU      O3A    C3A    HB     .
+ TGU      HB     O3A    .      .
+ TGU      C2A    C3A    O2A    .
+ TGU      H2A    C2A    .      .
+ TGU      O2A    C2A    HA     .
+ TGU      HA     O2A    .      .
+ TGU      C5A    C4A    O5A    .
+ TGU      H5A    C5A    .      .
+ TGU      C6A    C5A    O6A    .
+ TGU      OAC    C6A    .      .
+ TGU      O6A    C6A    .      .
+ TGU      O5A    C5A    C1A    .
+ TGU      C1A    O5A    O1X    .
+ TGU      H1A    C1A    .      .
+ TGU      O1X    C1A    H1X    .
+ TGU      H1X    O1X    .      END
+ TGU      C1A    C2A    .    ADD
+ TGU      C1B    C2B    .    ADD
+ TGU      C1C    C2C    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TGU       C1A       C2A       single    1.524     0.020     1.524     0.020     
+TGU       O1X       C1A       single    1.432     0.020     1.432     0.020     
+TGU       C1A       O5A       single    1.426     0.020     1.426     0.020     
+TGU       C2A       C3A       single    1.524     0.020     1.524     0.020     
+TGU       O2A       C2A       single    1.432     0.020     1.432     0.020     
+TGU       C3A       C4A       single    1.524     0.020     1.524     0.020     
+TGU       O3A       C3A       single    1.432     0.020     1.432     0.020     
+TGU       C5A       C4A       single    1.524     0.020     1.524     0.020     
+TGU       C4A       O4A       single    1.426     0.020     1.426     0.020     
+TGU       C6A       C5A       single    1.500     0.020     1.500     0.020     
+TGU       O5A       C5A       single    1.426     0.020     1.426     0.020     
+TGU       O6A       C6A       deloc     1.250     0.020     1.250     0.020     
+TGU       OAC       C6A       deloc     1.250     0.020     1.250     0.020     
+TGU       O4A       C1B       single    1.426     0.020     1.426     0.020     
+TGU       C1B       C2B       single    1.524     0.020     1.524     0.020     
+TGU       C1B       O5B       single    1.426     0.020     1.426     0.020     
+TGU       C2B       C3B       single    1.524     0.020     1.524     0.020     
+TGU       O2B       C2B       single    1.432     0.020     1.432     0.020     
+TGU       C3B       C4B       single    1.524     0.020     1.524     0.020     
+TGU       O3B       C3B       single    1.432     0.020     1.432     0.020     
+TGU       C5B       C4B       single    1.524     0.020     1.524     0.020     
+TGU       C4B       O4B       single    1.426     0.020     1.426     0.020     
+TGU       C6B       C5B       single    1.500     0.020     1.500     0.020     
+TGU       O5B       C5B       single    1.426     0.020     1.426     0.020     
+TGU       O6B       C6B       deloc     1.250     0.020     1.250     0.020     
+TGU       OAN       C6B       deloc     1.250     0.020     1.250     0.020     
+TGU       O4B       C1C       single    1.426     0.020     1.426     0.020     
+TGU       C1C       C2C       single    1.524     0.020     1.524     0.020     
+TGU       C1C       O5C       single    1.426     0.020     1.426     0.020     
+TGU       C2C       C3C       single    1.524     0.020     1.524     0.020     
+TGU       O2C       C2C       single    1.432     0.020     1.432     0.020     
+TGU       C3C       C4C       single    1.524     0.020     1.524     0.020     
+TGU       O3C       C3C       single    1.432     0.020     1.432     0.020     
+TGU       C4C       C5C       single    1.524     0.020     1.524     0.020     
+TGU       O4C       C4C       single    1.432     0.020     1.432     0.020     
+TGU       C5C       C6C       single    1.500     0.020     1.500     0.020     
+TGU       O5C       C5C       single    1.426     0.020     1.426     0.020     
+TGU       O6C       C6C       deloc     1.250     0.020     1.250     0.020     
+TGU       C6C       OAZ       deloc     1.250     0.020     1.250     0.020     
+TGU       H1A       C1A       single    1.089     0.010     0.989     0.005     
+TGU       H2A       C2A       single    1.089     0.010     0.989     0.005     
+TGU       H1X       O1X       single    0.970     0.012     0.839     0.014     
+TGU       H3A       C3A       single    1.089     0.010     0.989     0.005     
+TGU       HA        O2A       single    0.970     0.012     0.839     0.014     
+TGU       H4A       C4A       single    1.089     0.010     0.989     0.005     
+TGU       HB        O3A       single    0.970     0.012     0.839     0.014     
+TGU       H5A       C5A       single    1.089     0.010     0.989     0.005     
+TGU       H1B       C1B       single    1.089     0.010     0.989     0.005     
+TGU       H2B       C2B       single    1.089     0.010     0.989     0.005     
+TGU       H3B       C3B       single    1.089     0.010     0.989     0.005     
+TGU       HC        O2B       single    0.970     0.012     0.839     0.014     
+TGU       H4B       C4B       single    1.089     0.010     0.989     0.005     
+TGU       HD        O3B       single    0.970     0.012     0.839     0.014     
+TGU       H5B       C5B       single    1.089     0.010     0.989     0.005     
+TGU       H1C       C1C       single    1.089     0.010     0.989     0.005     
+TGU       H2C       C2C       single    1.089     0.010     0.989     0.005     
+TGU       H3C       C3C       single    1.089     0.010     0.989     0.005     
+TGU       HE        O2C       single    0.970     0.012     0.839     0.014     
+TGU       H4C       C4C       single    1.089     0.010     0.989     0.005     
+TGU       HF        O3C       single    0.970     0.012     0.839     0.014     
+TGU       H5C       C5C       single    1.089     0.010     0.989     0.005     
+TGU       HG        O4C       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TGU      OAZ    C6C    O6C     123.000    3.000
+ TGU      OAZ    C6C    C5C     118.500    3.000
+ TGU      O6C    C6C    C5C     118.500    3.000
+ TGU      C6C    C5C    H5C     108.810    3.000
+ TGU      C6C    C5C    C4C     109.470    3.000
+ TGU      C6C    C5C    O5C     109.470    3.000
+ TGU      H5C    C5C    C4C     108.340    3.000
+ TGU      H5C    C5C    O5C     109.470    3.000
+ TGU      C4C    C5C    O5C     109.470    3.000
+ TGU      C5C    C4C    H4C     108.340    3.000
+ TGU      C5C    C4C    O4C     109.470    3.000
+ TGU      C5C    C4C    C3C     111.000    3.000
+ TGU      H4C    C4C    O4C     109.470    3.000
+ TGU      H4C    C4C    C3C     108.340    3.000
+ TGU      O4C    C4C    C3C     109.470    3.000
+ TGU      C4C    O4C    HG      109.470    3.000
+ TGU      C4C    C3C    H3C     108.340    3.000
+ TGU      C4C    C3C    O3C     109.470    3.000
+ TGU      C4C    C3C    C2C     111.000    3.000
+ TGU      H3C    C3C    O3C     109.470    3.000
+ TGU      H3C    C3C    C2C     108.340    3.000
+ TGU      O3C    C3C    C2C     109.470    3.000
+ TGU      C3C    O3C    HF      109.470    3.000
+ TGU      C3C    C2C    H2C     108.340    3.000
+ TGU      C3C    C2C    O2C     109.470    3.000
+ TGU      C3C    C2C    C1C     111.000    3.000
+ TGU      H2C    C2C    O2C     109.470    3.000
+ TGU      H2C    C2C    C1C     108.340    3.000
+ TGU      O2C    C2C    C1C     109.470    3.000
+ TGU      C2C    O2C    HE      109.470    3.000
+ TGU      C5C    O5C    C1C     111.800    3.000
+ TGU      O5C    C1C    H1C     109.470    3.000
+ TGU      O5C    C1C    O4B     109.470    3.000
+ TGU      O5C    C1C    C2C     109.470    3.000
+ TGU      H1C    C1C    O4B     109.470    3.000
+ TGU      H1C    C1C    C2C     108.340    3.000
+ TGU      O4B    C1C    C2C     109.470    3.000
+ TGU      C1C    O4B    C4B     111.800    3.000
+ TGU      O4B    C4B    H4B     109.470    3.000
+ TGU      O4B    C4B    C3B     109.470    3.000
+ TGU      O4B    C4B    C5B     109.470    3.000
+ TGU      H4B    C4B    C3B     108.340    3.000
+ TGU      H4B    C4B    C5B     108.340    3.000
+ TGU      C3B    C4B    C5B     111.000    3.000
+ TGU      C4B    C3B    H3B     108.340    3.000
+ TGU      C4B    C3B    O3B     109.470    3.000
+ TGU      C4B    C3B    C2B     111.000    3.000
+ TGU      H3B    C3B    O3B     109.470    3.000
+ TGU      H3B    C3B    C2B     108.340    3.000
+ TGU      O3B    C3B    C2B     109.470    3.000
+ TGU      C3B    O3B    HD      109.470    3.000
+ TGU      C3B    C2B    H2B     108.340    3.000
+ TGU      C3B    C2B    O2B     109.470    3.000
+ TGU      C3B    C2B    C1B     111.000    3.000
+ TGU      H2B    C2B    O2B     109.470    3.000
+ TGU      H2B    C2B    C1B     108.340    3.000
+ TGU      O2B    C2B    C1B     109.470    3.000
+ TGU      C2B    O2B    HC      109.470    3.000
+ TGU      C4B    C5B    H5B     108.340    3.000
+ TGU      C4B    C5B    C6B     109.470    3.000
+ TGU      C4B    C5B    O5B     109.470    3.000
+ TGU      H5B    C5B    C6B     108.810    3.000
+ TGU      H5B    C5B    O5B     109.470    3.000
+ TGU      C6B    C5B    O5B     109.470    3.000
+ TGU      C5B    C6B    OAN     118.500    3.000
+ TGU      C5B    C6B    O6B     118.500    3.000
+ TGU      OAN    C6B    O6B     123.000    3.000
+ TGU      C5B    O5B    C1B     111.800    3.000
+ TGU      O5B    C1B    H1B     109.470    3.000
+ TGU      O5B    C1B    O4A     109.470    3.000
+ TGU      O5B    C1B    C2B     109.470    3.000
+ TGU      H1B    C1B    O4A     109.470    3.000
+ TGU      H1B    C1B    C2B     108.340    3.000
+ TGU      O4A    C1B    C2B     109.470    3.000
+ TGU      C1B    O4A    C4A     111.800    3.000
+ TGU      O4A    C4A    H4A     109.470    3.000
+ TGU      O4A    C4A    C3A     109.470    3.000
+ TGU      O4A    C4A    C5A     109.470    3.000
+ TGU      H4A    C4A    C3A     108.340    3.000
+ TGU      H4A    C4A    C5A     108.340    3.000
+ TGU      C3A    C4A    C5A     111.000    3.000
+ TGU      C4A    C3A    H3A     108.340    3.000
+ TGU      C4A    C3A    O3A     109.470    3.000
+ TGU      C4A    C3A    C2A     111.000    3.000
+ TGU      H3A    C3A    O3A     109.470    3.000
+ TGU      H3A    C3A    C2A     108.340    3.000
+ TGU      O3A    C3A    C2A     109.470    3.000
+ TGU      C3A    O3A    HB      109.470    3.000
+ TGU      C3A    C2A    H2A     108.340    3.000
+ TGU      C3A    C2A    O2A     109.470    3.000
+ TGU      C3A    C2A    C1A     111.000    3.000
+ TGU      H2A    C2A    O2A     109.470    3.000
+ TGU      H2A    C2A    C1A     108.340    3.000
+ TGU      O2A    C2A    C1A     109.470    3.000
+ TGU      C2A    O2A    HA      109.470    3.000
+ TGU      C4A    C5A    H5A     108.340    3.000
+ TGU      C4A    C5A    C6A     109.470    3.000
+ TGU      C4A    C5A    O5A     109.470    3.000
+ TGU      H5A    C5A    C6A     108.810    3.000
+ TGU      H5A    C5A    O5A     109.470    3.000
+ TGU      C6A    C5A    O5A     109.470    3.000
+ TGU      C5A    C6A    OAC     118.500    3.000
+ TGU      C5A    C6A    O6A     118.500    3.000
+ TGU      OAC    C6A    O6A     123.000    3.000
+ TGU      C5A    O5A    C1A     111.800    3.000
+ TGU      O5A    C1A    H1A     109.470    3.000
+ TGU      O5A    C1A    O1X     109.470    3.000
+ TGU      O5A    C1A    C2A     109.470    3.000
+ TGU      H1A    C1A    O1X     109.470    3.000
+ TGU      H1A    C1A    C2A     108.340    3.000
+ TGU      O1X    C1A    C2A     109.470    3.000
+ TGU      C1A    O1X    H1X     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TGU      var_1    OAZ    C6C    C5C    O5C       -5.841   20.000   3
+ TGU      var_2    C6C    C5C    C4C    C3C      180.000   20.000   3
+ TGU      var_3    C5C    C4C    O4C    HG        60.358   20.000   1
+ TGU      var_4    C5C    C4C    C3C    C2C       60.000   20.000   3
+ TGU      var_5    C4C    C3C    O3C    HF        60.456   20.000   1
+ TGU      var_6    C4C    C3C    C2C    O2C      180.000   20.000   3
+ TGU      var_7    C3C    C2C    O2C    HE       179.629   20.000   1
+ TGU      var_8    C6C    C5C    O5C    C1C      180.000   20.000   1
+ TGU      var_9    C5C    O5C    C1C    O4B      180.000   20.000   1
+ TGU      var_10   O5C    C1C    C2C    C3C       60.000   20.000   3
+ TGU      var_11   O5C    C1C    O4B    C4B      -70.712   20.000   1
+ TGU      var_12   C1C    O4B    C4B    C5B      143.949   20.000   1
+ TGU      var_13   O4B    C4B    C3B    C2B      -60.000   20.000   3
+ TGU      var_14   C4B    C3B    O3B    HD      -179.589   20.000   1
+ TGU      var_15   C4B    C3B    C2B    O2B      180.000   20.000   3
+ TGU      var_16   C3B    C2B    O2B    HC       179.688   20.000   1
+ TGU      var_17   O4B    C4B    C5B    O5B       60.000   20.000   3
+ TGU      var_18   C4B    C5B    C6B    O6B      -66.031   20.000   3
+ TGU      var_19   C4B    C5B    O5B    C1B       60.000   20.000   1
+ TGU      var_20   C5B    O5B    C1B    O4A       60.000   20.000   1
+ TGU      var_21   O5B    C1B    C2B    C3B       60.000   20.000   3
+ TGU      var_22   O5B    C1B    O4A    C4A       70.087   20.000   1
+ TGU      var_23   C1B    O4A    C4A    C5A       90.331   20.000   1
+ TGU      var_24   O4A    C4A    C3A    C2A      -60.000   20.000   3
+ TGU      var_25   C4A    C3A    O3A    HB      -179.575   20.000   1
+ TGU      var_26   C4A    C3A    C2A    O2A      180.000   20.000   3
+ TGU      var_27   C3A    C2A    O2A    HA       179.679   20.000   1
+ TGU      var_28   O4A    C4A    C5A    O5A       60.000   20.000   3
+ TGU      var_29   C4A    C5A    C6A    O6A      115.022   20.000   3
+ TGU      var_30   C4A    C5A    O5A    C1A       60.000   20.000   1
+ TGU      var_31   C5A    O5A    C1A    O1X       60.000   20.000   1
+ TGU      var_32   O5A    C1A    C2A    C3A       60.000   20.000   3
+ TGU      var_33   O5A    C1A    O1X    H1X       60.096   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TGU      chir_01  C1A    C2A    O1X    O5A       negativ
+ TGU      chir_02  C2A    C1A    C3A    O2A       negativ
+ TGU      chir_03  C3A    C2A    C4A    O3A       positiv
+ TGU      chir_04  C4A    C3A    C5A    O4A       positiv
+ TGU      chir_05  C5A    C4A    C6A    O5A       negativ
+ TGU      chir_06  C1B    O4A    C2B    O5B       positiv
+ TGU      chir_07  C2B    C1B    C3B    O2B       negativ
+ TGU      chir_08  C3B    C2B    C4B    O3B       positiv
+ TGU      chir_09  C4B    C3B    C5B    O4B       positiv
+ TGU      chir_10  C5B    C4B    C6B    O5B       negativ
+ TGU      chir_11  C1C    O4B    C2C    O5C       negativ
+ TGU      chir_12  C2C    C1C    C3C    O2C       negativ
+ TGU      chir_13  C3C    C2C    C4C    O3C       positiv
+ TGU      chir_14  C4C    C3C    C5C    O4C       positiv
+ TGU      chir_15  C5C    C4C    C6C    O5C       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TGU      plan-1    C6A       0.020
+ TGU      plan-1    C5A       0.020
+ TGU      plan-1    O6A       0.020
+ TGU      plan-1    OAC       0.020
+ TGU      plan-2    C6B       0.020
+ TGU      plan-2    C5B       0.020
+ TGU      plan-2    O6B       0.020
+ TGU      plan-2    OAN       0.020
+ TGU      plan-3    C6C       0.020
+ TGU      plan-3    C5C       0.020
+ TGU      plan-3    O6C       0.020
+ TGU      plan-3    OAZ       0.020
+# ------------------------------------------------------

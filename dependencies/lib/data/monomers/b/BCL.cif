@@ -1,0 +1,977 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BCL      BCL 'BACTERIOCHLOROPHYLL A               ' non-polymer       140  66 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_BCL
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ BCL           O1D    O    O        -0.500      0.000    0.000    0.000
+ BCL           CGD    C    C         0.000      1.155    0.305    0.372
+ BCL           O2D    O    O2       -0.500      1.532    1.440    0.006
+ BCL           CED    C    CH3       0.000      0.697    1.951   -1.169
+ BCL           HED3   H    H         0.000      0.585    1.192   -1.912
+ BCL           HED2   H    H         0.000     -0.277    2.243   -0.843
+ BCL           HED1   H    H         0.000      1.162    2.797   -1.625
+ BCL           CBD    C    CH1       0.000      2.150   -0.670    1.049
+ BCL           HBD    H    H         0.000      2.938   -0.154    1.615
+ BCL           CAD    C    CR5       0.000      1.243   -1.593    1.954
+ BCL           OBD    O    O         0.000      0.386   -1.096    2.799
+ BCL           C3D    C    CR55      0.000      1.363   -2.976    1.393
+ BCL           C2D    C    CR5       0.000      1.150   -4.246    1.744
+ BCL           CMD    C    CH3       0.000      0.134   -4.788    2.706
+ BCL           HMD3   H    H         0.000      0.485   -5.701    3.111
+ BCL           HMD2   H    H         0.000     -0.020   -4.090    3.486
+ BCL           HMD1   H    H         0.000     -0.779   -4.956    2.196
+ BCL           C1D    C    CR5       0.000      1.923   -4.949    0.804
+ BCL           CHD    C    C1        0.000      1.876   -6.327    0.631
+ BCL           HHD    H    H         0.000      1.185   -6.900    1.226
+ BCL           C4D    C    CR55      0.000      2.231   -2.941    0.304
+ BCL           ND     N    NR5      -1.000      2.526   -4.143   -0.143
+ BCL           MG     MG   MG        2.000      3.502   -4.383   -1.811
+ BCL           NC     N    N         0.000      3.369   -6.363   -1.254
+ BCL           C4C    C    C         0.000      2.666   -6.978   -0.256
+ BCL           C3C    C    CH1       0.000      2.571   -8.500   -0.420
+ BCL           H3C    H    H         0.000      1.652   -8.844   -0.916
+ BCL           CAC    C    CH2       0.000      2.889   -9.228    0.890
+ BCL           HAC1   H    H         0.000      3.228  -10.230    0.621
+ BCL           HAC2   H    H         0.000      1.954   -9.299    1.449
+ BCL           CBC    C    CH3       0.000      3.955   -8.541    1.758
+ BCL           HBC3   H    H         0.000      4.887   -8.547    1.253
+ BCL           HBC2   H    H         0.000      3.669   -7.537    1.950
+ BCL           HBC1   H    H         0.000      4.054   -9.057    2.680
+ BCL           C2C    C    CH1       0.000      3.811   -8.709   -1.216
+ BCL           H2C    H    H         0.000      4.627   -9.147   -0.625
+ BCL           CMC    C    CH3       0.000      3.352   -9.610   -2.340
+ BCL           HMC3   H    H         0.000      3.928  -10.498   -2.334
+ BCL           HMC2   H    H         0.000      2.331   -9.849   -2.203
+ BCL           HMC1   H    H         0.000      3.479   -9.110   -3.264
+ BCL           C1C    C    C         0.000      4.155   -7.345   -1.768
+ BCL           CHC    C    C1        0.000      5.138   -7.222   -2.761
+ BCL           HHC    H    H         0.000      5.586   -8.122   -3.147
+ BCL           NB     N    NR5      -1.000      5.018   -4.799   -2.990
+ BCL           C4B    C    CR5       0.000      5.556   -6.031   -3.263
+ BCL           C3B    C    CR5       0.000      6.617   -5.814   -4.176
+ BCL           CAB    C    C         0.000      7.629   -6.847   -4.666
+ BCL           CBB    C    CH3       0.000      8.572   -6.578   -5.807
+ BCL           HBB3   H    H         0.000      9.510   -6.269   -5.426
+ BCL           HBB2   H    H         0.000      8.697   -7.461   -6.379
+ BCL           HBB1   H    H         0.000      8.173   -5.814   -6.423
+ BCL           OBB    O    O         0.000      7.581   -7.972   -4.333
+ BCL           C2B    C    CR5       0.000      6.752   -4.491   -4.349
+ BCL           CMB    C    CH3       0.000      7.638   -3.760   -5.317
+ BCL           HMB3   H    H         0.000      7.841   -4.383   -6.148
+ BCL           HMB2   H    H         0.000      7.150   -2.880   -5.646
+ BCL           HMB1   H    H         0.000      8.546   -3.502   -4.838
+ BCL           C1B    C    CR5       0.000      5.772   -3.850   -3.623
+ BCL           CHB    C    C1        0.000      5.637   -2.451   -3.569
+ BCL           HHB    H    H         0.000      6.241   -1.875   -4.250
+ BCL           CHA    C    CR5       0.000      2.706   -1.648   -0.002
+ BCL           C1A    C    C         0.000      3.482   -1.338   -1.064
+ BCL           NA     N    N         0.000      3.964   -2.349   -1.882
+ BCL           C4A    C    C         0.000      4.806   -1.752   -2.727
+ BCL           C3A    C    CH1       0.000      4.797   -0.238   -2.745
+ BCL           H3A    H    H         0.000      5.785    0.219   -2.896
+ BCL           CMA    C    CH3       0.000      3.757    0.140   -3.805
+ BCL           HMA3   H    H         0.000      3.607   -0.677   -4.463
+ BCL           HMA2   H    H         0.000      2.840    0.384   -3.333
+ BCL           HMA1   H    H         0.000      4.101    0.977   -4.357
+ BCL           C2A    C    CH1       0.000      4.181    0.004   -1.312
+ BCL           H2A    H    H         0.000      3.430    0.805   -1.365
+ BCL           CAA    C    CH2       0.000      5.169    0.308   -0.205
+ BCL           HAA1   H    H         0.000      4.613    0.271    0.734
+ BCL           HAA2   H    H         0.000      5.529    1.326   -0.374
+ BCL           CBA    C    CH2       0.000      6.341   -0.634   -0.133
+ BCL           HBA1   H    H         0.000      6.836   -0.668   -1.106
+ BCL           HBA2   H    H         0.000      5.986   -1.633    0.128
+ BCL           CGA    C    C         0.000      7.326   -0.151    0.922
+ BCL           O1A    O    O        -0.500      7.365    0.986    1.441
+ BCL           O2A    O    O2       -0.500      8.238   -0.946    1.240
+ BCL           C1     C    CH2       0.000      9.139   -0.626    2.352
+ BCL           H11    H    H         0.000      8.854    0.350    2.750
+ BCL           H12    H    H         0.000     10.157   -0.575    1.960
+ BCL           C2     C    C1        0.000      9.072   -1.666    3.461
+ BCL           H2     H    H         0.000      8.291   -1.574    4.197
+ BCL           C3     C    C         0.000      9.915   -2.675    3.573
+ BCL           C4     C    CH3       0.000     10.992   -2.918    2.560
+ BCL           H43    H    H         0.000     11.914   -2.553    2.931
+ BCL           H42    H    H         0.000     11.072   -3.957    2.373
+ BCL           H41    H    H         0.000     10.749   -2.415    1.660
+ BCL           C5     C    CH2       0.000      9.837   -3.726    4.705
+ BCL           H51    H    H         0.000     10.252   -3.301    5.622
+ BCL           H52    H    H         0.000     10.416   -4.607    4.420
+ BCL           C6     C    CH2       0.000      8.363   -4.131    4.943
+ BCL           H61    H    H         0.000      8.021   -4.848    4.194
+ BCL           H62    H    H         0.000      7.705   -3.259    4.936
+ BCL           C7     C    CH2       0.000      8.335   -4.783    6.328
+ BCL           H71    H    H         0.000      8.243   -3.980    7.063
+ BCL           H72    H    H         0.000      9.291   -5.293    6.466
+ BCL           C8     C    CH1       0.000      7.210   -5.764    6.512
+ BCL           H8     H    H         0.000      7.578   -6.666    7.022
+ BCL           C9     C    CH3       0.000      6.519   -6.150    5.205
+ BCL           H93    H    H         0.000      6.793   -7.138    4.938
+ BCL           H92    H    H         0.000      5.469   -6.097    5.331
+ BCL           H91    H    H         0.000      6.816   -5.483    4.438
+ BCL           C10    C    CH2       0.000      6.237   -5.042    7.390
+ BCL           H101   H    H         0.000      5.213   -5.181    7.038
+ BCL           H102   H    H         0.000      6.464   -3.975    7.432
+ BCL           C11    C    CH2       0.000      6.380   -5.632    8.741
+ BCL           H111   H    H         0.000      7.424   -5.714    9.051
+ BCL           H112   H    H         0.000      5.900   -6.610    8.821
+ BCL           C12    C    CH2       0.000      5.663   -4.641    9.636
+ BCL           H121   H    H         0.000      4.581   -4.768    9.557
+ BCL           H122   H    H         0.000      5.928   -3.617    9.362
+ BCL           C13    C    CH1       0.000      6.107   -4.916   11.076
+ BCL           H13    H    H         0.000      7.205   -4.938   11.123
+ BCL           C14    C    CH3       0.000      5.551   -6.288   11.470
+ BCL           H143   H    H         0.000      6.331   -7.005   11.452
+ BCL           H142   H    H         0.000      5.142   -6.238   12.446
+ BCL           H141   H    H         0.000      4.795   -6.574   10.785
+ BCL           C15    C    CH2       0.000      5.583   -3.855   12.017
+ BCL           H151   H    H         0.000      5.857   -4.066   13.052
+ BCL           H152   H    H         0.000      4.498   -3.753   11.942
+ BCL           C16    C    CH2       0.000      6.239   -2.582   11.574
+ BCL           H161   H    H         0.000      5.802   -2.235   10.635
+ BCL           H162   H    H         0.000      7.312   -2.733   11.441
+ BCL           C17    C    CH2       0.000      6.003   -1.549   12.652
+ BCL           H171   H    H         0.000      6.007   -2.064   13.615
+ BCL           H172   H    H         0.000      5.020   -1.105   12.482
+ BCL           C18    C    CH1       0.000      7.066   -0.453   12.655
+ BCL           H18    H    H         0.000      8.050   -0.850   12.370
+ BCL           C20    C    CH3       0.000      6.654    0.723   11.745
+ BCL           H203   H    H         0.000      7.517    1.154   11.306
+ BCL           H202   H    H         0.000      6.009    0.372   10.980
+ BCL           H201   H    H         0.000      6.148    1.458   12.319
+ BCL           C19    C    CH3       0.000      7.080    0.084   14.062
+ BCL           H193   H    H         0.000      7.431    1.082   14.052
+ BCL           H192   H    H         0.000      6.099    0.054   14.457
+ BCL           H191   H    H         0.000      7.721   -0.512   14.656
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BCL      O1D    n/a    CGD    START
+ BCL      CGD    O1D    CBD    .
+ BCL      O2D    CGD    CED    .
+ BCL      CED    O2D    HED1   .
+ BCL      HED3   CED    .      .
+ BCL      HED2   CED    .      .
+ BCL      HED1   CED    .      .
+ BCL      CBD    CGD    CHA    .
+ BCL      HBD    CBD    .      .
+ BCL      CAD    CBD    C3D    .
+ BCL      OBD    CAD    .      .
+ BCL      C3D    CAD    C4D    .
+ BCL      C2D    C3D    C1D    .
+ BCL      CMD    C2D    HMD1   .
+ BCL      HMD3   CMD    .      .
+ BCL      HMD2   CMD    .      .
+ BCL      HMD1   CMD    .      .
+ BCL      C1D    C2D    CHD    .
+ BCL      CHD    C1D    HHD    .
+ BCL      HHD    CHD    .      .
+ BCL      C4D    C3D    ND     .
+ BCL      ND     C4D    MG     .
+ BCL      MG     ND     NB     .
+ BCL      NC     MG     C4C    .
+ BCL      C4C    NC     C3C    .
+ BCL      C3C    C4C    C2C    .
+ BCL      H3C    C3C    .      .
+ BCL      CAC    C3C    CBC    .
+ BCL      HAC1   CAC    .      .
+ BCL      HAC2   CAC    .      .
+ BCL      CBC    CAC    HBC1   .
+ BCL      HBC3   CBC    .      .
+ BCL      HBC2   CBC    .      .
+ BCL      HBC1   CBC    .      .
+ BCL      C2C    C3C    C1C    .
+ BCL      H2C    C2C    .      .
+ BCL      CMC    C2C    HMC1   .
+ BCL      HMC3   CMC    .      .
+ BCL      HMC2   CMC    .      .
+ BCL      HMC1   CMC    .      .
+ BCL      C1C    C2C    CHC    .
+ BCL      CHC    C1C    HHC    .
+ BCL      HHC    CHC    .      .
+ BCL      NB     MG     C4B    .
+ BCL      C4B    NB     C3B    .
+ BCL      C3B    C4B    C2B    .
+ BCL      CAB    C3B    OBB    .
+ BCL      CBB    CAB    HBB1   .
+ BCL      HBB3   CBB    .      .
+ BCL      HBB2   CBB    .      .
+ BCL      HBB1   CBB    .      .
+ BCL      OBB    CAB    .      .
+ BCL      C2B    C3B    C1B    .
+ BCL      CMB    C2B    HMB1   .
+ BCL      HMB3   CMB    .      .
+ BCL      HMB2   CMB    .      .
+ BCL      HMB1   CMB    .      .
+ BCL      C1B    C2B    CHB    .
+ BCL      CHB    C1B    HHB    .
+ BCL      HHB    CHB    .      .
+ BCL      CHA    CBD    C1A    .
+ BCL      C1A    CHA    NA     .
+ BCL      NA     C1A    C4A    .
+ BCL      C4A    NA     C3A    .
+ BCL      C3A    C4A    C2A    .
+ BCL      H3A    C3A    .      .
+ BCL      CMA    C3A    HMA1   .
+ BCL      HMA3   CMA    .      .
+ BCL      HMA2   CMA    .      .
+ BCL      HMA1   CMA    .      .
+ BCL      C2A    C3A    CAA    .
+ BCL      H2A    C2A    .      .
+ BCL      CAA    C2A    CBA    .
+ BCL      HAA1   CAA    .      .
+ BCL      HAA2   CAA    .      .
+ BCL      CBA    CAA    CGA    .
+ BCL      HBA1   CBA    .      .
+ BCL      HBA2   CBA    .      .
+ BCL      CGA    CBA    O2A    .
+ BCL      O1A    CGA    .      .
+ BCL      O2A    CGA    C1     .
+ BCL      C1     O2A    C2     .
+ BCL      H11    C1     .      .
+ BCL      H12    C1     .      .
+ BCL      C2     C1     C3     .
+ BCL      H2     C2     .      .
+ BCL      C3     C2     C5     .
+ BCL      C4     C3     H41    .
+ BCL      H43    C4     .      .
+ BCL      H42    C4     .      .
+ BCL      H41    C4     .      .
+ BCL      C5     C3     C6     .
+ BCL      H51    C5     .      .
+ BCL      H52    C5     .      .
+ BCL      C6     C5     C7     .
+ BCL      H61    C6     .      .
+ BCL      H62    C6     .      .
+ BCL      C7     C6     C8     .
+ BCL      H71    C7     .      .
+ BCL      H72    C7     .      .
+ BCL      C8     C7     C10    .
+ BCL      H8     C8     .      .
+ BCL      C9     C8     H91    .
+ BCL      H93    C9     .      .
+ BCL      H92    C9     .      .
+ BCL      H91    C9     .      .
+ BCL      C10    C8     C11    .
+ BCL      H101   C10    .      .
+ BCL      H102   C10    .      .
+ BCL      C11    C10    C12    .
+ BCL      H111   C11    .      .
+ BCL      H112   C11    .      .
+ BCL      C12    C11    C13    .
+ BCL      H121   C12    .      .
+ BCL      H122   C12    .      .
+ BCL      C13    C12    C15    .
+ BCL      H13    C13    .      .
+ BCL      C14    C13    H141   .
+ BCL      H143   C14    .      .
+ BCL      H142   C14    .      .
+ BCL      H141   C14    .      .
+ BCL      C15    C13    C16    .
+ BCL      H151   C15    .      .
+ BCL      H152   C15    .      .
+ BCL      C16    C15    C17    .
+ BCL      H161   C16    .      .
+ BCL      H162   C16    .      .
+ BCL      C17    C16    C18    .
+ BCL      H171   C17    .      .
+ BCL      H172   C17    .      .
+ BCL      C18    C17    C19    .
+ BCL      H18    C18    .      .
+ BCL      C20    C18    H201   .
+ BCL      H203   C20    .      .
+ BCL      H202   C20    .      .
+ BCL      H201   C20    .      .
+ BCL      C19    C18    H191   .
+ BCL      H193   C19    .      .
+ BCL      H192   C19    .      .
+ BCL      H191   C19    .      END
+ BCL      MG     NA     .    ADD
+ BCL      CHA    C4D    .    ADD
+ BCL      CHB    C4A    .    ADD
+ BCL      CHC    C4B    .    ADD
+ BCL      CHD    C4C    .    ADD
+ BCL      C1A    C2A    .    ADD
+ BCL      NB     C1B    .    ADD
+ BCL      NC     C1C    .    ADD
+ BCL      ND     C1D    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BCL       MG        NA        single    1.955     0.020     1.955     0.020     
+BCL       NB        MG        single    2.035     0.020     2.035     0.020     
+BCL       NC        MG        single    1.955     0.020     1.955     0.020     
+BCL       MG        ND        single    2.035     0.020     2.035     0.020     
+BCL       C1A       CHA       single    1.490     0.020     1.490     0.020     
+BCL       CHA       C4D       double    1.490     0.020     1.490     0.020     
+BCL       CHA       CBD       single    1.480     0.020     1.480     0.020     
+BCL       CHB       C4A       double    1.340     0.020     1.340     0.020     
+BCL       CHB       C1B       single    1.483     0.020     1.483     0.020     
+BCL       HHB       CHB       single    1.082     0.013     0.975     0.010     
+BCL       CHC       C4B       single    1.483     0.020     1.483     0.020     
+BCL       CHC       C1C       double    1.340     0.020     1.340     0.020     
+BCL       HHC       CHC       single    1.082     0.013     0.975     0.010     
+BCL       CHD       C4C       single    1.475     0.020     1.475     0.020     
+BCL       CHD       C1D       double    1.483     0.020     1.483     0.020     
+BCL       HHD       CHD       single    1.082     0.013     0.975     0.010     
+BCL       NA        C1A       double    1.260     0.020     1.260     0.020     
+BCL       C4A       NA        single    1.330     0.020     1.330     0.020     
+BCL       C1A       C2A       single    1.500     0.020     1.500     0.020     
+BCL       C2A       C3A       single    1.524     0.020     1.524     0.020     
+BCL       CAA       C2A       single    1.524     0.020     1.524     0.020     
+BCL       H2A       C2A       single    1.089     0.010     0.989     0.005     
+BCL       C3A       C4A       single    1.500     0.020     1.500     0.020     
+BCL       CMA       C3A       single    1.524     0.020     1.524     0.020     
+BCL       H3A       C3A       single    1.089     0.010     0.989     0.005     
+BCL       HMA1      CMA       single    1.089     0.010     0.989     0.005     
+BCL       HMA2      CMA       single    1.089     0.010     0.989     0.005     
+BCL       HMA3      CMA       single    1.089     0.010     0.989     0.005     
+BCL       CBA       CAA       single    1.524     0.020     1.524     0.020     
+BCL       HAA1      CAA       single    1.089     0.010     0.989     0.005     
+BCL       HAA2      CAA       single    1.089     0.010     0.989     0.005     
+BCL       CGA       CBA       single    1.510     0.020     1.510     0.020     
+BCL       HBA1      CBA       single    1.089     0.010     0.989     0.005     
+BCL       HBA2      CBA       single    1.089     0.010     0.989     0.005     
+BCL       O1A       CGA       double    1.220     0.020     1.220     0.020     
+BCL       O2A       CGA       single    1.454     0.020     1.454     0.020     
+BCL       C1        O2A       single    1.426     0.020     1.426     0.020     
+BCL       NB        C1B       single    1.337     0.020     1.337     0.020     
+BCL       C4B       NB        single    1.337     0.020     1.337     0.020     
+BCL       C1B       C2B       double    1.490     0.020     1.490     0.020     
+BCL       C2B       C3B       single    1.490     0.020     1.490     0.020     
+BCL       CMB       C2B       single    1.506     0.020     1.506     0.020     
+BCL       C3B       C4B       double    1.490     0.020     1.490     0.020     
+BCL       CAB       C3B       single    1.490     0.020     1.490     0.020     
+BCL       HMB1      CMB       single    1.089     0.010     0.989     0.005     
+BCL       HMB2      CMB       single    1.089     0.010     0.989     0.005     
+BCL       HMB3      CMB       single    1.089     0.010     0.989     0.005     
+BCL       OBB       CAB       double    1.220     0.020     1.220     0.020     
+BCL       CBB       CAB       single    1.500     0.020     1.500     0.020     
+BCL       HBB1      CBB       single    1.089     0.010     0.989     0.005     
+BCL       HBB2      CBB       single    1.089     0.010     0.989     0.005     
+BCL       HBB3      CBB       single    1.089     0.010     0.989     0.005     
+BCL       NC        C1C       single    1.330     0.020     1.330     0.020     
+BCL       C4C       NC        double    1.260     0.020     1.260     0.020     
+BCL       C1C       C2C       single    1.500     0.020     1.500     0.020     
+BCL       C2C       C3C       single    1.524     0.020     1.524     0.020     
+BCL       CMC       C2C       single    1.524     0.020     1.524     0.020     
+BCL       H2C       C2C       single    1.089     0.010     0.989     0.005     
+BCL       C3C       C4C       single    1.500     0.020     1.500     0.020     
+BCL       CAC       C3C       single    1.524     0.020     1.524     0.020     
+BCL       H3C       C3C       single    1.089     0.010     0.989     0.005     
+BCL       HMC1      CMC       single    1.089     0.010     0.989     0.005     
+BCL       HMC2      CMC       single    1.089     0.010     0.989     0.005     
+BCL       HMC3      CMC       single    1.089     0.010     0.989     0.005     
+BCL       CBC       CAC       single    1.513     0.020     1.513     0.020     
+BCL       HAC1      CAC       single    1.089     0.010     0.989     0.005     
+BCL       HAC2      CAC       single    1.089     0.010     0.989     0.005     
+BCL       HBC1      CBC       single    1.089     0.010     0.989     0.005     
+BCL       HBC2      CBC       single    1.089     0.010     0.989     0.005     
+BCL       HBC3      CBC       single    1.089     0.010     0.989     0.005     
+BCL       ND        C1D       single    1.337     0.020     1.337     0.020     
+BCL       ND        C4D       single    1.395     0.020     1.395     0.020     
+BCL       C1D       C2D       single    1.490     0.020     1.490     0.020     
+BCL       C2D       C3D       double    1.490     0.020     1.490     0.020     
+BCL       CMD       C2D       single    1.506     0.020     1.506     0.020     
+BCL       C4D       C3D       single    1.390     0.020     1.390     0.020     
+BCL       C3D       CAD       single    1.490     0.020     1.490     0.020     
+BCL       HMD1      CMD       single    1.089     0.010     0.989     0.005     
+BCL       HMD2      CMD       single    1.089     0.010     0.989     0.005     
+BCL       HMD3      CMD       single    1.089     0.010     0.989     0.005     
+BCL       OBD       CAD       double    1.285     0.020     1.285     0.020     
+BCL       CAD       CBD       single    1.480     0.020     1.480     0.020     
+BCL       CBD       CGD       single    1.500     0.020     1.500     0.020     
+BCL       HBD       CBD       single    1.089     0.010     0.989     0.005     
+BCL       CGD       O1D       double    1.220     0.020     1.220     0.020     
+BCL       O2D       CGD       single    1.454     0.020     1.454     0.020     
+BCL       CED       O2D       single    1.426     0.020     1.426     0.020     
+BCL       HED1      CED       single    1.089     0.010     0.989     0.005     
+BCL       HED2      CED       single    1.089     0.010     0.989     0.005     
+BCL       HED3      CED       single    1.089     0.010     0.989     0.005     
+BCL       C2        C1        single    1.510     0.020     1.510     0.020     
+BCL       H11       C1        single    1.089     0.010     0.989     0.005     
+BCL       H12       C1        single    1.089     0.010     0.989     0.005     
+BCL       C3        C2        double    1.340     0.020     1.340     0.020     
+BCL       H2        C2        single    1.082     0.013     0.975     0.010     
+BCL       C4        C3        single    1.500     0.020     1.500     0.020     
+BCL       C5        C3        single    1.510     0.020     1.510     0.020     
+BCL       H41       C4        single    1.089     0.010     0.989     0.005     
+BCL       H42       C4        single    1.089     0.010     0.989     0.005     
+BCL       H43       C4        single    1.089     0.010     0.989     0.005     
+BCL       C6        C5        single    1.524     0.020     1.524     0.020     
+BCL       H51       C5        single    1.089     0.010     0.989     0.005     
+BCL       H52       C5        single    1.089     0.010     0.989     0.005     
+BCL       C7        C6        single    1.524     0.020     1.524     0.020     
+BCL       H61       C6        single    1.089     0.010     0.989     0.005     
+BCL       H62       C6        single    1.089     0.010     0.989     0.005     
+BCL       C8        C7        single    1.524     0.020     1.524     0.020     
+BCL       H71       C7        single    1.089     0.010     0.989     0.005     
+BCL       H72       C7        single    1.089     0.010     0.989     0.005     
+BCL       C9        C8        single    1.524     0.020     1.524     0.020     
+BCL       C10       C8        single    1.524     0.020     1.524     0.020     
+BCL       H8        C8        single    1.089     0.010     0.989     0.005     
+BCL       H91       C9        single    1.089     0.010     0.989     0.005     
+BCL       H92       C9        single    1.089     0.010     0.989     0.005     
+BCL       H93       C9        single    1.089     0.010     0.989     0.005     
+BCL       C11       C10       single    1.524     0.020     1.524     0.020     
+BCL       H101      C10       single    1.089     0.010     0.989     0.005     
+BCL       H102      C10       single    1.089     0.010     0.989     0.005     
+BCL       C12       C11       single    1.524     0.020     1.524     0.020     
+BCL       H111      C11       single    1.089     0.010     0.989     0.005     
+BCL       H112      C11       single    1.089     0.010     0.989     0.005     
+BCL       C13       C12       single    1.524     0.020     1.524     0.020     
+BCL       H121      C12       single    1.089     0.010     0.989     0.005     
+BCL       H122      C12       single    1.089     0.010     0.989     0.005     
+BCL       C14       C13       single    1.524     0.020     1.524     0.020     
+BCL       C15       C13       single    1.524     0.020     1.524     0.020     
+BCL       H13       C13       single    1.089     0.010     0.989     0.005     
+BCL       H141      C14       single    1.089     0.010     0.989     0.005     
+BCL       H142      C14       single    1.089     0.010     0.989     0.005     
+BCL       H143      C14       single    1.089     0.010     0.989     0.005     
+BCL       C16       C15       single    1.524     0.020     1.524     0.020     
+BCL       H151      C15       single    1.089     0.010     0.989     0.005     
+BCL       H152      C15       single    1.089     0.010     0.989     0.005     
+BCL       C17       C16       single    1.524     0.020     1.524     0.020     
+BCL       H161      C16       single    1.089     0.010     0.989     0.005     
+BCL       H162      C16       single    1.089     0.010     0.989     0.005     
+BCL       C18       C17       single    1.524     0.020     1.524     0.020     
+BCL       H171      C17       single    1.089     0.010     0.989     0.005     
+BCL       H172      C17       single    1.089     0.010     0.989     0.005     
+BCL       C19       C18       single    1.524     0.020     1.524     0.020     
+BCL       C20       C18       single    1.524     0.020     1.524     0.020     
+BCL       H18       C18       single    1.089     0.010     0.989     0.005     
+BCL       H191      C19       single    1.089     0.010     0.989     0.005     
+BCL       H192      C19       single    1.089     0.010     0.989     0.005     
+BCL       H193      C19       single    1.089     0.010     0.989     0.005     
+BCL       H201      C20       single    1.089     0.010     0.989     0.005     
+BCL       H202      C20       single    1.089     0.010     0.989     0.005     
+BCL       H203      C20       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ BCL      O1D    CGD    O2D     119.000    3.000
+ BCL      O1D    CGD    CBD     120.500    3.000
+ BCL      O2D    CGD    CBD     120.000    3.000
+ BCL      CGD    O2D    CED     120.000    3.000
+ BCL      O2D    CED    HED3    109.470    3.000
+ BCL      O2D    CED    HED2    109.470    3.000
+ BCL      O2D    CED    HED1    109.470    3.000
+ BCL      HED3   CED    HED2    109.470    3.000
+ BCL      HED3   CED    HED1    109.470    3.000
+ BCL      HED2   CED    HED1    109.470    3.000
+ BCL      CGD    CBD    HBD     108.810    3.000
+ BCL      CGD    CBD    CAD     109.500    3.000
+ BCL      CGD    CBD    CHA     109.500    3.000
+ BCL      HBD    CBD    CAD     109.470    3.000
+ BCL      HBD    CBD    CHA     109.470    3.000
+ BCL      CAD    CBD    CHA     109.500    3.000
+ BCL      CBD    CAD    OBD     108.000    3.000
+ BCL      CBD    CAD    C3D     108.000    3.000
+ BCL      OBD    CAD    C3D     108.000    3.000
+ BCL      CAD    C3D    C2D     108.000    3.000
+ BCL      CAD    C3D    C4D     108.000    3.000
+ BCL      C2D    C3D    C4D     108.000    3.000
+ BCL      C3D    C2D    CMD     108.000    3.000
+ BCL      C3D    C2D    C1D     108.000    3.000
+ BCL      CMD    C2D    C1D     126.000    3.000
+ BCL      C2D    CMD    HMD3    109.470    3.000
+ BCL      C2D    CMD    HMD2    109.470    3.000
+ BCL      C2D    CMD    HMD1    109.470    3.000
+ BCL      HMD3   CMD    HMD2    109.470    3.000
+ BCL      HMD3   CMD    HMD1    109.470    3.000
+ BCL      HMD2   CMD    HMD1    109.470    3.000
+ BCL      C2D    C1D    CHD     117.000    3.000
+ BCL      C2D    C1D    ND      108.000    3.000
+ BCL      CHD    C1D    ND      108.000    3.000
+ BCL      C1D    CHD    HHD     120.000    3.000
+ BCL      C1D    CHD    C4C     120.000    3.000
+ BCL      HHD    CHD    C4C     120.000    3.000
+ BCL      C3D    C4D    ND      108.000    3.000
+ BCL      C3D    C4D    CHA     108.000    3.000
+ BCL      ND     C4D    CHA     108.000    3.000
+ BCL      C4D    ND     MG      108.000    3.000
+ BCL      C4D    ND     C1D     108.000    3.000
+ BCL      MG     ND     C1D     126.000    3.000
+ BCL      ND     MG     NC       90.000    3.000
+ BCL      ND     MG     NB      144.000    3.000
+ BCL      ND     MG     NA       90.000    3.000
+ BCL      NC     MG     NB       90.000    3.000
+ BCL      NC     MG     NA      180.000    3.000
+ BCL      NB     MG     NA       90.000    3.000
+ BCL      MG     NC     C4C     120.000    3.000
+ BCL      MG     NC     C1C     120.000    3.000
+ BCL      C4C    NC     C1C     120.000    3.000
+ BCL      NC     C4C    C3C     116.500    3.000
+ BCL      NC     C4C    CHD     116.500    3.000
+ BCL      C3C    C4C    CHD     120.000    3.000
+ BCL      C4C    C3C    H3C     108.810    3.000
+ BCL      C4C    C3C    CAC     109.470    3.000
+ BCL      C4C    C3C    C2C     109.470    3.000
+ BCL      H3C    C3C    CAC     108.340    3.000
+ BCL      H3C    C3C    C2C     108.340    3.000
+ BCL      CAC    C3C    C2C     111.000    3.000
+ BCL      C3C    CAC    HAC1    109.470    3.000
+ BCL      C3C    CAC    HAC2    109.470    3.000
+ BCL      C3C    CAC    CBC     111.000    3.000
+ BCL      HAC1   CAC    HAC2    107.900    3.000
+ BCL      HAC1   CAC    CBC     109.470    3.000
+ BCL      HAC2   CAC    CBC     109.470    3.000
+ BCL      CAC    CBC    HBC3    109.470    3.000
+ BCL      CAC    CBC    HBC2    109.470    3.000
+ BCL      CAC    CBC    HBC1    109.470    3.000
+ BCL      HBC3   CBC    HBC2    109.470    3.000
+ BCL      HBC3   CBC    HBC1    109.470    3.000
+ BCL      HBC2   CBC    HBC1    109.470    3.000
+ BCL      C3C    C2C    H2C     108.340    3.000
+ BCL      C3C    C2C    CMC     111.000    3.000
+ BCL      C3C    C2C    C1C     109.470    3.000
+ BCL      H2C    C2C    CMC     108.340    3.000
+ BCL      H2C    C2C    C1C     108.810    3.000
+ BCL      CMC    C2C    C1C     109.470    3.000
+ BCL      C2C    CMC    HMC3    109.470    3.000
+ BCL      C2C    CMC    HMC2    109.470    3.000
+ BCL      C2C    CMC    HMC1    109.470    3.000
+ BCL      HMC3   CMC    HMC2    109.470    3.000
+ BCL      HMC3   CMC    HMC1    109.470    3.000
+ BCL      HMC2   CMC    HMC1    109.470    3.000
+ BCL      C2C    C1C    CHC     120.000    3.000
+ BCL      C2C    C1C    NC      116.500    3.000
+ BCL      CHC    C1C    NC      116.500    3.000
+ BCL      C1C    CHC    HHC     120.000    3.000
+ BCL      C1C    CHC    C4B     120.000    3.000
+ BCL      HHC    CHC    C4B     120.000    3.000
+ BCL      MG     NB     C4B     126.000    3.000
+ BCL      MG     NB     C1B     126.000    3.000
+ BCL      C4B    NB     C1B     108.000    3.000
+ BCL      NB     C4B    C3B     108.000    3.000
+ BCL      NB     C4B    CHC     108.000    3.000
+ BCL      C3B    C4B    CHC     117.000    3.000
+ BCL      C4B    C3B    CAB     117.000    3.000
+ BCL      C4B    C3B    C2B     108.000    3.000
+ BCL      CAB    C3B    C2B     117.000    3.000
+ BCL      C3B    CAB    CBB     116.500    3.000
+ BCL      C3B    CAB    OBB     120.500    3.000
+ BCL      CBB    CAB    OBB     123.000    3.000
+ BCL      CAB    CBB    HBB3    109.470    3.000
+ BCL      CAB    CBB    HBB2    109.470    3.000
+ BCL      CAB    CBB    HBB1    109.470    3.000
+ BCL      HBB3   CBB    HBB2    109.470    3.000
+ BCL      HBB3   CBB    HBB1    109.470    3.000
+ BCL      HBB2   CBB    HBB1    109.470    3.000
+ BCL      C3B    C2B    CMB     126.000    3.000
+ BCL      C3B    C2B    C1B     108.000    3.000
+ BCL      CMB    C2B    C1B     126.000    3.000
+ BCL      C2B    CMB    HMB3    109.470    3.000
+ BCL      C2B    CMB    HMB2    109.470    3.000
+ BCL      C2B    CMB    HMB1    109.470    3.000
+ BCL      HMB3   CMB    HMB2    109.470    3.000
+ BCL      HMB3   CMB    HMB1    109.470    3.000
+ BCL      HMB2   CMB    HMB1    109.470    3.000
+ BCL      C2B    C1B    CHB     117.000    3.000
+ BCL      C2B    C1B    NB      108.000    3.000
+ BCL      CHB    C1B    NB      108.000    3.000
+ BCL      C1B    CHB    HHB     120.000    3.000
+ BCL      C1B    CHB    C4A     120.000    3.000
+ BCL      HHB    CHB    C4A     120.000    3.000
+ BCL      CBD    CHA    C1A     108.000    3.000
+ BCL      CBD    CHA    C4D     108.000    3.000
+ BCL      C1A    CHA    C4D     108.000    3.000
+ BCL      CHA    C1A    NA      120.000    3.000
+ BCL      CHA    C1A    C2A     120.000    3.000
+ BCL      NA     C1A    C2A     116.500    3.000
+ BCL      C1A    NA     C4A     120.000    3.000
+ BCL      C1A    NA     MG      120.000    3.000
+ BCL      C4A    NA     MG      120.000    3.000
+ BCL      NA     C4A    C3A     116.500    3.000
+ BCL      NA     C4A    CHB     116.500    3.000
+ BCL      C3A    C4A    CHB     120.000    3.000
+ BCL      C4A    C3A    H3A     108.810    3.000
+ BCL      C4A    C3A    CMA     109.470    3.000
+ BCL      C4A    C3A    C2A     109.470    3.000
+ BCL      H3A    C3A    CMA     108.340    3.000
+ BCL      H3A    C3A    C2A     108.340    3.000
+ BCL      CMA    C3A    C2A     111.000    3.000
+ BCL      C3A    CMA    HMA3    109.470    3.000
+ BCL      C3A    CMA    HMA2    109.470    3.000
+ BCL      C3A    CMA    HMA1    109.470    3.000
+ BCL      HMA3   CMA    HMA2    109.470    3.000
+ BCL      HMA3   CMA    HMA1    109.470    3.000
+ BCL      HMA2   CMA    HMA1    109.470    3.000
+ BCL      C3A    C2A    H2A     108.340    3.000
+ BCL      C3A    C2A    CAA     111.000    3.000
+ BCL      C3A    C2A    C1A     109.470    3.000
+ BCL      H2A    C2A    CAA     108.340    3.000
+ BCL      H2A    C2A    C1A     108.810    3.000
+ BCL      CAA    C2A    C1A     109.470    3.000
+ BCL      C2A    CAA    HAA1    109.470    3.000
+ BCL      C2A    CAA    HAA2    109.470    3.000
+ BCL      C2A    CAA    CBA     111.000    3.000
+ BCL      HAA1   CAA    HAA2    107.900    3.000
+ BCL      HAA1   CAA    CBA     109.470    3.000
+ BCL      HAA2   CAA    CBA     109.470    3.000
+ BCL      CAA    CBA    HBA1    109.470    3.000
+ BCL      CAA    CBA    HBA2    109.470    3.000
+ BCL      CAA    CBA    CGA     109.470    3.000
+ BCL      HBA1   CBA    HBA2    107.900    3.000
+ BCL      HBA1   CBA    CGA     109.470    3.000
+ BCL      HBA2   CBA    CGA     109.470    3.000
+ BCL      CBA    CGA    O1A     120.500    3.000
+ BCL      CBA    CGA    O2A     120.000    3.000
+ BCL      O1A    CGA    O2A     119.000    3.000
+ BCL      CGA    O2A    C1      120.000    3.000
+ BCL      O2A    C1     H11     109.470    3.000
+ BCL      O2A    C1     H12     109.470    3.000
+ BCL      O2A    C1     C2      109.500    3.000
+ BCL      H11    C1     H12     107.900    3.000
+ BCL      H11    C1     C2      109.470    3.000
+ BCL      H12    C1     C2      109.470    3.000
+ BCL      C1     C2     H2      120.000    3.000
+ BCL      C1     C2     C3      120.500    3.000
+ BCL      H2     C2     C3      120.000    3.000
+ BCL      C2     C3     C4      120.000    3.000
+ BCL      C2     C3     C5      120.000    3.000
+ BCL      C4     C3     C5      120.000    3.000
+ BCL      C3     C4     H43     109.470    3.000
+ BCL      C3     C4     H42     109.470    3.000
+ BCL      C3     C4     H41     109.470    3.000
+ BCL      H43    C4     H42     109.470    3.000
+ BCL      H43    C4     H41     109.470    3.000
+ BCL      H42    C4     H41     109.470    3.000
+ BCL      C3     C5     H51     109.470    3.000
+ BCL      C3     C5     H52     109.470    3.000
+ BCL      C3     C5     C6      109.470    3.000
+ BCL      H51    C5     H52     107.900    3.000
+ BCL      H51    C5     C6      109.470    3.000
+ BCL      H52    C5     C6      109.470    3.000
+ BCL      C5     C6     H61     109.470    3.000
+ BCL      C5     C6     H62     109.470    3.000
+ BCL      C5     C6     C7      111.000    3.000
+ BCL      H61    C6     H62     107.900    3.000
+ BCL      H61    C6     C7      109.470    3.000
+ BCL      H62    C6     C7      109.470    3.000
+ BCL      C6     C7     H71     109.470    3.000
+ BCL      C6     C7     H72     109.470    3.000
+ BCL      C6     C7     C8      111.000    3.000
+ BCL      H71    C7     H72     107.900    3.000
+ BCL      H71    C7     C8      109.470    3.000
+ BCL      H72    C7     C8      109.470    3.000
+ BCL      C7     C8     H8      108.340    3.000
+ BCL      C7     C8     C9      111.000    3.000
+ BCL      C7     C8     C10     109.470    3.000
+ BCL      H8     C8     C9      108.340    3.000
+ BCL      H8     C8     C10     108.340    3.000
+ BCL      C9     C8     C10     111.000    3.000
+ BCL      C8     C9     H93     109.470    3.000
+ BCL      C8     C9     H92     109.470    3.000
+ BCL      C8     C9     H91     109.470    3.000
+ BCL      H93    C9     H92     109.470    3.000
+ BCL      H93    C9     H91     109.470    3.000
+ BCL      H92    C9     H91     109.470    3.000
+ BCL      C8     C10    H101    109.470    3.000
+ BCL      C8     C10    H102    109.470    3.000
+ BCL      C8     C10    C11     111.000    3.000
+ BCL      H101   C10    H102    107.900    3.000
+ BCL      H101   C10    C11     109.470    3.000
+ BCL      H102   C10    C11     109.470    3.000
+ BCL      C10    C11    H111    109.470    3.000
+ BCL      C10    C11    H112    109.470    3.000
+ BCL      C10    C11    C12     111.000    3.000
+ BCL      H111   C11    H112    107.900    3.000
+ BCL      H111   C11    C12     109.470    3.000
+ BCL      H112   C11    C12     109.470    3.000
+ BCL      C11    C12    H121    109.470    3.000
+ BCL      C11    C12    H122    109.470    3.000
+ BCL      C11    C12    C13     111.000    3.000
+ BCL      H121   C12    H122    107.900    3.000
+ BCL      H121   C12    C13     109.470    3.000
+ BCL      H122   C12    C13     109.470    3.000
+ BCL      C12    C13    H13     108.340    3.000
+ BCL      C12    C13    C14     111.000    3.000
+ BCL      C12    C13    C15     109.470    3.000
+ BCL      H13    C13    C14     108.340    3.000
+ BCL      H13    C13    C15     108.340    3.000
+ BCL      C14    C13    C15     111.000    3.000
+ BCL      C13    C14    H143    109.470    3.000
+ BCL      C13    C14    H142    109.470    3.000
+ BCL      C13    C14    H141    109.470    3.000
+ BCL      H143   C14    H142    109.470    3.000
+ BCL      H143   C14    H141    109.470    3.000
+ BCL      H142   C14    H141    109.470    3.000
+ BCL      C13    C15    H151    109.470    3.000
+ BCL      C13    C15    H152    109.470    3.000
+ BCL      C13    C15    C16     111.000    3.000
+ BCL      H151   C15    H152    107.900    3.000
+ BCL      H151   C15    C16     109.470    3.000
+ BCL      H152   C15    C16     109.470    3.000
+ BCL      C15    C16    H161    109.470    3.000
+ BCL      C15    C16    H162    109.470    3.000
+ BCL      C15    C16    C17     111.000    3.000
+ BCL      H161   C16    H162    107.900    3.000
+ BCL      H161   C16    C17     109.470    3.000
+ BCL      H162   C16    C17     109.470    3.000
+ BCL      C16    C17    H171    109.470    3.000
+ BCL      C16    C17    H172    109.470    3.000
+ BCL      C16    C17    C18     111.000    3.000
+ BCL      H171   C17    H172    107.900    3.000
+ BCL      H171   C17    C18     109.470    3.000
+ BCL      H172   C17    C18     109.470    3.000
+ BCL      C17    C18    H18     108.340    3.000
+ BCL      C17    C18    C20     111.000    3.000
+ BCL      C17    C18    C19     111.000    3.000
+ BCL      H18    C18    C20     108.340    3.000
+ BCL      H18    C18    C19     108.340    3.000
+ BCL      C20    C18    C19     111.000    3.000
+ BCL      C18    C20    H203    109.470    3.000
+ BCL      C18    C20    H202    109.470    3.000
+ BCL      C18    C20    H201    109.470    3.000
+ BCL      H203   C20    H202    109.470    3.000
+ BCL      H203   C20    H201    109.470    3.000
+ BCL      H202   C20    H201    109.470    3.000
+ BCL      C18    C19    H193    109.470    3.000
+ BCL      C18    C19    H192    109.470    3.000
+ BCL      C18    C19    H191    109.470    3.000
+ BCL      H193   C19    H192    109.470    3.000
+ BCL      H193   C19    H191    109.470    3.000
+ BCL      H192   C19    H191    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ BCL      var_1    O1D    CGD    O2D    CED      -19.270   20.000   1
+ BCL      var_2    CGD    O2D    CED    HED1    -166.341   20.000   1
+ BCL      var_3    O1D    CGD    CBD    CHA       73.890   20.000   3
+ BCL      CONST_1  CGD    CBD    CAD    C3D      120.000    0.000   0
+ BCL      CONST_2  CBD    CAD    C3D    C4D        0.000    0.000   0
+ BCL      CONST_3  CAD    C3D    C2D    C1D     -150.000    0.000   0
+ BCL      var_4    C3D    C2D    CMD    HMD1      86.541   20.000   1
+ BCL      CONST_4  C3D    C2D    C1D    CHD      180.000    0.000   0
+ BCL      var_5    C2D    C1D    CHD    C4C      180.000   20.000   1
+ BCL      var_6    C1D    CHD    C4C    NC         0.000   20.000   1
+ BCL      CONST_5  CAD    C3D    C4D    ND       180.000    0.000   0
+ BCL      CONST_6  C3D    C4D    ND     MG       180.000    0.000   0
+ BCL      CONST_7  C4D    ND     C1D    C2D        0.000    0.000   0
+ BCL      var_7    C1D    ND     MG     NC         0.000   20.000   1
+ BCL      var_8    C1A    NA     MG     ND         0.000   20.000   1
+ BCL      var_9    C4C    NC     MG     ND         0.000   20.000   1
+ BCL      CONST_8  MG     NC     C1C    C2C      180.000    0.000   0
+ BCL      CONST_9  MG     NC     C4C    C3C      180.000    0.000   0
+ BCL      var_10   NC     C4C    C3C    C2C       30.000   20.000   3
+ BCL      var_11   C4C    C3C    CAC    CBC      -34.263   20.000   3
+ BCL      var_12   C3C    CAC    CBC    HBC1     175.005   20.000   3
+ BCL      var_13   C4C    C3C    C2C    C1C      -30.000   20.000   3
+ BCL      var_14   C3C    C2C    CMC    HMC1     117.562   20.000   3
+ BCL      var_15   C3C    C2C    C1C    CHC      180.000   20.000   3
+ BCL      var_16   C2C    C1C    CHC    C4B      180.000   20.000   1
+ BCL      var_17   C1C    CHC    C4B    NB         0.000   20.000   1
+ BCL      var_18   C4B    NB     MG     NC         0.000   20.000   1
+ BCL      CONST_10 MG     NB     C1B    C2B      180.000    0.000   0
+ BCL      CONST_11 MG     NB     C4B    C3B      180.000    0.000   0
+ BCL      CONST_12 NB     C4B    C3B    C2B        0.000    0.000   0
+ BCL      var_19   C4B    C3B    CAB    OBB        2.238   20.000   1
+ BCL      var_20   C3B    CAB    CBB    HBB1     -23.139   20.000   1
+ BCL      CONST_13 C4B    C3B    C2B    C1B        0.000    0.000   0
+ BCL      var_21   C3B    C2B    CMB    HMB1     -94.765   20.000   1
+ BCL      CONST_14 C3B    C2B    C1B    CHB      180.000    0.000   0
+ BCL      var_22   C2B    C1B    CHB    C4A      180.000   20.000   1
+ BCL      var_23   C1B    CHB    C4A    NA         0.000   20.000   1
+ BCL      var_24   CGD    CBD    CHA    C1A       60.000   20.000   1
+ BCL      CONST_15 CBD    CHA    C4D    C3D        0.000    0.000   0
+ BCL      var_25   CBD    CHA    C1A    NA       180.000   20.000   1
+ BCL      var_26   CHA    C1A    C2A    C3A      180.000   20.000   3
+ BCL      CONST_16 CHA    C1A    NA     C4A      180.000    0.000   0
+ BCL      CONST_17 C1A    NA     C4A    C3A        0.000    0.000   0
+ BCL      var_27   NA     C4A    C3A    C2A       30.000   20.000   3
+ BCL      var_28   C4A    C3A    CMA    HMA1    -140.969   20.000   3
+ BCL      var_29   C4A    C3A    C2A    CAA       90.000   20.000   3
+ BCL      var_30   C3A    C2A    CAA    CBA      -48.615   20.000   3
+ BCL      var_31   C2A    CAA    CBA    CGA      174.577   20.000   3
+ BCL      var_32   CAA    CBA    CGA    O2A      168.937   20.000   3
+ BCL      var_33   CBA    CGA    O2A    C1      -173.158   20.000   1
+ BCL      var_34   CGA    O2A    C1     C2       119.805   20.000   1
+ BCL      var_35   O2A    C1     C2     C3        96.038   20.000   1
+ BCL      CONST_18 C1     C2     C3     C5       179.967    0.000   0
+ BCL      var_36   C2     C3     C4     H41      -19.359   20.000   1
+ BCL      var_37   C2     C3     C5     C6        42.275   20.000   3
+ BCL      var_38   C3     C5     C6     C7      -161.900   20.000   3
+ BCL      var_39   C5     C6     C7     C8      -154.216   20.000   3
+ BCL      var_40   C6     C7     C8     C10     -105.607   20.000   3
+ BCL      var_41   C7     C8     C9     H91      -13.079   20.000   3
+ BCL      var_42   C7     C8     C10    C11     -104.386   20.000   3
+ BCL      var_43   C8     C10    C11    C12      165.650   20.000   3
+ BCL      var_44   C10    C11    C12    C13     -163.013   20.000   3
+ BCL      var_45   C11    C12    C13    C15      172.420   20.000   3
+ BCL      var_46   C12    C13    C14    H141     -15.835   20.000   3
+ BCL      var_47   C12    C13    C15    C16      -63.875   20.000   3
+ BCL      var_48   C13    C15    C16    C17     -167.539   20.000   3
+ BCL      var_49   C15    C16    C17    C18      155.018   20.000   3
+ BCL      var_50   C16    C17    C18    C19     -154.983   20.000   3
+ BCL      var_51   C17    C18    C20    H201      93.006   20.000   3
+ BCL      var_52   C17    C18    C19    H191      85.637   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ BCL      chir_01  C2A    C1A    C3A    CAA       positiv
+                   .      .      .      .      .
+ BCL      chir_02  C3A    C2A    C4A    CMA       negativ
+                   .      .      .      .      .
+ BCL      chir_03  C2C    C1C    C3C    CMC       negativ
+                   .      .      .      .      .
+ BCL      chir_04  C3C    C2C    C4C    CAC       positiv
+                   .      .      .      .      .
+ BCL      chir_05  CBD    CHA    CAD    CGD       positiv
+                   .      .      .      .      .
+ BCL      chir_06  C8     C7     C9     C10       positiv
+                   .      .      .      .      .
+ BCL      chir_07  C13    C12    C14    C15       positiv
+                   .      .      .      .      .
+ BCL      chir_08  C18    C17    C19    C20       positiv
+                   .      .      .      .      .
+ BCL      chir_09  MG     NC     NA     ND        cross5
+                   .      .      NB     .      .
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ BCL      plan-1    CHA       0.020
+ BCL      plan-1    C1A       0.020
+ BCL      plan-1    C4D       0.020
+ BCL      plan-1    CBD       0.020
+ BCL      plan-1    CAD       0.020
+ BCL      plan-1    ND        0.020
+ BCL      plan-1    C3D       0.020
+ BCL      plan-1    OBD       0.020
+ BCL      plan-1    C1D       0.020
+ BCL      plan-1    C2D       0.020
+ BCL      plan-1    MG        0.020
+ BCL      plan-1    CHD       0.020
+ BCL      plan-1    CMD       0.020
+ BCL      plan-1    HHD       0.020
+ BCL      plan-2    CHB       0.020
+ BCL      plan-2    C4A       0.020
+ BCL      plan-2    C1B       0.020
+ BCL      plan-2    HHB       0.020
+ BCL      plan-3    CHC       0.020
+ BCL      plan-3    C4B       0.020
+ BCL      plan-3    C1C       0.020
+ BCL      plan-3    HHC       0.020
+ BCL      plan-4    CHD       0.020
+ BCL      plan-4    C4C       0.020
+ BCL      plan-4    C1D       0.020
+ BCL      plan-4    HHD       0.020
+ BCL      plan-5    NA        0.020
+ BCL      plan-5    MG        0.020
+ BCL      plan-5    C1A       0.020
+ BCL      plan-5    C4A       0.020
+ BCL      plan-6    C1A       0.020
+ BCL      plan-6    CHA       0.020
+ BCL      plan-6    NA        0.020
+ BCL      plan-6    C2A       0.020
+ BCL      plan-7    C4A       0.020
+ BCL      plan-7    CHB       0.020
+ BCL      plan-7    NA        0.020
+ BCL      plan-7    C3A       0.020
+ BCL      plan-7    HHB       0.020
+ BCL      plan-8    CGA       0.020
+ BCL      plan-8    CBA       0.020
+ BCL      plan-8    O1A       0.020
+ BCL      plan-8    O2A       0.020
+ BCL      plan-9    NB        0.020
+ BCL      plan-9    MG        0.020
+ BCL      plan-9    C1B       0.020
+ BCL      plan-9    C4B       0.020
+ BCL      plan-9    C2B       0.020
+ BCL      plan-9    C3B       0.020
+ BCL      plan-9    CHB       0.020
+ BCL      plan-9    CMB       0.020
+ BCL      plan-9    CAB       0.020
+ BCL      plan-9    CHC       0.020
+ BCL      plan-9    HHB       0.020
+ BCL      plan-9    HHC       0.020
+ BCL      plan-10   CAB       0.020
+ BCL      plan-10   C3B       0.020
+ BCL      plan-10   OBB       0.020
+ BCL      plan-10   CBB       0.020
+ BCL      plan-11   NC        0.020
+ BCL      plan-11   MG        0.020
+ BCL      plan-11   C1C       0.020
+ BCL      plan-11   C4C       0.020
+ BCL      plan-12   C1C       0.020
+ BCL      plan-12   CHC       0.020
+ BCL      plan-12   NC        0.020
+ BCL      plan-12   C2C       0.020
+ BCL      plan-12   HHC       0.020
+ BCL      plan-13   C4C       0.020
+ BCL      plan-13   CHD       0.020
+ BCL      plan-13   NC        0.020
+ BCL      plan-13   C3C       0.020
+ BCL      plan-13   HHD       0.020
+ BCL      plan-14   CGD       0.020
+ BCL      plan-14   CBD       0.020
+ BCL      plan-14   O1D       0.020
+ BCL      plan-14   O2D       0.020
+ BCL      plan-15   C2        0.020
+ BCL      plan-15   C1        0.020
+ BCL      plan-15   C3        0.020
+ BCL      plan-15   H2        0.020
+ BCL      plan-15   C4        0.020
+ BCL      plan-15   C5        0.020
+# ------------------------------------------------------

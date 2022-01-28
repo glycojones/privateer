@@ -1,0 +1,63 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AZI     AZI      "AZIDE ION"     NON-POLYMER     3     3     .     
+#
+data_comp_AZI
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AZI     N1      N       N       -1      4.138       18.634      20.266      
+AZI     N2      N       N       1       3.923       19.735      20.434      
+AZI     N3      N       N       -1      3.716       20.834      20.620      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AZI       N1        N2        DOUBLE    n         1.134     0.016     1.134     0.016     
+AZI       N2        N3        DOUBLE    n         1.134     0.016     1.134     0.016     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AZI          N1          N2          N3     179.041    1.50
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AZI SMILES           ACDLabs              10.04 "[N-]=[N+]=[N-]"
+AZI SMILES_CANONICAL CACTVS               3.341 "[N-]=[N+]=[N-]"
+AZI SMILES           CACTVS               3.341 "[N-]=[N+]=[N-]"
+AZI SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "[N-]=[N+]=[N-]"
+AZI SMILES           "OpenEye OEToolkits" 1.5.0 "[N-]=[N+]=[N-]"
+AZI InChI            InChI                1.03  InChI=1S/N3/c1-3-2/q-1
+AZI InChIKey         InChI                1.03  IVRMZWNICZWHMI-UHFFFAOYSA-N
+AZI ?                acedrg               202         "dictionary generator"                  
+AZI ?                acedrg_database      11          "data source"                           
+AZI ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AZI ?                refmac5              5.8.0189    "optimization tool"                     

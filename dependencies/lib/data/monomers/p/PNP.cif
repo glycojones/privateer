@@ -1,0 +1,183 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PNP     PNP      "METHYL-PHOSPHONIC ACID MONO-(4-NITRO-PHENYL) ESTER"     NON-POLYMER     21     14     .     
+#
+data_comp_PNP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+PNP     C1      C       CR6     0       23.383      42.018      4.971       
+PNP     C2      C       CR16    0       24.723      41.912      4.580       
+PNP     C3      C       CR16    0       25.412      40.731      4.811       
+PNP     C4      C       CR6     0       24.748      39.665      5.428       
+PNP     C5      C       CR16    0       23.407      39.764      5.817       
+PNP     C6      C       CR16    0       22.726      40.948      5.584       
+PNP     CM      C       CH3     0       21.550      45.589      4.564       
+PNP     N       N       N       1       25.469      38.422      5.671       
+PNP     O1N     O       O       0       26.441      38.452      6.409       
+PNP     O2N     O       OC      -1      25.069      37.406      5.124       
+PNP     P       P       P       0       23.093      44.691      4.425       
+PNP     O1P     O       O2      0       22.635      43.194      4.752       
+PNP     O2P     O       O       0       23.576      44.812      3.019       
+PNP     O3P     O       OP      -1      24.040      45.214      5.450       
+PNP     H2      H       H       0       25.165      42.631      4.164       
+PNP     H3      H       H       0       26.314      40.653      4.553       
+PNP     H5      H       H       0       22.970      39.041      6.232       
+PNP     H6      H       H       0       21.823      41.028      5.841       
+PNP     HM1     H       H       0       21.692      46.376      5.111       
+PNP     HM2     H       H       0       20.887      45.017      4.976       
+PNP     HM3     H       H       0       21.256      45.851      3.680       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PNP       C1        C2        DOUBLE    y         1.389     0.010     1.389     0.010     
+PNP       C1        C6        SINGLE    y         1.389     0.010     1.389     0.010     
+PNP       C1        O1P       SINGLE    n         1.405     0.012     1.405     0.012     
+PNP       C2        C3        SINGLE    y         1.379     0.010     1.379     0.010     
+PNP       C3        C4        DOUBLE    y         1.393     0.011     1.393     0.011     
+PNP       C4        C5        SINGLE    y         1.393     0.011     1.393     0.011     
+PNP       C4        N         SINGLE    n         1.457     0.020     1.457     0.020     
+PNP       C5        C6        DOUBLE    y         1.379     0.010     1.379     0.010     
+PNP       CM        P         SINGLE    n         1.790     0.017     1.790     0.017     
+PNP       N         O1N       DOUBLE    n         1.221     0.017     1.221     0.017     
+PNP       N         O2N       SINGLE    n         1.221     0.017     1.221     0.017     
+PNP       P         O1P       SINGLE    n         1.592     0.019     1.592     0.019     
+PNP       P         O2P       DOUBLE    n         1.493     0.020     1.493     0.020     
+PNP       P         O3P       SINGLE    n         1.493     0.020     1.493     0.020     
+PNP       C2        H2        SINGLE    n         1.082     0.013     0.942     0.015     
+PNP       C3        H3        SINGLE    n         1.082     0.013     0.941     0.020     
+PNP       C5        H5        SINGLE    n         1.082     0.013     0.941     0.020     
+PNP       C6        H6        SINGLE    n         1.082     0.013     0.942     0.015     
+PNP       CM        HM1       SINGLE    n         1.089     0.010     0.968     0.013     
+PNP       CM        HM2       SINGLE    n         1.089     0.010     0.968     0.013     
+PNP       CM        HM3       SINGLE    n         1.089     0.010     0.968     0.013     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+PNP          C2          C1          C6     121.480    1.50
+PNP          C2          C1         O1P     119.260    2.07
+PNP          C6          C1         O1P     119.260    2.07
+PNP          C1          C2          C3     119.253    1.50
+PNP          C1          C2          H2     120.686    1.50
+PNP          C3          C2          H2     120.062    1.50
+PNP          C2          C3          C4     118.918    1.50
+PNP          C2          C3          H3     120.181    1.50
+PNP          C4          C3          H3     120.901    1.50
+PNP          C3          C4          C5     122.187    1.50
+PNP          C3          C4           N     118.902    1.50
+PNP          C5          C4           N     118.902    1.50
+PNP          C4          C5          C6     118.918    1.50
+PNP          C4          C5          H5     120.901    1.50
+PNP          C6          C5          H5     120.181    1.50
+PNP          C1          C6          C5     119.253    1.50
+PNP          C1          C6          H6     120.686    1.50
+PNP          C5          C6          H6     120.062    1.50
+PNP           P          CM         HM1     108.528    1.50
+PNP           P          CM         HM2     108.528    1.50
+PNP           P          CM         HM3     108.528    1.50
+PNP         HM1          CM         HM2     109.372    1.50
+PNP         HM1          CM         HM3     109.372    1.50
+PNP         HM2          CM         HM3     109.372    1.50
+PNP          C4           N         O1N     118.257    1.50
+PNP          C4           N         O2N     118.257    1.50
+PNP         O1N           N         O2N     123.486    1.50
+PNP          CM           P         O1P     103.369    3.00
+PNP          CM           P         O2P     110.326    3.00
+PNP          CM           P         O3P     110.326    3.00
+PNP         O1P           P         O2P     112.304    3.00
+PNP         O1P           P         O3P     112.304    3.00
+PNP         O2P           P         O3P     115.474    3.00
+PNP          C1         O1P           P     122.902    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+PNP       const_sp2_sp2_3         O1P          C1          C2          C3     180.000   10.00     2
+PNP             sp2_sp2_1          C2          C1         O1P           P     180.000   10.00     2
+PNP              const_23         O1P          C1          C6          C5     180.000   10.00     2
+PNP            sp3_sp3_10          CM           P         O1P          C1     180.000   10.00     3
+PNP       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+PNP              const_10          C2          C3          C4           N     180.000   10.00     2
+PNP              const_15           N          C4          C5          C6     180.000   10.00     2
+PNP             sp2_sp2_3          C3          C4           N         O1N     180.000   10.00     2
+PNP              const_17          C4          C5          C6          C1       0.000   10.00     2
+PNP             sp3_sp3_1         HM1          CM           P         O1P     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+PNP    chir_1    P    O1P    O3P    O2P    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+PNP    plan-1          C1   0.020
+PNP    plan-1          C2   0.020
+PNP    plan-1          C3   0.020
+PNP    plan-1          C4   0.020
+PNP    plan-1          C5   0.020
+PNP    plan-1          C6   0.020
+PNP    plan-1          H2   0.020
+PNP    plan-1          H3   0.020
+PNP    plan-1          H5   0.020
+PNP    plan-1          H6   0.020
+PNP    plan-1           N   0.020
+PNP    plan-1         O1P   0.020
+PNP    plan-2          C4   0.020
+PNP    plan-2           N   0.020
+PNP    plan-2         O1N   0.020
+PNP    plan-2         O2N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+PNP SMILES           ACDLabs              10.04 "O=P(Oc1ccc(cc1)[N+]([O-])=O)(O)C"
+PNP SMILES_CANONICAL CACTVS               3.341 "C[P@](O)(=O)Oc1ccc(cc1)[N+]([O-])=O"
+PNP SMILES           CACTVS               3.341 "C[P](O)(=O)Oc1ccc(cc1)[N+]([O-])=O"
+PNP SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[P@@](=O)(O)Oc1ccc(cc1)[N+](=O)[O-]"
+PNP SMILES           "OpenEye OEToolkits" 1.5.0 "CP(=O)(O)Oc1ccc(cc1)[N+](=O)[O-]"
+PNP InChI            InChI                1.03  "InChI=1S/C7H8NO5P/c1-14(11,12)13-7-4-2-6(3-5-7)8(9)10/h2-5H,1H3,(H,11,12)"
+PNP InChIKey         InChI                1.03  VJPXTXIEAOSJBR-UHFFFAOYSA-N
+PNP ?                acedrg               202         "dictionary generator"                  
+PNP ?                acedrg_database      11          "data source"                           
+PNP ?                rdkit                2017.03.2   "Chemoinformatics tool"
+PNP ?                refmac5              5.8.0189    "optimization tool"                     

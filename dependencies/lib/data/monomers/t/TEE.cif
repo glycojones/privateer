@@ -1,0 +1,113 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TEE     TEE      2-AMINO-ETHENETHIOL     NON-POLYMER     9     4     .     
+#
+data_comp_TEE
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+TEE     N       N       NH2     0       1.989       -1.693      0.673       
+TEE     CB      C       C1      0       1.226       0.461       -0.193      
+TEE     CA      C       C1      0       2.108       -0.370      0.649       
+TEE     SG      S       SH1     0       1.369       2.216       -0.239      
+TEE     HN1     H       H       0       2.515       -2.170      1.174       
+TEE     HN2     H       H       0       1.385       -2.089      0.189       
+TEE     HB2     H       H       0       0.565       0.057       -0.726      
+TEE     HA      H       H       0       2.767       0.053       1.179       
+TEE     HS      H       HSH1    0       2.312       2.356       0.543       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TEE       N         CA        SINGLE    n         1.328     0.015     1.328     0.015     
+TEE       CB        CA        DOUBLE    n         1.474     0.020     1.474     0.020     
+TEE       CB        SG        SINGLE    n         1.761     0.020     1.761     0.020     
+TEE       N         HN1       SINGLE    n         1.016     0.010     0.899     0.007     
+TEE       N         HN2       SINGLE    n         1.016     0.010     0.899     0.007     
+TEE       CB        HB2       SINGLE    n         1.082     0.013     0.975     0.010     
+TEE       CA        HA        SINGLE    n         1.082     0.013     0.975     0.010     
+TEE       SG        HS        SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+TEE          CA           N         HN1     120.236    1.50
+TEE          CA           N         HN2     120.236    1.50
+TEE         HN1           N         HN2     119.527    2.31
+TEE          CA          CB          SG     121.872    3.00
+TEE          CA          CB         HB2     120.059    2.33
+TEE          SG          CB         HB2     118.069    1.83
+TEE           N          CA          CB     120.911    3.00
+TEE           N          CA          HA     119.920    2.25
+TEE          CB          CA          HA     119.169    2.36
+TEE          CB          SG          HS      99.111    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+TEE             sp2_sp2_1          CB          CA           N         HN1     180.000   10.00     2
+TEE             sp2_sp2_5           N          CA          CB          SG     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+TEE    plan-1          CA   0.020
+TEE    plan-1         HN1   0.020
+TEE    plan-1         HN2   0.020
+TEE    plan-1           N   0.020
+TEE    plan-2          CA   0.020
+TEE    plan-2          CB   0.020
+TEE    plan-2         HB2   0.020
+TEE    plan-2          SG   0.020
+TEE    plan-3          CA   0.020
+TEE    plan-3          CB   0.020
+TEE    plan-3          HA   0.020
+TEE    plan-3           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+TEE SMILES           ACDLabs              10.04 S/C=C\N
+TEE SMILES_CANONICAL CACTVS               3.341 N\C=C/S
+TEE SMILES           CACTVS               3.341 NC=CS
+TEE SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(=CS)N"
+TEE SMILES           "OpenEye OEToolkits" 1.5.0 "C(=CS)N"
+TEE InChI            InChI                1.03  InChI=1S/C2H5NS/c3-1-2-4/h1-2,4H,3H2/b2-1-
+TEE InChIKey         InChI                1.03  JLZMZFJVTNYDOT-UPHRSURJSA-N
+TEE ?                acedrg               202         "dictionary generator"                  
+TEE ?                acedrg_database      11          "data source"                           
+TEE ?                rdkit                2017.03.2   "Chemoinformatics tool"
+TEE ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,246 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TSO      TSO '(1R,3S,5S,8R)-8-HYDROXY-2-OXABICYCLO' non-polymer        26  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TSO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TSO           "O'M"  O    OC       -0.500      0.000    0.000    0.000
+ TSO           "C2'"  C    C         0.000     -1.030    0.609   -0.367
+ TSO           "O'L"  O    OC       -0.500     -1.465    0.455   -1.529
+ TSO           "C1'"  C    CH1       0.000     -1.746    1.523    0.592
+ TSO           "H1'"  H    H         0.000     -1.299    2.526    0.544
+ TSO           C8     C    CH2       0.000     -1.614    0.974    2.018
+ TSO           H81C   H    H         0.000     -2.117    1.635    2.727
+ TSO           H82C   H    H         0.000     -0.561    0.881    2.293
+ TSO           C1     C    CT        0.000     -2.279   -0.414    2.047
+ TSO           C7     C    C         0.000     -2.114   -1.076    3.391
+ TSO           O72    O    OC       -0.500     -3.122   -1.399    4.058
+ TSO           O71    O    OC       -0.500     -0.968   -1.302    3.839
+ TSO           C6     C    CH2       0.000     -3.766   -0.219    1.714
+ TSO           H62C   H    H         0.000     -4.229    0.458    2.434
+ TSO           H61C   H    H         0.000     -4.287   -1.179    1.732
+ TSO           C2     C    C1        0.000     -1.644   -1.243    0.960
+ TSO           H2     H    H         0.000     -0.750   -1.796    1.193
+ TSO           "O1'"  O    O2        0.000     -3.125    1.601    0.237
+ TSO           C5     C    CH1       0.000     -3.856    0.386    0.310
+ TSO           H5     H    H         0.000     -4.911    0.606    0.097
+ TSO           C4     C    CH1       0.000     -3.366   -0.633   -0.712
+ TSO           H4     H    H         0.000     -3.155   -0.119   -1.660
+ TSO           O4     O    OH1       0.000     -4.387   -1.609   -0.926
+ TSO           HA     H    H         0.000     -4.092   -2.242   -1.595
+ TSO           C3     C    C1        0.000     -2.121   -1.321   -0.240
+ TSO           H3     H    H         0.000     -1.584   -1.924   -0.953
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TSO      "O'M"  n/a    "C2'"  START
+ TSO      "C2'"  "O'M"  "C1'"  .
+ TSO      "O'L"  "C2'"  .      .
+ TSO      "C1'"  "C2'"  "O1'"  .
+ TSO      "H1'"  "C1'"  .      .
+ TSO      C8     "C1'"  C1     .
+ TSO      H81C   C8     .      .
+ TSO      H82C   C8     .      .
+ TSO      C1     C8     C2     .
+ TSO      C7     C1     O71    .
+ TSO      O72    C7     .      .
+ TSO      O71    C7     .      .
+ TSO      C6     C1     H61C   .
+ TSO      H62C   C6     .      .
+ TSO      H61C   C6     .      .
+ TSO      C2     C1     H2     .
+ TSO      H2     C2     .      .
+ TSO      "O1'"  "C1'"  C5     .
+ TSO      C5     "O1'"  C4     .
+ TSO      H5     C5     .      .
+ TSO      C4     C5     C3     .
+ TSO      H4     C4     .      .
+ TSO      O4     C4     HA     .
+ TSO      HA     O4     .      .
+ TSO      C3     C4     H3     .
+ TSO      H3     C3     .      END
+ TSO      C2     C3     .    ADD
+ TSO      C6     C5     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TSO       C2        C3        double    1.330     0.020     1.330     0.020     
+TSO       C2        C1        single    1.510     0.020     1.510     0.020     
+TSO       C3        C4        single    1.510     0.020     1.510     0.020     
+TSO       O4        C4        single    1.432     0.020     1.432     0.020     
+TSO       C4        C5        single    1.524     0.020     1.524     0.020     
+TSO       C6        C5        single    1.524     0.020     1.524     0.020     
+TSO       C6        C1        single    1.524     0.020     1.524     0.020     
+TSO       O71       C7        deloc     1.250     0.020     1.250     0.020     
+TSO       O72       C7        deloc     1.250     0.020     1.250     0.020     
+TSO       C7        C1        single    1.507     0.020     1.507     0.020     
+TSO       C8        "C1'"     single    1.524     0.020     1.524     0.020     
+TSO       C1        C8        single    1.524     0.020     1.524     0.020     
+TSO       "O1'"     "C1'"     single    1.426     0.020     1.426     0.020     
+TSO       "C1'"     "C2'"     single    1.500     0.020     1.500     0.020     
+TSO       C5        "O1'"     single    1.426     0.020     1.426     0.020     
+TSO       "O'L"     "C2'"     deloc     1.250     0.020     1.250     0.020     
+TSO       "C2'"     "O'M"     deloc     1.250     0.020     1.250     0.020     
+TSO       H2        C2        single    1.082     0.013     0.975     0.010     
+TSO       H3        C3        single    1.082     0.013     0.975     0.010     
+TSO       H4        C4        single    1.089     0.010     0.989     0.005     
+TSO       HA        O4        single    0.970     0.012     0.839     0.014     
+TSO       H5        C5        single    1.089     0.010     0.989     0.005     
+TSO       H61C      C6        single    1.089     0.010     0.989     0.005     
+TSO       H62C      C6        single    1.089     0.010     0.989     0.005     
+TSO       H81C      C8        single    1.089     0.010     0.989     0.005     
+TSO       H82C      C8        single    1.089     0.010     0.989     0.005     
+TSO       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TSO      "O'M"  "C2'"  "O'L"   123.000    3.000
+ TSO      "O'M"  "C2'"  "C1'"   118.500    3.000
+ TSO      "O'L"  "C2'"  "C1'"   118.500    3.000
+ TSO      "C2'"  "C1'"  "H1'"   108.810    3.000
+ TSO      "C2'"  "C1'"  C8      109.470    3.000
+ TSO      "C2'"  "C1'"  "O1'"   109.470    3.000
+ TSO      "H1'"  "C1'"  C8      108.340    3.000
+ TSO      "H1'"  "C1'"  "O1'"   109.470    3.000
+ TSO      C8     "C1'"  "O1'"   109.470    3.000
+ TSO      "C1'"  C8     H81C    109.470    3.000
+ TSO      "C1'"  C8     H82C    109.470    3.000
+ TSO      "C1'"  C8     C1      111.000    3.000
+ TSO      H81C   C8     H82C    107.900    3.000
+ TSO      H81C   C8     C1      109.470    3.000
+ TSO      H82C   C8     C1      109.470    3.000
+ TSO      C8     C1     C7      109.470    3.000
+ TSO      C8     C1     C6      111.000    3.000
+ TSO      C8     C1     C2      109.470    3.000
+ TSO      C7     C1     C6      109.470    3.000
+ TSO      C7     C1     C2      109.500    3.000
+ TSO      C6     C1     C2      109.470    3.000
+ TSO      C1     C7     O72     118.500    3.000
+ TSO      C1     C7     O71     118.500    3.000
+ TSO      O72    C7     O71     123.000    3.000
+ TSO      C1     C6     H62C    109.470    3.000
+ TSO      C1     C6     H61C    109.470    3.000
+ TSO      C1     C6     C5      111.000    3.000
+ TSO      H62C   C6     H61C    107.900    3.000
+ TSO      H62C   C6     C5      109.470    3.000
+ TSO      H61C   C6     C5      109.470    3.000
+ TSO      C1     C2     H2      120.000    3.000
+ TSO      C1     C2     C3      120.000    3.000
+ TSO      H2     C2     C3      120.000    3.000
+ TSO      "C1'"  "O1'"  C5      111.800    3.000
+ TSO      "O1'"  C5     H5      109.470    3.000
+ TSO      "O1'"  C5     C4      109.470    3.000
+ TSO      "O1'"  C5     C6      109.470    3.000
+ TSO      H5     C5     C4      108.340    3.000
+ TSO      H5     C5     C6      108.340    3.000
+ TSO      C4     C5     C6      111.000    3.000
+ TSO      C5     C4     H4      108.340    3.000
+ TSO      C5     C4     O4      109.470    3.000
+ TSO      C5     C4     C3      109.470    3.000
+ TSO      H4     C4     O4      109.470    3.000
+ TSO      H4     C4     C3      108.810    3.000
+ TSO      O4     C4     C3      109.470    3.000
+ TSO      C4     O4     HA      109.470    3.000
+ TSO      C4     C3     H3      120.000    3.000
+ TSO      C4     C3     C2      120.000    3.000
+ TSO      H3     C3     C2      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TSO      var_1    "O'M"  "C2'"  "C1'"  "O1'"   -153.150   20.000   3
+ TSO      var_2    "C2'"  "C1'"  C8     C1       -61.323   20.000   3
+ TSO      var_3    "C1'"  C8     C1     C2        54.469   20.000   1
+ TSO      var_4    C8     C1     C7     O71      -59.590   20.000   1
+ TSO      var_5    C8     C1     C6     C5        60.000   20.000   1
+ TSO      var_6    C1     C6     C5     "O1'"    -60.000   20.000   3
+ TSO      var_7    C8     C1     C2     C3       -90.000   20.000   1
+ TSO      var_8    C1     C2     C3     C4         0.000   20.000   1
+ TSO      var_9    "C2'"  "C1'"  "O1'"  C5        62.711   20.000   1
+ TSO      var_10   "C1'"  "O1'"  C5     C4       -65.714   20.000   1
+ TSO      var_11   "O1'"  C5     C4     C3        90.000   20.000   3
+ TSO      var_12   C5     C4     O4     HA       178.164   20.000   1
+ TSO      var_13   C5     C4     C3     C2         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TSO      chir_01  C4     C3     O4     C5        negativ
+ TSO      chir_02  "C1'"  C8     "O1'"  "C2'"     positiv
+ TSO      chir_03  C5     C4     C6     "O1'"     negativ
+ TSO      chir_04  C1     C2     C6     C7        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TSO      plan-1    C2        0.020
+ TSO      plan-1    C3        0.020
+ TSO      plan-1    C1        0.020
+ TSO      plan-1    H2        0.020
+ TSO      plan-1    H3        0.020
+ TSO      plan-2    C3        0.020
+ TSO      plan-2    C2        0.020
+ TSO      plan-2    C4        0.020
+ TSO      plan-2    H3        0.020
+ TSO      plan-2    H2        0.020
+ TSO      plan-3    C7        0.020
+ TSO      plan-3    O71       0.020
+ TSO      plan-3    O72       0.020
+ TSO      plan-3    C1        0.020
+ TSO      plan-4    "C2'"     0.020
+ TSO      plan-4    "C1'"     0.020
+ TSO      plan-4    "O'L"     0.020
+ TSO      plan-4    "O'M"     0.020
+# ------------------------------------------------------

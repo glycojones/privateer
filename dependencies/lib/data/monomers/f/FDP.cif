@@ -1,0 +1,238 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FDP      FDP 'FRUCTOSE-2,6-DIPHOSPHATE            ' non-polymer        30  20 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FDP
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FDP           O6P    O    OP       -0.666      0.000    0.000    0.000
+ FDP           P2     P    P         0.000     -0.765   -0.403    1.241
+ FDP           O4P    O    OP       -0.666     -0.965    0.807    2.127
+ FDP           O5P    O    OP       -0.666      0.018   -1.456    1.995
+ FDP           O6     O    O2        0.000     -2.199   -1.000    0.818
+ FDP           C6     C    CH2       0.000     -2.885    0.035    0.114
+ FDP           H61    H    H         0.000     -2.307    0.320   -0.768
+ FDP           H62    H    H         0.000     -3.003    0.903    0.766
+ FDP           C5     C    CH1       0.000     -4.264   -0.470   -0.319
+ FDP           H5     H    H         0.000     -4.162   -1.375   -0.933
+ FDP           C4     C    CH1       0.000     -5.018    0.630   -1.106
+ FDP           H4     H    H         0.000     -4.824    1.624   -0.679
+ FDP           O4     O    OH1       0.000     -4.686    0.593   -2.495
+ FDP           HO4    H    H         0.000     -3.740    0.757   -2.603
+ FDP           C3     C    CH1       0.000     -6.492    0.201   -0.870
+ FDP           H3     H    H         0.000     -6.795   -0.568   -1.594
+ FDP           O3     O    OH1       0.000     -7.367    1.330   -0.932
+ FDP           HO3    H    H         0.000     -7.316    1.729   -1.811
+ FDP           O5     O    O2        0.000     -5.080   -0.737    0.831
+ FDP           C2     C    CT        0.000     -6.440   -0.381    0.559
+ FDP           C1     C    CH2       0.000     -7.330   -1.621    0.646
+ FDP           H11    H    H         0.000     -6.964   -2.381   -0.048
+ FDP           H12    H    H         0.000     -8.355   -1.352    0.381
+ FDP           O1     O    OH1       0.000     -7.301   -2.136    1.978
+ FDP           HO1    H    H         0.000     -7.923   -2.872    2.052
+ FDP           O2     O    O2        0.000     -6.881    0.599    1.499
+ FDP           P1     P    P         0.000     -5.663    0.843    2.523
+ FDP           O1P    O    OP       -0.666     -4.510    1.491    1.788
+ FDP           O2P    O    OP       -0.666     -6.120    1.750    3.644
+ FDP           O3P    O    OP       -0.666     -5.213   -0.482    3.098
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FDP      O6P    n/a    P2     START
+ FDP      P2     O6P    O6     .
+ FDP      O4P    P2     .      .
+ FDP      O5P    P2     .      .
+ FDP      O6     P2     C6     .
+ FDP      C6     O6     C5     .
+ FDP      H61    C6     .      .
+ FDP      H62    C6     .      .
+ FDP      C5     C6     O5     .
+ FDP      H5     C5     .      .
+ FDP      C4     C5     C3     .
+ FDP      H4     C4     .      .
+ FDP      O4     C4     HO4    .
+ FDP      HO4    O4     .      .
+ FDP      C3     C4     O3     .
+ FDP      H3     C3     .      .
+ FDP      O3     C3     HO3    .
+ FDP      HO3    O3     .      .
+ FDP      O5     C5     C2     .
+ FDP      C2     O5     O2     .
+ FDP      C1     C2     O1     .
+ FDP      H11    C1     .      .
+ FDP      H12    C1     .      .
+ FDP      O1     C1     HO1    .
+ FDP      HO1    O1     .      .
+ FDP      O2     C2     P1     .
+ FDP      P1     O2     O3P    .
+ FDP      O1P    P1     .      .
+ FDP      O2P    P1     .      .
+ FDP      O3P    P1     .      END
+ FDP      C2     C3     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FDP       O1P       P1        deloc     1.510     0.020     1.510     0.020     
+FDP       O2P       P1        deloc     1.510     0.020     1.510     0.020     
+FDP       O3P       P1        deloc     1.510     0.020     1.510     0.020     
+FDP       P1        O2        single    1.610     0.020     1.610     0.020     
+FDP       O1        C1        single    1.432     0.020     1.432     0.020     
+FDP       HO1       O1        single    0.970     0.012     0.839     0.014     
+FDP       C1        C2        single    1.524     0.020     1.524     0.020     
+FDP       H11       C1        single    1.089     0.010     0.989     0.005     
+FDP       H12       C1        single    1.089     0.010     0.989     0.005     
+FDP       O2        C2        single    1.426     0.020     1.426     0.020     
+FDP       C2        C3        single    1.524     0.020     1.524     0.020     
+FDP       C2        O5        single    1.426     0.020     1.426     0.020     
+FDP       O3        C3        single    1.432     0.020     1.432     0.020     
+FDP       C3        C4        single    1.524     0.020     1.524     0.020     
+FDP       H3        C3        single    1.089     0.010     0.989     0.005     
+FDP       HO3       O3        single    0.970     0.012     0.839     0.014     
+FDP       O4        C4        single    1.432     0.020     1.432     0.020     
+FDP       C4        C5        single    1.524     0.020     1.524     0.020     
+FDP       H4        C4        single    1.089     0.010     0.989     0.005     
+FDP       HO4       O4        single    0.970     0.012     0.839     0.014     
+FDP       O5        C5        single    1.426     0.020     1.426     0.020     
+FDP       C5        C6        single    1.524     0.020     1.524     0.020     
+FDP       H5        C5        single    1.089     0.010     0.989     0.005     
+FDP       C6        O6        single    1.426     0.020     1.426     0.020     
+FDP       H61       C6        single    1.089     0.010     0.989     0.005     
+FDP       H62       C6        single    1.089     0.010     0.989     0.005     
+FDP       O6        P2        single    1.610     0.020     1.610     0.020     
+FDP       O4P       P2        deloc     1.510     0.020     1.510     0.020     
+FDP       O5P       P2        deloc     1.510     0.020     1.510     0.020     
+FDP       P2        O6P       deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FDP      O6P    P2     O4P     119.900    3.000
+ FDP      O6P    P2     O5P     119.900    3.000
+ FDP      O6P    P2     O6      108.200    3.000
+ FDP      O4P    P2     O5P     119.900    3.000
+ FDP      O4P    P2     O6      108.200    3.000
+ FDP      O5P    P2     O6      108.200    3.000
+ FDP      P2     O6     C6      120.500    3.000
+ FDP      O6     C6     H61     109.470    3.000
+ FDP      O6     C6     H62     109.470    3.000
+ FDP      O6     C6     C5      109.470    3.000
+ FDP      H61    C6     H62     107.900    3.000
+ FDP      H61    C6     C5      109.470    3.000
+ FDP      H62    C6     C5      109.470    3.000
+ FDP      C6     C5     H5      108.340    3.000
+ FDP      C6     C5     C4      111.000    3.000
+ FDP      C6     C5     O5      109.470    3.000
+ FDP      H5     C5     C4      108.340    3.000
+ FDP      H5     C5     O5      109.470    3.000
+ FDP      C4     C5     O5      109.470    3.000
+ FDP      C5     C4     H4      108.340    3.000
+ FDP      C5     C4     O4      109.470    3.000
+ FDP      C5     C4     C3      111.000    3.000
+ FDP      H4     C4     O4      109.470    3.000
+ FDP      H4     C4     C3      108.340    3.000
+ FDP      O4     C4     C3      109.470    3.000
+ FDP      C4     O4     HO4     109.470    3.000
+ FDP      C4     C3     H3      108.340    3.000
+ FDP      C4     C3     O3      109.470    3.000
+ FDP      C4     C3     C2      111.000    3.000
+ FDP      H3     C3     O3      109.470    3.000
+ FDP      H3     C3     C2      108.340    3.000
+ FDP      O3     C3     C2      109.470    3.000
+ FDP      C3     O3     HO3     109.470    3.000
+ FDP      C5     O5     C2      111.800    3.000
+ FDP      O5     C2     C1      109.470    3.000
+ FDP      O5     C2     O2      109.500    3.000
+ FDP      O5     C2     C3      109.470    3.000
+ FDP      C1     C2     O2      109.470    3.000
+ FDP      C1     C2     C3      111.000    3.000
+ FDP      O2     C2     C3      109.470    3.000
+ FDP      C2     C1     H11     109.470    3.000
+ FDP      C2     C1     H12     109.470    3.000
+ FDP      C2     C1     O1      109.470    3.000
+ FDP      H11    C1     H12     107.900    3.000
+ FDP      H11    C1     O1      109.470    3.000
+ FDP      H12    C1     O1      109.470    3.000
+ FDP      C1     O1     HO1     109.470    3.000
+ FDP      C2     O2     P1      120.000    3.000
+ FDP      O2     P1     O1P     108.200    3.000
+ FDP      O2     P1     O2P     108.200    3.000
+ FDP      O2     P1     O3P     108.200    3.000
+ FDP      O1P    P1     O2P     119.900    3.000
+ FDP      O1P    P1     O3P     119.900    3.000
+ FDP      O2P    P1     O3P     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FDP      var_1    O6P    P2     O6     C6       -59.981   20.000   1
+ FDP      var_2    P2     O6     C6     C5       179.992   20.000   1
+ FDP      var_3    O6     C6     C5     O5        65.079   20.000   3
+ FDP      var_4    C6     C5     C4     C3      -150.000   20.000   3
+ FDP      var_5    C5     C4     O4     HO4      -61.460   20.000   1
+ FDP      var_6    C5     C4     C3     O3       150.000   20.000   3
+ FDP      var_7    C4     C3     O3     HO3       61.512   20.000   1
+ FDP      var_8    C6     C5     O5     C2       150.000   20.000   1
+ FDP      var_9    C5     O5     C2     O2      -120.000   20.000   1
+ FDP      var_10   O5     C2     C3     C4       -30.000   20.000   1
+ FDP      var_11   O5     C2     C1     O1        63.174   20.000   1
+ FDP      var_12   C2     C1     O1     HO1      175.048   20.000   1
+ FDP      var_13   O5     C2     O2     P1        -2.510   20.000   1
+ FDP      var_14   C2     O2     P1     O3P      -53.316   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FDP      chir_01  C2     C1     O2     C3        positiv
+ FDP      chir_02  C3     C2     O3     C4        negativ
+ FDP      chir_03  C4     C3     O4     C5        positiv
+ FDP      chir_04  C5     C4     O5     C6        positiv
+# ------------------------------------------------------

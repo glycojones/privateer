@@ -1,0 +1,115 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+CNH     CNH      2-HYDROXY-2-METHYLPROPANENITRILE     NON-POLYMER     13     6     .     
+#
+data_comp_CNH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+CNH     C1      C       CT      0       51.819      45.189      120.715     
+CNH     C2      C       CH3     0       51.774      45.320      119.198     
+CNH     C3      C       CH3     0       52.649      46.307      121.351     
+CNH     C4      C       CSP     0       52.360      43.848      121.077     
+CNH     O6      O       OH1     0       50.466      45.311      121.196     
+CNH     N5      N       N       0       52.712      42.796      121.359     
+CNH     HC21    H       H       0       51.382      44.518      118.809     
+CNH     HC22    H       H       0       52.677      45.438      118.855     
+CNH     HC23    H       H       0       51.234      46.092      118.955     
+CNH     HC31    H       H       0       53.483      45.947      121.702     
+CNH     HC32    H       H       0       52.149      46.716      122.081     
+CNH     HC33    H       H       0       52.853      46.989      120.686     
+CNH     HO6     H       H       0       49.986      44.685      120.874     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+CNH       C1        C2        SINGLE    n         1.519     0.013     1.519     0.013     
+CNH       C1        C3        SINGLE    n         1.519     0.013     1.519     0.013     
+CNH       C1        C4        SINGLE    n         1.488     0.010     1.488     0.010     
+CNH       C1        O6        SINGLE    n         1.436     0.011     1.436     0.011     
+CNH       C4        N5        TRIPLE    n         1.145     0.020     1.145     0.020     
+CNH       C2        HC21      SINGLE    n         1.089     0.010     0.973     0.015     
+CNH       C2        HC22      SINGLE    n         1.089     0.010     0.973     0.015     
+CNH       C2        HC23      SINGLE    n         1.089     0.010     0.973     0.015     
+CNH       C3        HC31      SINGLE    n         1.089     0.010     0.973     0.015     
+CNH       C3        HC32      SINGLE    n         1.089     0.010     0.973     0.015     
+CNH       C3        HC33      SINGLE    n         1.089     0.010     0.973     0.015     
+CNH       O6        HO6       SINGLE    n         0.970     0.012     0.848     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+CNH          C2          C1          C3     111.422    1.50
+CNH          C2          C1          C4     110.326    2.62
+CNH          C2          C1          O6     107.963    2.10
+CNH          C3          C1          C4     110.326    2.62
+CNH          C3          C1          O6     107.963    2.10
+CNH          C4          C1          O6     109.984    1.89
+CNH          C1          C2        HC21     109.554    1.50
+CNH          C1          C2        HC22     109.554    1.50
+CNH          C1          C2        HC23     109.554    1.50
+CNH        HC21          C2        HC22     109.441    1.50
+CNH        HC21          C2        HC23     109.441    1.50
+CNH        HC22          C2        HC23     109.441    1.50
+CNH          C1          C3        HC31     109.554    1.50
+CNH          C1          C3        HC32     109.554    1.50
+CNH          C1          C3        HC33     109.554    1.50
+CNH        HC31          C3        HC32     109.441    1.50
+CNH        HC31          C3        HC33     109.441    1.50
+CNH        HC32          C3        HC33     109.441    1.50
+CNH          C1          C4          N5     176.612    1.50
+CNH          C1          O6         HO6     109.200    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+CNH             sp3_sp3_1          C3          C1          C2        HC21     180.000   10.00     3
+CNH            sp3_sp3_10          C2          C1          C3        HC31     180.000   10.00     3
+CNH            sp3_sp3_19          C2          C1          O6         HO6     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+CNH SMILES           ACDLabs              10.04 "N#CC(O)(C)C"
+CNH SMILES_CANONICAL CACTVS               3.341 "CC(C)(O)C#N"
+CNH SMILES           CACTVS               3.341 "CC(C)(O)C#N"
+CNH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(C)(C#N)O"
+CNH SMILES           "OpenEye OEToolkits" 1.5.0 "CC(C)(C#N)O"
+CNH InChI            InChI                1.03  "InChI=1S/C4H7NO/c1-4(2,6)3-5/h6H,1-2H3"
+CNH InChIKey         InChI                1.03  MWFMGBPGAXYFAR-UHFFFAOYSA-N
+CNH ?                acedrg               202         "dictionary generator"                  
+CNH ?                acedrg_database      11          "data source"                           
+CNH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+CNH ?                refmac5              5.8.0189    "optimization tool"                     

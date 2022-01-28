@@ -1,0 +1,188 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+0AH     0AH     "O-(bromoacetyl)-L-serine"     peptide     19     11     .     
+#
+data_comp_0AH
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+0AH     N       N       NT3     1       -2.372      -1.393      -0.265
+0AH     H       H       H       0       -2.965      -1.678      0.366       
+0AH     H2      H       H       0       -2.060      -2.113      -0.728      
+0AH     H3      H       H       0       -2.795      -0.827      -0.840
+0AH     CA      C       CH1     0       -1.239      -0.689      0.391
+0AH     HA      H       H       0       -0.813      -1.321      1.031       
+0AH     CB      C       CH2     0       -0.205      -0.272      -0.635
+0AH     HBC1    H       H       0       -0.568      0.444       -1.199      
+0AH     HBC2    H       H       0       0.018       -1.035      -1.210
+0AH     O2      O       O2      0       0.989       0.193       0.049
+0AH     C1      C       C       0       1.992       0.674       -0.680
+0AH     O1      O       O       0       2.046       0.639       -1.884
+0AH     C2      C       CH2     0       3.054       1.260       0.186
+0AH     H2C1    H       H       0       2.634       1.764       0.921       
+0AH     H2C2    H       H       0       3.594       1.890       -0.344
+0AH     BR2     BR      BR      0       4.206       -0.097      0.924       
+0AH     C       C       C       0       -1.763      0.514       1.185       
+0AH     O       O       O       0       -2.417      1.370       0.556       
+0AH     OXT     O       OC      -1      -1.499      0.552       2.403
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 0AH      N      n/a    CA     START
+ 0AH      H      N      .      .
+ 0AH      H2     N      .      .
+ 0AH      H3     N      .      .
+ 0AH      CA     N      C      .
+ 0AH      HA     CA     .      .
+ 0AH      CB     CA     O2     .
+ 0AH      HBC1   CB     .      .
+ 0AH      HBC2   CB     .      .
+ 0AH      O2     CB     C1     .
+ 0AH      C1     O2     C2     .
+ 0AH      O1     C1     .      .
+ 0AH      C2     C1     BR2    .
+ 0AH      H2C2   C2     .      .
+ 0AH      H2C1   C2     .      .
+ 0AH      BR2    C2     .      .
+ 0AH      C      CA     .      END
+ 0AH      O      C      .      .
+ 0AH      OXT    C      .      .
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+0AH       CB        CA        SINGLE    n         1.515     0.017     1.515     0.017     
+0AH       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+0AH       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+0AH       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+0AH       CA        N         SINGLE    n         1.487     0.010     1.487     0.010     
+0AH       CB        O2        SINGLE    n         1.450     0.010     1.450     0.010     
+0AH       O2        C1        SINGLE    n         1.327     0.011     1.327     0.011     
+0AH       C1        O1        DOUBLE    n         1.203     0.015     1.203     0.015     
+0AH       C1        C2        SINGLE    n         1.489     0.019     1.489     0.019     
+0AH       C2        BR2       SINGLE    n         1.927     0.014     1.927     0.014     
+0AH       CB        HBC1      SINGLE    n         1.089     0.010     0.981     0.010     
+0AH       CB        HBC2      SINGLE    n         1.089     0.010     0.981     0.010     
+0AH       CA        HA        SINGLE    n         1.089     0.010     0.995     0.020     
+0AH       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+0AH       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+0AH       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+0AH       C2        H2C1      SINGLE    n         1.089     0.010     0.985     0.010     
+0AH       C2        H2C2      SINGLE    n         1.089     0.010     0.985     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+0AH          CA          CB          O2     108.730    1.77
+0AH          CA          CB        HBC1     109.469    1.50
+0AH          CA          CB        HBC2     109.469    1.50
+0AH          O2          CB        HBC1     109.566    1.50
+0AH          O2          CB        HBC2     109.566    1.50
+0AH        HBC1          CB        HBC2     108.098    1.50
+0AH          CB          CA           C     111.527    1.50
+0AH          CB          CA           N     110.608    1.50
+0AH          CB          CA          HA     108.597    1.50
+0AH           C          CA           N     109.829    1.50
+0AH           C          CA          HA     108.255    1.50
+0AH           N          CA          HA     108.049    1.50
+0AH          CA           C           O     117.181    1.50
+0AH          CA           C         OXT     117.181    1.50
+0AH           O           C         OXT     125.637    1.50
+0AH          CA           N           H     109.619    1.50
+0AH          CA           N          H2     109.619    1.50
+0AH          CA           N          H3     109.619    1.50
+0AH           H           N          H2     109.028    2.41
+0AH           H           N          H3     109.028    2.41
+0AH          H2           N          H3     109.028    2.41
+0AH          CB          O2          C1     116.652    1.80
+0AH          O2          C1          O1     123.725    1.73
+0AH          O2          C1          C2     111.325    1.81
+0AH          O1          C1          C2     124.950    2.62
+0AH          C1          C2         BR2     111.188    2.77
+0AH          C1          C2        H2C1     108.994    1.50
+0AH          C1          C2        H2C2     108.994    1.50
+0AH         BR2          C2        H2C1     109.023    1.50
+0AH         BR2          C2        H2C2     109.023    1.50
+0AH        H2C1          C2        H2C2     107.821    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+0AH             sp3_sp3_1           C          CA          CB          O2     180.000   10.00     3
+0AH            sp3_sp3_19          CA          CB          O2          C1     180.000   10.00     3
+0AH             sp2_sp3_1           O           C          CA          CB       0.000   10.00     6
+0AH            sp3_sp3_10          CB          CA           N           H     180.000   10.00     3
+0AH             sp2_sp2_1          O1          C1          O2          CB     180.000   10.00     2
+0AH             sp2_sp3_8          O2          C1          C2         BR2     120.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+0AH    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+0AH    plan-1           C   0.020
+0AH    plan-1          CA   0.020
+0AH    plan-1           O   0.020
+0AH    plan-1         OXT   0.020
+0AH    plan-2          C1   0.020
+0AH    plan-2          C2   0.020
+0AH    plan-2          O1   0.020
+0AH    plan-2          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+0AH SMILES           ACDLabs              10.04 "BrCC(=O)OCC(C(=O)O)N"
+0AH SMILES_CANONICAL CACTVS               3.341 "N[C@@H](COC(=O)CBr)C(O)=O"
+0AH SMILES           CACTVS               3.341 "N[CH](COC(=O)CBr)C(O)=O"
+0AH SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C([C@@H](C(=O)O)N)OC(=O)CBr"
+0AH SMILES           "OpenEye OEToolkits" 1.5.0 "C(C(C(=O)O)N)OC(=O)CBr"
+0AH InChI            InChI                1.03  "InChI=1S/C5H8BrNO4/c6-1-4(8)11-2-3(7)5(9)10/h3H,1-2,7H2,(H,9,10)/t3-/m0/s1"
+0AH InChIKey         InChI                1.03  PNOKHJAKXLINKP-VKHMYHEASA-N
+0AH ?                acedrg               196         "dictionary generator"                  
+0AH ?                acedrg_database      11          "data source"                           
+0AH ?                rdkit                2017.03.2   "Chemoinformatics tool"
+0AH ?                refmac5              5.8.0222    "optimization tool"                     

@@ -1,0 +1,576 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MTT      MTT 'MALTOTETRAOSE                       ' non-polymer        87  45 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MTT
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MTT           O46    O    OH1       0.000      0.000    0.000    0.000
+ MTT           HO46   H    H         0.000     -0.512    0.402    0.715
+ MTT           C46    C    CH2       0.000     -0.886   -0.666   -0.901
+ MTT           H461   H    H         0.000     -1.590    0.057   -1.318
+ MTT           H462   H    H         0.000     -1.436   -1.441   -0.364
+ MTT           C45    C    CH1       0.000     -0.076   -1.303   -2.034
+ MTT           H451   H    H         0.000      0.517   -0.528   -2.538
+ MTT           O45    O    O2        0.000      0.798   -2.292   -1.493
+ MTT           C41    C    CH1       0.000      1.656   -2.732   -2.543
+ MTT           H411   H    H         0.000      2.430   -3.393   -2.129
+ MTT           O41    O    OH1       0.000      2.275   -1.599   -3.156
+ MTT           HO41   H    H         0.000      2.789   -1.116   -2.495
+ MTT           C42    C    CH1       0.000      0.843   -3.495   -3.591
+ MTT           H421   H    H         0.000      0.345   -4.353   -3.117
+ MTT           O42    O    OH1       0.000      1.711   -3.958   -4.628
+ MTT           HO42   H    H         0.000      2.376   -4.551   -4.251
+ MTT           C43    C    CH1       0.000     -0.212   -2.555   -4.186
+ MTT           H431   H    H         0.000      0.285   -1.753   -4.751
+ MTT           O43    O    OH1       0.000     -1.075   -3.290   -5.056
+ MTT           HO43   H    H         0.000     -0.557   -3.672   -5.777
+ MTT           C44    C    CH1       0.000     -1.029   -1.948   -3.041
+ MTT           H441   H    H         0.000     -1.609   -2.738   -2.545
+ MTT           O44    O    O2        0.000     -1.918   -0.958   -3.561
+ MTT           C31    C    CH1       0.000     -3.092   -1.644   -3.997
+ MTT           H311   H    H         0.000     -2.802   -2.531   -4.577
+ MTT           C32    C    CH1       0.000     -3.929   -0.713   -4.877
+ MTT           H321   H    H         0.000     -4.845   -1.231   -5.194
+ MTT           O32    O    OH1       0.000     -3.173   -0.332   -6.028
+ MTT           HO32   H    H         0.000     -2.940   -1.122   -6.535
+ MTT           C33    C    CH1       0.000     -4.300    0.536   -4.070
+ MTT           H331   H    H         0.000     -3.391    1.111   -3.843
+ MTT           O33    O    OH1       0.000     -5.205    1.346   -4.824
+ MTT           HO33   H    H         0.000     -4.779    1.623   -5.647
+ MTT           O35    O    O2        0.000     -3.853   -2.048   -2.861
+ MTT           C35    C    CH1       0.000     -4.056   -0.897   -2.043
+ MTT           H351   H    H         0.000     -3.087   -0.420   -1.837
+ MTT           C36    C    CH2       0.000     -4.704   -1.319   -0.723
+ MTT           H361   H    H         0.000     -5.643   -1.838   -0.928
+ MTT           H362   H    H         0.000     -4.903   -0.433   -0.116
+ MTT           O36    O    OH1       0.000     -3.819   -2.193   -0.017
+ MTT           HO36   H    H         0.000     -4.228   -2.460    0.818
+ MTT           C34    C    CH1       0.000     -4.970    0.097   -2.763
+ MTT           H341   H    H         0.000     -5.932   -0.385   -2.988
+ MTT           O34    O    O2        0.000     -5.188    1.236   -1.930
+ MTT           C21    C    CH1       0.000     -6.429    1.815   -2.340
+ MTT           H211   H    H         0.000     -6.458    1.876   -3.437
+ MTT           C22    C    CH1       0.000     -6.554    3.220   -1.748
+ MTT           H221   H    H         0.000     -7.518    3.659   -2.041
+ MTT           O22    O    OH1       0.000     -5.488    4.041   -2.230
+ MTT           HO22   H    H         0.000     -5.537    4.099   -3.194
+ MTT           C23    C    CH1       0.000     -6.477    3.126   -0.219
+ MTT           H231   H    H         0.000     -5.475    2.787    0.080
+ MTT           O23    O    OH1       0.000     -6.742    4.406    0.357
+ MTT           HO23   H    H         0.000     -6.079    5.040    0.051
+ MTT           O25    O    O2        0.000     -7.505    1.000   -1.882
+ MTT           C25    C    CH1       0.000     -7.330    0.797   -0.482
+ MTT           H251   H    H         0.000     -6.315    0.419   -0.292
+ MTT           C26    C    CH2       0.000     -8.353   -0.226    0.016
+ MTT           H261   H    H         0.000     -9.358    0.101   -0.261
+ MTT           H262   H    H         0.000     -8.285   -0.309    1.103
+ MTT           O26    O    OH1       0.000     -8.084   -1.498   -0.578
+ MTT           HO26   H    H         0.000     -8.731   -2.143   -0.263
+ MTT           C24    C    CH1       0.000     -7.526    2.118    0.263
+ MTT           H241   H    H         0.000     -8.532    2.509    0.059
+ MTT           O24    O    O2        0.000     -7.373    1.904    1.667
+ MTT           C11    C    CH1       0.000     -8.044    2.980    2.326
+ MTT           H111   H    H         0.000     -7.771    3.930    1.845
+ MTT           C12    C    CH1       0.000     -7.624    3.015    3.797
+ MTT           H121   H    H         0.000     -8.156    3.827    4.312
+ MTT           O12    O    OH1       0.000     -6.214    3.235    3.887
+ MTT           HO12   H    H         0.000     -5.993    4.078    3.469
+ MTT           C13    C    CH1       0.000     -7.978    1.675    4.450
+ MTT           H131   H    H         0.000     -7.368    0.876    4.006
+ MTT           O13    O    OH1       0.000     -7.729    1.745    5.855
+ MTT           HO13   H    H         0.000     -6.794    1.939    6.007
+ MTT           O15    O    O2        0.000     -9.454    2.789    2.231
+ MTT           C15    C    CH1       0.000     -9.744    1.476    2.700
+ MTT           H151   H    H         0.000     -9.112    0.750    2.168
+ MTT           C16    C    CH2       0.000    -11.217    1.155    2.438
+ MTT           H161   H    H         0.000    -11.845    1.875    2.967
+ MTT           H162   H    H         0.000    -11.439    0.148    2.797
+ MTT           O16    O    OH1       0.000    -11.479    1.232    1.035
+ MTT           HO16   H    H         0.000    -12.410    1.030    0.871
+ MTT           C14    C    CH1       0.000     -9.463    1.389    4.202
+ MTT           H141   H    H         0.000    -10.075    2.130    4.734
+ MTT           O14    O    OH1       0.000     -9.782    0.078    4.673
+ MTT           HO14   H    H         0.000     -9.598    0.023    5.620
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MTT      O46    n/a    C46    START
+ MTT      HO46   O46    .      .
+ MTT      C46    O46    C45    .
+ MTT      H461   C46    .      .
+ MTT      H462   C46    .      .
+ MTT      C45    C46    C44    .
+ MTT      H451   C45    .      .
+ MTT      O45    C45    C41    .
+ MTT      C41    O45    C42    .
+ MTT      H411   C41    .      .
+ MTT      O41    C41    HO41   .
+ MTT      HO41   O41    .      .
+ MTT      C42    C41    C43    .
+ MTT      H421   C42    .      .
+ MTT      O42    C42    HO42   .
+ MTT      HO42   O42    .      .
+ MTT      C43    C42    O43    .
+ MTT      H431   C43    .      .
+ MTT      O43    C43    HO43   .
+ MTT      HO43   O43    .      .
+ MTT      C44    C45    O44    .
+ MTT      H441   C44    .      .
+ MTT      O44    C44    C31    .
+ MTT      C31    O44    O35    .
+ MTT      H311   C31    .      .
+ MTT      C32    C31    C33    .
+ MTT      H321   C32    .      .
+ MTT      O32    C32    HO32   .
+ MTT      HO32   O32    .      .
+ MTT      C33    C32    O33    .
+ MTT      H331   C33    .      .
+ MTT      O33    C33    HO33   .
+ MTT      HO33   O33    .      .
+ MTT      O35    C31    C35    .
+ MTT      C35    O35    C34    .
+ MTT      H351   C35    .      .
+ MTT      C36    C35    O36    .
+ MTT      H361   C36    .      .
+ MTT      H362   C36    .      .
+ MTT      O36    C36    HO36   .
+ MTT      HO36   O36    .      .
+ MTT      C34    C35    O34    .
+ MTT      H341   C34    .      .
+ MTT      O34    C34    C21    .
+ MTT      C21    O34    O25    .
+ MTT      H211   C21    .      .
+ MTT      C22    C21    C23    .
+ MTT      H221   C22    .      .
+ MTT      O22    C22    HO22   .
+ MTT      HO22   O22    .      .
+ MTT      C23    C22    O23    .
+ MTT      H231   C23    .      .
+ MTT      O23    C23    HO23   .
+ MTT      HO23   O23    .      .
+ MTT      O25    C21    C25    .
+ MTT      C25    O25    C24    .
+ MTT      H251   C25    .      .
+ MTT      C26    C25    O26    .
+ MTT      H261   C26    .      .
+ MTT      H262   C26    .      .
+ MTT      O26    C26    HO26   .
+ MTT      HO26   O26    .      .
+ MTT      C24    C25    O24    .
+ MTT      H241   C24    .      .
+ MTT      O24    C24    C11    .
+ MTT      C11    O24    O15    .
+ MTT      H111   C11    .      .
+ MTT      C12    C11    C13    .
+ MTT      H121   C12    .      .
+ MTT      O12    C12    HO12   .
+ MTT      HO12   O12    .      .
+ MTT      C13    C12    O13    .
+ MTT      H131   C13    .      .
+ MTT      O13    C13    HO13   .
+ MTT      HO13   O13    .      .
+ MTT      O15    C11    C15    .
+ MTT      C15    O15    C14    .
+ MTT      H151   C15    .      .
+ MTT      C16    C15    O16    .
+ MTT      H161   C16    .      .
+ MTT      H162   C16    .      .
+ MTT      O16    C16    HO16   .
+ MTT      HO16   O16    .      .
+ MTT      C14    C15    O14    .
+ MTT      H141   C14    .      .
+ MTT      O14    C14    HO14   .
+ MTT      HO14   O14    .      END
+ MTT      C14    C13    .    ADD
+ MTT      C24    C23    .    ADD
+ MTT      C34    C33    .    ADD
+ MTT      C44    C43    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MTT       O14       C14       single    1.432     0.020     1.432     0.020     
+MTT       HO14      O14       single    0.970     0.012     0.839     0.014     
+MTT       C14       C13       single    1.524     0.020     1.524     0.020     
+MTT       C14       C15       single    1.524     0.020     1.524     0.020     
+MTT       H141      C14       single    1.089     0.010     0.989     0.005     
+MTT       O13       C13       single    1.432     0.020     1.432     0.020     
+MTT       C13       C12       single    1.524     0.020     1.524     0.020     
+MTT       H131      C13       single    1.089     0.010     0.989     0.005     
+MTT       HO13      O13       single    0.970     0.012     0.839     0.014     
+MTT       O12       C12       single    1.432     0.020     1.432     0.020     
+MTT       C12       C11       single    1.524     0.020     1.524     0.020     
+MTT       H121      C12       single    1.089     0.010     0.989     0.005     
+MTT       HO12      O12       single    0.970     0.012     0.839     0.014     
+MTT       O15       C11       single    1.426     0.020     1.426     0.020     
+MTT       C11       O24       single    1.426     0.020     1.426     0.020     
+MTT       H111      C11       single    1.089     0.010     0.989     0.005     
+MTT       C15       O15       single    1.426     0.020     1.426     0.020     
+MTT       C16       C15       single    1.524     0.020     1.524     0.020     
+MTT       H151      C15       single    1.089     0.010     0.989     0.005     
+MTT       O16       C16       single    1.432     0.020     1.432     0.020     
+MTT       H161      C16       single    1.089     0.010     0.989     0.005     
+MTT       H162      C16       single    1.089     0.010     0.989     0.005     
+MTT       HO16      O16       single    0.970     0.012     0.839     0.014     
+MTT       O24       C24       single    1.426     0.020     1.426     0.020     
+MTT       C24       C23       single    1.524     0.020     1.524     0.020     
+MTT       C24       C25       single    1.524     0.020     1.524     0.020     
+MTT       H241      C24       single    1.089     0.010     0.989     0.005     
+MTT       O23       C23       single    1.432     0.020     1.432     0.020     
+MTT       C23       C22       single    1.524     0.020     1.524     0.020     
+MTT       H231      C23       single    1.089     0.010     0.989     0.005     
+MTT       HO23      O23       single    0.970     0.012     0.839     0.014     
+MTT       O22       C22       single    1.432     0.020     1.432     0.020     
+MTT       C22       C21       single    1.524     0.020     1.524     0.020     
+MTT       H221      C22       single    1.089     0.010     0.989     0.005     
+MTT       HO22      O22       single    0.970     0.012     0.839     0.014     
+MTT       O25       C21       single    1.426     0.020     1.426     0.020     
+MTT       C21       O34       single    1.426     0.020     1.426     0.020     
+MTT       H211      C21       single    1.089     0.010     0.989     0.005     
+MTT       C25       O25       single    1.426     0.020     1.426     0.020     
+MTT       C26       C25       single    1.524     0.020     1.524     0.020     
+MTT       H251      C25       single    1.089     0.010     0.989     0.005     
+MTT       O26       C26       single    1.432     0.020     1.432     0.020     
+MTT       H261      C26       single    1.089     0.010     0.989     0.005     
+MTT       H262      C26       single    1.089     0.010     0.989     0.005     
+MTT       HO26      O26       single    0.970     0.012     0.839     0.014     
+MTT       O34       C34       single    1.426     0.020     1.426     0.020     
+MTT       C34       C33       single    1.524     0.020     1.524     0.020     
+MTT       C34       C35       single    1.524     0.020     1.524     0.020     
+MTT       H341      C34       single    1.089     0.010     0.989     0.005     
+MTT       O33       C33       single    1.432     0.020     1.432     0.020     
+MTT       C33       C32       single    1.524     0.020     1.524     0.020     
+MTT       H331      C33       single    1.089     0.010     0.989     0.005     
+MTT       HO33      O33       single    0.970     0.012     0.839     0.014     
+MTT       O32       C32       single    1.432     0.020     1.432     0.020     
+MTT       C32       C31       single    1.524     0.020     1.524     0.020     
+MTT       H321      C32       single    1.089     0.010     0.989     0.005     
+MTT       HO32      O32       single    0.970     0.012     0.839     0.014     
+MTT       O35       C31       single    1.426     0.020     1.426     0.020     
+MTT       C31       O44       single    1.426     0.020     1.426     0.020     
+MTT       H311      C31       single    1.089     0.010     0.989     0.005     
+MTT       C35       O35       single    1.426     0.020     1.426     0.020     
+MTT       C36       C35       single    1.524     0.020     1.524     0.020     
+MTT       H351      C35       single    1.089     0.010     0.989     0.005     
+MTT       O36       C36       single    1.432     0.020     1.432     0.020     
+MTT       H361      C36       single    1.089     0.010     0.989     0.005     
+MTT       H362      C36       single    1.089     0.010     0.989     0.005     
+MTT       HO36      O36       single    0.970     0.012     0.839     0.014     
+MTT       O44       C44       single    1.426     0.020     1.426     0.020     
+MTT       C44       C43       single    1.524     0.020     1.524     0.020     
+MTT       C44       C45       single    1.524     0.020     1.524     0.020     
+MTT       H441      C44       single    1.089     0.010     0.989     0.005     
+MTT       O43       C43       single    1.432     0.020     1.432     0.020     
+MTT       C43       C42       single    1.524     0.020     1.524     0.020     
+MTT       H431      C43       single    1.089     0.010     0.989     0.005     
+MTT       HO43      O43       single    0.970     0.012     0.839     0.014     
+MTT       O42       C42       single    1.432     0.020     1.432     0.020     
+MTT       C42       C41       single    1.524     0.020     1.524     0.020     
+MTT       H421      C42       single    1.089     0.010     0.989     0.005     
+MTT       HO42      O42       single    0.970     0.012     0.839     0.014     
+MTT       O41       C41       single    1.432     0.020     1.432     0.020     
+MTT       C41       O45       single    1.426     0.020     1.426     0.020     
+MTT       H411      C41       single    1.089     0.010     0.989     0.005     
+MTT       HO41      O41       single    0.970     0.012     0.839     0.014     
+MTT       O45       C45       single    1.426     0.020     1.426     0.020     
+MTT       C45       C46       single    1.524     0.020     1.524     0.020     
+MTT       H451      C45       single    1.089     0.010     0.989     0.005     
+MTT       C46       O46       single    1.432     0.020     1.432     0.020     
+MTT       H461      C46       single    1.089     0.010     0.989     0.005     
+MTT       H462      C46       single    1.089     0.010     0.989     0.005     
+MTT       HO46      O46       single    0.970     0.012     0.839     0.014     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MTT      HO46   O46    C46     109.470    3.000
+ MTT      O46    C46    H461    109.470    3.000
+ MTT      O46    C46    H462    109.470    3.000
+ MTT      O46    C46    C45     109.470    3.000
+ MTT      H461   C46    H462    107.900    3.000
+ MTT      H461   C46    C45     109.470    3.000
+ MTT      H462   C46    C45     109.470    3.000
+ MTT      C46    C45    H451    108.340    3.000
+ MTT      C46    C45    O45     109.470    3.000
+ MTT      C46    C45    C44     111.000    3.000
+ MTT      H451   C45    O45     109.470    3.000
+ MTT      H451   C45    C44     108.340    3.000
+ MTT      O45    C45    C44     109.470    3.000
+ MTT      C45    O45    C41     111.800    3.000
+ MTT      O45    C41    H411    109.470    3.000
+ MTT      O45    C41    O41     109.470    3.000
+ MTT      O45    C41    C42     109.470    3.000
+ MTT      H411   C41    O41     109.470    3.000
+ MTT      H411   C41    C42     108.340    3.000
+ MTT      O41    C41    C42     109.470    3.000
+ MTT      C41    O41    HO41    109.470    3.000
+ MTT      C41    C42    H421    108.340    3.000
+ MTT      C41    C42    O42     109.470    3.000
+ MTT      C41    C42    C43     111.000    3.000
+ MTT      H421   C42    O42     109.470    3.000
+ MTT      H421   C42    C43     108.340    3.000
+ MTT      O42    C42    C43     109.470    3.000
+ MTT      C42    O42    HO42    109.470    3.000
+ MTT      C42    C43    H431    108.340    3.000
+ MTT      C42    C43    O43     109.470    3.000
+ MTT      C42    C43    C44     111.000    3.000
+ MTT      H431   C43    O43     109.470    3.000
+ MTT      H431   C43    C44     108.340    3.000
+ MTT      O43    C43    C44     109.470    3.000
+ MTT      C43    O43    HO43    109.470    3.000
+ MTT      C45    C44    H441    108.340    3.000
+ MTT      C45    C44    O44     109.470    3.000
+ MTT      C45    C44    C43     111.000    3.000
+ MTT      H441   C44    O44     109.470    3.000
+ MTT      H441   C44    C43     108.340    3.000
+ MTT      O44    C44    C43     109.470    3.000
+ MTT      C44    O44    C31     111.800    3.000
+ MTT      O44    C31    H311    109.470    3.000
+ MTT      O44    C31    C32     109.470    3.000
+ MTT      O44    C31    O35     109.470    3.000
+ MTT      H311   C31    C32     108.340    3.000
+ MTT      H311   C31    O35     109.470    3.000
+ MTT      C32    C31    O35     109.470    3.000
+ MTT      C31    C32    H321    108.340    3.000
+ MTT      C31    C32    O32     109.470    3.000
+ MTT      C31    C32    C33     111.000    3.000
+ MTT      H321   C32    O32     109.470    3.000
+ MTT      H321   C32    C33     108.340    3.000
+ MTT      O32    C32    C33     109.470    3.000
+ MTT      C32    O32    HO32    109.470    3.000
+ MTT      C32    C33    H331    108.340    3.000
+ MTT      C32    C33    O33     109.470    3.000
+ MTT      C32    C33    C34     111.000    3.000
+ MTT      H331   C33    O33     109.470    3.000
+ MTT      H331   C33    C34     108.340    3.000
+ MTT      O33    C33    C34     109.470    3.000
+ MTT      C33    O33    HO33    109.470    3.000
+ MTT      C31    O35    C35     111.800    3.000
+ MTT      O35    C35    H351    109.470    3.000
+ MTT      O35    C35    C36     109.470    3.000
+ MTT      O35    C35    C34     109.470    3.000
+ MTT      H351   C35    C36     108.340    3.000
+ MTT      H351   C35    C34     108.340    3.000
+ MTT      C36    C35    C34     111.000    3.000
+ MTT      C35    C36    H361    109.470    3.000
+ MTT      C35    C36    H362    109.470    3.000
+ MTT      C35    C36    O36     109.470    3.000
+ MTT      H361   C36    H362    107.900    3.000
+ MTT      H361   C36    O36     109.470    3.000
+ MTT      H362   C36    O36     109.470    3.000
+ MTT      C36    O36    HO36    109.470    3.000
+ MTT      C35    C34    H341    108.340    3.000
+ MTT      C35    C34    O34     109.470    3.000
+ MTT      C35    C34    C33     111.000    3.000
+ MTT      H341   C34    O34     109.470    3.000
+ MTT      H341   C34    C33     108.340    3.000
+ MTT      O34    C34    C33     109.470    3.000
+ MTT      C34    O34    C21     111.800    3.000
+ MTT      O34    C21    H211    109.470    3.000
+ MTT      O34    C21    C22     109.470    3.000
+ MTT      O34    C21    O25     109.470    3.000
+ MTT      H211   C21    C22     108.340    3.000
+ MTT      H211   C21    O25     109.470    3.000
+ MTT      C22    C21    O25     109.470    3.000
+ MTT      C21    C22    H221    108.340    3.000
+ MTT      C21    C22    O22     109.470    3.000
+ MTT      C21    C22    C23     111.000    3.000
+ MTT      H221   C22    O22     109.470    3.000
+ MTT      H221   C22    C23     108.340    3.000
+ MTT      O22    C22    C23     109.470    3.000
+ MTT      C22    O22    HO22    109.470    3.000
+ MTT      C22    C23    H231    108.340    3.000
+ MTT      C22    C23    O23     109.470    3.000
+ MTT      C22    C23    C24     111.000    3.000
+ MTT      H231   C23    O23     109.470    3.000
+ MTT      H231   C23    C24     108.340    3.000
+ MTT      O23    C23    C24     109.470    3.000
+ MTT      C23    O23    HO23    109.470    3.000
+ MTT      C21    O25    C25     111.800    3.000
+ MTT      O25    C25    H251    109.470    3.000
+ MTT      O25    C25    C26     109.470    3.000
+ MTT      O25    C25    C24     109.470    3.000
+ MTT      H251   C25    C26     108.340    3.000
+ MTT      H251   C25    C24     108.340    3.000
+ MTT      C26    C25    C24     111.000    3.000
+ MTT      C25    C26    H261    109.470    3.000
+ MTT      C25    C26    H262    109.470    3.000
+ MTT      C25    C26    O26     109.470    3.000
+ MTT      H261   C26    H262    107.900    3.000
+ MTT      H261   C26    O26     109.470    3.000
+ MTT      H262   C26    O26     109.470    3.000
+ MTT      C26    O26    HO26    109.470    3.000
+ MTT      C25    C24    H241    108.340    3.000
+ MTT      C25    C24    O24     109.470    3.000
+ MTT      C25    C24    C23     111.000    3.000
+ MTT      H241   C24    O24     109.470    3.000
+ MTT      H241   C24    C23     108.340    3.000
+ MTT      O24    C24    C23     109.470    3.000
+ MTT      C24    O24    C11     111.800    3.000
+ MTT      O24    C11    H111    109.470    3.000
+ MTT      O24    C11    C12     109.470    3.000
+ MTT      O24    C11    O15     109.470    3.000
+ MTT      H111   C11    C12     108.340    3.000
+ MTT      H111   C11    O15     109.470    3.000
+ MTT      C12    C11    O15     109.470    3.000
+ MTT      C11    C12    H121    108.340    3.000
+ MTT      C11    C12    O12     109.470    3.000
+ MTT      C11    C12    C13     111.000    3.000
+ MTT      H121   C12    O12     109.470    3.000
+ MTT      H121   C12    C13     108.340    3.000
+ MTT      O12    C12    C13     109.470    3.000
+ MTT      C12    O12    HO12    109.470    3.000
+ MTT      C12    C13    H131    108.340    3.000
+ MTT      C12    C13    O13     109.470    3.000
+ MTT      C12    C13    C14     111.000    3.000
+ MTT      H131   C13    O13     109.470    3.000
+ MTT      H131   C13    C14     108.340    3.000
+ MTT      O13    C13    C14     109.470    3.000
+ MTT      C13    O13    HO13    109.470    3.000
+ MTT      C11    O15    C15     111.800    3.000
+ MTT      O15    C15    H151    109.470    3.000
+ MTT      O15    C15    C16     109.470    3.000
+ MTT      O15    C15    C14     109.470    3.000
+ MTT      H151   C15    C16     108.340    3.000
+ MTT      H151   C15    C14     108.340    3.000
+ MTT      C16    C15    C14     111.000    3.000
+ MTT      C15    C16    H161    109.470    3.000
+ MTT      C15    C16    H162    109.470    3.000
+ MTT      C15    C16    O16     109.470    3.000
+ MTT      H161   C16    H162    107.900    3.000
+ MTT      H161   C16    O16     109.470    3.000
+ MTT      H162   C16    O16     109.470    3.000
+ MTT      C16    O16    HO16    109.470    3.000
+ MTT      C15    C14    H141    108.340    3.000
+ MTT      C15    C14    O14     109.470    3.000
+ MTT      C15    C14    C13     111.000    3.000
+ MTT      H141   C14    O14     109.470    3.000
+ MTT      H141   C14    C13     108.340    3.000
+ MTT      O14    C14    C13     109.470    3.000
+ MTT      C14    O14    HO14    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MTT      var_1    HO46   O46    C46    C45     -179.969   20.000   1
+ MTT      var_2    O46    C46    C45    C44     -176.812   20.000   3
+ MTT      var_3    C46    C45    O45    C41      180.000   20.000   1
+ MTT      var_4    C45    O45    C41    C42      -60.000   20.000   1
+ MTT      var_5    O45    C41    O41    HO41      59.699   20.000   1
+ MTT      var_6    O45    C41    C42    C43       60.000   20.000   3
+ MTT      var_7    C41    C42    O42    HO42      60.402   20.000   1
+ MTT      var_8    C41    C42    C43    O43      180.000   20.000   3
+ MTT      var_9    C42    C43    O43    HO43     -60.762   20.000   1
+ MTT      var_10   C46    C45    C44    O44       60.000   20.000   3
+ MTT      var_11   C45    C44    C43    C42       60.000   20.000   3
+ MTT      var_12   C45    C44    O44    C31     -155.239   20.000   1
+ MTT      var_13   C44    O44    C31    O35       73.927   20.000   1
+ MTT      var_14   O44    C31    C32    C33      -60.000   20.000   3
+ MTT      var_15   C31    C32    O32    HO32      60.467   20.000   1
+ MTT      var_16   C31    C32    C33    O33      180.000   20.000   3
+ MTT      var_17   C32    C33    O33    HO33     -60.727   20.000   1
+ MTT      var_18   O44    C31    O35    C35       60.000   20.000   1
+ MTT      var_19   C31    O35    C35    C34       60.000   20.000   1
+ MTT      var_20   O35    C35    C36    O36       62.669   20.000   3
+ MTT      var_21   C35    C36    O36    HO36     179.969   20.000   1
+ MTT      var_22   O35    C35    C34    O34      180.000   20.000   3
+ MTT      var_23   C35    C34    C33    C32       60.000   20.000   3
+ MTT      var_24   C35    C34    O34    C21     -155.340   20.000   1
+ MTT      var_25   C34    O34    C21    O25       74.061   20.000   1
+ MTT      var_26   O34    C21    C22    C23      -60.000   20.000   3
+ MTT      var_27   C21    C22    O22    HO22      60.427   20.000   1
+ MTT      var_28   C21    C22    C23    O23      180.000   20.000   3
+ MTT      var_29   C22    C23    O23    HO23     -60.772   20.000   1
+ MTT      var_30   O34    C21    O25    C25       60.000   20.000   1
+ MTT      var_31   C21    O25    C25    C24       60.000   20.000   1
+ MTT      var_32   O25    C25    C26    O26       65.495   20.000   3
+ MTT      var_33   C25    C26    O26    HO26    -179.999   20.000   1
+ MTT      var_34   O25    C25    C24    O24      180.000   20.000   3
+ MTT      var_35   C25    C24    C23    C22       60.000   20.000   3
+ MTT      var_36   C25    C24    O24    C11     -158.331   20.000   1
+ MTT      var_37   C24    O24    C11    O15       74.073   20.000   1
+ MTT      var_38   O24    C11    C12    C13      -60.000   20.000   3
+ MTT      var_39   C11    C12    O12    HO12      59.989   20.000   1
+ MTT      var_40   C11    C12    C13    O13      180.000   20.000   3
+ MTT      var_41   C12    C13    O13    HO13     -60.049   20.000   1
+ MTT      var_42   O24    C11    O15    C15       60.000   20.000   1
+ MTT      var_43   C11    O15    C15    C14       60.000   20.000   1
+ MTT      var_44   O15    C15    C16    O16       59.888   20.000   3
+ MTT      var_45   C15    C16    O16    HO16    -179.946   20.000   1
+ MTT      var_46   O15    C15    C14    O14      180.000   20.000   3
+ MTT      var_47   C15    C14    C13    C12       60.000   20.000   3
+ MTT      var_48   C15    C14    O14    HO14     179.536   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MTT      chir_01  C14    O14    C13    C15       negativ
+ MTT      chir_02  C13    C14    O13    C12       positiv
+ MTT      chir_03  C12    C13    O12    C11       negativ
+ MTT      chir_04  C11    C12    O15    O24       positiv
+ MTT      chir_05  C15    C14    O15    C16       positiv
+ MTT      chir_06  C24    O24    C23    C25       negativ
+ MTT      chir_07  C23    C24    O23    C22       positiv
+ MTT      chir_08  C22    C23    O22    C21       negativ
+ MTT      chir_09  C21    C22    O25    O34       positiv
+ MTT      chir_10  C25    C24    O25    C26       positiv
+ MTT      chir_11  C34    O34    C33    C35       negativ
+ MTT      chir_12  C33    C34    O33    C32       positiv
+ MTT      chir_13  C32    C33    O32    C31       negativ
+ MTT      chir_14  C31    C32    O35    O44       positiv
+ MTT      chir_15  C35    C34    O35    C36       positiv
+ MTT      chir_16  C44    O44    C43    C45       negativ
+ MTT      chir_17  C43    C44    O43    C42       positiv
+ MTT      chir_18  C42    C43    O42    C41       negativ
+ MTT      chir_19  C41    C42    O41    O45       negativ
+ MTT      chir_20  C45    C44    O45    C46       positiv
+# ------------------------------------------------------

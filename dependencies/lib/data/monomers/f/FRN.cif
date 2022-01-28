@@ -1,0 +1,1158 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+FRN      FRN '.                                   ' non-polymer       170  91 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_FRN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ FRN           O2     O    OC       -0.500      0.000    0.000    0.000
+ FRN           C30    C    C         0.000      1.034    0.634    0.305
+ FRN           O1     O    OC       -0.500      1.933    0.081    0.976
+ FRN           C10    C    CH1       0.000      1.192    2.030   -0.122
+ FRN           H2     H    H         0.000      2.220    2.199   -0.471
+ FRN           C44    C    CH2       0.000      0.845    3.030    0.972
+ FRN           H441   H    H         0.000     -0.214    3.293    0.926
+ FRN           H442   H    H         0.000      1.448    3.935    0.866
+ FRN           C20    C    C         0.000      1.142    2.384    2.281
+ FRN           O13    O    O         0.000      2.360    2.162    2.641
+ FRN           NZ     N    NH1       0.000      0.257    2.123    3.178
+ FRN           HNZ    H    H         0.000      0.546    1.694    4.045
+ FRN           CE     C    CH2       0.000     -1.165    2.433    2.970
+ FRN           HE1A   H    H         0.000     -1.499    1.905    2.075
+ FRN           HE2A   H    H         0.000     -1.256    3.510    2.812
+ FRN           CD     C    CH2       0.000     -2.003    2.030    4.124
+ FRN           HD1    H    H         0.000     -1.803    2.698    4.965
+ FRN           HD2    H    H         0.000     -1.755    1.005    4.408
+ FRN           C32    C    CH2       0.000     -3.517    2.115    3.738
+ FRN           H321   H    H         0.000     -3.777    1.229    3.154
+ FRN           H322   H    H         0.000     -3.672    3.009    3.130
+ FRN           C23    C    CH2       0.000     -4.417    2.184    5.009
+ FRN           H231   H    H         0.000     -4.307    3.167    5.473
+ FRN           H232   H    H         0.000     -4.102    1.413    5.714
+ FRN           C3     C    CH1       0.000     -5.855    1.965    4.633
+ FRN           H3     H    H         0.000     -6.473    1.884    5.539
+ FRN           N3     N    NH1       0.000     -5.940    0.684    3.832
+ FRN           HN3    H    H         0.000     -6.057    0.710    2.829
+ FRN           C12    C    C         0.000     -5.853   -0.497    4.489
+ FRN           O4     O    O         0.000     -5.849   -0.510    5.748
+ FRN           C2     C    CH1       0.000     -5.950   -1.804    3.704
+ FRN           H4     H    H         0.000     -6.201   -2.640    4.371
+ FRN           C22    C    CH2       0.000     -4.549   -2.006    3.075
+ FRN           H221   H    H         0.000     -4.217   -1.071    2.619
+ FRN           H222   H    H         0.000     -4.603   -2.783    2.309
+ FRN           CG     C    CH1       0.000     -3.557   -2.426    4.161
+ FRN           HG     H    H         0.000     -3.969   -3.274    4.725
+ FRN           CD2    C    CH3       0.000     -3.315   -1.252    5.112
+ FRN           HD23   H    H         0.000     -4.089   -1.216    5.834
+ FRN           HD22   H    H         0.000     -2.383   -1.378    5.600
+ FRN           HD21   H    H         0.000     -3.305   -0.347    4.561
+ FRN           CD1    C    CH3       0.000     -2.235   -2.840    3.512
+ FRN           HD13   H    H         0.000     -2.402   -3.653    2.854
+ FRN           HD12   H    H         0.000     -1.836   -2.023    2.968
+ FRN           HD11   H    H         0.000     -1.547   -3.131    4.263
+ FRN           N2     N    NH1       0.000     -6.877   -1.703    2.673
+ FRN           HN2    H    H         0.000     -7.205   -0.781    2.421
+ FRN           C11    C    C         0.000     -7.366   -2.750    1.989
+ FRN           O3     O    O         0.000     -8.456   -3.341    2.335
+ FRN           N10    N    NH1       0.000      0.212    2.188   -1.291
+ FRN           H10    H    H         0.000     -0.758    2.402   -1.109
+ FRN           C19    C    C         0.000      0.632    2.045   -2.537
+ FRN           O11    O    O         0.000      1.835    1.722   -2.827
+ FRN           C9     C    CH1       0.000     -0.337    2.079   -3.697
+ FRN           H9     H    H         0.000      0.122    2.524   -4.591
+ FRN           N9     N    NH1       0.000     -0.915    0.780   -3.990
+ FRN           HN9    H    H         0.000     -1.213    0.150   -3.259
+ FRN           C18    C    C         0.000     -1.031    0.466   -5.290
+ FRN           O10    O    O         0.000     -0.761    1.309   -6.170
+ FRN           C8     C    CH1       0.000     -1.629   -0.823   -5.704
+ FRN           H8     H    H         0.000     -1.078   -1.668   -5.267
+ FRN           C28    C    CH2       0.000     -1.721   -0.966   -7.293
+ FRN           H281   H    H         0.000     -0.732   -0.815   -7.729
+ FRN           H282   H    H         0.000     -2.410   -0.216   -7.686
+ FRN           C36    C    CR5       0.000     -2.222   -2.343   -7.645
+ FRN           C41    C    CR56      0.000     -3.622   -2.771   -7.714
+ FRN           CE3    C    CR16      0.000     -4.843   -2.126   -7.516
+ FRN           HE3    H    H         0.000     -4.867   -1.079   -7.243
+ FRN           CZ3    C    CR16      0.000     -6.010   -2.822   -7.667
+ FRN           HZ3    H    H         0.000     -6.957   -2.322   -7.509
+ FRN           CH2    C    CR16      0.000     -5.990   -4.163   -8.023
+ FRN           HH2    H    H         0.000     -6.923   -4.701   -8.140
+ FRN           CZ2    C    CR16      0.000     -4.795   -4.818   -8.230
+ FRN           HZ2    H    H         0.000     -4.790   -5.865   -8.507
+ FRN           C43    C    CR56      0.000     -3.596   -4.129   -8.080
+ FRN           NE1    N    NR15      0.000     -2.273   -4.489   -8.211
+ FRN           HE1    H    H         0.000     -1.934   -5.437   -8.471
+ FRN           C39    C    CR15      0.000     -1.470   -3.414   -7.947
+ FRN           H39    H    H         0.000     -0.387   -3.424   -7.979
+ FRN           N8     N    NH1       0.000     -3.042   -0.832   -5.263
+ FRN           HN8    H    H         0.000     -3.696   -0.168   -5.650
+ FRN           C17    C    C         0.000     -3.466   -1.752   -4.317
+ FRN           O9     O    O         0.000     -2.777   -2.640   -3.975
+ FRN           C7     C    CH1       0.000     -4.962   -1.543   -3.809
+ FRN           H7     H    H         0.000     -4.934   -1.280   -2.742
+ FRN           N7     N    NH1       0.000     -5.512   -0.451   -4.526
+ FRN           HN7    H    H         0.000     -5.895   -0.595   -5.450
+ FRN           C16    C    C         0.000     -5.524    0.786   -3.973
+ FRN           O8     O    O         0.000     -5.051    0.977   -2.869
+ FRN           C27    C    CH2       0.000     -5.708   -2.876   -3.962
+ FRN           H271   H    H         0.000     -5.036   -3.724   -3.811
+ FRN           H272   H    H         0.000     -6.177   -2.956   -4.945
+ FRN           C35    C    C         0.000     -6.776   -2.878   -2.890
+ FRN           OD1    O    O        -0.500     -7.963   -3.089   -3.225
+ FRN           O12    O    O2       -0.500     -6.408   -2.752   -1.701
+ FRN           C21    C    CH1       0.000     -7.360   -2.772   -0.525
+ FRN           H21    H    H         0.000     -8.238   -3.386   -0.769
+ FRN           C31    C    CH3       0.000     -7.775   -1.352   -0.336
+ FRN           H313   H    H         0.000     -8.216   -0.999   -1.228
+ FRN           H312   H    H         0.000     -8.473   -1.299    0.455
+ FRN           H311   H    H         0.000     -6.923   -0.772   -0.102
+ FRN           C1     C    CH1       0.000     -6.704   -3.291    0.809
+ FRN           H1     H    H         0.000     -5.648   -2.986    0.825
+ FRN           N1     N    NH1       0.000     -6.770   -4.743    0.797
+ FRN           HN1    H    H         0.000     -7.525   -5.210    0.316
+ FRN           C      C    C         0.000     -5.824   -5.465    1.427
+ FRN           O      O    O         0.000     -4.969   -4.907    2.082
+ FRN           CA     C    CH1       0.000     -5.828   -6.968    1.320
+ FRN           HA     H    H         0.000     -6.086   -7.262    0.293
+ FRN           CB     C    CH1       0.000     -6.860   -7.546    2.289
+ FRN           HB     H    H         0.000     -7.867   -7.230    1.983
+ FRN           CG2    C    CH3       0.000     -6.779   -9.074    2.272
+ FRN           HG23   H    H         0.000     -6.978   -9.428    1.293
+ FRN           HG22   H    H         0.000     -5.809   -9.381    2.566
+ FRN           HG21   H    H         0.000     -7.494   -9.475    2.943
+ FRN           OG1    O    OH1       0.000     -6.594   -7.070    3.610
+ FRN           HG1    H    H         0.000     -7.247   -7.435    4.222
+ FRN           N      N    NT3       1.000     -4.495   -7.488    1.658
+ FRN           HN3A   H    H         0.000     -4.503   -8.517    1.583
+ FRN           HN2A   H    H         0.000     -3.802   -7.097    1.002
+ FRN           HN1A   H    H         0.000     -4.257   -7.211    2.623
+ FRN           C29    C    CH2       0.000     -1.575    2.950   -3.181
+ FRN           H291   H    H         0.000     -1.205    3.913   -2.822
+ FRN           H292   H    H         0.000     -2.063    2.420   -2.360
+ FRN           C37    C    C         0.000     -2.546    3.171   -4.276
+ FRN           OD2    O    O        -0.500     -2.269    3.755   -5.346
+ FRN           OG     O    O2       -0.500     -3.711    2.797   -4.012
+ FRN           C26    C    CH2       0.000     -4.896    2.996   -4.999
+ FRN           H261   H    H         0.000     -4.502    2.879   -6.011
+ FRN           H262   H    H         0.000     -5.264    4.016   -4.868
+ FRN           C6     C    CH1       0.000     -6.081    1.972   -4.772
+ FRN           H6     H    H         0.000     -6.440    1.613   -5.747
+ FRN           N6     N    NH1       0.000     -7.159    2.535   -4.063
+ FRN           HN6    H    H         0.000     -8.101    2.422   -4.409
+ FRN           C15    C    C         0.000     -6.952    3.196   -2.972
+ FRN           O7     O    O         0.000     -5.872    3.428   -2.508
+ FRN           C5     C    CH1       0.000     -8.132    3.663   -2.066
+ FRN           H12    H    H         0.000     -8.824    2.826   -1.896
+ FRN           C25    C    CH2       0.000     -8.892    4.851   -2.840
+ FRN           H251   H    H         0.000     -9.879    5.103   -2.447
+ FRN           H252   H    H         0.000     -8.952    4.733   -3.924
+ FRN           C34    C    CH2       0.000     -7.835    6.049   -2.477
+ FRN           H341   H    H         0.000     -8.237    7.062   -2.536
+ FRN           H342   H    H         0.000     -6.879    6.006   -3.003
+ FRN           C42    C    CH2       0.000     -7.620    5.649   -0.950
+ FRN           H421   H    H         0.000     -8.373    6.131   -0.322
+ FRN           H422   H    H         0.000     -6.624    5.949   -0.616
+ FRN           N5     N    N         0.000     -7.753    4.214   -0.849
+ FRN           C14    C    C         0.000     -7.469    3.436    0.288
+ FRN           O6     O    O         0.000     -7.768    2.267    0.220
+ FRN           C4     C    CH1       0.000     -6.898    3.957    1.558
+ FRN           H5     H    H         0.000     -7.578    4.704    1.991
+ FRN           N4     N    NH1       0.000     -6.689    2.884    2.500
+ FRN           HN4    H    H         0.000     -6.794    1.933    2.175
+ FRN           C13    C    C         0.000     -6.371    3.078    3.753
+ FRN           O5     O    O         0.000     -6.528    4.196    4.281
+ FRN           C24    C    CH2       0.000     -5.592    4.572    1.287
+ FRN           H241   H    H         0.000     -5.104    4.818    2.233
+ FRN           H242   H    H         0.000     -5.733    5.483    0.703
+ FRN           C33    C    CR6       0.000     -4.733    3.605    0.514
+ FRN           C40    C    CR16      0.000     -4.345    3.906   -0.778
+ FRN           H40    H    H         0.000     -4.659    4.837   -1.235
+ FRN           CE2    C    CR16      0.000     -3.556    3.020   -1.487
+ FRN           HE2    H    H         0.000     -3.251    3.257   -2.499
+ FRN           CZ     C    CR16      0.000     -3.155    1.832   -0.905
+ FRN           HZ     H    H         0.000     -2.538    1.137   -1.461
+ FRN           CE1    C    CR16      0.000     -3.542    1.531    0.388
+ FRN           H11    H    H         0.000     -3.230    0.599    0.843
+ FRN           C38    C    CR16      0.000     -4.327    2.420    1.099
+ FRN           H38    H    H         0.000     -4.624    2.188    2.114
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ FRN      O2     n/a    C30    START
+ FRN      C30    O2     C10    .
+ FRN      O1     C30    .      .
+ FRN      C10    C30    N10    .
+ FRN      H2     C10    .      .
+ FRN      C44    C10    C20    .
+ FRN      H441   C44    .      .
+ FRN      H442   C44    .      .
+ FRN      C20    C44    NZ     .
+ FRN      O13    C20    .      .
+ FRN      NZ     C20    CE     .
+ FRN      HNZ    NZ     .      .
+ FRN      CE     NZ     CD     .
+ FRN      HE1A   CE     .      .
+ FRN      HE2A   CE     .      .
+ FRN      CD     CE     C32    .
+ FRN      HD1    CD     .      .
+ FRN      HD2    CD     .      .
+ FRN      C32    CD     C23    .
+ FRN      H321   C32    .      .
+ FRN      H322   C32    .      .
+ FRN      C23    C32    C3     .
+ FRN      H231   C23    .      .
+ FRN      H232   C23    .      .
+ FRN      C3     C23    N3     .
+ FRN      H3     C3     .      .
+ FRN      N3     C3     C12    .
+ FRN      HN3    N3     .      .
+ FRN      C12    N3     C2     .
+ FRN      O4     C12    .      .
+ FRN      C2     C12    N2     .
+ FRN      H4     C2     .      .
+ FRN      C22    C2     CG     .
+ FRN      H221   C22    .      .
+ FRN      H222   C22    .      .
+ FRN      CG     C22    CD1    .
+ FRN      HG     CG     .      .
+ FRN      CD2    CG     HD21   .
+ FRN      HD23   CD2    .      .
+ FRN      HD22   CD2    .      .
+ FRN      HD21   CD2    .      .
+ FRN      CD1    CG     HD11   .
+ FRN      HD13   CD1    .      .
+ FRN      HD12   CD1    .      .
+ FRN      HD11   CD1    .      .
+ FRN      N2     C2     C11    .
+ FRN      HN2    N2     .      .
+ FRN      C11    N2     O3     .
+ FRN      O3     C11    .      .
+ FRN      N10    C10    C19    .
+ FRN      H10    N10    .      .
+ FRN      C19    N10    C9     .
+ FRN      O11    C19    .      .
+ FRN      C9     C19    C29    .
+ FRN      H9     C9     .      .
+ FRN      N9     C9     C18    .
+ FRN      HN9    N9     .      .
+ FRN      C18    N9     C8     .
+ FRN      O10    C18    .      .
+ FRN      C8     C18    N8     .
+ FRN      H8     C8     .      .
+ FRN      C28    C8     C36    .
+ FRN      H281   C28    .      .
+ FRN      H282   C28    .      .
+ FRN      C36    C28    C41    .
+ FRN      C41    C36    CE3    .
+ FRN      CE3    C41    CZ3    .
+ FRN      HE3    CE3    .      .
+ FRN      CZ3    CE3    CH2    .
+ FRN      HZ3    CZ3    .      .
+ FRN      CH2    CZ3    CZ2    .
+ FRN      HH2    CH2    .      .
+ FRN      CZ2    CH2    C43    .
+ FRN      HZ2    CZ2    .      .
+ FRN      C43    CZ2    NE1    .
+ FRN      NE1    C43    C39    .
+ FRN      HE1    NE1    .      .
+ FRN      C39    NE1    H39    .
+ FRN      H39    C39    .      .
+ FRN      N8     C8     C17    .
+ FRN      HN8    N8     .      .
+ FRN      C17    N8     C7     .
+ FRN      O9     C17    .      .
+ FRN      C7     C17    C27    .
+ FRN      H7     C7     .      .
+ FRN      N7     C7     C16    .
+ FRN      HN7    N7     .      .
+ FRN      C16    N7     O8     .
+ FRN      O8     C16    .      .
+ FRN      C27    C7     C35    .
+ FRN      H271   C27    .      .
+ FRN      H272   C27    .      .
+ FRN      C35    C27    O12    .
+ FRN      OD1    C35    .      .
+ FRN      O12    C35    C21    .
+ FRN      C21    O12    C1     .
+ FRN      H21    C21    .      .
+ FRN      C31    C21    H311   .
+ FRN      H313   C31    .      .
+ FRN      H312   C31    .      .
+ FRN      H311   C31    .      .
+ FRN      C1     C21    N1     .
+ FRN      H1     C1     .      .
+ FRN      N1     C1     C      .
+ FRN      HN1    N1     .      .
+ FRN      C      N1     CA     .
+ FRN      O      C      .      .
+ FRN      CA     C      N      .
+ FRN      HA     CA     .      .
+ FRN      CB     CA     OG1    .
+ FRN      HB     CB     .      .
+ FRN      CG2    CB     HG21   .
+ FRN      HG23   CG2    .      .
+ FRN      HG22   CG2    .      .
+ FRN      HG21   CG2    .      .
+ FRN      OG1    CB     HG1    .
+ FRN      HG1    OG1    .      .
+ FRN      N      CA     HN1A   .
+ FRN      HN3A   N      .      .
+ FRN      HN2A   N      .      .
+ FRN      HN1A   N      .      .
+ FRN      C29    C9     C37    .
+ FRN      H291   C29    .      .
+ FRN      H292   C29    .      .
+ FRN      C37    C29    OG     .
+ FRN      OD2    C37    .      .
+ FRN      OG     C37    C26    .
+ FRN      C26    OG     C6     .
+ FRN      H261   C26    .      .
+ FRN      H262   C26    .      .
+ FRN      C6     C26    N6     .
+ FRN      H6     C6     .      .
+ FRN      N6     C6     C15    .
+ FRN      HN6    N6     .      .
+ FRN      C15    N6     C5     .
+ FRN      O7     C15    .      .
+ FRN      C5     C15    C25    .
+ FRN      H12    C5     .      .
+ FRN      C25    C5     C34    .
+ FRN      H251   C25    .      .
+ FRN      H252   C25    .      .
+ FRN      C34    C25    C42    .
+ FRN      H341   C34    .      .
+ FRN      H342   C34    .      .
+ FRN      C42    C34    N5     .
+ FRN      H421   C42    .      .
+ FRN      H422   C42    .      .
+ FRN      N5     C42    C14    .
+ FRN      C14    N5     C4     .
+ FRN      O6     C14    .      .
+ FRN      C4     C14    C24    .
+ FRN      H5     C4     .      .
+ FRN      N4     C4     C13    .
+ FRN      HN4    N4     .      .
+ FRN      C13    N4     O5     .
+ FRN      O5     C13    .      .
+ FRN      C24    C4     C33    .
+ FRN      H241   C24    .      .
+ FRN      H242   C24    .      .
+ FRN      C33    C24    C40    .
+ FRN      C40    C33    CE2    .
+ FRN      H40    C40    .      .
+ FRN      CE2    C40    CZ     .
+ FRN      HE2    CE2    .      .
+ FRN      CZ     CE2    CE1    .
+ FRN      HZ     CZ     .      .
+ FRN      CE1    CZ     C38    .
+ FRN      H11    CE1    .      .
+ FRN      C38    CE1    H38    .
+ FRN      H38    C38    .      END
+ FRN      C1     C11    .    ADD
+ FRN      C3     C13    .    ADD
+ FRN      C33    C38    .    ADD
+ FRN      N5     C5     .    ADD
+ FRN      C6     C16    .    ADD
+ FRN      C36    C39    .    ADD
+ FRN      C41    C43    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+FRN       N         CA        single    1.488     0.020     1.488     0.020     
+FRN       HN1A      N         single    1.036     0.016     0.914     0.007     
+FRN       HN2A      N         single    1.036     0.016     0.914     0.007     
+FRN       HN3A      N         single    1.036     0.016     0.914     0.007     
+FRN       CA        C         single    1.500     0.020     1.500     0.020     
+FRN       CB        CA        single    1.524     0.020     1.524     0.020     
+FRN       HA        CA        single    1.089     0.010     0.989     0.005     
+FRN       O         C         double    1.220     0.020     1.220     0.020     
+FRN       C         N1        single    1.330     0.020     1.330     0.020     
+FRN       OG1       CB        single    1.432     0.020     1.432     0.020     
+FRN       CG2       CB        single    1.524     0.020     1.524     0.020     
+FRN       HB        CB        single    1.089     0.010     0.989     0.005     
+FRN       HG1       OG1       single    0.970     0.012     0.839     0.014     
+FRN       HG21      CG2       single    1.089     0.010     0.989     0.005     
+FRN       HG22      CG2       single    1.089     0.010     0.989     0.005     
+FRN       HG23      CG2       single    1.089     0.010     0.989     0.005     
+FRN       N1        C1        single    1.450     0.020     1.450     0.020     
+FRN       HN1       N1        single    1.016     0.010     0.899     0.007     
+FRN       C1        C11       single    1.500     0.020     1.500     0.020     
+FRN       C1        C21       single    1.524     0.020     1.524     0.020     
+FRN       H1        C1        single    1.089     0.010     0.989     0.005     
+FRN       O3        C11       double    1.220     0.020     1.220     0.020     
+FRN       C11       N2        single    1.330     0.020     1.330     0.020     
+FRN       C21       O12       single    1.426     0.020     1.426     0.020     
+FRN       C31       C21       single    1.524     0.020     1.524     0.020     
+FRN       H21       C21       single    1.089     0.010     0.989     0.005     
+FRN       O12       C35       deloc     1.454     0.020     1.454     0.020     
+FRN       H311      C31       single    1.089     0.010     0.989     0.005     
+FRN       H312      C31       single    1.089     0.010     0.989     0.005     
+FRN       H313      C31       single    1.089     0.010     0.989     0.005     
+FRN       N2        C2        single    1.450     0.020     1.450     0.020     
+FRN       HN2       N2        single    1.016     0.010     0.899     0.007     
+FRN       C2        C12       single    1.500     0.020     1.500     0.020     
+FRN       C22       C2        single    1.524     0.020     1.524     0.020     
+FRN       H4        C2        single    1.089     0.010     0.989     0.005     
+FRN       O4        C12       double    1.220     0.020     1.220     0.020     
+FRN       C12       N3        single    1.330     0.020     1.330     0.020     
+FRN       CG        C22       single    1.524     0.020     1.524     0.020     
+FRN       H221      C22       single    1.089     0.010     0.989     0.005     
+FRN       H222      C22       single    1.089     0.010     0.989     0.005     
+FRN       CD1       CG        single    1.524     0.020     1.524     0.020     
+FRN       CD2       CG        single    1.524     0.020     1.524     0.020     
+FRN       HG        CG        single    1.089     0.010     0.989     0.005     
+FRN       HD11      CD1       single    1.089     0.010     0.989     0.005     
+FRN       HD12      CD1       single    1.089     0.010     0.989     0.005     
+FRN       HD13      CD1       single    1.089     0.010     0.989     0.005     
+FRN       HD21      CD2       single    1.089     0.010     0.989     0.005     
+FRN       HD22      CD2       single    1.089     0.010     0.989     0.005     
+FRN       HD23      CD2       single    1.089     0.010     0.989     0.005     
+FRN       N3        C3        single    1.450     0.020     1.450     0.020     
+FRN       HN3       N3        single    1.016     0.010     0.899     0.007     
+FRN       C3        C13       single    1.500     0.020     1.500     0.020     
+FRN       C3        C23       single    1.524     0.020     1.524     0.020     
+FRN       H3        C3        single    1.089     0.010     0.989     0.005     
+FRN       O5        C13       double    1.220     0.020     1.220     0.020     
+FRN       C13       N4        single    1.330     0.020     1.330     0.020     
+FRN       C23       C32       single    1.524     0.020     1.524     0.020     
+FRN       H231      C23       single    1.089     0.010     0.989     0.005     
+FRN       H232      C23       single    1.089     0.010     0.989     0.005     
+FRN       C32       CD        single    1.524     0.020     1.524     0.020     
+FRN       H321      C32       single    1.089     0.010     0.989     0.005     
+FRN       H322      C32       single    1.089     0.010     0.989     0.005     
+FRN       CD        CE        single    1.524     0.020     1.524     0.020     
+FRN       HD1       CD        single    1.089     0.010     0.989     0.005     
+FRN       HD2       CD        single    1.089     0.010     0.989     0.005     
+FRN       CE        NZ        single    1.450     0.020     1.450     0.020     
+FRN       HE1A      CE        single    1.089     0.010     0.989     0.005     
+FRN       HE2A      CE        single    1.089     0.010     0.989     0.005     
+FRN       NZ        C20       single    1.330     0.020     1.330     0.020     
+FRN       HNZ       NZ        single    1.016     0.010     0.899     0.007     
+FRN       N4        C4        single    1.450     0.020     1.450     0.020     
+FRN       HN4       N4        single    1.016     0.010     0.899     0.007     
+FRN       C4        C14       single    1.500     0.020     1.500     0.020     
+FRN       C24       C4        single    1.524     0.020     1.524     0.020     
+FRN       H5        C4        single    1.089     0.010     0.989     0.005     
+FRN       O6        C14       double    1.220     0.020     1.220     0.020     
+FRN       C14       N5        single    1.330     0.020     1.330     0.020     
+FRN       C33       C24       single    1.511     0.020     1.511     0.020     
+FRN       H241      C24       single    1.089     0.010     0.989     0.005     
+FRN       H242      C24       single    1.089     0.010     0.989     0.005     
+FRN       C33       C38       single    1.390     0.020     1.390     0.020     
+FRN       C40       C33       double    1.390     0.020     1.390     0.020     
+FRN       C38       CE1       double    1.390     0.020     1.390     0.020     
+FRN       H38       C38       single    1.082     0.013     0.975     0.010     
+FRN       CE2       C40       single    1.390     0.020     1.390     0.020     
+FRN       H40       C40       single    1.082     0.013     0.975     0.010     
+FRN       CE1       CZ        single    1.390     0.020     1.390     0.020     
+FRN       H11       CE1       single    1.082     0.013     0.975     0.010     
+FRN       CZ        CE2       double    1.390     0.020     1.390     0.020     
+FRN       HE2       CE2       single    1.082     0.013     0.975     0.010     
+FRN       HZ        CZ        single    1.082     0.013     0.975     0.010     
+FRN       N5        C5        single    1.455     0.020     1.455     0.020     
+FRN       N5        C42       single    1.455     0.020     1.455     0.020     
+FRN       C5        C15       single    1.500     0.020     1.500     0.020     
+FRN       C25       C5        single    1.524     0.020     1.524     0.020     
+FRN       H12       C5        single    1.089     0.010     0.989     0.005     
+FRN       O7        C15       double    1.220     0.020     1.220     0.020     
+FRN       C15       N6        single    1.330     0.020     1.330     0.020     
+FRN       C34       C25       single    1.524     0.020     1.524     0.020     
+FRN       H251      C25       single    1.089     0.010     0.989     0.005     
+FRN       H252      C25       single    1.089     0.010     0.989     0.005     
+FRN       C42       C34       single    1.524     0.020     1.524     0.020     
+FRN       H341      C34       single    1.089     0.010     0.989     0.005     
+FRN       H342      C34       single    1.089     0.010     0.989     0.005     
+FRN       H421      C42       single    1.089     0.010     0.989     0.005     
+FRN       H422      C42       single    1.089     0.010     0.989     0.005     
+FRN       N6        C6        single    1.450     0.020     1.450     0.020     
+FRN       HN6       N6        single    1.016     0.010     0.899     0.007     
+FRN       C6        C16       single    1.500     0.020     1.500     0.020     
+FRN       C6        C26       single    1.524     0.020     1.524     0.020     
+FRN       H6        C6        single    1.089     0.010     0.989     0.005     
+FRN       O8        C16       double    1.220     0.020     1.220     0.020     
+FRN       C16       N7        single    1.330     0.020     1.330     0.020     
+FRN       C26       OG        single    1.426     0.020     1.426     0.020     
+FRN       H261      C26       single    1.089     0.010     0.989     0.005     
+FRN       H262      C26       single    1.089     0.010     0.989     0.005     
+FRN       OG        C37       deloc     1.454     0.020     1.454     0.020     
+FRN       N7        C7        single    1.450     0.020     1.450     0.020     
+FRN       HN7       N7        single    1.016     0.010     0.899     0.007     
+FRN       C7        C17       single    1.500     0.020     1.500     0.020     
+FRN       C27       C7        single    1.524     0.020     1.524     0.020     
+FRN       H7        C7        single    1.089     0.010     0.989     0.005     
+FRN       O9        C17       double    1.220     0.020     1.220     0.020     
+FRN       C17       N8        single    1.330     0.020     1.330     0.020     
+FRN       C35       C27       single    1.510     0.020     1.510     0.020     
+FRN       H271      C27       single    1.089     0.010     0.989     0.005     
+FRN       H272      C27       single    1.089     0.010     0.989     0.005     
+FRN       OD1       C35       deloc     1.220     0.020     1.220     0.020     
+FRN       N8        C8        single    1.450     0.020     1.450     0.020     
+FRN       HN8       N8        single    1.016     0.010     0.899     0.007     
+FRN       C8        C18       single    1.500     0.020     1.500     0.020     
+FRN       C28       C8        single    1.524     0.020     1.524     0.020     
+FRN       H8        C8        single    1.089     0.010     0.989     0.005     
+FRN       O10       C18       double    1.220     0.020     1.220     0.020     
+FRN       C18       N9        single    1.330     0.020     1.330     0.020     
+FRN       C36       C28       single    1.510     0.020     1.510     0.020     
+FRN       H281      C28       single    1.089     0.010     0.989     0.005     
+FRN       H282      C28       single    1.089     0.010     0.989     0.005     
+FRN       C36       C39       double    1.387     0.020     1.387     0.020     
+FRN       C41       C36       single    1.490     0.020     1.490     0.020     
+FRN       C39       NE1       single    1.350     0.020     1.350     0.020     
+FRN       H39       C39       single    1.082     0.013     0.975     0.010     
+FRN       C41       C43       double    1.490     0.020     1.490     0.020     
+FRN       CE3       C41       single    1.390     0.020     1.390     0.020     
+FRN       NE1       C43       single    1.340     0.020     1.340     0.020     
+FRN       HE1       NE1       single    1.016     0.010     0.899     0.007     
+FRN       C43       CZ2       single    1.390     0.020     1.390     0.020     
+FRN       CZ3       CE3       double    1.390     0.020     1.390     0.020     
+FRN       HE3       CE3       single    1.082     0.013     0.975     0.010     
+FRN       CZ2       CH2       double    1.390     0.020     1.390     0.020     
+FRN       HZ2       CZ2       single    1.082     0.013     0.975     0.010     
+FRN       CH2       CZ3       single    1.390     0.020     1.390     0.020     
+FRN       HZ3       CZ3       single    1.082     0.013     0.975     0.010     
+FRN       HH2       CH2       single    1.082     0.013     0.975     0.010     
+FRN       N9        C9        single    1.450     0.020     1.450     0.020     
+FRN       HN9       N9        single    1.016     0.010     0.899     0.007     
+FRN       C9        C19       single    1.500     0.020     1.500     0.020     
+FRN       C29       C9        single    1.524     0.020     1.524     0.020     
+FRN       H9        C9        single    1.089     0.010     0.989     0.005     
+FRN       O11       C19       double    1.220     0.020     1.220     0.020     
+FRN       C19       N10       single    1.330     0.020     1.330     0.020     
+FRN       C37       C29       single    1.510     0.020     1.510     0.020     
+FRN       H291      C29       single    1.089     0.010     0.989     0.005     
+FRN       H292      C29       single    1.089     0.010     0.989     0.005     
+FRN       OD2       C37       deloc     1.220     0.020     1.220     0.020     
+FRN       N10       C10       single    1.450     0.020     1.450     0.020     
+FRN       H10       N10       single    1.016     0.010     0.899     0.007     
+FRN       C10       C30       single    1.500     0.020     1.500     0.020     
+FRN       C44       C10       single    1.524     0.020     1.524     0.020     
+FRN       H2        C10       single    1.089     0.010     0.989     0.005     
+FRN       O13       C20       double    1.220     0.020     1.220     0.020     
+FRN       C20       C44       single    1.510     0.020     1.510     0.020     
+FRN       O1        C30       deloc     1.250     0.020     1.250     0.020     
+FRN       C30       O2        deloc     1.250     0.020     1.250     0.020     
+FRN       H441      C44       single    1.089     0.010     0.989     0.005     
+FRN       H442      C44       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ FRN      O2     C30    O1      123.000    3.000
+ FRN      O2     C30    C10     118.500    3.000
+ FRN      O1     C30    C10     118.500    3.000
+ FRN      C30    C10    H2      108.810    3.000
+ FRN      C30    C10    C44     109.470    3.000
+ FRN      C30    C10    N10     111.600    3.000
+ FRN      H2     C10    C44     108.340    3.000
+ FRN      H2     C10    N10     108.550    3.000
+ FRN      C44    C10    N10     110.000    3.000
+ FRN      C10    C44    H441    109.470    3.000
+ FRN      C10    C44    H442    109.470    3.000
+ FRN      C10    C44    C20     109.470    3.000
+ FRN      H441   C44    H442    107.900    3.000
+ FRN      H441   C44    C20     109.470    3.000
+ FRN      H442   C44    C20     109.470    3.000
+ FRN      C44    C20    O13     120.500    3.000
+ FRN      C44    C20    NZ      116.500    3.000
+ FRN      O13    C20    NZ      123.000    3.000
+ FRN      C20    NZ     HNZ     120.000    3.000
+ FRN      C20    NZ     CE      121.500    3.000
+ FRN      HNZ    NZ     CE      118.500    3.000
+ FRN      NZ     CE     HE1A    109.470    3.000
+ FRN      NZ     CE     HE2A    109.470    3.000
+ FRN      NZ     CE     CD      112.000    3.000
+ FRN      HE1A   CE     HE2A    107.900    3.000
+ FRN      HE1A   CE     CD      109.470    3.000
+ FRN      HE2A   CE     CD      109.470    3.000
+ FRN      CE     CD     HD1     109.470    3.000
+ FRN      CE     CD     HD2     109.470    3.000
+ FRN      CE     CD     C32     111.000    3.000
+ FRN      HD1    CD     HD2     107.900    3.000
+ FRN      HD1    CD     C32     109.470    3.000
+ FRN      HD2    CD     C32     109.470    3.000
+ FRN      CD     C32    H321    109.470    3.000
+ FRN      CD     C32    H322    109.470    3.000
+ FRN      CD     C32    C23     111.000    3.000
+ FRN      H321   C32    H322    107.900    3.000
+ FRN      H321   C32    C23     109.470    3.000
+ FRN      H322   C32    C23     109.470    3.000
+ FRN      C32    C23    H231    109.470    3.000
+ FRN      C32    C23    H232    109.470    3.000
+ FRN      C32    C23    C3      111.000    3.000
+ FRN      H231   C23    H232    107.900    3.000
+ FRN      H231   C23    C3      109.470    3.000
+ FRN      H232   C23    C3      109.470    3.000
+ FRN      C23    C3     H3      108.340    3.000
+ FRN      C23    C3     N3      110.000    3.000
+ FRN      C23    C3     C13     109.470    3.000
+ FRN      H3     C3     N3      108.550    3.000
+ FRN      H3     C3     C13     108.810    3.000
+ FRN      N3     C3     C13     111.600    3.000
+ FRN      C3     N3     HN3     118.500    3.000
+ FRN      C3     N3     C12     121.500    3.000
+ FRN      HN3    N3     C12     120.000    3.000
+ FRN      N3     C12    O4      123.000    3.000
+ FRN      N3     C12    C2      116.500    3.000
+ FRN      O4     C12    C2      120.500    3.000
+ FRN      C12    C2     H4      108.810    3.000
+ FRN      C12    C2     C22     109.470    3.000
+ FRN      C12    C2     N2      111.600    3.000
+ FRN      H4     C2     C22     108.340    3.000
+ FRN      H4     C2     N2      108.550    3.000
+ FRN      C22    C2     N2      110.000    3.000
+ FRN      C2     C22    H221    109.470    3.000
+ FRN      C2     C22    H222    109.470    3.000
+ FRN      C2     C22    CG      111.000    3.000
+ FRN      H221   C22    H222    107.900    3.000
+ FRN      H221   C22    CG      109.470    3.000
+ FRN      H222   C22    CG      109.470    3.000
+ FRN      C22    CG     HG      108.340    3.000
+ FRN      C22    CG     CD2     111.000    3.000
+ FRN      C22    CG     CD1     111.000    3.000
+ FRN      HG     CG     CD2     108.340    3.000
+ FRN      HG     CG     CD1     108.340    3.000
+ FRN      CD2    CG     CD1     111.000    3.000
+ FRN      CG     CD2    HD23    109.470    3.000
+ FRN      CG     CD2    HD22    109.470    3.000
+ FRN      CG     CD2    HD21    109.470    3.000
+ FRN      HD23   CD2    HD22    109.470    3.000
+ FRN      HD23   CD2    HD21    109.470    3.000
+ FRN      HD22   CD2    HD21    109.470    3.000
+ FRN      CG     CD1    HD13    109.470    3.000
+ FRN      CG     CD1    HD12    109.470    3.000
+ FRN      CG     CD1    HD11    109.470    3.000
+ FRN      HD13   CD1    HD12    109.470    3.000
+ FRN      HD13   CD1    HD11    109.470    3.000
+ FRN      HD12   CD1    HD11    109.470    3.000
+ FRN      C2     N2     HN2     118.500    3.000
+ FRN      C2     N2     C11     121.500    3.000
+ FRN      HN2    N2     C11     120.000    3.000
+ FRN      N2     C11    O3      123.000    3.000
+ FRN      N2     C11    C1      116.500    3.000
+ FRN      O3     C11    C1      120.500    3.000
+ FRN      C10    N10    H10     118.500    3.000
+ FRN      C10    N10    C19     121.500    3.000
+ FRN      H10    N10    C19     120.000    3.000
+ FRN      N10    C19    O11     123.000    3.000
+ FRN      N10    C19    C9      116.500    3.000
+ FRN      O11    C19    C9      120.500    3.000
+ FRN      C19    C9     H9      108.810    3.000
+ FRN      C19    C9     N9      111.600    3.000
+ FRN      C19    C9     C29     109.470    3.000
+ FRN      H9     C9     N9      108.550    3.000
+ FRN      H9     C9     C29     108.340    3.000
+ FRN      N9     C9     C29     110.000    3.000
+ FRN      C9     N9     HN9     118.500    3.000
+ FRN      C9     N9     C18     121.500    3.000
+ FRN      HN9    N9     C18     120.000    3.000
+ FRN      N9     C18    O10     123.000    3.000
+ FRN      N9     C18    C8      116.500    3.000
+ FRN      O10    C18    C8      120.500    3.000
+ FRN      C18    C8     H8      108.810    3.000
+ FRN      C18    C8     C28     109.470    3.000
+ FRN      C18    C8     N8      111.600    3.000
+ FRN      H8     C8     C28     108.340    3.000
+ FRN      H8     C8     N8      108.550    3.000
+ FRN      C28    C8     N8      110.000    3.000
+ FRN      C8     C28    H281    109.470    3.000
+ FRN      C8     C28    H282    109.470    3.000
+ FRN      C8     C28    C36     109.470    3.000
+ FRN      H281   C28    H282    107.900    3.000
+ FRN      H281   C28    C36     109.470    3.000
+ FRN      H282   C28    C36     109.470    3.000
+ FRN      C28    C36    C41     126.000    3.000
+ FRN      C28    C36    C39     126.000    3.000
+ FRN      C41    C36    C39     108.000    3.000
+ FRN      C36    C41    CE3     126.000    3.000
+ FRN      C36    C41    C43     108.000    3.000
+ FRN      CE3    C41    C43     120.000    3.000
+ FRN      C41    CE3    HE3     120.000    3.000
+ FRN      C41    CE3    CZ3     120.000    3.000
+ FRN      HE3    CE3    CZ3     120.000    3.000
+ FRN      CE3    CZ3    HZ3     120.000    3.000
+ FRN      CE3    CZ3    CH2     120.000    3.000
+ FRN      HZ3    CZ3    CH2     120.000    3.000
+ FRN      CZ3    CH2    HH2     120.000    3.000
+ FRN      CZ3    CH2    CZ2     120.000    3.000
+ FRN      HH2    CH2    CZ2     120.000    3.000
+ FRN      CH2    CZ2    HZ2     120.000    3.000
+ FRN      CH2    CZ2    C43     120.000    3.000
+ FRN      HZ2    CZ2    C43     120.000    3.000
+ FRN      CZ2    C43    NE1     132.000    3.000
+ FRN      CZ2    C43    C41     120.000    3.000
+ FRN      NE1    C43    C41     108.000    3.000
+ FRN      C43    NE1    HE1     126.000    3.000
+ FRN      C43    NE1    C39     108.000    3.000
+ FRN      HE1    NE1    C39     126.000    3.000
+ FRN      NE1    C39    H39     126.000    3.000
+ FRN      NE1    C39    C36     108.000    3.000
+ FRN      H39    C39    C36     126.000    3.000
+ FRN      C8     N8     HN8     118.500    3.000
+ FRN      C8     N8     C17     121.500    3.000
+ FRN      HN8    N8     C17     120.000    3.000
+ FRN      N8     C17    O9      123.000    3.000
+ FRN      N8     C17    C7      116.500    3.000
+ FRN      O9     C17    C7      120.500    3.000
+ FRN      C17    C7     H7      108.810    3.000
+ FRN      C17    C7     N7      111.600    3.000
+ FRN      C17    C7     C27     109.470    3.000
+ FRN      H7     C7     N7      108.550    3.000
+ FRN      H7     C7     C27     108.340    3.000
+ FRN      N7     C7     C27     110.000    3.000
+ FRN      C7     N7     HN7     118.500    3.000
+ FRN      C7     N7     C16     121.500    3.000
+ FRN      HN7    N7     C16     120.000    3.000
+ FRN      N7     C16    O8      123.000    3.000
+ FRN      N7     C16    C6      116.500    3.000
+ FRN      O8     C16    C6      120.500    3.000
+ FRN      C7     C27    H271    109.470    3.000
+ FRN      C7     C27    H272    109.470    3.000
+ FRN      C7     C27    C35     109.470    3.000
+ FRN      H271   C27    H272    107.900    3.000
+ FRN      H271   C27    C35     109.470    3.000
+ FRN      H272   C27    C35     109.470    3.000
+ FRN      C27    C35    OD1     120.500    3.000
+ FRN      C27    C35    O12     120.000    3.000
+ FRN      OD1    C35    O12     119.000    3.000
+ FRN      C35    O12    C21     111.800    3.000
+ FRN      O12    C21    H21     109.470    3.000
+ FRN      O12    C21    C31     109.470    3.000
+ FRN      O12    C21    C1      109.470    3.000
+ FRN      H21    C21    C31     108.340    3.000
+ FRN      H21    C21    C1      108.340    3.000
+ FRN      C31    C21    C1      111.000    3.000
+ FRN      C21    C31    H313    109.470    3.000
+ FRN      C21    C31    H312    109.470    3.000
+ FRN      C21    C31    H311    109.470    3.000
+ FRN      H313   C31    H312    109.470    3.000
+ FRN      H313   C31    H311    109.470    3.000
+ FRN      H312   C31    H311    109.470    3.000
+ FRN      C21    C1     H1      108.340    3.000
+ FRN      C21    C1     N1      110.000    3.000
+ FRN      C21    C1     C11     109.470    3.000
+ FRN      H1     C1     N1      108.550    3.000
+ FRN      H1     C1     C11     108.810    3.000
+ FRN      N1     C1     C11     111.600    3.000
+ FRN      C1     N1     HN1     118.500    3.000
+ FRN      C1     N1     C       121.500    3.000
+ FRN      HN1    N1     C       120.000    3.000
+ FRN      N1     C      O       123.000    3.000
+ FRN      N1     C      CA      116.500    3.000
+ FRN      O      C      CA      120.500    3.000
+ FRN      C      CA     HA      108.810    3.000
+ FRN      C      CA     CB      109.470    3.000
+ FRN      C      CA     N       111.600    3.000
+ FRN      HA     CA     CB      108.340    3.000
+ FRN      HA     CA     N       108.550    3.000
+ FRN      CB     CA     N       110.000    3.000
+ FRN      CA     CB     HB      108.340    3.000
+ FRN      CA     CB     CG2     111.000    3.000
+ FRN      CA     CB     OG1     109.470    3.000
+ FRN      HB     CB     CG2     108.340    3.000
+ FRN      HB     CB     OG1     109.470    3.000
+ FRN      CG2    CB     OG1     109.470    3.000
+ FRN      CB     CG2    HG23    109.470    3.000
+ FRN      CB     CG2    HG22    109.470    3.000
+ FRN      CB     CG2    HG21    109.470    3.000
+ FRN      HG23   CG2    HG22    109.470    3.000
+ FRN      HG23   CG2    HG21    109.470    3.000
+ FRN      HG22   CG2    HG21    109.470    3.000
+ FRN      CB     OG1    HG1     109.470    3.000
+ FRN      CA     N      HN3A    109.470    3.000
+ FRN      CA     N      HN2A    109.470    3.000
+ FRN      CA     N      HN1A    109.470    3.000
+ FRN      HN3A   N      HN2A    109.470    3.000
+ FRN      HN3A   N      HN1A    109.470    3.000
+ FRN      HN2A   N      HN1A    109.470    3.000
+ FRN      C9     C29    H291    109.470    3.000
+ FRN      C9     C29    H292    109.470    3.000
+ FRN      C9     C29    C37     109.470    3.000
+ FRN      H291   C29    H292    107.900    3.000
+ FRN      H291   C29    C37     109.470    3.000
+ FRN      H292   C29    C37     109.470    3.000
+ FRN      C29    C37    OD2     120.500    3.000
+ FRN      C29    C37    OG      120.000    3.000
+ FRN      OD2    C37    OG      119.000    3.000
+ FRN      C37    OG     C26     120.000    3.000
+ FRN      OG     C26    H261    109.470    3.000
+ FRN      OG     C26    H262    109.470    3.000
+ FRN      OG     C26    C6      109.470    3.000
+ FRN      H261   C26    H262    107.900    3.000
+ FRN      H261   C26    C6      109.470    3.000
+ FRN      H262   C26    C6      109.470    3.000
+ FRN      C26    C6     H6      108.340    3.000
+ FRN      C26    C6     N6      110.000    3.000
+ FRN      C26    C6     C16     109.470    3.000
+ FRN      H6     C6     N6      108.550    3.000
+ FRN      H6     C6     C16     108.810    3.000
+ FRN      N6     C6     C16     111.600    3.000
+ FRN      C6     N6     HN6     118.500    3.000
+ FRN      C6     N6     C15     121.500    3.000
+ FRN      HN6    N6     C15     120.000    3.000
+ FRN      N6     C15    O7      123.000    3.000
+ FRN      N6     C15    C5      116.500    3.000
+ FRN      O7     C15    C5      120.500    3.000
+ FRN      C15    C5     H12     108.810    3.000
+ FRN      C15    C5     C25     109.470    3.000
+ FRN      C15    C5     N5      111.600    3.000
+ FRN      H12    C5     C25     108.340    3.000
+ FRN      H12    C5     N5      109.470    3.000
+ FRN      C25    C5     N5      105.000    3.000
+ FRN      C5     C25    H251    109.470    3.000
+ FRN      C5     C25    H252    109.470    3.000
+ FRN      C5     C25    C34     111.000    3.000
+ FRN      H251   C25    H252    107.900    3.000
+ FRN      H251   C25    C34     109.470    3.000
+ FRN      H252   C25    C34     109.470    3.000
+ FRN      C25    C34    H341    109.470    3.000
+ FRN      C25    C34    H342    109.470    3.000
+ FRN      C25    C34    C42     111.000    3.000
+ FRN      H341   C34    H342    107.900    3.000
+ FRN      H341   C34    C42     109.470    3.000
+ FRN      H342   C34    C42     109.470    3.000
+ FRN      C34    C42    H421    109.470    3.000
+ FRN      C34    C42    H422    109.470    3.000
+ FRN      C34    C42    N5      105.000    3.000
+ FRN      H421   C42    H422    107.900    3.000
+ FRN      H421   C42    N5      109.470    3.000
+ FRN      H422   C42    N5      109.470    3.000
+ FRN      C42    N5     C14     127.000    3.000
+ FRN      C42    N5     C5      112.000    3.000
+ FRN      C14    N5     C5      121.000    3.000
+ FRN      N5     C14    O6      123.000    3.000
+ FRN      N5     C14    C4      116.500    3.000
+ FRN      O6     C14    C4      120.500    3.000
+ FRN      C14    C4     H5      108.810    3.000
+ FRN      C14    C4     N4      111.600    3.000
+ FRN      C14    C4     C24     109.470    3.000
+ FRN      H5     C4     N4      108.550    3.000
+ FRN      H5     C4     C24     108.340    3.000
+ FRN      N4     C4     C24     110.000    3.000
+ FRN      C4     N4     HN4     118.500    3.000
+ FRN      C4     N4     C13     121.500    3.000
+ FRN      HN4    N4     C13     120.000    3.000
+ FRN      N4     C13    O5      123.000    3.000
+ FRN      N4     C13    C3      116.500    3.000
+ FRN      O5     C13    C3      120.500    3.000
+ FRN      C4     C24    H241    109.470    3.000
+ FRN      C4     C24    H242    109.470    3.000
+ FRN      C4     C24    C33     109.470    3.000
+ FRN      H241   C24    H242    107.900    3.000
+ FRN      H241   C24    C33     109.470    3.000
+ FRN      H242   C24    C33     109.470    3.000
+ FRN      C24    C33    C40     120.000    3.000
+ FRN      C24    C33    C38     120.000    3.000
+ FRN      C40    C33    C38     120.000    3.000
+ FRN      C33    C40    H40     120.000    3.000
+ FRN      C33    C40    CE2     120.000    3.000
+ FRN      H40    C40    CE2     120.000    3.000
+ FRN      C40    CE2    HE2     120.000    3.000
+ FRN      C40    CE2    CZ      120.000    3.000
+ FRN      HE2    CE2    CZ      120.000    3.000
+ FRN      CE2    CZ     HZ      120.000    3.000
+ FRN      CE2    CZ     CE1     120.000    3.000
+ FRN      HZ     CZ     CE1     120.000    3.000
+ FRN      CZ     CE1    H11     120.000    3.000
+ FRN      CZ     CE1    C38     120.000    3.000
+ FRN      H11    CE1    C38     120.000    3.000
+ FRN      CE1    C38    H38     120.000    3.000
+ FRN      CE1    C38    C33     120.000    3.000
+ FRN      H38    C38    C33     120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ FRN      var_1    O2     C30    C10    N10      -20.067   20.000   3
+ FRN      var_2    C30    C10    C44    C20       29.442   20.000   3
+ FRN      var_3    C10    C44    C20    NZ      -116.745   20.000   3
+ FRN      CONST_1  C44    C20    NZ     CE         0.000    0.000   0
+ FRN      var_4    C20    NZ     CE     CD       179.214   20.000   3
+ FRN      var_5    NZ     CE     CD     C32     -168.629   20.000   3
+ FRN      var_6    CE     CD     C32    C23     -160.426   20.000   3
+ FRN      var_7    CD     C32    C23    C3      -167.761   20.000   3
+ FRN      var_8    C32    C23    C3     N3        52.518   20.000   3
+ FRN      var_9    C23    C3     C13    N4       112.363   20.000   3
+ FRN      var_10   C23    C3     N3     C12       75.979   20.000   3
+ FRN      CONST_2  C3     N3     C12    C2       180.000    0.000   0
+ FRN      var_11   N3     C12    C2     N2       -37.502   20.000   3
+ FRN      var_12   C12    C2     C22    CG        73.462   20.000   3
+ FRN      var_13   C2     C22    CG     CD1      171.071   20.000   3
+ FRN      var_14   C22    CG     CD2    HD21     -37.099   20.000   3
+ FRN      var_15   C22    CG     CD1    HD11    -179.998   20.000   3
+ FRN      var_16   C12    C2     N2     C11     -166.315   20.000   3
+ FRN      CONST_3  C2     N2     C11    O3       180.000    0.000   0
+ FRN      var_17   C30    C10    N10    C19      -95.399   20.000   3
+ FRN      CONST_4  C10    N10    C19    C9       180.000    0.000   0
+ FRN      var_18   N10    C19    C9     C29       25.890   20.000   3
+ FRN      var_19   C19    C9     N9     C18     -138.757   20.000   3
+ FRN      CONST_5  C9     N9     C18    C8       180.000    0.000   0
+ FRN      var_20   N9     C18    C8     N8        63.777   20.000   3
+ FRN      var_21   C18    C8     C28    C36      174.987   20.000   3
+ FRN      var_22   C8     C28    C36    C41       84.709   20.000   2
+ FRN      CONST_6  C28    C36    C39    NE1      180.000    0.000   0
+ FRN      CONST_7  C28    C36    C41    CE3        0.000    0.000   0
+ FRN      CONST_8  C36    C41    C43    CZ2      180.000    0.000   0
+ FRN      CONST_9  C36    C41    CE3    CZ3      180.000    0.000   0
+ FRN      CONST_10 C41    CE3    CZ3    CH2        0.000    0.000   0
+ FRN      CONST_11 CE3    CZ3    CH2    CZ2        0.000    0.000   0
+ FRN      CONST_12 CZ3    CH2    CZ2    C43        0.000    0.000   0
+ FRN      CONST_13 CH2    CZ2    C43    NE1      180.000    0.000   0
+ FRN      CONST_14 CZ2    C43    NE1    C39      180.000    0.000   0
+ FRN      CONST_15 C43    NE1    C39    C36        0.000    0.000   0
+ FRN      var_23   C18    C8     N8     C17     -115.689   20.000   3
+ FRN      CONST_16 C8     N8     C17    C7       180.000    0.000   0
+ FRN      var_24   N8     C17    C7     C27      127.643   20.000   3
+ FRN      var_25   C17    C7     N7     C16      -97.429   20.000   3
+ FRN      CONST_17 C7     N7     C16    O8         0.000    0.000   0
+ FRN      var_26   C17    C7     C27    C35      151.480   20.000   3
+ FRN      var_27   C7     C27    C35    O12      -57.896   20.000   3
+ FRN      var_28   C27    C35    O12    C21     -178.360   20.000   1
+ FRN      var_29   C35    O12    C21    C1       151.837   20.000   1
+ FRN      var_30   O12    C21    C31    H311     -62.051   20.000   3
+ FRN      var_31   O12    C21    C1     N1       -84.369   20.000   3
+ FRN      var_32   C21    C1     C11    N2       -99.219   20.000   3
+ FRN      var_33   C21    C1     N1     C        149.937   20.000   3
+ FRN      CONST_18 C1     N1     C      CA       180.000    0.000   0
+ FRN      var_34   N1     C      CA     N        159.995   20.000   3
+ FRN      var_35   C      CA     CB     OG1      -54.989   20.000   3
+ FRN      var_36   CA     CB     CG2    HG21     179.956   20.000   3
+ FRN      var_37   CA     CB     OG1    HG1      179.962   20.000   1
+ FRN      var_38   C      CA     N      HN1A      60.024   20.000   1
+ FRN      var_39   C19    C9     C29    C37      174.598   20.000   3
+ FRN      var_40   C9     C29    C37    OG       124.334   20.000   3
+ FRN      var_41   C29    C37    OG     C26      177.185   20.000   1
+ FRN      var_42   C37    OG     C26    C6       156.056   20.000   1
+ FRN      var_43   OG     C26    C6     N6       100.956   20.000   3
+ FRN      var_44   C26    C6     C16    N7      -116.961   20.000   3
+ FRN      var_45   C26    C6     N6     C15      -48.557   20.000   3
+ FRN      CONST_19 C6     N6     C15    C5       180.000    0.000   0
+ FRN      var_46   N6     C15    C5     C25      -71.351   20.000   3
+ FRN      var_47   C15    C5     C25    C34      -90.000   20.000   3
+ FRN      var_48   C5     C25    C34    C42      -30.000   20.000   3
+ FRN      var_49   C25    C34    C42    N5        30.000   20.000   3
+ FRN      var_50   C34    C42    N5     C14      180.000   20.000   1
+ FRN      var_51   C42    N5     C5     C15       90.000   20.000   3
+ FRN      CONST_20 C42    N5     C14    C4         0.000    0.000   0
+ FRN      var_52   N5     C14    C4     C24      -59.653   20.000   3
+ FRN      var_53   C14    C4     N4     C13     -170.346   20.000   3
+ FRN      CONST_21 C4     N4     C13    O5         0.000    0.000   0
+ FRN      var_54   C14    C4     C24    C33      -51.419   20.000   3
+ FRN      var_55   C4     C24    C33    C40      115.107   20.000   2
+ FRN      CONST_22 C24    C33    C38    CE1      180.000    0.000   0
+ FRN      CONST_23 C24    C33    C40    CE2      180.000    0.000   0
+ FRN      CONST_24 C33    C40    CE2    CZ         0.000    0.000   0
+ FRN      CONST_25 C40    CE2    CZ     CE1        0.000    0.000   0
+ FRN      CONST_26 CE2    CZ     CE1    C38        0.000    0.000   0
+ FRN      CONST_27 CZ     CE1    C38    C33        0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ FRN      chir_01  CA     N      C      CB        positiv
+ FRN      chir_02  CB     CA     OG1    CG2       positiv
+ FRN      chir_03  C1     N1     C11    C21       positiv
+ FRN      chir_04  C21    C1     O12    C31       positiv
+ FRN      chir_05  C2     N2     C12    C22       positiv
+ FRN      chir_06  CG     C22    CD1    CD2       negativ
+ FRN      chir_07  C3     N3     C13    C23       positiv
+ FRN      chir_08  C4     N4     C14    C24       positiv
+ FRN      chir_09  C5     N5     C15    C25       positiv
+ FRN      chir_10  C6     N6     C16    C26       positiv
+ FRN      chir_11  C7     N7     C17    C27       positiv
+ FRN      chir_12  C8     N8     C18    C28       positiv
+ FRN      chir_13  C9     N9     C19    C29       positiv
+ FRN      chir_14  C10    N10    C30    C44       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ FRN      plan-1    C         0.020
+ FRN      plan-1    CA        0.020
+ FRN      plan-1    O         0.020
+ FRN      plan-1    N1        0.020
+ FRN      plan-1    HN1       0.020
+ FRN      plan-2    N1        0.020
+ FRN      plan-2    C         0.020
+ FRN      plan-2    C1        0.020
+ FRN      plan-2    HN1       0.020
+ FRN      plan-3    C11       0.020
+ FRN      plan-3    C1        0.020
+ FRN      plan-3    O3        0.020
+ FRN      plan-3    N2        0.020
+ FRN      plan-3    HN2       0.020
+ FRN      plan-4    N2        0.020
+ FRN      plan-4    C11       0.020
+ FRN      plan-4    C2        0.020
+ FRN      plan-4    HN2       0.020
+ FRN      plan-5    C12       0.020
+ FRN      plan-5    C2        0.020
+ FRN      plan-5    O4        0.020
+ FRN      plan-5    N3        0.020
+ FRN      plan-5    HN3       0.020
+ FRN      plan-6    N3        0.020
+ FRN      plan-6    C12       0.020
+ FRN      plan-6    C3        0.020
+ FRN      plan-6    HN3       0.020
+ FRN      plan-7    C13       0.020
+ FRN      plan-7    C3        0.020
+ FRN      plan-7    O5        0.020
+ FRN      plan-7    N4        0.020
+ FRN      plan-7    HN4       0.020
+ FRN      plan-8    NZ        0.020
+ FRN      plan-8    CE        0.020
+ FRN      plan-8    C20       0.020
+ FRN      plan-8    HNZ       0.020
+ FRN      plan-9    N4        0.020
+ FRN      plan-9    C13       0.020
+ FRN      plan-9    C4        0.020
+ FRN      plan-9    HN4       0.020
+ FRN      plan-10   C14       0.020
+ FRN      plan-10   C4        0.020
+ FRN      plan-10   O6        0.020
+ FRN      plan-10   N5        0.020
+ FRN      plan-11   C33       0.020
+ FRN      plan-11   C24       0.020
+ FRN      plan-11   C38       0.020
+ FRN      plan-11   C40       0.020
+ FRN      plan-11   CE1       0.020
+ FRN      plan-11   CE2       0.020
+ FRN      plan-11   CZ        0.020
+ FRN      plan-11   H38       0.020
+ FRN      plan-11   H40       0.020
+ FRN      plan-11   H11       0.020
+ FRN      plan-11   HE2       0.020
+ FRN      plan-11   HZ        0.020
+ FRN      plan-12   N5        0.020
+ FRN      plan-12   C14       0.020
+ FRN      plan-12   C5        0.020
+ FRN      plan-12   C42       0.020
+ FRN      plan-13   C15       0.020
+ FRN      plan-13   C5        0.020
+ FRN      plan-13   O7        0.020
+ FRN      plan-13   N6        0.020
+ FRN      plan-13   HN6       0.020
+ FRN      plan-14   N6        0.020
+ FRN      plan-14   C15       0.020
+ FRN      plan-14   C6        0.020
+ FRN      plan-14   HN6       0.020
+ FRN      plan-15   C16       0.020
+ FRN      plan-15   C6        0.020
+ FRN      plan-15   O8        0.020
+ FRN      plan-15   N7        0.020
+ FRN      plan-15   HN7       0.020
+ FRN      plan-16   N7        0.020
+ FRN      plan-16   C16       0.020
+ FRN      plan-16   C7        0.020
+ FRN      plan-16   HN7       0.020
+ FRN      plan-17   C17       0.020
+ FRN      plan-17   C7        0.020
+ FRN      plan-17   O9        0.020
+ FRN      plan-17   N8        0.020
+ FRN      plan-17   HN8       0.020
+ FRN      plan-18   C35       0.020
+ FRN      plan-18   O12       0.020
+ FRN      plan-18   C27       0.020
+ FRN      plan-18   OD1       0.020
+ FRN      plan-19   N8        0.020
+ FRN      plan-19   C17       0.020
+ FRN      plan-19   C8        0.020
+ FRN      plan-19   HN8       0.020
+ FRN      plan-20   C18       0.020
+ FRN      plan-20   C8        0.020
+ FRN      plan-20   O10       0.020
+ FRN      plan-20   N9        0.020
+ FRN      plan-20   HN9       0.020
+ FRN      plan-21   C36       0.020
+ FRN      plan-21   C28       0.020
+ FRN      plan-21   C39       0.020
+ FRN      plan-21   C41       0.020
+ FRN      plan-21   NE1       0.020
+ FRN      plan-21   H39       0.020
+ FRN      plan-21   C43       0.020
+ FRN      plan-21   CE3       0.020
+ FRN      plan-21   CZ2       0.020
+ FRN      plan-21   CZ3       0.020
+ FRN      plan-21   CH2       0.020
+ FRN      plan-21   HE1       0.020
+ FRN      plan-21   HE3       0.020
+ FRN      plan-21   HZ2       0.020
+ FRN      plan-21   HZ3       0.020
+ FRN      plan-21   HH2       0.020
+ FRN      plan-22   N9        0.020
+ FRN      plan-22   C18       0.020
+ FRN      plan-22   C9        0.020
+ FRN      plan-22   HN9       0.020
+ FRN      plan-23   C19       0.020
+ FRN      plan-23   C9        0.020
+ FRN      plan-23   O11       0.020
+ FRN      plan-23   N10       0.020
+ FRN      plan-23   H10       0.020
+ FRN      plan-24   C37       0.020
+ FRN      plan-24   OG        0.020
+ FRN      plan-24   C29       0.020
+ FRN      plan-24   OD2       0.020
+ FRN      plan-25   N10       0.020
+ FRN      plan-25   C19       0.020
+ FRN      plan-25   C10       0.020
+ FRN      plan-25   H10       0.020
+ FRN      plan-26   C20       0.020
+ FRN      plan-26   NZ        0.020
+ FRN      plan-26   O13       0.020
+ FRN      plan-26   C44       0.020
+ FRN      plan-26   HNZ       0.020
+ FRN      plan-27   C30       0.020
+ FRN      plan-27   C10       0.020
+ FRN      plan-27   O1        0.020
+ FRN      plan-27   O2        0.020
+# ------------------------------------------------------

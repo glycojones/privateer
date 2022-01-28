@@ -1,0 +1,161 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+OVM     OVM      "3-methoxybenzoic acid"     NON-POLYMER     18     11     .     
+#
+data_comp_OVM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+OVM     C02     C       C       0       4.685       5.131       17.079      
+OVM     C04     C       CR6     0       4.839       3.864       17.868      
+OVM     C05     C       CR16    0       5.842       3.745       18.821      
+OVM     C06     C       CR16    0       5.974       2.571       19.544      
+OVM     C07     C       CR16    0       5.113       1.509       19.329      
+OVM     C08     C       CR6     0       4.102       1.621       18.374      
+OVM     C10     C       CH3     0       3.206       -0.612      18.724      
+OVM     C11     C       CR16    0       3.967       2.801       17.646      
+OVM     O01     O       OC      -1      4.726       6.208       17.700      
+OVM     O03     O       O       0       4.530       5.035       15.848      
+OVM     O09     O       O2      0       3.179       0.650       18.057      
+OVM     H1      H       H       0       6.433       4.460       18.975      
+OVM     H2      H       H       0       6.653       2.493       20.186      
+OVM     H3      H       H       0       5.215       0.717       19.828      
+OVM     H4      H       H       0       3.077       -0.477      19.677      
+OVM     H5      H       H       0       4.062       -1.042      18.569      
+OVM     H6      H       H       0       2.494       -1.174      18.377      
+OVM     H7      H       H       0       3.285       2.877       17.001      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+OVM       C02       O03       DOUBLE    n         1.244     0.0200    1.244     0.0200    
+OVM       C02       O01       SINGLE    n         1.244     0.0200    1.244     0.0200    
+OVM       C02       C04       SINGLE    n         1.498     0.0200    1.498     0.0200    
+OVM       C04       C11       DOUBLE    y         1.389     0.0100    1.389     0.0100    
+OVM       C08       C11       SINGLE    y         1.388     0.0110    1.388     0.0110    
+OVM       C08       O09       SINGLE    n         1.372     0.0100    1.372     0.0100    
+OVM       C10       O09       SINGLE    n         1.424     0.0117    1.424     0.0117    
+OVM       C04       C05       SINGLE    y         1.387     0.0100    1.387     0.0100    
+OVM       C07       C08       DOUBLE    y         1.386     0.0109    1.386     0.0109    
+OVM       C05       C06       DOUBLE    y         1.382     0.0100    1.382     0.0100    
+OVM       C06       C07       SINGLE    y         1.380     0.0100    1.380     0.0100    
+OVM       C05       H1        SINGLE    n         1.082     0.013     0.941     0.0168    
+OVM       C06       H2        SINGLE    n         1.082     0.013     0.938     0.0149    
+OVM       C07       H3        SINGLE    n         1.082     0.013     0.942     0.0163    
+OVM       C10       H4        SINGLE    n         1.089     0.010     0.971     0.0157    
+OVM       C10       H5        SINGLE    n         1.089     0.010     0.971     0.0157    
+OVM       C10       H6        SINGLE    n         1.089     0.010     0.971     0.0157    
+OVM       C11       H7        SINGLE    n         1.082     0.013     0.942     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+OVM         O03         C02         O01     124.418    1.50
+OVM         O03         C02         C04     117.791    1.50
+OVM         O01         C02         C04     117.791    1.50
+OVM         C02         C04         C11     119.599    1.50
+OVM         C02         C04         C05     120.465    1.50
+OVM         C11         C04         C05     119.935    1.50
+OVM         C04         C05         C06     120.202    1.50
+OVM         C04         C05          H1     119.950    1.50
+OVM         C06         C05          H1     119.848    1.50
+OVM         C05         C06         C07     120.488    1.50
+OVM         C05         C06          H2     119.895    1.50
+OVM         C07         C06          H2     119.617    1.50
+OVM         C08         C07         C06     119.332    1.50
+OVM         C08         C07          H3     120.299    1.50
+OVM         C06         C07          H3     120.369    1.50
+OVM         C11         C08         O09     119.990    3.00
+OVM         C11         C08         C07     120.143    1.50
+OVM         O09         C08         C07     119.868    3.00
+OVM         O09         C10          H4     109.428    1.50
+OVM         O09         C10          H5     109.428    1.50
+OVM         O09         C10          H6     109.428    1.50
+OVM          H4         C10          H5     109.509    1.50
+OVM          H4         C10          H6     109.509    1.50
+OVM          H5         C10          H6     109.509    1.50
+OVM         C04         C11         C08     119.895    1.50
+OVM         C04         C11          H7     120.232    1.50
+OVM         C08         C11          H7     119.877    1.50
+OVM         C08         O09         C10     117.529    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+OVM             sp2_sp2_1         O03         C02         C04         C11     180.000   10.00     2
+OVM              const_23         C02         C04         C05         C06     180.000   10.00     2
+OVM       const_sp2_sp2_3         C02         C04         C11         C08     180.000   10.00     2
+OVM              const_17         C04         C05         C06         C07       0.000   10.00     2
+OVM              const_13         C05         C06         C07         C08       0.000   10.00     2
+OVM              const_10         C06         C07         C08         O09     180.000   10.00     2
+OVM             sp2_sp2_5         C11         C08         O09         C10     180.000   10.00     2
+OVM       const_sp2_sp2_7         O09         C08         C11         C04     180.000   10.00     2
+OVM             sp3_sp3_2          H4         C10         O09         C08     -60.000   10.00     3
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+OVM    plan-1         C02   0.020
+OVM    plan-1         C04   0.020
+OVM    plan-1         C05   0.020
+OVM    plan-1         C06   0.020
+OVM    plan-1         C07   0.020
+OVM    plan-1         C08   0.020
+OVM    plan-1         C11   0.020
+OVM    plan-1          H1   0.020
+OVM    plan-1          H2   0.020
+OVM    plan-1          H3   0.020
+OVM    plan-1          H7   0.020
+OVM    plan-1         O09   0.020
+OVM    plan-2         C02   0.020
+OVM    plan-2         C04   0.020
+OVM    plan-2         O01   0.020
+OVM    plan-2         O03   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+OVM           SMILES              ACDLabs 12.01                                          C(O)(c1cccc(c1)OC)=O
+OVM            InChI                InChI  1.03 InChI=1S/C8H8O3/c1-11-7-4-2-3-6(5-7)8(9)10/h2-5H,1H3,(H,9,10)
+OVM         InChIKey                InChI  1.03                                   XHQZJYCNDZAGLW-UHFFFAOYSA-N
+OVM SMILES_CANONICAL               CACTVS 3.385                                            COc1cccc(c1)C(O)=O
+OVM           SMILES               CACTVS 3.385                                            COc1cccc(c1)C(O)=O
+OVM SMILES_CANONICAL "OpenEye OEToolkits" 2.0.7                                            COc1cccc(c1)C(=O)O
+OVM           SMILES "OpenEye OEToolkits" 2.0.7                                            COc1cccc(c1)C(=O)O
+OVM ?                acedrg               217         "dictionary generator"                  
+OVM ?                acedrg_database      11          "data source"                           
+OVM ?                rdkit                2017.03.2   "Chemoinformatics tool"
+OVM ?                refmac5              5.8.0253    "optimization tool"                     

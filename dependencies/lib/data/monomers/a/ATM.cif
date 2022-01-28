@@ -1,0 +1,289 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+ATM      ATM '3'-AZIDO-3'-DEOXYTHYMIDINE-5'-MONOPH' non-polymer        35  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_ATM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ ATM           O4     O    O         0.000      0.000    0.000    0.000
+ ATM           C4     C    CR6       0.000     -1.140   -0.245   -0.354
+ ATM           N3     N    NR16      0.000     -2.143   -0.264    0.548
+ ATM           HN3    H    H         0.000     -1.942   -0.070    1.550
+ ATM           C2     C    CR6       0.000     -3.402   -0.534    0.157
+ ATM           O2     O    O         0.000     -4.295   -0.553    0.982
+ ATM           C5     C    CR6       0.000     -1.426   -0.502   -1.716
+ ATM           C5A    C    CH3       0.000     -0.325   -0.483   -2.744
+ ATM           H53    H    H         0.000      0.587   -0.773   -2.291
+ ATM           H52    H    H         0.000     -0.560   -1.158   -3.526
+ ATM           H51    H    H         0.000     -0.228    0.495   -3.139
+ ATM           C6     C    CR16      0.000     -2.698   -0.772   -2.080
+ ATM           H6     H    H         0.000     -2.935   -0.976   -3.117
+ ATM           N1     N    NR6       0.000     -3.685   -0.786   -1.134
+ ATM           "C1'"  C    CH1       0.000     -5.066   -1.078   -1.530
+ ATM           "H1'"  H    H         0.000     -5.133   -1.156   -2.624
+ ATM           "O4'"  O    O2        0.000     -5.939   -0.036   -1.061
+ ATM           "C2'"  C    CH2       0.000     -5.530   -2.396   -0.881
+ ATM           "H2'"  H    H         0.000     -4.769   -2.817   -0.220
+ ATM           "H2''" H    H         0.000     -5.815   -3.141   -1.626
+ ATM           "C3'"  C    CH1       0.000     -6.772   -1.993   -0.049
+ ATM           "H3'"  H    H         0.000     -6.502   -1.829    1.003
+ ATM           "N3'"  N    N         0.000     -7.828   -3.002   -0.166
+ ATM           "N4'"  N    N         1.000     -7.674   -4.030    0.260
+ ATM           "N5'"  N    NS       -1.000     -7.518   -5.058    0.687
+ ATM           "C4'"  C    CH1       0.000     -7.197   -0.665   -0.724
+ ATM           "H4'"  H    H         0.000     -7.784   -0.863   -1.632
+ ATM           "C5'"  C    CH2       0.000     -7.993    0.204    0.251
+ ATM           "H5''" H    H         0.000     -7.348    0.504    1.080
+ ATM           "H5'"  H    H         0.000     -8.839   -0.367    0.639
+ ATM           "O5'"  O    O2        0.000     -8.472    1.367   -0.428
+ ATM           P      P    P         0.000     -9.296    2.231    0.653
+ ATM           OP3    O    OP       -0.666    -10.518    1.455    1.092
+ ATM           OP1    O    OP       -0.666     -8.417    2.509    1.852
+ ATM           OP2    O    OP       -0.666     -9.727    3.540    0.028
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ ATM      O4     n/a    C4     START
+ ATM      C4     O4     C5     .
+ ATM      N3     C4     C2     .
+ ATM      HN3    N3     .      .
+ ATM      C2     N3     O2     .
+ ATM      O2     C2     .      .
+ ATM      C5     C4     C6     .
+ ATM      C5A    C5     H51    .
+ ATM      H53    C5A    .      .
+ ATM      H52    C5A    .      .
+ ATM      H51    C5A    .      .
+ ATM      C6     C5     N1     .
+ ATM      H6     C6     .      .
+ ATM      N1     C6     "C1'"  .
+ ATM      "C1'"  N1     "C2'"  .
+ ATM      "H1'"  "C1'"  .      .
+ ATM      "O4'"  "C1'"  .      .
+ ATM      "C2'"  "C1'"  "C3'"  .
+ ATM      "H2'"  "C2'"  .      .
+ ATM      "H2''" "C2'"  .      .
+ ATM      "C3'"  "C2'"  "C4'"  .
+ ATM      "H3'"  "C3'"  .      .
+ ATM      "N3'"  "C3'"  "N4'"  .
+ ATM      "N4'"  "N3'"  "N5'"  .
+ ATM      "N5'"  "N4'"  .      .
+ ATM      "C4'"  "C3'"  "C5'"  .
+ ATM      "H4'"  "C4'"  .      .
+ ATM      "C5'"  "C4'"  "O5'"  .
+ ATM      "H5''" "C5'"  .      .
+ ATM      "H5'"  "C5'"  .      .
+ ATM      "O5'"  "C5'"  P      .
+ ATM      P      "O5'"  OP2    .
+ ATM      OP3    P      .      .
+ ATM      OP1    P      .      .
+ ATM      OP2    P      .      END
+ ATM      "C4'"  "O4'"  .    ADD
+ ATM      N1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+ATM       OP1       P         deloc     1.510     0.020     1.510     0.020     
+ATM       OP2       P         deloc     1.510     0.020     1.510     0.020     
+ATM       OP3       P         deloc     1.510     0.020     1.510     0.020     
+ATM       P         "O5'"     single    1.610     0.020     1.610     0.020     
+ATM       "O5'"     "C5'"     single    1.426     0.020     1.426     0.020     
+ATM       "C5'"     "C4'"     single    1.524     0.020     1.524     0.020     
+ATM       "H5'"     "C5'"     single    1.089     0.010     0.989     0.005     
+ATM       "H5''"    "C5'"     single    1.089     0.010     0.989     0.005     
+ATM       "C4'"     "O4'"     single    1.426     0.020     1.426     0.020     
+ATM       "C4'"     "C3'"     single    1.524     0.020     1.524     0.020     
+ATM       "H4'"     "C4'"     single    1.089     0.010     0.989     0.005     
+ATM       "O4'"     "C1'"     single    1.426     0.020     1.426     0.020     
+ATM       "N3'"     "C3'"     single    1.455     0.020     1.455     0.020     
+ATM       "C3'"     "C2'"     single    1.524     0.020     1.524     0.020     
+ATM       "H3'"     "C3'"     single    1.089     0.010     0.989     0.005     
+ATM       "N4'"     "N3'"     double    1.240     0.020     1.240     0.020     
+ATM       "N5'"     "N4'"     double    1.295     0.020     1.295     0.020     
+ATM       "C2'"     "C1'"     single    1.524     0.020     1.524     0.020     
+ATM       "H2'"     "C2'"     single    1.089     0.010     0.989     0.005     
+ATM       "H2''"    "C2'"     single    1.089     0.010     0.989     0.005     
+ATM       "C1'"     N1        single    1.465     0.020     1.465     0.020     
+ATM       "H1'"     "C1'"     single    1.089     0.010     0.989     0.005     
+ATM       N1        C2        single    1.410     0.020     1.410     0.020     
+ATM       N1        C6        single    1.337     0.020     1.337     0.020     
+ATM       O2        C2        double    1.250     0.020     1.250     0.020     
+ATM       C2        N3        single    1.337     0.020     1.337     0.020     
+ATM       N3        C4        single    1.337     0.020     1.337     0.020     
+ATM       HN3       N3        single    1.016     0.010     0.899     0.007     
+ATM       C4        O4        double    1.250     0.020     1.250     0.020     
+ATM       C5        C4        single    1.487     0.020     1.487     0.020     
+ATM       C5A       C5        single    1.506     0.020     1.506     0.020     
+ATM       C6        C5        double    1.390     0.020     1.390     0.020     
+ATM       H51       C5A       single    1.089     0.010     0.989     0.005     
+ATM       H52       C5A       single    1.089     0.010     0.989     0.005     
+ATM       H53       C5A       single    1.089     0.010     0.989     0.005     
+ATM       H6        C6        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ ATM      O4     C4     N3      120.000    3.000
+ ATM      O4     C4     C5      120.000    3.000
+ ATM      N3     C4     C5      120.000    3.000
+ ATM      C4     N3     HN3     120.000    3.000
+ ATM      C4     N3     C2      120.000    3.000
+ ATM      HN3    N3     C2      120.000    3.000
+ ATM      N3     C2     O2      120.000    3.000
+ ATM      N3     C2     N1      120.000    3.000
+ ATM      O2     C2     N1      120.000    3.000
+ ATM      C4     C5     C5A     120.000    3.000
+ ATM      C4     C5     C6      120.000    3.000
+ ATM      C5A    C5     C6      120.000    3.000
+ ATM      C5     C5A    H53     109.470    3.000
+ ATM      C5     C5A    H52     109.470    3.000
+ ATM      C5     C5A    H51     109.470    3.000
+ ATM      H53    C5A    H52     109.470    3.000
+ ATM      H53    C5A    H51     109.470    3.000
+ ATM      H52    C5A    H51     109.470    3.000
+ ATM      C5     C6     H6      120.000    3.000
+ ATM      C5     C6     N1      120.000    3.000
+ ATM      H6     C6     N1      120.000    3.000
+ ATM      C6     N1     "C1'"   120.000    3.000
+ ATM      C6     N1     C2      120.000    3.000
+ ATM      "C1'"  N1     C2      120.000    3.000
+ ATM      N1     "C1'"  "H1'"   109.470    3.000
+ ATM      N1     "C1'"  "O4'"   109.470    3.000
+ ATM      N1     "C1'"  "C2'"   109.470    3.000
+ ATM      "H1'"  "C1'"  "O4'"   109.470    3.000
+ ATM      "H1'"  "C1'"  "C2'"   108.340    3.000
+ ATM      "O4'"  "C1'"  "C2'"   109.470    3.000
+ ATM      "C1'"  "O4'"  "C4'"   111.800    3.000
+ ATM      "C1'"  "C2'"  "H2'"   109.470    3.000
+ ATM      "C1'"  "C2'"  "H2''"  109.470    3.000
+ ATM      "C1'"  "C2'"  "C3'"   111.000    3.000
+ ATM      "H2'"  "C2'"  "H2''"  107.900    3.000
+ ATM      "H2'"  "C2'"  "C3'"   109.470    3.000
+ ATM      "H2''" "C2'"  "C3'"   109.470    3.000
+ ATM      "C2'"  "C3'"  "H3'"   108.340    3.000
+ ATM      "C2'"  "C3'"  "N3'"   105.000    3.000
+ ATM      "C2'"  "C3'"  "C4'"   111.000    3.000
+ ATM      "H3'"  "C3'"  "N3'"   109.470    3.000
+ ATM      "H3'"  "C3'"  "C4'"   108.340    3.000
+ ATM      "N3'"  "C3'"  "C4'"   105.000    3.000
+ ATM      "C3'"  "N3'"  "N4'"   120.000    3.000
+ ATM      "N3'"  "N4'"  "N5'"   120.000    3.000
+ ATM      "C3'"  "C4'"  "H4'"   108.340    3.000
+ ATM      "C3'"  "C4'"  "C5'"   111.000    3.000
+ ATM      "C3'"  "C4'"  "O4'"   109.470    3.000
+ ATM      "H4'"  "C4'"  "C5'"   108.340    3.000
+ ATM      "H4'"  "C4'"  "O4'"   109.470    3.000
+ ATM      "C5'"  "C4'"  "O4'"   109.470    3.000
+ ATM      "C4'"  "C5'"  "H5''"  109.470    3.000
+ ATM      "C4'"  "C5'"  "H5'"   109.470    3.000
+ ATM      "C4'"  "C5'"  "O5'"   109.470    3.000
+ ATM      "H5''" "C5'"  "H5'"   107.900    3.000
+ ATM      "H5''" "C5'"  "O5'"   109.470    3.000
+ ATM      "H5'"  "C5'"  "O5'"   109.470    3.000
+ ATM      "C5'"  "O5'"  P       120.500    3.000
+ ATM      "O5'"  P      OP3     108.200    3.000
+ ATM      "O5'"  P      OP1     108.200    3.000
+ ATM      "O5'"  P      OP2     108.200    3.000
+ ATM      OP3    P      OP1     119.900    3.000
+ ATM      OP3    P      OP2     119.900    3.000
+ ATM      OP1    P      OP2     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ ATM      CONST_1  O4     C4     N3     C2       180.000    0.000   0
+ ATM      CONST_2  C4     N3     C2     O2       180.000    0.000   0
+ ATM      CONST_3  O4     C4     C5     C6       180.000    0.000   0
+ ATM      var_1    C4     C5     C5A    H51      -90.230   20.000   1
+ ATM      CONST_4  C4     C5     C6     N1         0.000    0.000   0
+ ATM      CONST_5  C5     C6     N1     "C1'"    180.000    0.000   0
+ ATM      CONST_6  C6     N1     C2     N3         0.000    0.000   0
+ ATM      var_2    C6     N1     "C1'"  "C2'"    115.307   20.000   1
+ ATM      var_3    N1     "C1'"  "O4'"  "C4'"   -150.000   20.000   1
+ ATM      var_4    N1     "C1'"  "C2'"  "C3'"    120.000   20.000   3
+ ATM      var_5    "C1'"  "C2'"  "C3'"  "C4'"     30.000   20.000   3
+ ATM      var_6    "C2'"  "C3'"  "N3'"  "N4'"     66.453   20.000   3
+ ATM      CONST_7  "C3'"  "N3'"  "N4'"  "N5'"      7.315    0.000   0
+ ATM      var_7    "C2'"  "C3'"  "C4'"  "C5'"   -150.000   20.000   3
+ ATM      var_8    "C3'"  "C4'"  "O4'"  "C1'"     30.000   20.000   1
+ ATM      var_9    "C3'"  "C4'"  "C5'"  "O5'"   -174.967   20.000   3
+ ATM      var_10   "C4'"  "C5'"  "O5'"  P       -179.976   20.000   1
+ ATM      var_11   "C5'"  "O5'"  P      OP2      174.990   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ ATM      chir_01  "C4'"  "C5'"  "O4'"  "C3'"     negativ
+ ATM      chir_02  "C3'"  "C4'"  "N3'"  "C2'"     negativ
+ ATM      chir_03  "C1'"  "O4'"  "C2'"  N1        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ ATM      plan-1    "N3'"     0.020
+ ATM      plan-1    "C3'"     0.020
+ ATM      plan-1    "N4'"     0.020
+ ATM      plan-1    "N5'"     0.020
+ ATM      plan-2    N1        0.020
+ ATM      plan-2    "C1'"     0.020
+ ATM      plan-2    C2        0.020
+ ATM      plan-2    C6        0.020
+ ATM      plan-2    N3        0.020
+ ATM      plan-2    C4        0.020
+ ATM      plan-2    C5        0.020
+ ATM      plan-2    O2        0.020
+ ATM      plan-2    HN3       0.020
+ ATM      plan-2    O4        0.020
+ ATM      plan-2    C5A       0.020
+ ATM      plan-2    H6        0.020
+# ------------------------------------------------------

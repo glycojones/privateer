@@ -1,0 +1,276 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MHU      MHU '4-N,N-(DIMETHYLAMINO)-L-PHENYLALANIN' non-polymer        33  16 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MHU
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ MHU           OXT    O    OC       -0.500      0.000    0.000    0.000
+ MHU           C      C    C         0.000     -0.756    0.961   -0.264
+ MHU           O      O    OC       -0.500     -0.289    2.004   -0.772
+ MHU           CA     C    CH1       0.000     -2.231    0.861    0.032
+ MHU           HA     H    H         0.000     -2.376    0.420    1.028
+ MHU           N      N    NH1       0.000     -2.828    2.203   -0.001
+ MHU           H      H    H         0.000     -3.229    2.630   -0.824
+ MHU           CM     C    CH3       0.000     -2.763    2.841    1.320
+ MHU           HM3    H    H         0.000     -3.218    2.212    2.043
+ MHU           HM2    H    H         0.000     -1.751    3.007    1.588
+ MHU           HM1    H    H         0.000     -3.275    3.770    1.294
+ MHU           CB     C    CH2       0.000     -2.904   -0.023   -1.020
+ MHU           HB1    H    H         0.000     -2.400   -0.991   -1.057
+ MHU           HB2    H    H         0.000     -2.836    0.459   -1.998
+ MHU           CG     C    CR6       0.000     -4.352   -0.222   -0.656
+ MHU           CD2    C    CR16      0.000     -4.723   -1.292    0.138
+ MHU           HD2    H    H         0.000     -3.973   -1.987    0.494
+ MHU           CE2    C    CR16      0.000     -6.050   -1.474    0.478
+ MHU           HE2    H    H         0.000     -6.339   -2.307    1.108
+ MHU           CZ     C    CR6       0.000     -7.012   -0.588    0.011
+ MHU           NZ     N    N         0.000     -8.355   -0.773    0.349
+ MHU           CZ2    C    CH3       0.000     -8.768   -1.972    1.082
+ MHU           H23    H    H         0.000     -9.289   -1.690    1.961
+ MHU           H22    H    H         0.000     -9.404   -2.560    0.471
+ MHU           H21    H    H         0.000     -7.913   -2.540    1.347
+ MHU           CZ1    C    CH3       0.000     -9.351    0.232   -0.031
+ MHU           H13    H    H         0.000    -10.138    0.239    0.679
+ MHU           H12    H    H         0.000     -8.897    1.190   -0.060
+ MHU           H11    H    H         0.000     -9.743    0.000   -0.987
+ MHU           CE1    C    CR16      0.000     -6.637    0.481   -0.791
+ MHU           HE1    H    H         0.000     -7.386    1.173   -1.157
+ MHU           CD1    C    CR16      0.000     -5.308    0.661   -1.122
+ MHU           HD1    H    H         0.000     -5.015    1.495   -1.748
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ MHU      OXT    n/a    C      START
+ MHU      C      OXT    CA     .
+ MHU      O      C      .      .
+ MHU      CA     C      CB     .
+ MHU      HA     CA     .      .
+ MHU      N      CA     CM     .
+ MHU      H      N      .      .
+ MHU      CM     N      HM1    .
+ MHU      HM3    CM     .      .
+ MHU      HM2    CM     .      .
+ MHU      HM1    CM     .      .
+ MHU      CB     CA     CG     .
+ MHU      HB1    CB     .      .
+ MHU      HB2    CB     .      .
+ MHU      CG     CB     CD2    .
+ MHU      CD2    CG     CE2    .
+ MHU      HD2    CD2    .      .
+ MHU      CE2    CD2    CZ     .
+ MHU      HE2    CE2    .      .
+ MHU      CZ     CE2    CE1    .
+ MHU      NZ     CZ     CZ1    .
+ MHU      CZ2    NZ     H21    .
+ MHU      H23    CZ2    .      .
+ MHU      H22    CZ2    .      .
+ MHU      H21    CZ2    .      .
+ MHU      CZ1    NZ     H11    .
+ MHU      H13    CZ1    .      .
+ MHU      H12    CZ1    .      .
+ MHU      H11    CZ1    .      .
+ MHU      CE1    CZ     CD1    .
+ MHU      HE1    CE1    .      .
+ MHU      CD1    CE1    HD1    .
+ MHU      HD1    CD1    .      END
+ MHU      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MHU       N         CA        single    1.450     0.020     1.450     0.020     
+MHU       CM        N         single    1.450     0.020     1.450     0.020     
+MHU       CA        C         single    1.500     0.020     1.500     0.020     
+MHU       CB        CA        single    1.524     0.020     1.524     0.020     
+MHU       O         C         deloc     1.250     0.020     1.250     0.020     
+MHU       C         OXT       deloc     1.250     0.020     1.250     0.020     
+MHU       CG        CB        single    1.511     0.020     1.511     0.020     
+MHU       CG        CD1       single    1.390     0.020     1.390     0.020     
+MHU       CD2       CG        double    1.390     0.020     1.390     0.020     
+MHU       CD1       CE1       double    1.390     0.020     1.390     0.020     
+MHU       CE1       CZ        single    1.390     0.020     1.390     0.020     
+MHU       CZ        CE2       double    1.390     0.020     1.390     0.020     
+MHU       NZ        CZ        single    1.400     0.020     1.400     0.020     
+MHU       CE2       CD2       single    1.390     0.020     1.390     0.020     
+MHU       CZ1       NZ        single    1.455     0.020     1.455     0.020     
+MHU       CZ2       NZ        single    1.455     0.020     1.455     0.020     
+MHU       H         N         single    1.036     0.016     0.914     0.007     
+MHU       HA        CA        single    1.089     0.010     0.989     0.005     
+MHU       HM1       CM        single    1.089     0.010     0.989     0.005     
+MHU       HM2       CM        single    1.089     0.010     0.989     0.005     
+MHU       HM3       CM        single    1.089     0.010     0.989     0.005     
+MHU       HB1       CB        single    1.089     0.010     0.989     0.005     
+MHU       HB2       CB        single    1.089     0.010     0.989     0.005     
+MHU       HD1       CD1       single    1.082     0.013     0.975     0.010     
+MHU       HD2       CD2       single    1.082     0.013     0.975     0.010     
+MHU       HE1       CE1       single    1.082     0.013     0.975     0.010     
+MHU       HE2       CE2       single    1.082     0.013     0.975     0.010     
+MHU       H11       CZ1       single    1.089     0.010     0.989     0.005     
+MHU       H12       CZ1       single    1.089     0.010     0.989     0.005     
+MHU       H13       CZ1       single    1.089     0.010     0.989     0.005     
+MHU       H21       CZ2       single    1.089     0.010     0.989     0.005     
+MHU       H22       CZ2       single    1.089     0.010     0.989     0.005     
+MHU       H23       CZ2       single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ MHU      OXT    C      O       123.000    3.000
+ MHU      OXT    C      CA      118.500    3.000
+ MHU      O      C      CA      118.500    3.000
+ MHU      C      CA     HA      108.810    3.000
+ MHU      C      CA     N       111.600    3.000
+ MHU      C      CA     CB      109.470    3.000
+ MHU      HA     CA     N       108.550    3.000
+ MHU      HA     CA     CB      108.340    3.000
+ MHU      N      CA     CB      110.000    3.000
+ MHU      CA     N      H       118.500    3.000
+ MHU      CA     N      CM      120.000    3.000
+ MHU      H      N      CM      118.500    3.000
+ MHU      N      CM     HM3     109.470    3.000
+ MHU      N      CM     HM2     109.470    3.000
+ MHU      N      CM     HM1     109.470    3.000
+ MHU      HM3    CM     HM2     109.470    3.000
+ MHU      HM3    CM     HM1     109.470    3.000
+ MHU      HM2    CM     HM1     109.470    3.000
+ MHU      CA     CB     HB1     109.470    3.000
+ MHU      CA     CB     HB2     109.470    3.000
+ MHU      CA     CB     CG      109.470    3.000
+ MHU      HB1    CB     HB2     107.900    3.000
+ MHU      HB1    CB     CG      109.470    3.000
+ MHU      HB2    CB     CG      109.470    3.000
+ MHU      CB     CG     CD2     120.000    3.000
+ MHU      CB     CG     CD1     120.000    3.000
+ MHU      CD2    CG     CD1     120.000    3.000
+ MHU      CG     CD2    HD2     120.000    3.000
+ MHU      CG     CD2    CE2     120.000    3.000
+ MHU      HD2    CD2    CE2     120.000    3.000
+ MHU      CD2    CE2    HE2     120.000    3.000
+ MHU      CD2    CE2    CZ      120.000    3.000
+ MHU      HE2    CE2    CZ      120.000    3.000
+ MHU      CE2    CZ     NZ      120.000    3.000
+ MHU      CE2    CZ     CE1     120.000    3.000
+ MHU      NZ     CZ     CE1     120.000    3.000
+ MHU      CZ     NZ     CZ2     120.000    3.000
+ MHU      CZ     NZ     CZ1     120.000    3.000
+ MHU      CZ2    NZ     CZ1     120.000    3.000
+ MHU      NZ     CZ2    H23     109.470    3.000
+ MHU      NZ     CZ2    H22     109.470    3.000
+ MHU      NZ     CZ2    H21     109.470    3.000
+ MHU      H23    CZ2    H22     109.470    3.000
+ MHU      H23    CZ2    H21     109.470    3.000
+ MHU      H22    CZ2    H21     109.470    3.000
+ MHU      NZ     CZ1    H13     109.470    3.000
+ MHU      NZ     CZ1    H12     109.470    3.000
+ MHU      NZ     CZ1    H11     109.470    3.000
+ MHU      H13    CZ1    H12     109.470    3.000
+ MHU      H13    CZ1    H11     109.470    3.000
+ MHU      H12    CZ1    H11     109.470    3.000
+ MHU      CZ     CE1    HE1     120.000    3.000
+ MHU      CZ     CE1    CD1     120.000    3.000
+ MHU      HE1    CE1    CD1     120.000    3.000
+ MHU      CE1    CD1    HD1     120.000    3.000
+ MHU      CE1    CD1    CG      120.000    3.000
+ MHU      HD1    CD1    CG      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ MHU      var_1    OXT    C      CA     CB       -75.861   20.000   3
+ MHU      var_2    C      CA     N      CM       -89.074   20.000   3
+ MHU      var_3    CA     N      CM     HM1     -175.003   20.000   1
+ MHU      var_4    C      CA     CB     CG       175.016   20.000   3
+ MHU      var_5    CA     CB     CG     CD2      -90.262   20.000   2
+ MHU      CONST_1  CB     CG     CD1    CE1      180.000    0.000   0
+ MHU      CONST_2  CB     CG     CD2    CE2      180.000    0.000   0
+ MHU      CONST_3  CG     CD2    CE2    CZ         0.000    0.000   0
+ MHU      CONST_4  CD2    CE2    CZ     CE1        0.000    0.000   0
+ MHU      var_6    CE2    CZ     NZ     CZ1      173.931   20.000   1
+ MHU      var_7    CZ     NZ     CZ2    H21        5.136   20.000   1
+ MHU      var_8    CZ     NZ     CZ1    H11       89.921   20.000   1
+ MHU      CONST_5  CE2    CZ     CE1    CD1        0.000    0.000   0
+ MHU      CONST_6  CZ     CE1    CD1    CG         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ MHU      chir_01  CA     N      C      CB        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ MHU      plan-1    N         0.020
+ MHU      plan-1    CA        0.020
+ MHU      plan-1    CM        0.020
+ MHU      plan-1    H         0.020
+ MHU      plan-2    C         0.020
+ MHU      plan-2    CA        0.020
+ MHU      plan-2    O         0.020
+ MHU      plan-2    OXT       0.020
+ MHU      plan-3    CG        0.020
+ MHU      plan-3    CB        0.020
+ MHU      plan-3    CD1       0.020
+ MHU      plan-3    CD2       0.020
+ MHU      plan-3    CE1       0.020
+ MHU      plan-3    CZ        0.020
+ MHU      plan-3    CE2       0.020
+ MHU      plan-3    HD1       0.020
+ MHU      plan-3    HE1       0.020
+ MHU      plan-3    NZ        0.020
+ MHU      plan-3    HE2       0.020
+ MHU      plan-3    HD2       0.020
+ MHU      plan-4    NZ        0.020
+ MHU      plan-4    CZ        0.020
+ MHU      plan-4    CZ1       0.020
+ MHU      plan-4    CZ2       0.020
+# ------------------------------------------------------

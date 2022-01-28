@@ -1,0 +1,347 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+9DN      9DN 'DANSYL-L-ASPARAGINE                 ' non-polymer        43  25 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_9DN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ 9DN           O3     O    OS        0.000      0.000    0.000    0.000
+ 9DN           S1     S    ST        0.000     -0.814   -0.211   -1.145
+ 9DN           O2     O    OS        0.000     -0.399    0.119   -2.464
+ 9DN           N      N    NH1       0.000     -1.187   -1.824   -1.163
+ 9DN           H      H    H         0.000     -0.834   -2.432   -0.437
+ 9DN           CA     C    CH1       0.000     -2.029   -2.370   -2.231
+ 9DN           HA     H    H         0.000     -1.982   -1.709   -3.108
+ 9DN           CB     C    CH2       0.000     -1.528   -3.763   -2.614
+ 9DN           HB1C   H    H         0.000     -2.208   -4.205   -3.344
+ 9DN           HB2C   H    H         0.000     -1.492   -4.393   -1.723
+ 9DN           CG     C    C         0.000     -0.148   -3.655   -3.210
+ 9DN           ND2    N    NH2       0.000      0.497   -4.764   -3.623
+ 9DN           HD22   H    H         0.000      1.425   -4.696   -4.025
+ 9DN           HD21   H    H         0.000      0.059   -5.673   -3.535
+ 9DN           OD1    O    O         0.000      0.382   -2.569   -3.318
+ 9DN           C      C    C         0.000     -3.454   -2.463   -1.748
+ 9DN           OXT    O    OC       -0.500     -4.344   -2.906   -2.509
+ 9DN           O      O    OC       -0.500     -3.747   -2.098   -0.588
+ 9DN           C1     C    CR6       0.000     -2.313    0.669   -0.860
+ 9DN           C6     C    CR66      0.000     -2.994    0.527    0.360
+ 9DN           C7     C    CR16      0.000     -2.502   -0.312    1.375
+ 9DN           H7     H    H         0.000     -1.582   -0.863    1.224
+ 9DN           C8     C    CR16      0.000     -3.183   -0.431    2.548
+ 9DN           H8     H    H         0.000     -2.796   -1.081    3.324
+ 9DN           C9     C    CR16      0.000     -4.366    0.267    2.766
+ 9DN           H9     H    H         0.000     -4.893    0.147    3.705
+ 9DN           C10    C    CR6       0.000     -4.876    1.110    1.802
+ 9DN           N1     N    NT        0.000     -6.061    1.805    2.031
+ 9DN           C12    C    CH3       0.000     -5.904    2.768    3.129
+ 9DN           H123   H    H         0.000     -6.817    3.282    3.282
+ 9DN           H122   H    H         0.000     -5.637    2.253    4.015
+ 9DN           H121   H    H         0.000     -5.144    3.464    2.883
+ 9DN           C11    C    CH3       0.000     -7.171    0.881    2.297
+ 9DN           H113   H    H         0.000     -8.058    1.434    2.468
+ 9DN           H112   H    H         0.000     -7.308    0.243    1.463
+ 9DN           H111   H    H         0.000     -6.948    0.298    3.153
+ 9DN           C5     C    CR66      0.000     -4.195    1.248    0.574
+ 9DN           C4     C    CR16      0.000     -4.688    2.080   -0.443
+ 9DN           H4     H    H         0.000     -5.608    2.633   -0.296
+ 9DN           C3     C    CR16      0.000     -4.005    2.189   -1.616
+ 9DN           H3     H    H         0.000     -4.388    2.832   -2.398
+ 9DN           C2     C    CR16      0.000     -2.820    1.486   -1.824
+ 9DN           H2     H    H         0.000     -2.295    1.590   -2.765
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ 9DN      O3     n/a    S1     START
+ 9DN      S1     O3     C1     .
+ 9DN      O2     S1     .      .
+ 9DN      N      S1     CA     .
+ 9DN      H      N      .      .
+ 9DN      CA     N      C      .
+ 9DN      HA     CA     .      .
+ 9DN      CB     CA     CG     .
+ 9DN      HB1C   CB     .      .
+ 9DN      HB2C   CB     .      .
+ 9DN      CG     CB     OD1    .
+ 9DN      ND2    CG     HD21   .
+ 9DN      HD22   ND2    .      .
+ 9DN      HD21   ND2    .      .
+ 9DN      OD1    CG     .      .
+ 9DN      C      CA     O      .
+ 9DN      OXT    C      .      .
+ 9DN      O      C      .      .
+ 9DN      C1     S1     C6     .
+ 9DN      C6     C1     C7     .
+ 9DN      C7     C6     C8     .
+ 9DN      H7     C7     .      .
+ 9DN      C8     C7     C9     .
+ 9DN      H8     C8     .      .
+ 9DN      C9     C8     C10    .
+ 9DN      H9     C9     .      .
+ 9DN      C10    C9     C5     .
+ 9DN      N1     C10    C11    .
+ 9DN      C12    N1     H121   .
+ 9DN      H123   C12    .      .
+ 9DN      H122   C12    .      .
+ 9DN      H121   C12    .      .
+ 9DN      C11    N1     H111   .
+ 9DN      H113   C11    .      .
+ 9DN      H112   C11    .      .
+ 9DN      H111   C11    .      .
+ 9DN      C5     C10    C4     .
+ 9DN      C4     C5     C3     .
+ 9DN      H4     C4     .      .
+ 9DN      C3     C4     C2     .
+ 9DN      H3     C3     .      .
+ 9DN      C2     C3     H2     .
+ 9DN      H2     C2     .      END
+ 9DN      C1     C2     .    ADD
+ 9DN      C5     C6     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+9DN       O2        S1        double    1.436     0.020     1.436     0.020     
+9DN       S1        O3        double    1.436     0.020     1.436     0.020     
+9DN       C1        S1        single    1.595     0.020     1.595     0.020     
+9DN       N         S1        single    1.600     0.020     1.600     0.020     
+9DN       OXT       C         deloc     1.250     0.020     1.250     0.020     
+9DN       N1        C10       single    1.405     0.020     1.405     0.020     
+9DN       C11       N1        single    1.469     0.020     1.469     0.020     
+9DN       C12       N1        single    1.469     0.020     1.469     0.020     
+9DN       C1        C2        single    1.390     0.020     1.390     0.020     
+9DN       C6        C1        double    1.490     0.020     1.490     0.020     
+9DN       C2        C3        double    1.390     0.020     1.390     0.020     
+9DN       C3        C4        single    1.390     0.020     1.390     0.020     
+9DN       C4        C5        double    1.390     0.020     1.390     0.020     
+9DN       C5        C6        single    1.490     0.020     1.490     0.020     
+9DN       C5        C10       single    1.490     0.020     1.490     0.020     
+9DN       C7        C6        single    1.390     0.020     1.390     0.020     
+9DN       C8        C7        double    1.390     0.020     1.390     0.020     
+9DN       C9        C8        single    1.390     0.020     1.390     0.020     
+9DN       C10       C9        double    1.390     0.020     1.390     0.020     
+9DN       CA        N         single    1.450     0.020     1.450     0.020     
+9DN       C         CA        single    1.500     0.020     1.500     0.020     
+9DN       CB        CA        single    1.524     0.020     1.524     0.020     
+9DN       O         C         deloc     1.250     0.020     1.250     0.020     
+9DN       CG        CB        single    1.510     0.020     1.510     0.020     
+9DN       OD1       CG        double    1.220     0.020     1.220     0.020     
+9DN       ND2       CG        single    1.332     0.020     1.332     0.020     
+9DN       H         N         single    1.036     0.016     0.914     0.007     
+9DN       H111      C11       single    1.089     0.010     0.989     0.005     
+9DN       H112      C11       single    1.089     0.010     0.989     0.005     
+9DN       H113      C11       single    1.089     0.010     0.989     0.005     
+9DN       H121      C12       single    1.089     0.010     0.989     0.005     
+9DN       H122      C12       single    1.089     0.010     0.989     0.005     
+9DN       H123      C12       single    1.089     0.010     0.989     0.005     
+9DN       H2        C2        single    1.082     0.013     0.975     0.010     
+9DN       H3        C3        single    1.082     0.013     0.975     0.010     
+9DN       H4        C4        single    1.082     0.013     0.975     0.010     
+9DN       H7        C7        single    1.082     0.013     0.975     0.010     
+9DN       H8        C8        single    1.082     0.013     0.975     0.010     
+9DN       H9        C9        single    1.082     0.013     0.975     0.010     
+9DN       HA        CA        single    1.089     0.010     0.989     0.005     
+9DN       HB1C      CB        single    1.089     0.010     0.989     0.005     
+9DN       HB2C      CB        single    1.089     0.010     0.989     0.005     
+9DN       HD21      ND2       single    1.016     0.010     0.899     0.007     
+9DN       HD22      ND2       single    1.016     0.010     0.899     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ 9DN      O3     S1     O2      109.500    3.000
+ 9DN      O3     S1     N       109.500    3.000
+ 9DN      O3     S1     C1      109.500    3.000
+ 9DN      O2     S1     N       109.500    3.000
+ 9DN      O2     S1     C1      109.500    3.000
+ 9DN      N      S1     C1      109.500    3.000
+ 9DN      S1     N      H       120.000    3.000
+ 9DN      S1     N      CA      120.000    3.000
+ 9DN      H      N      CA      118.500    3.000
+ 9DN      N      CA     HA      108.550    3.000
+ 9DN      N      CA     CB      110.000    3.000
+ 9DN      N      CA     C       111.600    3.000
+ 9DN      HA     CA     CB      108.340    3.000
+ 9DN      HA     CA     C       108.810    3.000
+ 9DN      CB     CA     C       109.470    3.000
+ 9DN      CA     CB     HB1C    109.470    3.000
+ 9DN      CA     CB     HB2C    109.470    3.000
+ 9DN      CA     CB     CG      109.470    3.000
+ 9DN      HB1C   CB     HB2C    107.900    3.000
+ 9DN      HB1C   CB     CG      109.470    3.000
+ 9DN      HB2C   CB     CG      109.470    3.000
+ 9DN      CB     CG     ND2     116.500    3.000
+ 9DN      CB     CG     OD1     120.500    3.000
+ 9DN      ND2    CG     OD1     123.000    3.000
+ 9DN      CG     ND2    HD22    120.000    3.000
+ 9DN      CG     ND2    HD21    120.000    3.000
+ 9DN      HD22   ND2    HD21    120.000    3.000
+ 9DN      CA     C      OXT     118.500    3.000
+ 9DN      CA     C      O       118.500    3.000
+ 9DN      OXT    C      O       123.000    3.000
+ 9DN      S1     C1     C6      120.000    3.000
+ 9DN      S1     C1     C2      120.000    3.000
+ 9DN      C6     C1     C2      120.000    3.000
+ 9DN      C1     C6     C7      120.000    3.000
+ 9DN      C1     C6     C5      120.000    3.000
+ 9DN      C7     C6     C5      120.000    3.000
+ 9DN      C6     C7     H7      120.000    3.000
+ 9DN      C6     C7     C8      120.000    3.000
+ 9DN      H7     C7     C8      120.000    3.000
+ 9DN      C7     C8     H8      120.000    3.000
+ 9DN      C7     C8     C9      120.000    3.000
+ 9DN      H8     C8     C9      120.000    3.000
+ 9DN      C8     C9     H9      120.000    3.000
+ 9DN      C8     C9     C10     120.000    3.000
+ 9DN      H9     C9     C10     120.000    3.000
+ 9DN      C9     C10    N1      120.000    3.000
+ 9DN      C9     C10    C5      120.000    3.000
+ 9DN      N1     C10    C5      120.000    3.000
+ 9DN      C10    N1     C12     109.500    3.000
+ 9DN      C10    N1     C11     109.500    3.000
+ 9DN      C12    N1     C11     109.470    3.000
+ 9DN      N1     C12    H123    109.470    3.000
+ 9DN      N1     C12    H122    109.470    3.000
+ 9DN      N1     C12    H121    109.470    3.000
+ 9DN      H123   C12    H122    109.470    3.000
+ 9DN      H123   C12    H121    109.470    3.000
+ 9DN      H122   C12    H121    109.470    3.000
+ 9DN      N1     C11    H113    109.470    3.000
+ 9DN      N1     C11    H112    109.470    3.000
+ 9DN      N1     C11    H111    109.470    3.000
+ 9DN      H113   C11    H112    109.470    3.000
+ 9DN      H113   C11    H111    109.470    3.000
+ 9DN      H112   C11    H111    109.470    3.000
+ 9DN      C10    C5     C4      120.000    3.000
+ 9DN      C10    C5     C6      120.000    3.000
+ 9DN      C4     C5     C6      120.000    3.000
+ 9DN      C5     C4     H4      120.000    3.000
+ 9DN      C5     C4     C3      120.000    3.000
+ 9DN      H4     C4     C3      120.000    3.000
+ 9DN      C4     C3     H3      120.000    3.000
+ 9DN      C4     C3     C2      120.000    3.000
+ 9DN      H3     C3     C2      120.000    3.000
+ 9DN      C3     C2     H2      120.000    3.000
+ 9DN      C3     C2     C1      120.000    3.000
+ 9DN      H2     C2     C1      120.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ 9DN      var_1    O3     S1     N      CA       179.809   20.000   1
+ 9DN      var_2    S1     N      CA     C        -97.302   20.000   3
+ 9DN      var_3    N      CA     CB     CG       -64.996   20.000   3
+ 9DN      var_4    CA     CB     CG     OD1        0.032   20.000   3
+ 9DN      CONST_1  CB     CG     ND2    HD21       0.000    0.000   0
+ 9DN      var_5    N      CA     C      O          0.002   20.000   3
+ 9DN      var_6    O3     S1     C1     C6       -48.448   20.000   1
+ 9DN      CONST_2  S1     C1     C2     C3       180.000    0.000   0
+ 9DN      CONST_3  S1     C1     C6     C7         0.000    0.000   0
+ 9DN      CONST_4  C1     C6     C7     C8       180.000    0.000   0
+ 9DN      CONST_5  C6     C7     C8     C9         0.000    0.000   0
+ 9DN      CONST_6  C7     C8     C9     C10        0.000    0.000   0
+ 9DN      CONST_7  C8     C9     C10    C5         0.000    0.000   0
+ 9DN      var_7    C9     C10    N1     C11      -59.147   20.000   1
+ 9DN      var_8    C10    N1     C12    H121      59.970   20.000   1
+ 9DN      var_9    C10    N1     C11    H111      59.960   20.000   1
+ 9DN      CONST_8  C9     C10    C5     C4       180.000    0.000   0
+ 9DN      CONST_9  C10    C5     C6     C1       180.000    0.000   0
+ 9DN      CONST_10 C10    C5     C4     C3       180.000    0.000   0
+ 9DN      CONST_11 C5     C4     C3     C2         0.000    0.000   0
+ 9DN      CONST_12 C4     C3     C2     C1         0.000    0.000   0
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ 9DN      chir_01  CA     N      C      CB        positiv
+ 9DN      chir_02  S1     N      O2     O3        positiv
+ 9DN      chir_03  N1     C10    C11    C12       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ 9DN      plan-1    N         0.020
+ 9DN      plan-1    CA        0.020
+ 9DN      plan-1    S1        0.020
+ 9DN      plan-1    H         0.020
+ 9DN      plan-2    C         0.020
+ 9DN      plan-2    CA        0.020
+ 9DN      plan-2    O         0.020
+ 9DN      plan-2    OXT       0.020
+ 9DN      plan-3    CG        0.020
+ 9DN      plan-3    CB        0.020
+ 9DN      plan-3    OD1       0.020
+ 9DN      plan-3    ND2       0.020
+ 9DN      plan-3    HD22      0.020
+ 9DN      plan-3    HD21      0.020
+ 9DN      plan-4    ND2       0.020
+ 9DN      plan-4    CG        0.020
+ 9DN      plan-4    HD21      0.020
+ 9DN      plan-4    HD22      0.020
+ 9DN      plan-5    C1        0.020
+ 9DN      plan-5    S1        0.020
+ 9DN      plan-5    C2        0.020
+ 9DN      plan-5    C6        0.020
+ 9DN      plan-5    C3        0.020
+ 9DN      plan-5    C4        0.020
+ 9DN      plan-5    H2        0.020
+ 9DN      plan-5    H3        0.020
+ 9DN      plan-5    C5        0.020
+ 9DN      plan-5    H4        0.020
+ 9DN      plan-5    C10       0.020
+ 9DN      plan-5    C7        0.020
+ 9DN      plan-5    C8        0.020
+ 9DN      plan-5    C9        0.020
+ 9DN      plan-5    H7        0.020
+ 9DN      plan-5    H8        0.020
+ 9DN      plan-5    H9        0.020
+ 9DN      plan-5    N1        0.020
+# ------------------------------------------------------

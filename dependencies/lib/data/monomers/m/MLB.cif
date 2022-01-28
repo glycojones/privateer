@@ -1,0 +1,366 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MLB      MLB 'melibiose                           ' non-polymer        45  23 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_MLB
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MLB    C1     C   CH2       0       1.988      -0.466      -1.271
+MLB    O1     O    O2   0.000       0.745      -0.700      -0.615
+MLB    C2     C   CH2   0.000       3.059      -1.383      -0.678
+MLB    O2     O    O2   0.000       2.652      -2.770      -0.838
+MLB    C3     C   CH2   0.000       3.233      -1.057       0.811
+MLB    O3     O    O2   0.000       4.294      -1.917       1.349
+MLB    C4     C   CH2   0.000       3.606       0.419       0.983
+MLB    O4     O    O2   0.000       4.872       0.680       0.321
+MLB    C5     C   CH2   0.000       2.518       1.280       0.327
+MLB    O5     O    O2   0.000       2.358       0.898      -1.063
+MLB    C6     C   CH2   0.000       2.886       2.765       0.412
+MLB    O6     O    O2   0.000       1.830       3.548      -0.085
+MLB   C1'     C   CH2   0.000      -2.722      -0.090       1.679
+MLB   O1'     O    O2   0.000      -2.864      -1.519       1.821
+MLB   C2'     C   CH2   0.000      -3.966       0.549       1.018
+MLB   O2'     O    O2   0.000      -5.103       0.184       1.820
+MLB   C3'     C   CH2   0.000      -4.135      -0.099      -0.387
+MLB   O3'     O    O2   0.000      -5.300       0.520      -1.015
+MLB   C4'     C   CH2   0.000      -2.861       0.187      -1.197
+MLB   O4'     O    O2   0.000      -2.981      -0.415      -2.507
+MLB   C5'     C   CH2   0.000      -1.657      -0.407      -0.467
+MLB   O5'     O    O2   0.000      -1.581       0.181       0.851
+MLB   C6'     C   CH2   0.000      -0.394      -0.071      -1.257
+MLB    H1     H     H   0.000       1.887      -0.661      -2.318
+MLB    H2     H     H   0.000       3.956      -1.215      -1.198
+MLB   HO2     H     H   0.000       2.511      -3.011      -1.726
+MLB    H3     H     H   0.000       2.317      -1.265       1.335
+MLB   HO3     H     H   0.000       4.136      -2.808       1.288
+MLB    H4     H     H   0.000       3.651       0.669       1.985
+MLB   HO4     H     H   0.000       5.518       0.163       0.694
+MLB    H5     H     H   0.000       1.573       1.121       0.817
+MLB    H6     H     H   0.000       3.073       3.026       1.411
+MLB   H6A     H     H   0.000       3.747       2.945      -0.187
+MLB   HO6     H     H   0.000       2.006       4.411      -0.063
+MLB   H1'     H     H   0.000      -2.565       0.353       2.621
+MLB  HO1'     H     H   0.000      -2.130      -1.938       2.209
+MLB   H2'     H     H   0.000      -3.867       1.588       0.958
+MLB  HO2'     H     H   0.000      -5.069       0.525       2.624
+MLB   H3'     H     H   0.000      -4.285      -1.157      -0.296
+MLB  HO3'     H     H   0.000      -6.102       0.382      -0.562
+MLB   H4'     H     H   0.000      -2.726       1.205      -1.293
+MLB  HO4'     H     H   0.000      -3.733      -0.083      -2.991
+MLB   H5'     H     H   0.000      -1.770      -1.457      -0.371
+MLB   H6'     H     H   0.000      -0.225       0.978      -1.338
+MLB  H6'A     H     H   0.000      -0.479      -0.406      -2.245
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MLB       C1        O1        SING      1.391     0.010     1.391     0.010     
+MLB       C1        C2        SING      1.522     0.013     1.522     0.013     
+MLB       C1        O5        SING      1.415     0.016     1.415     0.016     
+MLB       O1        C6'       SING      1.428     0.014     1.428     0.014     
+MLB       C2        O2        SING      1.425     0.012     1.425     0.012     
+MLB       C2        C3        SING      1.524     0.016     1.524     0.016     
+MLB       C3        O3        SING      1.427     0.010     1.427     0.010     
+MLB       C3        C4        SING      1.523     0.011     1.523     0.011     
+MLB       C4        O4        SING      1.427     0.010     1.427     0.010     
+MLB       C4        C5        SING      1.527     0.010     1.527     0.010     
+MLB       C5        O5        SING      1.440     0.020     1.440     0.020     
+MLB       C5        C6        SING      1.515     0.020     1.515     0.020     
+MLB       C6        O6        SING      1.426     0.020     1.426     0.020     
+MLB       C1'       O1'       SING      1.401     0.015     1.401     0.015     
+MLB       C1'       C2'       SING      1.529     0.010     1.529     0.010     
+MLB       C1'       O5'       SING      1.432     0.010     1.432     0.010     
+MLB       C2'       O2'       SING      1.425     0.012     1.425     0.012     
+MLB       C2'       C3'       SING      1.524     0.016     1.524     0.016     
+MLB       C3'       O3'       SING      1.427     0.010     1.427     0.010     
+MLB       C3'       C4'       SING      1.523     0.011     1.523     0.011     
+MLB       C4'       O4'       SING      1.427     0.010     1.427     0.010     
+MLB       C4'       C5'       SING      1.527     0.010     1.527     0.010     
+MLB       C5'       O5'       SING      1.440     0.020     1.440     0.020     
+MLB       C5'       C6'       SING      1.508     0.020     1.508     0.020     
+MLB       C1        H1        SING      1.089     0.010     0.989     0.005     
+MLB       C2        H2        SING      1.089     0.010     0.989     0.005     
+MLB       O2        HO2       SING      0.970     0.012     0.839     0.014     
+MLB       C3        H3        SING      1.089     0.010     0.989     0.005     
+MLB       O3        HO3       SING      0.970     0.012     0.839     0.014     
+MLB       C4        H4        SING      1.089     0.010     0.989     0.005     
+MLB       O4        HO4       SING      0.970     0.012     0.839     0.014     
+MLB       C5        H5        SING      1.089     0.010     0.989     0.005     
+MLB       C6        H6        SING      1.089     0.010     0.989     0.005     
+MLB       C6        H6A       SING      1.089     0.010     0.989     0.005     
+MLB       O6        HO6       SING      0.970     0.012     0.839     0.014     
+MLB       C1'       H1'       SING      1.089     0.010     0.989     0.005     
+MLB       O1'       HO1'      SING      0.970     0.012     0.839     0.014     
+MLB       C2'       H2'       SING      1.089     0.010     0.989     0.005     
+MLB       O2'       HO2'      SING      0.970     0.012     0.839     0.014     
+MLB       C3'       H3'       SING      1.089     0.010     0.989     0.005     
+MLB       O3'       HO3'      SING      0.970     0.012     0.839     0.014     
+MLB       C4'       H4'       SING      1.089     0.010     0.989     0.005     
+MLB       O4'       HO4'      SING      0.970     0.012     0.839     0.014     
+MLB       C5'       H5'       SING      1.089     0.010     0.989     0.005     
+MLB       C6'       H6'       SING      1.089     0.010     0.989     0.005     
+MLB       C6'       H6'A      SING      1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MLB    O1    C1      C2   108.291    1.22
+MLB    O1    C1      O5   107.982    1.22
+MLB    O1    C1      H1   109.876    0.77
+MLB    C2    C1      O5   110.345    1.43
+MLB    C2    C1      H1   109.584    1.22
+MLB    O5    C1      H1   109.243    1.39
+MLB    C1    O1     C6'   114.616    0.49
+MLB    C1    C2      O2   110.289    1.98
+MLB    C1    C2      C3   109.877    1.94
+MLB    C1    C2      H2   108.628    1.25
+MLB    O2    C2      C3   110.646    2.21
+MLB    O2    C2      H2   108.665    1.37
+MLB    C3    C2      H2   108.632    1.36
+MLB    C2    O2     HO2   109.096    2.33
+MLB    C2    C3      O3   109.903    2.30
+MLB    C2    C3      C4   110.710    1.51
+MLB    C2    C3      H3   108.614    1.41
+MLB    O3    C3      C4   110.148    1.67
+MLB    O3    C3      H3   108.787    1.25
+MLB    C4    C3      H3   108.703    1.14
+MLB    C3    O3     HO3   108.943    2.95
+MLB    C3    C4      O4   110.148    1.67
+MLB    C3    C4      C5   110.075    1.43
+MLB    C3    C4      H4   108.703    1.14
+MLB    O4    C4      C5   109.050    2.02
+MLB    O4    C4      H4   108.787    1.25
+MLB    C5    C4      H4   109.144    0.72
+MLB    C4    O4     HO4   108.943    2.95
+MLB    C4    C5      O5   109.512    1.31
+MLB    C4    C5      C6   112.946    1.34
+MLB    C4    C5      H5   109.062    1.62
+MLB    O5    C5      C6   106.419    2.18
+MLB    O5    C5      H5   109.008    1.42
+MLB    C6    C5      H5   109.009    1.71
+MLB    C1    O5      C5   113.291    1.75
+MLB    C5    C6      O6   110.861    3.00
+MLB    C5    C6      H6   109.422    1.23
+MLB    C5    C6     H6A   109.422    1.23
+MLB    O6    C6      H6   109.381    1.32
+MLB    O6    C6     H6A   109.381    1.32
+MLB    H6    C6     H6A   108.204    1.25
+MLB    C6    O6     HO6   109.184    3.00
+MLB   O1'   C1'     C2'   107.945    2.79
+MLB   O1'   C1'     O5'   110.455    2.82
+MLB   O1'   C1'     H1'   109.267    2.12
+MLB   C2'   C1'     O5'   110.228    1.87
+MLB   C2'   C1'     H1'   109.742    2.00
+MLB   O5'   C1'     H1'   108.850    1.72
+MLB   C1'   O1'    HO1'   108.239    3.00
+MLB   C1'   C2'     O2'   109.840    3.00
+MLB   C1'   C2'     C3'   110.454    1.32
+MLB   C1'   C2'     H2'   108.331    1.59
+MLB   O2'   C2'     C3'   110.646    2.21
+MLB   O2'   C2'     H2'   108.665    1.37
+MLB   C3'   C2'     H2'   108.632    1.36
+MLB   C2'   O2'    HO2'   109.096    2.33
+MLB   C2'   C3'     O3'   109.903    2.30
+MLB   C2'   C3'     C4'   110.710    1.51
+MLB   C2'   C3'     H3'   108.614    1.41
+MLB   O3'   C3'     C4'   110.148    1.67
+MLB   O3'   C3'     H3'   108.787    1.25
+MLB   C4'   C3'     H3'   108.703    1.14
+MLB   C3'   O3'    HO3'   108.943    2.95
+MLB   C3'   C4'     O4'   110.148    1.67
+MLB   C3'   C4'     C5'   110.075    1.43
+MLB   C3'   C4'     H4'   108.703    1.14
+MLB   O4'   C4'     C5'   109.050    2.02
+MLB   O4'   C4'     H4'   108.787    1.25
+MLB   C5'   C4'     H4'   109.144    0.72
+MLB   C4'   O4'    HO4'   108.943    2.95
+MLB   C4'   C5'     O5'   109.512    1.31
+MLB   C4'   C5'     C6'   111.966    0.94
+MLB   C4'   C5'     H5'   109.062    1.62
+MLB   O5'   C5'     C6'   106.878    1.92
+MLB   O5'   C5'     H5'   109.008    1.42
+MLB   C6'   C5'     H5'   108.987    1.18
+MLB   C1'   O5'     C5'   113.900    1.78
+MLB    O1   C6'     C5'   108.743    1.01
+MLB    O1   C6'     H6'   109.874    0.18
+MLB    O1   C6'    H6'A   109.874    0.18
+MLB   C5'   C6'     H6'   109.907    0.95
+MLB   C5'   C6'    H6'A   109.907    0.95
+MLB   H6'   C6'    H6'A   108.595    1.65
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MLB       sp3_sp3_1     O5'     C1'     C2'     C3'      60.000   10.00     3
+MLB       sp3_sp3_2     O5'     C1'     C2'     O2'     180.000   10.00     3
+MLB       sp3_sp3_3     O5'     C1'     C2'     H2'     -60.000   10.00     3
+MLB       sp3_sp3_4     O1'     C1'     C2'     C3'     -60.000   10.00     3
+MLB       sp3_sp3_5     O1'     C1'     C2'     O2'      60.000   10.00     3
+MLB       sp3_sp3_6     O1'     C1'     C2'     H2'     180.000   10.00     3
+MLB       sp3_sp3_7     H1'     C1'     C2'     C3'     180.000   10.00     3
+MLB       sp3_sp3_8     H1'     C1'     C2'     O2'     -60.000   10.00     3
+MLB       sp3_sp3_9     H1'     C1'     C2'     H2'      60.000   10.00     3
+MLB      sp3_sp3_10     C1'     C2'     C3'     C4'     -60.000   10.00     3
+MLB      sp3_sp3_11     C1'     C2'     C3'     O3'      60.000   10.00     3
+MLB      sp3_sp3_12     C1'     C2'     C3'     H3'     180.000   10.00     3
+MLB      sp3_sp3_13     O2'     C2'     C3'     C4'     180.000   10.00     3
+MLB      sp3_sp3_14     O2'     C2'     C3'     O3'     -60.000   10.00     3
+MLB      sp3_sp3_15     O2'     C2'     C3'     H3'      60.000   10.00     3
+MLB      sp3_sp3_16     H2'     C2'     C3'     C4'      60.000   10.00     3
+MLB      sp3_sp3_17     H2'     C2'     C3'     O3'     180.000   10.00     3
+MLB      sp3_sp3_18     H2'     C2'     C3'     H3'     -60.000   10.00     3
+MLB      sp3_sp3_19     C2'     C3'     C4'     C5'      60.000   10.00     3
+MLB      sp3_sp3_20     C2'     C3'     C4'     O4'     180.000   10.00     3
+MLB      sp3_sp3_21     C2'     C3'     C4'     H4'     -60.000   10.00     3
+MLB      sp3_sp3_22     O3'     C3'     C4'     C5'     -60.000   10.00     3
+MLB      sp3_sp3_23     O3'     C3'     C4'     O4'      60.000   10.00     3
+MLB      sp3_sp3_24     O3'     C3'     C4'     H4'     180.000   10.00     3
+MLB      sp3_sp3_25     H3'     C3'     C4'     C5'     180.000   10.00     3
+MLB      sp3_sp3_26     H3'     C3'     C4'     O4'     -60.000   10.00     3
+MLB      sp3_sp3_27     H3'     C3'     C4'     H4'      60.000   10.00     3
+MLB      sp3_sp3_28     C3'     C4'     C5'     O5'     -60.000   10.00     3
+MLB      sp3_sp3_29     C3'     C4'     C5'     C6'      60.000   10.00     3
+MLB      sp3_sp3_30     C3'     C4'     C5'     H5'     180.000   10.00     3
+MLB      sp3_sp3_31     O4'     C4'     C5'     O5'     180.000   10.00     3
+MLB      sp3_sp3_32     O4'     C4'     C5'     C6'     -60.000   10.00     3
+MLB      sp3_sp3_33     O4'     C4'     C5'     H5'      60.000   10.00     3
+MLB      sp3_sp3_34     H4'     C4'     C5'     O5'      60.000   10.00     3
+MLB      sp3_sp3_35     H4'     C4'     C5'     C6'     180.000   10.00     3
+MLB      sp3_sp3_36     H4'     C4'     C5'     H5'     -60.000   10.00     3
+MLB      sp3_sp3_37     C4'     C5'     O5'     C1'      60.000   10.00     3
+MLB      sp3_sp3_38     C6'     C5'     O5'     C1'     180.000   10.00     3
+MLB      sp3_sp3_39     H5'     C5'     O5'     C1'     -60.000   10.00     3
+MLB      sp3_sp3_40      O5      C1      C2      C3      60.000   10.00     3
+MLB      sp3_sp3_41      O5      C1      C2      O2     180.000   10.00     3
+MLB      sp3_sp3_42      O5      C1      C2      H2     -60.000   10.00     3
+MLB      sp3_sp3_43      O1      C1      C2      C3     -60.000   10.00     3
+MLB      sp3_sp3_44      O1      C1      C2      O2      60.000   10.00     3
+MLB      sp3_sp3_45      O1      C1      C2      H2     180.000   10.00     3
+MLB      sp3_sp3_46      H1      C1      C2      C3     180.000   10.00     3
+MLB      sp3_sp3_47      H1      C1      C2      O2     -60.000   10.00     3
+MLB      sp3_sp3_48      H1      C1      C2      H2      60.000   10.00     3
+MLB      sp3_sp3_49      C1      C2      C3      C4     -60.000   10.00     3
+MLB      sp3_sp3_50      C1      C2      C3      O3      60.000   10.00     3
+MLB      sp3_sp3_51      C1      C2      C3      H3     180.000   10.00     3
+MLB      sp3_sp3_52      O2      C2      C3      C4     180.000   10.00     3
+MLB      sp3_sp3_53      O2      C2      C3      O3     -60.000   10.00     3
+MLB      sp3_sp3_54      O2      C2      C3      H3      60.000   10.00     3
+MLB      sp3_sp3_55      H2      C2      C3      C4      60.000   10.00     3
+MLB      sp3_sp3_56      H2      C2      C3      O3     180.000   10.00     3
+MLB      sp3_sp3_57      H2      C2      C3      H3     -60.000   10.00     3
+MLB      sp3_sp3_58      C2      C3      C4      C5      60.000   10.00     3
+MLB      sp3_sp3_59      C2      C3      C4      O4     180.000   10.00     3
+MLB      sp3_sp3_60      C2      C3      C4      H4     -60.000   10.00     3
+MLB      sp3_sp3_61      O3      C3      C4      C5     -60.000   10.00     3
+MLB      sp3_sp3_62      O3      C3      C4      O4      60.000   10.00     3
+MLB      sp3_sp3_63      O3      C3      C4      H4     180.000   10.00     3
+MLB      sp3_sp3_64      H3      C3      C4      C5     180.000   10.00     3
+MLB      sp3_sp3_65      H3      C3      C4      O4     -60.000   10.00     3
+MLB      sp3_sp3_66      H3      C3      C4      H4      60.000   10.00     3
+MLB      sp3_sp3_67      C3      C4      C5      O5     -60.000   10.00     3
+MLB      sp3_sp3_68      C3      C4      C5      C6      60.000   10.00     3
+MLB      sp3_sp3_69      C3      C4      C5      H5     180.000   10.00     3
+MLB      sp3_sp3_70      O4      C4      C5      O5     180.000   10.00     3
+MLB      sp3_sp3_71      O4      C4      C5      C6     -60.000   10.00     3
+MLB      sp3_sp3_72      O4      C4      C5      H5      60.000   10.00     3
+MLB      sp3_sp3_73      H4      C4      C5      O5      60.000   10.00     3
+MLB      sp3_sp3_74      H4      C4      C5      C6     180.000   10.00     3
+MLB      sp3_sp3_75      H4      C4      C5      H5     -60.000   10.00     3
+MLB      sp3_sp3_76      C4      C5      O5      C1      60.000   10.00     3
+MLB      sp3_sp3_77      C6      C5      O5      C1     180.000   10.00     3
+MLB      sp3_sp3_78      H5      C5      O5      C1     -60.000   10.00     3
+MLB      sp3_sp3_79      C2      C1      O1     C6'     180.000   10.00     3
+MLB      sp3_sp3_80      O5      C1      O1     C6'     -60.000   10.00     3
+MLB      sp3_sp3_81      H1      C1      O1     C6'      60.000   10.00     3
+MLB      sp3_sp3_82      C2      C1      O5      C5      60.000   10.00     3
+MLB      sp3_sp3_83      O1      C1      O5      C5     180.000   10.00     3
+MLB      sp3_sp3_84      H1      C1      O5      C5     -60.000   10.00     3
+MLB      sp3_sp3_85     C5'     C6'      O1      C1     180.000   10.00     3
+MLB      sp3_sp3_86     H6'     C6'      O1      C1     -60.000   10.00     3
+MLB      sp3_sp3_87    H6'A     C6'      O1      C1      60.000   10.00     3
+MLB      sp3_sp3_88      C1      C2      O2     HO2     180.000   10.00     3
+MLB      sp3_sp3_89      C3      C2      O2     HO2     -60.000   10.00     3
+MLB      sp3_sp3_90      H2      C2      O2     HO2      60.000   10.00     3
+MLB      sp3_sp3_91      C2      C3      O3     HO3     180.000   10.00     3
+MLB      sp3_sp3_92      C4      C3      O3     HO3     -60.000   10.00     3
+MLB      sp3_sp3_93      H3      C3      O3     HO3      60.000   10.00     3
+MLB      sp3_sp3_94      C3      C4      O4     HO4     180.000   10.00     3
+MLB      sp3_sp3_95      C5      C4      O4     HO4     -60.000   10.00     3
+MLB      sp3_sp3_96      H4      C4      O4     HO4      60.000   10.00     3
+MLB      sp3_sp3_97      C4      C5      C6      O6     180.000   10.00     3
+MLB      sp3_sp3_98      C4      C5      C6      H6     -60.000   10.00     3
+MLB      sp3_sp3_99      C4      C5      C6     H6A      60.000   10.00     3
+MLB     sp3_sp3_100      O5      C5      C6      O6      60.000   10.00     3
+MLB     sp3_sp3_101      O5      C5      C6      H6     180.000   10.00     3
+MLB     sp3_sp3_102      O5      C5      C6     H6A     -60.000   10.00     3
+MLB     sp3_sp3_103      H5      C5      C6      O6     -60.000   10.00     3
+MLB     sp3_sp3_104      H5      C5      C6      H6      60.000   10.00     3
+MLB     sp3_sp3_105      H5      C5      C6     H6A     180.000   10.00     3
+MLB     sp3_sp3_106      C5      C6      O6     HO6     180.000   10.00     3
+MLB     sp3_sp3_107      H6      C6      O6     HO6     -60.000   10.00     3
+MLB     sp3_sp3_108     H6A      C6      O6     HO6      60.000   10.00     3
+MLB     sp3_sp3_109     C2'     C1'     O1'    HO1'     180.000   10.00     3
+MLB     sp3_sp3_110     O5'     C1'     O1'    HO1'     -60.000   10.00     3
+MLB     sp3_sp3_111     H1'     C1'     O1'    HO1'      60.000   10.00     3
+MLB     sp3_sp3_112     C2'     C1'     O5'     C5'      60.000   10.00     3
+MLB     sp3_sp3_113     O1'     C1'     O5'     C5'     180.000   10.00     3
+MLB     sp3_sp3_114     H1'     C1'     O5'     C5'     -60.000   10.00     3
+MLB     sp3_sp3_115     C1'     C2'     O2'    HO2'     180.000   10.00     3
+MLB     sp3_sp3_116     C3'     C2'     O2'    HO2'     -60.000   10.00     3
+MLB     sp3_sp3_117     H2'     C2'     O2'    HO2'      60.000   10.00     3
+MLB     sp3_sp3_118     C2'     C3'     O3'    HO3'     180.000   10.00     3
+MLB     sp3_sp3_119     C4'     C3'     O3'    HO3'     -60.000   10.00     3
+MLB     sp3_sp3_120     H3'     C3'     O3'    HO3'      60.000   10.00     3
+MLB     sp3_sp3_121     C3'     C4'     O4'    HO4'     180.000   10.00     3
+MLB     sp3_sp3_122     C5'     C4'     O4'    HO4'     -60.000   10.00     3
+MLB     sp3_sp3_123     H4'     C4'     O4'    HO4'      60.000   10.00     3
+MLB     sp3_sp3_124     C4'     C5'     C6'      O1     180.000   10.00     3
+MLB     sp3_sp3_125     C4'     C5'     C6'     H6'     -60.000   10.00     3
+MLB     sp3_sp3_126     C4'     C5'     C6'    H6'A      60.000   10.00     3
+MLB     sp3_sp3_127     O5'     C5'     C6'      O1      60.000   10.00     3
+MLB     sp3_sp3_128     O5'     C5'     C6'     H6'     180.000   10.00     3
+MLB     sp3_sp3_129     O5'     C5'     C6'    H6'A     -60.000   10.00     3
+MLB     sp3_sp3_130     H5'     C5'     C6'      O1     -60.000   10.00     3
+MLB     sp3_sp3_131     H5'     C5'     C6'     H6'      60.000   10.00     3
+MLB     sp3_sp3_132     H5'     C5'     C6'    H6'A     180.000   10.00     3

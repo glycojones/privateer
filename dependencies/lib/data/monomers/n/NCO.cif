@@ -1,0 +1,213 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+NCO      NCO 'COBALT HEXAMMINE(III)               ' non-polymer        25   7 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_NCO
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ NCO           N6     N    NT3       0.000      0.000    0.000    0.000
+ NCO           HN61   H    H         0.000      0.505   -0.041   -0.872
+ NCO           HN62   H    H         0.000      0.060    0.933    0.380
+ NCO           HN63   H    H         0.000      0.403   -0.655    0.654
+ NCO           CO     CO   CO        3.000     -1.736   -0.425   -0.286
+ NCO           N5     N    NT3       0.000     -2.190    1.320   -0.120
+ NCO           HN53   H    H         0.000     -2.831    1.571   -0.858
+ NCO           HN52   H    H         0.000     -1.361    1.891   -0.186
+ NCO           HN51   H    H         0.000     -2.631    1.468    0.775
+ NCO           N2     N    NT3       0.000     -1.973   -0.656    1.493
+ NCO           HN23   H    H         0.000     -1.551   -1.526    1.779
+ NCO           HN22   H    H         0.000     -2.960   -0.677    1.701
+ NCO           HN21   H    H         0.000     -1.541    0.108    1.992
+ NCO           N3     N    NT3       0.000     -1.281   -2.170   -0.452
+ NCO           HN33   H    H         0.000     -0.463   -2.250   -1.037
+ NCO           HN32   H    H         0.000     -2.046   -2.677   -0.870
+ NCO           HN31   H    H         0.000     -1.081   -2.553    0.460
+ NCO           N4     N    NT3       0.000     -3.471   -0.850   -0.573
+ NCO           HN43   H    H         0.000     -3.735   -0.574   -1.507
+ NCO           HN42   H    H         0.000     -4.052   -0.366    0.097
+ NCO           HN41   H    H         0.000     -3.595   -1.846   -0.469
+ NCO           N1     N    NT3       0.000     -1.498   -0.194   -2.065
+ NCO           HN13   H    H         0.000     -1.460   -1.095   -2.519
+ NCO           HN12   H    H         0.000     -0.635    0.302   -2.229
+ NCO           HN11   H    H         0.000     -2.268    0.339   -2.441
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ NCO      N6     n/a    CO     START
+ NCO      HN61   N6     .      .
+ NCO      HN62   N6     .      .
+ NCO      HN63   N6     .      .
+ NCO      CO     N6     N1     .
+ NCO      N5     CO     HN51   .
+ NCO      HN53   N5     .      .
+ NCO      HN52   N5     .      .
+ NCO      HN51   N5     .      .
+ NCO      N2     CO     HN21   .
+ NCO      HN23   N2     .      .
+ NCO      HN22   N2     .      .
+ NCO      HN21   N2     .      .
+ NCO      N3     CO     HN31   .
+ NCO      HN33   N3     .      .
+ NCO      HN32   N3     .      .
+ NCO      HN31   N3     .      .
+ NCO      N4     CO     HN41   .
+ NCO      HN43   N4     .      .
+ NCO      HN42   N4     .      .
+ NCO      HN41   N4     .      .
+ NCO      N1     CO     HN11   .
+ NCO      HN13   N1     .      .
+ NCO      HN12   N1     .      .
+ NCO      HN11   N1     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+NCO       N1        CO        single    1.980     0.020     1.980     0.020     
+NCO       N2        CO        single    1.980     0.020     1.980     0.020     
+NCO       N3        CO        single    1.980     0.020     1.980     0.020     
+NCO       N4        CO        single    1.980     0.020     1.980     0.020     
+NCO       N5        CO        single    1.980     0.020     1.980     0.020     
+NCO       CO        N6        single    1.980     0.020     1.980     0.020     
+NCO       HN11      N1        single    1.036     0.016     0.914     0.007     
+NCO       HN12      N1        single    1.036     0.016     0.914     0.007     
+NCO       HN13      N1        single    1.036     0.016     0.914     0.007     
+NCO       HN21      N2        single    1.036     0.016     0.914     0.007     
+NCO       HN22      N2        single    1.036     0.016     0.914     0.007     
+NCO       HN23      N2        single    1.036     0.016     0.914     0.007     
+NCO       HN31      N3        single    1.036     0.016     0.914     0.007     
+NCO       HN32      N3        single    1.036     0.016     0.914     0.007     
+NCO       HN33      N3        single    1.036     0.016     0.914     0.007     
+NCO       HN41      N4        single    1.036     0.016     0.914     0.007     
+NCO       HN42      N4        single    1.036     0.016     0.914     0.007     
+NCO       HN43      N4        single    1.036     0.016     0.914     0.007     
+NCO       HN51      N5        single    1.036     0.016     0.914     0.007     
+NCO       HN52      N5        single    1.036     0.016     0.914     0.007     
+NCO       HN53      N5        single    1.036     0.016     0.914     0.007     
+NCO       HN61      N6        single    1.036     0.016     0.914     0.007     
+NCO       HN62      N6        single    1.036     0.016     0.914     0.007     
+NCO       HN63      N6        single    1.036     0.016     0.914     0.007     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ NCO      HN61   N6     HN62    109.470    3.000
+ NCO      HN61   N6     HN63    109.470    3.000
+ NCO      HN62   N6     HN63    109.470    3.000
+ NCO      HN61   N6     CO      109.500    3.000
+ NCO      HN62   N6     CO      109.500    3.000
+ NCO      HN63   N6     CO      109.500    3.000
+ NCO      N6     CO     N5       90.000    3.000
+ NCO      N6     CO     N2       90.000    3.000
+ NCO      N6     CO     N3       90.000    3.000
+ NCO      N6     CO     N4      180.000    3.000
+ NCO      N6     CO     N1       90.000    3.000
+ NCO      N5     CO     N2       90.000    3.000
+ NCO      N5     CO     N3      180.000    3.000
+ NCO      N2     CO     N3       90.000    3.000
+ NCO      N5     CO     N4       90.000    3.000
+ NCO      N2     CO     N4       90.000    3.000
+ NCO      N3     CO     N4       90.000    3.000
+ NCO      N5     CO     N1       90.000    3.000
+ NCO      N2     CO     N1      180.000    3.000
+ NCO      N3     CO     N1       90.000    3.000
+ NCO      N4     CO     N1       90.000    3.000
+ NCO      CO     N5     HN53    109.500    3.000
+ NCO      CO     N5     HN52    109.500    3.000
+ NCO      CO     N5     HN51    109.500    3.000
+ NCO      HN53   N5     HN52    109.470    3.000
+ NCO      HN53   N5     HN51    109.470    3.000
+ NCO      HN52   N5     HN51    109.470    3.000
+ NCO      CO     N2     HN23    109.500    3.000
+ NCO      CO     N2     HN22    109.500    3.000
+ NCO      CO     N2     HN21    109.500    3.000
+ NCO      HN23   N2     HN22    109.470    3.000
+ NCO      HN23   N2     HN21    109.470    3.000
+ NCO      HN22   N2     HN21    109.470    3.000
+ NCO      CO     N3     HN33    109.500    3.000
+ NCO      CO     N3     HN32    109.500    3.000
+ NCO      CO     N3     HN31    109.500    3.000
+ NCO      HN33   N3     HN32    109.470    3.000
+ NCO      HN33   N3     HN31    109.470    3.000
+ NCO      HN32   N3     HN31    109.470    3.000
+ NCO      CO     N4     HN43    109.500    3.000
+ NCO      CO     N4     HN42    109.500    3.000
+ NCO      CO     N4     HN41    109.500    3.000
+ NCO      HN43   N4     HN42    109.470    3.000
+ NCO      HN43   N4     HN41    109.470    3.000
+ NCO      HN42   N4     HN41    109.470    3.000
+ NCO      CO     N1     HN13    109.500    3.000
+ NCO      CO     N1     HN12    109.500    3.000
+ NCO      CO     N1     HN11    109.500    3.000
+ NCO      HN13   N1     HN12    109.470    3.000
+ NCO      HN13   N1     HN11    109.470    3.000
+ NCO      HN12   N1     HN11    109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ NCO      var_1    HN61   N6     CO     N5         0.000   20.000   1
+ NCO      var_2    HN53   N5     CO     N6         0.000   20.000   1
+ NCO      var_3    HN23   N2     CO     N6         0.000   20.000   1
+ NCO      var_4    HN33   N3     CO     N6         0.000   20.000   1
+ NCO      var_5    HN43   N4     CO     N5         0.000   20.000   1
+ NCO      var_6    HN13   N1     CO     N6         0.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+_chem_comp_chir.atom_id_4
+_chem_comp_chir.atom_id_5
+_chem_comp_chir.atom_id_6
+_chem_comp_chir.atom_id_7
+_chem_comp_chir.atom_id_8
+ NCO      chir_01  CO     N6     N4     N5        cross4
+                   N2     N3     N1     .      .
+# ------------------------------------------------------

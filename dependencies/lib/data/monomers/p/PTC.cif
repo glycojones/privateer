@@ -1,0 +1,281 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+PTC      PTC '2-METHYLCARBAMOYL-3-(4-PHOSPHONOOXY-' non-polymer        32  21 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_PTC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ PTC           OXT    O    OC       -0.500      0.000    0.000    0.000
+ PTC           C      C    C         0.000     -0.945   -0.190   -0.798
+ PTC           O      O    OC       -0.500     -0.794   -0.957   -1.775
+ PTC           CA     C    CH1       0.000     -2.264    0.504   -0.582
+ PTC           HA     H    H         0.000     -2.572    0.663    0.461
+ PTC           C7     C    CH1       0.000     -2.668    1.584   -1.588
+ PTC           H7     H    H         0.000     -1.968    1.775   -2.413
+ PTC           C1     C    C         0.000     -3.433    2.772   -1.064
+ PTC           N1     N    NH1       0.000     -2.851    3.987   -1.032
+ PTC           HN     H    H         0.000     -1.904    4.103   -1.364
+ PTC           C2     C    CH3       0.000     -3.594    5.141   -0.517
+ PTC           H23    H    H         0.000     -3.872    4.965    0.491
+ PTC           H22    H    H         0.000     -2.985    6.008   -0.566
+ PTC           H21    H    H         0.000     -4.467    5.293   -1.099
+ PTC           O1     O    O         0.000     -4.570    2.633   -0.666
+ PTC           CB     C    CH1       0.000     -3.380    0.230   -1.592
+ PTC           HB     H    H         0.000     -3.139   -0.451   -2.420
+ PTC           CG     C    CR6       0.000     -4.794    0.187   -1.072
+ PTC           CD2    C    CR16      0.000     -5.062    0.559    0.233
+ PTC           HD2    H    H         0.000     -4.255    0.882    0.879
+ PTC           CE2    C    CR16      0.000     -6.357    0.519    0.712
+ PTC           HE2    H    H         0.000     -6.565    0.808    1.735
+ PTC           CZ     C    CR6       0.000     -7.390    0.107   -0.117
+ PTC           CE1    C    CR16      0.000     -7.117   -0.271   -1.424
+ PTC           HE1    H    H         0.000     -7.921   -0.598   -2.073
+ PTC           CD1    C    CR16      0.000     -5.821   -0.230   -1.898
+ PTC           HD1    H    H         0.000     -5.609   -0.525   -2.919
+ PTC           OH     O    O2        0.000     -8.665    0.068    0.352
+ PTC           P      P    P         0.000     -9.073   -1.338    1.021
+ PTC           O1P    O    OP       -0.666     -8.824   -2.458    0.035
+ PTC           O2P    O    OP       -0.666     -8.241   -1.565    2.264
+ PTC           O3P    O    OP       -0.666    -10.540   -1.312    1.394
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ PTC      OXT    n/a    C      START
+ PTC      C      OXT    CA     .
+ PTC      O      C      .      .
+ PTC      CA     C      C7     .
+ PTC      HA     CA     .      .
+ PTC      C7     CA     CB     .
+ PTC      H7     C7     .      .
+ PTC      C1     C7     O1     .
+ PTC      N1     C1     C2     .
+ PTC      HN     N1     .      .
+ PTC      C2     N1     H21    .
+ PTC      H23    C2     .      .
+ PTC      H22    C2     .      .
+ PTC      H21    C2     .      .
+ PTC      O1     C1     .      .
+ PTC      CB     C7     CG     .
+ PTC      HB     CB     .      .
+ PTC      CG     CB     CD2    .
+ PTC      CD2    CG     CE2    .
+ PTC      HD2    CD2    .      .
+ PTC      CE2    CD2    CZ     .
+ PTC      HE2    CE2    .      .
+ PTC      CZ     CE2    OH     .
+ PTC      CE1    CZ     CD1    .
+ PTC      HE1    CE1    .      .
+ PTC      CD1    CE1    HD1    .
+ PTC      HD1    CD1    .      .
+ PTC      OH     CZ     P      .
+ PTC      P      OH     O3P    .
+ PTC      O1P    P      .      .
+ PTC      O2P    P      .      .
+ PTC      O3P    P      .      END
+ PTC      CA     CB     .    ADD
+ PTC      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+PTC       O1        C1        double    1.220     0.020     1.220     0.020     
+PTC       N1        C1        single    1.330     0.020     1.330     0.020     
+PTC       C1        C7        single    1.500     0.020     1.500     0.020     
+PTC       C2        N1        single    1.450     0.020     1.450     0.020     
+PTC       HN        N1        single    1.016     0.010     0.899     0.007     
+PTC       H21       C2        single    1.089     0.010     0.989     0.005     
+PTC       H22       C2        single    1.089     0.010     0.989     0.005     
+PTC       H23       C2        single    1.089     0.010     0.989     0.005     
+PTC       CA        C         single    1.500     0.020     1.500     0.020     
+PTC       CA        CB        single    1.524     0.020     1.524     0.020     
+PTC       C7        CA        single    1.524     0.020     1.524     0.020     
+PTC       HA        CA        single    1.089     0.010     0.989     0.005     
+PTC       O         C         deloc     1.250     0.020     1.250     0.020     
+PTC       C         OXT       deloc     1.250     0.020     1.250     0.020     
+PTC       CG        CB        single    1.480     0.020     1.480     0.020     
+PTC       CB        C7        single    1.524     0.020     1.524     0.020     
+PTC       HB        CB        single    1.089     0.010     0.989     0.005     
+PTC       CG        CD1       double    1.390     0.020     1.390     0.020     
+PTC       CD2       CG        single    1.390     0.020     1.390     0.020     
+PTC       CD1       CE1       single    1.390     0.020     1.390     0.020     
+PTC       HD1       CD1       single    1.082     0.013     0.975     0.010     
+PTC       CE2       CD2       double    1.390     0.020     1.390     0.020     
+PTC       HD2       CD2       single    1.082     0.013     0.975     0.010     
+PTC       CE1       CZ        double    1.390     0.020     1.390     0.020     
+PTC       HE1       CE1       single    1.082     0.013     0.975     0.010     
+PTC       CZ        CE2       single    1.390     0.020     1.390     0.020     
+PTC       HE2       CE2       single    1.082     0.013     0.975     0.010     
+PTC       OH        CZ        single    1.370     0.020     1.370     0.020     
+PTC       P         OH        single    1.610     0.020     1.610     0.020     
+PTC       H7        C7        single    1.089     0.010     0.989     0.005     
+PTC       O1P       P         deloc     1.510     0.020     1.510     0.020     
+PTC       O2P       P         deloc     1.510     0.020     1.510     0.020     
+PTC       O3P       P         deloc     1.510     0.020     1.510     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ PTC      OXT    C      O       123.000    3.000
+ PTC      OXT    C      CA      118.500    3.000
+ PTC      O      C      CA      118.500    3.000
+ PTC      C      CA     HA      108.810    3.000
+ PTC      C      CA     C7      109.470    3.000
+ PTC      C      CA     CB      109.470    3.000
+ PTC      HA     CA     C7      108.340    3.000
+ PTC      HA     CA     CB      108.340    3.000
+ PTC      C7     CA     CB       60.000    3.000
+ PTC      CA     C7     H7      108.340    3.000
+ PTC      CA     C7     C1      109.470    3.000
+ PTC      CA     C7     CB       60.000    3.000
+ PTC      H7     C7     C1      108.810    3.000
+ PTC      H7     C7     CB      108.340    3.000
+ PTC      C1     C7     CB      109.470    3.000
+ PTC      C7     C1     N1      116.500    3.000
+ PTC      C7     C1     O1      120.500    3.000
+ PTC      N1     C1     O1      123.000    3.000
+ PTC      C1     N1     HN      120.000    3.000
+ PTC      C1     N1     C2      121.500    3.000
+ PTC      HN     N1     C2      118.500    3.000
+ PTC      N1     C2     H23     109.470    3.000
+ PTC      N1     C2     H22     109.470    3.000
+ PTC      N1     C2     H21     109.470    3.000
+ PTC      H23    C2     H22     109.470    3.000
+ PTC      H23    C2     H21     109.470    3.000
+ PTC      H22    C2     H21     109.470    3.000
+ PTC      C7     CB     HB      108.340    3.000
+ PTC      C7     CB     CG      109.470    3.000
+ PTC      C7     CB     CA       60.000    3.000
+ PTC      HB     CB     CG      109.470    3.000
+ PTC      HB     CB     CA      108.340    3.000
+ PTC      CG     CB     CA      109.470    3.000
+ PTC      CB     CG     CD2     120.000    3.000
+ PTC      CB     CG     CD1     120.000    3.000
+ PTC      CD2    CG     CD1     120.000    3.000
+ PTC      CG     CD2    HD2     120.000    3.000
+ PTC      CG     CD2    CE2     120.000    3.000
+ PTC      HD2    CD2    CE2     120.000    3.000
+ PTC      CD2    CE2    HE2     120.000    3.000
+ PTC      CD2    CE2    CZ      120.000    3.000
+ PTC      HE2    CE2    CZ      120.000    3.000
+ PTC      CE2    CZ     CE1     120.000    3.000
+ PTC      CE2    CZ     OH      120.000    3.000
+ PTC      CE1    CZ     OH      120.000    3.000
+ PTC      CZ     CE1    HE1     120.000    3.000
+ PTC      CZ     CE1    CD1     120.000    3.000
+ PTC      HE1    CE1    CD1     120.000    3.000
+ PTC      CE1    CD1    HD1     120.000    3.000
+ PTC      CE1    CD1    CG      120.000    3.000
+ PTC      HD1    CD1    CG      120.000    3.000
+ PTC      CZ     OH     P       120.000    3.000
+ PTC      OH     P      O1P     108.200    3.000
+ PTC      OH     P      O2P     108.200    3.000
+ PTC      OH     P      O3P     108.200    3.000
+ PTC      O1P    P      O2P     119.900    3.000
+ PTC      O1P    P      O3P     119.900    3.000
+ PTC      O2P    P      O3P     119.900    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ PTC      var_1    OXT    C      CA     C7       111.372   20.000   3
+ PTC      var_2    C      CA     CB     C7      -107.527   20.000   3
+ PTC      var_3    C      CA     C7     CB       107.470   20.000   3
+ PTC      var_4    CA     C7     C1     O1       -68.616   20.000   3
+ PTC      CONST_1  C7     C1     N1     C2       180.000    0.000   0
+ PTC      var_5    C1     N1     C2     H21      -60.043   20.000   1
+ PTC      var_6    CA     C7     CB     CG       107.513   20.000   3
+ PTC      var_7    C7     CB     CG     CD2      -60.290   20.000   1
+ PTC      CONST_2  CB     CG     CD1    CE1      180.000    0.000   0
+ PTC      CONST_3  CB     CG     CD2    CE2      180.000    0.000   0
+ PTC      CONST_4  CG     CD2    CE2    CZ         0.000    0.000   0
+ PTC      CONST_5  CD2    CE2    CZ     OH       180.000    0.000   0
+ PTC      CONST_6  CE2    CZ     CE1    CD1        0.000    0.000   0
+ PTC      CONST_7  CZ     CE1    CD1    CG         0.000    0.000   0
+ PTC      var_8    CE2    CZ     OH     P        -89.700   20.000   1
+ PTC      var_9    CZ     OH     P      O3P     -174.994   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ PTC      chir_01  CA     C      CB     C7        positiv
+ PTC      chir_02  CB     CA     CG     C7        negativ
+ PTC      chir_03  C7     C1     CA     CB        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ PTC      plan-1    C1        0.020
+ PTC      plan-1    O1        0.020
+ PTC      plan-1    N1        0.020
+ PTC      plan-1    C7        0.020
+ PTC      plan-1    HN        0.020
+ PTC      plan-2    N1        0.020
+ PTC      plan-2    C1        0.020
+ PTC      plan-2    C2        0.020
+ PTC      plan-2    HN        0.020
+ PTC      plan-3    C         0.020
+ PTC      plan-3    CA        0.020
+ PTC      plan-3    O         0.020
+ PTC      plan-3    OXT       0.020
+ PTC      plan-4    CG        0.020
+ PTC      plan-4    CB        0.020
+ PTC      plan-4    CD1       0.020
+ PTC      plan-4    CD2       0.020
+ PTC      plan-4    CE1       0.020
+ PTC      plan-4    CE2       0.020
+ PTC      plan-4    CZ        0.020
+ PTC      plan-4    HD1       0.020
+ PTC      plan-4    HD2       0.020
+ PTC      plan-4    HE1       0.020
+ PTC      plan-4    HE2       0.020
+ PTC      plan-4    OH        0.020
+# ------------------------------------------------------

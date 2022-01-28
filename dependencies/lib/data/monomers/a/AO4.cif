@@ -1,0 +1,139 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AO4     AO4      "2-chloropyridine-4-carboxylic acid"     NON-POLYMER     13     10     .     
+#
+data_comp_AO4
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AO4     CAH     C       C       0       -32.552     -9.330      13.026      
+AO4     OAI     O       OC      -1      -32.193     -10.188     12.193      
+AO4     OAJ     O       O       0       -31.748     -8.708      13.752      
+AO4     CAF     C       CR6     0       -34.048     -9.027      13.164      
+AO4     CAA     C       CR16    0       -34.991     -9.701      12.373      
+AO4     CAB     C       CR6     0       -36.351     -9.392      12.532      
+AO4     CL1     CL      CL      0       -37.542     -10.209     11.568      
+AO4     NAC     N       NRD6    0       -36.794     -8.493      13.394      
+AO4     CAD     C       CR16    0       -35.890     -7.847      14.151      
+AO4     CAE     C       CR16    0       -34.522     -8.079      14.071      
+AO4     HAA     H       H       0       -34.718     -10.353     11.743      
+AO4     HAD     H       H       0       -36.198     -7.208      14.765      
+AO4     HAE     H       H       0       -33.930     -7.598      14.626      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AO4       CAB       CL1       SINGLE    n         1.737     0.010     1.737     0.010     
+AO4       CAA       CAB       SINGLE    y         1.392     0.015     1.392     0.015     
+AO4       CAF       CAA       DOUBLE    y         1.391     0.011     1.391     0.011     
+AO4       CAB       NAC       DOUBLE    y         1.316     0.010     1.316     0.010     
+AO4       CAH       OAJ       DOUBLE    n         1.244     0.020     1.244     0.020     
+AO4       CAH       CAF       SINGLE    n         1.498     0.020     1.498     0.020     
+AO4       CAH       OAI       SINGLE    n         1.244     0.020     1.244     0.020     
+AO4       CAF       CAE       SINGLE    y         1.383     0.010     1.383     0.010     
+AO4       NAC       CAD       SINGLE    y         1.337     0.010     1.337     0.010     
+AO4       CAD       CAE       DOUBLE    y         1.381     0.010     1.381     0.010     
+AO4       CAA       HAA       SINGLE    n         1.082     0.013     0.949     0.020     
+AO4       CAD       HAD       SINGLE    n         1.082     0.013     0.938     0.011     
+AO4       CAE       HAE       SINGLE    n         1.082     0.013     0.944     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AO4         OAJ         CAH         CAF     117.791    1.50
+AO4         OAJ         CAH         OAI     124.418    1.50
+AO4         CAF         CAH         OAI     117.791    1.50
+AO4         CAA         CAF         CAH     120.055    1.50
+AO4         CAA         CAF         CAE     118.800    1.50
+AO4         CAH         CAF         CAE     121.145    1.50
+AO4         CAB         CAA         CAF     119.341    1.50
+AO4         CAB         CAA         HAA     120.755    1.97
+AO4         CAF         CAA         HAA     119.905    1.50
+AO4         CL1         CAB         CAA     119.675    1.50
+AO4         CL1         CAB         NAC     116.608    1.50
+AO4         CAA         CAB         NAC     123.717    1.50
+AO4         CAB         NAC         CAD     117.147    1.50
+AO4         NAC         CAD         CAE     122.521    1.50
+AO4         NAC         CAD         HAD     118.695    1.50
+AO4         CAE         CAD         HAD     118.785    1.50
+AO4         CAF         CAE         CAD     118.474    1.50
+AO4         CAF         CAE         HAE     120.915    1.50
+AO4         CAD         CAE         HAE     120.610    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AO4             sp2_sp2_1         CAA         CAF         CAH         OAJ     180.000   10.00     2
+AO4       const_sp2_sp2_2         CAB         CAA         CAF         CAH     180.000   10.00     2
+AO4              const_18         CAD         CAE         CAF         CAH     180.000   10.00     2
+AO4       const_sp2_sp2_6         CAF         CAA         CAB         CL1     180.000   10.00     2
+AO4              const_10         CL1         CAB         NAC         CAD     180.000   10.00     2
+AO4              const_11         CAE         CAD         NAC         CAB       0.000   10.00     2
+AO4              const_13         NAC         CAD         CAE         CAF       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AO4    plan-1         CAA   0.020
+AO4    plan-1         CAB   0.020
+AO4    plan-1         CAD   0.020
+AO4    plan-1         CAE   0.020
+AO4    plan-1         CAF   0.020
+AO4    plan-1         CAH   0.020
+AO4    plan-1         CL1   0.020
+AO4    plan-1         HAA   0.020
+AO4    plan-1         HAD   0.020
+AO4    plan-1         HAE   0.020
+AO4    plan-1         NAC   0.020
+AO4    plan-2         CAF   0.020
+AO4    plan-2         CAH   0.020
+AO4    plan-2         OAI   0.020
+AO4    plan-2         OAJ   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AO4 SMILES           ACDLabs              12.01 "C(c1ccnc(c1)Cl)(O)=O"
+AO4 InChI            InChI                1.03  "InChI=1S/C6H4ClNO2/c7-5-3-4(6(9)10)1-2-8-5/h1-3H,(H,9,10)"
+AO4 InChIKey         InChI                1.03  QXCOHSRHFCHCHN-UHFFFAOYSA-N
+AO4 SMILES_CANONICAL CACTVS               3.385 "OC(=O)c1ccnc(Cl)c1"
+AO4 SMILES           CACTVS               3.385 "OC(=O)c1ccnc(Cl)c1"
+AO4 SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6 "c1cnc(cc1C(=O)O)Cl"
+AO4 SMILES           "OpenEye OEToolkits" 2.0.6 "c1cnc(cc1C(=O)O)Cl"
+AO4 ?                acedrg               202         "dictionary generator"                  
+AO4 ?                acedrg_database      11          "data source"                           
+AO4 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AO4 ?                refmac5              5.8.0189    "optimization tool"                     

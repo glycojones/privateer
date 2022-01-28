@@ -1,0 +1,195 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GCD      GCD '4,5-DEHYDRO-D-GLUCURONIC ACID       ' pyranose           19  12 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GCD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GCD           O6B    O    OC       -0.500      0.000    0.000    0.000
+ GCD           C6     C    C         0.000     -1.035   -0.692    0.120
+ GCD           O6A    O    OC       -0.500     -0.944   -1.927    0.296
+ GCD           C5     C    C         0.000     -2.361   -0.052    0.055
+ GCD           O5     O    O2        0.000     -2.423    1.288   -0.136
+ GCD           C1     C    CH1       0.000     -3.659    1.943    0.160
+ GCD           H1     H    H         0.000     -3.808    1.977    1.249
+ GCD           O1     O    OH1       0.000     -3.639    3.271   -0.364
+ GCD           HO1    H    H         0.000     -2.922    3.770    0.050
+ GCD           C4     C    C1        0.000     -3.436   -0.814    0.186
+ GCD           H4     H    H         0.000     -3.309   -1.873    0.330
+ GCD           C3     C    CH1       0.000     -4.831   -0.249    0.141
+ GCD           H3     H    H         0.000     -5.231   -0.178    1.162
+ GCD           O3     O    OH1       0.000     -5.667   -1.106   -0.640
+ GCD           HO3    H    H         0.000     -5.688   -1.986   -0.240
+ GCD           C2     C    CH1       0.000     -4.797    1.145   -0.493
+ GCD           H2     H    H         0.000     -4.615    1.057   -1.573
+ GCD           O2     O    OH1       0.000     -6.042    1.809   -0.266
+ GCD           HO2    H    H         0.000     -6.009    2.696   -0.651
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GCD      O6B    n/a    C6     START
+ GCD      C6     O6B    C5     .
+ GCD      O6A    C6     .      .
+ GCD      C5     C6     C4     .
+ GCD      O5     C5     C1     .
+ GCD      C1     O5     O1     .
+ GCD      H1     C1     .      .
+ GCD      O1     C1     HO1    .
+ GCD      HO1    O1     .      .
+ GCD      C4     C5     C3     .
+ GCD      H4     C4     .      .
+ GCD      C3     C4     C2     .
+ GCD      H3     C3     .      .
+ GCD      O3     C3     HO3    .
+ GCD      HO3    O3     .      .
+ GCD      C2     C3     O2     .
+ GCD      H2     C2     .      .
+ GCD      O2     C2     HO2    .
+ GCD      HO2    O2     .      END
+ GCD      C1     C2     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GCD       C1        C2        single    1.524     0.020     1.524     0.020     
+GCD       O1        C1        single    1.432     0.020     1.432     0.020     
+GCD       C1        O5        single    1.426     0.020     1.426     0.020     
+GCD       H1        C1        single    1.089     0.010     0.989     0.005     
+GCD       C2        C3        single    1.524     0.020     1.524     0.020     
+GCD       O2        C2        single    1.432     0.020     1.432     0.020     
+GCD       H2        C2        single    1.089     0.010     0.989     0.005     
+GCD       C3        C4        single    1.510     0.020     1.510     0.020     
+GCD       O3        C3        single    1.432     0.020     1.432     0.020     
+GCD       H3        C3        single    1.089     0.010     0.989     0.005     
+GCD       C4        C5        double    1.340     0.020     1.340     0.020     
+GCD       C5        C6        single    1.460     0.020     1.460     0.020     
+GCD       O5        C5        single    1.454     0.020     1.454     0.020     
+GCD       O6A       C6        deloc     1.250     0.020     1.250     0.020     
+GCD       C6        O6B       deloc     1.250     0.020     1.250     0.020     
+GCD       HO1       O1        single    0.970     0.012     0.839     0.014     
+GCD       HO2       O2        single    0.970     0.012     0.839     0.014     
+GCD       HO3       O3        single    0.970     0.012     0.839     0.014     
+GCD       H4        C4        single    1.082     0.013     0.975     0.010     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GCD      O6B    C6     O6A     123.000    3.000
+ GCD      O6B    C6     C5      120.000    3.000
+ GCD      O6A    C6     C5      120.000    3.000
+ GCD      C6     C5     O5      120.000    3.000
+ GCD      C6     C5     C4      120.000    3.000
+ GCD      O5     C5     C4      120.000    3.000
+ GCD      C5     O5     C1      111.800    3.000
+ GCD      O5     C1     H1      109.470    3.000
+ GCD      O5     C1     O1      109.470    3.000
+ GCD      O5     C1     C2      109.470    3.000
+ GCD      H1     C1     O1      109.470    3.000
+ GCD      H1     C1     C2      108.340    3.000
+ GCD      O1     C1     C2      109.470    3.000
+ GCD      C1     O1     HO1     109.470    3.000
+ GCD      C5     C4     H4      120.000    3.000
+ GCD      C5     C4     C3      120.500    3.000
+ GCD      H4     C4     C3      120.000    3.000
+ GCD      C4     C3     H3      108.810    3.000
+ GCD      C4     C3     O3      109.470    3.000
+ GCD      C4     C3     C2      109.470    3.000
+ GCD      H3     C3     O3      109.470    3.000
+ GCD      H3     C3     C2      108.340    3.000
+ GCD      O3     C3     C2      109.470    3.000
+ GCD      C3     O3     HO3     109.470    3.000
+ GCD      C3     C2     H2      108.340    3.000
+ GCD      C3     C2     O2      109.470    3.000
+ GCD      C3     C2     C1      111.000    3.000
+ GCD      H2     C2     O2      109.470    3.000
+ GCD      H2     C2     C1      108.340    3.000
+ GCD      O2     C2     C1      109.470    3.000
+ GCD      C2     O2     HO2     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GCD      var_1    O6B    C6     C5     C4      -179.984   20.000   1
+ GCD      var_2    C6     C5     O5     C1      -150.000   20.000   1
+ GCD      var_3    C5     O5     C1     O1       180.000   20.000   1
+ GCD      var_4    O5     C1     C2     C3        60.000   20.000   3
+ GCD      var_5    O5     C1     O1     HO1      -61.120   20.000   1
+ GCD      var_6    C6     C5     C4     C3       180.000   20.000   1
+ GCD      var_7    C5     C4     C3     C2        30.000   20.000   1
+ GCD      var_8    C4     C3     O3     HO3       60.017   20.000   1
+ GCD      var_9    C4     C3     C2     O2       180.000   20.000   3
+ GCD      var_10   C3     C2     O2     HO2      178.805   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GCD      chir_01  C1     C2     O1     O5        positiv
+ GCD      chir_02  C2     C1     C3     O2        negativ
+ GCD      chir_03  C3     C2     C4     O3        positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GCD      plan-1    C4        0.020
+ GCD      plan-1    C3        0.020
+ GCD      plan-1    C5        0.020
+ GCD      plan-1    H4        0.020
+ GCD      plan-2    C5        0.020
+ GCD      plan-2    C4        0.020
+ GCD      plan-2    C6        0.020
+ GCD      plan-2    O5        0.020
+ GCD      plan-2    H4        0.020
+ GCD      plan-3    C6        0.020
+ GCD      plan-3    C5        0.020
+ GCD      plan-3    O6A       0.020
+ GCD      plan-3    O6B       0.020
+# ------------------------------------------------------

@@ -1,0 +1,166 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+HLR     HLR      1,2-benzoxazol-3-amine     non-polymer     16     10     .     
+#
+data_comp_HLR
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+HLR     C1      C       CR56    0       51.765      40.015      11.700      
+HLR     C2      C       CR16    0       52.297      41.058      12.482      
+HLR     C3      C       CR16    0       53.068      40.735      13.583      
+HLR     C4      C       CR16    0       53.318      39.399      13.919      
+HLR     C5      C       CR16    0       52.809      38.348      13.170      
+HLR     C6      C       CR56    0       52.035      38.694      12.064      
+HLR     C       C       CR5     0       50.968      39.943      10.554      
+HLR     N1      N       NRD5    0       50.755      38.694      10.226      
+HLR     N2      N       NH2     0       50.471      40.994      9.858       
+HLR     O7      O       O2      0       51.429      37.864      11.179      
+HLR     H2      H       H       0       52.131      41.958      12.259      
+HLR     H3      H       H       0       53.431      41.424      14.116      
+HLR     H4      H       H       0       53.848      39.208      14.676      
+HLR     H5      H       H       0       52.978      37.449      13.397      
+HLR     H21N    H       H       0       50.651      41.814      10.120      
+HLR     H22N    H       H       0       49.971      40.852      9.149       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+HLR       C1        C2        DOUBLE    y         1.401     0.011     1.401     0.011     
+HLR       C1        C6        SINGLE    y         1.393     0.012     1.393     0.012     
+HLR       C1        C         SINGLE    y         1.389     0.020     1.389     0.020     
+HLR       C2        C3        SINGLE    y         1.376     0.010     1.376     0.010     
+HLR       C3        C4        DOUBLE    y         1.393     0.010     1.393     0.010     
+HLR       C4        C5        SINGLE    y         1.380     0.010     1.380     0.010     
+HLR       C5        C6        DOUBLE    y         1.386     0.010     1.386     0.010     
+HLR       C6        O7        SINGLE    y         1.360     0.010     1.360     0.010     
+HLR       C         N1        DOUBLE    y         1.304     0.010     1.304     0.010     
+HLR       C         N2        SINGLE    n         1.355     0.012     1.355     0.012     
+HLR       N1        O7        SINGLE    y         1.432     0.011     1.432     0.011     
+HLR       C2        H2        SINGLE    n         1.082     0.013     0.942     0.018     
+HLR       C3        H3        SINGLE    n         1.082     0.013     0.944     0.018     
+HLR       C4        H4        SINGLE    n         1.082     0.013     0.943     0.016     
+HLR       C5        H5        SINGLE    n         1.082     0.013     0.942     0.020     
+HLR       N2        H21N      SINGLE    n         1.016     0.010     0.879     0.020     
+HLR       N2        H22N      SINGLE    n         1.016     0.010     0.879     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+HLR          C2          C1          C6     119.400    1.50
+HLR          C2          C1           C     134.508    1.86
+HLR          C6          C1           C     106.092    1.50
+HLR          C1          C2          C3     119.017    1.50
+HLR          C1          C2          H2     120.513    1.50
+HLR          C3          C2          H2     120.470    1.50
+HLR          C2          C3          C4     121.244    1.50
+HLR          C2          C3          H3     119.455    1.50
+HLR          C4          C3          H3     119.300    1.50
+HLR          C3          C4          C5     121.615    1.50
+HLR          C3          C4          H4     119.252    1.50
+HLR          C5          C4          H4     119.133    1.50
+HLR          C4          C5          C6     115.760    1.50
+HLR          C4          C5          H5     122.090    1.50
+HLR          C6          C5          H5     122.149    1.50
+HLR          C1          C6          C5     122.964    1.50
+HLR          C1          C6          O7     110.047    1.50
+HLR          C5          C6          O7     126.989    1.50
+HLR          C1           C          N1     109.100    1.50
+HLR          C1           C          N2     127.043    3.00
+HLR          N1           C          N2     123.858    2.68
+HLR           C          N1          O7     106.801    1.50
+HLR           C          N2        H21N     119.763    1.59
+HLR           C          N2        H22N     119.763    1.59
+HLR        H21N          N2        H22N     120.475    1.82
+HLR          C6          O7          N1     107.960    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+HLR       const_sp2_sp2_1          C6          C1          C2          C3       0.000   10.00     2
+HLR              const_21          C2          C1          C6          C5       0.000   10.00     2
+HLR              const_33          N2           C          C1          C2       0.000   10.00     2
+HLR       const_sp2_sp2_5          C1          C2          C3          C4       0.000   10.00     2
+HLR       const_sp2_sp2_9          C2          C3          C4          C5       0.000   10.00     2
+HLR              const_13          C3          C4          C5          C6       0.000   10.00     2
+HLR              const_17          C4          C5          C6          C1       0.000   10.00     2
+HLR              const_25          C1          C6          O7          N1       0.000   10.00     2
+HLR              const_29          N2           C          N1          O7     180.000   10.00     2
+HLR             sp2_sp2_1          C1           C          N2        H21N     180.000   10.00     2
+HLR              const_27           C          N1          O7          C6       0.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+HLR    plan-1           C   0.020
+HLR    plan-1          C1   0.020
+HLR    plan-1          C2   0.020
+HLR    plan-1          C3   0.020
+HLR    plan-1          C4   0.020
+HLR    plan-1          C5   0.020
+HLR    plan-1          C6   0.020
+HLR    plan-1          H2   0.020
+HLR    plan-1          H3   0.020
+HLR    plan-1          H4   0.020
+HLR    plan-1          H5   0.020
+HLR    plan-1          O7   0.020
+HLR    plan-2           C   0.020
+HLR    plan-2          C1   0.020
+HLR    plan-2          C2   0.020
+HLR    plan-2          C5   0.020
+HLR    plan-2          C6   0.020
+HLR    plan-2          N1   0.020
+HLR    plan-2          N2   0.020
+HLR    plan-2          O7   0.020
+HLR    plan-3           C   0.020
+HLR    plan-3        H21N   0.020
+HLR    plan-3        H22N   0.020
+HLR    plan-3          N2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+HLR SMILES           ACDLabs              12.01 n2oc1ccccc1c2N
+HLR InChI            InChI                1.03  "InChI=1S/C7H6N2O/c8-7-5-3-1-2-4-6(5)10-9-7/h1-4H,(H2,8,9)"
+HLR InChIKey         InChI                1.03  NLMVYUBGWZWUGB-UHFFFAOYSA-N
+HLR SMILES_CANONICAL CACTVS               3.385 Nc1noc2ccccc12
+HLR SMILES           CACTVS               3.385 Nc1noc2ccccc12
+HLR SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1ccc2c(c1)c(no2)N"
+HLR SMILES           "OpenEye OEToolkits" 1.7.6 "c1ccc2c(c1)c(no2)N"
+HLR ?                acedrg               202         "dictionary generator"                  
+HLR ?                acedrg_database      11          "data source"                           
+HLR ?                rdkit                2017.03.2   "Chemoinformatics tool"
+HLR ?                refmac5              5.8.0189    "optimization tool"                     

@@ -1,0 +1,624 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+L2A      L2A '"(2S,5S,8S,11S,15E,20S)-20-amino-2-(' non-polymer        92  43 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_L2A
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ L2A           OXT    O    OC       -0.500      0.000    0.000    0.000
+ L2A           C22    C    C         0.000     -1.079   -0.588    0.233
+ L2A           O6     O    OC       -0.500     -1.787   -0.994   -0.716
+ L2A           C17    C    CT        0.000     -1.527   -0.807    1.655
+ L2A           C18    C    CH3       0.000     -0.305   -0.879    2.572
+ L2A           H18B   H    H         0.000      0.235    0.031    2.515
+ L2A           H18A   H    H         0.000     -0.620   -1.039    3.571
+ L2A           H18    H    H         0.000      0.320   -1.678    2.269
+ L2A           C19    C    CH2       0.000     -2.319   -2.113    1.752
+ L2A           H19    H    H         0.000     -3.380   -1.907    1.595
+ L2A           H19A   H    H         0.000     -2.177   -2.551    2.742
+ L2A           C20    C    CH2       0.000     -1.823   -3.091    0.684
+ L2A           H20    H    H         0.000     -0.776   -3.336    0.874
+ L2A           H20A   H    H         0.000     -1.915   -2.629   -0.301
+ L2A           C21    C    CH2       0.000     -2.664   -4.368    0.732
+ L2A           H21    H    H         0.000     -3.490   -4.232    1.433
+ L2A           H21A   H    H         0.000     -2.040   -5.201    1.062
+ L2A           C23    C    C1        0.000     -3.212   -4.662   -0.641
+ L2A           H23    H    H         0.000     -2.608   -4.475   -1.513
+ L2A           CE     C    C1        0.000     -4.422   -5.145   -0.775
+ L2A           HE     H    H         0.000     -5.026   -5.332    0.097
+ L2A           CD     C    CH2       0.000     -4.969   -5.438   -2.147
+ L2A           HD     H    H         0.000     -5.568   -6.350   -2.112
+ L2A           HDA    H    H         0.000     -4.141   -5.575   -2.847
+ L2A           CG     C    CH2       0.000     -5.841   -4.269   -2.609
+ L2A           HG     H    H         0.000     -5.280   -3.656   -3.318
+ L2A           HGA    H    H         0.000     -6.121   -3.662   -1.746
+ L2A           CB1    C    CH2       0.000     -7.102   -4.809   -3.287
+ L2A           HB1    H    H         0.000     -7.632   -5.467   -2.595
+ L2A           HB1A   H    H         0.000     -6.822   -5.371   -4.180
+ L2A           CA     C    CT        0.000     -8.010   -3.642   -3.680
+ L2A           N      N    NH2       0.000     -7.447   -2.959   -4.852
+ L2A           HNA    H    H         0.000     -7.249   -1.968   -4.815
+ L2A           HN     H    H         0.000     -7.256   -3.478   -5.699
+ L2A           CB2    C    CH3       0.000     -9.404   -4.172   -4.020
+ L2A           HB2B   H    H         0.000     -9.811   -4.666   -3.176
+ L2A           HB2A   H    H         0.000    -10.033   -3.365   -4.293
+ L2A           HB2    H    H         0.000     -9.336   -4.854   -4.828
+ L2A           C      C    C         0.000     -8.107   -2.672   -2.531
+ L2A           O      O    O         0.000     -7.472   -2.868   -1.516
+ L2A           N1     N    NH1       0.000     -8.899   -1.586   -2.633
+ L2A           HN1    H    H         0.000     -9.421   -1.420   -3.481
+ L2A           N4     N    NH1       0.000     -2.403    0.310    2.078
+ L2A           HN4    H    H         0.000     -2.631    0.481    3.047
+ L2A           C12    C    C         0.000     -2.880    1.092    1.064
+ L2A           O5     O    O         0.000     -2.584    0.855   -0.089
+ L2A           C11    C    CH1       0.000     -3.777    2.253    1.403
+ L2A           H11    H    H         0.000     -3.166    3.124    1.677
+ L2A           C13    C    CH2       0.000     -4.686    1.873    2.575
+ L2A           H13    H    H         0.000     -4.077    1.494    3.398
+ L2A           H13A   H    H         0.000     -5.386    1.099    2.255
+ L2A           C14    C    CH1       0.000     -5.463    3.107    3.038
+ L2A           H14    H    H         0.000     -4.767    3.834    3.480
+ L2A           C16    C    CH3       0.000     -6.500    2.693    4.083
+ L2A           H16B   H    H         0.000     -7.040    3.546    4.404
+ L2A           H16A   H    H         0.000     -7.171    1.992    3.658
+ L2A           H16    H    H         0.000     -6.011    2.252    4.913
+ L2A           C15    C    CH3       0.000     -6.171    3.742    1.840
+ L2A           H15B   H    H         0.000     -5.480    3.874    1.048
+ L2A           H15A   H    H         0.000     -6.959    3.111    1.518
+ L2A           H15    H    H         0.000     -6.568    4.684    2.121
+ L2A           N3     N    NH1       0.000     -4.602    2.578    0.221
+ L2A           HN3    H    H         0.000     -4.240    3.125   -0.546
+ L2A           C6     C    C         0.000     -5.877    2.100    0.222
+ L2A           O4     O    O         0.000     -6.289    1.452    1.160
+ L2A           C5     C    CH1       0.000     -6.769    2.385   -0.958
+ L2A           H5     H    H         0.000     -6.222    2.185   -1.891
+ L2A           C7     C    CH2       0.000     -7.216    3.849   -0.928
+ L2A           H7     H    H         0.000     -6.337    4.497   -0.898
+ L2A           H7A    H    H         0.000     -7.826    4.024   -0.040
+ L2A           C8     C    CH1       0.000     -8.037    4.157   -2.183
+ L2A           H8     H    H         0.000     -8.870    3.445   -2.259
+ L2A           C10    C    CH3       0.000     -7.144    4.033   -3.419
+ L2A           H10B   H    H         0.000     -6.762    3.047   -3.482
+ L2A           H10A   H    H         0.000     -7.712    4.246   -4.288
+ L2A           H10    H    H         0.000     -6.340    4.718   -3.346
+ L2A           C9     C    CH3       0.000     -8.589    5.581   -2.094
+ L2A           H9B    H    H         0.000     -9.206    5.669   -1.238
+ L2A           H9A    H    H         0.000     -7.786    6.268   -2.020
+ L2A           H9     H    H         0.000     -9.157    5.795   -2.962
+ L2A           N2     N    NH1       0.000     -7.953    1.501   -0.877
+ L2A           HN2    H    H         0.000     -8.781    1.752   -0.355
+ L2A           C2     C    C         0.000     -7.846    0.320   -1.558
+ L2A           O1     O    O         0.000     -6.843    0.056   -2.186
+ L2A           C1     C    CH1       0.000     -9.002   -0.646   -1.513
+ L2A           H1     H    H         0.000     -9.947   -0.090   -1.587
+ L2A           C3     C    CH2       0.000     -8.968   -1.420   -0.194
+ L2A           H3     H    H         0.000     -9.072   -0.722    0.639
+ L2A           H3A    H    H         0.000     -8.017   -1.949   -0.108
+ L2A           C4     C    C         0.000    -10.101   -2.413   -0.163
+ L2A           O2     O    OC       -0.500    -10.885   -2.496   -1.135
+ L2A           O3     O    OC       -0.500    -10.258   -3.154    0.832
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ L2A      OXT    n/a    C22    START
+ L2A      C22    OXT    C17    .
+ L2A      O6     C22    .      .
+ L2A      C17    C22    N4     .
+ L2A      C18    C17    H18    .
+ L2A      H18B   C18    .      .
+ L2A      H18A   C18    .      .
+ L2A      H18    C18    .      .
+ L2A      C19    C17    C20    .
+ L2A      H19    C19    .      .
+ L2A      H19A   C19    .      .
+ L2A      C20    C19    C21    .
+ L2A      H20    C20    .      .
+ L2A      H20A   C20    .      .
+ L2A      C21    C20    C23    .
+ L2A      H21    C21    .      .
+ L2A      H21A   C21    .      .
+ L2A      C23    C21    CE     .
+ L2A      H23    C23    .      .
+ L2A      CE     C23    CD     .
+ L2A      HE     CE     .      .
+ L2A      CD     CE     CG     .
+ L2A      HD     CD     .      .
+ L2A      HDA    CD     .      .
+ L2A      CG     CD     CB1    .
+ L2A      HG     CG     .      .
+ L2A      HGA    CG     .      .
+ L2A      CB1    CG     CA     .
+ L2A      HB1    CB1    .      .
+ L2A      HB1A   CB1    .      .
+ L2A      CA     CB1    C      .
+ L2A      N      CA     HN     .
+ L2A      HNA    N      .      .
+ L2A      HN     N      .      .
+ L2A      CB2    CA     HB2    .
+ L2A      HB2B   CB2    .      .
+ L2A      HB2A   CB2    .      .
+ L2A      HB2    CB2    .      .
+ L2A      C      CA     N1     .
+ L2A      O      C      .      .
+ L2A      N1     C      HN1    .
+ L2A      HN1    N1     .      .
+ L2A      N4     C17    C12    .
+ L2A      HN4    N4     .      .
+ L2A      C12    N4     C11    .
+ L2A      O5     C12    .      .
+ L2A      C11    C12    N3     .
+ L2A      H11    C11    .      .
+ L2A      C13    C11    C14    .
+ L2A      H13    C13    .      .
+ L2A      H13A   C13    .      .
+ L2A      C14    C13    C15    .
+ L2A      H14    C14    .      .
+ L2A      C16    C14    H16    .
+ L2A      H16B   C16    .      .
+ L2A      H16A   C16    .      .
+ L2A      H16    C16    .      .
+ L2A      C15    C14    H15    .
+ L2A      H15B   C15    .      .
+ L2A      H15A   C15    .      .
+ L2A      H15    C15    .      .
+ L2A      N3     C11    C6     .
+ L2A      HN3    N3     .      .
+ L2A      C6     N3     C5     .
+ L2A      O4     C6     .      .
+ L2A      C5     C6     N2     .
+ L2A      H5     C5     .      .
+ L2A      C7     C5     C8     .
+ L2A      H7     C7     .      .
+ L2A      H7A    C7     .      .
+ L2A      C8     C7     C9     .
+ L2A      H8     C8     .      .
+ L2A      C10    C8     H10    .
+ L2A      H10B   C10    .      .
+ L2A      H10A   C10    .      .
+ L2A      H10    C10    .      .
+ L2A      C9     C8     H9     .
+ L2A      H9B    C9     .      .
+ L2A      H9A    C9     .      .
+ L2A      H9     C9     .      .
+ L2A      N2     C5     C2     .
+ L2A      HN2    N2     .      .
+ L2A      C2     N2     C1     .
+ L2A      O1     C2     .      .
+ L2A      C1     C2     C3     .
+ L2A      H1     C1     .      .
+ L2A      C3     C1     C4     .
+ L2A      H3     C3     .      .
+ L2A      H3A    C3     .      .
+ L2A      C4     C3     O3     .
+ L2A      O2     C4     .      .
+ L2A      O3     C4     .      END
+ L2A      N1     C1     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+L2A       HN1       N1        single    1.016     0.010     0.899     0.007     
+L2A       N1        C         single    1.330     0.020     1.330     0.020     
+L2A       N1        C1        single    1.450     0.020     1.450     0.020     
+L2A       C3        C1        single    1.524     0.020     1.524     0.020     
+L2A       H1        C1        single    1.089     0.010     0.989     0.005     
+L2A       C1        C2        single    1.500     0.020     1.500     0.020     
+L2A       C2        N2        single    1.330     0.020     1.330     0.020     
+L2A       O1        C2        double    1.220     0.020     1.220     0.020     
+L2A       C4        C3        single    1.510     0.020     1.510     0.020     
+L2A       H3        C3        single    1.089     0.010     0.989     0.005     
+L2A       H3A       C3        single    1.089     0.010     0.989     0.005     
+L2A       O2        C4        deloc     1.250     0.020     1.250     0.020     
+L2A       O3        C4        deloc     1.250     0.020     1.250     0.020     
+L2A       HN2       N2        single    1.016     0.010     0.899     0.007     
+L2A       N2        C5        single    1.450     0.020     1.450     0.020     
+L2A       C7        C5        single    1.524     0.020     1.524     0.020     
+L2A       H5        C5        single    1.089     0.010     0.989     0.005     
+L2A       C5        C6        single    1.500     0.020     1.500     0.020     
+L2A       C6        N3        single    1.330     0.020     1.330     0.020     
+L2A       O4        C6        double    1.220     0.020     1.220     0.020     
+L2A       H7        C7        single    1.089     0.010     0.989     0.005     
+L2A       C8        C7        single    1.524     0.020     1.524     0.020     
+L2A       H7A       C7        single    1.089     0.010     0.989     0.005     
+L2A       C10       C8        single    1.524     0.020     1.524     0.020     
+L2A       H8        C8        single    1.089     0.010     0.989     0.005     
+L2A       C9        C8        single    1.524     0.020     1.524     0.020     
+L2A       H9        C9        single    1.089     0.010     0.989     0.005     
+L2A       H9A       C9        single    1.089     0.010     0.989     0.005     
+L2A       H9B       C9        single    1.089     0.010     0.989     0.005     
+L2A       H10       C10       single    1.089     0.010     0.989     0.005     
+L2A       H10B      C10       single    1.089     0.010     0.989     0.005     
+L2A       H10A      C10       single    1.089     0.010     0.989     0.005     
+L2A       HN3       N3        single    1.016     0.010     0.899     0.007     
+L2A       N3        C11       single    1.450     0.020     1.450     0.020     
+L2A       C13       C11       single    1.524     0.020     1.524     0.020     
+L2A       C11       C12       single    1.500     0.020     1.500     0.020     
+L2A       H11       C11       single    1.089     0.010     0.989     0.005     
+L2A       C12       N4        single    1.330     0.020     1.330     0.020     
+L2A       O5        C12       double    1.220     0.020     1.220     0.020     
+L2A       H13       C13       single    1.089     0.010     0.989     0.005     
+L2A       C14       C13       single    1.524     0.020     1.524     0.020     
+L2A       H13A      C13       single    1.089     0.010     0.989     0.005     
+L2A       C15       C14       single    1.524     0.020     1.524     0.020     
+L2A       C16       C14       single    1.524     0.020     1.524     0.020     
+L2A       H14       C14       single    1.089     0.010     0.989     0.005     
+L2A       H15B      C15       single    1.089     0.010     0.989     0.005     
+L2A       H15A      C15       single    1.089     0.010     0.989     0.005     
+L2A       H15       C15       single    1.089     0.010     0.989     0.005     
+L2A       H16A      C16       single    1.089     0.010     0.989     0.005     
+L2A       H16B      C16       single    1.089     0.010     0.989     0.005     
+L2A       H16       C16       single    1.089     0.010     0.989     0.005     
+L2A       HN        N         single    1.036     0.016     0.914     0.007     
+L2A       N         CA        single    1.462     0.020     1.462     0.020     
+L2A       HNA       N         single    1.036     0.016     0.914     0.007     
+L2A       CA        CB1       single    1.524     0.020     1.524     0.020     
+L2A       CB2       CA        single    1.524     0.020     1.524     0.020     
+L2A       C         CA        single    1.507     0.020     1.507     0.020     
+L2A       HB2B      CB2       single    1.089     0.010     0.989     0.005     
+L2A       HB2       CB2       single    1.089     0.010     0.989     0.005     
+L2A       HB2A      CB2       single    1.089     0.010     0.989     0.005     
+L2A       HB1A      CB1       single    1.089     0.010     0.989     0.005     
+L2A       HB1       CB1       single    1.089     0.010     0.989     0.005     
+L2A       CB1       CG        single    1.524     0.020     1.524     0.020     
+L2A       HGA       CG        single    1.089     0.010     0.989     0.005     
+L2A       CG        CD        single    1.524     0.020     1.524     0.020     
+L2A       HG        CG        single    1.089     0.010     0.989     0.005     
+L2A       HD        CD        single    1.089     0.010     0.989     0.005     
+L2A       HDA       CD        single    1.089     0.010     0.989     0.005     
+L2A       CD        CE        single    1.510     0.020     1.510     0.020     
+L2A       O         C         double    1.220     0.020     1.220     0.020     
+L2A       CE        C23       double    1.330     0.020     1.330     0.020     
+L2A       HE        CE        single    1.082     0.013     0.975     0.010     
+L2A       HN4       N4        single    1.016     0.010     0.899     0.007     
+L2A       N4        C17       single    1.450     0.020     1.450     0.020     
+L2A       C19       C17       single    1.524     0.020     1.524     0.020     
+L2A       C18       C17       single    1.524     0.020     1.524     0.020     
+L2A       C17       C22       single    1.507     0.020     1.507     0.020     
+L2A       H18A      C18       single    1.089     0.010     0.989     0.005     
+L2A       H18B      C18       single    1.089     0.010     0.989     0.005     
+L2A       H18       C18       single    1.089     0.010     0.989     0.005     
+L2A       C20       C19       single    1.524     0.020     1.524     0.020     
+L2A       H19A      C19       single    1.089     0.010     0.989     0.005     
+L2A       H19       C19       single    1.089     0.010     0.989     0.005     
+L2A       C21       C20       single    1.524     0.020     1.524     0.020     
+L2A       H20A      C20       single    1.089     0.010     0.989     0.005     
+L2A       H20       C20       single    1.089     0.010     0.989     0.005     
+L2A       C23       C21       single    1.510     0.020     1.510     0.020     
+L2A       H21A      C21       single    1.089     0.010     0.989     0.005     
+L2A       H21       C21       single    1.089     0.010     0.989     0.005     
+L2A       O6        C22       deloc     1.250     0.020     1.250     0.020     
+L2A       H23       C23       single    1.082     0.013     0.975     0.010     
+L2A       C22       OXT       deloc     1.250     0.020     1.250     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ L2A      OXT    C22    O6      123.000    3.000
+ L2A      OXT    C22    C17     118.500    3.000
+ L2A      O6     C22    C17     118.500    3.000
+ L2A      C22    C17    C18     109.470    3.000
+ L2A      C22    C17    C19     109.470    3.000
+ L2A      C22    C17    N4      111.600    3.000
+ L2A      C18    C17    C19     111.000    3.000
+ L2A      C18    C17    N4      110.000    3.000
+ L2A      C19    C17    N4      110.000    3.000
+ L2A      C17    C18    H18B    109.470    3.000
+ L2A      C17    C18    H18A    109.470    3.000
+ L2A      C17    C18    H18     109.470    3.000
+ L2A      H18B   C18    H18A    109.470    3.000
+ L2A      H18B   C18    H18     109.470    3.000
+ L2A      H18A   C18    H18     109.470    3.000
+ L2A      C17    C19    H19     109.470    3.000
+ L2A      C17    C19    H19A    109.470    3.000
+ L2A      C17    C19    C20     111.000    3.000
+ L2A      H19    C19    H19A    107.900    3.000
+ L2A      H19    C19    C20     109.470    3.000
+ L2A      H19A   C19    C20     109.470    3.000
+ L2A      C19    C20    H20     109.470    3.000
+ L2A      C19    C20    H20A    109.470    3.000
+ L2A      C19    C20    C21     111.000    3.000
+ L2A      H20    C20    H20A    107.900    3.000
+ L2A      H20    C20    C21     109.470    3.000
+ L2A      H20A   C20    C21     109.470    3.000
+ L2A      C20    C21    H21     109.470    3.000
+ L2A      C20    C21    H21A    109.470    3.000
+ L2A      C20    C21    C23     109.470    3.000
+ L2A      H21    C21    H21A    107.900    3.000
+ L2A      H21    C21    C23     109.470    3.000
+ L2A      H21A   C21    C23     109.470    3.000
+ L2A      C21    C23    H23     120.000    3.000
+ L2A      C21    C23    CE      120.000    3.000
+ L2A      H23    C23    CE      120.000    3.000
+ L2A      C23    CE     HE      120.000    3.000
+ L2A      C23    CE     CD      120.000    3.000
+ L2A      HE     CE     CD      120.000    3.000
+ L2A      CE     CD     HD      109.470    3.000
+ L2A      CE     CD     HDA     109.470    3.000
+ L2A      CE     CD     CG      109.470    3.000
+ L2A      HD     CD     HDA     107.900    3.000
+ L2A      HD     CD     CG      109.470    3.000
+ L2A      HDA    CD     CG      109.470    3.000
+ L2A      CD     CG     HG      109.470    3.000
+ L2A      CD     CG     HGA     109.470    3.000
+ L2A      CD     CG     CB1     111.000    3.000
+ L2A      HG     CG     HGA     107.900    3.000
+ L2A      HG     CG     CB1     109.470    3.000
+ L2A      HGA    CG     CB1     109.470    3.000
+ L2A      CG     CB1    HB1     109.470    3.000
+ L2A      CG     CB1    HB1A    109.470    3.000
+ L2A      CG     CB1    CA      111.000    3.000
+ L2A      HB1    CB1    HB1A    107.900    3.000
+ L2A      HB1    CB1    CA      109.470    3.000
+ L2A      HB1A   CB1    CA      109.470    3.000
+ L2A      CB1    CA     N       109.500    3.000
+ L2A      CB1    CA     CB2     111.000    3.000
+ L2A      CB1    CA     C       109.470    3.000
+ L2A      N      CA     CB2     109.500    3.000
+ L2A      N      CA     C       109.500    3.000
+ L2A      CB2    CA     C       109.470    3.000
+ L2A      CA     N      HNA     120.000    3.000
+ L2A      CA     N      HN      120.000    3.000
+ L2A      HNA    N      HN      120.000    3.000
+ L2A      CA     CB2    HB2B    109.470    3.000
+ L2A      CA     CB2    HB2A    109.470    3.000
+ L2A      CA     CB2    HB2     109.470    3.000
+ L2A      HB2B   CB2    HB2A    109.470    3.000
+ L2A      HB2B   CB2    HB2     109.470    3.000
+ L2A      HB2A   CB2    HB2     109.470    3.000
+ L2A      CA     C      O       120.500    3.000
+ L2A      CA     C      N1      116.500    3.000
+ L2A      O      C      N1      123.000    3.000
+ L2A      C      N1     HN1     120.000    3.000
+ L2A      C      N1     C1      121.500    3.000
+ L2A      HN1    N1     C1      118.500    3.000
+ L2A      C17    N4     HN4     118.500    3.000
+ L2A      C17    N4     C12     121.500    3.000
+ L2A      HN4    N4     C12     120.000    3.000
+ L2A      N4     C12    O5      123.000    3.000
+ L2A      N4     C12    C11     116.500    3.000
+ L2A      O5     C12    C11     120.500    3.000
+ L2A      C12    C11    H11     108.810    3.000
+ L2A      C12    C11    C13     109.470    3.000
+ L2A      C12    C11    N3      111.600    3.000
+ L2A      H11    C11    C13     108.340    3.000
+ L2A      H11    C11    N3      108.550    3.000
+ L2A      C13    C11    N3      110.000    3.000
+ L2A      C11    C13    H13     109.470    3.000
+ L2A      C11    C13    H13A    109.470    3.000
+ L2A      C11    C13    C14     111.000    3.000
+ L2A      H13    C13    H13A    107.900    3.000
+ L2A      H13    C13    C14     109.470    3.000
+ L2A      H13A   C13    C14     109.470    3.000
+ L2A      C13    C14    H14     108.340    3.000
+ L2A      C13    C14    C16     111.000    3.000
+ L2A      C13    C14    C15     111.000    3.000
+ L2A      H14    C14    C16     108.340    3.000
+ L2A      H14    C14    C15     108.340    3.000
+ L2A      C16    C14    C15     111.000    3.000
+ L2A      C14    C16    H16B    109.470    3.000
+ L2A      C14    C16    H16A    109.470    3.000
+ L2A      C14    C16    H16     109.470    3.000
+ L2A      H16B   C16    H16A    109.470    3.000
+ L2A      H16B   C16    H16     109.470    3.000
+ L2A      H16A   C16    H16     109.470    3.000
+ L2A      C14    C15    H15B    109.470    3.000
+ L2A      C14    C15    H15A    109.470    3.000
+ L2A      C14    C15    H15     109.470    3.000
+ L2A      H15B   C15    H15A    109.470    3.000
+ L2A      H15B   C15    H15     109.470    3.000
+ L2A      H15A   C15    H15     109.470    3.000
+ L2A      C11    N3     HN3     118.500    3.000
+ L2A      C11    N3     C6      121.500    3.000
+ L2A      HN3    N3     C6      120.000    3.000
+ L2A      N3     C6     O4      123.000    3.000
+ L2A      N3     C6     C5      116.500    3.000
+ L2A      O4     C6     C5      120.500    3.000
+ L2A      C6     C5     H5      108.810    3.000
+ L2A      C6     C5     C7      109.470    3.000
+ L2A      C6     C5     N2      111.600    3.000
+ L2A      H5     C5     C7      108.340    3.000
+ L2A      H5     C5     N2      108.550    3.000
+ L2A      C7     C5     N2      110.000    3.000
+ L2A      C5     C7     H7      109.470    3.000
+ L2A      C5     C7     H7A     109.470    3.000
+ L2A      C5     C7     C8      111.000    3.000
+ L2A      H7     C7     H7A     107.900    3.000
+ L2A      H7     C7     C8      109.470    3.000
+ L2A      H7A    C7     C8      109.470    3.000
+ L2A      C7     C8     H8      108.340    3.000
+ L2A      C7     C8     C10     111.000    3.000
+ L2A      C7     C8     C9      111.000    3.000
+ L2A      H8     C8     C10     108.340    3.000
+ L2A      H8     C8     C9      108.340    3.000
+ L2A      C10    C8     C9      111.000    3.000
+ L2A      C8     C10    H10B    109.470    3.000
+ L2A      C8     C10    H10A    109.470    3.000
+ L2A      C8     C10    H10     109.470    3.000
+ L2A      H10B   C10    H10A    109.470    3.000
+ L2A      H10B   C10    H10     109.470    3.000
+ L2A      H10A   C10    H10     109.470    3.000
+ L2A      C8     C9     H9B     109.470    3.000
+ L2A      C8     C9     H9A     109.470    3.000
+ L2A      C8     C9     H9      109.470    3.000
+ L2A      H9B    C9     H9A     109.470    3.000
+ L2A      H9B    C9     H9      109.470    3.000
+ L2A      H9A    C9     H9      109.470    3.000
+ L2A      C5     N2     HN2     118.500    3.000
+ L2A      C5     N2     C2      121.500    3.000
+ L2A      HN2    N2     C2      120.000    3.000
+ L2A      N2     C2     O1      123.000    3.000
+ L2A      N2     C2     C1      116.500    3.000
+ L2A      O1     C2     C1      120.500    3.000
+ L2A      C2     C1     H1      108.810    3.000
+ L2A      C2     C1     C3      109.470    3.000
+ L2A      C2     C1     N1      111.600    3.000
+ L2A      H1     C1     C3      108.340    3.000
+ L2A      H1     C1     N1      108.550    3.000
+ L2A      C3     C1     N1      110.000    3.000
+ L2A      C1     C3     H3      109.470    3.000
+ L2A      C1     C3     H3A     109.470    3.000
+ L2A      C1     C3     C4      109.470    3.000
+ L2A      H3     C3     H3A     107.900    3.000
+ L2A      H3     C3     C4      109.470    3.000
+ L2A      H3A    C3     C4      109.470    3.000
+ L2A      C3     C4     O2      118.500    3.000
+ L2A      C3     C4     O3      118.500    3.000
+ L2A      O2     C4     O3      123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ L2A      var_1    OXT    C22    C17    N4        92.889   20.000   1
+ L2A      var_2    C22    C17    C18    H18      -59.675   20.000   1
+ L2A      var_3    C22    C17    C19    C20       29.241   20.000   1
+ L2A      var_4    C17    C19    C20    C21     -176.990   20.000   3
+ L2A      var_5    C19    C20    C21    C23      126.708   20.000   3
+ L2A      var_6    C20    C21    C23    CE      -142.256   20.000   1
+ L2A      CONST_1  C21    C23    CE     CD       179.993    0.000   0
+ L2A      var_7    C23    CE     CD     CG       -97.689   20.000   1
+ L2A      var_8    CE     CD     CG     CB1     -137.955   20.000   3
+ L2A      var_9    CD     CG     CB1    CA       176.925   20.000   3
+ L2A      var_10   CG     CB1    CA     C        -45.509   20.000   1
+ L2A      var_11   CB1    CA     N      HN        56.087   20.000   1
+ L2A      var_12   CB1    CA     CB2    HB2      -59.975   20.000   1
+ L2A      var_13   CB1    CA     C      N1      -177.491   20.000   1
+ L2A      CONST_2  CA     C      N1     C1       180.000    0.000   0
+ L2A      var_14   C      N1     C1     C2        83.031   20.000   3
+ L2A      var_15   C22    C17    N4     C12       15.110   20.000   1
+ L2A      CONST_3  C17    N4     C12    C11      180.000    0.000   0
+ L2A      var_16   N4     C12    C11    N3      -156.212   20.000   3
+ L2A      var_17   C12    C11    C13    C14      172.544   20.000   3
+ L2A      var_18   C11    C13    C14    C15       52.717   20.000   3
+ L2A      var_19   C13    C14    C16    H16       60.028   20.000   3
+ L2A      var_20   C13    C14    C15    H15     -170.181   20.000   3
+ L2A      var_21   C12    C11    N3     C6        99.784   20.000   3
+ L2A      CONST_4  C11    N3     C6     C5       180.000    0.000   0
+ L2A      var_22   N3     C6     C5     N2       166.211   20.000   3
+ L2A      var_23   C6     C5     C7     C8       175.917   20.000   3
+ L2A      var_24   C5     C7     C8     C9       174.985   20.000   3
+ L2A      var_25   C7     C8     C10    H10      -59.972   20.000   3
+ L2A      var_26   C7     C8     C9     H9       179.995   20.000   3
+ L2A      var_27   C6     C5     N2     C2       -93.042   20.000   3
+ L2A      CONST_5  C5     N2     C2     C1       180.000    0.000   0
+ L2A      var_28   N2     C2     C1     C3       -79.528   20.000   3
+ L2A      var_29   C2     C1     C3     C4      -178.461   20.000   3
+ L2A      var_30   C1     C3     C4     O3      -179.997   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ L2A      chir_01  C1     N1     C2     C3        positiv
+ L2A      chir_02  C5     N2     C6     C7        positiv
+ L2A      chir_03  C8     C7     C9     C10       negativ
+ L2A      chir_04  C11    N3     C12    C13       positiv
+ L2A      chir_05  C14    C13    C15    C16       negativ
+ L2A      chir_06  CA     N      CB2    CB1       negativ
+ L2A      chir_07  C17    N4     C18    C19       negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ L2A      plan-1    N1        0.020
+ L2A      plan-1    C1        0.020
+ L2A      plan-1    C         0.020
+ L2A      plan-1    HN1       0.020
+ L2A      plan-2    C2        0.020
+ L2A      plan-2    C1        0.020
+ L2A      plan-2    O1        0.020
+ L2A      plan-2    N2        0.020
+ L2A      plan-2    HN2       0.020
+ L2A      plan-3    C4        0.020
+ L2A      plan-3    C3        0.020
+ L2A      plan-3    O2        0.020
+ L2A      plan-3    O3        0.020
+ L2A      plan-4    N2        0.020
+ L2A      plan-4    C2        0.020
+ L2A      plan-4    C5        0.020
+ L2A      plan-4    HN2       0.020
+ L2A      plan-5    C6        0.020
+ L2A      plan-5    C5        0.020
+ L2A      plan-5    O4        0.020
+ L2A      plan-5    N3        0.020
+ L2A      plan-5    HN3       0.020
+ L2A      plan-6    N3        0.020
+ L2A      plan-6    C6        0.020
+ L2A      plan-6    C11       0.020
+ L2A      plan-6    HN3       0.020
+ L2A      plan-7    C12       0.020
+ L2A      plan-7    C11       0.020
+ L2A      plan-7    O5        0.020
+ L2A      plan-7    N4        0.020
+ L2A      plan-7    HN4       0.020
+ L2A      plan-8    N         0.020
+ L2A      plan-8    CA        0.020
+ L2A      plan-8    HN        0.020
+ L2A      plan-8    HNA       0.020
+ L2A      plan-9    C         0.020
+ L2A      plan-9    N1        0.020
+ L2A      plan-9    CA        0.020
+ L2A      plan-9    O         0.020
+ L2A      plan-9    HN1       0.020
+ L2A      plan-10   CE        0.020
+ L2A      plan-10   CD        0.020
+ L2A      plan-10   C23       0.020
+ L2A      plan-10   HE        0.020
+ L2A      plan-10   C21       0.020
+ L2A      plan-10   H23       0.020
+ L2A      plan-11   N4        0.020
+ L2A      plan-11   C12       0.020
+ L2A      plan-11   C17       0.020
+ L2A      plan-11   HN4       0.020
+ L2A      plan-12   C22       0.020
+ L2A      plan-12   C17       0.020
+ L2A      plan-12   O6        0.020
+ L2A      plan-12   OXT       0.020
+# ------------------------------------------------------

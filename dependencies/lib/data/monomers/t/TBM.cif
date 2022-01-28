@@ -1,0 +1,271 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+TBM      TBM '4-METHYL-4-[(E)-2-BUTENYL]-4,N-DIMET' non-polymer        35  15 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_TBM
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ TBM           OXT    O    OC       -0.500      0.000    0.000    0.000
+ TBM           C      C    C         0.000     -0.697   -0.984    0.333
+ TBM           O      O    OC       -0.500     -0.332   -2.140    0.024
+ TBM           CA     C    CH1       0.000     -1.975   -0.777    1.103
+ TBM           HA     H    H         0.000     -2.304   -1.734    1.532
+ TBM           N      N    NT        0.000     -1.743    0.189    2.184
+ TBM           CN     C    CH3       0.000     -0.374   -0.037    2.666
+ TBM           HCN3   H    H         0.000     -0.231   -1.069    2.852
+ TBM           HCN2   H    H         0.000      0.317    0.288    1.931
+ TBM           HCN1   H    H         0.000     -0.220    0.508    3.561
+ TBM           CT     C    CH3       0.000     -2.644   -0.183    3.283
+ TBM           HCT3   H    H         0.000     -3.634   -0.264    2.915
+ TBM           HCT2   H    H         0.000     -2.341   -1.113    3.688
+ TBM           HCT1   H    H         0.000     -2.606    0.560    4.037
+ TBM           CB     C    CH1       0.000     -3.057   -0.242    0.163
+ TBM           HB     H    H         0.000     -3.193   -0.940   -0.675
+ TBM           OG1    O    OH1       0.000     -2.661    1.034   -0.340
+ TBM           HG1    H    H         0.000     -2.473    1.627    0.400
+ TBM           CG2    C    CH1       0.000     -4.374   -0.103    0.929
+ TBM           HG2    H    H         0.000     -4.238    0.595    1.767
+ TBM           CD1    C    CH3       0.000     -4.798   -1.470    1.467
+ TBM           HD13   H    H         0.000     -4.049   -1.842    2.119
+ TBM           HD12   H    H         0.000     -5.710   -1.375    1.997
+ TBM           HD11   H    H         0.000     -4.928   -2.144    0.660
+ TBM           CD2    C    CH2       0.000     -5.455    0.433   -0.011
+ TBM           HD22   H    H         0.000     -5.589   -0.261   -0.844
+ TBM           HD23   H    H         0.000     -5.152    1.408   -0.396
+ TBM           CE     C    C1        0.000     -6.753    0.570    0.744
+ TBM           HE     H    H         0.000     -7.207   -0.296    1.197
+ TBM           CZ     C    C1        0.000     -7.329    1.741    0.848
+ TBM           HZ     H    H         0.000     -6.875    2.607    0.395
+ TBM           CH     C    CH3       0.000     -8.627    1.878    1.602
+ TBM           HH3    H    H         0.000     -9.364    1.270    1.147
+ TBM           HH2    H    H         0.000     -8.485    1.572    2.605
+ TBM           HH1    H    H         0.000     -8.941    2.889    1.581
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ TBM      OXT    n/a    C      START
+ TBM      C      OXT    CA     .
+ TBM      O      C      .      .
+ TBM      CA     C      CB     .
+ TBM      HA     CA     .      .
+ TBM      N      CA     CT     .
+ TBM      CN     N      HCN1   .
+ TBM      HCN3   CN     .      .
+ TBM      HCN2   CN     .      .
+ TBM      HCN1   CN     .      .
+ TBM      CT     N      HCT1   .
+ TBM      HCT3   CT     .      .
+ TBM      HCT2   CT     .      .
+ TBM      HCT1   CT     .      .
+ TBM      CB     CA     CG2    .
+ TBM      HB     CB     .      .
+ TBM      OG1    CB     HG1    .
+ TBM      HG1    OG1    .      .
+ TBM      CG2    CB     CD2    .
+ TBM      HG2    CG2    .      .
+ TBM      CD1    CG2    HD11   .
+ TBM      HD13   CD1    .      .
+ TBM      HD12   CD1    .      .
+ TBM      HD11   CD1    .      .
+ TBM      CD2    CG2    CE     .
+ TBM      HD22   CD2    .      .
+ TBM      HD23   CD2    .      .
+ TBM      CE     CD2    CZ     .
+ TBM      HE     CE     .      .
+ TBM      CZ     CE     CH     .
+ TBM      HZ     CZ     .      .
+ TBM      CH     CZ     HH1    .
+ TBM      HH3    CH     .      .
+ TBM      HH2    CH     .      .
+ TBM      HH1    CH     .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+TBM       CT        N         single    1.469     0.020     1.469     0.020     
+TBM       CN        N         single    1.469     0.020     1.469     0.020     
+TBM       N         CA        single    1.469     0.020     1.469     0.020     
+TBM       HCT1      CT        single    1.089     0.010     0.989     0.005     
+TBM       HCT2      CT        single    1.089     0.010     0.989     0.005     
+TBM       HCT3      CT        single    1.089     0.010     0.989     0.005     
+TBM       HCN1      CN        single    1.089     0.010     0.989     0.005     
+TBM       HCN2      CN        single    1.089     0.010     0.989     0.005     
+TBM       HCN3      CN        single    1.089     0.010     0.989     0.005     
+TBM       CA        C         single    1.500     0.020     1.500     0.020     
+TBM       CB        CA        single    1.524     0.020     1.524     0.020     
+TBM       HA        CA        single    1.089     0.010     0.989     0.005     
+TBM       O         C         deloc     1.250     0.020     1.250     0.020     
+TBM       C         OXT       deloc     1.250     0.020     1.250     0.020     
+TBM       OG1       CB        single    1.432     0.020     1.432     0.020     
+TBM       CG2       CB        single    1.524     0.020     1.524     0.020     
+TBM       HB        CB        single    1.089     0.010     0.989     0.005     
+TBM       HG1       OG1       single    0.970     0.012     0.839     0.014     
+TBM       CD1       CG2       single    1.524     0.020     1.524     0.020     
+TBM       CD2       CG2       single    1.524     0.020     1.524     0.020     
+TBM       HG2       CG2       single    1.089     0.010     0.989     0.005     
+TBM       HD11      CD1       single    1.089     0.010     0.989     0.005     
+TBM       HD12      CD1       single    1.089     0.010     0.989     0.005     
+TBM       HD13      CD1       single    1.089     0.010     0.989     0.005     
+TBM       CE        CD2       single    1.510     0.020     1.510     0.020     
+TBM       HD22      CD2       single    1.089     0.010     0.989     0.005     
+TBM       HD23      CD2       single    1.089     0.010     0.989     0.005     
+TBM       CZ        CE        double    1.330     0.020     1.330     0.020     
+TBM       HE        CE        single    1.082     0.013     0.975     0.010     
+TBM       CH        CZ        single    1.510     0.020     1.510     0.020     
+TBM       HZ        CZ        single    1.082     0.013     0.975     0.010     
+TBM       HH1       CH        single    1.089     0.010     0.989     0.005     
+TBM       HH2       CH        single    1.089     0.010     0.989     0.005     
+TBM       HH3       CH        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ TBM      OXT    C      O       123.000    3.000
+ TBM      OXT    C      CA      118.500    3.000
+ TBM      O      C      CA      118.500    3.000
+ TBM      C      CA     HA      108.810    3.000
+ TBM      C      CA     N       109.500    3.000
+ TBM      C      CA     CB      109.470    3.000
+ TBM      HA     CA     N       109.500    3.000
+ TBM      HA     CA     CB      108.340    3.000
+ TBM      N      CA     CB      109.500    3.000
+ TBM      CA     N      CN      109.470    3.000
+ TBM      CA     N      CT      109.470    3.000
+ TBM      CN     N      CT      109.470    3.000
+ TBM      N      CN     HCN3    109.470    3.000
+ TBM      N      CN     HCN2    109.470    3.000
+ TBM      N      CN     HCN1    109.470    3.000
+ TBM      HCN3   CN     HCN2    109.470    3.000
+ TBM      HCN3   CN     HCN1    109.470    3.000
+ TBM      HCN2   CN     HCN1    109.470    3.000
+ TBM      N      CT     HCT3    109.470    3.000
+ TBM      N      CT     HCT2    109.470    3.000
+ TBM      N      CT     HCT1    109.470    3.000
+ TBM      HCT3   CT     HCT2    109.470    3.000
+ TBM      HCT3   CT     HCT1    109.470    3.000
+ TBM      HCT2   CT     HCT1    109.470    3.000
+ TBM      CA     CB     HB      108.340    3.000
+ TBM      CA     CB     OG1     109.470    3.000
+ TBM      CA     CB     CG2     111.000    3.000
+ TBM      HB     CB     OG1     109.470    3.000
+ TBM      HB     CB     CG2     108.340    3.000
+ TBM      OG1    CB     CG2     109.470    3.000
+ TBM      CB     OG1    HG1     109.470    3.000
+ TBM      CB     CG2    HG2     108.340    3.000
+ TBM      CB     CG2    CD1     111.000    3.000
+ TBM      CB     CG2    CD2     111.000    3.000
+ TBM      HG2    CG2    CD1     108.340    3.000
+ TBM      HG2    CG2    CD2     108.340    3.000
+ TBM      CD1    CG2    CD2     111.000    3.000
+ TBM      CG2    CD1    HD13    109.470    3.000
+ TBM      CG2    CD1    HD12    109.470    3.000
+ TBM      CG2    CD1    HD11    109.470    3.000
+ TBM      HD13   CD1    HD12    109.470    3.000
+ TBM      HD13   CD1    HD11    109.470    3.000
+ TBM      HD12   CD1    HD11    109.470    3.000
+ TBM      CG2    CD2    HD22    109.470    3.000
+ TBM      CG2    CD2    HD23    109.470    3.000
+ TBM      CG2    CD2    CE      109.470    3.000
+ TBM      HD22   CD2    HD23    107.900    3.000
+ TBM      HD22   CD2    CE      109.470    3.000
+ TBM      HD23   CD2    CE      109.470    3.000
+ TBM      CD2    CE     HE      120.000    3.000
+ TBM      CD2    CE     CZ      120.000    3.000
+ TBM      HE     CE     CZ      120.000    3.000
+ TBM      CE     CZ     HZ      120.000    3.000
+ TBM      CE     CZ     CH      120.000    3.000
+ TBM      HZ     CZ     CH      120.000    3.000
+ TBM      CZ     CH     HH3     109.470    3.000
+ TBM      CZ     CH     HH2     109.470    3.000
+ TBM      CZ     CH     HH1     109.470    3.000
+ TBM      HH3    CH     HH2     109.470    3.000
+ TBM      HH3    CH     HH1     109.470    3.000
+ TBM      HH2    CH     HH1     109.470    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ TBM      var_1    OXT    C      CA     CB        74.970   20.000   3
+ TBM      var_2    C      CA     N      CT      -148.778   20.000   1
+ TBM      var_3    CA     N      CN     HCN1    -169.507   20.000   1
+ TBM      var_4    CA     N      CT     HCT1    -172.556   20.000   1
+ TBM      var_5    C      CA     CB     CG2      176.992   20.000   3
+ TBM      var_6    CA     CB     OG1    HG1      -55.438   20.000   1
+ TBM      var_7    CA     CB     CG2    CD2      180.000   20.000   3
+ TBM      var_8    CB     CG2    CD1    HD11     -59.936   20.000   3
+ TBM      var_9    CB     CG2    CD2    CE       179.995   20.000   3
+ TBM      var_10   CG2    CD2    CE     CZ       120.014   20.000   1
+ TBM      CONST_1  CD2    CE     CZ     CH       179.963    0.000   0
+ TBM      var_11   CE     CZ     CH     HH1      180.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ TBM      chir_01  N      CT     CN     CA        negativ
+ TBM      chir_02  CA     N      C      CB        positiv
+ TBM      chir_03  CB     CA     OG1    CG2       positiv
+ TBM      chir_04  CG2    CB     CD1    CD2       positiv
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ TBM      plan-1    C         0.020
+ TBM      plan-1    CA        0.020
+ TBM      plan-1    O         0.020
+ TBM      plan-1    OXT       0.020
+ TBM      plan-2    CE        0.020
+ TBM      plan-2    CD2       0.020
+ TBM      plan-2    CZ        0.020
+ TBM      plan-2    HE        0.020
+ TBM      plan-2    CH        0.020
+ TBM      plan-2    HZ        0.020
+# ------------------------------------------------------

@@ -1,0 +1,188 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AME     AME      N-ACETYLMETHIONINE     NON-POLYMER     24     12     .     
+#
+data_comp_AME
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AME     CT2     C       CH3     0       26.216      46.834      56.739      
+AME     CT1     C       C       0       24.827      46.464      57.164      
+AME     OT      O       O       0       23.853      46.995      56.630      
+AME     CB      C       CH2     0       23.549      43.783      59.453      
+AME     CG      C       CH2     0       23.941      42.615      58.567      
+AME     SD      S       S2      0       24.055      41.057      59.483      
+AME     CE      C       CH3     0       24.472      39.924      58.158      
+AME     C       C       C       0       22.810      46.183      59.598      
+AME     O       O       O       0       21.607      46.466      59.431      
+AME     OXT     O       OC      -1      23.563      46.699      60.448      
+AME     N       N       NH1     0       24.699      45.549      58.141      
+AME     CA      C       CH1     0       23.419      45.106      58.681      
+AME     HT23    H       H       0       26.873      46.286      57.196      
+AME     HT22    H       H       0       26.380      47.768      56.950      
+AME     HT21    H       H       0       26.306      46.704      55.781      
+AME     HB2     H       H       0       24.221      43.889      60.156      
+AME     HB1     H       H       0       22.695      43.579      59.886      
+AME     HG2     H       H       0       24.810      42.803      58.151      
+AME     HG1     H       H       0       23.278      42.515      57.852      
+AME     HE3     H       H       0       24.556      39.031      58.514      
+AME     HE2     H       H       0       25.308      40.192      57.758      
+AME     HE1     H       H       0       23.775      39.941      57.491      
+AME     HN1     H       H       0       25.413      45.189      58.495      
+AME     HA      H       H       0       22.796      44.954      57.925      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AME       CT2       CT1       SINGLE    n         1.495     0.010     1.495     0.010     
+AME       CT1       OT        DOUBLE    n         1.229     0.012     1.229     0.012     
+AME       CT1       N         SINGLE    n         1.335     0.010     1.335     0.010     
+AME       CB        CG        SINGLE    n         1.517     0.020     1.517     0.020     
+AME       CB        CA        SINGLE    n         1.535     0.013     1.535     0.013     
+AME       CG        SD        SINGLE    n         1.811     0.020     1.811     0.020     
+AME       SD        CE        SINGLE    n         1.792     0.010     1.792     0.010     
+AME       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+AME       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+AME       C         CA        SINGLE    n         1.539     0.010     1.539     0.010     
+AME       N         CA        SINGLE    n         1.453     0.010     1.453     0.010     
+AME       CT2       HT23      SINGLE    n         1.089     0.010     0.971     0.014     
+AME       CT2       HT22      SINGLE    n         1.089     0.010     0.971     0.014     
+AME       CT2       HT21      SINGLE    n         1.089     0.010     0.971     0.014     
+AME       CB        HB2       SINGLE    n         1.089     0.010     0.978     0.020     
+AME       CB        HB1       SINGLE    n         1.089     0.010     0.978     0.020     
+AME       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.013     
+AME       CG        HG1       SINGLE    n         1.089     0.010     0.981     0.013     
+AME       CE        HE3       SINGLE    n         1.089     0.010     0.965     0.017     
+AME       CE        HE2       SINGLE    n         1.089     0.010     0.965     0.017     
+AME       CE        HE1       SINGLE    n         1.089     0.010     0.965     0.017     
+AME       N         HN1       SINGLE    n         1.016     0.010     0.873     0.020     
+AME       CA        HA        SINGLE    n         1.089     0.010     0.991     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AME         CT1         CT2        HT23     109.678    1.50
+AME         CT1         CT2        HT22     109.678    1.50
+AME         CT1         CT2        HT21     109.678    1.50
+AME        HT23         CT2        HT22     109.365    1.50
+AME        HT23         CT2        HT21     109.365    1.50
+AME        HT22         CT2        HT21     109.365    1.50
+AME         CT2         CT1          OT     121.913    1.50
+AME         CT2         CT1           N     116.420    1.50
+AME          OT         CT1           N     121.667    1.50
+AME          CG          CB          CA     112.986    1.50
+AME          CG          CB         HB2     108.955    1.50
+AME          CG          CB         HB1     108.955    1.50
+AME          CA          CB         HB2     108.966    1.50
+AME          CA          CB         HB1     108.966    1.50
+AME         HB2          CB         HB1     107.698    1.50
+AME          CB          CG          SD     112.576    2.44
+AME          CB          CG         HG2     109.206    1.50
+AME          CB          CG         HG1     109.206    1.50
+AME          SD          CG         HG2     108.861    1.50
+AME          SD          CG         HG1     108.861    1.50
+AME         HG2          CG         HG1     107.939    1.50
+AME          CG          SD          CE     100.595    1.50
+AME          SD          CE         HE3     109.425    1.50
+AME          SD          CE         HE2     109.425    1.50
+AME          SD          CE         HE1     109.425    1.50
+AME         HE3          CE         HE2     109.509    1.50
+AME         HE3          CE         HE1     109.509    1.50
+AME         HE2          CE         HE1     109.509    1.50
+AME           O           C         OXT     125.502    1.50
+AME           O           C          CA     117.249    1.61
+AME         OXT           C          CA     117.249    1.61
+AME         CT1           N          CA     122.215    1.76
+AME         CT1           N         HN1     119.644    2.25
+AME          CA           N         HN1     118.142    2.15
+AME          CB          CA           C     110.328    1.98
+AME          CB          CA           N     111.763    1.50
+AME          CB          CA          HA     108.444    1.50
+AME           C          CA           N     110.976    1.55
+AME           C          CA          HA     108.327    1.50
+AME           N          CA          HA     108.343    1.63
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AME             sp2_sp3_1          OT         CT1         CT2        HT23       0.000   10.00     6
+AME            sp2_sp3_13         CT1           N          CA          CB       0.000   10.00     6
+AME             sp2_sp2_1         CT2         CT1           N          CA     180.000   10.00     2
+AME            sp3_sp3_10           C          CA          CB          CG     180.000   10.00     3
+AME             sp3_sp3_1          CA          CB          CG          SD     180.000   10.00     3
+AME            sp3_sp3_19          CB          CG          SD          CE     180.000   10.00     3
+AME            sp3_sp3_22         HE3          CE          SD          CG     180.000   10.00     3
+AME             sp2_sp3_7           O           C          CA          CB       0.000   10.00     6
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+AME    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AME    plan-1         CT1   0.020
+AME    plan-1         CT2   0.020
+AME    plan-1           N   0.020
+AME    plan-1          OT   0.020
+AME    plan-2           C   0.020
+AME    plan-2          CA   0.020
+AME    plan-2           O   0.020
+AME    plan-2         OXT   0.020
+AME    plan-3          CA   0.020
+AME    plan-3         CT1   0.020
+AME    plan-3         HN1   0.020
+AME    plan-3           N   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AME SMILES           ACDLabs              10.04 "O=C(NC(C(=O)O)CCSC)C"
+AME SMILES_CANONICAL CACTVS               3.341 "CSCC[C@H](NC(C)=O)C(O)=O"
+AME SMILES           CACTVS               3.341 "CSCC[CH](NC(C)=O)C(O)=O"
+AME SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "CC(=O)N[C@@H](CCSC)C(=O)O"
+AME SMILES           "OpenEye OEToolkits" 1.5.0 "CC(=O)NC(CCSC)C(=O)O"
+AME InChI            InChI                1.03  "InChI=1S/C7H13NO3S/c1-5(9)8-6(7(10)11)3-4-12-2/h6H,3-4H2,1-2H3,(H,8,9)(H,10,11)/t6-/m0/s1"
+AME InChIKey         InChI                1.03  XUYPXLNMDZIRQH-LURJTMIESA-N
+AME ?                acedrg               202         "dictionary generator"                  
+AME ?                acedrg_database      11          "data source"                           
+AME ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AME ?                refmac5              5.8.0189    "optimization tool"                     

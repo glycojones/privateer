@@ -1,0 +1,76 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+S2H     S2H      "Hydrogen disulfide"     NON-POLYMER     4     2     .     
+#
+data_comp_S2H
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+S2H     S1      S       SH1     0       -0.820      0.546       -0.563      
+S2H     S2      S       SH1     0       0.854       0.448       0.600       
+S2H     HS1     H       HSH1    0       -1.081      1.715       -0.803      
+S2H     HS2     H       HSH1    0       1.254       1.577       0.834       
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+S2H       S1        S2        SINGLE    n         2.041     0.020     2.041     0.020     
+S2H       S1        HS1       SINGLE    n         1.338     0.010     1.171     0.208     
+S2H       S2        HS2       SINGLE    n         1.338     0.010     1.171     0.208     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+S2H          S2          S1         HS1     109.471    3.00
+S2H          S1          S2         HS2     109.471    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+S2H             sp3_sp3_1         HS1          S1          S2         HS2     180.000   10.00     3
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+S2H InChI            InChI                1.03  InChI=1S/H2S2/c1-2/h1-2H
+S2H InChIKey         InChI                1.03  BWGNESOTFCXPMA-UHFFFAOYSA-N
+S2H SMILES_CANONICAL CACTVS               3.370 SS
+S2H SMILES           CACTVS               3.370 SS
+S2H SMILES_CANONICAL "OpenEye OEToolkits" 1.7.2 SS
+S2H SMILES           "OpenEye OEToolkits" 1.7.2 SS
+S2H ?                acedrg               202         "dictionary generator"                  
+S2H ?                acedrg_database      11          "data source"                           
+S2H ?                rdkit                2017.03.2   "Chemoinformatics tool"
+S2H ?                refmac5              5.8.0189    "optimization tool"                     

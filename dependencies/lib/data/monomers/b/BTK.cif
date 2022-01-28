@@ -1,0 +1,278 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+BTK     BTK     N~6~-butanoyl-L-lysine   peptide   35     15     .     
+#
+data_comp_BTK
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+BTK     C       C       C       0       -4.059      0.562       -0.986      
+BTK     N       N       NT3     1       -5.124      -0.098      1.136       
+BTK     O       O       O       0       -3.675      1.652       -1.456      
+BTK     CA      C       CH1     0       -3.840      0.329       0.514       
+BTK     CB      C       CH2     0       -2.754      -0.725      0.757       
+BTK     CD      C       CH2     0       -0.277      -1.290      0.838       
+BTK     CE      C       CH2     0       1.134       -0.860      0.475       
+BTK     CG      C       CH2     0       -1.331      -0.273      0.453       
+BTK     NZ      N       NH1     0       1.371       -0.847      -0.966      
+BTK     CAA     C       CH3     0       4.924       2.034       -0.017      
+BTK     OAD     O       O       0       2.605       -0.714      -2.830      
+BTK     CAF     C       CH2     0       3.695       1.508       -0.732      
+BTK     CAJ     C       CH2     0       3.682       -0.002      -0.820      
+BTK     CAN     C       C       0       2.513       -0.553      -1.614      
+BTK     OXT     O       OC      -1      -4.605      -0.356      -1.630      
+BTK     H       H       H       0       -5.013      -0.212      2.033       
+BTK     H2      H       H       0       -5.401      -0.885      0.770       
+BTK     H3      H       H       0       -5.765      0.535       0.997       
+BTK     HA      H       H       0       -3.560      1.177       0.931       
+BTK     HB2     H       H       0       -2.955      -1.510      0.205       
+BTK     HB3     H       H       0       -2.796      -1.003      1.695       
+BTK     HD2     H       H       0       -0.322      -1.445      1.805       
+BTK     HD3     H       H       0       -0.475      -2.139      0.388       
+BTK     HE2     H       H       0       1.772       -1.475      0.897       
+BTK     HE3     H       H       0       1.300       0.038       0.833       
+BTK     HG2     H       H       0       -1.157      0.564       0.936       
+BTK     HG3     H       H       0       -1.257      -0.086      -0.507      
+BTK     HNZ     H       H       0       0.693       -1.056      -1.476      
+BTK     HAA     H       H       0       4.948       3.005       -0.081      
+BTK     HAAA    H       H       0       5.724       1.664       -0.429      
+BTK     HAAB    H       H       0       4.892       1.773       0.919       
+BTK     HAF     H       H       0       3.667       1.883       -1.638      
+BTK     HAFA    H       H       0       2.893       1.811       -0.257      
+BTK     HAJ     H       H       0       3.674       -0.375      0.084       
+BTK     HAJA    H       H       0       4.513       -0.296      -1.249      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ BTK      N      n/a    CA     START
+ BTK      H      N      .      .
+ BTK      H2     N      .      .
+ BTK      H3     N      .      .
+ BTK      CA     N      C      .
+ BTK      HA     CA     .      .
+ BTK      CB     CA     CG     .
+ BTK      HB2    CB     .      .
+ BTK      HB3    CB     .      .
+ BTK      CG     CB     CD     .
+ BTK      HG2    CG     .      .
+ BTK      HG3    CG     .      .
+ BTK      CD     CG     CE     .
+ BTK      HD2    CD     .      .
+ BTK      HD3    CD     .      .
+ BTK      CE     CD     NZ     .
+ BTK      HE2    CE     .      .
+ BTK      HE3    CE     .      .
+ BTK      NZ     CE     CAN    .
+ BTK      HNZ    NZ     .      .
+ BTK      CAN    NZ     OAD    .
+ BTK      CAJ    CAN    CAF    .
+ BTK      HAJ    CAJ    .      .
+ BTK      HAJA   CAJ    .      .
+ BTK      CAF    CAJ    CAA    .
+ BTK      HAF    CAF    .      .
+ BTK      HAFA   CAF    .      .
+ BTK      CAA    CAF    HAA    .
+ BTK      HAAB   CAA    .      .
+ BTK      HAAA   CAA    .      .
+ BTK      HAA    CAA    .      .
+ BTK      OAD    CAN    .      .
+ BTK      C      CA     OXT    .
+ BTK      O      C      .      .
+ BTK      OXT    C      .      END
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+BTK       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+BTK       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+BTK       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+BTK       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+BTK       CA        CB        SINGLE    n         1.532     0.010     1.532     0.010     
+BTK       CB        CG        SINGLE    n         1.523     0.012     1.523     0.012     
+BTK       CD        CE        SINGLE    n         1.517     0.015     1.517     0.015     
+BTK       CD        CG        SINGLE    n         1.514     0.020     1.514     0.020     
+BTK       CE        NZ        SINGLE    n         1.456     0.012     1.456     0.012     
+BTK       NZ        CAN       SINGLE    n         1.337     0.012     1.337     0.012     
+BTK       CAA       CAF       SINGLE    n         1.515     0.020     1.515     0.020     
+BTK       OAD       CAN       DOUBLE    n         1.229     0.012     1.229     0.012     
+BTK       CAF       CAJ       SINGLE    n         1.512     0.017     1.512     0.017     
+BTK       CAJ       CAN       SINGLE    n         1.514     0.010     1.514     0.010     
+BTK       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+BTK       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+BTK       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+BTK       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+BTK       CB        HB2       SINGLE    n         1.089     0.010     0.980     0.016     
+BTK       CB        HB3       SINGLE    n         1.089     0.010     0.980     0.016     
+BTK       CD        HD2       SINGLE    n         1.089     0.010     0.981     0.016     
+BTK       CD        HD3       SINGLE    n         1.089     0.010     0.981     0.016     
+BTK       CE        HE2       SINGLE    n         1.089     0.010     0.981     0.015     
+BTK       CE        HE3       SINGLE    n         1.089     0.010     0.981     0.015     
+BTK       CG        HG2       SINGLE    n         1.089     0.010     0.981     0.016     
+BTK       CG        HG3       SINGLE    n         1.089     0.010     0.981     0.016     
+BTK       NZ        HNZ       SINGLE    n         1.016     0.010     0.872     0.020     
+BTK       CAA       HAA       SINGLE    n         1.089     0.010     0.973     0.016     
+BTK       CAA       HAAA      SINGLE    n         1.089     0.010     0.973     0.016     
+BTK       CAA       HAAB      SINGLE    n         1.089     0.010     0.973     0.016     
+BTK       CAF       HAF       SINGLE    n         1.089     0.010     0.980     0.016     
+BTK       CAF       HAFA      SINGLE    n         1.089     0.010     0.980     0.016     
+BTK       CAJ       HAJ       SINGLE    n         1.089     0.010     0.981     0.019     
+BTK       CAJ       HAJA      SINGLE    n         1.089     0.010     0.981     0.019     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+BTK           O           C          CA     117.124    1.50
+BTK           O           C         OXT     125.752    1.50
+BTK          CA           C         OXT     117.124    1.50
+BTK          CA           N           H     110.062    1.93
+BTK          CA           N          H2     110.062    1.93
+BTK          CA           N          H3     110.062    1.93
+BTK           H           N          H2     109.028    2.41
+BTK           H           N          H3     109.028    2.41
+BTK          H2           N          H3     109.028    2.41
+BTK           C          CA           N     109.241    1.50
+BTK           C          CA          CB     111.037    2.40
+BTK           C          CA          HA     108.824    1.50
+BTK           N          CA          CB     110.374    1.62
+BTK           N          CA          HA     108.487    1.50
+BTK          CB          CA          HA     108.967    1.50
+BTK          CA          CB          CG     115.311    1.56
+BTK          CA          CB         HB2     108.549    1.50
+BTK          CA          CB         HB3     108.549    1.50
+BTK          CG          CB         HB2     108.650    1.50
+BTK          CG          CB         HB3     108.650    1.50
+BTK         HB2          CB         HB3     107.844    1.50
+BTK          CE          CD          CG     113.159    3.00
+BTK          CE          CD         HD2     108.956    1.50
+BTK          CE          CD         HD3     108.956    1.50
+BTK          CG          CD         HD2     109.041    1.50
+BTK          CG          CD         HD3     109.041    1.50
+BTK         HD2          CD         HD3     107.927    1.57
+BTK          CD          CE          NZ     112.624    1.50
+BTK          CD          CE         HE2     109.197    1.51
+BTK          CD          CE         HE3     109.197    1.51
+BTK          NZ          CE         HE2     108.979    1.50
+BTK          NZ          CE         HE3     108.979    1.50
+BTK         HE2          CE         HE3     107.877    1.50
+BTK          CB          CG          CD     113.328    2.00
+BTK          CB          CG         HG2     108.601    1.50
+BTK          CB          CG         HG3     108.601    1.50
+BTK          CD          CG         HG2     108.806    1.50
+BTK          CD          CG         HG3     108.806    1.50
+BTK         HG2          CG         HG3     107.646    1.50
+BTK          CE          NZ         CAN     124.480    2.27
+BTK          CE          NZ         HNZ     118.241    1.90
+BTK         CAN          NZ         HNZ     117.279    2.10
+BTK         CAF         CAA         HAA     109.554    1.50
+BTK         CAF         CAA        HAAA     109.554    1.50
+BTK         CAF         CAA        HAAB     109.554    1.50
+BTK         HAA         CAA        HAAA     109.380    1.50
+BTK         HAA         CAA        HAAB     109.380    1.50
+BTK        HAAA         CAA        HAAB     109.380    1.50
+BTK         CAA         CAF         CAJ     112.286    1.50
+BTK         CAA         CAF         HAF     108.918    1.50
+BTK         CAA         CAF        HAFA     108.918    1.50
+BTK         CAJ         CAF         HAF     109.009    1.50
+BTK         CAJ         CAF        HAFA     109.009    1.50
+BTK         HAF         CAF        HAFA     107.763    1.50
+BTK         CAF         CAJ         CAN     113.485    2.13
+BTK         CAF         CAJ         HAJ     109.104    1.50
+BTK         CAF         CAJ        HAJA     109.104    1.50
+BTK         CAN         CAJ         HAJ     108.930    1.50
+BTK         CAN         CAJ        HAJA     108.930    1.50
+BTK         HAJ         CAJ        HAJA     107.846    1.50
+BTK          NZ         CAN         OAD     121.647    1.50
+BTK          NZ         CAN         CAJ     116.579    1.50
+BTK         OAD         CAN         CAJ     121.774    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+BTK             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+BTK            sp3_sp3_55         CAA         CAF         CAJ         CAN     180.000   10.00     3
+BTK            sp2_sp3_14          NZ         CAN         CAJ         CAF     120.000   10.00     6
+BTK             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+BTK            sp3_sp3_10           C          CA          CB          CG     180.000   10.00     3
+BTK            sp3_sp3_19          CA          CB          CG          CD     180.000   10.00     3
+BTK            sp3_sp3_28          CG          CD          CE          NZ     180.000   10.00     3
+BTK            sp3_sp3_37          CE          CD          CG          CB     180.000   10.00     3
+BTK             sp2_sp3_8         CAN          NZ          CE          CD     120.000   10.00     6
+BTK             sp2_sp2_3         OAD         CAN          NZ          CE       0.000   10.00     2
+BTK            sp3_sp3_46         HAA         CAA         CAF         CAJ     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+BTK    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+BTK    plan-1           C   0.020
+BTK    plan-1          CA   0.020
+BTK    plan-1           O   0.020
+BTK    plan-1         OXT   0.020
+BTK    plan-2         CAN   0.020
+BTK    plan-2          CE   0.020
+BTK    plan-2         HNZ   0.020
+BTK    plan-2          NZ   0.020
+BTK    plan-3         CAJ   0.020
+BTK    plan-3         CAN   0.020
+BTK    plan-3          NZ   0.020
+BTK    plan-3         OAD   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+BTK SMILES           ACDLabs              12.01 "O=C(O)C(N)CCCCNC(=O)CCC"
+BTK SMILES_CANONICAL CACTVS               3.370 "CCCC(=O)NCCCC[C@H](N)C(O)=O"
+BTK SMILES           CACTVS               3.370 "CCCC(=O)NCCCC[CH](N)C(O)=O"
+BTK SMILES_CANONICAL "OpenEye OEToolkits" 1.7.0 "CCCC(=O)NCCCC[C@@H](C(=O)O)N"
+BTK SMILES           "OpenEye OEToolkits" 1.7.0 "CCCC(=O)NCCCCC(C(=O)O)N"
+BTK InChI            InChI                1.03  "InChI=1S/C10H20N2O3/c1-2-5-9(13)12-7-4-3-6-8(11)10(14)15/h8H,2-7,11H2,1H3,(H,12,13)(H,14,15)/t8-/m0/s1"
+BTK InChIKey         InChI                1.03  VRWLRMTUPOYQFV-QMMMGPOBSA-N
+BTK ?                acedrg               196         "dictionary generator"                  
+BTK ?                acedrg_database      11          "data source"                           
+BTK ?                rdkit                2017.03.2   "Chemoinformatics tool"
+BTK ?                refmac5              5.8.0222    "optimization tool"                     

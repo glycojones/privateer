@@ -1,0 +1,146 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+EA2     EA2      AMINOETHANOLPYROPHOSPHATE     NON-POLYMER     18     12     .     
+#
+data_comp_EA2
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+EA2     O1P     O       OP      -1      -1.834      2.211       0.580       
+EA2     O2P     O       O       0       -3.050      0.886       -1.175      
+EA2     P1      P       P       0       -2.903      1.184       0.297       
+EA2     O4P     O       O2      0       -2.394      -0.187      0.980       
+EA2     O5P     O       OP      -1      -1.111      -2.249      1.667       
+EA2     O6P     O       O       0       -1.538      -1.740      -0.818      
+EA2     P2      P       P       0       -1.268      -1.252      0.567       
+EA2     O7P     O       O2      0       0.042       -0.327      0.533       
+EA2     C1      C       CH2     0       1.303       -0.897      0.084       
+EA2     C2      C       CH2     0       2.378       0.158       0.095       
+EA2     N3      N       NT2     0       2.088       1.255       -0.830      
+EA2     O3P     O       OP      -1      -4.218      1.514       0.959       
+EA2     H11     H       H       0       1.196       -1.257      -0.828      
+EA2     H12     H       H       0       1.559       -1.641      0.678       
+EA2     H21     H       H       0       3.233       -0.251      -0.154      
+EA2     H22     H       H       0       2.466       0.519       1.001       
+EA2     HN31    H       H       0       2.786       1.801       -0.881      
+EA2     HN32    H       H       0       1.945       0.935       -1.646      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+EA2       O1P       P1        SINGLE    n         1.509     0.020     1.509     0.020     
+EA2       O2P       P1        DOUBLE    n         1.509     0.020     1.509     0.020     
+EA2       P1        O4P       SINGLE    n         1.614     0.019     1.614     0.019     
+EA2       P1        O3P       SINGLE    n         1.509     0.020     1.509     0.020     
+EA2       O4P       P2        SINGLE    n         1.604     0.014     1.604     0.014     
+EA2       O5P       P2        SINGLE    n         1.493     0.012     1.493     0.012     
+EA2       O6P       P2        DOUBLE    n         1.493     0.012     1.493     0.012     
+EA2       P2        O7P       SINGLE    n         1.604     0.014     1.604     0.014     
+EA2       O7P       C1        SINGLE    n         1.454     0.017     1.454     0.017     
+EA2       C1        C2        SINGLE    n         1.506     0.018     1.506     0.018     
+EA2       C2        N3        SINGLE    n         1.464     0.020     1.464     0.020     
+EA2       C1        H11       SINGLE    n         1.089     0.010     0.986     0.010     
+EA2       C1        H12       SINGLE    n         1.089     0.010     0.986     0.010     
+EA2       C2        H21       SINGLE    n         1.089     0.010     0.980     0.015     
+EA2       C2        H22       SINGLE    n         1.089     0.010     0.980     0.015     
+EA2       N3        HN31      SINGLE    n         1.036     0.016     0.888     0.020     
+EA2       N3        HN32      SINGLE    n         1.036     0.016     0.888     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+EA2         O1P          P1         O2P     112.716    1.50
+EA2         O1P          P1         O4P     105.965    2.38
+EA2         O1P          P1         O3P     112.716    1.50
+EA2         O2P          P1         O4P     105.965    2.38
+EA2         O2P          P1         O3P     112.716    1.50
+EA2         O4P          P1         O3P     105.965    2.38
+EA2          P1         O4P          P2     132.584    3.00
+EA2         O4P          P2         O5P     108.816    2.14
+EA2         O4P          P2         O6P     108.816    2.14
+EA2         O4P          P2         O7P     101.065    1.97
+EA2         O5P          P2         O6P     118.411    2.35
+EA2         O5P          P2         O7P     107.912    2.57
+EA2         O6P          P2         O7P     107.912    2.57
+EA2          P2         O7P          C1     119.251    1.51
+EA2         O7P          C1          C2     109.643    2.62
+EA2         O7P          C1         H11     109.451    1.50
+EA2         O7P          C1         H12     109.451    1.50
+EA2          C2          C1         H11     109.705    1.50
+EA2          C2          C1         H12     109.705    1.50
+EA2         H11          C1         H12     107.889    1.50
+EA2          C1          C2          N3     111.883    2.59
+EA2          C1          C2         H21     109.091    1.50
+EA2          C1          C2         H22     109.091    1.50
+EA2          N3          C2         H21     108.870    1.50
+EA2          N3          C2         H22     108.870    1.50
+EA2         H21          C2         H22     107.873    1.50
+EA2          C2          N3        HN31     109.962    3.00
+EA2          C2          N3        HN32     109.962    3.00
+EA2        HN31          N3        HN32     107.243    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+EA2             sp3_sp3_1          P2         O4P          P1         O1P     180.000   10.00     3
+EA2             sp3_sp3_4          P1         O4P          P2         O5P     180.000   10.00     3
+EA2             sp3_sp3_7          C1         O7P          P2         O4P     180.000   10.00     3
+EA2            sp3_sp3_10          C2          C1         O7P          P2     180.000   10.00     3
+EA2            sp3_sp3_13         O7P          C1          C2          N3     180.000   10.00     3
+EA2            sp3_sp3_22          C1          C2          N3        HN31     180.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+EA2    chir_1    P2    O4P    O7P    O5P    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+EA2 SMILES           ACDLabs              10.04 "O=P(O)(OP(=O)(OCCN)O)O"
+EA2 SMILES_CANONICAL CACTVS               3.341 "NCCO[P@](O)(=O)O[P](O)(O)=O"
+EA2 SMILES           CACTVS               3.341 "NCCO[P](O)(=O)O[P](O)(O)=O"
+EA2 SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C(CO[P@@](=O)(O)OP(=O)(O)O)N"
+EA2 SMILES           "OpenEye OEToolkits" 1.5.0 "C(COP(=O)(O)OP(=O)(O)O)N"
+EA2 InChI            InChI                1.03  "InChI=1S/C2H9NO7P2/c3-1-2-9-12(7,8)10-11(4,5)6/h1-3H2,(H,7,8)(H2,4,5,6)"
+EA2 InChIKey         InChI                1.03  VOBNSQKMDIOJTQ-UHFFFAOYSA-N
+EA2 ?                acedrg               202         "dictionary generator"                  
+EA2 ?                acedrg_database      11          "data source"                           
+EA2 ?                rdkit                2017.03.2   "Chemoinformatics tool"
+EA2 ?                refmac5              5.8.0189    "optimization tool"                     

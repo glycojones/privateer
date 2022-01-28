@@ -1,0 +1,262 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AGD     AGD      "3-(2-amino-6-oxo-1,6-dihydro-9H-purin-9-yl)-D-alanine" peptide   27     17     .     
+#
+data_comp_AGD
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+AGD     N       N       NT3     1       -2.786      -0.191      0.647       
+AGD     CA      C       CH1     0       -2.047      0.780       -0.207      
+AGD     C2      C       CR6     0       2.558       0.768       0.557       
+AGD     C4      C       CR56    0       0.920       -0.520      -0.256      
+AGD     C5      C       CR56    0       1.550       -1.715      0.040       
+AGD     C6      C       CR6     0       2.826       -1.683      0.663       
+AGD     CB      C       CH2     0       -1.310      0.048       -1.339      
+AGD     N9      N       NT      0       -0.276      -0.866      -0.843      
+AGD     N3      N       NRD6    0       1.357       0.746       -0.029      
+AGD     N2      N       NH2     0       3.135       1.942       0.850       
+AGD     N1      N       NR6     0       3.261       -0.370      0.889       
+AGD     O6      O       O       0       3.535       -2.642      0.999       
+AGD     N7      N       NRD5    0       0.763       -2.793      -0.355      
+AGD     C8      C       CR15    0       -0.303      -2.231      -0.870      
+AGD     H       H       H       0       -3.341      0.251       1.220       
+AGD     H2      H       H       0       -2.197      -0.686      1.136       
+AGD     H3      H       H       0       -3.281      -0.750      0.126       
+AGD     HA      H       H       0       -1.376      1.238       0.351       
+AGD     HB      H       H       0       -0.893      0.707       -1.925      
+AGD     HBA     H       H       0       -1.956      -0.462      -1.862      
+AGD     HN2A    H       H       0       2.654       2.592       1.192       
+AGD     HN2     H       H       0       3.991       2.058       0.700       
+AGD     HN1     H       H       0       4.063       -0.270      1.281       
+AGD     H8      H       H       0       -1.031      -2.720      -1.231      
+AGD     C       C       C       0       -3.021      1.824       -0.766      
+AGD     O       O       O       0       -2.787      3.022       -0.505      
+AGD     OXT     O       OC      -1      -3.979      1.402       -1.443      
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AGD      N      n/a    CA     START
+ AGD      H      N      .      .
+ AGD      H2     N      .      .
+ AGD      H3     N      .      .
+ AGD      CA     N      C      .
+ AGD      HA     CA     .      .
+ AGD      CB     CA     N9     .
+ AGD      HB     CB     .      .
+ AGD      HBA    CB     .      .
+ AGD      N9     CB     C8     .
+ AGD      C4     N9     N3     .
+ AGD      N3     C4     .      .
+ AGD      C8     N9     N7     .
+ AGD      H8     C8     .      .
+ AGD      N7     C8     C5     .
+ AGD      C5     N7     C6     .
+ AGD      C6     C5     N1     .
+ AGD      O6     C6     .      .
+ AGD      N1     C6     C2     .
+ AGD      HN1    N1     .      .
+ AGD      C2     N1     N2     .
+ AGD      N2     C2     HN2A   .
+ AGD      HN2    N2     .      .
+ AGD      HN2A   N2     .      .
+ AGD      C      CA     .      END
+ AGD      O      C      .      .
+ AGD      OXT    C      .      .
+ AGD      C2     N3     .    ADD
+ AGD      C4     C5     .    ADD
+
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AGD       C2        N1        SINGLE    y         1.374     0.010     1.374     0.010     
+AGD       C2        N2        SINGLE    n         1.340     0.010     1.340     0.010     
+AGD       C2        N3        DOUBLE    y         1.333     0.010     1.333     0.010     
+AGD       C4        C5        DOUBLE    y         1.380     0.010     1.380     0.010     
+AGD       C4        N3        SINGLE    y         1.355     0.010     1.355     0.010     
+AGD       C4        N9        SINGLE    y         1.384     0.019     1.384     0.019     
+AGD       C5        C6        SINGLE    y         1.417     0.010     1.417     0.010     
+AGD       C5        N7        SINGLE    y         1.390     0.010     1.390     0.010     
+AGD       C6        O6        DOUBLE    n         1.239     0.010     1.239     0.010     
+AGD       C6        N1        SINGLE    y         1.396     0.011     1.396     0.011     
+AGD       N         CA        SINGLE    n         1.488     0.011     1.488     0.011     
+AGD       CA        CB        SINGLE    n         1.535     0.013     1.535     0.013     
+AGD       CA        C         SINGLE    n         1.533     0.011     1.533     0.011     
+AGD       CB        N9        SINGLE    n         1.467     0.010     1.467     0.010     
+AGD       N9        C8        SINGLE    y         1.368     0.015     1.368     0.015     
+AGD       N7        C8        DOUBLE    y         1.310     0.010     1.310     0.010     
+AGD       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+AGD       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+AGD       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+AGD       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+AGD       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+AGD       CA        HA        SINGLE    n         1.089     0.010     0.985     0.020     
+AGD       CB        HB        SINGLE    n         1.089     0.010     0.975     0.017     
+AGD       CB        HBA       SINGLE    n         1.089     0.010     0.975     0.017     
+AGD       N2        HN2A      SINGLE    n         1.016     0.010     0.877     0.020     
+AGD       N2        HN2       SINGLE    n         1.016     0.010     0.877     0.020     
+AGD       N1        HN1       SINGLE    n         1.016     0.010     0.897     0.020     
+AGD       C8        H8        SINGLE    n         1.082     0.013     0.948     0.020     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+AGD          N1          C2          N2     116.567    1.50
+AGD          N1          C2          N3     123.620    1.50
+AGD          N2          C2          N3     119.821    1.50
+AGD          C5          C4          N3     128.446    1.50
+AGD          C5          C4          N9     106.681    1.69
+AGD          N3          C4          N9     124.873    1.56
+AGD          C4          C5          C6     119.083    1.50
+AGD          C4          C5          N7     110.771    1.50
+AGD          C6          C5          N7     130.146    1.50
+AGD          C5          C6          O6     128.236    1.50
+AGD          C5          C6          N1     111.384    1.50
+AGD          O6          C6          N1     120.380    1.50
+AGD          CA           N           H     109.853    1.85
+AGD          CA           N          H2     109.853    1.85
+AGD          CA           N          H3     109.853    1.85
+AGD           H           N          H2     109.028    2.41
+AGD           H           N          H3     109.028    2.41
+AGD          H2           N          H3     109.028    2.41
+AGD           N          CA          CB     110.327    1.50
+AGD           N          CA           C     109.414    1.50
+AGD           N          CA          HA     108.444    1.50
+AGD          CB          CA           C     111.500    2.27
+AGD          CB          CA          HA     108.202    1.50
+AGD           C          CA          HA     108.600    1.50
+AGD          CA          CB          N9     111.989    1.71
+AGD          CA          CB          HB     108.744    1.50
+AGD          CA          CB         HBA     108.744    1.50
+AGD          N9          CB          HB     108.458    1.53
+AGD          N9          CB         HBA     108.458    1.53
+AGD          HB          CB         HBA     107.991    1.50
+AGD          C4          N9          CB     124.908    2.72
+AGD          C4          N9          C8     107.594    1.50
+AGD          CB          N9          C8     124.795    3.00
+AGD          C2          N3          C4     112.093    1.50
+AGD          C2          N2        HN2A     119.868    1.50
+AGD          C2          N2         HN2     119.868    1.50
+AGD        HN2A          N2         HN2     120.263    1.96
+AGD          C2          N1          C6     125.374    1.50
+AGD          C2          N1         HN1     117.663    2.71
+AGD          C6          N1         HN1     116.964    2.44
+AGD          C5          N7          C8     104.148    1.50
+AGD          N9          C8          N7     114.617    1.50
+AGD          N9          C8          H8     122.237    1.50
+AGD          N7          C8          H8     123.146    1.50
+AGD          CA           C           O     117.139    1.50
+AGD          CA           C         OXT     117.139    1.50
+AGD           O           C         OXT     125.721    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+AGD       const_sp2_sp2_3          N2          C2          N1          C6     180.000   10.00     2
+AGD              const_28          N2          C2          N3          C4     180.000   10.00     2
+AGD             sp2_sp2_1          N1          C2          N2        HN2A     180.000   10.00     2
+AGD              const_21          N9          C8          N7          C5       0.000   10.00     2
+AGD              const_13          N3          C4          C5          C6       0.000   10.00     2
+AGD              const_30          C5          C4          N9          CB     180.000   10.00     2
+AGD              const_17          C5          C4          N3          C2       0.000   10.00     2
+AGD              const_19          C4          C5          N7          C8       0.000   10.00     2
+AGD              const_10          C4          C5          C6          O6     180.000   10.00     2
+AGD       const_sp2_sp2_7          O6          C6          N1          C2     180.000   10.00     2
+AGD             sp3_sp3_1          CB          CA           N           H     180.000   10.00     3
+AGD             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+AGD            sp3_sp3_13           N          CA          CB          N9      60.000   10.00     3
+AGD             sp2_sp3_8          C4          N9          CB          CA     -90.000   10.00     6
+AGD              const_24          N7          C8          N9          CB     180.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+AGD    chir_1    CA    N    C    CB    both
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+AGD    plan-1          C2   0.020
+AGD    plan-1          C4   0.020
+AGD    plan-1          C5   0.020
+AGD    plan-1          C6   0.020
+AGD    plan-1         HN1   0.020
+AGD    plan-1          N1   0.020
+AGD    plan-1          N2   0.020
+AGD    plan-1          N3   0.020
+AGD    plan-1          N7   0.020
+AGD    plan-1          N9   0.020
+AGD    plan-1          O6   0.020
+AGD    plan-2          C4   0.020
+AGD    plan-2          C5   0.020
+AGD    plan-2          C6   0.020
+AGD    plan-2          C8   0.020
+AGD    plan-2          CB   0.020
+AGD    plan-2          H8   0.020
+AGD    plan-2          N3   0.020
+AGD    plan-2          N7   0.020
+AGD    plan-2          N9   0.020
+AGD    plan-3          C2   0.020
+AGD    plan-3         HN2   0.020
+AGD    plan-3        HN2A   0.020
+AGD    plan-3          N2   0.020
+AGD    plan-4           C   0.020
+AGD    plan-4          CA   0.020
+AGD    plan-4           O   0.020
+AGD    plan-4         OXT   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+AGD SMILES           ACDLabs              10.04 "O=C(O)C(N)Cn1c2N=C(NC(=O)c2nc1)N"
+AGD SMILES_CANONICAL CACTVS               3.341 "N[C@H](Cn1cnc2C(=O)NC(=Nc12)N)C(O)=O"
+AGD SMILES           CACTVS               3.341 "N[CH](Cn1cnc2C(=O)NC(=Nc12)N)C(O)=O"
+AGD SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "c1nc2c(n1C[C@H](C(=O)O)N)N=C(NC2=O)N"
+AGD SMILES           "OpenEye OEToolkits" 1.5.0 "c1nc2c(n1CC(C(=O)O)N)N=C(NC2=O)N"
+AGD InChI            InChI                1.03  "InChI=1S/C8H10N6O3/c9-3(7(16)17)1-14-2-11-4-5(14)12-8(10)13-6(4)15/h2-3H,1,9H2,(H,16,17)(H3,10,12,13,15)/t3-/m1/s1"
+AGD InChIKey         InChI                1.03  BYXRWAYRLQEIRT-GSVOUGTGSA-N
+AGD ?                acedrg               202         "dictionary generator"                  
+AGD ?                acedrg_database      11          "data source"                           
+AGD ?                rdkit                2017.03.2   "Chemoinformatics tool"
+AGD ?                refmac5              5.8.0222    "optimization tool"                     

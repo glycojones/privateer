@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+71O     71O      pyrimidin-2-ol     NON-POLYMER     11     7     .     
+#
+data_comp_71O
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+71O     CAB     C       CR16    0       0.233       -14.027     -22.311     
+71O     CAC     C       CR16    0       0.546       -14.375     -21.015     
+71O     CAD     C       CR16    0       0.403       -15.707     -20.693     
+71O     CAF     C       CR6     0       -0.290      -16.180     -22.802     
+71O     NAA     N       NRD6    0       -0.188      -14.918     -23.220     
+71O     NAE     N       NRD6    0       -0.015      -16.626     -21.575     
+71O     OAG     O       OH1     0       -0.716      -17.099     -23.710     
+71O     HAB     H       H       0       0.317       -13.123     -22.573     
+71O     HAC     H       H       0       0.840       -13.740     -20.387     
+71O     HAD     H       H       0       0.608       -15.987     -19.814     
+71O     HAG     H       H       0       -0.059      -17.606     -23.928     
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+71O       CAF       OAG       SINGLE    n         1.360     0.0145    1.360     0.0145    
+71O       CAF       NAA       SINGLE    y         1.328     0.0113    1.328     0.0113    
+71O       CAB       NAA       DOUBLE    y         1.337     0.0100    1.337     0.0100    
+71O       CAF       NAE       DOUBLE    y         1.328     0.0113    1.328     0.0113    
+71O       CAB       CAC       SINGLE    y         1.375     0.0100    1.375     0.0100    
+71O       CAD       NAE       SINGLE    y         1.337     0.0100    1.337     0.0100    
+71O       CAC       CAD       DOUBLE    y         1.375     0.0100    1.375     0.0100    
+71O       CAB       HAB       SINGLE    n         1.082     0.013     0.945     0.0100    
+71O       CAC       HAC       SINGLE    n         1.082     0.013     0.940     0.0131    
+71O       CAD       HAD       SINGLE    n         1.082     0.013     0.945     0.0100    
+71O       OAG       HAG       SINGLE    n         0.970     0.012     0.858     0.0200    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+71O         NAA         CAB         CAC     122.870    1.50
+71O         NAA         CAB         HAB     118.393    1.50
+71O         CAC         CAB         HAB     118.737    1.50
+71O         CAB         CAC         CAD     116.574    1.50
+71O         CAB         CAC         HAC     121.718    1.50
+71O         CAD         CAC         HAC     121.718    1.50
+71O         NAE         CAD         CAC     122.870    1.50
+71O         NAE         CAD         HAD     118.393    1.50
+71O         CAC         CAD         HAD     118.737    1.50
+71O         OAG         CAF         NAA     116.997    1.66
+71O         OAG         CAF         NAE     116.997    1.66
+71O         NAA         CAF         NAE     126.005    1.50
+71O         CAF         NAA         CAB     115.836    1.50
+71O         CAF         NAE         CAD     115.836    1.50
+71O         CAF         OAG         HAG     109.291    3.00
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+71O              const_13         NAA         CAB         CAC         CAD       0.000   10.00     2
+71O       const_sp2_sp2_1         CAC         CAB         NAA         CAF       0.000   10.00     2
+71O       const_sp2_sp2_9         CAB         CAC         CAD         NAE       0.000   10.00     2
+71O       const_sp2_sp2_7         CAC         CAD         NAE         CAF       0.000   10.00     2
+71O       const_sp2_sp2_4         OAG         CAF         NAA         CAB     180.000   10.00     2
+71O       const_sp2_sp2_6         OAG         CAF         NAE         CAD     180.000   10.00     2
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+71O    plan-1         CAB   0.020
+71O    plan-1         CAC   0.020
+71O    plan-1         CAD   0.020
+71O    plan-1         CAF   0.020
+71O    plan-1         HAB   0.020
+71O    plan-1         HAC   0.020
+71O    plan-1         HAD   0.020
+71O    plan-1         NAA   0.020
+71O    plan-1         NAE   0.020
+71O    plan-1         OAG   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+71O           SMILES              ACDLabs 12.01                                       c1ccnc(n1)O
+71O            InChI                InChI  1.03 InChI=1S/C4H4N2O/c7-4-5-2-1-3-6-4/h1-3H,(H,5,6,7)
+71O         InChIKey                InChI  1.03                       VTGOHKSTWXHQJK-UHFFFAOYSA-N
+71O SMILES_CANONICAL               CACTVS 3.385                                         Oc1ncccn1
+71O           SMILES               CACTVS 3.385                                         Oc1ncccn1
+71O SMILES_CANONICAL "OpenEye OEToolkits" 2.0.5                                       c1cnc(nc1)O
+71O           SMILES "OpenEye OEToolkits" 2.0.5                                       c1cnc(nc1)O
+71O ?                acedrg               217         "dictionary generator"                  
+71O ?                acedrg_database      11          "data source"                           
+71O ?                rdkit                2017.03.2   "Chemoinformatics tool"
+71O ?                refmac5              5.8.0253    "optimization tool"                     

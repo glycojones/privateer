@@ -1,0 +1,279 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+GL6      GL6 '"(3,4,5-TRIHYDROXY-6-HYDROXYMETHYL-T' pyranose           36  18 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_GL6
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ GL6           C1     C    CH1       0.000      0.000    0.000    0.000
+ GL6           H1     H    H         0.000      1.062   -0.055   -0.278
+ GL6           N1     N    NH1       0.000     -0.828   -0.154   -1.203
+ GL6           HN1    H    H         0.000     -0.504   -0.178   -2.160
+ GL6           P      P    P         0.000     -2.423   -0.283   -0.680
+ GL6           O13    O    O2        0.000     -2.875    1.100    0.009
+ GL6           C16    C    CH3       0.000     -3.090    2.037   -1.048
+ GL6           H163   H    H         0.000     -3.848    1.675   -1.693
+ GL6           H162   H    H         0.000     -3.389    2.968   -0.640
+ GL6           H161   H    H         0.000     -2.192    2.165   -1.595
+ GL6           O12    O    O2        0.000     -2.541   -1.479    0.390
+ GL6           C15    C    CH3       0.000     -2.360   -2.700   -0.332
+ GL6           H153   H    H         0.000     -3.110   -2.785   -1.075
+ GL6           H152   H    H         0.000     -1.406   -2.700   -0.792
+ GL6           H151   H    H         0.000     -2.430   -3.519    0.336
+ GL6           O11    O    O         0.000     -3.301   -0.567   -1.837
+ GL6           C2     C    CH1       0.000     -0.288    1.358    0.644
+ GL6           H2     H    H         0.000     -1.344    1.407    0.946
+ GL6           O2     O    OH1       0.000     -0.010    2.401   -0.293
+ GL6           HO2    H    H         0.000     -0.185    3.258    0.118
+ GL6           C3     C    CH1       0.000      0.607    1.526    1.878
+ GL6           H3     H    H         0.000      1.659    1.583    1.565
+ GL6           O3     O    OH1       0.000      0.247    2.719    2.576
+ GL6           HO3    H    H         0.000      0.375    3.482    1.996
+ GL6           C4     C    CH1       0.000      0.407    0.314    2.794
+ GL6           H4     H    H         0.000     -0.619    0.317    3.189
+ GL6           O4     O    OH1       0.000      1.336    0.372    3.878
+ GL6           HO4    H    H         0.000      1.187    1.181    4.386
+ GL6           C5     C    CH1       0.000      0.641   -0.967    1.988
+ GL6           H5     H    H         0.000      1.659   -0.957    1.575
+ GL6           C6     C    CH2       0.000      0.476   -2.181    2.904
+ GL6           H61    H    H         0.000     -0.560   -2.242    3.243
+ GL6           H62    H    H         0.000      1.135   -2.076    3.768
+ GL6           O6     O    OH1       0.000      0.814   -3.369    2.186
+ GL6           HO6    H    H         0.000      0.709   -4.136    2.765
+ GL6           O5     O    O2        0.000     -0.303   -1.045    0.921
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ GL6      C1     n/a    C2     START
+ GL6      H1     C1     .      .
+ GL6      N1     C1     P      .
+ GL6      HN1    N1     .      .
+ GL6      P      N1     O11    .
+ GL6      O13    P      C16    .
+ GL6      C16    O13    H161   .
+ GL6      H163   C16    .      .
+ GL6      H162   C16    .      .
+ GL6      H161   C16    .      .
+ GL6      O12    P      C15    .
+ GL6      C15    O12    H151   .
+ GL6      H153   C15    .      .
+ GL6      H152   C15    .      .
+ GL6      H151   C15    .      .
+ GL6      O11    P      .      .
+ GL6      C2     C1     C3     .
+ GL6      H2     C2     .      .
+ GL6      O2     C2     HO2    .
+ GL6      HO2    O2     .      .
+ GL6      C3     C2     C4     .
+ GL6      H3     C3     .      .
+ GL6      O3     C3     HO3    .
+ GL6      HO3    O3     .      .
+ GL6      C4     C3     C5     .
+ GL6      H4     C4     .      .
+ GL6      O4     C4     HO4    .
+ GL6      HO4    O4     .      .
+ GL6      C5     C4     O5     .
+ GL6      H5     C5     .      .
+ GL6      C6     C5     O6     .
+ GL6      H61    C6     .      .
+ GL6      H62    C6     .      .
+ GL6      O6     C6     HO6    .
+ GL6      HO6    O6     .      .
+ GL6      O5     C5     .      END
+ GL6      O5     C1     .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+GL6       O11       P         double    1.480     0.020     1.480     0.020     
+GL6       O13       P         single    1.610     0.020     1.610     0.020     
+GL6       O12       P         single    1.610     0.020     1.610     0.020     
+GL6       P         N1        single    1.750     0.020     1.750     0.020     
+GL6       C16       O13       single    1.426     0.020     1.426     0.020     
+GL6       C15       O12       single    1.426     0.020     1.426     0.020     
+GL6       O2        C2        single    1.432     0.020     1.432     0.020     
+GL6       HO2       O2        single    0.970     0.012     0.839     0.014     
+GL6       O3        C3        single    1.432     0.020     1.432     0.020     
+GL6       HO3       O3        single    0.970     0.012     0.839     0.014     
+GL6       O4        C4        single    1.432     0.020     1.432     0.020     
+GL6       HO4       O4        single    0.970     0.012     0.839     0.014     
+GL6       O5        C1        single    1.426     0.020     1.426     0.020     
+GL6       O5        C5        single    1.426     0.020     1.426     0.020     
+GL6       O6        C6        single    1.432     0.020     1.432     0.020     
+GL6       HO6       O6        single    0.970     0.012     0.839     0.014     
+GL6       N1        C1        single    1.450     0.020     1.450     0.020     
+GL6       HN1       N1        single    1.036     0.016     0.914     0.007     
+GL6       C2        C1        single    1.524     0.020     1.524     0.020     
+GL6       H1        C1        single    1.089     0.010     0.989     0.005     
+GL6       H151      C15       single    1.089     0.010     0.989     0.005     
+GL6       H152      C15       single    1.089     0.010     0.989     0.005     
+GL6       H153      C15       single    1.089     0.010     0.989     0.005     
+GL6       H161      C16       single    1.089     0.010     0.989     0.005     
+GL6       H162      C16       single    1.089     0.010     0.989     0.005     
+GL6       H163      C16       single    1.089     0.010     0.989     0.005     
+GL6       C3        C2        single    1.524     0.020     1.524     0.020     
+GL6       H2        C2        single    1.089     0.010     0.989     0.005     
+GL6       C4        C3        single    1.524     0.020     1.524     0.020     
+GL6       H3        C3        single    1.089     0.010     0.989     0.005     
+GL6       C5        C4        single    1.524     0.020     1.524     0.020     
+GL6       H4        C4        single    1.089     0.010     0.989     0.005     
+GL6       C6        C5        single    1.524     0.020     1.524     0.020     
+GL6       H5        C5        single    1.089     0.010     0.989     0.005     
+GL6       H61       C6        single    1.089     0.010     0.989     0.005     
+GL6       H62       C6        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ GL6      H1     C1     N1      108.550    3.000
+ GL6      H1     C1     C2      108.340    3.000
+ GL6      N1     C1     C2      110.000    3.000
+ GL6      H1     C1     O5      109.470    3.000
+ GL6      N1     C1     O5      109.500    3.000
+ GL6      C2     C1     O5      109.470    3.000
+ GL6      C1     N1     HN1     118.500    3.000
+ GL6      C1     N1     P       120.000    3.000
+ GL6      HN1    N1     P       120.000    3.000
+ GL6      N1     P      O12     109.500    3.000
+ GL6      N1     P      O13     109.500    3.000
+ GL6      N1     P      O11     109.500    3.000
+ GL6      O12    P      O13     102.600    3.000
+ GL6      O12    P      O11     109.500    3.000
+ GL6      O13    P      O11     109.500    3.000
+ GL6      P      O12    C15     120.000    3.000
+ GL6      O12    C15    H153    109.470    3.000
+ GL6      O12    C15    H152    109.470    3.000
+ GL6      O12    C15    H151    109.470    3.000
+ GL6      H153   C15    H152    109.470    3.000
+ GL6      H153   C15    H151    109.470    3.000
+ GL6      H152   C15    H151    109.470    3.000
+ GL6      P      O13    C16     120.000    3.000
+ GL6      O13    C16    H163    109.470    3.000
+ GL6      O13    C16    H162    109.470    3.000
+ GL6      O13    C16    H161    109.470    3.000
+ GL6      H163   C16    H162    109.470    3.000
+ GL6      H163   C16    H161    109.470    3.000
+ GL6      H162   C16    H161    109.470    3.000
+ GL6      C1     C2     H2      108.340    3.000
+ GL6      C1     C2     O2      109.470    3.000
+ GL6      C1     C2     C3      111.000    3.000
+ GL6      H2     C2     O2      109.470    3.000
+ GL6      H2     C2     C3      108.340    3.000
+ GL6      O2     C2     C3      109.470    3.000
+ GL6      C2     O2     HO2     109.470    3.000
+ GL6      C2     C3     H3      108.340    3.000
+ GL6      C2     C3     O3      109.470    3.000
+ GL6      C2     C3     C4      111.000    3.000
+ GL6      H3     C3     O3      109.470    3.000
+ GL6      H3     C3     C4      108.340    3.000
+ GL6      O3     C3     C4      109.470    3.000
+ GL6      C3     O3     HO3     109.470    3.000
+ GL6      C3     C4     H4      108.340    3.000
+ GL6      C3     C4     O4      109.470    3.000
+ GL6      C3     C4     C5      111.000    3.000
+ GL6      H4     C4     O4      109.470    3.000
+ GL6      H4     C4     C5      108.340    3.000
+ GL6      O4     C4     C5      109.470    3.000
+ GL6      C4     O4     HO4     109.470    3.000
+ GL6      C4     C5     H5      108.340    3.000
+ GL6      C4     C5     C6      111.000    3.000
+ GL6      C4     C5     O5      109.470    3.000
+ GL6      H5     C5     C6      108.340    3.000
+ GL6      H5     C5     O5      109.470    3.000
+ GL6      C6     C5     O5      109.470    3.000
+ GL6      C5     C6     H61     109.470    3.000
+ GL6      C5     C6     H62     109.470    3.000
+ GL6      C5     C6     O6      109.470    3.000
+ GL6      H61    C6     H62     107.900    3.000
+ GL6      H61    C6     O6      109.470    3.000
+ GL6      H62    C6     O6      109.470    3.000
+ GL6      C6     O6     HO6     109.470    3.000
+ GL6      C5     O5     C1      111.800    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ GL6      var_1    C2     C1     N1     P        -68.138   20.000   3
+ GL6      var_2    C1     N1     P      O11     -174.782   20.000   1
+ GL6      var_3    N1     P      O12    C15      -70.065   20.000   1
+ GL6      var_4    P      O12    C15    H151    -179.996   20.000   1
+ GL6      var_5    N1     P      O13    C16       75.002   20.000   1
+ GL6      var_6    P      O13    C16    H161     -59.933   20.000   1
+ GL6      var_7    N1     C1     C2     C3       180.000   20.000   3
+ GL6      var_8    C1     C2     O2     HO2     -179.545   20.000   1
+ GL6      var_9    C1     C2     C3     C4       -60.000   20.000   3
+ GL6      var_10   C2     C3     O3     HO3      -60.888   20.000   1
+ GL6      var_11   C2     C3     C4     C5        60.000   20.000   3
+ GL6      var_12   C3     C4     O4     HO4       60.332   20.000   1
+ GL6      var_13   C3     C4     C5     O5       -60.000   20.000   3
+ GL6      var_14   C4     C5     C6     O6      -174.668   20.000   3
+ GL6      var_15   C5     C6     O6     HO6     -179.971   20.000   1
+ GL6      var_16   C4     C5     O5     C1        60.000   20.000   1
+ GL6      var_17   C5     O5     C1     C2       -60.000   20.000   1
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ GL6      chir_01  C1     O5     N1     C2        negativ
+ GL6      chir_02  C2     O2     C1     C3        negativ
+ GL6      chir_03  C3     O3     C2     C4        positiv
+ GL6      chir_04  C4     O4     C3     C5        negativ
+ GL6      chir_05  C5     O5     C4     C6        negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ GL6      plan-1    N1        0.020
+ GL6      plan-1    P         0.020
+ GL6      plan-1    C1        0.020
+ GL6      plan-1    HN1       0.020
+# ------------------------------------------------------

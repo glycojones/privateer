@@ -1,0 +1,125 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KFG     KFG      "dimethyl hydrogen phosphate"     NON-POLYMER     13     7     .     
+#
+data_comp_KFG
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KFG     C01     C       CH3     0       -34.707     -11.898     68.981      
+KFG     C07     C       CH3     0       -38.219     -14.523     69.199      
+KFG     O02     O       O2      0       -35.923     -12.591     68.638      
+KFG     O04     O       O       0       -35.217     -14.157     66.795      
+KFG     O05     O       OP      -1      -35.223     -14.928     69.278      
+KFG     O06     O       O2      0       -37.381     -14.540     68.027      
+KFG     P03     P       P       0       -35.836     -14.123     68.165      
+KFG     H012    H       H       0       -34.913     -10.980     69.216      
+KFG     H013    H       H       0       -34.103     -11.911     68.223      
+KFG     H011    H       H       0       -34.287     -12.338     69.737      
+KFG     H073    H       H       0       -39.115     -14.806     68.960      
+KFG     H071    H       H       0       -38.250     -13.624     69.562      
+KFG     H072    H       H       0       -37.856     -15.128     69.865      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KFG       O04       P03       DOUBLE    n         1.504     0.0115    1.504     0.0115    
+KFG       O06       P03       SINGLE    n         1.606     0.0100    1.606     0.0100    
+KFG       C07       O06       SINGLE    n         1.441     0.0103    1.441     0.0103    
+KFG       C01       O02       SINGLE    n         1.441     0.0103    1.441     0.0103    
+KFG       O02       P03       SINGLE    n         1.606     0.0100    1.606     0.0100    
+KFG       O05       P03       SINGLE    n         1.504     0.0115    1.504     0.0115    
+KFG       C01       H012      SINGLE    n         1.089     0.010     0.970     0.0164    
+KFG       C01       H013      SINGLE    n         1.089     0.010     0.970     0.0164    
+KFG       C01       H011      SINGLE    n         1.089     0.010     0.970     0.0164    
+KFG       C07       H073      SINGLE    n         1.089     0.010     0.970     0.0164    
+KFG       C07       H071      SINGLE    n         1.089     0.010     0.970     0.0164    
+KFG       C07       H072      SINGLE    n         1.089     0.010     0.970     0.0164    
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KFG         O02         C01        H012     109.470    1.50
+KFG         O02         C01        H013     109.470    1.50
+KFG         O02         C01        H011     109.470    1.50
+KFG        H012         C01        H013     109.458    1.50
+KFG        H012         C01        H011     109.458    1.50
+KFG        H013         C01        H011     109.458    1.50
+KFG         O06         C07        H073     109.470    1.50
+KFG         O06         C07        H071     109.470    1.50
+KFG         O06         C07        H072     109.470    1.50
+KFG        H073         C07        H071     109.458    1.50
+KFG        H073         C07        H072     109.458    1.50
+KFG        H071         C07        H072     109.458    1.50
+KFG         C01         O02         P03     118.893    1.50
+KFG         P03         O06         C07     118.893    1.50
+KFG         O04         P03         O06     108.578    2.76
+KFG         O04         P03         O02     108.578    2.76
+KFG         O04         P03         O05     119.782    1.83
+KFG         O06         P03         O02     102.789    2.10
+KFG         O06         P03         O05     108.578    2.76
+KFG         O02         P03         O05     108.578    2.76
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KFG             sp3_sp3_7        H012         C01         O02         P03     180.000   10.00     3
+KFG             sp3_sp3_4        H073         C07         O06         P03     180.000   10.00     3
+KFG            sp3_sp3_12         C01         O02         P03         O04      60.000   10.00     3
+KFG             sp3_sp3_3         C07         O06         P03         O04      60.000   10.00     3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+KFG    chir_1    P03    O06    O02    O05    both
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KFG           SMILES              ACDLabs 12.01                                   COP(=O)(O)OC
+KFG            InChI                InChI  1.03 InChI=1S/C2H7O4P/c1-5-7(3,4)6-2/h1-2H3,(H,3,4)
+KFG         InChIKey                InChI  1.03                    KKUKTXOBAWVSHC-UHFFFAOYSA-N
+KFG SMILES_CANONICAL               CACTVS 3.385                                 CO[P](O)(=O)OC
+KFG           SMILES               CACTVS 3.385                                 CO[P](O)(=O)OC
+KFG SMILES_CANONICAL "OpenEye OEToolkits" 2.0.6                                   COP(=O)(O)OC
+KFG           SMILES "OpenEye OEToolkits" 2.0.6                                   COP(=O)(O)OC
+KFG ?                acedrg               217         "dictionary generator"                  
+KFG ?                acedrg_database      11          "data source"                           
+KFG ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KFG ?                refmac5              5.8.0253    "optimization tool"                     

@@ -1,0 +1,252 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+KYN     KYN     "(2S)-2-amino-4-(2-aminophenyl)-4-oxobutanoicacid"     peptide     28     15     .
+#
+data_comp_KYN
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+KYN     C       C       C       0       20.200      -29.176     8.583
+KYN     N       N       NT3     1       20.458      -30.189     6.350
+KYN     OXT     O       OC      -1      19.554      -29.522     9.592
+KYN     C1      C       C       0       23.123      -31.448     7.440
+KYN     N1      N       NT3     1       25.593      -29.829     7.098
+KYN     O2      O       O       0       23.066      -32.466     8.106
+KYN     CA      C       CH1     0       20.883      -30.287     7.774
+KYN     CB      C       CH2     0       22.407      -30.201     7.889
+KYN     CG      C       CR6     0       25.071      -30.653     6.003
+KYN     CZ      C       CR16    0       24.161      -32.185     3.868
+KYN     CD1     C       CR16    0       25.762      -30.655     4.803
+KYN     CD2     C       CR6     0       23.906      -31.419     6.158
+KYN     CE1     C       CR16    0       25.303      -31.422     3.740
+KYN     CE2     C       CR16    0       23.470      -32.184     5.063
+KYN     O       O       O       0       20.341      -28.006     8.174
+KYN     H       H       H       0       20.769      -30.903     5.879
+KYN     H2      H       H       0       20.784      -29.424     5.978
+KYN     H3      H       H       0       19.548      -30.179     6.293
+KYN     HN1     H       H       0       25.700      -30.325     7.843
+KYN     HN1A    H       H       0       25.028      -29.152     7.278
+KYN     H4      H       H       0       26.394      -29.474     6.889
+KYN     HA      H       H       0       20.594      -31.161     8.128
+KYN     HB      H       H       0       22.720      -29.443     7.353
+KYN     HBA     H       H       0       22.645      -30.024     8.824
+KYN     HZ      H       H       0       23.853      -32.704     3.143
+KYN     HD1     H       H       0       26.543      -30.138     4.704
+KYN     HE1     H       H       0       25.779      -31.419     2.924
+KYN     HE2     H       H       0       22.690      -32.704     5.150
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+KYN      N      n/a    CA     START
+KYN      H      N      .      .
+KYN      H2     N      .      .
+KYN      H3     N      .      .
+KYN      CA     N      C      .
+KYN      HA     CA     .      .
+KYN      CB     CA     C1     .
+KYN      HB     CB     .      .
+KYN      HBA    CB     .      .
+KYN      C1     CB     CD2    .
+KYN      O2     C1     .      .
+KYN      CD2    C1     CE2    .
+KYN      CG     CD2    N1     .
+KYN      N1     CG     HN1    .
+KYN      H4     N1     .      .
+KYN      HN1A   N1     .      .
+KYN      HN1    N1     .      .
+KYN      CE2    CD2    CZ     .
+KYN      HE2    CE2    .      .
+KYN      CZ     CE2    CE1    .
+KYN      HZ     CZ     .      .
+KYN      CE1    CZ     CD1    .
+KYN      HE1    CE1    .      .
+KYN      CD1    CE1    HD1    .
+KYN      HD1    CD1    .      .
+KYN      C      CA     .      END
+KYN      OXT    C      .      .
+KYN      O      C      .      .
+KYN      CG     CD1    .    ADD
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+KYN       C         CA        SINGLE    n         1.533     0.011     1.533     0.011     
+KYN       C         O         DOUBLE    n         1.247     0.019     1.247     0.019     
+KYN       C         OXT       SINGLE    n         1.247     0.019     1.247     0.019     
+KYN       N         CA        SINGLE    n         1.488     0.010     1.488     0.010     
+KYN       C1        CD2       SINGLE    n         1.501     0.010     1.501     0.010     
+KYN       C1        O2        DOUBLE    n         1.218     0.013     1.218     0.013     
+KYN       C1        CB        SINGLE    n         1.506     0.011     1.506     0.011     
+KYN       N1        CG        SINGLE    n         1.463     0.010     1.463     0.010     
+KYN       CA        CB        SINGLE    n         1.530     0.011     1.530     0.011     
+KYN       CG        CD1       DOUBLE    y         1.377     0.010     1.377     0.010     
+KYN       CG        CD2       SINGLE    y         1.397     0.010     1.397     0.010     
+KYN       CZ        CE1       DOUBLE    y         1.376     0.012     1.376     0.012     
+KYN       CZ        CE2       SINGLE    y         1.379     0.010     1.379     0.010     
+KYN       CD1       CE1       SINGLE    y         1.384     0.010     1.384     0.010     
+KYN       CD2       CE2       DOUBLE    y         1.400     0.014     1.400     0.014     
+KYN       N         H         SINGLE    n         1.036     0.016     0.911     0.020     
+KYN       N         H2        SINGLE    n         1.036     0.016     0.911     0.020     
+KYN       N         H3        SINGLE    n         1.036     0.016     0.911     0.020     
+KYN       N1        HN1       SINGLE    n         1.036     0.016     0.901     0.020     
+KYN       N1        HN1A      SINGLE    n         1.036     0.016     0.901     0.020     
+KYN       N1        H4        SINGLE    n         1.036     0.016     0.901     0.020     
+KYN       CA        HA        SINGLE    n         1.089     0.010     0.986     0.020     
+KYN       CB        HB        SINGLE    n         1.089     0.010     0.980     0.014     
+KYN       CB        HBA       SINGLE    n         1.089     0.010     0.980     0.014     
+KYN       CZ        HZ        SINGLE    n         1.082     0.013     0.943     0.018     
+KYN       CD1       HD1       SINGLE    n         1.082     0.013     0.942     0.020     
+KYN       CE1       HE1       SINGLE    n         1.082     0.013     0.945     0.016     
+KYN       CE2       HE2       SINGLE    n         1.082     0.013     0.941     0.017     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+KYN          CA           C           O     117.124    1.50
+KYN          CA           C         OXT     117.124    1.50
+KYN           O           C         OXT     125.752    1.50
+KYN          CA           N           H     110.062    1.93
+KYN          CA           N          H2     110.062    1.93
+KYN          CA           N          H3     110.062    1.93
+KYN           H           N          H2     109.028    2.41
+KYN           H           N          H3     109.028    2.41
+KYN          H2           N          H3     109.028    2.41
+KYN         CD2          C1          O2     120.660    1.50
+KYN         CD2          C1          CB     118.854    1.50
+KYN          O2          C1          CB     120.486    1.50
+KYN          CG          N1         HN1     110.264    2.14
+KYN          CG          N1        HN1A     110.264    2.14
+KYN          CG          N1          H4     110.264    2.14
+KYN         HN1          N1        HN1A     108.794    3.00
+KYN         HN1          N1          H4     108.794    3.00
+KYN        HN1A          N1          H4     108.794    3.00
+KYN           C          CA           N     109.241    1.50
+KYN           C          CA          CB     111.500    2.27
+KYN           C          CA          HA     108.824    1.50
+KYN           N          CA          CB     110.327    1.50
+KYN           N          CA          HA     108.487    1.50
+KYN          CB          CA          HA     108.202    1.50
+KYN          C1          CB          CA     113.251    1.50
+KYN          C1          CB          HB     108.671    1.50
+KYN          C1          CB         HBA     108.671    1.50
+KYN          CA          CB          HB     108.744    1.50
+KYN          CA          CB         HBA     108.744    1.50
+KYN          HB          CB         HBA     107.739    1.50
+KYN          N1          CG         CD1     118.103    1.50
+KYN          N1          CG         CD2     121.237    1.50
+KYN         CD1          CG         CD2     120.661    1.50
+KYN         CE1          CZ         CE2     119.924    1.50
+KYN         CE1          CZ          HZ     120.083    1.50
+KYN         CE2          CZ          HZ     119.992    1.50
+KYN          CG         CD1         CE1     119.228    1.50
+KYN          CG         CD1         HD1     120.429    1.50
+KYN         CE1         CD1         HD1     120.344    1.50
+KYN          C1         CD2          CG     121.024    2.57
+KYN          C1         CD2         CE2     120.692    2.23
+KYN          CG         CD2         CE2     118.284    1.50
+KYN          CZ         CE1         CD1     120.250    1.50
+KYN          CZ         CE1         HE1     120.016    1.50
+KYN         CD1         CE1         HE1     119.734    1.50
+KYN          CZ         CE2         CD2     121.653    1.50
+KYN          CZ         CE2         HE2     119.469    1.50
+KYN         CD2         CE2         HE2     118.878    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+KYN             sp2_sp3_1           O           C          CA           N       0.000   10.00     6
+KYN       const_sp2_sp2_5          CG         CD1         CE1          CZ       0.000   10.00     2
+KYN              const_19          C1         CD2         CE2          CZ     180.000   10.00     2
+KYN             sp3_sp3_1           C          CA           N           H     180.000   10.00     3
+KYN             sp2_sp2_3          O2          C1         CD2          CG       0.000   10.00     2
+KYN            sp2_sp3_11          O2          C1          CB          CA     -60.000   10.00     6
+KYN            sp2_sp3_13         CD1          CG          N1         HN1     150.000   10.00     6
+KYN            sp3_sp3_10           C          CA          CB          C1     180.000   10.00     3
+KYN       const_sp2_sp2_2         CE1         CD1          CG          N1     180.000   10.00     2
+KYN              const_24          C1         CD2          CG          N1       0.000   10.00     2
+KYN       const_sp2_sp2_9         CD1         CE1          CZ         CE2       0.000   10.00     2
+KYN              const_13         CD2         CE2          CZ         CE1       0.000   10.00     2
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+KYN    chir_1    CA    N    C    CB    positive
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+KYN    plan-1          C1   0.020
+KYN    plan-1         CD1   0.020
+KYN    plan-1         CD2   0.020
+KYN    plan-1         CE1   0.020
+KYN    plan-1         CE2   0.020
+KYN    plan-1          CG   0.020
+KYN    plan-1          CZ   0.020
+KYN    plan-1         HD1   0.020
+KYN    plan-1         HE1   0.020
+KYN    plan-1         HE2   0.020
+KYN    plan-1          HZ   0.020
+KYN    plan-1          N1   0.020
+KYN    plan-2           C   0.020
+KYN    plan-2          CA   0.020
+KYN    plan-2           O   0.020
+KYN    plan-2         OXT   0.020
+KYN    plan-3          C1   0.020
+KYN    plan-3          CB   0.020
+KYN    plan-3         CD2   0.020
+KYN    plan-3          O2   0.020
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+KYN SMILES           ACDLabs              12.01 "O=C(c1ccccc1N)CC(C(=O)O)N"
+KYN InChI            InChI                1.03  "InChI=1S/C10H12N2O3/c11-7-4-2-1-3-6(7)9(13)5-8(12)10(14)15/h1-4,8H,5,11-12H2,(H,14,15)/t8-/m0/s1"
+KYN InChIKey         InChI                1.03  YGPSJZOEDVAXAB-QMMMGPOBSA-N
+KYN SMILES_CANONICAL CACTVS               3.370 "N[C@@H](CC(=O)c1ccccc1N)C(O)=O"
+KYN SMILES           CACTVS               3.370 "N[CH](CC(=O)c1ccccc1N)C(O)=O"
+KYN SMILES_CANONICAL "OpenEye OEToolkits" 1.7.6 "c1ccc(c(c1)C(=O)C[C@@H](C(=O)O)N)N"
+KYN SMILES           "OpenEye OEToolkits" 1.7.6 "c1ccc(c(c1)C(=O)CC(C(=O)O)N)N"
+KYN ?                acedrg               196         "dictionary generator"
+KYN ?                acedrg_database      11          "data source"
+KYN ?                rdkit                2017.03.2   "Chemoinformatics tool"
+KYN ?                refmac5              5.8.0222    "optimization tool"

@@ -1,0 +1,176 @@
+global_
+_lib_name         ?
+_lib_version      ?
+_lib_update       ?
+# ------------------------------------------------
+#
+# ---   LIST OF MONOMERS ---
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+AYA      AYA 'N-ACETYLALANINE                     ' non-polymer        17   9 .
+# ------------------------------------------------------
+# ------------------------------------------------------
+#
+# --- DESCRIPTION OF MONOMERS ---
+#
+data_comp_AYA
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.partial_charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+ AYA           OT     O    O         0.000      0.000    0.000    0.000
+ AYA           CT     C    C         0.000     -0.953   -0.465    0.588
+ AYA           CM     C    CH3       0.000     -0.803   -0.930    2.014
+ AYA           HM3    H    H         0.000     -1.461   -0.381    2.637
+ AYA           HM2    H    H         0.000     -1.037   -1.961    2.078
+ AYA           HM1    H    H         0.000      0.196   -0.775    2.334
+ AYA           N      N    NH1       0.000     -2.145   -0.566   -0.032
+ AYA           H      H    H         0.000     -2.938   -0.953    0.459
+ AYA           CA     C    CH1       0.000     -2.290   -0.114   -1.417
+ AYA           HA     H    H         0.000     -1.589    0.710   -1.608
+ AYA           CB     C    CH3       0.000     -1.986   -1.274   -2.366
+ AYA           HB3    H    H         0.000     -2.089   -0.948   -3.369
+ AYA           HB2    H    H         0.000     -0.994   -1.611   -2.206
+ AYA           HB1    H    H         0.000     -2.662   -2.069   -2.182
+ AYA           C      C    C         0.000     -3.700    0.364   -1.644
+ AYA           O      O    OC       -0.500     -4.530    0.330   -0.709
+ AYA           OXT    O    OC       -0.500     -4.042    0.795   -2.768
+loop_
+_chem_comp_tree.comp_id
+_chem_comp_tree.atom_id
+_chem_comp_tree.atom_back
+_chem_comp_tree.atom_forward
+_chem_comp_tree.connect_type
+ AYA      OT     n/a    CT     START
+ AYA      CT     OT     N      .
+ AYA      CM     CT     HM1    .
+ AYA      HM3    CM     .      .
+ AYA      HM2    CM     .      .
+ AYA      HM1    CM     .      .
+ AYA      N      CT     CA     .
+ AYA      H      N      .      .
+ AYA      CA     N      C      .
+ AYA      HA     CA     .      .
+ AYA      CB     CA     HB1    .
+ AYA      HB3    CB     .      .
+ AYA      HB2    CB     .      .
+ AYA      HB1    CB     .      .
+ AYA      C      CA     OXT    .
+ AYA      O      C      .      .
+ AYA      OXT    C      .      END
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+AYA       CA        N         single    1.450     0.020     1.450     0.020     
+AYA       N         CT        single    1.330     0.020     1.330     0.020     
+AYA       H         N         single    1.016     0.010     0.899     0.007     
+AYA       CB        CA        single    1.524     0.020     1.524     0.020     
+AYA       C         CA        single    1.500     0.020     1.500     0.020     
+AYA       HA        CA        single    1.089     0.010     0.989     0.005     
+AYA       HB1       CB        single    1.089     0.010     0.989     0.005     
+AYA       HB2       CB        single    1.089     0.010     0.989     0.005     
+AYA       HB3       CB        single    1.089     0.010     0.989     0.005     
+AYA       O         C         deloc     1.250     0.020     1.250     0.020     
+AYA       OXT       C         deloc     1.250     0.020     1.250     0.020     
+AYA       CT        OT        double    1.220     0.020     1.220     0.020     
+AYA       CM        CT        single    1.500     0.020     1.500     0.020     
+AYA       HM1       CM        single    1.089     0.010     0.989     0.005     
+AYA       HM2       CM        single    1.089     0.010     0.989     0.005     
+AYA       HM3       CM        single    1.089     0.010     0.989     0.005     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+ AYA      OT     CT     CM      123.000    3.000
+ AYA      OT     CT     N       123.000    3.000
+ AYA      CM     CT     N       116.500    3.000
+ AYA      CT     CM     HM3     109.470    3.000
+ AYA      CT     CM     HM2     109.470    3.000
+ AYA      CT     CM     HM1     109.470    3.000
+ AYA      HM3    CM     HM2     109.470    3.000
+ AYA      HM3    CM     HM1     109.470    3.000
+ AYA      HM2    CM     HM1     109.470    3.000
+ AYA      CT     N      H       120.000    3.000
+ AYA      CT     N      CA      121.500    3.000
+ AYA      H      N      CA      118.500    3.000
+ AYA      N      CA     HA      108.550    3.000
+ AYA      N      CA     CB      110.000    3.000
+ AYA      N      CA     C       111.600    3.000
+ AYA      HA     CA     CB      108.340    3.000
+ AYA      HA     CA     C       108.810    3.000
+ AYA      CB     CA     C       109.470    3.000
+ AYA      CA     CB     HB3     109.470    3.000
+ AYA      CA     CB     HB2     109.470    3.000
+ AYA      CA     CB     HB1     109.470    3.000
+ AYA      HB3    CB     HB2     109.470    3.000
+ AYA      HB3    CB     HB1     109.470    3.000
+ AYA      HB2    CB     HB1     109.470    3.000
+ AYA      CA     C      O       118.500    3.000
+ AYA      CA     C      OXT     118.500    3.000
+ AYA      O      C      OXT     123.000    3.000
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+ AYA      var_1    OT     CT     CM     HM1       -0.076   20.000   1
+ AYA      CONST_1  OT     CT     N      CA         0.000    0.000   0
+ AYA      var_2    CT     N      CA     C       -150.022   20.000   3
+ AYA      var_3    N      CA     CB     HB1       60.068   20.000   3
+ AYA      var_4    N      CA     C      OXT     -179.972   20.000   3
+loop_
+_chem_comp_chir.comp_id
+_chem_comp_chir.id
+_chem_comp_chir.atom_id_centre
+_chem_comp_chir.atom_id_1
+_chem_comp_chir.atom_id_2
+_chem_comp_chir.atom_id_3
+_chem_comp_chir.volume_sign
+ AYA      chir_01  CA     N      CB     C         negativ
+loop_
+_chem_comp_plane_atom.comp_id
+_chem_comp_plane_atom.plane_id
+_chem_comp_plane_atom.atom_id
+_chem_comp_plane_atom.dist_esd
+ AYA      plan-1    N         0.020
+ AYA      plan-1    CA        0.020
+ AYA      plan-1    CT        0.020
+ AYA      plan-1    H         0.020
+ AYA      plan-2    C         0.020
+ AYA      plan-2    CA        0.020
+ AYA      plan-2    O         0.020
+ AYA      plan-2    OXT       0.020
+ AYA      plan-3    CT        0.020
+ AYA      plan-3    N         0.020
+ AYA      plan-3    OT        0.020
+ AYA      plan-3    CM        0.020
+ AYA      plan-3    H         0.020
+# ------------------------------------------------------

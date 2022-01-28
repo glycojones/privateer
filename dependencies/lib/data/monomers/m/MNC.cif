@@ -1,0 +1,86 @@
+#
+data_comp_list
+loop_
+_chem_comp.id
+_chem_comp.three_letter_code
+_chem_comp.name
+_chem_comp.group
+_chem_comp.number_atoms_all
+_chem_comp.number_atoms_nh
+_chem_comp.desc_level
+MNC     MNC      "METHYL ISOCYANIDE"     NON-POLYMER     6     3     .     
+#
+data_comp_MNC
+#
+loop_
+_chem_comp_atom.comp_id
+_chem_comp_atom.atom_id
+_chem_comp_atom.type_symbol
+_chem_comp_atom.type_energy
+_chem_comp_atom.charge
+_chem_comp_atom.x
+_chem_comp_atom.y
+_chem_comp_atom.z
+MNC     C       C       C       -1      1.770       0.852       -0.404      
+MNC     N       N       N       1       0.984       -0.157      0.025       
+MNC     C1      C       CH3     0       -0.465      -0.015      -0.002      
+MNC     H11     H       H       0       -0.731      0.695       0.607       
+MNC     H12     H       H       0       -0.877      -0.851      0.274       
+MNC     H13     H       H       0       -0.752      0.207       -0.904      
+loop_
+_chem_comp_bond.comp_id
+_chem_comp_bond.atom_id_1
+_chem_comp_bond.atom_id_2
+_chem_comp_bond.type
+_chem_comp_bond.aromatic
+_chem_comp_bond.value_dist_nucleus
+_chem_comp_bond.value_dist_nucleus_esd
+_chem_comp_bond.value_dist
+_chem_comp_bond.value_dist_esd
+MNC       C         N         TRIPLE    n         1.349     0.020     1.349     0.020     
+MNC       N         C1        SINGLE    n         1.457     0.020     1.457     0.020     
+MNC       C1        H11       SINGLE    n         1.089     0.010     0.972     0.015     
+MNC       C1        H12       SINGLE    n         1.089     0.010     0.972     0.015     
+MNC       C1        H13       SINGLE    n         1.089     0.010     0.972     0.015     
+loop_
+_chem_comp_angle.comp_id
+_chem_comp_angle.atom_id_1
+_chem_comp_angle.atom_id_2
+_chem_comp_angle.atom_id_3
+_chem_comp_angle.value_angle
+_chem_comp_angle.value_angle_esd
+MNC           C           N          C1     120.000    3.00
+MNC           N          C1         H11     109.364    1.50
+MNC           N          C1         H12     109.364    1.50
+MNC           N          C1         H13     109.364    1.50
+MNC         H11          C1         H12     109.481    1.50
+MNC         H11          C1         H13     109.481    1.50
+MNC         H12          C1         H13     109.481    1.50
+loop_
+_chem_comp_tor.comp_id
+_chem_comp_tor.id
+_chem_comp_tor.atom_id_1
+_chem_comp_tor.atom_id_2
+_chem_comp_tor.atom_id_3
+_chem_comp_tor.atom_id_4
+_chem_comp_tor.value_angle
+_chem_comp_tor.value_angle_esd
+_chem_comp_tor.period
+MNC             sp2_sp3_1           C           N          C1         H11       0.000   10.00     6
+loop_
+_pdbx_chem_comp_descriptor.comp_id
+_pdbx_chem_comp_descriptor.type
+_pdbx_chem_comp_descriptor.program
+_pdbx_chem_comp_descriptor.program_version
+_pdbx_chem_comp_descriptor.descriptor
+MNC SMILES           ACDLabs              10.04 "methyl isocyanide"
+MNC SMILES_CANONICAL CACTVS               3.341 "C[N+]#[C-]"
+MNC SMILES           CACTVS               3.341 "C[N+]#[C-]"
+MNC SMILES_CANONICAL "OpenEye OEToolkits" 1.5.0 "C[N+]#[C-]"
+MNC SMILES           "OpenEye OEToolkits" 1.5.0 "C[N+]#[C-]"
+MNC InChI            InChI                1.03  InChI=1S/C2H3N/c1-3-2/h1H3
+MNC InChIKey         InChI                1.03  ZRKSVHFXTRFQFL-UHFFFAOYSA-N
+MNC ?                acedrg               202         "dictionary generator"                  
+MNC ?                acedrg_database      11          "data source"                           
+MNC ?                rdkit                2017.03.2   "Chemoinformatics tool"
+MNC ?                refmac5              5.8.0189    "optimization tool"                     
